@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Variable,
-    fsm::NumberVariable,
+    fsm_NumberVariable,
     Action,
-    fsm::IncreaseValueAction,
-    fsm::DecreaseValueAction,
-    fsm::AssignValueAction,
+    fsm_IncreaseValueAction,
+    fsm_DecreaseValueAction,
+    fsm_AssignValueAction,
     NumberGuard,
-    fsm::GreaterThanNumberGuard,
-    fsm::LessThanNumberGuard,
-    fsm::EqualNumberGuard,
+    fsm_LessThanNumberGuard,
+    fsm_GreaterThanNumberGuard,
+    fsm_EqualNumberGuard,
     Guard,
-    fsm::NumberGuard,
-    fsm::NamedElement,
-    fsm::Action,
-    fsm::Guard,
-    fsm::Variable,
+    fsm_NumberGuard,
+    fsm_NamedElement,
+    fsm_Action,
+    fsm_Guard,
+    fsm_Variable,
     NamedElement,
-    fsm::Transition,
-    fsm::State,
-    fsm::StateMachine,
+    fsm_State,
+    fsm_Transition,
+    fsm_StateMachine,
 )
 
 # =============================================================================
@@ -48,23 +48,23 @@ def test_variable_constructor_args():
 
 
 
-def test_fsm::numbervariable_is_not_abstract():
-    assert not inspect.isabstract(fsm::NumberVariable)
+def test_fsm_numbervariable_is_not_abstract():
+    assert not inspect.isabstract(fsm_NumberVariable)
 
 
-def test_fsm::numbervariable_constructor_exists():
-    assert callable(fsm::NumberVariable.__init__)
+def test_fsm_numbervariable_constructor_exists():
+    assert callable(fsm_NumberVariable.__init__)
 
 
-def test_fsm::numbervariable_constructor_args():
-    sig = inspect.signature(fsm::NumberVariable.__init__)
+def test_fsm_numbervariable_constructor_args():
+    sig = inspect.signature(fsm_NumberVariable.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
 
-def test_fsm::numbervariable_has_initialValue():
-    assert hasattr(fsm::NumberVariable, "initialValue")
+def test_fsm_numbervariable_has_initialValue():
+    assert hasattr(fsm_NumberVariable, "initialValue")
     descriptor = None
-    for klass in fsm::NumberVariable.__mro__:
+    for klass in fsm_NumberVariable.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
@@ -86,23 +86,23 @@ def test_action_constructor_args():
 
 
 
-def test_fsm::increasevalueaction_is_not_abstract():
-    assert not inspect.isabstract(fsm::IncreaseValueAction)
+def test_fsm_increasevalueaction_is_not_abstract():
+    assert not inspect.isabstract(fsm_IncreaseValueAction)
 
 
-def test_fsm::increasevalueaction_constructor_exists():
-    assert callable(fsm::IncreaseValueAction.__init__)
+def test_fsm_increasevalueaction_constructor_exists():
+    assert callable(fsm_IncreaseValueAction.__init__)
 
 
-def test_fsm::increasevalueaction_constructor_args():
-    sig = inspect.signature(fsm::IncreaseValueAction.__init__)
+def test_fsm_increasevalueaction_constructor_args():
+    sig = inspect.signature(fsm_IncreaseValueAction.__init__)
     params = list(sig.parameters.keys())
     assert "stepValue" in params, "Missing parameter 'stepValue'"
 
-def test_fsm::increasevalueaction_has_stepValue():
-    assert hasattr(fsm::IncreaseValueAction, "stepValue")
+def test_fsm_increasevalueaction_has_stepValue():
+    assert hasattr(fsm_IncreaseValueAction, "stepValue")
     descriptor = None
-    for klass in fsm::IncreaseValueAction.__mro__:
+    for klass in fsm_IncreaseValueAction.__mro__:
         if "stepValue" in klass.__dict__:
             descriptor = klass.__dict__["stepValue"]
             break
@@ -110,23 +110,23 @@ def test_fsm::increasevalueaction_has_stepValue():
 
 
 
-def test_fsm::decreasevalueaction_is_not_abstract():
-    assert not inspect.isabstract(fsm::DecreaseValueAction)
+def test_fsm_decreasevalueaction_is_not_abstract():
+    assert not inspect.isabstract(fsm_DecreaseValueAction)
 
 
-def test_fsm::decreasevalueaction_constructor_exists():
-    assert callable(fsm::DecreaseValueAction.__init__)
+def test_fsm_decreasevalueaction_constructor_exists():
+    assert callable(fsm_DecreaseValueAction.__init__)
 
 
-def test_fsm::decreasevalueaction_constructor_args():
-    sig = inspect.signature(fsm::DecreaseValueAction.__init__)
+def test_fsm_decreasevalueaction_constructor_args():
+    sig = inspect.signature(fsm_DecreaseValueAction.__init__)
     params = list(sig.parameters.keys())
     assert "stepValue" in params, "Missing parameter 'stepValue'"
 
-def test_fsm::decreasevalueaction_has_stepValue():
-    assert hasattr(fsm::DecreaseValueAction, "stepValue")
+def test_fsm_decreasevalueaction_has_stepValue():
+    assert hasattr(fsm_DecreaseValueAction, "stepValue")
     descriptor = None
-    for klass in fsm::DecreaseValueAction.__mro__:
+    for klass in fsm_DecreaseValueAction.__mro__:
         if "stepValue" in klass.__dict__:
             descriptor = klass.__dict__["stepValue"]
             break
@@ -134,23 +134,23 @@ def test_fsm::decreasevalueaction_has_stepValue():
 
 
 
-def test_fsm::assignvalueaction_is_not_abstract():
-    assert not inspect.isabstract(fsm::AssignValueAction)
+def test_fsm_assignvalueaction_is_not_abstract():
+    assert not inspect.isabstract(fsm_AssignValueAction)
 
 
-def test_fsm::assignvalueaction_constructor_exists():
-    assert callable(fsm::AssignValueAction.__init__)
+def test_fsm_assignvalueaction_constructor_exists():
+    assert callable(fsm_AssignValueAction.__init__)
 
 
-def test_fsm::assignvalueaction_constructor_args():
-    sig = inspect.signature(fsm::AssignValueAction.__init__)
+def test_fsm_assignvalueaction_constructor_args():
+    sig = inspect.signature(fsm_AssignValueAction.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fsm::assignvalueaction_has_value():
-    assert hasattr(fsm::AssignValueAction, "value")
+def test_fsm_assignvalueaction_has_value():
+    assert hasattr(fsm_AssignValueAction, "value")
     descriptor = None
-    for klass in fsm::AssignValueAction.__mro__:
+    for klass in fsm_AssignValueAction.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -172,44 +172,44 @@ def test_numberguard_constructor_args():
 
 
 
-def test_fsm::greaterthannumberguard_is_not_abstract():
-    assert not inspect.isabstract(fsm::GreaterThanNumberGuard)
+def test_fsm_lessthannumberguard_is_not_abstract():
+    assert not inspect.isabstract(fsm_LessThanNumberGuard)
 
 
-def test_fsm::greaterthannumberguard_constructor_exists():
-    assert callable(fsm::GreaterThanNumberGuard.__init__)
+def test_fsm_lessthannumberguard_constructor_exists():
+    assert callable(fsm_LessThanNumberGuard.__init__)
 
 
-def test_fsm::greaterthannumberguard_constructor_args():
-    sig = inspect.signature(fsm::GreaterThanNumberGuard.__init__)
+def test_fsm_lessthannumberguard_constructor_args():
+    sig = inspect.signature(fsm_LessThanNumberGuard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::lessthannumberguard_is_not_abstract():
-    assert not inspect.isabstract(fsm::LessThanNumberGuard)
+def test_fsm_greaterthannumberguard_is_not_abstract():
+    assert not inspect.isabstract(fsm_GreaterThanNumberGuard)
 
 
-def test_fsm::lessthannumberguard_constructor_exists():
-    assert callable(fsm::LessThanNumberGuard.__init__)
+def test_fsm_greaterthannumberguard_constructor_exists():
+    assert callable(fsm_GreaterThanNumberGuard.__init__)
 
 
-def test_fsm::lessthannumberguard_constructor_args():
-    sig = inspect.signature(fsm::LessThanNumberGuard.__init__)
+def test_fsm_greaterthannumberguard_constructor_args():
+    sig = inspect.signature(fsm_GreaterThanNumberGuard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::equalnumberguard_is_not_abstract():
-    assert not inspect.isabstract(fsm::EqualNumberGuard)
+def test_fsm_equalnumberguard_is_not_abstract():
+    assert not inspect.isabstract(fsm_EqualNumberGuard)
 
 
-def test_fsm::equalnumberguard_constructor_exists():
-    assert callable(fsm::EqualNumberGuard.__init__)
+def test_fsm_equalnumberguard_constructor_exists():
+    assert callable(fsm_EqualNumberGuard.__init__)
 
 
-def test_fsm::equalnumberguard_constructor_args():
-    sig = inspect.signature(fsm::EqualNumberGuard.__init__)
+def test_fsm_equalnumberguard_constructor_args():
+    sig = inspect.signature(fsm_EqualNumberGuard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -228,23 +228,23 @@ def test_guard_constructor_args():
 
 
 
-def test_fsm::numberguard_is_not_abstract():
-    assert not inspect.isabstract(fsm::NumberGuard)
+def test_fsm_numberguard_is_not_abstract():
+    assert not inspect.isabstract(fsm_NumberGuard)
 
 
-def test_fsm::numberguard_constructor_exists():
-    assert callable(fsm::NumberGuard.__init__)
+def test_fsm_numberguard_constructor_exists():
+    assert callable(fsm_NumberGuard.__init__)
 
 
-def test_fsm::numberguard_constructor_args():
-    sig = inspect.signature(fsm::NumberGuard.__init__)
+def test_fsm_numberguard_constructor_args():
+    sig = inspect.signature(fsm_NumberGuard.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fsm::numberguard_has_value():
-    assert hasattr(fsm::NumberGuard, "value")
+def test_fsm_numberguard_has_value():
+    assert hasattr(fsm_NumberGuard, "value")
     descriptor = None
-    for klass in fsm::NumberGuard.__mro__:
+    for klass in fsm_NumberGuard.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -252,23 +252,23 @@ def test_fsm::numberguard_has_value():
 
 
 
-def test_fsm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(fsm::NamedElement)
+def test_fsm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(fsm_NamedElement)
 
 
-def test_fsm::namedelement_constructor_exists():
-    assert callable(fsm::NamedElement.__init__)
+def test_fsm_namedelement_constructor_exists():
+    assert callable(fsm_NamedElement.__init__)
 
 
-def test_fsm::namedelement_constructor_args():
-    sig = inspect.signature(fsm::NamedElement.__init__)
+def test_fsm_namedelement_constructor_args():
+    sig = inspect.signature(fsm_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::namedelement_has_name():
-    assert hasattr(fsm::NamedElement, "name")
+def test_fsm_namedelement_has_name():
+    assert hasattr(fsm_NamedElement, "name")
     descriptor = None
-    for klass in fsm::NamedElement.__mro__:
+    for klass in fsm_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -276,37 +276,37 @@ def test_fsm::namedelement_has_name():
 
 
 
-def test_fsm::action_is_not_abstract():
-    assert not inspect.isabstract(fsm::Action)
+def test_fsm_action_is_not_abstract():
+    assert not inspect.isabstract(fsm_Action)
 
 
-def test_fsm::action_constructor_exists():
-    assert callable(fsm::Action.__init__)
+def test_fsm_action_constructor_exists():
+    assert callable(fsm_Action.__init__)
 
 
-def test_fsm::action_constructor_args():
-    sig = inspect.signature(fsm::Action.__init__)
+def test_fsm_action_constructor_args():
+    sig = inspect.signature(fsm_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::guard_is_not_abstract():
-    assert not inspect.isabstract(fsm::Guard)
+def test_fsm_guard_is_not_abstract():
+    assert not inspect.isabstract(fsm_Guard)
 
 
-def test_fsm::guard_constructor_exists():
-    assert callable(fsm::Guard.__init__)
+def test_fsm_guard_constructor_exists():
+    assert callable(fsm_Guard.__init__)
 
 
-def test_fsm::guard_constructor_args():
-    sig = inspect.signature(fsm::Guard.__init__)
+def test_fsm_guard_constructor_args():
+    sig = inspect.signature(fsm_Guard.__init__)
     params = list(sig.parameters.keys())
     assert "not_" in params, "Missing parameter 'not_'"
 
-def test_fsm::guard_has_not_():
-    assert hasattr(fsm::Guard, "not_")
+def test_fsm_guard_has_not_():
+    assert hasattr(fsm_Guard, "not_")
     descriptor = None
-    for klass in fsm::Guard.__mro__:
+    for klass in fsm_Guard.__mro__:
         if "not_" in klass.__dict__:
             descriptor = klass.__dict__["not_"]
             break
@@ -314,23 +314,23 @@ def test_fsm::guard_has_not_():
 
 
 
-def test_fsm::variable_is_not_abstract():
-    assert not inspect.isabstract(fsm::Variable)
+def test_fsm_variable_is_not_abstract():
+    assert not inspect.isabstract(fsm_Variable)
 
 
-def test_fsm::variable_constructor_exists():
-    assert callable(fsm::Variable.__init__)
+def test_fsm_variable_constructor_exists():
+    assert callable(fsm_Variable.__init__)
 
 
-def test_fsm::variable_constructor_args():
-    sig = inspect.signature(fsm::Variable.__init__)
+def test_fsm_variable_constructor_args():
+    sig = inspect.signature(fsm_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::variable_has_name():
-    assert hasattr(fsm::Variable, "name")
+def test_fsm_variable_has_name():
+    assert hasattr(fsm_Variable, "name")
     descriptor = None
-    for klass in fsm::Variable.__mro__:
+    for klass in fsm_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -352,44 +352,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(fsm::StateMachine)
+def test_fsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(fsm_StateMachine)
 
 
-def test_fsm::statemachine_constructor_exists():
-    assert callable(fsm::StateMachine.__init__)
+def test_fsm_statemachine_constructor_exists():
+    assert callable(fsm_StateMachine.__init__)
 
 
-def test_fsm::statemachine_constructor_args():
-    sig = inspect.signature(fsm::StateMachine.__init__)
+def test_fsm_statemachine_constructor_args():
+    sig = inspect.signature(fsm_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -407,78 +407,78 @@ safe_text = st.text(
 Variable_strategy = st.builds(
     Variable,
 )
-fsm::NumberVariable_strategy = st.builds(
-    fsm::NumberVariable,
+fsm_NumberVariable_strategy = st.builds(
+    fsm_NumberVariable,
     initialValue=
         st.integers()
 )
 Action_strategy = st.builds(
     Action,
 )
-fsm::IncreaseValueAction_strategy = st.builds(
-    fsm::IncreaseValueAction,
+fsm_IncreaseValueAction_strategy = st.builds(
+    fsm_IncreaseValueAction,
     stepValue=
         st.integers()
 )
-fsm::DecreaseValueAction_strategy = st.builds(
-    fsm::DecreaseValueAction,
+fsm_DecreaseValueAction_strategy = st.builds(
+    fsm_DecreaseValueAction,
     stepValue=
         st.integers()
 )
-fsm::AssignValueAction_strategy = st.builds(
-    fsm::AssignValueAction,
+fsm_AssignValueAction_strategy = st.builds(
+    fsm_AssignValueAction,
     value=
         st.integers()
 )
 NumberGuard_strategy = st.builds(
     NumberGuard,
 )
-fsm::GreaterThanNumberGuard_strategy = st.builds(
-    fsm::GreaterThanNumberGuard,
+fsm_LessThanNumberGuard_strategy = st.builds(
+    fsm_LessThanNumberGuard,
 )
-fsm::LessThanNumberGuard_strategy = st.builds(
-    fsm::LessThanNumberGuard,
+fsm_GreaterThanNumberGuard_strategy = st.builds(
+    fsm_GreaterThanNumberGuard,
 )
-fsm::EqualNumberGuard_strategy = st.builds(
-    fsm::EqualNumberGuard,
+fsm_EqualNumberGuard_strategy = st.builds(
+    fsm_EqualNumberGuard,
 )
 Guard_strategy = st.builds(
     Guard,
 )
-fsm::NumberGuard_strategy = st.builds(
-    fsm::NumberGuard,
+fsm_NumberGuard_strategy = st.builds(
+    fsm_NumberGuard,
     value=
         st.integers()
 )
-fsm::NamedElement_strategy = st.builds(
-    fsm::NamedElement,
+fsm_NamedElement_strategy = st.builds(
+    fsm_NamedElement,
     name=
         safe_text
 )
-fsm::Action_strategy = st.builds(
-    fsm::Action,
+fsm_Action_strategy = st.builds(
+    fsm_Action,
 )
-fsm::Guard_strategy = st.builds(
-    fsm::Guard,
+fsm_Guard_strategy = st.builds(
+    fsm_Guard,
     not_=
         st.booleans()
 )
-fsm::Variable_strategy = st.builds(
-    fsm::Variable,
+fsm_Variable_strategy = st.builds(
+    fsm_Variable,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
+fsm_State_strategy = st.builds(
+    fsm_State,
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
 )
-fsm::StateMachine_strategy = st.builds(
-    fsm::StateMachine,
+fsm_StateMachine_strategy = st.builds(
+    fsm_StateMachine,
 )
 
 @given(instance=Variable_strategy)
@@ -486,18 +486,15 @@ fsm::StateMachine_strategy = st.builds(
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=fsm::NumberVariable_strategy)
+@given(instance=fsm_NumberVariable_strategy)
 @settings(max_examples=50)
-def test_fsm::numbervariable_instantiation(instance):
-    assert isinstance(instance, fsm::NumberVariable)
-
-@given(instance=fsm::NumberVariable_strategy)
-def test_fsm::numbervariable_initialValue_type(instance):
-    assert isinstance(instance.initialValue, int)
+def test_fsm_numbervariable_instantiation(instance):
+    assert isinstance(instance, fsm_NumberVariable)
 
 
-@given(instance=fsm::NumberVariable_strategy)
-def test_fsm::numbervariable_initialValue_setter(instance):
+
+@given(instance=fsm_NumberVariable_strategy)
+def test_fsm_numbervariable_initialValue_setter(instance):
     original = instance.initialValue
     instance.initialValue = original
     assert instance.initialValue == original
@@ -507,50 +504,41 @@ def test_fsm::numbervariable_initialValue_setter(instance):
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=fsm::IncreaseValueAction_strategy)
+@given(instance=fsm_IncreaseValueAction_strategy)
 @settings(max_examples=50)
-def test_fsm::increasevalueaction_instantiation(instance):
-    assert isinstance(instance, fsm::IncreaseValueAction)
-
-@given(instance=fsm::IncreaseValueAction_strategy)
-def test_fsm::increasevalueaction_stepValue_type(instance):
-    assert isinstance(instance.stepValue, int)
+def test_fsm_increasevalueaction_instantiation(instance):
+    assert isinstance(instance, fsm_IncreaseValueAction)
 
 
-@given(instance=fsm::IncreaseValueAction_strategy)
-def test_fsm::increasevalueaction_stepValue_setter(instance):
+
+@given(instance=fsm_IncreaseValueAction_strategy)
+def test_fsm_increasevalueaction_stepValue_setter(instance):
     original = instance.stepValue
     instance.stepValue = original
     assert instance.stepValue == original
 
-@given(instance=fsm::DecreaseValueAction_strategy)
+@given(instance=fsm_DecreaseValueAction_strategy)
 @settings(max_examples=50)
-def test_fsm::decreasevalueaction_instantiation(instance):
-    assert isinstance(instance, fsm::DecreaseValueAction)
-
-@given(instance=fsm::DecreaseValueAction_strategy)
-def test_fsm::decreasevalueaction_stepValue_type(instance):
-    assert isinstance(instance.stepValue, int)
+def test_fsm_decreasevalueaction_instantiation(instance):
+    assert isinstance(instance, fsm_DecreaseValueAction)
 
 
-@given(instance=fsm::DecreaseValueAction_strategy)
-def test_fsm::decreasevalueaction_stepValue_setter(instance):
+
+@given(instance=fsm_DecreaseValueAction_strategy)
+def test_fsm_decreasevalueaction_stepValue_setter(instance):
     original = instance.stepValue
     instance.stepValue = original
     assert instance.stepValue == original
 
-@given(instance=fsm::AssignValueAction_strategy)
+@given(instance=fsm_AssignValueAction_strategy)
 @settings(max_examples=50)
-def test_fsm::assignvalueaction_instantiation(instance):
-    assert isinstance(instance, fsm::AssignValueAction)
-
-@given(instance=fsm::AssignValueAction_strategy)
-def test_fsm::assignvalueaction_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_fsm_assignvalueaction_instantiation(instance):
+    assert isinstance(instance, fsm_AssignValueAction)
 
 
-@given(instance=fsm::AssignValueAction_strategy)
-def test_fsm::assignvalueaction_value_setter(instance):
+
+@given(instance=fsm_AssignValueAction_strategy)
+def test_fsm_assignvalueaction_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -560,91 +548,79 @@ def test_fsm::assignvalueaction_value_setter(instance):
 def test_numberguard_instantiation(instance):
     assert isinstance(instance, NumberGuard)
 
-@given(instance=fsm::GreaterThanNumberGuard_strategy)
+@given(instance=fsm_LessThanNumberGuard_strategy)
 @settings(max_examples=50)
-def test_fsm::greaterthannumberguard_instantiation(instance):
-    assert isinstance(instance, fsm::GreaterThanNumberGuard)
+def test_fsm_lessthannumberguard_instantiation(instance):
+    assert isinstance(instance, fsm_LessThanNumberGuard)
 
-@given(instance=fsm::LessThanNumberGuard_strategy)
+@given(instance=fsm_GreaterThanNumberGuard_strategy)
 @settings(max_examples=50)
-def test_fsm::lessthannumberguard_instantiation(instance):
-    assert isinstance(instance, fsm::LessThanNumberGuard)
+def test_fsm_greaterthannumberguard_instantiation(instance):
+    assert isinstance(instance, fsm_GreaterThanNumberGuard)
 
-@given(instance=fsm::EqualNumberGuard_strategy)
+@given(instance=fsm_EqualNumberGuard_strategy)
 @settings(max_examples=50)
-def test_fsm::equalnumberguard_instantiation(instance):
-    assert isinstance(instance, fsm::EqualNumberGuard)
+def test_fsm_equalnumberguard_instantiation(instance):
+    assert isinstance(instance, fsm_EqualNumberGuard)
 
 @given(instance=Guard_strategy)
 @settings(max_examples=50)
 def test_guard_instantiation(instance):
     assert isinstance(instance, Guard)
 
-@given(instance=fsm::NumberGuard_strategy)
+@given(instance=fsm_NumberGuard_strategy)
 @settings(max_examples=50)
-def test_fsm::numberguard_instantiation(instance):
-    assert isinstance(instance, fsm::NumberGuard)
-
-@given(instance=fsm::NumberGuard_strategy)
-def test_fsm::numberguard_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_fsm_numberguard_instantiation(instance):
+    assert isinstance(instance, fsm_NumberGuard)
 
 
-@given(instance=fsm::NumberGuard_strategy)
-def test_fsm::numberguard_value_setter(instance):
+
+@given(instance=fsm_NumberGuard_strategy)
+def test_fsm_numberguard_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fsm::NamedElement_strategy)
+@given(instance=fsm_NamedElement_strategy)
 @settings(max_examples=50)
-def test_fsm::namedelement_instantiation(instance):
-    assert isinstance(instance, fsm::NamedElement)
-
-@given(instance=fsm::NamedElement_strategy)
-def test_fsm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_namedelement_instantiation(instance):
+    assert isinstance(instance, fsm_NamedElement)
 
 
-@given(instance=fsm::NamedElement_strategy)
-def test_fsm::namedelement_name_setter(instance):
+
+@given(instance=fsm_NamedElement_strategy)
+def test_fsm_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsm::Action_strategy)
+@given(instance=fsm_Action_strategy)
 @settings(max_examples=50)
-def test_fsm::action_instantiation(instance):
-    assert isinstance(instance, fsm::Action)
+def test_fsm_action_instantiation(instance):
+    assert isinstance(instance, fsm_Action)
 
-@given(instance=fsm::Guard_strategy)
+@given(instance=fsm_Guard_strategy)
 @settings(max_examples=50)
-def test_fsm::guard_instantiation(instance):
-    assert isinstance(instance, fsm::Guard)
-
-@given(instance=fsm::Guard_strategy)
-def test_fsm::guard_not__type(instance):
-    assert isinstance(instance.not_, bool)
+def test_fsm_guard_instantiation(instance):
+    assert isinstance(instance, fsm_Guard)
 
 
-@given(instance=fsm::Guard_strategy)
-def test_fsm::guard_not__setter(instance):
+
+@given(instance=fsm_Guard_strategy)
+def test_fsm_guard_not__setter(instance):
     original = instance.not_
     instance.not_ = original
     assert instance.not_ == original
 
-@given(instance=fsm::Variable_strategy)
+@given(instance=fsm_Variable_strategy)
 @settings(max_examples=50)
-def test_fsm::variable_instantiation(instance):
-    assert isinstance(instance, fsm::Variable)
-
-@given(instance=fsm::Variable_strategy)
-def test_fsm::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_variable_instantiation(instance):
+    assert isinstance(instance, fsm_Variable)
 
 
-@given(instance=fsm::Variable_strategy)
-def test_fsm::variable_name_setter(instance):
+
+@given(instance=fsm_Variable_strategy)
+def test_fsm_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -654,17 +630,17 @@ def test_fsm::variable_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
-@given(instance=fsm::StateMachine_strategy)
+@given(instance=fsm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_fsm::statemachine_instantiation(instance):
-    assert isinstance(instance, fsm::StateMachine)
+def test_fsm_statemachine_instantiation(instance):
+    assert isinstance(instance, fsm_StateMachine)

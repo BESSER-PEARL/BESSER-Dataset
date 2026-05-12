@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    lMS::Course,
-    lMS::LMS,
+from python_code import (
+    lMS_Course,
+    lMS_LMS,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_lms::course_is_not_abstract():
-    assert not inspect.isabstract(lMS::Course)
+def test_lms_course_is_not_abstract():
+    assert not inspect.isabstract(lMS_Course)
 
 
-def test_lms::course_constructor_exists():
-    assert callable(lMS::Course.__init__)
+def test_lms_course_constructor_exists():
+    assert callable(lMS_Course.__init__)
 
 
-def test_lms::course_constructor_args():
-    sig = inspect.signature(lMS::Course.__init__)
+def test_lms_course_constructor_args():
+    sig = inspect.signature(lMS_Course.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lms::course_has_name():
-    assert hasattr(lMS::Course, "name")
+def test_lms_course_has_name():
+    assert hasattr(lMS_Course, "name")
     descriptor = None
-    for klass in lMS::Course.__mro__:
+    for klass in lMS_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_lms::course_has_name():
 
 
 
-def test_lms::lms_is_not_abstract():
-    assert not inspect.isabstract(lMS::LMS)
+def test_lms_lms_is_not_abstract():
+    assert not inspect.isabstract(lMS_LMS)
 
 
-def test_lms::lms_constructor_exists():
-    assert callable(lMS::LMS.__init__)
+def test_lms_lms_constructor_exists():
+    assert callable(lMS_LMS.__init__)
 
 
-def test_lms::lms_constructor_args():
-    sig = inspect.signature(lMS::LMS.__init__)
+def test_lms_lms_constructor_args():
+    sig = inspect.signature(lMS_LMS.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_lms::lms_has_description():
-    assert hasattr(lMS::LMS, "description")
+def test_lms_lms_has_description():
+    assert hasattr(lMS_LMS, "description")
     descriptor = None
-    for klass in lMS::LMS.__mro__:
+    for klass in lMS_LMS.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-lMS::Course_strategy = st.builds(
-    lMS::Course,
+lMS_Course_strategy = st.builds(
+    lMS_Course,
     name=
         safe_text
 )
-lMS::LMS_strategy = st.builds(
-    lMS::LMS,
+lMS_LMS_strategy = st.builds(
+    lMS_LMS,
     description=
         safe_text
 )
 
-@given(instance=lMS::Course_strategy)
+@given(instance=lMS_Course_strategy)
 @settings(max_examples=50)
-def test_lms::course_instantiation(instance):
-    assert isinstance(instance, lMS::Course)
-
-@given(instance=lMS::Course_strategy)
-def test_lms::course_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lms_course_instantiation(instance):
+    assert isinstance(instance, lMS_Course)
 
 
-@given(instance=lMS::Course_strategy)
-def test_lms::course_name_setter(instance):
+
+@given(instance=lMS_Course_strategy)
+def test_lms_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lMS::LMS_strategy)
+@given(instance=lMS_LMS_strategy)
 @settings(max_examples=50)
-def test_lms::lms_instantiation(instance):
-    assert isinstance(instance, lMS::LMS)
-
-@given(instance=lMS::LMS_strategy)
-def test_lms::lms_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_lms_lms_instantiation(instance):
+    assert isinstance(instance, lMS_LMS)
 
 
-@given(instance=lMS::LMS_strategy)
-def test_lms::lms_description_setter(instance):
+
+@given(instance=lMS_LMS_strategy)
+def test_lms_lms_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

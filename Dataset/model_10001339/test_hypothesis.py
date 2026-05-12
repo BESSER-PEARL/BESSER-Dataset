@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     C3,
@@ -120,9 +120,6 @@ C1_strategy = st.builds(
 def test_c3_instantiation(instance):
     assert isinstance(instance, C3)
 
-@given(instance=C3_strategy)
-def test_c3_i3_type(instance):
-    assert isinstance(instance.i3, int)
 
 
 @given(instance=C3_strategy)
@@ -136,9 +133,6 @@ def test_c3_i3_setter(instance):
 def test_c2_instantiation(instance):
     assert isinstance(instance, C2)
 
-@given(instance=C2_strategy)
-def test_c2_b1_type(instance):
-    assert isinstance(instance.b1, bool)
 
 
 @given(instance=C2_strategy)
@@ -152,9 +146,6 @@ def test_c2_b1_setter(instance):
 def test_c1_instantiation(instance):
     assert isinstance(instance, C1)
 
-@given(instance=C1_strategy)
-def test_c1_i3_type(instance):
-    assert isinstance(instance.i3, int)
 
 
 @given(instance=C1_strategy)

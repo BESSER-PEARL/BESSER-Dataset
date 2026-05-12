@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'Game' has the following attributes: 'name' of type str.
+The class 'Card' has the following attributes: 'suit' of type str; 'kind' of type Kind.
+The class 'Player' has the following attributes: 'name' of type str.
+The enumeration 'Kind' does not specify any literals.
+'Player' (role 'cards0', cardinality 0..*) is associated with 'Card' (role 'player1', cardinality 0..*).
+'Player' (role 'game3', cardinality 0..*) is associated with 'Game' (role 'player2', cardinality 0..*).

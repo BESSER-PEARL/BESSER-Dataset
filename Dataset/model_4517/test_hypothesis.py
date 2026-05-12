@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    logo::Parameter,
+from python_code import (
+    logo_Parameter,
     Expression,
-    logo::Mult,
-    logo::Lower,
-    logo::Equals,
-    logo::Div,
-    logo::Greater,
-    logo::Plus,
-    logo::Minus,
-    logo::Constant,
-    logo::LogoProgram,
-    logo::Expression,
+    logo_Greater,
+    logo_Mult,
+    logo_Equals,
+    logo_Div,
+    logo_Plus,
+    logo_Lower,
+    logo_Minus,
+    logo_Constant,
+    logo_LogoProgram,
+    logo_Expression,
     Instruction,
-    logo::Right,
-    logo::ParameterCall,
-    logo::Block,
-    logo::PenDown,
-    logo::If,
-    logo::Left,
-    logo::Forward,
-    logo::While,
-    logo::Clear,
-    logo::PenUp,
-    logo::Repeat,
-    logo::ProcCall,
-    logo::ProcDeclaration,
-    logo::Backward,
-    logo::Instruction,
+    logo_ParameterCall,
+    logo_Right,
+    logo_Repeat,
+    logo_Forward,
+    logo_Block,
+    logo_Left,
+    logo_ProcDeclaration,
+    logo_Clear,
+    logo_ProcCall,
+    logo_PenUp,
+    logo_PenDown,
+    logo_If,
+    logo_While,
+    logo_Backward,
+    logo_Instruction,
 )
 
 # =============================================================================
@@ -42,23 +42,23 @@ from classes import (
 
 
 
-def test_logo::parameter_is_not_abstract():
-    assert not inspect.isabstract(logo::Parameter)
+def test_logo_parameter_is_not_abstract():
+    assert not inspect.isabstract(logo_Parameter)
 
 
-def test_logo::parameter_constructor_exists():
-    assert callable(logo::Parameter.__init__)
+def test_logo_parameter_constructor_exists():
+    assert callable(logo_Parameter.__init__)
 
 
-def test_logo::parameter_constructor_args():
-    sig = inspect.signature(logo::Parameter.__init__)
+def test_logo_parameter_constructor_args():
+    sig = inspect.signature(logo_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logo::parameter_has_name():
-    assert hasattr(logo::Parameter, "name")
+def test_logo_parameter_has_name():
+    assert hasattr(logo_Parameter, "name")
     descriptor = None
-    for klass in logo::Parameter.__mro__:
+    for klass in logo_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,121 +80,121 @@ def test_expression_constructor_args():
 
 
 
-def test_logo::mult_is_not_abstract():
-    assert not inspect.isabstract(logo::Mult)
+def test_logo_greater_is_not_abstract():
+    assert not inspect.isabstract(logo_Greater)
 
 
-def test_logo::mult_constructor_exists():
-    assert callable(logo::Mult.__init__)
+def test_logo_greater_constructor_exists():
+    assert callable(logo_Greater.__init__)
 
 
-def test_logo::mult_constructor_args():
-    sig = inspect.signature(logo::Mult.__init__)
+def test_logo_greater_constructor_args():
+    sig = inspect.signature(logo_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::lower_is_not_abstract():
-    assert not inspect.isabstract(logo::Lower)
+def test_logo_mult_is_not_abstract():
+    assert not inspect.isabstract(logo_Mult)
 
 
-def test_logo::lower_constructor_exists():
-    assert callable(logo::Lower.__init__)
+def test_logo_mult_constructor_exists():
+    assert callable(logo_Mult.__init__)
 
 
-def test_logo::lower_constructor_args():
-    sig = inspect.signature(logo::Lower.__init__)
+def test_logo_mult_constructor_args():
+    sig = inspect.signature(logo_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::equals_is_not_abstract():
-    assert not inspect.isabstract(logo::Equals)
+def test_logo_equals_is_not_abstract():
+    assert not inspect.isabstract(logo_Equals)
 
 
-def test_logo::equals_constructor_exists():
-    assert callable(logo::Equals.__init__)
+def test_logo_equals_constructor_exists():
+    assert callable(logo_Equals.__init__)
 
 
-def test_logo::equals_constructor_args():
-    sig = inspect.signature(logo::Equals.__init__)
+def test_logo_equals_constructor_args():
+    sig = inspect.signature(logo_Equals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::div_is_not_abstract():
-    assert not inspect.isabstract(logo::Div)
+def test_logo_div_is_not_abstract():
+    assert not inspect.isabstract(logo_Div)
 
 
-def test_logo::div_constructor_exists():
-    assert callable(logo::Div.__init__)
+def test_logo_div_constructor_exists():
+    assert callable(logo_Div.__init__)
 
 
-def test_logo::div_constructor_args():
-    sig = inspect.signature(logo::Div.__init__)
+def test_logo_div_constructor_args():
+    sig = inspect.signature(logo_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::greater_is_not_abstract():
-    assert not inspect.isabstract(logo::Greater)
+def test_logo_plus_is_not_abstract():
+    assert not inspect.isabstract(logo_Plus)
 
 
-def test_logo::greater_constructor_exists():
-    assert callable(logo::Greater.__init__)
+def test_logo_plus_constructor_exists():
+    assert callable(logo_Plus.__init__)
 
 
-def test_logo::greater_constructor_args():
-    sig = inspect.signature(logo::Greater.__init__)
+def test_logo_plus_constructor_args():
+    sig = inspect.signature(logo_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::plus_is_not_abstract():
-    assert not inspect.isabstract(logo::Plus)
+def test_logo_lower_is_not_abstract():
+    assert not inspect.isabstract(logo_Lower)
 
 
-def test_logo::plus_constructor_exists():
-    assert callable(logo::Plus.__init__)
+def test_logo_lower_constructor_exists():
+    assert callable(logo_Lower.__init__)
 
 
-def test_logo::plus_constructor_args():
-    sig = inspect.signature(logo::Plus.__init__)
+def test_logo_lower_constructor_args():
+    sig = inspect.signature(logo_Lower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::minus_is_not_abstract():
-    assert not inspect.isabstract(logo::Minus)
+def test_logo_minus_is_not_abstract():
+    assert not inspect.isabstract(logo_Minus)
 
 
-def test_logo::minus_constructor_exists():
-    assert callable(logo::Minus.__init__)
+def test_logo_minus_constructor_exists():
+    assert callable(logo_Minus.__init__)
 
 
-def test_logo::minus_constructor_args():
-    sig = inspect.signature(logo::Minus.__init__)
+def test_logo_minus_constructor_args():
+    sig = inspect.signature(logo_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::constant_is_not_abstract():
-    assert not inspect.isabstract(logo::Constant)
+def test_logo_constant_is_not_abstract():
+    assert not inspect.isabstract(logo_Constant)
 
 
-def test_logo::constant_constructor_exists():
-    assert callable(logo::Constant.__init__)
+def test_logo_constant_constructor_exists():
+    assert callable(logo_Constant.__init__)
 
 
-def test_logo::constant_constructor_args():
-    sig = inspect.signature(logo::Constant.__init__)
+def test_logo_constant_constructor_args():
+    sig = inspect.signature(logo_Constant.__init__)
     params = list(sig.parameters.keys())
     assert "integerValue" in params, "Missing parameter 'integerValue'"
 
-def test_logo::constant_has_integerValue():
-    assert hasattr(logo::Constant, "integerValue")
+def test_logo_constant_has_integerValue():
+    assert hasattr(logo_Constant, "integerValue")
     descriptor = None
-    for klass in logo::Constant.__mro__:
+    for klass in logo_Constant.__mro__:
         if "integerValue" in klass.__dict__:
             descriptor = klass.__dict__["integerValue"]
             break
@@ -202,30 +202,30 @@ def test_logo::constant_has_integerValue():
 
 
 
-def test_logo::logoprogram_is_not_abstract():
-    assert not inspect.isabstract(logo::LogoProgram)
+def test_logo_logoprogram_is_not_abstract():
+    assert not inspect.isabstract(logo_LogoProgram)
 
 
-def test_logo::logoprogram_constructor_exists():
-    assert callable(logo::LogoProgram.__init__)
+def test_logo_logoprogram_constructor_exists():
+    assert callable(logo_LogoProgram.__init__)
 
 
-def test_logo::logoprogram_constructor_args():
-    sig = inspect.signature(logo::LogoProgram.__init__)
+def test_logo_logoprogram_constructor_args():
+    sig = inspect.signature(logo_LogoProgram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::expression_is_not_abstract():
-    assert not inspect.isabstract(logo::Expression)
+def test_logo_expression_is_not_abstract():
+    assert not inspect.isabstract(logo_Expression)
 
 
-def test_logo::expression_constructor_exists():
-    assert callable(logo::Expression.__init__)
+def test_logo_expression_constructor_exists():
+    assert callable(logo_Expression.__init__)
 
 
-def test_logo::expression_constructor_args():
-    sig = inspect.signature(logo::Expression.__init__)
+def test_logo_expression_constructor_args():
+    sig = inspect.signature(logo_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,191 +244,107 @@ def test_instruction_constructor_args():
 
 
 
-def test_logo::right_is_not_abstract():
-    assert not inspect.isabstract(logo::Right)
+def test_logo_parametercall_is_not_abstract():
+    assert not inspect.isabstract(logo_ParameterCall)
 
 
-def test_logo::right_constructor_exists():
-    assert callable(logo::Right.__init__)
+def test_logo_parametercall_constructor_exists():
+    assert callable(logo_ParameterCall.__init__)
 
 
-def test_logo::right_constructor_args():
-    sig = inspect.signature(logo::Right.__init__)
+def test_logo_parametercall_constructor_args():
+    sig = inspect.signature(logo_ParameterCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::parametercall_is_not_abstract():
-    assert not inspect.isabstract(logo::ParameterCall)
+def test_logo_right_is_not_abstract():
+    assert not inspect.isabstract(logo_Right)
 
 
-def test_logo::parametercall_constructor_exists():
-    assert callable(logo::ParameterCall.__init__)
+def test_logo_right_constructor_exists():
+    assert callable(logo_Right.__init__)
 
 
-def test_logo::parametercall_constructor_args():
-    sig = inspect.signature(logo::ParameterCall.__init__)
+def test_logo_right_constructor_args():
+    sig = inspect.signature(logo_Right.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::block_is_not_abstract():
-    assert not inspect.isabstract(logo::Block)
+def test_logo_repeat_is_not_abstract():
+    assert not inspect.isabstract(logo_Repeat)
 
 
-def test_logo::block_constructor_exists():
-    assert callable(logo::Block.__init__)
+def test_logo_repeat_constructor_exists():
+    assert callable(logo_Repeat.__init__)
 
 
-def test_logo::block_constructor_args():
-    sig = inspect.signature(logo::Block.__init__)
+def test_logo_repeat_constructor_args():
+    sig = inspect.signature(logo_Repeat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::pendown_is_not_abstract():
-    assert not inspect.isabstract(logo::PenDown)
+def test_logo_forward_is_not_abstract():
+    assert not inspect.isabstract(logo_Forward)
 
 
-def test_logo::pendown_constructor_exists():
-    assert callable(logo::PenDown.__init__)
+def test_logo_forward_constructor_exists():
+    assert callable(logo_Forward.__init__)
 
 
-def test_logo::pendown_constructor_args():
-    sig = inspect.signature(logo::PenDown.__init__)
+def test_logo_forward_constructor_args():
+    sig = inspect.signature(logo_Forward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::if_is_not_abstract():
-    assert not inspect.isabstract(logo::If)
+def test_logo_block_is_not_abstract():
+    assert not inspect.isabstract(logo_Block)
 
 
-def test_logo::if_constructor_exists():
-    assert callable(logo::If.__init__)
+def test_logo_block_constructor_exists():
+    assert callable(logo_Block.__init__)
 
 
-def test_logo::if_constructor_args():
-    sig = inspect.signature(logo::If.__init__)
+def test_logo_block_constructor_args():
+    sig = inspect.signature(logo_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::left_is_not_abstract():
-    assert not inspect.isabstract(logo::Left)
+def test_logo_left_is_not_abstract():
+    assert not inspect.isabstract(logo_Left)
 
 
-def test_logo::left_constructor_exists():
-    assert callable(logo::Left.__init__)
+def test_logo_left_constructor_exists():
+    assert callable(logo_Left.__init__)
 
 
-def test_logo::left_constructor_args():
-    sig = inspect.signature(logo::Left.__init__)
+def test_logo_left_constructor_args():
+    sig = inspect.signature(logo_Left.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::forward_is_not_abstract():
-    assert not inspect.isabstract(logo::Forward)
+def test_logo_procdeclaration_is_not_abstract():
+    assert not inspect.isabstract(logo_ProcDeclaration)
 
 
-def test_logo::forward_constructor_exists():
-    assert callable(logo::Forward.__init__)
+def test_logo_procdeclaration_constructor_exists():
+    assert callable(logo_ProcDeclaration.__init__)
 
 
-def test_logo::forward_constructor_args():
-    sig = inspect.signature(logo::Forward.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logo::while_is_not_abstract():
-    assert not inspect.isabstract(logo::While)
-
-
-def test_logo::while_constructor_exists():
-    assert callable(logo::While.__init__)
-
-
-def test_logo::while_constructor_args():
-    sig = inspect.signature(logo::While.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logo::clear_is_not_abstract():
-    assert not inspect.isabstract(logo::Clear)
-
-
-def test_logo::clear_constructor_exists():
-    assert callable(logo::Clear.__init__)
-
-
-def test_logo::clear_constructor_args():
-    sig = inspect.signature(logo::Clear.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logo::penup_is_not_abstract():
-    assert not inspect.isabstract(logo::PenUp)
-
-
-def test_logo::penup_constructor_exists():
-    assert callable(logo::PenUp.__init__)
-
-
-def test_logo::penup_constructor_args():
-    sig = inspect.signature(logo::PenUp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logo::repeat_is_not_abstract():
-    assert not inspect.isabstract(logo::Repeat)
-
-
-def test_logo::repeat_constructor_exists():
-    assert callable(logo::Repeat.__init__)
-
-
-def test_logo::repeat_constructor_args():
-    sig = inspect.signature(logo::Repeat.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logo::proccall_is_not_abstract():
-    assert not inspect.isabstract(logo::ProcCall)
-
-
-def test_logo::proccall_constructor_exists():
-    assert callable(logo::ProcCall.__init__)
-
-
-def test_logo::proccall_constructor_args():
-    sig = inspect.signature(logo::ProcCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logo::procdeclaration_is_not_abstract():
-    assert not inspect.isabstract(logo::ProcDeclaration)
-
-
-def test_logo::procdeclaration_constructor_exists():
-    assert callable(logo::ProcDeclaration.__init__)
-
-
-def test_logo::procdeclaration_constructor_args():
-    sig = inspect.signature(logo::ProcDeclaration.__init__)
+def test_logo_procdeclaration_constructor_args():
+    sig = inspect.signature(logo_ProcDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logo::procdeclaration_has_name():
-    assert hasattr(logo::ProcDeclaration, "name")
+def test_logo_procdeclaration_has_name():
+    assert hasattr(logo_ProcDeclaration, "name")
     descriptor = None
-    for klass in logo::ProcDeclaration.__mro__:
+    for klass in logo_ProcDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -436,30 +352,114 @@ def test_logo::procdeclaration_has_name():
 
 
 
-def test_logo::backward_is_not_abstract():
-    assert not inspect.isabstract(logo::Backward)
+def test_logo_clear_is_not_abstract():
+    assert not inspect.isabstract(logo_Clear)
 
 
-def test_logo::backward_constructor_exists():
-    assert callable(logo::Backward.__init__)
+def test_logo_clear_constructor_exists():
+    assert callable(logo_Clear.__init__)
 
 
-def test_logo::backward_constructor_args():
-    sig = inspect.signature(logo::Backward.__init__)
+def test_logo_clear_constructor_args():
+    sig = inspect.signature(logo_Clear.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::instruction_is_not_abstract():
-    assert not inspect.isabstract(logo::Instruction)
+def test_logo_proccall_is_not_abstract():
+    assert not inspect.isabstract(logo_ProcCall)
 
 
-def test_logo::instruction_constructor_exists():
-    assert callable(logo::Instruction.__init__)
+def test_logo_proccall_constructor_exists():
+    assert callable(logo_ProcCall.__init__)
 
 
-def test_logo::instruction_constructor_args():
-    sig = inspect.signature(logo::Instruction.__init__)
+def test_logo_proccall_constructor_args():
+    sig = inspect.signature(logo_ProcCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logo_penup_is_not_abstract():
+    assert not inspect.isabstract(logo_PenUp)
+
+
+def test_logo_penup_constructor_exists():
+    assert callable(logo_PenUp.__init__)
+
+
+def test_logo_penup_constructor_args():
+    sig = inspect.signature(logo_PenUp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logo_pendown_is_not_abstract():
+    assert not inspect.isabstract(logo_PenDown)
+
+
+def test_logo_pendown_constructor_exists():
+    assert callable(logo_PenDown.__init__)
+
+
+def test_logo_pendown_constructor_args():
+    sig = inspect.signature(logo_PenDown.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logo_if_is_not_abstract():
+    assert not inspect.isabstract(logo_If)
+
+
+def test_logo_if_constructor_exists():
+    assert callable(logo_If.__init__)
+
+
+def test_logo_if_constructor_args():
+    sig = inspect.signature(logo_If.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logo_while_is_not_abstract():
+    assert not inspect.isabstract(logo_While)
+
+
+def test_logo_while_constructor_exists():
+    assert callable(logo_While.__init__)
+
+
+def test_logo_while_constructor_args():
+    sig = inspect.signature(logo_While.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logo_backward_is_not_abstract():
+    assert not inspect.isabstract(logo_Backward)
+
+
+def test_logo_backward_constructor_exists():
+    assert callable(logo_Backward.__init__)
+
+
+def test_logo_backward_constructor_args():
+    sig = inspect.signature(logo_Backward.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logo_instruction_is_not_abstract():
+    assert not inspect.isabstract(logo_Instruction)
+
+
+def test_logo_instruction_constructor_exists():
+    assert callable(logo_Instruction.__init__)
+
+
+def test_logo_instruction_constructor_args():
+    sig = inspect.signature(logo_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -474,109 +474,106 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-logo::Parameter_strategy = st.builds(
-    logo::Parameter,
+logo_Parameter_strategy = st.builds(
+    logo_Parameter,
     name=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-logo::Mult_strategy = st.builds(
-    logo::Mult,
+logo_Greater_strategy = st.builds(
+    logo_Greater,
 )
-logo::Lower_strategy = st.builds(
-    logo::Lower,
+logo_Mult_strategy = st.builds(
+    logo_Mult,
 )
-logo::Equals_strategy = st.builds(
-    logo::Equals,
+logo_Equals_strategy = st.builds(
+    logo_Equals,
 )
-logo::Div_strategy = st.builds(
-    logo::Div,
+logo_Div_strategy = st.builds(
+    logo_Div,
 )
-logo::Greater_strategy = st.builds(
-    logo::Greater,
+logo_Plus_strategy = st.builds(
+    logo_Plus,
 )
-logo::Plus_strategy = st.builds(
-    logo::Plus,
+logo_Lower_strategy = st.builds(
+    logo_Lower,
 )
-logo::Minus_strategy = st.builds(
-    logo::Minus,
+logo_Minus_strategy = st.builds(
+    logo_Minus,
 )
-logo::Constant_strategy = st.builds(
-    logo::Constant,
+logo_Constant_strategy = st.builds(
+    logo_Constant,
     integerValue=
         st.integers()
 )
-logo::LogoProgram_strategy = st.builds(
-    logo::LogoProgram,
+logo_LogoProgram_strategy = st.builds(
+    logo_LogoProgram,
 )
-logo::Expression_strategy = st.builds(
-    logo::Expression,
+logo_Expression_strategy = st.builds(
+    logo_Expression,
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-logo::Right_strategy = st.builds(
-    logo::Right,
+logo_ParameterCall_strategy = st.builds(
+    logo_ParameterCall,
 )
-logo::ParameterCall_strategy = st.builds(
-    logo::ParameterCall,
+logo_Right_strategy = st.builds(
+    logo_Right,
 )
-logo::Block_strategy = st.builds(
-    logo::Block,
+logo_Repeat_strategy = st.builds(
+    logo_Repeat,
 )
-logo::PenDown_strategy = st.builds(
-    logo::PenDown,
+logo_Forward_strategy = st.builds(
+    logo_Forward,
 )
-logo::If_strategy = st.builds(
-    logo::If,
+logo_Block_strategy = st.builds(
+    logo_Block,
 )
-logo::Left_strategy = st.builds(
-    logo::Left,
+logo_Left_strategy = st.builds(
+    logo_Left,
 )
-logo::Forward_strategy = st.builds(
-    logo::Forward,
-)
-logo::While_strategy = st.builds(
-    logo::While,
-)
-logo::Clear_strategy = st.builds(
-    logo::Clear,
-)
-logo::PenUp_strategy = st.builds(
-    logo::PenUp,
-)
-logo::Repeat_strategy = st.builds(
-    logo::Repeat,
-)
-logo::ProcCall_strategy = st.builds(
-    logo::ProcCall,
-)
-logo::ProcDeclaration_strategy = st.builds(
-    logo::ProcDeclaration,
+logo_ProcDeclaration_strategy = st.builds(
+    logo_ProcDeclaration,
     name=
         safe_text
 )
-logo::Backward_strategy = st.builds(
-    logo::Backward,
+logo_Clear_strategy = st.builds(
+    logo_Clear,
 )
-logo::Instruction_strategy = st.builds(
-    logo::Instruction,
+logo_ProcCall_strategy = st.builds(
+    logo_ProcCall,
+)
+logo_PenUp_strategy = st.builds(
+    logo_PenUp,
+)
+logo_PenDown_strategy = st.builds(
+    logo_PenDown,
+)
+logo_If_strategy = st.builds(
+    logo_If,
+)
+logo_While_strategy = st.builds(
+    logo_While,
+)
+logo_Backward_strategy = st.builds(
+    logo_Backward,
+)
+logo_Instruction_strategy = st.builds(
+    logo_Instruction,
 )
 
-@given(instance=logo::Parameter_strategy)
+@given(instance=logo_Parameter_strategy)
 @settings(max_examples=50)
-def test_logo::parameter_instantiation(instance):
-    assert isinstance(instance, logo::Parameter)
-
-@given(instance=logo::Parameter_strategy)
-def test_logo::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logo_parameter_instantiation(instance):
+    assert isinstance(instance, logo_Parameter)
 
 
-@given(instance=logo::Parameter_strategy)
-def test_logo::parameter_name_setter(instance):
+
+@given(instance=logo_Parameter_strategy)
+def test_logo_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -586,154 +583,148 @@ def test_logo::parameter_name_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=logo::Mult_strategy)
+@given(instance=logo_Greater_strategy)
 @settings(max_examples=50)
-def test_logo::mult_instantiation(instance):
-    assert isinstance(instance, logo::Mult)
+def test_logo_greater_instantiation(instance):
+    assert isinstance(instance, logo_Greater)
 
-@given(instance=logo::Lower_strategy)
+@given(instance=logo_Mult_strategy)
 @settings(max_examples=50)
-def test_logo::lower_instantiation(instance):
-    assert isinstance(instance, logo::Lower)
+def test_logo_mult_instantiation(instance):
+    assert isinstance(instance, logo_Mult)
 
-@given(instance=logo::Equals_strategy)
+@given(instance=logo_Equals_strategy)
 @settings(max_examples=50)
-def test_logo::equals_instantiation(instance):
-    assert isinstance(instance, logo::Equals)
+def test_logo_equals_instantiation(instance):
+    assert isinstance(instance, logo_Equals)
 
-@given(instance=logo::Div_strategy)
+@given(instance=logo_Div_strategy)
 @settings(max_examples=50)
-def test_logo::div_instantiation(instance):
-    assert isinstance(instance, logo::Div)
+def test_logo_div_instantiation(instance):
+    assert isinstance(instance, logo_Div)
 
-@given(instance=logo::Greater_strategy)
+@given(instance=logo_Plus_strategy)
 @settings(max_examples=50)
-def test_logo::greater_instantiation(instance):
-    assert isinstance(instance, logo::Greater)
+def test_logo_plus_instantiation(instance):
+    assert isinstance(instance, logo_Plus)
 
-@given(instance=logo::Plus_strategy)
+@given(instance=logo_Lower_strategy)
 @settings(max_examples=50)
-def test_logo::plus_instantiation(instance):
-    assert isinstance(instance, logo::Plus)
+def test_logo_lower_instantiation(instance):
+    assert isinstance(instance, logo_Lower)
 
-@given(instance=logo::Minus_strategy)
+@given(instance=logo_Minus_strategy)
 @settings(max_examples=50)
-def test_logo::minus_instantiation(instance):
-    assert isinstance(instance, logo::Minus)
+def test_logo_minus_instantiation(instance):
+    assert isinstance(instance, logo_Minus)
 
-@given(instance=logo::Constant_strategy)
+@given(instance=logo_Constant_strategy)
 @settings(max_examples=50)
-def test_logo::constant_instantiation(instance):
-    assert isinstance(instance, logo::Constant)
-
-@given(instance=logo::Constant_strategy)
-def test_logo::constant_integerValue_type(instance):
-    assert isinstance(instance.integerValue, int)
+def test_logo_constant_instantiation(instance):
+    assert isinstance(instance, logo_Constant)
 
 
-@given(instance=logo::Constant_strategy)
-def test_logo::constant_integerValue_setter(instance):
+
+@given(instance=logo_Constant_strategy)
+def test_logo_constant_integerValue_setter(instance):
     original = instance.integerValue
     instance.integerValue = original
     assert instance.integerValue == original
 
-@given(instance=logo::LogoProgram_strategy)
+@given(instance=logo_LogoProgram_strategy)
 @settings(max_examples=50)
-def test_logo::logoprogram_instantiation(instance):
-    assert isinstance(instance, logo::LogoProgram)
+def test_logo_logoprogram_instantiation(instance):
+    assert isinstance(instance, logo_LogoProgram)
 
-@given(instance=logo::Expression_strategy)
+@given(instance=logo_Expression_strategy)
 @settings(max_examples=50)
-def test_logo::expression_instantiation(instance):
-    assert isinstance(instance, logo::Expression)
+def test_logo_expression_instantiation(instance):
+    assert isinstance(instance, logo_Expression)
 
 @given(instance=Instruction_strategy)
 @settings(max_examples=50)
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=logo::Right_strategy)
+@given(instance=logo_ParameterCall_strategy)
 @settings(max_examples=50)
-def test_logo::right_instantiation(instance):
-    assert isinstance(instance, logo::Right)
+def test_logo_parametercall_instantiation(instance):
+    assert isinstance(instance, logo_ParameterCall)
 
-@given(instance=logo::ParameterCall_strategy)
+@given(instance=logo_Right_strategy)
 @settings(max_examples=50)
-def test_logo::parametercall_instantiation(instance):
-    assert isinstance(instance, logo::ParameterCall)
+def test_logo_right_instantiation(instance):
+    assert isinstance(instance, logo_Right)
 
-@given(instance=logo::Block_strategy)
+@given(instance=logo_Repeat_strategy)
 @settings(max_examples=50)
-def test_logo::block_instantiation(instance):
-    assert isinstance(instance, logo::Block)
+def test_logo_repeat_instantiation(instance):
+    assert isinstance(instance, logo_Repeat)
 
-@given(instance=logo::PenDown_strategy)
+@given(instance=logo_Forward_strategy)
 @settings(max_examples=50)
-def test_logo::pendown_instantiation(instance):
-    assert isinstance(instance, logo::PenDown)
+def test_logo_forward_instantiation(instance):
+    assert isinstance(instance, logo_Forward)
 
-@given(instance=logo::If_strategy)
+@given(instance=logo_Block_strategy)
 @settings(max_examples=50)
-def test_logo::if_instantiation(instance):
-    assert isinstance(instance, logo::If)
+def test_logo_block_instantiation(instance):
+    assert isinstance(instance, logo_Block)
 
-@given(instance=logo::Left_strategy)
+@given(instance=logo_Left_strategy)
 @settings(max_examples=50)
-def test_logo::left_instantiation(instance):
-    assert isinstance(instance, logo::Left)
+def test_logo_left_instantiation(instance):
+    assert isinstance(instance, logo_Left)
 
-@given(instance=logo::Forward_strategy)
+@given(instance=logo_ProcDeclaration_strategy)
 @settings(max_examples=50)
-def test_logo::forward_instantiation(instance):
-    assert isinstance(instance, logo::Forward)
-
-@given(instance=logo::While_strategy)
-@settings(max_examples=50)
-def test_logo::while_instantiation(instance):
-    assert isinstance(instance, logo::While)
-
-@given(instance=logo::Clear_strategy)
-@settings(max_examples=50)
-def test_logo::clear_instantiation(instance):
-    assert isinstance(instance, logo::Clear)
-
-@given(instance=logo::PenUp_strategy)
-@settings(max_examples=50)
-def test_logo::penup_instantiation(instance):
-    assert isinstance(instance, logo::PenUp)
-
-@given(instance=logo::Repeat_strategy)
-@settings(max_examples=50)
-def test_logo::repeat_instantiation(instance):
-    assert isinstance(instance, logo::Repeat)
-
-@given(instance=logo::ProcCall_strategy)
-@settings(max_examples=50)
-def test_logo::proccall_instantiation(instance):
-    assert isinstance(instance, logo::ProcCall)
-
-@given(instance=logo::ProcDeclaration_strategy)
-@settings(max_examples=50)
-def test_logo::procdeclaration_instantiation(instance):
-    assert isinstance(instance, logo::ProcDeclaration)
-
-@given(instance=logo::ProcDeclaration_strategy)
-def test_logo::procdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logo_procdeclaration_instantiation(instance):
+    assert isinstance(instance, logo_ProcDeclaration)
 
 
-@given(instance=logo::ProcDeclaration_strategy)
-def test_logo::procdeclaration_name_setter(instance):
+
+@given(instance=logo_ProcDeclaration_strategy)
+def test_logo_procdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=logo::Backward_strategy)
+@given(instance=logo_Clear_strategy)
 @settings(max_examples=50)
-def test_logo::backward_instantiation(instance):
-    assert isinstance(instance, logo::Backward)
+def test_logo_clear_instantiation(instance):
+    assert isinstance(instance, logo_Clear)
 
-@given(instance=logo::Instruction_strategy)
+@given(instance=logo_ProcCall_strategy)
 @settings(max_examples=50)
-def test_logo::instruction_instantiation(instance):
-    assert isinstance(instance, logo::Instruction)
+def test_logo_proccall_instantiation(instance):
+    assert isinstance(instance, logo_ProcCall)
+
+@given(instance=logo_PenUp_strategy)
+@settings(max_examples=50)
+def test_logo_penup_instantiation(instance):
+    assert isinstance(instance, logo_PenUp)
+
+@given(instance=logo_PenDown_strategy)
+@settings(max_examples=50)
+def test_logo_pendown_instantiation(instance):
+    assert isinstance(instance, logo_PenDown)
+
+@given(instance=logo_If_strategy)
+@settings(max_examples=50)
+def test_logo_if_instantiation(instance):
+    assert isinstance(instance, logo_If)
+
+@given(instance=logo_While_strategy)
+@settings(max_examples=50)
+def test_logo_while_instantiation(instance):
+    assert isinstance(instance, logo_While)
+
+@given(instance=logo_Backward_strategy)
+@settings(max_examples=50)
+def test_logo_backward_instantiation(instance):
+    assert isinstance(instance, logo_Backward)
+
+@given(instance=logo_Instruction_strategy)
+@settings(max_examples=50)
+def test_logo_instruction_instantiation(instance):
+    assert isinstance(instance, logo_Instruction)

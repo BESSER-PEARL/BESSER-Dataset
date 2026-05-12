@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Library::Writer,
-    Library::Library,
-    Library::Book,
+from python_code import (
+    Library_Writer,
+    Library_Library,
+    Library_Book,
     BookCategory,
 )
 
@@ -18,44 +18,44 @@ from classes import (
 
 
 
-def test_library::writer_is_not_abstract():
-    assert not inspect.isabstract(Library::Writer)
+def test_library_writer_is_not_abstract():
+    assert not inspect.isabstract(Library_Writer)
 
 
-def test_library::writer_constructor_exists():
-    assert callable(Library::Writer.__init__)
+def test_library_writer_constructor_exists():
+    assert callable(Library_Writer.__init__)
 
 
-def test_library::writer_constructor_args():
-    sig = inspect.signature(Library::Writer.__init__)
+def test_library_writer_constructor_args():
+    sig = inspect.signature(Library_Writer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(Library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(Library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(Library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(Library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(Library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(Library_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(Library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(Library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(Library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(Library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(Library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(Library_Book.__init__)
     params = list(sig.parameters.keys())
 
 def test_bookcategory_exists():
@@ -66,8 +66,8 @@ def test_bookcategory_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BookCategory]
     expected_literals = [
-        "BIOGRAPHY",
         "SCIENCE_FICTION",
+        "BIOGRAPHY",
         "MYSTERY",
     ]
     # Check that all expected literals exist
@@ -86,27 +86,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Library::Writer_strategy = st.builds(
-    Library::Writer,
+Library_Writer_strategy = st.builds(
+    Library_Writer,
 )
-Library::Library_strategy = st.builds(
-    Library::Library,
+Library_Library_strategy = st.builds(
+    Library_Library,
 )
-Library::Book_strategy = st.builds(
-    Library::Book,
+Library_Book_strategy = st.builds(
+    Library_Book,
 )
 
-@given(instance=Library::Writer_strategy)
+@given(instance=Library_Writer_strategy)
 @settings(max_examples=50)
-def test_library::writer_instantiation(instance):
-    assert isinstance(instance, Library::Writer)
+def test_library_writer_instantiation(instance):
+    assert isinstance(instance, Library_Writer)
 
-@given(instance=Library::Library_strategy)
+@given(instance=Library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, Library::Library)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, Library_Library)
 
-@given(instance=Library::Book_strategy)
+@given(instance=Library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, Library::Book)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, Library_Book)

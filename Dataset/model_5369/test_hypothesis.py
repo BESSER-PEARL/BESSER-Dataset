@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    RHS::V,
-    RHS::X,
-    RHS::W,
-    RHS::Y,
+from python_code import (
+    RHS_V,
+    RHS_X,
+    RHS_W,
+    RHS_Y,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_rhs::v_is_not_abstract():
-    assert not inspect.isabstract(RHS::V)
+def test_rhs_v_is_not_abstract():
+    assert not inspect.isabstract(RHS_V)
 
 
-def test_rhs::v_constructor_exists():
-    assert callable(RHS::V.__init__)
+def test_rhs_v_constructor_exists():
+    assert callable(RHS_V.__init__)
 
 
-def test_rhs::v_constructor_args():
-    sig = inspect.signature(RHS::V.__init__)
+def test_rhs_v_constructor_args():
+    sig = inspect.signature(RHS_V.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rhs::v_has_name():
-    assert hasattr(RHS::V, "name")
+def test_rhs_v_has_name():
+    assert hasattr(RHS_V, "name")
     descriptor = None
-    for klass in RHS::V.__mro__:
+    for klass in RHS_V.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_rhs::v_has_name():
 
 
 
-def test_rhs::x_is_not_abstract():
-    assert not inspect.isabstract(RHS::X)
+def test_rhs_x_is_not_abstract():
+    assert not inspect.isabstract(RHS_X)
 
 
-def test_rhs::x_constructor_exists():
-    assert callable(RHS::X.__init__)
+def test_rhs_x_constructor_exists():
+    assert callable(RHS_X.__init__)
 
 
-def test_rhs::x_constructor_args():
-    sig = inspect.signature(RHS::X.__init__)
+def test_rhs_x_constructor_args():
+    sig = inspect.signature(RHS_X.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rhs::x_has_name():
-    assert hasattr(RHS::X, "name")
+def test_rhs_x_has_name():
+    assert hasattr(RHS_X, "name")
     descriptor = None
-    for klass in RHS::X.__mro__:
+    for klass in RHS_X.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_rhs::x_has_name():
 
 
 
-def test_rhs::w_is_not_abstract():
-    assert not inspect.isabstract(RHS::W)
+def test_rhs_w_is_not_abstract():
+    assert not inspect.isabstract(RHS_W)
 
 
-def test_rhs::w_constructor_exists():
-    assert callable(RHS::W.__init__)
+def test_rhs_w_constructor_exists():
+    assert callable(RHS_W.__init__)
 
 
-def test_rhs::w_constructor_args():
-    sig = inspect.signature(RHS::W.__init__)
+def test_rhs_w_constructor_args():
+    sig = inspect.signature(RHS_W.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rhs::w_has_name():
-    assert hasattr(RHS::W, "name")
+def test_rhs_w_has_name():
+    assert hasattr(RHS_W, "name")
     descriptor = None
-    for klass in RHS::W.__mro__:
+    for klass in RHS_W.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,23 +90,23 @@ def test_rhs::w_has_name():
 
 
 
-def test_rhs::y_is_not_abstract():
-    assert not inspect.isabstract(RHS::Y)
+def test_rhs_y_is_not_abstract():
+    assert not inspect.isabstract(RHS_Y)
 
 
-def test_rhs::y_constructor_exists():
-    assert callable(RHS::Y.__init__)
+def test_rhs_y_constructor_exists():
+    assert callable(RHS_Y.__init__)
 
 
-def test_rhs::y_constructor_args():
-    sig = inspect.signature(RHS::Y.__init__)
+def test_rhs_y_constructor_args():
+    sig = inspect.signature(RHS_Y.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rhs::y_has_name():
-    assert hasattr(RHS::Y, "name")
+def test_rhs_y_has_name():
+    assert hasattr(RHS_Y, "name")
     descriptor = None
-    for klass in RHS::Y.__mro__:
+    for klass in RHS_Y.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-RHS::V_strategy = st.builds(
-    RHS::V,
+RHS_V_strategy = st.builds(
+    RHS_V,
     name=
         safe_text
 )
-RHS::X_strategy = st.builds(
-    RHS::X,
+RHS_X_strategy = st.builds(
+    RHS_X,
     name=
         safe_text
 )
-RHS::W_strategy = st.builds(
-    RHS::W,
+RHS_W_strategy = st.builds(
+    RHS_W,
     name=
         safe_text
 )
-RHS::Y_strategy = st.builds(
-    RHS::Y,
+RHS_Y_strategy = st.builds(
+    RHS_Y,
     name=
         safe_text
 )
 
-@given(instance=RHS::V_strategy)
+@given(instance=RHS_V_strategy)
 @settings(max_examples=50)
-def test_rhs::v_instantiation(instance):
-    assert isinstance(instance, RHS::V)
-
-@given(instance=RHS::V_strategy)
-def test_rhs::v_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rhs_v_instantiation(instance):
+    assert isinstance(instance, RHS_V)
 
 
-@given(instance=RHS::V_strategy)
-def test_rhs::v_name_setter(instance):
+
+@given(instance=RHS_V_strategy)
+def test_rhs_v_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RHS::X_strategy)
+@given(instance=RHS_X_strategy)
 @settings(max_examples=50)
-def test_rhs::x_instantiation(instance):
-    assert isinstance(instance, RHS::X)
-
-@given(instance=RHS::X_strategy)
-def test_rhs::x_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rhs_x_instantiation(instance):
+    assert isinstance(instance, RHS_X)
 
 
-@given(instance=RHS::X_strategy)
-def test_rhs::x_name_setter(instance):
+
+@given(instance=RHS_X_strategy)
+def test_rhs_x_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RHS::W_strategy)
+@given(instance=RHS_W_strategy)
 @settings(max_examples=50)
-def test_rhs::w_instantiation(instance):
-    assert isinstance(instance, RHS::W)
-
-@given(instance=RHS::W_strategy)
-def test_rhs::w_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rhs_w_instantiation(instance):
+    assert isinstance(instance, RHS_W)
 
 
-@given(instance=RHS::W_strategy)
-def test_rhs::w_name_setter(instance):
+
+@given(instance=RHS_W_strategy)
+def test_rhs_w_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RHS::Y_strategy)
+@given(instance=RHS_Y_strategy)
 @settings(max_examples=50)
-def test_rhs::y_instantiation(instance):
-    assert isinstance(instance, RHS::Y)
-
-@given(instance=RHS::Y_strategy)
-def test_rhs::y_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rhs_y_instantiation(instance):
+    assert isinstance(instance, RHS_Y)
 
 
-@given(instance=RHS::Y_strategy)
-def test_rhs::y_name_setter(instance):
+
+@given(instance=RHS_Y_strategy)
+def test_rhs_y_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

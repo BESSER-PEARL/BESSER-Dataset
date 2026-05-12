@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CoachBusWithEDataType::Employee,
+from python_code import (
+    CoachBusWithEDataType_Employee,
     Employee,
-    CoachBusWithEDataType::Manager,
-    CoachBusWithEDataType::SecurityGuard,
+    CoachBusWithEDataType_Manager,
+    CoachBusWithEDataType_SecurityGuard,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_coachbuswithedatatype::employee_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::Employee)
+def test_coachbuswithedatatype_employee_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_Employee)
 
 
-def test_coachbuswithedatatype::employee_constructor_exists():
-    assert callable(CoachBusWithEDataType::Employee.__init__)
+def test_coachbuswithedatatype_employee_constructor_exists():
+    assert callable(CoachBusWithEDataType_Employee.__init__)
 
 
-def test_coachbuswithedatatype::employee_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::Employee.__init__)
+def test_coachbuswithedatatype_employee_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_coachbuswithedatatype::employee_has_id():
-    assert hasattr(CoachBusWithEDataType::Employee, "id")
+def test_coachbuswithedatatype_employee_has_id():
+    assert hasattr(CoachBusWithEDataType_Employee, "id")
     descriptor = None
-    for klass in CoachBusWithEDataType::Employee.__mro__:
+    for klass in CoachBusWithEDataType_Employee.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -56,30 +56,30 @@ def test_employee_constructor_args():
 
 
 
-def test_coachbuswithedatatype::manager_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::Manager)
+def test_coachbuswithedatatype_manager_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_Manager)
 
 
-def test_coachbuswithedatatype::manager_constructor_exists():
-    assert callable(CoachBusWithEDataType::Manager.__init__)
+def test_coachbuswithedatatype_manager_constructor_exists():
+    assert callable(CoachBusWithEDataType_Manager.__init__)
 
 
-def test_coachbuswithedatatype::manager_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::Manager.__init__)
+def test_coachbuswithedatatype_manager_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_Manager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_coachbuswithedatatype::securityguard_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::SecurityGuard)
+def test_coachbuswithedatatype_securityguard_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_SecurityGuard)
 
 
-def test_coachbuswithedatatype::securityguard_constructor_exists():
-    assert callable(CoachBusWithEDataType::SecurityGuard.__init__)
+def test_coachbuswithedatatype_securityguard_constructor_exists():
+    assert callable(CoachBusWithEDataType_SecurityGuard.__init__)
 
 
-def test_coachbuswithedatatype::securityguard_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::SecurityGuard.__init__)
+def test_coachbuswithedatatype_securityguard_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_SecurityGuard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,33 +94,30 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CoachBusWithEDataType::Employee_strategy = st.builds(
-    CoachBusWithEDataType::Employee,
+CoachBusWithEDataType_Employee_strategy = st.builds(
+    CoachBusWithEDataType_Employee,
     id=
         st.integers()
 )
 Employee_strategy = st.builds(
     Employee,
 )
-CoachBusWithEDataType::Manager_strategy = st.builds(
-    CoachBusWithEDataType::Manager,
+CoachBusWithEDataType_Manager_strategy = st.builds(
+    CoachBusWithEDataType_Manager,
 )
-CoachBusWithEDataType::SecurityGuard_strategy = st.builds(
-    CoachBusWithEDataType::SecurityGuard,
+CoachBusWithEDataType_SecurityGuard_strategy = st.builds(
+    CoachBusWithEDataType_SecurityGuard,
 )
 
-@given(instance=CoachBusWithEDataType::Employee_strategy)
+@given(instance=CoachBusWithEDataType_Employee_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::employee_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::Employee)
-
-@given(instance=CoachBusWithEDataType::Employee_strategy)
-def test_coachbuswithedatatype::employee_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_coachbuswithedatatype_employee_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_Employee)
 
 
-@given(instance=CoachBusWithEDataType::Employee_strategy)
-def test_coachbuswithedatatype::employee_id_setter(instance):
+
+@given(instance=CoachBusWithEDataType_Employee_strategy)
+def test_coachbuswithedatatype_employee_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -130,12 +127,12 @@ def test_coachbuswithedatatype::employee_id_setter(instance):
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=CoachBusWithEDataType::Manager_strategy)
+@given(instance=CoachBusWithEDataType_Manager_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::manager_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::Manager)
+def test_coachbuswithedatatype_manager_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_Manager)
 
-@given(instance=CoachBusWithEDataType::SecurityGuard_strategy)
+@given(instance=CoachBusWithEDataType_SecurityGuard_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::securityguard_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::SecurityGuard)
+def test_coachbuswithedatatype_securityguard_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_SecurityGuard)

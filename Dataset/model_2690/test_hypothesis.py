@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    refac::K,
-    refac::X,
-    refac::N99,
-    refac::M,
-    refac::W,
-    refac::C,
-    refac::A,
-    refac::B,
+from python_code import (
+    refac_K,
+    refac_X,
+    refac_N99,
+    refac_M,
+    refac_W,
+    refac_C,
+    refac_A,
+    refac_B,
 )
 
 # =============================================================================
@@ -22,79 +22,79 @@ from classes import (
 
 
 
-def test_refac::k_is_not_abstract():
-    assert not inspect.isabstract(refac::K)
+def test_refac_k_is_not_abstract():
+    assert not inspect.isabstract(refac_K)
 
 
-def test_refac::k_constructor_exists():
-    assert callable(refac::K.__init__)
+def test_refac_k_constructor_exists():
+    assert callable(refac_K.__init__)
 
 
-def test_refac::k_constructor_args():
-    sig = inspect.signature(refac::K.__init__)
+def test_refac_k_constructor_args():
+    sig = inspect.signature(refac_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refac::x_is_not_abstract():
-    assert not inspect.isabstract(refac::X)
+def test_refac_x_is_not_abstract():
+    assert not inspect.isabstract(refac_X)
 
 
-def test_refac::x_constructor_exists():
-    assert callable(refac::X.__init__)
+def test_refac_x_constructor_exists():
+    assert callable(refac_X.__init__)
 
 
-def test_refac::x_constructor_args():
-    sig = inspect.signature(refac::X.__init__)
+def test_refac_x_constructor_args():
+    sig = inspect.signature(refac_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refac::n99_is_not_abstract():
-    assert not inspect.isabstract(refac::N99)
+def test_refac_n99_is_not_abstract():
+    assert not inspect.isabstract(refac_N99)
 
 
-def test_refac::n99_constructor_exists():
-    assert callable(refac::N99.__init__)
+def test_refac_n99_constructor_exists():
+    assert callable(refac_N99.__init__)
 
 
-def test_refac::n99_constructor_args():
-    sig = inspect.signature(refac::N99.__init__)
+def test_refac_n99_constructor_args():
+    sig = inspect.signature(refac_N99.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refac::m_is_not_abstract():
-    assert not inspect.isabstract(refac::M)
+def test_refac_m_is_not_abstract():
+    assert not inspect.isabstract(refac_M)
 
 
-def test_refac::m_constructor_exists():
-    assert callable(refac::M.__init__)
+def test_refac_m_constructor_exists():
+    assert callable(refac_M.__init__)
 
 
-def test_refac::m_constructor_args():
-    sig = inspect.signature(refac::M.__init__)
+def test_refac_m_constructor_args():
+    sig = inspect.signature(refac_M.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refac::w_is_not_abstract():
-    assert not inspect.isabstract(refac::W)
+def test_refac_w_is_not_abstract():
+    assert not inspect.isabstract(refac_W)
 
 
-def test_refac::w_constructor_exists():
-    assert callable(refac::W.__init__)
+def test_refac_w_constructor_exists():
+    assert callable(refac_W.__init__)
 
 
-def test_refac::w_constructor_args():
-    sig = inspect.signature(refac::W.__init__)
+def test_refac_w_constructor_args():
+    sig = inspect.signature(refac_W.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_refac::w_has_name():
-    assert hasattr(refac::W, "name")
+def test_refac_w_has_name():
+    assert hasattr(refac_W, "name")
     descriptor = None
-    for klass in refac::W.__mro__:
+    for klass in refac_W.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -102,44 +102,44 @@ def test_refac::w_has_name():
 
 
 
-def test_refac::c_is_not_abstract():
-    assert not inspect.isabstract(refac::C)
+def test_refac_c_is_not_abstract():
+    assert not inspect.isabstract(refac_C)
 
 
-def test_refac::c_constructor_exists():
-    assert callable(refac::C.__init__)
+def test_refac_c_constructor_exists():
+    assert callable(refac_C.__init__)
 
 
-def test_refac::c_constructor_args():
-    sig = inspect.signature(refac::C.__init__)
+def test_refac_c_constructor_args():
+    sig = inspect.signature(refac_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refac::a_is_not_abstract():
-    assert not inspect.isabstract(refac::A)
+def test_refac_a_is_not_abstract():
+    assert not inspect.isabstract(refac_A)
 
 
-def test_refac::a_constructor_exists():
-    assert callable(refac::A.__init__)
+def test_refac_a_constructor_exists():
+    assert callable(refac_A.__init__)
 
 
-def test_refac::a_constructor_args():
-    sig = inspect.signature(refac::A.__init__)
+def test_refac_a_constructor_args():
+    sig = inspect.signature(refac_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refac::b_is_not_abstract():
-    assert not inspect.isabstract(refac::B)
+def test_refac_b_is_not_abstract():
+    assert not inspect.isabstract(refac_B)
 
 
-def test_refac::b_constructor_exists():
-    assert callable(refac::B.__init__)
+def test_refac_b_constructor_exists():
+    assert callable(refac_B.__init__)
 
 
-def test_refac::b_constructor_args():
-    sig = inspect.signature(refac::B.__init__)
+def test_refac_b_constructor_args():
+    sig = inspect.signature(refac_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,80 +154,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-refac::K_strategy = st.builds(
-    refac::K,
+refac_K_strategy = st.builds(
+    refac_K,
 )
-refac::X_strategy = st.builds(
-    refac::X,
+refac_X_strategy = st.builds(
+    refac_X,
 )
-refac::N99_strategy = st.builds(
-    refac::N99,
+refac_N99_strategy = st.builds(
+    refac_N99,
 )
-refac::M_strategy = st.builds(
-    refac::M,
+refac_M_strategy = st.builds(
+    refac_M,
 )
-refac::W_strategy = st.builds(
-    refac::W,
+refac_W_strategy = st.builds(
+    refac_W,
     name=
         safe_text
 )
-refac::C_strategy = st.builds(
-    refac::C,
+refac_C_strategy = st.builds(
+    refac_C,
 )
-refac::A_strategy = st.builds(
-    refac::A,
+refac_A_strategy = st.builds(
+    refac_A,
 )
-refac::B_strategy = st.builds(
-    refac::B,
+refac_B_strategy = st.builds(
+    refac_B,
 )
 
-@given(instance=refac::K_strategy)
+@given(instance=refac_K_strategy)
 @settings(max_examples=50)
-def test_refac::k_instantiation(instance):
-    assert isinstance(instance, refac::K)
+def test_refac_k_instantiation(instance):
+    assert isinstance(instance, refac_K)
 
-@given(instance=refac::X_strategy)
+@given(instance=refac_X_strategy)
 @settings(max_examples=50)
-def test_refac::x_instantiation(instance):
-    assert isinstance(instance, refac::X)
+def test_refac_x_instantiation(instance):
+    assert isinstance(instance, refac_X)
 
-@given(instance=refac::N99_strategy)
+@given(instance=refac_N99_strategy)
 @settings(max_examples=50)
-def test_refac::n99_instantiation(instance):
-    assert isinstance(instance, refac::N99)
+def test_refac_n99_instantiation(instance):
+    assert isinstance(instance, refac_N99)
 
-@given(instance=refac::M_strategy)
+@given(instance=refac_M_strategy)
 @settings(max_examples=50)
-def test_refac::m_instantiation(instance):
-    assert isinstance(instance, refac::M)
+def test_refac_m_instantiation(instance):
+    assert isinstance(instance, refac_M)
 
-@given(instance=refac::W_strategy)
+@given(instance=refac_W_strategy)
 @settings(max_examples=50)
-def test_refac::w_instantiation(instance):
-    assert isinstance(instance, refac::W)
-
-@given(instance=refac::W_strategy)
-def test_refac::w_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_refac_w_instantiation(instance):
+    assert isinstance(instance, refac_W)
 
 
-@given(instance=refac::W_strategy)
-def test_refac::w_name_setter(instance):
+
+@given(instance=refac_W_strategy)
+def test_refac_w_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=refac::C_strategy)
+@given(instance=refac_C_strategy)
 @settings(max_examples=50)
-def test_refac::c_instantiation(instance):
-    assert isinstance(instance, refac::C)
+def test_refac_c_instantiation(instance):
+    assert isinstance(instance, refac_C)
 
-@given(instance=refac::A_strategy)
+@given(instance=refac_A_strategy)
 @settings(max_examples=50)
-def test_refac::a_instantiation(instance):
-    assert isinstance(instance, refac::A)
+def test_refac_a_instantiation(instance):
+    assert isinstance(instance, refac_A)
 
-@given(instance=refac::B_strategy)
+@given(instance=refac_B_strategy)
 @settings(max_examples=50)
-def test_refac::b_instantiation(instance):
-    assert isinstance(instance, refac::B)
+def test_refac_b_instantiation(instance):
+    assert isinstance(instance, refac_B)

@@ -3,108 +3,108 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedFunction,
-    behaviour::UnaryFunction,
-    behaviour::BinaryFunction,
+    behaviour_UnaryFunction,
+    behaviour_BinaryFunction,
     Duration,
-    behaviour::MonthDuration,
-    behaviour::NumericPrimitive,
+    behaviour_MonthDuration,
+    behaviour_NumericPrimitive,
     TimeExpression,
-    behaviour::While,
+    behaviour_While,
     LocationExpression,
-    behaviour::CoordinateLocationExpression,
-    behaviour::NameLocationExpression,
+    behaviour_CoordinateLocationExpression,
+    behaviour_NameLocationExpression,
     BinaryBooleanFunction,
-    behaviour::ComparisonBooleanFunction,
+    behaviour_ComparisonBooleanFunction,
     BinaryFunction,
-    behaviour::BinaryArithmeticFunction,
-    behaviour::BinaryLocationFunction,
-    behaviour::BinaryBooleanFunction,
+    behaviour_BinaryArithmeticFunction,
+    behaviour_BinaryLocationFunction,
+    behaviour_BinaryBooleanFunction,
     UnaryFunction,
-    behaviour::UnaryNumericFunction,
-    behaviour::UnaryLocationFunction,
-    behaviour::UnaryEntityFunction,
-    behaviour::UnaryStringFunction,
+    behaviour_UnaryNumericFunction,
+    behaviour_UnaryEntityFunction,
+    behaviour_UnaryLocationFunction,
+    behaviour_UnaryStringFunction,
     Edge,
-    behaviour::FalseEdge,
-    behaviour::TrueEdge,
-    behaviour::UnconditionedEdge,
+    behaviour_TrueEdge,
+    behaviour_FalseEdge,
+    behaviour_UnconditionedEdge,
     PrimitiveActivity,
-    behaviour::Remove,
-    behaviour::Add,
-    behaviour::Die,
-    behaviour::Reproduce,
-    behaviour::Move,
+    behaviour_Die,
+    behaviour_Reproduce,
+    behaviour_Remove,
+    behaviour_Add,
+    behaviour_Move,
     ControlNode,
-    behaviour::Decision,
-    behaviour::Merge,
-    behaviour::Fork,
-    behaviour::Join,
-    behaviour::TimeExpression,
+    behaviour_Join,
+    behaviour_Decision,
+    behaviour_Merge,
+    behaviour_Fork,
+    behaviour_TimeExpression,
     Node,
-    behaviour::ExecutableNode,
-    behaviour::ControlNode,
-    behaviour::LogicBooleanFunction,
-    behaviour::OccupationBooleanFunction,
-    behaviour::Behavior,
-    behaviour::EntityClass,
+    behaviour_ExecutableNode,
+    behaviour_ControlNode,
+    behaviour_LogicBooleanFunction,
+    behaviour_OccupationBooleanFunction,
+    behaviour_Behavior,
+    behaviour_EntityClass,
     Function,
-    behaviour::NamedFunction,
-    behaviour::AnonymousFunction,
-    behaviour::Node,
-    behaviour::Edge,
-    behaviour::End,
-    behaviour::Start,
+    behaviour_NamedFunction,
+    behaviour_AnonymousFunction,
+    behaviour_Node,
+    behaviour_Edge,
+    behaviour_End,
+    behaviour_Start,
     ExecutableNode,
-    behaviour::PrimitiveActivity,
-    behaviour::Equation,
+    behaviour_PrimitiveActivity,
+    behaviour_Equation,
     Behavior,
-    behaviour::ActivityDiagramBehavior,
-    behaviour::EquationBehaviour,
-    behaviour::Duration,
+    behaviour_ActivityDiagramBehavior,
+    behaviour_EquationBehaviour,
+    behaviour_Duration,
     VariableClass,
-    behaviour::ParameterClass,
-    behaviour::AttributeClass,
-    behaviour::Type,
+    behaviour_ParameterClass,
+    behaviour_AttributeClass,
+    behaviour_Type,
     PrimitiveExpression,
-    behaviour::BooleanPrimitive,
-    behaviour::LocationPrimitive,
-    behaviour::EntitySetPrimitive,
-    behaviour::LocationSetPrimitive,
-    behaviour::EntityPrimive,
+    behaviour_BooleanPrimitive,
+    behaviour_EntitySetPrimitive,
+    behaviour_LocationPrimitive,
+    behaviour_LocationSetPrimitive,
+    behaviour_EntityPrimive,
     ConstantExpression,
-    behaviour::FloatConstantExpression,
-    behaviour::StringConstantExpression,
-    behaviour::IntConstantExpression,
-    behaviour::Function,
+    behaviour_StringConstantExpression,
+    behaviour_FloatConstantExpression,
+    behaviour_IntConstantExpression,
+    behaviour_Function,
     Expression,
-    behaviour::PrimitiveExpression,
-    behaviour::FunctionCallExpression,
-    behaviour::LocationExpression,
-    behaviour::ConstantExpression,
-    behaviour::VariableClass,
-    behaviour::Expression,
-    UnaryLocationEnum,
-    WeekDaysEnum,
-    TypeEnum,
-    UnaryNumericFunctionEnum,
-    DurationTypeEnum,
-    OccupationBooleanFunctionEnum,
-    ArithmeticFunctionEnum,
-    UnaryLocationFunctionEnum,
+    behaviour_LocationExpression,
+    behaviour_ConstantExpression,
+    behaviour_FunctionCallExpression,
+    behaviour_PrimitiveExpression,
+    behaviour_VariableClass,
+    behaviour_Expression,
+    UnaryEntityFunctionEnum,
     LogicBooleanFunctionEnum,
     LocationSetPrimiveEnum,
-    EntityPrimitiveEnum,
-    LocationPrimiveEnum,
-    MonthsEnum,
-    ComparisonBooleanFunctionEnum,
+    OccupationBooleanFunctionEnum,
     UnaryStringFunctionEnum,
-    BooleanPrimitiveEnum,
+    UnaryLocationFunctionEnum,
+    DurationTypeEnum,
+    ComparisonBooleanFunctionEnum,
+    ArithmeticFunctionEnum,
+    WeekDaysEnum,
+    MonthsEnum,
+    UnaryLocationEnum,
+    LocationPrimiveEnum,
+    TypeEnum,
+    UnaryNumericFunctionEnum,
     EntitySetPrimiveEnum,
-    UnaryEntityFunctionEnum,
+    BooleanPrimitiveEnum,
+    EntityPrimitiveEnum,
 )
 
 # =============================================================================
@@ -127,30 +127,30 @@ def test_namedfunction_constructor_args():
 
 
 
-def test_behaviour::unaryfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnaryFunction)
+def test_behaviour_unaryfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnaryFunction)
 
 
-def test_behaviour::unaryfunction_constructor_exists():
-    assert callable(behaviour::UnaryFunction.__init__)
+def test_behaviour_unaryfunction_constructor_exists():
+    assert callable(behaviour_UnaryFunction.__init__)
 
 
-def test_behaviour::unaryfunction_constructor_args():
-    sig = inspect.signature(behaviour::UnaryFunction.__init__)
+def test_behaviour_unaryfunction_constructor_args():
+    sig = inspect.signature(behaviour_UnaryFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::binaryfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BinaryFunction)
+def test_behaviour_binaryfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BinaryFunction)
 
 
-def test_behaviour::binaryfunction_constructor_exists():
-    assert callable(behaviour::BinaryFunction.__init__)
+def test_behaviour_binaryfunction_constructor_exists():
+    assert callable(behaviour_BinaryFunction.__init__)
 
 
-def test_behaviour::binaryfunction_constructor_args():
-    sig = inspect.signature(behaviour::BinaryFunction.__init__)
+def test_behaviour_binaryfunction_constructor_args():
+    sig = inspect.signature(behaviour_BinaryFunction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,23 +169,23 @@ def test_duration_constructor_args():
 
 
 
-def test_behaviour::monthduration_is_not_abstract():
-    assert not inspect.isabstract(behaviour::MonthDuration)
+def test_behaviour_monthduration_is_not_abstract():
+    assert not inspect.isabstract(behaviour_MonthDuration)
 
 
-def test_behaviour::monthduration_constructor_exists():
-    assert callable(behaviour::MonthDuration.__init__)
+def test_behaviour_monthduration_constructor_exists():
+    assert callable(behaviour_MonthDuration.__init__)
 
 
-def test_behaviour::monthduration_constructor_args():
-    sig = inspect.signature(behaviour::MonthDuration.__init__)
+def test_behaviour_monthduration_constructor_args():
+    sig = inspect.signature(behaviour_MonthDuration.__init__)
     params = list(sig.parameters.keys())
     assert "month" in params, "Missing parameter 'month'"
 
-def test_behaviour::monthduration_has_month():
-    assert hasattr(behaviour::MonthDuration, "month")
+def test_behaviour_monthduration_has_month():
+    assert hasattr(behaviour_MonthDuration, "month")
     descriptor = None
-    for klass in behaviour::MonthDuration.__mro__:
+    for klass in behaviour_MonthDuration.__mro__:
         if "month" in klass.__dict__:
             descriptor = klass.__dict__["month"]
             break
@@ -193,16 +193,16 @@ def test_behaviour::monthduration_has_month():
 
 
 
-def test_behaviour::numericprimitive_is_not_abstract():
-    assert not inspect.isabstract(behaviour::NumericPrimitive)
+def test_behaviour_numericprimitive_is_not_abstract():
+    assert not inspect.isabstract(behaviour_NumericPrimitive)
 
 
-def test_behaviour::numericprimitive_constructor_exists():
-    assert callable(behaviour::NumericPrimitive.__init__)
+def test_behaviour_numericprimitive_constructor_exists():
+    assert callable(behaviour_NumericPrimitive.__init__)
 
 
-def test_behaviour::numericprimitive_constructor_args():
-    sig = inspect.signature(behaviour::NumericPrimitive.__init__)
+def test_behaviour_numericprimitive_constructor_args():
+    sig = inspect.signature(behaviour_NumericPrimitive.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -221,16 +221,16 @@ def test_timeexpression_constructor_args():
 
 
 
-def test_behaviour::while_is_not_abstract():
-    assert not inspect.isabstract(behaviour::While)
+def test_behaviour_while_is_not_abstract():
+    assert not inspect.isabstract(behaviour_While)
 
 
-def test_behaviour::while_constructor_exists():
-    assert callable(behaviour::While.__init__)
+def test_behaviour_while_constructor_exists():
+    assert callable(behaviour_While.__init__)
 
 
-def test_behaviour::while_constructor_args():
-    sig = inspect.signature(behaviour::While.__init__)
+def test_behaviour_while_constructor_args():
+    sig = inspect.signature(behaviour_While.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -249,57 +249,57 @@ def test_locationexpression_constructor_args():
 
 
 
-def test_behaviour::coordinatelocationexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::CoordinateLocationExpression)
+def test_behaviour_coordinatelocationexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_CoordinateLocationExpression)
 
 
-def test_behaviour::coordinatelocationexpression_constructor_exists():
-    assert callable(behaviour::CoordinateLocationExpression.__init__)
+def test_behaviour_coordinatelocationexpression_constructor_exists():
+    assert callable(behaviour_CoordinateLocationExpression.__init__)
 
 
-def test_behaviour::coordinatelocationexpression_constructor_args():
-    sig = inspect.signature(behaviour::CoordinateLocationExpression.__init__)
+def test_behaviour_coordinatelocationexpression_constructor_args():
+    sig = inspect.signature(behaviour_CoordinateLocationExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
 
-def test_behaviour::coordinatelocationexpression_has_y():
-    assert hasattr(behaviour::CoordinateLocationExpression, "y")
+def test_behaviour_coordinatelocationexpression_has_x():
+    assert hasattr(behaviour_CoordinateLocationExpression, "x")
     descriptor = None
-    for klass in behaviour::CoordinateLocationExpression.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_behaviour::coordinatelocationexpression_has_x():
-    assert hasattr(behaviour::CoordinateLocationExpression, "x")
-    descriptor = None
-    for klass in behaviour::CoordinateLocationExpression.__mro__:
+    for klass in behaviour_CoordinateLocationExpression.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
+def test_behaviour_coordinatelocationexpression_has_y():
+    assert hasattr(behaviour_CoordinateLocationExpression, "y")
+    descriptor = None
+    for klass in behaviour_CoordinateLocationExpression.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_behaviour::namelocationexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::NameLocationExpression)
+
+def test_behaviour_namelocationexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_NameLocationExpression)
 
 
-def test_behaviour::namelocationexpression_constructor_exists():
-    assert callable(behaviour::NameLocationExpression.__init__)
+def test_behaviour_namelocationexpression_constructor_exists():
+    assert callable(behaviour_NameLocationExpression.__init__)
 
 
-def test_behaviour::namelocationexpression_constructor_args():
-    sig = inspect.signature(behaviour::NameLocationExpression.__init__)
+def test_behaviour_namelocationexpression_constructor_args():
+    sig = inspect.signature(behaviour_NameLocationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_behaviour::namelocationexpression_has_name():
-    assert hasattr(behaviour::NameLocationExpression, "name")
+def test_behaviour_namelocationexpression_has_name():
+    assert hasattr(behaviour_NameLocationExpression, "name")
     descriptor = None
-    for klass in behaviour::NameLocationExpression.__mro__:
+    for klass in behaviour_NameLocationExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -321,23 +321,23 @@ def test_binarybooleanfunction_constructor_args():
 
 
 
-def test_behaviour::comparisonbooleanfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::ComparisonBooleanFunction)
+def test_behaviour_comparisonbooleanfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_ComparisonBooleanFunction)
 
 
-def test_behaviour::comparisonbooleanfunction_constructor_exists():
-    assert callable(behaviour::ComparisonBooleanFunction.__init__)
+def test_behaviour_comparisonbooleanfunction_constructor_exists():
+    assert callable(behaviour_ComparisonBooleanFunction.__init__)
 
 
-def test_behaviour::comparisonbooleanfunction_constructor_args():
-    sig = inspect.signature(behaviour::ComparisonBooleanFunction.__init__)
+def test_behaviour_comparisonbooleanfunction_constructor_args():
+    sig = inspect.signature(behaviour_ComparisonBooleanFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::comparisonbooleanfunction_has_functionName():
-    assert hasattr(behaviour::ComparisonBooleanFunction, "functionName")
+def test_behaviour_comparisonbooleanfunction_has_functionName():
+    assert hasattr(behaviour_ComparisonBooleanFunction, "functionName")
     descriptor = None
-    for klass in behaviour::ComparisonBooleanFunction.__mro__:
+    for klass in behaviour_ComparisonBooleanFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -359,23 +359,23 @@ def test_binaryfunction_constructor_args():
 
 
 
-def test_behaviour::binaryarithmeticfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BinaryArithmeticFunction)
+def test_behaviour_binaryarithmeticfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BinaryArithmeticFunction)
 
 
-def test_behaviour::binaryarithmeticfunction_constructor_exists():
-    assert callable(behaviour::BinaryArithmeticFunction.__init__)
+def test_behaviour_binaryarithmeticfunction_constructor_exists():
+    assert callable(behaviour_BinaryArithmeticFunction.__init__)
 
 
-def test_behaviour::binaryarithmeticfunction_constructor_args():
-    sig = inspect.signature(behaviour::BinaryArithmeticFunction.__init__)
+def test_behaviour_binaryarithmeticfunction_constructor_args():
+    sig = inspect.signature(behaviour_BinaryArithmeticFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::binaryarithmeticfunction_has_functionName():
-    assert hasattr(behaviour::BinaryArithmeticFunction, "functionName")
+def test_behaviour_binaryarithmeticfunction_has_functionName():
+    assert hasattr(behaviour_BinaryArithmeticFunction, "functionName")
     descriptor = None
-    for klass in behaviour::BinaryArithmeticFunction.__mro__:
+    for klass in behaviour_BinaryArithmeticFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -383,30 +383,30 @@ def test_behaviour::binaryarithmeticfunction_has_functionName():
 
 
 
-def test_behaviour::binarylocationfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BinaryLocationFunction)
+def test_behaviour_binarylocationfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BinaryLocationFunction)
 
 
-def test_behaviour::binarylocationfunction_constructor_exists():
-    assert callable(behaviour::BinaryLocationFunction.__init__)
+def test_behaviour_binarylocationfunction_constructor_exists():
+    assert callable(behaviour_BinaryLocationFunction.__init__)
 
 
-def test_behaviour::binarylocationfunction_constructor_args():
-    sig = inspect.signature(behaviour::BinaryLocationFunction.__init__)
+def test_behaviour_binarylocationfunction_constructor_args():
+    sig = inspect.signature(behaviour_BinaryLocationFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::binarybooleanfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BinaryBooleanFunction)
+def test_behaviour_binarybooleanfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BinaryBooleanFunction)
 
 
-def test_behaviour::binarybooleanfunction_constructor_exists():
-    assert callable(behaviour::BinaryBooleanFunction.__init__)
+def test_behaviour_binarybooleanfunction_constructor_exists():
+    assert callable(behaviour_BinaryBooleanFunction.__init__)
 
 
-def test_behaviour::binarybooleanfunction_constructor_args():
-    sig = inspect.signature(behaviour::BinaryBooleanFunction.__init__)
+def test_behaviour_binarybooleanfunction_constructor_args():
+    sig = inspect.signature(behaviour_BinaryBooleanFunction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -425,23 +425,23 @@ def test_unaryfunction_constructor_args():
 
 
 
-def test_behaviour::unarynumericfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnaryNumericFunction)
+def test_behaviour_unarynumericfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnaryNumericFunction)
 
 
-def test_behaviour::unarynumericfunction_constructor_exists():
-    assert callable(behaviour::UnaryNumericFunction.__init__)
+def test_behaviour_unarynumericfunction_constructor_exists():
+    assert callable(behaviour_UnaryNumericFunction.__init__)
 
 
-def test_behaviour::unarynumericfunction_constructor_args():
-    sig = inspect.signature(behaviour::UnaryNumericFunction.__init__)
+def test_behaviour_unarynumericfunction_constructor_args():
+    sig = inspect.signature(behaviour_UnaryNumericFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::unarynumericfunction_has_functionName():
-    assert hasattr(behaviour::UnaryNumericFunction, "functionName")
+def test_behaviour_unarynumericfunction_has_functionName():
+    assert hasattr(behaviour_UnaryNumericFunction, "functionName")
     descriptor = None
-    for klass in behaviour::UnaryNumericFunction.__mro__:
+    for klass in behaviour_UnaryNumericFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -449,23 +449,23 @@ def test_behaviour::unarynumericfunction_has_functionName():
 
 
 
-def test_behaviour::unarylocationfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnaryLocationFunction)
+def test_behaviour_unaryentityfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnaryEntityFunction)
 
 
-def test_behaviour::unarylocationfunction_constructor_exists():
-    assert callable(behaviour::UnaryLocationFunction.__init__)
+def test_behaviour_unaryentityfunction_constructor_exists():
+    assert callable(behaviour_UnaryEntityFunction.__init__)
 
 
-def test_behaviour::unarylocationfunction_constructor_args():
-    sig = inspect.signature(behaviour::UnaryLocationFunction.__init__)
+def test_behaviour_unaryentityfunction_constructor_args():
+    sig = inspect.signature(behaviour_UnaryEntityFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::unarylocationfunction_has_functionName():
-    assert hasattr(behaviour::UnaryLocationFunction, "functionName")
+def test_behaviour_unaryentityfunction_has_functionName():
+    assert hasattr(behaviour_UnaryEntityFunction, "functionName")
     descriptor = None
-    for klass in behaviour::UnaryLocationFunction.__mro__:
+    for klass in behaviour_UnaryEntityFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -473,23 +473,23 @@ def test_behaviour::unarylocationfunction_has_functionName():
 
 
 
-def test_behaviour::unaryentityfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnaryEntityFunction)
+def test_behaviour_unarylocationfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnaryLocationFunction)
 
 
-def test_behaviour::unaryentityfunction_constructor_exists():
-    assert callable(behaviour::UnaryEntityFunction.__init__)
+def test_behaviour_unarylocationfunction_constructor_exists():
+    assert callable(behaviour_UnaryLocationFunction.__init__)
 
 
-def test_behaviour::unaryentityfunction_constructor_args():
-    sig = inspect.signature(behaviour::UnaryEntityFunction.__init__)
+def test_behaviour_unarylocationfunction_constructor_args():
+    sig = inspect.signature(behaviour_UnaryLocationFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::unaryentityfunction_has_functionName():
-    assert hasattr(behaviour::UnaryEntityFunction, "functionName")
+def test_behaviour_unarylocationfunction_has_functionName():
+    assert hasattr(behaviour_UnaryLocationFunction, "functionName")
     descriptor = None
-    for klass in behaviour::UnaryEntityFunction.__mro__:
+    for klass in behaviour_UnaryLocationFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -497,23 +497,23 @@ def test_behaviour::unaryentityfunction_has_functionName():
 
 
 
-def test_behaviour::unarystringfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnaryStringFunction)
+def test_behaviour_unarystringfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnaryStringFunction)
 
 
-def test_behaviour::unarystringfunction_constructor_exists():
-    assert callable(behaviour::UnaryStringFunction.__init__)
+def test_behaviour_unarystringfunction_constructor_exists():
+    assert callable(behaviour_UnaryStringFunction.__init__)
 
 
-def test_behaviour::unarystringfunction_constructor_args():
-    sig = inspect.signature(behaviour::UnaryStringFunction.__init__)
+def test_behaviour_unarystringfunction_constructor_args():
+    sig = inspect.signature(behaviour_UnaryStringFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::unarystringfunction_has_functionName():
-    assert hasattr(behaviour::UnaryStringFunction, "functionName")
+def test_behaviour_unarystringfunction_has_functionName():
+    assert hasattr(behaviour_UnaryStringFunction, "functionName")
     descriptor = None
-    for klass in behaviour::UnaryStringFunction.__mro__:
+    for klass in behaviour_UnaryStringFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -535,44 +535,44 @@ def test_edge_constructor_args():
 
 
 
-def test_behaviour::falseedge_is_not_abstract():
-    assert not inspect.isabstract(behaviour::FalseEdge)
+def test_behaviour_trueedge_is_not_abstract():
+    assert not inspect.isabstract(behaviour_TrueEdge)
 
 
-def test_behaviour::falseedge_constructor_exists():
-    assert callable(behaviour::FalseEdge.__init__)
+def test_behaviour_trueedge_constructor_exists():
+    assert callable(behaviour_TrueEdge.__init__)
 
 
-def test_behaviour::falseedge_constructor_args():
-    sig = inspect.signature(behaviour::FalseEdge.__init__)
+def test_behaviour_trueedge_constructor_args():
+    sig = inspect.signature(behaviour_TrueEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::trueedge_is_not_abstract():
-    assert not inspect.isabstract(behaviour::TrueEdge)
+def test_behaviour_falseedge_is_not_abstract():
+    assert not inspect.isabstract(behaviour_FalseEdge)
 
 
-def test_behaviour::trueedge_constructor_exists():
-    assert callable(behaviour::TrueEdge.__init__)
+def test_behaviour_falseedge_constructor_exists():
+    assert callable(behaviour_FalseEdge.__init__)
 
 
-def test_behaviour::trueedge_constructor_args():
-    sig = inspect.signature(behaviour::TrueEdge.__init__)
+def test_behaviour_falseedge_constructor_args():
+    sig = inspect.signature(behaviour_FalseEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::unconditionededge_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnconditionedEdge)
+def test_behaviour_unconditionededge_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnconditionedEdge)
 
 
-def test_behaviour::unconditionededge_constructor_exists():
-    assert callable(behaviour::UnconditionedEdge.__init__)
+def test_behaviour_unconditionededge_constructor_exists():
+    assert callable(behaviour_UnconditionedEdge.__init__)
 
 
-def test_behaviour::unconditionededge_constructor_args():
-    sig = inspect.signature(behaviour::UnconditionedEdge.__init__)
+def test_behaviour_unconditionededge_constructor_args():
+    sig = inspect.signature(behaviour_UnconditionedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -591,72 +591,72 @@ def test_primitiveactivity_constructor_args():
 
 
 
-def test_behaviour::remove_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Remove)
+def test_behaviour_die_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Die)
 
 
-def test_behaviour::remove_constructor_exists():
-    assert callable(behaviour::Remove.__init__)
+def test_behaviour_die_constructor_exists():
+    assert callable(behaviour_Die.__init__)
 
 
-def test_behaviour::remove_constructor_args():
-    sig = inspect.signature(behaviour::Remove.__init__)
+def test_behaviour_die_constructor_args():
+    sig = inspect.signature(behaviour_Die.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::add_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Add)
+def test_behaviour_reproduce_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Reproduce)
 
 
-def test_behaviour::add_constructor_exists():
-    assert callable(behaviour::Add.__init__)
+def test_behaviour_reproduce_constructor_exists():
+    assert callable(behaviour_Reproduce.__init__)
 
 
-def test_behaviour::add_constructor_args():
-    sig = inspect.signature(behaviour::Add.__init__)
+def test_behaviour_reproduce_constructor_args():
+    sig = inspect.signature(behaviour_Reproduce.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::die_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Die)
+def test_behaviour_remove_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Remove)
 
 
-def test_behaviour::die_constructor_exists():
-    assert callable(behaviour::Die.__init__)
+def test_behaviour_remove_constructor_exists():
+    assert callable(behaviour_Remove.__init__)
 
 
-def test_behaviour::die_constructor_args():
-    sig = inspect.signature(behaviour::Die.__init__)
+def test_behaviour_remove_constructor_args():
+    sig = inspect.signature(behaviour_Remove.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::reproduce_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Reproduce)
+def test_behaviour_add_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Add)
 
 
-def test_behaviour::reproduce_constructor_exists():
-    assert callable(behaviour::Reproduce.__init__)
+def test_behaviour_add_constructor_exists():
+    assert callable(behaviour_Add.__init__)
 
 
-def test_behaviour::reproduce_constructor_args():
-    sig = inspect.signature(behaviour::Reproduce.__init__)
+def test_behaviour_add_constructor_args():
+    sig = inspect.signature(behaviour_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::move_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Move)
+def test_behaviour_move_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Move)
 
 
-def test_behaviour::move_constructor_exists():
-    assert callable(behaviour::Move.__init__)
+def test_behaviour_move_constructor_exists():
+    assert callable(behaviour_Move.__init__)
 
 
-def test_behaviour::move_constructor_args():
-    sig = inspect.signature(behaviour::Move.__init__)
+def test_behaviour_move_constructor_args():
+    sig = inspect.signature(behaviour_Move.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -675,72 +675,72 @@ def test_controlnode_constructor_args():
 
 
 
-def test_behaviour::decision_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Decision)
+def test_behaviour_join_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Join)
 
 
-def test_behaviour::decision_constructor_exists():
-    assert callable(behaviour::Decision.__init__)
+def test_behaviour_join_constructor_exists():
+    assert callable(behaviour_Join.__init__)
 
 
-def test_behaviour::decision_constructor_args():
-    sig = inspect.signature(behaviour::Decision.__init__)
+def test_behaviour_join_constructor_args():
+    sig = inspect.signature(behaviour_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::merge_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Merge)
+def test_behaviour_decision_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Decision)
 
 
-def test_behaviour::merge_constructor_exists():
-    assert callable(behaviour::Merge.__init__)
+def test_behaviour_decision_constructor_exists():
+    assert callable(behaviour_Decision.__init__)
 
 
-def test_behaviour::merge_constructor_args():
-    sig = inspect.signature(behaviour::Merge.__init__)
+def test_behaviour_decision_constructor_args():
+    sig = inspect.signature(behaviour_Decision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::fork_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Fork)
+def test_behaviour_merge_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Merge)
 
 
-def test_behaviour::fork_constructor_exists():
-    assert callable(behaviour::Fork.__init__)
+def test_behaviour_merge_constructor_exists():
+    assert callable(behaviour_Merge.__init__)
 
 
-def test_behaviour::fork_constructor_args():
-    sig = inspect.signature(behaviour::Fork.__init__)
+def test_behaviour_merge_constructor_args():
+    sig = inspect.signature(behaviour_Merge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::join_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Join)
+def test_behaviour_fork_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Fork)
 
 
-def test_behaviour::join_constructor_exists():
-    assert callable(behaviour::Join.__init__)
+def test_behaviour_fork_constructor_exists():
+    assert callable(behaviour_Fork.__init__)
 
 
-def test_behaviour::join_constructor_args():
-    sig = inspect.signature(behaviour::Join.__init__)
+def test_behaviour_fork_constructor_args():
+    sig = inspect.signature(behaviour_Fork.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::timeexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::TimeExpression)
+def test_behaviour_timeexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_TimeExpression)
 
 
-def test_behaviour::timeexpression_constructor_exists():
-    assert callable(behaviour::TimeExpression.__init__)
+def test_behaviour_timeexpression_constructor_exists():
+    assert callable(behaviour_TimeExpression.__init__)
 
 
-def test_behaviour::timeexpression_constructor_args():
-    sig = inspect.signature(behaviour::TimeExpression.__init__)
+def test_behaviour_timeexpression_constructor_args():
+    sig = inspect.signature(behaviour_TimeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -759,51 +759,51 @@ def test_node_constructor_args():
 
 
 
-def test_behaviour::executablenode_is_not_abstract():
-    assert not inspect.isabstract(behaviour::ExecutableNode)
+def test_behaviour_executablenode_is_not_abstract():
+    assert not inspect.isabstract(behaviour_ExecutableNode)
 
 
-def test_behaviour::executablenode_constructor_exists():
-    assert callable(behaviour::ExecutableNode.__init__)
+def test_behaviour_executablenode_constructor_exists():
+    assert callable(behaviour_ExecutableNode.__init__)
 
 
-def test_behaviour::executablenode_constructor_args():
-    sig = inspect.signature(behaviour::ExecutableNode.__init__)
+def test_behaviour_executablenode_constructor_args():
+    sig = inspect.signature(behaviour_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::controlnode_is_not_abstract():
-    assert not inspect.isabstract(behaviour::ControlNode)
+def test_behaviour_controlnode_is_not_abstract():
+    assert not inspect.isabstract(behaviour_ControlNode)
 
 
-def test_behaviour::controlnode_constructor_exists():
-    assert callable(behaviour::ControlNode.__init__)
+def test_behaviour_controlnode_constructor_exists():
+    assert callable(behaviour_ControlNode.__init__)
 
 
-def test_behaviour::controlnode_constructor_args():
-    sig = inspect.signature(behaviour::ControlNode.__init__)
+def test_behaviour_controlnode_constructor_args():
+    sig = inspect.signature(behaviour_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::logicbooleanfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::LogicBooleanFunction)
+def test_behaviour_logicbooleanfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_LogicBooleanFunction)
 
 
-def test_behaviour::logicbooleanfunction_constructor_exists():
-    assert callable(behaviour::LogicBooleanFunction.__init__)
+def test_behaviour_logicbooleanfunction_constructor_exists():
+    assert callable(behaviour_LogicBooleanFunction.__init__)
 
 
-def test_behaviour::logicbooleanfunction_constructor_args():
-    sig = inspect.signature(behaviour::LogicBooleanFunction.__init__)
+def test_behaviour_logicbooleanfunction_constructor_args():
+    sig = inspect.signature(behaviour_LogicBooleanFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::logicbooleanfunction_has_functionName():
-    assert hasattr(behaviour::LogicBooleanFunction, "functionName")
+def test_behaviour_logicbooleanfunction_has_functionName():
+    assert hasattr(behaviour_LogicBooleanFunction, "functionName")
     descriptor = None
-    for klass in behaviour::LogicBooleanFunction.__mro__:
+    for klass in behaviour_LogicBooleanFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -811,23 +811,23 @@ def test_behaviour::logicbooleanfunction_has_functionName():
 
 
 
-def test_behaviour::occupationbooleanfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::OccupationBooleanFunction)
+def test_behaviour_occupationbooleanfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_OccupationBooleanFunction)
 
 
-def test_behaviour::occupationbooleanfunction_constructor_exists():
-    assert callable(behaviour::OccupationBooleanFunction.__init__)
+def test_behaviour_occupationbooleanfunction_constructor_exists():
+    assert callable(behaviour_OccupationBooleanFunction.__init__)
 
 
-def test_behaviour::occupationbooleanfunction_constructor_args():
-    sig = inspect.signature(behaviour::OccupationBooleanFunction.__init__)
+def test_behaviour_occupationbooleanfunction_constructor_args():
+    sig = inspect.signature(behaviour_OccupationBooleanFunction.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
 
-def test_behaviour::occupationbooleanfunction_has_functionName():
-    assert hasattr(behaviour::OccupationBooleanFunction, "functionName")
+def test_behaviour_occupationbooleanfunction_has_functionName():
+    assert hasattr(behaviour_OccupationBooleanFunction, "functionName")
     descriptor = None
-    for klass in behaviour::OccupationBooleanFunction.__mro__:
+    for klass in behaviour_OccupationBooleanFunction.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
@@ -835,33 +835,33 @@ def test_behaviour::occupationbooleanfunction_has_functionName():
 
 
 
-def test_behaviour::behavior_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Behavior)
+def test_behaviour_behavior_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Behavior)
 
 
-def test_behaviour::behavior_constructor_exists():
-    assert callable(behaviour::Behavior.__init__)
+def test_behaviour_behavior_constructor_exists():
+    assert callable(behaviour_Behavior.__init__)
 
 
-def test_behaviour::behavior_constructor_args():
-    sig = inspect.signature(behaviour::Behavior.__init__)
+def test_behaviour_behavior_constructor_args():
+    sig = inspect.signature(behaviour_Behavior.__init__)
     params = list(sig.parameters.keys())
     assert "behaviorName" in params, "Missing parameter 'behaviorName'"
     assert "frequency" in params, "Missing parameter 'frequency'"
 
-def test_behaviour::behavior_has_behaviorName():
-    assert hasattr(behaviour::Behavior, "behaviorName")
+def test_behaviour_behavior_has_behaviorName():
+    assert hasattr(behaviour_Behavior, "behaviorName")
     descriptor = None
-    for klass in behaviour::Behavior.__mro__:
+    for klass in behaviour_Behavior.__mro__:
         if "behaviorName" in klass.__dict__:
             descriptor = klass.__dict__["behaviorName"]
             break
     assert isinstance(descriptor, property)
 
-def test_behaviour::behavior_has_frequency():
-    assert hasattr(behaviour::Behavior, "frequency")
+def test_behaviour_behavior_has_frequency():
+    assert hasattr(behaviour_Behavior, "frequency")
     descriptor = None
-    for klass in behaviour::Behavior.__mro__:
+    for klass in behaviour_Behavior.__mro__:
         if "frequency" in klass.__dict__:
             descriptor = klass.__dict__["frequency"]
             break
@@ -869,23 +869,23 @@ def test_behaviour::behavior_has_frequency():
 
 
 
-def test_behaviour::entityclass_is_not_abstract():
-    assert not inspect.isabstract(behaviour::EntityClass)
+def test_behaviour_entityclass_is_not_abstract():
+    assert not inspect.isabstract(behaviour_EntityClass)
 
 
-def test_behaviour::entityclass_constructor_exists():
-    assert callable(behaviour::EntityClass.__init__)
+def test_behaviour_entityclass_constructor_exists():
+    assert callable(behaviour_EntityClass.__init__)
 
 
-def test_behaviour::entityclass_constructor_args():
-    sig = inspect.signature(behaviour::EntityClass.__init__)
+def test_behaviour_entityclass_constructor_args():
+    sig = inspect.signature(behaviour_EntityClass.__init__)
     params = list(sig.parameters.keys())
     assert "entityName" in params, "Missing parameter 'entityName'"
 
-def test_behaviour::entityclass_has_entityName():
-    assert hasattr(behaviour::EntityClass, "entityName")
+def test_behaviour_entityclass_has_entityName():
+    assert hasattr(behaviour_EntityClass, "entityName")
     descriptor = None
-    for klass in behaviour::EntityClass.__mro__:
+    for klass in behaviour_EntityClass.__mro__:
         if "entityName" in klass.__dict__:
             descriptor = klass.__dict__["entityName"]
             break
@@ -907,86 +907,86 @@ def test_function_constructor_args():
 
 
 
-def test_behaviour::namedfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::NamedFunction)
+def test_behaviour_namedfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_NamedFunction)
 
 
-def test_behaviour::namedfunction_constructor_exists():
-    assert callable(behaviour::NamedFunction.__init__)
+def test_behaviour_namedfunction_constructor_exists():
+    assert callable(behaviour_NamedFunction.__init__)
 
 
-def test_behaviour::namedfunction_constructor_args():
-    sig = inspect.signature(behaviour::NamedFunction.__init__)
+def test_behaviour_namedfunction_constructor_args():
+    sig = inspect.signature(behaviour_NamedFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::anonymousfunction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::AnonymousFunction)
+def test_behaviour_anonymousfunction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_AnonymousFunction)
 
 
-def test_behaviour::anonymousfunction_constructor_exists():
-    assert callable(behaviour::AnonymousFunction.__init__)
+def test_behaviour_anonymousfunction_constructor_exists():
+    assert callable(behaviour_AnonymousFunction.__init__)
 
 
-def test_behaviour::anonymousfunction_constructor_args():
-    sig = inspect.signature(behaviour::AnonymousFunction.__init__)
+def test_behaviour_anonymousfunction_constructor_args():
+    sig = inspect.signature(behaviour_AnonymousFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::node_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Node)
+def test_behaviour_node_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Node)
 
 
-def test_behaviour::node_constructor_exists():
-    assert callable(behaviour::Node.__init__)
+def test_behaviour_node_constructor_exists():
+    assert callable(behaviour_Node.__init__)
 
 
-def test_behaviour::node_constructor_args():
-    sig = inspect.signature(behaviour::Node.__init__)
+def test_behaviour_node_constructor_args():
+    sig = inspect.signature(behaviour_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::edge_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Edge)
+def test_behaviour_edge_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Edge)
 
 
-def test_behaviour::edge_constructor_exists():
-    assert callable(behaviour::Edge.__init__)
+def test_behaviour_edge_constructor_exists():
+    assert callable(behaviour_Edge.__init__)
 
 
-def test_behaviour::edge_constructor_args():
-    sig = inspect.signature(behaviour::Edge.__init__)
+def test_behaviour_edge_constructor_args():
+    sig = inspect.signature(behaviour_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::end_is_not_abstract():
-    assert not inspect.isabstract(behaviour::End)
+def test_behaviour_end_is_not_abstract():
+    assert not inspect.isabstract(behaviour_End)
 
 
-def test_behaviour::end_constructor_exists():
-    assert callable(behaviour::End.__init__)
+def test_behaviour_end_constructor_exists():
+    assert callable(behaviour_End.__init__)
 
 
-def test_behaviour::end_constructor_args():
-    sig = inspect.signature(behaviour::End.__init__)
+def test_behaviour_end_constructor_args():
+    sig = inspect.signature(behaviour_End.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::start_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Start)
+def test_behaviour_start_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Start)
 
 
-def test_behaviour::start_constructor_exists():
-    assert callable(behaviour::Start.__init__)
+def test_behaviour_start_constructor_exists():
+    assert callable(behaviour_Start.__init__)
 
 
-def test_behaviour::start_constructor_args():
-    sig = inspect.signature(behaviour::Start.__init__)
+def test_behaviour_start_constructor_args():
+    sig = inspect.signature(behaviour_Start.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1005,30 +1005,30 @@ def test_executablenode_constructor_args():
 
 
 
-def test_behaviour::primitiveactivity_is_not_abstract():
-    assert not inspect.isabstract(behaviour::PrimitiveActivity)
+def test_behaviour_primitiveactivity_is_not_abstract():
+    assert not inspect.isabstract(behaviour_PrimitiveActivity)
 
 
-def test_behaviour::primitiveactivity_constructor_exists():
-    assert callable(behaviour::PrimitiveActivity.__init__)
+def test_behaviour_primitiveactivity_constructor_exists():
+    assert callable(behaviour_PrimitiveActivity.__init__)
 
 
-def test_behaviour::primitiveactivity_constructor_args():
-    sig = inspect.signature(behaviour::PrimitiveActivity.__init__)
+def test_behaviour_primitiveactivity_constructor_args():
+    sig = inspect.signature(behaviour_PrimitiveActivity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::equation_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Equation)
+def test_behaviour_equation_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Equation)
 
 
-def test_behaviour::equation_constructor_exists():
-    assert callable(behaviour::Equation.__init__)
+def test_behaviour_equation_constructor_exists():
+    assert callable(behaviour_Equation.__init__)
 
 
-def test_behaviour::equation_constructor_args():
-    sig = inspect.signature(behaviour::Equation.__init__)
+def test_behaviour_equation_constructor_args():
+    sig = inspect.signature(behaviour_Equation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1047,51 +1047,51 @@ def test_behavior_constructor_args():
 
 
 
-def test_behaviour::activitydiagrambehavior_is_not_abstract():
-    assert not inspect.isabstract(behaviour::ActivityDiagramBehavior)
+def test_behaviour_activitydiagrambehavior_is_not_abstract():
+    assert not inspect.isabstract(behaviour_ActivityDiagramBehavior)
 
 
-def test_behaviour::activitydiagrambehavior_constructor_exists():
-    assert callable(behaviour::ActivityDiagramBehavior.__init__)
+def test_behaviour_activitydiagrambehavior_constructor_exists():
+    assert callable(behaviour_ActivityDiagramBehavior.__init__)
 
 
-def test_behaviour::activitydiagrambehavior_constructor_args():
-    sig = inspect.signature(behaviour::ActivityDiagramBehavior.__init__)
+def test_behaviour_activitydiagrambehavior_constructor_args():
+    sig = inspect.signature(behaviour_ActivityDiagramBehavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::equationbehaviour_is_not_abstract():
-    assert not inspect.isabstract(behaviour::EquationBehaviour)
+def test_behaviour_equationbehaviour_is_not_abstract():
+    assert not inspect.isabstract(behaviour_EquationBehaviour)
 
 
-def test_behaviour::equationbehaviour_constructor_exists():
-    assert callable(behaviour::EquationBehaviour.__init__)
+def test_behaviour_equationbehaviour_constructor_exists():
+    assert callable(behaviour_EquationBehaviour.__init__)
 
 
-def test_behaviour::equationbehaviour_constructor_args():
-    sig = inspect.signature(behaviour::EquationBehaviour.__init__)
+def test_behaviour_equationbehaviour_constructor_args():
+    sig = inspect.signature(behaviour_EquationBehaviour.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::duration_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Duration)
+def test_behaviour_duration_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Duration)
 
 
-def test_behaviour::duration_constructor_exists():
-    assert callable(behaviour::Duration.__init__)
+def test_behaviour_duration_constructor_exists():
+    assert callable(behaviour_Duration.__init__)
 
 
-def test_behaviour::duration_constructor_args():
-    sig = inspect.signature(behaviour::Duration.__init__)
+def test_behaviour_duration_constructor_args():
+    sig = inspect.signature(behaviour_Duration.__init__)
     params = list(sig.parameters.keys())
     assert "durationTime" in params, "Missing parameter 'durationTime'"
 
-def test_behaviour::duration_has_durationTime():
-    assert hasattr(behaviour::Duration, "durationTime")
+def test_behaviour_duration_has_durationTime():
+    assert hasattr(behaviour_Duration, "durationTime")
     descriptor = None
-    for klass in behaviour::Duration.__mro__:
+    for klass in behaviour_Duration.__mro__:
         if "durationTime" in klass.__dict__:
             descriptor = klass.__dict__["durationTime"]
             break
@@ -1113,51 +1113,51 @@ def test_variableclass_constructor_args():
 
 
 
-def test_behaviour::parameterclass_is_not_abstract():
-    assert not inspect.isabstract(behaviour::ParameterClass)
+def test_behaviour_parameterclass_is_not_abstract():
+    assert not inspect.isabstract(behaviour_ParameterClass)
 
 
-def test_behaviour::parameterclass_constructor_exists():
-    assert callable(behaviour::ParameterClass.__init__)
+def test_behaviour_parameterclass_constructor_exists():
+    assert callable(behaviour_ParameterClass.__init__)
 
 
-def test_behaviour::parameterclass_constructor_args():
-    sig = inspect.signature(behaviour::ParameterClass.__init__)
+def test_behaviour_parameterclass_constructor_args():
+    sig = inspect.signature(behaviour_ParameterClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::attributeclass_is_not_abstract():
-    assert not inspect.isabstract(behaviour::AttributeClass)
+def test_behaviour_attributeclass_is_not_abstract():
+    assert not inspect.isabstract(behaviour_AttributeClass)
 
 
-def test_behaviour::attributeclass_constructor_exists():
-    assert callable(behaviour::AttributeClass.__init__)
+def test_behaviour_attributeclass_constructor_exists():
+    assert callable(behaviour_AttributeClass.__init__)
 
 
-def test_behaviour::attributeclass_constructor_args():
-    sig = inspect.signature(behaviour::AttributeClass.__init__)
+def test_behaviour_attributeclass_constructor_args():
+    sig = inspect.signature(behaviour_AttributeClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::type_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Type)
+def test_behaviour_type_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Type)
 
 
-def test_behaviour::type_constructor_exists():
-    assert callable(behaviour::Type.__init__)
+def test_behaviour_type_constructor_exists():
+    assert callable(behaviour_Type.__init__)
 
 
-def test_behaviour::type_constructor_args():
-    sig = inspect.signature(behaviour::Type.__init__)
+def test_behaviour_type_constructor_args():
+    sig = inspect.signature(behaviour_Type.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_behaviour::type_has_type():
-    assert hasattr(behaviour::Type, "type")
+def test_behaviour_type_has_type():
+    assert hasattr(behaviour_Type, "type")
     descriptor = None
-    for klass in behaviour::Type.__mro__:
+    for klass in behaviour_Type.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1179,23 +1179,23 @@ def test_primitiveexpression_constructor_args():
 
 
 
-def test_behaviour::booleanprimitive_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BooleanPrimitive)
+def test_behaviour_booleanprimitive_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BooleanPrimitive)
 
 
-def test_behaviour::booleanprimitive_constructor_exists():
-    assert callable(behaviour::BooleanPrimitive.__init__)
+def test_behaviour_booleanprimitive_constructor_exists():
+    assert callable(behaviour_BooleanPrimitive.__init__)
 
 
-def test_behaviour::booleanprimitive_constructor_args():
-    sig = inspect.signature(behaviour::BooleanPrimitive.__init__)
+def test_behaviour_booleanprimitive_constructor_args():
+    sig = inspect.signature(behaviour_BooleanPrimitive.__init__)
     params = list(sig.parameters.keys())
     assert "primitive" in params, "Missing parameter 'primitive'"
 
-def test_behaviour::booleanprimitive_has_primitive():
-    assert hasattr(behaviour::BooleanPrimitive, "primitive")
+def test_behaviour_booleanprimitive_has_primitive():
+    assert hasattr(behaviour_BooleanPrimitive, "primitive")
     descriptor = None
-    for klass in behaviour::BooleanPrimitive.__mro__:
+    for klass in behaviour_BooleanPrimitive.__mro__:
         if "primitive" in klass.__dict__:
             descriptor = klass.__dict__["primitive"]
             break
@@ -1203,23 +1203,23 @@ def test_behaviour::booleanprimitive_has_primitive():
 
 
 
-def test_behaviour::locationprimitive_is_not_abstract():
-    assert not inspect.isabstract(behaviour::LocationPrimitive)
+def test_behaviour_entitysetprimitive_is_not_abstract():
+    assert not inspect.isabstract(behaviour_EntitySetPrimitive)
 
 
-def test_behaviour::locationprimitive_constructor_exists():
-    assert callable(behaviour::LocationPrimitive.__init__)
+def test_behaviour_entitysetprimitive_constructor_exists():
+    assert callable(behaviour_EntitySetPrimitive.__init__)
 
 
-def test_behaviour::locationprimitive_constructor_args():
-    sig = inspect.signature(behaviour::LocationPrimitive.__init__)
+def test_behaviour_entitysetprimitive_constructor_args():
+    sig = inspect.signature(behaviour_EntitySetPrimitive.__init__)
     params = list(sig.parameters.keys())
     assert "primitive" in params, "Missing parameter 'primitive'"
 
-def test_behaviour::locationprimitive_has_primitive():
-    assert hasattr(behaviour::LocationPrimitive, "primitive")
+def test_behaviour_entitysetprimitive_has_primitive():
+    assert hasattr(behaviour_EntitySetPrimitive, "primitive")
     descriptor = None
-    for klass in behaviour::LocationPrimitive.__mro__:
+    for klass in behaviour_EntitySetPrimitive.__mro__:
         if "primitive" in klass.__dict__:
             descriptor = klass.__dict__["primitive"]
             break
@@ -1227,23 +1227,23 @@ def test_behaviour::locationprimitive_has_primitive():
 
 
 
-def test_behaviour::entitysetprimitive_is_not_abstract():
-    assert not inspect.isabstract(behaviour::EntitySetPrimitive)
+def test_behaviour_locationprimitive_is_not_abstract():
+    assert not inspect.isabstract(behaviour_LocationPrimitive)
 
 
-def test_behaviour::entitysetprimitive_constructor_exists():
-    assert callable(behaviour::EntitySetPrimitive.__init__)
+def test_behaviour_locationprimitive_constructor_exists():
+    assert callable(behaviour_LocationPrimitive.__init__)
 
 
-def test_behaviour::entitysetprimitive_constructor_args():
-    sig = inspect.signature(behaviour::EntitySetPrimitive.__init__)
+def test_behaviour_locationprimitive_constructor_args():
+    sig = inspect.signature(behaviour_LocationPrimitive.__init__)
     params = list(sig.parameters.keys())
     assert "primitive" in params, "Missing parameter 'primitive'"
 
-def test_behaviour::entitysetprimitive_has_primitive():
-    assert hasattr(behaviour::EntitySetPrimitive, "primitive")
+def test_behaviour_locationprimitive_has_primitive():
+    assert hasattr(behaviour_LocationPrimitive, "primitive")
     descriptor = None
-    for klass in behaviour::EntitySetPrimitive.__mro__:
+    for klass in behaviour_LocationPrimitive.__mro__:
         if "primitive" in klass.__dict__:
             descriptor = klass.__dict__["primitive"]
             break
@@ -1251,23 +1251,23 @@ def test_behaviour::entitysetprimitive_has_primitive():
 
 
 
-def test_behaviour::locationsetprimitive_is_not_abstract():
-    assert not inspect.isabstract(behaviour::LocationSetPrimitive)
+def test_behaviour_locationsetprimitive_is_not_abstract():
+    assert not inspect.isabstract(behaviour_LocationSetPrimitive)
 
 
-def test_behaviour::locationsetprimitive_constructor_exists():
-    assert callable(behaviour::LocationSetPrimitive.__init__)
+def test_behaviour_locationsetprimitive_constructor_exists():
+    assert callable(behaviour_LocationSetPrimitive.__init__)
 
 
-def test_behaviour::locationsetprimitive_constructor_args():
-    sig = inspect.signature(behaviour::LocationSetPrimitive.__init__)
+def test_behaviour_locationsetprimitive_constructor_args():
+    sig = inspect.signature(behaviour_LocationSetPrimitive.__init__)
     params = list(sig.parameters.keys())
     assert "primitive" in params, "Missing parameter 'primitive'"
 
-def test_behaviour::locationsetprimitive_has_primitive():
-    assert hasattr(behaviour::LocationSetPrimitive, "primitive")
+def test_behaviour_locationsetprimitive_has_primitive():
+    assert hasattr(behaviour_LocationSetPrimitive, "primitive")
     descriptor = None
-    for klass in behaviour::LocationSetPrimitive.__mro__:
+    for klass in behaviour_LocationSetPrimitive.__mro__:
         if "primitive" in klass.__dict__:
             descriptor = klass.__dict__["primitive"]
             break
@@ -1275,23 +1275,23 @@ def test_behaviour::locationsetprimitive_has_primitive():
 
 
 
-def test_behaviour::entityprimive_is_not_abstract():
-    assert not inspect.isabstract(behaviour::EntityPrimive)
+def test_behaviour_entityprimive_is_not_abstract():
+    assert not inspect.isabstract(behaviour_EntityPrimive)
 
 
-def test_behaviour::entityprimive_constructor_exists():
-    assert callable(behaviour::EntityPrimive.__init__)
+def test_behaviour_entityprimive_constructor_exists():
+    assert callable(behaviour_EntityPrimive.__init__)
 
 
-def test_behaviour::entityprimive_constructor_args():
-    sig = inspect.signature(behaviour::EntityPrimive.__init__)
+def test_behaviour_entityprimive_constructor_args():
+    sig = inspect.signature(behaviour_EntityPrimive.__init__)
     params = list(sig.parameters.keys())
     assert "primitive" in params, "Missing parameter 'primitive'"
 
-def test_behaviour::entityprimive_has_primitive():
-    assert hasattr(behaviour::EntityPrimive, "primitive")
+def test_behaviour_entityprimive_has_primitive():
+    assert hasattr(behaviour_EntityPrimive, "primitive")
     descriptor = None
-    for klass in behaviour::EntityPrimive.__mro__:
+    for klass in behaviour_EntityPrimive.__mro__:
         if "primitive" in klass.__dict__:
             descriptor = klass.__dict__["primitive"]
             break
@@ -1313,23 +1313,23 @@ def test_constantexpression_constructor_args():
 
 
 
-def test_behaviour::floatconstantexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::FloatConstantExpression)
+def test_behaviour_stringconstantexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_StringConstantExpression)
 
 
-def test_behaviour::floatconstantexpression_constructor_exists():
-    assert callable(behaviour::FloatConstantExpression.__init__)
+def test_behaviour_stringconstantexpression_constructor_exists():
+    assert callable(behaviour_StringConstantExpression.__init__)
 
 
-def test_behaviour::floatconstantexpression_constructor_args():
-    sig = inspect.signature(behaviour::FloatConstantExpression.__init__)
+def test_behaviour_stringconstantexpression_constructor_args():
+    sig = inspect.signature(behaviour_StringConstantExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_behaviour::floatconstantexpression_has_value():
-    assert hasattr(behaviour::FloatConstantExpression, "value")
+def test_behaviour_stringconstantexpression_has_value():
+    assert hasattr(behaviour_StringConstantExpression, "value")
     descriptor = None
-    for klass in behaviour::FloatConstantExpression.__mro__:
+    for klass in behaviour_StringConstantExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1337,23 +1337,23 @@ def test_behaviour::floatconstantexpression_has_value():
 
 
 
-def test_behaviour::stringconstantexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::StringConstantExpression)
+def test_behaviour_floatconstantexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_FloatConstantExpression)
 
 
-def test_behaviour::stringconstantexpression_constructor_exists():
-    assert callable(behaviour::StringConstantExpression.__init__)
+def test_behaviour_floatconstantexpression_constructor_exists():
+    assert callable(behaviour_FloatConstantExpression.__init__)
 
 
-def test_behaviour::stringconstantexpression_constructor_args():
-    sig = inspect.signature(behaviour::StringConstantExpression.__init__)
+def test_behaviour_floatconstantexpression_constructor_args():
+    sig = inspect.signature(behaviour_FloatConstantExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_behaviour::stringconstantexpression_has_value():
-    assert hasattr(behaviour::StringConstantExpression, "value")
+def test_behaviour_floatconstantexpression_has_value():
+    assert hasattr(behaviour_FloatConstantExpression, "value")
     descriptor = None
-    for klass in behaviour::StringConstantExpression.__mro__:
+    for klass in behaviour_FloatConstantExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1361,23 +1361,23 @@ def test_behaviour::stringconstantexpression_has_value():
 
 
 
-def test_behaviour::intconstantexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::IntConstantExpression)
+def test_behaviour_intconstantexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_IntConstantExpression)
 
 
-def test_behaviour::intconstantexpression_constructor_exists():
-    assert callable(behaviour::IntConstantExpression.__init__)
+def test_behaviour_intconstantexpression_constructor_exists():
+    assert callable(behaviour_IntConstantExpression.__init__)
 
 
-def test_behaviour::intconstantexpression_constructor_args():
-    sig = inspect.signature(behaviour::IntConstantExpression.__init__)
+def test_behaviour_intconstantexpression_constructor_args():
+    sig = inspect.signature(behaviour_IntConstantExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_behaviour::intconstantexpression_has_value():
-    assert hasattr(behaviour::IntConstantExpression, "value")
+def test_behaviour_intconstantexpression_has_value():
+    assert hasattr(behaviour_IntConstantExpression, "value")
     descriptor = None
-    for klass in behaviour::IntConstantExpression.__mro__:
+    for klass in behaviour_IntConstantExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1385,16 +1385,16 @@ def test_behaviour::intconstantexpression_has_value():
 
 
 
-def test_behaviour::function_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Function)
+def test_behaviour_function_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Function)
 
 
-def test_behaviour::function_constructor_exists():
-    assert callable(behaviour::Function.__init__)
+def test_behaviour_function_constructor_exists():
+    assert callable(behaviour_Function.__init__)
 
 
-def test_behaviour::function_constructor_args():
-    sig = inspect.signature(behaviour::Function.__init__)
+def test_behaviour_function_constructor_args():
+    sig = inspect.signature(behaviour_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1413,79 +1413,79 @@ def test_expression_constructor_args():
 
 
 
-def test_behaviour::primitiveexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::PrimitiveExpression)
+def test_behaviour_locationexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_LocationExpression)
 
 
-def test_behaviour::primitiveexpression_constructor_exists():
-    assert callable(behaviour::PrimitiveExpression.__init__)
+def test_behaviour_locationexpression_constructor_exists():
+    assert callable(behaviour_LocationExpression.__init__)
 
 
-def test_behaviour::primitiveexpression_constructor_args():
-    sig = inspect.signature(behaviour::PrimitiveExpression.__init__)
+def test_behaviour_locationexpression_constructor_args():
+    sig = inspect.signature(behaviour_LocationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::functioncallexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::FunctionCallExpression)
+def test_behaviour_constantexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_ConstantExpression)
 
 
-def test_behaviour::functioncallexpression_constructor_exists():
-    assert callable(behaviour::FunctionCallExpression.__init__)
+def test_behaviour_constantexpression_constructor_exists():
+    assert callable(behaviour_ConstantExpression.__init__)
 
 
-def test_behaviour::functioncallexpression_constructor_args():
-    sig = inspect.signature(behaviour::FunctionCallExpression.__init__)
+def test_behaviour_constantexpression_constructor_args():
+    sig = inspect.signature(behaviour_ConstantExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::locationexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::LocationExpression)
+def test_behaviour_functioncallexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_FunctionCallExpression)
 
 
-def test_behaviour::locationexpression_constructor_exists():
-    assert callable(behaviour::LocationExpression.__init__)
+def test_behaviour_functioncallexpression_constructor_exists():
+    assert callable(behaviour_FunctionCallExpression.__init__)
 
 
-def test_behaviour::locationexpression_constructor_args():
-    sig = inspect.signature(behaviour::LocationExpression.__init__)
+def test_behaviour_functioncallexpression_constructor_args():
+    sig = inspect.signature(behaviour_FunctionCallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::constantexpression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::ConstantExpression)
+def test_behaviour_primitiveexpression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_PrimitiveExpression)
 
 
-def test_behaviour::constantexpression_constructor_exists():
-    assert callable(behaviour::ConstantExpression.__init__)
+def test_behaviour_primitiveexpression_constructor_exists():
+    assert callable(behaviour_PrimitiveExpression.__init__)
 
 
-def test_behaviour::constantexpression_constructor_args():
-    sig = inspect.signature(behaviour::ConstantExpression.__init__)
+def test_behaviour_primitiveexpression_constructor_args():
+    sig = inspect.signature(behaviour_PrimitiveExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::variableclass_is_not_abstract():
-    assert not inspect.isabstract(behaviour::VariableClass)
+def test_behaviour_variableclass_is_not_abstract():
+    assert not inspect.isabstract(behaviour_VariableClass)
 
 
-def test_behaviour::variableclass_constructor_exists():
-    assert callable(behaviour::VariableClass.__init__)
+def test_behaviour_variableclass_constructor_exists():
+    assert callable(behaviour_VariableClass.__init__)
 
 
-def test_behaviour::variableclass_constructor_args():
-    sig = inspect.signature(behaviour::VariableClass.__init__)
+def test_behaviour_variableclass_constructor_args():
+    sig = inspect.signature(behaviour_VariableClass.__init__)
     params = list(sig.parameters.keys())
     assert "variableName" in params, "Missing parameter 'variableName'"
 
-def test_behaviour::variableclass_has_variableName():
-    assert hasattr(behaviour::VariableClass, "variableName")
+def test_behaviour_variableclass_has_variableName():
+    assert hasattr(behaviour_VariableClass, "variableName")
     descriptor = None
-    for klass in behaviour::VariableClass.__mro__:
+    for klass in behaviour_VariableClass.__mro__:
         if "variableName" in klass.__dict__:
             descriptor = klass.__dict__["variableName"]
             break
@@ -1493,158 +1493,31 @@ def test_behaviour::variableclass_has_variableName():
 
 
 
-def test_behaviour::expression_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Expression)
+def test_behaviour_expression_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Expression)
 
 
-def test_behaviour::expression_constructor_exists():
-    assert callable(behaviour::Expression.__init__)
+def test_behaviour_expression_constructor_exists():
+    assert callable(behaviour_Expression.__init__)
 
 
-def test_behaviour::expression_constructor_args():
-    sig = inspect.signature(behaviour::Expression.__init__)
+def test_behaviour_expression_constructor_args():
+    sig = inspect.signature(behaviour_Expression.__init__)
     params = list(sig.parameters.keys())
 
-def test_unarylocationenum_exists():
+def test_unaryentityfunctionenum_exists():
     # Check that the Enumeration exists
-    assert UnaryLocationEnum is not None
+    assert UnaryEntityFunctionEnum is not None
 
-def test_unarylocationenum_has_all_literals():
+def test_unaryentityfunctionenum_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryLocationEnum]
+    enum_literals = [lit.name for lit in UnaryEntityFunctionEnum]
     expected_literals = [
-        "toplocation",
-        "oneofneighbour",
         "oneof",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryLocationEnum"
-
-def test_weekdaysenum_exists():
-    # Check that the Enumeration exists
-    assert WeekDaysEnum is not None
-
-def test_weekdaysenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WeekDaysEnum]
-    expected_literals = [
-        "wednesday",
-        "tuesday",
-        "saturday",
-        "thursday",
-        "friday",
-        "monday",
-        "sunday",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WeekDaysEnum"
-
-def test_typeenum_exists():
-    # Check that the Enumeration exists
-    assert TypeEnum is not None
-
-def test_typeenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TypeEnum]
-    expected_literals = [
-        "string",
-        "int",
-        "locationset",
-        "boolean",
-        "location",
-        "entityset",
-        "entity",
-        "float",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TypeEnum"
-
-def test_unarynumericfunctionenum_exists():
-    # Check that the Enumeration exists
-    assert UnaryNumericFunctionEnum is not None
-
-def test_unarynumericfunctionenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryNumericFunctionEnum]
-    expected_literals = [
-        "random",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryNumericFunctionEnum"
-
-def test_durationtypeenum_exists():
-    # Check that the Enumeration exists
-    assert DurationTypeEnum is not None
-
-def test_durationtypeenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DurationTypeEnum]
-    expected_literals = [
-        "weekly",
-        "monthly",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DurationTypeEnum"
-
-def test_occupationbooleanfunctionenum_exists():
-    # Check that the Enumeration exists
-    assert OccupationBooleanFunctionEnum is not None
-
-def test_occupationbooleanfunctionenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OccupationBooleanFunctionEnum]
-    expected_literals = [
-        "Occupied",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OccupationBooleanFunctionEnum"
-
-def test_arithmeticfunctionenum_exists():
-    # Check that the Enumeration exists
-    assert ArithmeticFunctionEnum is not None
-
-def test_arithmeticfunctionenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArithmeticFunctionEnum]
-    expected_literals = [
-        "Division",
-        "Times",
-        "Sum",
-        "Minus",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArithmeticFunctionEnum"
-
-def test_unarylocationfunctionenum_exists():
-    # Check that the Enumeration exists
-    assert UnaryLocationFunctionEnum is not None
-
-def test_unarylocationfunctionenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryLocationFunctionEnum]
-    expected_literals = [
-        "RandomNeighbourhoodLocation",
-        "OneOf",
-        "BottomLocation",
-        "BottomLeftLocation",
-        "RightLocation",
-        "TopRightLocation",
-        "TopLeftLocation",
-        "RandomLocation",
-        "BottomRightLocation",
-        "LeftLocation",
-        "TopLocation",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryLocationFunctionEnum"
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryEntityFunctionEnum"
 
 def test_logicbooleanfunctionenum_exists():
     # Check that the Enumeration exists
@@ -1655,8 +1528,8 @@ def test_logicbooleanfunctionenum_has_all_literals():
     enum_literals = [lit.name for lit in LogicBooleanFunctionEnum]
     expected_literals = [
         "NOT",
-        "AND",
         "OR",
+        "AND",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1677,81 +1550,19 @@ def test_locationsetprimiveenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LocationSetPrimiveEnum"
 
-def test_entityprimitiveenum_exists():
+def test_occupationbooleanfunctionenum_exists():
     # Check that the Enumeration exists
-    assert EntityPrimitiveEnum is not None
+    assert OccupationBooleanFunctionEnum is not None
 
-def test_entityprimitiveenum_has_all_literals():
+def test_occupationbooleanfunctionenum_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EntityPrimitiveEnum]
+    enum_literals = [lit.name for lit in OccupationBooleanFunctionEnum]
     expected_literals = [
-        "oneOf",
+        "Occupied",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EntityPrimitiveEnum"
-
-def test_locationprimiveenum_exists():
-    # Check that the Enumeration exists
-    assert LocationPrimiveEnum is not None
-
-def test_locationprimiveenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LocationPrimiveEnum]
-    expected_literals = [
-        "bottom",
-        "left",
-        "right",
-        "here",
-        "top",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LocationPrimiveEnum"
-
-def test_monthsenum_exists():
-    # Check that the Enumeration exists
-    assert MonthsEnum is not None
-
-def test_monthsenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MonthsEnum]
-    expected_literals = [
-        "September",
-        "March",
-        "November",
-        "August",
-        "October",
-        "January",
-        "December",
-        "Februrary",
-        "June",
-        "July",
-        "April",
-        "May",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MonthsEnum"
-
-def test_comparisonbooleanfunctionenum_exists():
-    # Check that the Enumeration exists
-    assert ComparisonBooleanFunctionEnum is not None
-
-def test_comparisonbooleanfunctionenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComparisonBooleanFunctionEnum]
-    expected_literals = [
-        "GreaterThan",
-        "GreaterOrEequalThan",
-        "LessOrEqualThan",
-        "LessThan",
-        "Equal",
-        "NotEqual",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComparisonBooleanFunctionEnum"
+        assert lit_name in enum_literals, f"Literal '' missing in OccupationBooleanFunctionEnum"
 
 def test_unarystringfunctionenum_exists():
     # Check that the Enumeration exists
@@ -1766,6 +1577,210 @@ def test_unarystringfunctionenum_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in UnaryStringFunctionEnum"
+
+def test_unarylocationfunctionenum_exists():
+    # Check that the Enumeration exists
+    assert UnaryLocationFunctionEnum is not None
+
+def test_unarylocationfunctionenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryLocationFunctionEnum]
+    expected_literals = [
+        "BottomLocation",
+        "TopRightLocation",
+        "RightLocation",
+        "RandomLocation",
+        "RandomNeighbourhoodLocation",
+        "BottomRightLocation",
+        "TopLocation",
+        "LeftLocation",
+        "BottomLeftLocation",
+        "TopLeftLocation",
+        "OneOf",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryLocationFunctionEnum"
+
+def test_durationtypeenum_exists():
+    # Check that the Enumeration exists
+    assert DurationTypeEnum is not None
+
+def test_durationtypeenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DurationTypeEnum]
+    expected_literals = [
+        "monthly",
+        "weekly",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DurationTypeEnum"
+
+def test_comparisonbooleanfunctionenum_exists():
+    # Check that the Enumeration exists
+    assert ComparisonBooleanFunctionEnum is not None
+
+def test_comparisonbooleanfunctionenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ComparisonBooleanFunctionEnum]
+    expected_literals = [
+        "GreaterThan",
+        "Equal",
+        "GreaterOrEequalThan",
+        "LessThan",
+        "NotEqual",
+        "LessOrEqualThan",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ComparisonBooleanFunctionEnum"
+
+def test_arithmeticfunctionenum_exists():
+    # Check that the Enumeration exists
+    assert ArithmeticFunctionEnum is not None
+
+def test_arithmeticfunctionenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ArithmeticFunctionEnum]
+    expected_literals = [
+        "Minus",
+        "Times",
+        "Division",
+        "Sum",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ArithmeticFunctionEnum"
+
+def test_weekdaysenum_exists():
+    # Check that the Enumeration exists
+    assert WeekDaysEnum is not None
+
+def test_weekdaysenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WeekDaysEnum]
+    expected_literals = [
+        "sunday",
+        "tuesday",
+        "saturday",
+        "monday",
+        "friday",
+        "thursday",
+        "wednesday",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WeekDaysEnum"
+
+def test_monthsenum_exists():
+    # Check that the Enumeration exists
+    assert MonthsEnum is not None
+
+def test_monthsenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MonthsEnum]
+    expected_literals = [
+        "July",
+        "October",
+        "March",
+        "May",
+        "August",
+        "June",
+        "January",
+        "April",
+        "September",
+        "December",
+        "November",
+        "Februrary",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MonthsEnum"
+
+def test_unarylocationenum_exists():
+    # Check that the Enumeration exists
+    assert UnaryLocationEnum is not None
+
+def test_unarylocationenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryLocationEnum]
+    expected_literals = [
+        "toplocation",
+        "oneof",
+        "oneofneighbour",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryLocationEnum"
+
+def test_locationprimiveenum_exists():
+    # Check that the Enumeration exists
+    assert LocationPrimiveEnum is not None
+
+def test_locationprimiveenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LocationPrimiveEnum]
+    expected_literals = [
+        "left",
+        "top",
+        "here",
+        "bottom",
+        "right",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LocationPrimiveEnum"
+
+def test_typeenum_exists():
+    # Check that the Enumeration exists
+    assert TypeEnum is not None
+
+def test_typeenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TypeEnum]
+    expected_literals = [
+        "entity",
+        "location",
+        "float",
+        "int",
+        "entityset",
+        "boolean",
+        "locationset",
+        "string",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TypeEnum"
+
+def test_unarynumericfunctionenum_exists():
+    # Check that the Enumeration exists
+    assert UnaryNumericFunctionEnum is not None
+
+def test_unarynumericfunctionenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryNumericFunctionEnum]
+    expected_literals = [
+        "random",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryNumericFunctionEnum"
+
+def test_entitysetprimiveenum_exists():
+    # Check that the Enumeration exists
+    assert EntitySetPrimiveEnum is not None
+
+def test_entitysetprimiveenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EntitySetPrimiveEnum]
+    expected_literals = [
+        "neighbours",
+        "all",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EntitySetPrimiveEnum"
 
 def test_booleanprimitiveenum_exists():
     # Check that the Enumeration exists
@@ -1782,34 +1797,19 @@ def test_booleanprimitiveenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BooleanPrimitiveEnum"
 
-def test_entitysetprimiveenum_exists():
+def test_entityprimitiveenum_exists():
     # Check that the Enumeration exists
-    assert EntitySetPrimiveEnum is not None
+    assert EntityPrimitiveEnum is not None
 
-def test_entitysetprimiveenum_has_all_literals():
+def test_entityprimitiveenum_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EntitySetPrimiveEnum]
+    enum_literals = [lit.name for lit in EntityPrimitiveEnum]
     expected_literals = [
-        "all",
-        "neighbours",
+        "oneOf",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EntitySetPrimiveEnum"
-
-def test_unaryentityfunctionenum_exists():
-    # Check that the Enumeration exists
-    assert UnaryEntityFunctionEnum is not None
-
-def test_unaryentityfunctionenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryEntityFunctionEnum]
-    expected_literals = [
-        "oneof",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryEntityFunctionEnum"
+        assert lit_name in enum_literals, f"Literal '' missing in EntityPrimitiveEnum"
 
 
 # =============================================================================
@@ -1826,297 +1826,297 @@ safe_text = st.text(
 NamedFunction_strategy = st.builds(
     NamedFunction,
 )
-behaviour::UnaryFunction_strategy = st.builds(
-    behaviour::UnaryFunction,
+behaviour_UnaryFunction_strategy = st.builds(
+    behaviour_UnaryFunction,
 )
-behaviour::BinaryFunction_strategy = st.builds(
-    behaviour::BinaryFunction,
+behaviour_BinaryFunction_strategy = st.builds(
+    behaviour_BinaryFunction,
 )
 Duration_strategy = st.builds(
     Duration,
 )
-behaviour::MonthDuration_strategy = st.builds(
-    behaviour::MonthDuration,
+behaviour_MonthDuration_strategy = st.builds(
+    behaviour_MonthDuration,
     month=
         safe_text
 )
-behaviour::NumericPrimitive_strategy = st.builds(
-    behaviour::NumericPrimitive,
+behaviour_NumericPrimitive_strategy = st.builds(
+    behaviour_NumericPrimitive,
 )
 TimeExpression_strategy = st.builds(
     TimeExpression,
 )
-behaviour::While_strategy = st.builds(
-    behaviour::While,
+behaviour_While_strategy = st.builds(
+    behaviour_While,
 )
 LocationExpression_strategy = st.builds(
     LocationExpression,
 )
-behaviour::CoordinateLocationExpression_strategy = st.builds(
-    behaviour::CoordinateLocationExpression,
-    y=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+behaviour_CoordinateLocationExpression_strategy = st.builds(
+    behaviour_CoordinateLocationExpression,
     x=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    y=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-behaviour::NameLocationExpression_strategy = st.builds(
-    behaviour::NameLocationExpression,
+behaviour_NameLocationExpression_strategy = st.builds(
+    behaviour_NameLocationExpression,
     name=
         safe_text
 )
 BinaryBooleanFunction_strategy = st.builds(
     BinaryBooleanFunction,
 )
-behaviour::ComparisonBooleanFunction_strategy = st.builds(
-    behaviour::ComparisonBooleanFunction,
+behaviour_ComparisonBooleanFunction_strategy = st.builds(
+    behaviour_ComparisonBooleanFunction,
     functionName=
         safe_text
 )
 BinaryFunction_strategy = st.builds(
     BinaryFunction,
 )
-behaviour::BinaryArithmeticFunction_strategy = st.builds(
-    behaviour::BinaryArithmeticFunction,
+behaviour_BinaryArithmeticFunction_strategy = st.builds(
+    behaviour_BinaryArithmeticFunction,
     functionName=
         safe_text
 )
-behaviour::BinaryLocationFunction_strategy = st.builds(
-    behaviour::BinaryLocationFunction,
+behaviour_BinaryLocationFunction_strategy = st.builds(
+    behaviour_BinaryLocationFunction,
 )
-behaviour::BinaryBooleanFunction_strategy = st.builds(
-    behaviour::BinaryBooleanFunction,
+behaviour_BinaryBooleanFunction_strategy = st.builds(
+    behaviour_BinaryBooleanFunction,
 )
 UnaryFunction_strategy = st.builds(
     UnaryFunction,
 )
-behaviour::UnaryNumericFunction_strategy = st.builds(
-    behaviour::UnaryNumericFunction,
+behaviour_UnaryNumericFunction_strategy = st.builds(
+    behaviour_UnaryNumericFunction,
     functionName=
         safe_text
 )
-behaviour::UnaryLocationFunction_strategy = st.builds(
-    behaviour::UnaryLocationFunction,
+behaviour_UnaryEntityFunction_strategy = st.builds(
+    behaviour_UnaryEntityFunction,
     functionName=
         safe_text
 )
-behaviour::UnaryEntityFunction_strategy = st.builds(
-    behaviour::UnaryEntityFunction,
+behaviour_UnaryLocationFunction_strategy = st.builds(
+    behaviour_UnaryLocationFunction,
     functionName=
         safe_text
 )
-behaviour::UnaryStringFunction_strategy = st.builds(
-    behaviour::UnaryStringFunction,
+behaviour_UnaryStringFunction_strategy = st.builds(
+    behaviour_UnaryStringFunction,
     functionName=
         safe_text
 )
 Edge_strategy = st.builds(
     Edge,
 )
-behaviour::FalseEdge_strategy = st.builds(
-    behaviour::FalseEdge,
+behaviour_TrueEdge_strategy = st.builds(
+    behaviour_TrueEdge,
 )
-behaviour::TrueEdge_strategy = st.builds(
-    behaviour::TrueEdge,
+behaviour_FalseEdge_strategy = st.builds(
+    behaviour_FalseEdge,
 )
-behaviour::UnconditionedEdge_strategy = st.builds(
-    behaviour::UnconditionedEdge,
+behaviour_UnconditionedEdge_strategy = st.builds(
+    behaviour_UnconditionedEdge,
 )
 PrimitiveActivity_strategy = st.builds(
     PrimitiveActivity,
 )
-behaviour::Remove_strategy = st.builds(
-    behaviour::Remove,
+behaviour_Die_strategy = st.builds(
+    behaviour_Die,
 )
-behaviour::Add_strategy = st.builds(
-    behaviour::Add,
+behaviour_Reproduce_strategy = st.builds(
+    behaviour_Reproduce,
 )
-behaviour::Die_strategy = st.builds(
-    behaviour::Die,
+behaviour_Remove_strategy = st.builds(
+    behaviour_Remove,
 )
-behaviour::Reproduce_strategy = st.builds(
-    behaviour::Reproduce,
+behaviour_Add_strategy = st.builds(
+    behaviour_Add,
 )
-behaviour::Move_strategy = st.builds(
-    behaviour::Move,
+behaviour_Move_strategy = st.builds(
+    behaviour_Move,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-behaviour::Decision_strategy = st.builds(
-    behaviour::Decision,
+behaviour_Join_strategy = st.builds(
+    behaviour_Join,
 )
-behaviour::Merge_strategy = st.builds(
-    behaviour::Merge,
+behaviour_Decision_strategy = st.builds(
+    behaviour_Decision,
 )
-behaviour::Fork_strategy = st.builds(
-    behaviour::Fork,
+behaviour_Merge_strategy = st.builds(
+    behaviour_Merge,
 )
-behaviour::Join_strategy = st.builds(
-    behaviour::Join,
+behaviour_Fork_strategy = st.builds(
+    behaviour_Fork,
 )
-behaviour::TimeExpression_strategy = st.builds(
-    behaviour::TimeExpression,
+behaviour_TimeExpression_strategy = st.builds(
+    behaviour_TimeExpression,
 )
 Node_strategy = st.builds(
     Node,
 )
-behaviour::ExecutableNode_strategy = st.builds(
-    behaviour::ExecutableNode,
+behaviour_ExecutableNode_strategy = st.builds(
+    behaviour_ExecutableNode,
 )
-behaviour::ControlNode_strategy = st.builds(
-    behaviour::ControlNode,
+behaviour_ControlNode_strategy = st.builds(
+    behaviour_ControlNode,
 )
-behaviour::LogicBooleanFunction_strategy = st.builds(
-    behaviour::LogicBooleanFunction,
+behaviour_LogicBooleanFunction_strategy = st.builds(
+    behaviour_LogicBooleanFunction,
     functionName=
         safe_text
 )
-behaviour::OccupationBooleanFunction_strategy = st.builds(
-    behaviour::OccupationBooleanFunction,
+behaviour_OccupationBooleanFunction_strategy = st.builds(
+    behaviour_OccupationBooleanFunction,
     functionName=
         safe_text
 )
-behaviour::Behavior_strategy = st.builds(
-    behaviour::Behavior,
+behaviour_Behavior_strategy = st.builds(
+    behaviour_Behavior,
     behaviorName=
         safe_text,
     frequency=
         safe_text
 )
-behaviour::EntityClass_strategy = st.builds(
-    behaviour::EntityClass,
+behaviour_EntityClass_strategy = st.builds(
+    behaviour_EntityClass,
     entityName=
         safe_text
 )
 Function_strategy = st.builds(
     Function,
 )
-behaviour::NamedFunction_strategy = st.builds(
-    behaviour::NamedFunction,
+behaviour_NamedFunction_strategy = st.builds(
+    behaviour_NamedFunction,
 )
-behaviour::AnonymousFunction_strategy = st.builds(
-    behaviour::AnonymousFunction,
+behaviour_AnonymousFunction_strategy = st.builds(
+    behaviour_AnonymousFunction,
 )
-behaviour::Node_strategy = st.builds(
-    behaviour::Node,
+behaviour_Node_strategy = st.builds(
+    behaviour_Node,
 )
-behaviour::Edge_strategy = st.builds(
-    behaviour::Edge,
+behaviour_Edge_strategy = st.builds(
+    behaviour_Edge,
 )
-behaviour::End_strategy = st.builds(
-    behaviour::End,
+behaviour_End_strategy = st.builds(
+    behaviour_End,
 )
-behaviour::Start_strategy = st.builds(
-    behaviour::Start,
+behaviour_Start_strategy = st.builds(
+    behaviour_Start,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-behaviour::PrimitiveActivity_strategy = st.builds(
-    behaviour::PrimitiveActivity,
+behaviour_PrimitiveActivity_strategy = st.builds(
+    behaviour_PrimitiveActivity,
 )
-behaviour::Equation_strategy = st.builds(
-    behaviour::Equation,
+behaviour_Equation_strategy = st.builds(
+    behaviour_Equation,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-behaviour::ActivityDiagramBehavior_strategy = st.builds(
-    behaviour::ActivityDiagramBehavior,
+behaviour_ActivityDiagramBehavior_strategy = st.builds(
+    behaviour_ActivityDiagramBehavior,
 )
-behaviour::EquationBehaviour_strategy = st.builds(
-    behaviour::EquationBehaviour,
+behaviour_EquationBehaviour_strategy = st.builds(
+    behaviour_EquationBehaviour,
 )
-behaviour::Duration_strategy = st.builds(
-    behaviour::Duration,
+behaviour_Duration_strategy = st.builds(
+    behaviour_Duration,
     durationTime=
         st.integers()
 )
 VariableClass_strategy = st.builds(
     VariableClass,
 )
-behaviour::ParameterClass_strategy = st.builds(
-    behaviour::ParameterClass,
+behaviour_ParameterClass_strategy = st.builds(
+    behaviour_ParameterClass,
 )
-behaviour::AttributeClass_strategy = st.builds(
-    behaviour::AttributeClass,
+behaviour_AttributeClass_strategy = st.builds(
+    behaviour_AttributeClass,
 )
-behaviour::Type_strategy = st.builds(
-    behaviour::Type,
+behaviour_Type_strategy = st.builds(
+    behaviour_Type,
     type=
         safe_text
 )
 PrimitiveExpression_strategy = st.builds(
     PrimitiveExpression,
 )
-behaviour::BooleanPrimitive_strategy = st.builds(
-    behaviour::BooleanPrimitive,
+behaviour_BooleanPrimitive_strategy = st.builds(
+    behaviour_BooleanPrimitive,
     primitive=
         safe_text
 )
-behaviour::LocationPrimitive_strategy = st.builds(
-    behaviour::LocationPrimitive,
+behaviour_EntitySetPrimitive_strategy = st.builds(
+    behaviour_EntitySetPrimitive,
     primitive=
         safe_text
 )
-behaviour::EntitySetPrimitive_strategy = st.builds(
-    behaviour::EntitySetPrimitive,
+behaviour_LocationPrimitive_strategy = st.builds(
+    behaviour_LocationPrimitive,
     primitive=
         safe_text
 )
-behaviour::LocationSetPrimitive_strategy = st.builds(
-    behaviour::LocationSetPrimitive,
+behaviour_LocationSetPrimitive_strategy = st.builds(
+    behaviour_LocationSetPrimitive,
     primitive=
         safe_text
 )
-behaviour::EntityPrimive_strategy = st.builds(
-    behaviour::EntityPrimive,
+behaviour_EntityPrimive_strategy = st.builds(
+    behaviour_EntityPrimive,
     primitive=
         safe_text
 )
 ConstantExpression_strategy = st.builds(
     ConstantExpression,
 )
-behaviour::FloatConstantExpression_strategy = st.builds(
-    behaviour::FloatConstantExpression,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-behaviour::StringConstantExpression_strategy = st.builds(
-    behaviour::StringConstantExpression,
+behaviour_StringConstantExpression_strategy = st.builds(
+    behaviour_StringConstantExpression,
     value=
         safe_text
 )
-behaviour::IntConstantExpression_strategy = st.builds(
-    behaviour::IntConstantExpression,
+behaviour_FloatConstantExpression_strategy = st.builds(
+    behaviour_FloatConstantExpression,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+behaviour_IntConstantExpression_strategy = st.builds(
+    behaviour_IntConstantExpression,
     value=
         st.integers()
 )
-behaviour::Function_strategy = st.builds(
-    behaviour::Function,
+behaviour_Function_strategy = st.builds(
+    behaviour_Function,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-behaviour::PrimitiveExpression_strategy = st.builds(
-    behaviour::PrimitiveExpression,
+behaviour_LocationExpression_strategy = st.builds(
+    behaviour_LocationExpression,
 )
-behaviour::FunctionCallExpression_strategy = st.builds(
-    behaviour::FunctionCallExpression,
+behaviour_ConstantExpression_strategy = st.builds(
+    behaviour_ConstantExpression,
 )
-behaviour::LocationExpression_strategy = st.builds(
-    behaviour::LocationExpression,
+behaviour_FunctionCallExpression_strategy = st.builds(
+    behaviour_FunctionCallExpression,
 )
-behaviour::ConstantExpression_strategy = st.builds(
-    behaviour::ConstantExpression,
+behaviour_PrimitiveExpression_strategy = st.builds(
+    behaviour_PrimitiveExpression,
 )
-behaviour::VariableClass_strategy = st.builds(
-    behaviour::VariableClass,
+behaviour_VariableClass_strategy = st.builds(
+    behaviour_VariableClass,
     variableName=
         safe_text
 )
-behaviour::Expression_strategy = st.builds(
-    behaviour::Expression,
+behaviour_Expression_strategy = st.builds(
+    behaviour_Expression,
 )
 
 @given(instance=NamedFunction_strategy)
@@ -2124,96 +2124,84 @@ behaviour::Expression_strategy = st.builds(
 def test_namedfunction_instantiation(instance):
     assert isinstance(instance, NamedFunction)
 
-@given(instance=behaviour::UnaryFunction_strategy)
+@given(instance=behaviour_UnaryFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::unaryfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::UnaryFunction)
+def test_behaviour_unaryfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_UnaryFunction)
 
-@given(instance=behaviour::BinaryFunction_strategy)
+@given(instance=behaviour_BinaryFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::binaryfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::BinaryFunction)
+def test_behaviour_binaryfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_BinaryFunction)
 
 @given(instance=Duration_strategy)
 @settings(max_examples=50)
 def test_duration_instantiation(instance):
     assert isinstance(instance, Duration)
 
-@given(instance=behaviour::MonthDuration_strategy)
+@given(instance=behaviour_MonthDuration_strategy)
 @settings(max_examples=50)
-def test_behaviour::monthduration_instantiation(instance):
-    assert isinstance(instance, behaviour::MonthDuration)
-
-@given(instance=behaviour::MonthDuration_strategy)
-def test_behaviour::monthduration_month_type(instance):
-    assert isinstance(instance.month, str)
+def test_behaviour_monthduration_instantiation(instance):
+    assert isinstance(instance, behaviour_MonthDuration)
 
 
-@given(instance=behaviour::MonthDuration_strategy)
-def test_behaviour::monthduration_month_setter(instance):
+
+@given(instance=behaviour_MonthDuration_strategy)
+def test_behaviour_monthduration_month_setter(instance):
     original = instance.month
     instance.month = original
     assert instance.month == original
 
-@given(instance=behaviour::NumericPrimitive_strategy)
+@given(instance=behaviour_NumericPrimitive_strategy)
 @settings(max_examples=50)
-def test_behaviour::numericprimitive_instantiation(instance):
-    assert isinstance(instance, behaviour::NumericPrimitive)
+def test_behaviour_numericprimitive_instantiation(instance):
+    assert isinstance(instance, behaviour_NumericPrimitive)
 
 @given(instance=TimeExpression_strategy)
 @settings(max_examples=50)
 def test_timeexpression_instantiation(instance):
     assert isinstance(instance, TimeExpression)
 
-@given(instance=behaviour::While_strategy)
+@given(instance=behaviour_While_strategy)
 @settings(max_examples=50)
-def test_behaviour::while_instantiation(instance):
-    assert isinstance(instance, behaviour::While)
+def test_behaviour_while_instantiation(instance):
+    assert isinstance(instance, behaviour_While)
 
 @given(instance=LocationExpression_strategy)
 @settings(max_examples=50)
 def test_locationexpression_instantiation(instance):
     assert isinstance(instance, LocationExpression)
 
-@given(instance=behaviour::CoordinateLocationExpression_strategy)
+@given(instance=behaviour_CoordinateLocationExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::coordinatelocationexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::CoordinateLocationExpression)
-
-@given(instance=behaviour::CoordinateLocationExpression_strategy)
-def test_behaviour::coordinatelocationexpression_y_type(instance):
-    assert isinstance(instance.y, float)
+def test_behaviour_coordinatelocationexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_CoordinateLocationExpression)
 
 
-@given(instance=behaviour::CoordinateLocationExpression_strategy)
-def test_behaviour::coordinatelocationexpression_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
 
-@given(instance=behaviour::CoordinateLocationExpression_strategy)
-def test_behaviour::coordinatelocationexpression_x_type(instance):
-    assert isinstance(instance.x, float)
-
-
-@given(instance=behaviour::CoordinateLocationExpression_strategy)
-def test_behaviour::coordinatelocationexpression_x_setter(instance):
+@given(instance=behaviour_CoordinateLocationExpression_strategy)
+def test_behaviour_coordinatelocationexpression_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=behaviour::NameLocationExpression_strategy)
+
+
+@given(instance=behaviour_CoordinateLocationExpression_strategy)
+def test_behaviour_coordinatelocationexpression_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+@given(instance=behaviour_NameLocationExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::namelocationexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::NameLocationExpression)
-
-@given(instance=behaviour::NameLocationExpression_strategy)
-def test_behaviour::namelocationexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_behaviour_namelocationexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_NameLocationExpression)
 
 
-@given(instance=behaviour::NameLocationExpression_strategy)
-def test_behaviour::namelocationexpression_name_setter(instance):
+
+@given(instance=behaviour_NameLocationExpression_strategy)
+def test_behaviour_namelocationexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2223,18 +2211,15 @@ def test_behaviour::namelocationexpression_name_setter(instance):
 def test_binarybooleanfunction_instantiation(instance):
     assert isinstance(instance, BinaryBooleanFunction)
 
-@given(instance=behaviour::ComparisonBooleanFunction_strategy)
+@given(instance=behaviour_ComparisonBooleanFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::comparisonbooleanfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::ComparisonBooleanFunction)
-
-@given(instance=behaviour::ComparisonBooleanFunction_strategy)
-def test_behaviour::comparisonbooleanfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_comparisonbooleanfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_ComparisonBooleanFunction)
 
 
-@given(instance=behaviour::ComparisonBooleanFunction_strategy)
-def test_behaviour::comparisonbooleanfunction_functionName_setter(instance):
+
+@given(instance=behaviour_ComparisonBooleanFunction_strategy)
+def test_behaviour_comparisonbooleanfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
@@ -2244,97 +2229,82 @@ def test_behaviour::comparisonbooleanfunction_functionName_setter(instance):
 def test_binaryfunction_instantiation(instance):
     assert isinstance(instance, BinaryFunction)
 
-@given(instance=behaviour::BinaryArithmeticFunction_strategy)
+@given(instance=behaviour_BinaryArithmeticFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::binaryarithmeticfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::BinaryArithmeticFunction)
-
-@given(instance=behaviour::BinaryArithmeticFunction_strategy)
-def test_behaviour::binaryarithmeticfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_binaryarithmeticfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_BinaryArithmeticFunction)
 
 
-@given(instance=behaviour::BinaryArithmeticFunction_strategy)
-def test_behaviour::binaryarithmeticfunction_functionName_setter(instance):
+
+@given(instance=behaviour_BinaryArithmeticFunction_strategy)
+def test_behaviour_binaryarithmeticfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=behaviour::BinaryLocationFunction_strategy)
+@given(instance=behaviour_BinaryLocationFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::binarylocationfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::BinaryLocationFunction)
+def test_behaviour_binarylocationfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_BinaryLocationFunction)
 
-@given(instance=behaviour::BinaryBooleanFunction_strategy)
+@given(instance=behaviour_BinaryBooleanFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::binarybooleanfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::BinaryBooleanFunction)
+def test_behaviour_binarybooleanfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_BinaryBooleanFunction)
 
 @given(instance=UnaryFunction_strategy)
 @settings(max_examples=50)
 def test_unaryfunction_instantiation(instance):
     assert isinstance(instance, UnaryFunction)
 
-@given(instance=behaviour::UnaryNumericFunction_strategy)
+@given(instance=behaviour_UnaryNumericFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::unarynumericfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::UnaryNumericFunction)
-
-@given(instance=behaviour::UnaryNumericFunction_strategy)
-def test_behaviour::unarynumericfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_unarynumericfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_UnaryNumericFunction)
 
 
-@given(instance=behaviour::UnaryNumericFunction_strategy)
-def test_behaviour::unarynumericfunction_functionName_setter(instance):
+
+@given(instance=behaviour_UnaryNumericFunction_strategy)
+def test_behaviour_unarynumericfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=behaviour::UnaryLocationFunction_strategy)
+@given(instance=behaviour_UnaryEntityFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::unarylocationfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::UnaryLocationFunction)
-
-@given(instance=behaviour::UnaryLocationFunction_strategy)
-def test_behaviour::unarylocationfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_unaryentityfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_UnaryEntityFunction)
 
 
-@given(instance=behaviour::UnaryLocationFunction_strategy)
-def test_behaviour::unarylocationfunction_functionName_setter(instance):
+
+@given(instance=behaviour_UnaryEntityFunction_strategy)
+def test_behaviour_unaryentityfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=behaviour::UnaryEntityFunction_strategy)
+@given(instance=behaviour_UnaryLocationFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::unaryentityfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::UnaryEntityFunction)
-
-@given(instance=behaviour::UnaryEntityFunction_strategy)
-def test_behaviour::unaryentityfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_unarylocationfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_UnaryLocationFunction)
 
 
-@given(instance=behaviour::UnaryEntityFunction_strategy)
-def test_behaviour::unaryentityfunction_functionName_setter(instance):
+
+@given(instance=behaviour_UnaryLocationFunction_strategy)
+def test_behaviour_unarylocationfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=behaviour::UnaryStringFunction_strategy)
+@given(instance=behaviour_UnaryStringFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::unarystringfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::UnaryStringFunction)
-
-@given(instance=behaviour::UnaryStringFunction_strategy)
-def test_behaviour::unarystringfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_unarystringfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_UnaryStringFunction)
 
 
-@given(instance=behaviour::UnaryStringFunction_strategy)
-def test_behaviour::unarystringfunction_functionName_setter(instance):
+
+@given(instance=behaviour_UnaryStringFunction_strategy)
+def test_behaviour_unarystringfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
@@ -2344,167 +2314,152 @@ def test_behaviour::unarystringfunction_functionName_setter(instance):
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=behaviour::FalseEdge_strategy)
+@given(instance=behaviour_TrueEdge_strategy)
 @settings(max_examples=50)
-def test_behaviour::falseedge_instantiation(instance):
-    assert isinstance(instance, behaviour::FalseEdge)
+def test_behaviour_trueedge_instantiation(instance):
+    assert isinstance(instance, behaviour_TrueEdge)
 
-@given(instance=behaviour::TrueEdge_strategy)
+@given(instance=behaviour_FalseEdge_strategy)
 @settings(max_examples=50)
-def test_behaviour::trueedge_instantiation(instance):
-    assert isinstance(instance, behaviour::TrueEdge)
+def test_behaviour_falseedge_instantiation(instance):
+    assert isinstance(instance, behaviour_FalseEdge)
 
-@given(instance=behaviour::UnconditionedEdge_strategy)
+@given(instance=behaviour_UnconditionedEdge_strategy)
 @settings(max_examples=50)
-def test_behaviour::unconditionededge_instantiation(instance):
-    assert isinstance(instance, behaviour::UnconditionedEdge)
+def test_behaviour_unconditionededge_instantiation(instance):
+    assert isinstance(instance, behaviour_UnconditionedEdge)
 
 @given(instance=PrimitiveActivity_strategy)
 @settings(max_examples=50)
 def test_primitiveactivity_instantiation(instance):
     assert isinstance(instance, PrimitiveActivity)
 
-@given(instance=behaviour::Remove_strategy)
+@given(instance=behaviour_Die_strategy)
 @settings(max_examples=50)
-def test_behaviour::remove_instantiation(instance):
-    assert isinstance(instance, behaviour::Remove)
+def test_behaviour_die_instantiation(instance):
+    assert isinstance(instance, behaviour_Die)
 
-@given(instance=behaviour::Add_strategy)
+@given(instance=behaviour_Reproduce_strategy)
 @settings(max_examples=50)
-def test_behaviour::add_instantiation(instance):
-    assert isinstance(instance, behaviour::Add)
+def test_behaviour_reproduce_instantiation(instance):
+    assert isinstance(instance, behaviour_Reproduce)
 
-@given(instance=behaviour::Die_strategy)
+@given(instance=behaviour_Remove_strategy)
 @settings(max_examples=50)
-def test_behaviour::die_instantiation(instance):
-    assert isinstance(instance, behaviour::Die)
+def test_behaviour_remove_instantiation(instance):
+    assert isinstance(instance, behaviour_Remove)
 
-@given(instance=behaviour::Reproduce_strategy)
+@given(instance=behaviour_Add_strategy)
 @settings(max_examples=50)
-def test_behaviour::reproduce_instantiation(instance):
-    assert isinstance(instance, behaviour::Reproduce)
+def test_behaviour_add_instantiation(instance):
+    assert isinstance(instance, behaviour_Add)
 
-@given(instance=behaviour::Move_strategy)
+@given(instance=behaviour_Move_strategy)
 @settings(max_examples=50)
-def test_behaviour::move_instantiation(instance):
-    assert isinstance(instance, behaviour::Move)
+def test_behaviour_move_instantiation(instance):
+    assert isinstance(instance, behaviour_Move)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=behaviour::Decision_strategy)
+@given(instance=behaviour_Join_strategy)
 @settings(max_examples=50)
-def test_behaviour::decision_instantiation(instance):
-    assert isinstance(instance, behaviour::Decision)
+def test_behaviour_join_instantiation(instance):
+    assert isinstance(instance, behaviour_Join)
 
-@given(instance=behaviour::Merge_strategy)
+@given(instance=behaviour_Decision_strategy)
 @settings(max_examples=50)
-def test_behaviour::merge_instantiation(instance):
-    assert isinstance(instance, behaviour::Merge)
+def test_behaviour_decision_instantiation(instance):
+    assert isinstance(instance, behaviour_Decision)
 
-@given(instance=behaviour::Fork_strategy)
+@given(instance=behaviour_Merge_strategy)
 @settings(max_examples=50)
-def test_behaviour::fork_instantiation(instance):
-    assert isinstance(instance, behaviour::Fork)
+def test_behaviour_merge_instantiation(instance):
+    assert isinstance(instance, behaviour_Merge)
 
-@given(instance=behaviour::Join_strategy)
+@given(instance=behaviour_Fork_strategy)
 @settings(max_examples=50)
-def test_behaviour::join_instantiation(instance):
-    assert isinstance(instance, behaviour::Join)
+def test_behaviour_fork_instantiation(instance):
+    assert isinstance(instance, behaviour_Fork)
 
-@given(instance=behaviour::TimeExpression_strategy)
+@given(instance=behaviour_TimeExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::timeexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::TimeExpression)
+def test_behaviour_timeexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_TimeExpression)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=behaviour::ExecutableNode_strategy)
+@given(instance=behaviour_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_behaviour::executablenode_instantiation(instance):
-    assert isinstance(instance, behaviour::ExecutableNode)
+def test_behaviour_executablenode_instantiation(instance):
+    assert isinstance(instance, behaviour_ExecutableNode)
 
-@given(instance=behaviour::ControlNode_strategy)
+@given(instance=behaviour_ControlNode_strategy)
 @settings(max_examples=50)
-def test_behaviour::controlnode_instantiation(instance):
-    assert isinstance(instance, behaviour::ControlNode)
+def test_behaviour_controlnode_instantiation(instance):
+    assert isinstance(instance, behaviour_ControlNode)
 
-@given(instance=behaviour::LogicBooleanFunction_strategy)
+@given(instance=behaviour_LogicBooleanFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::logicbooleanfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::LogicBooleanFunction)
-
-@given(instance=behaviour::LogicBooleanFunction_strategy)
-def test_behaviour::logicbooleanfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_logicbooleanfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_LogicBooleanFunction)
 
 
-@given(instance=behaviour::LogicBooleanFunction_strategy)
-def test_behaviour::logicbooleanfunction_functionName_setter(instance):
+
+@given(instance=behaviour_LogicBooleanFunction_strategy)
+def test_behaviour_logicbooleanfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=behaviour::OccupationBooleanFunction_strategy)
+@given(instance=behaviour_OccupationBooleanFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::occupationbooleanfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::OccupationBooleanFunction)
-
-@given(instance=behaviour::OccupationBooleanFunction_strategy)
-def test_behaviour::occupationbooleanfunction_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_behaviour_occupationbooleanfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_OccupationBooleanFunction)
 
 
-@given(instance=behaviour::OccupationBooleanFunction_strategy)
-def test_behaviour::occupationbooleanfunction_functionName_setter(instance):
+
+@given(instance=behaviour_OccupationBooleanFunction_strategy)
+def test_behaviour_occupationbooleanfunction_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=behaviour::Behavior_strategy)
+@given(instance=behaviour_Behavior_strategy)
 @settings(max_examples=50)
-def test_behaviour::behavior_instantiation(instance):
-    assert isinstance(instance, behaviour::Behavior)
-
-@given(instance=behaviour::Behavior_strategy)
-def test_behaviour::behavior_behaviorName_type(instance):
-    assert isinstance(instance.behaviorName, str)
+def test_behaviour_behavior_instantiation(instance):
+    assert isinstance(instance, behaviour_Behavior)
 
 
-@given(instance=behaviour::Behavior_strategy)
-def test_behaviour::behavior_behaviorName_setter(instance):
+
+@given(instance=behaviour_Behavior_strategy)
+def test_behaviour_behavior_behaviorName_setter(instance):
     original = instance.behaviorName
     instance.behaviorName = original
     assert instance.behaviorName == original
 
-@given(instance=behaviour::Behavior_strategy)
-def test_behaviour::behavior_frequency_type(instance):
-    assert isinstance(instance.frequency, str)
 
 
-@given(instance=behaviour::Behavior_strategy)
-def test_behaviour::behavior_frequency_setter(instance):
+@given(instance=behaviour_Behavior_strategy)
+def test_behaviour_behavior_frequency_setter(instance):
     original = instance.frequency
     instance.frequency = original
     assert instance.frequency == original
 
-@given(instance=behaviour::EntityClass_strategy)
+@given(instance=behaviour_EntityClass_strategy)
 @settings(max_examples=50)
-def test_behaviour::entityclass_instantiation(instance):
-    assert isinstance(instance, behaviour::EntityClass)
-
-@given(instance=behaviour::EntityClass_strategy)
-def test_behaviour::entityclass_entityName_type(instance):
-    assert isinstance(instance.entityName, str)
+def test_behaviour_entityclass_instantiation(instance):
+    assert isinstance(instance, behaviour_EntityClass)
 
 
-@given(instance=behaviour::EntityClass_strategy)
-def test_behaviour::entityclass_entityName_setter(instance):
+
+@given(instance=behaviour_EntityClass_strategy)
+def test_behaviour_entityclass_entityName_setter(instance):
     original = instance.entityName
     instance.entityName = original
     assert instance.entityName == original
@@ -2514,78 +2469,75 @@ def test_behaviour::entityclass_entityName_setter(instance):
 def test_function_instantiation(instance):
     assert isinstance(instance, Function)
 
-@given(instance=behaviour::NamedFunction_strategy)
+@given(instance=behaviour_NamedFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::namedfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::NamedFunction)
+def test_behaviour_namedfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_NamedFunction)
 
-@given(instance=behaviour::AnonymousFunction_strategy)
+@given(instance=behaviour_AnonymousFunction_strategy)
 @settings(max_examples=50)
-def test_behaviour::anonymousfunction_instantiation(instance):
-    assert isinstance(instance, behaviour::AnonymousFunction)
+def test_behaviour_anonymousfunction_instantiation(instance):
+    assert isinstance(instance, behaviour_AnonymousFunction)
 
-@given(instance=behaviour::Node_strategy)
+@given(instance=behaviour_Node_strategy)
 @settings(max_examples=50)
-def test_behaviour::node_instantiation(instance):
-    assert isinstance(instance, behaviour::Node)
+def test_behaviour_node_instantiation(instance):
+    assert isinstance(instance, behaviour_Node)
 
-@given(instance=behaviour::Edge_strategy)
+@given(instance=behaviour_Edge_strategy)
 @settings(max_examples=50)
-def test_behaviour::edge_instantiation(instance):
-    assert isinstance(instance, behaviour::Edge)
+def test_behaviour_edge_instantiation(instance):
+    assert isinstance(instance, behaviour_Edge)
 
-@given(instance=behaviour::End_strategy)
+@given(instance=behaviour_End_strategy)
 @settings(max_examples=50)
-def test_behaviour::end_instantiation(instance):
-    assert isinstance(instance, behaviour::End)
+def test_behaviour_end_instantiation(instance):
+    assert isinstance(instance, behaviour_End)
 
-@given(instance=behaviour::Start_strategy)
+@given(instance=behaviour_Start_strategy)
 @settings(max_examples=50)
-def test_behaviour::start_instantiation(instance):
-    assert isinstance(instance, behaviour::Start)
+def test_behaviour_start_instantiation(instance):
+    assert isinstance(instance, behaviour_Start)
 
 @given(instance=ExecutableNode_strategy)
 @settings(max_examples=50)
 def test_executablenode_instantiation(instance):
     assert isinstance(instance, ExecutableNode)
 
-@given(instance=behaviour::PrimitiveActivity_strategy)
+@given(instance=behaviour_PrimitiveActivity_strategy)
 @settings(max_examples=50)
-def test_behaviour::primitiveactivity_instantiation(instance):
-    assert isinstance(instance, behaviour::PrimitiveActivity)
+def test_behaviour_primitiveactivity_instantiation(instance):
+    assert isinstance(instance, behaviour_PrimitiveActivity)
 
-@given(instance=behaviour::Equation_strategy)
+@given(instance=behaviour_Equation_strategy)
 @settings(max_examples=50)
-def test_behaviour::equation_instantiation(instance):
-    assert isinstance(instance, behaviour::Equation)
+def test_behaviour_equation_instantiation(instance):
+    assert isinstance(instance, behaviour_Equation)
 
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=behaviour::ActivityDiagramBehavior_strategy)
+@given(instance=behaviour_ActivityDiagramBehavior_strategy)
 @settings(max_examples=50)
-def test_behaviour::activitydiagrambehavior_instantiation(instance):
-    assert isinstance(instance, behaviour::ActivityDiagramBehavior)
+def test_behaviour_activitydiagrambehavior_instantiation(instance):
+    assert isinstance(instance, behaviour_ActivityDiagramBehavior)
 
-@given(instance=behaviour::EquationBehaviour_strategy)
+@given(instance=behaviour_EquationBehaviour_strategy)
 @settings(max_examples=50)
-def test_behaviour::equationbehaviour_instantiation(instance):
-    assert isinstance(instance, behaviour::EquationBehaviour)
+def test_behaviour_equationbehaviour_instantiation(instance):
+    assert isinstance(instance, behaviour_EquationBehaviour)
 
-@given(instance=behaviour::Duration_strategy)
+@given(instance=behaviour_Duration_strategy)
 @settings(max_examples=50)
-def test_behaviour::duration_instantiation(instance):
-    assert isinstance(instance, behaviour::Duration)
-
-@given(instance=behaviour::Duration_strategy)
-def test_behaviour::duration_durationTime_type(instance):
-    assert isinstance(instance.durationTime, int)
+def test_behaviour_duration_instantiation(instance):
+    assert isinstance(instance, behaviour_Duration)
 
 
-@given(instance=behaviour::Duration_strategy)
-def test_behaviour::duration_durationTime_setter(instance):
+
+@given(instance=behaviour_Duration_strategy)
+def test_behaviour_duration_durationTime_setter(instance):
     original = instance.durationTime
     instance.durationTime = original
     assert instance.durationTime == original
@@ -2595,28 +2547,25 @@ def test_behaviour::duration_durationTime_setter(instance):
 def test_variableclass_instantiation(instance):
     assert isinstance(instance, VariableClass)
 
-@given(instance=behaviour::ParameterClass_strategy)
+@given(instance=behaviour_ParameterClass_strategy)
 @settings(max_examples=50)
-def test_behaviour::parameterclass_instantiation(instance):
-    assert isinstance(instance, behaviour::ParameterClass)
+def test_behaviour_parameterclass_instantiation(instance):
+    assert isinstance(instance, behaviour_ParameterClass)
 
-@given(instance=behaviour::AttributeClass_strategy)
+@given(instance=behaviour_AttributeClass_strategy)
 @settings(max_examples=50)
-def test_behaviour::attributeclass_instantiation(instance):
-    assert isinstance(instance, behaviour::AttributeClass)
+def test_behaviour_attributeclass_instantiation(instance):
+    assert isinstance(instance, behaviour_AttributeClass)
 
-@given(instance=behaviour::Type_strategy)
+@given(instance=behaviour_Type_strategy)
 @settings(max_examples=50)
-def test_behaviour::type_instantiation(instance):
-    assert isinstance(instance, behaviour::Type)
-
-@given(instance=behaviour::Type_strategy)
-def test_behaviour::type_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_behaviour_type_instantiation(instance):
+    assert isinstance(instance, behaviour_Type)
 
 
-@given(instance=behaviour::Type_strategy)
-def test_behaviour::type_type_setter(instance):
+
+@given(instance=behaviour_Type_strategy)
+def test_behaviour_type_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -2626,82 +2575,67 @@ def test_behaviour::type_type_setter(instance):
 def test_primitiveexpression_instantiation(instance):
     assert isinstance(instance, PrimitiveExpression)
 
-@given(instance=behaviour::BooleanPrimitive_strategy)
+@given(instance=behaviour_BooleanPrimitive_strategy)
 @settings(max_examples=50)
-def test_behaviour::booleanprimitive_instantiation(instance):
-    assert isinstance(instance, behaviour::BooleanPrimitive)
-
-@given(instance=behaviour::BooleanPrimitive_strategy)
-def test_behaviour::booleanprimitive_primitive_type(instance):
-    assert isinstance(instance.primitive, str)
+def test_behaviour_booleanprimitive_instantiation(instance):
+    assert isinstance(instance, behaviour_BooleanPrimitive)
 
 
-@given(instance=behaviour::BooleanPrimitive_strategy)
-def test_behaviour::booleanprimitive_primitive_setter(instance):
+
+@given(instance=behaviour_BooleanPrimitive_strategy)
+def test_behaviour_booleanprimitive_primitive_setter(instance):
     original = instance.primitive
     instance.primitive = original
     assert instance.primitive == original
 
-@given(instance=behaviour::LocationPrimitive_strategy)
+@given(instance=behaviour_EntitySetPrimitive_strategy)
 @settings(max_examples=50)
-def test_behaviour::locationprimitive_instantiation(instance):
-    assert isinstance(instance, behaviour::LocationPrimitive)
-
-@given(instance=behaviour::LocationPrimitive_strategy)
-def test_behaviour::locationprimitive_primitive_type(instance):
-    assert isinstance(instance.primitive, str)
+def test_behaviour_entitysetprimitive_instantiation(instance):
+    assert isinstance(instance, behaviour_EntitySetPrimitive)
 
 
-@given(instance=behaviour::LocationPrimitive_strategy)
-def test_behaviour::locationprimitive_primitive_setter(instance):
+
+@given(instance=behaviour_EntitySetPrimitive_strategy)
+def test_behaviour_entitysetprimitive_primitive_setter(instance):
     original = instance.primitive
     instance.primitive = original
     assert instance.primitive == original
 
-@given(instance=behaviour::EntitySetPrimitive_strategy)
+@given(instance=behaviour_LocationPrimitive_strategy)
 @settings(max_examples=50)
-def test_behaviour::entitysetprimitive_instantiation(instance):
-    assert isinstance(instance, behaviour::EntitySetPrimitive)
-
-@given(instance=behaviour::EntitySetPrimitive_strategy)
-def test_behaviour::entitysetprimitive_primitive_type(instance):
-    assert isinstance(instance.primitive, str)
+def test_behaviour_locationprimitive_instantiation(instance):
+    assert isinstance(instance, behaviour_LocationPrimitive)
 
 
-@given(instance=behaviour::EntitySetPrimitive_strategy)
-def test_behaviour::entitysetprimitive_primitive_setter(instance):
+
+@given(instance=behaviour_LocationPrimitive_strategy)
+def test_behaviour_locationprimitive_primitive_setter(instance):
     original = instance.primitive
     instance.primitive = original
     assert instance.primitive == original
 
-@given(instance=behaviour::LocationSetPrimitive_strategy)
+@given(instance=behaviour_LocationSetPrimitive_strategy)
 @settings(max_examples=50)
-def test_behaviour::locationsetprimitive_instantiation(instance):
-    assert isinstance(instance, behaviour::LocationSetPrimitive)
-
-@given(instance=behaviour::LocationSetPrimitive_strategy)
-def test_behaviour::locationsetprimitive_primitive_type(instance):
-    assert isinstance(instance.primitive, str)
+def test_behaviour_locationsetprimitive_instantiation(instance):
+    assert isinstance(instance, behaviour_LocationSetPrimitive)
 
 
-@given(instance=behaviour::LocationSetPrimitive_strategy)
-def test_behaviour::locationsetprimitive_primitive_setter(instance):
+
+@given(instance=behaviour_LocationSetPrimitive_strategy)
+def test_behaviour_locationsetprimitive_primitive_setter(instance):
     original = instance.primitive
     instance.primitive = original
     assert instance.primitive == original
 
-@given(instance=behaviour::EntityPrimive_strategy)
+@given(instance=behaviour_EntityPrimive_strategy)
 @settings(max_examples=50)
-def test_behaviour::entityprimive_instantiation(instance):
-    assert isinstance(instance, behaviour::EntityPrimive)
-
-@given(instance=behaviour::EntityPrimive_strategy)
-def test_behaviour::entityprimive_primitive_type(instance):
-    assert isinstance(instance.primitive, str)
+def test_behaviour_entityprimive_instantiation(instance):
+    assert isinstance(instance, behaviour_EntityPrimive)
 
 
-@given(instance=behaviour::EntityPrimive_strategy)
-def test_behaviour::entityprimive_primitive_setter(instance):
+
+@given(instance=behaviour_EntityPrimive_strategy)
+def test_behaviour_entityprimive_primitive_setter(instance):
     original = instance.primitive
     instance.primitive = original
     assert instance.primitive == original
@@ -2711,101 +2645,89 @@ def test_behaviour::entityprimive_primitive_setter(instance):
 def test_constantexpression_instantiation(instance):
     assert isinstance(instance, ConstantExpression)
 
-@given(instance=behaviour::FloatConstantExpression_strategy)
+@given(instance=behaviour_StringConstantExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::floatconstantexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::FloatConstantExpression)
-
-@given(instance=behaviour::FloatConstantExpression_strategy)
-def test_behaviour::floatconstantexpression_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_behaviour_stringconstantexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_StringConstantExpression)
 
 
-@given(instance=behaviour::FloatConstantExpression_strategy)
-def test_behaviour::floatconstantexpression_value_setter(instance):
+
+@given(instance=behaviour_StringConstantExpression_strategy)
+def test_behaviour_stringconstantexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=behaviour::StringConstantExpression_strategy)
+@given(instance=behaviour_FloatConstantExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::stringconstantexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::StringConstantExpression)
-
-@given(instance=behaviour::StringConstantExpression_strategy)
-def test_behaviour::stringconstantexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_behaviour_floatconstantexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_FloatConstantExpression)
 
 
-@given(instance=behaviour::StringConstantExpression_strategy)
-def test_behaviour::stringconstantexpression_value_setter(instance):
+
+@given(instance=behaviour_FloatConstantExpression_strategy)
+def test_behaviour_floatconstantexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=behaviour::IntConstantExpression_strategy)
+@given(instance=behaviour_IntConstantExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::intconstantexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::IntConstantExpression)
-
-@given(instance=behaviour::IntConstantExpression_strategy)
-def test_behaviour::intconstantexpression_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_behaviour_intconstantexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_IntConstantExpression)
 
 
-@given(instance=behaviour::IntConstantExpression_strategy)
-def test_behaviour::intconstantexpression_value_setter(instance):
+
+@given(instance=behaviour_IntConstantExpression_strategy)
+def test_behaviour_intconstantexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=behaviour::Function_strategy)
+@given(instance=behaviour_Function_strategy)
 @settings(max_examples=50)
-def test_behaviour::function_instantiation(instance):
-    assert isinstance(instance, behaviour::Function)
+def test_behaviour_function_instantiation(instance):
+    assert isinstance(instance, behaviour_Function)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=behaviour::PrimitiveExpression_strategy)
+@given(instance=behaviour_LocationExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::primitiveexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::PrimitiveExpression)
+def test_behaviour_locationexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_LocationExpression)
 
-@given(instance=behaviour::FunctionCallExpression_strategy)
+@given(instance=behaviour_ConstantExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::functioncallexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::FunctionCallExpression)
+def test_behaviour_constantexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_ConstantExpression)
 
-@given(instance=behaviour::LocationExpression_strategy)
+@given(instance=behaviour_FunctionCallExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::locationexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::LocationExpression)
+def test_behaviour_functioncallexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_FunctionCallExpression)
 
-@given(instance=behaviour::ConstantExpression_strategy)
+@given(instance=behaviour_PrimitiveExpression_strategy)
 @settings(max_examples=50)
-def test_behaviour::constantexpression_instantiation(instance):
-    assert isinstance(instance, behaviour::ConstantExpression)
+def test_behaviour_primitiveexpression_instantiation(instance):
+    assert isinstance(instance, behaviour_PrimitiveExpression)
 
-@given(instance=behaviour::VariableClass_strategy)
+@given(instance=behaviour_VariableClass_strategy)
 @settings(max_examples=50)
-def test_behaviour::variableclass_instantiation(instance):
-    assert isinstance(instance, behaviour::VariableClass)
-
-@given(instance=behaviour::VariableClass_strategy)
-def test_behaviour::variableclass_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
+def test_behaviour_variableclass_instantiation(instance):
+    assert isinstance(instance, behaviour_VariableClass)
 
 
-@given(instance=behaviour::VariableClass_strategy)
-def test_behaviour::variableclass_variableName_setter(instance):
+
+@given(instance=behaviour_VariableClass_strategy)
+def test_behaviour_variableclass_variableName_setter(instance):
     original = instance.variableName
     instance.variableName = original
     assert instance.variableName == original
 
-@given(instance=behaviour::Expression_strategy)
+@given(instance=behaviour_Expression_strategy)
 @settings(max_examples=50)
-def test_behaviour::expression_instantiation(instance):
-    assert isinstance(instance, behaviour::Expression)
+def test_behaviour_expression_instantiation(instance):
+    assert isinstance(instance, behaviour_Expression)

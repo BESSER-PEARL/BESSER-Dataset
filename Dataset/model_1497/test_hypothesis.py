@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Element,
-    PetriNet::Transition,
-    PetriNet::Place,
-    PetriNet::Arc,
-    PetriNet::Element,
-    PetriNet::PetriNetRoot,
+    PetriNet_Transition,
+    PetriNet_Place,
+    PetriNet_Arc,
+    PetriNet_Element,
+    PetriNet_PetriNetRoot,
 )
 
 # =============================================================================
@@ -34,57 +34,57 @@ def test_element_constructor_args():
 
 
 
-def test_petrinet::transition_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Transition)
+def test_petrinet_transition_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Transition)
 
 
-def test_petrinet::transition_constructor_exists():
-    assert callable(PetriNet::Transition.__init__)
+def test_petrinet_transition_constructor_exists():
+    assert callable(PetriNet_Transition.__init__)
 
 
-def test_petrinet::transition_constructor_args():
-    sig = inspect.signature(PetriNet::Transition.__init__)
+def test_petrinet_transition_constructor_args():
+    sig = inspect.signature(PetriNet_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "minTime" in params, "Missing parameter 'minTime'"
     assert "maxTime" in params, "Missing parameter 'maxTime'"
+    assert "minTime" in params, "Missing parameter 'minTime'"
 
-def test_petrinet::transition_has_minTime():
-    assert hasattr(PetriNet::Transition, "minTime")
+def test_petrinet_transition_has_maxTime():
+    assert hasattr(PetriNet_Transition, "maxTime")
     descriptor = None
-    for klass in PetriNet::Transition.__mro__:
-        if "minTime" in klass.__dict__:
-            descriptor = klass.__dict__["minTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_petrinet::transition_has_maxTime():
-    assert hasattr(PetriNet::Transition, "maxTime")
-    descriptor = None
-    for klass in PetriNet::Transition.__mro__:
+    for klass in PetriNet_Transition.__mro__:
         if "maxTime" in klass.__dict__:
             descriptor = klass.__dict__["maxTime"]
             break
     assert isinstance(descriptor, property)
 
+def test_petrinet_transition_has_minTime():
+    assert hasattr(PetriNet_Transition, "minTime")
+    descriptor = None
+    for klass in PetriNet_Transition.__mro__:
+        if "minTime" in klass.__dict__:
+            descriptor = klass.__dict__["minTime"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_petrinet::place_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Place)
+
+def test_petrinet_place_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Place)
 
 
-def test_petrinet::place_constructor_exists():
-    assert callable(PetriNet::Place.__init__)
+def test_petrinet_place_constructor_exists():
+    assert callable(PetriNet_Place.__init__)
 
 
-def test_petrinet::place_constructor_args():
-    sig = inspect.signature(PetriNet::Place.__init__)
+def test_petrinet_place_constructor_args():
+    sig = inspect.signature(PetriNet_Place.__init__)
     params = list(sig.parameters.keys())
     assert "Tokens" in params, "Missing parameter 'Tokens'"
 
-def test_petrinet::place_has_Tokens():
-    assert hasattr(PetriNet::Place, "Tokens")
+def test_petrinet_place_has_Tokens():
+    assert hasattr(PetriNet_Place, "Tokens")
     descriptor = None
-    for klass in PetriNet::Place.__mro__:
+    for klass in PetriNet_Place.__mro__:
         if "Tokens" in klass.__dict__:
             descriptor = klass.__dict__["Tokens"]
             break
@@ -92,37 +92,37 @@ def test_petrinet::place_has_Tokens():
 
 
 
-def test_petrinet::arc_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Arc)
+def test_petrinet_arc_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Arc)
 
 
-def test_petrinet::arc_constructor_exists():
-    assert callable(PetriNet::Arc.__init__)
+def test_petrinet_arc_constructor_exists():
+    assert callable(PetriNet_Arc.__init__)
 
 
-def test_petrinet::arc_constructor_args():
-    sig = inspect.signature(PetriNet::Arc.__init__)
+def test_petrinet_arc_constructor_args():
+    sig = inspect.signature(PetriNet_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::element_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Element)
+def test_petrinet_element_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Element)
 
 
-def test_petrinet::element_constructor_exists():
-    assert callable(PetriNet::Element.__init__)
+def test_petrinet_element_constructor_exists():
+    assert callable(PetriNet_Element.__init__)
 
 
-def test_petrinet::element_constructor_args():
-    sig = inspect.signature(PetriNet::Element.__init__)
+def test_petrinet_element_constructor_args():
+    sig = inspect.signature(PetriNet_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinet::element_has_name():
-    assert hasattr(PetriNet::Element, "name")
+def test_petrinet_element_has_name():
+    assert hasattr(PetriNet_Element, "name")
     descriptor = None
-    for klass in PetriNet::Element.__mro__:
+    for klass in PetriNet_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -130,16 +130,16 @@ def test_petrinet::element_has_name():
 
 
 
-def test_petrinet::petrinetroot_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::PetriNetRoot)
+def test_petrinet_petrinetroot_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_PetriNetRoot)
 
 
-def test_petrinet::petrinetroot_constructor_exists():
-    assert callable(PetriNet::PetriNetRoot.__init__)
+def test_petrinet_petrinetroot_constructor_exists():
+    assert callable(PetriNet_PetriNetRoot.__init__)
 
 
-def test_petrinet::petrinetroot_constructor_args():
-    sig = inspect.signature(PetriNet::PetriNetRoot.__init__)
+def test_petrinet_petrinetroot_constructor_args():
+    sig = inspect.signature(PetriNet_PetriNetRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,28 +157,28 @@ safe_text = st.text(
 Element_strategy = st.builds(
     Element,
 )
-PetriNet::Transition_strategy = st.builds(
-    PetriNet::Transition,
-    minTime=
-        st.integers(),
+PetriNet_Transition_strategy = st.builds(
+    PetriNet_Transition,
     maxTime=
+        st.integers(),
+    minTime=
         st.integers()
 )
-PetriNet::Place_strategy = st.builds(
-    PetriNet::Place,
+PetriNet_Place_strategy = st.builds(
+    PetriNet_Place,
     Tokens=
         st.integers()
 )
-PetriNet::Arc_strategy = st.builds(
-    PetriNet::Arc,
+PetriNet_Arc_strategy = st.builds(
+    PetriNet_Arc,
 )
-PetriNet::Element_strategy = st.builds(
-    PetriNet::Element,
+PetriNet_Element_strategy = st.builds(
+    PetriNet_Element,
     name=
         safe_text
 )
-PetriNet::PetriNetRoot_strategy = st.builds(
-    PetriNet::PetriNetRoot,
+PetriNet_PetriNetRoot_strategy = st.builds(
+    PetriNet_PetriNetRoot,
 )
 
 @given(instance=Element_strategy)
@@ -186,71 +186,59 @@ PetriNet::PetriNetRoot_strategy = st.builds(
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=PetriNet::Transition_strategy)
+@given(instance=PetriNet_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinet::transition_instantiation(instance):
-    assert isinstance(instance, PetriNet::Transition)
-
-@given(instance=PetriNet::Transition_strategy)
-def test_petrinet::transition_minTime_type(instance):
-    assert isinstance(instance.minTime, int)
+def test_petrinet_transition_instantiation(instance):
+    assert isinstance(instance, PetriNet_Transition)
 
 
-@given(instance=PetriNet::Transition_strategy)
-def test_petrinet::transition_minTime_setter(instance):
-    original = instance.minTime
-    instance.minTime = original
-    assert instance.minTime == original
 
-@given(instance=PetriNet::Transition_strategy)
-def test_petrinet::transition_maxTime_type(instance):
-    assert isinstance(instance.maxTime, int)
-
-
-@given(instance=PetriNet::Transition_strategy)
-def test_petrinet::transition_maxTime_setter(instance):
+@given(instance=PetriNet_Transition_strategy)
+def test_petrinet_transition_maxTime_setter(instance):
     original = instance.maxTime
     instance.maxTime = original
     assert instance.maxTime == original
 
-@given(instance=PetriNet::Place_strategy)
+
+
+@given(instance=PetriNet_Transition_strategy)
+def test_petrinet_transition_minTime_setter(instance):
+    original = instance.minTime
+    instance.minTime = original
+    assert instance.minTime == original
+
+@given(instance=PetriNet_Place_strategy)
 @settings(max_examples=50)
-def test_petrinet::place_instantiation(instance):
-    assert isinstance(instance, PetriNet::Place)
-
-@given(instance=PetriNet::Place_strategy)
-def test_petrinet::place_Tokens_type(instance):
-    assert isinstance(instance.Tokens, int)
+def test_petrinet_place_instantiation(instance):
+    assert isinstance(instance, PetriNet_Place)
 
 
-@given(instance=PetriNet::Place_strategy)
-def test_petrinet::place_Tokens_setter(instance):
+
+@given(instance=PetriNet_Place_strategy)
+def test_petrinet_place_Tokens_setter(instance):
     original = instance.Tokens
     instance.Tokens = original
     assert instance.Tokens == original
 
-@given(instance=PetriNet::Arc_strategy)
+@given(instance=PetriNet_Arc_strategy)
 @settings(max_examples=50)
-def test_petrinet::arc_instantiation(instance):
-    assert isinstance(instance, PetriNet::Arc)
+def test_petrinet_arc_instantiation(instance):
+    assert isinstance(instance, PetriNet_Arc)
 
-@given(instance=PetriNet::Element_strategy)
+@given(instance=PetriNet_Element_strategy)
 @settings(max_examples=50)
-def test_petrinet::element_instantiation(instance):
-    assert isinstance(instance, PetriNet::Element)
-
-@given(instance=PetriNet::Element_strategy)
-def test_petrinet::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_element_instantiation(instance):
+    assert isinstance(instance, PetriNet_Element)
 
 
-@given(instance=PetriNet::Element_strategy)
-def test_petrinet::element_name_setter(instance):
+
+@given(instance=PetriNet_Element_strategy)
+def test_petrinet_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PetriNet::PetriNetRoot_strategy)
+@given(instance=PetriNet_PetriNetRoot_strategy)
 @settings(max_examples=50)
-def test_petrinet::petrinetroot_instantiation(instance):
-    assert isinstance(instance, PetriNet::PetriNetRoot)
+def test_petrinet_petrinetroot_instantiation(instance):
+    assert isinstance(instance, PetriNet_PetriNetRoot)

@@ -3,376 +3,376 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence,
-    IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence,
-    IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence,
-    IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence,
-    IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence,
-    BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence,
-    BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence,
-    IntegerComparisonExpression::evaluateGREATERExitEventOccurrence,
-    IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence,
-    IntegerCalculationExpression::evaluateADDExitEventOccurrence,
-    IntegerCalculationExpression::evaluateADDEntryEventOccurrence,
-    IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence,
-    IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence,
-    IntegerExpression::getOperandCurrentValuesExitEventOccurrence,
-    IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence,
-    IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence,
-    IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence,
-    IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence,
-    IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence,
-    StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence,
-    StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence,
-    StringVariable::setCurrentValue::stringVariableExitEventOccurrence,
-    StringVariable::setCurrentValue::stringVariableEntryEventOccurrence,
-    IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence,
-    IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence,
-    IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence,
-    IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence,
-    IntegerExpression::getOperandCurrentValuesEntryEventOccurrence,
-    DecisionNode::fire::decisionNodeExitEventOccurrence,
-    BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence,
-    BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence,
-    BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence,
-    BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence,
-    ForkNode::fire::forkNodeEntryEventOccurrence,
-    ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence,
-    ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence,
-    InitialNode::fire::initialNodeExitEventOccurrence,
-    InitialNode::fire::initialNodeEntryEventOccurrence,
-    InitialNode::isReady::InitialNodeExitEventOccurrence,
-    InitialNode::isReady::InitialNodeEntryEventOccurrence,
-    OpaqueAction::doAction::opaqueActionExitEventOccurrence,
-    OpaqueAction::doAction::opaqueActionEntryEventOccurrence,
-    DecisionNode::fire::decisionNodeEntryEventOccurrence,
-    MergeNode::hasOffers::mergeNodeExitEventOccurrence,
-    MergeNode::hasOffers::mergeNodeEntryEventOccurrence,
-    ForkNode::fire::forkNodeExitEventOccurrence,
-    Action::sendOffers::actionExitEventOccurrence,
-    Action::sendOffers::actionEntryEventOccurrence,
-    ControlNode::fire::controlNodeExitEventOccurrence,
-    ControlNode::fire::controlNodeEntryEventOccurrence,
-    ControlNode::isReady::ControlNodeExitEventOccurrence,
-    ControlNode::isReady::ControlNodeEntryEventOccurrence,
-    ActivityEdge::hasOfferExitEventOccurrence,
-    ActivityEdge::hasOfferEntryEventOccurrence,
-    ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence,
-    ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence,
-    activitydiagram::traceSystem::JoinNode,
-    activitydiagram::traceSystem::InitialNode,
-    traceSystem::activitydiagram::TracedNamedElement,
-    activitydiagram::traceSystem::IntegerVariable,
-    activitydiagram::traceSystem::DecisionNode,
-    activitydiagram::traceSystem::MergeNode,
-    activitydiagram::traceSystem::Value,
-    activitydiagram::traceSystem::Activity,
-    activitydiagram::traceSystem::ControlFlow,
+from python_code import (
+    DecisionNode_fire_decisionNodeExitEventOccurrence,
+    BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence,
+    BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence,
+    BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence,
+    BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence,
+    ForkNode_fire_forkNodeEntryEventOccurrence,
+    ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence,
+    ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence,
+    InitialNode_fire_initialNodeExitEventOccurrence,
+    InitialNode_fire_initialNodeEntryEventOccurrence,
+    InitialNode_isReady_InitialNodeExitEventOccurrence,
+    InitialNode_isReady_InitialNodeEntryEventOccurrence,
+    OpaqueAction_doAction_opaqueActionExitEventOccurrence,
+    OpaqueAction_doAction_opaqueActionEntryEventOccurrence,
+    DecisionNode_fire_decisionNodeEntryEventOccurrence,
+    MergeNode_hasOffers_mergeNodeExitEventOccurrence,
+    MergeNode_hasOffers_mergeNodeEntryEventOccurrence,
+    ForkNode_fire_forkNodeExitEventOccurrence,
+    Action_sendOffers_actionExitEventOccurrence,
+    Action_sendOffers_actionEntryEventOccurrence,
+    ControlNode_fire_controlNodeExitEventOccurrence,
+    ControlNode_fire_controlNodeEntryEventOccurrence,
+    ControlNode_isReady_ControlNodeExitEventOccurrence,
+    ControlNode_isReady_ControlNodeEntryEventOccurrence,
+    ActivityEdge_hasOfferExitEventOccurrence,
+    ActivityEdge_hasOfferEntryEventOccurrence,
+    ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence,
+    ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence,
+    Action_fire_actionExitEventOccurrence,
+    Action_fire_actionEntryEventOccurrence,
+    Action_isReady_actionExitEventOccurrence,
+    Action_isReady_actionEntryEventOccurrence,
+    ActivityNode_hasOffersExitEventOccurrence,
+    ActivityNode_hasOffersEntryEventOccurrence,
+    ActivityNode_removeTokenExitEventOccurrence,
+    ActivityNode_removeTokenEntryEventOccurrence,
+    activitydiagram_traceSystem_JoinNode,
+    activitydiagram_traceSystem_InitialNode,
+    traceSystem_activitydiagram_TracedNamedElement,
+    activitydiagram_traceSystem_IntegerVariable,
+    activitydiagram_traceSystem_DecisionNode,
+    activitydiagram_traceSystem_MergeNode,
+    activitydiagram_traceSystem_Value,
+    activitydiagram_traceSystem_Activity,
+    activitydiagram_traceSystem_ControlFlow,
     TracedActivityEdge,
-    traceSystem::activitydiagram::TracedControlFlow,
-    activitydiagram::traceSystem::ForkNode,
+    traceSystem_activitydiagram_TracedControlFlow,
+    activitydiagram_traceSystem_ForkNode,
     TracedControlNode,
-    traceSystem::activitydiagram::TracedDecisionNode,
-    traceSystem::activitydiagram::TracedJoinNode,
-    traceSystem::activitydiagram::TracedMergeNode,
-    traceSystem::activitydiagram::TracedInitialNode,
-    traceSystem::activitydiagram::TracedForkNode,
-    activitydiagram::traceSystem::BooleanVariable,
+    traceSystem_activitydiagram_TracedDecisionNode,
+    traceSystem_activitydiagram_TracedInitialNode,
+    traceSystem_activitydiagram_TracedMergeNode,
+    traceSystem_activitydiagram_TracedJoinNode,
+    traceSystem_activitydiagram_TracedForkNode,
+    activitydiagram_traceSystem_BooleanVariable,
     TracedNamedElement,
-    traceSystem::activitydiagram::TracedVariable,
-    traceSystem::activitydiagram::TracedActivityNode,
-    traceSystem::activitydiagram::TracedActivityEdge,
-    traceSystem::activitydiagram::TracedActivity,
+    traceSystem_activitydiagram_TracedActivityEdge,
+    traceSystem_activitydiagram_TracedVariable,
+    traceSystem_activitydiagram_TracedActivityNode,
+    traceSystem_activitydiagram_TracedActivity,
     TracedActivityNode,
-    traceSystem::activitydiagram::TracedControlNode,
-    traceSystem::activitydiagram::TracedExecutableNode,
-    activitydiagram::traceSystem::OpaqueAction,
-    activitydiagram::traceSystem::Expression,
+    traceSystem_activitydiagram_TracedControlNode,
+    traceSystem_activitydiagram_TracedExecutableNode,
+    activitydiagram_traceSystem_OpaqueAction,
+    activitydiagram_traceSystem_Expression,
     TracedAction,
-    traceSystem::activitydiagram::TracedOpaqueAction,
-    activitydiagram::traceSystem::StringVariable,
-    traceSystem::activitydiagram::TracedFinalNode,
+    traceSystem_activitydiagram_TracedOpaqueAction,
+    activitydiagram_traceSystem_StringVariable,
+    traceSystem_activitydiagram_TracedFinalNode,
     TracedExecutableNode,
-    traceSystem::activitydiagram::TracedAction,
-    activitydiagram::traceSystem::ActivityFinalNode,
+    traceSystem_activitydiagram_TracedAction,
+    activitydiagram_traceSystem_ActivityFinalNode,
     TracedFinalNode,
-    traceSystem::activitydiagram::TracedActivityFinalNode,
+    traceSystem_activitydiagram_TracedActivityFinalNode,
     TracedVariable,
-    traceSystem::activitydiagram::TracedIntegerVariable,
-    traceSystem::activitydiagram::TracedStringVariable,
-    traceSystem::activitydiagram::TracedBooleanVariable,
-    traceSystem::activitydiagramConfiguration::TracedInput,
-    traceSystem::activitydiagramConfiguration::TracedTrace,
-    traceSystem::activitydiagramConfiguration::TracedInputValue,
-    traceSystem::activitydiagramConfiguration::TracedOffer,
-    traceSystem::activitydiagramConfiguration::TracedToken,
+    traceSystem_activitydiagram_TracedStringVariable,
+    traceSystem_activitydiagram_TracedIntegerVariable,
+    traceSystem_activitydiagram_TracedBooleanVariable,
+    traceSystem_activitydiagramConfiguration_TracedInput,
+    traceSystem_activitydiagramConfiguration_TracedTrace,
+    traceSystem_activitydiagramConfiguration_TracedInputValue,
+    traceSystem_activitydiagramConfiguration_TracedOffer,
+    traceSystem_activitydiagramConfiguration_TracedToken,
     TracedToken,
-    traceSystem::activitydiagramConfiguration::TracedControlToken,
-    traceSystem::activitydiagramConfiguration::TracedForkedToken,
-    traceSystem::Traced::TracedObjects,
-    activitydiagram::TracedJoinNode,
-    activitydiagramConfiguration::TracedControlToken,
-    activitydiagram::TracedControlFlow,
-    traceSystem::States::ActivityEdge::offers::State,
-    traceSystem::States::ActivityNode::running::State,
-    traceSystem::States::ActivityNode::heldTokens::State,
-    activitydiagramConfiguration::TracedInput,
-    traceSystem::States::Input::inputValues::State,
-    traceSystem::States::Trace::executedNodes::State,
-    traceSystem::States::Offer::offeredTokens::State,
-    traceSystem::States::InputValue::variable::State,
-    activitydiagramConfiguration::TracedInputValue,
-    traceSystem::States::InputValue::value::State,
-    activitydiagram::TracedVariable,
-    States::traceSystem::Value,
-    traceSystem::States::Variable::currentValue::State,
-    activitydiagramConfiguration::TracedTrace,
-    traceSystem::States::Activity::trace::State,
-    activitydiagramConfiguration::TracedForkedToken,
-    traceSystem::States::Token::holder::State,
-    traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State,
-    traceSystem::States::ForkedToken::remainingOffersCount::State,
-    States::traceSystem::GlobalState,
-    traceSystem::States::ForkedToken::baseToken::State,
-    activitydiagramConfiguration::TracedOffer,
-    Events::traceSystem::BooleanBinaryExpression,
-    Events::traceSystem::BooleanUnaryExpression,
-    Events::traceSystem::IntegerComparisonExpression,
-    Events::traceSystem::IntegerCalculationExpression,
-    Events::traceSystem::IntegerExpression,
-    activitydiagram::TracedDecisionNode,
-    activitydiagram::TracedBooleanVariable,
-    activitydiagram::TracedStringVariable,
-    Events::traceSystem::Value,
-    activitydiagram::TracedIntegerVariable,
-    activitydiagram::TracedInitialNode,
-    activitydiagram::TracedMergeNode,
-    activitydiagram::TracedOpaqueAction,
-    activitydiagram::TracedForkNode,
-    activitydiagram::TracedActivityFinalNode,
-    activitydiagram::TracedAction,
-    activitydiagramConfiguration::TracedToken,
-    activitydiagram::TracedControlNode,
-    activitydiagram::TracedActivityEdge,
-    activitydiagram::TracedActivityNode,
-    Offer::hasTokensEntryEventOccurrence,
-    ForkedToken::withdraw::forkedTokenExitEventOccurrence,
-    ForkedToken::withdraw::forkedTokenEntryEventOccurrence,
-    Token::withdrawExitEventOccurrence,
-    Token::withdrawEntryEventOccurrence,
-    Token::transferExitEventOccurrence,
-    Events::traceSystem::EObject,
-    activitydiagram::TracedActivity,
-    Offer::hasTokensExitEventOccurrence,
-    BooleanBinaryExpression::evaluateOREntryEventOccurrence,
-    BooleanBinaryExpression::evaluateANDExitEventOccurrence,
-    BooleanBinaryExpression::evaluateANDEntryEventOccurrence,
-    BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence,
-    BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence,
-    BooleanUnaryExpression::evaluateNOTExitEventOccurrence,
-    BooleanUnaryExpression::evaluateNOTEntryEventOccurrence,
-    Token::transferEntryEventOccurrence,
-    Token::isWithdrawnExitEventOccurrence,
-    Token::isWithdrawnEntryEventOccurrence,
-    BooleanBinaryExpression::evaluateORExitEventOccurrence,
-    IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence,
-    IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence,
-    Action::fire::actionExitEventOccurrence,
-    Action::fire::actionEntryEventOccurrence,
-    Action::isReady::actionExitEventOccurrence,
-    Action::isReady::actionEntryEventOccurrence,
-    ActivityNode::hasOffersExitEventOccurrence,
-    ActivityNode::hasOffersEntryEventOccurrence,
-    ActivityNode::removeTokenExitEventOccurrence,
-    ActivityNode::removeTokenEntryEventOccurrence,
-    ActivityNode::addTokensExitEventOccurrence,
-    ActivityNode::addTokensEntryEventOccurrence,
-    ActivityNode::takeOfferedTokensExitEventOccurrence,
-    ActivityNode::takeOfferedTokensEntryEventOccurrence,
-    ActivityNode::sendOffersExitEventOccurrence,
-    ActivityNode::sendOffersEntryEventOccurrence,
-    ActivityNode::terminate::activityNodeExitEventOccurrence,
-    ActivityEdge::sendOfferExitEventOccurrence,
-    ActivityEdge::sendOfferEntryEventOccurrence,
-    ActivityNode::isReadyExitEventOccurrence,
-    ActivityNode::isReadyEntryEventOccurrence,
-    Activity::fireNodeEntryEventOccurrence,
-    Activity::getInitialNodeExitEventOccurrence,
-    Activity::getInitialNodeEntryEventOccurrence,
-    Activity::terminateExitEventOccurrence,
-    Activity::terminateEntryEventOccurrence,
-    Activity::selectNextNodeExitEventOccurrence,
-    Activity::selectNextNodeEntryEventOccurrence,
-    Activity::getEnabledNodesExitEventOccurrence,
-    Activity::getEnabledNodesEntryEventOccurrence,
-    Activity::fireInitialNodeExitEventOccurrence,
-    Activity::fireInitialNodeEntryEventOccurrence,
-    ActivityNode::terminate::activityNodeEntryEventOccurrence,
-    ActivityNode::isRunningExitEventOccurrence,
-    ActivityNode::isRunningEntryEventOccurrence,
-    ActivityNode::run::activityNodeExitEventOccurrence,
-    ActivityNode::run::activityNodeEntryEventOccurrence,
-    Activity::fireNodeExitEventOccurrence,
-    Activity::initializeEntryEventOccurrence,
-    Activity::mainExitEventOccurrence,
-    Activity::mainEntryEventOccurrence,
-    traceSystem::Events::Events,
-    Events::traceSystem::GlobalState,
-    traceSystem::Events::EventOccurrence,
-    traceSystem::IntegerCalculationExpression,
-    traceSystem::IntegerValue,
-    traceSystem::BooleanUnaryExpression,
-    traceSystem::BooleanBinaryExpression,
-    traceSystem::StringValue,
-    traceSystem::IntegerComparisonExpression,
-    traceSystem::BooleanValue,
-    ActivityNode::running::State,
-    ActivityNode::heldTokens::State,
-    Activity::runNodesExitEventOccurrence,
-    Activity::runNodesEntryEventOccurrence,
-    Activity::runExitEventOccurrence,
-    Activity::runEntryEventOccurrence,
-    Activity::initializeExitEventOccurrence,
-    InputValue::value::State,
-    Variable::currentValue::State,
-    Activity::trace::State,
-    Offer::offeredTokens::State,
-    Token::holder::State,
-    ForkedToken::baseTokenIsWithdrawn::State,
-    ForkedToken::remainingOffersCount::State,
-    Input::inputValues::State,
-    Trace::executedNodes::State,
-    ActivityEdge::offers::State,
-    InputValue::variable::State,
+    traceSystem_activitydiagramConfiguration_TracedControlToken,
+    traceSystem_activitydiagramConfiguration_TracedForkedToken,
+    traceSystem_Traced_TracedObjects,
+    activitydiagram_TracedJoinNode,
+    activitydiagramConfiguration_TracedControlToken,
+    activitydiagram_TracedControlFlow,
+    traceSystem_States_ActivityEdge_offers_State,
+    traceSystem_States_ActivityNode_running_State,
+    traceSystem_States_ActivityNode_heldTokens_State,
+    activitydiagramConfiguration_TracedInput,
+    traceSystem_States_Input_inputValues_State,
+    traceSystem_States_Trace_executedNodes_State,
+    traceSystem_States_Offer_offeredTokens_State,
+    traceSystem_States_InputValue_variable_State,
+    activitydiagramConfiguration_TracedInputValue,
+    traceSystem_States_InputValue_value_State,
+    activitydiagram_TracedVariable,
+    States_traceSystem_Value,
+    traceSystem_States_Variable_currentValue_State,
+    activitydiagramConfiguration_TracedTrace,
+    traceSystem_States_Activity_trace_State,
+    activitydiagramConfiguration_TracedForkedToken,
+    traceSystem_States_Token_holder_State,
+    traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State,
+    traceSystem_States_ForkedToken_remainingOffersCount_State,
+    States_traceSystem_GlobalState,
+    traceSystem_States_ForkedToken_baseToken_State,
+    activitydiagramConfiguration_TracedOffer,
+    Events_traceSystem_BooleanBinaryExpression,
+    Events_traceSystem_BooleanUnaryExpression,
+    Events_traceSystem_IntegerComparisonExpression,
+    Events_traceSystem_IntegerCalculationExpression,
+    Events_traceSystem_IntegerExpression,
+    activitydiagram_TracedDecisionNode,
+    activitydiagram_TracedBooleanVariable,
+    activitydiagram_TracedStringVariable,
+    Events_traceSystem_Value,
+    activitydiagram_TracedIntegerVariable,
+    activitydiagram_TracedInitialNode,
+    activitydiagram_TracedMergeNode,
+    activitydiagram_TracedOpaqueAction,
+    activitydiagram_TracedForkNode,
+    activitydiagram_TracedActivityFinalNode,
+    activitydiagram_TracedAction,
+    activitydiagramConfiguration_TracedToken,
+    activitydiagram_TracedControlNode,
+    activitydiagram_TracedActivityEdge,
+    activitydiagram_TracedActivityNode,
+    Offer_hasTokensEntryEventOccurrence,
+    ForkedToken_withdraw_forkedTokenExitEventOccurrence,
+    ForkedToken_withdraw_forkedTokenEntryEventOccurrence,
+    Token_withdrawExitEventOccurrence,
+    Token_withdrawEntryEventOccurrence,
+    Token_transferExitEventOccurrence,
+    Events_traceSystem_EObject,
+    activitydiagram_TracedActivity,
+    Offer_hasTokensExitEventOccurrence,
+    BooleanBinaryExpression_evaluateOREntryEventOccurrence,
+    BooleanBinaryExpression_evaluateANDExitEventOccurrence,
+    BooleanBinaryExpression_evaluateANDEntryEventOccurrence,
+    BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence,
+    BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence,
+    BooleanUnaryExpression_evaluateNOTExitEventOccurrence,
+    BooleanUnaryExpression_evaluateNOTEntryEventOccurrence,
+    Token_transferEntryEventOccurrence,
+    Token_isWithdrawnExitEventOccurrence,
+    Token_isWithdrawnEntryEventOccurrence,
+    BooleanBinaryExpression_evaluateORExitEventOccurrence,
+    IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence,
+    IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence,
+    IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence,
+    IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence,
+    IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence,
+    IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence,
+    IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence,
+    BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence,
+    BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence,
+    IntegerComparisonExpression_evaluateGREATERExitEventOccurrence,
+    IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence,
+    IntegerCalculationExpression_evaluateADDExitEventOccurrence,
+    IntegerCalculationExpression_evaluateADDEntryEventOccurrence,
+    IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence,
+    IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence,
+    IntegerExpression_getOperandCurrentValuesExitEventOccurrence,
+    IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence,
+    IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence,
+    IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence,
+    IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence,
+    IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence,
+    StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence,
+    StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence,
+    StringVariable_setCurrentValue_stringVariableExitEventOccurrence,
+    StringVariable_setCurrentValue_stringVariableEntryEventOccurrence,
+    IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence,
+    IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence,
+    IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence,
+    IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence,
+    IntegerExpression_getOperandCurrentValuesEntryEventOccurrence,
+    ActivityNode_addTokensExitEventOccurrence,
+    ActivityNode_addTokensEntryEventOccurrence,
+    ActivityNode_takeOfferedTokensExitEventOccurrence,
+    ActivityNode_takeOfferedTokensEntryEventOccurrence,
+    ActivityNode_sendOffersExitEventOccurrence,
+    ActivityNode_sendOffersEntryEventOccurrence,
+    ActivityNode_terminate_activityNodeExitEventOccurrence,
+    ActivityEdge_sendOfferExitEventOccurrence,
+    ActivityEdge_sendOfferEntryEventOccurrence,
+    ActivityNode_isReadyExitEventOccurrence,
+    ActivityNode_isReadyEntryEventOccurrence,
+    Activity_fireNodeEntryEventOccurrence,
+    Activity_getInitialNodeExitEventOccurrence,
+    Activity_getInitialNodeEntryEventOccurrence,
+    Activity_terminateExitEventOccurrence,
+    Activity_terminateEntryEventOccurrence,
+    Activity_selectNextNodeExitEventOccurrence,
+    Activity_selectNextNodeEntryEventOccurrence,
+    Activity_getEnabledNodesExitEventOccurrence,
+    Activity_getEnabledNodesEntryEventOccurrence,
+    Activity_fireInitialNodeExitEventOccurrence,
+    Activity_fireInitialNodeEntryEventOccurrence,
+    ActivityNode_terminate_activityNodeEntryEventOccurrence,
+    ActivityNode_isRunningExitEventOccurrence,
+    ActivityNode_isRunningEntryEventOccurrence,
+    ActivityNode_run_activityNodeExitEventOccurrence,
+    ActivityNode_run_activityNodeEntryEventOccurrence,
+    Activity_fireNodeExitEventOccurrence,
+    Activity_initializeEntryEventOccurrence,
+    Activity_mainExitEventOccurrence,
+    Activity_mainEntryEventOccurrence,
+    traceSystem_Events_Events,
+    Events_traceSystem_GlobalState,
+    traceSystem_Events_EventOccurrence,
+    traceSystem_IntegerCalculationExpression,
+    traceSystem_IntegerValue,
+    traceSystem_BooleanUnaryExpression,
+    traceSystem_BooleanBinaryExpression,
+    traceSystem_StringValue,
+    traceSystem_IntegerComparisonExpression,
+    traceSystem_BooleanValue,
+    ActivityNode_running_State,
+    ActivityNode_heldTokens_State,
+    Activity_runNodesExitEventOccurrence,
+    Activity_runNodesEntryEventOccurrence,
+    Activity_runExitEventOccurrence,
+    Activity_runEntryEventOccurrence,
+    Activity_initializeExitEventOccurrence,
+    InputValue_value_State,
+    Variable_currentValue_State,
+    Activity_trace_State,
+    Offer_offeredTokens_State,
+    Token_holder_State,
+    ForkedToken_baseTokenIsWithdrawn_State,
+    ForkedToken_remainingOffersCount_State,
+    Input_inputValues_State,
+    Trace_executedNodes_State,
+    ActivityEdge_offers_State,
+    InputValue_variable_State,
     Events,
-    traceSystem::GlobalState,
-    traceSystem::Trace,
-    ForkedToken::baseToken::State,
+    traceSystem_GlobalState,
+    traceSystem_Trace,
+    ForkedToken_baseToken_State,
     EventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence,
-    traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence,
-    traceSystem::Events::Action::fire::actionEntryEventOccurrence,
-    traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence,
-    traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence,
-    traceSystem::Events::Action::sendOffers::actionExitEventOccurrence,
-    traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence,
-    traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence,
-    traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence,
-    traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence,
-    traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence,
-    traceSystem::Events::Activity::mainEntryEventOccurrence,
-    traceSystem::Events::Activity::fireNodeExitEventOccurrence,
-    traceSystem::Events::Activity::fireNodeEntryEventOccurrence,
-    traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence,
-    traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence,
-    traceSystem::Events::Token::isWithdrawnEntryEventOccurrence,
-    traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence,
-    traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence,
-    traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence,
-    traceSystem::Events::Activity::initializeExitEventOccurrence,
-    traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence,
-    traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence,
-    traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence,
-    traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence,
-    traceSystem::Events::Activity::runExitEventOccurrence,
-    traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence,
-    traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence,
-    traceSystem::Events::Action::isReady::actionExitEventOccurrence,
-    traceSystem::Events::Token::withdrawEntryEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence,
-    traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence,
-    traceSystem::Events::ActivityNode::isRunningExitEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence,
-    traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence,
-    traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence,
-    traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence,
-    traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence,
-    traceSystem::Events::Action::fire::actionExitEventOccurrence,
-    traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence,
-    traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence,
-    traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence,
-    traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence,
-    traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence,
-    traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence,
-    traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence,
-    traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence,
-    traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence,
-    traceSystem::Events::Activity::runEntryEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence,
-    traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence,
-    traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence,
-    traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence,
-    traceSystem::Events::Activity::terminateEntryEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence,
-    traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence,
-    traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence,
-    traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence,
-    traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence,
-    traceSystem::Events::Activity::terminateExitEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence,
-    traceSystem::Events::Activity::runNodesEntryEventOccurrence,
-    traceSystem::Events::Token::transferEntryEventOccurrence,
-    traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence,
-    traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence,
-    traceSystem::Events::Activity::mainExitEventOccurrence,
-    traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence,
-    traceSystem::Events::Activity::getInitialNodeExitEventOccurrence,
-    traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence,
-    traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence,
-    traceSystem::Events::Activity::runNodesExitEventOccurrence,
-    traceSystem::Events::Token::withdrawExitEventOccurrence,
-    traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence,
-    traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence,
-    traceSystem::Events::Token::transferExitEventOccurrence,
-    traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence,
-    traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence,
-    traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence,
-    traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence,
-    traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence,
-    traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence,
-    traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence,
-    traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence,
-    traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence,
-    traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence,
-    traceSystem::Events::Action::isReady::actionEntryEventOccurrence,
-    traceSystem::Events::Offer::hasTokensEntryEventOccurrence,
-    traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence,
-    traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence,
-    traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence,
-    traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence,
-    traceSystem::Events::ActivityNode::isReadyExitEventOccurrence,
-    traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence,
-    traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence,
-    traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence,
-    traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence,
-    traceSystem::Events::Activity::selectNextNodeExitEventOccurrence,
-    traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence,
-    traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence,
-    traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence,
-    traceSystem::Events::ActivityNode::addTokensExitEventOccurrence,
-    traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence,
-    traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence,
-    traceSystem::Events::Offer::hasTokensExitEventOccurrence,
-    traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence,
-    traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence,
-    traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence,
-    traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence,
-    traceSystem::Events::Token::isWithdrawnExitEventOccurrence,
-    traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence,
-    traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence,
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence,
-    traceSystem::Events::Activity::initializeEntryEventOccurrence,
-    traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence,
-    traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence,
-    traceSystem::StaticObjectsPools,
+    traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence,
+    traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence,
+    traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence,
+    traceSystem_Events_Action_isReady_actionExitEventOccurrence,
+    traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence,
+    traceSystem_Events_Activity_runExitEventOccurrence,
+    traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence,
+    traceSystem_Events_Activity_getInitialNodeExitEventOccurrence,
+    traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence,
+    traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence,
+    traceSystem_Events_Action_isReady_actionEntryEventOccurrence,
+    traceSystem_Events_Activity_runNodesExitEventOccurrence,
+    traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence,
+    traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence,
+    traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_isRunningExitEventOccurrence,
+    traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence,
+    traceSystem_Events_Activity_mainExitEventOccurrence,
+    traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence,
+    traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence,
+    traceSystem_Events_Action_fire_actionEntryEventOccurrence,
+    traceSystem_Events_Activity_mainEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence,
+    traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence,
+    traceSystem_Events_ActivityNode_isReadyExitEventOccurrence,
+    traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence,
+    traceSystem_Events_Token_withdrawExitEventOccurrence,
+    traceSystem_Events_Activity_terminateEntryEventOccurrence,
+    traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence,
+    traceSystem_Events_Activity_initializeEntryEventOccurrence,
+    traceSystem_Events_Action_fire_actionExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence,
+    traceSystem_Events_Activity_initializeExitEventOccurrence,
+    traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence,
+    traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence,
+    traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence,
+    traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence,
+    traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence,
+    traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence,
+    traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence,
+    traceSystem_Events_Token_isWithdrawnEntryEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence,
+    traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence,
+    traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence,
+    traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence,
+    traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence,
+    traceSystem_Events_Activity_fireNodeEntryEventOccurrence,
+    traceSystem_Events_Activity_fireNodeExitEventOccurrence,
+    traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence,
+    traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence,
+    traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence,
+    traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence,
+    traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence,
+    traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence,
+    traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence,
+    traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence,
+    traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence,
+    traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence,
+    traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence,
+    traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence,
+    traceSystem_Events_Activity_selectNextNodeExitEventOccurrence,
+    traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence,
+    traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence,
+    traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence,
+    traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence,
+    traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence,
+    traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence,
+    traceSystem_Events_Activity_terminateExitEventOccurrence,
+    traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence,
+    traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence,
+    traceSystem_Events_Offer_hasTokensExitEventOccurrence,
+    traceSystem_Events_Action_sendOffers_actionExitEventOccurrence,
+    traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence,
+    traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence,
+    traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence,
+    traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence,
+    traceSystem_Events_Offer_hasTokensEntryEventOccurrence,
+    traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence,
+    traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence,
+    traceSystem_Events_Token_transferExitEventOccurrence,
+    traceSystem_Events_Token_withdrawEntryEventOccurrence,
+    traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence,
+    traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence,
+    traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence,
+    traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence,
+    traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence,
+    traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence,
+    traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence,
+    traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence,
+    traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence,
+    traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence,
+    traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence,
+    traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence,
+    traceSystem_Events_Token_isWithdrawnExitEventOccurrence,
+    traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence,
+    traceSystem_Events_ActivityNode_addTokensExitEventOccurrence,
+    traceSystem_Events_Activity_runNodesEntryEventOccurrence,
+    traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence,
+    traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence,
+    traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence,
+    traceSystem_Events_Activity_runEntryEventOccurrence,
+    traceSystem_Events_Token_transferEntryEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence,
+    traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence,
+    traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence,
+    traceSystem_StaticObjectsPools,
     TracedObjects,
 )
 
@@ -382,835 +382,555 @@ from classes import (
 
 
 
-def test_integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence)
+def test_decisionnode_fire_decisionnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(DecisionNode_fire_decisionNodeExitEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence.__init__)
+def test_decisionnode_fire_decisionnodeexiteventoccurrence_constructor_exists():
+    assert callable(DecisionNode_fire_decisionNodeExitEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence.__init__)
+def test_decisionnode_fire_decisionnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(DecisionNode_fire_decisionNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluateequalsexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluateequalsexiteventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence.__init__)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_constructor_exists():
+    assert callable(BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluateequalsexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence.__init__)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluateequalsentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluateequalsentryeventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence.__init__)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_constructor_exists():
+    assert callable(BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluateequalsentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence.__init__)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence)
+def test_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence.__init__)
+def test_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_constructor_exists():
+    assert callable(BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence.__init__)
+def test_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence)
+def test_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence.__init__)
+def test_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_constructor_exists():
+    assert callable(BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence.__init__)
+def test_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence)
+def test_forknode_fire_forknodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ForkNode_fire_forkNodeEntryEventOccurrence)
 
 
-def test_booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_constructor_exists():
-    assert callable(BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence.__init__)
+def test_forknode_fire_forknodeentryeventoccurrence_constructor_exists():
+    assert callable(ForkNode_fire_forkNodeEntryEventOccurrence.__init__)
 
 
-def test_booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence.__init__)
+def test_forknode_fire_forknodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ForkNode_fire_forkNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence)
+def test_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence)
 
 
-def test_booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_constructor_exists():
-    assert callable(BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence.__init__)
+def test_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_constructor_exists():
+    assert callable(ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence.__init__)
 
 
-def test_booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence.__init__)
+def test_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluategreaterexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateGREATERExitEventOccurrence)
+def test_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluategreaterexiteventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateGREATERExitEventOccurrence.__init__)
+def test_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_constructor_exists():
+    assert callable(ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluategreaterexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateGREATERExitEventOccurrence.__init__)
+def test_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercalculationexpression::evaluatesubtractentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence)
+def test_initialnode_fire_initialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(InitialNode_fire_initialNodeExitEventOccurrence)
 
 
-def test_integercalculationexpression::evaluatesubtractentryeventoccurrence_constructor_exists():
-    assert callable(IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence.__init__)
+def test_initialnode_fire_initialnodeexiteventoccurrence_constructor_exists():
+    assert callable(InitialNode_fire_initialNodeExitEventOccurrence.__init__)
 
 
-def test_integercalculationexpression::evaluatesubtractentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence.__init__)
+def test_initialnode_fire_initialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(InitialNode_fire_initialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercalculationexpression::evaluateaddexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerCalculationExpression::evaluateADDExitEventOccurrence)
+def test_initialnode_fire_initialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(InitialNode_fire_initialNodeEntryEventOccurrence)
 
 
-def test_integercalculationexpression::evaluateaddexiteventoccurrence_constructor_exists():
-    assert callable(IntegerCalculationExpression::evaluateADDExitEventOccurrence.__init__)
+def test_initialnode_fire_initialnodeentryeventoccurrence_constructor_exists():
+    assert callable(InitialNode_fire_initialNodeEntryEventOccurrence.__init__)
 
 
-def test_integercalculationexpression::evaluateaddexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerCalculationExpression::evaluateADDExitEventOccurrence.__init__)
+def test_initialnode_fire_initialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(InitialNode_fire_initialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercalculationexpression::evaluateaddentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerCalculationExpression::evaluateADDEntryEventOccurrence)
+def test_initialnode_isready_initialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(InitialNode_isReady_InitialNodeExitEventOccurrence)
 
 
-def test_integercalculationexpression::evaluateaddentryeventoccurrence_constructor_exists():
-    assert callable(IntegerCalculationExpression::evaluateADDEntryEventOccurrence.__init__)
+def test_initialnode_isready_initialnodeexiteventoccurrence_constructor_exists():
+    assert callable(InitialNode_isReady_InitialNodeExitEventOccurrence.__init__)
 
 
-def test_integercalculationexpression::evaluateaddentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerCalculationExpression::evaluateADDEntryEventOccurrence.__init__)
+def test_initialnode_isready_initialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(InitialNode_isReady_InitialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence)
+def test_initialnode_isready_initialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(InitialNode_isReady_InitialNodeEntryEventOccurrence)
 
 
-def test_integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_constructor_exists():
-    assert callable(IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence.__init__)
+def test_initialnode_isready_initialnodeentryeventoccurrence_constructor_exists():
+    assert callable(InitialNode_isReady_InitialNodeEntryEventOccurrence.__init__)
 
 
-def test_integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence.__init__)
+def test_initialnode_isready_initialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(InitialNode_isReady_InitialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence)
+def test_opaqueaction_doaction_opaqueactionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(OpaqueAction_doAction_opaqueActionExitEventOccurrence)
 
 
-def test_integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_constructor_exists():
-    assert callable(IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence.__init__)
+def test_opaqueaction_doaction_opaqueactionexiteventoccurrence_constructor_exists():
+    assert callable(OpaqueAction_doAction_opaqueActionExitEventOccurrence.__init__)
 
 
-def test_integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence.__init__)
+def test_opaqueaction_doaction_opaqueactionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(OpaqueAction_doAction_opaqueActionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integerexpression::getoperandcurrentvaluesexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerExpression::getOperandCurrentValuesExitEventOccurrence)
+def test_opaqueaction_doaction_opaqueactionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(OpaqueAction_doAction_opaqueActionEntryEventOccurrence)
 
 
-def test_integerexpression::getoperandcurrentvaluesexiteventoccurrence_constructor_exists():
-    assert callable(IntegerExpression::getOperandCurrentValuesExitEventOccurrence.__init__)
+def test_opaqueaction_doaction_opaqueactionentryeventoccurrence_constructor_exists():
+    assert callable(OpaqueAction_doAction_opaqueActionEntryEventOccurrence.__init__)
 
 
-def test_integerexpression::getoperandcurrentvaluesexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerExpression::getOperandCurrentValuesExitEventOccurrence.__init__)
+def test_opaqueaction_doaction_opaqueactionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(OpaqueAction_doAction_opaqueActionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluatesmallerexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence)
+def test_decisionnode_fire_decisionnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(DecisionNode_fire_decisionNodeEntryEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluatesmallerexiteventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence.__init__)
+def test_decisionnode_fire_decisionnodeentryeventoccurrence_constructor_exists():
+    assert callable(DecisionNode_fire_decisionNodeEntryEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluatesmallerexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence.__init__)
+def test_decisionnode_fire_decisionnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(DecisionNode_fire_decisionNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluatesmallerentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence)
+def test_mergenode_hasoffers_mergenodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(MergeNode_hasOffers_mergeNodeExitEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluatesmallerentryeventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence.__init__)
+def test_mergenode_hasoffers_mergenodeexiteventoccurrence_constructor_exists():
+    assert callable(MergeNode_hasOffers_mergeNodeExitEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluatesmallerentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence.__init__)
+def test_mergenode_hasoffers_mergenodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(MergeNode_hasOffers_mergeNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence)
+def test_mergenode_hasoffers_mergenodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(MergeNode_hasOffers_mergeNodeEntryEventOccurrence)
 
 
-def test_integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence.__init__)
+def test_mergenode_hasoffers_mergenodeentryeventoccurrence_constructor_exists():
+    assert callable(MergeNode_hasOffers_mergeNodeEntryEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence.__init__)
+def test_mergenode_hasoffers_mergenodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(MergeNode_hasOffers_mergeNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence)
+def test_forknode_fire_forknodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ForkNode_fire_forkNodeExitEventOccurrence)
 
 
-def test_integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence.__init__)
+def test_forknode_fire_forknodeexiteventoccurrence_constructor_exists():
+    assert callable(ForkNode_fire_forkNodeExitEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence.__init__)
+def test_forknode_fire_forknodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ForkNode_fire_forkNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercalculationexpression::evaluatesubtractexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence)
+def test_action_sendoffers_actionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Action_sendOffers_actionExitEventOccurrence)
 
 
-def test_integercalculationexpression::evaluatesubtractexiteventoccurrence_constructor_exists():
-    assert callable(IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence.__init__)
+def test_action_sendoffers_actionexiteventoccurrence_constructor_exists():
+    assert callable(Action_sendOffers_actionExitEventOccurrence.__init__)
 
 
-def test_integercalculationexpression::evaluatesubtractexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence.__init__)
+def test_action_sendoffers_actionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Action_sendOffers_actionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence)
+def test_action_sendoffers_actionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Action_sendOffers_actionEntryEventOccurrence)
 
 
-def test_stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_constructor_exists():
-    assert callable(StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence.__init__)
+def test_action_sendoffers_actionentryeventoccurrence_constructor_exists():
+    assert callable(Action_sendOffers_actionEntryEventOccurrence.__init__)
 
 
-def test_stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence.__init__)
+def test_action_sendoffers_actionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Action_sendOffers_actionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence)
+def test_controlnode_fire_controlnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ControlNode_fire_controlNodeExitEventOccurrence)
 
 
-def test_stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_constructor_exists():
-    assert callable(StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence.__init__)
+def test_controlnode_fire_controlnodeexiteventoccurrence_constructor_exists():
+    assert callable(ControlNode_fire_controlNodeExitEventOccurrence.__init__)
 
 
-def test_stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence.__init__)
+def test_controlnode_fire_controlnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ControlNode_fire_controlNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(StringVariable::setCurrentValue::stringVariableExitEventOccurrence)
+def test_controlnode_fire_controlnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ControlNode_fire_controlNodeEntryEventOccurrence)
 
 
-def test_stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_constructor_exists():
-    assert callable(StringVariable::setCurrentValue::stringVariableExitEventOccurrence.__init__)
+def test_controlnode_fire_controlnodeentryeventoccurrence_constructor_exists():
+    assert callable(ControlNode_fire_controlNodeEntryEventOccurrence.__init__)
 
 
-def test_stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(StringVariable::setCurrentValue::stringVariableExitEventOccurrence.__init__)
+def test_controlnode_fire_controlnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ControlNode_fire_controlNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(StringVariable::setCurrentValue::stringVariableEntryEventOccurrence)
+def test_controlnode_isready_controlnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ControlNode_isReady_ControlNodeExitEventOccurrence)
 
 
-def test_stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_constructor_exists():
-    assert callable(StringVariable::setCurrentValue::stringVariableEntryEventOccurrence.__init__)
+def test_controlnode_isready_controlnodeexiteventoccurrence_constructor_exists():
+    assert callable(ControlNode_isReady_ControlNodeExitEventOccurrence.__init__)
 
 
-def test_stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(StringVariable::setCurrentValue::stringVariableEntryEventOccurrence.__init__)
+def test_controlnode_isready_controlnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ControlNode_isReady_ControlNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence)
+def test_controlnode_isready_controlnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ControlNode_isReady_ControlNodeEntryEventOccurrence)
 
 
-def test_integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_constructor_exists():
-    assert callable(IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence.__init__)
+def test_controlnode_isready_controlnodeentryeventoccurrence_constructor_exists():
+    assert callable(ControlNode_isReady_ControlNodeEntryEventOccurrence.__init__)
 
 
-def test_integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence.__init__)
+def test_controlnode_isready_controlnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ControlNode_isReady_ControlNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence)
+def test_activityedge_hasofferexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_hasOfferExitEventOccurrence)
 
 
-def test_integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_constructor_exists():
-    assert callable(IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence.__init__)
+def test_activityedge_hasofferexiteventoccurrence_constructor_exists():
+    assert callable(ActivityEdge_hasOfferExitEventOccurrence.__init__)
 
 
-def test_integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence.__init__)
+def test_activityedge_hasofferexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityEdge_hasOfferExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integervariable::setcurrentvalue::integervariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence)
+def test_activityedge_hasofferentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_hasOfferEntryEventOccurrence)
 
 
-def test_integervariable::setcurrentvalue::integervariableexiteventoccurrence_constructor_exists():
-    assert callable(IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence.__init__)
+def test_activityedge_hasofferentryeventoccurrence_constructor_exists():
+    assert callable(ActivityEdge_hasOfferEntryEventOccurrence.__init__)
 
 
-def test_integervariable::setcurrentvalue::integervariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence.__init__)
+def test_activityedge_hasofferentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityEdge_hasOfferEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integervariable::setcurrentvalue::integervariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence)
+def test_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence)
 
 
-def test_integervariable::setcurrentvalue::integervariableentryeventoccurrence_constructor_exists():
-    assert callable(IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence.__init__)
+def test_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_constructor_exists():
+    assert callable(ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence.__init__)
 
 
-def test_integervariable::setcurrentvalue::integervariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence.__init__)
+def test_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integerexpression::getoperandcurrentvaluesentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerExpression::getOperandCurrentValuesEntryEventOccurrence)
+def test_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence)
 
 
-def test_integerexpression::getoperandcurrentvaluesentryeventoccurrence_constructor_exists():
-    assert callable(IntegerExpression::getOperandCurrentValuesEntryEventOccurrence.__init__)
+def test_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_constructor_exists():
+    assert callable(ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence.__init__)
 
 
-def test_integerexpression::getoperandcurrentvaluesentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerExpression::getOperandCurrentValuesEntryEventOccurrence.__init__)
+def test_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_decisionnode::fire::decisionnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(DecisionNode::fire::decisionNodeExitEventOccurrence)
+def test_action_fire_actionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Action_fire_actionExitEventOccurrence)
 
 
-def test_decisionnode::fire::decisionnodeexiteventoccurrence_constructor_exists():
-    assert callable(DecisionNode::fire::decisionNodeExitEventOccurrence.__init__)
+def test_action_fire_actionexiteventoccurrence_constructor_exists():
+    assert callable(Action_fire_actionExitEventOccurrence.__init__)
 
 
-def test_decisionnode::fire::decisionnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(DecisionNode::fire::decisionNodeExitEventOccurrence.__init__)
+def test_action_fire_actionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Action_fire_actionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence)
+def test_action_fire_actionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Action_fire_actionEntryEventOccurrence)
 
 
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_constructor_exists():
-    assert callable(BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence.__init__)
+def test_action_fire_actionentryeventoccurrence_constructor_exists():
+    assert callable(Action_fire_actionEntryEventOccurrence.__init__)
 
 
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence.__init__)
+def test_action_fire_actionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Action_fire_actionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence)
+def test_action_isready_actionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Action_isReady_actionExitEventOccurrence)
 
 
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_constructor_exists():
-    assert callable(BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence.__init__)
+def test_action_isready_actionexiteventoccurrence_constructor_exists():
+    assert callable(Action_isReady_actionExitEventOccurrence.__init__)
 
 
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence.__init__)
+def test_action_isready_actionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Action_isReady_actionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence)
+def test_action_isready_actionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Action_isReady_actionEntryEventOccurrence)
 
 
-def test_booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_constructor_exists():
-    assert callable(BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence.__init__)
+def test_action_isready_actionentryeventoccurrence_constructor_exists():
+    assert callable(Action_isReady_actionEntryEventOccurrence.__init__)
 
 
-def test_booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence.__init__)
+def test_action_isready_actionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Action_isReady_actionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence)
+def test_activitynode_hasoffersexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_hasOffersExitEventOccurrence)
 
 
-def test_booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_constructor_exists():
-    assert callable(BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence.__init__)
+def test_activitynode_hasoffersexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_hasOffersExitEventOccurrence.__init__)
 
 
-def test_booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence.__init__)
+def test_activitynode_hasoffersexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_hasOffersExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forknode::fire::forknodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ForkNode::fire::forkNodeEntryEventOccurrence)
+def test_activitynode_hasoffersentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_hasOffersEntryEventOccurrence)
 
 
-def test_forknode::fire::forknodeentryeventoccurrence_constructor_exists():
-    assert callable(ForkNode::fire::forkNodeEntryEventOccurrence.__init__)
+def test_activitynode_hasoffersentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_hasOffersEntryEventOccurrence.__init__)
 
 
-def test_forknode::fire::forknodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ForkNode::fire::forkNodeEntryEventOccurrence.__init__)
+def test_activitynode_hasoffersentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_hasOffersEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityfinalnode::fire::activityfinalnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence)
+def test_activitynode_removetokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_removeTokenExitEventOccurrence)
 
 
-def test_activityfinalnode::fire::activityfinalnodeexiteventoccurrence_constructor_exists():
-    assert callable(ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence.__init__)
+def test_activitynode_removetokenexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_removeTokenExitEventOccurrence.__init__)
 
 
-def test_activityfinalnode::fire::activityfinalnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence.__init__)
+def test_activitynode_removetokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_removeTokenExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityfinalnode::fire::activityfinalnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence)
+def test_activitynode_removetokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_removeTokenEntryEventOccurrence)
 
 
-def test_activityfinalnode::fire::activityfinalnodeentryeventoccurrence_constructor_exists():
-    assert callable(ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence.__init__)
+def test_activitynode_removetokenentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_removeTokenEntryEventOccurrence.__init__)
 
 
-def test_activityfinalnode::fire::activityfinalnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence.__init__)
+def test_activitynode_removetokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_removeTokenEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_initialnode::fire::initialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(InitialNode::fire::initialNodeExitEventOccurrence)
+def test_activitydiagram_tracesystem_joinnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_JoinNode)
 
 
-def test_initialnode::fire::initialnodeexiteventoccurrence_constructor_exists():
-    assert callable(InitialNode::fire::initialNodeExitEventOccurrence.__init__)
+def test_activitydiagram_tracesystem_joinnode_constructor_exists():
+    assert callable(activitydiagram_traceSystem_JoinNode.__init__)
 
 
-def test_initialnode::fire::initialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(InitialNode::fire::initialNodeExitEventOccurrence.__init__)
+def test_activitydiagram_tracesystem_joinnode_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_initialnode::fire::initialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(InitialNode::fire::initialNodeEntryEventOccurrence)
+def test_activitydiagram_tracesystem_initialnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_InitialNode)
 
 
-def test_initialnode::fire::initialnodeentryeventoccurrence_constructor_exists():
-    assert callable(InitialNode::fire::initialNodeEntryEventOccurrence.__init__)
+def test_activitydiagram_tracesystem_initialnode_constructor_exists():
+    assert callable(activitydiagram_traceSystem_InitialNode.__init__)
 
 
-def test_initialnode::fire::initialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(InitialNode::fire::initialNodeEntryEventOccurrence.__init__)
+def test_activitydiagram_tracesystem_initialnode_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_initialnode::isready::initialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(InitialNode::isReady::InitialNodeExitEventOccurrence)
+def test_tracesystem_activitydiagram_tracednamedelement_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedNamedElement)
 
 
-def test_initialnode::isready::initialnodeexiteventoccurrence_constructor_exists():
-    assert callable(InitialNode::isReady::InitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_activitydiagram_tracednamedelement_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedNamedElement.__init__)
 
 
-def test_initialnode::isready::initialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(InitialNode::isReady::InitialNodeExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_initialnode::isready::initialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(InitialNode::isReady::InitialNodeEntryEventOccurrence)
-
-
-def test_initialnode::isready::initialnodeentryeventoccurrence_constructor_exists():
-    assert callable(InitialNode::isReady::InitialNodeEntryEventOccurrence.__init__)
-
-
-def test_initialnode::isready::initialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(InitialNode::isReady::InitialNodeEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_opaqueaction::doaction::opaqueactionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(OpaqueAction::doAction::opaqueActionExitEventOccurrence)
-
-
-def test_opaqueaction::doaction::opaqueactionexiteventoccurrence_constructor_exists():
-    assert callable(OpaqueAction::doAction::opaqueActionExitEventOccurrence.__init__)
-
-
-def test_opaqueaction::doaction::opaqueactionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(OpaqueAction::doAction::opaqueActionExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_opaqueaction::doaction::opaqueactionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(OpaqueAction::doAction::opaqueActionEntryEventOccurrence)
-
-
-def test_opaqueaction::doaction::opaqueactionentryeventoccurrence_constructor_exists():
-    assert callable(OpaqueAction::doAction::opaqueActionEntryEventOccurrence.__init__)
-
-
-def test_opaqueaction::doaction::opaqueactionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(OpaqueAction::doAction::opaqueActionEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_decisionnode::fire::decisionnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(DecisionNode::fire::decisionNodeEntryEventOccurrence)
-
-
-def test_decisionnode::fire::decisionnodeentryeventoccurrence_constructor_exists():
-    assert callable(DecisionNode::fire::decisionNodeEntryEventOccurrence.__init__)
-
-
-def test_decisionnode::fire::decisionnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(DecisionNode::fire::decisionNodeEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mergenode::hasoffers::mergenodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(MergeNode::hasOffers::mergeNodeExitEventOccurrence)
-
-
-def test_mergenode::hasoffers::mergenodeexiteventoccurrence_constructor_exists():
-    assert callable(MergeNode::hasOffers::mergeNodeExitEventOccurrence.__init__)
-
-
-def test_mergenode::hasoffers::mergenodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(MergeNode::hasOffers::mergeNodeExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mergenode::hasoffers::mergenodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(MergeNode::hasOffers::mergeNodeEntryEventOccurrence)
-
-
-def test_mergenode::hasoffers::mergenodeentryeventoccurrence_constructor_exists():
-    assert callable(MergeNode::hasOffers::mergeNodeEntryEventOccurrence.__init__)
-
-
-def test_mergenode::hasoffers::mergenodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(MergeNode::hasOffers::mergeNodeEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_forknode::fire::forknodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ForkNode::fire::forkNodeExitEventOccurrence)
-
-
-def test_forknode::fire::forknodeexiteventoccurrence_constructor_exists():
-    assert callable(ForkNode::fire::forkNodeExitEventOccurrence.__init__)
-
-
-def test_forknode::fire::forknodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ForkNode::fire::forkNodeExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_action::sendoffers::actionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Action::sendOffers::actionExitEventOccurrence)
-
-
-def test_action::sendoffers::actionexiteventoccurrence_constructor_exists():
-    assert callable(Action::sendOffers::actionExitEventOccurrence.__init__)
-
-
-def test_action::sendoffers::actionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Action::sendOffers::actionExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_action::sendoffers::actionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Action::sendOffers::actionEntryEventOccurrence)
-
-
-def test_action::sendoffers::actionentryeventoccurrence_constructor_exists():
-    assert callable(Action::sendOffers::actionEntryEventOccurrence.__init__)
-
-
-def test_action::sendoffers::actionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Action::sendOffers::actionEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controlnode::fire::controlnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ControlNode::fire::controlNodeExitEventOccurrence)
-
-
-def test_controlnode::fire::controlnodeexiteventoccurrence_constructor_exists():
-    assert callable(ControlNode::fire::controlNodeExitEventOccurrence.__init__)
-
-
-def test_controlnode::fire::controlnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ControlNode::fire::controlNodeExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controlnode::fire::controlnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ControlNode::fire::controlNodeEntryEventOccurrence)
-
-
-def test_controlnode::fire::controlnodeentryeventoccurrence_constructor_exists():
-    assert callable(ControlNode::fire::controlNodeEntryEventOccurrence.__init__)
-
-
-def test_controlnode::fire::controlnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ControlNode::fire::controlNodeEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controlnode::isready::controlnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ControlNode::isReady::ControlNodeExitEventOccurrence)
-
-
-def test_controlnode::isready::controlnodeexiteventoccurrence_constructor_exists():
-    assert callable(ControlNode::isReady::ControlNodeExitEventOccurrence.__init__)
-
-
-def test_controlnode::isready::controlnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ControlNode::isReady::ControlNodeExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controlnode::isready::controlnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ControlNode::isReady::ControlNodeEntryEventOccurrence)
-
-
-def test_controlnode::isready::controlnodeentryeventoccurrence_constructor_exists():
-    assert callable(ControlNode::isReady::ControlNodeEntryEventOccurrence.__init__)
-
-
-def test_controlnode::isready::controlnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ControlNode::isReady::ControlNodeEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityedge::hasofferexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::hasOfferExitEventOccurrence)
-
-
-def test_activityedge::hasofferexiteventoccurrence_constructor_exists():
-    assert callable(ActivityEdge::hasOfferExitEventOccurrence.__init__)
-
-
-def test_activityedge::hasofferexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityEdge::hasOfferExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityedge::hasofferentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::hasOfferEntryEventOccurrence)
-
-
-def test_activityedge::hasofferentryeventoccurrence_constructor_exists():
-    assert callable(ActivityEdge::hasOfferEntryEventOccurrence.__init__)
-
-
-def test_activityedge::hasofferentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityEdge::hasOfferEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityedge::takeofferedtokens::activityedgeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence)
-
-
-def test_activityedge::takeofferedtokens::activityedgeexiteventoccurrence_constructor_exists():
-    assert callable(ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence.__init__)
-
-
-def test_activityedge::takeofferedtokens::activityedgeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityedge::takeofferedtokens::activityedgeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence)
-
-
-def test_activityedge::takeofferedtokens::activityedgeentryeventoccurrence_constructor_exists():
-    assert callable(ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence.__init__)
-
-
-def test_activityedge::takeofferedtokens::activityedgeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::tracesystem::joinnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::JoinNode)
-
-
-def test_activitydiagram::tracesystem::joinnode_constructor_exists():
-    assert callable(activitydiagram::traceSystem::JoinNode.__init__)
-
-
-def test_activitydiagram::tracesystem::joinnode_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::JoinNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::tracesystem::initialnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::InitialNode)
-
-
-def test_activitydiagram::tracesystem::initialnode_constructor_exists():
-    assert callable(activitydiagram::traceSystem::InitialNode.__init__)
-
-
-def test_activitydiagram::tracesystem::initialnode_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::InitialNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracesystem::activitydiagram::tracednamedelement_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedNamedElement)
-
-
-def test_tracesystem::activitydiagram::tracednamedelement_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedNamedElement.__init__)
-
-
-def test_tracesystem::activitydiagram::tracednamedelement_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedNamedElement.__init__)
+def test_tracesystem_activitydiagram_tracednamedelement_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tracesystem::activitydiagram::tracednamedelement_has_name():
-    assert hasattr(traceSystem::activitydiagram::TracedNamedElement, "name")
+def test_tracesystem_activitydiagram_tracednamedelement_has_name():
+    assert hasattr(traceSystem_activitydiagram_TracedNamedElement, "name")
     descriptor = None
-    for klass in traceSystem::activitydiagram::TracedNamedElement.__mro__:
+    for klass in traceSystem_activitydiagram_TracedNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1218,86 +938,86 @@ def test_tracesystem::activitydiagram::tracednamedelement_has_name():
 
 
 
-def test_activitydiagram::tracesystem::integervariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::IntegerVariable)
+def test_activitydiagram_tracesystem_integervariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_IntegerVariable)
 
 
-def test_activitydiagram::tracesystem::integervariable_constructor_exists():
-    assert callable(activitydiagram::traceSystem::IntegerVariable.__init__)
+def test_activitydiagram_tracesystem_integervariable_constructor_exists():
+    assert callable(activitydiagram_traceSystem_IntegerVariable.__init__)
 
 
-def test_activitydiagram::tracesystem::integervariable_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::IntegerVariable.__init__)
+def test_activitydiagram_tracesystem_integervariable_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_IntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::DecisionNode)
+def test_activitydiagram_tracesystem_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_DecisionNode)
 
 
-def test_activitydiagram::tracesystem::decisionnode_constructor_exists():
-    assert callable(activitydiagram::traceSystem::DecisionNode.__init__)
+def test_activitydiagram_tracesystem_decisionnode_constructor_exists():
+    assert callable(activitydiagram_traceSystem_DecisionNode.__init__)
 
 
-def test_activitydiagram::tracesystem::decisionnode_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::DecisionNode.__init__)
+def test_activitydiagram_tracesystem_decisionnode_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::mergenode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::MergeNode)
+def test_activitydiagram_tracesystem_mergenode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_MergeNode)
 
 
-def test_activitydiagram::tracesystem::mergenode_constructor_exists():
-    assert callable(activitydiagram::traceSystem::MergeNode.__init__)
+def test_activitydiagram_tracesystem_mergenode_constructor_exists():
+    assert callable(activitydiagram_traceSystem_MergeNode.__init__)
 
 
-def test_activitydiagram::tracesystem::mergenode_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::MergeNode.__init__)
+def test_activitydiagram_tracesystem_mergenode_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::value_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::Value)
+def test_activitydiagram_tracesystem_value_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_Value)
 
 
-def test_activitydiagram::tracesystem::value_constructor_exists():
-    assert callable(activitydiagram::traceSystem::Value.__init__)
+def test_activitydiagram_tracesystem_value_constructor_exists():
+    assert callable(activitydiagram_traceSystem_Value.__init__)
 
 
-def test_activitydiagram::tracesystem::value_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::Value.__init__)
+def test_activitydiagram_tracesystem_value_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::activity_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::Activity)
+def test_activitydiagram_tracesystem_activity_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_Activity)
 
 
-def test_activitydiagram::tracesystem::activity_constructor_exists():
-    assert callable(activitydiagram::traceSystem::Activity.__init__)
+def test_activitydiagram_tracesystem_activity_constructor_exists():
+    assert callable(activitydiagram_traceSystem_Activity.__init__)
 
 
-def test_activitydiagram::tracesystem::activity_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::Activity.__init__)
+def test_activitydiagram_tracesystem_activity_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::controlflow_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::ControlFlow)
+def test_activitydiagram_tracesystem_controlflow_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_ControlFlow)
 
 
-def test_activitydiagram::tracesystem::controlflow_constructor_exists():
-    assert callable(activitydiagram::traceSystem::ControlFlow.__init__)
+def test_activitydiagram_tracesystem_controlflow_constructor_exists():
+    assert callable(activitydiagram_traceSystem_ControlFlow.__init__)
 
 
-def test_activitydiagram::tracesystem::controlflow_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::ControlFlow.__init__)
+def test_activitydiagram_tracesystem_controlflow_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1316,30 +1036,30 @@ def test_tracedactivityedge_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedcontrolflow_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedControlFlow)
+def test_tracesystem_activitydiagram_tracedcontrolflow_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedControlFlow)
 
 
-def test_tracesystem::activitydiagram::tracedcontrolflow_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedControlFlow.__init__)
+def test_tracesystem_activitydiagram_tracedcontrolflow_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedControlFlow.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedcontrolflow_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedControlFlow.__init__)
+def test_tracesystem_activitydiagram_tracedcontrolflow_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::forknode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::ForkNode)
+def test_activitydiagram_tracesystem_forknode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_ForkNode)
 
 
-def test_activitydiagram::tracesystem::forknode_constructor_exists():
-    assert callable(activitydiagram::traceSystem::ForkNode.__init__)
+def test_activitydiagram_tracesystem_forknode_constructor_exists():
+    assert callable(activitydiagram_traceSystem_ForkNode.__init__)
 
 
-def test_activitydiagram::tracesystem::forknode_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::ForkNode.__init__)
+def test_activitydiagram_tracesystem_forknode_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1358,86 +1078,86 @@ def test_tracedcontrolnode_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::traceddecisionnode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedDecisionNode)
+def test_tracesystem_activitydiagram_traceddecisionnode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedDecisionNode)
 
 
-def test_tracesystem::activitydiagram::traceddecisionnode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedDecisionNode.__init__)
+def test_tracesystem_activitydiagram_traceddecisionnode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedDecisionNode.__init__)
 
 
-def test_tracesystem::activitydiagram::traceddecisionnode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedDecisionNode.__init__)
+def test_tracesystem_activitydiagram_traceddecisionnode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedDecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedjoinnode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedJoinNode)
+def test_tracesystem_activitydiagram_tracedinitialnode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedInitialNode)
 
 
-def test_tracesystem::activitydiagram::tracedjoinnode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedJoinNode.__init__)
+def test_tracesystem_activitydiagram_tracedinitialnode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedInitialNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedjoinnode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedJoinNode.__init__)
+def test_tracesystem_activitydiagram_tracedinitialnode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedInitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedmergenode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedMergeNode)
+def test_tracesystem_activitydiagram_tracedmergenode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedMergeNode)
 
 
-def test_tracesystem::activitydiagram::tracedmergenode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedMergeNode.__init__)
+def test_tracesystem_activitydiagram_tracedmergenode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedMergeNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedmergenode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedMergeNode.__init__)
+def test_tracesystem_activitydiagram_tracedmergenode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedMergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedinitialnode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedInitialNode)
+def test_tracesystem_activitydiagram_tracedjoinnode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedJoinNode)
 
 
-def test_tracesystem::activitydiagram::tracedinitialnode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedInitialNode.__init__)
+def test_tracesystem_activitydiagram_tracedjoinnode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedJoinNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedinitialnode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedInitialNode.__init__)
+def test_tracesystem_activitydiagram_tracedjoinnode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedJoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedforknode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedForkNode)
+def test_tracesystem_activitydiagram_tracedforknode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedForkNode)
 
 
-def test_tracesystem::activitydiagram::tracedforknode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedForkNode.__init__)
+def test_tracesystem_activitydiagram_tracedforknode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedForkNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedforknode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedForkNode.__init__)
+def test_tracesystem_activitydiagram_tracedforknode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::BooleanVariable)
+def test_activitydiagram_tracesystem_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_BooleanVariable)
 
 
-def test_activitydiagram::tracesystem::booleanvariable_constructor_exists():
-    assert callable(activitydiagram::traceSystem::BooleanVariable.__init__)
+def test_activitydiagram_tracesystem_booleanvariable_constructor_exists():
+    assert callable(activitydiagram_traceSystem_BooleanVariable.__init__)
 
 
-def test_activitydiagram::tracesystem::booleanvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::BooleanVariable.__init__)
+def test_activitydiagram_tracesystem_booleanvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1456,58 +1176,58 @@ def test_tracednamedelement_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedvariable_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedVariable)
+def test_tracesystem_activitydiagram_tracedactivityedge_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedActivityEdge)
 
 
-def test_tracesystem::activitydiagram::tracedvariable_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedVariable.__init__)
+def test_tracesystem_activitydiagram_tracedactivityedge_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedActivityEdge.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedvariable_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedVariable.__init__)
+def test_tracesystem_activitydiagram_tracedactivityedge_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedactivitynode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedActivityNode)
+def test_tracesystem_activitydiagram_tracedvariable_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedVariable)
 
 
-def test_tracesystem::activitydiagram::tracedactivitynode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedActivityNode.__init__)
+def test_tracesystem_activitydiagram_tracedvariable_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedVariable.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedactivitynode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedActivityNode.__init__)
+def test_tracesystem_activitydiagram_tracedvariable_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedactivityedge_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedActivityEdge)
+def test_tracesystem_activitydiagram_tracedactivitynode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedActivityNode)
 
 
-def test_tracesystem::activitydiagram::tracedactivityedge_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedActivityEdge.__init__)
+def test_tracesystem_activitydiagram_tracedactivitynode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedActivityNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedactivityedge_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedActivityEdge.__init__)
+def test_tracesystem_activitydiagram_tracedactivitynode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedactivity_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedActivity)
+def test_tracesystem_activitydiagram_tracedactivity_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedActivity)
 
 
-def test_tracesystem::activitydiagram::tracedactivity_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedActivity.__init__)
+def test_tracesystem_activitydiagram_tracedactivity_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedActivity.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedactivity_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedActivity.__init__)
+def test_tracesystem_activitydiagram_tracedactivity_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedActivity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1526,58 +1246,58 @@ def test_tracedactivitynode_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedcontrolnode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedControlNode)
+def test_tracesystem_activitydiagram_tracedcontrolnode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedControlNode)
 
 
-def test_tracesystem::activitydiagram::tracedcontrolnode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedControlNode.__init__)
+def test_tracesystem_activitydiagram_tracedcontrolnode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedControlNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedcontrolnode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedControlNode.__init__)
+def test_tracesystem_activitydiagram_tracedcontrolnode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedexecutablenode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedExecutableNode)
+def test_tracesystem_activitydiagram_tracedexecutablenode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedExecutableNode)
 
 
-def test_tracesystem::activitydiagram::tracedexecutablenode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedExecutableNode.__init__)
+def test_tracesystem_activitydiagram_tracedexecutablenode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedExecutableNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedexecutablenode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedExecutableNode.__init__)
+def test_tracesystem_activitydiagram_tracedexecutablenode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::OpaqueAction)
+def test_activitydiagram_tracesystem_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_OpaqueAction)
 
 
-def test_activitydiagram::tracesystem::opaqueaction_constructor_exists():
-    assert callable(activitydiagram::traceSystem::OpaqueAction.__init__)
+def test_activitydiagram_tracesystem_opaqueaction_constructor_exists():
+    assert callable(activitydiagram_traceSystem_OpaqueAction.__init__)
 
 
-def test_activitydiagram::tracesystem::opaqueaction_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::OpaqueAction.__init__)
+def test_activitydiagram_tracesystem_opaqueaction_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_OpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::expression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::Expression)
+def test_activitydiagram_tracesystem_expression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_Expression)
 
 
-def test_activitydiagram::tracesystem::expression_constructor_exists():
-    assert callable(activitydiagram::traceSystem::Expression.__init__)
+def test_activitydiagram_tracesystem_expression_constructor_exists():
+    assert callable(activitydiagram_traceSystem_Expression.__init__)
 
 
-def test_activitydiagram::tracesystem::expression_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::Expression.__init__)
+def test_activitydiagram_tracesystem_expression_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1596,44 +1316,44 @@ def test_tracedaction_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedopaqueaction_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedOpaqueAction)
+def test_tracesystem_activitydiagram_tracedopaqueaction_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedOpaqueAction)
 
 
-def test_tracesystem::activitydiagram::tracedopaqueaction_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedOpaqueAction.__init__)
+def test_tracesystem_activitydiagram_tracedopaqueaction_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedOpaqueAction.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedopaqueaction_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedOpaqueAction.__init__)
+def test_tracesystem_activitydiagram_tracedopaqueaction_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedOpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::stringvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::StringVariable)
+def test_activitydiagram_tracesystem_stringvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_StringVariable)
 
 
-def test_activitydiagram::tracesystem::stringvariable_constructor_exists():
-    assert callable(activitydiagram::traceSystem::StringVariable.__init__)
+def test_activitydiagram_tracesystem_stringvariable_constructor_exists():
+    assert callable(activitydiagram_traceSystem_StringVariable.__init__)
 
 
-def test_activitydiagram::tracesystem::stringvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::StringVariable.__init__)
+def test_activitydiagram_tracesystem_stringvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_StringVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedfinalnode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedFinalNode)
+def test_tracesystem_activitydiagram_tracedfinalnode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedFinalNode)
 
 
-def test_tracesystem::activitydiagram::tracedfinalnode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedFinalNode.__init__)
+def test_tracesystem_activitydiagram_tracedfinalnode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedFinalNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedfinalnode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedFinalNode.__init__)
+def test_tracesystem_activitydiagram_tracedfinalnode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1652,30 +1372,30 @@ def test_tracedexecutablenode_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedaction_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedAction)
+def test_tracesystem_activitydiagram_tracedaction_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedAction)
 
 
-def test_tracesystem::activitydiagram::tracedaction_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedAction.__init__)
+def test_tracesystem_activitydiagram_tracedaction_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedAction.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedaction_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedAction.__init__)
+def test_tracesystem_activitydiagram_tracedaction_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracesystem::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::traceSystem::ActivityFinalNode)
+def test_activitydiagram_tracesystem_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_traceSystem_ActivityFinalNode)
 
 
-def test_activitydiagram::tracesystem::activityfinalnode_constructor_exists():
-    assert callable(activitydiagram::traceSystem::ActivityFinalNode.__init__)
+def test_activitydiagram_tracesystem_activityfinalnode_constructor_exists():
+    assert callable(activitydiagram_traceSystem_ActivityFinalNode.__init__)
 
 
-def test_activitydiagram::tracesystem::activityfinalnode_constructor_args():
-    sig = inspect.signature(activitydiagram::traceSystem::ActivityFinalNode.__init__)
+def test_activitydiagram_tracesystem_activityfinalnode_constructor_args():
+    sig = inspect.signature(activitydiagram_traceSystem_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1694,16 +1414,16 @@ def test_tracedfinalnode_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedactivityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedActivityFinalNode)
+def test_tracesystem_activitydiagram_tracedactivityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedActivityFinalNode)
 
 
-def test_tracesystem::activitydiagram::tracedactivityfinalnode_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedActivityFinalNode.__init__)
+def test_tracesystem_activitydiagram_tracedactivityfinalnode_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedActivityFinalNode.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedactivityfinalnode_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedActivityFinalNode.__init__)
+def test_tracesystem_activitydiagram_tracedactivityfinalnode_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1722,114 +1442,114 @@ def test_tracedvariable_constructor_args():
 
 
 
-def test_tracesystem::activitydiagram::tracedintegervariable_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedIntegerVariable)
+def test_tracesystem_activitydiagram_tracedstringvariable_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedStringVariable)
 
 
-def test_tracesystem::activitydiagram::tracedintegervariable_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedIntegerVariable.__init__)
+def test_tracesystem_activitydiagram_tracedstringvariable_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedStringVariable.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedintegervariable_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedIntegerVariable.__init__)
+def test_tracesystem_activitydiagram_tracedstringvariable_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedStringVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedstringvariable_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedStringVariable)
+def test_tracesystem_activitydiagram_tracedintegervariable_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedIntegerVariable)
 
 
-def test_tracesystem::activitydiagram::tracedstringvariable_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedStringVariable.__init__)
+def test_tracesystem_activitydiagram_tracedintegervariable_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedIntegerVariable.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedstringvariable_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedStringVariable.__init__)
+def test_tracesystem_activitydiagram_tracedintegervariable_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedIntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagram::tracedbooleanvariable_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagram::TracedBooleanVariable)
+def test_tracesystem_activitydiagram_tracedbooleanvariable_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagram_TracedBooleanVariable)
 
 
-def test_tracesystem::activitydiagram::tracedbooleanvariable_constructor_exists():
-    assert callable(traceSystem::activitydiagram::TracedBooleanVariable.__init__)
+def test_tracesystem_activitydiagram_tracedbooleanvariable_constructor_exists():
+    assert callable(traceSystem_activitydiagram_TracedBooleanVariable.__init__)
 
 
-def test_tracesystem::activitydiagram::tracedbooleanvariable_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagram::TracedBooleanVariable.__init__)
+def test_tracesystem_activitydiagram_tracedbooleanvariable_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagram_TracedBooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedinput_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedInput)
+def test_tracesystem_activitydiagramconfiguration_tracedinput_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedInput)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedinput_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedInput.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedinput_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedInput.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedinput_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedInput.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedinput_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedInput.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedtrace_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedTrace)
+def test_tracesystem_activitydiagramconfiguration_tracedtrace_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedTrace)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedtrace_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedTrace.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedtrace_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedTrace.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedtrace_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedTrace.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedtrace_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedinputvalue_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedInputValue)
+def test_tracesystem_activitydiagramconfiguration_tracedinputvalue_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedInputValue)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedinputvalue_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedInputValue.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedinputvalue_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedInputValue.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedinputvalue_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedInputValue.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedinputvalue_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedInputValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedoffer_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedOffer)
+def test_tracesystem_activitydiagramconfiguration_tracedoffer_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedOffer)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedoffer_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedOffer.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedoffer_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedOffer.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedoffer_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedOffer.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedoffer_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedOffer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedtoken_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedToken)
+def test_tracesystem_activitydiagramconfiguration_tracedtoken_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedToken)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedtoken_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedToken.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedtoken_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedToken.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedtoken_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedToken.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedtoken_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedToken.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1848,121 +1568,121 @@ def test_tracedtoken_constructor_args():
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedcontroltoken_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedControlToken)
+def test_tracesystem_activitydiagramconfiguration_tracedcontroltoken_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedControlToken)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedcontroltoken_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedControlToken.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedcontroltoken_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedControlToken.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedcontroltoken_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedControlToken.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedcontroltoken_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedControlToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedforkedtoken_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::activitydiagramConfiguration::TracedForkedToken)
+def test_tracesystem_activitydiagramconfiguration_tracedforkedtoken_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_activitydiagramConfiguration_TracedForkedToken)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedforkedtoken_constructor_exists():
-    assert callable(traceSystem::activitydiagramConfiguration::TracedForkedToken.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedforkedtoken_constructor_exists():
+    assert callable(traceSystem_activitydiagramConfiguration_TracedForkedToken.__init__)
 
 
-def test_tracesystem::activitydiagramconfiguration::tracedforkedtoken_constructor_args():
-    sig = inspect.signature(traceSystem::activitydiagramConfiguration::TracedForkedToken.__init__)
+def test_tracesystem_activitydiagramconfiguration_tracedforkedtoken_constructor_args():
+    sig = inspect.signature(traceSystem_activitydiagramConfiguration_TracedForkedToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::traced::tracedobjects_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Traced::TracedObjects)
+def test_tracesystem_traced_tracedobjects_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Traced_TracedObjects)
 
 
-def test_tracesystem::traced::tracedobjects_constructor_exists():
-    assert callable(traceSystem::Traced::TracedObjects.__init__)
+def test_tracesystem_traced_tracedobjects_constructor_exists():
+    assert callable(traceSystem_Traced_TracedObjects.__init__)
 
 
-def test_tracesystem::traced::tracedobjects_constructor_args():
-    sig = inspect.signature(traceSystem::Traced::TracedObjects.__init__)
+def test_tracesystem_traced_tracedobjects_constructor_args():
+    sig = inspect.signature(traceSystem_Traced_TracedObjects.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedjoinnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedJoinNode)
+def test_activitydiagram_tracedjoinnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedJoinNode)
 
 
-def test_activitydiagram::tracedjoinnode_constructor_exists():
-    assert callable(activitydiagram::TracedJoinNode.__init__)
+def test_activitydiagram_tracedjoinnode_constructor_exists():
+    assert callable(activitydiagram_TracedJoinNode.__init__)
 
 
-def test_activitydiagram::tracedjoinnode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedJoinNode.__init__)
+def test_activitydiagram_tracedjoinnode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedJoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedcontroltoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedControlToken)
+def test_activitydiagramconfiguration_tracedcontroltoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedControlToken)
 
 
-def test_activitydiagramconfiguration::tracedcontroltoken_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedControlToken.__init__)
+def test_activitydiagramconfiguration_tracedcontroltoken_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedControlToken.__init__)
 
 
-def test_activitydiagramconfiguration::tracedcontroltoken_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedControlToken.__init__)
+def test_activitydiagramconfiguration_tracedcontroltoken_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedControlToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedcontrolflow_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedControlFlow)
+def test_activitydiagram_tracedcontrolflow_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedControlFlow)
 
 
-def test_activitydiagram::tracedcontrolflow_constructor_exists():
-    assert callable(activitydiagram::TracedControlFlow.__init__)
+def test_activitydiagram_tracedcontrolflow_constructor_exists():
+    assert callable(activitydiagram_TracedControlFlow.__init__)
 
 
-def test_activitydiagram::tracedcontrolflow_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedControlFlow.__init__)
+def test_activitydiagram_tracedcontrolflow_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::activityedge::offers::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::ActivityEdge::offers::State)
+def test_tracesystem_states_activityedge_offers_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_ActivityEdge_offers_State)
 
 
-def test_tracesystem::states::activityedge::offers::state_constructor_exists():
-    assert callable(traceSystem::States::ActivityEdge::offers::State.__init__)
+def test_tracesystem_states_activityedge_offers_state_constructor_exists():
+    assert callable(traceSystem_States_ActivityEdge_offers_State.__init__)
 
 
-def test_tracesystem::states::activityedge::offers::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::ActivityEdge::offers::State.__init__)
+def test_tracesystem_states_activityedge_offers_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_ActivityEdge_offers_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::activitynode::running::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::ActivityNode::running::State)
+def test_tracesystem_states_activitynode_running_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_ActivityNode_running_State)
 
 
-def test_tracesystem::states::activitynode::running::state_constructor_exists():
-    assert callable(traceSystem::States::ActivityNode::running::State.__init__)
+def test_tracesystem_states_activitynode_running_state_constructor_exists():
+    assert callable(traceSystem_States_ActivityNode_running_State.__init__)
 
 
-def test_tracesystem::states::activitynode::running::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::ActivityNode::running::State.__init__)
+def test_tracesystem_states_activitynode_running_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_ActivityNode_running_State.__init__)
     params = list(sig.parameters.keys())
     assert "running" in params, "Missing parameter 'running'"
 
-def test_tracesystem::states::activitynode::running::state_has_running():
-    assert hasattr(traceSystem::States::ActivityNode::running::State, "running")
+def test_tracesystem_states_activitynode_running_state_has_running():
+    assert hasattr(traceSystem_States_ActivityNode_running_State, "running")
     descriptor = None
-    for klass in traceSystem::States::ActivityNode::running::State.__mro__:
+    for klass in traceSystem_States_ActivityNode_running_State.__mro__:
         if "running" in klass.__dict__:
             descriptor = klass.__dict__["running"]
             break
@@ -1970,233 +1690,233 @@ def test_tracesystem::states::activitynode::running::state_has_running():
 
 
 
-def test_tracesystem::states::activitynode::heldtokens::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::ActivityNode::heldTokens::State)
+def test_tracesystem_states_activitynode_heldtokens_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_ActivityNode_heldTokens_State)
 
 
-def test_tracesystem::states::activitynode::heldtokens::state_constructor_exists():
-    assert callable(traceSystem::States::ActivityNode::heldTokens::State.__init__)
+def test_tracesystem_states_activitynode_heldtokens_state_constructor_exists():
+    assert callable(traceSystem_States_ActivityNode_heldTokens_State.__init__)
 
 
-def test_tracesystem::states::activitynode::heldtokens::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::ActivityNode::heldTokens::State.__init__)
+def test_tracesystem_states_activitynode_heldtokens_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_ActivityNode_heldTokens_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedinput_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedInput)
+def test_activitydiagramconfiguration_tracedinput_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedInput)
 
 
-def test_activitydiagramconfiguration::tracedinput_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedInput.__init__)
+def test_activitydiagramconfiguration_tracedinput_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedInput.__init__)
 
 
-def test_activitydiagramconfiguration::tracedinput_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedInput.__init__)
+def test_activitydiagramconfiguration_tracedinput_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedInput.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::input::inputvalues::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::Input::inputValues::State)
+def test_tracesystem_states_input_inputvalues_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_Input_inputValues_State)
 
 
-def test_tracesystem::states::input::inputvalues::state_constructor_exists():
-    assert callable(traceSystem::States::Input::inputValues::State.__init__)
+def test_tracesystem_states_input_inputvalues_state_constructor_exists():
+    assert callable(traceSystem_States_Input_inputValues_State.__init__)
 
 
-def test_tracesystem::states::input::inputvalues::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::Input::inputValues::State.__init__)
+def test_tracesystem_states_input_inputvalues_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_Input_inputValues_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::trace::executednodes::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::Trace::executedNodes::State)
+def test_tracesystem_states_trace_executednodes_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_Trace_executedNodes_State)
 
 
-def test_tracesystem::states::trace::executednodes::state_constructor_exists():
-    assert callable(traceSystem::States::Trace::executedNodes::State.__init__)
+def test_tracesystem_states_trace_executednodes_state_constructor_exists():
+    assert callable(traceSystem_States_Trace_executedNodes_State.__init__)
 
 
-def test_tracesystem::states::trace::executednodes::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::Trace::executedNodes::State.__init__)
+def test_tracesystem_states_trace_executednodes_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_Trace_executedNodes_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::offer::offeredtokens::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::Offer::offeredTokens::State)
+def test_tracesystem_states_offer_offeredtokens_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_Offer_offeredTokens_State)
 
 
-def test_tracesystem::states::offer::offeredtokens::state_constructor_exists():
-    assert callable(traceSystem::States::Offer::offeredTokens::State.__init__)
+def test_tracesystem_states_offer_offeredtokens_state_constructor_exists():
+    assert callable(traceSystem_States_Offer_offeredTokens_State.__init__)
 
 
-def test_tracesystem::states::offer::offeredtokens::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::Offer::offeredTokens::State.__init__)
+def test_tracesystem_states_offer_offeredtokens_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_Offer_offeredTokens_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::inputvalue::variable::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::InputValue::variable::State)
+def test_tracesystem_states_inputvalue_variable_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_InputValue_variable_State)
 
 
-def test_tracesystem::states::inputvalue::variable::state_constructor_exists():
-    assert callable(traceSystem::States::InputValue::variable::State.__init__)
+def test_tracesystem_states_inputvalue_variable_state_constructor_exists():
+    assert callable(traceSystem_States_InputValue_variable_State.__init__)
 
 
-def test_tracesystem::states::inputvalue::variable::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::InputValue::variable::State.__init__)
+def test_tracesystem_states_inputvalue_variable_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_InputValue_variable_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedinputvalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedInputValue)
+def test_activitydiagramconfiguration_tracedinputvalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedInputValue)
 
 
-def test_activitydiagramconfiguration::tracedinputvalue_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedInputValue.__init__)
+def test_activitydiagramconfiguration_tracedinputvalue_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedInputValue.__init__)
 
 
-def test_activitydiagramconfiguration::tracedinputvalue_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedInputValue.__init__)
+def test_activitydiagramconfiguration_tracedinputvalue_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedInputValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::inputvalue::value::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::InputValue::value::State)
+def test_tracesystem_states_inputvalue_value_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_InputValue_value_State)
 
 
-def test_tracesystem::states::inputvalue::value::state_constructor_exists():
-    assert callable(traceSystem::States::InputValue::value::State.__init__)
+def test_tracesystem_states_inputvalue_value_state_constructor_exists():
+    assert callable(traceSystem_States_InputValue_value_State.__init__)
 
 
-def test_tracesystem::states::inputvalue::value::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::InputValue::value::State.__init__)
+def test_tracesystem_states_inputvalue_value_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_InputValue_value_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedVariable)
+def test_activitydiagram_tracedvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedVariable)
 
 
-def test_activitydiagram::tracedvariable_constructor_exists():
-    assert callable(activitydiagram::TracedVariable.__init__)
+def test_activitydiagram_tracedvariable_constructor_exists():
+    assert callable(activitydiagram_TracedVariable.__init__)
 
 
-def test_activitydiagram::tracedvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedVariable.__init__)
+def test_activitydiagram_tracedvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_states::tracesystem::value_is_not_abstract():
-    assert not inspect.isabstract(States::traceSystem::Value)
+def test_states_tracesystem_value_is_not_abstract():
+    assert not inspect.isabstract(States_traceSystem_Value)
 
 
-def test_states::tracesystem::value_constructor_exists():
-    assert callable(States::traceSystem::Value.__init__)
+def test_states_tracesystem_value_constructor_exists():
+    assert callable(States_traceSystem_Value.__init__)
 
 
-def test_states::tracesystem::value_constructor_args():
-    sig = inspect.signature(States::traceSystem::Value.__init__)
+def test_states_tracesystem_value_constructor_args():
+    sig = inspect.signature(States_traceSystem_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::variable::currentvalue::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::Variable::currentValue::State)
+def test_tracesystem_states_variable_currentvalue_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_Variable_currentValue_State)
 
 
-def test_tracesystem::states::variable::currentvalue::state_constructor_exists():
-    assert callable(traceSystem::States::Variable::currentValue::State.__init__)
+def test_tracesystem_states_variable_currentvalue_state_constructor_exists():
+    assert callable(traceSystem_States_Variable_currentValue_State.__init__)
 
 
-def test_tracesystem::states::variable::currentvalue::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::Variable::currentValue::State.__init__)
+def test_tracesystem_states_variable_currentvalue_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_Variable_currentValue_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedtrace_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedTrace)
+def test_activitydiagramconfiguration_tracedtrace_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedTrace)
 
 
-def test_activitydiagramconfiguration::tracedtrace_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedTrace.__init__)
+def test_activitydiagramconfiguration_tracedtrace_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedTrace.__init__)
 
 
-def test_activitydiagramconfiguration::tracedtrace_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedTrace.__init__)
+def test_activitydiagramconfiguration_tracedtrace_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::activity::trace::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::Activity::trace::State)
+def test_tracesystem_states_activity_trace_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_Activity_trace_State)
 
 
-def test_tracesystem::states::activity::trace::state_constructor_exists():
-    assert callable(traceSystem::States::Activity::trace::State.__init__)
+def test_tracesystem_states_activity_trace_state_constructor_exists():
+    assert callable(traceSystem_States_Activity_trace_State.__init__)
 
 
-def test_tracesystem::states::activity::trace::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::Activity::trace::State.__init__)
+def test_tracesystem_states_activity_trace_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_Activity_trace_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedforkedtoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedForkedToken)
+def test_activitydiagramconfiguration_tracedforkedtoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedForkedToken)
 
 
-def test_activitydiagramconfiguration::tracedforkedtoken_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedForkedToken.__init__)
+def test_activitydiagramconfiguration_tracedforkedtoken_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedForkedToken.__init__)
 
 
-def test_activitydiagramconfiguration::tracedforkedtoken_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedForkedToken.__init__)
+def test_activitydiagramconfiguration_tracedforkedtoken_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedForkedToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::token::holder::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::Token::holder::State)
+def test_tracesystem_states_token_holder_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_Token_holder_State)
 
 
-def test_tracesystem::states::token::holder::state_constructor_exists():
-    assert callable(traceSystem::States::Token::holder::State.__init__)
+def test_tracesystem_states_token_holder_state_constructor_exists():
+    assert callable(traceSystem_States_Token_holder_State.__init__)
 
 
-def test_tracesystem::states::token::holder::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::Token::holder::State.__init__)
+def test_tracesystem_states_token_holder_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_Token_holder_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State)
+def test_tracesystem_states_forkedtoken_basetokeniswithdrawn_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State)
 
 
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_constructor_exists():
-    assert callable(traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State.__init__)
+def test_tracesystem_states_forkedtoken_basetokeniswithdrawn_state_constructor_exists():
+    assert callable(traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State.__init__)
 
 
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State.__init__)
+def test_tracesystem_states_forkedtoken_basetokeniswithdrawn_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State.__init__)
     params = list(sig.parameters.keys())
     assert "baseTokenIsWithdrawn" in params, "Missing parameter 'baseTokenIsWithdrawn'"
 
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_has_baseTokenIsWithdrawn():
-    assert hasattr(traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State, "baseTokenIsWithdrawn")
+def test_tracesystem_states_forkedtoken_basetokeniswithdrawn_state_has_baseTokenIsWithdrawn():
+    assert hasattr(traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State, "baseTokenIsWithdrawn")
     descriptor = None
-    for klass in traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State.__mro__:
+    for klass in traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State.__mro__:
         if "baseTokenIsWithdrawn" in klass.__dict__:
             descriptor = klass.__dict__["baseTokenIsWithdrawn"]
             break
@@ -2204,23 +1924,23 @@ def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_has_baseT
 
 
 
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::ForkedToken::remainingOffersCount::State)
+def test_tracesystem_states_forkedtoken_remainingofferscount_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_ForkedToken_remainingOffersCount_State)
 
 
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_constructor_exists():
-    assert callable(traceSystem::States::ForkedToken::remainingOffersCount::State.__init__)
+def test_tracesystem_states_forkedtoken_remainingofferscount_state_constructor_exists():
+    assert callable(traceSystem_States_ForkedToken_remainingOffersCount_State.__init__)
 
 
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::ForkedToken::remainingOffersCount::State.__init__)
+def test_tracesystem_states_forkedtoken_remainingofferscount_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_ForkedToken_remainingOffersCount_State.__init__)
     params = list(sig.parameters.keys())
     assert "remainingOffersCount" in params, "Missing parameter 'remainingOffersCount'"
 
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_has_remainingOffersCount():
-    assert hasattr(traceSystem::States::ForkedToken::remainingOffersCount::State, "remainingOffersCount")
+def test_tracesystem_states_forkedtoken_remainingofferscount_state_has_remainingOffersCount():
+    assert hasattr(traceSystem_States_ForkedToken_remainingOffersCount_State, "remainingOffersCount")
     descriptor = None
-    for klass in traceSystem::States::ForkedToken::remainingOffersCount::State.__mro__:
+    for klass in traceSystem_States_ForkedToken_remainingOffersCount_State.__mro__:
         if "remainingOffersCount" in klass.__dict__:
             descriptor = klass.__dict__["remainingOffersCount"]
             break
@@ -2228,1570 +1948,1850 @@ def test_tracesystem::states::forkedtoken::remainingofferscount::state_has_remai
 
 
 
-def test_states::tracesystem::globalstate_is_not_abstract():
-    assert not inspect.isabstract(States::traceSystem::GlobalState)
+def test_states_tracesystem_globalstate_is_not_abstract():
+    assert not inspect.isabstract(States_traceSystem_GlobalState)
 
 
-def test_states::tracesystem::globalstate_constructor_exists():
-    assert callable(States::traceSystem::GlobalState.__init__)
+def test_states_tracesystem_globalstate_constructor_exists():
+    assert callable(States_traceSystem_GlobalState.__init__)
 
 
-def test_states::tracesystem::globalstate_constructor_args():
-    sig = inspect.signature(States::traceSystem::GlobalState.__init__)
+def test_states_tracesystem_globalstate_constructor_args():
+    sig = inspect.signature(States_traceSystem_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::states::forkedtoken::basetoken::state_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::States::ForkedToken::baseToken::State)
+def test_tracesystem_states_forkedtoken_basetoken_state_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_States_ForkedToken_baseToken_State)
 
 
-def test_tracesystem::states::forkedtoken::basetoken::state_constructor_exists():
-    assert callable(traceSystem::States::ForkedToken::baseToken::State.__init__)
+def test_tracesystem_states_forkedtoken_basetoken_state_constructor_exists():
+    assert callable(traceSystem_States_ForkedToken_baseToken_State.__init__)
 
 
-def test_tracesystem::states::forkedtoken::basetoken::state_constructor_args():
-    sig = inspect.signature(traceSystem::States::ForkedToken::baseToken::State.__init__)
+def test_tracesystem_states_forkedtoken_basetoken_state_constructor_args():
+    sig = inspect.signature(traceSystem_States_ForkedToken_baseToken_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedoffer_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedOffer)
+def test_activitydiagramconfiguration_tracedoffer_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedOffer)
 
 
-def test_activitydiagramconfiguration::tracedoffer_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedOffer.__init__)
+def test_activitydiagramconfiguration_tracedoffer_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedOffer.__init__)
 
 
-def test_activitydiagramconfiguration::tracedoffer_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedOffer.__init__)
+def test_activitydiagramconfiguration_tracedoffer_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedOffer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::booleanbinaryexpression_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::BooleanBinaryExpression)
+def test_events_tracesystem_booleanbinaryexpression_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_BooleanBinaryExpression)
 
 
-def test_events::tracesystem::booleanbinaryexpression_constructor_exists():
-    assert callable(Events::traceSystem::BooleanBinaryExpression.__init__)
+def test_events_tracesystem_booleanbinaryexpression_constructor_exists():
+    assert callable(Events_traceSystem_BooleanBinaryExpression.__init__)
 
 
-def test_events::tracesystem::booleanbinaryexpression_constructor_args():
-    sig = inspect.signature(Events::traceSystem::BooleanBinaryExpression.__init__)
+def test_events_tracesystem_booleanbinaryexpression_constructor_args():
+    sig = inspect.signature(Events_traceSystem_BooleanBinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::booleanunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::BooleanUnaryExpression)
+def test_events_tracesystem_booleanunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_BooleanUnaryExpression)
 
 
-def test_events::tracesystem::booleanunaryexpression_constructor_exists():
-    assert callable(Events::traceSystem::BooleanUnaryExpression.__init__)
+def test_events_tracesystem_booleanunaryexpression_constructor_exists():
+    assert callable(Events_traceSystem_BooleanUnaryExpression.__init__)
 
 
-def test_events::tracesystem::booleanunaryexpression_constructor_args():
-    sig = inspect.signature(Events::traceSystem::BooleanUnaryExpression.__init__)
+def test_events_tracesystem_booleanunaryexpression_constructor_args():
+    sig = inspect.signature(Events_traceSystem_BooleanUnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::integercomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::IntegerComparisonExpression)
+def test_events_tracesystem_integercomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_IntegerComparisonExpression)
 
 
-def test_events::tracesystem::integercomparisonexpression_constructor_exists():
-    assert callable(Events::traceSystem::IntegerComparisonExpression.__init__)
+def test_events_tracesystem_integercomparisonexpression_constructor_exists():
+    assert callable(Events_traceSystem_IntegerComparisonExpression.__init__)
 
 
-def test_events::tracesystem::integercomparisonexpression_constructor_args():
-    sig = inspect.signature(Events::traceSystem::IntegerComparisonExpression.__init__)
+def test_events_tracesystem_integercomparisonexpression_constructor_args():
+    sig = inspect.signature(Events_traceSystem_IntegerComparisonExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::integercalculationexpression_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::IntegerCalculationExpression)
+def test_events_tracesystem_integercalculationexpression_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_IntegerCalculationExpression)
 
 
-def test_events::tracesystem::integercalculationexpression_constructor_exists():
-    assert callable(Events::traceSystem::IntegerCalculationExpression.__init__)
+def test_events_tracesystem_integercalculationexpression_constructor_exists():
+    assert callable(Events_traceSystem_IntegerCalculationExpression.__init__)
 
 
-def test_events::tracesystem::integercalculationexpression_constructor_args():
-    sig = inspect.signature(Events::traceSystem::IntegerCalculationExpression.__init__)
+def test_events_tracesystem_integercalculationexpression_constructor_args():
+    sig = inspect.signature(Events_traceSystem_IntegerCalculationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::IntegerExpression)
+def test_events_tracesystem_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_IntegerExpression)
 
 
-def test_events::tracesystem::integerexpression_constructor_exists():
-    assert callable(Events::traceSystem::IntegerExpression.__init__)
+def test_events_tracesystem_integerexpression_constructor_exists():
+    assert callable(Events_traceSystem_IntegerExpression.__init__)
 
 
-def test_events::tracesystem::integerexpression_constructor_args():
-    sig = inspect.signature(Events::traceSystem::IntegerExpression.__init__)
+def test_events_tracesystem_integerexpression_constructor_args():
+    sig = inspect.signature(Events_traceSystem_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::traceddecisionnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedDecisionNode)
+def test_activitydiagram_traceddecisionnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedDecisionNode)
 
 
-def test_activitydiagram::traceddecisionnode_constructor_exists():
-    assert callable(activitydiagram::TracedDecisionNode.__init__)
+def test_activitydiagram_traceddecisionnode_constructor_exists():
+    assert callable(activitydiagram_TracedDecisionNode.__init__)
 
 
-def test_activitydiagram::traceddecisionnode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedDecisionNode.__init__)
+def test_activitydiagram_traceddecisionnode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedDecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedbooleanvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedBooleanVariable)
+def test_activitydiagram_tracedbooleanvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedBooleanVariable)
 
 
-def test_activitydiagram::tracedbooleanvariable_constructor_exists():
-    assert callable(activitydiagram::TracedBooleanVariable.__init__)
+def test_activitydiagram_tracedbooleanvariable_constructor_exists():
+    assert callable(activitydiagram_TracedBooleanVariable.__init__)
 
 
-def test_activitydiagram::tracedbooleanvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedBooleanVariable.__init__)
+def test_activitydiagram_tracedbooleanvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedBooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedstringvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedStringVariable)
+def test_activitydiagram_tracedstringvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedStringVariable)
 
 
-def test_activitydiagram::tracedstringvariable_constructor_exists():
-    assert callable(activitydiagram::TracedStringVariable.__init__)
+def test_activitydiagram_tracedstringvariable_constructor_exists():
+    assert callable(activitydiagram_TracedStringVariable.__init__)
 
 
-def test_activitydiagram::tracedstringvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedStringVariable.__init__)
+def test_activitydiagram_tracedstringvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedStringVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::value_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::Value)
+def test_events_tracesystem_value_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_Value)
 
 
-def test_events::tracesystem::value_constructor_exists():
-    assert callable(Events::traceSystem::Value.__init__)
+def test_events_tracesystem_value_constructor_exists():
+    assert callable(Events_traceSystem_Value.__init__)
 
 
-def test_events::tracesystem::value_constructor_args():
-    sig = inspect.signature(Events::traceSystem::Value.__init__)
+def test_events_tracesystem_value_constructor_args():
+    sig = inspect.signature(Events_traceSystem_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedintegervariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedIntegerVariable)
+def test_activitydiagram_tracedintegervariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedIntegerVariable)
 
 
-def test_activitydiagram::tracedintegervariable_constructor_exists():
-    assert callable(activitydiagram::TracedIntegerVariable.__init__)
+def test_activitydiagram_tracedintegervariable_constructor_exists():
+    assert callable(activitydiagram_TracedIntegerVariable.__init__)
 
 
-def test_activitydiagram::tracedintegervariable_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedIntegerVariable.__init__)
+def test_activitydiagram_tracedintegervariable_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedIntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedinitialnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedInitialNode)
+def test_activitydiagram_tracedinitialnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedInitialNode)
 
 
-def test_activitydiagram::tracedinitialnode_constructor_exists():
-    assert callable(activitydiagram::TracedInitialNode.__init__)
+def test_activitydiagram_tracedinitialnode_constructor_exists():
+    assert callable(activitydiagram_TracedInitialNode.__init__)
 
 
-def test_activitydiagram::tracedinitialnode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedInitialNode.__init__)
+def test_activitydiagram_tracedinitialnode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedInitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedmergenode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedMergeNode)
+def test_activitydiagram_tracedmergenode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedMergeNode)
 
 
-def test_activitydiagram::tracedmergenode_constructor_exists():
-    assert callable(activitydiagram::TracedMergeNode.__init__)
+def test_activitydiagram_tracedmergenode_constructor_exists():
+    assert callable(activitydiagram_TracedMergeNode.__init__)
 
 
-def test_activitydiagram::tracedmergenode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedMergeNode.__init__)
+def test_activitydiagram_tracedmergenode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedMergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedopaqueaction_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedOpaqueAction)
+def test_activitydiagram_tracedopaqueaction_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedOpaqueAction)
 
 
-def test_activitydiagram::tracedopaqueaction_constructor_exists():
-    assert callable(activitydiagram::TracedOpaqueAction.__init__)
+def test_activitydiagram_tracedopaqueaction_constructor_exists():
+    assert callable(activitydiagram_TracedOpaqueAction.__init__)
 
 
-def test_activitydiagram::tracedopaqueaction_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedOpaqueAction.__init__)
+def test_activitydiagram_tracedopaqueaction_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedOpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedforknode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedForkNode)
+def test_activitydiagram_tracedforknode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedForkNode)
 
 
-def test_activitydiagram::tracedforknode_constructor_exists():
-    assert callable(activitydiagram::TracedForkNode.__init__)
+def test_activitydiagram_tracedforknode_constructor_exists():
+    assert callable(activitydiagram_TracedForkNode.__init__)
 
 
-def test_activitydiagram::tracedforknode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedForkNode.__init__)
+def test_activitydiagram_tracedforknode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedactivityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedActivityFinalNode)
+def test_activitydiagram_tracedactivityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedActivityFinalNode)
 
 
-def test_activitydiagram::tracedactivityfinalnode_constructor_exists():
-    assert callable(activitydiagram::TracedActivityFinalNode.__init__)
+def test_activitydiagram_tracedactivityfinalnode_constructor_exists():
+    assert callable(activitydiagram_TracedActivityFinalNode.__init__)
 
 
-def test_activitydiagram::tracedactivityfinalnode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedActivityFinalNode.__init__)
+def test_activitydiagram_tracedactivityfinalnode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedaction_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedAction)
+def test_activitydiagram_tracedaction_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedAction)
 
 
-def test_activitydiagram::tracedaction_constructor_exists():
-    assert callable(activitydiagram::TracedAction.__init__)
+def test_activitydiagram_tracedaction_constructor_exists():
+    assert callable(activitydiagram_TracedAction.__init__)
 
 
-def test_activitydiagram::tracedaction_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedAction.__init__)
+def test_activitydiagram_tracedaction_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagramconfiguration::tracedtoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagramConfiguration::TracedToken)
+def test_activitydiagramconfiguration_tracedtoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagramConfiguration_TracedToken)
 
 
-def test_activitydiagramconfiguration::tracedtoken_constructor_exists():
-    assert callable(activitydiagramConfiguration::TracedToken.__init__)
+def test_activitydiagramconfiguration_tracedtoken_constructor_exists():
+    assert callable(activitydiagramConfiguration_TracedToken.__init__)
 
 
-def test_activitydiagramconfiguration::tracedtoken_constructor_args():
-    sig = inspect.signature(activitydiagramConfiguration::TracedToken.__init__)
+def test_activitydiagramconfiguration_tracedtoken_constructor_args():
+    sig = inspect.signature(activitydiagramConfiguration_TracedToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedcontrolnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedControlNode)
+def test_activitydiagram_tracedcontrolnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedControlNode)
 
 
-def test_activitydiagram::tracedcontrolnode_constructor_exists():
-    assert callable(activitydiagram::TracedControlNode.__init__)
+def test_activitydiagram_tracedcontrolnode_constructor_exists():
+    assert callable(activitydiagram_TracedControlNode.__init__)
 
 
-def test_activitydiagram::tracedcontrolnode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedControlNode.__init__)
+def test_activitydiagram_tracedcontrolnode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedactivityedge_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedActivityEdge)
+def test_activitydiagram_tracedactivityedge_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedActivityEdge)
 
 
-def test_activitydiagram::tracedactivityedge_constructor_exists():
-    assert callable(activitydiagram::TracedActivityEdge.__init__)
+def test_activitydiagram_tracedactivityedge_constructor_exists():
+    assert callable(activitydiagram_TracedActivityEdge.__init__)
 
 
-def test_activitydiagram::tracedactivityedge_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedActivityEdge.__init__)
+def test_activitydiagram_tracedactivityedge_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedactivitynode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedActivityNode)
+def test_activitydiagram_tracedactivitynode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedActivityNode)
 
 
-def test_activitydiagram::tracedactivitynode_constructor_exists():
-    assert callable(activitydiagram::TracedActivityNode.__init__)
+def test_activitydiagram_tracedactivitynode_constructor_exists():
+    assert callable(activitydiagram_TracedActivityNode.__init__)
 
 
-def test_activitydiagram::tracedactivitynode_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedActivityNode.__init__)
+def test_activitydiagram_tracedactivitynode_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_offer::hastokensentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Offer::hasTokensEntryEventOccurrence)
+def test_offer_hastokensentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Offer_hasTokensEntryEventOccurrence)
 
 
-def test_offer::hastokensentryeventoccurrence_constructor_exists():
-    assert callable(Offer::hasTokensEntryEventOccurrence.__init__)
+def test_offer_hastokensentryeventoccurrence_constructor_exists():
+    assert callable(Offer_hasTokensEntryEventOccurrence.__init__)
 
 
-def test_offer::hastokensentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Offer::hasTokensEntryEventOccurrence.__init__)
+def test_offer_hastokensentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Offer_hasTokensEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forkedtoken::withdraw::forkedtokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ForkedToken::withdraw::forkedTokenExitEventOccurrence)
+def test_forkedtoken_withdraw_forkedtokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ForkedToken_withdraw_forkedTokenExitEventOccurrence)
 
 
-def test_forkedtoken::withdraw::forkedtokenexiteventoccurrence_constructor_exists():
-    assert callable(ForkedToken::withdraw::forkedTokenExitEventOccurrence.__init__)
+def test_forkedtoken_withdraw_forkedtokenexiteventoccurrence_constructor_exists():
+    assert callable(ForkedToken_withdraw_forkedTokenExitEventOccurrence.__init__)
 
 
-def test_forkedtoken::withdraw::forkedtokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ForkedToken::withdraw::forkedTokenExitEventOccurrence.__init__)
+def test_forkedtoken_withdraw_forkedtokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ForkedToken_withdraw_forkedTokenExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forkedtoken::withdraw::forkedtokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ForkedToken::withdraw::forkedTokenEntryEventOccurrence)
+def test_forkedtoken_withdraw_forkedtokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ForkedToken_withdraw_forkedTokenEntryEventOccurrence)
 
 
-def test_forkedtoken::withdraw::forkedtokenentryeventoccurrence_constructor_exists():
-    assert callable(ForkedToken::withdraw::forkedTokenEntryEventOccurrence.__init__)
+def test_forkedtoken_withdraw_forkedtokenentryeventoccurrence_constructor_exists():
+    assert callable(ForkedToken_withdraw_forkedTokenEntryEventOccurrence.__init__)
 
 
-def test_forkedtoken::withdraw::forkedtokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ForkedToken::withdraw::forkedTokenEntryEventOccurrence.__init__)
+def test_forkedtoken_withdraw_forkedtokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ForkedToken_withdraw_forkedTokenEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::withdrawexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Token::withdrawExitEventOccurrence)
+def test_token_withdrawexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Token_withdrawExitEventOccurrence)
 
 
-def test_token::withdrawexiteventoccurrence_constructor_exists():
-    assert callable(Token::withdrawExitEventOccurrence.__init__)
+def test_token_withdrawexiteventoccurrence_constructor_exists():
+    assert callable(Token_withdrawExitEventOccurrence.__init__)
 
 
-def test_token::withdrawexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Token::withdrawExitEventOccurrence.__init__)
+def test_token_withdrawexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Token_withdrawExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::withdrawentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Token::withdrawEntryEventOccurrence)
+def test_token_withdrawentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Token_withdrawEntryEventOccurrence)
 
 
-def test_token::withdrawentryeventoccurrence_constructor_exists():
-    assert callable(Token::withdrawEntryEventOccurrence.__init__)
+def test_token_withdrawentryeventoccurrence_constructor_exists():
+    assert callable(Token_withdrawEntryEventOccurrence.__init__)
 
 
-def test_token::withdrawentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Token::withdrawEntryEventOccurrence.__init__)
+def test_token_withdrawentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Token_withdrawEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::transferexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Token::transferExitEventOccurrence)
+def test_token_transferexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Token_transferExitEventOccurrence)
 
 
-def test_token::transferexiteventoccurrence_constructor_exists():
-    assert callable(Token::transferExitEventOccurrence.__init__)
+def test_token_transferexiteventoccurrence_constructor_exists():
+    assert callable(Token_transferExitEventOccurrence.__init__)
 
 
-def test_token::transferexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Token::transferExitEventOccurrence.__init__)
+def test_token_transferexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Token_transferExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::eobject_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::EObject)
+def test_events_tracesystem_eobject_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_EObject)
 
 
-def test_events::tracesystem::eobject_constructor_exists():
-    assert callable(Events::traceSystem::EObject.__init__)
+def test_events_tracesystem_eobject_constructor_exists():
+    assert callable(Events_traceSystem_EObject.__init__)
 
 
-def test_events::tracesystem::eobject_constructor_args():
-    sig = inspect.signature(Events::traceSystem::EObject.__init__)
+def test_events_tracesystem_eobject_constructor_args():
+    sig = inspect.signature(Events_traceSystem_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::tracedactivity_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::TracedActivity)
+def test_activitydiagram_tracedactivity_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_TracedActivity)
 
 
-def test_activitydiagram::tracedactivity_constructor_exists():
-    assert callable(activitydiagram::TracedActivity.__init__)
+def test_activitydiagram_tracedactivity_constructor_exists():
+    assert callable(activitydiagram_TracedActivity.__init__)
 
 
-def test_activitydiagram::tracedactivity_constructor_args():
-    sig = inspect.signature(activitydiagram::TracedActivity.__init__)
+def test_activitydiagram_tracedactivity_constructor_args():
+    sig = inspect.signature(activitydiagram_TracedActivity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_offer::hastokensexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Offer::hasTokensExitEventOccurrence)
+def test_offer_hastokensexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Offer_hasTokensExitEventOccurrence)
 
 
-def test_offer::hastokensexiteventoccurrence_constructor_exists():
-    assert callable(Offer::hasTokensExitEventOccurrence.__init__)
+def test_offer_hastokensexiteventoccurrence_constructor_exists():
+    assert callable(Offer_hasTokensExitEventOccurrence.__init__)
 
 
-def test_offer::hastokensexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Offer::hasTokensExitEventOccurrence.__init__)
+def test_offer_hastokensexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Offer_hasTokensExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanbinaryexpression::evaluateorentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanBinaryExpression::evaluateOREntryEventOccurrence)
+def test_booleanbinaryexpression_evaluateorentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanBinaryExpression_evaluateOREntryEventOccurrence)
 
 
-def test_booleanbinaryexpression::evaluateorentryeventoccurrence_constructor_exists():
-    assert callable(BooleanBinaryExpression::evaluateOREntryEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateorentryeventoccurrence_constructor_exists():
+    assert callable(BooleanBinaryExpression_evaluateOREntryEventOccurrence.__init__)
 
 
-def test_booleanbinaryexpression::evaluateorentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanBinaryExpression::evaluateOREntryEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateorentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanBinaryExpression_evaluateOREntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanbinaryexpression::evaluateandexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanBinaryExpression::evaluateANDExitEventOccurrence)
+def test_booleanbinaryexpression_evaluateandexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanBinaryExpression_evaluateANDExitEventOccurrence)
 
 
-def test_booleanbinaryexpression::evaluateandexiteventoccurrence_constructor_exists():
-    assert callable(BooleanBinaryExpression::evaluateANDExitEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateandexiteventoccurrence_constructor_exists():
+    assert callable(BooleanBinaryExpression_evaluateANDExitEventOccurrence.__init__)
 
 
-def test_booleanbinaryexpression::evaluateandexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanBinaryExpression::evaluateANDExitEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateandexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanBinaryExpression_evaluateANDExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanbinaryexpression::evaluateandentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanBinaryExpression::evaluateANDEntryEventOccurrence)
+def test_booleanbinaryexpression_evaluateandentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanBinaryExpression_evaluateANDEntryEventOccurrence)
 
 
-def test_booleanbinaryexpression::evaluateandentryeventoccurrence_constructor_exists():
-    assert callable(BooleanBinaryExpression::evaluateANDEntryEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateandentryeventoccurrence_constructor_exists():
+    assert callable(BooleanBinaryExpression_evaluateANDEntryEventOccurrence.__init__)
 
 
-def test_booleanbinaryexpression::evaluateandentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanBinaryExpression::evaluateANDEntryEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateandentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanBinaryExpression_evaluateANDEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence)
 
 
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_constructor_exists():
-    assert callable(BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence.__init__)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_constructor_exists():
+    assert callable(BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence.__init__)
 
 
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence.__init__)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence)
 
 
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_constructor_exists():
-    assert callable(BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence.__init__)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_constructor_exists():
+    assert callable(BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence.__init__)
 
 
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence.__init__)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanunaryexpression::evaluatenotexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanUnaryExpression::evaluateNOTExitEventOccurrence)
+def test_booleanunaryexpression_evaluatenotexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanUnaryExpression_evaluateNOTExitEventOccurrence)
 
 
-def test_booleanunaryexpression::evaluatenotexiteventoccurrence_constructor_exists():
-    assert callable(BooleanUnaryExpression::evaluateNOTExitEventOccurrence.__init__)
+def test_booleanunaryexpression_evaluatenotexiteventoccurrence_constructor_exists():
+    assert callable(BooleanUnaryExpression_evaluateNOTExitEventOccurrence.__init__)
 
 
-def test_booleanunaryexpression::evaluatenotexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanUnaryExpression::evaluateNOTExitEventOccurrence.__init__)
+def test_booleanunaryexpression_evaluatenotexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanUnaryExpression_evaluateNOTExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanunaryexpression::evaluatenotentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanUnaryExpression::evaluateNOTEntryEventOccurrence)
+def test_booleanunaryexpression_evaluatenotentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanUnaryExpression_evaluateNOTEntryEventOccurrence)
 
 
-def test_booleanunaryexpression::evaluatenotentryeventoccurrence_constructor_exists():
-    assert callable(BooleanUnaryExpression::evaluateNOTEntryEventOccurrence.__init__)
+def test_booleanunaryexpression_evaluatenotentryeventoccurrence_constructor_exists():
+    assert callable(BooleanUnaryExpression_evaluateNOTEntryEventOccurrence.__init__)
 
 
-def test_booleanunaryexpression::evaluatenotentryeventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanUnaryExpression::evaluateNOTEntryEventOccurrence.__init__)
+def test_booleanunaryexpression_evaluatenotentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanUnaryExpression_evaluateNOTEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::transferentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Token::transferEntryEventOccurrence)
+def test_token_transferentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Token_transferEntryEventOccurrence)
 
 
-def test_token::transferentryeventoccurrence_constructor_exists():
-    assert callable(Token::transferEntryEventOccurrence.__init__)
+def test_token_transferentryeventoccurrence_constructor_exists():
+    assert callable(Token_transferEntryEventOccurrence.__init__)
 
 
-def test_token::transferentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Token::transferEntryEventOccurrence.__init__)
+def test_token_transferentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Token_transferEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::iswithdrawnexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Token::isWithdrawnExitEventOccurrence)
+def test_token_iswithdrawnexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Token_isWithdrawnExitEventOccurrence)
 
 
-def test_token::iswithdrawnexiteventoccurrence_constructor_exists():
-    assert callable(Token::isWithdrawnExitEventOccurrence.__init__)
+def test_token_iswithdrawnexiteventoccurrence_constructor_exists():
+    assert callable(Token_isWithdrawnExitEventOccurrence.__init__)
 
 
-def test_token::iswithdrawnexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Token::isWithdrawnExitEventOccurrence.__init__)
+def test_token_iswithdrawnexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Token_isWithdrawnExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::iswithdrawnentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Token::isWithdrawnEntryEventOccurrence)
+def test_token_iswithdrawnentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Token_isWithdrawnEntryEventOccurrence)
 
 
-def test_token::iswithdrawnentryeventoccurrence_constructor_exists():
-    assert callable(Token::isWithdrawnEntryEventOccurrence.__init__)
+def test_token_iswithdrawnentryeventoccurrence_constructor_exists():
+    assert callable(Token_isWithdrawnEntryEventOccurrence.__init__)
 
 
-def test_token::iswithdrawnentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Token::isWithdrawnEntryEventOccurrence.__init__)
+def test_token_iswithdrawnentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Token_isWithdrawnEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_booleanbinaryexpression::evaluateorexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(BooleanBinaryExpression::evaluateORExitEventOccurrence)
+def test_booleanbinaryexpression_evaluateorexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanBinaryExpression_evaluateORExitEventOccurrence)
 
 
-def test_booleanbinaryexpression::evaluateorexiteventoccurrence_constructor_exists():
-    assert callable(BooleanBinaryExpression::evaluateORExitEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateorexiteventoccurrence_constructor_exists():
+    assert callable(BooleanBinaryExpression_evaluateORExitEventOccurrence.__init__)
 
 
-def test_booleanbinaryexpression::evaluateorexiteventoccurrence_constructor_args():
-    sig = inspect.signature(BooleanBinaryExpression::evaluateORExitEventOccurrence.__init__)
+def test_booleanbinaryexpression_evaluateorexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanBinaryExpression_evaluateORExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluategreaterentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence)
+def test_integercomparisonexpression_evaluategreaterentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluategreaterentryeventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreaterentryeventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluategreaterentryeventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreaterentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence)
+def test_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence)
 
 
-def test_integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_constructor_exists():
-    assert callable(IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence.__init__)
 
 
-def test_integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_constructor_args():
-    sig = inspect.signature(IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_action::fire::actionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Action::fire::actionExitEventOccurrence)
+def test_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence)
 
 
-def test_action::fire::actionexiteventoccurrence_constructor_exists():
-    assert callable(Action::fire::actionExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence.__init__)
 
 
-def test_action::fire::actionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Action::fire::actionExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_action::fire::actionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Action::fire::actionEntryEventOccurrence)
+def test_integercomparisonexpression_evaluateequalsexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence)
 
 
-def test_action::fire::actionentryeventoccurrence_constructor_exists():
-    assert callable(Action::fire::actionEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluateequalsexiteventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence.__init__)
 
 
-def test_action::fire::actionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Action::fire::actionEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluateequalsexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_action::isready::actionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Action::isReady::actionExitEventOccurrence)
+def test_integercomparisonexpression_evaluateequalsentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence)
 
 
-def test_action::isready::actionexiteventoccurrence_constructor_exists():
-    assert callable(Action::isReady::actionExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluateequalsentryeventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence.__init__)
 
 
-def test_action::isready::actionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Action::isReady::actionExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluateequalsentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_action::isready::actionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Action::isReady::actionEntryEventOccurrence)
+def test_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence)
 
 
-def test_action::isready::actionentryeventoccurrence_constructor_exists():
-    assert callable(Action::isReady::actionEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence.__init__)
 
 
-def test_action::isready::actionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Action::isReady::actionEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::hasoffersexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::hasOffersExitEventOccurrence)
+def test_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence)
 
 
-def test_activitynode::hasoffersexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::hasOffersExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence.__init__)
 
 
-def test_activitynode::hasoffersexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::hasOffersExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::hasoffersentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::hasOffersEntryEventOccurrence)
+def test_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence)
 
 
-def test_activitynode::hasoffersentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::hasOffersEntryEventOccurrence.__init__)
+def test_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_constructor_exists():
+    assert callable(BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence.__init__)
 
 
-def test_activitynode::hasoffersentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::hasOffersEntryEventOccurrence.__init__)
+def test_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::removetokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::removeTokenExitEventOccurrence)
+def test_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence)
 
 
-def test_activitynode::removetokenexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::removeTokenExitEventOccurrence.__init__)
+def test_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_constructor_exists():
+    assert callable(BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence.__init__)
 
 
-def test_activitynode::removetokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::removeTokenExitEventOccurrence.__init__)
+def test_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::removetokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::removeTokenEntryEventOccurrence)
+def test_integercomparisonexpression_evaluategreaterexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateGREATERExitEventOccurrence)
 
 
-def test_activitynode::removetokenentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::removeTokenEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreaterexiteventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateGREATERExitEventOccurrence.__init__)
 
 
-def test_activitynode::removetokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::removeTokenEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluategreaterexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateGREATERExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::addtokensexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::addTokensExitEventOccurrence)
+def test_integercalculationexpression_evaluatesubtractentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence)
 
 
-def test_activitynode::addtokensexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::addTokensExitEventOccurrence.__init__)
+def test_integercalculationexpression_evaluatesubtractentryeventoccurrence_constructor_exists():
+    assert callable(IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence.__init__)
 
 
-def test_activitynode::addtokensexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::addTokensExitEventOccurrence.__init__)
+def test_integercalculationexpression_evaluatesubtractentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::addtokensentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::addTokensEntryEventOccurrence)
+def test_integercalculationexpression_evaluateaddexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerCalculationExpression_evaluateADDExitEventOccurrence)
 
 
-def test_activitynode::addtokensentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::addTokensEntryEventOccurrence.__init__)
+def test_integercalculationexpression_evaluateaddexiteventoccurrence_constructor_exists():
+    assert callable(IntegerCalculationExpression_evaluateADDExitEventOccurrence.__init__)
 
 
-def test_activitynode::addtokensentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::addTokensEntryEventOccurrence.__init__)
+def test_integercalculationexpression_evaluateaddexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerCalculationExpression_evaluateADDExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::takeofferedtokensexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::takeOfferedTokensExitEventOccurrence)
+def test_integercalculationexpression_evaluateaddentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerCalculationExpression_evaluateADDEntryEventOccurrence)
 
 
-def test_activitynode::takeofferedtokensexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::takeOfferedTokensExitEventOccurrence.__init__)
+def test_integercalculationexpression_evaluateaddentryeventoccurrence_constructor_exists():
+    assert callable(IntegerCalculationExpression_evaluateADDEntryEventOccurrence.__init__)
 
 
-def test_activitynode::takeofferedtokensexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::takeOfferedTokensExitEventOccurrence.__init__)
+def test_integercalculationexpression_evaluateaddentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerCalculationExpression_evaluateADDEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::takeofferedtokensentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::takeOfferedTokensEntryEventOccurrence)
+def test_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence)
 
 
-def test_activitynode::takeofferedtokensentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::takeOfferedTokensEntryEventOccurrence.__init__)
+def test_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_constructor_exists():
+    assert callable(IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence.__init__)
 
 
-def test_activitynode::takeofferedtokensentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::takeOfferedTokensEntryEventOccurrence.__init__)
+def test_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::sendoffersexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::sendOffersExitEventOccurrence)
+def test_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence)
 
 
-def test_activitynode::sendoffersexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::sendOffersExitEventOccurrence.__init__)
+def test_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_constructor_exists():
+    assert callable(IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence.__init__)
 
 
-def test_activitynode::sendoffersexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::sendOffersExitEventOccurrence.__init__)
+def test_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::sendoffersentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::sendOffersEntryEventOccurrence)
+def test_integerexpression_getoperandcurrentvaluesexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerExpression_getOperandCurrentValuesExitEventOccurrence)
 
 
-def test_activitynode::sendoffersentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::sendOffersEntryEventOccurrence.__init__)
+def test_integerexpression_getoperandcurrentvaluesexiteventoccurrence_constructor_exists():
+    assert callable(IntegerExpression_getOperandCurrentValuesExitEventOccurrence.__init__)
 
 
-def test_activitynode::sendoffersentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::sendOffersEntryEventOccurrence.__init__)
+def test_integerexpression_getoperandcurrentvaluesexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerExpression_getOperandCurrentValuesExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::terminate::activitynodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::terminate::activityNodeExitEventOccurrence)
+def test_integercomparisonexpression_evaluatesmallerexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence)
 
 
-def test_activitynode::terminate::activitynodeexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::terminate::activityNodeExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmallerexiteventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence.__init__)
 
 
-def test_activitynode::terminate::activitynodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::terminate::activityNodeExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmallerexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityedge::sendofferexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::sendOfferExitEventOccurrence)
+def test_integercomparisonexpression_evaluatesmallerentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence)
 
 
-def test_activityedge::sendofferexiteventoccurrence_constructor_exists():
-    assert callable(ActivityEdge::sendOfferExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmallerentryeventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence.__init__)
 
 
-def test_activityedge::sendofferexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityEdge::sendOfferExitEventOccurrence.__init__)
+def test_integercomparisonexpression_evaluatesmallerentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityedge::sendofferentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::sendOfferEntryEventOccurrence)
+def test_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence)
 
 
-def test_activityedge::sendofferentryeventoccurrence_constructor_exists():
-    assert callable(ActivityEdge::sendOfferEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence.__init__)
 
 
-def test_activityedge::sendofferentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityEdge::sendOfferEntryEventOccurrence.__init__)
+def test_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::isreadyexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::isReadyExitEventOccurrence)
+def test_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence)
 
 
-def test_activitynode::isreadyexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::isReadyExitEventOccurrence.__init__)
+def test_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_constructor_exists():
+    assert callable(IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence.__init__)
 
 
-def test_activitynode::isreadyexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::isReadyExitEventOccurrence.__init__)
+def test_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::isreadyentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::isReadyEntryEventOccurrence)
+def test_integercalculationexpression_evaluatesubtractexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence)
 
 
-def test_activitynode::isreadyentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::isReadyEntryEventOccurrence.__init__)
+def test_integercalculationexpression_evaluatesubtractexiteventoccurrence_constructor_exists():
+    assert callable(IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence.__init__)
 
 
-def test_activitynode::isreadyentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::isReadyEntryEventOccurrence.__init__)
+def test_integercalculationexpression_evaluatesubtractexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::firenodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::fireNodeEntryEventOccurrence)
+def test_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence)
 
 
-def test_activity::firenodeentryeventoccurrence_constructor_exists():
-    assert callable(Activity::fireNodeEntryEventOccurrence.__init__)
+def test_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_constructor_exists():
+    assert callable(StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence.__init__)
 
 
-def test_activity::firenodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::fireNodeEntryEventOccurrence.__init__)
+def test_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::getinitialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::getInitialNodeExitEventOccurrence)
+def test_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence)
 
 
-def test_activity::getinitialnodeexiteventoccurrence_constructor_exists():
-    assert callable(Activity::getInitialNodeExitEventOccurrence.__init__)
+def test_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_constructor_exists():
+    assert callable(StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence.__init__)
 
 
-def test_activity::getinitialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::getInitialNodeExitEventOccurrence.__init__)
+def test_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::getinitialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::getInitialNodeEntryEventOccurrence)
+def test_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(StringVariable_setCurrentValue_stringVariableExitEventOccurrence)
 
 
-def test_activity::getinitialnodeentryeventoccurrence_constructor_exists():
-    assert callable(Activity::getInitialNodeEntryEventOccurrence.__init__)
+def test_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_constructor_exists():
+    assert callable(StringVariable_setCurrentValue_stringVariableExitEventOccurrence.__init__)
 
 
-def test_activity::getinitialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::getInitialNodeEntryEventOccurrence.__init__)
+def test_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(StringVariable_setCurrentValue_stringVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::terminateexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::terminateExitEventOccurrence)
+def test_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(StringVariable_setCurrentValue_stringVariableEntryEventOccurrence)
 
 
-def test_activity::terminateexiteventoccurrence_constructor_exists():
-    assert callable(Activity::terminateExitEventOccurrence.__init__)
+def test_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_constructor_exists():
+    assert callable(StringVariable_setCurrentValue_stringVariableEntryEventOccurrence.__init__)
 
 
-def test_activity::terminateexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::terminateExitEventOccurrence.__init__)
+def test_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(StringVariable_setCurrentValue_stringVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::terminateentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::terminateEntryEventOccurrence)
+def test_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence)
 
 
-def test_activity::terminateentryeventoccurrence_constructor_exists():
-    assert callable(Activity::terminateEntryEventOccurrence.__init__)
+def test_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_constructor_exists():
+    assert callable(IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence.__init__)
 
 
-def test_activity::terminateentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::terminateEntryEventOccurrence.__init__)
+def test_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::selectnextnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::selectNextNodeExitEventOccurrence)
+def test_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence)
 
 
-def test_activity::selectnextnodeexiteventoccurrence_constructor_exists():
-    assert callable(Activity::selectNextNodeExitEventOccurrence.__init__)
+def test_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_constructor_exists():
+    assert callable(IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence.__init__)
 
 
-def test_activity::selectnextnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::selectNextNodeExitEventOccurrence.__init__)
+def test_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::selectnextnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::selectNextNodeEntryEventOccurrence)
+def test_integervariable_setcurrentvalue_integervariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence)
 
 
-def test_activity::selectnextnodeentryeventoccurrence_constructor_exists():
-    assert callable(Activity::selectNextNodeEntryEventOccurrence.__init__)
+def test_integervariable_setcurrentvalue_integervariableexiteventoccurrence_constructor_exists():
+    assert callable(IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence.__init__)
 
 
-def test_activity::selectnextnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::selectNextNodeEntryEventOccurrence.__init__)
+def test_integervariable_setcurrentvalue_integervariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::getenablednodesexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::getEnabledNodesExitEventOccurrence)
+def test_integervariable_setcurrentvalue_integervariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence)
 
 
-def test_activity::getenablednodesexiteventoccurrence_constructor_exists():
-    assert callable(Activity::getEnabledNodesExitEventOccurrence.__init__)
+def test_integervariable_setcurrentvalue_integervariableentryeventoccurrence_constructor_exists():
+    assert callable(IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence.__init__)
 
 
-def test_activity::getenablednodesexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::getEnabledNodesExitEventOccurrence.__init__)
+def test_integervariable_setcurrentvalue_integervariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::getenablednodesentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::getEnabledNodesEntryEventOccurrence)
+def test_integerexpression_getoperandcurrentvaluesentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(IntegerExpression_getOperandCurrentValuesEntryEventOccurrence)
 
 
-def test_activity::getenablednodesentryeventoccurrence_constructor_exists():
-    assert callable(Activity::getEnabledNodesEntryEventOccurrence.__init__)
+def test_integerexpression_getoperandcurrentvaluesentryeventoccurrence_constructor_exists():
+    assert callable(IntegerExpression_getOperandCurrentValuesEntryEventOccurrence.__init__)
 
 
-def test_activity::getenablednodesentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::getEnabledNodesEntryEventOccurrence.__init__)
+def test_integerexpression_getoperandcurrentvaluesentryeventoccurrence_constructor_args():
+    sig = inspect.signature(IntegerExpression_getOperandCurrentValuesEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::fireinitialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::fireInitialNodeExitEventOccurrence)
+def test_activitynode_addtokensexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_addTokensExitEventOccurrence)
 
 
-def test_activity::fireinitialnodeexiteventoccurrence_constructor_exists():
-    assert callable(Activity::fireInitialNodeExitEventOccurrence.__init__)
+def test_activitynode_addtokensexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_addTokensExitEventOccurrence.__init__)
 
 
-def test_activity::fireinitialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::fireInitialNodeExitEventOccurrence.__init__)
+def test_activitynode_addtokensexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_addTokensExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::fireinitialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::fireInitialNodeEntryEventOccurrence)
+def test_activitynode_addtokensentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_addTokensEntryEventOccurrence)
 
 
-def test_activity::fireinitialnodeentryeventoccurrence_constructor_exists():
-    assert callable(Activity::fireInitialNodeEntryEventOccurrence.__init__)
+def test_activitynode_addtokensentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_addTokensEntryEventOccurrence.__init__)
 
 
-def test_activity::fireinitialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::fireInitialNodeEntryEventOccurrence.__init__)
+def test_activitynode_addtokensentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_addTokensEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::terminate::activitynodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::terminate::activityNodeEntryEventOccurrence)
+def test_activitynode_takeofferedtokensexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_takeOfferedTokensExitEventOccurrence)
 
 
-def test_activitynode::terminate::activitynodeentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::terminate::activityNodeEntryEventOccurrence.__init__)
+def test_activitynode_takeofferedtokensexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_takeOfferedTokensExitEventOccurrence.__init__)
 
 
-def test_activitynode::terminate::activitynodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::terminate::activityNodeEntryEventOccurrence.__init__)
+def test_activitynode_takeofferedtokensexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_takeOfferedTokensExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::isrunningexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::isRunningExitEventOccurrence)
+def test_activitynode_takeofferedtokensentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_takeOfferedTokensEntryEventOccurrence)
 
 
-def test_activitynode::isrunningexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::isRunningExitEventOccurrence.__init__)
+def test_activitynode_takeofferedtokensentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_takeOfferedTokensEntryEventOccurrence.__init__)
 
 
-def test_activitynode::isrunningexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::isRunningExitEventOccurrence.__init__)
+def test_activitynode_takeofferedtokensentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_takeOfferedTokensEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::isrunningentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::isRunningEntryEventOccurrence)
+def test_activitynode_sendoffersexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_sendOffersExitEventOccurrence)
 
 
-def test_activitynode::isrunningentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::isRunningEntryEventOccurrence.__init__)
+def test_activitynode_sendoffersexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_sendOffersExitEventOccurrence.__init__)
 
 
-def test_activitynode::isrunningentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::isRunningEntryEventOccurrence.__init__)
+def test_activitynode_sendoffersexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_sendOffersExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::run::activitynodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::run::activityNodeExitEventOccurrence)
+def test_activitynode_sendoffersentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_sendOffersEntryEventOccurrence)
 
 
-def test_activitynode::run::activitynodeexiteventoccurrence_constructor_exists():
-    assert callable(ActivityNode::run::activityNodeExitEventOccurrence.__init__)
+def test_activitynode_sendoffersentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_sendOffersEntryEventOccurrence.__init__)
 
 
-def test_activitynode::run::activitynodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::run::activityNodeExitEventOccurrence.__init__)
+def test_activitynode_sendoffersentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_sendOffersEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::run::activitynodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::run::activityNodeEntryEventOccurrence)
+def test_activitynode_terminate_activitynodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_terminate_activityNodeExitEventOccurrence)
 
 
-def test_activitynode::run::activitynodeentryeventoccurrence_constructor_exists():
-    assert callable(ActivityNode::run::activityNodeEntryEventOccurrence.__init__)
+def test_activitynode_terminate_activitynodeexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_terminate_activityNodeExitEventOccurrence.__init__)
 
 
-def test_activitynode::run::activitynodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(ActivityNode::run::activityNodeEntryEventOccurrence.__init__)
+def test_activitynode_terminate_activitynodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_terminate_activityNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::firenodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::fireNodeExitEventOccurrence)
+def test_activityedge_sendofferexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_sendOfferExitEventOccurrence)
 
 
-def test_activity::firenodeexiteventoccurrence_constructor_exists():
-    assert callable(Activity::fireNodeExitEventOccurrence.__init__)
+def test_activityedge_sendofferexiteventoccurrence_constructor_exists():
+    assert callable(ActivityEdge_sendOfferExitEventOccurrence.__init__)
 
 
-def test_activity::firenodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::fireNodeExitEventOccurrence.__init__)
+def test_activityedge_sendofferexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityEdge_sendOfferExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::initializeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::initializeEntryEventOccurrence)
+def test_activityedge_sendofferentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_sendOfferEntryEventOccurrence)
 
 
-def test_activity::initializeentryeventoccurrence_constructor_exists():
-    assert callable(Activity::initializeEntryEventOccurrence.__init__)
+def test_activityedge_sendofferentryeventoccurrence_constructor_exists():
+    assert callable(ActivityEdge_sendOfferEntryEventOccurrence.__init__)
 
 
-def test_activity::initializeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::initializeEntryEventOccurrence.__init__)
+def test_activityedge_sendofferentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityEdge_sendOfferEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::mainexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::mainExitEventOccurrence)
+def test_activitynode_isreadyexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_isReadyExitEventOccurrence)
 
 
-def test_activity::mainexiteventoccurrence_constructor_exists():
-    assert callable(Activity::mainExitEventOccurrence.__init__)
+def test_activitynode_isreadyexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_isReadyExitEventOccurrence.__init__)
 
 
-def test_activity::mainexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::mainExitEventOccurrence.__init__)
+def test_activitynode_isreadyexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_isReadyExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::mainentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::mainEntryEventOccurrence)
+def test_activitynode_isreadyentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_isReadyEntryEventOccurrence)
 
 
-def test_activity::mainentryeventoccurrence_constructor_exists():
-    assert callable(Activity::mainEntryEventOccurrence.__init__)
+def test_activitynode_isreadyentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_isReadyEntryEventOccurrence.__init__)
 
 
-def test_activity::mainentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::mainEntryEventOccurrence.__init__)
+def test_activitynode_isreadyentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_isReadyEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::events_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Events)
+def test_activity_firenodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_fireNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::events_constructor_exists():
-    assert callable(traceSystem::Events::Events.__init__)
+def test_activity_firenodeentryeventoccurrence_constructor_exists():
+    assert callable(Activity_fireNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::events_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Events.__init__)
+def test_activity_firenodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_fireNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::tracesystem::globalstate_is_not_abstract():
-    assert not inspect.isabstract(Events::traceSystem::GlobalState)
+def test_activity_getinitialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_getInitialNodeExitEventOccurrence)
 
 
-def test_events::tracesystem::globalstate_constructor_exists():
-    assert callable(Events::traceSystem::GlobalState.__init__)
+def test_activity_getinitialnodeexiteventoccurrence_constructor_exists():
+    assert callable(Activity_getInitialNodeExitEventOccurrence.__init__)
 
 
-def test_events::tracesystem::globalstate_constructor_args():
-    sig = inspect.signature(Events::traceSystem::GlobalState.__init__)
+def test_activity_getinitialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_getInitialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::eventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::EventOccurrence)
+def test_activity_getinitialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_getInitialNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::eventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::EventOccurrence.__init__)
+def test_activity_getinitialnodeentryeventoccurrence_constructor_exists():
+    assert callable(Activity_getInitialNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::eventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::EventOccurrence.__init__)
+def test_activity_getinitialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_getInitialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::integercalculationexpression_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::IntegerCalculationExpression)
+def test_activity_terminateexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_terminateExitEventOccurrence)
 
 
-def test_tracesystem::integercalculationexpression_constructor_exists():
-    assert callable(traceSystem::IntegerCalculationExpression.__init__)
+def test_activity_terminateexiteventoccurrence_constructor_exists():
+    assert callable(Activity_terminateExitEventOccurrence.__init__)
 
 
-def test_tracesystem::integercalculationexpression_constructor_args():
-    sig = inspect.signature(traceSystem::IntegerCalculationExpression.__init__)
+def test_activity_terminateexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_terminateExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::integervalue_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::IntegerValue)
+def test_activity_terminateentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_terminateEntryEventOccurrence)
 
 
-def test_tracesystem::integervalue_constructor_exists():
-    assert callable(traceSystem::IntegerValue.__init__)
+def test_activity_terminateentryeventoccurrence_constructor_exists():
+    assert callable(Activity_terminateEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::integervalue_constructor_args():
-    sig = inspect.signature(traceSystem::IntegerValue.__init__)
+def test_activity_terminateentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_terminateEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::booleanunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::BooleanUnaryExpression)
+def test_activity_selectnextnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_selectNextNodeExitEventOccurrence)
 
 
-def test_tracesystem::booleanunaryexpression_constructor_exists():
-    assert callable(traceSystem::BooleanUnaryExpression.__init__)
+def test_activity_selectnextnodeexiteventoccurrence_constructor_exists():
+    assert callable(Activity_selectNextNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::booleanunaryexpression_constructor_args():
-    sig = inspect.signature(traceSystem::BooleanUnaryExpression.__init__)
+def test_activity_selectnextnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_selectNextNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::booleanbinaryexpression_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::BooleanBinaryExpression)
+def test_activity_selectnextnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_selectNextNodeEntryEventOccurrence)
 
 
-def test_tracesystem::booleanbinaryexpression_constructor_exists():
-    assert callable(traceSystem::BooleanBinaryExpression.__init__)
+def test_activity_selectnextnodeentryeventoccurrence_constructor_exists():
+    assert callable(Activity_selectNextNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::booleanbinaryexpression_constructor_args():
-    sig = inspect.signature(traceSystem::BooleanBinaryExpression.__init__)
+def test_activity_selectnextnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_selectNextNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::StringValue)
+def test_activity_getenablednodesexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_getEnabledNodesExitEventOccurrence)
 
 
-def test_tracesystem::stringvalue_constructor_exists():
-    assert callable(traceSystem::StringValue.__init__)
+def test_activity_getenablednodesexiteventoccurrence_constructor_exists():
+    assert callable(Activity_getEnabledNodesExitEventOccurrence.__init__)
 
 
-def test_tracesystem::stringvalue_constructor_args():
-    sig = inspect.signature(traceSystem::StringValue.__init__)
+def test_activity_getenablednodesexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_getEnabledNodesExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::integercomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::IntegerComparisonExpression)
+def test_activity_getenablednodesentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_getEnabledNodesEntryEventOccurrence)
 
 
-def test_tracesystem::integercomparisonexpression_constructor_exists():
-    assert callable(traceSystem::IntegerComparisonExpression.__init__)
+def test_activity_getenablednodesentryeventoccurrence_constructor_exists():
+    assert callable(Activity_getEnabledNodesEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::integercomparisonexpression_constructor_args():
-    sig = inspect.signature(traceSystem::IntegerComparisonExpression.__init__)
+def test_activity_getenablednodesentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_getEnabledNodesEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::BooleanValue)
+def test_activity_fireinitialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_fireInitialNodeExitEventOccurrence)
 
 
-def test_tracesystem::booleanvalue_constructor_exists():
-    assert callable(traceSystem::BooleanValue.__init__)
+def test_activity_fireinitialnodeexiteventoccurrence_constructor_exists():
+    assert callable(Activity_fireInitialNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::booleanvalue_constructor_args():
-    sig = inspect.signature(traceSystem::BooleanValue.__init__)
+def test_activity_fireinitialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_fireInitialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::running::state_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::running::State)
+def test_activity_fireinitialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_fireInitialNodeEntryEventOccurrence)
 
 
-def test_activitynode::running::state_constructor_exists():
-    assert callable(ActivityNode::running::State.__init__)
+def test_activity_fireinitialnodeentryeventoccurrence_constructor_exists():
+    assert callable(Activity_fireInitialNodeEntryEventOccurrence.__init__)
 
 
-def test_activitynode::running::state_constructor_args():
-    sig = inspect.signature(ActivityNode::running::State.__init__)
+def test_activity_fireinitialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_fireInitialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitynode::heldtokens::state_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode::heldTokens::State)
+def test_activitynode_terminate_activitynodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_terminate_activityNodeEntryEventOccurrence)
 
 
-def test_activitynode::heldtokens::state_constructor_exists():
-    assert callable(ActivityNode::heldTokens::State.__init__)
+def test_activitynode_terminate_activitynodeentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_terminate_activityNodeEntryEventOccurrence.__init__)
 
 
-def test_activitynode::heldtokens::state_constructor_args():
-    sig = inspect.signature(ActivityNode::heldTokens::State.__init__)
+def test_activitynode_terminate_activitynodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_terminate_activityNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::runnodesexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::runNodesExitEventOccurrence)
+def test_activitynode_isrunningexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_isRunningExitEventOccurrence)
 
 
-def test_activity::runnodesexiteventoccurrence_constructor_exists():
-    assert callable(Activity::runNodesExitEventOccurrence.__init__)
+def test_activitynode_isrunningexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_isRunningExitEventOccurrence.__init__)
 
 
-def test_activity::runnodesexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::runNodesExitEventOccurrence.__init__)
+def test_activitynode_isrunningexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_isRunningExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::runnodesentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::runNodesEntryEventOccurrence)
+def test_activitynode_isrunningentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_isRunningEntryEventOccurrence)
 
 
-def test_activity::runnodesentryeventoccurrence_constructor_exists():
-    assert callable(Activity::runNodesEntryEventOccurrence.__init__)
+def test_activitynode_isrunningentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_isRunningEntryEventOccurrence.__init__)
 
 
-def test_activity::runnodesentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::runNodesEntryEventOccurrence.__init__)
+def test_activitynode_isrunningentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_isRunningEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::runexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::runExitEventOccurrence)
+def test_activitynode_run_activitynodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_run_activityNodeExitEventOccurrence)
 
 
-def test_activity::runexiteventoccurrence_constructor_exists():
-    assert callable(Activity::runExitEventOccurrence.__init__)
+def test_activitynode_run_activitynodeexiteventoccurrence_constructor_exists():
+    assert callable(ActivityNode_run_activityNodeExitEventOccurrence.__init__)
 
 
-def test_activity::runexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::runExitEventOccurrence.__init__)
+def test_activitynode_run_activitynodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_run_activityNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::runentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::runEntryEventOccurrence)
+def test_activitynode_run_activitynodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_run_activityNodeEntryEventOccurrence)
 
 
-def test_activity::runentryeventoccurrence_constructor_exists():
-    assert callable(Activity::runEntryEventOccurrence.__init__)
+def test_activitynode_run_activitynodeentryeventoccurrence_constructor_exists():
+    assert callable(ActivityNode_run_activityNodeEntryEventOccurrence.__init__)
 
 
-def test_activity::runentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::runEntryEventOccurrence.__init__)
+def test_activitynode_run_activitynodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(ActivityNode_run_activityNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::initializeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Activity::initializeExitEventOccurrence)
+def test_activity_firenodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_fireNodeExitEventOccurrence)
 
 
-def test_activity::initializeexiteventoccurrence_constructor_exists():
-    assert callable(Activity::initializeExitEventOccurrence.__init__)
+def test_activity_firenodeexiteventoccurrence_constructor_exists():
+    assert callable(Activity_fireNodeExitEventOccurrence.__init__)
 
 
-def test_activity::initializeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Activity::initializeExitEventOccurrence.__init__)
+def test_activity_firenodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_fireNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_inputvalue::value::state_is_not_abstract():
-    assert not inspect.isabstract(InputValue::value::State)
+def test_activity_initializeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_initializeEntryEventOccurrence)
 
 
-def test_inputvalue::value::state_constructor_exists():
-    assert callable(InputValue::value::State.__init__)
+def test_activity_initializeentryeventoccurrence_constructor_exists():
+    assert callable(Activity_initializeEntryEventOccurrence.__init__)
 
 
-def test_inputvalue::value::state_constructor_args():
-    sig = inspect.signature(InputValue::value::State.__init__)
+def test_activity_initializeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_initializeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_variable::currentvalue::state_is_not_abstract():
-    assert not inspect.isabstract(Variable::currentValue::State)
+def test_activity_mainexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_mainExitEventOccurrence)
 
 
-def test_variable::currentvalue::state_constructor_exists():
-    assert callable(Variable::currentValue::State.__init__)
+def test_activity_mainexiteventoccurrence_constructor_exists():
+    assert callable(Activity_mainExitEventOccurrence.__init__)
 
 
-def test_variable::currentvalue::state_constructor_args():
-    sig = inspect.signature(Variable::currentValue::State.__init__)
+def test_activity_mainexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_mainExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::trace::state_is_not_abstract():
-    assert not inspect.isabstract(Activity::trace::State)
+def test_activity_mainentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_mainEntryEventOccurrence)
 
 
-def test_activity::trace::state_constructor_exists():
-    assert callable(Activity::trace::State.__init__)
+def test_activity_mainentryeventoccurrence_constructor_exists():
+    assert callable(Activity_mainEntryEventOccurrence.__init__)
 
 
-def test_activity::trace::state_constructor_args():
-    sig = inspect.signature(Activity::trace::State.__init__)
+def test_activity_mainentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_mainEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_offer::offeredtokens::state_is_not_abstract():
-    assert not inspect.isabstract(Offer::offeredTokens::State)
+def test_tracesystem_events_events_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Events)
 
 
-def test_offer::offeredtokens::state_constructor_exists():
-    assert callable(Offer::offeredTokens::State.__init__)
+def test_tracesystem_events_events_constructor_exists():
+    assert callable(traceSystem_Events_Events.__init__)
 
 
-def test_offer::offeredtokens::state_constructor_args():
-    sig = inspect.signature(Offer::offeredTokens::State.__init__)
+def test_tracesystem_events_events_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Events.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_token::holder::state_is_not_abstract():
-    assert not inspect.isabstract(Token::holder::State)
+def test_events_tracesystem_globalstate_is_not_abstract():
+    assert not inspect.isabstract(Events_traceSystem_GlobalState)
 
 
-def test_token::holder::state_constructor_exists():
-    assert callable(Token::holder::State.__init__)
+def test_events_tracesystem_globalstate_constructor_exists():
+    assert callable(Events_traceSystem_GlobalState.__init__)
 
 
-def test_token::holder::state_constructor_args():
-    sig = inspect.signature(Token::holder::State.__init__)
+def test_events_tracesystem_globalstate_constructor_args():
+    sig = inspect.signature(Events_traceSystem_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forkedtoken::basetokeniswithdrawn::state_is_not_abstract():
-    assert not inspect.isabstract(ForkedToken::baseTokenIsWithdrawn::State)
+def test_tracesystem_events_eventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_EventOccurrence)
 
 
-def test_forkedtoken::basetokeniswithdrawn::state_constructor_exists():
-    assert callable(ForkedToken::baseTokenIsWithdrawn::State.__init__)
+def test_tracesystem_events_eventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_EventOccurrence.__init__)
 
 
-def test_forkedtoken::basetokeniswithdrawn::state_constructor_args():
-    sig = inspect.signature(ForkedToken::baseTokenIsWithdrawn::State.__init__)
+def test_tracesystem_events_eventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_EventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forkedtoken::remainingofferscount::state_is_not_abstract():
-    assert not inspect.isabstract(ForkedToken::remainingOffersCount::State)
+def test_tracesystem_integercalculationexpression_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_IntegerCalculationExpression)
 
 
-def test_forkedtoken::remainingofferscount::state_constructor_exists():
-    assert callable(ForkedToken::remainingOffersCount::State.__init__)
+def test_tracesystem_integercalculationexpression_constructor_exists():
+    assert callable(traceSystem_IntegerCalculationExpression.__init__)
 
 
-def test_forkedtoken::remainingofferscount::state_constructor_args():
-    sig = inspect.signature(ForkedToken::remainingOffersCount::State.__init__)
+def test_tracesystem_integercalculationexpression_constructor_args():
+    sig = inspect.signature(traceSystem_IntegerCalculationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_input::inputvalues::state_is_not_abstract():
-    assert not inspect.isabstract(Input::inputValues::State)
+def test_tracesystem_integervalue_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_IntegerValue)
 
 
-def test_input::inputvalues::state_constructor_exists():
-    assert callable(Input::inputValues::State.__init__)
+def test_tracesystem_integervalue_constructor_exists():
+    assert callable(traceSystem_IntegerValue.__init__)
 
 
-def test_input::inputvalues::state_constructor_args():
-    sig = inspect.signature(Input::inputValues::State.__init__)
+def test_tracesystem_integervalue_constructor_args():
+    sig = inspect.signature(traceSystem_IntegerValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::executednodes::state_is_not_abstract():
-    assert not inspect.isabstract(Trace::executedNodes::State)
+def test_tracesystem_booleanunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_BooleanUnaryExpression)
 
 
-def test_trace::executednodes::state_constructor_exists():
-    assert callable(Trace::executedNodes::State.__init__)
+def test_tracesystem_booleanunaryexpression_constructor_exists():
+    assert callable(traceSystem_BooleanUnaryExpression.__init__)
 
 
-def test_trace::executednodes::state_constructor_args():
-    sig = inspect.signature(Trace::executedNodes::State.__init__)
+def test_tracesystem_booleanunaryexpression_constructor_args():
+    sig = inspect.signature(traceSystem_BooleanUnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activityedge::offers::state_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge::offers::State)
+def test_tracesystem_booleanbinaryexpression_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_BooleanBinaryExpression)
 
 
-def test_activityedge::offers::state_constructor_exists():
-    assert callable(ActivityEdge::offers::State.__init__)
+def test_tracesystem_booleanbinaryexpression_constructor_exists():
+    assert callable(traceSystem_BooleanBinaryExpression.__init__)
 
 
-def test_activityedge::offers::state_constructor_args():
-    sig = inspect.signature(ActivityEdge::offers::State.__init__)
+def test_tracesystem_booleanbinaryexpression_constructor_args():
+    sig = inspect.signature(traceSystem_BooleanBinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_inputvalue::variable::state_is_not_abstract():
-    assert not inspect.isabstract(InputValue::variable::State)
+def test_tracesystem_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_StringValue)
 
 
-def test_inputvalue::variable::state_constructor_exists():
-    assert callable(InputValue::variable::State.__init__)
+def test_tracesystem_stringvalue_constructor_exists():
+    assert callable(traceSystem_StringValue.__init__)
 
 
-def test_inputvalue::variable::state_constructor_args():
-    sig = inspect.signature(InputValue::variable::State.__init__)
+def test_tracesystem_stringvalue_constructor_args():
+    sig = inspect.signature(traceSystem_StringValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracesystem_integercomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_IntegerComparisonExpression)
+
+
+def test_tracesystem_integercomparisonexpression_constructor_exists():
+    assert callable(traceSystem_IntegerComparisonExpression.__init__)
+
+
+def test_tracesystem_integercomparisonexpression_constructor_args():
+    sig = inspect.signature(traceSystem_IntegerComparisonExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracesystem_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_BooleanValue)
+
+
+def test_tracesystem_booleanvalue_constructor_exists():
+    assert callable(traceSystem_BooleanValue.__init__)
+
+
+def test_tracesystem_booleanvalue_constructor_args():
+    sig = inspect.signature(traceSystem_BooleanValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitynode_running_state_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_running_State)
+
+
+def test_activitynode_running_state_constructor_exists():
+    assert callable(ActivityNode_running_State.__init__)
+
+
+def test_activitynode_running_state_constructor_args():
+    sig = inspect.signature(ActivityNode_running_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitynode_heldtokens_state_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode_heldTokens_State)
+
+
+def test_activitynode_heldtokens_state_constructor_exists():
+    assert callable(ActivityNode_heldTokens_State.__init__)
+
+
+def test_activitynode_heldtokens_state_constructor_args():
+    sig = inspect.signature(ActivityNode_heldTokens_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_runnodesexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_runNodesExitEventOccurrence)
+
+
+def test_activity_runnodesexiteventoccurrence_constructor_exists():
+    assert callable(Activity_runNodesExitEventOccurrence.__init__)
+
+
+def test_activity_runnodesexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_runNodesExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_runnodesentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_runNodesEntryEventOccurrence)
+
+
+def test_activity_runnodesentryeventoccurrence_constructor_exists():
+    assert callable(Activity_runNodesEntryEventOccurrence.__init__)
+
+
+def test_activity_runnodesentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_runNodesEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_runexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_runExitEventOccurrence)
+
+
+def test_activity_runexiteventoccurrence_constructor_exists():
+    assert callable(Activity_runExitEventOccurrence.__init__)
+
+
+def test_activity_runexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_runExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_runentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_runEntryEventOccurrence)
+
+
+def test_activity_runentryeventoccurrence_constructor_exists():
+    assert callable(Activity_runEntryEventOccurrence.__init__)
+
+
+def test_activity_runentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_runEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_initializeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Activity_initializeExitEventOccurrence)
+
+
+def test_activity_initializeexiteventoccurrence_constructor_exists():
+    assert callable(Activity_initializeExitEventOccurrence.__init__)
+
+
+def test_activity_initializeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Activity_initializeExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_inputvalue_value_state_is_not_abstract():
+    assert not inspect.isabstract(InputValue_value_State)
+
+
+def test_inputvalue_value_state_constructor_exists():
+    assert callable(InputValue_value_State.__init__)
+
+
+def test_inputvalue_value_state_constructor_args():
+    sig = inspect.signature(InputValue_value_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variable_currentvalue_state_is_not_abstract():
+    assert not inspect.isabstract(Variable_currentValue_State)
+
+
+def test_variable_currentvalue_state_constructor_exists():
+    assert callable(Variable_currentValue_State.__init__)
+
+
+def test_variable_currentvalue_state_constructor_args():
+    sig = inspect.signature(Variable_currentValue_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_trace_state_is_not_abstract():
+    assert not inspect.isabstract(Activity_trace_State)
+
+
+def test_activity_trace_state_constructor_exists():
+    assert callable(Activity_trace_State.__init__)
+
+
+def test_activity_trace_state_constructor_args():
+    sig = inspect.signature(Activity_trace_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_offer_offeredtokens_state_is_not_abstract():
+    assert not inspect.isabstract(Offer_offeredTokens_State)
+
+
+def test_offer_offeredtokens_state_constructor_exists():
+    assert callable(Offer_offeredTokens_State.__init__)
+
+
+def test_offer_offeredtokens_state_constructor_args():
+    sig = inspect.signature(Offer_offeredTokens_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_token_holder_state_is_not_abstract():
+    assert not inspect.isabstract(Token_holder_State)
+
+
+def test_token_holder_state_constructor_exists():
+    assert callable(Token_holder_State.__init__)
+
+
+def test_token_holder_state_constructor_args():
+    sig = inspect.signature(Token_holder_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_forkedtoken_basetokeniswithdrawn_state_is_not_abstract():
+    assert not inspect.isabstract(ForkedToken_baseTokenIsWithdrawn_State)
+
+
+def test_forkedtoken_basetokeniswithdrawn_state_constructor_exists():
+    assert callable(ForkedToken_baseTokenIsWithdrawn_State.__init__)
+
+
+def test_forkedtoken_basetokeniswithdrawn_state_constructor_args():
+    sig = inspect.signature(ForkedToken_baseTokenIsWithdrawn_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_forkedtoken_remainingofferscount_state_is_not_abstract():
+    assert not inspect.isabstract(ForkedToken_remainingOffersCount_State)
+
+
+def test_forkedtoken_remainingofferscount_state_constructor_exists():
+    assert callable(ForkedToken_remainingOffersCount_State.__init__)
+
+
+def test_forkedtoken_remainingofferscount_state_constructor_args():
+    sig = inspect.signature(ForkedToken_remainingOffersCount_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_input_inputvalues_state_is_not_abstract():
+    assert not inspect.isabstract(Input_inputValues_State)
+
+
+def test_input_inputvalues_state_constructor_exists():
+    assert callable(Input_inputValues_State.__init__)
+
+
+def test_input_inputvalues_state_constructor_args():
+    sig = inspect.signature(Input_inputValues_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_executednodes_state_is_not_abstract():
+    assert not inspect.isabstract(Trace_executedNodes_State)
+
+
+def test_trace_executednodes_state_constructor_exists():
+    assert callable(Trace_executedNodes_State.__init__)
+
+
+def test_trace_executednodes_state_constructor_args():
+    sig = inspect.signature(Trace_executedNodes_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityedge_offers_state_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge_offers_State)
+
+
+def test_activityedge_offers_state_constructor_exists():
+    assert callable(ActivityEdge_offers_State.__init__)
+
+
+def test_activityedge_offers_state_constructor_args():
+    sig = inspect.signature(ActivityEdge_offers_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_inputvalue_variable_state_is_not_abstract():
+    assert not inspect.isabstract(InputValue_variable_State)
+
+
+def test_inputvalue_variable_state_constructor_exists():
+    assert callable(InputValue_variable_State.__init__)
+
+
+def test_inputvalue_variable_state_constructor_args():
+    sig = inspect.signature(InputValue_variable_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3810,44 +3810,44 @@ def test_events_constructor_args():
 
 
 
-def test_tracesystem::globalstate_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::GlobalState)
+def test_tracesystem_globalstate_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_GlobalState)
 
 
-def test_tracesystem::globalstate_constructor_exists():
-    assert callable(traceSystem::GlobalState.__init__)
+def test_tracesystem_globalstate_constructor_exists():
+    assert callable(traceSystem_GlobalState.__init__)
 
 
-def test_tracesystem::globalstate_constructor_args():
-    sig = inspect.signature(traceSystem::GlobalState.__init__)
+def test_tracesystem_globalstate_constructor_args():
+    sig = inspect.signature(traceSystem_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::trace_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Trace)
+def test_tracesystem_trace_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Trace)
 
 
-def test_tracesystem::trace_constructor_exists():
-    assert callable(traceSystem::Trace.__init__)
+def test_tracesystem_trace_constructor_exists():
+    assert callable(traceSystem_Trace.__init__)
 
 
-def test_tracesystem::trace_constructor_args():
-    sig = inspect.signature(traceSystem::Trace.__init__)
+def test_tracesystem_trace_constructor_args():
+    sig = inspect.signature(traceSystem_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forkedtoken::basetoken::state_is_not_abstract():
-    assert not inspect.isabstract(ForkedToken::baseToken::State)
+def test_forkedtoken_basetoken_state_is_not_abstract():
+    assert not inspect.isabstract(ForkedToken_baseToken_State)
 
 
-def test_forkedtoken::basetoken::state_constructor_exists():
-    assert callable(ForkedToken::baseToken::State.__init__)
+def test_forkedtoken_basetoken_state_constructor_exists():
+    assert callable(ForkedToken_baseToken_State.__init__)
 
 
-def test_forkedtoken::basetoken::state_constructor_args():
-    sig = inspect.signature(ForkedToken::baseToken::State.__init__)
+def test_forkedtoken_basetoken_state_constructor_args():
+    sig = inspect.signature(ForkedToken_baseToken_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3866,1696 +3866,1696 @@ def test_eventoccurrence_constructor_args():
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence)
+def test_tracesystem_events_activity_getinitialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_getinitialnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_getinitialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::action::fire::actionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Action::fire::actionEntryEventOccurrence)
+def test_tracesystem_events_activitynode_sendoffersentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence)
 
 
-def test_tracesystem::events::action::fire::actionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Action::fire::actionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_sendoffersentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::action::fire::actionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Action::fire::actionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_sendoffersentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence)
 
 
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateandexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence)
+def test_tracesystem_events_action_isready_actionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Action_isReady_actionExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateandexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence.__init__)
+def test_tracesystem_events_action_isready_actionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Action_isReady_actionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateandexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence.__init__)
+def test_tracesystem_events_action_isready_actionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Action_isReady_actionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::action::sendoffers::actionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Action::sendOffers::actionExitEventOccurrence)
+def test_tracesystem_events_activitynode_isreadyentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence)
 
 
-def test_tracesystem::events::action::sendoffers::actionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Action::sendOffers::actionExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isreadyentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::action::sendoffers::actionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Action::sendOffers::actionExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isreadyentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence)
 
 
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence)
+def test_tracesystem_events_activity_runexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_runExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_runexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_runExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_runexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_runExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence)
+def test_tracesystem_events_activitynode_terminate_activitynodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_terminate_activitynodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_terminate_activitynodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence)
+def test_tracesystem_events_activity_getinitialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_getInitialNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_getinitialnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_getInitialNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_getinitialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_getInitialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence)
+def test_tracesystem_events_action_sendoffers_actionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence.__init__)
+def test_tracesystem_events_action_sendoffers_actionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence.__init__)
+def test_tracesystem_events_action_sendoffers_actionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::mainentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::mainEntryEventOccurrence)
+def test_tracesystem_events_activity_fireinitialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::mainentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::mainEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_fireinitialnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::mainentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::mainEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_fireinitialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::firenodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::fireNodeExitEventOccurrence)
+def test_tracesystem_events_action_isready_actionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Action_isReady_actionEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::firenodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::fireNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_action_isready_actionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Action_isReady_actionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::firenodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::fireNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_action_isready_actionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Action_isReady_actionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::firenodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::fireNodeEntryEventOccurrence)
+def test_tracesystem_events_activity_runnodesexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_runNodesExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::firenodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::fireNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_runnodesexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_runNodesExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::firenodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::fireNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_runnodesexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_runNodesExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::initialnode::isready::initialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence)
+def test_tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::initialnode::isready::initialnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::initialnode::isready::initialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::initialnode::fire::initialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence)
+def test_tracesystem_events_initialnode_fire_initialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::initialnode::fire::initialnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_fire_initialnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::initialnode::fire::initialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_fire_initialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::token::iswithdrawnentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Token::isWithdrawnEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence)
 
 
-def test_tracesystem::events::token::iswithdrawnentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Token::isWithdrawnEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::token::iswithdrawnentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Token::isWithdrawnEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence)
 
 
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence)
+def test_tracesystem_events_activitynode_isrunningexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_isRunningExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isrunningexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_isRunningExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isrunningexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_isRunningExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence)
+def test_tracesystem_events_activitynode_addtokensentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_addtokensentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_addtokensentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence)
+def test_tracesystem_events_activity_mainexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_mainExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_mainexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_mainExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_mainexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_mainExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::initializeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::initializeExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::initializeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::initializeExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::initializeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::initializeExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::forknode::fire::forknodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence)
+def test_tracesystem_events_activityedge_sendofferentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence)
 
 
-def test_tracesystem::events::forknode::fire::forknodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_sendofferentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::forknode::fire::forknodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_sendofferentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence)
+def test_tracesystem_events_action_fire_actionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Action_fire_actionEntryEventOccurrence)
 
 
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_action_fire_actionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Action_fire_actionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_action_fire_actionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Action_fire_actionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::fireinitialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence)
+def test_tracesystem_events_activity_mainentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_mainEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::fireinitialnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_mainentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_mainEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::fireinitialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_mainentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_mainEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence)
+def test_tracesystem_events_activitynode_hasoffersexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence)
 
 
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_hasoffersexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_hasoffersexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::runexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::runExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::runexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::runExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::runexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::runExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanunaryexpression::evaluatenotexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence)
+def test_tracesystem_events_activitynode_isreadyexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_isReadyExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanunaryexpression::evaluatenotexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isreadyexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_isReadyExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanunaryexpression::evaluatenotexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isreadyexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_isReadyExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::hasoffersentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence)
+def test_tracesystem_events_controlnode_fire_controlnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::hasoffersentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_fire_controlnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::hasoffersentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_fire_controlnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::action::isready::actionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Action::isReady::actionExitEventOccurrence)
+def test_tracesystem_events_token_withdrawexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Token_withdrawExitEventOccurrence)
 
 
-def test_tracesystem::events::action::isready::actionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Action::isReady::actionExitEventOccurrence.__init__)
+def test_tracesystem_events_token_withdrawexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Token_withdrawExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::action::isready::actionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Action::isReady::actionExitEventOccurrence.__init__)
+def test_tracesystem_events_token_withdrawexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Token_withdrawExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::token::withdrawentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Token::withdrawEntryEventOccurrence)
+def test_tracesystem_events_activity_terminateentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_terminateEntryEventOccurrence)
 
 
-def test_tracesystem::events::token::withdrawentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Token::withdrawEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_terminateentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_terminateEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::token::withdrawentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Token::withdrawEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_terminateentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_terminateEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::initialnode::isready::initialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence)
+def test_tracesystem_events_activity_initializeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_initializeEntryEventOccurrence)
 
 
-def test_tracesystem::events::initialnode::isready::initialnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_initializeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_initializeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::initialnode::isready::initialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_initializeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_initializeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::isrunningexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::isRunningExitEventOccurrence)
+def test_tracesystem_events_action_fire_actionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Action_fire_actionExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::isrunningexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::isRunningExitEventOccurrence.__init__)
+def test_tracesystem_events_action_fire_actionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Action_fire_actionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::isrunningexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::isRunningExitEventOccurrence.__init__)
+def test_tracesystem_events_action_fire_actionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Action_fire_actionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::action::sendoffers::actionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence)
+def test_tracesystem_events_activity_initializeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_initializeExitEventOccurrence)
 
 
-def test_tracesystem::events::action::sendoffers::actionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_initializeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_initializeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::action::sendoffers::actionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_initializeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_initializeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::fireinitialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::fireinitialnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::fireinitialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::forknode::fire::forknodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence)
 
 
-def test_tracesystem::events::forknode::fire::forknodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::forknode::fire::forknodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::terminate::activitynodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::terminate::activitynodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::terminate::activitynodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::action::fire::actionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Action::fire::actionExitEventOccurrence)
+def test_tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence)
 
 
-def test_tracesystem::events::action::fire::actionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Action::fire::actionExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::action::fire::actionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Action::fire::actionExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::controlnode::isready::controlnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence)
+def test_tracesystem_events_forknode_fire_forknodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::controlnode::isready::controlnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_forknode_fire_forknodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::controlnode::isready::controlnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_forknode_fire_forknodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::isreadyentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::isreadyentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::isreadyentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::takeofferedtokensexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::takeofferedtokensexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::takeofferedtokensexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::removetokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::removetokenexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::removetokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence)
 
 
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence)
+def test_tracesystem_events_token_iswithdrawnentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Token_isWithdrawnEntryEventOccurrence)
 
 
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_token_iswithdrawnentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Token_isWithdrawnEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_token_iswithdrawnentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Token_isWithdrawnEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::takeofferedtokensentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::takeofferedtokensentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::takeofferedtokensentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateorentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence)
+def test_tracesystem_events_initialnode_isready_initialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateorentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_isready_initialnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateorentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_isready_initialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::runentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::runEntryEventOccurrence)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::runentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::runEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::runentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::runEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::isrunningentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence)
+def test_tracesystem_events_activityedge_sendofferexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::isrunningentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_sendofferexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::isrunningentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_sendofferexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::initialnode::fire::initialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence)
+def test_tracesystem_events_activity_firenodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_fireNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::initialnode::fire::initialnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_firenodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_fireNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::initialnode::fire::initialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_firenodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_fireNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::getenablednodesentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence)
+def test_tracesystem_events_activity_firenodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_fireNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::getenablednodesentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_firenodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_fireNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::getenablednodesentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_firenodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_fireNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::terminateentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::terminateEntryEventOccurrence)
+def test_tracesystem_events_activity_fireinitialnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::terminateentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::terminateEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_fireinitialnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::terminateentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::terminateEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_fireinitialnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence)
+def test_tracesystem_events_activity_getenablednodesexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_getenablednodesexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_getenablednodesexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence)
 
 
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::mergenode::hasoffers::mergenodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence)
 
 
-def test_tracesystem::events::mergenode::hasoffers::mergenodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::mergenode::hasoffers::mergenodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence.__init__)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::controlnode::isready::controlnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence)
+def test_tracesystem_events_controlnode_fire_controlnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::controlnode::isready::controlnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_fire_controlnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::controlnode::isready::controlnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_fire_controlnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::controlnode::fire::controlnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence)
+def test_tracesystem_events_activitynode_terminate_activitynodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::controlnode::fire::controlnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_terminate_activitynodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::controlnode::fire::controlnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_terminate_activitynodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::terminateexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::terminateExitEventOccurrence)
+def test_tracesystem_events_activitynode_hasoffersentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::terminateexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::terminateExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_hasoffersentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::terminateexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::terminateExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_hasoffersentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence.__init__)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence.__init__)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::runnodesentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::runNodesEntryEventOccurrence)
+def test_tracesystem_events_activitynode_run_activitynodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::runnodesentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::runNodesEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_run_activitynodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::runnodesentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::runNodesEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_run_activitynodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::token::transferentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Token::transferEntryEventOccurrence)
+def test_tracesystem_events_activitynode_isrunningentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence)
 
 
-def test_tracesystem::events::token::transferentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Token::transferEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isrunningentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::token::transferentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Token::transferEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_isrunningentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateorexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence)
+def test_tracesystem_events_controlnode_isready_controlnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateorexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_isready_controlnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateorexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_isready_controlnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence.__init__)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence.__init__)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::mainexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::mainExitEventOccurrence)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::mainexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::mainExitEventOccurrence.__init__)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::mainexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::mainExitEventOccurrence.__init__)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::decisionnode::fire::decisionnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence)
+def test_tracesystem_events_activitynode_removetokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence)
 
 
-def test_tracesystem::events::decisionnode::fire::decisionnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_removetokenentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::decisionnode::fire::decisionnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_removetokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::getinitialnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::getInitialNodeExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::getinitialnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::getInitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::getinitialnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::getInitialNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence)
 
 
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence)
+def test_tracesystem_events_activity_selectnextnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_selectNextNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_selectnextnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_selectNextNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_selectnextnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_selectNextNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::runnodesexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::runNodesExitEventOccurrence)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::runnodesexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::runNodesExitEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::runnodesexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::runNodesExitEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::token::withdrawexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Token::withdrawExitEventOccurrence)
+def test_tracesystem_events_decisionnode_fire_decisionnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::token::withdrawexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Token::withdrawExitEventOccurrence.__init__)
+def test_tracesystem_events_decisionnode_fire_decisionnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::token::withdrawexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Token::withdrawExitEventOccurrence.__init__)
+def test_tracesystem_events_decisionnode_fire_decisionnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence)
 
 
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::selectnextnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence)
+def test_tracesystem_events_activitynode_run_activitynodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::selectnextnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_run_activitynodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::selectnextnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_run_activitynodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::token::transferexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Token::transferExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence)
 
 
-def test_tracesystem::events::token::transferexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Token::transferExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::token::transferexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Token::transferExitEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateandentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateandentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence.__init__)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanbinaryexpression::evaluateandentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence.__init__)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence)
+def test_tracesystem_events_activity_terminateexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_terminateExitEventOccurrence)
 
 
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_terminateexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_terminateExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_terminateexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_terminateExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercalculationexpression::evaluateaddexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluateaddexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluateaddexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercalculationexpression::evaluateaddentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluateaddentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercalculationexpression::evaluateaddentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityedge::hasofferexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence)
+def test_tracesystem_events_activitynode_removetokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence)
 
 
-def test_tracesystem::events::activityedge::hasofferexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_removetokenexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityedge::hasofferexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_removetokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence)
+def test_tracesystem_events_offer_hastokensexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Offer_hasTokensExitEventOccurrence)
 
 
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence.__init__)
+def test_tracesystem_events_offer_hastokensexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Offer_hasTokensExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence.__init__)
+def test_tracesystem_events_offer_hastokensexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Offer_hasTokensExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::decisionnode::fire::decisionnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence)
+def test_tracesystem_events_action_sendoffers_actionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Action_sendOffers_actionExitEventOccurrence)
 
 
-def test_tracesystem::events::decisionnode::fire::decisionnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_action_sendoffers_actionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Action_sendOffers_actionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::decisionnode::fire::decisionnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_action_sendoffers_actionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Action_sendOffers_actionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence)
 
 
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::hasoffersexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence)
+def test_tracesystem_events_activity_selectnextnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::hasoffersexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_selectnextnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::hasoffersexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_selectnextnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::action::isready::actionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Action::isReady::actionEntryEventOccurrence)
+def test_tracesystem_events_activitynode_takeofferedtokensentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence)
 
 
-def test_tracesystem::events::action::isready::actionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Action::isReady::actionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_takeofferedtokensentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::action::isready::actionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Action::isReady::actionEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_takeofferedtokensentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::offer::hastokensentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Offer::hasTokensEntryEventOccurrence)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::offer::hastokensentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Offer::hasTokensEntryEventOccurrence.__init__)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::offer::hastokensentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Offer::hasTokensEntryEventOccurrence.__init__)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::getinitialnodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::getinitialnodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::getinitialnodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::controlnode::fire::controlnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence)
+def test_tracesystem_events_offer_hastokensentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Offer_hasTokensEntryEventOccurrence)
 
 
-def test_tracesystem::events::controlnode::fire::controlnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_offer_hastokensentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Offer_hasTokensEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::controlnode::fire::controlnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_offer_hastokensentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Offer_hasTokensEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::run::activitynodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence)
+def test_tracesystem_events_initialnode_fire_initialnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::run::activitynodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_fire_initialnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::run::activitynodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_initialnode_fire_initialnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence)
+def test_tracesystem_events_activity_getenablednodesentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_getenablednodesentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence.__init__)
+def test_tracesystem_events_activity_getenablednodesentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::removetokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence)
+def test_tracesystem_events_token_transferexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Token_transferExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::removetokenentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence.__init__)
+def test_tracesystem_events_token_transferexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Token_transferExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::removetokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence.__init__)
+def test_tracesystem_events_token_transferexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Token_transferExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::isreadyexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::isReadyExitEventOccurrence)
+def test_tracesystem_events_token_withdrawentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Token_withdrawEntryEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::isreadyexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::isReadyExitEventOccurrence.__init__)
+def test_tracesystem_events_token_withdrawentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Token_withdrawEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::isreadyexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::isReadyExitEventOccurrence.__init__)
+def test_tracesystem_events_token_withdrawentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Token_withdrawEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::getenablednodesexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::getenablednodesexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::getenablednodesexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::sendoffersexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::sendoffersexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::sendoffersexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityedge::sendofferentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence)
+def test_tracesystem_events_activityedge_hasofferexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence)
 
 
-def test_tracesystem::events::activityedge::sendofferentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_hasofferexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityedge::sendofferentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_hasofferexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityedge::sendofferexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence)
 
 
-def test_tracesystem::events::activityedge::sendofferexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityedge::sendofferexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::selectnextnodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::selectNextNodeExitEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence)
 
 
-def test_tracesystem::events::activity::selectnextnodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::selectNextNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::selectnextnodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::selectNextNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::addtokensentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::addtokensentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::addtokensentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence)
+def test_tracesystem_events_activityedge_hasofferentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence)
 
 
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_hasofferentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_activityedge_hasofferentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence)
+def test_tracesystem_events_decisionnode_fire_decisionnodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence.__init__)
+def test_tracesystem_events_decisionnode_fire_decisionnodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence.__init__)
+def test_tracesystem_events_decisionnode_fire_decisionnodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::terminate::activitynodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::terminate::activitynodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::terminate::activitynodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::addtokensexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::addTokensExitEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::addtokensexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::addTokensExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::addtokensexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::addTokensExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::run::activitynodeexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence)
+def test_tracesystem_events_forknode_fire_forknodeentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::run::activitynodeexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_forknode_fire_forknodeentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::run::activitynodeexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence.__init__)
+def test_tracesystem_events_forknode_fire_forknodeentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::mergenode::hasoffers::mergenodeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence)
 
 
-def test_tracesystem::events::mergenode::hasoffers::mergenodeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::mergenode::hasoffers::mergenodeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::offer::hastokensexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Offer::hasTokensExitEventOccurrence)
+def test_tracesystem_events_activitynode_sendoffersexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence)
 
 
-def test_tracesystem::events::offer::hastokensexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Offer::hasTokensExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_sendoffersexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::offer::hastokensexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Offer::hasTokensExitEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_sendoffersexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanunaryexpression::evaluatenotentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence)
+def test_tracesystem_events_token_iswithdrawnexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Token_isWithdrawnExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanunaryexpression::evaluatenotentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence.__init__)
+def test_tracesystem_events_token_iswithdrawnexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Token_isWithdrawnExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanunaryexpression::evaluatenotentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence.__init__)
+def test_tracesystem_events_token_iswithdrawnexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Token_isWithdrawnExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence)
+def test_tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence.__init__)
+def test_tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityedge::hasofferentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence)
+def test_tracesystem_events_activitynode_addtokensexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_ActivityNode_addTokensExitEventOccurrence)
 
 
-def test_tracesystem::events::activityedge::hasofferentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_addtokensexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_ActivityNode_addTokensExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityedge::hasofferentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence.__init__)
+def test_tracesystem_events_activitynode_addtokensexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_ActivityNode_addTokensExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence)
+def test_tracesystem_events_activity_runnodesentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_runNodesEntryEventOccurrence)
 
 
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_runnodesentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_runNodesEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_runnodesentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_runNodesEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence)
 
 
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence.__init__)
+def test_tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::token::iswithdrawnexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Token::isWithdrawnExitEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence)
 
 
-def test_tracesystem::events::token::iswithdrawnexiteventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Token::isWithdrawnExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::token::iswithdrawnexiteventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Token::isWithdrawnExitEventOccurrence.__init__)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activitynode::sendoffersentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence)
 
 
-def test_tracesystem::events::activitynode::sendoffersentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activitynode::sendoffersentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence.__init__)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence)
+def test_tracesystem_events_activity_runentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Activity_runEntryEventOccurrence)
 
 
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_runentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Activity_runEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence.__init__)
+def test_tracesystem_events_activity_runentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Activity_runEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence)
+def test_tracesystem_events_token_transferentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_Token_transferEntryEventOccurrence)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence.__init__)
+def test_tracesystem_events_token_transferentryeventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_Token_transferEntryEventOccurrence.__init__)
 
 
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence.__init__)
+def test_tracesystem_events_token_transferentryeventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_Token_transferEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activity::initializeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::Activity::initializeEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence)
 
 
-def test_tracesystem::events::activity::initializeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::Activity::initializeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activity::initializeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::Activity::initializeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence)
 
 
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence.__init__)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence)
 
 
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeentryeventoccurrence_constructor_exists():
-    assert callable(traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence_constructor_exists():
+    assert callable(traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence.__init__)
 
 
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeentryeventoccurrence_constructor_args():
-    sig = inspect.signature(traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence.__init__)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence_constructor_args():
+    sig = inspect.signature(traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracesystem::staticobjectspools_is_not_abstract():
-    assert not inspect.isabstract(traceSystem::StaticObjectsPools)
+def test_tracesystem_staticobjectspools_is_not_abstract():
+    assert not inspect.isabstract(traceSystem_StaticObjectsPools)
 
 
-def test_tracesystem::staticobjectspools_constructor_exists():
-    assert callable(traceSystem::StaticObjectsPools.__init__)
+def test_tracesystem_staticobjectspools_constructor_exists():
+    assert callable(traceSystem_StaticObjectsPools.__init__)
 
 
-def test_tracesystem::staticobjectspools_constructor_args():
-    sig = inspect.signature(traceSystem::StaticObjectsPools.__init__)
+def test_tracesystem_staticobjectspools_constructor_args():
+    sig = inspect.signature(traceSystem_StaticObjectsPools.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5584,2997 +5584,2985 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence,
+DecisionNode_fire_decisionNodeExitEventOccurrence_strategy = st.builds(
+    DecisionNode_fire_decisionNodeExitEventOccurrence,
 )
-IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence,
+BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence_strategy = st.builds(
+    BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence,
 )
-IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence,
+BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence_strategy = st.builds(
+    BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence,
 )
-IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence,
+BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence_strategy = st.builds(
+    BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence,
 )
-IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence,
+BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence_strategy = st.builds(
+    BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence,
 )
-BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence_strategy = st.builds(
-    BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence,
+ForkNode_fire_forkNodeEntryEventOccurrence_strategy = st.builds(
+    ForkNode_fire_forkNodeEntryEventOccurrence,
 )
-BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence_strategy = st.builds(
-    BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence,
+ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence_strategy = st.builds(
+    ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence,
 )
-IntegerComparisonExpression::evaluateGREATERExitEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateGREATERExitEventOccurrence,
+ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence_strategy = st.builds(
+    ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence,
 )
-IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence_strategy = st.builds(
-    IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence,
+InitialNode_fire_initialNodeExitEventOccurrence_strategy = st.builds(
+    InitialNode_fire_initialNodeExitEventOccurrence,
 )
-IntegerCalculationExpression::evaluateADDExitEventOccurrence_strategy = st.builds(
-    IntegerCalculationExpression::evaluateADDExitEventOccurrence,
+InitialNode_fire_initialNodeEntryEventOccurrence_strategy = st.builds(
+    InitialNode_fire_initialNodeEntryEventOccurrence,
 )
-IntegerCalculationExpression::evaluateADDEntryEventOccurrence_strategy = st.builds(
-    IntegerCalculationExpression::evaluateADDEntryEventOccurrence,
+InitialNode_isReady_InitialNodeExitEventOccurrence_strategy = st.builds(
+    InitialNode_isReady_InitialNodeExitEventOccurrence,
 )
-IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence_strategy = st.builds(
-    IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence,
+InitialNode_isReady_InitialNodeEntryEventOccurrence_strategy = st.builds(
+    InitialNode_isReady_InitialNodeEntryEventOccurrence,
 )
-IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence_strategy = st.builds(
-    IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence,
+OpaqueAction_doAction_opaqueActionExitEventOccurrence_strategy = st.builds(
+    OpaqueAction_doAction_opaqueActionExitEventOccurrence,
 )
-IntegerExpression::getOperandCurrentValuesExitEventOccurrence_strategy = st.builds(
-    IntegerExpression::getOperandCurrentValuesExitEventOccurrence,
+OpaqueAction_doAction_opaqueActionEntryEventOccurrence_strategy = st.builds(
+    OpaqueAction_doAction_opaqueActionEntryEventOccurrence,
 )
-IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence,
+DecisionNode_fire_decisionNodeEntryEventOccurrence_strategy = st.builds(
+    DecisionNode_fire_decisionNodeEntryEventOccurrence,
 )
-IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence,
+MergeNode_hasOffers_mergeNodeExitEventOccurrence_strategy = st.builds(
+    MergeNode_hasOffers_mergeNodeExitEventOccurrence,
 )
-IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence,
+MergeNode_hasOffers_mergeNodeEntryEventOccurrence_strategy = st.builds(
+    MergeNode_hasOffers_mergeNodeEntryEventOccurrence,
 )
-IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence,
+ForkNode_fire_forkNodeExitEventOccurrence_strategy = st.builds(
+    ForkNode_fire_forkNodeExitEventOccurrence,
 )
-IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence_strategy = st.builds(
-    IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence,
+Action_sendOffers_actionExitEventOccurrence_strategy = st.builds(
+    Action_sendOffers_actionExitEventOccurrence,
 )
-StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence_strategy = st.builds(
-    StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence,
+Action_sendOffers_actionEntryEventOccurrence_strategy = st.builds(
+    Action_sendOffers_actionEntryEventOccurrence,
 )
-StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence_strategy = st.builds(
-    StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence,
+ControlNode_fire_controlNodeExitEventOccurrence_strategy = st.builds(
+    ControlNode_fire_controlNodeExitEventOccurrence,
 )
-StringVariable::setCurrentValue::stringVariableExitEventOccurrence_strategy = st.builds(
-    StringVariable::setCurrentValue::stringVariableExitEventOccurrence,
+ControlNode_fire_controlNodeEntryEventOccurrence_strategy = st.builds(
+    ControlNode_fire_controlNodeEntryEventOccurrence,
 )
-StringVariable::setCurrentValue::stringVariableEntryEventOccurrence_strategy = st.builds(
-    StringVariable::setCurrentValue::stringVariableEntryEventOccurrence,
+ControlNode_isReady_ControlNodeExitEventOccurrence_strategy = st.builds(
+    ControlNode_isReady_ControlNodeExitEventOccurrence,
 )
-IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence_strategy = st.builds(
-    IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence,
+ControlNode_isReady_ControlNodeEntryEventOccurrence_strategy = st.builds(
+    ControlNode_isReady_ControlNodeEntryEventOccurrence,
 )
-IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence_strategy = st.builds(
-    IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence,
+ActivityEdge_hasOfferExitEventOccurrence_strategy = st.builds(
+    ActivityEdge_hasOfferExitEventOccurrence,
 )
-IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence_strategy = st.builds(
-    IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence,
+ActivityEdge_hasOfferEntryEventOccurrence_strategy = st.builds(
+    ActivityEdge_hasOfferEntryEventOccurrence,
 )
-IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence_strategy = st.builds(
-    IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence,
+ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence_strategy = st.builds(
+    ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence,
 )
-IntegerExpression::getOperandCurrentValuesEntryEventOccurrence_strategy = st.builds(
-    IntegerExpression::getOperandCurrentValuesEntryEventOccurrence,
+ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence_strategy = st.builds(
+    ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence,
 )
-DecisionNode::fire::decisionNodeExitEventOccurrence_strategy = st.builds(
-    DecisionNode::fire::decisionNodeExitEventOccurrence,
+Action_fire_actionExitEventOccurrence_strategy = st.builds(
+    Action_fire_actionExitEventOccurrence,
 )
-BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence_strategy = st.builds(
-    BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence,
+Action_fire_actionEntryEventOccurrence_strategy = st.builds(
+    Action_fire_actionEntryEventOccurrence,
 )
-BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence_strategy = st.builds(
-    BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence,
+Action_isReady_actionExitEventOccurrence_strategy = st.builds(
+    Action_isReady_actionExitEventOccurrence,
 )
-BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence_strategy = st.builds(
-    BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence,
+Action_isReady_actionEntryEventOccurrence_strategy = st.builds(
+    Action_isReady_actionEntryEventOccurrence,
 )
-BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence_strategy = st.builds(
-    BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence,
+ActivityNode_hasOffersExitEventOccurrence_strategy = st.builds(
+    ActivityNode_hasOffersExitEventOccurrence,
 )
-ForkNode::fire::forkNodeEntryEventOccurrence_strategy = st.builds(
-    ForkNode::fire::forkNodeEntryEventOccurrence,
+ActivityNode_hasOffersEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_hasOffersEntryEventOccurrence,
 )
-ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence_strategy = st.builds(
-    ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence,
+ActivityNode_removeTokenExitEventOccurrence_strategy = st.builds(
+    ActivityNode_removeTokenExitEventOccurrence,
 )
-ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence_strategy = st.builds(
-    ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence,
+ActivityNode_removeTokenEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_removeTokenEntryEventOccurrence,
 )
-InitialNode::fire::initialNodeExitEventOccurrence_strategy = st.builds(
-    InitialNode::fire::initialNodeExitEventOccurrence,
+activitydiagram_traceSystem_JoinNode_strategy = st.builds(
+    activitydiagram_traceSystem_JoinNode,
 )
-InitialNode::fire::initialNodeEntryEventOccurrence_strategy = st.builds(
-    InitialNode::fire::initialNodeEntryEventOccurrence,
+activitydiagram_traceSystem_InitialNode_strategy = st.builds(
+    activitydiagram_traceSystem_InitialNode,
 )
-InitialNode::isReady::InitialNodeExitEventOccurrence_strategy = st.builds(
-    InitialNode::isReady::InitialNodeExitEventOccurrence,
-)
-InitialNode::isReady::InitialNodeEntryEventOccurrence_strategy = st.builds(
-    InitialNode::isReady::InitialNodeEntryEventOccurrence,
-)
-OpaqueAction::doAction::opaqueActionExitEventOccurrence_strategy = st.builds(
-    OpaqueAction::doAction::opaqueActionExitEventOccurrence,
-)
-OpaqueAction::doAction::opaqueActionEntryEventOccurrence_strategy = st.builds(
-    OpaqueAction::doAction::opaqueActionEntryEventOccurrence,
-)
-DecisionNode::fire::decisionNodeEntryEventOccurrence_strategy = st.builds(
-    DecisionNode::fire::decisionNodeEntryEventOccurrence,
-)
-MergeNode::hasOffers::mergeNodeExitEventOccurrence_strategy = st.builds(
-    MergeNode::hasOffers::mergeNodeExitEventOccurrence,
-)
-MergeNode::hasOffers::mergeNodeEntryEventOccurrence_strategy = st.builds(
-    MergeNode::hasOffers::mergeNodeEntryEventOccurrence,
-)
-ForkNode::fire::forkNodeExitEventOccurrence_strategy = st.builds(
-    ForkNode::fire::forkNodeExitEventOccurrence,
-)
-Action::sendOffers::actionExitEventOccurrence_strategy = st.builds(
-    Action::sendOffers::actionExitEventOccurrence,
-)
-Action::sendOffers::actionEntryEventOccurrence_strategy = st.builds(
-    Action::sendOffers::actionEntryEventOccurrence,
-)
-ControlNode::fire::controlNodeExitEventOccurrence_strategy = st.builds(
-    ControlNode::fire::controlNodeExitEventOccurrence,
-)
-ControlNode::fire::controlNodeEntryEventOccurrence_strategy = st.builds(
-    ControlNode::fire::controlNodeEntryEventOccurrence,
-)
-ControlNode::isReady::ControlNodeExitEventOccurrence_strategy = st.builds(
-    ControlNode::isReady::ControlNodeExitEventOccurrence,
-)
-ControlNode::isReady::ControlNodeEntryEventOccurrence_strategy = st.builds(
-    ControlNode::isReady::ControlNodeEntryEventOccurrence,
-)
-ActivityEdge::hasOfferExitEventOccurrence_strategy = st.builds(
-    ActivityEdge::hasOfferExitEventOccurrence,
-)
-ActivityEdge::hasOfferEntryEventOccurrence_strategy = st.builds(
-    ActivityEdge::hasOfferEntryEventOccurrence,
-)
-ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence_strategy = st.builds(
-    ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence,
-)
-ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence_strategy = st.builds(
-    ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence,
-)
-activitydiagram::traceSystem::JoinNode_strategy = st.builds(
-    activitydiagram::traceSystem::JoinNode,
-)
-activitydiagram::traceSystem::InitialNode_strategy = st.builds(
-    activitydiagram::traceSystem::InitialNode,
-)
-traceSystem::activitydiagram::TracedNamedElement_strategy = st.builds(
-    traceSystem::activitydiagram::TracedNamedElement,
+traceSystem_activitydiagram_TracedNamedElement_strategy = st.builds(
+    traceSystem_activitydiagram_TracedNamedElement,
     name=
         safe_text
 )
-activitydiagram::traceSystem::IntegerVariable_strategy = st.builds(
-    activitydiagram::traceSystem::IntegerVariable,
+activitydiagram_traceSystem_IntegerVariable_strategy = st.builds(
+    activitydiagram_traceSystem_IntegerVariable,
 )
-activitydiagram::traceSystem::DecisionNode_strategy = st.builds(
-    activitydiagram::traceSystem::DecisionNode,
+activitydiagram_traceSystem_DecisionNode_strategy = st.builds(
+    activitydiagram_traceSystem_DecisionNode,
 )
-activitydiagram::traceSystem::MergeNode_strategy = st.builds(
-    activitydiagram::traceSystem::MergeNode,
+activitydiagram_traceSystem_MergeNode_strategy = st.builds(
+    activitydiagram_traceSystem_MergeNode,
 )
-activitydiagram::traceSystem::Value_strategy = st.builds(
-    activitydiagram::traceSystem::Value,
+activitydiagram_traceSystem_Value_strategy = st.builds(
+    activitydiagram_traceSystem_Value,
 )
-activitydiagram::traceSystem::Activity_strategy = st.builds(
-    activitydiagram::traceSystem::Activity,
+activitydiagram_traceSystem_Activity_strategy = st.builds(
+    activitydiagram_traceSystem_Activity,
 )
-activitydiagram::traceSystem::ControlFlow_strategy = st.builds(
-    activitydiagram::traceSystem::ControlFlow,
+activitydiagram_traceSystem_ControlFlow_strategy = st.builds(
+    activitydiagram_traceSystem_ControlFlow,
 )
 TracedActivityEdge_strategy = st.builds(
     TracedActivityEdge,
 )
-traceSystem::activitydiagram::TracedControlFlow_strategy = st.builds(
-    traceSystem::activitydiagram::TracedControlFlow,
+traceSystem_activitydiagram_TracedControlFlow_strategy = st.builds(
+    traceSystem_activitydiagram_TracedControlFlow,
 )
-activitydiagram::traceSystem::ForkNode_strategy = st.builds(
-    activitydiagram::traceSystem::ForkNode,
+activitydiagram_traceSystem_ForkNode_strategy = st.builds(
+    activitydiagram_traceSystem_ForkNode,
 )
 TracedControlNode_strategy = st.builds(
     TracedControlNode,
 )
-traceSystem::activitydiagram::TracedDecisionNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedDecisionNode,
+traceSystem_activitydiagram_TracedDecisionNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedDecisionNode,
 )
-traceSystem::activitydiagram::TracedJoinNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedJoinNode,
+traceSystem_activitydiagram_TracedInitialNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedInitialNode,
 )
-traceSystem::activitydiagram::TracedMergeNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedMergeNode,
+traceSystem_activitydiagram_TracedMergeNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedMergeNode,
 )
-traceSystem::activitydiagram::TracedInitialNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedInitialNode,
+traceSystem_activitydiagram_TracedJoinNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedJoinNode,
 )
-traceSystem::activitydiagram::TracedForkNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedForkNode,
+traceSystem_activitydiagram_TracedForkNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedForkNode,
 )
-activitydiagram::traceSystem::BooleanVariable_strategy = st.builds(
-    activitydiagram::traceSystem::BooleanVariable,
+activitydiagram_traceSystem_BooleanVariable_strategy = st.builds(
+    activitydiagram_traceSystem_BooleanVariable,
 )
 TracedNamedElement_strategy = st.builds(
     TracedNamedElement,
 )
-traceSystem::activitydiagram::TracedVariable_strategy = st.builds(
-    traceSystem::activitydiagram::TracedVariable,
+traceSystem_activitydiagram_TracedActivityEdge_strategy = st.builds(
+    traceSystem_activitydiagram_TracedActivityEdge,
 )
-traceSystem::activitydiagram::TracedActivityNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedActivityNode,
+traceSystem_activitydiagram_TracedVariable_strategy = st.builds(
+    traceSystem_activitydiagram_TracedVariable,
 )
-traceSystem::activitydiagram::TracedActivityEdge_strategy = st.builds(
-    traceSystem::activitydiagram::TracedActivityEdge,
+traceSystem_activitydiagram_TracedActivityNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedActivityNode,
 )
-traceSystem::activitydiagram::TracedActivity_strategy = st.builds(
-    traceSystem::activitydiagram::TracedActivity,
+traceSystem_activitydiagram_TracedActivity_strategy = st.builds(
+    traceSystem_activitydiagram_TracedActivity,
 )
 TracedActivityNode_strategy = st.builds(
     TracedActivityNode,
 )
-traceSystem::activitydiagram::TracedControlNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedControlNode,
+traceSystem_activitydiagram_TracedControlNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedControlNode,
 )
-traceSystem::activitydiagram::TracedExecutableNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedExecutableNode,
+traceSystem_activitydiagram_TracedExecutableNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedExecutableNode,
 )
-activitydiagram::traceSystem::OpaqueAction_strategy = st.builds(
-    activitydiagram::traceSystem::OpaqueAction,
+activitydiagram_traceSystem_OpaqueAction_strategy = st.builds(
+    activitydiagram_traceSystem_OpaqueAction,
 )
-activitydiagram::traceSystem::Expression_strategy = st.builds(
-    activitydiagram::traceSystem::Expression,
+activitydiagram_traceSystem_Expression_strategy = st.builds(
+    activitydiagram_traceSystem_Expression,
 )
 TracedAction_strategy = st.builds(
     TracedAction,
 )
-traceSystem::activitydiagram::TracedOpaqueAction_strategy = st.builds(
-    traceSystem::activitydiagram::TracedOpaqueAction,
+traceSystem_activitydiagram_TracedOpaqueAction_strategy = st.builds(
+    traceSystem_activitydiagram_TracedOpaqueAction,
 )
-activitydiagram::traceSystem::StringVariable_strategy = st.builds(
-    activitydiagram::traceSystem::StringVariable,
+activitydiagram_traceSystem_StringVariable_strategy = st.builds(
+    activitydiagram_traceSystem_StringVariable,
 )
-traceSystem::activitydiagram::TracedFinalNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedFinalNode,
+traceSystem_activitydiagram_TracedFinalNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedFinalNode,
 )
 TracedExecutableNode_strategy = st.builds(
     TracedExecutableNode,
 )
-traceSystem::activitydiagram::TracedAction_strategy = st.builds(
-    traceSystem::activitydiagram::TracedAction,
+traceSystem_activitydiagram_TracedAction_strategy = st.builds(
+    traceSystem_activitydiagram_TracedAction,
 )
-activitydiagram::traceSystem::ActivityFinalNode_strategy = st.builds(
-    activitydiagram::traceSystem::ActivityFinalNode,
+activitydiagram_traceSystem_ActivityFinalNode_strategy = st.builds(
+    activitydiagram_traceSystem_ActivityFinalNode,
 )
 TracedFinalNode_strategy = st.builds(
     TracedFinalNode,
 )
-traceSystem::activitydiagram::TracedActivityFinalNode_strategy = st.builds(
-    traceSystem::activitydiagram::TracedActivityFinalNode,
+traceSystem_activitydiagram_TracedActivityFinalNode_strategy = st.builds(
+    traceSystem_activitydiagram_TracedActivityFinalNode,
 )
 TracedVariable_strategy = st.builds(
     TracedVariable,
 )
-traceSystem::activitydiagram::TracedIntegerVariable_strategy = st.builds(
-    traceSystem::activitydiagram::TracedIntegerVariable,
+traceSystem_activitydiagram_TracedStringVariable_strategy = st.builds(
+    traceSystem_activitydiagram_TracedStringVariable,
 )
-traceSystem::activitydiagram::TracedStringVariable_strategy = st.builds(
-    traceSystem::activitydiagram::TracedStringVariable,
+traceSystem_activitydiagram_TracedIntegerVariable_strategy = st.builds(
+    traceSystem_activitydiagram_TracedIntegerVariable,
 )
-traceSystem::activitydiagram::TracedBooleanVariable_strategy = st.builds(
-    traceSystem::activitydiagram::TracedBooleanVariable,
+traceSystem_activitydiagram_TracedBooleanVariable_strategy = st.builds(
+    traceSystem_activitydiagram_TracedBooleanVariable,
 )
-traceSystem::activitydiagramConfiguration::TracedInput_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedInput,
+traceSystem_activitydiagramConfiguration_TracedInput_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedInput,
 )
-traceSystem::activitydiagramConfiguration::TracedTrace_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedTrace,
+traceSystem_activitydiagramConfiguration_TracedTrace_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedTrace,
 )
-traceSystem::activitydiagramConfiguration::TracedInputValue_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedInputValue,
+traceSystem_activitydiagramConfiguration_TracedInputValue_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedInputValue,
 )
-traceSystem::activitydiagramConfiguration::TracedOffer_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedOffer,
+traceSystem_activitydiagramConfiguration_TracedOffer_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedOffer,
 )
-traceSystem::activitydiagramConfiguration::TracedToken_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedToken,
+traceSystem_activitydiagramConfiguration_TracedToken_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedToken,
 )
 TracedToken_strategy = st.builds(
     TracedToken,
 )
-traceSystem::activitydiagramConfiguration::TracedControlToken_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedControlToken,
+traceSystem_activitydiagramConfiguration_TracedControlToken_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedControlToken,
 )
-traceSystem::activitydiagramConfiguration::TracedForkedToken_strategy = st.builds(
-    traceSystem::activitydiagramConfiguration::TracedForkedToken,
+traceSystem_activitydiagramConfiguration_TracedForkedToken_strategy = st.builds(
+    traceSystem_activitydiagramConfiguration_TracedForkedToken,
 )
-traceSystem::Traced::TracedObjects_strategy = st.builds(
-    traceSystem::Traced::TracedObjects,
+traceSystem_Traced_TracedObjects_strategy = st.builds(
+    traceSystem_Traced_TracedObjects,
 )
-activitydiagram::TracedJoinNode_strategy = st.builds(
-    activitydiagram::TracedJoinNode,
+activitydiagram_TracedJoinNode_strategy = st.builds(
+    activitydiagram_TracedJoinNode,
 )
-activitydiagramConfiguration::TracedControlToken_strategy = st.builds(
-    activitydiagramConfiguration::TracedControlToken,
+activitydiagramConfiguration_TracedControlToken_strategy = st.builds(
+    activitydiagramConfiguration_TracedControlToken,
 )
-activitydiagram::TracedControlFlow_strategy = st.builds(
-    activitydiagram::TracedControlFlow,
+activitydiagram_TracedControlFlow_strategy = st.builds(
+    activitydiagram_TracedControlFlow,
 )
-traceSystem::States::ActivityEdge::offers::State_strategy = st.builds(
-    traceSystem::States::ActivityEdge::offers::State,
+traceSystem_States_ActivityEdge_offers_State_strategy = st.builds(
+    traceSystem_States_ActivityEdge_offers_State,
 )
-traceSystem::States::ActivityNode::running::State_strategy = st.builds(
-    traceSystem::States::ActivityNode::running::State,
+traceSystem_States_ActivityNode_running_State_strategy = st.builds(
+    traceSystem_States_ActivityNode_running_State,
     running=
         st.booleans()
 )
-traceSystem::States::ActivityNode::heldTokens::State_strategy = st.builds(
-    traceSystem::States::ActivityNode::heldTokens::State,
+traceSystem_States_ActivityNode_heldTokens_State_strategy = st.builds(
+    traceSystem_States_ActivityNode_heldTokens_State,
 )
-activitydiagramConfiguration::TracedInput_strategy = st.builds(
-    activitydiagramConfiguration::TracedInput,
+activitydiagramConfiguration_TracedInput_strategy = st.builds(
+    activitydiagramConfiguration_TracedInput,
 )
-traceSystem::States::Input::inputValues::State_strategy = st.builds(
-    traceSystem::States::Input::inputValues::State,
+traceSystem_States_Input_inputValues_State_strategy = st.builds(
+    traceSystem_States_Input_inputValues_State,
 )
-traceSystem::States::Trace::executedNodes::State_strategy = st.builds(
-    traceSystem::States::Trace::executedNodes::State,
+traceSystem_States_Trace_executedNodes_State_strategy = st.builds(
+    traceSystem_States_Trace_executedNodes_State,
 )
-traceSystem::States::Offer::offeredTokens::State_strategy = st.builds(
-    traceSystem::States::Offer::offeredTokens::State,
+traceSystem_States_Offer_offeredTokens_State_strategy = st.builds(
+    traceSystem_States_Offer_offeredTokens_State,
 )
-traceSystem::States::InputValue::variable::State_strategy = st.builds(
-    traceSystem::States::InputValue::variable::State,
+traceSystem_States_InputValue_variable_State_strategy = st.builds(
+    traceSystem_States_InputValue_variable_State,
 )
-activitydiagramConfiguration::TracedInputValue_strategy = st.builds(
-    activitydiagramConfiguration::TracedInputValue,
+activitydiagramConfiguration_TracedInputValue_strategy = st.builds(
+    activitydiagramConfiguration_TracedInputValue,
 )
-traceSystem::States::InputValue::value::State_strategy = st.builds(
-    traceSystem::States::InputValue::value::State,
+traceSystem_States_InputValue_value_State_strategy = st.builds(
+    traceSystem_States_InputValue_value_State,
 )
-activitydiagram::TracedVariable_strategy = st.builds(
-    activitydiagram::TracedVariable,
+activitydiagram_TracedVariable_strategy = st.builds(
+    activitydiagram_TracedVariable,
 )
-States::traceSystem::Value_strategy = st.builds(
-    States::traceSystem::Value,
+States_traceSystem_Value_strategy = st.builds(
+    States_traceSystem_Value,
 )
-traceSystem::States::Variable::currentValue::State_strategy = st.builds(
-    traceSystem::States::Variable::currentValue::State,
+traceSystem_States_Variable_currentValue_State_strategy = st.builds(
+    traceSystem_States_Variable_currentValue_State,
 )
-activitydiagramConfiguration::TracedTrace_strategy = st.builds(
-    activitydiagramConfiguration::TracedTrace,
+activitydiagramConfiguration_TracedTrace_strategy = st.builds(
+    activitydiagramConfiguration_TracedTrace,
 )
-traceSystem::States::Activity::trace::State_strategy = st.builds(
-    traceSystem::States::Activity::trace::State,
+traceSystem_States_Activity_trace_State_strategy = st.builds(
+    traceSystem_States_Activity_trace_State,
 )
-activitydiagramConfiguration::TracedForkedToken_strategy = st.builds(
-    activitydiagramConfiguration::TracedForkedToken,
+activitydiagramConfiguration_TracedForkedToken_strategy = st.builds(
+    activitydiagramConfiguration_TracedForkedToken,
 )
-traceSystem::States::Token::holder::State_strategy = st.builds(
-    traceSystem::States::Token::holder::State,
+traceSystem_States_Token_holder_State_strategy = st.builds(
+    traceSystem_States_Token_holder_State,
 )
-traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State_strategy = st.builds(
-    traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State,
+traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State_strategy = st.builds(
+    traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State,
     baseTokenIsWithdrawn=
         st.booleans()
 )
-traceSystem::States::ForkedToken::remainingOffersCount::State_strategy = st.builds(
-    traceSystem::States::ForkedToken::remainingOffersCount::State,
+traceSystem_States_ForkedToken_remainingOffersCount_State_strategy = st.builds(
+    traceSystem_States_ForkedToken_remainingOffersCount_State,
     remainingOffersCount=
         st.integers()
 )
-States::traceSystem::GlobalState_strategy = st.builds(
-    States::traceSystem::GlobalState,
+States_traceSystem_GlobalState_strategy = st.builds(
+    States_traceSystem_GlobalState,
 )
-traceSystem::States::ForkedToken::baseToken::State_strategy = st.builds(
-    traceSystem::States::ForkedToken::baseToken::State,
+traceSystem_States_ForkedToken_baseToken_State_strategy = st.builds(
+    traceSystem_States_ForkedToken_baseToken_State,
 )
-activitydiagramConfiguration::TracedOffer_strategy = st.builds(
-    activitydiagramConfiguration::TracedOffer,
+activitydiagramConfiguration_TracedOffer_strategy = st.builds(
+    activitydiagramConfiguration_TracedOffer,
 )
-Events::traceSystem::BooleanBinaryExpression_strategy = st.builds(
-    Events::traceSystem::BooleanBinaryExpression,
+Events_traceSystem_BooleanBinaryExpression_strategy = st.builds(
+    Events_traceSystem_BooleanBinaryExpression,
 )
-Events::traceSystem::BooleanUnaryExpression_strategy = st.builds(
-    Events::traceSystem::BooleanUnaryExpression,
+Events_traceSystem_BooleanUnaryExpression_strategy = st.builds(
+    Events_traceSystem_BooleanUnaryExpression,
 )
-Events::traceSystem::IntegerComparisonExpression_strategy = st.builds(
-    Events::traceSystem::IntegerComparisonExpression,
+Events_traceSystem_IntegerComparisonExpression_strategy = st.builds(
+    Events_traceSystem_IntegerComparisonExpression,
 )
-Events::traceSystem::IntegerCalculationExpression_strategy = st.builds(
-    Events::traceSystem::IntegerCalculationExpression,
+Events_traceSystem_IntegerCalculationExpression_strategy = st.builds(
+    Events_traceSystem_IntegerCalculationExpression,
 )
-Events::traceSystem::IntegerExpression_strategy = st.builds(
-    Events::traceSystem::IntegerExpression,
+Events_traceSystem_IntegerExpression_strategy = st.builds(
+    Events_traceSystem_IntegerExpression,
 )
-activitydiagram::TracedDecisionNode_strategy = st.builds(
-    activitydiagram::TracedDecisionNode,
+activitydiagram_TracedDecisionNode_strategy = st.builds(
+    activitydiagram_TracedDecisionNode,
 )
-activitydiagram::TracedBooleanVariable_strategy = st.builds(
-    activitydiagram::TracedBooleanVariable,
+activitydiagram_TracedBooleanVariable_strategy = st.builds(
+    activitydiagram_TracedBooleanVariable,
 )
-activitydiagram::TracedStringVariable_strategy = st.builds(
-    activitydiagram::TracedStringVariable,
+activitydiagram_TracedStringVariable_strategy = st.builds(
+    activitydiagram_TracedStringVariable,
 )
-Events::traceSystem::Value_strategy = st.builds(
-    Events::traceSystem::Value,
+Events_traceSystem_Value_strategy = st.builds(
+    Events_traceSystem_Value,
 )
-activitydiagram::TracedIntegerVariable_strategy = st.builds(
-    activitydiagram::TracedIntegerVariable,
+activitydiagram_TracedIntegerVariable_strategy = st.builds(
+    activitydiagram_TracedIntegerVariable,
 )
-activitydiagram::TracedInitialNode_strategy = st.builds(
-    activitydiagram::TracedInitialNode,
+activitydiagram_TracedInitialNode_strategy = st.builds(
+    activitydiagram_TracedInitialNode,
 )
-activitydiagram::TracedMergeNode_strategy = st.builds(
-    activitydiagram::TracedMergeNode,
+activitydiagram_TracedMergeNode_strategy = st.builds(
+    activitydiagram_TracedMergeNode,
 )
-activitydiagram::TracedOpaqueAction_strategy = st.builds(
-    activitydiagram::TracedOpaqueAction,
+activitydiagram_TracedOpaqueAction_strategy = st.builds(
+    activitydiagram_TracedOpaqueAction,
 )
-activitydiagram::TracedForkNode_strategy = st.builds(
-    activitydiagram::TracedForkNode,
+activitydiagram_TracedForkNode_strategy = st.builds(
+    activitydiagram_TracedForkNode,
 )
-activitydiagram::TracedActivityFinalNode_strategy = st.builds(
-    activitydiagram::TracedActivityFinalNode,
+activitydiagram_TracedActivityFinalNode_strategy = st.builds(
+    activitydiagram_TracedActivityFinalNode,
 )
-activitydiagram::TracedAction_strategy = st.builds(
-    activitydiagram::TracedAction,
+activitydiagram_TracedAction_strategy = st.builds(
+    activitydiagram_TracedAction,
 )
-activitydiagramConfiguration::TracedToken_strategy = st.builds(
-    activitydiagramConfiguration::TracedToken,
+activitydiagramConfiguration_TracedToken_strategy = st.builds(
+    activitydiagramConfiguration_TracedToken,
 )
-activitydiagram::TracedControlNode_strategy = st.builds(
-    activitydiagram::TracedControlNode,
+activitydiagram_TracedControlNode_strategy = st.builds(
+    activitydiagram_TracedControlNode,
 )
-activitydiagram::TracedActivityEdge_strategy = st.builds(
-    activitydiagram::TracedActivityEdge,
+activitydiagram_TracedActivityEdge_strategy = st.builds(
+    activitydiagram_TracedActivityEdge,
 )
-activitydiagram::TracedActivityNode_strategy = st.builds(
-    activitydiagram::TracedActivityNode,
+activitydiagram_TracedActivityNode_strategy = st.builds(
+    activitydiagram_TracedActivityNode,
 )
-Offer::hasTokensEntryEventOccurrence_strategy = st.builds(
-    Offer::hasTokensEntryEventOccurrence,
+Offer_hasTokensEntryEventOccurrence_strategy = st.builds(
+    Offer_hasTokensEntryEventOccurrence,
 )
-ForkedToken::withdraw::forkedTokenExitEventOccurrence_strategy = st.builds(
-    ForkedToken::withdraw::forkedTokenExitEventOccurrence,
+ForkedToken_withdraw_forkedTokenExitEventOccurrence_strategy = st.builds(
+    ForkedToken_withdraw_forkedTokenExitEventOccurrence,
 )
-ForkedToken::withdraw::forkedTokenEntryEventOccurrence_strategy = st.builds(
-    ForkedToken::withdraw::forkedTokenEntryEventOccurrence,
+ForkedToken_withdraw_forkedTokenEntryEventOccurrence_strategy = st.builds(
+    ForkedToken_withdraw_forkedTokenEntryEventOccurrence,
 )
-Token::withdrawExitEventOccurrence_strategy = st.builds(
-    Token::withdrawExitEventOccurrence,
+Token_withdrawExitEventOccurrence_strategy = st.builds(
+    Token_withdrawExitEventOccurrence,
 )
-Token::withdrawEntryEventOccurrence_strategy = st.builds(
-    Token::withdrawEntryEventOccurrence,
+Token_withdrawEntryEventOccurrence_strategy = st.builds(
+    Token_withdrawEntryEventOccurrence,
 )
-Token::transferExitEventOccurrence_strategy = st.builds(
-    Token::transferExitEventOccurrence,
+Token_transferExitEventOccurrence_strategy = st.builds(
+    Token_transferExitEventOccurrence,
 )
-Events::traceSystem::EObject_strategy = st.builds(
-    Events::traceSystem::EObject,
+Events_traceSystem_EObject_strategy = st.builds(
+    Events_traceSystem_EObject,
 )
-activitydiagram::TracedActivity_strategy = st.builds(
-    activitydiagram::TracedActivity,
+activitydiagram_TracedActivity_strategy = st.builds(
+    activitydiagram_TracedActivity,
 )
-Offer::hasTokensExitEventOccurrence_strategy = st.builds(
-    Offer::hasTokensExitEventOccurrence,
+Offer_hasTokensExitEventOccurrence_strategy = st.builds(
+    Offer_hasTokensExitEventOccurrence,
 )
-BooleanBinaryExpression::evaluateOREntryEventOccurrence_strategy = st.builds(
-    BooleanBinaryExpression::evaluateOREntryEventOccurrence,
+BooleanBinaryExpression_evaluateOREntryEventOccurrence_strategy = st.builds(
+    BooleanBinaryExpression_evaluateOREntryEventOccurrence,
 )
-BooleanBinaryExpression::evaluateANDExitEventOccurrence_strategy = st.builds(
-    BooleanBinaryExpression::evaluateANDExitEventOccurrence,
+BooleanBinaryExpression_evaluateANDExitEventOccurrence_strategy = st.builds(
+    BooleanBinaryExpression_evaluateANDExitEventOccurrence,
 )
-BooleanBinaryExpression::evaluateANDEntryEventOccurrence_strategy = st.builds(
-    BooleanBinaryExpression::evaluateANDEntryEventOccurrence,
+BooleanBinaryExpression_evaluateANDEntryEventOccurrence_strategy = st.builds(
+    BooleanBinaryExpression_evaluateANDEntryEventOccurrence,
 )
-BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence_strategy = st.builds(
-    BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence,
+BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence_strategy = st.builds(
+    BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence,
 )
-BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence_strategy = st.builds(
-    BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence,
+BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence_strategy = st.builds(
+    BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence,
 )
-BooleanUnaryExpression::evaluateNOTExitEventOccurrence_strategy = st.builds(
-    BooleanUnaryExpression::evaluateNOTExitEventOccurrence,
+BooleanUnaryExpression_evaluateNOTExitEventOccurrence_strategy = st.builds(
+    BooleanUnaryExpression_evaluateNOTExitEventOccurrence,
 )
-BooleanUnaryExpression::evaluateNOTEntryEventOccurrence_strategy = st.builds(
-    BooleanUnaryExpression::evaluateNOTEntryEventOccurrence,
+BooleanUnaryExpression_evaluateNOTEntryEventOccurrence_strategy = st.builds(
+    BooleanUnaryExpression_evaluateNOTEntryEventOccurrence,
 )
-Token::transferEntryEventOccurrence_strategy = st.builds(
-    Token::transferEntryEventOccurrence,
+Token_transferEntryEventOccurrence_strategy = st.builds(
+    Token_transferEntryEventOccurrence,
 )
-Token::isWithdrawnExitEventOccurrence_strategy = st.builds(
-    Token::isWithdrawnExitEventOccurrence,
+Token_isWithdrawnExitEventOccurrence_strategy = st.builds(
+    Token_isWithdrawnExitEventOccurrence,
 )
-Token::isWithdrawnEntryEventOccurrence_strategy = st.builds(
-    Token::isWithdrawnEntryEventOccurrence,
+Token_isWithdrawnEntryEventOccurrence_strategy = st.builds(
+    Token_isWithdrawnEntryEventOccurrence,
 )
-BooleanBinaryExpression::evaluateORExitEventOccurrence_strategy = st.builds(
-    BooleanBinaryExpression::evaluateORExitEventOccurrence,
+BooleanBinaryExpression_evaluateORExitEventOccurrence_strategy = st.builds(
+    BooleanBinaryExpression_evaluateORExitEventOccurrence,
 )
-IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence,
+IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence,
 )
-IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence_strategy = st.builds(
-    IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence,
+IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence,
 )
-Action::fire::actionExitEventOccurrence_strategy = st.builds(
-    Action::fire::actionExitEventOccurrence,
+IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence,
 )
-Action::fire::actionEntryEventOccurrence_strategy = st.builds(
-    Action::fire::actionEntryEventOccurrence,
+IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence,
 )
-Action::isReady::actionExitEventOccurrence_strategy = st.builds(
-    Action::isReady::actionExitEventOccurrence,
+IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence,
 )
-Action::isReady::actionEntryEventOccurrence_strategy = st.builds(
-    Action::isReady::actionEntryEventOccurrence,
+IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence,
 )
-ActivityNode::hasOffersExitEventOccurrence_strategy = st.builds(
-    ActivityNode::hasOffersExitEventOccurrence,
+IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence,
 )
-ActivityNode::hasOffersEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::hasOffersEntryEventOccurrence,
+BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence_strategy = st.builds(
+    BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence,
 )
-ActivityNode::removeTokenExitEventOccurrence_strategy = st.builds(
-    ActivityNode::removeTokenExitEventOccurrence,
+BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence_strategy = st.builds(
+    BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence,
 )
-ActivityNode::removeTokenEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::removeTokenEntryEventOccurrence,
+IntegerComparisonExpression_evaluateGREATERExitEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateGREATERExitEventOccurrence,
 )
-ActivityNode::addTokensExitEventOccurrence_strategy = st.builds(
-    ActivityNode::addTokensExitEventOccurrence,
+IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence_strategy = st.builds(
+    IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence,
 )
-ActivityNode::addTokensEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::addTokensEntryEventOccurrence,
+IntegerCalculationExpression_evaluateADDExitEventOccurrence_strategy = st.builds(
+    IntegerCalculationExpression_evaluateADDExitEventOccurrence,
 )
-ActivityNode::takeOfferedTokensExitEventOccurrence_strategy = st.builds(
-    ActivityNode::takeOfferedTokensExitEventOccurrence,
+IntegerCalculationExpression_evaluateADDEntryEventOccurrence_strategy = st.builds(
+    IntegerCalculationExpression_evaluateADDEntryEventOccurrence,
 )
-ActivityNode::takeOfferedTokensEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::takeOfferedTokensEntryEventOccurrence,
+IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence_strategy = st.builds(
+    IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence,
 )
-ActivityNode::sendOffersExitEventOccurrence_strategy = st.builds(
-    ActivityNode::sendOffersExitEventOccurrence,
+IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence_strategy = st.builds(
+    IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence,
 )
-ActivityNode::sendOffersEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::sendOffersEntryEventOccurrence,
+IntegerExpression_getOperandCurrentValuesExitEventOccurrence_strategy = st.builds(
+    IntegerExpression_getOperandCurrentValuesExitEventOccurrence,
 )
-ActivityNode::terminate::activityNodeExitEventOccurrence_strategy = st.builds(
-    ActivityNode::terminate::activityNodeExitEventOccurrence,
+IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence,
 )
-ActivityEdge::sendOfferExitEventOccurrence_strategy = st.builds(
-    ActivityEdge::sendOfferExitEventOccurrence,
+IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence,
 )
-ActivityEdge::sendOfferEntryEventOccurrence_strategy = st.builds(
-    ActivityEdge::sendOfferEntryEventOccurrence,
+IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence,
 )
-ActivityNode::isReadyExitEventOccurrence_strategy = st.builds(
-    ActivityNode::isReadyExitEventOccurrence,
+IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence_strategy = st.builds(
+    IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence,
 )
-ActivityNode::isReadyEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::isReadyEntryEventOccurrence,
+IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence_strategy = st.builds(
+    IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence,
 )
-Activity::fireNodeEntryEventOccurrence_strategy = st.builds(
-    Activity::fireNodeEntryEventOccurrence,
+StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence_strategy = st.builds(
+    StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence,
 )
-Activity::getInitialNodeExitEventOccurrence_strategy = st.builds(
-    Activity::getInitialNodeExitEventOccurrence,
+StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence_strategy = st.builds(
+    StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence,
 )
-Activity::getInitialNodeEntryEventOccurrence_strategy = st.builds(
-    Activity::getInitialNodeEntryEventOccurrence,
+StringVariable_setCurrentValue_stringVariableExitEventOccurrence_strategy = st.builds(
+    StringVariable_setCurrentValue_stringVariableExitEventOccurrence,
 )
-Activity::terminateExitEventOccurrence_strategy = st.builds(
-    Activity::terminateExitEventOccurrence,
+StringVariable_setCurrentValue_stringVariableEntryEventOccurrence_strategy = st.builds(
+    StringVariable_setCurrentValue_stringVariableEntryEventOccurrence,
 )
-Activity::terminateEntryEventOccurrence_strategy = st.builds(
-    Activity::terminateEntryEventOccurrence,
+IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence_strategy = st.builds(
+    IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence,
 )
-Activity::selectNextNodeExitEventOccurrence_strategy = st.builds(
-    Activity::selectNextNodeExitEventOccurrence,
+IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence_strategy = st.builds(
+    IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence,
 )
-Activity::selectNextNodeEntryEventOccurrence_strategy = st.builds(
-    Activity::selectNextNodeEntryEventOccurrence,
+IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence_strategy = st.builds(
+    IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence,
 )
-Activity::getEnabledNodesExitEventOccurrence_strategy = st.builds(
-    Activity::getEnabledNodesExitEventOccurrence,
+IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence_strategy = st.builds(
+    IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence,
 )
-Activity::getEnabledNodesEntryEventOccurrence_strategy = st.builds(
-    Activity::getEnabledNodesEntryEventOccurrence,
+IntegerExpression_getOperandCurrentValuesEntryEventOccurrence_strategy = st.builds(
+    IntegerExpression_getOperandCurrentValuesEntryEventOccurrence,
 )
-Activity::fireInitialNodeExitEventOccurrence_strategy = st.builds(
-    Activity::fireInitialNodeExitEventOccurrence,
+ActivityNode_addTokensExitEventOccurrence_strategy = st.builds(
+    ActivityNode_addTokensExitEventOccurrence,
 )
-Activity::fireInitialNodeEntryEventOccurrence_strategy = st.builds(
-    Activity::fireInitialNodeEntryEventOccurrence,
+ActivityNode_addTokensEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_addTokensEntryEventOccurrence,
 )
-ActivityNode::terminate::activityNodeEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::terminate::activityNodeEntryEventOccurrence,
+ActivityNode_takeOfferedTokensExitEventOccurrence_strategy = st.builds(
+    ActivityNode_takeOfferedTokensExitEventOccurrence,
 )
-ActivityNode::isRunningExitEventOccurrence_strategy = st.builds(
-    ActivityNode::isRunningExitEventOccurrence,
+ActivityNode_takeOfferedTokensEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_takeOfferedTokensEntryEventOccurrence,
 )
-ActivityNode::isRunningEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::isRunningEntryEventOccurrence,
+ActivityNode_sendOffersExitEventOccurrence_strategy = st.builds(
+    ActivityNode_sendOffersExitEventOccurrence,
 )
-ActivityNode::run::activityNodeExitEventOccurrence_strategy = st.builds(
-    ActivityNode::run::activityNodeExitEventOccurrence,
+ActivityNode_sendOffersEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_sendOffersEntryEventOccurrence,
 )
-ActivityNode::run::activityNodeEntryEventOccurrence_strategy = st.builds(
-    ActivityNode::run::activityNodeEntryEventOccurrence,
+ActivityNode_terminate_activityNodeExitEventOccurrence_strategy = st.builds(
+    ActivityNode_terminate_activityNodeExitEventOccurrence,
 )
-Activity::fireNodeExitEventOccurrence_strategy = st.builds(
-    Activity::fireNodeExitEventOccurrence,
+ActivityEdge_sendOfferExitEventOccurrence_strategy = st.builds(
+    ActivityEdge_sendOfferExitEventOccurrence,
 )
-Activity::initializeEntryEventOccurrence_strategy = st.builds(
-    Activity::initializeEntryEventOccurrence,
+ActivityEdge_sendOfferEntryEventOccurrence_strategy = st.builds(
+    ActivityEdge_sendOfferEntryEventOccurrence,
 )
-Activity::mainExitEventOccurrence_strategy = st.builds(
-    Activity::mainExitEventOccurrence,
+ActivityNode_isReadyExitEventOccurrence_strategy = st.builds(
+    ActivityNode_isReadyExitEventOccurrence,
 )
-Activity::mainEntryEventOccurrence_strategy = st.builds(
-    Activity::mainEntryEventOccurrence,
+ActivityNode_isReadyEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_isReadyEntryEventOccurrence,
 )
-traceSystem::Events::Events_strategy = st.builds(
-    traceSystem::Events::Events,
+Activity_fireNodeEntryEventOccurrence_strategy = st.builds(
+    Activity_fireNodeEntryEventOccurrence,
 )
-Events::traceSystem::GlobalState_strategy = st.builds(
-    Events::traceSystem::GlobalState,
+Activity_getInitialNodeExitEventOccurrence_strategy = st.builds(
+    Activity_getInitialNodeExitEventOccurrence,
 )
-traceSystem::Events::EventOccurrence_strategy = st.builds(
-    traceSystem::Events::EventOccurrence,
+Activity_getInitialNodeEntryEventOccurrence_strategy = st.builds(
+    Activity_getInitialNodeEntryEventOccurrence,
 )
-traceSystem::IntegerCalculationExpression_strategy = st.builds(
-    traceSystem::IntegerCalculationExpression,
+Activity_terminateExitEventOccurrence_strategy = st.builds(
+    Activity_terminateExitEventOccurrence,
 )
-traceSystem::IntegerValue_strategy = st.builds(
-    traceSystem::IntegerValue,
+Activity_terminateEntryEventOccurrence_strategy = st.builds(
+    Activity_terminateEntryEventOccurrence,
 )
-traceSystem::BooleanUnaryExpression_strategy = st.builds(
-    traceSystem::BooleanUnaryExpression,
+Activity_selectNextNodeExitEventOccurrence_strategy = st.builds(
+    Activity_selectNextNodeExitEventOccurrence,
 )
-traceSystem::BooleanBinaryExpression_strategy = st.builds(
-    traceSystem::BooleanBinaryExpression,
+Activity_selectNextNodeEntryEventOccurrence_strategy = st.builds(
+    Activity_selectNextNodeEntryEventOccurrence,
 )
-traceSystem::StringValue_strategy = st.builds(
-    traceSystem::StringValue,
+Activity_getEnabledNodesExitEventOccurrence_strategy = st.builds(
+    Activity_getEnabledNodesExitEventOccurrence,
 )
-traceSystem::IntegerComparisonExpression_strategy = st.builds(
-    traceSystem::IntegerComparisonExpression,
+Activity_getEnabledNodesEntryEventOccurrence_strategy = st.builds(
+    Activity_getEnabledNodesEntryEventOccurrence,
 )
-traceSystem::BooleanValue_strategy = st.builds(
-    traceSystem::BooleanValue,
+Activity_fireInitialNodeExitEventOccurrence_strategy = st.builds(
+    Activity_fireInitialNodeExitEventOccurrence,
 )
-ActivityNode::running::State_strategy = st.builds(
-    ActivityNode::running::State,
+Activity_fireInitialNodeEntryEventOccurrence_strategy = st.builds(
+    Activity_fireInitialNodeEntryEventOccurrence,
 )
-ActivityNode::heldTokens::State_strategy = st.builds(
-    ActivityNode::heldTokens::State,
+ActivityNode_terminate_activityNodeEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_terminate_activityNodeEntryEventOccurrence,
 )
-Activity::runNodesExitEventOccurrence_strategy = st.builds(
-    Activity::runNodesExitEventOccurrence,
+ActivityNode_isRunningExitEventOccurrence_strategy = st.builds(
+    ActivityNode_isRunningExitEventOccurrence,
 )
-Activity::runNodesEntryEventOccurrence_strategy = st.builds(
-    Activity::runNodesEntryEventOccurrence,
+ActivityNode_isRunningEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_isRunningEntryEventOccurrence,
 )
-Activity::runExitEventOccurrence_strategy = st.builds(
-    Activity::runExitEventOccurrence,
+ActivityNode_run_activityNodeExitEventOccurrence_strategy = st.builds(
+    ActivityNode_run_activityNodeExitEventOccurrence,
 )
-Activity::runEntryEventOccurrence_strategy = st.builds(
-    Activity::runEntryEventOccurrence,
+ActivityNode_run_activityNodeEntryEventOccurrence_strategy = st.builds(
+    ActivityNode_run_activityNodeEntryEventOccurrence,
 )
-Activity::initializeExitEventOccurrence_strategy = st.builds(
-    Activity::initializeExitEventOccurrence,
+Activity_fireNodeExitEventOccurrence_strategy = st.builds(
+    Activity_fireNodeExitEventOccurrence,
 )
-InputValue::value::State_strategy = st.builds(
-    InputValue::value::State,
+Activity_initializeEntryEventOccurrence_strategy = st.builds(
+    Activity_initializeEntryEventOccurrence,
 )
-Variable::currentValue::State_strategy = st.builds(
-    Variable::currentValue::State,
+Activity_mainExitEventOccurrence_strategy = st.builds(
+    Activity_mainExitEventOccurrence,
 )
-Activity::trace::State_strategy = st.builds(
-    Activity::trace::State,
+Activity_mainEntryEventOccurrence_strategy = st.builds(
+    Activity_mainEntryEventOccurrence,
 )
-Offer::offeredTokens::State_strategy = st.builds(
-    Offer::offeredTokens::State,
+traceSystem_Events_Events_strategy = st.builds(
+    traceSystem_Events_Events,
 )
-Token::holder::State_strategy = st.builds(
-    Token::holder::State,
+Events_traceSystem_GlobalState_strategy = st.builds(
+    Events_traceSystem_GlobalState,
 )
-ForkedToken::baseTokenIsWithdrawn::State_strategy = st.builds(
-    ForkedToken::baseTokenIsWithdrawn::State,
+traceSystem_Events_EventOccurrence_strategy = st.builds(
+    traceSystem_Events_EventOccurrence,
 )
-ForkedToken::remainingOffersCount::State_strategy = st.builds(
-    ForkedToken::remainingOffersCount::State,
+traceSystem_IntegerCalculationExpression_strategy = st.builds(
+    traceSystem_IntegerCalculationExpression,
 )
-Input::inputValues::State_strategy = st.builds(
-    Input::inputValues::State,
+traceSystem_IntegerValue_strategy = st.builds(
+    traceSystem_IntegerValue,
 )
-Trace::executedNodes::State_strategy = st.builds(
-    Trace::executedNodes::State,
+traceSystem_BooleanUnaryExpression_strategy = st.builds(
+    traceSystem_BooleanUnaryExpression,
 )
-ActivityEdge::offers::State_strategy = st.builds(
-    ActivityEdge::offers::State,
+traceSystem_BooleanBinaryExpression_strategy = st.builds(
+    traceSystem_BooleanBinaryExpression,
 )
-InputValue::variable::State_strategy = st.builds(
-    InputValue::variable::State,
+traceSystem_StringValue_strategy = st.builds(
+    traceSystem_StringValue,
+)
+traceSystem_IntegerComparisonExpression_strategy = st.builds(
+    traceSystem_IntegerComparisonExpression,
+)
+traceSystem_BooleanValue_strategy = st.builds(
+    traceSystem_BooleanValue,
+)
+ActivityNode_running_State_strategy = st.builds(
+    ActivityNode_running_State,
+)
+ActivityNode_heldTokens_State_strategy = st.builds(
+    ActivityNode_heldTokens_State,
+)
+Activity_runNodesExitEventOccurrence_strategy = st.builds(
+    Activity_runNodesExitEventOccurrence,
+)
+Activity_runNodesEntryEventOccurrence_strategy = st.builds(
+    Activity_runNodesEntryEventOccurrence,
+)
+Activity_runExitEventOccurrence_strategy = st.builds(
+    Activity_runExitEventOccurrence,
+)
+Activity_runEntryEventOccurrence_strategy = st.builds(
+    Activity_runEntryEventOccurrence,
+)
+Activity_initializeExitEventOccurrence_strategy = st.builds(
+    Activity_initializeExitEventOccurrence,
+)
+InputValue_value_State_strategy = st.builds(
+    InputValue_value_State,
+)
+Variable_currentValue_State_strategy = st.builds(
+    Variable_currentValue_State,
+)
+Activity_trace_State_strategy = st.builds(
+    Activity_trace_State,
+)
+Offer_offeredTokens_State_strategy = st.builds(
+    Offer_offeredTokens_State,
+)
+Token_holder_State_strategy = st.builds(
+    Token_holder_State,
+)
+ForkedToken_baseTokenIsWithdrawn_State_strategy = st.builds(
+    ForkedToken_baseTokenIsWithdrawn_State,
+)
+ForkedToken_remainingOffersCount_State_strategy = st.builds(
+    ForkedToken_remainingOffersCount_State,
+)
+Input_inputValues_State_strategy = st.builds(
+    Input_inputValues_State,
+)
+Trace_executedNodes_State_strategy = st.builds(
+    Trace_executedNodes_State,
+)
+ActivityEdge_offers_State_strategy = st.builds(
+    ActivityEdge_offers_State,
+)
+InputValue_variable_State_strategy = st.builds(
+    InputValue_variable_State,
 )
 Events_strategy = st.builds(
     Events,
 )
-traceSystem::GlobalState_strategy = st.builds(
-    traceSystem::GlobalState,
+traceSystem_GlobalState_strategy = st.builds(
+    traceSystem_GlobalState,
 )
-traceSystem::Trace_strategy = st.builds(
-    traceSystem::Trace,
+traceSystem_Trace_strategy = st.builds(
+    traceSystem_Trace,
 )
-ForkedToken::baseToken::State_strategy = st.builds(
-    ForkedToken::baseToken::State,
+ForkedToken_baseToken_State_strategy = st.builds(
+    ForkedToken_baseToken_State,
 )
 EventOccurrence_strategy = st.builds(
     EventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence,
+traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence,
 )
-traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence,
+traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence,
 )
-traceSystem::Events::Action::fire::actionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Action::fire::actionEntryEventOccurrence,
+traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence,
 )
-traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence,
+traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence,
 )
-traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence,
+traceSystem_Events_Action_isReady_actionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Action_isReady_actionExitEventOccurrence,
 )
-traceSystem::Events::Action::sendOffers::actionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Action::sendOffers::actionExitEventOccurrence,
+traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence,
 )
-traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence,
 )
-traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence,
+traceSystem_Events_Activity_runExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_runExitEventOccurrence,
 )
-traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence,
+traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence,
 )
-traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence,
+traceSystem_Events_Activity_getInitialNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_getInitialNodeExitEventOccurrence,
 )
-traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence,
+traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence,
 )
-traceSystem::Events::Activity::mainEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::mainEntryEventOccurrence,
+traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence,
 )
-traceSystem::Events::Activity::fireNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::fireNodeExitEventOccurrence,
+traceSystem_Events_Action_isReady_actionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Action_isReady_actionEntryEventOccurrence,
 )
-traceSystem::Events::Activity::fireNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::fireNodeEntryEventOccurrence,
+traceSystem_Events_Activity_runNodesExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_runNodesExitEventOccurrence,
 )
-traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence,
+traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence,
 )
-traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence,
+traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence,
 )
-traceSystem::Events::Token::isWithdrawnEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Token::isWithdrawnEntryEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence,
 )
-traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence,
+traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence,
 )
-traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence,
+traceSystem_Events_ActivityNode_isRunningExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_isRunningExitEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence,
+traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence,
 )
-traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence,
+traceSystem_Events_Activity_mainExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_mainExitEventOccurrence,
 )
-traceSystem::Events::Activity::initializeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::initializeExitEventOccurrence,
+traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence,
 )
-traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence,
+traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence,
 )
-traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence,
+traceSystem_Events_Action_fire_actionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Action_fire_actionEntryEventOccurrence,
 )
-traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence,
+traceSystem_Events_Activity_mainEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_mainEntryEventOccurrence,
 )
-traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence,
+traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence,
 )
-traceSystem::Events::Activity::runExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::runExitEventOccurrence,
+traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence,
 )
-traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence,
+traceSystem_Events_ActivityNode_isReadyExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_isReadyExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence,
+traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence,
 )
-traceSystem::Events::Action::isReady::actionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Action::isReady::actionExitEventOccurrence,
+traceSystem_Events_Token_withdrawExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Token_withdrawExitEventOccurrence,
 )
-traceSystem::Events::Token::withdrawEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Token::withdrawEntryEventOccurrence,
+traceSystem_Events_Activity_terminateEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_terminateEntryEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence,
+traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence,
 )
-traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence,
+traceSystem_Events_Activity_initializeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_initializeEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::isRunningExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::isRunningExitEventOccurrence,
+traceSystem_Events_Action_fire_actionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Action_fire_actionExitEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence,
 )
-traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence,
+traceSystem_Events_Activity_initializeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_initializeExitEventOccurrence,
 )
-traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence,
+traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence,
 )
-traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence,
+traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence,
 )
-traceSystem::Events::Action::fire::actionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Action::fire::actionExitEventOccurrence,
+traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence,
 )
-traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence,
+traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence,
+traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence,
+traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence,
 )
-traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence,
 )
-traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence,
+traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence,
 )
-traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence,
+traceSystem_Events_Token_isWithdrawnEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Token_isWithdrawnEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence,
 )
-traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence,
+traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence,
 )
-traceSystem::Events::Activity::runEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::runEntryEventOccurrence,
+traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence,
+traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence,
+traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence,
 )
-traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence,
+traceSystem_Events_Activity_fireNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_fireNodeEntryEventOccurrence,
 )
-traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence,
+traceSystem_Events_Activity_fireNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_fireNodeExitEventOccurrence,
 )
-traceSystem::Events::Activity::terminateEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::terminateEntryEventOccurrence,
+traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence,
+traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence,
 )
-traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence,
+traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence,
 )
-traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence,
+traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence,
+traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence,
 )
-traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence,
+traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence,
 )
-traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence,
+traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence,
 )
-traceSystem::Events::Activity::terminateExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::terminateExitEventOccurrence,
+traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence,
+traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence,
 )
-traceSystem::Events::Activity::runNodesEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::runNodesEntryEventOccurrence,
+traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence,
 )
-traceSystem::Events::Token::transferEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Token::transferEntryEventOccurrence,
+traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence,
 )
-traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence,
+traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence,
 )
-traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence,
+traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence,
 )
-traceSystem::Events::Activity::mainExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::mainExitEventOccurrence,
+traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence,
 )
-traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence,
+traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence,
 )
-traceSystem::Events::Activity::getInitialNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::getInitialNodeExitEventOccurrence,
+traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence,
 )
-traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence,
 )
-traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence,
+traceSystem_Events_Activity_selectNextNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_selectNextNodeExitEventOccurrence,
 )
-traceSystem::Events::Activity::runNodesExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::runNodesExitEventOccurrence,
+traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence,
 )
-traceSystem::Events::Token::withdrawExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Token::withdrawExitEventOccurrence,
+traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence,
 )
-traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence,
+traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence,
 )
-traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence,
+traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence,
 )
-traceSystem::Events::Token::transferExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Token::transferExitEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence,
 )
-traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence,
+traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence,
 )
-traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence,
+traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence,
 )
-traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence,
+traceSystem_Events_Activity_terminateExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_terminateExitEventOccurrence,
 )
-traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence,
+traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence,
 )
-traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence,
+traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence,
 )
-traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence,
+traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence,
 )
-traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence,
+traceSystem_Events_Offer_hasTokensExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Offer_hasTokensExitEventOccurrence,
 )
-traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence,
+traceSystem_Events_Action_sendOffers_actionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Action_sendOffers_actionExitEventOccurrence,
 )
-traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence,
+traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence,
+traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence,
 )
-traceSystem::Events::Action::isReady::actionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Action::isReady::actionEntryEventOccurrence,
+traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence,
 )
-traceSystem::Events::Offer::hasTokensEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Offer::hasTokensEntryEventOccurrence,
+traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence,
 )
-traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence,
+traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence,
 )
-traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence,
+traceSystem_Events_Offer_hasTokensEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Offer_hasTokensEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence,
+traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence,
+traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence,
+traceSystem_Events_Token_transferExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Token_transferExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::isReadyExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::isReadyExitEventOccurrence,
+traceSystem_Events_Token_withdrawEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Token_withdrawEntryEventOccurrence,
 )
-traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence,
+traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence,
+traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence,
 )
-traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence,
+traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence,
 )
-traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence,
+traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence,
 )
-traceSystem::Events::Activity::selectNextNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::selectNextNodeExitEventOccurrence,
+traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence,
+traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence,
 )
-traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence,
+traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence,
+traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence,
+traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::addTokensExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::addTokensExitEventOccurrence,
+traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence,
 )
-traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence,
+traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence,
 )
-traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence,
 )
-traceSystem::Events::Offer::hasTokensExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Offer::hasTokensExitEventOccurrence,
+traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence,
 )
-traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence,
+traceSystem_Events_Token_isWithdrawnExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Token_isWithdrawnExitEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence,
+traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence,
 )
-traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence,
+traceSystem_Events_ActivityNode_addTokensExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_ActivityNode_addTokensExitEventOccurrence,
 )
-traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence,
+traceSystem_Events_Activity_runNodesEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_runNodesEntryEventOccurrence,
 )
-traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence,
+traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence,
 )
-traceSystem::Events::Token::isWithdrawnExitEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Token::isWithdrawnExitEventOccurrence,
+traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence,
 )
-traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence,
+traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence,
 )
-traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence,
+traceSystem_Events_Activity_runEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Activity_runEntryEventOccurrence,
 )
-traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence,
+traceSystem_Events_Token_transferEntryEventOccurrence_strategy = st.builds(
+    traceSystem_Events_Token_transferEntryEventOccurrence,
 )
-traceSystem::Events::Activity::initializeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::Activity::initializeEntryEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence,
 )
-traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence,
+traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence,
 )
-traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence_strategy = st.builds(
-    traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence,
+traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence_strategy = st.builds(
+    traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence,
 )
-traceSystem::StaticObjectsPools_strategy = st.builds(
-    traceSystem::StaticObjectsPools,
+traceSystem_StaticObjectsPools_strategy = st.builds(
+    traceSystem_StaticObjectsPools,
 )
 TracedObjects_strategy = st.builds(
     TracedObjects,
 )
 
-@given(instance=IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence_strategy)
+@given(instance=DecisionNode_fire_decisionNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence)
+def test_decisionnode_fire_decisionnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, DecisionNode_fire_decisionNodeExitEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence_strategy)
+@given(instance=BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluateequalsexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence_strategy)
+@given(instance=BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluateequalsentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence)
+def test_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence_strategy)
+@given(instance=BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence)
+def test_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence_strategy)
+@given(instance=BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence)
+def test_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence)
 
-@given(instance=BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence_strategy)
+@given(instance=ForkNode_fire_forkNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence)
+def test_forknode_fire_forknodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ForkNode_fire_forkNodeEntryEventOccurrence)
 
-@given(instance=BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence_strategy)
+@given(instance=ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence)
+def test_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateGREATERExitEventOccurrence_strategy)
+@given(instance=ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluategreaterexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateGREATERExitEventOccurrence)
+def test_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence)
 
-@given(instance=IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence_strategy)
+@given(instance=InitialNode_fire_initialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercalculationexpression::evaluatesubtractentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence)
+def test_initialnode_fire_initialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, InitialNode_fire_initialNodeExitEventOccurrence)
 
-@given(instance=IntegerCalculationExpression::evaluateADDExitEventOccurrence_strategy)
+@given(instance=InitialNode_fire_initialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercalculationexpression::evaluateaddexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerCalculationExpression::evaluateADDExitEventOccurrence)
+def test_initialnode_fire_initialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, InitialNode_fire_initialNodeEntryEventOccurrence)
 
-@given(instance=IntegerCalculationExpression::evaluateADDEntryEventOccurrence_strategy)
+@given(instance=InitialNode_isReady_InitialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercalculationexpression::evaluateaddentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerCalculationExpression::evaluateADDEntryEventOccurrence)
+def test_initialnode_isready_initialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, InitialNode_isReady_InitialNodeExitEventOccurrence)
 
-@given(instance=IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence_strategy)
+@given(instance=InitialNode_isReady_InitialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence)
+def test_initialnode_isready_initialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, InitialNode_isReady_InitialNodeEntryEventOccurrence)
 
-@given(instance=IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence_strategy)
+@given(instance=OpaqueAction_doAction_opaqueActionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence)
+def test_opaqueaction_doaction_opaqueactionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, OpaqueAction_doAction_opaqueActionExitEventOccurrence)
 
-@given(instance=IntegerExpression::getOperandCurrentValuesExitEventOccurrence_strategy)
+@given(instance=OpaqueAction_doAction_opaqueActionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integerexpression::getoperandcurrentvaluesexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerExpression::getOperandCurrentValuesExitEventOccurrence)
+def test_opaqueaction_doaction_opaqueactionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, OpaqueAction_doAction_opaqueActionEntryEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence_strategy)
+@given(instance=DecisionNode_fire_decisionNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluatesmallerexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence)
+def test_decisionnode_fire_decisionnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, DecisionNode_fire_decisionNodeEntryEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence_strategy)
+@given(instance=MergeNode_hasOffers_mergeNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluatesmallerentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence)
+def test_mergenode_hasoffers_mergenodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, MergeNode_hasOffers_mergeNodeExitEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence_strategy)
+@given(instance=MergeNode_hasOffers_mergeNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence)
+def test_mergenode_hasoffers_mergenodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, MergeNode_hasOffers_mergeNodeEntryEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence_strategy)
+@given(instance=ForkNode_fire_forkNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence)
+def test_forknode_fire_forknodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ForkNode_fire_forkNodeExitEventOccurrence)
 
-@given(instance=IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence_strategy)
+@given(instance=Action_sendOffers_actionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercalculationexpression::evaluatesubtractexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence)
+def test_action_sendoffers_actionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Action_sendOffers_actionExitEventOccurrence)
 
-@given(instance=StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence_strategy)
+@given(instance=Action_sendOffers_actionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence)
+def test_action_sendoffers_actionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Action_sendOffers_actionEntryEventOccurrence)
 
-@given(instance=StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence_strategy)
+@given(instance=ControlNode_fire_controlNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence)
+def test_controlnode_fire_controlnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ControlNode_fire_controlNodeExitEventOccurrence)
 
-@given(instance=StringVariable::setCurrentValue::stringVariableExitEventOccurrence_strategy)
+@given(instance=ControlNode_fire_controlNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, StringVariable::setCurrentValue::stringVariableExitEventOccurrence)
+def test_controlnode_fire_controlnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ControlNode_fire_controlNodeEntryEventOccurrence)
 
-@given(instance=StringVariable::setCurrentValue::stringVariableEntryEventOccurrence_strategy)
+@given(instance=ControlNode_isReady_ControlNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, StringVariable::setCurrentValue::stringVariableEntryEventOccurrence)
+def test_controlnode_isready_controlnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ControlNode_isReady_ControlNodeExitEventOccurrence)
 
-@given(instance=IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence_strategy)
+@given(instance=ControlNode_isReady_ControlNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence)
+def test_controlnode_isready_controlnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ControlNode_isReady_ControlNodeEntryEventOccurrence)
 
-@given(instance=IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence_strategy)
+@given(instance=ActivityEdge_hasOfferExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence)
+def test_activityedge_hasofferexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_hasOfferExitEventOccurrence)
 
-@given(instance=IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence_strategy)
+@given(instance=ActivityEdge_hasOfferEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integervariable::setcurrentvalue::integervariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence)
+def test_activityedge_hasofferentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_hasOfferEntryEventOccurrence)
 
-@given(instance=IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence_strategy)
+@given(instance=ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integervariable::setcurrentvalue::integervariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence)
+def test_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence)
 
-@given(instance=IntegerExpression::getOperandCurrentValuesEntryEventOccurrence_strategy)
+@given(instance=ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integerexpression::getoperandcurrentvaluesentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerExpression::getOperandCurrentValuesEntryEventOccurrence)
+def test_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence)
 
-@given(instance=DecisionNode::fire::decisionNodeExitEventOccurrence_strategy)
+@given(instance=Action_fire_actionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_decisionnode::fire::decisionnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, DecisionNode::fire::decisionNodeExitEventOccurrence)
+def test_action_fire_actionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Action_fire_actionExitEventOccurrence)
 
-@given(instance=BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence_strategy)
+@given(instance=Action_fire_actionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence)
+def test_action_fire_actionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Action_fire_actionEntryEventOccurrence)
 
-@given(instance=BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence_strategy)
+@given(instance=Action_isReady_actionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence)
+def test_action_isready_actionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Action_isReady_actionExitEventOccurrence)
 
-@given(instance=BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence_strategy)
+@given(instance=Action_isReady_actionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence)
+def test_action_isready_actionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Action_isReady_actionEntryEventOccurrence)
 
-@given(instance=BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_hasOffersExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence)
+def test_activitynode_hasoffersexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_hasOffersExitEventOccurrence)
 
-@given(instance=ForkNode::fire::forkNodeEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_hasOffersEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_forknode::fire::forknodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ForkNode::fire::forkNodeEntryEventOccurrence)
+def test_activitynode_hasoffersentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_hasOffersEntryEventOccurrence)
 
-@given(instance=ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence_strategy)
+@given(instance=ActivityNode_removeTokenExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activityfinalnode::fire::activityfinalnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence)
+def test_activitynode_removetokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_removeTokenExitEventOccurrence)
 
-@given(instance=ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_removeTokenEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activityfinalnode::fire::activityfinalnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence)
+def test_activitynode_removetokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_removeTokenEntryEventOccurrence)
 
-@given(instance=InitialNode::fire::initialNodeExitEventOccurrence_strategy)
+@given(instance=activitydiagram_traceSystem_JoinNode_strategy)
 @settings(max_examples=50)
-def test_initialnode::fire::initialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, InitialNode::fire::initialNodeExitEventOccurrence)
+def test_activitydiagram_tracesystem_joinnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_JoinNode)
 
-@given(instance=InitialNode::fire::initialNodeEntryEventOccurrence_strategy)
+@given(instance=activitydiagram_traceSystem_InitialNode_strategy)
 @settings(max_examples=50)
-def test_initialnode::fire::initialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, InitialNode::fire::initialNodeEntryEventOccurrence)
+def test_activitydiagram_tracesystem_initialnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_InitialNode)
 
-@given(instance=InitialNode::isReady::InitialNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_activitydiagram_TracedNamedElement_strategy)
 @settings(max_examples=50)
-def test_initialnode::isready::initialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, InitialNode::isReady::InitialNodeExitEventOccurrence)
-
-@given(instance=InitialNode::isReady::InitialNodeEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_initialnode::isready::initialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, InitialNode::isReady::InitialNodeEntryEventOccurrence)
-
-@given(instance=OpaqueAction::doAction::opaqueActionExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_opaqueaction::doaction::opaqueactionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, OpaqueAction::doAction::opaqueActionExitEventOccurrence)
-
-@given(instance=OpaqueAction::doAction::opaqueActionEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_opaqueaction::doaction::opaqueactionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, OpaqueAction::doAction::opaqueActionEntryEventOccurrence)
-
-@given(instance=DecisionNode::fire::decisionNodeEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_decisionnode::fire::decisionnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, DecisionNode::fire::decisionNodeEntryEventOccurrence)
-
-@given(instance=MergeNode::hasOffers::mergeNodeExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_mergenode::hasoffers::mergenodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, MergeNode::hasOffers::mergeNodeExitEventOccurrence)
-
-@given(instance=MergeNode::hasOffers::mergeNodeEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_mergenode::hasoffers::mergenodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, MergeNode::hasOffers::mergeNodeEntryEventOccurrence)
-
-@given(instance=ForkNode::fire::forkNodeExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_forknode::fire::forknodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ForkNode::fire::forkNodeExitEventOccurrence)
-
-@given(instance=Action::sendOffers::actionExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_action::sendoffers::actionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Action::sendOffers::actionExitEventOccurrence)
-
-@given(instance=Action::sendOffers::actionEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_action::sendoffers::actionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Action::sendOffers::actionEntryEventOccurrence)
-
-@given(instance=ControlNode::fire::controlNodeExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_controlnode::fire::controlnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ControlNode::fire::controlNodeExitEventOccurrence)
-
-@given(instance=ControlNode::fire::controlNodeEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_controlnode::fire::controlnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ControlNode::fire::controlNodeEntryEventOccurrence)
-
-@given(instance=ControlNode::isReady::ControlNodeExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_controlnode::isready::controlnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ControlNode::isReady::ControlNodeExitEventOccurrence)
-
-@given(instance=ControlNode::isReady::ControlNodeEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_controlnode::isready::controlnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ControlNode::isReady::ControlNodeEntryEventOccurrence)
-
-@given(instance=ActivityEdge::hasOfferExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_activityedge::hasofferexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::hasOfferExitEventOccurrence)
-
-@given(instance=ActivityEdge::hasOfferEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_activityedge::hasofferentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::hasOfferEntryEventOccurrence)
-
-@given(instance=ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_activityedge::takeofferedtokens::activityedgeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence)
-
-@given(instance=ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_activityedge::takeofferedtokens::activityedgeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence)
-
-@given(instance=activitydiagram::traceSystem::JoinNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::tracesystem::joinnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::JoinNode)
-
-@given(instance=activitydiagram::traceSystem::InitialNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::tracesystem::initialnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::InitialNode)
-
-@given(instance=traceSystem::activitydiagram::TracedNamedElement_strategy)
-@settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracednamedelement_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedNamedElement)
-
-@given(instance=traceSystem::activitydiagram::TracedNamedElement_strategy)
-def test_tracesystem::activitydiagram::tracednamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tracesystem_activitydiagram_tracednamedelement_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedNamedElement)
 
 
-@given(instance=traceSystem::activitydiagram::TracedNamedElement_strategy)
-def test_tracesystem::activitydiagram::tracednamedelement_name_setter(instance):
+
+@given(instance=traceSystem_activitydiagram_TracedNamedElement_strategy)
+def test_tracesystem_activitydiagram_tracednamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=activitydiagram::traceSystem::IntegerVariable_strategy)
+@given(instance=activitydiagram_traceSystem_IntegerVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::integervariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::IntegerVariable)
+def test_activitydiagram_tracesystem_integervariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_IntegerVariable)
 
-@given(instance=activitydiagram::traceSystem::DecisionNode_strategy)
+@given(instance=activitydiagram_traceSystem_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::decisionnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::DecisionNode)
+def test_activitydiagram_tracesystem_decisionnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_DecisionNode)
 
-@given(instance=activitydiagram::traceSystem::MergeNode_strategy)
+@given(instance=activitydiagram_traceSystem_MergeNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::mergenode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::MergeNode)
+def test_activitydiagram_tracesystem_mergenode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_MergeNode)
 
-@given(instance=activitydiagram::traceSystem::Value_strategy)
+@given(instance=activitydiagram_traceSystem_Value_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::value_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::Value)
+def test_activitydiagram_tracesystem_value_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_Value)
 
-@given(instance=activitydiagram::traceSystem::Activity_strategy)
+@given(instance=activitydiagram_traceSystem_Activity_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::activity_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::Activity)
+def test_activitydiagram_tracesystem_activity_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_Activity)
 
-@given(instance=activitydiagram::traceSystem::ControlFlow_strategy)
+@given(instance=activitydiagram_traceSystem_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::controlflow_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::ControlFlow)
+def test_activitydiagram_tracesystem_controlflow_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_ControlFlow)
 
 @given(instance=TracedActivityEdge_strategy)
 @settings(max_examples=50)
 def test_tracedactivityedge_instantiation(instance):
     assert isinstance(instance, TracedActivityEdge)
 
-@given(instance=traceSystem::activitydiagram::TracedControlFlow_strategy)
+@given(instance=traceSystem_activitydiagram_TracedControlFlow_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedcontrolflow_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedControlFlow)
+def test_tracesystem_activitydiagram_tracedcontrolflow_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedControlFlow)
 
-@given(instance=activitydiagram::traceSystem::ForkNode_strategy)
+@given(instance=activitydiagram_traceSystem_ForkNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::forknode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::ForkNode)
+def test_activitydiagram_tracesystem_forknode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_ForkNode)
 
 @given(instance=TracedControlNode_strategy)
 @settings(max_examples=50)
 def test_tracedcontrolnode_instantiation(instance):
     assert isinstance(instance, TracedControlNode)
 
-@given(instance=traceSystem::activitydiagram::TracedDecisionNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedDecisionNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::traceddecisionnode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedDecisionNode)
+def test_tracesystem_activitydiagram_traceddecisionnode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedDecisionNode)
 
-@given(instance=traceSystem::activitydiagram::TracedJoinNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedInitialNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedjoinnode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedJoinNode)
+def test_tracesystem_activitydiagram_tracedinitialnode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedInitialNode)
 
-@given(instance=traceSystem::activitydiagram::TracedMergeNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedMergeNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedmergenode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedMergeNode)
+def test_tracesystem_activitydiagram_tracedmergenode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedMergeNode)
 
-@given(instance=traceSystem::activitydiagram::TracedInitialNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedJoinNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedinitialnode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedInitialNode)
+def test_tracesystem_activitydiagram_tracedjoinnode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedJoinNode)
 
-@given(instance=traceSystem::activitydiagram::TracedForkNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedForkNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedforknode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedForkNode)
+def test_tracesystem_activitydiagram_tracedforknode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedForkNode)
 
-@given(instance=activitydiagram::traceSystem::BooleanVariable_strategy)
+@given(instance=activitydiagram_traceSystem_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::booleanvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::BooleanVariable)
+def test_activitydiagram_tracesystem_booleanvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_BooleanVariable)
 
 @given(instance=TracedNamedElement_strategy)
 @settings(max_examples=50)
 def test_tracednamedelement_instantiation(instance):
     assert isinstance(instance, TracedNamedElement)
 
-@given(instance=traceSystem::activitydiagram::TracedVariable_strategy)
+@given(instance=traceSystem_activitydiagram_TracedActivityEdge_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedvariable_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedVariable)
+def test_tracesystem_activitydiagram_tracedactivityedge_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedActivityEdge)
 
-@given(instance=traceSystem::activitydiagram::TracedActivityNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedVariable_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedactivitynode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedActivityNode)
+def test_tracesystem_activitydiagram_tracedvariable_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedVariable)
 
-@given(instance=traceSystem::activitydiagram::TracedActivityEdge_strategy)
+@given(instance=traceSystem_activitydiagram_TracedActivityNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedactivityedge_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedActivityEdge)
+def test_tracesystem_activitydiagram_tracedactivitynode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedActivityNode)
 
-@given(instance=traceSystem::activitydiagram::TracedActivity_strategy)
+@given(instance=traceSystem_activitydiagram_TracedActivity_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedactivity_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedActivity)
+def test_tracesystem_activitydiagram_tracedactivity_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedActivity)
 
 @given(instance=TracedActivityNode_strategy)
 @settings(max_examples=50)
 def test_tracedactivitynode_instantiation(instance):
     assert isinstance(instance, TracedActivityNode)
 
-@given(instance=traceSystem::activitydiagram::TracedControlNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedControlNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedcontrolnode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedControlNode)
+def test_tracesystem_activitydiagram_tracedcontrolnode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedControlNode)
 
-@given(instance=traceSystem::activitydiagram::TracedExecutableNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedExecutableNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedexecutablenode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedExecutableNode)
+def test_tracesystem_activitydiagram_tracedexecutablenode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedExecutableNode)
 
-@given(instance=activitydiagram::traceSystem::OpaqueAction_strategy)
+@given(instance=activitydiagram_traceSystem_OpaqueAction_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::opaqueaction_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::OpaqueAction)
+def test_activitydiagram_tracesystem_opaqueaction_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_OpaqueAction)
 
-@given(instance=activitydiagram::traceSystem::Expression_strategy)
+@given(instance=activitydiagram_traceSystem_Expression_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::expression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::Expression)
+def test_activitydiagram_tracesystem_expression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_Expression)
 
 @given(instance=TracedAction_strategy)
 @settings(max_examples=50)
 def test_tracedaction_instantiation(instance):
     assert isinstance(instance, TracedAction)
 
-@given(instance=traceSystem::activitydiagram::TracedOpaqueAction_strategy)
+@given(instance=traceSystem_activitydiagram_TracedOpaqueAction_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedopaqueaction_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedOpaqueAction)
+def test_tracesystem_activitydiagram_tracedopaqueaction_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedOpaqueAction)
 
-@given(instance=activitydiagram::traceSystem::StringVariable_strategy)
+@given(instance=activitydiagram_traceSystem_StringVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::stringvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::StringVariable)
+def test_activitydiagram_tracesystem_stringvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_StringVariable)
 
-@given(instance=traceSystem::activitydiagram::TracedFinalNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedFinalNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedfinalnode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedFinalNode)
+def test_tracesystem_activitydiagram_tracedfinalnode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedFinalNode)
 
 @given(instance=TracedExecutableNode_strategy)
 @settings(max_examples=50)
 def test_tracedexecutablenode_instantiation(instance):
     assert isinstance(instance, TracedExecutableNode)
 
-@given(instance=traceSystem::activitydiagram::TracedAction_strategy)
+@given(instance=traceSystem_activitydiagram_TracedAction_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedaction_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedAction)
+def test_tracesystem_activitydiagram_tracedaction_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedAction)
 
-@given(instance=activitydiagram::traceSystem::ActivityFinalNode_strategy)
+@given(instance=activitydiagram_traceSystem_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracesystem::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::traceSystem::ActivityFinalNode)
+def test_activitydiagram_tracesystem_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_traceSystem_ActivityFinalNode)
 
 @given(instance=TracedFinalNode_strategy)
 @settings(max_examples=50)
 def test_tracedfinalnode_instantiation(instance):
     assert isinstance(instance, TracedFinalNode)
 
-@given(instance=traceSystem::activitydiagram::TracedActivityFinalNode_strategy)
+@given(instance=traceSystem_activitydiagram_TracedActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedactivityfinalnode_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedActivityFinalNode)
+def test_tracesystem_activitydiagram_tracedactivityfinalnode_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedActivityFinalNode)
 
 @given(instance=TracedVariable_strategy)
 @settings(max_examples=50)
 def test_tracedvariable_instantiation(instance):
     assert isinstance(instance, TracedVariable)
 
-@given(instance=traceSystem::activitydiagram::TracedIntegerVariable_strategy)
+@given(instance=traceSystem_activitydiagram_TracedStringVariable_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedintegervariable_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedIntegerVariable)
+def test_tracesystem_activitydiagram_tracedstringvariable_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedStringVariable)
 
-@given(instance=traceSystem::activitydiagram::TracedStringVariable_strategy)
+@given(instance=traceSystem_activitydiagram_TracedIntegerVariable_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedstringvariable_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedStringVariable)
+def test_tracesystem_activitydiagram_tracedintegervariable_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedIntegerVariable)
 
-@given(instance=traceSystem::activitydiagram::TracedBooleanVariable_strategy)
+@given(instance=traceSystem_activitydiagram_TracedBooleanVariable_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagram::tracedbooleanvariable_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagram::TracedBooleanVariable)
+def test_tracesystem_activitydiagram_tracedbooleanvariable_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagram_TracedBooleanVariable)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedInput_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedInput_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedinput_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedInput)
+def test_tracesystem_activitydiagramconfiguration_tracedinput_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedInput)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedTrace_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedTrace_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedtrace_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedTrace)
+def test_tracesystem_activitydiagramconfiguration_tracedtrace_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedTrace)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedInputValue_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedInputValue_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedinputvalue_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedInputValue)
+def test_tracesystem_activitydiagramconfiguration_tracedinputvalue_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedInputValue)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedOffer_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedOffer_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedoffer_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedOffer)
+def test_tracesystem_activitydiagramconfiguration_tracedoffer_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedOffer)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedToken_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedToken_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedtoken_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedToken)
+def test_tracesystem_activitydiagramconfiguration_tracedtoken_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedToken)
 
 @given(instance=TracedToken_strategy)
 @settings(max_examples=50)
 def test_tracedtoken_instantiation(instance):
     assert isinstance(instance, TracedToken)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedControlToken_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedControlToken_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedcontroltoken_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedControlToken)
+def test_tracesystem_activitydiagramconfiguration_tracedcontroltoken_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedControlToken)
 
-@given(instance=traceSystem::activitydiagramConfiguration::TracedForkedToken_strategy)
+@given(instance=traceSystem_activitydiagramConfiguration_TracedForkedToken_strategy)
 @settings(max_examples=50)
-def test_tracesystem::activitydiagramconfiguration::tracedforkedtoken_instantiation(instance):
-    assert isinstance(instance, traceSystem::activitydiagramConfiguration::TracedForkedToken)
+def test_tracesystem_activitydiagramconfiguration_tracedforkedtoken_instantiation(instance):
+    assert isinstance(instance, traceSystem_activitydiagramConfiguration_TracedForkedToken)
 
-@given(instance=traceSystem::Traced::TracedObjects_strategy)
+@given(instance=traceSystem_Traced_TracedObjects_strategy)
 @settings(max_examples=50)
-def test_tracesystem::traced::tracedobjects_instantiation(instance):
-    assert isinstance(instance, traceSystem::Traced::TracedObjects)
+def test_tracesystem_traced_tracedobjects_instantiation(instance):
+    assert isinstance(instance, traceSystem_Traced_TracedObjects)
 
-@given(instance=activitydiagram::TracedJoinNode_strategy)
+@given(instance=activitydiagram_TracedJoinNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedjoinnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedJoinNode)
+def test_activitydiagram_tracedjoinnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedJoinNode)
 
-@given(instance=activitydiagramConfiguration::TracedControlToken_strategy)
+@given(instance=activitydiagramConfiguration_TracedControlToken_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedcontroltoken_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedControlToken)
+def test_activitydiagramconfiguration_tracedcontroltoken_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedControlToken)
 
-@given(instance=activitydiagram::TracedControlFlow_strategy)
+@given(instance=activitydiagram_TracedControlFlow_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedcontrolflow_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedControlFlow)
+def test_activitydiagram_tracedcontrolflow_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedControlFlow)
 
-@given(instance=traceSystem::States::ActivityEdge::offers::State_strategy)
+@given(instance=traceSystem_States_ActivityEdge_offers_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::activityedge::offers::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::ActivityEdge::offers::State)
+def test_tracesystem_states_activityedge_offers_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_ActivityEdge_offers_State)
 
-@given(instance=traceSystem::States::ActivityNode::running::State_strategy)
+@given(instance=traceSystem_States_ActivityNode_running_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::activitynode::running::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::ActivityNode::running::State)
-
-@given(instance=traceSystem::States::ActivityNode::running::State_strategy)
-def test_tracesystem::states::activitynode::running::state_running_type(instance):
-    assert isinstance(instance.running, bool)
+def test_tracesystem_states_activitynode_running_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_ActivityNode_running_State)
 
 
-@given(instance=traceSystem::States::ActivityNode::running::State_strategy)
-def test_tracesystem::states::activitynode::running::state_running_setter(instance):
+
+@given(instance=traceSystem_States_ActivityNode_running_State_strategy)
+def test_tracesystem_states_activitynode_running_state_running_setter(instance):
     original = instance.running
     instance.running = original
     assert instance.running == original
 
-@given(instance=traceSystem::States::ActivityNode::heldTokens::State_strategy)
+@given(instance=traceSystem_States_ActivityNode_heldTokens_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::activitynode::heldtokens::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::ActivityNode::heldTokens::State)
+def test_tracesystem_states_activitynode_heldtokens_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_ActivityNode_heldTokens_State)
 
-@given(instance=activitydiagramConfiguration::TracedInput_strategy)
+@given(instance=activitydiagramConfiguration_TracedInput_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedinput_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedInput)
+def test_activitydiagramconfiguration_tracedinput_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedInput)
 
-@given(instance=traceSystem::States::Input::inputValues::State_strategy)
+@given(instance=traceSystem_States_Input_inputValues_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::input::inputvalues::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::Input::inputValues::State)
+def test_tracesystem_states_input_inputvalues_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_Input_inputValues_State)
 
-@given(instance=traceSystem::States::Trace::executedNodes::State_strategy)
+@given(instance=traceSystem_States_Trace_executedNodes_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::trace::executednodes::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::Trace::executedNodes::State)
+def test_tracesystem_states_trace_executednodes_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_Trace_executedNodes_State)
 
-@given(instance=traceSystem::States::Offer::offeredTokens::State_strategy)
+@given(instance=traceSystem_States_Offer_offeredTokens_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::offer::offeredtokens::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::Offer::offeredTokens::State)
+def test_tracesystem_states_offer_offeredtokens_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_Offer_offeredTokens_State)
 
-@given(instance=traceSystem::States::InputValue::variable::State_strategy)
+@given(instance=traceSystem_States_InputValue_variable_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::inputvalue::variable::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::InputValue::variable::State)
+def test_tracesystem_states_inputvalue_variable_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_InputValue_variable_State)
 
-@given(instance=activitydiagramConfiguration::TracedInputValue_strategy)
+@given(instance=activitydiagramConfiguration_TracedInputValue_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedinputvalue_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedInputValue)
+def test_activitydiagramconfiguration_tracedinputvalue_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedInputValue)
 
-@given(instance=traceSystem::States::InputValue::value::State_strategy)
+@given(instance=traceSystem_States_InputValue_value_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::inputvalue::value::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::InputValue::value::State)
+def test_tracesystem_states_inputvalue_value_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_InputValue_value_State)
 
-@given(instance=activitydiagram::TracedVariable_strategy)
+@given(instance=activitydiagram_TracedVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedVariable)
+def test_activitydiagram_tracedvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedVariable)
 
-@given(instance=States::traceSystem::Value_strategy)
+@given(instance=States_traceSystem_Value_strategy)
 @settings(max_examples=50)
-def test_states::tracesystem::value_instantiation(instance):
-    assert isinstance(instance, States::traceSystem::Value)
+def test_states_tracesystem_value_instantiation(instance):
+    assert isinstance(instance, States_traceSystem_Value)
 
-@given(instance=traceSystem::States::Variable::currentValue::State_strategy)
+@given(instance=traceSystem_States_Variable_currentValue_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::variable::currentvalue::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::Variable::currentValue::State)
+def test_tracesystem_states_variable_currentvalue_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_Variable_currentValue_State)
 
-@given(instance=activitydiagramConfiguration::TracedTrace_strategy)
+@given(instance=activitydiagramConfiguration_TracedTrace_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedtrace_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedTrace)
+def test_activitydiagramconfiguration_tracedtrace_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedTrace)
 
-@given(instance=traceSystem::States::Activity::trace::State_strategy)
+@given(instance=traceSystem_States_Activity_trace_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::activity::trace::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::Activity::trace::State)
+def test_tracesystem_states_activity_trace_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_Activity_trace_State)
 
-@given(instance=activitydiagramConfiguration::TracedForkedToken_strategy)
+@given(instance=activitydiagramConfiguration_TracedForkedToken_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedforkedtoken_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedForkedToken)
+def test_activitydiagramconfiguration_tracedforkedtoken_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedForkedToken)
 
-@given(instance=traceSystem::States::Token::holder::State_strategy)
+@given(instance=traceSystem_States_Token_holder_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::token::holder::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::Token::holder::State)
+def test_tracesystem_states_token_holder_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_Token_holder_State)
 
-@given(instance=traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State_strategy)
+@given(instance=traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State)
-
-@given(instance=traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State_strategy)
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_baseTokenIsWithdrawn_type(instance):
-    assert isinstance(instance.baseTokenIsWithdrawn, bool)
+def test_tracesystem_states_forkedtoken_basetokeniswithdrawn_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State)
 
 
-@given(instance=traceSystem::States::ForkedToken::baseTokenIsWithdrawn::State_strategy)
-def test_tracesystem::states::forkedtoken::basetokeniswithdrawn::state_baseTokenIsWithdrawn_setter(instance):
+
+@given(instance=traceSystem_States_ForkedToken_baseTokenIsWithdrawn_State_strategy)
+def test_tracesystem_states_forkedtoken_basetokeniswithdrawn_state_baseTokenIsWithdrawn_setter(instance):
     original = instance.baseTokenIsWithdrawn
     instance.baseTokenIsWithdrawn = original
     assert instance.baseTokenIsWithdrawn == original
 
-@given(instance=traceSystem::States::ForkedToken::remainingOffersCount::State_strategy)
+@given(instance=traceSystem_States_ForkedToken_remainingOffersCount_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::ForkedToken::remainingOffersCount::State)
-
-@given(instance=traceSystem::States::ForkedToken::remainingOffersCount::State_strategy)
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_remainingOffersCount_type(instance):
-    assert isinstance(instance.remainingOffersCount, int)
+def test_tracesystem_states_forkedtoken_remainingofferscount_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_ForkedToken_remainingOffersCount_State)
 
 
-@given(instance=traceSystem::States::ForkedToken::remainingOffersCount::State_strategy)
-def test_tracesystem::states::forkedtoken::remainingofferscount::state_remainingOffersCount_setter(instance):
+
+@given(instance=traceSystem_States_ForkedToken_remainingOffersCount_State_strategy)
+def test_tracesystem_states_forkedtoken_remainingofferscount_state_remainingOffersCount_setter(instance):
     original = instance.remainingOffersCount
     instance.remainingOffersCount = original
     assert instance.remainingOffersCount == original
 
-@given(instance=States::traceSystem::GlobalState_strategy)
+@given(instance=States_traceSystem_GlobalState_strategy)
 @settings(max_examples=50)
-def test_states::tracesystem::globalstate_instantiation(instance):
-    assert isinstance(instance, States::traceSystem::GlobalState)
+def test_states_tracesystem_globalstate_instantiation(instance):
+    assert isinstance(instance, States_traceSystem_GlobalState)
 
-@given(instance=traceSystem::States::ForkedToken::baseToken::State_strategy)
+@given(instance=traceSystem_States_ForkedToken_baseToken_State_strategy)
 @settings(max_examples=50)
-def test_tracesystem::states::forkedtoken::basetoken::state_instantiation(instance):
-    assert isinstance(instance, traceSystem::States::ForkedToken::baseToken::State)
+def test_tracesystem_states_forkedtoken_basetoken_state_instantiation(instance):
+    assert isinstance(instance, traceSystem_States_ForkedToken_baseToken_State)
 
-@given(instance=activitydiagramConfiguration::TracedOffer_strategy)
+@given(instance=activitydiagramConfiguration_TracedOffer_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedoffer_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedOffer)
+def test_activitydiagramconfiguration_tracedoffer_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedOffer)
 
-@given(instance=Events::traceSystem::BooleanBinaryExpression_strategy)
+@given(instance=Events_traceSystem_BooleanBinaryExpression_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::booleanbinaryexpression_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::BooleanBinaryExpression)
+def test_events_tracesystem_booleanbinaryexpression_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_BooleanBinaryExpression)
 
-@given(instance=Events::traceSystem::BooleanUnaryExpression_strategy)
+@given(instance=Events_traceSystem_BooleanUnaryExpression_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::booleanunaryexpression_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::BooleanUnaryExpression)
+def test_events_tracesystem_booleanunaryexpression_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_BooleanUnaryExpression)
 
-@given(instance=Events::traceSystem::IntegerComparisonExpression_strategy)
+@given(instance=Events_traceSystem_IntegerComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::integercomparisonexpression_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::IntegerComparisonExpression)
+def test_events_tracesystem_integercomparisonexpression_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_IntegerComparisonExpression)
 
-@given(instance=Events::traceSystem::IntegerCalculationExpression_strategy)
+@given(instance=Events_traceSystem_IntegerCalculationExpression_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::integercalculationexpression_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::IntegerCalculationExpression)
+def test_events_tracesystem_integercalculationexpression_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_IntegerCalculationExpression)
 
-@given(instance=Events::traceSystem::IntegerExpression_strategy)
+@given(instance=Events_traceSystem_IntegerExpression_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::integerexpression_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::IntegerExpression)
+def test_events_tracesystem_integerexpression_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_IntegerExpression)
 
-@given(instance=activitydiagram::TracedDecisionNode_strategy)
+@given(instance=activitydiagram_TracedDecisionNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::traceddecisionnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedDecisionNode)
+def test_activitydiagram_traceddecisionnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedDecisionNode)
 
-@given(instance=activitydiagram::TracedBooleanVariable_strategy)
+@given(instance=activitydiagram_TracedBooleanVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedbooleanvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedBooleanVariable)
+def test_activitydiagram_tracedbooleanvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedBooleanVariable)
 
-@given(instance=activitydiagram::TracedStringVariable_strategy)
+@given(instance=activitydiagram_TracedStringVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedstringvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedStringVariable)
+def test_activitydiagram_tracedstringvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedStringVariable)
 
-@given(instance=Events::traceSystem::Value_strategy)
+@given(instance=Events_traceSystem_Value_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::value_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::Value)
+def test_events_tracesystem_value_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_Value)
 
-@given(instance=activitydiagram::TracedIntegerVariable_strategy)
+@given(instance=activitydiagram_TracedIntegerVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedintegervariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedIntegerVariable)
+def test_activitydiagram_tracedintegervariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedIntegerVariable)
 
-@given(instance=activitydiagram::TracedInitialNode_strategy)
+@given(instance=activitydiagram_TracedInitialNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedinitialnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedInitialNode)
+def test_activitydiagram_tracedinitialnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedInitialNode)
 
-@given(instance=activitydiagram::TracedMergeNode_strategy)
+@given(instance=activitydiagram_TracedMergeNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedmergenode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedMergeNode)
+def test_activitydiagram_tracedmergenode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedMergeNode)
 
-@given(instance=activitydiagram::TracedOpaqueAction_strategy)
+@given(instance=activitydiagram_TracedOpaqueAction_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedopaqueaction_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedOpaqueAction)
+def test_activitydiagram_tracedopaqueaction_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedOpaqueAction)
 
-@given(instance=activitydiagram::TracedForkNode_strategy)
+@given(instance=activitydiagram_TracedForkNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedforknode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedForkNode)
+def test_activitydiagram_tracedforknode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedForkNode)
 
-@given(instance=activitydiagram::TracedActivityFinalNode_strategy)
+@given(instance=activitydiagram_TracedActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedactivityfinalnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedActivityFinalNode)
+def test_activitydiagram_tracedactivityfinalnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedActivityFinalNode)
 
-@given(instance=activitydiagram::TracedAction_strategy)
+@given(instance=activitydiagram_TracedAction_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedaction_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedAction)
+def test_activitydiagram_tracedaction_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedAction)
 
-@given(instance=activitydiagramConfiguration::TracedToken_strategy)
+@given(instance=activitydiagramConfiguration_TracedToken_strategy)
 @settings(max_examples=50)
-def test_activitydiagramconfiguration::tracedtoken_instantiation(instance):
-    assert isinstance(instance, activitydiagramConfiguration::TracedToken)
+def test_activitydiagramconfiguration_tracedtoken_instantiation(instance):
+    assert isinstance(instance, activitydiagramConfiguration_TracedToken)
 
-@given(instance=activitydiagram::TracedControlNode_strategy)
+@given(instance=activitydiagram_TracedControlNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedcontrolnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedControlNode)
+def test_activitydiagram_tracedcontrolnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedControlNode)
 
-@given(instance=activitydiagram::TracedActivityEdge_strategy)
+@given(instance=activitydiagram_TracedActivityEdge_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedactivityedge_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedActivityEdge)
+def test_activitydiagram_tracedactivityedge_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedActivityEdge)
 
-@given(instance=activitydiagram::TracedActivityNode_strategy)
+@given(instance=activitydiagram_TracedActivityNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedactivitynode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedActivityNode)
+def test_activitydiagram_tracedactivitynode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedActivityNode)
 
-@given(instance=Offer::hasTokensEntryEventOccurrence_strategy)
+@given(instance=Offer_hasTokensEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_offer::hastokensentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Offer::hasTokensEntryEventOccurrence)
+def test_offer_hastokensentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Offer_hasTokensEntryEventOccurrence)
 
-@given(instance=ForkedToken::withdraw::forkedTokenExitEventOccurrence_strategy)
+@given(instance=ForkedToken_withdraw_forkedTokenExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_forkedtoken::withdraw::forkedtokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ForkedToken::withdraw::forkedTokenExitEventOccurrence)
+def test_forkedtoken_withdraw_forkedtokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ForkedToken_withdraw_forkedTokenExitEventOccurrence)
 
-@given(instance=ForkedToken::withdraw::forkedTokenEntryEventOccurrence_strategy)
+@given(instance=ForkedToken_withdraw_forkedTokenEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_forkedtoken::withdraw::forkedtokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ForkedToken::withdraw::forkedTokenEntryEventOccurrence)
+def test_forkedtoken_withdraw_forkedtokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ForkedToken_withdraw_forkedTokenEntryEventOccurrence)
 
-@given(instance=Token::withdrawExitEventOccurrence_strategy)
+@given(instance=Token_withdrawExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_token::withdrawexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Token::withdrawExitEventOccurrence)
+def test_token_withdrawexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Token_withdrawExitEventOccurrence)
 
-@given(instance=Token::withdrawEntryEventOccurrence_strategy)
+@given(instance=Token_withdrawEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_token::withdrawentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Token::withdrawEntryEventOccurrence)
+def test_token_withdrawentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Token_withdrawEntryEventOccurrence)
 
-@given(instance=Token::transferExitEventOccurrence_strategy)
+@given(instance=Token_transferExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_token::transferexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Token::transferExitEventOccurrence)
+def test_token_transferexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Token_transferExitEventOccurrence)
 
-@given(instance=Events::traceSystem::EObject_strategy)
+@given(instance=Events_traceSystem_EObject_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::eobject_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::EObject)
+def test_events_tracesystem_eobject_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_EObject)
 
-@given(instance=activitydiagram::TracedActivity_strategy)
+@given(instance=activitydiagram_TracedActivity_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::tracedactivity_instantiation(instance):
-    assert isinstance(instance, activitydiagram::TracedActivity)
+def test_activitydiagram_tracedactivity_instantiation(instance):
+    assert isinstance(instance, activitydiagram_TracedActivity)
 
-@given(instance=Offer::hasTokensExitEventOccurrence_strategy)
+@given(instance=Offer_hasTokensExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_offer::hastokensexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Offer::hasTokensExitEventOccurrence)
+def test_offer_hastokensexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Offer_hasTokensExitEventOccurrence)
 
-@given(instance=BooleanBinaryExpression::evaluateOREntryEventOccurrence_strategy)
+@given(instance=BooleanBinaryExpression_evaluateOREntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanbinaryexpression::evaluateorentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanBinaryExpression::evaluateOREntryEventOccurrence)
+def test_booleanbinaryexpression_evaluateorentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanBinaryExpression_evaluateOREntryEventOccurrence)
 
-@given(instance=BooleanBinaryExpression::evaluateANDExitEventOccurrence_strategy)
+@given(instance=BooleanBinaryExpression_evaluateANDExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanbinaryexpression::evaluateandexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanBinaryExpression::evaluateANDExitEventOccurrence)
+def test_booleanbinaryexpression_evaluateandexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanBinaryExpression_evaluateANDExitEventOccurrence)
 
-@given(instance=BooleanBinaryExpression::evaluateANDEntryEventOccurrence_strategy)
+@given(instance=BooleanBinaryExpression_evaluateANDEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanbinaryexpression::evaluateandentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanBinaryExpression::evaluateANDEntryEventOccurrence)
+def test_booleanbinaryexpression_evaluateandentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanBinaryExpression_evaluateANDEntryEventOccurrence)
 
-@given(instance=BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence_strategy)
+@given(instance=BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence)
 
-@given(instance=BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence_strategy)
+@given(instance=BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence)
+def test_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence)
 
-@given(instance=BooleanUnaryExpression::evaluateNOTExitEventOccurrence_strategy)
+@given(instance=BooleanUnaryExpression_evaluateNOTExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanunaryexpression::evaluatenotexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanUnaryExpression::evaluateNOTExitEventOccurrence)
+def test_booleanunaryexpression_evaluatenotexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanUnaryExpression_evaluateNOTExitEventOccurrence)
 
-@given(instance=BooleanUnaryExpression::evaluateNOTEntryEventOccurrence_strategy)
+@given(instance=BooleanUnaryExpression_evaluateNOTEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanunaryexpression::evaluatenotentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanUnaryExpression::evaluateNOTEntryEventOccurrence)
+def test_booleanunaryexpression_evaluatenotentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanUnaryExpression_evaluateNOTEntryEventOccurrence)
 
-@given(instance=Token::transferEntryEventOccurrence_strategy)
+@given(instance=Token_transferEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_token::transferentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Token::transferEntryEventOccurrence)
+def test_token_transferentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Token_transferEntryEventOccurrence)
 
-@given(instance=Token::isWithdrawnExitEventOccurrence_strategy)
+@given(instance=Token_isWithdrawnExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_token::iswithdrawnexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Token::isWithdrawnExitEventOccurrence)
+def test_token_iswithdrawnexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Token_isWithdrawnExitEventOccurrence)
 
-@given(instance=Token::isWithdrawnEntryEventOccurrence_strategy)
+@given(instance=Token_isWithdrawnEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_token::iswithdrawnentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Token::isWithdrawnEntryEventOccurrence)
+def test_token_iswithdrawnentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Token_isWithdrawnEntryEventOccurrence)
 
-@given(instance=BooleanBinaryExpression::evaluateORExitEventOccurrence_strategy)
+@given(instance=BooleanBinaryExpression_evaluateORExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_booleanbinaryexpression::evaluateorexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, BooleanBinaryExpression::evaluateORExitEventOccurrence)
+def test_booleanbinaryexpression_evaluateorexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanBinaryExpression_evaluateORExitEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluategreaterentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence)
+def test_integercomparisonexpression_evaluategreaterentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence)
 
-@given(instance=IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence)
+def test_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence)
 
-@given(instance=Action::fire::actionExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_action::fire::actionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Action::fire::actionExitEventOccurrence)
+def test_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence)
 
-@given(instance=Action::fire::actionEntryEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_action::fire::actionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Action::fire::actionEntryEventOccurrence)
+def test_integercomparisonexpression_evaluateequalsexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence)
 
-@given(instance=Action::isReady::actionExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_action::isready::actionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Action::isReady::actionExitEventOccurrence)
+def test_integercomparisonexpression_evaluateequalsentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence)
 
-@given(instance=Action::isReady::actionEntryEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_action::isready::actionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Action::isReady::actionEntryEventOccurrence)
+def test_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence)
 
-@given(instance=ActivityNode::hasOffersExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::hasoffersexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::hasOffersExitEventOccurrence)
+def test_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence)
 
-@given(instance=ActivityNode::hasOffersEntryEventOccurrence_strategy)
+@given(instance=BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::hasoffersentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::hasOffersEntryEventOccurrence)
+def test_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence)
 
-@given(instance=ActivityNode::removeTokenExitEventOccurrence_strategy)
+@given(instance=BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::removetokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::removeTokenExitEventOccurrence)
+def test_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence)
 
-@given(instance=ActivityNode::removeTokenEntryEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateGREATERExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::removetokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::removeTokenEntryEventOccurrence)
+def test_integercomparisonexpression_evaluategreaterexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateGREATERExitEventOccurrence)
 
-@given(instance=ActivityNode::addTokensExitEventOccurrence_strategy)
+@given(instance=IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::addtokensexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::addTokensExitEventOccurrence)
+def test_integercalculationexpression_evaluatesubtractentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence)
 
-@given(instance=ActivityNode::addTokensEntryEventOccurrence_strategy)
+@given(instance=IntegerCalculationExpression_evaluateADDExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::addtokensentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::addTokensEntryEventOccurrence)
+def test_integercalculationexpression_evaluateaddexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerCalculationExpression_evaluateADDExitEventOccurrence)
 
-@given(instance=ActivityNode::takeOfferedTokensExitEventOccurrence_strategy)
+@given(instance=IntegerCalculationExpression_evaluateADDEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::takeofferedtokensexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::takeOfferedTokensExitEventOccurrence)
+def test_integercalculationexpression_evaluateaddentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerCalculationExpression_evaluateADDEntryEventOccurrence)
 
-@given(instance=ActivityNode::takeOfferedTokensEntryEventOccurrence_strategy)
+@given(instance=IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::takeofferedtokensentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::takeOfferedTokensEntryEventOccurrence)
+def test_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence)
 
-@given(instance=ActivityNode::sendOffersExitEventOccurrence_strategy)
+@given(instance=IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::sendoffersexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::sendOffersExitEventOccurrence)
+def test_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence)
 
-@given(instance=ActivityNode::sendOffersEntryEventOccurrence_strategy)
+@given(instance=IntegerExpression_getOperandCurrentValuesExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::sendoffersentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::sendOffersEntryEventOccurrence)
+def test_integerexpression_getoperandcurrentvaluesexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerExpression_getOperandCurrentValuesExitEventOccurrence)
 
-@given(instance=ActivityNode::terminate::activityNodeExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::terminate::activitynodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::terminate::activityNodeExitEventOccurrence)
+def test_integercomparisonexpression_evaluatesmallerexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence)
 
-@given(instance=ActivityEdge::sendOfferExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activityedge::sendofferexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::sendOfferExitEventOccurrence)
+def test_integercomparisonexpression_evaluatesmallerentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence)
 
-@given(instance=ActivityEdge::sendOfferEntryEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activityedge::sendofferentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::sendOfferEntryEventOccurrence)
+def test_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence)
 
-@given(instance=ActivityNode::isReadyExitEventOccurrence_strategy)
+@given(instance=IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::isreadyexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::isReadyExitEventOccurrence)
+def test_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence)
 
-@given(instance=ActivityNode::isReadyEntryEventOccurrence_strategy)
+@given(instance=IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::isreadyentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::isReadyEntryEventOccurrence)
+def test_integercalculationexpression_evaluatesubtractexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence)
 
-@given(instance=Activity::fireNodeEntryEventOccurrence_strategy)
+@given(instance=StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::firenodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::fireNodeEntryEventOccurrence)
+def test_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence)
 
-@given(instance=Activity::getInitialNodeExitEventOccurrence_strategy)
+@given(instance=StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::getinitialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::getInitialNodeExitEventOccurrence)
+def test_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence)
 
-@given(instance=Activity::getInitialNodeEntryEventOccurrence_strategy)
+@given(instance=StringVariable_setCurrentValue_stringVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::getinitialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::getInitialNodeEntryEventOccurrence)
+def test_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, StringVariable_setCurrentValue_stringVariableExitEventOccurrence)
 
-@given(instance=Activity::terminateExitEventOccurrence_strategy)
+@given(instance=StringVariable_setCurrentValue_stringVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::terminateexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::terminateExitEventOccurrence)
+def test_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, StringVariable_setCurrentValue_stringVariableEntryEventOccurrence)
 
-@given(instance=Activity::terminateEntryEventOccurrence_strategy)
+@given(instance=IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::terminateentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::terminateEntryEventOccurrence)
+def test_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence)
 
-@given(instance=Activity::selectNextNodeExitEventOccurrence_strategy)
+@given(instance=IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::selectnextnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::selectNextNodeExitEventOccurrence)
+def test_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence)
 
-@given(instance=Activity::selectNextNodeEntryEventOccurrence_strategy)
+@given(instance=IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::selectnextnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::selectNextNodeEntryEventOccurrence)
+def test_integervariable_setcurrentvalue_integervariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence)
 
-@given(instance=Activity::getEnabledNodesExitEventOccurrence_strategy)
+@given(instance=IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::getenablednodesexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::getEnabledNodesExitEventOccurrence)
+def test_integervariable_setcurrentvalue_integervariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence)
 
-@given(instance=Activity::getEnabledNodesEntryEventOccurrence_strategy)
+@given(instance=IntegerExpression_getOperandCurrentValuesEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::getenablednodesentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::getEnabledNodesEntryEventOccurrence)
+def test_integerexpression_getoperandcurrentvaluesentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, IntegerExpression_getOperandCurrentValuesEntryEventOccurrence)
 
-@given(instance=Activity::fireInitialNodeExitEventOccurrence_strategy)
+@given(instance=ActivityNode_addTokensExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::fireinitialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::fireInitialNodeExitEventOccurrence)
+def test_activitynode_addtokensexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_addTokensExitEventOccurrence)
 
-@given(instance=Activity::fireInitialNodeEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_addTokensEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::fireinitialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::fireInitialNodeEntryEventOccurrence)
+def test_activitynode_addtokensentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_addTokensEntryEventOccurrence)
 
-@given(instance=ActivityNode::terminate::activityNodeEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_takeOfferedTokensExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::terminate::activitynodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::terminate::activityNodeEntryEventOccurrence)
+def test_activitynode_takeofferedtokensexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_takeOfferedTokensExitEventOccurrence)
 
-@given(instance=ActivityNode::isRunningExitEventOccurrence_strategy)
+@given(instance=ActivityNode_takeOfferedTokensEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::isrunningexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::isRunningExitEventOccurrence)
+def test_activitynode_takeofferedtokensentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_takeOfferedTokensEntryEventOccurrence)
 
-@given(instance=ActivityNode::isRunningEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_sendOffersExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::isrunningentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::isRunningEntryEventOccurrence)
+def test_activitynode_sendoffersexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_sendOffersExitEventOccurrence)
 
-@given(instance=ActivityNode::run::activityNodeExitEventOccurrence_strategy)
+@given(instance=ActivityNode_sendOffersEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::run::activitynodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::run::activityNodeExitEventOccurrence)
+def test_activitynode_sendoffersentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_sendOffersEntryEventOccurrence)
 
-@given(instance=ActivityNode::run::activityNodeEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_terminate_activityNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::run::activitynodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, ActivityNode::run::activityNodeEntryEventOccurrence)
+def test_activitynode_terminate_activitynodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_terminate_activityNodeExitEventOccurrence)
 
-@given(instance=Activity::fireNodeExitEventOccurrence_strategy)
+@given(instance=ActivityEdge_sendOfferExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::firenodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::fireNodeExitEventOccurrence)
+def test_activityedge_sendofferexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_sendOfferExitEventOccurrence)
 
-@given(instance=Activity::initializeEntryEventOccurrence_strategy)
+@given(instance=ActivityEdge_sendOfferEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::initializeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::initializeEntryEventOccurrence)
+def test_activityedge_sendofferentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_sendOfferEntryEventOccurrence)
 
-@given(instance=Activity::mainExitEventOccurrence_strategy)
+@given(instance=ActivityNode_isReadyExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::mainexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::mainExitEventOccurrence)
+def test_activitynode_isreadyexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_isReadyExitEventOccurrence)
 
-@given(instance=Activity::mainEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_isReadyEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::mainentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::mainEntryEventOccurrence)
+def test_activitynode_isreadyentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_isReadyEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Events_strategy)
+@given(instance=Activity_fireNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::events_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Events)
+def test_activity_firenodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_fireNodeEntryEventOccurrence)
 
-@given(instance=Events::traceSystem::GlobalState_strategy)
+@given(instance=Activity_getInitialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_events::tracesystem::globalstate_instantiation(instance):
-    assert isinstance(instance, Events::traceSystem::GlobalState)
+def test_activity_getinitialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_getInitialNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::EventOccurrence_strategy)
+@given(instance=Activity_getInitialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::eventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::EventOccurrence)
+def test_activity_getinitialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_getInitialNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::IntegerCalculationExpression_strategy)
+@given(instance=Activity_terminateExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::integercalculationexpression_instantiation(instance):
-    assert isinstance(instance, traceSystem::IntegerCalculationExpression)
+def test_activity_terminateexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_terminateExitEventOccurrence)
 
-@given(instance=traceSystem::IntegerValue_strategy)
+@given(instance=Activity_terminateEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::integervalue_instantiation(instance):
-    assert isinstance(instance, traceSystem::IntegerValue)
+def test_activity_terminateentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_terminateEntryEventOccurrence)
 
-@given(instance=traceSystem::BooleanUnaryExpression_strategy)
+@given(instance=Activity_selectNextNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::booleanunaryexpression_instantiation(instance):
-    assert isinstance(instance, traceSystem::BooleanUnaryExpression)
+def test_activity_selectnextnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_selectNextNodeExitEventOccurrence)
 
-@given(instance=traceSystem::BooleanBinaryExpression_strategy)
+@given(instance=Activity_selectNextNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::booleanbinaryexpression_instantiation(instance):
-    assert isinstance(instance, traceSystem::BooleanBinaryExpression)
+def test_activity_selectnextnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_selectNextNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::StringValue_strategy)
+@given(instance=Activity_getEnabledNodesExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::stringvalue_instantiation(instance):
-    assert isinstance(instance, traceSystem::StringValue)
+def test_activity_getenablednodesexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_getEnabledNodesExitEventOccurrence)
 
-@given(instance=traceSystem::IntegerComparisonExpression_strategy)
+@given(instance=Activity_getEnabledNodesEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::integercomparisonexpression_instantiation(instance):
-    assert isinstance(instance, traceSystem::IntegerComparisonExpression)
+def test_activity_getenablednodesentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_getEnabledNodesEntryEventOccurrence)
 
-@given(instance=traceSystem::BooleanValue_strategy)
+@given(instance=Activity_fireInitialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::booleanvalue_instantiation(instance):
-    assert isinstance(instance, traceSystem::BooleanValue)
+def test_activity_fireinitialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_fireInitialNodeExitEventOccurrence)
 
-@given(instance=ActivityNode::running::State_strategy)
+@given(instance=Activity_fireInitialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::running::state_instantiation(instance):
-    assert isinstance(instance, ActivityNode::running::State)
+def test_activity_fireinitialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_fireInitialNodeEntryEventOccurrence)
 
-@given(instance=ActivityNode::heldTokens::State_strategy)
+@given(instance=ActivityNode_terminate_activityNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activitynode::heldtokens::state_instantiation(instance):
-    assert isinstance(instance, ActivityNode::heldTokens::State)
+def test_activitynode_terminate_activitynodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_terminate_activityNodeEntryEventOccurrence)
 
-@given(instance=Activity::runNodesExitEventOccurrence_strategy)
+@given(instance=ActivityNode_isRunningExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::runnodesexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::runNodesExitEventOccurrence)
+def test_activitynode_isrunningexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_isRunningExitEventOccurrence)
 
-@given(instance=Activity::runNodesEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_isRunningEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::runnodesentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::runNodesEntryEventOccurrence)
+def test_activitynode_isrunningentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_isRunningEntryEventOccurrence)
 
-@given(instance=Activity::runExitEventOccurrence_strategy)
+@given(instance=ActivityNode_run_activityNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::runexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::runExitEventOccurrence)
+def test_activitynode_run_activitynodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_run_activityNodeExitEventOccurrence)
 
-@given(instance=Activity::runEntryEventOccurrence_strategy)
+@given(instance=ActivityNode_run_activityNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::runentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::runEntryEventOccurrence)
+def test_activitynode_run_activitynodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, ActivityNode_run_activityNodeEntryEventOccurrence)
 
-@given(instance=Activity::initializeExitEventOccurrence_strategy)
+@given(instance=Activity_fireNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::initializeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Activity::initializeExitEventOccurrence)
+def test_activity_firenodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_fireNodeExitEventOccurrence)
 
-@given(instance=InputValue::value::State_strategy)
+@given(instance=Activity_initializeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_inputvalue::value::state_instantiation(instance):
-    assert isinstance(instance, InputValue::value::State)
+def test_activity_initializeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_initializeEntryEventOccurrence)
 
-@given(instance=Variable::currentValue::State_strategy)
+@given(instance=Activity_mainExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_variable::currentvalue::state_instantiation(instance):
-    assert isinstance(instance, Variable::currentValue::State)
+def test_activity_mainexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_mainExitEventOccurrence)
 
-@given(instance=Activity::trace::State_strategy)
+@given(instance=Activity_mainEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_activity::trace::state_instantiation(instance):
-    assert isinstance(instance, Activity::trace::State)
+def test_activity_mainentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_mainEntryEventOccurrence)
 
-@given(instance=Offer::offeredTokens::State_strategy)
+@given(instance=traceSystem_Events_Events_strategy)
 @settings(max_examples=50)
-def test_offer::offeredtokens::state_instantiation(instance):
-    assert isinstance(instance, Offer::offeredTokens::State)
+def test_tracesystem_events_events_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Events)
 
-@given(instance=Token::holder::State_strategy)
+@given(instance=Events_traceSystem_GlobalState_strategy)
 @settings(max_examples=50)
-def test_token::holder::state_instantiation(instance):
-    assert isinstance(instance, Token::holder::State)
+def test_events_tracesystem_globalstate_instantiation(instance):
+    assert isinstance(instance, Events_traceSystem_GlobalState)
 
-@given(instance=ForkedToken::baseTokenIsWithdrawn::State_strategy)
+@given(instance=traceSystem_Events_EventOccurrence_strategy)
 @settings(max_examples=50)
-def test_forkedtoken::basetokeniswithdrawn::state_instantiation(instance):
-    assert isinstance(instance, ForkedToken::baseTokenIsWithdrawn::State)
+def test_tracesystem_events_eventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_EventOccurrence)
 
-@given(instance=ForkedToken::remainingOffersCount::State_strategy)
+@given(instance=traceSystem_IntegerCalculationExpression_strategy)
 @settings(max_examples=50)
-def test_forkedtoken::remainingofferscount::state_instantiation(instance):
-    assert isinstance(instance, ForkedToken::remainingOffersCount::State)
+def test_tracesystem_integercalculationexpression_instantiation(instance):
+    assert isinstance(instance, traceSystem_IntegerCalculationExpression)
 
-@given(instance=Input::inputValues::State_strategy)
+@given(instance=traceSystem_IntegerValue_strategy)
 @settings(max_examples=50)
-def test_input::inputvalues::state_instantiation(instance):
-    assert isinstance(instance, Input::inputValues::State)
+def test_tracesystem_integervalue_instantiation(instance):
+    assert isinstance(instance, traceSystem_IntegerValue)
 
-@given(instance=Trace::executedNodes::State_strategy)
+@given(instance=traceSystem_BooleanUnaryExpression_strategy)
 @settings(max_examples=50)
-def test_trace::executednodes::state_instantiation(instance):
-    assert isinstance(instance, Trace::executedNodes::State)
+def test_tracesystem_booleanunaryexpression_instantiation(instance):
+    assert isinstance(instance, traceSystem_BooleanUnaryExpression)
 
-@given(instance=ActivityEdge::offers::State_strategy)
+@given(instance=traceSystem_BooleanBinaryExpression_strategy)
 @settings(max_examples=50)
-def test_activityedge::offers::state_instantiation(instance):
-    assert isinstance(instance, ActivityEdge::offers::State)
+def test_tracesystem_booleanbinaryexpression_instantiation(instance):
+    assert isinstance(instance, traceSystem_BooleanBinaryExpression)
 
-@given(instance=InputValue::variable::State_strategy)
+@given(instance=traceSystem_StringValue_strategy)
 @settings(max_examples=50)
-def test_inputvalue::variable::state_instantiation(instance):
-    assert isinstance(instance, InputValue::variable::State)
+def test_tracesystem_stringvalue_instantiation(instance):
+    assert isinstance(instance, traceSystem_StringValue)
+
+@given(instance=traceSystem_IntegerComparisonExpression_strategy)
+@settings(max_examples=50)
+def test_tracesystem_integercomparisonexpression_instantiation(instance):
+    assert isinstance(instance, traceSystem_IntegerComparisonExpression)
+
+@given(instance=traceSystem_BooleanValue_strategy)
+@settings(max_examples=50)
+def test_tracesystem_booleanvalue_instantiation(instance):
+    assert isinstance(instance, traceSystem_BooleanValue)
+
+@given(instance=ActivityNode_running_State_strategy)
+@settings(max_examples=50)
+def test_activitynode_running_state_instantiation(instance):
+    assert isinstance(instance, ActivityNode_running_State)
+
+@given(instance=ActivityNode_heldTokens_State_strategy)
+@settings(max_examples=50)
+def test_activitynode_heldtokens_state_instantiation(instance):
+    assert isinstance(instance, ActivityNode_heldTokens_State)
+
+@given(instance=Activity_runNodesExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_activity_runnodesexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_runNodesExitEventOccurrence)
+
+@given(instance=Activity_runNodesEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_activity_runnodesentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_runNodesEntryEventOccurrence)
+
+@given(instance=Activity_runExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_activity_runexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_runExitEventOccurrence)
+
+@given(instance=Activity_runEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_activity_runentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_runEntryEventOccurrence)
+
+@given(instance=Activity_initializeExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_activity_initializeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Activity_initializeExitEventOccurrence)
+
+@given(instance=InputValue_value_State_strategy)
+@settings(max_examples=50)
+def test_inputvalue_value_state_instantiation(instance):
+    assert isinstance(instance, InputValue_value_State)
+
+@given(instance=Variable_currentValue_State_strategy)
+@settings(max_examples=50)
+def test_variable_currentvalue_state_instantiation(instance):
+    assert isinstance(instance, Variable_currentValue_State)
+
+@given(instance=Activity_trace_State_strategy)
+@settings(max_examples=50)
+def test_activity_trace_state_instantiation(instance):
+    assert isinstance(instance, Activity_trace_State)
+
+@given(instance=Offer_offeredTokens_State_strategy)
+@settings(max_examples=50)
+def test_offer_offeredtokens_state_instantiation(instance):
+    assert isinstance(instance, Offer_offeredTokens_State)
+
+@given(instance=Token_holder_State_strategy)
+@settings(max_examples=50)
+def test_token_holder_state_instantiation(instance):
+    assert isinstance(instance, Token_holder_State)
+
+@given(instance=ForkedToken_baseTokenIsWithdrawn_State_strategy)
+@settings(max_examples=50)
+def test_forkedtoken_basetokeniswithdrawn_state_instantiation(instance):
+    assert isinstance(instance, ForkedToken_baseTokenIsWithdrawn_State)
+
+@given(instance=ForkedToken_remainingOffersCount_State_strategy)
+@settings(max_examples=50)
+def test_forkedtoken_remainingofferscount_state_instantiation(instance):
+    assert isinstance(instance, ForkedToken_remainingOffersCount_State)
+
+@given(instance=Input_inputValues_State_strategy)
+@settings(max_examples=50)
+def test_input_inputvalues_state_instantiation(instance):
+    assert isinstance(instance, Input_inputValues_State)
+
+@given(instance=Trace_executedNodes_State_strategy)
+@settings(max_examples=50)
+def test_trace_executednodes_state_instantiation(instance):
+    assert isinstance(instance, Trace_executedNodes_State)
+
+@given(instance=ActivityEdge_offers_State_strategy)
+@settings(max_examples=50)
+def test_activityedge_offers_state_instantiation(instance):
+    assert isinstance(instance, ActivityEdge_offers_State)
+
+@given(instance=InputValue_variable_State_strategy)
+@settings(max_examples=50)
+def test_inputvalue_variable_state_instantiation(instance):
+    assert isinstance(instance, InputValue_variable_State)
 
 @given(instance=Events_strategy)
 @settings(max_examples=50)
 def test_events_instantiation(instance):
     assert isinstance(instance, Events)
 
-@given(instance=traceSystem::GlobalState_strategy)
+@given(instance=traceSystem_GlobalState_strategy)
 @settings(max_examples=50)
-def test_tracesystem::globalstate_instantiation(instance):
-    assert isinstance(instance, traceSystem::GlobalState)
+def test_tracesystem_globalstate_instantiation(instance):
+    assert isinstance(instance, traceSystem_GlobalState)
 
-@given(instance=traceSystem::Trace_strategy)
+@given(instance=traceSystem_Trace_strategy)
 @settings(max_examples=50)
-def test_tracesystem::trace_instantiation(instance):
-    assert isinstance(instance, traceSystem::Trace)
+def test_tracesystem_trace_instantiation(instance):
+    assert isinstance(instance, traceSystem_Trace)
 
-@given(instance=ForkedToken::baseToken::State_strategy)
+@given(instance=ForkedToken_baseToken_State_strategy)
 @settings(max_examples=50)
-def test_forkedtoken::basetoken::state_instantiation(instance):
-    assert isinstance(instance, ForkedToken::baseToken::State)
+def test_forkedtoken_basetoken_state_instantiation(instance):
+    assert isinstance(instance, ForkedToken_baseToken_State)
 
 @given(instance=EventOccurrence_strategy)
 @settings(max_examples=50)
 def test_eventoccurrence_instantiation(instance):
     assert isinstance(instance, EventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence)
+def test_tracesystem_events_activity_getinitialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_getInitialNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Action::fire::actionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::action::fire::actionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Action::fire::actionEntryEventOccurrence)
+def test_tracesystem_events_activitynode_sendoffersentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Action_isReady_actionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanbinaryexpression::evaluateandexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence)
+def test_tracesystem_events_action_isready_actionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Action_isReady_actionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Action::sendOffers::actionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::action::sendoffers::actionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Action::sendOffers::actionExitEventOccurrence)
+def test_tracesystem_events_activitynode_isreadyentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_isReadyEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_runExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence)
+def test_tracesystem_events_activity_runexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_runExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence)
+def test_tracesystem_events_activitynode_terminate_activitynodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_terminate_activityNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_getInitialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence)
+def test_tracesystem_events_activity_getinitialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_getInitialNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercalculationexpression::evaluatesubtractexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence)
+def test_tracesystem_events_action_sendoffers_actionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Action_sendOffers_actionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::mainEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::mainentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::mainEntryEventOccurrence)
+def test_tracesystem_events_activity_fireinitialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_fireInitialNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::fireNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Action_isReady_actionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::firenodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::fireNodeExitEventOccurrence)
+def test_tracesystem_events_action_isready_actionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Action_isReady_actionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::fireNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_runNodesExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::firenodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::fireNodeEntryEventOccurrence)
+def test_tracesystem_events_activity_runnodesexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_runNodesExitEventOccurrence)
 
-@given(instance=traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::initialnode::isready::initialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence)
+def test_tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::initialnode::fire::initialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::InitialNode::fire::initialNodeExitEventOccurrence)
+def test_tracesystem_events_initialnode_fire_initialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_InitialNode_fire_initialNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Token::isWithdrawnEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::token::iswithdrawnentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Token::isWithdrawnEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_isRunningExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence)
+def test_tracesystem_events_activitynode_isrunningexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_isRunningExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence)
+def test_tracesystem_events_activitynode_addtokensentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_mainExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanunaryexpression::execute::booleanunaryexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence)
+def test_tracesystem_events_activity_mainexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_mainExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::initializeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::initializeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::initializeExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::forknode::fire::forknodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ForkNode::fire::forkNodeExitEventOccurrence)
+def test_tracesystem_events_activityedge_sendofferentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Action_fire_actionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence)
+def test_tracesystem_events_action_fire_actionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Action_fire_actionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_mainEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::fireinitialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::fireInitialNodeExitEventOccurrence)
+def test_tracesystem_events_activity_mainentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_mainEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::forkedtoken::withdraw::forkedtokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence)
+def test_tracesystem_events_activitynode_hasoffersexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::runExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::runexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::runExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_isReadyExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanunaryexpression::evaluatenotexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence)
+def test_tracesystem_events_activitynode_isreadyexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_isReadyExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::hasoffersentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::hasOffersEntryEventOccurrence)
+def test_tracesystem_events_controlnode_fire_controlnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ControlNode_fire_controlNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Action::isReady::actionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Token_withdrawExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::action::isready::actionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Action::isReady::actionExitEventOccurrence)
+def test_tracesystem_events_token_withdrawexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Token_withdrawExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Token::withdrawEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_terminateEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::token::withdrawentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Token::withdrawEntryEventOccurrence)
+def test_tracesystem_events_activity_terminateentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_terminateEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_initializeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::initialnode::isready::initialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::InitialNode::isReady::InitialNodeExitEventOccurrence)
+def test_tracesystem_events_activity_initializeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_initializeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::isRunningExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Action_fire_actionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::isrunningexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::isRunningExitEventOccurrence)
+def test_tracesystem_events_action_fire_actionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Action_fire_actionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_initializeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::action::sendoffers::actionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Action::sendOffers::actionEntryEventOccurrence)
+def test_tracesystem_events_activity_initializeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_initializeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::fireinitialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::fireInitialNodeEntryEventOccurrence)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::forknode::fire::forknodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ForkNode::fire::forkNodeEntryEventOccurrence)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::terminate::activitynodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::terminate::activityNodeExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Action::fire::actionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::action::fire::actionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Action::fire::actionExitEventOccurrence)
+def test_tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::controlnode::isready::controlnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ControlNode::isReady::ControlNodeExitEventOccurrence)
+def test_tracesystem_events_forknode_fire_forknodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ForkNode_fire_forkNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::isreadyentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::isReadyEntryEventOccurrence)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::takeofferedtokensexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::takeOfferedTokensExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::removetokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::removeTokenExitEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Token_isWithdrawnEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence)
+def test_tracesystem_events_token_iswithdrawnentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Token_isWithdrawnEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::takeofferedtokensentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanbinaryexpression::evaluateorentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence)
+def test_tracesystem_events_initialnode_isready_initialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::runEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::runentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::runEntryEventOccurrence)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::execute::integercomparisionexpressionexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::isrunningentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::isRunningEntryEventOccurrence)
+def test_tracesystem_events_activityedge_sendofferexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityEdge_sendOfferExitEventOccurrence)
 
-@given(instance=traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_fireNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::initialnode::fire::initialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::InitialNode::fire::initialNodeEntryEventOccurrence)
+def test_tracesystem_events_activity_firenodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_fireNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_fireNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::getenablednodesentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::getEnabledNodesEntryEventOccurrence)
+def test_tracesystem_events_activity_firenodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_fireNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::terminateEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::terminateentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::terminateEntryEventOccurrence)
+def test_tracesystem_events_activity_fireinitialnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_fireInitialNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence)
+def test_tracesystem_events_activity_getenablednodesexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence)
 
-@given(instance=traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::stringvariable::setcurrentvalue::stringvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::mergenode::hasoffers::mergenodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence)
+def test_tracesystem_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence)
+def test_tracesystem_events_integervariable_setcurrentvalue_integervariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::controlnode::isready::controlnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence)
+def test_tracesystem_events_controlnode_fire_controlnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ControlNode_fire_controlNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::controlnode::fire::controlnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ControlNode::fire::controlNodeEntryEventOccurrence)
+def test_tracesystem_events_activitynode_terminate_activitynodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::terminateExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::terminateexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::terminateExitEventOccurrence)
+def test_tracesystem_events_activitynode_hasoffersentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_hasOffersEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluategreaterexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence)
+def test_tracesystem_events_forkedtoken_withdraw_forkedtokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::runNodesEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::runnodesentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::runNodesEntryEventOccurrence)
+def test_tracesystem_events_activitynode_run_activitynodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_run_activityNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Token::transferEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::token::transferentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Token::transferEntryEventOccurrence)
+def test_tracesystem_events_activitynode_isrunningentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_isRunningEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanbinaryexpression::evaluateorexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence)
+def test_tracesystem_events_controlnode_isready_controlnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::opaqueaction::doaction::opaqueactionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::mainExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::mainexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::mainExitEventOccurrence)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::decisionnode::fire::decisionnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::DecisionNode::fire::decisionNodeExitEventOccurrence)
+def test_tracesystem_events_activitynode_removetokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::getInitialNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::getinitialnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::getInitialNodeExitEventOccurrence)
+def test_tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence)
 
-@given(instance=traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_selectNextNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercalculationexpression::execute::integercalculationexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence)
+def test_tracesystem_events_activity_selectnextnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_selectNextNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::runNodesExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::runnodesexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::runNodesExitEventOccurrence)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Token::withdrawExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::token::withdrawexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Token::withdrawExitEventOccurrence)
+def test_tracesystem_events_decisionnode_fire_decisionnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_DecisionNode_fire_decisionNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::selectnextnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::selectNextNodeEntryEventOccurrence)
+def test_tracesystem_events_activitynode_run_activitynodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_run_activityNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Token::transferExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::token::transferexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Token::transferExitEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreaterentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanvariable::setcurrentvalue::boolenvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence)
+def test_tracesystem_events_activityfinalnode_fire_activityfinalnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanbinaryexpression::evaluateandentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence)
+def test_tracesystem_events_opaqueaction_doaction_opaqueactionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_terminateExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence)
+def test_tracesystem_events_activity_terminateexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_terminateExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercalculationexpression::evaluateaddexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence)
+def test_tracesystem_events_stringvariable_setcurrentvalue_stringvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercalculationexpression::evaluateaddentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence)
+def test_tracesystem_events_activityedge_takeofferedtokens_activityedgeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityedge::hasofferexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityEdge::hasOfferExitEventOccurrence)
+def test_tracesystem_events_activitynode_removetokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_removeTokenExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Offer_hasTokensExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integerexpression::getoperandcurrentvaluesentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence)
+def test_tracesystem_events_offer_hastokensexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Offer_hasTokensExitEventOccurrence)
 
-@given(instance=traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Action_sendOffers_actionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::decisionnode::fire::decisionnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence)
+def test_tracesystem_events_action_sendoffers_actionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Action_sendOffers_actionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityfinalnode::fire::activityfinalnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence)
+def test_tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::hasoffersexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::hasOffersExitEventOccurrence)
+def test_tracesystem_events_activity_selectnextnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Action::isReady::actionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::action::isready::actionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Action::isReady::actionEntryEventOccurrence)
+def test_tracesystem_events_activitynode_takeofferedtokensentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Offer::hasTokensEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::offer::hastokensentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Offer::hasTokensEntryEventOccurrence)
+def test_tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::getinitialnodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::getInitialNodeEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Offer_hasTokensEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::controlnode::fire::controlnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ControlNode::fire::controlNodeExitEventOccurrence)
+def test_tracesystem_events_offer_hastokensentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Offer_hasTokensEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::run::activitynodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::run::activityNodeEntryEventOccurrence)
+def test_tracesystem_events_initialnode_fire_initialnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_InitialNode_fire_initialNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluatesmaller::equalsexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence)
+def test_tracesystem_events_activity_getenablednodesentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_getEnabledNodesEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Token_transferExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::removetokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::removeTokenEntryEventOccurrence)
+def test_tracesystem_events_token_transferexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Token_transferExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::isReadyExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Token_withdrawEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::isreadyexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::isReadyExitEventOccurrence)
+def test_tracesystem_events_token_withdrawentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Token_withdrawEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::getenablednodesexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::getEnabledNodesExitEventOccurrence)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::sendoffersexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::sendOffersExitEventOccurrence)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityedge::sendofferentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityEdge::sendOfferEntryEventOccurrence)
+def test_tracesystem_events_activityedge_hasofferexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityedge::sendofferexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityEdge::sendOfferExitEventOccurrence)
+def test_tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::selectNextNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::selectnextnodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::selectNextNodeExitEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::addtokensentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::addTokensEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence)
 
-@given(instance=traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::stringvariable::getcurrentvaluevalue::stringvariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence)
+def test_tracesystem_events_activityedge_hasofferentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityEdge_hasOfferEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluateequalsexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence)
+def test_tracesystem_events_decisionnode_fire_decisionnodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::terminate::activitynodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_execute_integercalculationexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::addTokensExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::addtokensexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::addTokensExitEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::run::activitynodeexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::run::activityNodeExitEventOccurrence)
+def test_tracesystem_events_forknode_fire_forknodeentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ForkNode_fire_forkNodeEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::mergenode::hasoffers::mergenodeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Offer::hasTokensExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::offer::hastokensexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Offer::hasTokensExitEventOccurrence)
+def test_tracesystem_events_activitynode_sendoffersexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_sendOffersExitEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Token_isWithdrawnExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanunaryexpression::evaluatenotentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence)
+def test_tracesystem_events_token_iswithdrawnexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Token_isWithdrawnExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluatesmallerentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence)
+def test_tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_ActivityNode_addTokensExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityedge::hasofferentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityEdge::hasOfferEntryEventOccurrence)
+def test_tracesystem_events_activitynode_addtokensexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_ActivityNode_addTokensExitEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_runNodesEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integervariable::getcurrentvaluevalue::integervariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence)
+def test_tracesystem_events_activity_runnodesentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_runNodesEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integervariable::setcurrentvalue::integervariableexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence)
+def test_tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Token::isWithdrawnExitEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::token::iswithdrawnexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Token::isWithdrawnExitEventOccurrence)
+def test_tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activitynode::sendoffersentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityNode::sendOffersEntryEventOccurrence)
+def test_tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Activity_runEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanvariable::getcurrentvaluevalue::booleanvariableentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence)
+def test_tracesystem_events_activity_runentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Activity_runEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_Token_transferEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::integercomparisonexpression::evaluategreater::equalsentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence)
+def test_tracesystem_events_token_transferentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_Token_transferEntryEventOccurrence)
 
-@given(instance=traceSystem::Events::Activity::initializeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activity::initializeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::Activity::initializeEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_execute_integercomparisionexpressionexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence)
 
-@given(instance=traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::booleanbinaryexpression::execute::booleanbinaryexpressionentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence)
+def test_tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence)
 
-@given(instance=traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence_strategy)
+@given(instance=traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_tracesystem::events::activityedge::takeofferedtokens::activityedgeentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, traceSystem::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence)
+def test_tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence)
 
-@given(instance=traceSystem::StaticObjectsPools_strategy)
+@given(instance=traceSystem_StaticObjectsPools_strategy)
 @settings(max_examples=50)
-def test_tracesystem::staticobjectspools_instantiation(instance):
-    assert isinstance(instance, traceSystem::StaticObjectsPools)
+def test_tracesystem_staticobjectspools_instantiation(instance):
+    assert isinstance(instance, traceSystem_StaticObjectsPools)
 
 @given(instance=TracedObjects_strategy)
 @settings(max_examples=50)

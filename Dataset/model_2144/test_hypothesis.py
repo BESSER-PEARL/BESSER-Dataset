@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Vertex,
-    graph::Graph,
+from python_code import (
+    graph_Vertex,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_graph::vertex_is_not_abstract():
-    assert not inspect.isabstract(graph::Vertex)
+def test_graph_vertex_is_not_abstract():
+    assert not inspect.isabstract(graph_Vertex)
 
 
-def test_graph::vertex_constructor_exists():
-    assert callable(graph::Vertex.__init__)
+def test_graph_vertex_constructor_exists():
+    assert callable(graph_Vertex.__init__)
 
 
-def test_graph::vertex_constructor_args():
-    sig = inspect.signature(graph::Vertex.__init__)
+def test_graph_vertex_constructor_args():
+    sig = inspect.signature(graph_Vertex.__init__)
     params = list(sig.parameters.keys())
     assert "internalId" in params, "Missing parameter 'internalId'"
 
-def test_graph::vertex_has_internalId():
-    assert hasattr(graph::Vertex, "internalId")
+def test_graph_vertex_has_internalId():
+    assert hasattr(graph_Vertex, "internalId")
     descriptor = None
-    for klass in graph::Vertex.__mro__:
+    for klass in graph_Vertex.__mro__:
         if "internalId" in klass.__dict__:
             descriptor = klass.__dict__["internalId"]
             break
@@ -40,23 +40,23 @@ def test_graph::vertex_has_internalId():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "graphName" in params, "Missing parameter 'graphName'"
 
-def test_graph::graph_has_graphName():
-    assert hasattr(graph::Graph, "graphName")
+def test_graph_graph_has_graphName():
+    assert hasattr(graph_Graph, "graphName")
     descriptor = None
-    for klass in graph::Graph.__mro__:
+    for klass in graph_Graph.__mro__:
         if "graphName" in klass.__dict__:
             descriptor = klass.__dict__["graphName"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Vertex_strategy = st.builds(
-    graph::Vertex,
+graph_Vertex_strategy = st.builds(
+    graph_Vertex,
     internalId=
         safe_text
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
     graphName=
         safe_text
 )
 
-@given(instance=graph::Vertex_strategy)
+@given(instance=graph_Vertex_strategy)
 @settings(max_examples=50)
-def test_graph::vertex_instantiation(instance):
-    assert isinstance(instance, graph::Vertex)
-
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_internalId_type(instance):
-    assert isinstance(instance.internalId, str)
+def test_graph_vertex_instantiation(instance):
+    assert isinstance(instance, graph_Vertex)
 
 
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_internalId_setter(instance):
+
+@given(instance=graph_Vertex_strategy)
+def test_graph_vertex_internalId_setter(instance):
     original = instance.internalId
     instance.internalId = original
     assert instance.internalId == original
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
-
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_graphName_type(instance):
-    assert isinstance(instance.graphName, str)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)
 
 
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_graphName_setter(instance):
+
+@given(instance=graph_Graph_strategy)
+def test_graph_graph_graphName_setter(instance):
     original = instance.graphName
     instance.graphName = original
     assert instance.graphName == original

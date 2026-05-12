@@ -3,94 +3,94 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ComparisonOp,
-    ioT::LE,
-    ioT::LT,
-    ioT::GE,
-    ioT::GT,
+    ioT_GE,
+    ioT_LE,
+    ioT_LT,
+    ioT_GT,
     Bool,
-    ioT::False,
-    ioT::True,
-    ioT::NE,
-    ioT::EQ,
+    ioT_False,
+    ioT_True,
+    ioT_NE,
+    ioT_EQ,
     SENSOR,
-    ioT::HUMIDITY,
-    ioT::TEMPERATURE,
-    ioT::LIGHTSENSOR,
+    ioT_HUMIDITY,
+    ioT_TEMPERATURE,
+    ioT_LIGHTSENSOR,
     Comparison,
-    ioT::ItemVariable,
-    ioT::EQL,
-    ioT::ItemBool,
-    ioT::AND,
-    ioT::ItemInt,
-    ioT::OR,
-    TIMEUNIT,
-    ioT::MINUTES,
-    ioT::SECONDS,
-    ioT::MILLISECONDS,
+    ioT_ItemInt,
+    ioT_EQL,
+    ioT_ItemVariable,
+    ioT_AND,
+    ioT_ItemBool,
+    ioT_OR,
     VarOrList,
-    ioT::PyList,
     Address,
-    ioT::WindowsSerialAddress,
-    ioT::UnixSerialAddress,
-    ioT::IpAddress,
+    ioT_WindowsSerialAddress,
+    ioT_UnixSerialAddress,
+    ioT_IpAddress,
     Config,
-    ioT::DeviceConfig,
-    ioT::ComparisonOp,
-    ioT::Comparison,
-    ioT::ElseBlock,
+    ioT_DeviceConfig,
+    ioT_ComparisonOp,
+    ioT_Comparison,
+    ioT_ElseBlock,
     Action,
-    ioT::LEDAction,
-    ioT::ClearListAction,
-    ioT::WEEKS,
-    ioT::DAYS,
-    ioT::HOURS,
-    ioT::Variable,
-    ioT::Bool,
+    ioT_LEDAction,
+    ioT_ClearListAction,
+    ioT_Variable,
+    ioT_Bool,
     Expression,
-    ioT::IntExpression,
-    ioT::VarAccess,
-    ioT::BoolExpression,
+    ioT_IntExpression,
+    ioT_VarAccess,
+    ioT_BoolExpression,
     ExpressionLeft,
-    ioT::ReadConnection,
-    ioT::ReadVariable,
-    ioT::ExternalOf,
-    ioT::ExpressionLeft,
+    ioT_ExternalOf,
+    ioT_ReadConnection,
+    ioT_ReadVariable,
+    ioT_ExpressionLeft,
     Command,
-    ioT::ArrowCommand,
-    ioT::IfStatement,
-    ioT::Action,
-    ioT::Command,
+    ioT_IfStatement,
+    ioT_ArrowCommand,
+    ioT_Action,
+    ioT_Command,
     ExpressionRight,
-    ioT::AddToList,
-    ioT::ExternalRight,
-    ioT::SendCommand,
-    ioT::ToVar,
-    ioT::Block,
-    ioT::SENSOR,
-    ioT::ReadSensor,
-    ioT::ConnectionConfig,
-    ioT::ExpressionRight,
-    ioT::Loop,
-    ioT::ListenStatement,
-    ioT::VarOrList,
-    ioT::ConnectStatement,
-    ioT::WifiStatement,
+    ioT_ToVar,
+    ioT_ExternalRight,
+    ioT_SendCommand,
+    ioT_AddToList,
+    ioT_Block,
+    ioT_SENSOR,
+    ioT_ReadSensor,
+    ioT_ConnectionConfig,
+    ioT_ExpressionRight,
+    ioT_Loop,
+    ioT_ListenStatement,
+    ioT_VarOrList,
+    ioT_ConnectStatement,
+    ioT_WifiStatement,
     Device,
-    ioT::IoTDevice,
-    ioT::ControllerDevice,
-    ioT::TIMEUNIT,
-    ioT::Expression,
-    ioT::Address,
-    ioT::Device,
-    ioT::Config,
-    ioT::ExternalDeclaration,
-    ioT::Model,
-    ioT::Program,
-    ioT::Declaration,
+    ioT_IoTDevice,
+    ioT_ControllerDevice,
+    ioT_TIMEUNIT,
+    ioT_Expression,
+    ioT_Address,
+    ioT_Device,
+    ioT_Config,
+    ioT_ExternalDeclaration,
+    ioT_Model,
+    ioT_Program,
+    ioT_Declaration,
+    TIMEUNIT,
+    ioT_MINUTES,
+    ioT_WEEKS,
+    ioT_SECONDS,
+    ioT_DAYS,
+    ioT_HOURS,
+    ioT_MILLISECONDS,
+    ioT_PyList,
 )
 
 # =============================================================================
@@ -113,58 +113,58 @@ def test_comparisonop_constructor_args():
 
 
 
-def test_iot::le_is_not_abstract():
-    assert not inspect.isabstract(ioT::LE)
+def test_iot_ge_is_not_abstract():
+    assert not inspect.isabstract(ioT_GE)
 
 
-def test_iot::le_constructor_exists():
-    assert callable(ioT::LE.__init__)
+def test_iot_ge_constructor_exists():
+    assert callable(ioT_GE.__init__)
 
 
-def test_iot::le_constructor_args():
-    sig = inspect.signature(ioT::LE.__init__)
+def test_iot_ge_constructor_args():
+    sig = inspect.signature(ioT_GE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::lt_is_not_abstract():
-    assert not inspect.isabstract(ioT::LT)
+def test_iot_le_is_not_abstract():
+    assert not inspect.isabstract(ioT_LE)
 
 
-def test_iot::lt_constructor_exists():
-    assert callable(ioT::LT.__init__)
+def test_iot_le_constructor_exists():
+    assert callable(ioT_LE.__init__)
 
 
-def test_iot::lt_constructor_args():
-    sig = inspect.signature(ioT::LT.__init__)
+def test_iot_le_constructor_args():
+    sig = inspect.signature(ioT_LE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::ge_is_not_abstract():
-    assert not inspect.isabstract(ioT::GE)
+def test_iot_lt_is_not_abstract():
+    assert not inspect.isabstract(ioT_LT)
 
 
-def test_iot::ge_constructor_exists():
-    assert callable(ioT::GE.__init__)
+def test_iot_lt_constructor_exists():
+    assert callable(ioT_LT.__init__)
 
 
-def test_iot::ge_constructor_args():
-    sig = inspect.signature(ioT::GE.__init__)
+def test_iot_lt_constructor_args():
+    sig = inspect.signature(ioT_LT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::gt_is_not_abstract():
-    assert not inspect.isabstract(ioT::GT)
+def test_iot_gt_is_not_abstract():
+    assert not inspect.isabstract(ioT_GT)
 
 
-def test_iot::gt_constructor_exists():
-    assert callable(ioT::GT.__init__)
+def test_iot_gt_constructor_exists():
+    assert callable(ioT_GT.__init__)
 
 
-def test_iot::gt_constructor_args():
-    sig = inspect.signature(ioT::GT.__init__)
+def test_iot_gt_constructor_args():
+    sig = inspect.signature(ioT_GT.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -183,58 +183,58 @@ def test_bool_constructor_args():
 
 
 
-def test_iot::false_is_not_abstract():
-    assert not inspect.isabstract(ioT::False)
+def test_iot_false_is_not_abstract():
+    assert not inspect.isabstract(ioT_False)
 
 
-def test_iot::false_constructor_exists():
-    assert callable(ioT::False.__init__)
+def test_iot_false_constructor_exists():
+    assert callable(ioT_False.__init__)
 
 
-def test_iot::false_constructor_args():
-    sig = inspect.signature(ioT::False.__init__)
+def test_iot_false_constructor_args():
+    sig = inspect.signature(ioT_False.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::true_is_not_abstract():
-    assert not inspect.isabstract(ioT::True)
+def test_iot_true_is_not_abstract():
+    assert not inspect.isabstract(ioT_True)
 
 
-def test_iot::true_constructor_exists():
-    assert callable(ioT::True.__init__)
+def test_iot_true_constructor_exists():
+    assert callable(ioT_True.__init__)
 
 
-def test_iot::true_constructor_args():
-    sig = inspect.signature(ioT::True.__init__)
+def test_iot_true_constructor_args():
+    sig = inspect.signature(ioT_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::ne_is_not_abstract():
-    assert not inspect.isabstract(ioT::NE)
+def test_iot_ne_is_not_abstract():
+    assert not inspect.isabstract(ioT_NE)
 
 
-def test_iot::ne_constructor_exists():
-    assert callable(ioT::NE.__init__)
+def test_iot_ne_constructor_exists():
+    assert callable(ioT_NE.__init__)
 
 
-def test_iot::ne_constructor_args():
-    sig = inspect.signature(ioT::NE.__init__)
+def test_iot_ne_constructor_args():
+    sig = inspect.signature(ioT_NE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::eq_is_not_abstract():
-    assert not inspect.isabstract(ioT::EQ)
+def test_iot_eq_is_not_abstract():
+    assert not inspect.isabstract(ioT_EQ)
 
 
-def test_iot::eq_constructor_exists():
-    assert callable(ioT::EQ.__init__)
+def test_iot_eq_constructor_exists():
+    assert callable(ioT_EQ.__init__)
 
 
-def test_iot::eq_constructor_args():
-    sig = inspect.signature(ioT::EQ.__init__)
+def test_iot_eq_constructor_args():
+    sig = inspect.signature(ioT_EQ.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -253,44 +253,44 @@ def test_sensor_constructor_args():
 
 
 
-def test_iot::humidity_is_not_abstract():
-    assert not inspect.isabstract(ioT::HUMIDITY)
+def test_iot_humidity_is_not_abstract():
+    assert not inspect.isabstract(ioT_HUMIDITY)
 
 
-def test_iot::humidity_constructor_exists():
-    assert callable(ioT::HUMIDITY.__init__)
+def test_iot_humidity_constructor_exists():
+    assert callable(ioT_HUMIDITY.__init__)
 
 
-def test_iot::humidity_constructor_args():
-    sig = inspect.signature(ioT::HUMIDITY.__init__)
+def test_iot_humidity_constructor_args():
+    sig = inspect.signature(ioT_HUMIDITY.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::temperature_is_not_abstract():
-    assert not inspect.isabstract(ioT::TEMPERATURE)
+def test_iot_temperature_is_not_abstract():
+    assert not inspect.isabstract(ioT_TEMPERATURE)
 
 
-def test_iot::temperature_constructor_exists():
-    assert callable(ioT::TEMPERATURE.__init__)
+def test_iot_temperature_constructor_exists():
+    assert callable(ioT_TEMPERATURE.__init__)
 
 
-def test_iot::temperature_constructor_args():
-    sig = inspect.signature(ioT::TEMPERATURE.__init__)
+def test_iot_temperature_constructor_args():
+    sig = inspect.signature(ioT_TEMPERATURE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::lightsensor_is_not_abstract():
-    assert not inspect.isabstract(ioT::LIGHTSENSOR)
+def test_iot_lightsensor_is_not_abstract():
+    assert not inspect.isabstract(ioT_LIGHTSENSOR)
 
 
-def test_iot::lightsensor_constructor_exists():
-    assert callable(ioT::LIGHTSENSOR.__init__)
+def test_iot_lightsensor_constructor_exists():
+    assert callable(ioT_LIGHTSENSOR.__init__)
 
 
-def test_iot::lightsensor_constructor_args():
-    sig = inspect.signature(ioT::LIGHTSENSOR.__init__)
+def test_iot_lightsensor_constructor_args():
+    sig = inspect.signature(ioT_LIGHTSENSOR.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,79 +309,23 @@ def test_comparison_constructor_args():
 
 
 
-def test_iot::itemvariable_is_not_abstract():
-    assert not inspect.isabstract(ioT::ItemVariable)
+def test_iot_itemint_is_not_abstract():
+    assert not inspect.isabstract(ioT_ItemInt)
 
 
-def test_iot::itemvariable_constructor_exists():
-    assert callable(ioT::ItemVariable.__init__)
+def test_iot_itemint_constructor_exists():
+    assert callable(ioT_ItemInt.__init__)
 
 
-def test_iot::itemvariable_constructor_args():
-    sig = inspect.signature(ioT::ItemVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::eql_is_not_abstract():
-    assert not inspect.isabstract(ioT::EQL)
-
-
-def test_iot::eql_constructor_exists():
-    assert callable(ioT::EQL.__init__)
-
-
-def test_iot::eql_constructor_args():
-    sig = inspect.signature(ioT::EQL.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::itembool_is_not_abstract():
-    assert not inspect.isabstract(ioT::ItemBool)
-
-
-def test_iot::itembool_constructor_exists():
-    assert callable(ioT::ItemBool.__init__)
-
-
-def test_iot::itembool_constructor_args():
-    sig = inspect.signature(ioT::ItemBool.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::and_is_not_abstract():
-    assert not inspect.isabstract(ioT::AND)
-
-
-def test_iot::and_constructor_exists():
-    assert callable(ioT::AND.__init__)
-
-
-def test_iot::and_constructor_args():
-    sig = inspect.signature(ioT::AND.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::itemint_is_not_abstract():
-    assert not inspect.isabstract(ioT::ItemInt)
-
-
-def test_iot::itemint_constructor_exists():
-    assert callable(ioT::ItemInt.__init__)
-
-
-def test_iot::itemint_constructor_args():
-    sig = inspect.signature(ioT::ItemInt.__init__)
+def test_iot_itemint_constructor_args():
+    sig = inspect.signature(ioT_ItemInt.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_iot::itemint_has_value():
-    assert hasattr(ioT::ItemInt, "value")
+def test_iot_itemint_has_value():
+    assert hasattr(ioT_ItemInt, "value")
     descriptor = None
-    for klass in ioT::ItemInt.__mro__:
+    for klass in ioT_ItemInt.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -389,72 +333,72 @@ def test_iot::itemint_has_value():
 
 
 
-def test_iot::or_is_not_abstract():
-    assert not inspect.isabstract(ioT::OR)
+def test_iot_eql_is_not_abstract():
+    assert not inspect.isabstract(ioT_EQL)
 
 
-def test_iot::or_constructor_exists():
-    assert callable(ioT::OR.__init__)
+def test_iot_eql_constructor_exists():
+    assert callable(ioT_EQL.__init__)
 
 
-def test_iot::or_constructor_args():
-    sig = inspect.signature(ioT::OR.__init__)
+def test_iot_eql_constructor_args():
+    sig = inspect.signature(ioT_EQL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_timeunit_is_not_abstract():
-    assert not inspect.isabstract(TIMEUNIT)
+def test_iot_itemvariable_is_not_abstract():
+    assert not inspect.isabstract(ioT_ItemVariable)
 
 
-def test_timeunit_constructor_exists():
-    assert callable(TIMEUNIT.__init__)
+def test_iot_itemvariable_constructor_exists():
+    assert callable(ioT_ItemVariable.__init__)
 
 
-def test_timeunit_constructor_args():
-    sig = inspect.signature(TIMEUNIT.__init__)
+def test_iot_itemvariable_constructor_args():
+    sig = inspect.signature(ioT_ItemVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::minutes_is_not_abstract():
-    assert not inspect.isabstract(ioT::MINUTES)
+def test_iot_and_is_not_abstract():
+    assert not inspect.isabstract(ioT_AND)
 
 
-def test_iot::minutes_constructor_exists():
-    assert callable(ioT::MINUTES.__init__)
+def test_iot_and_constructor_exists():
+    assert callable(ioT_AND.__init__)
 
 
-def test_iot::minutes_constructor_args():
-    sig = inspect.signature(ioT::MINUTES.__init__)
+def test_iot_and_constructor_args():
+    sig = inspect.signature(ioT_AND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::seconds_is_not_abstract():
-    assert not inspect.isabstract(ioT::SECONDS)
+def test_iot_itembool_is_not_abstract():
+    assert not inspect.isabstract(ioT_ItemBool)
 
 
-def test_iot::seconds_constructor_exists():
-    assert callable(ioT::SECONDS.__init__)
+def test_iot_itembool_constructor_exists():
+    assert callable(ioT_ItemBool.__init__)
 
 
-def test_iot::seconds_constructor_args():
-    sig = inspect.signature(ioT::SECONDS.__init__)
+def test_iot_itembool_constructor_args():
+    sig = inspect.signature(ioT_ItemBool.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::milliseconds_is_not_abstract():
-    assert not inspect.isabstract(ioT::MILLISECONDS)
+def test_iot_or_is_not_abstract():
+    assert not inspect.isabstract(ioT_OR)
 
 
-def test_iot::milliseconds_constructor_exists():
-    assert callable(ioT::MILLISECONDS.__init__)
+def test_iot_or_constructor_exists():
+    assert callable(ioT_OR.__init__)
 
 
-def test_iot::milliseconds_constructor_args():
-    sig = inspect.signature(ioT::MILLISECONDS.__init__)
+def test_iot_or_constructor_args():
+    sig = inspect.signature(ioT_OR.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -473,20 +417,6 @@ def test_varorlist_constructor_args():
 
 
 
-def test_iot::pylist_is_not_abstract():
-    assert not inspect.isabstract(ioT::PyList)
-
-
-def test_iot::pylist_constructor_exists():
-    assert callable(ioT::PyList.__init__)
-
-
-def test_iot::pylist_constructor_args():
-    sig = inspect.signature(ioT::PyList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_address_is_not_abstract():
     assert not inspect.isabstract(Address)
 
@@ -501,44 +431,44 @@ def test_address_constructor_args():
 
 
 
-def test_iot::windowsserialaddress_is_not_abstract():
-    assert not inspect.isabstract(ioT::WindowsSerialAddress)
+def test_iot_windowsserialaddress_is_not_abstract():
+    assert not inspect.isabstract(ioT_WindowsSerialAddress)
 
 
-def test_iot::windowsserialaddress_constructor_exists():
-    assert callable(ioT::WindowsSerialAddress.__init__)
+def test_iot_windowsserialaddress_constructor_exists():
+    assert callable(ioT_WindowsSerialAddress.__init__)
 
 
-def test_iot::windowsserialaddress_constructor_args():
-    sig = inspect.signature(ioT::WindowsSerialAddress.__init__)
+def test_iot_windowsserialaddress_constructor_args():
+    sig = inspect.signature(ioT_WindowsSerialAddress.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::unixserialaddress_is_not_abstract():
-    assert not inspect.isabstract(ioT::UnixSerialAddress)
+def test_iot_unixserialaddress_is_not_abstract():
+    assert not inspect.isabstract(ioT_UnixSerialAddress)
 
 
-def test_iot::unixserialaddress_constructor_exists():
-    assert callable(ioT::UnixSerialAddress.__init__)
+def test_iot_unixserialaddress_constructor_exists():
+    assert callable(ioT_UnixSerialAddress.__init__)
 
 
-def test_iot::unixserialaddress_constructor_args():
-    sig = inspect.signature(ioT::UnixSerialAddress.__init__)
+def test_iot_unixserialaddress_constructor_args():
+    sig = inspect.signature(ioT_UnixSerialAddress.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::ipaddress_is_not_abstract():
-    assert not inspect.isabstract(ioT::IpAddress)
+def test_iot_ipaddress_is_not_abstract():
+    assert not inspect.isabstract(ioT_IpAddress)
 
 
-def test_iot::ipaddress_constructor_exists():
-    assert callable(ioT::IpAddress.__init__)
+def test_iot_ipaddress_constructor_exists():
+    assert callable(ioT_IpAddress.__init__)
 
 
-def test_iot::ipaddress_constructor_args():
-    sig = inspect.signature(ioT::IpAddress.__init__)
+def test_iot_ipaddress_constructor_args():
+    sig = inspect.signature(ioT_IpAddress.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -557,37 +487,37 @@ def test_config_constructor_args():
 
 
 
-def test_iot::deviceconfig_is_not_abstract():
-    assert not inspect.isabstract(ioT::DeviceConfig)
+def test_iot_deviceconfig_is_not_abstract():
+    assert not inspect.isabstract(ioT_DeviceConfig)
 
 
-def test_iot::deviceconfig_constructor_exists():
-    assert callable(ioT::DeviceConfig.__init__)
+def test_iot_deviceconfig_constructor_exists():
+    assert callable(ioT_DeviceConfig.__init__)
 
 
-def test_iot::deviceconfig_constructor_args():
-    sig = inspect.signature(ioT::DeviceConfig.__init__)
+def test_iot_deviceconfig_constructor_args():
+    sig = inspect.signature(ioT_DeviceConfig.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::comparisonop_is_not_abstract():
-    assert not inspect.isabstract(ioT::ComparisonOp)
+def test_iot_comparisonop_is_not_abstract():
+    assert not inspect.isabstract(ioT_ComparisonOp)
 
 
-def test_iot::comparisonop_constructor_exists():
-    assert callable(ioT::ComparisonOp.__init__)
+def test_iot_comparisonop_constructor_exists():
+    assert callable(ioT_ComparisonOp.__init__)
 
 
-def test_iot::comparisonop_constructor_args():
-    sig = inspect.signature(ioT::ComparisonOp.__init__)
+def test_iot_comparisonop_constructor_args():
+    sig = inspect.signature(ioT_ComparisonOp.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_iot::comparisonop_has_op():
-    assert hasattr(ioT::ComparisonOp, "op")
+def test_iot_comparisonop_has_op():
+    assert hasattr(ioT_ComparisonOp, "op")
     descriptor = None
-    for klass in ioT::ComparisonOp.__mro__:
+    for klass in ioT_ComparisonOp.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -595,30 +525,30 @@ def test_iot::comparisonop_has_op():
 
 
 
-def test_iot::comparison_is_not_abstract():
-    assert not inspect.isabstract(ioT::Comparison)
+def test_iot_comparison_is_not_abstract():
+    assert not inspect.isabstract(ioT_Comparison)
 
 
-def test_iot::comparison_constructor_exists():
-    assert callable(ioT::Comparison.__init__)
+def test_iot_comparison_constructor_exists():
+    assert callable(ioT_Comparison.__init__)
 
 
-def test_iot::comparison_constructor_args():
-    sig = inspect.signature(ioT::Comparison.__init__)
+def test_iot_comparison_constructor_args():
+    sig = inspect.signature(ioT_Comparison.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::elseblock_is_not_abstract():
-    assert not inspect.isabstract(ioT::ElseBlock)
+def test_iot_elseblock_is_not_abstract():
+    assert not inspect.isabstract(ioT_ElseBlock)
 
 
-def test_iot::elseblock_constructor_exists():
-    assert callable(ioT::ElseBlock.__init__)
+def test_iot_elseblock_constructor_exists():
+    assert callable(ioT_ElseBlock.__init__)
 
 
-def test_iot::elseblock_constructor_args():
-    sig = inspect.signature(ioT::ElseBlock.__init__)
+def test_iot_elseblock_constructor_args():
+    sig = inspect.signature(ioT_ElseBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -637,23 +567,23 @@ def test_action_constructor_args():
 
 
 
-def test_iot::ledaction_is_not_abstract():
-    assert not inspect.isabstract(ioT::LEDAction)
+def test_iot_ledaction_is_not_abstract():
+    assert not inspect.isabstract(ioT_LEDAction)
 
 
-def test_iot::ledaction_constructor_exists():
-    assert callable(ioT::LEDAction.__init__)
+def test_iot_ledaction_constructor_exists():
+    assert callable(ioT_LEDAction.__init__)
 
 
-def test_iot::ledaction_constructor_args():
-    sig = inspect.signature(ioT::LEDAction.__init__)
+def test_iot_ledaction_constructor_args():
+    sig = inspect.signature(ioT_LEDAction.__init__)
     params = list(sig.parameters.keys())
     assert "state" in params, "Missing parameter 'state'"
 
-def test_iot::ledaction_has_state():
-    assert hasattr(ioT::LEDAction, "state")
+def test_iot_ledaction_has_state():
+    assert hasattr(ioT_LEDAction, "state")
     descriptor = None
-    for klass in ioT::LEDAction.__mro__:
+    for klass in ioT_LEDAction.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
@@ -661,86 +591,44 @@ def test_iot::ledaction_has_state():
 
 
 
-def test_iot::clearlistaction_is_not_abstract():
-    assert not inspect.isabstract(ioT::ClearListAction)
+def test_iot_clearlistaction_is_not_abstract():
+    assert not inspect.isabstract(ioT_ClearListAction)
 
 
-def test_iot::clearlistaction_constructor_exists():
-    assert callable(ioT::ClearListAction.__init__)
+def test_iot_clearlistaction_constructor_exists():
+    assert callable(ioT_ClearListAction.__init__)
 
 
-def test_iot::clearlistaction_constructor_args():
-    sig = inspect.signature(ioT::ClearListAction.__init__)
+def test_iot_clearlistaction_constructor_args():
+    sig = inspect.signature(ioT_ClearListAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::weeks_is_not_abstract():
-    assert not inspect.isabstract(ioT::WEEKS)
+def test_iot_variable_is_not_abstract():
+    assert not inspect.isabstract(ioT_Variable)
 
 
-def test_iot::weeks_constructor_exists():
-    assert callable(ioT::WEEKS.__init__)
+def test_iot_variable_constructor_exists():
+    assert callable(ioT_Variable.__init__)
 
 
-def test_iot::weeks_constructor_args():
-    sig = inspect.signature(ioT::WEEKS.__init__)
+def test_iot_variable_constructor_args():
+    sig = inspect.signature(ioT_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::days_is_not_abstract():
-    assert not inspect.isabstract(ioT::DAYS)
+def test_iot_bool_is_not_abstract():
+    assert not inspect.isabstract(ioT_Bool)
 
 
-def test_iot::days_constructor_exists():
-    assert callable(ioT::DAYS.__init__)
+def test_iot_bool_constructor_exists():
+    assert callable(ioT_Bool.__init__)
 
 
-def test_iot::days_constructor_args():
-    sig = inspect.signature(ioT::DAYS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::hours_is_not_abstract():
-    assert not inspect.isabstract(ioT::HOURS)
-
-
-def test_iot::hours_constructor_exists():
-    assert callable(ioT::HOURS.__init__)
-
-
-def test_iot::hours_constructor_args():
-    sig = inspect.signature(ioT::HOURS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::variable_is_not_abstract():
-    assert not inspect.isabstract(ioT::Variable)
-
-
-def test_iot::variable_constructor_exists():
-    assert callable(ioT::Variable.__init__)
-
-
-def test_iot::variable_constructor_args():
-    sig = inspect.signature(ioT::Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot::bool_is_not_abstract():
-    assert not inspect.isabstract(ioT::Bool)
-
-
-def test_iot::bool_constructor_exists():
-    assert callable(ioT::Bool.__init__)
-
-
-def test_iot::bool_constructor_args():
-    sig = inspect.signature(ioT::Bool.__init__)
+def test_iot_bool_constructor_args():
+    sig = inspect.signature(ioT_Bool.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -759,23 +647,23 @@ def test_expression_constructor_args():
 
 
 
-def test_iot::intexpression_is_not_abstract():
-    assert not inspect.isabstract(ioT::IntExpression)
+def test_iot_intexpression_is_not_abstract():
+    assert not inspect.isabstract(ioT_IntExpression)
 
 
-def test_iot::intexpression_constructor_exists():
-    assert callable(ioT::IntExpression.__init__)
+def test_iot_intexpression_constructor_exists():
+    assert callable(ioT_IntExpression.__init__)
 
 
-def test_iot::intexpression_constructor_args():
-    sig = inspect.signature(ioT::IntExpression.__init__)
+def test_iot_intexpression_constructor_args():
+    sig = inspect.signature(ioT_IntExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_iot::intexpression_has_value():
-    assert hasattr(ioT::IntExpression, "value")
+def test_iot_intexpression_has_value():
+    assert hasattr(ioT_IntExpression, "value")
     descriptor = None
-    for klass in ioT::IntExpression.__mro__:
+    for klass in ioT_IntExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -783,30 +671,30 @@ def test_iot::intexpression_has_value():
 
 
 
-def test_iot::varaccess_is_not_abstract():
-    assert not inspect.isabstract(ioT::VarAccess)
+def test_iot_varaccess_is_not_abstract():
+    assert not inspect.isabstract(ioT_VarAccess)
 
 
-def test_iot::varaccess_constructor_exists():
-    assert callable(ioT::VarAccess.__init__)
+def test_iot_varaccess_constructor_exists():
+    assert callable(ioT_VarAccess.__init__)
 
 
-def test_iot::varaccess_constructor_args():
-    sig = inspect.signature(ioT::VarAccess.__init__)
+def test_iot_varaccess_constructor_args():
+    sig = inspect.signature(ioT_VarAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::boolexpression_is_not_abstract():
-    assert not inspect.isabstract(ioT::BoolExpression)
+def test_iot_boolexpression_is_not_abstract():
+    assert not inspect.isabstract(ioT_BoolExpression)
 
 
-def test_iot::boolexpression_constructor_exists():
-    assert callable(ioT::BoolExpression.__init__)
+def test_iot_boolexpression_constructor_exists():
+    assert callable(ioT_BoolExpression.__init__)
 
 
-def test_iot::boolexpression_constructor_args():
-    sig = inspect.signature(ioT::BoolExpression.__init__)
+def test_iot_boolexpression_constructor_args():
+    sig = inspect.signature(ioT_BoolExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -825,58 +713,58 @@ def test_expressionleft_constructor_args():
 
 
 
-def test_iot::readconnection_is_not_abstract():
-    assert not inspect.isabstract(ioT::ReadConnection)
+def test_iot_externalof_is_not_abstract():
+    assert not inspect.isabstract(ioT_ExternalOf)
 
 
-def test_iot::readconnection_constructor_exists():
-    assert callable(ioT::ReadConnection.__init__)
+def test_iot_externalof_constructor_exists():
+    assert callable(ioT_ExternalOf.__init__)
 
 
-def test_iot::readconnection_constructor_args():
-    sig = inspect.signature(ioT::ReadConnection.__init__)
+def test_iot_externalof_constructor_args():
+    sig = inspect.signature(ioT_ExternalOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::readvariable_is_not_abstract():
-    assert not inspect.isabstract(ioT::ReadVariable)
+def test_iot_readconnection_is_not_abstract():
+    assert not inspect.isabstract(ioT_ReadConnection)
 
 
-def test_iot::readvariable_constructor_exists():
-    assert callable(ioT::ReadVariable.__init__)
+def test_iot_readconnection_constructor_exists():
+    assert callable(ioT_ReadConnection.__init__)
 
 
-def test_iot::readvariable_constructor_args():
-    sig = inspect.signature(ioT::ReadVariable.__init__)
+def test_iot_readconnection_constructor_args():
+    sig = inspect.signature(ioT_ReadConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::externalof_is_not_abstract():
-    assert not inspect.isabstract(ioT::ExternalOf)
+def test_iot_readvariable_is_not_abstract():
+    assert not inspect.isabstract(ioT_ReadVariable)
 
 
-def test_iot::externalof_constructor_exists():
-    assert callable(ioT::ExternalOf.__init__)
+def test_iot_readvariable_constructor_exists():
+    assert callable(ioT_ReadVariable.__init__)
 
 
-def test_iot::externalof_constructor_args():
-    sig = inspect.signature(ioT::ExternalOf.__init__)
+def test_iot_readvariable_constructor_args():
+    sig = inspect.signature(ioT_ReadVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::expressionleft_is_not_abstract():
-    assert not inspect.isabstract(ioT::ExpressionLeft)
+def test_iot_expressionleft_is_not_abstract():
+    assert not inspect.isabstract(ioT_ExpressionLeft)
 
 
-def test_iot::expressionleft_constructor_exists():
-    assert callable(ioT::ExpressionLeft.__init__)
+def test_iot_expressionleft_constructor_exists():
+    assert callable(ioT_ExpressionLeft.__init__)
 
 
-def test_iot::expressionleft_constructor_args():
-    sig = inspect.signature(ioT::ExpressionLeft.__init__)
+def test_iot_expressionleft_constructor_args():
+    sig = inspect.signature(ioT_ExpressionLeft.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -895,58 +783,58 @@ def test_command_constructor_args():
 
 
 
-def test_iot::arrowcommand_is_not_abstract():
-    assert not inspect.isabstract(ioT::ArrowCommand)
+def test_iot_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(ioT_IfStatement)
 
 
-def test_iot::arrowcommand_constructor_exists():
-    assert callable(ioT::ArrowCommand.__init__)
+def test_iot_ifstatement_constructor_exists():
+    assert callable(ioT_IfStatement.__init__)
 
 
-def test_iot::arrowcommand_constructor_args():
-    sig = inspect.signature(ioT::ArrowCommand.__init__)
+def test_iot_ifstatement_constructor_args():
+    sig = inspect.signature(ioT_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(ioT::IfStatement)
+def test_iot_arrowcommand_is_not_abstract():
+    assert not inspect.isabstract(ioT_ArrowCommand)
 
 
-def test_iot::ifstatement_constructor_exists():
-    assert callable(ioT::IfStatement.__init__)
+def test_iot_arrowcommand_constructor_exists():
+    assert callable(ioT_ArrowCommand.__init__)
 
 
-def test_iot::ifstatement_constructor_args():
-    sig = inspect.signature(ioT::IfStatement.__init__)
+def test_iot_arrowcommand_constructor_args():
+    sig = inspect.signature(ioT_ArrowCommand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::action_is_not_abstract():
-    assert not inspect.isabstract(ioT::Action)
+def test_iot_action_is_not_abstract():
+    assert not inspect.isabstract(ioT_Action)
 
 
-def test_iot::action_constructor_exists():
-    assert callable(ioT::Action.__init__)
+def test_iot_action_constructor_exists():
+    assert callable(ioT_Action.__init__)
 
 
-def test_iot::action_constructor_args():
-    sig = inspect.signature(ioT::Action.__init__)
+def test_iot_action_constructor_args():
+    sig = inspect.signature(ioT_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::command_is_not_abstract():
-    assert not inspect.isabstract(ioT::Command)
+def test_iot_command_is_not_abstract():
+    assert not inspect.isabstract(ioT_Command)
 
 
-def test_iot::command_constructor_exists():
-    assert callable(ioT::Command.__init__)
+def test_iot_command_constructor_exists():
+    assert callable(ioT_Command.__init__)
 
 
-def test_iot::command_constructor_args():
-    sig = inspect.signature(ioT::Command.__init__)
+def test_iot_command_constructor_args():
+    sig = inspect.signature(ioT_Command.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -965,121 +853,121 @@ def test_expressionright_constructor_args():
 
 
 
-def test_iot::addtolist_is_not_abstract():
-    assert not inspect.isabstract(ioT::AddToList)
+def test_iot_tovar_is_not_abstract():
+    assert not inspect.isabstract(ioT_ToVar)
 
 
-def test_iot::addtolist_constructor_exists():
-    assert callable(ioT::AddToList.__init__)
+def test_iot_tovar_constructor_exists():
+    assert callable(ioT_ToVar.__init__)
 
 
-def test_iot::addtolist_constructor_args():
-    sig = inspect.signature(ioT::AddToList.__init__)
+def test_iot_tovar_constructor_args():
+    sig = inspect.signature(ioT_ToVar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::externalright_is_not_abstract():
-    assert not inspect.isabstract(ioT::ExternalRight)
+def test_iot_externalright_is_not_abstract():
+    assert not inspect.isabstract(ioT_ExternalRight)
 
 
-def test_iot::externalright_constructor_exists():
-    assert callable(ioT::ExternalRight.__init__)
+def test_iot_externalright_constructor_exists():
+    assert callable(ioT_ExternalRight.__init__)
 
 
-def test_iot::externalright_constructor_args():
-    sig = inspect.signature(ioT::ExternalRight.__init__)
+def test_iot_externalright_constructor_args():
+    sig = inspect.signature(ioT_ExternalRight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sendcommand_is_not_abstract():
-    assert not inspect.isabstract(ioT::SendCommand)
+def test_iot_sendcommand_is_not_abstract():
+    assert not inspect.isabstract(ioT_SendCommand)
 
 
-def test_iot::sendcommand_constructor_exists():
-    assert callable(ioT::SendCommand.__init__)
+def test_iot_sendcommand_constructor_exists():
+    assert callable(ioT_SendCommand.__init__)
 
 
-def test_iot::sendcommand_constructor_args():
-    sig = inspect.signature(ioT::SendCommand.__init__)
+def test_iot_sendcommand_constructor_args():
+    sig = inspect.signature(ioT_SendCommand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::tovar_is_not_abstract():
-    assert not inspect.isabstract(ioT::ToVar)
+def test_iot_addtolist_is_not_abstract():
+    assert not inspect.isabstract(ioT_AddToList)
 
 
-def test_iot::tovar_constructor_exists():
-    assert callable(ioT::ToVar.__init__)
+def test_iot_addtolist_constructor_exists():
+    assert callable(ioT_AddToList.__init__)
 
 
-def test_iot::tovar_constructor_args():
-    sig = inspect.signature(ioT::ToVar.__init__)
+def test_iot_addtolist_constructor_args():
+    sig = inspect.signature(ioT_AddToList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::block_is_not_abstract():
-    assert not inspect.isabstract(ioT::Block)
+def test_iot_block_is_not_abstract():
+    assert not inspect.isabstract(ioT_Block)
 
 
-def test_iot::block_constructor_exists():
-    assert callable(ioT::Block.__init__)
+def test_iot_block_constructor_exists():
+    assert callable(ioT_Block.__init__)
 
 
-def test_iot::block_constructor_args():
-    sig = inspect.signature(ioT::Block.__init__)
+def test_iot_block_constructor_args():
+    sig = inspect.signature(ioT_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sensor_is_not_abstract():
-    assert not inspect.isabstract(ioT::SENSOR)
+def test_iot_sensor_is_not_abstract():
+    assert not inspect.isabstract(ioT_SENSOR)
 
 
-def test_iot::sensor_constructor_exists():
-    assert callable(ioT::SENSOR.__init__)
+def test_iot_sensor_constructor_exists():
+    assert callable(ioT_SENSOR.__init__)
 
 
-def test_iot::sensor_constructor_args():
-    sig = inspect.signature(ioT::SENSOR.__init__)
+def test_iot_sensor_constructor_args():
+    sig = inspect.signature(ioT_SENSOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::readsensor_is_not_abstract():
-    assert not inspect.isabstract(ioT::ReadSensor)
+def test_iot_readsensor_is_not_abstract():
+    assert not inspect.isabstract(ioT_ReadSensor)
 
 
-def test_iot::readsensor_constructor_exists():
-    assert callable(ioT::ReadSensor.__init__)
+def test_iot_readsensor_constructor_exists():
+    assert callable(ioT_ReadSensor.__init__)
 
 
-def test_iot::readsensor_constructor_args():
-    sig = inspect.signature(ioT::ReadSensor.__init__)
+def test_iot_readsensor_constructor_args():
+    sig = inspect.signature(ioT_ReadSensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::connectionconfig_is_not_abstract():
-    assert not inspect.isabstract(ioT::ConnectionConfig)
+def test_iot_connectionconfig_is_not_abstract():
+    assert not inspect.isabstract(ioT_ConnectionConfig)
 
 
-def test_iot::connectionconfig_constructor_exists():
-    assert callable(ioT::ConnectionConfig.__init__)
+def test_iot_connectionconfig_constructor_exists():
+    assert callable(ioT_ConnectionConfig.__init__)
 
 
-def test_iot::connectionconfig_constructor_args():
-    sig = inspect.signature(ioT::ConnectionConfig.__init__)
+def test_iot_connectionconfig_constructor_args():
+    sig = inspect.signature(ioT_ConnectionConfig.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_iot::connectionconfig_has_type():
-    assert hasattr(ioT::ConnectionConfig, "type")
+def test_iot_connectionconfig_has_type():
+    assert hasattr(ioT_ConnectionConfig, "type")
     descriptor = None
-    for klass in ioT::ConnectionConfig.__mro__:
+    for klass in ioT_ConnectionConfig.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1087,85 +975,85 @@ def test_iot::connectionconfig_has_type():
 
 
 
-def test_iot::expressionright_is_not_abstract():
-    assert not inspect.isabstract(ioT::ExpressionRight)
+def test_iot_expressionright_is_not_abstract():
+    assert not inspect.isabstract(ioT_ExpressionRight)
 
 
-def test_iot::expressionright_constructor_exists():
-    assert callable(ioT::ExpressionRight.__init__)
+def test_iot_expressionright_constructor_exists():
+    assert callable(ioT_ExpressionRight.__init__)
 
 
-def test_iot::expressionright_constructor_args():
-    sig = inspect.signature(ioT::ExpressionRight.__init__)
+def test_iot_expressionright_constructor_args():
+    sig = inspect.signature(ioT_ExpressionRight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::loop_is_not_abstract():
-    assert not inspect.isabstract(ioT::Loop)
+def test_iot_loop_is_not_abstract():
+    assert not inspect.isabstract(ioT_Loop)
 
 
-def test_iot::loop_constructor_exists():
-    assert callable(ioT::Loop.__init__)
+def test_iot_loop_constructor_exists():
+    assert callable(ioT_Loop.__init__)
 
 
-def test_iot::loop_constructor_args():
-    sig = inspect.signature(ioT::Loop.__init__)
+def test_iot_loop_constructor_args():
+    sig = inspect.signature(ioT_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::listenstatement_is_not_abstract():
-    assert not inspect.isabstract(ioT::ListenStatement)
+def test_iot_listenstatement_is_not_abstract():
+    assert not inspect.isabstract(ioT_ListenStatement)
 
 
-def test_iot::listenstatement_constructor_exists():
-    assert callable(ioT::ListenStatement.__init__)
+def test_iot_listenstatement_constructor_exists():
+    assert callable(ioT_ListenStatement.__init__)
 
 
-def test_iot::listenstatement_constructor_args():
-    sig = inspect.signature(ioT::ListenStatement.__init__)
+def test_iot_listenstatement_constructor_args():
+    sig = inspect.signature(ioT_ListenStatement.__init__)
     params = list(sig.parameters.keys())
-    assert "ip" in params, "Missing parameter 'ip'"
     assert "port" in params, "Missing parameter 'port'"
+    assert "ip" in params, "Missing parameter 'ip'"
 
-def test_iot::listenstatement_has_ip():
-    assert hasattr(ioT::ListenStatement, "ip")
+def test_iot_listenstatement_has_port():
+    assert hasattr(ioT_ListenStatement, "port")
     descriptor = None
-    for klass in ioT::ListenStatement.__mro__:
-        if "ip" in klass.__dict__:
-            descriptor = klass.__dict__["ip"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::listenstatement_has_port():
-    assert hasattr(ioT::ListenStatement, "port")
-    descriptor = None
-    for klass in ioT::ListenStatement.__mro__:
+    for klass in ioT_ListenStatement.__mro__:
         if "port" in klass.__dict__:
             descriptor = klass.__dict__["port"]
             break
     assert isinstance(descriptor, property)
 
+def test_iot_listenstatement_has_ip():
+    assert hasattr(ioT_ListenStatement, "ip")
+    descriptor = None
+    for klass in ioT_ListenStatement.__mro__:
+        if "ip" in klass.__dict__:
+            descriptor = klass.__dict__["ip"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iot::varorlist_is_not_abstract():
-    assert not inspect.isabstract(ioT::VarOrList)
+
+def test_iot_varorlist_is_not_abstract():
+    assert not inspect.isabstract(ioT_VarOrList)
 
 
-def test_iot::varorlist_constructor_exists():
-    assert callable(ioT::VarOrList.__init__)
+def test_iot_varorlist_constructor_exists():
+    assert callable(ioT_VarOrList.__init__)
 
 
-def test_iot::varorlist_constructor_args():
-    sig = inspect.signature(ioT::VarOrList.__init__)
+def test_iot_varorlist_constructor_args():
+    sig = inspect.signature(ioT_VarOrList.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::varorlist_has_name():
-    assert hasattr(ioT::VarOrList, "name")
+def test_iot_varorlist_has_name():
+    assert hasattr(ioT_VarOrList, "name")
     descriptor = None
-    for klass in ioT::VarOrList.__mro__:
+    for klass in ioT_VarOrList.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1173,30 +1061,30 @@ def test_iot::varorlist_has_name():
 
 
 
-def test_iot::connectstatement_is_not_abstract():
-    assert not inspect.isabstract(ioT::ConnectStatement)
+def test_iot_connectstatement_is_not_abstract():
+    assert not inspect.isabstract(ioT_ConnectStatement)
 
 
-def test_iot::connectstatement_constructor_exists():
-    assert callable(ioT::ConnectStatement.__init__)
+def test_iot_connectstatement_constructor_exists():
+    assert callable(ioT_ConnectStatement.__init__)
 
 
-def test_iot::connectstatement_constructor_args():
-    sig = inspect.signature(ioT::ConnectStatement.__init__)
+def test_iot_connectstatement_constructor_args():
+    sig = inspect.signature(ioT_ConnectStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::wifistatement_is_not_abstract():
-    assert not inspect.isabstract(ioT::WifiStatement)
+def test_iot_wifistatement_is_not_abstract():
+    assert not inspect.isabstract(ioT_WifiStatement)
 
 
-def test_iot::wifistatement_constructor_exists():
-    assert callable(ioT::WifiStatement.__init__)
+def test_iot_wifistatement_constructor_exists():
+    assert callable(ioT_WifiStatement.__init__)
 
 
-def test_iot::wifistatement_constructor_args():
-    sig = inspect.signature(ioT::WifiStatement.__init__)
+def test_iot_wifistatement_constructor_args():
+    sig = inspect.signature(ioT_WifiStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1215,79 +1103,79 @@ def test_device_constructor_args():
 
 
 
-def test_iot::iotdevice_is_not_abstract():
-    assert not inspect.isabstract(ioT::IoTDevice)
+def test_iot_iotdevice_is_not_abstract():
+    assert not inspect.isabstract(ioT_IoTDevice)
 
 
-def test_iot::iotdevice_constructor_exists():
-    assert callable(ioT::IoTDevice.__init__)
+def test_iot_iotdevice_constructor_exists():
+    assert callable(ioT_IoTDevice.__init__)
 
 
-def test_iot::iotdevice_constructor_args():
-    sig = inspect.signature(ioT::IoTDevice.__init__)
+def test_iot_iotdevice_constructor_args():
+    sig = inspect.signature(ioT_IoTDevice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::controllerdevice_is_not_abstract():
-    assert not inspect.isabstract(ioT::ControllerDevice)
+def test_iot_controllerdevice_is_not_abstract():
+    assert not inspect.isabstract(ioT_ControllerDevice)
 
 
-def test_iot::controllerdevice_constructor_exists():
-    assert callable(ioT::ControllerDevice.__init__)
+def test_iot_controllerdevice_constructor_exists():
+    assert callable(ioT_ControllerDevice.__init__)
 
 
-def test_iot::controllerdevice_constructor_args():
-    sig = inspect.signature(ioT::ControllerDevice.__init__)
+def test_iot_controllerdevice_constructor_args():
+    sig = inspect.signature(ioT_ControllerDevice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::timeunit_is_not_abstract():
-    assert not inspect.isabstract(ioT::TIMEUNIT)
+def test_iot_timeunit_is_not_abstract():
+    assert not inspect.isabstract(ioT_TIMEUNIT)
 
 
-def test_iot::timeunit_constructor_exists():
-    assert callable(ioT::TIMEUNIT.__init__)
+def test_iot_timeunit_constructor_exists():
+    assert callable(ioT_TIMEUNIT.__init__)
 
 
-def test_iot::timeunit_constructor_args():
-    sig = inspect.signature(ioT::TIMEUNIT.__init__)
+def test_iot_timeunit_constructor_args():
+    sig = inspect.signature(ioT_TIMEUNIT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::expression_is_not_abstract():
-    assert not inspect.isabstract(ioT::Expression)
+def test_iot_expression_is_not_abstract():
+    assert not inspect.isabstract(ioT_Expression)
 
 
-def test_iot::expression_constructor_exists():
-    assert callable(ioT::Expression.__init__)
+def test_iot_expression_constructor_exists():
+    assert callable(ioT_Expression.__init__)
 
 
-def test_iot::expression_constructor_args():
-    sig = inspect.signature(ioT::Expression.__init__)
+def test_iot_expression_constructor_args():
+    sig = inspect.signature(ioT_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::address_is_not_abstract():
-    assert not inspect.isabstract(ioT::Address)
+def test_iot_address_is_not_abstract():
+    assert not inspect.isabstract(ioT_Address)
 
 
-def test_iot::address_constructor_exists():
-    assert callable(ioT::Address.__init__)
+def test_iot_address_constructor_exists():
+    assert callable(ioT_Address.__init__)
 
 
-def test_iot::address_constructor_args():
-    sig = inspect.signature(ioT::Address.__init__)
+def test_iot_address_constructor_args():
+    sig = inspect.signature(ioT_Address.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_iot::address_has_value():
-    assert hasattr(ioT::Address, "value")
+def test_iot_address_has_value():
+    assert hasattr(ioT_Address, "value")
     descriptor = None
-    for klass in ioT::Address.__mro__:
+    for klass in ioT_Address.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1295,23 +1183,23 @@ def test_iot::address_has_value():
 
 
 
-def test_iot::device_is_not_abstract():
-    assert not inspect.isabstract(ioT::Device)
+def test_iot_device_is_not_abstract():
+    assert not inspect.isabstract(ioT_Device)
 
 
-def test_iot::device_constructor_exists():
-    assert callable(ioT::Device.__init__)
+def test_iot_device_constructor_exists():
+    assert callable(ioT_Device.__init__)
 
 
-def test_iot::device_constructor_args():
-    sig = inspect.signature(ioT::Device.__init__)
+def test_iot_device_constructor_args():
+    sig = inspect.signature(ioT_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::device_has_name():
-    assert hasattr(ioT::Device, "name")
+def test_iot_device_has_name():
+    assert hasattr(ioT_Device, "name")
     descriptor = None
-    for klass in ioT::Device.__mro__:
+    for klass in ioT_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1319,23 +1207,23 @@ def test_iot::device_has_name():
 
 
 
-def test_iot::config_is_not_abstract():
-    assert not inspect.isabstract(ioT::Config)
+def test_iot_config_is_not_abstract():
+    assert not inspect.isabstract(ioT_Config)
 
 
-def test_iot::config_constructor_exists():
-    assert callable(ioT::Config.__init__)
+def test_iot_config_constructor_exists():
+    assert callable(ioT_Config.__init__)
 
 
-def test_iot::config_constructor_args():
-    sig = inspect.signature(ioT::Config.__init__)
+def test_iot_config_constructor_args():
+    sig = inspect.signature(ioT_Config.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::config_has_name():
-    assert hasattr(ioT::Config, "name")
+def test_iot_config_has_name():
+    assert hasattr(ioT_Config, "name")
     descriptor = None
-    for klass in ioT::Config.__mro__:
+    for klass in ioT_Config.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1343,23 +1231,23 @@ def test_iot::config_has_name():
 
 
 
-def test_iot::externaldeclaration_is_not_abstract():
-    assert not inspect.isabstract(ioT::ExternalDeclaration)
+def test_iot_externaldeclaration_is_not_abstract():
+    assert not inspect.isabstract(ioT_ExternalDeclaration)
 
 
-def test_iot::externaldeclaration_constructor_exists():
-    assert callable(ioT::ExternalDeclaration.__init__)
+def test_iot_externaldeclaration_constructor_exists():
+    assert callable(ioT_ExternalDeclaration.__init__)
 
 
-def test_iot::externaldeclaration_constructor_args():
-    sig = inspect.signature(ioT::ExternalDeclaration.__init__)
+def test_iot_externaldeclaration_constructor_args():
+    sig = inspect.signature(ioT_ExternalDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::externaldeclaration_has_name():
-    assert hasattr(ioT::ExternalDeclaration, "name")
+def test_iot_externaldeclaration_has_name():
+    assert hasattr(ioT_ExternalDeclaration, "name")
     descriptor = None
-    for klass in ioT::ExternalDeclaration.__mro__:
+    for klass in ioT_ExternalDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1367,65 +1255,177 @@ def test_iot::externaldeclaration_has_name():
 
 
 
-def test_iot::model_is_not_abstract():
-    assert not inspect.isabstract(ioT::Model)
+def test_iot_model_is_not_abstract():
+    assert not inspect.isabstract(ioT_Model)
 
 
-def test_iot::model_constructor_exists():
-    assert callable(ioT::Model.__init__)
+def test_iot_model_constructor_exists():
+    assert callable(ioT_Model.__init__)
 
 
-def test_iot::model_constructor_args():
-    sig = inspect.signature(ioT::Model.__init__)
+def test_iot_model_constructor_args():
+    sig = inspect.signature(ioT_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::program_is_not_abstract():
-    assert not inspect.isabstract(ioT::Program)
+def test_iot_program_is_not_abstract():
+    assert not inspect.isabstract(ioT_Program)
 
 
-def test_iot::program_constructor_exists():
-    assert callable(ioT::Program.__init__)
+def test_iot_program_constructor_exists():
+    assert callable(ioT_Program.__init__)
 
 
-def test_iot::program_constructor_args():
-    sig = inspect.signature(ioT::Program.__init__)
+def test_iot_program_constructor_args():
+    sig = inspect.signature(ioT_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::declaration_is_not_abstract():
-    assert not inspect.isabstract(ioT::Declaration)
+def test_iot_declaration_is_not_abstract():
+    assert not inspect.isabstract(ioT_Declaration)
 
 
-def test_iot::declaration_constructor_exists():
-    assert callable(ioT::Declaration.__init__)
+def test_iot_declaration_constructor_exists():
+    assert callable(ioT_Declaration.__init__)
 
 
-def test_iot::declaration_constructor_args():
-    sig = inspect.signature(ioT::Declaration.__init__)
+def test_iot_declaration_constructor_args():
+    sig = inspect.signature(ioT_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
 
-def test_iot::declaration_has_value():
-    assert hasattr(ioT::Declaration, "value")
+def test_iot_declaration_has_value():
+    assert hasattr(ioT_Declaration, "value")
     descriptor = None
-    for klass in ioT::Declaration.__mro__:
+    for klass in ioT_Declaration.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::declaration_has_key():
-    assert hasattr(ioT::Declaration, "key")
+def test_iot_declaration_has_key():
+    assert hasattr(ioT_Declaration, "key")
     descriptor = None
-    for klass in ioT::Declaration.__mro__:
+    for klass in ioT_Declaration.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_timeunit_is_not_abstract():
+    assert not inspect.isabstract(TIMEUNIT)
+
+
+def test_timeunit_constructor_exists():
+    assert callable(TIMEUNIT.__init__)
+
+
+def test_timeunit_constructor_args():
+    sig = inspect.signature(TIMEUNIT.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_minutes_is_not_abstract():
+    assert not inspect.isabstract(ioT_MINUTES)
+
+
+def test_iot_minutes_constructor_exists():
+    assert callable(ioT_MINUTES.__init__)
+
+
+def test_iot_minutes_constructor_args():
+    sig = inspect.signature(ioT_MINUTES.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_weeks_is_not_abstract():
+    assert not inspect.isabstract(ioT_WEEKS)
+
+
+def test_iot_weeks_constructor_exists():
+    assert callable(ioT_WEEKS.__init__)
+
+
+def test_iot_weeks_constructor_args():
+    sig = inspect.signature(ioT_WEEKS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_seconds_is_not_abstract():
+    assert not inspect.isabstract(ioT_SECONDS)
+
+
+def test_iot_seconds_constructor_exists():
+    assert callable(ioT_SECONDS.__init__)
+
+
+def test_iot_seconds_constructor_args():
+    sig = inspect.signature(ioT_SECONDS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_days_is_not_abstract():
+    assert not inspect.isabstract(ioT_DAYS)
+
+
+def test_iot_days_constructor_exists():
+    assert callable(ioT_DAYS.__init__)
+
+
+def test_iot_days_constructor_args():
+    sig = inspect.signature(ioT_DAYS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_hours_is_not_abstract():
+    assert not inspect.isabstract(ioT_HOURS)
+
+
+def test_iot_hours_constructor_exists():
+    assert callable(ioT_HOURS.__init__)
+
+
+def test_iot_hours_constructor_args():
+    sig = inspect.signature(ioT_HOURS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_milliseconds_is_not_abstract():
+    assert not inspect.isabstract(ioT_MILLISECONDS)
+
+
+def test_iot_milliseconds_constructor_exists():
+    assert callable(ioT_MILLISECONDS.__init__)
+
+
+def test_iot_milliseconds_constructor_args():
+    sig = inspect.signature(ioT_MILLISECONDS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot_pylist_is_not_abstract():
+    assert not inspect.isabstract(ioT_PyList)
+
+
+def test_iot_pylist_constructor_exists():
+    assert callable(ioT_PyList.__init__)
+
+
+def test_iot_pylist_constructor_args():
+    sig = inspect.signature(ioT_PyList.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -1442,285 +1442,285 @@ safe_text = st.text(
 ComparisonOp_strategy = st.builds(
     ComparisonOp,
 )
-ioT::LE_strategy = st.builds(
-    ioT::LE,
+ioT_GE_strategy = st.builds(
+    ioT_GE,
 )
-ioT::LT_strategy = st.builds(
-    ioT::LT,
+ioT_LE_strategy = st.builds(
+    ioT_LE,
 )
-ioT::GE_strategy = st.builds(
-    ioT::GE,
+ioT_LT_strategy = st.builds(
+    ioT_LT,
 )
-ioT::GT_strategy = st.builds(
-    ioT::GT,
+ioT_GT_strategy = st.builds(
+    ioT_GT,
 )
 Bool_strategy = st.builds(
     Bool,
 )
-ioT::False_strategy = st.builds(
-    ioT::False,
+ioT_False_strategy = st.builds(
+    ioT_False,
 )
-ioT::True_strategy = st.builds(
-    ioT::True,
+ioT_True_strategy = st.builds(
+    ioT_True,
 )
-ioT::NE_strategy = st.builds(
-    ioT::NE,
+ioT_NE_strategy = st.builds(
+    ioT_NE,
 )
-ioT::EQ_strategy = st.builds(
-    ioT::EQ,
+ioT_EQ_strategy = st.builds(
+    ioT_EQ,
 )
 SENSOR_strategy = st.builds(
     SENSOR,
 )
-ioT::HUMIDITY_strategy = st.builds(
-    ioT::HUMIDITY,
+ioT_HUMIDITY_strategy = st.builds(
+    ioT_HUMIDITY,
 )
-ioT::TEMPERATURE_strategy = st.builds(
-    ioT::TEMPERATURE,
+ioT_TEMPERATURE_strategy = st.builds(
+    ioT_TEMPERATURE,
 )
-ioT::LIGHTSENSOR_strategy = st.builds(
-    ioT::LIGHTSENSOR,
+ioT_LIGHTSENSOR_strategy = st.builds(
+    ioT_LIGHTSENSOR,
 )
 Comparison_strategy = st.builds(
     Comparison,
 )
-ioT::ItemVariable_strategy = st.builds(
-    ioT::ItemVariable,
-)
-ioT::EQL_strategy = st.builds(
-    ioT::EQL,
-)
-ioT::ItemBool_strategy = st.builds(
-    ioT::ItemBool,
-)
-ioT::AND_strategy = st.builds(
-    ioT::AND,
-)
-ioT::ItemInt_strategy = st.builds(
-    ioT::ItemInt,
+ioT_ItemInt_strategy = st.builds(
+    ioT_ItemInt,
     value=
         st.integers()
 )
-ioT::OR_strategy = st.builds(
-    ioT::OR,
+ioT_EQL_strategy = st.builds(
+    ioT_EQL,
 )
-TIMEUNIT_strategy = st.builds(
-    TIMEUNIT,
+ioT_ItemVariable_strategy = st.builds(
+    ioT_ItemVariable,
 )
-ioT::MINUTES_strategy = st.builds(
-    ioT::MINUTES,
+ioT_AND_strategy = st.builds(
+    ioT_AND,
 )
-ioT::SECONDS_strategy = st.builds(
-    ioT::SECONDS,
+ioT_ItemBool_strategy = st.builds(
+    ioT_ItemBool,
 )
-ioT::MILLISECONDS_strategy = st.builds(
-    ioT::MILLISECONDS,
+ioT_OR_strategy = st.builds(
+    ioT_OR,
 )
 VarOrList_strategy = st.builds(
     VarOrList,
 )
-ioT::PyList_strategy = st.builds(
-    ioT::PyList,
-)
 Address_strategy = st.builds(
     Address,
 )
-ioT::WindowsSerialAddress_strategy = st.builds(
-    ioT::WindowsSerialAddress,
+ioT_WindowsSerialAddress_strategy = st.builds(
+    ioT_WindowsSerialAddress,
 )
-ioT::UnixSerialAddress_strategy = st.builds(
-    ioT::UnixSerialAddress,
+ioT_UnixSerialAddress_strategy = st.builds(
+    ioT_UnixSerialAddress,
 )
-ioT::IpAddress_strategy = st.builds(
-    ioT::IpAddress,
+ioT_IpAddress_strategy = st.builds(
+    ioT_IpAddress,
 )
 Config_strategy = st.builds(
     Config,
 )
-ioT::DeviceConfig_strategy = st.builds(
-    ioT::DeviceConfig,
+ioT_DeviceConfig_strategy = st.builds(
+    ioT_DeviceConfig,
 )
-ioT::ComparisonOp_strategy = st.builds(
-    ioT::ComparisonOp,
+ioT_ComparisonOp_strategy = st.builds(
+    ioT_ComparisonOp,
     op=
         safe_text
 )
-ioT::Comparison_strategy = st.builds(
-    ioT::Comparison,
+ioT_Comparison_strategy = st.builds(
+    ioT_Comparison,
 )
-ioT::ElseBlock_strategy = st.builds(
-    ioT::ElseBlock,
+ioT_ElseBlock_strategy = st.builds(
+    ioT_ElseBlock,
 )
 Action_strategy = st.builds(
     Action,
 )
-ioT::LEDAction_strategy = st.builds(
-    ioT::LEDAction,
+ioT_LEDAction_strategy = st.builds(
+    ioT_LEDAction,
     state=
         safe_text
 )
-ioT::ClearListAction_strategy = st.builds(
-    ioT::ClearListAction,
+ioT_ClearListAction_strategy = st.builds(
+    ioT_ClearListAction,
 )
-ioT::WEEKS_strategy = st.builds(
-    ioT::WEEKS,
+ioT_Variable_strategy = st.builds(
+    ioT_Variable,
 )
-ioT::DAYS_strategy = st.builds(
-    ioT::DAYS,
-)
-ioT::HOURS_strategy = st.builds(
-    ioT::HOURS,
-)
-ioT::Variable_strategy = st.builds(
-    ioT::Variable,
-)
-ioT::Bool_strategy = st.builds(
-    ioT::Bool,
+ioT_Bool_strategy = st.builds(
+    ioT_Bool,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-ioT::IntExpression_strategy = st.builds(
-    ioT::IntExpression,
+ioT_IntExpression_strategy = st.builds(
+    ioT_IntExpression,
     value=
         st.integers()
 )
-ioT::VarAccess_strategy = st.builds(
-    ioT::VarAccess,
+ioT_VarAccess_strategy = st.builds(
+    ioT_VarAccess,
 )
-ioT::BoolExpression_strategy = st.builds(
-    ioT::BoolExpression,
+ioT_BoolExpression_strategy = st.builds(
+    ioT_BoolExpression,
 )
 ExpressionLeft_strategy = st.builds(
     ExpressionLeft,
 )
-ioT::ReadConnection_strategy = st.builds(
-    ioT::ReadConnection,
+ioT_ExternalOf_strategy = st.builds(
+    ioT_ExternalOf,
 )
-ioT::ReadVariable_strategy = st.builds(
-    ioT::ReadVariable,
+ioT_ReadConnection_strategy = st.builds(
+    ioT_ReadConnection,
 )
-ioT::ExternalOf_strategy = st.builds(
-    ioT::ExternalOf,
+ioT_ReadVariable_strategy = st.builds(
+    ioT_ReadVariable,
 )
-ioT::ExpressionLeft_strategy = st.builds(
-    ioT::ExpressionLeft,
+ioT_ExpressionLeft_strategy = st.builds(
+    ioT_ExpressionLeft,
 )
 Command_strategy = st.builds(
     Command,
 )
-ioT::ArrowCommand_strategy = st.builds(
-    ioT::ArrowCommand,
+ioT_IfStatement_strategy = st.builds(
+    ioT_IfStatement,
 )
-ioT::IfStatement_strategy = st.builds(
-    ioT::IfStatement,
+ioT_ArrowCommand_strategy = st.builds(
+    ioT_ArrowCommand,
 )
-ioT::Action_strategy = st.builds(
-    ioT::Action,
+ioT_Action_strategy = st.builds(
+    ioT_Action,
 )
-ioT::Command_strategy = st.builds(
-    ioT::Command,
+ioT_Command_strategy = st.builds(
+    ioT_Command,
 )
 ExpressionRight_strategy = st.builds(
     ExpressionRight,
 )
-ioT::AddToList_strategy = st.builds(
-    ioT::AddToList,
+ioT_ToVar_strategy = st.builds(
+    ioT_ToVar,
 )
-ioT::ExternalRight_strategy = st.builds(
-    ioT::ExternalRight,
+ioT_ExternalRight_strategy = st.builds(
+    ioT_ExternalRight,
 )
-ioT::SendCommand_strategy = st.builds(
-    ioT::SendCommand,
+ioT_SendCommand_strategy = st.builds(
+    ioT_SendCommand,
 )
-ioT::ToVar_strategy = st.builds(
-    ioT::ToVar,
+ioT_AddToList_strategy = st.builds(
+    ioT_AddToList,
 )
-ioT::Block_strategy = st.builds(
-    ioT::Block,
+ioT_Block_strategy = st.builds(
+    ioT_Block,
 )
-ioT::SENSOR_strategy = st.builds(
-    ioT::SENSOR,
+ioT_SENSOR_strategy = st.builds(
+    ioT_SENSOR,
 )
-ioT::ReadSensor_strategy = st.builds(
-    ioT::ReadSensor,
+ioT_ReadSensor_strategy = st.builds(
+    ioT_ReadSensor,
 )
-ioT::ConnectionConfig_strategy = st.builds(
-    ioT::ConnectionConfig,
+ioT_ConnectionConfig_strategy = st.builds(
+    ioT_ConnectionConfig,
     type=
         safe_text
 )
-ioT::ExpressionRight_strategy = st.builds(
-    ioT::ExpressionRight,
+ioT_ExpressionRight_strategy = st.builds(
+    ioT_ExpressionRight,
 )
-ioT::Loop_strategy = st.builds(
-    ioT::Loop,
+ioT_Loop_strategy = st.builds(
+    ioT_Loop,
 )
-ioT::ListenStatement_strategy = st.builds(
-    ioT::ListenStatement,
-    ip=
-        safe_text,
+ioT_ListenStatement_strategy = st.builds(
+    ioT_ListenStatement,
     port=
-        st.integers()
+        st.integers(),
+    ip=
+        safe_text
 )
-ioT::VarOrList_strategy = st.builds(
-    ioT::VarOrList,
+ioT_VarOrList_strategy = st.builds(
+    ioT_VarOrList,
     name=
         safe_text
 )
-ioT::ConnectStatement_strategy = st.builds(
-    ioT::ConnectStatement,
+ioT_ConnectStatement_strategy = st.builds(
+    ioT_ConnectStatement,
 )
-ioT::WifiStatement_strategy = st.builds(
-    ioT::WifiStatement,
+ioT_WifiStatement_strategy = st.builds(
+    ioT_WifiStatement,
 )
 Device_strategy = st.builds(
     Device,
 )
-ioT::IoTDevice_strategy = st.builds(
-    ioT::IoTDevice,
+ioT_IoTDevice_strategy = st.builds(
+    ioT_IoTDevice,
 )
-ioT::ControllerDevice_strategy = st.builds(
-    ioT::ControllerDevice,
+ioT_ControllerDevice_strategy = st.builds(
+    ioT_ControllerDevice,
 )
-ioT::TIMEUNIT_strategy = st.builds(
-    ioT::TIMEUNIT,
+ioT_TIMEUNIT_strategy = st.builds(
+    ioT_TIMEUNIT,
 )
-ioT::Expression_strategy = st.builds(
-    ioT::Expression,
+ioT_Expression_strategy = st.builds(
+    ioT_Expression,
 )
-ioT::Address_strategy = st.builds(
-    ioT::Address,
+ioT_Address_strategy = st.builds(
+    ioT_Address,
     value=
         safe_text
 )
-ioT::Device_strategy = st.builds(
-    ioT::Device,
+ioT_Device_strategy = st.builds(
+    ioT_Device,
     name=
         safe_text
 )
-ioT::Config_strategy = st.builds(
-    ioT::Config,
+ioT_Config_strategy = st.builds(
+    ioT_Config,
     name=
         safe_text
 )
-ioT::ExternalDeclaration_strategy = st.builds(
-    ioT::ExternalDeclaration,
+ioT_ExternalDeclaration_strategy = st.builds(
+    ioT_ExternalDeclaration,
     name=
         safe_text
 )
-ioT::Model_strategy = st.builds(
-    ioT::Model,
+ioT_Model_strategy = st.builds(
+    ioT_Model,
 )
-ioT::Program_strategy = st.builds(
-    ioT::Program,
+ioT_Program_strategy = st.builds(
+    ioT_Program,
 )
-ioT::Declaration_strategy = st.builds(
-    ioT::Declaration,
+ioT_Declaration_strategy = st.builds(
+    ioT_Declaration,
     value=
         safe_text,
     key=
         safe_text
+)
+TIMEUNIT_strategy = st.builds(
+    TIMEUNIT,
+)
+ioT_MINUTES_strategy = st.builds(
+    ioT_MINUTES,
+)
+ioT_WEEKS_strategy = st.builds(
+    ioT_WEEKS,
+)
+ioT_SECONDS_strategy = st.builds(
+    ioT_SECONDS,
+)
+ioT_DAYS_strategy = st.builds(
+    ioT_DAYS,
+)
+ioT_HOURS_strategy = st.builds(
+    ioT_HOURS,
+)
+ioT_MILLISECONDS_strategy = st.builds(
+    ioT_MILLISECONDS,
+)
+ioT_PyList_strategy = st.builds(
+    ioT_PyList,
 )
 
 @given(instance=ComparisonOp_strategy)
@@ -1728,576 +1728,534 @@ ioT::Declaration_strategy = st.builds(
 def test_comparisonop_instantiation(instance):
     assert isinstance(instance, ComparisonOp)
 
-@given(instance=ioT::LE_strategy)
+@given(instance=ioT_GE_strategy)
 @settings(max_examples=50)
-def test_iot::le_instantiation(instance):
-    assert isinstance(instance, ioT::LE)
+def test_iot_ge_instantiation(instance):
+    assert isinstance(instance, ioT_GE)
 
-@given(instance=ioT::LT_strategy)
+@given(instance=ioT_LE_strategy)
 @settings(max_examples=50)
-def test_iot::lt_instantiation(instance):
-    assert isinstance(instance, ioT::LT)
+def test_iot_le_instantiation(instance):
+    assert isinstance(instance, ioT_LE)
 
-@given(instance=ioT::GE_strategy)
+@given(instance=ioT_LT_strategy)
 @settings(max_examples=50)
-def test_iot::ge_instantiation(instance):
-    assert isinstance(instance, ioT::GE)
+def test_iot_lt_instantiation(instance):
+    assert isinstance(instance, ioT_LT)
 
-@given(instance=ioT::GT_strategy)
+@given(instance=ioT_GT_strategy)
 @settings(max_examples=50)
-def test_iot::gt_instantiation(instance):
-    assert isinstance(instance, ioT::GT)
+def test_iot_gt_instantiation(instance):
+    assert isinstance(instance, ioT_GT)
 
 @given(instance=Bool_strategy)
 @settings(max_examples=50)
 def test_bool_instantiation(instance):
     assert isinstance(instance, Bool)
 
-@given(instance=ioT::False_strategy)
+@given(instance=ioT_False_strategy)
 @settings(max_examples=50)
-def test_iot::false_instantiation(instance):
-    assert isinstance(instance, ioT::False)
+def test_iot_false_instantiation(instance):
+    assert isinstance(instance, ioT_False)
 
-@given(instance=ioT::True_strategy)
+@given(instance=ioT_True_strategy)
 @settings(max_examples=50)
-def test_iot::true_instantiation(instance):
-    assert isinstance(instance, ioT::True)
+def test_iot_true_instantiation(instance):
+    assert isinstance(instance, ioT_True)
 
-@given(instance=ioT::NE_strategy)
+@given(instance=ioT_NE_strategy)
 @settings(max_examples=50)
-def test_iot::ne_instantiation(instance):
-    assert isinstance(instance, ioT::NE)
+def test_iot_ne_instantiation(instance):
+    assert isinstance(instance, ioT_NE)
 
-@given(instance=ioT::EQ_strategy)
+@given(instance=ioT_EQ_strategy)
 @settings(max_examples=50)
-def test_iot::eq_instantiation(instance):
-    assert isinstance(instance, ioT::EQ)
+def test_iot_eq_instantiation(instance):
+    assert isinstance(instance, ioT_EQ)
 
 @given(instance=SENSOR_strategy)
 @settings(max_examples=50)
 def test_sensor_instantiation(instance):
     assert isinstance(instance, SENSOR)
 
-@given(instance=ioT::HUMIDITY_strategy)
+@given(instance=ioT_HUMIDITY_strategy)
 @settings(max_examples=50)
-def test_iot::humidity_instantiation(instance):
-    assert isinstance(instance, ioT::HUMIDITY)
+def test_iot_humidity_instantiation(instance):
+    assert isinstance(instance, ioT_HUMIDITY)
 
-@given(instance=ioT::TEMPERATURE_strategy)
+@given(instance=ioT_TEMPERATURE_strategy)
 @settings(max_examples=50)
-def test_iot::temperature_instantiation(instance):
-    assert isinstance(instance, ioT::TEMPERATURE)
+def test_iot_temperature_instantiation(instance):
+    assert isinstance(instance, ioT_TEMPERATURE)
 
-@given(instance=ioT::LIGHTSENSOR_strategy)
+@given(instance=ioT_LIGHTSENSOR_strategy)
 @settings(max_examples=50)
-def test_iot::lightsensor_instantiation(instance):
-    assert isinstance(instance, ioT::LIGHTSENSOR)
+def test_iot_lightsensor_instantiation(instance):
+    assert isinstance(instance, ioT_LIGHTSENSOR)
 
 @given(instance=Comparison_strategy)
 @settings(max_examples=50)
 def test_comparison_instantiation(instance):
     assert isinstance(instance, Comparison)
 
-@given(instance=ioT::ItemVariable_strategy)
+@given(instance=ioT_ItemInt_strategy)
 @settings(max_examples=50)
-def test_iot::itemvariable_instantiation(instance):
-    assert isinstance(instance, ioT::ItemVariable)
-
-@given(instance=ioT::EQL_strategy)
-@settings(max_examples=50)
-def test_iot::eql_instantiation(instance):
-    assert isinstance(instance, ioT::EQL)
-
-@given(instance=ioT::ItemBool_strategy)
-@settings(max_examples=50)
-def test_iot::itembool_instantiation(instance):
-    assert isinstance(instance, ioT::ItemBool)
-
-@given(instance=ioT::AND_strategy)
-@settings(max_examples=50)
-def test_iot::and_instantiation(instance):
-    assert isinstance(instance, ioT::AND)
-
-@given(instance=ioT::ItemInt_strategy)
-@settings(max_examples=50)
-def test_iot::itemint_instantiation(instance):
-    assert isinstance(instance, ioT::ItemInt)
-
-@given(instance=ioT::ItemInt_strategy)
-def test_iot::itemint_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_iot_itemint_instantiation(instance):
+    assert isinstance(instance, ioT_ItemInt)
 
 
-@given(instance=ioT::ItemInt_strategy)
-def test_iot::itemint_value_setter(instance):
+
+@given(instance=ioT_ItemInt_strategy)
+def test_iot_itemint_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ioT::OR_strategy)
+@given(instance=ioT_EQL_strategy)
 @settings(max_examples=50)
-def test_iot::or_instantiation(instance):
-    assert isinstance(instance, ioT::OR)
+def test_iot_eql_instantiation(instance):
+    assert isinstance(instance, ioT_EQL)
 
-@given(instance=TIMEUNIT_strategy)
+@given(instance=ioT_ItemVariable_strategy)
 @settings(max_examples=50)
-def test_timeunit_instantiation(instance):
-    assert isinstance(instance, TIMEUNIT)
+def test_iot_itemvariable_instantiation(instance):
+    assert isinstance(instance, ioT_ItemVariable)
 
-@given(instance=ioT::MINUTES_strategy)
+@given(instance=ioT_AND_strategy)
 @settings(max_examples=50)
-def test_iot::minutes_instantiation(instance):
-    assert isinstance(instance, ioT::MINUTES)
+def test_iot_and_instantiation(instance):
+    assert isinstance(instance, ioT_AND)
 
-@given(instance=ioT::SECONDS_strategy)
+@given(instance=ioT_ItemBool_strategy)
 @settings(max_examples=50)
-def test_iot::seconds_instantiation(instance):
-    assert isinstance(instance, ioT::SECONDS)
+def test_iot_itembool_instantiation(instance):
+    assert isinstance(instance, ioT_ItemBool)
 
-@given(instance=ioT::MILLISECONDS_strategy)
+@given(instance=ioT_OR_strategy)
 @settings(max_examples=50)
-def test_iot::milliseconds_instantiation(instance):
-    assert isinstance(instance, ioT::MILLISECONDS)
+def test_iot_or_instantiation(instance):
+    assert isinstance(instance, ioT_OR)
 
 @given(instance=VarOrList_strategy)
 @settings(max_examples=50)
 def test_varorlist_instantiation(instance):
     assert isinstance(instance, VarOrList)
 
-@given(instance=ioT::PyList_strategy)
-@settings(max_examples=50)
-def test_iot::pylist_instantiation(instance):
-    assert isinstance(instance, ioT::PyList)
-
 @given(instance=Address_strategy)
 @settings(max_examples=50)
 def test_address_instantiation(instance):
     assert isinstance(instance, Address)
 
-@given(instance=ioT::WindowsSerialAddress_strategy)
+@given(instance=ioT_WindowsSerialAddress_strategy)
 @settings(max_examples=50)
-def test_iot::windowsserialaddress_instantiation(instance):
-    assert isinstance(instance, ioT::WindowsSerialAddress)
+def test_iot_windowsserialaddress_instantiation(instance):
+    assert isinstance(instance, ioT_WindowsSerialAddress)
 
-@given(instance=ioT::UnixSerialAddress_strategy)
+@given(instance=ioT_UnixSerialAddress_strategy)
 @settings(max_examples=50)
-def test_iot::unixserialaddress_instantiation(instance):
-    assert isinstance(instance, ioT::UnixSerialAddress)
+def test_iot_unixserialaddress_instantiation(instance):
+    assert isinstance(instance, ioT_UnixSerialAddress)
 
-@given(instance=ioT::IpAddress_strategy)
+@given(instance=ioT_IpAddress_strategy)
 @settings(max_examples=50)
-def test_iot::ipaddress_instantiation(instance):
-    assert isinstance(instance, ioT::IpAddress)
+def test_iot_ipaddress_instantiation(instance):
+    assert isinstance(instance, ioT_IpAddress)
 
 @given(instance=Config_strategy)
 @settings(max_examples=50)
 def test_config_instantiation(instance):
     assert isinstance(instance, Config)
 
-@given(instance=ioT::DeviceConfig_strategy)
+@given(instance=ioT_DeviceConfig_strategy)
 @settings(max_examples=50)
-def test_iot::deviceconfig_instantiation(instance):
-    assert isinstance(instance, ioT::DeviceConfig)
+def test_iot_deviceconfig_instantiation(instance):
+    assert isinstance(instance, ioT_DeviceConfig)
 
-@given(instance=ioT::ComparisonOp_strategy)
+@given(instance=ioT_ComparisonOp_strategy)
 @settings(max_examples=50)
-def test_iot::comparisonop_instantiation(instance):
-    assert isinstance(instance, ioT::ComparisonOp)
-
-@given(instance=ioT::ComparisonOp_strategy)
-def test_iot::comparisonop_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_iot_comparisonop_instantiation(instance):
+    assert isinstance(instance, ioT_ComparisonOp)
 
 
-@given(instance=ioT::ComparisonOp_strategy)
-def test_iot::comparisonop_op_setter(instance):
+
+@given(instance=ioT_ComparisonOp_strategy)
+def test_iot_comparisonop_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=ioT::Comparison_strategy)
+@given(instance=ioT_Comparison_strategy)
 @settings(max_examples=50)
-def test_iot::comparison_instantiation(instance):
-    assert isinstance(instance, ioT::Comparison)
+def test_iot_comparison_instantiation(instance):
+    assert isinstance(instance, ioT_Comparison)
 
-@given(instance=ioT::ElseBlock_strategy)
+@given(instance=ioT_ElseBlock_strategy)
 @settings(max_examples=50)
-def test_iot::elseblock_instantiation(instance):
-    assert isinstance(instance, ioT::ElseBlock)
+def test_iot_elseblock_instantiation(instance):
+    assert isinstance(instance, ioT_ElseBlock)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=ioT::LEDAction_strategy)
+@given(instance=ioT_LEDAction_strategy)
 @settings(max_examples=50)
-def test_iot::ledaction_instantiation(instance):
-    assert isinstance(instance, ioT::LEDAction)
-
-@given(instance=ioT::LEDAction_strategy)
-def test_iot::ledaction_state_type(instance):
-    assert isinstance(instance.state, str)
+def test_iot_ledaction_instantiation(instance):
+    assert isinstance(instance, ioT_LEDAction)
 
 
-@given(instance=ioT::LEDAction_strategy)
-def test_iot::ledaction_state_setter(instance):
+
+@given(instance=ioT_LEDAction_strategy)
+def test_iot_ledaction_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
 
-@given(instance=ioT::ClearListAction_strategy)
+@given(instance=ioT_ClearListAction_strategy)
 @settings(max_examples=50)
-def test_iot::clearlistaction_instantiation(instance):
-    assert isinstance(instance, ioT::ClearListAction)
+def test_iot_clearlistaction_instantiation(instance):
+    assert isinstance(instance, ioT_ClearListAction)
 
-@given(instance=ioT::WEEKS_strategy)
+@given(instance=ioT_Variable_strategy)
 @settings(max_examples=50)
-def test_iot::weeks_instantiation(instance):
-    assert isinstance(instance, ioT::WEEKS)
+def test_iot_variable_instantiation(instance):
+    assert isinstance(instance, ioT_Variable)
 
-@given(instance=ioT::DAYS_strategy)
+@given(instance=ioT_Bool_strategy)
 @settings(max_examples=50)
-def test_iot::days_instantiation(instance):
-    assert isinstance(instance, ioT::DAYS)
-
-@given(instance=ioT::HOURS_strategy)
-@settings(max_examples=50)
-def test_iot::hours_instantiation(instance):
-    assert isinstance(instance, ioT::HOURS)
-
-@given(instance=ioT::Variable_strategy)
-@settings(max_examples=50)
-def test_iot::variable_instantiation(instance):
-    assert isinstance(instance, ioT::Variable)
-
-@given(instance=ioT::Bool_strategy)
-@settings(max_examples=50)
-def test_iot::bool_instantiation(instance):
-    assert isinstance(instance, ioT::Bool)
+def test_iot_bool_instantiation(instance):
+    assert isinstance(instance, ioT_Bool)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=ioT::IntExpression_strategy)
+@given(instance=ioT_IntExpression_strategy)
 @settings(max_examples=50)
-def test_iot::intexpression_instantiation(instance):
-    assert isinstance(instance, ioT::IntExpression)
-
-@given(instance=ioT::IntExpression_strategy)
-def test_iot::intexpression_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_iot_intexpression_instantiation(instance):
+    assert isinstance(instance, ioT_IntExpression)
 
 
-@given(instance=ioT::IntExpression_strategy)
-def test_iot::intexpression_value_setter(instance):
+
+@given(instance=ioT_IntExpression_strategy)
+def test_iot_intexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ioT::VarAccess_strategy)
+@given(instance=ioT_VarAccess_strategy)
 @settings(max_examples=50)
-def test_iot::varaccess_instantiation(instance):
-    assert isinstance(instance, ioT::VarAccess)
+def test_iot_varaccess_instantiation(instance):
+    assert isinstance(instance, ioT_VarAccess)
 
-@given(instance=ioT::BoolExpression_strategy)
+@given(instance=ioT_BoolExpression_strategy)
 @settings(max_examples=50)
-def test_iot::boolexpression_instantiation(instance):
-    assert isinstance(instance, ioT::BoolExpression)
+def test_iot_boolexpression_instantiation(instance):
+    assert isinstance(instance, ioT_BoolExpression)
 
 @given(instance=ExpressionLeft_strategy)
 @settings(max_examples=50)
 def test_expressionleft_instantiation(instance):
     assert isinstance(instance, ExpressionLeft)
 
-@given(instance=ioT::ReadConnection_strategy)
+@given(instance=ioT_ExternalOf_strategy)
 @settings(max_examples=50)
-def test_iot::readconnection_instantiation(instance):
-    assert isinstance(instance, ioT::ReadConnection)
+def test_iot_externalof_instantiation(instance):
+    assert isinstance(instance, ioT_ExternalOf)
 
-@given(instance=ioT::ReadVariable_strategy)
+@given(instance=ioT_ReadConnection_strategy)
 @settings(max_examples=50)
-def test_iot::readvariable_instantiation(instance):
-    assert isinstance(instance, ioT::ReadVariable)
+def test_iot_readconnection_instantiation(instance):
+    assert isinstance(instance, ioT_ReadConnection)
 
-@given(instance=ioT::ExternalOf_strategy)
+@given(instance=ioT_ReadVariable_strategy)
 @settings(max_examples=50)
-def test_iot::externalof_instantiation(instance):
-    assert isinstance(instance, ioT::ExternalOf)
+def test_iot_readvariable_instantiation(instance):
+    assert isinstance(instance, ioT_ReadVariable)
 
-@given(instance=ioT::ExpressionLeft_strategy)
+@given(instance=ioT_ExpressionLeft_strategy)
 @settings(max_examples=50)
-def test_iot::expressionleft_instantiation(instance):
-    assert isinstance(instance, ioT::ExpressionLeft)
+def test_iot_expressionleft_instantiation(instance):
+    assert isinstance(instance, ioT_ExpressionLeft)
 
 @given(instance=Command_strategy)
 @settings(max_examples=50)
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=ioT::ArrowCommand_strategy)
+@given(instance=ioT_IfStatement_strategy)
 @settings(max_examples=50)
-def test_iot::arrowcommand_instantiation(instance):
-    assert isinstance(instance, ioT::ArrowCommand)
+def test_iot_ifstatement_instantiation(instance):
+    assert isinstance(instance, ioT_IfStatement)
 
-@given(instance=ioT::IfStatement_strategy)
+@given(instance=ioT_ArrowCommand_strategy)
 @settings(max_examples=50)
-def test_iot::ifstatement_instantiation(instance):
-    assert isinstance(instance, ioT::IfStatement)
+def test_iot_arrowcommand_instantiation(instance):
+    assert isinstance(instance, ioT_ArrowCommand)
 
-@given(instance=ioT::Action_strategy)
+@given(instance=ioT_Action_strategy)
 @settings(max_examples=50)
-def test_iot::action_instantiation(instance):
-    assert isinstance(instance, ioT::Action)
+def test_iot_action_instantiation(instance):
+    assert isinstance(instance, ioT_Action)
 
-@given(instance=ioT::Command_strategy)
+@given(instance=ioT_Command_strategy)
 @settings(max_examples=50)
-def test_iot::command_instantiation(instance):
-    assert isinstance(instance, ioT::Command)
+def test_iot_command_instantiation(instance):
+    assert isinstance(instance, ioT_Command)
 
 @given(instance=ExpressionRight_strategy)
 @settings(max_examples=50)
 def test_expressionright_instantiation(instance):
     assert isinstance(instance, ExpressionRight)
 
-@given(instance=ioT::AddToList_strategy)
+@given(instance=ioT_ToVar_strategy)
 @settings(max_examples=50)
-def test_iot::addtolist_instantiation(instance):
-    assert isinstance(instance, ioT::AddToList)
+def test_iot_tovar_instantiation(instance):
+    assert isinstance(instance, ioT_ToVar)
 
-@given(instance=ioT::ExternalRight_strategy)
+@given(instance=ioT_ExternalRight_strategy)
 @settings(max_examples=50)
-def test_iot::externalright_instantiation(instance):
-    assert isinstance(instance, ioT::ExternalRight)
+def test_iot_externalright_instantiation(instance):
+    assert isinstance(instance, ioT_ExternalRight)
 
-@given(instance=ioT::SendCommand_strategy)
+@given(instance=ioT_SendCommand_strategy)
 @settings(max_examples=50)
-def test_iot::sendcommand_instantiation(instance):
-    assert isinstance(instance, ioT::SendCommand)
+def test_iot_sendcommand_instantiation(instance):
+    assert isinstance(instance, ioT_SendCommand)
 
-@given(instance=ioT::ToVar_strategy)
+@given(instance=ioT_AddToList_strategy)
 @settings(max_examples=50)
-def test_iot::tovar_instantiation(instance):
-    assert isinstance(instance, ioT::ToVar)
+def test_iot_addtolist_instantiation(instance):
+    assert isinstance(instance, ioT_AddToList)
 
-@given(instance=ioT::Block_strategy)
+@given(instance=ioT_Block_strategy)
 @settings(max_examples=50)
-def test_iot::block_instantiation(instance):
-    assert isinstance(instance, ioT::Block)
+def test_iot_block_instantiation(instance):
+    assert isinstance(instance, ioT_Block)
 
-@given(instance=ioT::SENSOR_strategy)
+@given(instance=ioT_SENSOR_strategy)
 @settings(max_examples=50)
-def test_iot::sensor_instantiation(instance):
-    assert isinstance(instance, ioT::SENSOR)
+def test_iot_sensor_instantiation(instance):
+    assert isinstance(instance, ioT_SENSOR)
 
-@given(instance=ioT::ReadSensor_strategy)
+@given(instance=ioT_ReadSensor_strategy)
 @settings(max_examples=50)
-def test_iot::readsensor_instantiation(instance):
-    assert isinstance(instance, ioT::ReadSensor)
+def test_iot_readsensor_instantiation(instance):
+    assert isinstance(instance, ioT_ReadSensor)
 
-@given(instance=ioT::ConnectionConfig_strategy)
+@given(instance=ioT_ConnectionConfig_strategy)
 @settings(max_examples=50)
-def test_iot::connectionconfig_instantiation(instance):
-    assert isinstance(instance, ioT::ConnectionConfig)
-
-@given(instance=ioT::ConnectionConfig_strategy)
-def test_iot::connectionconfig_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_iot_connectionconfig_instantiation(instance):
+    assert isinstance(instance, ioT_ConnectionConfig)
 
 
-@given(instance=ioT::ConnectionConfig_strategy)
-def test_iot::connectionconfig_type_setter(instance):
+
+@given(instance=ioT_ConnectionConfig_strategy)
+def test_iot_connectionconfig_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ioT::ExpressionRight_strategy)
+@given(instance=ioT_ExpressionRight_strategy)
 @settings(max_examples=50)
-def test_iot::expressionright_instantiation(instance):
-    assert isinstance(instance, ioT::ExpressionRight)
+def test_iot_expressionright_instantiation(instance):
+    assert isinstance(instance, ioT_ExpressionRight)
 
-@given(instance=ioT::Loop_strategy)
+@given(instance=ioT_Loop_strategy)
 @settings(max_examples=50)
-def test_iot::loop_instantiation(instance):
-    assert isinstance(instance, ioT::Loop)
+def test_iot_loop_instantiation(instance):
+    assert isinstance(instance, ioT_Loop)
 
-@given(instance=ioT::ListenStatement_strategy)
+@given(instance=ioT_ListenStatement_strategy)
 @settings(max_examples=50)
-def test_iot::listenstatement_instantiation(instance):
-    assert isinstance(instance, ioT::ListenStatement)
-
-@given(instance=ioT::ListenStatement_strategy)
-def test_iot::listenstatement_ip_type(instance):
-    assert isinstance(instance.ip, str)
+def test_iot_listenstatement_instantiation(instance):
+    assert isinstance(instance, ioT_ListenStatement)
 
 
-@given(instance=ioT::ListenStatement_strategy)
-def test_iot::listenstatement_ip_setter(instance):
-    original = instance.ip
-    instance.ip = original
-    assert instance.ip == original
 
-@given(instance=ioT::ListenStatement_strategy)
-def test_iot::listenstatement_port_type(instance):
-    assert isinstance(instance.port, int)
-
-
-@given(instance=ioT::ListenStatement_strategy)
-def test_iot::listenstatement_port_setter(instance):
+@given(instance=ioT_ListenStatement_strategy)
+def test_iot_listenstatement_port_setter(instance):
     original = instance.port
     instance.port = original
     assert instance.port == original
 
-@given(instance=ioT::VarOrList_strategy)
+
+
+@given(instance=ioT_ListenStatement_strategy)
+def test_iot_listenstatement_ip_setter(instance):
+    original = instance.ip
+    instance.ip = original
+    assert instance.ip == original
+
+@given(instance=ioT_VarOrList_strategy)
 @settings(max_examples=50)
-def test_iot::varorlist_instantiation(instance):
-    assert isinstance(instance, ioT::VarOrList)
-
-@given(instance=ioT::VarOrList_strategy)
-def test_iot::varorlist_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_varorlist_instantiation(instance):
+    assert isinstance(instance, ioT_VarOrList)
 
 
-@given(instance=ioT::VarOrList_strategy)
-def test_iot::varorlist_name_setter(instance):
+
+@given(instance=ioT_VarOrList_strategy)
+def test_iot_varorlist_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::ConnectStatement_strategy)
+@given(instance=ioT_ConnectStatement_strategy)
 @settings(max_examples=50)
-def test_iot::connectstatement_instantiation(instance):
-    assert isinstance(instance, ioT::ConnectStatement)
+def test_iot_connectstatement_instantiation(instance):
+    assert isinstance(instance, ioT_ConnectStatement)
 
-@given(instance=ioT::WifiStatement_strategy)
+@given(instance=ioT_WifiStatement_strategy)
 @settings(max_examples=50)
-def test_iot::wifistatement_instantiation(instance):
-    assert isinstance(instance, ioT::WifiStatement)
+def test_iot_wifistatement_instantiation(instance):
+    assert isinstance(instance, ioT_WifiStatement)
 
 @given(instance=Device_strategy)
 @settings(max_examples=50)
 def test_device_instantiation(instance):
     assert isinstance(instance, Device)
 
-@given(instance=ioT::IoTDevice_strategy)
+@given(instance=ioT_IoTDevice_strategy)
 @settings(max_examples=50)
-def test_iot::iotdevice_instantiation(instance):
-    assert isinstance(instance, ioT::IoTDevice)
+def test_iot_iotdevice_instantiation(instance):
+    assert isinstance(instance, ioT_IoTDevice)
 
-@given(instance=ioT::ControllerDevice_strategy)
+@given(instance=ioT_ControllerDevice_strategy)
 @settings(max_examples=50)
-def test_iot::controllerdevice_instantiation(instance):
-    assert isinstance(instance, ioT::ControllerDevice)
+def test_iot_controllerdevice_instantiation(instance):
+    assert isinstance(instance, ioT_ControllerDevice)
 
-@given(instance=ioT::TIMEUNIT_strategy)
+@given(instance=ioT_TIMEUNIT_strategy)
 @settings(max_examples=50)
-def test_iot::timeunit_instantiation(instance):
-    assert isinstance(instance, ioT::TIMEUNIT)
+def test_iot_timeunit_instantiation(instance):
+    assert isinstance(instance, ioT_TIMEUNIT)
 
-@given(instance=ioT::Expression_strategy)
+@given(instance=ioT_Expression_strategy)
 @settings(max_examples=50)
-def test_iot::expression_instantiation(instance):
-    assert isinstance(instance, ioT::Expression)
+def test_iot_expression_instantiation(instance):
+    assert isinstance(instance, ioT_Expression)
 
-@given(instance=ioT::Address_strategy)
+@given(instance=ioT_Address_strategy)
 @settings(max_examples=50)
-def test_iot::address_instantiation(instance):
-    assert isinstance(instance, ioT::Address)
-
-@given(instance=ioT::Address_strategy)
-def test_iot::address_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_iot_address_instantiation(instance):
+    assert isinstance(instance, ioT_Address)
 
 
-@given(instance=ioT::Address_strategy)
-def test_iot::address_value_setter(instance):
+
+@given(instance=ioT_Address_strategy)
+def test_iot_address_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ioT::Device_strategy)
+@given(instance=ioT_Device_strategy)
 @settings(max_examples=50)
-def test_iot::device_instantiation(instance):
-    assert isinstance(instance, ioT::Device)
-
-@given(instance=ioT::Device_strategy)
-def test_iot::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_device_instantiation(instance):
+    assert isinstance(instance, ioT_Device)
 
 
-@given(instance=ioT::Device_strategy)
-def test_iot::device_name_setter(instance):
+
+@given(instance=ioT_Device_strategy)
+def test_iot_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::Config_strategy)
+@given(instance=ioT_Config_strategy)
 @settings(max_examples=50)
-def test_iot::config_instantiation(instance):
-    assert isinstance(instance, ioT::Config)
-
-@given(instance=ioT::Config_strategy)
-def test_iot::config_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_config_instantiation(instance):
+    assert isinstance(instance, ioT_Config)
 
 
-@given(instance=ioT::Config_strategy)
-def test_iot::config_name_setter(instance):
+
+@given(instance=ioT_Config_strategy)
+def test_iot_config_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::ExternalDeclaration_strategy)
+@given(instance=ioT_ExternalDeclaration_strategy)
 @settings(max_examples=50)
-def test_iot::externaldeclaration_instantiation(instance):
-    assert isinstance(instance, ioT::ExternalDeclaration)
-
-@given(instance=ioT::ExternalDeclaration_strategy)
-def test_iot::externaldeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_externaldeclaration_instantiation(instance):
+    assert isinstance(instance, ioT_ExternalDeclaration)
 
 
-@given(instance=ioT::ExternalDeclaration_strategy)
-def test_iot::externaldeclaration_name_setter(instance):
+
+@given(instance=ioT_ExternalDeclaration_strategy)
+def test_iot_externaldeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ioT::Model_strategy)
+@given(instance=ioT_Model_strategy)
 @settings(max_examples=50)
-def test_iot::model_instantiation(instance):
-    assert isinstance(instance, ioT::Model)
+def test_iot_model_instantiation(instance):
+    assert isinstance(instance, ioT_Model)
 
-@given(instance=ioT::Program_strategy)
+@given(instance=ioT_Program_strategy)
 @settings(max_examples=50)
-def test_iot::program_instantiation(instance):
-    assert isinstance(instance, ioT::Program)
+def test_iot_program_instantiation(instance):
+    assert isinstance(instance, ioT_Program)
 
-@given(instance=ioT::Declaration_strategy)
+@given(instance=ioT_Declaration_strategy)
 @settings(max_examples=50)
-def test_iot::declaration_instantiation(instance):
-    assert isinstance(instance, ioT::Declaration)
-
-@given(instance=ioT::Declaration_strategy)
-def test_iot::declaration_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_iot_declaration_instantiation(instance):
+    assert isinstance(instance, ioT_Declaration)
 
 
-@given(instance=ioT::Declaration_strategy)
-def test_iot::declaration_value_setter(instance):
+
+@given(instance=ioT_Declaration_strategy)
+def test_iot_declaration_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ioT::Declaration_strategy)
-def test_iot::declaration_key_type(instance):
-    assert isinstance(instance.key, str)
 
 
-@given(instance=ioT::Declaration_strategy)
-def test_iot::declaration_key_setter(instance):
+@given(instance=ioT_Declaration_strategy)
+def test_iot_declaration_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
+
+@given(instance=TIMEUNIT_strategy)
+@settings(max_examples=50)
+def test_timeunit_instantiation(instance):
+    assert isinstance(instance, TIMEUNIT)
+
+@given(instance=ioT_MINUTES_strategy)
+@settings(max_examples=50)
+def test_iot_minutes_instantiation(instance):
+    assert isinstance(instance, ioT_MINUTES)
+
+@given(instance=ioT_WEEKS_strategy)
+@settings(max_examples=50)
+def test_iot_weeks_instantiation(instance):
+    assert isinstance(instance, ioT_WEEKS)
+
+@given(instance=ioT_SECONDS_strategy)
+@settings(max_examples=50)
+def test_iot_seconds_instantiation(instance):
+    assert isinstance(instance, ioT_SECONDS)
+
+@given(instance=ioT_DAYS_strategy)
+@settings(max_examples=50)
+def test_iot_days_instantiation(instance):
+    assert isinstance(instance, ioT_DAYS)
+
+@given(instance=ioT_HOURS_strategy)
+@settings(max_examples=50)
+def test_iot_hours_instantiation(instance):
+    assert isinstance(instance, ioT_HOURS)
+
+@given(instance=ioT_MILLISECONDS_strategy)
+@settings(max_examples=50)
+def test_iot_milliseconds_instantiation(instance):
+    assert isinstance(instance, ioT_MILLISECONDS)
+
+@given(instance=ioT_PyList_strategy)
+@settings(max_examples=50)
+def test_iot_pylist_instantiation(instance):
+    assert isinstance(instance, ioT_PyList)

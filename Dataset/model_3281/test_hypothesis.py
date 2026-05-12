@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sm::Graph,
+from python_code import (
+    sm_Graph,
     Mark,
-    sm::Observation,
-    sm::Mark,
-    sm::Edge,
-    sm::Node,
+    sm_Observation,
+    sm_Mark,
+    sm_Edge,
+    sm_Node,
     Graph,
-    sm::StateMachine,
+    sm_StateMachine,
     Edge,
-    sm::Transition,
+    sm_Transition,
     Node,
-    sm::State,
+    sm_State,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_sm::graph_is_not_abstract():
-    assert not inspect.isabstract(sm::Graph)
+def test_sm_graph_is_not_abstract():
+    assert not inspect.isabstract(sm_Graph)
 
 
-def test_sm::graph_constructor_exists():
-    assert callable(sm::Graph.__init__)
+def test_sm_graph_constructor_exists():
+    assert callable(sm_Graph.__init__)
 
 
-def test_sm::graph_constructor_args():
-    sig = inspect.signature(sm::Graph.__init__)
+def test_sm_graph_constructor_args():
+    sig = inspect.signature(sm_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sm::graph_has_name():
-    assert hasattr(sm::Graph, "name")
+def test_sm_graph_has_name():
+    assert hasattr(sm_Graph, "name")
     descriptor = None
-    for klass in sm::Graph.__mro__:
+    for klass in sm_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,37 +64,37 @@ def test_mark_constructor_args():
 
 
 
-def test_sm::observation_is_not_abstract():
-    assert not inspect.isabstract(sm::Observation)
+def test_sm_observation_is_not_abstract():
+    assert not inspect.isabstract(sm_Observation)
 
 
-def test_sm::observation_constructor_exists():
-    assert callable(sm::Observation.__init__)
+def test_sm_observation_constructor_exists():
+    assert callable(sm_Observation.__init__)
 
 
-def test_sm::observation_constructor_args():
-    sig = inspect.signature(sm::Observation.__init__)
+def test_sm_observation_constructor_args():
+    sig = inspect.signature(sm_Observation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sm::mark_is_not_abstract():
-    assert not inspect.isabstract(sm::Mark)
+def test_sm_mark_is_not_abstract():
+    assert not inspect.isabstract(sm_Mark)
 
 
-def test_sm::mark_constructor_exists():
-    assert callable(sm::Mark.__init__)
+def test_sm_mark_constructor_exists():
+    assert callable(sm_Mark.__init__)
 
 
-def test_sm::mark_constructor_args():
-    sig = inspect.signature(sm::Mark.__init__)
+def test_sm_mark_constructor_args():
+    sig = inspect.signature(sm_Mark.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_sm::mark_has_time():
-    assert hasattr(sm::Mark, "time")
+def test_sm_mark_has_time():
+    assert hasattr(sm_Mark, "time")
     descriptor = None
-    for klass in sm::Mark.__mro__:
+    for klass in sm_Mark.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -102,23 +102,23 @@ def test_sm::mark_has_time():
 
 
 
-def test_sm::edge_is_not_abstract():
-    assert not inspect.isabstract(sm::Edge)
+def test_sm_edge_is_not_abstract():
+    assert not inspect.isabstract(sm_Edge)
 
 
-def test_sm::edge_constructor_exists():
-    assert callable(sm::Edge.__init__)
+def test_sm_edge_constructor_exists():
+    assert callable(sm_Edge.__init__)
 
 
-def test_sm::edge_constructor_args():
-    sig = inspect.signature(sm::Edge.__init__)
+def test_sm_edge_constructor_args():
+    sig = inspect.signature(sm_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sm::edge_has_name():
-    assert hasattr(sm::Edge, "name")
+def test_sm_edge_has_name():
+    assert hasattr(sm_Edge, "name")
     descriptor = None
-    for klass in sm::Edge.__mro__:
+    for klass in sm_Edge.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -126,23 +126,23 @@ def test_sm::edge_has_name():
 
 
 
-def test_sm::node_is_not_abstract():
-    assert not inspect.isabstract(sm::Node)
+def test_sm_node_is_not_abstract():
+    assert not inspect.isabstract(sm_Node)
 
 
-def test_sm::node_constructor_exists():
-    assert callable(sm::Node.__init__)
+def test_sm_node_constructor_exists():
+    assert callable(sm_Node.__init__)
 
 
-def test_sm::node_constructor_args():
-    sig = inspect.signature(sm::Node.__init__)
+def test_sm_node_constructor_args():
+    sig = inspect.signature(sm_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sm::node_has_name():
-    assert hasattr(sm::Node, "name")
+def test_sm_node_has_name():
+    assert hasattr(sm_Node, "name")
     descriptor = None
-    for klass in sm::Node.__mro__:
+    for klass in sm_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -164,16 +164,16 @@ def test_graph_constructor_args():
 
 
 
-def test_sm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(sm::StateMachine)
+def test_sm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(sm_StateMachine)
 
 
-def test_sm::statemachine_constructor_exists():
-    assert callable(sm::StateMachine.__init__)
+def test_sm_statemachine_constructor_exists():
+    assert callable(sm_StateMachine.__init__)
 
 
-def test_sm::statemachine_constructor_args():
-    sig = inspect.signature(sm::StateMachine.__init__)
+def test_sm_statemachine_constructor_args():
+    sig = inspect.signature(sm_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,16 +192,16 @@ def test_edge_constructor_args():
 
 
 
-def test_sm::transition_is_not_abstract():
-    assert not inspect.isabstract(sm::Transition)
+def test_sm_transition_is_not_abstract():
+    assert not inspect.isabstract(sm_Transition)
 
 
-def test_sm::transition_constructor_exists():
-    assert callable(sm::Transition.__init__)
+def test_sm_transition_constructor_exists():
+    assert callable(sm_Transition.__init__)
 
 
-def test_sm::transition_constructor_args():
-    sig = inspect.signature(sm::Transition.__init__)
+def test_sm_transition_constructor_args():
+    sig = inspect.signature(sm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -220,16 +220,16 @@ def test_node_constructor_args():
 
 
 
-def test_sm::state_is_not_abstract():
-    assert not inspect.isabstract(sm::State)
+def test_sm_state_is_not_abstract():
+    assert not inspect.isabstract(sm_State)
 
 
-def test_sm::state_constructor_exists():
-    assert callable(sm::State.__init__)
+def test_sm_state_constructor_exists():
+    assert callable(sm_State.__init__)
 
 
-def test_sm::state_constructor_args():
-    sig = inspect.signature(sm::State.__init__)
+def test_sm_state_constructor_args():
+    sig = inspect.signature(sm_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,63 +244,60 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sm::Graph_strategy = st.builds(
-    sm::Graph,
+sm_Graph_strategy = st.builds(
+    sm_Graph,
     name=
         safe_text
 )
 Mark_strategy = st.builds(
     Mark,
 )
-sm::Observation_strategy = st.builds(
-    sm::Observation,
+sm_Observation_strategy = st.builds(
+    sm_Observation,
 )
-sm::Mark_strategy = st.builds(
-    sm::Mark,
+sm_Mark_strategy = st.builds(
+    sm_Mark,
     time=
         safe_text
 )
-sm::Edge_strategy = st.builds(
-    sm::Edge,
+sm_Edge_strategy = st.builds(
+    sm_Edge,
     name=
         safe_text
 )
-sm::Node_strategy = st.builds(
-    sm::Node,
+sm_Node_strategy = st.builds(
+    sm_Node,
     name=
         safe_text
 )
 Graph_strategy = st.builds(
     Graph,
 )
-sm::StateMachine_strategy = st.builds(
-    sm::StateMachine,
+sm_StateMachine_strategy = st.builds(
+    sm_StateMachine,
 )
 Edge_strategy = st.builds(
     Edge,
 )
-sm::Transition_strategy = st.builds(
-    sm::Transition,
+sm_Transition_strategy = st.builds(
+    sm_Transition,
 )
 Node_strategy = st.builds(
     Node,
 )
-sm::State_strategy = st.builds(
-    sm::State,
+sm_State_strategy = st.builds(
+    sm_State,
 )
 
-@given(instance=sm::Graph_strategy)
+@given(instance=sm_Graph_strategy)
 @settings(max_examples=50)
-def test_sm::graph_instantiation(instance):
-    assert isinstance(instance, sm::Graph)
-
-@given(instance=sm::Graph_strategy)
-def test_sm::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sm_graph_instantiation(instance):
+    assert isinstance(instance, sm_Graph)
 
 
-@given(instance=sm::Graph_strategy)
-def test_sm::graph_name_setter(instance):
+
+@given(instance=sm_Graph_strategy)
+def test_sm_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -310,55 +307,46 @@ def test_sm::graph_name_setter(instance):
 def test_mark_instantiation(instance):
     assert isinstance(instance, Mark)
 
-@given(instance=sm::Observation_strategy)
+@given(instance=sm_Observation_strategy)
 @settings(max_examples=50)
-def test_sm::observation_instantiation(instance):
-    assert isinstance(instance, sm::Observation)
+def test_sm_observation_instantiation(instance):
+    assert isinstance(instance, sm_Observation)
 
-@given(instance=sm::Mark_strategy)
+@given(instance=sm_Mark_strategy)
 @settings(max_examples=50)
-def test_sm::mark_instantiation(instance):
-    assert isinstance(instance, sm::Mark)
-
-@given(instance=sm::Mark_strategy)
-def test_sm::mark_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_sm_mark_instantiation(instance):
+    assert isinstance(instance, sm_Mark)
 
 
-@given(instance=sm::Mark_strategy)
-def test_sm::mark_time_setter(instance):
+
+@given(instance=sm_Mark_strategy)
+def test_sm_mark_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=sm::Edge_strategy)
+@given(instance=sm_Edge_strategy)
 @settings(max_examples=50)
-def test_sm::edge_instantiation(instance):
-    assert isinstance(instance, sm::Edge)
-
-@given(instance=sm::Edge_strategy)
-def test_sm::edge_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sm_edge_instantiation(instance):
+    assert isinstance(instance, sm_Edge)
 
 
-@given(instance=sm::Edge_strategy)
-def test_sm::edge_name_setter(instance):
+
+@given(instance=sm_Edge_strategy)
+def test_sm_edge_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sm::Node_strategy)
+@given(instance=sm_Node_strategy)
 @settings(max_examples=50)
-def test_sm::node_instantiation(instance):
-    assert isinstance(instance, sm::Node)
-
-@given(instance=sm::Node_strategy)
-def test_sm::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sm_node_instantiation(instance):
+    assert isinstance(instance, sm_Node)
 
 
-@given(instance=sm::Node_strategy)
-def test_sm::node_name_setter(instance):
+
+@given(instance=sm_Node_strategy)
+def test_sm_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -368,27 +356,27 @@ def test_sm::node_name_setter(instance):
 def test_graph_instantiation(instance):
     assert isinstance(instance, Graph)
 
-@given(instance=sm::StateMachine_strategy)
+@given(instance=sm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_sm::statemachine_instantiation(instance):
-    assert isinstance(instance, sm::StateMachine)
+def test_sm_statemachine_instantiation(instance):
+    assert isinstance(instance, sm_StateMachine)
 
 @given(instance=Edge_strategy)
 @settings(max_examples=50)
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=sm::Transition_strategy)
+@given(instance=sm_Transition_strategy)
 @settings(max_examples=50)
-def test_sm::transition_instantiation(instance):
-    assert isinstance(instance, sm::Transition)
+def test_sm_transition_instantiation(instance):
+    assert isinstance(instance, sm_Transition)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=sm::State_strategy)
+@given(instance=sm_State_strategy)
 @settings(max_examples=50)
-def test_sm::state_instantiation(instance):
-    assert isinstance(instance, sm::State)
+def test_sm_state_instantiation(instance):
+    assert isinstance(instance, sm_State)

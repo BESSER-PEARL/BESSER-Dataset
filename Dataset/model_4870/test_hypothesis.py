@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    FlowDesigner::Flow,
-    FlowDesigner::Source,
-    FlowDesigner::Target,
-    FlowDesigner::Event,
+from python_code import (
+    FlowDesigner_Flow,
+    FlowDesigner_Source,
+    FlowDesigner_Target,
+    FlowDesigner_Event,
     NamedState,
-    FlowDesigner::ViewState,
-    FlowDesigner::ActionState,
+    FlowDesigner_ViewState,
+    FlowDesigner_ActionState,
     Target,
-    FlowDesigner::FinalState,
+    FlowDesigner_FinalState,
     Source,
-    FlowDesigner::NamedState,
-    FlowDesigner::InitialState,
+    FlowDesigner_NamedState,
+    FlowDesigner_InitialState,
 )
 
 # =============================================================================
@@ -26,87 +26,87 @@ from classes import (
 
 
 
-def test_flowdesigner::flow_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::Flow)
+def test_flowdesigner_flow_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_Flow)
 
 
-def test_flowdesigner::flow_constructor_exists():
-    assert callable(FlowDesigner::Flow.__init__)
+def test_flowdesigner_flow_constructor_exists():
+    assert callable(FlowDesigner_Flow.__init__)
 
 
-def test_flowdesigner::flow_constructor_args():
-    sig = inspect.signature(FlowDesigner::Flow.__init__)
+def test_flowdesigner_flow_constructor_args():
+    sig = inspect.signature(FlowDesigner_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowdesigner::source_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::Source)
+def test_flowdesigner_source_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_Source)
 
 
-def test_flowdesigner::source_constructor_exists():
-    assert callable(FlowDesigner::Source.__init__)
+def test_flowdesigner_source_constructor_exists():
+    assert callable(FlowDesigner_Source.__init__)
 
 
-def test_flowdesigner::source_constructor_args():
-    sig = inspect.signature(FlowDesigner::Source.__init__)
+def test_flowdesigner_source_constructor_args():
+    sig = inspect.signature(FlowDesigner_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowdesigner::target_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::Target)
+def test_flowdesigner_target_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_Target)
 
 
-def test_flowdesigner::target_constructor_exists():
-    assert callable(FlowDesigner::Target.__init__)
+def test_flowdesigner_target_constructor_exists():
+    assert callable(FlowDesigner_Target.__init__)
 
 
-def test_flowdesigner::target_constructor_args():
-    sig = inspect.signature(FlowDesigner::Target.__init__)
+def test_flowdesigner_target_constructor_args():
+    sig = inspect.signature(FlowDesigner_Target.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flowdesigner::event_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::Event)
+def test_flowdesigner_event_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_Event)
 
 
-def test_flowdesigner::event_constructor_exists():
-    assert callable(FlowDesigner::Event.__init__)
+def test_flowdesigner_event_constructor_exists():
+    assert callable(FlowDesigner_Event.__init__)
 
 
-def test_flowdesigner::event_constructor_args():
-    sig = inspect.signature(FlowDesigner::Event.__init__)
+def test_flowdesigner_event_constructor_args():
+    sig = inspect.signature(FlowDesigner_Event.__init__)
     params = list(sig.parameters.keys())
     assert "guard" in params, "Missing parameter 'guard'"
-    assert "event" in params, "Missing parameter 'event'"
     assert "action" in params, "Missing parameter 'action'"
+    assert "event" in params, "Missing parameter 'event'"
 
-def test_flowdesigner::event_has_guard():
-    assert hasattr(FlowDesigner::Event, "guard")
+def test_flowdesigner_event_has_guard():
+    assert hasattr(FlowDesigner_Event, "guard")
     descriptor = None
-    for klass in FlowDesigner::Event.__mro__:
+    for klass in FlowDesigner_Event.__mro__:
         if "guard" in klass.__dict__:
             descriptor = klass.__dict__["guard"]
             break
     assert isinstance(descriptor, property)
 
-def test_flowdesigner::event_has_event():
-    assert hasattr(FlowDesigner::Event, "event")
+def test_flowdesigner_event_has_action():
+    assert hasattr(FlowDesigner_Event, "action")
     descriptor = None
-    for klass in FlowDesigner::Event.__mro__:
-        if "event" in klass.__dict__:
-            descriptor = klass.__dict__["event"]
+    for klass in FlowDesigner_Event.__mro__:
+        if "action" in klass.__dict__:
+            descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
-def test_flowdesigner::event_has_action():
-    assert hasattr(FlowDesigner::Event, "action")
+def test_flowdesigner_event_has_event():
+    assert hasattr(FlowDesigner_Event, "event")
     descriptor = None
-    for klass in FlowDesigner::Event.__mro__:
-        if "action" in klass.__dict__:
-            descriptor = klass.__dict__["action"]
+    for klass in FlowDesigner_Event.__mro__:
+        if "event" in klass.__dict__:
+            descriptor = klass.__dict__["event"]
             break
     assert isinstance(descriptor, property)
 
@@ -126,23 +126,23 @@ def test_namedstate_constructor_args():
 
 
 
-def test_flowdesigner::viewstate_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::ViewState)
+def test_flowdesigner_viewstate_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_ViewState)
 
 
-def test_flowdesigner::viewstate_constructor_exists():
-    assert callable(FlowDesigner::ViewState.__init__)
+def test_flowdesigner_viewstate_constructor_exists():
+    assert callable(FlowDesigner_ViewState.__init__)
 
 
-def test_flowdesigner::viewstate_constructor_args():
-    sig = inspect.signature(FlowDesigner::ViewState.__init__)
+def test_flowdesigner_viewstate_constructor_args():
+    sig = inspect.signature(FlowDesigner_ViewState.__init__)
     params = list(sig.parameters.keys())
     assert "view" in params, "Missing parameter 'view'"
 
-def test_flowdesigner::viewstate_has_view():
-    assert hasattr(FlowDesigner::ViewState, "view")
+def test_flowdesigner_viewstate_has_view():
+    assert hasattr(FlowDesigner_ViewState, "view")
     descriptor = None
-    for klass in FlowDesigner::ViewState.__mro__:
+    for klass in FlowDesigner_ViewState.__mro__:
         if "view" in klass.__dict__:
             descriptor = klass.__dict__["view"]
             break
@@ -150,16 +150,16 @@ def test_flowdesigner::viewstate_has_view():
 
 
 
-def test_flowdesigner::actionstate_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::ActionState)
+def test_flowdesigner_actionstate_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_ActionState)
 
 
-def test_flowdesigner::actionstate_constructor_exists():
-    assert callable(FlowDesigner::ActionState.__init__)
+def test_flowdesigner_actionstate_constructor_exists():
+    assert callable(FlowDesigner_ActionState.__init__)
 
 
-def test_flowdesigner::actionstate_constructor_args():
-    sig = inspect.signature(FlowDesigner::ActionState.__init__)
+def test_flowdesigner_actionstate_constructor_args():
+    sig = inspect.signature(FlowDesigner_ActionState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,23 +178,23 @@ def test_target_constructor_args():
 
 
 
-def test_flowdesigner::finalstate_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::FinalState)
+def test_flowdesigner_finalstate_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_FinalState)
 
 
-def test_flowdesigner::finalstate_constructor_exists():
-    assert callable(FlowDesigner::FinalState.__init__)
+def test_flowdesigner_finalstate_constructor_exists():
+    assert callable(FlowDesigner_FinalState.__init__)
 
 
-def test_flowdesigner::finalstate_constructor_args():
-    sig = inspect.signature(FlowDesigner::FinalState.__init__)
+def test_flowdesigner_finalstate_constructor_args():
+    sig = inspect.signature(FlowDesigner_FinalState.__init__)
     params = list(sig.parameters.keys())
     assert "finalize" in params, "Missing parameter 'finalize'"
 
-def test_flowdesigner::finalstate_has_finalize():
-    assert hasattr(FlowDesigner::FinalState, "finalize")
+def test_flowdesigner_finalstate_has_finalize():
+    assert hasattr(FlowDesigner_FinalState, "finalize")
     descriptor = None
-    for klass in FlowDesigner::FinalState.__mro__:
+    for klass in FlowDesigner_FinalState.__mro__:
         if "finalize" in klass.__dict__:
             descriptor = klass.__dict__["finalize"]
             break
@@ -216,53 +216,53 @@ def test_source_constructor_args():
 
 
 
-def test_flowdesigner::namedstate_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::NamedState)
+def test_flowdesigner_namedstate_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_NamedState)
 
 
-def test_flowdesigner::namedstate_constructor_exists():
-    assert callable(FlowDesigner::NamedState.__init__)
+def test_flowdesigner_namedstate_constructor_exists():
+    assert callable(FlowDesigner_NamedState.__init__)
 
 
-def test_flowdesigner::namedstate_constructor_args():
-    sig = inspect.signature(FlowDesigner::NamedState.__init__)
+def test_flowdesigner_namedstate_constructor_args():
+    sig = inspect.signature(FlowDesigner_NamedState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "exit" in params, "Missing parameter 'exit'"
     assert "entry" in params, "Missing parameter 'entry'"
     assert "activity" in params, "Missing parameter 'activity'"
 
-def test_flowdesigner::namedstate_has_name():
-    assert hasattr(FlowDesigner::NamedState, "name")
+def test_flowdesigner_namedstate_has_name():
+    assert hasattr(FlowDesigner_NamedState, "name")
     descriptor = None
-    for klass in FlowDesigner::NamedState.__mro__:
+    for klass in FlowDesigner_NamedState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_flowdesigner::namedstate_has_exit():
-    assert hasattr(FlowDesigner::NamedState, "exit")
+def test_flowdesigner_namedstate_has_exit():
+    assert hasattr(FlowDesigner_NamedState, "exit")
     descriptor = None
-    for klass in FlowDesigner::NamedState.__mro__:
+    for klass in FlowDesigner_NamedState.__mro__:
         if "exit" in klass.__dict__:
             descriptor = klass.__dict__["exit"]
             break
     assert isinstance(descriptor, property)
 
-def test_flowdesigner::namedstate_has_entry():
-    assert hasattr(FlowDesigner::NamedState, "entry")
+def test_flowdesigner_namedstate_has_entry():
+    assert hasattr(FlowDesigner_NamedState, "entry")
     descriptor = None
-    for klass in FlowDesigner::NamedState.__mro__:
+    for klass in FlowDesigner_NamedState.__mro__:
         if "entry" in klass.__dict__:
             descriptor = klass.__dict__["entry"]
             break
     assert isinstance(descriptor, property)
 
-def test_flowdesigner::namedstate_has_activity():
-    assert hasattr(FlowDesigner::NamedState, "activity")
+def test_flowdesigner_namedstate_has_activity():
+    assert hasattr(FlowDesigner_NamedState, "activity")
     descriptor = None
-    for klass in FlowDesigner::NamedState.__mro__:
+    for klass in FlowDesigner_NamedState.__mro__:
         if "activity" in klass.__dict__:
             descriptor = klass.__dict__["activity"]
             break
@@ -270,23 +270,23 @@ def test_flowdesigner::namedstate_has_activity():
 
 
 
-def test_flowdesigner::initialstate_is_not_abstract():
-    assert not inspect.isabstract(FlowDesigner::InitialState)
+def test_flowdesigner_initialstate_is_not_abstract():
+    assert not inspect.isabstract(FlowDesigner_InitialState)
 
 
-def test_flowdesigner::initialstate_constructor_exists():
-    assert callable(FlowDesigner::InitialState.__init__)
+def test_flowdesigner_initialstate_constructor_exists():
+    assert callable(FlowDesigner_InitialState.__init__)
 
 
-def test_flowdesigner::initialstate_constructor_args():
-    sig = inspect.signature(FlowDesigner::InitialState.__init__)
+def test_flowdesigner_initialstate_constructor_args():
+    sig = inspect.signature(FlowDesigner_InitialState.__init__)
     params = list(sig.parameters.keys())
     assert "initialize" in params, "Missing parameter 'initialize'"
 
-def test_flowdesigner::initialstate_has_initialize():
-    assert hasattr(FlowDesigner::InitialState, "initialize")
+def test_flowdesigner_initialstate_has_initialize():
+    assert hasattr(FlowDesigner_InitialState, "initialize")
     descriptor = None
-    for klass in FlowDesigner::InitialState.__mro__:
+    for klass in FlowDesigner_InitialState.__mro__:
         if "initialize" in klass.__dict__:
             descriptor = klass.__dict__["initialize"]
             break
@@ -304,48 +304,48 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-FlowDesigner::Flow_strategy = st.builds(
-    FlowDesigner::Flow,
+FlowDesigner_Flow_strategy = st.builds(
+    FlowDesigner_Flow,
 )
-FlowDesigner::Source_strategy = st.builds(
-    FlowDesigner::Source,
+FlowDesigner_Source_strategy = st.builds(
+    FlowDesigner_Source,
 )
-FlowDesigner::Target_strategy = st.builds(
-    FlowDesigner::Target,
+FlowDesigner_Target_strategy = st.builds(
+    FlowDesigner_Target,
 )
-FlowDesigner::Event_strategy = st.builds(
-    FlowDesigner::Event,
+FlowDesigner_Event_strategy = st.builds(
+    FlowDesigner_Event,
     guard=
         safe_text,
-    event=
-        safe_text,
     action=
+        safe_text,
+    event=
         safe_text
 )
 NamedState_strategy = st.builds(
     NamedState,
 )
-FlowDesigner::ViewState_strategy = st.builds(
-    FlowDesigner::ViewState,
+FlowDesigner_ViewState_strategy = st.builds(
+    FlowDesigner_ViewState,
     view=
         safe_text
 )
-FlowDesigner::ActionState_strategy = st.builds(
-    FlowDesigner::ActionState,
+FlowDesigner_ActionState_strategy = st.builds(
+    FlowDesigner_ActionState,
 )
 Target_strategy = st.builds(
     Target,
 )
-FlowDesigner::FinalState_strategy = st.builds(
-    FlowDesigner::FinalState,
+FlowDesigner_FinalState_strategy = st.builds(
+    FlowDesigner_FinalState,
     finalize=
         safe_text
 )
 Source_strategy = st.builds(
     Source,
 )
-FlowDesigner::NamedState_strategy = st.builds(
-    FlowDesigner::NamedState,
+FlowDesigner_NamedState_strategy = st.builds(
+    FlowDesigner_NamedState,
     name=
         safe_text,
     exit=
@@ -355,16 +355,16 @@ FlowDesigner::NamedState_strategy = st.builds(
     activity=
         safe_text
 )
-FlowDesigner::InitialState_strategy = st.builds(
-    FlowDesigner::InitialState,
+FlowDesigner_InitialState_strategy = st.builds(
+    FlowDesigner_InitialState,
     initialize=
         safe_text
 )
 
-@given(instance=FlowDesigner::Flow_strategy)
+@given(instance=FlowDesigner_Flow_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::flow_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::Flow)
+def test_flowdesigner_flow_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_Flow)
 
 import warnings
 import copy
@@ -372,38 +372,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlowDesigner::Flow_strategy)
+@given(instance=FlowDesigner_Flow_strategy)
 @settings(max_examples=30)
-def test_flowdesigner::flow_haslaststate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasLastState()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasLastState).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasLastState' in FlowDesigner::Flow is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasLastState' in FlowDesigner::Flow did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasLastState' in FlowDesigner::Flow is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=FlowDesigner::Flow_strategy)
-@settings(max_examples=30)
-def test_flowdesigner::flow_findstatebyname_changes_state(instance):
+def test_flowdesigner_flow_findstatebyname_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -417,19 +388,14 @@ def test_flowdesigner::flow_findstatebyname_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findStateByName' in FlowDesigner::Flow is empty"
+        assert has_statements, f"Function 'findStateByName' in FlowDesigner_Flow is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findStateByName' in FlowDesigner::Flow did not change state; check implementation")
+            warnings.warn(f"Operation 'findStateByName' in FlowDesigner_Flow did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findStateByName' in FlowDesigner::Flow is not implemented or raised an error")
-
-@given(instance=FlowDesigner::Source_strategy)
-@settings(max_examples=50)
-def test_flowdesigner::source_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::Source)
+        warnings.warn(f"Operation 'findStateByName' in FlowDesigner_Flow is not implemented or raised an error")
 
 import warnings
 import copy
@@ -437,9 +403,43 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FlowDesigner::Source_strategy)
+@given(instance=FlowDesigner_Flow_strategy)
 @settings(max_examples=30)
-def test_flowdesigner::source_canbesource_changes_state(instance):
+def test_flowdesigner_flow_haslaststate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hasLastState()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hasLastState).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hasLastState' in FlowDesigner_Flow is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hasLastState' in FlowDesigner_Flow did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hasLastState' in FlowDesigner_Flow is not implemented or raised an error")
+
+@given(instance=FlowDesigner_Source_strategy)
+@settings(max_examples=50)
+def test_flowdesigner_source_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_Source)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=FlowDesigner_Source_strategy)
+@settings(max_examples=30)
+def test_flowdesigner_source_canbesource_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -453,101 +453,86 @@ def test_flowdesigner::source_canbesource_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'canBeSource' in FlowDesigner::Source is empty"
+        assert has_statements, f"Function 'canBeSource' in FlowDesigner_Source is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'canBeSource' in FlowDesigner::Source did not change state; check implementation")
+            warnings.warn(f"Operation 'canBeSource' in FlowDesigner_Source did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'canBeSource' in FlowDesigner::Source is not implemented or raised an error")
+        warnings.warn(f"Operation 'canBeSource' in FlowDesigner_Source is not implemented or raised an error")
 
-@given(instance=FlowDesigner::Target_strategy)
+@given(instance=FlowDesigner_Target_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::target_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::Target)
+def test_flowdesigner_target_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_Target)
 
-@given(instance=FlowDesigner::Event_strategy)
+@given(instance=FlowDesigner_Event_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::event_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::Event)
-
-@given(instance=FlowDesigner::Event_strategy)
-def test_flowdesigner::event_guard_type(instance):
-    assert isinstance(instance.guard, str)
+def test_flowdesigner_event_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_Event)
 
 
-@given(instance=FlowDesigner::Event_strategy)
-def test_flowdesigner::event_guard_setter(instance):
+
+@given(instance=FlowDesigner_Event_strategy)
+def test_flowdesigner_event_guard_setter(instance):
     original = instance.guard
     instance.guard = original
     assert instance.guard == original
 
-@given(instance=FlowDesigner::Event_strategy)
-def test_flowdesigner::event_event_type(instance):
-    assert isinstance(instance.event, str)
 
 
-@given(instance=FlowDesigner::Event_strategy)
-def test_flowdesigner::event_event_setter(instance):
-    original = instance.event
-    instance.event = original
-    assert instance.event == original
-
-@given(instance=FlowDesigner::Event_strategy)
-def test_flowdesigner::event_action_type(instance):
-    assert isinstance(instance.action, str)
-
-
-@given(instance=FlowDesigner::Event_strategy)
-def test_flowdesigner::event_action_setter(instance):
+@given(instance=FlowDesigner_Event_strategy)
+def test_flowdesigner_event_action_setter(instance):
     original = instance.action
     instance.action = original
     assert instance.action == original
+
+
+
+@given(instance=FlowDesigner_Event_strategy)
+def test_flowdesigner_event_event_setter(instance):
+    original = instance.event
+    instance.event = original
+    assert instance.event == original
 
 @given(instance=NamedState_strategy)
 @settings(max_examples=50)
 def test_namedstate_instantiation(instance):
     assert isinstance(instance, NamedState)
 
-@given(instance=FlowDesigner::ViewState_strategy)
+@given(instance=FlowDesigner_ViewState_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::viewstate_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::ViewState)
-
-@given(instance=FlowDesigner::ViewState_strategy)
-def test_flowdesigner::viewstate_view_type(instance):
-    assert isinstance(instance.view, str)
+def test_flowdesigner_viewstate_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_ViewState)
 
 
-@given(instance=FlowDesigner::ViewState_strategy)
-def test_flowdesigner::viewstate_view_setter(instance):
+
+@given(instance=FlowDesigner_ViewState_strategy)
+def test_flowdesigner_viewstate_view_setter(instance):
     original = instance.view
     instance.view = original
     assert instance.view == original
 
-@given(instance=FlowDesigner::ActionState_strategy)
+@given(instance=FlowDesigner_ActionState_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::actionstate_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::ActionState)
+def test_flowdesigner_actionstate_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_ActionState)
 
 @given(instance=Target_strategy)
 @settings(max_examples=50)
 def test_target_instantiation(instance):
     assert isinstance(instance, Target)
 
-@given(instance=FlowDesigner::FinalState_strategy)
+@given(instance=FlowDesigner_FinalState_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::finalstate_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::FinalState)
-
-@given(instance=FlowDesigner::FinalState_strategy)
-def test_flowdesigner::finalstate_finalize_type(instance):
-    assert isinstance(instance.finalize, str)
+def test_flowdesigner_finalstate_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_FinalState)
 
 
-@given(instance=FlowDesigner::FinalState_strategy)
-def test_flowdesigner::finalstate_finalize_setter(instance):
+
+@given(instance=FlowDesigner_FinalState_strategy)
+def test_flowdesigner_finalstate_finalize_setter(instance):
     original = instance.finalize
     instance.finalize = original
     assert instance.finalize == original
@@ -557,67 +542,52 @@ def test_flowdesigner::finalstate_finalize_setter(instance):
 def test_source_instantiation(instance):
     assert isinstance(instance, Source)
 
-@given(instance=FlowDesigner::NamedState_strategy)
+@given(instance=FlowDesigner_NamedState_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::namedstate_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::NamedState)
-
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_flowdesigner_namedstate_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_NamedState)
 
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_name_setter(instance):
+
+@given(instance=FlowDesigner_NamedState_strategy)
+def test_flowdesigner_namedstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_exit_type(instance):
-    assert isinstance(instance.exit, str)
 
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_exit_setter(instance):
+@given(instance=FlowDesigner_NamedState_strategy)
+def test_flowdesigner_namedstate_exit_setter(instance):
     original = instance.exit
     instance.exit = original
     assert instance.exit == original
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_entry_type(instance):
-    assert isinstance(instance.entry, str)
 
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_entry_setter(instance):
+@given(instance=FlowDesigner_NamedState_strategy)
+def test_flowdesigner_namedstate_entry_setter(instance):
     original = instance.entry
     instance.entry = original
     assert instance.entry == original
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_activity_type(instance):
-    assert isinstance(instance.activity, str)
 
 
-@given(instance=FlowDesigner::NamedState_strategy)
-def test_flowdesigner::namedstate_activity_setter(instance):
+@given(instance=FlowDesigner_NamedState_strategy)
+def test_flowdesigner_namedstate_activity_setter(instance):
     original = instance.activity
     instance.activity = original
     assert instance.activity == original
 
-@given(instance=FlowDesigner::InitialState_strategy)
+@given(instance=FlowDesigner_InitialState_strategy)
 @settings(max_examples=50)
-def test_flowdesigner::initialstate_instantiation(instance):
-    assert isinstance(instance, FlowDesigner::InitialState)
-
-@given(instance=FlowDesigner::InitialState_strategy)
-def test_flowdesigner::initialstate_initialize_type(instance):
-    assert isinstance(instance.initialize, str)
+def test_flowdesigner_initialstate_instantiation(instance):
+    assert isinstance(instance, FlowDesigner_InitialState)
 
 
-@given(instance=FlowDesigner::InitialState_strategy)
-def test_flowdesigner::initialstate_initialize_setter(instance):
+
+@given(instance=FlowDesigner_InitialState_strategy)
+def test_flowdesigner_initialstate_initialize_setter(instance):
     original = instance.initialize
     instance.initialize = original
     assert instance.initialize == original

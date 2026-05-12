@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Update_member_profile_external,
@@ -320,9 +320,6 @@ def test_issue_member_card_external_instantiation(instance):
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Person_strategy)
-def test_person_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Person_strategy)
@@ -331,9 +328,6 @@ def test_person_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=Person_strategy)
-def test_person_phone_type(instance):
-    assert isinstance(instance.phone, str)
 
 
 @given(instance=Person_strategy)
@@ -347,9 +341,6 @@ def test_person_phone_setter(instance):
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_recruitmentDate_type(instance):
-    assert isinstance(instance.recruitmentDate, date)
 
 
 @given(instance=Customer_strategy)

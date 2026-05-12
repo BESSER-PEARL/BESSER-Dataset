@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TraceItem,
-    trace::M2CTraceItem,
-    trace::M2MTraceItem,
-    trace::EObject,
-    trace::TraceList,
-    trace::Trace,
-    trace::TraceItem,
-    trace::TraceBySource,
+    trace_M2CTraceItem,
+    trace_M2MTraceItem,
+    trace_EObject,
+    trace_TraceList,
+    trace_Trace,
+    trace_TraceItem,
+    trace_TraceBySource,
 )
 
 # =============================================================================
@@ -36,33 +36,33 @@ def test_traceitem_constructor_args():
 
 
 
-def test_trace::m2ctraceitem_is_not_abstract():
-    assert not inspect.isabstract(trace::M2CTraceItem)
+def test_trace_m2ctraceitem_is_not_abstract():
+    assert not inspect.isabstract(trace_M2CTraceItem)
 
 
-def test_trace::m2ctraceitem_constructor_exists():
-    assert callable(trace::M2CTraceItem.__init__)
+def test_trace_m2ctraceitem_constructor_exists():
+    assert callable(trace_M2CTraceItem.__init__)
 
 
-def test_trace::m2ctraceitem_constructor_args():
-    sig = inspect.signature(trace::M2CTraceItem.__init__)
+def test_trace_m2ctraceitem_constructor_args():
+    sig = inspect.signature(trace_M2CTraceItem.__init__)
     params = list(sig.parameters.keys())
     assert "token" in params, "Missing parameter 'token'"
     assert "targetFile" in params, "Missing parameter 'targetFile'"
 
-def test_trace::m2ctraceitem_has_token():
-    assert hasattr(trace::M2CTraceItem, "token")
+def test_trace_m2ctraceitem_has_token():
+    assert hasattr(trace_M2CTraceItem, "token")
     descriptor = None
-    for klass in trace::M2CTraceItem.__mro__:
+    for klass in trace_M2CTraceItem.__mro__:
         if "token" in klass.__dict__:
             descriptor = klass.__dict__["token"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::m2ctraceitem_has_targetFile():
-    assert hasattr(trace::M2CTraceItem, "targetFile")
+def test_trace_m2ctraceitem_has_targetFile():
+    assert hasattr(trace_M2CTraceItem, "targetFile")
     descriptor = None
-    for klass in trace::M2CTraceItem.__mro__:
+    for klass in trace_M2CTraceItem.__mro__:
         if "targetFile" in klass.__dict__:
             descriptor = klass.__dict__["targetFile"]
             break
@@ -70,79 +70,79 @@ def test_trace::m2ctraceitem_has_targetFile():
 
 
 
-def test_trace::m2mtraceitem_is_not_abstract():
-    assert not inspect.isabstract(trace::M2MTraceItem)
+def test_trace_m2mtraceitem_is_not_abstract():
+    assert not inspect.isabstract(trace_M2MTraceItem)
 
 
-def test_trace::m2mtraceitem_constructor_exists():
-    assert callable(trace::M2MTraceItem.__init__)
+def test_trace_m2mtraceitem_constructor_exists():
+    assert callable(trace_M2MTraceItem.__init__)
 
 
-def test_trace::m2mtraceitem_constructor_args():
-    sig = inspect.signature(trace::M2MTraceItem.__init__)
+def test_trace_m2mtraceitem_constructor_args():
+    sig = inspect.signature(trace_M2MTraceItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::eobject_is_not_abstract():
-    assert not inspect.isabstract(trace::EObject)
+def test_trace_eobject_is_not_abstract():
+    assert not inspect.isabstract(trace_EObject)
 
 
-def test_trace::eobject_constructor_exists():
-    assert callable(trace::EObject.__init__)
+def test_trace_eobject_constructor_exists():
+    assert callable(trace_EObject.__init__)
 
 
-def test_trace::eobject_constructor_args():
-    sig = inspect.signature(trace::EObject.__init__)
+def test_trace_eobject_constructor_args():
+    sig = inspect.signature(trace_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::tracelist_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceList)
+def test_trace_tracelist_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceList)
 
 
-def test_trace::tracelist_constructor_exists():
-    assert callable(trace::TraceList.__init__)
+def test_trace_tracelist_constructor_exists():
+    assert callable(trace_TraceList.__init__)
 
 
-def test_trace::tracelist_constructor_args():
-    sig = inspect.signature(trace::TraceList.__init__)
+def test_trace_tracelist_constructor_args():
+    sig = inspect.signature(trace_TraceList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::traceitem_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceItem)
+def test_trace_traceitem_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceItem)
 
 
-def test_trace::traceitem_constructor_exists():
-    assert callable(trace::TraceItem.__init__)
+def test_trace_traceitem_constructor_exists():
+    assert callable(trace_TraceItem.__init__)
 
 
-def test_trace::traceitem_constructor_args():
-    sig = inspect.signature(trace::TraceItem.__init__)
+def test_trace_traceitem_constructor_args():
+    sig = inspect.signature(trace_TraceItem.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_trace::traceitem_has_kind():
-    assert hasattr(trace::TraceItem, "kind")
+def test_trace_traceitem_has_kind():
+    assert hasattr(trace_TraceItem, "kind")
     descriptor = None
-    for klass in trace::TraceItem.__mro__:
+    for klass in trace_TraceItem.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -150,16 +150,16 @@ def test_trace::traceitem_has_kind():
 
 
 
-def test_trace::tracebysource_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceBySource)
+def test_trace_tracebysource_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceBySource)
 
 
-def test_trace::tracebysource_constructor_exists():
-    assert callable(trace::TraceBySource.__init__)
+def test_trace_tracebysource_constructor_exists():
+    assert callable(trace_TraceBySource.__init__)
 
 
-def test_trace::tracebysource_constructor_args():
-    sig = inspect.signature(trace::TraceBySource.__init__)
+def test_trace_tracebysource_constructor_args():
+    sig = inspect.signature(trace_TraceBySource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,32 +177,32 @@ safe_text = st.text(
 TraceItem_strategy = st.builds(
     TraceItem,
 )
-trace::M2CTraceItem_strategy = st.builds(
-    trace::M2CTraceItem,
+trace_M2CTraceItem_strategy = st.builds(
+    trace_M2CTraceItem,
     token=
         safe_text,
     targetFile=
         safe_text
 )
-trace::M2MTraceItem_strategy = st.builds(
-    trace::M2MTraceItem,
+trace_M2MTraceItem_strategy = st.builds(
+    trace_M2MTraceItem,
 )
-trace::EObject_strategy = st.builds(
-    trace::EObject,
+trace_EObject_strategy = st.builds(
+    trace_EObject,
 )
-trace::TraceList_strategy = st.builds(
-    trace::TraceList,
+trace_TraceList_strategy = st.builds(
+    trace_TraceList,
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
-trace::TraceItem_strategy = st.builds(
-    trace::TraceItem,
+trace_TraceItem_strategy = st.builds(
+    trace_TraceItem,
     kind=
         safe_text
 )
-trace::TraceBySource_strategy = st.builds(
-    trace::TraceBySource,
+trace_TraceBySource_strategy = st.builds(
+    trace_TraceBySource,
 )
 
 @given(instance=TraceItem_strategy)
@@ -210,70 +210,61 @@ trace::TraceBySource_strategy = st.builds(
 def test_traceitem_instantiation(instance):
     assert isinstance(instance, TraceItem)
 
-@given(instance=trace::M2CTraceItem_strategy)
+@given(instance=trace_M2CTraceItem_strategy)
 @settings(max_examples=50)
-def test_trace::m2ctraceitem_instantiation(instance):
-    assert isinstance(instance, trace::M2CTraceItem)
-
-@given(instance=trace::M2CTraceItem_strategy)
-def test_trace::m2ctraceitem_token_type(instance):
-    assert isinstance(instance.token, str)
+def test_trace_m2ctraceitem_instantiation(instance):
+    assert isinstance(instance, trace_M2CTraceItem)
 
 
-@given(instance=trace::M2CTraceItem_strategy)
-def test_trace::m2ctraceitem_token_setter(instance):
+
+@given(instance=trace_M2CTraceItem_strategy)
+def test_trace_m2ctraceitem_token_setter(instance):
     original = instance.token
     instance.token = original
     assert instance.token == original
 
-@given(instance=trace::M2CTraceItem_strategy)
-def test_trace::m2ctraceitem_targetFile_type(instance):
-    assert isinstance(instance.targetFile, str)
 
 
-@given(instance=trace::M2CTraceItem_strategy)
-def test_trace::m2ctraceitem_targetFile_setter(instance):
+@given(instance=trace_M2CTraceItem_strategy)
+def test_trace_m2ctraceitem_targetFile_setter(instance):
     original = instance.targetFile
     instance.targetFile = original
     assert instance.targetFile == original
 
-@given(instance=trace::M2MTraceItem_strategy)
+@given(instance=trace_M2MTraceItem_strategy)
 @settings(max_examples=50)
-def test_trace::m2mtraceitem_instantiation(instance):
-    assert isinstance(instance, trace::M2MTraceItem)
+def test_trace_m2mtraceitem_instantiation(instance):
+    assert isinstance(instance, trace_M2MTraceItem)
 
-@given(instance=trace::EObject_strategy)
+@given(instance=trace_EObject_strategy)
 @settings(max_examples=50)
-def test_trace::eobject_instantiation(instance):
-    assert isinstance(instance, trace::EObject)
+def test_trace_eobject_instantiation(instance):
+    assert isinstance(instance, trace_EObject)
 
-@given(instance=trace::TraceList_strategy)
+@given(instance=trace_TraceList_strategy)
 @settings(max_examples=50)
-def test_trace::tracelist_instantiation(instance):
-    assert isinstance(instance, trace::TraceList)
+def test_trace_tracelist_instantiation(instance):
+    assert isinstance(instance, trace_TraceList)
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)
 
-@given(instance=trace::TraceItem_strategy)
+@given(instance=trace_TraceItem_strategy)
 @settings(max_examples=50)
-def test_trace::traceitem_instantiation(instance):
-    assert isinstance(instance, trace::TraceItem)
-
-@given(instance=trace::TraceItem_strategy)
-def test_trace::traceitem_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_trace_traceitem_instantiation(instance):
+    assert isinstance(instance, trace_TraceItem)
 
 
-@given(instance=trace::TraceItem_strategy)
-def test_trace::traceitem_kind_setter(instance):
+
+@given(instance=trace_TraceItem_strategy)
+def test_trace_traceitem_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=trace::TraceBySource_strategy)
+@given(instance=trace_TraceBySource_strategy)
 @settings(max_examples=50)
-def test_trace::tracebysource_instantiation(instance):
-    assert isinstance(instance, trace::TraceBySource)
+def test_trace_tracebysource_instantiation(instance):
+    assert isinstance(instance, trace_TraceBySource)

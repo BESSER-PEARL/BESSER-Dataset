@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Customer,
@@ -40,18 +40,9 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "DiscountSlab_list_" in params, "Missing parameter 'DiscountSlab_list_'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "shoppingCart" in params, "Missing parameter 'shoppingCart'"
-
-def test_customer_has_type():
-    assert hasattr(Customer, "type")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_customer_has_DiscountSlab_list_():
     assert hasattr(Customer, "DiscountSlab_list_")
@@ -59,6 +50,15 @@ def test_customer_has_DiscountSlab_list_():
     for klass in Customer.__mro__:
         if "DiscountSlab_list_" in klass.__dict__:
             descriptor = klass.__dict__["DiscountSlab_list_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_type():
+    assert hasattr(Customer, "type")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -84,19 +84,10 @@ def test_premiumdiscountslab_constructor_exists():
 def test_premiumdiscountslab_constructor_args():
     sig = inspect.signature(PremiumDiscountSlab.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
     assert "RadixClient" in params, "Missing parameter 'RadixClient'"
     assert "log" in params, "Missing parameter 'log'"
     assert "PremiumSlab_list_" in params, "Missing parameter 'PremiumSlab_list_'"
-
-def test_premiumdiscountslab_has_email():
-    assert hasattr(PremiumDiscountSlab, "email")
-    descriptor = None
-    for klass in PremiumDiscountSlab.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "email" in params, "Missing parameter 'email'"
 
 def test_premiumdiscountslab_has_RadixClient():
     assert hasattr(PremiumDiscountSlab, "RadixClient")
@@ -125,6 +116,15 @@ def test_premiumdiscountslab_has_PremiumSlab_list_():
             break
     assert isinstance(descriptor, property)
 
+def test_premiumdiscountslab_has_email():
+    assert hasattr(PremiumDiscountSlab, "email")
+    descriptor = None
+    for klass in PremiumDiscountSlab.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_regulardiscountslab_is_not_abstract():
@@ -138,41 +138,14 @@ def test_regulardiscountslab_constructor_exists():
 def test_regulardiscountslab_constructor_args():
     sig = inspect.signature(RegularDiscountSlab.__init__)
     params = list(sig.parameters.keys())
-    assert "RadixClient" in params, "Missing parameter 'RadixClient'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "log" in params, "Missing parameter 'log'"
     assert "_attr" in params, "Missing parameter '_attr'"
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
+    assert "log" in params, "Missing parameter 'log'"
     assert "RegularSlab_list_" in params, "Missing parameter 'RegularSlab_list_'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "RadixClient" in params, "Missing parameter 'RadixClient'"
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "RegularSlab_list__" in params, "Missing parameter 'RegularSlab_list__'"
-
-def test_regulardiscountslab_has_RadixClient():
-    assert hasattr(RegularDiscountSlab, "RadixClient")
-    descriptor = None
-    for klass in RegularDiscountSlab.__mro__:
-        if "RadixClient" in klass.__dict__:
-            descriptor = klass.__dict__["RadixClient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_regulardiscountslab_has_attribute():
-    assert hasattr(RegularDiscountSlab, "attribute")
-    descriptor = None
-    for klass in RegularDiscountSlab.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_regulardiscountslab_has_log():
-    assert hasattr(RegularDiscountSlab, "log")
-    descriptor = None
-    for klass in RegularDiscountSlab.__mro__:
-        if "log" in klass.__dict__:
-            descriptor = klass.__dict__["log"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_regulardiscountslab_has__attr():
     assert hasattr(RegularDiscountSlab, "_attr")
@@ -183,12 +156,12 @@ def test_regulardiscountslab_has__attr():
             break
     assert isinstance(descriptor, property)
 
-def test_regulardiscountslab_has_attribute2():
-    assert hasattr(RegularDiscountSlab, "attribute2")
+def test_regulardiscountslab_has_log():
+    assert hasattr(RegularDiscountSlab, "log")
     descriptor = None
     for klass in RegularDiscountSlab.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
+        if "log" in klass.__dict__:
+            descriptor = klass.__dict__["log"]
             break
     assert isinstance(descriptor, property)
 
@@ -207,6 +180,33 @@ def test_regulardiscountslab_has_email():
     for klass in RegularDiscountSlab.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_regulardiscountslab_has_RadixClient():
+    assert hasattr(RegularDiscountSlab, "RadixClient")
+    descriptor = None
+    for klass in RegularDiscountSlab.__mro__:
+        if "RadixClient" in klass.__dict__:
+            descriptor = klass.__dict__["RadixClient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_regulardiscountslab_has_attribute2():
+    assert hasattr(RegularDiscountSlab, "attribute2")
+    descriptor = None
+    for klass in RegularDiscountSlab.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_regulardiscountslab_has_attribute():
+    assert hasattr(RegularDiscountSlab, "attribute")
+    descriptor = None
+    for klass in RegularDiscountSlab.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -232,18 +232,9 @@ def test_purchaseamountslab_constructor_exists():
 def test_purchaseamountslab_constructor_args():
     sig = inspect.signature(PurchaseAmountSlab.__init__)
     params = list(sig.parameters.keys())
-    assert "from" in params, "Missing parameter 'from'"
     assert "discount" in params, "Missing parameter 'discount'"
     assert "to" in params, "Missing parameter 'to'"
-
-def test_purchaseamountslab_has_from():
-    assert hasattr(PurchaseAmountSlab, "from")
-    descriptor = None
-    for klass in PurchaseAmountSlab.__mro__:
-        if "from" in klass.__dict__:
-            descriptor = klass.__dict__["from"]
-            break
-    assert isinstance(descriptor, property)
+    assert "from" in params, "Missing parameter 'from'"
 
 def test_purchaseamountslab_has_discount():
     assert hasattr(PurchaseAmountSlab, "discount")
@@ -263,6 +254,15 @@ def test_purchaseamountslab_has_to():
             break
     assert isinstance(descriptor, property)
 
+def test_purchaseamountslab_has_from():
+    assert hasattr(PurchaseAmountSlab, "from")
+    descriptor = None
+    for klass in PurchaseAmountSlab.__mro__:
+        if "from" in klass.__dict__:
+            descriptor = klass.__dict__["from"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_customerhandler_is_not_abstract():
@@ -276,16 +276,16 @@ def test_customerhandler_constructor_exists():
 def test_customerhandler_constructor_args():
     sig = inspect.signature(CustomerHandler.__init__)
     params = list(sig.parameters.keys())
-    assert "populate" in params, "Missing parameter 'populate'"
-    assert "state" in params, "Missing parameter 'state'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "state" in params, "Missing parameter 'state'"
+    assert "populate" in params, "Missing parameter 'populate'"
 
-def test_customerhandler_has_populate():
-    assert hasattr(CustomerHandler, "populate")
+def test_customerhandler_has_password():
+    assert hasattr(CustomerHandler, "password")
     descriptor = None
     for klass in CustomerHandler.__mro__:
-        if "populate" in klass.__dict__:
-            descriptor = klass.__dict__["populate"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -298,12 +298,12 @@ def test_customerhandler_has_state():
             break
     assert isinstance(descriptor, property)
 
-def test_customerhandler_has_password():
-    assert hasattr(CustomerHandler, "password")
+def test_customerhandler_has_populate():
+    assert hasattr(CustomerHandler, "populate")
     descriptor = None
     for klass in CustomerHandler.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "populate" in klass.__dict__:
+            descriptor = klass.__dict__["populate"]
             break
     assert isinstance(descriptor, property)
 
@@ -320,9 +320,18 @@ def test_regularcustomer_constructor_exists():
 def test_regularcustomer_constructor_args():
     sig = inspect.signature(RegularCustomer.__init__)
     params = list(sig.parameters.keys())
+    assert "RadixClient" in params, "Missing parameter 'RadixClient'"
     assert "email" in params, "Missing parameter 'email'"
     assert "log" in params, "Missing parameter 'log'"
-    assert "RadixClient" in params, "Missing parameter 'RadixClient'"
+
+def test_regularcustomer_has_RadixClient():
+    assert hasattr(RegularCustomer, "RadixClient")
+    descriptor = None
+    for klass in RegularCustomer.__mro__:
+        if "RadixClient" in klass.__dict__:
+            descriptor = klass.__dict__["RadixClient"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_regularcustomer_has_email():
     assert hasattr(RegularCustomer, "email")
@@ -342,15 +351,6 @@ def test_regularcustomer_has_log():
             break
     assert isinstance(descriptor, property)
 
-def test_regularcustomer_has_RadixClient():
-    assert hasattr(RegularCustomer, "RadixClient")
-    descriptor = None
-    for klass in RegularCustomer.__mro__:
-        if "RadixClient" in klass.__dict__:
-            descriptor = klass.__dict__["RadixClient"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_item_is_not_abstract():
@@ -364,18 +364,9 @@ def test_item_constructor_exists():
 def test_item_constructor_args():
     sig = inspect.signature(Item.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "price" in params, "Missing parameter 'price'"
     assert "quantity" in params, "Missing parameter 'quantity'"
-
-def test_item_has_name():
-    assert hasattr(Item, "name")
-    descriptor = None
-    for klass in Item.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_item_has_price():
     assert hasattr(Item, "price")
@@ -392,6 +383,15 @@ def test_item_has_quantity():
     for klass in Item.__mro__:
         if "quantity" in klass.__dict__:
             descriptor = klass.__dict__["quantity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_item_has_name():
+    assert hasattr(Item, "name")
+    descriptor = None
+    for klass in Item.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -442,16 +442,16 @@ def test_lzuser2_constructor_exists():
 def test_lzuser2_constructor_args():
     sig = inspect.signature(LZUser2.__init__)
     params = list(sig.parameters.keys())
-    assert "populate" in params, "Missing parameter 'populate'"
-    assert "state" in params, "Missing parameter 'state'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "state" in params, "Missing parameter 'state'"
+    assert "populate" in params, "Missing parameter 'populate'"
 
-def test_lzuser2_has_populate():
-    assert hasattr(LZUser2, "populate")
+def test_lzuser2_has_password():
+    assert hasattr(LZUser2, "password")
     descriptor = None
     for klass in LZUser2.__mro__:
-        if "populate" in klass.__dict__:
-            descriptor = klass.__dict__["populate"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -464,12 +464,12 @@ def test_lzuser2_has_state():
             break
     assert isinstance(descriptor, property)
 
-def test_lzuser2_has_password():
-    assert hasattr(LZUser2, "password")
+def test_lzuser2_has_populate():
+    assert hasattr(LZUser2, "populate")
     descriptor = None
     for klass in LZUser2.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "populate" in klass.__dict__:
+            descriptor = klass.__dict__["populate"]
             break
     assert isinstance(descriptor, property)
 
@@ -486,39 +486,12 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "total" in params, "Missing parameter 'total'"
-    assert "shipped" in params, "Missing parameter 'shipped'"
-    assert "ordered" in params, "Missing parameter 'ordered'"
     assert "shipTo" in params, "Missing parameter 'shipTo'"
     assert "number" in params, "Missing parameter 'number'"
+    assert "shipped" in params, "Missing parameter 'shipped'"
     assert "status" in params, "Missing parameter 'status'"
-
-def test_order_has_total():
-    assert hasattr(Order, "total")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_shipped():
-    assert hasattr(Order, "shipped")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "shipped" in klass.__dict__:
-            descriptor = klass.__dict__["shipped"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_ordered():
-    assert hasattr(Order, "ordered")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ordered" in params, "Missing parameter 'ordered'"
+    assert "total" in params, "Missing parameter 'total'"
 
 def test_order_has_shipTo():
     assert hasattr(Order, "shipTo")
@@ -538,12 +511,39 @@ def test_order_has_number():
             break
     assert isinstance(descriptor, property)
 
+def test_order_has_shipped():
+    assert hasattr(Order, "shipped")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "shipped" in klass.__dict__:
+            descriptor = klass.__dict__["shipped"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_order_has_status():
     assert hasattr(Order, "status")
     descriptor = None
     for klass in Order.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_ordered():
+    assert hasattr(Order, "ordered")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_total():
+    assert hasattr(Order, "total")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
             break
     assert isinstance(descriptor, property)
 
@@ -560,18 +560,9 @@ def test_salesperson_constructor_exists():
 def test_salesperson_constructor_args():
     sig = inspect.signature(SalesPerson.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "populate" in params, "Missing parameter 'populate'"
+    assert "password" in params, "Missing parameter 'password'"
     assert "state" in params, "Missing parameter 'state'"
-
-def test_salesperson_has_password():
-    assert hasattr(SalesPerson, "password")
-    descriptor = None
-    for klass in SalesPerson.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_salesperson_has_populate():
     assert hasattr(SalesPerson, "populate")
@@ -579,6 +570,15 @@ def test_salesperson_has_populate():
     for klass in SalesPerson.__mro__:
         if "populate" in klass.__dict__:
             descriptor = klass.__dict__["populate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_salesperson_has_password():
+    assert hasattr(SalesPerson, "password")
+    descriptor = None
+    for klass in SalesPerson.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -604,18 +604,9 @@ def test_payment_constructor_exists():
 def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
-    assert "paidDate" in params, "Missing parameter 'paidDate'"
     assert "total" in params, "Missing parameter 'total'"
     assert "details" in params, "Missing parameter 'details'"
-
-def test_payment_has_paidDate():
-    assert hasattr(Payment, "paidDate")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "paidDate" in klass.__dict__:
-            descriptor = klass.__dict__["paidDate"]
-            break
-    assert isinstance(descriptor, property)
+    assert "paidDate" in params, "Missing parameter 'paidDate'"
 
 def test_payment_has_total():
     assert hasattr(Payment, "total")
@@ -635,6 +626,15 @@ def test_payment_has_details():
             break
     assert isinstance(descriptor, property)
 
+def test_payment_has_paidDate():
+    assert hasattr(Payment, "paidDate")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "paidDate" in klass.__dict__:
+            descriptor = klass.__dict__["paidDate"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_premiumcustomer_is_not_abstract():
@@ -648,16 +648,16 @@ def test_premiumcustomer_constructor_exists():
 def test_premiumcustomer_constructor_args():
     sig = inspect.signature(PremiumCustomer.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
-    assert "log" in params, "Missing parameter 'log'"
     assert "RadixClient" in params, "Missing parameter 'RadixClient'"
+    assert "log" in params, "Missing parameter 'log'"
+    assert "email" in params, "Missing parameter 'email'"
 
-def test_premiumcustomer_has_email():
-    assert hasattr(PremiumCustomer, "email")
+def test_premiumcustomer_has_RadixClient():
+    assert hasattr(PremiumCustomer, "RadixClient")
     descriptor = None
     for klass in PremiumCustomer.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
+        if "RadixClient" in klass.__dict__:
+            descriptor = klass.__dict__["RadixClient"]
             break
     assert isinstance(descriptor, property)
 
@@ -670,12 +670,12 @@ def test_premiumcustomer_has_log():
             break
     assert isinstance(descriptor, property)
 
-def test_premiumcustomer_has_RadixClient():
-    assert hasattr(PremiumCustomer, "RadixClient")
+def test_premiumcustomer_has_email():
+    assert hasattr(PremiumCustomer, "email")
     descriptor = None
     for klass in PremiumCustomer.__mro__:
-        if "RadixClient" in klass.__dict__:
-            descriptor = klass.__dict__["RadixClient"]
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -719,78 +719,78 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Customer_strategy = st.builds(
     Customer,
-    type=
-        st.none(),
     DiscountSlab_list_=
+        st.none(),
+    type=
         st.none(),
     shoppingCart=
         st.none()
 )
 PremiumDiscountSlab_strategy = st.builds(
     PremiumDiscountSlab,
-    email=
-        safe_text,
     RadixClient=
         safe_text,
     log=
         safe_text,
     PremiumSlab_list_=
-        st.none()
+        st.none(),
+    email=
+        safe_text
 )
 RegularDiscountSlab_strategy = st.builds(
     RegularDiscountSlab,
-    RadixClient=
-        safe_text,
-    attribute=
-        safe_text,
-    log=
-        safe_text,
     _attr=
         safe_text,
-    attribute2=
+    log=
         safe_text,
     RegularSlab_list_=
         st.none(),
     email=
+        safe_text,
+    RadixClient=
+        safe_text,
+    attribute2=
+        safe_text,
+    attribute=
         safe_text,
     RegularSlab_list__=
         st.none()
 )
 PurchaseAmountSlab_strategy = st.builds(
     PurchaseAmountSlab,
-    from=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     discount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     to=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    from=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 CustomerHandler_strategy = st.builds(
     CustomerHandler,
-    populate=
+    password=
         safe_text,
     state=
         st.none(),
-    password=
+    populate=
         safe_text
 )
 RegularCustomer_strategy = st.builds(
     RegularCustomer,
+    RadixClient=
+        safe_text,
     email=
         safe_text,
     log=
-        safe_text,
-    RadixClient=
         safe_text
 )
 Item_strategy = st.builds(
     Item,
-    name=
-        safe_text,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     quantity=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 ShoppingCart_strategy = st.builds(
     ShoppingCart,
@@ -801,53 +801,53 @@ ShoppingCart_strategy = st.builds(
 )
 LZUser2_strategy = st.builds(
     LZUser2,
-    populate=
+    password=
         safe_text,
     state=
         st.none(),
-    password=
+    populate=
         safe_text
 )
 Order_strategy = st.builds(
     Order,
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    shipped=
-        st.booleans(),
-    ordered=
-        st.dates(),
     shipTo=
         safe_text,
     number=
         st.integers(),
+    shipped=
+        st.booleans(),
     status=
-        safe_text
+        safe_text,
+    ordered=
+        st.dates(),
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 SalesPerson_strategy = st.builds(
     SalesPerson,
-    password=
-        safe_text,
     populate=
+        safe_text,
+    password=
         safe_text,
     state=
         st.none()
 )
 Payment_strategy = st.builds(
     Payment,
-    paidDate=
-        st.dates(),
     total=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     details=
-        safe_text
+        safe_text,
+    paidDate=
+        st.dates()
 )
 PremiumCustomer_strategy = st.builds(
     PremiumCustomer,
-    email=
+    RadixClient=
         safe_text,
     log=
         safe_text,
-    RadixClient=
+    email=
         safe_text
 )
 
@@ -856,20 +856,6 @@ PremiumCustomer_strategy = st.builds(
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_type_type(instance):
-    assert isinstance(instance.type, customertype)
-
-
-@given(instance=Customer_strategy)
-def test_customer_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Customer_strategy)
-def test_customer_DiscountSlab_list__type(instance):
-    assert isinstance(instance.DiscountSlab_list_, purchaseamountslab)
 
 
 @given(instance=Customer_strategy)
@@ -878,9 +864,14 @@ def test_customer_DiscountSlab_list__setter(instance):
     instance.DiscountSlab_list_ = original
     assert instance.DiscountSlab_list_ == original
 
+
+
 @given(instance=Customer_strategy)
-def test_customer_shoppingCart_type(instance):
-    assert isinstance(instance.shoppingCart, shoppingcart)
+def test_customer_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
 
 
 @given(instance=Customer_strategy)
@@ -894,20 +885,6 @@ def test_customer_shoppingCart_setter(instance):
 def test_premiumdiscountslab_instantiation(instance):
     assert isinstance(instance, PremiumDiscountSlab)
 
-@given(instance=PremiumDiscountSlab_strategy)
-def test_premiumdiscountslab_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=PremiumDiscountSlab_strategy)
-def test_premiumdiscountslab_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=PremiumDiscountSlab_strategy)
-def test_premiumdiscountslab_RadixClient_type(instance):
-    assert isinstance(instance.RadixClient, str)
 
 
 @given(instance=PremiumDiscountSlab_strategy)
@@ -916,9 +893,6 @@ def test_premiumdiscountslab_RadixClient_setter(instance):
     instance.RadixClient = original
     assert instance.RadixClient == original
 
-@given(instance=PremiumDiscountSlab_strategy)
-def test_premiumdiscountslab_log_type(instance):
-    assert isinstance(instance.log, str)
 
 
 @given(instance=PremiumDiscountSlab_strategy)
@@ -927,9 +901,6 @@ def test_premiumdiscountslab_log_setter(instance):
     instance.log = original
     assert instance.log == original
 
-@given(instance=PremiumDiscountSlab_strategy)
-def test_premiumdiscountslab_PremiumSlab_list__type(instance):
-    assert isinstance(instance.PremiumSlab_list_, purchaseamountslab)
 
 
 @given(instance=PremiumDiscountSlab_strategy)
@@ -938,47 +909,19 @@ def test_premiumdiscountslab_PremiumSlab_list__setter(instance):
     instance.PremiumSlab_list_ = original
     assert instance.PremiumSlab_list_ == original
 
+
+
+@given(instance=PremiumDiscountSlab_strategy)
+def test_premiumdiscountslab_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 @given(instance=RegularDiscountSlab_strategy)
 @settings(max_examples=50)
 def test_regulardiscountslab_instantiation(instance):
     assert isinstance(instance, RegularDiscountSlab)
 
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_RadixClient_type(instance):
-    assert isinstance(instance.RadixClient, str)
-
-
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_RadixClient_setter(instance):
-    original = instance.RadixClient
-    instance.RadixClient = original
-    assert instance.RadixClient == original
-
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_log_type(instance):
-    assert isinstance(instance.log, str)
-
-
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_log_setter(instance):
-    original = instance.log
-    instance.log = original
-    assert instance.log == original
-
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab__attr_type(instance):
-    assert isinstance(instance._attr, str)
 
 
 @given(instance=RegularDiscountSlab_strategy)
@@ -987,20 +930,14 @@ def test_regulardiscountslab__attr_setter(instance):
     instance._attr = original
     assert instance._attr == original
 
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
+def test_regulardiscountslab_log_setter(instance):
+    original = instance.log
+    instance.log = original
+    assert instance.log == original
 
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_RegularSlab_list__type(instance):
-    assert isinstance(instance.RegularSlab_list_, purchaseamountslab)
 
 
 @given(instance=RegularDiscountSlab_strategy)
@@ -1009,9 +946,6 @@ def test_regulardiscountslab_RegularSlab_list__setter(instance):
     instance.RegularSlab_list_ = original
     assert instance.RegularSlab_list_ == original
 
-@given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=RegularDiscountSlab_strategy)
@@ -1020,9 +954,30 @@ def test_regulardiscountslab_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
 @given(instance=RegularDiscountSlab_strategy)
-def test_regulardiscountslab_RegularSlab_list___type(instance):
-    assert isinstance(instance.RegularSlab_list__, purchaseamountslab)
+def test_regulardiscountslab_RadixClient_setter(instance):
+    original = instance.RadixClient
+    instance.RadixClient = original
+    assert instance.RadixClient == original
+
+
+
+@given(instance=RegularDiscountSlab_strategy)
+def test_regulardiscountslab_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
+
+
+@given(instance=RegularDiscountSlab_strategy)
+def test_regulardiscountslab_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 
 
 @given(instance=RegularDiscountSlab_strategy)
@@ -1036,20 +991,6 @@ def test_regulardiscountslab_RegularSlab_list___setter(instance):
 def test_purchaseamountslab_instantiation(instance):
     assert isinstance(instance, PurchaseAmountSlab)
 
-@given(instance=PurchaseAmountSlab_strategy)
-def test_purchaseamountslab_from_type(instance):
-    assert isinstance(instance.from, float)
-
-
-@given(instance=PurchaseAmountSlab_strategy)
-def test_purchaseamountslab_from_setter(instance):
-    original = instance.from
-    instance.from = original
-    assert instance.from == original
-
-@given(instance=PurchaseAmountSlab_strategy)
-def test_purchaseamountslab_discount_type(instance):
-    assert isinstance(instance.discount, float)
 
 
 @given(instance=PurchaseAmountSlab_strategy)
@@ -1058,9 +999,6 @@ def test_purchaseamountslab_discount_setter(instance):
     instance.discount = original
     assert instance.discount == original
 
-@given(instance=PurchaseAmountSlab_strategy)
-def test_purchaseamountslab_to_type(instance):
-    assert isinstance(instance.to, float)
 
 
 @given(instance=PurchaseAmountSlab_strategy)
@@ -1069,36 +1007,19 @@ def test_purchaseamountslab_to_setter(instance):
     instance.to = original
     assert instance.to == original
 
+
+
+@given(instance=PurchaseAmountSlab_strategy)
+def test_purchaseamountslab_from_setter(instance):
+    original = instance.from
+    instance.from = original
+    assert instance.from == original
+
 @given(instance=CustomerHandler_strategy)
 @settings(max_examples=50)
 def test_customerhandler_instantiation(instance):
     assert isinstance(instance, CustomerHandler)
 
-@given(instance=CustomerHandler_strategy)
-def test_customerhandler_populate_type(instance):
-    assert isinstance(instance.populate, str)
-
-
-@given(instance=CustomerHandler_strategy)
-def test_customerhandler_populate_setter(instance):
-    original = instance.populate
-    instance.populate = original
-    assert instance.populate == original
-
-@given(instance=CustomerHandler_strategy)
-def test_customerhandler_state_type(instance):
-    assert isinstance(instance.state, customertype)
-
-
-@given(instance=CustomerHandler_strategy)
-def test_customerhandler_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=CustomerHandler_strategy)
-def test_customerhandler_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=CustomerHandler_strategy)
@@ -1107,36 +1028,27 @@ def test_customerhandler_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=CustomerHandler_strategy)
+def test_customerhandler_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+
+
+@given(instance=CustomerHandler_strategy)
+def test_customerhandler_populate_setter(instance):
+    original = instance.populate
+    instance.populate = original
+    assert instance.populate == original
+
 @given(instance=RegularCustomer_strategy)
 @settings(max_examples=50)
 def test_regularcustomer_instantiation(instance):
     assert isinstance(instance, RegularCustomer)
 
-@given(instance=RegularCustomer_strategy)
-def test_regularcustomer_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=RegularCustomer_strategy)
-def test_regularcustomer_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=RegularCustomer_strategy)
-def test_regularcustomer_log_type(instance):
-    assert isinstance(instance.log, str)
-
-
-@given(instance=RegularCustomer_strategy)
-def test_regularcustomer_log_setter(instance):
-    original = instance.log
-    instance.log = original
-    assert instance.log == original
-
-@given(instance=RegularCustomer_strategy)
-def test_regularcustomer_RadixClient_type(instance):
-    assert isinstance(instance.RadixClient, str)
 
 
 @given(instance=RegularCustomer_strategy)
@@ -1145,25 +1057,27 @@ def test_regularcustomer_RadixClient_setter(instance):
     instance.RadixClient = original
     assert instance.RadixClient == original
 
+
+
+@given(instance=RegularCustomer_strategy)
+def test_regularcustomer_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=RegularCustomer_strategy)
+def test_regularcustomer_log_setter(instance):
+    original = instance.log
+    instance.log = original
+    assert instance.log == original
+
 @given(instance=Item_strategy)
 @settings(max_examples=50)
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=Item_strategy)
-def test_item_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Item_strategy)
-def test_item_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Item_strategy)
-def test_item_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
 @given(instance=Item_strategy)
@@ -1172,9 +1086,6 @@ def test_item_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
-@given(instance=Item_strategy)
-def test_item_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=Item_strategy)
@@ -1183,14 +1094,19 @@ def test_item_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
+
+
+@given(instance=Item_strategy)
+def test_item_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=ShoppingCart_strategy)
 @settings(max_examples=50)
 def test_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCart)
 
-@given(instance=ShoppingCart_strategy)
-def test_shoppingcart_Items_list__type(instance):
-    assert isinstance(instance.Items_list_, item)
 
 
 @given(instance=ShoppingCart_strategy)
@@ -1199,9 +1115,6 @@ def test_shoppingcart_Items_list__setter(instance):
     instance.Items_list_ = original
     assert instance.Items_list_ == original
 
-@given(instance=ShoppingCart_strategy)
-def test_shoppingcart__attr_type(instance):
-    assert isinstance(instance._attr, date)
 
 
 @given(instance=ShoppingCart_strategy)
@@ -1215,31 +1128,6 @@ def test_shoppingcart__attr_setter(instance):
 def test_lzuser2_instantiation(instance):
     assert isinstance(instance, LZUser2)
 
-@given(instance=LZUser2_strategy)
-def test_lzuser2_populate_type(instance):
-    assert isinstance(instance.populate, str)
-
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_populate_setter(instance):
-    original = instance.populate
-    instance.populate = original
-    assert instance.populate == original
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_state_type(instance):
-    assert isinstance(instance.state, customertype)
-
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=LZUser2_strategy)
-def test_lzuser2_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=LZUser2_strategy)
@@ -1248,47 +1136,27 @@ def test_lzuser2_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=LZUser2_strategy)
+def test_lzuser2_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+
+
+@given(instance=LZUser2_strategy)
+def test_lzuser2_populate_setter(instance):
+    original = instance.populate
+    instance.populate = original
+    assert instance.populate == original
+
 @given(instance=Order_strategy)
 @settings(max_examples=50)
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Order_strategy)
-def test_order_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Order_strategy)
-def test_order_shipped_type(instance):
-    assert isinstance(instance.shipped, bool)
-
-
-@given(instance=Order_strategy)
-def test_order_shipped_setter(instance):
-    original = instance.shipped
-    instance.shipped = original
-    assert instance.shipped == original
-
-@given(instance=Order_strategy)
-def test_order_ordered_type(instance):
-    assert isinstance(instance.ordered, date)
-
-
-@given(instance=Order_strategy)
-def test_order_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=Order_strategy)
-def test_order_shipTo_type(instance):
-    assert isinstance(instance.shipTo, str)
 
 
 @given(instance=Order_strategy)
@@ -1297,9 +1165,6 @@ def test_order_shipTo_setter(instance):
     instance.shipTo = original
     assert instance.shipTo == original
 
-@given(instance=Order_strategy)
-def test_order_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=Order_strategy)
@@ -1308,9 +1173,14 @@ def test_order_number_setter(instance):
     instance.number = original
     assert instance.number == original
 
+
+
 @given(instance=Order_strategy)
-def test_order_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_order_shipped_setter(instance):
+    original = instance.shipped
+    instance.shipped = original
+    assert instance.shipped == original
+
 
 
 @given(instance=Order_strategy)
@@ -1319,25 +1189,27 @@ def test_order_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
 @given(instance=SalesPerson_strategy)
 @settings(max_examples=50)
 def test_salesperson_instantiation(instance):
     assert isinstance(instance, SalesPerson)
 
-@given(instance=SalesPerson_strategy)
-def test_salesperson_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=SalesPerson_strategy)
-def test_salesperson_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=SalesPerson_strategy)
-def test_salesperson_populate_type(instance):
-    assert isinstance(instance.populate, str)
 
 
 @given(instance=SalesPerson_strategy)
@@ -1346,9 +1218,14 @@ def test_salesperson_populate_setter(instance):
     instance.populate = original
     assert instance.populate == original
 
+
+
 @given(instance=SalesPerson_strategy)
-def test_salesperson_state_type(instance):
-    assert isinstance(instance.state, customertype)
+def test_salesperson_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 
 
 @given(instance=SalesPerson_strategy)
@@ -1362,20 +1239,6 @@ def test_salesperson_state_setter(instance):
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_paidDate_type(instance):
-    assert isinstance(instance.paidDate, date)
-
-
-@given(instance=Payment_strategy)
-def test_payment_paidDate_setter(instance):
-    original = instance.paidDate
-    instance.paidDate = original
-    assert instance.paidDate == original
-
-@given(instance=Payment_strategy)
-def test_payment_total_type(instance):
-    assert isinstance(instance.total, float)
 
 
 @given(instance=Payment_strategy)
@@ -1384,9 +1247,6 @@ def test_payment_total_setter(instance):
     instance.total = original
     assert instance.total == original
 
-@given(instance=Payment_strategy)
-def test_payment_details_type(instance):
-    assert isinstance(instance.details, str)
 
 
 @given(instance=Payment_strategy)
@@ -1395,25 +1255,27 @@ def test_payment_details_setter(instance):
     instance.details = original
     assert instance.details == original
 
+
+
+@given(instance=Payment_strategy)
+def test_payment_paidDate_setter(instance):
+    original = instance.paidDate
+    instance.paidDate = original
+    assert instance.paidDate == original
+
 @given(instance=PremiumCustomer_strategy)
 @settings(max_examples=50)
 def test_premiumcustomer_instantiation(instance):
     assert isinstance(instance, PremiumCustomer)
 
-@given(instance=PremiumCustomer_strategy)
-def test_premiumcustomer_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=PremiumCustomer_strategy)
-def test_premiumcustomer_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
+def test_premiumcustomer_RadixClient_setter(instance):
+    original = instance.RadixClient
+    instance.RadixClient = original
+    assert instance.RadixClient == original
 
-@given(instance=PremiumCustomer_strategy)
-def test_premiumcustomer_log_type(instance):
-    assert isinstance(instance.log, str)
 
 
 @given(instance=PremiumCustomer_strategy)
@@ -1422,13 +1284,10 @@ def test_premiumcustomer_log_setter(instance):
     instance.log = original
     assert instance.log == original
 
-@given(instance=PremiumCustomer_strategy)
-def test_premiumcustomer_RadixClient_type(instance):
-    assert isinstance(instance.RadixClient, str)
 
 
 @given(instance=PremiumCustomer_strategy)
-def test_premiumcustomer_RadixClient_setter(instance):
-    original = instance.RadixClient
-    instance.RadixClient = original
-    assert instance.RadixClient == original
+def test_premiumcustomer_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original

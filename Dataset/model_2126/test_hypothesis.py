@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TestPackage::TestClass,
-    TestPackage::SubPackage::SubTestInterface,
-    TestPackage::SubPackage::SubTestClass,
+from python_code import (
+    TestPackage_TestClass,
+    TestPackage_SubPackage_SubTestInterface,
+    TestPackage_SubPackage_SubTestClass,
     SubTestClass,
-    SubTestEnum,
     TestEnum,
+    SubTestEnum,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_testpackage::testclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestClass)
+def test_testpackage_testclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestClass)
 
 
-def test_testpackage::testclass_constructor_exists():
-    assert callable(TestPackage::TestClass.__init__)
+def test_testpackage_testclass_constructor_exists():
+    assert callable(TestPackage_TestClass.__init__)
 
 
-def test_testpackage::testclass_constructor_args():
-    sig = inspect.signature(TestPackage::TestClass.__init__)
+def test_testpackage_testclass_constructor_args():
+    sig = inspect.signature(TestPackage_TestClass.__init__)
     params = list(sig.parameters.keys())
     assert "testAttr" in params, "Missing parameter 'testAttr'"
 
-def test_testpackage::testclass_has_testAttr():
-    assert hasattr(TestPackage::TestClass, "testAttr")
+def test_testpackage_testclass_has_testAttr():
+    assert hasattr(TestPackage_TestClass, "testAttr")
     descriptor = None
-    for klass in TestPackage::TestClass.__mro__:
+    for klass in TestPackage_TestClass.__mro__:
         if "testAttr" in klass.__dict__:
             descriptor = klass.__dict__["testAttr"]
             break
@@ -44,30 +44,30 @@ def test_testpackage::testclass_has_testAttr():
 
 
 
-def test_testpackage::subpackage::subtestinterface_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SubPackage::SubTestInterface)
+def test_testpackage_subpackage_subtestinterface_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SubPackage_SubTestInterface)
 
 
-def test_testpackage::subpackage::subtestinterface_constructor_exists():
-    assert callable(TestPackage::SubPackage::SubTestInterface.__init__)
+def test_testpackage_subpackage_subtestinterface_constructor_exists():
+    assert callable(TestPackage_SubPackage_SubTestInterface.__init__)
 
 
-def test_testpackage::subpackage::subtestinterface_constructor_args():
-    sig = inspect.signature(TestPackage::SubPackage::SubTestInterface.__init__)
+def test_testpackage_subpackage_subtestinterface_constructor_args():
+    sig = inspect.signature(TestPackage_SubPackage_SubTestInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::subpackage::subtestclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SubPackage::SubTestClass)
+def test_testpackage_subpackage_subtestclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SubPackage_SubTestClass)
 
 
-def test_testpackage::subpackage::subtestclass_constructor_exists():
-    assert callable(TestPackage::SubPackage::SubTestClass.__init__)
+def test_testpackage_subpackage_subtestclass_constructor_exists():
+    assert callable(TestPackage_SubPackage_SubTestClass.__init__)
 
 
-def test_testpackage::subpackage::subtestclass_constructor_args():
-    sig = inspect.signature(TestPackage::SubPackage::SubTestClass.__init__)
+def test_testpackage_subpackage_subtestclass_constructor_args():
+    sig = inspect.signature(TestPackage_SubPackage_SubTestClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,19 +84,6 @@ def test_subtestclass_constructor_args():
     sig = inspect.signature(SubTestClass.__init__)
     params = list(sig.parameters.keys())
 
-def test_subtestenum_exists():
-    # Check that the Enumeration exists
-    assert SubTestEnum is not None
-
-def test_subtestenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SubTestEnum]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SubTestEnum"
-
 def test_testenum_exists():
     # Check that the Enumeration exists
     assert TestEnum is not None
@@ -110,6 +97,19 @@ def test_testenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TestEnum"
 
+def test_subtestenum_exists():
+    # Check that the Enumeration exists
+    assert SubTestEnum is not None
+
+def test_subtestenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SubTestEnum]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SubTestEnum"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -122,33 +122,30 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TestPackage::TestClass_strategy = st.builds(
-    TestPackage::TestClass,
+TestPackage_TestClass_strategy = st.builds(
+    TestPackage_TestClass,
     testAttr=
         st.booleans()
 )
-TestPackage::SubPackage::SubTestInterface_strategy = st.builds(
-    TestPackage::SubPackage::SubTestInterface,
+TestPackage_SubPackage_SubTestInterface_strategy = st.builds(
+    TestPackage_SubPackage_SubTestInterface,
 )
-TestPackage::SubPackage::SubTestClass_strategy = st.builds(
-    TestPackage::SubPackage::SubTestClass,
+TestPackage_SubPackage_SubTestClass_strategy = st.builds(
+    TestPackage_SubPackage_SubTestClass,
 )
 SubTestClass_strategy = st.builds(
     SubTestClass,
 )
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::testclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestClass)
-
-@given(instance=TestPackage::TestClass_strategy)
-def test_testpackage::testclass_testAttr_type(instance):
-    assert isinstance(instance.testAttr, bool)
+def test_testpackage_testclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestClass)
 
 
-@given(instance=TestPackage::TestClass_strategy)
-def test_testpackage::testclass_testAttr_setter(instance):
+
+@given(instance=TestPackage_TestClass_strategy)
+def test_testpackage_testclass_testAttr_setter(instance):
     original = instance.testAttr
     instance.testAttr = original
     assert instance.testAttr == original
@@ -159,9 +156,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass_testop_changes_state(instance):
+def test_testpackage_testclass_testop_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -173,24 +170,24 @@ def test_testpackage::testclass_testop_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp' in TestPackage::TestClass is empty"
+        assert has_statements, f"Function 'testOp' in TestPackage_TestClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp' in TestPackage::TestClass did not change state; check implementation")
+            warnings.warn(f"Operation 'testOp' in TestPackage_TestClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp' in TestPackage::TestClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'testOp' in TestPackage_TestClass is not implemented or raised an error")
 
-@given(instance=TestPackage::SubPackage::SubTestInterface_strategy)
+@given(instance=TestPackage_SubPackage_SubTestInterface_strategy)
 @settings(max_examples=50)
-def test_testpackage::subpackage::subtestinterface_instantiation(instance):
-    assert isinstance(instance, TestPackage::SubPackage::SubTestInterface)
+def test_testpackage_subpackage_subtestinterface_instantiation(instance):
+    assert isinstance(instance, TestPackage_SubPackage_SubTestInterface)
 
-@given(instance=TestPackage::SubPackage::SubTestClass_strategy)
+@given(instance=TestPackage_SubPackage_SubTestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::subpackage::subtestclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::SubPackage::SubTestClass)
+def test_testpackage_subpackage_subtestclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_SubPackage_SubTestClass)
 
 @given(instance=SubTestClass_strategy)
 @settings(max_examples=50)

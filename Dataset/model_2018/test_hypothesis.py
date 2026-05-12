@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Literal,
-    execTraces::BoolLiteral,
-    execTraces::IntLiteral,
-    execTraces::RealLiteral,
-    execTraces::Literal,
-    execTraces::Variable,
-    execTraces::Edge,
-    execTraces::Node,
-    execTraces::ExecTraces,
+    execTraces_BoolLiteral,
+    execTraces_IntLiteral,
+    execTraces_RealLiteral,
+    execTraces_Literal,
+    execTraces_Variable,
+    execTraces_Edge,
+    execTraces_Node,
+    execTraces_ExecTraces,
     TransStatus,
     StateStatus,
 )
@@ -39,23 +39,23 @@ def test_literal_constructor_args():
 
 
 
-def test_exectraces::boolliteral_is_not_abstract():
-    assert not inspect.isabstract(execTraces::BoolLiteral)
+def test_exectraces_boolliteral_is_not_abstract():
+    assert not inspect.isabstract(execTraces_BoolLiteral)
 
 
-def test_exectraces::boolliteral_constructor_exists():
-    assert callable(execTraces::BoolLiteral.__init__)
+def test_exectraces_boolliteral_constructor_exists():
+    assert callable(execTraces_BoolLiteral.__init__)
 
 
-def test_exectraces::boolliteral_constructor_args():
-    sig = inspect.signature(execTraces::BoolLiteral.__init__)
+def test_exectraces_boolliteral_constructor_args():
+    sig = inspect.signature(execTraces_BoolLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "bool" in params, "Missing parameter 'bool'"
 
-def test_exectraces::boolliteral_has_bool():
-    assert hasattr(execTraces::BoolLiteral, "bool")
+def test_exectraces_boolliteral_has_bool():
+    assert hasattr(execTraces_BoolLiteral, "bool")
     descriptor = None
-    for klass in execTraces::BoolLiteral.__mro__:
+    for klass in execTraces_BoolLiteral.__mro__:
         if "bool" in klass.__dict__:
             descriptor = klass.__dict__["bool"]
             break
@@ -63,23 +63,23 @@ def test_exectraces::boolliteral_has_bool():
 
 
 
-def test_exectraces::intliteral_is_not_abstract():
-    assert not inspect.isabstract(execTraces::IntLiteral)
+def test_exectraces_intliteral_is_not_abstract():
+    assert not inspect.isabstract(execTraces_IntLiteral)
 
 
-def test_exectraces::intliteral_constructor_exists():
-    assert callable(execTraces::IntLiteral.__init__)
+def test_exectraces_intliteral_constructor_exists():
+    assert callable(execTraces_IntLiteral.__init__)
 
 
-def test_exectraces::intliteral_constructor_args():
-    sig = inspect.signature(execTraces::IntLiteral.__init__)
+def test_exectraces_intliteral_constructor_args():
+    sig = inspect.signature(execTraces_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "int" in params, "Missing parameter 'int'"
 
-def test_exectraces::intliteral_has_int():
-    assert hasattr(execTraces::IntLiteral, "int")
+def test_exectraces_intliteral_has_int():
+    assert hasattr(execTraces_IntLiteral, "int")
     descriptor = None
-    for klass in execTraces::IntLiteral.__mro__:
+    for klass in execTraces_IntLiteral.__mro__:
         if "int" in klass.__dict__:
             descriptor = klass.__dict__["int"]
             break
@@ -87,71 +87,71 @@ def test_exectraces::intliteral_has_int():
 
 
 
-def test_exectraces::realliteral_is_not_abstract():
-    assert not inspect.isabstract(execTraces::RealLiteral)
+def test_exectraces_realliteral_is_not_abstract():
+    assert not inspect.isabstract(execTraces_RealLiteral)
 
 
-def test_exectraces::realliteral_constructor_exists():
-    assert callable(execTraces::RealLiteral.__init__)
+def test_exectraces_realliteral_constructor_exists():
+    assert callable(execTraces_RealLiteral.__init__)
 
 
-def test_exectraces::realliteral_constructor_args():
-    sig = inspect.signature(execTraces::RealLiteral.__init__)
+def test_exectraces_realliteral_constructor_args():
+    sig = inspect.signature(execTraces_RealLiteral.__init__)
     params = list(sig.parameters.keys())
-    assert "intPart" in params, "Missing parameter 'intPart'"
     assert "decimalPart" in params, "Missing parameter 'decimalPart'"
+    assert "intPart" in params, "Missing parameter 'intPart'"
 
-def test_exectraces::realliteral_has_intPart():
-    assert hasattr(execTraces::RealLiteral, "intPart")
+def test_exectraces_realliteral_has_decimalPart():
+    assert hasattr(execTraces_RealLiteral, "decimalPart")
     descriptor = None
-    for klass in execTraces::RealLiteral.__mro__:
-        if "intPart" in klass.__dict__:
-            descriptor = klass.__dict__["intPart"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exectraces::realliteral_has_decimalPart():
-    assert hasattr(execTraces::RealLiteral, "decimalPart")
-    descriptor = None
-    for klass in execTraces::RealLiteral.__mro__:
+    for klass in execTraces_RealLiteral.__mro__:
         if "decimalPart" in klass.__dict__:
             descriptor = klass.__dict__["decimalPart"]
             break
     assert isinstance(descriptor, property)
 
+def test_exectraces_realliteral_has_intPart():
+    assert hasattr(execTraces_RealLiteral, "intPart")
+    descriptor = None
+    for klass in execTraces_RealLiteral.__mro__:
+        if "intPart" in klass.__dict__:
+            descriptor = klass.__dict__["intPart"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_exectraces::literal_is_not_abstract():
-    assert not inspect.isabstract(execTraces::Literal)
+
+def test_exectraces_literal_is_not_abstract():
+    assert not inspect.isabstract(execTraces_Literal)
 
 
-def test_exectraces::literal_constructor_exists():
-    assert callable(execTraces::Literal.__init__)
+def test_exectraces_literal_constructor_exists():
+    assert callable(execTraces_Literal.__init__)
 
 
-def test_exectraces::literal_constructor_args():
-    sig = inspect.signature(execTraces::Literal.__init__)
+def test_exectraces_literal_constructor_args():
+    sig = inspect.signature(execTraces_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_exectraces::variable_is_not_abstract():
-    assert not inspect.isabstract(execTraces::Variable)
+def test_exectraces_variable_is_not_abstract():
+    assert not inspect.isabstract(execTraces_Variable)
 
 
-def test_exectraces::variable_constructor_exists():
-    assert callable(execTraces::Variable.__init__)
+def test_exectraces_variable_constructor_exists():
+    assert callable(execTraces_Variable.__init__)
 
 
-def test_exectraces::variable_constructor_args():
-    sig = inspect.signature(execTraces::Variable.__init__)
+def test_exectraces_variable_constructor_args():
+    sig = inspect.signature(execTraces_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_exectraces::variable_has_name():
-    assert hasattr(execTraces::Variable, "name")
+def test_exectraces_variable_has_name():
+    assert hasattr(execTraces_Variable, "name")
     descriptor = None
-    for klass in execTraces::Variable.__mro__:
+    for klass in execTraces_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -159,117 +159,117 @@ def test_exectraces::variable_has_name():
 
 
 
-def test_exectraces::edge_is_not_abstract():
-    assert not inspect.isabstract(execTraces::Edge)
+def test_exectraces_edge_is_not_abstract():
+    assert not inspect.isabstract(execTraces_Edge)
 
 
-def test_exectraces::edge_constructor_exists():
-    assert callable(execTraces::Edge.__init__)
+def test_exectraces_edge_constructor_exists():
+    assert callable(execTraces_Edge.__init__)
 
 
-def test_exectraces::edge_constructor_args():
-    sig = inspect.signature(execTraces::Edge.__init__)
+def test_exectraces_edge_constructor_args():
+    sig = inspect.signature(execTraces_Edge.__init__)
     params = list(sig.parameters.keys())
-    assert "trigger" in params, "Missing parameter 'trigger'"
+    assert "actions" in params, "Missing parameter 'actions'"
     assert "guard" in params, "Missing parameter 'guard'"
     assert "status" in params, "Missing parameter 'status'"
-    assert "actions" in params, "Missing parameter 'actions'"
+    assert "trigger" in params, "Missing parameter 'trigger'"
 
-def test_exectraces::edge_has_trigger():
-    assert hasattr(execTraces::Edge, "trigger")
+def test_exectraces_edge_has_actions():
+    assert hasattr(execTraces_Edge, "actions")
     descriptor = None
-    for klass in execTraces::Edge.__mro__:
-        if "trigger" in klass.__dict__:
-            descriptor = klass.__dict__["trigger"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exectraces::edge_has_guard():
-    assert hasattr(execTraces::Edge, "guard")
-    descriptor = None
-    for klass in execTraces::Edge.__mro__:
-        if "guard" in klass.__dict__:
-            descriptor = klass.__dict__["guard"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exectraces::edge_has_status():
-    assert hasattr(execTraces::Edge, "status")
-    descriptor = None
-    for klass in execTraces::Edge.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exectraces::edge_has_actions():
-    assert hasattr(execTraces::Edge, "actions")
-    descriptor = None
-    for klass in execTraces::Edge.__mro__:
+    for klass in execTraces_Edge.__mro__:
         if "actions" in klass.__dict__:
             descriptor = klass.__dict__["actions"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_exectraces::node_is_not_abstract():
-    assert not inspect.isabstract(execTraces::Node)
-
-
-def test_exectraces::node_constructor_exists():
-    assert callable(execTraces::Node.__init__)
-
-
-def test_exectraces::node_constructor_args():
-    sig = inspect.signature(execTraces::Node.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "constraints" in params, "Missing parameter 'constraints'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "level" in params, "Missing parameter 'level'"
-
-def test_exectraces::node_has_status():
-    assert hasattr(execTraces::Node, "status")
+def test_exectraces_edge_has_guard():
+    assert hasattr(execTraces_Edge, "guard")
     descriptor = None
-    for klass in execTraces::Node.__mro__:
+    for klass in execTraces_Edge.__mro__:
+        if "guard" in klass.__dict__:
+            descriptor = klass.__dict__["guard"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_exectraces_edge_has_status():
+    assert hasattr(execTraces_Edge, "status")
+    descriptor = None
+    for klass in execTraces_Edge.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_exectraces::node_has_id():
-    assert hasattr(execTraces::Node, "id")
+def test_exectraces_edge_has_trigger():
+    assert hasattr(execTraces_Edge, "trigger")
     descriptor = None
-    for klass in execTraces::Node.__mro__:
+    for klass in execTraces_Edge.__mro__:
+        if "trigger" in klass.__dict__:
+            descriptor = klass.__dict__["trigger"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_exectraces_node_is_not_abstract():
+    assert not inspect.isabstract(execTraces_Node)
+
+
+def test_exectraces_node_constructor_exists():
+    assert callable(execTraces_Node.__init__)
+
+
+def test_exectraces_node_constructor_args():
+    sig = inspect.signature(execTraces_Node.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "constraints" in params, "Missing parameter 'constraints'"
+    assert "level" in params, "Missing parameter 'level'"
+
+def test_exectraces_node_has_id():
+    assert hasattr(execTraces_Node, "id")
+    descriptor = None
+    for klass in execTraces_Node.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_exectraces::node_has_constraints():
-    assert hasattr(execTraces::Node, "constraints")
+def test_exectraces_node_has_status():
+    assert hasattr(execTraces_Node, "status")
     descriptor = None
-    for klass in execTraces::Node.__mro__:
-        if "constraints" in klass.__dict__:
-            descriptor = klass.__dict__["constraints"]
+    for klass in execTraces_Node.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_exectraces::node_has_name():
-    assert hasattr(execTraces::Node, "name")
+def test_exectraces_node_has_name():
+    assert hasattr(execTraces_Node, "name")
     descriptor = None
-    for klass in execTraces::Node.__mro__:
+    for klass in execTraces_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_exectraces::node_has_level():
-    assert hasattr(execTraces::Node, "level")
+def test_exectraces_node_has_constraints():
+    assert hasattr(execTraces_Node, "constraints")
     descriptor = None
-    for klass in execTraces::Node.__mro__:
+    for klass in execTraces_Node.__mro__:
+        if "constraints" in klass.__dict__:
+            descriptor = klass.__dict__["constraints"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_exectraces_node_has_level():
+    assert hasattr(execTraces_Node, "level")
+    descriptor = None
+    for klass in execTraces_Node.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
@@ -277,23 +277,23 @@ def test_exectraces::node_has_level():
 
 
 
-def test_exectraces::exectraces_is_not_abstract():
-    assert not inspect.isabstract(execTraces::ExecTraces)
+def test_exectraces_exectraces_is_not_abstract():
+    assert not inspect.isabstract(execTraces_ExecTraces)
 
 
-def test_exectraces::exectraces_constructor_exists():
-    assert callable(execTraces::ExecTraces.__init__)
+def test_exectraces_exectraces_constructor_exists():
+    assert callable(execTraces_ExecTraces.__init__)
 
 
-def test_exectraces::exectraces_constructor_args():
-    sig = inspect.signature(execTraces::ExecTraces.__init__)
+def test_exectraces_exectraces_constructor_args():
+    sig = inspect.signature(execTraces_ExecTraces.__init__)
     params = list(sig.parameters.keys())
     assert "ComponentName" in params, "Missing parameter 'ComponentName'"
 
-def test_exectraces::exectraces_has_ComponentName():
-    assert hasattr(execTraces::ExecTraces, "ComponentName")
+def test_exectraces_exectraces_has_ComponentName():
+    assert hasattr(execTraces_ExecTraces, "ComponentName")
     descriptor = None
-    for klass in execTraces::ExecTraces.__mro__:
+    for klass in execTraces_ExecTraces.__mro__:
         if "ComponentName" in klass.__dict__:
             descriptor = klass.__dict__["ComponentName"]
             break
@@ -307,10 +307,10 @@ def test_transstatus_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TransStatus]
     expected_literals = [
-        "normal",
-        "redundantTrans",
         "unsafeTrans",
+        "redundantTrans",
         "error",
+        "normal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -347,57 +347,57 @@ safe_text = st.text(
 Literal_strategy = st.builds(
     Literal,
 )
-execTraces::BoolLiteral_strategy = st.builds(
-    execTraces::BoolLiteral,
+execTraces_BoolLiteral_strategy = st.builds(
+    execTraces_BoolLiteral,
     bool=
         safe_text
 )
-execTraces::IntLiteral_strategy = st.builds(
-    execTraces::IntLiteral,
+execTraces_IntLiteral_strategy = st.builds(
+    execTraces_IntLiteral,
     int=
         st.integers()
 )
-execTraces::RealLiteral_strategy = st.builds(
-    execTraces::RealLiteral,
-    intPart=
-        st.integers(),
+execTraces_RealLiteral_strategy = st.builds(
+    execTraces_RealLiteral,
     decimalPart=
+        st.integers(),
+    intPart=
         st.integers()
 )
-execTraces::Literal_strategy = st.builds(
-    execTraces::Literal,
+execTraces_Literal_strategy = st.builds(
+    execTraces_Literal,
 )
-execTraces::Variable_strategy = st.builds(
-    execTraces::Variable,
+execTraces_Variable_strategy = st.builds(
+    execTraces_Variable,
     name=
         safe_text
 )
-execTraces::Edge_strategy = st.builds(
-    execTraces::Edge,
-    trigger=
+execTraces_Edge_strategy = st.builds(
+    execTraces_Edge,
+    actions=
         safe_text,
     guard=
         safe_text,
     status=
         safe_text,
-    actions=
+    trigger=
         safe_text
 )
-execTraces::Node_strategy = st.builds(
-    execTraces::Node,
-    status=
-        safe_text,
+execTraces_Node_strategy = st.builds(
+    execTraces_Node,
     id=
         st.integers(),
-    constraints=
+    status=
         safe_text,
     name=
+        safe_text,
+    constraints=
         safe_text,
     level=
         st.integers()
 )
-execTraces::ExecTraces_strategy = st.builds(
-    execTraces::ExecTraces,
+execTraces_ExecTraces_strategy = st.builds(
+    execTraces_ExecTraces,
     ComponentName=
         safe_text
 )
@@ -407,207 +407,162 @@ execTraces::ExecTraces_strategy = st.builds(
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=execTraces::BoolLiteral_strategy)
+@given(instance=execTraces_BoolLiteral_strategy)
 @settings(max_examples=50)
-def test_exectraces::boolliteral_instantiation(instance):
-    assert isinstance(instance, execTraces::BoolLiteral)
-
-@given(instance=execTraces::BoolLiteral_strategy)
-def test_exectraces::boolliteral_bool_type(instance):
-    assert isinstance(instance.bool, str)
+def test_exectraces_boolliteral_instantiation(instance):
+    assert isinstance(instance, execTraces_BoolLiteral)
 
 
-@given(instance=execTraces::BoolLiteral_strategy)
-def test_exectraces::boolliteral_bool_setter(instance):
+
+@given(instance=execTraces_BoolLiteral_strategy)
+def test_exectraces_boolliteral_bool_setter(instance):
     original = instance.bool
     instance.bool = original
     assert instance.bool == original
 
-@given(instance=execTraces::IntLiteral_strategy)
+@given(instance=execTraces_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_exectraces::intliteral_instantiation(instance):
-    assert isinstance(instance, execTraces::IntLiteral)
-
-@given(instance=execTraces::IntLiteral_strategy)
-def test_exectraces::intliteral_int_type(instance):
-    assert isinstance(instance.int, int)
+def test_exectraces_intliteral_instantiation(instance):
+    assert isinstance(instance, execTraces_IntLiteral)
 
 
-@given(instance=execTraces::IntLiteral_strategy)
-def test_exectraces::intliteral_int_setter(instance):
+
+@given(instance=execTraces_IntLiteral_strategy)
+def test_exectraces_intliteral_int_setter(instance):
     original = instance.int
     instance.int = original
     assert instance.int == original
 
-@given(instance=execTraces::RealLiteral_strategy)
+@given(instance=execTraces_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_exectraces::realliteral_instantiation(instance):
-    assert isinstance(instance, execTraces::RealLiteral)
-
-@given(instance=execTraces::RealLiteral_strategy)
-def test_exectraces::realliteral_intPart_type(instance):
-    assert isinstance(instance.intPart, int)
+def test_exectraces_realliteral_instantiation(instance):
+    assert isinstance(instance, execTraces_RealLiteral)
 
 
-@given(instance=execTraces::RealLiteral_strategy)
-def test_exectraces::realliteral_intPart_setter(instance):
-    original = instance.intPart
-    instance.intPart = original
-    assert instance.intPart == original
 
-@given(instance=execTraces::RealLiteral_strategy)
-def test_exectraces::realliteral_decimalPart_type(instance):
-    assert isinstance(instance.decimalPart, int)
-
-
-@given(instance=execTraces::RealLiteral_strategy)
-def test_exectraces::realliteral_decimalPart_setter(instance):
+@given(instance=execTraces_RealLiteral_strategy)
+def test_exectraces_realliteral_decimalPart_setter(instance):
     original = instance.decimalPart
     instance.decimalPart = original
     assert instance.decimalPart == original
 
-@given(instance=execTraces::Literal_strategy)
+
+
+@given(instance=execTraces_RealLiteral_strategy)
+def test_exectraces_realliteral_intPart_setter(instance):
+    original = instance.intPart
+    instance.intPart = original
+    assert instance.intPart == original
+
+@given(instance=execTraces_Literal_strategy)
 @settings(max_examples=50)
-def test_exectraces::literal_instantiation(instance):
-    assert isinstance(instance, execTraces::Literal)
+def test_exectraces_literal_instantiation(instance):
+    assert isinstance(instance, execTraces_Literal)
 
-@given(instance=execTraces::Variable_strategy)
+@given(instance=execTraces_Variable_strategy)
 @settings(max_examples=50)
-def test_exectraces::variable_instantiation(instance):
-    assert isinstance(instance, execTraces::Variable)
-
-@given(instance=execTraces::Variable_strategy)
-def test_exectraces::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_exectraces_variable_instantiation(instance):
+    assert isinstance(instance, execTraces_Variable)
 
 
-@given(instance=execTraces::Variable_strategy)
-def test_exectraces::variable_name_setter(instance):
+
+@given(instance=execTraces_Variable_strategy)
+def test_exectraces_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=execTraces::Edge_strategy)
+@given(instance=execTraces_Edge_strategy)
 @settings(max_examples=50)
-def test_exectraces::edge_instantiation(instance):
-    assert isinstance(instance, execTraces::Edge)
-
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
+def test_exectraces_edge_instantiation(instance):
+    assert isinstance(instance, execTraces_Edge)
 
 
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_trigger_setter(instance):
-    original = instance.trigger
-    instance.trigger = original
-    assert instance.trigger == original
 
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_guard_type(instance):
-    assert isinstance(instance.guard, str)
-
-
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_guard_setter(instance):
-    original = instance.guard
-    instance.guard = original
-    assert instance.guard == original
-
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_actions_type(instance):
-    assert isinstance(instance.actions, str)
-
-
-@given(instance=execTraces::Edge_strategy)
-def test_exectraces::edge_actions_setter(instance):
+@given(instance=execTraces_Edge_strategy)
+def test_exectraces_edge_actions_setter(instance):
     original = instance.actions
     instance.actions = original
     assert instance.actions == original
 
-@given(instance=execTraces::Node_strategy)
-@settings(max_examples=50)
-def test_exectraces::node_instantiation(instance):
-    assert isinstance(instance, execTraces::Node)
-
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_status_setter(instance):
+@given(instance=execTraces_Edge_strategy)
+def test_exectraces_edge_guard_setter(instance):
+    original = instance.guard
+    instance.guard = original
+    assert instance.guard == original
+
+
+
+@given(instance=execTraces_Edge_strategy)
+def test_exectraces_edge_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_id_setter(instance):
+@given(instance=execTraces_Edge_strategy)
+def test_exectraces_edge_trigger_setter(instance):
+    original = instance.trigger
+    instance.trigger = original
+    assert instance.trigger == original
+
+@given(instance=execTraces_Node_strategy)
+@settings(max_examples=50)
+def test_exectraces_node_instantiation(instance):
+    assert isinstance(instance, execTraces_Node)
+
+
+
+@given(instance=execTraces_Node_strategy)
+def test_exectraces_node_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_constraints_type(instance):
-    assert isinstance(instance.constraints, str)
 
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_constraints_setter(instance):
-    original = instance.constraints
-    instance.constraints = original
-    assert instance.constraints == original
-
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=execTraces_Node_strategy)
+def test_exectraces_node_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
 
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_name_setter(instance):
+
+@given(instance=execTraces_Node_strategy)
+def test_exectraces_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_level_type(instance):
-    assert isinstance(instance.level, int)
 
 
-@given(instance=execTraces::Node_strategy)
-def test_exectraces::node_level_setter(instance):
+@given(instance=execTraces_Node_strategy)
+def test_exectraces_node_constraints_setter(instance):
+    original = instance.constraints
+    instance.constraints = original
+    assert instance.constraints == original
+
+
+
+@given(instance=execTraces_Node_strategy)
+def test_exectraces_node_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=execTraces::ExecTraces_strategy)
+@given(instance=execTraces_ExecTraces_strategy)
 @settings(max_examples=50)
-def test_exectraces::exectraces_instantiation(instance):
-    assert isinstance(instance, execTraces::ExecTraces)
-
-@given(instance=execTraces::ExecTraces_strategy)
-def test_exectraces::exectraces_ComponentName_type(instance):
-    assert isinstance(instance.ComponentName, str)
+def test_exectraces_exectraces_instantiation(instance):
+    assert isinstance(instance, execTraces_ExecTraces)
 
 
-@given(instance=execTraces::ExecTraces_strategy)
-def test_exectraces::exectraces_ComponentName_setter(instance):
+
+@given(instance=execTraces_ExecTraces_strategy)
+def test_exectraces_exectraces_ComponentName_setter(instance):
     original = instance.ComponentName
     instance.ComponentName = original
     assert instance.ComponentName == original

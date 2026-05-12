@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Statement,
-    simple::lang::IfStatement,
-    simple::lang::ExpressionStatement,
+    simple_lang_IfStatement,
+    simple_lang_ExpressionStatement,
     FeatureCallExpression,
-    simple::lang::PropertyCallExpression,
-    simple::lang::MethodCallExpression,
-    simple::lang::AssignmentStatement,
-    simple::lang::WhileStatement,
+    simple_lang_PropertyCallExpression,
+    simple_lang_MethodCallExpression,
+    simple_lang_AssignmentStatement,
+    simple_lang_WhileStatement,
     BinaryExpression,
-    simple::lang::ComparisonExpression,
-    simple::lang::ArithmeticExpression,
-    simple::lang::LogicalExpression,
+    simple_lang_ArithmeticExpression,
+    simple_lang_ComparisonExpression,
+    simple_lang_LogicalExpression,
     Expression,
-    simple::lang::FeatureCallExpression,
-    simple::lang::BinaryExpression,
-    simple::lang::Type,
-    simple::lang::Expression,
-    simple::lang::Statement,
-    simple::lang::SimpleLang,
+    simple_lang_FeatureCallExpression,
+    simple_lang_BinaryExpression,
+    simple_lang_Type,
+    simple_lang_Expression,
+    simple_lang_Statement,
+    simple_lang_SimpleLang,
 )
 
 # =============================================================================
@@ -47,30 +47,30 @@ def test_statement_constructor_args():
 
 
 
-def test_simple::lang::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::IfStatement)
+def test_simple_lang_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_IfStatement)
 
 
-def test_simple::lang::ifstatement_constructor_exists():
-    assert callable(simple::lang::IfStatement.__init__)
+def test_simple_lang_ifstatement_constructor_exists():
+    assert callable(simple_lang_IfStatement.__init__)
 
 
-def test_simple::lang::ifstatement_constructor_args():
-    sig = inspect.signature(simple::lang::IfStatement.__init__)
+def test_simple_lang_ifstatement_constructor_args():
+    sig = inspect.signature(simple_lang_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::ExpressionStatement)
+def test_simple_lang_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_ExpressionStatement)
 
 
-def test_simple::lang::expressionstatement_constructor_exists():
-    assert callable(simple::lang::ExpressionStatement.__init__)
+def test_simple_lang_expressionstatement_constructor_exists():
+    assert callable(simple_lang_ExpressionStatement.__init__)
 
 
-def test_simple::lang::expressionstatement_constructor_args():
-    sig = inspect.signature(simple::lang::ExpressionStatement.__init__)
+def test_simple_lang_expressionstatement_constructor_args():
+    sig = inspect.signature(simple_lang_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,58 +89,58 @@ def test_featurecallexpression_constructor_args():
 
 
 
-def test_simple::lang::propertycallexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::PropertyCallExpression)
+def test_simple_lang_propertycallexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_PropertyCallExpression)
 
 
-def test_simple::lang::propertycallexpression_constructor_exists():
-    assert callable(simple::lang::PropertyCallExpression.__init__)
+def test_simple_lang_propertycallexpression_constructor_exists():
+    assert callable(simple_lang_PropertyCallExpression.__init__)
 
 
-def test_simple::lang::propertycallexpression_constructor_args():
-    sig = inspect.signature(simple::lang::PropertyCallExpression.__init__)
+def test_simple_lang_propertycallexpression_constructor_args():
+    sig = inspect.signature(simple_lang_PropertyCallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::methodcallexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::MethodCallExpression)
+def test_simple_lang_methodcallexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_MethodCallExpression)
 
 
-def test_simple::lang::methodcallexpression_constructor_exists():
-    assert callable(simple::lang::MethodCallExpression.__init__)
+def test_simple_lang_methodcallexpression_constructor_exists():
+    assert callable(simple_lang_MethodCallExpression.__init__)
 
 
-def test_simple::lang::methodcallexpression_constructor_args():
-    sig = inspect.signature(simple::lang::MethodCallExpression.__init__)
+def test_simple_lang_methodcallexpression_constructor_args():
+    sig = inspect.signature(simple_lang_MethodCallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::AssignmentStatement)
+def test_simple_lang_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_AssignmentStatement)
 
 
-def test_simple::lang::assignmentstatement_constructor_exists():
-    assert callable(simple::lang::AssignmentStatement.__init__)
+def test_simple_lang_assignmentstatement_constructor_exists():
+    assert callable(simple_lang_AssignmentStatement.__init__)
 
 
-def test_simple::lang::assignmentstatement_constructor_args():
-    sig = inspect.signature(simple::lang::AssignmentStatement.__init__)
+def test_simple_lang_assignmentstatement_constructor_args():
+    sig = inspect.signature(simple_lang_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::WhileStatement)
+def test_simple_lang_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_WhileStatement)
 
 
-def test_simple::lang::whilestatement_constructor_exists():
-    assert callable(simple::lang::WhileStatement.__init__)
+def test_simple_lang_whilestatement_constructor_exists():
+    assert callable(simple_lang_WhileStatement.__init__)
 
 
-def test_simple::lang::whilestatement_constructor_args():
-    sig = inspect.signature(simple::lang::WhileStatement.__init__)
+def test_simple_lang_whilestatement_constructor_args():
+    sig = inspect.signature(simple_lang_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,44 +159,44 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_simple::lang::comparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::ComparisonExpression)
+def test_simple_lang_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_ArithmeticExpression)
 
 
-def test_simple::lang::comparisonexpression_constructor_exists():
-    assert callable(simple::lang::ComparisonExpression.__init__)
+def test_simple_lang_arithmeticexpression_constructor_exists():
+    assert callable(simple_lang_ArithmeticExpression.__init__)
 
 
-def test_simple::lang::comparisonexpression_constructor_args():
-    sig = inspect.signature(simple::lang::ComparisonExpression.__init__)
+def test_simple_lang_arithmeticexpression_constructor_args():
+    sig = inspect.signature(simple_lang_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::ArithmeticExpression)
+def test_simple_lang_comparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_ComparisonExpression)
 
 
-def test_simple::lang::arithmeticexpression_constructor_exists():
-    assert callable(simple::lang::ArithmeticExpression.__init__)
+def test_simple_lang_comparisonexpression_constructor_exists():
+    assert callable(simple_lang_ComparisonExpression.__init__)
 
 
-def test_simple::lang::arithmeticexpression_constructor_args():
-    sig = inspect.signature(simple::lang::ArithmeticExpression.__init__)
+def test_simple_lang_comparisonexpression_constructor_args():
+    sig = inspect.signature(simple_lang_ComparisonExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::logicalexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::LogicalExpression)
+def test_simple_lang_logicalexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_LogicalExpression)
 
 
-def test_simple::lang::logicalexpression_constructor_exists():
-    assert callable(simple::lang::LogicalExpression.__init__)
+def test_simple_lang_logicalexpression_constructor_exists():
+    assert callable(simple_lang_LogicalExpression.__init__)
 
 
-def test_simple::lang::logicalexpression_constructor_args():
-    sig = inspect.signature(simple::lang::LogicalExpression.__init__)
+def test_simple_lang_logicalexpression_constructor_args():
+    sig = inspect.signature(simple_lang_LogicalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -215,23 +215,23 @@ def test_expression_constructor_args():
 
 
 
-def test_simple::lang::featurecallexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::FeatureCallExpression)
+def test_simple_lang_featurecallexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_FeatureCallExpression)
 
 
-def test_simple::lang::featurecallexpression_constructor_exists():
-    assert callable(simple::lang::FeatureCallExpression.__init__)
+def test_simple_lang_featurecallexpression_constructor_exists():
+    assert callable(simple_lang_FeatureCallExpression.__init__)
 
 
-def test_simple::lang::featurecallexpression_constructor_args():
-    sig = inspect.signature(simple::lang::FeatureCallExpression.__init__)
+def test_simple_lang_featurecallexpression_constructor_args():
+    sig = inspect.signature(simple_lang_FeatureCallExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simple::lang::featurecallexpression_has_name():
-    assert hasattr(simple::lang::FeatureCallExpression, "name")
+def test_simple_lang_featurecallexpression_has_name():
+    assert hasattr(simple_lang_FeatureCallExpression, "name")
     descriptor = None
-    for klass in simple::lang::FeatureCallExpression.__mro__:
+    for klass in simple_lang_FeatureCallExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -239,23 +239,23 @@ def test_simple::lang::featurecallexpression_has_name():
 
 
 
-def test_simple::lang::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::BinaryExpression)
+def test_simple_lang_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_BinaryExpression)
 
 
-def test_simple::lang::binaryexpression_constructor_exists():
-    assert callable(simple::lang::BinaryExpression.__init__)
+def test_simple_lang_binaryexpression_constructor_exists():
+    assert callable(simple_lang_BinaryExpression.__init__)
 
 
-def test_simple::lang::binaryexpression_constructor_args():
-    sig = inspect.signature(simple::lang::BinaryExpression.__init__)
+def test_simple_lang_binaryexpression_constructor_args():
+    sig = inspect.signature(simple_lang_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_simple::lang::binaryexpression_has_operator():
-    assert hasattr(simple::lang::BinaryExpression, "operator")
+def test_simple_lang_binaryexpression_has_operator():
+    assert hasattr(simple_lang_BinaryExpression, "operator")
     descriptor = None
-    for klass in simple::lang::BinaryExpression.__mro__:
+    for klass in simple_lang_BinaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -263,58 +263,58 @@ def test_simple::lang::binaryexpression_has_operator():
 
 
 
-def test_simple::lang::type_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::Type)
+def test_simple_lang_type_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_Type)
 
 
-def test_simple::lang::type_constructor_exists():
-    assert callable(simple::lang::Type.__init__)
+def test_simple_lang_type_constructor_exists():
+    assert callable(simple_lang_Type.__init__)
 
 
-def test_simple::lang::type_constructor_args():
-    sig = inspect.signature(simple::lang::Type.__init__)
+def test_simple_lang_type_constructor_args():
+    sig = inspect.signature(simple_lang_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::expression_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::Expression)
+def test_simple_lang_expression_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_Expression)
 
 
-def test_simple::lang::expression_constructor_exists():
-    assert callable(simple::lang::Expression.__init__)
+def test_simple_lang_expression_constructor_exists():
+    assert callable(simple_lang_Expression.__init__)
 
 
-def test_simple::lang::expression_constructor_args():
-    sig = inspect.signature(simple::lang::Expression.__init__)
+def test_simple_lang_expression_constructor_args():
+    sig = inspect.signature(simple_lang_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::statement_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::Statement)
+def test_simple_lang_statement_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_Statement)
 
 
-def test_simple::lang::statement_constructor_exists():
-    assert callable(simple::lang::Statement.__init__)
+def test_simple_lang_statement_constructor_exists():
+    assert callable(simple_lang_Statement.__init__)
 
 
-def test_simple::lang::statement_constructor_args():
-    sig = inspect.signature(simple::lang::Statement.__init__)
+def test_simple_lang_statement_constructor_args():
+    sig = inspect.signature(simple_lang_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simple::lang::simplelang_is_not_abstract():
-    assert not inspect.isabstract(simple::lang::SimpleLang)
+def test_simple_lang_simplelang_is_not_abstract():
+    assert not inspect.isabstract(simple_lang_SimpleLang)
 
 
-def test_simple::lang::simplelang_constructor_exists():
-    assert callable(simple::lang::SimpleLang.__init__)
+def test_simple_lang_simplelang_constructor_exists():
+    assert callable(simple_lang_SimpleLang.__init__)
 
 
-def test_simple::lang::simplelang_constructor_args():
-    sig = inspect.signature(simple::lang::SimpleLang.__init__)
+def test_simple_lang_simplelang_constructor_args():
+    sig = inspect.signature(simple_lang_SimpleLang.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -332,63 +332,63 @@ safe_text = st.text(
 Statement_strategy = st.builds(
     Statement,
 )
-simple::lang::IfStatement_strategy = st.builds(
-    simple::lang::IfStatement,
+simple_lang_IfStatement_strategy = st.builds(
+    simple_lang_IfStatement,
 )
-simple::lang::ExpressionStatement_strategy = st.builds(
-    simple::lang::ExpressionStatement,
+simple_lang_ExpressionStatement_strategy = st.builds(
+    simple_lang_ExpressionStatement,
 )
 FeatureCallExpression_strategy = st.builds(
     FeatureCallExpression,
 )
-simple::lang::PropertyCallExpression_strategy = st.builds(
-    simple::lang::PropertyCallExpression,
+simple_lang_PropertyCallExpression_strategy = st.builds(
+    simple_lang_PropertyCallExpression,
 )
-simple::lang::MethodCallExpression_strategy = st.builds(
-    simple::lang::MethodCallExpression,
+simple_lang_MethodCallExpression_strategy = st.builds(
+    simple_lang_MethodCallExpression,
 )
-simple::lang::AssignmentStatement_strategy = st.builds(
-    simple::lang::AssignmentStatement,
+simple_lang_AssignmentStatement_strategy = st.builds(
+    simple_lang_AssignmentStatement,
 )
-simple::lang::WhileStatement_strategy = st.builds(
-    simple::lang::WhileStatement,
+simple_lang_WhileStatement_strategy = st.builds(
+    simple_lang_WhileStatement,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-simple::lang::ComparisonExpression_strategy = st.builds(
-    simple::lang::ComparisonExpression,
+simple_lang_ArithmeticExpression_strategy = st.builds(
+    simple_lang_ArithmeticExpression,
 )
-simple::lang::ArithmeticExpression_strategy = st.builds(
-    simple::lang::ArithmeticExpression,
+simple_lang_ComparisonExpression_strategy = st.builds(
+    simple_lang_ComparisonExpression,
 )
-simple::lang::LogicalExpression_strategy = st.builds(
-    simple::lang::LogicalExpression,
+simple_lang_LogicalExpression_strategy = st.builds(
+    simple_lang_LogicalExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-simple::lang::FeatureCallExpression_strategy = st.builds(
-    simple::lang::FeatureCallExpression,
+simple_lang_FeatureCallExpression_strategy = st.builds(
+    simple_lang_FeatureCallExpression,
     name=
         safe_text
 )
-simple::lang::BinaryExpression_strategy = st.builds(
-    simple::lang::BinaryExpression,
+simple_lang_BinaryExpression_strategy = st.builds(
+    simple_lang_BinaryExpression,
     operator=
         safe_text
 )
-simple::lang::Type_strategy = st.builds(
-    simple::lang::Type,
+simple_lang_Type_strategy = st.builds(
+    simple_lang_Type,
 )
-simple::lang::Expression_strategy = st.builds(
-    simple::lang::Expression,
+simple_lang_Expression_strategy = st.builds(
+    simple_lang_Expression,
 )
-simple::lang::Statement_strategy = st.builds(
-    simple::lang::Statement,
+simple_lang_Statement_strategy = st.builds(
+    simple_lang_Statement,
 )
-simple::lang::SimpleLang_strategy = st.builds(
-    simple::lang::SimpleLang,
+simple_lang_SimpleLang_strategy = st.builds(
+    simple_lang_SimpleLang,
 )
 
 @given(instance=Statement_strategy)
@@ -396,114 +396,108 @@ simple::lang::SimpleLang_strategy = st.builds(
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=simple::lang::IfStatement_strategy)
+@given(instance=simple_lang_IfStatement_strategy)
 @settings(max_examples=50)
-def test_simple::lang::ifstatement_instantiation(instance):
-    assert isinstance(instance, simple::lang::IfStatement)
+def test_simple_lang_ifstatement_instantiation(instance):
+    assert isinstance(instance, simple_lang_IfStatement)
 
-@given(instance=simple::lang::ExpressionStatement_strategy)
+@given(instance=simple_lang_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_simple::lang::expressionstatement_instantiation(instance):
-    assert isinstance(instance, simple::lang::ExpressionStatement)
+def test_simple_lang_expressionstatement_instantiation(instance):
+    assert isinstance(instance, simple_lang_ExpressionStatement)
 
 @given(instance=FeatureCallExpression_strategy)
 @settings(max_examples=50)
 def test_featurecallexpression_instantiation(instance):
     assert isinstance(instance, FeatureCallExpression)
 
-@given(instance=simple::lang::PropertyCallExpression_strategy)
+@given(instance=simple_lang_PropertyCallExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::propertycallexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::PropertyCallExpression)
+def test_simple_lang_propertycallexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_PropertyCallExpression)
 
-@given(instance=simple::lang::MethodCallExpression_strategy)
+@given(instance=simple_lang_MethodCallExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::methodcallexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::MethodCallExpression)
+def test_simple_lang_methodcallexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_MethodCallExpression)
 
-@given(instance=simple::lang::AssignmentStatement_strategy)
+@given(instance=simple_lang_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_simple::lang::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, simple::lang::AssignmentStatement)
+def test_simple_lang_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, simple_lang_AssignmentStatement)
 
-@given(instance=simple::lang::WhileStatement_strategy)
+@given(instance=simple_lang_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_simple::lang::whilestatement_instantiation(instance):
-    assert isinstance(instance, simple::lang::WhileStatement)
+def test_simple_lang_whilestatement_instantiation(instance):
+    assert isinstance(instance, simple_lang_WhileStatement)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=simple::lang::ComparisonExpression_strategy)
+@given(instance=simple_lang_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::comparisonexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::ComparisonExpression)
+def test_simple_lang_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_ArithmeticExpression)
 
-@given(instance=simple::lang::ArithmeticExpression_strategy)
+@given(instance=simple_lang_ComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::ArithmeticExpression)
+def test_simple_lang_comparisonexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_ComparisonExpression)
 
-@given(instance=simple::lang::LogicalExpression_strategy)
+@given(instance=simple_lang_LogicalExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::logicalexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::LogicalExpression)
+def test_simple_lang_logicalexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_LogicalExpression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=simple::lang::FeatureCallExpression_strategy)
+@given(instance=simple_lang_FeatureCallExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::featurecallexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::FeatureCallExpression)
-
-@given(instance=simple::lang::FeatureCallExpression_strategy)
-def test_simple::lang::featurecallexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simple_lang_featurecallexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_FeatureCallExpression)
 
 
-@given(instance=simple::lang::FeatureCallExpression_strategy)
-def test_simple::lang::featurecallexpression_name_setter(instance):
+
+@given(instance=simple_lang_FeatureCallExpression_strategy)
+def test_simple_lang_featurecallexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simple::lang::BinaryExpression_strategy)
+@given(instance=simple_lang_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::binaryexpression_instantiation(instance):
-    assert isinstance(instance, simple::lang::BinaryExpression)
-
-@given(instance=simple::lang::BinaryExpression_strategy)
-def test_simple::lang::binaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_simple_lang_binaryexpression_instantiation(instance):
+    assert isinstance(instance, simple_lang_BinaryExpression)
 
 
-@given(instance=simple::lang::BinaryExpression_strategy)
-def test_simple::lang::binaryexpression_operator_setter(instance):
+
+@given(instance=simple_lang_BinaryExpression_strategy)
+def test_simple_lang_binaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=simple::lang::Type_strategy)
+@given(instance=simple_lang_Type_strategy)
 @settings(max_examples=50)
-def test_simple::lang::type_instantiation(instance):
-    assert isinstance(instance, simple::lang::Type)
+def test_simple_lang_type_instantiation(instance):
+    assert isinstance(instance, simple_lang_Type)
 
-@given(instance=simple::lang::Expression_strategy)
+@given(instance=simple_lang_Expression_strategy)
 @settings(max_examples=50)
-def test_simple::lang::expression_instantiation(instance):
-    assert isinstance(instance, simple::lang::Expression)
+def test_simple_lang_expression_instantiation(instance):
+    assert isinstance(instance, simple_lang_Expression)
 
-@given(instance=simple::lang::Statement_strategy)
+@given(instance=simple_lang_Statement_strategy)
 @settings(max_examples=50)
-def test_simple::lang::statement_instantiation(instance):
-    assert isinstance(instance, simple::lang::Statement)
+def test_simple_lang_statement_instantiation(instance):
+    assert isinstance(instance, simple_lang_Statement)
 
-@given(instance=simple::lang::SimpleLang_strategy)
+@given(instance=simple_lang_SimpleLang_strategy)
 @settings(max_examples=50)
-def test_simple::lang::simplelang_instantiation(instance):
-    assert isinstance(instance, simple::lang::SimpleLang)
+def test_simple_lang_simplelang_instantiation(instance):
+    assert isinstance(instance, simple_lang_SimpleLang)

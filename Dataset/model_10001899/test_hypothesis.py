@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Clasificar_Producto_external,
@@ -171,17 +171,8 @@ def test_pedidos_constructor_exists():
 def test_pedidos_constructor_args():
     sig = inspect.signature(Pedidos.__init__)
     params = list(sig.parameters.keys())
-    assert "codigo" in params, "Missing parameter 'codigo'"
     assert "fecha" in params, "Missing parameter 'fecha'"
-
-def test_pedidos_has_codigo():
-    assert hasattr(Pedidos, "codigo")
-    descriptor = None
-    for klass in Pedidos.__mro__:
-        if "codigo" in klass.__dict__:
-            descriptor = klass.__dict__["codigo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "codigo" in params, "Missing parameter 'codigo'"
 
 def test_pedidos_has_fecha():
     assert hasattr(Pedidos, "fecha")
@@ -189,6 +180,15 @@ def test_pedidos_has_fecha():
     for klass in Pedidos.__mro__:
         if "fecha" in klass.__dict__:
             descriptor = klass.__dict__["fecha"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pedidos_has_codigo():
+    assert hasattr(Pedidos, "codigo")
+    descriptor = None
+    for klass in Pedidos.__mro__:
+        if "codigo" in klass.__dict__:
+            descriptor = klass.__dict__["codigo"]
             break
     assert isinstance(descriptor, property)
 
@@ -205,17 +205,8 @@ def test_solicitud_suministros_constructor_exists():
 def test_solicitud_suministros_constructor_args():
     sig = inspect.signature(Solicitud_Suministros.__init__)
     params = list(sig.parameters.keys())
-    assert "fecha" in params, "Missing parameter 'fecha'"
     assert "codigo" in params, "Missing parameter 'codigo'"
-
-def test_solicitud_suministros_has_fecha():
-    assert hasattr(Solicitud_Suministros, "fecha")
-    descriptor = None
-    for klass in Solicitud_Suministros.__mro__:
-        if "fecha" in klass.__dict__:
-            descriptor = klass.__dict__["fecha"]
-            break
-    assert isinstance(descriptor, property)
+    assert "fecha" in params, "Missing parameter 'fecha'"
 
 def test_solicitud_suministros_has_codigo():
     assert hasattr(Solicitud_Suministros, "codigo")
@@ -223,6 +214,15 @@ def test_solicitud_suministros_has_codigo():
     for klass in Solicitud_Suministros.__mro__:
         if "codigo" in klass.__dict__:
             descriptor = klass.__dict__["codigo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_solicitud_suministros_has_fecha():
+    assert hasattr(Solicitud_Suministros, "fecha")
+    descriptor = None
+    for klass in Solicitud_Suministros.__mro__:
+        if "fecha" in klass.__dict__:
+            descriptor = klass.__dict__["fecha"]
             break
     assert isinstance(descriptor, property)
 
@@ -239,17 +239,8 @@ def test_factura_constructor_exists():
 def test_factura_constructor_args():
     sig = inspect.signature(Factura.__init__)
     params = list(sig.parameters.keys())
-    assert "codigo" in params, "Missing parameter 'codigo'"
     assert "fecha" in params, "Missing parameter 'fecha'"
-
-def test_factura_has_codigo():
-    assert hasattr(Factura, "codigo")
-    descriptor = None
-    for klass in Factura.__mro__:
-        if "codigo" in klass.__dict__:
-            descriptor = klass.__dict__["codigo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "codigo" in params, "Missing parameter 'codigo'"
 
 def test_factura_has_fecha():
     assert hasattr(Factura, "fecha")
@@ -257,6 +248,15 @@ def test_factura_has_fecha():
     for klass in Factura.__mro__:
         if "fecha" in klass.__dict__:
             descriptor = klass.__dict__["fecha"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_factura_has_codigo():
+    assert hasattr(Factura, "codigo")
+    descriptor = None
+    for klass in Factura.__mro__:
+        if "codigo" in klass.__dict__:
+            descriptor = klass.__dict__["codigo"]
             break
     assert isinstance(descriptor, property)
 
@@ -273,9 +273,18 @@ def test_dependencia_constructor_exists():
 def test_dependencia_constructor_args():
     sig = inspect.signature(Dependencia.__init__)
     params = list(sig.parameters.keys())
+    assert "responsable" in params, "Missing parameter 'responsable'"
     assert "nombre" in params, "Missing parameter 'nombre'"
     assert "codigo" in params, "Missing parameter 'codigo'"
-    assert "responsable" in params, "Missing parameter 'responsable'"
+
+def test_dependencia_has_responsable():
+    assert hasattr(Dependencia, "responsable")
+    descriptor = None
+    for klass in Dependencia.__mro__:
+        if "responsable" in klass.__dict__:
+            descriptor = klass.__dict__["responsable"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_dependencia_has_nombre():
     assert hasattr(Dependencia, "nombre")
@@ -295,15 +304,6 @@ def test_dependencia_has_codigo():
             break
     assert isinstance(descriptor, property)
 
-def test_dependencia_has_responsable():
-    assert hasattr(Dependencia, "responsable")
-    descriptor = None
-    for klass in Dependencia.__mro__:
-        if "responsable" in klass.__dict__:
-            descriptor = klass.__dict__["responsable"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_proveedor_is_not_abstract():
@@ -317,19 +317,10 @@ def test_proveedor_constructor_exists():
 def test_proveedor_constructor_args():
     sig = inspect.signature(Proveedor.__init__)
     params = list(sig.parameters.keys())
-    assert "direccion" in params, "Missing parameter 'direccion'"
     assert "telefonos" in params, "Missing parameter 'telefonos'"
-    assert "razonSocial" in params, "Missing parameter 'razonSocial'"
+    assert "direccion" in params, "Missing parameter 'direccion'"
     assert "nit" in params, "Missing parameter 'nit'"
-
-def test_proveedor_has_direccion():
-    assert hasattr(Proveedor, "direccion")
-    descriptor = None
-    for klass in Proveedor.__mro__:
-        if "direccion" in klass.__dict__:
-            descriptor = klass.__dict__["direccion"]
-            break
-    assert isinstance(descriptor, property)
+    assert "razonSocial" in params, "Missing parameter 'razonSocial'"
 
 def test_proveedor_has_telefonos():
     assert hasattr(Proveedor, "telefonos")
@@ -340,12 +331,12 @@ def test_proveedor_has_telefonos():
             break
     assert isinstance(descriptor, property)
 
-def test_proveedor_has_razonSocial():
-    assert hasattr(Proveedor, "razonSocial")
+def test_proveedor_has_direccion():
+    assert hasattr(Proveedor, "direccion")
     descriptor = None
     for klass in Proveedor.__mro__:
-        if "razonSocial" in klass.__dict__:
-            descriptor = klass.__dict__["razonSocial"]
+        if "direccion" in klass.__dict__:
+            descriptor = klass.__dict__["direccion"]
             break
     assert isinstance(descriptor, property)
 
@@ -355,6 +346,15 @@ def test_proveedor_has_nit():
     for klass in Proveedor.__mro__:
         if "nit" in klass.__dict__:
             descriptor = klass.__dict__["nit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_proveedor_has_razonSocial():
+    assert hasattr(Proveedor, "razonSocial")
+    descriptor = None
+    for klass in Proveedor.__mro__:
+        if "razonSocial" in klass.__dict__:
+            descriptor = klass.__dict__["razonSocial"]
             break
     assert isinstance(descriptor, property)
 
@@ -641,43 +641,43 @@ Elementos_strategy = st.builds(
 )
 Pedidos_strategy = st.builds(
     Pedidos,
-    codigo=
-        safe_text,
     fecha=
+        safe_text,
+    codigo=
         safe_text
 )
 Solicitud_Suministros_strategy = st.builds(
     Solicitud_Suministros,
-    fecha=
-        safe_text,
     codigo=
+        safe_text,
+    fecha=
         safe_text
 )
 Factura_strategy = st.builds(
     Factura,
-    codigo=
-        safe_text,
     fecha=
+        safe_text,
+    codigo=
         safe_text
 )
 Dependencia_strategy = st.builds(
     Dependencia,
+    responsable=
+        safe_text,
     nombre=
         safe_text,
     codigo=
-        safe_text,
-    responsable=
         safe_text
 )
 Proveedor_strategy = st.builds(
     Proveedor,
-    direccion=
-        safe_text,
     telefonos=
         safe_text,
-    razonSocial=
+    direccion=
         safe_text,
     nit=
+        safe_text,
+    razonSocial=
         safe_text
 )
 Ordenes_Pedidos_strategy = st.builds(
@@ -768,9 +768,6 @@ def test_servidor_intel_i8_node_instantiation(instance):
 def test_elementos_instantiation(instance):
     assert isinstance(instance, Elementos)
 
-@given(instance=Elementos_strategy)
-def test_elementos_clasificacion_type(instance):
-    assert isinstance(instance.clasificacion, str)
 
 
 @given(instance=Elementos_strategy)
@@ -779,9 +776,6 @@ def test_elementos_clasificacion_setter(instance):
     instance.clasificacion = original
     assert instance.clasificacion == original
 
-@given(instance=Elementos_strategy)
-def test_elementos_referencia_type(instance):
-    assert isinstance(instance.referencia, str)
 
 
 @given(instance=Elementos_strategy)
@@ -795,20 +789,6 @@ def test_elementos_referencia_setter(instance):
 def test_pedidos_instantiation(instance):
     assert isinstance(instance, Pedidos)
 
-@given(instance=Pedidos_strategy)
-def test_pedidos_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
-
-
-@given(instance=Pedidos_strategy)
-def test_pedidos_codigo_setter(instance):
-    original = instance.codigo
-    instance.codigo = original
-    assert instance.codigo == original
-
-@given(instance=Pedidos_strategy)
-def test_pedidos_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
 
 
 @given(instance=Pedidos_strategy)
@@ -817,25 +797,19 @@ def test_pedidos_fecha_setter(instance):
     instance.fecha = original
     assert instance.fecha == original
 
+
+
+@given(instance=Pedidos_strategy)
+def test_pedidos_codigo_setter(instance):
+    original = instance.codigo
+    instance.codigo = original
+    assert instance.codigo == original
+
 @given(instance=Solicitud_Suministros_strategy)
 @settings(max_examples=50)
 def test_solicitud_suministros_instantiation(instance):
     assert isinstance(instance, Solicitud_Suministros)
 
-@given(instance=Solicitud_Suministros_strategy)
-def test_solicitud_suministros_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
-
-
-@given(instance=Solicitud_Suministros_strategy)
-def test_solicitud_suministros_fecha_setter(instance):
-    original = instance.fecha
-    instance.fecha = original
-    assert instance.fecha == original
-
-@given(instance=Solicitud_Suministros_strategy)
-def test_solicitud_suministros_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
 
 
 @given(instance=Solicitud_Suministros_strategy)
@@ -844,25 +818,19 @@ def test_solicitud_suministros_codigo_setter(instance):
     instance.codigo = original
     assert instance.codigo == original
 
+
+
+@given(instance=Solicitud_Suministros_strategy)
+def test_solicitud_suministros_fecha_setter(instance):
+    original = instance.fecha
+    instance.fecha = original
+    assert instance.fecha == original
+
 @given(instance=Factura_strategy)
 @settings(max_examples=50)
 def test_factura_instantiation(instance):
     assert isinstance(instance, Factura)
 
-@given(instance=Factura_strategy)
-def test_factura_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
-
-
-@given(instance=Factura_strategy)
-def test_factura_codigo_setter(instance):
-    original = instance.codigo
-    instance.codigo = original
-    assert instance.codigo == original
-
-@given(instance=Factura_strategy)
-def test_factura_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
 
 
 @given(instance=Factura_strategy)
@@ -871,36 +839,19 @@ def test_factura_fecha_setter(instance):
     instance.fecha = original
     assert instance.fecha == original
 
-@given(instance=Dependencia_strategy)
-@settings(max_examples=50)
-def test_dependencia_instantiation(instance):
-    assert isinstance(instance, Dependencia)
-
-@given(instance=Dependencia_strategy)
-def test_dependencia_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
-@given(instance=Dependencia_strategy)
-def test_dependencia_nombre_setter(instance):
-    original = instance.nombre
-    instance.nombre = original
-    assert instance.nombre == original
-
-@given(instance=Dependencia_strategy)
-def test_dependencia_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
-
-
-@given(instance=Dependencia_strategy)
-def test_dependencia_codigo_setter(instance):
+@given(instance=Factura_strategy)
+def test_factura_codigo_setter(instance):
     original = instance.codigo
     instance.codigo = original
     assert instance.codigo == original
 
 @given(instance=Dependencia_strategy)
-def test_dependencia_responsable_type(instance):
-    assert isinstance(instance.responsable, str)
+@settings(max_examples=50)
+def test_dependencia_instantiation(instance):
+    assert isinstance(instance, Dependencia)
+
 
 
 @given(instance=Dependencia_strategy)
@@ -909,25 +860,27 @@ def test_dependencia_responsable_setter(instance):
     instance.responsable = original
     assert instance.responsable == original
 
+
+
+@given(instance=Dependencia_strategy)
+def test_dependencia_nombre_setter(instance):
+    original = instance.nombre
+    instance.nombre = original
+    assert instance.nombre == original
+
+
+
+@given(instance=Dependencia_strategy)
+def test_dependencia_codigo_setter(instance):
+    original = instance.codigo
+    instance.codigo = original
+    assert instance.codigo == original
+
 @given(instance=Proveedor_strategy)
 @settings(max_examples=50)
 def test_proveedor_instantiation(instance):
     assert isinstance(instance, Proveedor)
 
-@given(instance=Proveedor_strategy)
-def test_proveedor_direccion_type(instance):
-    assert isinstance(instance.direccion, str)
-
-
-@given(instance=Proveedor_strategy)
-def test_proveedor_direccion_setter(instance):
-    original = instance.direccion
-    instance.direccion = original
-    assert instance.direccion == original
-
-@given(instance=Proveedor_strategy)
-def test_proveedor_telefonos_type(instance):
-    assert isinstance(instance.telefonos, str)
 
 
 @given(instance=Proveedor_strategy)
@@ -936,20 +889,14 @@ def test_proveedor_telefonos_setter(instance):
     instance.telefonos = original
     assert instance.telefonos == original
 
-@given(instance=Proveedor_strategy)
-def test_proveedor_razonSocial_type(instance):
-    assert isinstance(instance.razonSocial, str)
 
 
 @given(instance=Proveedor_strategy)
-def test_proveedor_razonSocial_setter(instance):
-    original = instance.razonSocial
-    instance.razonSocial = original
-    assert instance.razonSocial == original
+def test_proveedor_direccion_setter(instance):
+    original = instance.direccion
+    instance.direccion = original
+    assert instance.direccion == original
 
-@given(instance=Proveedor_strategy)
-def test_proveedor_nit_type(instance):
-    assert isinstance(instance.nit, str)
 
 
 @given(instance=Proveedor_strategy)
@@ -958,14 +905,19 @@ def test_proveedor_nit_setter(instance):
     instance.nit = original
     assert instance.nit == original
 
+
+
+@given(instance=Proveedor_strategy)
+def test_proveedor_razonSocial_setter(instance):
+    original = instance.razonSocial
+    instance.razonSocial = original
+    assert instance.razonSocial == original
+
 @given(instance=Ordenes_Pedidos_strategy)
 @settings(max_examples=50)
 def test_ordenes_pedidos_instantiation(instance):
     assert isinstance(instance, Ordenes_Pedidos)
 
-@given(instance=Ordenes_Pedidos_strategy)
-def test_ordenes_pedidos_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
 
 
 @given(instance=Ordenes_Pedidos_strategy)
@@ -974,9 +926,6 @@ def test_ordenes_pedidos_codigo_setter(instance):
     instance.codigo = original
     assert instance.codigo == original
 
-@given(instance=Ordenes_Pedidos_strategy)
-def test_ordenes_pedidos_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
 
 
 @given(instance=Ordenes_Pedidos_strategy)

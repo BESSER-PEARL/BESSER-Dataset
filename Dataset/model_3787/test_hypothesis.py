@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    c::C,
+    c_C,
 )
 
 # =============================================================================
@@ -30,16 +30,16 @@ def test_b_constructor_args():
 
 
 
-def test_c::c_is_not_abstract():
-    assert not inspect.isabstract(c::C)
+def test_c_c_is_not_abstract():
+    assert not inspect.isabstract(c_C)
 
 
-def test_c::c_constructor_exists():
-    assert callable(c::C.__init__)
+def test_c_c_constructor_exists():
+    assert callable(c_C.__init__)
 
 
-def test_c::c_constructor_args():
-    sig = inspect.signature(c::C.__init__)
+def test_c_c_constructor_args():
+    sig = inspect.signature(c_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -57,8 +57,8 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-c::C_strategy = st.builds(
-    c::C,
+c_C_strategy = st.builds(
+    c_C,
 )
 
 @given(instance=B_strategy)
@@ -66,7 +66,7 @@ c::C_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=c::C_strategy)
+@given(instance=c_C_strategy)
 @settings(max_examples=50)
-def test_c::c_instantiation(instance):
-    assert isinstance(instance, c::C)
+def test_c_c_instantiation(instance):
+    assert isinstance(instance, c_C)

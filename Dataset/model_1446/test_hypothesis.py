@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Graph,
-    GraphWiki::Graph,
-    GraphWiki::Revision,
-    GraphWiki::Edge,
-    GraphWiki::Node,
-    GraphWiki::ClassificationGraph,
-    GraphWiki::ArticleGraph,
-    GraphWiki::CategoryGraph,
-    GraphWiki::IndexGraph,
-    GraphWiki::Wiki,
+    GraphWiki_Graph,
+    GraphWiki_Revision,
+    GraphWiki_Edge,
+    GraphWiki_Node,
+    GraphWiki_ClassificationGraph,
+    GraphWiki_ArticleGraph,
+    GraphWiki_CategoryGraph,
+    GraphWiki_IndexGraph,
+    GraphWiki_Wiki,
 )
 
 # =============================================================================
@@ -38,23 +38,23 @@ def test_graph_constructor_args():
 
 
 
-def test_graphwiki::graph_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::Graph)
+def test_graphwiki_graph_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_Graph)
 
 
-def test_graphwiki::graph_constructor_exists():
-    assert callable(GraphWiki::Graph.__init__)
+def test_graphwiki_graph_constructor_exists():
+    assert callable(GraphWiki_Graph.__init__)
 
 
-def test_graphwiki::graph_constructor_args():
-    sig = inspect.signature(GraphWiki::Graph.__init__)
+def test_graphwiki_graph_constructor_args():
+    sig = inspect.signature(GraphWiki_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphwiki::graph_has_name():
-    assert hasattr(GraphWiki::Graph, "name")
+def test_graphwiki_graph_has_name():
+    assert hasattr(GraphWiki_Graph, "name")
     descriptor = None
-    for klass in GraphWiki::Graph.__mro__:
+    for klass in GraphWiki_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -62,43 +62,43 @@ def test_graphwiki::graph_has_name():
 
 
 
-def test_graphwiki::revision_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::Revision)
+def test_graphwiki_revision_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_Revision)
 
 
-def test_graphwiki::revision_constructor_exists():
-    assert callable(GraphWiki::Revision.__init__)
+def test_graphwiki_revision_constructor_exists():
+    assert callable(GraphWiki_Revision.__init__)
 
 
-def test_graphwiki::revision_constructor_args():
-    sig = inspect.signature(GraphWiki::Revision.__init__)
+def test_graphwiki_revision_constructor_args():
+    sig = inspect.signature(GraphWiki_Revision.__init__)
     params = list(sig.parameters.keys())
     assert "user" in params, "Missing parameter 'user'"
     assert "text_id" in params, "Missing parameter 'text_id'"
     assert "date" in params, "Missing parameter 'date'"
 
-def test_graphwiki::revision_has_user():
-    assert hasattr(GraphWiki::Revision, "user")
+def test_graphwiki_revision_has_user():
+    assert hasattr(GraphWiki_Revision, "user")
     descriptor = None
-    for klass in GraphWiki::Revision.__mro__:
+    for klass in GraphWiki_Revision.__mro__:
         if "user" in klass.__dict__:
             descriptor = klass.__dict__["user"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphwiki::revision_has_text_id():
-    assert hasattr(GraphWiki::Revision, "text_id")
+def test_graphwiki_revision_has_text_id():
+    assert hasattr(GraphWiki_Revision, "text_id")
     descriptor = None
-    for klass in GraphWiki::Revision.__mro__:
+    for klass in GraphWiki_Revision.__mro__:
         if "text_id" in klass.__dict__:
             descriptor = klass.__dict__["text_id"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphwiki::revision_has_date():
-    assert hasattr(GraphWiki::Revision, "date")
+def test_graphwiki_revision_has_date():
+    assert hasattr(GraphWiki_Revision, "date")
     descriptor = None
-    for klass in GraphWiki::Revision.__mro__:
+    for klass in GraphWiki_Revision.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -106,23 +106,23 @@ def test_graphwiki::revision_has_date():
 
 
 
-def test_graphwiki::edge_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::Edge)
+def test_graphwiki_edge_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_Edge)
 
 
-def test_graphwiki::edge_constructor_exists():
-    assert callable(GraphWiki::Edge.__init__)
+def test_graphwiki_edge_constructor_exists():
+    assert callable(GraphWiki_Edge.__init__)
 
 
-def test_graphwiki::edge_constructor_args():
-    sig = inspect.signature(GraphWiki::Edge.__init__)
+def test_graphwiki_edge_constructor_args():
+    sig = inspect.signature(GraphWiki_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_graphwiki::edge_has_type():
-    assert hasattr(GraphWiki::Edge, "type")
+def test_graphwiki_edge_has_type():
+    assert hasattr(GraphWiki_Edge, "type")
     descriptor = None
-    for klass in GraphWiki::Edge.__mro__:
+    for klass in GraphWiki_Edge.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -130,153 +130,153 @@ def test_graphwiki::edge_has_type():
 
 
 
-def test_graphwiki::node_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::Node)
+def test_graphwiki_node_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_Node)
 
 
-def test_graphwiki::node_constructor_exists():
-    assert callable(GraphWiki::Node.__init__)
+def test_graphwiki_node_constructor_exists():
+    assert callable(GraphWiki_Node.__init__)
 
 
-def test_graphwiki::node_constructor_args():
-    sig = inspect.signature(GraphWiki::Node.__init__)
+def test_graphwiki_node_constructor_args():
+    sig = inspect.signature(GraphWiki_Node.__init__)
     params = list(sig.parameters.keys())
-    assert "visits" in params, "Missing parameter 'visits'"
-    assert "node_id" in params, "Missing parameter 'node_id'"
-    assert "node_namespace" in params, "Missing parameter 'node_namespace'"
     assert "editions" in params, "Missing parameter 'editions'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "visits" in params, "Missing parameter 'visits'"
+    assert "node_id" in params, "Missing parameter 'node_id'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "node_namespace" in params, "Missing parameter 'node_namespace'"
 
-def test_graphwiki::node_has_visits():
-    assert hasattr(GraphWiki::Node, "visits")
+def test_graphwiki_node_has_editions():
+    assert hasattr(GraphWiki_Node, "editions")
     descriptor = None
-    for klass in GraphWiki::Node.__mro__:
-        if "visits" in klass.__dict__:
-            descriptor = klass.__dict__["visits"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphwiki::node_has_node_id():
-    assert hasattr(GraphWiki::Node, "node_id")
-    descriptor = None
-    for klass in GraphWiki::Node.__mro__:
-        if "node_id" in klass.__dict__:
-            descriptor = klass.__dict__["node_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphwiki::node_has_node_namespace():
-    assert hasattr(GraphWiki::Node, "node_namespace")
-    descriptor = None
-    for klass in GraphWiki::Node.__mro__:
-        if "node_namespace" in klass.__dict__:
-            descriptor = klass.__dict__["node_namespace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphwiki::node_has_editions():
-    assert hasattr(GraphWiki::Node, "editions")
-    descriptor = None
-    for klass in GraphWiki::Node.__mro__:
+    for klass in GraphWiki_Node.__mro__:
         if "editions" in klass.__dict__:
             descriptor = klass.__dict__["editions"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphwiki::node_has_type():
-    assert hasattr(GraphWiki::Node, "type")
+def test_graphwiki_node_has_type():
+    assert hasattr(GraphWiki_Node, "type")
     descriptor = None
-    for klass in GraphWiki::Node.__mro__:
+    for klass in GraphWiki_Node.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphwiki::node_has_title():
-    assert hasattr(GraphWiki::Node, "title")
+def test_graphwiki_node_has_visits():
+    assert hasattr(GraphWiki_Node, "visits")
     descriptor = None
-    for klass in GraphWiki::Node.__mro__:
+    for klass in GraphWiki_Node.__mro__:
+        if "visits" in klass.__dict__:
+            descriptor = klass.__dict__["visits"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graphwiki_node_has_node_id():
+    assert hasattr(GraphWiki_Node, "node_id")
+    descriptor = None
+    for klass in GraphWiki_Node.__mro__:
+        if "node_id" in klass.__dict__:
+            descriptor = klass.__dict__["node_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graphwiki_node_has_title():
+    assert hasattr(GraphWiki_Node, "title")
+    descriptor = None
+    for klass in GraphWiki_Node.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
+def test_graphwiki_node_has_node_namespace():
+    assert hasattr(GraphWiki_Node, "node_namespace")
+    descriptor = None
+    for klass in GraphWiki_Node.__mro__:
+        if "node_namespace" in klass.__dict__:
+            descriptor = klass.__dict__["node_namespace"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graphwiki::classificationgraph_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::ClassificationGraph)
+
+def test_graphwiki_classificationgraph_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_ClassificationGraph)
 
 
-def test_graphwiki::classificationgraph_constructor_exists():
-    assert callable(GraphWiki::ClassificationGraph.__init__)
+def test_graphwiki_classificationgraph_constructor_exists():
+    assert callable(GraphWiki_ClassificationGraph.__init__)
 
 
-def test_graphwiki::classificationgraph_constructor_args():
-    sig = inspect.signature(GraphWiki::ClassificationGraph.__init__)
+def test_graphwiki_classificationgraph_constructor_args():
+    sig = inspect.signature(GraphWiki_ClassificationGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphwiki::articlegraph_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::ArticleGraph)
+def test_graphwiki_articlegraph_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_ArticleGraph)
 
 
-def test_graphwiki::articlegraph_constructor_exists():
-    assert callable(GraphWiki::ArticleGraph.__init__)
+def test_graphwiki_articlegraph_constructor_exists():
+    assert callable(GraphWiki_ArticleGraph.__init__)
 
 
-def test_graphwiki::articlegraph_constructor_args():
-    sig = inspect.signature(GraphWiki::ArticleGraph.__init__)
+def test_graphwiki_articlegraph_constructor_args():
+    sig = inspect.signature(GraphWiki_ArticleGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphwiki::categorygraph_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::CategoryGraph)
+def test_graphwiki_categorygraph_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_CategoryGraph)
 
 
-def test_graphwiki::categorygraph_constructor_exists():
-    assert callable(GraphWiki::CategoryGraph.__init__)
+def test_graphwiki_categorygraph_constructor_exists():
+    assert callable(GraphWiki_CategoryGraph.__init__)
 
 
-def test_graphwiki::categorygraph_constructor_args():
-    sig = inspect.signature(GraphWiki::CategoryGraph.__init__)
+def test_graphwiki_categorygraph_constructor_args():
+    sig = inspect.signature(GraphWiki_CategoryGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphwiki::indexgraph_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::IndexGraph)
+def test_graphwiki_indexgraph_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_IndexGraph)
 
 
-def test_graphwiki::indexgraph_constructor_exists():
-    assert callable(GraphWiki::IndexGraph.__init__)
+def test_graphwiki_indexgraph_constructor_exists():
+    assert callable(GraphWiki_IndexGraph.__init__)
 
 
-def test_graphwiki::indexgraph_constructor_args():
-    sig = inspect.signature(GraphWiki::IndexGraph.__init__)
+def test_graphwiki_indexgraph_constructor_args():
+    sig = inspect.signature(GraphWiki_IndexGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphwiki::wiki_is_not_abstract():
-    assert not inspect.isabstract(GraphWiki::Wiki)
+def test_graphwiki_wiki_is_not_abstract():
+    assert not inspect.isabstract(GraphWiki_Wiki)
 
 
-def test_graphwiki::wiki_constructor_exists():
-    assert callable(GraphWiki::Wiki.__init__)
+def test_graphwiki_wiki_constructor_exists():
+    assert callable(GraphWiki_Wiki.__init__)
 
 
-def test_graphwiki::wiki_constructor_args():
-    sig = inspect.signature(GraphWiki::Wiki.__init__)
+def test_graphwiki_wiki_constructor_args():
+    sig = inspect.signature(GraphWiki_Wiki.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_graphwiki::wiki_has_title():
-    assert hasattr(GraphWiki::Wiki, "title")
+def test_graphwiki_wiki_has_title():
+    assert hasattr(GraphWiki_Wiki, "title")
     descriptor = None
-    for klass in GraphWiki::Wiki.__mro__:
+    for klass in GraphWiki_Wiki.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -297,13 +297,13 @@ safe_text = st.text(
 Graph_strategy = st.builds(
     Graph,
 )
-GraphWiki::Graph_strategy = st.builds(
-    GraphWiki::Graph,
+GraphWiki_Graph_strategy = st.builds(
+    GraphWiki_Graph,
     name=
         safe_text
 )
-GraphWiki::Revision_strategy = st.builds(
-    GraphWiki::Revision,
+GraphWiki_Revision_strategy = st.builds(
+    GraphWiki_Revision,
     user=
         safe_text,
     text_id=
@@ -311,40 +311,40 @@ GraphWiki::Revision_strategy = st.builds(
     date=
         safe_text
 )
-GraphWiki::Edge_strategy = st.builds(
-    GraphWiki::Edge,
+GraphWiki_Edge_strategy = st.builds(
+    GraphWiki_Edge,
     type=
         safe_text
 )
-GraphWiki::Node_strategy = st.builds(
-    GraphWiki::Node,
-    visits=
-        st.integers(),
-    node_id=
-        st.integers(),
-    node_namespace=
-        st.integers(),
+GraphWiki_Node_strategy = st.builds(
+    GraphWiki_Node,
     editions=
         st.integers(),
     type=
         safe_text,
+    visits=
+        st.integers(),
+    node_id=
+        st.integers(),
     title=
-        safe_text
+        safe_text,
+    node_namespace=
+        st.integers()
 )
-GraphWiki::ClassificationGraph_strategy = st.builds(
-    GraphWiki::ClassificationGraph,
+GraphWiki_ClassificationGraph_strategy = st.builds(
+    GraphWiki_ClassificationGraph,
 )
-GraphWiki::ArticleGraph_strategy = st.builds(
-    GraphWiki::ArticleGraph,
+GraphWiki_ArticleGraph_strategy = st.builds(
+    GraphWiki_ArticleGraph,
 )
-GraphWiki::CategoryGraph_strategy = st.builds(
-    GraphWiki::CategoryGraph,
+GraphWiki_CategoryGraph_strategy = st.builds(
+    GraphWiki_CategoryGraph,
 )
-GraphWiki::IndexGraph_strategy = st.builds(
-    GraphWiki::IndexGraph,
+GraphWiki_IndexGraph_strategy = st.builds(
+    GraphWiki_IndexGraph,
 )
-GraphWiki::Wiki_strategy = st.builds(
-    GraphWiki::Wiki,
+GraphWiki_Wiki_strategy = st.builds(
+    GraphWiki_Wiki,
     title=
         safe_text
 )
@@ -354,179 +354,143 @@ GraphWiki::Wiki_strategy = st.builds(
 def test_graph_instantiation(instance):
     assert isinstance(instance, Graph)
 
-@given(instance=GraphWiki::Graph_strategy)
+@given(instance=GraphWiki_Graph_strategy)
 @settings(max_examples=50)
-def test_graphwiki::graph_instantiation(instance):
-    assert isinstance(instance, GraphWiki::Graph)
-
-@given(instance=GraphWiki::Graph_strategy)
-def test_graphwiki::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphwiki_graph_instantiation(instance):
+    assert isinstance(instance, GraphWiki_Graph)
 
 
-@given(instance=GraphWiki::Graph_strategy)
-def test_graphwiki::graph_name_setter(instance):
+
+@given(instance=GraphWiki_Graph_strategy)
+def test_graphwiki_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=GraphWiki::Revision_strategy)
+@given(instance=GraphWiki_Revision_strategy)
 @settings(max_examples=50)
-def test_graphwiki::revision_instantiation(instance):
-    assert isinstance(instance, GraphWiki::Revision)
-
-@given(instance=GraphWiki::Revision_strategy)
-def test_graphwiki::revision_user_type(instance):
-    assert isinstance(instance.user, str)
+def test_graphwiki_revision_instantiation(instance):
+    assert isinstance(instance, GraphWiki_Revision)
 
 
-@given(instance=GraphWiki::Revision_strategy)
-def test_graphwiki::revision_user_setter(instance):
+
+@given(instance=GraphWiki_Revision_strategy)
+def test_graphwiki_revision_user_setter(instance):
     original = instance.user
     instance.user = original
     assert instance.user == original
 
-@given(instance=GraphWiki::Revision_strategy)
-def test_graphwiki::revision_text_id_type(instance):
-    assert isinstance(instance.text_id, int)
 
 
-@given(instance=GraphWiki::Revision_strategy)
-def test_graphwiki::revision_text_id_setter(instance):
+@given(instance=GraphWiki_Revision_strategy)
+def test_graphwiki_revision_text_id_setter(instance):
     original = instance.text_id
     instance.text_id = original
     assert instance.text_id == original
 
-@given(instance=GraphWiki::Revision_strategy)
-def test_graphwiki::revision_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
-@given(instance=GraphWiki::Revision_strategy)
-def test_graphwiki::revision_date_setter(instance):
+@given(instance=GraphWiki_Revision_strategy)
+def test_graphwiki_revision_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=GraphWiki::Edge_strategy)
+@given(instance=GraphWiki_Edge_strategy)
 @settings(max_examples=50)
-def test_graphwiki::edge_instantiation(instance):
-    assert isinstance(instance, GraphWiki::Edge)
-
-@given(instance=GraphWiki::Edge_strategy)
-def test_graphwiki::edge_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_graphwiki_edge_instantiation(instance):
+    assert isinstance(instance, GraphWiki_Edge)
 
 
-@given(instance=GraphWiki::Edge_strategy)
-def test_graphwiki::edge_type_setter(instance):
+
+@given(instance=GraphWiki_Edge_strategy)
+def test_graphwiki_edge_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=GraphWiki::Node_strategy)
+@given(instance=GraphWiki_Node_strategy)
 @settings(max_examples=50)
-def test_graphwiki::node_instantiation(instance):
-    assert isinstance(instance, GraphWiki::Node)
-
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_visits_type(instance):
-    assert isinstance(instance.visits, int)
+def test_graphwiki_node_instantiation(instance):
+    assert isinstance(instance, GraphWiki_Node)
 
 
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_visits_setter(instance):
-    original = instance.visits
-    instance.visits = original
-    assert instance.visits == original
 
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_node_id_type(instance):
-    assert isinstance(instance.node_id, int)
-
-
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_node_id_setter(instance):
-    original = instance.node_id
-    instance.node_id = original
-    assert instance.node_id == original
-
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_node_namespace_type(instance):
-    assert isinstance(instance.node_namespace, int)
-
-
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_node_namespace_setter(instance):
-    original = instance.node_namespace
-    instance.node_namespace = original
-    assert instance.node_namespace == original
-
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_editions_type(instance):
-    assert isinstance(instance.editions, int)
-
-
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_editions_setter(instance):
+@given(instance=GraphWiki_Node_strategy)
+def test_graphwiki_node_editions_setter(instance):
     original = instance.editions
     instance.editions = original
     assert instance.editions == original
 
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_type_setter(instance):
+@given(instance=GraphWiki_Node_strategy)
+def test_graphwiki_node_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=GraphWiki::Node_strategy)
-def test_graphwiki::node_title_setter(instance):
+@given(instance=GraphWiki_Node_strategy)
+def test_graphwiki_node_visits_setter(instance):
+    original = instance.visits
+    instance.visits = original
+    assert instance.visits == original
+
+
+
+@given(instance=GraphWiki_Node_strategy)
+def test_graphwiki_node_node_id_setter(instance):
+    original = instance.node_id
+    instance.node_id = original
+    assert instance.node_id == original
+
+
+
+@given(instance=GraphWiki_Node_strategy)
+def test_graphwiki_node_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=GraphWiki::ClassificationGraph_strategy)
+
+
+@given(instance=GraphWiki_Node_strategy)
+def test_graphwiki_node_node_namespace_setter(instance):
+    original = instance.node_namespace
+    instance.node_namespace = original
+    assert instance.node_namespace == original
+
+@given(instance=GraphWiki_ClassificationGraph_strategy)
 @settings(max_examples=50)
-def test_graphwiki::classificationgraph_instantiation(instance):
-    assert isinstance(instance, GraphWiki::ClassificationGraph)
+def test_graphwiki_classificationgraph_instantiation(instance):
+    assert isinstance(instance, GraphWiki_ClassificationGraph)
 
-@given(instance=GraphWiki::ArticleGraph_strategy)
+@given(instance=GraphWiki_ArticleGraph_strategy)
 @settings(max_examples=50)
-def test_graphwiki::articlegraph_instantiation(instance):
-    assert isinstance(instance, GraphWiki::ArticleGraph)
+def test_graphwiki_articlegraph_instantiation(instance):
+    assert isinstance(instance, GraphWiki_ArticleGraph)
 
-@given(instance=GraphWiki::CategoryGraph_strategy)
+@given(instance=GraphWiki_CategoryGraph_strategy)
 @settings(max_examples=50)
-def test_graphwiki::categorygraph_instantiation(instance):
-    assert isinstance(instance, GraphWiki::CategoryGraph)
+def test_graphwiki_categorygraph_instantiation(instance):
+    assert isinstance(instance, GraphWiki_CategoryGraph)
 
-@given(instance=GraphWiki::IndexGraph_strategy)
+@given(instance=GraphWiki_IndexGraph_strategy)
 @settings(max_examples=50)
-def test_graphwiki::indexgraph_instantiation(instance):
-    assert isinstance(instance, GraphWiki::IndexGraph)
+def test_graphwiki_indexgraph_instantiation(instance):
+    assert isinstance(instance, GraphWiki_IndexGraph)
 
-@given(instance=GraphWiki::Wiki_strategy)
+@given(instance=GraphWiki_Wiki_strategy)
 @settings(max_examples=50)
-def test_graphwiki::wiki_instantiation(instance):
-    assert isinstance(instance, GraphWiki::Wiki)
-
-@given(instance=GraphWiki::Wiki_strategy)
-def test_graphwiki::wiki_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_graphwiki_wiki_instantiation(instance):
+    assert isinstance(instance, GraphWiki_Wiki)
 
 
-@given(instance=GraphWiki::Wiki_strategy)
-def test_graphwiki::wiki_title_setter(instance):
+
+@given(instance=GraphWiki_Wiki_strategy)
+def test_graphwiki_wiki_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

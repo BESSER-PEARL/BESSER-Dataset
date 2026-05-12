@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StateComponent,
-    iotw::Decision,
-    iotw::EndPoint,
-    iotw::StartPoint,
-    iotw::StateFrame,
+    iotw_StateFrame,
     OutputDevice,
-    iotw::I2CLCD,
-    iotw::Buzzer,
+    iotw_Buzzer,
+    iotw_I2CLCD,
     Connectivity,
-    iotw::WifiESP8266,
-    iotw::BluetoothHC06,
-    iotw::LED,
+    iotw_WifiESP8266,
+    iotw_BluetoothHC06,
+    iotw_LED,
     InputDevice,
-    iotw::Button,
-    iotw::LM35,
-    iotw::DHT11,
-    iotw::CDS,
-    iotw::Keypad4x4,
+    iotw_LM35,
+    iotw_Button,
+    iotw_DHT11,
+    iotw_CDS,
+    iotw_Keypad4x4,
     IODevice,
-    iotw::OutputDevice,
-    iotw::InputDevice,
+    iotw_OutputDevice,
+    iotw_InputDevice,
     Mainboard,
-    iotw::ArduinoUNOR3,
-    iotw::ArduinoWiFiESP8266WeMosD1,
+    iotw_ArduinoUNOR3,
+    iotw_ArduinoWiFiESP8266WeMosD1,
     Component,
-    iotw::Device,
+    iotw_Device,
     Device,
-    iotw::Connectivity,
-    iotw::IODevice,
-    iotw::Mainboard,
-    iotw::Connection,
-    iotw::Component,
-    iotw::StateComponent,
-    iotw::StateSchema,
+    iotw_Connectivity,
+    iotw_IODevice,
+    iotw_Mainboard,
+    iotw_Connection,
+    iotw_Component,
+    iotw_StateComponent,
+    iotw_StateSchema,
+    iotw_EndPoint,
+    iotw_StartPoint,
+    iotw_Decision,
     I2CLCDType,
+    RouterKind,
+    WifiIDConnection,
+    WifiMode,
+    ESP8266WiFiMode,
     ListConnectionChannel,
     ListBaud,
-    WifiMode,
-    WifiIDConnection,
-    ESP8266WiFiMode,
-    ListProtocol,
     ConnectionKind,
-    RouterKind,
+    ListProtocol,
 )
 
 # =============================================================================
@@ -71,65 +71,23 @@ def test_statecomponent_constructor_args():
 
 
 
-def test_iotw::decision_is_not_abstract():
-    assert not inspect.isabstract(iotw::Decision)
+def test_iotw_stateframe_is_not_abstract():
+    assert not inspect.isabstract(iotw_StateFrame)
 
 
-def test_iotw::decision_constructor_exists():
-    assert callable(iotw::Decision.__init__)
+def test_iotw_stateframe_constructor_exists():
+    assert callable(iotw_StateFrame.__init__)
 
 
-def test_iotw::decision_constructor_args():
-    sig = inspect.signature(iotw::Decision.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iotw::endpoint_is_not_abstract():
-    assert not inspect.isabstract(iotw::EndPoint)
-
-
-def test_iotw::endpoint_constructor_exists():
-    assert callable(iotw::EndPoint.__init__)
-
-
-def test_iotw::endpoint_constructor_args():
-    sig = inspect.signature(iotw::EndPoint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iotw::startpoint_is_not_abstract():
-    assert not inspect.isabstract(iotw::StartPoint)
-
-
-def test_iotw::startpoint_constructor_exists():
-    assert callable(iotw::StartPoint.__init__)
-
-
-def test_iotw::startpoint_constructor_args():
-    sig = inspect.signature(iotw::StartPoint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iotw::stateframe_is_not_abstract():
-    assert not inspect.isabstract(iotw::StateFrame)
-
-
-def test_iotw::stateframe_constructor_exists():
-    assert callable(iotw::StateFrame.__init__)
-
-
-def test_iotw::stateframe_constructor_args():
-    sig = inspect.signature(iotw::StateFrame.__init__)
+def test_iotw_stateframe_constructor_args():
+    sig = inspect.signature(iotw_StateFrame.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_iotw::stateframe_has_content():
-    assert hasattr(iotw::StateFrame, "content")
+def test_iotw_stateframe_has_content():
+    assert hasattr(iotw_StateFrame, "content")
     descriptor = None
-    for klass in iotw::StateFrame.__mro__:
+    for klass in iotw_StateFrame.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -151,119 +109,119 @@ def test_outputdevice_constructor_args():
 
 
 
-def test_iotw::i2clcd_is_not_abstract():
-    assert not inspect.isabstract(iotw::I2CLCD)
+def test_iotw_buzzer_is_not_abstract():
+    assert not inspect.isabstract(iotw_Buzzer)
 
 
-def test_iotw::i2clcd_constructor_exists():
-    assert callable(iotw::I2CLCD.__init__)
+def test_iotw_buzzer_constructor_exists():
+    assert callable(iotw_Buzzer.__init__)
 
 
-def test_iotw::i2clcd_constructor_args():
-    sig = inspect.signature(iotw::I2CLCD.__init__)
-    params = list(sig.parameters.keys())
-    assert "pinVcc" in params, "Missing parameter 'pinVcc'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "pinSDA" in params, "Missing parameter 'pinSDA'"
-    assert "pinGND" in params, "Missing parameter 'pinGND'"
-    assert "pinSCL" in params, "Missing parameter 'pinSCL'"
-
-def test_iotw::i2clcd_has_pinVcc():
-    assert hasattr(iotw::I2CLCD, "pinVcc")
-    descriptor = None
-    for klass in iotw::I2CLCD.__mro__:
-        if "pinVcc" in klass.__dict__:
-            descriptor = klass.__dict__["pinVcc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::i2clcd_has_type():
-    assert hasattr(iotw::I2CLCD, "type")
-    descriptor = None
-    for klass in iotw::I2CLCD.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::i2clcd_has_pinSDA():
-    assert hasattr(iotw::I2CLCD, "pinSDA")
-    descriptor = None
-    for klass in iotw::I2CLCD.__mro__:
-        if "pinSDA" in klass.__dict__:
-            descriptor = klass.__dict__["pinSDA"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::i2clcd_has_pinGND():
-    assert hasattr(iotw::I2CLCD, "pinGND")
-    descriptor = None
-    for klass in iotw::I2CLCD.__mro__:
-        if "pinGND" in klass.__dict__:
-            descriptor = klass.__dict__["pinGND"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::i2clcd_has_pinSCL():
-    assert hasattr(iotw::I2CLCD, "pinSCL")
-    descriptor = None
-    for klass in iotw::I2CLCD.__mro__:
-        if "pinSCL" in klass.__dict__:
-            descriptor = klass.__dict__["pinSCL"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iotw::buzzer_is_not_abstract():
-    assert not inspect.isabstract(iotw::Buzzer)
-
-
-def test_iotw::buzzer_constructor_exists():
-    assert callable(iotw::Buzzer.__init__)
-
-
-def test_iotw::buzzer_constructor_args():
-    sig = inspect.signature(iotw::Buzzer.__init__)
+def test_iotw_buzzer_constructor_args():
+    sig = inspect.signature(iotw_Buzzer.__init__)
     params = list(sig.parameters.keys())
     assert "pin2" in params, "Missing parameter 'pin2'"
+    assert "pin1" in params, "Missing parameter 'pin1'"
     assert "Time" in params, "Missing parameter 'Time'"
     assert "Tone" in params, "Missing parameter 'Tone'"
-    assert "pin1" in params, "Missing parameter 'pin1'"
 
-def test_iotw::buzzer_has_pin2():
-    assert hasattr(iotw::Buzzer, "pin2")
+def test_iotw_buzzer_has_pin2():
+    assert hasattr(iotw_Buzzer, "pin2")
     descriptor = None
-    for klass in iotw::Buzzer.__mro__:
+    for klass in iotw_Buzzer.__mro__:
         if "pin2" in klass.__dict__:
             descriptor = klass.__dict__["pin2"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::buzzer_has_Time():
-    assert hasattr(iotw::Buzzer, "Time")
+def test_iotw_buzzer_has_pin1():
+    assert hasattr(iotw_Buzzer, "pin1")
     descriptor = None
-    for klass in iotw::Buzzer.__mro__:
+    for klass in iotw_Buzzer.__mro__:
+        if "pin1" in klass.__dict__:
+            descriptor = klass.__dict__["pin1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_buzzer_has_Time():
+    assert hasattr(iotw_Buzzer, "Time")
+    descriptor = None
+    for klass in iotw_Buzzer.__mro__:
         if "Time" in klass.__dict__:
             descriptor = klass.__dict__["Time"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::buzzer_has_Tone():
-    assert hasattr(iotw::Buzzer, "Tone")
+def test_iotw_buzzer_has_Tone():
+    assert hasattr(iotw_Buzzer, "Tone")
     descriptor = None
-    for klass in iotw::Buzzer.__mro__:
+    for klass in iotw_Buzzer.__mro__:
         if "Tone" in klass.__dict__:
             descriptor = klass.__dict__["Tone"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::buzzer_has_pin1():
-    assert hasattr(iotw::Buzzer, "pin1")
+
+
+def test_iotw_i2clcd_is_not_abstract():
+    assert not inspect.isabstract(iotw_I2CLCD)
+
+
+def test_iotw_i2clcd_constructor_exists():
+    assert callable(iotw_I2CLCD.__init__)
+
+
+def test_iotw_i2clcd_constructor_args():
+    sig = inspect.signature(iotw_I2CLCD.__init__)
+    params = list(sig.parameters.keys())
+    assert "pinGND" in params, "Missing parameter 'pinGND'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "pinSDA" in params, "Missing parameter 'pinSDA'"
+    assert "pinSCL" in params, "Missing parameter 'pinSCL'"
+    assert "pinVcc" in params, "Missing parameter 'pinVcc'"
+
+def test_iotw_i2clcd_has_pinGND():
+    assert hasattr(iotw_I2CLCD, "pinGND")
     descriptor = None
-    for klass in iotw::Buzzer.__mro__:
-        if "pin1" in klass.__dict__:
-            descriptor = klass.__dict__["pin1"]
+    for klass in iotw_I2CLCD.__mro__:
+        if "pinGND" in klass.__dict__:
+            descriptor = klass.__dict__["pinGND"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_i2clcd_has_type():
+    assert hasattr(iotw_I2CLCD, "type")
+    descriptor = None
+    for klass in iotw_I2CLCD.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_i2clcd_has_pinSDA():
+    assert hasattr(iotw_I2CLCD, "pinSDA")
+    descriptor = None
+    for klass in iotw_I2CLCD.__mro__:
+        if "pinSDA" in klass.__dict__:
+            descriptor = klass.__dict__["pinSDA"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_i2clcd_has_pinSCL():
+    assert hasattr(iotw_I2CLCD, "pinSCL")
+    descriptor = None
+    for klass in iotw_I2CLCD.__mro__:
+        if "pinSCL" in klass.__dict__:
+            descriptor = klass.__dict__["pinSCL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_i2clcd_has_pinVcc():
+    assert hasattr(iotw_I2CLCD, "pinVcc")
+    descriptor = None
+    for klass in iotw_I2CLCD.__mro__:
+        if "pinVcc" in klass.__dict__:
+            descriptor = klass.__dict__["pinVcc"]
             break
     assert isinstance(descriptor, property)
 
@@ -283,227 +241,227 @@ def test_connectivity_constructor_args():
 
 
 
-def test_iotw::wifiesp8266_is_not_abstract():
-    assert not inspect.isabstract(iotw::WifiESP8266)
+def test_iotw_wifiesp8266_is_not_abstract():
+    assert not inspect.isabstract(iotw_WifiESP8266)
 
 
-def test_iotw::wifiesp8266_constructor_exists():
-    assert callable(iotw::WifiESP8266.__init__)
+def test_iotw_wifiesp8266_constructor_exists():
+    assert callable(iotw_WifiESP8266.__init__)
 
 
-def test_iotw::wifiesp8266_constructor_args():
-    sig = inspect.signature(iotw::WifiESP8266.__init__)
+def test_iotw_wifiesp8266_constructor_args():
+    sig = inspect.signature(iotw_WifiESP8266.__init__)
     params = list(sig.parameters.keys())
-    assert "pinTX" in params, "Missing parameter 'pinTX'"
-    assert "iP" in params, "Missing parameter 'iP'"
-    assert "pinVcc" in params, "Missing parameter 'pinVcc'"
-    assert "sSID_ST" in params, "Missing parameter 'sSID_ST'"
-    assert "password_ST" in params, "Missing parameter 'password_ST'"
-    assert "port" in params, "Missing parameter 'port'"
-    assert "baud" in params, "Missing parameter 'baud'"
-    assert "idConnection" in params, "Missing parameter 'idConnection'"
-    assert "pinGND" in params, "Missing parameter 'pinGND'"
     assert "pinCHPD" in params, "Missing parameter 'pinCHPD'"
-    assert "mode" in params, "Missing parameter 'mode'"
-    assert "protocol" in params, "Missing parameter 'protocol'"
-    assert "password_AccessPoint" in params, "Missing parameter 'password_AccessPoint'"
-    assert "sSID_AccessPoint" in params, "Missing parameter 'sSID_AccessPoint'"
+    assert "password_ST" in params, "Missing parameter 'password_ST'"
+    assert "pinGND" in params, "Missing parameter 'pinGND'"
     assert "pinRX" in params, "Missing parameter 'pinRX'"
+    assert "baud" in params, "Missing parameter 'baud'"
+    assert "iP" in params, "Missing parameter 'iP'"
+    assert "idConnection" in params, "Missing parameter 'idConnection'"
+    assert "port" in params, "Missing parameter 'port'"
+    assert "pinVcc" in params, "Missing parameter 'pinVcc'"
+    assert "password_AccessPoint" in params, "Missing parameter 'password_AccessPoint'"
+    assert "mode" in params, "Missing parameter 'mode'"
+    assert "sSID_ST" in params, "Missing parameter 'sSID_ST'"
+    assert "pinTX" in params, "Missing parameter 'pinTX'"
     assert "connectedChannel" in params, "Missing parameter 'connectedChannel'"
+    assert "protocol" in params, "Missing parameter 'protocol'"
+    assert "sSID_AccessPoint" in params, "Missing parameter 'sSID_AccessPoint'"
 
-def test_iotw::wifiesp8266_has_pinTX():
-    assert hasattr(iotw::WifiESP8266, "pinTX")
+def test_iotw_wifiesp8266_has_pinCHPD():
+    assert hasattr(iotw_WifiESP8266, "pinCHPD")
     descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "pinTX" in klass.__dict__:
-            descriptor = klass.__dict__["pinTX"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_iP():
-    assert hasattr(iotw::WifiESP8266, "iP")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "iP" in klass.__dict__:
-            descriptor = klass.__dict__["iP"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_pinVcc():
-    assert hasattr(iotw::WifiESP8266, "pinVcc")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "pinVcc" in klass.__dict__:
-            descriptor = klass.__dict__["pinVcc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_sSID_ST():
-    assert hasattr(iotw::WifiESP8266, "sSID_ST")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "sSID_ST" in klass.__dict__:
-            descriptor = klass.__dict__["sSID_ST"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_password_ST():
-    assert hasattr(iotw::WifiESP8266, "password_ST")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "password_ST" in klass.__dict__:
-            descriptor = klass.__dict__["password_ST"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_port():
-    assert hasattr(iotw::WifiESP8266, "port")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_baud():
-    assert hasattr(iotw::WifiESP8266, "baud")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "baud" in klass.__dict__:
-            descriptor = klass.__dict__["baud"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_idConnection():
-    assert hasattr(iotw::WifiESP8266, "idConnection")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "idConnection" in klass.__dict__:
-            descriptor = klass.__dict__["idConnection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_pinGND():
-    assert hasattr(iotw::WifiESP8266, "pinGND")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "pinGND" in klass.__dict__:
-            descriptor = klass.__dict__["pinGND"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_pinCHPD():
-    assert hasattr(iotw::WifiESP8266, "pinCHPD")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
+    for klass in iotw_WifiESP8266.__mro__:
         if "pinCHPD" in klass.__dict__:
             descriptor = klass.__dict__["pinCHPD"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::wifiesp8266_has_mode():
-    assert hasattr(iotw::WifiESP8266, "mode")
+def test_iotw_wifiesp8266_has_password_ST():
+    assert hasattr(iotw_WifiESP8266, "password_ST")
     descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "mode" in klass.__dict__:
-            descriptor = klass.__dict__["mode"]
+    for klass in iotw_WifiESP8266.__mro__:
+        if "password_ST" in klass.__dict__:
+            descriptor = klass.__dict__["password_ST"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::wifiesp8266_has_protocol():
-    assert hasattr(iotw::WifiESP8266, "protocol")
+def test_iotw_wifiesp8266_has_pinGND():
+    assert hasattr(iotw_WifiESP8266, "pinGND")
     descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "protocol" in klass.__dict__:
-            descriptor = klass.__dict__["protocol"]
+    for klass in iotw_WifiESP8266.__mro__:
+        if "pinGND" in klass.__dict__:
+            descriptor = klass.__dict__["pinGND"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::wifiesp8266_has_password_AccessPoint():
-    assert hasattr(iotw::WifiESP8266, "password_AccessPoint")
+def test_iotw_wifiesp8266_has_pinRX():
+    assert hasattr(iotw_WifiESP8266, "pinRX")
     descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "password_AccessPoint" in klass.__dict__:
-            descriptor = klass.__dict__["password_AccessPoint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_sSID_AccessPoint():
-    assert hasattr(iotw::WifiESP8266, "sSID_AccessPoint")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
-        if "sSID_AccessPoint" in klass.__dict__:
-            descriptor = klass.__dict__["sSID_AccessPoint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::wifiesp8266_has_pinRX():
-    assert hasattr(iotw::WifiESP8266, "pinRX")
-    descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
+    for klass in iotw_WifiESP8266.__mro__:
         if "pinRX" in klass.__dict__:
             descriptor = klass.__dict__["pinRX"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::wifiesp8266_has_connectedChannel():
-    assert hasattr(iotw::WifiESP8266, "connectedChannel")
+def test_iotw_wifiesp8266_has_baud():
+    assert hasattr(iotw_WifiESP8266, "baud")
     descriptor = None
-    for klass in iotw::WifiESP8266.__mro__:
+    for klass in iotw_WifiESP8266.__mro__:
+        if "baud" in klass.__dict__:
+            descriptor = klass.__dict__["baud"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_iP():
+    assert hasattr(iotw_WifiESP8266, "iP")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "iP" in klass.__dict__:
+            descriptor = klass.__dict__["iP"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_idConnection():
+    assert hasattr(iotw_WifiESP8266, "idConnection")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "idConnection" in klass.__dict__:
+            descriptor = klass.__dict__["idConnection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_port():
+    assert hasattr(iotw_WifiESP8266, "port")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_pinVcc():
+    assert hasattr(iotw_WifiESP8266, "pinVcc")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "pinVcc" in klass.__dict__:
+            descriptor = klass.__dict__["pinVcc"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_password_AccessPoint():
+    assert hasattr(iotw_WifiESP8266, "password_AccessPoint")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "password_AccessPoint" in klass.__dict__:
+            descriptor = klass.__dict__["password_AccessPoint"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_mode():
+    assert hasattr(iotw_WifiESP8266, "mode")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "mode" in klass.__dict__:
+            descriptor = klass.__dict__["mode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_sSID_ST():
+    assert hasattr(iotw_WifiESP8266, "sSID_ST")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "sSID_ST" in klass.__dict__:
+            descriptor = klass.__dict__["sSID_ST"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_pinTX():
+    assert hasattr(iotw_WifiESP8266, "pinTX")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
+        if "pinTX" in klass.__dict__:
+            descriptor = klass.__dict__["pinTX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_wifiesp8266_has_connectedChannel():
+    assert hasattr(iotw_WifiESP8266, "connectedChannel")
+    descriptor = None
+    for klass in iotw_WifiESP8266.__mro__:
         if "connectedChannel" in klass.__dict__:
             descriptor = klass.__dict__["connectedChannel"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_iotw::bluetoothhc06_is_not_abstract():
-    assert not inspect.isabstract(iotw::BluetoothHC06)
-
-
-def test_iotw::bluetoothhc06_constructor_exists():
-    assert callable(iotw::BluetoothHC06.__init__)
-
-
-def test_iotw::bluetoothhc06_constructor_args():
-    sig = inspect.signature(iotw::BluetoothHC06.__init__)
-    params = list(sig.parameters.keys())
-    assert "pinVCC" in params, "Missing parameter 'pinVCC'"
-    assert "pinTXD" in params, "Missing parameter 'pinTXD'"
-    assert "pinRXD" in params, "Missing parameter 'pinRXD'"
-    assert "pinGND" in params, "Missing parameter 'pinGND'"
-
-def test_iotw::bluetoothhc06_has_pinVCC():
-    assert hasattr(iotw::BluetoothHC06, "pinVCC")
+def test_iotw_wifiesp8266_has_protocol():
+    assert hasattr(iotw_WifiESP8266, "protocol")
     descriptor = None
-    for klass in iotw::BluetoothHC06.__mro__:
-        if "pinVCC" in klass.__dict__:
-            descriptor = klass.__dict__["pinVCC"]
+    for klass in iotw_WifiESP8266.__mro__:
+        if "protocol" in klass.__dict__:
+            descriptor = klass.__dict__["protocol"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::bluetoothhc06_has_pinTXD():
-    assert hasattr(iotw::BluetoothHC06, "pinTXD")
+def test_iotw_wifiesp8266_has_sSID_AccessPoint():
+    assert hasattr(iotw_WifiESP8266, "sSID_AccessPoint")
     descriptor = None
-    for klass in iotw::BluetoothHC06.__mro__:
+    for klass in iotw_WifiESP8266.__mro__:
+        if "sSID_AccessPoint" in klass.__dict__:
+            descriptor = klass.__dict__["sSID_AccessPoint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iotw_bluetoothhc06_is_not_abstract():
+    assert not inspect.isabstract(iotw_BluetoothHC06)
+
+
+def test_iotw_bluetoothhc06_constructor_exists():
+    assert callable(iotw_BluetoothHC06.__init__)
+
+
+def test_iotw_bluetoothhc06_constructor_args():
+    sig = inspect.signature(iotw_BluetoothHC06.__init__)
+    params = list(sig.parameters.keys())
+    assert "pinTXD" in params, "Missing parameter 'pinTXD'"
+    assert "pinRXD" in params, "Missing parameter 'pinRXD'"
+    assert "pinVCC" in params, "Missing parameter 'pinVCC'"
+    assert "pinGND" in params, "Missing parameter 'pinGND'"
+
+def test_iotw_bluetoothhc06_has_pinTXD():
+    assert hasattr(iotw_BluetoothHC06, "pinTXD")
+    descriptor = None
+    for klass in iotw_BluetoothHC06.__mro__:
         if "pinTXD" in klass.__dict__:
             descriptor = klass.__dict__["pinTXD"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::bluetoothhc06_has_pinRXD():
-    assert hasattr(iotw::BluetoothHC06, "pinRXD")
+def test_iotw_bluetoothhc06_has_pinRXD():
+    assert hasattr(iotw_BluetoothHC06, "pinRXD")
     descriptor = None
-    for klass in iotw::BluetoothHC06.__mro__:
+    for klass in iotw_BluetoothHC06.__mro__:
         if "pinRXD" in klass.__dict__:
             descriptor = klass.__dict__["pinRXD"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::bluetoothhc06_has_pinGND():
-    assert hasattr(iotw::BluetoothHC06, "pinGND")
+def test_iotw_bluetoothhc06_has_pinVCC():
+    assert hasattr(iotw_BluetoothHC06, "pinVCC")
     descriptor = None
-    for klass in iotw::BluetoothHC06.__mro__:
+    for klass in iotw_BluetoothHC06.__mro__:
+        if "pinVCC" in klass.__dict__:
+            descriptor = klass.__dict__["pinVCC"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_bluetoothhc06_has_pinGND():
+    assert hasattr(iotw_BluetoothHC06, "pinGND")
+    descriptor = None
+    for klass in iotw_BluetoothHC06.__mro__:
         if "pinGND" in klass.__dict__:
             descriptor = klass.__dict__["pinGND"]
             break
@@ -511,35 +469,35 @@ def test_iotw::bluetoothhc06_has_pinGND():
 
 
 
-def test_iotw::led_is_not_abstract():
-    assert not inspect.isabstract(iotw::LED)
+def test_iotw_led_is_not_abstract():
+    assert not inspect.isabstract(iotw_LED)
 
 
-def test_iotw::led_constructor_exists():
-    assert callable(iotw::LED.__init__)
+def test_iotw_led_constructor_exists():
+    assert callable(iotw_LED.__init__)
 
 
-def test_iotw::led_constructor_args():
-    sig = inspect.signature(iotw::LED.__init__)
+def test_iotw_led_constructor_args():
+    sig = inspect.signature(iotw_LED.__init__)
     params = list(sig.parameters.keys())
-    assert "pin2" in params, "Missing parameter 'pin2'"
     assert "pin1" in params, "Missing parameter 'pin1'"
+    assert "pin2" in params, "Missing parameter 'pin2'"
 
-def test_iotw::led_has_pin2():
-    assert hasattr(iotw::LED, "pin2")
+def test_iotw_led_has_pin1():
+    assert hasattr(iotw_LED, "pin1")
     descriptor = None
-    for klass in iotw::LED.__mro__:
-        if "pin2" in klass.__dict__:
-            descriptor = klass.__dict__["pin2"]
+    for klass in iotw_LED.__mro__:
+        if "pin1" in klass.__dict__:
+            descriptor = klass.__dict__["pin1"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::led_has_pin1():
-    assert hasattr(iotw::LED, "pin1")
+def test_iotw_led_has_pin2():
+    assert hasattr(iotw_LED, "pin2")
     descriptor = None
-    for klass in iotw::LED.__mro__:
-        if "pin1" in klass.__dict__:
-            descriptor = klass.__dict__["pin1"]
+    for klass in iotw_LED.__mro__:
+        if "pin2" in klass.__dict__:
+            descriptor = klass.__dict__["pin2"]
             break
     assert isinstance(descriptor, property)
 
@@ -559,23 +517,23 @@ def test_inputdevice_constructor_args():
 
 
 
-def test_iotw::button_is_not_abstract():
-    assert not inspect.isabstract(iotw::Button)
+def test_iotw_lm35_is_not_abstract():
+    assert not inspect.isabstract(iotw_LM35)
 
 
-def test_iotw::button_constructor_exists():
-    assert callable(iotw::Button.__init__)
+def test_iotw_lm35_constructor_exists():
+    assert callable(iotw_LM35.__init__)
 
 
-def test_iotw::button_constructor_args():
-    sig = inspect.signature(iotw::Button.__init__)
+def test_iotw_lm35_constructor_args():
+    sig = inspect.signature(iotw_LM35.__init__)
     params = list(sig.parameters.keys())
     assert "pin1" in params, "Missing parameter 'pin1'"
 
-def test_iotw::button_has_pin1():
-    assert hasattr(iotw::Button, "pin1")
+def test_iotw_lm35_has_pin1():
+    assert hasattr(iotw_LM35, "pin1")
     descriptor = None
-    for klass in iotw::Button.__mro__:
+    for klass in iotw_LM35.__mro__:
         if "pin1" in klass.__dict__:
             descriptor = klass.__dict__["pin1"]
             break
@@ -583,23 +541,23 @@ def test_iotw::button_has_pin1():
 
 
 
-def test_iotw::lm35_is_not_abstract():
-    assert not inspect.isabstract(iotw::LM35)
+def test_iotw_button_is_not_abstract():
+    assert not inspect.isabstract(iotw_Button)
 
 
-def test_iotw::lm35_constructor_exists():
-    assert callable(iotw::LM35.__init__)
+def test_iotw_button_constructor_exists():
+    assert callable(iotw_Button.__init__)
 
 
-def test_iotw::lm35_constructor_args():
-    sig = inspect.signature(iotw::LM35.__init__)
+def test_iotw_button_constructor_args():
+    sig = inspect.signature(iotw_Button.__init__)
     params = list(sig.parameters.keys())
     assert "pin1" in params, "Missing parameter 'pin1'"
 
-def test_iotw::lm35_has_pin1():
-    assert hasattr(iotw::LM35, "pin1")
+def test_iotw_button_has_pin1():
+    assert hasattr(iotw_Button, "pin1")
     descriptor = None
-    for klass in iotw::LM35.__mro__:
+    for klass in iotw_Button.__mro__:
         if "pin1" in klass.__dict__:
             descriptor = klass.__dict__["pin1"]
             break
@@ -607,43 +565,43 @@ def test_iotw::lm35_has_pin1():
 
 
 
-def test_iotw::dht11_is_not_abstract():
-    assert not inspect.isabstract(iotw::DHT11)
+def test_iotw_dht11_is_not_abstract():
+    assert not inspect.isabstract(iotw_DHT11)
 
 
-def test_iotw::dht11_constructor_exists():
-    assert callable(iotw::DHT11.__init__)
+def test_iotw_dht11_constructor_exists():
+    assert callable(iotw_DHT11.__init__)
 
 
-def test_iotw::dht11_constructor_args():
-    sig = inspect.signature(iotw::DHT11.__init__)
+def test_iotw_dht11_constructor_args():
+    sig = inspect.signature(iotw_DHT11.__init__)
     params = list(sig.parameters.keys())
     assert "pinGND" in params, "Missing parameter 'pinGND'"
     assert "pinData" in params, "Missing parameter 'pinData'"
     assert "pinVcc" in params, "Missing parameter 'pinVcc'"
 
-def test_iotw::dht11_has_pinGND():
-    assert hasattr(iotw::DHT11, "pinGND")
+def test_iotw_dht11_has_pinGND():
+    assert hasattr(iotw_DHT11, "pinGND")
     descriptor = None
-    for klass in iotw::DHT11.__mro__:
+    for klass in iotw_DHT11.__mro__:
         if "pinGND" in klass.__dict__:
             descriptor = klass.__dict__["pinGND"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::dht11_has_pinData():
-    assert hasattr(iotw::DHT11, "pinData")
+def test_iotw_dht11_has_pinData():
+    assert hasattr(iotw_DHT11, "pinData")
     descriptor = None
-    for klass in iotw::DHT11.__mro__:
+    for klass in iotw_DHT11.__mro__:
         if "pinData" in klass.__dict__:
             descriptor = klass.__dict__["pinData"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::dht11_has_pinVcc():
-    assert hasattr(iotw::DHT11, "pinVcc")
+def test_iotw_dht11_has_pinVcc():
+    assert hasattr(iotw_DHT11, "pinVcc")
     descriptor = None
-    for klass in iotw::DHT11.__mro__:
+    for klass in iotw_DHT11.__mro__:
         if "pinVcc" in klass.__dict__:
             descriptor = klass.__dict__["pinVcc"]
             break
@@ -651,329 +609,329 @@ def test_iotw::dht11_has_pinVcc():
 
 
 
-def test_iotw::cds_is_not_abstract():
-    assert not inspect.isabstract(iotw::CDS)
+def test_iotw_cds_is_not_abstract():
+    assert not inspect.isabstract(iotw_CDS)
 
 
-def test_iotw::cds_constructor_exists():
-    assert callable(iotw::CDS.__init__)
+def test_iotw_cds_constructor_exists():
+    assert callable(iotw_CDS.__init__)
 
 
-def test_iotw::cds_constructor_args():
-    sig = inspect.signature(iotw::CDS.__init__)
+def test_iotw_cds_constructor_args():
+    sig = inspect.signature(iotw_CDS.__init__)
     params = list(sig.parameters.keys())
     assert "pinD0" in params, "Missing parameter 'pinD0'"
-    assert "pinVcc" in params, "Missing parameter 'pinVcc'"
     assert "pinGND" in params, "Missing parameter 'pinGND'"
+    assert "pinVcc" in params, "Missing parameter 'pinVcc'"
 
-def test_iotw::cds_has_pinD0():
-    assert hasattr(iotw::CDS, "pinD0")
+def test_iotw_cds_has_pinD0():
+    assert hasattr(iotw_CDS, "pinD0")
     descriptor = None
-    for klass in iotw::CDS.__mro__:
+    for klass in iotw_CDS.__mro__:
         if "pinD0" in klass.__dict__:
             descriptor = klass.__dict__["pinD0"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::cds_has_pinVcc():
-    assert hasattr(iotw::CDS, "pinVcc")
+def test_iotw_cds_has_pinGND():
+    assert hasattr(iotw_CDS, "pinGND")
     descriptor = None
-    for klass in iotw::CDS.__mro__:
-        if "pinVcc" in klass.__dict__:
-            descriptor = klass.__dict__["pinVcc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::cds_has_pinGND():
-    assert hasattr(iotw::CDS, "pinGND")
-    descriptor = None
-    for klass in iotw::CDS.__mro__:
+    for klass in iotw_CDS.__mro__:
         if "pinGND" in klass.__dict__:
             descriptor = klass.__dict__["pinGND"]
             break
     assert isinstance(descriptor, property)
 
+def test_iotw_cds_has_pinVcc():
+    assert hasattr(iotw_CDS, "pinVcc")
+    descriptor = None
+    for klass in iotw_CDS.__mro__:
+        if "pinVcc" in klass.__dict__:
+            descriptor = klass.__dict__["pinVcc"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iotw::keypad4x4_is_not_abstract():
-    assert not inspect.isabstract(iotw::Keypad4x4)
+
+def test_iotw_keypad4x4_is_not_abstract():
+    assert not inspect.isabstract(iotw_Keypad4x4)
 
 
-def test_iotw::keypad4x4_constructor_exists():
-    assert callable(iotw::Keypad4x4.__init__)
+def test_iotw_keypad4x4_constructor_exists():
+    assert callable(iotw_Keypad4x4.__init__)
 
 
-def test_iotw::keypad4x4_constructor_args():
-    sig = inspect.signature(iotw::Keypad4x4.__init__)
+def test_iotw_keypad4x4_constructor_args():
+    sig = inspect.signature(iotw_Keypad4x4.__init__)
     params = list(sig.parameters.keys())
-    assert "nameButton9" in params, "Missing parameter 'nameButton9'"
-    assert "nameButtonHash" in params, "Missing parameter 'nameButtonHash'"
+    assert "nameButton6" in params, "Missing parameter 'nameButton6'"
+    assert "nameButtonA" in params, "Missing parameter 'nameButtonA'"
+    assert "nameButton2" in params, "Missing parameter 'nameButton2'"
+    assert "pin3" in params, "Missing parameter 'pin3'"
+    assert "nameButton7" in params, "Missing parameter 'nameButton7'"
+    assert "pin7" in params, "Missing parameter 'pin7'"
+    assert "nameButton4" in params, "Missing parameter 'nameButton4'"
+    assert "pin4" in params, "Missing parameter 'pin4'"
     assert "nameButton0" in params, "Missing parameter 'nameButton0'"
     assert "pin1" in params, "Missing parameter 'pin1'"
-    assert "nameButtonAsterisk" in params, "Missing parameter 'nameButtonAsterisk'"
     assert "nameButtonB" in params, "Missing parameter 'nameButtonB'"
-    assert "pin6" in params, "Missing parameter 'pin6'"
-    assert "keys" in params, "Missing parameter 'keys'"
-    assert "nameButton2" in params, "Missing parameter 'nameButton2'"
     assert "cols" in params, "Missing parameter 'cols'"
+    assert "keys" in params, "Missing parameter 'keys'"
     assert "pin8" in params, "Missing parameter 'pin8'"
-    assert "pin2" in params, "Missing parameter 'pin2'"
-    assert "pin5" in params, "Missing parameter 'pin5'"
-    assert "nameButtonC" in params, "Missing parameter 'nameButtonC'"
-    assert "nameButton7" in params, "Missing parameter 'nameButton7'"
-    assert "nameButton8" in params, "Missing parameter 'nameButton8'"
-    assert "pin4" in params, "Missing parameter 'pin4'"
-    assert "nameButton3" in params, "Missing parameter 'nameButton3'"
-    assert "nameButton6" in params, "Missing parameter 'nameButton6'"
     assert "nameButton1" in params, "Missing parameter 'nameButton1'"
-    assert "nameButtonA" in params, "Missing parameter 'nameButtonA'"
-    assert "nameButton5" in params, "Missing parameter 'nameButton5'"
-    assert "rows" in params, "Missing parameter 'rows'"
+    assert "nameButtonC" in params, "Missing parameter 'nameButtonC'"
+    assert "nameButton8" in params, "Missing parameter 'nameButton8'"
+    assert "nameButtonAsterisk" in params, "Missing parameter 'nameButtonAsterisk'"
+    assert "pin6" in params, "Missing parameter 'pin6'"
+    assert "nameButton9" in params, "Missing parameter 'nameButton9'"
     assert "nameButtonD" in params, "Missing parameter 'nameButtonD'"
-    assert "nameButton4" in params, "Missing parameter 'nameButton4'"
-    assert "pin3" in params, "Missing parameter 'pin3'"
-    assert "pin7" in params, "Missing parameter 'pin7'"
+    assert "nameButton5" in params, "Missing parameter 'nameButton5'"
+    assert "nameButton3" in params, "Missing parameter 'nameButton3'"
+    assert "pin2" in params, "Missing parameter 'pin2'"
+    assert "nameButtonHash" in params, "Missing parameter 'nameButtonHash'"
+    assert "pin5" in params, "Missing parameter 'pin5'"
+    assert "rows" in params, "Missing parameter 'rows'"
 
-def test_iotw::keypad4x4_has_nameButton9():
-    assert hasattr(iotw::Keypad4x4, "nameButton9")
+def test_iotw_keypad4x4_has_nameButton6():
+    assert hasattr(iotw_Keypad4x4, "nameButton6")
     descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton9" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton9"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButtonHash():
-    assert hasattr(iotw::Keypad4x4, "nameButtonHash")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButtonHash" in klass.__dict__:
-            descriptor = klass.__dict__["nameButtonHash"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton0():
-    assert hasattr(iotw::Keypad4x4, "nameButton0")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton0" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton0"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin1():
-    assert hasattr(iotw::Keypad4x4, "pin1")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "pin1" in klass.__dict__:
-            descriptor = klass.__dict__["pin1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButtonAsterisk():
-    assert hasattr(iotw::Keypad4x4, "nameButtonAsterisk")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButtonAsterisk" in klass.__dict__:
-            descriptor = klass.__dict__["nameButtonAsterisk"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButtonB():
-    assert hasattr(iotw::Keypad4x4, "nameButtonB")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButtonB" in klass.__dict__:
-            descriptor = klass.__dict__["nameButtonB"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin6():
-    assert hasattr(iotw::Keypad4x4, "pin6")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "pin6" in klass.__dict__:
-            descriptor = klass.__dict__["pin6"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_keys():
-    assert hasattr(iotw::Keypad4x4, "keys")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "keys" in klass.__dict__:
-            descriptor = klass.__dict__["keys"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton2():
-    assert hasattr(iotw::Keypad4x4, "nameButton2")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton2" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_cols():
-    assert hasattr(iotw::Keypad4x4, "cols")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "cols" in klass.__dict__:
-            descriptor = klass.__dict__["cols"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin8():
-    assert hasattr(iotw::Keypad4x4, "pin8")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "pin8" in klass.__dict__:
-            descriptor = klass.__dict__["pin8"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin2():
-    assert hasattr(iotw::Keypad4x4, "pin2")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "pin2" in klass.__dict__:
-            descriptor = klass.__dict__["pin2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin5():
-    assert hasattr(iotw::Keypad4x4, "pin5")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "pin5" in klass.__dict__:
-            descriptor = klass.__dict__["pin5"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButtonC():
-    assert hasattr(iotw::Keypad4x4, "nameButtonC")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButtonC" in klass.__dict__:
-            descriptor = klass.__dict__["nameButtonC"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton7():
-    assert hasattr(iotw::Keypad4x4, "nameButton7")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton7" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton7"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton8():
-    assert hasattr(iotw::Keypad4x4, "nameButton8")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton8" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton8"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin4():
-    assert hasattr(iotw::Keypad4x4, "pin4")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "pin4" in klass.__dict__:
-            descriptor = klass.__dict__["pin4"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton3():
-    assert hasattr(iotw::Keypad4x4, "nameButton3")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton3" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton6():
-    assert hasattr(iotw::Keypad4x4, "nameButton6")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
+    for klass in iotw_Keypad4x4.__mro__:
         if "nameButton6" in klass.__dict__:
             descriptor = klass.__dict__["nameButton6"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::keypad4x4_has_nameButton1():
-    assert hasattr(iotw::Keypad4x4, "nameButton1")
+def test_iotw_keypad4x4_has_nameButtonA():
+    assert hasattr(iotw_Keypad4x4, "nameButtonA")
     descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton1" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButtonA():
-    assert hasattr(iotw::Keypad4x4, "nameButtonA")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
+    for klass in iotw_Keypad4x4.__mro__:
         if "nameButtonA" in klass.__dict__:
             descriptor = klass.__dict__["nameButtonA"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::keypad4x4_has_nameButton5():
-    assert hasattr(iotw::Keypad4x4, "nameButton5")
+def test_iotw_keypad4x4_has_nameButton2():
+    assert hasattr(iotw_Keypad4x4, "nameButton2")
     descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton5" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton5"]
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton2" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton2"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::keypad4x4_has_rows():
-    assert hasattr(iotw::Keypad4x4, "rows")
+def test_iotw_keypad4x4_has_pin3():
+    assert hasattr(iotw_Keypad4x4, "pin3")
     descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "rows" in klass.__dict__:
-            descriptor = klass.__dict__["rows"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButtonD():
-    assert hasattr(iotw::Keypad4x4, "nameButtonD")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButtonD" in klass.__dict__:
-            descriptor = klass.__dict__["nameButtonD"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_nameButton4():
-    assert hasattr(iotw::Keypad4x4, "nameButton4")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
-        if "nameButton4" in klass.__dict__:
-            descriptor = klass.__dict__["nameButton4"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::keypad4x4_has_pin3():
-    assert hasattr(iotw::Keypad4x4, "pin3")
-    descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
+    for klass in iotw_Keypad4x4.__mro__:
         if "pin3" in klass.__dict__:
             descriptor = klass.__dict__["pin3"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::keypad4x4_has_pin7():
-    assert hasattr(iotw::Keypad4x4, "pin7")
+def test_iotw_keypad4x4_has_nameButton7():
+    assert hasattr(iotw_Keypad4x4, "nameButton7")
     descriptor = None
-    for klass in iotw::Keypad4x4.__mro__:
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton7" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton7"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin7():
+    assert hasattr(iotw_Keypad4x4, "pin7")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
         if "pin7" in klass.__dict__:
             descriptor = klass.__dict__["pin7"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton4():
+    assert hasattr(iotw_Keypad4x4, "nameButton4")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton4" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton4"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin4():
+    assert hasattr(iotw_Keypad4x4, "pin4")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "pin4" in klass.__dict__:
+            descriptor = klass.__dict__["pin4"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton0():
+    assert hasattr(iotw_Keypad4x4, "nameButton0")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton0" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton0"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin1():
+    assert hasattr(iotw_Keypad4x4, "pin1")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "pin1" in klass.__dict__:
+            descriptor = klass.__dict__["pin1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButtonB():
+    assert hasattr(iotw_Keypad4x4, "nameButtonB")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButtonB" in klass.__dict__:
+            descriptor = klass.__dict__["nameButtonB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_cols():
+    assert hasattr(iotw_Keypad4x4, "cols")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "cols" in klass.__dict__:
+            descriptor = klass.__dict__["cols"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_keys():
+    assert hasattr(iotw_Keypad4x4, "keys")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "keys" in klass.__dict__:
+            descriptor = klass.__dict__["keys"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin8():
+    assert hasattr(iotw_Keypad4x4, "pin8")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "pin8" in klass.__dict__:
+            descriptor = klass.__dict__["pin8"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton1():
+    assert hasattr(iotw_Keypad4x4, "nameButton1")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton1" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButtonC():
+    assert hasattr(iotw_Keypad4x4, "nameButtonC")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButtonC" in klass.__dict__:
+            descriptor = klass.__dict__["nameButtonC"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton8():
+    assert hasattr(iotw_Keypad4x4, "nameButton8")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton8" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton8"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButtonAsterisk():
+    assert hasattr(iotw_Keypad4x4, "nameButtonAsterisk")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButtonAsterisk" in klass.__dict__:
+            descriptor = klass.__dict__["nameButtonAsterisk"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin6():
+    assert hasattr(iotw_Keypad4x4, "pin6")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "pin6" in klass.__dict__:
+            descriptor = klass.__dict__["pin6"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton9():
+    assert hasattr(iotw_Keypad4x4, "nameButton9")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton9" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton9"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButtonD():
+    assert hasattr(iotw_Keypad4x4, "nameButtonD")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButtonD" in klass.__dict__:
+            descriptor = klass.__dict__["nameButtonD"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton5():
+    assert hasattr(iotw_Keypad4x4, "nameButton5")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton5" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton5"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButton3():
+    assert hasattr(iotw_Keypad4x4, "nameButton3")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButton3" in klass.__dict__:
+            descriptor = klass.__dict__["nameButton3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin2():
+    assert hasattr(iotw_Keypad4x4, "pin2")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "pin2" in klass.__dict__:
+            descriptor = klass.__dict__["pin2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_nameButtonHash():
+    assert hasattr(iotw_Keypad4x4, "nameButtonHash")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "nameButtonHash" in klass.__dict__:
+            descriptor = klass.__dict__["nameButtonHash"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_pin5():
+    assert hasattr(iotw_Keypad4x4, "pin5")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "pin5" in klass.__dict__:
+            descriptor = klass.__dict__["pin5"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_keypad4x4_has_rows():
+    assert hasattr(iotw_Keypad4x4, "rows")
+    descriptor = None
+    for klass in iotw_Keypad4x4.__mro__:
+        if "rows" in klass.__dict__:
+            descriptor = klass.__dict__["rows"]
             break
     assert isinstance(descriptor, property)
 
@@ -993,30 +951,30 @@ def test_iodevice_constructor_args():
 
 
 
-def test_iotw::outputdevice_is_not_abstract():
-    assert not inspect.isabstract(iotw::OutputDevice)
+def test_iotw_outputdevice_is_not_abstract():
+    assert not inspect.isabstract(iotw_OutputDevice)
 
 
-def test_iotw::outputdevice_constructor_exists():
-    assert callable(iotw::OutputDevice.__init__)
+def test_iotw_outputdevice_constructor_exists():
+    assert callable(iotw_OutputDevice.__init__)
 
 
-def test_iotw::outputdevice_constructor_args():
-    sig = inspect.signature(iotw::OutputDevice.__init__)
+def test_iotw_outputdevice_constructor_args():
+    sig = inspect.signature(iotw_OutputDevice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotw::inputdevice_is_not_abstract():
-    assert not inspect.isabstract(iotw::InputDevice)
+def test_iotw_inputdevice_is_not_abstract():
+    assert not inspect.isabstract(iotw_InputDevice)
 
 
-def test_iotw::inputdevice_constructor_exists():
-    assert callable(iotw::InputDevice.__init__)
+def test_iotw_inputdevice_constructor_exists():
+    assert callable(iotw_InputDevice.__init__)
 
 
-def test_iotw::inputdevice_constructor_args():
-    sig = inspect.signature(iotw::InputDevice.__init__)
+def test_iotw_inputdevice_constructor_args():
+    sig = inspect.signature(iotw_InputDevice.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1035,429 +993,429 @@ def test_mainboard_constructor_args():
 
 
 
-def test_iotw::arduinounor3_is_not_abstract():
-    assert not inspect.isabstract(iotw::ArduinoUNOR3)
+def test_iotw_arduinounor3_is_not_abstract():
+    assert not inspect.isabstract(iotw_ArduinoUNOR3)
 
 
-def test_iotw::arduinounor3_constructor_exists():
-    assert callable(iotw::ArduinoUNOR3.__init__)
+def test_iotw_arduinounor3_constructor_exists():
+    assert callable(iotw_ArduinoUNOR3.__init__)
 
 
-def test_iotw::arduinounor3_constructor_args():
-    sig = inspect.signature(iotw::ArduinoUNOR3.__init__)
+def test_iotw_arduinounor3_constructor_args():
+    sig = inspect.signature(iotw_ArduinoUNOR3.__init__)
     params = list(sig.parameters.keys())
-    assert "pinA3" in params, "Missing parameter 'pinA3'"
-    assert "pin1" in params, "Missing parameter 'pin1'"
-    assert "pin11" in params, "Missing parameter 'pin11'"
-    assert "pin6" in params, "Missing parameter 'pin6'"
-    assert "pin5" in params, "Missing parameter 'pin5'"
-    assert "pin9" in params, "Missing parameter 'pin9'"
     assert "pinA1" in params, "Missing parameter 'pinA1'"
-    assert "pin3" in params, "Missing parameter 'pin3'"
+    assert "pin11" in params, "Missing parameter 'pin11'"
+    assert "pin5" in params, "Missing parameter 'pin5'"
     assert "pinA4" in params, "Missing parameter 'pinA4'"
+    assert "pin6" in params, "Missing parameter 'pin6'"
+    assert "pinA0" in params, "Missing parameter 'pinA0'"
+    assert "pin0" in params, "Missing parameter 'pin0'"
     assert "pinA2" in params, "Missing parameter 'pinA2'"
-    assert "pin4" in params, "Missing parameter 'pin4'"
-    assert "pin2" in params, "Missing parameter 'pin2'"
+    assert "pin8" in params, "Missing parameter 'pin8'"
     assert "pin12" in params, "Missing parameter 'pin12'"
+    assert "pinA3" in params, "Missing parameter 'pinA3'"
+    assert "pinA5" in params, "Missing parameter 'pinA5'"
+    assert "pin3" in params, "Missing parameter 'pin3'"
+    assert "pin2" in params, "Missing parameter 'pin2'"
+    assert "pin10" in params, "Missing parameter 'pin10'"
     assert "pin13" in params, "Missing parameter 'pin13'"
     assert "pin7" in params, "Missing parameter 'pin7'"
-    assert "pin10" in params, "Missing parameter 'pin10'"
-    assert "pin8" in params, "Missing parameter 'pin8'"
-    assert "pin0" in params, "Missing parameter 'pin0'"
-    assert "pinA0" in params, "Missing parameter 'pinA0'"
-    assert "pinA5" in params, "Missing parameter 'pinA5'"
+    assert "pin1" in params, "Missing parameter 'pin1'"
+    assert "pin9" in params, "Missing parameter 'pin9'"
+    assert "pin4" in params, "Missing parameter 'pin4'"
 
-def test_iotw::arduinounor3_has_pinA3():
-    assert hasattr(iotw::ArduinoUNOR3, "pinA3")
+def test_iotw_arduinounor3_has_pinA1():
+    assert hasattr(iotw_ArduinoUNOR3, "pinA1")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pinA3" in klass.__dict__:
-            descriptor = klass.__dict__["pinA3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin1():
-    assert hasattr(iotw::ArduinoUNOR3, "pin1")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin1" in klass.__dict__:
-            descriptor = klass.__dict__["pin1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin11():
-    assert hasattr(iotw::ArduinoUNOR3, "pin11")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin11" in klass.__dict__:
-            descriptor = klass.__dict__["pin11"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin6():
-    assert hasattr(iotw::ArduinoUNOR3, "pin6")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin6" in klass.__dict__:
-            descriptor = klass.__dict__["pin6"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin5():
-    assert hasattr(iotw::ArduinoUNOR3, "pin5")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin5" in klass.__dict__:
-            descriptor = klass.__dict__["pin5"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin9():
-    assert hasattr(iotw::ArduinoUNOR3, "pin9")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin9" in klass.__dict__:
-            descriptor = klass.__dict__["pin9"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pinA1():
-    assert hasattr(iotw::ArduinoUNOR3, "pinA1")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
+    for klass in iotw_ArduinoUNOR3.__mro__:
         if "pinA1" in klass.__dict__:
             descriptor = klass.__dict__["pinA1"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pin3():
-    assert hasattr(iotw::ArduinoUNOR3, "pin3")
+def test_iotw_arduinounor3_has_pin11():
+    assert hasattr(iotw_ArduinoUNOR3, "pin11")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin3" in klass.__dict__:
-            descriptor = klass.__dict__["pin3"]
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin11" in klass.__dict__:
+            descriptor = klass.__dict__["pin11"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pinA4():
-    assert hasattr(iotw::ArduinoUNOR3, "pinA4")
+def test_iotw_arduinounor3_has_pin5():
+    assert hasattr(iotw_ArduinoUNOR3, "pin5")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin5" in klass.__dict__:
+            descriptor = klass.__dict__["pin5"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pinA4():
+    assert hasattr(iotw_ArduinoUNOR3, "pinA4")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
         if "pinA4" in klass.__dict__:
             descriptor = klass.__dict__["pinA4"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pinA2():
-    assert hasattr(iotw::ArduinoUNOR3, "pinA2")
+def test_iotw_arduinounor3_has_pin6():
+    assert hasattr(iotw_ArduinoUNOR3, "pin6")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pinA2" in klass.__dict__:
-            descriptor = klass.__dict__["pinA2"]
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin6" in klass.__dict__:
+            descriptor = klass.__dict__["pin6"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pin4():
-    assert hasattr(iotw::ArduinoUNOR3, "pin4")
+def test_iotw_arduinounor3_has_pinA0():
+    assert hasattr(iotw_ArduinoUNOR3, "pinA0")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin4" in klass.__dict__:
-            descriptor = klass.__dict__["pin4"]
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pinA0" in klass.__dict__:
+            descriptor = klass.__dict__["pinA0"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pin2():
-    assert hasattr(iotw::ArduinoUNOR3, "pin2")
+def test_iotw_arduinounor3_has_pin0():
+    assert hasattr(iotw_ArduinoUNOR3, "pin0")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin2" in klass.__dict__:
-            descriptor = klass.__dict__["pin2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin12():
-    assert hasattr(iotw::ArduinoUNOR3, "pin12")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin12" in klass.__dict__:
-            descriptor = klass.__dict__["pin12"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin13():
-    assert hasattr(iotw::ArduinoUNOR3, "pin13")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin13" in klass.__dict__:
-            descriptor = klass.__dict__["pin13"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin7():
-    assert hasattr(iotw::ArduinoUNOR3, "pin7")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin7" in klass.__dict__:
-            descriptor = klass.__dict__["pin7"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin10():
-    assert hasattr(iotw::ArduinoUNOR3, "pin10")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin10" in klass.__dict__:
-            descriptor = klass.__dict__["pin10"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin8():
-    assert hasattr(iotw::ArduinoUNOR3, "pin8")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pin8" in klass.__dict__:
-            descriptor = klass.__dict__["pin8"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinounor3_has_pin0():
-    assert hasattr(iotw::ArduinoUNOR3, "pin0")
-    descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
+    for klass in iotw_ArduinoUNOR3.__mro__:
         if "pin0" in klass.__dict__:
             descriptor = klass.__dict__["pin0"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pinA0():
-    assert hasattr(iotw::ArduinoUNOR3, "pinA0")
+def test_iotw_arduinounor3_has_pinA2():
+    assert hasattr(iotw_ArduinoUNOR3, "pinA2")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
-        if "pinA0" in klass.__dict__:
-            descriptor = klass.__dict__["pinA0"]
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pinA2" in klass.__dict__:
+            descriptor = klass.__dict__["pinA2"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinounor3_has_pinA5():
-    assert hasattr(iotw::ArduinoUNOR3, "pinA5")
+def test_iotw_arduinounor3_has_pin8():
+    assert hasattr(iotw_ArduinoUNOR3, "pin8")
     descriptor = None
-    for klass in iotw::ArduinoUNOR3.__mro__:
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin8" in klass.__dict__:
+            descriptor = klass.__dict__["pin8"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin12():
+    assert hasattr(iotw_ArduinoUNOR3, "pin12")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin12" in klass.__dict__:
+            descriptor = klass.__dict__["pin12"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pinA3():
+    assert hasattr(iotw_ArduinoUNOR3, "pinA3")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pinA3" in klass.__dict__:
+            descriptor = klass.__dict__["pinA3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pinA5():
+    assert hasattr(iotw_ArduinoUNOR3, "pinA5")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
         if "pinA5" in klass.__dict__:
             descriptor = klass.__dict__["pinA5"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_iotw::arduinowifiesp8266wemosd1_is_not_abstract():
-    assert not inspect.isabstract(iotw::ArduinoWiFiESP8266WeMosD1)
-
-
-def test_iotw::arduinowifiesp8266wemosd1_constructor_exists():
-    assert callable(iotw::ArduinoWiFiESP8266WeMosD1.__init__)
-
-
-def test_iotw::arduinowifiesp8266wemosd1_constructor_args():
-    sig = inspect.signature(iotw::ArduinoWiFiESP8266WeMosD1.__init__)
-    params = list(sig.parameters.keys())
-    assert "pinD0" in params, "Missing parameter 'pinD0'"
-    assert "ip" in params, "Missing parameter 'ip'"
-    assert "wifiMode" in params, "Missing parameter 'wifiMode'"
-    assert "pinSDA" in params, "Missing parameter 'pinSDA'"
-    assert "pinSCL" in params, "Missing parameter 'pinSCL'"
-    assert "pinD6" in params, "Missing parameter 'pinD6'"
-    assert "pinD7" in params, "Missing parameter 'pinD7'"
-    assert "pinD5" in params, "Missing parameter 'pinD5'"
-    assert "pinA0" in params, "Missing parameter 'pinA0'"
-    assert "pinD3" in params, "Missing parameter 'pinD3'"
-    assert "baud" in params, "Missing parameter 'baud'"
-    assert "pinD4" in params, "Missing parameter 'pinD4'"
-    assert "pinD2" in params, "Missing parameter 'pinD2'"
-    assert "password" in params, "Missing parameter 'password'"
-    assert "dns" in params, "Missing parameter 'dns'"
-    assert "gateway" in params, "Missing parameter 'gateway'"
-    assert "pinD1" in params, "Missing parameter 'pinD1'"
-    assert "ssid" in params, "Missing parameter 'ssid'"
-    assert "subnet" in params, "Missing parameter 'subnet'"
-    assert "pinD8" in params, "Missing parameter 'pinD8'"
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD0():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD0")
+def test_iotw_arduinounor3_has_pin3():
+    assert hasattr(iotw_ArduinoUNOR3, "pin3")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD0" in klass.__dict__:
-            descriptor = klass.__dict__["pinD0"]
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin3" in klass.__dict__:
+            descriptor = klass.__dict__["pin3"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinowifiesp8266wemosd1_has_ip():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "ip")
+def test_iotw_arduinounor3_has_pin2():
+    assert hasattr(iotw_ArduinoUNOR3, "pin2")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin2" in klass.__dict__:
+            descriptor = klass.__dict__["pin2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin10():
+    assert hasattr(iotw_ArduinoUNOR3, "pin10")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin10" in klass.__dict__:
+            descriptor = klass.__dict__["pin10"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin13():
+    assert hasattr(iotw_ArduinoUNOR3, "pin13")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin13" in klass.__dict__:
+            descriptor = klass.__dict__["pin13"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin7():
+    assert hasattr(iotw_ArduinoUNOR3, "pin7")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin7" in klass.__dict__:
+            descriptor = klass.__dict__["pin7"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin1():
+    assert hasattr(iotw_ArduinoUNOR3, "pin1")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin1" in klass.__dict__:
+            descriptor = klass.__dict__["pin1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin9():
+    assert hasattr(iotw_ArduinoUNOR3, "pin9")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin9" in klass.__dict__:
+            descriptor = klass.__dict__["pin9"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinounor3_has_pin4():
+    assert hasattr(iotw_ArduinoUNOR3, "pin4")
+    descriptor = None
+    for klass in iotw_ArduinoUNOR3.__mro__:
+        if "pin4" in klass.__dict__:
+            descriptor = klass.__dict__["pin4"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iotw_arduinowifiesp8266wemosd1_is_not_abstract():
+    assert not inspect.isabstract(iotw_ArduinoWiFiESP8266WeMosD1)
+
+
+def test_iotw_arduinowifiesp8266wemosd1_constructor_exists():
+    assert callable(iotw_ArduinoWiFiESP8266WeMosD1.__init__)
+
+
+def test_iotw_arduinowifiesp8266wemosd1_constructor_args():
+    sig = inspect.signature(iotw_ArduinoWiFiESP8266WeMosD1.__init__)
+    params = list(sig.parameters.keys())
+    assert "ip" in params, "Missing parameter 'ip'"
+    assert "pinD8" in params, "Missing parameter 'pinD8'"
+    assert "pinD1" in params, "Missing parameter 'pinD1'"
+    assert "pinD4" in params, "Missing parameter 'pinD4'"
+    assert "pinD0" in params, "Missing parameter 'pinD0'"
+    assert "gateway" in params, "Missing parameter 'gateway'"
+    assert "pinD5" in params, "Missing parameter 'pinD5'"
+    assert "pinD2" in params, "Missing parameter 'pinD2'"
+    assert "subnet" in params, "Missing parameter 'subnet'"
+    assert "pinSDA" in params, "Missing parameter 'pinSDA'"
+    assert "pinD7" in params, "Missing parameter 'pinD7'"
+    assert "pinD3" in params, "Missing parameter 'pinD3'"
+    assert "dns" in params, "Missing parameter 'dns'"
+    assert "wifiMode" in params, "Missing parameter 'wifiMode'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "baud" in params, "Missing parameter 'baud'"
+    assert "pinSCL" in params, "Missing parameter 'pinSCL'"
+    assert "ssid" in params, "Missing parameter 'ssid'"
+    assert "pinD6" in params, "Missing parameter 'pinD6'"
+    assert "pinA0" in params, "Missing parameter 'pinA0'"
+
+def test_iotw_arduinowifiesp8266wemosd1_has_ip():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "ip")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
         if "ip" in klass.__dict__:
             descriptor = klass.__dict__["ip"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinowifiesp8266wemosd1_has_wifiMode():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "wifiMode")
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD8():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD8")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "wifiMode" in klass.__dict__:
-            descriptor = klass.__dict__["wifiMode"]
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD8" in klass.__dict__:
+            descriptor = klass.__dict__["pinD8"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinowifiesp8266wemosd1_has_pinSDA():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinSDA")
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD1():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD1")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinSDA" in klass.__dict__:
-            descriptor = klass.__dict__["pinSDA"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinSCL():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinSCL")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinSCL" in klass.__dict__:
-            descriptor = klass.__dict__["pinSCL"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD6():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD6")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD6" in klass.__dict__:
-            descriptor = klass.__dict__["pinD6"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD7():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD7")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD7" in klass.__dict__:
-            descriptor = klass.__dict__["pinD7"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD5():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD5")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD5" in klass.__dict__:
-            descriptor = klass.__dict__["pinD5"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinA0():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinA0")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinA0" in klass.__dict__:
-            descriptor = klass.__dict__["pinA0"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD3():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD3")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD3" in klass.__dict__:
-            descriptor = klass.__dict__["pinD3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_baud():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "baud")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "baud" in klass.__dict__:
-            descriptor = klass.__dict__["baud"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD4():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD4")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD4" in klass.__dict__:
-            descriptor = klass.__dict__["pinD4"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD2():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD2")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD2" in klass.__dict__:
-            descriptor = klass.__dict__["pinD2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_password():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "password")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_dns():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "dns")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "dns" in klass.__dict__:
-            descriptor = klass.__dict__["dns"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_gateway():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "gateway")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "gateway" in klass.__dict__:
-            descriptor = klass.__dict__["gateway"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD1():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD1")
-    descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
         if "pinD1" in klass.__dict__:
             descriptor = klass.__dict__["pinD1"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinowifiesp8266wemosd1_has_ssid():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "ssid")
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD4():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD4")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "ssid" in klass.__dict__:
-            descriptor = klass.__dict__["ssid"]
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD4" in klass.__dict__:
+            descriptor = klass.__dict__["pinD4"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinowifiesp8266wemosd1_has_subnet():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "subnet")
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD0():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD0")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD0" in klass.__dict__:
+            descriptor = klass.__dict__["pinD0"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_gateway():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "gateway")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "gateway" in klass.__dict__:
+            descriptor = klass.__dict__["gateway"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD5():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD5")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD5" in klass.__dict__:
+            descriptor = klass.__dict__["pinD5"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD2():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD2")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD2" in klass.__dict__:
+            descriptor = klass.__dict__["pinD2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_subnet():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "subnet")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
         if "subnet" in klass.__dict__:
             descriptor = klass.__dict__["subnet"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::arduinowifiesp8266wemosd1_has_pinD8():
-    assert hasattr(iotw::ArduinoWiFiESP8266WeMosD1, "pinD8")
+def test_iotw_arduinowifiesp8266wemosd1_has_pinSDA():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinSDA")
     descriptor = None
-    for klass in iotw::ArduinoWiFiESP8266WeMosD1.__mro__:
-        if "pinD8" in klass.__dict__:
-            descriptor = klass.__dict__["pinD8"]
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinSDA" in klass.__dict__:
+            descriptor = klass.__dict__["pinSDA"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD7():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD7")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD7" in klass.__dict__:
+            descriptor = klass.__dict__["pinD7"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD3():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD3")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD3" in klass.__dict__:
+            descriptor = klass.__dict__["pinD3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_dns():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "dns")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "dns" in klass.__dict__:
+            descriptor = klass.__dict__["dns"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_wifiMode():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "wifiMode")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "wifiMode" in klass.__dict__:
+            descriptor = klass.__dict__["wifiMode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_password():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "password")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_baud():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "baud")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "baud" in klass.__dict__:
+            descriptor = klass.__dict__["baud"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinSCL():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinSCL")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinSCL" in klass.__dict__:
+            descriptor = klass.__dict__["pinSCL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_ssid():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "ssid")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "ssid" in klass.__dict__:
+            descriptor = klass.__dict__["ssid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinD6():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinD6")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinD6" in klass.__dict__:
+            descriptor = klass.__dict__["pinD6"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_arduinowifiesp8266wemosd1_has_pinA0():
+    assert hasattr(iotw_ArduinoWiFiESP8266WeMosD1, "pinA0")
+    descriptor = None
+    for klass in iotw_ArduinoWiFiESP8266WeMosD1.__mro__:
+        if "pinA0" in klass.__dict__:
+            descriptor = klass.__dict__["pinA0"]
             break
     assert isinstance(descriptor, property)
 
@@ -1477,23 +1435,23 @@ def test_component_constructor_args():
 
 
 
-def test_iotw::device_is_not_abstract():
-    assert not inspect.isabstract(iotw::Device)
+def test_iotw_device_is_not_abstract():
+    assert not inspect.isabstract(iotw_Device)
 
 
-def test_iotw::device_constructor_exists():
-    assert callable(iotw::Device.__init__)
+def test_iotw_device_constructor_exists():
+    assert callable(iotw_Device.__init__)
 
 
-def test_iotw::device_constructor_args():
-    sig = inspect.signature(iotw::Device.__init__)
+def test_iotw_device_constructor_args():
+    sig = inspect.signature(iotw_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotw::device_has_name():
-    assert hasattr(iotw::Device, "name")
+def test_iotw_device_has_name():
+    assert hasattr(iotw_Device, "name")
     descriptor = None
-    for klass in iotw::Device.__mro__:
+    for klass in iotw_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1515,51 +1473,51 @@ def test_device_constructor_args():
 
 
 
-def test_iotw::connectivity_is_not_abstract():
-    assert not inspect.isabstract(iotw::Connectivity)
+def test_iotw_connectivity_is_not_abstract():
+    assert not inspect.isabstract(iotw_Connectivity)
 
 
-def test_iotw::connectivity_constructor_exists():
-    assert callable(iotw::Connectivity.__init__)
+def test_iotw_connectivity_constructor_exists():
+    assert callable(iotw_Connectivity.__init__)
 
 
-def test_iotw::connectivity_constructor_args():
-    sig = inspect.signature(iotw::Connectivity.__init__)
+def test_iotw_connectivity_constructor_args():
+    sig = inspect.signature(iotw_Connectivity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotw::iodevice_is_not_abstract():
-    assert not inspect.isabstract(iotw::IODevice)
+def test_iotw_iodevice_is_not_abstract():
+    assert not inspect.isabstract(iotw_IODevice)
 
 
-def test_iotw::iodevice_constructor_exists():
-    assert callable(iotw::IODevice.__init__)
+def test_iotw_iodevice_constructor_exists():
+    assert callable(iotw_IODevice.__init__)
 
 
-def test_iotw::iodevice_constructor_args():
-    sig = inspect.signature(iotw::IODevice.__init__)
+def test_iotw_iodevice_constructor_args():
+    sig = inspect.signature(iotw_IODevice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iotw::mainboard_is_not_abstract():
-    assert not inspect.isabstract(iotw::Mainboard)
+def test_iotw_mainboard_is_not_abstract():
+    assert not inspect.isabstract(iotw_Mainboard)
 
 
-def test_iotw::mainboard_constructor_exists():
-    assert callable(iotw::Mainboard.__init__)
+def test_iotw_mainboard_constructor_exists():
+    assert callable(iotw_Mainboard.__init__)
 
 
-def test_iotw::mainboard_constructor_args():
-    sig = inspect.signature(iotw::Mainboard.__init__)
+def test_iotw_mainboard_constructor_args():
+    sig = inspect.signature(iotw_Mainboard.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotw::mainboard_has_name():
-    assert hasattr(iotw::Mainboard, "name")
+def test_iotw_mainboard_has_name():
+    assert hasattr(iotw_Mainboard, "name")
     descriptor = None
-    for klass in iotw::Mainboard.__mro__:
+    for klass in iotw_Mainboard.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1567,87 +1525,87 @@ def test_iotw::mainboard_has_name():
 
 
 
-def test_iotw::connection_is_not_abstract():
-    assert not inspect.isabstract(iotw::Connection)
+def test_iotw_connection_is_not_abstract():
+    assert not inspect.isabstract(iotw_Connection)
 
 
-def test_iotw::connection_constructor_exists():
-    assert callable(iotw::Connection.__init__)
+def test_iotw_connection_constructor_exists():
+    assert callable(iotw_Connection.__init__)
 
 
-def test_iotw::connection_constructor_args():
-    sig = inspect.signature(iotw::Connection.__init__)
+def test_iotw_connection_constructor_args():
+    sig = inspect.signature(iotw_Connection.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-    assert "routerKind" in params, "Missing parameter 'routerKind'"
     assert "label" in params, "Missing parameter 'label'"
     assert "bendpoints" in params, "Missing parameter 'bendpoints'"
+    assert "kind" in params, "Missing parameter 'kind'"
+    assert "routerKind" in params, "Missing parameter 'routerKind'"
 
-def test_iotw::connection_has_kind():
-    assert hasattr(iotw::Connection, "kind")
+def test_iotw_connection_has_label():
+    assert hasattr(iotw_Connection, "label")
     descriptor = None
-    for klass in iotw::Connection.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::connection_has_routerKind():
-    assert hasattr(iotw::Connection, "routerKind")
-    descriptor = None
-    for klass in iotw::Connection.__mro__:
-        if "routerKind" in klass.__dict__:
-            descriptor = klass.__dict__["routerKind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iotw::connection_has_label():
-    assert hasattr(iotw::Connection, "label")
-    descriptor = None
-    for klass in iotw::Connection.__mro__:
+    for klass in iotw_Connection.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::connection_has_bendpoints():
-    assert hasattr(iotw::Connection, "bendpoints")
+def test_iotw_connection_has_bendpoints():
+    assert hasattr(iotw_Connection, "bendpoints")
     descriptor = None
-    for klass in iotw::Connection.__mro__:
+    for klass in iotw_Connection.__mro__:
         if "bendpoints" in klass.__dict__:
             descriptor = klass.__dict__["bendpoints"]
             break
     assert isinstance(descriptor, property)
 
+def test_iotw_connection_has_kind():
+    assert hasattr(iotw_Connection, "kind")
+    descriptor = None
+    for klass in iotw_Connection.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iotw_connection_has_routerKind():
+    assert hasattr(iotw_Connection, "routerKind")
+    descriptor = None
+    for klass in iotw_Connection.__mro__:
+        if "routerKind" in klass.__dict__:
+            descriptor = klass.__dict__["routerKind"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iotw::component_is_not_abstract():
-    assert not inspect.isabstract(iotw::Component)
+
+def test_iotw_component_is_not_abstract():
+    assert not inspect.isabstract(iotw_Component)
 
 
-def test_iotw::component_constructor_exists():
-    assert callable(iotw::Component.__init__)
+def test_iotw_component_constructor_exists():
+    assert callable(iotw_Component.__init__)
 
 
-def test_iotw::component_constructor_args():
-    sig = inspect.signature(iotw::Component.__init__)
+def test_iotw_component_constructor_args():
+    sig = inspect.signature(iotw_Component.__init__)
     params = list(sig.parameters.keys())
     assert "constraints" in params, "Missing parameter 'constraints'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_iotw::component_has_constraints():
-    assert hasattr(iotw::Component, "constraints")
+def test_iotw_component_has_constraints():
+    assert hasattr(iotw_Component, "constraints")
     descriptor = None
-    for klass in iotw::Component.__mro__:
+    for klass in iotw_Component.__mro__:
         if "constraints" in klass.__dict__:
             descriptor = klass.__dict__["constraints"]
             break
     assert isinstance(descriptor, property)
 
-def test_iotw::component_has_id():
-    assert hasattr(iotw::Component, "id")
+def test_iotw_component_has_id():
+    assert hasattr(iotw_Component, "id")
     descriptor = None
-    for klass in iotw::Component.__mro__:
+    for klass in iotw_Component.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1655,23 +1613,23 @@ def test_iotw::component_has_id():
 
 
 
-def test_iotw::statecomponent_is_not_abstract():
-    assert not inspect.isabstract(iotw::StateComponent)
+def test_iotw_statecomponent_is_not_abstract():
+    assert not inspect.isabstract(iotw_StateComponent)
 
 
-def test_iotw::statecomponent_constructor_exists():
-    assert callable(iotw::StateComponent.__init__)
+def test_iotw_statecomponent_constructor_exists():
+    assert callable(iotw_StateComponent.__init__)
 
 
-def test_iotw::statecomponent_constructor_args():
-    sig = inspect.signature(iotw::StateComponent.__init__)
+def test_iotw_statecomponent_constructor_args():
+    sig = inspect.signature(iotw_StateComponent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iotw::statecomponent_has_name():
-    assert hasattr(iotw::StateComponent, "name")
+def test_iotw_statecomponent_has_name():
+    assert hasattr(iotw_StateComponent, "name")
     descriptor = None
-    for klass in iotw::StateComponent.__mro__:
+    for klass in iotw_StateComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1679,16 +1637,58 @@ def test_iotw::statecomponent_has_name():
 
 
 
-def test_iotw::stateschema_is_not_abstract():
-    assert not inspect.isabstract(iotw::StateSchema)
+def test_iotw_stateschema_is_not_abstract():
+    assert not inspect.isabstract(iotw_StateSchema)
 
 
-def test_iotw::stateschema_constructor_exists():
-    assert callable(iotw::StateSchema.__init__)
+def test_iotw_stateschema_constructor_exists():
+    assert callable(iotw_StateSchema.__init__)
 
 
-def test_iotw::stateschema_constructor_args():
-    sig = inspect.signature(iotw::StateSchema.__init__)
+def test_iotw_stateschema_constructor_args():
+    sig = inspect.signature(iotw_StateSchema.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iotw_endpoint_is_not_abstract():
+    assert not inspect.isabstract(iotw_EndPoint)
+
+
+def test_iotw_endpoint_constructor_exists():
+    assert callable(iotw_EndPoint.__init__)
+
+
+def test_iotw_endpoint_constructor_args():
+    sig = inspect.signature(iotw_EndPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iotw_startpoint_is_not_abstract():
+    assert not inspect.isabstract(iotw_StartPoint)
+
+
+def test_iotw_startpoint_constructor_exists():
+    assert callable(iotw_StartPoint.__init__)
+
+
+def test_iotw_startpoint_constructor_args():
+    sig = inspect.signature(iotw_StartPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iotw_decision_is_not_abstract():
+    assert not inspect.isabstract(iotw_Decision)
+
+
+def test_iotw_decision_constructor_exists():
+    assert callable(iotw_Decision.__init__)
+
+
+def test_iotw_decision_constructor_args():
+    sig = inspect.signature(iotw_Decision.__init__)
     params = list(sig.parameters.keys())
 
 def test_i2clcdtype_exists():
@@ -1706,6 +1706,72 @@ def test_i2clcdtype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in I2CLCDType"
 
+def test_routerkind_exists():
+    # Check that the Enumeration exists
+    assert RouterKind is not None
+
+def test_routerkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RouterKind]
+    expected_literals = [
+        "BENDPOINT",
+        "MANHATTAN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RouterKind"
+
+def test_wifiidconnection_exists():
+    # Check that the Enumeration exists
+    assert WifiIDConnection is not None
+
+def test_wifiidconnection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WifiIDConnection]
+    expected_literals = [
+        "id_1",
+        "id_4",
+        "id_2",
+        "id_0",
+        "id_3",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WifiIDConnection"
+
+def test_wifimode_exists():
+    # Check that the Enumeration exists
+    assert WifiMode is not None
+
+def test_wifimode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WifiMode]
+    expected_literals = [
+        "Access_Point",
+        "Station",
+        "Both",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WifiMode"
+
+def test_esp8266wifimode_exists():
+    # Check that the Enumeration exists
+    assert ESP8266WiFiMode is not None
+
+def test_esp8266wifimode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ESP8266WiFiMode]
+    expected_literals = [
+        "WIFI_OFF",
+        "WIFI_AP_STA",
+        "WIFI_STA",
+        "WIFI_AP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ESP8266WiFiMode"
+
 def test_listconnectionchannel_exists():
     # Check that the Enumeration exists
     assert ListConnectionChannel is not None
@@ -1714,8 +1780,8 @@ def test_listconnectionchannel_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ListConnectionChannel]
     expected_literals = [
-        "Single",
         "Multiple",
+        "Single",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1729,84 +1795,18 @@ def test_listbaud_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ListBaud]
     expected_literals = [
-        "baud_38400",
-        "baud_250000",
-        "baud_9600",
-        "baud_57600",
-        "baud_230400",
-        "baud_74880",
         "baud_19200",
+        "baud_38400",
+        "baud_74880",
         "baud_115200",
+        "baud_9600",
+        "baud_230400",
+        "baud_250000",
+        "baud_57600",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ListBaud"
-
-def test_wifimode_exists():
-    # Check that the Enumeration exists
-    assert WifiMode is not None
-
-def test_wifimode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WifiMode]
-    expected_literals = [
-        "Both",
-        "Station",
-        "Access_Point",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WifiMode"
-
-def test_wifiidconnection_exists():
-    # Check that the Enumeration exists
-    assert WifiIDConnection is not None
-
-def test_wifiidconnection_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WifiIDConnection]
-    expected_literals = [
-        "id_1",
-        "id_4",
-        "id_2",
-        "id_3",
-        "id_0",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WifiIDConnection"
-
-def test_esp8266wifimode_exists():
-    # Check that the Enumeration exists
-    assert ESP8266WiFiMode is not None
-
-def test_esp8266wifimode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ESP8266WiFiMode]
-    expected_literals = [
-        "WIFI_AP",
-        "WIFI_AP_STA",
-        "WIFI_OFF",
-        "WIFI_STA",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ESP8266WiFiMode"
-
-def test_listprotocol_exists():
-    # Check that the Enumeration exists
-    assert ListProtocol is not None
-
-def test_listprotocol_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ListProtocol]
-    expected_literals = [
-        "TCP",
-        "UDP",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ListProtocol"
 
 def test_connectionkind_exists():
     # Check that the Enumeration exists
@@ -1823,20 +1823,20 @@ def test_connectionkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ConnectionKind"
 
-def test_routerkind_exists():
+def test_listprotocol_exists():
     # Check that the Enumeration exists
-    assert RouterKind is not None
+    assert ListProtocol is not None
 
-def test_routerkind_has_all_literals():
+def test_listprotocol_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RouterKind]
+    enum_literals = [lit.name for lit in ListProtocol]
     expected_literals = [
-        "BENDPOINT",
-        "MANHATTAN",
+        "TCP",
+        "UDP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RouterKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ListProtocol"
 
 
 # =============================================================================
@@ -1853,118 +1853,109 @@ safe_text = st.text(
 StateComponent_strategy = st.builds(
     StateComponent,
 )
-iotw::Decision_strategy = st.builds(
-    iotw::Decision,
-)
-iotw::EndPoint_strategy = st.builds(
-    iotw::EndPoint,
-)
-iotw::StartPoint_strategy = st.builds(
-    iotw::StartPoint,
-)
-iotw::StateFrame_strategy = st.builds(
-    iotw::StateFrame,
+iotw_StateFrame_strategy = st.builds(
+    iotw_StateFrame,
     content=
         safe_text
 )
 OutputDevice_strategy = st.builds(
     OutputDevice,
 )
-iotw::I2CLCD_strategy = st.builds(
-    iotw::I2CLCD,
-    pinVcc=
+iotw_Buzzer_strategy = st.builds(
+    iotw_Buzzer,
+    pin2=
+        safe_text,
+    pin1=
+        safe_text,
+    Time=
+        st.integers(),
+    Tone=
+        st.integers()
+)
+iotw_I2CLCD_strategy = st.builds(
+    iotw_I2CLCD,
+    pinGND=
         safe_text,
     type=
         safe_text,
     pinSDA=
         safe_text,
-    pinGND=
-        safe_text,
     pinSCL=
-        safe_text
-)
-iotw::Buzzer_strategy = st.builds(
-    iotw::Buzzer,
-    pin2=
         safe_text,
-    Time=
-        st.integers(),
-    Tone=
-        st.integers(),
-    pin1=
+    pinVcc=
         safe_text
 )
 Connectivity_strategy = st.builds(
     Connectivity,
 )
-iotw::WifiESP8266_strategy = st.builds(
-    iotw::WifiESP8266,
-    pinTX=
-        safe_text,
-    iP=
-        safe_text,
-    pinVcc=
-        safe_text,
-    sSID_ST=
+iotw_WifiESP8266_strategy = st.builds(
+    iotw_WifiESP8266,
+    pinCHPD=
         safe_text,
     password_ST=
         safe_text,
-    port=
-        st.integers(),
-    baud=
-        safe_text,
-    idConnection=
-        safe_text,
     pinGND=
-        safe_text,
-    pinCHPD=
-        safe_text,
-    mode=
-        safe_text,
-    protocol=
-        safe_text,
-    password_AccessPoint=
-        safe_text,
-    sSID_AccessPoint=
         safe_text,
     pinRX=
         safe_text,
+    baud=
+        safe_text,
+    iP=
+        safe_text,
+    idConnection=
+        safe_text,
+    port=
+        st.integers(),
+    pinVcc=
+        safe_text,
+    password_AccessPoint=
+        safe_text,
+    mode=
+        safe_text,
+    sSID_ST=
+        safe_text,
+    pinTX=
+        safe_text,
     connectedChannel=
+        safe_text,
+    protocol=
+        safe_text,
+    sSID_AccessPoint=
         safe_text
 )
-iotw::BluetoothHC06_strategy = st.builds(
-    iotw::BluetoothHC06,
-    pinVCC=
-        safe_text,
+iotw_BluetoothHC06_strategy = st.builds(
+    iotw_BluetoothHC06,
     pinTXD=
         safe_text,
     pinRXD=
         safe_text,
+    pinVCC=
+        safe_text,
     pinGND=
         safe_text
 )
-iotw::LED_strategy = st.builds(
-    iotw::LED,
-    pin2=
-        safe_text,
+iotw_LED_strategy = st.builds(
+    iotw_LED,
     pin1=
+        safe_text,
+    pin2=
         safe_text
 )
 InputDevice_strategy = st.builds(
     InputDevice,
 )
-iotw::Button_strategy = st.builds(
-    iotw::Button,
+iotw_LM35_strategy = st.builds(
+    iotw_LM35,
     pin1=
         safe_text
 )
-iotw::LM35_strategy = st.builds(
-    iotw::LM35,
+iotw_Button_strategy = st.builds(
+    iotw_Button,
     pin1=
         safe_text
 )
-iotw::DHT11_strategy = st.builds(
-    iotw::DHT11,
+iotw_DHT11_strategy = st.builds(
+    iotw_DHT11,
     pinGND=
         safe_text,
     pinData=
@@ -1972,217 +1963,226 @@ iotw::DHT11_strategy = st.builds(
     pinVcc=
         safe_text
 )
-iotw::CDS_strategy = st.builds(
-    iotw::CDS,
+iotw_CDS_strategy = st.builds(
+    iotw_CDS,
     pinD0=
         safe_text,
-    pinVcc=
-        safe_text,
     pinGND=
+        safe_text,
+    pinVcc=
         safe_text
 )
-iotw::Keypad4x4_strategy = st.builds(
-    iotw::Keypad4x4,
-    nameButton9=
+iotw_Keypad4x4_strategy = st.builds(
+    iotw_Keypad4x4,
+    nameButton6=
         safe_text,
-    nameButtonHash=
+    nameButtonA=
+        safe_text,
+    nameButton2=
+        safe_text,
+    pin3=
+        safe_text,
+    nameButton7=
+        safe_text,
+    pin7=
+        safe_text,
+    nameButton4=
+        safe_text,
+    pin4=
         safe_text,
     nameButton0=
         safe_text,
     pin1=
         safe_text,
-    nameButtonAsterisk=
-        safe_text,
     nameButtonB=
-        safe_text,
-    pin6=
-        safe_text,
-    keys=
-        safe_text,
-    nameButton2=
         safe_text,
     cols=
         st.integers(),
+    keys=
+        safe_text,
     pin8=
-        safe_text,
-    pin2=
-        safe_text,
-    pin5=
-        safe_text,
-    nameButtonC=
-        safe_text,
-    nameButton7=
-        safe_text,
-    nameButton8=
-        safe_text,
-    pin4=
-        safe_text,
-    nameButton3=
-        safe_text,
-    nameButton6=
         safe_text,
     nameButton1=
         safe_text,
-    nameButtonA=
+    nameButtonC=
+        safe_text,
+    nameButton8=
+        safe_text,
+    nameButtonAsterisk=
+        safe_text,
+    pin6=
+        safe_text,
+    nameButton9=
+        safe_text,
+    nameButtonD=
         safe_text,
     nameButton5=
         safe_text,
+    nameButton3=
+        safe_text,
+    pin2=
+        safe_text,
+    nameButtonHash=
+        safe_text,
+    pin5=
+        safe_text,
     rows=
-        st.integers(),
-    nameButtonD=
-        safe_text,
-    nameButton4=
-        safe_text,
-    pin3=
-        safe_text,
-    pin7=
-        safe_text
+        st.integers()
 )
 IODevice_strategy = st.builds(
     IODevice,
 )
-iotw::OutputDevice_strategy = st.builds(
-    iotw::OutputDevice,
+iotw_OutputDevice_strategy = st.builds(
+    iotw_OutputDevice,
 )
-iotw::InputDevice_strategy = st.builds(
-    iotw::InputDevice,
+iotw_InputDevice_strategy = st.builds(
+    iotw_InputDevice,
 )
 Mainboard_strategy = st.builds(
     Mainboard,
 )
-iotw::ArduinoUNOR3_strategy = st.builds(
-    iotw::ArduinoUNOR3,
-    pinA3=
-        safe_text,
-    pin1=
+iotw_ArduinoUNOR3_strategy = st.builds(
+    iotw_ArduinoUNOR3,
+    pinA1=
         safe_text,
     pin11=
         safe_text,
-    pin6=
-        safe_text,
     pin5=
-        safe_text,
-    pin9=
-        safe_text,
-    pinA1=
-        safe_text,
-    pin3=
         safe_text,
     pinA4=
         safe_text,
+    pin6=
+        safe_text,
+    pinA0=
+        safe_text,
+    pin0=
+        safe_text,
     pinA2=
         safe_text,
-    pin4=
+    pin8=
+        safe_text,
+    pin12=
+        safe_text,
+    pinA3=
+        safe_text,
+    pinA5=
+        safe_text,
+    pin3=
         safe_text,
     pin2=
         safe_text,
-    pin12=
+    pin10=
         safe_text,
     pin13=
         safe_text,
     pin7=
         safe_text,
-    pin10=
+    pin1=
         safe_text,
-    pin8=
+    pin9=
         safe_text,
-    pin0=
-        safe_text,
-    pinA0=
-        safe_text,
-    pinA5=
+    pin4=
         safe_text
 )
-iotw::ArduinoWiFiESP8266WeMosD1_strategy = st.builds(
-    iotw::ArduinoWiFiESP8266WeMosD1,
-    pinD0=
-        safe_text,
+iotw_ArduinoWiFiESP8266WeMosD1_strategy = st.builds(
+    iotw_ArduinoWiFiESP8266WeMosD1,
     ip=
         safe_text,
-    wifiMode=
-        safe_text,
-    pinSDA=
-        safe_text,
-    pinSCL=
-        safe_text,
-    pinD6=
-        safe_text,
-    pinD7=
-        safe_text,
-    pinD5=
-        safe_text,
-    pinA0=
-        safe_text,
-    pinD3=
-        safe_text,
-    baud=
-        st.integers(),
-    pinD4=
-        safe_text,
-    pinD2=
-        safe_text,
-    password=
-        safe_text,
-    dns=
-        safe_text,
-    gateway=
+    pinD8=
         safe_text,
     pinD1=
         safe_text,
-    ssid=
+    pinD4=
+        safe_text,
+    pinD0=
+        safe_text,
+    gateway=
+        safe_text,
+    pinD5=
+        safe_text,
+    pinD2=
         safe_text,
     subnet=
         safe_text,
-    pinD8=
+    pinSDA=
+        safe_text,
+    pinD7=
+        safe_text,
+    pinD3=
+        safe_text,
+    dns=
+        safe_text,
+    wifiMode=
+        safe_text,
+    password=
+        safe_text,
+    baud=
+        st.integers(),
+    pinSCL=
+        safe_text,
+    ssid=
+        safe_text,
+    pinD6=
+        safe_text,
+    pinA0=
         safe_text
 )
 Component_strategy = st.builds(
     Component,
 )
-iotw::Device_strategy = st.builds(
-    iotw::Device,
+iotw_Device_strategy = st.builds(
+    iotw_Device,
     name=
         safe_text
 )
 Device_strategy = st.builds(
     Device,
 )
-iotw::Connectivity_strategy = st.builds(
-    iotw::Connectivity,
+iotw_Connectivity_strategy = st.builds(
+    iotw_Connectivity,
 )
-iotw::IODevice_strategy = st.builds(
-    iotw::IODevice,
+iotw_IODevice_strategy = st.builds(
+    iotw_IODevice,
 )
-iotw::Mainboard_strategy = st.builds(
-    iotw::Mainboard,
+iotw_Mainboard_strategy = st.builds(
+    iotw_Mainboard,
     name=
         safe_text
 )
-iotw::Connection_strategy = st.builds(
-    iotw::Connection,
-    kind=
-        safe_text,
-    routerKind=
-        safe_text,
+iotw_Connection_strategy = st.builds(
+    iotw_Connection,
     label=
         safe_text,
     bendpoints=
+        safe_text,
+    kind=
+        safe_text,
+    routerKind=
         safe_text
 )
-iotw::Component_strategy = st.builds(
-    iotw::Component,
+iotw_Component_strategy = st.builds(
+    iotw_Component,
     constraints=
         safe_text,
     id=
         safe_text
 )
-iotw::StateComponent_strategy = st.builds(
-    iotw::StateComponent,
+iotw_StateComponent_strategy = st.builds(
+    iotw_StateComponent,
     name=
         safe_text
 )
-iotw::StateSchema_strategy = st.builds(
-    iotw::StateSchema,
+iotw_StateSchema_strategy = st.builds(
+    iotw_StateSchema,
+)
+iotw_EndPoint_strategy = st.builds(
+    iotw_EndPoint,
+)
+iotw_StartPoint_strategy = st.builds(
+    iotw_StartPoint,
+)
+iotw_Decision_strategy = st.builds(
+    iotw_Decision,
 )
 
 @given(instance=StateComponent_strategy)
@@ -2190,33 +2190,15 @@ iotw::StateSchema_strategy = st.builds(
 def test_statecomponent_instantiation(instance):
     assert isinstance(instance, StateComponent)
 
-@given(instance=iotw::Decision_strategy)
+@given(instance=iotw_StateFrame_strategy)
 @settings(max_examples=50)
-def test_iotw::decision_instantiation(instance):
-    assert isinstance(instance, iotw::Decision)
-
-@given(instance=iotw::EndPoint_strategy)
-@settings(max_examples=50)
-def test_iotw::endpoint_instantiation(instance):
-    assert isinstance(instance, iotw::EndPoint)
-
-@given(instance=iotw::StartPoint_strategy)
-@settings(max_examples=50)
-def test_iotw::startpoint_instantiation(instance):
-    assert isinstance(instance, iotw::StartPoint)
-
-@given(instance=iotw::StateFrame_strategy)
-@settings(max_examples=50)
-def test_iotw::stateframe_instantiation(instance):
-    assert isinstance(instance, iotw::StateFrame)
-
-@given(instance=iotw::StateFrame_strategy)
-def test_iotw::stateframe_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_iotw_stateframe_instantiation(instance):
+    assert isinstance(instance, iotw_StateFrame)
 
 
-@given(instance=iotw::StateFrame_strategy)
-def test_iotw::stateframe_content_setter(instance):
+
+@given(instance=iotw_StateFrame_strategy)
+def test_iotw_stateframe_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
@@ -2226,1279 +2208,958 @@ def test_iotw::stateframe_content_setter(instance):
 def test_outputdevice_instantiation(instance):
     assert isinstance(instance, OutputDevice)
 
-@given(instance=iotw::I2CLCD_strategy)
+@given(instance=iotw_Buzzer_strategy)
 @settings(max_examples=50)
-def test_iotw::i2clcd_instantiation(instance):
-    assert isinstance(instance, iotw::I2CLCD)
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinVcc_type(instance):
-    assert isinstance(instance.pinVcc, str)
+def test_iotw_buzzer_instantiation(instance):
+    assert isinstance(instance, iotw_Buzzer)
 
 
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinVcc_setter(instance):
-    original = instance.pinVcc
-    instance.pinVcc = original
-    assert instance.pinVcc == original
 
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinSDA_type(instance):
-    assert isinstance(instance.pinSDA, str)
-
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinSDA_setter(instance):
-    original = instance.pinSDA
-    instance.pinSDA = original
-    assert instance.pinSDA == original
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinGND_type(instance):
-    assert isinstance(instance.pinGND, str)
-
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinGND_setter(instance):
-    original = instance.pinGND
-    instance.pinGND = original
-    assert instance.pinGND == original
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinSCL_type(instance):
-    assert isinstance(instance.pinSCL, str)
-
-
-@given(instance=iotw::I2CLCD_strategy)
-def test_iotw::i2clcd_pinSCL_setter(instance):
-    original = instance.pinSCL
-    instance.pinSCL = original
-    assert instance.pinSCL == original
-
-@given(instance=iotw::Buzzer_strategy)
-@settings(max_examples=50)
-def test_iotw::buzzer_instantiation(instance):
-    assert isinstance(instance, iotw::Buzzer)
-
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_pin2_type(instance):
-    assert isinstance(instance.pin2, str)
-
-
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_pin2_setter(instance):
+@given(instance=iotw_Buzzer_strategy)
+def test_iotw_buzzer_pin2_setter(instance):
     original = instance.pin2
     instance.pin2 = original
     assert instance.pin2 == original
 
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_Time_type(instance):
-    assert isinstance(instance.Time, int)
 
 
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_Time_setter(instance):
+@given(instance=iotw_Buzzer_strategy)
+def test_iotw_buzzer_pin1_setter(instance):
+    original = instance.pin1
+    instance.pin1 = original
+    assert instance.pin1 == original
+
+
+
+@given(instance=iotw_Buzzer_strategy)
+def test_iotw_buzzer_Time_setter(instance):
     original = instance.Time
     instance.Time = original
     assert instance.Time == original
 
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_Tone_type(instance):
-    assert isinstance(instance.Tone, int)
 
 
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_Tone_setter(instance):
+@given(instance=iotw_Buzzer_strategy)
+def test_iotw_buzzer_Tone_setter(instance):
     original = instance.Tone
     instance.Tone = original
     assert instance.Tone == original
 
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_pin1_type(instance):
-    assert isinstance(instance.pin1, str)
+@given(instance=iotw_I2CLCD_strategy)
+@settings(max_examples=50)
+def test_iotw_i2clcd_instantiation(instance):
+    assert isinstance(instance, iotw_I2CLCD)
 
 
-@given(instance=iotw::Buzzer_strategy)
-def test_iotw::buzzer_pin1_setter(instance):
-    original = instance.pin1
-    instance.pin1 = original
-    assert instance.pin1 == original
+
+@given(instance=iotw_I2CLCD_strategy)
+def test_iotw_i2clcd_pinGND_setter(instance):
+    original = instance.pinGND
+    instance.pinGND = original
+    assert instance.pinGND == original
+
+
+
+@given(instance=iotw_I2CLCD_strategy)
+def test_iotw_i2clcd_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=iotw_I2CLCD_strategy)
+def test_iotw_i2clcd_pinSDA_setter(instance):
+    original = instance.pinSDA
+    instance.pinSDA = original
+    assert instance.pinSDA == original
+
+
+
+@given(instance=iotw_I2CLCD_strategy)
+def test_iotw_i2clcd_pinSCL_setter(instance):
+    original = instance.pinSCL
+    instance.pinSCL = original
+    assert instance.pinSCL == original
+
+
+
+@given(instance=iotw_I2CLCD_strategy)
+def test_iotw_i2clcd_pinVcc_setter(instance):
+    original = instance.pinVcc
+    instance.pinVcc = original
+    assert instance.pinVcc == original
 
 @given(instance=Connectivity_strategy)
 @settings(max_examples=50)
 def test_connectivity_instantiation(instance):
     assert isinstance(instance, Connectivity)
 
-@given(instance=iotw::WifiESP8266_strategy)
+@given(instance=iotw_WifiESP8266_strategy)
 @settings(max_examples=50)
-def test_iotw::wifiesp8266_instantiation(instance):
-    assert isinstance(instance, iotw::WifiESP8266)
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinTX_type(instance):
-    assert isinstance(instance.pinTX, str)
+def test_iotw_wifiesp8266_instantiation(instance):
+    assert isinstance(instance, iotw_WifiESP8266)
 
 
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinTX_setter(instance):
-    original = instance.pinTX
-    instance.pinTX = original
-    assert instance.pinTX == original
 
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_iP_type(instance):
-    assert isinstance(instance.iP, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_iP_setter(instance):
-    original = instance.iP
-    instance.iP = original
-    assert instance.iP == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinVcc_type(instance):
-    assert isinstance(instance.pinVcc, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinVcc_setter(instance):
-    original = instance.pinVcc
-    instance.pinVcc = original
-    assert instance.pinVcc == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_sSID_ST_type(instance):
-    assert isinstance(instance.sSID_ST, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_sSID_ST_setter(instance):
-    original = instance.sSID_ST
-    instance.sSID_ST = original
-    assert instance.sSID_ST == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_password_ST_type(instance):
-    assert isinstance(instance.password_ST, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_password_ST_setter(instance):
-    original = instance.password_ST
-    instance.password_ST = original
-    assert instance.password_ST == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_port_type(instance):
-    assert isinstance(instance.port, int)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_baud_type(instance):
-    assert isinstance(instance.baud, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_baud_setter(instance):
-    original = instance.baud
-    instance.baud = original
-    assert instance.baud == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_idConnection_type(instance):
-    assert isinstance(instance.idConnection, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_idConnection_setter(instance):
-    original = instance.idConnection
-    instance.idConnection = original
-    assert instance.idConnection == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinGND_type(instance):
-    assert isinstance(instance.pinGND, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinGND_setter(instance):
-    original = instance.pinGND
-    instance.pinGND = original
-    assert instance.pinGND == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinCHPD_type(instance):
-    assert isinstance(instance.pinCHPD, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinCHPD_setter(instance):
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_pinCHPD_setter(instance):
     original = instance.pinCHPD
     instance.pinCHPD = original
     assert instance.pinCHPD == original
 
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_mode_type(instance):
-    assert isinstance(instance.mode, str)
 
 
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_protocol_type(instance):
-    assert isinstance(instance.protocol, str)
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_password_ST_setter(instance):
+    original = instance.password_ST
+    instance.password_ST = original
+    assert instance.password_ST == original
 
 
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_protocol_setter(instance):
-    original = instance.protocol
-    instance.protocol = original
-    assert instance.protocol == original
 
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_password_AccessPoint_type(instance):
-    assert isinstance(instance.password_AccessPoint, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_password_AccessPoint_setter(instance):
-    original = instance.password_AccessPoint
-    instance.password_AccessPoint = original
-    assert instance.password_AccessPoint == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_sSID_AccessPoint_type(instance):
-    assert isinstance(instance.sSID_AccessPoint, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_sSID_AccessPoint_setter(instance):
-    original = instance.sSID_AccessPoint
-    instance.sSID_AccessPoint = original
-    assert instance.sSID_AccessPoint == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinRX_type(instance):
-    assert isinstance(instance.pinRX, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_pinRX_setter(instance):
-    original = instance.pinRX
-    instance.pinRX = original
-    assert instance.pinRX == original
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_connectedChannel_type(instance):
-    assert isinstance(instance.connectedChannel, str)
-
-
-@given(instance=iotw::WifiESP8266_strategy)
-def test_iotw::wifiesp8266_connectedChannel_setter(instance):
-    original = instance.connectedChannel
-    instance.connectedChannel = original
-    assert instance.connectedChannel == original
-
-@given(instance=iotw::BluetoothHC06_strategy)
-@settings(max_examples=50)
-def test_iotw::bluetoothhc06_instantiation(instance):
-    assert isinstance(instance, iotw::BluetoothHC06)
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinVCC_type(instance):
-    assert isinstance(instance.pinVCC, str)
-
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinVCC_setter(instance):
-    original = instance.pinVCC
-    instance.pinVCC = original
-    assert instance.pinVCC == original
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinTXD_type(instance):
-    assert isinstance(instance.pinTXD, str)
-
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinTXD_setter(instance):
-    original = instance.pinTXD
-    instance.pinTXD = original
-    assert instance.pinTXD == original
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinRXD_type(instance):
-    assert isinstance(instance.pinRXD, str)
-
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinRXD_setter(instance):
-    original = instance.pinRXD
-    instance.pinRXD = original
-    assert instance.pinRXD == original
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinGND_type(instance):
-    assert isinstance(instance.pinGND, str)
-
-
-@given(instance=iotw::BluetoothHC06_strategy)
-def test_iotw::bluetoothhc06_pinGND_setter(instance):
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_pinGND_setter(instance):
     original = instance.pinGND
     instance.pinGND = original
     assert instance.pinGND == original
 
-@given(instance=iotw::LED_strategy)
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_pinRX_setter(instance):
+    original = instance.pinRX
+    instance.pinRX = original
+    assert instance.pinRX == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_baud_setter(instance):
+    original = instance.baud
+    instance.baud = original
+    assert instance.baud == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_iP_setter(instance):
+    original = instance.iP
+    instance.iP = original
+    assert instance.iP == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_idConnection_setter(instance):
+    original = instance.idConnection
+    instance.idConnection = original
+    assert instance.idConnection == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_pinVcc_setter(instance):
+    original = instance.pinVcc
+    instance.pinVcc = original
+    assert instance.pinVcc == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_password_AccessPoint_setter(instance):
+    original = instance.password_AccessPoint
+    instance.password_AccessPoint = original
+    assert instance.password_AccessPoint == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_sSID_ST_setter(instance):
+    original = instance.sSID_ST
+    instance.sSID_ST = original
+    assert instance.sSID_ST == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_pinTX_setter(instance):
+    original = instance.pinTX
+    instance.pinTX = original
+    assert instance.pinTX == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_connectedChannel_setter(instance):
+    original = instance.connectedChannel
+    instance.connectedChannel = original
+    assert instance.connectedChannel == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_protocol_setter(instance):
+    original = instance.protocol
+    instance.protocol = original
+    assert instance.protocol == original
+
+
+
+@given(instance=iotw_WifiESP8266_strategy)
+def test_iotw_wifiesp8266_sSID_AccessPoint_setter(instance):
+    original = instance.sSID_AccessPoint
+    instance.sSID_AccessPoint = original
+    assert instance.sSID_AccessPoint == original
+
+@given(instance=iotw_BluetoothHC06_strategy)
 @settings(max_examples=50)
-def test_iotw::led_instantiation(instance):
-    assert isinstance(instance, iotw::LED)
-
-@given(instance=iotw::LED_strategy)
-def test_iotw::led_pin2_type(instance):
-    assert isinstance(instance.pin2, str)
+def test_iotw_bluetoothhc06_instantiation(instance):
+    assert isinstance(instance, iotw_BluetoothHC06)
 
 
-@given(instance=iotw::LED_strategy)
-def test_iotw::led_pin2_setter(instance):
-    original = instance.pin2
-    instance.pin2 = original
-    assert instance.pin2 == original
 
-@given(instance=iotw::LED_strategy)
-def test_iotw::led_pin1_type(instance):
-    assert isinstance(instance.pin1, str)
+@given(instance=iotw_BluetoothHC06_strategy)
+def test_iotw_bluetoothhc06_pinTXD_setter(instance):
+    original = instance.pinTXD
+    instance.pinTXD = original
+    assert instance.pinTXD == original
 
 
-@given(instance=iotw::LED_strategy)
-def test_iotw::led_pin1_setter(instance):
+
+@given(instance=iotw_BluetoothHC06_strategy)
+def test_iotw_bluetoothhc06_pinRXD_setter(instance):
+    original = instance.pinRXD
+    instance.pinRXD = original
+    assert instance.pinRXD == original
+
+
+
+@given(instance=iotw_BluetoothHC06_strategy)
+def test_iotw_bluetoothhc06_pinVCC_setter(instance):
+    original = instance.pinVCC
+    instance.pinVCC = original
+    assert instance.pinVCC == original
+
+
+
+@given(instance=iotw_BluetoothHC06_strategy)
+def test_iotw_bluetoothhc06_pinGND_setter(instance):
+    original = instance.pinGND
+    instance.pinGND = original
+    assert instance.pinGND == original
+
+@given(instance=iotw_LED_strategy)
+@settings(max_examples=50)
+def test_iotw_led_instantiation(instance):
+    assert isinstance(instance, iotw_LED)
+
+
+
+@given(instance=iotw_LED_strategy)
+def test_iotw_led_pin1_setter(instance):
     original = instance.pin1
     instance.pin1 = original
     assert instance.pin1 == original
+
+
+
+@given(instance=iotw_LED_strategy)
+def test_iotw_led_pin2_setter(instance):
+    original = instance.pin2
+    instance.pin2 = original
+    assert instance.pin2 == original
 
 @given(instance=InputDevice_strategy)
 @settings(max_examples=50)
 def test_inputdevice_instantiation(instance):
     assert isinstance(instance, InputDevice)
 
-@given(instance=iotw::Button_strategy)
+@given(instance=iotw_LM35_strategy)
 @settings(max_examples=50)
-def test_iotw::button_instantiation(instance):
-    assert isinstance(instance, iotw::Button)
-
-@given(instance=iotw::Button_strategy)
-def test_iotw::button_pin1_type(instance):
-    assert isinstance(instance.pin1, str)
+def test_iotw_lm35_instantiation(instance):
+    assert isinstance(instance, iotw_LM35)
 
 
-@given(instance=iotw::Button_strategy)
-def test_iotw::button_pin1_setter(instance):
+
+@given(instance=iotw_LM35_strategy)
+def test_iotw_lm35_pin1_setter(instance):
     original = instance.pin1
     instance.pin1 = original
     assert instance.pin1 == original
 
-@given(instance=iotw::LM35_strategy)
+@given(instance=iotw_Button_strategy)
 @settings(max_examples=50)
-def test_iotw::lm35_instantiation(instance):
-    assert isinstance(instance, iotw::LM35)
-
-@given(instance=iotw::LM35_strategy)
-def test_iotw::lm35_pin1_type(instance):
-    assert isinstance(instance.pin1, str)
+def test_iotw_button_instantiation(instance):
+    assert isinstance(instance, iotw_Button)
 
 
-@given(instance=iotw::LM35_strategy)
-def test_iotw::lm35_pin1_setter(instance):
+
+@given(instance=iotw_Button_strategy)
+def test_iotw_button_pin1_setter(instance):
     original = instance.pin1
     instance.pin1 = original
     assert instance.pin1 == original
 
-@given(instance=iotw::DHT11_strategy)
+@given(instance=iotw_DHT11_strategy)
 @settings(max_examples=50)
-def test_iotw::dht11_instantiation(instance):
-    assert isinstance(instance, iotw::DHT11)
-
-@given(instance=iotw::DHT11_strategy)
-def test_iotw::dht11_pinGND_type(instance):
-    assert isinstance(instance.pinGND, str)
+def test_iotw_dht11_instantiation(instance):
+    assert isinstance(instance, iotw_DHT11)
 
 
-@given(instance=iotw::DHT11_strategy)
-def test_iotw::dht11_pinGND_setter(instance):
+
+@given(instance=iotw_DHT11_strategy)
+def test_iotw_dht11_pinGND_setter(instance):
     original = instance.pinGND
     instance.pinGND = original
     assert instance.pinGND == original
 
-@given(instance=iotw::DHT11_strategy)
-def test_iotw::dht11_pinData_type(instance):
-    assert isinstance(instance.pinData, str)
 
 
-@given(instance=iotw::DHT11_strategy)
-def test_iotw::dht11_pinData_setter(instance):
+@given(instance=iotw_DHT11_strategy)
+def test_iotw_dht11_pinData_setter(instance):
     original = instance.pinData
     instance.pinData = original
     assert instance.pinData == original
 
-@given(instance=iotw::DHT11_strategy)
-def test_iotw::dht11_pinVcc_type(instance):
-    assert isinstance(instance.pinVcc, str)
 
 
-@given(instance=iotw::DHT11_strategy)
-def test_iotw::dht11_pinVcc_setter(instance):
+@given(instance=iotw_DHT11_strategy)
+def test_iotw_dht11_pinVcc_setter(instance):
     original = instance.pinVcc
     instance.pinVcc = original
     assert instance.pinVcc == original
 
-@given(instance=iotw::CDS_strategy)
+@given(instance=iotw_CDS_strategy)
 @settings(max_examples=50)
-def test_iotw::cds_instantiation(instance):
-    assert isinstance(instance, iotw::CDS)
-
-@given(instance=iotw::CDS_strategy)
-def test_iotw::cds_pinD0_type(instance):
-    assert isinstance(instance.pinD0, str)
+def test_iotw_cds_instantiation(instance):
+    assert isinstance(instance, iotw_CDS)
 
 
-@given(instance=iotw::CDS_strategy)
-def test_iotw::cds_pinD0_setter(instance):
+
+@given(instance=iotw_CDS_strategy)
+def test_iotw_cds_pinD0_setter(instance):
     original = instance.pinD0
     instance.pinD0 = original
     assert instance.pinD0 == original
 
-@given(instance=iotw::CDS_strategy)
-def test_iotw::cds_pinVcc_type(instance):
-    assert isinstance(instance.pinVcc, str)
 
 
-@given(instance=iotw::CDS_strategy)
-def test_iotw::cds_pinVcc_setter(instance):
-    original = instance.pinVcc
-    instance.pinVcc = original
-    assert instance.pinVcc == original
-
-@given(instance=iotw::CDS_strategy)
-def test_iotw::cds_pinGND_type(instance):
-    assert isinstance(instance.pinGND, str)
-
-
-@given(instance=iotw::CDS_strategy)
-def test_iotw::cds_pinGND_setter(instance):
+@given(instance=iotw_CDS_strategy)
+def test_iotw_cds_pinGND_setter(instance):
     original = instance.pinGND
     instance.pinGND = original
     assert instance.pinGND == original
 
-@given(instance=iotw::Keypad4x4_strategy)
+
+
+@given(instance=iotw_CDS_strategy)
+def test_iotw_cds_pinVcc_setter(instance):
+    original = instance.pinVcc
+    instance.pinVcc = original
+    assert instance.pinVcc == original
+
+@given(instance=iotw_Keypad4x4_strategy)
 @settings(max_examples=50)
-def test_iotw::keypad4x4_instantiation(instance):
-    assert isinstance(instance, iotw::Keypad4x4)
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton9_type(instance):
-    assert isinstance(instance.nameButton9, str)
+def test_iotw_keypad4x4_instantiation(instance):
+    assert isinstance(instance, iotw_Keypad4x4)
 
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton9_setter(instance):
-    original = instance.nameButton9
-    instance.nameButton9 = original
-    assert instance.nameButton9 == original
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonHash_type(instance):
-    assert isinstance(instance.nameButtonHash, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonHash_setter(instance):
-    original = instance.nameButtonHash
-    instance.nameButtonHash = original
-    assert instance.nameButtonHash == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton0_type(instance):
-    assert isinstance(instance.nameButton0, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton0_setter(instance):
-    original = instance.nameButton0
-    instance.nameButton0 = original
-    assert instance.nameButton0 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin1_type(instance):
-    assert isinstance(instance.pin1, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin1_setter(instance):
-    original = instance.pin1
-    instance.pin1 = original
-    assert instance.pin1 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonAsterisk_type(instance):
-    assert isinstance(instance.nameButtonAsterisk, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonAsterisk_setter(instance):
-    original = instance.nameButtonAsterisk
-    instance.nameButtonAsterisk = original
-    assert instance.nameButtonAsterisk == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonB_type(instance):
-    assert isinstance(instance.nameButtonB, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonB_setter(instance):
-    original = instance.nameButtonB
-    instance.nameButtonB = original
-    assert instance.nameButtonB == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin6_type(instance):
-    assert isinstance(instance.pin6, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin6_setter(instance):
-    original = instance.pin6
-    instance.pin6 = original
-    assert instance.pin6 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_keys_type(instance):
-    assert isinstance(instance.keys, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_keys_setter(instance):
-    original = instance.keys
-    instance.keys = original
-    assert instance.keys == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton2_type(instance):
-    assert isinstance(instance.nameButton2, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton2_setter(instance):
-    original = instance.nameButton2
-    instance.nameButton2 = original
-    assert instance.nameButton2 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_cols_type(instance):
-    assert isinstance(instance.cols, int)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_cols_setter(instance):
-    original = instance.cols
-    instance.cols = original
-    assert instance.cols == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin8_type(instance):
-    assert isinstance(instance.pin8, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin8_setter(instance):
-    original = instance.pin8
-    instance.pin8 = original
-    assert instance.pin8 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin2_type(instance):
-    assert isinstance(instance.pin2, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin2_setter(instance):
-    original = instance.pin2
-    instance.pin2 = original
-    assert instance.pin2 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin5_type(instance):
-    assert isinstance(instance.pin5, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin5_setter(instance):
-    original = instance.pin5
-    instance.pin5 = original
-    assert instance.pin5 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonC_type(instance):
-    assert isinstance(instance.nameButtonC, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonC_setter(instance):
-    original = instance.nameButtonC
-    instance.nameButtonC = original
-    assert instance.nameButtonC == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton7_type(instance):
-    assert isinstance(instance.nameButton7, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton7_setter(instance):
-    original = instance.nameButton7
-    instance.nameButton7 = original
-    assert instance.nameButton7 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton8_type(instance):
-    assert isinstance(instance.nameButton8, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton8_setter(instance):
-    original = instance.nameButton8
-    instance.nameButton8 = original
-    assert instance.nameButton8 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin4_type(instance):
-    assert isinstance(instance.pin4, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin4_setter(instance):
-    original = instance.pin4
-    instance.pin4 = original
-    assert instance.pin4 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton3_type(instance):
-    assert isinstance(instance.nameButton3, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton3_setter(instance):
-    original = instance.nameButton3
-    instance.nameButton3 = original
-    assert instance.nameButton3 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton6_type(instance):
-    assert isinstance(instance.nameButton6, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton6_setter(instance):
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton6_setter(instance):
     original = instance.nameButton6
     instance.nameButton6 = original
     assert instance.nameButton6 == original
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton1_type(instance):
-    assert isinstance(instance.nameButton1, str)
 
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton1_setter(instance):
-    original = instance.nameButton1
-    instance.nameButton1 = original
-    assert instance.nameButton1 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonA_type(instance):
-    assert isinstance(instance.nameButtonA, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonA_setter(instance):
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButtonA_setter(instance):
     original = instance.nameButtonA
     instance.nameButtonA = original
     assert instance.nameButtonA == original
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton5_type(instance):
-    assert isinstance(instance.nameButton5, str)
 
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton5_setter(instance):
-    original = instance.nameButton5
-    instance.nameButton5 = original
-    assert instance.nameButton5 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_rows_type(instance):
-    assert isinstance(instance.rows, int)
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton2_setter(instance):
+    original = instance.nameButton2
+    instance.nameButton2 = original
+    assert instance.nameButton2 == original
 
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_rows_setter(instance):
-    original = instance.rows
-    instance.rows = original
-    assert instance.rows == original
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonD_type(instance):
-    assert isinstance(instance.nameButtonD, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButtonD_setter(instance):
-    original = instance.nameButtonD
-    instance.nameButtonD = original
-    assert instance.nameButtonD == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton4_type(instance):
-    assert isinstance(instance.nameButton4, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_nameButton4_setter(instance):
-    original = instance.nameButton4
-    instance.nameButton4 = original
-    assert instance.nameButton4 == original
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin3_type(instance):
-    assert isinstance(instance.pin3, str)
-
-
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin3_setter(instance):
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin3_setter(instance):
     original = instance.pin3
     instance.pin3 = original
     assert instance.pin3 == original
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin7_type(instance):
-    assert isinstance(instance.pin7, str)
 
 
-@given(instance=iotw::Keypad4x4_strategy)
-def test_iotw::keypad4x4_pin7_setter(instance):
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton7_setter(instance):
+    original = instance.nameButton7
+    instance.nameButton7 = original
+    assert instance.nameButton7 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin7_setter(instance):
     original = instance.pin7
     instance.pin7 = original
     assert instance.pin7 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton4_setter(instance):
+    original = instance.nameButton4
+    instance.nameButton4 = original
+    assert instance.nameButton4 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin4_setter(instance):
+    original = instance.pin4
+    instance.pin4 = original
+    assert instance.pin4 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton0_setter(instance):
+    original = instance.nameButton0
+    instance.nameButton0 = original
+    assert instance.nameButton0 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin1_setter(instance):
+    original = instance.pin1
+    instance.pin1 = original
+    assert instance.pin1 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButtonB_setter(instance):
+    original = instance.nameButtonB
+    instance.nameButtonB = original
+    assert instance.nameButtonB == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_cols_setter(instance):
+    original = instance.cols
+    instance.cols = original
+    assert instance.cols == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_keys_setter(instance):
+    original = instance.keys
+    instance.keys = original
+    assert instance.keys == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin8_setter(instance):
+    original = instance.pin8
+    instance.pin8 = original
+    assert instance.pin8 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton1_setter(instance):
+    original = instance.nameButton1
+    instance.nameButton1 = original
+    assert instance.nameButton1 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButtonC_setter(instance):
+    original = instance.nameButtonC
+    instance.nameButtonC = original
+    assert instance.nameButtonC == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton8_setter(instance):
+    original = instance.nameButton8
+    instance.nameButton8 = original
+    assert instance.nameButton8 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButtonAsterisk_setter(instance):
+    original = instance.nameButtonAsterisk
+    instance.nameButtonAsterisk = original
+    assert instance.nameButtonAsterisk == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin6_setter(instance):
+    original = instance.pin6
+    instance.pin6 = original
+    assert instance.pin6 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton9_setter(instance):
+    original = instance.nameButton9
+    instance.nameButton9 = original
+    assert instance.nameButton9 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButtonD_setter(instance):
+    original = instance.nameButtonD
+    instance.nameButtonD = original
+    assert instance.nameButtonD == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton5_setter(instance):
+    original = instance.nameButton5
+    instance.nameButton5 = original
+    assert instance.nameButton5 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButton3_setter(instance):
+    original = instance.nameButton3
+    instance.nameButton3 = original
+    assert instance.nameButton3 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin2_setter(instance):
+    original = instance.pin2
+    instance.pin2 = original
+    assert instance.pin2 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_nameButtonHash_setter(instance):
+    original = instance.nameButtonHash
+    instance.nameButtonHash = original
+    assert instance.nameButtonHash == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_pin5_setter(instance):
+    original = instance.pin5
+    instance.pin5 = original
+    assert instance.pin5 == original
+
+
+
+@given(instance=iotw_Keypad4x4_strategy)
+def test_iotw_keypad4x4_rows_setter(instance):
+    original = instance.rows
+    instance.rows = original
+    assert instance.rows == original
 
 @given(instance=IODevice_strategy)
 @settings(max_examples=50)
 def test_iodevice_instantiation(instance):
     assert isinstance(instance, IODevice)
 
-@given(instance=iotw::OutputDevice_strategy)
+@given(instance=iotw_OutputDevice_strategy)
 @settings(max_examples=50)
-def test_iotw::outputdevice_instantiation(instance):
-    assert isinstance(instance, iotw::OutputDevice)
+def test_iotw_outputdevice_instantiation(instance):
+    assert isinstance(instance, iotw_OutputDevice)
 
-@given(instance=iotw::InputDevice_strategy)
+@given(instance=iotw_InputDevice_strategy)
 @settings(max_examples=50)
-def test_iotw::inputdevice_instantiation(instance):
-    assert isinstance(instance, iotw::InputDevice)
+def test_iotw_inputdevice_instantiation(instance):
+    assert isinstance(instance, iotw_InputDevice)
 
 @given(instance=Mainboard_strategy)
 @settings(max_examples=50)
 def test_mainboard_instantiation(instance):
     assert isinstance(instance, Mainboard)
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
+@given(instance=iotw_ArduinoUNOR3_strategy)
 @settings(max_examples=50)
-def test_iotw::arduinounor3_instantiation(instance):
-    assert isinstance(instance, iotw::ArduinoUNOR3)
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA3_type(instance):
-    assert isinstance(instance.pinA3, str)
+def test_iotw_arduinounor3_instantiation(instance):
+    assert isinstance(instance, iotw_ArduinoUNOR3)
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA3_setter(instance):
-    original = instance.pinA3
-    instance.pinA3 = original
-    assert instance.pinA3 == original
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin1_type(instance):
-    assert isinstance(instance.pin1, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin1_setter(instance):
-    original = instance.pin1
-    instance.pin1 = original
-    assert instance.pin1 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin11_type(instance):
-    assert isinstance(instance.pin11, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin11_setter(instance):
-    original = instance.pin11
-    instance.pin11 = original
-    assert instance.pin11 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin6_type(instance):
-    assert isinstance(instance.pin6, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin6_setter(instance):
-    original = instance.pin6
-    instance.pin6 = original
-    assert instance.pin6 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin5_type(instance):
-    assert isinstance(instance.pin5, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin5_setter(instance):
-    original = instance.pin5
-    instance.pin5 = original
-    assert instance.pin5 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin9_type(instance):
-    assert isinstance(instance.pin9, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin9_setter(instance):
-    original = instance.pin9
-    instance.pin9 = original
-    assert instance.pin9 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA1_type(instance):
-    assert isinstance(instance.pinA1, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA1_setter(instance):
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pinA1_setter(instance):
     original = instance.pinA1
     instance.pinA1 = original
     assert instance.pinA1 == original
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin3_type(instance):
-    assert isinstance(instance.pin3, str)
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin3_setter(instance):
-    original = instance.pin3
-    instance.pin3 = original
-    assert instance.pin3 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA4_type(instance):
-    assert isinstance(instance.pinA4, str)
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin11_setter(instance):
+    original = instance.pin11
+    instance.pin11 = original
+    assert instance.pin11 == original
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA4_setter(instance):
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin5_setter(instance):
+    original = instance.pin5
+    instance.pin5 = original
+    assert instance.pin5 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pinA4_setter(instance):
     original = instance.pinA4
     instance.pinA4 = original
     assert instance.pinA4 == original
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA2_type(instance):
-    assert isinstance(instance.pinA2, str)
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA2_setter(instance):
-    original = instance.pinA2
-    instance.pinA2 = original
-    assert instance.pinA2 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin4_type(instance):
-    assert isinstance(instance.pin4, str)
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin6_setter(instance):
+    original = instance.pin6
+    instance.pin6 = original
+    assert instance.pin6 == original
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin4_setter(instance):
-    original = instance.pin4
-    instance.pin4 = original
-    assert instance.pin4 == original
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin2_type(instance):
-    assert isinstance(instance.pin2, str)
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pinA0_setter(instance):
+    original = instance.pinA0
+    instance.pinA0 = original
+    assert instance.pinA0 == original
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin2_setter(instance):
-    original = instance.pin2
-    instance.pin2 = original
-    assert instance.pin2 == original
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin12_type(instance):
-    assert isinstance(instance.pin12, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin12_setter(instance):
-    original = instance.pin12
-    instance.pin12 = original
-    assert instance.pin12 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin13_type(instance):
-    assert isinstance(instance.pin13, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin13_setter(instance):
-    original = instance.pin13
-    instance.pin13 = original
-    assert instance.pin13 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin7_type(instance):
-    assert isinstance(instance.pin7, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin7_setter(instance):
-    original = instance.pin7
-    instance.pin7 = original
-    assert instance.pin7 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin10_type(instance):
-    assert isinstance(instance.pin10, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin10_setter(instance):
-    original = instance.pin10
-    instance.pin10 = original
-    assert instance.pin10 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin8_type(instance):
-    assert isinstance(instance.pin8, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin8_setter(instance):
-    original = instance.pin8
-    instance.pin8 = original
-    assert instance.pin8 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin0_type(instance):
-    assert isinstance(instance.pin0, str)
-
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pin0_setter(instance):
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin0_setter(instance):
     original = instance.pin0
     instance.pin0 = original
     assert instance.pin0 == original
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA0_type(instance):
-    assert isinstance(instance.pinA0, str)
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA0_setter(instance):
-    original = instance.pinA0
-    instance.pinA0 = original
-    assert instance.pinA0 == original
-
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA5_type(instance):
-    assert isinstance(instance.pinA5, str)
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pinA2_setter(instance):
+    original = instance.pinA2
+    instance.pinA2 = original
+    assert instance.pinA2 == original
 
 
-@given(instance=iotw::ArduinoUNOR3_strategy)
-def test_iotw::arduinounor3_pinA5_setter(instance):
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin8_setter(instance):
+    original = instance.pin8
+    instance.pin8 = original
+    assert instance.pin8 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin12_setter(instance):
+    original = instance.pin12
+    instance.pin12 = original
+    assert instance.pin12 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pinA3_setter(instance):
+    original = instance.pinA3
+    instance.pinA3 = original
+    assert instance.pinA3 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pinA5_setter(instance):
     original = instance.pinA5
     instance.pinA5 = original
     assert instance.pinA5 == original
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin3_setter(instance):
+    original = instance.pin3
+    instance.pin3 = original
+    assert instance.pin3 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin2_setter(instance):
+    original = instance.pin2
+    instance.pin2 = original
+    assert instance.pin2 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin10_setter(instance):
+    original = instance.pin10
+    instance.pin10 = original
+    assert instance.pin10 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin13_setter(instance):
+    original = instance.pin13
+    instance.pin13 = original
+    assert instance.pin13 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin7_setter(instance):
+    original = instance.pin7
+    instance.pin7 = original
+    assert instance.pin7 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin1_setter(instance):
+    original = instance.pin1
+    instance.pin1 = original
+    assert instance.pin1 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin9_setter(instance):
+    original = instance.pin9
+    instance.pin9 = original
+    assert instance.pin9 == original
+
+
+
+@given(instance=iotw_ArduinoUNOR3_strategy)
+def test_iotw_arduinounor3_pin4_setter(instance):
+    original = instance.pin4
+    instance.pin4 = original
+    assert instance.pin4 == original
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
 @settings(max_examples=50)
-def test_iotw::arduinowifiesp8266wemosd1_instantiation(instance):
-    assert isinstance(instance, iotw::ArduinoWiFiESP8266WeMosD1)
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD0_type(instance):
-    assert isinstance(instance.pinD0, str)
+def test_iotw_arduinowifiesp8266wemosd1_instantiation(instance):
+    assert isinstance(instance, iotw_ArduinoWiFiESP8266WeMosD1)
 
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD0_setter(instance):
-    original = instance.pinD0
-    instance.pinD0 = original
-    assert instance.pinD0 == original
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_ip_type(instance):
-    assert isinstance(instance.ip, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_ip_setter(instance):
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_ip_setter(instance):
     original = instance.ip
     instance.ip = original
     assert instance.ip == original
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_wifiMode_type(instance):
-    assert isinstance(instance.wifiMode, str)
 
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_wifiMode_setter(instance):
-    original = instance.wifiMode
-    instance.wifiMode = original
-    assert instance.wifiMode == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinSDA_type(instance):
-    assert isinstance(instance.pinSDA, str)
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD8_setter(instance):
+    original = instance.pinD8
+    instance.pinD8 = original
+    assert instance.pinD8 == original
 
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinSDA_setter(instance):
-    original = instance.pinSDA
-    instance.pinSDA = original
-    assert instance.pinSDA == original
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinSCL_type(instance):
-    assert isinstance(instance.pinSCL, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinSCL_setter(instance):
-    original = instance.pinSCL
-    instance.pinSCL = original
-    assert instance.pinSCL == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD6_type(instance):
-    assert isinstance(instance.pinD6, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD6_setter(instance):
-    original = instance.pinD6
-    instance.pinD6 = original
-    assert instance.pinD6 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD7_type(instance):
-    assert isinstance(instance.pinD7, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD7_setter(instance):
-    original = instance.pinD7
-    instance.pinD7 = original
-    assert instance.pinD7 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD5_type(instance):
-    assert isinstance(instance.pinD5, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD5_setter(instance):
-    original = instance.pinD5
-    instance.pinD5 = original
-    assert instance.pinD5 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinA0_type(instance):
-    assert isinstance(instance.pinA0, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinA0_setter(instance):
-    original = instance.pinA0
-    instance.pinA0 = original
-    assert instance.pinA0 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD3_type(instance):
-    assert isinstance(instance.pinD3, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD3_setter(instance):
-    original = instance.pinD3
-    instance.pinD3 = original
-    assert instance.pinD3 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_baud_type(instance):
-    assert isinstance(instance.baud, int)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_baud_setter(instance):
-    original = instance.baud
-    instance.baud = original
-    assert instance.baud == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD4_type(instance):
-    assert isinstance(instance.pinD4, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD4_setter(instance):
-    original = instance.pinD4
-    instance.pinD4 = original
-    assert instance.pinD4 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD2_type(instance):
-    assert isinstance(instance.pinD2, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD2_setter(instance):
-    original = instance.pinD2
-    instance.pinD2 = original
-    assert instance.pinD2 == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_dns_type(instance):
-    assert isinstance(instance.dns, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_dns_setter(instance):
-    original = instance.dns
-    instance.dns = original
-    assert instance.dns == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_gateway_type(instance):
-    assert isinstance(instance.gateway, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_gateway_setter(instance):
-    original = instance.gateway
-    instance.gateway = original
-    assert instance.gateway == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD1_type(instance):
-    assert isinstance(instance.pinD1, str)
-
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD1_setter(instance):
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD1_setter(instance):
     original = instance.pinD1
     instance.pinD1 = original
     assert instance.pinD1 == original
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_ssid_type(instance):
-    assert isinstance(instance.ssid, str)
 
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_ssid_setter(instance):
-    original = instance.ssid
-    instance.ssid = original
-    assert instance.ssid == original
-
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_subnet_type(instance):
-    assert isinstance(instance.subnet, str)
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD4_setter(instance):
+    original = instance.pinD4
+    instance.pinD4 = original
+    assert instance.pinD4 == original
 
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_subnet_setter(instance):
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD0_setter(instance):
+    original = instance.pinD0
+    instance.pinD0 = original
+    assert instance.pinD0 == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_gateway_setter(instance):
+    original = instance.gateway
+    instance.gateway = original
+    assert instance.gateway == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD5_setter(instance):
+    original = instance.pinD5
+    instance.pinD5 = original
+    assert instance.pinD5 == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD2_setter(instance):
+    original = instance.pinD2
+    instance.pinD2 = original
+    assert instance.pinD2 == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_subnet_setter(instance):
     original = instance.subnet
     instance.subnet = original
     assert instance.subnet == original
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD8_type(instance):
-    assert isinstance(instance.pinD8, str)
 
 
-@given(instance=iotw::ArduinoWiFiESP8266WeMosD1_strategy)
-def test_iotw::arduinowifiesp8266wemosd1_pinD8_setter(instance):
-    original = instance.pinD8
-    instance.pinD8 = original
-    assert instance.pinD8 == original
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinSDA_setter(instance):
+    original = instance.pinSDA
+    instance.pinSDA = original
+    assert instance.pinSDA == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD7_setter(instance):
+    original = instance.pinD7
+    instance.pinD7 = original
+    assert instance.pinD7 == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD3_setter(instance):
+    original = instance.pinD3
+    instance.pinD3 = original
+    assert instance.pinD3 == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_dns_setter(instance):
+    original = instance.dns
+    instance.dns = original
+    assert instance.dns == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_wifiMode_setter(instance):
+    original = instance.wifiMode
+    instance.wifiMode = original
+    assert instance.wifiMode == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_baud_setter(instance):
+    original = instance.baud
+    instance.baud = original
+    assert instance.baud == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinSCL_setter(instance):
+    original = instance.pinSCL
+    instance.pinSCL = original
+    assert instance.pinSCL == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_ssid_setter(instance):
+    original = instance.ssid
+    instance.ssid = original
+    assert instance.ssid == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinD6_setter(instance):
+    original = instance.pinD6
+    instance.pinD6 = original
+    assert instance.pinD6 == original
+
+
+
+@given(instance=iotw_ArduinoWiFiESP8266WeMosD1_strategy)
+def test_iotw_arduinowifiesp8266wemosd1_pinA0_setter(instance):
+    original = instance.pinA0
+    instance.pinA0 = original
+    assert instance.pinA0 == original
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=iotw::Device_strategy)
+@given(instance=iotw_Device_strategy)
 @settings(max_examples=50)
-def test_iotw::device_instantiation(instance):
-    assert isinstance(instance, iotw::Device)
-
-@given(instance=iotw::Device_strategy)
-def test_iotw::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotw_device_instantiation(instance):
+    assert isinstance(instance, iotw_Device)
 
 
-@given(instance=iotw::Device_strategy)
-def test_iotw::device_name_setter(instance):
+
+@given(instance=iotw_Device_strategy)
+def test_iotw_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3509,9 +3170,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iotw::Device_strategy)
+@given(instance=iotw_Device_strategy)
 @settings(max_examples=30)
-def test_iotw::device_modifypin_changes_state(instance):
+def test_iotw_device_modifypin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3525,42 +3186,39 @@ def test_iotw::device_modifypin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'modifyPin' in iotw::Device is empty"
+        assert has_statements, f"Function 'modifyPin' in iotw_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'modifyPin' in iotw::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'modifyPin' in iotw_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'modifyPin' in iotw::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'modifyPin' in iotw_Device is not implemented or raised an error")
 
 @given(instance=Device_strategy)
 @settings(max_examples=50)
 def test_device_instantiation(instance):
     assert isinstance(instance, Device)
 
-@given(instance=iotw::Connectivity_strategy)
+@given(instance=iotw_Connectivity_strategy)
 @settings(max_examples=50)
-def test_iotw::connectivity_instantiation(instance):
-    assert isinstance(instance, iotw::Connectivity)
+def test_iotw_connectivity_instantiation(instance):
+    assert isinstance(instance, iotw_Connectivity)
 
-@given(instance=iotw::IODevice_strategy)
+@given(instance=iotw_IODevice_strategy)
 @settings(max_examples=50)
-def test_iotw::iodevice_instantiation(instance):
-    assert isinstance(instance, iotw::IODevice)
+def test_iotw_iodevice_instantiation(instance):
+    assert isinstance(instance, iotw_IODevice)
 
-@given(instance=iotw::Mainboard_strategy)
+@given(instance=iotw_Mainboard_strategy)
 @settings(max_examples=50)
-def test_iotw::mainboard_instantiation(instance):
-    assert isinstance(instance, iotw::Mainboard)
-
-@given(instance=iotw::Mainboard_strategy)
-def test_iotw::mainboard_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotw_mainboard_instantiation(instance):
+    assert isinstance(instance, iotw_Mainboard)
 
 
-@given(instance=iotw::Mainboard_strategy)
-def test_iotw::mainboard_name_setter(instance):
+
+@given(instance=iotw_Mainboard_strategy)
+def test_iotw_mainboard_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3571,40 +3229,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iotw::Mainboard_strategy)
+@given(instance=iotw_Mainboard_strategy)
 @settings(max_examples=30)
-def test_iotw::mainboard_modifypin_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.modifyPin(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.modifyPin).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'modifyPin' in iotw::Mainboard is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'modifyPin' in iotw::Mainboard did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'modifyPin' in iotw::Mainboard is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=iotw::Mainboard_strategy)
-@settings(max_examples=30)
-def test_iotw::mainboard_adddevice_changes_state(instance):
+def test_iotw_mainboard_adddevice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3618,14 +3245,14 @@ def test_iotw::mainboard_adddevice_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addDevice' in iotw::Mainboard is empty"
+        assert has_statements, f"Function 'addDevice' in iotw_Mainboard is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addDevice' in iotw::Mainboard did not change state; check implementation")
+            warnings.warn(f"Operation 'addDevice' in iotw_Mainboard did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addDevice' in iotw::Mainboard is not implemented or raised an error")
+        warnings.warn(f"Operation 'addDevice' in iotw_Mainboard is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3633,40 +3260,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iotw::Mainboard_strategy)
+@given(instance=iotw_Mainboard_strategy)
 @settings(max_examples=30)
-def test_iotw::mainboard_removedevice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeDevice(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeDevice).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeDevice' in iotw::Mainboard is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeDevice' in iotw::Mainboard did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeDevice' in iotw::Mainboard is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=iotw::Mainboard_strategy)
-@settings(max_examples=30)
-def test_iotw::mainboard_findpin_changes_state(instance):
+def test_iotw_mainboard_findpin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3680,108 +3276,164 @@ def test_iotw::mainboard_findpin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findPin' in iotw::Mainboard is empty"
+        assert has_statements, f"Function 'findPin' in iotw_Mainboard is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findPin' in iotw::Mainboard did not change state; check implementation")
+            warnings.warn(f"Operation 'findPin' in iotw_Mainboard did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findPin' in iotw::Mainboard is not implemented or raised an error")
+        warnings.warn(f"Operation 'findPin' in iotw_Mainboard is not implemented or raised an error")
 
-@given(instance=iotw::Connection_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=iotw_Mainboard_strategy)
+@settings(max_examples=30)
+def test_iotw_mainboard_modifypin_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.modifyPin(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.modifyPin).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'modifyPin' in iotw_Mainboard is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'modifyPin' in iotw_Mainboard did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'modifyPin' in iotw_Mainboard is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=iotw_Mainboard_strategy)
+@settings(max_examples=30)
+def test_iotw_mainboard_removedevice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeDevice(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeDevice).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeDevice' in iotw_Mainboard is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeDevice' in iotw_Mainboard did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeDevice' in iotw_Mainboard is not implemented or raised an error")
+
+@given(instance=iotw_Connection_strategy)
 @settings(max_examples=50)
-def test_iotw::connection_instantiation(instance):
-    assert isinstance(instance, iotw::Connection)
-
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_iotw_connection_instantiation(instance):
+    assert isinstance(instance, iotw_Connection)
 
 
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
 
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_routerKind_type(instance):
-    assert isinstance(instance.routerKind, str)
-
-
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_routerKind_setter(instance):
-    original = instance.routerKind
-    instance.routerKind = original
-    assert instance.routerKind == original
-
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_label_setter(instance):
+@given(instance=iotw_Connection_strategy)
+def test_iotw_connection_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_bendpoints_type(instance):
-    assert isinstance(instance.bendpoints, str)
 
 
-@given(instance=iotw::Connection_strategy)
-def test_iotw::connection_bendpoints_setter(instance):
+@given(instance=iotw_Connection_strategy)
+def test_iotw_connection_bendpoints_setter(instance):
     original = instance.bendpoints
     instance.bendpoints = original
     assert instance.bendpoints == original
 
-@given(instance=iotw::Component_strategy)
+
+
+@given(instance=iotw_Connection_strategy)
+def test_iotw_connection_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+
+
+@given(instance=iotw_Connection_strategy)
+def test_iotw_connection_routerKind_setter(instance):
+    original = instance.routerKind
+    instance.routerKind = original
+    assert instance.routerKind == original
+
+@given(instance=iotw_Component_strategy)
 @settings(max_examples=50)
-def test_iotw::component_instantiation(instance):
-    assert isinstance(instance, iotw::Component)
-
-@given(instance=iotw::Component_strategy)
-def test_iotw::component_constraints_type(instance):
-    assert isinstance(instance.constraints, str)
+def test_iotw_component_instantiation(instance):
+    assert isinstance(instance, iotw_Component)
 
 
-@given(instance=iotw::Component_strategy)
-def test_iotw::component_constraints_setter(instance):
+
+@given(instance=iotw_Component_strategy)
+def test_iotw_component_constraints_setter(instance):
     original = instance.constraints
     instance.constraints = original
     assert instance.constraints == original
 
-@given(instance=iotw::Component_strategy)
-def test_iotw::component_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=iotw::Component_strategy)
-def test_iotw::component_id_setter(instance):
+@given(instance=iotw_Component_strategy)
+def test_iotw_component_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=iotw::StateComponent_strategy)
+@given(instance=iotw_StateComponent_strategy)
 @settings(max_examples=50)
-def test_iotw::statecomponent_instantiation(instance):
-    assert isinstance(instance, iotw::StateComponent)
-
-@given(instance=iotw::StateComponent_strategy)
-def test_iotw::statecomponent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iotw_statecomponent_instantiation(instance):
+    assert isinstance(instance, iotw_StateComponent)
 
 
-@given(instance=iotw::StateComponent_strategy)
-def test_iotw::statecomponent_name_setter(instance):
+
+@given(instance=iotw_StateComponent_strategy)
+def test_iotw_statecomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iotw::StateSchema_strategy)
+@given(instance=iotw_StateSchema_strategy)
 @settings(max_examples=50)
-def test_iotw::stateschema_instantiation(instance):
-    assert isinstance(instance, iotw::StateSchema)
+def test_iotw_stateschema_instantiation(instance):
+    assert isinstance(instance, iotw_StateSchema)
+
+@given(instance=iotw_EndPoint_strategy)
+@settings(max_examples=50)
+def test_iotw_endpoint_instantiation(instance):
+    assert isinstance(instance, iotw_EndPoint)
+
+@given(instance=iotw_StartPoint_strategy)
+@settings(max_examples=50)
+def test_iotw_startpoint_instantiation(instance):
+    assert isinstance(instance, iotw_StartPoint)
+
+@given(instance=iotw_Decision_strategy)
+@settings(max_examples=50)
+def test_iotw_decision_instantiation(instance):
+    assert isinstance(instance, iotw_Decision)

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    automaton::Input,
-    automaton::Transition,
-    automaton::Output,
-    automaton::State,
-    automaton::NamedElement,
-    automaton::Automaton,
+    automaton_Output,
+    automaton_Input,
+    automaton_Transition,
+    automaton_State,
+    automaton_NamedElement,
+    automaton_Automaton,
 )
 
 # =============================================================================
@@ -35,79 +35,79 @@ def test_namedelement_constructor_args():
 
 
 
-def test_automaton::input_is_not_abstract():
-    assert not inspect.isabstract(automaton::Input)
+def test_automaton_output_is_not_abstract():
+    assert not inspect.isabstract(automaton_Output)
 
 
-def test_automaton::input_constructor_exists():
-    assert callable(automaton::Input.__init__)
+def test_automaton_output_constructor_exists():
+    assert callable(automaton_Output.__init__)
 
 
-def test_automaton::input_constructor_args():
-    sig = inspect.signature(automaton::Input.__init__)
+def test_automaton_output_constructor_args():
+    sig = inspect.signature(automaton_Output.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::transition_is_not_abstract():
-    assert not inspect.isabstract(automaton::Transition)
+def test_automaton_input_is_not_abstract():
+    assert not inspect.isabstract(automaton_Input)
 
 
-def test_automaton::transition_constructor_exists():
-    assert callable(automaton::Transition.__init__)
+def test_automaton_input_constructor_exists():
+    assert callable(automaton_Input.__init__)
 
 
-def test_automaton::transition_constructor_args():
-    sig = inspect.signature(automaton::Transition.__init__)
+def test_automaton_input_constructor_args():
+    sig = inspect.signature(automaton_Input.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::output_is_not_abstract():
-    assert not inspect.isabstract(automaton::Output)
+def test_automaton_transition_is_not_abstract():
+    assert not inspect.isabstract(automaton_Transition)
 
 
-def test_automaton::output_constructor_exists():
-    assert callable(automaton::Output.__init__)
+def test_automaton_transition_constructor_exists():
+    assert callable(automaton_Transition.__init__)
 
 
-def test_automaton::output_constructor_args():
-    sig = inspect.signature(automaton::Output.__init__)
+def test_automaton_transition_constructor_args():
+    sig = inspect.signature(automaton_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::state_is_not_abstract():
-    assert not inspect.isabstract(automaton::State)
+def test_automaton_state_is_not_abstract():
+    assert not inspect.isabstract(automaton_State)
 
 
-def test_automaton::state_constructor_exists():
-    assert callable(automaton::State.__init__)
+def test_automaton_state_constructor_exists():
+    assert callable(automaton_State.__init__)
 
 
-def test_automaton::state_constructor_args():
-    sig = inspect.signature(automaton::State.__init__)
+def test_automaton_state_constructor_args():
+    sig = inspect.signature(automaton_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::namedelement_is_not_abstract():
-    assert not inspect.isabstract(automaton::NamedElement)
+def test_automaton_namedelement_is_not_abstract():
+    assert not inspect.isabstract(automaton_NamedElement)
 
 
-def test_automaton::namedelement_constructor_exists():
-    assert callable(automaton::NamedElement.__init__)
+def test_automaton_namedelement_constructor_exists():
+    assert callable(automaton_NamedElement.__init__)
 
 
-def test_automaton::namedelement_constructor_args():
-    sig = inspect.signature(automaton::NamedElement.__init__)
+def test_automaton_namedelement_constructor_args():
+    sig = inspect.signature(automaton_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_automaton::namedelement_has_name():
-    assert hasattr(automaton::NamedElement, "name")
+def test_automaton_namedelement_has_name():
+    assert hasattr(automaton_NamedElement, "name")
     descriptor = None
-    for klass in automaton::NamedElement.__mro__:
+    for klass in automaton_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -115,16 +115,16 @@ def test_automaton::namedelement_has_name():
 
 
 
-def test_automaton::automaton_is_not_abstract():
-    assert not inspect.isabstract(automaton::Automaton)
+def test_automaton_automaton_is_not_abstract():
+    assert not inspect.isabstract(automaton_Automaton)
 
 
-def test_automaton::automaton_constructor_exists():
-    assert callable(automaton::Automaton.__init__)
+def test_automaton_automaton_constructor_exists():
+    assert callable(automaton_Automaton.__init__)
 
 
-def test_automaton::automaton_constructor_args():
-    sig = inspect.signature(automaton::Automaton.__init__)
+def test_automaton_automaton_constructor_args():
+    sig = inspect.signature(automaton_Automaton.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -142,25 +142,25 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-automaton::Input_strategy = st.builds(
-    automaton::Input,
+automaton_Output_strategy = st.builds(
+    automaton_Output,
 )
-automaton::Transition_strategy = st.builds(
-    automaton::Transition,
+automaton_Input_strategy = st.builds(
+    automaton_Input,
 )
-automaton::Output_strategy = st.builds(
-    automaton::Output,
+automaton_Transition_strategy = st.builds(
+    automaton_Transition,
 )
-automaton::State_strategy = st.builds(
-    automaton::State,
+automaton_State_strategy = st.builds(
+    automaton_State,
 )
-automaton::NamedElement_strategy = st.builds(
-    automaton::NamedElement,
+automaton_NamedElement_strategy = st.builds(
+    automaton_NamedElement,
     name=
         safe_text
 )
-automaton::Automaton_strategy = st.builds(
-    automaton::Automaton,
+automaton_Automaton_strategy = st.builds(
+    automaton_Automaton,
 )
 
 @given(instance=NamedElement_strategy)
@@ -168,43 +168,40 @@ automaton::Automaton_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=automaton::Input_strategy)
+@given(instance=automaton_Output_strategy)
 @settings(max_examples=50)
-def test_automaton::input_instantiation(instance):
-    assert isinstance(instance, automaton::Input)
+def test_automaton_output_instantiation(instance):
+    assert isinstance(instance, automaton_Output)
 
-@given(instance=automaton::Transition_strategy)
+@given(instance=automaton_Input_strategy)
 @settings(max_examples=50)
-def test_automaton::transition_instantiation(instance):
-    assert isinstance(instance, automaton::Transition)
+def test_automaton_input_instantiation(instance):
+    assert isinstance(instance, automaton_Input)
 
-@given(instance=automaton::Output_strategy)
+@given(instance=automaton_Transition_strategy)
 @settings(max_examples=50)
-def test_automaton::output_instantiation(instance):
-    assert isinstance(instance, automaton::Output)
+def test_automaton_transition_instantiation(instance):
+    assert isinstance(instance, automaton_Transition)
 
-@given(instance=automaton::State_strategy)
+@given(instance=automaton_State_strategy)
 @settings(max_examples=50)
-def test_automaton::state_instantiation(instance):
-    assert isinstance(instance, automaton::State)
+def test_automaton_state_instantiation(instance):
+    assert isinstance(instance, automaton_State)
 
-@given(instance=automaton::NamedElement_strategy)
+@given(instance=automaton_NamedElement_strategy)
 @settings(max_examples=50)
-def test_automaton::namedelement_instantiation(instance):
-    assert isinstance(instance, automaton::NamedElement)
-
-@given(instance=automaton::NamedElement_strategy)
-def test_automaton::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_automaton_namedelement_instantiation(instance):
+    assert isinstance(instance, automaton_NamedElement)
 
 
-@given(instance=automaton::NamedElement_strategy)
-def test_automaton::namedelement_name_setter(instance):
+
+@given(instance=automaton_NamedElement_strategy)
+def test_automaton_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=automaton::Automaton_strategy)
+@given(instance=automaton_Automaton_strategy)
 @settings(max_examples=50)
-def test_automaton::automaton_instantiation(instance):
-    assert isinstance(instance, automaton::Automaton)
+def test_automaton_automaton_instantiation(instance):
+    assert isinstance(instance, automaton_Automaton)

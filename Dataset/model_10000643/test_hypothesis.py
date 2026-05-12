@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Play_Again_external,
@@ -288,18 +288,45 @@ def test_yahtzee_display1_constructor_exists():
 def test_yahtzee_display1_constructor_args():
     sig = inspect.signature(Yahtzee_Display1.__init__)
     params = list(sig.parameters.keys())
-    assert "JScrollPanel" in params, "Missing parameter 'JScrollPanel'"
-    assert "Jpanel" in params, "Missing parameter 'Jpanel'"
-    assert "Computer" in params, "Missing parameter 'Computer'"
+    assert "JButton" in params, "Missing parameter 'JButton'"
     assert "JImageIcon" in params, "Missing parameter 'JImageIcon'"
+    assert "JFrame" in params, "Missing parameter 'JFrame'"
+    assert "JScrollPanel" in params, "Missing parameter 'JScrollPanel'"
+    assert "Computer" in params, "Missing parameter 'Computer'"
     assert "Temp" in params, "Missing parameter 'Temp'"
     assert "JRadioButton" in params, "Missing parameter 'JRadioButton'"
     assert "JTextField" in params, "Missing parameter 'JTextField'"
-    assert "Jlabel" in params, "Missing parameter 'Jlabel'"
     assert "Player" in params, "Missing parameter 'Player'"
+    assert "Jlabel" in params, "Missing parameter 'Jlabel'"
     assert "Temp1" in params, "Missing parameter 'Temp1'"
-    assert "JButton" in params, "Missing parameter 'JButton'"
-    assert "JFrame" in params, "Missing parameter 'JFrame'"
+    assert "Jpanel" in params, "Missing parameter 'Jpanel'"
+
+def test_yahtzee_display1_has_JButton():
+    assert hasattr(Yahtzee_Display1, "JButton")
+    descriptor = None
+    for klass in Yahtzee_Display1.__mro__:
+        if "JButton" in klass.__dict__:
+            descriptor = klass.__dict__["JButton"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yahtzee_display1_has_JImageIcon():
+    assert hasattr(Yahtzee_Display1, "JImageIcon")
+    descriptor = None
+    for klass in Yahtzee_Display1.__mro__:
+        if "JImageIcon" in klass.__dict__:
+            descriptor = klass.__dict__["JImageIcon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yahtzee_display1_has_JFrame():
+    assert hasattr(Yahtzee_Display1, "JFrame")
+    descriptor = None
+    for klass in Yahtzee_Display1.__mro__:
+        if "JFrame" in klass.__dict__:
+            descriptor = klass.__dict__["JFrame"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_yahtzee_display1_has_JScrollPanel():
     assert hasattr(Yahtzee_Display1, "JScrollPanel")
@@ -310,30 +337,12 @@ def test_yahtzee_display1_has_JScrollPanel():
             break
     assert isinstance(descriptor, property)
 
-def test_yahtzee_display1_has_Jpanel():
-    assert hasattr(Yahtzee_Display1, "Jpanel")
-    descriptor = None
-    for klass in Yahtzee_Display1.__mro__:
-        if "Jpanel" in klass.__dict__:
-            descriptor = klass.__dict__["Jpanel"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_yahtzee_display1_has_Computer():
     assert hasattr(Yahtzee_Display1, "Computer")
     descriptor = None
     for klass in Yahtzee_Display1.__mro__:
         if "Computer" in klass.__dict__:
             descriptor = klass.__dict__["Computer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yahtzee_display1_has_JImageIcon():
-    assert hasattr(Yahtzee_Display1, "JImageIcon")
-    descriptor = None
-    for klass in Yahtzee_Display1.__mro__:
-        if "JImageIcon" in klass.__dict__:
-            descriptor = klass.__dict__["JImageIcon"]
             break
     assert isinstance(descriptor, property)
 
@@ -364,21 +373,21 @@ def test_yahtzee_display1_has_JTextField():
             break
     assert isinstance(descriptor, property)
 
-def test_yahtzee_display1_has_Jlabel():
-    assert hasattr(Yahtzee_Display1, "Jlabel")
-    descriptor = None
-    for klass in Yahtzee_Display1.__mro__:
-        if "Jlabel" in klass.__dict__:
-            descriptor = klass.__dict__["Jlabel"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_yahtzee_display1_has_Player():
     assert hasattr(Yahtzee_Display1, "Player")
     descriptor = None
     for klass in Yahtzee_Display1.__mro__:
         if "Player" in klass.__dict__:
             descriptor = klass.__dict__["Player"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yahtzee_display1_has_Jlabel():
+    assert hasattr(Yahtzee_Display1, "Jlabel")
+    descriptor = None
+    for klass in Yahtzee_Display1.__mro__:
+        if "Jlabel" in klass.__dict__:
+            descriptor = klass.__dict__["Jlabel"]
             break
     assert isinstance(descriptor, property)
 
@@ -391,21 +400,12 @@ def test_yahtzee_display1_has_Temp1():
             break
     assert isinstance(descriptor, property)
 
-def test_yahtzee_display1_has_JButton():
-    assert hasattr(Yahtzee_Display1, "JButton")
+def test_yahtzee_display1_has_Jpanel():
+    assert hasattr(Yahtzee_Display1, "Jpanel")
     descriptor = None
     for klass in Yahtzee_Display1.__mro__:
-        if "JButton" in klass.__dict__:
-            descriptor = klass.__dict__["JButton"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yahtzee_display1_has_JFrame():
-    assert hasattr(Yahtzee_Display1, "JFrame")
-    descriptor = None
-    for klass in Yahtzee_Display1.__mro__:
-        if "JFrame" in klass.__dict__:
-            descriptor = klass.__dict__["JFrame"]
+        if "Jpanel" in klass.__dict__:
+            descriptor = klass.__dict__["Jpanel"]
             break
     assert isinstance(descriptor, property)
 
@@ -520,17 +520,8 @@ def test_yahtzee_players_constructor_exists():
 def test_yahtzee_players_constructor_args():
     sig = inspect.signature(Yahtzee_Players.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Score" in params, "Missing parameter 'Score'"
-
-def test_yahtzee_players_has_Name():
-    assert hasattr(Yahtzee_Players, "Name")
-    descriptor = None
-    for klass in Yahtzee_Players.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Name" in params, "Missing parameter 'Name'"
 
 def test_yahtzee_players_has_Score():
     assert hasattr(Yahtzee_Players, "Score")
@@ -538,6 +529,15 @@ def test_yahtzee_players_has_Score():
     for klass in Yahtzee_Players.__mro__:
         if "Score" in klass.__dict__:
             descriptor = klass.__dict__["Score"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yahtzee_players_has_Name():
+    assert hasattr(Yahtzee_Players, "Name")
+    descriptor = None
+    for klass in Yahtzee_Players.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -554,18 +554,18 @@ def test_yahtzee_display_constructor_exists():
 def test_yahtzee_display_constructor_args():
     sig = inspect.signature(Yahtzee_Display.__init__)
     params = list(sig.parameters.keys())
-    assert "PanelScorecard" in params, "Missing parameter 'PanelScorecard'"
+    assert "PanelPrimary" in params, "Missing parameter 'PanelPrimary'"
     assert "PanelGameName" in params, "Missing parameter 'PanelGameName'"
     assert "PanelChoices" in params, "Missing parameter 'PanelChoices'"
-    assert "PanelPrimary" in params, "Missing parameter 'PanelPrimary'"
+    assert "PanelScorecard" in params, "Missing parameter 'PanelScorecard'"
     assert "PanelNames" in params, "Missing parameter 'PanelNames'"
 
-def test_yahtzee_display_has_PanelScorecard():
-    assert hasattr(Yahtzee_Display, "PanelScorecard")
+def test_yahtzee_display_has_PanelPrimary():
+    assert hasattr(Yahtzee_Display, "PanelPrimary")
     descriptor = None
     for klass in Yahtzee_Display.__mro__:
-        if "PanelScorecard" in klass.__dict__:
-            descriptor = klass.__dict__["PanelScorecard"]
+        if "PanelPrimary" in klass.__dict__:
+            descriptor = klass.__dict__["PanelPrimary"]
             break
     assert isinstance(descriptor, property)
 
@@ -587,12 +587,12 @@ def test_yahtzee_display_has_PanelChoices():
             break
     assert isinstance(descriptor, property)
 
-def test_yahtzee_display_has_PanelPrimary():
-    assert hasattr(Yahtzee_Display, "PanelPrimary")
+def test_yahtzee_display_has_PanelScorecard():
+    assert hasattr(Yahtzee_Display, "PanelScorecard")
     descriptor = None
     for klass in Yahtzee_Display.__mro__:
-        if "PanelPrimary" in klass.__dict__:
-            descriptor = klass.__dict__["PanelPrimary"]
+        if "PanelScorecard" in klass.__dict__:
+            descriptor = klass.__dict__["PanelScorecard"]
             break
     assert isinstance(descriptor, property)
 
@@ -646,19 +646,10 @@ def test_yahtzee_game_constructor_exists():
 def test_yahtzee_game_constructor_args():
     sig = inspect.signature(Yahtzee_Game.__init__)
     params = list(sig.parameters.keys())
-    assert "Again" in params, "Missing parameter 'Again'"
     assert "CompPlayer" in params, "Missing parameter 'CompPlayer'"
-    assert "First" in params, "Missing parameter 'First'"
+    assert "Again" in params, "Missing parameter 'Again'"
     assert "Player" in params, "Missing parameter 'Player'"
-
-def test_yahtzee_game_has_Again():
-    assert hasattr(Yahtzee_Game, "Again")
-    descriptor = None
-    for klass in Yahtzee_Game.__mro__:
-        if "Again" in klass.__dict__:
-            descriptor = klass.__dict__["Again"]
-            break
-    assert isinstance(descriptor, property)
+    assert "First" in params, "Missing parameter 'First'"
 
 def test_yahtzee_game_has_CompPlayer():
     assert hasattr(Yahtzee_Game, "CompPlayer")
@@ -669,12 +660,12 @@ def test_yahtzee_game_has_CompPlayer():
             break
     assert isinstance(descriptor, property)
 
-def test_yahtzee_game_has_First():
-    assert hasattr(Yahtzee_Game, "First")
+def test_yahtzee_game_has_Again():
+    assert hasattr(Yahtzee_Game, "Again")
     descriptor = None
     for klass in Yahtzee_Game.__mro__:
-        if "First" in klass.__dict__:
-            descriptor = klass.__dict__["First"]
+        if "Again" in klass.__dict__:
+            descriptor = klass.__dict__["Again"]
             break
     assert isinstance(descriptor, property)
 
@@ -684,6 +675,15 @@ def test_yahtzee_game_has_Player():
     for klass in Yahtzee_Game.__mro__:
         if "Player" in klass.__dict__:
             descriptor = klass.__dict__["Player"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yahtzee_game_has_First():
+    assert hasattr(Yahtzee_Game, "First")
+    descriptor = None
+    for klass in Yahtzee_Game.__mro__:
+        if "First" in klass.__dict__:
+            descriptor = klass.__dict__["First"]
             break
     assert isinstance(descriptor, property)
 
@@ -751,13 +751,15 @@ Yahtzee_Turn1_strategy = st.builds(
 )
 Yahtzee_Display1_strategy = st.builds(
     Yahtzee_Display1,
-    JScrollPanel=
-        st.none(),
-    Jpanel=
-        st.none(),
-    Computer=
+    JButton=
         st.none(),
     JImageIcon=
+        st.none(),
+    JFrame=
+        st.none(),
+    JScrollPanel=
+        st.none(),
+    Computer=
         st.none(),
     Temp=
         st.integers(),
@@ -765,15 +767,13 @@ Yahtzee_Display1_strategy = st.builds(
         st.none(),
     JTextField=
         st.none(),
-    Jlabel=
-        st.none(),
     Player=
+        st.none(),
+    Jlabel=
         st.none(),
     Temp1=
         st.integers(),
-    JButton=
-        st.none(),
-    JFrame=
+    Jpanel=
         st.none()
 )
 Player_Actor_strategy = st.builds(
@@ -799,20 +799,20 @@ Class_strategy = st.builds(
 )
 Yahtzee_Players_strategy = st.builds(
     Yahtzee_Players,
-    Name=
-        safe_text,
     Score=
+        safe_text,
+    Name=
         safe_text
 )
 Yahtzee_Display_strategy = st.builds(
     Yahtzee_Display,
-    PanelScorecard=
+    PanelPrimary=
         safe_text,
     PanelGameName=
         safe_text,
     PanelChoices=
         safe_text,
-    PanelPrimary=
+    PanelScorecard=
         safe_text,
     PanelNames=
         safe_text
@@ -825,14 +825,14 @@ Yahtzee_Turn_strategy = st.builds(
 )
 Yahtzee_Game_strategy = st.builds(
     Yahtzee_Game,
-    Again=
-        st.booleans(),
     CompPlayer=
         st.none(),
-    First=
-        st.integers(),
+    Again=
+        st.booleans(),
     Player=
-        st.none()
+        st.none(),
+    First=
+        st.integers()
 )
 
 @given(instance=Play_Again_external_strategy)
@@ -895,9 +895,6 @@ def test_display_instantiation(instance):
 def test_yahtzee_players1_instantiation(instance):
     assert isinstance(instance, Yahtzee_Players1)
 
-@given(instance=Yahtzee_Players1_strategy)
-def test_yahtzee_players1_compScore_type(instance):
-    assert isinstance(instance.compScore, str)
 
 
 @given(instance=Yahtzee_Players1_strategy)
@@ -906,9 +903,6 @@ def test_yahtzee_players1_compScore_setter(instance):
     instance.compScore = original
     assert instance.compScore == original
 
-@given(instance=Yahtzee_Players1_strategy)
-def test_yahtzee_players1_playerScore_type(instance):
-    assert isinstance(instance.playerScore, str)
 
 
 @given(instance=Yahtzee_Players1_strategy)
@@ -922,9 +916,6 @@ def test_yahtzee_players1_playerScore_setter(instance):
 def test_yahtzee_scoring1_instantiation(instance):
     assert isinstance(instance, Yahtzee_Scoring1)
 
-@given(instance=Yahtzee_Scoring1_strategy)
-def test_yahtzee_scoring1_Temp_type(instance):
-    assert isinstance(instance.Temp, str)
 
 
 @given(instance=Yahtzee_Scoring1_strategy)
@@ -938,9 +929,6 @@ def test_yahtzee_scoring1_Temp_setter(instance):
 def test_yahtzee_turn1_instantiation(instance):
     assert isinstance(instance, Yahtzee_Turn1)
 
-@given(instance=Yahtzee_Turn1_strategy)
-def test_yahtzee_turn1_Dice_type(instance):
-    assert isinstance(instance.Dice, str)
 
 
 @given(instance=Yahtzee_Turn1_strategy)
@@ -954,119 +942,6 @@ def test_yahtzee_turn1_Dice_setter(instance):
 def test_yahtzee_display1_instantiation(instance):
     assert isinstance(instance, Yahtzee_Display1)
 
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JScrollPanel_type(instance):
-    assert isinstance(instance.JScrollPanel, yahtzee_display1)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JScrollPanel_setter(instance):
-    original = instance.JScrollPanel
-    instance.JScrollPanel = original
-    assert instance.JScrollPanel == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Jpanel_type(instance):
-    assert isinstance(instance.Jpanel, yahtzee_display)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Jpanel_setter(instance):
-    original = instance.Jpanel
-    instance.Jpanel = original
-    assert instance.Jpanel == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Computer_type(instance):
-    assert isinstance(instance.Computer, yahtzee_players)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Computer_setter(instance):
-    original = instance.Computer
-    instance.Computer = original
-    assert instance.Computer == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JImageIcon_type(instance):
-    assert isinstance(instance.JImageIcon, yahtzee_display)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JImageIcon_setter(instance):
-    original = instance.JImageIcon
-    instance.JImageIcon = original
-    assert instance.JImageIcon == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Temp_type(instance):
-    assert isinstance(instance.Temp, int)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Temp_setter(instance):
-    original = instance.Temp
-    instance.Temp = original
-    assert instance.Temp == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JRadioButton_type(instance):
-    assert isinstance(instance.JRadioButton, yahtzee_display)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JRadioButton_setter(instance):
-    original = instance.JRadioButton
-    instance.JRadioButton = original
-    assert instance.JRadioButton == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JTextField_type(instance):
-    assert isinstance(instance.JTextField, yahtzee_display)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JTextField_setter(instance):
-    original = instance.JTextField
-    instance.JTextField = original
-    assert instance.JTextField == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Jlabel_type(instance):
-    assert isinstance(instance.Jlabel, yahtzee_display)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Jlabel_setter(instance):
-    original = instance.Jlabel
-    instance.Jlabel = original
-    assert instance.Jlabel == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Player_type(instance):
-    assert isinstance(instance.Player, yahtzee_players)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Player_setter(instance):
-    original = instance.Player
-    instance.Player = original
-    assert instance.Player == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Temp1_type(instance):
-    assert isinstance(instance.Temp1, int)
-
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_Temp1_setter(instance):
-    original = instance.Temp1
-    instance.Temp1 = original
-    assert instance.Temp1 == original
-
-@given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JButton_type(instance):
-    assert isinstance(instance.JButton, yahtzee_display)
 
 
 @given(instance=Yahtzee_Display1_strategy)
@@ -1075,9 +950,14 @@ def test_yahtzee_display1_JButton_setter(instance):
     instance.JButton = original
     assert instance.JButton == original
 
+
+
 @given(instance=Yahtzee_Display1_strategy)
-def test_yahtzee_display1_JFrame_type(instance):
-    assert isinstance(instance.JFrame, yahtzee_display)
+def test_yahtzee_display1_JImageIcon_setter(instance):
+    original = instance.JImageIcon
+    instance.JImageIcon = original
+    assert instance.JImageIcon == original
+
 
 
 @given(instance=Yahtzee_Display1_strategy)
@@ -1085,6 +965,78 @@ def test_yahtzee_display1_JFrame_setter(instance):
     original = instance.JFrame
     instance.JFrame = original
     assert instance.JFrame == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_JScrollPanel_setter(instance):
+    original = instance.JScrollPanel
+    instance.JScrollPanel = original
+    assert instance.JScrollPanel == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_Computer_setter(instance):
+    original = instance.Computer
+    instance.Computer = original
+    assert instance.Computer == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_Temp_setter(instance):
+    original = instance.Temp
+    instance.Temp = original
+    assert instance.Temp == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_JRadioButton_setter(instance):
+    original = instance.JRadioButton
+    instance.JRadioButton = original
+    assert instance.JRadioButton == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_JTextField_setter(instance):
+    original = instance.JTextField
+    instance.JTextField = original
+    assert instance.JTextField == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_Player_setter(instance):
+    original = instance.Player
+    instance.Player = original
+    assert instance.Player == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_Jlabel_setter(instance):
+    original = instance.Jlabel
+    instance.Jlabel = original
+    assert instance.Jlabel == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_Temp1_setter(instance):
+    original = instance.Temp1
+    instance.Temp1 = original
+    assert instance.Temp1 == original
+
+
+
+@given(instance=Yahtzee_Display1_strategy)
+def test_yahtzee_display1_Jpanel_setter(instance):
+    original = instance.Jpanel
+    instance.Jpanel = original
+    assert instance.Jpanel == original
 
 @given(instance=Player_Actor_strategy)
 @settings(max_examples=50)
@@ -1126,20 +1078,6 @@ def test_class_instantiation(instance):
 def test_yahtzee_players_instantiation(instance):
     assert isinstance(instance, Yahtzee_Players)
 
-@given(instance=Yahtzee_Players_strategy)
-def test_yahtzee_players_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Yahtzee_Players_strategy)
-def test_yahtzee_players_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Yahtzee_Players_strategy)
-def test_yahtzee_players_Score_type(instance):
-    assert isinstance(instance.Score, str)
 
 
 @given(instance=Yahtzee_Players_strategy)
@@ -1148,47 +1086,19 @@ def test_yahtzee_players_Score_setter(instance):
     instance.Score = original
     assert instance.Score == original
 
+
+
+@given(instance=Yahtzee_Players_strategy)
+def test_yahtzee_players_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=Yahtzee_Display_strategy)
 @settings(max_examples=50)
 def test_yahtzee_display_instantiation(instance):
     assert isinstance(instance, Yahtzee_Display)
 
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelScorecard_type(instance):
-    assert isinstance(instance.PanelScorecard, str)
-
-
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelScorecard_setter(instance):
-    original = instance.PanelScorecard
-    instance.PanelScorecard = original
-    assert instance.PanelScorecard == original
-
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelGameName_type(instance):
-    assert isinstance(instance.PanelGameName, str)
-
-
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelGameName_setter(instance):
-    original = instance.PanelGameName
-    instance.PanelGameName = original
-    assert instance.PanelGameName == original
-
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelChoices_type(instance):
-    assert isinstance(instance.PanelChoices, str)
-
-
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelChoices_setter(instance):
-    original = instance.PanelChoices
-    instance.PanelChoices = original
-    assert instance.PanelChoices == original
-
-@given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelPrimary_type(instance):
-    assert isinstance(instance.PanelPrimary, str)
 
 
 @given(instance=Yahtzee_Display_strategy)
@@ -1197,9 +1107,30 @@ def test_yahtzee_display_PanelPrimary_setter(instance):
     instance.PanelPrimary = original
     assert instance.PanelPrimary == original
 
+
+
 @given(instance=Yahtzee_Display_strategy)
-def test_yahtzee_display_PanelNames_type(instance):
-    assert isinstance(instance.PanelNames, str)
+def test_yahtzee_display_PanelGameName_setter(instance):
+    original = instance.PanelGameName
+    instance.PanelGameName = original
+    assert instance.PanelGameName == original
+
+
+
+@given(instance=Yahtzee_Display_strategy)
+def test_yahtzee_display_PanelChoices_setter(instance):
+    original = instance.PanelChoices
+    instance.PanelChoices = original
+    assert instance.PanelChoices == original
+
+
+
+@given(instance=Yahtzee_Display_strategy)
+def test_yahtzee_display_PanelScorecard_setter(instance):
+    original = instance.PanelScorecard
+    instance.PanelScorecard = original
+    assert instance.PanelScorecard == original
+
 
 
 @given(instance=Yahtzee_Display_strategy)
@@ -1223,20 +1154,6 @@ def test_yahtzee_turn_instantiation(instance):
 def test_yahtzee_game_instantiation(instance):
     assert isinstance(instance, Yahtzee_Game)
 
-@given(instance=Yahtzee_Game_strategy)
-def test_yahtzee_game_Again_type(instance):
-    assert isinstance(instance.Again, bool)
-
-
-@given(instance=Yahtzee_Game_strategy)
-def test_yahtzee_game_Again_setter(instance):
-    original = instance.Again
-    instance.Again = original
-    assert instance.Again == original
-
-@given(instance=Yahtzee_Game_strategy)
-def test_yahtzee_game_CompPlayer_type(instance):
-    assert isinstance(instance.CompPlayer, class1)
 
 
 @given(instance=Yahtzee_Game_strategy)
@@ -1245,20 +1162,14 @@ def test_yahtzee_game_CompPlayer_setter(instance):
     instance.CompPlayer = original
     assert instance.CompPlayer == original
 
-@given(instance=Yahtzee_Game_strategy)
-def test_yahtzee_game_First_type(instance):
-    assert isinstance(instance.First, int)
 
 
 @given(instance=Yahtzee_Game_strategy)
-def test_yahtzee_game_First_setter(instance):
-    original = instance.First
-    instance.First = original
-    assert instance.First == original
+def test_yahtzee_game_Again_setter(instance):
+    original = instance.Again
+    instance.Again = original
+    assert instance.Again == original
 
-@given(instance=Yahtzee_Game_strategy)
-def test_yahtzee_game_Player_type(instance):
-    assert isinstance(instance.Player, class)
 
 
 @given(instance=Yahtzee_Game_strategy)
@@ -1266,3 +1177,11 @@ def test_yahtzee_game_Player_setter(instance):
     original = instance.Player
     instance.Player = original
     assert instance.Player == original
+
+
+
+@given(instance=Yahtzee_Game_strategy)
+def test_yahtzee_game_First_setter(instance):
+    original = instance.First
+    instance.First = original
+    assert instance.First == original

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Attribute::NodeVar,
-    Attribute::NodeInOut,
-    Attribute::NodeOut,
-    Attribute::NodeIn,
+from python_code import (
+    Attribute_NodeVar,
+    Attribute_NodeInOut,
+    Attribute_NodeOut,
+    Attribute_NodeIn,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_attribute::nodevar_is_not_abstract():
-    assert not inspect.isabstract(Attribute::NodeVar)
+def test_attribute_nodevar_is_not_abstract():
+    assert not inspect.isabstract(Attribute_NodeVar)
 
 
-def test_attribute::nodevar_constructor_exists():
-    assert callable(Attribute::NodeVar.__init__)
+def test_attribute_nodevar_constructor_exists():
+    assert callable(Attribute_NodeVar.__init__)
 
 
-def test_attribute::nodevar_constructor_args():
-    sig = inspect.signature(Attribute::NodeVar.__init__)
+def test_attribute_nodevar_constructor_args():
+    sig = inspect.signature(Attribute_NodeVar.__init__)
     params = list(sig.parameters.keys())
     assert "Number" in params, "Missing parameter 'Number'"
 
-def test_attribute::nodevar_has_Number():
-    assert hasattr(Attribute::NodeVar, "Number")
+def test_attribute_nodevar_has_Number():
+    assert hasattr(Attribute_NodeVar, "Number")
     descriptor = None
-    for klass in Attribute::NodeVar.__mro__:
+    for klass in Attribute_NodeVar.__mro__:
         if "Number" in klass.__dict__:
             descriptor = klass.__dict__["Number"]
             break
@@ -42,23 +42,23 @@ def test_attribute::nodevar_has_Number():
 
 
 
-def test_attribute::nodeinout_is_not_abstract():
-    assert not inspect.isabstract(Attribute::NodeInOut)
+def test_attribute_nodeinout_is_not_abstract():
+    assert not inspect.isabstract(Attribute_NodeInOut)
 
 
-def test_attribute::nodeinout_constructor_exists():
-    assert callable(Attribute::NodeInOut.__init__)
+def test_attribute_nodeinout_constructor_exists():
+    assert callable(Attribute_NodeInOut.__init__)
 
 
-def test_attribute::nodeinout_constructor_args():
-    sig = inspect.signature(Attribute::NodeInOut.__init__)
+def test_attribute_nodeinout_constructor_args():
+    sig = inspect.signature(Attribute_NodeInOut.__init__)
     params = list(sig.parameters.keys())
     assert "Number" in params, "Missing parameter 'Number'"
 
-def test_attribute::nodeinout_has_Number():
-    assert hasattr(Attribute::NodeInOut, "Number")
+def test_attribute_nodeinout_has_Number():
+    assert hasattr(Attribute_NodeInOut, "Number")
     descriptor = None
-    for klass in Attribute::NodeInOut.__mro__:
+    for klass in Attribute_NodeInOut.__mro__:
         if "Number" in klass.__dict__:
             descriptor = klass.__dict__["Number"]
             break
@@ -66,23 +66,23 @@ def test_attribute::nodeinout_has_Number():
 
 
 
-def test_attribute::nodeout_is_not_abstract():
-    assert not inspect.isabstract(Attribute::NodeOut)
+def test_attribute_nodeout_is_not_abstract():
+    assert not inspect.isabstract(Attribute_NodeOut)
 
 
-def test_attribute::nodeout_constructor_exists():
-    assert callable(Attribute::NodeOut.__init__)
+def test_attribute_nodeout_constructor_exists():
+    assert callable(Attribute_NodeOut.__init__)
 
 
-def test_attribute::nodeout_constructor_args():
-    sig = inspect.signature(Attribute::NodeOut.__init__)
+def test_attribute_nodeout_constructor_args():
+    sig = inspect.signature(Attribute_NodeOut.__init__)
     params = list(sig.parameters.keys())
     assert "Number" in params, "Missing parameter 'Number'"
 
-def test_attribute::nodeout_has_Number():
-    assert hasattr(Attribute::NodeOut, "Number")
+def test_attribute_nodeout_has_Number():
+    assert hasattr(Attribute_NodeOut, "Number")
     descriptor = None
-    for klass in Attribute::NodeOut.__mro__:
+    for klass in Attribute_NodeOut.__mro__:
         if "Number" in klass.__dict__:
             descriptor = klass.__dict__["Number"]
             break
@@ -90,23 +90,23 @@ def test_attribute::nodeout_has_Number():
 
 
 
-def test_attribute::nodein_is_not_abstract():
-    assert not inspect.isabstract(Attribute::NodeIn)
+def test_attribute_nodein_is_not_abstract():
+    assert not inspect.isabstract(Attribute_NodeIn)
 
 
-def test_attribute::nodein_constructor_exists():
-    assert callable(Attribute::NodeIn.__init__)
+def test_attribute_nodein_constructor_exists():
+    assert callable(Attribute_NodeIn.__init__)
 
 
-def test_attribute::nodein_constructor_args():
-    sig = inspect.signature(Attribute::NodeIn.__init__)
+def test_attribute_nodein_constructor_args():
+    sig = inspect.signature(Attribute_NodeIn.__init__)
     params = list(sig.parameters.keys())
     assert "Number" in params, "Missing parameter 'Number'"
 
-def test_attribute::nodein_has_Number():
-    assert hasattr(Attribute::NodeIn, "Number")
+def test_attribute_nodein_has_Number():
+    assert hasattr(Attribute_NodeIn, "Number")
     descriptor = None
-    for klass in Attribute::NodeIn.__mro__:
+    for klass in Attribute_NodeIn.__mro__:
         if "Number" in klass.__dict__:
             descriptor = klass.__dict__["Number"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Attribute::NodeVar_strategy = st.builds(
-    Attribute::NodeVar,
+Attribute_NodeVar_strategy = st.builds(
+    Attribute_NodeVar,
     Number=
         st.integers()
 )
-Attribute::NodeInOut_strategy = st.builds(
-    Attribute::NodeInOut,
+Attribute_NodeInOut_strategy = st.builds(
+    Attribute_NodeInOut,
     Number=
         st.integers()
 )
-Attribute::NodeOut_strategy = st.builds(
-    Attribute::NodeOut,
+Attribute_NodeOut_strategy = st.builds(
+    Attribute_NodeOut,
     Number=
         st.integers()
 )
-Attribute::NodeIn_strategy = st.builds(
-    Attribute::NodeIn,
+Attribute_NodeIn_strategy = st.builds(
+    Attribute_NodeIn,
     Number=
         st.integers()
 )
 
-@given(instance=Attribute::NodeVar_strategy)
+@given(instance=Attribute_NodeVar_strategy)
 @settings(max_examples=50)
-def test_attribute::nodevar_instantiation(instance):
-    assert isinstance(instance, Attribute::NodeVar)
-
-@given(instance=Attribute::NodeVar_strategy)
-def test_attribute::nodevar_Number_type(instance):
-    assert isinstance(instance.Number, int)
+def test_attribute_nodevar_instantiation(instance):
+    assert isinstance(instance, Attribute_NodeVar)
 
 
-@given(instance=Attribute::NodeVar_strategy)
-def test_attribute::nodevar_Number_setter(instance):
+
+@given(instance=Attribute_NodeVar_strategy)
+def test_attribute_nodevar_Number_setter(instance):
     original = instance.Number
     instance.Number = original
     assert instance.Number == original
 
-@given(instance=Attribute::NodeInOut_strategy)
+@given(instance=Attribute_NodeInOut_strategy)
 @settings(max_examples=50)
-def test_attribute::nodeinout_instantiation(instance):
-    assert isinstance(instance, Attribute::NodeInOut)
-
-@given(instance=Attribute::NodeInOut_strategy)
-def test_attribute::nodeinout_Number_type(instance):
-    assert isinstance(instance.Number, int)
+def test_attribute_nodeinout_instantiation(instance):
+    assert isinstance(instance, Attribute_NodeInOut)
 
 
-@given(instance=Attribute::NodeInOut_strategy)
-def test_attribute::nodeinout_Number_setter(instance):
+
+@given(instance=Attribute_NodeInOut_strategy)
+def test_attribute_nodeinout_Number_setter(instance):
     original = instance.Number
     instance.Number = original
     assert instance.Number == original
 
-@given(instance=Attribute::NodeOut_strategy)
+@given(instance=Attribute_NodeOut_strategy)
 @settings(max_examples=50)
-def test_attribute::nodeout_instantiation(instance):
-    assert isinstance(instance, Attribute::NodeOut)
-
-@given(instance=Attribute::NodeOut_strategy)
-def test_attribute::nodeout_Number_type(instance):
-    assert isinstance(instance.Number, int)
+def test_attribute_nodeout_instantiation(instance):
+    assert isinstance(instance, Attribute_NodeOut)
 
 
-@given(instance=Attribute::NodeOut_strategy)
-def test_attribute::nodeout_Number_setter(instance):
+
+@given(instance=Attribute_NodeOut_strategy)
+def test_attribute_nodeout_Number_setter(instance):
     original = instance.Number
     instance.Number = original
     assert instance.Number == original
 
-@given(instance=Attribute::NodeIn_strategy)
+@given(instance=Attribute_NodeIn_strategy)
 @settings(max_examples=50)
-def test_attribute::nodein_instantiation(instance):
-    assert isinstance(instance, Attribute::NodeIn)
-
-@given(instance=Attribute::NodeIn_strategy)
-def test_attribute::nodein_Number_type(instance):
-    assert isinstance(instance.Number, int)
+def test_attribute_nodein_instantiation(instance):
+    assert isinstance(instance, Attribute_NodeIn)
 
 
-@given(instance=Attribute::NodeIn_strategy)
-def test_attribute::nodein_Number_setter(instance):
+
+@given(instance=Attribute_NodeIn_strategy)
+def test_attribute_nodein_Number_setter(instance):
     original = instance.Number
     instance.Number = original
     assert instance.Number == original

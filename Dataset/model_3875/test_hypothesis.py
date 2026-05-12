@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BinaryExp,
-    fl::EqualExp,
-    fl::MinusExp,
-    fl::PlusExp,
+    fl_MinusExp,
+    fl_EqualExp,
+    fl_PlusExp,
     Exp,
-    fl::ArgumentExp,
-    fl::IfThenElseExp,
-    fl::LiteralExp,
-    fl::Exp,
-    fl::Argument,
-    fl::Function,
-    fl::Program,
-    fl::BinaryExp,
-    fl::ApplyExp,
+    fl_IfThenElseExp,
+    fl_ArgumentExp,
+    fl_ApplyExp,
+    fl_LiteralExp,
+    fl_Exp,
+    fl_Argument,
+    fl_Function,
+    fl_Program,
+    fl_BinaryExp,
 )
 
 # =============================================================================
@@ -42,44 +42,44 @@ def test_binaryexp_constructor_args():
 
 
 
-def test_fl::equalexp_is_not_abstract():
-    assert not inspect.isabstract(fl::EqualExp)
+def test_fl_minusexp_is_not_abstract():
+    assert not inspect.isabstract(fl_MinusExp)
 
 
-def test_fl::equalexp_constructor_exists():
-    assert callable(fl::EqualExp.__init__)
+def test_fl_minusexp_constructor_exists():
+    assert callable(fl_MinusExp.__init__)
 
 
-def test_fl::equalexp_constructor_args():
-    sig = inspect.signature(fl::EqualExp.__init__)
+def test_fl_minusexp_constructor_args():
+    sig = inspect.signature(fl_MinusExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::minusexp_is_not_abstract():
-    assert not inspect.isabstract(fl::MinusExp)
+def test_fl_equalexp_is_not_abstract():
+    assert not inspect.isabstract(fl_EqualExp)
 
 
-def test_fl::minusexp_constructor_exists():
-    assert callable(fl::MinusExp.__init__)
+def test_fl_equalexp_constructor_exists():
+    assert callable(fl_EqualExp.__init__)
 
 
-def test_fl::minusexp_constructor_args():
-    sig = inspect.signature(fl::MinusExp.__init__)
+def test_fl_equalexp_constructor_args():
+    sig = inspect.signature(fl_EqualExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::plusexp_is_not_abstract():
-    assert not inspect.isabstract(fl::PlusExp)
+def test_fl_plusexp_is_not_abstract():
+    assert not inspect.isabstract(fl_PlusExp)
 
 
-def test_fl::plusexp_constructor_exists():
-    assert callable(fl::PlusExp.__init__)
+def test_fl_plusexp_constructor_exists():
+    assert callable(fl_PlusExp.__init__)
 
 
-def test_fl::plusexp_constructor_args():
-    sig = inspect.signature(fl::PlusExp.__init__)
+def test_fl_plusexp_constructor_args():
+    sig = inspect.signature(fl_PlusExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -98,51 +98,65 @@ def test_exp_constructor_args():
 
 
 
-def test_fl::argumentexp_is_not_abstract():
-    assert not inspect.isabstract(fl::ArgumentExp)
+def test_fl_ifthenelseexp_is_not_abstract():
+    assert not inspect.isabstract(fl_IfThenElseExp)
 
 
-def test_fl::argumentexp_constructor_exists():
-    assert callable(fl::ArgumentExp.__init__)
+def test_fl_ifthenelseexp_constructor_exists():
+    assert callable(fl_IfThenElseExp.__init__)
 
 
-def test_fl::argumentexp_constructor_args():
-    sig = inspect.signature(fl::ArgumentExp.__init__)
+def test_fl_ifthenelseexp_constructor_args():
+    sig = inspect.signature(fl_IfThenElseExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::ifthenelseexp_is_not_abstract():
-    assert not inspect.isabstract(fl::IfThenElseExp)
+def test_fl_argumentexp_is_not_abstract():
+    assert not inspect.isabstract(fl_ArgumentExp)
 
 
-def test_fl::ifthenelseexp_constructor_exists():
-    assert callable(fl::IfThenElseExp.__init__)
+def test_fl_argumentexp_constructor_exists():
+    assert callable(fl_ArgumentExp.__init__)
 
 
-def test_fl::ifthenelseexp_constructor_args():
-    sig = inspect.signature(fl::IfThenElseExp.__init__)
+def test_fl_argumentexp_constructor_args():
+    sig = inspect.signature(fl_ArgumentExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::literalexp_is_not_abstract():
-    assert not inspect.isabstract(fl::LiteralExp)
+def test_fl_applyexp_is_not_abstract():
+    assert not inspect.isabstract(fl_ApplyExp)
 
 
-def test_fl::literalexp_constructor_exists():
-    assert callable(fl::LiteralExp.__init__)
+def test_fl_applyexp_constructor_exists():
+    assert callable(fl_ApplyExp.__init__)
 
 
-def test_fl::literalexp_constructor_args():
-    sig = inspect.signature(fl::LiteralExp.__init__)
+def test_fl_applyexp_constructor_args():
+    sig = inspect.signature(fl_ApplyExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fl_literalexp_is_not_abstract():
+    assert not inspect.isabstract(fl_LiteralExp)
+
+
+def test_fl_literalexp_constructor_exists():
+    assert callable(fl_LiteralExp.__init__)
+
+
+def test_fl_literalexp_constructor_args():
+    sig = inspect.signature(fl_LiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fl::literalexp_has_value():
-    assert hasattr(fl::LiteralExp, "value")
+def test_fl_literalexp_has_value():
+    assert hasattr(fl_LiteralExp, "value")
     descriptor = None
-    for klass in fl::LiteralExp.__mro__:
+    for klass in fl_LiteralExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -150,37 +164,37 @@ def test_fl::literalexp_has_value():
 
 
 
-def test_fl::exp_is_not_abstract():
-    assert not inspect.isabstract(fl::Exp)
+def test_fl_exp_is_not_abstract():
+    assert not inspect.isabstract(fl_Exp)
 
 
-def test_fl::exp_constructor_exists():
-    assert callable(fl::Exp.__init__)
+def test_fl_exp_constructor_exists():
+    assert callable(fl_Exp.__init__)
 
 
-def test_fl::exp_constructor_args():
-    sig = inspect.signature(fl::Exp.__init__)
+def test_fl_exp_constructor_args():
+    sig = inspect.signature(fl_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::argument_is_not_abstract():
-    assert not inspect.isabstract(fl::Argument)
+def test_fl_argument_is_not_abstract():
+    assert not inspect.isabstract(fl_Argument)
 
 
-def test_fl::argument_constructor_exists():
-    assert callable(fl::Argument.__init__)
+def test_fl_argument_constructor_exists():
+    assert callable(fl_Argument.__init__)
 
 
-def test_fl::argument_constructor_args():
-    sig = inspect.signature(fl::Argument.__init__)
+def test_fl_argument_constructor_args():
+    sig = inspect.signature(fl_Argument.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fl::argument_has_name():
-    assert hasattr(fl::Argument, "name")
+def test_fl_argument_has_name():
+    assert hasattr(fl_Argument, "name")
     descriptor = None
-    for klass in fl::Argument.__mro__:
+    for klass in fl_Argument.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -188,23 +202,23 @@ def test_fl::argument_has_name():
 
 
 
-def test_fl::function_is_not_abstract():
-    assert not inspect.isabstract(fl::Function)
+def test_fl_function_is_not_abstract():
+    assert not inspect.isabstract(fl_Function)
 
 
-def test_fl::function_constructor_exists():
-    assert callable(fl::Function.__init__)
+def test_fl_function_constructor_exists():
+    assert callable(fl_Function.__init__)
 
 
-def test_fl::function_constructor_args():
-    sig = inspect.signature(fl::Function.__init__)
+def test_fl_function_constructor_args():
+    sig = inspect.signature(fl_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fl::function_has_name():
-    assert hasattr(fl::Function, "name")
+def test_fl_function_has_name():
+    assert hasattr(fl_Function, "name")
     descriptor = None
-    for klass in fl::Function.__mro__:
+    for klass in fl_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -212,44 +226,30 @@ def test_fl::function_has_name():
 
 
 
-def test_fl::program_is_not_abstract():
-    assert not inspect.isabstract(fl::Program)
+def test_fl_program_is_not_abstract():
+    assert not inspect.isabstract(fl_Program)
 
 
-def test_fl::program_constructor_exists():
-    assert callable(fl::Program.__init__)
+def test_fl_program_constructor_exists():
+    assert callable(fl_Program.__init__)
 
 
-def test_fl::program_constructor_args():
-    sig = inspect.signature(fl::Program.__init__)
+def test_fl_program_constructor_args():
+    sig = inspect.signature(fl_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::binaryexp_is_not_abstract():
-    assert not inspect.isabstract(fl::BinaryExp)
+def test_fl_binaryexp_is_not_abstract():
+    assert not inspect.isabstract(fl_BinaryExp)
 
 
-def test_fl::binaryexp_constructor_exists():
-    assert callable(fl::BinaryExp.__init__)
+def test_fl_binaryexp_constructor_exists():
+    assert callable(fl_BinaryExp.__init__)
 
 
-def test_fl::binaryexp_constructor_args():
-    sig = inspect.signature(fl::BinaryExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fl::applyexp_is_not_abstract():
-    assert not inspect.isabstract(fl::ApplyExp)
-
-
-def test_fl::applyexp_constructor_exists():
-    assert callable(fl::ApplyExp.__init__)
-
-
-def test_fl::applyexp_constructor_args():
-    sig = inspect.signature(fl::ApplyExp.__init__)
+def test_fl_binaryexp_constructor_args():
+    sig = inspect.signature(fl_BinaryExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -267,50 +267,50 @@ safe_text = st.text(
 BinaryExp_strategy = st.builds(
     BinaryExp,
 )
-fl::EqualExp_strategy = st.builds(
-    fl::EqualExp,
+fl_MinusExp_strategy = st.builds(
+    fl_MinusExp,
 )
-fl::MinusExp_strategy = st.builds(
-    fl::MinusExp,
+fl_EqualExp_strategy = st.builds(
+    fl_EqualExp,
 )
-fl::PlusExp_strategy = st.builds(
-    fl::PlusExp,
+fl_PlusExp_strategy = st.builds(
+    fl_PlusExp,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-fl::ArgumentExp_strategy = st.builds(
-    fl::ArgumentExp,
+fl_IfThenElseExp_strategy = st.builds(
+    fl_IfThenElseExp,
 )
-fl::IfThenElseExp_strategy = st.builds(
-    fl::IfThenElseExp,
+fl_ArgumentExp_strategy = st.builds(
+    fl_ArgumentExp,
 )
-fl::LiteralExp_strategy = st.builds(
-    fl::LiteralExp,
+fl_ApplyExp_strategy = st.builds(
+    fl_ApplyExp,
+)
+fl_LiteralExp_strategy = st.builds(
+    fl_LiteralExp,
     value=
         st.integers()
 )
-fl::Exp_strategy = st.builds(
-    fl::Exp,
+fl_Exp_strategy = st.builds(
+    fl_Exp,
 )
-fl::Argument_strategy = st.builds(
-    fl::Argument,
+fl_Argument_strategy = st.builds(
+    fl_Argument,
     name=
         safe_text
 )
-fl::Function_strategy = st.builds(
-    fl::Function,
+fl_Function_strategy = st.builds(
+    fl_Function,
     name=
         safe_text
 )
-fl::Program_strategy = st.builds(
-    fl::Program,
+fl_Program_strategy = st.builds(
+    fl_Program,
 )
-fl::BinaryExp_strategy = st.builds(
-    fl::BinaryExp,
-)
-fl::ApplyExp_strategy = st.builds(
-    fl::ApplyExp,
+fl_BinaryExp_strategy = st.builds(
+    fl_BinaryExp,
 )
 
 @given(instance=BinaryExp_strategy)
@@ -318,100 +318,91 @@ fl::ApplyExp_strategy = st.builds(
 def test_binaryexp_instantiation(instance):
     assert isinstance(instance, BinaryExp)
 
-@given(instance=fl::EqualExp_strategy)
+@given(instance=fl_MinusExp_strategy)
 @settings(max_examples=50)
-def test_fl::equalexp_instantiation(instance):
-    assert isinstance(instance, fl::EqualExp)
+def test_fl_minusexp_instantiation(instance):
+    assert isinstance(instance, fl_MinusExp)
 
-@given(instance=fl::MinusExp_strategy)
+@given(instance=fl_EqualExp_strategy)
 @settings(max_examples=50)
-def test_fl::minusexp_instantiation(instance):
-    assert isinstance(instance, fl::MinusExp)
+def test_fl_equalexp_instantiation(instance):
+    assert isinstance(instance, fl_EqualExp)
 
-@given(instance=fl::PlusExp_strategy)
+@given(instance=fl_PlusExp_strategy)
 @settings(max_examples=50)
-def test_fl::plusexp_instantiation(instance):
-    assert isinstance(instance, fl::PlusExp)
+def test_fl_plusexp_instantiation(instance):
+    assert isinstance(instance, fl_PlusExp)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=fl::ArgumentExp_strategy)
+@given(instance=fl_IfThenElseExp_strategy)
 @settings(max_examples=50)
-def test_fl::argumentexp_instantiation(instance):
-    assert isinstance(instance, fl::ArgumentExp)
+def test_fl_ifthenelseexp_instantiation(instance):
+    assert isinstance(instance, fl_IfThenElseExp)
 
-@given(instance=fl::IfThenElseExp_strategy)
+@given(instance=fl_ArgumentExp_strategy)
 @settings(max_examples=50)
-def test_fl::ifthenelseexp_instantiation(instance):
-    assert isinstance(instance, fl::IfThenElseExp)
+def test_fl_argumentexp_instantiation(instance):
+    assert isinstance(instance, fl_ArgumentExp)
 
-@given(instance=fl::LiteralExp_strategy)
+@given(instance=fl_ApplyExp_strategy)
 @settings(max_examples=50)
-def test_fl::literalexp_instantiation(instance):
-    assert isinstance(instance, fl::LiteralExp)
+def test_fl_applyexp_instantiation(instance):
+    assert isinstance(instance, fl_ApplyExp)
 
-@given(instance=fl::LiteralExp_strategy)
-def test_fl::literalexp_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=fl_LiteralExp_strategy)
+@settings(max_examples=50)
+def test_fl_literalexp_instantiation(instance):
+    assert isinstance(instance, fl_LiteralExp)
 
 
-@given(instance=fl::LiteralExp_strategy)
-def test_fl::literalexp_value_setter(instance):
+
+@given(instance=fl_LiteralExp_strategy)
+def test_fl_literalexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fl::Exp_strategy)
+@given(instance=fl_Exp_strategy)
 @settings(max_examples=50)
-def test_fl::exp_instantiation(instance):
-    assert isinstance(instance, fl::Exp)
+def test_fl_exp_instantiation(instance):
+    assert isinstance(instance, fl_Exp)
 
-@given(instance=fl::Argument_strategy)
+@given(instance=fl_Argument_strategy)
 @settings(max_examples=50)
-def test_fl::argument_instantiation(instance):
-    assert isinstance(instance, fl::Argument)
-
-@given(instance=fl::Argument_strategy)
-def test_fl::argument_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fl_argument_instantiation(instance):
+    assert isinstance(instance, fl_Argument)
 
 
-@given(instance=fl::Argument_strategy)
-def test_fl::argument_name_setter(instance):
+
+@given(instance=fl_Argument_strategy)
+def test_fl_argument_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fl::Function_strategy)
+@given(instance=fl_Function_strategy)
 @settings(max_examples=50)
-def test_fl::function_instantiation(instance):
-    assert isinstance(instance, fl::Function)
-
-@given(instance=fl::Function_strategy)
-def test_fl::function_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fl_function_instantiation(instance):
+    assert isinstance(instance, fl_Function)
 
 
-@given(instance=fl::Function_strategy)
-def test_fl::function_name_setter(instance):
+
+@given(instance=fl_Function_strategy)
+def test_fl_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fl::Program_strategy)
+@given(instance=fl_Program_strategy)
 @settings(max_examples=50)
-def test_fl::program_instantiation(instance):
-    assert isinstance(instance, fl::Program)
+def test_fl_program_instantiation(instance):
+    assert isinstance(instance, fl_Program)
 
-@given(instance=fl::BinaryExp_strategy)
+@given(instance=fl_BinaryExp_strategy)
 @settings(max_examples=50)
-def test_fl::binaryexp_instantiation(instance):
-    assert isinstance(instance, fl::BinaryExp)
-
-@given(instance=fl::ApplyExp_strategy)
-@settings(max_examples=50)
-def test_fl::applyexp_instantiation(instance):
-    assert isinstance(instance, fl::ApplyExp)
+def test_fl_binaryexp_instantiation(instance):
+    assert isinstance(instance, fl_BinaryExp)

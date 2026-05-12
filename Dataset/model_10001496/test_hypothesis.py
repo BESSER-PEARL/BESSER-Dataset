@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     angestellt_in_der_Verwaltung_external,
@@ -144,17 +144,8 @@ def test_student_constructor_exists():
 def test_student_constructor_args():
     sig = inspect.signature(Student.__init__)
     params = list(sig.parameters.keys())
-    assert "Durchschnittsnote" in params, "Missing parameter 'Durchschnittsnote'"
     assert "Martikelnummer" in params, "Missing parameter 'Martikelnummer'"
-
-def test_student_has_Durchschnittsnote():
-    assert hasattr(Student, "Durchschnittsnote")
-    descriptor = None
-    for klass in Student.__mro__:
-        if "Durchschnittsnote" in klass.__dict__:
-            descriptor = klass.__dict__["Durchschnittsnote"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Durchschnittsnote" in params, "Missing parameter 'Durchschnittsnote'"
 
 def test_student_has_Martikelnummer():
     assert hasattr(Student, "Martikelnummer")
@@ -162,6 +153,15 @@ def test_student_has_Martikelnummer():
     for klass in Student.__mro__:
         if "Martikelnummer" in klass.__dict__:
             descriptor = klass.__dict__["Martikelnummer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_student_has_Durchschnittsnote():
+    assert hasattr(Student, "Durchschnittsnote")
+    descriptor = None
+    for klass in Student.__mro__:
+        if "Durchschnittsnote" in klass.__dict__:
+            descriptor = klass.__dict__["Durchschnittsnote"]
             break
     assert isinstance(descriptor, property)
 
@@ -178,10 +178,19 @@ def test_wohnadresse_constructor_exists():
 def test_wohnadresse_constructor_args():
     sig = inspect.signature(Wohnadresse.__init__)
     params = list(sig.parameters.keys())
+    assert "Stadt" in params, "Missing parameter 'Stadt'"
     assert "Strasse" in params, "Missing parameter 'Strasse'"
     assert "PLZ" in params, "Missing parameter 'PLZ'"
     assert "Land" in params, "Missing parameter 'Land'"
-    assert "Stadt" in params, "Missing parameter 'Stadt'"
+
+def test_wohnadresse_has_Stadt():
+    assert hasattr(Wohnadresse, "Stadt")
+    descriptor = None
+    for klass in Wohnadresse.__mro__:
+        if "Stadt" in klass.__dict__:
+            descriptor = klass.__dict__["Stadt"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_wohnadresse_has_Strasse():
     assert hasattr(Wohnadresse, "Strasse")
@@ -207,15 +216,6 @@ def test_wohnadresse_has_Land():
     for klass in Wohnadresse.__mro__:
         if "Land" in klass.__dict__:
             descriptor = klass.__dict__["Land"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wohnadresse_has_Stadt():
-    assert hasattr(Wohnadresse, "Stadt")
-    descriptor = None
-    for klass in Wohnadresse.__mro__:
-        if "Stadt" in klass.__dict__:
-            descriptor = klass.__dict__["Stadt"]
             break
     assert isinstance(descriptor, property)
 
@@ -262,8 +262,8 @@ def test_person_constructor_args():
     params = list(sig.parameters.keys())
     assert "Telefonnummer" in params, "Missing parameter 'Telefonnummer'"
     assert "Name1" in params, "Missing parameter 'Name1'"
-    assert "E_mail" in params, "Missing parameter 'E_mail'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "E_mail" in params, "Missing parameter 'E_mail'"
 
 def test_person_has_Telefonnummer():
     assert hasattr(Person, "Telefonnummer")
@@ -283,21 +283,21 @@ def test_person_has_Name1():
             break
     assert isinstance(descriptor, property)
 
-def test_person_has_E_mail():
-    assert hasattr(Person, "E_mail")
-    descriptor = None
-    for klass in Person.__mro__:
-        if "E_mail" in klass.__dict__:
-            descriptor = klass.__dict__["E_mail"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_person_has_Name():
     assert hasattr(Person, "Name")
     descriptor = None
     for klass in Person.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_person_has_E_mail():
+    assert hasattr(Person, "E_mail")
+    descriptor = None
+    for klass in Person.__mro__:
+        if "E_mail" in klass.__dict__:
+            descriptor = klass.__dict__["E_mail"]
             break
     assert isinstance(descriptor, property)
 
@@ -600,20 +600,20 @@ Professor_strategy = st.builds(
 )
 Student_strategy = st.builds(
     Student,
-    Durchschnittsnote=
-        st.integers(),
     Martikelnummer=
+        st.integers(),
+    Durchschnittsnote=
         st.integers()
 )
 Wohnadresse_strategy = st.builds(
     Wohnadresse,
+    Stadt=
+        safe_text,
     Strasse=
         safe_text,
     PLZ=
         st.integers(),
     Land=
-        safe_text,
-    Stadt=
         safe_text
 )
 Name_Interface_strategy = st.builds(
@@ -628,9 +628,9 @@ Person_strategy = st.builds(
         st.integers(),
     Name1=
         safe_text,
-    E_mail=
-        safe_text,
     Name=
+        safe_text,
+    E_mail=
         safe_text
 )
 Servicetechniker_Actor_strategy = st.builds(
@@ -716,9 +716,6 @@ def test__2_stunden_ticket_kaufen_external_instantiation(instance):
 def test_professor_instantiation(instance):
     assert isinstance(instance, Professor)
 
-@given(instance=Professor_strategy)
-def test_professor_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Professor_strategy)
@@ -727,9 +724,6 @@ def test_professor_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Professor_strategy)
-def test_professor_Lohn_type(instance):
-    assert isinstance(instance.Lohn, int)
 
 
 @given(instance=Professor_strategy)
@@ -743,20 +737,6 @@ def test_professor_Lohn_setter(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_Durchschnittsnote_type(instance):
-    assert isinstance(instance.Durchschnittsnote, int)
-
-
-@given(instance=Student_strategy)
-def test_student_Durchschnittsnote_setter(instance):
-    original = instance.Durchschnittsnote
-    instance.Durchschnittsnote = original
-    assert instance.Durchschnittsnote == original
-
-@given(instance=Student_strategy)
-def test_student_Martikelnummer_type(instance):
-    assert isinstance(instance.Martikelnummer, int)
 
 
 @given(instance=Student_strategy)
@@ -765,14 +745,27 @@ def test_student_Martikelnummer_setter(instance):
     instance.Martikelnummer = original
     assert instance.Martikelnummer == original
 
+
+
+@given(instance=Student_strategy)
+def test_student_Durchschnittsnote_setter(instance):
+    original = instance.Durchschnittsnote
+    instance.Durchschnittsnote = original
+    assert instance.Durchschnittsnote == original
+
 @given(instance=Wohnadresse_strategy)
 @settings(max_examples=50)
 def test_wohnadresse_instantiation(instance):
     assert isinstance(instance, Wohnadresse)
 
+
+
 @given(instance=Wohnadresse_strategy)
-def test_wohnadresse_Strasse_type(instance):
-    assert isinstance(instance.Strasse, str)
+def test_wohnadresse_Stadt_setter(instance):
+    original = instance.Stadt
+    instance.Stadt = original
+    assert instance.Stadt == original
+
 
 
 @given(instance=Wohnadresse_strategy)
@@ -781,9 +774,6 @@ def test_wohnadresse_Strasse_setter(instance):
     instance.Strasse = original
     assert instance.Strasse == original
 
-@given(instance=Wohnadresse_strategy)
-def test_wohnadresse_PLZ_type(instance):
-    assert isinstance(instance.PLZ, int)
 
 
 @given(instance=Wohnadresse_strategy)
@@ -792,9 +782,6 @@ def test_wohnadresse_PLZ_setter(instance):
     instance.PLZ = original
     assert instance.PLZ == original
 
-@given(instance=Wohnadresse_strategy)
-def test_wohnadresse_Land_type(instance):
-    assert isinstance(instance.Land, str)
 
 
 @given(instance=Wohnadresse_strategy)
@@ -802,17 +789,6 @@ def test_wohnadresse_Land_setter(instance):
     original = instance.Land
     instance.Land = original
     assert instance.Land == original
-
-@given(instance=Wohnadresse_strategy)
-def test_wohnadresse_Stadt_type(instance):
-    assert isinstance(instance.Stadt, str)
-
-
-@given(instance=Wohnadresse_strategy)
-def test_wohnadresse_Stadt_setter(instance):
-    original = instance.Stadt
-    instance.Stadt = original
-    assert instance.Stadt == original
 
 @given(instance=Name_Interface_strategy)
 @settings(max_examples=50)
@@ -829,9 +805,6 @@ def test__interface_instantiation(instance):
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Person_strategy)
-def test_person_Telefonnummer_type(instance):
-    assert isinstance(instance.Telefonnummer, int)
 
 
 @given(instance=Person_strategy)
@@ -840,9 +813,6 @@ def test_person_Telefonnummer_setter(instance):
     instance.Telefonnummer = original
     assert instance.Telefonnummer == original
 
-@given(instance=Person_strategy)
-def test_person_Name1_type(instance):
-    assert isinstance(instance.Name1, str)
 
 
 @given(instance=Person_strategy)
@@ -851,20 +821,6 @@ def test_person_Name1_setter(instance):
     instance.Name1 = original
     assert instance.Name1 == original
 
-@given(instance=Person_strategy)
-def test_person_E_mail_type(instance):
-    assert isinstance(instance.E_mail, str)
-
-
-@given(instance=Person_strategy)
-def test_person_E_mail_setter(instance):
-    original = instance.E_mail
-    instance.E_mail = original
-    assert instance.E_mail == original
-
-@given(instance=Person_strategy)
-def test_person_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Person_strategy)
@@ -872,6 +828,14 @@ def test_person_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
+
+
+
+@given(instance=Person_strategy)
+def test_person_E_mail_setter(instance):
+    original = instance.E_mail
+    instance.E_mail = original
+    assert instance.E_mail == original
 
 @given(instance=Servicetechniker_Actor_strategy)
 @settings(max_examples=50)

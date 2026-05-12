@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     A,
-    refinher3::M,
+    refinher3_M,
     CE,
-    refinher3::DG,
-    refinher3::DC,
+    refinher3_DG,
+    refinher3_DC,
     E,
-    refinher3::CE,
-    refinher3::DR,
-    refinher3::DL,
-    refinher3::DNamedElement,
-    refinher3::N,
+    refinher3_CE,
+    refinher3_DR,
+    refinher3_DL,
+    refinher3_DNamedElement,
+    refinher3_N,
     DNamedElement,
-    refinher3::Foobar,
-    refinher3::A,
-    refinher3::BB,
-    refinher3::E,
+    refinher3_BB,
+    refinher3_A,
+    refinher3_Foobar,
+    refinher3_E,
 )
 
 # =============================================================================
@@ -44,23 +44,23 @@ def test_a_constructor_args():
 
 
 
-def test_refinher3::m_is_not_abstract():
-    assert not inspect.isabstract(refinher3::M)
+def test_refinher3_m_is_not_abstract():
+    assert not inspect.isabstract(refinher3_M)
 
 
-def test_refinher3::m_constructor_exists():
-    assert callable(refinher3::M.__init__)
+def test_refinher3_m_constructor_exists():
+    assert callable(refinher3_M.__init__)
 
 
-def test_refinher3::m_constructor_args():
-    sig = inspect.signature(refinher3::M.__init__)
+def test_refinher3_m_constructor_args():
+    sig = inspect.signature(refinher3_M.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_refinher3::m_has_id():
-    assert hasattr(refinher3::M, "id")
+def test_refinher3_m_has_id():
+    assert hasattr(refinher3_M, "id")
     descriptor = None
-    for klass in refinher3::M.__mro__:
+    for klass in refinher3_M.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -82,30 +82,30 @@ def test_ce_constructor_args():
 
 
 
-def test_refinher3::dg_is_not_abstract():
-    assert not inspect.isabstract(refinher3::DG)
+def test_refinher3_dg_is_not_abstract():
+    assert not inspect.isabstract(refinher3_DG)
 
 
-def test_refinher3::dg_constructor_exists():
-    assert callable(refinher3::DG.__init__)
+def test_refinher3_dg_constructor_exists():
+    assert callable(refinher3_DG.__init__)
 
 
-def test_refinher3::dg_constructor_args():
-    sig = inspect.signature(refinher3::DG.__init__)
+def test_refinher3_dg_constructor_args():
+    sig = inspect.signature(refinher3_DG.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::dc_is_not_abstract():
-    assert not inspect.isabstract(refinher3::DC)
+def test_refinher3_dc_is_not_abstract():
+    assert not inspect.isabstract(refinher3_DC)
 
 
-def test_refinher3::dc_constructor_exists():
-    assert callable(refinher3::DC.__init__)
+def test_refinher3_dc_constructor_exists():
+    assert callable(refinher3_DC.__init__)
 
 
-def test_refinher3::dc_constructor_args():
-    sig = inspect.signature(refinher3::DC.__init__)
+def test_refinher3_dc_constructor_args():
+    sig = inspect.signature(refinher3_DC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,65 +124,65 @@ def test_e_constructor_args():
 
 
 
-def test_refinher3::ce_is_not_abstract():
-    assert not inspect.isabstract(refinher3::CE)
+def test_refinher3_ce_is_not_abstract():
+    assert not inspect.isabstract(refinher3_CE)
 
 
-def test_refinher3::ce_constructor_exists():
-    assert callable(refinher3::CE.__init__)
+def test_refinher3_ce_constructor_exists():
+    assert callable(refinher3_CE.__init__)
 
 
-def test_refinher3::ce_constructor_args():
-    sig = inspect.signature(refinher3::CE.__init__)
+def test_refinher3_ce_constructor_args():
+    sig = inspect.signature(refinher3_CE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::dr_is_not_abstract():
-    assert not inspect.isabstract(refinher3::DR)
+def test_refinher3_dr_is_not_abstract():
+    assert not inspect.isabstract(refinher3_DR)
 
 
-def test_refinher3::dr_constructor_exists():
-    assert callable(refinher3::DR.__init__)
+def test_refinher3_dr_constructor_exists():
+    assert callable(refinher3_DR.__init__)
 
 
-def test_refinher3::dr_constructor_args():
-    sig = inspect.signature(refinher3::DR.__init__)
+def test_refinher3_dr_constructor_args():
+    sig = inspect.signature(refinher3_DR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::dl_is_not_abstract():
-    assert not inspect.isabstract(refinher3::DL)
+def test_refinher3_dl_is_not_abstract():
+    assert not inspect.isabstract(refinher3_DL)
 
 
-def test_refinher3::dl_constructor_exists():
-    assert callable(refinher3::DL.__init__)
+def test_refinher3_dl_constructor_exists():
+    assert callable(refinher3_DL.__init__)
 
 
-def test_refinher3::dl_constructor_args():
-    sig = inspect.signature(refinher3::DL.__init__)
+def test_refinher3_dl_constructor_args():
+    sig = inspect.signature(refinher3_DL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::dnamedelement_is_not_abstract():
-    assert not inspect.isabstract(refinher3::DNamedElement)
+def test_refinher3_dnamedelement_is_not_abstract():
+    assert not inspect.isabstract(refinher3_DNamedElement)
 
 
-def test_refinher3::dnamedelement_constructor_exists():
-    assert callable(refinher3::DNamedElement.__init__)
+def test_refinher3_dnamedelement_constructor_exists():
+    assert callable(refinher3_DNamedElement.__init__)
 
 
-def test_refinher3::dnamedelement_constructor_args():
-    sig = inspect.signature(refinher3::DNamedElement.__init__)
+def test_refinher3_dnamedelement_constructor_args():
+    sig = inspect.signature(refinher3_DNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_refinher3::dnamedelement_has_name():
-    assert hasattr(refinher3::DNamedElement, "name")
+def test_refinher3_dnamedelement_has_name():
+    assert hasattr(refinher3_DNamedElement, "name")
     descriptor = None
-    for klass in refinher3::DNamedElement.__mro__:
+    for klass in refinher3_DNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -190,23 +190,23 @@ def test_refinher3::dnamedelement_has_name():
 
 
 
-def test_refinher3::n_is_not_abstract():
-    assert not inspect.isabstract(refinher3::N)
+def test_refinher3_n_is_not_abstract():
+    assert not inspect.isabstract(refinher3_N)
 
 
-def test_refinher3::n_constructor_exists():
-    assert callable(refinher3::N.__init__)
+def test_refinher3_n_constructor_exists():
+    assert callable(refinher3_N.__init__)
 
 
-def test_refinher3::n_constructor_args():
-    sig = inspect.signature(refinher3::N.__init__)
+def test_refinher3_n_constructor_args():
+    sig = inspect.signature(refinher3_N.__init__)
     params = list(sig.parameters.keys())
     assert "nam" in params, "Missing parameter 'nam'"
 
-def test_refinher3::n_has_nam():
-    assert hasattr(refinher3::N, "nam")
+def test_refinher3_n_has_nam():
+    assert hasattr(refinher3_N, "nam")
     descriptor = None
-    for klass in refinher3::N.__mro__:
+    for klass in refinher3_N.__mro__:
         if "nam" in klass.__dict__:
             descriptor = klass.__dict__["nam"]
             break
@@ -228,58 +228,58 @@ def test_dnamedelement_constructor_args():
 
 
 
-def test_refinher3::foobar_is_not_abstract():
-    assert not inspect.isabstract(refinher3::Foobar)
+def test_refinher3_bb_is_not_abstract():
+    assert not inspect.isabstract(refinher3_BB)
 
 
-def test_refinher3::foobar_constructor_exists():
-    assert callable(refinher3::Foobar.__init__)
+def test_refinher3_bb_constructor_exists():
+    assert callable(refinher3_BB.__init__)
 
 
-def test_refinher3::foobar_constructor_args():
-    sig = inspect.signature(refinher3::Foobar.__init__)
+def test_refinher3_bb_constructor_args():
+    sig = inspect.signature(refinher3_BB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::a_is_not_abstract():
-    assert not inspect.isabstract(refinher3::A)
+def test_refinher3_a_is_not_abstract():
+    assert not inspect.isabstract(refinher3_A)
 
 
-def test_refinher3::a_constructor_exists():
-    assert callable(refinher3::A.__init__)
+def test_refinher3_a_constructor_exists():
+    assert callable(refinher3_A.__init__)
 
 
-def test_refinher3::a_constructor_args():
-    sig = inspect.signature(refinher3::A.__init__)
+def test_refinher3_a_constructor_args():
+    sig = inspect.signature(refinher3_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::bb_is_not_abstract():
-    assert not inspect.isabstract(refinher3::BB)
+def test_refinher3_foobar_is_not_abstract():
+    assert not inspect.isabstract(refinher3_Foobar)
 
 
-def test_refinher3::bb_constructor_exists():
-    assert callable(refinher3::BB.__init__)
+def test_refinher3_foobar_constructor_exists():
+    assert callable(refinher3_Foobar.__init__)
 
 
-def test_refinher3::bb_constructor_args():
-    sig = inspect.signature(refinher3::BB.__init__)
+def test_refinher3_foobar_constructor_args():
+    sig = inspect.signature(refinher3_Foobar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher3::e_is_not_abstract():
-    assert not inspect.isabstract(refinher3::E)
+def test_refinher3_e_is_not_abstract():
+    assert not inspect.isabstract(refinher3_E)
 
 
-def test_refinher3::e_constructor_exists():
-    assert callable(refinher3::E.__init__)
+def test_refinher3_e_constructor_exists():
+    assert callable(refinher3_E.__init__)
 
 
-def test_refinher3::e_constructor_args():
-    sig = inspect.signature(refinher3::E.__init__)
+def test_refinher3_e_constructor_args():
+    sig = inspect.signature(refinher3_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -297,56 +297,56 @@ safe_text = st.text(
 A_strategy = st.builds(
     A,
 )
-refinher3::M_strategy = st.builds(
-    refinher3::M,
+refinher3_M_strategy = st.builds(
+    refinher3_M,
     id=
         safe_text
 )
 CE_strategy = st.builds(
     CE,
 )
-refinher3::DG_strategy = st.builds(
-    refinher3::DG,
+refinher3_DG_strategy = st.builds(
+    refinher3_DG,
 )
-refinher3::DC_strategy = st.builds(
-    refinher3::DC,
+refinher3_DC_strategy = st.builds(
+    refinher3_DC,
 )
 E_strategy = st.builds(
     E,
 )
-refinher3::CE_strategy = st.builds(
-    refinher3::CE,
+refinher3_CE_strategy = st.builds(
+    refinher3_CE,
 )
-refinher3::DR_strategy = st.builds(
-    refinher3::DR,
+refinher3_DR_strategy = st.builds(
+    refinher3_DR,
 )
-refinher3::DL_strategy = st.builds(
-    refinher3::DL,
+refinher3_DL_strategy = st.builds(
+    refinher3_DL,
 )
-refinher3::DNamedElement_strategy = st.builds(
-    refinher3::DNamedElement,
+refinher3_DNamedElement_strategy = st.builds(
+    refinher3_DNamedElement,
     name=
         safe_text
 )
-refinher3::N_strategy = st.builds(
-    refinher3::N,
+refinher3_N_strategy = st.builds(
+    refinher3_N,
     nam=
         safe_text
 )
 DNamedElement_strategy = st.builds(
     DNamedElement,
 )
-refinher3::Foobar_strategy = st.builds(
-    refinher3::Foobar,
+refinher3_BB_strategy = st.builds(
+    refinher3_BB,
 )
-refinher3::A_strategy = st.builds(
-    refinher3::A,
+refinher3_A_strategy = st.builds(
+    refinher3_A,
 )
-refinher3::BB_strategy = st.builds(
-    refinher3::BB,
+refinher3_Foobar_strategy = st.builds(
+    refinher3_Foobar,
 )
-refinher3::E_strategy = st.builds(
-    refinher3::E,
+refinher3_E_strategy = st.builds(
+    refinher3_E,
 )
 
 @given(instance=A_strategy)
@@ -354,18 +354,15 @@ refinher3::E_strategy = st.builds(
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=refinher3::M_strategy)
+@given(instance=refinher3_M_strategy)
 @settings(max_examples=50)
-def test_refinher3::m_instantiation(instance):
-    assert isinstance(instance, refinher3::M)
-
-@given(instance=refinher3::M_strategy)
-def test_refinher3::m_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_refinher3_m_instantiation(instance):
+    assert isinstance(instance, refinher3_M)
 
 
-@given(instance=refinher3::M_strategy)
-def test_refinher3::m_id_setter(instance):
+
+@given(instance=refinher3_M_strategy)
+def test_refinher3_m_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -375,64 +372,58 @@ def test_refinher3::m_id_setter(instance):
 def test_ce_instantiation(instance):
     assert isinstance(instance, CE)
 
-@given(instance=refinher3::DG_strategy)
+@given(instance=refinher3_DG_strategy)
 @settings(max_examples=50)
-def test_refinher3::dg_instantiation(instance):
-    assert isinstance(instance, refinher3::DG)
+def test_refinher3_dg_instantiation(instance):
+    assert isinstance(instance, refinher3_DG)
 
-@given(instance=refinher3::DC_strategy)
+@given(instance=refinher3_DC_strategy)
 @settings(max_examples=50)
-def test_refinher3::dc_instantiation(instance):
-    assert isinstance(instance, refinher3::DC)
+def test_refinher3_dc_instantiation(instance):
+    assert isinstance(instance, refinher3_DC)
 
 @given(instance=E_strategy)
 @settings(max_examples=50)
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=refinher3::CE_strategy)
+@given(instance=refinher3_CE_strategy)
 @settings(max_examples=50)
-def test_refinher3::ce_instantiation(instance):
-    assert isinstance(instance, refinher3::CE)
+def test_refinher3_ce_instantiation(instance):
+    assert isinstance(instance, refinher3_CE)
 
-@given(instance=refinher3::DR_strategy)
+@given(instance=refinher3_DR_strategy)
 @settings(max_examples=50)
-def test_refinher3::dr_instantiation(instance):
-    assert isinstance(instance, refinher3::DR)
+def test_refinher3_dr_instantiation(instance):
+    assert isinstance(instance, refinher3_DR)
 
-@given(instance=refinher3::DL_strategy)
+@given(instance=refinher3_DL_strategy)
 @settings(max_examples=50)
-def test_refinher3::dl_instantiation(instance):
-    assert isinstance(instance, refinher3::DL)
+def test_refinher3_dl_instantiation(instance):
+    assert isinstance(instance, refinher3_DL)
 
-@given(instance=refinher3::DNamedElement_strategy)
+@given(instance=refinher3_DNamedElement_strategy)
 @settings(max_examples=50)
-def test_refinher3::dnamedelement_instantiation(instance):
-    assert isinstance(instance, refinher3::DNamedElement)
-
-@given(instance=refinher3::DNamedElement_strategy)
-def test_refinher3::dnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_refinher3_dnamedelement_instantiation(instance):
+    assert isinstance(instance, refinher3_DNamedElement)
 
 
-@given(instance=refinher3::DNamedElement_strategy)
-def test_refinher3::dnamedelement_name_setter(instance):
+
+@given(instance=refinher3_DNamedElement_strategy)
+def test_refinher3_dnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=refinher3::N_strategy)
+@given(instance=refinher3_N_strategy)
 @settings(max_examples=50)
-def test_refinher3::n_instantiation(instance):
-    assert isinstance(instance, refinher3::N)
-
-@given(instance=refinher3::N_strategy)
-def test_refinher3::n_nam_type(instance):
-    assert isinstance(instance.nam, str)
+def test_refinher3_n_instantiation(instance):
+    assert isinstance(instance, refinher3_N)
 
 
-@given(instance=refinher3::N_strategy)
-def test_refinher3::n_nam_setter(instance):
+
+@given(instance=refinher3_N_strategy)
+def test_refinher3_n_nam_setter(instance):
     original = instance.nam
     instance.nam = original
     assert instance.nam == original
@@ -442,22 +433,22 @@ def test_refinher3::n_nam_setter(instance):
 def test_dnamedelement_instantiation(instance):
     assert isinstance(instance, DNamedElement)
 
-@given(instance=refinher3::Foobar_strategy)
+@given(instance=refinher3_BB_strategy)
 @settings(max_examples=50)
-def test_refinher3::foobar_instantiation(instance):
-    assert isinstance(instance, refinher3::Foobar)
+def test_refinher3_bb_instantiation(instance):
+    assert isinstance(instance, refinher3_BB)
 
-@given(instance=refinher3::A_strategy)
+@given(instance=refinher3_A_strategy)
 @settings(max_examples=50)
-def test_refinher3::a_instantiation(instance):
-    assert isinstance(instance, refinher3::A)
+def test_refinher3_a_instantiation(instance):
+    assert isinstance(instance, refinher3_A)
 
-@given(instance=refinher3::BB_strategy)
+@given(instance=refinher3_Foobar_strategy)
 @settings(max_examples=50)
-def test_refinher3::bb_instantiation(instance):
-    assert isinstance(instance, refinher3::BB)
+def test_refinher3_foobar_instantiation(instance):
+    assert isinstance(instance, refinher3_Foobar)
 
-@given(instance=refinher3::E_strategy)
+@given(instance=refinher3_E_strategy)
 @settings(max_examples=50)
-def test_refinher3::e_instantiation(instance):
-    assert isinstance(instance, refinher3::E)
+def test_refinher3_e_instantiation(instance):
+    assert isinstance(instance, refinher3_E)

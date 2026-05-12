@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Food' has the following attributes: 'served' of type bool; 'food_id' of type str; 'prepared' of type bool; 'name' of type str; 'price' of type float.
+The class 'Order' has the following attributes: 'foodList' of type str; 'order_id' of type str.
+The class 'Restaurants' has the following attributes: 'r_ID' of type int; 'r_name' of type str; 'r_address' of type str; 'r_cuisine' of type str; 'r_contact' of type int.
+The class 'Report' has the following attributes: 'orders' of type str; 'report_id' of type str.
+The class 'ReservationManagementSystem' has the following attributes: 'bookings' of type str.
+The class 'CustomerUI' has no attributes.
+The class 'Table' has the following attributes: 'avaliable' of type bool; 'numSeats' of type int; 'table_id' of type str.
+The class 'Booking' has the following attributes: 'contact_no' of type int; 'date' of type date; 'startTime' of type str; 'b_id' of type int; 'email_id' of type str; 'endTime' of type str; 'reservedTables' of type str; 'customer_name' of type str.
+The class 'Customer' has the following attributes: 'c_address' of type str; 'c_id' of type int; 'c_mobile' of type int; 'c_email' of type str; 'c_name' of type str.
+'Report' (role 'reservationManagementSystem5', cardinality 0..*) is associated with 'ReservationManagementSystem' (role 'generates4', cardinality 0..*).
+'Restaurants' (role 'booking12', cardinality 0..*) is associated with 'Booking' (role 'restaurants13', cardinality 0..*).
+'Food' (role 'has11', cardinality 0..*) is associated with 'Order' (role 'orde10', cardinality 0..*).
+'Table' (role 'Table_Booking_08', cardinality 0..*) is associated with 'Restaurants' (role 'reservedBy9', cardinality 0..*).
+'ReservationManagementSystem' (role 'booking2', cardinality 0..*) is associated with 'Booking' (role 'ReservationManagementSystem_Booking_13', cardinality 0..*).
+'ReservationManagementSystem' (role 'interacts1', cardinality 0..*) is associated with 'CustomerUI' (role 'CustomerUI_ReservationManagementSystem_00', cardinality 0..*).
+'Table' (role 'has6', cardinality 0..*) is associated with 'Order' (role 'table7', cardinality 0..*).

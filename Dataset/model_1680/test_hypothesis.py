@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    yyc::Thing,
-    yyc::Blias,
-    yyc::Alias,
-    yyc::RelatedTo,
+from python_code import (
+    yyc_Blias,
+    yyc_Alias,
+    yyc_RelatedTo,
+    yyc_Thing,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_yyc::thing_is_not_abstract():
-    assert not inspect.isabstract(yyc::Thing)
+def test_yyc_blias_is_not_abstract():
+    assert not inspect.isabstract(yyc_Blias)
 
 
-def test_yyc::thing_constructor_exists():
-    assert callable(yyc::Thing.__init__)
+def test_yyc_blias_constructor_exists():
+    assert callable(yyc_Blias.__init__)
 
 
-def test_yyc::thing_constructor_args():
-    sig = inspect.signature(yyc::Thing.__init__)
+def test_yyc_blias_constructor_args():
+    sig = inspect.signature(yyc_Blias.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyc::thing_has_id():
-    assert hasattr(yyc::Thing, "id")
+def test_yyc_blias_has_id():
+    assert hasattr(yyc_Blias, "id")
     descriptor = None
-    for klass in yyc::Thing.__mro__:
+    for klass in yyc_Blias.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -42,23 +42,23 @@ def test_yyc::thing_has_id():
 
 
 
-def test_yyc::blias_is_not_abstract():
-    assert not inspect.isabstract(yyc::Blias)
+def test_yyc_alias_is_not_abstract():
+    assert not inspect.isabstract(yyc_Alias)
 
 
-def test_yyc::blias_constructor_exists():
-    assert callable(yyc::Blias.__init__)
+def test_yyc_alias_constructor_exists():
+    assert callable(yyc_Alias.__init__)
 
 
-def test_yyc::blias_constructor_args():
-    sig = inspect.signature(yyc::Blias.__init__)
+def test_yyc_alias_constructor_args():
+    sig = inspect.signature(yyc_Alias.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_yyc::blias_has_id():
-    assert hasattr(yyc::Blias, "id")
+def test_yyc_alias_has_id():
+    assert hasattr(yyc_Alias, "id")
     descriptor = None
-    for klass in yyc::Blias.__mro__:
+    for klass in yyc_Alias.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -66,49 +66,49 @@ def test_yyc::blias_has_id():
 
 
 
-def test_yyc::alias_is_not_abstract():
-    assert not inspect.isabstract(yyc::Alias)
+def test_yyc_relatedto_is_not_abstract():
+    assert not inspect.isabstract(yyc_RelatedTo)
 
 
-def test_yyc::alias_constructor_exists():
-    assert callable(yyc::Alias.__init__)
+def test_yyc_relatedto_constructor_exists():
+    assert callable(yyc_RelatedTo.__init__)
 
 
-def test_yyc::alias_constructor_args():
-    sig = inspect.signature(yyc::Alias.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_yyc::alias_has_id():
-    assert hasattr(yyc::Alias, "id")
-    descriptor = None
-    for klass in yyc::Alias.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_yyc::relatedto_is_not_abstract():
-    assert not inspect.isabstract(yyc::RelatedTo)
-
-
-def test_yyc::relatedto_constructor_exists():
-    assert callable(yyc::RelatedTo.__init__)
-
-
-def test_yyc::relatedto_constructor_args():
-    sig = inspect.signature(yyc::RelatedTo.__init__)
+def test_yyc_relatedto_constructor_args():
+    sig = inspect.signature(yyc_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_yyc::relatedto_has_since():
-    assert hasattr(yyc::RelatedTo, "since")
+def test_yyc_relatedto_has_since():
+    assert hasattr(yyc_RelatedTo, "since")
     descriptor = None
-    for klass in yyc::RelatedTo.__mro__:
+    for klass in yyc_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_yyc_thing_is_not_abstract():
+    assert not inspect.isabstract(yyc_Thing)
+
+
+def test_yyc_thing_constructor_exists():
+    assert callable(yyc_Thing.__init__)
+
+
+def test_yyc_thing_constructor_args():
+    sig = inspect.signature(yyc_Thing.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_yyc_thing_has_id():
+    assert hasattr(yyc_Thing, "id")
+    descriptor = None
+    for klass in yyc_Thing.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-yyc::Thing_strategy = st.builds(
-    yyc::Thing,
-    id=
-        st.integers()
-)
-yyc::Blias_strategy = st.builds(
-    yyc::Blias,
+yyc_Blias_strategy = st.builds(
+    yyc_Blias,
     id=
         safe_text
 )
-yyc::Alias_strategy = st.builds(
-    yyc::Alias,
+yyc_Alias_strategy = st.builds(
+    yyc_Alias,
     id=
         safe_text
 )
-yyc::RelatedTo_strategy = st.builds(
-    yyc::RelatedTo,
+yyc_RelatedTo_strategy = st.builds(
+    yyc_RelatedTo,
     since=
         safe_text
 )
+yyc_Thing_strategy = st.builds(
+    yyc_Thing,
+    id=
+        st.integers()
+)
 
-@given(instance=yyc::Thing_strategy)
+@given(instance=yyc_Blias_strategy)
 @settings(max_examples=50)
-def test_yyc::thing_instantiation(instance):
-    assert isinstance(instance, yyc::Thing)
-
-@given(instance=yyc::Thing_strategy)
-def test_yyc::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_yyc_blias_instantiation(instance):
+    assert isinstance(instance, yyc_Blias)
 
 
-@given(instance=yyc::Thing_strategy)
-def test_yyc::thing_id_setter(instance):
+
+@given(instance=yyc_Blias_strategy)
+def test_yyc_blias_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yyc::Blias_strategy)
+@given(instance=yyc_Alias_strategy)
 @settings(max_examples=50)
-def test_yyc::blias_instantiation(instance):
-    assert isinstance(instance, yyc::Blias)
-
-@given(instance=yyc::Blias_strategy)
-def test_yyc::blias_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yyc_alias_instantiation(instance):
+    assert isinstance(instance, yyc_Alias)
 
 
-@given(instance=yyc::Blias_strategy)
-def test_yyc::blias_id_setter(instance):
+
+@given(instance=yyc_Alias_strategy)
+def test_yyc_alias_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=yyc::Alias_strategy)
+@given(instance=yyc_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_yyc::alias_instantiation(instance):
-    assert isinstance(instance, yyc::Alias)
-
-@given(instance=yyc::Alias_strategy)
-def test_yyc::alias_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yyc_relatedto_instantiation(instance):
+    assert isinstance(instance, yyc_RelatedTo)
 
 
-@given(instance=yyc::Alias_strategy)
-def test_yyc::alias_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=yyc::RelatedTo_strategy)
-@settings(max_examples=50)
-def test_yyc::relatedto_instantiation(instance):
-    assert isinstance(instance, yyc::RelatedTo)
-
-@given(instance=yyc::RelatedTo_strategy)
-def test_yyc::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
-
-
-@given(instance=yyc::RelatedTo_strategy)
-def test_yyc::relatedto_since_setter(instance):
+@given(instance=yyc_RelatedTo_strategy)
+def test_yyc_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
+
+@given(instance=yyc_Thing_strategy)
+@settings(max_examples=50)
+def test_yyc_thing_instantiation(instance):
+    assert isinstance(instance, yyc_Thing)
+
+
+
+@given(instance=yyc_Thing_strategy)
+def test_yyc_thing_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

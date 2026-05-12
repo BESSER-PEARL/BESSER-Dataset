@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    redblacktree2::Tree,
-    redblacktree2::Node,
-    Color,
+from python_code import (
+    redblacktree2_Tree,
+    redblacktree2_Node,
     Type,
+    Color,
 )
 
 # =============================================================================
@@ -18,41 +18,57 @@ from classes import (
 
 
 
-def test_redblacktree2::tree_is_not_abstract():
-    assert not inspect.isabstract(redblacktree2::Tree)
+def test_redblacktree2_tree_is_not_abstract():
+    assert not inspect.isabstract(redblacktree2_Tree)
 
 
-def test_redblacktree2::tree_constructor_exists():
-    assert callable(redblacktree2::Tree.__init__)
+def test_redblacktree2_tree_constructor_exists():
+    assert callable(redblacktree2_Tree.__init__)
 
 
-def test_redblacktree2::tree_constructor_args():
-    sig = inspect.signature(redblacktree2::Tree.__init__)
+def test_redblacktree2_tree_constructor_args():
+    sig = inspect.signature(redblacktree2_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_redblacktree2::node_is_not_abstract():
-    assert not inspect.isabstract(redblacktree2::Node)
+def test_redblacktree2_node_is_not_abstract():
+    assert not inspect.isabstract(redblacktree2_Node)
 
 
-def test_redblacktree2::node_constructor_exists():
-    assert callable(redblacktree2::Node.__init__)
+def test_redblacktree2_node_constructor_exists():
+    assert callable(redblacktree2_Node.__init__)
 
 
-def test_redblacktree2::node_constructor_args():
-    sig = inspect.signature(redblacktree2::Node.__init__)
+def test_redblacktree2_node_constructor_args():
+    sig = inspect.signature(redblacktree2_Node.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_redblacktree2::node_has_value():
-    assert hasattr(redblacktree2::Node, "value")
+def test_redblacktree2_node_has_value():
+    assert hasattr(redblacktree2_Node, "value")
     descriptor = None
-    for klass in redblacktree2::Node.__mro__:
+    for klass in redblacktree2_Node.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
+
+def test_type_exists():
+    # Check that the Enumeration exists
+    assert Type is not None
+
+def test_type_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Type]
+    expected_literals = [
+        "ROOT",
+        "NODE",
+        "LEAF",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Type"
 
 def test_color_exists():
     # Check that the Enumeration exists
@@ -69,22 +85,6 @@ def test_color_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Color"
 
-def test_type_exists():
-    # Check that the Enumeration exists
-    assert Type is not None
-
-def test_type_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Type]
-    expected_literals = [
-        "NODE",
-        "ROOT",
-        "LEAF",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Type"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -97,32 +97,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-redblacktree2::Tree_strategy = st.builds(
-    redblacktree2::Tree,
+redblacktree2_Tree_strategy = st.builds(
+    redblacktree2_Tree,
 )
-redblacktree2::Node_strategy = st.builds(
-    redblacktree2::Node,
+redblacktree2_Node_strategy = st.builds(
+    redblacktree2_Node,
     value=
         st.integers()
 )
 
-@given(instance=redblacktree2::Tree_strategy)
+@given(instance=redblacktree2_Tree_strategy)
 @settings(max_examples=50)
-def test_redblacktree2::tree_instantiation(instance):
-    assert isinstance(instance, redblacktree2::Tree)
+def test_redblacktree2_tree_instantiation(instance):
+    assert isinstance(instance, redblacktree2_Tree)
 
-@given(instance=redblacktree2::Node_strategy)
+@given(instance=redblacktree2_Node_strategy)
 @settings(max_examples=50)
-def test_redblacktree2::node_instantiation(instance):
-    assert isinstance(instance, redblacktree2::Node)
-
-@given(instance=redblacktree2::Node_strategy)
-def test_redblacktree2::node_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_redblacktree2_node_instantiation(instance):
+    assert isinstance(instance, redblacktree2_Node)
 
 
-@given(instance=redblacktree2::Node_strategy)
-def test_redblacktree2::node_value_setter(instance):
+
+@given(instance=redblacktree2_Node_strategy)
+def test_redblacktree2_node_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original

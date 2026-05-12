@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    VHDLModel::VHDLSpecification,
+from python_code import (
+    VHDLModel_VHDLSpecification,
     Port,
-    VHDLModel::Signal,
-    VHDLModel::Port,
+    VHDLModel_Signal,
+    VHDLModel_Port,
     ComplexBlock,
-    VHDLModel::CompositeBlock,
-    VHDLModel::BlockRef,
-    VHDLModel::Block,
-    VHDLModel::OutputPort,
-    VHDLModel::InputPort,
+    VHDLModel_CompositeBlock,
+    VHDLModel_BlockRef,
+    VHDLModel_Block,
+    VHDLModel_OutputPort,
+    VHDLModel_InputPort,
     Block,
-    VHDLModel::ComplexBlock,
-    VHDLModel::BinaryGate,
+    VHDLModel_ComplexBlock,
+    VHDLModel_BinaryGate,
     BinaryGate,
-    VHDLModel::OrGate,
-    VHDLModel::AndGate,
-    VHDLModel::NotGate,
+    VHDLModel_OrGate,
+    VHDLModel_AndGate,
+    VHDLModel_NotGate,
 )
 
 # =============================================================================
@@ -31,23 +31,23 @@ from classes import (
 
 
 
-def test_vhdlmodel::vhdlspecification_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::VHDLSpecification)
+def test_vhdlmodel_vhdlspecification_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_VHDLSpecification)
 
 
-def test_vhdlmodel::vhdlspecification_constructor_exists():
-    assert callable(VHDLModel::VHDLSpecification.__init__)
+def test_vhdlmodel_vhdlspecification_constructor_exists():
+    assert callable(VHDLModel_VHDLSpecification.__init__)
 
 
-def test_vhdlmodel::vhdlspecification_constructor_args():
-    sig = inspect.signature(VHDLModel::VHDLSpecification.__init__)
+def test_vhdlmodel_vhdlspecification_constructor_args():
+    sig = inspect.signature(VHDLModel_VHDLSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdlmodel::vhdlspecification_has_name():
-    assert hasattr(VHDLModel::VHDLSpecification, "name")
+def test_vhdlmodel_vhdlspecification_has_name():
+    assert hasattr(VHDLModel_VHDLSpecification, "name")
     descriptor = None
-    for klass in VHDLModel::VHDLSpecification.__mro__:
+    for klass in VHDLModel_VHDLSpecification.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -69,47 +69,47 @@ def test_port_constructor_args():
 
 
 
-def test_vhdlmodel::signal_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::Signal)
+def test_vhdlmodel_signal_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_Signal)
 
 
-def test_vhdlmodel::signal_constructor_exists():
-    assert callable(VHDLModel::Signal.__init__)
+def test_vhdlmodel_signal_constructor_exists():
+    assert callable(VHDLModel_Signal.__init__)
 
 
-def test_vhdlmodel::signal_constructor_args():
-    sig = inspect.signature(VHDLModel::Signal.__init__)
+def test_vhdlmodel_signal_constructor_args():
+    sig = inspect.signature(VHDLModel_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::port_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::Port)
+def test_vhdlmodel_port_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_Port)
 
 
-def test_vhdlmodel::port_constructor_exists():
-    assert callable(VHDLModel::Port.__init__)
+def test_vhdlmodel_port_constructor_exists():
+    assert callable(VHDLModel_Port.__init__)
 
 
-def test_vhdlmodel::port_constructor_args():
-    sig = inspect.signature(VHDLModel::Port.__init__)
+def test_vhdlmodel_port_constructor_args():
+    sig = inspect.signature(VHDLModel_Port.__init__)
     params = list(sig.parameters.keys())
     assert "high" in params, "Missing parameter 'high'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdlmodel::port_has_high():
-    assert hasattr(VHDLModel::Port, "high")
+def test_vhdlmodel_port_has_high():
+    assert hasattr(VHDLModel_Port, "high")
     descriptor = None
-    for klass in VHDLModel::Port.__mro__:
+    for klass in VHDLModel_Port.__mro__:
         if "high" in klass.__dict__:
             descriptor = klass.__dict__["high"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdlmodel::port_has_name():
-    assert hasattr(VHDLModel::Port, "name")
+def test_vhdlmodel_port_has_name():
+    assert hasattr(VHDLModel_Port, "name")
     descriptor = None
-    for klass in VHDLModel::Port.__mro__:
+    for klass in VHDLModel_Port.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -131,51 +131,51 @@ def test_complexblock_constructor_args():
 
 
 
-def test_vhdlmodel::compositeblock_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::CompositeBlock)
+def test_vhdlmodel_compositeblock_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_CompositeBlock)
 
 
-def test_vhdlmodel::compositeblock_constructor_exists():
-    assert callable(VHDLModel::CompositeBlock.__init__)
+def test_vhdlmodel_compositeblock_constructor_exists():
+    assert callable(VHDLModel_CompositeBlock.__init__)
 
 
-def test_vhdlmodel::compositeblock_constructor_args():
-    sig = inspect.signature(VHDLModel::CompositeBlock.__init__)
+def test_vhdlmodel_compositeblock_constructor_args():
+    sig = inspect.signature(VHDLModel_CompositeBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::blockref_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::BlockRef)
+def test_vhdlmodel_blockref_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_BlockRef)
 
 
-def test_vhdlmodel::blockref_constructor_exists():
-    assert callable(VHDLModel::BlockRef.__init__)
+def test_vhdlmodel_blockref_constructor_exists():
+    assert callable(VHDLModel_BlockRef.__init__)
 
 
-def test_vhdlmodel::blockref_constructor_args():
-    sig = inspect.signature(VHDLModel::BlockRef.__init__)
+def test_vhdlmodel_blockref_constructor_args():
+    sig = inspect.signature(VHDLModel_BlockRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::block_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::Block)
+def test_vhdlmodel_block_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_Block)
 
 
-def test_vhdlmodel::block_constructor_exists():
-    assert callable(VHDLModel::Block.__init__)
+def test_vhdlmodel_block_constructor_exists():
+    assert callable(VHDLModel_Block.__init__)
 
 
-def test_vhdlmodel::block_constructor_args():
-    sig = inspect.signature(VHDLModel::Block.__init__)
+def test_vhdlmodel_block_constructor_args():
+    sig = inspect.signature(VHDLModel_Block.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdlmodel::block_has_name():
-    assert hasattr(VHDLModel::Block, "name")
+def test_vhdlmodel_block_has_name():
+    assert hasattr(VHDLModel_Block, "name")
     descriptor = None
-    for klass in VHDLModel::Block.__mro__:
+    for klass in VHDLModel_Block.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -183,30 +183,30 @@ def test_vhdlmodel::block_has_name():
 
 
 
-def test_vhdlmodel::outputport_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::OutputPort)
+def test_vhdlmodel_outputport_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_OutputPort)
 
 
-def test_vhdlmodel::outputport_constructor_exists():
-    assert callable(VHDLModel::OutputPort.__init__)
+def test_vhdlmodel_outputport_constructor_exists():
+    assert callable(VHDLModel_OutputPort.__init__)
 
 
-def test_vhdlmodel::outputport_constructor_args():
-    sig = inspect.signature(VHDLModel::OutputPort.__init__)
+def test_vhdlmodel_outputport_constructor_args():
+    sig = inspect.signature(VHDLModel_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::inputport_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::InputPort)
+def test_vhdlmodel_inputport_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_InputPort)
 
 
-def test_vhdlmodel::inputport_constructor_exists():
-    assert callable(VHDLModel::InputPort.__init__)
+def test_vhdlmodel_inputport_constructor_exists():
+    assert callable(VHDLModel_InputPort.__init__)
 
 
-def test_vhdlmodel::inputport_constructor_args():
-    sig = inspect.signature(VHDLModel::InputPort.__init__)
+def test_vhdlmodel_inputport_constructor_args():
+    sig = inspect.signature(VHDLModel_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -225,30 +225,30 @@ def test_block_constructor_args():
 
 
 
-def test_vhdlmodel::complexblock_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::ComplexBlock)
+def test_vhdlmodel_complexblock_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_ComplexBlock)
 
 
-def test_vhdlmodel::complexblock_constructor_exists():
-    assert callable(VHDLModel::ComplexBlock.__init__)
+def test_vhdlmodel_complexblock_constructor_exists():
+    assert callable(VHDLModel_ComplexBlock.__init__)
 
 
-def test_vhdlmodel::complexblock_constructor_args():
-    sig = inspect.signature(VHDLModel::ComplexBlock.__init__)
+def test_vhdlmodel_complexblock_constructor_args():
+    sig = inspect.signature(VHDLModel_ComplexBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::binarygate_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::BinaryGate)
+def test_vhdlmodel_binarygate_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_BinaryGate)
 
 
-def test_vhdlmodel::binarygate_constructor_exists():
-    assert callable(VHDLModel::BinaryGate.__init__)
+def test_vhdlmodel_binarygate_constructor_exists():
+    assert callable(VHDLModel_BinaryGate.__init__)
 
 
-def test_vhdlmodel::binarygate_constructor_args():
-    sig = inspect.signature(VHDLModel::BinaryGate.__init__)
+def test_vhdlmodel_binarygate_constructor_args():
+    sig = inspect.signature(VHDLModel_BinaryGate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -267,44 +267,44 @@ def test_binarygate_constructor_args():
 
 
 
-def test_vhdlmodel::orgate_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::OrGate)
+def test_vhdlmodel_orgate_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_OrGate)
 
 
-def test_vhdlmodel::orgate_constructor_exists():
-    assert callable(VHDLModel::OrGate.__init__)
+def test_vhdlmodel_orgate_constructor_exists():
+    assert callable(VHDLModel_OrGate.__init__)
 
 
-def test_vhdlmodel::orgate_constructor_args():
-    sig = inspect.signature(VHDLModel::OrGate.__init__)
+def test_vhdlmodel_orgate_constructor_args():
+    sig = inspect.signature(VHDLModel_OrGate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::andgate_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::AndGate)
+def test_vhdlmodel_andgate_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_AndGate)
 
 
-def test_vhdlmodel::andgate_constructor_exists():
-    assert callable(VHDLModel::AndGate.__init__)
+def test_vhdlmodel_andgate_constructor_exists():
+    assert callable(VHDLModel_AndGate.__init__)
 
 
-def test_vhdlmodel::andgate_constructor_args():
-    sig = inspect.signature(VHDLModel::AndGate.__init__)
+def test_vhdlmodel_andgate_constructor_args():
+    sig = inspect.signature(VHDLModel_AndGate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdlmodel::notgate_is_not_abstract():
-    assert not inspect.isabstract(VHDLModel::NotGate)
+def test_vhdlmodel_notgate_is_not_abstract():
+    assert not inspect.isabstract(VHDLModel_NotGate)
 
 
-def test_vhdlmodel::notgate_constructor_exists():
-    assert callable(VHDLModel::NotGate.__init__)
+def test_vhdlmodel_notgate_constructor_exists():
+    assert callable(VHDLModel_NotGate.__init__)
 
 
-def test_vhdlmodel::notgate_constructor_args():
-    sig = inspect.signature(VHDLModel::NotGate.__init__)
+def test_vhdlmodel_notgate_constructor_args():
+    sig = inspect.signature(VHDLModel_NotGate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -319,19 +319,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-VHDLModel::VHDLSpecification_strategy = st.builds(
-    VHDLModel::VHDLSpecification,
+VHDLModel_VHDLSpecification_strategy = st.builds(
+    VHDLModel_VHDLSpecification,
     name=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-VHDLModel::Signal_strategy = st.builds(
-    VHDLModel::Signal,
+VHDLModel_Signal_strategy = st.builds(
+    VHDLModel_Signal,
 )
-VHDLModel::Port_strategy = st.builds(
-    VHDLModel::Port,
+VHDLModel_Port_strategy = st.builds(
+    VHDLModel_Port,
     high=
         st.booleans(),
     name=
@@ -340,57 +340,54 @@ VHDLModel::Port_strategy = st.builds(
 ComplexBlock_strategy = st.builds(
     ComplexBlock,
 )
-VHDLModel::CompositeBlock_strategy = st.builds(
-    VHDLModel::CompositeBlock,
+VHDLModel_CompositeBlock_strategy = st.builds(
+    VHDLModel_CompositeBlock,
 )
-VHDLModel::BlockRef_strategy = st.builds(
-    VHDLModel::BlockRef,
+VHDLModel_BlockRef_strategy = st.builds(
+    VHDLModel_BlockRef,
 )
-VHDLModel::Block_strategy = st.builds(
-    VHDLModel::Block,
+VHDLModel_Block_strategy = st.builds(
+    VHDLModel_Block,
     name=
         safe_text
 )
-VHDLModel::OutputPort_strategy = st.builds(
-    VHDLModel::OutputPort,
+VHDLModel_OutputPort_strategy = st.builds(
+    VHDLModel_OutputPort,
 )
-VHDLModel::InputPort_strategy = st.builds(
-    VHDLModel::InputPort,
+VHDLModel_InputPort_strategy = st.builds(
+    VHDLModel_InputPort,
 )
 Block_strategy = st.builds(
     Block,
 )
-VHDLModel::ComplexBlock_strategy = st.builds(
-    VHDLModel::ComplexBlock,
+VHDLModel_ComplexBlock_strategy = st.builds(
+    VHDLModel_ComplexBlock,
 )
-VHDLModel::BinaryGate_strategy = st.builds(
-    VHDLModel::BinaryGate,
+VHDLModel_BinaryGate_strategy = st.builds(
+    VHDLModel_BinaryGate,
 )
 BinaryGate_strategy = st.builds(
     BinaryGate,
 )
-VHDLModel::OrGate_strategy = st.builds(
-    VHDLModel::OrGate,
+VHDLModel_OrGate_strategy = st.builds(
+    VHDLModel_OrGate,
 )
-VHDLModel::AndGate_strategy = st.builds(
-    VHDLModel::AndGate,
+VHDLModel_AndGate_strategy = st.builds(
+    VHDLModel_AndGate,
 )
-VHDLModel::NotGate_strategy = st.builds(
-    VHDLModel::NotGate,
+VHDLModel_NotGate_strategy = st.builds(
+    VHDLModel_NotGate,
 )
 
-@given(instance=VHDLModel::VHDLSpecification_strategy)
+@given(instance=VHDLModel_VHDLSpecification_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::vhdlspecification_instantiation(instance):
-    assert isinstance(instance, VHDLModel::VHDLSpecification)
-
-@given(instance=VHDLModel::VHDLSpecification_strategy)
-def test_vhdlmodel::vhdlspecification_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdlmodel_vhdlspecification_instantiation(instance):
+    assert isinstance(instance, VHDLModel_VHDLSpecification)
 
 
-@given(instance=VHDLModel::VHDLSpecification_strategy)
-def test_vhdlmodel::vhdlspecification_name_setter(instance):
+
+@given(instance=VHDLModel_VHDLSpecification_strategy)
+def test_vhdlmodel_vhdlspecification_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -400,34 +397,28 @@ def test_vhdlmodel::vhdlspecification_name_setter(instance):
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=VHDLModel::Signal_strategy)
+@given(instance=VHDLModel_Signal_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::signal_instantiation(instance):
-    assert isinstance(instance, VHDLModel::Signal)
+def test_vhdlmodel_signal_instantiation(instance):
+    assert isinstance(instance, VHDLModel_Signal)
 
-@given(instance=VHDLModel::Port_strategy)
+@given(instance=VHDLModel_Port_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::port_instantiation(instance):
-    assert isinstance(instance, VHDLModel::Port)
-
-@given(instance=VHDLModel::Port_strategy)
-def test_vhdlmodel::port_high_type(instance):
-    assert isinstance(instance.high, bool)
+def test_vhdlmodel_port_instantiation(instance):
+    assert isinstance(instance, VHDLModel_Port)
 
 
-@given(instance=VHDLModel::Port_strategy)
-def test_vhdlmodel::port_high_setter(instance):
+
+@given(instance=VHDLModel_Port_strategy)
+def test_vhdlmodel_port_high_setter(instance):
     original = instance.high
     instance.high = original
     assert instance.high == original
 
-@given(instance=VHDLModel::Port_strategy)
-def test_vhdlmodel::port_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=VHDLModel::Port_strategy)
-def test_vhdlmodel::port_name_setter(instance):
+@given(instance=VHDLModel_Port_strategy)
+def test_vhdlmodel_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -437,73 +428,70 @@ def test_vhdlmodel::port_name_setter(instance):
 def test_complexblock_instantiation(instance):
     assert isinstance(instance, ComplexBlock)
 
-@given(instance=VHDLModel::CompositeBlock_strategy)
+@given(instance=VHDLModel_CompositeBlock_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::compositeblock_instantiation(instance):
-    assert isinstance(instance, VHDLModel::CompositeBlock)
+def test_vhdlmodel_compositeblock_instantiation(instance):
+    assert isinstance(instance, VHDLModel_CompositeBlock)
 
-@given(instance=VHDLModel::BlockRef_strategy)
+@given(instance=VHDLModel_BlockRef_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::blockref_instantiation(instance):
-    assert isinstance(instance, VHDLModel::BlockRef)
+def test_vhdlmodel_blockref_instantiation(instance):
+    assert isinstance(instance, VHDLModel_BlockRef)
 
-@given(instance=VHDLModel::Block_strategy)
+@given(instance=VHDLModel_Block_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::block_instantiation(instance):
-    assert isinstance(instance, VHDLModel::Block)
-
-@given(instance=VHDLModel::Block_strategy)
-def test_vhdlmodel::block_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdlmodel_block_instantiation(instance):
+    assert isinstance(instance, VHDLModel_Block)
 
 
-@given(instance=VHDLModel::Block_strategy)
-def test_vhdlmodel::block_name_setter(instance):
+
+@given(instance=VHDLModel_Block_strategy)
+def test_vhdlmodel_block_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=VHDLModel::OutputPort_strategy)
+@given(instance=VHDLModel_OutputPort_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::outputport_instantiation(instance):
-    assert isinstance(instance, VHDLModel::OutputPort)
+def test_vhdlmodel_outputport_instantiation(instance):
+    assert isinstance(instance, VHDLModel_OutputPort)
 
-@given(instance=VHDLModel::InputPort_strategy)
+@given(instance=VHDLModel_InputPort_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::inputport_instantiation(instance):
-    assert isinstance(instance, VHDLModel::InputPort)
+def test_vhdlmodel_inputport_instantiation(instance):
+    assert isinstance(instance, VHDLModel_InputPort)
 
 @given(instance=Block_strategy)
 @settings(max_examples=50)
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=VHDLModel::ComplexBlock_strategy)
+@given(instance=VHDLModel_ComplexBlock_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::complexblock_instantiation(instance):
-    assert isinstance(instance, VHDLModel::ComplexBlock)
+def test_vhdlmodel_complexblock_instantiation(instance):
+    assert isinstance(instance, VHDLModel_ComplexBlock)
 
-@given(instance=VHDLModel::BinaryGate_strategy)
+@given(instance=VHDLModel_BinaryGate_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::binarygate_instantiation(instance):
-    assert isinstance(instance, VHDLModel::BinaryGate)
+def test_vhdlmodel_binarygate_instantiation(instance):
+    assert isinstance(instance, VHDLModel_BinaryGate)
 
 @given(instance=BinaryGate_strategy)
 @settings(max_examples=50)
 def test_binarygate_instantiation(instance):
     assert isinstance(instance, BinaryGate)
 
-@given(instance=VHDLModel::OrGate_strategy)
+@given(instance=VHDLModel_OrGate_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::orgate_instantiation(instance):
-    assert isinstance(instance, VHDLModel::OrGate)
+def test_vhdlmodel_orgate_instantiation(instance):
+    assert isinstance(instance, VHDLModel_OrGate)
 
-@given(instance=VHDLModel::AndGate_strategy)
+@given(instance=VHDLModel_AndGate_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::andgate_instantiation(instance):
-    assert isinstance(instance, VHDLModel::AndGate)
+def test_vhdlmodel_andgate_instantiation(instance):
+    assert isinstance(instance, VHDLModel_AndGate)
 
-@given(instance=VHDLModel::NotGate_strategy)
+@given(instance=VHDLModel_NotGate_strategy)
 @settings(max_examples=50)
-def test_vhdlmodel::notgate_instantiation(instance):
-    assert isinstance(instance, VHDLModel::NotGate)
+def test_vhdlmodel_notgate_instantiation(instance):
+    assert isinstance(instance, VHDLModel_NotGate)

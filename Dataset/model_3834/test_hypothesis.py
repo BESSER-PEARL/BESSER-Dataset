@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    realop::NotExp,
-    realop::XorExp,
-    realop::IsPositive,
-    realop::AndExp,
-    realop::IsNegative,
-    realop::OrExp,
-    realop::Expression,
-    realop::Operator,
-    realop::Realop,
-    realop::IsRealised,
+    realop_NotExp,
+    realop_XorExp,
+    realop_IsNegative,
+    realop_IsPositive,
+    realop_AndExp,
+    realop_OrExp,
+    realop_Expression,
+    realop_Operator,
+    realop_Realop,
+    realop_IsRealised,
 )
 
 # =============================================================================
@@ -39,51 +39,51 @@ def test_expression_constructor_args():
 
 
 
-def test_realop::notexp_is_not_abstract():
-    assert not inspect.isabstract(realop::NotExp)
+def test_realop_notexp_is_not_abstract():
+    assert not inspect.isabstract(realop_NotExp)
 
 
-def test_realop::notexp_constructor_exists():
-    assert callable(realop::NotExp.__init__)
+def test_realop_notexp_constructor_exists():
+    assert callable(realop_NotExp.__init__)
 
 
-def test_realop::notexp_constructor_args():
-    sig = inspect.signature(realop::NotExp.__init__)
+def test_realop_notexp_constructor_args():
+    sig = inspect.signature(realop_NotExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_realop::xorexp_is_not_abstract():
-    assert not inspect.isabstract(realop::XorExp)
+def test_realop_xorexp_is_not_abstract():
+    assert not inspect.isabstract(realop_XorExp)
 
 
-def test_realop::xorexp_constructor_exists():
-    assert callable(realop::XorExp.__init__)
+def test_realop_xorexp_constructor_exists():
+    assert callable(realop_XorExp.__init__)
 
 
-def test_realop::xorexp_constructor_args():
-    sig = inspect.signature(realop::XorExp.__init__)
+def test_realop_xorexp_constructor_args():
+    sig = inspect.signature(realop_XorExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_realop::ispositive_is_not_abstract():
-    assert not inspect.isabstract(realop::IsPositive)
+def test_realop_isnegative_is_not_abstract():
+    assert not inspect.isabstract(realop_IsNegative)
 
 
-def test_realop::ispositive_constructor_exists():
-    assert callable(realop::IsPositive.__init__)
+def test_realop_isnegative_constructor_exists():
+    assert callable(realop_IsNegative.__init__)
 
 
-def test_realop::ispositive_constructor_args():
-    sig = inspect.signature(realop::IsPositive.__init__)
+def test_realop_isnegative_constructor_args():
+    sig = inspect.signature(realop_IsNegative.__init__)
     params = list(sig.parameters.keys())
     assert "featureName" in params, "Missing parameter 'featureName'"
 
-def test_realop::ispositive_has_featureName():
-    assert hasattr(realop::IsPositive, "featureName")
+def test_realop_isnegative_has_featureName():
+    assert hasattr(realop_IsNegative, "featureName")
     descriptor = None
-    for klass in realop::IsPositive.__mro__:
+    for klass in realop_IsNegative.__mro__:
         if "featureName" in klass.__dict__:
             descriptor = klass.__dict__["featureName"]
             break
@@ -91,37 +91,23 @@ def test_realop::ispositive_has_featureName():
 
 
 
-def test_realop::andexp_is_not_abstract():
-    assert not inspect.isabstract(realop::AndExp)
+def test_realop_ispositive_is_not_abstract():
+    assert not inspect.isabstract(realop_IsPositive)
 
 
-def test_realop::andexp_constructor_exists():
-    assert callable(realop::AndExp.__init__)
+def test_realop_ispositive_constructor_exists():
+    assert callable(realop_IsPositive.__init__)
 
 
-def test_realop::andexp_constructor_args():
-    sig = inspect.signature(realop::AndExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_realop::isnegative_is_not_abstract():
-    assert not inspect.isabstract(realop::IsNegative)
-
-
-def test_realop::isnegative_constructor_exists():
-    assert callable(realop::IsNegative.__init__)
-
-
-def test_realop::isnegative_constructor_args():
-    sig = inspect.signature(realop::IsNegative.__init__)
+def test_realop_ispositive_constructor_args():
+    sig = inspect.signature(realop_IsPositive.__init__)
     params = list(sig.parameters.keys())
     assert "featureName" in params, "Missing parameter 'featureName'"
 
-def test_realop::isnegative_has_featureName():
-    assert hasattr(realop::IsNegative, "featureName")
+def test_realop_ispositive_has_featureName():
+    assert hasattr(realop_IsPositive, "featureName")
     descriptor = None
-    for klass in realop::IsNegative.__mro__:
+    for klass in realop_IsPositive.__mro__:
         if "featureName" in klass.__dict__:
             descriptor = klass.__dict__["featureName"]
             break
@@ -129,51 +115,65 @@ def test_realop::isnegative_has_featureName():
 
 
 
-def test_realop::orexp_is_not_abstract():
-    assert not inspect.isabstract(realop::OrExp)
+def test_realop_andexp_is_not_abstract():
+    assert not inspect.isabstract(realop_AndExp)
 
 
-def test_realop::orexp_constructor_exists():
-    assert callable(realop::OrExp.__init__)
+def test_realop_andexp_constructor_exists():
+    assert callable(realop_AndExp.__init__)
 
 
-def test_realop::orexp_constructor_args():
-    sig = inspect.signature(realop::OrExp.__init__)
+def test_realop_andexp_constructor_args():
+    sig = inspect.signature(realop_AndExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_realop::expression_is_not_abstract():
-    assert not inspect.isabstract(realop::Expression)
+def test_realop_orexp_is_not_abstract():
+    assert not inspect.isabstract(realop_OrExp)
 
 
-def test_realop::expression_constructor_exists():
-    assert callable(realop::Expression.__init__)
+def test_realop_orexp_constructor_exists():
+    assert callable(realop_OrExp.__init__)
 
 
-def test_realop::expression_constructor_args():
-    sig = inspect.signature(realop::Expression.__init__)
+def test_realop_orexp_constructor_args():
+    sig = inspect.signature(realop_OrExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_realop::operator_is_not_abstract():
-    assert not inspect.isabstract(realop::Operator)
+def test_realop_expression_is_not_abstract():
+    assert not inspect.isabstract(realop_Expression)
 
 
-def test_realop::operator_constructor_exists():
-    assert callable(realop::Operator.__init__)
+def test_realop_expression_constructor_exists():
+    assert callable(realop_Expression.__init__)
 
 
-def test_realop::operator_constructor_args():
-    sig = inspect.signature(realop::Operator.__init__)
+def test_realop_expression_constructor_args():
+    sig = inspect.signature(realop_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_realop_operator_is_not_abstract():
+    assert not inspect.isabstract(realop_Operator)
+
+
+def test_realop_operator_constructor_exists():
+    assert callable(realop_Operator.__init__)
+
+
+def test_realop_operator_constructor_args():
+    sig = inspect.signature(realop_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_realop::operator_has_name():
-    assert hasattr(realop::Operator, "name")
+def test_realop_operator_has_name():
+    assert hasattr(realop_Operator, "name")
     descriptor = None
-    for klass in realop::Operator.__mro__:
+    for klass in realop_Operator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -181,37 +181,37 @@ def test_realop::operator_has_name():
 
 
 
-def test_realop::realop_is_not_abstract():
-    assert not inspect.isabstract(realop::Realop)
+def test_realop_realop_is_not_abstract():
+    assert not inspect.isabstract(realop_Realop)
 
 
-def test_realop::realop_constructor_exists():
-    assert callable(realop::Realop.__init__)
+def test_realop_realop_constructor_exists():
+    assert callable(realop_Realop.__init__)
 
 
-def test_realop::realop_constructor_args():
-    sig = inspect.signature(realop::Realop.__init__)
+def test_realop_realop_constructor_args():
+    sig = inspect.signature(realop_Realop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_realop::isrealised_is_not_abstract():
-    assert not inspect.isabstract(realop::IsRealised)
+def test_realop_isrealised_is_not_abstract():
+    assert not inspect.isabstract(realop_IsRealised)
 
 
-def test_realop::isrealised_constructor_exists():
-    assert callable(realop::IsRealised.__init__)
+def test_realop_isrealised_constructor_exists():
+    assert callable(realop_IsRealised.__init__)
 
 
-def test_realop::isrealised_constructor_args():
-    sig = inspect.signature(realop::IsRealised.__init__)
+def test_realop_isrealised_constructor_args():
+    sig = inspect.signature(realop_IsRealised.__init__)
     params = list(sig.parameters.keys())
     assert "featureName" in params, "Missing parameter 'featureName'"
 
-def test_realop::isrealised_has_featureName():
-    assert hasattr(realop::IsRealised, "featureName")
+def test_realop_isrealised_has_featureName():
+    assert hasattr(realop_IsRealised, "featureName")
     descriptor = None
-    for klass in realop::IsRealised.__mro__:
+    for klass in realop_IsRealised.__mro__:
         if "featureName" in klass.__dict__:
             descriptor = klass.__dict__["featureName"]
             break
@@ -232,41 +232,41 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-realop::NotExp_strategy = st.builds(
-    realop::NotExp,
+realop_NotExp_strategy = st.builds(
+    realop_NotExp,
 )
-realop::XorExp_strategy = st.builds(
-    realop::XorExp,
+realop_XorExp_strategy = st.builds(
+    realop_XorExp,
 )
-realop::IsPositive_strategy = st.builds(
-    realop::IsPositive,
+realop_IsNegative_strategy = st.builds(
+    realop_IsNegative,
     featureName=
         safe_text
 )
-realop::AndExp_strategy = st.builds(
-    realop::AndExp,
-)
-realop::IsNegative_strategy = st.builds(
-    realop::IsNegative,
+realop_IsPositive_strategy = st.builds(
+    realop_IsPositive,
     featureName=
         safe_text
 )
-realop::OrExp_strategy = st.builds(
-    realop::OrExp,
+realop_AndExp_strategy = st.builds(
+    realop_AndExp,
 )
-realop::Expression_strategy = st.builds(
-    realop::Expression,
+realop_OrExp_strategy = st.builds(
+    realop_OrExp,
 )
-realop::Operator_strategy = st.builds(
-    realop::Operator,
+realop_Expression_strategy = st.builds(
+    realop_Expression,
+)
+realop_Operator_strategy = st.builds(
+    realop_Operator,
     name=
         safe_text
 )
-realop::Realop_strategy = st.builds(
-    realop::Realop,
+realop_Realop_strategy = st.builds(
+    realop_Realop,
 )
-realop::IsRealised_strategy = st.builds(
-    realop::IsRealised,
+realop_IsRealised_strategy = st.builds(
+    realop_IsRealised,
     featureName=
         safe_text
 )
@@ -276,96 +276,84 @@ realop::IsRealised_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=realop::NotExp_strategy)
+@given(instance=realop_NotExp_strategy)
 @settings(max_examples=50)
-def test_realop::notexp_instantiation(instance):
-    assert isinstance(instance, realop::NotExp)
+def test_realop_notexp_instantiation(instance):
+    assert isinstance(instance, realop_NotExp)
 
-@given(instance=realop::XorExp_strategy)
+@given(instance=realop_XorExp_strategy)
 @settings(max_examples=50)
-def test_realop::xorexp_instantiation(instance):
-    assert isinstance(instance, realop::XorExp)
+def test_realop_xorexp_instantiation(instance):
+    assert isinstance(instance, realop_XorExp)
 
-@given(instance=realop::IsPositive_strategy)
+@given(instance=realop_IsNegative_strategy)
 @settings(max_examples=50)
-def test_realop::ispositive_instantiation(instance):
-    assert isinstance(instance, realop::IsPositive)
-
-@given(instance=realop::IsPositive_strategy)
-def test_realop::ispositive_featureName_type(instance):
-    assert isinstance(instance.featureName, str)
+def test_realop_isnegative_instantiation(instance):
+    assert isinstance(instance, realop_IsNegative)
 
 
-@given(instance=realop::IsPositive_strategy)
-def test_realop::ispositive_featureName_setter(instance):
+
+@given(instance=realop_IsNegative_strategy)
+def test_realop_isnegative_featureName_setter(instance):
     original = instance.featureName
     instance.featureName = original
     assert instance.featureName == original
 
-@given(instance=realop::AndExp_strategy)
+@given(instance=realop_IsPositive_strategy)
 @settings(max_examples=50)
-def test_realop::andexp_instantiation(instance):
-    assert isinstance(instance, realop::AndExp)
-
-@given(instance=realop::IsNegative_strategy)
-@settings(max_examples=50)
-def test_realop::isnegative_instantiation(instance):
-    assert isinstance(instance, realop::IsNegative)
-
-@given(instance=realop::IsNegative_strategy)
-def test_realop::isnegative_featureName_type(instance):
-    assert isinstance(instance.featureName, str)
+def test_realop_ispositive_instantiation(instance):
+    assert isinstance(instance, realop_IsPositive)
 
 
-@given(instance=realop::IsNegative_strategy)
-def test_realop::isnegative_featureName_setter(instance):
+
+@given(instance=realop_IsPositive_strategy)
+def test_realop_ispositive_featureName_setter(instance):
     original = instance.featureName
     instance.featureName = original
     assert instance.featureName == original
 
-@given(instance=realop::OrExp_strategy)
+@given(instance=realop_AndExp_strategy)
 @settings(max_examples=50)
-def test_realop::orexp_instantiation(instance):
-    assert isinstance(instance, realop::OrExp)
+def test_realop_andexp_instantiation(instance):
+    assert isinstance(instance, realop_AndExp)
 
-@given(instance=realop::Expression_strategy)
+@given(instance=realop_OrExp_strategy)
 @settings(max_examples=50)
-def test_realop::expression_instantiation(instance):
-    assert isinstance(instance, realop::Expression)
+def test_realop_orexp_instantiation(instance):
+    assert isinstance(instance, realop_OrExp)
 
-@given(instance=realop::Operator_strategy)
+@given(instance=realop_Expression_strategy)
 @settings(max_examples=50)
-def test_realop::operator_instantiation(instance):
-    assert isinstance(instance, realop::Operator)
+def test_realop_expression_instantiation(instance):
+    assert isinstance(instance, realop_Expression)
 
-@given(instance=realop::Operator_strategy)
-def test_realop::operator_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=realop_Operator_strategy)
+@settings(max_examples=50)
+def test_realop_operator_instantiation(instance):
+    assert isinstance(instance, realop_Operator)
 
 
-@given(instance=realop::Operator_strategy)
-def test_realop::operator_name_setter(instance):
+
+@given(instance=realop_Operator_strategy)
+def test_realop_operator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=realop::Realop_strategy)
+@given(instance=realop_Realop_strategy)
 @settings(max_examples=50)
-def test_realop::realop_instantiation(instance):
-    assert isinstance(instance, realop::Realop)
+def test_realop_realop_instantiation(instance):
+    assert isinstance(instance, realop_Realop)
 
-@given(instance=realop::IsRealised_strategy)
+@given(instance=realop_IsRealised_strategy)
 @settings(max_examples=50)
-def test_realop::isrealised_instantiation(instance):
-    assert isinstance(instance, realop::IsRealised)
-
-@given(instance=realop::IsRealised_strategy)
-def test_realop::isrealised_featureName_type(instance):
-    assert isinstance(instance.featureName, str)
+def test_realop_isrealised_instantiation(instance):
+    assert isinstance(instance, realop_IsRealised)
 
 
-@given(instance=realop::IsRealised_strategy)
-def test_realop::isrealised_featureName_setter(instance):
+
+@given(instance=realop_IsRealised_strategy)
+def test_realop_isrealised_featureName_setter(instance):
     original = instance.featureName
     instance.featureName = original
     assert instance.featureName == original

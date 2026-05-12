@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Sample::Library,
-    Sample::EString,
-    Sample::Person,
-    Sample::Book,
+from python_code import (
+    Sample_Library,
+    Sample_EString,
+    Sample_Person,
+    Sample_Book,
     Category,
 )
 
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_sample::library_is_not_abstract():
-    assert not inspect.isabstract(Sample::Library)
+def test_sample_library_is_not_abstract():
+    assert not inspect.isabstract(Sample_Library)
 
 
-def test_sample::library_constructor_exists():
-    assert callable(Sample::Library.__init__)
+def test_sample_library_constructor_exists():
+    assert callable(Sample_Library.__init__)
 
 
-def test_sample::library_constructor_args():
-    sig = inspect.signature(Sample::Library.__init__)
+def test_sample_library_constructor_args():
+    sig = inspect.signature(Sample_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sample::library_has_name():
-    assert hasattr(Sample::Library, "name")
+def test_sample_library_has_name():
+    assert hasattr(Sample_Library, "name")
     descriptor = None
-    for klass in Sample::Library.__mro__:
+    for klass in Sample_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,81 +43,81 @@ def test_sample::library_has_name():
 
 
 
-def test_sample::estring_is_not_abstract():
-    assert not inspect.isabstract(Sample::EString)
+def test_sample_estring_is_not_abstract():
+    assert not inspect.isabstract(Sample_EString)
 
 
-def test_sample::estring_constructor_exists():
-    assert callable(Sample::EString.__init__)
+def test_sample_estring_constructor_exists():
+    assert callable(Sample_EString.__init__)
 
 
-def test_sample::estring_constructor_args():
-    sig = inspect.signature(Sample::EString.__init__)
+def test_sample_estring_constructor_args():
+    sig = inspect.signature(Sample_EString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sample::person_is_not_abstract():
-    assert not inspect.isabstract(Sample::Person)
+def test_sample_person_is_not_abstract():
+    assert not inspect.isabstract(Sample_Person)
 
 
-def test_sample::person_constructor_exists():
-    assert callable(Sample::Person.__init__)
+def test_sample_person_constructor_exists():
+    assert callable(Sample_Person.__init__)
 
 
-def test_sample::person_constructor_args():
-    sig = inspect.signature(Sample::Person.__init__)
+def test_sample_person_constructor_args():
+    sig = inspect.signature(Sample_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_sample::person_has_firstName():
-    assert hasattr(Sample::Person, "firstName")
+def test_sample_person_has_lastName():
+    assert hasattr(Sample_Person, "lastName")
     descriptor = None
-    for klass in Sample::Person.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sample::person_has_lastName():
-    assert hasattr(Sample::Person, "lastName")
-    descriptor = None
-    for klass in Sample::Person.__mro__:
+    for klass in Sample_Person.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
+def test_sample_person_has_firstName():
+    assert hasattr(Sample_Person, "firstName")
+    descriptor = None
+    for klass in Sample_Person.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sample::book_is_not_abstract():
-    assert not inspect.isabstract(Sample::Book)
+
+def test_sample_book_is_not_abstract():
+    assert not inspect.isabstract(Sample_Book)
 
 
-def test_sample::book_constructor_exists():
-    assert callable(Sample::Book.__init__)
+def test_sample_book_constructor_exists():
+    assert callable(Sample_Book.__init__)
 
 
-def test_sample::book_constructor_args():
-    sig = inspect.signature(Sample::Book.__init__)
+def test_sample_book_constructor_args():
+    sig = inspect.signature(Sample_Book.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "category" in params, "Missing parameter 'category'"
 
-def test_sample::book_has_name():
-    assert hasattr(Sample::Book, "name")
+def test_sample_book_has_name():
+    assert hasattr(Sample_Book, "name")
     descriptor = None
-    for klass in Sample::Book.__mro__:
+    for klass in Sample_Book.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_sample::book_has_category():
-    assert hasattr(Sample::Book, "category")
+def test_sample_book_has_category():
+    assert hasattr(Sample_Book, "category")
     descriptor = None
-    for klass in Sample::Book.__mro__:
+    for klass in Sample_Book.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
@@ -151,100 +151,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Sample::Library_strategy = st.builds(
-    Sample::Library,
+Sample_Library_strategy = st.builds(
+    Sample_Library,
     name=
         safe_text
 )
-Sample::EString_strategy = st.builds(
-    Sample::EString,
+Sample_EString_strategy = st.builds(
+    Sample_EString,
 )
-Sample::Person_strategy = st.builds(
-    Sample::Person,
-    firstName=
-        safe_text,
+Sample_Person_strategy = st.builds(
+    Sample_Person,
     lastName=
+        safe_text,
+    firstName=
         safe_text
 )
-Sample::Book_strategy = st.builds(
-    Sample::Book,
+Sample_Book_strategy = st.builds(
+    Sample_Book,
     name=
         safe_text,
     category=
         safe_text
 )
 
-@given(instance=Sample::Library_strategy)
+@given(instance=Sample_Library_strategy)
 @settings(max_examples=50)
-def test_sample::library_instantiation(instance):
-    assert isinstance(instance, Sample::Library)
-
-@given(instance=Sample::Library_strategy)
-def test_sample::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sample_library_instantiation(instance):
+    assert isinstance(instance, Sample_Library)
 
 
-@given(instance=Sample::Library_strategy)
-def test_sample::library_name_setter(instance):
+
+@given(instance=Sample_Library_strategy)
+def test_sample_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Sample::EString_strategy)
+@given(instance=Sample_EString_strategy)
 @settings(max_examples=50)
-def test_sample::estring_instantiation(instance):
-    assert isinstance(instance, Sample::EString)
+def test_sample_estring_instantiation(instance):
+    assert isinstance(instance, Sample_EString)
 
-@given(instance=Sample::Person_strategy)
+@given(instance=Sample_Person_strategy)
 @settings(max_examples=50)
-def test_sample::person_instantiation(instance):
-    assert isinstance(instance, Sample::Person)
-
-@given(instance=Sample::Person_strategy)
-def test_sample::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_sample_person_instantiation(instance):
+    assert isinstance(instance, Sample_Person)
 
 
-@given(instance=Sample::Person_strategy)
-def test_sample::person_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=Sample::Person_strategy)
-def test_sample::person_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=Sample::Person_strategy)
-def test_sample::person_lastName_setter(instance):
+@given(instance=Sample_Person_strategy)
+def test_sample_person_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=Sample::Book_strategy)
+
+
+@given(instance=Sample_Person_strategy)
+def test_sample_person_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+@given(instance=Sample_Book_strategy)
 @settings(max_examples=50)
-def test_sample::book_instantiation(instance):
-    assert isinstance(instance, Sample::Book)
-
-@given(instance=Sample::Book_strategy)
-def test_sample::book_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sample_book_instantiation(instance):
+    assert isinstance(instance, Sample_Book)
 
 
-@given(instance=Sample::Book_strategy)
-def test_sample::book_name_setter(instance):
+
+@given(instance=Sample_Book_strategy)
+def test_sample_book_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Sample::Book_strategy)
-def test_sample::book_category_type(instance):
-    assert isinstance(instance.category, str)
 
 
-@given(instance=Sample::Book_strategy)
-def test_sample::book_category_setter(instance):
+@given(instance=Sample_Book_strategy)
+def test_sample_book_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original

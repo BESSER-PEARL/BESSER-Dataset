@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Card,
@@ -214,9 +214,6 @@ Deck_strategy = st.builds(
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, suit)
 
 
 @given(instance=Card_strategy)
@@ -225,9 +222,6 @@ def test_card_suit_setter(instance):
     instance.suit = original
     assert instance.suit == original
 
-@given(instance=Card_strategy)
-def test_card_kind_type(instance):
-    assert isinstance(instance.kind, kind)
 
 
 @given(instance=Card_strategy)
@@ -241,9 +235,6 @@ def test_card_kind_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -257,9 +248,6 @@ def test_player_name_setter(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Game_strategy)

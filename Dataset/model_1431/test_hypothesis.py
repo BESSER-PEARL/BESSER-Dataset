@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    State,
-    statemachines::almostuml::Pseudostate,
-    statemachines::almostuml::FinalState,
-    statemachines::almostuml::NamedElement,
-    statemachines::almostuml::Constraint,
+from python_code import (
+    statemachines_almostuml_NamedElement,
+    statemachines_almostuml_Constraint,
     Constraint,
     Behavior,
-    almostuml::Vertex,
-    almostuml::NamedElement,
-    statemachines::almostuml::State,
+    almostuml_Vertex,
+    almostuml_NamedElement,
+    statemachines_almostuml_State,
     Transition,
     Vertex,
     Trigger,
     Region,
     NamedElement,
-    statemachines::almostuml::Behavior,
-    statemachines::almostuml::Transition,
-    statemachines::almostuml::Region,
-    statemachines::almostuml::Vertex,
-    statemachines::almostuml::Event,
-    statemachines::almostuml::Trigger,
-    statemachines::almostuml::StateMachine,
+    statemachines_almostuml_Event,
+    statemachines_almostuml_Behavior,
+    statemachines_almostuml_Trigger,
+    statemachines_almostuml_Vertex,
+    statemachines_almostuml_Transition,
+    statemachines_almostuml_Region,
+    statemachines_almostuml_StateMachine,
     Event,
-    statemachines::CustomEvent,
+    statemachines_CustomEvent,
     StateMachine,
-    statemachines::CustomSystem,
+    statemachines_CustomSystem,
+    State,
+    statemachines_almostuml_FinalState,
+    statemachines_almostuml_Pseudostate,
     PseudostateKind,
 )
 
@@ -41,75 +41,23 @@ from classes import (
 
 
 
-def test_state_is_not_abstract():
-    assert not inspect.isabstract(State)
+def test_statemachines_almostuml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_NamedElement)
 
 
-def test_state_constructor_exists():
-    assert callable(State.__init__)
+def test_statemachines_almostuml_namedelement_constructor_exists():
+    assert callable(statemachines_almostuml_NamedElement.__init__)
 
 
-def test_state_constructor_args():
-    sig = inspect.signature(State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachines::almostuml::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Pseudostate)
-
-
-def test_statemachines::almostuml::pseudostate_constructor_exists():
-    assert callable(statemachines::almostuml::Pseudostate.__init__)
-
-
-def test_statemachines::almostuml::pseudostate_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Pseudostate.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_statemachines::almostuml::pseudostate_has_kind():
-    assert hasattr(statemachines::almostuml::Pseudostate, "kind")
-    descriptor = None
-    for klass in statemachines::almostuml::Pseudostate.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachines::almostuml::finalstate_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::FinalState)
-
-
-def test_statemachines::almostuml::finalstate_constructor_exists():
-    assert callable(statemachines::almostuml::FinalState.__init__)
-
-
-def test_statemachines::almostuml::finalstate_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachines::almostuml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::NamedElement)
-
-
-def test_statemachines::almostuml::namedelement_constructor_exists():
-    assert callable(statemachines::almostuml::NamedElement.__init__)
-
-
-def test_statemachines::almostuml::namedelement_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::NamedElement.__init__)
+def test_statemachines_almostuml_namedelement_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachines::almostuml::namedelement_has_name():
-    assert hasattr(statemachines::almostuml::NamedElement, "name")
+def test_statemachines_almostuml_namedelement_has_name():
+    assert hasattr(statemachines_almostuml_NamedElement, "name")
     descriptor = None
-    for klass in statemachines::almostuml::NamedElement.__mro__:
+    for klass in statemachines_almostuml_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -117,16 +65,16 @@ def test_statemachines::almostuml::namedelement_has_name():
 
 
 
-def test_statemachines::almostuml::constraint_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Constraint)
+def test_statemachines_almostuml_constraint_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Constraint)
 
 
-def test_statemachines::almostuml::constraint_constructor_exists():
-    assert callable(statemachines::almostuml::Constraint.__init__)
+def test_statemachines_almostuml_constraint_constructor_exists():
+    assert callable(statemachines_almostuml_Constraint.__init__)
 
 
-def test_statemachines::almostuml::constraint_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Constraint.__init__)
+def test_statemachines_almostuml_constraint_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,44 +107,44 @@ def test_behavior_constructor_args():
 
 
 
-def test_almostuml::vertex_is_not_abstract():
-    assert not inspect.isabstract(almostuml::Vertex)
+def test_almostuml_vertex_is_not_abstract():
+    assert not inspect.isabstract(almostuml_Vertex)
 
 
-def test_almostuml::vertex_constructor_exists():
-    assert callable(almostuml::Vertex.__init__)
+def test_almostuml_vertex_constructor_exists():
+    assert callable(almostuml_Vertex.__init__)
 
 
-def test_almostuml::vertex_constructor_args():
-    sig = inspect.signature(almostuml::Vertex.__init__)
+def test_almostuml_vertex_constructor_args():
+    sig = inspect.signature(almostuml_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_almostuml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(almostuml::NamedElement)
+def test_almostuml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(almostuml_NamedElement)
 
 
-def test_almostuml::namedelement_constructor_exists():
-    assert callable(almostuml::NamedElement.__init__)
+def test_almostuml_namedelement_constructor_exists():
+    assert callable(almostuml_NamedElement.__init__)
 
 
-def test_almostuml::namedelement_constructor_args():
-    sig = inspect.signature(almostuml::NamedElement.__init__)
+def test_almostuml_namedelement_constructor_args():
+    sig = inspect.signature(almostuml_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::state_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::State)
+def test_statemachines_almostuml_state_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_State)
 
 
-def test_statemachines::almostuml::state_constructor_exists():
-    assert callable(statemachines::almostuml::State.__init__)
+def test_statemachines_almostuml_state_constructor_exists():
+    assert callable(statemachines_almostuml_State.__init__)
 
 
-def test_statemachines::almostuml::state_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::State.__init__)
+def test_statemachines_almostuml_state_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -271,100 +219,100 @@ def test_namedelement_constructor_args():
 
 
 
-def test_statemachines::almostuml::behavior_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Behavior)
+def test_statemachines_almostuml_event_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Event)
 
 
-def test_statemachines::almostuml::behavior_constructor_exists():
-    assert callable(statemachines::almostuml::Behavior.__init__)
+def test_statemachines_almostuml_event_constructor_exists():
+    assert callable(statemachines_almostuml_Event.__init__)
 
 
-def test_statemachines::almostuml::behavior_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Behavior.__init__)
+def test_statemachines_almostuml_event_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Transition)
+def test_statemachines_almostuml_behavior_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Behavior)
 
 
-def test_statemachines::almostuml::transition_constructor_exists():
-    assert callable(statemachines::almostuml::Transition.__init__)
+def test_statemachines_almostuml_behavior_constructor_exists():
+    assert callable(statemachines_almostuml_Behavior.__init__)
 
 
-def test_statemachines::almostuml::transition_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Transition.__init__)
+def test_statemachines_almostuml_behavior_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Behavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::region_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Region)
+def test_statemachines_almostuml_trigger_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Trigger)
 
 
-def test_statemachines::almostuml::region_constructor_exists():
-    assert callable(statemachines::almostuml::Region.__init__)
+def test_statemachines_almostuml_trigger_constructor_exists():
+    assert callable(statemachines_almostuml_Trigger.__init__)
 
 
-def test_statemachines::almostuml::region_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Region.__init__)
+def test_statemachines_almostuml_trigger_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::vertex_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Vertex)
+def test_statemachines_almostuml_vertex_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Vertex)
 
 
-def test_statemachines::almostuml::vertex_constructor_exists():
-    assert callable(statemachines::almostuml::Vertex.__init__)
+def test_statemachines_almostuml_vertex_constructor_exists():
+    assert callable(statemachines_almostuml_Vertex.__init__)
 
 
-def test_statemachines::almostuml::vertex_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Vertex.__init__)
+def test_statemachines_almostuml_vertex_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::event_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Event)
+def test_statemachines_almostuml_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Transition)
 
 
-def test_statemachines::almostuml::event_constructor_exists():
-    assert callable(statemachines::almostuml::Event.__init__)
+def test_statemachines_almostuml_transition_constructor_exists():
+    assert callable(statemachines_almostuml_Transition.__init__)
 
 
-def test_statemachines::almostuml::event_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Event.__init__)
+def test_statemachines_almostuml_transition_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::trigger_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::Trigger)
+def test_statemachines_almostuml_region_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Region)
 
 
-def test_statemachines::almostuml::trigger_constructor_exists():
-    assert callable(statemachines::almostuml::Trigger.__init__)
+def test_statemachines_almostuml_region_constructor_exists():
+    assert callable(statemachines_almostuml_Region.__init__)
 
 
-def test_statemachines::almostuml::trigger_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::Trigger.__init__)
+def test_statemachines_almostuml_region_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::almostuml::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachines::almostuml::StateMachine)
+def test_statemachines_almostuml_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_StateMachine)
 
 
-def test_statemachines::almostuml::statemachine_constructor_exists():
-    assert callable(statemachines::almostuml::StateMachine.__init__)
+def test_statemachines_almostuml_statemachine_constructor_exists():
+    assert callable(statemachines_almostuml_StateMachine.__init__)
 
 
-def test_statemachines::almostuml::statemachine_constructor_args():
-    sig = inspect.signature(statemachines::almostuml::StateMachine.__init__)
+def test_statemachines_almostuml_statemachine_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -383,16 +331,16 @@ def test_event_constructor_args():
 
 
 
-def test_statemachines::customevent_is_not_abstract():
-    assert not inspect.isabstract(statemachines::CustomEvent)
+def test_statemachines_customevent_is_not_abstract():
+    assert not inspect.isabstract(statemachines_CustomEvent)
 
 
-def test_statemachines::customevent_constructor_exists():
-    assert callable(statemachines::CustomEvent.__init__)
+def test_statemachines_customevent_constructor_exists():
+    assert callable(statemachines_CustomEvent.__init__)
 
 
-def test_statemachines::customevent_constructor_args():
-    sig = inspect.signature(statemachines::CustomEvent.__init__)
+def test_statemachines_customevent_constructor_args():
+    sig = inspect.signature(statemachines_CustomEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -411,17 +359,69 @@ def test_statemachine_constructor_args():
 
 
 
-def test_statemachines::customsystem_is_not_abstract():
-    assert not inspect.isabstract(statemachines::CustomSystem)
+def test_statemachines_customsystem_is_not_abstract():
+    assert not inspect.isabstract(statemachines_CustomSystem)
 
 
-def test_statemachines::customsystem_constructor_exists():
-    assert callable(statemachines::CustomSystem.__init__)
+def test_statemachines_customsystem_constructor_exists():
+    assert callable(statemachines_CustomSystem.__init__)
 
 
-def test_statemachines::customsystem_constructor_args():
-    sig = inspect.signature(statemachines::CustomSystem.__init__)
+def test_statemachines_customsystem_constructor_args():
+    sig = inspect.signature(statemachines_CustomSystem.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_state_is_not_abstract():
+    assert not inspect.isabstract(State)
+
+
+def test_state_constructor_exists():
+    assert callable(State.__init__)
+
+
+def test_state_constructor_args():
+    sig = inspect.signature(State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachines_almostuml_finalstate_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_FinalState)
+
+
+def test_statemachines_almostuml_finalstate_constructor_exists():
+    assert callable(statemachines_almostuml_FinalState.__init__)
+
+
+def test_statemachines_almostuml_finalstate_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachines_almostuml_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(statemachines_almostuml_Pseudostate)
+
+
+def test_statemachines_almostuml_pseudostate_constructor_exists():
+    assert callable(statemachines_almostuml_Pseudostate.__init__)
+
+
+def test_statemachines_almostuml_pseudostate_constructor_args():
+    sig = inspect.signature(statemachines_almostuml_Pseudostate.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_statemachines_almostuml_pseudostate_has_kind():
+    assert hasattr(statemachines_almostuml_Pseudostate, "kind")
+    descriptor = None
+    for klass in statemachines_almostuml_Pseudostate.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_pseudostatekind_exists():
     # Check that the Enumeration exists
@@ -431,11 +431,11 @@ def test_pseudostatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PseudostateKind]
     expected_literals = [
-        "join",
         "fork",
-        "junction",
-        "choice",
+        "join",
         "initial",
+        "choice",
+        "junction",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -453,24 +453,13 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-State_strategy = st.builds(
-    State,
-)
-statemachines::almostuml::Pseudostate_strategy = st.builds(
-    statemachines::almostuml::Pseudostate,
-    kind=
-        safe_text
-)
-statemachines::almostuml::FinalState_strategy = st.builds(
-    statemachines::almostuml::FinalState,
-)
-statemachines::almostuml::NamedElement_strategy = st.builds(
-    statemachines::almostuml::NamedElement,
+statemachines_almostuml_NamedElement_strategy = st.builds(
+    statemachines_almostuml_NamedElement,
     name=
         safe_text
 )
-statemachines::almostuml::Constraint_strategy = st.builds(
-    statemachines::almostuml::Constraint,
+statemachines_almostuml_Constraint_strategy = st.builds(
+    statemachines_almostuml_Constraint,
 )
 Constraint_strategy = st.builds(
     Constraint,
@@ -478,14 +467,14 @@ Constraint_strategy = st.builds(
 Behavior_strategy = st.builds(
     Behavior,
 )
-almostuml::Vertex_strategy = st.builds(
-    almostuml::Vertex,
+almostuml_Vertex_strategy = st.builds(
+    almostuml_Vertex,
 )
-almostuml::NamedElement_strategy = st.builds(
-    almostuml::NamedElement,
+almostuml_NamedElement_strategy = st.builds(
+    almostuml_NamedElement,
 )
-statemachines::almostuml::State_strategy = st.builds(
-    statemachines::almostuml::State,
+statemachines_almostuml_State_strategy = st.builds(
+    statemachines_almostuml_State,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -502,86 +491,68 @@ Region_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-statemachines::almostuml::Behavior_strategy = st.builds(
-    statemachines::almostuml::Behavior,
+statemachines_almostuml_Event_strategy = st.builds(
+    statemachines_almostuml_Event,
 )
-statemachines::almostuml::Transition_strategy = st.builds(
-    statemachines::almostuml::Transition,
+statemachines_almostuml_Behavior_strategy = st.builds(
+    statemachines_almostuml_Behavior,
 )
-statemachines::almostuml::Region_strategy = st.builds(
-    statemachines::almostuml::Region,
+statemachines_almostuml_Trigger_strategy = st.builds(
+    statemachines_almostuml_Trigger,
 )
-statemachines::almostuml::Vertex_strategy = st.builds(
-    statemachines::almostuml::Vertex,
+statemachines_almostuml_Vertex_strategy = st.builds(
+    statemachines_almostuml_Vertex,
 )
-statemachines::almostuml::Event_strategy = st.builds(
-    statemachines::almostuml::Event,
+statemachines_almostuml_Transition_strategy = st.builds(
+    statemachines_almostuml_Transition,
 )
-statemachines::almostuml::Trigger_strategy = st.builds(
-    statemachines::almostuml::Trigger,
+statemachines_almostuml_Region_strategy = st.builds(
+    statemachines_almostuml_Region,
 )
-statemachines::almostuml::StateMachine_strategy = st.builds(
-    statemachines::almostuml::StateMachine,
+statemachines_almostuml_StateMachine_strategy = st.builds(
+    statemachines_almostuml_StateMachine,
 )
 Event_strategy = st.builds(
     Event,
 )
-statemachines::CustomEvent_strategy = st.builds(
-    statemachines::CustomEvent,
+statemachines_CustomEvent_strategy = st.builds(
+    statemachines_CustomEvent,
 )
 StateMachine_strategy = st.builds(
     StateMachine,
 )
-statemachines::CustomSystem_strategy = st.builds(
-    statemachines::CustomSystem,
+statemachines_CustomSystem_strategy = st.builds(
+    statemachines_CustomSystem,
+)
+State_strategy = st.builds(
+    State,
+)
+statemachines_almostuml_FinalState_strategy = st.builds(
+    statemachines_almostuml_FinalState,
+)
+statemachines_almostuml_Pseudostate_strategy = st.builds(
+    statemachines_almostuml_Pseudostate,
+    kind=
+        safe_text
 )
 
-@given(instance=State_strategy)
+@given(instance=statemachines_almostuml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_state_instantiation(instance):
-    assert isinstance(instance, State)
-
-@given(instance=statemachines::almostuml::Pseudostate_strategy)
-@settings(max_examples=50)
-def test_statemachines::almostuml::pseudostate_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Pseudostate)
-
-@given(instance=statemachines::almostuml::Pseudostate_strategy)
-def test_statemachines::almostuml::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_statemachines_almostuml_namedelement_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_NamedElement)
 
 
-@given(instance=statemachines::almostuml::Pseudostate_strategy)
-def test_statemachines::almostuml::pseudostate_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
 
-@given(instance=statemachines::almostuml::FinalState_strategy)
-@settings(max_examples=50)
-def test_statemachines::almostuml::finalstate_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::FinalState)
-
-@given(instance=statemachines::almostuml::NamedElement_strategy)
-@settings(max_examples=50)
-def test_statemachines::almostuml::namedelement_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::NamedElement)
-
-@given(instance=statemachines::almostuml::NamedElement_strategy)
-def test_statemachines::almostuml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=statemachines::almostuml::NamedElement_strategy)
-def test_statemachines::almostuml::namedelement_name_setter(instance):
+@given(instance=statemachines_almostuml_NamedElement_strategy)
+def test_statemachines_almostuml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachines::almostuml::Constraint_strategy)
+@given(instance=statemachines_almostuml_Constraint_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::constraint_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Constraint)
+def test_statemachines_almostuml_constraint_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Constraint)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
@@ -593,20 +564,20 @@ def test_constraint_instantiation(instance):
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=almostuml::Vertex_strategy)
+@given(instance=almostuml_Vertex_strategy)
 @settings(max_examples=50)
-def test_almostuml::vertex_instantiation(instance):
-    assert isinstance(instance, almostuml::Vertex)
+def test_almostuml_vertex_instantiation(instance):
+    assert isinstance(instance, almostuml_Vertex)
 
-@given(instance=almostuml::NamedElement_strategy)
+@given(instance=almostuml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_almostuml::namedelement_instantiation(instance):
-    assert isinstance(instance, almostuml::NamedElement)
+def test_almostuml_namedelement_instantiation(instance):
+    assert isinstance(instance, almostuml_NamedElement)
 
-@given(instance=statemachines::almostuml::State_strategy)
+@given(instance=statemachines_almostuml_State_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::state_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::State)
+def test_statemachines_almostuml_state_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_State)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -633,57 +604,80 @@ def test_region_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=statemachines::almostuml::Behavior_strategy)
+@given(instance=statemachines_almostuml_Event_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::behavior_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Behavior)
+def test_statemachines_almostuml_event_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Event)
 
-@given(instance=statemachines::almostuml::Transition_strategy)
+@given(instance=statemachines_almostuml_Behavior_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::transition_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Transition)
+def test_statemachines_almostuml_behavior_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Behavior)
 
-@given(instance=statemachines::almostuml::Region_strategy)
+@given(instance=statemachines_almostuml_Trigger_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::region_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Region)
+def test_statemachines_almostuml_trigger_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Trigger)
 
-@given(instance=statemachines::almostuml::Vertex_strategy)
+@given(instance=statemachines_almostuml_Vertex_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::vertex_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Vertex)
+def test_statemachines_almostuml_vertex_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Vertex)
 
-@given(instance=statemachines::almostuml::Event_strategy)
+@given(instance=statemachines_almostuml_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::event_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Event)
+def test_statemachines_almostuml_transition_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Transition)
 
-@given(instance=statemachines::almostuml::Trigger_strategy)
+@given(instance=statemachines_almostuml_Region_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::trigger_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::Trigger)
+def test_statemachines_almostuml_region_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Region)
 
-@given(instance=statemachines::almostuml::StateMachine_strategy)
+@given(instance=statemachines_almostuml_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachines::almostuml::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachines::almostuml::StateMachine)
+def test_statemachines_almostuml_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_StateMachine)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=statemachines::CustomEvent_strategy)
+@given(instance=statemachines_CustomEvent_strategy)
 @settings(max_examples=50)
-def test_statemachines::customevent_instantiation(instance):
-    assert isinstance(instance, statemachines::CustomEvent)
+def test_statemachines_customevent_instantiation(instance):
+    assert isinstance(instance, statemachines_CustomEvent)
 
 @given(instance=StateMachine_strategy)
 @settings(max_examples=50)
 def test_statemachine_instantiation(instance):
     assert isinstance(instance, StateMachine)
 
-@given(instance=statemachines::CustomSystem_strategy)
+@given(instance=statemachines_CustomSystem_strategy)
 @settings(max_examples=50)
-def test_statemachines::customsystem_instantiation(instance):
-    assert isinstance(instance, statemachines::CustomSystem)
+def test_statemachines_customsystem_instantiation(instance):
+    assert isinstance(instance, statemachines_CustomSystem)
+
+@given(instance=State_strategy)
+@settings(max_examples=50)
+def test_state_instantiation(instance):
+    assert isinstance(instance, State)
+
+@given(instance=statemachines_almostuml_FinalState_strategy)
+@settings(max_examples=50)
+def test_statemachines_almostuml_finalstate_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_FinalState)
+
+@given(instance=statemachines_almostuml_Pseudostate_strategy)
+@settings(max_examples=50)
+def test_statemachines_almostuml_pseudostate_instantiation(instance):
+    assert isinstance(instance, statemachines_almostuml_Pseudostate)
+
+
+
+@given(instance=statemachines_almostuml_Pseudostate_strategy)
+def test_statemachines_almostuml_pseudostate_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original

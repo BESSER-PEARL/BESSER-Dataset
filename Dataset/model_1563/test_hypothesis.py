@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    processModels::FlowEdge,
+from python_code import (
+    processModels_FlowEdge,
     Task,
-    processModels::CompositeTask,
+    processModels_CompositeTask,
     Node,
-    processModels::Task,
-    processModels::Node,
-    processModels::ProcessModel,
+    processModels_Task,
+    processModels_Node,
+    processModels_ProcessModel,
 )
 
 # =============================================================================
@@ -21,16 +21,16 @@ from classes import (
 
 
 
-def test_processmodels::flowedge_is_not_abstract():
-    assert not inspect.isabstract(processModels::FlowEdge)
+def test_processmodels_flowedge_is_not_abstract():
+    assert not inspect.isabstract(processModels_FlowEdge)
 
 
-def test_processmodels::flowedge_constructor_exists():
-    assert callable(processModels::FlowEdge.__init__)
+def test_processmodels_flowedge_constructor_exists():
+    assert callable(processModels_FlowEdge.__init__)
 
 
-def test_processmodels::flowedge_constructor_args():
-    sig = inspect.signature(processModels::FlowEdge.__init__)
+def test_processmodels_flowedge_constructor_args():
+    sig = inspect.signature(processModels_FlowEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -49,16 +49,16 @@ def test_task_constructor_args():
 
 
 
-def test_processmodels::compositetask_is_not_abstract():
-    assert not inspect.isabstract(processModels::CompositeTask)
+def test_processmodels_compositetask_is_not_abstract():
+    assert not inspect.isabstract(processModels_CompositeTask)
 
 
-def test_processmodels::compositetask_constructor_exists():
-    assert callable(processModels::CompositeTask.__init__)
+def test_processmodels_compositetask_constructor_exists():
+    assert callable(processModels_CompositeTask.__init__)
 
 
-def test_processmodels::compositetask_constructor_args():
-    sig = inspect.signature(processModels::CompositeTask.__init__)
+def test_processmodels_compositetask_constructor_args():
+    sig = inspect.signature(processModels_CompositeTask.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,44 +77,44 @@ def test_node_constructor_args():
 
 
 
-def test_processmodels::task_is_not_abstract():
-    assert not inspect.isabstract(processModels::Task)
+def test_processmodels_task_is_not_abstract():
+    assert not inspect.isabstract(processModels_Task)
 
 
-def test_processmodels::task_constructor_exists():
-    assert callable(processModels::Task.__init__)
+def test_processmodels_task_constructor_exists():
+    assert callable(processModels_Task.__init__)
 
 
-def test_processmodels::task_constructor_args():
-    sig = inspect.signature(processModels::Task.__init__)
+def test_processmodels_task_constructor_args():
+    sig = inspect.signature(processModels_Task.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_processmodels::node_is_not_abstract():
-    assert not inspect.isabstract(processModels::Node)
+def test_processmodels_node_is_not_abstract():
+    assert not inspect.isabstract(processModels_Node)
 
 
-def test_processmodels::node_constructor_exists():
-    assert callable(processModels::Node.__init__)
+def test_processmodels_node_constructor_exists():
+    assert callable(processModels_Node.__init__)
 
 
-def test_processmodels::node_constructor_args():
-    sig = inspect.signature(processModels::Node.__init__)
+def test_processmodels_node_constructor_args():
+    sig = inspect.signature(processModels_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_processmodels::processmodel_is_not_abstract():
-    assert not inspect.isabstract(processModels::ProcessModel)
+def test_processmodels_processmodel_is_not_abstract():
+    assert not inspect.isabstract(processModels_ProcessModel)
 
 
-def test_processmodels::processmodel_constructor_exists():
-    assert callable(processModels::ProcessModel.__init__)
+def test_processmodels_processmodel_constructor_exists():
+    assert callable(processModels_ProcessModel.__init__)
 
 
-def test_processmodels::processmodel_constructor_args():
-    sig = inspect.signature(processModels::ProcessModel.__init__)
+def test_processmodels_processmodel_constructor_args():
+    sig = inspect.signature(processModels_ProcessModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,32 +129,32 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-processModels::FlowEdge_strategy = st.builds(
-    processModels::FlowEdge,
+processModels_FlowEdge_strategy = st.builds(
+    processModels_FlowEdge,
 )
 Task_strategy = st.builds(
     Task,
 )
-processModels::CompositeTask_strategy = st.builds(
-    processModels::CompositeTask,
+processModels_CompositeTask_strategy = st.builds(
+    processModels_CompositeTask,
 )
 Node_strategy = st.builds(
     Node,
 )
-processModels::Task_strategy = st.builds(
-    processModels::Task,
+processModels_Task_strategy = st.builds(
+    processModels_Task,
 )
-processModels::Node_strategy = st.builds(
-    processModels::Node,
+processModels_Node_strategy = st.builds(
+    processModels_Node,
 )
-processModels::ProcessModel_strategy = st.builds(
-    processModels::ProcessModel,
+processModels_ProcessModel_strategy = st.builds(
+    processModels_ProcessModel,
 )
 
-@given(instance=processModels::FlowEdge_strategy)
+@given(instance=processModels_FlowEdge_strategy)
 @settings(max_examples=50)
-def test_processmodels::flowedge_instantiation(instance):
-    assert isinstance(instance, processModels::FlowEdge)
+def test_processmodels_flowedge_instantiation(instance):
+    assert isinstance(instance, processModels_FlowEdge)
 
 import warnings
 import copy
@@ -162,38 +162,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=processModels::FlowEdge_strategy)
+@given(instance=processModels_FlowEdge_strategy)
 @settings(max_examples=30)
-def test_processmodels::flowedge_input_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.input()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.input).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'input' in processModels::FlowEdge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'input' in processModels::FlowEdge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'input' in processModels::FlowEdge is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=processModels::FlowEdge_strategy)
-@settings(max_examples=30)
-def test_processmodels::flowedge_output_changes_state(instance):
+def test_processmodels_flowedge_output_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -205,34 +176,14 @@ def test_processmodels::flowedge_output_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'output' in processModels::FlowEdge is empty"
+        assert has_statements, f"Function 'output' in processModels_FlowEdge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'output' in processModels::FlowEdge did not change state; check implementation")
+            warnings.warn(f"Operation 'output' in processModels_FlowEdge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'output' in processModels::FlowEdge is not implemented or raised an error")
-
-@given(instance=Task_strategy)
-@settings(max_examples=50)
-def test_task_instantiation(instance):
-    assert isinstance(instance, Task)
-
-@given(instance=processModels::CompositeTask_strategy)
-@settings(max_examples=50)
-def test_processmodels::compositetask_instantiation(instance):
-    assert isinstance(instance, processModels::CompositeTask)
-
-@given(instance=Node_strategy)
-@settings(max_examples=50)
-def test_node_instantiation(instance):
-    assert isinstance(instance, Node)
-
-@given(instance=processModels::Task_strategy)
-@settings(max_examples=50)
-def test_processmodels::task_instantiation(instance):
-    assert isinstance(instance, processModels::Task)
+        warnings.warn(f"Operation 'output' in processModels_FlowEdge is not implemented or raised an error")
 
 import warnings
 import copy
@@ -240,9 +191,58 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=processModels::Task_strategy)
+@given(instance=processModels_FlowEdge_strategy)
 @settings(max_examples=30)
-def test_processmodels::task_name_changes_state(instance):
+def test_processmodels_flowedge_input_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.input()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.input).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'input' in processModels_FlowEdge is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'input' in processModels_FlowEdge did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'input' in processModels_FlowEdge is not implemented or raised an error")
+
+@given(instance=Task_strategy)
+@settings(max_examples=50)
+def test_task_instantiation(instance):
+    assert isinstance(instance, Task)
+
+@given(instance=processModels_CompositeTask_strategy)
+@settings(max_examples=50)
+def test_processmodels_compositetask_instantiation(instance):
+    assert isinstance(instance, processModels_CompositeTask)
+
+@given(instance=Node_strategy)
+@settings(max_examples=50)
+def test_node_instantiation(instance):
+    assert isinstance(instance, Node)
+
+@given(instance=processModels_Task_strategy)
+@settings(max_examples=50)
+def test_processmodels_task_instantiation(instance):
+    assert isinstance(instance, processModels_Task)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=processModels_Task_strategy)
+@settings(max_examples=30)
+def test_processmodels_task_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -254,24 +254,24 @@ def test_processmodels::task_name_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'name' in processModels::Task is empty"
+        assert has_statements, f"Function 'name' in processModels_Task is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'name' in processModels::Task did not change state; check implementation")
+            warnings.warn(f"Operation 'name' in processModels_Task did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'name' in processModels::Task is not implemented or raised an error")
+        warnings.warn(f"Operation 'name' in processModels_Task is not implemented or raised an error")
 
-@given(instance=processModels::Node_strategy)
+@given(instance=processModels_Node_strategy)
 @settings(max_examples=50)
-def test_processmodels::node_instantiation(instance):
-    assert isinstance(instance, processModels::Node)
+def test_processmodels_node_instantiation(instance):
+    assert isinstance(instance, processModels_Node)
 
-@given(instance=processModels::ProcessModel_strategy)
+@given(instance=processModels_ProcessModel_strategy)
 @settings(max_examples=50)
-def test_processmodels::processmodel_instantiation(instance):
-    assert isinstance(instance, processModels::ProcessModel)
+def test_processmodels_processmodel_instantiation(instance):
+    assert isinstance(instance, processModels_ProcessModel)
 
 import warnings
 import copy
@@ -279,38 +279,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=processModels::ProcessModel_strategy)
+@given(instance=processModels_ProcessModel_strategy)
 @settings(max_examples=30)
-def test_processmodels::processmodel_edges_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.edges()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.edges).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'edges' in processModels::ProcessModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'edges' in processModels::ProcessModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'edges' in processModels::ProcessModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=processModels::ProcessModel_strategy)
-@settings(max_examples=30)
-def test_processmodels::processmodel_nodes_changes_state(instance):
+def test_processmodels_processmodel_nodes_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -322,14 +293,14 @@ def test_processmodels::processmodel_nodes_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'nodes' in processModels::ProcessModel is empty"
+        assert has_statements, f"Function 'nodes' in processModels_ProcessModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'nodes' in processModels::ProcessModel did not change state; check implementation")
+            warnings.warn(f"Operation 'nodes' in processModels_ProcessModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'nodes' in processModels::ProcessModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'nodes' in processModels_ProcessModel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -337,9 +308,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=processModels::ProcessModel_strategy)
+@given(instance=processModels_ProcessModel_strategy)
 @settings(max_examples=30)
-def test_processmodels::processmodel_terminatingtasks_changes_state(instance):
+def test_processmodels_processmodel_edges_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.edges()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.edges).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'edges' in processModels_ProcessModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'edges' in processModels_ProcessModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'edges' in processModels_ProcessModel is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=processModels_ProcessModel_strategy)
+@settings(max_examples=30)
+def test_processmodels_processmodel_terminatingtasks_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -351,11 +351,11 @@ def test_processmodels::processmodel_terminatingtasks_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'terminatingTasks' in processModels::ProcessModel is empty"
+        assert has_statements, f"Function 'terminatingTasks' in processModels_ProcessModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'terminatingTasks' in processModels::ProcessModel did not change state; check implementation")
+            warnings.warn(f"Operation 'terminatingTasks' in processModels_ProcessModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'terminatingTasks' in processModels::ProcessModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'terminatingTasks' in processModels_ProcessModel is not implemented or raised an error")

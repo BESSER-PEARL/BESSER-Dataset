@@ -3,44 +3,44 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    gpfl::State,
+from python_code import (
+    gpfl_State,
     GExpression,
-    gpfl::AutomatonCmd,
-    gpfl::OutPort,
-    gpfl::CmdAdd,
-    gpfl::SetCmd,
-    gpfl::InPort,
-    gpfl::IterStmt,
-    gpfl::StringLit,
-    gpfl::Variable,
-    gpfl::CmdGCompare,
-    gpfl::AlarmCmd,
-    gpfl::CmdGECompare,
-    gpfl::CmdEq,
-    gpfl::NopCmd,
-    gpfl::CmdAnd,
-    gpfl::CmdNEq,
-    gpfl::GBoolFalse,
-    gpfl::IntLitCmd,
-    gpfl::PortLit,
-    gpfl::DropCmd,
-    gpfl::AcceptCmd,
-    gpfl::InterruptStmt,
-    gpfl::GBoolTrue,
-    gpfl::CmdLCompare,
-    gpfl::StpCmd,
-    gpfl::SendCmd,
-    gpfl::CmdLECompare,
-    gpfl::CmdSub,
-    gpfl::CondStmt,
-    gpfl::Transition,
-    gpfl::Field,
-    gpfl::GExpression,
-    gpfl::AutomataDef,
-    gpfl::Program,
+    gpfl_GBoolTrue,
+    gpfl_CmdLECompare,
+    gpfl_CmdAnd,
+    gpfl_CmdAdd,
+    gpfl_InPort,
+    gpfl_StringLit,
+    gpfl_StpCmd,
+    gpfl_OutPort,
+    gpfl_IntLitCmd,
+    gpfl_CmdEq,
+    gpfl_CmdSub,
+    gpfl_SendCmd,
+    gpfl_AcceptCmd,
+    gpfl_AutomatonCmd,
+    gpfl_CmdGECompare,
+    gpfl_SetCmd,
+    gpfl_AlarmCmd,
+    gpfl_CmdGCompare,
+    gpfl_Variable,
+    gpfl_CmdLCompare,
+    gpfl_InterruptStmt,
+    gpfl_GBoolFalse,
+    gpfl_PortLit,
+    gpfl_DropCmd,
+    gpfl_IterStmt,
+    gpfl_NopCmd,
+    gpfl_CmdNEq,
+    gpfl_CondStmt,
+    gpfl_Transition,
+    gpfl_Field,
+    gpfl_GExpression,
+    gpfl_AutomataDef,
+    gpfl_Program,
 )
 
 # =============================================================================
@@ -49,23 +49,23 @@ from classes import (
 
 
 
-def test_gpfl::state_is_not_abstract():
-    assert not inspect.isabstract(gpfl::State)
+def test_gpfl_state_is_not_abstract():
+    assert not inspect.isabstract(gpfl_State)
 
 
-def test_gpfl::state_constructor_exists():
-    assert callable(gpfl::State.__init__)
+def test_gpfl_state_constructor_exists():
+    assert callable(gpfl_State.__init__)
 
 
-def test_gpfl::state_constructor_args():
-    sig = inspect.signature(gpfl::State.__init__)
+def test_gpfl_state_constructor_args():
+    sig = inspect.signature(gpfl_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gpfl::state_has_name():
-    assert hasattr(gpfl::State, "name")
+def test_gpfl_state_has_name():
+    assert hasattr(gpfl_State, "name")
     descriptor = None
-    for klass in gpfl::State.__mro__:
+    for klass in gpfl_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -87,23 +87,225 @@ def test_gexpression_constructor_args():
 
 
 
-def test_gpfl::automatoncmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::AutomatonCmd)
+def test_gpfl_gbooltrue_is_not_abstract():
+    assert not inspect.isabstract(gpfl_GBoolTrue)
 
 
-def test_gpfl::automatoncmd_constructor_exists():
-    assert callable(gpfl::AutomatonCmd.__init__)
+def test_gpfl_gbooltrue_constructor_exists():
+    assert callable(gpfl_GBoolTrue.__init__)
 
 
-def test_gpfl::automatoncmd_constructor_args():
-    sig = inspect.signature(gpfl::AutomatonCmd.__init__)
+def test_gpfl_gbooltrue_constructor_args():
+    sig = inspect.signature(gpfl_GBoolTrue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_cmdlecompare_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdLECompare)
+
+
+def test_gpfl_cmdlecompare_constructor_exists():
+    assert callable(gpfl_CmdLECompare.__init__)
+
+
+def test_gpfl_cmdlecompare_constructor_args():
+    sig = inspect.signature(gpfl_CmdLECompare.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_cmdand_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdAnd)
+
+
+def test_gpfl_cmdand_constructor_exists():
+    assert callable(gpfl_CmdAnd.__init__)
+
+
+def test_gpfl_cmdand_constructor_args():
+    sig = inspect.signature(gpfl_CmdAnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_cmdadd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdAdd)
+
+
+def test_gpfl_cmdadd_constructor_exists():
+    assert callable(gpfl_CmdAdd.__init__)
+
+
+def test_gpfl_cmdadd_constructor_args():
+    sig = inspect.signature(gpfl_CmdAdd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_inport_is_not_abstract():
+    assert not inspect.isabstract(gpfl_InPort)
+
+
+def test_gpfl_inport_constructor_exists():
+    assert callable(gpfl_InPort.__init__)
+
+
+def test_gpfl_inport_constructor_args():
+    sig = inspect.signature(gpfl_InPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_stringlit_is_not_abstract():
+    assert not inspect.isabstract(gpfl_StringLit)
+
+
+def test_gpfl_stringlit_constructor_exists():
+    assert callable(gpfl_StringLit.__init__)
+
+
+def test_gpfl_stringlit_constructor_args():
+    sig = inspect.signature(gpfl_StringLit.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_gpfl_stringlit_has_value():
+    assert hasattr(gpfl_StringLit, "value")
+    descriptor = None
+    for klass in gpfl_StringLit.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gpfl_stpcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_StpCmd)
+
+
+def test_gpfl_stpcmd_constructor_exists():
+    assert callable(gpfl_StpCmd.__init__)
+
+
+def test_gpfl_stpcmd_constructor_args():
+    sig = inspect.signature(gpfl_StpCmd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_outport_is_not_abstract():
+    assert not inspect.isabstract(gpfl_OutPort)
+
+
+def test_gpfl_outport_constructor_exists():
+    assert callable(gpfl_OutPort.__init__)
+
+
+def test_gpfl_outport_constructor_args():
+    sig = inspect.signature(gpfl_OutPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_intlitcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_IntLitCmd)
+
+
+def test_gpfl_intlitcmd_constructor_exists():
+    assert callable(gpfl_IntLitCmd.__init__)
+
+
+def test_gpfl_intlitcmd_constructor_args():
+    sig = inspect.signature(gpfl_IntLitCmd.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_gpfl_intlitcmd_has_value():
+    assert hasattr(gpfl_IntLitCmd, "value")
+    descriptor = None
+    for klass in gpfl_IntLitCmd.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gpfl_cmdeq_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdEq)
+
+
+def test_gpfl_cmdeq_constructor_exists():
+    assert callable(gpfl_CmdEq.__init__)
+
+
+def test_gpfl_cmdeq_constructor_args():
+    sig = inspect.signature(gpfl_CmdEq.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_cmdsub_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdSub)
+
+
+def test_gpfl_cmdsub_constructor_exists():
+    assert callable(gpfl_CmdSub.__init__)
+
+
+def test_gpfl_cmdsub_constructor_args():
+    sig = inspect.signature(gpfl_CmdSub.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_sendcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_SendCmd)
+
+
+def test_gpfl_sendcmd_constructor_exists():
+    assert callable(gpfl_SendCmd.__init__)
+
+
+def test_gpfl_sendcmd_constructor_args():
+    sig = inspect.signature(gpfl_SendCmd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_acceptcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_AcceptCmd)
+
+
+def test_gpfl_acceptcmd_constructor_exists():
+    assert callable(gpfl_AcceptCmd.__init__)
+
+
+def test_gpfl_acceptcmd_constructor_args():
+    sig = inspect.signature(gpfl_AcceptCmd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gpfl_automatoncmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_AutomatonCmd)
+
+
+def test_gpfl_automatoncmd_constructor_exists():
+    assert callable(gpfl_AutomatonCmd.__init__)
+
+
+def test_gpfl_automatoncmd_constructor_args():
+    sig = inspect.signature(gpfl_AutomatonCmd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gpfl::automatoncmd_has_name():
-    assert hasattr(gpfl::AutomatonCmd, "name")
+def test_gpfl_automatoncmd_has_name():
+    assert hasattr(gpfl_AutomatonCmd, "name")
     descriptor = None
-    for klass in gpfl::AutomatonCmd.__mro__:
+    for klass in gpfl_AutomatonCmd.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -111,51 +313,37 @@ def test_gpfl::automatoncmd_has_name():
 
 
 
-def test_gpfl::outport_is_not_abstract():
-    assert not inspect.isabstract(gpfl::OutPort)
+def test_gpfl_cmdgecompare_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdGECompare)
 
 
-def test_gpfl::outport_constructor_exists():
-    assert callable(gpfl::OutPort.__init__)
+def test_gpfl_cmdgecompare_constructor_exists():
+    assert callable(gpfl_CmdGECompare.__init__)
 
 
-def test_gpfl::outport_constructor_args():
-    sig = inspect.signature(gpfl::OutPort.__init__)
+def test_gpfl_cmdgecompare_constructor_args():
+    sig = inspect.signature(gpfl_CmdGECompare.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::cmdadd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdAdd)
+def test_gpfl_setcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_SetCmd)
 
 
-def test_gpfl::cmdadd_constructor_exists():
-    assert callable(gpfl::CmdAdd.__init__)
+def test_gpfl_setcmd_constructor_exists():
+    assert callable(gpfl_SetCmd.__init__)
 
 
-def test_gpfl::cmdadd_constructor_args():
-    sig = inspect.signature(gpfl::CmdAdd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::setcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::SetCmd)
-
-
-def test_gpfl::setcmd_constructor_exists():
-    assert callable(gpfl::SetCmd.__init__)
-
-
-def test_gpfl::setcmd_constructor_args():
-    sig = inspect.signature(gpfl::SetCmd.__init__)
+def test_gpfl_setcmd_constructor_args():
+    sig = inspect.signature(gpfl_SetCmd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gpfl::setcmd_has_name():
-    assert hasattr(gpfl::SetCmd, "name")
+def test_gpfl_setcmd_has_name():
+    assert hasattr(gpfl_SetCmd, "name")
     descriptor = None
-    for klass in gpfl::SetCmd.__mro__:
+    for klass in gpfl_SetCmd.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -163,51 +351,51 @@ def test_gpfl::setcmd_has_name():
 
 
 
-def test_gpfl::inport_is_not_abstract():
-    assert not inspect.isabstract(gpfl::InPort)
+def test_gpfl_alarmcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_AlarmCmd)
 
 
-def test_gpfl::inport_constructor_exists():
-    assert callable(gpfl::InPort.__init__)
+def test_gpfl_alarmcmd_constructor_exists():
+    assert callable(gpfl_AlarmCmd.__init__)
 
 
-def test_gpfl::inport_constructor_args():
-    sig = inspect.signature(gpfl::InPort.__init__)
+def test_gpfl_alarmcmd_constructor_args():
+    sig = inspect.signature(gpfl_AlarmCmd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::iterstmt_is_not_abstract():
-    assert not inspect.isabstract(gpfl::IterStmt)
+def test_gpfl_cmdgcompare_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdGCompare)
 
 
-def test_gpfl::iterstmt_constructor_exists():
-    assert callable(gpfl::IterStmt.__init__)
+def test_gpfl_cmdgcompare_constructor_exists():
+    assert callable(gpfl_CmdGCompare.__init__)
 
 
-def test_gpfl::iterstmt_constructor_args():
-    sig = inspect.signature(gpfl::IterStmt.__init__)
+def test_gpfl_cmdgcompare_constructor_args():
+    sig = inspect.signature(gpfl_CmdGCompare.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::stringlit_is_not_abstract():
-    assert not inspect.isabstract(gpfl::StringLit)
+def test_gpfl_variable_is_not_abstract():
+    assert not inspect.isabstract(gpfl_Variable)
 
 
-def test_gpfl::stringlit_constructor_exists():
-    assert callable(gpfl::StringLit.__init__)
+def test_gpfl_variable_constructor_exists():
+    assert callable(gpfl_Variable.__init__)
 
 
-def test_gpfl::stringlit_constructor_args():
-    sig = inspect.signature(gpfl::StringLit.__init__)
+def test_gpfl_variable_constructor_args():
+    sig = inspect.signature(gpfl_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_gpfl::stringlit_has_value():
-    assert hasattr(gpfl::StringLit, "value")
+def test_gpfl_variable_has_value():
+    assert hasattr(gpfl_Variable, "value")
     descriptor = None
-    for klass in gpfl::StringLit.__mro__:
+    for klass in gpfl_Variable.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -215,235 +403,37 @@ def test_gpfl::stringlit_has_value():
 
 
 
-def test_gpfl::variable_is_not_abstract():
-    assert not inspect.isabstract(gpfl::Variable)
+def test_gpfl_cmdlcompare_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdLCompare)
 
 
-def test_gpfl::variable_constructor_exists():
-    assert callable(gpfl::Variable.__init__)
+def test_gpfl_cmdlcompare_constructor_exists():
+    assert callable(gpfl_CmdLCompare.__init__)
 
 
-def test_gpfl::variable_constructor_args():
-    sig = inspect.signature(gpfl::Variable.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_gpfl::variable_has_value():
-    assert hasattr(gpfl::Variable, "value")
-    descriptor = None
-    for klass in gpfl::Variable.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gpfl::cmdgcompare_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdGCompare)
-
-
-def test_gpfl::cmdgcompare_constructor_exists():
-    assert callable(gpfl::CmdGCompare.__init__)
-
-
-def test_gpfl::cmdgcompare_constructor_args():
-    sig = inspect.signature(gpfl::CmdGCompare.__init__)
+def test_gpfl_cmdlcompare_constructor_args():
+    sig = inspect.signature(gpfl_CmdLCompare.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::alarmcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::AlarmCmd)
+def test_gpfl_interruptstmt_is_not_abstract():
+    assert not inspect.isabstract(gpfl_InterruptStmt)
 
 
-def test_gpfl::alarmcmd_constructor_exists():
-    assert callable(gpfl::AlarmCmd.__init__)
+def test_gpfl_interruptstmt_constructor_exists():
+    assert callable(gpfl_InterruptStmt.__init__)
 
 
-def test_gpfl::alarmcmd_constructor_args():
-    sig = inspect.signature(gpfl::AlarmCmd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::cmdgecompare_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdGECompare)
-
-
-def test_gpfl::cmdgecompare_constructor_exists():
-    assert callable(gpfl::CmdGECompare.__init__)
-
-
-def test_gpfl::cmdgecompare_constructor_args():
-    sig = inspect.signature(gpfl::CmdGECompare.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::cmdeq_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdEq)
-
-
-def test_gpfl::cmdeq_constructor_exists():
-    assert callable(gpfl::CmdEq.__init__)
-
-
-def test_gpfl::cmdeq_constructor_args():
-    sig = inspect.signature(gpfl::CmdEq.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::nopcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::NopCmd)
-
-
-def test_gpfl::nopcmd_constructor_exists():
-    assert callable(gpfl::NopCmd.__init__)
-
-
-def test_gpfl::nopcmd_constructor_args():
-    sig = inspect.signature(gpfl::NopCmd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::cmdand_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdAnd)
-
-
-def test_gpfl::cmdand_constructor_exists():
-    assert callable(gpfl::CmdAnd.__init__)
-
-
-def test_gpfl::cmdand_constructor_args():
-    sig = inspect.signature(gpfl::CmdAnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::cmdneq_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdNEq)
-
-
-def test_gpfl::cmdneq_constructor_exists():
-    assert callable(gpfl::CmdNEq.__init__)
-
-
-def test_gpfl::cmdneq_constructor_args():
-    sig = inspect.signature(gpfl::CmdNEq.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::gboolfalse_is_not_abstract():
-    assert not inspect.isabstract(gpfl::GBoolFalse)
-
-
-def test_gpfl::gboolfalse_constructor_exists():
-    assert callable(gpfl::GBoolFalse.__init__)
-
-
-def test_gpfl::gboolfalse_constructor_args():
-    sig = inspect.signature(gpfl::GBoolFalse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::intlitcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::IntLitCmd)
-
-
-def test_gpfl::intlitcmd_constructor_exists():
-    assert callable(gpfl::IntLitCmd.__init__)
-
-
-def test_gpfl::intlitcmd_constructor_args():
-    sig = inspect.signature(gpfl::IntLitCmd.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_gpfl::intlitcmd_has_value():
-    assert hasattr(gpfl::IntLitCmd, "value")
-    descriptor = None
-    for klass in gpfl::IntLitCmd.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gpfl::portlit_is_not_abstract():
-    assert not inspect.isabstract(gpfl::PortLit)
-
-
-def test_gpfl::portlit_constructor_exists():
-    assert callable(gpfl::PortLit.__init__)
-
-
-def test_gpfl::portlit_constructor_args():
-    sig = inspect.signature(gpfl::PortLit.__init__)
-    params = list(sig.parameters.keys())
-    assert "inSide" in params, "Missing parameter 'inSide'"
-
-def test_gpfl::portlit_has_inSide():
-    assert hasattr(gpfl::PortLit, "inSide")
-    descriptor = None
-    for klass in gpfl::PortLit.__mro__:
-        if "inSide" in klass.__dict__:
-            descriptor = klass.__dict__["inSide"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gpfl::dropcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::DropCmd)
-
-
-def test_gpfl::dropcmd_constructor_exists():
-    assert callable(gpfl::DropCmd.__init__)
-
-
-def test_gpfl::dropcmd_constructor_args():
-    sig = inspect.signature(gpfl::DropCmd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::acceptcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::AcceptCmd)
-
-
-def test_gpfl::acceptcmd_constructor_exists():
-    assert callable(gpfl::AcceptCmd.__init__)
-
-
-def test_gpfl::acceptcmd_constructor_args():
-    sig = inspect.signature(gpfl::AcceptCmd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::interruptstmt_is_not_abstract():
-    assert not inspect.isabstract(gpfl::InterruptStmt)
-
-
-def test_gpfl::interruptstmt_constructor_exists():
-    assert callable(gpfl::InterruptStmt.__init__)
-
-
-def test_gpfl::interruptstmt_constructor_args():
-    sig = inspect.signature(gpfl::InterruptStmt.__init__)
+def test_gpfl_interruptstmt_constructor_args():
+    sig = inspect.signature(gpfl_InterruptStmt.__init__)
     params = list(sig.parameters.keys())
     assert "timeout" in params, "Missing parameter 'timeout'"
 
-def test_gpfl::interruptstmt_has_timeout():
-    assert hasattr(gpfl::InterruptStmt, "timeout")
+def test_gpfl_interruptstmt_has_timeout():
+    assert hasattr(gpfl_InterruptStmt, "timeout")
     descriptor = None
-    for klass in gpfl::InterruptStmt.__mro__:
+    for klass in gpfl_InterruptStmt.__mro__:
         if "timeout" in klass.__dict__:
             descriptor = klass.__dict__["timeout"]
             break
@@ -451,121 +441,131 @@ def test_gpfl::interruptstmt_has_timeout():
 
 
 
-def test_gpfl::gbooltrue_is_not_abstract():
-    assert not inspect.isabstract(gpfl::GBoolTrue)
+def test_gpfl_gboolfalse_is_not_abstract():
+    assert not inspect.isabstract(gpfl_GBoolFalse)
 
 
-def test_gpfl::gbooltrue_constructor_exists():
-    assert callable(gpfl::GBoolTrue.__init__)
+def test_gpfl_gboolfalse_constructor_exists():
+    assert callable(gpfl_GBoolFalse.__init__)
 
 
-def test_gpfl::gbooltrue_constructor_args():
-    sig = inspect.signature(gpfl::GBoolTrue.__init__)
+def test_gpfl_gboolfalse_constructor_args():
+    sig = inspect.signature(gpfl_GBoolFalse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::cmdlcompare_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdLCompare)
+def test_gpfl_portlit_is_not_abstract():
+    assert not inspect.isabstract(gpfl_PortLit)
 
 
-def test_gpfl::cmdlcompare_constructor_exists():
-    assert callable(gpfl::CmdLCompare.__init__)
+def test_gpfl_portlit_constructor_exists():
+    assert callable(gpfl_PortLit.__init__)
 
 
-def test_gpfl::cmdlcompare_constructor_args():
-    sig = inspect.signature(gpfl::CmdLCompare.__init__)
+def test_gpfl_portlit_constructor_args():
+    sig = inspect.signature(gpfl_PortLit.__init__)
+    params = list(sig.parameters.keys())
+    assert "inSide" in params, "Missing parameter 'inSide'"
+
+def test_gpfl_portlit_has_inSide():
+    assert hasattr(gpfl_PortLit, "inSide")
+    descriptor = None
+    for klass in gpfl_PortLit.__mro__:
+        if "inSide" in klass.__dict__:
+            descriptor = klass.__dict__["inSide"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gpfl_dropcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_DropCmd)
+
+
+def test_gpfl_dropcmd_constructor_exists():
+    assert callable(gpfl_DropCmd.__init__)
+
+
+def test_gpfl_dropcmd_constructor_args():
+    sig = inspect.signature(gpfl_DropCmd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::stpcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::StpCmd)
+def test_gpfl_iterstmt_is_not_abstract():
+    assert not inspect.isabstract(gpfl_IterStmt)
 
 
-def test_gpfl::stpcmd_constructor_exists():
-    assert callable(gpfl::StpCmd.__init__)
+def test_gpfl_iterstmt_constructor_exists():
+    assert callable(gpfl_IterStmt.__init__)
 
 
-def test_gpfl::stpcmd_constructor_args():
-    sig = inspect.signature(gpfl::StpCmd.__init__)
+def test_gpfl_iterstmt_constructor_args():
+    sig = inspect.signature(gpfl_IterStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::sendcmd_is_not_abstract():
-    assert not inspect.isabstract(gpfl::SendCmd)
+def test_gpfl_nopcmd_is_not_abstract():
+    assert not inspect.isabstract(gpfl_NopCmd)
 
 
-def test_gpfl::sendcmd_constructor_exists():
-    assert callable(gpfl::SendCmd.__init__)
+def test_gpfl_nopcmd_constructor_exists():
+    assert callable(gpfl_NopCmd.__init__)
 
 
-def test_gpfl::sendcmd_constructor_args():
-    sig = inspect.signature(gpfl::SendCmd.__init__)
+def test_gpfl_nopcmd_constructor_args():
+    sig = inspect.signature(gpfl_NopCmd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::cmdlecompare_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdLECompare)
+def test_gpfl_cmdneq_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CmdNEq)
 
 
-def test_gpfl::cmdlecompare_constructor_exists():
-    assert callable(gpfl::CmdLECompare.__init__)
+def test_gpfl_cmdneq_constructor_exists():
+    assert callable(gpfl_CmdNEq.__init__)
 
 
-def test_gpfl::cmdlecompare_constructor_args():
-    sig = inspect.signature(gpfl::CmdLECompare.__init__)
+def test_gpfl_cmdneq_constructor_args():
+    sig = inspect.signature(gpfl_CmdNEq.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::cmdsub_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CmdSub)
+def test_gpfl_condstmt_is_not_abstract():
+    assert not inspect.isabstract(gpfl_CondStmt)
 
 
-def test_gpfl::cmdsub_constructor_exists():
-    assert callable(gpfl::CmdSub.__init__)
+def test_gpfl_condstmt_constructor_exists():
+    assert callable(gpfl_CondStmt.__init__)
 
 
-def test_gpfl::cmdsub_constructor_args():
-    sig = inspect.signature(gpfl::CmdSub.__init__)
+def test_gpfl_condstmt_constructor_args():
+    sig = inspect.signature(gpfl_CondStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::condstmt_is_not_abstract():
-    assert not inspect.isabstract(gpfl::CondStmt)
+def test_gpfl_transition_is_not_abstract():
+    assert not inspect.isabstract(gpfl_Transition)
 
 
-def test_gpfl::condstmt_constructor_exists():
-    assert callable(gpfl::CondStmt.__init__)
+def test_gpfl_transition_constructor_exists():
+    assert callable(gpfl_Transition.__init__)
 
 
-def test_gpfl::condstmt_constructor_args():
-    sig = inspect.signature(gpfl::CondStmt.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gpfl::transition_is_not_abstract():
-    assert not inspect.isabstract(gpfl::Transition)
-
-
-def test_gpfl::transition_constructor_exists():
-    assert callable(gpfl::Transition.__init__)
-
-
-def test_gpfl::transition_constructor_args():
-    sig = inspect.signature(gpfl::Transition.__init__)
+def test_gpfl_transition_constructor_args():
+    sig = inspect.signature(gpfl_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_gpfl::transition_has_event():
-    assert hasattr(gpfl::Transition, "event")
+def test_gpfl_transition_has_event():
+    assert hasattr(gpfl_Transition, "event")
     descriptor = None
-    for klass in gpfl::Transition.__mro__:
+    for klass in gpfl_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -573,23 +573,23 @@ def test_gpfl::transition_has_event():
 
 
 
-def test_gpfl::field_is_not_abstract():
-    assert not inspect.isabstract(gpfl::Field)
+def test_gpfl_field_is_not_abstract():
+    assert not inspect.isabstract(gpfl_Field)
 
 
-def test_gpfl::field_constructor_exists():
-    assert callable(gpfl::Field.__init__)
+def test_gpfl_field_constructor_exists():
+    assert callable(gpfl_Field.__init__)
 
 
-def test_gpfl::field_constructor_args():
-    sig = inspect.signature(gpfl::Field.__init__)
+def test_gpfl_field_constructor_args():
+    sig = inspect.signature(gpfl_Field.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gpfl::field_has_name():
-    assert hasattr(gpfl::Field, "name")
+def test_gpfl_field_has_name():
+    assert hasattr(gpfl_Field, "name")
     descriptor = None
-    for klass in gpfl::Field.__mro__:
+    for klass in gpfl_Field.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -597,37 +597,37 @@ def test_gpfl::field_has_name():
 
 
 
-def test_gpfl::gexpression_is_not_abstract():
-    assert not inspect.isabstract(gpfl::GExpression)
+def test_gpfl_gexpression_is_not_abstract():
+    assert not inspect.isabstract(gpfl_GExpression)
 
 
-def test_gpfl::gexpression_constructor_exists():
-    assert callable(gpfl::GExpression.__init__)
+def test_gpfl_gexpression_constructor_exists():
+    assert callable(gpfl_GExpression.__init__)
 
 
-def test_gpfl::gexpression_constructor_args():
-    sig = inspect.signature(gpfl::GExpression.__init__)
+def test_gpfl_gexpression_constructor_args():
+    sig = inspect.signature(gpfl_GExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gpfl::automatadef_is_not_abstract():
-    assert not inspect.isabstract(gpfl::AutomataDef)
+def test_gpfl_automatadef_is_not_abstract():
+    assert not inspect.isabstract(gpfl_AutomataDef)
 
 
-def test_gpfl::automatadef_constructor_exists():
-    assert callable(gpfl::AutomataDef.__init__)
+def test_gpfl_automatadef_constructor_exists():
+    assert callable(gpfl_AutomataDef.__init__)
 
 
-def test_gpfl::automatadef_constructor_args():
-    sig = inspect.signature(gpfl::AutomataDef.__init__)
+def test_gpfl_automatadef_constructor_args():
+    sig = inspect.signature(gpfl_AutomataDef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gpfl::automatadef_has_name():
-    assert hasattr(gpfl::AutomataDef, "name")
+def test_gpfl_automatadef_has_name():
+    assert hasattr(gpfl_AutomataDef, "name")
     descriptor = None
-    for klass in gpfl::AutomataDef.__mro__:
+    for klass in gpfl_AutomataDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -635,23 +635,23 @@ def test_gpfl::automatadef_has_name():
 
 
 
-def test_gpfl::program_is_not_abstract():
-    assert not inspect.isabstract(gpfl::Program)
+def test_gpfl_program_is_not_abstract():
+    assert not inspect.isabstract(gpfl_Program)
 
 
-def test_gpfl::program_constructor_exists():
-    assert callable(gpfl::Program.__init__)
+def test_gpfl_program_constructor_exists():
+    assert callable(gpfl_Program.__init__)
 
 
-def test_gpfl::program_constructor_args():
-    sig = inspect.signature(gpfl::Program.__init__)
+def test_gpfl_program_constructor_args():
+    sig = inspect.signature(gpfl_Program.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gpfl::program_has_name():
-    assert hasattr(gpfl::Program, "name")
+def test_gpfl_program_has_name():
+    assert hasattr(gpfl_Program, "name")
     descriptor = None
-    for klass in gpfl::Program.__mro__:
+    for klass in gpfl_Program.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -669,148 +669,145 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-gpfl::State_strategy = st.builds(
-    gpfl::State,
+gpfl_State_strategy = st.builds(
+    gpfl_State,
     name=
         safe_text
 )
 GExpression_strategy = st.builds(
     GExpression,
 )
-gpfl::AutomatonCmd_strategy = st.builds(
-    gpfl::AutomatonCmd,
-    name=
-        safe_text
+gpfl_GBoolTrue_strategy = st.builds(
+    gpfl_GBoolTrue,
 )
-gpfl::OutPort_strategy = st.builds(
-    gpfl::OutPort,
+gpfl_CmdLECompare_strategy = st.builds(
+    gpfl_CmdLECompare,
 )
-gpfl::CmdAdd_strategy = st.builds(
-    gpfl::CmdAdd,
+gpfl_CmdAnd_strategy = st.builds(
+    gpfl_CmdAnd,
 )
-gpfl::SetCmd_strategy = st.builds(
-    gpfl::SetCmd,
-    name=
-        safe_text
+gpfl_CmdAdd_strategy = st.builds(
+    gpfl_CmdAdd,
 )
-gpfl::InPort_strategy = st.builds(
-    gpfl::InPort,
+gpfl_InPort_strategy = st.builds(
+    gpfl_InPort,
 )
-gpfl::IterStmt_strategy = st.builds(
-    gpfl::IterStmt,
-)
-gpfl::StringLit_strategy = st.builds(
-    gpfl::StringLit,
+gpfl_StringLit_strategy = st.builds(
+    gpfl_StringLit,
     value=
         safe_text
 )
-gpfl::Variable_strategy = st.builds(
-    gpfl::Variable,
-    value=
-        safe_text
+gpfl_StpCmd_strategy = st.builds(
+    gpfl_StpCmd,
 )
-gpfl::CmdGCompare_strategy = st.builds(
-    gpfl::CmdGCompare,
+gpfl_OutPort_strategy = st.builds(
+    gpfl_OutPort,
 )
-gpfl::AlarmCmd_strategy = st.builds(
-    gpfl::AlarmCmd,
-)
-gpfl::CmdGECompare_strategy = st.builds(
-    gpfl::CmdGECompare,
-)
-gpfl::CmdEq_strategy = st.builds(
-    gpfl::CmdEq,
-)
-gpfl::NopCmd_strategy = st.builds(
-    gpfl::NopCmd,
-)
-gpfl::CmdAnd_strategy = st.builds(
-    gpfl::CmdAnd,
-)
-gpfl::CmdNEq_strategy = st.builds(
-    gpfl::CmdNEq,
-)
-gpfl::GBoolFalse_strategy = st.builds(
-    gpfl::GBoolFalse,
-)
-gpfl::IntLitCmd_strategy = st.builds(
-    gpfl::IntLitCmd,
+gpfl_IntLitCmd_strategy = st.builds(
+    gpfl_IntLitCmd,
     value=
         st.integers()
 )
-gpfl::PortLit_strategy = st.builds(
-    gpfl::PortLit,
-    inSide=
-        st.booleans()
+gpfl_CmdEq_strategy = st.builds(
+    gpfl_CmdEq,
 )
-gpfl::DropCmd_strategy = st.builds(
-    gpfl::DropCmd,
+gpfl_CmdSub_strategy = st.builds(
+    gpfl_CmdSub,
 )
-gpfl::AcceptCmd_strategy = st.builds(
-    gpfl::AcceptCmd,
+gpfl_SendCmd_strategy = st.builds(
+    gpfl_SendCmd,
 )
-gpfl::InterruptStmt_strategy = st.builds(
-    gpfl::InterruptStmt,
+gpfl_AcceptCmd_strategy = st.builds(
+    gpfl_AcceptCmd,
+)
+gpfl_AutomatonCmd_strategy = st.builds(
+    gpfl_AutomatonCmd,
+    name=
+        safe_text
+)
+gpfl_CmdGECompare_strategy = st.builds(
+    gpfl_CmdGECompare,
+)
+gpfl_SetCmd_strategy = st.builds(
+    gpfl_SetCmd,
+    name=
+        safe_text
+)
+gpfl_AlarmCmd_strategy = st.builds(
+    gpfl_AlarmCmd,
+)
+gpfl_CmdGCompare_strategy = st.builds(
+    gpfl_CmdGCompare,
+)
+gpfl_Variable_strategy = st.builds(
+    gpfl_Variable,
+    value=
+        safe_text
+)
+gpfl_CmdLCompare_strategy = st.builds(
+    gpfl_CmdLCompare,
+)
+gpfl_InterruptStmt_strategy = st.builds(
+    gpfl_InterruptStmt,
     timeout=
         st.integers()
 )
-gpfl::GBoolTrue_strategy = st.builds(
-    gpfl::GBoolTrue,
+gpfl_GBoolFalse_strategy = st.builds(
+    gpfl_GBoolFalse,
 )
-gpfl::CmdLCompare_strategy = st.builds(
-    gpfl::CmdLCompare,
+gpfl_PortLit_strategy = st.builds(
+    gpfl_PortLit,
+    inSide=
+        st.booleans()
 )
-gpfl::StpCmd_strategy = st.builds(
-    gpfl::StpCmd,
+gpfl_DropCmd_strategy = st.builds(
+    gpfl_DropCmd,
 )
-gpfl::SendCmd_strategy = st.builds(
-    gpfl::SendCmd,
+gpfl_IterStmt_strategy = st.builds(
+    gpfl_IterStmt,
 )
-gpfl::CmdLECompare_strategy = st.builds(
-    gpfl::CmdLECompare,
+gpfl_NopCmd_strategy = st.builds(
+    gpfl_NopCmd,
 )
-gpfl::CmdSub_strategy = st.builds(
-    gpfl::CmdSub,
+gpfl_CmdNEq_strategy = st.builds(
+    gpfl_CmdNEq,
 )
-gpfl::CondStmt_strategy = st.builds(
-    gpfl::CondStmt,
+gpfl_CondStmt_strategy = st.builds(
+    gpfl_CondStmt,
 )
-gpfl::Transition_strategy = st.builds(
-    gpfl::Transition,
+gpfl_Transition_strategy = st.builds(
+    gpfl_Transition,
     event=
         safe_text
 )
-gpfl::Field_strategy = st.builds(
-    gpfl::Field,
+gpfl_Field_strategy = st.builds(
+    gpfl_Field,
     name=
         safe_text
 )
-gpfl::GExpression_strategy = st.builds(
-    gpfl::GExpression,
+gpfl_GExpression_strategy = st.builds(
+    gpfl_GExpression,
 )
-gpfl::AutomataDef_strategy = st.builds(
-    gpfl::AutomataDef,
+gpfl_AutomataDef_strategy = st.builds(
+    gpfl_AutomataDef,
     name=
         safe_text
 )
-gpfl::Program_strategy = st.builds(
-    gpfl::Program,
+gpfl_Program_strategy = st.builds(
+    gpfl_Program,
     name=
         safe_text
 )
 
-@given(instance=gpfl::State_strategy)
+@given(instance=gpfl_State_strategy)
 @settings(max_examples=50)
-def test_gpfl::state_instantiation(instance):
-    assert isinstance(instance, gpfl::State)
-
-@given(instance=gpfl::State_strategy)
-def test_gpfl::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gpfl_state_instantiation(instance):
+    assert isinstance(instance, gpfl_State)
 
 
-@given(instance=gpfl::State_strategy)
-def test_gpfl::state_name_setter(instance):
+
+@given(instance=gpfl_State_strategy)
+def test_gpfl_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -820,288 +817,255 @@ def test_gpfl::state_name_setter(instance):
 def test_gexpression_instantiation(instance):
     assert isinstance(instance, GExpression)
 
-@given(instance=gpfl::AutomatonCmd_strategy)
+@given(instance=gpfl_GBoolTrue_strategy)
 @settings(max_examples=50)
-def test_gpfl::automatoncmd_instantiation(instance):
-    assert isinstance(instance, gpfl::AutomatonCmd)
+def test_gpfl_gbooltrue_instantiation(instance):
+    assert isinstance(instance, gpfl_GBoolTrue)
 
-@given(instance=gpfl::AutomatonCmd_strategy)
-def test_gpfl::automatoncmd_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=gpfl_CmdLECompare_strategy)
+@settings(max_examples=50)
+def test_gpfl_cmdlecompare_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdLECompare)
+
+@given(instance=gpfl_CmdAnd_strategy)
+@settings(max_examples=50)
+def test_gpfl_cmdand_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdAnd)
+
+@given(instance=gpfl_CmdAdd_strategy)
+@settings(max_examples=50)
+def test_gpfl_cmdadd_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdAdd)
+
+@given(instance=gpfl_InPort_strategy)
+@settings(max_examples=50)
+def test_gpfl_inport_instantiation(instance):
+    assert isinstance(instance, gpfl_InPort)
+
+@given(instance=gpfl_StringLit_strategy)
+@settings(max_examples=50)
+def test_gpfl_stringlit_instantiation(instance):
+    assert isinstance(instance, gpfl_StringLit)
 
 
-@given(instance=gpfl::AutomatonCmd_strategy)
-def test_gpfl::automatoncmd_name_setter(instance):
+
+@given(instance=gpfl_StringLit_strategy)
+def test_gpfl_stringlit_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=gpfl_StpCmd_strategy)
+@settings(max_examples=50)
+def test_gpfl_stpcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_StpCmd)
+
+@given(instance=gpfl_OutPort_strategy)
+@settings(max_examples=50)
+def test_gpfl_outport_instantiation(instance):
+    assert isinstance(instance, gpfl_OutPort)
+
+@given(instance=gpfl_IntLitCmd_strategy)
+@settings(max_examples=50)
+def test_gpfl_intlitcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_IntLitCmd)
+
+
+
+@given(instance=gpfl_IntLitCmd_strategy)
+def test_gpfl_intlitcmd_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=gpfl_CmdEq_strategy)
+@settings(max_examples=50)
+def test_gpfl_cmdeq_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdEq)
+
+@given(instance=gpfl_CmdSub_strategy)
+@settings(max_examples=50)
+def test_gpfl_cmdsub_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdSub)
+
+@given(instance=gpfl_SendCmd_strategy)
+@settings(max_examples=50)
+def test_gpfl_sendcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_SendCmd)
+
+@given(instance=gpfl_AcceptCmd_strategy)
+@settings(max_examples=50)
+def test_gpfl_acceptcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_AcceptCmd)
+
+@given(instance=gpfl_AutomatonCmd_strategy)
+@settings(max_examples=50)
+def test_gpfl_automatoncmd_instantiation(instance):
+    assert isinstance(instance, gpfl_AutomatonCmd)
+
+
+
+@given(instance=gpfl_AutomatonCmd_strategy)
+def test_gpfl_automatoncmd_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gpfl::OutPort_strategy)
+@given(instance=gpfl_CmdGECompare_strategy)
 @settings(max_examples=50)
-def test_gpfl::outport_instantiation(instance):
-    assert isinstance(instance, gpfl::OutPort)
+def test_gpfl_cmdgecompare_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdGECompare)
 
-@given(instance=gpfl::CmdAdd_strategy)
+@given(instance=gpfl_SetCmd_strategy)
 @settings(max_examples=50)
-def test_gpfl::cmdadd_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdAdd)
-
-@given(instance=gpfl::SetCmd_strategy)
-@settings(max_examples=50)
-def test_gpfl::setcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::SetCmd)
-
-@given(instance=gpfl::SetCmd_strategy)
-def test_gpfl::setcmd_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gpfl_setcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_SetCmd)
 
 
-@given(instance=gpfl::SetCmd_strategy)
-def test_gpfl::setcmd_name_setter(instance):
+
+@given(instance=gpfl_SetCmd_strategy)
+def test_gpfl_setcmd_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gpfl::InPort_strategy)
+@given(instance=gpfl_AlarmCmd_strategy)
 @settings(max_examples=50)
-def test_gpfl::inport_instantiation(instance):
-    assert isinstance(instance, gpfl::InPort)
+def test_gpfl_alarmcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_AlarmCmd)
 
-@given(instance=gpfl::IterStmt_strategy)
+@given(instance=gpfl_CmdGCompare_strategy)
 @settings(max_examples=50)
-def test_gpfl::iterstmt_instantiation(instance):
-    assert isinstance(instance, gpfl::IterStmt)
+def test_gpfl_cmdgcompare_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdGCompare)
 
-@given(instance=gpfl::StringLit_strategy)
+@given(instance=gpfl_Variable_strategy)
 @settings(max_examples=50)
-def test_gpfl::stringlit_instantiation(instance):
-    assert isinstance(instance, gpfl::StringLit)
-
-@given(instance=gpfl::StringLit_strategy)
-def test_gpfl::stringlit_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_gpfl_variable_instantiation(instance):
+    assert isinstance(instance, gpfl_Variable)
 
 
-@given(instance=gpfl::StringLit_strategy)
-def test_gpfl::stringlit_value_setter(instance):
+
+@given(instance=gpfl_Variable_strategy)
+def test_gpfl_variable_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=gpfl::Variable_strategy)
+@given(instance=gpfl_CmdLCompare_strategy)
 @settings(max_examples=50)
-def test_gpfl::variable_instantiation(instance):
-    assert isinstance(instance, gpfl::Variable)
+def test_gpfl_cmdlcompare_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdLCompare)
 
-@given(instance=gpfl::Variable_strategy)
-def test_gpfl::variable_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=gpfl::Variable_strategy)
-def test_gpfl::variable_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=gpfl::CmdGCompare_strategy)
+@given(instance=gpfl_InterruptStmt_strategy)
 @settings(max_examples=50)
-def test_gpfl::cmdgcompare_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdGCompare)
-
-@given(instance=gpfl::AlarmCmd_strategy)
-@settings(max_examples=50)
-def test_gpfl::alarmcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::AlarmCmd)
-
-@given(instance=gpfl::CmdGECompare_strategy)
-@settings(max_examples=50)
-def test_gpfl::cmdgecompare_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdGECompare)
-
-@given(instance=gpfl::CmdEq_strategy)
-@settings(max_examples=50)
-def test_gpfl::cmdeq_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdEq)
-
-@given(instance=gpfl::NopCmd_strategy)
-@settings(max_examples=50)
-def test_gpfl::nopcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::NopCmd)
-
-@given(instance=gpfl::CmdAnd_strategy)
-@settings(max_examples=50)
-def test_gpfl::cmdand_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdAnd)
-
-@given(instance=gpfl::CmdNEq_strategy)
-@settings(max_examples=50)
-def test_gpfl::cmdneq_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdNEq)
-
-@given(instance=gpfl::GBoolFalse_strategy)
-@settings(max_examples=50)
-def test_gpfl::gboolfalse_instantiation(instance):
-    assert isinstance(instance, gpfl::GBoolFalse)
-
-@given(instance=gpfl::IntLitCmd_strategy)
-@settings(max_examples=50)
-def test_gpfl::intlitcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::IntLitCmd)
-
-@given(instance=gpfl::IntLitCmd_strategy)
-def test_gpfl::intlitcmd_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_gpfl_interruptstmt_instantiation(instance):
+    assert isinstance(instance, gpfl_InterruptStmt)
 
 
-@given(instance=gpfl::IntLitCmd_strategy)
-def test_gpfl::intlitcmd_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=gpfl::PortLit_strategy)
-@settings(max_examples=50)
-def test_gpfl::portlit_instantiation(instance):
-    assert isinstance(instance, gpfl::PortLit)
-
-@given(instance=gpfl::PortLit_strategy)
-def test_gpfl::portlit_inSide_type(instance):
-    assert isinstance(instance.inSide, bool)
-
-
-@given(instance=gpfl::PortLit_strategy)
-def test_gpfl::portlit_inSide_setter(instance):
-    original = instance.inSide
-    instance.inSide = original
-    assert instance.inSide == original
-
-@given(instance=gpfl::DropCmd_strategy)
-@settings(max_examples=50)
-def test_gpfl::dropcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::DropCmd)
-
-@given(instance=gpfl::AcceptCmd_strategy)
-@settings(max_examples=50)
-def test_gpfl::acceptcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::AcceptCmd)
-
-@given(instance=gpfl::InterruptStmt_strategy)
-@settings(max_examples=50)
-def test_gpfl::interruptstmt_instantiation(instance):
-    assert isinstance(instance, gpfl::InterruptStmt)
-
-@given(instance=gpfl::InterruptStmt_strategy)
-def test_gpfl::interruptstmt_timeout_type(instance):
-    assert isinstance(instance.timeout, int)
-
-
-@given(instance=gpfl::InterruptStmt_strategy)
-def test_gpfl::interruptstmt_timeout_setter(instance):
+@given(instance=gpfl_InterruptStmt_strategy)
+def test_gpfl_interruptstmt_timeout_setter(instance):
     original = instance.timeout
     instance.timeout = original
     assert instance.timeout == original
 
-@given(instance=gpfl::GBoolTrue_strategy)
+@given(instance=gpfl_GBoolFalse_strategy)
 @settings(max_examples=50)
-def test_gpfl::gbooltrue_instantiation(instance):
-    assert isinstance(instance, gpfl::GBoolTrue)
+def test_gpfl_gboolfalse_instantiation(instance):
+    assert isinstance(instance, gpfl_GBoolFalse)
 
-@given(instance=gpfl::CmdLCompare_strategy)
+@given(instance=gpfl_PortLit_strategy)
 @settings(max_examples=50)
-def test_gpfl::cmdlcompare_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdLCompare)
+def test_gpfl_portlit_instantiation(instance):
+    assert isinstance(instance, gpfl_PortLit)
 
-@given(instance=gpfl::StpCmd_strategy)
+
+
+@given(instance=gpfl_PortLit_strategy)
+def test_gpfl_portlit_inSide_setter(instance):
+    original = instance.inSide
+    instance.inSide = original
+    assert instance.inSide == original
+
+@given(instance=gpfl_DropCmd_strategy)
 @settings(max_examples=50)
-def test_gpfl::stpcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::StpCmd)
+def test_gpfl_dropcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_DropCmd)
 
-@given(instance=gpfl::SendCmd_strategy)
+@given(instance=gpfl_IterStmt_strategy)
 @settings(max_examples=50)
-def test_gpfl::sendcmd_instantiation(instance):
-    assert isinstance(instance, gpfl::SendCmd)
+def test_gpfl_iterstmt_instantiation(instance):
+    assert isinstance(instance, gpfl_IterStmt)
 
-@given(instance=gpfl::CmdLECompare_strategy)
+@given(instance=gpfl_NopCmd_strategy)
 @settings(max_examples=50)
-def test_gpfl::cmdlecompare_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdLECompare)
+def test_gpfl_nopcmd_instantiation(instance):
+    assert isinstance(instance, gpfl_NopCmd)
 
-@given(instance=gpfl::CmdSub_strategy)
+@given(instance=gpfl_CmdNEq_strategy)
 @settings(max_examples=50)
-def test_gpfl::cmdsub_instantiation(instance):
-    assert isinstance(instance, gpfl::CmdSub)
+def test_gpfl_cmdneq_instantiation(instance):
+    assert isinstance(instance, gpfl_CmdNEq)
 
-@given(instance=gpfl::CondStmt_strategy)
+@given(instance=gpfl_CondStmt_strategy)
 @settings(max_examples=50)
-def test_gpfl::condstmt_instantiation(instance):
-    assert isinstance(instance, gpfl::CondStmt)
+def test_gpfl_condstmt_instantiation(instance):
+    assert isinstance(instance, gpfl_CondStmt)
 
-@given(instance=gpfl::Transition_strategy)
+@given(instance=gpfl_Transition_strategy)
 @settings(max_examples=50)
-def test_gpfl::transition_instantiation(instance):
-    assert isinstance(instance, gpfl::Transition)
-
-@given(instance=gpfl::Transition_strategy)
-def test_gpfl::transition_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_gpfl_transition_instantiation(instance):
+    assert isinstance(instance, gpfl_Transition)
 
 
-@given(instance=gpfl::Transition_strategy)
-def test_gpfl::transition_event_setter(instance):
+
+@given(instance=gpfl_Transition_strategy)
+def test_gpfl_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=gpfl::Field_strategy)
+@given(instance=gpfl_Field_strategy)
 @settings(max_examples=50)
-def test_gpfl::field_instantiation(instance):
-    assert isinstance(instance, gpfl::Field)
-
-@given(instance=gpfl::Field_strategy)
-def test_gpfl::field_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gpfl_field_instantiation(instance):
+    assert isinstance(instance, gpfl_Field)
 
 
-@given(instance=gpfl::Field_strategy)
-def test_gpfl::field_name_setter(instance):
+
+@given(instance=gpfl_Field_strategy)
+def test_gpfl_field_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gpfl::GExpression_strategy)
+@given(instance=gpfl_GExpression_strategy)
 @settings(max_examples=50)
-def test_gpfl::gexpression_instantiation(instance):
-    assert isinstance(instance, gpfl::GExpression)
+def test_gpfl_gexpression_instantiation(instance):
+    assert isinstance(instance, gpfl_GExpression)
 
-@given(instance=gpfl::AutomataDef_strategy)
+@given(instance=gpfl_AutomataDef_strategy)
 @settings(max_examples=50)
-def test_gpfl::automatadef_instantiation(instance):
-    assert isinstance(instance, gpfl::AutomataDef)
-
-@given(instance=gpfl::AutomataDef_strategy)
-def test_gpfl::automatadef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gpfl_automatadef_instantiation(instance):
+    assert isinstance(instance, gpfl_AutomataDef)
 
 
-@given(instance=gpfl::AutomataDef_strategy)
-def test_gpfl::automatadef_name_setter(instance):
+
+@given(instance=gpfl_AutomataDef_strategy)
+def test_gpfl_automatadef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gpfl::Program_strategy)
+@given(instance=gpfl_Program_strategy)
 @settings(max_examples=50)
-def test_gpfl::program_instantiation(instance):
-    assert isinstance(instance, gpfl::Program)
-
-@given(instance=gpfl::Program_strategy)
-def test_gpfl::program_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gpfl_program_instantiation(instance):
+    assert isinstance(instance, gpfl_Program)
 
 
-@given(instance=gpfl::Program_strategy)
-def test_gpfl::program_name_setter(instance):
+
+@given(instance=gpfl_Program_strategy)
+def test_gpfl_program_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

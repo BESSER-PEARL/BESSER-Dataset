@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pascal::repetitive::arit::expression,
+from python_code import (
+    pascal_repetitive_arit_expression,
     expression,
-    pascal::rel::expression,
-    pascal::arit::expression,
-    pascal::expression,
-    pascal::atrib,
-    pascal::statement,
-    pascal::block,
-    pascal::var::block,
-    pascal::program,
-    pascal::Pascal,
-    pascal::var::list,
-    pascal::var::decl,
-    pascal::EObject,
+    pascal_rel_expression,
+    pascal_arit_expression,
+    pascal_expression,
+    pascal_atrib,
+    pascal_statement,
+    pascal_block,
+    pascal_var_block,
+    pascal_program,
+    pascal_Pascal,
+    pascal_var_list,
+    pascal_var_decl,
+    pascal_EObject,
     type,
 )
 
@@ -29,33 +29,33 @@ from classes import (
 
 
 
-def test_pascal::repetitive::arit::expression_is_not_abstract():
-    assert not inspect.isabstract(pascal::repetitive::arit::expression)
+def test_pascal_repetitive_arit_expression_is_not_abstract():
+    assert not inspect.isabstract(pascal_repetitive_arit_expression)
 
 
-def test_pascal::repetitive::arit::expression_constructor_exists():
-    assert callable(pascal::repetitive::arit::expression.__init__)
+def test_pascal_repetitive_arit_expression_constructor_exists():
+    assert callable(pascal_repetitive_arit_expression.__init__)
 
 
-def test_pascal::repetitive::arit::expression_constructor_args():
-    sig = inspect.signature(pascal::repetitive::arit::expression.__init__)
+def test_pascal_repetitive_arit_expression_constructor_args():
+    sig = inspect.signature(pascal_repetitive_arit_expression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "op" in params, "Missing parameter 'op'"
 
-def test_pascal::repetitive::arit::expression_has_value():
-    assert hasattr(pascal::repetitive::arit::expression, "value")
+def test_pascal_repetitive_arit_expression_has_value():
+    assert hasattr(pascal_repetitive_arit_expression, "value")
     descriptor = None
-    for klass in pascal::repetitive::arit::expression.__mro__:
+    for klass in pascal_repetitive_arit_expression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::repetitive::arit::expression_has_op():
-    assert hasattr(pascal::repetitive::arit::expression, "op")
+def test_pascal_repetitive_arit_expression_has_op():
+    assert hasattr(pascal_repetitive_arit_expression, "op")
     descriptor = None
-    for klass in pascal::repetitive::arit::expression.__mro__:
+    for klass in pascal_repetitive_arit_expression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -77,87 +77,87 @@ def test_expression_constructor_args():
 
 
 
-def test_pascal::rel::expression_is_not_abstract():
-    assert not inspect.isabstract(pascal::rel::expression)
+def test_pascal_rel_expression_is_not_abstract():
+    assert not inspect.isabstract(pascal_rel_expression)
 
 
-def test_pascal::rel::expression_constructor_exists():
-    assert callable(pascal::rel::expression.__init__)
+def test_pascal_rel_expression_constructor_exists():
+    assert callable(pascal_rel_expression.__init__)
 
 
-def test_pascal::rel::expression_constructor_args():
-    sig = inspect.signature(pascal::rel::expression.__init__)
+def test_pascal_rel_expression_constructor_args():
+    sig = inspect.signature(pascal_rel_expression.__init__)
     params = list(sig.parameters.keys())
     assert "close" in params, "Missing parameter 'close'"
-    assert "first" in params, "Missing parameter 'first'"
     assert "second" in params, "Missing parameter 'second'"
-    assert "open" in params, "Missing parameter 'open'"
+    assert "first" in params, "Missing parameter 'first'"
     assert "op" in params, "Missing parameter 'op'"
+    assert "open" in params, "Missing parameter 'open'"
 
-def test_pascal::rel::expression_has_close():
-    assert hasattr(pascal::rel::expression, "close")
+def test_pascal_rel_expression_has_close():
+    assert hasattr(pascal_rel_expression, "close")
     descriptor = None
-    for klass in pascal::rel::expression.__mro__:
+    for klass in pascal_rel_expression.__mro__:
         if "close" in klass.__dict__:
             descriptor = klass.__dict__["close"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::rel::expression_has_first():
-    assert hasattr(pascal::rel::expression, "first")
+def test_pascal_rel_expression_has_second():
+    assert hasattr(pascal_rel_expression, "second")
     descriptor = None
-    for klass in pascal::rel::expression.__mro__:
-        if "first" in klass.__dict__:
-            descriptor = klass.__dict__["first"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pascal::rel::expression_has_second():
-    assert hasattr(pascal::rel::expression, "second")
-    descriptor = None
-    for klass in pascal::rel::expression.__mro__:
+    for klass in pascal_rel_expression.__mro__:
         if "second" in klass.__dict__:
             descriptor = klass.__dict__["second"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::rel::expression_has_open():
-    assert hasattr(pascal::rel::expression, "open")
+def test_pascal_rel_expression_has_first():
+    assert hasattr(pascal_rel_expression, "first")
     descriptor = None
-    for klass in pascal::rel::expression.__mro__:
-        if "open" in klass.__dict__:
-            descriptor = klass.__dict__["open"]
+    for klass in pascal_rel_expression.__mro__:
+        if "first" in klass.__dict__:
+            descriptor = klass.__dict__["first"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::rel::expression_has_op():
-    assert hasattr(pascal::rel::expression, "op")
+def test_pascal_rel_expression_has_op():
+    assert hasattr(pascal_rel_expression, "op")
     descriptor = None
-    for klass in pascal::rel::expression.__mro__:
+    for klass in pascal_rel_expression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
     assert isinstance(descriptor, property)
 
+def test_pascal_rel_expression_has_open():
+    assert hasattr(pascal_rel_expression, "open")
+    descriptor = None
+    for klass in pascal_rel_expression.__mro__:
+        if "open" in klass.__dict__:
+            descriptor = klass.__dict__["open"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_pascal::arit::expression_is_not_abstract():
-    assert not inspect.isabstract(pascal::arit::expression)
+
+def test_pascal_arit_expression_is_not_abstract():
+    assert not inspect.isabstract(pascal_arit_expression)
 
 
-def test_pascal::arit::expression_constructor_exists():
-    assert callable(pascal::arit::expression.__init__)
+def test_pascal_arit_expression_constructor_exists():
+    assert callable(pascal_arit_expression.__init__)
 
 
-def test_pascal::arit::expression_constructor_args():
-    sig = inspect.signature(pascal::arit::expression.__init__)
+def test_pascal_arit_expression_constructor_args():
+    sig = inspect.signature(pascal_arit_expression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_pascal::arit::expression_has_value():
-    assert hasattr(pascal::arit::expression, "value")
+def test_pascal_arit_expression_has_value():
+    assert hasattr(pascal_arit_expression, "value")
     descriptor = None
-    for klass in pascal::arit::expression.__mro__:
+    for klass in pascal_arit_expression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -165,37 +165,37 @@ def test_pascal::arit::expression_has_value():
 
 
 
-def test_pascal::expression_is_not_abstract():
-    assert not inspect.isabstract(pascal::expression)
+def test_pascal_expression_is_not_abstract():
+    assert not inspect.isabstract(pascal_expression)
 
 
-def test_pascal::expression_constructor_exists():
-    assert callable(pascal::expression.__init__)
+def test_pascal_expression_constructor_exists():
+    assert callable(pascal_expression.__init__)
 
 
-def test_pascal::expression_constructor_args():
-    sig = inspect.signature(pascal::expression.__init__)
+def test_pascal_expression_constructor_args():
+    sig = inspect.signature(pascal_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::atrib_is_not_abstract():
-    assert not inspect.isabstract(pascal::atrib)
+def test_pascal_atrib_is_not_abstract():
+    assert not inspect.isabstract(pascal_atrib)
 
 
-def test_pascal::atrib_constructor_exists():
-    assert callable(pascal::atrib.__init__)
+def test_pascal_atrib_constructor_exists():
+    assert callable(pascal_atrib.__init__)
 
 
-def test_pascal::atrib_constructor_args():
-    sig = inspect.signature(pascal::atrib.__init__)
+def test_pascal_atrib_constructor_args():
+    sig = inspect.signature(pascal_atrib.__init__)
     params = list(sig.parameters.keys())
     assert "var_id" in params, "Missing parameter 'var_id'"
 
-def test_pascal::atrib_has_var_id():
-    assert hasattr(pascal::atrib, "var_id")
+def test_pascal_atrib_has_var_id():
+    assert hasattr(pascal_atrib, "var_id")
     descriptor = None
-    for klass in pascal::atrib.__mro__:
+    for klass in pascal_atrib.__mro__:
         if "var_id" in klass.__dict__:
             descriptor = klass.__dict__["var_id"]
             break
@@ -203,65 +203,65 @@ def test_pascal::atrib_has_var_id():
 
 
 
-def test_pascal::statement_is_not_abstract():
-    assert not inspect.isabstract(pascal::statement)
+def test_pascal_statement_is_not_abstract():
+    assert not inspect.isabstract(pascal_statement)
 
 
-def test_pascal::statement_constructor_exists():
-    assert callable(pascal::statement.__init__)
+def test_pascal_statement_constructor_exists():
+    assert callable(pascal_statement.__init__)
 
 
-def test_pascal::statement_constructor_args():
-    sig = inspect.signature(pascal::statement.__init__)
+def test_pascal_statement_constructor_args():
+    sig = inspect.signature(pascal_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::block_is_not_abstract():
-    assert not inspect.isabstract(pascal::block)
+def test_pascal_block_is_not_abstract():
+    assert not inspect.isabstract(pascal_block)
 
 
-def test_pascal::block_constructor_exists():
-    assert callable(pascal::block.__init__)
+def test_pascal_block_constructor_exists():
+    assert callable(pascal_block.__init__)
 
 
-def test_pascal::block_constructor_args():
-    sig = inspect.signature(pascal::block.__init__)
+def test_pascal_block_constructor_args():
+    sig = inspect.signature(pascal_block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::var::block_is_not_abstract():
-    assert not inspect.isabstract(pascal::var::block)
+def test_pascal_var_block_is_not_abstract():
+    assert not inspect.isabstract(pascal_var_block)
 
 
-def test_pascal::var::block_constructor_exists():
-    assert callable(pascal::var::block.__init__)
+def test_pascal_var_block_constructor_exists():
+    assert callable(pascal_var_block.__init__)
 
 
-def test_pascal::var::block_constructor_args():
-    sig = inspect.signature(pascal::var::block.__init__)
+def test_pascal_var_block_constructor_args():
+    sig = inspect.signature(pascal_var_block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::program_is_not_abstract():
-    assert not inspect.isabstract(pascal::program)
+def test_pascal_program_is_not_abstract():
+    assert not inspect.isabstract(pascal_program)
 
 
-def test_pascal::program_constructor_exists():
-    assert callable(pascal::program.__init__)
+def test_pascal_program_constructor_exists():
+    assert callable(pascal_program.__init__)
 
 
-def test_pascal::program_constructor_args():
-    sig = inspect.signature(pascal::program.__init__)
+def test_pascal_program_constructor_args():
+    sig = inspect.signature(pascal_program.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pascal::program_has_name():
-    assert hasattr(pascal::program, "name")
+def test_pascal_program_has_name():
+    assert hasattr(pascal_program, "name")
     descriptor = None
-    for klass in pascal::program.__mro__:
+    for klass in pascal_program.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -269,118 +269,118 @@ def test_pascal::program_has_name():
 
 
 
-def test_pascal::pascal_is_not_abstract():
-    assert not inspect.isabstract(pascal::Pascal)
+def test_pascal_pascal_is_not_abstract():
+    assert not inspect.isabstract(pascal_Pascal)
 
 
-def test_pascal::pascal_constructor_exists():
-    assert callable(pascal::Pascal.__init__)
+def test_pascal_pascal_constructor_exists():
+    assert callable(pascal_Pascal.__init__)
 
 
-def test_pascal::pascal_constructor_args():
-    sig = inspect.signature(pascal::Pascal.__init__)
+def test_pascal_pascal_constructor_args():
+    sig = inspect.signature(pascal_Pascal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::var::list_is_not_abstract():
-    assert not inspect.isabstract(pascal::var::list)
+def test_pascal_var_list_is_not_abstract():
+    assert not inspect.isabstract(pascal_var_list)
 
 
-def test_pascal::var::list_constructor_exists():
-    assert callable(pascal::var::list.__init__)
+def test_pascal_var_list_constructor_exists():
+    assert callable(pascal_var_list.__init__)
 
 
-def test_pascal::var::list_constructor_args():
-    sig = inspect.signature(pascal::var::list.__init__)
+def test_pascal_var_list_constructor_args():
+    sig = inspect.signature(pascal_var_list.__init__)
     params = list(sig.parameters.keys())
-    assert "var_type" in params, "Missing parameter 'var_type'"
     assert "var_id" in params, "Missing parameter 'var_id'"
     assert "var_ids" in params, "Missing parameter 'var_ids'"
+    assert "var_type" in params, "Missing parameter 'var_type'"
 
-def test_pascal::var::list_has_var_type():
-    assert hasattr(pascal::var::list, "var_type")
+def test_pascal_var_list_has_var_id():
+    assert hasattr(pascal_var_list, "var_id")
     descriptor = None
-    for klass in pascal::var::list.__mro__:
-        if "var_type" in klass.__dict__:
-            descriptor = klass.__dict__["var_type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pascal::var::list_has_var_id():
-    assert hasattr(pascal::var::list, "var_id")
-    descriptor = None
-    for klass in pascal::var::list.__mro__:
+    for klass in pascal_var_list.__mro__:
         if "var_id" in klass.__dict__:
             descriptor = klass.__dict__["var_id"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::var::list_has_var_ids():
-    assert hasattr(pascal::var::list, "var_ids")
+def test_pascal_var_list_has_var_ids():
+    assert hasattr(pascal_var_list, "var_ids")
     descriptor = None
-    for klass in pascal::var::list.__mro__:
+    for klass in pascal_var_list.__mro__:
         if "var_ids" in klass.__dict__:
             descriptor = klass.__dict__["var_ids"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_pascal::var::decl_is_not_abstract():
-    assert not inspect.isabstract(pascal::var::decl)
-
-
-def test_pascal::var::decl_constructor_exists():
-    assert callable(pascal::var::decl.__init__)
-
-
-def test_pascal::var::decl_constructor_args():
-    sig = inspect.signature(pascal::var::decl.__init__)
-    params = list(sig.parameters.keys())
-    assert "var_type" in params, "Missing parameter 'var_type'"
-    assert "value" in params, "Missing parameter 'value'"
-    assert "var_id" in params, "Missing parameter 'var_id'"
-
-def test_pascal::var::decl_has_var_type():
-    assert hasattr(pascal::var::decl, "var_type")
+def test_pascal_var_list_has_var_type():
+    assert hasattr(pascal_var_list, "var_type")
     descriptor = None
-    for klass in pascal::var::decl.__mro__:
+    for klass in pascal_var_list.__mro__:
         if "var_type" in klass.__dict__:
             descriptor = klass.__dict__["var_type"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::var::decl_has_value():
-    assert hasattr(pascal::var::decl, "value")
-    descriptor = None
-    for klass in pascal::var::decl.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_pascal::var::decl_has_var_id():
-    assert hasattr(pascal::var::decl, "var_id")
+
+def test_pascal_var_decl_is_not_abstract():
+    assert not inspect.isabstract(pascal_var_decl)
+
+
+def test_pascal_var_decl_constructor_exists():
+    assert callable(pascal_var_decl.__init__)
+
+
+def test_pascal_var_decl_constructor_args():
+    sig = inspect.signature(pascal_var_decl.__init__)
+    params = list(sig.parameters.keys())
+    assert "var_id" in params, "Missing parameter 'var_id'"
+    assert "var_type" in params, "Missing parameter 'var_type'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_pascal_var_decl_has_var_id():
+    assert hasattr(pascal_var_decl, "var_id")
     descriptor = None
-    for klass in pascal::var::decl.__mro__:
+    for klass in pascal_var_decl.__mro__:
         if "var_id" in klass.__dict__:
             descriptor = klass.__dict__["var_id"]
             break
     assert isinstance(descriptor, property)
 
+def test_pascal_var_decl_has_var_type():
+    assert hasattr(pascal_var_decl, "var_type")
+    descriptor = None
+    for klass in pascal_var_decl.__mro__:
+        if "var_type" in klass.__dict__:
+            descriptor = klass.__dict__["var_type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pascal_var_decl_has_value():
+    assert hasattr(pascal_var_decl, "value")
+    descriptor = None
+    for klass in pascal_var_decl.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_pascal::eobject_is_not_abstract():
-    assert not inspect.isabstract(pascal::EObject)
+
+def test_pascal_eobject_is_not_abstract():
+    assert not inspect.isabstract(pascal_EObject)
 
 
-def test_pascal::eobject_constructor_exists():
-    assert callable(pascal::EObject.__init__)
+def test_pascal_eobject_constructor_exists():
+    assert callable(pascal_EObject.__init__)
 
 
-def test_pascal::eobject_constructor_args():
-    sig = inspect.signature(pascal::EObject.__init__)
+def test_pascal_eobject_constructor_args():
+    sig = inspect.signature(pascal_EObject.__init__)
     params = list(sig.parameters.keys())
 
 def test_type_exists():
@@ -391,8 +391,8 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in type]
     expected_literals = [
-        "BOOLEAN",
         "INTEGER",
+        "BOOLEAN",
         "STRING",
     ]
     # Check that all expected literals exist
@@ -411,8 +411,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pascal::repetitive::arit::expression_strategy = st.builds(
-    pascal::repetitive::arit::expression,
+pascal_repetitive_arit_expression_strategy = st.builds(
+    pascal_repetitive_arit_expression,
     value=
         safe_text,
     op=
@@ -421,94 +421,88 @@ pascal::repetitive::arit::expression_strategy = st.builds(
 expression_strategy = st.builds(
     expression,
 )
-pascal::rel::expression_strategy = st.builds(
-    pascal::rel::expression,
+pascal_rel_expression_strategy = st.builds(
+    pascal_rel_expression,
     close=
-        safe_text,
-    first=
         safe_text,
     second=
         safe_text,
-    open=
+    first=
         safe_text,
     op=
+        safe_text,
+    open=
         safe_text
 )
-pascal::arit::expression_strategy = st.builds(
-    pascal::arit::expression,
+pascal_arit_expression_strategy = st.builds(
+    pascal_arit_expression,
     value=
         safe_text
 )
-pascal::expression_strategy = st.builds(
-    pascal::expression,
+pascal_expression_strategy = st.builds(
+    pascal_expression,
 )
-pascal::atrib_strategy = st.builds(
-    pascal::atrib,
+pascal_atrib_strategy = st.builds(
+    pascal_atrib,
     var_id=
         safe_text
 )
-pascal::statement_strategy = st.builds(
-    pascal::statement,
+pascal_statement_strategy = st.builds(
+    pascal_statement,
 )
-pascal::block_strategy = st.builds(
-    pascal::block,
+pascal_block_strategy = st.builds(
+    pascal_block,
 )
-pascal::var::block_strategy = st.builds(
-    pascal::var::block,
+pascal_var_block_strategy = st.builds(
+    pascal_var_block,
 )
-pascal::program_strategy = st.builds(
-    pascal::program,
+pascal_program_strategy = st.builds(
+    pascal_program,
     name=
         safe_text
 )
-pascal::Pascal_strategy = st.builds(
-    pascal::Pascal,
+pascal_Pascal_strategy = st.builds(
+    pascal_Pascal,
 )
-pascal::var::list_strategy = st.builds(
-    pascal::var::list,
-    var_type=
-        safe_text,
+pascal_var_list_strategy = st.builds(
+    pascal_var_list,
     var_id=
         safe_text,
     var_ids=
+        safe_text,
+    var_type=
         safe_text
 )
-pascal::var::decl_strategy = st.builds(
-    pascal::var::decl,
+pascal_var_decl_strategy = st.builds(
+    pascal_var_decl,
+    var_id=
+        safe_text,
     var_type=
         safe_text,
     value=
-        safe_text,
-    var_id=
         safe_text
 )
-pascal::EObject_strategy = st.builds(
-    pascal::EObject,
+pascal_EObject_strategy = st.builds(
+    pascal_EObject,
 )
 
-@given(instance=pascal::repetitive::arit::expression_strategy)
+@given(instance=pascal_repetitive_arit_expression_strategy)
 @settings(max_examples=50)
-def test_pascal::repetitive::arit::expression_instantiation(instance):
-    assert isinstance(instance, pascal::repetitive::arit::expression)
-
-@given(instance=pascal::repetitive::arit::expression_strategy)
-def test_pascal::repetitive::arit::expression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_pascal_repetitive_arit_expression_instantiation(instance):
+    assert isinstance(instance, pascal_repetitive_arit_expression)
 
 
-@given(instance=pascal::repetitive::arit::expression_strategy)
-def test_pascal::repetitive::arit::expression_value_setter(instance):
+
+@given(instance=pascal_repetitive_arit_expression_strategy)
+def test_pascal_repetitive_arit_expression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=pascal::repetitive::arit::expression_strategy)
-def test_pascal::repetitive::arit::expression_op_type(instance):
-    assert isinstance(instance.op, str)
 
 
-@given(instance=pascal::repetitive::arit::expression_strategy)
-def test_pascal::repetitive::arit::expression_op_setter(instance):
+@given(instance=pascal_repetitive_arit_expression_strategy)
+def test_pascal_repetitive_arit_expression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -518,216 +512,174 @@ def test_pascal::repetitive::arit::expression_op_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, expression)
 
-@given(instance=pascal::rel::expression_strategy)
+@given(instance=pascal_rel_expression_strategy)
 @settings(max_examples=50)
-def test_pascal::rel::expression_instantiation(instance):
-    assert isinstance(instance, pascal::rel::expression)
-
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_close_type(instance):
-    assert isinstance(instance.close, str)
+def test_pascal_rel_expression_instantiation(instance):
+    assert isinstance(instance, pascal_rel_expression)
 
 
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_close_setter(instance):
+
+@given(instance=pascal_rel_expression_strategy)
+def test_pascal_rel_expression_close_setter(instance):
     original = instance.close
     instance.close = original
     assert instance.close == original
 
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_first_type(instance):
-    assert isinstance(instance.first, str)
 
 
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_first_setter(instance):
-    original = instance.first
-    instance.first = original
-    assert instance.first == original
-
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_second_type(instance):
-    assert isinstance(instance.second, str)
-
-
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_second_setter(instance):
+@given(instance=pascal_rel_expression_strategy)
+def test_pascal_rel_expression_second_setter(instance):
     original = instance.second
     instance.second = original
     assert instance.second == original
 
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_open_type(instance):
-    assert isinstance(instance.open, str)
 
 
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_open_setter(instance):
-    original = instance.open
-    instance.open = original
-    assert instance.open == original
-
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=pascal_rel_expression_strategy)
+def test_pascal_rel_expression_first_setter(instance):
+    original = instance.first
+    instance.first = original
+    assert instance.first == original
 
 
-@given(instance=pascal::rel::expression_strategy)
-def test_pascal::rel::expression_op_setter(instance):
+
+@given(instance=pascal_rel_expression_strategy)
+def test_pascal_rel_expression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=pascal::arit::expression_strategy)
+
+
+@given(instance=pascal_rel_expression_strategy)
+def test_pascal_rel_expression_open_setter(instance):
+    original = instance.open
+    instance.open = original
+    assert instance.open == original
+
+@given(instance=pascal_arit_expression_strategy)
 @settings(max_examples=50)
-def test_pascal::arit::expression_instantiation(instance):
-    assert isinstance(instance, pascal::arit::expression)
-
-@given(instance=pascal::arit::expression_strategy)
-def test_pascal::arit::expression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_pascal_arit_expression_instantiation(instance):
+    assert isinstance(instance, pascal_arit_expression)
 
 
-@given(instance=pascal::arit::expression_strategy)
-def test_pascal::arit::expression_value_setter(instance):
+
+@given(instance=pascal_arit_expression_strategy)
+def test_pascal_arit_expression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=pascal::expression_strategy)
+@given(instance=pascal_expression_strategy)
 @settings(max_examples=50)
-def test_pascal::expression_instantiation(instance):
-    assert isinstance(instance, pascal::expression)
+def test_pascal_expression_instantiation(instance):
+    assert isinstance(instance, pascal_expression)
 
-@given(instance=pascal::atrib_strategy)
+@given(instance=pascal_atrib_strategy)
 @settings(max_examples=50)
-def test_pascal::atrib_instantiation(instance):
-    assert isinstance(instance, pascal::atrib)
-
-@given(instance=pascal::atrib_strategy)
-def test_pascal::atrib_var_id_type(instance):
-    assert isinstance(instance.var_id, str)
+def test_pascal_atrib_instantiation(instance):
+    assert isinstance(instance, pascal_atrib)
 
 
-@given(instance=pascal::atrib_strategy)
-def test_pascal::atrib_var_id_setter(instance):
+
+@given(instance=pascal_atrib_strategy)
+def test_pascal_atrib_var_id_setter(instance):
     original = instance.var_id
     instance.var_id = original
     assert instance.var_id == original
 
-@given(instance=pascal::statement_strategy)
+@given(instance=pascal_statement_strategy)
 @settings(max_examples=50)
-def test_pascal::statement_instantiation(instance):
-    assert isinstance(instance, pascal::statement)
+def test_pascal_statement_instantiation(instance):
+    assert isinstance(instance, pascal_statement)
 
-@given(instance=pascal::block_strategy)
+@given(instance=pascal_block_strategy)
 @settings(max_examples=50)
-def test_pascal::block_instantiation(instance):
-    assert isinstance(instance, pascal::block)
+def test_pascal_block_instantiation(instance):
+    assert isinstance(instance, pascal_block)
 
-@given(instance=pascal::var::block_strategy)
+@given(instance=pascal_var_block_strategy)
 @settings(max_examples=50)
-def test_pascal::var::block_instantiation(instance):
-    assert isinstance(instance, pascal::var::block)
+def test_pascal_var_block_instantiation(instance):
+    assert isinstance(instance, pascal_var_block)
 
-@given(instance=pascal::program_strategy)
+@given(instance=pascal_program_strategy)
 @settings(max_examples=50)
-def test_pascal::program_instantiation(instance):
-    assert isinstance(instance, pascal::program)
-
-@given(instance=pascal::program_strategy)
-def test_pascal::program_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pascal_program_instantiation(instance):
+    assert isinstance(instance, pascal_program)
 
 
-@given(instance=pascal::program_strategy)
-def test_pascal::program_name_setter(instance):
+
+@given(instance=pascal_program_strategy)
+def test_pascal_program_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pascal::Pascal_strategy)
+@given(instance=pascal_Pascal_strategy)
 @settings(max_examples=50)
-def test_pascal::pascal_instantiation(instance):
-    assert isinstance(instance, pascal::Pascal)
+def test_pascal_pascal_instantiation(instance):
+    assert isinstance(instance, pascal_Pascal)
 
-@given(instance=pascal::var::list_strategy)
+@given(instance=pascal_var_list_strategy)
 @settings(max_examples=50)
-def test_pascal::var::list_instantiation(instance):
-    assert isinstance(instance, pascal::var::list)
-
-@given(instance=pascal::var::list_strategy)
-def test_pascal::var::list_var_type_type(instance):
-    assert isinstance(instance.var_type, str)
+def test_pascal_var_list_instantiation(instance):
+    assert isinstance(instance, pascal_var_list)
 
 
-@given(instance=pascal::var::list_strategy)
-def test_pascal::var::list_var_type_setter(instance):
-    original = instance.var_type
-    instance.var_type = original
-    assert instance.var_type == original
 
-@given(instance=pascal::var::list_strategy)
-def test_pascal::var::list_var_id_type(instance):
-    assert isinstance(instance.var_id, str)
-
-
-@given(instance=pascal::var::list_strategy)
-def test_pascal::var::list_var_id_setter(instance):
+@given(instance=pascal_var_list_strategy)
+def test_pascal_var_list_var_id_setter(instance):
     original = instance.var_id
     instance.var_id = original
     assert instance.var_id == original
 
-@given(instance=pascal::var::list_strategy)
-def test_pascal::var::list_var_ids_type(instance):
-    assert isinstance(instance.var_ids, str)
 
 
-@given(instance=pascal::var::list_strategy)
-def test_pascal::var::list_var_ids_setter(instance):
+@given(instance=pascal_var_list_strategy)
+def test_pascal_var_list_var_ids_setter(instance):
     original = instance.var_ids
     instance.var_ids = original
     assert instance.var_ids == original
 
-@given(instance=pascal::var::decl_strategy)
-@settings(max_examples=50)
-def test_pascal::var::decl_instantiation(instance):
-    assert isinstance(instance, pascal::var::decl)
-
-@given(instance=pascal::var::decl_strategy)
-def test_pascal::var::decl_var_type_type(instance):
-    assert isinstance(instance.var_type, str)
 
 
-@given(instance=pascal::var::decl_strategy)
-def test_pascal::var::decl_var_type_setter(instance):
+@given(instance=pascal_var_list_strategy)
+def test_pascal_var_list_var_type_setter(instance):
     original = instance.var_type
     instance.var_type = original
     assert instance.var_type == original
 
-@given(instance=pascal::var::decl_strategy)
-def test_pascal::var::decl_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=pascal_var_decl_strategy)
+@settings(max_examples=50)
+def test_pascal_var_decl_instantiation(instance):
+    assert isinstance(instance, pascal_var_decl)
 
 
-@given(instance=pascal::var::decl_strategy)
-def test_pascal::var::decl_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=pascal::var::decl_strategy)
-def test_pascal::var::decl_var_id_type(instance):
-    assert isinstance(instance.var_id, str)
-
-
-@given(instance=pascal::var::decl_strategy)
-def test_pascal::var::decl_var_id_setter(instance):
+@given(instance=pascal_var_decl_strategy)
+def test_pascal_var_decl_var_id_setter(instance):
     original = instance.var_id
     instance.var_id = original
     assert instance.var_id == original
 
-@given(instance=pascal::EObject_strategy)
+
+
+@given(instance=pascal_var_decl_strategy)
+def test_pascal_var_decl_var_type_setter(instance):
+    original = instance.var_type
+    instance.var_type = original
+    assert instance.var_type == original
+
+
+
+@given(instance=pascal_var_decl_strategy)
+def test_pascal_var_decl_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=pascal_EObject_strategy)
 @settings(max_examples=50)
-def test_pascal::eobject_instantiation(instance):
-    assert isinstance(instance, pascal::EObject)
+def test_pascal_eobject_instantiation(instance):
+    assert isinstance(instance, pascal_EObject)

@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     MuddleElementType,
-    muddle::LinkElementType,
+    muddle_LinkElementType,
     Type,
     PrimitiveType,
-    muddle::RealType,
-    muddle::StringType,
-    muddle::BooleanType,
-    muddle::IntegerType,
-    muddle::PrimitiveType,
-    muddle::MuddleElementStyle,
-    muddle::MuddleElementType,
-    muddle::Slot,
-    muddle::MuddleElement,
-    muddle::Type,
-    muddle::Muddle,
-    muddle::Feature,
+    muddle_StringType,
+    muddle_BooleanType,
+    muddle_RealType,
+    muddle_IntegerType,
+    muddle_PrimitiveType,
+    muddle_MuddleElementStyle,
+    muddle_MuddleElementType,
+    muddle_Slot,
+    muddle_MuddleElement,
+    muddle_Type,
+    muddle_Muddle,
+    muddle_Feature,
 )
 
 # =============================================================================
@@ -44,16 +44,16 @@ def test_muddleelementtype_constructor_args():
 
 
 
-def test_muddle::linkelementtype_is_not_abstract():
-    assert not inspect.isabstract(muddle::LinkElementType)
+def test_muddle_linkelementtype_is_not_abstract():
+    assert not inspect.isabstract(muddle_LinkElementType)
 
 
-def test_muddle::linkelementtype_constructor_exists():
-    assert callable(muddle::LinkElementType.__init__)
+def test_muddle_linkelementtype_constructor_exists():
+    assert callable(muddle_LinkElementType.__init__)
 
 
-def test_muddle::linkelementtype_constructor_args():
-    sig = inspect.signature(muddle::LinkElementType.__init__)
+def test_muddle_linkelementtype_constructor_args():
+    sig = inspect.signature(muddle_LinkElementType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,201 +86,201 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_muddle::realtype_is_not_abstract():
-    assert not inspect.isabstract(muddle::RealType)
+def test_muddle_stringtype_is_not_abstract():
+    assert not inspect.isabstract(muddle_StringType)
 
 
-def test_muddle::realtype_constructor_exists():
-    assert callable(muddle::RealType.__init__)
+def test_muddle_stringtype_constructor_exists():
+    assert callable(muddle_StringType.__init__)
 
 
-def test_muddle::realtype_constructor_args():
-    sig = inspect.signature(muddle::RealType.__init__)
+def test_muddle_stringtype_constructor_args():
+    sig = inspect.signature(muddle_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::stringtype_is_not_abstract():
-    assert not inspect.isabstract(muddle::StringType)
+def test_muddle_booleantype_is_not_abstract():
+    assert not inspect.isabstract(muddle_BooleanType)
 
 
-def test_muddle::stringtype_constructor_exists():
-    assert callable(muddle::StringType.__init__)
+def test_muddle_booleantype_constructor_exists():
+    assert callable(muddle_BooleanType.__init__)
 
 
-def test_muddle::stringtype_constructor_args():
-    sig = inspect.signature(muddle::StringType.__init__)
+def test_muddle_booleantype_constructor_args():
+    sig = inspect.signature(muddle_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::booleantype_is_not_abstract():
-    assert not inspect.isabstract(muddle::BooleanType)
+def test_muddle_realtype_is_not_abstract():
+    assert not inspect.isabstract(muddle_RealType)
 
 
-def test_muddle::booleantype_constructor_exists():
-    assert callable(muddle::BooleanType.__init__)
+def test_muddle_realtype_constructor_exists():
+    assert callable(muddle_RealType.__init__)
 
 
-def test_muddle::booleantype_constructor_args():
-    sig = inspect.signature(muddle::BooleanType.__init__)
+def test_muddle_realtype_constructor_args():
+    sig = inspect.signature(muddle_RealType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::integertype_is_not_abstract():
-    assert not inspect.isabstract(muddle::IntegerType)
+def test_muddle_integertype_is_not_abstract():
+    assert not inspect.isabstract(muddle_IntegerType)
 
 
-def test_muddle::integertype_constructor_exists():
-    assert callable(muddle::IntegerType.__init__)
+def test_muddle_integertype_constructor_exists():
+    assert callable(muddle_IntegerType.__init__)
 
 
-def test_muddle::integertype_constructor_args():
-    sig = inspect.signature(muddle::IntegerType.__init__)
+def test_muddle_integertype_constructor_args():
+    sig = inspect.signature(muddle_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(muddle::PrimitiveType)
+def test_muddle_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(muddle_PrimitiveType)
 
 
-def test_muddle::primitivetype_constructor_exists():
-    assert callable(muddle::PrimitiveType.__init__)
+def test_muddle_primitivetype_constructor_exists():
+    assert callable(muddle_PrimitiveType.__init__)
 
 
-def test_muddle::primitivetype_constructor_args():
-    sig = inspect.signature(muddle::PrimitiveType.__init__)
+def test_muddle_primitivetype_constructor_args():
+    sig = inspect.signature(muddle_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::muddleelementstyle_is_not_abstract():
-    assert not inspect.isabstract(muddle::MuddleElementStyle)
+def test_muddle_muddleelementstyle_is_not_abstract():
+    assert not inspect.isabstract(muddle_MuddleElementStyle)
 
 
-def test_muddle::muddleelementstyle_constructor_exists():
-    assert callable(muddle::MuddleElementStyle.__init__)
+def test_muddle_muddleelementstyle_constructor_exists():
+    assert callable(muddle_MuddleElementStyle.__init__)
 
 
-def test_muddle::muddleelementstyle_constructor_args():
-    sig = inspect.signature(muddle::MuddleElementStyle.__init__)
+def test_muddle_muddleelementstyle_constructor_args():
+    sig = inspect.signature(muddle_MuddleElementStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "labelFontSize" in params, "Missing parameter 'labelFontSize'"
     assert "x" in params, "Missing parameter 'x'"
-    assert "shape" in params, "Missing parameter 'shape'"
-    assert "borderWidth" in params, "Missing parameter 'borderWidth'"
     assert "y" in params, "Missing parameter 'y'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "height" in params, "Missing parameter 'height'"
+    assert "labelFontSize" in params, "Missing parameter 'labelFontSize'"
     assert "color" in params, "Missing parameter 'color'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "borderWidth" in params, "Missing parameter 'borderWidth'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "shape" in params, "Missing parameter 'shape'"
 
-def test_muddle::muddleelementstyle_has_labelFontSize():
-    assert hasattr(muddle::MuddleElementStyle, "labelFontSize")
+def test_muddle_muddleelementstyle_has_x():
+    assert hasattr(muddle_MuddleElementStyle, "x")
     descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
-        if "labelFontSize" in klass.__dict__:
-            descriptor = klass.__dict__["labelFontSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_muddle::muddleelementstyle_has_x():
-    assert hasattr(muddle::MuddleElementStyle, "x")
-    descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
+    for klass in muddle_MuddleElementStyle.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_muddle::muddleelementstyle_has_shape():
-    assert hasattr(muddle::MuddleElementStyle, "shape")
+def test_muddle_muddleelementstyle_has_y():
+    assert hasattr(muddle_MuddleElementStyle, "y")
     descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_muddle::muddleelementstyle_has_borderWidth():
-    assert hasattr(muddle::MuddleElementStyle, "borderWidth")
-    descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
-        if "borderWidth" in klass.__dict__:
-            descriptor = klass.__dict__["borderWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_muddle::muddleelementstyle_has_y():
-    assert hasattr(muddle::MuddleElementStyle, "y")
-    descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
+    for klass in muddle_MuddleElementStyle.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_muddle::muddleelementstyle_has_width():
-    assert hasattr(muddle::MuddleElementStyle, "width")
+def test_muddle_muddleelementstyle_has_labelFontSize():
+    assert hasattr(muddle_MuddleElementStyle, "labelFontSize")
     descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
+    for klass in muddle_MuddleElementStyle.__mro__:
+        if "labelFontSize" in klass.__dict__:
+            descriptor = klass.__dict__["labelFontSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_muddle::muddleelementstyle_has_height():
-    assert hasattr(muddle::MuddleElementStyle, "height")
+def test_muddle_muddleelementstyle_has_color():
+    assert hasattr(muddle_MuddleElementStyle, "color")
     descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_muddle::muddleelementstyle_has_color():
-    assert hasattr(muddle::MuddleElementStyle, "color")
-    descriptor = None
-    for klass in muddle::MuddleElementStyle.__mro__:
+    for klass in muddle_MuddleElementStyle.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
+def test_muddle_muddleelementstyle_has_width():
+    assert hasattr(muddle_MuddleElementStyle, "width")
+    descriptor = None
+    for klass in muddle_MuddleElementStyle.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_muddle_muddleelementstyle_has_borderWidth():
+    assert hasattr(muddle_MuddleElementStyle, "borderWidth")
+    descriptor = None
+    for klass in muddle_MuddleElementStyle.__mro__:
+        if "borderWidth" in klass.__dict__:
+            descriptor = klass.__dict__["borderWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_muddle_muddleelementstyle_has_height():
+    assert hasattr(muddle_MuddleElementStyle, "height")
+    descriptor = None
+    for klass in muddle_MuddleElementStyle.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_muddle_muddleelementstyle_has_shape():
+    assert hasattr(muddle_MuddleElementStyle, "shape")
+    descriptor = None
+    for klass in muddle_MuddleElementStyle.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_muddle::muddleelementtype_is_not_abstract():
-    assert not inspect.isabstract(muddle::MuddleElementType)
+
+def test_muddle_muddleelementtype_is_not_abstract():
+    assert not inspect.isabstract(muddle_MuddleElementType)
 
 
-def test_muddle::muddleelementtype_constructor_exists():
-    assert callable(muddle::MuddleElementType.__init__)
+def test_muddle_muddleelementtype_constructor_exists():
+    assert callable(muddle_MuddleElementType.__init__)
 
 
-def test_muddle::muddleelementtype_constructor_args():
-    sig = inspect.signature(muddle::MuddleElementType.__init__)
+def test_muddle_muddleelementtype_constructor_args():
+    sig = inspect.signature(muddle_MuddleElementType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::slot_is_not_abstract():
-    assert not inspect.isabstract(muddle::Slot)
+def test_muddle_slot_is_not_abstract():
+    assert not inspect.isabstract(muddle_Slot)
 
 
-def test_muddle::slot_constructor_exists():
-    assert callable(muddle::Slot.__init__)
+def test_muddle_slot_constructor_exists():
+    assert callable(muddle_Slot.__init__)
 
 
-def test_muddle::slot_constructor_args():
-    sig = inspect.signature(muddle::Slot.__init__)
+def test_muddle_slot_constructor_args():
+    sig = inspect.signature(muddle_Slot.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_muddle::slot_has_values():
-    assert hasattr(muddle::Slot, "values")
+def test_muddle_slot_has_values():
+    assert hasattr(muddle_Slot, "values")
     descriptor = None
-    for klass in muddle::Slot.__mro__:
+    for klass in muddle_Slot.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -288,23 +288,23 @@ def test_muddle::slot_has_values():
 
 
 
-def test_muddle::muddleelement_is_not_abstract():
-    assert not inspect.isabstract(muddle::MuddleElement)
+def test_muddle_muddleelement_is_not_abstract():
+    assert not inspect.isabstract(muddle_MuddleElement)
 
 
-def test_muddle::muddleelement_constructor_exists():
-    assert callable(muddle::MuddleElement.__init__)
+def test_muddle_muddleelement_constructor_exists():
+    assert callable(muddle_MuddleElement.__init__)
 
 
-def test_muddle::muddleelement_constructor_args():
-    sig = inspect.signature(muddle::MuddleElement.__init__)
+def test_muddle_muddleelement_constructor_args():
+    sig = inspect.signature(muddle_MuddleElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_muddle::muddleelement_has_id():
-    assert hasattr(muddle::MuddleElement, "id")
+def test_muddle_muddleelement_has_id():
+    assert hasattr(muddle_MuddleElement, "id")
     descriptor = None
-    for klass in muddle::MuddleElement.__mro__:
+    for klass in muddle_MuddleElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -312,23 +312,23 @@ def test_muddle::muddleelement_has_id():
 
 
 
-def test_muddle::type_is_not_abstract():
-    assert not inspect.isabstract(muddle::Type)
+def test_muddle_type_is_not_abstract():
+    assert not inspect.isabstract(muddle_Type)
 
 
-def test_muddle::type_constructor_exists():
-    assert callable(muddle::Type.__init__)
+def test_muddle_type_constructor_exists():
+    assert callable(muddle_Type.__init__)
 
 
-def test_muddle::type_constructor_args():
-    sig = inspect.signature(muddle::Type.__init__)
+def test_muddle_type_constructor_args():
+    sig = inspect.signature(muddle_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_muddle::type_has_name():
-    assert hasattr(muddle::Type, "name")
+def test_muddle_type_has_name():
+    assert hasattr(muddle_Type, "name")
     descriptor = None
-    for klass in muddle::Type.__mro__:
+    for klass in muddle_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -336,69 +336,69 @@ def test_muddle::type_has_name():
 
 
 
-def test_muddle::muddle_is_not_abstract():
-    assert not inspect.isabstract(muddle::Muddle)
+def test_muddle_muddle_is_not_abstract():
+    assert not inspect.isabstract(muddle_Muddle)
 
 
-def test_muddle::muddle_constructor_exists():
-    assert callable(muddle::Muddle.__init__)
+def test_muddle_muddle_constructor_exists():
+    assert callable(muddle_Muddle.__init__)
 
 
-def test_muddle::muddle_constructor_args():
-    sig = inspect.signature(muddle::Muddle.__init__)
+def test_muddle_muddle_constructor_args():
+    sig = inspect.signature(muddle_Muddle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_muddle::feature_is_not_abstract():
-    assert not inspect.isabstract(muddle::Feature)
+def test_muddle_feature_is_not_abstract():
+    assert not inspect.isabstract(muddle_Feature)
 
 
-def test_muddle::feature_constructor_exists():
-    assert callable(muddle::Feature.__init__)
+def test_muddle_feature_constructor_exists():
+    assert callable(muddle_Feature.__init__)
 
 
-def test_muddle::feature_constructor_args():
-    sig = inspect.signature(muddle::Feature.__init__)
+def test_muddle_feature_constructor_args():
+    sig = inspect.signature(muddle_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "runtime" in params, "Missing parameter 'runtime'"
     assert "many" in params, "Missing parameter 'many'"
     assert "primary" in params, "Missing parameter 'primary'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_muddle::feature_has_name():
-    assert hasattr(muddle::Feature, "name")
+def test_muddle_feature_has_runtime():
+    assert hasattr(muddle_Feature, "runtime")
     descriptor = None
-    for klass in muddle::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_muddle::feature_has_runtime():
-    assert hasattr(muddle::Feature, "runtime")
-    descriptor = None
-    for klass in muddle::Feature.__mro__:
+    for klass in muddle_Feature.__mro__:
         if "runtime" in klass.__dict__:
             descriptor = klass.__dict__["runtime"]
             break
     assert isinstance(descriptor, property)
 
-def test_muddle::feature_has_many():
-    assert hasattr(muddle::Feature, "many")
+def test_muddle_feature_has_many():
+    assert hasattr(muddle_Feature, "many")
     descriptor = None
-    for klass in muddle::Feature.__mro__:
+    for klass in muddle_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_muddle::feature_has_primary():
-    assert hasattr(muddle::Feature, "primary")
+def test_muddle_feature_has_primary():
+    assert hasattr(muddle_Feature, "primary")
     descriptor = None
-    for klass in muddle::Feature.__mro__:
+    for klass in muddle_Feature.__mro__:
         if "primary" in klass.__dict__:
             descriptor = klass.__dict__["primary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_muddle_feature_has_name():
+    assert hasattr(muddle_Feature, "name")
+    descriptor = None
+    for klass in muddle_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -417,8 +417,8 @@ safe_text = st.text(
 MuddleElementType_strategy = st.builds(
     MuddleElementType,
 )
-muddle::LinkElementType_strategy = st.builds(
-    muddle::LinkElementType,
+muddle_LinkElementType_strategy = st.builds(
+    muddle_LinkElementType,
 )
 Type_strategy = st.builds(
     Type,
@@ -426,71 +426,71 @@ Type_strategy = st.builds(
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-muddle::RealType_strategy = st.builds(
-    muddle::RealType,
+muddle_StringType_strategy = st.builds(
+    muddle_StringType,
 )
-muddle::StringType_strategy = st.builds(
-    muddle::StringType,
+muddle_BooleanType_strategy = st.builds(
+    muddle_BooleanType,
 )
-muddle::BooleanType_strategy = st.builds(
-    muddle::BooleanType,
+muddle_RealType_strategy = st.builds(
+    muddle_RealType,
 )
-muddle::IntegerType_strategy = st.builds(
-    muddle::IntegerType,
+muddle_IntegerType_strategy = st.builds(
+    muddle_IntegerType,
 )
-muddle::PrimitiveType_strategy = st.builds(
-    muddle::PrimitiveType,
+muddle_PrimitiveType_strategy = st.builds(
+    muddle_PrimitiveType,
 )
-muddle::MuddleElementStyle_strategy = st.builds(
-    muddle::MuddleElementStyle,
-    labelFontSize=
-        st.integers(),
+muddle_MuddleElementStyle_strategy = st.builds(
+    muddle_MuddleElementStyle,
     x=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    shape=
-        safe_text,
-    borderWidth=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     y=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    labelFontSize=
+        st.integers(),
+    color=
+        safe_text,
     width=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    borderWidth=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     height=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    color=
+    shape=
         safe_text
 )
-muddle::MuddleElementType_strategy = st.builds(
-    muddle::MuddleElementType,
+muddle_MuddleElementType_strategy = st.builds(
+    muddle_MuddleElementType,
 )
-muddle::Slot_strategy = st.builds(
-    muddle::Slot,
+muddle_Slot_strategy = st.builds(
+    muddle_Slot,
     values=
         safe_text
 )
-muddle::MuddleElement_strategy = st.builds(
-    muddle::MuddleElement,
+muddle_MuddleElement_strategy = st.builds(
+    muddle_MuddleElement,
     id=
         safe_text
 )
-muddle::Type_strategy = st.builds(
-    muddle::Type,
+muddle_Type_strategy = st.builds(
+    muddle_Type,
     name=
         safe_text
 )
-muddle::Muddle_strategy = st.builds(
-    muddle::Muddle,
+muddle_Muddle_strategy = st.builds(
+    muddle_Muddle,
 )
-muddle::Feature_strategy = st.builds(
-    muddle::Feature,
-    name=
-        safe_text,
+muddle_Feature_strategy = st.builds(
+    muddle_Feature,
     runtime=
         st.booleans(),
     many=
         st.booleans(),
     primary=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
 
 @given(instance=MuddleElementType_strategy)
@@ -498,10 +498,10 @@ muddle::Feature_strategy = st.builds(
 def test_muddleelementtype_instantiation(instance):
     assert isinstance(instance, MuddleElementType)
 
-@given(instance=muddle::LinkElementType_strategy)
+@given(instance=muddle_LinkElementType_strategy)
 @settings(max_examples=50)
-def test_muddle::linkelementtype_instantiation(instance):
-    assert isinstance(instance, muddle::LinkElementType)
+def test_muddle_linkelementtype_instantiation(instance):
+    assert isinstance(instance, muddle_LinkElementType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
@@ -513,227 +513,182 @@ def test_type_instantiation(instance):
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=muddle::RealType_strategy)
+@given(instance=muddle_StringType_strategy)
 @settings(max_examples=50)
-def test_muddle::realtype_instantiation(instance):
-    assert isinstance(instance, muddle::RealType)
+def test_muddle_stringtype_instantiation(instance):
+    assert isinstance(instance, muddle_StringType)
 
-@given(instance=muddle::StringType_strategy)
+@given(instance=muddle_BooleanType_strategy)
 @settings(max_examples=50)
-def test_muddle::stringtype_instantiation(instance):
-    assert isinstance(instance, muddle::StringType)
+def test_muddle_booleantype_instantiation(instance):
+    assert isinstance(instance, muddle_BooleanType)
 
-@given(instance=muddle::BooleanType_strategy)
+@given(instance=muddle_RealType_strategy)
 @settings(max_examples=50)
-def test_muddle::booleantype_instantiation(instance):
-    assert isinstance(instance, muddle::BooleanType)
+def test_muddle_realtype_instantiation(instance):
+    assert isinstance(instance, muddle_RealType)
 
-@given(instance=muddle::IntegerType_strategy)
+@given(instance=muddle_IntegerType_strategy)
 @settings(max_examples=50)
-def test_muddle::integertype_instantiation(instance):
-    assert isinstance(instance, muddle::IntegerType)
+def test_muddle_integertype_instantiation(instance):
+    assert isinstance(instance, muddle_IntegerType)
 
-@given(instance=muddle::PrimitiveType_strategy)
+@given(instance=muddle_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_muddle::primitivetype_instantiation(instance):
-    assert isinstance(instance, muddle::PrimitiveType)
+def test_muddle_primitivetype_instantiation(instance):
+    assert isinstance(instance, muddle_PrimitiveType)
 
-@given(instance=muddle::MuddleElementStyle_strategy)
+@given(instance=muddle_MuddleElementStyle_strategy)
 @settings(max_examples=50)
-def test_muddle::muddleelementstyle_instantiation(instance):
-    assert isinstance(instance, muddle::MuddleElementStyle)
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_labelFontSize_type(instance):
-    assert isinstance(instance.labelFontSize, int)
+def test_muddle_muddleelementstyle_instantiation(instance):
+    assert isinstance(instance, muddle_MuddleElementStyle)
 
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_labelFontSize_setter(instance):
-    original = instance.labelFontSize
-    instance.labelFontSize = original
-    assert instance.labelFontSize == original
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_x_type(instance):
-    assert isinstance(instance.x, float)
-
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_x_setter(instance):
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_shape_type(instance):
-    assert isinstance(instance.shape, str)
 
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_borderWidth_type(instance):
-    assert isinstance(instance.borderWidth, float)
-
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_borderWidth_setter(instance):
-    original = instance.borderWidth
-    instance.borderWidth = original
-    assert instance.borderWidth == original
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_y_type(instance):
-    assert isinstance(instance.y, float)
-
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_y_setter(instance):
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_width_type(instance):
-    assert isinstance(instance.width, float)
 
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_height_type(instance):
-    assert isinstance(instance.height, float)
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_labelFontSize_setter(instance):
+    original = instance.labelFontSize
+    instance.labelFontSize = original
+    assert instance.labelFontSize == original
 
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
 
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=muddle::MuddleElementStyle_strategy)
-def test_muddle::muddleelementstyle_color_setter(instance):
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=muddle::MuddleElementType_strategy)
+
+
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_borderWidth_setter(instance):
+    original = instance.borderWidth
+    instance.borderWidth = original
+    assert instance.borderWidth == original
+
+
+
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=muddle_MuddleElementStyle_strategy)
+def test_muddle_muddleelementstyle_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+@given(instance=muddle_MuddleElementType_strategy)
 @settings(max_examples=50)
-def test_muddle::muddleelementtype_instantiation(instance):
-    assert isinstance(instance, muddle::MuddleElementType)
+def test_muddle_muddleelementtype_instantiation(instance):
+    assert isinstance(instance, muddle_MuddleElementType)
 
-@given(instance=muddle::Slot_strategy)
+@given(instance=muddle_Slot_strategy)
 @settings(max_examples=50)
-def test_muddle::slot_instantiation(instance):
-    assert isinstance(instance, muddle::Slot)
-
-@given(instance=muddle::Slot_strategy)
-def test_muddle::slot_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_muddle_slot_instantiation(instance):
+    assert isinstance(instance, muddle_Slot)
 
 
-@given(instance=muddle::Slot_strategy)
-def test_muddle::slot_values_setter(instance):
+
+@given(instance=muddle_Slot_strategy)
+def test_muddle_slot_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=muddle::MuddleElement_strategy)
+@given(instance=muddle_MuddleElement_strategy)
 @settings(max_examples=50)
-def test_muddle::muddleelement_instantiation(instance):
-    assert isinstance(instance, muddle::MuddleElement)
-
-@given(instance=muddle::MuddleElement_strategy)
-def test_muddle::muddleelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_muddle_muddleelement_instantiation(instance):
+    assert isinstance(instance, muddle_MuddleElement)
 
 
-@given(instance=muddle::MuddleElement_strategy)
-def test_muddle::muddleelement_id_setter(instance):
+
+@given(instance=muddle_MuddleElement_strategy)
+def test_muddle_muddleelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=muddle::Type_strategy)
+@given(instance=muddle_Type_strategy)
 @settings(max_examples=50)
-def test_muddle::type_instantiation(instance):
-    assert isinstance(instance, muddle::Type)
-
-@given(instance=muddle::Type_strategy)
-def test_muddle::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_muddle_type_instantiation(instance):
+    assert isinstance(instance, muddle_Type)
 
 
-@given(instance=muddle::Type_strategy)
-def test_muddle::type_name_setter(instance):
+
+@given(instance=muddle_Type_strategy)
+def test_muddle_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=muddle::Muddle_strategy)
+@given(instance=muddle_Muddle_strategy)
 @settings(max_examples=50)
-def test_muddle::muddle_instantiation(instance):
-    assert isinstance(instance, muddle::Muddle)
+def test_muddle_muddle_instantiation(instance):
+    assert isinstance(instance, muddle_Muddle)
 
-@given(instance=muddle::Feature_strategy)
+@given(instance=muddle_Feature_strategy)
 @settings(max_examples=50)
-def test_muddle::feature_instantiation(instance):
-    assert isinstance(instance, muddle::Feature)
-
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_muddle_feature_instantiation(instance):
+    assert isinstance(instance, muddle_Feature)
 
 
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_runtime_type(instance):
-    assert isinstance(instance.runtime, bool)
-
-
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_runtime_setter(instance):
+@given(instance=muddle_Feature_strategy)
+def test_muddle_feature_runtime_setter(instance):
     original = instance.runtime
     instance.runtime = original
     assert instance.runtime == original
 
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
 
 
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_many_setter(instance):
+@given(instance=muddle_Feature_strategy)
+def test_muddle_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_primary_type(instance):
-    assert isinstance(instance.primary, bool)
 
 
-@given(instance=muddle::Feature_strategy)
-def test_muddle::feature_primary_setter(instance):
+@given(instance=muddle_Feature_strategy)
+def test_muddle_feature_primary_setter(instance):
     original = instance.primary
     instance.primary = original
     assert instance.primary == original
+
+
+
+@given(instance=muddle_Feature_strategy)
+def test_muddle_feature_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

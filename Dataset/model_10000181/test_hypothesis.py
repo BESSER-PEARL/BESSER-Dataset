@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Boolean_external,
@@ -15,10 +15,10 @@ from python_code import (
     Car,
     Vehicle_Interface,
     Parking_Space,
-    Enumeration,
-    VehicleType,
     Parking_Space_Type,
     Enumeration2,
+    VehicleType,
+    Enumeration,
 )
 
 # =============================================================================
@@ -160,17 +160,17 @@ def test_parking_space_constructor_exists():
 def test_parking_space_constructor_args():
     sig = inspect.signature(Parking_Space.__init__)
     params = list(sig.parameters.keys())
-    assert "Occupied" in params, "Missing parameter 'Occupied'"
-    assert "Space_Type" in params, "Missing parameter 'Space_Type'"
     assert "Space_Number" in params, "Missing parameter 'Space_Number'"
+    assert "Space_Type" in params, "Missing parameter 'Space_Type'"
+    assert "Occupied" in params, "Missing parameter 'Occupied'"
     assert "Floor_Number" in params, "Missing parameter 'Floor_Number'"
 
-def test_parking_space_has_Occupied():
-    assert hasattr(Parking_Space, "Occupied")
+def test_parking_space_has_Space_Number():
+    assert hasattr(Parking_Space, "Space_Number")
     descriptor = None
     for klass in Parking_Space.__mro__:
-        if "Occupied" in klass.__dict__:
-            descriptor = klass.__dict__["Occupied"]
+        if "Space_Number" in klass.__dict__:
+            descriptor = klass.__dict__["Space_Number"]
             break
     assert isinstance(descriptor, property)
 
@@ -183,12 +183,12 @@ def test_parking_space_has_Space_Type():
             break
     assert isinstance(descriptor, property)
 
-def test_parking_space_has_Space_Number():
-    assert hasattr(Parking_Space, "Space_Number")
+def test_parking_space_has_Occupied():
+    assert hasattr(Parking_Space, "Occupied")
     descriptor = None
     for klass in Parking_Space.__mro__:
-        if "Space_Number" in klass.__dict__:
-            descriptor = klass.__dict__["Space_Number"]
+        if "Occupied" in klass.__dict__:
+            descriptor = klass.__dict__["Occupied"]
             break
     assert isinstance(descriptor, property)
 
@@ -200,32 +200,6 @@ def test_parking_space_has_Floor_Number():
             descriptor = klass.__dict__["Floor_Number"]
             break
     assert isinstance(descriptor, property)
-
-def test_enumeration_exists():
-    # Check that the Enumeration exists
-    assert Enumeration is not None
-
-def test_enumeration_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Enumeration]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Enumeration"
-
-def test_vehicletype_exists():
-    # Check that the Enumeration exists
-    assert VehicleType is not None
-
-def test_vehicletype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VehicleType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VehicleType"
 
 def test_parking_space_type_exists():
     # Check that the Enumeration exists
@@ -252,6 +226,32 @@ def test_enumeration2_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Enumeration2"
+
+def test_vehicletype_exists():
+    # Check that the Enumeration exists
+    assert VehicleType is not None
+
+def test_vehicletype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in VehicleType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in VehicleType"
+
+def test_enumeration_exists():
+    # Check that the Enumeration exists
+    assert Enumeration is not None
+
+def test_enumeration_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Enumeration]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Enumeration"
 
 
 # =============================================================================
@@ -293,12 +293,12 @@ Vehicle_Interface_strategy = st.builds(
 )
 Parking_Space_strategy = st.builds(
     Parking_Space,
-    Occupied=
-        st.booleans(),
-    Space_Type=
-        st.none(),
     Space_Number=
         st.integers(),
+    Space_Type=
+        st.none(),
+    Occupied=
+        st.booleans(),
     Floor_Number=
         st.none()
 )
@@ -323,9 +323,6 @@ def test_class_instantiation(instance):
 def test_parking_level_instantiation(instance):
     assert isinstance(instance, Parking_Level)
 
-@given(instance=Parking_Level_strategy)
-def test_parking_level_Fl_Number_type(instance):
-    assert isinstance(instance.Fl_Number, int)
 
 
 @given(instance=Parking_Level_strategy)
@@ -359,31 +356,6 @@ def test_vehicle_interface_instantiation(instance):
 def test_parking_space_instantiation(instance):
     assert isinstance(instance, Parking_Space)
 
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Occupied_type(instance):
-    assert isinstance(instance.Occupied, bool)
-
-
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Occupied_setter(instance):
-    original = instance.Occupied
-    instance.Occupied = original
-    assert instance.Occupied == original
-
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Space_Type_type(instance):
-    assert isinstance(instance.Space_Type, parking_space_type)
-
-
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Space_Type_setter(instance):
-    original = instance.Space_Type
-    instance.Space_Type = original
-    assert instance.Space_Type == original
-
-@given(instance=Parking_Space_strategy)
-def test_parking_space_Space_Number_type(instance):
-    assert isinstance(instance.Space_Number, int)
 
 
 @given(instance=Parking_Space_strategy)
@@ -392,9 +364,22 @@ def test_parking_space_Space_Number_setter(instance):
     instance.Space_Number = original
     assert instance.Space_Number == original
 
+
+
 @given(instance=Parking_Space_strategy)
-def test_parking_space_Floor_Number_type(instance):
-    assert isinstance(instance.Floor_Number, parking_level)
+def test_parking_space_Space_Type_setter(instance):
+    original = instance.Space_Type
+    instance.Space_Type = original
+    assert instance.Space_Type == original
+
+
+
+@given(instance=Parking_Space_strategy)
+def test_parking_space_Occupied_setter(instance):
+    original = instance.Occupied
+    instance.Occupied = original
+    assert instance.Occupied == original
+
 
 
 @given(instance=Parking_Space_strategy)

@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ktest206::N,
+from python_code import (
+    ktest206_N,
     A,
-    ktest206::Y,
+    ktest206_Y,
     Y,
-    ktest206::V,
-    ktest206::X,
-    ktest206::D,
+    ktest206_V,
+    ktest206_X,
+    ktest206_D,
     B,
-    ktest206::A,
-    ktest206::C,
+    ktest206_A,
+    ktest206_C,
     N,
-    ktest206::B,
-    ktest206::E,
-    ktest206::W,
+    ktest206_E,
+    ktest206_W,
+    ktest206_B,
 )
 
 # =============================================================================
@@ -28,23 +28,23 @@ from classes import (
 
 
 
-def test_ktest206::n_is_not_abstract():
-    assert not inspect.isabstract(ktest206::N)
+def test_ktest206_n_is_not_abstract():
+    assert not inspect.isabstract(ktest206_N)
 
 
-def test_ktest206::n_constructor_exists():
-    assert callable(ktest206::N.__init__)
+def test_ktest206_n_constructor_exists():
+    assert callable(ktest206_N.__init__)
 
 
-def test_ktest206::n_constructor_args():
-    sig = inspect.signature(ktest206::N.__init__)
+def test_ktest206_n_constructor_args():
+    sig = inspect.signature(ktest206_N.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ktest206::n_has_name():
-    assert hasattr(ktest206::N, "name")
+def test_ktest206_n_has_name():
+    assert hasattr(ktest206_N, "name")
     descriptor = None
-    for klass in ktest206::N.__mro__:
+    for klass in ktest206_N.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,16 +66,16 @@ def test_a_constructor_args():
 
 
 
-def test_ktest206::y_is_not_abstract():
-    assert not inspect.isabstract(ktest206::Y)
+def test_ktest206_y_is_not_abstract():
+    assert not inspect.isabstract(ktest206_Y)
 
 
-def test_ktest206::y_constructor_exists():
-    assert callable(ktest206::Y.__init__)
+def test_ktest206_y_constructor_exists():
+    assert callable(ktest206_Y.__init__)
 
 
-def test_ktest206::y_constructor_args():
-    sig = inspect.signature(ktest206::Y.__init__)
+def test_ktest206_y_constructor_args():
+    sig = inspect.signature(ktest206_Y.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,51 +94,51 @@ def test_y_constructor_args():
 
 
 
-def test_ktest206::v_is_not_abstract():
-    assert not inspect.isabstract(ktest206::V)
+def test_ktest206_v_is_not_abstract():
+    assert not inspect.isabstract(ktest206_V)
 
 
-def test_ktest206::v_constructor_exists():
-    assert callable(ktest206::V.__init__)
+def test_ktest206_v_constructor_exists():
+    assert callable(ktest206_V.__init__)
 
 
-def test_ktest206::v_constructor_args():
-    sig = inspect.signature(ktest206::V.__init__)
+def test_ktest206_v_constructor_args():
+    sig = inspect.signature(ktest206_V.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ktest206::x_is_not_abstract():
-    assert not inspect.isabstract(ktest206::X)
+def test_ktest206_x_is_not_abstract():
+    assert not inspect.isabstract(ktest206_X)
 
 
-def test_ktest206::x_constructor_exists():
-    assert callable(ktest206::X.__init__)
+def test_ktest206_x_constructor_exists():
+    assert callable(ktest206_X.__init__)
 
 
-def test_ktest206::x_constructor_args():
-    sig = inspect.signature(ktest206::X.__init__)
+def test_ktest206_x_constructor_args():
+    sig = inspect.signature(ktest206_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ktest206::d_is_not_abstract():
-    assert not inspect.isabstract(ktest206::D)
+def test_ktest206_d_is_not_abstract():
+    assert not inspect.isabstract(ktest206_D)
 
 
-def test_ktest206::d_constructor_exists():
-    assert callable(ktest206::D.__init__)
+def test_ktest206_d_constructor_exists():
+    assert callable(ktest206_D.__init__)
 
 
-def test_ktest206::d_constructor_args():
-    sig = inspect.signature(ktest206::D.__init__)
+def test_ktest206_d_constructor_args():
+    sig = inspect.signature(ktest206_D.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ktest206::d_has_name():
-    assert hasattr(ktest206::D, "name")
+def test_ktest206_d_has_name():
+    assert hasattr(ktest206_D, "name")
     descriptor = None
-    for klass in ktest206::D.__mro__:
+    for klass in ktest206_D.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -160,37 +160,37 @@ def test_b_constructor_args():
 
 
 
-def test_ktest206::a_is_not_abstract():
-    assert not inspect.isabstract(ktest206::A)
+def test_ktest206_a_is_not_abstract():
+    assert not inspect.isabstract(ktest206_A)
 
 
-def test_ktest206::a_constructor_exists():
-    assert callable(ktest206::A.__init__)
+def test_ktest206_a_constructor_exists():
+    assert callable(ktest206_A.__init__)
 
 
-def test_ktest206::a_constructor_args():
-    sig = inspect.signature(ktest206::A.__init__)
+def test_ktest206_a_constructor_args():
+    sig = inspect.signature(ktest206_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ktest206::c_is_not_abstract():
-    assert not inspect.isabstract(ktest206::C)
+def test_ktest206_c_is_not_abstract():
+    assert not inspect.isabstract(ktest206_C)
 
 
-def test_ktest206::c_constructor_exists():
-    assert callable(ktest206::C.__init__)
+def test_ktest206_c_constructor_exists():
+    assert callable(ktest206_C.__init__)
 
 
-def test_ktest206::c_constructor_args():
-    sig = inspect.signature(ktest206::C.__init__)
+def test_ktest206_c_constructor_args():
+    sig = inspect.signature(ktest206_C.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ktest206::c_has_name():
-    assert hasattr(ktest206::C, "name")
+def test_ktest206_c_has_name():
+    assert hasattr(ktest206_C, "name")
     descriptor = None
-    for klass in ktest206::C.__mro__:
+    for klass in ktest206_C.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -212,44 +212,44 @@ def test_n_constructor_args():
 
 
 
-def test_ktest206::b_is_not_abstract():
-    assert not inspect.isabstract(ktest206::B)
+def test_ktest206_e_is_not_abstract():
+    assert not inspect.isabstract(ktest206_E)
 
 
-def test_ktest206::b_constructor_exists():
-    assert callable(ktest206::B.__init__)
+def test_ktest206_e_constructor_exists():
+    assert callable(ktest206_E.__init__)
 
 
-def test_ktest206::b_constructor_args():
-    sig = inspect.signature(ktest206::B.__init__)
+def test_ktest206_e_constructor_args():
+    sig = inspect.signature(ktest206_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ktest206::e_is_not_abstract():
-    assert not inspect.isabstract(ktest206::E)
+def test_ktest206_w_is_not_abstract():
+    assert not inspect.isabstract(ktest206_W)
 
 
-def test_ktest206::e_constructor_exists():
-    assert callable(ktest206::E.__init__)
+def test_ktest206_w_constructor_exists():
+    assert callable(ktest206_W.__init__)
 
 
-def test_ktest206::e_constructor_args():
-    sig = inspect.signature(ktest206::E.__init__)
+def test_ktest206_w_constructor_args():
+    sig = inspect.signature(ktest206_W.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ktest206::w_is_not_abstract():
-    assert not inspect.isabstract(ktest206::W)
+def test_ktest206_b_is_not_abstract():
+    assert not inspect.isabstract(ktest206_B)
 
 
-def test_ktest206::w_constructor_exists():
-    assert callable(ktest206::W.__init__)
+def test_ktest206_b_constructor_exists():
+    assert callable(ktest206_B.__init__)
 
 
-def test_ktest206::w_constructor_args():
-    sig = inspect.signature(ktest206::W.__init__)
+def test_ktest206_b_constructor_args():
+    sig = inspect.signature(ktest206_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -264,67 +264,64 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ktest206::N_strategy = st.builds(
-    ktest206::N,
+ktest206_N_strategy = st.builds(
+    ktest206_N,
     name=
         safe_text
 )
 A_strategy = st.builds(
     A,
 )
-ktest206::Y_strategy = st.builds(
-    ktest206::Y,
+ktest206_Y_strategy = st.builds(
+    ktest206_Y,
 )
 Y_strategy = st.builds(
     Y,
 )
-ktest206::V_strategy = st.builds(
-    ktest206::V,
+ktest206_V_strategy = st.builds(
+    ktest206_V,
 )
-ktest206::X_strategy = st.builds(
-    ktest206::X,
+ktest206_X_strategy = st.builds(
+    ktest206_X,
 )
-ktest206::D_strategy = st.builds(
-    ktest206::D,
+ktest206_D_strategy = st.builds(
+    ktest206_D,
     name=
         safe_text
 )
 B_strategy = st.builds(
     B,
 )
-ktest206::A_strategy = st.builds(
-    ktest206::A,
+ktest206_A_strategy = st.builds(
+    ktest206_A,
 )
-ktest206::C_strategy = st.builds(
-    ktest206::C,
+ktest206_C_strategy = st.builds(
+    ktest206_C,
     name=
         safe_text
 )
 N_strategy = st.builds(
     N,
 )
-ktest206::B_strategy = st.builds(
-    ktest206::B,
+ktest206_E_strategy = st.builds(
+    ktest206_E,
 )
-ktest206::E_strategy = st.builds(
-    ktest206::E,
+ktest206_W_strategy = st.builds(
+    ktest206_W,
 )
-ktest206::W_strategy = st.builds(
-    ktest206::W,
+ktest206_B_strategy = st.builds(
+    ktest206_B,
 )
 
-@given(instance=ktest206::N_strategy)
+@given(instance=ktest206_N_strategy)
 @settings(max_examples=50)
-def test_ktest206::n_instantiation(instance):
-    assert isinstance(instance, ktest206::N)
-
-@given(instance=ktest206::N_strategy)
-def test_ktest206::n_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ktest206_n_instantiation(instance):
+    assert isinstance(instance, ktest206_N)
 
 
-@given(instance=ktest206::N_strategy)
-def test_ktest206::n_name_setter(instance):
+
+@given(instance=ktest206_N_strategy)
+def test_ktest206_n_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -334,38 +331,35 @@ def test_ktest206::n_name_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=ktest206::Y_strategy)
+@given(instance=ktest206_Y_strategy)
 @settings(max_examples=50)
-def test_ktest206::y_instantiation(instance):
-    assert isinstance(instance, ktest206::Y)
+def test_ktest206_y_instantiation(instance):
+    assert isinstance(instance, ktest206_Y)
 
 @given(instance=Y_strategy)
 @settings(max_examples=50)
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=ktest206::V_strategy)
+@given(instance=ktest206_V_strategy)
 @settings(max_examples=50)
-def test_ktest206::v_instantiation(instance):
-    assert isinstance(instance, ktest206::V)
+def test_ktest206_v_instantiation(instance):
+    assert isinstance(instance, ktest206_V)
 
-@given(instance=ktest206::X_strategy)
+@given(instance=ktest206_X_strategy)
 @settings(max_examples=50)
-def test_ktest206::x_instantiation(instance):
-    assert isinstance(instance, ktest206::X)
+def test_ktest206_x_instantiation(instance):
+    assert isinstance(instance, ktest206_X)
 
-@given(instance=ktest206::D_strategy)
+@given(instance=ktest206_D_strategy)
 @settings(max_examples=50)
-def test_ktest206::d_instantiation(instance):
-    assert isinstance(instance, ktest206::D)
-
-@given(instance=ktest206::D_strategy)
-def test_ktest206::d_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ktest206_d_instantiation(instance):
+    assert isinstance(instance, ktest206_D)
 
 
-@given(instance=ktest206::D_strategy)
-def test_ktest206::d_name_setter(instance):
+
+@given(instance=ktest206_D_strategy)
+def test_ktest206_d_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -375,23 +369,20 @@ def test_ktest206::d_name_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=ktest206::A_strategy)
+@given(instance=ktest206_A_strategy)
 @settings(max_examples=50)
-def test_ktest206::a_instantiation(instance):
-    assert isinstance(instance, ktest206::A)
+def test_ktest206_a_instantiation(instance):
+    assert isinstance(instance, ktest206_A)
 
-@given(instance=ktest206::C_strategy)
+@given(instance=ktest206_C_strategy)
 @settings(max_examples=50)
-def test_ktest206::c_instantiation(instance):
-    assert isinstance(instance, ktest206::C)
-
-@given(instance=ktest206::C_strategy)
-def test_ktest206::c_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ktest206_c_instantiation(instance):
+    assert isinstance(instance, ktest206_C)
 
 
-@given(instance=ktest206::C_strategy)
-def test_ktest206::c_name_setter(instance):
+
+@given(instance=ktest206_C_strategy)
+def test_ktest206_c_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -401,17 +392,17 @@ def test_ktest206::c_name_setter(instance):
 def test_n_instantiation(instance):
     assert isinstance(instance, N)
 
-@given(instance=ktest206::B_strategy)
+@given(instance=ktest206_E_strategy)
 @settings(max_examples=50)
-def test_ktest206::b_instantiation(instance):
-    assert isinstance(instance, ktest206::B)
+def test_ktest206_e_instantiation(instance):
+    assert isinstance(instance, ktest206_E)
 
-@given(instance=ktest206::E_strategy)
+@given(instance=ktest206_W_strategy)
 @settings(max_examples=50)
-def test_ktest206::e_instantiation(instance):
-    assert isinstance(instance, ktest206::E)
+def test_ktest206_w_instantiation(instance):
+    assert isinstance(instance, ktest206_W)
 
-@given(instance=ktest206::W_strategy)
+@given(instance=ktest206_B_strategy)
 @settings(max_examples=50)
-def test_ktest206::w_instantiation(instance):
-    assert isinstance(instance, ktest206::W)
+def test_ktest206_b_instantiation(instance):
+    assert isinstance(instance, ktest206_B)

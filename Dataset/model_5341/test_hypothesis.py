@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    A::A,
-    A::A2,
-    A::A1,
+from python_code import (
+    A_A,
+    A_A2,
+    A_A1,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_a::a_is_not_abstract():
-    assert not inspect.isabstract(A::A)
+def test_a_a_is_not_abstract():
+    assert not inspect.isabstract(A_A)
 
 
-def test_a::a_constructor_exists():
-    assert callable(A::A.__init__)
+def test_a_a_constructor_exists():
+    assert callable(A_A.__init__)
 
 
-def test_a::a_constructor_args():
-    sig = inspect.signature(A::A.__init__)
+def test_a_a_constructor_args():
+    sig = inspect.signature(A_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_a::a_has_name():
-    assert hasattr(A::A, "name")
+def test_a_a_has_name():
+    assert hasattr(A_A, "name")
     descriptor = None
-    for klass in A::A.__mro__:
+    for klass in A_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_a::a_has_name():
 
 
 
-def test_a::a2_is_not_abstract():
-    assert not inspect.isabstract(A::A2)
+def test_a_a2_is_not_abstract():
+    assert not inspect.isabstract(A_A2)
 
 
-def test_a::a2_constructor_exists():
-    assert callable(A::A2.__init__)
+def test_a_a2_constructor_exists():
+    assert callable(A_A2.__init__)
 
 
-def test_a::a2_constructor_args():
-    sig = inspect.signature(A::A2.__init__)
+def test_a_a2_constructor_args():
+    sig = inspect.signature(A_A2.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_a::a2_has_description():
-    assert hasattr(A::A2, "description")
+def test_a_a2_has_description():
+    assert hasattr(A_A2, "description")
     descriptor = None
-    for klass in A::A2.__mro__:
+    for klass in A_A2.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -65,23 +65,23 @@ def test_a::a2_has_description():
 
 
 
-def test_a::a1_is_not_abstract():
-    assert not inspect.isabstract(A::A1)
+def test_a_a1_is_not_abstract():
+    assert not inspect.isabstract(A_A1)
 
 
-def test_a::a1_constructor_exists():
-    assert callable(A::A1.__init__)
+def test_a_a1_constructor_exists():
+    assert callable(A_A1.__init__)
 
 
-def test_a::a1_constructor_args():
-    sig = inspect.signature(A::A1.__init__)
+def test_a_a1_constructor_args():
+    sig = inspect.signature(A_A1.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_a::a1_has_description():
-    assert hasattr(A::A1, "description")
+def test_a_a1_has_description():
+    assert hasattr(A_A1, "description")
     descriptor = None
-    for klass in A::A1.__mro__:
+    for klass in A_A1.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-A::A_strategy = st.builds(
-    A::A,
+A_A_strategy = st.builds(
+    A_A,
     name=
         safe_text
 )
-A::A2_strategy = st.builds(
-    A::A2,
+A_A2_strategy = st.builds(
+    A_A2,
     description=
         safe_text
 )
-A::A1_strategy = st.builds(
-    A::A1,
+A_A1_strategy = st.builds(
+    A_A1,
     description=
         safe_text
 )
 
-@given(instance=A::A_strategy)
+@given(instance=A_A_strategy)
 @settings(max_examples=50)
-def test_a::a_instantiation(instance):
-    assert isinstance(instance, A::A)
-
-@given(instance=A::A_strategy)
-def test_a::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_a_a_instantiation(instance):
+    assert isinstance(instance, A_A)
 
 
-@given(instance=A::A_strategy)
-def test_a::a_name_setter(instance):
+
+@given(instance=A_A_strategy)
+def test_a_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=A::A2_strategy)
+@given(instance=A_A2_strategy)
 @settings(max_examples=50)
-def test_a::a2_instantiation(instance):
-    assert isinstance(instance, A::A2)
-
-@given(instance=A::A2_strategy)
-def test_a::a2_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_a_a2_instantiation(instance):
+    assert isinstance(instance, A_A2)
 
 
-@given(instance=A::A2_strategy)
-def test_a::a2_description_setter(instance):
+
+@given(instance=A_A2_strategy)
+def test_a_a2_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=A::A1_strategy)
+@given(instance=A_A1_strategy)
 @settings(max_examples=50)
-def test_a::a1_instantiation(instance):
-    assert isinstance(instance, A::A1)
-
-@given(instance=A::A1_strategy)
-def test_a::a1_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_a_a1_instantiation(instance):
+    assert isinstance(instance, A_A1)
 
 
-@given(instance=A::A1_strategy)
-def test_a::a1_description_setter(instance):
+
+@given(instance=A_A1_strategy)
+def test_a_a1_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

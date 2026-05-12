@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    root::Class,
+from python_code import (
+    root_Class,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_root::class_is_not_abstract():
-    assert not inspect.isabstract(root::Class)
+def test_root_class_is_not_abstract():
+    assert not inspect.isabstract(root_Class)
 
 
-def test_root::class_constructor_exists():
-    assert callable(root::Class.__init__)
+def test_root_class_constructor_exists():
+    assert callable(root_Class.__init__)
 
 
-def test_root::class_constructor_args():
-    sig = inspect.signature(root::Class.__init__)
+def test_root_class_constructor_args():
+    sig = inspect.signature(root_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-root::Class_strategy = st.builds(
-    root::Class,
+root_Class_strategy = st.builds(
+    root_Class,
 )
 
-@given(instance=root::Class_strategy)
+@given(instance=root_Class_strategy)
 @settings(max_examples=50)
-def test_root::class_instantiation(instance):
-    assert isinstance(instance, root::Class)
+def test_root_class_instantiation(instance):
+    assert isinstance(instance, root_Class)

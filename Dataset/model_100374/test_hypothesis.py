@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    internalsm::TimeConstraintSpecification,
-    internalsm::InternalExecutionModel,
-    internalsm::EventPattern,
-    internalsm::StateMachine,
+from python_code import (
+    internalsm_TimeConstraintSpecification,
+    internalsm_InternalExecutionModel,
+    internalsm_EventPattern,
+    internalsm_StateMachine,
     State,
-    internalsm::TrapState,
-    internalsm::InitState,
-    internalsm::FinalState,
-    internalsm::AtomicEventPattern,
-    internalsm::Guard,
-    internalsm::Event,
-    internalsm::TimeConstraint,
-    internalsm::EventToken,
-    internalsm::Transition,
-    internalsm::State,
+    internalsm_InitState,
+    internalsm_TrapState,
+    internalsm_FinalState,
+    internalsm_AtomicEventPattern,
+    internalsm_Guard,
+    internalsm_Event,
+    internalsm_TimeConstraint,
+    internalsm_EventToken,
+    internalsm_Transition,
+    internalsm_State,
+    TimeConstraintType,
     EventProcessingContext,
     NumericCompareOperator,
-    TimeConstraintType,
 )
 
 # =============================================================================
@@ -32,77 +32,77 @@ from classes import (
 
 
 
-def test_internalsm::timeconstraintspecification_is_not_abstract():
-    assert not inspect.isabstract(internalsm::TimeConstraintSpecification)
+def test_internalsm_timeconstraintspecification_is_not_abstract():
+    assert not inspect.isabstract(internalsm_TimeConstraintSpecification)
 
 
-def test_internalsm::timeconstraintspecification_constructor_exists():
-    assert callable(internalsm::TimeConstraintSpecification.__init__)
+def test_internalsm_timeconstraintspecification_constructor_exists():
+    assert callable(internalsm_TimeConstraintSpecification.__init__)
 
 
-def test_internalsm::timeconstraintspecification_constructor_args():
-    sig = inspect.signature(internalsm::TimeConstraintSpecification.__init__)
+def test_internalsm_timeconstraintspecification_constructor_args():
+    sig = inspect.signature(internalsm_TimeConstraintSpecification.__init__)
     params = list(sig.parameters.keys())
-    assert "stopTimestamp" in params, "Missing parameter 'stopTimestamp'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "expectedLength" in params, "Missing parameter 'expectedLength'"
     assert "startTimestamp" in params, "Missing parameter 'startTimestamp'"
+    assert "stopTimestamp" in params, "Missing parameter 'stopTimestamp'"
+    assert "expectedLength" in params, "Missing parameter 'expectedLength'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_internalsm::timeconstraintspecification_has_stopTimestamp():
-    assert hasattr(internalsm::TimeConstraintSpecification, "stopTimestamp")
+def test_internalsm_timeconstraintspecification_has_startTimestamp():
+    assert hasattr(internalsm_TimeConstraintSpecification, "startTimestamp")
     descriptor = None
-    for klass in internalsm::TimeConstraintSpecification.__mro__:
-        if "stopTimestamp" in klass.__dict__:
-            descriptor = klass.__dict__["stopTimestamp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_internalsm::timeconstraintspecification_has_id():
-    assert hasattr(internalsm::TimeConstraintSpecification, "id")
-    descriptor = None
-    for klass in internalsm::TimeConstraintSpecification.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_internalsm::timeconstraintspecification_has_expectedLength():
-    assert hasattr(internalsm::TimeConstraintSpecification, "expectedLength")
-    descriptor = None
-    for klass in internalsm::TimeConstraintSpecification.__mro__:
-        if "expectedLength" in klass.__dict__:
-            descriptor = klass.__dict__["expectedLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_internalsm::timeconstraintspecification_has_startTimestamp():
-    assert hasattr(internalsm::TimeConstraintSpecification, "startTimestamp")
-    descriptor = None
-    for klass in internalsm::TimeConstraintSpecification.__mro__:
+    for klass in internalsm_TimeConstraintSpecification.__mro__:
         if "startTimestamp" in klass.__dict__:
             descriptor = klass.__dict__["startTimestamp"]
             break
     assert isinstance(descriptor, property)
 
+def test_internalsm_timeconstraintspecification_has_stopTimestamp():
+    assert hasattr(internalsm_TimeConstraintSpecification, "stopTimestamp")
+    descriptor = None
+    for klass in internalsm_TimeConstraintSpecification.__mro__:
+        if "stopTimestamp" in klass.__dict__:
+            descriptor = klass.__dict__["stopTimestamp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_internalsm_timeconstraintspecification_has_expectedLength():
+    assert hasattr(internalsm_TimeConstraintSpecification, "expectedLength")
+    descriptor = None
+    for klass in internalsm_TimeConstraintSpecification.__mro__:
+        if "expectedLength" in klass.__dict__:
+            descriptor = klass.__dict__["expectedLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_internalsm_timeconstraintspecification_has_id():
+    assert hasattr(internalsm_TimeConstraintSpecification, "id")
+    descriptor = None
+    for klass in internalsm_TimeConstraintSpecification.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_internalsm::internalexecutionmodel_is_not_abstract():
-    assert not inspect.isabstract(internalsm::InternalExecutionModel)
+
+def test_internalsm_internalexecutionmodel_is_not_abstract():
+    assert not inspect.isabstract(internalsm_InternalExecutionModel)
 
 
-def test_internalsm::internalexecutionmodel_constructor_exists():
-    assert callable(internalsm::InternalExecutionModel.__init__)
+def test_internalsm_internalexecutionmodel_constructor_exists():
+    assert callable(internalsm_InternalExecutionModel.__init__)
 
 
-def test_internalsm::internalexecutionmodel_constructor_args():
-    sig = inspect.signature(internalsm::InternalExecutionModel.__init__)
+def test_internalsm_internalexecutionmodel_constructor_args():
+    sig = inspect.signature(internalsm_InternalExecutionModel.__init__)
     params = list(sig.parameters.keys())
     assert "context" in params, "Missing parameter 'context'"
 
-def test_internalsm::internalexecutionmodel_has_context():
-    assert hasattr(internalsm::InternalExecutionModel, "context")
+def test_internalsm_internalexecutionmodel_has_context():
+    assert hasattr(internalsm_InternalExecutionModel, "context")
     descriptor = None
-    for klass in internalsm::InternalExecutionModel.__mro__:
+    for klass in internalsm_InternalExecutionModel.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
@@ -110,49 +110,49 @@ def test_internalsm::internalexecutionmodel_has_context():
 
 
 
-def test_internalsm::eventpattern_is_not_abstract():
-    assert not inspect.isabstract(internalsm::EventPattern)
+def test_internalsm_eventpattern_is_not_abstract():
+    assert not inspect.isabstract(internalsm_EventPattern)
 
 
-def test_internalsm::eventpattern_constructor_exists():
-    assert callable(internalsm::EventPattern.__init__)
+def test_internalsm_eventpattern_constructor_exists():
+    assert callable(internalsm_EventPattern.__init__)
 
 
-def test_internalsm::eventpattern_constructor_args():
-    sig = inspect.signature(internalsm::EventPattern.__init__)
+def test_internalsm_eventpattern_constructor_args():
+    sig = inspect.signature(internalsm_EventPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(internalsm::StateMachine)
+def test_internalsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(internalsm_StateMachine)
 
 
-def test_internalsm::statemachine_constructor_exists():
-    assert callable(internalsm::StateMachine.__init__)
+def test_internalsm_statemachine_constructor_exists():
+    assert callable(internalsm_StateMachine.__init__)
 
 
-def test_internalsm::statemachine_constructor_args():
-    sig = inspect.signature(internalsm::StateMachine.__init__)
+def test_internalsm_statemachine_constructor_args():
+    sig = inspect.signature(internalsm_StateMachine.__init__)
     params = list(sig.parameters.keys())
-    assert "context" in params, "Missing parameter 'context'"
     assert "priority" in params, "Missing parameter 'priority'"
+    assert "context" in params, "Missing parameter 'context'"
 
-def test_internalsm::statemachine_has_context():
-    assert hasattr(internalsm::StateMachine, "context")
+def test_internalsm_statemachine_has_priority():
+    assert hasattr(internalsm_StateMachine, "priority")
     descriptor = None
-    for klass in internalsm::StateMachine.__mro__:
-        if "context" in klass.__dict__:
-            descriptor = klass.__dict__["context"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_internalsm::statemachine_has_priority():
-    assert hasattr(internalsm::StateMachine, "priority")
-    descriptor = None
-    for klass in internalsm::StateMachine.__mro__:
+    for klass in internalsm_StateMachine.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_internalsm_statemachine_has_context():
+    assert hasattr(internalsm_StateMachine, "context")
+    descriptor = None
+    for klass in internalsm_StateMachine.__mro__:
+        if "context" in klass.__dict__:
+            descriptor = klass.__dict__["context"]
             break
     assert isinstance(descriptor, property)
 
@@ -172,107 +172,107 @@ def test_state_constructor_args():
 
 
 
-def test_internalsm::trapstate_is_not_abstract():
-    assert not inspect.isabstract(internalsm::TrapState)
+def test_internalsm_initstate_is_not_abstract():
+    assert not inspect.isabstract(internalsm_InitState)
 
 
-def test_internalsm::trapstate_constructor_exists():
-    assert callable(internalsm::TrapState.__init__)
+def test_internalsm_initstate_constructor_exists():
+    assert callable(internalsm_InitState.__init__)
 
 
-def test_internalsm::trapstate_constructor_args():
-    sig = inspect.signature(internalsm::TrapState.__init__)
+def test_internalsm_initstate_constructor_args():
+    sig = inspect.signature(internalsm_InitState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::initstate_is_not_abstract():
-    assert not inspect.isabstract(internalsm::InitState)
+def test_internalsm_trapstate_is_not_abstract():
+    assert not inspect.isabstract(internalsm_TrapState)
 
 
-def test_internalsm::initstate_constructor_exists():
-    assert callable(internalsm::InitState.__init__)
+def test_internalsm_trapstate_constructor_exists():
+    assert callable(internalsm_TrapState.__init__)
 
 
-def test_internalsm::initstate_constructor_args():
-    sig = inspect.signature(internalsm::InitState.__init__)
+def test_internalsm_trapstate_constructor_args():
+    sig = inspect.signature(internalsm_TrapState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(internalsm::FinalState)
+def test_internalsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(internalsm_FinalState)
 
 
-def test_internalsm::finalstate_constructor_exists():
-    assert callable(internalsm::FinalState.__init__)
+def test_internalsm_finalstate_constructor_exists():
+    assert callable(internalsm_FinalState.__init__)
 
 
-def test_internalsm::finalstate_constructor_args():
-    sig = inspect.signature(internalsm::FinalState.__init__)
+def test_internalsm_finalstate_constructor_args():
+    sig = inspect.signature(internalsm_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::atomiceventpattern_is_not_abstract():
-    assert not inspect.isabstract(internalsm::AtomicEventPattern)
+def test_internalsm_atomiceventpattern_is_not_abstract():
+    assert not inspect.isabstract(internalsm_AtomicEventPattern)
 
 
-def test_internalsm::atomiceventpattern_constructor_exists():
-    assert callable(internalsm::AtomicEventPattern.__init__)
+def test_internalsm_atomiceventpattern_constructor_exists():
+    assert callable(internalsm_AtomicEventPattern.__init__)
 
 
-def test_internalsm::atomiceventpattern_constructor_args():
-    sig = inspect.signature(internalsm::AtomicEventPattern.__init__)
+def test_internalsm_atomiceventpattern_constructor_args():
+    sig = inspect.signature(internalsm_AtomicEventPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::guard_is_not_abstract():
-    assert not inspect.isabstract(internalsm::Guard)
+def test_internalsm_guard_is_not_abstract():
+    assert not inspect.isabstract(internalsm_Guard)
 
 
-def test_internalsm::guard_constructor_exists():
-    assert callable(internalsm::Guard.__init__)
+def test_internalsm_guard_constructor_exists():
+    assert callable(internalsm_Guard.__init__)
 
 
-def test_internalsm::guard_constructor_args():
-    sig = inspect.signature(internalsm::Guard.__init__)
+def test_internalsm_guard_constructor_args():
+    sig = inspect.signature(internalsm_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::event_is_not_abstract():
-    assert not inspect.isabstract(internalsm::Event)
+def test_internalsm_event_is_not_abstract():
+    assert not inspect.isabstract(internalsm_Event)
 
 
-def test_internalsm::event_constructor_exists():
-    assert callable(internalsm::Event.__init__)
+def test_internalsm_event_constructor_exists():
+    assert callable(internalsm_Event.__init__)
 
 
-def test_internalsm::event_constructor_args():
-    sig = inspect.signature(internalsm::Event.__init__)
+def test_internalsm_event_constructor_args():
+    sig = inspect.signature(internalsm_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::timeconstraint_is_not_abstract():
-    assert not inspect.isabstract(internalsm::TimeConstraint)
+def test_internalsm_timeconstraint_is_not_abstract():
+    assert not inspect.isabstract(internalsm_TimeConstraint)
 
 
-def test_internalsm::timeconstraint_constructor_exists():
-    assert callable(internalsm::TimeConstraint.__init__)
+def test_internalsm_timeconstraint_constructor_exists():
+    assert callable(internalsm_TimeConstraint.__init__)
 
 
-def test_internalsm::timeconstraint_constructor_args():
-    sig = inspect.signature(internalsm::TimeConstraint.__init__)
+def test_internalsm_timeconstraint_constructor_args():
+    sig = inspect.signature(internalsm_TimeConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_internalsm::timeconstraint_has_type():
-    assert hasattr(internalsm::TimeConstraint, "type")
+def test_internalsm_timeconstraint_has_type():
+    assert hasattr(internalsm_TimeConstraint, "type")
     descriptor = None
-    for klass in internalsm::TimeConstraint.__mro__:
+    for klass in internalsm_TimeConstraint.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -280,55 +280,71 @@ def test_internalsm::timeconstraint_has_type():
 
 
 
-def test_internalsm::eventtoken_is_not_abstract():
-    assert not inspect.isabstract(internalsm::EventToken)
+def test_internalsm_eventtoken_is_not_abstract():
+    assert not inspect.isabstract(internalsm_EventToken)
 
 
-def test_internalsm::eventtoken_constructor_exists():
-    assert callable(internalsm::EventToken.__init__)
+def test_internalsm_eventtoken_constructor_exists():
+    assert callable(internalsm_EventToken.__init__)
 
 
-def test_internalsm::eventtoken_constructor_args():
-    sig = inspect.signature(internalsm::EventToken.__init__)
+def test_internalsm_eventtoken_constructor_args():
+    sig = inspect.signature(internalsm_EventToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::transition_is_not_abstract():
-    assert not inspect.isabstract(internalsm::Transition)
+def test_internalsm_transition_is_not_abstract():
+    assert not inspect.isabstract(internalsm_Transition)
 
 
-def test_internalsm::transition_constructor_exists():
-    assert callable(internalsm::Transition.__init__)
+def test_internalsm_transition_constructor_exists():
+    assert callable(internalsm_Transition.__init__)
 
 
-def test_internalsm::transition_constructor_args():
-    sig = inspect.signature(internalsm::Transition.__init__)
+def test_internalsm_transition_constructor_args():
+    sig = inspect.signature(internalsm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalsm::state_is_not_abstract():
-    assert not inspect.isabstract(internalsm::State)
+def test_internalsm_state_is_not_abstract():
+    assert not inspect.isabstract(internalsm_State)
 
 
-def test_internalsm::state_constructor_exists():
-    assert callable(internalsm::State.__init__)
+def test_internalsm_state_constructor_exists():
+    assert callable(internalsm_State.__init__)
 
 
-def test_internalsm::state_constructor_args():
-    sig = inspect.signature(internalsm::State.__init__)
+def test_internalsm_state_constructor_args():
+    sig = inspect.signature(internalsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_internalsm::state_has_label():
-    assert hasattr(internalsm::State, "label")
+def test_internalsm_state_has_label():
+    assert hasattr(internalsm_State, "label")
     descriptor = None
-    for klass in internalsm::State.__mro__:
+    for klass in internalsm_State.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
+
+def test_timeconstrainttype_exists():
+    # Check that the Enumeration exists
+    assert TimeConstraintType is not None
+
+def test_timeconstrainttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TimeConstraintType]
+    expected_literals = [
+        "START",
+        "CHECK",
+        "STOP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TimeConstraintType"
 
 def test_eventprocessingcontext_exists():
     # Check that the Enumeration exists
@@ -340,9 +356,9 @@ def test_eventprocessingcontext_has_all_literals():
     expected_literals = [
         "IMMEDIATE",
         "RECENT",
+        "STRICT_IMMEDIATE",
         "CHRONICLE",
         "UNRESTRICTED",
-        "STRICT_IMMEDIATE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -356,31 +372,15 @@ def test_numericcompareoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in NumericCompareOperator]
     expected_literals = [
-        "EQUALS",
         "LESS_OR_EQUALS",
-        "LESS_THAN",
         "MORE_OR_EQUALS",
         "MORE_THAN",
+        "EQUALS",
+        "LESS_THAN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in NumericCompareOperator"
-
-def test_timeconstrainttype_exists():
-    # Check that the Enumeration exists
-    assert TimeConstraintType is not None
-
-def test_timeconstrainttype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimeConstraintType]
-    expected_literals = [
-        "CHECK",
-        "START",
-        "STOP",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimeConstraintType"
 
 
 # =============================================================================
@@ -394,118 +394,106 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-internalsm::TimeConstraintSpecification_strategy = st.builds(
-    internalsm::TimeConstraintSpecification,
-    stopTimestamp=
+internalsm_TimeConstraintSpecification_strategy = st.builds(
+    internalsm_TimeConstraintSpecification,
+    startTimestamp=
         safe_text,
-    id=
+    stopTimestamp=
         safe_text,
     expectedLength=
         safe_text,
-    startTimestamp=
+    id=
         safe_text
 )
-internalsm::InternalExecutionModel_strategy = st.builds(
-    internalsm::InternalExecutionModel,
+internalsm_InternalExecutionModel_strategy = st.builds(
+    internalsm_InternalExecutionModel,
     context=
         safe_text
 )
-internalsm::EventPattern_strategy = st.builds(
-    internalsm::EventPattern,
+internalsm_EventPattern_strategy = st.builds(
+    internalsm_EventPattern,
 )
-internalsm::StateMachine_strategy = st.builds(
-    internalsm::StateMachine,
-    context=
-        safe_text,
+internalsm_StateMachine_strategy = st.builds(
+    internalsm_StateMachine,
     priority=
-        st.integers()
+        st.integers(),
+    context=
+        safe_text
 )
 State_strategy = st.builds(
     State,
 )
-internalsm::TrapState_strategy = st.builds(
-    internalsm::TrapState,
+internalsm_InitState_strategy = st.builds(
+    internalsm_InitState,
 )
-internalsm::InitState_strategy = st.builds(
-    internalsm::InitState,
+internalsm_TrapState_strategy = st.builds(
+    internalsm_TrapState,
 )
-internalsm::FinalState_strategy = st.builds(
-    internalsm::FinalState,
+internalsm_FinalState_strategy = st.builds(
+    internalsm_FinalState,
 )
-internalsm::AtomicEventPattern_strategy = st.builds(
-    internalsm::AtomicEventPattern,
+internalsm_AtomicEventPattern_strategy = st.builds(
+    internalsm_AtomicEventPattern,
 )
-internalsm::Guard_strategy = st.builds(
-    internalsm::Guard,
+internalsm_Guard_strategy = st.builds(
+    internalsm_Guard,
 )
-internalsm::Event_strategy = st.builds(
-    internalsm::Event,
+internalsm_Event_strategy = st.builds(
+    internalsm_Event,
 )
-internalsm::TimeConstraint_strategy = st.builds(
-    internalsm::TimeConstraint,
+internalsm_TimeConstraint_strategy = st.builds(
+    internalsm_TimeConstraint,
     type=
         safe_text
 )
-internalsm::EventToken_strategy = st.builds(
-    internalsm::EventToken,
+internalsm_EventToken_strategy = st.builds(
+    internalsm_EventToken,
 )
-internalsm::Transition_strategy = st.builds(
-    internalsm::Transition,
+internalsm_Transition_strategy = st.builds(
+    internalsm_Transition,
 )
-internalsm::State_strategy = st.builds(
-    internalsm::State,
+internalsm_State_strategy = st.builds(
+    internalsm_State,
     label=
         safe_text
 )
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
+@given(instance=internalsm_TimeConstraintSpecification_strategy)
 @settings(max_examples=50)
-def test_internalsm::timeconstraintspecification_instantiation(instance):
-    assert isinstance(instance, internalsm::TimeConstraintSpecification)
-
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_stopTimestamp_type(instance):
-    assert isinstance(instance.stopTimestamp, str)
+def test_internalsm_timeconstraintspecification_instantiation(instance):
+    assert isinstance(instance, internalsm_TimeConstraintSpecification)
 
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_stopTimestamp_setter(instance):
+
+@given(instance=internalsm_TimeConstraintSpecification_strategy)
+def test_internalsm_timeconstraintspecification_startTimestamp_setter(instance):
+    original = instance.startTimestamp
+    instance.startTimestamp = original
+    assert instance.startTimestamp == original
+
+
+
+@given(instance=internalsm_TimeConstraintSpecification_strategy)
+def test_internalsm_timeconstraintspecification_stopTimestamp_setter(instance):
     original = instance.stopTimestamp
     instance.stopTimestamp = original
     assert instance.stopTimestamp == original
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_expectedLength_type(instance):
-    assert isinstance(instance.expectedLength, str)
-
-
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_expectedLength_setter(instance):
+@given(instance=internalsm_TimeConstraintSpecification_strategy)
+def test_internalsm_timeconstraintspecification_expectedLength_setter(instance):
     original = instance.expectedLength
     instance.expectedLength = original
     assert instance.expectedLength == original
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_startTimestamp_type(instance):
-    assert isinstance(instance.startTimestamp, str)
 
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
-def test_internalsm::timeconstraintspecification_startTimestamp_setter(instance):
-    original = instance.startTimestamp
-    instance.startTimestamp = original
-    assert instance.startTimestamp == original
+@given(instance=internalsm_TimeConstraintSpecification_strategy)
+def test_internalsm_timeconstraintspecification_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 import warnings
 import copy
@@ -513,9 +501,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=internalsm::TimeConstraintSpecification_strategy)
+@given(instance=internalsm_TimeConstraintSpecification_strategy)
 @settings(max_examples=30)
-def test_internalsm::timeconstraintspecification_handletimeconstraint_changes_state(instance):
+def test_internalsm_timeconstraintspecification_handletimeconstraint_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -527,136 +515,121 @@ def test_internalsm::timeconstraintspecification_handletimeconstraint_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'handleTimeConstraint' in internalsm::TimeConstraintSpecification is empty"
+        assert has_statements, f"Function 'handleTimeConstraint' in internalsm_TimeConstraintSpecification is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'handleTimeConstraint' in internalsm::TimeConstraintSpecification did not change state; check implementation")
+            warnings.warn(f"Operation 'handleTimeConstraint' in internalsm_TimeConstraintSpecification did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'handleTimeConstraint' in internalsm::TimeConstraintSpecification is not implemented or raised an error")
+        warnings.warn(f"Operation 'handleTimeConstraint' in internalsm_TimeConstraintSpecification is not implemented or raised an error")
 
-@given(instance=internalsm::InternalExecutionModel_strategy)
+@given(instance=internalsm_InternalExecutionModel_strategy)
 @settings(max_examples=50)
-def test_internalsm::internalexecutionmodel_instantiation(instance):
-    assert isinstance(instance, internalsm::InternalExecutionModel)
-
-@given(instance=internalsm::InternalExecutionModel_strategy)
-def test_internalsm::internalexecutionmodel_context_type(instance):
-    assert isinstance(instance.context, str)
+def test_internalsm_internalexecutionmodel_instantiation(instance):
+    assert isinstance(instance, internalsm_InternalExecutionModel)
 
 
-@given(instance=internalsm::InternalExecutionModel_strategy)
-def test_internalsm::internalexecutionmodel_context_setter(instance):
+
+@given(instance=internalsm_InternalExecutionModel_strategy)
+def test_internalsm_internalexecutionmodel_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
 
-@given(instance=internalsm::EventPattern_strategy)
+@given(instance=internalsm_EventPattern_strategy)
 @settings(max_examples=50)
-def test_internalsm::eventpattern_instantiation(instance):
-    assert isinstance(instance, internalsm::EventPattern)
+def test_internalsm_eventpattern_instantiation(instance):
+    assert isinstance(instance, internalsm_EventPattern)
 
-@given(instance=internalsm::StateMachine_strategy)
+@given(instance=internalsm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_internalsm::statemachine_instantiation(instance):
-    assert isinstance(instance, internalsm::StateMachine)
-
-@given(instance=internalsm::StateMachine_strategy)
-def test_internalsm::statemachine_context_type(instance):
-    assert isinstance(instance.context, str)
+def test_internalsm_statemachine_instantiation(instance):
+    assert isinstance(instance, internalsm_StateMachine)
 
 
-@given(instance=internalsm::StateMachine_strategy)
-def test_internalsm::statemachine_context_setter(instance):
-    original = instance.context
-    instance.context = original
-    assert instance.context == original
 
-@given(instance=internalsm::StateMachine_strategy)
-def test_internalsm::statemachine_priority_type(instance):
-    assert isinstance(instance.priority, int)
-
-
-@given(instance=internalsm::StateMachine_strategy)
-def test_internalsm::statemachine_priority_setter(instance):
+@given(instance=internalsm_StateMachine_strategy)
+def test_internalsm_statemachine_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
+
+
+
+@given(instance=internalsm_StateMachine_strategy)
+def test_internalsm_statemachine_context_setter(instance):
+    original = instance.context
+    instance.context = original
+    assert instance.context == original
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=internalsm::TrapState_strategy)
+@given(instance=internalsm_InitState_strategy)
 @settings(max_examples=50)
-def test_internalsm::trapstate_instantiation(instance):
-    assert isinstance(instance, internalsm::TrapState)
+def test_internalsm_initstate_instantiation(instance):
+    assert isinstance(instance, internalsm_InitState)
 
-@given(instance=internalsm::InitState_strategy)
+@given(instance=internalsm_TrapState_strategy)
 @settings(max_examples=50)
-def test_internalsm::initstate_instantiation(instance):
-    assert isinstance(instance, internalsm::InitState)
+def test_internalsm_trapstate_instantiation(instance):
+    assert isinstance(instance, internalsm_TrapState)
 
-@given(instance=internalsm::FinalState_strategy)
+@given(instance=internalsm_FinalState_strategy)
 @settings(max_examples=50)
-def test_internalsm::finalstate_instantiation(instance):
-    assert isinstance(instance, internalsm::FinalState)
+def test_internalsm_finalstate_instantiation(instance):
+    assert isinstance(instance, internalsm_FinalState)
 
-@given(instance=internalsm::AtomicEventPattern_strategy)
+@given(instance=internalsm_AtomicEventPattern_strategy)
 @settings(max_examples=50)
-def test_internalsm::atomiceventpattern_instantiation(instance):
-    assert isinstance(instance, internalsm::AtomicEventPattern)
+def test_internalsm_atomiceventpattern_instantiation(instance):
+    assert isinstance(instance, internalsm_AtomicEventPattern)
 
-@given(instance=internalsm::Guard_strategy)
+@given(instance=internalsm_Guard_strategy)
 @settings(max_examples=50)
-def test_internalsm::guard_instantiation(instance):
-    assert isinstance(instance, internalsm::Guard)
+def test_internalsm_guard_instantiation(instance):
+    assert isinstance(instance, internalsm_Guard)
 
-@given(instance=internalsm::Event_strategy)
+@given(instance=internalsm_Event_strategy)
 @settings(max_examples=50)
-def test_internalsm::event_instantiation(instance):
-    assert isinstance(instance, internalsm::Event)
+def test_internalsm_event_instantiation(instance):
+    assert isinstance(instance, internalsm_Event)
 
-@given(instance=internalsm::TimeConstraint_strategy)
+@given(instance=internalsm_TimeConstraint_strategy)
 @settings(max_examples=50)
-def test_internalsm::timeconstraint_instantiation(instance):
-    assert isinstance(instance, internalsm::TimeConstraint)
-
-@given(instance=internalsm::TimeConstraint_strategy)
-def test_internalsm::timeconstraint_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_internalsm_timeconstraint_instantiation(instance):
+    assert isinstance(instance, internalsm_TimeConstraint)
 
 
-@given(instance=internalsm::TimeConstraint_strategy)
-def test_internalsm::timeconstraint_type_setter(instance):
+
+@given(instance=internalsm_TimeConstraint_strategy)
+def test_internalsm_timeconstraint_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=internalsm::EventToken_strategy)
+@given(instance=internalsm_EventToken_strategy)
 @settings(max_examples=50)
-def test_internalsm::eventtoken_instantiation(instance):
-    assert isinstance(instance, internalsm::EventToken)
+def test_internalsm_eventtoken_instantiation(instance):
+    assert isinstance(instance, internalsm_EventToken)
 
-@given(instance=internalsm::Transition_strategy)
+@given(instance=internalsm_Transition_strategy)
 @settings(max_examples=50)
-def test_internalsm::transition_instantiation(instance):
-    assert isinstance(instance, internalsm::Transition)
+def test_internalsm_transition_instantiation(instance):
+    assert isinstance(instance, internalsm_Transition)
 
-@given(instance=internalsm::State_strategy)
+@given(instance=internalsm_State_strategy)
 @settings(max_examples=50)
-def test_internalsm::state_instantiation(instance):
-    assert isinstance(instance, internalsm::State)
-
-@given(instance=internalsm::State_strategy)
-def test_internalsm::state_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_internalsm_state_instantiation(instance):
+    assert isinstance(instance, internalsm_State)
 
 
-@given(instance=internalsm::State_strategy)
-def test_internalsm::state_label_setter(instance):
+
+@given(instance=internalsm_State_strategy)
+def test_internalsm_state_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

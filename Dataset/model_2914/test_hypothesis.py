@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    myDsl::Feature,
+from python_code import (
+    myDsl_Feature,
     AbstractElement,
-    myDsl::PackageDeclaration,
-    myDsl::AbstractElement,
-    myDsl::Model,
-    myDsl::Import,
+    myDsl_PackageDeclaration,
+    myDsl_AbstractElement,
+    myDsl_Model,
+    myDsl_Import,
     Type,
-    myDsl::Entity,
-    myDsl::DataType,
-    myDsl::Type,
+    myDsl_Entity,
+    myDsl_DataType,
+    myDsl_Type,
 )
 
 # =============================================================================
@@ -24,35 +24,35 @@ from classes import (
 
 
 
-def test_mydsl::feature_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Feature)
+def test_mydsl_feature_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Feature)
 
 
-def test_mydsl::feature_constructor_exists():
-    assert callable(myDsl::Feature.__init__)
+def test_mydsl_feature_constructor_exists():
+    assert callable(myDsl_Feature.__init__)
 
 
-def test_mydsl::feature_constructor_args():
-    sig = inspect.signature(myDsl::Feature.__init__)
+def test_mydsl_feature_constructor_args():
+    sig = inspect.signature(myDsl_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "many" in params, "Missing parameter 'many'"
 
-def test_mydsl::feature_has_many():
-    assert hasattr(myDsl::Feature, "many")
+def test_mydsl_feature_has_name():
+    assert hasattr(myDsl_Feature, "name")
     descriptor = None
-    for klass in myDsl::Feature.__mro__:
-        if "many" in klass.__dict__:
-            descriptor = klass.__dict__["many"]
+    for klass in myDsl_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mydsl::feature_has_name():
-    assert hasattr(myDsl::Feature, "name")
+def test_mydsl_feature_has_many():
+    assert hasattr(myDsl_Feature, "many")
     descriptor = None
-    for klass in myDsl::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in myDsl_Feature.__mro__:
+        if "many" in klass.__dict__:
+            descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
@@ -72,23 +72,23 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_mydsl::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(myDsl::PackageDeclaration)
+def test_mydsl_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(myDsl_PackageDeclaration)
 
 
-def test_mydsl::packagedeclaration_constructor_exists():
-    assert callable(myDsl::PackageDeclaration.__init__)
+def test_mydsl_packagedeclaration_constructor_exists():
+    assert callable(myDsl_PackageDeclaration.__init__)
 
 
-def test_mydsl::packagedeclaration_constructor_args():
-    sig = inspect.signature(myDsl::PackageDeclaration.__init__)
+def test_mydsl_packagedeclaration_constructor_args():
+    sig = inspect.signature(myDsl_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::packagedeclaration_has_name():
-    assert hasattr(myDsl::PackageDeclaration, "name")
+def test_mydsl_packagedeclaration_has_name():
+    assert hasattr(myDsl_PackageDeclaration, "name")
     descriptor = None
-    for klass in myDsl::PackageDeclaration.__mro__:
+    for klass in myDsl_PackageDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -96,51 +96,51 @@ def test_mydsl::packagedeclaration_has_name():
 
 
 
-def test_mydsl::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::AbstractElement)
+def test_mydsl_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_AbstractElement)
 
 
-def test_mydsl::abstractelement_constructor_exists():
-    assert callable(myDsl::AbstractElement.__init__)
+def test_mydsl_abstractelement_constructor_exists():
+    assert callable(myDsl_AbstractElement.__init__)
 
 
-def test_mydsl::abstractelement_constructor_args():
-    sig = inspect.signature(myDsl::AbstractElement.__init__)
+def test_mydsl_abstractelement_constructor_args():
+    sig = inspect.signature(myDsl_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::import_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Import)
+def test_mydsl_import_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Import)
 
 
-def test_mydsl::import_constructor_exists():
-    assert callable(myDsl::Import.__init__)
+def test_mydsl_import_constructor_exists():
+    assert callable(myDsl_Import.__init__)
 
 
-def test_mydsl::import_constructor_args():
-    sig = inspect.signature(myDsl::Import.__init__)
+def test_mydsl_import_constructor_args():
+    sig = inspect.signature(myDsl_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_mydsl::import_has_importedNamespace():
-    assert hasattr(myDsl::Import, "importedNamespace")
+def test_mydsl_import_has_importedNamespace():
+    assert hasattr(myDsl_Import, "importedNamespace")
     descriptor = None
-    for klass in myDsl::Import.__mro__:
+    for klass in myDsl_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -162,51 +162,51 @@ def test_type_constructor_args():
 
 
 
-def test_mydsl::entity_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Entity)
+def test_mydsl_entity_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Entity)
 
 
-def test_mydsl::entity_constructor_exists():
-    assert callable(myDsl::Entity.__init__)
+def test_mydsl_entity_constructor_exists():
+    assert callable(myDsl_Entity.__init__)
 
 
-def test_mydsl::entity_constructor_args():
-    sig = inspect.signature(myDsl::Entity.__init__)
+def test_mydsl_entity_constructor_args():
+    sig = inspect.signature(myDsl_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::datatype_is_not_abstract():
-    assert not inspect.isabstract(myDsl::DataType)
+def test_mydsl_datatype_is_not_abstract():
+    assert not inspect.isabstract(myDsl_DataType)
 
 
-def test_mydsl::datatype_constructor_exists():
-    assert callable(myDsl::DataType.__init__)
+def test_mydsl_datatype_constructor_exists():
+    assert callable(myDsl_DataType.__init__)
 
 
-def test_mydsl::datatype_constructor_args():
-    sig = inspect.signature(myDsl::DataType.__init__)
+def test_mydsl_datatype_constructor_args():
+    sig = inspect.signature(myDsl_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::type_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Type)
+def test_mydsl_type_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Type)
 
 
-def test_mydsl::type_constructor_exists():
-    assert callable(myDsl::Type.__init__)
+def test_mydsl_type_constructor_exists():
+    assert callable(myDsl_Type.__init__)
 
 
-def test_mydsl::type_constructor_args():
-    sig = inspect.signature(myDsl::Type.__init__)
+def test_mydsl_type_constructor_args():
+    sig = inspect.signature(myDsl_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::type_has_name():
-    assert hasattr(myDsl::Type, "name")
+def test_mydsl_type_has_name():
+    assert hasattr(myDsl_Type, "name")
     descriptor = None
-    for klass in myDsl::Type.__mro__:
+    for klass in myDsl_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -224,117 +224,105 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-myDsl::Feature_strategy = st.builds(
-    myDsl::Feature,
-    many=
-        st.booleans(),
+myDsl_Feature_strategy = st.builds(
+    myDsl_Feature,
     name=
-        safe_text
+        safe_text,
+    many=
+        st.booleans()
 )
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-myDsl::PackageDeclaration_strategy = st.builds(
-    myDsl::PackageDeclaration,
+myDsl_PackageDeclaration_strategy = st.builds(
+    myDsl_PackageDeclaration,
     name=
         safe_text
 )
-myDsl::AbstractElement_strategy = st.builds(
-    myDsl::AbstractElement,
+myDsl_AbstractElement_strategy = st.builds(
+    myDsl_AbstractElement,
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
-myDsl::Import_strategy = st.builds(
-    myDsl::Import,
+myDsl_Import_strategy = st.builds(
+    myDsl_Import,
     importedNamespace=
         safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-myDsl::Entity_strategy = st.builds(
-    myDsl::Entity,
+myDsl_Entity_strategy = st.builds(
+    myDsl_Entity,
 )
-myDsl::DataType_strategy = st.builds(
-    myDsl::DataType,
+myDsl_DataType_strategy = st.builds(
+    myDsl_DataType,
 )
-myDsl::Type_strategy = st.builds(
-    myDsl::Type,
+myDsl_Type_strategy = st.builds(
+    myDsl_Type,
     name=
         safe_text
 )
 
-@given(instance=myDsl::Feature_strategy)
+@given(instance=myDsl_Feature_strategy)
 @settings(max_examples=50)
-def test_mydsl::feature_instantiation(instance):
-    assert isinstance(instance, myDsl::Feature)
-
-@given(instance=myDsl::Feature_strategy)
-def test_mydsl::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_mydsl_feature_instantiation(instance):
+    assert isinstance(instance, myDsl_Feature)
 
 
-@given(instance=myDsl::Feature_strategy)
-def test_mydsl::feature_many_setter(instance):
-    original = instance.many
-    instance.many = original
-    assert instance.many == original
 
-@given(instance=myDsl::Feature_strategy)
-def test_mydsl::feature_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=myDsl::Feature_strategy)
-def test_mydsl::feature_name_setter(instance):
+@given(instance=myDsl_Feature_strategy)
+def test_mydsl_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=myDsl_Feature_strategy)
+def test_mydsl_feature_many_setter(instance):
+    original = instance.many
+    instance.many = original
+    assert instance.many == original
 
 @given(instance=AbstractElement_strategy)
 @settings(max_examples=50)
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=myDsl::PackageDeclaration_strategy)
+@given(instance=myDsl_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_mydsl::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, myDsl::PackageDeclaration)
-
-@given(instance=myDsl::PackageDeclaration_strategy)
-def test_mydsl::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, myDsl_PackageDeclaration)
 
 
-@given(instance=myDsl::PackageDeclaration_strategy)
-def test_mydsl::packagedeclaration_name_setter(instance):
+
+@given(instance=myDsl_PackageDeclaration_strategy)
+def test_mydsl_packagedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::AbstractElement_strategy)
+@given(instance=myDsl_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_mydsl::abstractelement_instantiation(instance):
-    assert isinstance(instance, myDsl::AbstractElement)
+def test_mydsl_abstractelement_instantiation(instance):
+    assert isinstance(instance, myDsl_AbstractElement)
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)
 
-@given(instance=myDsl::Import_strategy)
+@given(instance=myDsl_Import_strategy)
 @settings(max_examples=50)
-def test_mydsl::import_instantiation(instance):
-    assert isinstance(instance, myDsl::Import)
-
-@given(instance=myDsl::Import_strategy)
-def test_mydsl::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_mydsl_import_instantiation(instance):
+    assert isinstance(instance, myDsl_Import)
 
 
-@given(instance=myDsl::Import_strategy)
-def test_mydsl::import_importedNamespace_setter(instance):
+
+@given(instance=myDsl_Import_strategy)
+def test_mydsl_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
@@ -344,28 +332,25 @@ def test_mydsl::import_importedNamespace_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=myDsl::Entity_strategy)
+@given(instance=myDsl_Entity_strategy)
 @settings(max_examples=50)
-def test_mydsl::entity_instantiation(instance):
-    assert isinstance(instance, myDsl::Entity)
+def test_mydsl_entity_instantiation(instance):
+    assert isinstance(instance, myDsl_Entity)
 
-@given(instance=myDsl::DataType_strategy)
+@given(instance=myDsl_DataType_strategy)
 @settings(max_examples=50)
-def test_mydsl::datatype_instantiation(instance):
-    assert isinstance(instance, myDsl::DataType)
+def test_mydsl_datatype_instantiation(instance):
+    assert isinstance(instance, myDsl_DataType)
 
-@given(instance=myDsl::Type_strategy)
+@given(instance=myDsl_Type_strategy)
 @settings(max_examples=50)
-def test_mydsl::type_instantiation(instance):
-    assert isinstance(instance, myDsl::Type)
-
-@given(instance=myDsl::Type_strategy)
-def test_mydsl::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_type_instantiation(instance):
+    assert isinstance(instance, myDsl_Type)
 
 
-@given(instance=myDsl::Type_strategy)
-def test_mydsl::type_name_setter(instance):
+
+@given(instance=myDsl_Type_strategy)
+def test_mydsl_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

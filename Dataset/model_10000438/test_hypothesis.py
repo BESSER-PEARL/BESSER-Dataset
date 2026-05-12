@@ -3,27 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Order_server_Component,
-    Shipment_server_Component,
-    Internet_____________________network_UseCase,
-    Client_3_UseCase,
-    Client_4_UseCase,
-    Client_2_UseCase,
-    Client_1_UseCase,
-    Shipmment_UseCase,
-    Payment,
-    CreditCard,
-    Cahs,
-    Item,
-    Order,
-    Normal,
-    Express,
-    MyClass,
-    Shipment,
-    Costomer,
     mysubject_Component,
     Actor_Actor,
     UseCase2_UseCase,
@@ -42,413 +24,29 @@ from python_code import (
     Shipping_UseCase,
     Company_Actor,
     customer_Actor,
+    Order_server_Component,
+    Shipment_server_Component,
+    Internet_____________________network_UseCase,
+    Client_3_UseCase,
+    Client_4_UseCase,
+    Client_2_UseCase,
+    Client_1_UseCase,
+    Shipmment_UseCase,
+    Payment,
+    CreditCard,
+    Cahs,
+    Item,
+    Order,
+    Normal,
+    Express,
+    MyClass,
+    Shipment,
+    Costomer,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_order_server_component_is_not_abstract():
-    assert not inspect.isabstract(Order_server_Component)
-
-
-def test_order_server_component_constructor_exists():
-    assert callable(Order_server_Component.__init__)
-
-
-def test_order_server_component_constructor_args():
-    sig = inspect.signature(Order_server_Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shipment_server_component_is_not_abstract():
-    assert not inspect.isabstract(Shipment_server_Component)
-
-
-def test_shipment_server_component_constructor_exists():
-    assert callable(Shipment_server_Component.__init__)
-
-
-def test_shipment_server_component_constructor_args():
-    sig = inspect.signature(Shipment_server_Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_internet_____________________network_usecase_is_not_abstract():
-    assert not inspect.isabstract(Internet_____________________network_UseCase)
-
-
-def test_internet_____________________network_usecase_constructor_exists():
-    assert callable(Internet_____________________network_UseCase.__init__)
-
-
-def test_internet_____________________network_usecase_constructor_args():
-    sig = inspect.signature(Internet_____________________network_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_client_3_usecase_is_not_abstract():
-    assert not inspect.isabstract(Client_3_UseCase)
-
-
-def test_client_3_usecase_constructor_exists():
-    assert callable(Client_3_UseCase.__init__)
-
-
-def test_client_3_usecase_constructor_args():
-    sig = inspect.signature(Client_3_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_client_4_usecase_is_not_abstract():
-    assert not inspect.isabstract(Client_4_UseCase)
-
-
-def test_client_4_usecase_constructor_exists():
-    assert callable(Client_4_UseCase.__init__)
-
-
-def test_client_4_usecase_constructor_args():
-    sig = inspect.signature(Client_4_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_client_2_usecase_is_not_abstract():
-    assert not inspect.isabstract(Client_2_UseCase)
-
-
-def test_client_2_usecase_constructor_exists():
-    assert callable(Client_2_UseCase.__init__)
-
-
-def test_client_2_usecase_constructor_args():
-    sig = inspect.signature(Client_2_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_client_1_usecase_is_not_abstract():
-    assert not inspect.isabstract(Client_1_UseCase)
-
-
-def test_client_1_usecase_constructor_exists():
-    assert callable(Client_1_UseCase.__init__)
-
-
-def test_client_1_usecase_constructor_args():
-    sig = inspect.signature(Client_1_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shipmment_usecase_is_not_abstract():
-    assert not inspect.isabstract(Shipmment_UseCase)
-
-
-def test_shipmment_usecase_constructor_exists():
-    assert callable(Shipmment_UseCase.__init__)
-
-
-def test_shipmment_usecase_constructor_args():
-    sig = inspect.signature(Shipmment_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_payment_is_not_abstract():
-    assert not inspect.isabstract(Payment)
-
-
-def test_payment_constructor_exists():
-    assert callable(Payment.__init__)
-
-
-def test_payment_constructor_args():
-    sig = inspect.signature(Payment.__init__)
-    params = list(sig.parameters.keys())
-    assert "Amuant" in params, "Missing parameter 'Amuant'"
-
-def test_payment_has_Amuant():
-    assert hasattr(Payment, "Amuant")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "Amuant" in klass.__dict__:
-            descriptor = klass.__dict__["Amuant"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_creditcard_is_not_abstract():
-    assert not inspect.isabstract(CreditCard)
-
-
-def test_creditcard_constructor_exists():
-    assert callable(CreditCard.__init__)
-
-
-def test_creditcard_constructor_args():
-    sig = inspect.signature(CreditCard.__init__)
-    params = list(sig.parameters.keys())
-    assert "CCNumber" in params, "Missing parameter 'CCNumber'"
-
-def test_creditcard_has_CCNumber():
-    assert hasattr(CreditCard, "CCNumber")
-    descriptor = None
-    for klass in CreditCard.__mro__:
-        if "CCNumber" in klass.__dict__:
-            descriptor = klass.__dict__["CCNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cahs_is_not_abstract():
-    assert not inspect.isabstract(Cahs)
-
-
-def test_cahs_constructor_exists():
-    assert callable(Cahs.__init__)
-
-
-def test_cahs_constructor_args():
-    sig = inspect.signature(Cahs.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_item_is_not_abstract():
-    assert not inspect.isabstract(Item)
-
-
-def test_item_constructor_exists():
-    assert callable(Item.__init__)
-
-
-def test_item_constructor_args():
-    sig = inspect.signature(Item.__init__)
-    params = list(sig.parameters.keys())
-    assert "Quantity" in params, "Missing parameter 'Quantity'"
-    assert "ItemID" in params, "Missing parameter 'ItemID'"
-    assert "price" in params, "Missing parameter 'price'"
-
-def test_item_has_Quantity():
-    assert hasattr(Item, "Quantity")
-    descriptor = None
-    for klass in Item.__mro__:
-        if "Quantity" in klass.__dict__:
-            descriptor = klass.__dict__["Quantity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_item_has_ItemID():
-    assert hasattr(Item, "ItemID")
-    descriptor = None
-    for klass in Item.__mro__:
-        if "ItemID" in klass.__dict__:
-            descriptor = klass.__dict__["ItemID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_item_has_price():
-    assert hasattr(Item, "price")
-    descriptor = None
-    for klass in Item.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_order_is_not_abstract():
-    assert not inspect.isabstract(Order)
-
-
-def test_order_constructor_exists():
-    assert callable(Order.__init__)
-
-
-def test_order_constructor_args():
-    sig = inspect.signature(Order.__init__)
-    params = list(sig.parameters.keys())
-    assert "orderSirealNumber" in params, "Missing parameter 'orderSirealNumber'"
-
-def test_order_has_orderSirealNumber():
-    assert hasattr(Order, "orderSirealNumber")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "orderSirealNumber" in klass.__dict__:
-            descriptor = klass.__dict__["orderSirealNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_normal_is_not_abstract():
-    assert not inspect.isabstract(Normal)
-
-
-def test_normal_constructor_exists():
-    assert callable(Normal.__init__)
-
-
-def test_normal_constructor_args():
-    sig = inspect.signature(Normal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_express_is_not_abstract():
-    assert not inspect.isabstract(Express)
-
-
-def test_express_constructor_exists():
-    assert callable(Express.__init__)
-
-
-def test_express_constructor_args():
-    sig = inspect.signature(Express.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_myclass_is_not_abstract():
-    assert not inspect.isabstract(MyClass)
-
-
-def test_myclass_constructor_exists():
-    assert callable(MyClass.__init__)
-
-
-def test_myclass_constructor_args():
-    sig = inspect.signature(MyClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shipment_is_not_abstract():
-    assert not inspect.isabstract(Shipment)
-
-
-def test_shipment_constructor_exists():
-    assert callable(Shipment.__init__)
-
-
-def test_shipment_constructor_args():
-    sig = inspect.signature(Shipment.__init__)
-    params = list(sig.parameters.keys())
-    assert "SippingType" in params, "Missing parameter 'SippingType'"
-    assert "Forbidden_to_ship" in params, "Missing parameter 'Forbidden_to_ship'"
-    assert "pireodofShip" in params, "Missing parameter 'pireodofShip'"
-    assert "Date" in params, "Missing parameter 'Date'"
-
-def test_shipment_has_SippingType():
-    assert hasattr(Shipment, "SippingType")
-    descriptor = None
-    for klass in Shipment.__mro__:
-        if "SippingType" in klass.__dict__:
-            descriptor = klass.__dict__["SippingType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shipment_has_Forbidden_to_ship():
-    assert hasattr(Shipment, "Forbidden_to_ship")
-    descriptor = None
-    for klass in Shipment.__mro__:
-        if "Forbidden_to_ship" in klass.__dict__:
-            descriptor = klass.__dict__["Forbidden_to_ship"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shipment_has_pireodofShip():
-    assert hasattr(Shipment, "pireodofShip")
-    descriptor = None
-    for klass in Shipment.__mro__:
-        if "pireodofShip" in klass.__dict__:
-            descriptor = klass.__dict__["pireodofShip"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shipment_has_Date():
-    assert hasattr(Shipment, "Date")
-    descriptor = None
-    for klass in Shipment.__mro__:
-        if "Date" in klass.__dict__:
-            descriptor = klass.__dict__["Date"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_costomer_is_not_abstract():
-    assert not inspect.isabstract(Costomer)
-
-
-def test_costomer_constructor_exists():
-    assert callable(Costomer.__init__)
-
-
-def test_costomer_constructor_args():
-    sig = inspect.signature(Costomer.__init__)
-    params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "Address" in params, "Missing parameter 'Address'"
-    assert "Email" in params, "Missing parameter 'Email'"
-    assert "mobileNumber" in params, "Missing parameter 'mobileNumber'"
-    assert "ID" in params, "Missing parameter 'ID'"
-
-def test_costomer_has_Name():
-    assert hasattr(Costomer, "Name")
-    descriptor = None
-    for klass in Costomer.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_costomer_has_Address():
-    assert hasattr(Costomer, "Address")
-    descriptor = None
-    for klass in Costomer.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_costomer_has_Email():
-    assert hasattr(Costomer, "Email")
-    descriptor = None
-    for klass in Costomer.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_costomer_has_mobileNumber():
-    assert hasattr(Costomer, "mobileNumber")
-    descriptor = None
-    for klass in Costomer.__mro__:
-        if "mobileNumber" in klass.__dict__:
-            descriptor = klass.__dict__["mobileNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_costomer_has_ID():
-    assert hasattr(Costomer, "ID")
-    descriptor = None
-    for klass in Costomer.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -703,6 +301,408 @@ def test_customer_actor_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_order_server_component_is_not_abstract():
+    assert not inspect.isabstract(Order_server_Component)
+
+
+def test_order_server_component_constructor_exists():
+    assert callable(Order_server_Component.__init__)
+
+
+def test_order_server_component_constructor_args():
+    sig = inspect.signature(Order_server_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shipment_server_component_is_not_abstract():
+    assert not inspect.isabstract(Shipment_server_Component)
+
+
+def test_shipment_server_component_constructor_exists():
+    assert callable(Shipment_server_Component.__init__)
+
+
+def test_shipment_server_component_constructor_args():
+    sig = inspect.signature(Shipment_server_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_internet_____________________network_usecase_is_not_abstract():
+    assert not inspect.isabstract(Internet_____________________network_UseCase)
+
+
+def test_internet_____________________network_usecase_constructor_exists():
+    assert callable(Internet_____________________network_UseCase.__init__)
+
+
+def test_internet_____________________network_usecase_constructor_args():
+    sig = inspect.signature(Internet_____________________network_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_client_3_usecase_is_not_abstract():
+    assert not inspect.isabstract(Client_3_UseCase)
+
+
+def test_client_3_usecase_constructor_exists():
+    assert callable(Client_3_UseCase.__init__)
+
+
+def test_client_3_usecase_constructor_args():
+    sig = inspect.signature(Client_3_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_client_4_usecase_is_not_abstract():
+    assert not inspect.isabstract(Client_4_UseCase)
+
+
+def test_client_4_usecase_constructor_exists():
+    assert callable(Client_4_UseCase.__init__)
+
+
+def test_client_4_usecase_constructor_args():
+    sig = inspect.signature(Client_4_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_client_2_usecase_is_not_abstract():
+    assert not inspect.isabstract(Client_2_UseCase)
+
+
+def test_client_2_usecase_constructor_exists():
+    assert callable(Client_2_UseCase.__init__)
+
+
+def test_client_2_usecase_constructor_args():
+    sig = inspect.signature(Client_2_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_client_1_usecase_is_not_abstract():
+    assert not inspect.isabstract(Client_1_UseCase)
+
+
+def test_client_1_usecase_constructor_exists():
+    assert callable(Client_1_UseCase.__init__)
+
+
+def test_client_1_usecase_constructor_args():
+    sig = inspect.signature(Client_1_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shipmment_usecase_is_not_abstract():
+    assert not inspect.isabstract(Shipmment_UseCase)
+
+
+def test_shipmment_usecase_constructor_exists():
+    assert callable(Shipmment_UseCase.__init__)
+
+
+def test_shipmment_usecase_constructor_args():
+    sig = inspect.signature(Shipmment_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_payment_is_not_abstract():
+    assert not inspect.isabstract(Payment)
+
+
+def test_payment_constructor_exists():
+    assert callable(Payment.__init__)
+
+
+def test_payment_constructor_args():
+    sig = inspect.signature(Payment.__init__)
+    params = list(sig.parameters.keys())
+    assert "Amuant" in params, "Missing parameter 'Amuant'"
+
+def test_payment_has_Amuant():
+    assert hasattr(Payment, "Amuant")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "Amuant" in klass.__dict__:
+            descriptor = klass.__dict__["Amuant"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_creditcard_is_not_abstract():
+    assert not inspect.isabstract(CreditCard)
+
+
+def test_creditcard_constructor_exists():
+    assert callable(CreditCard.__init__)
+
+
+def test_creditcard_constructor_args():
+    sig = inspect.signature(CreditCard.__init__)
+    params = list(sig.parameters.keys())
+    assert "CCNumber" in params, "Missing parameter 'CCNumber'"
+
+def test_creditcard_has_CCNumber():
+    assert hasattr(CreditCard, "CCNumber")
+    descriptor = None
+    for klass in CreditCard.__mro__:
+        if "CCNumber" in klass.__dict__:
+            descriptor = klass.__dict__["CCNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cahs_is_not_abstract():
+    assert not inspect.isabstract(Cahs)
+
+
+def test_cahs_constructor_exists():
+    assert callable(Cahs.__init__)
+
+
+def test_cahs_constructor_args():
+    sig = inspect.signature(Cahs.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_item_is_not_abstract():
+    assert not inspect.isabstract(Item)
+
+
+def test_item_constructor_exists():
+    assert callable(Item.__init__)
+
+
+def test_item_constructor_args():
+    sig = inspect.signature(Item.__init__)
+    params = list(sig.parameters.keys())
+    assert "ItemID" in params, "Missing parameter 'ItemID'"
+    assert "price" in params, "Missing parameter 'price'"
+    assert "Quantity" in params, "Missing parameter 'Quantity'"
+
+def test_item_has_ItemID():
+    assert hasattr(Item, "ItemID")
+    descriptor = None
+    for klass in Item.__mro__:
+        if "ItemID" in klass.__dict__:
+            descriptor = klass.__dict__["ItemID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_item_has_price():
+    assert hasattr(Item, "price")
+    descriptor = None
+    for klass in Item.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_item_has_Quantity():
+    assert hasattr(Item, "Quantity")
+    descriptor = None
+    for klass in Item.__mro__:
+        if "Quantity" in klass.__dict__:
+            descriptor = klass.__dict__["Quantity"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_order_is_not_abstract():
+    assert not inspect.isabstract(Order)
+
+
+def test_order_constructor_exists():
+    assert callable(Order.__init__)
+
+
+def test_order_constructor_args():
+    sig = inspect.signature(Order.__init__)
+    params = list(sig.parameters.keys())
+    assert "orderSirealNumber" in params, "Missing parameter 'orderSirealNumber'"
+
+def test_order_has_orderSirealNumber():
+    assert hasattr(Order, "orderSirealNumber")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "orderSirealNumber" in klass.__dict__:
+            descriptor = klass.__dict__["orderSirealNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_normal_is_not_abstract():
+    assert not inspect.isabstract(Normal)
+
+
+def test_normal_constructor_exists():
+    assert callable(Normal.__init__)
+
+
+def test_normal_constructor_args():
+    sig = inspect.signature(Normal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_express_is_not_abstract():
+    assert not inspect.isabstract(Express)
+
+
+def test_express_constructor_exists():
+    assert callable(Express.__init__)
+
+
+def test_express_constructor_args():
+    sig = inspect.signature(Express.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_myclass_is_not_abstract():
+    assert not inspect.isabstract(MyClass)
+
+
+def test_myclass_constructor_exists():
+    assert callable(MyClass.__init__)
+
+
+def test_myclass_constructor_args():
+    sig = inspect.signature(MyClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shipment_is_not_abstract():
+    assert not inspect.isabstract(Shipment)
+
+
+def test_shipment_constructor_exists():
+    assert callable(Shipment.__init__)
+
+
+def test_shipment_constructor_args():
+    sig = inspect.signature(Shipment.__init__)
+    params = list(sig.parameters.keys())
+    assert "Forbidden_to_ship" in params, "Missing parameter 'Forbidden_to_ship'"
+    assert "Date" in params, "Missing parameter 'Date'"
+    assert "pireodofShip" in params, "Missing parameter 'pireodofShip'"
+    assert "SippingType" in params, "Missing parameter 'SippingType'"
+
+def test_shipment_has_Forbidden_to_ship():
+    assert hasattr(Shipment, "Forbidden_to_ship")
+    descriptor = None
+    for klass in Shipment.__mro__:
+        if "Forbidden_to_ship" in klass.__dict__:
+            descriptor = klass.__dict__["Forbidden_to_ship"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shipment_has_Date():
+    assert hasattr(Shipment, "Date")
+    descriptor = None
+    for klass in Shipment.__mro__:
+        if "Date" in klass.__dict__:
+            descriptor = klass.__dict__["Date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shipment_has_pireodofShip():
+    assert hasattr(Shipment, "pireodofShip")
+    descriptor = None
+    for klass in Shipment.__mro__:
+        if "pireodofShip" in klass.__dict__:
+            descriptor = klass.__dict__["pireodofShip"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shipment_has_SippingType():
+    assert hasattr(Shipment, "SippingType")
+    descriptor = None
+    for klass in Shipment.__mro__:
+        if "SippingType" in klass.__dict__:
+            descriptor = klass.__dict__["SippingType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_costomer_is_not_abstract():
+    assert not inspect.isabstract(Costomer)
+
+
+def test_costomer_constructor_exists():
+    assert callable(Costomer.__init__)
+
+
+def test_costomer_constructor_args():
+    sig = inspect.signature(Costomer.__init__)
+    params = list(sig.parameters.keys())
+    assert "mobileNumber" in params, "Missing parameter 'mobileNumber'"
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "Address" in params, "Missing parameter 'Address'"
+    assert "Email" in params, "Missing parameter 'Email'"
+    assert "ID" in params, "Missing parameter 'ID'"
+
+def test_costomer_has_mobileNumber():
+    assert hasattr(Costomer, "mobileNumber")
+    descriptor = None
+    for klass in Costomer.__mro__:
+        if "mobileNumber" in klass.__dict__:
+            descriptor = klass.__dict__["mobileNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_costomer_has_Name():
+    assert hasattr(Costomer, "Name")
+    descriptor = None
+    for klass in Costomer.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_costomer_has_Address():
+    assert hasattr(Costomer, "Address")
+    descriptor = None
+    for klass in Costomer.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_costomer_has_Email():
+    assert hasattr(Costomer, "Email")
+    descriptor = None
+    for klass in Costomer.__mro__:
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_costomer_has_ID():
+    assert hasattr(Costomer, "ID")
+    descriptor = None
+    for klass in Costomer.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -714,90 +714,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Order_server_Component_strategy = st.builds(
-    Order_server_Component,
-)
-Shipment_server_Component_strategy = st.builds(
-    Shipment_server_Component,
-)
-Internet_____________________network_UseCase_strategy = st.builds(
-    Internet_____________________network_UseCase,
-)
-Client_3_UseCase_strategy = st.builds(
-    Client_3_UseCase,
-)
-Client_4_UseCase_strategy = st.builds(
-    Client_4_UseCase,
-)
-Client_2_UseCase_strategy = st.builds(
-    Client_2_UseCase,
-)
-Client_1_UseCase_strategy = st.builds(
-    Client_1_UseCase,
-)
-Shipmment_UseCase_strategy = st.builds(
-    Shipmment_UseCase,
-)
-Payment_strategy = st.builds(
-    Payment,
-    Amuant=
-        st.integers()
-)
-CreditCard_strategy = st.builds(
-    CreditCard,
-    CCNumber=
-        st.integers()
-)
-Cahs_strategy = st.builds(
-    Cahs,
-)
-Item_strategy = st.builds(
-    Item,
-    Quantity=
-        st.integers(),
-    ItemID=
-        st.integers(),
-    price=
-        st.integers()
-)
-Order_strategy = st.builds(
-    Order,
-    orderSirealNumber=
-        st.integers()
-)
-Normal_strategy = st.builds(
-    Normal,
-)
-Express_strategy = st.builds(
-    Express,
-)
-MyClass_strategy = st.builds(
-    MyClass,
-)
-Shipment_strategy = st.builds(
-    Shipment,
-    SippingType=
-        safe_text,
-    Forbidden_to_ship=
-        safe_text,
-    pireodofShip=
-        st.integers(),
-    Date=
-        st.dates()
-)
-Costomer_strategy = st.builds(
-    Costomer,
-    Name=
-        safe_text,
-    Address=
-        safe_text,
-    Email=
-        safe_text,
-    mobileNumber=
-        st.integers(),
-    ID=
-        st.integers()
-)
 mysubject_Component_strategy = st.builds(
     mysubject_Component,
 )
@@ -852,261 +768,90 @@ Company_Actor_strategy = st.builds(
 customer_Actor_strategy = st.builds(
     customer_Actor,
 )
-
-@given(instance=Order_server_Component_strategy)
-@settings(max_examples=50)
-def test_order_server_component_instantiation(instance):
-    assert isinstance(instance, Order_server_Component)
-
-@given(instance=Shipment_server_Component_strategy)
-@settings(max_examples=50)
-def test_shipment_server_component_instantiation(instance):
-    assert isinstance(instance, Shipment_server_Component)
-
-@given(instance=Internet_____________________network_UseCase_strategy)
-@settings(max_examples=50)
-def test_internet_____________________network_usecase_instantiation(instance):
-    assert isinstance(instance, Internet_____________________network_UseCase)
-
-@given(instance=Client_3_UseCase_strategy)
-@settings(max_examples=50)
-def test_client_3_usecase_instantiation(instance):
-    assert isinstance(instance, Client_3_UseCase)
-
-@given(instance=Client_4_UseCase_strategy)
-@settings(max_examples=50)
-def test_client_4_usecase_instantiation(instance):
-    assert isinstance(instance, Client_4_UseCase)
-
-@given(instance=Client_2_UseCase_strategy)
-@settings(max_examples=50)
-def test_client_2_usecase_instantiation(instance):
-    assert isinstance(instance, Client_2_UseCase)
-
-@given(instance=Client_1_UseCase_strategy)
-@settings(max_examples=50)
-def test_client_1_usecase_instantiation(instance):
-    assert isinstance(instance, Client_1_UseCase)
-
-@given(instance=Shipmment_UseCase_strategy)
-@settings(max_examples=50)
-def test_shipmment_usecase_instantiation(instance):
-    assert isinstance(instance, Shipmment_UseCase)
-
-@given(instance=Payment_strategy)
-@settings(max_examples=50)
-def test_payment_instantiation(instance):
-    assert isinstance(instance, Payment)
-
-@given(instance=Payment_strategy)
-def test_payment_Amuant_type(instance):
-    assert isinstance(instance.Amuant, int)
-
-
-@given(instance=Payment_strategy)
-def test_payment_Amuant_setter(instance):
-    original = instance.Amuant
-    instance.Amuant = original
-    assert instance.Amuant == original
-
-@given(instance=CreditCard_strategy)
-@settings(max_examples=50)
-def test_creditcard_instantiation(instance):
-    assert isinstance(instance, CreditCard)
-
-@given(instance=CreditCard_strategy)
-def test_creditcard_CCNumber_type(instance):
-    assert isinstance(instance.CCNumber, int)
-
-
-@given(instance=CreditCard_strategy)
-def test_creditcard_CCNumber_setter(instance):
-    original = instance.CCNumber
-    instance.CCNumber = original
-    assert instance.CCNumber == original
-
-@given(instance=Cahs_strategy)
-@settings(max_examples=50)
-def test_cahs_instantiation(instance):
-    assert isinstance(instance, Cahs)
-
-@given(instance=Item_strategy)
-@settings(max_examples=50)
-def test_item_instantiation(instance):
-    assert isinstance(instance, Item)
-
-@given(instance=Item_strategy)
-def test_item_Quantity_type(instance):
-    assert isinstance(instance.Quantity, int)
-
-
-@given(instance=Item_strategy)
-def test_item_Quantity_setter(instance):
-    original = instance.Quantity
-    instance.Quantity = original
-    assert instance.Quantity == original
-
-@given(instance=Item_strategy)
-def test_item_ItemID_type(instance):
-    assert isinstance(instance.ItemID, int)
-
-
-@given(instance=Item_strategy)
-def test_item_ItemID_setter(instance):
-    original = instance.ItemID
-    instance.ItemID = original
-    assert instance.ItemID == original
-
-@given(instance=Item_strategy)
-def test_item_price_type(instance):
-    assert isinstance(instance.price, int)
-
-
-@given(instance=Item_strategy)
-def test_item_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Order_strategy)
-@settings(max_examples=50)
-def test_order_instantiation(instance):
-    assert isinstance(instance, Order)
-
-@given(instance=Order_strategy)
-def test_order_orderSirealNumber_type(instance):
-    assert isinstance(instance.orderSirealNumber, int)
-
-
-@given(instance=Order_strategy)
-def test_order_orderSirealNumber_setter(instance):
-    original = instance.orderSirealNumber
-    instance.orderSirealNumber = original
-    assert instance.orderSirealNumber == original
-
-@given(instance=Normal_strategy)
-@settings(max_examples=50)
-def test_normal_instantiation(instance):
-    assert isinstance(instance, Normal)
-
-@given(instance=Express_strategy)
-@settings(max_examples=50)
-def test_express_instantiation(instance):
-    assert isinstance(instance, Express)
-
-@given(instance=MyClass_strategy)
-@settings(max_examples=50)
-def test_myclass_instantiation(instance):
-    assert isinstance(instance, MyClass)
-
-@given(instance=Shipment_strategy)
-@settings(max_examples=50)
-def test_shipment_instantiation(instance):
-    assert isinstance(instance, Shipment)
-
-@given(instance=Shipment_strategy)
-def test_shipment_SippingType_type(instance):
-    assert isinstance(instance.SippingType, str)
-
-
-@given(instance=Shipment_strategy)
-def test_shipment_SippingType_setter(instance):
-    original = instance.SippingType
-    instance.SippingType = original
-    assert instance.SippingType == original
-
-@given(instance=Shipment_strategy)
-def test_shipment_Forbidden_to_ship_type(instance):
-    assert isinstance(instance.Forbidden_to_ship, str)
-
-
-@given(instance=Shipment_strategy)
-def test_shipment_Forbidden_to_ship_setter(instance):
-    original = instance.Forbidden_to_ship
-    instance.Forbidden_to_ship = original
-    assert instance.Forbidden_to_ship == original
-
-@given(instance=Shipment_strategy)
-def test_shipment_pireodofShip_type(instance):
-    assert isinstance(instance.pireodofShip, int)
-
-
-@given(instance=Shipment_strategy)
-def test_shipment_pireodofShip_setter(instance):
-    original = instance.pireodofShip
-    instance.pireodofShip = original
-    assert instance.pireodofShip == original
-
-@given(instance=Shipment_strategy)
-def test_shipment_Date_type(instance):
-    assert isinstance(instance.Date, date)
-
-
-@given(instance=Shipment_strategy)
-def test_shipment_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=Costomer_strategy)
-@settings(max_examples=50)
-def test_costomer_instantiation(instance):
-    assert isinstance(instance, Costomer)
-
-@given(instance=Costomer_strategy)
-def test_costomer_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Costomer_strategy)
-def test_costomer_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Costomer_strategy)
-def test_costomer_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Costomer_strategy)
-def test_costomer_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Costomer_strategy)
-def test_costomer_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=Costomer_strategy)
-def test_costomer_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=Costomer_strategy)
-def test_costomer_mobileNumber_type(instance):
-    assert isinstance(instance.mobileNumber, int)
-
-
-@given(instance=Costomer_strategy)
-def test_costomer_mobileNumber_setter(instance):
-    original = instance.mobileNumber
-    instance.mobileNumber = original
-    assert instance.mobileNumber == original
-
-@given(instance=Costomer_strategy)
-def test_costomer_ID_type(instance):
-    assert isinstance(instance.ID, int)
-
-
-@given(instance=Costomer_strategy)
-def test_costomer_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
+Order_server_Component_strategy = st.builds(
+    Order_server_Component,
+)
+Shipment_server_Component_strategy = st.builds(
+    Shipment_server_Component,
+)
+Internet_____________________network_UseCase_strategy = st.builds(
+    Internet_____________________network_UseCase,
+)
+Client_3_UseCase_strategy = st.builds(
+    Client_3_UseCase,
+)
+Client_4_UseCase_strategy = st.builds(
+    Client_4_UseCase,
+)
+Client_2_UseCase_strategy = st.builds(
+    Client_2_UseCase,
+)
+Client_1_UseCase_strategy = st.builds(
+    Client_1_UseCase,
+)
+Shipmment_UseCase_strategy = st.builds(
+    Shipmment_UseCase,
+)
+Payment_strategy = st.builds(
+    Payment,
+    Amuant=
+        st.integers()
+)
+CreditCard_strategy = st.builds(
+    CreditCard,
+    CCNumber=
+        st.integers()
+)
+Cahs_strategy = st.builds(
+    Cahs,
+)
+Item_strategy = st.builds(
+    Item,
+    ItemID=
+        st.integers(),
+    price=
+        st.integers(),
+    Quantity=
+        st.integers()
+)
+Order_strategy = st.builds(
+    Order,
+    orderSirealNumber=
+        st.integers()
+)
+Normal_strategy = st.builds(
+    Normal,
+)
+Express_strategy = st.builds(
+    Express,
+)
+MyClass_strategy = st.builds(
+    MyClass,
+)
+Shipment_strategy = st.builds(
+    Shipment,
+    Forbidden_to_ship=
+        safe_text,
+    Date=
+        st.dates(),
+    pireodofShip=
+        st.integers(),
+    SippingType=
+        safe_text
+)
+Costomer_strategy = st.builds(
+    Costomer,
+    mobileNumber=
+        st.integers(),
+    Name=
+        safe_text,
+    Address=
+        safe_text,
+    Email=
+        safe_text,
+    ID=
+        st.integers()
+)
 
 @given(instance=mysubject_Component_strategy)
 @settings(max_examples=50)
@@ -1197,3 +942,213 @@ def test_company_actor_instantiation(instance):
 @settings(max_examples=50)
 def test_customer_actor_instantiation(instance):
     assert isinstance(instance, customer_Actor)
+
+@given(instance=Order_server_Component_strategy)
+@settings(max_examples=50)
+def test_order_server_component_instantiation(instance):
+    assert isinstance(instance, Order_server_Component)
+
+@given(instance=Shipment_server_Component_strategy)
+@settings(max_examples=50)
+def test_shipment_server_component_instantiation(instance):
+    assert isinstance(instance, Shipment_server_Component)
+
+@given(instance=Internet_____________________network_UseCase_strategy)
+@settings(max_examples=50)
+def test_internet_____________________network_usecase_instantiation(instance):
+    assert isinstance(instance, Internet_____________________network_UseCase)
+
+@given(instance=Client_3_UseCase_strategy)
+@settings(max_examples=50)
+def test_client_3_usecase_instantiation(instance):
+    assert isinstance(instance, Client_3_UseCase)
+
+@given(instance=Client_4_UseCase_strategy)
+@settings(max_examples=50)
+def test_client_4_usecase_instantiation(instance):
+    assert isinstance(instance, Client_4_UseCase)
+
+@given(instance=Client_2_UseCase_strategy)
+@settings(max_examples=50)
+def test_client_2_usecase_instantiation(instance):
+    assert isinstance(instance, Client_2_UseCase)
+
+@given(instance=Client_1_UseCase_strategy)
+@settings(max_examples=50)
+def test_client_1_usecase_instantiation(instance):
+    assert isinstance(instance, Client_1_UseCase)
+
+@given(instance=Shipmment_UseCase_strategy)
+@settings(max_examples=50)
+def test_shipmment_usecase_instantiation(instance):
+    assert isinstance(instance, Shipmment_UseCase)
+
+@given(instance=Payment_strategy)
+@settings(max_examples=50)
+def test_payment_instantiation(instance):
+    assert isinstance(instance, Payment)
+
+
+
+@given(instance=Payment_strategy)
+def test_payment_Amuant_setter(instance):
+    original = instance.Amuant
+    instance.Amuant = original
+    assert instance.Amuant == original
+
+@given(instance=CreditCard_strategy)
+@settings(max_examples=50)
+def test_creditcard_instantiation(instance):
+    assert isinstance(instance, CreditCard)
+
+
+
+@given(instance=CreditCard_strategy)
+def test_creditcard_CCNumber_setter(instance):
+    original = instance.CCNumber
+    instance.CCNumber = original
+    assert instance.CCNumber == original
+
+@given(instance=Cahs_strategy)
+@settings(max_examples=50)
+def test_cahs_instantiation(instance):
+    assert isinstance(instance, Cahs)
+
+@given(instance=Item_strategy)
+@settings(max_examples=50)
+def test_item_instantiation(instance):
+    assert isinstance(instance, Item)
+
+
+
+@given(instance=Item_strategy)
+def test_item_ItemID_setter(instance):
+    original = instance.ItemID
+    instance.ItemID = original
+    assert instance.ItemID == original
+
+
+
+@given(instance=Item_strategy)
+def test_item_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=Item_strategy)
+def test_item_Quantity_setter(instance):
+    original = instance.Quantity
+    instance.Quantity = original
+    assert instance.Quantity == original
+
+@given(instance=Order_strategy)
+@settings(max_examples=50)
+def test_order_instantiation(instance):
+    assert isinstance(instance, Order)
+
+
+
+@given(instance=Order_strategy)
+def test_order_orderSirealNumber_setter(instance):
+    original = instance.orderSirealNumber
+    instance.orderSirealNumber = original
+    assert instance.orderSirealNumber == original
+
+@given(instance=Normal_strategy)
+@settings(max_examples=50)
+def test_normal_instantiation(instance):
+    assert isinstance(instance, Normal)
+
+@given(instance=Express_strategy)
+@settings(max_examples=50)
+def test_express_instantiation(instance):
+    assert isinstance(instance, Express)
+
+@given(instance=MyClass_strategy)
+@settings(max_examples=50)
+def test_myclass_instantiation(instance):
+    assert isinstance(instance, MyClass)
+
+@given(instance=Shipment_strategy)
+@settings(max_examples=50)
+def test_shipment_instantiation(instance):
+    assert isinstance(instance, Shipment)
+
+
+
+@given(instance=Shipment_strategy)
+def test_shipment_Forbidden_to_ship_setter(instance):
+    original = instance.Forbidden_to_ship
+    instance.Forbidden_to_ship = original
+    assert instance.Forbidden_to_ship == original
+
+
+
+@given(instance=Shipment_strategy)
+def test_shipment_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
+
+
+@given(instance=Shipment_strategy)
+def test_shipment_pireodofShip_setter(instance):
+    original = instance.pireodofShip
+    instance.pireodofShip = original
+    assert instance.pireodofShip == original
+
+
+
+@given(instance=Shipment_strategy)
+def test_shipment_SippingType_setter(instance):
+    original = instance.SippingType
+    instance.SippingType = original
+    assert instance.SippingType == original
+
+@given(instance=Costomer_strategy)
+@settings(max_examples=50)
+def test_costomer_instantiation(instance):
+    assert isinstance(instance, Costomer)
+
+
+
+@given(instance=Costomer_strategy)
+def test_costomer_mobileNumber_setter(instance):
+    original = instance.mobileNumber
+    instance.mobileNumber = original
+    assert instance.mobileNumber == original
+
+
+
+@given(instance=Costomer_strategy)
+def test_costomer_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=Costomer_strategy)
+def test_costomer_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
+
+
+@given(instance=Costomer_strategy)
+def test_costomer_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
+
+
+@given(instance=Costomer_strategy)
+def test_costomer_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original

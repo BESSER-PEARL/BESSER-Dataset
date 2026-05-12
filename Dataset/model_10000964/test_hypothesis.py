@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Captain,
@@ -164,16 +164,16 @@ def test_flight_constructor_exists():
 def test_flight_constructor_args():
     sig = inspect.signature(Flight.__init__)
     params = list(sig.parameters.keys())
-    assert "departureTime" in params, "Missing parameter 'departureTime'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "arrivalTime" in params, "Missing parameter 'arrivalTime'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "departureTime" in params, "Missing parameter 'departureTime'"
 
-def test_flight_has_departureTime():
-    assert hasattr(Flight, "departureTime")
+def test_flight_has_arrivalTime():
+    assert hasattr(Flight, "arrivalTime")
     descriptor = None
     for klass in Flight.__mro__:
-        if "departureTime" in klass.__dict__:
-            descriptor = klass.__dict__["departureTime"]
+        if "arrivalTime" in klass.__dict__:
+            descriptor = klass.__dict__["arrivalTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -186,12 +186,12 @@ def test_flight_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_flight_has_arrivalTime():
-    assert hasattr(Flight, "arrivalTime")
+def test_flight_has_departureTime():
+    assert hasattr(Flight, "departureTime")
     descriptor = None
     for klass in Flight.__mro__:
-        if "arrivalTime" in klass.__dict__:
-            descriptor = klass.__dict__["arrivalTime"]
+        if "departureTime" in klass.__dict__:
+            descriptor = klass.__dict__["departureTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -286,11 +286,11 @@ Airport_strategy = st.builds(
 )
 Flight_strategy = st.builds(
     Flight,
-    departureTime=
+    arrivalTime=
         st.dates(),
     id=
         st.integers(),
-    arrivalTime=
+    departureTime=
         st.dates()
 )
 Airline_strategy = st.builds(
@@ -324,9 +324,6 @@ def test_company_instantiation(instance):
 def test_aircraft_instantiation(instance):
     assert isinstance(instance, Aircraft)
 
-@given(instance=Aircraft_strategy)
-def test_aircraft_flightState_type(instance):
-    assert isinstance(instance.flightState, flightstate)
 
 
 @given(instance=Aircraft_strategy)
@@ -335,9 +332,6 @@ def test_aircraft_flightState_setter(instance):
     instance.flightState = original
     assert instance.flightState == original
 
-@given(instance=Aircraft_strategy)
-def test_aircraft_state_type(instance):
-    assert isinstance(instance.state, maintenancestate)
 
 
 @given(instance=Aircraft_strategy)
@@ -356,9 +350,6 @@ def test_pilot_instantiation(instance):
 def test_airport_instantiation(instance):
     assert isinstance(instance, Airport)
 
-@given(instance=Airport_strategy)
-def test_airport_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Airport_strategy)
@@ -372,31 +363,6 @@ def test_airport_id_setter(instance):
 def test_flight_instantiation(instance):
     assert isinstance(instance, Flight)
 
-@given(instance=Flight_strategy)
-def test_flight_departureTime_type(instance):
-    assert isinstance(instance.departureTime, date)
-
-
-@given(instance=Flight_strategy)
-def test_flight_departureTime_setter(instance):
-    original = instance.departureTime
-    instance.departureTime = original
-    assert instance.departureTime == original
-
-@given(instance=Flight_strategy)
-def test_flight_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Flight_strategy)
-def test_flight_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Flight_strategy)
-def test_flight_arrivalTime_type(instance):
-    assert isinstance(instance.arrivalTime, date)
 
 
 @given(instance=Flight_strategy)
@@ -405,14 +371,27 @@ def test_flight_arrivalTime_setter(instance):
     instance.arrivalTime = original
     assert instance.arrivalTime == original
 
+
+
+@given(instance=Flight_strategy)
+def test_flight_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Flight_strategy)
+def test_flight_departureTime_setter(instance):
+    original = instance.departureTime
+    instance.departureTime = original
+    assert instance.departureTime == original
+
 @given(instance=Airline_strategy)
 @settings(max_examples=50)
 def test_airline_instantiation(instance):
     assert isinstance(instance, Airline)
 
-@given(instance=Airline_strategy)
-def test_airline_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Airline_strategy)

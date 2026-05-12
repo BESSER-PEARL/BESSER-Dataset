@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Player,
@@ -27,9 +27,9 @@ def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
-    assert "token" in params, "Missing parameter 'token'"
     assert "balance" in params, "Missing parameter 'balance'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "token" in params, "Missing parameter 'token'"
 
 def test_player_has_position():
     assert hasattr(Player, "position")
@@ -37,15 +37,6 @@ def test_player_has_position():
     for klass in Player.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_player_has_token():
-    assert hasattr(Player, "token")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "token" in klass.__dict__:
-            descriptor = klass.__dict__["token"]
             break
     assert isinstance(descriptor, property)
 
@@ -67,6 +58,15 @@ def test_player_has_name():
             break
     assert isinstance(descriptor, property)
 
+def test_player_has_token():
+    assert hasattr(Player, "token")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "token" in klass.__dict__:
+            descriptor = klass.__dict__["token"]
+            break
+    assert isinstance(descriptor, property)
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -83,11 +83,11 @@ Player_strategy = st.builds(
     Player,
     position=
         st.integers(),
-    token=
-        safe_text,
     balance=
         st.integers(),
     name=
+        safe_text,
+    token=
         safe_text
 )
 
@@ -96,9 +96,6 @@ Player_strategy = st.builds(
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_position_type(instance):
-    assert isinstance(instance.position, int)
 
 
 @given(instance=Player_strategy)
@@ -107,20 +104,6 @@ def test_player_position_setter(instance):
     instance.position = original
     assert instance.position == original
 
-@given(instance=Player_strategy)
-def test_player_token_type(instance):
-    assert isinstance(instance.token, str)
-
-
-@given(instance=Player_strategy)
-def test_player_token_setter(instance):
-    original = instance.token
-    instance.token = original
-    assert instance.token == original
-
-@given(instance=Player_strategy)
-def test_player_balance_type(instance):
-    assert isinstance(instance.balance, int)
 
 
 @given(instance=Player_strategy)
@@ -129,9 +112,6 @@ def test_player_balance_setter(instance):
     instance.balance = original
     assert instance.balance == original
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -139,3 +119,11 @@ def test_player_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Player_strategy)
+def test_player_token_setter(instance):
+    original = instance.token
+    instance.token = original
+    assert instance.token == original

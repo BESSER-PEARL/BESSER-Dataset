@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Service::JavaService,
-    Service::Tool,
+from python_code import (
+    Service_JavaService,
+    Service_Tool,
 )
 
 # =============================================================================
@@ -16,33 +16,33 @@ from classes import (
 
 
 
-def test_service::javaservice_is_not_abstract():
-    assert not inspect.isabstract(Service::JavaService)
+def test_service_javaservice_is_not_abstract():
+    assert not inspect.isabstract(Service_JavaService)
 
 
-def test_service::javaservice_constructor_exists():
-    assert callable(Service::JavaService.__init__)
+def test_service_javaservice_constructor_exists():
+    assert callable(Service_JavaService.__init__)
 
 
-def test_service::javaservice_constructor_args():
-    sig = inspect.signature(Service::JavaService.__init__)
+def test_service_javaservice_constructor_args():
+    sig = inspect.signature(Service_JavaService.__init__)
     params = list(sig.parameters.keys())
     assert "option" in params, "Missing parameter 'option'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_service::javaservice_has_option():
-    assert hasattr(Service::JavaService, "option")
+def test_service_javaservice_has_option():
+    assert hasattr(Service_JavaService, "option")
     descriptor = None
-    for klass in Service::JavaService.__mro__:
+    for klass in Service_JavaService.__mro__:
         if "option" in klass.__dict__:
             descriptor = klass.__dict__["option"]
             break
     assert isinstance(descriptor, property)
 
-def test_service::javaservice_has_name():
-    assert hasattr(Service::JavaService, "name")
+def test_service_javaservice_has_name():
+    assert hasattr(Service_JavaService, "name")
     descriptor = None
-    for klass in Service::JavaService.__mro__:
+    for klass in Service_JavaService.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -50,23 +50,23 @@ def test_service::javaservice_has_name():
 
 
 
-def test_service::tool_is_not_abstract():
-    assert not inspect.isabstract(Service::Tool)
+def test_service_tool_is_not_abstract():
+    assert not inspect.isabstract(Service_Tool)
 
 
-def test_service::tool_constructor_exists():
-    assert callable(Service::Tool.__init__)
+def test_service_tool_constructor_exists():
+    assert callable(Service_Tool.__init__)
 
 
-def test_service::tool_constructor_args():
-    sig = inspect.signature(Service::Tool.__init__)
+def test_service_tool_constructor_args():
+    sig = inspect.signature(Service_Tool.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_service::tool_has_name():
-    assert hasattr(Service::Tool, "name")
+def test_service_tool_has_name():
+    assert hasattr(Service_Tool, "name")
     descriptor = None
-    for klass in Service::Tool.__mro__:
+    for klass in Service_Tool.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -84,58 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Service::JavaService_strategy = st.builds(
-    Service::JavaService,
+Service_JavaService_strategy = st.builds(
+    Service_JavaService,
     option=
         safe_text,
     name=
         safe_text
 )
-Service::Tool_strategy = st.builds(
-    Service::Tool,
+Service_Tool_strategy = st.builds(
+    Service_Tool,
     name=
         safe_text
 )
 
-@given(instance=Service::JavaService_strategy)
+@given(instance=Service_JavaService_strategy)
 @settings(max_examples=50)
-def test_service::javaservice_instantiation(instance):
-    assert isinstance(instance, Service::JavaService)
-
-@given(instance=Service::JavaService_strategy)
-def test_service::javaservice_option_type(instance):
-    assert isinstance(instance.option, str)
+def test_service_javaservice_instantiation(instance):
+    assert isinstance(instance, Service_JavaService)
 
 
-@given(instance=Service::JavaService_strategy)
-def test_service::javaservice_option_setter(instance):
+
+@given(instance=Service_JavaService_strategy)
+def test_service_javaservice_option_setter(instance):
     original = instance.option
     instance.option = original
     assert instance.option == original
 
-@given(instance=Service::JavaService_strategy)
-def test_service::javaservice_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Service::JavaService_strategy)
-def test_service::javaservice_name_setter(instance):
+@given(instance=Service_JavaService_strategy)
+def test_service_javaservice_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Service::Tool_strategy)
+@given(instance=Service_Tool_strategy)
 @settings(max_examples=50)
-def test_service::tool_instantiation(instance):
-    assert isinstance(instance, Service::Tool)
-
-@given(instance=Service::Tool_strategy)
-def test_service::tool_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_service_tool_instantiation(instance):
+    assert isinstance(instance, Service_Tool)
 
 
-@given(instance=Service::Tool_strategy)
-def test_service::tool_name_setter(instance):
+
+@given(instance=Service_Tool_strategy)
+def test_service_tool_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

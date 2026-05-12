@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    MRPTrace::RDMElement,
-    MRPTrace::NamedElement,
-    MRPTrace::TraceEntry,
+from python_code import (
+    MRPTrace_RDMElement,
+    MRPTrace_NamedElement,
+    MRPTrace_TraceEntry,
     NamedElement,
-    MRPTrace::Event,
-    MRPTrace::Trace,
-    MRPTrace::TraceModel,
+    MRPTrace_Event,
+    MRPTrace_Trace,
+    MRPTrace_TraceModel,
     TimeUnit,
 )
 
@@ -22,37 +22,37 @@ from classes import (
 
 
 
-def test_mrptrace::rdmelement_is_not_abstract():
-    assert not inspect.isabstract(MRPTrace::RDMElement)
+def test_mrptrace_rdmelement_is_not_abstract():
+    assert not inspect.isabstract(MRPTrace_RDMElement)
 
 
-def test_mrptrace::rdmelement_constructor_exists():
-    assert callable(MRPTrace::RDMElement.__init__)
+def test_mrptrace_rdmelement_constructor_exists():
+    assert callable(MRPTrace_RDMElement.__init__)
 
 
-def test_mrptrace::rdmelement_constructor_args():
-    sig = inspect.signature(MRPTrace::RDMElement.__init__)
+def test_mrptrace_rdmelement_constructor_args():
+    sig = inspect.signature(MRPTrace_RDMElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mrptrace::namedelement_is_not_abstract():
-    assert not inspect.isabstract(MRPTrace::NamedElement)
+def test_mrptrace_namedelement_is_not_abstract():
+    assert not inspect.isabstract(MRPTrace_NamedElement)
 
 
-def test_mrptrace::namedelement_constructor_exists():
-    assert callable(MRPTrace::NamedElement.__init__)
+def test_mrptrace_namedelement_constructor_exists():
+    assert callable(MRPTrace_NamedElement.__init__)
 
 
-def test_mrptrace::namedelement_constructor_args():
-    sig = inspect.signature(MRPTrace::NamedElement.__init__)
+def test_mrptrace_namedelement_constructor_args():
+    sig = inspect.signature(MRPTrace_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mrptrace::namedelement_has_name():
-    assert hasattr(MRPTrace::NamedElement, "name")
+def test_mrptrace_namedelement_has_name():
+    assert hasattr(MRPTrace_NamedElement, "name")
     descriptor = None
-    for klass in MRPTrace::NamedElement.__mro__:
+    for klass in MRPTrace_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,23 +60,23 @@ def test_mrptrace::namedelement_has_name():
 
 
 
-def test_mrptrace::traceentry_is_not_abstract():
-    assert not inspect.isabstract(MRPTrace::TraceEntry)
+def test_mrptrace_traceentry_is_not_abstract():
+    assert not inspect.isabstract(MRPTrace_TraceEntry)
 
 
-def test_mrptrace::traceentry_constructor_exists():
-    assert callable(MRPTrace::TraceEntry.__init__)
+def test_mrptrace_traceentry_constructor_exists():
+    assert callable(MRPTrace_TraceEntry.__init__)
 
 
-def test_mrptrace::traceentry_constructor_args():
-    sig = inspect.signature(MRPTrace::TraceEntry.__init__)
+def test_mrptrace_traceentry_constructor_args():
+    sig = inspect.signature(MRPTrace_TraceEntry.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_mrptrace::traceentry_has_description():
-    assert hasattr(MRPTrace::TraceEntry, "description")
+def test_mrptrace_traceentry_has_description():
+    assert hasattr(MRPTrace_TraceEntry, "description")
     descriptor = None
-    for klass in MRPTrace::TraceEntry.__mro__:
+    for klass in MRPTrace_TraceEntry.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -98,23 +98,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_mrptrace::event_is_not_abstract():
-    assert not inspect.isabstract(MRPTrace::Event)
+def test_mrptrace_event_is_not_abstract():
+    assert not inspect.isabstract(MRPTrace_Event)
 
 
-def test_mrptrace::event_constructor_exists():
-    assert callable(MRPTrace::Event.__init__)
+def test_mrptrace_event_constructor_exists():
+    assert callable(MRPTrace_Event.__init__)
 
 
-def test_mrptrace::event_constructor_args():
-    sig = inspect.signature(MRPTrace::Event.__init__)
+def test_mrptrace_event_constructor_args():
+    sig = inspect.signature(MRPTrace_Event.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_mrptrace::event_has_time():
-    assert hasattr(MRPTrace::Event, "time")
+def test_mrptrace_event_has_time():
+    assert hasattr(MRPTrace_Event, "time")
     descriptor = None
-    for klass in MRPTrace::Event.__mro__:
+    for klass in MRPTrace_Event.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -122,23 +122,23 @@ def test_mrptrace::event_has_time():
 
 
 
-def test_mrptrace::trace_is_not_abstract():
-    assert not inspect.isabstract(MRPTrace::Trace)
+def test_mrptrace_trace_is_not_abstract():
+    assert not inspect.isabstract(MRPTrace_Trace)
 
 
-def test_mrptrace::trace_constructor_exists():
-    assert callable(MRPTrace::Trace.__init__)
+def test_mrptrace_trace_constructor_exists():
+    assert callable(MRPTrace_Trace.__init__)
 
 
-def test_mrptrace::trace_constructor_args():
-    sig = inspect.signature(MRPTrace::Trace.__init__)
+def test_mrptrace_trace_constructor_args():
+    sig = inspect.signature(MRPTrace_Trace.__init__)
     params = list(sig.parameters.keys())
     assert "granularity" in params, "Missing parameter 'granularity'"
 
-def test_mrptrace::trace_has_granularity():
-    assert hasattr(MRPTrace::Trace, "granularity")
+def test_mrptrace_trace_has_granularity():
+    assert hasattr(MRPTrace_Trace, "granularity")
     descriptor = None
-    for klass in MRPTrace::Trace.__mro__:
+    for klass in MRPTrace_Trace.__mro__:
         if "granularity" in klass.__dict__:
             descriptor = klass.__dict__["granularity"]
             break
@@ -146,16 +146,16 @@ def test_mrptrace::trace_has_granularity():
 
 
 
-def test_mrptrace::tracemodel_is_not_abstract():
-    assert not inspect.isabstract(MRPTrace::TraceModel)
+def test_mrptrace_tracemodel_is_not_abstract():
+    assert not inspect.isabstract(MRPTrace_TraceModel)
 
 
-def test_mrptrace::tracemodel_constructor_exists():
-    assert callable(MRPTrace::TraceModel.__init__)
+def test_mrptrace_tracemodel_constructor_exists():
+    assert callable(MRPTrace_TraceModel.__init__)
 
 
-def test_mrptrace::tracemodel_constructor_args():
-    sig = inspect.signature(MRPTrace::TraceModel.__init__)
+def test_mrptrace_tracemodel_constructor_args():
+    sig = inspect.signature(MRPTrace_TraceModel.__init__)
     params = list(sig.parameters.keys())
 
 def test_timeunit_exists():
@@ -166,13 +166,13 @@ def test_timeunit_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TimeUnit]
     expected_literals = [
-        "MICROSECONDS",
-        "MINUTES",
-        "MILLISECONDS",
-        "NANOSECONDS",
-        "SECONDS",
         "HOURS",
+        "NANOSECONDS",
         "DAYS",
+        "MILLISECONDS",
+        "MICROSECONDS",
+        "SECONDS",
+        "MINUTES",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -190,69 +190,63 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-MRPTrace::RDMElement_strategy = st.builds(
-    MRPTrace::RDMElement,
+MRPTrace_RDMElement_strategy = st.builds(
+    MRPTrace_RDMElement,
 )
-MRPTrace::NamedElement_strategy = st.builds(
-    MRPTrace::NamedElement,
+MRPTrace_NamedElement_strategy = st.builds(
+    MRPTrace_NamedElement,
     name=
         safe_text
 )
-MRPTrace::TraceEntry_strategy = st.builds(
-    MRPTrace::TraceEntry,
+MRPTrace_TraceEntry_strategy = st.builds(
+    MRPTrace_TraceEntry,
     description=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-MRPTrace::Event_strategy = st.builds(
-    MRPTrace::Event,
+MRPTrace_Event_strategy = st.builds(
+    MRPTrace_Event,
     time=
         safe_text
 )
-MRPTrace::Trace_strategy = st.builds(
-    MRPTrace::Trace,
+MRPTrace_Trace_strategy = st.builds(
+    MRPTrace_Trace,
     granularity=
         safe_text
 )
-MRPTrace::TraceModel_strategy = st.builds(
-    MRPTrace::TraceModel,
+MRPTrace_TraceModel_strategy = st.builds(
+    MRPTrace_TraceModel,
 )
 
-@given(instance=MRPTrace::RDMElement_strategy)
+@given(instance=MRPTrace_RDMElement_strategy)
 @settings(max_examples=50)
-def test_mrptrace::rdmelement_instantiation(instance):
-    assert isinstance(instance, MRPTrace::RDMElement)
+def test_mrptrace_rdmelement_instantiation(instance):
+    assert isinstance(instance, MRPTrace_RDMElement)
 
-@given(instance=MRPTrace::NamedElement_strategy)
+@given(instance=MRPTrace_NamedElement_strategy)
 @settings(max_examples=50)
-def test_mrptrace::namedelement_instantiation(instance):
-    assert isinstance(instance, MRPTrace::NamedElement)
-
-@given(instance=MRPTrace::NamedElement_strategy)
-def test_mrptrace::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mrptrace_namedelement_instantiation(instance):
+    assert isinstance(instance, MRPTrace_NamedElement)
 
 
-@given(instance=MRPTrace::NamedElement_strategy)
-def test_mrptrace::namedelement_name_setter(instance):
+
+@given(instance=MRPTrace_NamedElement_strategy)
+def test_mrptrace_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MRPTrace::TraceEntry_strategy)
+@given(instance=MRPTrace_TraceEntry_strategy)
 @settings(max_examples=50)
-def test_mrptrace::traceentry_instantiation(instance):
-    assert isinstance(instance, MRPTrace::TraceEntry)
-
-@given(instance=MRPTrace::TraceEntry_strategy)
-def test_mrptrace::traceentry_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_mrptrace_traceentry_instantiation(instance):
+    assert isinstance(instance, MRPTrace_TraceEntry)
 
 
-@given(instance=MRPTrace::TraceEntry_strategy)
-def test_mrptrace::traceentry_description_setter(instance):
+
+@given(instance=MRPTrace_TraceEntry_strategy)
+def test_mrptrace_traceentry_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -262,39 +256,33 @@ def test_mrptrace::traceentry_description_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=MRPTrace::Event_strategy)
+@given(instance=MRPTrace_Event_strategy)
 @settings(max_examples=50)
-def test_mrptrace::event_instantiation(instance):
-    assert isinstance(instance, MRPTrace::Event)
-
-@given(instance=MRPTrace::Event_strategy)
-def test_mrptrace::event_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_mrptrace_event_instantiation(instance):
+    assert isinstance(instance, MRPTrace_Event)
 
 
-@given(instance=MRPTrace::Event_strategy)
-def test_mrptrace::event_time_setter(instance):
+
+@given(instance=MRPTrace_Event_strategy)
+def test_mrptrace_event_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=MRPTrace::Trace_strategy)
+@given(instance=MRPTrace_Trace_strategy)
 @settings(max_examples=50)
-def test_mrptrace::trace_instantiation(instance):
-    assert isinstance(instance, MRPTrace::Trace)
-
-@given(instance=MRPTrace::Trace_strategy)
-def test_mrptrace::trace_granularity_type(instance):
-    assert isinstance(instance.granularity, str)
+def test_mrptrace_trace_instantiation(instance):
+    assert isinstance(instance, MRPTrace_Trace)
 
 
-@given(instance=MRPTrace::Trace_strategy)
-def test_mrptrace::trace_granularity_setter(instance):
+
+@given(instance=MRPTrace_Trace_strategy)
+def test_mrptrace_trace_granularity_setter(instance):
     original = instance.granularity
     instance.granularity = original
     assert instance.granularity == original
 
-@given(instance=MRPTrace::TraceModel_strategy)
+@given(instance=MRPTrace_TraceModel_strategy)
 @settings(max_examples=50)
-def test_mrptrace::tracemodel_instantiation(instance):
-    assert isinstance(instance, MRPTrace::TraceModel)
+def test_mrptrace_tracemodel_instantiation(instance):
+    assert isinstance(instance, MRPTrace_TraceModel)

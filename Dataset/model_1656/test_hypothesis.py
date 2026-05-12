@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    error4::NamedElement,
-    error4::World,
+from python_code import (
+    error4_NamedElement,
+    error4_World,
     NamedElement,
-    error4::Component,
-    error4::RelatedTo,
-    error4::Thing,
+    error4_Component,
+    error4_RelatedTo,
+    error4_Thing,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_error4::namedelement_is_not_abstract():
-    assert not inspect.isabstract(error4::NamedElement)
+def test_error4_namedelement_is_not_abstract():
+    assert not inspect.isabstract(error4_NamedElement)
 
 
-def test_error4::namedelement_constructor_exists():
-    assert callable(error4::NamedElement.__init__)
+def test_error4_namedelement_constructor_exists():
+    assert callable(error4_NamedElement.__init__)
 
 
-def test_error4::namedelement_constructor_args():
-    sig = inspect.signature(error4::NamedElement.__init__)
+def test_error4_namedelement_constructor_args():
+    sig = inspect.signature(error4_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_error4::namedelement_has_name():
-    assert hasattr(error4::NamedElement, "name")
+def test_error4_namedelement_has_name():
+    assert hasattr(error4_NamedElement, "name")
     descriptor = None
-    for klass in error4::NamedElement.__mro__:
+    for klass in error4_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,16 +44,16 @@ def test_error4::namedelement_has_name():
 
 
 
-def test_error4::world_is_not_abstract():
-    assert not inspect.isabstract(error4::World)
+def test_error4_world_is_not_abstract():
+    assert not inspect.isabstract(error4_World)
 
 
-def test_error4::world_constructor_exists():
-    assert callable(error4::World.__init__)
+def test_error4_world_constructor_exists():
+    assert callable(error4_World.__init__)
 
 
-def test_error4::world_constructor_args():
-    sig = inspect.signature(error4::World.__init__)
+def test_error4_world_constructor_args():
+    sig = inspect.signature(error4_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -72,37 +72,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_error4::component_is_not_abstract():
-    assert not inspect.isabstract(error4::Component)
+def test_error4_component_is_not_abstract():
+    assert not inspect.isabstract(error4_Component)
 
 
-def test_error4::component_constructor_exists():
-    assert callable(error4::Component.__init__)
+def test_error4_component_constructor_exists():
+    assert callable(error4_Component.__init__)
 
 
-def test_error4::component_constructor_args():
-    sig = inspect.signature(error4::Component.__init__)
+def test_error4_component_constructor_args():
+    sig = inspect.signature(error4_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_error4::relatedto_is_not_abstract():
-    assert not inspect.isabstract(error4::RelatedTo)
+def test_error4_relatedto_is_not_abstract():
+    assert not inspect.isabstract(error4_RelatedTo)
 
 
-def test_error4::relatedto_constructor_exists():
-    assert callable(error4::RelatedTo.__init__)
+def test_error4_relatedto_constructor_exists():
+    assert callable(error4_RelatedTo.__init__)
 
 
-def test_error4::relatedto_constructor_args():
-    sig = inspect.signature(error4::RelatedTo.__init__)
+def test_error4_relatedto_constructor_args():
+    sig = inspect.signature(error4_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_error4::relatedto_has_since():
-    assert hasattr(error4::RelatedTo, "since")
+def test_error4_relatedto_has_since():
+    assert hasattr(error4_RelatedTo, "since")
     descriptor = None
-    for klass in error4::RelatedTo.__mro__:
+    for klass in error4_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -110,23 +110,23 @@ def test_error4::relatedto_has_since():
 
 
 
-def test_error4::thing_is_not_abstract():
-    assert not inspect.isabstract(error4::Thing)
+def test_error4_thing_is_not_abstract():
+    assert not inspect.isabstract(error4_Thing)
 
 
-def test_error4::thing_constructor_exists():
-    assert callable(error4::Thing.__init__)
+def test_error4_thing_constructor_exists():
+    assert callable(error4_Thing.__init__)
 
 
-def test_error4::thing_constructor_args():
-    sig = inspect.signature(error4::Thing.__init__)
+def test_error4_thing_constructor_args():
+    sig = inspect.signature(error4_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_error4::thing_has_id():
-    assert hasattr(error4::Thing, "id")
+def test_error4_thing_has_id():
+    assert hasattr(error4_Thing, "id")
     descriptor = None
-    for klass in error4::Thing.__mro__:
+    for klass in error4_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -144,90 +144,81 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-error4::NamedElement_strategy = st.builds(
-    error4::NamedElement,
+error4_NamedElement_strategy = st.builds(
+    error4_NamedElement,
     name=
         safe_text
 )
-error4::World_strategy = st.builds(
-    error4::World,
+error4_World_strategy = st.builds(
+    error4_World,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-error4::Component_strategy = st.builds(
-    error4::Component,
+error4_Component_strategy = st.builds(
+    error4_Component,
 )
-error4::RelatedTo_strategy = st.builds(
-    error4::RelatedTo,
+error4_RelatedTo_strategy = st.builds(
+    error4_RelatedTo,
     since=
         safe_text
 )
-error4::Thing_strategy = st.builds(
-    error4::Thing,
+error4_Thing_strategy = st.builds(
+    error4_Thing,
     id=
         st.integers()
 )
 
-@given(instance=error4::NamedElement_strategy)
+@given(instance=error4_NamedElement_strategy)
 @settings(max_examples=50)
-def test_error4::namedelement_instantiation(instance):
-    assert isinstance(instance, error4::NamedElement)
-
-@given(instance=error4::NamedElement_strategy)
-def test_error4::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_error4_namedelement_instantiation(instance):
+    assert isinstance(instance, error4_NamedElement)
 
 
-@given(instance=error4::NamedElement_strategy)
-def test_error4::namedelement_name_setter(instance):
+
+@given(instance=error4_NamedElement_strategy)
+def test_error4_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=error4::World_strategy)
+@given(instance=error4_World_strategy)
 @settings(max_examples=50)
-def test_error4::world_instantiation(instance):
-    assert isinstance(instance, error4::World)
+def test_error4_world_instantiation(instance):
+    assert isinstance(instance, error4_World)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=error4::Component_strategy)
+@given(instance=error4_Component_strategy)
 @settings(max_examples=50)
-def test_error4::component_instantiation(instance):
-    assert isinstance(instance, error4::Component)
+def test_error4_component_instantiation(instance):
+    assert isinstance(instance, error4_Component)
 
-@given(instance=error4::RelatedTo_strategy)
+@given(instance=error4_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_error4::relatedto_instantiation(instance):
-    assert isinstance(instance, error4::RelatedTo)
-
-@given(instance=error4::RelatedTo_strategy)
-def test_error4::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_error4_relatedto_instantiation(instance):
+    assert isinstance(instance, error4_RelatedTo)
 
 
-@given(instance=error4::RelatedTo_strategy)
-def test_error4::relatedto_since_setter(instance):
+
+@given(instance=error4_RelatedTo_strategy)
+def test_error4_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=error4::Thing_strategy)
+@given(instance=error4_Thing_strategy)
 @settings(max_examples=50)
-def test_error4::thing_instantiation(instance):
-    assert isinstance(instance, error4::Thing)
-
-@given(instance=error4::Thing_strategy)
-def test_error4::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_error4_thing_instantiation(instance):
+    assert isinstance(instance, error4_Thing)
 
 
-@given(instance=error4::Thing_strategy)
-def test_error4::thing_id_setter(instance):
+
+@given(instance=error4_Thing_strategy)
+def test_error4_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

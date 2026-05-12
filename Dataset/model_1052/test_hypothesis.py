@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Transition,
-    devs::InternalTransition,
-    devs::ExternalTransition,
+    devs_InternalTransition,
+    devs_ExternalTransition,
     Event,
-    devs::OutputEvent,
-    devs::InputEvent,
-    devs::OutputFunction,
-    devs::Transition,
-    devs::Event,
-    devs::State,
-    devs::AtomicModel,
+    devs_OutputEvent,
+    devs_InputEvent,
+    devs_OutputFunction,
+    devs_Transition,
+    devs_Event,
+    devs_State,
+    devs_AtomicModel,
 )
 
 # =============================================================================
@@ -39,30 +39,30 @@ def test_transition_constructor_args():
 
 
 
-def test_devs::internaltransition_is_not_abstract():
-    assert not inspect.isabstract(devs::InternalTransition)
+def test_devs_internaltransition_is_not_abstract():
+    assert not inspect.isabstract(devs_InternalTransition)
 
 
-def test_devs::internaltransition_constructor_exists():
-    assert callable(devs::InternalTransition.__init__)
+def test_devs_internaltransition_constructor_exists():
+    assert callable(devs_InternalTransition.__init__)
 
 
-def test_devs::internaltransition_constructor_args():
-    sig = inspect.signature(devs::InternalTransition.__init__)
+def test_devs_internaltransition_constructor_args():
+    sig = inspect.signature(devs_InternalTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_devs::externaltransition_is_not_abstract():
-    assert not inspect.isabstract(devs::ExternalTransition)
+def test_devs_externaltransition_is_not_abstract():
+    assert not inspect.isabstract(devs_ExternalTransition)
 
 
-def test_devs::externaltransition_constructor_exists():
-    assert callable(devs::ExternalTransition.__init__)
+def test_devs_externaltransition_constructor_exists():
+    assert callable(devs_ExternalTransition.__init__)
 
 
-def test_devs::externaltransition_constructor_args():
-    sig = inspect.signature(devs::ExternalTransition.__init__)
+def test_devs_externaltransition_constructor_args():
+    sig = inspect.signature(devs_ExternalTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,51 +81,51 @@ def test_event_constructor_args():
 
 
 
-def test_devs::outputevent_is_not_abstract():
-    assert not inspect.isabstract(devs::OutputEvent)
+def test_devs_outputevent_is_not_abstract():
+    assert not inspect.isabstract(devs_OutputEvent)
 
 
-def test_devs::outputevent_constructor_exists():
-    assert callable(devs::OutputEvent.__init__)
+def test_devs_outputevent_constructor_exists():
+    assert callable(devs_OutputEvent.__init__)
 
 
-def test_devs::outputevent_constructor_args():
-    sig = inspect.signature(devs::OutputEvent.__init__)
+def test_devs_outputevent_constructor_args():
+    sig = inspect.signature(devs_OutputEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_devs::inputevent_is_not_abstract():
-    assert not inspect.isabstract(devs::InputEvent)
+def test_devs_inputevent_is_not_abstract():
+    assert not inspect.isabstract(devs_InputEvent)
 
 
-def test_devs::inputevent_constructor_exists():
-    assert callable(devs::InputEvent.__init__)
+def test_devs_inputevent_constructor_exists():
+    assert callable(devs_InputEvent.__init__)
 
 
-def test_devs::inputevent_constructor_args():
-    sig = inspect.signature(devs::InputEvent.__init__)
+def test_devs_inputevent_constructor_args():
+    sig = inspect.signature(devs_InputEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_devs::outputfunction_is_not_abstract():
-    assert not inspect.isabstract(devs::OutputFunction)
+def test_devs_outputfunction_is_not_abstract():
+    assert not inspect.isabstract(devs_OutputFunction)
 
 
-def test_devs::outputfunction_constructor_exists():
-    assert callable(devs::OutputFunction.__init__)
+def test_devs_outputfunction_constructor_exists():
+    assert callable(devs_OutputFunction.__init__)
 
 
-def test_devs::outputfunction_constructor_args():
-    sig = inspect.signature(devs::OutputFunction.__init__)
+def test_devs_outputfunction_constructor_args():
+    sig = inspect.signature(devs_OutputFunction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_devs::outputfunction_has_name():
-    assert hasattr(devs::OutputFunction, "name")
+def test_devs_outputfunction_has_name():
+    assert hasattr(devs_OutputFunction, "name")
     descriptor = None
-    for klass in devs::OutputFunction.__mro__:
+    for klass in devs_OutputFunction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -133,23 +133,23 @@ def test_devs::outputfunction_has_name():
 
 
 
-def test_devs::transition_is_not_abstract():
-    assert not inspect.isabstract(devs::Transition)
+def test_devs_transition_is_not_abstract():
+    assert not inspect.isabstract(devs_Transition)
 
 
-def test_devs::transition_constructor_exists():
-    assert callable(devs::Transition.__init__)
+def test_devs_transition_constructor_exists():
+    assert callable(devs_Transition.__init__)
 
 
-def test_devs::transition_constructor_args():
-    sig = inspect.signature(devs::Transition.__init__)
+def test_devs_transition_constructor_args():
+    sig = inspect.signature(devs_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_devs::transition_has_name():
-    assert hasattr(devs::Transition, "name")
+def test_devs_transition_has_name():
+    assert hasattr(devs_Transition, "name")
     descriptor = None
-    for klass in devs::Transition.__mro__:
+    for klass in devs_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -157,23 +157,23 @@ def test_devs::transition_has_name():
 
 
 
-def test_devs::event_is_not_abstract():
-    assert not inspect.isabstract(devs::Event)
+def test_devs_event_is_not_abstract():
+    assert not inspect.isabstract(devs_Event)
 
 
-def test_devs::event_constructor_exists():
-    assert callable(devs::Event.__init__)
+def test_devs_event_constructor_exists():
+    assert callable(devs_Event.__init__)
 
 
-def test_devs::event_constructor_args():
-    sig = inspect.signature(devs::Event.__init__)
+def test_devs_event_constructor_args():
+    sig = inspect.signature(devs_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_devs::event_has_name():
-    assert hasattr(devs::Event, "name")
+def test_devs_event_has_name():
+    assert hasattr(devs_Event, "name")
     descriptor = None
-    for klass in devs::Event.__mro__:
+    for klass in devs_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -181,57 +181,57 @@ def test_devs::event_has_name():
 
 
 
-def test_devs::state_is_not_abstract():
-    assert not inspect.isabstract(devs::State)
+def test_devs_state_is_not_abstract():
+    assert not inspect.isabstract(devs_State)
 
 
-def test_devs::state_constructor_exists():
-    assert callable(devs::State.__init__)
+def test_devs_state_constructor_exists():
+    assert callable(devs_State.__init__)
 
 
-def test_devs::state_constructor_args():
-    sig = inspect.signature(devs::State.__init__)
+def test_devs_state_constructor_args():
+    sig = inspect.signature(devs_State.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "lifeTime" in params, "Missing parameter 'lifeTime'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_devs::state_has_lifeTime():
-    assert hasattr(devs::State, "lifeTime")
+def test_devs_state_has_name():
+    assert hasattr(devs_State, "name")
     descriptor = None
-    for klass in devs::State.__mro__:
+    for klass in devs_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_devs_state_has_lifeTime():
+    assert hasattr(devs_State, "lifeTime")
+    descriptor = None
+    for klass in devs_State.__mro__:
         if "lifeTime" in klass.__dict__:
             descriptor = klass.__dict__["lifeTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_devs::state_has_name():
-    assert hasattr(devs::State, "name")
-    descriptor = None
-    for klass in devs::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_devs::atomicmodel_is_not_abstract():
-    assert not inspect.isabstract(devs::AtomicModel)
-
-
-def test_devs::atomicmodel_constructor_exists():
-    assert callable(devs::AtomicModel.__init__)
+def test_devs_atomicmodel_is_not_abstract():
+    assert not inspect.isabstract(devs_AtomicModel)
 
 
-def test_devs::atomicmodel_constructor_args():
-    sig = inspect.signature(devs::AtomicModel.__init__)
+def test_devs_atomicmodel_constructor_exists():
+    assert callable(devs_AtomicModel.__init__)
+
+
+def test_devs_atomicmodel_constructor_args():
+    sig = inspect.signature(devs_AtomicModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_devs::atomicmodel_has_name():
-    assert hasattr(devs::AtomicModel, "name")
+def test_devs_atomicmodel_has_name():
+    assert hasattr(devs_AtomicModel, "name")
     descriptor = None
-    for klass in devs::AtomicModel.__mro__:
+    for klass in devs_AtomicModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -252,45 +252,45 @@ safe_text = st.text(
 Transition_strategy = st.builds(
     Transition,
 )
-devs::InternalTransition_strategy = st.builds(
-    devs::InternalTransition,
+devs_InternalTransition_strategy = st.builds(
+    devs_InternalTransition,
 )
-devs::ExternalTransition_strategy = st.builds(
-    devs::ExternalTransition,
+devs_ExternalTransition_strategy = st.builds(
+    devs_ExternalTransition,
 )
 Event_strategy = st.builds(
     Event,
 )
-devs::OutputEvent_strategy = st.builds(
-    devs::OutputEvent,
+devs_OutputEvent_strategy = st.builds(
+    devs_OutputEvent,
 )
-devs::InputEvent_strategy = st.builds(
-    devs::InputEvent,
+devs_InputEvent_strategy = st.builds(
+    devs_InputEvent,
 )
-devs::OutputFunction_strategy = st.builds(
-    devs::OutputFunction,
+devs_OutputFunction_strategy = st.builds(
+    devs_OutputFunction,
     name=
         safe_text
 )
-devs::Transition_strategy = st.builds(
-    devs::Transition,
+devs_Transition_strategy = st.builds(
+    devs_Transition,
     name=
         safe_text
 )
-devs::Event_strategy = st.builds(
-    devs::Event,
+devs_Event_strategy = st.builds(
+    devs_Event,
     name=
         safe_text
 )
-devs::State_strategy = st.builds(
-    devs::State,
+devs_State_strategy = st.builds(
+    devs_State,
+    name=
+        safe_text,
     lifeTime=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    name=
-        safe_text
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-devs::AtomicModel_strategy = st.builds(
-    devs::AtomicModel,
+devs_AtomicModel_strategy = st.builds(
+    devs_AtomicModel,
     name=
         safe_text
 )
@@ -300,118 +300,100 @@ devs::AtomicModel_strategy = st.builds(
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=devs::InternalTransition_strategy)
+@given(instance=devs_InternalTransition_strategy)
 @settings(max_examples=50)
-def test_devs::internaltransition_instantiation(instance):
-    assert isinstance(instance, devs::InternalTransition)
+def test_devs_internaltransition_instantiation(instance):
+    assert isinstance(instance, devs_InternalTransition)
 
-@given(instance=devs::ExternalTransition_strategy)
+@given(instance=devs_ExternalTransition_strategy)
 @settings(max_examples=50)
-def test_devs::externaltransition_instantiation(instance):
-    assert isinstance(instance, devs::ExternalTransition)
+def test_devs_externaltransition_instantiation(instance):
+    assert isinstance(instance, devs_ExternalTransition)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=devs::OutputEvent_strategy)
+@given(instance=devs_OutputEvent_strategy)
 @settings(max_examples=50)
-def test_devs::outputevent_instantiation(instance):
-    assert isinstance(instance, devs::OutputEvent)
+def test_devs_outputevent_instantiation(instance):
+    assert isinstance(instance, devs_OutputEvent)
 
-@given(instance=devs::InputEvent_strategy)
+@given(instance=devs_InputEvent_strategy)
 @settings(max_examples=50)
-def test_devs::inputevent_instantiation(instance):
-    assert isinstance(instance, devs::InputEvent)
+def test_devs_inputevent_instantiation(instance):
+    assert isinstance(instance, devs_InputEvent)
 
-@given(instance=devs::OutputFunction_strategy)
+@given(instance=devs_OutputFunction_strategy)
 @settings(max_examples=50)
-def test_devs::outputfunction_instantiation(instance):
-    assert isinstance(instance, devs::OutputFunction)
-
-@given(instance=devs::OutputFunction_strategy)
-def test_devs::outputfunction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_devs_outputfunction_instantiation(instance):
+    assert isinstance(instance, devs_OutputFunction)
 
 
-@given(instance=devs::OutputFunction_strategy)
-def test_devs::outputfunction_name_setter(instance):
+
+@given(instance=devs_OutputFunction_strategy)
+def test_devs_outputfunction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=devs::Transition_strategy)
+@given(instance=devs_Transition_strategy)
 @settings(max_examples=50)
-def test_devs::transition_instantiation(instance):
-    assert isinstance(instance, devs::Transition)
-
-@given(instance=devs::Transition_strategy)
-def test_devs::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_devs_transition_instantiation(instance):
+    assert isinstance(instance, devs_Transition)
 
 
-@given(instance=devs::Transition_strategy)
-def test_devs::transition_name_setter(instance):
+
+@given(instance=devs_Transition_strategy)
+def test_devs_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=devs::Event_strategy)
+@given(instance=devs_Event_strategy)
 @settings(max_examples=50)
-def test_devs::event_instantiation(instance):
-    assert isinstance(instance, devs::Event)
-
-@given(instance=devs::Event_strategy)
-def test_devs::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_devs_event_instantiation(instance):
+    assert isinstance(instance, devs_Event)
 
 
-@given(instance=devs::Event_strategy)
-def test_devs::event_name_setter(instance):
+
+@given(instance=devs_Event_strategy)
+def test_devs_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=devs::State_strategy)
+@given(instance=devs_State_strategy)
 @settings(max_examples=50)
-def test_devs::state_instantiation(instance):
-    assert isinstance(instance, devs::State)
-
-@given(instance=devs::State_strategy)
-def test_devs::state_lifeTime_type(instance):
-    assert isinstance(instance.lifeTime, float)
+def test_devs_state_instantiation(instance):
+    assert isinstance(instance, devs_State)
 
 
-@given(instance=devs::State_strategy)
-def test_devs::state_lifeTime_setter(instance):
+
+@given(instance=devs_State_strategy)
+def test_devs_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=devs_State_strategy)
+def test_devs_state_lifeTime_setter(instance):
     original = instance.lifeTime
     instance.lifeTime = original
     assert instance.lifeTime == original
 
-@given(instance=devs::State_strategy)
-def test_devs::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=devs::State_strategy)
-def test_devs::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=devs::AtomicModel_strategy)
+@given(instance=devs_AtomicModel_strategy)
 @settings(max_examples=50)
-def test_devs::atomicmodel_instantiation(instance):
-    assert isinstance(instance, devs::AtomicModel)
-
-@given(instance=devs::AtomicModel_strategy)
-def test_devs::atomicmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_devs_atomicmodel_instantiation(instance):
+    assert isinstance(instance, devs_AtomicModel)
 
 
-@given(instance=devs::AtomicModel_strategy)
-def test_devs::atomicmodel_name_setter(instance):
+
+@given(instance=devs_AtomicModel_strategy)
+def test_devs_atomicmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

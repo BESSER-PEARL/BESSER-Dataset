@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Type,
-    typeslibrary::TypeInstance,
-    typeslibrary::TypesLibrary,
-    typeslibrary::TypesLibraryUser,
-    typeslibrary::UserDefinedTypeRef,
-    typeslibrary::Type,
-    typeslibrary::UserDefinedType,
+    typeslibrary_TypeInstance,
+    typeslibrary_TypesLibrary,
+    typeslibrary_TypesLibraryUser,
+    typeslibrary_UserDefinedTypeRef,
+    typeslibrary_Type,
+    typeslibrary_UserDefinedType,
     UserDefinedType,
-    typeslibrary::SimpleNamedType,
-    typeslibrary::ComplexNamedType,
-    typeslibrary::NativeType,
+    typeslibrary_SimpleNamedType,
+    typeslibrary_ComplexNamedType,
+    typeslibrary_NativeType,
     TypesLibrary,
-    typeslibrary::UserDefinedTypesLibrary,
-    typeslibrary::NativeTypesLibrary,
+    typeslibrary_UserDefinedTypesLibrary,
+    typeslibrary_NativeTypesLibrary,
     NativeTypeKind,
     TypesLibraryKind,
 )
@@ -44,43 +44,43 @@ def test_type_constructor_args():
 
 
 
-def test_typeslibrary::typeinstance_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::TypeInstance)
+def test_typeslibrary_typeinstance_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_TypeInstance)
 
 
-def test_typeslibrary::typeinstance_constructor_exists():
-    assert callable(typeslibrary::TypeInstance.__init__)
+def test_typeslibrary_typeinstance_constructor_exists():
+    assert callable(typeslibrary_TypeInstance.__init__)
 
 
-def test_typeslibrary::typeinstance_constructor_args():
-    sig = inspect.signature(typeslibrary::TypeInstance.__init__)
+def test_typeslibrary_typeinstance_constructor_args():
+    sig = inspect.signature(typeslibrary_TypeInstance.__init__)
     params = list(sig.parameters.keys())
     assert "precision" in params, "Missing parameter 'precision'"
     assert "literals" in params, "Missing parameter 'literals'"
     assert "length" in params, "Missing parameter 'length'"
 
-def test_typeslibrary::typeinstance_has_precision():
-    assert hasattr(typeslibrary::TypeInstance, "precision")
+def test_typeslibrary_typeinstance_has_precision():
+    assert hasattr(typeslibrary_TypeInstance, "precision")
     descriptor = None
-    for klass in typeslibrary::TypeInstance.__mro__:
+    for klass in typeslibrary_TypeInstance.__mro__:
         if "precision" in klass.__dict__:
             descriptor = klass.__dict__["precision"]
             break
     assert isinstance(descriptor, property)
 
-def test_typeslibrary::typeinstance_has_literals():
-    assert hasattr(typeslibrary::TypeInstance, "literals")
+def test_typeslibrary_typeinstance_has_literals():
+    assert hasattr(typeslibrary_TypeInstance, "literals")
     descriptor = None
-    for klass in typeslibrary::TypeInstance.__mro__:
+    for klass in typeslibrary_TypeInstance.__mro__:
         if "literals" in klass.__dict__:
             descriptor = klass.__dict__["literals"]
             break
     assert isinstance(descriptor, property)
 
-def test_typeslibrary::typeinstance_has_length():
-    assert hasattr(typeslibrary::TypeInstance, "length")
+def test_typeslibrary_typeinstance_has_length():
+    assert hasattr(typeslibrary_TypeInstance, "length")
     descriptor = None
-    for klass in typeslibrary::TypeInstance.__mro__:
+    for klass in typeslibrary_TypeInstance.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -88,23 +88,23 @@ def test_typeslibrary::typeinstance_has_length():
 
 
 
-def test_typeslibrary::typeslibrary_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::TypesLibrary)
+def test_typeslibrary_typeslibrary_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_TypesLibrary)
 
 
-def test_typeslibrary::typeslibrary_constructor_exists():
-    assert callable(typeslibrary::TypesLibrary.__init__)
+def test_typeslibrary_typeslibrary_constructor_exists():
+    assert callable(typeslibrary_TypesLibrary.__init__)
 
 
-def test_typeslibrary::typeslibrary_constructor_args():
-    sig = inspect.signature(typeslibrary::TypesLibrary.__init__)
+def test_typeslibrary_typeslibrary_constructor_args():
+    sig = inspect.signature(typeslibrary_TypesLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_typeslibrary::typeslibrary_has_kind():
-    assert hasattr(typeslibrary::TypesLibrary, "kind")
+def test_typeslibrary_typeslibrary_has_kind():
+    assert hasattr(typeslibrary_TypesLibrary, "kind")
     descriptor = None
-    for klass in typeslibrary::TypesLibrary.__mro__:
+    for klass in typeslibrary_TypesLibrary.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -112,65 +112,65 @@ def test_typeslibrary::typeslibrary_has_kind():
 
 
 
-def test_typeslibrary::typeslibraryuser_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::TypesLibraryUser)
+def test_typeslibrary_typeslibraryuser_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_TypesLibraryUser)
 
 
-def test_typeslibrary::typeslibraryuser_constructor_exists():
-    assert callable(typeslibrary::TypesLibraryUser.__init__)
+def test_typeslibrary_typeslibraryuser_constructor_exists():
+    assert callable(typeslibrary_TypesLibraryUser.__init__)
 
 
-def test_typeslibrary::typeslibraryuser_constructor_args():
-    sig = inspect.signature(typeslibrary::TypesLibraryUser.__init__)
+def test_typeslibrary_typeslibraryuser_constructor_args():
+    sig = inspect.signature(typeslibrary_TypesLibraryUser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeslibrary::userdefinedtyperef_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::UserDefinedTypeRef)
+def test_typeslibrary_userdefinedtyperef_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_UserDefinedTypeRef)
 
 
-def test_typeslibrary::userdefinedtyperef_constructor_exists():
-    assert callable(typeslibrary::UserDefinedTypeRef.__init__)
+def test_typeslibrary_userdefinedtyperef_constructor_exists():
+    assert callable(typeslibrary_UserDefinedTypeRef.__init__)
 
 
-def test_typeslibrary::userdefinedtyperef_constructor_args():
-    sig = inspect.signature(typeslibrary::UserDefinedTypeRef.__init__)
+def test_typeslibrary_userdefinedtyperef_constructor_args():
+    sig = inspect.signature(typeslibrary_UserDefinedTypeRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeslibrary::type_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::Type)
+def test_typeslibrary_type_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_Type)
 
 
-def test_typeslibrary::type_constructor_exists():
-    assert callable(typeslibrary::Type.__init__)
+def test_typeslibrary_type_constructor_exists():
+    assert callable(typeslibrary_Type.__init__)
 
 
-def test_typeslibrary::type_constructor_args():
-    sig = inspect.signature(typeslibrary::Type.__init__)
+def test_typeslibrary_type_constructor_args():
+    sig = inspect.signature(typeslibrary_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeslibrary::userdefinedtype_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::UserDefinedType)
+def test_typeslibrary_userdefinedtype_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_UserDefinedType)
 
 
-def test_typeslibrary::userdefinedtype_constructor_exists():
-    assert callable(typeslibrary::UserDefinedType.__init__)
+def test_typeslibrary_userdefinedtype_constructor_exists():
+    assert callable(typeslibrary_UserDefinedType.__init__)
 
 
-def test_typeslibrary::userdefinedtype_constructor_args():
-    sig = inspect.signature(typeslibrary::UserDefinedType.__init__)
+def test_typeslibrary_userdefinedtype_constructor_args():
+    sig = inspect.signature(typeslibrary_UserDefinedType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeslibrary::userdefinedtype_has_name():
-    assert hasattr(typeslibrary::UserDefinedType, "name")
+def test_typeslibrary_userdefinedtype_has_name():
+    assert hasattr(typeslibrary_UserDefinedType, "name")
     descriptor = None
-    for klass in typeslibrary::UserDefinedType.__mro__:
+    for klass in typeslibrary_UserDefinedType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -192,61 +192,61 @@ def test_userdefinedtype_constructor_args():
 
 
 
-def test_typeslibrary::simplenamedtype_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::SimpleNamedType)
+def test_typeslibrary_simplenamedtype_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_SimpleNamedType)
 
 
-def test_typeslibrary::simplenamedtype_constructor_exists():
-    assert callable(typeslibrary::SimpleNamedType.__init__)
+def test_typeslibrary_simplenamedtype_constructor_exists():
+    assert callable(typeslibrary_SimpleNamedType.__init__)
 
 
-def test_typeslibrary::simplenamedtype_constructor_args():
-    sig = inspect.signature(typeslibrary::SimpleNamedType.__init__)
+def test_typeslibrary_simplenamedtype_constructor_args():
+    sig = inspect.signature(typeslibrary_SimpleNamedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeslibrary::complexnamedtype_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::ComplexNamedType)
+def test_typeslibrary_complexnamedtype_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_ComplexNamedType)
 
 
-def test_typeslibrary::complexnamedtype_constructor_exists():
-    assert callable(typeslibrary::ComplexNamedType.__init__)
+def test_typeslibrary_complexnamedtype_constructor_exists():
+    assert callable(typeslibrary_ComplexNamedType.__init__)
 
 
-def test_typeslibrary::complexnamedtype_constructor_args():
-    sig = inspect.signature(typeslibrary::ComplexNamedType.__init__)
+def test_typeslibrary_complexnamedtype_constructor_args():
+    sig = inspect.signature(typeslibrary_ComplexNamedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeslibrary::nativetype_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::NativeType)
+def test_typeslibrary_nativetype_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_NativeType)
 
 
-def test_typeslibrary::nativetype_constructor_exists():
-    assert callable(typeslibrary::NativeType.__init__)
+def test_typeslibrary_nativetype_constructor_exists():
+    assert callable(typeslibrary_NativeType.__init__)
 
 
-def test_typeslibrary::nativetype_constructor_args():
-    sig = inspect.signature(typeslibrary::NativeType.__init__)
+def test_typeslibrary_nativetype_constructor_args():
+    sig = inspect.signature(typeslibrary_NativeType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "spec" in params, "Missing parameter 'spec'"
 
-def test_typeslibrary::nativetype_has_name():
-    assert hasattr(typeslibrary::NativeType, "name")
+def test_typeslibrary_nativetype_has_name():
+    assert hasattr(typeslibrary_NativeType, "name")
     descriptor = None
-    for klass in typeslibrary::NativeType.__mro__:
+    for klass in typeslibrary_NativeType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_typeslibrary::nativetype_has_spec():
-    assert hasattr(typeslibrary::NativeType, "spec")
+def test_typeslibrary_nativetype_has_spec():
+    assert hasattr(typeslibrary_NativeType, "spec")
     descriptor = None
-    for klass in typeslibrary::NativeType.__mro__:
+    for klass in typeslibrary_NativeType.__mro__:
         if "spec" in klass.__dict__:
             descriptor = klass.__dict__["spec"]
             break
@@ -268,23 +268,23 @@ def test_typeslibrary_constructor_args():
 
 
 
-def test_typeslibrary::userdefinedtypeslibrary_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::UserDefinedTypesLibrary)
+def test_typeslibrary_userdefinedtypeslibrary_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_UserDefinedTypesLibrary)
 
 
-def test_typeslibrary::userdefinedtypeslibrary_constructor_exists():
-    assert callable(typeslibrary::UserDefinedTypesLibrary.__init__)
+def test_typeslibrary_userdefinedtypeslibrary_constructor_exists():
+    assert callable(typeslibrary_UserDefinedTypesLibrary.__init__)
 
 
-def test_typeslibrary::userdefinedtypeslibrary_constructor_args():
-    sig = inspect.signature(typeslibrary::UserDefinedTypesLibrary.__init__)
+def test_typeslibrary_userdefinedtypeslibrary_constructor_args():
+    sig = inspect.signature(typeslibrary_UserDefinedTypesLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeslibrary::userdefinedtypeslibrary_has_name():
-    assert hasattr(typeslibrary::UserDefinedTypesLibrary, "name")
+def test_typeslibrary_userdefinedtypeslibrary_has_name():
+    assert hasattr(typeslibrary_UserDefinedTypesLibrary, "name")
     descriptor = None
-    for klass in typeslibrary::UserDefinedTypesLibrary.__mro__:
+    for klass in typeslibrary_UserDefinedTypesLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -292,23 +292,23 @@ def test_typeslibrary::userdefinedtypeslibrary_has_name():
 
 
 
-def test_typeslibrary::nativetypeslibrary_is_not_abstract():
-    assert not inspect.isabstract(typeslibrary::NativeTypesLibrary)
+def test_typeslibrary_nativetypeslibrary_is_not_abstract():
+    assert not inspect.isabstract(typeslibrary_NativeTypesLibrary)
 
 
-def test_typeslibrary::nativetypeslibrary_constructor_exists():
-    assert callable(typeslibrary::NativeTypesLibrary.__init__)
+def test_typeslibrary_nativetypeslibrary_constructor_exists():
+    assert callable(typeslibrary_NativeTypesLibrary.__init__)
 
 
-def test_typeslibrary::nativetypeslibrary_constructor_args():
-    sig = inspect.signature(typeslibrary::NativeTypesLibrary.__init__)
+def test_typeslibrary_nativetypeslibrary_constructor_args():
+    sig = inspect.signature(typeslibrary_NativeTypesLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeslibrary::nativetypeslibrary_has_name():
-    assert hasattr(typeslibrary::NativeTypesLibrary, "name")
+def test_typeslibrary_nativetypeslibrary_has_name():
+    assert hasattr(typeslibrary_NativeTypesLibrary, "name")
     descriptor = None
-    for klass in typeslibrary::NativeTypesLibrary.__mro__:
+    for klass in typeslibrary_NativeTypesLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -322,9 +322,9 @@ def test_nativetypekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in NativeTypeKind]
     expected_literals = [
-        "LengthAndPrecision",
         "Enum",
         "Length",
+        "LengthAndPrecision",
         "Simple",
     ]
     # Check that all expected literals exist
@@ -361,8 +361,8 @@ safe_text = st.text(
 Type_strategy = st.builds(
     Type,
 )
-typeslibrary::TypeInstance_strategy = st.builds(
-    typeslibrary::TypeInstance,
+typeslibrary_TypeInstance_strategy = st.builds(
+    typeslibrary_TypeInstance,
     precision=
         st.integers(),
     literals=
@@ -370,36 +370,36 @@ typeslibrary::TypeInstance_strategy = st.builds(
     length=
         st.integers()
 )
-typeslibrary::TypesLibrary_strategy = st.builds(
-    typeslibrary::TypesLibrary,
+typeslibrary_TypesLibrary_strategy = st.builds(
+    typeslibrary_TypesLibrary,
     kind=
         safe_text
 )
-typeslibrary::TypesLibraryUser_strategy = st.builds(
-    typeslibrary::TypesLibraryUser,
+typeslibrary_TypesLibraryUser_strategy = st.builds(
+    typeslibrary_TypesLibraryUser,
 )
-typeslibrary::UserDefinedTypeRef_strategy = st.builds(
-    typeslibrary::UserDefinedTypeRef,
+typeslibrary_UserDefinedTypeRef_strategy = st.builds(
+    typeslibrary_UserDefinedTypeRef,
 )
-typeslibrary::Type_strategy = st.builds(
-    typeslibrary::Type,
+typeslibrary_Type_strategy = st.builds(
+    typeslibrary_Type,
 )
-typeslibrary::UserDefinedType_strategy = st.builds(
-    typeslibrary::UserDefinedType,
+typeslibrary_UserDefinedType_strategy = st.builds(
+    typeslibrary_UserDefinedType,
     name=
         safe_text
 )
 UserDefinedType_strategy = st.builds(
     UserDefinedType,
 )
-typeslibrary::SimpleNamedType_strategy = st.builds(
-    typeslibrary::SimpleNamedType,
+typeslibrary_SimpleNamedType_strategy = st.builds(
+    typeslibrary_SimpleNamedType,
 )
-typeslibrary::ComplexNamedType_strategy = st.builds(
-    typeslibrary::ComplexNamedType,
+typeslibrary_ComplexNamedType_strategy = st.builds(
+    typeslibrary_ComplexNamedType,
 )
-typeslibrary::NativeType_strategy = st.builds(
-    typeslibrary::NativeType,
+typeslibrary_NativeType_strategy = st.builds(
+    typeslibrary_NativeType,
     name=
         safe_text,
     spec=
@@ -408,13 +408,13 @@ typeslibrary::NativeType_strategy = st.builds(
 TypesLibrary_strategy = st.builds(
     TypesLibrary,
 )
-typeslibrary::UserDefinedTypesLibrary_strategy = st.builds(
-    typeslibrary::UserDefinedTypesLibrary,
+typeslibrary_UserDefinedTypesLibrary_strategy = st.builds(
+    typeslibrary_UserDefinedTypesLibrary,
     name=
         safe_text
 )
-typeslibrary::NativeTypesLibrary_strategy = st.builds(
-    typeslibrary::NativeTypesLibrary,
+typeslibrary_NativeTypesLibrary_strategy = st.builds(
+    typeslibrary_NativeTypesLibrary,
     name=
         safe_text
 )
@@ -424,87 +424,72 @@ typeslibrary::NativeTypesLibrary_strategy = st.builds(
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=typeslibrary::TypeInstance_strategy)
+@given(instance=typeslibrary_TypeInstance_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::typeinstance_instantiation(instance):
-    assert isinstance(instance, typeslibrary::TypeInstance)
-
-@given(instance=typeslibrary::TypeInstance_strategy)
-def test_typeslibrary::typeinstance_precision_type(instance):
-    assert isinstance(instance.precision, int)
+def test_typeslibrary_typeinstance_instantiation(instance):
+    assert isinstance(instance, typeslibrary_TypeInstance)
 
 
-@given(instance=typeslibrary::TypeInstance_strategy)
-def test_typeslibrary::typeinstance_precision_setter(instance):
+
+@given(instance=typeslibrary_TypeInstance_strategy)
+def test_typeslibrary_typeinstance_precision_setter(instance):
     original = instance.precision
     instance.precision = original
     assert instance.precision == original
 
-@given(instance=typeslibrary::TypeInstance_strategy)
-def test_typeslibrary::typeinstance_literals_type(instance):
-    assert isinstance(instance.literals, str)
 
 
-@given(instance=typeslibrary::TypeInstance_strategy)
-def test_typeslibrary::typeinstance_literals_setter(instance):
+@given(instance=typeslibrary_TypeInstance_strategy)
+def test_typeslibrary_typeinstance_literals_setter(instance):
     original = instance.literals
     instance.literals = original
     assert instance.literals == original
 
-@given(instance=typeslibrary::TypeInstance_strategy)
-def test_typeslibrary::typeinstance_length_type(instance):
-    assert isinstance(instance.length, int)
 
 
-@given(instance=typeslibrary::TypeInstance_strategy)
-def test_typeslibrary::typeinstance_length_setter(instance):
+@given(instance=typeslibrary_TypeInstance_strategy)
+def test_typeslibrary_typeinstance_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=typeslibrary::TypesLibrary_strategy)
+@given(instance=typeslibrary_TypesLibrary_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::typeslibrary_instantiation(instance):
-    assert isinstance(instance, typeslibrary::TypesLibrary)
-
-@given(instance=typeslibrary::TypesLibrary_strategy)
-def test_typeslibrary::typeslibrary_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_typeslibrary_typeslibrary_instantiation(instance):
+    assert isinstance(instance, typeslibrary_TypesLibrary)
 
 
-@given(instance=typeslibrary::TypesLibrary_strategy)
-def test_typeslibrary::typeslibrary_kind_setter(instance):
+
+@given(instance=typeslibrary_TypesLibrary_strategy)
+def test_typeslibrary_typeslibrary_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=typeslibrary::TypesLibraryUser_strategy)
+@given(instance=typeslibrary_TypesLibraryUser_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::typeslibraryuser_instantiation(instance):
-    assert isinstance(instance, typeslibrary::TypesLibraryUser)
+def test_typeslibrary_typeslibraryuser_instantiation(instance):
+    assert isinstance(instance, typeslibrary_TypesLibraryUser)
 
-@given(instance=typeslibrary::UserDefinedTypeRef_strategy)
+@given(instance=typeslibrary_UserDefinedTypeRef_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::userdefinedtyperef_instantiation(instance):
-    assert isinstance(instance, typeslibrary::UserDefinedTypeRef)
+def test_typeslibrary_userdefinedtyperef_instantiation(instance):
+    assert isinstance(instance, typeslibrary_UserDefinedTypeRef)
 
-@given(instance=typeslibrary::Type_strategy)
+@given(instance=typeslibrary_Type_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::type_instantiation(instance):
-    assert isinstance(instance, typeslibrary::Type)
+def test_typeslibrary_type_instantiation(instance):
+    assert isinstance(instance, typeslibrary_Type)
 
-@given(instance=typeslibrary::UserDefinedType_strategy)
+@given(instance=typeslibrary_UserDefinedType_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::userdefinedtype_instantiation(instance):
-    assert isinstance(instance, typeslibrary::UserDefinedType)
-
-@given(instance=typeslibrary::UserDefinedType_strategy)
-def test_typeslibrary::userdefinedtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeslibrary_userdefinedtype_instantiation(instance):
+    assert isinstance(instance, typeslibrary_UserDefinedType)
 
 
-@given(instance=typeslibrary::UserDefinedType_strategy)
-def test_typeslibrary::userdefinedtype_name_setter(instance):
+
+@given(instance=typeslibrary_UserDefinedType_strategy)
+def test_typeslibrary_userdefinedtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -514,39 +499,33 @@ def test_typeslibrary::userdefinedtype_name_setter(instance):
 def test_userdefinedtype_instantiation(instance):
     assert isinstance(instance, UserDefinedType)
 
-@given(instance=typeslibrary::SimpleNamedType_strategy)
+@given(instance=typeslibrary_SimpleNamedType_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::simplenamedtype_instantiation(instance):
-    assert isinstance(instance, typeslibrary::SimpleNamedType)
+def test_typeslibrary_simplenamedtype_instantiation(instance):
+    assert isinstance(instance, typeslibrary_SimpleNamedType)
 
-@given(instance=typeslibrary::ComplexNamedType_strategy)
+@given(instance=typeslibrary_ComplexNamedType_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::complexnamedtype_instantiation(instance):
-    assert isinstance(instance, typeslibrary::ComplexNamedType)
+def test_typeslibrary_complexnamedtype_instantiation(instance):
+    assert isinstance(instance, typeslibrary_ComplexNamedType)
 
-@given(instance=typeslibrary::NativeType_strategy)
+@given(instance=typeslibrary_NativeType_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::nativetype_instantiation(instance):
-    assert isinstance(instance, typeslibrary::NativeType)
-
-@given(instance=typeslibrary::NativeType_strategy)
-def test_typeslibrary::nativetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeslibrary_nativetype_instantiation(instance):
+    assert isinstance(instance, typeslibrary_NativeType)
 
 
-@given(instance=typeslibrary::NativeType_strategy)
-def test_typeslibrary::nativetype_name_setter(instance):
+
+@given(instance=typeslibrary_NativeType_strategy)
+def test_typeslibrary_nativetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=typeslibrary::NativeType_strategy)
-def test_typeslibrary::nativetype_spec_type(instance):
-    assert isinstance(instance.spec, str)
 
 
-@given(instance=typeslibrary::NativeType_strategy)
-def test_typeslibrary::nativetype_spec_setter(instance):
+@given(instance=typeslibrary_NativeType_strategy)
+def test_typeslibrary_nativetype_spec_setter(instance):
     original = instance.spec
     instance.spec = original
     assert instance.spec == original
@@ -556,34 +535,28 @@ def test_typeslibrary::nativetype_spec_setter(instance):
 def test_typeslibrary_instantiation(instance):
     assert isinstance(instance, TypesLibrary)
 
-@given(instance=typeslibrary::UserDefinedTypesLibrary_strategy)
+@given(instance=typeslibrary_UserDefinedTypesLibrary_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::userdefinedtypeslibrary_instantiation(instance):
-    assert isinstance(instance, typeslibrary::UserDefinedTypesLibrary)
-
-@given(instance=typeslibrary::UserDefinedTypesLibrary_strategy)
-def test_typeslibrary::userdefinedtypeslibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeslibrary_userdefinedtypeslibrary_instantiation(instance):
+    assert isinstance(instance, typeslibrary_UserDefinedTypesLibrary)
 
 
-@given(instance=typeslibrary::UserDefinedTypesLibrary_strategy)
-def test_typeslibrary::userdefinedtypeslibrary_name_setter(instance):
+
+@given(instance=typeslibrary_UserDefinedTypesLibrary_strategy)
+def test_typeslibrary_userdefinedtypeslibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=typeslibrary::NativeTypesLibrary_strategy)
+@given(instance=typeslibrary_NativeTypesLibrary_strategy)
 @settings(max_examples=50)
-def test_typeslibrary::nativetypeslibrary_instantiation(instance):
-    assert isinstance(instance, typeslibrary::NativeTypesLibrary)
-
-@given(instance=typeslibrary::NativeTypesLibrary_strategy)
-def test_typeslibrary::nativetypeslibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeslibrary_nativetypeslibrary_instantiation(instance):
+    assert isinstance(instance, typeslibrary_NativeTypesLibrary)
 
 
-@given(instance=typeslibrary::NativeTypesLibrary_strategy)
-def test_typeslibrary::nativetypeslibrary_name_setter(instance):
+
+@given(instance=typeslibrary_NativeTypesLibrary_strategy)
+def test_typeslibrary_nativetypeslibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -594,9 +567,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=typeslibrary::NativeTypesLibrary_strategy)
+@given(instance=typeslibrary_NativeTypesLibrary_strategy)
 @settings(max_examples=30)
-def test_typeslibrary::nativetypeslibrary_findtypebyname_changes_state(instance):
+def test_typeslibrary_nativetypeslibrary_findtypebyname_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -610,11 +583,11 @@ def test_typeslibrary::nativetypeslibrary_findtypebyname_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findTypeByName' in typeslibrary::NativeTypesLibrary is empty"
+        assert has_statements, f"Function 'findTypeByName' in typeslibrary_NativeTypesLibrary is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findTypeByName' in typeslibrary::NativeTypesLibrary did not change state; check implementation")
+            warnings.warn(f"Operation 'findTypeByName' in typeslibrary_NativeTypesLibrary did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findTypeByName' in typeslibrary::NativeTypesLibrary is not implemented or raised an error")
+        warnings.warn(f"Operation 'findTypeByName' in typeslibrary_NativeTypesLibrary is not implemented or raised an error")

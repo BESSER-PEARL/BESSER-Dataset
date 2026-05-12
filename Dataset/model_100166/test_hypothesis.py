@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    properties::SqlGroup,
+from python_code import (
+    properties_SqlGroup,
     Sql,
-    properties::SqlParameter,
-    properties::Sql,
-    properties::SqlFile,
-    properties::SqlQuery,
-    properties::SpecificDBMSProperties,
-    properties::EStringToStringMapEntry,
-    properties::DocumentRoot,
-    properties::DatabasePropertiesListType,
-    properties::Property,
-    properties::SqlProperties,
-    properties::DatabaseProperties,
-    properties::DatabaseAlias,
-    DBMS,
+    properties_SqlParameter,
+    properties_Sql,
+    properties_SqlFile,
+    properties_SqlQuery,
+    properties_SpecificDBMSProperties,
+    properties_EStringToStringMapEntry,
+    properties_DocumentRoot,
+    properties_DatabasePropertiesListType,
+    properties_Property,
+    properties_SqlProperties,
+    properties_DatabaseProperties,
+    properties_DatabaseAlias,
     ParameterType,
+    DBMS,
 )
 
 # =============================================================================
@@ -30,35 +30,35 @@ from classes import (
 
 
 
-def test_properties::sqlgroup_is_not_abstract():
-    assert not inspect.isabstract(properties::SqlGroup)
+def test_properties_sqlgroup_is_not_abstract():
+    assert not inspect.isabstract(properties_SqlGroup)
 
 
-def test_properties::sqlgroup_constructor_exists():
-    assert callable(properties::SqlGroup.__init__)
+def test_properties_sqlgroup_constructor_exists():
+    assert callable(properties_SqlGroup.__init__)
 
 
-def test_properties::sqlgroup_constructor_args():
-    sig = inspect.signature(properties::SqlGroup.__init__)
+def test_properties_sqlgroup_constructor_args():
+    sig = inspect.signature(properties_SqlGroup.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_properties::sqlgroup_has_description():
-    assert hasattr(properties::SqlGroup, "description")
+def test_properties_sqlgroup_has_id():
+    assert hasattr(properties_SqlGroup, "id")
     descriptor = None
-    for klass in properties::SqlGroup.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in properties_SqlGroup.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::sqlgroup_has_id():
-    assert hasattr(properties::SqlGroup, "id")
+def test_properties_sqlgroup_has_description():
+    assert hasattr(properties_SqlGroup, "description")
     descriptor = None
-    for klass in properties::SqlGroup.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in properties_SqlGroup.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -78,77 +78,77 @@ def test_sql_constructor_args():
 
 
 
-def test_properties::sqlparameter_is_not_abstract():
-    assert not inspect.isabstract(properties::SqlParameter)
+def test_properties_sqlparameter_is_not_abstract():
+    assert not inspect.isabstract(properties_SqlParameter)
 
 
-def test_properties::sqlparameter_constructor_exists():
-    assert callable(properties::SqlParameter.__init__)
+def test_properties_sqlparameter_constructor_exists():
+    assert callable(properties_SqlParameter.__init__)
 
 
-def test_properties::sqlparameter_constructor_args():
-    sig = inspect.signature(properties::SqlParameter.__init__)
+def test_properties_sqlparameter_constructor_args():
+    sig = inspect.signature(properties_SqlParameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "index" in params, "Missing parameter 'index'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_properties::sqlparameter_has_type():
-    assert hasattr(properties::SqlParameter, "type")
+def test_properties_sqlparameter_has_type():
+    assert hasattr(properties_SqlParameter, "type")
     descriptor = None
-    for klass in properties::SqlParameter.__mro__:
+    for klass in properties_SqlParameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::sqlparameter_has_name():
-    assert hasattr(properties::SqlParameter, "name")
+def test_properties_sqlparameter_has_index():
+    assert hasattr(properties_SqlParameter, "index")
     descriptor = None
-    for klass in properties::SqlParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::sqlparameter_has_index():
-    assert hasattr(properties::SqlParameter, "index")
-    descriptor = None
-    for klass in properties::SqlParameter.__mro__:
+    for klass in properties_SqlParameter.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
     assert isinstance(descriptor, property)
 
+def test_properties_sqlparameter_has_name():
+    assert hasattr(properties_SqlParameter, "name")
+    descriptor = None
+    for klass in properties_SqlParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_properties::sql_is_not_abstract():
-    assert not inspect.isabstract(properties::Sql)
+
+def test_properties_sql_is_not_abstract():
+    assert not inspect.isabstract(properties_Sql)
 
 
-def test_properties::sql_constructor_exists():
-    assert callable(properties::Sql.__init__)
+def test_properties_sql_constructor_exists():
+    assert callable(properties_Sql.__init__)
 
 
-def test_properties::sql_constructor_args():
-    sig = inspect.signature(properties::Sql.__init__)
+def test_properties_sql_constructor_args():
+    sig = inspect.signature(properties_Sql.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "hqlQuery" in params, "Missing parameter 'hqlQuery'"
 
-def test_properties::sql_has_id():
-    assert hasattr(properties::Sql, "id")
+def test_properties_sql_has_id():
+    assert hasattr(properties_Sql, "id")
     descriptor = None
-    for klass in properties::Sql.__mro__:
+    for klass in properties_Sql.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::sql_has_hqlQuery():
-    assert hasattr(properties::Sql, "hqlQuery")
+def test_properties_sql_has_hqlQuery():
+    assert hasattr(properties_Sql, "hqlQuery")
     descriptor = None
-    for klass in properties::Sql.__mro__:
+    for klass in properties_Sql.__mro__:
         if "hqlQuery" in klass.__dict__:
             descriptor = klass.__dict__["hqlQuery"]
             break
@@ -156,23 +156,23 @@ def test_properties::sql_has_hqlQuery():
 
 
 
-def test_properties::sqlfile_is_not_abstract():
-    assert not inspect.isabstract(properties::SqlFile)
+def test_properties_sqlfile_is_not_abstract():
+    assert not inspect.isabstract(properties_SqlFile)
 
 
-def test_properties::sqlfile_constructor_exists():
-    assert callable(properties::SqlFile.__init__)
+def test_properties_sqlfile_constructor_exists():
+    assert callable(properties_SqlFile.__init__)
 
 
-def test_properties::sqlfile_constructor_args():
-    sig = inspect.signature(properties::SqlFile.__init__)
+def test_properties_sqlfile_constructor_args():
+    sig = inspect.signature(properties_SqlFile.__init__)
     params = list(sig.parameters.keys())
     assert "filePath" in params, "Missing parameter 'filePath'"
 
-def test_properties::sqlfile_has_filePath():
-    assert hasattr(properties::SqlFile, "filePath")
+def test_properties_sqlfile_has_filePath():
+    assert hasattr(properties_SqlFile, "filePath")
     descriptor = None
-    for klass in properties::SqlFile.__mro__:
+    for klass in properties_SqlFile.__mro__:
         if "filePath" in klass.__dict__:
             descriptor = klass.__dict__["filePath"]
             break
@@ -180,23 +180,23 @@ def test_properties::sqlfile_has_filePath():
 
 
 
-def test_properties::sqlquery_is_not_abstract():
-    assert not inspect.isabstract(properties::SqlQuery)
+def test_properties_sqlquery_is_not_abstract():
+    assert not inspect.isabstract(properties_SqlQuery)
 
 
-def test_properties::sqlquery_constructor_exists():
-    assert callable(properties::SqlQuery.__init__)
+def test_properties_sqlquery_constructor_exists():
+    assert callable(properties_SqlQuery.__init__)
 
 
-def test_properties::sqlquery_constructor_args():
-    sig = inspect.signature(properties::SqlQuery.__init__)
+def test_properties_sqlquery_constructor_args():
+    sig = inspect.signature(properties_SqlQuery.__init__)
     params = list(sig.parameters.keys())
     assert "queryString" in params, "Missing parameter 'queryString'"
 
-def test_properties::sqlquery_has_queryString():
-    assert hasattr(properties::SqlQuery, "queryString")
+def test_properties_sqlquery_has_queryString():
+    assert hasattr(properties_SqlQuery, "queryString")
     descriptor = None
-    for klass in properties::SqlQuery.__mro__:
+    for klass in properties_SqlQuery.__mro__:
         if "queryString" in klass.__dict__:
             descriptor = klass.__dict__["queryString"]
             break
@@ -204,23 +204,23 @@ def test_properties::sqlquery_has_queryString():
 
 
 
-def test_properties::specificdbmsproperties_is_not_abstract():
-    assert not inspect.isabstract(properties::SpecificDBMSProperties)
+def test_properties_specificdbmsproperties_is_not_abstract():
+    assert not inspect.isabstract(properties_SpecificDBMSProperties)
 
 
-def test_properties::specificdbmsproperties_constructor_exists():
-    assert callable(properties::SpecificDBMSProperties.__init__)
+def test_properties_specificdbmsproperties_constructor_exists():
+    assert callable(properties_SpecificDBMSProperties.__init__)
 
 
-def test_properties::specificdbmsproperties_constructor_args():
-    sig = inspect.signature(properties::SpecificDBMSProperties.__init__)
+def test_properties_specificdbmsproperties_constructor_args():
+    sig = inspect.signature(properties_SpecificDBMSProperties.__init__)
     params = list(sig.parameters.keys())
     assert "dBMS" in params, "Missing parameter 'dBMS'"
 
-def test_properties::specificdbmsproperties_has_dBMS():
-    assert hasattr(properties::SpecificDBMSProperties, "dBMS")
+def test_properties_specificdbmsproperties_has_dBMS():
+    assert hasattr(properties_SpecificDBMSProperties, "dBMS")
     descriptor = None
-    for klass in properties::SpecificDBMSProperties.__mro__:
+    for klass in properties_SpecificDBMSProperties.__mro__:
         if "dBMS" in klass.__dict__:
             descriptor = klass.__dict__["dBMS"]
             break
@@ -228,37 +228,37 @@ def test_properties::specificdbmsproperties_has_dBMS():
 
 
 
-def test_properties::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(properties::EStringToStringMapEntry)
+def test_properties_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(properties_EStringToStringMapEntry)
 
 
-def test_properties::estringtostringmapentry_constructor_exists():
-    assert callable(properties::EStringToStringMapEntry.__init__)
+def test_properties_estringtostringmapentry_constructor_exists():
+    assert callable(properties_EStringToStringMapEntry.__init__)
 
 
-def test_properties::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(properties::EStringToStringMapEntry.__init__)
+def test_properties_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(properties_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_properties::documentroot_is_not_abstract():
-    assert not inspect.isabstract(properties::DocumentRoot)
+def test_properties_documentroot_is_not_abstract():
+    assert not inspect.isabstract(properties_DocumentRoot)
 
 
-def test_properties::documentroot_constructor_exists():
-    assert callable(properties::DocumentRoot.__init__)
+def test_properties_documentroot_constructor_exists():
+    assert callable(properties_DocumentRoot.__init__)
 
 
-def test_properties::documentroot_constructor_args():
-    sig = inspect.signature(properties::DocumentRoot.__init__)
+def test_properties_documentroot_constructor_args():
+    sig = inspect.signature(properties_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_properties::documentroot_has_mixed():
-    assert hasattr(properties::DocumentRoot, "mixed")
+def test_properties_documentroot_has_mixed():
+    assert hasattr(properties_DocumentRoot, "mixed")
     descriptor = None
-    for klass in properties::DocumentRoot.__mro__:
+    for klass in properties_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -266,47 +266,47 @@ def test_properties::documentroot_has_mixed():
 
 
 
-def test_properties::databasepropertieslisttype_is_not_abstract():
-    assert not inspect.isabstract(properties::DatabasePropertiesListType)
+def test_properties_databasepropertieslisttype_is_not_abstract():
+    assert not inspect.isabstract(properties_DatabasePropertiesListType)
 
 
-def test_properties::databasepropertieslisttype_constructor_exists():
-    assert callable(properties::DatabasePropertiesListType.__init__)
+def test_properties_databasepropertieslisttype_constructor_exists():
+    assert callable(properties_DatabasePropertiesListType.__init__)
 
 
-def test_properties::databasepropertieslisttype_constructor_args():
-    sig = inspect.signature(properties::DatabasePropertiesListType.__init__)
+def test_properties_databasepropertieslisttype_constructor_args():
+    sig = inspect.signature(properties_DatabasePropertiesListType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_properties::property_is_not_abstract():
-    assert not inspect.isabstract(properties::Property)
+def test_properties_property_is_not_abstract():
+    assert not inspect.isabstract(properties_Property)
 
 
-def test_properties::property_constructor_exists():
-    assert callable(properties::Property.__init__)
+def test_properties_property_constructor_exists():
+    assert callable(properties_Property.__init__)
 
 
-def test_properties::property_constructor_args():
-    sig = inspect.signature(properties::Property.__init__)
+def test_properties_property_constructor_args():
+    sig = inspect.signature(properties_Property.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_properties::property_has_key():
-    assert hasattr(properties::Property, "key")
+def test_properties_property_has_key():
+    assert hasattr(properties_Property, "key")
     descriptor = None
-    for klass in properties::Property.__mro__:
+    for klass in properties_Property.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::property_has_value():
-    assert hasattr(properties::Property, "value")
+def test_properties_property_has_value():
+    assert hasattr(properties_Property, "value")
     descriptor = None
-    for klass in properties::Property.__mro__:
+    for klass in properties_Property.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -314,193 +314,175 @@ def test_properties::property_has_value():
 
 
 
-def test_properties::sqlproperties_is_not_abstract():
-    assert not inspect.isabstract(properties::SqlProperties)
+def test_properties_sqlproperties_is_not_abstract():
+    assert not inspect.isabstract(properties_SqlProperties)
 
 
-def test_properties::sqlproperties_constructor_exists():
-    assert callable(properties::SqlProperties.__init__)
+def test_properties_sqlproperties_constructor_exists():
+    assert callable(properties_SqlProperties.__init__)
 
 
-def test_properties::sqlproperties_constructor_args():
-    sig = inspect.signature(properties::SqlProperties.__init__)
+def test_properties_sqlproperties_constructor_args():
+    sig = inspect.signature(properties_SqlProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_properties::databaseproperties_is_not_abstract():
-    assert not inspect.isabstract(properties::DatabaseProperties)
+def test_properties_databaseproperties_is_not_abstract():
+    assert not inspect.isabstract(properties_DatabaseProperties)
 
 
-def test_properties::databaseproperties_constructor_exists():
-    assert callable(properties::DatabaseProperties.__init__)
+def test_properties_databaseproperties_constructor_exists():
+    assert callable(properties_DatabaseProperties.__init__)
 
 
-def test_properties::databaseproperties_constructor_args():
-    sig = inspect.signature(properties::DatabaseProperties.__init__)
+def test_properties_databaseproperties_constructor_args():
+    sig = inspect.signature(properties_DatabaseProperties.__init__)
     params = list(sig.parameters.keys())
-    assert "driverClassName" in params, "Missing parameter 'driverClassName'"
-    assert "databaseName" in params, "Missing parameter 'databaseName'"
-    assert "dBMS" in params, "Missing parameter 'dBMS'"
-    assert "username" in params, "Missing parameter 'username'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "port" in params, "Missing parameter 'port'"
-    assert "serverURL" in params, "Missing parameter 'serverURL'"
-    assert "dialect" in params, "Missing parameter 'dialect'"
     assert "persistenceUnitName" in params, "Missing parameter 'persistenceUnitName'"
-    assert "password" in params, "Missing parameter 'password'"
+    assert "serverURL" in params, "Missing parameter 'serverURL'"
+    assert "dBMS" in params, "Missing parameter 'dBMS'"
+    assert "port" in params, "Missing parameter 'port'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "dialect" in params, "Missing parameter 'dialect'"
     assert "namespace" in params, "Missing parameter 'namespace'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "username" in params, "Missing parameter 'username'"
+    assert "databaseName" in params, "Missing parameter 'databaseName'"
+    assert "driverClassName" in params, "Missing parameter 'driverClassName'"
 
-def test_properties::databaseproperties_has_driverClassName():
-    assert hasattr(properties::DatabaseProperties, "driverClassName")
+def test_properties_databaseproperties_has_persistenceUnitName():
+    assert hasattr(properties_DatabaseProperties, "persistenceUnitName")
     descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "driverClassName" in klass.__dict__:
-            descriptor = klass.__dict__["driverClassName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_databaseName():
-    assert hasattr(properties::DatabaseProperties, "databaseName")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "databaseName" in klass.__dict__:
-            descriptor = klass.__dict__["databaseName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_dBMS():
-    assert hasattr(properties::DatabaseProperties, "dBMS")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "dBMS" in klass.__dict__:
-            descriptor = klass.__dict__["dBMS"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_username():
-    assert hasattr(properties::DatabaseProperties, "username")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_id():
-    assert hasattr(properties::DatabaseProperties, "id")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_port():
-    assert hasattr(properties::DatabaseProperties, "port")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_serverURL():
-    assert hasattr(properties::DatabaseProperties, "serverURL")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "serverURL" in klass.__dict__:
-            descriptor = klass.__dict__["serverURL"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_dialect():
-    assert hasattr(properties::DatabaseProperties, "dialect")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "dialect" in klass.__dict__:
-            descriptor = klass.__dict__["dialect"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_properties::databaseproperties_has_persistenceUnitName():
-    assert hasattr(properties::DatabaseProperties, "persistenceUnitName")
-    descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
+    for klass in properties_DatabaseProperties.__mro__:
         if "persistenceUnitName" in klass.__dict__:
             descriptor = klass.__dict__["persistenceUnitName"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::databaseproperties_has_password():
-    assert hasattr(properties::DatabaseProperties, "password")
+def test_properties_databaseproperties_has_serverURL():
+    assert hasattr(properties_DatabaseProperties, "serverURL")
     descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+    for klass in properties_DatabaseProperties.__mro__:
+        if "serverURL" in klass.__dict__:
+            descriptor = klass.__dict__["serverURL"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::databaseproperties_has_namespace():
-    assert hasattr(properties::DatabaseProperties, "namespace")
+def test_properties_databaseproperties_has_dBMS():
+    assert hasattr(properties_DatabaseProperties, "dBMS")
     descriptor = None
-    for klass in properties::DatabaseProperties.__mro__:
-        if "namespace" in klass.__dict__:
-            descriptor = klass.__dict__["namespace"]
+    for klass in properties_DatabaseProperties.__mro__:
+        if "dBMS" in klass.__dict__:
+            descriptor = klass.__dict__["dBMS"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_properties::databasealias_is_not_abstract():
-    assert not inspect.isabstract(properties::DatabaseAlias)
-
-
-def test_properties::databasealias_constructor_exists():
-    assert callable(properties::DatabaseAlias.__init__)
-
-
-def test_properties::databasealias_constructor_args():
-    sig = inspect.signature(properties::DatabaseAlias.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "alias" in params, "Missing parameter 'alias'"
-
-def test_properties::databasealias_has_id():
-    assert hasattr(properties::DatabaseAlias, "id")
+def test_properties_databaseproperties_has_port():
+    assert hasattr(properties_DatabaseProperties, "port")
     descriptor = None
-    for klass in properties::DatabaseAlias.__mro__:
+    for klass in properties_DatabaseProperties.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_properties_databaseproperties_has_id():
+    assert hasattr(properties_DatabaseProperties, "id")
+    descriptor = None
+    for klass in properties_DatabaseProperties.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_properties::databasealias_has_alias():
-    assert hasattr(properties::DatabaseAlias, "alias")
+def test_properties_databaseproperties_has_dialect():
+    assert hasattr(properties_DatabaseProperties, "dialect")
     descriptor = None
-    for klass in properties::DatabaseAlias.__mro__:
+    for klass in properties_DatabaseProperties.__mro__:
+        if "dialect" in klass.__dict__:
+            descriptor = klass.__dict__["dialect"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_properties_databaseproperties_has_namespace():
+    assert hasattr(properties_DatabaseProperties, "namespace")
+    descriptor = None
+    for klass in properties_DatabaseProperties.__mro__:
+        if "namespace" in klass.__dict__:
+            descriptor = klass.__dict__["namespace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_properties_databaseproperties_has_password():
+    assert hasattr(properties_DatabaseProperties, "password")
+    descriptor = None
+    for klass in properties_DatabaseProperties.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_properties_databaseproperties_has_username():
+    assert hasattr(properties_DatabaseProperties, "username")
+    descriptor = None
+    for klass in properties_DatabaseProperties.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_properties_databaseproperties_has_databaseName():
+    assert hasattr(properties_DatabaseProperties, "databaseName")
+    descriptor = None
+    for klass in properties_DatabaseProperties.__mro__:
+        if "databaseName" in klass.__dict__:
+            descriptor = klass.__dict__["databaseName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_properties_databaseproperties_has_driverClassName():
+    assert hasattr(properties_DatabaseProperties, "driverClassName")
+    descriptor = None
+    for klass in properties_DatabaseProperties.__mro__:
+        if "driverClassName" in klass.__dict__:
+            descriptor = klass.__dict__["driverClassName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_properties_databasealias_is_not_abstract():
+    assert not inspect.isabstract(properties_DatabaseAlias)
+
+
+def test_properties_databasealias_constructor_exists():
+    assert callable(properties_DatabaseAlias.__init__)
+
+
+def test_properties_databasealias_constructor_args():
+    sig = inspect.signature(properties_DatabaseAlias.__init__)
+    params = list(sig.parameters.keys())
+    assert "alias" in params, "Missing parameter 'alias'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_properties_databasealias_has_alias():
+    assert hasattr(properties_DatabaseAlias, "alias")
+    descriptor = None
+    for klass in properties_DatabaseAlias.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbms_exists():
-    # Check that the Enumeration exists
-    assert DBMS is not None
-
-def test_dbms_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DBMS]
-    expected_literals = [
-        "SQLite",
-        "MySQL",
-        "MSAccess",
-        "PgSQL",
-        "HSQLDB",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DBMS"
+def test_properties_databasealias_has_id():
+    assert hasattr(properties_DatabaseAlias, "id")
+    descriptor = None
+    for klass in properties_DatabaseAlias.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_parametertype_exists():
     # Check that the Enumeration exists
@@ -510,37 +492,55 @@ def test_parametertype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParameterType]
     expected_literals = [
-        "Date",
-        "Blob",
-        "TimeStampCalendar",
-        "BigDecimal",
+        "Double",
+        "BinaryStream",
+        "Bytes",
+        "URL",
+        "Float",
+        "Token",
+        "Timestamp",
+        "DateCalendar",
         "Short",
         "Int",
-        "Array",
-        "Object",
-        "TimeCalendar",
-        "Boolean",
-        "Double",
-        "URL",
-        "CharacterStream",
-        "Clob",
-        "Long",
-        "Token",
-        "String",
-        "Byte",
-        "Bytes",
-        "AsciiStream",
-        "UnicodeStream",
-        "Timestamp",
-        "Float",
-        "Ref",
-        "DateCalendar",
         "Time",
-        "BinaryStream",
+        "CharacterStream",
+        "Object",
+        "Byte",
+        "BigDecimal",
+        "AsciiStream",
+        "String",
+        "Boolean",
+        "TimeStampCalendar",
+        "Clob",
+        "Array",
+        "Long",
+        "Ref",
+        "TimeCalendar",
+        "Date",
+        "Blob",
+        "UnicodeStream",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ParameterType"
+
+def test_dbms_exists():
+    # Check that the Enumeration exists
+    assert DBMS is not None
+
+def test_dbms_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DBMS]
+    expected_literals = [
+        "PgSQL",
+        "MySQL",
+        "SQLite",
+        "HSQLDB",
+        "MSAccess",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DBMS"
 
 
 # =============================================================================
@@ -554,453 +554,375 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-properties::SqlGroup_strategy = st.builds(
-    properties::SqlGroup,
-    description=
-        safe_text,
+properties_SqlGroup_strategy = st.builds(
+    properties_SqlGroup,
     id=
+        safe_text,
+    description=
         safe_text
 )
 Sql_strategy = st.builds(
     Sql,
 )
-properties::SqlParameter_strategy = st.builds(
-    properties::SqlParameter,
+properties_SqlParameter_strategy = st.builds(
+    properties_SqlParameter,
     type=
         safe_text,
-    name=
-        safe_text,
     index=
+        safe_text,
+    name=
         safe_text
 )
-properties::Sql_strategy = st.builds(
-    properties::Sql,
+properties_Sql_strategy = st.builds(
+    properties_Sql,
     id=
         safe_text,
     hqlQuery=
         safe_text
 )
-properties::SqlFile_strategy = st.builds(
-    properties::SqlFile,
+properties_SqlFile_strategy = st.builds(
+    properties_SqlFile,
     filePath=
         safe_text
 )
-properties::SqlQuery_strategy = st.builds(
-    properties::SqlQuery,
+properties_SqlQuery_strategy = st.builds(
+    properties_SqlQuery,
     queryString=
         safe_text
 )
-properties::SpecificDBMSProperties_strategy = st.builds(
-    properties::SpecificDBMSProperties,
+properties_SpecificDBMSProperties_strategy = st.builds(
+    properties_SpecificDBMSProperties,
     dBMS=
         safe_text
 )
-properties::EStringToStringMapEntry_strategy = st.builds(
-    properties::EStringToStringMapEntry,
+properties_EStringToStringMapEntry_strategy = st.builds(
+    properties_EStringToStringMapEntry,
 )
-properties::DocumentRoot_strategy = st.builds(
-    properties::DocumentRoot,
+properties_DocumentRoot_strategy = st.builds(
+    properties_DocumentRoot,
     mixed=
         safe_text
 )
-properties::DatabasePropertiesListType_strategy = st.builds(
-    properties::DatabasePropertiesListType,
+properties_DatabasePropertiesListType_strategy = st.builds(
+    properties_DatabasePropertiesListType,
 )
-properties::Property_strategy = st.builds(
-    properties::Property,
+properties_Property_strategy = st.builds(
+    properties_Property,
     key=
         safe_text,
     value=
         safe_text
 )
-properties::SqlProperties_strategy = st.builds(
-    properties::SqlProperties,
+properties_SqlProperties_strategy = st.builds(
+    properties_SqlProperties,
 )
-properties::DatabaseProperties_strategy = st.builds(
-    properties::DatabaseProperties,
-    driverClassName=
-        safe_text,
-    databaseName=
-        safe_text,
-    dBMS=
-        safe_text,
-    username=
-        safe_text,
-    id=
-        safe_text,
-    port=
+properties_DatabaseProperties_strategy = st.builds(
+    properties_DatabaseProperties,
+    persistenceUnitName=
         safe_text,
     serverURL=
         safe_text,
+    dBMS=
+        safe_text,
+    port=
+        safe_text,
+    id=
+        safe_text,
     dialect=
         safe_text,
-    persistenceUnitName=
+    namespace=
         safe_text,
     password=
         safe_text,
-    namespace=
-        safe_text
-)
-properties::DatabaseAlias_strategy = st.builds(
-    properties::DatabaseAlias,
-    id=
+    username=
         safe_text,
+    databaseName=
+        safe_text,
+    driverClassName=
+        safe_text
+)
+properties_DatabaseAlias_strategy = st.builds(
+    properties_DatabaseAlias,
     alias=
+        safe_text,
+    id=
         safe_text
 )
 
-@given(instance=properties::SqlGroup_strategy)
+@given(instance=properties_SqlGroup_strategy)
 @settings(max_examples=50)
-def test_properties::sqlgroup_instantiation(instance):
-    assert isinstance(instance, properties::SqlGroup)
-
-@given(instance=properties::SqlGroup_strategy)
-def test_properties::sqlgroup_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_properties_sqlgroup_instantiation(instance):
+    assert isinstance(instance, properties_SqlGroup)
 
 
-@given(instance=properties::SqlGroup_strategy)
-def test_properties::sqlgroup_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=properties::SqlGroup_strategy)
-def test_properties::sqlgroup_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=properties::SqlGroup_strategy)
-def test_properties::sqlgroup_id_setter(instance):
+@given(instance=properties_SqlGroup_strategy)
+def test_properties_sqlgroup_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+
+
+@given(instance=properties_SqlGroup_strategy)
+def test_properties_sqlgroup_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 @given(instance=Sql_strategy)
 @settings(max_examples=50)
 def test_sql_instantiation(instance):
     assert isinstance(instance, Sql)
 
-@given(instance=properties::SqlParameter_strategy)
+@given(instance=properties_SqlParameter_strategy)
 @settings(max_examples=50)
-def test_properties::sqlparameter_instantiation(instance):
-    assert isinstance(instance, properties::SqlParameter)
-
-@given(instance=properties::SqlParameter_strategy)
-def test_properties::sqlparameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_properties_sqlparameter_instantiation(instance):
+    assert isinstance(instance, properties_SqlParameter)
 
 
-@given(instance=properties::SqlParameter_strategy)
-def test_properties::sqlparameter_type_setter(instance):
+
+@given(instance=properties_SqlParameter_strategy)
+def test_properties_sqlparameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=properties::SqlParameter_strategy)
-def test_properties::sqlparameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=properties::SqlParameter_strategy)
-def test_properties::sqlparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=properties::SqlParameter_strategy)
-def test_properties::sqlparameter_index_type(instance):
-    assert isinstance(instance.index, str)
-
-
-@given(instance=properties::SqlParameter_strategy)
-def test_properties::sqlparameter_index_setter(instance):
+@given(instance=properties_SqlParameter_strategy)
+def test_properties_sqlparameter_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
 
-@given(instance=properties::Sql_strategy)
+
+
+@given(instance=properties_SqlParameter_strategy)
+def test_properties_sqlparameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=properties_Sql_strategy)
 @settings(max_examples=50)
-def test_properties::sql_instantiation(instance):
-    assert isinstance(instance, properties::Sql)
-
-@given(instance=properties::Sql_strategy)
-def test_properties::sql_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_properties_sql_instantiation(instance):
+    assert isinstance(instance, properties_Sql)
 
 
-@given(instance=properties::Sql_strategy)
-def test_properties::sql_id_setter(instance):
+
+@given(instance=properties_Sql_strategy)
+def test_properties_sql_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=properties::Sql_strategy)
-def test_properties::sql_hqlQuery_type(instance):
-    assert isinstance(instance.hqlQuery, str)
 
 
-@given(instance=properties::Sql_strategy)
-def test_properties::sql_hqlQuery_setter(instance):
+@given(instance=properties_Sql_strategy)
+def test_properties_sql_hqlQuery_setter(instance):
     original = instance.hqlQuery
     instance.hqlQuery = original
     assert instance.hqlQuery == original
 
-@given(instance=properties::SqlFile_strategy)
+@given(instance=properties_SqlFile_strategy)
 @settings(max_examples=50)
-def test_properties::sqlfile_instantiation(instance):
-    assert isinstance(instance, properties::SqlFile)
-
-@given(instance=properties::SqlFile_strategy)
-def test_properties::sqlfile_filePath_type(instance):
-    assert isinstance(instance.filePath, str)
+def test_properties_sqlfile_instantiation(instance):
+    assert isinstance(instance, properties_SqlFile)
 
 
-@given(instance=properties::SqlFile_strategy)
-def test_properties::sqlfile_filePath_setter(instance):
+
+@given(instance=properties_SqlFile_strategy)
+def test_properties_sqlfile_filePath_setter(instance):
     original = instance.filePath
     instance.filePath = original
     assert instance.filePath == original
 
-@given(instance=properties::SqlQuery_strategy)
+@given(instance=properties_SqlQuery_strategy)
 @settings(max_examples=50)
-def test_properties::sqlquery_instantiation(instance):
-    assert isinstance(instance, properties::SqlQuery)
-
-@given(instance=properties::SqlQuery_strategy)
-def test_properties::sqlquery_queryString_type(instance):
-    assert isinstance(instance.queryString, str)
+def test_properties_sqlquery_instantiation(instance):
+    assert isinstance(instance, properties_SqlQuery)
 
 
-@given(instance=properties::SqlQuery_strategy)
-def test_properties::sqlquery_queryString_setter(instance):
+
+@given(instance=properties_SqlQuery_strategy)
+def test_properties_sqlquery_queryString_setter(instance):
     original = instance.queryString
     instance.queryString = original
     assert instance.queryString == original
 
-@given(instance=properties::SpecificDBMSProperties_strategy)
+@given(instance=properties_SpecificDBMSProperties_strategy)
 @settings(max_examples=50)
-def test_properties::specificdbmsproperties_instantiation(instance):
-    assert isinstance(instance, properties::SpecificDBMSProperties)
-
-@given(instance=properties::SpecificDBMSProperties_strategy)
-def test_properties::specificdbmsproperties_dBMS_type(instance):
-    assert isinstance(instance.dBMS, str)
+def test_properties_specificdbmsproperties_instantiation(instance):
+    assert isinstance(instance, properties_SpecificDBMSProperties)
 
 
-@given(instance=properties::SpecificDBMSProperties_strategy)
-def test_properties::specificdbmsproperties_dBMS_setter(instance):
+
+@given(instance=properties_SpecificDBMSProperties_strategy)
+def test_properties_specificdbmsproperties_dBMS_setter(instance):
     original = instance.dBMS
     instance.dBMS = original
     assert instance.dBMS == original
 
-@given(instance=properties::EStringToStringMapEntry_strategy)
+@given(instance=properties_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_properties::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, properties::EStringToStringMapEntry)
+def test_properties_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, properties_EStringToStringMapEntry)
 
-@given(instance=properties::DocumentRoot_strategy)
+@given(instance=properties_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_properties::documentroot_instantiation(instance):
-    assert isinstance(instance, properties::DocumentRoot)
-
-@given(instance=properties::DocumentRoot_strategy)
-def test_properties::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_properties_documentroot_instantiation(instance):
+    assert isinstance(instance, properties_DocumentRoot)
 
 
-@given(instance=properties::DocumentRoot_strategy)
-def test_properties::documentroot_mixed_setter(instance):
+
+@given(instance=properties_DocumentRoot_strategy)
+def test_properties_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=properties::DatabasePropertiesListType_strategy)
+@given(instance=properties_DatabasePropertiesListType_strategy)
 @settings(max_examples=50)
-def test_properties::databasepropertieslisttype_instantiation(instance):
-    assert isinstance(instance, properties::DatabasePropertiesListType)
+def test_properties_databasepropertieslisttype_instantiation(instance):
+    assert isinstance(instance, properties_DatabasePropertiesListType)
 
-@given(instance=properties::Property_strategy)
+@given(instance=properties_Property_strategy)
 @settings(max_examples=50)
-def test_properties::property_instantiation(instance):
-    assert isinstance(instance, properties::Property)
-
-@given(instance=properties::Property_strategy)
-def test_properties::property_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_properties_property_instantiation(instance):
+    assert isinstance(instance, properties_Property)
 
 
-@given(instance=properties::Property_strategy)
-def test_properties::property_key_setter(instance):
+
+@given(instance=properties_Property_strategy)
+def test_properties_property_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=properties::Property_strategy)
-def test_properties::property_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=properties::Property_strategy)
-def test_properties::property_value_setter(instance):
+@given(instance=properties_Property_strategy)
+def test_properties_property_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=properties::SqlProperties_strategy)
+@given(instance=properties_SqlProperties_strategy)
 @settings(max_examples=50)
-def test_properties::sqlproperties_instantiation(instance):
-    assert isinstance(instance, properties::SqlProperties)
+def test_properties_sqlproperties_instantiation(instance):
+    assert isinstance(instance, properties_SqlProperties)
 
-@given(instance=properties::DatabaseProperties_strategy)
+@given(instance=properties_DatabaseProperties_strategy)
 @settings(max_examples=50)
-def test_properties::databaseproperties_instantiation(instance):
-    assert isinstance(instance, properties::DatabaseProperties)
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_driverClassName_type(instance):
-    assert isinstance(instance.driverClassName, str)
+def test_properties_databaseproperties_instantiation(instance):
+    assert isinstance(instance, properties_DatabaseProperties)
 
 
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_driverClassName_setter(instance):
-    original = instance.driverClassName
-    instance.driverClassName = original
-    assert instance.driverClassName == original
 
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_databaseName_type(instance):
-    assert isinstance(instance.databaseName, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_databaseName_setter(instance):
-    original = instance.databaseName
-    instance.databaseName = original
-    assert instance.databaseName == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_dBMS_type(instance):
-    assert isinstance(instance.dBMS, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_dBMS_setter(instance):
-    original = instance.dBMS
-    instance.dBMS = original
-    assert instance.dBMS == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_serverURL_type(instance):
-    assert isinstance(instance.serverURL, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_serverURL_setter(instance):
-    original = instance.serverURL
-    instance.serverURL = original
-    assert instance.serverURL == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_dialect_type(instance):
-    assert isinstance(instance.dialect, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_dialect_setter(instance):
-    original = instance.dialect
-    instance.dialect = original
-    assert instance.dialect == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_persistenceUnitName_type(instance):
-    assert isinstance(instance.persistenceUnitName, str)
-
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_persistenceUnitName_setter(instance):
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_persistenceUnitName_setter(instance):
     original = instance.persistenceUnitName
     instance.persistenceUnitName = original
     assert instance.persistenceUnitName == original
 
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_serverURL_setter(instance):
+    original = instance.serverURL
+    instance.serverURL = original
+    assert instance.serverURL == original
 
 
-@given(instance=properties::DatabaseProperties_strategy)
-def test_properties::databaseproperties_namespace_setter(instance):
-    original = instance.namespace
-    instance.namespace = original
-    assert instance.namespace == original
 
-@given(instance=properties::DatabaseAlias_strategy)
-@settings(max_examples=50)
-def test_properties::databasealias_instantiation(instance):
-    assert isinstance(instance, properties::DatabaseAlias)
-
-@given(instance=properties::DatabaseAlias_strategy)
-def test_properties::databasealias_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_dBMS_setter(instance):
+    original = instance.dBMS
+    instance.dBMS = original
+    assert instance.dBMS == original
 
 
-@given(instance=properties::DatabaseAlias_strategy)
-def test_properties::databasealias_id_setter(instance):
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=properties::DatabaseAlias_strategy)
-def test_properties::databasealias_alias_type(instance):
-    assert isinstance(instance.alias, str)
 
 
-@given(instance=properties::DatabaseAlias_strategy)
-def test_properties::databasealias_alias_setter(instance):
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_dialect_setter(instance):
+    original = instance.dialect
+    instance.dialect = original
+    assert instance.dialect == original
+
+
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_namespace_setter(instance):
+    original = instance.namespace
+    instance.namespace = original
+    assert instance.namespace == original
+
+
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_databaseName_setter(instance):
+    original = instance.databaseName
+    instance.databaseName = original
+    assert instance.databaseName == original
+
+
+
+@given(instance=properties_DatabaseProperties_strategy)
+def test_properties_databaseproperties_driverClassName_setter(instance):
+    original = instance.driverClassName
+    instance.driverClassName = original
+    assert instance.driverClassName == original
+
+@given(instance=properties_DatabaseAlias_strategy)
+@settings(max_examples=50)
+def test_properties_databasealias_instantiation(instance):
+    assert isinstance(instance, properties_DatabaseAlias)
+
+
+
+@given(instance=properties_DatabaseAlias_strategy)
+def test_properties_databasealias_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
+
+
+
+@given(instance=properties_DatabaseAlias_strategy)
+def test_properties_databasealias_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

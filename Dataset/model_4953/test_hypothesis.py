@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Field,
     Form,
-    webApplication::content::CRUDForm,
+    webApplication_content_CRUDForm,
     Link,
     Content,
-    webApplication::content::Menu,
-    webApplication::content::MultipleContent,
-    webApplication::content::SingleContent,
+    webApplication_content_Menu,
+    webApplication_content_SingleContent,
+    webApplication_content_MultipleContent,
     RelatedEntity,
     Column,
     Page,
     DataSource,
     Entity,
     Named,
-    webApplication::content::Field,
-    webApplication::content::Form,
-    webApplication::content::Link,
-    webApplication::content::Content,
-    webApplication::data::Entity,
-    webApplication::data::Column,
-    webApplication::data::RelatedEntity,
-    webApplication::content::Page,
-    webApplication::data::DataSource,
-    webApplication::WebApplicationModel,
-    webApplication::Named,
-    ColumnType,
+    webApplication_content_Content,
+    webApplication_content_Link,
+    webApplication_data_DataSource,
+    webApplication_data_Column,
+    webApplication_content_Page,
+    webApplication_data_Entity,
+    webApplication_content_Form,
+    webApplication_data_RelatedEntity,
+    webApplication_content_Field,
+    webApplication_WebApplicationModel,
+    webApplication_Named,
     FieldType,
+    ColumnType,
 )
 
 # =============================================================================
@@ -69,16 +69,16 @@ def test_form_constructor_args():
 
 
 
-def test_webapplication::content::crudform_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::CRUDForm)
+def test_webapplication_content_crudform_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_CRUDForm)
 
 
-def test_webapplication::content::crudform_constructor_exists():
-    assert callable(webApplication::content::CRUDForm.__init__)
+def test_webapplication_content_crudform_constructor_exists():
+    assert callable(webApplication_content_CRUDForm.__init__)
 
 
-def test_webapplication::content::crudform_constructor_args():
-    sig = inspect.signature(webApplication::content::CRUDForm.__init__)
+def test_webapplication_content_crudform_constructor_args():
+    sig = inspect.signature(webApplication_content_CRUDForm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -111,95 +111,95 @@ def test_content_constructor_args():
 
 
 
-def test_webapplication::content::menu_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::Menu)
+def test_webapplication_content_menu_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_Menu)
 
 
-def test_webapplication::content::menu_constructor_exists():
-    assert callable(webApplication::content::Menu.__init__)
+def test_webapplication_content_menu_constructor_exists():
+    assert callable(webApplication_content_Menu.__init__)
 
 
-def test_webapplication::content::menu_constructor_args():
-    sig = inspect.signature(webApplication::content::Menu.__init__)
+def test_webapplication_content_menu_constructor_args():
+    sig = inspect.signature(webApplication_content_Menu.__init__)
     params = list(sig.parameters.keys())
-    assert "itemName" in params, "Missing parameter 'itemName'"
     assert "order" in params, "Missing parameter 'order'"
     assert "url" in params, "Missing parameter 'url'"
+    assert "itemName" in params, "Missing parameter 'itemName'"
 
-def test_webapplication::content::menu_has_itemName():
-    assert hasattr(webApplication::content::Menu, "itemName")
+def test_webapplication_content_menu_has_order():
+    assert hasattr(webApplication_content_Menu, "order")
     descriptor = None
-    for klass in webApplication::content::Menu.__mro__:
-        if "itemName" in klass.__dict__:
-            descriptor = klass.__dict__["itemName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapplication::content::menu_has_order():
-    assert hasattr(webApplication::content::Menu, "order")
-    descriptor = None
-    for klass in webApplication::content::Menu.__mro__:
+    for klass in webApplication_content_Menu.__mro__:
         if "order" in klass.__dict__:
             descriptor = klass.__dict__["order"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapplication::content::menu_has_url():
-    assert hasattr(webApplication::content::Menu, "url")
+def test_webapplication_content_menu_has_url():
+    assert hasattr(webApplication_content_Menu, "url")
     descriptor = None
-    for klass in webApplication::content::Menu.__mro__:
+    for klass in webApplication_content_Menu.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_webapplication::content::multiplecontent_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::MultipleContent)
-
-
-def test_webapplication::content::multiplecontent_constructor_exists():
-    assert callable(webApplication::content::MultipleContent.__init__)
-
-
-def test_webapplication::content::multiplecontent_constructor_args():
-    sig = inspect.signature(webApplication::content::MultipleContent.__init__)
-    params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-    assert "paginated" in params, "Missing parameter 'paginated'"
-
-def test_webapplication::content::multiplecontent_has_size():
-    assert hasattr(webApplication::content::MultipleContent, "size")
+def test_webapplication_content_menu_has_itemName():
+    assert hasattr(webApplication_content_Menu, "itemName")
     descriptor = None
-    for klass in webApplication::content::MultipleContent.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
+    for klass in webApplication_content_Menu.__mro__:
+        if "itemName" in klass.__dict__:
+            descriptor = klass.__dict__["itemName"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapplication::content::multiplecontent_has_paginated():
-    assert hasattr(webApplication::content::MultipleContent, "paginated")
+
+
+def test_webapplication_content_singlecontent_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_SingleContent)
+
+
+def test_webapplication_content_singlecontent_constructor_exists():
+    assert callable(webApplication_content_SingleContent.__init__)
+
+
+def test_webapplication_content_singlecontent_constructor_args():
+    sig = inspect.signature(webApplication_content_SingleContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webapplication_content_multiplecontent_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_MultipleContent)
+
+
+def test_webapplication_content_multiplecontent_constructor_exists():
+    assert callable(webApplication_content_MultipleContent.__init__)
+
+
+def test_webapplication_content_multiplecontent_constructor_args():
+    sig = inspect.signature(webApplication_content_MultipleContent.__init__)
+    params = list(sig.parameters.keys())
+    assert "paginated" in params, "Missing parameter 'paginated'"
+    assert "size" in params, "Missing parameter 'size'"
+
+def test_webapplication_content_multiplecontent_has_paginated():
+    assert hasattr(webApplication_content_MultipleContent, "paginated")
     descriptor = None
-    for klass in webApplication::content::MultipleContent.__mro__:
+    for klass in webApplication_content_MultipleContent.__mro__:
         if "paginated" in klass.__dict__:
             descriptor = klass.__dict__["paginated"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_webapplication::content::singlecontent_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::SingleContent)
-
-
-def test_webapplication::content::singlecontent_constructor_exists():
-    assert callable(webApplication::content::SingleContent.__init__)
-
-
-def test_webapplication::content::singlecontent_constructor_args():
-    sig = inspect.signature(webApplication::content::SingleContent.__init__)
-    params = list(sig.parameters.keys())
+def test_webapplication_content_multiplecontent_has_size():
+    assert hasattr(webApplication_content_MultipleContent, "size")
+    descriptor = None
+    for klass in webApplication_content_MultipleContent.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -287,133 +287,85 @@ def test_named_constructor_args():
 
 
 
-def test_webapplication::content::field_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::Field)
+def test_webapplication_content_content_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_Content)
 
 
-def test_webapplication::content::field_constructor_exists():
-    assert callable(webApplication::content::Field.__init__)
+def test_webapplication_content_content_constructor_exists():
+    assert callable(webApplication_content_Content.__init__)
 
 
-def test_webapplication::content::field_constructor_args():
-    sig = inspect.signature(webApplication::content::Field.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_webapplication::content::field_has_type():
-    assert hasattr(webApplication::content::Field, "type")
-    descriptor = None
-    for klass in webApplication::content::Field.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_webapplication::content::form_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::Form)
-
-
-def test_webapplication::content::form_constructor_exists():
-    assert callable(webApplication::content::Form.__init__)
-
-
-def test_webapplication::content::form_constructor_args():
-    sig = inspect.signature(webApplication::content::Form.__init__)
+def test_webapplication_content_content_constructor_args():
+    sig = inspect.signature(webApplication_content_Content.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::content::link_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::Link)
+def test_webapplication_content_link_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_Link)
 
 
-def test_webapplication::content::link_constructor_exists():
-    assert callable(webApplication::content::Link.__init__)
+def test_webapplication_content_link_constructor_exists():
+    assert callable(webApplication_content_Link.__init__)
 
 
-def test_webapplication::content::link_constructor_args():
-    sig = inspect.signature(webApplication::content::Link.__init__)
+def test_webapplication_content_link_constructor_args():
+    sig = inspect.signature(webApplication_content_Link.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::content::content_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::Content)
+def test_webapplication_data_datasource_is_not_abstract():
+    assert not inspect.isabstract(webApplication_data_DataSource)
 
 
-def test_webapplication::content::content_constructor_exists():
-    assert callable(webApplication::content::Content.__init__)
+def test_webapplication_data_datasource_constructor_exists():
+    assert callable(webApplication_data_DataSource.__init__)
 
 
-def test_webapplication::content::content_constructor_args():
-    sig = inspect.signature(webApplication::content::Content.__init__)
+def test_webapplication_data_datasource_constructor_args():
+    sig = inspect.signature(webApplication_data_DataSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::data::entity_is_not_abstract():
-    assert not inspect.isabstract(webApplication::data::Entity)
+def test_webapplication_data_column_is_not_abstract():
+    assert not inspect.isabstract(webApplication_data_Column)
 
 
-def test_webapplication::data::entity_constructor_exists():
-    assert callable(webApplication::data::Entity.__init__)
+def test_webapplication_data_column_constructor_exists():
+    assert callable(webApplication_data_Column.__init__)
 
 
-def test_webapplication::data::entity_constructor_args():
-    sig = inspect.signature(webApplication::data::Entity.__init__)
-    params = list(sig.parameters.keys())
-    assert "numberOfColumns" in params, "Missing parameter 'numberOfColumns'"
-
-def test_webapplication::data::entity_has_numberOfColumns():
-    assert hasattr(webApplication::data::Entity, "numberOfColumns")
-    descriptor = None
-    for klass in webApplication::data::Entity.__mro__:
-        if "numberOfColumns" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfColumns"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_webapplication::data::column_is_not_abstract():
-    assert not inspect.isabstract(webApplication::data::Column)
-
-
-def test_webapplication::data::column_constructor_exists():
-    assert callable(webApplication::data::Column.__init__)
-
-
-def test_webapplication::data::column_constructor_args():
-    sig = inspect.signature(webApplication::data::Column.__init__)
+def test_webapplication_data_column_constructor_args():
+    sig = inspect.signature(webApplication_data_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "PK" in params, "Missing parameter 'PK'"
     assert "lenght" in params, "Missing parameter 'lenght'"
 
-def test_webapplication::data::column_has_type():
-    assert hasattr(webApplication::data::Column, "type")
+def test_webapplication_data_column_has_type():
+    assert hasattr(webApplication_data_Column, "type")
     descriptor = None
-    for klass in webApplication::data::Column.__mro__:
+    for klass in webApplication_data_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapplication::data::column_has_PK():
-    assert hasattr(webApplication::data::Column, "PK")
+def test_webapplication_data_column_has_PK():
+    assert hasattr(webApplication_data_Column, "PK")
     descriptor = None
-    for klass in webApplication::data::Column.__mro__:
+    for klass in webApplication_data_Column.__mro__:
         if "PK" in klass.__dict__:
             descriptor = klass.__dict__["PK"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapplication::data::column_has_lenght():
-    assert hasattr(webApplication::data::Column, "lenght")
+def test_webapplication_data_column_has_lenght():
+    assert hasattr(webApplication_data_Column, "lenght")
     descriptor = None
-    for klass in webApplication::data::Column.__mro__:
+    for klass in webApplication_data_Column.__mro__:
         if "lenght" in klass.__dict__:
             descriptor = klass.__dict__["lenght"]
             break
@@ -421,101 +373,131 @@ def test_webapplication::data::column_has_lenght():
 
 
 
-def test_webapplication::data::relatedentity_is_not_abstract():
-    assert not inspect.isabstract(webApplication::data::RelatedEntity)
+def test_webapplication_content_page_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_Page)
 
 
-def test_webapplication::data::relatedentity_constructor_exists():
-    assert callable(webApplication::data::RelatedEntity.__init__)
+def test_webapplication_content_page_constructor_exists():
+    assert callable(webApplication_content_Page.__init__)
 
 
-def test_webapplication::data::relatedentity_constructor_args():
-    sig = inspect.signature(webApplication::data::RelatedEntity.__init__)
+def test_webapplication_content_page_constructor_args():
+    sig = inspect.signature(webApplication_content_Page.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::content::page_is_not_abstract():
-    assert not inspect.isabstract(webApplication::content::Page)
+def test_webapplication_data_entity_is_not_abstract():
+    assert not inspect.isabstract(webApplication_data_Entity)
 
 
-def test_webapplication::content::page_constructor_exists():
-    assert callable(webApplication::content::Page.__init__)
+def test_webapplication_data_entity_constructor_exists():
+    assert callable(webApplication_data_Entity.__init__)
 
 
-def test_webapplication::content::page_constructor_args():
-    sig = inspect.signature(webApplication::content::Page.__init__)
+def test_webapplication_data_entity_constructor_args():
+    sig = inspect.signature(webApplication_data_Entity.__init__)
+    params = list(sig.parameters.keys())
+    assert "numberOfColumns" in params, "Missing parameter 'numberOfColumns'"
+
+def test_webapplication_data_entity_has_numberOfColumns():
+    assert hasattr(webApplication_data_Entity, "numberOfColumns")
+    descriptor = None
+    for klass in webApplication_data_Entity.__mro__:
+        if "numberOfColumns" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfColumns"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_webapplication_content_form_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_Form)
+
+
+def test_webapplication_content_form_constructor_exists():
+    assert callable(webApplication_content_Form.__init__)
+
+
+def test_webapplication_content_form_constructor_args():
+    sig = inspect.signature(webApplication_content_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::data::datasource_is_not_abstract():
-    assert not inspect.isabstract(webApplication::data::DataSource)
+def test_webapplication_data_relatedentity_is_not_abstract():
+    assert not inspect.isabstract(webApplication_data_RelatedEntity)
 
 
-def test_webapplication::data::datasource_constructor_exists():
-    assert callable(webApplication::data::DataSource.__init__)
+def test_webapplication_data_relatedentity_constructor_exists():
+    assert callable(webApplication_data_RelatedEntity.__init__)
 
 
-def test_webapplication::data::datasource_constructor_args():
-    sig = inspect.signature(webApplication::data::DataSource.__init__)
+def test_webapplication_data_relatedentity_constructor_args():
+    sig = inspect.signature(webApplication_data_RelatedEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::webapplicationmodel_is_not_abstract():
-    assert not inspect.isabstract(webApplication::WebApplicationModel)
+def test_webapplication_content_field_is_not_abstract():
+    assert not inspect.isabstract(webApplication_content_Field)
 
 
-def test_webapplication::webapplicationmodel_constructor_exists():
-    assert callable(webApplication::WebApplicationModel.__init__)
+def test_webapplication_content_field_constructor_exists():
+    assert callable(webApplication_content_Field.__init__)
 
 
-def test_webapplication::webapplicationmodel_constructor_args():
-    sig = inspect.signature(webApplication::WebApplicationModel.__init__)
+def test_webapplication_content_field_constructor_args():
+    sig = inspect.signature(webApplication_content_Field.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_webapplication_content_field_has_type():
+    assert hasattr(webApplication_content_Field, "type")
+    descriptor = None
+    for klass in webApplication_content_Field.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_webapplication_webapplicationmodel_is_not_abstract():
+    assert not inspect.isabstract(webApplication_WebApplicationModel)
+
+
+def test_webapplication_webapplicationmodel_constructor_exists():
+    assert callable(webApplication_WebApplicationModel.__init__)
+
+
+def test_webapplication_webapplicationmodel_constructor_args():
+    sig = inspect.signature(webApplication_WebApplicationModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapplication::named_is_not_abstract():
-    assert not inspect.isabstract(webApplication::Named)
+def test_webapplication_named_is_not_abstract():
+    assert not inspect.isabstract(webApplication_Named)
 
 
-def test_webapplication::named_constructor_exists():
-    assert callable(webApplication::Named.__init__)
+def test_webapplication_named_constructor_exists():
+    assert callable(webApplication_Named.__init__)
 
 
-def test_webapplication::named_constructor_args():
-    sig = inspect.signature(webApplication::Named.__init__)
+def test_webapplication_named_constructor_args():
+    sig = inspect.signature(webApplication_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapplication::named_has_name():
-    assert hasattr(webApplication::Named, "name")
+def test_webapplication_named_has_name():
+    assert hasattr(webApplication_Named, "name")
     descriptor = None
-    for klass in webApplication::Named.__mro__:
+    for klass in webApplication_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_columntype_exists():
-    # Check that the Enumeration exists
-    assert ColumnType is not None
-
-def test_columntype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ColumnType]
-    expected_literals = [
-        "String",
-        "Boolean",
-        "Float",
-        "Text",
-        "Integer",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ColumnType"
 
 def test_fieldtype_exists():
     # Check that the Enumeration exists
@@ -525,14 +507,32 @@ def test_fieldtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FieldType]
     expected_literals = [
-        "CheckBox",
-        "RadioButton",
         "TextBox",
+        "CheckBox",
         "SubmitButton",
+        "RadioButton",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FieldType"
+
+def test_columntype_exists():
+    # Check that the Enumeration exists
+    assert ColumnType is not None
+
+def test_columntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ColumnType]
+    expected_literals = [
+        "Float",
+        "String",
+        "Integer",
+        "Boolean",
+        "Text",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ColumnType"
 
 
 # =============================================================================
@@ -552,8 +552,8 @@ Field_strategy = st.builds(
 Form_strategy = st.builds(
     Form,
 )
-webApplication::content::CRUDForm_strategy = st.builds(
-    webApplication::content::CRUDForm,
+webApplication_content_CRUDForm_strategy = st.builds(
+    webApplication_content_CRUDForm,
 )
 Link_strategy = st.builds(
     Link,
@@ -561,24 +561,24 @@ Link_strategy = st.builds(
 Content_strategy = st.builds(
     Content,
 )
-webApplication::content::Menu_strategy = st.builds(
-    webApplication::content::Menu,
-    itemName=
-        safe_text,
+webApplication_content_Menu_strategy = st.builds(
+    webApplication_content_Menu,
     order=
         st.integers(),
     url=
+        safe_text,
+    itemName=
         safe_text
 )
-webApplication::content::MultipleContent_strategy = st.builds(
-    webApplication::content::MultipleContent,
-    size=
-        st.integers(),
-    paginated=
-        st.booleans()
+webApplication_content_SingleContent_strategy = st.builds(
+    webApplication_content_SingleContent,
 )
-webApplication::content::SingleContent_strategy = st.builds(
-    webApplication::content::SingleContent,
+webApplication_content_MultipleContent_strategy = st.builds(
+    webApplication_content_MultipleContent,
+    paginated=
+        st.booleans(),
+    size=
+        st.integers()
 )
 RelatedEntity_strategy = st.builds(
     RelatedEntity,
@@ -598,27 +598,17 @@ Entity_strategy = st.builds(
 Named_strategy = st.builds(
     Named,
 )
-webApplication::content::Field_strategy = st.builds(
-    webApplication::content::Field,
-    type=
-        safe_text
+webApplication_content_Content_strategy = st.builds(
+    webApplication_content_Content,
 )
-webApplication::content::Form_strategy = st.builds(
-    webApplication::content::Form,
+webApplication_content_Link_strategy = st.builds(
+    webApplication_content_Link,
 )
-webApplication::content::Link_strategy = st.builds(
-    webApplication::content::Link,
+webApplication_data_DataSource_strategy = st.builds(
+    webApplication_data_DataSource,
 )
-webApplication::content::Content_strategy = st.builds(
-    webApplication::content::Content,
-)
-webApplication::data::Entity_strategy = st.builds(
-    webApplication::data::Entity,
-    numberOfColumns=
-        safe_text
-)
-webApplication::data::Column_strategy = st.builds(
-    webApplication::data::Column,
+webApplication_data_Column_strategy = st.builds(
+    webApplication_data_Column,
     type=
         safe_text,
     PK=
@@ -626,20 +616,30 @@ webApplication::data::Column_strategy = st.builds(
     lenght=
         st.integers()
 )
-webApplication::data::RelatedEntity_strategy = st.builds(
-    webApplication::data::RelatedEntity,
+webApplication_content_Page_strategy = st.builds(
+    webApplication_content_Page,
 )
-webApplication::content::Page_strategy = st.builds(
-    webApplication::content::Page,
+webApplication_data_Entity_strategy = st.builds(
+    webApplication_data_Entity,
+    numberOfColumns=
+        safe_text
 )
-webApplication::data::DataSource_strategy = st.builds(
-    webApplication::data::DataSource,
+webApplication_content_Form_strategy = st.builds(
+    webApplication_content_Form,
 )
-webApplication::WebApplicationModel_strategy = st.builds(
-    webApplication::WebApplicationModel,
+webApplication_data_RelatedEntity_strategy = st.builds(
+    webApplication_data_RelatedEntity,
 )
-webApplication::Named_strategy = st.builds(
-    webApplication::Named,
+webApplication_content_Field_strategy = st.builds(
+    webApplication_content_Field,
+    type=
+        safe_text
+)
+webApplication_WebApplicationModel_strategy = st.builds(
+    webApplication_WebApplicationModel,
+)
+webApplication_Named_strategy = st.builds(
+    webApplication_Named,
     name=
         safe_text
 )
@@ -654,10 +654,10 @@ def test_field_instantiation(instance):
 def test_form_instantiation(instance):
     assert isinstance(instance, Form)
 
-@given(instance=webApplication::content::CRUDForm_strategy)
+@given(instance=webApplication_content_CRUDForm_strategy)
 @settings(max_examples=50)
-def test_webapplication::content::crudform_instantiation(instance):
-    assert isinstance(instance, webApplication::content::CRUDForm)
+def test_webapplication_content_crudform_instantiation(instance):
+    assert isinstance(instance, webApplication_content_CRUDForm)
 
 @given(instance=Link_strategy)
 @settings(max_examples=50)
@@ -669,75 +669,60 @@ def test_link_instantiation(instance):
 def test_content_instantiation(instance):
     assert isinstance(instance, Content)
 
-@given(instance=webApplication::content::Menu_strategy)
+@given(instance=webApplication_content_Menu_strategy)
 @settings(max_examples=50)
-def test_webapplication::content::menu_instantiation(instance):
-    assert isinstance(instance, webApplication::content::Menu)
-
-@given(instance=webApplication::content::Menu_strategy)
-def test_webapplication::content::menu_itemName_type(instance):
-    assert isinstance(instance.itemName, str)
+def test_webapplication_content_menu_instantiation(instance):
+    assert isinstance(instance, webApplication_content_Menu)
 
 
-@given(instance=webApplication::content::Menu_strategy)
-def test_webapplication::content::menu_itemName_setter(instance):
-    original = instance.itemName
-    instance.itemName = original
-    assert instance.itemName == original
 
-@given(instance=webApplication::content::Menu_strategy)
-def test_webapplication::content::menu_order_type(instance):
-    assert isinstance(instance.order, int)
-
-
-@given(instance=webApplication::content::Menu_strategy)
-def test_webapplication::content::menu_order_setter(instance):
+@given(instance=webApplication_content_Menu_strategy)
+def test_webapplication_content_menu_order_setter(instance):
     original = instance.order
     instance.order = original
     assert instance.order == original
 
-@given(instance=webApplication::content::Menu_strategy)
-def test_webapplication::content::menu_url_type(instance):
-    assert isinstance(instance.url, str)
 
 
-@given(instance=webApplication::content::Menu_strategy)
-def test_webapplication::content::menu_url_setter(instance):
+@given(instance=webApplication_content_Menu_strategy)
+def test_webapplication_content_menu_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=webApplication::content::MultipleContent_strategy)
+
+
+@given(instance=webApplication_content_Menu_strategy)
+def test_webapplication_content_menu_itemName_setter(instance):
+    original = instance.itemName
+    instance.itemName = original
+    assert instance.itemName == original
+
+@given(instance=webApplication_content_SingleContent_strategy)
 @settings(max_examples=50)
-def test_webapplication::content::multiplecontent_instantiation(instance):
-    assert isinstance(instance, webApplication::content::MultipleContent)
+def test_webapplication_content_singlecontent_instantiation(instance):
+    assert isinstance(instance, webApplication_content_SingleContent)
 
-@given(instance=webApplication::content::MultipleContent_strategy)
-def test_webapplication::content::multiplecontent_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=webApplication::content::MultipleContent_strategy)
-def test_webapplication::content::multiplecontent_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=webApplication::content::MultipleContent_strategy)
-def test_webapplication::content::multiplecontent_paginated_type(instance):
-    assert isinstance(instance.paginated, bool)
+@given(instance=webApplication_content_MultipleContent_strategy)
+@settings(max_examples=50)
+def test_webapplication_content_multiplecontent_instantiation(instance):
+    assert isinstance(instance, webApplication_content_MultipleContent)
 
 
-@given(instance=webApplication::content::MultipleContent_strategy)
-def test_webapplication::content::multiplecontent_paginated_setter(instance):
+
+@given(instance=webApplication_content_MultipleContent_strategy)
+def test_webapplication_content_multiplecontent_paginated_setter(instance):
     original = instance.paginated
     instance.paginated = original
     assert instance.paginated == original
 
-@given(instance=webApplication::content::SingleContent_strategy)
-@settings(max_examples=50)
-def test_webapplication::content::singlecontent_instantiation(instance):
-    assert isinstance(instance, webApplication::content::SingleContent)
+
+
+@given(instance=webApplication_content_MultipleContent_strategy)
+def test_webapplication_content_multiplecontent_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
 
 @given(instance=RelatedEntity_strategy)
 @settings(max_examples=50)
@@ -769,123 +754,105 @@ def test_entity_instantiation(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=webApplication::content::Field_strategy)
+@given(instance=webApplication_content_Content_strategy)
 @settings(max_examples=50)
-def test_webapplication::content::field_instantiation(instance):
-    assert isinstance(instance, webApplication::content::Field)
+def test_webapplication_content_content_instantiation(instance):
+    assert isinstance(instance, webApplication_content_Content)
 
-@given(instance=webApplication::content::Field_strategy)
-def test_webapplication::content::field_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=webApplication_content_Link_strategy)
+@settings(max_examples=50)
+def test_webapplication_content_link_instantiation(instance):
+    assert isinstance(instance, webApplication_content_Link)
+
+@given(instance=webApplication_data_DataSource_strategy)
+@settings(max_examples=50)
+def test_webapplication_data_datasource_instantiation(instance):
+    assert isinstance(instance, webApplication_data_DataSource)
+
+@given(instance=webApplication_data_Column_strategy)
+@settings(max_examples=50)
+def test_webapplication_data_column_instantiation(instance):
+    assert isinstance(instance, webApplication_data_Column)
 
 
-@given(instance=webApplication::content::Field_strategy)
-def test_webapplication::content::field_type_setter(instance):
+
+@given(instance=webApplication_data_Column_strategy)
+def test_webapplication_data_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=webApplication::content::Form_strategy)
-@settings(max_examples=50)
-def test_webapplication::content::form_instantiation(instance):
-    assert isinstance(instance, webApplication::content::Form)
-
-@given(instance=webApplication::content::Link_strategy)
-@settings(max_examples=50)
-def test_webapplication::content::link_instantiation(instance):
-    assert isinstance(instance, webApplication::content::Link)
-
-@given(instance=webApplication::content::Content_strategy)
-@settings(max_examples=50)
-def test_webapplication::content::content_instantiation(instance):
-    assert isinstance(instance, webApplication::content::Content)
-
-@given(instance=webApplication::data::Entity_strategy)
-@settings(max_examples=50)
-def test_webapplication::data::entity_instantiation(instance):
-    assert isinstance(instance, webApplication::data::Entity)
-
-@given(instance=webApplication::data::Entity_strategy)
-def test_webapplication::data::entity_numberOfColumns_type(instance):
-    assert isinstance(instance.numberOfColumns, str)
 
 
-@given(instance=webApplication::data::Entity_strategy)
-def test_webapplication::data::entity_numberOfColumns_setter(instance):
-    original = instance.numberOfColumns
-    instance.numberOfColumns = original
-    assert instance.numberOfColumns == original
-
-@given(instance=webApplication::data::Column_strategy)
-@settings(max_examples=50)
-def test_webapplication::data::column_instantiation(instance):
-    assert isinstance(instance, webApplication::data::Column)
-
-@given(instance=webApplication::data::Column_strategy)
-def test_webapplication::data::column_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=webApplication::data::Column_strategy)
-def test_webapplication::data::column_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=webApplication::data::Column_strategy)
-def test_webapplication::data::column_PK_type(instance):
-    assert isinstance(instance.PK, bool)
-
-
-@given(instance=webApplication::data::Column_strategy)
-def test_webapplication::data::column_PK_setter(instance):
+@given(instance=webApplication_data_Column_strategy)
+def test_webapplication_data_column_PK_setter(instance):
     original = instance.PK
     instance.PK = original
     assert instance.PK == original
 
-@given(instance=webApplication::data::Column_strategy)
-def test_webapplication::data::column_lenght_type(instance):
-    assert isinstance(instance.lenght, int)
 
 
-@given(instance=webApplication::data::Column_strategy)
-def test_webapplication::data::column_lenght_setter(instance):
+@given(instance=webApplication_data_Column_strategy)
+def test_webapplication_data_column_lenght_setter(instance):
     original = instance.lenght
     instance.lenght = original
     assert instance.lenght == original
 
-@given(instance=webApplication::data::RelatedEntity_strategy)
+@given(instance=webApplication_content_Page_strategy)
 @settings(max_examples=50)
-def test_webapplication::data::relatedentity_instantiation(instance):
-    assert isinstance(instance, webApplication::data::RelatedEntity)
+def test_webapplication_content_page_instantiation(instance):
+    assert isinstance(instance, webApplication_content_Page)
 
-@given(instance=webApplication::content::Page_strategy)
+@given(instance=webApplication_data_Entity_strategy)
 @settings(max_examples=50)
-def test_webapplication::content::page_instantiation(instance):
-    assert isinstance(instance, webApplication::content::Page)
+def test_webapplication_data_entity_instantiation(instance):
+    assert isinstance(instance, webApplication_data_Entity)
 
-@given(instance=webApplication::data::DataSource_strategy)
+
+
+@given(instance=webApplication_data_Entity_strategy)
+def test_webapplication_data_entity_numberOfColumns_setter(instance):
+    original = instance.numberOfColumns
+    instance.numberOfColumns = original
+    assert instance.numberOfColumns == original
+
+@given(instance=webApplication_content_Form_strategy)
 @settings(max_examples=50)
-def test_webapplication::data::datasource_instantiation(instance):
-    assert isinstance(instance, webApplication::data::DataSource)
+def test_webapplication_content_form_instantiation(instance):
+    assert isinstance(instance, webApplication_content_Form)
 
-@given(instance=webApplication::WebApplicationModel_strategy)
+@given(instance=webApplication_data_RelatedEntity_strategy)
 @settings(max_examples=50)
-def test_webapplication::webapplicationmodel_instantiation(instance):
-    assert isinstance(instance, webApplication::WebApplicationModel)
+def test_webapplication_data_relatedentity_instantiation(instance):
+    assert isinstance(instance, webApplication_data_RelatedEntity)
 
-@given(instance=webApplication::Named_strategy)
+@given(instance=webApplication_content_Field_strategy)
 @settings(max_examples=50)
-def test_webapplication::named_instantiation(instance):
-    assert isinstance(instance, webApplication::Named)
-
-@given(instance=webApplication::Named_strategy)
-def test_webapplication::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapplication_content_field_instantiation(instance):
+    assert isinstance(instance, webApplication_content_Field)
 
 
-@given(instance=webApplication::Named_strategy)
-def test_webapplication::named_name_setter(instance):
+
+@given(instance=webApplication_content_Field_strategy)
+def test_webapplication_content_field_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=webApplication_WebApplicationModel_strategy)
+@settings(max_examples=50)
+def test_webapplication_webapplicationmodel_instantiation(instance):
+    assert isinstance(instance, webApplication_WebApplicationModel)
+
+@given(instance=webApplication_Named_strategy)
+@settings(max_examples=50)
+def test_webapplication_named_instantiation(instance):
+    assert isinstance(instance, webApplication_Named)
+
+
+
+@given(instance=webApplication_Named_strategy)
+def test_webapplication_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TableM::FKey,
-    TableM::Column,
-    TableM::Table,
+from python_code import (
+    TableM_FKey,
+    TableM_Column,
+    TableM_Table,
 )
 
 # =============================================================================
@@ -17,71 +17,71 @@ from classes import (
 
 
 
-def test_tablem::fkey_is_not_abstract():
-    assert not inspect.isabstract(TableM::FKey)
+def test_tablem_fkey_is_not_abstract():
+    assert not inspect.isabstract(TableM_FKey)
 
 
-def test_tablem::fkey_constructor_exists():
-    assert callable(TableM::FKey.__init__)
+def test_tablem_fkey_constructor_exists():
+    assert callable(TableM_FKey.__init__)
 
 
-def test_tablem::fkey_constructor_args():
-    sig = inspect.signature(TableM::FKey.__init__)
+def test_tablem_fkey_constructor_args():
+    sig = inspect.signature(TableM_FKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tablem::column_is_not_abstract():
-    assert not inspect.isabstract(TableM::Column)
+def test_tablem_column_is_not_abstract():
+    assert not inspect.isabstract(TableM_Column)
 
 
-def test_tablem::column_constructor_exists():
-    assert callable(TableM::Column.__init__)
+def test_tablem_column_constructor_exists():
+    assert callable(TableM_Column.__init__)
 
 
-def test_tablem::column_constructor_args():
-    sig = inspect.signature(TableM::Column.__init__)
+def test_tablem_column_constructor_args():
+    sig = inspect.signature(TableM_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_tablem::column_has_type():
-    assert hasattr(TableM::Column, "type")
+def test_tablem_column_has_name():
+    assert hasattr(TableM_Column, "name")
     descriptor = None
-    for klass in TableM::Column.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tablem::column_has_name():
-    assert hasattr(TableM::Column, "name")
-    descriptor = None
-    for klass in TableM::Column.__mro__:
+    for klass in TableM_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_tablem_column_has_type():
+    assert hasattr(TableM_Column, "type")
+    descriptor = None
+    for klass in TableM_Column.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tablem::table_is_not_abstract():
-    assert not inspect.isabstract(TableM::Table)
+
+def test_tablem_table_is_not_abstract():
+    assert not inspect.isabstract(TableM_Table)
 
 
-def test_tablem::table_constructor_exists():
-    assert callable(TableM::Table.__init__)
+def test_tablem_table_constructor_exists():
+    assert callable(TableM_Table.__init__)
 
 
-def test_tablem::table_constructor_args():
-    sig = inspect.signature(TableM::Table.__init__)
+def test_tablem_table_constructor_args():
+    sig = inspect.signature(TableM_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tablem::table_has_name():
-    assert hasattr(TableM::Table, "name")
+def test_tablem_table_has_name():
+    assert hasattr(TableM_Table, "name")
     descriptor = None
-    for klass in TableM::Table.__mro__:
+    for klass in TableM_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TableM::FKey_strategy = st.builds(
-    TableM::FKey,
+TableM_FKey_strategy = st.builds(
+    TableM_FKey,
 )
-TableM::Column_strategy = st.builds(
-    TableM::Column,
-    type=
+TableM_Column_strategy = st.builds(
+    TableM_Column,
+    name=
         safe_text,
+    type=
+        safe_text
+)
+TableM_Table_strategy = st.builds(
+    TableM_Table,
     name=
         safe_text
 )
-TableM::Table_strategy = st.builds(
-    TableM::Table,
-    name=
-        safe_text
-)
 
-@given(instance=TableM::FKey_strategy)
+@given(instance=TableM_FKey_strategy)
 @settings(max_examples=50)
-def test_tablem::fkey_instantiation(instance):
-    assert isinstance(instance, TableM::FKey)
+def test_tablem_fkey_instantiation(instance):
+    assert isinstance(instance, TableM_FKey)
 
-@given(instance=TableM::Column_strategy)
+@given(instance=TableM_Column_strategy)
 @settings(max_examples=50)
-def test_tablem::column_instantiation(instance):
-    assert isinstance(instance, TableM::Column)
-
-@given(instance=TableM::Column_strategy)
-def test_tablem::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_tablem_column_instantiation(instance):
+    assert isinstance(instance, TableM_Column)
 
 
-@given(instance=TableM::Column_strategy)
-def test_tablem::column_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=TableM::Column_strategy)
-def test_tablem::column_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=TableM::Column_strategy)
-def test_tablem::column_name_setter(instance):
+@given(instance=TableM_Column_strategy)
+def test_tablem_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TableM::Table_strategy)
+
+
+@given(instance=TableM_Column_strategy)
+def test_tablem_column_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=TableM_Table_strategy)
 @settings(max_examples=50)
-def test_tablem::table_instantiation(instance):
-    assert isinstance(instance, TableM::Table)
-
-@given(instance=TableM::Table_strategy)
-def test_tablem::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tablem_table_instantiation(instance):
+    assert isinstance(instance, TableM_Table)
 
 
-@given(instance=TableM::Table_strategy)
-def test_tablem::table_name_setter(instance):
+
+@given(instance=TableM_Table_strategy)
+def test_tablem_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Statement,
-    robot::ConditionalStatement,
-    robot::Condition,
-    Condition,
-    robot::TrueCondition,
-    robot::ObjectAheadCondition,
-    robot::NamedElement,
-    robot::Connection,
-    robot::Statement,
-    robot::PrintStatement,
+from python_code import (
+    robot_NamedElement,
+    robot_Connection,
+    robot_Statement,
     ConditionalStatement,
-    robot::UntilStatement,
-    robot::WhileStatement,
-    robot::IfStatement,
+    robot_IfStatement,
     ControlStatement,
-    robot::RightStatement,
-    robot::ForwardStatement,
-    robot::ExecuteStatement,
-    robot::ControlStatement,
-    robot::StatementBlock,
+    robot_RightStatement,
+    robot_ForwardStatement,
+    robot_StatementBlock,
     NamedElement,
-    robot::Scenario,
-    robot::Robot,
+    robot_Scenario,
+    robot_Robot,
+    robot_WhileStatement,
+    robot_UntilStatement,
+    Statement,
+    robot_ExecuteStatement,
+    robot_PrintStatement,
+    robot_ControlStatement,
+    robot_ConditionalStatement,
+    robot_Condition,
+    Condition,
+    robot_ObjectAheadCondition,
+    robot_TrueCondition,
 )
 
 # =============================================================================
@@ -37,107 +37,23 @@ from classes import (
 
 
 
-def test_statement_is_not_abstract():
-    assert not inspect.isabstract(Statement)
+def test_robot_namedelement_is_not_abstract():
+    assert not inspect.isabstract(robot_NamedElement)
 
 
-def test_statement_constructor_exists():
-    assert callable(Statement.__init__)
+def test_robot_namedelement_constructor_exists():
+    assert callable(robot_NamedElement.__init__)
 
 
-def test_statement_constructor_args():
-    sig = inspect.signature(Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::conditionalstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::ConditionalStatement)
-
-
-def test_robot::conditionalstatement_constructor_exists():
-    assert callable(robot::ConditionalStatement.__init__)
-
-
-def test_robot::conditionalstatement_constructor_args():
-    sig = inspect.signature(robot::ConditionalStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::condition_is_not_abstract():
-    assert not inspect.isabstract(robot::Condition)
-
-
-def test_robot::condition_constructor_exists():
-    assert callable(robot::Condition.__init__)
-
-
-def test_robot::condition_constructor_args():
-    sig = inspect.signature(robot::Condition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_condition_is_not_abstract():
-    assert not inspect.isabstract(Condition)
-
-
-def test_condition_constructor_exists():
-    assert callable(Condition.__init__)
-
-
-def test_condition_constructor_args():
-    sig = inspect.signature(Condition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::truecondition_is_not_abstract():
-    assert not inspect.isabstract(robot::TrueCondition)
-
-
-def test_robot::truecondition_constructor_exists():
-    assert callable(robot::TrueCondition.__init__)
-
-
-def test_robot::truecondition_constructor_args():
-    sig = inspect.signature(robot::TrueCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::objectaheadcondition_is_not_abstract():
-    assert not inspect.isabstract(robot::ObjectAheadCondition)
-
-
-def test_robot::objectaheadcondition_constructor_exists():
-    assert callable(robot::ObjectAheadCondition.__init__)
-
-
-def test_robot::objectaheadcondition_constructor_args():
-    sig = inspect.signature(robot::ObjectAheadCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::namedelement_is_not_abstract():
-    assert not inspect.isabstract(robot::NamedElement)
-
-
-def test_robot::namedelement_constructor_exists():
-    assert callable(robot::NamedElement.__init__)
-
-
-def test_robot::namedelement_constructor_args():
-    sig = inspect.signature(robot::NamedElement.__init__)
+def test_robot_namedelement_constructor_args():
+    sig = inspect.signature(robot_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_robot::namedelement_has_name():
-    assert hasattr(robot::NamedElement, "name")
+def test_robot_namedelement_has_name():
+    assert hasattr(robot_NamedElement, "name")
     descriptor = None
-    for klass in robot::NamedElement.__mro__:
+    for klass in robot_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -145,75 +61,51 @@ def test_robot::namedelement_has_name():
 
 
 
-def test_robot::connection_is_not_abstract():
-    assert not inspect.isabstract(robot::Connection)
+def test_robot_connection_is_not_abstract():
+    assert not inspect.isabstract(robot_Connection)
 
 
-def test_robot::connection_constructor_exists():
-    assert callable(robot::Connection.__init__)
+def test_robot_connection_constructor_exists():
+    assert callable(robot_Connection.__init__)
 
 
-def test_robot::connection_constructor_args():
-    sig = inspect.signature(robot::Connection.__init__)
+def test_robot_connection_constructor_args():
+    sig = inspect.signature(robot_Connection.__init__)
     params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
     assert "ip" in params, "Missing parameter 'ip'"
+    assert "port" in params, "Missing parameter 'port'"
 
-def test_robot::connection_has_port():
-    assert hasattr(robot::Connection, "port")
+def test_robot_connection_has_ip():
+    assert hasattr(robot_Connection, "ip")
     descriptor = None
-    for klass in robot::Connection.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::connection_has_ip():
-    assert hasattr(robot::Connection, "ip")
-    descriptor = None
-    for klass in robot::Connection.__mro__:
+    for klass in robot_Connection.__mro__:
         if "ip" in klass.__dict__:
             descriptor = klass.__dict__["ip"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_robot::statement_is_not_abstract():
-    assert not inspect.isabstract(robot::Statement)
-
-
-def test_robot::statement_constructor_exists():
-    assert callable(robot::Statement.__init__)
-
-
-def test_robot::statement_constructor_args():
-    sig = inspect.signature(robot::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::printstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::PrintStatement)
-
-
-def test_robot::printstatement_constructor_exists():
-    assert callable(robot::PrintStatement.__init__)
-
-
-def test_robot::printstatement_constructor_args():
-    sig = inspect.signature(robot::PrintStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_robot::printstatement_has_text():
-    assert hasattr(robot::PrintStatement, "text")
+def test_robot_connection_has_port():
+    assert hasattr(robot_Connection, "port")
     descriptor = None
-    for klass in robot::PrintStatement.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
+    for klass in robot_Connection.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_robot_statement_is_not_abstract():
+    assert not inspect.isabstract(robot_Statement)
+
+
+def test_robot_statement_constructor_exists():
+    assert callable(robot_Statement.__init__)
+
+
+def test_robot_statement_constructor_args():
+    sig = inspect.signature(robot_Statement.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -231,44 +123,16 @@ def test_conditionalstatement_constructor_args():
 
 
 
-def test_robot::untilstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::UntilStatement)
+def test_robot_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_IfStatement)
 
 
-def test_robot::untilstatement_constructor_exists():
-    assert callable(robot::UntilStatement.__init__)
+def test_robot_ifstatement_constructor_exists():
+    assert callable(robot_IfStatement.__init__)
 
 
-def test_robot::untilstatement_constructor_args():
-    sig = inspect.signature(robot::UntilStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(robot::WhileStatement)
-
-
-def test_robot::whilestatement_constructor_exists():
-    assert callable(robot::WhileStatement.__init__)
-
-
-def test_robot::whilestatement_constructor_args():
-    sig = inspect.signature(robot::WhileStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::IfStatement)
-
-
-def test_robot::ifstatement_constructor_exists():
-    assert callable(robot::IfStatement.__init__)
-
-
-def test_robot::ifstatement_constructor_args():
-    sig = inspect.signature(robot::IfStatement.__init__)
+def test_robot_ifstatement_constructor_args():
+    sig = inspect.signature(robot_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -287,82 +151,44 @@ def test_controlstatement_constructor_args():
 
 
 
-def test_robot::rightstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::RightStatement)
+def test_robot_rightstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_RightStatement)
 
 
-def test_robot::rightstatement_constructor_exists():
-    assert callable(robot::RightStatement.__init__)
+def test_robot_rightstatement_constructor_exists():
+    assert callable(robot_RightStatement.__init__)
 
 
-def test_robot::rightstatement_constructor_args():
-    sig = inspect.signature(robot::RightStatement.__init__)
+def test_robot_rightstatement_constructor_args():
+    sig = inspect.signature(robot_RightStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::forwardstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::ForwardStatement)
+def test_robot_forwardstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_ForwardStatement)
 
 
-def test_robot::forwardstatement_constructor_exists():
-    assert callable(robot::ForwardStatement.__init__)
+def test_robot_forwardstatement_constructor_exists():
+    assert callable(robot_ForwardStatement.__init__)
 
 
-def test_robot::forwardstatement_constructor_args():
-    sig = inspect.signature(robot::ForwardStatement.__init__)
+def test_robot_forwardstatement_constructor_args():
+    sig = inspect.signature(robot_ForwardStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::executestatement_is_not_abstract():
-    assert not inspect.isabstract(robot::ExecuteStatement)
+def test_robot_statementblock_is_not_abstract():
+    assert not inspect.isabstract(robot_StatementBlock)
 
 
-def test_robot::executestatement_constructor_exists():
-    assert callable(robot::ExecuteStatement.__init__)
+def test_robot_statementblock_constructor_exists():
+    assert callable(robot_StatementBlock.__init__)
 
 
-def test_robot::executestatement_constructor_args():
-    sig = inspect.signature(robot::ExecuteStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::controlstatement_is_not_abstract():
-    assert not inspect.isabstract(robot::ControlStatement)
-
-
-def test_robot::controlstatement_constructor_exists():
-    assert callable(robot::ControlStatement.__init__)
-
-
-def test_robot::controlstatement_constructor_args():
-    sig = inspect.signature(robot::ControlStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_robot::controlstatement_has_value():
-    assert hasattr(robot::ControlStatement, "value")
-    descriptor = None
-    for klass in robot::ControlStatement.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::statementblock_is_not_abstract():
-    assert not inspect.isabstract(robot::StatementBlock)
-
-
-def test_robot::statementblock_constructor_exists():
-    assert callable(robot::StatementBlock.__init__)
-
-
-def test_robot::statementblock_constructor_args():
-    sig = inspect.signature(robot::StatementBlock.__init__)
+def test_robot_statementblock_constructor_args():
+    sig = inspect.signature(robot_StatementBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -381,30 +207,204 @@ def test_namedelement_constructor_args():
 
 
 
-def test_robot::scenario_is_not_abstract():
-    assert not inspect.isabstract(robot::Scenario)
+def test_robot_scenario_is_not_abstract():
+    assert not inspect.isabstract(robot_Scenario)
 
 
-def test_robot::scenario_constructor_exists():
-    assert callable(robot::Scenario.__init__)
+def test_robot_scenario_constructor_exists():
+    assert callable(robot_Scenario.__init__)
 
 
-def test_robot::scenario_constructor_args():
-    sig = inspect.signature(robot::Scenario.__init__)
+def test_robot_scenario_constructor_args():
+    sig = inspect.signature(robot_Scenario.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::robot_is_not_abstract():
-    assert not inspect.isabstract(robot::Robot)
+def test_robot_robot_is_not_abstract():
+    assert not inspect.isabstract(robot_Robot)
 
 
-def test_robot::robot_constructor_exists():
-    assert callable(robot::Robot.__init__)
+def test_robot_robot_constructor_exists():
+    assert callable(robot_Robot.__init__)
 
 
-def test_robot::robot_constructor_args():
-    sig = inspect.signature(robot::Robot.__init__)
+def test_robot_robot_constructor_args():
+    sig = inspect.signature(robot_Robot.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(robot_WhileStatement)
+
+
+def test_robot_whilestatement_constructor_exists():
+    assert callable(robot_WhileStatement.__init__)
+
+
+def test_robot_whilestatement_constructor_args():
+    sig = inspect.signature(robot_WhileStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_untilstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_UntilStatement)
+
+
+def test_robot_untilstatement_constructor_exists():
+    assert callable(robot_UntilStatement.__init__)
+
+
+def test_robot_untilstatement_constructor_args():
+    sig = inspect.signature(robot_UntilStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statement_is_not_abstract():
+    assert not inspect.isabstract(Statement)
+
+
+def test_statement_constructor_exists():
+    assert callable(Statement.__init__)
+
+
+def test_statement_constructor_args():
+    sig = inspect.signature(Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_executestatement_is_not_abstract():
+    assert not inspect.isabstract(robot_ExecuteStatement)
+
+
+def test_robot_executestatement_constructor_exists():
+    assert callable(robot_ExecuteStatement.__init__)
+
+
+def test_robot_executestatement_constructor_args():
+    sig = inspect.signature(robot_ExecuteStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_printstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_PrintStatement)
+
+
+def test_robot_printstatement_constructor_exists():
+    assert callable(robot_PrintStatement.__init__)
+
+
+def test_robot_printstatement_constructor_args():
+    sig = inspect.signature(robot_PrintStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_robot_printstatement_has_text():
+    assert hasattr(robot_PrintStatement, "text")
+    descriptor = None
+    for klass in robot_PrintStatement.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_controlstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_ControlStatement)
+
+
+def test_robot_controlstatement_constructor_exists():
+    assert callable(robot_ControlStatement.__init__)
+
+
+def test_robot_controlstatement_constructor_args():
+    sig = inspect.signature(robot_ControlStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_robot_controlstatement_has_value():
+    assert hasattr(robot_ControlStatement, "value")
+    descriptor = None
+    for klass in robot_ControlStatement.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_conditionalstatement_is_not_abstract():
+    assert not inspect.isabstract(robot_ConditionalStatement)
+
+
+def test_robot_conditionalstatement_constructor_exists():
+    assert callable(robot_ConditionalStatement.__init__)
+
+
+def test_robot_conditionalstatement_constructor_args():
+    sig = inspect.signature(robot_ConditionalStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_condition_is_not_abstract():
+    assert not inspect.isabstract(robot_Condition)
+
+
+def test_robot_condition_constructor_exists():
+    assert callable(robot_Condition.__init__)
+
+
+def test_robot_condition_constructor_args():
+    sig = inspect.signature(robot_Condition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_condition_is_not_abstract():
+    assert not inspect.isabstract(Condition)
+
+
+def test_condition_constructor_exists():
+    assert callable(Condition.__init__)
+
+
+def test_condition_constructor_args():
+    sig = inspect.signature(Condition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_objectaheadcondition_is_not_abstract():
+    assert not inspect.isabstract(robot_ObjectAheadCondition)
+
+
+def test_robot_objectaheadcondition_constructor_exists():
+    assert callable(robot_ObjectAheadCondition.__init__)
+
+
+def test_robot_objectaheadcondition_constructor_args():
+    sig = inspect.signature(robot_ObjectAheadCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_truecondition_is_not_abstract():
+    assert not inspect.isabstract(robot_TrueCondition)
+
+
+def test_robot_truecondition_constructor_exists():
+    assert callable(robot_TrueCondition.__init__)
+
+
+def test_robot_truecondition_constructor_args():
+    sig = inspect.signature(robot_TrueCondition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -419,252 +419,237 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Statement_strategy = st.builds(
-    Statement,
-)
-robot::ConditionalStatement_strategy = st.builds(
-    robot::ConditionalStatement,
-)
-robot::Condition_strategy = st.builds(
-    robot::Condition,
-)
-Condition_strategy = st.builds(
-    Condition,
-)
-robot::TrueCondition_strategy = st.builds(
-    robot::TrueCondition,
-)
-robot::ObjectAheadCondition_strategy = st.builds(
-    robot::ObjectAheadCondition,
-)
-robot::NamedElement_strategy = st.builds(
-    robot::NamedElement,
+robot_NamedElement_strategy = st.builds(
+    robot_NamedElement,
     name=
         safe_text
 )
-robot::Connection_strategy = st.builds(
-    robot::Connection,
-    port=
-        st.integers(),
+robot_Connection_strategy = st.builds(
+    robot_Connection,
     ip=
-        safe_text
+        safe_text,
+    port=
+        st.integers()
 )
-robot::Statement_strategy = st.builds(
-    robot::Statement,
-)
-robot::PrintStatement_strategy = st.builds(
-    robot::PrintStatement,
-    text=
-        safe_text
+robot_Statement_strategy = st.builds(
+    robot_Statement,
 )
 ConditionalStatement_strategy = st.builds(
     ConditionalStatement,
 )
-robot::UntilStatement_strategy = st.builds(
-    robot::UntilStatement,
-)
-robot::WhileStatement_strategy = st.builds(
-    robot::WhileStatement,
-)
-robot::IfStatement_strategy = st.builds(
-    robot::IfStatement,
+robot_IfStatement_strategy = st.builds(
+    robot_IfStatement,
 )
 ControlStatement_strategy = st.builds(
     ControlStatement,
 )
-robot::RightStatement_strategy = st.builds(
-    robot::RightStatement,
+robot_RightStatement_strategy = st.builds(
+    robot_RightStatement,
 )
-robot::ForwardStatement_strategy = st.builds(
-    robot::ForwardStatement,
+robot_ForwardStatement_strategy = st.builds(
+    robot_ForwardStatement,
 )
-robot::ExecuteStatement_strategy = st.builds(
-    robot::ExecuteStatement,
-)
-robot::ControlStatement_strategy = st.builds(
-    robot::ControlStatement,
-    value=
-        st.integers()
-)
-robot::StatementBlock_strategy = st.builds(
-    robot::StatementBlock,
+robot_StatementBlock_strategy = st.builds(
+    robot_StatementBlock,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-robot::Scenario_strategy = st.builds(
-    robot::Scenario,
+robot_Scenario_strategy = st.builds(
+    robot_Scenario,
 )
-robot::Robot_strategy = st.builds(
-    robot::Robot,
+robot_Robot_strategy = st.builds(
+    robot_Robot,
+)
+robot_WhileStatement_strategy = st.builds(
+    robot_WhileStatement,
+)
+robot_UntilStatement_strategy = st.builds(
+    robot_UntilStatement,
+)
+Statement_strategy = st.builds(
+    Statement,
+)
+robot_ExecuteStatement_strategy = st.builds(
+    robot_ExecuteStatement,
+)
+robot_PrintStatement_strategy = st.builds(
+    robot_PrintStatement,
+    text=
+        safe_text
+)
+robot_ControlStatement_strategy = st.builds(
+    robot_ControlStatement,
+    value=
+        st.integers()
+)
+robot_ConditionalStatement_strategy = st.builds(
+    robot_ConditionalStatement,
+)
+robot_Condition_strategy = st.builds(
+    robot_Condition,
+)
+Condition_strategy = st.builds(
+    Condition,
+)
+robot_ObjectAheadCondition_strategy = st.builds(
+    robot_ObjectAheadCondition,
+)
+robot_TrueCondition_strategy = st.builds(
+    robot_TrueCondition,
 )
 
-@given(instance=Statement_strategy)
+@given(instance=robot_NamedElement_strategy)
 @settings(max_examples=50)
-def test_statement_instantiation(instance):
-    assert isinstance(instance, Statement)
-
-@given(instance=robot::ConditionalStatement_strategy)
-@settings(max_examples=50)
-def test_robot::conditionalstatement_instantiation(instance):
-    assert isinstance(instance, robot::ConditionalStatement)
-
-@given(instance=robot::Condition_strategy)
-@settings(max_examples=50)
-def test_robot::condition_instantiation(instance):
-    assert isinstance(instance, robot::Condition)
-
-@given(instance=Condition_strategy)
-@settings(max_examples=50)
-def test_condition_instantiation(instance):
-    assert isinstance(instance, Condition)
-
-@given(instance=robot::TrueCondition_strategy)
-@settings(max_examples=50)
-def test_robot::truecondition_instantiation(instance):
-    assert isinstance(instance, robot::TrueCondition)
-
-@given(instance=robot::ObjectAheadCondition_strategy)
-@settings(max_examples=50)
-def test_robot::objectaheadcondition_instantiation(instance):
-    assert isinstance(instance, robot::ObjectAheadCondition)
-
-@given(instance=robot::NamedElement_strategy)
-@settings(max_examples=50)
-def test_robot::namedelement_instantiation(instance):
-    assert isinstance(instance, robot::NamedElement)
-
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_robot_namedelement_instantiation(instance):
+    assert isinstance(instance, robot_NamedElement)
 
 
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_name_setter(instance):
+
+@given(instance=robot_NamedElement_strategy)
+def test_robot_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=robot::Connection_strategy)
+@given(instance=robot_Connection_strategy)
 @settings(max_examples=50)
-def test_robot::connection_instantiation(instance):
-    assert isinstance(instance, robot::Connection)
-
-@given(instance=robot::Connection_strategy)
-def test_robot::connection_port_type(instance):
-    assert isinstance(instance.port, int)
+def test_robot_connection_instantiation(instance):
+    assert isinstance(instance, robot_Connection)
 
 
-@given(instance=robot::Connection_strategy)
-def test_robot::connection_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
 
-@given(instance=robot::Connection_strategy)
-def test_robot::connection_ip_type(instance):
-    assert isinstance(instance.ip, str)
-
-
-@given(instance=robot::Connection_strategy)
-def test_robot::connection_ip_setter(instance):
+@given(instance=robot_Connection_strategy)
+def test_robot_connection_ip_setter(instance):
     original = instance.ip
     instance.ip = original
     assert instance.ip == original
 
-@given(instance=robot::Statement_strategy)
+
+
+@given(instance=robot_Connection_strategy)
+def test_robot_connection_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=robot_Statement_strategy)
 @settings(max_examples=50)
-def test_robot::statement_instantiation(instance):
-    assert isinstance(instance, robot::Statement)
-
-@given(instance=robot::PrintStatement_strategy)
-@settings(max_examples=50)
-def test_robot::printstatement_instantiation(instance):
-    assert isinstance(instance, robot::PrintStatement)
-
-@given(instance=robot::PrintStatement_strategy)
-def test_robot::printstatement_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=robot::PrintStatement_strategy)
-def test_robot::printstatement_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
+def test_robot_statement_instantiation(instance):
+    assert isinstance(instance, robot_Statement)
 
 @given(instance=ConditionalStatement_strategy)
 @settings(max_examples=50)
 def test_conditionalstatement_instantiation(instance):
     assert isinstance(instance, ConditionalStatement)
 
-@given(instance=robot::UntilStatement_strategy)
+@given(instance=robot_IfStatement_strategy)
 @settings(max_examples=50)
-def test_robot::untilstatement_instantiation(instance):
-    assert isinstance(instance, robot::UntilStatement)
-
-@given(instance=robot::WhileStatement_strategy)
-@settings(max_examples=50)
-def test_robot::whilestatement_instantiation(instance):
-    assert isinstance(instance, robot::WhileStatement)
-
-@given(instance=robot::IfStatement_strategy)
-@settings(max_examples=50)
-def test_robot::ifstatement_instantiation(instance):
-    assert isinstance(instance, robot::IfStatement)
+def test_robot_ifstatement_instantiation(instance):
+    assert isinstance(instance, robot_IfStatement)
 
 @given(instance=ControlStatement_strategy)
 @settings(max_examples=50)
 def test_controlstatement_instantiation(instance):
     assert isinstance(instance, ControlStatement)
 
-@given(instance=robot::RightStatement_strategy)
+@given(instance=robot_RightStatement_strategy)
 @settings(max_examples=50)
-def test_robot::rightstatement_instantiation(instance):
-    assert isinstance(instance, robot::RightStatement)
+def test_robot_rightstatement_instantiation(instance):
+    assert isinstance(instance, robot_RightStatement)
 
-@given(instance=robot::ForwardStatement_strategy)
+@given(instance=robot_ForwardStatement_strategy)
 @settings(max_examples=50)
-def test_robot::forwardstatement_instantiation(instance):
-    assert isinstance(instance, robot::ForwardStatement)
+def test_robot_forwardstatement_instantiation(instance):
+    assert isinstance(instance, robot_ForwardStatement)
 
-@given(instance=robot::ExecuteStatement_strategy)
+@given(instance=robot_StatementBlock_strategy)
 @settings(max_examples=50)
-def test_robot::executestatement_instantiation(instance):
-    assert isinstance(instance, robot::ExecuteStatement)
-
-@given(instance=robot::ControlStatement_strategy)
-@settings(max_examples=50)
-def test_robot::controlstatement_instantiation(instance):
-    assert isinstance(instance, robot::ControlStatement)
-
-@given(instance=robot::ControlStatement_strategy)
-def test_robot::controlstatement_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=robot::ControlStatement_strategy)
-def test_robot::controlstatement_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=robot::StatementBlock_strategy)
-@settings(max_examples=50)
-def test_robot::statementblock_instantiation(instance):
-    assert isinstance(instance, robot::StatementBlock)
+def test_robot_statementblock_instantiation(instance):
+    assert isinstance(instance, robot_StatementBlock)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=robot::Scenario_strategy)
+@given(instance=robot_Scenario_strategy)
 @settings(max_examples=50)
-def test_robot::scenario_instantiation(instance):
-    assert isinstance(instance, robot::Scenario)
+def test_robot_scenario_instantiation(instance):
+    assert isinstance(instance, robot_Scenario)
 
-@given(instance=robot::Robot_strategy)
+@given(instance=robot_Robot_strategy)
 @settings(max_examples=50)
-def test_robot::robot_instantiation(instance):
-    assert isinstance(instance, robot::Robot)
+def test_robot_robot_instantiation(instance):
+    assert isinstance(instance, robot_Robot)
+
+@given(instance=robot_WhileStatement_strategy)
+@settings(max_examples=50)
+def test_robot_whilestatement_instantiation(instance):
+    assert isinstance(instance, robot_WhileStatement)
+
+@given(instance=robot_UntilStatement_strategy)
+@settings(max_examples=50)
+def test_robot_untilstatement_instantiation(instance):
+    assert isinstance(instance, robot_UntilStatement)
+
+@given(instance=Statement_strategy)
+@settings(max_examples=50)
+def test_statement_instantiation(instance):
+    assert isinstance(instance, Statement)
+
+@given(instance=robot_ExecuteStatement_strategy)
+@settings(max_examples=50)
+def test_robot_executestatement_instantiation(instance):
+    assert isinstance(instance, robot_ExecuteStatement)
+
+@given(instance=robot_PrintStatement_strategy)
+@settings(max_examples=50)
+def test_robot_printstatement_instantiation(instance):
+    assert isinstance(instance, robot_PrintStatement)
+
+
+
+@given(instance=robot_PrintStatement_strategy)
+def test_robot_printstatement_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=robot_ControlStatement_strategy)
+@settings(max_examples=50)
+def test_robot_controlstatement_instantiation(instance):
+    assert isinstance(instance, robot_ControlStatement)
+
+
+
+@given(instance=robot_ControlStatement_strategy)
+def test_robot_controlstatement_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=robot_ConditionalStatement_strategy)
+@settings(max_examples=50)
+def test_robot_conditionalstatement_instantiation(instance):
+    assert isinstance(instance, robot_ConditionalStatement)
+
+@given(instance=robot_Condition_strategy)
+@settings(max_examples=50)
+def test_robot_condition_instantiation(instance):
+    assert isinstance(instance, robot_Condition)
+
+@given(instance=Condition_strategy)
+@settings(max_examples=50)
+def test_condition_instantiation(instance):
+    assert isinstance(instance, Condition)
+
+@given(instance=robot_ObjectAheadCondition_strategy)
+@settings(max_examples=50)
+def test_robot_objectaheadcondition_instantiation(instance):
+    assert isinstance(instance, robot_ObjectAheadCondition)
+
+@given(instance=robot_TrueCondition_strategy)
+@settings(max_examples=50)
+def test_robot_truecondition_instantiation(instance):
+    assert isinstance(instance, robot_TrueCondition)

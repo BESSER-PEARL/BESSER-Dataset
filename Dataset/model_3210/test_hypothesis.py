@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rm::VariableReference,
-    rm::MemoryCellReference,
-    rm::Memory,
-    rm::Device,
-    rm::ResourceModel,
+from python_code import (
+    rm_VariableReference,
+    rm_MemoryCellReference,
+    rm_Memory,
+    rm_Device,
+    rm_ResourceModel,
 )
 
 # =============================================================================
@@ -19,33 +19,33 @@ from classes import (
 
 
 
-def test_rm::variablereference_is_not_abstract():
-    assert not inspect.isabstract(rm::VariableReference)
+def test_rm_variablereference_is_not_abstract():
+    assert not inspect.isabstract(rm_VariableReference)
 
 
-def test_rm::variablereference_constructor_exists():
-    assert callable(rm::VariableReference.__init__)
+def test_rm_variablereference_constructor_exists():
+    assert callable(rm_VariableReference.__init__)
 
 
-def test_rm::variablereference_constructor_args():
-    sig = inspect.signature(rm::VariableReference.__init__)
+def test_rm_variablereference_constructor_args():
+    sig = inspect.signature(rm_VariableReference.__init__)
     params = list(sig.parameters.keys())
     assert "memoryCellIndex" in params, "Missing parameter 'memoryCellIndex'"
     assert "variable" in params, "Missing parameter 'variable'"
 
-def test_rm::variablereference_has_memoryCellIndex():
-    assert hasattr(rm::VariableReference, "memoryCellIndex")
+def test_rm_variablereference_has_memoryCellIndex():
+    assert hasattr(rm_VariableReference, "memoryCellIndex")
     descriptor = None
-    for klass in rm::VariableReference.__mro__:
+    for klass in rm_VariableReference.__mro__:
         if "memoryCellIndex" in klass.__dict__:
             descriptor = klass.__dict__["memoryCellIndex"]
             break
     assert isinstance(descriptor, property)
 
-def test_rm::variablereference_has_variable():
-    assert hasattr(rm::VariableReference, "variable")
+def test_rm_variablereference_has_variable():
+    assert hasattr(rm_VariableReference, "variable")
     descriptor = None
-    for klass in rm::VariableReference.__mro__:
+    for klass in rm_VariableReference.__mro__:
         if "variable" in klass.__dict__:
             descriptor = klass.__dict__["variable"]
             break
@@ -53,33 +53,33 @@ def test_rm::variablereference_has_variable():
 
 
 
-def test_rm::memorycellreference_is_not_abstract():
-    assert not inspect.isabstract(rm::MemoryCellReference)
+def test_rm_memorycellreference_is_not_abstract():
+    assert not inspect.isabstract(rm_MemoryCellReference)
 
 
-def test_rm::memorycellreference_constructor_exists():
-    assert callable(rm::MemoryCellReference.__init__)
+def test_rm_memorycellreference_constructor_exists():
+    assert callable(rm_MemoryCellReference.__init__)
 
 
-def test_rm::memorycellreference_constructor_args():
-    sig = inspect.signature(rm::MemoryCellReference.__init__)
+def test_rm_memorycellreference_constructor_args():
+    sig = inspect.signature(rm_MemoryCellReference.__init__)
     params = list(sig.parameters.keys())
     assert "endCellIndex" in params, "Missing parameter 'endCellIndex'"
     assert "startCellIndex" in params, "Missing parameter 'startCellIndex'"
 
-def test_rm::memorycellreference_has_endCellIndex():
-    assert hasattr(rm::MemoryCellReference, "endCellIndex")
+def test_rm_memorycellreference_has_endCellIndex():
+    assert hasattr(rm_MemoryCellReference, "endCellIndex")
     descriptor = None
-    for klass in rm::MemoryCellReference.__mro__:
+    for klass in rm_MemoryCellReference.__mro__:
         if "endCellIndex" in klass.__dict__:
             descriptor = klass.__dict__["endCellIndex"]
             break
     assert isinstance(descriptor, property)
 
-def test_rm::memorycellreference_has_startCellIndex():
-    assert hasattr(rm::MemoryCellReference, "startCellIndex")
+def test_rm_memorycellreference_has_startCellIndex():
+    assert hasattr(rm_MemoryCellReference, "startCellIndex")
     descriptor = None
-    for klass in rm::MemoryCellReference.__mro__:
+    for klass in rm_MemoryCellReference.__mro__:
         if "startCellIndex" in klass.__dict__:
             descriptor = klass.__dict__["startCellIndex"]
             break
@@ -87,23 +87,23 @@ def test_rm::memorycellreference_has_startCellIndex():
 
 
 
-def test_rm::memory_is_not_abstract():
-    assert not inspect.isabstract(rm::Memory)
+def test_rm_memory_is_not_abstract():
+    assert not inspect.isabstract(rm_Memory)
 
 
-def test_rm::memory_constructor_exists():
-    assert callable(rm::Memory.__init__)
+def test_rm_memory_constructor_exists():
+    assert callable(rm_Memory.__init__)
 
 
-def test_rm::memory_constructor_args():
-    sig = inspect.signature(rm::Memory.__init__)
+def test_rm_memory_constructor_args():
+    sig = inspect.signature(rm_Memory.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_rm::memory_has_size():
-    assert hasattr(rm::Memory, "size")
+def test_rm_memory_has_size():
+    assert hasattr(rm_Memory, "size")
     descriptor = None
-    for klass in rm::Memory.__mro__:
+    for klass in rm_Memory.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -111,23 +111,23 @@ def test_rm::memory_has_size():
 
 
 
-def test_rm::device_is_not_abstract():
-    assert not inspect.isabstract(rm::Device)
+def test_rm_device_is_not_abstract():
+    assert not inspect.isabstract(rm_Device)
 
 
-def test_rm::device_constructor_exists():
-    assert callable(rm::Device.__init__)
+def test_rm_device_constructor_exists():
+    assert callable(rm_Device.__init__)
 
 
-def test_rm::device_constructor_args():
-    sig = inspect.signature(rm::Device.__init__)
+def test_rm_device_constructor_args():
+    sig = inspect.signature(rm_Device.__init__)
     params = list(sig.parameters.keys())
     assert "cacheSize" in params, "Missing parameter 'cacheSize'"
 
-def test_rm::device_has_cacheSize():
-    assert hasattr(rm::Device, "cacheSize")
+def test_rm_device_has_cacheSize():
+    assert hasattr(rm_Device, "cacheSize")
     descriptor = None
-    for klass in rm::Device.__mro__:
+    for klass in rm_Device.__mro__:
         if "cacheSize" in klass.__dict__:
             descriptor = klass.__dict__["cacheSize"]
             break
@@ -135,16 +135,16 @@ def test_rm::device_has_cacheSize():
 
 
 
-def test_rm::resourcemodel_is_not_abstract():
-    assert not inspect.isabstract(rm::ResourceModel)
+def test_rm_resourcemodel_is_not_abstract():
+    assert not inspect.isabstract(rm_ResourceModel)
 
 
-def test_rm::resourcemodel_constructor_exists():
-    assert callable(rm::ResourceModel.__init__)
+def test_rm_resourcemodel_constructor_exists():
+    assert callable(rm_ResourceModel.__init__)
 
 
-def test_rm::resourcemodel_constructor_args():
-    sig = inspect.signature(rm::ResourceModel.__init__)
+def test_rm_resourcemodel_constructor_args():
+    sig = inspect.signature(rm_ResourceModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,121 +159,103 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rm::VariableReference_strategy = st.builds(
-    rm::VariableReference,
+rm_VariableReference_strategy = st.builds(
+    rm_VariableReference,
     memoryCellIndex=
         st.integers(),
     variable=
         safe_text
 )
-rm::MemoryCellReference_strategy = st.builds(
-    rm::MemoryCellReference,
+rm_MemoryCellReference_strategy = st.builds(
+    rm_MemoryCellReference,
     endCellIndex=
         st.integers(),
     startCellIndex=
         st.integers()
 )
-rm::Memory_strategy = st.builds(
-    rm::Memory,
+rm_Memory_strategy = st.builds(
+    rm_Memory,
     size=
         st.integers()
 )
-rm::Device_strategy = st.builds(
-    rm::Device,
+rm_Device_strategy = st.builds(
+    rm_Device,
     cacheSize=
         st.integers()
 )
-rm::ResourceModel_strategy = st.builds(
-    rm::ResourceModel,
+rm_ResourceModel_strategy = st.builds(
+    rm_ResourceModel,
 )
 
-@given(instance=rm::VariableReference_strategy)
+@given(instance=rm_VariableReference_strategy)
 @settings(max_examples=50)
-def test_rm::variablereference_instantiation(instance):
-    assert isinstance(instance, rm::VariableReference)
-
-@given(instance=rm::VariableReference_strategy)
-def test_rm::variablereference_memoryCellIndex_type(instance):
-    assert isinstance(instance.memoryCellIndex, int)
+def test_rm_variablereference_instantiation(instance):
+    assert isinstance(instance, rm_VariableReference)
 
 
-@given(instance=rm::VariableReference_strategy)
-def test_rm::variablereference_memoryCellIndex_setter(instance):
+
+@given(instance=rm_VariableReference_strategy)
+def test_rm_variablereference_memoryCellIndex_setter(instance):
     original = instance.memoryCellIndex
     instance.memoryCellIndex = original
     assert instance.memoryCellIndex == original
 
-@given(instance=rm::VariableReference_strategy)
-def test_rm::variablereference_variable_type(instance):
-    assert isinstance(instance.variable, str)
 
 
-@given(instance=rm::VariableReference_strategy)
-def test_rm::variablereference_variable_setter(instance):
+@given(instance=rm_VariableReference_strategy)
+def test_rm_variablereference_variable_setter(instance):
     original = instance.variable
     instance.variable = original
     assert instance.variable == original
 
-@given(instance=rm::MemoryCellReference_strategy)
+@given(instance=rm_MemoryCellReference_strategy)
 @settings(max_examples=50)
-def test_rm::memorycellreference_instantiation(instance):
-    assert isinstance(instance, rm::MemoryCellReference)
-
-@given(instance=rm::MemoryCellReference_strategy)
-def test_rm::memorycellreference_endCellIndex_type(instance):
-    assert isinstance(instance.endCellIndex, int)
+def test_rm_memorycellreference_instantiation(instance):
+    assert isinstance(instance, rm_MemoryCellReference)
 
 
-@given(instance=rm::MemoryCellReference_strategy)
-def test_rm::memorycellreference_endCellIndex_setter(instance):
+
+@given(instance=rm_MemoryCellReference_strategy)
+def test_rm_memorycellreference_endCellIndex_setter(instance):
     original = instance.endCellIndex
     instance.endCellIndex = original
     assert instance.endCellIndex == original
 
-@given(instance=rm::MemoryCellReference_strategy)
-def test_rm::memorycellreference_startCellIndex_type(instance):
-    assert isinstance(instance.startCellIndex, int)
 
 
-@given(instance=rm::MemoryCellReference_strategy)
-def test_rm::memorycellreference_startCellIndex_setter(instance):
+@given(instance=rm_MemoryCellReference_strategy)
+def test_rm_memorycellreference_startCellIndex_setter(instance):
     original = instance.startCellIndex
     instance.startCellIndex = original
     assert instance.startCellIndex == original
 
-@given(instance=rm::Memory_strategy)
+@given(instance=rm_Memory_strategy)
 @settings(max_examples=50)
-def test_rm::memory_instantiation(instance):
-    assert isinstance(instance, rm::Memory)
-
-@given(instance=rm::Memory_strategy)
-def test_rm::memory_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_rm_memory_instantiation(instance):
+    assert isinstance(instance, rm_Memory)
 
 
-@given(instance=rm::Memory_strategy)
-def test_rm::memory_size_setter(instance):
+
+@given(instance=rm_Memory_strategy)
+def test_rm_memory_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=rm::Device_strategy)
+@given(instance=rm_Device_strategy)
 @settings(max_examples=50)
-def test_rm::device_instantiation(instance):
-    assert isinstance(instance, rm::Device)
-
-@given(instance=rm::Device_strategy)
-def test_rm::device_cacheSize_type(instance):
-    assert isinstance(instance.cacheSize, int)
+def test_rm_device_instantiation(instance):
+    assert isinstance(instance, rm_Device)
 
 
-@given(instance=rm::Device_strategy)
-def test_rm::device_cacheSize_setter(instance):
+
+@given(instance=rm_Device_strategy)
+def test_rm_device_cacheSize_setter(instance):
     original = instance.cacheSize
     instance.cacheSize = original
     assert instance.cacheSize == original
 
-@given(instance=rm::ResourceModel_strategy)
+@given(instance=rm_ResourceModel_strategy)
 @settings(max_examples=50)
-def test_rm::resourcemodel_instantiation(instance):
-    assert isinstance(instance, rm::ResourceModel)
+def test_rm_resourcemodel_instantiation(instance):
+    assert isinstance(instance, rm_ResourceModel)

@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractConection,
-    FSmachine::ReasonConnection,
+    FSmachine_ReasonConnection,
     AbstractObject,
-    FSmachine::State,
-    FSmachine::TimeConnection,
-    FSmachine::AbstractObject,
-    FSmachine::Root,
-    FSmachine::AbstractConection,
+    FSmachine_State,
+    FSmachine_TimeConnection,
+    FSmachine_AbstractObject,
+    FSmachine_Root,
+    FSmachine_AbstractConection,
 )
 
 # =============================================================================
@@ -36,23 +36,23 @@ def test_abstractconection_constructor_args():
 
 
 
-def test_fsmachine::reasonconnection_is_not_abstract():
-    assert not inspect.isabstract(FSmachine::ReasonConnection)
+def test_fsmachine_reasonconnection_is_not_abstract():
+    assert not inspect.isabstract(FSmachine_ReasonConnection)
 
 
-def test_fsmachine::reasonconnection_constructor_exists():
-    assert callable(FSmachine::ReasonConnection.__init__)
+def test_fsmachine_reasonconnection_constructor_exists():
+    assert callable(FSmachine_ReasonConnection.__init__)
 
 
-def test_fsmachine::reasonconnection_constructor_args():
-    sig = inspect.signature(FSmachine::ReasonConnection.__init__)
+def test_fsmachine_reasonconnection_constructor_args():
+    sig = inspect.signature(FSmachine_ReasonConnection.__init__)
     params = list(sig.parameters.keys())
     assert "reason" in params, "Missing parameter 'reason'"
 
-def test_fsmachine::reasonconnection_has_reason():
-    assert hasattr(FSmachine::ReasonConnection, "reason")
+def test_fsmachine_reasonconnection_has_reason():
+    assert hasattr(FSmachine_ReasonConnection, "reason")
     descriptor = None
-    for klass in FSmachine::ReasonConnection.__mro__:
+    for klass in FSmachine_ReasonConnection.__mro__:
         if "reason" in klass.__dict__:
             descriptor = klass.__dict__["reason"]
             break
@@ -74,57 +74,57 @@ def test_abstractobject_constructor_args():
 
 
 
-def test_fsmachine::state_is_not_abstract():
-    assert not inspect.isabstract(FSmachine::State)
+def test_fsmachine_state_is_not_abstract():
+    assert not inspect.isabstract(FSmachine_State)
 
 
-def test_fsmachine::state_constructor_exists():
-    assert callable(FSmachine::State.__init__)
+def test_fsmachine_state_constructor_exists():
+    assert callable(FSmachine_State.__init__)
 
 
-def test_fsmachine::state_constructor_args():
-    sig = inspect.signature(FSmachine::State.__init__)
+def test_fsmachine_state_constructor_args():
+    sig = inspect.signature(FSmachine_State.__init__)
     params = list(sig.parameters.keys())
-    assert "data" in params, "Missing parameter 'data'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "data" in params, "Missing parameter 'data'"
 
-def test_fsmachine::state_has_data():
-    assert hasattr(FSmachine::State, "data")
+def test_fsmachine_state_has_description():
+    assert hasattr(FSmachine_State, "description")
     descriptor = None
-    for klass in FSmachine::State.__mro__:
-        if "data" in klass.__dict__:
-            descriptor = klass.__dict__["data"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fsmachine::state_has_description():
-    assert hasattr(FSmachine::State, "description")
-    descriptor = None
-    for klass in FSmachine::State.__mro__:
+    for klass in FSmachine_State.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
+def test_fsmachine_state_has_data():
+    assert hasattr(FSmachine_State, "data")
+    descriptor = None
+    for klass in FSmachine_State.__mro__:
+        if "data" in klass.__dict__:
+            descriptor = klass.__dict__["data"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fsmachine::timeconnection_is_not_abstract():
-    assert not inspect.isabstract(FSmachine::TimeConnection)
+
+def test_fsmachine_timeconnection_is_not_abstract():
+    assert not inspect.isabstract(FSmachine_TimeConnection)
 
 
-def test_fsmachine::timeconnection_constructor_exists():
-    assert callable(FSmachine::TimeConnection.__init__)
+def test_fsmachine_timeconnection_constructor_exists():
+    assert callable(FSmachine_TimeConnection.__init__)
 
 
-def test_fsmachine::timeconnection_constructor_args():
-    sig = inspect.signature(FSmachine::TimeConnection.__init__)
+def test_fsmachine_timeconnection_constructor_args():
+    sig = inspect.signature(FSmachine_TimeConnection.__init__)
     params = list(sig.parameters.keys())
     assert "when" in params, "Missing parameter 'when'"
 
-def test_fsmachine::timeconnection_has_when():
-    assert hasattr(FSmachine::TimeConnection, "when")
+def test_fsmachine_timeconnection_has_when():
+    assert hasattr(FSmachine_TimeConnection, "when")
     descriptor = None
-    for klass in FSmachine::TimeConnection.__mro__:
+    for klass in FSmachine_TimeConnection.__mro__:
         if "when" in klass.__dict__:
             descriptor = klass.__dict__["when"]
             break
@@ -132,57 +132,57 @@ def test_fsmachine::timeconnection_has_when():
 
 
 
-def test_fsmachine::abstractobject_is_not_abstract():
-    assert not inspect.isabstract(FSmachine::AbstractObject)
+def test_fsmachine_abstractobject_is_not_abstract():
+    assert not inspect.isabstract(FSmachine_AbstractObject)
 
 
-def test_fsmachine::abstractobject_constructor_exists():
-    assert callable(FSmachine::AbstractObject.__init__)
+def test_fsmachine_abstractobject_constructor_exists():
+    assert callable(FSmachine_AbstractObject.__init__)
 
 
-def test_fsmachine::abstractobject_constructor_args():
-    sig = inspect.signature(FSmachine::AbstractObject.__init__)
+def test_fsmachine_abstractobject_constructor_args():
+    sig = inspect.signature(FSmachine_AbstractObject.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "active" in params, "Missing parameter 'active'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_fsmachine::abstractobject_has_name():
-    assert hasattr(FSmachine::AbstractObject, "name")
+def test_fsmachine_abstractobject_has_active():
+    assert hasattr(FSmachine_AbstractObject, "active")
     descriptor = None
-    for klass in FSmachine::AbstractObject.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fsmachine::abstractobject_has_active():
-    assert hasattr(FSmachine::AbstractObject, "active")
-    descriptor = None
-    for klass in FSmachine::AbstractObject.__mro__:
+    for klass in FSmachine_AbstractObject.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
     assert isinstance(descriptor, property)
 
+def test_fsmachine_abstractobject_has_name():
+    assert hasattr(FSmachine_AbstractObject, "name")
+    descriptor = None
+    for klass in FSmachine_AbstractObject.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fsmachine::root_is_not_abstract():
-    assert not inspect.isabstract(FSmachine::Root)
+
+def test_fsmachine_root_is_not_abstract():
+    assert not inspect.isabstract(FSmachine_Root)
 
 
-def test_fsmachine::root_constructor_exists():
-    assert callable(FSmachine::Root.__init__)
+def test_fsmachine_root_constructor_exists():
+    assert callable(FSmachine_Root.__init__)
 
 
-def test_fsmachine::root_constructor_args():
-    sig = inspect.signature(FSmachine::Root.__init__)
+def test_fsmachine_root_constructor_args():
+    sig = inspect.signature(FSmachine_Root.__init__)
     params = list(sig.parameters.keys())
     assert "FSmachineName" in params, "Missing parameter 'FSmachineName'"
 
-def test_fsmachine::root_has_FSmachineName():
-    assert hasattr(FSmachine::Root, "FSmachineName")
+def test_fsmachine_root_has_FSmachineName():
+    assert hasattr(FSmachine_Root, "FSmachineName")
     descriptor = None
-    for klass in FSmachine::Root.__mro__:
+    for klass in FSmachine_Root.__mro__:
         if "FSmachineName" in klass.__dict__:
             descriptor = klass.__dict__["FSmachineName"]
             break
@@ -190,23 +190,23 @@ def test_fsmachine::root_has_FSmachineName():
 
 
 
-def test_fsmachine::abstractconection_is_not_abstract():
-    assert not inspect.isabstract(FSmachine::AbstractConection)
+def test_fsmachine_abstractconection_is_not_abstract():
+    assert not inspect.isabstract(FSmachine_AbstractConection)
 
 
-def test_fsmachine::abstractconection_constructor_exists():
-    assert callable(FSmachine::AbstractConection.__init__)
+def test_fsmachine_abstractconection_constructor_exists():
+    assert callable(FSmachine_AbstractConection.__init__)
 
 
-def test_fsmachine::abstractconection_constructor_args():
-    sig = inspect.signature(FSmachine::AbstractConection.__init__)
+def test_fsmachine_abstractconection_constructor_args():
+    sig = inspect.signature(FSmachine_AbstractConection.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsmachine::abstractconection_has_name():
-    assert hasattr(FSmachine::AbstractConection, "name")
+def test_fsmachine_abstractconection_has_name():
+    assert hasattr(FSmachine_AbstractConection, "name")
     descriptor = None
-    for klass in FSmachine::AbstractConection.__mro__:
+    for klass in FSmachine_AbstractConection.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -227,40 +227,40 @@ safe_text = st.text(
 AbstractConection_strategy = st.builds(
     AbstractConection,
 )
-FSmachine::ReasonConnection_strategy = st.builds(
-    FSmachine::ReasonConnection,
+FSmachine_ReasonConnection_strategy = st.builds(
+    FSmachine_ReasonConnection,
     reason=
         safe_text
 )
 AbstractObject_strategy = st.builds(
     AbstractObject,
 )
-FSmachine::State_strategy = st.builds(
-    FSmachine::State,
-    data=
-        safe_text,
+FSmachine_State_strategy = st.builds(
+    FSmachine_State,
     description=
+        safe_text,
+    data=
         safe_text
 )
-FSmachine::TimeConnection_strategy = st.builds(
-    FSmachine::TimeConnection,
+FSmachine_TimeConnection_strategy = st.builds(
+    FSmachine_TimeConnection,
     when=
         safe_text
 )
-FSmachine::AbstractObject_strategy = st.builds(
-    FSmachine::AbstractObject,
-    name=
-        safe_text,
+FSmachine_AbstractObject_strategy = st.builds(
+    FSmachine_AbstractObject,
     active=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
-FSmachine::Root_strategy = st.builds(
-    FSmachine::Root,
+FSmachine_Root_strategy = st.builds(
+    FSmachine_Root,
     FSmachineName=
         safe_text
 )
-FSmachine::AbstractConection_strategy = st.builds(
-    FSmachine::AbstractConection,
+FSmachine_AbstractConection_strategy = st.builds(
+    FSmachine_AbstractConection,
     name=
         safe_text
 )
@@ -270,18 +270,15 @@ FSmachine::AbstractConection_strategy = st.builds(
 def test_abstractconection_instantiation(instance):
     assert isinstance(instance, AbstractConection)
 
-@given(instance=FSmachine::ReasonConnection_strategy)
+@given(instance=FSmachine_ReasonConnection_strategy)
 @settings(max_examples=50)
-def test_fsmachine::reasonconnection_instantiation(instance):
-    assert isinstance(instance, FSmachine::ReasonConnection)
-
-@given(instance=FSmachine::ReasonConnection_strategy)
-def test_fsmachine::reasonconnection_reason_type(instance):
-    assert isinstance(instance.reason, str)
+def test_fsmachine_reasonconnection_instantiation(instance):
+    assert isinstance(instance, FSmachine_ReasonConnection)
 
 
-@given(instance=FSmachine::ReasonConnection_strategy)
-def test_fsmachine::reasonconnection_reason_setter(instance):
+
+@given(instance=FSmachine_ReasonConnection_strategy)
+def test_fsmachine_reasonconnection_reason_setter(instance):
     original = instance.reason
     instance.reason = original
     assert instance.reason == original
@@ -291,75 +288,60 @@ def test_fsmachine::reasonconnection_reason_setter(instance):
 def test_abstractobject_instantiation(instance):
     assert isinstance(instance, AbstractObject)
 
-@given(instance=FSmachine::State_strategy)
+@given(instance=FSmachine_State_strategy)
 @settings(max_examples=50)
-def test_fsmachine::state_instantiation(instance):
-    assert isinstance(instance, FSmachine::State)
-
-@given(instance=FSmachine::State_strategy)
-def test_fsmachine::state_data_type(instance):
-    assert isinstance(instance.data, str)
+def test_fsmachine_state_instantiation(instance):
+    assert isinstance(instance, FSmachine_State)
 
 
-@given(instance=FSmachine::State_strategy)
-def test_fsmachine::state_data_setter(instance):
-    original = instance.data
-    instance.data = original
-    assert instance.data == original
 
-@given(instance=FSmachine::State_strategy)
-def test_fsmachine::state_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=FSmachine::State_strategy)
-def test_fsmachine::state_description_setter(instance):
+@given(instance=FSmachine_State_strategy)
+def test_fsmachine_state_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=FSmachine::TimeConnection_strategy)
+
+
+@given(instance=FSmachine_State_strategy)
+def test_fsmachine_state_data_setter(instance):
+    original = instance.data
+    instance.data = original
+    assert instance.data == original
+
+@given(instance=FSmachine_TimeConnection_strategy)
 @settings(max_examples=50)
-def test_fsmachine::timeconnection_instantiation(instance):
-    assert isinstance(instance, FSmachine::TimeConnection)
-
-@given(instance=FSmachine::TimeConnection_strategy)
-def test_fsmachine::timeconnection_when_type(instance):
-    assert isinstance(instance.when, str)
+def test_fsmachine_timeconnection_instantiation(instance):
+    assert isinstance(instance, FSmachine_TimeConnection)
 
 
-@given(instance=FSmachine::TimeConnection_strategy)
-def test_fsmachine::timeconnection_when_setter(instance):
+
+@given(instance=FSmachine_TimeConnection_strategy)
+def test_fsmachine_timeconnection_when_setter(instance):
     original = instance.when
     instance.when = original
     assert instance.when == original
 
-@given(instance=FSmachine::AbstractObject_strategy)
+@given(instance=FSmachine_AbstractObject_strategy)
 @settings(max_examples=50)
-def test_fsmachine::abstractobject_instantiation(instance):
-    assert isinstance(instance, FSmachine::AbstractObject)
-
-@given(instance=FSmachine::AbstractObject_strategy)
-def test_fsmachine::abstractobject_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsmachine_abstractobject_instantiation(instance):
+    assert isinstance(instance, FSmachine_AbstractObject)
 
 
-@given(instance=FSmachine::AbstractObject_strategy)
-def test_fsmachine::abstractobject_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=FSmachine::AbstractObject_strategy)
-def test_fsmachine::abstractobject_active_type(instance):
-    assert isinstance(instance.active, bool)
-
-
-@given(instance=FSmachine::AbstractObject_strategy)
-def test_fsmachine::abstractobject_active_setter(instance):
+@given(instance=FSmachine_AbstractObject_strategy)
+def test_fsmachine_abstractobject_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
+
+
+
+@given(instance=FSmachine_AbstractObject_strategy)
+def test_fsmachine_abstractobject_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -367,9 +349,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FSmachine::AbstractObject_strategy)
+@given(instance=FSmachine_AbstractObject_strategy)
 @settings(max_examples=30)
-def test_fsmachine::abstractobject_makemeactive_changes_state(instance):
+def test_fsmachine_abstractobject_makemeactive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -381,14 +363,14 @@ def test_fsmachine::abstractobject_makemeactive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makeMeActive' in FSmachine::AbstractObject is empty"
+        assert has_statements, f"Function 'makeMeActive' in FSmachine_AbstractObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makeMeActive' in FSmachine::AbstractObject did not change state; check implementation")
+            warnings.warn(f"Operation 'makeMeActive' in FSmachine_AbstractObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makeMeActive' in FSmachine::AbstractObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'makeMeActive' in FSmachine_AbstractObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -396,9 +378,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=FSmachine::AbstractObject_strategy)
+@given(instance=FSmachine_AbstractObject_strategy)
 @settings(max_examples=30)
-def test_fsmachine::abstractobject_checkstatussen_changes_state(instance):
+def test_fsmachine_abstractobject_checkstatussen_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -410,43 +392,37 @@ def test_fsmachine::abstractobject_checkstatussen_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkStatussen' in FSmachine::AbstractObject is empty"
+        assert has_statements, f"Function 'checkStatussen' in FSmachine_AbstractObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkStatussen' in FSmachine::AbstractObject did not change state; check implementation")
+            warnings.warn(f"Operation 'checkStatussen' in FSmachine_AbstractObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkStatussen' in FSmachine::AbstractObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkStatussen' in FSmachine_AbstractObject is not implemented or raised an error")
 
-@given(instance=FSmachine::Root_strategy)
+@given(instance=FSmachine_Root_strategy)
 @settings(max_examples=50)
-def test_fsmachine::root_instantiation(instance):
-    assert isinstance(instance, FSmachine::Root)
-
-@given(instance=FSmachine::Root_strategy)
-def test_fsmachine::root_FSmachineName_type(instance):
-    assert isinstance(instance.FSmachineName, str)
+def test_fsmachine_root_instantiation(instance):
+    assert isinstance(instance, FSmachine_Root)
 
 
-@given(instance=FSmachine::Root_strategy)
-def test_fsmachine::root_FSmachineName_setter(instance):
+
+@given(instance=FSmachine_Root_strategy)
+def test_fsmachine_root_FSmachineName_setter(instance):
     original = instance.FSmachineName
     instance.FSmachineName = original
     assert instance.FSmachineName == original
 
-@given(instance=FSmachine::AbstractConection_strategy)
+@given(instance=FSmachine_AbstractConection_strategy)
 @settings(max_examples=50)
-def test_fsmachine::abstractconection_instantiation(instance):
-    assert isinstance(instance, FSmachine::AbstractConection)
-
-@given(instance=FSmachine::AbstractConection_strategy)
-def test_fsmachine::abstractconection_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsmachine_abstractconection_instantiation(instance):
+    assert isinstance(instance, FSmachine_AbstractConection)
 
 
-@given(instance=FSmachine::AbstractConection_strategy)
-def test_fsmachine::abstractconection_name_setter(instance):
+
+@given(instance=FSmachine_AbstractConection_strategy)
+def test_fsmachine_abstractconection_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,54 +3,54 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statechartexpressions::PrimaryExpression,
-    statechartexpressions::MultiplicativeExpression,
-    statechartexpressions::UnaryExpression,
-    statechartexpressions::AdditiveExpression,
-    statechartexpressions::EqualityExpression,
-    statechartexpressions::ShiftExpression,
-    statechartexpressions::RelationalExpression,
-    statechartexpressions::BitwiseXorExpression,
-    statechartexpressions::BooleanAndExpression,
-    statechartexpressions::BitwiseAndExpression,
-    statechartexpressions::BitwiseOrExpression,
-    statechartexpressions::Procedure,
-    statechartexpressions::ConditionalExpression,
-    statechartexpressions::Variable,
+from python_code import (
+    statechartexpressions_PrimaryExpression,
+    statechartexpressions_MultiplicativeExpression,
+    statechartexpressions_UnaryExpression,
+    statechartexpressions_AdditiveExpression,
+    statechartexpressions_EqualityExpression,
+    statechartexpressions_ShiftExpression,
+    statechartexpressions_RelationalExpression,
+    statechartexpressions_BitwiseXorExpression,
+    statechartexpressions_BooleanAndExpression,
+    statechartexpressions_BitwiseAndExpression,
+    statechartexpressions_BitwiseOrExpression,
+    statechartexpressions_Procedure,
+    statechartexpressions_ConditionalExpression,
+    statechartexpressions_Variable,
     PrimaryExpression,
-    statechartexpressions::NestedExpression,
-    statechartexpressions::LiteralValue,
+    statechartexpressions_NestedExpression,
+    statechartexpressions_LiteralValue,
     TimeExpression,
-    statechartexpressions::TimeConstant,
+    statechartexpressions_TimeConstant,
     Statement,
-    statechartexpressions::EventRaising,
-    statechartexpressions::ProcedureCall,
-    statechartexpressions::VariableAssignment,
-    statechartexpressions::Event,
-    statechartexpressions::Statement,
-    statechartexpressions::VariableReference,
-    statechartexpressions::TimeExpression,
+    statechartexpressions_EventRaising,
+    statechartexpressions_ProcedureCall,
+    statechartexpressions_VariableAssignment,
+    statechartexpressions_Event,
+    statechartexpressions_Statement,
+    statechartexpressions_VariableReference,
+    statechartexpressions_TimeExpression,
     Event,
-    statechartexpressions::TimeEvent,
-    statechartexpressions::SignalEvent,
-    statechartexpressions::BooleanOrExpression,
-    statechartexpressions::Trigger,
+    statechartexpressions_TimeEvent,
+    statechartexpressions_SignalEvent,
+    statechartexpressions_BooleanOrExpression,
+    statechartexpressions_Trigger,
     Expression,
-    statechartexpressions::ActionExpression,
-    statechartexpressions::GuardExpression,
-    statechartexpressions::TriggerExpression,
-    statechartexpressions::Expression,
-    AssignmentOperator,
-    UnaryOperator,
+    statechartexpressions_GuardExpression,
+    statechartexpressions_ActionExpression,
+    statechartexpressions_TriggerExpression,
+    statechartexpressions_Expression,
     TimeUnit,
-    ShiftOperator,
     MultiplicativeOperator,
     AdditiveOperator,
-    EqualityOperator,
+    UnaryOperator,
+    ShiftOperator,
     RelationalOperator,
+    EqualityOperator,
+    AssignmentOperator,
 )
 
 # =============================================================================
@@ -59,37 +59,37 @@ from classes import (
 
 
 
-def test_statechartexpressions::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::PrimaryExpression)
+def test_statechartexpressions_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_PrimaryExpression)
 
 
-def test_statechartexpressions::primaryexpression_constructor_exists():
-    assert callable(statechartexpressions::PrimaryExpression.__init__)
+def test_statechartexpressions_primaryexpression_constructor_exists():
+    assert callable(statechartexpressions_PrimaryExpression.__init__)
 
 
-def test_statechartexpressions::primaryexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::PrimaryExpression.__init__)
+def test_statechartexpressions_primaryexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_PrimaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::MultiplicativeExpression)
+def test_statechartexpressions_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_MultiplicativeExpression)
 
 
-def test_statechartexpressions::multiplicativeexpression_constructor_exists():
-    assert callable(statechartexpressions::MultiplicativeExpression.__init__)
+def test_statechartexpressions_multiplicativeexpression_constructor_exists():
+    assert callable(statechartexpressions_MultiplicativeExpression.__init__)
 
 
-def test_statechartexpressions::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::MultiplicativeExpression.__init__)
+def test_statechartexpressions_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_MultiplicativeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::multiplicativeexpression_has_operator():
-    assert hasattr(statechartexpressions::MultiplicativeExpression, "operator")
+def test_statechartexpressions_multiplicativeexpression_has_operator():
+    assert hasattr(statechartexpressions_MultiplicativeExpression, "operator")
     descriptor = None
-    for klass in statechartexpressions::MultiplicativeExpression.__mro__:
+    for klass in statechartexpressions_MultiplicativeExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -97,23 +97,23 @@ def test_statechartexpressions::multiplicativeexpression_has_operator():
 
 
 
-def test_statechartexpressions::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::UnaryExpression)
+def test_statechartexpressions_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_UnaryExpression)
 
 
-def test_statechartexpressions::unaryexpression_constructor_exists():
-    assert callable(statechartexpressions::UnaryExpression.__init__)
+def test_statechartexpressions_unaryexpression_constructor_exists():
+    assert callable(statechartexpressions_UnaryExpression.__init__)
 
 
-def test_statechartexpressions::unaryexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::UnaryExpression.__init__)
+def test_statechartexpressions_unaryexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::unaryexpression_has_operator():
-    assert hasattr(statechartexpressions::UnaryExpression, "operator")
+def test_statechartexpressions_unaryexpression_has_operator():
+    assert hasattr(statechartexpressions_UnaryExpression, "operator")
     descriptor = None
-    for klass in statechartexpressions::UnaryExpression.__mro__:
+    for klass in statechartexpressions_UnaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -121,23 +121,23 @@ def test_statechartexpressions::unaryexpression_has_operator():
 
 
 
-def test_statechartexpressions::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::AdditiveExpression)
+def test_statechartexpressions_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_AdditiveExpression)
 
 
-def test_statechartexpressions::additiveexpression_constructor_exists():
-    assert callable(statechartexpressions::AdditiveExpression.__init__)
+def test_statechartexpressions_additiveexpression_constructor_exists():
+    assert callable(statechartexpressions_AdditiveExpression.__init__)
 
 
-def test_statechartexpressions::additiveexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::AdditiveExpression.__init__)
+def test_statechartexpressions_additiveexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_AdditiveExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::additiveexpression_has_operator():
-    assert hasattr(statechartexpressions::AdditiveExpression, "operator")
+def test_statechartexpressions_additiveexpression_has_operator():
+    assert hasattr(statechartexpressions_AdditiveExpression, "operator")
     descriptor = None
-    for klass in statechartexpressions::AdditiveExpression.__mro__:
+    for klass in statechartexpressions_AdditiveExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -145,23 +145,23 @@ def test_statechartexpressions::additiveexpression_has_operator():
 
 
 
-def test_statechartexpressions::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::EqualityExpression)
+def test_statechartexpressions_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_EqualityExpression)
 
 
-def test_statechartexpressions::equalityexpression_constructor_exists():
-    assert callable(statechartexpressions::EqualityExpression.__init__)
+def test_statechartexpressions_equalityexpression_constructor_exists():
+    assert callable(statechartexpressions_EqualityExpression.__init__)
 
 
-def test_statechartexpressions::equalityexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::EqualityExpression.__init__)
+def test_statechartexpressions_equalityexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::equalityexpression_has_operator():
-    assert hasattr(statechartexpressions::EqualityExpression, "operator")
+def test_statechartexpressions_equalityexpression_has_operator():
+    assert hasattr(statechartexpressions_EqualityExpression, "operator")
     descriptor = None
-    for klass in statechartexpressions::EqualityExpression.__mro__:
+    for klass in statechartexpressions_EqualityExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -169,23 +169,23 @@ def test_statechartexpressions::equalityexpression_has_operator():
 
 
 
-def test_statechartexpressions::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::ShiftExpression)
+def test_statechartexpressions_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_ShiftExpression)
 
 
-def test_statechartexpressions::shiftexpression_constructor_exists():
-    assert callable(statechartexpressions::ShiftExpression.__init__)
+def test_statechartexpressions_shiftexpression_constructor_exists():
+    assert callable(statechartexpressions_ShiftExpression.__init__)
 
 
-def test_statechartexpressions::shiftexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::ShiftExpression.__init__)
+def test_statechartexpressions_shiftexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::shiftexpression_has_operator():
-    assert hasattr(statechartexpressions::ShiftExpression, "operator")
+def test_statechartexpressions_shiftexpression_has_operator():
+    assert hasattr(statechartexpressions_ShiftExpression, "operator")
     descriptor = None
-    for klass in statechartexpressions::ShiftExpression.__mro__:
+    for klass in statechartexpressions_ShiftExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -193,23 +193,23 @@ def test_statechartexpressions::shiftexpression_has_operator():
 
 
 
-def test_statechartexpressions::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::RelationalExpression)
+def test_statechartexpressions_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_RelationalExpression)
 
 
-def test_statechartexpressions::relationalexpression_constructor_exists():
-    assert callable(statechartexpressions::RelationalExpression.__init__)
+def test_statechartexpressions_relationalexpression_constructor_exists():
+    assert callable(statechartexpressions_RelationalExpression.__init__)
 
 
-def test_statechartexpressions::relationalexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::RelationalExpression.__init__)
+def test_statechartexpressions_relationalexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::relationalexpression_has_operator():
-    assert hasattr(statechartexpressions::RelationalExpression, "operator")
+def test_statechartexpressions_relationalexpression_has_operator():
+    assert hasattr(statechartexpressions_RelationalExpression, "operator")
     descriptor = None
-    for klass in statechartexpressions::RelationalExpression.__mro__:
+    for klass in statechartexpressions_RelationalExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -217,79 +217,79 @@ def test_statechartexpressions::relationalexpression_has_operator():
 
 
 
-def test_statechartexpressions::bitwisexorexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::BitwiseXorExpression)
+def test_statechartexpressions_bitwisexorexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_BitwiseXorExpression)
 
 
-def test_statechartexpressions::bitwisexorexpression_constructor_exists():
-    assert callable(statechartexpressions::BitwiseXorExpression.__init__)
+def test_statechartexpressions_bitwisexorexpression_constructor_exists():
+    assert callable(statechartexpressions_BitwiseXorExpression.__init__)
 
 
-def test_statechartexpressions::bitwisexorexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::BitwiseXorExpression.__init__)
+def test_statechartexpressions_bitwisexorexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_BitwiseXorExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::booleanandexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::BooleanAndExpression)
+def test_statechartexpressions_booleanandexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_BooleanAndExpression)
 
 
-def test_statechartexpressions::booleanandexpression_constructor_exists():
-    assert callable(statechartexpressions::BooleanAndExpression.__init__)
+def test_statechartexpressions_booleanandexpression_constructor_exists():
+    assert callable(statechartexpressions_BooleanAndExpression.__init__)
 
 
-def test_statechartexpressions::booleanandexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::BooleanAndExpression.__init__)
+def test_statechartexpressions_booleanandexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_BooleanAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::bitwiseandexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::BitwiseAndExpression)
+def test_statechartexpressions_bitwiseandexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_BitwiseAndExpression)
 
 
-def test_statechartexpressions::bitwiseandexpression_constructor_exists():
-    assert callable(statechartexpressions::BitwiseAndExpression.__init__)
+def test_statechartexpressions_bitwiseandexpression_constructor_exists():
+    assert callable(statechartexpressions_BitwiseAndExpression.__init__)
 
 
-def test_statechartexpressions::bitwiseandexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::BitwiseAndExpression.__init__)
+def test_statechartexpressions_bitwiseandexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_BitwiseAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::bitwiseorexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::BitwiseOrExpression)
+def test_statechartexpressions_bitwiseorexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_BitwiseOrExpression)
 
 
-def test_statechartexpressions::bitwiseorexpression_constructor_exists():
-    assert callable(statechartexpressions::BitwiseOrExpression.__init__)
+def test_statechartexpressions_bitwiseorexpression_constructor_exists():
+    assert callable(statechartexpressions_BitwiseOrExpression.__init__)
 
 
-def test_statechartexpressions::bitwiseorexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::BitwiseOrExpression.__init__)
+def test_statechartexpressions_bitwiseorexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_BitwiseOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::procedure_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::Procedure)
+def test_statechartexpressions_procedure_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_Procedure)
 
 
-def test_statechartexpressions::procedure_constructor_exists():
-    assert callable(statechartexpressions::Procedure.__init__)
+def test_statechartexpressions_procedure_constructor_exists():
+    assert callable(statechartexpressions_Procedure.__init__)
 
 
-def test_statechartexpressions::procedure_constructor_args():
-    sig = inspect.signature(statechartexpressions::Procedure.__init__)
+def test_statechartexpressions_procedure_constructor_args():
+    sig = inspect.signature(statechartexpressions_Procedure.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_statechartexpressions::procedure_has_identifier():
-    assert hasattr(statechartexpressions::Procedure, "identifier")
+def test_statechartexpressions_procedure_has_identifier():
+    assert hasattr(statechartexpressions_Procedure, "identifier")
     descriptor = None
-    for klass in statechartexpressions::Procedure.__mro__:
+    for klass in statechartexpressions_Procedure.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -297,37 +297,37 @@ def test_statechartexpressions::procedure_has_identifier():
 
 
 
-def test_statechartexpressions::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::ConditionalExpression)
+def test_statechartexpressions_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_ConditionalExpression)
 
 
-def test_statechartexpressions::conditionalexpression_constructor_exists():
-    assert callable(statechartexpressions::ConditionalExpression.__init__)
+def test_statechartexpressions_conditionalexpression_constructor_exists():
+    assert callable(statechartexpressions_ConditionalExpression.__init__)
 
 
-def test_statechartexpressions::conditionalexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::ConditionalExpression.__init__)
+def test_statechartexpressions_conditionalexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::variable_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::Variable)
+def test_statechartexpressions_variable_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_Variable)
 
 
-def test_statechartexpressions::variable_constructor_exists():
-    assert callable(statechartexpressions::Variable.__init__)
+def test_statechartexpressions_variable_constructor_exists():
+    assert callable(statechartexpressions_Variable.__init__)
 
 
-def test_statechartexpressions::variable_constructor_args():
-    sig = inspect.signature(statechartexpressions::Variable.__init__)
+def test_statechartexpressions_variable_constructor_args():
+    sig = inspect.signature(statechartexpressions_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_statechartexpressions::variable_has_identifier():
-    assert hasattr(statechartexpressions::Variable, "identifier")
+def test_statechartexpressions_variable_has_identifier():
+    assert hasattr(statechartexpressions_Variable, "identifier")
     descriptor = None
-    for klass in statechartexpressions::Variable.__mro__:
+    for klass in statechartexpressions_Variable.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -349,37 +349,37 @@ def test_primaryexpression_constructor_args():
 
 
 
-def test_statechartexpressions::nestedexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::NestedExpression)
+def test_statechartexpressions_nestedexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_NestedExpression)
 
 
-def test_statechartexpressions::nestedexpression_constructor_exists():
-    assert callable(statechartexpressions::NestedExpression.__init__)
+def test_statechartexpressions_nestedexpression_constructor_exists():
+    assert callable(statechartexpressions_NestedExpression.__init__)
 
 
-def test_statechartexpressions::nestedexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::NestedExpression.__init__)
+def test_statechartexpressions_nestedexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_NestedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::literalvalue_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::LiteralValue)
+def test_statechartexpressions_literalvalue_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_LiteralValue)
 
 
-def test_statechartexpressions::literalvalue_constructor_exists():
-    assert callable(statechartexpressions::LiteralValue.__init__)
+def test_statechartexpressions_literalvalue_constructor_exists():
+    assert callable(statechartexpressions_LiteralValue.__init__)
 
 
-def test_statechartexpressions::literalvalue_constructor_args():
-    sig = inspect.signature(statechartexpressions::LiteralValue.__init__)
+def test_statechartexpressions_literalvalue_constructor_args():
+    sig = inspect.signature(statechartexpressions_LiteralValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statechartexpressions::literalvalue_has_value():
-    assert hasattr(statechartexpressions::LiteralValue, "value")
+def test_statechartexpressions_literalvalue_has_value():
+    assert hasattr(statechartexpressions_LiteralValue, "value")
     descriptor = None
-    for klass in statechartexpressions::LiteralValue.__mro__:
+    for klass in statechartexpressions_LiteralValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -401,33 +401,33 @@ def test_timeexpression_constructor_args():
 
 
 
-def test_statechartexpressions::timeconstant_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::TimeConstant)
+def test_statechartexpressions_timeconstant_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_TimeConstant)
 
 
-def test_statechartexpressions::timeconstant_constructor_exists():
-    assert callable(statechartexpressions::TimeConstant.__init__)
+def test_statechartexpressions_timeconstant_constructor_exists():
+    assert callable(statechartexpressions_TimeConstant.__init__)
 
 
-def test_statechartexpressions::timeconstant_constructor_args():
-    sig = inspect.signature(statechartexpressions::TimeConstant.__init__)
+def test_statechartexpressions_timeconstant_constructor_args():
+    sig = inspect.signature(statechartexpressions_TimeConstant.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statechartexpressions::timeconstant_has_unit():
-    assert hasattr(statechartexpressions::TimeConstant, "unit")
+def test_statechartexpressions_timeconstant_has_unit():
+    assert hasattr(statechartexpressions_TimeConstant, "unit")
     descriptor = None
-    for klass in statechartexpressions::TimeConstant.__mro__:
+    for klass in statechartexpressions_TimeConstant.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_statechartexpressions::timeconstant_has_value():
-    assert hasattr(statechartexpressions::TimeConstant, "value")
+def test_statechartexpressions_timeconstant_has_value():
+    assert hasattr(statechartexpressions_TimeConstant, "value")
     descriptor = None
-    for klass in statechartexpressions::TimeConstant.__mro__:
+    for klass in statechartexpressions_TimeConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -449,51 +449,51 @@ def test_statement_constructor_args():
 
 
 
-def test_statechartexpressions::eventraising_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::EventRaising)
+def test_statechartexpressions_eventraising_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_EventRaising)
 
 
-def test_statechartexpressions::eventraising_constructor_exists():
-    assert callable(statechartexpressions::EventRaising.__init__)
+def test_statechartexpressions_eventraising_constructor_exists():
+    assert callable(statechartexpressions_EventRaising.__init__)
 
 
-def test_statechartexpressions::eventraising_constructor_args():
-    sig = inspect.signature(statechartexpressions::EventRaising.__init__)
+def test_statechartexpressions_eventraising_constructor_args():
+    sig = inspect.signature(statechartexpressions_EventRaising.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::procedurecall_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::ProcedureCall)
+def test_statechartexpressions_procedurecall_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_ProcedureCall)
 
 
-def test_statechartexpressions::procedurecall_constructor_exists():
-    assert callable(statechartexpressions::ProcedureCall.__init__)
+def test_statechartexpressions_procedurecall_constructor_exists():
+    assert callable(statechartexpressions_ProcedureCall.__init__)
 
 
-def test_statechartexpressions::procedurecall_constructor_args():
-    sig = inspect.signature(statechartexpressions::ProcedureCall.__init__)
+def test_statechartexpressions_procedurecall_constructor_args():
+    sig = inspect.signature(statechartexpressions_ProcedureCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::VariableAssignment)
+def test_statechartexpressions_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_VariableAssignment)
 
 
-def test_statechartexpressions::variableassignment_constructor_exists():
-    assert callable(statechartexpressions::VariableAssignment.__init__)
+def test_statechartexpressions_variableassignment_constructor_exists():
+    assert callable(statechartexpressions_VariableAssignment.__init__)
 
 
-def test_statechartexpressions::variableassignment_constructor_args():
-    sig = inspect.signature(statechartexpressions::VariableAssignment.__init__)
+def test_statechartexpressions_variableassignment_constructor_args():
+    sig = inspect.signature(statechartexpressions_VariableAssignment.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statechartexpressions::variableassignment_has_operator():
-    assert hasattr(statechartexpressions::VariableAssignment, "operator")
+def test_statechartexpressions_variableassignment_has_operator():
+    assert hasattr(statechartexpressions_VariableAssignment, "operator")
     descriptor = None
-    for klass in statechartexpressions::VariableAssignment.__mro__:
+    for klass in statechartexpressions_VariableAssignment.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -501,58 +501,58 @@ def test_statechartexpressions::variableassignment_has_operator():
 
 
 
-def test_statechartexpressions::event_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::Event)
+def test_statechartexpressions_event_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_Event)
 
 
-def test_statechartexpressions::event_constructor_exists():
-    assert callable(statechartexpressions::Event.__init__)
+def test_statechartexpressions_event_constructor_exists():
+    assert callable(statechartexpressions_Event.__init__)
 
 
-def test_statechartexpressions::event_constructor_args():
-    sig = inspect.signature(statechartexpressions::Event.__init__)
+def test_statechartexpressions_event_constructor_args():
+    sig = inspect.signature(statechartexpressions_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::statement_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::Statement)
+def test_statechartexpressions_statement_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_Statement)
 
 
-def test_statechartexpressions::statement_constructor_exists():
-    assert callable(statechartexpressions::Statement.__init__)
+def test_statechartexpressions_statement_constructor_exists():
+    assert callable(statechartexpressions_Statement.__init__)
 
 
-def test_statechartexpressions::statement_constructor_args():
-    sig = inspect.signature(statechartexpressions::Statement.__init__)
+def test_statechartexpressions_statement_constructor_args():
+    sig = inspect.signature(statechartexpressions_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::variablereference_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::VariableReference)
+def test_statechartexpressions_variablereference_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_VariableReference)
 
 
-def test_statechartexpressions::variablereference_constructor_exists():
-    assert callable(statechartexpressions::VariableReference.__init__)
+def test_statechartexpressions_variablereference_constructor_exists():
+    assert callable(statechartexpressions_VariableReference.__init__)
 
 
-def test_statechartexpressions::variablereference_constructor_args():
-    sig = inspect.signature(statechartexpressions::VariableReference.__init__)
+def test_statechartexpressions_variablereference_constructor_args():
+    sig = inspect.signature(statechartexpressions_VariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::timeexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::TimeExpression)
+def test_statechartexpressions_timeexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_TimeExpression)
 
 
-def test_statechartexpressions::timeexpression_constructor_exists():
-    assert callable(statechartexpressions::TimeExpression.__init__)
+def test_statechartexpressions_timeexpression_constructor_exists():
+    assert callable(statechartexpressions_TimeExpression.__init__)
 
 
-def test_statechartexpressions::timeexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::TimeExpression.__init__)
+def test_statechartexpressions_timeexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_TimeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -571,37 +571,37 @@ def test_event_constructor_args():
 
 
 
-def test_statechartexpressions::timeevent_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::TimeEvent)
+def test_statechartexpressions_timeevent_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_TimeEvent)
 
 
-def test_statechartexpressions::timeevent_constructor_exists():
-    assert callable(statechartexpressions::TimeEvent.__init__)
+def test_statechartexpressions_timeevent_constructor_exists():
+    assert callable(statechartexpressions_TimeEvent.__init__)
 
 
-def test_statechartexpressions::timeevent_constructor_args():
-    sig = inspect.signature(statechartexpressions::TimeEvent.__init__)
+def test_statechartexpressions_timeevent_constructor_args():
+    sig = inspect.signature(statechartexpressions_TimeEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::signalevent_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::SignalEvent)
+def test_statechartexpressions_signalevent_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_SignalEvent)
 
 
-def test_statechartexpressions::signalevent_constructor_exists():
-    assert callable(statechartexpressions::SignalEvent.__init__)
+def test_statechartexpressions_signalevent_constructor_exists():
+    assert callable(statechartexpressions_SignalEvent.__init__)
 
 
-def test_statechartexpressions::signalevent_constructor_args():
-    sig = inspect.signature(statechartexpressions::SignalEvent.__init__)
+def test_statechartexpressions_signalevent_constructor_args():
+    sig = inspect.signature(statechartexpressions_SignalEvent.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_statechartexpressions::signalevent_has_identifier():
-    assert hasattr(statechartexpressions::SignalEvent, "identifier")
+def test_statechartexpressions_signalevent_has_identifier():
+    assert hasattr(statechartexpressions_SignalEvent, "identifier")
     descriptor = None
-    for klass in statechartexpressions::SignalEvent.__mro__:
+    for klass in statechartexpressions_SignalEvent.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -609,30 +609,30 @@ def test_statechartexpressions::signalevent_has_identifier():
 
 
 
-def test_statechartexpressions::booleanorexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::BooleanOrExpression)
+def test_statechartexpressions_booleanorexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_BooleanOrExpression)
 
 
-def test_statechartexpressions::booleanorexpression_constructor_exists():
-    assert callable(statechartexpressions::BooleanOrExpression.__init__)
+def test_statechartexpressions_booleanorexpression_constructor_exists():
+    assert callable(statechartexpressions_BooleanOrExpression.__init__)
 
 
-def test_statechartexpressions::booleanorexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::BooleanOrExpression.__init__)
+def test_statechartexpressions_booleanorexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_BooleanOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::trigger_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::Trigger)
+def test_statechartexpressions_trigger_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_Trigger)
 
 
-def test_statechartexpressions::trigger_constructor_exists():
-    assert callable(statechartexpressions::Trigger.__init__)
+def test_statechartexpressions_trigger_constructor_exists():
+    assert callable(statechartexpressions_Trigger.__init__)
 
 
-def test_statechartexpressions::trigger_constructor_args():
-    sig = inspect.signature(statechartexpressions::Trigger.__init__)
+def test_statechartexpressions_trigger_constructor_args():
+    sig = inspect.signature(statechartexpressions_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -651,100 +651,59 @@ def test_expression_constructor_args():
 
 
 
-def test_statechartexpressions::actionexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::ActionExpression)
+def test_statechartexpressions_guardexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_GuardExpression)
 
 
-def test_statechartexpressions::actionexpression_constructor_exists():
-    assert callable(statechartexpressions::ActionExpression.__init__)
+def test_statechartexpressions_guardexpression_constructor_exists():
+    assert callable(statechartexpressions_GuardExpression.__init__)
 
 
-def test_statechartexpressions::actionexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::ActionExpression.__init__)
+def test_statechartexpressions_guardexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_GuardExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::guardexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::GuardExpression)
+def test_statechartexpressions_actionexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_ActionExpression)
 
 
-def test_statechartexpressions::guardexpression_constructor_exists():
-    assert callable(statechartexpressions::GuardExpression.__init__)
+def test_statechartexpressions_actionexpression_constructor_exists():
+    assert callable(statechartexpressions_ActionExpression.__init__)
 
 
-def test_statechartexpressions::guardexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::GuardExpression.__init__)
+def test_statechartexpressions_actionexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_ActionExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::triggerexpression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::TriggerExpression)
+def test_statechartexpressions_triggerexpression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_TriggerExpression)
 
 
-def test_statechartexpressions::triggerexpression_constructor_exists():
-    assert callable(statechartexpressions::TriggerExpression.__init__)
+def test_statechartexpressions_triggerexpression_constructor_exists():
+    assert callable(statechartexpressions_TriggerExpression.__init__)
 
 
-def test_statechartexpressions::triggerexpression_constructor_args():
-    sig = inspect.signature(statechartexpressions::TriggerExpression.__init__)
+def test_statechartexpressions_triggerexpression_constructor_args():
+    sig = inspect.signature(statechartexpressions_TriggerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statechartexpressions::expression_is_not_abstract():
-    assert not inspect.isabstract(statechartexpressions::Expression)
+def test_statechartexpressions_expression_is_not_abstract():
+    assert not inspect.isabstract(statechartexpressions_Expression)
 
 
-def test_statechartexpressions::expression_constructor_exists():
-    assert callable(statechartexpressions::Expression.__init__)
+def test_statechartexpressions_expression_constructor_exists():
+    assert callable(statechartexpressions_Expression.__init__)
 
 
-def test_statechartexpressions::expression_constructor_args():
-    sig = inspect.signature(statechartexpressions::Expression.__init__)
+def test_statechartexpressions_expression_constructor_args():
+    sig = inspect.signature(statechartexpressions_Expression.__init__)
     params = list(sig.parameters.keys())
-
-def test_assignmentoperator_exists():
-    # Check that the Enumeration exists
-    assert AssignmentOperator is not None
-
-def test_assignmentoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssignmentOperator]
-    expected_literals = [
-        "modAssign",
-        "leftShiftAssign",
-        "rightShiftAssign",
-        "subAssign",
-        "divAssign",
-        "xorAssign",
-        "addAssign",
-        "orAssign",
-        "andAssign",
-        "assign",
-        "multAssign",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
-
-def test_unaryoperator_exists():
-    # Check that the Enumeration exists
-    assert UnaryOperator is not None
-
-def test_unaryoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryOperator]
-    expected_literals = [
-        "complement",
-        "negative",
-        "not_",
-        "positive",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
 
 def test_timeunit_exists():
     # Check that the Enumeration exists
@@ -762,21 +721,6 @@ def test_timeunit_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
 
-def test_shiftoperator_exists():
-    # Check that the Enumeration exists
-    assert ShiftOperator is not None
-
-def test_shiftoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ShiftOperator]
-    expected_literals = [
-        "right",
-        "left",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ShiftOperator"
-
 def test_multiplicativeoperator_exists():
     # Check that the Enumeration exists
     assert MultiplicativeOperator is not None
@@ -785,9 +729,9 @@ def test_multiplicativeoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MultiplicativeOperator]
     expected_literals = [
+        "mul",
         "mod",
         "div",
-        "mul",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -808,6 +752,55 @@ def test_additiveoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AdditiveOperator"
 
+def test_unaryoperator_exists():
+    # Check that the Enumeration exists
+    assert UnaryOperator is not None
+
+def test_unaryoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryOperator]
+    expected_literals = [
+        "negative",
+        "complement",
+        "not_",
+        "positive",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
+
+def test_shiftoperator_exists():
+    # Check that the Enumeration exists
+    assert ShiftOperator is not None
+
+def test_shiftoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ShiftOperator]
+    expected_literals = [
+        "left",
+        "right",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ShiftOperator"
+
+def test_relationaloperator_exists():
+    # Check that the Enumeration exists
+    assert RelationalOperator is not None
+
+def test_relationaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RelationalOperator]
+    expected_literals = [
+        "smallerEqual",
+        "greaterEqual",
+        "smaller",
+        "greater",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+
 def test_equalityoperator_exists():
     # Check that the Enumeration exists
     assert EqualityOperator is not None
@@ -823,22 +816,29 @@ def test_equalityoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EqualityOperator"
 
-def test_relationaloperator_exists():
+def test_assignmentoperator_exists():
     # Check that the Enumeration exists
-    assert RelationalOperator is not None
+    assert AssignmentOperator is not None
 
-def test_relationaloperator_has_all_literals():
+def test_assignmentoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationalOperator]
+    enum_literals = [lit.name for lit in AssignmentOperator]
     expected_literals = [
-        "greaterEqual",
-        "smallerEqual",
-        "greater",
-        "smaller",
+        "multAssign",
+        "subAssign",
+        "modAssign",
+        "leftShiftAssign",
+        "divAssign",
+        "andAssign",
+        "xorAssign",
+        "addAssign",
+        "rightShiftAssign",
+        "orAssign",
+        "assign",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
 
 
 # =============================================================================
@@ -852,80 +852,80 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statechartexpressions::PrimaryExpression_strategy = st.builds(
-    statechartexpressions::PrimaryExpression,
+statechartexpressions_PrimaryExpression_strategy = st.builds(
+    statechartexpressions_PrimaryExpression,
 )
-statechartexpressions::MultiplicativeExpression_strategy = st.builds(
-    statechartexpressions::MultiplicativeExpression,
+statechartexpressions_MultiplicativeExpression_strategy = st.builds(
+    statechartexpressions_MultiplicativeExpression,
     operator=
         safe_text
 )
-statechartexpressions::UnaryExpression_strategy = st.builds(
-    statechartexpressions::UnaryExpression,
+statechartexpressions_UnaryExpression_strategy = st.builds(
+    statechartexpressions_UnaryExpression,
     operator=
         safe_text
 )
-statechartexpressions::AdditiveExpression_strategy = st.builds(
-    statechartexpressions::AdditiveExpression,
+statechartexpressions_AdditiveExpression_strategy = st.builds(
+    statechartexpressions_AdditiveExpression,
     operator=
         safe_text
 )
-statechartexpressions::EqualityExpression_strategy = st.builds(
-    statechartexpressions::EqualityExpression,
+statechartexpressions_EqualityExpression_strategy = st.builds(
+    statechartexpressions_EqualityExpression,
     operator=
         safe_text
 )
-statechartexpressions::ShiftExpression_strategy = st.builds(
-    statechartexpressions::ShiftExpression,
+statechartexpressions_ShiftExpression_strategy = st.builds(
+    statechartexpressions_ShiftExpression,
     operator=
         safe_text
 )
-statechartexpressions::RelationalExpression_strategy = st.builds(
-    statechartexpressions::RelationalExpression,
+statechartexpressions_RelationalExpression_strategy = st.builds(
+    statechartexpressions_RelationalExpression,
     operator=
         safe_text
 )
-statechartexpressions::BitwiseXorExpression_strategy = st.builds(
-    statechartexpressions::BitwiseXorExpression,
+statechartexpressions_BitwiseXorExpression_strategy = st.builds(
+    statechartexpressions_BitwiseXorExpression,
 )
-statechartexpressions::BooleanAndExpression_strategy = st.builds(
-    statechartexpressions::BooleanAndExpression,
+statechartexpressions_BooleanAndExpression_strategy = st.builds(
+    statechartexpressions_BooleanAndExpression,
 )
-statechartexpressions::BitwiseAndExpression_strategy = st.builds(
-    statechartexpressions::BitwiseAndExpression,
+statechartexpressions_BitwiseAndExpression_strategy = st.builds(
+    statechartexpressions_BitwiseAndExpression,
 )
-statechartexpressions::BitwiseOrExpression_strategy = st.builds(
-    statechartexpressions::BitwiseOrExpression,
+statechartexpressions_BitwiseOrExpression_strategy = st.builds(
+    statechartexpressions_BitwiseOrExpression,
 )
-statechartexpressions::Procedure_strategy = st.builds(
-    statechartexpressions::Procedure,
+statechartexpressions_Procedure_strategy = st.builds(
+    statechartexpressions_Procedure,
     identifier=
         safe_text
 )
-statechartexpressions::ConditionalExpression_strategy = st.builds(
-    statechartexpressions::ConditionalExpression,
+statechartexpressions_ConditionalExpression_strategy = st.builds(
+    statechartexpressions_ConditionalExpression,
 )
-statechartexpressions::Variable_strategy = st.builds(
-    statechartexpressions::Variable,
+statechartexpressions_Variable_strategy = st.builds(
+    statechartexpressions_Variable,
     identifier=
         safe_text
 )
 PrimaryExpression_strategy = st.builds(
     PrimaryExpression,
 )
-statechartexpressions::NestedExpression_strategy = st.builds(
-    statechartexpressions::NestedExpression,
+statechartexpressions_NestedExpression_strategy = st.builds(
+    statechartexpressions_NestedExpression,
 )
-statechartexpressions::LiteralValue_strategy = st.builds(
-    statechartexpressions::LiteralValue,
+statechartexpressions_LiteralValue_strategy = st.builds(
+    statechartexpressions_LiteralValue,
     value=
         safe_text
 )
 TimeExpression_strategy = st.builds(
     TimeExpression,
 )
-statechartexpressions::TimeConstant_strategy = st.builds(
-    statechartexpressions::TimeConstant,
+statechartexpressions_TimeConstant_strategy = st.builds(
+    statechartexpressions_TimeConstant,
     unit=
         safe_text,
     value=
@@ -934,216 +934,192 @@ statechartexpressions::TimeConstant_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-statechartexpressions::EventRaising_strategy = st.builds(
-    statechartexpressions::EventRaising,
+statechartexpressions_EventRaising_strategy = st.builds(
+    statechartexpressions_EventRaising,
 )
-statechartexpressions::ProcedureCall_strategy = st.builds(
-    statechartexpressions::ProcedureCall,
+statechartexpressions_ProcedureCall_strategy = st.builds(
+    statechartexpressions_ProcedureCall,
 )
-statechartexpressions::VariableAssignment_strategy = st.builds(
-    statechartexpressions::VariableAssignment,
+statechartexpressions_VariableAssignment_strategy = st.builds(
+    statechartexpressions_VariableAssignment,
     operator=
         safe_text
 )
-statechartexpressions::Event_strategy = st.builds(
-    statechartexpressions::Event,
+statechartexpressions_Event_strategy = st.builds(
+    statechartexpressions_Event,
 )
-statechartexpressions::Statement_strategy = st.builds(
-    statechartexpressions::Statement,
+statechartexpressions_Statement_strategy = st.builds(
+    statechartexpressions_Statement,
 )
-statechartexpressions::VariableReference_strategy = st.builds(
-    statechartexpressions::VariableReference,
+statechartexpressions_VariableReference_strategy = st.builds(
+    statechartexpressions_VariableReference,
 )
-statechartexpressions::TimeExpression_strategy = st.builds(
-    statechartexpressions::TimeExpression,
+statechartexpressions_TimeExpression_strategy = st.builds(
+    statechartexpressions_TimeExpression,
 )
 Event_strategy = st.builds(
     Event,
 )
-statechartexpressions::TimeEvent_strategy = st.builds(
-    statechartexpressions::TimeEvent,
+statechartexpressions_TimeEvent_strategy = st.builds(
+    statechartexpressions_TimeEvent,
 )
-statechartexpressions::SignalEvent_strategy = st.builds(
-    statechartexpressions::SignalEvent,
+statechartexpressions_SignalEvent_strategy = st.builds(
+    statechartexpressions_SignalEvent,
     identifier=
         safe_text
 )
-statechartexpressions::BooleanOrExpression_strategy = st.builds(
-    statechartexpressions::BooleanOrExpression,
+statechartexpressions_BooleanOrExpression_strategy = st.builds(
+    statechartexpressions_BooleanOrExpression,
 )
-statechartexpressions::Trigger_strategy = st.builds(
-    statechartexpressions::Trigger,
+statechartexpressions_Trigger_strategy = st.builds(
+    statechartexpressions_Trigger,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-statechartexpressions::ActionExpression_strategy = st.builds(
-    statechartexpressions::ActionExpression,
+statechartexpressions_GuardExpression_strategy = st.builds(
+    statechartexpressions_GuardExpression,
 )
-statechartexpressions::GuardExpression_strategy = st.builds(
-    statechartexpressions::GuardExpression,
+statechartexpressions_ActionExpression_strategy = st.builds(
+    statechartexpressions_ActionExpression,
 )
-statechartexpressions::TriggerExpression_strategy = st.builds(
-    statechartexpressions::TriggerExpression,
+statechartexpressions_TriggerExpression_strategy = st.builds(
+    statechartexpressions_TriggerExpression,
 )
-statechartexpressions::Expression_strategy = st.builds(
-    statechartexpressions::Expression,
+statechartexpressions_Expression_strategy = st.builds(
+    statechartexpressions_Expression,
 )
 
-@given(instance=statechartexpressions::PrimaryExpression_strategy)
+@given(instance=statechartexpressions_PrimaryExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::primaryexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::PrimaryExpression)
+def test_statechartexpressions_primaryexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_PrimaryExpression)
 
-@given(instance=statechartexpressions::MultiplicativeExpression_strategy)
+@given(instance=statechartexpressions_MultiplicativeExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::MultiplicativeExpression)
-
-@given(instance=statechartexpressions::MultiplicativeExpression_strategy)
-def test_statechartexpressions::multiplicativeexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_MultiplicativeExpression)
 
 
-@given(instance=statechartexpressions::MultiplicativeExpression_strategy)
-def test_statechartexpressions::multiplicativeexpression_operator_setter(instance):
+
+@given(instance=statechartexpressions_MultiplicativeExpression_strategy)
+def test_statechartexpressions_multiplicativeexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::UnaryExpression_strategy)
+@given(instance=statechartexpressions_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::unaryexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::UnaryExpression)
-
-@given(instance=statechartexpressions::UnaryExpression_strategy)
-def test_statechartexpressions::unaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_unaryexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_UnaryExpression)
 
 
-@given(instance=statechartexpressions::UnaryExpression_strategy)
-def test_statechartexpressions::unaryexpression_operator_setter(instance):
+
+@given(instance=statechartexpressions_UnaryExpression_strategy)
+def test_statechartexpressions_unaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::AdditiveExpression_strategy)
+@given(instance=statechartexpressions_AdditiveExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::additiveexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::AdditiveExpression)
-
-@given(instance=statechartexpressions::AdditiveExpression_strategy)
-def test_statechartexpressions::additiveexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_additiveexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_AdditiveExpression)
 
 
-@given(instance=statechartexpressions::AdditiveExpression_strategy)
-def test_statechartexpressions::additiveexpression_operator_setter(instance):
+
+@given(instance=statechartexpressions_AdditiveExpression_strategy)
+def test_statechartexpressions_additiveexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::EqualityExpression_strategy)
+@given(instance=statechartexpressions_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::equalityexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::EqualityExpression)
-
-@given(instance=statechartexpressions::EqualityExpression_strategy)
-def test_statechartexpressions::equalityexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_equalityexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_EqualityExpression)
 
 
-@given(instance=statechartexpressions::EqualityExpression_strategy)
-def test_statechartexpressions::equalityexpression_operator_setter(instance):
+
+@given(instance=statechartexpressions_EqualityExpression_strategy)
+def test_statechartexpressions_equalityexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::ShiftExpression_strategy)
+@given(instance=statechartexpressions_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::shiftexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::ShiftExpression)
-
-@given(instance=statechartexpressions::ShiftExpression_strategy)
-def test_statechartexpressions::shiftexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_shiftexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_ShiftExpression)
 
 
-@given(instance=statechartexpressions::ShiftExpression_strategy)
-def test_statechartexpressions::shiftexpression_operator_setter(instance):
+
+@given(instance=statechartexpressions_ShiftExpression_strategy)
+def test_statechartexpressions_shiftexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::RelationalExpression_strategy)
+@given(instance=statechartexpressions_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::relationalexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::RelationalExpression)
-
-@given(instance=statechartexpressions::RelationalExpression_strategy)
-def test_statechartexpressions::relationalexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_relationalexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_RelationalExpression)
 
 
-@given(instance=statechartexpressions::RelationalExpression_strategy)
-def test_statechartexpressions::relationalexpression_operator_setter(instance):
+
+@given(instance=statechartexpressions_RelationalExpression_strategy)
+def test_statechartexpressions_relationalexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::BitwiseXorExpression_strategy)
+@given(instance=statechartexpressions_BitwiseXorExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::bitwisexorexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::BitwiseXorExpression)
+def test_statechartexpressions_bitwisexorexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_BitwiseXorExpression)
 
-@given(instance=statechartexpressions::BooleanAndExpression_strategy)
+@given(instance=statechartexpressions_BooleanAndExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::booleanandexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::BooleanAndExpression)
+def test_statechartexpressions_booleanandexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_BooleanAndExpression)
 
-@given(instance=statechartexpressions::BitwiseAndExpression_strategy)
+@given(instance=statechartexpressions_BitwiseAndExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::bitwiseandexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::BitwiseAndExpression)
+def test_statechartexpressions_bitwiseandexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_BitwiseAndExpression)
 
-@given(instance=statechartexpressions::BitwiseOrExpression_strategy)
+@given(instance=statechartexpressions_BitwiseOrExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::bitwiseorexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::BitwiseOrExpression)
+def test_statechartexpressions_bitwiseorexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_BitwiseOrExpression)
 
-@given(instance=statechartexpressions::Procedure_strategy)
+@given(instance=statechartexpressions_Procedure_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::procedure_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::Procedure)
-
-@given(instance=statechartexpressions::Procedure_strategy)
-def test_statechartexpressions::procedure_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_statechartexpressions_procedure_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_Procedure)
 
 
-@given(instance=statechartexpressions::Procedure_strategy)
-def test_statechartexpressions::procedure_identifier_setter(instance):
+
+@given(instance=statechartexpressions_Procedure_strategy)
+def test_statechartexpressions_procedure_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=statechartexpressions::ConditionalExpression_strategy)
+@given(instance=statechartexpressions_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::ConditionalExpression)
+def test_statechartexpressions_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_ConditionalExpression)
 
-@given(instance=statechartexpressions::Variable_strategy)
+@given(instance=statechartexpressions_Variable_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::variable_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::Variable)
-
-@given(instance=statechartexpressions::Variable_strategy)
-def test_statechartexpressions::variable_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_statechartexpressions_variable_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_Variable)
 
 
-@given(instance=statechartexpressions::Variable_strategy)
-def test_statechartexpressions::variable_identifier_setter(instance):
+
+@given(instance=statechartexpressions_Variable_strategy)
+def test_statechartexpressions_variable_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
@@ -1153,23 +1129,20 @@ def test_statechartexpressions::variable_identifier_setter(instance):
 def test_primaryexpression_instantiation(instance):
     assert isinstance(instance, PrimaryExpression)
 
-@given(instance=statechartexpressions::NestedExpression_strategy)
+@given(instance=statechartexpressions_NestedExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::nestedexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::NestedExpression)
+def test_statechartexpressions_nestedexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_NestedExpression)
 
-@given(instance=statechartexpressions::LiteralValue_strategy)
+@given(instance=statechartexpressions_LiteralValue_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::literalvalue_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::LiteralValue)
-
-@given(instance=statechartexpressions::LiteralValue_strategy)
-def test_statechartexpressions::literalvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_statechartexpressions_literalvalue_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_LiteralValue)
 
 
-@given(instance=statechartexpressions::LiteralValue_strategy)
-def test_statechartexpressions::literalvalue_value_setter(instance):
+
+@given(instance=statechartexpressions_LiteralValue_strategy)
+def test_statechartexpressions_literalvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1179,29 +1152,23 @@ def test_statechartexpressions::literalvalue_value_setter(instance):
 def test_timeexpression_instantiation(instance):
     assert isinstance(instance, TimeExpression)
 
-@given(instance=statechartexpressions::TimeConstant_strategy)
+@given(instance=statechartexpressions_TimeConstant_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::timeconstant_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::TimeConstant)
-
-@given(instance=statechartexpressions::TimeConstant_strategy)
-def test_statechartexpressions::timeconstant_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_statechartexpressions_timeconstant_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_TimeConstant)
 
 
-@given(instance=statechartexpressions::TimeConstant_strategy)
-def test_statechartexpressions::timeconstant_unit_setter(instance):
+
+@given(instance=statechartexpressions_TimeConstant_strategy)
+def test_statechartexpressions_timeconstant_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=statechartexpressions::TimeConstant_strategy)
-def test_statechartexpressions::timeconstant_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=statechartexpressions::TimeConstant_strategy)
-def test_statechartexpressions::timeconstant_value_setter(instance):
+@given(instance=statechartexpressions_TimeConstant_strategy)
+def test_statechartexpressions_timeconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1211,109 +1178,103 @@ def test_statechartexpressions::timeconstant_value_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=statechartexpressions::EventRaising_strategy)
+@given(instance=statechartexpressions_EventRaising_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::eventraising_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::EventRaising)
+def test_statechartexpressions_eventraising_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_EventRaising)
 
-@given(instance=statechartexpressions::ProcedureCall_strategy)
+@given(instance=statechartexpressions_ProcedureCall_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::procedurecall_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::ProcedureCall)
+def test_statechartexpressions_procedurecall_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_ProcedureCall)
 
-@given(instance=statechartexpressions::VariableAssignment_strategy)
+@given(instance=statechartexpressions_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::variableassignment_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::VariableAssignment)
-
-@given(instance=statechartexpressions::VariableAssignment_strategy)
-def test_statechartexpressions::variableassignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statechartexpressions_variableassignment_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_VariableAssignment)
 
 
-@given(instance=statechartexpressions::VariableAssignment_strategy)
-def test_statechartexpressions::variableassignment_operator_setter(instance):
+
+@given(instance=statechartexpressions_VariableAssignment_strategy)
+def test_statechartexpressions_variableassignment_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=statechartexpressions::Event_strategy)
+@given(instance=statechartexpressions_Event_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::event_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::Event)
+def test_statechartexpressions_event_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_Event)
 
-@given(instance=statechartexpressions::Statement_strategy)
+@given(instance=statechartexpressions_Statement_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::statement_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::Statement)
+def test_statechartexpressions_statement_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_Statement)
 
-@given(instance=statechartexpressions::VariableReference_strategy)
+@given(instance=statechartexpressions_VariableReference_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::variablereference_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::VariableReference)
+def test_statechartexpressions_variablereference_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_VariableReference)
 
-@given(instance=statechartexpressions::TimeExpression_strategy)
+@given(instance=statechartexpressions_TimeExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::timeexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::TimeExpression)
+def test_statechartexpressions_timeexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_TimeExpression)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=statechartexpressions::TimeEvent_strategy)
+@given(instance=statechartexpressions_TimeEvent_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::timeevent_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::TimeEvent)
+def test_statechartexpressions_timeevent_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_TimeEvent)
 
-@given(instance=statechartexpressions::SignalEvent_strategy)
+@given(instance=statechartexpressions_SignalEvent_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::signalevent_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::SignalEvent)
-
-@given(instance=statechartexpressions::SignalEvent_strategy)
-def test_statechartexpressions::signalevent_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_statechartexpressions_signalevent_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_SignalEvent)
 
 
-@given(instance=statechartexpressions::SignalEvent_strategy)
-def test_statechartexpressions::signalevent_identifier_setter(instance):
+
+@given(instance=statechartexpressions_SignalEvent_strategy)
+def test_statechartexpressions_signalevent_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=statechartexpressions::BooleanOrExpression_strategy)
+@given(instance=statechartexpressions_BooleanOrExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::booleanorexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::BooleanOrExpression)
+def test_statechartexpressions_booleanorexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_BooleanOrExpression)
 
-@given(instance=statechartexpressions::Trigger_strategy)
+@given(instance=statechartexpressions_Trigger_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::trigger_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::Trigger)
+def test_statechartexpressions_trigger_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_Trigger)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=statechartexpressions::ActionExpression_strategy)
+@given(instance=statechartexpressions_GuardExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::actionexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::ActionExpression)
+def test_statechartexpressions_guardexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_GuardExpression)
 
-@given(instance=statechartexpressions::GuardExpression_strategy)
+@given(instance=statechartexpressions_ActionExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::guardexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::GuardExpression)
+def test_statechartexpressions_actionexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_ActionExpression)
 
-@given(instance=statechartexpressions::TriggerExpression_strategy)
+@given(instance=statechartexpressions_TriggerExpression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::triggerexpression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::TriggerExpression)
+def test_statechartexpressions_triggerexpression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_TriggerExpression)
 
-@given(instance=statechartexpressions::Expression_strategy)
+@given(instance=statechartexpressions_Expression_strategy)
 @settings(max_examples=50)
-def test_statechartexpressions::expression_instantiation(instance):
-    assert isinstance(instance, statechartexpressions::Expression)
+def test_statechartexpressions_expression_instantiation(instance):
+    assert isinstance(instance, statechartexpressions_Expression)

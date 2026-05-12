@@ -3,9 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    View_Profile_UseCase1,
+    View_Home_UseCase1,
+    Authenticate_UseCase1,
+    View_AttackNews_UseCase1,
+    View_AttackHistory_UseCase1,
+    Edit_Profile_UseCase1,
+    Admin_Actor,
     View_AttackNews_UseCase,
     ExecuteAttack_UseCase,
     View_AttackHistory_UseCase,
@@ -25,18 +32,109 @@ from python_code import (
     Account,
     Role,
     User,
-    View_Profile_UseCase1,
-    View_Home_UseCase1,
-    Authenticate_UseCase1,
-    View_AttackNews_UseCase1,
-    View_AttackHistory_UseCase1,
-    Edit_Profile_UseCase1,
-    Admin_Actor,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_view_profile_usecase1_is_not_abstract():
+    assert not inspect.isabstract(View_Profile_UseCase1)
+
+
+def test_view_profile_usecase1_constructor_exists():
+    assert callable(View_Profile_UseCase1.__init__)
+
+
+def test_view_profile_usecase1_constructor_args():
+    sig = inspect.signature(View_Profile_UseCase1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_view_home_usecase1_is_not_abstract():
+    assert not inspect.isabstract(View_Home_UseCase1)
+
+
+def test_view_home_usecase1_constructor_exists():
+    assert callable(View_Home_UseCase1.__init__)
+
+
+def test_view_home_usecase1_constructor_args():
+    sig = inspect.signature(View_Home_UseCase1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_authenticate_usecase1_is_not_abstract():
+    assert not inspect.isabstract(Authenticate_UseCase1)
+
+
+def test_authenticate_usecase1_constructor_exists():
+    assert callable(Authenticate_UseCase1.__init__)
+
+
+def test_authenticate_usecase1_constructor_args():
+    sig = inspect.signature(Authenticate_UseCase1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_view_attacknews_usecase1_is_not_abstract():
+    assert not inspect.isabstract(View_AttackNews_UseCase1)
+
+
+def test_view_attacknews_usecase1_constructor_exists():
+    assert callable(View_AttackNews_UseCase1.__init__)
+
+
+def test_view_attacknews_usecase1_constructor_args():
+    sig = inspect.signature(View_AttackNews_UseCase1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_view_attackhistory_usecase1_is_not_abstract():
+    assert not inspect.isabstract(View_AttackHistory_UseCase1)
+
+
+def test_view_attackhistory_usecase1_constructor_exists():
+    assert callable(View_AttackHistory_UseCase1.__init__)
+
+
+def test_view_attackhistory_usecase1_constructor_args():
+    sig = inspect.signature(View_AttackHistory_UseCase1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_edit_profile_usecase1_is_not_abstract():
+    assert not inspect.isabstract(Edit_Profile_UseCase1)
+
+
+def test_edit_profile_usecase1_constructor_exists():
+    assert callable(Edit_Profile_UseCase1.__init__)
+
+
+def test_edit_profile_usecase1_constructor_args():
+    sig = inspect.signature(Edit_Profile_UseCase1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_admin_actor_is_not_abstract():
+    assert not inspect.isabstract(Admin_Actor)
+
+
+def test_admin_actor_constructor_exists():
+    assert callable(Admin_Actor.__init__)
+
+
+def test_admin_actor_constructor_args():
+    sig = inspect.signature(Admin_Actor.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -177,17 +275,8 @@ def test_startparam_constructor_exists():
 def test_startparam_constructor_args():
     sig = inspect.signature(StartParam.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "value" in params, "Missing parameter 'value'"
-
-def test_startparam_has_type():
-    assert hasattr(StartParam, "type")
-    descriptor = None
-    for klass in StartParam.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
+    assert "type" in params, "Missing parameter 'type'"
 
 def test_startparam_has_value():
     assert hasattr(StartParam, "value")
@@ -195,6 +284,15 @@ def test_startparam_has_value():
     for klass in StartParam.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_startparam_has_type():
+    assert hasattr(StartParam, "type")
+    descriptor = None
+    for klass in StartParam.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -235,17 +333,8 @@ def test_attack_constructor_exists():
 def test_attack_constructor_args():
     sig = inspect.signature(Attack.__init__)
     params = list(sig.parameters.keys())
-    assert "requiredTokens" in params, "Missing parameter 'requiredTokens'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_attack_has_requiredTokens():
-    assert hasattr(Attack, "requiredTokens")
-    descriptor = None
-    for klass in Attack.__mro__:
-        if "requiredTokens" in klass.__dict__:
-            descriptor = klass.__dict__["requiredTokens"]
-            break
-    assert isinstance(descriptor, property)
+    assert "requiredTokens" in params, "Missing parameter 'requiredTokens'"
 
 def test_attack_has_name():
     assert hasattr(Attack, "name")
@@ -253,6 +342,15 @@ def test_attack_has_name():
     for klass in Attack.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attack_has_requiredTokens():
+    assert hasattr(Attack, "requiredTokens")
+    descriptor = None
+    for klass in Attack.__mro__:
+        if "requiredTokens" in klass.__dict__:
+            descriptor = klass.__dict__["requiredTokens"]
             break
     assert isinstance(descriptor, property)
 
@@ -270,8 +368,8 @@ def test_attackhistory_constructor_args():
     sig = inspect.signature(AttackHistory.__init__)
     params = list(sig.parameters.keys())
     assert "auto" in params, "Missing parameter 'auto'"
-    assert "date" in params, "Missing parameter 'date'"
     assert "target" in params, "Missing parameter 'target'"
+    assert "date" in params, "Missing parameter 'date'"
 
 def test_attackhistory_has_auto():
     assert hasattr(AttackHistory, "auto")
@@ -282,21 +380,21 @@ def test_attackhistory_has_auto():
             break
     assert isinstance(descriptor, property)
 
-def test_attackhistory_has_date():
-    assert hasattr(AttackHistory, "date")
-    descriptor = None
-    for klass in AttackHistory.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_attackhistory_has_target():
     assert hasattr(AttackHistory, "target")
     descriptor = None
     for klass in AttackHistory.__mro__:
         if "target" in klass.__dict__:
             descriptor = klass.__dict__["target"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attackhistory_has_date():
+    assert hasattr(AttackHistory, "date")
+    descriptor = None
+    for klass in AttackHistory.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -315,8 +413,8 @@ def test_location_constructor_args():
     params = list(sig.parameters.keys())
     assert "city" in params, "Missing parameter 'city'"
     assert "postalCode" in params, "Missing parameter 'postalCode'"
-    assert "streetAddress" in params, "Missing parameter 'streetAddress'"
     assert "stateProvince" in params, "Missing parameter 'stateProvince'"
+    assert "streetAddress" in params, "Missing parameter 'streetAddress'"
 
 def test_location_has_city():
     assert hasattr(Location, "city")
@@ -336,21 +434,21 @@ def test_location_has_postalCode():
             break
     assert isinstance(descriptor, property)
 
-def test_location_has_streetAddress():
-    assert hasattr(Location, "streetAddress")
-    descriptor = None
-    for klass in Location.__mro__:
-        if "streetAddress" in klass.__dict__:
-            descriptor = klass.__dict__["streetAddress"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_location_has_stateProvince():
     assert hasattr(Location, "stateProvince")
     descriptor = None
     for klass in Location.__mro__:
         if "stateProvince" in klass.__dict__:
             descriptor = klass.__dict__["stateProvince"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_location_has_streetAddress():
+    assert hasattr(Location, "streetAddress")
+    descriptor = None
+    for klass in Location.__mro__:
+        if "streetAddress" in klass.__dict__:
+            descriptor = klass.__dict__["streetAddress"]
             break
     assert isinstance(descriptor, property)
 
@@ -415,16 +513,16 @@ def test_account_constructor_exists():
 def test_account_constructor_args():
     sig = inspect.signature(Account.__init__)
     params = list(sig.parameters.keys())
-    assert "login" in params, "Missing parameter 'login'"
-    assert "password" in params, "Missing parameter 'password'"
     assert "creationDate" in params, "Missing parameter 'creationDate'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "login" in params, "Missing parameter 'login'"
 
-def test_account_has_login():
-    assert hasattr(Account, "login")
+def test_account_has_creationDate():
+    assert hasattr(Account, "creationDate")
     descriptor = None
     for klass in Account.__mro__:
-        if "login" in klass.__dict__:
-            descriptor = klass.__dict__["login"]
+        if "creationDate" in klass.__dict__:
+            descriptor = klass.__dict__["creationDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -437,12 +535,12 @@ def test_account_has_password():
             break
     assert isinstance(descriptor, property)
 
-def test_account_has_creationDate():
-    assert hasattr(Account, "creationDate")
+def test_account_has_login():
+    assert hasattr(Account, "login")
     descriptor = None
     for klass in Account.__mro__:
-        if "creationDate" in klass.__dict__:
-            descriptor = klass.__dict__["creationDate"]
+        if "login" in klass.__dict__:
+            descriptor = klass.__dict__["login"]
             break
     assert isinstance(descriptor, property)
 
@@ -483,37 +581,19 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "fName" in params, "Missing parameter 'fName'"
-    assert "cin" in params, "Missing parameter 'cin'"
-    assert "email" in params, "Missing parameter 'email'"
-    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
-    assert "lName" in params, "Missing parameter 'lName'"
     assert "birthDate" in params, "Missing parameter 'birthDate'"
+    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
+    assert "fName" in params, "Missing parameter 'fName'"
+    assert "email" in params, "Missing parameter 'email'"
+    assert "cin" in params, "Missing parameter 'cin'"
+    assert "lName" in params, "Missing parameter 'lName'"
 
-def test_user_has_fName():
-    assert hasattr(User, "fName")
+def test_user_has_birthDate():
+    assert hasattr(User, "birthDate")
     descriptor = None
     for klass in User.__mro__:
-        if "fName" in klass.__dict__:
-            descriptor = klass.__dict__["fName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_cin():
-    assert hasattr(User, "cin")
-    descriptor = None
-    for klass in User.__mro__:
-        if "cin" in klass.__dict__:
-            descriptor = klass.__dict__["cin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_email():
-    assert hasattr(User, "email")
-    descriptor = None
-    for klass in User.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
+        if "birthDate" in klass.__dict__:
+            descriptor = klass.__dict__["birthDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -526,6 +606,33 @@ def test_user_has_phoneNumber():
             break
     assert isinstance(descriptor, property)
 
+def test_user_has_fName():
+    assert hasattr(User, "fName")
+    descriptor = None
+    for klass in User.__mro__:
+        if "fName" in klass.__dict__:
+            descriptor = klass.__dict__["fName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_email():
+    assert hasattr(User, "email")
+    descriptor = None
+    for klass in User.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_cin():
+    assert hasattr(User, "cin")
+    descriptor = None
+    for klass in User.__mro__:
+        if "cin" in klass.__dict__:
+            descriptor = klass.__dict__["cin"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_user_has_lName():
     assert hasattr(User, "lName")
     descriptor = None
@@ -534,113 +641,6 @@ def test_user_has_lName():
             descriptor = klass.__dict__["lName"]
             break
     assert isinstance(descriptor, property)
-
-def test_user_has_birthDate():
-    assert hasattr(User, "birthDate")
-    descriptor = None
-    for klass in User.__mro__:
-        if "birthDate" in klass.__dict__:
-            descriptor = klass.__dict__["birthDate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_view_profile_usecase1_is_not_abstract():
-    assert not inspect.isabstract(View_Profile_UseCase1)
-
-
-def test_view_profile_usecase1_constructor_exists():
-    assert callable(View_Profile_UseCase1.__init__)
-
-
-def test_view_profile_usecase1_constructor_args():
-    sig = inspect.signature(View_Profile_UseCase1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_view_home_usecase1_is_not_abstract():
-    assert not inspect.isabstract(View_Home_UseCase1)
-
-
-def test_view_home_usecase1_constructor_exists():
-    assert callable(View_Home_UseCase1.__init__)
-
-
-def test_view_home_usecase1_constructor_args():
-    sig = inspect.signature(View_Home_UseCase1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_authenticate_usecase1_is_not_abstract():
-    assert not inspect.isabstract(Authenticate_UseCase1)
-
-
-def test_authenticate_usecase1_constructor_exists():
-    assert callable(Authenticate_UseCase1.__init__)
-
-
-def test_authenticate_usecase1_constructor_args():
-    sig = inspect.signature(Authenticate_UseCase1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_view_attacknews_usecase1_is_not_abstract():
-    assert not inspect.isabstract(View_AttackNews_UseCase1)
-
-
-def test_view_attacknews_usecase1_constructor_exists():
-    assert callable(View_AttackNews_UseCase1.__init__)
-
-
-def test_view_attacknews_usecase1_constructor_args():
-    sig = inspect.signature(View_AttackNews_UseCase1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_view_attackhistory_usecase1_is_not_abstract():
-    assert not inspect.isabstract(View_AttackHistory_UseCase1)
-
-
-def test_view_attackhistory_usecase1_constructor_exists():
-    assert callable(View_AttackHistory_UseCase1.__init__)
-
-
-def test_view_attackhistory_usecase1_constructor_args():
-    sig = inspect.signature(View_AttackHistory_UseCase1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_edit_profile_usecase1_is_not_abstract():
-    assert not inspect.isabstract(Edit_Profile_UseCase1)
-
-
-def test_edit_profile_usecase1_constructor_exists():
-    assert callable(Edit_Profile_UseCase1.__init__)
-
-
-def test_edit_profile_usecase1_constructor_args():
-    sig = inspect.signature(Edit_Profile_UseCase1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_admin_actor_is_not_abstract():
-    assert not inspect.isabstract(Admin_Actor)
-
-
-def test_admin_actor_constructor_exists():
-    assert callable(Admin_Actor.__init__)
-
-
-def test_admin_actor_constructor_args():
-    sig = inspect.signature(Admin_Actor.__init__)
-    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -654,6 +654,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+View_Profile_UseCase1_strategy = st.builds(
+    View_Profile_UseCase1,
+)
+View_Home_UseCase1_strategy = st.builds(
+    View_Home_UseCase1,
+)
+Authenticate_UseCase1_strategy = st.builds(
+    Authenticate_UseCase1,
+)
+View_AttackNews_UseCase1_strategy = st.builds(
+    View_AttackNews_UseCase1,
+)
+View_AttackHistory_UseCase1_strategy = st.builds(
+    View_AttackHistory_UseCase1,
+)
+Edit_Profile_UseCase1_strategy = st.builds(
+    Edit_Profile_UseCase1,
+)
+Admin_Actor_strategy = st.builds(
+    Admin_Actor,
+)
 View_AttackNews_UseCase_strategy = st.builds(
     View_AttackNews_UseCase,
 )
@@ -683,9 +704,9 @@ User_Actor_strategy = st.builds(
 )
 StartParam_strategy = st.builds(
     StartParam,
-    type=
-        safe_text,
     value=
+        safe_text,
+    type=
         safe_text
 )
 Result_strategy = st.builds(
@@ -695,19 +716,19 @@ Result_strategy = st.builds(
 )
 Attack_strategy = st.builds(
     Attack,
-    requiredTokens=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    requiredTokens=
+        st.integers()
 )
 AttackHistory_strategy = st.builds(
     AttackHistory,
     auto=
         st.booleans(),
-    date=
-        st.integers(),
     target=
-        safe_text
+        safe_text,
+    date=
+        st.integers()
 )
 Location_strategy = st.builds(
     Location,
@@ -715,9 +736,9 @@ Location_strategy = st.builds(
         safe_text,
     postalCode=
         st.integers(),
-    streetAddress=
-        safe_text,
     stateProvince=
+        safe_text,
+    streetAddress=
         safe_text
 )
 Country_strategy = st.builds(
@@ -732,12 +753,12 @@ Balance_strategy = st.builds(
 )
 Account_strategy = st.builds(
     Account,
-    login=
-        safe_text,
+    creationDate=
+        st.integers(),
     password=
         st.integers(),
-    creationDate=
-        st.integers()
+    login=
+        safe_text
 )
 Role_strategy = st.builds(
     Role,
@@ -746,40 +767,54 @@ Role_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
+    birthDate=
+        st.integers(),
+    phoneNumber=
+        st.integers(),
     fName=
-        safe_text,
-    cin=
         safe_text,
     email=
         safe_text,
-    phoneNumber=
-        st.integers(),
-    lName=
+    cin=
         safe_text,
-    birthDate=
-        st.integers()
+    lName=
+        safe_text
 )
-View_Profile_UseCase1_strategy = st.builds(
-    View_Profile_UseCase1,
-)
-View_Home_UseCase1_strategy = st.builds(
-    View_Home_UseCase1,
-)
-Authenticate_UseCase1_strategy = st.builds(
-    Authenticate_UseCase1,
-)
-View_AttackNews_UseCase1_strategy = st.builds(
-    View_AttackNews_UseCase1,
-)
-View_AttackHistory_UseCase1_strategy = st.builds(
-    View_AttackHistory_UseCase1,
-)
-Edit_Profile_UseCase1_strategy = st.builds(
-    Edit_Profile_UseCase1,
-)
-Admin_Actor_strategy = st.builds(
-    Admin_Actor,
-)
+
+@given(instance=View_Profile_UseCase1_strategy)
+@settings(max_examples=50)
+def test_view_profile_usecase1_instantiation(instance):
+    assert isinstance(instance, View_Profile_UseCase1)
+
+@given(instance=View_Home_UseCase1_strategy)
+@settings(max_examples=50)
+def test_view_home_usecase1_instantiation(instance):
+    assert isinstance(instance, View_Home_UseCase1)
+
+@given(instance=Authenticate_UseCase1_strategy)
+@settings(max_examples=50)
+def test_authenticate_usecase1_instantiation(instance):
+    assert isinstance(instance, Authenticate_UseCase1)
+
+@given(instance=View_AttackNews_UseCase1_strategy)
+@settings(max_examples=50)
+def test_view_attacknews_usecase1_instantiation(instance):
+    assert isinstance(instance, View_AttackNews_UseCase1)
+
+@given(instance=View_AttackHistory_UseCase1_strategy)
+@settings(max_examples=50)
+def test_view_attackhistory_usecase1_instantiation(instance):
+    assert isinstance(instance, View_AttackHistory_UseCase1)
+
+@given(instance=Edit_Profile_UseCase1_strategy)
+@settings(max_examples=50)
+def test_edit_profile_usecase1_instantiation(instance):
+    assert isinstance(instance, Edit_Profile_UseCase1)
+
+@given(instance=Admin_Actor_strategy)
+@settings(max_examples=50)
+def test_admin_actor_instantiation(instance):
+    assert isinstance(instance, Admin_Actor)
 
 @given(instance=View_AttackNews_UseCase_strategy)
 @settings(max_examples=50)
@@ -831,20 +866,6 @@ def test_user_actor_instantiation(instance):
 def test_startparam_instantiation(instance):
     assert isinstance(instance, StartParam)
 
-@given(instance=StartParam_strategy)
-def test_startparam_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=StartParam_strategy)
-def test_startparam_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=StartParam_strategy)
-def test_startparam_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=StartParam_strategy)
@@ -853,14 +874,19 @@ def test_startparam_value_setter(instance):
     instance.value = original
     assert instance.value == original
 
+
+
+@given(instance=StartParam_strategy)
+def test_startparam_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
 @given(instance=Result_strategy)
 @settings(max_examples=50)
 def test_result_instantiation(instance):
     assert isinstance(instance, Result)
 
-@given(instance=Result_strategy)
-def test_result_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=Result_strategy)
@@ -874,20 +900,6 @@ def test_result_value_setter(instance):
 def test_attack_instantiation(instance):
     assert isinstance(instance, Attack)
 
-@given(instance=Attack_strategy)
-def test_attack_requiredTokens_type(instance):
-    assert isinstance(instance.requiredTokens, int)
-
-
-@given(instance=Attack_strategy)
-def test_attack_requiredTokens_setter(instance):
-    original = instance.requiredTokens
-    instance.requiredTokens = original
-    assert instance.requiredTokens == original
-
-@given(instance=Attack_strategy)
-def test_attack_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Attack_strategy)
@@ -896,14 +908,19 @@ def test_attack_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Attack_strategy)
+def test_attack_requiredTokens_setter(instance):
+    original = instance.requiredTokens
+    instance.requiredTokens = original
+    assert instance.requiredTokens == original
+
 @given(instance=AttackHistory_strategy)
 @settings(max_examples=50)
 def test_attackhistory_instantiation(instance):
     assert isinstance(instance, AttackHistory)
 
-@given(instance=AttackHistory_strategy)
-def test_attackhistory_auto_type(instance):
-    assert isinstance(instance.auto, bool)
 
 
 @given(instance=AttackHistory_strategy)
@@ -912,20 +929,6 @@ def test_attackhistory_auto_setter(instance):
     instance.auto = original
     assert instance.auto == original
 
-@given(instance=AttackHistory_strategy)
-def test_attackhistory_date_type(instance):
-    assert isinstance(instance.date, int)
-
-
-@given(instance=AttackHistory_strategy)
-def test_attackhistory_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=AttackHistory_strategy)
-def test_attackhistory_target_type(instance):
-    assert isinstance(instance.target, str)
 
 
 @given(instance=AttackHistory_strategy)
@@ -934,14 +937,19 @@ def test_attackhistory_target_setter(instance):
     instance.target = original
     assert instance.target == original
 
+
+
+@given(instance=AttackHistory_strategy)
+def test_attackhistory_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
 @given(instance=Location_strategy)
 @settings(max_examples=50)
 def test_location_instantiation(instance):
     assert isinstance(instance, Location)
 
-@given(instance=Location_strategy)
-def test_location_city_type(instance):
-    assert isinstance(instance.city, str)
 
 
 @given(instance=Location_strategy)
@@ -950,9 +958,6 @@ def test_location_city_setter(instance):
     instance.city = original
     assert instance.city == original
 
-@given(instance=Location_strategy)
-def test_location_postalCode_type(instance):
-    assert isinstance(instance.postalCode, int)
 
 
 @given(instance=Location_strategy)
@@ -961,20 +966,6 @@ def test_location_postalCode_setter(instance):
     instance.postalCode = original
     assert instance.postalCode == original
 
-@given(instance=Location_strategy)
-def test_location_streetAddress_type(instance):
-    assert isinstance(instance.streetAddress, str)
-
-
-@given(instance=Location_strategy)
-def test_location_streetAddress_setter(instance):
-    original = instance.streetAddress
-    instance.streetAddress = original
-    assert instance.streetAddress == original
-
-@given(instance=Location_strategy)
-def test_location_stateProvince_type(instance):
-    assert isinstance(instance.stateProvince, str)
 
 
 @given(instance=Location_strategy)
@@ -983,14 +974,19 @@ def test_location_stateProvince_setter(instance):
     instance.stateProvince = original
     assert instance.stateProvince == original
 
+
+
+@given(instance=Location_strategy)
+def test_location_streetAddress_setter(instance):
+    original = instance.streetAddress
+    instance.streetAddress = original
+    assert instance.streetAddress == original
+
 @given(instance=Country_strategy)
 @settings(max_examples=50)
 def test_country_instantiation(instance):
     assert isinstance(instance, Country)
 
-@given(instance=Country_strategy)
-def test_country_countryName_type(instance):
-    assert isinstance(instance.countryName, str)
 
 
 @given(instance=Country_strategy)
@@ -1004,9 +1000,6 @@ def test_country_countryName_setter(instance):
 def test_balance_instantiation(instance):
     assert isinstance(instance, Balance)
 
-@given(instance=Balance_strategy)
-def test_balance_tokens_type(instance):
-    assert isinstance(instance.tokens, int)
 
 
 @given(instance=Balance_strategy)
@@ -1020,31 +1013,6 @@ def test_balance_tokens_setter(instance):
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_login_type(instance):
-    assert isinstance(instance.login, str)
-
-
-@given(instance=Account_strategy)
-def test_account_login_setter(instance):
-    original = instance.login
-    instance.login = original
-    assert instance.login == original
-
-@given(instance=Account_strategy)
-def test_account_password_type(instance):
-    assert isinstance(instance.password, int)
-
-
-@given(instance=Account_strategy)
-def test_account_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Account_strategy)
-def test_account_creationDate_type(instance):
-    assert isinstance(instance.creationDate, int)
 
 
 @given(instance=Account_strategy)
@@ -1053,14 +1021,27 @@ def test_account_creationDate_setter(instance):
     instance.creationDate = original
     assert instance.creationDate == original
 
+
+
+@given(instance=Account_strategy)
+def test_account_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Account_strategy)
+def test_account_login_setter(instance):
+    original = instance.login
+    instance.login = original
+    assert instance.login == original
+
 @given(instance=Role_strategy)
 @settings(max_examples=50)
 def test_role_instantiation(instance):
     assert isinstance(instance, Role)
 
-@given(instance=Role_strategy)
-def test_role_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=Role_strategy)
@@ -1074,64 +1055,6 @@ def test_role_type_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_fName_type(instance):
-    assert isinstance(instance.fName, str)
-
-
-@given(instance=User_strategy)
-def test_user_fName_setter(instance):
-    original = instance.fName
-    instance.fName = original
-    assert instance.fName == original
-
-@given(instance=User_strategy)
-def test_user_cin_type(instance):
-    assert isinstance(instance.cin, str)
-
-
-@given(instance=User_strategy)
-def test_user_cin_setter(instance):
-    original = instance.cin
-    instance.cin = original
-    assert instance.cin == original
-
-@given(instance=User_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=User_strategy)
-def test_user_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=User_strategy)
-def test_user_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, int)
-
-
-@given(instance=User_strategy)
-def test_user_phoneNumber_setter(instance):
-    original = instance.phoneNumber
-    instance.phoneNumber = original
-    assert instance.phoneNumber == original
-
-@given(instance=User_strategy)
-def test_user_lName_type(instance):
-    assert isinstance(instance.lName, str)
-
-
-@given(instance=User_strategy)
-def test_user_lName_setter(instance):
-    original = instance.lName
-    instance.lName = original
-    assert instance.lName == original
-
-@given(instance=User_strategy)
-def test_user_birthDate_type(instance):
-    assert isinstance(instance.birthDate, int)
 
 
 @given(instance=User_strategy)
@@ -1140,37 +1063,42 @@ def test_user_birthDate_setter(instance):
     instance.birthDate = original
     assert instance.birthDate == original
 
-@given(instance=View_Profile_UseCase1_strategy)
-@settings(max_examples=50)
-def test_view_profile_usecase1_instantiation(instance):
-    assert isinstance(instance, View_Profile_UseCase1)
 
-@given(instance=View_Home_UseCase1_strategy)
-@settings(max_examples=50)
-def test_view_home_usecase1_instantiation(instance):
-    assert isinstance(instance, View_Home_UseCase1)
 
-@given(instance=Authenticate_UseCase1_strategy)
-@settings(max_examples=50)
-def test_authenticate_usecase1_instantiation(instance):
-    assert isinstance(instance, Authenticate_UseCase1)
+@given(instance=User_strategy)
+def test_user_phoneNumber_setter(instance):
+    original = instance.phoneNumber
+    instance.phoneNumber = original
+    assert instance.phoneNumber == original
 
-@given(instance=View_AttackNews_UseCase1_strategy)
-@settings(max_examples=50)
-def test_view_attacknews_usecase1_instantiation(instance):
-    assert isinstance(instance, View_AttackNews_UseCase1)
 
-@given(instance=View_AttackHistory_UseCase1_strategy)
-@settings(max_examples=50)
-def test_view_attackhistory_usecase1_instantiation(instance):
-    assert isinstance(instance, View_AttackHistory_UseCase1)
 
-@given(instance=Edit_Profile_UseCase1_strategy)
-@settings(max_examples=50)
-def test_edit_profile_usecase1_instantiation(instance):
-    assert isinstance(instance, Edit_Profile_UseCase1)
+@given(instance=User_strategy)
+def test_user_fName_setter(instance):
+    original = instance.fName
+    instance.fName = original
+    assert instance.fName == original
 
-@given(instance=Admin_Actor_strategy)
-@settings(max_examples=50)
-def test_admin_actor_instantiation(instance):
-    assert isinstance(instance, Admin_Actor)
+
+
+@given(instance=User_strategy)
+def test_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=User_strategy)
+def test_user_cin_setter(instance):
+    original = instance.cin
+    instance.cin = original
+    assert instance.cin == original
+
+
+
+@given(instance=User_strategy)
+def test_user_lName_setter(instance):
+    original = instance.lName
+    instance.lName = original
+    assert instance.lName == original

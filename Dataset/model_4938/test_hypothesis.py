@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fml::SelectionItem,
-    fml::PageElement,
+from python_code import (
+    fml_SelectionItem,
+    fml_PageElement,
     InputElement,
-    fml::SelectField,
-    fml::TextInput,
-    fml::ListItem,
+    fml_SelectField,
+    fml_TextInput,
+    fml_ListItem,
     DisplayElement,
-    fml::List,
-    fml::TextParagraph,
-    fml::Heading,
+    fml_List,
+    fml_TextParagraph,
+    fml_Heading,
     PageElement,
-    fml::InputElement,
-    fml::DisplayElement,
-    fml::Page,
-    fml::Form,
-    SelectionType,
+    fml_InputElement,
+    fml_DisplayElement,
+    fml_Page,
+    fml_Form,
     TextInputType,
+    SelectionType,
 )
 
 # =============================================================================
@@ -31,67 +31,67 @@ from classes import (
 
 
 
-def test_fml::selectionitem_is_not_abstract():
-    assert not inspect.isabstract(fml::SelectionItem)
+def test_fml_selectionitem_is_not_abstract():
+    assert not inspect.isabstract(fml_SelectionItem)
 
 
-def test_fml::selectionitem_constructor_exists():
-    assert callable(fml::SelectionItem.__init__)
+def test_fml_selectionitem_constructor_exists():
+    assert callable(fml_SelectionItem.__init__)
 
 
-def test_fml::selectionitem_constructor_args():
-    sig = inspect.signature(fml::SelectionItem.__init__)
+def test_fml_selectionitem_constructor_args():
+    sig = inspect.signature(fml_SelectionItem.__init__)
     params = list(sig.parameters.keys())
-    assert "preselected" in params, "Missing parameter 'preselected'"
     assert "selected" in params, "Missing parameter 'selected'"
     assert "Text" in params, "Missing parameter 'Text'"
+    assert "preselected" in params, "Missing parameter 'preselected'"
 
-def test_fml::selectionitem_has_preselected():
-    assert hasattr(fml::SelectionItem, "preselected")
+def test_fml_selectionitem_has_selected():
+    assert hasattr(fml_SelectionItem, "selected")
     descriptor = None
-    for klass in fml::SelectionItem.__mro__:
-        if "preselected" in klass.__dict__:
-            descriptor = klass.__dict__["preselected"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fml::selectionitem_has_selected():
-    assert hasattr(fml::SelectionItem, "selected")
-    descriptor = None
-    for klass in fml::SelectionItem.__mro__:
+    for klass in fml_SelectionItem.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
             break
     assert isinstance(descriptor, property)
 
-def test_fml::selectionitem_has_Text():
-    assert hasattr(fml::SelectionItem, "Text")
+def test_fml_selectionitem_has_Text():
+    assert hasattr(fml_SelectionItem, "Text")
     descriptor = None
-    for klass in fml::SelectionItem.__mro__:
+    for klass in fml_SelectionItem.__mro__:
         if "Text" in klass.__dict__:
             descriptor = klass.__dict__["Text"]
             break
     assert isinstance(descriptor, property)
 
+def test_fml_selectionitem_has_preselected():
+    assert hasattr(fml_SelectionItem, "preselected")
+    descriptor = None
+    for klass in fml_SelectionItem.__mro__:
+        if "preselected" in klass.__dict__:
+            descriptor = klass.__dict__["preselected"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fml::pageelement_is_not_abstract():
-    assert not inspect.isabstract(fml::PageElement)
+
+def test_fml_pageelement_is_not_abstract():
+    assert not inspect.isabstract(fml_PageElement)
 
 
-def test_fml::pageelement_constructor_exists():
-    assert callable(fml::PageElement.__init__)
+def test_fml_pageelement_constructor_exists():
+    assert callable(fml_PageElement.__init__)
 
 
-def test_fml::pageelement_constructor_args():
-    sig = inspect.signature(fml::PageElement.__init__)
+def test_fml_pageelement_constructor_args():
+    sig = inspect.signature(fml_PageElement.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_fml::pageelement_has_ID():
-    assert hasattr(fml::PageElement, "ID")
+def test_fml_pageelement_has_ID():
+    assert hasattr(fml_PageElement, "ID")
     descriptor = None
-    for klass in fml::PageElement.__mro__:
+    for klass in fml_PageElement.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -113,33 +113,33 @@ def test_inputelement_constructor_args():
 
 
 
-def test_fml::selectfield_is_not_abstract():
-    assert not inspect.isabstract(fml::SelectField)
+def test_fml_selectfield_is_not_abstract():
+    assert not inspect.isabstract(fml_SelectField)
 
 
-def test_fml::selectfield_constructor_exists():
-    assert callable(fml::SelectField.__init__)
+def test_fml_selectfield_constructor_exists():
+    assert callable(fml_SelectField.__init__)
 
 
-def test_fml::selectfield_constructor_args():
-    sig = inspect.signature(fml::SelectField.__init__)
+def test_fml_selectfield_constructor_args():
+    sig = inspect.signature(fml_SelectField.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
     assert "Label" in params, "Missing parameter 'Label'"
 
-def test_fml::selectfield_has_Type():
-    assert hasattr(fml::SelectField, "Type")
+def test_fml_selectfield_has_Type():
+    assert hasattr(fml_SelectField, "Type")
     descriptor = None
-    for klass in fml::SelectField.__mro__:
+    for klass in fml_SelectField.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
             break
     assert isinstance(descriptor, property)
 
-def test_fml::selectfield_has_Label():
-    assert hasattr(fml::SelectField, "Label")
+def test_fml_selectfield_has_Label():
+    assert hasattr(fml_SelectField, "Label")
     descriptor = None
-    for klass in fml::SelectField.__mro__:
+    for klass in fml_SelectField.__mro__:
         if "Label" in klass.__dict__:
             descriptor = klass.__dict__["Label"]
             break
@@ -147,67 +147,67 @@ def test_fml::selectfield_has_Label():
 
 
 
-def test_fml::textinput_is_not_abstract():
-    assert not inspect.isabstract(fml::TextInput)
+def test_fml_textinput_is_not_abstract():
+    assert not inspect.isabstract(fml_TextInput)
 
 
-def test_fml::textinput_constructor_exists():
-    assert callable(fml::TextInput.__init__)
+def test_fml_textinput_constructor_exists():
+    assert callable(fml_TextInput.__init__)
 
 
-def test_fml::textinput_constructor_args():
-    sig = inspect.signature(fml::TextInput.__init__)
+def test_fml_textinput_constructor_args():
+    sig = inspect.signature(fml_TextInput.__init__)
     params = list(sig.parameters.keys())
-    assert "Content" in params, "Missing parameter 'Content'"
     assert "Label" in params, "Missing parameter 'Label'"
     assert "Type" in params, "Missing parameter 'Type'"
+    assert "Content" in params, "Missing parameter 'Content'"
 
-def test_fml::textinput_has_Content():
-    assert hasattr(fml::TextInput, "Content")
+def test_fml_textinput_has_Label():
+    assert hasattr(fml_TextInput, "Label")
     descriptor = None
-    for klass in fml::TextInput.__mro__:
+    for klass in fml_TextInput.__mro__:
+        if "Label" in klass.__dict__:
+            descriptor = klass.__dict__["Label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fml_textinput_has_Type():
+    assert hasattr(fml_TextInput, "Type")
+    descriptor = None
+    for klass in fml_TextInput.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fml_textinput_has_Content():
+    assert hasattr(fml_TextInput, "Content")
+    descriptor = None
+    for klass in fml_TextInput.__mro__:
         if "Content" in klass.__dict__:
             descriptor = klass.__dict__["Content"]
             break
     assert isinstance(descriptor, property)
 
-def test_fml::textinput_has_Label():
-    assert hasattr(fml::TextInput, "Label")
-    descriptor = None
-    for klass in fml::TextInput.__mro__:
-        if "Label" in klass.__dict__:
-            descriptor = klass.__dict__["Label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fml::textinput_has_Type():
-    assert hasattr(fml::TextInput, "Type")
-    descriptor = None
-    for klass in fml::TextInput.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_fml::listitem_is_not_abstract():
-    assert not inspect.isabstract(fml::ListItem)
-
-
-def test_fml::listitem_constructor_exists():
-    assert callable(fml::ListItem.__init__)
+def test_fml_listitem_is_not_abstract():
+    assert not inspect.isabstract(fml_ListItem)
 
 
-def test_fml::listitem_constructor_args():
-    sig = inspect.signature(fml::ListItem.__init__)
+def test_fml_listitem_constructor_exists():
+    assert callable(fml_ListItem.__init__)
+
+
+def test_fml_listitem_constructor_args():
+    sig = inspect.signature(fml_ListItem.__init__)
     params = list(sig.parameters.keys())
     assert "Text" in params, "Missing parameter 'Text'"
 
-def test_fml::listitem_has_Text():
-    assert hasattr(fml::ListItem, "Text")
+def test_fml_listitem_has_Text():
+    assert hasattr(fml_ListItem, "Text")
     descriptor = None
-    for klass in fml::ListItem.__mro__:
+    for klass in fml_ListItem.__mro__:
         if "Text" in klass.__dict__:
             descriptor = klass.__dict__["Text"]
             break
@@ -229,23 +229,23 @@ def test_displayelement_constructor_args():
 
 
 
-def test_fml::list_is_not_abstract():
-    assert not inspect.isabstract(fml::List)
+def test_fml_list_is_not_abstract():
+    assert not inspect.isabstract(fml_List)
 
 
-def test_fml::list_constructor_exists():
-    assert callable(fml::List.__init__)
+def test_fml_list_constructor_exists():
+    assert callable(fml_List.__init__)
 
 
-def test_fml::list_constructor_args():
-    sig = inspect.signature(fml::List.__init__)
+def test_fml_list_constructor_args():
+    sig = inspect.signature(fml_List.__init__)
     params = list(sig.parameters.keys())
     assert "isOrdered" in params, "Missing parameter 'isOrdered'"
 
-def test_fml::list_has_isOrdered():
-    assert hasattr(fml::List, "isOrdered")
+def test_fml_list_has_isOrdered():
+    assert hasattr(fml_List, "isOrdered")
     descriptor = None
-    for klass in fml::List.__mro__:
+    for klass in fml_List.__mro__:
         if "isOrdered" in klass.__dict__:
             descriptor = klass.__dict__["isOrdered"]
             break
@@ -253,23 +253,23 @@ def test_fml::list_has_isOrdered():
 
 
 
-def test_fml::textparagraph_is_not_abstract():
-    assert not inspect.isabstract(fml::TextParagraph)
+def test_fml_textparagraph_is_not_abstract():
+    assert not inspect.isabstract(fml_TextParagraph)
 
 
-def test_fml::textparagraph_constructor_exists():
-    assert callable(fml::TextParagraph.__init__)
+def test_fml_textparagraph_constructor_exists():
+    assert callable(fml_TextParagraph.__init__)
 
 
-def test_fml::textparagraph_constructor_args():
-    sig = inspect.signature(fml::TextParagraph.__init__)
+def test_fml_textparagraph_constructor_args():
+    sig = inspect.signature(fml_TextParagraph.__init__)
     params = list(sig.parameters.keys())
     assert "Text" in params, "Missing parameter 'Text'"
 
-def test_fml::textparagraph_has_Text():
-    assert hasattr(fml::TextParagraph, "Text")
+def test_fml_textparagraph_has_Text():
+    assert hasattr(fml_TextParagraph, "Text")
     descriptor = None
-    for klass in fml::TextParagraph.__mro__:
+    for klass in fml_TextParagraph.__mro__:
         if "Text" in klass.__dict__:
             descriptor = klass.__dict__["Text"]
             break
@@ -277,35 +277,35 @@ def test_fml::textparagraph_has_Text():
 
 
 
-def test_fml::heading_is_not_abstract():
-    assert not inspect.isabstract(fml::Heading)
+def test_fml_heading_is_not_abstract():
+    assert not inspect.isabstract(fml_Heading)
 
 
-def test_fml::heading_constructor_exists():
-    assert callable(fml::Heading.__init__)
+def test_fml_heading_constructor_exists():
+    assert callable(fml_Heading.__init__)
 
 
-def test_fml::heading_constructor_args():
-    sig = inspect.signature(fml::Heading.__init__)
+def test_fml_heading_constructor_args():
+    sig = inspect.signature(fml_Heading.__init__)
     params = list(sig.parameters.keys())
-    assert "Text" in params, "Missing parameter 'Text'"
     assert "Level" in params, "Missing parameter 'Level'"
+    assert "Text" in params, "Missing parameter 'Text'"
 
-def test_fml::heading_has_Text():
-    assert hasattr(fml::Heading, "Text")
+def test_fml_heading_has_Level():
+    assert hasattr(fml_Heading, "Level")
     descriptor = None
-    for klass in fml::Heading.__mro__:
-        if "Text" in klass.__dict__:
-            descriptor = klass.__dict__["Text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fml::heading_has_Level():
-    assert hasattr(fml::Heading, "Level")
-    descriptor = None
-    for klass in fml::Heading.__mro__:
+    for klass in fml_Heading.__mro__:
         if "Level" in klass.__dict__:
             descriptor = klass.__dict__["Level"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fml_heading_has_Text():
+    assert hasattr(fml_Heading, "Text")
+    descriptor = None
+    for klass in fml_Heading.__mro__:
+        if "Text" in klass.__dict__:
+            descriptor = klass.__dict__["Text"]
             break
     assert isinstance(descriptor, property)
 
@@ -325,23 +325,23 @@ def test_pageelement_constructor_args():
 
 
 
-def test_fml::inputelement_is_not_abstract():
-    assert not inspect.isabstract(fml::InputElement)
+def test_fml_inputelement_is_not_abstract():
+    assert not inspect.isabstract(fml_InputElement)
 
 
-def test_fml::inputelement_constructor_exists():
-    assert callable(fml::InputElement.__init__)
+def test_fml_inputelement_constructor_exists():
+    assert callable(fml_InputElement.__init__)
 
 
-def test_fml::inputelement_constructor_args():
-    sig = inspect.signature(fml::InputElement.__init__)
+def test_fml_inputelement_constructor_args():
+    sig = inspect.signature(fml_InputElement.__init__)
     params = list(sig.parameters.keys())
     assert "isMandatory" in params, "Missing parameter 'isMandatory'"
 
-def test_fml::inputelement_has_isMandatory():
-    assert hasattr(fml::InputElement, "isMandatory")
+def test_fml_inputelement_has_isMandatory():
+    assert hasattr(fml_InputElement, "isMandatory")
     descriptor = None
-    for klass in fml::InputElement.__mro__:
+    for klass in fml_InputElement.__mro__:
         if "isMandatory" in klass.__dict__:
             descriptor = klass.__dict__["isMandatory"]
             break
@@ -349,47 +349,47 @@ def test_fml::inputelement_has_isMandatory():
 
 
 
-def test_fml::displayelement_is_not_abstract():
-    assert not inspect.isabstract(fml::DisplayElement)
+def test_fml_displayelement_is_not_abstract():
+    assert not inspect.isabstract(fml_DisplayElement)
 
 
-def test_fml::displayelement_constructor_exists():
-    assert callable(fml::DisplayElement.__init__)
+def test_fml_displayelement_constructor_exists():
+    assert callable(fml_DisplayElement.__init__)
 
 
-def test_fml::displayelement_constructor_args():
-    sig = inspect.signature(fml::DisplayElement.__init__)
+def test_fml_displayelement_constructor_args():
+    sig = inspect.signature(fml_DisplayElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fml::page_is_not_abstract():
-    assert not inspect.isabstract(fml::Page)
+def test_fml_page_is_not_abstract():
+    assert not inspect.isabstract(fml_Page)
 
 
-def test_fml::page_constructor_exists():
-    assert callable(fml::Page.__init__)
+def test_fml_page_constructor_exists():
+    assert callable(fml_Page.__init__)
 
 
-def test_fml::page_constructor_args():
-    sig = inspect.signature(fml::Page.__init__)
+def test_fml_page_constructor_args():
+    sig = inspect.signature(fml_Page.__init__)
     params = list(sig.parameters.keys())
     assert "Title" in params, "Missing parameter 'Title'"
     assert "isWelcome" in params, "Missing parameter 'isWelcome'"
 
-def test_fml::page_has_Title():
-    assert hasattr(fml::Page, "Title")
+def test_fml_page_has_Title():
+    assert hasattr(fml_Page, "Title")
     descriptor = None
-    for klass in fml::Page.__mro__:
+    for klass in fml_Page.__mro__:
         if "Title" in klass.__dict__:
             descriptor = klass.__dict__["Title"]
             break
     assert isinstance(descriptor, property)
 
-def test_fml::page_has_isWelcome():
-    assert hasattr(fml::Page, "isWelcome")
+def test_fml_page_has_isWelcome():
+    assert hasattr(fml_Page, "isWelcome")
     descriptor = None
-    for klass in fml::Page.__mro__:
+    for klass in fml_Page.__mro__:
         if "isWelcome" in klass.__dict__:
             descriptor = klass.__dict__["isWelcome"]
             break
@@ -397,33 +397,17 @@ def test_fml::page_has_isWelcome():
 
 
 
-def test_fml::form_is_not_abstract():
-    assert not inspect.isabstract(fml::Form)
+def test_fml_form_is_not_abstract():
+    assert not inspect.isabstract(fml_Form)
 
 
-def test_fml::form_constructor_exists():
-    assert callable(fml::Form.__init__)
+def test_fml_form_constructor_exists():
+    assert callable(fml_Form.__init__)
 
 
-def test_fml::form_constructor_args():
-    sig = inspect.signature(fml::Form.__init__)
+def test_fml_form_constructor_args():
+    sig = inspect.signature(fml_Form.__init__)
     params = list(sig.parameters.keys())
-
-def test_selectiontype_exists():
-    # Check that the Enumeration exists
-    assert SelectionType is not None
-
-def test_selectiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SelectionType]
-    expected_literals = [
-        "RADIO",
-        "CHECKBOX",
-        "COMBOBOX",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SelectionType"
 
 def test_textinputtype_exists():
     # Check that the Enumeration exists
@@ -433,13 +417,29 @@ def test_textinputtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TextInputType]
     expected_literals = [
-        "TEXTAREA",
-        "TEXTFIELD",
         "ENCRYPTED_TEXTFIELD",
+        "TEXTFIELD",
+        "TEXTAREA",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TextInputType"
+
+def test_selectiontype_exists():
+    # Check that the Enumeration exists
+    assert SelectionType is not None
+
+def test_selectiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SelectionType]
+    expected_literals = [
+        "CHECKBOX",
+        "RADIO",
+        "COMBOBOX",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SelectionType"
 
 
 # =============================================================================
@@ -453,136 +453,124 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fml::SelectionItem_strategy = st.builds(
-    fml::SelectionItem,
-    preselected=
-        st.booleans(),
+fml_SelectionItem_strategy = st.builds(
+    fml_SelectionItem,
     selected=
         st.booleans(),
     Text=
-        safe_text
+        safe_text,
+    preselected=
+        st.booleans()
 )
-fml::PageElement_strategy = st.builds(
-    fml::PageElement,
+fml_PageElement_strategy = st.builds(
+    fml_PageElement,
     ID=
         safe_text
 )
 InputElement_strategy = st.builds(
     InputElement,
 )
-fml::SelectField_strategy = st.builds(
-    fml::SelectField,
+fml_SelectField_strategy = st.builds(
+    fml_SelectField,
     Type=
         safe_text,
     Label=
         safe_text
 )
-fml::TextInput_strategy = st.builds(
-    fml::TextInput,
+fml_TextInput_strategy = st.builds(
+    fml_TextInput,
+    Label=
+        safe_text,
+    Type=
+        safe_text,
     Content=
-        safe_text,
-    Label=
-        safe_text,
-    Type=
         safe_text
 )
-fml::ListItem_strategy = st.builds(
-    fml::ListItem,
+fml_ListItem_strategy = st.builds(
+    fml_ListItem,
     Text=
         safe_text
 )
 DisplayElement_strategy = st.builds(
     DisplayElement,
 )
-fml::List_strategy = st.builds(
-    fml::List,
+fml_List_strategy = st.builds(
+    fml_List,
     isOrdered=
         st.booleans()
 )
-fml::TextParagraph_strategy = st.builds(
-    fml::TextParagraph,
+fml_TextParagraph_strategy = st.builds(
+    fml_TextParagraph,
     Text=
         safe_text
 )
-fml::Heading_strategy = st.builds(
-    fml::Heading,
-    Text=
-        safe_text,
+fml_Heading_strategy = st.builds(
+    fml_Heading,
     Level=
+        safe_text,
+    Text=
         safe_text
 )
 PageElement_strategy = st.builds(
     PageElement,
 )
-fml::InputElement_strategy = st.builds(
-    fml::InputElement,
+fml_InputElement_strategy = st.builds(
+    fml_InputElement,
     isMandatory=
         st.booleans()
 )
-fml::DisplayElement_strategy = st.builds(
-    fml::DisplayElement,
+fml_DisplayElement_strategy = st.builds(
+    fml_DisplayElement,
 )
-fml::Page_strategy = st.builds(
-    fml::Page,
+fml_Page_strategy = st.builds(
+    fml_Page,
     Title=
         safe_text,
     isWelcome=
         st.booleans()
 )
-fml::Form_strategy = st.builds(
-    fml::Form,
+fml_Form_strategy = st.builds(
+    fml_Form,
 )
 
-@given(instance=fml::SelectionItem_strategy)
+@given(instance=fml_SelectionItem_strategy)
 @settings(max_examples=50)
-def test_fml::selectionitem_instantiation(instance):
-    assert isinstance(instance, fml::SelectionItem)
-
-@given(instance=fml::SelectionItem_strategy)
-def test_fml::selectionitem_preselected_type(instance):
-    assert isinstance(instance.preselected, bool)
+def test_fml_selectionitem_instantiation(instance):
+    assert isinstance(instance, fml_SelectionItem)
 
 
-@given(instance=fml::SelectionItem_strategy)
-def test_fml::selectionitem_preselected_setter(instance):
-    original = instance.preselected
-    instance.preselected = original
-    assert instance.preselected == original
 
-@given(instance=fml::SelectionItem_strategy)
-def test_fml::selectionitem_selected_type(instance):
-    assert isinstance(instance.selected, bool)
-
-
-@given(instance=fml::SelectionItem_strategy)
-def test_fml::selectionitem_selected_setter(instance):
+@given(instance=fml_SelectionItem_strategy)
+def test_fml_selectionitem_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
 
-@given(instance=fml::SelectionItem_strategy)
-def test_fml::selectionitem_Text_type(instance):
-    assert isinstance(instance.Text, str)
 
 
-@given(instance=fml::SelectionItem_strategy)
-def test_fml::selectionitem_Text_setter(instance):
+@given(instance=fml_SelectionItem_strategy)
+def test_fml_selectionitem_Text_setter(instance):
     original = instance.Text
     instance.Text = original
     assert instance.Text == original
 
-@given(instance=fml::PageElement_strategy)
+
+
+@given(instance=fml_SelectionItem_strategy)
+def test_fml_selectionitem_preselected_setter(instance):
+    original = instance.preselected
+    instance.preselected = original
+    assert instance.preselected == original
+
+@given(instance=fml_PageElement_strategy)
 @settings(max_examples=50)
-def test_fml::pageelement_instantiation(instance):
-    assert isinstance(instance, fml::PageElement)
-
-@given(instance=fml::PageElement_strategy)
-def test_fml::pageelement_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_fml_pageelement_instantiation(instance):
+    assert isinstance(instance, fml_PageElement)
 
 
-@given(instance=fml::PageElement_strategy)
-def test_fml::pageelement_ID_setter(instance):
+
+@given(instance=fml_PageElement_strategy)
+def test_fml_pageelement_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -592,83 +580,65 @@ def test_fml::pageelement_ID_setter(instance):
 def test_inputelement_instantiation(instance):
     assert isinstance(instance, InputElement)
 
-@given(instance=fml::SelectField_strategy)
+@given(instance=fml_SelectField_strategy)
 @settings(max_examples=50)
-def test_fml::selectfield_instantiation(instance):
-    assert isinstance(instance, fml::SelectField)
-
-@given(instance=fml::SelectField_strategy)
-def test_fml::selectfield_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_fml_selectfield_instantiation(instance):
+    assert isinstance(instance, fml_SelectField)
 
 
-@given(instance=fml::SelectField_strategy)
-def test_fml::selectfield_Type_setter(instance):
+
+@given(instance=fml_SelectField_strategy)
+def test_fml_selectfield_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
 
-@given(instance=fml::SelectField_strategy)
-def test_fml::selectfield_Label_type(instance):
-    assert isinstance(instance.Label, str)
 
 
-@given(instance=fml::SelectField_strategy)
-def test_fml::selectfield_Label_setter(instance):
+@given(instance=fml_SelectField_strategy)
+def test_fml_selectfield_Label_setter(instance):
     original = instance.Label
     instance.Label = original
     assert instance.Label == original
 
-@given(instance=fml::TextInput_strategy)
+@given(instance=fml_TextInput_strategy)
 @settings(max_examples=50)
-def test_fml::textinput_instantiation(instance):
-    assert isinstance(instance, fml::TextInput)
-
-@given(instance=fml::TextInput_strategy)
-def test_fml::textinput_Content_type(instance):
-    assert isinstance(instance.Content, str)
+def test_fml_textinput_instantiation(instance):
+    assert isinstance(instance, fml_TextInput)
 
 
-@given(instance=fml::TextInput_strategy)
-def test_fml::textinput_Content_setter(instance):
+
+@given(instance=fml_TextInput_strategy)
+def test_fml_textinput_Label_setter(instance):
+    original = instance.Label
+    instance.Label = original
+    assert instance.Label == original
+
+
+
+@given(instance=fml_TextInput_strategy)
+def test_fml_textinput_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
+
+
+
+@given(instance=fml_TextInput_strategy)
+def test_fml_textinput_Content_setter(instance):
     original = instance.Content
     instance.Content = original
     assert instance.Content == original
 
-@given(instance=fml::TextInput_strategy)
-def test_fml::textinput_Label_type(instance):
-    assert isinstance(instance.Label, str)
-
-
-@given(instance=fml::TextInput_strategy)
-def test_fml::textinput_Label_setter(instance):
-    original = instance.Label
-    instance.Label = original
-    assert instance.Label == original
-
-@given(instance=fml::TextInput_strategy)
-def test_fml::textinput_Type_type(instance):
-    assert isinstance(instance.Type, str)
-
-
-@given(instance=fml::TextInput_strategy)
-def test_fml::textinput_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
-
-@given(instance=fml::ListItem_strategy)
+@given(instance=fml_ListItem_strategy)
 @settings(max_examples=50)
-def test_fml::listitem_instantiation(instance):
-    assert isinstance(instance, fml::ListItem)
-
-@given(instance=fml::ListItem_strategy)
-def test_fml::listitem_Text_type(instance):
-    assert isinstance(instance.Text, str)
+def test_fml_listitem_instantiation(instance):
+    assert isinstance(instance, fml_ListItem)
 
 
-@given(instance=fml::ListItem_strategy)
-def test_fml::listitem_Text_setter(instance):
+
+@given(instance=fml_ListItem_strategy)
+def test_fml_listitem_Text_setter(instance):
     original = instance.Text
     instance.Text = original
     assert instance.Text == original
@@ -678,119 +648,98 @@ def test_fml::listitem_Text_setter(instance):
 def test_displayelement_instantiation(instance):
     assert isinstance(instance, DisplayElement)
 
-@given(instance=fml::List_strategy)
+@given(instance=fml_List_strategy)
 @settings(max_examples=50)
-def test_fml::list_instantiation(instance):
-    assert isinstance(instance, fml::List)
-
-@given(instance=fml::List_strategy)
-def test_fml::list_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, bool)
+def test_fml_list_instantiation(instance):
+    assert isinstance(instance, fml_List)
 
 
-@given(instance=fml::List_strategy)
-def test_fml::list_isOrdered_setter(instance):
+
+@given(instance=fml_List_strategy)
+def test_fml_list_isOrdered_setter(instance):
     original = instance.isOrdered
     instance.isOrdered = original
     assert instance.isOrdered == original
 
-@given(instance=fml::TextParagraph_strategy)
+@given(instance=fml_TextParagraph_strategy)
 @settings(max_examples=50)
-def test_fml::textparagraph_instantiation(instance):
-    assert isinstance(instance, fml::TextParagraph)
-
-@given(instance=fml::TextParagraph_strategy)
-def test_fml::textparagraph_Text_type(instance):
-    assert isinstance(instance.Text, str)
+def test_fml_textparagraph_instantiation(instance):
+    assert isinstance(instance, fml_TextParagraph)
 
 
-@given(instance=fml::TextParagraph_strategy)
-def test_fml::textparagraph_Text_setter(instance):
+
+@given(instance=fml_TextParagraph_strategy)
+def test_fml_textparagraph_Text_setter(instance):
     original = instance.Text
     instance.Text = original
     assert instance.Text == original
 
-@given(instance=fml::Heading_strategy)
+@given(instance=fml_Heading_strategy)
 @settings(max_examples=50)
-def test_fml::heading_instantiation(instance):
-    assert isinstance(instance, fml::Heading)
-
-@given(instance=fml::Heading_strategy)
-def test_fml::heading_Text_type(instance):
-    assert isinstance(instance.Text, str)
+def test_fml_heading_instantiation(instance):
+    assert isinstance(instance, fml_Heading)
 
 
-@given(instance=fml::Heading_strategy)
-def test_fml::heading_Text_setter(instance):
-    original = instance.Text
-    instance.Text = original
-    assert instance.Text == original
 
-@given(instance=fml::Heading_strategy)
-def test_fml::heading_Level_type(instance):
-    assert isinstance(instance.Level, str)
-
-
-@given(instance=fml::Heading_strategy)
-def test_fml::heading_Level_setter(instance):
+@given(instance=fml_Heading_strategy)
+def test_fml_heading_Level_setter(instance):
     original = instance.Level
     instance.Level = original
     assert instance.Level == original
+
+
+
+@given(instance=fml_Heading_strategy)
+def test_fml_heading_Text_setter(instance):
+    original = instance.Text
+    instance.Text = original
+    assert instance.Text == original
 
 @given(instance=PageElement_strategy)
 @settings(max_examples=50)
 def test_pageelement_instantiation(instance):
     assert isinstance(instance, PageElement)
 
-@given(instance=fml::InputElement_strategy)
+@given(instance=fml_InputElement_strategy)
 @settings(max_examples=50)
-def test_fml::inputelement_instantiation(instance):
-    assert isinstance(instance, fml::InputElement)
-
-@given(instance=fml::InputElement_strategy)
-def test_fml::inputelement_isMandatory_type(instance):
-    assert isinstance(instance.isMandatory, bool)
+def test_fml_inputelement_instantiation(instance):
+    assert isinstance(instance, fml_InputElement)
 
 
-@given(instance=fml::InputElement_strategy)
-def test_fml::inputelement_isMandatory_setter(instance):
+
+@given(instance=fml_InputElement_strategy)
+def test_fml_inputelement_isMandatory_setter(instance):
     original = instance.isMandatory
     instance.isMandatory = original
     assert instance.isMandatory == original
 
-@given(instance=fml::DisplayElement_strategy)
+@given(instance=fml_DisplayElement_strategy)
 @settings(max_examples=50)
-def test_fml::displayelement_instantiation(instance):
-    assert isinstance(instance, fml::DisplayElement)
+def test_fml_displayelement_instantiation(instance):
+    assert isinstance(instance, fml_DisplayElement)
 
-@given(instance=fml::Page_strategy)
+@given(instance=fml_Page_strategy)
 @settings(max_examples=50)
-def test_fml::page_instantiation(instance):
-    assert isinstance(instance, fml::Page)
-
-@given(instance=fml::Page_strategy)
-def test_fml::page_Title_type(instance):
-    assert isinstance(instance.Title, str)
+def test_fml_page_instantiation(instance):
+    assert isinstance(instance, fml_Page)
 
 
-@given(instance=fml::Page_strategy)
-def test_fml::page_Title_setter(instance):
+
+@given(instance=fml_Page_strategy)
+def test_fml_page_Title_setter(instance):
     original = instance.Title
     instance.Title = original
     assert instance.Title == original
 
-@given(instance=fml::Page_strategy)
-def test_fml::page_isWelcome_type(instance):
-    assert isinstance(instance.isWelcome, bool)
 
 
-@given(instance=fml::Page_strategy)
-def test_fml::page_isWelcome_setter(instance):
+@given(instance=fml_Page_strategy)
+def test_fml_page_isWelcome_setter(instance):
     original = instance.isWelcome
     instance.isWelcome = original
     assert instance.isWelcome == original
 
-@given(instance=fml::Form_strategy)
+@given(instance=fml_Form_strategy)
 @settings(max_examples=50)
-def test_fml::form_instantiation(instance):
-    assert isinstance(instance, fml::Form)
+def test_fml_form_instantiation(instance):
+    assert isinstance(instance, fml_Form)

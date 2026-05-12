@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    uml::FinalState,
+    uml_FinalState,
     Vertex,
-    uml::State,
-    uml::Pseudostate,
-    uml::Region,
-    uml::Vertex,
-    uml::Trigger,
-    uml::Behavior,
-    uml::Transition,
+    uml_State,
+    uml_Pseudostate,
+    uml_Region,
+    uml_Vertex,
+    uml_Trigger,
+    uml_Behavior,
+    uml_Transition,
     Behavior,
-    uml::Activity,
-    uml::StateMachine,
+    uml_Activity,
+    uml_StateMachine,
     PseudostateKind,
 )
 
@@ -42,16 +42,16 @@ def test_state_constructor_args():
 
 
 
-def test_uml::finalstate_is_not_abstract():
-    assert not inspect.isabstract(uml::FinalState)
+def test_uml_finalstate_is_not_abstract():
+    assert not inspect.isabstract(uml_FinalState)
 
 
-def test_uml::finalstate_constructor_exists():
-    assert callable(uml::FinalState.__init__)
+def test_uml_finalstate_constructor_exists():
+    assert callable(uml_FinalState.__init__)
 
 
-def test_uml::finalstate_constructor_args():
-    sig = inspect.signature(uml::FinalState.__init__)
+def test_uml_finalstate_constructor_args():
+    sig = inspect.signature(uml_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -70,37 +70,37 @@ def test_vertex_constructor_args():
 
 
 
-def test_uml::state_is_not_abstract():
-    assert not inspect.isabstract(uml::State)
+def test_uml_state_is_not_abstract():
+    assert not inspect.isabstract(uml_State)
 
 
-def test_uml::state_constructor_exists():
-    assert callable(uml::State.__init__)
+def test_uml_state_constructor_exists():
+    assert callable(uml_State.__init__)
 
 
-def test_uml::state_constructor_args():
-    sig = inspect.signature(uml::State.__init__)
+def test_uml_state_constructor_args():
+    sig = inspect.signature(uml_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(uml::Pseudostate)
+def test_uml_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(uml_Pseudostate)
 
 
-def test_uml::pseudostate_constructor_exists():
-    assert callable(uml::Pseudostate.__init__)
+def test_uml_pseudostate_constructor_exists():
+    assert callable(uml_Pseudostate.__init__)
 
 
-def test_uml::pseudostate_constructor_args():
-    sig = inspect.signature(uml::Pseudostate.__init__)
+def test_uml_pseudostate_constructor_args():
+    sig = inspect.signature(uml_Pseudostate.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_uml::pseudostate_has_kind():
-    assert hasattr(uml::Pseudostate, "kind")
+def test_uml_pseudostate_has_kind():
+    assert hasattr(uml_Pseudostate, "kind")
     descriptor = None
-    for klass in uml::Pseudostate.__mro__:
+    for klass in uml_Pseudostate.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -108,37 +108,37 @@ def test_uml::pseudostate_has_kind():
 
 
 
-def test_uml::region_is_not_abstract():
-    assert not inspect.isabstract(uml::Region)
+def test_uml_region_is_not_abstract():
+    assert not inspect.isabstract(uml_Region)
 
 
-def test_uml::region_constructor_exists():
-    assert callable(uml::Region.__init__)
+def test_uml_region_constructor_exists():
+    assert callable(uml_Region.__init__)
 
 
-def test_uml::region_constructor_args():
-    sig = inspect.signature(uml::Region.__init__)
+def test_uml_region_constructor_args():
+    sig = inspect.signature(uml_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::vertex_is_not_abstract():
-    assert not inspect.isabstract(uml::Vertex)
+def test_uml_vertex_is_not_abstract():
+    assert not inspect.isabstract(uml_Vertex)
 
 
-def test_uml::vertex_constructor_exists():
-    assert callable(uml::Vertex.__init__)
+def test_uml_vertex_constructor_exists():
+    assert callable(uml_Vertex.__init__)
 
 
-def test_uml::vertex_constructor_args():
-    sig = inspect.signature(uml::Vertex.__init__)
+def test_uml_vertex_constructor_args():
+    sig = inspect.signature(uml_Vertex.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uml::vertex_has_name():
-    assert hasattr(uml::Vertex, "name")
+def test_uml_vertex_has_name():
+    assert hasattr(uml_Vertex, "name")
     descriptor = None
-    for klass in uml::Vertex.__mro__:
+    for klass in uml_Vertex.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -146,23 +146,23 @@ def test_uml::vertex_has_name():
 
 
 
-def test_uml::trigger_is_not_abstract():
-    assert not inspect.isabstract(uml::Trigger)
+def test_uml_trigger_is_not_abstract():
+    assert not inspect.isabstract(uml_Trigger)
 
 
-def test_uml::trigger_constructor_exists():
-    assert callable(uml::Trigger.__init__)
+def test_uml_trigger_constructor_exists():
+    assert callable(uml_Trigger.__init__)
 
 
-def test_uml::trigger_constructor_args():
-    sig = inspect.signature(uml::Trigger.__init__)
+def test_uml_trigger_constructor_args():
+    sig = inspect.signature(uml_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uml::trigger_has_name():
-    assert hasattr(uml::Trigger, "name")
+def test_uml_trigger_has_name():
+    assert hasattr(uml_Trigger, "name")
     descriptor = None
-    for klass in uml::Trigger.__mro__:
+    for klass in uml_Trigger.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -170,23 +170,23 @@ def test_uml::trigger_has_name():
 
 
 
-def test_uml::behavior_is_not_abstract():
-    assert not inspect.isabstract(uml::Behavior)
+def test_uml_behavior_is_not_abstract():
+    assert not inspect.isabstract(uml_Behavior)
 
 
-def test_uml::behavior_constructor_exists():
-    assert callable(uml::Behavior.__init__)
+def test_uml_behavior_constructor_exists():
+    assert callable(uml_Behavior.__init__)
 
 
-def test_uml::behavior_constructor_args():
-    sig = inspect.signature(uml::Behavior.__init__)
+def test_uml_behavior_constructor_args():
+    sig = inspect.signature(uml_Behavior.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uml::behavior_has_name():
-    assert hasattr(uml::Behavior, "name")
+def test_uml_behavior_has_name():
+    assert hasattr(uml_Behavior, "name")
     descriptor = None
-    for klass in uml::Behavior.__mro__:
+    for klass in uml_Behavior.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -194,23 +194,23 @@ def test_uml::behavior_has_name():
 
 
 
-def test_uml::transition_is_not_abstract():
-    assert not inspect.isabstract(uml::Transition)
+def test_uml_transition_is_not_abstract():
+    assert not inspect.isabstract(uml_Transition)
 
 
-def test_uml::transition_constructor_exists():
-    assert callable(uml::Transition.__init__)
+def test_uml_transition_constructor_exists():
+    assert callable(uml_Transition.__init__)
 
 
-def test_uml::transition_constructor_args():
-    sig = inspect.signature(uml::Transition.__init__)
+def test_uml_transition_constructor_args():
+    sig = inspect.signature(uml_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uml::transition_has_name():
-    assert hasattr(uml::Transition, "name")
+def test_uml_transition_has_name():
+    assert hasattr(uml_Transition, "name")
     descriptor = None
-    for klass in uml::Transition.__mro__:
+    for klass in uml_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -232,30 +232,30 @@ def test_behavior_constructor_args():
 
 
 
-def test_uml::activity_is_not_abstract():
-    assert not inspect.isabstract(uml::Activity)
+def test_uml_activity_is_not_abstract():
+    assert not inspect.isabstract(uml_Activity)
 
 
-def test_uml::activity_constructor_exists():
-    assert callable(uml::Activity.__init__)
+def test_uml_activity_constructor_exists():
+    assert callable(uml_Activity.__init__)
 
 
-def test_uml::activity_constructor_args():
-    sig = inspect.signature(uml::Activity.__init__)
+def test_uml_activity_constructor_args():
+    sig = inspect.signature(uml_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::statemachine_is_not_abstract():
-    assert not inspect.isabstract(uml::StateMachine)
+def test_uml_statemachine_is_not_abstract():
+    assert not inspect.isabstract(uml_StateMachine)
 
 
-def test_uml::statemachine_constructor_exists():
-    assert callable(uml::StateMachine.__init__)
+def test_uml_statemachine_constructor_exists():
+    assert callable(uml_StateMachine.__init__)
 
 
-def test_uml::statemachine_constructor_args():
-    sig = inspect.signature(uml::StateMachine.__init__)
+def test_uml_statemachine_constructor_args():
+    sig = inspect.signature(uml_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 def test_pseudostatekind_exists():
@@ -266,16 +266,16 @@ def test_pseudostatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PseudostateKind]
     expected_literals = [
-        "entryPoint",
         "join",
-        "initial",
-        "fork",
         "choice",
-        "deepHistory",
-        "junction",
-        "terminate",
-        "exitPoint",
+        "entryPoint",
         "shallowHistory",
+        "exitPoint",
+        "terminate",
+        "fork",
+        "junction",
+        "deepHistory",
+        "initial",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -296,51 +296,51 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-uml::FinalState_strategy = st.builds(
-    uml::FinalState,
+uml_FinalState_strategy = st.builds(
+    uml_FinalState,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-uml::State_strategy = st.builds(
-    uml::State,
+uml_State_strategy = st.builds(
+    uml_State,
 )
-uml::Pseudostate_strategy = st.builds(
-    uml::Pseudostate,
+uml_Pseudostate_strategy = st.builds(
+    uml_Pseudostate,
     kind=
         safe_text
 )
-uml::Region_strategy = st.builds(
-    uml::Region,
+uml_Region_strategy = st.builds(
+    uml_Region,
 )
-uml::Vertex_strategy = st.builds(
-    uml::Vertex,
+uml_Vertex_strategy = st.builds(
+    uml_Vertex,
     name=
         safe_text
 )
-uml::Trigger_strategy = st.builds(
-    uml::Trigger,
+uml_Trigger_strategy = st.builds(
+    uml_Trigger,
     name=
         safe_text
 )
-uml::Behavior_strategy = st.builds(
-    uml::Behavior,
+uml_Behavior_strategy = st.builds(
+    uml_Behavior,
     name=
         safe_text
 )
-uml::Transition_strategy = st.builds(
-    uml::Transition,
+uml_Transition_strategy = st.builds(
+    uml_Transition,
     name=
         safe_text
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-uml::Activity_strategy = st.builds(
-    uml::Activity,
+uml_Activity_strategy = st.builds(
+    uml_Activity,
 )
-uml::StateMachine_strategy = st.builds(
-    uml::StateMachine,
+uml_StateMachine_strategy = st.builds(
+    uml_StateMachine,
 )
 
 @given(instance=State_strategy)
@@ -348,102 +348,87 @@ uml::StateMachine_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=uml::FinalState_strategy)
+@given(instance=uml_FinalState_strategy)
 @settings(max_examples=50)
-def test_uml::finalstate_instantiation(instance):
-    assert isinstance(instance, uml::FinalState)
+def test_uml_finalstate_instantiation(instance):
+    assert isinstance(instance, uml_FinalState)
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=uml::State_strategy)
+@given(instance=uml_State_strategy)
 @settings(max_examples=50)
-def test_uml::state_instantiation(instance):
-    assert isinstance(instance, uml::State)
+def test_uml_state_instantiation(instance):
+    assert isinstance(instance, uml_State)
 
-@given(instance=uml::Pseudostate_strategy)
+@given(instance=uml_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_uml::pseudostate_instantiation(instance):
-    assert isinstance(instance, uml::Pseudostate)
-
-@given(instance=uml::Pseudostate_strategy)
-def test_uml::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_uml_pseudostate_instantiation(instance):
+    assert isinstance(instance, uml_Pseudostate)
 
 
-@given(instance=uml::Pseudostate_strategy)
-def test_uml::pseudostate_kind_setter(instance):
+
+@given(instance=uml_Pseudostate_strategy)
+def test_uml_pseudostate_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=uml::Region_strategy)
+@given(instance=uml_Region_strategy)
 @settings(max_examples=50)
-def test_uml::region_instantiation(instance):
-    assert isinstance(instance, uml::Region)
+def test_uml_region_instantiation(instance):
+    assert isinstance(instance, uml_Region)
 
-@given(instance=uml::Vertex_strategy)
+@given(instance=uml_Vertex_strategy)
 @settings(max_examples=50)
-def test_uml::vertex_instantiation(instance):
-    assert isinstance(instance, uml::Vertex)
-
-@given(instance=uml::Vertex_strategy)
-def test_uml::vertex_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uml_vertex_instantiation(instance):
+    assert isinstance(instance, uml_Vertex)
 
 
-@given(instance=uml::Vertex_strategy)
-def test_uml::vertex_name_setter(instance):
+
+@given(instance=uml_Vertex_strategy)
+def test_uml_vertex_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uml::Trigger_strategy)
+@given(instance=uml_Trigger_strategy)
 @settings(max_examples=50)
-def test_uml::trigger_instantiation(instance):
-    assert isinstance(instance, uml::Trigger)
-
-@given(instance=uml::Trigger_strategy)
-def test_uml::trigger_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uml_trigger_instantiation(instance):
+    assert isinstance(instance, uml_Trigger)
 
 
-@given(instance=uml::Trigger_strategy)
-def test_uml::trigger_name_setter(instance):
+
+@given(instance=uml_Trigger_strategy)
+def test_uml_trigger_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uml::Behavior_strategy)
+@given(instance=uml_Behavior_strategy)
 @settings(max_examples=50)
-def test_uml::behavior_instantiation(instance):
-    assert isinstance(instance, uml::Behavior)
-
-@given(instance=uml::Behavior_strategy)
-def test_uml::behavior_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uml_behavior_instantiation(instance):
+    assert isinstance(instance, uml_Behavior)
 
 
-@given(instance=uml::Behavior_strategy)
-def test_uml::behavior_name_setter(instance):
+
+@given(instance=uml_Behavior_strategy)
+def test_uml_behavior_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uml::Transition_strategy)
+@given(instance=uml_Transition_strategy)
 @settings(max_examples=50)
-def test_uml::transition_instantiation(instance):
-    assert isinstance(instance, uml::Transition)
-
-@given(instance=uml::Transition_strategy)
-def test_uml::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uml_transition_instantiation(instance):
+    assert isinstance(instance, uml_Transition)
 
 
-@given(instance=uml::Transition_strategy)
-def test_uml::transition_name_setter(instance):
+
+@given(instance=uml_Transition_strategy)
+def test_uml_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -453,12 +438,12 @@ def test_uml::transition_name_setter(instance):
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=uml::Activity_strategy)
+@given(instance=uml_Activity_strategy)
 @settings(max_examples=50)
-def test_uml::activity_instantiation(instance):
-    assert isinstance(instance, uml::Activity)
+def test_uml_activity_instantiation(instance):
+    assert isinstance(instance, uml_Activity)
 
-@given(instance=uml::StateMachine_strategy)
+@given(instance=uml_StateMachine_strategy)
 @settings(max_examples=50)
-def test_uml::statemachine_instantiation(instance):
-    assert isinstance(instance, uml::StateMachine)
+def test_uml_statemachine_instantiation(instance):
+    assert isinstance(instance, uml_StateMachine)

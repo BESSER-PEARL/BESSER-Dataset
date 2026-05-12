@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    company::Bug418716,
-    company::Employee,
-    company::Company,
+from python_code import (
+    company_Bug418716,
+    company_Employee,
+    company_Company,
     CompanySizeKind,
 )
 
@@ -18,67 +18,67 @@ from classes import (
 
 
 
-def test_company::bug418716_is_not_abstract():
-    assert not inspect.isabstract(company::Bug418716)
+def test_company_bug418716_is_not_abstract():
+    assert not inspect.isabstract(company_Bug418716)
 
 
-def test_company::bug418716_constructor_exists():
-    assert callable(company::Bug418716.__init__)
+def test_company_bug418716_constructor_exists():
+    assert callable(company_Bug418716.__init__)
 
 
-def test_company::bug418716_constructor_args():
-    sig = inspect.signature(company::Bug418716.__init__)
+def test_company_bug418716_constructor_args():
+    sig = inspect.signature(company_Bug418716.__init__)
     params = list(sig.parameters.keys())
-    assert "AttributeWithInitital" in params, "Missing parameter 'AttributeWithInitital'"
     assert "AttributeWithoutInitital" in params, "Missing parameter 'AttributeWithoutInitital'"
+    assert "AttributeWithInitital" in params, "Missing parameter 'AttributeWithInitital'"
 
-def test_company::bug418716_has_AttributeWithInitital():
-    assert hasattr(company::Bug418716, "AttributeWithInitital")
+def test_company_bug418716_has_AttributeWithoutInitital():
+    assert hasattr(company_Bug418716, "AttributeWithoutInitital")
     descriptor = None
-    for klass in company::Bug418716.__mro__:
-        if "AttributeWithInitital" in klass.__dict__:
-            descriptor = klass.__dict__["AttributeWithInitital"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company::bug418716_has_AttributeWithoutInitital():
-    assert hasattr(company::Bug418716, "AttributeWithoutInitital")
-    descriptor = None
-    for klass in company::Bug418716.__mro__:
+    for klass in company_Bug418716.__mro__:
         if "AttributeWithoutInitital" in klass.__dict__:
             descriptor = klass.__dict__["AttributeWithoutInitital"]
             break
     assert isinstance(descriptor, property)
 
+def test_company_bug418716_has_AttributeWithInitital():
+    assert hasattr(company_Bug418716, "AttributeWithInitital")
+    descriptor = None
+    for klass in company_Bug418716.__mro__:
+        if "AttributeWithInitital" in klass.__dict__:
+            descriptor = klass.__dict__["AttributeWithInitital"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_company::employee_is_not_abstract():
-    assert not inspect.isabstract(company::Employee)
+
+def test_company_employee_is_not_abstract():
+    assert not inspect.isabstract(company_Employee)
 
 
-def test_company::employee_constructor_exists():
-    assert callable(company::Employee.__init__)
+def test_company_employee_constructor_exists():
+    assert callable(company_Employee.__init__)
 
 
-def test_company::employee_constructor_args():
-    sig = inspect.signature(company::Employee.__init__)
+def test_company_employee_constructor_args():
+    sig = inspect.signature(company_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "hasNameAsAttribute" in params, "Missing parameter 'hasNameAsAttribute'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_company::employee_has_hasNameAsAttribute():
-    assert hasattr(company::Employee, "hasNameAsAttribute")
+def test_company_employee_has_hasNameAsAttribute():
+    assert hasattr(company_Employee, "hasNameAsAttribute")
     descriptor = None
-    for klass in company::Employee.__mro__:
+    for klass in company_Employee.__mro__:
         if "hasNameAsAttribute" in klass.__dict__:
             descriptor = klass.__dict__["hasNameAsAttribute"]
             break
     assert isinstance(descriptor, property)
 
-def test_company::employee_has_name():
-    assert hasattr(company::Employee, "name")
+def test_company_employee_has_name():
+    assert hasattr(company_Employee, "name")
     descriptor = None
-    for klass in company::Employee.__mro__:
+    for klass in company_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,35 +86,35 @@ def test_company::employee_has_name():
 
 
 
-def test_company::company_is_not_abstract():
-    assert not inspect.isabstract(company::Company)
+def test_company_company_is_not_abstract():
+    assert not inspect.isabstract(company_Company)
 
 
-def test_company::company_constructor_exists():
-    assert callable(company::Company.__init__)
+def test_company_company_constructor_exists():
+    assert callable(company_Company.__init__)
 
 
-def test_company::company_constructor_args():
-    sig = inspect.signature(company::Company.__init__)
+def test_company_company_constructor_args():
+    sig = inspect.signature(company_Company.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "size" in params, "Missing parameter 'size'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_company::company_has_name():
-    assert hasattr(company::Company, "name")
+def test_company_company_has_size():
+    assert hasattr(company_Company, "size")
     descriptor = None
-    for klass in company::Company.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company::company_has_size():
-    assert hasattr(company::Company, "size")
-    descriptor = None
-    for klass in company::Company.__mro__:
+    for klass in company_Company.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_company_has_name():
+    assert hasattr(company_Company, "name")
+    descriptor = None
+    for klass in company_Company.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -126,9 +126,9 @@ def test_companysizekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CompanySizeKind]
     expected_literals = [
-        "medium",
-        "large",
         "small",
+        "large",
+        "medium",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -146,78 +146,66 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-company::Bug418716_strategy = st.builds(
-    company::Bug418716,
-    AttributeWithInitital=
-        st.integers(),
+company_Bug418716_strategy = st.builds(
+    company_Bug418716,
     AttributeWithoutInitital=
+        st.integers(),
+    AttributeWithInitital=
         st.integers()
 )
-company::Employee_strategy = st.builds(
-    company::Employee,
+company_Employee_strategy = st.builds(
+    company_Employee,
     hasNameAsAttribute=
         st.booleans(),
     name=
         safe_text
 )
-company::Company_strategy = st.builds(
-    company::Company,
-    name=
-        safe_text,
+company_Company_strategy = st.builds(
+    company_Company,
     size=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=company::Bug418716_strategy)
+@given(instance=company_Bug418716_strategy)
 @settings(max_examples=50)
-def test_company::bug418716_instantiation(instance):
-    assert isinstance(instance, company::Bug418716)
-
-@given(instance=company::Bug418716_strategy)
-def test_company::bug418716_AttributeWithInitital_type(instance):
-    assert isinstance(instance.AttributeWithInitital, int)
+def test_company_bug418716_instantiation(instance):
+    assert isinstance(instance, company_Bug418716)
 
 
-@given(instance=company::Bug418716_strategy)
-def test_company::bug418716_AttributeWithInitital_setter(instance):
-    original = instance.AttributeWithInitital
-    instance.AttributeWithInitital = original
-    assert instance.AttributeWithInitital == original
 
-@given(instance=company::Bug418716_strategy)
-def test_company::bug418716_AttributeWithoutInitital_type(instance):
-    assert isinstance(instance.AttributeWithoutInitital, int)
-
-
-@given(instance=company::Bug418716_strategy)
-def test_company::bug418716_AttributeWithoutInitital_setter(instance):
+@given(instance=company_Bug418716_strategy)
+def test_company_bug418716_AttributeWithoutInitital_setter(instance):
     original = instance.AttributeWithoutInitital
     instance.AttributeWithoutInitital = original
     assert instance.AttributeWithoutInitital == original
 
-@given(instance=company::Employee_strategy)
+
+
+@given(instance=company_Bug418716_strategy)
+def test_company_bug418716_AttributeWithInitital_setter(instance):
+    original = instance.AttributeWithInitital
+    instance.AttributeWithInitital = original
+    assert instance.AttributeWithInitital == original
+
+@given(instance=company_Employee_strategy)
 @settings(max_examples=50)
-def test_company::employee_instantiation(instance):
-    assert isinstance(instance, company::Employee)
-
-@given(instance=company::Employee_strategy)
-def test_company::employee_hasNameAsAttribute_type(instance):
-    assert isinstance(instance.hasNameAsAttribute, bool)
+def test_company_employee_instantiation(instance):
+    assert isinstance(instance, company_Employee)
 
 
-@given(instance=company::Employee_strategy)
-def test_company::employee_hasNameAsAttribute_setter(instance):
+
+@given(instance=company_Employee_strategy)
+def test_company_employee_hasNameAsAttribute_setter(instance):
     original = instance.hasNameAsAttribute
     instance.hasNameAsAttribute = original
     assert instance.hasNameAsAttribute == original
 
-@given(instance=company::Employee_strategy)
-def test_company::employee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=company::Employee_strategy)
-def test_company::employee_name_setter(instance):
+@given(instance=company_Employee_strategy)
+def test_company_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -228,9 +216,69 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=company::Employee_strategy)
+@given(instance=company_Employee_strategy)
 @settings(max_examples=30)
-def test_company::employee_nomanagerimpliesdirectreports_changes_state(instance):
+def test_company_employee_hasnameasoperation_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hasNameAsOperation()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hasNameAsOperation).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hasNameAsOperation' in company_Employee is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hasNameAsOperation' in company_Employee did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hasNameAsOperation' in company_Employee is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=company_Employee_strategy)
+@settings(max_examples=30)
+def test_company_employee_reportsto_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.reportsTo(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.reportsTo).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'reportsTo' in company_Employee is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'reportsTo' in company_Employee did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'reportsTo' in company_Employee is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=company_Employee_strategy)
+@settings(max_examples=30)
+def test_company_employee_nomanagerimpliesdirectreports_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -245,111 +293,45 @@ def test_company::employee_nomanagerimpliesdirectreports_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'noManagerImpliesDirectReports' in company::Employee is empty"
+        assert has_statements, f"Function 'noManagerImpliesDirectReports' in company_Employee is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'noManagerImpliesDirectReports' in company::Employee did not change state; check implementation")
+            warnings.warn(f"Operation 'noManagerImpliesDirectReports' in company_Employee did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'noManagerImpliesDirectReports' in company::Employee is not implemented or raised an error")
+        warnings.warn(f"Operation 'noManagerImpliesDirectReports' in company_Employee is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=company::Employee_strategy)
-@settings(max_examples=30)
-def test_company::employee_hasnameasoperation_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasNameAsOperation()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasNameAsOperation).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasNameAsOperation' in company::Employee is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasNameAsOperation' in company::Employee did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasNameAsOperation' in company::Employee is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=company::Employee_strategy)
-@settings(max_examples=30)
-def test_company::employee_reportsto_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.reportsTo(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.reportsTo).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reportsTo' in company::Employee is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reportsTo' in company::Employee did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reportsTo' in company::Employee is not implemented or raised an error")
-
-@given(instance=company::Company_strategy)
+@given(instance=company_Company_strategy)
 @settings(max_examples=50)
-def test_company::company_instantiation(instance):
-    assert isinstance(instance, company::Company)
-
-@given(instance=company::Company_strategy)
-def test_company::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_company_company_instantiation(instance):
+    assert isinstance(instance, company_Company)
 
 
-@given(instance=company::Company_strategy)
-def test_company::company_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=company::Company_strategy)
-def test_company::company_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=company::Company_strategy)
-def test_company::company_size_setter(instance):
+@given(instance=company_Company_strategy)
+def test_company_company_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
+
+
+@given(instance=company_Company_strategy)
+def test_company_company_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=company::Company_strategy)
+@given(instance=company_Company_strategy)
 @settings(max_examples=30)
-def test_company::company_dummyinvariant_changes_state(instance):
+def test_company_company_dummyinvariant_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -364,11 +346,11 @@ def test_company::company_dummyinvariant_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'dummyInvariant' in company::Company is empty"
+        assert has_statements, f"Function 'dummyInvariant' in company_Company is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'dummyInvariant' in company::Company did not change state; check implementation")
+            warnings.warn(f"Operation 'dummyInvariant' in company_Company did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'dummyInvariant' in company::Company is not implemented or raised an error")
+        warnings.warn(f"Operation 'dummyInvariant' in company_Company is not implemented or raised an error")

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    types::TypedElement,
+from python_code import (
+    types_TypedElement,
     Feature,
-    types::Event,
-    types::Property,
-    types::Operation,
+    types_Property,
+    types_Event,
+    types_Operation,
     TypedElement,
     NamedElement,
-    types::Feature,
-    types::Parameter,
-    types::Type,
-    types::Library,
+    types_Parameter,
+    types_Feature,
+    types_Type,
+    types_Library,
 )
 
 # =============================================================================
@@ -25,16 +25,16 @@ from classes import (
 
 
 
-def test_types::typedelement_is_not_abstract():
-    assert not inspect.isabstract(types::TypedElement)
+def test_types_typedelement_is_not_abstract():
+    assert not inspect.isabstract(types_TypedElement)
 
 
-def test_types::typedelement_constructor_exists():
-    assert callable(types::TypedElement.__init__)
+def test_types_typedelement_constructor_exists():
+    assert callable(types_TypedElement.__init__)
 
 
-def test_types::typedelement_constructor_args():
-    sig = inspect.signature(types::TypedElement.__init__)
+def test_types_typedelement_constructor_args():
+    sig = inspect.signature(types_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -53,44 +53,44 @@ def test_feature_constructor_args():
 
 
 
-def test_types::event_is_not_abstract():
-    assert not inspect.isabstract(types::Event)
+def test_types_property_is_not_abstract():
+    assert not inspect.isabstract(types_Property)
 
 
-def test_types::event_constructor_exists():
-    assert callable(types::Event.__init__)
+def test_types_property_constructor_exists():
+    assert callable(types_Property.__init__)
 
 
-def test_types::event_constructor_args():
-    sig = inspect.signature(types::Event.__init__)
+def test_types_property_constructor_args():
+    sig = inspect.signature(types_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::property_is_not_abstract():
-    assert not inspect.isabstract(types::Property)
+def test_types_event_is_not_abstract():
+    assert not inspect.isabstract(types_Event)
 
 
-def test_types::property_constructor_exists():
-    assert callable(types::Property.__init__)
+def test_types_event_constructor_exists():
+    assert callable(types_Event.__init__)
 
 
-def test_types::property_constructor_args():
-    sig = inspect.signature(types::Property.__init__)
+def test_types_event_constructor_args():
+    sig = inspect.signature(types_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::operation_is_not_abstract():
-    assert not inspect.isabstract(types::Operation)
+def test_types_operation_is_not_abstract():
+    assert not inspect.isabstract(types_Operation)
 
 
-def test_types::operation_constructor_exists():
-    assert callable(types::Operation.__init__)
+def test_types_operation_constructor_exists():
+    assert callable(types_Operation.__init__)
 
 
-def test_types::operation_constructor_args():
-    sig = inspect.signature(types::Operation.__init__)
+def test_types_operation_constructor_args():
+    sig = inspect.signature(types_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,65 +123,65 @@ def test_namedelement_constructor_args():
 
 
 
-def test_types::feature_is_not_abstract():
-    assert not inspect.isabstract(types::Feature)
+def test_types_parameter_is_not_abstract():
+    assert not inspect.isabstract(types_Parameter)
 
 
-def test_types::feature_constructor_exists():
-    assert callable(types::Feature.__init__)
+def test_types_parameter_constructor_exists():
+    assert callable(types_Parameter.__init__)
 
 
-def test_types::feature_constructor_args():
-    sig = inspect.signature(types::Feature.__init__)
+def test_types_parameter_constructor_args():
+    sig = inspect.signature(types_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::parameter_is_not_abstract():
-    assert not inspect.isabstract(types::Parameter)
+def test_types_feature_is_not_abstract():
+    assert not inspect.isabstract(types_Feature)
 
 
-def test_types::parameter_constructor_exists():
-    assert callable(types::Parameter.__init__)
+def test_types_feature_constructor_exists():
+    assert callable(types_Feature.__init__)
 
 
-def test_types::parameter_constructor_args():
-    sig = inspect.signature(types::Parameter.__init__)
+def test_types_feature_constructor_args():
+    sig = inspect.signature(types_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::type_is_not_abstract():
-    assert not inspect.isabstract(types::Type)
+def test_types_type_is_not_abstract():
+    assert not inspect.isabstract(types_Type)
 
 
-def test_types::type_constructor_exists():
-    assert callable(types::Type.__init__)
+def test_types_type_constructor_exists():
+    assert callable(types_Type.__init__)
 
 
-def test_types::type_constructor_args():
-    sig = inspect.signature(types::Type.__init__)
+def test_types_type_constructor_args():
+    sig = inspect.signature(types_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::library_is_not_abstract():
-    assert not inspect.isabstract(types::Library)
+def test_types_library_is_not_abstract():
+    assert not inspect.isabstract(types_Library)
 
 
-def test_types::library_constructor_exists():
-    assert callable(types::Library.__init__)
+def test_types_library_constructor_exists():
+    assert callable(types_Library.__init__)
 
 
-def test_types::library_constructor_args():
-    sig = inspect.signature(types::Library.__init__)
+def test_types_library_constructor_args():
+    sig = inspect.signature(types_Library.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_types::library_has_id():
-    assert hasattr(types::Library, "id")
+def test_types_library_has_id():
+    assert hasattr(types_Library, "id")
     descriptor = None
-    for klass in types::Library.__mro__:
+    for klass in types_Library.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -199,20 +199,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-types::TypedElement_strategy = st.builds(
-    types::TypedElement,
+types_TypedElement_strategy = st.builds(
+    types_TypedElement,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-types::Event_strategy = st.builds(
-    types::Event,
+types_Property_strategy = st.builds(
+    types_Property,
 )
-types::Property_strategy = st.builds(
-    types::Property,
+types_Event_strategy = st.builds(
+    types_Event,
 )
-types::Operation_strategy = st.builds(
-    types::Operation,
+types_Operation_strategy = st.builds(
+    types_Operation,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
@@ -220,45 +220,45 @@ TypedElement_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-types::Feature_strategy = st.builds(
-    types::Feature,
+types_Parameter_strategy = st.builds(
+    types_Parameter,
 )
-types::Parameter_strategy = st.builds(
-    types::Parameter,
+types_Feature_strategy = st.builds(
+    types_Feature,
 )
-types::Type_strategy = st.builds(
-    types::Type,
+types_Type_strategy = st.builds(
+    types_Type,
 )
-types::Library_strategy = st.builds(
-    types::Library,
+types_Library_strategy = st.builds(
+    types_Library,
     id=
         safe_text
 )
 
-@given(instance=types::TypedElement_strategy)
+@given(instance=types_TypedElement_strategy)
 @settings(max_examples=50)
-def test_types::typedelement_instantiation(instance):
-    assert isinstance(instance, types::TypedElement)
+def test_types_typedelement_instantiation(instance):
+    assert isinstance(instance, types_TypedElement)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=types::Event_strategy)
+@given(instance=types_Property_strategy)
 @settings(max_examples=50)
-def test_types::event_instantiation(instance):
-    assert isinstance(instance, types::Event)
+def test_types_property_instantiation(instance):
+    assert isinstance(instance, types_Property)
 
-@given(instance=types::Property_strategy)
+@given(instance=types_Event_strategy)
 @settings(max_examples=50)
-def test_types::property_instantiation(instance):
-    assert isinstance(instance, types::Property)
+def test_types_event_instantiation(instance):
+    assert isinstance(instance, types_Event)
 
-@given(instance=types::Operation_strategy)
+@given(instance=types_Operation_strategy)
 @settings(max_examples=50)
-def test_types::operation_instantiation(instance):
-    assert isinstance(instance, types::Operation)
+def test_types_operation_instantiation(instance):
+    assert isinstance(instance, types_Operation)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
@@ -270,33 +270,30 @@ def test_typedelement_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=types::Feature_strategy)
+@given(instance=types_Parameter_strategy)
 @settings(max_examples=50)
-def test_types::feature_instantiation(instance):
-    assert isinstance(instance, types::Feature)
+def test_types_parameter_instantiation(instance):
+    assert isinstance(instance, types_Parameter)
 
-@given(instance=types::Parameter_strategy)
+@given(instance=types_Feature_strategy)
 @settings(max_examples=50)
-def test_types::parameter_instantiation(instance):
-    assert isinstance(instance, types::Parameter)
+def test_types_feature_instantiation(instance):
+    assert isinstance(instance, types_Feature)
 
-@given(instance=types::Type_strategy)
+@given(instance=types_Type_strategy)
 @settings(max_examples=50)
-def test_types::type_instantiation(instance):
-    assert isinstance(instance, types::Type)
+def test_types_type_instantiation(instance):
+    assert isinstance(instance, types_Type)
 
-@given(instance=types::Library_strategy)
+@given(instance=types_Library_strategy)
 @settings(max_examples=50)
-def test_types::library_instantiation(instance):
-    assert isinstance(instance, types::Library)
-
-@given(instance=types::Library_strategy)
-def test_types::library_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_types_library_instantiation(instance):
+    assert isinstance(instance, types_Library)
 
 
-@given(instance=types::Library_strategy)
-def test_types::library_id_setter(instance):
+
+@given(instance=types_Library_strategy)
+def test_types_library_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

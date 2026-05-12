@@ -3,64 +3,64 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ParameterTyp,
-    componentModel::SimpleParameterType,
-    componentModel::ComplexParameterType,
-    Type,
-    componentModel::Void,
-    componentModel::ParameterTyp,
-    SimpleParameterType,
-    componentModel::Map,
-    componentModel::Double,
-    componentModel::Long,
-    componentModel::Boolean,
-    componentModel::Date,
-    componentModel::Float,
-    componentModel::String,
-    componentModel::Int,
-    componentModel::List,
-    componentModel::Char,
-    Component,
-    componentModel::CompositeComponent,
-    componentModel::ViewPoint,
-    componentModel::System,
-    componentModel::Type,
-    componentModel::Parameter,
+from python_code import (
+    componentModel_Type,
     DelegationConnector,
-    componentModel::ProvidedDelegationConnector,
-    componentModel::RequiredDelegationConnector,
-    componentModel::RequiredRole,
-    componentModel::ProvidedRole,
+    componentModel_RequiredDelegationConnector,
+    componentModel_RequiredRole,
+    componentModel_ProvidedRole,
     AssemblyViewType,
-    componentModel::AssemblyContext,
-    componentModel::ViewType,
-    componentModel::Signature,
+    componentModel_AssemblyContext,
+    componentModel_ViewType,
+    componentModel_Signature,
     Action,
-    componentModel::Loop,
-    componentModel::ExternalCall,
-    componentModel::InternalAction,
-    componentModel::Branch,
-    componentModel::Action,
-    componentModel::Service,
-    componentModel::DelegationConnector,
-    componentModel::AssemblyConnector,
-    componentModel::InterfaceServiceMapTuple,
-    componentModel::ServiceEffectSpecification,
-    componentModel::Interface,
-    componentModel::Component,
+    componentModel_InternalAction,
+    componentModel_Loop,
+    componentModel_ExternalCall,
+    componentModel_Branch,
+    componentModel_Action,
+    componentModel_Service,
+    componentModel_DelegationConnector,
+    componentModel_AssemblyConnector,
+    componentModel_InterfaceServiceMapTuple,
+    componentModel_ServiceEffectSpecification,
+    componentModel_Interface,
+    componentModel_Component,
     ViewType,
-    componentModel::EnvironmentViewType,
-    componentModel::AssemblyViewType,
-    componentModel::RepositoryViewType,
-    componentModel::AllocationViewType,
-    componentModel::Repository,
+    componentModel_Repository,
     ViewPoint,
-    componentModel::AssemblyViewPoint,
-    componentModel::DeploymentViewPoint,
-    componentModel::SystemIndependentViewPoint,
+    componentModel_AssemblyViewPoint,
+    componentModel_SystemIndependentViewPoint,
+    ParameterTyp,
+    componentModel_SimpleParameterType,
+    componentModel_ComplexParameterType,
+    Type,
+    componentModel_Void,
+    componentModel_ParameterTyp,
+    SimpleParameterType,
+    componentModel_Map,
+    componentModel_Boolean,
+    componentModel_Int,
+    componentModel_Float,
+    componentModel_List,
+    componentModel_Char,
+    componentModel_Long,
+    componentModel_String,
+    componentModel_Parameter,
+    componentModel_Double,
+    componentModel_Date,
+    componentModel_AllocationViewType,
+    componentModel_EnvironmentViewType,
+    componentModel_RepositoryViewType,
+    componentModel_DeploymentViewPoint,
+    componentModel_AssemblyViewType,
+    Component,
+    componentModel_CompositeComponent,
+    componentModel_ViewPoint,
+    componentModel_ProvidedDelegationConnector,
+    componentModel_System,
 )
 
 # =============================================================================
@@ -69,335 +69,17 @@ from classes import (
 
 
 
-def test_parametertyp_is_not_abstract():
-    assert not inspect.isabstract(ParameterTyp)
+def test_componentmodel_type_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Type)
 
 
-def test_parametertyp_constructor_exists():
-    assert callable(ParameterTyp.__init__)
+def test_componentmodel_type_constructor_exists():
+    assert callable(componentModel_Type.__init__)
 
 
-def test_parametertyp_constructor_args():
-    sig = inspect.signature(ParameterTyp.__init__)
+def test_componentmodel_type_constructor_args():
+    sig = inspect.signature(componentModel_Type.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::simpleparametertype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SimpleParameterType)
-
-
-def test_componentmodel::simpleparametertype_constructor_exists():
-    assert callable(componentModel::SimpleParameterType.__init__)
-
-
-def test_componentmodel::simpleparametertype_constructor_args():
-    sig = inspect.signature(componentModel::SimpleParameterType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::complexparametertype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ComplexParameterType)
-
-
-def test_componentmodel::complexparametertype_constructor_exists():
-    assert callable(componentModel::ComplexParameterType.__init__)
-
-
-def test_componentmodel::complexparametertype_constructor_args():
-    sig = inspect.signature(componentModel::ComplexParameterType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(Type)
-
-
-def test_type_constructor_exists():
-    assert callable(Type.__init__)
-
-
-def test_type_constructor_args():
-    sig = inspect.signature(Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::void_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Void)
-
-
-def test_componentmodel::void_constructor_exists():
-    assert callable(componentModel::Void.__init__)
-
-
-def test_componentmodel::void_constructor_args():
-    sig = inspect.signature(componentModel::Void.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::parametertyp_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ParameterTyp)
-
-
-def test_componentmodel::parametertyp_constructor_exists():
-    assert callable(componentModel::ParameterTyp.__init__)
-
-
-def test_componentmodel::parametertyp_constructor_args():
-    sig = inspect.signature(componentModel::ParameterTyp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleparametertype_is_not_abstract():
-    assert not inspect.isabstract(SimpleParameterType)
-
-
-def test_simpleparametertype_constructor_exists():
-    assert callable(SimpleParameterType.__init__)
-
-
-def test_simpleparametertype_constructor_args():
-    sig = inspect.signature(SimpleParameterType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::map_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Map)
-
-
-def test_componentmodel::map_constructor_exists():
-    assert callable(componentModel::Map.__init__)
-
-
-def test_componentmodel::map_constructor_args():
-    sig = inspect.signature(componentModel::Map.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::double_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Double)
-
-
-def test_componentmodel::double_constructor_exists():
-    assert callable(componentModel::Double.__init__)
-
-
-def test_componentmodel::double_constructor_args():
-    sig = inspect.signature(componentModel::Double.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::long_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Long)
-
-
-def test_componentmodel::long_constructor_exists():
-    assert callable(componentModel::Long.__init__)
-
-
-def test_componentmodel::long_constructor_args():
-    sig = inspect.signature(componentModel::Long.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::boolean_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Boolean)
-
-
-def test_componentmodel::boolean_constructor_exists():
-    assert callable(componentModel::Boolean.__init__)
-
-
-def test_componentmodel::boolean_constructor_args():
-    sig = inspect.signature(componentModel::Boolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::date_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Date)
-
-
-def test_componentmodel::date_constructor_exists():
-    assert callable(componentModel::Date.__init__)
-
-
-def test_componentmodel::date_constructor_args():
-    sig = inspect.signature(componentModel::Date.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::float_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Float)
-
-
-def test_componentmodel::float_constructor_exists():
-    assert callable(componentModel::Float.__init__)
-
-
-def test_componentmodel::float_constructor_args():
-    sig = inspect.signature(componentModel::Float.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::string_is_not_abstract():
-    assert not inspect.isabstract(componentModel::String)
-
-
-def test_componentmodel::string_constructor_exists():
-    assert callable(componentModel::String.__init__)
-
-
-def test_componentmodel::string_constructor_args():
-    sig = inspect.signature(componentModel::String.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::int_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Int)
-
-
-def test_componentmodel::int_constructor_exists():
-    assert callable(componentModel::Int.__init__)
-
-
-def test_componentmodel::int_constructor_args():
-    sig = inspect.signature(componentModel::Int.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::list_is_not_abstract():
-    assert not inspect.isabstract(componentModel::List)
-
-
-def test_componentmodel::list_constructor_exists():
-    assert callable(componentModel::List.__init__)
-
-
-def test_componentmodel::list_constructor_args():
-    sig = inspect.signature(componentModel::List.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::char_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Char)
-
-
-def test_componentmodel::char_constructor_exists():
-    assert callable(componentModel::Char.__init__)
-
-
-def test_componentmodel::char_constructor_args():
-    sig = inspect.signature(componentModel::Char.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_component_is_not_abstract():
-    assert not inspect.isabstract(Component)
-
-
-def test_component_constructor_exists():
-    assert callable(Component.__init__)
-
-
-def test_component_constructor_args():
-    sig = inspect.signature(Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::compositecomponent_is_not_abstract():
-    assert not inspect.isabstract(componentModel::CompositeComponent)
-
-
-def test_componentmodel::compositecomponent_constructor_exists():
-    assert callable(componentModel::CompositeComponent.__init__)
-
-
-def test_componentmodel::compositecomponent_constructor_args():
-    sig = inspect.signature(componentModel::CompositeComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::viewpoint_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ViewPoint)
-
-
-def test_componentmodel::viewpoint_constructor_exists():
-    assert callable(componentModel::ViewPoint.__init__)
-
-
-def test_componentmodel::viewpoint_constructor_args():
-    sig = inspect.signature(componentModel::ViewPoint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::system_is_not_abstract():
-    assert not inspect.isabstract(componentModel::System)
-
-
-def test_componentmodel::system_constructor_exists():
-    assert callable(componentModel::System.__init__)
-
-
-def test_componentmodel::system_constructor_args():
-    sig = inspect.signature(componentModel::System.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::type_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Type)
-
-
-def test_componentmodel::type_constructor_exists():
-    assert callable(componentModel::Type.__init__)
-
-
-def test_componentmodel::type_constructor_args():
-    sig = inspect.signature(componentModel::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::parameter_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Parameter)
-
-
-def test_componentmodel::parameter_constructor_exists():
-    assert callable(componentModel::Parameter.__init__)
-
-
-def test_componentmodel::parameter_constructor_args():
-    sig = inspect.signature(componentModel::Parameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_componentmodel::parameter_has_name():
-    assert hasattr(componentModel::Parameter, "name")
-    descriptor = None
-    for klass in componentModel::Parameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -415,51 +97,37 @@ def test_delegationconnector_constructor_args():
 
 
 
-def test_componentmodel::provideddelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ProvidedDelegationConnector)
+def test_componentmodel_requireddelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(componentModel_RequiredDelegationConnector)
 
 
-def test_componentmodel::provideddelegationconnector_constructor_exists():
-    assert callable(componentModel::ProvidedDelegationConnector.__init__)
+def test_componentmodel_requireddelegationconnector_constructor_exists():
+    assert callable(componentModel_RequiredDelegationConnector.__init__)
 
 
-def test_componentmodel::provideddelegationconnector_constructor_args():
-    sig = inspect.signature(componentModel::ProvidedDelegationConnector.__init__)
+def test_componentmodel_requireddelegationconnector_constructor_args():
+    sig = inspect.signature(componentModel_RequiredDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::requireddelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(componentModel::RequiredDelegationConnector)
+def test_componentmodel_requiredrole_is_not_abstract():
+    assert not inspect.isabstract(componentModel_RequiredRole)
 
 
-def test_componentmodel::requireddelegationconnector_constructor_exists():
-    assert callable(componentModel::RequiredDelegationConnector.__init__)
+def test_componentmodel_requiredrole_constructor_exists():
+    assert callable(componentModel_RequiredRole.__init__)
 
 
-def test_componentmodel::requireddelegationconnector_constructor_args():
-    sig = inspect.signature(componentModel::RequiredDelegationConnector.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::requiredrole_is_not_abstract():
-    assert not inspect.isabstract(componentModel::RequiredRole)
-
-
-def test_componentmodel::requiredrole_constructor_exists():
-    assert callable(componentModel::RequiredRole.__init__)
-
-
-def test_componentmodel::requiredrole_constructor_args():
-    sig = inspect.signature(componentModel::RequiredRole.__init__)
+def test_componentmodel_requiredrole_constructor_args():
+    sig = inspect.signature(componentModel_RequiredRole.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::requiredrole_has_name():
-    assert hasattr(componentModel::RequiredRole, "name")
+def test_componentmodel_requiredrole_has_name():
+    assert hasattr(componentModel_RequiredRole, "name")
     descriptor = None
-    for klass in componentModel::RequiredRole.__mro__:
+    for klass in componentModel_RequiredRole.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -467,23 +135,23 @@ def test_componentmodel::requiredrole_has_name():
 
 
 
-def test_componentmodel::providedrole_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ProvidedRole)
+def test_componentmodel_providedrole_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ProvidedRole)
 
 
-def test_componentmodel::providedrole_constructor_exists():
-    assert callable(componentModel::ProvidedRole.__init__)
+def test_componentmodel_providedrole_constructor_exists():
+    assert callable(componentModel_ProvidedRole.__init__)
 
 
-def test_componentmodel::providedrole_constructor_args():
-    sig = inspect.signature(componentModel::ProvidedRole.__init__)
+def test_componentmodel_providedrole_constructor_args():
+    sig = inspect.signature(componentModel_ProvidedRole.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::providedrole_has_name():
-    assert hasattr(componentModel::ProvidedRole, "name")
+def test_componentmodel_providedrole_has_name():
+    assert hasattr(componentModel_ProvidedRole, "name")
     descriptor = None
-    for klass in componentModel::ProvidedRole.__mro__:
+    for klass in componentModel_ProvidedRole.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -505,23 +173,23 @@ def test_assemblyviewtype_constructor_args():
 
 
 
-def test_componentmodel::assemblycontext_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AssemblyContext)
+def test_componentmodel_assemblycontext_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AssemblyContext)
 
 
-def test_componentmodel::assemblycontext_constructor_exists():
-    assert callable(componentModel::AssemblyContext.__init__)
+def test_componentmodel_assemblycontext_constructor_exists():
+    assert callable(componentModel_AssemblyContext.__init__)
 
 
-def test_componentmodel::assemblycontext_constructor_args():
-    sig = inspect.signature(componentModel::AssemblyContext.__init__)
+def test_componentmodel_assemblycontext_constructor_args():
+    sig = inspect.signature(componentModel_AssemblyContext.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::assemblycontext_has_name():
-    assert hasattr(componentModel::AssemblyContext, "name")
+def test_componentmodel_assemblycontext_has_name():
+    assert hasattr(componentModel_AssemblyContext, "name")
     descriptor = None
-    for klass in componentModel::AssemblyContext.__mro__:
+    for klass in componentModel_AssemblyContext.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -529,37 +197,37 @@ def test_componentmodel::assemblycontext_has_name():
 
 
 
-def test_componentmodel::viewtype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ViewType)
+def test_componentmodel_viewtype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ViewType)
 
 
-def test_componentmodel::viewtype_constructor_exists():
-    assert callable(componentModel::ViewType.__init__)
+def test_componentmodel_viewtype_constructor_exists():
+    assert callable(componentModel_ViewType.__init__)
 
 
-def test_componentmodel::viewtype_constructor_args():
-    sig = inspect.signature(componentModel::ViewType.__init__)
+def test_componentmodel_viewtype_constructor_args():
+    sig = inspect.signature(componentModel_ViewType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::signature_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Signature)
+def test_componentmodel_signature_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Signature)
 
 
-def test_componentmodel::signature_constructor_exists():
-    assert callable(componentModel::Signature.__init__)
+def test_componentmodel_signature_constructor_exists():
+    assert callable(componentModel_Signature.__init__)
 
 
-def test_componentmodel::signature_constructor_args():
-    sig = inspect.signature(componentModel::Signature.__init__)
+def test_componentmodel_signature_constructor_args():
+    sig = inspect.signature(componentModel_Signature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::signature_has_name():
-    assert hasattr(componentModel::Signature, "name")
+def test_componentmodel_signature_has_name():
+    assert hasattr(componentModel_Signature, "name")
     descriptor = None
-    for klass in componentModel::Signature.__mro__:
+    for klass in componentModel_Signature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -581,163 +249,163 @@ def test_action_constructor_args():
 
 
 
-def test_componentmodel::loop_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Loop)
+def test_componentmodel_internalaction_is_not_abstract():
+    assert not inspect.isabstract(componentModel_InternalAction)
 
 
-def test_componentmodel::loop_constructor_exists():
-    assert callable(componentModel::Loop.__init__)
+def test_componentmodel_internalaction_constructor_exists():
+    assert callable(componentModel_InternalAction.__init__)
 
 
-def test_componentmodel::loop_constructor_args():
-    sig = inspect.signature(componentModel::Loop.__init__)
+def test_componentmodel_internalaction_constructor_args():
+    sig = inspect.signature(componentModel_InternalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::externalcall_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ExternalCall)
+def test_componentmodel_loop_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Loop)
 
 
-def test_componentmodel::externalcall_constructor_exists():
-    assert callable(componentModel::ExternalCall.__init__)
+def test_componentmodel_loop_constructor_exists():
+    assert callable(componentModel_Loop.__init__)
 
 
-def test_componentmodel::externalcall_constructor_args():
-    sig = inspect.signature(componentModel::ExternalCall.__init__)
+def test_componentmodel_loop_constructor_args():
+    sig = inspect.signature(componentModel_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::internalaction_is_not_abstract():
-    assert not inspect.isabstract(componentModel::InternalAction)
+def test_componentmodel_externalcall_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ExternalCall)
 
 
-def test_componentmodel::internalaction_constructor_exists():
-    assert callable(componentModel::InternalAction.__init__)
+def test_componentmodel_externalcall_constructor_exists():
+    assert callable(componentModel_ExternalCall.__init__)
 
 
-def test_componentmodel::internalaction_constructor_args():
-    sig = inspect.signature(componentModel::InternalAction.__init__)
+def test_componentmodel_externalcall_constructor_args():
+    sig = inspect.signature(componentModel_ExternalCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::branch_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Branch)
+def test_componentmodel_branch_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Branch)
 
 
-def test_componentmodel::branch_constructor_exists():
-    assert callable(componentModel::Branch.__init__)
+def test_componentmodel_branch_constructor_exists():
+    assert callable(componentModel_Branch.__init__)
 
 
-def test_componentmodel::branch_constructor_args():
-    sig = inspect.signature(componentModel::Branch.__init__)
+def test_componentmodel_branch_constructor_args():
+    sig = inspect.signature(componentModel_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::action_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Action)
+def test_componentmodel_action_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Action)
 
 
-def test_componentmodel::action_constructor_exists():
-    assert callable(componentModel::Action.__init__)
+def test_componentmodel_action_constructor_exists():
+    assert callable(componentModel_Action.__init__)
 
 
-def test_componentmodel::action_constructor_args():
-    sig = inspect.signature(componentModel::Action.__init__)
+def test_componentmodel_action_constructor_args():
+    sig = inspect.signature(componentModel_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::service_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Service)
+def test_componentmodel_service_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Service)
 
 
-def test_componentmodel::service_constructor_exists():
-    assert callable(componentModel::Service.__init__)
+def test_componentmodel_service_constructor_exists():
+    assert callable(componentModel_Service.__init__)
 
 
-def test_componentmodel::service_constructor_args():
-    sig = inspect.signature(componentModel::Service.__init__)
+def test_componentmodel_service_constructor_args():
+    sig = inspect.signature(componentModel_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::delegationconnector_is_not_abstract():
-    assert not inspect.isabstract(componentModel::DelegationConnector)
+def test_componentmodel_delegationconnector_is_not_abstract():
+    assert not inspect.isabstract(componentModel_DelegationConnector)
 
 
-def test_componentmodel::delegationconnector_constructor_exists():
-    assert callable(componentModel::DelegationConnector.__init__)
+def test_componentmodel_delegationconnector_constructor_exists():
+    assert callable(componentModel_DelegationConnector.__init__)
 
 
-def test_componentmodel::delegationconnector_constructor_args():
-    sig = inspect.signature(componentModel::DelegationConnector.__init__)
+def test_componentmodel_delegationconnector_constructor_args():
+    sig = inspect.signature(componentModel_DelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::assemblyconnector_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AssemblyConnector)
+def test_componentmodel_assemblyconnector_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AssemblyConnector)
 
 
-def test_componentmodel::assemblyconnector_constructor_exists():
-    assert callable(componentModel::AssemblyConnector.__init__)
+def test_componentmodel_assemblyconnector_constructor_exists():
+    assert callable(componentModel_AssemblyConnector.__init__)
 
 
-def test_componentmodel::assemblyconnector_constructor_args():
-    sig = inspect.signature(componentModel::AssemblyConnector.__init__)
+def test_componentmodel_assemblyconnector_constructor_args():
+    sig = inspect.signature(componentModel_AssemblyConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::interfaceservicemaptuple_is_not_abstract():
-    assert not inspect.isabstract(componentModel::InterfaceServiceMapTuple)
+def test_componentmodel_interfaceservicemaptuple_is_not_abstract():
+    assert not inspect.isabstract(componentModel_InterfaceServiceMapTuple)
 
 
-def test_componentmodel::interfaceservicemaptuple_constructor_exists():
-    assert callable(componentModel::InterfaceServiceMapTuple.__init__)
+def test_componentmodel_interfaceservicemaptuple_constructor_exists():
+    assert callable(componentModel_InterfaceServiceMapTuple.__init__)
 
 
-def test_componentmodel::interfaceservicemaptuple_constructor_args():
-    sig = inspect.signature(componentModel::InterfaceServiceMapTuple.__init__)
+def test_componentmodel_interfaceservicemaptuple_constructor_args():
+    sig = inspect.signature(componentModel_InterfaceServiceMapTuple.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::serviceeffectspecification_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ServiceEffectSpecification)
+def test_componentmodel_serviceeffectspecification_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ServiceEffectSpecification)
 
 
-def test_componentmodel::serviceeffectspecification_constructor_exists():
-    assert callable(componentModel::ServiceEffectSpecification.__init__)
+def test_componentmodel_serviceeffectspecification_constructor_exists():
+    assert callable(componentModel_ServiceEffectSpecification.__init__)
 
 
-def test_componentmodel::serviceeffectspecification_constructor_args():
-    sig = inspect.signature(componentModel::ServiceEffectSpecification.__init__)
+def test_componentmodel_serviceeffectspecification_constructor_args():
+    sig = inspect.signature(componentModel_ServiceEffectSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::interface_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Interface)
+def test_componentmodel_interface_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Interface)
 
 
-def test_componentmodel::interface_constructor_exists():
-    assert callable(componentModel::Interface.__init__)
+def test_componentmodel_interface_constructor_exists():
+    assert callable(componentModel_Interface.__init__)
 
 
-def test_componentmodel::interface_constructor_args():
-    sig = inspect.signature(componentModel::Interface.__init__)
+def test_componentmodel_interface_constructor_args():
+    sig = inspect.signature(componentModel_Interface.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::interface_has_name():
-    assert hasattr(componentModel::Interface, "name")
+def test_componentmodel_interface_has_name():
+    assert hasattr(componentModel_Interface, "name")
     descriptor = None
-    for klass in componentModel::Interface.__mro__:
+    for klass in componentModel_Interface.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -745,23 +413,23 @@ def test_componentmodel::interface_has_name():
 
 
 
-def test_componentmodel::component_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Component)
+def test_componentmodel_component_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Component)
 
 
-def test_componentmodel::component_constructor_exists():
-    assert callable(componentModel::Component.__init__)
+def test_componentmodel_component_constructor_exists():
+    assert callable(componentModel_Component.__init__)
 
 
-def test_componentmodel::component_constructor_args():
-    sig = inspect.signature(componentModel::Component.__init__)
+def test_componentmodel_component_constructor_args():
+    sig = inspect.signature(componentModel_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::component_has_name():
-    assert hasattr(componentModel::Component, "name")
+def test_componentmodel_component_has_name():
+    assert hasattr(componentModel_Component, "name")
     descriptor = None
-    for klass in componentModel::Component.__mro__:
+    for klass in componentModel_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -783,72 +451,16 @@ def test_viewtype_constructor_args():
 
 
 
-def test_componentmodel::environmentviewtype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::EnvironmentViewType)
+def test_componentmodel_repository_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Repository)
 
 
-def test_componentmodel::environmentviewtype_constructor_exists():
-    assert callable(componentModel::EnvironmentViewType.__init__)
+def test_componentmodel_repository_constructor_exists():
+    assert callable(componentModel_Repository.__init__)
 
 
-def test_componentmodel::environmentviewtype_constructor_args():
-    sig = inspect.signature(componentModel::EnvironmentViewType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::assemblyviewtype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AssemblyViewType)
-
-
-def test_componentmodel::assemblyviewtype_constructor_exists():
-    assert callable(componentModel::AssemblyViewType.__init__)
-
-
-def test_componentmodel::assemblyviewtype_constructor_args():
-    sig = inspect.signature(componentModel::AssemblyViewType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::repositoryviewtype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::RepositoryViewType)
-
-
-def test_componentmodel::repositoryviewtype_constructor_exists():
-    assert callable(componentModel::RepositoryViewType.__init__)
-
-
-def test_componentmodel::repositoryviewtype_constructor_args():
-    sig = inspect.signature(componentModel::RepositoryViewType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::allocationviewtype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AllocationViewType)
-
-
-def test_componentmodel::allocationviewtype_constructor_exists():
-    assert callable(componentModel::AllocationViewType.__init__)
-
-
-def test_componentmodel::allocationviewtype_constructor_args():
-    sig = inspect.signature(componentModel::AllocationViewType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentmodel::repository_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Repository)
-
-
-def test_componentmodel::repository_constructor_exists():
-    assert callable(componentModel::Repository.__init__)
-
-
-def test_componentmodel::repository_constructor_args():
-    sig = inspect.signature(componentModel::Repository.__init__)
+def test_componentmodel_repository_constructor_args():
+    sig = inspect.signature(componentModel_Repository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -867,44 +479,432 @@ def test_viewpoint_constructor_args():
 
 
 
-def test_componentmodel::assemblyviewpoint_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AssemblyViewPoint)
+def test_componentmodel_assemblyviewpoint_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AssemblyViewPoint)
 
 
-def test_componentmodel::assemblyviewpoint_constructor_exists():
-    assert callable(componentModel::AssemblyViewPoint.__init__)
+def test_componentmodel_assemblyviewpoint_constructor_exists():
+    assert callable(componentModel_AssemblyViewPoint.__init__)
 
 
-def test_componentmodel::assemblyviewpoint_constructor_args():
-    sig = inspect.signature(componentModel::AssemblyViewPoint.__init__)
+def test_componentmodel_assemblyviewpoint_constructor_args():
+    sig = inspect.signature(componentModel_AssemblyViewPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::deploymentviewpoint_is_not_abstract():
-    assert not inspect.isabstract(componentModel::DeploymentViewPoint)
+def test_componentmodel_systemindependentviewpoint_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SystemIndependentViewPoint)
 
 
-def test_componentmodel::deploymentviewpoint_constructor_exists():
-    assert callable(componentModel::DeploymentViewPoint.__init__)
+def test_componentmodel_systemindependentviewpoint_constructor_exists():
+    assert callable(componentModel_SystemIndependentViewPoint.__init__)
 
 
-def test_componentmodel::deploymentviewpoint_constructor_args():
-    sig = inspect.signature(componentModel::DeploymentViewPoint.__init__)
+def test_componentmodel_systemindependentviewpoint_constructor_args():
+    sig = inspect.signature(componentModel_SystemIndependentViewPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::systemindependentviewpoint_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SystemIndependentViewPoint)
+def test_parametertyp_is_not_abstract():
+    assert not inspect.isabstract(ParameterTyp)
 
 
-def test_componentmodel::systemindependentviewpoint_constructor_exists():
-    assert callable(componentModel::SystemIndependentViewPoint.__init__)
+def test_parametertyp_constructor_exists():
+    assert callable(ParameterTyp.__init__)
 
 
-def test_componentmodel::systemindependentviewpoint_constructor_args():
-    sig = inspect.signature(componentModel::SystemIndependentViewPoint.__init__)
+def test_parametertyp_constructor_args():
+    sig = inspect.signature(ParameterTyp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_simpleparametertype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SimpleParameterType)
+
+
+def test_componentmodel_simpleparametertype_constructor_exists():
+    assert callable(componentModel_SimpleParameterType.__init__)
+
+
+def test_componentmodel_simpleparametertype_constructor_args():
+    sig = inspect.signature(componentModel_SimpleParameterType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_complexparametertype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ComplexParameterType)
+
+
+def test_componentmodel_complexparametertype_constructor_exists():
+    assert callable(componentModel_ComplexParameterType.__init__)
+
+
+def test_componentmodel_complexparametertype_constructor_args():
+    sig = inspect.signature(componentModel_ComplexParameterType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(Type)
+
+
+def test_type_constructor_exists():
+    assert callable(Type.__init__)
+
+
+def test_type_constructor_args():
+    sig = inspect.signature(Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_void_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Void)
+
+
+def test_componentmodel_void_constructor_exists():
+    assert callable(componentModel_Void.__init__)
+
+
+def test_componentmodel_void_constructor_args():
+    sig = inspect.signature(componentModel_Void.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_parametertyp_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ParameterTyp)
+
+
+def test_componentmodel_parametertyp_constructor_exists():
+    assert callable(componentModel_ParameterTyp.__init__)
+
+
+def test_componentmodel_parametertyp_constructor_args():
+    sig = inspect.signature(componentModel_ParameterTyp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleparametertype_is_not_abstract():
+    assert not inspect.isabstract(SimpleParameterType)
+
+
+def test_simpleparametertype_constructor_exists():
+    assert callable(SimpleParameterType.__init__)
+
+
+def test_simpleparametertype_constructor_args():
+    sig = inspect.signature(SimpleParameterType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_map_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Map)
+
+
+def test_componentmodel_map_constructor_exists():
+    assert callable(componentModel_Map.__init__)
+
+
+def test_componentmodel_map_constructor_args():
+    sig = inspect.signature(componentModel_Map.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_boolean_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Boolean)
+
+
+def test_componentmodel_boolean_constructor_exists():
+    assert callable(componentModel_Boolean.__init__)
+
+
+def test_componentmodel_boolean_constructor_args():
+    sig = inspect.signature(componentModel_Boolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_int_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Int)
+
+
+def test_componentmodel_int_constructor_exists():
+    assert callable(componentModel_Int.__init__)
+
+
+def test_componentmodel_int_constructor_args():
+    sig = inspect.signature(componentModel_Int.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_float_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Float)
+
+
+def test_componentmodel_float_constructor_exists():
+    assert callable(componentModel_Float.__init__)
+
+
+def test_componentmodel_float_constructor_args():
+    sig = inspect.signature(componentModel_Float.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_list_is_not_abstract():
+    assert not inspect.isabstract(componentModel_List)
+
+
+def test_componentmodel_list_constructor_exists():
+    assert callable(componentModel_List.__init__)
+
+
+def test_componentmodel_list_constructor_args():
+    sig = inspect.signature(componentModel_List.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_char_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Char)
+
+
+def test_componentmodel_char_constructor_exists():
+    assert callable(componentModel_Char.__init__)
+
+
+def test_componentmodel_char_constructor_args():
+    sig = inspect.signature(componentModel_Char.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_long_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Long)
+
+
+def test_componentmodel_long_constructor_exists():
+    assert callable(componentModel_Long.__init__)
+
+
+def test_componentmodel_long_constructor_args():
+    sig = inspect.signature(componentModel_Long.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_string_is_not_abstract():
+    assert not inspect.isabstract(componentModel_String)
+
+
+def test_componentmodel_string_constructor_exists():
+    assert callable(componentModel_String.__init__)
+
+
+def test_componentmodel_string_constructor_args():
+    sig = inspect.signature(componentModel_String.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_parameter_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Parameter)
+
+
+def test_componentmodel_parameter_constructor_exists():
+    assert callable(componentModel_Parameter.__init__)
+
+
+def test_componentmodel_parameter_constructor_args():
+    sig = inspect.signature(componentModel_Parameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_componentmodel_parameter_has_name():
+    assert hasattr(componentModel_Parameter, "name")
+    descriptor = None
+    for klass in componentModel_Parameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_componentmodel_double_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Double)
+
+
+def test_componentmodel_double_constructor_exists():
+    assert callable(componentModel_Double.__init__)
+
+
+def test_componentmodel_double_constructor_args():
+    sig = inspect.signature(componentModel_Double.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_date_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Date)
+
+
+def test_componentmodel_date_constructor_exists():
+    assert callable(componentModel_Date.__init__)
+
+
+def test_componentmodel_date_constructor_args():
+    sig = inspect.signature(componentModel_Date.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_allocationviewtype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AllocationViewType)
+
+
+def test_componentmodel_allocationviewtype_constructor_exists():
+    assert callable(componentModel_AllocationViewType.__init__)
+
+
+def test_componentmodel_allocationviewtype_constructor_args():
+    sig = inspect.signature(componentModel_AllocationViewType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_environmentviewtype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_EnvironmentViewType)
+
+
+def test_componentmodel_environmentviewtype_constructor_exists():
+    assert callable(componentModel_EnvironmentViewType.__init__)
+
+
+def test_componentmodel_environmentviewtype_constructor_args():
+    sig = inspect.signature(componentModel_EnvironmentViewType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_repositoryviewtype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_RepositoryViewType)
+
+
+def test_componentmodel_repositoryviewtype_constructor_exists():
+    assert callable(componentModel_RepositoryViewType.__init__)
+
+
+def test_componentmodel_repositoryviewtype_constructor_args():
+    sig = inspect.signature(componentModel_RepositoryViewType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_deploymentviewpoint_is_not_abstract():
+    assert not inspect.isabstract(componentModel_DeploymentViewPoint)
+
+
+def test_componentmodel_deploymentviewpoint_constructor_exists():
+    assert callable(componentModel_DeploymentViewPoint.__init__)
+
+
+def test_componentmodel_deploymentviewpoint_constructor_args():
+    sig = inspect.signature(componentModel_DeploymentViewPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_assemblyviewtype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AssemblyViewType)
+
+
+def test_componentmodel_assemblyviewtype_constructor_exists():
+    assert callable(componentModel_AssemblyViewType.__init__)
+
+
+def test_componentmodel_assemblyviewtype_constructor_args():
+    sig = inspect.signature(componentModel_AssemblyViewType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_component_is_not_abstract():
+    assert not inspect.isabstract(Component)
+
+
+def test_component_constructor_exists():
+    assert callable(Component.__init__)
+
+
+def test_component_constructor_args():
+    sig = inspect.signature(Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_compositecomponent_is_not_abstract():
+    assert not inspect.isabstract(componentModel_CompositeComponent)
+
+
+def test_componentmodel_compositecomponent_constructor_exists():
+    assert callable(componentModel_CompositeComponent.__init__)
+
+
+def test_componentmodel_compositecomponent_constructor_args():
+    sig = inspect.signature(componentModel_CompositeComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_viewpoint_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ViewPoint)
+
+
+def test_componentmodel_viewpoint_constructor_exists():
+    assert callable(componentModel_ViewPoint.__init__)
+
+
+def test_componentmodel_viewpoint_constructor_args():
+    sig = inspect.signature(componentModel_ViewPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_provideddelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ProvidedDelegationConnector)
+
+
+def test_componentmodel_provideddelegationconnector_constructor_exists():
+    assert callable(componentModel_ProvidedDelegationConnector.__init__)
+
+
+def test_componentmodel_provideddelegationconnector_constructor_args():
+    sig = inspect.signature(componentModel_ProvidedDelegationConnector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentmodel_system_is_not_abstract():
+    assert not inspect.isabstract(componentModel_System)
+
+
+def test_componentmodel_system_constructor_exists():
+    assert callable(componentModel_System.__init__)
+
+
+def test_componentmodel_system_constructor_args():
+    sig = inspect.signature(componentModel_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -919,355 +919,223 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ParameterTyp_strategy = st.builds(
-    ParameterTyp,
-)
-componentModel::SimpleParameterType_strategy = st.builds(
-    componentModel::SimpleParameterType,
-)
-componentModel::ComplexParameterType_strategy = st.builds(
-    componentModel::ComplexParameterType,
-)
-Type_strategy = st.builds(
-    Type,
-)
-componentModel::Void_strategy = st.builds(
-    componentModel::Void,
-)
-componentModel::ParameterTyp_strategy = st.builds(
-    componentModel::ParameterTyp,
-)
-SimpleParameterType_strategy = st.builds(
-    SimpleParameterType,
-)
-componentModel::Map_strategy = st.builds(
-    componentModel::Map,
-)
-componentModel::Double_strategy = st.builds(
-    componentModel::Double,
-)
-componentModel::Long_strategy = st.builds(
-    componentModel::Long,
-)
-componentModel::Boolean_strategy = st.builds(
-    componentModel::Boolean,
-)
-componentModel::Date_strategy = st.builds(
-    componentModel::Date,
-)
-componentModel::Float_strategy = st.builds(
-    componentModel::Float,
-)
-componentModel::String_strategy = st.builds(
-    componentModel::String,
-)
-componentModel::Int_strategy = st.builds(
-    componentModel::Int,
-)
-componentModel::List_strategy = st.builds(
-    componentModel::List,
-)
-componentModel::Char_strategy = st.builds(
-    componentModel::Char,
-)
-Component_strategy = st.builds(
-    Component,
-)
-componentModel::CompositeComponent_strategy = st.builds(
-    componentModel::CompositeComponent,
-)
-componentModel::ViewPoint_strategy = st.builds(
-    componentModel::ViewPoint,
-)
-componentModel::System_strategy = st.builds(
-    componentModel::System,
-)
-componentModel::Type_strategy = st.builds(
-    componentModel::Type,
-)
-componentModel::Parameter_strategy = st.builds(
-    componentModel::Parameter,
-    name=
-        safe_text
+componentModel_Type_strategy = st.builds(
+    componentModel_Type,
 )
 DelegationConnector_strategy = st.builds(
     DelegationConnector,
 )
-componentModel::ProvidedDelegationConnector_strategy = st.builds(
-    componentModel::ProvidedDelegationConnector,
+componentModel_RequiredDelegationConnector_strategy = st.builds(
+    componentModel_RequiredDelegationConnector,
 )
-componentModel::RequiredDelegationConnector_strategy = st.builds(
-    componentModel::RequiredDelegationConnector,
-)
-componentModel::RequiredRole_strategy = st.builds(
-    componentModel::RequiredRole,
+componentModel_RequiredRole_strategy = st.builds(
+    componentModel_RequiredRole,
     name=
         safe_text
 )
-componentModel::ProvidedRole_strategy = st.builds(
-    componentModel::ProvidedRole,
+componentModel_ProvidedRole_strategy = st.builds(
+    componentModel_ProvidedRole,
     name=
         safe_text
 )
 AssemblyViewType_strategy = st.builds(
     AssemblyViewType,
 )
-componentModel::AssemblyContext_strategy = st.builds(
-    componentModel::AssemblyContext,
+componentModel_AssemblyContext_strategy = st.builds(
+    componentModel_AssemblyContext,
     name=
         safe_text
 )
-componentModel::ViewType_strategy = st.builds(
-    componentModel::ViewType,
+componentModel_ViewType_strategy = st.builds(
+    componentModel_ViewType,
 )
-componentModel::Signature_strategy = st.builds(
-    componentModel::Signature,
+componentModel_Signature_strategy = st.builds(
+    componentModel_Signature,
     name=
         safe_text
 )
 Action_strategy = st.builds(
     Action,
 )
-componentModel::Loop_strategy = st.builds(
-    componentModel::Loop,
+componentModel_InternalAction_strategy = st.builds(
+    componentModel_InternalAction,
 )
-componentModel::ExternalCall_strategy = st.builds(
-    componentModel::ExternalCall,
+componentModel_Loop_strategy = st.builds(
+    componentModel_Loop,
 )
-componentModel::InternalAction_strategy = st.builds(
-    componentModel::InternalAction,
+componentModel_ExternalCall_strategy = st.builds(
+    componentModel_ExternalCall,
 )
-componentModel::Branch_strategy = st.builds(
-    componentModel::Branch,
+componentModel_Branch_strategy = st.builds(
+    componentModel_Branch,
 )
-componentModel::Action_strategy = st.builds(
-    componentModel::Action,
+componentModel_Action_strategy = st.builds(
+    componentModel_Action,
 )
-componentModel::Service_strategy = st.builds(
-    componentModel::Service,
+componentModel_Service_strategy = st.builds(
+    componentModel_Service,
 )
-componentModel::DelegationConnector_strategy = st.builds(
-    componentModel::DelegationConnector,
+componentModel_DelegationConnector_strategy = st.builds(
+    componentModel_DelegationConnector,
 )
-componentModel::AssemblyConnector_strategy = st.builds(
-    componentModel::AssemblyConnector,
+componentModel_AssemblyConnector_strategy = st.builds(
+    componentModel_AssemblyConnector,
 )
-componentModel::InterfaceServiceMapTuple_strategy = st.builds(
-    componentModel::InterfaceServiceMapTuple,
+componentModel_InterfaceServiceMapTuple_strategy = st.builds(
+    componentModel_InterfaceServiceMapTuple,
 )
-componentModel::ServiceEffectSpecification_strategy = st.builds(
-    componentModel::ServiceEffectSpecification,
+componentModel_ServiceEffectSpecification_strategy = st.builds(
+    componentModel_ServiceEffectSpecification,
 )
-componentModel::Interface_strategy = st.builds(
-    componentModel::Interface,
+componentModel_Interface_strategy = st.builds(
+    componentModel_Interface,
     name=
         safe_text
 )
-componentModel::Component_strategy = st.builds(
-    componentModel::Component,
+componentModel_Component_strategy = st.builds(
+    componentModel_Component,
     name=
         safe_text
 )
 ViewType_strategy = st.builds(
     ViewType,
 )
-componentModel::EnvironmentViewType_strategy = st.builds(
-    componentModel::EnvironmentViewType,
-)
-componentModel::AssemblyViewType_strategy = st.builds(
-    componentModel::AssemblyViewType,
-)
-componentModel::RepositoryViewType_strategy = st.builds(
-    componentModel::RepositoryViewType,
-)
-componentModel::AllocationViewType_strategy = st.builds(
-    componentModel::AllocationViewType,
-)
-componentModel::Repository_strategy = st.builds(
-    componentModel::Repository,
+componentModel_Repository_strategy = st.builds(
+    componentModel_Repository,
 )
 ViewPoint_strategy = st.builds(
     ViewPoint,
 )
-componentModel::AssemblyViewPoint_strategy = st.builds(
-    componentModel::AssemblyViewPoint,
+componentModel_AssemblyViewPoint_strategy = st.builds(
+    componentModel_AssemblyViewPoint,
 )
-componentModel::DeploymentViewPoint_strategy = st.builds(
-    componentModel::DeploymentViewPoint,
+componentModel_SystemIndependentViewPoint_strategy = st.builds(
+    componentModel_SystemIndependentViewPoint,
 )
-componentModel::SystemIndependentViewPoint_strategy = st.builds(
-    componentModel::SystemIndependentViewPoint,
+ParameterTyp_strategy = st.builds(
+    ParameterTyp,
+)
+componentModel_SimpleParameterType_strategy = st.builds(
+    componentModel_SimpleParameterType,
+)
+componentModel_ComplexParameterType_strategy = st.builds(
+    componentModel_ComplexParameterType,
+)
+Type_strategy = st.builds(
+    Type,
+)
+componentModel_Void_strategy = st.builds(
+    componentModel_Void,
+)
+componentModel_ParameterTyp_strategy = st.builds(
+    componentModel_ParameterTyp,
+)
+SimpleParameterType_strategy = st.builds(
+    SimpleParameterType,
+)
+componentModel_Map_strategy = st.builds(
+    componentModel_Map,
+)
+componentModel_Boolean_strategy = st.builds(
+    componentModel_Boolean,
+)
+componentModel_Int_strategy = st.builds(
+    componentModel_Int,
+)
+componentModel_Float_strategy = st.builds(
+    componentModel_Float,
+)
+componentModel_List_strategy = st.builds(
+    componentModel_List,
+)
+componentModel_Char_strategy = st.builds(
+    componentModel_Char,
+)
+componentModel_Long_strategy = st.builds(
+    componentModel_Long,
+)
+componentModel_String_strategy = st.builds(
+    componentModel_String,
+)
+componentModel_Parameter_strategy = st.builds(
+    componentModel_Parameter,
+    name=
+        safe_text
+)
+componentModel_Double_strategy = st.builds(
+    componentModel_Double,
+)
+componentModel_Date_strategy = st.builds(
+    componentModel_Date,
+)
+componentModel_AllocationViewType_strategy = st.builds(
+    componentModel_AllocationViewType,
+)
+componentModel_EnvironmentViewType_strategy = st.builds(
+    componentModel_EnvironmentViewType,
+)
+componentModel_RepositoryViewType_strategy = st.builds(
+    componentModel_RepositoryViewType,
+)
+componentModel_DeploymentViewPoint_strategy = st.builds(
+    componentModel_DeploymentViewPoint,
+)
+componentModel_AssemblyViewType_strategy = st.builds(
+    componentModel_AssemblyViewType,
+)
+Component_strategy = st.builds(
+    Component,
+)
+componentModel_CompositeComponent_strategy = st.builds(
+    componentModel_CompositeComponent,
+)
+componentModel_ViewPoint_strategy = st.builds(
+    componentModel_ViewPoint,
+)
+componentModel_ProvidedDelegationConnector_strategy = st.builds(
+    componentModel_ProvidedDelegationConnector,
+)
+componentModel_System_strategy = st.builds(
+    componentModel_System,
 )
 
-@given(instance=ParameterTyp_strategy)
+@given(instance=componentModel_Type_strategy)
 @settings(max_examples=50)
-def test_parametertyp_instantiation(instance):
-    assert isinstance(instance, ParameterTyp)
-
-@given(instance=componentModel::SimpleParameterType_strategy)
-@settings(max_examples=50)
-def test_componentmodel::simpleparametertype_instantiation(instance):
-    assert isinstance(instance, componentModel::SimpleParameterType)
-
-@given(instance=componentModel::ComplexParameterType_strategy)
-@settings(max_examples=50)
-def test_componentmodel::complexparametertype_instantiation(instance):
-    assert isinstance(instance, componentModel::ComplexParameterType)
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=componentModel::Void_strategy)
-@settings(max_examples=50)
-def test_componentmodel::void_instantiation(instance):
-    assert isinstance(instance, componentModel::Void)
-
-@given(instance=componentModel::ParameterTyp_strategy)
-@settings(max_examples=50)
-def test_componentmodel::parametertyp_instantiation(instance):
-    assert isinstance(instance, componentModel::ParameterTyp)
-
-@given(instance=SimpleParameterType_strategy)
-@settings(max_examples=50)
-def test_simpleparametertype_instantiation(instance):
-    assert isinstance(instance, SimpleParameterType)
-
-@given(instance=componentModel::Map_strategy)
-@settings(max_examples=50)
-def test_componentmodel::map_instantiation(instance):
-    assert isinstance(instance, componentModel::Map)
-
-@given(instance=componentModel::Double_strategy)
-@settings(max_examples=50)
-def test_componentmodel::double_instantiation(instance):
-    assert isinstance(instance, componentModel::Double)
-
-@given(instance=componentModel::Long_strategy)
-@settings(max_examples=50)
-def test_componentmodel::long_instantiation(instance):
-    assert isinstance(instance, componentModel::Long)
-
-@given(instance=componentModel::Boolean_strategy)
-@settings(max_examples=50)
-def test_componentmodel::boolean_instantiation(instance):
-    assert isinstance(instance, componentModel::Boolean)
-
-@given(instance=componentModel::Date_strategy)
-@settings(max_examples=50)
-def test_componentmodel::date_instantiation(instance):
-    assert isinstance(instance, componentModel::Date)
-
-@given(instance=componentModel::Float_strategy)
-@settings(max_examples=50)
-def test_componentmodel::float_instantiation(instance):
-    assert isinstance(instance, componentModel::Float)
-
-@given(instance=componentModel::String_strategy)
-@settings(max_examples=50)
-def test_componentmodel::string_instantiation(instance):
-    assert isinstance(instance, componentModel::String)
-
-@given(instance=componentModel::Int_strategy)
-@settings(max_examples=50)
-def test_componentmodel::int_instantiation(instance):
-    assert isinstance(instance, componentModel::Int)
-
-@given(instance=componentModel::List_strategy)
-@settings(max_examples=50)
-def test_componentmodel::list_instantiation(instance):
-    assert isinstance(instance, componentModel::List)
-
-@given(instance=componentModel::Char_strategy)
-@settings(max_examples=50)
-def test_componentmodel::char_instantiation(instance):
-    assert isinstance(instance, componentModel::Char)
-
-@given(instance=Component_strategy)
-@settings(max_examples=50)
-def test_component_instantiation(instance):
-    assert isinstance(instance, Component)
-
-@given(instance=componentModel::CompositeComponent_strategy)
-@settings(max_examples=50)
-def test_componentmodel::compositecomponent_instantiation(instance):
-    assert isinstance(instance, componentModel::CompositeComponent)
-
-@given(instance=componentModel::ViewPoint_strategy)
-@settings(max_examples=50)
-def test_componentmodel::viewpoint_instantiation(instance):
-    assert isinstance(instance, componentModel::ViewPoint)
-
-@given(instance=componentModel::System_strategy)
-@settings(max_examples=50)
-def test_componentmodel::system_instantiation(instance):
-    assert isinstance(instance, componentModel::System)
-
-@given(instance=componentModel::Type_strategy)
-@settings(max_examples=50)
-def test_componentmodel::type_instantiation(instance):
-    assert isinstance(instance, componentModel::Type)
-
-@given(instance=componentModel::Parameter_strategy)
-@settings(max_examples=50)
-def test_componentmodel::parameter_instantiation(instance):
-    assert isinstance(instance, componentModel::Parameter)
-
-@given(instance=componentModel::Parameter_strategy)
-def test_componentmodel::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=componentModel::Parameter_strategy)
-def test_componentmodel::parameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+def test_componentmodel_type_instantiation(instance):
+    assert isinstance(instance, componentModel_Type)
 
 @given(instance=DelegationConnector_strategy)
 @settings(max_examples=50)
 def test_delegationconnector_instantiation(instance):
     assert isinstance(instance, DelegationConnector)
 
-@given(instance=componentModel::ProvidedDelegationConnector_strategy)
+@given(instance=componentModel_RequiredDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_componentmodel::provideddelegationconnector_instantiation(instance):
-    assert isinstance(instance, componentModel::ProvidedDelegationConnector)
+def test_componentmodel_requireddelegationconnector_instantiation(instance):
+    assert isinstance(instance, componentModel_RequiredDelegationConnector)
 
-@given(instance=componentModel::RequiredDelegationConnector_strategy)
+@given(instance=componentModel_RequiredRole_strategy)
 @settings(max_examples=50)
-def test_componentmodel::requireddelegationconnector_instantiation(instance):
-    assert isinstance(instance, componentModel::RequiredDelegationConnector)
-
-@given(instance=componentModel::RequiredRole_strategy)
-@settings(max_examples=50)
-def test_componentmodel::requiredrole_instantiation(instance):
-    assert isinstance(instance, componentModel::RequiredRole)
-
-@given(instance=componentModel::RequiredRole_strategy)
-def test_componentmodel::requiredrole_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_requiredrole_instantiation(instance):
+    assert isinstance(instance, componentModel_RequiredRole)
 
 
-@given(instance=componentModel::RequiredRole_strategy)
-def test_componentmodel::requiredrole_name_setter(instance):
+
+@given(instance=componentModel_RequiredRole_strategy)
+def test_componentmodel_requiredrole_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::ProvidedRole_strategy)
+@given(instance=componentModel_ProvidedRole_strategy)
 @settings(max_examples=50)
-def test_componentmodel::providedrole_instantiation(instance):
-    assert isinstance(instance, componentModel::ProvidedRole)
-
-@given(instance=componentModel::ProvidedRole_strategy)
-def test_componentmodel::providedrole_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_providedrole_instantiation(instance):
+    assert isinstance(instance, componentModel_ProvidedRole)
 
 
-@given(instance=componentModel::ProvidedRole_strategy)
-def test_componentmodel::providedrole_name_setter(instance):
+
+@given(instance=componentModel_ProvidedRole_strategy)
+def test_componentmodel_providedrole_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1277,39 +1145,33 @@ def test_componentmodel::providedrole_name_setter(instance):
 def test_assemblyviewtype_instantiation(instance):
     assert isinstance(instance, AssemblyViewType)
 
-@given(instance=componentModel::AssemblyContext_strategy)
+@given(instance=componentModel_AssemblyContext_strategy)
 @settings(max_examples=50)
-def test_componentmodel::assemblycontext_instantiation(instance):
-    assert isinstance(instance, componentModel::AssemblyContext)
-
-@given(instance=componentModel::AssemblyContext_strategy)
-def test_componentmodel::assemblycontext_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_assemblycontext_instantiation(instance):
+    assert isinstance(instance, componentModel_AssemblyContext)
 
 
-@given(instance=componentModel::AssemblyContext_strategy)
-def test_componentmodel::assemblycontext_name_setter(instance):
+
+@given(instance=componentModel_AssemblyContext_strategy)
+def test_componentmodel_assemblycontext_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::ViewType_strategy)
+@given(instance=componentModel_ViewType_strategy)
 @settings(max_examples=50)
-def test_componentmodel::viewtype_instantiation(instance):
-    assert isinstance(instance, componentModel::ViewType)
+def test_componentmodel_viewtype_instantiation(instance):
+    assert isinstance(instance, componentModel_ViewType)
 
-@given(instance=componentModel::Signature_strategy)
+@given(instance=componentModel_Signature_strategy)
 @settings(max_examples=50)
-def test_componentmodel::signature_instantiation(instance):
-    assert isinstance(instance, componentModel::Signature)
-
-@given(instance=componentModel::Signature_strategy)
-def test_componentmodel::signature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_signature_instantiation(instance):
+    assert isinstance(instance, componentModel_Signature)
 
 
-@given(instance=componentModel::Signature_strategy)
-def test_componentmodel::signature_name_setter(instance):
+
+@given(instance=componentModel_Signature_strategy)
+def test_componentmodel_signature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1319,84 +1181,78 @@ def test_componentmodel::signature_name_setter(instance):
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=componentModel::Loop_strategy)
+@given(instance=componentModel_InternalAction_strategy)
 @settings(max_examples=50)
-def test_componentmodel::loop_instantiation(instance):
-    assert isinstance(instance, componentModel::Loop)
+def test_componentmodel_internalaction_instantiation(instance):
+    assert isinstance(instance, componentModel_InternalAction)
 
-@given(instance=componentModel::ExternalCall_strategy)
+@given(instance=componentModel_Loop_strategy)
 @settings(max_examples=50)
-def test_componentmodel::externalcall_instantiation(instance):
-    assert isinstance(instance, componentModel::ExternalCall)
+def test_componentmodel_loop_instantiation(instance):
+    assert isinstance(instance, componentModel_Loop)
 
-@given(instance=componentModel::InternalAction_strategy)
+@given(instance=componentModel_ExternalCall_strategy)
 @settings(max_examples=50)
-def test_componentmodel::internalaction_instantiation(instance):
-    assert isinstance(instance, componentModel::InternalAction)
+def test_componentmodel_externalcall_instantiation(instance):
+    assert isinstance(instance, componentModel_ExternalCall)
 
-@given(instance=componentModel::Branch_strategy)
+@given(instance=componentModel_Branch_strategy)
 @settings(max_examples=50)
-def test_componentmodel::branch_instantiation(instance):
-    assert isinstance(instance, componentModel::Branch)
+def test_componentmodel_branch_instantiation(instance):
+    assert isinstance(instance, componentModel_Branch)
 
-@given(instance=componentModel::Action_strategy)
+@given(instance=componentModel_Action_strategy)
 @settings(max_examples=50)
-def test_componentmodel::action_instantiation(instance):
-    assert isinstance(instance, componentModel::Action)
+def test_componentmodel_action_instantiation(instance):
+    assert isinstance(instance, componentModel_Action)
 
-@given(instance=componentModel::Service_strategy)
+@given(instance=componentModel_Service_strategy)
 @settings(max_examples=50)
-def test_componentmodel::service_instantiation(instance):
-    assert isinstance(instance, componentModel::Service)
+def test_componentmodel_service_instantiation(instance):
+    assert isinstance(instance, componentModel_Service)
 
-@given(instance=componentModel::DelegationConnector_strategy)
+@given(instance=componentModel_DelegationConnector_strategy)
 @settings(max_examples=50)
-def test_componentmodel::delegationconnector_instantiation(instance):
-    assert isinstance(instance, componentModel::DelegationConnector)
+def test_componentmodel_delegationconnector_instantiation(instance):
+    assert isinstance(instance, componentModel_DelegationConnector)
 
-@given(instance=componentModel::AssemblyConnector_strategy)
+@given(instance=componentModel_AssemblyConnector_strategy)
 @settings(max_examples=50)
-def test_componentmodel::assemblyconnector_instantiation(instance):
-    assert isinstance(instance, componentModel::AssemblyConnector)
+def test_componentmodel_assemblyconnector_instantiation(instance):
+    assert isinstance(instance, componentModel_AssemblyConnector)
 
-@given(instance=componentModel::InterfaceServiceMapTuple_strategy)
+@given(instance=componentModel_InterfaceServiceMapTuple_strategy)
 @settings(max_examples=50)
-def test_componentmodel::interfaceservicemaptuple_instantiation(instance):
-    assert isinstance(instance, componentModel::InterfaceServiceMapTuple)
+def test_componentmodel_interfaceservicemaptuple_instantiation(instance):
+    assert isinstance(instance, componentModel_InterfaceServiceMapTuple)
 
-@given(instance=componentModel::ServiceEffectSpecification_strategy)
+@given(instance=componentModel_ServiceEffectSpecification_strategy)
 @settings(max_examples=50)
-def test_componentmodel::serviceeffectspecification_instantiation(instance):
-    assert isinstance(instance, componentModel::ServiceEffectSpecification)
+def test_componentmodel_serviceeffectspecification_instantiation(instance):
+    assert isinstance(instance, componentModel_ServiceEffectSpecification)
 
-@given(instance=componentModel::Interface_strategy)
+@given(instance=componentModel_Interface_strategy)
 @settings(max_examples=50)
-def test_componentmodel::interface_instantiation(instance):
-    assert isinstance(instance, componentModel::Interface)
-
-@given(instance=componentModel::Interface_strategy)
-def test_componentmodel::interface_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_interface_instantiation(instance):
+    assert isinstance(instance, componentModel_Interface)
 
 
-@given(instance=componentModel::Interface_strategy)
-def test_componentmodel::interface_name_setter(instance):
+
+@given(instance=componentModel_Interface_strategy)
+def test_componentmodel_interface_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::Component_strategy)
+@given(instance=componentModel_Component_strategy)
 @settings(max_examples=50)
-def test_componentmodel::component_instantiation(instance):
-    assert isinstance(instance, componentModel::Component)
-
-@given(instance=componentModel::Component_strategy)
-def test_componentmodel::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_component_instantiation(instance):
+    assert isinstance(instance, componentModel_Component)
 
 
-@given(instance=componentModel::Component_strategy)
-def test_componentmodel::component_name_setter(instance):
+
+@given(instance=componentModel_Component_strategy)
+def test_componentmodel_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1406,47 +1262,170 @@ def test_componentmodel::component_name_setter(instance):
 def test_viewtype_instantiation(instance):
     assert isinstance(instance, ViewType)
 
-@given(instance=componentModel::EnvironmentViewType_strategy)
+@given(instance=componentModel_Repository_strategy)
 @settings(max_examples=50)
-def test_componentmodel::environmentviewtype_instantiation(instance):
-    assert isinstance(instance, componentModel::EnvironmentViewType)
-
-@given(instance=componentModel::AssemblyViewType_strategy)
-@settings(max_examples=50)
-def test_componentmodel::assemblyviewtype_instantiation(instance):
-    assert isinstance(instance, componentModel::AssemblyViewType)
-
-@given(instance=componentModel::RepositoryViewType_strategy)
-@settings(max_examples=50)
-def test_componentmodel::repositoryviewtype_instantiation(instance):
-    assert isinstance(instance, componentModel::RepositoryViewType)
-
-@given(instance=componentModel::AllocationViewType_strategy)
-@settings(max_examples=50)
-def test_componentmodel::allocationviewtype_instantiation(instance):
-    assert isinstance(instance, componentModel::AllocationViewType)
-
-@given(instance=componentModel::Repository_strategy)
-@settings(max_examples=50)
-def test_componentmodel::repository_instantiation(instance):
-    assert isinstance(instance, componentModel::Repository)
+def test_componentmodel_repository_instantiation(instance):
+    assert isinstance(instance, componentModel_Repository)
 
 @given(instance=ViewPoint_strategy)
 @settings(max_examples=50)
 def test_viewpoint_instantiation(instance):
     assert isinstance(instance, ViewPoint)
 
-@given(instance=componentModel::AssemblyViewPoint_strategy)
+@given(instance=componentModel_AssemblyViewPoint_strategy)
 @settings(max_examples=50)
-def test_componentmodel::assemblyviewpoint_instantiation(instance):
-    assert isinstance(instance, componentModel::AssemblyViewPoint)
+def test_componentmodel_assemblyviewpoint_instantiation(instance):
+    assert isinstance(instance, componentModel_AssemblyViewPoint)
 
-@given(instance=componentModel::DeploymentViewPoint_strategy)
+@given(instance=componentModel_SystemIndependentViewPoint_strategy)
 @settings(max_examples=50)
-def test_componentmodel::deploymentviewpoint_instantiation(instance):
-    assert isinstance(instance, componentModel::DeploymentViewPoint)
+def test_componentmodel_systemindependentviewpoint_instantiation(instance):
+    assert isinstance(instance, componentModel_SystemIndependentViewPoint)
 
-@given(instance=componentModel::SystemIndependentViewPoint_strategy)
+@given(instance=ParameterTyp_strategy)
 @settings(max_examples=50)
-def test_componentmodel::systemindependentviewpoint_instantiation(instance):
-    assert isinstance(instance, componentModel::SystemIndependentViewPoint)
+def test_parametertyp_instantiation(instance):
+    assert isinstance(instance, ParameterTyp)
+
+@given(instance=componentModel_SimpleParameterType_strategy)
+@settings(max_examples=50)
+def test_componentmodel_simpleparametertype_instantiation(instance):
+    assert isinstance(instance, componentModel_SimpleParameterType)
+
+@given(instance=componentModel_ComplexParameterType_strategy)
+@settings(max_examples=50)
+def test_componentmodel_complexparametertype_instantiation(instance):
+    assert isinstance(instance, componentModel_ComplexParameterType)
+
+@given(instance=Type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
+
+@given(instance=componentModel_Void_strategy)
+@settings(max_examples=50)
+def test_componentmodel_void_instantiation(instance):
+    assert isinstance(instance, componentModel_Void)
+
+@given(instance=componentModel_ParameterTyp_strategy)
+@settings(max_examples=50)
+def test_componentmodel_parametertyp_instantiation(instance):
+    assert isinstance(instance, componentModel_ParameterTyp)
+
+@given(instance=SimpleParameterType_strategy)
+@settings(max_examples=50)
+def test_simpleparametertype_instantiation(instance):
+    assert isinstance(instance, SimpleParameterType)
+
+@given(instance=componentModel_Map_strategy)
+@settings(max_examples=50)
+def test_componentmodel_map_instantiation(instance):
+    assert isinstance(instance, componentModel_Map)
+
+@given(instance=componentModel_Boolean_strategy)
+@settings(max_examples=50)
+def test_componentmodel_boolean_instantiation(instance):
+    assert isinstance(instance, componentModel_Boolean)
+
+@given(instance=componentModel_Int_strategy)
+@settings(max_examples=50)
+def test_componentmodel_int_instantiation(instance):
+    assert isinstance(instance, componentModel_Int)
+
+@given(instance=componentModel_Float_strategy)
+@settings(max_examples=50)
+def test_componentmodel_float_instantiation(instance):
+    assert isinstance(instance, componentModel_Float)
+
+@given(instance=componentModel_List_strategy)
+@settings(max_examples=50)
+def test_componentmodel_list_instantiation(instance):
+    assert isinstance(instance, componentModel_List)
+
+@given(instance=componentModel_Char_strategy)
+@settings(max_examples=50)
+def test_componentmodel_char_instantiation(instance):
+    assert isinstance(instance, componentModel_Char)
+
+@given(instance=componentModel_Long_strategy)
+@settings(max_examples=50)
+def test_componentmodel_long_instantiation(instance):
+    assert isinstance(instance, componentModel_Long)
+
+@given(instance=componentModel_String_strategy)
+@settings(max_examples=50)
+def test_componentmodel_string_instantiation(instance):
+    assert isinstance(instance, componentModel_String)
+
+@given(instance=componentModel_Parameter_strategy)
+@settings(max_examples=50)
+def test_componentmodel_parameter_instantiation(instance):
+    assert isinstance(instance, componentModel_Parameter)
+
+
+
+@given(instance=componentModel_Parameter_strategy)
+def test_componentmodel_parameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=componentModel_Double_strategy)
+@settings(max_examples=50)
+def test_componentmodel_double_instantiation(instance):
+    assert isinstance(instance, componentModel_Double)
+
+@given(instance=componentModel_Date_strategy)
+@settings(max_examples=50)
+def test_componentmodel_date_instantiation(instance):
+    assert isinstance(instance, componentModel_Date)
+
+@given(instance=componentModel_AllocationViewType_strategy)
+@settings(max_examples=50)
+def test_componentmodel_allocationviewtype_instantiation(instance):
+    assert isinstance(instance, componentModel_AllocationViewType)
+
+@given(instance=componentModel_EnvironmentViewType_strategy)
+@settings(max_examples=50)
+def test_componentmodel_environmentviewtype_instantiation(instance):
+    assert isinstance(instance, componentModel_EnvironmentViewType)
+
+@given(instance=componentModel_RepositoryViewType_strategy)
+@settings(max_examples=50)
+def test_componentmodel_repositoryviewtype_instantiation(instance):
+    assert isinstance(instance, componentModel_RepositoryViewType)
+
+@given(instance=componentModel_DeploymentViewPoint_strategy)
+@settings(max_examples=50)
+def test_componentmodel_deploymentviewpoint_instantiation(instance):
+    assert isinstance(instance, componentModel_DeploymentViewPoint)
+
+@given(instance=componentModel_AssemblyViewType_strategy)
+@settings(max_examples=50)
+def test_componentmodel_assemblyviewtype_instantiation(instance):
+    assert isinstance(instance, componentModel_AssemblyViewType)
+
+@given(instance=Component_strategy)
+@settings(max_examples=50)
+def test_component_instantiation(instance):
+    assert isinstance(instance, Component)
+
+@given(instance=componentModel_CompositeComponent_strategy)
+@settings(max_examples=50)
+def test_componentmodel_compositecomponent_instantiation(instance):
+    assert isinstance(instance, componentModel_CompositeComponent)
+
+@given(instance=componentModel_ViewPoint_strategy)
+@settings(max_examples=50)
+def test_componentmodel_viewpoint_instantiation(instance):
+    assert isinstance(instance, componentModel_ViewPoint)
+
+@given(instance=componentModel_ProvidedDelegationConnector_strategy)
+@settings(max_examples=50)
+def test_componentmodel_provideddelegationconnector_instantiation(instance):
+    assert isinstance(instance, componentModel_ProvidedDelegationConnector)
+
+@given(instance=componentModel_System_strategy)
+@settings(max_examples=50)
+def test_componentmodel_system_instantiation(instance):
+    assert isinstance(instance, componentModel_System)

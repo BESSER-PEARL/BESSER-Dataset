@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractMultiplicity,
-    events::Infinite,
-    events::AtLeastOne,
-    events::Multiplicity,
+    events_Infinite,
+    events_AtLeastOne,
+    events_Multiplicity,
     ComplexEventOperator,
-    events::NEG,
-    events::AND,
-    events::FOLLOWS,
-    events::OR,
-    events::EventSource,
-    events::Event,
-    events::AbstractMultiplicity,
-    events::EventPatternReference,
-    events::Timewindow,
-    events::ComplexEventOperator,
+    events_FOLLOWS,
+    events_NEG,
+    events_AND,
+    events_OR,
+    events_EventSource,
+    events_Event,
+    events_AbstractMultiplicity,
+    events_EventPatternReference,
+    events_Timewindow,
+    events_ComplexEventOperator,
     EventPattern,
-    events::ComplexEventPattern,
-    events::AtomicEventPattern,
-    events::Automaton,
-    events::EventPattern,
-    events::EventModel,
+    events_ComplexEventPattern,
+    events_AtomicEventPattern,
+    events_Automaton,
+    events_EventPattern,
+    events_EventModel,
 )
 
 # =============================================================================
@@ -49,51 +49,51 @@ def test_abstractmultiplicity_constructor_args():
 
 
 
-def test_events::infinite_is_not_abstract():
-    assert not inspect.isabstract(events::Infinite)
+def test_events_infinite_is_not_abstract():
+    assert not inspect.isabstract(events_Infinite)
 
 
-def test_events::infinite_constructor_exists():
-    assert callable(events::Infinite.__init__)
+def test_events_infinite_constructor_exists():
+    assert callable(events_Infinite.__init__)
 
 
-def test_events::infinite_constructor_args():
-    sig = inspect.signature(events::Infinite.__init__)
+def test_events_infinite_constructor_args():
+    sig = inspect.signature(events_Infinite.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::atleastone_is_not_abstract():
-    assert not inspect.isabstract(events::AtLeastOne)
+def test_events_atleastone_is_not_abstract():
+    assert not inspect.isabstract(events_AtLeastOne)
 
 
-def test_events::atleastone_constructor_exists():
-    assert callable(events::AtLeastOne.__init__)
+def test_events_atleastone_constructor_exists():
+    assert callable(events_AtLeastOne.__init__)
 
 
-def test_events::atleastone_constructor_args():
-    sig = inspect.signature(events::AtLeastOne.__init__)
+def test_events_atleastone_constructor_args():
+    sig = inspect.signature(events_AtLeastOne.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::multiplicity_is_not_abstract():
-    assert not inspect.isabstract(events::Multiplicity)
+def test_events_multiplicity_is_not_abstract():
+    assert not inspect.isabstract(events_Multiplicity)
 
 
-def test_events::multiplicity_constructor_exists():
-    assert callable(events::Multiplicity.__init__)
+def test_events_multiplicity_constructor_exists():
+    assert callable(events_Multiplicity.__init__)
 
 
-def test_events::multiplicity_constructor_args():
-    sig = inspect.signature(events::Multiplicity.__init__)
+def test_events_multiplicity_constructor_args():
+    sig = inspect.signature(events_Multiplicity.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_events::multiplicity_has_value():
-    assert hasattr(events::Multiplicity, "value")
+def test_events_multiplicity_has_value():
+    assert hasattr(events_Multiplicity, "value")
     descriptor = None
-    for klass in events::Multiplicity.__mro__:
+    for klass in events_Multiplicity.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -115,113 +115,113 @@ def test_complexeventoperator_constructor_args():
 
 
 
-def test_events::neg_is_not_abstract():
-    assert not inspect.isabstract(events::NEG)
+def test_events_follows_is_not_abstract():
+    assert not inspect.isabstract(events_FOLLOWS)
 
 
-def test_events::neg_constructor_exists():
-    assert callable(events::NEG.__init__)
+def test_events_follows_constructor_exists():
+    assert callable(events_FOLLOWS.__init__)
 
 
-def test_events::neg_constructor_args():
-    sig = inspect.signature(events::NEG.__init__)
+def test_events_follows_constructor_args():
+    sig = inspect.signature(events_FOLLOWS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::and_is_not_abstract():
-    assert not inspect.isabstract(events::AND)
+def test_events_neg_is_not_abstract():
+    assert not inspect.isabstract(events_NEG)
 
 
-def test_events::and_constructor_exists():
-    assert callable(events::AND.__init__)
+def test_events_neg_constructor_exists():
+    assert callable(events_NEG.__init__)
 
 
-def test_events::and_constructor_args():
-    sig = inspect.signature(events::AND.__init__)
+def test_events_neg_constructor_args():
+    sig = inspect.signature(events_NEG.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::follows_is_not_abstract():
-    assert not inspect.isabstract(events::FOLLOWS)
+def test_events_and_is_not_abstract():
+    assert not inspect.isabstract(events_AND)
 
 
-def test_events::follows_constructor_exists():
-    assert callable(events::FOLLOWS.__init__)
+def test_events_and_constructor_exists():
+    assert callable(events_AND.__init__)
 
 
-def test_events::follows_constructor_args():
-    sig = inspect.signature(events::FOLLOWS.__init__)
+def test_events_and_constructor_args():
+    sig = inspect.signature(events_AND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::or_is_not_abstract():
-    assert not inspect.isabstract(events::OR)
+def test_events_or_is_not_abstract():
+    assert not inspect.isabstract(events_OR)
 
 
-def test_events::or_constructor_exists():
-    assert callable(events::OR.__init__)
+def test_events_or_constructor_exists():
+    assert callable(events_OR.__init__)
 
 
-def test_events::or_constructor_args():
-    sig = inspect.signature(events::OR.__init__)
+def test_events_or_constructor_args():
+    sig = inspect.signature(events_OR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::eventsource_is_not_abstract():
-    assert not inspect.isabstract(events::EventSource)
+def test_events_eventsource_is_not_abstract():
+    assert not inspect.isabstract(events_EventSource)
 
 
-def test_events::eventsource_constructor_exists():
-    assert callable(events::EventSource.__init__)
+def test_events_eventsource_constructor_exists():
+    assert callable(events_EventSource.__init__)
 
 
-def test_events::eventsource_constructor_args():
-    sig = inspect.signature(events::EventSource.__init__)
+def test_events_eventsource_constructor_args():
+    sig = inspect.signature(events_EventSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::event_is_not_abstract():
-    assert not inspect.isabstract(events::Event)
+def test_events_event_is_not_abstract():
+    assert not inspect.isabstract(events_Event)
 
 
-def test_events::event_constructor_exists():
-    assert callable(events::Event.__init__)
+def test_events_event_constructor_exists():
+    assert callable(events_Event.__init__)
 
 
-def test_events::event_constructor_args():
-    sig = inspect.signature(events::Event.__init__)
+def test_events_event_constructor_args():
+    sig = inspect.signature(events_Event.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "isProcessed" in params, "Missing parameter 'isProcessed'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "timestamp" in params, "Missing parameter 'timestamp'"
 
-def test_events::event_has_type():
-    assert hasattr(events::Event, "type")
+def test_events_event_has_isProcessed():
+    assert hasattr(events_Event, "isProcessed")
     descriptor = None
-    for klass in events::Event.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_events::event_has_isProcessed():
-    assert hasattr(events::Event, "isProcessed")
-    descriptor = None
-    for klass in events::Event.__mro__:
+    for klass in events_Event.__mro__:
         if "isProcessed" in klass.__dict__:
             descriptor = klass.__dict__["isProcessed"]
             break
     assert isinstance(descriptor, property)
 
-def test_events::event_has_timestamp():
-    assert hasattr(events::Event, "timestamp")
+def test_events_event_has_type():
+    assert hasattr(events_Event, "type")
     descriptor = None
-    for klass in events::Event.__mro__:
+    for klass in events_Event.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_events_event_has_timestamp():
+    assert hasattr(events_Event, "timestamp")
+    descriptor = None
+    for klass in events_Event.__mro__:
         if "timestamp" in klass.__dict__:
             descriptor = klass.__dict__["timestamp"]
             break
@@ -229,37 +229,37 @@ def test_events::event_has_timestamp():
 
 
 
-def test_events::abstractmultiplicity_is_not_abstract():
-    assert not inspect.isabstract(events::AbstractMultiplicity)
+def test_events_abstractmultiplicity_is_not_abstract():
+    assert not inspect.isabstract(events_AbstractMultiplicity)
 
 
-def test_events::abstractmultiplicity_constructor_exists():
-    assert callable(events::AbstractMultiplicity.__init__)
+def test_events_abstractmultiplicity_constructor_exists():
+    assert callable(events_AbstractMultiplicity.__init__)
 
 
-def test_events::abstractmultiplicity_constructor_args():
-    sig = inspect.signature(events::AbstractMultiplicity.__init__)
+def test_events_abstractmultiplicity_constructor_args():
+    sig = inspect.signature(events_AbstractMultiplicity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::eventpatternreference_is_not_abstract():
-    assert not inspect.isabstract(events::EventPatternReference)
+def test_events_eventpatternreference_is_not_abstract():
+    assert not inspect.isabstract(events_EventPatternReference)
 
 
-def test_events::eventpatternreference_constructor_exists():
-    assert callable(events::EventPatternReference.__init__)
+def test_events_eventpatternreference_constructor_exists():
+    assert callable(events_EventPatternReference.__init__)
 
 
-def test_events::eventpatternreference_constructor_args():
-    sig = inspect.signature(events::EventPatternReference.__init__)
+def test_events_eventpatternreference_constructor_args():
+    sig = inspect.signature(events_EventPatternReference.__init__)
     params = list(sig.parameters.keys())
     assert "parameterSymbolicNames" in params, "Missing parameter 'parameterSymbolicNames'"
 
-def test_events::eventpatternreference_has_parameterSymbolicNames():
-    assert hasattr(events::EventPatternReference, "parameterSymbolicNames")
+def test_events_eventpatternreference_has_parameterSymbolicNames():
+    assert hasattr(events_EventPatternReference, "parameterSymbolicNames")
     descriptor = None
-    for klass in events::EventPatternReference.__mro__:
+    for klass in events_EventPatternReference.__mro__:
         if "parameterSymbolicNames" in klass.__dict__:
             descriptor = klass.__dict__["parameterSymbolicNames"]
             break
@@ -267,23 +267,23 @@ def test_events::eventpatternreference_has_parameterSymbolicNames():
 
 
 
-def test_events::timewindow_is_not_abstract():
-    assert not inspect.isabstract(events::Timewindow)
+def test_events_timewindow_is_not_abstract():
+    assert not inspect.isabstract(events_Timewindow)
 
 
-def test_events::timewindow_constructor_exists():
-    assert callable(events::Timewindow.__init__)
+def test_events_timewindow_constructor_exists():
+    assert callable(events_Timewindow.__init__)
 
 
-def test_events::timewindow_constructor_args():
-    sig = inspect.signature(events::Timewindow.__init__)
+def test_events_timewindow_constructor_args():
+    sig = inspect.signature(events_Timewindow.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_events::timewindow_has_time():
-    assert hasattr(events::Timewindow, "time")
+def test_events_timewindow_has_time():
+    assert hasattr(events_Timewindow, "time")
     descriptor = None
-    for klass in events::Timewindow.__mro__:
+    for klass in events_Timewindow.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -291,16 +291,16 @@ def test_events::timewindow_has_time():
 
 
 
-def test_events::complexeventoperator_is_not_abstract():
-    assert not inspect.isabstract(events::ComplexEventOperator)
+def test_events_complexeventoperator_is_not_abstract():
+    assert not inspect.isabstract(events_ComplexEventOperator)
 
 
-def test_events::complexeventoperator_constructor_exists():
-    assert callable(events::ComplexEventOperator.__init__)
+def test_events_complexeventoperator_constructor_exists():
+    assert callable(events_ComplexEventOperator.__init__)
 
 
-def test_events::complexeventoperator_constructor_args():
-    sig = inspect.signature(events::ComplexEventOperator.__init__)
+def test_events_complexeventoperator_constructor_args():
+    sig = inspect.signature(events_ComplexEventOperator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -319,23 +319,23 @@ def test_eventpattern_constructor_args():
 
 
 
-def test_events::complexeventpattern_is_not_abstract():
-    assert not inspect.isabstract(events::ComplexEventPattern)
+def test_events_complexeventpattern_is_not_abstract():
+    assert not inspect.isabstract(events_ComplexEventPattern)
 
 
-def test_events::complexeventpattern_constructor_exists():
-    assert callable(events::ComplexEventPattern.__init__)
+def test_events_complexeventpattern_constructor_exists():
+    assert callable(events_ComplexEventPattern.__init__)
 
 
-def test_events::complexeventpattern_constructor_args():
-    sig = inspect.signature(events::ComplexEventPattern.__init__)
+def test_events_complexeventpattern_constructor_args():
+    sig = inspect.signature(events_ComplexEventPattern.__init__)
     params = list(sig.parameters.keys())
     assert "eventContext" in params, "Missing parameter 'eventContext'"
 
-def test_events::complexeventpattern_has_eventContext():
-    assert hasattr(events::ComplexEventPattern, "eventContext")
+def test_events_complexeventpattern_has_eventContext():
+    assert hasattr(events_ComplexEventPattern, "eventContext")
     descriptor = None
-    for klass in events::ComplexEventPattern.__mro__:
+    for klass in events_ComplexEventPattern.__mro__:
         if "eventContext" in klass.__dict__:
             descriptor = klass.__dict__["eventContext"]
             break
@@ -343,23 +343,23 @@ def test_events::complexeventpattern_has_eventContext():
 
 
 
-def test_events::atomiceventpattern_is_not_abstract():
-    assert not inspect.isabstract(events::AtomicEventPattern)
+def test_events_atomiceventpattern_is_not_abstract():
+    assert not inspect.isabstract(events_AtomicEventPattern)
 
 
-def test_events::atomiceventpattern_constructor_exists():
-    assert callable(events::AtomicEventPattern.__init__)
+def test_events_atomiceventpattern_constructor_exists():
+    assert callable(events_AtomicEventPattern.__init__)
 
 
-def test_events::atomiceventpattern_constructor_args():
-    sig = inspect.signature(events::AtomicEventPattern.__init__)
+def test_events_atomiceventpattern_constructor_args():
+    sig = inspect.signature(events_AtomicEventPattern.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_events::atomiceventpattern_has_type():
-    assert hasattr(events::AtomicEventPattern, "type")
+def test_events_atomiceventpattern_has_type():
+    assert hasattr(events_AtomicEventPattern, "type")
     descriptor = None
-    for klass in events::AtomicEventPattern.__mro__:
+    for klass in events_AtomicEventPattern.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -367,37 +367,37 @@ def test_events::atomiceventpattern_has_type():
 
 
 
-def test_events::automaton_is_not_abstract():
-    assert not inspect.isabstract(events::Automaton)
+def test_events_automaton_is_not_abstract():
+    assert not inspect.isabstract(events_Automaton)
 
 
-def test_events::automaton_constructor_exists():
-    assert callable(events::Automaton.__init__)
+def test_events_automaton_constructor_exists():
+    assert callable(events_Automaton.__init__)
 
 
-def test_events::automaton_constructor_args():
-    sig = inspect.signature(events::Automaton.__init__)
+def test_events_automaton_constructor_args():
+    sig = inspect.signature(events_Automaton.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::eventpattern_is_not_abstract():
-    assert not inspect.isabstract(events::EventPattern)
+def test_events_eventpattern_is_not_abstract():
+    assert not inspect.isabstract(events_EventPattern)
 
 
-def test_events::eventpattern_constructor_exists():
-    assert callable(events::EventPattern.__init__)
+def test_events_eventpattern_constructor_exists():
+    assert callable(events_EventPattern.__init__)
 
 
-def test_events::eventpattern_constructor_args():
-    sig = inspect.signature(events::EventPattern.__init__)
+def test_events_eventpattern_constructor_args():
+    sig = inspect.signature(events_EventPattern.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_events::eventpattern_has_id():
-    assert hasattr(events::EventPattern, "id")
+def test_events_eventpattern_has_id():
+    assert hasattr(events_EventPattern, "id")
     descriptor = None
-    for klass in events::EventPattern.__mro__:
+    for klass in events_EventPattern.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -405,16 +405,16 @@ def test_events::eventpattern_has_id():
 
 
 
-def test_events::eventmodel_is_not_abstract():
-    assert not inspect.isabstract(events::EventModel)
+def test_events_eventmodel_is_not_abstract():
+    assert not inspect.isabstract(events_EventModel)
 
 
-def test_events::eventmodel_constructor_exists():
-    assert callable(events::EventModel.__init__)
+def test_events_eventmodel_constructor_exists():
+    assert callable(events_EventModel.__init__)
 
 
-def test_events::eventmodel_constructor_args():
-    sig = inspect.signature(events::EventModel.__init__)
+def test_events_eventmodel_constructor_args():
+    sig = inspect.signature(events_EventModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,83 +432,83 @@ safe_text = st.text(
 AbstractMultiplicity_strategy = st.builds(
     AbstractMultiplicity,
 )
-events::Infinite_strategy = st.builds(
-    events::Infinite,
+events_Infinite_strategy = st.builds(
+    events_Infinite,
 )
-events::AtLeastOne_strategy = st.builds(
-    events::AtLeastOne,
+events_AtLeastOne_strategy = st.builds(
+    events_AtLeastOne,
 )
-events::Multiplicity_strategy = st.builds(
-    events::Multiplicity,
+events_Multiplicity_strategy = st.builds(
+    events_Multiplicity,
     value=
         st.integers()
 )
 ComplexEventOperator_strategy = st.builds(
     ComplexEventOperator,
 )
-events::NEG_strategy = st.builds(
-    events::NEG,
+events_FOLLOWS_strategy = st.builds(
+    events_FOLLOWS,
 )
-events::AND_strategy = st.builds(
-    events::AND,
+events_NEG_strategy = st.builds(
+    events_NEG,
 )
-events::FOLLOWS_strategy = st.builds(
-    events::FOLLOWS,
+events_AND_strategy = st.builds(
+    events_AND,
 )
-events::OR_strategy = st.builds(
-    events::OR,
+events_OR_strategy = st.builds(
+    events_OR,
 )
-events::EventSource_strategy = st.builds(
-    events::EventSource,
+events_EventSource_strategy = st.builds(
+    events_EventSource,
 )
-events::Event_strategy = st.builds(
-    events::Event,
-    type=
-        safe_text,
+events_Event_strategy = st.builds(
+    events_Event,
     isProcessed=
         st.booleans(),
+    type=
+        safe_text,
     timestamp=
         safe_text
 )
-events::AbstractMultiplicity_strategy = st.builds(
-    events::AbstractMultiplicity,
+events_AbstractMultiplicity_strategy = st.builds(
+    events_AbstractMultiplicity,
 )
-events::EventPatternReference_strategy = st.builds(
-    events::EventPatternReference,
+events_EventPatternReference_strategy = st.builds(
+    events_EventPatternReference,
     parameterSymbolicNames=
         safe_text
 )
-events::Timewindow_strategy = st.builds(
-    events::Timewindow,
+events_Timewindow_strategy = st.builds(
+    events_Timewindow,
     time=
         safe_text
 )
-events::ComplexEventOperator_strategy = st.builds(
-    events::ComplexEventOperator,
+events_ComplexEventOperator_strategy = st.builds(
+    events_ComplexEventOperator,
 )
 EventPattern_strategy = st.builds(
     EventPattern,
 )
-events::ComplexEventPattern_strategy = st.builds(
-    events::ComplexEventPattern,
+events_ComplexEventPattern_strategy = st.builds(
+    events_ComplexEventPattern,
     eventContext=
         safe_text
 )
-events::AtomicEventPattern_strategy = st.builds(
-    events::AtomicEventPattern,
+events_AtomicEventPattern_strategy = st.builds(
+    events_AtomicEventPattern,
     type=
         safe_text
 )
-events::Automaton_strategy = st.builds(
-    events::Automaton,
+events_Automaton_strategy = st.builds(
+    events_Automaton,
 )
-events::EventPattern_strategy = st.builds(
-    events::EventPattern,
+events_EventPattern_strategy = st.builds(
+    events_EventPattern,
     id=
         safe_text
 )
-events::EventModel_strategy = st.builds(
-    events::EventModel,
+events_EventModel_strategy = st.builds(
+    events_EventModel,
 )
 
 @given(instance=AbstractMultiplicity_strategy)
@@ -516,28 +516,25 @@ events::EventModel_strategy = st.builds(
 def test_abstractmultiplicity_instantiation(instance):
     assert isinstance(instance, AbstractMultiplicity)
 
-@given(instance=events::Infinite_strategy)
+@given(instance=events_Infinite_strategy)
 @settings(max_examples=50)
-def test_events::infinite_instantiation(instance):
-    assert isinstance(instance, events::Infinite)
+def test_events_infinite_instantiation(instance):
+    assert isinstance(instance, events_Infinite)
 
-@given(instance=events::AtLeastOne_strategy)
+@given(instance=events_AtLeastOne_strategy)
 @settings(max_examples=50)
-def test_events::atleastone_instantiation(instance):
-    assert isinstance(instance, events::AtLeastOne)
+def test_events_atleastone_instantiation(instance):
+    assert isinstance(instance, events_AtLeastOne)
 
-@given(instance=events::Multiplicity_strategy)
+@given(instance=events_Multiplicity_strategy)
 @settings(max_examples=50)
-def test_events::multiplicity_instantiation(instance):
-    assert isinstance(instance, events::Multiplicity)
-
-@given(instance=events::Multiplicity_strategy)
-def test_events::multiplicity_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_events_multiplicity_instantiation(instance):
+    assert isinstance(instance, events_Multiplicity)
 
 
-@given(instance=events::Multiplicity_strategy)
-def test_events::multiplicity_value_setter(instance):
+
+@given(instance=events_Multiplicity_strategy)
+def test_events_multiplicity_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -547,170 +544,146 @@ def test_events::multiplicity_value_setter(instance):
 def test_complexeventoperator_instantiation(instance):
     assert isinstance(instance, ComplexEventOperator)
 
-@given(instance=events::NEG_strategy)
+@given(instance=events_FOLLOWS_strategy)
 @settings(max_examples=50)
-def test_events::neg_instantiation(instance):
-    assert isinstance(instance, events::NEG)
+def test_events_follows_instantiation(instance):
+    assert isinstance(instance, events_FOLLOWS)
 
-@given(instance=events::AND_strategy)
+@given(instance=events_NEG_strategy)
 @settings(max_examples=50)
-def test_events::and_instantiation(instance):
-    assert isinstance(instance, events::AND)
+def test_events_neg_instantiation(instance):
+    assert isinstance(instance, events_NEG)
 
-@given(instance=events::FOLLOWS_strategy)
+@given(instance=events_AND_strategy)
 @settings(max_examples=50)
-def test_events::follows_instantiation(instance):
-    assert isinstance(instance, events::FOLLOWS)
+def test_events_and_instantiation(instance):
+    assert isinstance(instance, events_AND)
 
-@given(instance=events::OR_strategy)
+@given(instance=events_OR_strategy)
 @settings(max_examples=50)
-def test_events::or_instantiation(instance):
-    assert isinstance(instance, events::OR)
+def test_events_or_instantiation(instance):
+    assert isinstance(instance, events_OR)
 
-@given(instance=events::EventSource_strategy)
+@given(instance=events_EventSource_strategy)
 @settings(max_examples=50)
-def test_events::eventsource_instantiation(instance):
-    assert isinstance(instance, events::EventSource)
+def test_events_eventsource_instantiation(instance):
+    assert isinstance(instance, events_EventSource)
 
-@given(instance=events::Event_strategy)
+@given(instance=events_Event_strategy)
 @settings(max_examples=50)
-def test_events::event_instantiation(instance):
-    assert isinstance(instance, events::Event)
-
-@given(instance=events::Event_strategy)
-def test_events::event_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_events_event_instantiation(instance):
+    assert isinstance(instance, events_Event)
 
 
-@given(instance=events::Event_strategy)
-def test_events::event_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=events::Event_strategy)
-def test_events::event_isProcessed_type(instance):
-    assert isinstance(instance.isProcessed, bool)
-
-
-@given(instance=events::Event_strategy)
-def test_events::event_isProcessed_setter(instance):
+@given(instance=events_Event_strategy)
+def test_events_event_isProcessed_setter(instance):
     original = instance.isProcessed
     instance.isProcessed = original
     assert instance.isProcessed == original
 
-@given(instance=events::Event_strategy)
-def test_events::event_timestamp_type(instance):
-    assert isinstance(instance.timestamp, str)
 
 
-@given(instance=events::Event_strategy)
-def test_events::event_timestamp_setter(instance):
+@given(instance=events_Event_strategy)
+def test_events_event_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=events_Event_strategy)
+def test_events_event_timestamp_setter(instance):
     original = instance.timestamp
     instance.timestamp = original
     assert instance.timestamp == original
 
-@given(instance=events::AbstractMultiplicity_strategy)
+@given(instance=events_AbstractMultiplicity_strategy)
 @settings(max_examples=50)
-def test_events::abstractmultiplicity_instantiation(instance):
-    assert isinstance(instance, events::AbstractMultiplicity)
+def test_events_abstractmultiplicity_instantiation(instance):
+    assert isinstance(instance, events_AbstractMultiplicity)
 
-@given(instance=events::EventPatternReference_strategy)
+@given(instance=events_EventPatternReference_strategy)
 @settings(max_examples=50)
-def test_events::eventpatternreference_instantiation(instance):
-    assert isinstance(instance, events::EventPatternReference)
-
-@given(instance=events::EventPatternReference_strategy)
-def test_events::eventpatternreference_parameterSymbolicNames_type(instance):
-    assert isinstance(instance.parameterSymbolicNames, str)
+def test_events_eventpatternreference_instantiation(instance):
+    assert isinstance(instance, events_EventPatternReference)
 
 
-@given(instance=events::EventPatternReference_strategy)
-def test_events::eventpatternreference_parameterSymbolicNames_setter(instance):
+
+@given(instance=events_EventPatternReference_strategy)
+def test_events_eventpatternreference_parameterSymbolicNames_setter(instance):
     original = instance.parameterSymbolicNames
     instance.parameterSymbolicNames = original
     assert instance.parameterSymbolicNames == original
 
-@given(instance=events::Timewindow_strategy)
+@given(instance=events_Timewindow_strategy)
 @settings(max_examples=50)
-def test_events::timewindow_instantiation(instance):
-    assert isinstance(instance, events::Timewindow)
-
-@given(instance=events::Timewindow_strategy)
-def test_events::timewindow_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_events_timewindow_instantiation(instance):
+    assert isinstance(instance, events_Timewindow)
 
 
-@given(instance=events::Timewindow_strategy)
-def test_events::timewindow_time_setter(instance):
+
+@given(instance=events_Timewindow_strategy)
+def test_events_timewindow_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=events::ComplexEventOperator_strategy)
+@given(instance=events_ComplexEventOperator_strategy)
 @settings(max_examples=50)
-def test_events::complexeventoperator_instantiation(instance):
-    assert isinstance(instance, events::ComplexEventOperator)
+def test_events_complexeventoperator_instantiation(instance):
+    assert isinstance(instance, events_ComplexEventOperator)
 
 @given(instance=EventPattern_strategy)
 @settings(max_examples=50)
 def test_eventpattern_instantiation(instance):
     assert isinstance(instance, EventPattern)
 
-@given(instance=events::ComplexEventPattern_strategy)
+@given(instance=events_ComplexEventPattern_strategy)
 @settings(max_examples=50)
-def test_events::complexeventpattern_instantiation(instance):
-    assert isinstance(instance, events::ComplexEventPattern)
-
-@given(instance=events::ComplexEventPattern_strategy)
-def test_events::complexeventpattern_eventContext_type(instance):
-    assert isinstance(instance.eventContext, str)
+def test_events_complexeventpattern_instantiation(instance):
+    assert isinstance(instance, events_ComplexEventPattern)
 
 
-@given(instance=events::ComplexEventPattern_strategy)
-def test_events::complexeventpattern_eventContext_setter(instance):
+
+@given(instance=events_ComplexEventPattern_strategy)
+def test_events_complexeventpattern_eventContext_setter(instance):
     original = instance.eventContext
     instance.eventContext = original
     assert instance.eventContext == original
 
-@given(instance=events::AtomicEventPattern_strategy)
+@given(instance=events_AtomicEventPattern_strategy)
 @settings(max_examples=50)
-def test_events::atomiceventpattern_instantiation(instance):
-    assert isinstance(instance, events::AtomicEventPattern)
-
-@given(instance=events::AtomicEventPattern_strategy)
-def test_events::atomiceventpattern_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_events_atomiceventpattern_instantiation(instance):
+    assert isinstance(instance, events_AtomicEventPattern)
 
 
-@given(instance=events::AtomicEventPattern_strategy)
-def test_events::atomiceventpattern_type_setter(instance):
+
+@given(instance=events_AtomicEventPattern_strategy)
+def test_events_atomiceventpattern_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=events::Automaton_strategy)
+@given(instance=events_Automaton_strategy)
 @settings(max_examples=50)
-def test_events::automaton_instantiation(instance):
-    assert isinstance(instance, events::Automaton)
+def test_events_automaton_instantiation(instance):
+    assert isinstance(instance, events_Automaton)
 
-@given(instance=events::EventPattern_strategy)
+@given(instance=events_EventPattern_strategy)
 @settings(max_examples=50)
-def test_events::eventpattern_instantiation(instance):
-    assert isinstance(instance, events::EventPattern)
-
-@given(instance=events::EventPattern_strategy)
-def test_events::eventpattern_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_events_eventpattern_instantiation(instance):
+    assert isinstance(instance, events_EventPattern)
 
 
-@given(instance=events::EventPattern_strategy)
-def test_events::eventpattern_id_setter(instance):
+
+@given(instance=events_EventPattern_strategy)
+def test_events_eventpattern_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=events::EventModel_strategy)
+@given(instance=events_EventModel_strategy)
 @settings(max_examples=50)
-def test_events::eventmodel_instantiation(instance):
-    assert isinstance(instance, events::EventModel)
+def test_events_eventmodel_instantiation(instance):
+    assert isinstance(instance, events_EventModel)

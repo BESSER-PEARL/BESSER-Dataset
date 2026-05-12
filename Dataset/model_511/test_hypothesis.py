@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    familyright::Mother,
-    familyright::Family,
-    familyright::Father,
-    familyright::Daughter,
-    familyright::Son,
+from python_code import (
+    familyright_Mother,
+    familyright_Family,
+    familyright_Father,
+    familyright_Daughter,
+    familyright_Son,
 )
 
 # =============================================================================
@@ -19,43 +19,43 @@ from classes import (
 
 
 
-def test_familyright::mother_is_not_abstract():
-    assert not inspect.isabstract(familyright::Mother)
+def test_familyright_mother_is_not_abstract():
+    assert not inspect.isabstract(familyright_Mother)
 
 
-def test_familyright::mother_constructor_exists():
-    assert callable(familyright::Mother.__init__)
+def test_familyright_mother_constructor_exists():
+    assert callable(familyright_Mother.__init__)
 
 
-def test_familyright::mother_constructor_args():
-    sig = inspect.signature(familyright::Mother.__init__)
+def test_familyright_mother_constructor_args():
+    sig = inspect.signature(familyright_Mother.__init__)
     params = list(sig.parameters.keys())
     assert "age" in params, "Missing parameter 'age'"
     assert "address" in params, "Missing parameter 'address'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_familyright::mother_has_age():
-    assert hasattr(familyright::Mother, "age")
+def test_familyright_mother_has_age():
+    assert hasattr(familyright_Mother, "age")
     descriptor = None
-    for klass in familyright::Mother.__mro__:
+    for klass in familyright_Mother.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyright::mother_has_address():
-    assert hasattr(familyright::Mother, "address")
+def test_familyright_mother_has_address():
+    assert hasattr(familyright_Mother, "address")
     descriptor = None
-    for klass in familyright::Mother.__mro__:
+    for klass in familyright_Mother.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyright::mother_has_name():
-    assert hasattr(familyright::Mother, "name")
+def test_familyright_mother_has_name():
+    assert hasattr(familyright_Mother, "name")
     descriptor = None
-    for klass in familyright::Mother.__mro__:
+    for klass in familyright_Mother.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -63,91 +63,57 @@ def test_familyright::mother_has_name():
 
 
 
-def test_familyright::family_is_not_abstract():
-    assert not inspect.isabstract(familyright::Family)
+def test_familyright_family_is_not_abstract():
+    assert not inspect.isabstract(familyright_Family)
 
 
-def test_familyright::family_constructor_exists():
-    assert callable(familyright::Family.__init__)
+def test_familyright_family_constructor_exists():
+    assert callable(familyright_Family.__init__)
 
 
-def test_familyright::family_constructor_args():
-    sig = inspect.signature(familyright::Family.__init__)
+def test_familyright_family_constructor_args():
+    sig = inspect.signature(familyright_Family.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_familyright::father_is_not_abstract():
-    assert not inspect.isabstract(familyright::Father)
+def test_familyright_father_is_not_abstract():
+    assert not inspect.isabstract(familyright_Father)
 
 
-def test_familyright::father_constructor_exists():
-    assert callable(familyright::Father.__init__)
+def test_familyright_father_constructor_exists():
+    assert callable(familyright_Father.__init__)
 
 
-def test_familyright::father_constructor_args():
-    sig = inspect.signature(familyright::Father.__init__)
+def test_familyright_father_constructor_args():
+    sig = inspect.signature(familyright_Father.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "age" in params, "Missing parameter 'age'"
     assert "address" in params, "Missing parameter 'address'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_familyright::father_has_name():
-    assert hasattr(familyright::Father, "name")
+def test_familyright_father_has_age():
+    assert hasattr(familyright_Father, "age")
     descriptor = None
-    for klass in familyright::Father.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_familyright::father_has_age():
-    assert hasattr(familyright::Father, "age")
-    descriptor = None
-    for klass in familyright::Father.__mro__:
+    for klass in familyright_Father.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyright::father_has_address():
-    assert hasattr(familyright::Father, "address")
+def test_familyright_father_has_address():
+    assert hasattr(familyright_Father, "address")
     descriptor = None
-    for klass in familyright::Father.__mro__:
+    for klass in familyright_Father.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_familyright::daughter_is_not_abstract():
-    assert not inspect.isabstract(familyright::Daughter)
-
-
-def test_familyright::daughter_constructor_exists():
-    assert callable(familyright::Daughter.__init__)
-
-
-def test_familyright::daughter_constructor_args():
-    sig = inspect.signature(familyright::Daughter.__init__)
-    params = list(sig.parameters.keys())
-    assert "age" in params, "Missing parameter 'age'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_familyright::daughter_has_age():
-    assert hasattr(familyright::Daughter, "age")
+def test_familyright_father_has_name():
+    assert hasattr(familyright_Father, "name")
     descriptor = None
-    for klass in familyright::Daughter.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_familyright::daughter_has_name():
-    assert hasattr(familyright::Daughter, "name")
-    descriptor = None
-    for klass in familyright::Daughter.__mro__:
+    for klass in familyright_Father.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -155,35 +121,69 @@ def test_familyright::daughter_has_name():
 
 
 
-def test_familyright::son_is_not_abstract():
-    assert not inspect.isabstract(familyright::Son)
+def test_familyright_daughter_is_not_abstract():
+    assert not inspect.isabstract(familyright_Daughter)
 
 
-def test_familyright::son_constructor_exists():
-    assert callable(familyright::Son.__init__)
+def test_familyright_daughter_constructor_exists():
+    assert callable(familyright_Daughter.__init__)
 
 
-def test_familyright::son_constructor_args():
-    sig = inspect.signature(familyright::Son.__init__)
+def test_familyright_daughter_constructor_args():
+    sig = inspect.signature(familyright_Daughter.__init__)
     params = list(sig.parameters.keys())
-    assert "age" in params, "Missing parameter 'age'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "age" in params, "Missing parameter 'age'"
 
-def test_familyright::son_has_age():
-    assert hasattr(familyright::Son, "age")
+def test_familyright_daughter_has_name():
+    assert hasattr(familyright_Daughter, "name")
     descriptor = None
-    for klass in familyright::Son.__mro__:
+    for klass in familyright_Daughter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_familyright_daughter_has_age():
+    assert hasattr(familyright_Daughter, "age")
+    descriptor = None
+    for klass in familyright_Daughter.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyright::son_has_name():
-    assert hasattr(familyright::Son, "name")
+
+
+def test_familyright_son_is_not_abstract():
+    assert not inspect.isabstract(familyright_Son)
+
+
+def test_familyright_son_constructor_exists():
+    assert callable(familyright_Son.__init__)
+
+
+def test_familyright_son_constructor_args():
+    sig = inspect.signature(familyright_Son.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "age" in params, "Missing parameter 'age'"
+
+def test_familyright_son_has_name():
+    assert hasattr(familyright_Son, "name")
     descriptor = None
-    for klass in familyright::Son.__mro__:
+    for klass in familyright_Son.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_familyright_son_has_age():
+    assert hasattr(familyright_Son, "age")
+    descriptor = None
+    for klass in familyright_Son.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
@@ -199,8 +199,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-familyright::Mother_strategy = st.builds(
-    familyright::Mother,
+familyright_Mother_strategy = st.builds(
+    familyright_Mother,
     age=
         st.integers(),
     address=
@@ -208,164 +208,134 @@ familyright::Mother_strategy = st.builds(
     name=
         safe_text
 )
-familyright::Family_strategy = st.builds(
-    familyright::Family,
+familyright_Family_strategy = st.builds(
+    familyright_Family,
 )
-familyright::Father_strategy = st.builds(
-    familyright::Father,
-    name=
-        safe_text,
+familyright_Father_strategy = st.builds(
+    familyright_Father,
     age=
         st.integers(),
     address=
-        safe_text
-)
-familyright::Daughter_strategy = st.builds(
-    familyright::Daughter,
-    age=
-        st.integers(),
+        safe_text,
     name=
         safe_text
 )
-familyright::Son_strategy = st.builds(
-    familyright::Son,
-    age=
-        st.integers(),
+familyright_Daughter_strategy = st.builds(
+    familyright_Daughter,
     name=
-        safe_text
+        safe_text,
+    age=
+        st.integers()
+)
+familyright_Son_strategy = st.builds(
+    familyright_Son,
+    name=
+        safe_text,
+    age=
+        st.integers()
 )
 
-@given(instance=familyright::Mother_strategy)
+@given(instance=familyright_Mother_strategy)
 @settings(max_examples=50)
-def test_familyright::mother_instantiation(instance):
-    assert isinstance(instance, familyright::Mother)
-
-@given(instance=familyright::Mother_strategy)
-def test_familyright::mother_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_familyright_mother_instantiation(instance):
+    assert isinstance(instance, familyright_Mother)
 
 
-@given(instance=familyright::Mother_strategy)
-def test_familyright::mother_age_setter(instance):
+
+@given(instance=familyright_Mother_strategy)
+def test_familyright_mother_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=familyright::Mother_strategy)
-def test_familyright::mother_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=familyright::Mother_strategy)
-def test_familyright::mother_address_setter(instance):
+@given(instance=familyright_Mother_strategy)
+def test_familyright_mother_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=familyright::Mother_strategy)
-def test_familyright::mother_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=familyright::Mother_strategy)
-def test_familyright::mother_name_setter(instance):
+@given(instance=familyright_Mother_strategy)
+def test_familyright_mother_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=familyright::Family_strategy)
+@given(instance=familyright_Family_strategy)
 @settings(max_examples=50)
-def test_familyright::family_instantiation(instance):
-    assert isinstance(instance, familyright::Family)
+def test_familyright_family_instantiation(instance):
+    assert isinstance(instance, familyright_Family)
 
-@given(instance=familyright::Father_strategy)
+@given(instance=familyright_Father_strategy)
 @settings(max_examples=50)
-def test_familyright::father_instantiation(instance):
-    assert isinstance(instance, familyright::Father)
-
-@given(instance=familyright::Father_strategy)
-def test_familyright::father_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_familyright_father_instantiation(instance):
+    assert isinstance(instance, familyright_Father)
 
 
-@given(instance=familyright::Father_strategy)
-def test_familyright::father_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=familyright::Father_strategy)
-def test_familyright::father_age_type(instance):
-    assert isinstance(instance.age, int)
-
-
-@given(instance=familyright::Father_strategy)
-def test_familyright::father_age_setter(instance):
+@given(instance=familyright_Father_strategy)
+def test_familyright_father_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=familyright::Father_strategy)
-def test_familyright::father_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=familyright::Father_strategy)
-def test_familyright::father_address_setter(instance):
+@given(instance=familyright_Father_strategy)
+def test_familyright_father_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=familyright::Daughter_strategy)
-@settings(max_examples=50)
-def test_familyright::daughter_instantiation(instance):
-    assert isinstance(instance, familyright::Daughter)
-
-@given(instance=familyright::Daughter_strategy)
-def test_familyright::daughter_age_type(instance):
-    assert isinstance(instance.age, int)
 
 
-@given(instance=familyright::Daughter_strategy)
-def test_familyright::daughter_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
-
-@given(instance=familyright::Daughter_strategy)
-def test_familyright::daughter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=familyright::Daughter_strategy)
-def test_familyright::daughter_name_setter(instance):
+@given(instance=familyright_Father_strategy)
+def test_familyright_father_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=familyright::Son_strategy)
+@given(instance=familyright_Daughter_strategy)
 @settings(max_examples=50)
-def test_familyright::son_instantiation(instance):
-    assert isinstance(instance, familyright::Son)
-
-@given(instance=familyright::Son_strategy)
-def test_familyright::son_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_familyright_daughter_instantiation(instance):
+    assert isinstance(instance, familyright_Daughter)
 
 
-@given(instance=familyright::Son_strategy)
-def test_familyright::son_age_setter(instance):
+
+@given(instance=familyright_Daughter_strategy)
+def test_familyright_daughter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=familyright_Daughter_strategy)
+def test_familyright_daughter_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=familyright::Son_strategy)
-def test_familyright::son_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=familyright_Son_strategy)
+@settings(max_examples=50)
+def test_familyright_son_instantiation(instance):
+    assert isinstance(instance, familyright_Son)
 
 
-@given(instance=familyright::Son_strategy)
-def test_familyright::son_name_setter(instance):
+
+@given(instance=familyright_Son_strategy)
+def test_familyright_son_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=familyright_Son_strategy)
+def test_familyright_son_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original

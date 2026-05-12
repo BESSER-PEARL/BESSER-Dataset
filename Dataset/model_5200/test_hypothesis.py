@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pack2::ModeleTp3::Int,
-    ModeleTp3::pack2::E,
+from python_code import (
+    pack2_ModeleTp3_Int,
+    ModeleTp3_pack2_E,
     C,
-    ModeleTp3::pack2::D,
-    ModeleTp3::pack2::C,
-    pack1::ModeleTp3::Int,
-    ModeleTp3::pack1::A,
-    ModeleTp3::pack1::B,
-    ModeleTp3::Int,
+    ModeleTp3_pack2_D,
+    ModeleTp3_pack2_C,
+    pack1_ModeleTp3_Int,
+    ModeleTp3_pack1_A,
+    ModeleTp3_pack1_B,
+    ModeleTp3_Int,
 )
 
 # =============================================================================
@@ -23,30 +23,30 @@ from classes import (
 
 
 
-def test_pack2::modeletp3::int_is_not_abstract():
-    assert not inspect.isabstract(pack2::ModeleTp3::Int)
+def test_pack2_modeletp3_int_is_not_abstract():
+    assert not inspect.isabstract(pack2_ModeleTp3_Int)
 
 
-def test_pack2::modeletp3::int_constructor_exists():
-    assert callable(pack2::ModeleTp3::Int.__init__)
+def test_pack2_modeletp3_int_constructor_exists():
+    assert callable(pack2_ModeleTp3_Int.__init__)
 
 
-def test_pack2::modeletp3::int_constructor_args():
-    sig = inspect.signature(pack2::ModeleTp3::Int.__init__)
+def test_pack2_modeletp3_int_constructor_args():
+    sig = inspect.signature(pack2_ModeleTp3_Int.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeletp3::pack2::e_is_not_abstract():
-    assert not inspect.isabstract(ModeleTp3::pack2::E)
+def test_modeletp3_pack2_e_is_not_abstract():
+    assert not inspect.isabstract(ModeleTp3_pack2_E)
 
 
-def test_modeletp3::pack2::e_constructor_exists():
-    assert callable(ModeleTp3::pack2::E.__init__)
+def test_modeletp3_pack2_e_constructor_exists():
+    assert callable(ModeleTp3_pack2_E.__init__)
 
 
-def test_modeletp3::pack2::e_constructor_args():
-    sig = inspect.signature(ModeleTp3::pack2::E.__init__)
+def test_modeletp3_pack2_e_constructor_args():
+    sig = inspect.signature(ModeleTp3_pack2_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -65,86 +65,86 @@ def test_c_constructor_args():
 
 
 
-def test_modeletp3::pack2::d_is_not_abstract():
-    assert not inspect.isabstract(ModeleTp3::pack2::D)
+def test_modeletp3_pack2_d_is_not_abstract():
+    assert not inspect.isabstract(ModeleTp3_pack2_D)
 
 
-def test_modeletp3::pack2::d_constructor_exists():
-    assert callable(ModeleTp3::pack2::D.__init__)
+def test_modeletp3_pack2_d_constructor_exists():
+    assert callable(ModeleTp3_pack2_D.__init__)
 
 
-def test_modeletp3::pack2::d_constructor_args():
-    sig = inspect.signature(ModeleTp3::pack2::D.__init__)
+def test_modeletp3_pack2_d_constructor_args():
+    sig = inspect.signature(ModeleTp3_pack2_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeletp3::pack2::c_is_not_abstract():
-    assert not inspect.isabstract(ModeleTp3::pack2::C)
+def test_modeletp3_pack2_c_is_not_abstract():
+    assert not inspect.isabstract(ModeleTp3_pack2_C)
 
 
-def test_modeletp3::pack2::c_constructor_exists():
-    assert callable(ModeleTp3::pack2::C.__init__)
+def test_modeletp3_pack2_c_constructor_exists():
+    assert callable(ModeleTp3_pack2_C.__init__)
 
 
-def test_modeletp3::pack2::c_constructor_args():
-    sig = inspect.signature(ModeleTp3::pack2::C.__init__)
+def test_modeletp3_pack2_c_constructor_args():
+    sig = inspect.signature(ModeleTp3_pack2_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pack1::modeletp3::int_is_not_abstract():
-    assert not inspect.isabstract(pack1::ModeleTp3::Int)
+def test_pack1_modeletp3_int_is_not_abstract():
+    assert not inspect.isabstract(pack1_ModeleTp3_Int)
 
 
-def test_pack1::modeletp3::int_constructor_exists():
-    assert callable(pack1::ModeleTp3::Int.__init__)
+def test_pack1_modeletp3_int_constructor_exists():
+    assert callable(pack1_ModeleTp3_Int.__init__)
 
 
-def test_pack1::modeletp3::int_constructor_args():
-    sig = inspect.signature(pack1::ModeleTp3::Int.__init__)
+def test_pack1_modeletp3_int_constructor_args():
+    sig = inspect.signature(pack1_ModeleTp3_Int.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeletp3::pack1::a_is_not_abstract():
-    assert not inspect.isabstract(ModeleTp3::pack1::A)
+def test_modeletp3_pack1_a_is_not_abstract():
+    assert not inspect.isabstract(ModeleTp3_pack1_A)
 
 
-def test_modeletp3::pack1::a_constructor_exists():
-    assert callable(ModeleTp3::pack1::A.__init__)
+def test_modeletp3_pack1_a_constructor_exists():
+    assert callable(ModeleTp3_pack1_A.__init__)
 
 
-def test_modeletp3::pack1::a_constructor_args():
-    sig = inspect.signature(ModeleTp3::pack1::A.__init__)
+def test_modeletp3_pack1_a_constructor_args():
+    sig = inspect.signature(ModeleTp3_pack1_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeletp3::pack1::b_is_not_abstract():
-    assert not inspect.isabstract(ModeleTp3::pack1::B)
+def test_modeletp3_pack1_b_is_not_abstract():
+    assert not inspect.isabstract(ModeleTp3_pack1_B)
 
 
-def test_modeletp3::pack1::b_constructor_exists():
-    assert callable(ModeleTp3::pack1::B.__init__)
+def test_modeletp3_pack1_b_constructor_exists():
+    assert callable(ModeleTp3_pack1_B.__init__)
 
 
-def test_modeletp3::pack1::b_constructor_args():
-    sig = inspect.signature(ModeleTp3::pack1::B.__init__)
+def test_modeletp3_pack1_b_constructor_args():
+    sig = inspect.signature(ModeleTp3_pack1_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeletp3::int_is_not_abstract():
-    assert not inspect.isabstract(ModeleTp3::Int)
+def test_modeletp3_int_is_not_abstract():
+    assert not inspect.isabstract(ModeleTp3_Int)
 
 
-def test_modeletp3::int_constructor_exists():
-    assert callable(ModeleTp3::Int.__init__)
+def test_modeletp3_int_constructor_exists():
+    assert callable(ModeleTp3_Int.__init__)
 
 
-def test_modeletp3::int_constructor_args():
-    sig = inspect.signature(ModeleTp3::Int.__init__)
+def test_modeletp3_int_constructor_args():
+    sig = inspect.signature(ModeleTp3_Int.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,53 +159,53 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pack2::ModeleTp3::Int_strategy = st.builds(
-    pack2::ModeleTp3::Int,
+pack2_ModeleTp3_Int_strategy = st.builds(
+    pack2_ModeleTp3_Int,
 )
-ModeleTp3::pack2::E_strategy = st.builds(
-    ModeleTp3::pack2::E,
+ModeleTp3_pack2_E_strategy = st.builds(
+    ModeleTp3_pack2_E,
 )
 C_strategy = st.builds(
     C,
 )
-ModeleTp3::pack2::D_strategy = st.builds(
-    ModeleTp3::pack2::D,
+ModeleTp3_pack2_D_strategy = st.builds(
+    ModeleTp3_pack2_D,
 )
-ModeleTp3::pack2::C_strategy = st.builds(
-    ModeleTp3::pack2::C,
+ModeleTp3_pack2_C_strategy = st.builds(
+    ModeleTp3_pack2_C,
 )
-pack1::ModeleTp3::Int_strategy = st.builds(
-    pack1::ModeleTp3::Int,
+pack1_ModeleTp3_Int_strategy = st.builds(
+    pack1_ModeleTp3_Int,
 )
-ModeleTp3::pack1::A_strategy = st.builds(
-    ModeleTp3::pack1::A,
+ModeleTp3_pack1_A_strategy = st.builds(
+    ModeleTp3_pack1_A,
 )
-ModeleTp3::pack1::B_strategy = st.builds(
-    ModeleTp3::pack1::B,
+ModeleTp3_pack1_B_strategy = st.builds(
+    ModeleTp3_pack1_B,
 )
-ModeleTp3::Int_strategy = st.builds(
-    ModeleTp3::Int,
+ModeleTp3_Int_strategy = st.builds(
+    ModeleTp3_Int,
 )
 
-@given(instance=pack2::ModeleTp3::Int_strategy)
+@given(instance=pack2_ModeleTp3_Int_strategy)
 @settings(max_examples=50)
-def test_pack2::modeletp3::int_instantiation(instance):
-    assert isinstance(instance, pack2::ModeleTp3::Int)
+def test_pack2_modeletp3_int_instantiation(instance):
+    assert isinstance(instance, pack2_ModeleTp3_Int)
 
-@given(instance=ModeleTp3::pack2::E_strategy)
+@given(instance=ModeleTp3_pack2_E_strategy)
 @settings(max_examples=50)
-def test_modeletp3::pack2::e_instantiation(instance):
-    assert isinstance(instance, ModeleTp3::pack2::E)
+def test_modeletp3_pack2_e_instantiation(instance):
+    assert isinstance(instance, ModeleTp3_pack2_E)
 
 @given(instance=C_strategy)
 @settings(max_examples=50)
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=ModeleTp3::pack2::D_strategy)
+@given(instance=ModeleTp3_pack2_D_strategy)
 @settings(max_examples=50)
-def test_modeletp3::pack2::d_instantiation(instance):
-    assert isinstance(instance, ModeleTp3::pack2::D)
+def test_modeletp3_pack2_d_instantiation(instance):
+    assert isinstance(instance, ModeleTp3_pack2_D)
 
 import warnings
 import copy
@@ -213,9 +213,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ModeleTp3::pack2::D_strategy)
+@given(instance=ModeleTp3_pack2_D_strategy)
 @settings(max_examples=30)
-def test_modeletp3::pack2::d_foo_changes_state(instance):
+def test_modeletp3_pack2_d_foo_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -227,36 +227,36 @@ def test_modeletp3::pack2::d_foo_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'foo' in ModeleTp3::pack2::D is empty"
+        assert has_statements, f"Function 'foo' in ModeleTp3_pack2_D is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'foo' in ModeleTp3::pack2::D did not change state; check implementation")
+            warnings.warn(f"Operation 'foo' in ModeleTp3_pack2_D did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'foo' in ModeleTp3::pack2::D is not implemented or raised an error")
+        warnings.warn(f"Operation 'foo' in ModeleTp3_pack2_D is not implemented or raised an error")
 
-@given(instance=ModeleTp3::pack2::C_strategy)
+@given(instance=ModeleTp3_pack2_C_strategy)
 @settings(max_examples=50)
-def test_modeletp3::pack2::c_instantiation(instance):
-    assert isinstance(instance, ModeleTp3::pack2::C)
+def test_modeletp3_pack2_c_instantiation(instance):
+    assert isinstance(instance, ModeleTp3_pack2_C)
 
-@given(instance=pack1::ModeleTp3::Int_strategy)
+@given(instance=pack1_ModeleTp3_Int_strategy)
 @settings(max_examples=50)
-def test_pack1::modeletp3::int_instantiation(instance):
-    assert isinstance(instance, pack1::ModeleTp3::Int)
+def test_pack1_modeletp3_int_instantiation(instance):
+    assert isinstance(instance, pack1_ModeleTp3_Int)
 
-@given(instance=ModeleTp3::pack1::A_strategy)
+@given(instance=ModeleTp3_pack1_A_strategy)
 @settings(max_examples=50)
-def test_modeletp3::pack1::a_instantiation(instance):
-    assert isinstance(instance, ModeleTp3::pack1::A)
+def test_modeletp3_pack1_a_instantiation(instance):
+    assert isinstance(instance, ModeleTp3_pack1_A)
 
-@given(instance=ModeleTp3::pack1::B_strategy)
+@given(instance=ModeleTp3_pack1_B_strategy)
 @settings(max_examples=50)
-def test_modeletp3::pack1::b_instantiation(instance):
-    assert isinstance(instance, ModeleTp3::pack1::B)
+def test_modeletp3_pack1_b_instantiation(instance):
+    assert isinstance(instance, ModeleTp3_pack1_B)
 
-@given(instance=ModeleTp3::Int_strategy)
+@given(instance=ModeleTp3_Int_strategy)
 @settings(max_examples=50)
-def test_modeletp3::int_instantiation(instance):
-    assert isinstance(instance, ModeleTp3::Int)
+def test_modeletp3_int_instantiation(instance):
+    assert isinstance(instance, ModeleTp3_Int)

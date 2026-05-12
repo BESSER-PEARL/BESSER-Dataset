@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    School::Buzzer,
-    School::Clock,
-    School::SchoolRoom,
-    School::School,
+from python_code import (
+    School_Buzzer,
+    School_Clock,
+    School_SchoolRoom,
+    School_School,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_school::buzzer_is_not_abstract():
-    assert not inspect.isabstract(School::Buzzer)
+def test_school_buzzer_is_not_abstract():
+    assert not inspect.isabstract(School_Buzzer)
 
 
-def test_school::buzzer_constructor_exists():
-    assert callable(School::Buzzer.__init__)
+def test_school_buzzer_constructor_exists():
+    assert callable(School_Buzzer.__init__)
 
 
-def test_school::buzzer_constructor_args():
-    sig = inspect.signature(School::Buzzer.__init__)
+def test_school_buzzer_constructor_args():
+    sig = inspect.signature(School_Buzzer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_school::clock_is_not_abstract():
-    assert not inspect.isabstract(School::Clock)
+def test_school_clock_is_not_abstract():
+    assert not inspect.isabstract(School_Clock)
 
 
-def test_school::clock_constructor_exists():
-    assert callable(School::Clock.__init__)
+def test_school_clock_constructor_exists():
+    assert callable(School_Clock.__init__)
 
 
-def test_school::clock_constructor_args():
-    sig = inspect.signature(School::Clock.__init__)
+def test_school_clock_constructor_args():
+    sig = inspect.signature(School_Clock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_school::schoolroom_is_not_abstract():
-    assert not inspect.isabstract(School::SchoolRoom)
+def test_school_schoolroom_is_not_abstract():
+    assert not inspect.isabstract(School_SchoolRoom)
 
 
-def test_school::schoolroom_constructor_exists():
-    assert callable(School::SchoolRoom.__init__)
+def test_school_schoolroom_constructor_exists():
+    assert callable(School_SchoolRoom.__init__)
 
 
-def test_school::schoolroom_constructor_args():
-    sig = inspect.signature(School::SchoolRoom.__init__)
+def test_school_schoolroom_constructor_args():
+    sig = inspect.signature(School_SchoolRoom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_school::school_is_not_abstract():
-    assert not inspect.isabstract(School::School)
+def test_school_school_is_not_abstract():
+    assert not inspect.isabstract(School_School)
 
 
-def test_school::school_constructor_exists():
-    assert callable(School::School.__init__)
+def test_school_school_constructor_exists():
+    assert callable(School_School.__init__)
 
 
-def test_school::school_constructor_args():
-    sig = inspect.signature(School::School.__init__)
+def test_school_school_constructor_args():
+    sig = inspect.signature(School_School.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-School::Buzzer_strategy = st.builds(
-    School::Buzzer,
+School_Buzzer_strategy = st.builds(
+    School_Buzzer,
 )
-School::Clock_strategy = st.builds(
-    School::Clock,
+School_Clock_strategy = st.builds(
+    School_Clock,
 )
-School::SchoolRoom_strategy = st.builds(
-    School::SchoolRoom,
+School_SchoolRoom_strategy = st.builds(
+    School_SchoolRoom,
 )
-School::School_strategy = st.builds(
-    School::School,
+School_School_strategy = st.builds(
+    School_School,
 )
 
-@given(instance=School::Buzzer_strategy)
+@given(instance=School_Buzzer_strategy)
 @settings(max_examples=50)
-def test_school::buzzer_instantiation(instance):
-    assert isinstance(instance, School::Buzzer)
+def test_school_buzzer_instantiation(instance):
+    assert isinstance(instance, School_Buzzer)
 
-@given(instance=School::Clock_strategy)
+@given(instance=School_Clock_strategy)
 @settings(max_examples=50)
-def test_school::clock_instantiation(instance):
-    assert isinstance(instance, School::Clock)
+def test_school_clock_instantiation(instance):
+    assert isinstance(instance, School_Clock)
 
-@given(instance=School::SchoolRoom_strategy)
+@given(instance=School_SchoolRoom_strategy)
 @settings(max_examples=50)
-def test_school::schoolroom_instantiation(instance):
-    assert isinstance(instance, School::SchoolRoom)
+def test_school_schoolroom_instantiation(instance):
+    assert isinstance(instance, School_SchoolRoom)
 
-@given(instance=School::School_strategy)
+@given(instance=School_School_strategy)
 @settings(max_examples=50)
-def test_school::school_instantiation(instance):
-    assert isinstance(instance, School::School)
+def test_school_school_instantiation(instance):
+    assert isinstance(instance, School_School)

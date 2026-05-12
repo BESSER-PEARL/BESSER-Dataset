@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Ticket,
@@ -150,9 +150,6 @@ CheckStaff_strategy = st.builds(
 def test_ticket_instantiation(instance):
     assert isinstance(instance, Ticket)
 
-@given(instance=Ticket_strategy)
-def test_ticket_no_type(instance):
-    assert isinstance(instance.no, int)
 
 
 @given(instance=Ticket_strategy)
@@ -166,9 +163,6 @@ def test_ticket_no_setter(instance):
 def test_passenger_instantiation(instance):
     assert isinstance(instance, Passenger)
 
-@given(instance=Passenger_strategy)
-def test_passenger_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Passenger_strategy)
@@ -182,9 +176,6 @@ def test_passenger_name_setter(instance):
 def test_luggage_instantiation(instance):
     assert isinstance(instance, Luggage)
 
-@given(instance=Luggage_strategy)
-def test_luggage_weight_type(instance):
-    assert isinstance(instance.weight, int)
 
 
 @given(instance=Luggage_strategy)
@@ -198,9 +189,6 @@ def test_luggage_weight_setter(instance):
 def test_checkstaff_instantiation(instance):
     assert isinstance(instance, CheckStaff)
 
-@given(instance=CheckStaff_strategy)
-def test_checkstaff_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=CheckStaff_strategy)

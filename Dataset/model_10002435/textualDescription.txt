@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'Account' has the following attributes: 'Username' of type str; 'Password' of type int.
+The class 'Order' has the following attributes: 'price' of type Item; 'quantity' of type int.
+The class 'Customer' has the following attributes: 'emailAddress' of type str; 'cellNo' of type float; 'name' of type str; 'Gender' of type str; 'DOB' of type str.
+The class 'Shopping_Cart' has the following attributes: 'cartId' of type str.
+The class 'Item' has the following attributes: 'productId' of type str; 'price' of type float; 'size' of type str; 'colour' of type str.
+'Account' (role 'login4', cardinality 0..*) is associated with 'Item' (role 'user5', cardinality 0..*).
+'Item' (role 'Shopping_Cart_Login_19', cardinality 0..*) is associated with 'Shopping_Cart' (role 'Shopping_Cart_Login_08', cardinality 0..*).
+'Account' (role 'myprofile0', cardinality 0..*) is associated with 'Customer' (role 'user1', cardinality 0..*).
+'Shopping_Cart' (role 'orders7', cardinality 0..*) is associated with 'Order' (role 'friend6', cardinality 0..*).
+'Order' (role 'user3', cardinality 0..*) is associated with 'Account' (role 'post2', cardinality 0..*).

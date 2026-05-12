@@ -3,706 +3,132 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    OclModelElement,
-    atl::n::ocl::OCL::OclModel,
-    atl::n::ocl::OCL::TupleTypeAttribute,
-    TupleTypeAttribute,
-    CollectionType,
-    atl::n::ocl::OCL::SetType,
-    atl::n::ocl::OCL::SequenceType,
-    atl::n::ocl::OCL::OrderedSetType,
-    atl::n::ocl::OCL::BagType,
-    NumericType,
-    atl::n::ocl::OCL::RealType,
-    atl::n::ocl::OCL::IntegerType,
-    Primitive,
-    atl::n::ocl::OCL::BooleanType,
-    atl::n::ocl::OCL::NumericType,
-    atl::n::ocl::OCL::OclFeature,
-    atl::n::ocl::OCL::OclContextDefinition,
-    OclContextDefinition,
-    OclFeature,
-    atl::n::ocl::OCL::Operation,
-    atl::n::ocl::OCL::Attribute,
-    atl::n::ocl::OCL::OclFeatureDefinition,
-    LoopExp,
-    atl::n::ocl::OCL::IteratorExp,
-    atl::n::ocl::OCL::IterateExp,
-    atl::n::ocl::OCL::StringType,
-    atl::n::ocl::OCL::VariableDeclaration,
-    atl::n::ocl::OCL::MapElement,
-    MapElement,
-    TupleExp,
-    TuplePart,
-    CollectionExp,
-    atl::n::ocl::OCL::SequenceExp,
-    atl::n::ocl::OCL::SetExp,
-    atl::n::ocl::OCL::OrderedSetExp,
-    atl::n::ocl::OCL::BagExp,
+from python_code import (
     OperationCallExp,
-    atl::n::ocl::OCL::CollectionOperationCallExp,
-    atl::n::ocl::OCL::OperatorCallExp,
+    atl_n_ocl_OCL_CollectionOperationCallExp,
+    atl_n_ocl_OCL_OperatorCallExp,
     PropertyCallExp,
-    atl::n::ocl::OCL::OperationCallExp,
-    atl::n::ocl::OCL::LoopExp,
-    atl::n::ocl::OCL::NavigationOrAttributeCallExp,
+    atl_n_ocl_OCL_OperationCallExp,
+    atl_n_ocl_OCL_LoopExp,
+    atl_n_ocl_OCL_NavigationOrAttributeCallExp,
     NumericExp,
-    atl::n::ocl::OCL::IntegerExp,
-    atl::n::ocl::OCL::RealExp,
+    atl_n_ocl_OCL_IntegerExp,
+    atl_n_ocl_OCL_RealExp,
     PrimitiveExp,
-    atl::n::ocl::OCL::NumericExp,
-    atl::n::ocl::OCL::BooleanExp,
-    atl::n::ocl::OCL::StringExp,
+    atl_n_ocl_OCL_NumericExp,
+    atl_n_ocl_OCL_BooleanExp,
+    atl_n_ocl_OCL_StringExp,
     OclType,
-    atl::n::ocl::OCL::MapType,
-    atl::n::ocl::OCL::OclModelElement,
-    atl::n::ocl::OCL::CollectionType,
-    atl::n::ocl::OCL::OclAnyType,
-    atl::n::ocl::OCL::TupleType,
-    atl::n::ocl::OCL::Primitive,
-    atl::n::ocl::OCL::OclExpression,
+    atl_n_ocl_OCL_OclExpression,
     PatternElement,
-    atl::n::ocl::ATL::OutPatternElement,
-    atl::n::ocl::ATL::InPatternElement,
+    atl_n_ocl_ATL_OutPatternElement,
+    atl_n_ocl_ATL_InPatternElement,
     VariableDeclaration,
-    atl::n::ocl::OCL::TuplePart,
-    atl::n::ocl::OCL::Parameter,
-    atl::n::ocl::OCL::Iterator,
-    atl::n::ocl::ATL::PatternElement,
-    atl::n::ocl::ATL::DropPattern,
+    atl_n_ocl_ATL_PatternElement,
+    atl_n_ocl_ATL_DropPattern,
     OutPatternElement,
     DropPattern,
-    atl::n::ocl::ATL::OutPattern,
+    atl_n_ocl_ATL_OutPattern,
     InPatternElement,
-    atl::n::ocl::ATL::SimpleInPatternElement,
-    atl::n::ocl::ATL::InPattern,
-    atl::n::ocl::ATL::Statement,
+    atl_n_ocl_ATL_SimpleInPatternElement,
+    atl_n_ocl_ATL_InPattern,
+    atl_n_ocl_ATL_Statement,
     Statement,
-    atl::n::ocl::ATL::IfStat,
-    atl::n::ocl::ATL::ForStat,
-    atl::n::ocl::ATL::BindingStat,
-    atl::n::ocl::ATL::ExpressionStat,
-    atl::n::ocl::ATL::ActionBlock,
-    atl::n::ocl::ATL::RuleVariableDeclaration,
-    atl::n::ocl::ATL::Binding,
+    atl_n_ocl_ATL_ExpressionStat,
+    atl_n_ocl_ATL_IfStat,
+    atl_n_ocl_ATL_BindingStat,
+    atl_n_ocl_ATL_ForStat,
+    atl_n_ocl_ATL_ActionBlock,
+    atl_n_ocl_ATL_RuleVariableDeclaration,
+    atl_n_ocl_ATL_Binding,
     Iterator,
-    atl::n::ocl::ATL::ForEachOutPatternElement,
-    atl::n::ocl::ATL::SimpleOutPatternElement,
+    atl_n_ocl_ATL_ForEachOutPatternElement,
+    atl_n_ocl_ATL_SimpleOutPatternElement,
     Binding,
-    atl::n::ocl::ATL::ModuleElement,
+    atl_n_ocl_ATL_ModuleElement,
     ModuleElement,
-    atl::n::ocl::ATL::Helper,
+    atl_n_ocl_ATL_Helper,
     OclModel,
-    atl::n::ocl::ATL::Module,
+    atl_n_ocl_ATL_Module,
     Helper,
     OclExpression,
-    atl::n::ocl::OCL::OclUndefinedExp,
-    atl::n::ocl::OCL::TupleExp,
-    atl::n::ocl::OCL::IfExp,
-    atl::n::ocl::OCL::PropertyCallExp,
-    atl::n::ocl::OCL::LetExp,
-    atl::n::ocl::OCL::VariableExp,
-    atl::n::ocl::OCL::OclType,
-    atl::n::ocl::OCL::CollectionExp,
-    atl::n::ocl::OCL::MapExp,
-    atl::n::ocl::OCL::EnumLiteralExp,
-    atl::n::ocl::OCL::SuperExp,
-    atl::n::ocl::OCL::PrimitiveExp,
-    atl::n::ocl::ATL::Query,
+    atl_n_ocl_OCL_SuperExp,
+    atl_n_ocl_OCL_PropertyCallExp,
+    atl_n_ocl_OCL_EnumLiteralExp,
+    atl_n_ocl_OCL_PrimitiveExp,
+    atl_n_ocl_OCL_CollectionExp,
+    atl_n_ocl_OCL_OclUndefinedExp,
+    atl_n_ocl_OCL_VariableExp,
+    atl_n_ocl_ATL_Query,
     Parameter,
     MatchedRule,
-    atl::n::ocl::ATL::LazyMatchedRule,
+    atl_n_ocl_ATL_LazyMatchedRule,
     InPattern,
     Rule,
-    atl::n::ocl::ATL::CalledRule,
-    atl::n::ocl::ATL::MatchedRule,
+    atl_n_ocl_ATL_CalledRule,
+    atl_n_ocl_ATL_MatchedRule,
     RuleVariableDeclaration,
     ActionBlock,
     OutPattern,
-    atl::n::ocl::ATL::Rule,
+    atl_n_ocl_ATL_Rule,
     OclFeatureDefinition,
+    OclModelElement,
+    atl_n_ocl_OCL_OclModel,
+    atl_n_ocl_OCL_MapType,
+    atl_n_ocl_OCL_OclModelElement,
+    atl_n_ocl_OCL_TupleTypeAttribute,
+    TupleTypeAttribute,
+    atl_n_ocl_OCL_TupleType,
+    atl_n_ocl_OCL_OclAnyType,
+    CollectionType,
+    atl_n_ocl_OCL_OrderedSetType,
+    atl_n_ocl_OCL_SequenceType,
+    atl_n_ocl_OCL_SetType,
+    atl_n_ocl_OCL_BagType,
+    NumericType,
+    atl_n_ocl_OCL_RealType,
+    atl_n_ocl_OCL_IntegerType,
+    Primitive,
+    atl_n_ocl_OCL_NumericType,
+    atl_n_ocl_OCL_BooleanType,
+    atl_n_ocl_OCL_OclFeature,
+    atl_n_ocl_OCL_OclContextDefinition,
+    OclContextDefinition,
+    OclFeature,
+    atl_n_ocl_OCL_Operation,
+    atl_n_ocl_OCL_Attribute,
+    atl_n_ocl_OCL_OclFeatureDefinition,
+    atl_n_ocl_OCL_IfExp,
+    atl_n_ocl_OCL_LetExp,
+    LoopExp,
+    atl_n_ocl_OCL_IteratorExp,
+    atl_n_ocl_OCL_IterateExp,
+    atl_n_ocl_OCL_StringType,
+    atl_n_ocl_OCL_Primitive,
+    atl_n_ocl_OCL_OclType,
+    atl_n_ocl_OCL_CollectionType,
+    atl_n_ocl_OCL_Parameter,
+    atl_n_ocl_OCL_Iterator,
+    atl_n_ocl_OCL_VariableDeclaration,
+    atl_n_ocl_OCL_MapElement,
+    MapElement,
+    atl_n_ocl_OCL_MapExp,
+    TupleExp,
+    atl_n_ocl_OCL_TuplePart,
+    TuplePart,
+    atl_n_ocl_OCL_TupleExp,
+    CollectionExp,
+    atl_n_ocl_OCL_BagExp,
+    atl_n_ocl_OCL_SequenceExp,
+    atl_n_ocl_OCL_SetExp,
+    atl_n_ocl_OCL_OrderedSetExp,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_oclmodelelement_is_not_abstract():
-    assert not inspect.isabstract(OclModelElement)
-
-
-def test_oclmodelelement_constructor_exists():
-    assert callable(OclModelElement.__init__)
-
-
-def test_oclmodelelement_constructor_args():
-    sig = inspect.signature(OclModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::oclmodel_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclModel)
-
-
-def test_atl::n::ocl::ocl::oclmodel_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclModel.__init__)
-
-
-def test_atl::n::ocl::ocl::oclmodel_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_atl::n::ocl::ocl::oclmodel_has_name():
-    assert hasattr(atl::n::ocl::OCL::OclModel, "name")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::OclModel.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_atl::n::ocl::ocl::tupletypeattribute_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::TupleTypeAttribute)
-
-
-def test_atl::n::ocl::ocl::tupletypeattribute_constructor_exists():
-    assert callable(atl::n::ocl::OCL::TupleTypeAttribute.__init__)
-
-
-def test_atl::n::ocl::ocl::tupletypeattribute_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::TupleTypeAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_atl::n::ocl::ocl::tupletypeattribute_has_name():
-    assert hasattr(atl::n::ocl::OCL::TupleTypeAttribute, "name")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::TupleTypeAttribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tupletypeattribute_is_not_abstract():
-    assert not inspect.isabstract(TupleTypeAttribute)
-
-
-def test_tupletypeattribute_constructor_exists():
-    assert callable(TupleTypeAttribute.__init__)
-
-
-def test_tupletypeattribute_constructor_args():
-    sig = inspect.signature(TupleTypeAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectiontype_is_not_abstract():
-    assert not inspect.isabstract(CollectionType)
-
-
-def test_collectiontype_constructor_exists():
-    assert callable(CollectionType.__init__)
-
-
-def test_collectiontype_constructor_args():
-    sig = inspect.signature(CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::settype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::SetType)
-
-
-def test_atl::n::ocl::ocl::settype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::SetType.__init__)
-
-
-def test_atl::n::ocl::ocl::settype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::SetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::SequenceType)
-
-
-def test_atl::n::ocl::ocl::sequencetype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::SequenceType.__init__)
-
-
-def test_atl::n::ocl::ocl::sequencetype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OrderedSetType)
-
-
-def test_atl::n::ocl::ocl::orderedsettype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OrderedSetType.__init__)
-
-
-def test_atl::n::ocl::ocl::orderedsettype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OrderedSetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::bagtype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::BagType)
-
-
-def test_atl::n::ocl::ocl::bagtype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::BagType.__init__)
-
-
-def test_atl::n::ocl::ocl::bagtype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::BagType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_numerictype_is_not_abstract():
-    assert not inspect.isabstract(NumericType)
-
-
-def test_numerictype_constructor_exists():
-    assert callable(NumericType.__init__)
-
-
-def test_numerictype_constructor_args():
-    sig = inspect.signature(NumericType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::realtype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::RealType)
-
-
-def test_atl::n::ocl::ocl::realtype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::RealType.__init__)
-
-
-def test_atl::n::ocl::ocl::realtype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::RealType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::integertype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::IntegerType)
-
-
-def test_atl::n::ocl::ocl::integertype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::IntegerType.__init__)
-
-
-def test_atl::n::ocl::ocl::integertype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::IntegerType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitive_is_not_abstract():
-    assert not inspect.isabstract(Primitive)
-
-
-def test_primitive_constructor_exists():
-    assert callable(Primitive.__init__)
-
-
-def test_primitive_constructor_args():
-    sig = inspect.signature(Primitive.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::booleantype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::BooleanType)
-
-
-def test_atl::n::ocl::ocl::booleantype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::BooleanType.__init__)
-
-
-def test_atl::n::ocl::ocl::booleantype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::BooleanType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::numerictype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::NumericType)
-
-
-def test_atl::n::ocl::ocl::numerictype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::NumericType.__init__)
-
-
-def test_atl::n::ocl::ocl::numerictype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::NumericType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::oclfeature_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclFeature)
-
-
-def test_atl::n::ocl::ocl::oclfeature_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclFeature.__init__)
-
-
-def test_atl::n::ocl::ocl::oclfeature_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::oclcontextdefinition_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclContextDefinition)
-
-
-def test_atl::n::ocl::ocl::oclcontextdefinition_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclContextDefinition.__init__)
-
-
-def test_atl::n::ocl::ocl::oclcontextdefinition_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclContextDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclcontextdefinition_is_not_abstract():
-    assert not inspect.isabstract(OclContextDefinition)
-
-
-def test_oclcontextdefinition_constructor_exists():
-    assert callable(OclContextDefinition.__init__)
-
-
-def test_oclcontextdefinition_constructor_args():
-    sig = inspect.signature(OclContextDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclfeature_is_not_abstract():
-    assert not inspect.isabstract(OclFeature)
-
-
-def test_oclfeature_constructor_exists():
-    assert callable(OclFeature.__init__)
-
-
-def test_oclfeature_constructor_args():
-    sig = inspect.signature(OclFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::operation_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::Operation)
-
-
-def test_atl::n::ocl::ocl::operation_constructor_exists():
-    assert callable(atl::n::ocl::OCL::Operation.__init__)
-
-
-def test_atl::n::ocl::ocl::operation_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::Operation.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_atl::n::ocl::ocl::operation_has_name():
-    assert hasattr(atl::n::ocl::OCL::Operation, "name")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::Operation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_atl::n::ocl::ocl::attribute_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::Attribute)
-
-
-def test_atl::n::ocl::ocl::attribute_constructor_exists():
-    assert callable(atl::n::ocl::OCL::Attribute.__init__)
-
-
-def test_atl::n::ocl::ocl::attribute_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_atl::n::ocl::ocl::attribute_has_name():
-    assert hasattr(atl::n::ocl::OCL::Attribute, "name")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_atl::n::ocl::ocl::oclfeaturedefinition_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclFeatureDefinition)
-
-
-def test_atl::n::ocl::ocl::oclfeaturedefinition_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclFeatureDefinition.__init__)
-
-
-def test_atl::n::ocl::ocl::oclfeaturedefinition_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclFeatureDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_loopexp_is_not_abstract():
-    assert not inspect.isabstract(LoopExp)
-
-
-def test_loopexp_constructor_exists():
-    assert callable(LoopExp.__init__)
-
-
-def test_loopexp_constructor_args():
-    sig = inspect.signature(LoopExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::IteratorExp)
-
-
-def test_atl::n::ocl::ocl::iteratorexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::IteratorExp.__init__)
-
-
-def test_atl::n::ocl::ocl::iteratorexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::IteratorExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_atl::n::ocl::ocl::iteratorexp_has_name():
-    assert hasattr(atl::n::ocl::OCL::IteratorExp, "name")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::IteratorExp.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_atl::n::ocl::ocl::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::IterateExp)
-
-
-def test_atl::n::ocl::ocl::iterateexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::IterateExp.__init__)
-
-
-def test_atl::n::ocl::ocl::iterateexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::IterateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::StringType)
-
-
-def test_atl::n::ocl::ocl::stringtype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::StringType.__init__)
-
-
-def test_atl::n::ocl::ocl::stringtype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::StringType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::VariableDeclaration)
-
-
-def test_atl::n::ocl::ocl::variabledeclaration_constructor_exists():
-    assert callable(atl::n::ocl::OCL::VariableDeclaration.__init__)
-
-
-def test_atl::n::ocl::ocl::variabledeclaration_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::VariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "varName" in params, "Missing parameter 'varName'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_atl::n::ocl::ocl::variabledeclaration_has_varName():
-    assert hasattr(atl::n::ocl::OCL::VariableDeclaration, "varName")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::VariableDeclaration.__mro__:
-        if "varName" in klass.__dict__:
-            descriptor = klass.__dict__["varName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_atl::n::ocl::ocl::variabledeclaration_has_id():
-    assert hasattr(atl::n::ocl::OCL::VariableDeclaration, "id")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::VariableDeclaration.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_atl::n::ocl::ocl::mapelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::MapElement)
-
-
-def test_atl::n::ocl::ocl::mapelement_constructor_exists():
-    assert callable(atl::n::ocl::OCL::MapElement.__init__)
-
-
-def test_atl::n::ocl::ocl::mapelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::MapElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mapelement_is_not_abstract():
-    assert not inspect.isabstract(MapElement)
-
-
-def test_mapelement_constructor_exists():
-    assert callable(MapElement.__init__)
-
-
-def test_mapelement_constructor_args():
-    sig = inspect.signature(MapElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tupleexp_is_not_abstract():
-    assert not inspect.isabstract(TupleExp)
-
-
-def test_tupleexp_constructor_exists():
-    assert callable(TupleExp.__init__)
-
-
-def test_tupleexp_constructor_args():
-    sig = inspect.signature(TupleExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tuplepart_is_not_abstract():
-    assert not inspect.isabstract(TuplePart)
-
-
-def test_tuplepart_constructor_exists():
-    assert callable(TuplePart.__init__)
-
-
-def test_tuplepart_constructor_args():
-    sig = inspect.signature(TuplePart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectionexp_is_not_abstract():
-    assert not inspect.isabstract(CollectionExp)
-
-
-def test_collectionexp_constructor_exists():
-    assert callable(CollectionExp.__init__)
-
-
-def test_collectionexp_constructor_args():
-    sig = inspect.signature(CollectionExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::sequenceexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::SequenceExp)
-
-
-def test_atl::n::ocl::ocl::sequenceexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::SequenceExp.__init__)
-
-
-def test_atl::n::ocl::ocl::sequenceexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::SequenceExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::setexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::SetExp)
-
-
-def test_atl::n::ocl::ocl::setexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::SetExp.__init__)
-
-
-def test_atl::n::ocl::ocl::setexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::SetExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::orderedsetexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OrderedSetExp)
-
-
-def test_atl::n::ocl::ocl::orderedsetexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OrderedSetExp.__init__)
-
-
-def test_atl::n::ocl::ocl::orderedsetexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OrderedSetExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::bagexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::BagExp)
-
-
-def test_atl::n::ocl::ocl::bagexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::BagExp.__init__)
-
-
-def test_atl::n::ocl::ocl::bagexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::BagExp.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -720,30 +146,30 @@ def test_operationcallexp_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::collectionoperationcallexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::CollectionOperationCallExp)
+def test_atl_n_ocl_ocl_collectionoperationcallexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_CollectionOperationCallExp)
 
 
-def test_atl::n::ocl::ocl::collectionoperationcallexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::CollectionOperationCallExp.__init__)
+def test_atl_n_ocl_ocl_collectionoperationcallexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_CollectionOperationCallExp.__init__)
 
 
-def test_atl::n::ocl::ocl::collectionoperationcallexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::CollectionOperationCallExp.__init__)
+def test_atl_n_ocl_ocl_collectionoperationcallexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_CollectionOperationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::operatorcallexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OperatorCallExp)
+def test_atl_n_ocl_ocl_operatorcallexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OperatorCallExp)
 
 
-def test_atl::n::ocl::ocl::operatorcallexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OperatorCallExp.__init__)
+def test_atl_n_ocl_ocl_operatorcallexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OperatorCallExp.__init__)
 
 
-def test_atl::n::ocl::ocl::operatorcallexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OperatorCallExp.__init__)
+def test_atl_n_ocl_ocl_operatorcallexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OperatorCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -762,23 +188,23 @@ def test_propertycallexp_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OperationCallExp)
+def test_atl_n_ocl_ocl_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OperationCallExp)
 
 
-def test_atl::n::ocl::ocl::operationcallexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OperationCallExp.__init__)
+def test_atl_n_ocl_ocl_operationcallexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OperationCallExp.__init__)
 
 
-def test_atl::n::ocl::ocl::operationcallexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OperationCallExp.__init__)
+def test_atl_n_ocl_ocl_operationcallexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_atl::n::ocl::ocl::operationcallexp_has_operationName():
-    assert hasattr(atl::n::ocl::OCL::OperationCallExp, "operationName")
+def test_atl_n_ocl_ocl_operationcallexp_has_operationName():
+    assert hasattr(atl_n_ocl_OCL_OperationCallExp, "operationName")
     descriptor = None
-    for klass in atl::n::ocl::OCL::OperationCallExp.__mro__:
+    for klass in atl_n_ocl_OCL_OperationCallExp.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -786,37 +212,37 @@ def test_atl::n::ocl::ocl::operationcallexp_has_operationName():
 
 
 
-def test_atl::n::ocl::ocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::LoopExp)
+def test_atl_n_ocl_ocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_LoopExp)
 
 
-def test_atl::n::ocl::ocl::loopexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::LoopExp.__init__)
+def test_atl_n_ocl_ocl_loopexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_LoopExp.__init__)
 
 
-def test_atl::n::ocl::ocl::loopexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::LoopExp.__init__)
+def test_atl_n_ocl_ocl_loopexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::navigationorattributecallexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::NavigationOrAttributeCallExp)
+def test_atl_n_ocl_ocl_navigationorattributecallexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_NavigationOrAttributeCallExp)
 
 
-def test_atl::n::ocl::ocl::navigationorattributecallexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::NavigationOrAttributeCallExp.__init__)
+def test_atl_n_ocl_ocl_navigationorattributecallexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_NavigationOrAttributeCallExp.__init__)
 
 
-def test_atl::n::ocl::ocl::navigationorattributecallexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::NavigationOrAttributeCallExp.__init__)
+def test_atl_n_ocl_ocl_navigationorattributecallexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_NavigationOrAttributeCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::n::ocl::ocl::navigationorattributecallexp_has_name():
-    assert hasattr(atl::n::ocl::OCL::NavigationOrAttributeCallExp, "name")
+def test_atl_n_ocl_ocl_navigationorattributecallexp_has_name():
+    assert hasattr(atl_n_ocl_OCL_NavigationOrAttributeCallExp, "name")
     descriptor = None
-    for klass in atl::n::ocl::OCL::NavigationOrAttributeCallExp.__mro__:
+    for klass in atl_n_ocl_OCL_NavigationOrAttributeCallExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -838,23 +264,23 @@ def test_numericexp_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::integerexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::IntegerExp)
+def test_atl_n_ocl_ocl_integerexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_IntegerExp)
 
 
-def test_atl::n::ocl::ocl::integerexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::IntegerExp.__init__)
+def test_atl_n_ocl_ocl_integerexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_IntegerExp.__init__)
 
 
-def test_atl::n::ocl::ocl::integerexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::IntegerExp.__init__)
+def test_atl_n_ocl_ocl_integerexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_IntegerExp.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_atl::n::ocl::ocl::integerexp_has_integerSymbol():
-    assert hasattr(atl::n::ocl::OCL::IntegerExp, "integerSymbol")
+def test_atl_n_ocl_ocl_integerexp_has_integerSymbol():
+    assert hasattr(atl_n_ocl_OCL_IntegerExp, "integerSymbol")
     descriptor = None
-    for klass in atl::n::ocl::OCL::IntegerExp.__mro__:
+    for klass in atl_n_ocl_OCL_IntegerExp.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -862,23 +288,23 @@ def test_atl::n::ocl::ocl::integerexp_has_integerSymbol():
 
 
 
-def test_atl::n::ocl::ocl::realexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::RealExp)
+def test_atl_n_ocl_ocl_realexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_RealExp)
 
 
-def test_atl::n::ocl::ocl::realexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::RealExp.__init__)
+def test_atl_n_ocl_ocl_realexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_RealExp.__init__)
 
 
-def test_atl::n::ocl::ocl::realexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::RealExp.__init__)
+def test_atl_n_ocl_ocl_realexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_RealExp.__init__)
     params = list(sig.parameters.keys())
     assert "realSymbol" in params, "Missing parameter 'realSymbol'"
 
-def test_atl::n::ocl::ocl::realexp_has_realSymbol():
-    assert hasattr(atl::n::ocl::OCL::RealExp, "realSymbol")
+def test_atl_n_ocl_ocl_realexp_has_realSymbol():
+    assert hasattr(atl_n_ocl_OCL_RealExp, "realSymbol")
     descriptor = None
-    for klass in atl::n::ocl::OCL::RealExp.__mro__:
+    for klass in atl_n_ocl_OCL_RealExp.__mro__:
         if "realSymbol" in klass.__dict__:
             descriptor = klass.__dict__["realSymbol"]
             break
@@ -900,37 +326,37 @@ def test_primitiveexp_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::numericexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::NumericExp)
+def test_atl_n_ocl_ocl_numericexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_NumericExp)
 
 
-def test_atl::n::ocl::ocl::numericexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::NumericExp.__init__)
+def test_atl_n_ocl_ocl_numericexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_NumericExp.__init__)
 
 
-def test_atl::n::ocl::ocl::numericexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::NumericExp.__init__)
+def test_atl_n_ocl_ocl_numericexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_NumericExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::booleanexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::BooleanExp)
+def test_atl_n_ocl_ocl_booleanexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_BooleanExp)
 
 
-def test_atl::n::ocl::ocl::booleanexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::BooleanExp.__init__)
+def test_atl_n_ocl_ocl_booleanexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_BooleanExp.__init__)
 
 
-def test_atl::n::ocl::ocl::booleanexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::BooleanExp.__init__)
+def test_atl_n_ocl_ocl_booleanexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_BooleanExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_atl::n::ocl::ocl::booleanexp_has_booleanSymbol():
-    assert hasattr(atl::n::ocl::OCL::BooleanExp, "booleanSymbol")
+def test_atl_n_ocl_ocl_booleanexp_has_booleanSymbol():
+    assert hasattr(atl_n_ocl_OCL_BooleanExp, "booleanSymbol")
     descriptor = None
-    for klass in atl::n::ocl::OCL::BooleanExp.__mro__:
+    for klass in atl_n_ocl_OCL_BooleanExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -938,23 +364,23 @@ def test_atl::n::ocl::ocl::booleanexp_has_booleanSymbol():
 
 
 
-def test_atl::n::ocl::ocl::stringexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::StringExp)
+def test_atl_n_ocl_ocl_stringexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_StringExp)
 
 
-def test_atl::n::ocl::ocl::stringexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::StringExp.__init__)
+def test_atl_n_ocl_ocl_stringexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_StringExp.__init__)
 
 
-def test_atl::n::ocl::ocl::stringexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::StringExp.__init__)
+def test_atl_n_ocl_ocl_stringexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_StringExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_atl::n::ocl::ocl::stringexp_has_stringSymbol():
-    assert hasattr(atl::n::ocl::OCL::StringExp, "stringSymbol")
+def test_atl_n_ocl_ocl_stringexp_has_stringSymbol():
+    assert hasattr(atl_n_ocl_OCL_StringExp, "stringSymbol")
     descriptor = None
-    for klass in atl::n::ocl::OCL::StringExp.__mro__:
+    for klass in atl_n_ocl_OCL_StringExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -976,100 +402,16 @@ def test_ocltype_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::maptype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::MapType)
+def test_atl_n_ocl_ocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclExpression)
 
 
-def test_atl::n::ocl::ocl::maptype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::MapType.__init__)
+def test_atl_n_ocl_ocl_oclexpression_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclExpression.__init__)
 
 
-def test_atl::n::ocl::ocl::maptype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::MapType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::oclmodelelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclModelElement)
-
-
-def test_atl::n::ocl::ocl::oclmodelelement_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclModelElement.__init__)
-
-
-def test_atl::n::ocl::ocl::oclmodelelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::CollectionType)
-
-
-def test_atl::n::ocl::ocl::collectiontype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::CollectionType.__init__)
-
-
-def test_atl::n::ocl::ocl::collectiontype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::oclanytype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclAnyType)
-
-
-def test_atl::n::ocl::ocl::oclanytype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclAnyType.__init__)
-
-
-def test_atl::n::ocl::ocl::oclanytype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclAnyType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::tupletype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::TupleType)
-
-
-def test_atl::n::ocl::ocl::tupletype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::TupleType.__init__)
-
-
-def test_atl::n::ocl::ocl::tupletype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::TupleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::primitive_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::Primitive)
-
-
-def test_atl::n::ocl::ocl::primitive_constructor_exists():
-    assert callable(atl::n::ocl::OCL::Primitive.__init__)
-
-
-def test_atl::n::ocl::ocl::primitive_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::Primitive.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclExpression)
-
-
-def test_atl::n::ocl::ocl::oclexpression_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclExpression.__init__)
-
-
-def test_atl::n::ocl::ocl::oclexpression_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclExpression.__init__)
+def test_atl_n_ocl_ocl_oclexpression_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1088,30 +430,30 @@ def test_patternelement_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::outpatternelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::OutPatternElement)
+def test_atl_n_ocl_atl_outpatternelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_OutPatternElement)
 
 
-def test_atl::n::ocl::atl::outpatternelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::OutPatternElement.__init__)
+def test_atl_n_ocl_atl_outpatternelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_OutPatternElement.__init__)
 
 
-def test_atl::n::ocl::atl::outpatternelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::OutPatternElement.__init__)
+def test_atl_n_ocl_atl_outpatternelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_OutPatternElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::inpatternelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::InPatternElement)
+def test_atl_n_ocl_atl_inpatternelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_InPatternElement)
 
 
-def test_atl::n::ocl::atl::inpatternelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::InPatternElement.__init__)
+def test_atl_n_ocl_atl_inpatternelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_InPatternElement.__init__)
 
 
-def test_atl::n::ocl::atl::inpatternelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::InPatternElement.__init__)
+def test_atl_n_ocl_atl_inpatternelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_InPatternElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1130,72 +472,30 @@ def test_variabledeclaration_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::tuplepart_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::TuplePart)
+def test_atl_n_ocl_atl_patternelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_PatternElement)
 
 
-def test_atl::n::ocl::ocl::tuplepart_constructor_exists():
-    assert callable(atl::n::ocl::OCL::TuplePart.__init__)
+def test_atl_n_ocl_atl_patternelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_PatternElement.__init__)
 
 
-def test_atl::n::ocl::ocl::tuplepart_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::TuplePart.__init__)
+def test_atl_n_ocl_atl_patternelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_PatternElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::parameter_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::Parameter)
+def test_atl_n_ocl_atl_droppattern_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_DropPattern)
 
 
-def test_atl::n::ocl::ocl::parameter_constructor_exists():
-    assert callable(atl::n::ocl::OCL::Parameter.__init__)
+def test_atl_n_ocl_atl_droppattern_constructor_exists():
+    assert callable(atl_n_ocl_ATL_DropPattern.__init__)
 
 
-def test_atl::n::ocl::ocl::parameter_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::iterator_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::Iterator)
-
-
-def test_atl::n::ocl::ocl::iterator_constructor_exists():
-    assert callable(atl::n::ocl::OCL::Iterator.__init__)
-
-
-def test_atl::n::ocl::ocl::iterator_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::Iterator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::atl::patternelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::PatternElement)
-
-
-def test_atl::n::ocl::atl::patternelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::PatternElement.__init__)
-
-
-def test_atl::n::ocl::atl::patternelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::PatternElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::atl::droppattern_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::DropPattern)
-
-
-def test_atl::n::ocl::atl::droppattern_constructor_exists():
-    assert callable(atl::n::ocl::ATL::DropPattern.__init__)
-
-
-def test_atl::n::ocl::atl::droppattern_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::DropPattern.__init__)
+def test_atl_n_ocl_atl_droppattern_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_DropPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1228,16 +528,16 @@ def test_droppattern_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::outpattern_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::OutPattern)
+def test_atl_n_ocl_atl_outpattern_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_OutPattern)
 
 
-def test_atl::n::ocl::atl::outpattern_constructor_exists():
-    assert callable(atl::n::ocl::ATL::OutPattern.__init__)
+def test_atl_n_ocl_atl_outpattern_constructor_exists():
+    assert callable(atl_n_ocl_ATL_OutPattern.__init__)
 
 
-def test_atl::n::ocl::atl::outpattern_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::OutPattern.__init__)
+def test_atl_n_ocl_atl_outpattern_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_OutPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1256,44 +556,44 @@ def test_inpatternelement_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::simpleinpatternelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::SimpleInPatternElement)
+def test_atl_n_ocl_atl_simpleinpatternelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_SimpleInPatternElement)
 
 
-def test_atl::n::ocl::atl::simpleinpatternelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::SimpleInPatternElement.__init__)
+def test_atl_n_ocl_atl_simpleinpatternelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_SimpleInPatternElement.__init__)
 
 
-def test_atl::n::ocl::atl::simpleinpatternelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::SimpleInPatternElement.__init__)
+def test_atl_n_ocl_atl_simpleinpatternelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_SimpleInPatternElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::inpattern_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::InPattern)
+def test_atl_n_ocl_atl_inpattern_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_InPattern)
 
 
-def test_atl::n::ocl::atl::inpattern_constructor_exists():
-    assert callable(atl::n::ocl::ATL::InPattern.__init__)
+def test_atl_n_ocl_atl_inpattern_constructor_exists():
+    assert callable(atl_n_ocl_ATL_InPattern.__init__)
 
 
-def test_atl::n::ocl::atl::inpattern_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::InPattern.__init__)
+def test_atl_n_ocl_atl_inpattern_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_InPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::statement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::Statement)
+def test_atl_n_ocl_atl_statement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_Statement)
 
 
-def test_atl::n::ocl::atl::statement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::Statement.__init__)
+def test_atl_n_ocl_atl_statement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_Statement.__init__)
 
 
-def test_atl::n::ocl::atl::statement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::Statement.__init__)
+def test_atl_n_ocl_atl_statement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1312,61 +612,61 @@ def test_statement_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::ifstat_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::IfStat)
+def test_atl_n_ocl_atl_expressionstat_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_ExpressionStat)
 
 
-def test_atl::n::ocl::atl::ifstat_constructor_exists():
-    assert callable(atl::n::ocl::ATL::IfStat.__init__)
+def test_atl_n_ocl_atl_expressionstat_constructor_exists():
+    assert callable(atl_n_ocl_ATL_ExpressionStat.__init__)
 
 
-def test_atl::n::ocl::atl::ifstat_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::IfStat.__init__)
+def test_atl_n_ocl_atl_expressionstat_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_ExpressionStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::forstat_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::ForStat)
+def test_atl_n_ocl_atl_ifstat_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_IfStat)
 
 
-def test_atl::n::ocl::atl::forstat_constructor_exists():
-    assert callable(atl::n::ocl::ATL::ForStat.__init__)
+def test_atl_n_ocl_atl_ifstat_constructor_exists():
+    assert callable(atl_n_ocl_ATL_IfStat.__init__)
 
 
-def test_atl::n::ocl::atl::forstat_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::ForStat.__init__)
+def test_atl_n_ocl_atl_ifstat_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_IfStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::bindingstat_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::BindingStat)
+def test_atl_n_ocl_atl_bindingstat_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_BindingStat)
 
 
-def test_atl::n::ocl::atl::bindingstat_constructor_exists():
-    assert callable(atl::n::ocl::ATL::BindingStat.__init__)
+def test_atl_n_ocl_atl_bindingstat_constructor_exists():
+    assert callable(atl_n_ocl_ATL_BindingStat.__init__)
 
 
-def test_atl::n::ocl::atl::bindingstat_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::BindingStat.__init__)
+def test_atl_n_ocl_atl_bindingstat_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_BindingStat.__init__)
     params = list(sig.parameters.keys())
     assert "propertyName" in params, "Missing parameter 'propertyName'"
     assert "isAssignment" in params, "Missing parameter 'isAssignment'"
 
-def test_atl::n::ocl::atl::bindingstat_has_propertyName():
-    assert hasattr(atl::n::ocl::ATL::BindingStat, "propertyName")
+def test_atl_n_ocl_atl_bindingstat_has_propertyName():
+    assert hasattr(atl_n_ocl_ATL_BindingStat, "propertyName")
     descriptor = None
-    for klass in atl::n::ocl::ATL::BindingStat.__mro__:
+    for klass in atl_n_ocl_ATL_BindingStat.__mro__:
         if "propertyName" in klass.__dict__:
             descriptor = klass.__dict__["propertyName"]
             break
     assert isinstance(descriptor, property)
 
-def test_atl::n::ocl::atl::bindingstat_has_isAssignment():
-    assert hasattr(atl::n::ocl::ATL::BindingStat, "isAssignment")
+def test_atl_n_ocl_atl_bindingstat_has_isAssignment():
+    assert hasattr(atl_n_ocl_ATL_BindingStat, "isAssignment")
     descriptor = None
-    for klass in atl::n::ocl::ATL::BindingStat.__mro__:
+    for klass in atl_n_ocl_ATL_BindingStat.__mro__:
         if "isAssignment" in klass.__dict__:
             descriptor = klass.__dict__["isAssignment"]
             break
@@ -1374,77 +674,77 @@ def test_atl::n::ocl::atl::bindingstat_has_isAssignment():
 
 
 
-def test_atl::n::ocl::atl::expressionstat_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::ExpressionStat)
+def test_atl_n_ocl_atl_forstat_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_ForStat)
 
 
-def test_atl::n::ocl::atl::expressionstat_constructor_exists():
-    assert callable(atl::n::ocl::ATL::ExpressionStat.__init__)
+def test_atl_n_ocl_atl_forstat_constructor_exists():
+    assert callable(atl_n_ocl_ATL_ForStat.__init__)
 
 
-def test_atl::n::ocl::atl::expressionstat_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::ExpressionStat.__init__)
+def test_atl_n_ocl_atl_forstat_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_ForStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::actionblock_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::ActionBlock)
+def test_atl_n_ocl_atl_actionblock_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_ActionBlock)
 
 
-def test_atl::n::ocl::atl::actionblock_constructor_exists():
-    assert callable(atl::n::ocl::ATL::ActionBlock.__init__)
+def test_atl_n_ocl_atl_actionblock_constructor_exists():
+    assert callable(atl_n_ocl_ATL_ActionBlock.__init__)
 
 
-def test_atl::n::ocl::atl::actionblock_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::ActionBlock.__init__)
+def test_atl_n_ocl_atl_actionblock_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_ActionBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::rulevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::RuleVariableDeclaration)
+def test_atl_n_ocl_atl_rulevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_RuleVariableDeclaration)
 
 
-def test_atl::n::ocl::atl::rulevariabledeclaration_constructor_exists():
-    assert callable(atl::n::ocl::ATL::RuleVariableDeclaration.__init__)
+def test_atl_n_ocl_atl_rulevariabledeclaration_constructor_exists():
+    assert callable(atl_n_ocl_ATL_RuleVariableDeclaration.__init__)
 
 
-def test_atl::n::ocl::atl::rulevariabledeclaration_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::RuleVariableDeclaration.__init__)
+def test_atl_n_ocl_atl_rulevariabledeclaration_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_RuleVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::binding_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::Binding)
+def test_atl_n_ocl_atl_binding_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_Binding)
 
 
-def test_atl::n::ocl::atl::binding_constructor_exists():
-    assert callable(atl::n::ocl::ATL::Binding.__init__)
+def test_atl_n_ocl_atl_binding_constructor_exists():
+    assert callable(atl_n_ocl_ATL_Binding.__init__)
 
 
-def test_atl::n::ocl::atl::binding_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::Binding.__init__)
+def test_atl_n_ocl_atl_binding_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_Binding.__init__)
     params = list(sig.parameters.keys())
-    assert "isAssignment" in params, "Missing parameter 'isAssignment'"
     assert "propertyName" in params, "Missing parameter 'propertyName'"
+    assert "isAssignment" in params, "Missing parameter 'isAssignment'"
 
-def test_atl::n::ocl::atl::binding_has_isAssignment():
-    assert hasattr(atl::n::ocl::ATL::Binding, "isAssignment")
+def test_atl_n_ocl_atl_binding_has_propertyName():
+    assert hasattr(atl_n_ocl_ATL_Binding, "propertyName")
     descriptor = None
-    for klass in atl::n::ocl::ATL::Binding.__mro__:
-        if "isAssignment" in klass.__dict__:
-            descriptor = klass.__dict__["isAssignment"]
+    for klass in atl_n_ocl_ATL_Binding.__mro__:
+        if "propertyName" in klass.__dict__:
+            descriptor = klass.__dict__["propertyName"]
             break
     assert isinstance(descriptor, property)
 
-def test_atl::n::ocl::atl::binding_has_propertyName():
-    assert hasattr(atl::n::ocl::ATL::Binding, "propertyName")
+def test_atl_n_ocl_atl_binding_has_isAssignment():
+    assert hasattr(atl_n_ocl_ATL_Binding, "isAssignment")
     descriptor = None
-    for klass in atl::n::ocl::ATL::Binding.__mro__:
-        if "propertyName" in klass.__dict__:
-            descriptor = klass.__dict__["propertyName"]
+    for klass in atl_n_ocl_ATL_Binding.__mro__:
+        if "isAssignment" in klass.__dict__:
+            descriptor = klass.__dict__["isAssignment"]
             break
     assert isinstance(descriptor, property)
 
@@ -1464,30 +764,30 @@ def test_iterator_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::foreachoutpatternelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::ForEachOutPatternElement)
+def test_atl_n_ocl_atl_foreachoutpatternelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_ForEachOutPatternElement)
 
 
-def test_atl::n::ocl::atl::foreachoutpatternelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::ForEachOutPatternElement.__init__)
+def test_atl_n_ocl_atl_foreachoutpatternelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_ForEachOutPatternElement.__init__)
 
 
-def test_atl::n::ocl::atl::foreachoutpatternelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::ForEachOutPatternElement.__init__)
+def test_atl_n_ocl_atl_foreachoutpatternelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_ForEachOutPatternElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::simpleoutpatternelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::SimpleOutPatternElement)
+def test_atl_n_ocl_atl_simpleoutpatternelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_SimpleOutPatternElement)
 
 
-def test_atl::n::ocl::atl::simpleoutpatternelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::SimpleOutPatternElement.__init__)
+def test_atl_n_ocl_atl_simpleoutpatternelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_SimpleOutPatternElement.__init__)
 
 
-def test_atl::n::ocl::atl::simpleoutpatternelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::SimpleOutPatternElement.__init__)
+def test_atl_n_ocl_atl_simpleoutpatternelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_SimpleOutPatternElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1506,16 +806,16 @@ def test_binding_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::moduleelement_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::ModuleElement)
+def test_atl_n_ocl_atl_moduleelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_ModuleElement)
 
 
-def test_atl::n::ocl::atl::moduleelement_constructor_exists():
-    assert callable(atl::n::ocl::ATL::ModuleElement.__init__)
+def test_atl_n_ocl_atl_moduleelement_constructor_exists():
+    assert callable(atl_n_ocl_ATL_ModuleElement.__init__)
 
 
-def test_atl::n::ocl::atl::moduleelement_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::ModuleElement.__init__)
+def test_atl_n_ocl_atl_moduleelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_ModuleElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1534,16 +834,16 @@ def test_moduleelement_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::helper_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::Helper)
+def test_atl_n_ocl_atl_helper_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_Helper)
 
 
-def test_atl::n::ocl::atl::helper_constructor_exists():
-    assert callable(atl::n::ocl::ATL::Helper.__init__)
+def test_atl_n_ocl_atl_helper_constructor_exists():
+    assert callable(atl_n_ocl_ATL_Helper.__init__)
 
 
-def test_atl::n::ocl::atl::helper_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::Helper.__init__)
+def test_atl_n_ocl_atl_helper_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_Helper.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1562,23 +862,23 @@ def test_oclmodel_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::module_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::Module)
+def test_atl_n_ocl_atl_module_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_Module)
 
 
-def test_atl::n::ocl::atl::module_constructor_exists():
-    assert callable(atl::n::ocl::ATL::Module.__init__)
+def test_atl_n_ocl_atl_module_constructor_exists():
+    assert callable(atl_n_ocl_ATL_Module.__init__)
 
 
-def test_atl::n::ocl::atl::module_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::Module.__init__)
+def test_atl_n_ocl_atl_module_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_Module.__init__)
     params = list(sig.parameters.keys())
     assert "isRefining" in params, "Missing parameter 'isRefining'"
 
-def test_atl::n::ocl::atl::module_has_isRefining():
-    assert hasattr(atl::n::ocl::ATL::Module, "isRefining")
+def test_atl_n_ocl_atl_module_has_isRefining():
+    assert hasattr(atl_n_ocl_ATL_Module, "isRefining")
     descriptor = None
-    for klass in atl::n::ocl::ATL::Module.__mro__:
+    for klass in atl_n_ocl_ATL_Module.__mro__:
         if "isRefining" in klass.__dict__:
             descriptor = klass.__dict__["isRefining"]
             break
@@ -1614,107 +914,51 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_atl::n::ocl::ocl::oclundefinedexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclUndefinedExp)
+def test_atl_n_ocl_ocl_superexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_SuperExp)
 
 
-def test_atl::n::ocl::ocl::oclundefinedexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclUndefinedExp.__init__)
+def test_atl_n_ocl_ocl_superexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_SuperExp.__init__)
 
 
-def test_atl::n::ocl::ocl::oclundefinedexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclUndefinedExp.__init__)
+def test_atl_n_ocl_ocl_superexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_SuperExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::tupleexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::TupleExp)
+def test_atl_n_ocl_ocl_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_PropertyCallExp)
 
 
-def test_atl::n::ocl::ocl::tupleexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::TupleExp.__init__)
+def test_atl_n_ocl_ocl_propertycallexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_PropertyCallExp.__init__)
 
 
-def test_atl::n::ocl::ocl::tupleexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::TupleExp.__init__)
+def test_atl_n_ocl_ocl_propertycallexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::ifexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::IfExp)
+def test_atl_n_ocl_ocl_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_EnumLiteralExp)
 
 
-def test_atl::n::ocl::ocl::ifexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::IfExp.__init__)
+def test_atl_n_ocl_ocl_enumliteralexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_EnumLiteralExp.__init__)
 
 
-def test_atl::n::ocl::ocl::ifexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::IfExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::PropertyCallExp)
-
-
-def test_atl::n::ocl::ocl::propertycallexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::PropertyCallExp.__init__)
-
-
-def test_atl::n::ocl::ocl::propertycallexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::PropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::letexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::LetExp)
-
-
-def test_atl::n::ocl::ocl::letexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::LetExp.__init__)
-
-
-def test_atl::n::ocl::ocl::letexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::LetExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::variableexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::VariableExp)
-
-
-def test_atl::n::ocl::ocl::variableexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::VariableExp.__init__)
-
-
-def test_atl::n::ocl::ocl::variableexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::VariableExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_atl::n::ocl::ocl::ocltype_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::OclType)
-
-
-def test_atl::n::ocl::ocl::ocltype_constructor_exists():
-    assert callable(atl::n::ocl::OCL::OclType.__init__)
-
-
-def test_atl::n::ocl::ocl::ocltype_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::OclType.__init__)
+def test_atl_n_ocl_ocl_enumliteralexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::n::ocl::ocl::ocltype_has_name():
-    assert hasattr(atl::n::ocl::OCL::OclType, "name")
+def test_atl_n_ocl_ocl_enumliteralexp_has_name():
+    assert hasattr(atl_n_ocl_OCL_EnumLiteralExp, "name")
     descriptor = None
-    for klass in atl::n::ocl::OCL::OclType.__mro__:
+    for klass in atl_n_ocl_OCL_EnumLiteralExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1722,96 +966,72 @@ def test_atl::n::ocl::ocl::ocltype_has_name():
 
 
 
-def test_atl::n::ocl::ocl::collectionexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::CollectionExp)
+def test_atl_n_ocl_ocl_primitiveexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_PrimitiveExp)
 
 
-def test_atl::n::ocl::ocl::collectionexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::CollectionExp.__init__)
+def test_atl_n_ocl_ocl_primitiveexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_PrimitiveExp.__init__)
 
 
-def test_atl::n::ocl::ocl::collectionexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::CollectionExp.__init__)
+def test_atl_n_ocl_ocl_primitiveexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_PrimitiveExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::mapexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::MapExp)
+def test_atl_n_ocl_ocl_collectionexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_CollectionExp)
 
 
-def test_atl::n::ocl::ocl::mapexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::MapExp.__init__)
+def test_atl_n_ocl_ocl_collectionexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_CollectionExp.__init__)
 
 
-def test_atl::n::ocl::ocl::mapexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::MapExp.__init__)
+def test_atl_n_ocl_ocl_collectionexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_CollectionExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::EnumLiteralExp)
+def test_atl_n_ocl_ocl_oclundefinedexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclUndefinedExp)
 
 
-def test_atl::n::ocl::ocl::enumliteralexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::EnumLiteralExp.__init__)
+def test_atl_n_ocl_ocl_oclundefinedexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclUndefinedExp.__init__)
 
 
-def test_atl::n::ocl::ocl::enumliteralexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::EnumLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_atl::n::ocl::ocl::enumliteralexp_has_name():
-    assert hasattr(atl::n::ocl::OCL::EnumLiteralExp, "name")
-    descriptor = None
-    for klass in atl::n::ocl::OCL::EnumLiteralExp.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_atl::n::ocl::ocl::superexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::SuperExp)
-
-
-def test_atl::n::ocl::ocl::superexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::SuperExp.__init__)
-
-
-def test_atl::n::ocl::ocl::superexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::SuperExp.__init__)
+def test_atl_n_ocl_ocl_oclundefinedexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclUndefinedExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::ocl::primitiveexp_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::OCL::PrimitiveExp)
+def test_atl_n_ocl_ocl_variableexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_VariableExp)
 
 
-def test_atl::n::ocl::ocl::primitiveexp_constructor_exists():
-    assert callable(atl::n::ocl::OCL::PrimitiveExp.__init__)
+def test_atl_n_ocl_ocl_variableexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_VariableExp.__init__)
 
 
-def test_atl::n::ocl::ocl::primitiveexp_constructor_args():
-    sig = inspect.signature(atl::n::ocl::OCL::PrimitiveExp.__init__)
+def test_atl_n_ocl_ocl_variableexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_atl::n::ocl::atl::query_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::Query)
+def test_atl_n_ocl_atl_query_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_Query)
 
 
-def test_atl::n::ocl::atl::query_constructor_exists():
-    assert callable(atl::n::ocl::ATL::Query.__init__)
+def test_atl_n_ocl_atl_query_constructor_exists():
+    assert callable(atl_n_ocl_ATL_Query.__init__)
 
 
-def test_atl::n::ocl::atl::query_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::Query.__init__)
+def test_atl_n_ocl_atl_query_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_Query.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1844,23 +1064,23 @@ def test_matchedrule_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::lazymatchedrule_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::LazyMatchedRule)
+def test_atl_n_ocl_atl_lazymatchedrule_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_LazyMatchedRule)
 
 
-def test_atl::n::ocl::atl::lazymatchedrule_constructor_exists():
-    assert callable(atl::n::ocl::ATL::LazyMatchedRule.__init__)
+def test_atl_n_ocl_atl_lazymatchedrule_constructor_exists():
+    assert callable(atl_n_ocl_ATL_LazyMatchedRule.__init__)
 
 
-def test_atl::n::ocl::atl::lazymatchedrule_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::LazyMatchedRule.__init__)
+def test_atl_n_ocl_atl_lazymatchedrule_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_LazyMatchedRule.__init__)
     params = list(sig.parameters.keys())
     assert "isUnique" in params, "Missing parameter 'isUnique'"
 
-def test_atl::n::ocl::atl::lazymatchedrule_has_isUnique():
-    assert hasattr(atl::n::ocl::ATL::LazyMatchedRule, "isUnique")
+def test_atl_n_ocl_atl_lazymatchedrule_has_isUnique():
+    assert hasattr(atl_n_ocl_ATL_LazyMatchedRule, "isUnique")
     descriptor = None
-    for klass in atl::n::ocl::ATL::LazyMatchedRule.__mro__:
+    for klass in atl_n_ocl_ATL_LazyMatchedRule.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
@@ -1896,33 +1116,33 @@ def test_rule_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::calledrule_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::CalledRule)
+def test_atl_n_ocl_atl_calledrule_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_CalledRule)
 
 
-def test_atl::n::ocl::atl::calledrule_constructor_exists():
-    assert callable(atl::n::ocl::ATL::CalledRule.__init__)
+def test_atl_n_ocl_atl_calledrule_constructor_exists():
+    assert callable(atl_n_ocl_ATL_CalledRule.__init__)
 
 
-def test_atl::n::ocl::atl::calledrule_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::CalledRule.__init__)
+def test_atl_n_ocl_atl_calledrule_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_CalledRule.__init__)
     params = list(sig.parameters.keys())
     assert "isEndpoint" in params, "Missing parameter 'isEndpoint'"
     assert "isEntrypoint" in params, "Missing parameter 'isEntrypoint'"
 
-def test_atl::n::ocl::atl::calledrule_has_isEndpoint():
-    assert hasattr(atl::n::ocl::ATL::CalledRule, "isEndpoint")
+def test_atl_n_ocl_atl_calledrule_has_isEndpoint():
+    assert hasattr(atl_n_ocl_ATL_CalledRule, "isEndpoint")
     descriptor = None
-    for klass in atl::n::ocl::ATL::CalledRule.__mro__:
+    for klass in atl_n_ocl_ATL_CalledRule.__mro__:
         if "isEndpoint" in klass.__dict__:
             descriptor = klass.__dict__["isEndpoint"]
             break
     assert isinstance(descriptor, property)
 
-def test_atl::n::ocl::atl::calledrule_has_isEntrypoint():
-    assert hasattr(atl::n::ocl::ATL::CalledRule, "isEntrypoint")
+def test_atl_n_ocl_atl_calledrule_has_isEntrypoint():
+    assert hasattr(atl_n_ocl_ATL_CalledRule, "isEntrypoint")
     descriptor = None
-    for klass in atl::n::ocl::ATL::CalledRule.__mro__:
+    for klass in atl_n_ocl_ATL_CalledRule.__mro__:
         if "isEntrypoint" in klass.__dict__:
             descriptor = klass.__dict__["isEntrypoint"]
             break
@@ -1930,45 +1150,45 @@ def test_atl::n::ocl::atl::calledrule_has_isEntrypoint():
 
 
 
-def test_atl::n::ocl::atl::matchedrule_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::MatchedRule)
+def test_atl_n_ocl_atl_matchedrule_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_MatchedRule)
 
 
-def test_atl::n::ocl::atl::matchedrule_constructor_exists():
-    assert callable(atl::n::ocl::ATL::MatchedRule.__init__)
+def test_atl_n_ocl_atl_matchedrule_constructor_exists():
+    assert callable(atl_n_ocl_ATL_MatchedRule.__init__)
 
 
-def test_atl::n::ocl::atl::matchedrule_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::MatchedRule.__init__)
+def test_atl_n_ocl_atl_matchedrule_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_MatchedRule.__init__)
     params = list(sig.parameters.keys())
-    assert "isRefining" in params, "Missing parameter 'isRefining'"
-    assert "isNoDefault" in params, "Missing parameter 'isNoDefault'"
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+    assert "isNoDefault" in params, "Missing parameter 'isNoDefault'"
+    assert "isRefining" in params, "Missing parameter 'isRefining'"
 
-def test_atl::n::ocl::atl::matchedrule_has_isRefining():
-    assert hasattr(atl::n::ocl::ATL::MatchedRule, "isRefining")
+def test_atl_n_ocl_atl_matchedrule_has_isAbstract():
+    assert hasattr(atl_n_ocl_ATL_MatchedRule, "isAbstract")
     descriptor = None
-    for klass in atl::n::ocl::ATL::MatchedRule.__mro__:
-        if "isRefining" in klass.__dict__:
-            descriptor = klass.__dict__["isRefining"]
+    for klass in atl_n_ocl_ATL_MatchedRule.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_atl::n::ocl::atl::matchedrule_has_isNoDefault():
-    assert hasattr(atl::n::ocl::ATL::MatchedRule, "isNoDefault")
+def test_atl_n_ocl_atl_matchedrule_has_isNoDefault():
+    assert hasattr(atl_n_ocl_ATL_MatchedRule, "isNoDefault")
     descriptor = None
-    for klass in atl::n::ocl::ATL::MatchedRule.__mro__:
+    for klass in atl_n_ocl_ATL_MatchedRule.__mro__:
         if "isNoDefault" in klass.__dict__:
             descriptor = klass.__dict__["isNoDefault"]
             break
     assert isinstance(descriptor, property)
 
-def test_atl::n::ocl::atl::matchedrule_has_isAbstract():
-    assert hasattr(atl::n::ocl::ATL::MatchedRule, "isAbstract")
+def test_atl_n_ocl_atl_matchedrule_has_isRefining():
+    assert hasattr(atl_n_ocl_ATL_MatchedRule, "isRefining")
     descriptor = None
-    for klass in atl::n::ocl::ATL::MatchedRule.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
+    for klass in atl_n_ocl_ATL_MatchedRule.__mro__:
+        if "isRefining" in klass.__dict__:
+            descriptor = klass.__dict__["isRefining"]
             break
     assert isinstance(descriptor, property)
 
@@ -2016,23 +1236,23 @@ def test_outpattern_constructor_args():
 
 
 
-def test_atl::n::ocl::atl::rule_is_not_abstract():
-    assert not inspect.isabstract(atl::n::ocl::ATL::Rule)
+def test_atl_n_ocl_atl_rule_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_ATL_Rule)
 
 
-def test_atl::n::ocl::atl::rule_constructor_exists():
-    assert callable(atl::n::ocl::ATL::Rule.__init__)
+def test_atl_n_ocl_atl_rule_constructor_exists():
+    assert callable(atl_n_ocl_ATL_Rule.__init__)
 
 
-def test_atl::n::ocl::atl::rule_constructor_args():
-    sig = inspect.signature(atl::n::ocl::ATL::Rule.__init__)
+def test_atl_n_ocl_atl_rule_constructor_args():
+    sig = inspect.signature(atl_n_ocl_ATL_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_atl::n::ocl::atl::rule_has_name():
-    assert hasattr(atl::n::ocl::ATL::Rule, "name")
+def test_atl_n_ocl_atl_rule_has_name():
+    assert hasattr(atl_n_ocl_ATL_Rule, "name")
     descriptor = None
-    for klass in atl::n::ocl::ATL::Rule.__mro__:
+    for klass in atl_n_ocl_ATL_Rule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2053,6 +1273,786 @@ def test_oclfeaturedefinition_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_oclmodelelement_is_not_abstract():
+    assert not inspect.isabstract(OclModelElement)
+
+
+def test_oclmodelelement_constructor_exists():
+    assert callable(OclModelElement.__init__)
+
+
+def test_oclmodelelement_constructor_args():
+    sig = inspect.signature(OclModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_oclmodel_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclModel)
+
+
+def test_atl_n_ocl_ocl_oclmodel_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclModel.__init__)
+
+
+def test_atl_n_ocl_ocl_oclmodel_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_atl_n_ocl_ocl_oclmodel_has_name():
+    assert hasattr(atl_n_ocl_OCL_OclModel, "name")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_OclModel.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_atl_n_ocl_ocl_maptype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_MapType)
+
+
+def test_atl_n_ocl_ocl_maptype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_MapType.__init__)
+
+
+def test_atl_n_ocl_ocl_maptype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_MapType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_oclmodelelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclModelElement)
+
+
+def test_atl_n_ocl_ocl_oclmodelelement_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclModelElement.__init__)
+
+
+def test_atl_n_ocl_ocl_oclmodelelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_tupletypeattribute_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_TupleTypeAttribute)
+
+
+def test_atl_n_ocl_ocl_tupletypeattribute_constructor_exists():
+    assert callable(atl_n_ocl_OCL_TupleTypeAttribute.__init__)
+
+
+def test_atl_n_ocl_ocl_tupletypeattribute_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_TupleTypeAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_atl_n_ocl_ocl_tupletypeattribute_has_name():
+    assert hasattr(atl_n_ocl_OCL_TupleTypeAttribute, "name")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_TupleTypeAttribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tupletypeattribute_is_not_abstract():
+    assert not inspect.isabstract(TupleTypeAttribute)
+
+
+def test_tupletypeattribute_constructor_exists():
+    assert callable(TupleTypeAttribute.__init__)
+
+
+def test_tupletypeattribute_constructor_args():
+    sig = inspect.signature(TupleTypeAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_tupletype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_TupleType)
+
+
+def test_atl_n_ocl_ocl_tupletype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_TupleType.__init__)
+
+
+def test_atl_n_ocl_ocl_tupletype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_TupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_oclanytype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclAnyType)
+
+
+def test_atl_n_ocl_ocl_oclanytype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclAnyType.__init__)
+
+
+def test_atl_n_ocl_ocl_oclanytype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclAnyType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(CollectionType)
+
+
+def test_collectiontype_constructor_exists():
+    assert callable(CollectionType.__init__)
+
+
+def test_collectiontype_constructor_args():
+    sig = inspect.signature(CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OrderedSetType)
+
+
+def test_atl_n_ocl_ocl_orderedsettype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OrderedSetType.__init__)
+
+
+def test_atl_n_ocl_ocl_orderedsettype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_SequenceType)
+
+
+def test_atl_n_ocl_ocl_sequencetype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_SequenceType.__init__)
+
+
+def test_atl_n_ocl_ocl_sequencetype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_SequenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_settype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_SetType)
+
+
+def test_atl_n_ocl_ocl_settype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_SetType.__init__)
+
+
+def test_atl_n_ocl_ocl_settype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_SetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_bagtype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_BagType)
+
+
+def test_atl_n_ocl_ocl_bagtype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_BagType.__init__)
+
+
+def test_atl_n_ocl_ocl_bagtype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_BagType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_numerictype_is_not_abstract():
+    assert not inspect.isabstract(NumericType)
+
+
+def test_numerictype_constructor_exists():
+    assert callable(NumericType.__init__)
+
+
+def test_numerictype_constructor_args():
+    sig = inspect.signature(NumericType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_realtype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_RealType)
+
+
+def test_atl_n_ocl_ocl_realtype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_RealType.__init__)
+
+
+def test_atl_n_ocl_ocl_realtype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_RealType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_integertype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_IntegerType)
+
+
+def test_atl_n_ocl_ocl_integertype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_IntegerType.__init__)
+
+
+def test_atl_n_ocl_ocl_integertype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_IntegerType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitive_is_not_abstract():
+    assert not inspect.isabstract(Primitive)
+
+
+def test_primitive_constructor_exists():
+    assert callable(Primitive.__init__)
+
+
+def test_primitive_constructor_args():
+    sig = inspect.signature(Primitive.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_numerictype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_NumericType)
+
+
+def test_atl_n_ocl_ocl_numerictype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_NumericType.__init__)
+
+
+def test_atl_n_ocl_ocl_numerictype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_NumericType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_booleantype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_BooleanType)
+
+
+def test_atl_n_ocl_ocl_booleantype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_BooleanType.__init__)
+
+
+def test_atl_n_ocl_ocl_booleantype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_BooleanType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_oclfeature_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclFeature)
+
+
+def test_atl_n_ocl_ocl_oclfeature_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclFeature.__init__)
+
+
+def test_atl_n_ocl_ocl_oclfeature_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_oclcontextdefinition_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclContextDefinition)
+
+
+def test_atl_n_ocl_ocl_oclcontextdefinition_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclContextDefinition.__init__)
+
+
+def test_atl_n_ocl_ocl_oclcontextdefinition_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclContextDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclcontextdefinition_is_not_abstract():
+    assert not inspect.isabstract(OclContextDefinition)
+
+
+def test_oclcontextdefinition_constructor_exists():
+    assert callable(OclContextDefinition.__init__)
+
+
+def test_oclcontextdefinition_constructor_args():
+    sig = inspect.signature(OclContextDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclfeature_is_not_abstract():
+    assert not inspect.isabstract(OclFeature)
+
+
+def test_oclfeature_constructor_exists():
+    assert callable(OclFeature.__init__)
+
+
+def test_oclfeature_constructor_args():
+    sig = inspect.signature(OclFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_operation_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_Operation)
+
+
+def test_atl_n_ocl_ocl_operation_constructor_exists():
+    assert callable(atl_n_ocl_OCL_Operation.__init__)
+
+
+def test_atl_n_ocl_ocl_operation_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_Operation.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_atl_n_ocl_ocl_operation_has_name():
+    assert hasattr(atl_n_ocl_OCL_Operation, "name")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_Operation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_atl_n_ocl_ocl_attribute_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_Attribute)
+
+
+def test_atl_n_ocl_ocl_attribute_constructor_exists():
+    assert callable(atl_n_ocl_OCL_Attribute.__init__)
+
+
+def test_atl_n_ocl_ocl_attribute_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_atl_n_ocl_ocl_attribute_has_name():
+    assert hasattr(atl_n_ocl_OCL_Attribute, "name")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_atl_n_ocl_ocl_oclfeaturedefinition_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclFeatureDefinition)
+
+
+def test_atl_n_ocl_ocl_oclfeaturedefinition_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclFeatureDefinition.__init__)
+
+
+def test_atl_n_ocl_ocl_oclfeaturedefinition_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclFeatureDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_ifexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_IfExp)
+
+
+def test_atl_n_ocl_ocl_ifexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_IfExp.__init__)
+
+
+def test_atl_n_ocl_ocl_ifexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_IfExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_letexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_LetExp)
+
+
+def test_atl_n_ocl_ocl_letexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_LetExp.__init__)
+
+
+def test_atl_n_ocl_ocl_letexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_LetExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_loopexp_is_not_abstract():
+    assert not inspect.isabstract(LoopExp)
+
+
+def test_loopexp_constructor_exists():
+    assert callable(LoopExp.__init__)
+
+
+def test_loopexp_constructor_args():
+    sig = inspect.signature(LoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_IteratorExp)
+
+
+def test_atl_n_ocl_ocl_iteratorexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_IteratorExp.__init__)
+
+
+def test_atl_n_ocl_ocl_iteratorexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_IteratorExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_atl_n_ocl_ocl_iteratorexp_has_name():
+    assert hasattr(atl_n_ocl_OCL_IteratorExp, "name")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_IteratorExp.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_atl_n_ocl_ocl_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_IterateExp)
+
+
+def test_atl_n_ocl_ocl_iterateexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_IterateExp.__init__)
+
+
+def test_atl_n_ocl_ocl_iterateexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_IterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_StringType)
+
+
+def test_atl_n_ocl_ocl_stringtype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_StringType.__init__)
+
+
+def test_atl_n_ocl_ocl_stringtype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_StringType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_primitive_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_Primitive)
+
+
+def test_atl_n_ocl_ocl_primitive_constructor_exists():
+    assert callable(atl_n_ocl_OCL_Primitive.__init__)
+
+
+def test_atl_n_ocl_ocl_primitive_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_Primitive.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_ocltype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OclType)
+
+
+def test_atl_n_ocl_ocl_ocltype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OclType.__init__)
+
+
+def test_atl_n_ocl_ocl_ocltype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OclType.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_atl_n_ocl_ocl_ocltype_has_name():
+    assert hasattr(atl_n_ocl_OCL_OclType, "name")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_OclType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_atl_n_ocl_ocl_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_CollectionType)
+
+
+def test_atl_n_ocl_ocl_collectiontype_constructor_exists():
+    assert callable(atl_n_ocl_OCL_CollectionType.__init__)
+
+
+def test_atl_n_ocl_ocl_collectiontype_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_parameter_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_Parameter)
+
+
+def test_atl_n_ocl_ocl_parameter_constructor_exists():
+    assert callable(atl_n_ocl_OCL_Parameter.__init__)
+
+
+def test_atl_n_ocl_ocl_parameter_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_iterator_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_Iterator)
+
+
+def test_atl_n_ocl_ocl_iterator_constructor_exists():
+    assert callable(atl_n_ocl_OCL_Iterator.__init__)
+
+
+def test_atl_n_ocl_ocl_iterator_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_Iterator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_VariableDeclaration)
+
+
+def test_atl_n_ocl_ocl_variabledeclaration_constructor_exists():
+    assert callable(atl_n_ocl_OCL_VariableDeclaration.__init__)
+
+
+def test_atl_n_ocl_ocl_variabledeclaration_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_VariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "varName" in params, "Missing parameter 'varName'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_atl_n_ocl_ocl_variabledeclaration_has_varName():
+    assert hasattr(atl_n_ocl_OCL_VariableDeclaration, "varName")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_VariableDeclaration.__mro__:
+        if "varName" in klass.__dict__:
+            descriptor = klass.__dict__["varName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_atl_n_ocl_ocl_variabledeclaration_has_id():
+    assert hasattr(atl_n_ocl_OCL_VariableDeclaration, "id")
+    descriptor = None
+    for klass in atl_n_ocl_OCL_VariableDeclaration.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_atl_n_ocl_ocl_mapelement_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_MapElement)
+
+
+def test_atl_n_ocl_ocl_mapelement_constructor_exists():
+    assert callable(atl_n_ocl_OCL_MapElement.__init__)
+
+
+def test_atl_n_ocl_ocl_mapelement_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_MapElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mapelement_is_not_abstract():
+    assert not inspect.isabstract(MapElement)
+
+
+def test_mapelement_constructor_exists():
+    assert callable(MapElement.__init__)
+
+
+def test_mapelement_constructor_args():
+    sig = inspect.signature(MapElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_mapexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_MapExp)
+
+
+def test_atl_n_ocl_ocl_mapexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_MapExp.__init__)
+
+
+def test_atl_n_ocl_ocl_mapexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_MapExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(TupleExp)
+
+
+def test_tupleexp_constructor_exists():
+    assert callable(TupleExp.__init__)
+
+
+def test_tupleexp_constructor_args():
+    sig = inspect.signature(TupleExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_tuplepart_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_TuplePart)
+
+
+def test_atl_n_ocl_ocl_tuplepart_constructor_exists():
+    assert callable(atl_n_ocl_OCL_TuplePart.__init__)
+
+
+def test_atl_n_ocl_ocl_tuplepart_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_TuplePart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tuplepart_is_not_abstract():
+    assert not inspect.isabstract(TuplePart)
+
+
+def test_tuplepart_constructor_exists():
+    assert callable(TuplePart.__init__)
+
+
+def test_tuplepart_constructor_args():
+    sig = inspect.signature(TuplePart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_TupleExp)
+
+
+def test_atl_n_ocl_ocl_tupleexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_TupleExp.__init__)
+
+
+def test_atl_n_ocl_ocl_tupleexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_TupleExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectionexp_is_not_abstract():
+    assert not inspect.isabstract(CollectionExp)
+
+
+def test_collectionexp_constructor_exists():
+    assert callable(CollectionExp.__init__)
+
+
+def test_collectionexp_constructor_args():
+    sig = inspect.signature(CollectionExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_bagexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_BagExp)
+
+
+def test_atl_n_ocl_ocl_bagexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_BagExp.__init__)
+
+
+def test_atl_n_ocl_ocl_bagexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_BagExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_sequenceexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_SequenceExp)
+
+
+def test_atl_n_ocl_ocl_sequenceexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_SequenceExp.__init__)
+
+
+def test_atl_n_ocl_ocl_sequenceexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_SequenceExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_setexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_SetExp)
+
+
+def test_atl_n_ocl_ocl_setexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_SetExp.__init__)
+
+
+def test_atl_n_ocl_ocl_setexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_SetExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_atl_n_ocl_ocl_orderedsetexp_is_not_abstract():
+    assert not inspect.isabstract(atl_n_ocl_OCL_OrderedSetExp)
+
+
+def test_atl_n_ocl_ocl_orderedsetexp_constructor_exists():
+    assert callable(atl_n_ocl_OCL_OrderedSetExp.__init__)
+
+
+def test_atl_n_ocl_ocl_orderedsetexp_constructor_args():
+    sig = inspect.signature(atl_n_ocl_OCL_OrderedSetExp.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -2064,232 +2064,83 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-OclModelElement_strategy = st.builds(
-    OclModelElement,
-)
-atl::n::ocl::OCL::OclModel_strategy = st.builds(
-    atl::n::ocl::OCL::OclModel,
-    name=
-        safe_text
-)
-atl::n::ocl::OCL::TupleTypeAttribute_strategy = st.builds(
-    atl::n::ocl::OCL::TupleTypeAttribute,
-    name=
-        safe_text
-)
-TupleTypeAttribute_strategy = st.builds(
-    TupleTypeAttribute,
-)
-CollectionType_strategy = st.builds(
-    CollectionType,
-)
-atl::n::ocl::OCL::SetType_strategy = st.builds(
-    atl::n::ocl::OCL::SetType,
-)
-atl::n::ocl::OCL::SequenceType_strategy = st.builds(
-    atl::n::ocl::OCL::SequenceType,
-)
-atl::n::ocl::OCL::OrderedSetType_strategy = st.builds(
-    atl::n::ocl::OCL::OrderedSetType,
-)
-atl::n::ocl::OCL::BagType_strategy = st.builds(
-    atl::n::ocl::OCL::BagType,
-)
-NumericType_strategy = st.builds(
-    NumericType,
-)
-atl::n::ocl::OCL::RealType_strategy = st.builds(
-    atl::n::ocl::OCL::RealType,
-)
-atl::n::ocl::OCL::IntegerType_strategy = st.builds(
-    atl::n::ocl::OCL::IntegerType,
-)
-Primitive_strategy = st.builds(
-    Primitive,
-)
-atl::n::ocl::OCL::BooleanType_strategy = st.builds(
-    atl::n::ocl::OCL::BooleanType,
-)
-atl::n::ocl::OCL::NumericType_strategy = st.builds(
-    atl::n::ocl::OCL::NumericType,
-)
-atl::n::ocl::OCL::OclFeature_strategy = st.builds(
-    atl::n::ocl::OCL::OclFeature,
-)
-atl::n::ocl::OCL::OclContextDefinition_strategy = st.builds(
-    atl::n::ocl::OCL::OclContextDefinition,
-)
-OclContextDefinition_strategy = st.builds(
-    OclContextDefinition,
-)
-OclFeature_strategy = st.builds(
-    OclFeature,
-)
-atl::n::ocl::OCL::Operation_strategy = st.builds(
-    atl::n::ocl::OCL::Operation,
-    name=
-        safe_text
-)
-atl::n::ocl::OCL::Attribute_strategy = st.builds(
-    atl::n::ocl::OCL::Attribute,
-    name=
-        safe_text
-)
-atl::n::ocl::OCL::OclFeatureDefinition_strategy = st.builds(
-    atl::n::ocl::OCL::OclFeatureDefinition,
-)
-LoopExp_strategy = st.builds(
-    LoopExp,
-)
-atl::n::ocl::OCL::IteratorExp_strategy = st.builds(
-    atl::n::ocl::OCL::IteratorExp,
-    name=
-        safe_text
-)
-atl::n::ocl::OCL::IterateExp_strategy = st.builds(
-    atl::n::ocl::OCL::IterateExp,
-)
-atl::n::ocl::OCL::StringType_strategy = st.builds(
-    atl::n::ocl::OCL::StringType,
-)
-atl::n::ocl::OCL::VariableDeclaration_strategy = st.builds(
-    atl::n::ocl::OCL::VariableDeclaration,
-    varName=
-        safe_text,
-    id=
-        safe_text
-)
-atl::n::ocl::OCL::MapElement_strategy = st.builds(
-    atl::n::ocl::OCL::MapElement,
-)
-MapElement_strategy = st.builds(
-    MapElement,
-)
-TupleExp_strategy = st.builds(
-    TupleExp,
-)
-TuplePart_strategy = st.builds(
-    TuplePart,
-)
-CollectionExp_strategy = st.builds(
-    CollectionExp,
-)
-atl::n::ocl::OCL::SequenceExp_strategy = st.builds(
-    atl::n::ocl::OCL::SequenceExp,
-)
-atl::n::ocl::OCL::SetExp_strategy = st.builds(
-    atl::n::ocl::OCL::SetExp,
-)
-atl::n::ocl::OCL::OrderedSetExp_strategy = st.builds(
-    atl::n::ocl::OCL::OrderedSetExp,
-)
-atl::n::ocl::OCL::BagExp_strategy = st.builds(
-    atl::n::ocl::OCL::BagExp,
-)
 OperationCallExp_strategy = st.builds(
     OperationCallExp,
 )
-atl::n::ocl::OCL::CollectionOperationCallExp_strategy = st.builds(
-    atl::n::ocl::OCL::CollectionOperationCallExp,
+atl_n_ocl_OCL_CollectionOperationCallExp_strategy = st.builds(
+    atl_n_ocl_OCL_CollectionOperationCallExp,
 )
-atl::n::ocl::OCL::OperatorCallExp_strategy = st.builds(
-    atl::n::ocl::OCL::OperatorCallExp,
+atl_n_ocl_OCL_OperatorCallExp_strategy = st.builds(
+    atl_n_ocl_OCL_OperatorCallExp,
 )
 PropertyCallExp_strategy = st.builds(
     PropertyCallExp,
 )
-atl::n::ocl::OCL::OperationCallExp_strategy = st.builds(
-    atl::n::ocl::OCL::OperationCallExp,
+atl_n_ocl_OCL_OperationCallExp_strategy = st.builds(
+    atl_n_ocl_OCL_OperationCallExp,
     operationName=
         safe_text
 )
-atl::n::ocl::OCL::LoopExp_strategy = st.builds(
-    atl::n::ocl::OCL::LoopExp,
+atl_n_ocl_OCL_LoopExp_strategy = st.builds(
+    atl_n_ocl_OCL_LoopExp,
 )
-atl::n::ocl::OCL::NavigationOrAttributeCallExp_strategy = st.builds(
-    atl::n::ocl::OCL::NavigationOrAttributeCallExp,
+atl_n_ocl_OCL_NavigationOrAttributeCallExp_strategy = st.builds(
+    atl_n_ocl_OCL_NavigationOrAttributeCallExp,
     name=
         safe_text
 )
 NumericExp_strategy = st.builds(
     NumericExp,
 )
-atl::n::ocl::OCL::IntegerExp_strategy = st.builds(
-    atl::n::ocl::OCL::IntegerExp,
+atl_n_ocl_OCL_IntegerExp_strategy = st.builds(
+    atl_n_ocl_OCL_IntegerExp,
     integerSymbol=
         st.integers()
 )
-atl::n::ocl::OCL::RealExp_strategy = st.builds(
-    atl::n::ocl::OCL::RealExp,
+atl_n_ocl_OCL_RealExp_strategy = st.builds(
+    atl_n_ocl_OCL_RealExp,
     realSymbol=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 PrimitiveExp_strategy = st.builds(
     PrimitiveExp,
 )
-atl::n::ocl::OCL::NumericExp_strategy = st.builds(
-    atl::n::ocl::OCL::NumericExp,
+atl_n_ocl_OCL_NumericExp_strategy = st.builds(
+    atl_n_ocl_OCL_NumericExp,
 )
-atl::n::ocl::OCL::BooleanExp_strategy = st.builds(
-    atl::n::ocl::OCL::BooleanExp,
+atl_n_ocl_OCL_BooleanExp_strategy = st.builds(
+    atl_n_ocl_OCL_BooleanExp,
     booleanSymbol=
         st.booleans()
 )
-atl::n::ocl::OCL::StringExp_strategy = st.builds(
-    atl::n::ocl::OCL::StringExp,
+atl_n_ocl_OCL_StringExp_strategy = st.builds(
+    atl_n_ocl_OCL_StringExp,
     stringSymbol=
         safe_text
 )
 OclType_strategy = st.builds(
     OclType,
 )
-atl::n::ocl::OCL::MapType_strategy = st.builds(
-    atl::n::ocl::OCL::MapType,
-)
-atl::n::ocl::OCL::OclModelElement_strategy = st.builds(
-    atl::n::ocl::OCL::OclModelElement,
-)
-atl::n::ocl::OCL::CollectionType_strategy = st.builds(
-    atl::n::ocl::OCL::CollectionType,
-)
-atl::n::ocl::OCL::OclAnyType_strategy = st.builds(
-    atl::n::ocl::OCL::OclAnyType,
-)
-atl::n::ocl::OCL::TupleType_strategy = st.builds(
-    atl::n::ocl::OCL::TupleType,
-)
-atl::n::ocl::OCL::Primitive_strategy = st.builds(
-    atl::n::ocl::OCL::Primitive,
-)
-atl::n::ocl::OCL::OclExpression_strategy = st.builds(
-    atl::n::ocl::OCL::OclExpression,
+atl_n_ocl_OCL_OclExpression_strategy = st.builds(
+    atl_n_ocl_OCL_OclExpression,
 )
 PatternElement_strategy = st.builds(
     PatternElement,
 )
-atl::n::ocl::ATL::OutPatternElement_strategy = st.builds(
-    atl::n::ocl::ATL::OutPatternElement,
+atl_n_ocl_ATL_OutPatternElement_strategy = st.builds(
+    atl_n_ocl_ATL_OutPatternElement,
 )
-atl::n::ocl::ATL::InPatternElement_strategy = st.builds(
-    atl::n::ocl::ATL::InPatternElement,
+atl_n_ocl_ATL_InPatternElement_strategy = st.builds(
+    atl_n_ocl_ATL_InPatternElement,
 )
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
-atl::n::ocl::OCL::TuplePart_strategy = st.builds(
-    atl::n::ocl::OCL::TuplePart,
+atl_n_ocl_ATL_PatternElement_strategy = st.builds(
+    atl_n_ocl_ATL_PatternElement,
 )
-atl::n::ocl::OCL::Parameter_strategy = st.builds(
-    atl::n::ocl::OCL::Parameter,
-)
-atl::n::ocl::OCL::Iterator_strategy = st.builds(
-    atl::n::ocl::OCL::Iterator,
-)
-atl::n::ocl::ATL::PatternElement_strategy = st.builds(
-    atl::n::ocl::ATL::PatternElement,
-)
-atl::n::ocl::ATL::DropPattern_strategy = st.builds(
-    atl::n::ocl::ATL::DropPattern,
+atl_n_ocl_ATL_DropPattern_strategy = st.builds(
+    atl_n_ocl_ATL_DropPattern,
 )
 OutPatternElement_strategy = st.builds(
     OutPatternElement,
@@ -2297,79 +2148,79 @@ OutPatternElement_strategy = st.builds(
 DropPattern_strategy = st.builds(
     DropPattern,
 )
-atl::n::ocl::ATL::OutPattern_strategy = st.builds(
-    atl::n::ocl::ATL::OutPattern,
+atl_n_ocl_ATL_OutPattern_strategy = st.builds(
+    atl_n_ocl_ATL_OutPattern,
 )
 InPatternElement_strategy = st.builds(
     InPatternElement,
 )
-atl::n::ocl::ATL::SimpleInPatternElement_strategy = st.builds(
-    atl::n::ocl::ATL::SimpleInPatternElement,
+atl_n_ocl_ATL_SimpleInPatternElement_strategy = st.builds(
+    atl_n_ocl_ATL_SimpleInPatternElement,
 )
-atl::n::ocl::ATL::InPattern_strategy = st.builds(
-    atl::n::ocl::ATL::InPattern,
+atl_n_ocl_ATL_InPattern_strategy = st.builds(
+    atl_n_ocl_ATL_InPattern,
 )
-atl::n::ocl::ATL::Statement_strategy = st.builds(
-    atl::n::ocl::ATL::Statement,
+atl_n_ocl_ATL_Statement_strategy = st.builds(
+    atl_n_ocl_ATL_Statement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-atl::n::ocl::ATL::IfStat_strategy = st.builds(
-    atl::n::ocl::ATL::IfStat,
+atl_n_ocl_ATL_ExpressionStat_strategy = st.builds(
+    atl_n_ocl_ATL_ExpressionStat,
 )
-atl::n::ocl::ATL::ForStat_strategy = st.builds(
-    atl::n::ocl::ATL::ForStat,
+atl_n_ocl_ATL_IfStat_strategy = st.builds(
+    atl_n_ocl_ATL_IfStat,
 )
-atl::n::ocl::ATL::BindingStat_strategy = st.builds(
-    atl::n::ocl::ATL::BindingStat,
+atl_n_ocl_ATL_BindingStat_strategy = st.builds(
+    atl_n_ocl_ATL_BindingStat,
     propertyName=
         safe_text,
     isAssignment=
         st.booleans()
 )
-atl::n::ocl::ATL::ExpressionStat_strategy = st.builds(
-    atl::n::ocl::ATL::ExpressionStat,
+atl_n_ocl_ATL_ForStat_strategy = st.builds(
+    atl_n_ocl_ATL_ForStat,
 )
-atl::n::ocl::ATL::ActionBlock_strategy = st.builds(
-    atl::n::ocl::ATL::ActionBlock,
+atl_n_ocl_ATL_ActionBlock_strategy = st.builds(
+    atl_n_ocl_ATL_ActionBlock,
 )
-atl::n::ocl::ATL::RuleVariableDeclaration_strategy = st.builds(
-    atl::n::ocl::ATL::RuleVariableDeclaration,
+atl_n_ocl_ATL_RuleVariableDeclaration_strategy = st.builds(
+    atl_n_ocl_ATL_RuleVariableDeclaration,
 )
-atl::n::ocl::ATL::Binding_strategy = st.builds(
-    atl::n::ocl::ATL::Binding,
-    isAssignment=
-        st.booleans(),
+atl_n_ocl_ATL_Binding_strategy = st.builds(
+    atl_n_ocl_ATL_Binding,
     propertyName=
-        safe_text
+        safe_text,
+    isAssignment=
+        st.booleans()
 )
 Iterator_strategy = st.builds(
     Iterator,
 )
-atl::n::ocl::ATL::ForEachOutPatternElement_strategy = st.builds(
-    atl::n::ocl::ATL::ForEachOutPatternElement,
+atl_n_ocl_ATL_ForEachOutPatternElement_strategy = st.builds(
+    atl_n_ocl_ATL_ForEachOutPatternElement,
 )
-atl::n::ocl::ATL::SimpleOutPatternElement_strategy = st.builds(
-    atl::n::ocl::ATL::SimpleOutPatternElement,
+atl_n_ocl_ATL_SimpleOutPatternElement_strategy = st.builds(
+    atl_n_ocl_ATL_SimpleOutPatternElement,
 )
 Binding_strategy = st.builds(
     Binding,
 )
-atl::n::ocl::ATL::ModuleElement_strategy = st.builds(
-    atl::n::ocl::ATL::ModuleElement,
+atl_n_ocl_ATL_ModuleElement_strategy = st.builds(
+    atl_n_ocl_ATL_ModuleElement,
 )
 ModuleElement_strategy = st.builds(
     ModuleElement,
 )
-atl::n::ocl::ATL::Helper_strategy = st.builds(
-    atl::n::ocl::ATL::Helper,
+atl_n_ocl_ATL_Helper_strategy = st.builds(
+    atl_n_ocl_ATL_Helper,
 )
 OclModel_strategy = st.builds(
     OclModel,
 )
-atl::n::ocl::ATL::Module_strategy = st.builds(
-    atl::n::ocl::ATL::Module,
+atl_n_ocl_ATL_Module_strategy = st.builds(
+    atl_n_ocl_ATL_Module,
     isRefining=
         st.booleans()
 )
@@ -2379,48 +2230,31 @@ Helper_strategy = st.builds(
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-atl::n::ocl::OCL::OclUndefinedExp_strategy = st.builds(
-    atl::n::ocl::OCL::OclUndefinedExp,
+atl_n_ocl_OCL_SuperExp_strategy = st.builds(
+    atl_n_ocl_OCL_SuperExp,
 )
-atl::n::ocl::OCL::TupleExp_strategy = st.builds(
-    atl::n::ocl::OCL::TupleExp,
+atl_n_ocl_OCL_PropertyCallExp_strategy = st.builds(
+    atl_n_ocl_OCL_PropertyCallExp,
 )
-atl::n::ocl::OCL::IfExp_strategy = st.builds(
-    atl::n::ocl::OCL::IfExp,
-)
-atl::n::ocl::OCL::PropertyCallExp_strategy = st.builds(
-    atl::n::ocl::OCL::PropertyCallExp,
-)
-atl::n::ocl::OCL::LetExp_strategy = st.builds(
-    atl::n::ocl::OCL::LetExp,
-)
-atl::n::ocl::OCL::VariableExp_strategy = st.builds(
-    atl::n::ocl::OCL::VariableExp,
-)
-atl::n::ocl::OCL::OclType_strategy = st.builds(
-    atl::n::ocl::OCL::OclType,
+atl_n_ocl_OCL_EnumLiteralExp_strategy = st.builds(
+    atl_n_ocl_OCL_EnumLiteralExp,
     name=
         safe_text
 )
-atl::n::ocl::OCL::CollectionExp_strategy = st.builds(
-    atl::n::ocl::OCL::CollectionExp,
+atl_n_ocl_OCL_PrimitiveExp_strategy = st.builds(
+    atl_n_ocl_OCL_PrimitiveExp,
 )
-atl::n::ocl::OCL::MapExp_strategy = st.builds(
-    atl::n::ocl::OCL::MapExp,
+atl_n_ocl_OCL_CollectionExp_strategy = st.builds(
+    atl_n_ocl_OCL_CollectionExp,
 )
-atl::n::ocl::OCL::EnumLiteralExp_strategy = st.builds(
-    atl::n::ocl::OCL::EnumLiteralExp,
-    name=
-        safe_text
+atl_n_ocl_OCL_OclUndefinedExp_strategy = st.builds(
+    atl_n_ocl_OCL_OclUndefinedExp,
 )
-atl::n::ocl::OCL::SuperExp_strategy = st.builds(
-    atl::n::ocl::OCL::SuperExp,
+atl_n_ocl_OCL_VariableExp_strategy = st.builds(
+    atl_n_ocl_OCL_VariableExp,
 )
-atl::n::ocl::OCL::PrimitiveExp_strategy = st.builds(
-    atl::n::ocl::OCL::PrimitiveExp,
-)
-atl::n::ocl::ATL::Query_strategy = st.builds(
-    atl::n::ocl::ATL::Query,
+atl_n_ocl_ATL_Query_strategy = st.builds(
+    atl_n_ocl_ATL_Query,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -2428,8 +2262,8 @@ Parameter_strategy = st.builds(
 MatchedRule_strategy = st.builds(
     MatchedRule,
 )
-atl::n::ocl::ATL::LazyMatchedRule_strategy = st.builds(
-    atl::n::ocl::ATL::LazyMatchedRule,
+atl_n_ocl_ATL_LazyMatchedRule_strategy = st.builds(
+    atl_n_ocl_ATL_LazyMatchedRule,
     isUnique=
         st.booleans()
 )
@@ -2439,20 +2273,20 @@ InPattern_strategy = st.builds(
 Rule_strategy = st.builds(
     Rule,
 )
-atl::n::ocl::ATL::CalledRule_strategy = st.builds(
-    atl::n::ocl::ATL::CalledRule,
+atl_n_ocl_ATL_CalledRule_strategy = st.builds(
+    atl_n_ocl_ATL_CalledRule,
     isEndpoint=
         st.booleans(),
     isEntrypoint=
         st.booleans()
 )
-atl::n::ocl::ATL::MatchedRule_strategy = st.builds(
-    atl::n::ocl::ATL::MatchedRule,
-    isRefining=
+atl_n_ocl_ATL_MatchedRule_strategy = st.builds(
+    atl_n_ocl_ATL_MatchedRule,
+    isAbstract=
         st.booleans(),
     isNoDefault=
         st.booleans(),
-    isAbstract=
+    isRefining=
         st.booleans()
 )
 RuleVariableDeclaration_strategy = st.builds(
@@ -2464,325 +2298,228 @@ ActionBlock_strategy = st.builds(
 OutPattern_strategy = st.builds(
     OutPattern,
 )
-atl::n::ocl::ATL::Rule_strategy = st.builds(
-    atl::n::ocl::ATL::Rule,
+atl_n_ocl_ATL_Rule_strategy = st.builds(
+    atl_n_ocl_ATL_Rule,
     name=
         safe_text
 )
 OclFeatureDefinition_strategy = st.builds(
     OclFeatureDefinition,
 )
-
-@given(instance=OclModelElement_strategy)
-@settings(max_examples=50)
-def test_oclmodelelement_instantiation(instance):
-    assert isinstance(instance, OclModelElement)
-
-@given(instance=atl::n::ocl::OCL::OclModel_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclmodel_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclModel)
-
-@given(instance=atl::n::ocl::OCL::OclModel_strategy)
-def test_atl::n::ocl::ocl::oclmodel_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=atl::n::ocl::OCL::OclModel_strategy)
-def test_atl::n::ocl::ocl::oclmodel_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=atl::n::ocl::OCL::TupleTypeAttribute_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::tupletypeattribute_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::TupleTypeAttribute)
-
-@given(instance=atl::n::ocl::OCL::TupleTypeAttribute_strategy)
-def test_atl::n::ocl::ocl::tupletypeattribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=atl::n::ocl::OCL::TupleTypeAttribute_strategy)
-def test_atl::n::ocl::ocl::tupletypeattribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=TupleTypeAttribute_strategy)
-@settings(max_examples=50)
-def test_tupletypeattribute_instantiation(instance):
-    assert isinstance(instance, TupleTypeAttribute)
-
-@given(instance=CollectionType_strategy)
-@settings(max_examples=50)
-def test_collectiontype_instantiation(instance):
-    assert isinstance(instance, CollectionType)
-
-@given(instance=atl::n::ocl::OCL::SetType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::settype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::SetType)
-
-@given(instance=atl::n::ocl::OCL::SequenceType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::sequencetype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::SequenceType)
-
-@given(instance=atl::n::ocl::OCL::OrderedSetType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::orderedsettype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OrderedSetType)
-
-@given(instance=atl::n::ocl::OCL::BagType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::bagtype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::BagType)
-
-@given(instance=NumericType_strategy)
-@settings(max_examples=50)
-def test_numerictype_instantiation(instance):
-    assert isinstance(instance, NumericType)
-
-@given(instance=atl::n::ocl::OCL::RealType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::realtype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::RealType)
-
-@given(instance=atl::n::ocl::OCL::IntegerType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::integertype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::IntegerType)
-
-@given(instance=Primitive_strategy)
-@settings(max_examples=50)
-def test_primitive_instantiation(instance):
-    assert isinstance(instance, Primitive)
-
-@given(instance=atl::n::ocl::OCL::BooleanType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::booleantype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::BooleanType)
-
-@given(instance=atl::n::ocl::OCL::NumericType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::numerictype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::NumericType)
-
-@given(instance=atl::n::ocl::OCL::OclFeature_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclfeature_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclFeature)
-
-@given(instance=atl::n::ocl::OCL::OclContextDefinition_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclcontextdefinition_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclContextDefinition)
-
-@given(instance=OclContextDefinition_strategy)
-@settings(max_examples=50)
-def test_oclcontextdefinition_instantiation(instance):
-    assert isinstance(instance, OclContextDefinition)
-
-@given(instance=OclFeature_strategy)
-@settings(max_examples=50)
-def test_oclfeature_instantiation(instance):
-    assert isinstance(instance, OclFeature)
-
-@given(instance=atl::n::ocl::OCL::Operation_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::operation_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::Operation)
-
-@given(instance=atl::n::ocl::OCL::Operation_strategy)
-def test_atl::n::ocl::ocl::operation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=atl::n::ocl::OCL::Operation_strategy)
-def test_atl::n::ocl::ocl::operation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=atl::n::ocl::OCL::Attribute_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::attribute_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::Attribute)
-
-@given(instance=atl::n::ocl::OCL::Attribute_strategy)
-def test_atl::n::ocl::ocl::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=atl::n::ocl::OCL::Attribute_strategy)
-def test_atl::n::ocl::ocl::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=atl::n::ocl::OCL::OclFeatureDefinition_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclfeaturedefinition_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclFeatureDefinition)
-
-@given(instance=LoopExp_strategy)
-@settings(max_examples=50)
-def test_loopexp_instantiation(instance):
-    assert isinstance(instance, LoopExp)
-
-@given(instance=atl::n::ocl::OCL::IteratorExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::iteratorexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::IteratorExp)
-
-@given(instance=atl::n::ocl::OCL::IteratorExp_strategy)
-def test_atl::n::ocl::ocl::iteratorexp_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=atl::n::ocl::OCL::IteratorExp_strategy)
-def test_atl::n::ocl::ocl::iteratorexp_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=atl::n::ocl::OCL::IterateExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::iterateexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::IterateExp)
-
-@given(instance=atl::n::ocl::OCL::StringType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::stringtype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::StringType)
-
-@given(instance=atl::n::ocl::OCL::VariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::VariableDeclaration)
-
-@given(instance=atl::n::ocl::OCL::VariableDeclaration_strategy)
-def test_atl::n::ocl::ocl::variabledeclaration_varName_type(instance):
-    assert isinstance(instance.varName, str)
-
-
-@given(instance=atl::n::ocl::OCL::VariableDeclaration_strategy)
-def test_atl::n::ocl::ocl::variabledeclaration_varName_setter(instance):
-    original = instance.varName
-    instance.varName = original
-    assert instance.varName == original
-
-@given(instance=atl::n::ocl::OCL::VariableDeclaration_strategy)
-def test_atl::n::ocl::ocl::variabledeclaration_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=atl::n::ocl::OCL::VariableDeclaration_strategy)
-def test_atl::n::ocl::ocl::variabledeclaration_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=atl::n::ocl::OCL::MapElement_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::mapelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::MapElement)
-
-@given(instance=MapElement_strategy)
-@settings(max_examples=50)
-def test_mapelement_instantiation(instance):
-    assert isinstance(instance, MapElement)
-
-@given(instance=TupleExp_strategy)
-@settings(max_examples=50)
-def test_tupleexp_instantiation(instance):
-    assert isinstance(instance, TupleExp)
-
-@given(instance=TuplePart_strategy)
-@settings(max_examples=50)
-def test_tuplepart_instantiation(instance):
-    assert isinstance(instance, TuplePart)
-
-@given(instance=CollectionExp_strategy)
-@settings(max_examples=50)
-def test_collectionexp_instantiation(instance):
-    assert isinstance(instance, CollectionExp)
-
-@given(instance=atl::n::ocl::OCL::SequenceExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::sequenceexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::SequenceExp)
-
-@given(instance=atl::n::ocl::OCL::SetExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::setexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::SetExp)
-
-@given(instance=atl::n::ocl::OCL::OrderedSetExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::orderedsetexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OrderedSetExp)
-
-@given(instance=atl::n::ocl::OCL::BagExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::bagexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::BagExp)
+OclModelElement_strategy = st.builds(
+    OclModelElement,
+)
+atl_n_ocl_OCL_OclModel_strategy = st.builds(
+    atl_n_ocl_OCL_OclModel,
+    name=
+        safe_text
+)
+atl_n_ocl_OCL_MapType_strategy = st.builds(
+    atl_n_ocl_OCL_MapType,
+)
+atl_n_ocl_OCL_OclModelElement_strategy = st.builds(
+    atl_n_ocl_OCL_OclModelElement,
+)
+atl_n_ocl_OCL_TupleTypeAttribute_strategy = st.builds(
+    atl_n_ocl_OCL_TupleTypeAttribute,
+    name=
+        safe_text
+)
+TupleTypeAttribute_strategy = st.builds(
+    TupleTypeAttribute,
+)
+atl_n_ocl_OCL_TupleType_strategy = st.builds(
+    atl_n_ocl_OCL_TupleType,
+)
+atl_n_ocl_OCL_OclAnyType_strategy = st.builds(
+    atl_n_ocl_OCL_OclAnyType,
+)
+CollectionType_strategy = st.builds(
+    CollectionType,
+)
+atl_n_ocl_OCL_OrderedSetType_strategy = st.builds(
+    atl_n_ocl_OCL_OrderedSetType,
+)
+atl_n_ocl_OCL_SequenceType_strategy = st.builds(
+    atl_n_ocl_OCL_SequenceType,
+)
+atl_n_ocl_OCL_SetType_strategy = st.builds(
+    atl_n_ocl_OCL_SetType,
+)
+atl_n_ocl_OCL_BagType_strategy = st.builds(
+    atl_n_ocl_OCL_BagType,
+)
+NumericType_strategy = st.builds(
+    NumericType,
+)
+atl_n_ocl_OCL_RealType_strategy = st.builds(
+    atl_n_ocl_OCL_RealType,
+)
+atl_n_ocl_OCL_IntegerType_strategy = st.builds(
+    atl_n_ocl_OCL_IntegerType,
+)
+Primitive_strategy = st.builds(
+    Primitive,
+)
+atl_n_ocl_OCL_NumericType_strategy = st.builds(
+    atl_n_ocl_OCL_NumericType,
+)
+atl_n_ocl_OCL_BooleanType_strategy = st.builds(
+    atl_n_ocl_OCL_BooleanType,
+)
+atl_n_ocl_OCL_OclFeature_strategy = st.builds(
+    atl_n_ocl_OCL_OclFeature,
+)
+atl_n_ocl_OCL_OclContextDefinition_strategy = st.builds(
+    atl_n_ocl_OCL_OclContextDefinition,
+)
+OclContextDefinition_strategy = st.builds(
+    OclContextDefinition,
+)
+OclFeature_strategy = st.builds(
+    OclFeature,
+)
+atl_n_ocl_OCL_Operation_strategy = st.builds(
+    atl_n_ocl_OCL_Operation,
+    name=
+        safe_text
+)
+atl_n_ocl_OCL_Attribute_strategy = st.builds(
+    atl_n_ocl_OCL_Attribute,
+    name=
+        safe_text
+)
+atl_n_ocl_OCL_OclFeatureDefinition_strategy = st.builds(
+    atl_n_ocl_OCL_OclFeatureDefinition,
+)
+atl_n_ocl_OCL_IfExp_strategy = st.builds(
+    atl_n_ocl_OCL_IfExp,
+)
+atl_n_ocl_OCL_LetExp_strategy = st.builds(
+    atl_n_ocl_OCL_LetExp,
+)
+LoopExp_strategy = st.builds(
+    LoopExp,
+)
+atl_n_ocl_OCL_IteratorExp_strategy = st.builds(
+    atl_n_ocl_OCL_IteratorExp,
+    name=
+        safe_text
+)
+atl_n_ocl_OCL_IterateExp_strategy = st.builds(
+    atl_n_ocl_OCL_IterateExp,
+)
+atl_n_ocl_OCL_StringType_strategy = st.builds(
+    atl_n_ocl_OCL_StringType,
+)
+atl_n_ocl_OCL_Primitive_strategy = st.builds(
+    atl_n_ocl_OCL_Primitive,
+)
+atl_n_ocl_OCL_OclType_strategy = st.builds(
+    atl_n_ocl_OCL_OclType,
+    name=
+        safe_text
+)
+atl_n_ocl_OCL_CollectionType_strategy = st.builds(
+    atl_n_ocl_OCL_CollectionType,
+)
+atl_n_ocl_OCL_Parameter_strategy = st.builds(
+    atl_n_ocl_OCL_Parameter,
+)
+atl_n_ocl_OCL_Iterator_strategy = st.builds(
+    atl_n_ocl_OCL_Iterator,
+)
+atl_n_ocl_OCL_VariableDeclaration_strategy = st.builds(
+    atl_n_ocl_OCL_VariableDeclaration,
+    varName=
+        safe_text,
+    id=
+        safe_text
+)
+atl_n_ocl_OCL_MapElement_strategy = st.builds(
+    atl_n_ocl_OCL_MapElement,
+)
+MapElement_strategy = st.builds(
+    MapElement,
+)
+atl_n_ocl_OCL_MapExp_strategy = st.builds(
+    atl_n_ocl_OCL_MapExp,
+)
+TupleExp_strategy = st.builds(
+    TupleExp,
+)
+atl_n_ocl_OCL_TuplePart_strategy = st.builds(
+    atl_n_ocl_OCL_TuplePart,
+)
+TuplePart_strategy = st.builds(
+    TuplePart,
+)
+atl_n_ocl_OCL_TupleExp_strategy = st.builds(
+    atl_n_ocl_OCL_TupleExp,
+)
+CollectionExp_strategy = st.builds(
+    CollectionExp,
+)
+atl_n_ocl_OCL_BagExp_strategy = st.builds(
+    atl_n_ocl_OCL_BagExp,
+)
+atl_n_ocl_OCL_SequenceExp_strategy = st.builds(
+    atl_n_ocl_OCL_SequenceExp,
+)
+atl_n_ocl_OCL_SetExp_strategy = st.builds(
+    atl_n_ocl_OCL_SetExp,
+)
+atl_n_ocl_OCL_OrderedSetExp_strategy = st.builds(
+    atl_n_ocl_OCL_OrderedSetExp,
+)
 
 @given(instance=OperationCallExp_strategy)
 @settings(max_examples=50)
 def test_operationcallexp_instantiation(instance):
     assert isinstance(instance, OperationCallExp)
 
-@given(instance=atl::n::ocl::OCL::CollectionOperationCallExp_strategy)
+@given(instance=atl_n_ocl_OCL_CollectionOperationCallExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::collectionoperationcallexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::CollectionOperationCallExp)
+def test_atl_n_ocl_ocl_collectionoperationcallexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_CollectionOperationCallExp)
 
-@given(instance=atl::n::ocl::OCL::OperatorCallExp_strategy)
+@given(instance=atl_n_ocl_OCL_OperatorCallExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::operatorcallexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OperatorCallExp)
+def test_atl_n_ocl_ocl_operatorcallexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OperatorCallExp)
 
 @given(instance=PropertyCallExp_strategy)
 @settings(max_examples=50)
 def test_propertycallexp_instantiation(instance):
     assert isinstance(instance, PropertyCallExp)
 
-@given(instance=atl::n::ocl::OCL::OperationCallExp_strategy)
+@given(instance=atl_n_ocl_OCL_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::operationcallexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OperationCallExp)
-
-@given(instance=atl::n::ocl::OCL::OperationCallExp_strategy)
-def test_atl::n::ocl::ocl::operationcallexp_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
+def test_atl_n_ocl_ocl_operationcallexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OperationCallExp)
 
 
-@given(instance=atl::n::ocl::OCL::OperationCallExp_strategy)
-def test_atl::n::ocl::ocl::operationcallexp_operationName_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_OperationCallExp_strategy)
+def test_atl_n_ocl_ocl_operationcallexp_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=atl::n::ocl::OCL::LoopExp_strategy)
+@given(instance=atl_n_ocl_OCL_LoopExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::loopexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::LoopExp)
+def test_atl_n_ocl_ocl_loopexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_LoopExp)
 
-@given(instance=atl::n::ocl::OCL::NavigationOrAttributeCallExp_strategy)
+@given(instance=atl_n_ocl_OCL_NavigationOrAttributeCallExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::navigationorattributecallexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::NavigationOrAttributeCallExp)
-
-@given(instance=atl::n::ocl::OCL::NavigationOrAttributeCallExp_strategy)
-def test_atl::n::ocl::ocl::navigationorattributecallexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_atl_n_ocl_ocl_navigationorattributecallexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_NavigationOrAttributeCallExp)
 
 
-@given(instance=atl::n::ocl::OCL::NavigationOrAttributeCallExp_strategy)
-def test_atl::n::ocl::ocl::navigationorattributecallexp_name_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_NavigationOrAttributeCallExp_strategy)
+def test_atl_n_ocl_ocl_navigationorattributecallexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2792,34 +2529,28 @@ def test_atl::n::ocl::ocl::navigationorattributecallexp_name_setter(instance):
 def test_numericexp_instantiation(instance):
     assert isinstance(instance, NumericExp)
 
-@given(instance=atl::n::ocl::OCL::IntegerExp_strategy)
+@given(instance=atl_n_ocl_OCL_IntegerExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::integerexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::IntegerExp)
-
-@given(instance=atl::n::ocl::OCL::IntegerExp_strategy)
-def test_atl::n::ocl::ocl::integerexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, int)
+def test_atl_n_ocl_ocl_integerexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_IntegerExp)
 
 
-@given(instance=atl::n::ocl::OCL::IntegerExp_strategy)
-def test_atl::n::ocl::ocl::integerexp_integerSymbol_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_IntegerExp_strategy)
+def test_atl_n_ocl_ocl_integerexp_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
 
-@given(instance=atl::n::ocl::OCL::RealExp_strategy)
+@given(instance=atl_n_ocl_OCL_RealExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::realexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::RealExp)
-
-@given(instance=atl::n::ocl::OCL::RealExp_strategy)
-def test_atl::n::ocl::ocl::realexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, float)
+def test_atl_n_ocl_ocl_realexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_RealExp)
 
 
-@given(instance=atl::n::ocl::OCL::RealExp_strategy)
-def test_atl::n::ocl::ocl::realexp_realSymbol_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_RealExp_strategy)
+def test_atl_n_ocl_ocl_realexp_realSymbol_setter(instance):
     original = instance.realSymbol
     instance.realSymbol = original
     assert instance.realSymbol == original
@@ -2829,39 +2560,33 @@ def test_atl::n::ocl::ocl::realexp_realSymbol_setter(instance):
 def test_primitiveexp_instantiation(instance):
     assert isinstance(instance, PrimitiveExp)
 
-@given(instance=atl::n::ocl::OCL::NumericExp_strategy)
+@given(instance=atl_n_ocl_OCL_NumericExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::numericexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::NumericExp)
+def test_atl_n_ocl_ocl_numericexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_NumericExp)
 
-@given(instance=atl::n::ocl::OCL::BooleanExp_strategy)
+@given(instance=atl_n_ocl_OCL_BooleanExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::booleanexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::BooleanExp)
-
-@given(instance=atl::n::ocl::OCL::BooleanExp_strategy)
-def test_atl::n::ocl::ocl::booleanexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, bool)
+def test_atl_n_ocl_ocl_booleanexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_BooleanExp)
 
 
-@given(instance=atl::n::ocl::OCL::BooleanExp_strategy)
-def test_atl::n::ocl::ocl::booleanexp_booleanSymbol_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_BooleanExp_strategy)
+def test_atl_n_ocl_ocl_booleanexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
 
-@given(instance=atl::n::ocl::OCL::StringExp_strategy)
+@given(instance=atl_n_ocl_OCL_StringExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::stringexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::StringExp)
-
-@given(instance=atl::n::ocl::OCL::StringExp_strategy)
-def test_atl::n::ocl::ocl::stringexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_atl_n_ocl_ocl_stringexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_StringExp)
 
 
-@given(instance=atl::n::ocl::OCL::StringExp_strategy)
-def test_atl::n::ocl::ocl::stringexp_stringSymbol_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_StringExp_strategy)
+def test_atl_n_ocl_ocl_stringexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
@@ -2871,85 +2596,40 @@ def test_atl::n::ocl::ocl::stringexp_stringSymbol_setter(instance):
 def test_ocltype_instantiation(instance):
     assert isinstance(instance, OclType)
 
-@given(instance=atl::n::ocl::OCL::MapType_strategy)
+@given(instance=atl_n_ocl_OCL_OclExpression_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::maptype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::MapType)
-
-@given(instance=atl::n::ocl::OCL::OclModelElement_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclmodelelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclModelElement)
-
-@given(instance=atl::n::ocl::OCL::CollectionType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::collectiontype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::CollectionType)
-
-@given(instance=atl::n::ocl::OCL::OclAnyType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclanytype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclAnyType)
-
-@given(instance=atl::n::ocl::OCL::TupleType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::tupletype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::TupleType)
-
-@given(instance=atl::n::ocl::OCL::Primitive_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::primitive_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::Primitive)
-
-@given(instance=atl::n::ocl::OCL::OclExpression_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclExpression)
+def test_atl_n_ocl_ocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclExpression)
 
 @given(instance=PatternElement_strategy)
 @settings(max_examples=50)
 def test_patternelement_instantiation(instance):
     assert isinstance(instance, PatternElement)
 
-@given(instance=atl::n::ocl::ATL::OutPatternElement_strategy)
+@given(instance=atl_n_ocl_ATL_OutPatternElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::outpatternelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::OutPatternElement)
+def test_atl_n_ocl_atl_outpatternelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_OutPatternElement)
 
-@given(instance=atl::n::ocl::ATL::InPatternElement_strategy)
+@given(instance=atl_n_ocl_ATL_InPatternElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::inpatternelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::InPatternElement)
+def test_atl_n_ocl_atl_inpatternelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_InPatternElement)
 
 @given(instance=VariableDeclaration_strategy)
 @settings(max_examples=50)
 def test_variabledeclaration_instantiation(instance):
     assert isinstance(instance, VariableDeclaration)
 
-@given(instance=atl::n::ocl::OCL::TuplePart_strategy)
+@given(instance=atl_n_ocl_ATL_PatternElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::tuplepart_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::TuplePart)
+def test_atl_n_ocl_atl_patternelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_PatternElement)
 
-@given(instance=atl::n::ocl::OCL::Parameter_strategy)
+@given(instance=atl_n_ocl_ATL_DropPattern_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::parameter_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::Parameter)
-
-@given(instance=atl::n::ocl::OCL::Iterator_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::iterator_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::Iterator)
-
-@given(instance=atl::n::ocl::ATL::PatternElement_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::atl::patternelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::PatternElement)
-
-@given(instance=atl::n::ocl::ATL::DropPattern_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::atl::droppattern_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::DropPattern)
+def test_atl_n_ocl_atl_droppattern_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_DropPattern)
 
 @given(instance=OutPatternElement_strategy)
 @settings(max_examples=50)
@@ -2961,167 +2641,152 @@ def test_outpatternelement_instantiation(instance):
 def test_droppattern_instantiation(instance):
     assert isinstance(instance, DropPattern)
 
-@given(instance=atl::n::ocl::ATL::OutPattern_strategy)
+@given(instance=atl_n_ocl_ATL_OutPattern_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::outpattern_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::OutPattern)
+def test_atl_n_ocl_atl_outpattern_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_OutPattern)
 
 @given(instance=InPatternElement_strategy)
 @settings(max_examples=50)
 def test_inpatternelement_instantiation(instance):
     assert isinstance(instance, InPatternElement)
 
-@given(instance=atl::n::ocl::ATL::SimpleInPatternElement_strategy)
+@given(instance=atl_n_ocl_ATL_SimpleInPatternElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::simpleinpatternelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::SimpleInPatternElement)
+def test_atl_n_ocl_atl_simpleinpatternelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_SimpleInPatternElement)
 
-@given(instance=atl::n::ocl::ATL::InPattern_strategy)
+@given(instance=atl_n_ocl_ATL_InPattern_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::inpattern_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::InPattern)
+def test_atl_n_ocl_atl_inpattern_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_InPattern)
 
-@given(instance=atl::n::ocl::ATL::Statement_strategy)
+@given(instance=atl_n_ocl_ATL_Statement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::statement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::Statement)
+def test_atl_n_ocl_atl_statement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_Statement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=atl::n::ocl::ATL::IfStat_strategy)
+@given(instance=atl_n_ocl_ATL_ExpressionStat_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::ifstat_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::IfStat)
+def test_atl_n_ocl_atl_expressionstat_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_ExpressionStat)
 
-@given(instance=atl::n::ocl::ATL::ForStat_strategy)
+@given(instance=atl_n_ocl_ATL_IfStat_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::forstat_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::ForStat)
+def test_atl_n_ocl_atl_ifstat_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_IfStat)
 
-@given(instance=atl::n::ocl::ATL::BindingStat_strategy)
+@given(instance=atl_n_ocl_ATL_BindingStat_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::bindingstat_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::BindingStat)
-
-@given(instance=atl::n::ocl::ATL::BindingStat_strategy)
-def test_atl::n::ocl::atl::bindingstat_propertyName_type(instance):
-    assert isinstance(instance.propertyName, str)
+def test_atl_n_ocl_atl_bindingstat_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_BindingStat)
 
 
-@given(instance=atl::n::ocl::ATL::BindingStat_strategy)
-def test_atl::n::ocl::atl::bindingstat_propertyName_setter(instance):
+
+@given(instance=atl_n_ocl_ATL_BindingStat_strategy)
+def test_atl_n_ocl_atl_bindingstat_propertyName_setter(instance):
     original = instance.propertyName
     instance.propertyName = original
     assert instance.propertyName == original
 
-@given(instance=atl::n::ocl::ATL::BindingStat_strategy)
-def test_atl::n::ocl::atl::bindingstat_isAssignment_type(instance):
-    assert isinstance(instance.isAssignment, bool)
 
 
-@given(instance=atl::n::ocl::ATL::BindingStat_strategy)
-def test_atl::n::ocl::atl::bindingstat_isAssignment_setter(instance):
+@given(instance=atl_n_ocl_ATL_BindingStat_strategy)
+def test_atl_n_ocl_atl_bindingstat_isAssignment_setter(instance):
     original = instance.isAssignment
     instance.isAssignment = original
     assert instance.isAssignment == original
 
-@given(instance=atl::n::ocl::ATL::ExpressionStat_strategy)
+@given(instance=atl_n_ocl_ATL_ForStat_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::expressionstat_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::ExpressionStat)
+def test_atl_n_ocl_atl_forstat_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_ForStat)
 
-@given(instance=atl::n::ocl::ATL::ActionBlock_strategy)
+@given(instance=atl_n_ocl_ATL_ActionBlock_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::actionblock_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::ActionBlock)
+def test_atl_n_ocl_atl_actionblock_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_ActionBlock)
 
-@given(instance=atl::n::ocl::ATL::RuleVariableDeclaration_strategy)
+@given(instance=atl_n_ocl_ATL_RuleVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::rulevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::RuleVariableDeclaration)
+def test_atl_n_ocl_atl_rulevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_RuleVariableDeclaration)
 
-@given(instance=atl::n::ocl::ATL::Binding_strategy)
+@given(instance=atl_n_ocl_ATL_Binding_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::binding_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::Binding)
-
-@given(instance=atl::n::ocl::ATL::Binding_strategy)
-def test_atl::n::ocl::atl::binding_isAssignment_type(instance):
-    assert isinstance(instance.isAssignment, bool)
+def test_atl_n_ocl_atl_binding_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_Binding)
 
 
-@given(instance=atl::n::ocl::ATL::Binding_strategy)
-def test_atl::n::ocl::atl::binding_isAssignment_setter(instance):
-    original = instance.isAssignment
-    instance.isAssignment = original
-    assert instance.isAssignment == original
 
-@given(instance=atl::n::ocl::ATL::Binding_strategy)
-def test_atl::n::ocl::atl::binding_propertyName_type(instance):
-    assert isinstance(instance.propertyName, str)
-
-
-@given(instance=atl::n::ocl::ATL::Binding_strategy)
-def test_atl::n::ocl::atl::binding_propertyName_setter(instance):
+@given(instance=atl_n_ocl_ATL_Binding_strategy)
+def test_atl_n_ocl_atl_binding_propertyName_setter(instance):
     original = instance.propertyName
     instance.propertyName = original
     assert instance.propertyName == original
+
+
+
+@given(instance=atl_n_ocl_ATL_Binding_strategy)
+def test_atl_n_ocl_atl_binding_isAssignment_setter(instance):
+    original = instance.isAssignment
+    instance.isAssignment = original
+    assert instance.isAssignment == original
 
 @given(instance=Iterator_strategy)
 @settings(max_examples=50)
 def test_iterator_instantiation(instance):
     assert isinstance(instance, Iterator)
 
-@given(instance=atl::n::ocl::ATL::ForEachOutPatternElement_strategy)
+@given(instance=atl_n_ocl_ATL_ForEachOutPatternElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::foreachoutpatternelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::ForEachOutPatternElement)
+def test_atl_n_ocl_atl_foreachoutpatternelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_ForEachOutPatternElement)
 
-@given(instance=atl::n::ocl::ATL::SimpleOutPatternElement_strategy)
+@given(instance=atl_n_ocl_ATL_SimpleOutPatternElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::simpleoutpatternelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::SimpleOutPatternElement)
+def test_atl_n_ocl_atl_simpleoutpatternelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_SimpleOutPatternElement)
 
 @given(instance=Binding_strategy)
 @settings(max_examples=50)
 def test_binding_instantiation(instance):
     assert isinstance(instance, Binding)
 
-@given(instance=atl::n::ocl::ATL::ModuleElement_strategy)
+@given(instance=atl_n_ocl_ATL_ModuleElement_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::moduleelement_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::ModuleElement)
+def test_atl_n_ocl_atl_moduleelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_ModuleElement)
 
 @given(instance=ModuleElement_strategy)
 @settings(max_examples=50)
 def test_moduleelement_instantiation(instance):
     assert isinstance(instance, ModuleElement)
 
-@given(instance=atl::n::ocl::ATL::Helper_strategy)
+@given(instance=atl_n_ocl_ATL_Helper_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::helper_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::Helper)
+def test_atl_n_ocl_atl_helper_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_Helper)
 
 @given(instance=OclModel_strategy)
 @settings(max_examples=50)
 def test_oclmodel_instantiation(instance):
     assert isinstance(instance, OclModel)
 
-@given(instance=atl::n::ocl::ATL::Module_strategy)
+@given(instance=atl_n_ocl_ATL_Module_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::module_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::Module)
-
-@given(instance=atl::n::ocl::ATL::Module_strategy)
-def test_atl::n::ocl::atl::module_isRefining_type(instance):
-    assert isinstance(instance.isRefining, bool)
+def test_atl_n_ocl_atl_module_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_Module)
 
 
-@given(instance=atl::n::ocl::ATL::Module_strategy)
-def test_atl::n::ocl::atl::module_isRefining_setter(instance):
+
+@given(instance=atl_n_ocl_ATL_Module_strategy)
+def test_atl_n_ocl_atl_module_isRefining_setter(instance):
     original = instance.isRefining
     instance.isRefining = original
     assert instance.isRefining == original
@@ -3136,92 +2801,53 @@ def test_helper_instantiation(instance):
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=atl::n::ocl::OCL::OclUndefinedExp_strategy)
+@given(instance=atl_n_ocl_OCL_SuperExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::oclundefinedexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclUndefinedExp)
+def test_atl_n_ocl_ocl_superexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_SuperExp)
 
-@given(instance=atl::n::ocl::OCL::TupleExp_strategy)
+@given(instance=atl_n_ocl_OCL_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::tupleexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::TupleExp)
+def test_atl_n_ocl_ocl_propertycallexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_PropertyCallExp)
 
-@given(instance=atl::n::ocl::OCL::IfExp_strategy)
+@given(instance=atl_n_ocl_OCL_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::ifexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::IfExp)
-
-@given(instance=atl::n::ocl::OCL::PropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::propertycallexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::PropertyCallExp)
-
-@given(instance=atl::n::ocl::OCL::LetExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::letexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::LetExp)
-
-@given(instance=atl::n::ocl::OCL::VariableExp_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::variableexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::VariableExp)
-
-@given(instance=atl::n::ocl::OCL::OclType_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::ocl::ocltype_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::OclType)
-
-@given(instance=atl::n::ocl::OCL::OclType_strategy)
-def test_atl::n::ocl::ocl::ocltype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_atl_n_ocl_ocl_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_EnumLiteralExp)
 
 
-@given(instance=atl::n::ocl::OCL::OclType_strategy)
-def test_atl::n::ocl::ocl::ocltype_name_setter(instance):
+
+@given(instance=atl_n_ocl_OCL_EnumLiteralExp_strategy)
+def test_atl_n_ocl_ocl_enumliteralexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=atl::n::ocl::OCL::CollectionExp_strategy)
+@given(instance=atl_n_ocl_OCL_PrimitiveExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::collectionexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::CollectionExp)
+def test_atl_n_ocl_ocl_primitiveexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_PrimitiveExp)
 
-@given(instance=atl::n::ocl::OCL::MapExp_strategy)
+@given(instance=atl_n_ocl_OCL_CollectionExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::mapexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::MapExp)
+def test_atl_n_ocl_ocl_collectionexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_CollectionExp)
 
-@given(instance=atl::n::ocl::OCL::EnumLiteralExp_strategy)
+@given(instance=atl_n_ocl_OCL_OclUndefinedExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::EnumLiteralExp)
+def test_atl_n_ocl_ocl_oclundefinedexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclUndefinedExp)
 
-@given(instance=atl::n::ocl::OCL::EnumLiteralExp_strategy)
-def test_atl::n::ocl::ocl::enumliteralexp_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=atl::n::ocl::OCL::EnumLiteralExp_strategy)
-def test_atl::n::ocl::ocl::enumliteralexp_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=atl::n::ocl::OCL::SuperExp_strategy)
+@given(instance=atl_n_ocl_OCL_VariableExp_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::superexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::SuperExp)
+def test_atl_n_ocl_ocl_variableexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_VariableExp)
 
-@given(instance=atl::n::ocl::OCL::PrimitiveExp_strategy)
+@given(instance=atl_n_ocl_ATL_Query_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::ocl::primitiveexp_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::OCL::PrimitiveExp)
-
-@given(instance=atl::n::ocl::ATL::Query_strategy)
-@settings(max_examples=50)
-def test_atl::n::ocl::atl::query_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::Query)
+def test_atl_n_ocl_atl_query_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_Query)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -3233,18 +2859,15 @@ def test_parameter_instantiation(instance):
 def test_matchedrule_instantiation(instance):
     assert isinstance(instance, MatchedRule)
 
-@given(instance=atl::n::ocl::ATL::LazyMatchedRule_strategy)
+@given(instance=atl_n_ocl_ATL_LazyMatchedRule_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::lazymatchedrule_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::LazyMatchedRule)
-
-@given(instance=atl::n::ocl::ATL::LazyMatchedRule_strategy)
-def test_atl::n::ocl::atl::lazymatchedrule_isUnique_type(instance):
-    assert isinstance(instance.isUnique, bool)
+def test_atl_n_ocl_atl_lazymatchedrule_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_LazyMatchedRule)
 
 
-@given(instance=atl::n::ocl::ATL::LazyMatchedRule_strategy)
-def test_atl::n::ocl::atl::lazymatchedrule_isUnique_setter(instance):
+
+@given(instance=atl_n_ocl_ATL_LazyMatchedRule_strategy)
+def test_atl_n_ocl_atl_lazymatchedrule_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
@@ -3259,70 +2882,55 @@ def test_inpattern_instantiation(instance):
 def test_rule_instantiation(instance):
     assert isinstance(instance, Rule)
 
-@given(instance=atl::n::ocl::ATL::CalledRule_strategy)
+@given(instance=atl_n_ocl_ATL_CalledRule_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::calledrule_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::CalledRule)
-
-@given(instance=atl::n::ocl::ATL::CalledRule_strategy)
-def test_atl::n::ocl::atl::calledrule_isEndpoint_type(instance):
-    assert isinstance(instance.isEndpoint, bool)
+def test_atl_n_ocl_atl_calledrule_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_CalledRule)
 
 
-@given(instance=atl::n::ocl::ATL::CalledRule_strategy)
-def test_atl::n::ocl::atl::calledrule_isEndpoint_setter(instance):
+
+@given(instance=atl_n_ocl_ATL_CalledRule_strategy)
+def test_atl_n_ocl_atl_calledrule_isEndpoint_setter(instance):
     original = instance.isEndpoint
     instance.isEndpoint = original
     assert instance.isEndpoint == original
 
-@given(instance=atl::n::ocl::ATL::CalledRule_strategy)
-def test_atl::n::ocl::atl::calledrule_isEntrypoint_type(instance):
-    assert isinstance(instance.isEntrypoint, bool)
 
 
-@given(instance=atl::n::ocl::ATL::CalledRule_strategy)
-def test_atl::n::ocl::atl::calledrule_isEntrypoint_setter(instance):
+@given(instance=atl_n_ocl_ATL_CalledRule_strategy)
+def test_atl_n_ocl_atl_calledrule_isEntrypoint_setter(instance):
     original = instance.isEntrypoint
     instance.isEntrypoint = original
     assert instance.isEntrypoint == original
 
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
+@given(instance=atl_n_ocl_ATL_MatchedRule_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::matchedrule_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::MatchedRule)
-
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
-def test_atl::n::ocl::atl::matchedrule_isRefining_type(instance):
-    assert isinstance(instance.isRefining, bool)
+def test_atl_n_ocl_atl_matchedrule_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_MatchedRule)
 
 
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
-def test_atl::n::ocl::atl::matchedrule_isRefining_setter(instance):
-    original = instance.isRefining
-    instance.isRefining = original
-    assert instance.isRefining == original
 
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
-def test_atl::n::ocl::atl::matchedrule_isNoDefault_type(instance):
-    assert isinstance(instance.isNoDefault, bool)
+@given(instance=atl_n_ocl_ATL_MatchedRule_strategy)
+def test_atl_n_ocl_atl_matchedrule_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
 
 
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
-def test_atl::n::ocl::atl::matchedrule_isNoDefault_setter(instance):
+
+@given(instance=atl_n_ocl_ATL_MatchedRule_strategy)
+def test_atl_n_ocl_atl_matchedrule_isNoDefault_setter(instance):
     original = instance.isNoDefault
     instance.isNoDefault = original
     assert instance.isNoDefault == original
 
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
-def test_atl::n::ocl::atl::matchedrule_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
 
 
-@given(instance=atl::n::ocl::ATL::MatchedRule_strategy)
-def test_atl::n::ocl::atl::matchedrule_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
+@given(instance=atl_n_ocl_ATL_MatchedRule_strategy)
+def test_atl_n_ocl_atl_matchedrule_isRefining_setter(instance):
+    original = instance.isRefining
+    instance.isRefining = original
+    assert instance.isRefining == original
 
 @given(instance=RuleVariableDeclaration_strategy)
 @settings(max_examples=50)
@@ -3339,18 +2947,15 @@ def test_actionblock_instantiation(instance):
 def test_outpattern_instantiation(instance):
     assert isinstance(instance, OutPattern)
 
-@given(instance=atl::n::ocl::ATL::Rule_strategy)
+@given(instance=atl_n_ocl_ATL_Rule_strategy)
 @settings(max_examples=50)
-def test_atl::n::ocl::atl::rule_instantiation(instance):
-    assert isinstance(instance, atl::n::ocl::ATL::Rule)
-
-@given(instance=atl::n::ocl::ATL::Rule_strategy)
-def test_atl::n::ocl::atl::rule_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_atl_n_ocl_atl_rule_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_ATL_Rule)
 
 
-@given(instance=atl::n::ocl::ATL::Rule_strategy)
-def test_atl::n::ocl::atl::rule_name_setter(instance):
+
+@given(instance=atl_n_ocl_ATL_Rule_strategy)
+def test_atl_n_ocl_atl_rule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3359,3 +2964,317 @@ def test_atl::n::ocl::atl::rule_name_setter(instance):
 @settings(max_examples=50)
 def test_oclfeaturedefinition_instantiation(instance):
     assert isinstance(instance, OclFeatureDefinition)
+
+@given(instance=OclModelElement_strategy)
+@settings(max_examples=50)
+def test_oclmodelelement_instantiation(instance):
+    assert isinstance(instance, OclModelElement)
+
+@given(instance=atl_n_ocl_OCL_OclModel_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_oclmodel_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclModel)
+
+
+
+@given(instance=atl_n_ocl_OCL_OclModel_strategy)
+def test_atl_n_ocl_ocl_oclmodel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=atl_n_ocl_OCL_MapType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_maptype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_MapType)
+
+@given(instance=atl_n_ocl_OCL_OclModelElement_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_oclmodelelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclModelElement)
+
+@given(instance=atl_n_ocl_OCL_TupleTypeAttribute_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_tupletypeattribute_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_TupleTypeAttribute)
+
+
+
+@given(instance=atl_n_ocl_OCL_TupleTypeAttribute_strategy)
+def test_atl_n_ocl_ocl_tupletypeattribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=TupleTypeAttribute_strategy)
+@settings(max_examples=50)
+def test_tupletypeattribute_instantiation(instance):
+    assert isinstance(instance, TupleTypeAttribute)
+
+@given(instance=atl_n_ocl_OCL_TupleType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_tupletype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_TupleType)
+
+@given(instance=atl_n_ocl_OCL_OclAnyType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_oclanytype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclAnyType)
+
+@given(instance=CollectionType_strategy)
+@settings(max_examples=50)
+def test_collectiontype_instantiation(instance):
+    assert isinstance(instance, CollectionType)
+
+@given(instance=atl_n_ocl_OCL_OrderedSetType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_orderedsettype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OrderedSetType)
+
+@given(instance=atl_n_ocl_OCL_SequenceType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_sequencetype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_SequenceType)
+
+@given(instance=atl_n_ocl_OCL_SetType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_settype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_SetType)
+
+@given(instance=atl_n_ocl_OCL_BagType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_bagtype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_BagType)
+
+@given(instance=NumericType_strategy)
+@settings(max_examples=50)
+def test_numerictype_instantiation(instance):
+    assert isinstance(instance, NumericType)
+
+@given(instance=atl_n_ocl_OCL_RealType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_realtype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_RealType)
+
+@given(instance=atl_n_ocl_OCL_IntegerType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_integertype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_IntegerType)
+
+@given(instance=Primitive_strategy)
+@settings(max_examples=50)
+def test_primitive_instantiation(instance):
+    assert isinstance(instance, Primitive)
+
+@given(instance=atl_n_ocl_OCL_NumericType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_numerictype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_NumericType)
+
+@given(instance=atl_n_ocl_OCL_BooleanType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_booleantype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_BooleanType)
+
+@given(instance=atl_n_ocl_OCL_OclFeature_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_oclfeature_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclFeature)
+
+@given(instance=atl_n_ocl_OCL_OclContextDefinition_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_oclcontextdefinition_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclContextDefinition)
+
+@given(instance=OclContextDefinition_strategy)
+@settings(max_examples=50)
+def test_oclcontextdefinition_instantiation(instance):
+    assert isinstance(instance, OclContextDefinition)
+
+@given(instance=OclFeature_strategy)
+@settings(max_examples=50)
+def test_oclfeature_instantiation(instance):
+    assert isinstance(instance, OclFeature)
+
+@given(instance=atl_n_ocl_OCL_Operation_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_operation_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_Operation)
+
+
+
+@given(instance=atl_n_ocl_OCL_Operation_strategy)
+def test_atl_n_ocl_ocl_operation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=atl_n_ocl_OCL_Attribute_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_attribute_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_Attribute)
+
+
+
+@given(instance=atl_n_ocl_OCL_Attribute_strategy)
+def test_atl_n_ocl_ocl_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=atl_n_ocl_OCL_OclFeatureDefinition_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_oclfeaturedefinition_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclFeatureDefinition)
+
+@given(instance=atl_n_ocl_OCL_IfExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_ifexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_IfExp)
+
+@given(instance=atl_n_ocl_OCL_LetExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_letexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_LetExp)
+
+@given(instance=LoopExp_strategy)
+@settings(max_examples=50)
+def test_loopexp_instantiation(instance):
+    assert isinstance(instance, LoopExp)
+
+@given(instance=atl_n_ocl_OCL_IteratorExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_iteratorexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_IteratorExp)
+
+
+
+@given(instance=atl_n_ocl_OCL_IteratorExp_strategy)
+def test_atl_n_ocl_ocl_iteratorexp_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=atl_n_ocl_OCL_IterateExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_iterateexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_IterateExp)
+
+@given(instance=atl_n_ocl_OCL_StringType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_stringtype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_StringType)
+
+@given(instance=atl_n_ocl_OCL_Primitive_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_primitive_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_Primitive)
+
+@given(instance=atl_n_ocl_OCL_OclType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_ocltype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OclType)
+
+
+
+@given(instance=atl_n_ocl_OCL_OclType_strategy)
+def test_atl_n_ocl_ocl_ocltype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=atl_n_ocl_OCL_CollectionType_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_collectiontype_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_CollectionType)
+
+@given(instance=atl_n_ocl_OCL_Parameter_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_parameter_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_Parameter)
+
+@given(instance=atl_n_ocl_OCL_Iterator_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_iterator_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_Iterator)
+
+@given(instance=atl_n_ocl_OCL_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_VariableDeclaration)
+
+
+
+@given(instance=atl_n_ocl_OCL_VariableDeclaration_strategy)
+def test_atl_n_ocl_ocl_variabledeclaration_varName_setter(instance):
+    original = instance.varName
+    instance.varName = original
+    assert instance.varName == original
+
+
+
+@given(instance=atl_n_ocl_OCL_VariableDeclaration_strategy)
+def test_atl_n_ocl_ocl_variabledeclaration_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=atl_n_ocl_OCL_MapElement_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_mapelement_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_MapElement)
+
+@given(instance=MapElement_strategy)
+@settings(max_examples=50)
+def test_mapelement_instantiation(instance):
+    assert isinstance(instance, MapElement)
+
+@given(instance=atl_n_ocl_OCL_MapExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_mapexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_MapExp)
+
+@given(instance=TupleExp_strategy)
+@settings(max_examples=50)
+def test_tupleexp_instantiation(instance):
+    assert isinstance(instance, TupleExp)
+
+@given(instance=atl_n_ocl_OCL_TuplePart_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_tuplepart_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_TuplePart)
+
+@given(instance=TuplePart_strategy)
+@settings(max_examples=50)
+def test_tuplepart_instantiation(instance):
+    assert isinstance(instance, TuplePart)
+
+@given(instance=atl_n_ocl_OCL_TupleExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_tupleexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_TupleExp)
+
+@given(instance=CollectionExp_strategy)
+@settings(max_examples=50)
+def test_collectionexp_instantiation(instance):
+    assert isinstance(instance, CollectionExp)
+
+@given(instance=atl_n_ocl_OCL_BagExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_bagexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_BagExp)
+
+@given(instance=atl_n_ocl_OCL_SequenceExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_sequenceexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_SequenceExp)
+
+@given(instance=atl_n_ocl_OCL_SetExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_setexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_SetExp)
+
+@given(instance=atl_n_ocl_OCL_OrderedSetExp_strategy)
+@settings(max_examples=50)
+def test_atl_n_ocl_ocl_orderedsetexp_instantiation(instance):
+    assert isinstance(instance, atl_n_ocl_OCL_OrderedSetExp)

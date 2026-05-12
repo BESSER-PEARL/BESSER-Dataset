@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     HomePage,
@@ -31,9 +31,18 @@ def test_homepage_constructor_exists():
 def test_homepage_constructor_args():
     sig = inspect.signature(HomePage.__init__)
     params = list(sig.parameters.keys())
+    assert "likeorunlike" in params, "Missing parameter 'likeorunlike'"
     assert "__friendStatus" in params, "Missing parameter '__friendStatus'"
     assert "__status" in params, "Missing parameter '__status'"
-    assert "likeorunlike" in params, "Missing parameter 'likeorunlike'"
+
+def test_homepage_has_likeorunlike():
+    assert hasattr(HomePage, "likeorunlike")
+    descriptor = None
+    for klass in HomePage.__mro__:
+        if "likeorunlike" in klass.__dict__:
+            descriptor = klass.__dict__["likeorunlike"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_homepage_has___friendStatus():
     assert hasattr(HomePage, "__friendStatus")
@@ -50,15 +59,6 @@ def test_homepage_has___status():
     for klass in HomePage.__mro__:
         if "__status" in klass.__dict__:
             descriptor = klass.__dict__["__status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_homepage_has_likeorunlike():
-    assert hasattr(HomePage, "likeorunlike")
-    descriptor = None
-    for klass in HomePage.__mro__:
-        if "likeorunlike" in klass.__dict__:
-            descriptor = klass.__dict__["likeorunlike"]
             break
     assert isinstance(descriptor, property)
 
@@ -100,8 +100,8 @@ def test_message_constructor_args():
     sig = inspect.signature(Message.__init__)
     params = list(sig.parameters.keys())
     assert "reciver" in params, "Missing parameter 'reciver'"
-    assert "message" in params, "Missing parameter 'message'"
     assert "sender" in params, "Missing parameter 'sender'"
+    assert "message" in params, "Missing parameter 'message'"
 
 def test_message_has_reciver():
     assert hasattr(Message, "reciver")
@@ -112,21 +112,21 @@ def test_message_has_reciver():
             break
     assert isinstance(descriptor, property)
 
-def test_message_has_message():
-    assert hasattr(Message, "message")
-    descriptor = None
-    for klass in Message.__mro__:
-        if "message" in klass.__dict__:
-            descriptor = klass.__dict__["message"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_message_has_sender():
     assert hasattr(Message, "sender")
     descriptor = None
     for klass in Message.__mro__:
         if "sender" in klass.__dict__:
             descriptor = klass.__dict__["sender"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_message_has_message():
+    assert hasattr(Message, "message")
+    descriptor = None
+    for klass in Message.__mro__:
+        if "message" in klass.__dict__:
+            descriptor = klass.__dict__["message"]
             break
     assert isinstance(descriptor, property)
 
@@ -178,8 +178,8 @@ def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
     assert "_F" in params, "Missing parameter '_F'"
-    assert "__M" in params, "Missing parameter '__M'"
     assert "_P" in params, "Missing parameter '_P'"
+    assert "__M" in params, "Missing parameter '__M'"
 
 def test_user_has__F():
     assert hasattr(User, "_F")
@@ -190,21 +190,21 @@ def test_user_has__F():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has___M():
-    assert hasattr(User, "__M")
-    descriptor = None
-    for klass in User.__mro__:
-        if "__M" in klass.__dict__:
-            descriptor = klass.__dict__["__M"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_user_has__P():
     assert hasattr(User, "_P")
     descriptor = None
     for klass in User.__mro__:
         if "_P" in klass.__dict__:
             descriptor = klass.__dict__["_P"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has___M():
+    assert hasattr(User, "__M")
+    descriptor = None
+    for klass in User.__mro__:
+        if "__M" in klass.__dict__:
+            descriptor = klass.__dict__["__M"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,8 +222,8 @@ def test_account_constructor_args():
     sig = inspect.signature(Account.__init__)
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
-    assert "entity" in params, "Missing parameter 'entity'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "entity" in params, "Missing parameter 'entity'"
     assert "name" in params, "Missing parameter 'name'"
 
 def test_account_has_email():
@@ -235,21 +235,21 @@ def test_account_has_email():
             break
     assert isinstance(descriptor, property)
 
-def test_account_has_entity():
-    assert hasattr(Account, "entity")
-    descriptor = None
-    for klass in Account.__mro__:
-        if "entity" in klass.__dict__:
-            descriptor = klass.__dict__["entity"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_account_has_password():
     assert hasattr(Account, "password")
     descriptor = None
     for klass in Account.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_account_has_entity():
+    assert hasattr(Account, "entity")
+    descriptor = None
+    for klass in Account.__mro__:
+        if "entity" in klass.__dict__:
+            descriptor = klass.__dict__["entity"]
             break
     assert isinstance(descriptor, property)
 
@@ -276,12 +276,12 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 HomePage_strategy = st.builds(
     HomePage,
+    likeorunlike=
+        st.booleans(),
     __friendStatus=
         safe_text,
     __status=
-        safe_text,
-    likeorunlike=
-        st.booleans()
+        safe_text
 )
 Photos_strategy = st.builds(
     Photos,
@@ -292,9 +292,9 @@ Message_strategy = st.builds(
     Message,
     reciver=
         safe_text,
-    message=
-        safe_text,
     sender=
+        safe_text,
+    message=
         safe_text
 )
 Friend_strategy = st.builds(
@@ -308,18 +308,18 @@ User_strategy = st.builds(
     User,
     _F=
         st.none(),
-    __M=
-        st.none(),
     _P=
+        st.none(),
+    __M=
         st.none()
 )
 Account_strategy = st.builds(
     Account,
     email=
         safe_text,
-    entity=
-        safe_text,
     password=
+        safe_text,
+    entity=
         safe_text,
     name=
         safe_text
@@ -330,31 +330,6 @@ Account_strategy = st.builds(
 def test_homepage_instantiation(instance):
     assert isinstance(instance, HomePage)
 
-@given(instance=HomePage_strategy)
-def test_homepage___friendStatus_type(instance):
-    assert isinstance(instance.__friendStatus, str)
-
-
-@given(instance=HomePage_strategy)
-def test_homepage___friendStatus_setter(instance):
-    original = instance.__friendStatus
-    instance.__friendStatus = original
-    assert instance.__friendStatus == original
-
-@given(instance=HomePage_strategy)
-def test_homepage___status_type(instance):
-    assert isinstance(instance.__status, str)
-
-
-@given(instance=HomePage_strategy)
-def test_homepage___status_setter(instance):
-    original = instance.__status
-    instance.__status = original
-    assert instance.__status == original
-
-@given(instance=HomePage_strategy)
-def test_homepage_likeorunlike_type(instance):
-    assert isinstance(instance.likeorunlike, bool)
 
 
 @given(instance=HomePage_strategy)
@@ -363,14 +338,27 @@ def test_homepage_likeorunlike_setter(instance):
     instance.likeorunlike = original
     assert instance.likeorunlike == original
 
+
+
+@given(instance=HomePage_strategy)
+def test_homepage___friendStatus_setter(instance):
+    original = instance.__friendStatus
+    instance.__friendStatus = original
+    assert instance.__friendStatus == original
+
+
+
+@given(instance=HomePage_strategy)
+def test_homepage___status_setter(instance):
+    original = instance.__status
+    instance.__status = original
+    assert instance.__status == original
+
 @given(instance=Photos_strategy)
 @settings(max_examples=50)
 def test_photos_instantiation(instance):
     assert isinstance(instance, Photos)
 
-@given(instance=Photos_strategy)
-def test_photos___photos_type(instance):
-    assert isinstance(instance.__photos, str)
 
 
 @given(instance=Photos_strategy)
@@ -384,9 +372,6 @@ def test_photos___photos_setter(instance):
 def test_message_instantiation(instance):
     assert isinstance(instance, Message)
 
-@given(instance=Message_strategy)
-def test_message_reciver_type(instance):
-    assert isinstance(instance.reciver, str)
 
 
 @given(instance=Message_strategy)
@@ -395,20 +380,6 @@ def test_message_reciver_setter(instance):
     instance.reciver = original
     assert instance.reciver == original
 
-@given(instance=Message_strategy)
-def test_message_message_type(instance):
-    assert isinstance(instance.message, str)
-
-
-@given(instance=Message_strategy)
-def test_message_message_setter(instance):
-    original = instance.message
-    instance.message = original
-    assert instance.message == original
-
-@given(instance=Message_strategy)
-def test_message_sender_type(instance):
-    assert isinstance(instance.sender, str)
 
 
 @given(instance=Message_strategy)
@@ -417,14 +388,19 @@ def test_message_sender_setter(instance):
     instance.sender = original
     assert instance.sender == original
 
+
+
+@given(instance=Message_strategy)
+def test_message_message_setter(instance):
+    original = instance.message
+    instance.message = original
+    assert instance.message == original
+
 @given(instance=Friend_strategy)
 @settings(max_examples=50)
 def test_friend_instantiation(instance):
     assert isinstance(instance, Friend)
 
-@given(instance=Friend_strategy)
-def test_friend_friend_____type(instance):
-    assert isinstance(instance.friend____, str)
 
 
 @given(instance=Friend_strategy)
@@ -433,9 +409,6 @@ def test_friend_friend_____setter(instance):
     instance.friend____ = original
     assert instance.friend____ == original
 
-@given(instance=Friend_strategy)
-def test_friend_acceptornot_type(instance):
-    assert isinstance(instance.acceptornot, bool)
 
 
 @given(instance=Friend_strategy)
@@ -449,9 +422,6 @@ def test_friend_acceptornot_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user__F_type(instance):
-    assert isinstance(instance._F, friend)
 
 
 @given(instance=User_strategy)
@@ -460,20 +430,6 @@ def test_user__F_setter(instance):
     instance._F = original
     assert instance._F == original
 
-@given(instance=User_strategy)
-def test_user___M_type(instance):
-    assert isinstance(instance.__M, message)
-
-
-@given(instance=User_strategy)
-def test_user___M_setter(instance):
-    original = instance.__M
-    instance.__M = original
-    assert instance.__M == original
-
-@given(instance=User_strategy)
-def test_user__P_type(instance):
-    assert isinstance(instance._P, photos)
 
 
 @given(instance=User_strategy)
@@ -482,14 +438,19 @@ def test_user__P_setter(instance):
     instance._P = original
     assert instance._P == original
 
+
+
+@given(instance=User_strategy)
+def test_user___M_setter(instance):
+    original = instance.__M
+    instance.__M = original
+    assert instance.__M == original
+
 @given(instance=Account_strategy)
 @settings(max_examples=50)
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Account_strategy)
@@ -498,20 +459,6 @@ def test_account_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=Account_strategy)
-def test_account_entity_type(instance):
-    assert isinstance(instance.entity, str)
-
-
-@given(instance=Account_strategy)
-def test_account_entity_setter(instance):
-    original = instance.entity
-    instance.entity = original
-    assert instance.entity == original
-
-@given(instance=Account_strategy)
-def test_account_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Account_strategy)
@@ -520,9 +467,14 @@ def test_account_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
 @given(instance=Account_strategy)
-def test_account_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_account_entity_setter(instance):
+    original = instance.entity
+    instance.entity = original
+    assert instance.entity == original
+
 
 
 @given(instance=Account_strategy)

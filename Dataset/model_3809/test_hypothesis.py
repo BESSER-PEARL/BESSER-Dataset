@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    example::MP3,
-    example::Audio,
+from python_code import (
+    example_MP3,
+    example_Audio,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_example::mp3_is_not_abstract():
-    assert not inspect.isabstract(example::MP3)
+def test_example_mp3_is_not_abstract():
+    assert not inspect.isabstract(example_MP3)
 
 
-def test_example::mp3_constructor_exists():
-    assert callable(example::MP3.__init__)
+def test_example_mp3_constructor_exists():
+    assert callable(example_MP3.__init__)
 
 
-def test_example::mp3_constructor_args():
-    sig = inspect.signature(example::MP3.__init__)
+def test_example_mp3_constructor_args():
+    sig = inspect.signature(example_MP3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_example::audio_is_not_abstract():
-    assert not inspect.isabstract(example::Audio)
+def test_example_audio_is_not_abstract():
+    assert not inspect.isabstract(example_Audio)
 
 
-def test_example::audio_constructor_exists():
-    assert callable(example::Audio.__init__)
+def test_example_audio_constructor_exists():
+    assert callable(example_Audio.__init__)
 
 
-def test_example::audio_constructor_args():
-    sig = inspect.signature(example::Audio.__init__)
+def test_example_audio_constructor_args():
+    sig = inspect.signature(example_Audio.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-example::MP3_strategy = st.builds(
-    example::MP3,
+example_MP3_strategy = st.builds(
+    example_MP3,
 )
-example::Audio_strategy = st.builds(
-    example::Audio,
+example_Audio_strategy = st.builds(
+    example_Audio,
 )
 
-@given(instance=example::MP3_strategy)
+@given(instance=example_MP3_strategy)
 @settings(max_examples=50)
-def test_example::mp3_instantiation(instance):
-    assert isinstance(instance, example::MP3)
+def test_example_mp3_instantiation(instance):
+    assert isinstance(instance, example_MP3)
 
-@given(instance=example::Audio_strategy)
+@given(instance=example_Audio_strategy)
 @settings(max_examples=50)
-def test_example::audio_instantiation(instance):
-    assert isinstance(instance, example::Audio)
+def test_example_audio_instantiation(instance):
+    assert isinstance(instance, example_Audio)

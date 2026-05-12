@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Craft,
-    CarRentalModel::Automobile,
-    CarRentalModel::Motorcycle,
-    CarRentalModel::Order,
-    CarRentalModel::Craft,
-    CarRentalModel::Agency,
-    CarRentalModel::Customer,
-    CarRentalModel::CarRental,
+    CarRentalModel_Automobile,
+    CarRentalModel_Motorcycle,
+    CarRentalModel_Order,
+    CarRentalModel_Craft,
+    CarRentalModel_Agency,
+    CarRentalModel_Customer,
+    CarRentalModel_CarRental,
     Customer,
-    CarRentalModel::VipCustomer,
+    CarRentalModel_VipCustomer,
 )
 
 # =============================================================================
@@ -38,23 +38,23 @@ def test_craft_constructor_args():
 
 
 
-def test_carrentalmodel::automobile_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::Automobile)
+def test_carrentalmodel_automobile_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_Automobile)
 
 
-def test_carrentalmodel::automobile_constructor_exists():
-    assert callable(CarRentalModel::Automobile.__init__)
+def test_carrentalmodel_automobile_constructor_exists():
+    assert callable(CarRentalModel_Automobile.__init__)
 
 
-def test_carrentalmodel::automobile_constructor_args():
-    sig = inspect.signature(CarRentalModel::Automobile.__init__)
+def test_carrentalmodel_automobile_constructor_args():
+    sig = inspect.signature(CarRentalModel_Automobile.__init__)
     params = list(sig.parameters.keys())
     assert "isCabrio" in params, "Missing parameter 'isCabrio'"
 
-def test_carrentalmodel::automobile_has_isCabrio():
-    assert hasattr(CarRentalModel::Automobile, "isCabrio")
+def test_carrentalmodel_automobile_has_isCabrio():
+    assert hasattr(CarRentalModel_Automobile, "isCabrio")
     descriptor = None
-    for klass in CarRentalModel::Automobile.__mro__:
+    for klass in CarRentalModel_Automobile.__mro__:
         if "isCabrio" in klass.__dict__:
             descriptor = klass.__dict__["isCabrio"]
             break
@@ -62,23 +62,23 @@ def test_carrentalmodel::automobile_has_isCabrio():
 
 
 
-def test_carrentalmodel::motorcycle_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::Motorcycle)
+def test_carrentalmodel_motorcycle_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_Motorcycle)
 
 
-def test_carrentalmodel::motorcycle_constructor_exists():
-    assert callable(CarRentalModel::Motorcycle.__init__)
+def test_carrentalmodel_motorcycle_constructor_exists():
+    assert callable(CarRentalModel_Motorcycle.__init__)
 
 
-def test_carrentalmodel::motorcycle_constructor_args():
-    sig = inspect.signature(CarRentalModel::Motorcycle.__init__)
+def test_carrentalmodel_motorcycle_constructor_args():
+    sig = inspect.signature(CarRentalModel_Motorcycle.__init__)
     params = list(sig.parameters.keys())
     assert "cm3" in params, "Missing parameter 'cm3'"
 
-def test_carrentalmodel::motorcycle_has_cm3():
-    assert hasattr(CarRentalModel::Motorcycle, "cm3")
+def test_carrentalmodel_motorcycle_has_cm3():
+    assert hasattr(CarRentalModel_Motorcycle, "cm3")
     descriptor = None
-    for klass in CarRentalModel::Motorcycle.__mro__:
+    for klass in CarRentalModel_Motorcycle.__mro__:
         if "cm3" in klass.__dict__:
             descriptor = klass.__dict__["cm3"]
             break
@@ -86,33 +86,33 @@ def test_carrentalmodel::motorcycle_has_cm3():
 
 
 
-def test_carrentalmodel::order_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::Order)
+def test_carrentalmodel_order_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_Order)
 
 
-def test_carrentalmodel::order_constructor_exists():
-    assert callable(CarRentalModel::Order.__init__)
+def test_carrentalmodel_order_constructor_exists():
+    assert callable(CarRentalModel_Order.__init__)
 
 
-def test_carrentalmodel::order_constructor_args():
-    sig = inspect.signature(CarRentalModel::Order.__init__)
+def test_carrentalmodel_order_constructor_args():
+    sig = inspect.signature(CarRentalModel_Order.__init__)
     params = list(sig.parameters.keys())
     assert "price" in params, "Missing parameter 'price'"
     assert "orderDate" in params, "Missing parameter 'orderDate'"
 
-def test_carrentalmodel::order_has_price():
-    assert hasattr(CarRentalModel::Order, "price")
+def test_carrentalmodel_order_has_price():
+    assert hasattr(CarRentalModel_Order, "price")
     descriptor = None
-    for klass in CarRentalModel::Order.__mro__:
+    for klass in CarRentalModel_Order.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
-def test_carrentalmodel::order_has_orderDate():
-    assert hasattr(CarRentalModel::Order, "orderDate")
+def test_carrentalmodel_order_has_orderDate():
+    assert hasattr(CarRentalModel_Order, "orderDate")
     descriptor = None
-    for klass in CarRentalModel::Order.__mro__:
+    for klass in CarRentalModel_Order.__mro__:
         if "orderDate" in klass.__dict__:
             descriptor = klass.__dict__["orderDate"]
             break
@@ -120,87 +120,87 @@ def test_carrentalmodel::order_has_orderDate():
 
 
 
-def test_carrentalmodel::craft_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::Craft)
+def test_carrentalmodel_craft_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_Craft)
 
 
-def test_carrentalmodel::craft_constructor_exists():
-    assert callable(CarRentalModel::Craft.__init__)
+def test_carrentalmodel_craft_constructor_exists():
+    assert callable(CarRentalModel_Craft.__init__)
 
 
-def test_carrentalmodel::craft_constructor_args():
-    sig = inspect.signature(CarRentalModel::Craft.__init__)
+def test_carrentalmodel_craft_constructor_args():
+    sig = inspect.signature(CarRentalModel_Craft.__init__)
     params = list(sig.parameters.keys())
     assert "vin" in params, "Missing parameter 'vin'"
-    assert "charge" in params, "Missing parameter 'charge'"
     assert "licenseNo" in params, "Missing parameter 'licenseNo'"
+    assert "charge" in params, "Missing parameter 'charge'"
 
-def test_carrentalmodel::craft_has_vin():
-    assert hasattr(CarRentalModel::Craft, "vin")
+def test_carrentalmodel_craft_has_vin():
+    assert hasattr(CarRentalModel_Craft, "vin")
     descriptor = None
-    for klass in CarRentalModel::Craft.__mro__:
+    for klass in CarRentalModel_Craft.__mro__:
         if "vin" in klass.__dict__:
             descriptor = klass.__dict__["vin"]
             break
     assert isinstance(descriptor, property)
 
-def test_carrentalmodel::craft_has_charge():
-    assert hasattr(CarRentalModel::Craft, "charge")
+def test_carrentalmodel_craft_has_licenseNo():
+    assert hasattr(CarRentalModel_Craft, "licenseNo")
     descriptor = None
-    for klass in CarRentalModel::Craft.__mro__:
-        if "charge" in klass.__dict__:
-            descriptor = klass.__dict__["charge"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_carrentalmodel::craft_has_licenseNo():
-    assert hasattr(CarRentalModel::Craft, "licenseNo")
-    descriptor = None
-    for klass in CarRentalModel::Craft.__mro__:
+    for klass in CarRentalModel_Craft.__mro__:
         if "licenseNo" in klass.__dict__:
             descriptor = klass.__dict__["licenseNo"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_carrentalmodel::agency_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::Agency)
-
-
-def test_carrentalmodel::agency_constructor_exists():
-    assert callable(CarRentalModel::Agency.__init__)
-
-
-def test_carrentalmodel::agency_constructor_args():
-    sig = inspect.signature(CarRentalModel::Agency.__init__)
-    params = list(sig.parameters.keys())
-    assert "street" in params, "Missing parameter 'street'"
-    assert "zip" in params, "Missing parameter 'zip'"
-    assert "place" in params, "Missing parameter 'place'"
-
-def test_carrentalmodel::agency_has_street():
-    assert hasattr(CarRentalModel::Agency, "street")
+def test_carrentalmodel_craft_has_charge():
+    assert hasattr(CarRentalModel_Craft, "charge")
     descriptor = None
-    for klass in CarRentalModel::Agency.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
+    for klass in CarRentalModel_Craft.__mro__:
+        if "charge" in klass.__dict__:
+            descriptor = klass.__dict__["charge"]
             break
     assert isinstance(descriptor, property)
 
-def test_carrentalmodel::agency_has_zip():
-    assert hasattr(CarRentalModel::Agency, "zip")
+
+
+def test_carrentalmodel_agency_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_Agency)
+
+
+def test_carrentalmodel_agency_constructor_exists():
+    assert callable(CarRentalModel_Agency.__init__)
+
+
+def test_carrentalmodel_agency_constructor_args():
+    sig = inspect.signature(CarRentalModel_Agency.__init__)
+    params = list(sig.parameters.keys())
+    assert "zip" in params, "Missing parameter 'zip'"
+    assert "street" in params, "Missing parameter 'street'"
+    assert "place" in params, "Missing parameter 'place'"
+
+def test_carrentalmodel_agency_has_zip():
+    assert hasattr(CarRentalModel_Agency, "zip")
     descriptor = None
-    for klass in CarRentalModel::Agency.__mro__:
+    for klass in CarRentalModel_Agency.__mro__:
         if "zip" in klass.__dict__:
             descriptor = klass.__dict__["zip"]
             break
     assert isinstance(descriptor, property)
 
-def test_carrentalmodel::agency_has_place():
-    assert hasattr(CarRentalModel::Agency, "place")
+def test_carrentalmodel_agency_has_street():
+    assert hasattr(CarRentalModel_Agency, "street")
     descriptor = None
-    for klass in CarRentalModel::Agency.__mro__:
+    for klass in CarRentalModel_Agency.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_carrentalmodel_agency_has_place():
+    assert hasattr(CarRentalModel_Agency, "place")
+    descriptor = None
+    for klass in CarRentalModel_Agency.__mro__:
         if "place" in klass.__dict__:
             descriptor = klass.__dict__["place"]
             break
@@ -208,43 +208,43 @@ def test_carrentalmodel::agency_has_place():
 
 
 
-def test_carrentalmodel::customer_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::Customer)
+def test_carrentalmodel_customer_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_Customer)
 
 
-def test_carrentalmodel::customer_constructor_exists():
-    assert callable(CarRentalModel::Customer.__init__)
+def test_carrentalmodel_customer_constructor_exists():
+    assert callable(CarRentalModel_Customer.__init__)
 
 
-def test_carrentalmodel::customer_constructor_args():
-    sig = inspect.signature(CarRentalModel::Customer.__init__)
+def test_carrentalmodel_customer_constructor_args():
+    sig = inspect.signature(CarRentalModel_Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
     assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "identifier" in params, "Missing parameter 'identifier'"
     assert "surname" in params, "Missing parameter 'surname'"
 
-def test_carrentalmodel::customer_has_identifier():
-    assert hasattr(CarRentalModel::Customer, "identifier")
+def test_carrentalmodel_customer_has_lastname():
+    assert hasattr(CarRentalModel_Customer, "lastname")
     descriptor = None
-    for klass in CarRentalModel::Customer.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_carrentalmodel::customer_has_lastname():
-    assert hasattr(CarRentalModel::Customer, "lastname")
-    descriptor = None
-    for klass in CarRentalModel::Customer.__mro__:
+    for klass in CarRentalModel_Customer.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_carrentalmodel::customer_has_surname():
-    assert hasattr(CarRentalModel::Customer, "surname")
+def test_carrentalmodel_customer_has_identifier():
+    assert hasattr(CarRentalModel_Customer, "identifier")
     descriptor = None
-    for klass in CarRentalModel::Customer.__mro__:
+    for klass in CarRentalModel_Customer.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_carrentalmodel_customer_has_surname():
+    assert hasattr(CarRentalModel_Customer, "surname")
+    descriptor = None
+    for klass in CarRentalModel_Customer.__mro__:
         if "surname" in klass.__dict__:
             descriptor = klass.__dict__["surname"]
             break
@@ -252,16 +252,16 @@ def test_carrentalmodel::customer_has_surname():
 
 
 
-def test_carrentalmodel::carrental_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::CarRental)
+def test_carrentalmodel_carrental_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_CarRental)
 
 
-def test_carrentalmodel::carrental_constructor_exists():
-    assert callable(CarRentalModel::CarRental.__init__)
+def test_carrentalmodel_carrental_constructor_exists():
+    assert callable(CarRentalModel_CarRental.__init__)
 
 
-def test_carrentalmodel::carrental_constructor_args():
-    sig = inspect.signature(CarRentalModel::CarRental.__init__)
+def test_carrentalmodel_carrental_constructor_args():
+    sig = inspect.signature(CarRentalModel_CarRental.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -280,23 +280,23 @@ def test_customer_constructor_args():
 
 
 
-def test_carrentalmodel::vipcustomer_is_not_abstract():
-    assert not inspect.isabstract(CarRentalModel::VipCustomer)
+def test_carrentalmodel_vipcustomer_is_not_abstract():
+    assert not inspect.isabstract(CarRentalModel_VipCustomer)
 
 
-def test_carrentalmodel::vipcustomer_constructor_exists():
-    assert callable(CarRentalModel::VipCustomer.__init__)
+def test_carrentalmodel_vipcustomer_constructor_exists():
+    assert callable(CarRentalModel_VipCustomer.__init__)
 
 
-def test_carrentalmodel::vipcustomer_constructor_args():
-    sig = inspect.signature(CarRentalModel::VipCustomer.__init__)
+def test_carrentalmodel_vipcustomer_constructor_args():
+    sig = inspect.signature(CarRentalModel_VipCustomer.__init__)
     params = list(sig.parameters.keys())
     assert "discount" in params, "Missing parameter 'discount'"
 
-def test_carrentalmodel::vipcustomer_has_discount():
-    assert hasattr(CarRentalModel::VipCustomer, "discount")
+def test_carrentalmodel_vipcustomer_has_discount():
+    assert hasattr(CarRentalModel_VipCustomer, "discount")
     descriptor = None
-    for klass in CarRentalModel::VipCustomer.__mro__:
+    for klass in CarRentalModel_VipCustomer.__mro__:
         if "discount" in klass.__dict__:
             descriptor = klass.__dict__["discount"]
             break
@@ -317,58 +317,58 @@ safe_text = st.text(
 Craft_strategy = st.builds(
     Craft,
 )
-CarRentalModel::Automobile_strategy = st.builds(
-    CarRentalModel::Automobile,
+CarRentalModel_Automobile_strategy = st.builds(
+    CarRentalModel_Automobile,
     isCabrio=
         st.booleans()
 )
-CarRentalModel::Motorcycle_strategy = st.builds(
-    CarRentalModel::Motorcycle,
+CarRentalModel_Motorcycle_strategy = st.builds(
+    CarRentalModel_Motorcycle,
     cm3=
         st.integers()
 )
-CarRentalModel::Order_strategy = st.builds(
-    CarRentalModel::Order,
+CarRentalModel_Order_strategy = st.builds(
+    CarRentalModel_Order,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     orderDate=
         st.dates()
 )
-CarRentalModel::Craft_strategy = st.builds(
-    CarRentalModel::Craft,
+CarRentalModel_Craft_strategy = st.builds(
+    CarRentalModel_Craft,
     vin=
         st.integers(),
-    charge=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     licenseNo=
-        safe_text
-)
-CarRentalModel::Agency_strategy = st.builds(
-    CarRentalModel::Agency,
-    street=
         safe_text,
+    charge=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+CarRentalModel_Agency_strategy = st.builds(
+    CarRentalModel_Agency,
     zip=
         st.integers(),
+    street=
+        safe_text,
     place=
         safe_text
 )
-CarRentalModel::Customer_strategy = st.builds(
-    CarRentalModel::Customer,
-    identifier=
-        safe_text,
+CarRentalModel_Customer_strategy = st.builds(
+    CarRentalModel_Customer,
     lastname=
+        safe_text,
+    identifier=
         safe_text,
     surname=
         safe_text
 )
-CarRentalModel::CarRental_strategy = st.builds(
-    CarRentalModel::CarRental,
+CarRentalModel_CarRental_strategy = st.builds(
+    CarRentalModel_CarRental,
 )
 Customer_strategy = st.builds(
     Customer,
 )
-CarRentalModel::VipCustomer_strategy = st.builds(
-    CarRentalModel::VipCustomer,
+CarRentalModel_VipCustomer_strategy = st.builds(
+    CarRentalModel_VipCustomer,
     discount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -378,201 +378,159 @@ CarRentalModel::VipCustomer_strategy = st.builds(
 def test_craft_instantiation(instance):
     assert isinstance(instance, Craft)
 
-@given(instance=CarRentalModel::Automobile_strategy)
+@given(instance=CarRentalModel_Automobile_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::automobile_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::Automobile)
-
-@given(instance=CarRentalModel::Automobile_strategy)
-def test_carrentalmodel::automobile_isCabrio_type(instance):
-    assert isinstance(instance.isCabrio, bool)
+def test_carrentalmodel_automobile_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_Automobile)
 
 
-@given(instance=CarRentalModel::Automobile_strategy)
-def test_carrentalmodel::automobile_isCabrio_setter(instance):
+
+@given(instance=CarRentalModel_Automobile_strategy)
+def test_carrentalmodel_automobile_isCabrio_setter(instance):
     original = instance.isCabrio
     instance.isCabrio = original
     assert instance.isCabrio == original
 
-@given(instance=CarRentalModel::Motorcycle_strategy)
+@given(instance=CarRentalModel_Motorcycle_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::motorcycle_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::Motorcycle)
-
-@given(instance=CarRentalModel::Motorcycle_strategy)
-def test_carrentalmodel::motorcycle_cm3_type(instance):
-    assert isinstance(instance.cm3, int)
+def test_carrentalmodel_motorcycle_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_Motorcycle)
 
 
-@given(instance=CarRentalModel::Motorcycle_strategy)
-def test_carrentalmodel::motorcycle_cm3_setter(instance):
+
+@given(instance=CarRentalModel_Motorcycle_strategy)
+def test_carrentalmodel_motorcycle_cm3_setter(instance):
     original = instance.cm3
     instance.cm3 = original
     assert instance.cm3 == original
 
-@given(instance=CarRentalModel::Order_strategy)
+@given(instance=CarRentalModel_Order_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::order_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::Order)
-
-@given(instance=CarRentalModel::Order_strategy)
-def test_carrentalmodel::order_price_type(instance):
-    assert isinstance(instance.price, float)
+def test_carrentalmodel_order_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_Order)
 
 
-@given(instance=CarRentalModel::Order_strategy)
-def test_carrentalmodel::order_price_setter(instance):
+
+@given(instance=CarRentalModel_Order_strategy)
+def test_carrentalmodel_order_price_setter(instance):
     original = instance.price
     instance.price = original
     assert instance.price == original
 
-@given(instance=CarRentalModel::Order_strategy)
-def test_carrentalmodel::order_orderDate_type(instance):
-    assert isinstance(instance.orderDate, date)
 
 
-@given(instance=CarRentalModel::Order_strategy)
-def test_carrentalmodel::order_orderDate_setter(instance):
+@given(instance=CarRentalModel_Order_strategy)
+def test_carrentalmodel_order_orderDate_setter(instance):
     original = instance.orderDate
     instance.orderDate = original
     assert instance.orderDate == original
 
-@given(instance=CarRentalModel::Craft_strategy)
+@given(instance=CarRentalModel_Craft_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::craft_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::Craft)
-
-@given(instance=CarRentalModel::Craft_strategy)
-def test_carrentalmodel::craft_vin_type(instance):
-    assert isinstance(instance.vin, int)
+def test_carrentalmodel_craft_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_Craft)
 
 
-@given(instance=CarRentalModel::Craft_strategy)
-def test_carrentalmodel::craft_vin_setter(instance):
+
+@given(instance=CarRentalModel_Craft_strategy)
+def test_carrentalmodel_craft_vin_setter(instance):
     original = instance.vin
     instance.vin = original
     assert instance.vin == original
 
-@given(instance=CarRentalModel::Craft_strategy)
-def test_carrentalmodel::craft_charge_type(instance):
-    assert isinstance(instance.charge, float)
 
 
-@given(instance=CarRentalModel::Craft_strategy)
-def test_carrentalmodel::craft_charge_setter(instance):
-    original = instance.charge
-    instance.charge = original
-    assert instance.charge == original
-
-@given(instance=CarRentalModel::Craft_strategy)
-def test_carrentalmodel::craft_licenseNo_type(instance):
-    assert isinstance(instance.licenseNo, str)
-
-
-@given(instance=CarRentalModel::Craft_strategy)
-def test_carrentalmodel::craft_licenseNo_setter(instance):
+@given(instance=CarRentalModel_Craft_strategy)
+def test_carrentalmodel_craft_licenseNo_setter(instance):
     original = instance.licenseNo
     instance.licenseNo = original
     assert instance.licenseNo == original
 
-@given(instance=CarRentalModel::Agency_strategy)
+
+
+@given(instance=CarRentalModel_Craft_strategy)
+def test_carrentalmodel_craft_charge_setter(instance):
+    original = instance.charge
+    instance.charge = original
+    assert instance.charge == original
+
+@given(instance=CarRentalModel_Agency_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::agency_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::Agency)
-
-@given(instance=CarRentalModel::Agency_strategy)
-def test_carrentalmodel::agency_street_type(instance):
-    assert isinstance(instance.street, str)
+def test_carrentalmodel_agency_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_Agency)
 
 
-@given(instance=CarRentalModel::Agency_strategy)
-def test_carrentalmodel::agency_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
 
-@given(instance=CarRentalModel::Agency_strategy)
-def test_carrentalmodel::agency_zip_type(instance):
-    assert isinstance(instance.zip, int)
-
-
-@given(instance=CarRentalModel::Agency_strategy)
-def test_carrentalmodel::agency_zip_setter(instance):
+@given(instance=CarRentalModel_Agency_strategy)
+def test_carrentalmodel_agency_zip_setter(instance):
     original = instance.zip
     instance.zip = original
     assert instance.zip == original
 
-@given(instance=CarRentalModel::Agency_strategy)
-def test_carrentalmodel::agency_place_type(instance):
-    assert isinstance(instance.place, str)
 
 
-@given(instance=CarRentalModel::Agency_strategy)
-def test_carrentalmodel::agency_place_setter(instance):
+@given(instance=CarRentalModel_Agency_strategy)
+def test_carrentalmodel_agency_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+
+
+@given(instance=CarRentalModel_Agency_strategy)
+def test_carrentalmodel_agency_place_setter(instance):
     original = instance.place
     instance.place = original
     assert instance.place == original
 
-@given(instance=CarRentalModel::Customer_strategy)
+@given(instance=CarRentalModel_Customer_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::customer_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::Customer)
-
-@given(instance=CarRentalModel::Customer_strategy)
-def test_carrentalmodel::customer_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_carrentalmodel_customer_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_Customer)
 
 
-@given(instance=CarRentalModel::Customer_strategy)
-def test_carrentalmodel::customer_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
 
-@given(instance=CarRentalModel::Customer_strategy)
-def test_carrentalmodel::customer_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=CarRentalModel::Customer_strategy)
-def test_carrentalmodel::customer_lastname_setter(instance):
+@given(instance=CarRentalModel_Customer_strategy)
+def test_carrentalmodel_customer_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=CarRentalModel::Customer_strategy)
-def test_carrentalmodel::customer_surname_type(instance):
-    assert isinstance(instance.surname, str)
 
 
-@given(instance=CarRentalModel::Customer_strategy)
-def test_carrentalmodel::customer_surname_setter(instance):
+@given(instance=CarRentalModel_Customer_strategy)
+def test_carrentalmodel_customer_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+
+
+@given(instance=CarRentalModel_Customer_strategy)
+def test_carrentalmodel_customer_surname_setter(instance):
     original = instance.surname
     instance.surname = original
     assert instance.surname == original
 
-@given(instance=CarRentalModel::CarRental_strategy)
+@given(instance=CarRentalModel_CarRental_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::carrental_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::CarRental)
+def test_carrentalmodel_carrental_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_CarRental)
 
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=CarRentalModel::VipCustomer_strategy)
+@given(instance=CarRentalModel_VipCustomer_strategy)
 @settings(max_examples=50)
-def test_carrentalmodel::vipcustomer_instantiation(instance):
-    assert isinstance(instance, CarRentalModel::VipCustomer)
-
-@given(instance=CarRentalModel::VipCustomer_strategy)
-def test_carrentalmodel::vipcustomer_discount_type(instance):
-    assert isinstance(instance.discount, float)
+def test_carrentalmodel_vipcustomer_instantiation(instance):
+    assert isinstance(instance, CarRentalModel_VipCustomer)
 
 
-@given(instance=CarRentalModel::VipCustomer_strategy)
-def test_carrentalmodel::vipcustomer_discount_setter(instance):
+
+@given(instance=CarRentalModel_VipCustomer_strategy)
+def test_carrentalmodel_vipcustomer_discount_setter(instance):
     original = instance.discount
     instance.discount = original
     assert instance.discount == original

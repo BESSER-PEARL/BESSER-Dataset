@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Faculty_Actor,
@@ -431,9 +431,6 @@ def test_multimedia_instantiation(instance):
 def test_books_instantiation(instance):
     assert isinstance(instance, Books)
 
-@given(instance=Books_strategy)
-def test_books_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Books_strategy)

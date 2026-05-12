@@ -3,136 +3,136 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BuilderCallFacade,
-    build::IEffectiveFacade,
+    build_IEffectiveFacade,
     BuildCallSingle,
-    build::BuildCallOnReferencedRequirement,
-    build::BuildCallOnDeclaredRequirement,
+    build_BuildCallOnReferencedRequirement,
+    build_BuildCallOnDeclaredRequirement,
     BuilderCall,
-    build::BuildCallSingle,
-    build::BuildCallMultiple,
+    build_BuildCallSingle,
+    build_BuildCallMultiple,
     BParameterDeclaration,
-    build::BWithExpression,
+    build_BWithExpression,
     BuilderInputDecorator,
-    build::BuilderInputContextDecorator,
-    build::BuilderInputGroup,
-    build::BuilderInputCondition,
+    build_BuilderInputContextDecorator,
+    build_BuilderInputCondition,
+    build_BuilderInputGroup,
     BuildCallMultiple,
-    build::BuildCallOnSelectedRequirements,
-    build::BExecutionContext,
+    build_BuildCallOnSelectedRequirements,
+    build_BExecutionContext,
     ResolutionInfo,
-    build::UnitResolutionInfo,
+    build_UnitResolutionInfo,
     CompoundBuildUnitRepository,
-    build::CompoundFirstFoundRepository,
+    build_CompoundFirstFoundRepository,
     BuildUnitRepository,
-    build::BeeModelRepository,
-    build::ExecutionStackRepository,
-    build::UnitRepositoryDescription,
+    build_UnitRepositoryDescription,
+    build_ExecutionStackRepository,
+    build_BeeModelRepository,
+    build_CompoundBuildUnitRepository,
+    IBuildUnitRepository,
+    build_Branch,
+    build_BSwitchExpression,
+    ITypedValueContainer,
+    build_BuildSet,
+    build_BuilderCallFacade,
+    EffectiveFacade,
+    build_EffectiveCapabilityFacade,
+    build_EffectiveRequirementFacade,
+    build_EffectiveUnitFacade,
+    IEffectiveFacade,
+    build_EffectiveBuilderCallFacade,
+    build_EffectiveFacade,
+    build_BuildUnitRepository,
+    PathGroupPredicate,
+    BInnerContext,
+    build_BuildResultContext,
+    build_IFunction,
+    IBuildUnitContainer,
+    BChainedExpression,
+    build_BeeModel,
+    BFunctionWrapper,
+    BJavaFunction,
+    build_ResolutionInfo,
+    build_BeeHive,
+    build_IRequiredCapabilityContainer,
+    RequiredCapability,
+    build_AliasedRequiredCapability,
+    build_SourcePredicate,
+    IBuilder,
+    build_BuilderWrapper,
+    build_BuilderJava,
+    B3Function,
+    build_Builder,
+    build_IProvidedCapabilityContainer,
+    build_OutputPredicate,
+    BuildConcernContext,
+    build_BuilderConcernContext,
+    build_BParameterPredicate,
+    build_BNamePredicate,
+    CapabilityPredicate,
+    build_UnitNamePredicate,
+    build_NameSpacePredicate,
     CompoundUnitProvider,
-    build::IBuildUnitRepository,
-    build::RepoOption,
+    build_IBuildUnitRepository,
+    build_RepoOption,
     UnitProvider,
-    build::CompoundUnitProvider,
-    build::DelegatingUnitProvider,
-    build::SwitchUnitProvider,
-    build::RepositoryUnitProvider,
+    build_DelegatingUnitProvider,
+    build_CompoundUnitProvider,
+    build_SwitchUnitProvider,
+    build_RepositoryUnitProvider,
     BExpression,
-    build::UnitProvider,
-    build::BuilderQuery,
-    build::RequiresPredicate,
+    build_CapabilityPredicate,
+    build_InputPredicate,
+    build_PathGroupPredicate,
+    build_ImplementsPredicate,
+    build_BuilderNamePredicate,
+    build_ProvidesPredicate,
+    build_UnitProvider,
+    build_BuilderQuery,
+    build_RequiresPredicate,
     BConcernContext,
-    build::BestFoundUnitProvider,
+    build_BestFoundUnitProvider,
     INamedValue,
-    build::BuilderInputNameDecorator,
-    build::Capability,
-    build::BParameterList,
+    build_BuilderInputNameDecorator,
+    build_Capability,
+    build_BParameterList,
     BuilderInput,
-    build::BuilderCall,
-    build::BuilderInputDecorator,
-    build::PathVector,
-    build::ConditionalPathVector,
+    build_BuilderCall,
+    build_BuilderInputDecorator,
+    build_PathVector,
+    build_ConditionalPathVector,
     Capability,
-    build::VersionedCapability,
-    build::UnitParameterDeclaration,
-    build::PathGroup,
-    build::IBuildUnitContainer,
-    build::FirstFoundUnitProvider,
-    build::ContainerConfiguration,
-    build::Repository,
-    build::Synchronization,
-    build::BPropertySet,
-    build::BConcern,
-    build::IType,
-    build::RequiredCapability,
-    build::BuilderInput,
-    build::BExpression,
+    build_VersionedCapability,
+    build_UnitParameterDeclaration,
+    build_PathGroup,
+    build_IBuildUnitContainer,
+    build_FirstFoundUnitProvider,
+    build_ContainerConfiguration,
+    build_Repository,
+    build_Synchronization,
+    build_BPropertySet,
+    build_BConcern,
+    build_IType,
+    build_RequiredCapability,
+    build_BuilderInput,
+    build_BExpression,
     IFunction,
-    build::FragmentHost,
+    build_FragmentHost,
     VersionedCapability,
     IVarName,
     IProvidedCapabilityContainer,
-    build::BuildConcernContext,
-    build::IBuilder,
+    build_BuildConcernContext,
+    build_IBuilder,
     IRequiredCapabilityContainer,
+    build_UnitConcernContext,
     BFunctionContainer,
-    build::BuildUnit,
-    build::CompoundBuildUnitRepository,
-    IBuildUnitRepository,
-    build::Branch,
-    build::BSwitchExpression,
-    ITypedValueContainer,
-    build::BuildSet,
-    build::BuilderCallFacade,
-    EffectiveFacade,
-    build::EffectiveRequirementFacade,
-    build::EffectiveCapabilityFacade,
-    build::EffectiveUnitFacade,
-    IEffectiveFacade,
-    build::EffectiveBuilderCallFacade,
-    build::EffectiveFacade,
-    build::BuildUnitRepository,
-    PathGroupPredicate,
-    BInnerContext,
-    build::BuildResultContext,
-    build::IFunction,
-    IBuildUnitContainer,
-    BChainedExpression,
-    build::BeeModel,
-    BFunctionWrapper,
-    BJavaFunction,
-    build::ResolutionInfo,
-    build::BeeHive,
-    build::IRequiredCapabilityContainer,
-    RequiredCapability,
-    build::AliasedRequiredCapability,
-    build::PathGroupPredicate,
-    build::SourcePredicate,
-    IBuilder,
-    build::BuilderWrapper,
-    build::BuilderJava,
-    B3Function,
-    build::Builder,
-    build::IProvidedCapabilityContainer,
-    build::OutputPredicate,
-    BuildConcernContext,
-    build::BuilderConcernContext,
-    build::UnitConcernContext,
-    build::BParameterPredicate,
-    build::ProvidesPredicate,
-    build::ImplementsPredicate,
-    build::BNamePredicate,
-    build::CapabilityPredicate,
-    build::InputPredicate,
-    build::BuilderNamePredicate,
-    CapabilityPredicate,
-    build::UnitNamePredicate,
-    build::NameSpacePredicate,
-    TriState,
-    BranchPointType,
+    build_BuildUnit,
     MergeConflictStrategy,
+    BranchPointType,
+    TriState,
 )
 
 # =============================================================================
@@ -155,16 +155,16 @@ def test_buildercallfacade_constructor_args():
 
 
 
-def test_build::ieffectivefacade_is_not_abstract():
-    assert not inspect.isabstract(build::IEffectiveFacade)
+def test_build_ieffectivefacade_is_not_abstract():
+    assert not inspect.isabstract(build_IEffectiveFacade)
 
 
-def test_build::ieffectivefacade_constructor_exists():
-    assert callable(build::IEffectiveFacade.__init__)
+def test_build_ieffectivefacade_constructor_exists():
+    assert callable(build_IEffectiveFacade.__init__)
 
 
-def test_build::ieffectivefacade_constructor_args():
-    sig = inspect.signature(build::IEffectiveFacade.__init__)
+def test_build_ieffectivefacade_constructor_args():
+    sig = inspect.signature(build_IEffectiveFacade.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -183,30 +183,30 @@ def test_buildcallsingle_constructor_args():
 
 
 
-def test_build::buildcallonreferencedrequirement_is_not_abstract():
-    assert not inspect.isabstract(build::BuildCallOnReferencedRequirement)
+def test_build_buildcallonreferencedrequirement_is_not_abstract():
+    assert not inspect.isabstract(build_BuildCallOnReferencedRequirement)
 
 
-def test_build::buildcallonreferencedrequirement_constructor_exists():
-    assert callable(build::BuildCallOnReferencedRequirement.__init__)
+def test_build_buildcallonreferencedrequirement_constructor_exists():
+    assert callable(build_BuildCallOnReferencedRequirement.__init__)
 
 
-def test_build::buildcallonreferencedrequirement_constructor_args():
-    sig = inspect.signature(build::BuildCallOnReferencedRequirement.__init__)
+def test_build_buildcallonreferencedrequirement_constructor_args():
+    sig = inspect.signature(build_BuildCallOnReferencedRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::buildcallondeclaredrequirement_is_not_abstract():
-    assert not inspect.isabstract(build::BuildCallOnDeclaredRequirement)
+def test_build_buildcallondeclaredrequirement_is_not_abstract():
+    assert not inspect.isabstract(build_BuildCallOnDeclaredRequirement)
 
 
-def test_build::buildcallondeclaredrequirement_constructor_exists():
-    assert callable(build::BuildCallOnDeclaredRequirement.__init__)
+def test_build_buildcallondeclaredrequirement_constructor_exists():
+    assert callable(build_BuildCallOnDeclaredRequirement.__init__)
 
 
-def test_build::buildcallondeclaredrequirement_constructor_args():
-    sig = inspect.signature(build::BuildCallOnDeclaredRequirement.__init__)
+def test_build_buildcallondeclaredrequirement_constructor_args():
+    sig = inspect.signature(build_BuildCallOnDeclaredRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -225,30 +225,30 @@ def test_buildercall_constructor_args():
 
 
 
-def test_build::buildcallsingle_is_not_abstract():
-    assert not inspect.isabstract(build::BuildCallSingle)
+def test_build_buildcallsingle_is_not_abstract():
+    assert not inspect.isabstract(build_BuildCallSingle)
 
 
-def test_build::buildcallsingle_constructor_exists():
-    assert callable(build::BuildCallSingle.__init__)
+def test_build_buildcallsingle_constructor_exists():
+    assert callable(build_BuildCallSingle.__init__)
 
 
-def test_build::buildcallsingle_constructor_args():
-    sig = inspect.signature(build::BuildCallSingle.__init__)
+def test_build_buildcallsingle_constructor_args():
+    sig = inspect.signature(build_BuildCallSingle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::buildcallmultiple_is_not_abstract():
-    assert not inspect.isabstract(build::BuildCallMultiple)
+def test_build_buildcallmultiple_is_not_abstract():
+    assert not inspect.isabstract(build_BuildCallMultiple)
 
 
-def test_build::buildcallmultiple_constructor_exists():
-    assert callable(build::BuildCallMultiple.__init__)
+def test_build_buildcallmultiple_constructor_exists():
+    assert callable(build_BuildCallMultiple.__init__)
 
 
-def test_build::buildcallmultiple_constructor_args():
-    sig = inspect.signature(build::BuildCallMultiple.__init__)
+def test_build_buildcallmultiple_constructor_args():
+    sig = inspect.signature(build_BuildCallMultiple.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -267,16 +267,16 @@ def test_bparameterdeclaration_constructor_args():
 
 
 
-def test_build::bwithexpression_is_not_abstract():
-    assert not inspect.isabstract(build::BWithExpression)
+def test_build_bwithexpression_is_not_abstract():
+    assert not inspect.isabstract(build_BWithExpression)
 
 
-def test_build::bwithexpression_constructor_exists():
-    assert callable(build::BWithExpression.__init__)
+def test_build_bwithexpression_constructor_exists():
+    assert callable(build_BWithExpression.__init__)
 
 
-def test_build::bwithexpression_constructor_args():
-    sig = inspect.signature(build::BWithExpression.__init__)
+def test_build_bwithexpression_constructor_args():
+    sig = inspect.signature(build_BWithExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -295,44 +295,44 @@ def test_builderinputdecorator_constructor_args():
 
 
 
-def test_build::builderinputcontextdecorator_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderInputContextDecorator)
+def test_build_builderinputcontextdecorator_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderInputContextDecorator)
 
 
-def test_build::builderinputcontextdecorator_constructor_exists():
-    assert callable(build::BuilderInputContextDecorator.__init__)
+def test_build_builderinputcontextdecorator_constructor_exists():
+    assert callable(build_BuilderInputContextDecorator.__init__)
 
 
-def test_build::builderinputcontextdecorator_constructor_args():
-    sig = inspect.signature(build::BuilderInputContextDecorator.__init__)
+def test_build_builderinputcontextdecorator_constructor_args():
+    sig = inspect.signature(build_BuilderInputContextDecorator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::builderinputgroup_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderInputGroup)
+def test_build_builderinputcondition_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderInputCondition)
 
 
-def test_build::builderinputgroup_constructor_exists():
-    assert callable(build::BuilderInputGroup.__init__)
+def test_build_builderinputcondition_constructor_exists():
+    assert callable(build_BuilderInputCondition.__init__)
 
 
-def test_build::builderinputgroup_constructor_args():
-    sig = inspect.signature(build::BuilderInputGroup.__init__)
+def test_build_builderinputcondition_constructor_args():
+    sig = inspect.signature(build_BuilderInputCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::builderinputcondition_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderInputCondition)
+def test_build_builderinputgroup_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderInputGroup)
 
 
-def test_build::builderinputcondition_constructor_exists():
-    assert callable(build::BuilderInputCondition.__init__)
+def test_build_builderinputgroup_constructor_exists():
+    assert callable(build_BuilderInputGroup.__init__)
 
 
-def test_build::builderinputcondition_constructor_args():
-    sig = inspect.signature(build::BuilderInputCondition.__init__)
+def test_build_builderinputgroup_constructor_args():
+    sig = inspect.signature(build_BuilderInputGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -351,30 +351,30 @@ def test_buildcallmultiple_constructor_args():
 
 
 
-def test_build::buildcallonselectedrequirements_is_not_abstract():
-    assert not inspect.isabstract(build::BuildCallOnSelectedRequirements)
+def test_build_buildcallonselectedrequirements_is_not_abstract():
+    assert not inspect.isabstract(build_BuildCallOnSelectedRequirements)
 
 
-def test_build::buildcallonselectedrequirements_constructor_exists():
-    assert callable(build::BuildCallOnSelectedRequirements.__init__)
+def test_build_buildcallonselectedrequirements_constructor_exists():
+    assert callable(build_BuildCallOnSelectedRequirements.__init__)
 
 
-def test_build::buildcallonselectedrequirements_constructor_args():
-    sig = inspect.signature(build::BuildCallOnSelectedRequirements.__init__)
+def test_build_buildcallonselectedrequirements_constructor_args():
+    sig = inspect.signature(build_BuildCallOnSelectedRequirements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::bexecutioncontext_is_not_abstract():
-    assert not inspect.isabstract(build::BExecutionContext)
+def test_build_bexecutioncontext_is_not_abstract():
+    assert not inspect.isabstract(build_BExecutionContext)
 
 
-def test_build::bexecutioncontext_constructor_exists():
-    assert callable(build::BExecutionContext.__init__)
+def test_build_bexecutioncontext_constructor_exists():
+    assert callable(build_BExecutionContext.__init__)
 
 
-def test_build::bexecutioncontext_constructor_args():
-    sig = inspect.signature(build::BExecutionContext.__init__)
+def test_build_bexecutioncontext_constructor_args():
+    sig = inspect.signature(build_BExecutionContext.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -393,16 +393,16 @@ def test_resolutioninfo_constructor_args():
 
 
 
-def test_build::unitresolutioninfo_is_not_abstract():
-    assert not inspect.isabstract(build::UnitResolutionInfo)
+def test_build_unitresolutioninfo_is_not_abstract():
+    assert not inspect.isabstract(build_UnitResolutionInfo)
 
 
-def test_build::unitresolutioninfo_constructor_exists():
-    assert callable(build::UnitResolutionInfo.__init__)
+def test_build_unitresolutioninfo_constructor_exists():
+    assert callable(build_UnitResolutionInfo.__init__)
 
 
-def test_build::unitresolutioninfo_constructor_args():
-    sig = inspect.signature(build::UnitResolutionInfo.__init__)
+def test_build_unitresolutioninfo_constructor_args():
+    sig = inspect.signature(build_UnitResolutionInfo.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -421,16 +421,16 @@ def test_compoundbuildunitrepository_constructor_args():
 
 
 
-def test_build::compoundfirstfoundrepository_is_not_abstract():
-    assert not inspect.isabstract(build::CompoundFirstFoundRepository)
+def test_build_compoundfirstfoundrepository_is_not_abstract():
+    assert not inspect.isabstract(build_CompoundFirstFoundRepository)
 
 
-def test_build::compoundfirstfoundrepository_constructor_exists():
-    assert callable(build::CompoundFirstFoundRepository.__init__)
+def test_build_compoundfirstfoundrepository_constructor_exists():
+    assert callable(build_CompoundFirstFoundRepository.__init__)
 
 
-def test_build::compoundfirstfoundrepository_constructor_args():
-    sig = inspect.signature(build::CompoundFirstFoundRepository.__init__)
+def test_build_compoundfirstfoundrepository_constructor_args():
+    sig = inspect.signature(build_CompoundFirstFoundRepository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -449,53 +449,949 @@ def test_buildunitrepository_constructor_args():
 
 
 
-def test_build::beemodelrepository_is_not_abstract():
-    assert not inspect.isabstract(build::BeeModelRepository)
+def test_build_unitrepositorydescription_is_not_abstract():
+    assert not inspect.isabstract(build_UnitRepositoryDescription)
 
 
-def test_build::beemodelrepository_constructor_exists():
-    assert callable(build::BeeModelRepository.__init__)
+def test_build_unitrepositorydescription_constructor_exists():
+    assert callable(build_UnitRepositoryDescription.__init__)
 
 
-def test_build::beemodelrepository_constructor_args():
-    sig = inspect.signature(build::BeeModelRepository.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::executionstackrepository_is_not_abstract():
-    assert not inspect.isabstract(build::ExecutionStackRepository)
-
-
-def test_build::executionstackrepository_constructor_exists():
-    assert callable(build::ExecutionStackRepository.__init__)
-
-
-def test_build::executionstackrepository_constructor_args():
-    sig = inspect.signature(build::ExecutionStackRepository.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::unitrepositorydescription_is_not_abstract():
-    assert not inspect.isabstract(build::UnitRepositoryDescription)
-
-
-def test_build::unitrepositorydescription_constructor_exists():
-    assert callable(build::UnitRepositoryDescription.__init__)
-
-
-def test_build::unitrepositorydescription_constructor_args():
-    sig = inspect.signature(build::UnitRepositoryDescription.__init__)
+def test_build_unitrepositorydescription_constructor_args():
+    sig = inspect.signature(build_UnitRepositoryDescription.__init__)
     params = list(sig.parameters.keys())
     assert "evaluatedOptions" in params, "Missing parameter 'evaluatedOptions'"
 
-def test_build::unitrepositorydescription_has_evaluatedOptions():
-    assert hasattr(build::UnitRepositoryDescription, "evaluatedOptions")
+def test_build_unitrepositorydescription_has_evaluatedOptions():
+    assert hasattr(build_UnitRepositoryDescription, "evaluatedOptions")
     descriptor = None
-    for klass in build::UnitRepositoryDescription.__mro__:
+    for klass in build_UnitRepositoryDescription.__mro__:
         if "evaluatedOptions" in klass.__dict__:
             descriptor = klass.__dict__["evaluatedOptions"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_executionstackrepository_is_not_abstract():
+    assert not inspect.isabstract(build_ExecutionStackRepository)
+
+
+def test_build_executionstackrepository_constructor_exists():
+    assert callable(build_ExecutionStackRepository.__init__)
+
+
+def test_build_executionstackrepository_constructor_args():
+    sig = inspect.signature(build_ExecutionStackRepository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_beemodelrepository_is_not_abstract():
+    assert not inspect.isabstract(build_BeeModelRepository)
+
+
+def test_build_beemodelrepository_constructor_exists():
+    assert callable(build_BeeModelRepository.__init__)
+
+
+def test_build_beemodelrepository_constructor_args():
+    sig = inspect.signature(build_BeeModelRepository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_compoundbuildunitrepository_is_not_abstract():
+    assert not inspect.isabstract(build_CompoundBuildUnitRepository)
+
+
+def test_build_compoundbuildunitrepository_constructor_exists():
+    assert callable(build_CompoundBuildUnitRepository.__init__)
+
+
+def test_build_compoundbuildunitrepository_constructor_args():
+    sig = inspect.signature(build_CompoundBuildUnitRepository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ibuildunitrepository_is_not_abstract():
+    assert not inspect.isabstract(IBuildUnitRepository)
+
+
+def test_ibuildunitrepository_constructor_exists():
+    assert callable(IBuildUnitRepository.__init__)
+
+
+def test_ibuildunitrepository_constructor_args():
+    sig = inspect.signature(IBuildUnitRepository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_branch_is_not_abstract():
+    assert not inspect.isabstract(build_Branch)
+
+
+def test_build_branch_constructor_exists():
+    assert callable(build_Branch.__init__)
+
+
+def test_build_branch_constructor_args():
+    sig = inspect.signature(build_Branch.__init__)
+    params = list(sig.parameters.keys())
+    assert "update" in params, "Missing parameter 'update'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "replace" in params, "Missing parameter 'replace'"
+    assert "branchPointType" in params, "Missing parameter 'branchPointType'"
+    assert "documentation" in params, "Missing parameter 'documentation'"
+    assert "mergeStrategy" in params, "Missing parameter 'mergeStrategy'"
+    assert "checkout" in params, "Missing parameter 'checkout'"
+    assert "acceptDirty" in params, "Missing parameter 'acceptDirty'"
+
+def test_build_branch_has_update():
+    assert hasattr(build_Branch, "update")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "update" in klass.__dict__:
+            descriptor = klass.__dict__["update"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_name():
+    assert hasattr(build_Branch, "name")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_replace():
+    assert hasattr(build_Branch, "replace")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "replace" in klass.__dict__:
+            descriptor = klass.__dict__["replace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_branchPointType():
+    assert hasattr(build_Branch, "branchPointType")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "branchPointType" in klass.__dict__:
+            descriptor = klass.__dict__["branchPointType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_documentation():
+    assert hasattr(build_Branch, "documentation")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "documentation" in klass.__dict__:
+            descriptor = klass.__dict__["documentation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_mergeStrategy():
+    assert hasattr(build_Branch, "mergeStrategy")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "mergeStrategy" in klass.__dict__:
+            descriptor = klass.__dict__["mergeStrategy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_checkout():
+    assert hasattr(build_Branch, "checkout")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "checkout" in klass.__dict__:
+            descriptor = klass.__dict__["checkout"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_branch_has_acceptDirty():
+    assert hasattr(build_Branch, "acceptDirty")
+    descriptor = None
+    for klass in build_Branch.__mro__:
+        if "acceptDirty" in klass.__dict__:
+            descriptor = klass.__dict__["acceptDirty"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_bswitchexpression_is_not_abstract():
+    assert not inspect.isabstract(build_BSwitchExpression)
+
+
+def test_build_bswitchexpression_constructor_exists():
+    assert callable(build_BSwitchExpression.__init__)
+
+
+def test_build_bswitchexpression_constructor_args():
+    sig = inspect.signature(build_BSwitchExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_itypedvaluecontainer_is_not_abstract():
+    assert not inspect.isabstract(ITypedValueContainer)
+
+
+def test_itypedvaluecontainer_constructor_exists():
+    assert callable(ITypedValueContainer.__init__)
+
+
+def test_itypedvaluecontainer_constructor_args():
+    sig = inspect.signature(ITypedValueContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_buildset_is_not_abstract():
+    assert not inspect.isabstract(build_BuildSet)
+
+
+def test_build_buildset_constructor_exists():
+    assert callable(build_BuildSet.__init__)
+
+
+def test_build_buildset_constructor_args():
+    sig = inspect.signature(build_BuildSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "valueMap" in params, "Missing parameter 'valueMap'"
+    assert "pathIterator" in params, "Missing parameter 'pathIterator'"
+
+def test_build_buildset_has_valueMap():
+    assert hasattr(build_BuildSet, "valueMap")
+    descriptor = None
+    for klass in build_BuildSet.__mro__:
+        if "valueMap" in klass.__dict__:
+            descriptor = klass.__dict__["valueMap"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_buildset_has_pathIterator():
+    assert hasattr(build_BuildSet, "pathIterator")
+    descriptor = None
+    for klass in build_BuildSet.__mro__:
+        if "pathIterator" in klass.__dict__:
+            descriptor = klass.__dict__["pathIterator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_buildercallfacade_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderCallFacade)
+
+
+def test_build_buildercallfacade_constructor_exists():
+    assert callable(build_BuilderCallFacade.__init__)
+
+
+def test_build_buildercallfacade_constructor_args():
+    sig = inspect.signature(build_BuilderCallFacade.__init__)
+    params = list(sig.parameters.keys())
+    assert "aliases" in params, "Missing parameter 'aliases'"
+
+def test_build_buildercallfacade_has_aliases():
+    assert hasattr(build_BuilderCallFacade, "aliases")
+    descriptor = None
+    for klass in build_BuilderCallFacade.__mro__:
+        if "aliases" in klass.__dict__:
+            descriptor = klass.__dict__["aliases"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_effectivefacade_is_not_abstract():
+    assert not inspect.isabstract(EffectiveFacade)
+
+
+def test_effectivefacade_constructor_exists():
+    assert callable(EffectiveFacade.__init__)
+
+
+def test_effectivefacade_constructor_args():
+    sig = inspect.signature(EffectiveFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_effectivecapabilityfacade_is_not_abstract():
+    assert not inspect.isabstract(build_EffectiveCapabilityFacade)
+
+
+def test_build_effectivecapabilityfacade_constructor_exists():
+    assert callable(build_EffectiveCapabilityFacade.__init__)
+
+
+def test_build_effectivecapabilityfacade_constructor_args():
+    sig = inspect.signature(build_EffectiveCapabilityFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_effectiverequirementfacade_is_not_abstract():
+    assert not inspect.isabstract(build_EffectiveRequirementFacade)
+
+
+def test_build_effectiverequirementfacade_constructor_exists():
+    assert callable(build_EffectiveRequirementFacade.__init__)
+
+
+def test_build_effectiverequirementfacade_constructor_args():
+    sig = inspect.signature(build_EffectiveRequirementFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_effectiveunitfacade_is_not_abstract():
+    assert not inspect.isabstract(build_EffectiveUnitFacade)
+
+
+def test_build_effectiveunitfacade_constructor_exists():
+    assert callable(build_EffectiveUnitFacade.__init__)
+
+
+def test_build_effectiveunitfacade_constructor_args():
+    sig = inspect.signature(build_EffectiveUnitFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ieffectivefacade_is_not_abstract():
+    assert not inspect.isabstract(IEffectiveFacade)
+
+
+def test_ieffectivefacade_constructor_exists():
+    assert callable(IEffectiveFacade.__init__)
+
+
+def test_ieffectivefacade_constructor_args():
+    sig = inspect.signature(IEffectiveFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_effectivebuildercallfacade_is_not_abstract():
+    assert not inspect.isabstract(build_EffectiveBuilderCallFacade)
+
+
+def test_build_effectivebuildercallfacade_constructor_exists():
+    assert callable(build_EffectiveBuilderCallFacade.__init__)
+
+
+def test_build_effectivebuildercallfacade_constructor_args():
+    sig = inspect.signature(build_EffectiveBuilderCallFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_effectivefacade_is_not_abstract():
+    assert not inspect.isabstract(build_EffectiveFacade)
+
+
+def test_build_effectivefacade_constructor_exists():
+    assert callable(build_EffectiveFacade.__init__)
+
+
+def test_build_effectivefacade_constructor_args():
+    sig = inspect.signature(build_EffectiveFacade.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_buildunitrepository_is_not_abstract():
+    assert not inspect.isabstract(build_BuildUnitRepository)
+
+
+def test_build_buildunitrepository_constructor_exists():
+    assert callable(build_BuildUnitRepository.__init__)
+
+
+def test_build_buildunitrepository_constructor_args():
+    sig = inspect.signature(build_BuildUnitRepository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pathgrouppredicate_is_not_abstract():
+    assert not inspect.isabstract(PathGroupPredicate)
+
+
+def test_pathgrouppredicate_constructor_exists():
+    assert callable(PathGroupPredicate.__init__)
+
+
+def test_pathgrouppredicate_constructor_args():
+    sig = inspect.signature(PathGroupPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_binnercontext_is_not_abstract():
+    assert not inspect.isabstract(BInnerContext)
+
+
+def test_binnercontext_constructor_exists():
+    assert callable(BInnerContext.__init__)
+
+
+def test_binnercontext_constructor_args():
+    sig = inspect.signature(BInnerContext.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_buildresultcontext_is_not_abstract():
+    assert not inspect.isabstract(build_BuildResultContext)
+
+
+def test_build_buildresultcontext_constructor_exists():
+    assert callable(build_BuildResultContext.__init__)
+
+
+def test_build_buildresultcontext_constructor_args():
+    sig = inspect.signature(build_BuildResultContext.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_ifunction_is_not_abstract():
+    assert not inspect.isabstract(build_IFunction)
+
+
+def test_build_ifunction_constructor_exists():
+    assert callable(build_IFunction.__init__)
+
+
+def test_build_ifunction_constructor_args():
+    sig = inspect.signature(build_IFunction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ibuildunitcontainer_is_not_abstract():
+    assert not inspect.isabstract(IBuildUnitContainer)
+
+
+def test_ibuildunitcontainer_constructor_exists():
+    assert callable(IBuildUnitContainer.__init__)
+
+
+def test_ibuildunitcontainer_constructor_args():
+    sig = inspect.signature(IBuildUnitContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bchainedexpression_is_not_abstract():
+    assert not inspect.isabstract(BChainedExpression)
+
+
+def test_bchainedexpression_constructor_exists():
+    assert callable(BChainedExpression.__init__)
+
+
+def test_bchainedexpression_constructor_args():
+    sig = inspect.signature(BChainedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_beemodel_is_not_abstract():
+    assert not inspect.isabstract(build_BeeModel)
+
+
+def test_build_beemodel_constructor_exists():
+    assert callable(build_BeeModel.__init__)
+
+
+def test_build_beemodel_constructor_args():
+    sig = inspect.signature(build_BeeModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bfunctionwrapper_is_not_abstract():
+    assert not inspect.isabstract(BFunctionWrapper)
+
+
+def test_bfunctionwrapper_constructor_exists():
+    assert callable(BFunctionWrapper.__init__)
+
+
+def test_bfunctionwrapper_constructor_args():
+    sig = inspect.signature(BFunctionWrapper.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bjavafunction_is_not_abstract():
+    assert not inspect.isabstract(BJavaFunction)
+
+
+def test_bjavafunction_constructor_exists():
+    assert callable(BJavaFunction.__init__)
+
+
+def test_bjavafunction_constructor_args():
+    sig = inspect.signature(BJavaFunction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_resolutioninfo_is_not_abstract():
+    assert not inspect.isabstract(build_ResolutionInfo)
+
+
+def test_build_resolutioninfo_constructor_exists():
+    assert callable(build_ResolutionInfo.__init__)
+
+
+def test_build_resolutioninfo_constructor_args():
+    sig = inspect.signature(build_ResolutionInfo.__init__)
+    params = list(sig.parameters.keys())
+    assert "status" in params, "Missing parameter 'status'"
+
+def test_build_resolutioninfo_has_status():
+    assert hasattr(build_ResolutionInfo, "status")
+    descriptor = None
+    for klass in build_ResolutionInfo.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_beehive_is_not_abstract():
+    assert not inspect.isabstract(build_BeeHive)
+
+
+def test_build_beehive_constructor_exists():
+    assert callable(build_BeeHive.__init__)
+
+
+def test_build_beehive_constructor_args():
+    sig = inspect.signature(build_BeeHive.__init__)
+    params = list(sig.parameters.keys())
+    assert "resolutions" in params, "Missing parameter 'resolutions'"
+
+def test_build_beehive_has_resolutions():
+    assert hasattr(build_BeeHive, "resolutions")
+    descriptor = None
+    for klass in build_BeeHive.__mro__:
+        if "resolutions" in klass.__dict__:
+            descriptor = klass.__dict__["resolutions"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_irequiredcapabilitycontainer_is_not_abstract():
+    assert not inspect.isabstract(build_IRequiredCapabilityContainer)
+
+
+def test_build_irequiredcapabilitycontainer_constructor_exists():
+    assert callable(build_IRequiredCapabilityContainer.__init__)
+
+
+def test_build_irequiredcapabilitycontainer_constructor_args():
+    sig = inspect.signature(build_IRequiredCapabilityContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_requiredcapability_is_not_abstract():
+    assert not inspect.isabstract(RequiredCapability)
+
+
+def test_requiredcapability_constructor_exists():
+    assert callable(RequiredCapability.__init__)
+
+
+def test_requiredcapability_constructor_args():
+    sig = inspect.signature(RequiredCapability.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_aliasedrequiredcapability_is_not_abstract():
+    assert not inspect.isabstract(build_AliasedRequiredCapability)
+
+
+def test_build_aliasedrequiredcapability_constructor_exists():
+    assert callable(build_AliasedRequiredCapability.__init__)
+
+
+def test_build_aliasedrequiredcapability_constructor_args():
+    sig = inspect.signature(build_AliasedRequiredCapability.__init__)
+    params = list(sig.parameters.keys())
+    assert "alias" in params, "Missing parameter 'alias'"
+
+def test_build_aliasedrequiredcapability_has_alias():
+    assert hasattr(build_AliasedRequiredCapability, "alias")
+    descriptor = None
+    for klass in build_AliasedRequiredCapability.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_sourcepredicate_is_not_abstract():
+    assert not inspect.isabstract(build_SourcePredicate)
+
+
+def test_build_sourcepredicate_constructor_exists():
+    assert callable(build_SourcePredicate.__init__)
+
+
+def test_build_sourcepredicate_constructor_args():
+    sig = inspect.signature(build_SourcePredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ibuilder_is_not_abstract():
+    assert not inspect.isabstract(IBuilder)
+
+
+def test_ibuilder_constructor_exists():
+    assert callable(IBuilder.__init__)
+
+
+def test_ibuilder_constructor_args():
+    sig = inspect.signature(IBuilder.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_builderwrapper_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderWrapper)
+
+
+def test_build_builderwrapper_constructor_exists():
+    assert callable(build_BuilderWrapper.__init__)
+
+
+def test_build_builderwrapper_constructor_args():
+    sig = inspect.signature(build_BuilderWrapper.__init__)
+    params = list(sig.parameters.keys())
+    assert "defaultPropertiesAdvised" in params, "Missing parameter 'defaultPropertiesAdvised'"
+    assert "outputAdvised" in params, "Missing parameter 'outputAdvised'"
+    assert "inputAdvised" in params, "Missing parameter 'inputAdvised'"
+    assert "providesAdvised" in params, "Missing parameter 'providesAdvised'"
+    assert "sourceAdvised" in params, "Missing parameter 'sourceAdvised'"
+    assert "unitTypeAdvised" in params, "Missing parameter 'unitTypeAdvised'"
+
+def test_build_builderwrapper_has_defaultPropertiesAdvised():
+    assert hasattr(build_BuilderWrapper, "defaultPropertiesAdvised")
+    descriptor = None
+    for klass in build_BuilderWrapper.__mro__:
+        if "defaultPropertiesAdvised" in klass.__dict__:
+            descriptor = klass.__dict__["defaultPropertiesAdvised"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderwrapper_has_outputAdvised():
+    assert hasattr(build_BuilderWrapper, "outputAdvised")
+    descriptor = None
+    for klass in build_BuilderWrapper.__mro__:
+        if "outputAdvised" in klass.__dict__:
+            descriptor = klass.__dict__["outputAdvised"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderwrapper_has_inputAdvised():
+    assert hasattr(build_BuilderWrapper, "inputAdvised")
+    descriptor = None
+    for klass in build_BuilderWrapper.__mro__:
+        if "inputAdvised" in klass.__dict__:
+            descriptor = klass.__dict__["inputAdvised"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderwrapper_has_providesAdvised():
+    assert hasattr(build_BuilderWrapper, "providesAdvised")
+    descriptor = None
+    for klass in build_BuilderWrapper.__mro__:
+        if "providesAdvised" in klass.__dict__:
+            descriptor = klass.__dict__["providesAdvised"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderwrapper_has_sourceAdvised():
+    assert hasattr(build_BuilderWrapper, "sourceAdvised")
+    descriptor = None
+    for klass in build_BuilderWrapper.__mro__:
+        if "sourceAdvised" in klass.__dict__:
+            descriptor = klass.__dict__["sourceAdvised"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderwrapper_has_unitTypeAdvised():
+    assert hasattr(build_BuilderWrapper, "unitTypeAdvised")
+    descriptor = None
+    for klass in build_BuilderWrapper.__mro__:
+        if "unitTypeAdvised" in klass.__dict__:
+            descriptor = klass.__dict__["unitTypeAdvised"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_builderjava_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderJava)
+
+
+def test_build_builderjava_constructor_exists():
+    assert callable(build_BuilderJava.__init__)
+
+
+def test_build_builderjava_constructor_args():
+    sig = inspect.signature(build_BuilderJava.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_b3function_is_not_abstract():
+    assert not inspect.isabstract(B3Function)
+
+
+def test_b3function_constructor_exists():
+    assert callable(B3Function.__init__)
+
+
+def test_b3function_constructor_args():
+    sig = inspect.signature(B3Function.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_builder_is_not_abstract():
+    assert not inspect.isabstract(build_Builder)
+
+
+def test_build_builder_constructor_exists():
+    assert callable(build_Builder.__init__)
+
+
+def test_build_builder_constructor_args():
+    sig = inspect.signature(build_Builder.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_iprovidedcapabilitycontainer_is_not_abstract():
+    assert not inspect.isabstract(build_IProvidedCapabilityContainer)
+
+
+def test_build_iprovidedcapabilitycontainer_constructor_exists():
+    assert callable(build_IProvidedCapabilityContainer.__init__)
+
+
+def test_build_iprovidedcapabilitycontainer_constructor_args():
+    sig = inspect.signature(build_IProvidedCapabilityContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_outputpredicate_is_not_abstract():
+    assert not inspect.isabstract(build_OutputPredicate)
+
+
+def test_build_outputpredicate_constructor_exists():
+    assert callable(build_OutputPredicate.__init__)
+
+
+def test_build_outputpredicate_constructor_args():
+    sig = inspect.signature(build_OutputPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_buildconcerncontext_is_not_abstract():
+    assert not inspect.isabstract(BuildConcernContext)
+
+
+def test_buildconcerncontext_constructor_exists():
+    assert callable(BuildConcernContext.__init__)
+
+
+def test_buildconcerncontext_constructor_args():
+    sig = inspect.signature(BuildConcernContext.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_builderconcerncontext_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderConcernContext)
+
+
+def test_build_builderconcerncontext_constructor_exists():
+    assert callable(build_BuilderConcernContext.__init__)
+
+
+def test_build_builderconcerncontext_constructor_args():
+    sig = inspect.signature(build_BuilderConcernContext.__init__)
+    params = list(sig.parameters.keys())
+    assert "removePostCondition" in params, "Missing parameter 'removePostCondition'"
+    assert "removePreCondition" in params, "Missing parameter 'removePreCondition'"
+    assert "removePostInputCondition" in params, "Missing parameter 'removePostInputCondition'"
+    assert "sourceAnnotationsRemovals" in params, "Missing parameter 'sourceAnnotationsRemovals'"
+    assert "varArgs" in params, "Missing parameter 'varArgs'"
+    assert "outputAnnotationsRemovals" in params, "Missing parameter 'outputAnnotationsRemovals'"
+    assert "matchParameters" in params, "Missing parameter 'matchParameters'"
+
+def test_build_builderconcerncontext_has_removePostCondition():
+    assert hasattr(build_BuilderConcernContext, "removePostCondition")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "removePostCondition" in klass.__dict__:
+            descriptor = klass.__dict__["removePostCondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderconcerncontext_has_removePreCondition():
+    assert hasattr(build_BuilderConcernContext, "removePreCondition")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "removePreCondition" in klass.__dict__:
+            descriptor = klass.__dict__["removePreCondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderconcerncontext_has_removePostInputCondition():
+    assert hasattr(build_BuilderConcernContext, "removePostInputCondition")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "removePostInputCondition" in klass.__dict__:
+            descriptor = klass.__dict__["removePostInputCondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderconcerncontext_has_sourceAnnotationsRemovals():
+    assert hasattr(build_BuilderConcernContext, "sourceAnnotationsRemovals")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "sourceAnnotationsRemovals" in klass.__dict__:
+            descriptor = klass.__dict__["sourceAnnotationsRemovals"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderconcerncontext_has_varArgs():
+    assert hasattr(build_BuilderConcernContext, "varArgs")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "varArgs" in klass.__dict__:
+            descriptor = klass.__dict__["varArgs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderconcerncontext_has_outputAnnotationsRemovals():
+    assert hasattr(build_BuilderConcernContext, "outputAnnotationsRemovals")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "outputAnnotationsRemovals" in klass.__dict__:
+            descriptor = klass.__dict__["outputAnnotationsRemovals"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_builderconcerncontext_has_matchParameters():
+    assert hasattr(build_BuilderConcernContext, "matchParameters")
+    descriptor = None
+    for klass in build_BuilderConcernContext.__mro__:
+        if "matchParameters" in klass.__dict__:
+            descriptor = klass.__dict__["matchParameters"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_bparameterpredicate_is_not_abstract():
+    assert not inspect.isabstract(build_BParameterPredicate)
+
+
+def test_build_bparameterpredicate_constructor_exists():
+    assert callable(build_BParameterPredicate.__init__)
+
+
+def test_build_bparameterpredicate_constructor_args():
+    sig = inspect.signature(build_BParameterPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_bnamepredicate_is_not_abstract():
+    assert not inspect.isabstract(build_BNamePredicate)
+
+
+def test_build_bnamepredicate_constructor_exists():
+    assert callable(build_BNamePredicate.__init__)
+
+
+def test_build_bnamepredicate_constructor_args():
+    sig = inspect.signature(build_BNamePredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_capabilitypredicate_is_not_abstract():
+    assert not inspect.isabstract(CapabilityPredicate)
+
+
+def test_capabilitypredicate_constructor_exists():
+    assert callable(CapabilityPredicate.__init__)
+
+
+def test_capabilitypredicate_constructor_args():
+    sig = inspect.signature(CapabilityPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_unitnamepredicate_is_not_abstract():
+    assert not inspect.isabstract(build_UnitNamePredicate)
+
+
+def test_build_unitnamepredicate_constructor_exists():
+    assert callable(build_UnitNamePredicate.__init__)
+
+
+def test_build_unitnamepredicate_constructor_args():
+    sig = inspect.signature(build_UnitNamePredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_namespacepredicate_is_not_abstract():
+    assert not inspect.isabstract(build_NameSpacePredicate)
+
+
+def test_build_namespacepredicate_constructor_exists():
+    assert callable(build_NameSpacePredicate.__init__)
+
+
+def test_build_namespacepredicate_constructor_args():
+    sig = inspect.signature(build_NameSpacePredicate.__init__)
+    params = list(sig.parameters.keys())
+    assert "nameSpace" in params, "Missing parameter 'nameSpace'"
+
+def test_build_namespacepredicate_has_nameSpace():
+    assert hasattr(build_NameSpacePredicate, "nameSpace")
+    descriptor = None
+    for klass in build_NameSpacePredicate.__mro__:
+        if "nameSpace" in klass.__dict__:
+            descriptor = klass.__dict__["nameSpace"]
             break
     assert isinstance(descriptor, property)
 
@@ -515,37 +1411,37 @@ def test_compoundunitprovider_constructor_args():
 
 
 
-def test_build::ibuildunitrepository_is_not_abstract():
-    assert not inspect.isabstract(build::IBuildUnitRepository)
+def test_build_ibuildunitrepository_is_not_abstract():
+    assert not inspect.isabstract(build_IBuildUnitRepository)
 
 
-def test_build::ibuildunitrepository_constructor_exists():
-    assert callable(build::IBuildUnitRepository.__init__)
+def test_build_ibuildunitrepository_constructor_exists():
+    assert callable(build_IBuildUnitRepository.__init__)
 
 
-def test_build::ibuildunitrepository_constructor_args():
-    sig = inspect.signature(build::IBuildUnitRepository.__init__)
+def test_build_ibuildunitrepository_constructor_args():
+    sig = inspect.signature(build_IBuildUnitRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::repooption_is_not_abstract():
-    assert not inspect.isabstract(build::RepoOption)
+def test_build_repooption_is_not_abstract():
+    assert not inspect.isabstract(build_RepoOption)
 
 
-def test_build::repooption_constructor_exists():
-    assert callable(build::RepoOption.__init__)
+def test_build_repooption_constructor_exists():
+    assert callable(build_RepoOption.__init__)
 
 
-def test_build::repooption_constructor_args():
-    sig = inspect.signature(build::RepoOption.__init__)
+def test_build_repooption_constructor_args():
+    sig = inspect.signature(build_RepoOption.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_build::repooption_has_name():
-    assert hasattr(build::RepoOption, "name")
+def test_build_repooption_has_name():
+    assert hasattr(build_RepoOption, "name")
     descriptor = None
-    for klass in build::RepoOption.__mro__:
+    for klass in build_RepoOption.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -567,58 +1463,58 @@ def test_unitprovider_constructor_args():
 
 
 
-def test_build::compoundunitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::CompoundUnitProvider)
+def test_build_delegatingunitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_DelegatingUnitProvider)
 
 
-def test_build::compoundunitprovider_constructor_exists():
-    assert callable(build::CompoundUnitProvider.__init__)
+def test_build_delegatingunitprovider_constructor_exists():
+    assert callable(build_DelegatingUnitProvider.__init__)
 
 
-def test_build::compoundunitprovider_constructor_args():
-    sig = inspect.signature(build::CompoundUnitProvider.__init__)
+def test_build_delegatingunitprovider_constructor_args():
+    sig = inspect.signature(build_DelegatingUnitProvider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::delegatingunitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::DelegatingUnitProvider)
+def test_build_compoundunitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_CompoundUnitProvider)
 
 
-def test_build::delegatingunitprovider_constructor_exists():
-    assert callable(build::DelegatingUnitProvider.__init__)
+def test_build_compoundunitprovider_constructor_exists():
+    assert callable(build_CompoundUnitProvider.__init__)
 
 
-def test_build::delegatingunitprovider_constructor_args():
-    sig = inspect.signature(build::DelegatingUnitProvider.__init__)
+def test_build_compoundunitprovider_constructor_args():
+    sig = inspect.signature(build_CompoundUnitProvider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::switchunitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::SwitchUnitProvider)
+def test_build_switchunitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_SwitchUnitProvider)
 
 
-def test_build::switchunitprovider_constructor_exists():
-    assert callable(build::SwitchUnitProvider.__init__)
+def test_build_switchunitprovider_constructor_exists():
+    assert callable(build_SwitchUnitProvider.__init__)
 
 
-def test_build::switchunitprovider_constructor_args():
-    sig = inspect.signature(build::SwitchUnitProvider.__init__)
+def test_build_switchunitprovider_constructor_args():
+    sig = inspect.signature(build_SwitchUnitProvider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::repositoryunitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::RepositoryUnitProvider)
+def test_build_repositoryunitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_RepositoryUnitProvider)
 
 
-def test_build::repositoryunitprovider_constructor_exists():
-    assert callable(build::RepositoryUnitProvider.__init__)
+def test_build_repositoryunitprovider_constructor_exists():
+    assert callable(build_RepositoryUnitProvider.__init__)
 
 
-def test_build::repositoryunitprovider_constructor_args():
-    sig = inspect.signature(build::RepositoryUnitProvider.__init__)
+def test_build_repositoryunitprovider_constructor_args():
+    sig = inspect.signature(build_RepositoryUnitProvider.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -637,23 +1533,117 @@ def test_bexpression_constructor_args():
 
 
 
-def test_build::unitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::UnitProvider)
+def test_build_capabilitypredicate_is_not_abstract():
+    assert not inspect.isabstract(build_CapabilityPredicate)
 
 
-def test_build::unitprovider_constructor_exists():
-    assert callable(build::UnitProvider.__init__)
+def test_build_capabilitypredicate_constructor_exists():
+    assert callable(build_CapabilityPredicate.__init__)
 
 
-def test_build::unitprovider_constructor_args():
-    sig = inspect.signature(build::UnitProvider.__init__)
+def test_build_capabilitypredicate_constructor_args():
+    sig = inspect.signature(build_CapabilityPredicate.__init__)
+    params = list(sig.parameters.keys())
+    assert "versionRange" in params, "Missing parameter 'versionRange'"
+
+def test_build_capabilitypredicate_has_versionRange():
+    assert hasattr(build_CapabilityPredicate, "versionRange")
+    descriptor = None
+    for klass in build_CapabilityPredicate.__mro__:
+        if "versionRange" in klass.__dict__:
+            descriptor = klass.__dict__["versionRange"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_build_inputpredicate_is_not_abstract():
+    assert not inspect.isabstract(build_InputPredicate)
+
+
+def test_build_inputpredicate_constructor_exists():
+    assert callable(build_InputPredicate.__init__)
+
+
+def test_build_inputpredicate_constructor_args():
+    sig = inspect.signature(build_InputPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_pathgrouppredicate_is_not_abstract():
+    assert not inspect.isabstract(build_PathGroupPredicate)
+
+
+def test_build_pathgrouppredicate_constructor_exists():
+    assert callable(build_PathGroupPredicate.__init__)
+
+
+def test_build_pathgrouppredicate_constructor_args():
+    sig = inspect.signature(build_PathGroupPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_implementspredicate_is_not_abstract():
+    assert not inspect.isabstract(build_ImplementsPredicate)
+
+
+def test_build_implementspredicate_constructor_exists():
+    assert callable(build_ImplementsPredicate.__init__)
+
+
+def test_build_implementspredicate_constructor_args():
+    sig = inspect.signature(build_ImplementsPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_buildernamepredicate_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderNamePredicate)
+
+
+def test_build_buildernamepredicate_constructor_exists():
+    assert callable(build_BuilderNamePredicate.__init__)
+
+
+def test_build_buildernamepredicate_constructor_args():
+    sig = inspect.signature(build_BuilderNamePredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_providespredicate_is_not_abstract():
+    assert not inspect.isabstract(build_ProvidesPredicate)
+
+
+def test_build_providespredicate_constructor_exists():
+    assert callable(build_ProvidesPredicate.__init__)
+
+
+def test_build_providespredicate_constructor_args():
+    sig = inspect.signature(build_ProvidesPredicate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_build_unitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_UnitProvider)
+
+
+def test_build_unitprovider_constructor_exists():
+    assert callable(build_UnitProvider.__init__)
+
+
+def test_build_unitprovider_constructor_args():
+    sig = inspect.signature(build_UnitProvider.__init__)
     params = list(sig.parameters.keys())
     assert "documentation" in params, "Missing parameter 'documentation'"
 
-def test_build::unitprovider_has_documentation():
-    assert hasattr(build::UnitProvider, "documentation")
+def test_build_unitprovider_has_documentation():
+    assert hasattr(build_UnitProvider, "documentation")
     descriptor = None
-    for klass in build::UnitProvider.__mro__:
+    for klass in build_UnitProvider.__mro__:
         if "documentation" in klass.__dict__:
             descriptor = klass.__dict__["documentation"]
             break
@@ -661,37 +1651,37 @@ def test_build::unitprovider_has_documentation():
 
 
 
-def test_build::builderquery_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderQuery)
+def test_build_builderquery_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderQuery)
 
 
-def test_build::builderquery_constructor_exists():
-    assert callable(build::BuilderQuery.__init__)
+def test_build_builderquery_constructor_exists():
+    assert callable(build_BuilderQuery.__init__)
 
 
-def test_build::builderquery_constructor_args():
-    sig = inspect.signature(build::BuilderQuery.__init__)
+def test_build_builderquery_constructor_args():
+    sig = inspect.signature(build_BuilderQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::requirespredicate_is_not_abstract():
-    assert not inspect.isabstract(build::RequiresPredicate)
+def test_build_requirespredicate_is_not_abstract():
+    assert not inspect.isabstract(build_RequiresPredicate)
 
 
-def test_build::requirespredicate_constructor_exists():
-    assert callable(build::RequiresPredicate.__init__)
+def test_build_requirespredicate_constructor_exists():
+    assert callable(build_RequiresPredicate.__init__)
 
 
-def test_build::requirespredicate_constructor_args():
-    sig = inspect.signature(build::RequiresPredicate.__init__)
+def test_build_requirespredicate_constructor_args():
+    sig = inspect.signature(build_RequiresPredicate.__init__)
     params = list(sig.parameters.keys())
     assert "meta" in params, "Missing parameter 'meta'"
 
-def test_build::requirespredicate_has_meta():
-    assert hasattr(build::RequiresPredicate, "meta")
+def test_build_requirespredicate_has_meta():
+    assert hasattr(build_RequiresPredicate, "meta")
     descriptor = None
-    for klass in build::RequiresPredicate.__mro__:
+    for klass in build_RequiresPredicate.__mro__:
         if "meta" in klass.__dict__:
             descriptor = klass.__dict__["meta"]
             break
@@ -713,16 +1703,16 @@ def test_bconcerncontext_constructor_args():
 
 
 
-def test_build::bestfoundunitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::BestFoundUnitProvider)
+def test_build_bestfoundunitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_BestFoundUnitProvider)
 
 
-def test_build::bestfoundunitprovider_constructor_exists():
-    assert callable(build::BestFoundUnitProvider.__init__)
+def test_build_bestfoundunitprovider_constructor_exists():
+    assert callable(build_BestFoundUnitProvider.__init__)
 
 
-def test_build::bestfoundunitprovider_constructor_args():
-    sig = inspect.signature(build::BestFoundUnitProvider.__init__)
+def test_build_bestfoundunitprovider_constructor_args():
+    sig = inspect.signature(build_BestFoundUnitProvider.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -741,37 +1731,37 @@ def test_inamedvalue_constructor_args():
 
 
 
-def test_build::builderinputnamedecorator_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderInputNameDecorator)
+def test_build_builderinputnamedecorator_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderInputNameDecorator)
 
 
-def test_build::builderinputnamedecorator_constructor_exists():
-    assert callable(build::BuilderInputNameDecorator.__init__)
+def test_build_builderinputnamedecorator_constructor_exists():
+    assert callable(build_BuilderInputNameDecorator.__init__)
 
 
-def test_build::builderinputnamedecorator_constructor_args():
-    sig = inspect.signature(build::BuilderInputNameDecorator.__init__)
+def test_build_builderinputnamedecorator_constructor_args():
+    sig = inspect.signature(build_BuilderInputNameDecorator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::capability_is_not_abstract():
-    assert not inspect.isabstract(build::Capability)
+def test_build_capability_is_not_abstract():
+    assert not inspect.isabstract(build_Capability)
 
 
-def test_build::capability_constructor_exists():
-    assert callable(build::Capability.__init__)
+def test_build_capability_constructor_exists():
+    assert callable(build_Capability.__init__)
 
 
-def test_build::capability_constructor_args():
-    sig = inspect.signature(build::Capability.__init__)
+def test_build_capability_constructor_args():
+    sig = inspect.signature(build_Capability.__init__)
     params = list(sig.parameters.keys())
     assert "nameSpace" in params, "Missing parameter 'nameSpace'"
 
-def test_build::capability_has_nameSpace():
-    assert hasattr(build::Capability, "nameSpace")
+def test_build_capability_has_nameSpace():
+    assert hasattr(build_Capability, "nameSpace")
     descriptor = None
-    for klass in build::Capability.__mro__:
+    for klass in build_Capability.__mro__:
         if "nameSpace" in klass.__dict__:
             descriptor = klass.__dict__["nameSpace"]
             break
@@ -779,16 +1769,16 @@ def test_build::capability_has_nameSpace():
 
 
 
-def test_build::bparameterlist_is_not_abstract():
-    assert not inspect.isabstract(build::BParameterList)
+def test_build_bparameterlist_is_not_abstract():
+    assert not inspect.isabstract(build_BParameterList)
 
 
-def test_build::bparameterlist_constructor_exists():
-    assert callable(build::BParameterList.__init__)
+def test_build_bparameterlist_constructor_exists():
+    assert callable(build_BParameterList.__init__)
 
 
-def test_build::bparameterlist_constructor_args():
-    sig = inspect.signature(build::BParameterList.__init__)
+def test_build_bparameterlist_constructor_args():
+    sig = inspect.signature(build_BParameterList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -807,23 +1797,23 @@ def test_builderinput_constructor_args():
 
 
 
-def test_build::buildercall_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderCall)
+def test_build_buildercall_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderCall)
 
 
-def test_build::buildercall_constructor_exists():
-    assert callable(build::BuilderCall.__init__)
+def test_build_buildercall_constructor_exists():
+    assert callable(build_BuilderCall.__init__)
 
 
-def test_build::buildercall_constructor_args():
-    sig = inspect.signature(build::BuilderCall.__init__)
+def test_build_buildercall_constructor_args():
+    sig = inspect.signature(build_BuilderCall.__init__)
     params = list(sig.parameters.keys())
     assert "builderName" in params, "Missing parameter 'builderName'"
 
-def test_build::buildercall_has_builderName():
-    assert hasattr(build::BuilderCall, "builderName")
+def test_build_buildercall_has_builderName():
+    assert hasattr(build_BuilderCall, "builderName")
     descriptor = None
-    for klass in build::BuilderCall.__mro__:
+    for klass in build_BuilderCall.__mro__:
         if "builderName" in klass.__dict__:
             descriptor = klass.__dict__["builderName"]
             break
@@ -831,47 +1821,47 @@ def test_build::buildercall_has_builderName():
 
 
 
-def test_build::builderinputdecorator_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderInputDecorator)
+def test_build_builderinputdecorator_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderInputDecorator)
 
 
-def test_build::builderinputdecorator_constructor_exists():
-    assert callable(build::BuilderInputDecorator.__init__)
+def test_build_builderinputdecorator_constructor_exists():
+    assert callable(build_BuilderInputDecorator.__init__)
 
 
-def test_build::builderinputdecorator_constructor_args():
-    sig = inspect.signature(build::BuilderInputDecorator.__init__)
+def test_build_builderinputdecorator_constructor_args():
+    sig = inspect.signature(build_BuilderInputDecorator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::pathvector_is_not_abstract():
-    assert not inspect.isabstract(build::PathVector)
+def test_build_pathvector_is_not_abstract():
+    assert not inspect.isabstract(build_PathVector)
 
 
-def test_build::pathvector_constructor_exists():
-    assert callable(build::PathVector.__init__)
+def test_build_pathvector_constructor_exists():
+    assert callable(build_PathVector.__init__)
 
 
-def test_build::pathvector_constructor_args():
-    sig = inspect.signature(build::PathVector.__init__)
+def test_build_pathvector_constructor_args():
+    sig = inspect.signature(build_PathVector.__init__)
     params = list(sig.parameters.keys())
     assert "basePath" in params, "Missing parameter 'basePath'"
     assert "paths" in params, "Missing parameter 'paths'"
 
-def test_build::pathvector_has_basePath():
-    assert hasattr(build::PathVector, "basePath")
+def test_build_pathvector_has_basePath():
+    assert hasattr(build_PathVector, "basePath")
     descriptor = None
-    for klass in build::PathVector.__mro__:
+    for klass in build_PathVector.__mro__:
         if "basePath" in klass.__dict__:
             descriptor = klass.__dict__["basePath"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::pathvector_has_paths():
-    assert hasattr(build::PathVector, "paths")
+def test_build_pathvector_has_paths():
+    assert hasattr(build_PathVector, "paths")
     descriptor = None
-    for klass in build::PathVector.__mro__:
+    for klass in build_PathVector.__mro__:
         if "paths" in klass.__dict__:
             descriptor = klass.__dict__["paths"]
             break
@@ -879,16 +1869,16 @@ def test_build::pathvector_has_paths():
 
 
 
-def test_build::conditionalpathvector_is_not_abstract():
-    assert not inspect.isabstract(build::ConditionalPathVector)
+def test_build_conditionalpathvector_is_not_abstract():
+    assert not inspect.isabstract(build_ConditionalPathVector)
 
 
-def test_build::conditionalpathvector_constructor_exists():
-    assert callable(build::ConditionalPathVector.__init__)
+def test_build_conditionalpathvector_constructor_exists():
+    assert callable(build_ConditionalPathVector.__init__)
 
 
-def test_build::conditionalpathvector_constructor_args():
-    sig = inspect.signature(build::ConditionalPathVector.__init__)
+def test_build_conditionalpathvector_constructor_args():
+    sig = inspect.signature(build_ConditionalPathVector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -907,23 +1897,23 @@ def test_capability_constructor_args():
 
 
 
-def test_build::versionedcapability_is_not_abstract():
-    assert not inspect.isabstract(build::VersionedCapability)
+def test_build_versionedcapability_is_not_abstract():
+    assert not inspect.isabstract(build_VersionedCapability)
 
 
-def test_build::versionedcapability_constructor_exists():
-    assert callable(build::VersionedCapability.__init__)
+def test_build_versionedcapability_constructor_exists():
+    assert callable(build_VersionedCapability.__init__)
 
 
-def test_build::versionedcapability_constructor_args():
-    sig = inspect.signature(build::VersionedCapability.__init__)
+def test_build_versionedcapability_constructor_args():
+    sig = inspect.signature(build_VersionedCapability.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
 
-def test_build::versionedcapability_has_version():
-    assert hasattr(build::VersionedCapability, "version")
+def test_build_versionedcapability_has_version():
+    assert hasattr(build_VersionedCapability, "version")
     descriptor = None
-    for klass in build::VersionedCapability.__mro__:
+    for klass in build_VersionedCapability.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -931,89 +1921,89 @@ def test_build::versionedcapability_has_version():
 
 
 
-def test_build::unitparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(build::UnitParameterDeclaration)
+def test_build_unitparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(build_UnitParameterDeclaration)
 
 
-def test_build::unitparameterdeclaration_constructor_exists():
-    assert callable(build::UnitParameterDeclaration.__init__)
+def test_build_unitparameterdeclaration_constructor_exists():
+    assert callable(build_UnitParameterDeclaration.__init__)
 
 
-def test_build::unitparameterdeclaration_constructor_args():
-    sig = inspect.signature(build::UnitParameterDeclaration.__init__)
+def test_build_unitparameterdeclaration_constructor_args():
+    sig = inspect.signature(build_UnitParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::pathgroup_is_not_abstract():
-    assert not inspect.isabstract(build::PathGroup)
+def test_build_pathgroup_is_not_abstract():
+    assert not inspect.isabstract(build_PathGroup)
 
 
-def test_build::pathgroup_constructor_exists():
-    assert callable(build::PathGroup.__init__)
+def test_build_pathgroup_constructor_exists():
+    assert callable(build_PathGroup.__init__)
 
 
-def test_build::pathgroup_constructor_args():
-    sig = inspect.signature(build::PathGroup.__init__)
+def test_build_pathgroup_constructor_args():
+    sig = inspect.signature(build_PathGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::ibuildunitcontainer_is_not_abstract():
-    assert not inspect.isabstract(build::IBuildUnitContainer)
+def test_build_ibuildunitcontainer_is_not_abstract():
+    assert not inspect.isabstract(build_IBuildUnitContainer)
 
 
-def test_build::ibuildunitcontainer_constructor_exists():
-    assert callable(build::IBuildUnitContainer.__init__)
+def test_build_ibuildunitcontainer_constructor_exists():
+    assert callable(build_IBuildUnitContainer.__init__)
 
 
-def test_build::ibuildunitcontainer_constructor_args():
-    sig = inspect.signature(build::IBuildUnitContainer.__init__)
+def test_build_ibuildunitcontainer_constructor_args():
+    sig = inspect.signature(build_IBuildUnitContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::firstfoundunitprovider_is_not_abstract():
-    assert not inspect.isabstract(build::FirstFoundUnitProvider)
+def test_build_firstfoundunitprovider_is_not_abstract():
+    assert not inspect.isabstract(build_FirstFoundUnitProvider)
 
 
-def test_build::firstfoundunitprovider_constructor_exists():
-    assert callable(build::FirstFoundUnitProvider.__init__)
+def test_build_firstfoundunitprovider_constructor_exists():
+    assert callable(build_FirstFoundUnitProvider.__init__)
 
 
-def test_build::firstfoundunitprovider_constructor_args():
-    sig = inspect.signature(build::FirstFoundUnitProvider.__init__)
+def test_build_firstfoundunitprovider_constructor_args():
+    sig = inspect.signature(build_FirstFoundUnitProvider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::containerconfiguration_is_not_abstract():
-    assert not inspect.isabstract(build::ContainerConfiguration)
+def test_build_containerconfiguration_is_not_abstract():
+    assert not inspect.isabstract(build_ContainerConfiguration)
 
 
-def test_build::containerconfiguration_constructor_exists():
-    assert callable(build::ContainerConfiguration.__init__)
+def test_build_containerconfiguration_constructor_exists():
+    assert callable(build_ContainerConfiguration.__init__)
 
 
-def test_build::containerconfiguration_constructor_args():
-    sig = inspect.signature(build::ContainerConfiguration.__init__)
+def test_build_containerconfiguration_constructor_args():
+    sig = inspect.signature(build_ContainerConfiguration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "documentation" in params, "Missing parameter 'documentation'"
 
-def test_build::containerconfiguration_has_name():
-    assert hasattr(build::ContainerConfiguration, "name")
+def test_build_containerconfiguration_has_name():
+    assert hasattr(build_ContainerConfiguration, "name")
     descriptor = None
-    for klass in build::ContainerConfiguration.__mro__:
+    for klass in build_ContainerConfiguration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::containerconfiguration_has_documentation():
-    assert hasattr(build::ContainerConfiguration, "documentation")
+def test_build_containerconfiguration_has_documentation():
+    assert hasattr(build_ContainerConfiguration, "documentation")
     descriptor = None
-    for klass in build::ContainerConfiguration.__mro__:
+    for klass in build_ContainerConfiguration.__mro__:
         if "documentation" in klass.__dict__:
             descriptor = klass.__dict__["documentation"]
             break
@@ -1021,43 +2011,43 @@ def test_build::containerconfiguration_has_documentation():
 
 
 
-def test_build::repository_is_not_abstract():
-    assert not inspect.isabstract(build::Repository)
+def test_build_repository_is_not_abstract():
+    assert not inspect.isabstract(build_Repository)
 
 
-def test_build::repository_constructor_exists():
-    assert callable(build::Repository.__init__)
+def test_build_repository_constructor_exists():
+    assert callable(build_Repository.__init__)
 
 
-def test_build::repository_constructor_args():
-    sig = inspect.signature(build::Repository.__init__)
+def test_build_repository_constructor_args():
+    sig = inspect.signature(build_Repository.__init__)
     params = list(sig.parameters.keys())
-    assert "documentation" in params, "Missing parameter 'documentation'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "documentation" in params, "Missing parameter 'documentation'"
     assert "handlerType" in params, "Missing parameter 'handlerType'"
 
-def test_build::repository_has_documentation():
-    assert hasattr(build::Repository, "documentation")
+def test_build_repository_has_name():
+    assert hasattr(build_Repository, "name")
     descriptor = None
-    for klass in build::Repository.__mro__:
-        if "documentation" in klass.__dict__:
-            descriptor = klass.__dict__["documentation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::repository_has_name():
-    assert hasattr(build::Repository, "name")
-    descriptor = None
-    for klass in build::Repository.__mro__:
+    for klass in build_Repository.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::repository_has_handlerType():
-    assert hasattr(build::Repository, "handlerType")
+def test_build_repository_has_documentation():
+    assert hasattr(build_Repository, "documentation")
     descriptor = None
-    for klass in build::Repository.__mro__:
+    for klass in build_Repository.__mro__:
+        if "documentation" in klass.__dict__:
+            descriptor = klass.__dict__["documentation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_repository_has_handlerType():
+    assert hasattr(build_Repository, "handlerType")
+    descriptor = None
+    for klass in build_Repository.__mro__:
         if "handlerType" in klass.__dict__:
             descriptor = klass.__dict__["handlerType"]
             break
@@ -1065,140 +2055,140 @@ def test_build::repository_has_handlerType():
 
 
 
-def test_build::synchronization_is_not_abstract():
-    assert not inspect.isabstract(build::Synchronization)
+def test_build_synchronization_is_not_abstract():
+    assert not inspect.isabstract(build_Synchronization)
 
 
-def test_build::synchronization_constructor_exists():
-    assert callable(build::Synchronization.__init__)
+def test_build_synchronization_constructor_exists():
+    assert callable(build_Synchronization.__init__)
 
 
-def test_build::synchronization_constructor_args():
-    sig = inspect.signature(build::Synchronization.__init__)
+def test_build_synchronization_constructor_args():
+    sig = inspect.signature(build_Synchronization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::bpropertyset_is_not_abstract():
-    assert not inspect.isabstract(build::BPropertySet)
+def test_build_bpropertyset_is_not_abstract():
+    assert not inspect.isabstract(build_BPropertySet)
 
 
-def test_build::bpropertyset_constructor_exists():
-    assert callable(build::BPropertySet.__init__)
+def test_build_bpropertyset_constructor_exists():
+    assert callable(build_BPropertySet.__init__)
 
 
-def test_build::bpropertyset_constructor_args():
-    sig = inspect.signature(build::BPropertySet.__init__)
+def test_build_bpropertyset_constructor_args():
+    sig = inspect.signature(build_BPropertySet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::bconcern_is_not_abstract():
-    assert not inspect.isabstract(build::BConcern)
+def test_build_bconcern_is_not_abstract():
+    assert not inspect.isabstract(build_BConcern)
 
 
-def test_build::bconcern_constructor_exists():
-    assert callable(build::BConcern.__init__)
+def test_build_bconcern_constructor_exists():
+    assert callable(build_BConcern.__init__)
 
 
-def test_build::bconcern_constructor_args():
-    sig = inspect.signature(build::BConcern.__init__)
+def test_build_bconcern_constructor_args():
+    sig = inspect.signature(build_BConcern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::itype_is_not_abstract():
-    assert not inspect.isabstract(build::IType)
+def test_build_itype_is_not_abstract():
+    assert not inspect.isabstract(build_IType)
 
 
-def test_build::itype_constructor_exists():
-    assert callable(build::IType.__init__)
+def test_build_itype_constructor_exists():
+    assert callable(build_IType.__init__)
 
 
-def test_build::itype_constructor_args():
-    sig = inspect.signature(build::IType.__init__)
+def test_build_itype_constructor_args():
+    sig = inspect.signature(build_IType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::requiredcapability_is_not_abstract():
-    assert not inspect.isabstract(build::RequiredCapability)
+def test_build_requiredcapability_is_not_abstract():
+    assert not inspect.isabstract(build_RequiredCapability)
 
 
-def test_build::requiredcapability_constructor_exists():
-    assert callable(build::RequiredCapability.__init__)
+def test_build_requiredcapability_constructor_exists():
+    assert callable(build_RequiredCapability.__init__)
 
 
-def test_build::requiredcapability_constructor_args():
-    sig = inspect.signature(build::RequiredCapability.__init__)
+def test_build_requiredcapability_constructor_args():
+    sig = inspect.signature(build_RequiredCapability.__init__)
     params = list(sig.parameters.keys())
-    assert "versionRange" in params, "Missing parameter 'versionRange'"
     assert "greedy" in params, "Missing parameter 'greedy'"
-    assert "min" in params, "Missing parameter 'min'"
+    assert "versionRange" in params, "Missing parameter 'versionRange'"
     assert "max" in params, "Missing parameter 'max'"
+    assert "min" in params, "Missing parameter 'min'"
 
-def test_build::requiredcapability_has_versionRange():
-    assert hasattr(build::RequiredCapability, "versionRange")
+def test_build_requiredcapability_has_greedy():
+    assert hasattr(build_RequiredCapability, "greedy")
     descriptor = None
-    for klass in build::RequiredCapability.__mro__:
-        if "versionRange" in klass.__dict__:
-            descriptor = klass.__dict__["versionRange"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::requiredcapability_has_greedy():
-    assert hasattr(build::RequiredCapability, "greedy")
-    descriptor = None
-    for klass in build::RequiredCapability.__mro__:
+    for klass in build_RequiredCapability.__mro__:
         if "greedy" in klass.__dict__:
             descriptor = klass.__dict__["greedy"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::requiredcapability_has_min():
-    assert hasattr(build::RequiredCapability, "min")
+def test_build_requiredcapability_has_versionRange():
+    assert hasattr(build_RequiredCapability, "versionRange")
     descriptor = None
-    for klass in build::RequiredCapability.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
+    for klass in build_RequiredCapability.__mro__:
+        if "versionRange" in klass.__dict__:
+            descriptor = klass.__dict__["versionRange"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::requiredcapability_has_max():
-    assert hasattr(build::RequiredCapability, "max")
+def test_build_requiredcapability_has_max():
+    assert hasattr(build_RequiredCapability, "max")
     descriptor = None
-    for klass in build::RequiredCapability.__mro__:
+    for klass in build_RequiredCapability.__mro__:
         if "max" in klass.__dict__:
             descriptor = klass.__dict__["max"]
             break
     assert isinstance(descriptor, property)
 
+def test_build_requiredcapability_has_min():
+    assert hasattr(build_RequiredCapability, "min")
+    descriptor = None
+    for klass in build_RequiredCapability.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_build::builderinput_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderInput)
+
+def test_build_builderinput_is_not_abstract():
+    assert not inspect.isabstract(build_BuilderInput)
 
 
-def test_build::builderinput_constructor_exists():
-    assert callable(build::BuilderInput.__init__)
+def test_build_builderinput_constructor_exists():
+    assert callable(build_BuilderInput.__init__)
 
 
-def test_build::builderinput_constructor_args():
-    sig = inspect.signature(build::BuilderInput.__init__)
+def test_build_builderinput_constructor_args():
+    sig = inspect.signature(build_BuilderInput.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_build::bexpression_is_not_abstract():
-    assert not inspect.isabstract(build::BExpression)
+def test_build_bexpression_is_not_abstract():
+    assert not inspect.isabstract(build_BExpression)
 
 
-def test_build::bexpression_constructor_exists():
-    assert callable(build::BExpression.__init__)
+def test_build_bexpression_constructor_exists():
+    assert callable(build_BExpression.__init__)
 
 
-def test_build::bexpression_constructor_args():
-    sig = inspect.signature(build::BExpression.__init__)
+def test_build_bexpression_constructor_args():
+    sig = inspect.signature(build_BExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1217,16 +2207,16 @@ def test_ifunction_constructor_args():
 
 
 
-def test_build::fragmenthost_is_not_abstract():
-    assert not inspect.isabstract(build::FragmentHost)
+def test_build_fragmenthost_is_not_abstract():
+    assert not inspect.isabstract(build_FragmentHost)
 
 
-def test_build::fragmenthost_constructor_exists():
-    assert callable(build::FragmentHost.__init__)
+def test_build_fragmenthost_constructor_exists():
+    assert callable(build_FragmentHost.__init__)
 
 
-def test_build::fragmenthost_constructor_args():
-    sig = inspect.signature(build::FragmentHost.__init__)
+def test_build_fragmenthost_constructor_args():
+    sig = inspect.signature(build_FragmentHost.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1273,23 +2263,23 @@ def test_iprovidedcapabilitycontainer_constructor_args():
 
 
 
-def test_build::buildconcerncontext_is_not_abstract():
-    assert not inspect.isabstract(build::BuildConcernContext)
+def test_build_buildconcerncontext_is_not_abstract():
+    assert not inspect.isabstract(build_BuildConcernContext)
 
 
-def test_build::buildconcerncontext_constructor_exists():
-    assert callable(build::BuildConcernContext.__init__)
+def test_build_buildconcerncontext_constructor_exists():
+    assert callable(build_BuildConcernContext.__init__)
 
 
-def test_build::buildconcerncontext_constructor_args():
-    sig = inspect.signature(build::BuildConcernContext.__init__)
+def test_build_buildconcerncontext_constructor_args():
+    sig = inspect.signature(build_BuildConcernContext.__init__)
     params = list(sig.parameters.keys())
     assert "defaultPropertiesRemovals" in params, "Missing parameter 'defaultPropertiesRemovals'"
 
-def test_build::buildconcerncontext_has_defaultPropertiesRemovals():
-    assert hasattr(build::BuildConcernContext, "defaultPropertiesRemovals")
+def test_build_buildconcerncontext_has_defaultPropertiesRemovals():
+    assert hasattr(build_BuildConcernContext, "defaultPropertiesRemovals")
     descriptor = None
-    for klass in build::BuildConcernContext.__mro__:
+    for klass in build_BuildConcernContext.__mro__:
         if "defaultPropertiesRemovals" in klass.__dict__:
             descriptor = klass.__dict__["defaultPropertiesRemovals"]
             break
@@ -1297,23 +2287,23 @@ def test_build::buildconcerncontext_has_defaultPropertiesRemovals():
 
 
 
-def test_build::ibuilder_is_not_abstract():
-    assert not inspect.isabstract(build::IBuilder)
+def test_build_ibuilder_is_not_abstract():
+    assert not inspect.isabstract(build_IBuilder)
 
 
-def test_build::ibuilder_constructor_exists():
-    assert callable(build::IBuilder.__init__)
+def test_build_ibuilder_constructor_exists():
+    assert callable(build_IBuilder.__init__)
 
 
-def test_build::ibuilder_constructor_args():
-    sig = inspect.signature(build::IBuilder.__init__)
+def test_build_ibuilder_constructor_args():
+    sig = inspect.signature(build_IBuilder.__init__)
     params = list(sig.parameters.keys())
     assert "unitType" in params, "Missing parameter 'unitType'"
 
-def test_build::ibuilder_has_unitType():
-    assert hasattr(build::IBuilder, "unitType")
+def test_build_ibuilder_has_unitType():
+    assert hasattr(build_IBuilder, "unitType")
     descriptor = None
-    for klass in build::IBuilder.__mro__:
+    for klass in build_IBuilder.__mro__:
         if "unitType" in klass.__dict__:
             descriptor = klass.__dict__["unitType"]
             break
@@ -1335,6 +2325,40 @@ def test_irequiredcapabilitycontainer_constructor_args():
 
 
 
+def test_build_unitconcerncontext_is_not_abstract():
+    assert not inspect.isabstract(build_UnitConcernContext)
+
+
+def test_build_unitconcerncontext_constructor_exists():
+    assert callable(build_UnitConcernContext.__init__)
+
+
+def test_build_unitconcerncontext_constructor_args():
+    sig = inspect.signature(build_UnitConcernContext.__init__)
+    params = list(sig.parameters.keys())
+    assert "sourceLocation" in params, "Missing parameter 'sourceLocation'"
+    assert "outputLocation" in params, "Missing parameter 'outputLocation'"
+
+def test_build_unitconcerncontext_has_sourceLocation():
+    assert hasattr(build_UnitConcernContext, "sourceLocation")
+    descriptor = None
+    for klass in build_UnitConcernContext.__mro__:
+        if "sourceLocation" in klass.__dict__:
+            descriptor = klass.__dict__["sourceLocation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_build_unitconcerncontext_has_outputLocation():
+    assert hasattr(build_UnitConcernContext, "outputLocation")
+    descriptor = None
+    for klass in build_UnitConcernContext.__mro__:
+        if "outputLocation" in klass.__dict__:
+            descriptor = klass.__dict__["outputLocation"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
 def test_bfunctioncontainer_is_not_abstract():
     assert not inspect.isabstract(BFunctionContainer)
 
@@ -1349,1124 +2373,67 @@ def test_bfunctioncontainer_constructor_args():
 
 
 
-def test_build::buildunit_is_not_abstract():
-    assert not inspect.isabstract(build::BuildUnit)
+def test_build_buildunit_is_not_abstract():
+    assert not inspect.isabstract(build_BuildUnit)
 
 
-def test_build::buildunit_constructor_exists():
-    assert callable(build::BuildUnit.__init__)
+def test_build_buildunit_constructor_exists():
+    assert callable(build_BuildUnit.__init__)
 
 
-def test_build::buildunit_constructor_args():
-    sig = inspect.signature(build::BuildUnit.__init__)
+def test_build_buildunit_constructor_args():
+    sig = inspect.signature(build_BuildUnit.__init__)
     params = list(sig.parameters.keys())
+    assert "executionMode" in params, "Missing parameter 'executionMode'"
+    assert "platformFilter" in params, "Missing parameter 'platformFilter'"
     assert "documentation" in params, "Missing parameter 'documentation'"
     assert "outputLocation" in params, "Missing parameter 'outputLocation'"
     assert "sourceLocation" in params, "Missing parameter 'sourceLocation'"
-    assert "executionMode" in params, "Missing parameter 'executionMode'"
-    assert "platformFilter" in params, "Missing parameter 'platformFilter'"
 
-def test_build::buildunit_has_documentation():
-    assert hasattr(build::BuildUnit, "documentation")
+def test_build_buildunit_has_executionMode():
+    assert hasattr(build_BuildUnit, "executionMode")
     descriptor = None
-    for klass in build::BuildUnit.__mro__:
-        if "documentation" in klass.__dict__:
-            descriptor = klass.__dict__["documentation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::buildunit_has_outputLocation():
-    assert hasattr(build::BuildUnit, "outputLocation")
-    descriptor = None
-    for klass in build::BuildUnit.__mro__:
-        if "outputLocation" in klass.__dict__:
-            descriptor = klass.__dict__["outputLocation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::buildunit_has_sourceLocation():
-    assert hasattr(build::BuildUnit, "sourceLocation")
-    descriptor = None
-    for klass in build::BuildUnit.__mro__:
-        if "sourceLocation" in klass.__dict__:
-            descriptor = klass.__dict__["sourceLocation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::buildunit_has_executionMode():
-    assert hasattr(build::BuildUnit, "executionMode")
-    descriptor = None
-    for klass in build::BuildUnit.__mro__:
+    for klass in build_BuildUnit.__mro__:
         if "executionMode" in klass.__dict__:
             descriptor = klass.__dict__["executionMode"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::buildunit_has_platformFilter():
-    assert hasattr(build::BuildUnit, "platformFilter")
+def test_build_buildunit_has_platformFilter():
+    assert hasattr(build_BuildUnit, "platformFilter")
     descriptor = None
-    for klass in build::BuildUnit.__mro__:
+    for klass in build_BuildUnit.__mro__:
         if "platformFilter" in klass.__dict__:
             descriptor = klass.__dict__["platformFilter"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_build::compoundbuildunitrepository_is_not_abstract():
-    assert not inspect.isabstract(build::CompoundBuildUnitRepository)
-
-
-def test_build::compoundbuildunitrepository_constructor_exists():
-    assert callable(build::CompoundBuildUnitRepository.__init__)
-
-
-def test_build::compoundbuildunitrepository_constructor_args():
-    sig = inspect.signature(build::CompoundBuildUnitRepository.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ibuildunitrepository_is_not_abstract():
-    assert not inspect.isabstract(IBuildUnitRepository)
-
-
-def test_ibuildunitrepository_constructor_exists():
-    assert callable(IBuildUnitRepository.__init__)
-
-
-def test_ibuildunitrepository_constructor_args():
-    sig = inspect.signature(IBuildUnitRepository.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::branch_is_not_abstract():
-    assert not inspect.isabstract(build::Branch)
-
-
-def test_build::branch_constructor_exists():
-    assert callable(build::Branch.__init__)
-
-
-def test_build::branch_constructor_args():
-    sig = inspect.signature(build::Branch.__init__)
-    params = list(sig.parameters.keys())
-    assert "replace" in params, "Missing parameter 'replace'"
-    assert "mergeStrategy" in params, "Missing parameter 'mergeStrategy'"
-    assert "documentation" in params, "Missing parameter 'documentation'"
-    assert "checkout" in params, "Missing parameter 'checkout'"
-    assert "acceptDirty" in params, "Missing parameter 'acceptDirty'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "update" in params, "Missing parameter 'update'"
-    assert "branchPointType" in params, "Missing parameter 'branchPointType'"
-
-def test_build::branch_has_replace():
-    assert hasattr(build::Branch, "replace")
+def test_build_buildunit_has_documentation():
+    assert hasattr(build_BuildUnit, "documentation")
     descriptor = None
-    for klass in build::Branch.__mro__:
-        if "replace" in klass.__dict__:
-            descriptor = klass.__dict__["replace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::branch_has_mergeStrategy():
-    assert hasattr(build::Branch, "mergeStrategy")
-    descriptor = None
-    for klass in build::Branch.__mro__:
-        if "mergeStrategy" in klass.__dict__:
-            descriptor = klass.__dict__["mergeStrategy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::branch_has_documentation():
-    assert hasattr(build::Branch, "documentation")
-    descriptor = None
-    for klass in build::Branch.__mro__:
+    for klass in build_BuildUnit.__mro__:
         if "documentation" in klass.__dict__:
             descriptor = klass.__dict__["documentation"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::branch_has_checkout():
-    assert hasattr(build::Branch, "checkout")
+def test_build_buildunit_has_outputLocation():
+    assert hasattr(build_BuildUnit, "outputLocation")
     descriptor = None
-    for klass in build::Branch.__mro__:
-        if "checkout" in klass.__dict__:
-            descriptor = klass.__dict__["checkout"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::branch_has_acceptDirty():
-    assert hasattr(build::Branch, "acceptDirty")
-    descriptor = None
-    for klass in build::Branch.__mro__:
-        if "acceptDirty" in klass.__dict__:
-            descriptor = klass.__dict__["acceptDirty"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::branch_has_name():
-    assert hasattr(build::Branch, "name")
-    descriptor = None
-    for klass in build::Branch.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::branch_has_update():
-    assert hasattr(build::Branch, "update")
-    descriptor = None
-    for klass in build::Branch.__mro__:
-        if "update" in klass.__dict__:
-            descriptor = klass.__dict__["update"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::branch_has_branchPointType():
-    assert hasattr(build::Branch, "branchPointType")
-    descriptor = None
-    for klass in build::Branch.__mro__:
-        if "branchPointType" in klass.__dict__:
-            descriptor = klass.__dict__["branchPointType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::bswitchexpression_is_not_abstract():
-    assert not inspect.isabstract(build::BSwitchExpression)
-
-
-def test_build::bswitchexpression_constructor_exists():
-    assert callable(build::BSwitchExpression.__init__)
-
-
-def test_build::bswitchexpression_constructor_args():
-    sig = inspect.signature(build::BSwitchExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_itypedvaluecontainer_is_not_abstract():
-    assert not inspect.isabstract(ITypedValueContainer)
-
-
-def test_itypedvaluecontainer_constructor_exists():
-    assert callable(ITypedValueContainer.__init__)
-
-
-def test_itypedvaluecontainer_constructor_args():
-    sig = inspect.signature(ITypedValueContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::buildset_is_not_abstract():
-    assert not inspect.isabstract(build::BuildSet)
-
-
-def test_build::buildset_constructor_exists():
-    assert callable(build::BuildSet.__init__)
-
-
-def test_build::buildset_constructor_args():
-    sig = inspect.signature(build::BuildSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "pathIterator" in params, "Missing parameter 'pathIterator'"
-    assert "valueMap" in params, "Missing parameter 'valueMap'"
-
-def test_build::buildset_has_pathIterator():
-    assert hasattr(build::BuildSet, "pathIterator")
-    descriptor = None
-    for klass in build::BuildSet.__mro__:
-        if "pathIterator" in klass.__dict__:
-            descriptor = klass.__dict__["pathIterator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::buildset_has_valueMap():
-    assert hasattr(build::BuildSet, "valueMap")
-    descriptor = None
-    for klass in build::BuildSet.__mro__:
-        if "valueMap" in klass.__dict__:
-            descriptor = klass.__dict__["valueMap"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::buildercallfacade_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderCallFacade)
-
-
-def test_build::buildercallfacade_constructor_exists():
-    assert callable(build::BuilderCallFacade.__init__)
-
-
-def test_build::buildercallfacade_constructor_args():
-    sig = inspect.signature(build::BuilderCallFacade.__init__)
-    params = list(sig.parameters.keys())
-    assert "aliases" in params, "Missing parameter 'aliases'"
-
-def test_build::buildercallfacade_has_aliases():
-    assert hasattr(build::BuilderCallFacade, "aliases")
-    descriptor = None
-    for klass in build::BuilderCallFacade.__mro__:
-        if "aliases" in klass.__dict__:
-            descriptor = klass.__dict__["aliases"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_effectivefacade_is_not_abstract():
-    assert not inspect.isabstract(EffectiveFacade)
-
-
-def test_effectivefacade_constructor_exists():
-    assert callable(EffectiveFacade.__init__)
-
-
-def test_effectivefacade_constructor_args():
-    sig = inspect.signature(EffectiveFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::effectiverequirementfacade_is_not_abstract():
-    assert not inspect.isabstract(build::EffectiveRequirementFacade)
-
-
-def test_build::effectiverequirementfacade_constructor_exists():
-    assert callable(build::EffectiveRequirementFacade.__init__)
-
-
-def test_build::effectiverequirementfacade_constructor_args():
-    sig = inspect.signature(build::EffectiveRequirementFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::effectivecapabilityfacade_is_not_abstract():
-    assert not inspect.isabstract(build::EffectiveCapabilityFacade)
-
-
-def test_build::effectivecapabilityfacade_constructor_exists():
-    assert callable(build::EffectiveCapabilityFacade.__init__)
-
-
-def test_build::effectivecapabilityfacade_constructor_args():
-    sig = inspect.signature(build::EffectiveCapabilityFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::effectiveunitfacade_is_not_abstract():
-    assert not inspect.isabstract(build::EffectiveUnitFacade)
-
-
-def test_build::effectiveunitfacade_constructor_exists():
-    assert callable(build::EffectiveUnitFacade.__init__)
-
-
-def test_build::effectiveunitfacade_constructor_args():
-    sig = inspect.signature(build::EffectiveUnitFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ieffectivefacade_is_not_abstract():
-    assert not inspect.isabstract(IEffectiveFacade)
-
-
-def test_ieffectivefacade_constructor_exists():
-    assert callable(IEffectiveFacade.__init__)
-
-
-def test_ieffectivefacade_constructor_args():
-    sig = inspect.signature(IEffectiveFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::effectivebuildercallfacade_is_not_abstract():
-    assert not inspect.isabstract(build::EffectiveBuilderCallFacade)
-
-
-def test_build::effectivebuildercallfacade_constructor_exists():
-    assert callable(build::EffectiveBuilderCallFacade.__init__)
-
-
-def test_build::effectivebuildercallfacade_constructor_args():
-    sig = inspect.signature(build::EffectiveBuilderCallFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::effectivefacade_is_not_abstract():
-    assert not inspect.isabstract(build::EffectiveFacade)
-
-
-def test_build::effectivefacade_constructor_exists():
-    assert callable(build::EffectiveFacade.__init__)
-
-
-def test_build::effectivefacade_constructor_args():
-    sig = inspect.signature(build::EffectiveFacade.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::buildunitrepository_is_not_abstract():
-    assert not inspect.isabstract(build::BuildUnitRepository)
-
-
-def test_build::buildunitrepository_constructor_exists():
-    assert callable(build::BuildUnitRepository.__init__)
-
-
-def test_build::buildunitrepository_constructor_args():
-    sig = inspect.signature(build::BuildUnitRepository.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pathgrouppredicate_is_not_abstract():
-    assert not inspect.isabstract(PathGroupPredicate)
-
-
-def test_pathgrouppredicate_constructor_exists():
-    assert callable(PathGroupPredicate.__init__)
-
-
-def test_pathgrouppredicate_constructor_args():
-    sig = inspect.signature(PathGroupPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_binnercontext_is_not_abstract():
-    assert not inspect.isabstract(BInnerContext)
-
-
-def test_binnercontext_constructor_exists():
-    assert callable(BInnerContext.__init__)
-
-
-def test_binnercontext_constructor_args():
-    sig = inspect.signature(BInnerContext.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::buildresultcontext_is_not_abstract():
-    assert not inspect.isabstract(build::BuildResultContext)
-
-
-def test_build::buildresultcontext_constructor_exists():
-    assert callable(build::BuildResultContext.__init__)
-
-
-def test_build::buildresultcontext_constructor_args():
-    sig = inspect.signature(build::BuildResultContext.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::ifunction_is_not_abstract():
-    assert not inspect.isabstract(build::IFunction)
-
-
-def test_build::ifunction_constructor_exists():
-    assert callable(build::IFunction.__init__)
-
-
-def test_build::ifunction_constructor_args():
-    sig = inspect.signature(build::IFunction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ibuildunitcontainer_is_not_abstract():
-    assert not inspect.isabstract(IBuildUnitContainer)
-
-
-def test_ibuildunitcontainer_constructor_exists():
-    assert callable(IBuildUnitContainer.__init__)
-
-
-def test_ibuildunitcontainer_constructor_args():
-    sig = inspect.signature(IBuildUnitContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bchainedexpression_is_not_abstract():
-    assert not inspect.isabstract(BChainedExpression)
-
-
-def test_bchainedexpression_constructor_exists():
-    assert callable(BChainedExpression.__init__)
-
-
-def test_bchainedexpression_constructor_args():
-    sig = inspect.signature(BChainedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::beemodel_is_not_abstract():
-    assert not inspect.isabstract(build::BeeModel)
-
-
-def test_build::beemodel_constructor_exists():
-    assert callable(build::BeeModel.__init__)
-
-
-def test_build::beemodel_constructor_args():
-    sig = inspect.signature(build::BeeModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bfunctionwrapper_is_not_abstract():
-    assert not inspect.isabstract(BFunctionWrapper)
-
-
-def test_bfunctionwrapper_constructor_exists():
-    assert callable(BFunctionWrapper.__init__)
-
-
-def test_bfunctionwrapper_constructor_args():
-    sig = inspect.signature(BFunctionWrapper.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bjavafunction_is_not_abstract():
-    assert not inspect.isabstract(BJavaFunction)
-
-
-def test_bjavafunction_constructor_exists():
-    assert callable(BJavaFunction.__init__)
-
-
-def test_bjavafunction_constructor_args():
-    sig = inspect.signature(BJavaFunction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::resolutioninfo_is_not_abstract():
-    assert not inspect.isabstract(build::ResolutionInfo)
-
-
-def test_build::resolutioninfo_constructor_exists():
-    assert callable(build::ResolutionInfo.__init__)
-
-
-def test_build::resolutioninfo_constructor_args():
-    sig = inspect.signature(build::ResolutionInfo.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-
-def test_build::resolutioninfo_has_status():
-    assert hasattr(build::ResolutionInfo, "status")
-    descriptor = None
-    for klass in build::ResolutionInfo.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::beehive_is_not_abstract():
-    assert not inspect.isabstract(build::BeeHive)
-
-
-def test_build::beehive_constructor_exists():
-    assert callable(build::BeeHive.__init__)
-
-
-def test_build::beehive_constructor_args():
-    sig = inspect.signature(build::BeeHive.__init__)
-    params = list(sig.parameters.keys())
-    assert "resolutions" in params, "Missing parameter 'resolutions'"
-
-def test_build::beehive_has_resolutions():
-    assert hasattr(build::BeeHive, "resolutions")
-    descriptor = None
-    for klass in build::BeeHive.__mro__:
-        if "resolutions" in klass.__dict__:
-            descriptor = klass.__dict__["resolutions"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::irequiredcapabilitycontainer_is_not_abstract():
-    assert not inspect.isabstract(build::IRequiredCapabilityContainer)
-
-
-def test_build::irequiredcapabilitycontainer_constructor_exists():
-    assert callable(build::IRequiredCapabilityContainer.__init__)
-
-
-def test_build::irequiredcapabilitycontainer_constructor_args():
-    sig = inspect.signature(build::IRequiredCapabilityContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_requiredcapability_is_not_abstract():
-    assert not inspect.isabstract(RequiredCapability)
-
-
-def test_requiredcapability_constructor_exists():
-    assert callable(RequiredCapability.__init__)
-
-
-def test_requiredcapability_constructor_args():
-    sig = inspect.signature(RequiredCapability.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::aliasedrequiredcapability_is_not_abstract():
-    assert not inspect.isabstract(build::AliasedRequiredCapability)
-
-
-def test_build::aliasedrequiredcapability_constructor_exists():
-    assert callable(build::AliasedRequiredCapability.__init__)
-
-
-def test_build::aliasedrequiredcapability_constructor_args():
-    sig = inspect.signature(build::AliasedRequiredCapability.__init__)
-    params = list(sig.parameters.keys())
-    assert "alias" in params, "Missing parameter 'alias'"
-
-def test_build::aliasedrequiredcapability_has_alias():
-    assert hasattr(build::AliasedRequiredCapability, "alias")
-    descriptor = None
-    for klass in build::AliasedRequiredCapability.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::pathgrouppredicate_is_not_abstract():
-    assert not inspect.isabstract(build::PathGroupPredicate)
-
-
-def test_build::pathgrouppredicate_constructor_exists():
-    assert callable(build::PathGroupPredicate.__init__)
-
-
-def test_build::pathgrouppredicate_constructor_args():
-    sig = inspect.signature(build::PathGroupPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::sourcepredicate_is_not_abstract():
-    assert not inspect.isabstract(build::SourcePredicate)
-
-
-def test_build::sourcepredicate_constructor_exists():
-    assert callable(build::SourcePredicate.__init__)
-
-
-def test_build::sourcepredicate_constructor_args():
-    sig = inspect.signature(build::SourcePredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ibuilder_is_not_abstract():
-    assert not inspect.isabstract(IBuilder)
-
-
-def test_ibuilder_constructor_exists():
-    assert callable(IBuilder.__init__)
-
-
-def test_ibuilder_constructor_args():
-    sig = inspect.signature(IBuilder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::builderwrapper_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderWrapper)
-
-
-def test_build::builderwrapper_constructor_exists():
-    assert callable(build::BuilderWrapper.__init__)
-
-
-def test_build::builderwrapper_constructor_args():
-    sig = inspect.signature(build::BuilderWrapper.__init__)
-    params = list(sig.parameters.keys())
-    assert "unitTypeAdvised" in params, "Missing parameter 'unitTypeAdvised'"
-    assert "sourceAdvised" in params, "Missing parameter 'sourceAdvised'"
-    assert "providesAdvised" in params, "Missing parameter 'providesAdvised'"
-    assert "defaultPropertiesAdvised" in params, "Missing parameter 'defaultPropertiesAdvised'"
-    assert "outputAdvised" in params, "Missing parameter 'outputAdvised'"
-    assert "inputAdvised" in params, "Missing parameter 'inputAdvised'"
-
-def test_build::builderwrapper_has_unitTypeAdvised():
-    assert hasattr(build::BuilderWrapper, "unitTypeAdvised")
-    descriptor = None
-    for klass in build::BuilderWrapper.__mro__:
-        if "unitTypeAdvised" in klass.__dict__:
-            descriptor = klass.__dict__["unitTypeAdvised"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderwrapper_has_sourceAdvised():
-    assert hasattr(build::BuilderWrapper, "sourceAdvised")
-    descriptor = None
-    for klass in build::BuilderWrapper.__mro__:
-        if "sourceAdvised" in klass.__dict__:
-            descriptor = klass.__dict__["sourceAdvised"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderwrapper_has_providesAdvised():
-    assert hasattr(build::BuilderWrapper, "providesAdvised")
-    descriptor = None
-    for klass in build::BuilderWrapper.__mro__:
-        if "providesAdvised" in klass.__dict__:
-            descriptor = klass.__dict__["providesAdvised"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderwrapper_has_defaultPropertiesAdvised():
-    assert hasattr(build::BuilderWrapper, "defaultPropertiesAdvised")
-    descriptor = None
-    for klass in build::BuilderWrapper.__mro__:
-        if "defaultPropertiesAdvised" in klass.__dict__:
-            descriptor = klass.__dict__["defaultPropertiesAdvised"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderwrapper_has_outputAdvised():
-    assert hasattr(build::BuilderWrapper, "outputAdvised")
-    descriptor = None
-    for klass in build::BuilderWrapper.__mro__:
-        if "outputAdvised" in klass.__dict__:
-            descriptor = klass.__dict__["outputAdvised"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderwrapper_has_inputAdvised():
-    assert hasattr(build::BuilderWrapper, "inputAdvised")
-    descriptor = None
-    for klass in build::BuilderWrapper.__mro__:
-        if "inputAdvised" in klass.__dict__:
-            descriptor = klass.__dict__["inputAdvised"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::builderjava_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderJava)
-
-
-def test_build::builderjava_constructor_exists():
-    assert callable(build::BuilderJava.__init__)
-
-
-def test_build::builderjava_constructor_args():
-    sig = inspect.signature(build::BuilderJava.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_b3function_is_not_abstract():
-    assert not inspect.isabstract(B3Function)
-
-
-def test_b3function_constructor_exists():
-    assert callable(B3Function.__init__)
-
-
-def test_b3function_constructor_args():
-    sig = inspect.signature(B3Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::builder_is_not_abstract():
-    assert not inspect.isabstract(build::Builder)
-
-
-def test_build::builder_constructor_exists():
-    assert callable(build::Builder.__init__)
-
-
-def test_build::builder_constructor_args():
-    sig = inspect.signature(build::Builder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::iprovidedcapabilitycontainer_is_not_abstract():
-    assert not inspect.isabstract(build::IProvidedCapabilityContainer)
-
-
-def test_build::iprovidedcapabilitycontainer_constructor_exists():
-    assert callable(build::IProvidedCapabilityContainer.__init__)
-
-
-def test_build::iprovidedcapabilitycontainer_constructor_args():
-    sig = inspect.signature(build::IProvidedCapabilityContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::outputpredicate_is_not_abstract():
-    assert not inspect.isabstract(build::OutputPredicate)
-
-
-def test_build::outputpredicate_constructor_exists():
-    assert callable(build::OutputPredicate.__init__)
-
-
-def test_build::outputpredicate_constructor_args():
-    sig = inspect.signature(build::OutputPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_buildconcerncontext_is_not_abstract():
-    assert not inspect.isabstract(BuildConcernContext)
-
-
-def test_buildconcerncontext_constructor_exists():
-    assert callable(BuildConcernContext.__init__)
-
-
-def test_buildconcerncontext_constructor_args():
-    sig = inspect.signature(BuildConcernContext.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::builderconcerncontext_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderConcernContext)
-
-
-def test_build::builderconcerncontext_constructor_exists():
-    assert callable(build::BuilderConcernContext.__init__)
-
-
-def test_build::builderconcerncontext_constructor_args():
-    sig = inspect.signature(build::BuilderConcernContext.__init__)
-    params = list(sig.parameters.keys())
-    assert "removePostCondition" in params, "Missing parameter 'removePostCondition'"
-    assert "matchParameters" in params, "Missing parameter 'matchParameters'"
-    assert "removePreCondition" in params, "Missing parameter 'removePreCondition'"
-    assert "varArgs" in params, "Missing parameter 'varArgs'"
-    assert "sourceAnnotationsRemovals" in params, "Missing parameter 'sourceAnnotationsRemovals'"
-    assert "removePostInputCondition" in params, "Missing parameter 'removePostInputCondition'"
-    assert "outputAnnotationsRemovals" in params, "Missing parameter 'outputAnnotationsRemovals'"
-
-def test_build::builderconcerncontext_has_removePostCondition():
-    assert hasattr(build::BuilderConcernContext, "removePostCondition")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "removePostCondition" in klass.__dict__:
-            descriptor = klass.__dict__["removePostCondition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderconcerncontext_has_matchParameters():
-    assert hasattr(build::BuilderConcernContext, "matchParameters")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "matchParameters" in klass.__dict__:
-            descriptor = klass.__dict__["matchParameters"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderconcerncontext_has_removePreCondition():
-    assert hasattr(build::BuilderConcernContext, "removePreCondition")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "removePreCondition" in klass.__dict__:
-            descriptor = klass.__dict__["removePreCondition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderconcerncontext_has_varArgs():
-    assert hasattr(build::BuilderConcernContext, "varArgs")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "varArgs" in klass.__dict__:
-            descriptor = klass.__dict__["varArgs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderconcerncontext_has_sourceAnnotationsRemovals():
-    assert hasattr(build::BuilderConcernContext, "sourceAnnotationsRemovals")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "sourceAnnotationsRemovals" in klass.__dict__:
-            descriptor = klass.__dict__["sourceAnnotationsRemovals"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderconcerncontext_has_removePostInputCondition():
-    assert hasattr(build::BuilderConcernContext, "removePostInputCondition")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "removePostInputCondition" in klass.__dict__:
-            descriptor = klass.__dict__["removePostInputCondition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_build::builderconcerncontext_has_outputAnnotationsRemovals():
-    assert hasattr(build::BuilderConcernContext, "outputAnnotationsRemovals")
-    descriptor = None
-    for klass in build::BuilderConcernContext.__mro__:
-        if "outputAnnotationsRemovals" in klass.__dict__:
-            descriptor = klass.__dict__["outputAnnotationsRemovals"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::unitconcerncontext_is_not_abstract():
-    assert not inspect.isabstract(build::UnitConcernContext)
-
-
-def test_build::unitconcerncontext_constructor_exists():
-    assert callable(build::UnitConcernContext.__init__)
-
-
-def test_build::unitconcerncontext_constructor_args():
-    sig = inspect.signature(build::UnitConcernContext.__init__)
-    params = list(sig.parameters.keys())
-    assert "outputLocation" in params, "Missing parameter 'outputLocation'"
-    assert "sourceLocation" in params, "Missing parameter 'sourceLocation'"
-
-def test_build::unitconcerncontext_has_outputLocation():
-    assert hasattr(build::UnitConcernContext, "outputLocation")
-    descriptor = None
-    for klass in build::UnitConcernContext.__mro__:
+    for klass in build_BuildUnit.__mro__:
         if "outputLocation" in klass.__dict__:
             descriptor = klass.__dict__["outputLocation"]
             break
     assert isinstance(descriptor, property)
 
-def test_build::unitconcerncontext_has_sourceLocation():
-    assert hasattr(build::UnitConcernContext, "sourceLocation")
+def test_build_buildunit_has_sourceLocation():
+    assert hasattr(build_BuildUnit, "sourceLocation")
     descriptor = None
-    for klass in build::UnitConcernContext.__mro__:
+    for klass in build_BuildUnit.__mro__:
         if "sourceLocation" in klass.__dict__:
             descriptor = klass.__dict__["sourceLocation"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_build::bparameterpredicate_is_not_abstract():
-    assert not inspect.isabstract(build::BParameterPredicate)
-
-
-def test_build::bparameterpredicate_constructor_exists():
-    assert callable(build::BParameterPredicate.__init__)
-
-
-def test_build::bparameterpredicate_constructor_args():
-    sig = inspect.signature(build::BParameterPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::providespredicate_is_not_abstract():
-    assert not inspect.isabstract(build::ProvidesPredicate)
-
-
-def test_build::providespredicate_constructor_exists():
-    assert callable(build::ProvidesPredicate.__init__)
-
-
-def test_build::providespredicate_constructor_args():
-    sig = inspect.signature(build::ProvidesPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::implementspredicate_is_not_abstract():
-    assert not inspect.isabstract(build::ImplementsPredicate)
-
-
-def test_build::implementspredicate_constructor_exists():
-    assert callable(build::ImplementsPredicate.__init__)
-
-
-def test_build::implementspredicate_constructor_args():
-    sig = inspect.signature(build::ImplementsPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::bnamepredicate_is_not_abstract():
-    assert not inspect.isabstract(build::BNamePredicate)
-
-
-def test_build::bnamepredicate_constructor_exists():
-    assert callable(build::BNamePredicate.__init__)
-
-
-def test_build::bnamepredicate_constructor_args():
-    sig = inspect.signature(build::BNamePredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::capabilitypredicate_is_not_abstract():
-    assert not inspect.isabstract(build::CapabilityPredicate)
-
-
-def test_build::capabilitypredicate_constructor_exists():
-    assert callable(build::CapabilityPredicate.__init__)
-
-
-def test_build::capabilitypredicate_constructor_args():
-    sig = inspect.signature(build::CapabilityPredicate.__init__)
-    params = list(sig.parameters.keys())
-    assert "versionRange" in params, "Missing parameter 'versionRange'"
-
-def test_build::capabilitypredicate_has_versionRange():
-    assert hasattr(build::CapabilityPredicate, "versionRange")
-    descriptor = None
-    for klass in build::CapabilityPredicate.__mro__:
-        if "versionRange" in klass.__dict__:
-            descriptor = klass.__dict__["versionRange"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_build::inputpredicate_is_not_abstract():
-    assert not inspect.isabstract(build::InputPredicate)
-
-
-def test_build::inputpredicate_constructor_exists():
-    assert callable(build::InputPredicate.__init__)
-
-
-def test_build::inputpredicate_constructor_args():
-    sig = inspect.signature(build::InputPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::buildernamepredicate_is_not_abstract():
-    assert not inspect.isabstract(build::BuilderNamePredicate)
-
-
-def test_build::buildernamepredicate_constructor_exists():
-    assert callable(build::BuilderNamePredicate.__init__)
-
-
-def test_build::buildernamepredicate_constructor_args():
-    sig = inspect.signature(build::BuilderNamePredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_capabilitypredicate_is_not_abstract():
-    assert not inspect.isabstract(CapabilityPredicate)
-
-
-def test_capabilitypredicate_constructor_exists():
-    assert callable(CapabilityPredicate.__init__)
-
-
-def test_capabilitypredicate_constructor_args():
-    sig = inspect.signature(CapabilityPredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::unitnamepredicate_is_not_abstract():
-    assert not inspect.isabstract(build::UnitNamePredicate)
-
-
-def test_build::unitnamepredicate_constructor_exists():
-    assert callable(build::UnitNamePredicate.__init__)
-
-
-def test_build::unitnamepredicate_constructor_args():
-    sig = inspect.signature(build::UnitNamePredicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_build::namespacepredicate_is_not_abstract():
-    assert not inspect.isabstract(build::NameSpacePredicate)
-
-
-def test_build::namespacepredicate_constructor_exists():
-    assert callable(build::NameSpacePredicate.__init__)
-
-
-def test_build::namespacepredicate_constructor_args():
-    sig = inspect.signature(build::NameSpacePredicate.__init__)
-    params = list(sig.parameters.keys())
-    assert "nameSpace" in params, "Missing parameter 'nameSpace'"
-
-def test_build::namespacepredicate_has_nameSpace():
-    assert hasattr(build::NameSpacePredicate, "nameSpace")
-    descriptor = None
-    for klass in build::NameSpacePredicate.__mro__:
-        if "nameSpace" in klass.__dict__:
-            descriptor = klass.__dict__["nameSpace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tristate_exists():
-    # Check that the Enumeration exists
-    assert TriState is not None
-
-def test_tristate_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TriState]
-    expected_literals = [
-        "False_",
-        "Default",
-        "True_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TriState"
-
-def test_branchpointtype_exists():
-    # Check that the Enumeration exists
-    assert BranchPointType is not None
-
-def test_branchpointtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BranchPointType]
-    expected_literals = [
-        "Revision",
-        "Timestamp",
-        "Tag",
-        "Latest",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BranchPointType"
 
 def test_mergeconflictstrategy_exists():
     # Check that the Enumeration exists
@@ -2485,6 +2452,39 @@ def test_mergeconflictstrategy_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MergeConflictStrategy"
 
+def test_branchpointtype_exists():
+    # Check that the Enumeration exists
+    assert BranchPointType is not None
+
+def test_branchpointtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BranchPointType]
+    expected_literals = [
+        "Tag",
+        "Revision",
+        "Latest",
+        "Timestamp",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BranchPointType"
+
+def test_tristate_exists():
+    # Check that the Enumeration exists
+    assert TriState is not None
+
+def test_tristate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TriState]
+    expected_literals = [
+        "Default",
+        "True_",
+        "False_",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TriState"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -2500,233 +2500,441 @@ safe_text = st.text(
 BuilderCallFacade_strategy = st.builds(
     BuilderCallFacade,
 )
-build::IEffectiveFacade_strategy = st.builds(
-    build::IEffectiveFacade,
+build_IEffectiveFacade_strategy = st.builds(
+    build_IEffectiveFacade,
 )
 BuildCallSingle_strategy = st.builds(
     BuildCallSingle,
 )
-build::BuildCallOnReferencedRequirement_strategy = st.builds(
-    build::BuildCallOnReferencedRequirement,
+build_BuildCallOnReferencedRequirement_strategy = st.builds(
+    build_BuildCallOnReferencedRequirement,
 )
-build::BuildCallOnDeclaredRequirement_strategy = st.builds(
-    build::BuildCallOnDeclaredRequirement,
+build_BuildCallOnDeclaredRequirement_strategy = st.builds(
+    build_BuildCallOnDeclaredRequirement,
 )
 BuilderCall_strategy = st.builds(
     BuilderCall,
 )
-build::BuildCallSingle_strategy = st.builds(
-    build::BuildCallSingle,
+build_BuildCallSingle_strategy = st.builds(
+    build_BuildCallSingle,
 )
-build::BuildCallMultiple_strategy = st.builds(
-    build::BuildCallMultiple,
+build_BuildCallMultiple_strategy = st.builds(
+    build_BuildCallMultiple,
 )
 BParameterDeclaration_strategy = st.builds(
     BParameterDeclaration,
 )
-build::BWithExpression_strategy = st.builds(
-    build::BWithExpression,
+build_BWithExpression_strategy = st.builds(
+    build_BWithExpression,
 )
 BuilderInputDecorator_strategy = st.builds(
     BuilderInputDecorator,
 )
-build::BuilderInputContextDecorator_strategy = st.builds(
-    build::BuilderInputContextDecorator,
+build_BuilderInputContextDecorator_strategy = st.builds(
+    build_BuilderInputContextDecorator,
 )
-build::BuilderInputGroup_strategy = st.builds(
-    build::BuilderInputGroup,
+build_BuilderInputCondition_strategy = st.builds(
+    build_BuilderInputCondition,
 )
-build::BuilderInputCondition_strategy = st.builds(
-    build::BuilderInputCondition,
+build_BuilderInputGroup_strategy = st.builds(
+    build_BuilderInputGroup,
 )
 BuildCallMultiple_strategy = st.builds(
     BuildCallMultiple,
 )
-build::BuildCallOnSelectedRequirements_strategy = st.builds(
-    build::BuildCallOnSelectedRequirements,
+build_BuildCallOnSelectedRequirements_strategy = st.builds(
+    build_BuildCallOnSelectedRequirements,
 )
-build::BExecutionContext_strategy = st.builds(
-    build::BExecutionContext,
+build_BExecutionContext_strategy = st.builds(
+    build_BExecutionContext,
 )
 ResolutionInfo_strategy = st.builds(
     ResolutionInfo,
 )
-build::UnitResolutionInfo_strategy = st.builds(
-    build::UnitResolutionInfo,
+build_UnitResolutionInfo_strategy = st.builds(
+    build_UnitResolutionInfo,
 )
 CompoundBuildUnitRepository_strategy = st.builds(
     CompoundBuildUnitRepository,
 )
-build::CompoundFirstFoundRepository_strategy = st.builds(
-    build::CompoundFirstFoundRepository,
+build_CompoundFirstFoundRepository_strategy = st.builds(
+    build_CompoundFirstFoundRepository,
 )
 BuildUnitRepository_strategy = st.builds(
     BuildUnitRepository,
 )
-build::BeeModelRepository_strategy = st.builds(
-    build::BeeModelRepository,
-)
-build::ExecutionStackRepository_strategy = st.builds(
-    build::ExecutionStackRepository,
-)
-build::UnitRepositoryDescription_strategy = st.builds(
-    build::UnitRepositoryDescription,
+build_UnitRepositoryDescription_strategy = st.builds(
+    build_UnitRepositoryDescription,
     evaluatedOptions=
+        safe_text
+)
+build_ExecutionStackRepository_strategy = st.builds(
+    build_ExecutionStackRepository,
+)
+build_BeeModelRepository_strategy = st.builds(
+    build_BeeModelRepository,
+)
+build_CompoundBuildUnitRepository_strategy = st.builds(
+    build_CompoundBuildUnitRepository,
+)
+IBuildUnitRepository_strategy = st.builds(
+    IBuildUnitRepository,
+)
+build_Branch_strategy = st.builds(
+    build_Branch,
+    update=
+        safe_text,
+    name=
+        safe_text,
+    replace=
+        safe_text,
+    branchPointType=
+        safe_text,
+    documentation=
+        safe_text,
+    mergeStrategy=
+        safe_text,
+    checkout=
+        safe_text,
+    acceptDirty=
+        safe_text
+)
+build_BSwitchExpression_strategy = st.builds(
+    build_BSwitchExpression,
+)
+ITypedValueContainer_strategy = st.builds(
+    ITypedValueContainer,
+)
+build_BuildSet_strategy = st.builds(
+    build_BuildSet,
+    valueMap=
+        safe_text,
+    pathIterator=
+        safe_text
+)
+build_BuilderCallFacade_strategy = st.builds(
+    build_BuilderCallFacade,
+    aliases=
+        safe_text
+)
+EffectiveFacade_strategy = st.builds(
+    EffectiveFacade,
+)
+build_EffectiveCapabilityFacade_strategy = st.builds(
+    build_EffectiveCapabilityFacade,
+)
+build_EffectiveRequirementFacade_strategy = st.builds(
+    build_EffectiveRequirementFacade,
+)
+build_EffectiveUnitFacade_strategy = st.builds(
+    build_EffectiveUnitFacade,
+)
+IEffectiveFacade_strategy = st.builds(
+    IEffectiveFacade,
+)
+build_EffectiveBuilderCallFacade_strategy = st.builds(
+    build_EffectiveBuilderCallFacade,
+)
+build_EffectiveFacade_strategy = st.builds(
+    build_EffectiveFacade,
+)
+build_BuildUnitRepository_strategy = st.builds(
+    build_BuildUnitRepository,
+)
+PathGroupPredicate_strategy = st.builds(
+    PathGroupPredicate,
+)
+BInnerContext_strategy = st.builds(
+    BInnerContext,
+)
+build_BuildResultContext_strategy = st.builds(
+    build_BuildResultContext,
+)
+build_IFunction_strategy = st.builds(
+    build_IFunction,
+)
+IBuildUnitContainer_strategy = st.builds(
+    IBuildUnitContainer,
+)
+BChainedExpression_strategy = st.builds(
+    BChainedExpression,
+)
+build_BeeModel_strategy = st.builds(
+    build_BeeModel,
+)
+BFunctionWrapper_strategy = st.builds(
+    BFunctionWrapper,
+)
+BJavaFunction_strategy = st.builds(
+    BJavaFunction,
+)
+build_ResolutionInfo_strategy = st.builds(
+    build_ResolutionInfo,
+    status=
+        safe_text
+)
+build_BeeHive_strategy = st.builds(
+    build_BeeHive,
+    resolutions=
+        safe_text
+)
+build_IRequiredCapabilityContainer_strategy = st.builds(
+    build_IRequiredCapabilityContainer,
+)
+RequiredCapability_strategy = st.builds(
+    RequiredCapability,
+)
+build_AliasedRequiredCapability_strategy = st.builds(
+    build_AliasedRequiredCapability,
+    alias=
+        safe_text
+)
+build_SourcePredicate_strategy = st.builds(
+    build_SourcePredicate,
+)
+IBuilder_strategy = st.builds(
+    IBuilder,
+)
+build_BuilderWrapper_strategy = st.builds(
+    build_BuilderWrapper,
+    defaultPropertiesAdvised=
+        st.booleans(),
+    outputAdvised=
+        st.booleans(),
+    inputAdvised=
+        st.booleans(),
+    providesAdvised=
+        st.booleans(),
+    sourceAdvised=
+        st.booleans(),
+    unitTypeAdvised=
+        st.booleans()
+)
+build_BuilderJava_strategy = st.builds(
+    build_BuilderJava,
+)
+B3Function_strategy = st.builds(
+    B3Function,
+)
+build_Builder_strategy = st.builds(
+    build_Builder,
+)
+build_IProvidedCapabilityContainer_strategy = st.builds(
+    build_IProvidedCapabilityContainer,
+)
+build_OutputPredicate_strategy = st.builds(
+    build_OutputPredicate,
+)
+BuildConcernContext_strategy = st.builds(
+    BuildConcernContext,
+)
+build_BuilderConcernContext_strategy = st.builds(
+    build_BuilderConcernContext,
+    removePostCondition=
+        st.booleans(),
+    removePreCondition=
+        st.booleans(),
+    removePostInputCondition=
+        st.booleans(),
+    sourceAnnotationsRemovals=
+        safe_text,
+    varArgs=
+        st.booleans(),
+    outputAnnotationsRemovals=
+        safe_text,
+    matchParameters=
+        st.booleans()
+)
+build_BParameterPredicate_strategy = st.builds(
+    build_BParameterPredicate,
+)
+build_BNamePredicate_strategy = st.builds(
+    build_BNamePredicate,
+)
+CapabilityPredicate_strategy = st.builds(
+    CapabilityPredicate,
+)
+build_UnitNamePredicate_strategy = st.builds(
+    build_UnitNamePredicate,
+)
+build_NameSpacePredicate_strategy = st.builds(
+    build_NameSpacePredicate,
+    nameSpace=
         safe_text
 )
 CompoundUnitProvider_strategy = st.builds(
     CompoundUnitProvider,
 )
-build::IBuildUnitRepository_strategy = st.builds(
-    build::IBuildUnitRepository,
+build_IBuildUnitRepository_strategy = st.builds(
+    build_IBuildUnitRepository,
 )
-build::RepoOption_strategy = st.builds(
-    build::RepoOption,
+build_RepoOption_strategy = st.builds(
+    build_RepoOption,
     name=
         safe_text
 )
 UnitProvider_strategy = st.builds(
     UnitProvider,
 )
-build::CompoundUnitProvider_strategy = st.builds(
-    build::CompoundUnitProvider,
+build_DelegatingUnitProvider_strategy = st.builds(
+    build_DelegatingUnitProvider,
 )
-build::DelegatingUnitProvider_strategy = st.builds(
-    build::DelegatingUnitProvider,
+build_CompoundUnitProvider_strategy = st.builds(
+    build_CompoundUnitProvider,
 )
-build::SwitchUnitProvider_strategy = st.builds(
-    build::SwitchUnitProvider,
+build_SwitchUnitProvider_strategy = st.builds(
+    build_SwitchUnitProvider,
 )
-build::RepositoryUnitProvider_strategy = st.builds(
-    build::RepositoryUnitProvider,
+build_RepositoryUnitProvider_strategy = st.builds(
+    build_RepositoryUnitProvider,
 )
 BExpression_strategy = st.builds(
     BExpression,
 )
-build::UnitProvider_strategy = st.builds(
-    build::UnitProvider,
+build_CapabilityPredicate_strategy = st.builds(
+    build_CapabilityPredicate,
+    versionRange=
+        safe_text
+)
+build_InputPredicate_strategy = st.builds(
+    build_InputPredicate,
+)
+build_PathGroupPredicate_strategy = st.builds(
+    build_PathGroupPredicate,
+)
+build_ImplementsPredicate_strategy = st.builds(
+    build_ImplementsPredicate,
+)
+build_BuilderNamePredicate_strategy = st.builds(
+    build_BuilderNamePredicate,
+)
+build_ProvidesPredicate_strategy = st.builds(
+    build_ProvidesPredicate,
+)
+build_UnitProvider_strategy = st.builds(
+    build_UnitProvider,
     documentation=
         safe_text
 )
-build::BuilderQuery_strategy = st.builds(
-    build::BuilderQuery,
+build_BuilderQuery_strategy = st.builds(
+    build_BuilderQuery,
 )
-build::RequiresPredicate_strategy = st.builds(
-    build::RequiresPredicate,
+build_RequiresPredicate_strategy = st.builds(
+    build_RequiresPredicate,
     meta=
         st.booleans()
 )
 BConcernContext_strategy = st.builds(
     BConcernContext,
 )
-build::BestFoundUnitProvider_strategy = st.builds(
-    build::BestFoundUnitProvider,
+build_BestFoundUnitProvider_strategy = st.builds(
+    build_BestFoundUnitProvider,
 )
 INamedValue_strategy = st.builds(
     INamedValue,
 )
-build::BuilderInputNameDecorator_strategy = st.builds(
-    build::BuilderInputNameDecorator,
+build_BuilderInputNameDecorator_strategy = st.builds(
+    build_BuilderInputNameDecorator,
 )
-build::Capability_strategy = st.builds(
-    build::Capability,
+build_Capability_strategy = st.builds(
+    build_Capability,
     nameSpace=
         safe_text
 )
-build::BParameterList_strategy = st.builds(
-    build::BParameterList,
+build_BParameterList_strategy = st.builds(
+    build_BParameterList,
 )
 BuilderInput_strategy = st.builds(
     BuilderInput,
 )
-build::BuilderCall_strategy = st.builds(
-    build::BuilderCall,
+build_BuilderCall_strategy = st.builds(
+    build_BuilderCall,
     builderName=
         safe_text
 )
-build::BuilderInputDecorator_strategy = st.builds(
-    build::BuilderInputDecorator,
+build_BuilderInputDecorator_strategy = st.builds(
+    build_BuilderInputDecorator,
 )
-build::PathVector_strategy = st.builds(
-    build::PathVector,
+build_PathVector_strategy = st.builds(
+    build_PathVector,
     basePath=
         safe_text,
     paths=
         safe_text
 )
-build::ConditionalPathVector_strategy = st.builds(
-    build::ConditionalPathVector,
+build_ConditionalPathVector_strategy = st.builds(
+    build_ConditionalPathVector,
 )
 Capability_strategy = st.builds(
     Capability,
 )
-build::VersionedCapability_strategy = st.builds(
-    build::VersionedCapability,
+build_VersionedCapability_strategy = st.builds(
+    build_VersionedCapability,
     version=
         safe_text
 )
-build::UnitParameterDeclaration_strategy = st.builds(
-    build::UnitParameterDeclaration,
+build_UnitParameterDeclaration_strategy = st.builds(
+    build_UnitParameterDeclaration,
 )
-build::PathGroup_strategy = st.builds(
-    build::PathGroup,
+build_PathGroup_strategy = st.builds(
+    build_PathGroup,
 )
-build::IBuildUnitContainer_strategy = st.builds(
-    build::IBuildUnitContainer,
+build_IBuildUnitContainer_strategy = st.builds(
+    build_IBuildUnitContainer,
 )
-build::FirstFoundUnitProvider_strategy = st.builds(
-    build::FirstFoundUnitProvider,
+build_FirstFoundUnitProvider_strategy = st.builds(
+    build_FirstFoundUnitProvider,
 )
-build::ContainerConfiguration_strategy = st.builds(
-    build::ContainerConfiguration,
+build_ContainerConfiguration_strategy = st.builds(
+    build_ContainerConfiguration,
     name=
         safe_text,
     documentation=
         safe_text
 )
-build::Repository_strategy = st.builds(
-    build::Repository,
-    documentation=
-        safe_text,
+build_Repository_strategy = st.builds(
+    build_Repository,
     name=
+        safe_text,
+    documentation=
         safe_text,
     handlerType=
         safe_text
 )
-build::Synchronization_strategy = st.builds(
-    build::Synchronization,
+build_Synchronization_strategy = st.builds(
+    build_Synchronization,
 )
-build::BPropertySet_strategy = st.builds(
-    build::BPropertySet,
+build_BPropertySet_strategy = st.builds(
+    build_BPropertySet,
 )
-build::BConcern_strategy = st.builds(
-    build::BConcern,
+build_BConcern_strategy = st.builds(
+    build_BConcern,
 )
-build::IType_strategy = st.builds(
-    build::IType,
+build_IType_strategy = st.builds(
+    build_IType,
 )
-build::RequiredCapability_strategy = st.builds(
-    build::RequiredCapability,
-    versionRange=
-        safe_text,
+build_RequiredCapability_strategy = st.builds(
+    build_RequiredCapability,
     greedy=
         st.booleans(),
-    min=
-        st.integers(),
+    versionRange=
+        safe_text,
     max=
+        st.integers(),
+    min=
         st.integers()
 )
-build::BuilderInput_strategy = st.builds(
-    build::BuilderInput,
+build_BuilderInput_strategy = st.builds(
+    build_BuilderInput,
 )
-build::BExpression_strategy = st.builds(
-    build::BExpression,
+build_BExpression_strategy = st.builds(
+    build_BExpression,
 )
 IFunction_strategy = st.builds(
     IFunction,
 )
-build::FragmentHost_strategy = st.builds(
-    build::FragmentHost,
+build_FragmentHost_strategy = st.builds(
+    build_FragmentHost,
 )
 VersionedCapability_strategy = st.builds(
     VersionedCapability,
@@ -2737,248 +2945,40 @@ IVarName_strategy = st.builds(
 IProvidedCapabilityContainer_strategy = st.builds(
     IProvidedCapabilityContainer,
 )
-build::BuildConcernContext_strategy = st.builds(
-    build::BuildConcernContext,
+build_BuildConcernContext_strategy = st.builds(
+    build_BuildConcernContext,
     defaultPropertiesRemovals=
         safe_text
 )
-build::IBuilder_strategy = st.builds(
-    build::IBuilder,
+build_IBuilder_strategy = st.builds(
+    build_IBuilder,
     unitType=
         safe_text
 )
 IRequiredCapabilityContainer_strategy = st.builds(
     IRequiredCapabilityContainer,
 )
+build_UnitConcernContext_strategy = st.builds(
+    build_UnitConcernContext,
+    sourceLocation=
+        safe_text,
+    outputLocation=
+        safe_text
+)
 BFunctionContainer_strategy = st.builds(
     BFunctionContainer,
 )
-build::BuildUnit_strategy = st.builds(
-    build::BuildUnit,
-    documentation=
-        safe_text,
-    outputLocation=
-        safe_text,
-    sourceLocation=
-        safe_text,
+build_BuildUnit_strategy = st.builds(
+    build_BuildUnit,
     executionMode=
         safe_text,
     platformFilter=
-        safe_text
-)
-build::CompoundBuildUnitRepository_strategy = st.builds(
-    build::CompoundBuildUnitRepository,
-)
-IBuildUnitRepository_strategy = st.builds(
-    IBuildUnitRepository,
-)
-build::Branch_strategy = st.builds(
-    build::Branch,
-    replace=
-        safe_text,
-    mergeStrategy=
         safe_text,
     documentation=
         safe_text,
-    checkout=
-        safe_text,
-    acceptDirty=
-        safe_text,
-    name=
-        safe_text,
-    update=
-        safe_text,
-    branchPointType=
-        safe_text
-)
-build::BSwitchExpression_strategy = st.builds(
-    build::BSwitchExpression,
-)
-ITypedValueContainer_strategy = st.builds(
-    ITypedValueContainer,
-)
-build::BuildSet_strategy = st.builds(
-    build::BuildSet,
-    pathIterator=
-        safe_text,
-    valueMap=
-        safe_text
-)
-build::BuilderCallFacade_strategy = st.builds(
-    build::BuilderCallFacade,
-    aliases=
-        safe_text
-)
-EffectiveFacade_strategy = st.builds(
-    EffectiveFacade,
-)
-build::EffectiveRequirementFacade_strategy = st.builds(
-    build::EffectiveRequirementFacade,
-)
-build::EffectiveCapabilityFacade_strategy = st.builds(
-    build::EffectiveCapabilityFacade,
-)
-build::EffectiveUnitFacade_strategy = st.builds(
-    build::EffectiveUnitFacade,
-)
-IEffectiveFacade_strategy = st.builds(
-    IEffectiveFacade,
-)
-build::EffectiveBuilderCallFacade_strategy = st.builds(
-    build::EffectiveBuilderCallFacade,
-)
-build::EffectiveFacade_strategy = st.builds(
-    build::EffectiveFacade,
-)
-build::BuildUnitRepository_strategy = st.builds(
-    build::BuildUnitRepository,
-)
-PathGroupPredicate_strategy = st.builds(
-    PathGroupPredicate,
-)
-BInnerContext_strategy = st.builds(
-    BInnerContext,
-)
-build::BuildResultContext_strategy = st.builds(
-    build::BuildResultContext,
-)
-build::IFunction_strategy = st.builds(
-    build::IFunction,
-)
-IBuildUnitContainer_strategy = st.builds(
-    IBuildUnitContainer,
-)
-BChainedExpression_strategy = st.builds(
-    BChainedExpression,
-)
-build::BeeModel_strategy = st.builds(
-    build::BeeModel,
-)
-BFunctionWrapper_strategy = st.builds(
-    BFunctionWrapper,
-)
-BJavaFunction_strategy = st.builds(
-    BJavaFunction,
-)
-build::ResolutionInfo_strategy = st.builds(
-    build::ResolutionInfo,
-    status=
-        safe_text
-)
-build::BeeHive_strategy = st.builds(
-    build::BeeHive,
-    resolutions=
-        safe_text
-)
-build::IRequiredCapabilityContainer_strategy = st.builds(
-    build::IRequiredCapabilityContainer,
-)
-RequiredCapability_strategy = st.builds(
-    RequiredCapability,
-)
-build::AliasedRequiredCapability_strategy = st.builds(
-    build::AliasedRequiredCapability,
-    alias=
-        safe_text
-)
-build::PathGroupPredicate_strategy = st.builds(
-    build::PathGroupPredicate,
-)
-build::SourcePredicate_strategy = st.builds(
-    build::SourcePredicate,
-)
-IBuilder_strategy = st.builds(
-    IBuilder,
-)
-build::BuilderWrapper_strategy = st.builds(
-    build::BuilderWrapper,
-    unitTypeAdvised=
-        st.booleans(),
-    sourceAdvised=
-        st.booleans(),
-    providesAdvised=
-        st.booleans(),
-    defaultPropertiesAdvised=
-        st.booleans(),
-    outputAdvised=
-        st.booleans(),
-    inputAdvised=
-        st.booleans()
-)
-build::BuilderJava_strategy = st.builds(
-    build::BuilderJava,
-)
-B3Function_strategy = st.builds(
-    B3Function,
-)
-build::Builder_strategy = st.builds(
-    build::Builder,
-)
-build::IProvidedCapabilityContainer_strategy = st.builds(
-    build::IProvidedCapabilityContainer,
-)
-build::OutputPredicate_strategy = st.builds(
-    build::OutputPredicate,
-)
-BuildConcernContext_strategy = st.builds(
-    BuildConcernContext,
-)
-build::BuilderConcernContext_strategy = st.builds(
-    build::BuilderConcernContext,
-    removePostCondition=
-        st.booleans(),
-    matchParameters=
-        st.booleans(),
-    removePreCondition=
-        st.booleans(),
-    varArgs=
-        st.booleans(),
-    sourceAnnotationsRemovals=
-        safe_text,
-    removePostInputCondition=
-        st.booleans(),
-    outputAnnotationsRemovals=
-        safe_text
-)
-build::UnitConcernContext_strategy = st.builds(
-    build::UnitConcernContext,
     outputLocation=
         safe_text,
     sourceLocation=
-        safe_text
-)
-build::BParameterPredicate_strategy = st.builds(
-    build::BParameterPredicate,
-)
-build::ProvidesPredicate_strategy = st.builds(
-    build::ProvidesPredicate,
-)
-build::ImplementsPredicate_strategy = st.builds(
-    build::ImplementsPredicate,
-)
-build::BNamePredicate_strategy = st.builds(
-    build::BNamePredicate,
-)
-build::CapabilityPredicate_strategy = st.builds(
-    build::CapabilityPredicate,
-    versionRange=
-        safe_text
-)
-build::InputPredicate_strategy = st.builds(
-    build::InputPredicate,
-)
-build::BuilderNamePredicate_strategy = st.builds(
-    build::BuilderNamePredicate,
-)
-CapabilityPredicate_strategy = st.builds(
-    CapabilityPredicate,
-)
-build::UnitNamePredicate_strategy = st.builds(
-    build::UnitNamePredicate,
-)
-build::NameSpacePredicate_strategy = st.builds(
-    build::NameSpacePredicate,
-    nameSpace=
         safe_text
 )
 
@@ -2987,208 +2987,212 @@ build::NameSpacePredicate_strategy = st.builds(
 def test_buildercallfacade_instantiation(instance):
     assert isinstance(instance, BuilderCallFacade)
 
-@given(instance=build::IEffectiveFacade_strategy)
+@given(instance=build_IEffectiveFacade_strategy)
 @settings(max_examples=50)
-def test_build::ieffectivefacade_instantiation(instance):
-    assert isinstance(instance, build::IEffectiveFacade)
+def test_build_ieffectivefacade_instantiation(instance):
+    assert isinstance(instance, build_IEffectiveFacade)
 
 @given(instance=BuildCallSingle_strategy)
 @settings(max_examples=50)
 def test_buildcallsingle_instantiation(instance):
     assert isinstance(instance, BuildCallSingle)
 
-@given(instance=build::BuildCallOnReferencedRequirement_strategy)
+@given(instance=build_BuildCallOnReferencedRequirement_strategy)
 @settings(max_examples=50)
-def test_build::buildcallonreferencedrequirement_instantiation(instance):
-    assert isinstance(instance, build::BuildCallOnReferencedRequirement)
+def test_build_buildcallonreferencedrequirement_instantiation(instance):
+    assert isinstance(instance, build_BuildCallOnReferencedRequirement)
 
-@given(instance=build::BuildCallOnDeclaredRequirement_strategy)
+@given(instance=build_BuildCallOnDeclaredRequirement_strategy)
 @settings(max_examples=50)
-def test_build::buildcallondeclaredrequirement_instantiation(instance):
-    assert isinstance(instance, build::BuildCallOnDeclaredRequirement)
+def test_build_buildcallondeclaredrequirement_instantiation(instance):
+    assert isinstance(instance, build_BuildCallOnDeclaredRequirement)
 
 @given(instance=BuilderCall_strategy)
 @settings(max_examples=50)
 def test_buildercall_instantiation(instance):
     assert isinstance(instance, BuilderCall)
 
-@given(instance=build::BuildCallSingle_strategy)
+@given(instance=build_BuildCallSingle_strategy)
 @settings(max_examples=50)
-def test_build::buildcallsingle_instantiation(instance):
-    assert isinstance(instance, build::BuildCallSingle)
+def test_build_buildcallsingle_instantiation(instance):
+    assert isinstance(instance, build_BuildCallSingle)
 
-@given(instance=build::BuildCallMultiple_strategy)
+@given(instance=build_BuildCallMultiple_strategy)
 @settings(max_examples=50)
-def test_build::buildcallmultiple_instantiation(instance):
-    assert isinstance(instance, build::BuildCallMultiple)
+def test_build_buildcallmultiple_instantiation(instance):
+    assert isinstance(instance, build_BuildCallMultiple)
 
 @given(instance=BParameterDeclaration_strategy)
 @settings(max_examples=50)
 def test_bparameterdeclaration_instantiation(instance):
     assert isinstance(instance, BParameterDeclaration)
 
-@given(instance=build::BWithExpression_strategy)
+@given(instance=build_BWithExpression_strategy)
 @settings(max_examples=50)
-def test_build::bwithexpression_instantiation(instance):
-    assert isinstance(instance, build::BWithExpression)
+def test_build_bwithexpression_instantiation(instance):
+    assert isinstance(instance, build_BWithExpression)
 
 @given(instance=BuilderInputDecorator_strategy)
 @settings(max_examples=50)
 def test_builderinputdecorator_instantiation(instance):
     assert isinstance(instance, BuilderInputDecorator)
 
-@given(instance=build::BuilderInputContextDecorator_strategy)
+@given(instance=build_BuilderInputContextDecorator_strategy)
 @settings(max_examples=50)
-def test_build::builderinputcontextdecorator_instantiation(instance):
-    assert isinstance(instance, build::BuilderInputContextDecorator)
+def test_build_builderinputcontextdecorator_instantiation(instance):
+    assert isinstance(instance, build_BuilderInputContextDecorator)
 
-@given(instance=build::BuilderInputGroup_strategy)
+@given(instance=build_BuilderInputCondition_strategy)
 @settings(max_examples=50)
-def test_build::builderinputgroup_instantiation(instance):
-    assert isinstance(instance, build::BuilderInputGroup)
+def test_build_builderinputcondition_instantiation(instance):
+    assert isinstance(instance, build_BuilderInputCondition)
 
-@given(instance=build::BuilderInputCondition_strategy)
+@given(instance=build_BuilderInputGroup_strategy)
 @settings(max_examples=50)
-def test_build::builderinputcondition_instantiation(instance):
-    assert isinstance(instance, build::BuilderInputCondition)
+def test_build_builderinputgroup_instantiation(instance):
+    assert isinstance(instance, build_BuilderInputGroup)
 
 @given(instance=BuildCallMultiple_strategy)
 @settings(max_examples=50)
 def test_buildcallmultiple_instantiation(instance):
     assert isinstance(instance, BuildCallMultiple)
 
-@given(instance=build::BuildCallOnSelectedRequirements_strategy)
+@given(instance=build_BuildCallOnSelectedRequirements_strategy)
 @settings(max_examples=50)
-def test_build::buildcallonselectedrequirements_instantiation(instance):
-    assert isinstance(instance, build::BuildCallOnSelectedRequirements)
+def test_build_buildcallonselectedrequirements_instantiation(instance):
+    assert isinstance(instance, build_BuildCallOnSelectedRequirements)
 
-@given(instance=build::BExecutionContext_strategy)
+@given(instance=build_BExecutionContext_strategy)
 @settings(max_examples=50)
-def test_build::bexecutioncontext_instantiation(instance):
-    assert isinstance(instance, build::BExecutionContext)
+def test_build_bexecutioncontext_instantiation(instance):
+    assert isinstance(instance, build_BExecutionContext)
 
 @given(instance=ResolutionInfo_strategy)
 @settings(max_examples=50)
 def test_resolutioninfo_instantiation(instance):
     assert isinstance(instance, ResolutionInfo)
 
-@given(instance=build::UnitResolutionInfo_strategy)
+@given(instance=build_UnitResolutionInfo_strategy)
 @settings(max_examples=50)
-def test_build::unitresolutioninfo_instantiation(instance):
-    assert isinstance(instance, build::UnitResolutionInfo)
+def test_build_unitresolutioninfo_instantiation(instance):
+    assert isinstance(instance, build_UnitResolutionInfo)
 
 @given(instance=CompoundBuildUnitRepository_strategy)
 @settings(max_examples=50)
 def test_compoundbuildunitrepository_instantiation(instance):
     assert isinstance(instance, CompoundBuildUnitRepository)
 
-@given(instance=build::CompoundFirstFoundRepository_strategy)
+@given(instance=build_CompoundFirstFoundRepository_strategy)
 @settings(max_examples=50)
-def test_build::compoundfirstfoundrepository_instantiation(instance):
-    assert isinstance(instance, build::CompoundFirstFoundRepository)
+def test_build_compoundfirstfoundrepository_instantiation(instance):
+    assert isinstance(instance, build_CompoundFirstFoundRepository)
 
 @given(instance=BuildUnitRepository_strategy)
 @settings(max_examples=50)
 def test_buildunitrepository_instantiation(instance):
     assert isinstance(instance, BuildUnitRepository)
 
-@given(instance=build::BeeModelRepository_strategy)
+@given(instance=build_UnitRepositoryDescription_strategy)
 @settings(max_examples=50)
-def test_build::beemodelrepository_instantiation(instance):
-    assert isinstance(instance, build::BeeModelRepository)
-
-@given(instance=build::ExecutionStackRepository_strategy)
-@settings(max_examples=50)
-def test_build::executionstackrepository_instantiation(instance):
-    assert isinstance(instance, build::ExecutionStackRepository)
-
-@given(instance=build::UnitRepositoryDescription_strategy)
-@settings(max_examples=50)
-def test_build::unitrepositorydescription_instantiation(instance):
-    assert isinstance(instance, build::UnitRepositoryDescription)
-
-@given(instance=build::UnitRepositoryDescription_strategy)
-def test_build::unitrepositorydescription_evaluatedOptions_type(instance):
-    assert isinstance(instance.evaluatedOptions, str)
+def test_build_unitrepositorydescription_instantiation(instance):
+    assert isinstance(instance, build_UnitRepositoryDescription)
 
 
-@given(instance=build::UnitRepositoryDescription_strategy)
-def test_build::unitrepositorydescription_evaluatedOptions_setter(instance):
+
+@given(instance=build_UnitRepositoryDescription_strategy)
+def test_build_unitrepositorydescription_evaluatedOptions_setter(instance):
     original = instance.evaluatedOptions
     instance.evaluatedOptions = original
     assert instance.evaluatedOptions == original
 
-@given(instance=CompoundUnitProvider_strategy)
+@given(instance=build_ExecutionStackRepository_strategy)
 @settings(max_examples=50)
-def test_compoundunitprovider_instantiation(instance):
-    assert isinstance(instance, CompoundUnitProvider)
+def test_build_executionstackrepository_instantiation(instance):
+    assert isinstance(instance, build_ExecutionStackRepository)
 
-@given(instance=build::IBuildUnitRepository_strategy)
+@given(instance=build_BeeModelRepository_strategy)
 @settings(max_examples=50)
-def test_build::ibuildunitrepository_instantiation(instance):
-    assert isinstance(instance, build::IBuildUnitRepository)
+def test_build_beemodelrepository_instantiation(instance):
+    assert isinstance(instance, build_BeeModelRepository)
 
-@given(instance=build::RepoOption_strategy)
+@given(instance=build_CompoundBuildUnitRepository_strategy)
 @settings(max_examples=50)
-def test_build::repooption_instantiation(instance):
-    assert isinstance(instance, build::RepoOption)
+def test_build_compoundbuildunitrepository_instantiation(instance):
+    assert isinstance(instance, build_CompoundBuildUnitRepository)
 
-@given(instance=build::RepoOption_strategy)
-def test_build::repooption_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=IBuildUnitRepository_strategy)
+@settings(max_examples=50)
+def test_ibuildunitrepository_instantiation(instance):
+    assert isinstance(instance, IBuildUnitRepository)
+
+@given(instance=build_Branch_strategy)
+@settings(max_examples=50)
+def test_build_branch_instantiation(instance):
+    assert isinstance(instance, build_Branch)
 
 
-@given(instance=build::RepoOption_strategy)
-def test_build::repooption_name_setter(instance):
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_update_setter(instance):
+    original = instance.update
+    instance.update = original
+    assert instance.update == original
+
+
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=UnitProvider_strategy)
-@settings(max_examples=50)
-def test_unitprovider_instantiation(instance):
-    assert isinstance(instance, UnitProvider)
-
-@given(instance=build::CompoundUnitProvider_strategy)
-@settings(max_examples=50)
-def test_build::compoundunitprovider_instantiation(instance):
-    assert isinstance(instance, build::CompoundUnitProvider)
-
-@given(instance=build::DelegatingUnitProvider_strategy)
-@settings(max_examples=50)
-def test_build::delegatingunitprovider_instantiation(instance):
-    assert isinstance(instance, build::DelegatingUnitProvider)
-
-@given(instance=build::SwitchUnitProvider_strategy)
-@settings(max_examples=50)
-def test_build::switchunitprovider_instantiation(instance):
-    assert isinstance(instance, build::SwitchUnitProvider)
-
-@given(instance=build::RepositoryUnitProvider_strategy)
-@settings(max_examples=50)
-def test_build::repositoryunitprovider_instantiation(instance):
-    assert isinstance(instance, build::RepositoryUnitProvider)
-
-@given(instance=BExpression_strategy)
-@settings(max_examples=50)
-def test_bexpression_instantiation(instance):
-    assert isinstance(instance, BExpression)
-
-@given(instance=build::UnitProvider_strategy)
-@settings(max_examples=50)
-def test_build::unitprovider_instantiation(instance):
-    assert isinstance(instance, build::UnitProvider)
-
-@given(instance=build::UnitProvider_strategy)
-def test_build::unitprovider_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
 
 
-@given(instance=build::UnitProvider_strategy)
-def test_build::unitprovider_documentation_setter(instance):
+@given(instance=build_Branch_strategy)
+def test_build_branch_replace_setter(instance):
+    original = instance.replace
+    instance.replace = original
+    assert instance.replace == original
+
+
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_branchPointType_setter(instance):
+    original = instance.branchPointType
+    instance.branchPointType = original
+    assert instance.branchPointType == original
+
+
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_documentation_setter(instance):
     original = instance.documentation
     instance.documentation = original
     assert instance.documentation == original
+
+
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_mergeStrategy_setter(instance):
+    original = instance.mergeStrategy
+    instance.mergeStrategy = original
+    assert instance.mergeStrategy == original
+
+
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_checkout_setter(instance):
+    original = instance.checkout
+    instance.checkout = original
+    assert instance.checkout == original
+
+
+
+@given(instance=build_Branch_strategy)
+def test_build_branch_acceptDirty_setter(instance):
+    original = instance.acceptDirty
+    instance.acceptDirty = original
+    assert instance.acceptDirty == original
 
 import warnings
 import copy
@@ -3196,13 +3200,162 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=build::UnitProvider_strategy)
+@given(instance=build_Branch_strategy)
 @settings(max_examples=30)
-def test_build::unitprovider_resolve_changes_state(instance):
+def test_build_branch_hasvalidstate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hasValidState(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hasValidState).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hasValidState' in build_Branch is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hasValidState' in build_Branch did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hasValidState' in build_Branch is not implemented or raised an error")
+
+@given(instance=build_BSwitchExpression_strategy)
+@settings(max_examples=50)
+def test_build_bswitchexpression_instantiation(instance):
+    assert isinstance(instance, build_BSwitchExpression)
+
+@given(instance=ITypedValueContainer_strategy)
+@settings(max_examples=50)
+def test_itypedvaluecontainer_instantiation(instance):
+    assert isinstance(instance, ITypedValueContainer)
+
+@given(instance=build_BuildSet_strategy)
+@settings(max_examples=50)
+def test_build_buildset_instantiation(instance):
+    assert isinstance(instance, build_BuildSet)
+
+
+
+@given(instance=build_BuildSet_strategy)
+def test_build_buildset_valueMap_setter(instance):
+    original = instance.valueMap
+    instance.valueMap = original
+    assert instance.valueMap == original
+
+
+
+@given(instance=build_BuildSet_strategy)
+def test_build_buildset_pathIterator_setter(instance):
+    original = instance.pathIterator
+    instance.pathIterator = original
+    assert instance.pathIterator == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_BuildSet_strategy)
+@settings(max_examples=30)
+def test_build_buildset_merge_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.merge(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.merge).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'merge' in build_BuildSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'merge' in build_BuildSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'merge' in build_BuildSet is not implemented or raised an error")
+
+@given(instance=build_BuilderCallFacade_strategy)
+@settings(max_examples=50)
+def test_build_buildercallfacade_instantiation(instance):
+    assert isinstance(instance, build_BuilderCallFacade)
+
+
+
+@given(instance=build_BuilderCallFacade_strategy)
+def test_build_buildercallfacade_aliases_setter(instance):
+    original = instance.aliases
+    instance.aliases = original
+    assert instance.aliases == original
+
+@given(instance=EffectiveFacade_strategy)
+@settings(max_examples=50)
+def test_effectivefacade_instantiation(instance):
+    assert isinstance(instance, EffectiveFacade)
+
+@given(instance=build_EffectiveCapabilityFacade_strategy)
+@settings(max_examples=50)
+def test_build_effectivecapabilityfacade_instantiation(instance):
+    assert isinstance(instance, build_EffectiveCapabilityFacade)
+
+@given(instance=build_EffectiveRequirementFacade_strategy)
+@settings(max_examples=50)
+def test_build_effectiverequirementfacade_instantiation(instance):
+    assert isinstance(instance, build_EffectiveRequirementFacade)
+
+@given(instance=build_EffectiveUnitFacade_strategy)
+@settings(max_examples=50)
+def test_build_effectiveunitfacade_instantiation(instance):
+    assert isinstance(instance, build_EffectiveUnitFacade)
+
+@given(instance=IEffectiveFacade_strategy)
+@settings(max_examples=50)
+def test_ieffectivefacade_instantiation(instance):
+    assert isinstance(instance, IEffectiveFacade)
+
+@given(instance=build_EffectiveBuilderCallFacade_strategy)
+@settings(max_examples=50)
+def test_build_effectivebuildercallfacade_instantiation(instance):
+    assert isinstance(instance, build_EffectiveBuilderCallFacade)
+
+@given(instance=build_EffectiveFacade_strategy)
+@settings(max_examples=50)
+def test_build_effectivefacade_instantiation(instance):
+    assert isinstance(instance, build_EffectiveFacade)
+
+@given(instance=build_BuildUnitRepository_strategy)
+@settings(max_examples=50)
+def test_build_buildunitrepository_instantiation(instance):
+    assert isinstance(instance, build_BuildUnitRepository)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_BuildUnitRepository_strategy)
+@settings(max_examples=30)
+def test_build_buildunitrepository_resolve_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
         instance.resolve(
+            "test", 
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
@@ -3212,35 +3365,14 @@ def test_build::unitprovider_resolve_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolve' in build::UnitProvider is empty"
+        assert has_statements, f"Function 'resolve' in build_BuildUnitRepository is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolve' in build::UnitProvider did not change state; check implementation")
+            warnings.warn(f"Operation 'resolve' in build_BuildUnitRepository did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolve' in build::UnitProvider is not implemented or raised an error")
-
-@given(instance=build::BuilderQuery_strategy)
-@settings(max_examples=50)
-def test_build::builderquery_instantiation(instance):
-    assert isinstance(instance, build::BuilderQuery)
-
-@given(instance=build::RequiresPredicate_strategy)
-@settings(max_examples=50)
-def test_build::requirespredicate_instantiation(instance):
-    assert isinstance(instance, build::RequiresPredicate)
-
-@given(instance=build::RequiresPredicate_strategy)
-def test_build::requirespredicate_meta_type(instance):
-    assert isinstance(instance.meta, bool)
-
-
-@given(instance=build::RequiresPredicate_strategy)
-def test_build::requirespredicate_meta_setter(instance):
-    original = instance.meta
-    instance.meta = original
-    assert instance.meta == original
+        warnings.warn(f"Operation 'resolve' in build_BuildUnitRepository is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3248,9 +3380,389 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=build::RequiresPredicate_strategy)
+@given(instance=build_BuildUnitRepository_strategy)
 @settings(max_examples=30)
-def test_build::requirespredicate_matches_changes_state(instance):
+def test_build_buildunitrepository_initialize_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.initialize(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.initialize).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'initialize' in build_BuildUnitRepository is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'initialize' in build_BuildUnitRepository did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'initialize' in build_BuildUnitRepository is not implemented or raised an error")
+
+@given(instance=PathGroupPredicate_strategy)
+@settings(max_examples=50)
+def test_pathgrouppredicate_instantiation(instance):
+    assert isinstance(instance, PathGroupPredicate)
+
+@given(instance=BInnerContext_strategy)
+@settings(max_examples=50)
+def test_binnercontext_instantiation(instance):
+    assert isinstance(instance, BInnerContext)
+
+@given(instance=build_BuildResultContext_strategy)
+@settings(max_examples=50)
+def test_build_buildresultcontext_instantiation(instance):
+    assert isinstance(instance, build_BuildResultContext)
+
+@given(instance=build_IFunction_strategy)
+@settings(max_examples=50)
+def test_build_ifunction_instantiation(instance):
+    assert isinstance(instance, build_IFunction)
+
+@given(instance=IBuildUnitContainer_strategy)
+@settings(max_examples=50)
+def test_ibuildunitcontainer_instantiation(instance):
+    assert isinstance(instance, IBuildUnitContainer)
+
+@given(instance=BChainedExpression_strategy)
+@settings(max_examples=50)
+def test_bchainedexpression_instantiation(instance):
+    assert isinstance(instance, BChainedExpression)
+
+@given(instance=build_BeeModel_strategy)
+@settings(max_examples=50)
+def test_build_beemodel_instantiation(instance):
+    assert isinstance(instance, build_BeeModel)
+
+@given(instance=BFunctionWrapper_strategy)
+@settings(max_examples=50)
+def test_bfunctionwrapper_instantiation(instance):
+    assert isinstance(instance, BFunctionWrapper)
+
+@given(instance=BJavaFunction_strategy)
+@settings(max_examples=50)
+def test_bjavafunction_instantiation(instance):
+    assert isinstance(instance, BJavaFunction)
+
+@given(instance=build_ResolutionInfo_strategy)
+@settings(max_examples=50)
+def test_build_resolutioninfo_instantiation(instance):
+    assert isinstance(instance, build_ResolutionInfo)
+
+
+
+@given(instance=build_ResolutionInfo_strategy)
+def test_build_resolutioninfo_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+@given(instance=build_BeeHive_strategy)
+@settings(max_examples=50)
+def test_build_beehive_instantiation(instance):
+    assert isinstance(instance, build_BeeHive)
+
+
+
+@given(instance=build_BeeHive_strategy)
+def test_build_beehive_resolutions_setter(instance):
+    original = instance.resolutions
+    instance.resolutions = original
+    assert instance.resolutions == original
+
+@given(instance=build_IRequiredCapabilityContainer_strategy)
+@settings(max_examples=50)
+def test_build_irequiredcapabilitycontainer_instantiation(instance):
+    assert isinstance(instance, build_IRequiredCapabilityContainer)
+
+@given(instance=RequiredCapability_strategy)
+@settings(max_examples=50)
+def test_requiredcapability_instantiation(instance):
+    assert isinstance(instance, RequiredCapability)
+
+@given(instance=build_AliasedRequiredCapability_strategy)
+@settings(max_examples=50)
+def test_build_aliasedrequiredcapability_instantiation(instance):
+    assert isinstance(instance, build_AliasedRequiredCapability)
+
+
+
+@given(instance=build_AliasedRequiredCapability_strategy)
+def test_build_aliasedrequiredcapability_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
+
+@given(instance=build_SourcePredicate_strategy)
+@settings(max_examples=50)
+def test_build_sourcepredicate_instantiation(instance):
+    assert isinstance(instance, build_SourcePredicate)
+
+@given(instance=IBuilder_strategy)
+@settings(max_examples=50)
+def test_ibuilder_instantiation(instance):
+    assert isinstance(instance, IBuilder)
+
+@given(instance=build_BuilderWrapper_strategy)
+@settings(max_examples=50)
+def test_build_builderwrapper_instantiation(instance):
+    assert isinstance(instance, build_BuilderWrapper)
+
+
+
+@given(instance=build_BuilderWrapper_strategy)
+def test_build_builderwrapper_defaultPropertiesAdvised_setter(instance):
+    original = instance.defaultPropertiesAdvised
+    instance.defaultPropertiesAdvised = original
+    assert instance.defaultPropertiesAdvised == original
+
+
+
+@given(instance=build_BuilderWrapper_strategy)
+def test_build_builderwrapper_outputAdvised_setter(instance):
+    original = instance.outputAdvised
+    instance.outputAdvised = original
+    assert instance.outputAdvised == original
+
+
+
+@given(instance=build_BuilderWrapper_strategy)
+def test_build_builderwrapper_inputAdvised_setter(instance):
+    original = instance.inputAdvised
+    instance.inputAdvised = original
+    assert instance.inputAdvised == original
+
+
+
+@given(instance=build_BuilderWrapper_strategy)
+def test_build_builderwrapper_providesAdvised_setter(instance):
+    original = instance.providesAdvised
+    instance.providesAdvised = original
+    assert instance.providesAdvised == original
+
+
+
+@given(instance=build_BuilderWrapper_strategy)
+def test_build_builderwrapper_sourceAdvised_setter(instance):
+    original = instance.sourceAdvised
+    instance.sourceAdvised = original
+    assert instance.sourceAdvised == original
+
+
+
+@given(instance=build_BuilderWrapper_strategy)
+def test_build_builderwrapper_unitTypeAdvised_setter(instance):
+    original = instance.unitTypeAdvised
+    instance.unitTypeAdvised = original
+    assert instance.unitTypeAdvised == original
+
+@given(instance=build_BuilderJava_strategy)
+@settings(max_examples=50)
+def test_build_builderjava_instantiation(instance):
+    assert isinstance(instance, build_BuilderJava)
+
+@given(instance=B3Function_strategy)
+@settings(max_examples=50)
+def test_b3function_instantiation(instance):
+    assert isinstance(instance, B3Function)
+
+@given(instance=build_Builder_strategy)
+@settings(max_examples=50)
+def test_build_builder_instantiation(instance):
+    assert isinstance(instance, build_Builder)
+
+@given(instance=build_IProvidedCapabilityContainer_strategy)
+@settings(max_examples=50)
+def test_build_iprovidedcapabilitycontainer_instantiation(instance):
+    assert isinstance(instance, build_IProvidedCapabilityContainer)
+
+@given(instance=build_OutputPredicate_strategy)
+@settings(max_examples=50)
+def test_build_outputpredicate_instantiation(instance):
+    assert isinstance(instance, build_OutputPredicate)
+
+@given(instance=BuildConcernContext_strategy)
+@settings(max_examples=50)
+def test_buildconcerncontext_instantiation(instance):
+    assert isinstance(instance, BuildConcernContext)
+
+@given(instance=build_BuilderConcernContext_strategy)
+@settings(max_examples=50)
+def test_build_builderconcerncontext_instantiation(instance):
+    assert isinstance(instance, build_BuilderConcernContext)
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_removePostCondition_setter(instance):
+    original = instance.removePostCondition
+    instance.removePostCondition = original
+    assert instance.removePostCondition == original
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_removePreCondition_setter(instance):
+    original = instance.removePreCondition
+    instance.removePreCondition = original
+    assert instance.removePreCondition == original
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_removePostInputCondition_setter(instance):
+    original = instance.removePostInputCondition
+    instance.removePostInputCondition = original
+    assert instance.removePostInputCondition == original
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_sourceAnnotationsRemovals_setter(instance):
+    original = instance.sourceAnnotationsRemovals
+    instance.sourceAnnotationsRemovals = original
+    assert instance.sourceAnnotationsRemovals == original
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_varArgs_setter(instance):
+    original = instance.varArgs
+    instance.varArgs = original
+    assert instance.varArgs == original
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_outputAnnotationsRemovals_setter(instance):
+    original = instance.outputAnnotationsRemovals
+    instance.outputAnnotationsRemovals = original
+    assert instance.outputAnnotationsRemovals == original
+
+
+
+@given(instance=build_BuilderConcernContext_strategy)
+def test_build_builderconcerncontext_matchParameters_setter(instance):
+    original = instance.matchParameters
+    instance.matchParameters = original
+    assert instance.matchParameters == original
+
+@given(instance=build_BParameterPredicate_strategy)
+@settings(max_examples=50)
+def test_build_bparameterpredicate_instantiation(instance):
+    assert isinstance(instance, build_BParameterPredicate)
+
+@given(instance=build_BNamePredicate_strategy)
+@settings(max_examples=50)
+def test_build_bnamepredicate_instantiation(instance):
+    assert isinstance(instance, build_BNamePredicate)
+
+@given(instance=CapabilityPredicate_strategy)
+@settings(max_examples=50)
+def test_capabilitypredicate_instantiation(instance):
+    assert isinstance(instance, CapabilityPredicate)
+
+@given(instance=build_UnitNamePredicate_strategy)
+@settings(max_examples=50)
+def test_build_unitnamepredicate_instantiation(instance):
+    assert isinstance(instance, build_UnitNamePredicate)
+
+@given(instance=build_NameSpacePredicate_strategy)
+@settings(max_examples=50)
+def test_build_namespacepredicate_instantiation(instance):
+    assert isinstance(instance, build_NameSpacePredicate)
+
+
+
+@given(instance=build_NameSpacePredicate_strategy)
+def test_build_namespacepredicate_nameSpace_setter(instance):
+    original = instance.nameSpace
+    instance.nameSpace = original
+    assert instance.nameSpace == original
+
+@given(instance=CompoundUnitProvider_strategy)
+@settings(max_examples=50)
+def test_compoundunitprovider_instantiation(instance):
+    assert isinstance(instance, CompoundUnitProvider)
+
+@given(instance=build_IBuildUnitRepository_strategy)
+@settings(max_examples=50)
+def test_build_ibuildunitrepository_instantiation(instance):
+    assert isinstance(instance, build_IBuildUnitRepository)
+
+@given(instance=build_RepoOption_strategy)
+@settings(max_examples=50)
+def test_build_repooption_instantiation(instance):
+    assert isinstance(instance, build_RepoOption)
+
+
+
+@given(instance=build_RepoOption_strategy)
+def test_build_repooption_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=UnitProvider_strategy)
+@settings(max_examples=50)
+def test_unitprovider_instantiation(instance):
+    assert isinstance(instance, UnitProvider)
+
+@given(instance=build_DelegatingUnitProvider_strategy)
+@settings(max_examples=50)
+def test_build_delegatingunitprovider_instantiation(instance):
+    assert isinstance(instance, build_DelegatingUnitProvider)
+
+@given(instance=build_CompoundUnitProvider_strategy)
+@settings(max_examples=50)
+def test_build_compoundunitprovider_instantiation(instance):
+    assert isinstance(instance, build_CompoundUnitProvider)
+
+@given(instance=build_SwitchUnitProvider_strategy)
+@settings(max_examples=50)
+def test_build_switchunitprovider_instantiation(instance):
+    assert isinstance(instance, build_SwitchUnitProvider)
+
+@given(instance=build_RepositoryUnitProvider_strategy)
+@settings(max_examples=50)
+def test_build_repositoryunitprovider_instantiation(instance):
+    assert isinstance(instance, build_RepositoryUnitProvider)
+
+@given(instance=BExpression_strategy)
+@settings(max_examples=50)
+def test_bexpression_instantiation(instance):
+    assert isinstance(instance, BExpression)
+
+@given(instance=build_CapabilityPredicate_strategy)
+@settings(max_examples=50)
+def test_build_capabilitypredicate_instantiation(instance):
+    assert isinstance(instance, build_CapabilityPredicate)
+
+
+
+@given(instance=build_CapabilityPredicate_strategy)
+def test_build_capabilitypredicate_versionRange_setter(instance):
+    original = instance.versionRange
+    instance.versionRange = original
+    assert instance.versionRange == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_CapabilityPredicate_strategy)
+@settings(max_examples=30)
+def test_build_capabilitypredicate_matches_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3264,50 +3776,24 @@ def test_build::requirespredicate_matches_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'matches' in build::RequiresPredicate is empty"
+        assert has_statements, f"Function 'matches' in build_CapabilityPredicate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'matches' in build::RequiresPredicate did not change state; check implementation")
+            warnings.warn(f"Operation 'matches' in build_CapabilityPredicate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'matches' in build::RequiresPredicate is not implemented or raised an error")
+        warnings.warn(f"Operation 'matches' in build_CapabilityPredicate is not implemented or raised an error")
 
-@given(instance=BConcernContext_strategy)
+@given(instance=build_InputPredicate_strategy)
 @settings(max_examples=50)
-def test_bconcerncontext_instantiation(instance):
-    assert isinstance(instance, BConcernContext)
+def test_build_inputpredicate_instantiation(instance):
+    assert isinstance(instance, build_InputPredicate)
 
-@given(instance=build::BestFoundUnitProvider_strategy)
+@given(instance=build_PathGroupPredicate_strategy)
 @settings(max_examples=50)
-def test_build::bestfoundunitprovider_instantiation(instance):
-    assert isinstance(instance, build::BestFoundUnitProvider)
-
-@given(instance=INamedValue_strategy)
-@settings(max_examples=50)
-def test_inamedvalue_instantiation(instance):
-    assert isinstance(instance, INamedValue)
-
-@given(instance=build::BuilderInputNameDecorator_strategy)
-@settings(max_examples=50)
-def test_build::builderinputnamedecorator_instantiation(instance):
-    assert isinstance(instance, build::BuilderInputNameDecorator)
-
-@given(instance=build::Capability_strategy)
-@settings(max_examples=50)
-def test_build::capability_instantiation(instance):
-    assert isinstance(instance, build::Capability)
-
-@given(instance=build::Capability_strategy)
-def test_build::capability_nameSpace_type(instance):
-    assert isinstance(instance.nameSpace, str)
-
-
-@given(instance=build::Capability_strategy)
-def test_build::capability_nameSpace_setter(instance):
-    original = instance.nameSpace
-    instance.nameSpace = original
-    assert instance.nameSpace == original
+def test_build_pathgrouppredicate_instantiation(instance):
+    assert isinstance(instance, build_PathGroupPredicate)
 
 import warnings
 import copy
@@ -3315,88 +3801,45 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=build::Capability_strategy)
+@given(instance=build_PathGroupPredicate_strategy)
 @settings(max_examples=30)
-def test_build::capability_satisfies_changes_state(instance):
+def test_build_pathgrouppredicate_removematching_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.satisfies(
+        instance.removeMatching(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.satisfies).strip()
+        source = inspect.getsource(instance.removeMatching).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'satisfies' in build::Capability is empty"
+        assert has_statements, f"Function 'removeMatching' in build_PathGroupPredicate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'satisfies' in build::Capability did not change state; check implementation")
+            warnings.warn(f"Operation 'removeMatching' in build_PathGroupPredicate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'satisfies' in build::Capability is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeMatching' in build_PathGroupPredicate is not implemented or raised an error")
 
-@given(instance=build::BParameterList_strategy)
+@given(instance=build_ImplementsPredicate_strategy)
 @settings(max_examples=50)
-def test_build::bparameterlist_instantiation(instance):
-    assert isinstance(instance, build::BParameterList)
+def test_build_implementspredicate_instantiation(instance):
+    assert isinstance(instance, build_ImplementsPredicate)
 
-@given(instance=BuilderInput_strategy)
+@given(instance=build_BuilderNamePredicate_strategy)
 @settings(max_examples=50)
-def test_builderinput_instantiation(instance):
-    assert isinstance(instance, BuilderInput)
+def test_build_buildernamepredicate_instantiation(instance):
+    assert isinstance(instance, build_BuilderNamePredicate)
 
-@given(instance=build::BuilderCall_strategy)
+@given(instance=build_ProvidesPredicate_strategy)
 @settings(max_examples=50)
-def test_build::buildercall_instantiation(instance):
-    assert isinstance(instance, build::BuilderCall)
-
-@given(instance=build::BuilderCall_strategy)
-def test_build::buildercall_builderName_type(instance):
-    assert isinstance(instance.builderName, str)
-
-
-@given(instance=build::BuilderCall_strategy)
-def test_build::buildercall_builderName_setter(instance):
-    original = instance.builderName
-    instance.builderName = original
-    assert instance.builderName == original
-
-@given(instance=build::BuilderInputDecorator_strategy)
-@settings(max_examples=50)
-def test_build::builderinputdecorator_instantiation(instance):
-    assert isinstance(instance, build::BuilderInputDecorator)
-
-@given(instance=build::PathVector_strategy)
-@settings(max_examples=50)
-def test_build::pathvector_instantiation(instance):
-    assert isinstance(instance, build::PathVector)
-
-@given(instance=build::PathVector_strategy)
-def test_build::pathvector_basePath_type(instance):
-    assert isinstance(instance.basePath, str)
-
-
-@given(instance=build::PathVector_strategy)
-def test_build::pathvector_basePath_setter(instance):
-    original = instance.basePath
-    instance.basePath = original
-    assert instance.basePath == original
-
-@given(instance=build::PathVector_strategy)
-def test_build::pathvector_paths_type(instance):
-    assert isinstance(instance.paths, str)
-
-
-@given(instance=build::PathVector_strategy)
-def test_build::pathvector_paths_setter(instance):
-    original = instance.paths
-    instance.paths = original
-    assert instance.paths == original
+def test_build_providespredicate_instantiation(instance):
+    assert isinstance(instance, build_ProvidesPredicate)
 
 import warnings
 import copy
@@ -3404,9 +3847,84 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=build::PathVector_strategy)
+@given(instance=build_ProvidesPredicate_strategy)
 @settings(max_examples=30)
-def test_build::pathvector_resolve_changes_state(instance):
+def test_build_providespredicate_matches_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.matches(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.matches).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'matches' in build_ProvidesPredicate is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'matches' in build_ProvidesPredicate did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'matches' in build_ProvidesPredicate is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_ProvidesPredicate_strategy)
+@settings(max_examples=30)
+def test_build_providespredicate_removematching_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeMatching(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeMatching).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeMatching' in build_ProvidesPredicate is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeMatching' in build_ProvidesPredicate did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeMatching' in build_ProvidesPredicate is not implemented or raised an error")
+
+@given(instance=build_UnitProvider_strategy)
+@settings(max_examples=50)
+def test_build_unitprovider_instantiation(instance):
+    assert isinstance(instance, build_UnitProvider)
+
+
+
+@given(instance=build_UnitProvider_strategy)
+def test_build_unitprovider_documentation_setter(instance):
+    original = instance.documentation
+    instance.documentation = original
+    assert instance.documentation == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_UnitProvider_strategy)
+@settings(max_examples=30)
+def test_build_unitprovider_resolve_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3420,45 +3938,32 @@ def test_build::pathvector_resolve_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolve' in build::PathVector is empty"
+        assert has_statements, f"Function 'resolve' in build_UnitProvider is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolve' in build::PathVector did not change state; check implementation")
+            warnings.warn(f"Operation 'resolve' in build_UnitProvider did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolve' in build::PathVector is not implemented or raised an error")
+        warnings.warn(f"Operation 'resolve' in build_UnitProvider is not implemented or raised an error")
 
-@given(instance=build::ConditionalPathVector_strategy)
+@given(instance=build_BuilderQuery_strategy)
 @settings(max_examples=50)
-def test_build::conditionalpathvector_instantiation(instance):
-    assert isinstance(instance, build::ConditionalPathVector)
+def test_build_builderquery_instantiation(instance):
+    assert isinstance(instance, build_BuilderQuery)
 
-@given(instance=Capability_strategy)
+@given(instance=build_RequiresPredicate_strategy)
 @settings(max_examples=50)
-def test_capability_instantiation(instance):
-    assert isinstance(instance, Capability)
-
-@given(instance=build::VersionedCapability_strategy)
-@settings(max_examples=50)
-def test_build::versionedcapability_instantiation(instance):
-    assert isinstance(instance, build::VersionedCapability)
-
-@given(instance=build::VersionedCapability_strategy)
-def test_build::versionedcapability_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_build_requirespredicate_instantiation(instance):
+    assert isinstance(instance, build_RequiresPredicate)
 
 
-@given(instance=build::VersionedCapability_strategy)
-def test_build::versionedcapability_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=build::UnitParameterDeclaration_strategy)
-@settings(max_examples=50)
-def test_build::unitparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, build::UnitParameterDeclaration)
+@given(instance=build_RequiresPredicate_strategy)
+def test_build_requirespredicate_meta_setter(instance):
+    original = instance.meta
+    instance.meta = original
+    assert instance.meta == original
 
 import warnings
 import copy
@@ -3466,9 +3971,212 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=build::UnitParameterDeclaration_strategy)
+@given(instance=build_RequiresPredicate_strategy)
 @settings(max_examples=30)
-def test_build::unitparameterdeclaration_hascorrectstate_changes_state(instance):
+def test_build_requirespredicate_matches_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.matches(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.matches).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'matches' in build_RequiresPredicate is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'matches' in build_RequiresPredicate did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'matches' in build_RequiresPredicate is not implemented or raised an error")
+
+@given(instance=BConcernContext_strategy)
+@settings(max_examples=50)
+def test_bconcerncontext_instantiation(instance):
+    assert isinstance(instance, BConcernContext)
+
+@given(instance=build_BestFoundUnitProvider_strategy)
+@settings(max_examples=50)
+def test_build_bestfoundunitprovider_instantiation(instance):
+    assert isinstance(instance, build_BestFoundUnitProvider)
+
+@given(instance=INamedValue_strategy)
+@settings(max_examples=50)
+def test_inamedvalue_instantiation(instance):
+    assert isinstance(instance, INamedValue)
+
+@given(instance=build_BuilderInputNameDecorator_strategy)
+@settings(max_examples=50)
+def test_build_builderinputnamedecorator_instantiation(instance):
+    assert isinstance(instance, build_BuilderInputNameDecorator)
+
+@given(instance=build_Capability_strategy)
+@settings(max_examples=50)
+def test_build_capability_instantiation(instance):
+    assert isinstance(instance, build_Capability)
+
+
+
+@given(instance=build_Capability_strategy)
+def test_build_capability_nameSpace_setter(instance):
+    original = instance.nameSpace
+    instance.nameSpace = original
+    assert instance.nameSpace == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_Capability_strategy)
+@settings(max_examples=30)
+def test_build_capability_satisfies_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.satisfies(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.satisfies).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'satisfies' in build_Capability is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'satisfies' in build_Capability did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'satisfies' in build_Capability is not implemented or raised an error")
+
+@given(instance=build_BParameterList_strategy)
+@settings(max_examples=50)
+def test_build_bparameterlist_instantiation(instance):
+    assert isinstance(instance, build_BParameterList)
+
+@given(instance=BuilderInput_strategy)
+@settings(max_examples=50)
+def test_builderinput_instantiation(instance):
+    assert isinstance(instance, BuilderInput)
+
+@given(instance=build_BuilderCall_strategy)
+@settings(max_examples=50)
+def test_build_buildercall_instantiation(instance):
+    assert isinstance(instance, build_BuilderCall)
+
+
+
+@given(instance=build_BuilderCall_strategy)
+def test_build_buildercall_builderName_setter(instance):
+    original = instance.builderName
+    instance.builderName = original
+    assert instance.builderName == original
+
+@given(instance=build_BuilderInputDecorator_strategy)
+@settings(max_examples=50)
+def test_build_builderinputdecorator_instantiation(instance):
+    assert isinstance(instance, build_BuilderInputDecorator)
+
+@given(instance=build_PathVector_strategy)
+@settings(max_examples=50)
+def test_build_pathvector_instantiation(instance):
+    assert isinstance(instance, build_PathVector)
+
+
+
+@given(instance=build_PathVector_strategy)
+def test_build_pathvector_basePath_setter(instance):
+    original = instance.basePath
+    instance.basePath = original
+    assert instance.basePath == original
+
+
+
+@given(instance=build_PathVector_strategy)
+def test_build_pathvector_paths_setter(instance):
+    original = instance.paths
+    instance.paths = original
+    assert instance.paths == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_PathVector_strategy)
+@settings(max_examples=30)
+def test_build_pathvector_resolve_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.resolve(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.resolve).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'resolve' in build_PathVector is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'resolve' in build_PathVector did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'resolve' in build_PathVector is not implemented or raised an error")
+
+@given(instance=build_ConditionalPathVector_strategy)
+@settings(max_examples=50)
+def test_build_conditionalpathvector_instantiation(instance):
+    assert isinstance(instance, build_ConditionalPathVector)
+
+@given(instance=Capability_strategy)
+@settings(max_examples=50)
+def test_capability_instantiation(instance):
+    assert isinstance(instance, Capability)
+
+@given(instance=build_VersionedCapability_strategy)
+@settings(max_examples=50)
+def test_build_versionedcapability_instantiation(instance):
+    assert isinstance(instance, build_VersionedCapability)
+
+
+
+@given(instance=build_VersionedCapability_strategy)
+def test_build_versionedcapability_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=build_UnitParameterDeclaration_strategy)
+@settings(max_examples=50)
+def test_build_unitparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, build_UnitParameterDeclaration)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=build_UnitParameterDeclaration_strategy)
+@settings(max_examples=30)
+def test_build_unitparameterdeclaration_hascorrectstate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3483,183 +4191,156 @@ def test_build::unitparameterdeclaration_hascorrectstate_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasCorrectState' in build::UnitParameterDeclaration is empty"
+        assert has_statements, f"Function 'hasCorrectState' in build_UnitParameterDeclaration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasCorrectState' in build::UnitParameterDeclaration did not change state; check implementation")
+            warnings.warn(f"Operation 'hasCorrectState' in build_UnitParameterDeclaration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasCorrectState' in build::UnitParameterDeclaration is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasCorrectState' in build_UnitParameterDeclaration is not implemented or raised an error")
 
-@given(instance=build::PathGroup_strategy)
+@given(instance=build_PathGroup_strategy)
 @settings(max_examples=50)
-def test_build::pathgroup_instantiation(instance):
-    assert isinstance(instance, build::PathGroup)
+def test_build_pathgroup_instantiation(instance):
+    assert isinstance(instance, build_PathGroup)
 
-@given(instance=build::IBuildUnitContainer_strategy)
+@given(instance=build_IBuildUnitContainer_strategy)
 @settings(max_examples=50)
-def test_build::ibuildunitcontainer_instantiation(instance):
-    assert isinstance(instance, build::IBuildUnitContainer)
+def test_build_ibuildunitcontainer_instantiation(instance):
+    assert isinstance(instance, build_IBuildUnitContainer)
 
-@given(instance=build::FirstFoundUnitProvider_strategy)
+@given(instance=build_FirstFoundUnitProvider_strategy)
 @settings(max_examples=50)
-def test_build::firstfoundunitprovider_instantiation(instance):
-    assert isinstance(instance, build::FirstFoundUnitProvider)
+def test_build_firstfoundunitprovider_instantiation(instance):
+    assert isinstance(instance, build_FirstFoundUnitProvider)
 
-@given(instance=build::ContainerConfiguration_strategy)
+@given(instance=build_ContainerConfiguration_strategy)
 @settings(max_examples=50)
-def test_build::containerconfiguration_instantiation(instance):
-    assert isinstance(instance, build::ContainerConfiguration)
-
-@given(instance=build::ContainerConfiguration_strategy)
-def test_build::containerconfiguration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_build_containerconfiguration_instantiation(instance):
+    assert isinstance(instance, build_ContainerConfiguration)
 
 
-@given(instance=build::ContainerConfiguration_strategy)
-def test_build::containerconfiguration_name_setter(instance):
+
+@given(instance=build_ContainerConfiguration_strategy)
+def test_build_containerconfiguration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=build::ContainerConfiguration_strategy)
-def test_build::containerconfiguration_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
 
 
-@given(instance=build::ContainerConfiguration_strategy)
-def test_build::containerconfiguration_documentation_setter(instance):
+@given(instance=build_ContainerConfiguration_strategy)
+def test_build_containerconfiguration_documentation_setter(instance):
     original = instance.documentation
     instance.documentation = original
     assert instance.documentation == original
 
-@given(instance=build::Repository_strategy)
+@given(instance=build_Repository_strategy)
 @settings(max_examples=50)
-def test_build::repository_instantiation(instance):
-    assert isinstance(instance, build::Repository)
-
-@given(instance=build::Repository_strategy)
-def test_build::repository_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
+def test_build_repository_instantiation(instance):
+    assert isinstance(instance, build_Repository)
 
 
-@given(instance=build::Repository_strategy)
-def test_build::repository_documentation_setter(instance):
-    original = instance.documentation
-    instance.documentation = original
-    assert instance.documentation == original
 
-@given(instance=build::Repository_strategy)
-def test_build::repository_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=build::Repository_strategy)
-def test_build::repository_name_setter(instance):
+@given(instance=build_Repository_strategy)
+def test_build_repository_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=build::Repository_strategy)
-def test_build::repository_handlerType_type(instance):
-    assert isinstance(instance.handlerType, str)
 
 
-@given(instance=build::Repository_strategy)
-def test_build::repository_handlerType_setter(instance):
+@given(instance=build_Repository_strategy)
+def test_build_repository_documentation_setter(instance):
+    original = instance.documentation
+    instance.documentation = original
+    assert instance.documentation == original
+
+
+
+@given(instance=build_Repository_strategy)
+def test_build_repository_handlerType_setter(instance):
     original = instance.handlerType
     instance.handlerType = original
     assert instance.handlerType == original
 
-@given(instance=build::Synchronization_strategy)
+@given(instance=build_Synchronization_strategy)
 @settings(max_examples=50)
-def test_build::synchronization_instantiation(instance):
-    assert isinstance(instance, build::Synchronization)
+def test_build_synchronization_instantiation(instance):
+    assert isinstance(instance, build_Synchronization)
 
-@given(instance=build::BPropertySet_strategy)
+@given(instance=build_BPropertySet_strategy)
 @settings(max_examples=50)
-def test_build::bpropertyset_instantiation(instance):
-    assert isinstance(instance, build::BPropertySet)
+def test_build_bpropertyset_instantiation(instance):
+    assert isinstance(instance, build_BPropertySet)
 
-@given(instance=build::BConcern_strategy)
+@given(instance=build_BConcern_strategy)
 @settings(max_examples=50)
-def test_build::bconcern_instantiation(instance):
-    assert isinstance(instance, build::BConcern)
+def test_build_bconcern_instantiation(instance):
+    assert isinstance(instance, build_BConcern)
 
-@given(instance=build::IType_strategy)
+@given(instance=build_IType_strategy)
 @settings(max_examples=50)
-def test_build::itype_instantiation(instance):
-    assert isinstance(instance, build::IType)
+def test_build_itype_instantiation(instance):
+    assert isinstance(instance, build_IType)
 
-@given(instance=build::RequiredCapability_strategy)
+@given(instance=build_RequiredCapability_strategy)
 @settings(max_examples=50)
-def test_build::requiredcapability_instantiation(instance):
-    assert isinstance(instance, build::RequiredCapability)
-
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_versionRange_type(instance):
-    assert isinstance(instance.versionRange, str)
+def test_build_requiredcapability_instantiation(instance):
+    assert isinstance(instance, build_RequiredCapability)
 
 
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_versionRange_setter(instance):
-    original = instance.versionRange
-    instance.versionRange = original
-    assert instance.versionRange == original
 
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_greedy_type(instance):
-    assert isinstance(instance.greedy, bool)
-
-
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_greedy_setter(instance):
+@given(instance=build_RequiredCapability_strategy)
+def test_build_requiredcapability_greedy_setter(instance):
     original = instance.greedy
     instance.greedy = original
     assert instance.greedy == original
 
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_min_type(instance):
-    assert isinstance(instance.min, int)
 
 
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_min_setter(instance):
-    original = instance.min
-    instance.min = original
-    assert instance.min == original
-
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_max_type(instance):
-    assert isinstance(instance.max, int)
+@given(instance=build_RequiredCapability_strategy)
+def test_build_requiredcapability_versionRange_setter(instance):
+    original = instance.versionRange
+    instance.versionRange = original
+    assert instance.versionRange == original
 
 
-@given(instance=build::RequiredCapability_strategy)
-def test_build::requiredcapability_max_setter(instance):
+
+@given(instance=build_RequiredCapability_strategy)
+def test_build_requiredcapability_max_setter(instance):
     original = instance.max
     instance.max = original
     assert instance.max == original
 
-@given(instance=build::BuilderInput_strategy)
-@settings(max_examples=50)
-def test_build::builderinput_instantiation(instance):
-    assert isinstance(instance, build::BuilderInput)
 
-@given(instance=build::BExpression_strategy)
+
+@given(instance=build_RequiredCapability_strategy)
+def test_build_requiredcapability_min_setter(instance):
+    original = instance.min
+    instance.min = original
+    assert instance.min == original
+
+@given(instance=build_BuilderInput_strategy)
 @settings(max_examples=50)
-def test_build::bexpression_instantiation(instance):
-    assert isinstance(instance, build::BExpression)
+def test_build_builderinput_instantiation(instance):
+    assert isinstance(instance, build_BuilderInput)
+
+@given(instance=build_BExpression_strategy)
+@settings(max_examples=50)
+def test_build_bexpression_instantiation(instance):
+    assert isinstance(instance, build_BExpression)
 
 @given(instance=IFunction_strategy)
 @settings(max_examples=50)
 def test_ifunction_instantiation(instance):
     assert isinstance(instance, IFunction)
 
-@given(instance=build::FragmentHost_strategy)
+@given(instance=build_FragmentHost_strategy)
 @settings(max_examples=50)
-def test_build::fragmenthost_instantiation(instance):
-    assert isinstance(instance, build::FragmentHost)
+def test_build_fragmenthost_instantiation(instance):
+    assert isinstance(instance, build_FragmentHost)
 
 @given(instance=VersionedCapability_strategy)
 @settings(max_examples=50)
@@ -3676,34 +4357,28 @@ def test_ivarname_instantiation(instance):
 def test_iprovidedcapabilitycontainer_instantiation(instance):
     assert isinstance(instance, IProvidedCapabilityContainer)
 
-@given(instance=build::BuildConcernContext_strategy)
+@given(instance=build_BuildConcernContext_strategy)
 @settings(max_examples=50)
-def test_build::buildconcerncontext_instantiation(instance):
-    assert isinstance(instance, build::BuildConcernContext)
-
-@given(instance=build::BuildConcernContext_strategy)
-def test_build::buildconcerncontext_defaultPropertiesRemovals_type(instance):
-    assert isinstance(instance.defaultPropertiesRemovals, str)
+def test_build_buildconcerncontext_instantiation(instance):
+    assert isinstance(instance, build_BuildConcernContext)
 
 
-@given(instance=build::BuildConcernContext_strategy)
-def test_build::buildconcerncontext_defaultPropertiesRemovals_setter(instance):
+
+@given(instance=build_BuildConcernContext_strategy)
+def test_build_buildconcerncontext_defaultPropertiesRemovals_setter(instance):
     original = instance.defaultPropertiesRemovals
     instance.defaultPropertiesRemovals = original
     assert instance.defaultPropertiesRemovals == original
 
-@given(instance=build::IBuilder_strategy)
+@given(instance=build_IBuilder_strategy)
 @settings(max_examples=50)
-def test_build::ibuilder_instantiation(instance):
-    assert isinstance(instance, build::IBuilder)
-
-@given(instance=build::IBuilder_strategy)
-def test_build::ibuilder_unitType_type(instance):
-    assert isinstance(instance.unitType, str)
+def test_build_ibuilder_instantiation(instance):
+    assert isinstance(instance, build_IBuilder)
 
 
-@given(instance=build::IBuilder_strategy)
-def test_build::ibuilder_unitType_setter(instance):
+
+@given(instance=build_IBuilder_strategy)
+def test_build_ibuilder_unitType_setter(instance):
     original = instance.unitType
     instance.unitType = original
     assert instance.unitType == original
@@ -3713,916 +4388,73 @@ def test_build::ibuilder_unitType_setter(instance):
 def test_irequiredcapabilitycontainer_instantiation(instance):
     assert isinstance(instance, IRequiredCapabilityContainer)
 
+@given(instance=build_UnitConcernContext_strategy)
+@settings(max_examples=50)
+def test_build_unitconcerncontext_instantiation(instance):
+    assert isinstance(instance, build_UnitConcernContext)
+
+
+
+@given(instance=build_UnitConcernContext_strategy)
+def test_build_unitconcerncontext_sourceLocation_setter(instance):
+    original = instance.sourceLocation
+    instance.sourceLocation = original
+    assert instance.sourceLocation == original
+
+
+
+@given(instance=build_UnitConcernContext_strategy)
+def test_build_unitconcerncontext_outputLocation_setter(instance):
+    original = instance.outputLocation
+    instance.outputLocation = original
+    assert instance.outputLocation == original
+
 @given(instance=BFunctionContainer_strategy)
 @settings(max_examples=50)
 def test_bfunctioncontainer_instantiation(instance):
     assert isinstance(instance, BFunctionContainer)
 
-@given(instance=build::BuildUnit_strategy)
+@given(instance=build_BuildUnit_strategy)
 @settings(max_examples=50)
-def test_build::buildunit_instantiation(instance):
-    assert isinstance(instance, build::BuildUnit)
-
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
+def test_build_buildunit_instantiation(instance):
+    assert isinstance(instance, build_BuildUnit)
 
 
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_documentation_setter(instance):
-    original = instance.documentation
-    instance.documentation = original
-    assert instance.documentation == original
 
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_outputLocation_type(instance):
-    assert isinstance(instance.outputLocation, str)
-
-
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_outputLocation_setter(instance):
-    original = instance.outputLocation
-    instance.outputLocation = original
-    assert instance.outputLocation == original
-
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_sourceLocation_type(instance):
-    assert isinstance(instance.sourceLocation, str)
-
-
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_sourceLocation_setter(instance):
-    original = instance.sourceLocation
-    instance.sourceLocation = original
-    assert instance.sourceLocation == original
-
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_executionMode_type(instance):
-    assert isinstance(instance.executionMode, str)
-
-
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_executionMode_setter(instance):
+@given(instance=build_BuildUnit_strategy)
+def test_build_buildunit_executionMode_setter(instance):
     original = instance.executionMode
     instance.executionMode = original
     assert instance.executionMode == original
 
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_platformFilter_type(instance):
-    assert isinstance(instance.platformFilter, str)
 
 
-@given(instance=build::BuildUnit_strategy)
-def test_build::buildunit_platformFilter_setter(instance):
+@given(instance=build_BuildUnit_strategy)
+def test_build_buildunit_platformFilter_setter(instance):
     original = instance.platformFilter
     instance.platformFilter = original
     assert instance.platformFilter == original
 
-@given(instance=build::CompoundBuildUnitRepository_strategy)
-@settings(max_examples=50)
-def test_build::compoundbuildunitrepository_instantiation(instance):
-    assert isinstance(instance, build::CompoundBuildUnitRepository)
-
-@given(instance=IBuildUnitRepository_strategy)
-@settings(max_examples=50)
-def test_ibuildunitrepository_instantiation(instance):
-    assert isinstance(instance, IBuildUnitRepository)
-
-@given(instance=build::Branch_strategy)
-@settings(max_examples=50)
-def test_build::branch_instantiation(instance):
-    assert isinstance(instance, build::Branch)
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_replace_type(instance):
-    assert isinstance(instance.replace, str)
 
 
-@given(instance=build::Branch_strategy)
-def test_build::branch_replace_setter(instance):
-    original = instance.replace
-    instance.replace = original
-    assert instance.replace == original
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_mergeStrategy_type(instance):
-    assert isinstance(instance.mergeStrategy, str)
-
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_mergeStrategy_setter(instance):
-    original = instance.mergeStrategy
-    instance.mergeStrategy = original
-    assert instance.mergeStrategy == original
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
-
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_documentation_setter(instance):
+@given(instance=build_BuildUnit_strategy)
+def test_build_buildunit_documentation_setter(instance):
     original = instance.documentation
     instance.documentation = original
     assert instance.documentation == original
 
-@given(instance=build::Branch_strategy)
-def test_build::branch_checkout_type(instance):
-    assert isinstance(instance.checkout, str)
 
 
-@given(instance=build::Branch_strategy)
-def test_build::branch_checkout_setter(instance):
-    original = instance.checkout
-    instance.checkout = original
-    assert instance.checkout == original
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_acceptDirty_type(instance):
-    assert isinstance(instance.acceptDirty, str)
-
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_acceptDirty_setter(instance):
-    original = instance.acceptDirty
-    instance.acceptDirty = original
-    assert instance.acceptDirty == original
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_update_type(instance):
-    assert isinstance(instance.update, str)
-
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_update_setter(instance):
-    original = instance.update
-    instance.update = original
-    assert instance.update == original
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_branchPointType_type(instance):
-    assert isinstance(instance.branchPointType, str)
-
-
-@given(instance=build::Branch_strategy)
-def test_build::branch_branchPointType_setter(instance):
-    original = instance.branchPointType
-    instance.branchPointType = original
-    assert instance.branchPointType == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::Branch_strategy)
-@settings(max_examples=30)
-def test_build::branch_hasvalidstate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasValidState(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasValidState).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasValidState' in build::Branch is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasValidState' in build::Branch did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasValidState' in build::Branch is not implemented or raised an error")
-
-@given(instance=build::BSwitchExpression_strategy)
-@settings(max_examples=50)
-def test_build::bswitchexpression_instantiation(instance):
-    assert isinstance(instance, build::BSwitchExpression)
-
-@given(instance=ITypedValueContainer_strategy)
-@settings(max_examples=50)
-def test_itypedvaluecontainer_instantiation(instance):
-    assert isinstance(instance, ITypedValueContainer)
-
-@given(instance=build::BuildSet_strategy)
-@settings(max_examples=50)
-def test_build::buildset_instantiation(instance):
-    assert isinstance(instance, build::BuildSet)
-
-@given(instance=build::BuildSet_strategy)
-def test_build::buildset_pathIterator_type(instance):
-    assert isinstance(instance.pathIterator, str)
-
-
-@given(instance=build::BuildSet_strategy)
-def test_build::buildset_pathIterator_setter(instance):
-    original = instance.pathIterator
-    instance.pathIterator = original
-    assert instance.pathIterator == original
-
-@given(instance=build::BuildSet_strategy)
-def test_build::buildset_valueMap_type(instance):
-    assert isinstance(instance.valueMap, str)
-
-
-@given(instance=build::BuildSet_strategy)
-def test_build::buildset_valueMap_setter(instance):
-    original = instance.valueMap
-    instance.valueMap = original
-    assert instance.valueMap == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::BuildSet_strategy)
-@settings(max_examples=30)
-def test_build::buildset_merge_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.merge(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.merge).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'merge' in build::BuildSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'merge' in build::BuildSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'merge' in build::BuildSet is not implemented or raised an error")
-
-@given(instance=build::BuilderCallFacade_strategy)
-@settings(max_examples=50)
-def test_build::buildercallfacade_instantiation(instance):
-    assert isinstance(instance, build::BuilderCallFacade)
-
-@given(instance=build::BuilderCallFacade_strategy)
-def test_build::buildercallfacade_aliases_type(instance):
-    assert isinstance(instance.aliases, str)
-
-
-@given(instance=build::BuilderCallFacade_strategy)
-def test_build::buildercallfacade_aliases_setter(instance):
-    original = instance.aliases
-    instance.aliases = original
-    assert instance.aliases == original
-
-@given(instance=EffectiveFacade_strategy)
-@settings(max_examples=50)
-def test_effectivefacade_instantiation(instance):
-    assert isinstance(instance, EffectiveFacade)
-
-@given(instance=build::EffectiveRequirementFacade_strategy)
-@settings(max_examples=50)
-def test_build::effectiverequirementfacade_instantiation(instance):
-    assert isinstance(instance, build::EffectiveRequirementFacade)
-
-@given(instance=build::EffectiveCapabilityFacade_strategy)
-@settings(max_examples=50)
-def test_build::effectivecapabilityfacade_instantiation(instance):
-    assert isinstance(instance, build::EffectiveCapabilityFacade)
-
-@given(instance=build::EffectiveUnitFacade_strategy)
-@settings(max_examples=50)
-def test_build::effectiveunitfacade_instantiation(instance):
-    assert isinstance(instance, build::EffectiveUnitFacade)
-
-@given(instance=IEffectiveFacade_strategy)
-@settings(max_examples=50)
-def test_ieffectivefacade_instantiation(instance):
-    assert isinstance(instance, IEffectiveFacade)
-
-@given(instance=build::EffectiveBuilderCallFacade_strategy)
-@settings(max_examples=50)
-def test_build::effectivebuildercallfacade_instantiation(instance):
-    assert isinstance(instance, build::EffectiveBuilderCallFacade)
-
-@given(instance=build::EffectiveFacade_strategy)
-@settings(max_examples=50)
-def test_build::effectivefacade_instantiation(instance):
-    assert isinstance(instance, build::EffectiveFacade)
-
-@given(instance=build::BuildUnitRepository_strategy)
-@settings(max_examples=50)
-def test_build::buildunitrepository_instantiation(instance):
-    assert isinstance(instance, build::BuildUnitRepository)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::BuildUnitRepository_strategy)
-@settings(max_examples=30)
-def test_build::buildunitrepository_initialize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.initialize(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.initialize).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initialize' in build::BuildUnitRepository is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initialize' in build::BuildUnitRepository did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initialize' in build::BuildUnitRepository is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::BuildUnitRepository_strategy)
-@settings(max_examples=30)
-def test_build::buildunitrepository_resolve_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.resolve(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.resolve).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolve' in build::BuildUnitRepository is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolve' in build::BuildUnitRepository did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolve' in build::BuildUnitRepository is not implemented or raised an error")
-
-@given(instance=PathGroupPredicate_strategy)
-@settings(max_examples=50)
-def test_pathgrouppredicate_instantiation(instance):
-    assert isinstance(instance, PathGroupPredicate)
-
-@given(instance=BInnerContext_strategy)
-@settings(max_examples=50)
-def test_binnercontext_instantiation(instance):
-    assert isinstance(instance, BInnerContext)
-
-@given(instance=build::BuildResultContext_strategy)
-@settings(max_examples=50)
-def test_build::buildresultcontext_instantiation(instance):
-    assert isinstance(instance, build::BuildResultContext)
-
-@given(instance=build::IFunction_strategy)
-@settings(max_examples=50)
-def test_build::ifunction_instantiation(instance):
-    assert isinstance(instance, build::IFunction)
-
-@given(instance=IBuildUnitContainer_strategy)
-@settings(max_examples=50)
-def test_ibuildunitcontainer_instantiation(instance):
-    assert isinstance(instance, IBuildUnitContainer)
-
-@given(instance=BChainedExpression_strategy)
-@settings(max_examples=50)
-def test_bchainedexpression_instantiation(instance):
-    assert isinstance(instance, BChainedExpression)
-
-@given(instance=build::BeeModel_strategy)
-@settings(max_examples=50)
-def test_build::beemodel_instantiation(instance):
-    assert isinstance(instance, build::BeeModel)
-
-@given(instance=BFunctionWrapper_strategy)
-@settings(max_examples=50)
-def test_bfunctionwrapper_instantiation(instance):
-    assert isinstance(instance, BFunctionWrapper)
-
-@given(instance=BJavaFunction_strategy)
-@settings(max_examples=50)
-def test_bjavafunction_instantiation(instance):
-    assert isinstance(instance, BJavaFunction)
-
-@given(instance=build::ResolutionInfo_strategy)
-@settings(max_examples=50)
-def test_build::resolutioninfo_instantiation(instance):
-    assert isinstance(instance, build::ResolutionInfo)
-
-@given(instance=build::ResolutionInfo_strategy)
-def test_build::resolutioninfo_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=build::ResolutionInfo_strategy)
-def test_build::resolutioninfo_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=build::BeeHive_strategy)
-@settings(max_examples=50)
-def test_build::beehive_instantiation(instance):
-    assert isinstance(instance, build::BeeHive)
-
-@given(instance=build::BeeHive_strategy)
-def test_build::beehive_resolutions_type(instance):
-    assert isinstance(instance.resolutions, str)
-
-
-@given(instance=build::BeeHive_strategy)
-def test_build::beehive_resolutions_setter(instance):
-    original = instance.resolutions
-    instance.resolutions = original
-    assert instance.resolutions == original
-
-@given(instance=build::IRequiredCapabilityContainer_strategy)
-@settings(max_examples=50)
-def test_build::irequiredcapabilitycontainer_instantiation(instance):
-    assert isinstance(instance, build::IRequiredCapabilityContainer)
-
-@given(instance=RequiredCapability_strategy)
-@settings(max_examples=50)
-def test_requiredcapability_instantiation(instance):
-    assert isinstance(instance, RequiredCapability)
-
-@given(instance=build::AliasedRequiredCapability_strategy)
-@settings(max_examples=50)
-def test_build::aliasedrequiredcapability_instantiation(instance):
-    assert isinstance(instance, build::AliasedRequiredCapability)
-
-@given(instance=build::AliasedRequiredCapability_strategy)
-def test_build::aliasedrequiredcapability_alias_type(instance):
-    assert isinstance(instance.alias, str)
-
-
-@given(instance=build::AliasedRequiredCapability_strategy)
-def test_build::aliasedrequiredcapability_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
-
-@given(instance=build::PathGroupPredicate_strategy)
-@settings(max_examples=50)
-def test_build::pathgrouppredicate_instantiation(instance):
-    assert isinstance(instance, build::PathGroupPredicate)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::PathGroupPredicate_strategy)
-@settings(max_examples=30)
-def test_build::pathgrouppredicate_removematching_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeMatching(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeMatching).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeMatching' in build::PathGroupPredicate is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeMatching' in build::PathGroupPredicate did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeMatching' in build::PathGroupPredicate is not implemented or raised an error")
-
-@given(instance=build::SourcePredicate_strategy)
-@settings(max_examples=50)
-def test_build::sourcepredicate_instantiation(instance):
-    assert isinstance(instance, build::SourcePredicate)
-
-@given(instance=IBuilder_strategy)
-@settings(max_examples=50)
-def test_ibuilder_instantiation(instance):
-    assert isinstance(instance, IBuilder)
-
-@given(instance=build::BuilderWrapper_strategy)
-@settings(max_examples=50)
-def test_build::builderwrapper_instantiation(instance):
-    assert isinstance(instance, build::BuilderWrapper)
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_unitTypeAdvised_type(instance):
-    assert isinstance(instance.unitTypeAdvised, bool)
-
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_unitTypeAdvised_setter(instance):
-    original = instance.unitTypeAdvised
-    instance.unitTypeAdvised = original
-    assert instance.unitTypeAdvised == original
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_sourceAdvised_type(instance):
-    assert isinstance(instance.sourceAdvised, bool)
-
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_sourceAdvised_setter(instance):
-    original = instance.sourceAdvised
-    instance.sourceAdvised = original
-    assert instance.sourceAdvised == original
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_providesAdvised_type(instance):
-    assert isinstance(instance.providesAdvised, bool)
-
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_providesAdvised_setter(instance):
-    original = instance.providesAdvised
-    instance.providesAdvised = original
-    assert instance.providesAdvised == original
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_defaultPropertiesAdvised_type(instance):
-    assert isinstance(instance.defaultPropertiesAdvised, bool)
-
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_defaultPropertiesAdvised_setter(instance):
-    original = instance.defaultPropertiesAdvised
-    instance.defaultPropertiesAdvised = original
-    assert instance.defaultPropertiesAdvised == original
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_outputAdvised_type(instance):
-    assert isinstance(instance.outputAdvised, bool)
-
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_outputAdvised_setter(instance):
-    original = instance.outputAdvised
-    instance.outputAdvised = original
-    assert instance.outputAdvised == original
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_inputAdvised_type(instance):
-    assert isinstance(instance.inputAdvised, bool)
-
-
-@given(instance=build::BuilderWrapper_strategy)
-def test_build::builderwrapper_inputAdvised_setter(instance):
-    original = instance.inputAdvised
-    instance.inputAdvised = original
-    assert instance.inputAdvised == original
-
-@given(instance=build::BuilderJava_strategy)
-@settings(max_examples=50)
-def test_build::builderjava_instantiation(instance):
-    assert isinstance(instance, build::BuilderJava)
-
-@given(instance=B3Function_strategy)
-@settings(max_examples=50)
-def test_b3function_instantiation(instance):
-    assert isinstance(instance, B3Function)
-
-@given(instance=build::Builder_strategy)
-@settings(max_examples=50)
-def test_build::builder_instantiation(instance):
-    assert isinstance(instance, build::Builder)
-
-@given(instance=build::IProvidedCapabilityContainer_strategy)
-@settings(max_examples=50)
-def test_build::iprovidedcapabilitycontainer_instantiation(instance):
-    assert isinstance(instance, build::IProvidedCapabilityContainer)
-
-@given(instance=build::OutputPredicate_strategy)
-@settings(max_examples=50)
-def test_build::outputpredicate_instantiation(instance):
-    assert isinstance(instance, build::OutputPredicate)
-
-@given(instance=BuildConcernContext_strategy)
-@settings(max_examples=50)
-def test_buildconcerncontext_instantiation(instance):
-    assert isinstance(instance, BuildConcernContext)
-
-@given(instance=build::BuilderConcernContext_strategy)
-@settings(max_examples=50)
-def test_build::builderconcerncontext_instantiation(instance):
-    assert isinstance(instance, build::BuilderConcernContext)
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_removePostCondition_type(instance):
-    assert isinstance(instance.removePostCondition, bool)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_removePostCondition_setter(instance):
-    original = instance.removePostCondition
-    instance.removePostCondition = original
-    assert instance.removePostCondition == original
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_matchParameters_type(instance):
-    assert isinstance(instance.matchParameters, bool)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_matchParameters_setter(instance):
-    original = instance.matchParameters
-    instance.matchParameters = original
-    assert instance.matchParameters == original
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_removePreCondition_type(instance):
-    assert isinstance(instance.removePreCondition, bool)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_removePreCondition_setter(instance):
-    original = instance.removePreCondition
-    instance.removePreCondition = original
-    assert instance.removePreCondition == original
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_varArgs_type(instance):
-    assert isinstance(instance.varArgs, bool)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_varArgs_setter(instance):
-    original = instance.varArgs
-    instance.varArgs = original
-    assert instance.varArgs == original
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_sourceAnnotationsRemovals_type(instance):
-    assert isinstance(instance.sourceAnnotationsRemovals, str)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_sourceAnnotationsRemovals_setter(instance):
-    original = instance.sourceAnnotationsRemovals
-    instance.sourceAnnotationsRemovals = original
-    assert instance.sourceAnnotationsRemovals == original
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_removePostInputCondition_type(instance):
-    assert isinstance(instance.removePostInputCondition, bool)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_removePostInputCondition_setter(instance):
-    original = instance.removePostInputCondition
-    instance.removePostInputCondition = original
-    assert instance.removePostInputCondition == original
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_outputAnnotationsRemovals_type(instance):
-    assert isinstance(instance.outputAnnotationsRemovals, str)
-
-
-@given(instance=build::BuilderConcernContext_strategy)
-def test_build::builderconcerncontext_outputAnnotationsRemovals_setter(instance):
-    original = instance.outputAnnotationsRemovals
-    instance.outputAnnotationsRemovals = original
-    assert instance.outputAnnotationsRemovals == original
-
-@given(instance=build::UnitConcernContext_strategy)
-@settings(max_examples=50)
-def test_build::unitconcerncontext_instantiation(instance):
-    assert isinstance(instance, build::UnitConcernContext)
-
-@given(instance=build::UnitConcernContext_strategy)
-def test_build::unitconcerncontext_outputLocation_type(instance):
-    assert isinstance(instance.outputLocation, str)
-
-
-@given(instance=build::UnitConcernContext_strategy)
-def test_build::unitconcerncontext_outputLocation_setter(instance):
+@given(instance=build_BuildUnit_strategy)
+def test_build_buildunit_outputLocation_setter(instance):
     original = instance.outputLocation
     instance.outputLocation = original
     assert instance.outputLocation == original
 
-@given(instance=build::UnitConcernContext_strategy)
-def test_build::unitconcerncontext_sourceLocation_type(instance):
-    assert isinstance(instance.sourceLocation, str)
 
 
-@given(instance=build::UnitConcernContext_strategy)
-def test_build::unitconcerncontext_sourceLocation_setter(instance):
+@given(instance=build_BuildUnit_strategy)
+def test_build_buildunit_sourceLocation_setter(instance):
     original = instance.sourceLocation
     instance.sourceLocation = original
     assert instance.sourceLocation == original
-
-@given(instance=build::BParameterPredicate_strategy)
-@settings(max_examples=50)
-def test_build::bparameterpredicate_instantiation(instance):
-    assert isinstance(instance, build::BParameterPredicate)
-
-@given(instance=build::ProvidesPredicate_strategy)
-@settings(max_examples=50)
-def test_build::providespredicate_instantiation(instance):
-    assert isinstance(instance, build::ProvidesPredicate)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::ProvidesPredicate_strategy)
-@settings(max_examples=30)
-def test_build::providespredicate_matches_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.matches(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.matches).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'matches' in build::ProvidesPredicate is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'matches' in build::ProvidesPredicate did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'matches' in build::ProvidesPredicate is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::ProvidesPredicate_strategy)
-@settings(max_examples=30)
-def test_build::providespredicate_removematching_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeMatching(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeMatching).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeMatching' in build::ProvidesPredicate is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeMatching' in build::ProvidesPredicate did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeMatching' in build::ProvidesPredicate is not implemented or raised an error")
-
-@given(instance=build::ImplementsPredicate_strategy)
-@settings(max_examples=50)
-def test_build::implementspredicate_instantiation(instance):
-    assert isinstance(instance, build::ImplementsPredicate)
-
-@given(instance=build::BNamePredicate_strategy)
-@settings(max_examples=50)
-def test_build::bnamepredicate_instantiation(instance):
-    assert isinstance(instance, build::BNamePredicate)
-
-@given(instance=build::CapabilityPredicate_strategy)
-@settings(max_examples=50)
-def test_build::capabilitypredicate_instantiation(instance):
-    assert isinstance(instance, build::CapabilityPredicate)
-
-@given(instance=build::CapabilityPredicate_strategy)
-def test_build::capabilitypredicate_versionRange_type(instance):
-    assert isinstance(instance.versionRange, str)
-
-
-@given(instance=build::CapabilityPredicate_strategy)
-def test_build::capabilitypredicate_versionRange_setter(instance):
-    original = instance.versionRange
-    instance.versionRange = original
-    assert instance.versionRange == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=build::CapabilityPredicate_strategy)
-@settings(max_examples=30)
-def test_build::capabilitypredicate_matches_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.matches(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.matches).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'matches' in build::CapabilityPredicate is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'matches' in build::CapabilityPredicate did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'matches' in build::CapabilityPredicate is not implemented or raised an error")
-
-@given(instance=build::InputPredicate_strategy)
-@settings(max_examples=50)
-def test_build::inputpredicate_instantiation(instance):
-    assert isinstance(instance, build::InputPredicate)
-
-@given(instance=build::BuilderNamePredicate_strategy)
-@settings(max_examples=50)
-def test_build::buildernamepredicate_instantiation(instance):
-    assert isinstance(instance, build::BuilderNamePredicate)
-
-@given(instance=CapabilityPredicate_strategy)
-@settings(max_examples=50)
-def test_capabilitypredicate_instantiation(instance):
-    assert isinstance(instance, CapabilityPredicate)
-
-@given(instance=build::UnitNamePredicate_strategy)
-@settings(max_examples=50)
-def test_build::unitnamepredicate_instantiation(instance):
-    assert isinstance(instance, build::UnitNamePredicate)
-
-@given(instance=build::NameSpacePredicate_strategy)
-@settings(max_examples=50)
-def test_build::namespacepredicate_instantiation(instance):
-    assert isinstance(instance, build::NameSpacePredicate)
-
-@given(instance=build::NameSpacePredicate_strategy)
-def test_build::namespacepredicate_nameSpace_type(instance):
-    assert isinstance(instance.nameSpace, str)
-
-
-@given(instance=build::NameSpacePredicate_strategy)
-def test_build::namespacepredicate_nameSpace_setter(instance):
-    original = instance.nameSpace
-    instance.nameSpace = original
-    assert instance.nameSpace == original

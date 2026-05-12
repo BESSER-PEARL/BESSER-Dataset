@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AccessControl,
-    smc::Covered,
-    smc::BellLapadula,
+    smc_Covered,
+    smc_BellLapadula,
     Expression,
-    smc::Dict,
-    smc::Not,
-    smc::IntLiteral,
-    smc::StringLiteral,
-    smc::MulOrDiv,
-    smc::DoubleLiteral,
-    smc::DateLiteral,
-    smc::Equality,
-    smc::PlusOrMinus,
-    smc::And,
-    smc::Or,
-    smc::Comparison,
-    smc::BooleanLiteral,
-    smc::List,
-    smc::TimeLiteral,
-    smc::VariableRef,
-    smc::Tuple,
+    smc_PlusOrMinus,
+    smc_Equality,
+    smc_BooleanLiteral,
+    smc_IntLiteral,
+    smc_List,
+    smc_StringLiteral,
+    smc_DateLiteral,
+    smc_DoubleLiteral,
+    smc_Dict,
+    smc_VariableRef,
+    smc_Comparison,
+    smc_Or,
+    smc_Not,
+    smc_MulOrDiv,
+    smc_And,
+    smc_TimeLiteral,
+    smc_Tuple,
     Download,
-    smc::Client,
-    smc::Database,
+    smc_Client,
+    smc_Database,
     AbstractAssignment,
-    smc::Download,
+    smc_Download,
     Computation,
-    smc::Median,
-    smc::Count,
-    smc::WeightedAvg,
-    smc::Average,
-    smc::Multiplication,
+    smc_Median,
+    smc_Average,
+    smc_Count,
+    smc_WeightedAvg,
+    smc_Multiplication,
     Functions,
-    smc::AddValues,
-    smc::BloomFilter,
-    smc::Search,
-    smc::CreateTable,
-    smc::AccessControl,
-    smc::CheckTable,
-    smc::Computation,
-    smc::Functions,
-    smc::Expression,
-    smc::Invocation,
+    smc_BloomFilter,
+    smc_CheckTable,
+    smc_AccessControl,
+    smc_AddValues,
+    smc_CreateTable,
+    smc_Search,
+    smc_Computation,
+    smc_Functions,
+    smc_Expression,
+    smc_Invocation,
     Command,
-    smc::IfThenElse,
-    smc::Return,
-    smc::While,
-    smc::InvocationVoid,
-    smc::Block,
-    smc::Print,
-    smc::ParamDecl,
-    smc::VariableAssignment,
-    smc::AbstractAssignment,
-    smc::VariableDecl,
-    smc::Smc,
-    smc::Command,
-    smc::MainSMC,
-    smc::BlockSMC,
-    SecType,
+    smc_InvocationVoid,
+    smc_IfThenElse,
+    smc_Return,
+    smc_Block,
+    smc_Print,
+    smc_While,
+    smc_ParamDecl,
+    smc_VariableAssignment,
+    smc_AbstractAssignment,
+    smc_VariableDecl,
+    smc_Smc,
+    smc_Command,
+    smc_MainSMC,
+    smc_BlockSMC,
     BlockType,
+    SecType,
     BasicType,
 )
 
@@ -89,37 +89,37 @@ def test_accesscontrol_constructor_args():
 
 
 
-def test_smc::covered_is_not_abstract():
-    assert not inspect.isabstract(smc::Covered)
+def test_smc_covered_is_not_abstract():
+    assert not inspect.isabstract(smc_Covered)
 
 
-def test_smc::covered_constructor_exists():
-    assert callable(smc::Covered.__init__)
+def test_smc_covered_constructor_exists():
+    assert callable(smc_Covered.__init__)
 
 
-def test_smc::covered_constructor_args():
-    sig = inspect.signature(smc::Covered.__init__)
+def test_smc_covered_constructor_args():
+    sig = inspect.signature(smc_Covered.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::belllapadula_is_not_abstract():
-    assert not inspect.isabstract(smc::BellLapadula)
+def test_smc_belllapadula_is_not_abstract():
+    assert not inspect.isabstract(smc_BellLapadula)
 
 
-def test_smc::belllapadula_constructor_exists():
-    assert callable(smc::BellLapadula.__init__)
+def test_smc_belllapadula_constructor_exists():
+    assert callable(smc_BellLapadula.__init__)
 
 
-def test_smc::belllapadula_constructor_args():
-    sig = inspect.signature(smc::BellLapadula.__init__)
+def test_smc_belllapadula_constructor_args():
+    sig = inspect.signature(smc_BellLapadula.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_smc::belllapadula_has_mode():
-    assert hasattr(smc::BellLapadula, "mode")
+def test_smc_belllapadula_has_mode():
+    assert hasattr(smc_BellLapadula, "mode")
     descriptor = None
-    for klass in smc::BellLapadula.__mro__:
+    for klass in smc_BellLapadula.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -141,99 +141,23 @@ def test_expression_constructor_args():
 
 
 
-def test_smc::dict_is_not_abstract():
-    assert not inspect.isabstract(smc::Dict)
+def test_smc_plusorminus_is_not_abstract():
+    assert not inspect.isabstract(smc_PlusOrMinus)
 
 
-def test_smc::dict_constructor_exists():
-    assert callable(smc::Dict.__init__)
+def test_smc_plusorminus_constructor_exists():
+    assert callable(smc_PlusOrMinus.__init__)
 
 
-def test_smc::dict_constructor_args():
-    sig = inspect.signature(smc::Dict.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::not_is_not_abstract():
-    assert not inspect.isabstract(smc::Not)
-
-
-def test_smc::not_constructor_exists():
-    assert callable(smc::Not.__init__)
-
-
-def test_smc::not_constructor_args():
-    sig = inspect.signature(smc::Not.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::intliteral_is_not_abstract():
-    assert not inspect.isabstract(smc::IntLiteral)
-
-
-def test_smc::intliteral_constructor_exists():
-    assert callable(smc::IntLiteral.__init__)
-
-
-def test_smc::intliteral_constructor_args():
-    sig = inspect.signature(smc::IntLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smc::intliteral_has_value():
-    assert hasattr(smc::IntLiteral, "value")
-    descriptor = None
-    for klass in smc::IntLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smc::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(smc::StringLiteral)
-
-
-def test_smc::stringliteral_constructor_exists():
-    assert callable(smc::StringLiteral.__init__)
-
-
-def test_smc::stringliteral_constructor_args():
-    sig = inspect.signature(smc::StringLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smc::stringliteral_has_value():
-    assert hasattr(smc::StringLiteral, "value")
-    descriptor = None
-    for klass in smc::StringLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smc::mulordiv_is_not_abstract():
-    assert not inspect.isabstract(smc::MulOrDiv)
-
-
-def test_smc::mulordiv_constructor_exists():
-    assert callable(smc::MulOrDiv.__init__)
-
-
-def test_smc::mulordiv_constructor_args():
-    sig = inspect.signature(smc::MulOrDiv.__init__)
+def test_smc_plusorminus_constructor_args():
+    sig = inspect.signature(smc_PlusOrMinus.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_smc::mulordiv_has_op():
-    assert hasattr(smc::MulOrDiv, "op")
+def test_smc_plusorminus_has_op():
+    assert hasattr(smc_PlusOrMinus, "op")
     descriptor = None
-    for klass in smc::MulOrDiv.__mro__:
+    for klass in smc_PlusOrMinus.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -241,71 +165,23 @@ def test_smc::mulordiv_has_op():
 
 
 
-def test_smc::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(smc::DoubleLiteral)
+def test_smc_equality_is_not_abstract():
+    assert not inspect.isabstract(smc_Equality)
 
 
-def test_smc::doubleliteral_constructor_exists():
-    assert callable(smc::DoubleLiteral.__init__)
+def test_smc_equality_constructor_exists():
+    assert callable(smc_Equality.__init__)
 
 
-def test_smc::doubleliteral_constructor_args():
-    sig = inspect.signature(smc::DoubleLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smc::doubleliteral_has_value():
-    assert hasattr(smc::DoubleLiteral, "value")
-    descriptor = None
-    for klass in smc::DoubleLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smc::dateliteral_is_not_abstract():
-    assert not inspect.isabstract(smc::DateLiteral)
-
-
-def test_smc::dateliteral_constructor_exists():
-    assert callable(smc::DateLiteral.__init__)
-
-
-def test_smc::dateliteral_constructor_args():
-    sig = inspect.signature(smc::DateLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smc::dateliteral_has_value():
-    assert hasattr(smc::DateLiteral, "value")
-    descriptor = None
-    for klass in smc::DateLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smc::equality_is_not_abstract():
-    assert not inspect.isabstract(smc::Equality)
-
-
-def test_smc::equality_constructor_exists():
-    assert callable(smc::Equality.__init__)
-
-
-def test_smc::equality_constructor_args():
-    sig = inspect.signature(smc::Equality.__init__)
+def test_smc_equality_constructor_args():
+    sig = inspect.signature(smc_Equality.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_smc::equality_has_op():
-    assert hasattr(smc::Equality, "op")
+def test_smc_equality_has_op():
+    assert hasattr(smc_Equality, "op")
     descriptor = None
-    for klass in smc::Equality.__mro__:
+    for klass in smc_Equality.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -313,99 +189,23 @@ def test_smc::equality_has_op():
 
 
 
-def test_smc::plusorminus_is_not_abstract():
-    assert not inspect.isabstract(smc::PlusOrMinus)
+def test_smc_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(smc_BooleanLiteral)
 
 
-def test_smc::plusorminus_constructor_exists():
-    assert callable(smc::PlusOrMinus.__init__)
+def test_smc_booleanliteral_constructor_exists():
+    assert callable(smc_BooleanLiteral.__init__)
 
 
-def test_smc::plusorminus_constructor_args():
-    sig = inspect.signature(smc::PlusOrMinus.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_smc::plusorminus_has_op():
-    assert hasattr(smc::PlusOrMinus, "op")
-    descriptor = None
-    for klass in smc::PlusOrMinus.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smc::and_is_not_abstract():
-    assert not inspect.isabstract(smc::And)
-
-
-def test_smc::and_constructor_exists():
-    assert callable(smc::And.__init__)
-
-
-def test_smc::and_constructor_args():
-    sig = inspect.signature(smc::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::or_is_not_abstract():
-    assert not inspect.isabstract(smc::Or)
-
-
-def test_smc::or_constructor_exists():
-    assert callable(smc::Or.__init__)
-
-
-def test_smc::or_constructor_args():
-    sig = inspect.signature(smc::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::comparison_is_not_abstract():
-    assert not inspect.isabstract(smc::Comparison)
-
-
-def test_smc::comparison_constructor_exists():
-    assert callable(smc::Comparison.__init__)
-
-
-def test_smc::comparison_constructor_args():
-    sig = inspect.signature(smc::Comparison.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_smc::comparison_has_op():
-    assert hasattr(smc::Comparison, "op")
-    descriptor = None
-    for klass in smc::Comparison.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smc::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(smc::BooleanLiteral)
-
-
-def test_smc::booleanliteral_constructor_exists():
-    assert callable(smc::BooleanLiteral.__init__)
-
-
-def test_smc::booleanliteral_constructor_args():
-    sig = inspect.signature(smc::BooleanLiteral.__init__)
+def test_smc_booleanliteral_constructor_args():
+    sig = inspect.signature(smc_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_smc::booleanliteral_has_value():
-    assert hasattr(smc::BooleanLiteral, "value")
+def test_smc_booleanliteral_has_value():
+    assert hasattr(smc_BooleanLiteral, "value")
     descriptor = None
-    for klass in smc::BooleanLiteral.__mro__:
+    for klass in smc_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -413,37 +213,23 @@ def test_smc::booleanliteral_has_value():
 
 
 
-def test_smc::list_is_not_abstract():
-    assert not inspect.isabstract(smc::List)
+def test_smc_intliteral_is_not_abstract():
+    assert not inspect.isabstract(smc_IntLiteral)
 
 
-def test_smc::list_constructor_exists():
-    assert callable(smc::List.__init__)
+def test_smc_intliteral_constructor_exists():
+    assert callable(smc_IntLiteral.__init__)
 
 
-def test_smc::list_constructor_args():
-    sig = inspect.signature(smc::List.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::timeliteral_is_not_abstract():
-    assert not inspect.isabstract(smc::TimeLiteral)
-
-
-def test_smc::timeliteral_constructor_exists():
-    assert callable(smc::TimeLiteral.__init__)
-
-
-def test_smc::timeliteral_constructor_args():
-    sig = inspect.signature(smc::TimeLiteral.__init__)
+def test_smc_intliteral_constructor_args():
+    sig = inspect.signature(smc_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_smc::timeliteral_has_value():
-    assert hasattr(smc::TimeLiteral, "value")
+def test_smc_intliteral_has_value():
+    assert hasattr(smc_IntLiteral, "value")
     descriptor = None
-    for klass in smc::TimeLiteral.__mro__:
+    for klass in smc_IntLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -451,30 +237,244 @@ def test_smc::timeliteral_has_value():
 
 
 
-def test_smc::variableref_is_not_abstract():
-    assert not inspect.isabstract(smc::VariableRef)
+def test_smc_list_is_not_abstract():
+    assert not inspect.isabstract(smc_List)
 
 
-def test_smc::variableref_constructor_exists():
-    assert callable(smc::VariableRef.__init__)
+def test_smc_list_constructor_exists():
+    assert callable(smc_List.__init__)
 
 
-def test_smc::variableref_constructor_args():
-    sig = inspect.signature(smc::VariableRef.__init__)
+def test_smc_list_constructor_args():
+    sig = inspect.signature(smc_List.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::tuple_is_not_abstract():
-    assert not inspect.isabstract(smc::Tuple)
+def test_smc_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(smc_StringLiteral)
 
 
-def test_smc::tuple_constructor_exists():
-    assert callable(smc::Tuple.__init__)
+def test_smc_stringliteral_constructor_exists():
+    assert callable(smc_StringLiteral.__init__)
 
 
-def test_smc::tuple_constructor_args():
-    sig = inspect.signature(smc::Tuple.__init__)
+def test_smc_stringliteral_constructor_args():
+    sig = inspect.signature(smc_StringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smc_stringliteral_has_value():
+    assert hasattr(smc_StringLiteral, "value")
+    descriptor = None
+    for klass in smc_StringLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smc_dateliteral_is_not_abstract():
+    assert not inspect.isabstract(smc_DateLiteral)
+
+
+def test_smc_dateliteral_constructor_exists():
+    assert callable(smc_DateLiteral.__init__)
+
+
+def test_smc_dateliteral_constructor_args():
+    sig = inspect.signature(smc_DateLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smc_dateliteral_has_value():
+    assert hasattr(smc_DateLiteral, "value")
+    descriptor = None
+    for klass in smc_DateLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smc_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(smc_DoubleLiteral)
+
+
+def test_smc_doubleliteral_constructor_exists():
+    assert callable(smc_DoubleLiteral.__init__)
+
+
+def test_smc_doubleliteral_constructor_args():
+    sig = inspect.signature(smc_DoubleLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smc_doubleliteral_has_value():
+    assert hasattr(smc_DoubleLiteral, "value")
+    descriptor = None
+    for klass in smc_DoubleLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smc_dict_is_not_abstract():
+    assert not inspect.isabstract(smc_Dict)
+
+
+def test_smc_dict_constructor_exists():
+    assert callable(smc_Dict.__init__)
+
+
+def test_smc_dict_constructor_args():
+    sig = inspect.signature(smc_Dict.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_variableref_is_not_abstract():
+    assert not inspect.isabstract(smc_VariableRef)
+
+
+def test_smc_variableref_constructor_exists():
+    assert callable(smc_VariableRef.__init__)
+
+
+def test_smc_variableref_constructor_args():
+    sig = inspect.signature(smc_VariableRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_comparison_is_not_abstract():
+    assert not inspect.isabstract(smc_Comparison)
+
+
+def test_smc_comparison_constructor_exists():
+    assert callable(smc_Comparison.__init__)
+
+
+def test_smc_comparison_constructor_args():
+    sig = inspect.signature(smc_Comparison.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_smc_comparison_has_op():
+    assert hasattr(smc_Comparison, "op")
+    descriptor = None
+    for klass in smc_Comparison.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smc_or_is_not_abstract():
+    assert not inspect.isabstract(smc_Or)
+
+
+def test_smc_or_constructor_exists():
+    assert callable(smc_Or.__init__)
+
+
+def test_smc_or_constructor_args():
+    sig = inspect.signature(smc_Or.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_not_is_not_abstract():
+    assert not inspect.isabstract(smc_Not)
+
+
+def test_smc_not_constructor_exists():
+    assert callable(smc_Not.__init__)
+
+
+def test_smc_not_constructor_args():
+    sig = inspect.signature(smc_Not.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_mulordiv_is_not_abstract():
+    assert not inspect.isabstract(smc_MulOrDiv)
+
+
+def test_smc_mulordiv_constructor_exists():
+    assert callable(smc_MulOrDiv.__init__)
+
+
+def test_smc_mulordiv_constructor_args():
+    sig = inspect.signature(smc_MulOrDiv.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_smc_mulordiv_has_op():
+    assert hasattr(smc_MulOrDiv, "op")
+    descriptor = None
+    for klass in smc_MulOrDiv.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smc_and_is_not_abstract():
+    assert not inspect.isabstract(smc_And)
+
+
+def test_smc_and_constructor_exists():
+    assert callable(smc_And.__init__)
+
+
+def test_smc_and_constructor_args():
+    sig = inspect.signature(smc_And.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_timeliteral_is_not_abstract():
+    assert not inspect.isabstract(smc_TimeLiteral)
+
+
+def test_smc_timeliteral_constructor_exists():
+    assert callable(smc_TimeLiteral.__init__)
+
+
+def test_smc_timeliteral_constructor_args():
+    sig = inspect.signature(smc_TimeLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smc_timeliteral_has_value():
+    assert hasattr(smc_TimeLiteral, "value")
+    descriptor = None
+    for klass in smc_TimeLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smc_tuple_is_not_abstract():
+    assert not inspect.isabstract(smc_Tuple)
+
+
+def test_smc_tuple_constructor_exists():
+    assert callable(smc_Tuple.__init__)
+
+
+def test_smc_tuple_constructor_args():
+    sig = inspect.signature(smc_Tuple.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -493,23 +493,23 @@ def test_download_constructor_args():
 
 
 
-def test_smc::client_is_not_abstract():
-    assert not inspect.isabstract(smc::Client)
+def test_smc_client_is_not_abstract():
+    assert not inspect.isabstract(smc_Client)
 
 
-def test_smc::client_constructor_exists():
-    assert callable(smc::Client.__init__)
+def test_smc_client_constructor_exists():
+    assert callable(smc_Client.__init__)
 
 
-def test_smc::client_constructor_args():
-    sig = inspect.signature(smc::Client.__init__)
+def test_smc_client_constructor_args():
+    sig = inspect.signature(smc_Client.__init__)
     params = list(sig.parameters.keys())
     assert "arg" in params, "Missing parameter 'arg'"
 
-def test_smc::client_has_arg():
-    assert hasattr(smc::Client, "arg")
+def test_smc_client_has_arg():
+    assert hasattr(smc_Client, "arg")
     descriptor = None
-    for klass in smc::Client.__mro__:
+    for klass in smc_Client.__mro__:
         if "arg" in klass.__dict__:
             descriptor = klass.__dict__["arg"]
             break
@@ -517,23 +517,23 @@ def test_smc::client_has_arg():
 
 
 
-def test_smc::database_is_not_abstract():
-    assert not inspect.isabstract(smc::Database)
+def test_smc_database_is_not_abstract():
+    assert not inspect.isabstract(smc_Database)
 
 
-def test_smc::database_constructor_exists():
-    assert callable(smc::Database.__init__)
+def test_smc_database_constructor_exists():
+    assert callable(smc_Database.__init__)
 
 
-def test_smc::database_constructor_args():
-    sig = inspect.signature(smc::Database.__init__)
+def test_smc_database_constructor_args():
+    sig = inspect.signature(smc_Database.__init__)
     params = list(sig.parameters.keys())
     assert "clm" in params, "Missing parameter 'clm'"
 
-def test_smc::database_has_clm():
-    assert hasattr(smc::Database, "clm")
+def test_smc_database_has_clm():
+    assert hasattr(smc_Database, "clm")
     descriptor = None
-    for klass in smc::Database.__mro__:
+    for klass in smc_Database.__mro__:
         if "clm" in klass.__dict__:
             descriptor = klass.__dict__["clm"]
             break
@@ -555,16 +555,16 @@ def test_abstractassignment_constructor_args():
 
 
 
-def test_smc::download_is_not_abstract():
-    assert not inspect.isabstract(smc::Download)
+def test_smc_download_is_not_abstract():
+    assert not inspect.isabstract(smc_Download)
 
 
-def test_smc::download_constructor_exists():
-    assert callable(smc::Download.__init__)
+def test_smc_download_constructor_exists():
+    assert callable(smc_Download.__init__)
 
 
-def test_smc::download_constructor_args():
-    sig = inspect.signature(smc::Download.__init__)
+def test_smc_download_constructor_args():
+    sig = inspect.signature(smc_Download.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -583,72 +583,72 @@ def test_computation_constructor_args():
 
 
 
-def test_smc::median_is_not_abstract():
-    assert not inspect.isabstract(smc::Median)
+def test_smc_median_is_not_abstract():
+    assert not inspect.isabstract(smc_Median)
 
 
-def test_smc::median_constructor_exists():
-    assert callable(smc::Median.__init__)
+def test_smc_median_constructor_exists():
+    assert callable(smc_Median.__init__)
 
 
-def test_smc::median_constructor_args():
-    sig = inspect.signature(smc::Median.__init__)
+def test_smc_median_constructor_args():
+    sig = inspect.signature(smc_Median.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::count_is_not_abstract():
-    assert not inspect.isabstract(smc::Count)
+def test_smc_average_is_not_abstract():
+    assert not inspect.isabstract(smc_Average)
 
 
-def test_smc::count_constructor_exists():
-    assert callable(smc::Count.__init__)
+def test_smc_average_constructor_exists():
+    assert callable(smc_Average.__init__)
 
 
-def test_smc::count_constructor_args():
-    sig = inspect.signature(smc::Count.__init__)
+def test_smc_average_constructor_args():
+    sig = inspect.signature(smc_Average.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::weightedavg_is_not_abstract():
-    assert not inspect.isabstract(smc::WeightedAvg)
+def test_smc_count_is_not_abstract():
+    assert not inspect.isabstract(smc_Count)
 
 
-def test_smc::weightedavg_constructor_exists():
-    assert callable(smc::WeightedAvg.__init__)
+def test_smc_count_constructor_exists():
+    assert callable(smc_Count.__init__)
 
 
-def test_smc::weightedavg_constructor_args():
-    sig = inspect.signature(smc::WeightedAvg.__init__)
+def test_smc_count_constructor_args():
+    sig = inspect.signature(smc_Count.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::average_is_not_abstract():
-    assert not inspect.isabstract(smc::Average)
+def test_smc_weightedavg_is_not_abstract():
+    assert not inspect.isabstract(smc_WeightedAvg)
 
 
-def test_smc::average_constructor_exists():
-    assert callable(smc::Average.__init__)
+def test_smc_weightedavg_constructor_exists():
+    assert callable(smc_WeightedAvg.__init__)
 
 
-def test_smc::average_constructor_args():
-    sig = inspect.signature(smc::Average.__init__)
+def test_smc_weightedavg_constructor_args():
+    sig = inspect.signature(smc_WeightedAvg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::multiplication_is_not_abstract():
-    assert not inspect.isabstract(smc::Multiplication)
+def test_smc_multiplication_is_not_abstract():
+    assert not inspect.isabstract(smc_Multiplication)
 
 
-def test_smc::multiplication_constructor_exists():
-    assert callable(smc::Multiplication.__init__)
+def test_smc_multiplication_constructor_exists():
+    assert callable(smc_Multiplication.__init__)
 
 
-def test_smc::multiplication_constructor_args():
-    sig = inspect.signature(smc::Multiplication.__init__)
+def test_smc_multiplication_constructor_args():
+    sig = inspect.signature(smc_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -667,51 +667,93 @@ def test_functions_constructor_args():
 
 
 
-def test_smc::addvalues_is_not_abstract():
-    assert not inspect.isabstract(smc::AddValues)
+def test_smc_bloomfilter_is_not_abstract():
+    assert not inspect.isabstract(smc_BloomFilter)
 
 
-def test_smc::addvalues_constructor_exists():
-    assert callable(smc::AddValues.__init__)
+def test_smc_bloomfilter_constructor_exists():
+    assert callable(smc_BloomFilter.__init__)
 
 
-def test_smc::addvalues_constructor_args():
-    sig = inspect.signature(smc::AddValues.__init__)
+def test_smc_bloomfilter_constructor_args():
+    sig = inspect.signature(smc_BloomFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::bloomfilter_is_not_abstract():
-    assert not inspect.isabstract(smc::BloomFilter)
+def test_smc_checktable_is_not_abstract():
+    assert not inspect.isabstract(smc_CheckTable)
 
 
-def test_smc::bloomfilter_constructor_exists():
-    assert callable(smc::BloomFilter.__init__)
+def test_smc_checktable_constructor_exists():
+    assert callable(smc_CheckTable.__init__)
 
 
-def test_smc::bloomfilter_constructor_args():
-    sig = inspect.signature(smc::BloomFilter.__init__)
+def test_smc_checktable_constructor_args():
+    sig = inspect.signature(smc_CheckTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::search_is_not_abstract():
-    assert not inspect.isabstract(smc::Search)
+def test_smc_accesscontrol_is_not_abstract():
+    assert not inspect.isabstract(smc_AccessControl)
 
 
-def test_smc::search_constructor_exists():
-    assert callable(smc::Search.__init__)
+def test_smc_accesscontrol_constructor_exists():
+    assert callable(smc_AccessControl.__init__)
 
 
-def test_smc::search_constructor_args():
-    sig = inspect.signature(smc::Search.__init__)
+def test_smc_accesscontrol_constructor_args():
+    sig = inspect.signature(smc_AccessControl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_addvalues_is_not_abstract():
+    assert not inspect.isabstract(smc_AddValues)
+
+
+def test_smc_addvalues_constructor_exists():
+    assert callable(smc_AddValues.__init__)
+
+
+def test_smc_addvalues_constructor_args():
+    sig = inspect.signature(smc_AddValues.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_createtable_is_not_abstract():
+    assert not inspect.isabstract(smc_CreateTable)
+
+
+def test_smc_createtable_constructor_exists():
+    assert callable(smc_CreateTable.__init__)
+
+
+def test_smc_createtable_constructor_args():
+    sig = inspect.signature(smc_CreateTable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smc_search_is_not_abstract():
+    assert not inspect.isabstract(smc_Search)
+
+
+def test_smc_search_constructor_exists():
+    assert callable(smc_Search.__init__)
+
+
+def test_smc_search_constructor_args():
+    sig = inspect.signature(smc_Search.__init__)
     params = list(sig.parameters.keys())
     assert "column" in params, "Missing parameter 'column'"
 
-def test_smc::search_has_column():
-    assert hasattr(smc::Search, "column")
+def test_smc_search_has_column():
+    assert hasattr(smc_Search, "column")
     descriptor = None
-    for klass in smc::Search.__mro__:
+    for klass in smc_Search.__mro__:
         if "column" in klass.__dict__:
             descriptor = klass.__dict__["column"]
             break
@@ -719,100 +761,58 @@ def test_smc::search_has_column():
 
 
 
-def test_smc::createtable_is_not_abstract():
-    assert not inspect.isabstract(smc::CreateTable)
+def test_smc_computation_is_not_abstract():
+    assert not inspect.isabstract(smc_Computation)
 
 
-def test_smc::createtable_constructor_exists():
-    assert callable(smc::CreateTable.__init__)
+def test_smc_computation_constructor_exists():
+    assert callable(smc_Computation.__init__)
 
 
-def test_smc::createtable_constructor_args():
-    sig = inspect.signature(smc::CreateTable.__init__)
+def test_smc_computation_constructor_args():
+    sig = inspect.signature(smc_Computation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::accesscontrol_is_not_abstract():
-    assert not inspect.isabstract(smc::AccessControl)
+def test_smc_functions_is_not_abstract():
+    assert not inspect.isabstract(smc_Functions)
 
 
-def test_smc::accesscontrol_constructor_exists():
-    assert callable(smc::AccessControl.__init__)
+def test_smc_functions_constructor_exists():
+    assert callable(smc_Functions.__init__)
 
 
-def test_smc::accesscontrol_constructor_args():
-    sig = inspect.signature(smc::AccessControl.__init__)
+def test_smc_functions_constructor_args():
+    sig = inspect.signature(smc_Functions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::checktable_is_not_abstract():
-    assert not inspect.isabstract(smc::CheckTable)
+def test_smc_expression_is_not_abstract():
+    assert not inspect.isabstract(smc_Expression)
 
 
-def test_smc::checktable_constructor_exists():
-    assert callable(smc::CheckTable.__init__)
+def test_smc_expression_constructor_exists():
+    assert callable(smc_Expression.__init__)
 
 
-def test_smc::checktable_constructor_args():
-    sig = inspect.signature(smc::CheckTable.__init__)
+def test_smc_expression_constructor_args():
+    sig = inspect.signature(smc_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::computation_is_not_abstract():
-    assert not inspect.isabstract(smc::Computation)
+def test_smc_invocation_is_not_abstract():
+    assert not inspect.isabstract(smc_Invocation)
 
 
-def test_smc::computation_constructor_exists():
-    assert callable(smc::Computation.__init__)
+def test_smc_invocation_constructor_exists():
+    assert callable(smc_Invocation.__init__)
 
 
-def test_smc::computation_constructor_args():
-    sig = inspect.signature(smc::Computation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::functions_is_not_abstract():
-    assert not inspect.isabstract(smc::Functions)
-
-
-def test_smc::functions_constructor_exists():
-    assert callable(smc::Functions.__init__)
-
-
-def test_smc::functions_constructor_args():
-    sig = inspect.signature(smc::Functions.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::expression_is_not_abstract():
-    assert not inspect.isabstract(smc::Expression)
-
-
-def test_smc::expression_constructor_exists():
-    assert callable(smc::Expression.__init__)
-
-
-def test_smc::expression_constructor_args():
-    sig = inspect.signature(smc::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smc::invocation_is_not_abstract():
-    assert not inspect.isabstract(smc::Invocation)
-
-
-def test_smc::invocation_constructor_exists():
-    assert callable(smc::Invocation.__init__)
-
-
-def test_smc::invocation_constructor_args():
-    sig = inspect.signature(smc::Invocation.__init__)
+def test_smc_invocation_constructor_args():
+    sig = inspect.signature(smc_Invocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -831,309 +831,328 @@ def test_command_constructor_args():
 
 
 
-def test_smc::ifthenelse_is_not_abstract():
-    assert not inspect.isabstract(smc::IfThenElse)
+def test_smc_invocationvoid_is_not_abstract():
+    assert not inspect.isabstract(smc_InvocationVoid)
 
 
-def test_smc::ifthenelse_constructor_exists():
-    assert callable(smc::IfThenElse.__init__)
+def test_smc_invocationvoid_constructor_exists():
+    assert callable(smc_InvocationVoid.__init__)
 
 
-def test_smc::ifthenelse_constructor_args():
-    sig = inspect.signature(smc::IfThenElse.__init__)
+def test_smc_invocationvoid_constructor_args():
+    sig = inspect.signature(smc_InvocationVoid.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::return_is_not_abstract():
-    assert not inspect.isabstract(smc::Return)
+def test_smc_ifthenelse_is_not_abstract():
+    assert not inspect.isabstract(smc_IfThenElse)
 
 
-def test_smc::return_constructor_exists():
-    assert callable(smc::Return.__init__)
+def test_smc_ifthenelse_constructor_exists():
+    assert callable(smc_IfThenElse.__init__)
 
 
-def test_smc::return_constructor_args():
-    sig = inspect.signature(smc::Return.__init__)
+def test_smc_ifthenelse_constructor_args():
+    sig = inspect.signature(smc_IfThenElse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::while_is_not_abstract():
-    assert not inspect.isabstract(smc::While)
+def test_smc_return_is_not_abstract():
+    assert not inspect.isabstract(smc_Return)
 
 
-def test_smc::while_constructor_exists():
-    assert callable(smc::While.__init__)
+def test_smc_return_constructor_exists():
+    assert callable(smc_Return.__init__)
 
 
-def test_smc::while_constructor_args():
-    sig = inspect.signature(smc::While.__init__)
+def test_smc_return_constructor_args():
+    sig = inspect.signature(smc_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::invocationvoid_is_not_abstract():
-    assert not inspect.isabstract(smc::InvocationVoid)
+def test_smc_block_is_not_abstract():
+    assert not inspect.isabstract(smc_Block)
 
 
-def test_smc::invocationvoid_constructor_exists():
-    assert callable(smc::InvocationVoid.__init__)
+def test_smc_block_constructor_exists():
+    assert callable(smc_Block.__init__)
 
 
-def test_smc::invocationvoid_constructor_args():
-    sig = inspect.signature(smc::InvocationVoid.__init__)
+def test_smc_block_constructor_args():
+    sig = inspect.signature(smc_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::block_is_not_abstract():
-    assert not inspect.isabstract(smc::Block)
+def test_smc_print_is_not_abstract():
+    assert not inspect.isabstract(smc_Print)
 
 
-def test_smc::block_constructor_exists():
-    assert callable(smc::Block.__init__)
+def test_smc_print_constructor_exists():
+    assert callable(smc_Print.__init__)
 
 
-def test_smc::block_constructor_args():
-    sig = inspect.signature(smc::Block.__init__)
+def test_smc_print_constructor_args():
+    sig = inspect.signature(smc_Print.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::print_is_not_abstract():
-    assert not inspect.isabstract(smc::Print)
+def test_smc_while_is_not_abstract():
+    assert not inspect.isabstract(smc_While)
 
 
-def test_smc::print_constructor_exists():
-    assert callable(smc::Print.__init__)
+def test_smc_while_constructor_exists():
+    assert callable(smc_While.__init__)
 
 
-def test_smc::print_constructor_args():
-    sig = inspect.signature(smc::Print.__init__)
+def test_smc_while_constructor_args():
+    sig = inspect.signature(smc_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::paramdecl_is_not_abstract():
-    assert not inspect.isabstract(smc::ParamDecl)
+def test_smc_paramdecl_is_not_abstract():
+    assert not inspect.isabstract(smc_ParamDecl)
 
 
-def test_smc::paramdecl_constructor_exists():
-    assert callable(smc::ParamDecl.__init__)
+def test_smc_paramdecl_constructor_exists():
+    assert callable(smc_ParamDecl.__init__)
 
 
-def test_smc::paramdecl_constructor_args():
-    sig = inspect.signature(smc::ParamDecl.__init__)
+def test_smc_paramdecl_constructor_args():
+    sig = inspect.signature(smc_ParamDecl.__init__)
     params = list(sig.parameters.keys())
-    assert "stype" in params, "Missing parameter 'stype'"
-    assert "parName" in params, "Missing parameter 'parName'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "parName" in params, "Missing parameter 'parName'"
     assert "btype" in params, "Missing parameter 'btype'"
+    assert "stype" in params, "Missing parameter 'stype'"
 
-def test_smc::paramdecl_has_stype():
-    assert hasattr(smc::ParamDecl, "stype")
+def test_smc_paramdecl_has_name():
+    assert hasattr(smc_ParamDecl, "name")
     descriptor = None
-    for klass in smc::ParamDecl.__mro__:
-        if "stype" in klass.__dict__:
-            descriptor = klass.__dict__["stype"]
+    for klass in smc_ParamDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_smc::paramdecl_has_parName():
-    assert hasattr(smc::ParamDecl, "parName")
+def test_smc_paramdecl_has_parName():
+    assert hasattr(smc_ParamDecl, "parName")
     descriptor = None
-    for klass in smc::ParamDecl.__mro__:
+    for klass in smc_ParamDecl.__mro__:
         if "parName" in klass.__dict__:
             descriptor = klass.__dict__["parName"]
             break
     assert isinstance(descriptor, property)
 
-def test_smc::paramdecl_has_name():
-    assert hasattr(smc::ParamDecl, "name")
+def test_smc_paramdecl_has_btype():
+    assert hasattr(smc_ParamDecl, "btype")
     descriptor = None
-    for klass in smc::ParamDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smc::paramdecl_has_btype():
-    assert hasattr(smc::ParamDecl, "btype")
-    descriptor = None
-    for klass in smc::ParamDecl.__mro__:
+    for klass in smc_ParamDecl.__mro__:
         if "btype" in klass.__dict__:
             descriptor = klass.__dict__["btype"]
             break
     assert isinstance(descriptor, property)
 
+def test_smc_paramdecl_has_stype():
+    assert hasattr(smc_ParamDecl, "stype")
+    descriptor = None
+    for klass in smc_ParamDecl.__mro__:
+        if "stype" in klass.__dict__:
+            descriptor = klass.__dict__["stype"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_smc::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(smc::VariableAssignment)
+
+def test_smc_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(smc_VariableAssignment)
 
 
-def test_smc::variableassignment_constructor_exists():
-    assert callable(smc::VariableAssignment.__init__)
+def test_smc_variableassignment_constructor_exists():
+    assert callable(smc_VariableAssignment.__init__)
 
 
-def test_smc::variableassignment_constructor_args():
-    sig = inspect.signature(smc::VariableAssignment.__init__)
+def test_smc_variableassignment_constructor_args():
+    sig = inspect.signature(smc_VariableAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::abstractassignment_is_not_abstract():
-    assert not inspect.isabstract(smc::AbstractAssignment)
+def test_smc_abstractassignment_is_not_abstract():
+    assert not inspect.isabstract(smc_AbstractAssignment)
 
 
-def test_smc::abstractassignment_constructor_exists():
-    assert callable(smc::AbstractAssignment.__init__)
+def test_smc_abstractassignment_constructor_exists():
+    assert callable(smc_AbstractAssignment.__init__)
 
 
-def test_smc::abstractassignment_constructor_args():
-    sig = inspect.signature(smc::AbstractAssignment.__init__)
+def test_smc_abstractassignment_constructor_args():
+    sig = inspect.signature(smc_AbstractAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::variabledecl_is_not_abstract():
-    assert not inspect.isabstract(smc::VariableDecl)
+def test_smc_variabledecl_is_not_abstract():
+    assert not inspect.isabstract(smc_VariableDecl)
 
 
-def test_smc::variabledecl_constructor_exists():
-    assert callable(smc::VariableDecl.__init__)
+def test_smc_variabledecl_constructor_exists():
+    assert callable(smc_VariableDecl.__init__)
 
 
-def test_smc::variabledecl_constructor_args():
-    sig = inspect.signature(smc::VariableDecl.__init__)
+def test_smc_variabledecl_constructor_args():
+    sig = inspect.signature(smc_VariableDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "array" in params, "Missing parameter 'array'"
     assert "length" in params, "Missing parameter 'length'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "array" in params, "Missing parameter 'array'"
 
-def test_smc::variabledecl_has_name():
-    assert hasattr(smc::VariableDecl, "name")
+def test_smc_variabledecl_has_name():
+    assert hasattr(smc_VariableDecl, "name")
     descriptor = None
-    for klass in smc::VariableDecl.__mro__:
+    for klass in smc_VariableDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_smc::variabledecl_has_visibility():
-    assert hasattr(smc::VariableDecl, "visibility")
+def test_smc_variabledecl_has_length():
+    assert hasattr(smc_VariableDecl, "length")
     descriptor = None
-    for klass in smc::VariableDecl.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smc::variabledecl_has_type():
-    assert hasattr(smc::VariableDecl, "type")
-    descriptor = None
-    for klass in smc::VariableDecl.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smc::variabledecl_has_array():
-    assert hasattr(smc::VariableDecl, "array")
-    descriptor = None
-    for klass in smc::VariableDecl.__mro__:
-        if "array" in klass.__dict__:
-            descriptor = klass.__dict__["array"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smc::variabledecl_has_length():
-    assert hasattr(smc::VariableDecl, "length")
-    descriptor = None
-    for klass in smc::VariableDecl.__mro__:
+    for klass in smc_VariableDecl.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
+def test_smc_variabledecl_has_type():
+    assert hasattr(smc_VariableDecl, "type")
+    descriptor = None
+    for klass in smc_VariableDecl.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smc_variabledecl_has_visibility():
+    assert hasattr(smc_VariableDecl, "visibility")
+    descriptor = None
+    for klass in smc_VariableDecl.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smc_variabledecl_has_array():
+    assert hasattr(smc_VariableDecl, "array")
+    descriptor = None
+    for klass in smc_VariableDecl.__mro__:
+        if "array" in klass.__dict__:
+            descriptor = klass.__dict__["array"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_smc::smc_is_not_abstract():
-    assert not inspect.isabstract(smc::Smc)
+
+def test_smc_smc_is_not_abstract():
+    assert not inspect.isabstract(smc_Smc)
 
 
-def test_smc::smc_constructor_exists():
-    assert callable(smc::Smc.__init__)
+def test_smc_smc_constructor_exists():
+    assert callable(smc_Smc.__init__)
 
 
-def test_smc::smc_constructor_args():
-    sig = inspect.signature(smc::Smc.__init__)
+def test_smc_smc_constructor_args():
+    sig = inspect.signature(smc_Smc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::command_is_not_abstract():
-    assert not inspect.isabstract(smc::Command)
+def test_smc_command_is_not_abstract():
+    assert not inspect.isabstract(smc_Command)
 
 
-def test_smc::command_constructor_exists():
-    assert callable(smc::Command.__init__)
+def test_smc_command_constructor_exists():
+    assert callable(smc_Command.__init__)
 
 
-def test_smc::command_constructor_args():
-    sig = inspect.signature(smc::Command.__init__)
+def test_smc_command_constructor_args():
+    sig = inspect.signature(smc_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::mainsmc_is_not_abstract():
-    assert not inspect.isabstract(smc::MainSMC)
+def test_smc_mainsmc_is_not_abstract():
+    assert not inspect.isabstract(smc_MainSMC)
 
 
-def test_smc::mainsmc_constructor_exists():
-    assert callable(smc::MainSMC.__init__)
+def test_smc_mainsmc_constructor_exists():
+    assert callable(smc_MainSMC.__init__)
 
 
-def test_smc::mainsmc_constructor_args():
-    sig = inspect.signature(smc::MainSMC.__init__)
+def test_smc_mainsmc_constructor_args():
+    sig = inspect.signature(smc_MainSMC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smc::blocksmc_is_not_abstract():
-    assert not inspect.isabstract(smc::BlockSMC)
+def test_smc_blocksmc_is_not_abstract():
+    assert not inspect.isabstract(smc_BlockSMC)
 
 
-def test_smc::blocksmc_constructor_exists():
-    assert callable(smc::BlockSMC.__init__)
+def test_smc_blocksmc_constructor_exists():
+    assert callable(smc_BlockSMC.__init__)
 
 
-def test_smc::blocksmc_constructor_args():
-    sig = inspect.signature(smc::BlockSMC.__init__)
+def test_smc_blocksmc_constructor_args():
+    sig = inspect.signature(smc_BlockSMC.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_smc::blocksmc_has_name():
-    assert hasattr(smc::BlockSMC, "name")
+def test_smc_blocksmc_has_name():
+    assert hasattr(smc_BlockSMC, "name")
     descriptor = None
-    for klass in smc::BlockSMC.__mro__:
+    for klass in smc_BlockSMC.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_smc::blocksmc_has_type():
-    assert hasattr(smc::BlockSMC, "type")
+def test_smc_blocksmc_has_type():
+    assert hasattr(smc_BlockSMC, "type")
     descriptor = None
-    for klass in smc::BlockSMC.__mro__:
+    for klass in smc_BlockSMC.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
+
+def test_blocktype_exists():
+    # Check that the Enumeration exists
+    assert BlockType is not None
+
+def test_blocktype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BlockType]
+    expected_literals = [
+        "INSERT",
+        "ANONYMIZATION",
+        "COMP",
+        "ACCESS",
+        "PERMISSION",
+        "SEARCH",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BlockType"
 
 def test_sectype_exists():
     # Check that the Enumeration exists
@@ -1150,25 +1169,6 @@ def test_sectype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SecType"
 
-def test_blocktype_exists():
-    # Check that the Enumeration exists
-    assert BlockType is not None
-
-def test_blocktype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BlockType]
-    expected_literals = [
-        "COMP",
-        "ANONYMIZATION",
-        "INSERT",
-        "ACCESS",
-        "PERMISSION",
-        "SEARCH",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BlockType"
-
 def test_basictype_exists():
     # Check that the Enumeration exists
     assert BasicType is not None
@@ -1177,10 +1177,10 @@ def test_basictype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BasicType]
     expected_literals = [
-        "STRING",
         "BOOLEAN",
-        "ENCRYPTED",
         "DOUBLE",
+        "ENCRYPTED",
+        "STRING",
         "INT",
     ]
     # Check that all expected literals exist
@@ -1202,222 +1202,222 @@ safe_text = st.text(
 AccessControl_strategy = st.builds(
     AccessControl,
 )
-smc::Covered_strategy = st.builds(
-    smc::Covered,
+smc_Covered_strategy = st.builds(
+    smc_Covered,
 )
-smc::BellLapadula_strategy = st.builds(
-    smc::BellLapadula,
+smc_BellLapadula_strategy = st.builds(
+    smc_BellLapadula,
     mode=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-smc::Dict_strategy = st.builds(
-    smc::Dict,
-)
-smc::Not_strategy = st.builds(
-    smc::Not,
-)
-smc::IntLiteral_strategy = st.builds(
-    smc::IntLiteral,
-    value=
-        st.integers()
-)
-smc::StringLiteral_strategy = st.builds(
-    smc::StringLiteral,
-    value=
-        safe_text
-)
-smc::MulOrDiv_strategy = st.builds(
-    smc::MulOrDiv,
+smc_PlusOrMinus_strategy = st.builds(
+    smc_PlusOrMinus,
     op=
         safe_text
 )
-smc::DoubleLiteral_strategy = st.builds(
-    smc::DoubleLiteral,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-smc::DateLiteral_strategy = st.builds(
-    smc::DateLiteral,
-    value=
-        safe_text
-)
-smc::Equality_strategy = st.builds(
-    smc::Equality,
+smc_Equality_strategy = st.builds(
+    smc_Equality,
     op=
         safe_text
 )
-smc::PlusOrMinus_strategy = st.builds(
-    smc::PlusOrMinus,
-    op=
-        safe_text
-)
-smc::And_strategy = st.builds(
-    smc::And,
-)
-smc::Or_strategy = st.builds(
-    smc::Or,
-)
-smc::Comparison_strategy = st.builds(
-    smc::Comparison,
-    op=
-        safe_text
-)
-smc::BooleanLiteral_strategy = st.builds(
-    smc::BooleanLiteral,
+smc_BooleanLiteral_strategy = st.builds(
+    smc_BooleanLiteral,
     value=
         st.booleans()
 )
-smc::List_strategy = st.builds(
-    smc::List,
+smc_IntLiteral_strategy = st.builds(
+    smc_IntLiteral,
+    value=
+        st.integers()
 )
-smc::TimeLiteral_strategy = st.builds(
-    smc::TimeLiteral,
+smc_List_strategy = st.builds(
+    smc_List,
+)
+smc_StringLiteral_strategy = st.builds(
+    smc_StringLiteral,
     value=
         safe_text
 )
-smc::VariableRef_strategy = st.builds(
-    smc::VariableRef,
+smc_DateLiteral_strategy = st.builds(
+    smc_DateLiteral,
+    value=
+        safe_text
 )
-smc::Tuple_strategy = st.builds(
-    smc::Tuple,
+smc_DoubleLiteral_strategy = st.builds(
+    smc_DoubleLiteral,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+smc_Dict_strategy = st.builds(
+    smc_Dict,
+)
+smc_VariableRef_strategy = st.builds(
+    smc_VariableRef,
+)
+smc_Comparison_strategy = st.builds(
+    smc_Comparison,
+    op=
+        safe_text
+)
+smc_Or_strategy = st.builds(
+    smc_Or,
+)
+smc_Not_strategy = st.builds(
+    smc_Not,
+)
+smc_MulOrDiv_strategy = st.builds(
+    smc_MulOrDiv,
+    op=
+        safe_text
+)
+smc_And_strategy = st.builds(
+    smc_And,
+)
+smc_TimeLiteral_strategy = st.builds(
+    smc_TimeLiteral,
+    value=
+        safe_text
+)
+smc_Tuple_strategy = st.builds(
+    smc_Tuple,
 )
 Download_strategy = st.builds(
     Download,
 )
-smc::Client_strategy = st.builds(
-    smc::Client,
+smc_Client_strategy = st.builds(
+    smc_Client,
     arg=
         safe_text
 )
-smc::Database_strategy = st.builds(
-    smc::Database,
+smc_Database_strategy = st.builds(
+    smc_Database,
     clm=
         safe_text
 )
 AbstractAssignment_strategy = st.builds(
     AbstractAssignment,
 )
-smc::Download_strategy = st.builds(
-    smc::Download,
+smc_Download_strategy = st.builds(
+    smc_Download,
 )
 Computation_strategy = st.builds(
     Computation,
 )
-smc::Median_strategy = st.builds(
-    smc::Median,
+smc_Median_strategy = st.builds(
+    smc_Median,
 )
-smc::Count_strategy = st.builds(
-    smc::Count,
+smc_Average_strategy = st.builds(
+    smc_Average,
 )
-smc::WeightedAvg_strategy = st.builds(
-    smc::WeightedAvg,
+smc_Count_strategy = st.builds(
+    smc_Count,
 )
-smc::Average_strategy = st.builds(
-    smc::Average,
+smc_WeightedAvg_strategy = st.builds(
+    smc_WeightedAvg,
 )
-smc::Multiplication_strategy = st.builds(
-    smc::Multiplication,
+smc_Multiplication_strategy = st.builds(
+    smc_Multiplication,
 )
 Functions_strategy = st.builds(
     Functions,
 )
-smc::AddValues_strategy = st.builds(
-    smc::AddValues,
+smc_BloomFilter_strategy = st.builds(
+    smc_BloomFilter,
 )
-smc::BloomFilter_strategy = st.builds(
-    smc::BloomFilter,
+smc_CheckTable_strategy = st.builds(
+    smc_CheckTable,
 )
-smc::Search_strategy = st.builds(
-    smc::Search,
+smc_AccessControl_strategy = st.builds(
+    smc_AccessControl,
+)
+smc_AddValues_strategy = st.builds(
+    smc_AddValues,
+)
+smc_CreateTable_strategy = st.builds(
+    smc_CreateTable,
+)
+smc_Search_strategy = st.builds(
+    smc_Search,
     column=
         safe_text
 )
-smc::CreateTable_strategy = st.builds(
-    smc::CreateTable,
+smc_Computation_strategy = st.builds(
+    smc_Computation,
 )
-smc::AccessControl_strategy = st.builds(
-    smc::AccessControl,
+smc_Functions_strategy = st.builds(
+    smc_Functions,
 )
-smc::CheckTable_strategy = st.builds(
-    smc::CheckTable,
+smc_Expression_strategy = st.builds(
+    smc_Expression,
 )
-smc::Computation_strategy = st.builds(
-    smc::Computation,
-)
-smc::Functions_strategy = st.builds(
-    smc::Functions,
-)
-smc::Expression_strategy = st.builds(
-    smc::Expression,
-)
-smc::Invocation_strategy = st.builds(
-    smc::Invocation,
+smc_Invocation_strategy = st.builds(
+    smc_Invocation,
 )
 Command_strategy = st.builds(
     Command,
 )
-smc::IfThenElse_strategy = st.builds(
-    smc::IfThenElse,
+smc_InvocationVoid_strategy = st.builds(
+    smc_InvocationVoid,
 )
-smc::Return_strategy = st.builds(
-    smc::Return,
+smc_IfThenElse_strategy = st.builds(
+    smc_IfThenElse,
 )
-smc::While_strategy = st.builds(
-    smc::While,
+smc_Return_strategy = st.builds(
+    smc_Return,
 )
-smc::InvocationVoid_strategy = st.builds(
-    smc::InvocationVoid,
+smc_Block_strategy = st.builds(
+    smc_Block,
 )
-smc::Block_strategy = st.builds(
-    smc::Block,
+smc_Print_strategy = st.builds(
+    smc_Print,
 )
-smc::Print_strategy = st.builds(
-    smc::Print,
+smc_While_strategy = st.builds(
+    smc_While,
 )
-smc::ParamDecl_strategy = st.builds(
-    smc::ParamDecl,
-    stype=
+smc_ParamDecl_strategy = st.builds(
+    smc_ParamDecl,
+    name=
         safe_text,
     parName=
         safe_text,
-    name=
-        safe_text,
     btype=
+        safe_text,
+    stype=
         safe_text
 )
-smc::VariableAssignment_strategy = st.builds(
-    smc::VariableAssignment,
+smc_VariableAssignment_strategy = st.builds(
+    smc_VariableAssignment,
 )
-smc::AbstractAssignment_strategy = st.builds(
-    smc::AbstractAssignment,
+smc_AbstractAssignment_strategy = st.builds(
+    smc_AbstractAssignment,
 )
-smc::VariableDecl_strategy = st.builds(
-    smc::VariableDecl,
+smc_VariableDecl_strategy = st.builds(
+    smc_VariableDecl,
     name=
+        safe_text,
+    length=
+        st.integers(),
+    type=
         safe_text,
     visibility=
         safe_text,
-    type=
-        safe_text,
     array=
-        st.booleans(),
-    length=
-        st.integers()
+        st.booleans()
 )
-smc::Smc_strategy = st.builds(
-    smc::Smc,
+smc_Smc_strategy = st.builds(
+    smc_Smc,
 )
-smc::Command_strategy = st.builds(
-    smc::Command,
+smc_Command_strategy = st.builds(
+    smc_Command,
 )
-smc::MainSMC_strategy = st.builds(
-    smc::MainSMC,
+smc_MainSMC_strategy = st.builds(
+    smc_MainSMC,
 )
-smc::BlockSMC_strategy = st.builds(
-    smc::BlockSMC,
+smc_BlockSMC_strategy = st.builds(
+    smc_BlockSMC,
     name=
         safe_text,
     type=
@@ -1429,23 +1429,20 @@ smc::BlockSMC_strategy = st.builds(
 def test_accesscontrol_instantiation(instance):
     assert isinstance(instance, AccessControl)
 
-@given(instance=smc::Covered_strategy)
+@given(instance=smc_Covered_strategy)
 @settings(max_examples=50)
-def test_smc::covered_instantiation(instance):
-    assert isinstance(instance, smc::Covered)
+def test_smc_covered_instantiation(instance):
+    assert isinstance(instance, smc_Covered)
 
-@given(instance=smc::BellLapadula_strategy)
+@given(instance=smc_BellLapadula_strategy)
 @settings(max_examples=50)
-def test_smc::belllapadula_instantiation(instance):
-    assert isinstance(instance, smc::BellLapadula)
-
-@given(instance=smc::BellLapadula_strategy)
-def test_smc::belllapadula_mode_type(instance):
-    assert isinstance(instance.mode, str)
+def test_smc_belllapadula_instantiation(instance):
+    assert isinstance(instance, smc_BellLapadula)
 
 
-@given(instance=smc::BellLapadula_strategy)
-def test_smc::belllapadula_mode_setter(instance):
+
+@given(instance=smc_BellLapadula_strategy)
+def test_smc_belllapadula_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
@@ -1455,234 +1452,198 @@ def test_smc::belllapadula_mode_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=smc::Dict_strategy)
+@given(instance=smc_PlusOrMinus_strategy)
 @settings(max_examples=50)
-def test_smc::dict_instantiation(instance):
-    assert isinstance(instance, smc::Dict)
-
-@given(instance=smc::Not_strategy)
-@settings(max_examples=50)
-def test_smc::not_instantiation(instance):
-    assert isinstance(instance, smc::Not)
-
-@given(instance=smc::IntLiteral_strategy)
-@settings(max_examples=50)
-def test_smc::intliteral_instantiation(instance):
-    assert isinstance(instance, smc::IntLiteral)
-
-@given(instance=smc::IntLiteral_strategy)
-def test_smc::intliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_smc_plusorminus_instantiation(instance):
+    assert isinstance(instance, smc_PlusOrMinus)
 
 
-@given(instance=smc::IntLiteral_strategy)
-def test_smc::intliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=smc::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_smc::stringliteral_instantiation(instance):
-    assert isinstance(instance, smc::StringLiteral)
-
-@given(instance=smc::StringLiteral_strategy)
-def test_smc::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smc::StringLiteral_strategy)
-def test_smc::stringliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smc::MulOrDiv_strategy)
-@settings(max_examples=50)
-def test_smc::mulordiv_instantiation(instance):
-    assert isinstance(instance, smc::MulOrDiv)
-
-@given(instance=smc::MulOrDiv_strategy)
-def test_smc::mulordiv_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=smc::MulOrDiv_strategy)
-def test_smc::mulordiv_op_setter(instance):
+@given(instance=smc_PlusOrMinus_strategy)
+def test_smc_plusorminus_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=smc::DoubleLiteral_strategy)
+@given(instance=smc_Equality_strategy)
 @settings(max_examples=50)
-def test_smc::doubleliteral_instantiation(instance):
-    assert isinstance(instance, smc::DoubleLiteral)
-
-@given(instance=smc::DoubleLiteral_strategy)
-def test_smc::doubleliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_smc_equality_instantiation(instance):
+    assert isinstance(instance, smc_Equality)
 
 
-@given(instance=smc::DoubleLiteral_strategy)
-def test_smc::doubleliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=smc::DateLiteral_strategy)
-@settings(max_examples=50)
-def test_smc::dateliteral_instantiation(instance):
-    assert isinstance(instance, smc::DateLiteral)
-
-@given(instance=smc::DateLiteral_strategy)
-def test_smc::dateliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smc::DateLiteral_strategy)
-def test_smc::dateliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smc::Equality_strategy)
-@settings(max_examples=50)
-def test_smc::equality_instantiation(instance):
-    assert isinstance(instance, smc::Equality)
-
-@given(instance=smc::Equality_strategy)
-def test_smc::equality_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=smc::Equality_strategy)
-def test_smc::equality_op_setter(instance):
+@given(instance=smc_Equality_strategy)
+def test_smc_equality_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=smc::PlusOrMinus_strategy)
+@given(instance=smc_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_smc::plusorminus_instantiation(instance):
-    assert isinstance(instance, smc::PlusOrMinus)
-
-@given(instance=smc::PlusOrMinus_strategy)
-def test_smc::plusorminus_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_smc_booleanliteral_instantiation(instance):
+    assert isinstance(instance, smc_BooleanLiteral)
 
 
-@given(instance=smc::PlusOrMinus_strategy)
-def test_smc::plusorminus_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
 
-@given(instance=smc::And_strategy)
-@settings(max_examples=50)
-def test_smc::and_instantiation(instance):
-    assert isinstance(instance, smc::And)
-
-@given(instance=smc::Or_strategy)
-@settings(max_examples=50)
-def test_smc::or_instantiation(instance):
-    assert isinstance(instance, smc::Or)
-
-@given(instance=smc::Comparison_strategy)
-@settings(max_examples=50)
-def test_smc::comparison_instantiation(instance):
-    assert isinstance(instance, smc::Comparison)
-
-@given(instance=smc::Comparison_strategy)
-def test_smc::comparison_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=smc::Comparison_strategy)
-def test_smc::comparison_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=smc::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_smc::booleanliteral_instantiation(instance):
-    assert isinstance(instance, smc::BooleanLiteral)
-
-@given(instance=smc::BooleanLiteral_strategy)
-def test_smc::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=smc::BooleanLiteral_strategy)
-def test_smc::booleanliteral_value_setter(instance):
+@given(instance=smc_BooleanLiteral_strategy)
+def test_smc_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=smc::List_strategy)
+@given(instance=smc_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_smc::list_instantiation(instance):
-    assert isinstance(instance, smc::List)
-
-@given(instance=smc::TimeLiteral_strategy)
-@settings(max_examples=50)
-def test_smc::timeliteral_instantiation(instance):
-    assert isinstance(instance, smc::TimeLiteral)
-
-@given(instance=smc::TimeLiteral_strategy)
-def test_smc::timeliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_smc_intliteral_instantiation(instance):
+    assert isinstance(instance, smc_IntLiteral)
 
 
-@given(instance=smc::TimeLiteral_strategy)
-def test_smc::timeliteral_value_setter(instance):
+
+@given(instance=smc_IntLiteral_strategy)
+def test_smc_intliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=smc::VariableRef_strategy)
+@given(instance=smc_List_strategy)
 @settings(max_examples=50)
-def test_smc::variableref_instantiation(instance):
-    assert isinstance(instance, smc::VariableRef)
+def test_smc_list_instantiation(instance):
+    assert isinstance(instance, smc_List)
 
-@given(instance=smc::Tuple_strategy)
+@given(instance=smc_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_smc::tuple_instantiation(instance):
-    assert isinstance(instance, smc::Tuple)
+def test_smc_stringliteral_instantiation(instance):
+    assert isinstance(instance, smc_StringLiteral)
+
+
+
+@given(instance=smc_StringLiteral_strategy)
+def test_smc_stringliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smc_DateLiteral_strategy)
+@settings(max_examples=50)
+def test_smc_dateliteral_instantiation(instance):
+    assert isinstance(instance, smc_DateLiteral)
+
+
+
+@given(instance=smc_DateLiteral_strategy)
+def test_smc_dateliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smc_DoubleLiteral_strategy)
+@settings(max_examples=50)
+def test_smc_doubleliteral_instantiation(instance):
+    assert isinstance(instance, smc_DoubleLiteral)
+
+
+
+@given(instance=smc_DoubleLiteral_strategy)
+def test_smc_doubleliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smc_Dict_strategy)
+@settings(max_examples=50)
+def test_smc_dict_instantiation(instance):
+    assert isinstance(instance, smc_Dict)
+
+@given(instance=smc_VariableRef_strategy)
+@settings(max_examples=50)
+def test_smc_variableref_instantiation(instance):
+    assert isinstance(instance, smc_VariableRef)
+
+@given(instance=smc_Comparison_strategy)
+@settings(max_examples=50)
+def test_smc_comparison_instantiation(instance):
+    assert isinstance(instance, smc_Comparison)
+
+
+
+@given(instance=smc_Comparison_strategy)
+def test_smc_comparison_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=smc_Or_strategy)
+@settings(max_examples=50)
+def test_smc_or_instantiation(instance):
+    assert isinstance(instance, smc_Or)
+
+@given(instance=smc_Not_strategy)
+@settings(max_examples=50)
+def test_smc_not_instantiation(instance):
+    assert isinstance(instance, smc_Not)
+
+@given(instance=smc_MulOrDiv_strategy)
+@settings(max_examples=50)
+def test_smc_mulordiv_instantiation(instance):
+    assert isinstance(instance, smc_MulOrDiv)
+
+
+
+@given(instance=smc_MulOrDiv_strategy)
+def test_smc_mulordiv_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=smc_And_strategy)
+@settings(max_examples=50)
+def test_smc_and_instantiation(instance):
+    assert isinstance(instance, smc_And)
+
+@given(instance=smc_TimeLiteral_strategy)
+@settings(max_examples=50)
+def test_smc_timeliteral_instantiation(instance):
+    assert isinstance(instance, smc_TimeLiteral)
+
+
+
+@given(instance=smc_TimeLiteral_strategy)
+def test_smc_timeliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smc_Tuple_strategy)
+@settings(max_examples=50)
+def test_smc_tuple_instantiation(instance):
+    assert isinstance(instance, smc_Tuple)
 
 @given(instance=Download_strategy)
 @settings(max_examples=50)
 def test_download_instantiation(instance):
     assert isinstance(instance, Download)
 
-@given(instance=smc::Client_strategy)
+@given(instance=smc_Client_strategy)
 @settings(max_examples=50)
-def test_smc::client_instantiation(instance):
-    assert isinstance(instance, smc::Client)
-
-@given(instance=smc::Client_strategy)
-def test_smc::client_arg_type(instance):
-    assert isinstance(instance.arg, str)
+def test_smc_client_instantiation(instance):
+    assert isinstance(instance, smc_Client)
 
 
-@given(instance=smc::Client_strategy)
-def test_smc::client_arg_setter(instance):
+
+@given(instance=smc_Client_strategy)
+def test_smc_client_arg_setter(instance):
     original = instance.arg
     instance.arg = original
     assert instance.arg == original
 
-@given(instance=smc::Database_strategy)
+@given(instance=smc_Database_strategy)
 @settings(max_examples=50)
-def test_smc::database_instantiation(instance):
-    assert isinstance(instance, smc::Database)
-
-@given(instance=smc::Database_strategy)
-def test_smc::database_clm_type(instance):
-    assert isinstance(instance.clm, str)
+def test_smc_database_instantiation(instance):
+    assert isinstance(instance, smc_Database)
 
 
-@given(instance=smc::Database_strategy)
-def test_smc::database_clm_setter(instance):
+
+@given(instance=smc_Database_strategy)
+def test_smc_database_clm_setter(instance):
     original = instance.clm
     instance.clm = original
     assert instance.clm == original
@@ -1692,299 +1653,263 @@ def test_smc::database_clm_setter(instance):
 def test_abstractassignment_instantiation(instance):
     assert isinstance(instance, AbstractAssignment)
 
-@given(instance=smc::Download_strategy)
+@given(instance=smc_Download_strategy)
 @settings(max_examples=50)
-def test_smc::download_instantiation(instance):
-    assert isinstance(instance, smc::Download)
+def test_smc_download_instantiation(instance):
+    assert isinstance(instance, smc_Download)
 
 @given(instance=Computation_strategy)
 @settings(max_examples=50)
 def test_computation_instantiation(instance):
     assert isinstance(instance, Computation)
 
-@given(instance=smc::Median_strategy)
+@given(instance=smc_Median_strategy)
 @settings(max_examples=50)
-def test_smc::median_instantiation(instance):
-    assert isinstance(instance, smc::Median)
+def test_smc_median_instantiation(instance):
+    assert isinstance(instance, smc_Median)
 
-@given(instance=smc::Count_strategy)
+@given(instance=smc_Average_strategy)
 @settings(max_examples=50)
-def test_smc::count_instantiation(instance):
-    assert isinstance(instance, smc::Count)
+def test_smc_average_instantiation(instance):
+    assert isinstance(instance, smc_Average)
 
-@given(instance=smc::WeightedAvg_strategy)
+@given(instance=smc_Count_strategy)
 @settings(max_examples=50)
-def test_smc::weightedavg_instantiation(instance):
-    assert isinstance(instance, smc::WeightedAvg)
+def test_smc_count_instantiation(instance):
+    assert isinstance(instance, smc_Count)
 
-@given(instance=smc::Average_strategy)
+@given(instance=smc_WeightedAvg_strategy)
 @settings(max_examples=50)
-def test_smc::average_instantiation(instance):
-    assert isinstance(instance, smc::Average)
+def test_smc_weightedavg_instantiation(instance):
+    assert isinstance(instance, smc_WeightedAvg)
 
-@given(instance=smc::Multiplication_strategy)
+@given(instance=smc_Multiplication_strategy)
 @settings(max_examples=50)
-def test_smc::multiplication_instantiation(instance):
-    assert isinstance(instance, smc::Multiplication)
+def test_smc_multiplication_instantiation(instance):
+    assert isinstance(instance, smc_Multiplication)
 
 @given(instance=Functions_strategy)
 @settings(max_examples=50)
 def test_functions_instantiation(instance):
     assert isinstance(instance, Functions)
 
-@given(instance=smc::AddValues_strategy)
+@given(instance=smc_BloomFilter_strategy)
 @settings(max_examples=50)
-def test_smc::addvalues_instantiation(instance):
-    assert isinstance(instance, smc::AddValues)
+def test_smc_bloomfilter_instantiation(instance):
+    assert isinstance(instance, smc_BloomFilter)
 
-@given(instance=smc::BloomFilter_strategy)
+@given(instance=smc_CheckTable_strategy)
 @settings(max_examples=50)
-def test_smc::bloomfilter_instantiation(instance):
-    assert isinstance(instance, smc::BloomFilter)
+def test_smc_checktable_instantiation(instance):
+    assert isinstance(instance, smc_CheckTable)
 
-@given(instance=smc::Search_strategy)
+@given(instance=smc_AccessControl_strategy)
 @settings(max_examples=50)
-def test_smc::search_instantiation(instance):
-    assert isinstance(instance, smc::Search)
+def test_smc_accesscontrol_instantiation(instance):
+    assert isinstance(instance, smc_AccessControl)
 
-@given(instance=smc::Search_strategy)
-def test_smc::search_column_type(instance):
-    assert isinstance(instance.column, str)
+@given(instance=smc_AddValues_strategy)
+@settings(max_examples=50)
+def test_smc_addvalues_instantiation(instance):
+    assert isinstance(instance, smc_AddValues)
+
+@given(instance=smc_CreateTable_strategy)
+@settings(max_examples=50)
+def test_smc_createtable_instantiation(instance):
+    assert isinstance(instance, smc_CreateTable)
+
+@given(instance=smc_Search_strategy)
+@settings(max_examples=50)
+def test_smc_search_instantiation(instance):
+    assert isinstance(instance, smc_Search)
 
 
-@given(instance=smc::Search_strategy)
-def test_smc::search_column_setter(instance):
+
+@given(instance=smc_Search_strategy)
+def test_smc_search_column_setter(instance):
     original = instance.column
     instance.column = original
     assert instance.column == original
 
-@given(instance=smc::CreateTable_strategy)
+@given(instance=smc_Computation_strategy)
 @settings(max_examples=50)
-def test_smc::createtable_instantiation(instance):
-    assert isinstance(instance, smc::CreateTable)
+def test_smc_computation_instantiation(instance):
+    assert isinstance(instance, smc_Computation)
 
-@given(instance=smc::AccessControl_strategy)
+@given(instance=smc_Functions_strategy)
 @settings(max_examples=50)
-def test_smc::accesscontrol_instantiation(instance):
-    assert isinstance(instance, smc::AccessControl)
+def test_smc_functions_instantiation(instance):
+    assert isinstance(instance, smc_Functions)
 
-@given(instance=smc::CheckTable_strategy)
+@given(instance=smc_Expression_strategy)
 @settings(max_examples=50)
-def test_smc::checktable_instantiation(instance):
-    assert isinstance(instance, smc::CheckTable)
+def test_smc_expression_instantiation(instance):
+    assert isinstance(instance, smc_Expression)
 
-@given(instance=smc::Computation_strategy)
+@given(instance=smc_Invocation_strategy)
 @settings(max_examples=50)
-def test_smc::computation_instantiation(instance):
-    assert isinstance(instance, smc::Computation)
-
-@given(instance=smc::Functions_strategy)
-@settings(max_examples=50)
-def test_smc::functions_instantiation(instance):
-    assert isinstance(instance, smc::Functions)
-
-@given(instance=smc::Expression_strategy)
-@settings(max_examples=50)
-def test_smc::expression_instantiation(instance):
-    assert isinstance(instance, smc::Expression)
-
-@given(instance=smc::Invocation_strategy)
-@settings(max_examples=50)
-def test_smc::invocation_instantiation(instance):
-    assert isinstance(instance, smc::Invocation)
+def test_smc_invocation_instantiation(instance):
+    assert isinstance(instance, smc_Invocation)
 
 @given(instance=Command_strategy)
 @settings(max_examples=50)
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=smc::IfThenElse_strategy)
+@given(instance=smc_InvocationVoid_strategy)
 @settings(max_examples=50)
-def test_smc::ifthenelse_instantiation(instance):
-    assert isinstance(instance, smc::IfThenElse)
+def test_smc_invocationvoid_instantiation(instance):
+    assert isinstance(instance, smc_InvocationVoid)
 
-@given(instance=smc::Return_strategy)
+@given(instance=smc_IfThenElse_strategy)
 @settings(max_examples=50)
-def test_smc::return_instantiation(instance):
-    assert isinstance(instance, smc::Return)
+def test_smc_ifthenelse_instantiation(instance):
+    assert isinstance(instance, smc_IfThenElse)
 
-@given(instance=smc::While_strategy)
+@given(instance=smc_Return_strategy)
 @settings(max_examples=50)
-def test_smc::while_instantiation(instance):
-    assert isinstance(instance, smc::While)
+def test_smc_return_instantiation(instance):
+    assert isinstance(instance, smc_Return)
 
-@given(instance=smc::InvocationVoid_strategy)
+@given(instance=smc_Block_strategy)
 @settings(max_examples=50)
-def test_smc::invocationvoid_instantiation(instance):
-    assert isinstance(instance, smc::InvocationVoid)
+def test_smc_block_instantiation(instance):
+    assert isinstance(instance, smc_Block)
 
-@given(instance=smc::Block_strategy)
+@given(instance=smc_Print_strategy)
 @settings(max_examples=50)
-def test_smc::block_instantiation(instance):
-    assert isinstance(instance, smc::Block)
+def test_smc_print_instantiation(instance):
+    assert isinstance(instance, smc_Print)
 
-@given(instance=smc::Print_strategy)
+@given(instance=smc_While_strategy)
 @settings(max_examples=50)
-def test_smc::print_instantiation(instance):
-    assert isinstance(instance, smc::Print)
+def test_smc_while_instantiation(instance):
+    assert isinstance(instance, smc_While)
 
-@given(instance=smc::ParamDecl_strategy)
+@given(instance=smc_ParamDecl_strategy)
 @settings(max_examples=50)
-def test_smc::paramdecl_instantiation(instance):
-    assert isinstance(instance, smc::ParamDecl)
-
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_stype_type(instance):
-    assert isinstance(instance.stype, str)
+def test_smc_paramdecl_instantiation(instance):
+    assert isinstance(instance, smc_ParamDecl)
 
 
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_stype_setter(instance):
-    original = instance.stype
-    instance.stype = original
-    assert instance.stype == original
 
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_parName_type(instance):
-    assert isinstance(instance.parName, str)
+@given(instance=smc_ParamDecl_strategy)
+def test_smc_paramdecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_parName_setter(instance):
+
+@given(instance=smc_ParamDecl_strategy)
+def test_smc_paramdecl_parName_setter(instance):
     original = instance.parName
     instance.parName = original
     assert instance.parName == original
 
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_btype_type(instance):
-    assert isinstance(instance.btype, str)
-
-
-@given(instance=smc::ParamDecl_strategy)
-def test_smc::paramdecl_btype_setter(instance):
+@given(instance=smc_ParamDecl_strategy)
+def test_smc_paramdecl_btype_setter(instance):
     original = instance.btype
     instance.btype = original
     assert instance.btype == original
 
-@given(instance=smc::VariableAssignment_strategy)
+
+
+@given(instance=smc_ParamDecl_strategy)
+def test_smc_paramdecl_stype_setter(instance):
+    original = instance.stype
+    instance.stype = original
+    assert instance.stype == original
+
+@given(instance=smc_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_smc::variableassignment_instantiation(instance):
-    assert isinstance(instance, smc::VariableAssignment)
+def test_smc_variableassignment_instantiation(instance):
+    assert isinstance(instance, smc_VariableAssignment)
 
-@given(instance=smc::AbstractAssignment_strategy)
+@given(instance=smc_AbstractAssignment_strategy)
 @settings(max_examples=50)
-def test_smc::abstractassignment_instantiation(instance):
-    assert isinstance(instance, smc::AbstractAssignment)
+def test_smc_abstractassignment_instantiation(instance):
+    assert isinstance(instance, smc_AbstractAssignment)
 
-@given(instance=smc::VariableDecl_strategy)
+@given(instance=smc_VariableDecl_strategy)
 @settings(max_examples=50)
-def test_smc::variabledecl_instantiation(instance):
-    assert isinstance(instance, smc::VariableDecl)
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_smc_variabledecl_instantiation(instance):
+    assert isinstance(instance, smc_VariableDecl)
 
 
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_name_setter(instance):
+
+@given(instance=smc_VariableDecl_strategy)
+def test_smc_variabledecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
 
 
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_array_type(instance):
-    assert isinstance(instance.array, bool)
-
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_array_setter(instance):
-    original = instance.array
-    instance.array = original
-    assert instance.array == original
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_length_type(instance):
-    assert isinstance(instance.length, int)
-
-
-@given(instance=smc::VariableDecl_strategy)
-def test_smc::variabledecl_length_setter(instance):
+@given(instance=smc_VariableDecl_strategy)
+def test_smc_variabledecl_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=smc::Smc_strategy)
+
+
+@given(instance=smc_VariableDecl_strategy)
+def test_smc_variabledecl_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=smc_VariableDecl_strategy)
+def test_smc_variabledecl_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+
+
+@given(instance=smc_VariableDecl_strategy)
+def test_smc_variabledecl_array_setter(instance):
+    original = instance.array
+    instance.array = original
+    assert instance.array == original
+
+@given(instance=smc_Smc_strategy)
 @settings(max_examples=50)
-def test_smc::smc_instantiation(instance):
-    assert isinstance(instance, smc::Smc)
+def test_smc_smc_instantiation(instance):
+    assert isinstance(instance, smc_Smc)
 
-@given(instance=smc::Command_strategy)
+@given(instance=smc_Command_strategy)
 @settings(max_examples=50)
-def test_smc::command_instantiation(instance):
-    assert isinstance(instance, smc::Command)
+def test_smc_command_instantiation(instance):
+    assert isinstance(instance, smc_Command)
 
-@given(instance=smc::MainSMC_strategy)
+@given(instance=smc_MainSMC_strategy)
 @settings(max_examples=50)
-def test_smc::mainsmc_instantiation(instance):
-    assert isinstance(instance, smc::MainSMC)
+def test_smc_mainsmc_instantiation(instance):
+    assert isinstance(instance, smc_MainSMC)
 
-@given(instance=smc::BlockSMC_strategy)
+@given(instance=smc_BlockSMC_strategy)
 @settings(max_examples=50)
-def test_smc::blocksmc_instantiation(instance):
-    assert isinstance(instance, smc::BlockSMC)
-
-@given(instance=smc::BlockSMC_strategy)
-def test_smc::blocksmc_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_smc_blocksmc_instantiation(instance):
+    assert isinstance(instance, smc_BlockSMC)
 
 
-@given(instance=smc::BlockSMC_strategy)
-def test_smc::blocksmc_name_setter(instance):
+
+@given(instance=smc_BlockSMC_strategy)
+def test_smc_blocksmc_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=smc::BlockSMC_strategy)
-def test_smc::blocksmc_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=smc::BlockSMC_strategy)
-def test_smc::blocksmc_type_setter(instance):
+@given(instance=smc_BlockSMC_strategy)
+def test_smc_blocksmc_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original

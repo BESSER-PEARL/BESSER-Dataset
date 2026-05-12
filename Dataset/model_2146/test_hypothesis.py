@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     GraphElement,
     Element,
-    graphdb::Property,
-    graphdb::GraphElement,
-    graphdb::Element,
-    graphdb::Edge,
-    graphdb::Vertex,
-    graphdb::Graph,
+    graphdb_Property,
+    graphdb_GraphElement,
+    graphdb_Element,
+    graphdb_Edge,
+    graphdb_Vertex,
+    graphdb_Graph,
     PrimitiveType,
 )
 
@@ -51,95 +51,33 @@ def test_element_constructor_args():
 
 
 
-def test_graphdb::property_is_not_abstract():
-    assert not inspect.isabstract(graphdb::Property)
+def test_graphdb_property_is_not_abstract():
+    assert not inspect.isabstract(graphdb_Property)
 
 
-def test_graphdb::property_constructor_exists():
-    assert callable(graphdb::Property.__init__)
+def test_graphdb_property_constructor_exists():
+    assert callable(graphdb_Property.__init__)
 
 
-def test_graphdb::property_constructor_args():
-    sig = inspect.signature(graphdb::Property.__init__)
+def test_graphdb_property_constructor_args():
+    sig = inspect.signature(graphdb_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_graphdb::property_has_type():
-    assert hasattr(graphdb::Property, "type")
+def test_graphdb_property_has_key():
+    assert hasattr(graphdb_Property, "key")
     descriptor = None
-    for klass in graphdb::Property.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphdb::property_has_key():
-    assert hasattr(graphdb::Property, "key")
-    descriptor = None
-    for klass in graphdb::Property.__mro__:
+    for klass in graphdb_Property.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_graphdb::graphelement_is_not_abstract():
-    assert not inspect.isabstract(graphdb::GraphElement)
-
-
-def test_graphdb::graphelement_constructor_exists():
-    assert callable(graphdb::GraphElement.__init__)
-
-
-def test_graphdb::graphelement_constructor_args():
-    sig = inspect.signature(graphdb::GraphElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graphdb::element_is_not_abstract():
-    assert not inspect.isabstract(graphdb::Element)
-
-
-def test_graphdb::element_constructor_exists():
-    assert callable(graphdb::Element.__init__)
-
-
-def test_graphdb::element_constructor_args():
-    sig = inspect.signature(graphdb::Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graphdb::edge_is_not_abstract():
-    assert not inspect.isabstract(graphdb::Edge)
-
-
-def test_graphdb::edge_constructor_exists():
-    assert callable(graphdb::Edge.__init__)
-
-
-def test_graphdb::edge_constructor_args():
-    sig = inspect.signature(graphdb::Edge.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_graphdb::edge_has_name():
-    assert hasattr(graphdb::Edge, "name")
+def test_graphdb_property_has_type():
+    assert hasattr(graphdb_Property, "type")
     descriptor = None
-    for klass in graphdb::Edge.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphdb::edge_has_type():
-    assert hasattr(graphdb::Edge, "type")
-    descriptor = None
-    for klass in graphdb::Edge.__mro__:
+    for klass in graphdb_Property.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -147,50 +85,112 @@ def test_graphdb::edge_has_type():
 
 
 
-def test_graphdb::vertex_is_not_abstract():
-    assert not inspect.isabstract(graphdb::Vertex)
+def test_graphdb_graphelement_is_not_abstract():
+    assert not inspect.isabstract(graphdb_GraphElement)
 
 
-def test_graphdb::vertex_constructor_exists():
-    assert callable(graphdb::Vertex.__init__)
+def test_graphdb_graphelement_constructor_exists():
+    assert callable(graphdb_GraphElement.__init__)
 
 
-def test_graphdb::vertex_constructor_args():
-    sig = inspect.signature(graphdb::Vertex.__init__)
+def test_graphdb_graphelement_constructor_args():
+    sig = inspect.signature(graphdb_GraphElement.__init__)
     params = list(sig.parameters.keys())
-    assert "labels" in params, "Missing parameter 'labels'"
+
+
+
+def test_graphdb_element_is_not_abstract():
+    assert not inspect.isabstract(graphdb_Element)
+
+
+def test_graphdb_element_constructor_exists():
+    assert callable(graphdb_Element.__init__)
+
+
+def test_graphdb_element_constructor_args():
+    sig = inspect.signature(graphdb_Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graphdb_edge_is_not_abstract():
+    assert not inspect.isabstract(graphdb_Edge)
+
+
+def test_graphdb_edge_constructor_exists():
+    assert callable(graphdb_Edge.__init__)
+
+
+def test_graphdb_edge_constructor_args():
+    sig = inspect.signature(graphdb_Edge.__init__)
+    params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_graphdb::vertex_has_labels():
-    assert hasattr(graphdb::Vertex, "labels")
+def test_graphdb_edge_has_name():
+    assert hasattr(graphdb_Edge, "name")
     descriptor = None
-    for klass in graphdb::Vertex.__mro__:
-        if "labels" in klass.__dict__:
-            descriptor = klass.__dict__["labels"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphdb::vertex_has_name():
-    assert hasattr(graphdb::Vertex, "name")
-    descriptor = None
-    for klass in graphdb::Vertex.__mro__:
+    for klass in graphdb_Edge.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_graphdb_edge_has_type():
+    assert hasattr(graphdb_Edge, "type")
+    descriptor = None
+    for klass in graphdb_Edge.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graphdb::graph_is_not_abstract():
-    assert not inspect.isabstract(graphdb::Graph)
+
+def test_graphdb_vertex_is_not_abstract():
+    assert not inspect.isabstract(graphdb_Vertex)
 
 
-def test_graphdb::graph_constructor_exists():
-    assert callable(graphdb::Graph.__init__)
+def test_graphdb_vertex_constructor_exists():
+    assert callable(graphdb_Vertex.__init__)
 
 
-def test_graphdb::graph_constructor_args():
-    sig = inspect.signature(graphdb::Graph.__init__)
+def test_graphdb_vertex_constructor_args():
+    sig = inspect.signature(graphdb_Vertex.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "labels" in params, "Missing parameter 'labels'"
+
+def test_graphdb_vertex_has_name():
+    assert hasattr(graphdb_Vertex, "name")
+    descriptor = None
+    for klass in graphdb_Vertex.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graphdb_vertex_has_labels():
+    assert hasattr(graphdb_Vertex, "labels")
+    descriptor = None
+    for klass in graphdb_Vertex.__mro__:
+        if "labels" in klass.__dict__:
+            descriptor = klass.__dict__["labels"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_graphdb_graph_is_not_abstract():
+    assert not inspect.isabstract(graphdb_Graph)
+
+
+def test_graphdb_graph_constructor_exists():
+    assert callable(graphdb_Graph.__init__)
+
+
+def test_graphdb_graph_constructor_args():
+    sig = inspect.signature(graphdb_Graph.__init__)
     params = list(sig.parameters.keys())
 
 def test_primitivetype_exists():
@@ -201,9 +201,9 @@ def test_primitivetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PrimitiveType]
     expected_literals = [
-        "Integer",
-        "Object",
         "String",
+        "Object",
+        "Integer",
         "Boolean",
     ]
     # Check that all expected literals exist
@@ -228,35 +228,35 @@ GraphElement_strategy = st.builds(
 Element_strategy = st.builds(
     Element,
 )
-graphdb::Property_strategy = st.builds(
-    graphdb::Property,
-    type=
-        safe_text,
+graphdb_Property_strategy = st.builds(
+    graphdb_Property,
     key=
+        safe_text,
+    type=
         safe_text
 )
-graphdb::GraphElement_strategy = st.builds(
-    graphdb::GraphElement,
+graphdb_GraphElement_strategy = st.builds(
+    graphdb_GraphElement,
 )
-graphdb::Element_strategy = st.builds(
-    graphdb::Element,
+graphdb_Element_strategy = st.builds(
+    graphdb_Element,
 )
-graphdb::Edge_strategy = st.builds(
-    graphdb::Edge,
+graphdb_Edge_strategy = st.builds(
+    graphdb_Edge,
     name=
         safe_text,
     type=
         safe_text
 )
-graphdb::Vertex_strategy = st.builds(
-    graphdb::Vertex,
-    labels=
-        safe_text,
+graphdb_Vertex_strategy = st.builds(
+    graphdb_Vertex,
     name=
+        safe_text,
+    labels=
         safe_text
 )
-graphdb::Graph_strategy = st.builds(
-    graphdb::Graph,
+graphdb_Graph_strategy = st.builds(
+    graphdb_Graph,
 )
 
 @given(instance=GraphElement_strategy)
@@ -269,98 +269,80 @@ def test_graphelement_instantiation(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=graphdb::Property_strategy)
+@given(instance=graphdb_Property_strategy)
 @settings(max_examples=50)
-def test_graphdb::property_instantiation(instance):
-    assert isinstance(instance, graphdb::Property)
-
-@given(instance=graphdb::Property_strategy)
-def test_graphdb::property_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_graphdb_property_instantiation(instance):
+    assert isinstance(instance, graphdb_Property)
 
 
-@given(instance=graphdb::Property_strategy)
-def test_graphdb::property_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=graphdb::Property_strategy)
-def test_graphdb::property_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=graphdb::Property_strategy)
-def test_graphdb::property_key_setter(instance):
+@given(instance=graphdb_Property_strategy)
+def test_graphdb_property_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=graphdb::GraphElement_strategy)
-@settings(max_examples=50)
-def test_graphdb::graphelement_instantiation(instance):
-    assert isinstance(instance, graphdb::GraphElement)
-
-@given(instance=graphdb::Element_strategy)
-@settings(max_examples=50)
-def test_graphdb::element_instantiation(instance):
-    assert isinstance(instance, graphdb::Element)
-
-@given(instance=graphdb::Edge_strategy)
-@settings(max_examples=50)
-def test_graphdb::edge_instantiation(instance):
-    assert isinstance(instance, graphdb::Edge)
-
-@given(instance=graphdb::Edge_strategy)
-def test_graphdb::edge_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=graphdb::Edge_strategy)
-def test_graphdb::edge_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=graphdb::Edge_strategy)
-def test_graphdb::edge_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=graphdb::Edge_strategy)
-def test_graphdb::edge_type_setter(instance):
+@given(instance=graphdb_Property_strategy)
+def test_graphdb_property_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=graphdb::Vertex_strategy)
+@given(instance=graphdb_GraphElement_strategy)
 @settings(max_examples=50)
-def test_graphdb::vertex_instantiation(instance):
-    assert isinstance(instance, graphdb::Vertex)
+def test_graphdb_graphelement_instantiation(instance):
+    assert isinstance(instance, graphdb_GraphElement)
 
-@given(instance=graphdb::Vertex_strategy)
-def test_graphdb::vertex_labels_type(instance):
-    assert isinstance(instance.labels, str)
+@given(instance=graphdb_Element_strategy)
+@settings(max_examples=50)
+def test_graphdb_element_instantiation(instance):
+    assert isinstance(instance, graphdb_Element)
 
-
-@given(instance=graphdb::Vertex_strategy)
-def test_graphdb::vertex_labels_setter(instance):
-    original = instance.labels
-    instance.labels = original
-    assert instance.labels == original
-
-@given(instance=graphdb::Vertex_strategy)
-def test_graphdb::vertex_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=graphdb_Edge_strategy)
+@settings(max_examples=50)
+def test_graphdb_edge_instantiation(instance):
+    assert isinstance(instance, graphdb_Edge)
 
 
-@given(instance=graphdb::Vertex_strategy)
-def test_graphdb::vertex_name_setter(instance):
+
+@given(instance=graphdb_Edge_strategy)
+def test_graphdb_edge_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphdb::Graph_strategy)
+
+
+@given(instance=graphdb_Edge_strategy)
+def test_graphdb_edge_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=graphdb_Vertex_strategy)
 @settings(max_examples=50)
-def test_graphdb::graph_instantiation(instance):
-    assert isinstance(instance, graphdb::Graph)
+def test_graphdb_vertex_instantiation(instance):
+    assert isinstance(instance, graphdb_Vertex)
+
+
+
+@given(instance=graphdb_Vertex_strategy)
+def test_graphdb_vertex_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=graphdb_Vertex_strategy)
+def test_graphdb_vertex_labels_setter(instance):
+    original = instance.labels
+    instance.labels = original
+    assert instance.labels == original
+
+@given(instance=graphdb_Graph_strategy)
+@settings(max_examples=50)
+def test_graphdb_graph_instantiation(instance):
+    assert isinstance(instance, graphdb_Graph)

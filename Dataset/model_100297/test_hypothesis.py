@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Transition,
     Place,
-    PetriNet::Arc,
-    PetriNet::Element,
+    PetriNet_Arc,
+    PetriNet_Element,
     Arc,
-    PetriNet::PlaceToTransition,
-    PetriNet::TransitionToPlace,
+    PetriNet_TransitionToPlace,
+    PetriNet_PlaceToTransition,
     Element,
-    PetriNet::Place,
-    PetriNet::Transition,
+    PetriNet_Place,
+    PetriNet_Transition,
     EObject,
-    PetriNet::PetriNet,
+    PetriNet_PetriNet,
 )
 
 # =============================================================================
@@ -54,57 +54,57 @@ def test_place_constructor_args():
 
 
 
-def test_petrinet::arc_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Arc)
+def test_petrinet_arc_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Arc)
 
 
-def test_petrinet::arc_constructor_exists():
-    assert callable(PetriNet::Arc.__init__)
+def test_petrinet_arc_constructor_exists():
+    assert callable(PetriNet_Arc.__init__)
 
 
-def test_petrinet::arc_constructor_args():
-    sig = inspect.signature(PetriNet::Arc.__init__)
+def test_petrinet_arc_constructor_args():
+    sig = inspect.signature(PetriNet_Arc.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "weight" in params, "Missing parameter 'weight'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinet::arc_has_name():
-    assert hasattr(PetriNet::Arc, "name")
+def test_petrinet_arc_has_weight():
+    assert hasattr(PetriNet_Arc, "weight")
     descriptor = None
-    for klass in PetriNet::Arc.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_petrinet::arc_has_weight():
-    assert hasattr(PetriNet::Arc, "weight")
-    descriptor = None
-    for klass in PetriNet::Arc.__mro__:
+    for klass in PetriNet_Arc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
     assert isinstance(descriptor, property)
 
+def test_petrinet_arc_has_name():
+    assert hasattr(PetriNet_Arc, "name")
+    descriptor = None
+    for klass in PetriNet_Arc.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_petrinet::element_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Element)
+
+def test_petrinet_element_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Element)
 
 
-def test_petrinet::element_constructor_exists():
-    assert callable(PetriNet::Element.__init__)
+def test_petrinet_element_constructor_exists():
+    assert callable(PetriNet_Element.__init__)
 
 
-def test_petrinet::element_constructor_args():
-    sig = inspect.signature(PetriNet::Element.__init__)
+def test_petrinet_element_constructor_args():
+    sig = inspect.signature(PetriNet_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinet::element_has_name():
-    assert hasattr(PetriNet::Element, "name")
+def test_petrinet_element_has_name():
+    assert hasattr(PetriNet_Element, "name")
     descriptor = None
-    for klass in PetriNet::Element.__mro__:
+    for klass in PetriNet_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -126,30 +126,30 @@ def test_arc_constructor_args():
 
 
 
-def test_petrinet::placetotransition_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::PlaceToTransition)
+def test_petrinet_transitiontoplace_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_TransitionToPlace)
 
 
-def test_petrinet::placetotransition_constructor_exists():
-    assert callable(PetriNet::PlaceToTransition.__init__)
+def test_petrinet_transitiontoplace_constructor_exists():
+    assert callable(PetriNet_TransitionToPlace.__init__)
 
 
-def test_petrinet::placetotransition_constructor_args():
-    sig = inspect.signature(PetriNet::PlaceToTransition.__init__)
+def test_petrinet_transitiontoplace_constructor_args():
+    sig = inspect.signature(PetriNet_TransitionToPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::transitiontoplace_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::TransitionToPlace)
+def test_petrinet_placetotransition_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_PlaceToTransition)
 
 
-def test_petrinet::transitiontoplace_constructor_exists():
-    assert callable(PetriNet::TransitionToPlace.__init__)
+def test_petrinet_placetotransition_constructor_exists():
+    assert callable(PetriNet_PlaceToTransition.__init__)
 
 
-def test_petrinet::transitiontoplace_constructor_args():
-    sig = inspect.signature(PetriNet::TransitionToPlace.__init__)
+def test_petrinet_placetotransition_constructor_args():
+    sig = inspect.signature(PetriNet_PlaceToTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -168,30 +168,30 @@ def test_element_constructor_args():
 
 
 
-def test_petrinet::place_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Place)
+def test_petrinet_place_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Place)
 
 
-def test_petrinet::place_constructor_exists():
-    assert callable(PetriNet::Place.__init__)
+def test_petrinet_place_constructor_exists():
+    assert callable(PetriNet_Place.__init__)
 
 
-def test_petrinet::place_constructor_args():
-    sig = inspect.signature(PetriNet::Place.__init__)
+def test_petrinet_place_constructor_args():
+    sig = inspect.signature(PetriNet_Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::transition_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::Transition)
+def test_petrinet_transition_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_Transition)
 
 
-def test_petrinet::transition_constructor_exists():
-    assert callable(PetriNet::Transition.__init__)
+def test_petrinet_transition_constructor_exists():
+    assert callable(PetriNet_Transition.__init__)
 
 
-def test_petrinet::transition_constructor_args():
-    sig = inspect.signature(PetriNet::Transition.__init__)
+def test_petrinet_transition_constructor_args():
+    sig = inspect.signature(PetriNet_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -210,16 +210,16 @@ def test_eobject_constructor_args():
 
 
 
-def test_petrinet::petrinet_is_not_abstract():
-    assert not inspect.isabstract(PetriNet::PetriNet)
+def test_petrinet_petrinet_is_not_abstract():
+    assert not inspect.isabstract(PetriNet_PetriNet)
 
 
-def test_petrinet::petrinet_constructor_exists():
-    assert callable(PetriNet::PetriNet.__init__)
+def test_petrinet_petrinet_constructor_exists():
+    assert callable(PetriNet_PetriNet.__init__)
 
 
-def test_petrinet::petrinet_constructor_args():
-    sig = inspect.signature(PetriNet::PetriNet.__init__)
+def test_petrinet_petrinet_constructor_args():
+    sig = inspect.signature(PetriNet_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,41 +240,41 @@ Transition_strategy = st.builds(
 Place_strategy = st.builds(
     Place,
 )
-PetriNet::Arc_strategy = st.builds(
-    PetriNet::Arc,
-    name=
-        safe_text,
+PetriNet_Arc_strategy = st.builds(
+    PetriNet_Arc,
     weight=
+        safe_text,
+    name=
         safe_text
 )
-PetriNet::Element_strategy = st.builds(
-    PetriNet::Element,
+PetriNet_Element_strategy = st.builds(
+    PetriNet_Element,
     name=
         safe_text
 )
 Arc_strategy = st.builds(
     Arc,
 )
-PetriNet::PlaceToTransition_strategy = st.builds(
-    PetriNet::PlaceToTransition,
+PetriNet_TransitionToPlace_strategy = st.builds(
+    PetriNet_TransitionToPlace,
 )
-PetriNet::TransitionToPlace_strategy = st.builds(
-    PetriNet::TransitionToPlace,
+PetriNet_PlaceToTransition_strategy = st.builds(
+    PetriNet_PlaceToTransition,
 )
 Element_strategy = st.builds(
     Element,
 )
-PetriNet::Place_strategy = st.builds(
-    PetriNet::Place,
+PetriNet_Place_strategy = st.builds(
+    PetriNet_Place,
 )
-PetriNet::Transition_strategy = st.builds(
-    PetriNet::Transition,
+PetriNet_Transition_strategy = st.builds(
+    PetriNet_Transition,
 )
 EObject_strategy = st.builds(
     EObject,
 )
-PetriNet::PetriNet_strategy = st.builds(
-    PetriNet::PetriNet,
+PetriNet_PetriNet_strategy = st.builds(
+    PetriNet_PetriNet,
 )
 
 @given(instance=Transition_strategy)
@@ -287,45 +287,36 @@ def test_transition_instantiation(instance):
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=PetriNet::Arc_strategy)
+@given(instance=PetriNet_Arc_strategy)
 @settings(max_examples=50)
-def test_petrinet::arc_instantiation(instance):
-    assert isinstance(instance, PetriNet::Arc)
-
-@given(instance=PetriNet::Arc_strategy)
-def test_petrinet::arc_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_arc_instantiation(instance):
+    assert isinstance(instance, PetriNet_Arc)
 
 
-@given(instance=PetriNet::Arc_strategy)
-def test_petrinet::arc_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=PetriNet::Arc_strategy)
-def test_petrinet::arc_weight_type(instance):
-    assert isinstance(instance.weight, str)
-
-
-@given(instance=PetriNet::Arc_strategy)
-def test_petrinet::arc_weight_setter(instance):
+@given(instance=PetriNet_Arc_strategy)
+def test_petrinet_arc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=PetriNet::Element_strategy)
+
+
+@given(instance=PetriNet_Arc_strategy)
+def test_petrinet_arc_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=PetriNet_Element_strategy)
 @settings(max_examples=50)
-def test_petrinet::element_instantiation(instance):
-    assert isinstance(instance, PetriNet::Element)
-
-@given(instance=PetriNet::Element_strategy)
-def test_petrinet::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_element_instantiation(instance):
+    assert isinstance(instance, PetriNet_Element)
 
 
-@given(instance=PetriNet::Element_strategy)
-def test_petrinet::element_name_setter(instance):
+
+@given(instance=PetriNet_Element_strategy)
+def test_petrinet_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -335,37 +326,37 @@ def test_petrinet::element_name_setter(instance):
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=PetriNet::PlaceToTransition_strategy)
+@given(instance=PetriNet_TransitionToPlace_strategy)
 @settings(max_examples=50)
-def test_petrinet::placetotransition_instantiation(instance):
-    assert isinstance(instance, PetriNet::PlaceToTransition)
+def test_petrinet_transitiontoplace_instantiation(instance):
+    assert isinstance(instance, PetriNet_TransitionToPlace)
 
-@given(instance=PetriNet::TransitionToPlace_strategy)
+@given(instance=PetriNet_PlaceToTransition_strategy)
 @settings(max_examples=50)
-def test_petrinet::transitiontoplace_instantiation(instance):
-    assert isinstance(instance, PetriNet::TransitionToPlace)
+def test_petrinet_placetotransition_instantiation(instance):
+    assert isinstance(instance, PetriNet_PlaceToTransition)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=PetriNet::Place_strategy)
+@given(instance=PetriNet_Place_strategy)
 @settings(max_examples=50)
-def test_petrinet::place_instantiation(instance):
-    assert isinstance(instance, PetriNet::Place)
+def test_petrinet_place_instantiation(instance):
+    assert isinstance(instance, PetriNet_Place)
 
-@given(instance=PetriNet::Transition_strategy)
+@given(instance=PetriNet_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinet::transition_instantiation(instance):
-    assert isinstance(instance, PetriNet::Transition)
+def test_petrinet_transition_instantiation(instance):
+    assert isinstance(instance, PetriNet_Transition)
 
 @given(instance=EObject_strategy)
 @settings(max_examples=50)
 def test_eobject_instantiation(instance):
     assert isinstance(instance, EObject)
 
-@given(instance=PetriNet::PetriNet_strategy)
+@given(instance=PetriNet_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinet::petrinet_instantiation(instance):
-    assert isinstance(instance, PetriNet::PetriNet)
+def test_petrinet_petrinet_instantiation(instance):
+    assert isinstance(instance, PetriNet_PetriNet)

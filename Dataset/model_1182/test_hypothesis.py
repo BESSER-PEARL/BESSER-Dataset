@@ -3,116 +3,116 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     OclFeature,
     OclModel,
-    simpleocl::OclInstanceModel,
+    simpleocl_OclInstanceModel,
     ModuleElement,
-    simpleocl::OclFeatureDefinition,
+    simpleocl_OclFeatureDefinition,
     CollectionType,
-    simpleocl::SequenceType,
-    simpleocl::SetType,
-    simpleocl::OrderedSetType,
-    simpleocl::BagType,
+    simpleocl_SetType,
+    simpleocl_SequenceType,
+    simpleocl_OrderedSetType,
+    simpleocl_BagType,
     NumericType,
-    simpleocl::RealType,
-    simpleocl::IntegerType,
+    simpleocl_RealType,
+    simpleocl_IntegerType,
     Primitive,
-    simpleocl::BooleanType,
-    simpleocl::NumericType,
-    simpleocl::StringType,
+    simpleocl_BooleanType,
+    simpleocl_NumericType,
+    simpleocl_StringType,
     OclType,
-    simpleocl::LambdaType,
-    simpleocl::EnvType,
-    simpleocl::TupleType,
-    simpleocl::OclAnyType,
-    simpleocl::Primitive,
-    simpleocl::OclModelElement,
-    simpleocl::CollectionType,
-    simpleocl::MapType,
+    simpleocl_TupleType,
+    simpleocl_OclAnyType,
+    simpleocl_EnvType,
+    simpleocl_OclModelElement,
+    simpleocl_LambdaType,
+    simpleocl_Primitive,
+    simpleocl_CollectionType,
+    simpleocl_MapType,
     LoopExp,
-    simpleocl::IterateExp,
+    simpleocl_IterateExp,
     OperationCall,
-    simpleocl::CollectionOperationCall,
+    simpleocl_CollectionOperationCall,
     VariableDeclaration,
-    simpleocl::Iterator,
-    simpleocl::Parameter,
-    simpleocl::IteratorExp,
+    simpleocl_Parameter,
+    simpleocl_Iterator,
+    simpleocl_IteratorExp,
     PropertyCall,
-    simpleocl::NavigationOrAttributeCall,
+    simpleocl_NavigationOrAttributeCall,
     VariableExp,
-    simpleocl::LambdaCallExp,
+    simpleocl_LambdaCallExp,
     OperatorCallExp,
-    simpleocl::EqOpCallExp,
-    simpleocl::RelOpCallExp,
-    simpleocl::MulOpCallExp,
-    simpleocl::IntOpCallExp,
-    simpleocl::AddOpCallExp,
-    simpleocl::NotOpCallExp,
+    simpleocl_IntOpCallExp,
+    simpleocl_MulOpCallExp,
+    simpleocl_AddOpCallExp,
+    simpleocl_EqOpCallExp,
+    simpleocl_RelOpCallExp,
+    simpleocl_NotOpCallExp,
     StaticPropertyCall,
-    simpleocl::StaticOperationCall,
-    simpleocl::StaticNavigationOrAttributeCall,
+    simpleocl_StaticOperationCall,
+    simpleocl_StaticNavigationOrAttributeCall,
     NumericExp,
-    simpleocl::IntegerExp,
-    simpleocl::RealExp,
+    simpleocl_IntegerExp,
+    simpleocl_RealExp,
     LocalVariable,
-    simpleocl::TuplePart,
+    simpleocl_TuplePart,
     CollectionExp,
-    simpleocl::OrderedSetExp,
-    simpleocl::SetExp,
-    simpleocl::SequenceExp,
-    simpleocl::BagExp,
+    simpleocl_SequenceExp,
+    simpleocl_OrderedSetExp,
+    simpleocl_SetExp,
+    simpleocl_BagExp,
     CollectionPart,
-    simpleocl::CollectionItem,
-    simpleocl::CollectionRange,
+    simpleocl_CollectionItem,
+    simpleocl_CollectionRange,
     PrimitiveExp,
-    simpleocl::NumericExp,
-    simpleocl::BooleanExp,
-    simpleocl::StringExp,
+    simpleocl_NumericExp,
+    simpleocl_BooleanExp,
+    simpleocl_StringExp,
     OclExpression,
-    simpleocl::EnumLiteralExp,
-    simpleocl::PrimitiveExp,
-    simpleocl::OclUndefinedExp,
-    simpleocl::EnvExp,
-    simpleocl::CollectionExp,
-    simpleocl::TupleExp,
-    simpleocl::StaticPropertyCallExp,
-    simpleocl::OclModelElementExp,
-    simpleocl::BraceExp,
-    simpleocl::SelfExp,
-    simpleocl::SuperExp,
-    simpleocl::MapExp,
-    simpleocl::VariableExp,
-    simpleocl::OperatorCallExp,
-    simpleocl::Attribute,
-    simpleocl::OclMetamodel,
+    simpleocl_OclUndefinedExp,
+    simpleocl_StaticPropertyCallExp,
+    simpleocl_OclModelElementExp,
+    simpleocl_EnumLiteralExp,
+    simpleocl_PrimitiveExp,
+    simpleocl_CollectionExp,
+    simpleocl_EnvExp,
+    simpleocl_BraceExp,
+    simpleocl_MapExp,
+    simpleocl_TupleExp,
+    simpleocl_SelfExp,
+    simpleocl_SuperExp,
+    simpleocl_VariableExp,
+    simpleocl_OperatorCallExp,
+    simpleocl_Attribute,
+    simpleocl_OclMetamodel,
     NamedElement,
-    simpleocl::OclModel,
-    simpleocl::OclFeature,
-    simpleocl::Module,
+    simpleocl_OclModel,
+    simpleocl_OclFeature,
+    simpleocl_Module,
     LocatedElement,
-    simpleocl::MapElement,
-    simpleocl::TupleTypeAttribute,
-    simpleocl::StaticPropertyCall,
-    simpleocl::VariableDeclaration,
-    simpleocl::OclContextDefinition,
-    simpleocl::CollectionPart,
-    simpleocl::PropertyCall,
-    simpleocl::NamedElement,
-    simpleocl::Operation,
-    simpleocl::LocalVariable,
-    simpleocl::OperationCall,
-    simpleocl::LoopExp,
-    simpleocl::LetExp,
-    simpleocl::PropertyCallExp,
-    simpleocl::IfExp,
-    simpleocl::OclType,
-    simpleocl::OclExpression,
-    simpleocl::ModuleElement,
-    simpleocl::Import,
-    simpleocl::LocatedElement,
+    simpleocl_OclContextDefinition,
+    simpleocl_MapElement,
+    simpleocl_VariableDeclaration,
+    simpleocl_TupleTypeAttribute,
+    simpleocl_PropertyCall,
+    simpleocl_CollectionPart,
+    simpleocl_StaticPropertyCall,
+    simpleocl_NamedElement,
+    simpleocl_Operation,
+    simpleocl_LocalVariable,
+    simpleocl_OperationCall,
+    simpleocl_LoopExp,
+    simpleocl_LetExp,
+    simpleocl_PropertyCallExp,
+    simpleocl_IfExp,
+    simpleocl_OclType,
+    simpleocl_OclExpression,
+    simpleocl_ModuleElement,
+    simpleocl_Import,
+    simpleocl_LocatedElement,
 )
 
 # =============================================================================
@@ -149,16 +149,16 @@ def test_oclmodel_constructor_args():
 
 
 
-def test_simpleocl::oclinstancemodel_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclInstanceModel)
+def test_simpleocl_oclinstancemodel_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclInstanceModel)
 
 
-def test_simpleocl::oclinstancemodel_constructor_exists():
-    assert callable(simpleocl::OclInstanceModel.__init__)
+def test_simpleocl_oclinstancemodel_constructor_exists():
+    assert callable(simpleocl_OclInstanceModel.__init__)
 
 
-def test_simpleocl::oclinstancemodel_constructor_args():
-    sig = inspect.signature(simpleocl::OclInstanceModel.__init__)
+def test_simpleocl_oclinstancemodel_constructor_args():
+    sig = inspect.signature(simpleocl_OclInstanceModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,23 +177,23 @@ def test_moduleelement_constructor_args():
 
 
 
-def test_simpleocl::oclfeaturedefinition_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclFeatureDefinition)
+def test_simpleocl_oclfeaturedefinition_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclFeatureDefinition)
 
 
-def test_simpleocl::oclfeaturedefinition_constructor_exists():
-    assert callable(simpleocl::OclFeatureDefinition.__init__)
+def test_simpleocl_oclfeaturedefinition_constructor_exists():
+    assert callable(simpleocl_OclFeatureDefinition.__init__)
 
 
-def test_simpleocl::oclfeaturedefinition_constructor_args():
-    sig = inspect.signature(simpleocl::OclFeatureDefinition.__init__)
+def test_simpleocl_oclfeaturedefinition_constructor_args():
+    sig = inspect.signature(simpleocl_OclFeatureDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "static" in params, "Missing parameter 'static'"
 
-def test_simpleocl::oclfeaturedefinition_has_static():
-    assert hasattr(simpleocl::OclFeatureDefinition, "static")
+def test_simpleocl_oclfeaturedefinition_has_static():
+    assert hasattr(simpleocl_OclFeatureDefinition, "static")
     descriptor = None
-    for klass in simpleocl::OclFeatureDefinition.__mro__:
+    for klass in simpleocl_OclFeatureDefinition.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
@@ -215,58 +215,58 @@ def test_collectiontype_constructor_args():
 
 
 
-def test_simpleocl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::SequenceType)
+def test_simpleocl_settype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_SetType)
 
 
-def test_simpleocl::sequencetype_constructor_exists():
-    assert callable(simpleocl::SequenceType.__init__)
+def test_simpleocl_settype_constructor_exists():
+    assert callable(simpleocl_SetType.__init__)
 
 
-def test_simpleocl::sequencetype_constructor_args():
-    sig = inspect.signature(simpleocl::SequenceType.__init__)
+def test_simpleocl_settype_constructor_args():
+    sig = inspect.signature(simpleocl_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::settype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::SetType)
+def test_simpleocl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_SequenceType)
 
 
-def test_simpleocl::settype_constructor_exists():
-    assert callable(simpleocl::SetType.__init__)
+def test_simpleocl_sequencetype_constructor_exists():
+    assert callable(simpleocl_SequenceType.__init__)
 
 
-def test_simpleocl::settype_constructor_args():
-    sig = inspect.signature(simpleocl::SetType.__init__)
+def test_simpleocl_sequencetype_constructor_args():
+    sig = inspect.signature(simpleocl_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OrderedSetType)
+def test_simpleocl_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OrderedSetType)
 
 
-def test_simpleocl::orderedsettype_constructor_exists():
-    assert callable(simpleocl::OrderedSetType.__init__)
+def test_simpleocl_orderedsettype_constructor_exists():
+    assert callable(simpleocl_OrderedSetType.__init__)
 
 
-def test_simpleocl::orderedsettype_constructor_args():
-    sig = inspect.signature(simpleocl::OrderedSetType.__init__)
+def test_simpleocl_orderedsettype_constructor_args():
+    sig = inspect.signature(simpleocl_OrderedSetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::bagtype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::BagType)
+def test_simpleocl_bagtype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_BagType)
 
 
-def test_simpleocl::bagtype_constructor_exists():
-    assert callable(simpleocl::BagType.__init__)
+def test_simpleocl_bagtype_constructor_exists():
+    assert callable(simpleocl_BagType.__init__)
 
 
-def test_simpleocl::bagtype_constructor_args():
-    sig = inspect.signature(simpleocl::BagType.__init__)
+def test_simpleocl_bagtype_constructor_args():
+    sig = inspect.signature(simpleocl_BagType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -285,30 +285,30 @@ def test_numerictype_constructor_args():
 
 
 
-def test_simpleocl::realtype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::RealType)
+def test_simpleocl_realtype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_RealType)
 
 
-def test_simpleocl::realtype_constructor_exists():
-    assert callable(simpleocl::RealType.__init__)
+def test_simpleocl_realtype_constructor_exists():
+    assert callable(simpleocl_RealType.__init__)
 
 
-def test_simpleocl::realtype_constructor_args():
-    sig = inspect.signature(simpleocl::RealType.__init__)
+def test_simpleocl_realtype_constructor_args():
+    sig = inspect.signature(simpleocl_RealType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::integertype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::IntegerType)
+def test_simpleocl_integertype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_IntegerType)
 
 
-def test_simpleocl::integertype_constructor_exists():
-    assert callable(simpleocl::IntegerType.__init__)
+def test_simpleocl_integertype_constructor_exists():
+    assert callable(simpleocl_IntegerType.__init__)
 
 
-def test_simpleocl::integertype_constructor_args():
-    sig = inspect.signature(simpleocl::IntegerType.__init__)
+def test_simpleocl_integertype_constructor_args():
+    sig = inspect.signature(simpleocl_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -327,44 +327,44 @@ def test_primitive_constructor_args():
 
 
 
-def test_simpleocl::booleantype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::BooleanType)
+def test_simpleocl_booleantype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_BooleanType)
 
 
-def test_simpleocl::booleantype_constructor_exists():
-    assert callable(simpleocl::BooleanType.__init__)
+def test_simpleocl_booleantype_constructor_exists():
+    assert callable(simpleocl_BooleanType.__init__)
 
 
-def test_simpleocl::booleantype_constructor_args():
-    sig = inspect.signature(simpleocl::BooleanType.__init__)
+def test_simpleocl_booleantype_constructor_args():
+    sig = inspect.signature(simpleocl_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::numerictype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::NumericType)
+def test_simpleocl_numerictype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_NumericType)
 
 
-def test_simpleocl::numerictype_constructor_exists():
-    assert callable(simpleocl::NumericType.__init__)
+def test_simpleocl_numerictype_constructor_exists():
+    assert callable(simpleocl_NumericType.__init__)
 
 
-def test_simpleocl::numerictype_constructor_args():
-    sig = inspect.signature(simpleocl::NumericType.__init__)
+def test_simpleocl_numerictype_constructor_args():
+    sig = inspect.signature(simpleocl_NumericType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::StringType)
+def test_simpleocl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_StringType)
 
 
-def test_simpleocl::stringtype_constructor_exists():
-    assert callable(simpleocl::StringType.__init__)
+def test_simpleocl_stringtype_constructor_exists():
+    assert callable(simpleocl_StringType.__init__)
 
 
-def test_simpleocl::stringtype_constructor_args():
-    sig = inspect.signature(simpleocl::StringType.__init__)
+def test_simpleocl_stringtype_constructor_args():
+    sig = inspect.signature(simpleocl_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -383,114 +383,114 @@ def test_ocltype_constructor_args():
 
 
 
-def test_simpleocl::lambdatype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::LambdaType)
+def test_simpleocl_tupletype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_TupleType)
 
 
-def test_simpleocl::lambdatype_constructor_exists():
-    assert callable(simpleocl::LambdaType.__init__)
+def test_simpleocl_tupletype_constructor_exists():
+    assert callable(simpleocl_TupleType.__init__)
 
 
-def test_simpleocl::lambdatype_constructor_args():
-    sig = inspect.signature(simpleocl::LambdaType.__init__)
+def test_simpleocl_tupletype_constructor_args():
+    sig = inspect.signature(simpleocl_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::envtype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::EnvType)
+def test_simpleocl_oclanytype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclAnyType)
 
 
-def test_simpleocl::envtype_constructor_exists():
-    assert callable(simpleocl::EnvType.__init__)
+def test_simpleocl_oclanytype_constructor_exists():
+    assert callable(simpleocl_OclAnyType.__init__)
 
 
-def test_simpleocl::envtype_constructor_args():
-    sig = inspect.signature(simpleocl::EnvType.__init__)
+def test_simpleocl_oclanytype_constructor_args():
+    sig = inspect.signature(simpleocl_OclAnyType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::tupletype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::TupleType)
+def test_simpleocl_envtype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_EnvType)
 
 
-def test_simpleocl::tupletype_constructor_exists():
-    assert callable(simpleocl::TupleType.__init__)
+def test_simpleocl_envtype_constructor_exists():
+    assert callable(simpleocl_EnvType.__init__)
 
 
-def test_simpleocl::tupletype_constructor_args():
-    sig = inspect.signature(simpleocl::TupleType.__init__)
+def test_simpleocl_envtype_constructor_args():
+    sig = inspect.signature(simpleocl_EnvType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::oclanytype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclAnyType)
+def test_simpleocl_oclmodelelement_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclModelElement)
 
 
-def test_simpleocl::oclanytype_constructor_exists():
-    assert callable(simpleocl::OclAnyType.__init__)
+def test_simpleocl_oclmodelelement_constructor_exists():
+    assert callable(simpleocl_OclModelElement.__init__)
 
 
-def test_simpleocl::oclanytype_constructor_args():
-    sig = inspect.signature(simpleocl::OclAnyType.__init__)
+def test_simpleocl_oclmodelelement_constructor_args():
+    sig = inspect.signature(simpleocl_OclModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::primitive_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Primitive)
+def test_simpleocl_lambdatype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_LambdaType)
 
 
-def test_simpleocl::primitive_constructor_exists():
-    assert callable(simpleocl::Primitive.__init__)
+def test_simpleocl_lambdatype_constructor_exists():
+    assert callable(simpleocl_LambdaType.__init__)
 
 
-def test_simpleocl::primitive_constructor_args():
-    sig = inspect.signature(simpleocl::Primitive.__init__)
+def test_simpleocl_lambdatype_constructor_args():
+    sig = inspect.signature(simpleocl_LambdaType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::oclmodelelement_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclModelElement)
+def test_simpleocl_primitive_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Primitive)
 
 
-def test_simpleocl::oclmodelelement_constructor_exists():
-    assert callable(simpleocl::OclModelElement.__init__)
+def test_simpleocl_primitive_constructor_exists():
+    assert callable(simpleocl_Primitive.__init__)
 
 
-def test_simpleocl::oclmodelelement_constructor_args():
-    sig = inspect.signature(simpleocl::OclModelElement.__init__)
+def test_simpleocl_primitive_constructor_args():
+    sig = inspect.signature(simpleocl_Primitive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::CollectionType)
+def test_simpleocl_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_CollectionType)
 
 
-def test_simpleocl::collectiontype_constructor_exists():
-    assert callable(simpleocl::CollectionType.__init__)
+def test_simpleocl_collectiontype_constructor_exists():
+    assert callable(simpleocl_CollectionType.__init__)
 
 
-def test_simpleocl::collectiontype_constructor_args():
-    sig = inspect.signature(simpleocl::CollectionType.__init__)
+def test_simpleocl_collectiontype_constructor_args():
+    sig = inspect.signature(simpleocl_CollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::maptype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::MapType)
+def test_simpleocl_maptype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_MapType)
 
 
-def test_simpleocl::maptype_constructor_exists():
-    assert callable(simpleocl::MapType.__init__)
+def test_simpleocl_maptype_constructor_exists():
+    assert callable(simpleocl_MapType.__init__)
 
 
-def test_simpleocl::maptype_constructor_args():
-    sig = inspect.signature(simpleocl::MapType.__init__)
+def test_simpleocl_maptype_constructor_args():
+    sig = inspect.signature(simpleocl_MapType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -509,16 +509,16 @@ def test_loopexp_constructor_args():
 
 
 
-def test_simpleocl::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::IterateExp)
+def test_simpleocl_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_IterateExp)
 
 
-def test_simpleocl::iterateexp_constructor_exists():
-    assert callable(simpleocl::IterateExp.__init__)
+def test_simpleocl_iterateexp_constructor_exists():
+    assert callable(simpleocl_IterateExp.__init__)
 
 
-def test_simpleocl::iterateexp_constructor_args():
-    sig = inspect.signature(simpleocl::IterateExp.__init__)
+def test_simpleocl_iterateexp_constructor_args():
+    sig = inspect.signature(simpleocl_IterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -537,16 +537,16 @@ def test_operationcall_constructor_args():
 
 
 
-def test_simpleocl::collectionoperationcall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::CollectionOperationCall)
+def test_simpleocl_collectionoperationcall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_CollectionOperationCall)
 
 
-def test_simpleocl::collectionoperationcall_constructor_exists():
-    assert callable(simpleocl::CollectionOperationCall.__init__)
+def test_simpleocl_collectionoperationcall_constructor_exists():
+    assert callable(simpleocl_CollectionOperationCall.__init__)
 
 
-def test_simpleocl::collectionoperationcall_constructor_args():
-    sig = inspect.signature(simpleocl::CollectionOperationCall.__init__)
+def test_simpleocl_collectionoperationcall_constructor_args():
+    sig = inspect.signature(simpleocl_CollectionOperationCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -565,51 +565,51 @@ def test_variabledeclaration_constructor_args():
 
 
 
-def test_simpleocl::iterator_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Iterator)
+def test_simpleocl_parameter_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Parameter)
 
 
-def test_simpleocl::iterator_constructor_exists():
-    assert callable(simpleocl::Iterator.__init__)
+def test_simpleocl_parameter_constructor_exists():
+    assert callable(simpleocl_Parameter.__init__)
 
 
-def test_simpleocl::iterator_constructor_args():
-    sig = inspect.signature(simpleocl::Iterator.__init__)
+def test_simpleocl_parameter_constructor_args():
+    sig = inspect.signature(simpleocl_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::parameter_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Parameter)
+def test_simpleocl_iterator_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Iterator)
 
 
-def test_simpleocl::parameter_constructor_exists():
-    assert callable(simpleocl::Parameter.__init__)
+def test_simpleocl_iterator_constructor_exists():
+    assert callable(simpleocl_Iterator.__init__)
 
 
-def test_simpleocl::parameter_constructor_args():
-    sig = inspect.signature(simpleocl::Parameter.__init__)
+def test_simpleocl_iterator_constructor_args():
+    sig = inspect.signature(simpleocl_Iterator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::IteratorExp)
+def test_simpleocl_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_IteratorExp)
 
 
-def test_simpleocl::iteratorexp_constructor_exists():
-    assert callable(simpleocl::IteratorExp.__init__)
+def test_simpleocl_iteratorexp_constructor_exists():
+    assert callable(simpleocl_IteratorExp.__init__)
 
 
-def test_simpleocl::iteratorexp_constructor_args():
-    sig = inspect.signature(simpleocl::IteratorExp.__init__)
+def test_simpleocl_iteratorexp_constructor_args():
+    sig = inspect.signature(simpleocl_IteratorExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::iteratorexp_has_name():
-    assert hasattr(simpleocl::IteratorExp, "name")
+def test_simpleocl_iteratorexp_has_name():
+    assert hasattr(simpleocl_IteratorExp, "name")
     descriptor = None
-    for klass in simpleocl::IteratorExp.__mro__:
+    for klass in simpleocl_IteratorExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -631,23 +631,23 @@ def test_propertycall_constructor_args():
 
 
 
-def test_simpleocl::navigationorattributecall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::NavigationOrAttributeCall)
+def test_simpleocl_navigationorattributecall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_NavigationOrAttributeCall)
 
 
-def test_simpleocl::navigationorattributecall_constructor_exists():
-    assert callable(simpleocl::NavigationOrAttributeCall.__init__)
+def test_simpleocl_navigationorattributecall_constructor_exists():
+    assert callable(simpleocl_NavigationOrAttributeCall.__init__)
 
 
-def test_simpleocl::navigationorattributecall_constructor_args():
-    sig = inspect.signature(simpleocl::NavigationOrAttributeCall.__init__)
+def test_simpleocl_navigationorattributecall_constructor_args():
+    sig = inspect.signature(simpleocl_NavigationOrAttributeCall.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::navigationorattributecall_has_name():
-    assert hasattr(simpleocl::NavigationOrAttributeCall, "name")
+def test_simpleocl_navigationorattributecall_has_name():
+    assert hasattr(simpleocl_NavigationOrAttributeCall, "name")
     descriptor = None
-    for klass in simpleocl::NavigationOrAttributeCall.__mro__:
+    for klass in simpleocl_NavigationOrAttributeCall.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -669,16 +669,16 @@ def test_variableexp_constructor_args():
 
 
 
-def test_simpleocl::lambdacallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::LambdaCallExp)
+def test_simpleocl_lambdacallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_LambdaCallExp)
 
 
-def test_simpleocl::lambdacallexp_constructor_exists():
-    assert callable(simpleocl::LambdaCallExp.__init__)
+def test_simpleocl_lambdacallexp_constructor_exists():
+    assert callable(simpleocl_LambdaCallExp.__init__)
 
 
-def test_simpleocl::lambdacallexp_constructor_args():
-    sig = inspect.signature(simpleocl::LambdaCallExp.__init__)
+def test_simpleocl_lambdacallexp_constructor_args():
+    sig = inspect.signature(simpleocl_LambdaCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -697,86 +697,86 @@ def test_operatorcallexp_constructor_args():
 
 
 
-def test_simpleocl::eqopcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::EqOpCallExp)
+def test_simpleocl_intopcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_IntOpCallExp)
 
 
-def test_simpleocl::eqopcallexp_constructor_exists():
-    assert callable(simpleocl::EqOpCallExp.__init__)
+def test_simpleocl_intopcallexp_constructor_exists():
+    assert callable(simpleocl_IntOpCallExp.__init__)
 
 
-def test_simpleocl::eqopcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::EqOpCallExp.__init__)
+def test_simpleocl_intopcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_IntOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::relopcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::RelOpCallExp)
+def test_simpleocl_mulopcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_MulOpCallExp)
 
 
-def test_simpleocl::relopcallexp_constructor_exists():
-    assert callable(simpleocl::RelOpCallExp.__init__)
+def test_simpleocl_mulopcallexp_constructor_exists():
+    assert callable(simpleocl_MulOpCallExp.__init__)
 
 
-def test_simpleocl::relopcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::RelOpCallExp.__init__)
+def test_simpleocl_mulopcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_MulOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::mulopcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::MulOpCallExp)
+def test_simpleocl_addopcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_AddOpCallExp)
 
 
-def test_simpleocl::mulopcallexp_constructor_exists():
-    assert callable(simpleocl::MulOpCallExp.__init__)
+def test_simpleocl_addopcallexp_constructor_exists():
+    assert callable(simpleocl_AddOpCallExp.__init__)
 
 
-def test_simpleocl::mulopcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::MulOpCallExp.__init__)
+def test_simpleocl_addopcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_AddOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::intopcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::IntOpCallExp)
+def test_simpleocl_eqopcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_EqOpCallExp)
 
 
-def test_simpleocl::intopcallexp_constructor_exists():
-    assert callable(simpleocl::IntOpCallExp.__init__)
+def test_simpleocl_eqopcallexp_constructor_exists():
+    assert callable(simpleocl_EqOpCallExp.__init__)
 
 
-def test_simpleocl::intopcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::IntOpCallExp.__init__)
+def test_simpleocl_eqopcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_EqOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::addopcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::AddOpCallExp)
+def test_simpleocl_relopcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_RelOpCallExp)
 
 
-def test_simpleocl::addopcallexp_constructor_exists():
-    assert callable(simpleocl::AddOpCallExp.__init__)
+def test_simpleocl_relopcallexp_constructor_exists():
+    assert callable(simpleocl_RelOpCallExp.__init__)
 
 
-def test_simpleocl::addopcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::AddOpCallExp.__init__)
+def test_simpleocl_relopcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_RelOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::notopcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::NotOpCallExp)
+def test_simpleocl_notopcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_NotOpCallExp)
 
 
-def test_simpleocl::notopcallexp_constructor_exists():
-    assert callable(simpleocl::NotOpCallExp.__init__)
+def test_simpleocl_notopcallexp_constructor_exists():
+    assert callable(simpleocl_NotOpCallExp.__init__)
 
 
-def test_simpleocl::notopcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::NotOpCallExp.__init__)
+def test_simpleocl_notopcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_NotOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -795,23 +795,23 @@ def test_staticpropertycall_constructor_args():
 
 
 
-def test_simpleocl::staticoperationcall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::StaticOperationCall)
+def test_simpleocl_staticoperationcall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_StaticOperationCall)
 
 
-def test_simpleocl::staticoperationcall_constructor_exists():
-    assert callable(simpleocl::StaticOperationCall.__init__)
+def test_simpleocl_staticoperationcall_constructor_exists():
+    assert callable(simpleocl_StaticOperationCall.__init__)
 
 
-def test_simpleocl::staticoperationcall_constructor_args():
-    sig = inspect.signature(simpleocl::StaticOperationCall.__init__)
+def test_simpleocl_staticoperationcall_constructor_args():
+    sig = inspect.signature(simpleocl_StaticOperationCall.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_simpleocl::staticoperationcall_has_operationName():
-    assert hasattr(simpleocl::StaticOperationCall, "operationName")
+def test_simpleocl_staticoperationcall_has_operationName():
+    assert hasattr(simpleocl_StaticOperationCall, "operationName")
     descriptor = None
-    for klass in simpleocl::StaticOperationCall.__mro__:
+    for klass in simpleocl_StaticOperationCall.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -819,23 +819,23 @@ def test_simpleocl::staticoperationcall_has_operationName():
 
 
 
-def test_simpleocl::staticnavigationorattributecall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::StaticNavigationOrAttributeCall)
+def test_simpleocl_staticnavigationorattributecall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_StaticNavigationOrAttributeCall)
 
 
-def test_simpleocl::staticnavigationorattributecall_constructor_exists():
-    assert callable(simpleocl::StaticNavigationOrAttributeCall.__init__)
+def test_simpleocl_staticnavigationorattributecall_constructor_exists():
+    assert callable(simpleocl_StaticNavigationOrAttributeCall.__init__)
 
 
-def test_simpleocl::staticnavigationorattributecall_constructor_args():
-    sig = inspect.signature(simpleocl::StaticNavigationOrAttributeCall.__init__)
+def test_simpleocl_staticnavigationorattributecall_constructor_args():
+    sig = inspect.signature(simpleocl_StaticNavigationOrAttributeCall.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::staticnavigationorattributecall_has_name():
-    assert hasattr(simpleocl::StaticNavigationOrAttributeCall, "name")
+def test_simpleocl_staticnavigationorattributecall_has_name():
+    assert hasattr(simpleocl_StaticNavigationOrAttributeCall, "name")
     descriptor = None
-    for klass in simpleocl::StaticNavigationOrAttributeCall.__mro__:
+    for klass in simpleocl_StaticNavigationOrAttributeCall.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -857,23 +857,23 @@ def test_numericexp_constructor_args():
 
 
 
-def test_simpleocl::integerexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::IntegerExp)
+def test_simpleocl_integerexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_IntegerExp)
 
 
-def test_simpleocl::integerexp_constructor_exists():
-    assert callable(simpleocl::IntegerExp.__init__)
+def test_simpleocl_integerexp_constructor_exists():
+    assert callable(simpleocl_IntegerExp.__init__)
 
 
-def test_simpleocl::integerexp_constructor_args():
-    sig = inspect.signature(simpleocl::IntegerExp.__init__)
+def test_simpleocl_integerexp_constructor_args():
+    sig = inspect.signature(simpleocl_IntegerExp.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_simpleocl::integerexp_has_integerSymbol():
-    assert hasattr(simpleocl::IntegerExp, "integerSymbol")
+def test_simpleocl_integerexp_has_integerSymbol():
+    assert hasattr(simpleocl_IntegerExp, "integerSymbol")
     descriptor = None
-    for klass in simpleocl::IntegerExp.__mro__:
+    for klass in simpleocl_IntegerExp.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -881,23 +881,23 @@ def test_simpleocl::integerexp_has_integerSymbol():
 
 
 
-def test_simpleocl::realexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::RealExp)
+def test_simpleocl_realexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_RealExp)
 
 
-def test_simpleocl::realexp_constructor_exists():
-    assert callable(simpleocl::RealExp.__init__)
+def test_simpleocl_realexp_constructor_exists():
+    assert callable(simpleocl_RealExp.__init__)
 
 
-def test_simpleocl::realexp_constructor_args():
-    sig = inspect.signature(simpleocl::RealExp.__init__)
+def test_simpleocl_realexp_constructor_args():
+    sig = inspect.signature(simpleocl_RealExp.__init__)
     params = list(sig.parameters.keys())
     assert "realSymbol" in params, "Missing parameter 'realSymbol'"
 
-def test_simpleocl::realexp_has_realSymbol():
-    assert hasattr(simpleocl::RealExp, "realSymbol")
+def test_simpleocl_realexp_has_realSymbol():
+    assert hasattr(simpleocl_RealExp, "realSymbol")
     descriptor = None
-    for klass in simpleocl::RealExp.__mro__:
+    for klass in simpleocl_RealExp.__mro__:
         if "realSymbol" in klass.__dict__:
             descriptor = klass.__dict__["realSymbol"]
             break
@@ -919,16 +919,16 @@ def test_localvariable_constructor_args():
 
 
 
-def test_simpleocl::tuplepart_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::TuplePart)
+def test_simpleocl_tuplepart_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_TuplePart)
 
 
-def test_simpleocl::tuplepart_constructor_exists():
-    assert callable(simpleocl::TuplePart.__init__)
+def test_simpleocl_tuplepart_constructor_exists():
+    assert callable(simpleocl_TuplePart.__init__)
 
 
-def test_simpleocl::tuplepart_constructor_args():
-    sig = inspect.signature(simpleocl::TuplePart.__init__)
+def test_simpleocl_tuplepart_constructor_args():
+    sig = inspect.signature(simpleocl_TuplePart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -947,58 +947,58 @@ def test_collectionexp_constructor_args():
 
 
 
-def test_simpleocl::orderedsetexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OrderedSetExp)
+def test_simpleocl_sequenceexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_SequenceExp)
 
 
-def test_simpleocl::orderedsetexp_constructor_exists():
-    assert callable(simpleocl::OrderedSetExp.__init__)
+def test_simpleocl_sequenceexp_constructor_exists():
+    assert callable(simpleocl_SequenceExp.__init__)
 
 
-def test_simpleocl::orderedsetexp_constructor_args():
-    sig = inspect.signature(simpleocl::OrderedSetExp.__init__)
+def test_simpleocl_sequenceexp_constructor_args():
+    sig = inspect.signature(simpleocl_SequenceExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::setexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::SetExp)
+def test_simpleocl_orderedsetexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OrderedSetExp)
 
 
-def test_simpleocl::setexp_constructor_exists():
-    assert callable(simpleocl::SetExp.__init__)
+def test_simpleocl_orderedsetexp_constructor_exists():
+    assert callable(simpleocl_OrderedSetExp.__init__)
 
 
-def test_simpleocl::setexp_constructor_args():
-    sig = inspect.signature(simpleocl::SetExp.__init__)
+def test_simpleocl_orderedsetexp_constructor_args():
+    sig = inspect.signature(simpleocl_OrderedSetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::sequenceexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::SequenceExp)
+def test_simpleocl_setexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_SetExp)
 
 
-def test_simpleocl::sequenceexp_constructor_exists():
-    assert callable(simpleocl::SequenceExp.__init__)
+def test_simpleocl_setexp_constructor_exists():
+    assert callable(simpleocl_SetExp.__init__)
 
 
-def test_simpleocl::sequenceexp_constructor_args():
-    sig = inspect.signature(simpleocl::SequenceExp.__init__)
+def test_simpleocl_setexp_constructor_args():
+    sig = inspect.signature(simpleocl_SetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::bagexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::BagExp)
+def test_simpleocl_bagexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_BagExp)
 
 
-def test_simpleocl::bagexp_constructor_exists():
-    assert callable(simpleocl::BagExp.__init__)
+def test_simpleocl_bagexp_constructor_exists():
+    assert callable(simpleocl_BagExp.__init__)
 
 
-def test_simpleocl::bagexp_constructor_args():
-    sig = inspect.signature(simpleocl::BagExp.__init__)
+def test_simpleocl_bagexp_constructor_args():
+    sig = inspect.signature(simpleocl_BagExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1017,30 +1017,30 @@ def test_collectionpart_constructor_args():
 
 
 
-def test_simpleocl::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::CollectionItem)
+def test_simpleocl_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_CollectionItem)
 
 
-def test_simpleocl::collectionitem_constructor_exists():
-    assert callable(simpleocl::CollectionItem.__init__)
+def test_simpleocl_collectionitem_constructor_exists():
+    assert callable(simpleocl_CollectionItem.__init__)
 
 
-def test_simpleocl::collectionitem_constructor_args():
-    sig = inspect.signature(simpleocl::CollectionItem.__init__)
+def test_simpleocl_collectionitem_constructor_args():
+    sig = inspect.signature(simpleocl_CollectionItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::CollectionRange)
+def test_simpleocl_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_CollectionRange)
 
 
-def test_simpleocl::collectionrange_constructor_exists():
-    assert callable(simpleocl::CollectionRange.__init__)
+def test_simpleocl_collectionrange_constructor_exists():
+    assert callable(simpleocl_CollectionRange.__init__)
 
 
-def test_simpleocl::collectionrange_constructor_args():
-    sig = inspect.signature(simpleocl::CollectionRange.__init__)
+def test_simpleocl_collectionrange_constructor_args():
+    sig = inspect.signature(simpleocl_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1059,37 +1059,37 @@ def test_primitiveexp_constructor_args():
 
 
 
-def test_simpleocl::numericexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::NumericExp)
+def test_simpleocl_numericexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_NumericExp)
 
 
-def test_simpleocl::numericexp_constructor_exists():
-    assert callable(simpleocl::NumericExp.__init__)
+def test_simpleocl_numericexp_constructor_exists():
+    assert callable(simpleocl_NumericExp.__init__)
 
 
-def test_simpleocl::numericexp_constructor_args():
-    sig = inspect.signature(simpleocl::NumericExp.__init__)
+def test_simpleocl_numericexp_constructor_args():
+    sig = inspect.signature(simpleocl_NumericExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::booleanexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::BooleanExp)
+def test_simpleocl_booleanexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_BooleanExp)
 
 
-def test_simpleocl::booleanexp_constructor_exists():
-    assert callable(simpleocl::BooleanExp.__init__)
+def test_simpleocl_booleanexp_constructor_exists():
+    assert callable(simpleocl_BooleanExp.__init__)
 
 
-def test_simpleocl::booleanexp_constructor_args():
-    sig = inspect.signature(simpleocl::BooleanExp.__init__)
+def test_simpleocl_booleanexp_constructor_args():
+    sig = inspect.signature(simpleocl_BooleanExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_simpleocl::booleanexp_has_booleanSymbol():
-    assert hasattr(simpleocl::BooleanExp, "booleanSymbol")
+def test_simpleocl_booleanexp_has_booleanSymbol():
+    assert hasattr(simpleocl_BooleanExp, "booleanSymbol")
     descriptor = None
-    for klass in simpleocl::BooleanExp.__mro__:
+    for klass in simpleocl_BooleanExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -1097,23 +1097,23 @@ def test_simpleocl::booleanexp_has_booleanSymbol():
 
 
 
-def test_simpleocl::stringexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::StringExp)
+def test_simpleocl_stringexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_StringExp)
 
 
-def test_simpleocl::stringexp_constructor_exists():
-    assert callable(simpleocl::StringExp.__init__)
+def test_simpleocl_stringexp_constructor_exists():
+    assert callable(simpleocl_StringExp.__init__)
 
 
-def test_simpleocl::stringexp_constructor_args():
-    sig = inspect.signature(simpleocl::StringExp.__init__)
+def test_simpleocl_stringexp_constructor_args():
+    sig = inspect.signature(simpleocl_StringExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_simpleocl::stringexp_has_stringSymbol():
-    assert hasattr(simpleocl::StringExp, "stringSymbol")
+def test_simpleocl_stringexp_has_stringSymbol():
+    assert hasattr(simpleocl_StringExp, "stringSymbol")
     descriptor = None
-    for klass in simpleocl::StringExp.__mro__:
+    for klass in simpleocl_StringExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -1135,23 +1135,51 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_simpleocl::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::EnumLiteralExp)
+def test_simpleocl_oclundefinedexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclUndefinedExp)
 
 
-def test_simpleocl::enumliteralexp_constructor_exists():
-    assert callable(simpleocl::EnumLiteralExp.__init__)
+def test_simpleocl_oclundefinedexp_constructor_exists():
+    assert callable(simpleocl_OclUndefinedExp.__init__)
 
 
-def test_simpleocl::enumliteralexp_constructor_args():
-    sig = inspect.signature(simpleocl::EnumLiteralExp.__init__)
+def test_simpleocl_oclundefinedexp_constructor_args():
+    sig = inspect.signature(simpleocl_OclUndefinedExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_staticpropertycallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_StaticPropertyCallExp)
+
+
+def test_simpleocl_staticpropertycallexp_constructor_exists():
+    assert callable(simpleocl_StaticPropertyCallExp.__init__)
+
+
+def test_simpleocl_staticpropertycallexp_constructor_args():
+    sig = inspect.signature(simpleocl_StaticPropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_oclmodelelementexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclModelElementExp)
+
+
+def test_simpleocl_oclmodelelementexp_constructor_exists():
+    assert callable(simpleocl_OclModelElementExp.__init__)
+
+
+def test_simpleocl_oclmodelelementexp_constructor_args():
+    sig = inspect.signature(simpleocl_OclModelElementExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::enumliteralexp_has_name():
-    assert hasattr(simpleocl::EnumLiteralExp, "name")
+def test_simpleocl_oclmodelelementexp_has_name():
+    assert hasattr(simpleocl_OclModelElementExp, "name")
     descriptor = None
-    for klass in simpleocl::EnumLiteralExp.__mro__:
+    for klass in simpleocl_OclModelElementExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1159,107 +1187,23 @@ def test_simpleocl::enumliteralexp_has_name():
 
 
 
-def test_simpleocl::primitiveexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::PrimitiveExp)
+def test_simpleocl_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_EnumLiteralExp)
 
 
-def test_simpleocl::primitiveexp_constructor_exists():
-    assert callable(simpleocl::PrimitiveExp.__init__)
+def test_simpleocl_enumliteralexp_constructor_exists():
+    assert callable(simpleocl_EnumLiteralExp.__init__)
 
 
-def test_simpleocl::primitiveexp_constructor_args():
-    sig = inspect.signature(simpleocl::PrimitiveExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::oclundefinedexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclUndefinedExp)
-
-
-def test_simpleocl::oclundefinedexp_constructor_exists():
-    assert callable(simpleocl::OclUndefinedExp.__init__)
-
-
-def test_simpleocl::oclundefinedexp_constructor_args():
-    sig = inspect.signature(simpleocl::OclUndefinedExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::envexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::EnvExp)
-
-
-def test_simpleocl::envexp_constructor_exists():
-    assert callable(simpleocl::EnvExp.__init__)
-
-
-def test_simpleocl::envexp_constructor_args():
-    sig = inspect.signature(simpleocl::EnvExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::collectionexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::CollectionExp)
-
-
-def test_simpleocl::collectionexp_constructor_exists():
-    assert callable(simpleocl::CollectionExp.__init__)
-
-
-def test_simpleocl::collectionexp_constructor_args():
-    sig = inspect.signature(simpleocl::CollectionExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::tupleexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::TupleExp)
-
-
-def test_simpleocl::tupleexp_constructor_exists():
-    assert callable(simpleocl::TupleExp.__init__)
-
-
-def test_simpleocl::tupleexp_constructor_args():
-    sig = inspect.signature(simpleocl::TupleExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::staticpropertycallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::StaticPropertyCallExp)
-
-
-def test_simpleocl::staticpropertycallexp_constructor_exists():
-    assert callable(simpleocl::StaticPropertyCallExp.__init__)
-
-
-def test_simpleocl::staticpropertycallexp_constructor_args():
-    sig = inspect.signature(simpleocl::StaticPropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::oclmodelelementexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclModelElementExp)
-
-
-def test_simpleocl::oclmodelelementexp_constructor_exists():
-    assert callable(simpleocl::OclModelElementExp.__init__)
-
-
-def test_simpleocl::oclmodelelementexp_constructor_args():
-    sig = inspect.signature(simpleocl::OclModelElementExp.__init__)
+def test_simpleocl_enumliteralexp_constructor_args():
+    sig = inspect.signature(simpleocl_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::oclmodelelementexp_has_name():
-    assert hasattr(simpleocl::OclModelElementExp, "name")
+def test_simpleocl_enumliteralexp_has_name():
+    assert hasattr(simpleocl_EnumLiteralExp, "name")
     descriptor = None
-    for klass in simpleocl::OclModelElementExp.__mro__:
+    for klass in simpleocl_EnumLiteralExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1267,93 +1211,149 @@ def test_simpleocl::oclmodelelementexp_has_name():
 
 
 
-def test_simpleocl::braceexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::BraceExp)
+def test_simpleocl_primitiveexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_PrimitiveExp)
 
 
-def test_simpleocl::braceexp_constructor_exists():
-    assert callable(simpleocl::BraceExp.__init__)
+def test_simpleocl_primitiveexp_constructor_exists():
+    assert callable(simpleocl_PrimitiveExp.__init__)
 
 
-def test_simpleocl::braceexp_constructor_args():
-    sig = inspect.signature(simpleocl::BraceExp.__init__)
+def test_simpleocl_primitiveexp_constructor_args():
+    sig = inspect.signature(simpleocl_PrimitiveExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::selfexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::SelfExp)
+def test_simpleocl_collectionexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_CollectionExp)
 
 
-def test_simpleocl::selfexp_constructor_exists():
-    assert callable(simpleocl::SelfExp.__init__)
+def test_simpleocl_collectionexp_constructor_exists():
+    assert callable(simpleocl_CollectionExp.__init__)
 
 
-def test_simpleocl::selfexp_constructor_args():
-    sig = inspect.signature(simpleocl::SelfExp.__init__)
+def test_simpleocl_collectionexp_constructor_args():
+    sig = inspect.signature(simpleocl_CollectionExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::superexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::SuperExp)
+def test_simpleocl_envexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_EnvExp)
 
 
-def test_simpleocl::superexp_constructor_exists():
-    assert callable(simpleocl::SuperExp.__init__)
+def test_simpleocl_envexp_constructor_exists():
+    assert callable(simpleocl_EnvExp.__init__)
 
 
-def test_simpleocl::superexp_constructor_args():
-    sig = inspect.signature(simpleocl::SuperExp.__init__)
+def test_simpleocl_envexp_constructor_args():
+    sig = inspect.signature(simpleocl_EnvExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::mapexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::MapExp)
+def test_simpleocl_braceexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_BraceExp)
 
 
-def test_simpleocl::mapexp_constructor_exists():
-    assert callable(simpleocl::MapExp.__init__)
+def test_simpleocl_braceexp_constructor_exists():
+    assert callable(simpleocl_BraceExp.__init__)
 
 
-def test_simpleocl::mapexp_constructor_args():
-    sig = inspect.signature(simpleocl::MapExp.__init__)
+def test_simpleocl_braceexp_constructor_args():
+    sig = inspect.signature(simpleocl_BraceExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::variableexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::VariableExp)
+def test_simpleocl_mapexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_MapExp)
 
 
-def test_simpleocl::variableexp_constructor_exists():
-    assert callable(simpleocl::VariableExp.__init__)
+def test_simpleocl_mapexp_constructor_exists():
+    assert callable(simpleocl_MapExp.__init__)
 
 
-def test_simpleocl::variableexp_constructor_args():
-    sig = inspect.signature(simpleocl::VariableExp.__init__)
+def test_simpleocl_mapexp_constructor_args():
+    sig = inspect.signature(simpleocl_MapExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::operatorcallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OperatorCallExp)
+def test_simpleocl_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_TupleExp)
 
 
-def test_simpleocl::operatorcallexp_constructor_exists():
-    assert callable(simpleocl::OperatorCallExp.__init__)
+def test_simpleocl_tupleexp_constructor_exists():
+    assert callable(simpleocl_TupleExp.__init__)
 
 
-def test_simpleocl::operatorcallexp_constructor_args():
-    sig = inspect.signature(simpleocl::OperatorCallExp.__init__)
+def test_simpleocl_tupleexp_constructor_args():
+    sig = inspect.signature(simpleocl_TupleExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_selfexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_SelfExp)
+
+
+def test_simpleocl_selfexp_constructor_exists():
+    assert callable(simpleocl_SelfExp.__init__)
+
+
+def test_simpleocl_selfexp_constructor_args():
+    sig = inspect.signature(simpleocl_SelfExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_superexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_SuperExp)
+
+
+def test_simpleocl_superexp_constructor_exists():
+    assert callable(simpleocl_SuperExp.__init__)
+
+
+def test_simpleocl_superexp_constructor_args():
+    sig = inspect.signature(simpleocl_SuperExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_variableexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_VariableExp)
+
+
+def test_simpleocl_variableexp_constructor_exists():
+    assert callable(simpleocl_VariableExp.__init__)
+
+
+def test_simpleocl_variableexp_constructor_args():
+    sig = inspect.signature(simpleocl_VariableExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_operatorcallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OperatorCallExp)
+
+
+def test_simpleocl_operatorcallexp_constructor_exists():
+    assert callable(simpleocl_OperatorCallExp.__init__)
+
+
+def test_simpleocl_operatorcallexp_constructor_args():
+    sig = inspect.signature(simpleocl_OperatorCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_simpleocl::operatorcallexp_has_operationName():
-    assert hasattr(simpleocl::OperatorCallExp, "operationName")
+def test_simpleocl_operatorcallexp_has_operationName():
+    assert hasattr(simpleocl_OperatorCallExp, "operationName")
     descriptor = None
-    for klass in simpleocl::OperatorCallExp.__mro__:
+    for klass in simpleocl_OperatorCallExp.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -1361,37 +1361,37 @@ def test_simpleocl::operatorcallexp_has_operationName():
 
 
 
-def test_simpleocl::attribute_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Attribute)
+def test_simpleocl_attribute_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Attribute)
 
 
-def test_simpleocl::attribute_constructor_exists():
-    assert callable(simpleocl::Attribute.__init__)
+def test_simpleocl_attribute_constructor_exists():
+    assert callable(simpleocl_Attribute.__init__)
 
 
-def test_simpleocl::attribute_constructor_args():
-    sig = inspect.signature(simpleocl::Attribute.__init__)
+def test_simpleocl_attribute_constructor_args():
+    sig = inspect.signature(simpleocl_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::oclmetamodel_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclMetamodel)
+def test_simpleocl_oclmetamodel_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclMetamodel)
 
 
-def test_simpleocl::oclmetamodel_constructor_exists():
-    assert callable(simpleocl::OclMetamodel.__init__)
+def test_simpleocl_oclmetamodel_constructor_exists():
+    assert callable(simpleocl_OclMetamodel.__init__)
 
 
-def test_simpleocl::oclmetamodel_constructor_args():
-    sig = inspect.signature(simpleocl::OclMetamodel.__init__)
+def test_simpleocl_oclmetamodel_constructor_args():
+    sig = inspect.signature(simpleocl_OclMetamodel.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_simpleocl::oclmetamodel_has_uri():
-    assert hasattr(simpleocl::OclMetamodel, "uri")
+def test_simpleocl_oclmetamodel_has_uri():
+    assert hasattr(simpleocl_OclMetamodel, "uri")
     descriptor = None
-    for klass in simpleocl::OclMetamodel.__mro__:
+    for klass in simpleocl_OclMetamodel.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -1413,37 +1413,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simpleocl::oclmodel_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclModel)
+def test_simpleocl_oclmodel_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclModel)
 
 
-def test_simpleocl::oclmodel_constructor_exists():
-    assert callable(simpleocl::OclModel.__init__)
+def test_simpleocl_oclmodel_constructor_exists():
+    assert callable(simpleocl_OclModel.__init__)
 
 
-def test_simpleocl::oclmodel_constructor_args():
-    sig = inspect.signature(simpleocl::OclModel.__init__)
+def test_simpleocl_oclmodel_constructor_args():
+    sig = inspect.signature(simpleocl_OclModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::oclfeature_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclFeature)
+def test_simpleocl_oclfeature_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclFeature)
 
 
-def test_simpleocl::oclfeature_constructor_exists():
-    assert callable(simpleocl::OclFeature.__init__)
+def test_simpleocl_oclfeature_constructor_exists():
+    assert callable(simpleocl_OclFeature.__init__)
 
 
-def test_simpleocl::oclfeature_constructor_args():
-    sig = inspect.signature(simpleocl::OclFeature.__init__)
+def test_simpleocl_oclfeature_constructor_args():
+    sig = inspect.signature(simpleocl_OclFeature.__init__)
     params = list(sig.parameters.keys())
     assert "eq" in params, "Missing parameter 'eq'"
 
-def test_simpleocl::oclfeature_has_eq():
-    assert hasattr(simpleocl::OclFeature, "eq")
+def test_simpleocl_oclfeature_has_eq():
+    assert hasattr(simpleocl_OclFeature, "eq")
     descriptor = None
-    for klass in simpleocl::OclFeature.__mro__:
+    for klass in simpleocl_OclFeature.__mro__:
         if "eq" in klass.__dict__:
             descriptor = klass.__dict__["eq"]
             break
@@ -1451,16 +1451,16 @@ def test_simpleocl::oclfeature_has_eq():
 
 
 
-def test_simpleocl::module_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Module)
+def test_simpleocl_module_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Module)
 
 
-def test_simpleocl::module_constructor_exists():
-    assert callable(simpleocl::Module.__init__)
+def test_simpleocl_module_constructor_exists():
+    assert callable(simpleocl_Module.__init__)
 
 
-def test_simpleocl::module_constructor_args():
-    sig = inspect.signature(simpleocl::Module.__init__)
+def test_simpleocl_module_constructor_args():
+    sig = inspect.signature(simpleocl_Module.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1479,75 +1479,51 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_simpleocl::mapelement_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::MapElement)
+def test_simpleocl_oclcontextdefinition_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclContextDefinition)
 
 
-def test_simpleocl::mapelement_constructor_exists():
-    assert callable(simpleocl::MapElement.__init__)
+def test_simpleocl_oclcontextdefinition_constructor_exists():
+    assert callable(simpleocl_OclContextDefinition.__init__)
 
 
-def test_simpleocl::mapelement_constructor_args():
-    sig = inspect.signature(simpleocl::MapElement.__init__)
+def test_simpleocl_oclcontextdefinition_constructor_args():
+    sig = inspect.signature(simpleocl_OclContextDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::tupletypeattribute_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::TupleTypeAttribute)
+def test_simpleocl_mapelement_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_MapElement)
 
 
-def test_simpleocl::tupletypeattribute_constructor_exists():
-    assert callable(simpleocl::TupleTypeAttribute.__init__)
+def test_simpleocl_mapelement_constructor_exists():
+    assert callable(simpleocl_MapElement.__init__)
 
 
-def test_simpleocl::tupletypeattribute_constructor_args():
-    sig = inspect.signature(simpleocl::TupleTypeAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_simpleocl::tupletypeattribute_has_name():
-    assert hasattr(simpleocl::TupleTypeAttribute, "name")
-    descriptor = None
-    for klass in simpleocl::TupleTypeAttribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simpleocl::staticpropertycall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::StaticPropertyCall)
-
-
-def test_simpleocl::staticpropertycall_constructor_exists():
-    assert callable(simpleocl::StaticPropertyCall.__init__)
-
-
-def test_simpleocl::staticpropertycall_constructor_args():
-    sig = inspect.signature(simpleocl::StaticPropertyCall.__init__)
+def test_simpleocl_mapelement_constructor_args():
+    sig = inspect.signature(simpleocl_MapElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::VariableDeclaration)
+def test_simpleocl_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_VariableDeclaration)
 
 
-def test_simpleocl::variabledeclaration_constructor_exists():
-    assert callable(simpleocl::VariableDeclaration.__init__)
+def test_simpleocl_variabledeclaration_constructor_exists():
+    assert callable(simpleocl_VariableDeclaration.__init__)
 
 
-def test_simpleocl::variabledeclaration_constructor_args():
-    sig = inspect.signature(simpleocl::VariableDeclaration.__init__)
+def test_simpleocl_variabledeclaration_constructor_args():
+    sig = inspect.signature(simpleocl_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "varName" in params, "Missing parameter 'varName'"
 
-def test_simpleocl::variabledeclaration_has_varName():
-    assert hasattr(simpleocl::VariableDeclaration, "varName")
+def test_simpleocl_variabledeclaration_has_varName():
+    assert hasattr(simpleocl_VariableDeclaration, "varName")
     descriptor = None
-    for klass in simpleocl::VariableDeclaration.__mro__:
+    for klass in simpleocl_VariableDeclaration.__mro__:
         if "varName" in klass.__dict__:
             descriptor = klass.__dict__["varName"]
             break
@@ -1555,65 +1531,23 @@ def test_simpleocl::variabledeclaration_has_varName():
 
 
 
-def test_simpleocl::oclcontextdefinition_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclContextDefinition)
+def test_simpleocl_tupletypeattribute_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_TupleTypeAttribute)
 
 
-def test_simpleocl::oclcontextdefinition_constructor_exists():
-    assert callable(simpleocl::OclContextDefinition.__init__)
+def test_simpleocl_tupletypeattribute_constructor_exists():
+    assert callable(simpleocl_TupleTypeAttribute.__init__)
 
 
-def test_simpleocl::oclcontextdefinition_constructor_args():
-    sig = inspect.signature(simpleocl::OclContextDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::collectionpart_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::CollectionPart)
-
-
-def test_simpleocl::collectionpart_constructor_exists():
-    assert callable(simpleocl::CollectionPart.__init__)
-
-
-def test_simpleocl::collectionpart_constructor_args():
-    sig = inspect.signature(simpleocl::CollectionPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::propertycall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::PropertyCall)
-
-
-def test_simpleocl::propertycall_constructor_exists():
-    assert callable(simpleocl::PropertyCall.__init__)
-
-
-def test_simpleocl::propertycall_constructor_args():
-    sig = inspect.signature(simpleocl::PropertyCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleocl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::NamedElement)
-
-
-def test_simpleocl::namedelement_constructor_exists():
-    assert callable(simpleocl::NamedElement.__init__)
-
-
-def test_simpleocl::namedelement_constructor_args():
-    sig = inspect.signature(simpleocl::NamedElement.__init__)
+def test_simpleocl_tupletypeattribute_constructor_args():
+    sig = inspect.signature(simpleocl_TupleTypeAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::namedelement_has_name():
-    assert hasattr(simpleocl::NamedElement, "name")
+def test_simpleocl_tupletypeattribute_has_name():
+    assert hasattr(simpleocl_TupleTypeAttribute, "name")
     descriptor = None
-    for klass in simpleocl::NamedElement.__mro__:
+    for klass in simpleocl_TupleTypeAttribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1621,37 +1555,103 @@ def test_simpleocl::namedelement_has_name():
 
 
 
-def test_simpleocl::operation_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Operation)
+def test_simpleocl_propertycall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_PropertyCall)
 
 
-def test_simpleocl::operation_constructor_exists():
-    assert callable(simpleocl::Operation.__init__)
+def test_simpleocl_propertycall_constructor_exists():
+    assert callable(simpleocl_PropertyCall.__init__)
 
 
-def test_simpleocl::operation_constructor_args():
-    sig = inspect.signature(simpleocl::Operation.__init__)
+def test_simpleocl_propertycall_constructor_args():
+    sig = inspect.signature(simpleocl_PropertyCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::localvariable_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::LocalVariable)
+def test_simpleocl_collectionpart_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_CollectionPart)
 
 
-def test_simpleocl::localvariable_constructor_exists():
-    assert callable(simpleocl::LocalVariable.__init__)
+def test_simpleocl_collectionpart_constructor_exists():
+    assert callable(simpleocl_CollectionPart.__init__)
 
 
-def test_simpleocl::localvariable_constructor_args():
-    sig = inspect.signature(simpleocl::LocalVariable.__init__)
+def test_simpleocl_collectionpart_constructor_args():
+    sig = inspect.signature(simpleocl_CollectionPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_staticpropertycall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_StaticPropertyCall)
+
+
+def test_simpleocl_staticpropertycall_constructor_exists():
+    assert callable(simpleocl_StaticPropertyCall.__init__)
+
+
+def test_simpleocl_staticpropertycall_constructor_args():
+    sig = inspect.signature(simpleocl_StaticPropertyCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_NamedElement)
+
+
+def test_simpleocl_namedelement_constructor_exists():
+    assert callable(simpleocl_NamedElement.__init__)
+
+
+def test_simpleocl_namedelement_constructor_args():
+    sig = inspect.signature(simpleocl_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_simpleocl_namedelement_has_name():
+    assert hasattr(simpleocl_NamedElement, "name")
+    descriptor = None
+    for klass in simpleocl_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simpleocl_operation_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Operation)
+
+
+def test_simpleocl_operation_constructor_exists():
+    assert callable(simpleocl_Operation.__init__)
+
+
+def test_simpleocl_operation_constructor_args():
+    sig = inspect.signature(simpleocl_Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleocl_localvariable_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_LocalVariable)
+
+
+def test_simpleocl_localvariable_constructor_exists():
+    assert callable(simpleocl_LocalVariable.__init__)
+
+
+def test_simpleocl_localvariable_constructor_args():
+    sig = inspect.signature(simpleocl_LocalVariable.__init__)
     params = list(sig.parameters.keys())
     assert "eq" in params, "Missing parameter 'eq'"
 
-def test_simpleocl::localvariable_has_eq():
-    assert hasattr(simpleocl::LocalVariable, "eq")
+def test_simpleocl_localvariable_has_eq():
+    assert hasattr(simpleocl_LocalVariable, "eq")
     descriptor = None
-    for klass in simpleocl::LocalVariable.__mro__:
+    for klass in simpleocl_LocalVariable.__mro__:
         if "eq" in klass.__dict__:
             descriptor = klass.__dict__["eq"]
             break
@@ -1659,23 +1659,23 @@ def test_simpleocl::localvariable_has_eq():
 
 
 
-def test_simpleocl::operationcall_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OperationCall)
+def test_simpleocl_operationcall_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OperationCall)
 
 
-def test_simpleocl::operationcall_constructor_exists():
-    assert callable(simpleocl::OperationCall.__init__)
+def test_simpleocl_operationcall_constructor_exists():
+    assert callable(simpleocl_OperationCall.__init__)
 
 
-def test_simpleocl::operationcall_constructor_args():
-    sig = inspect.signature(simpleocl::OperationCall.__init__)
+def test_simpleocl_operationcall_constructor_args():
+    sig = inspect.signature(simpleocl_OperationCall.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_simpleocl::operationcall_has_operationName():
-    assert hasattr(simpleocl::OperationCall, "operationName")
+def test_simpleocl_operationcall_has_operationName():
+    assert hasattr(simpleocl_OperationCall, "operationName")
     descriptor = None
-    for klass in simpleocl::OperationCall.__mro__:
+    for klass in simpleocl_OperationCall.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -1683,79 +1683,79 @@ def test_simpleocl::operationcall_has_operationName():
 
 
 
-def test_simpleocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::LoopExp)
+def test_simpleocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_LoopExp)
 
 
-def test_simpleocl::loopexp_constructor_exists():
-    assert callable(simpleocl::LoopExp.__init__)
+def test_simpleocl_loopexp_constructor_exists():
+    assert callable(simpleocl_LoopExp.__init__)
 
 
-def test_simpleocl::loopexp_constructor_args():
-    sig = inspect.signature(simpleocl::LoopExp.__init__)
+def test_simpleocl_loopexp_constructor_args():
+    sig = inspect.signature(simpleocl_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::letexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::LetExp)
+def test_simpleocl_letexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_LetExp)
 
 
-def test_simpleocl::letexp_constructor_exists():
-    assert callable(simpleocl::LetExp.__init__)
+def test_simpleocl_letexp_constructor_exists():
+    assert callable(simpleocl_LetExp.__init__)
 
 
-def test_simpleocl::letexp_constructor_args():
-    sig = inspect.signature(simpleocl::LetExp.__init__)
+def test_simpleocl_letexp_constructor_args():
+    sig = inspect.signature(simpleocl_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::PropertyCallExp)
+def test_simpleocl_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_PropertyCallExp)
 
 
-def test_simpleocl::propertycallexp_constructor_exists():
-    assert callable(simpleocl::PropertyCallExp.__init__)
+def test_simpleocl_propertycallexp_constructor_exists():
+    assert callable(simpleocl_PropertyCallExp.__init__)
 
 
-def test_simpleocl::propertycallexp_constructor_args():
-    sig = inspect.signature(simpleocl::PropertyCallExp.__init__)
+def test_simpleocl_propertycallexp_constructor_args():
+    sig = inspect.signature(simpleocl_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::ifexp_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::IfExp)
+def test_simpleocl_ifexp_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_IfExp)
 
 
-def test_simpleocl::ifexp_constructor_exists():
-    assert callable(simpleocl::IfExp.__init__)
+def test_simpleocl_ifexp_constructor_exists():
+    assert callable(simpleocl_IfExp.__init__)
 
 
-def test_simpleocl::ifexp_constructor_args():
-    sig = inspect.signature(simpleocl::IfExp.__init__)
+def test_simpleocl_ifexp_constructor_args():
+    sig = inspect.signature(simpleocl_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::ocltype_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclType)
+def test_simpleocl_ocltype_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclType)
 
 
-def test_simpleocl::ocltype_constructor_exists():
-    assert callable(simpleocl::OclType.__init__)
+def test_simpleocl_ocltype_constructor_exists():
+    assert callable(simpleocl_OclType.__init__)
 
 
-def test_simpleocl::ocltype_constructor_args():
-    sig = inspect.signature(simpleocl::OclType.__init__)
+def test_simpleocl_ocltype_constructor_args():
+    sig = inspect.signature(simpleocl_OclType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleocl::ocltype_has_name():
-    assert hasattr(simpleocl::OclType, "name")
+def test_simpleocl_ocltype_has_name():
+    assert hasattr(simpleocl_OclType, "name")
     descriptor = None
-    for klass in simpleocl::OclType.__mro__:
+    for klass in simpleocl_OclType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1763,97 +1763,97 @@ def test_simpleocl::ocltype_has_name():
 
 
 
-def test_simpleocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::OclExpression)
+def test_simpleocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_OclExpression)
 
 
-def test_simpleocl::oclexpression_constructor_exists():
-    assert callable(simpleocl::OclExpression.__init__)
+def test_simpleocl_oclexpression_constructor_exists():
+    assert callable(simpleocl_OclExpression.__init__)
 
 
-def test_simpleocl::oclexpression_constructor_args():
-    sig = inspect.signature(simpleocl::OclExpression.__init__)
+def test_simpleocl_oclexpression_constructor_args():
+    sig = inspect.signature(simpleocl_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::moduleelement_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::ModuleElement)
+def test_simpleocl_moduleelement_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_ModuleElement)
 
 
-def test_simpleocl::moduleelement_constructor_exists():
-    assert callable(simpleocl::ModuleElement.__init__)
+def test_simpleocl_moduleelement_constructor_exists():
+    assert callable(simpleocl_ModuleElement.__init__)
 
 
-def test_simpleocl::moduleelement_constructor_args():
-    sig = inspect.signature(simpleocl::ModuleElement.__init__)
+def test_simpleocl_moduleelement_constructor_args():
+    sig = inspect.signature(simpleocl_ModuleElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::import_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::Import)
+def test_simpleocl_import_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_Import)
 
 
-def test_simpleocl::import_constructor_exists():
-    assert callable(simpleocl::Import.__init__)
+def test_simpleocl_import_constructor_exists():
+    assert callable(simpleocl_Import.__init__)
 
 
-def test_simpleocl::import_constructor_args():
-    sig = inspect.signature(simpleocl::Import.__init__)
+def test_simpleocl_import_constructor_args():
+    sig = inspect.signature(simpleocl_Import.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleocl::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(simpleocl::LocatedElement)
+def test_simpleocl_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(simpleocl_LocatedElement)
 
 
-def test_simpleocl::locatedelement_constructor_exists():
-    assert callable(simpleocl::LocatedElement.__init__)
+def test_simpleocl_locatedelement_constructor_exists():
+    assert callable(simpleocl_LocatedElement.__init__)
 
 
-def test_simpleocl::locatedelement_constructor_args():
-    sig = inspect.signature(simpleocl::LocatedElement.__init__)
+def test_simpleocl_locatedelement_constructor_args():
+    sig = inspect.signature(simpleocl_LocatedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "line" in params, "Missing parameter 'line'"
-    assert "column" in params, "Missing parameter 'column'"
     assert "charEnd" in params, "Missing parameter 'charEnd'"
+    assert "column" in params, "Missing parameter 'column'"
     assert "charStart" in params, "Missing parameter 'charStart'"
+    assert "line" in params, "Missing parameter 'line'"
 
-def test_simpleocl::locatedelement_has_line():
-    assert hasattr(simpleocl::LocatedElement, "line")
+def test_simpleocl_locatedelement_has_charEnd():
+    assert hasattr(simpleocl_LocatedElement, "charEnd")
     descriptor = None
-    for klass in simpleocl::LocatedElement.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simpleocl::locatedelement_has_column():
-    assert hasattr(simpleocl::LocatedElement, "column")
-    descriptor = None
-    for klass in simpleocl::LocatedElement.__mro__:
-        if "column" in klass.__dict__:
-            descriptor = klass.__dict__["column"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simpleocl::locatedelement_has_charEnd():
-    assert hasattr(simpleocl::LocatedElement, "charEnd")
-    descriptor = None
-    for klass in simpleocl::LocatedElement.__mro__:
+    for klass in simpleocl_LocatedElement.__mro__:
         if "charEnd" in klass.__dict__:
             descriptor = klass.__dict__["charEnd"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleocl::locatedelement_has_charStart():
-    assert hasattr(simpleocl::LocatedElement, "charStart")
+def test_simpleocl_locatedelement_has_column():
+    assert hasattr(simpleocl_LocatedElement, "column")
     descriptor = None
-    for klass in simpleocl::LocatedElement.__mro__:
+    for klass in simpleocl_LocatedElement.__mro__:
+        if "column" in klass.__dict__:
+            descriptor = klass.__dict__["column"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simpleocl_locatedelement_has_charStart():
+    assert hasattr(simpleocl_LocatedElement, "charStart")
+    descriptor = None
+    for klass in simpleocl_LocatedElement.__mro__:
         if "charStart" in klass.__dict__:
             descriptor = klass.__dict__["charStart"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simpleocl_locatedelement_has_line():
+    assert hasattr(simpleocl_LocatedElement, "line")
+    descriptor = None
+    for klass in simpleocl_LocatedElement.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
             break
     assert isinstance(descriptor, property)
 
@@ -1875,367 +1875,367 @@ OclFeature_strategy = st.builds(
 OclModel_strategy = st.builds(
     OclModel,
 )
-simpleocl::OclInstanceModel_strategy = st.builds(
-    simpleocl::OclInstanceModel,
+simpleocl_OclInstanceModel_strategy = st.builds(
+    simpleocl_OclInstanceModel,
 )
 ModuleElement_strategy = st.builds(
     ModuleElement,
 )
-simpleocl::OclFeatureDefinition_strategy = st.builds(
-    simpleocl::OclFeatureDefinition,
+simpleocl_OclFeatureDefinition_strategy = st.builds(
+    simpleocl_OclFeatureDefinition,
     static=
         safe_text
 )
 CollectionType_strategy = st.builds(
     CollectionType,
 )
-simpleocl::SequenceType_strategy = st.builds(
-    simpleocl::SequenceType,
+simpleocl_SetType_strategy = st.builds(
+    simpleocl_SetType,
 )
-simpleocl::SetType_strategy = st.builds(
-    simpleocl::SetType,
+simpleocl_SequenceType_strategy = st.builds(
+    simpleocl_SequenceType,
 )
-simpleocl::OrderedSetType_strategy = st.builds(
-    simpleocl::OrderedSetType,
+simpleocl_OrderedSetType_strategy = st.builds(
+    simpleocl_OrderedSetType,
 )
-simpleocl::BagType_strategy = st.builds(
-    simpleocl::BagType,
+simpleocl_BagType_strategy = st.builds(
+    simpleocl_BagType,
 )
 NumericType_strategy = st.builds(
     NumericType,
 )
-simpleocl::RealType_strategy = st.builds(
-    simpleocl::RealType,
+simpleocl_RealType_strategy = st.builds(
+    simpleocl_RealType,
 )
-simpleocl::IntegerType_strategy = st.builds(
-    simpleocl::IntegerType,
+simpleocl_IntegerType_strategy = st.builds(
+    simpleocl_IntegerType,
 )
 Primitive_strategy = st.builds(
     Primitive,
 )
-simpleocl::BooleanType_strategy = st.builds(
-    simpleocl::BooleanType,
+simpleocl_BooleanType_strategy = st.builds(
+    simpleocl_BooleanType,
 )
-simpleocl::NumericType_strategy = st.builds(
-    simpleocl::NumericType,
+simpleocl_NumericType_strategy = st.builds(
+    simpleocl_NumericType,
 )
-simpleocl::StringType_strategy = st.builds(
-    simpleocl::StringType,
+simpleocl_StringType_strategy = st.builds(
+    simpleocl_StringType,
 )
 OclType_strategy = st.builds(
     OclType,
 )
-simpleocl::LambdaType_strategy = st.builds(
-    simpleocl::LambdaType,
+simpleocl_TupleType_strategy = st.builds(
+    simpleocl_TupleType,
 )
-simpleocl::EnvType_strategy = st.builds(
-    simpleocl::EnvType,
+simpleocl_OclAnyType_strategy = st.builds(
+    simpleocl_OclAnyType,
 )
-simpleocl::TupleType_strategy = st.builds(
-    simpleocl::TupleType,
+simpleocl_EnvType_strategy = st.builds(
+    simpleocl_EnvType,
 )
-simpleocl::OclAnyType_strategy = st.builds(
-    simpleocl::OclAnyType,
+simpleocl_OclModelElement_strategy = st.builds(
+    simpleocl_OclModelElement,
 )
-simpleocl::Primitive_strategy = st.builds(
-    simpleocl::Primitive,
+simpleocl_LambdaType_strategy = st.builds(
+    simpleocl_LambdaType,
 )
-simpleocl::OclModelElement_strategy = st.builds(
-    simpleocl::OclModelElement,
+simpleocl_Primitive_strategy = st.builds(
+    simpleocl_Primitive,
 )
-simpleocl::CollectionType_strategy = st.builds(
-    simpleocl::CollectionType,
+simpleocl_CollectionType_strategy = st.builds(
+    simpleocl_CollectionType,
 )
-simpleocl::MapType_strategy = st.builds(
-    simpleocl::MapType,
+simpleocl_MapType_strategy = st.builds(
+    simpleocl_MapType,
 )
 LoopExp_strategy = st.builds(
     LoopExp,
 )
-simpleocl::IterateExp_strategy = st.builds(
-    simpleocl::IterateExp,
+simpleocl_IterateExp_strategy = st.builds(
+    simpleocl_IterateExp,
 )
 OperationCall_strategy = st.builds(
     OperationCall,
 )
-simpleocl::CollectionOperationCall_strategy = st.builds(
-    simpleocl::CollectionOperationCall,
+simpleocl_CollectionOperationCall_strategy = st.builds(
+    simpleocl_CollectionOperationCall,
 )
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
-simpleocl::Iterator_strategy = st.builds(
-    simpleocl::Iterator,
+simpleocl_Parameter_strategy = st.builds(
+    simpleocl_Parameter,
 )
-simpleocl::Parameter_strategy = st.builds(
-    simpleocl::Parameter,
+simpleocl_Iterator_strategy = st.builds(
+    simpleocl_Iterator,
 )
-simpleocl::IteratorExp_strategy = st.builds(
-    simpleocl::IteratorExp,
+simpleocl_IteratorExp_strategy = st.builds(
+    simpleocl_IteratorExp,
     name=
         safe_text
 )
 PropertyCall_strategy = st.builds(
     PropertyCall,
 )
-simpleocl::NavigationOrAttributeCall_strategy = st.builds(
-    simpleocl::NavigationOrAttributeCall,
+simpleocl_NavigationOrAttributeCall_strategy = st.builds(
+    simpleocl_NavigationOrAttributeCall,
     name=
         safe_text
 )
 VariableExp_strategy = st.builds(
     VariableExp,
 )
-simpleocl::LambdaCallExp_strategy = st.builds(
-    simpleocl::LambdaCallExp,
+simpleocl_LambdaCallExp_strategy = st.builds(
+    simpleocl_LambdaCallExp,
 )
 OperatorCallExp_strategy = st.builds(
     OperatorCallExp,
 )
-simpleocl::EqOpCallExp_strategy = st.builds(
-    simpleocl::EqOpCallExp,
+simpleocl_IntOpCallExp_strategy = st.builds(
+    simpleocl_IntOpCallExp,
 )
-simpleocl::RelOpCallExp_strategy = st.builds(
-    simpleocl::RelOpCallExp,
+simpleocl_MulOpCallExp_strategy = st.builds(
+    simpleocl_MulOpCallExp,
 )
-simpleocl::MulOpCallExp_strategy = st.builds(
-    simpleocl::MulOpCallExp,
+simpleocl_AddOpCallExp_strategy = st.builds(
+    simpleocl_AddOpCallExp,
 )
-simpleocl::IntOpCallExp_strategy = st.builds(
-    simpleocl::IntOpCallExp,
+simpleocl_EqOpCallExp_strategy = st.builds(
+    simpleocl_EqOpCallExp,
 )
-simpleocl::AddOpCallExp_strategy = st.builds(
-    simpleocl::AddOpCallExp,
+simpleocl_RelOpCallExp_strategy = st.builds(
+    simpleocl_RelOpCallExp,
 )
-simpleocl::NotOpCallExp_strategy = st.builds(
-    simpleocl::NotOpCallExp,
+simpleocl_NotOpCallExp_strategy = st.builds(
+    simpleocl_NotOpCallExp,
 )
 StaticPropertyCall_strategy = st.builds(
     StaticPropertyCall,
 )
-simpleocl::StaticOperationCall_strategy = st.builds(
-    simpleocl::StaticOperationCall,
+simpleocl_StaticOperationCall_strategy = st.builds(
+    simpleocl_StaticOperationCall,
     operationName=
         safe_text
 )
-simpleocl::StaticNavigationOrAttributeCall_strategy = st.builds(
-    simpleocl::StaticNavigationOrAttributeCall,
+simpleocl_StaticNavigationOrAttributeCall_strategy = st.builds(
+    simpleocl_StaticNavigationOrAttributeCall,
     name=
         safe_text
 )
 NumericExp_strategy = st.builds(
     NumericExp,
 )
-simpleocl::IntegerExp_strategy = st.builds(
-    simpleocl::IntegerExp,
+simpleocl_IntegerExp_strategy = st.builds(
+    simpleocl_IntegerExp,
     integerSymbol=
         safe_text
 )
-simpleocl::RealExp_strategy = st.builds(
-    simpleocl::RealExp,
+simpleocl_RealExp_strategy = st.builds(
+    simpleocl_RealExp,
     realSymbol=
         safe_text
 )
 LocalVariable_strategy = st.builds(
     LocalVariable,
 )
-simpleocl::TuplePart_strategy = st.builds(
-    simpleocl::TuplePart,
+simpleocl_TuplePart_strategy = st.builds(
+    simpleocl_TuplePart,
 )
 CollectionExp_strategy = st.builds(
     CollectionExp,
 )
-simpleocl::OrderedSetExp_strategy = st.builds(
-    simpleocl::OrderedSetExp,
+simpleocl_SequenceExp_strategy = st.builds(
+    simpleocl_SequenceExp,
 )
-simpleocl::SetExp_strategy = st.builds(
-    simpleocl::SetExp,
+simpleocl_OrderedSetExp_strategy = st.builds(
+    simpleocl_OrderedSetExp,
 )
-simpleocl::SequenceExp_strategy = st.builds(
-    simpleocl::SequenceExp,
+simpleocl_SetExp_strategy = st.builds(
+    simpleocl_SetExp,
 )
-simpleocl::BagExp_strategy = st.builds(
-    simpleocl::BagExp,
+simpleocl_BagExp_strategy = st.builds(
+    simpleocl_BagExp,
 )
 CollectionPart_strategy = st.builds(
     CollectionPart,
 )
-simpleocl::CollectionItem_strategy = st.builds(
-    simpleocl::CollectionItem,
+simpleocl_CollectionItem_strategy = st.builds(
+    simpleocl_CollectionItem,
 )
-simpleocl::CollectionRange_strategy = st.builds(
-    simpleocl::CollectionRange,
+simpleocl_CollectionRange_strategy = st.builds(
+    simpleocl_CollectionRange,
 )
 PrimitiveExp_strategy = st.builds(
     PrimitiveExp,
 )
-simpleocl::NumericExp_strategy = st.builds(
-    simpleocl::NumericExp,
+simpleocl_NumericExp_strategy = st.builds(
+    simpleocl_NumericExp,
 )
-simpleocl::BooleanExp_strategy = st.builds(
-    simpleocl::BooleanExp,
+simpleocl_BooleanExp_strategy = st.builds(
+    simpleocl_BooleanExp,
     booleanSymbol=
         safe_text
 )
-simpleocl::StringExp_strategy = st.builds(
-    simpleocl::StringExp,
+simpleocl_StringExp_strategy = st.builds(
+    simpleocl_StringExp,
     stringSymbol=
         safe_text
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-simpleocl::EnumLiteralExp_strategy = st.builds(
-    simpleocl::EnumLiteralExp,
+simpleocl_OclUndefinedExp_strategy = st.builds(
+    simpleocl_OclUndefinedExp,
+)
+simpleocl_StaticPropertyCallExp_strategy = st.builds(
+    simpleocl_StaticPropertyCallExp,
+)
+simpleocl_OclModelElementExp_strategy = st.builds(
+    simpleocl_OclModelElementExp,
     name=
         safe_text
 )
-simpleocl::PrimitiveExp_strategy = st.builds(
-    simpleocl::PrimitiveExp,
-)
-simpleocl::OclUndefinedExp_strategy = st.builds(
-    simpleocl::OclUndefinedExp,
-)
-simpleocl::EnvExp_strategy = st.builds(
-    simpleocl::EnvExp,
-)
-simpleocl::CollectionExp_strategy = st.builds(
-    simpleocl::CollectionExp,
-)
-simpleocl::TupleExp_strategy = st.builds(
-    simpleocl::TupleExp,
-)
-simpleocl::StaticPropertyCallExp_strategy = st.builds(
-    simpleocl::StaticPropertyCallExp,
-)
-simpleocl::OclModelElementExp_strategy = st.builds(
-    simpleocl::OclModelElementExp,
+simpleocl_EnumLiteralExp_strategy = st.builds(
+    simpleocl_EnumLiteralExp,
     name=
         safe_text
 )
-simpleocl::BraceExp_strategy = st.builds(
-    simpleocl::BraceExp,
+simpleocl_PrimitiveExp_strategy = st.builds(
+    simpleocl_PrimitiveExp,
 )
-simpleocl::SelfExp_strategy = st.builds(
-    simpleocl::SelfExp,
+simpleocl_CollectionExp_strategy = st.builds(
+    simpleocl_CollectionExp,
 )
-simpleocl::SuperExp_strategy = st.builds(
-    simpleocl::SuperExp,
+simpleocl_EnvExp_strategy = st.builds(
+    simpleocl_EnvExp,
 )
-simpleocl::MapExp_strategy = st.builds(
-    simpleocl::MapExp,
+simpleocl_BraceExp_strategy = st.builds(
+    simpleocl_BraceExp,
 )
-simpleocl::VariableExp_strategy = st.builds(
-    simpleocl::VariableExp,
+simpleocl_MapExp_strategy = st.builds(
+    simpleocl_MapExp,
 )
-simpleocl::OperatorCallExp_strategy = st.builds(
-    simpleocl::OperatorCallExp,
+simpleocl_TupleExp_strategy = st.builds(
+    simpleocl_TupleExp,
+)
+simpleocl_SelfExp_strategy = st.builds(
+    simpleocl_SelfExp,
+)
+simpleocl_SuperExp_strategy = st.builds(
+    simpleocl_SuperExp,
+)
+simpleocl_VariableExp_strategy = st.builds(
+    simpleocl_VariableExp,
+)
+simpleocl_OperatorCallExp_strategy = st.builds(
+    simpleocl_OperatorCallExp,
     operationName=
         safe_text
 )
-simpleocl::Attribute_strategy = st.builds(
-    simpleocl::Attribute,
+simpleocl_Attribute_strategy = st.builds(
+    simpleocl_Attribute,
 )
-simpleocl::OclMetamodel_strategy = st.builds(
-    simpleocl::OclMetamodel,
+simpleocl_OclMetamodel_strategy = st.builds(
+    simpleocl_OclMetamodel,
     uri=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-simpleocl::OclModel_strategy = st.builds(
-    simpleocl::OclModel,
+simpleocl_OclModel_strategy = st.builds(
+    simpleocl_OclModel,
 )
-simpleocl::OclFeature_strategy = st.builds(
-    simpleocl::OclFeature,
+simpleocl_OclFeature_strategy = st.builds(
+    simpleocl_OclFeature,
     eq=
         safe_text
 )
-simpleocl::Module_strategy = st.builds(
-    simpleocl::Module,
+simpleocl_Module_strategy = st.builds(
+    simpleocl_Module,
 )
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-simpleocl::MapElement_strategy = st.builds(
-    simpleocl::MapElement,
+simpleocl_OclContextDefinition_strategy = st.builds(
+    simpleocl_OclContextDefinition,
 )
-simpleocl::TupleTypeAttribute_strategy = st.builds(
-    simpleocl::TupleTypeAttribute,
-    name=
-        safe_text
+simpleocl_MapElement_strategy = st.builds(
+    simpleocl_MapElement,
 )
-simpleocl::StaticPropertyCall_strategy = st.builds(
-    simpleocl::StaticPropertyCall,
-)
-simpleocl::VariableDeclaration_strategy = st.builds(
-    simpleocl::VariableDeclaration,
+simpleocl_VariableDeclaration_strategy = st.builds(
+    simpleocl_VariableDeclaration,
     varName=
         safe_text
 )
-simpleocl::OclContextDefinition_strategy = st.builds(
-    simpleocl::OclContextDefinition,
-)
-simpleocl::CollectionPart_strategy = st.builds(
-    simpleocl::CollectionPart,
-)
-simpleocl::PropertyCall_strategy = st.builds(
-    simpleocl::PropertyCall,
-)
-simpleocl::NamedElement_strategy = st.builds(
-    simpleocl::NamedElement,
+simpleocl_TupleTypeAttribute_strategy = st.builds(
+    simpleocl_TupleTypeAttribute,
     name=
         safe_text
 )
-simpleocl::Operation_strategy = st.builds(
-    simpleocl::Operation,
+simpleocl_PropertyCall_strategy = st.builds(
+    simpleocl_PropertyCall,
 )
-simpleocl::LocalVariable_strategy = st.builds(
-    simpleocl::LocalVariable,
+simpleocl_CollectionPart_strategy = st.builds(
+    simpleocl_CollectionPart,
+)
+simpleocl_StaticPropertyCall_strategy = st.builds(
+    simpleocl_StaticPropertyCall,
+)
+simpleocl_NamedElement_strategy = st.builds(
+    simpleocl_NamedElement,
+    name=
+        safe_text
+)
+simpleocl_Operation_strategy = st.builds(
+    simpleocl_Operation,
+)
+simpleocl_LocalVariable_strategy = st.builds(
+    simpleocl_LocalVariable,
     eq=
         safe_text
 )
-simpleocl::OperationCall_strategy = st.builds(
-    simpleocl::OperationCall,
+simpleocl_OperationCall_strategy = st.builds(
+    simpleocl_OperationCall,
     operationName=
         safe_text
 )
-simpleocl::LoopExp_strategy = st.builds(
-    simpleocl::LoopExp,
+simpleocl_LoopExp_strategy = st.builds(
+    simpleocl_LoopExp,
 )
-simpleocl::LetExp_strategy = st.builds(
-    simpleocl::LetExp,
+simpleocl_LetExp_strategy = st.builds(
+    simpleocl_LetExp,
 )
-simpleocl::PropertyCallExp_strategy = st.builds(
-    simpleocl::PropertyCallExp,
+simpleocl_PropertyCallExp_strategy = st.builds(
+    simpleocl_PropertyCallExp,
 )
-simpleocl::IfExp_strategy = st.builds(
-    simpleocl::IfExp,
+simpleocl_IfExp_strategy = st.builds(
+    simpleocl_IfExp,
 )
-simpleocl::OclType_strategy = st.builds(
-    simpleocl::OclType,
+simpleocl_OclType_strategy = st.builds(
+    simpleocl_OclType,
     name=
         safe_text
 )
-simpleocl::OclExpression_strategy = st.builds(
-    simpleocl::OclExpression,
+simpleocl_OclExpression_strategy = st.builds(
+    simpleocl_OclExpression,
 )
-simpleocl::ModuleElement_strategy = st.builds(
-    simpleocl::ModuleElement,
+simpleocl_ModuleElement_strategy = st.builds(
+    simpleocl_ModuleElement,
 )
-simpleocl::Import_strategy = st.builds(
-    simpleocl::Import,
+simpleocl_Import_strategy = st.builds(
+    simpleocl_Import,
 )
-simpleocl::LocatedElement_strategy = st.builds(
-    simpleocl::LocatedElement,
-    line=
+simpleocl_LocatedElement_strategy = st.builds(
+    simpleocl_LocatedElement,
+    charEnd=
         safe_text,
     column=
         safe_text,
-    charEnd=
-        safe_text,
     charStart=
+        safe_text,
+    line=
         safe_text
 )
 
@@ -2249,28 +2249,25 @@ def test_oclfeature_instantiation(instance):
 def test_oclmodel_instantiation(instance):
     assert isinstance(instance, OclModel)
 
-@given(instance=simpleocl::OclInstanceModel_strategy)
+@given(instance=simpleocl_OclInstanceModel_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclinstancemodel_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclInstanceModel)
+def test_simpleocl_oclinstancemodel_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclInstanceModel)
 
 @given(instance=ModuleElement_strategy)
 @settings(max_examples=50)
 def test_moduleelement_instantiation(instance):
     assert isinstance(instance, ModuleElement)
 
-@given(instance=simpleocl::OclFeatureDefinition_strategy)
+@given(instance=simpleocl_OclFeatureDefinition_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclfeaturedefinition_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclFeatureDefinition)
-
-@given(instance=simpleocl::OclFeatureDefinition_strategy)
-def test_simpleocl::oclfeaturedefinition_static_type(instance):
-    assert isinstance(instance.static, str)
+def test_simpleocl_oclfeaturedefinition_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclFeatureDefinition)
 
 
-@given(instance=simpleocl::OclFeatureDefinition_strategy)
-def test_simpleocl::oclfeaturedefinition_static_setter(instance):
+
+@given(instance=simpleocl_OclFeatureDefinition_strategy)
+def test_simpleocl_oclfeaturedefinition_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
@@ -2280,153 +2277,150 @@ def test_simpleocl::oclfeaturedefinition_static_setter(instance):
 def test_collectiontype_instantiation(instance):
     assert isinstance(instance, CollectionType)
 
-@given(instance=simpleocl::SequenceType_strategy)
+@given(instance=simpleocl_SetType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::sequencetype_instantiation(instance):
-    assert isinstance(instance, simpleocl::SequenceType)
+def test_simpleocl_settype_instantiation(instance):
+    assert isinstance(instance, simpleocl_SetType)
 
-@given(instance=simpleocl::SetType_strategy)
+@given(instance=simpleocl_SequenceType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::settype_instantiation(instance):
-    assert isinstance(instance, simpleocl::SetType)
+def test_simpleocl_sequencetype_instantiation(instance):
+    assert isinstance(instance, simpleocl_SequenceType)
 
-@given(instance=simpleocl::OrderedSetType_strategy)
+@given(instance=simpleocl_OrderedSetType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::orderedsettype_instantiation(instance):
-    assert isinstance(instance, simpleocl::OrderedSetType)
+def test_simpleocl_orderedsettype_instantiation(instance):
+    assert isinstance(instance, simpleocl_OrderedSetType)
 
-@given(instance=simpleocl::BagType_strategy)
+@given(instance=simpleocl_BagType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::bagtype_instantiation(instance):
-    assert isinstance(instance, simpleocl::BagType)
+def test_simpleocl_bagtype_instantiation(instance):
+    assert isinstance(instance, simpleocl_BagType)
 
 @given(instance=NumericType_strategy)
 @settings(max_examples=50)
 def test_numerictype_instantiation(instance):
     assert isinstance(instance, NumericType)
 
-@given(instance=simpleocl::RealType_strategy)
+@given(instance=simpleocl_RealType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::realtype_instantiation(instance):
-    assert isinstance(instance, simpleocl::RealType)
+def test_simpleocl_realtype_instantiation(instance):
+    assert isinstance(instance, simpleocl_RealType)
 
-@given(instance=simpleocl::IntegerType_strategy)
+@given(instance=simpleocl_IntegerType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::integertype_instantiation(instance):
-    assert isinstance(instance, simpleocl::IntegerType)
+def test_simpleocl_integertype_instantiation(instance):
+    assert isinstance(instance, simpleocl_IntegerType)
 
 @given(instance=Primitive_strategy)
 @settings(max_examples=50)
 def test_primitive_instantiation(instance):
     assert isinstance(instance, Primitive)
 
-@given(instance=simpleocl::BooleanType_strategy)
+@given(instance=simpleocl_BooleanType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::booleantype_instantiation(instance):
-    assert isinstance(instance, simpleocl::BooleanType)
+def test_simpleocl_booleantype_instantiation(instance):
+    assert isinstance(instance, simpleocl_BooleanType)
 
-@given(instance=simpleocl::NumericType_strategy)
+@given(instance=simpleocl_NumericType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::numerictype_instantiation(instance):
-    assert isinstance(instance, simpleocl::NumericType)
+def test_simpleocl_numerictype_instantiation(instance):
+    assert isinstance(instance, simpleocl_NumericType)
 
-@given(instance=simpleocl::StringType_strategy)
+@given(instance=simpleocl_StringType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::stringtype_instantiation(instance):
-    assert isinstance(instance, simpleocl::StringType)
+def test_simpleocl_stringtype_instantiation(instance):
+    assert isinstance(instance, simpleocl_StringType)
 
 @given(instance=OclType_strategy)
 @settings(max_examples=50)
 def test_ocltype_instantiation(instance):
     assert isinstance(instance, OclType)
 
-@given(instance=simpleocl::LambdaType_strategy)
+@given(instance=simpleocl_TupleType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::lambdatype_instantiation(instance):
-    assert isinstance(instance, simpleocl::LambdaType)
+def test_simpleocl_tupletype_instantiation(instance):
+    assert isinstance(instance, simpleocl_TupleType)
 
-@given(instance=simpleocl::EnvType_strategy)
+@given(instance=simpleocl_OclAnyType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::envtype_instantiation(instance):
-    assert isinstance(instance, simpleocl::EnvType)
+def test_simpleocl_oclanytype_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclAnyType)
 
-@given(instance=simpleocl::TupleType_strategy)
+@given(instance=simpleocl_EnvType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::tupletype_instantiation(instance):
-    assert isinstance(instance, simpleocl::TupleType)
+def test_simpleocl_envtype_instantiation(instance):
+    assert isinstance(instance, simpleocl_EnvType)
 
-@given(instance=simpleocl::OclAnyType_strategy)
+@given(instance=simpleocl_OclModelElement_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclanytype_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclAnyType)
+def test_simpleocl_oclmodelelement_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclModelElement)
 
-@given(instance=simpleocl::Primitive_strategy)
+@given(instance=simpleocl_LambdaType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::primitive_instantiation(instance):
-    assert isinstance(instance, simpleocl::Primitive)
+def test_simpleocl_lambdatype_instantiation(instance):
+    assert isinstance(instance, simpleocl_LambdaType)
 
-@given(instance=simpleocl::OclModelElement_strategy)
+@given(instance=simpleocl_Primitive_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclmodelelement_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclModelElement)
+def test_simpleocl_primitive_instantiation(instance):
+    assert isinstance(instance, simpleocl_Primitive)
 
-@given(instance=simpleocl::CollectionType_strategy)
+@given(instance=simpleocl_CollectionType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::collectiontype_instantiation(instance):
-    assert isinstance(instance, simpleocl::CollectionType)
+def test_simpleocl_collectiontype_instantiation(instance):
+    assert isinstance(instance, simpleocl_CollectionType)
 
-@given(instance=simpleocl::MapType_strategy)
+@given(instance=simpleocl_MapType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::maptype_instantiation(instance):
-    assert isinstance(instance, simpleocl::MapType)
+def test_simpleocl_maptype_instantiation(instance):
+    assert isinstance(instance, simpleocl_MapType)
 
 @given(instance=LoopExp_strategy)
 @settings(max_examples=50)
 def test_loopexp_instantiation(instance):
     assert isinstance(instance, LoopExp)
 
-@given(instance=simpleocl::IterateExp_strategy)
+@given(instance=simpleocl_IterateExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::iterateexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::IterateExp)
+def test_simpleocl_iterateexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_IterateExp)
 
 @given(instance=OperationCall_strategy)
 @settings(max_examples=50)
 def test_operationcall_instantiation(instance):
     assert isinstance(instance, OperationCall)
 
-@given(instance=simpleocl::CollectionOperationCall_strategy)
+@given(instance=simpleocl_CollectionOperationCall_strategy)
 @settings(max_examples=50)
-def test_simpleocl::collectionoperationcall_instantiation(instance):
-    assert isinstance(instance, simpleocl::CollectionOperationCall)
+def test_simpleocl_collectionoperationcall_instantiation(instance):
+    assert isinstance(instance, simpleocl_CollectionOperationCall)
 
 @given(instance=VariableDeclaration_strategy)
 @settings(max_examples=50)
 def test_variabledeclaration_instantiation(instance):
     assert isinstance(instance, VariableDeclaration)
 
-@given(instance=simpleocl::Iterator_strategy)
+@given(instance=simpleocl_Parameter_strategy)
 @settings(max_examples=50)
-def test_simpleocl::iterator_instantiation(instance):
-    assert isinstance(instance, simpleocl::Iterator)
+def test_simpleocl_parameter_instantiation(instance):
+    assert isinstance(instance, simpleocl_Parameter)
 
-@given(instance=simpleocl::Parameter_strategy)
+@given(instance=simpleocl_Iterator_strategy)
 @settings(max_examples=50)
-def test_simpleocl::parameter_instantiation(instance):
-    assert isinstance(instance, simpleocl::Parameter)
+def test_simpleocl_iterator_instantiation(instance):
+    assert isinstance(instance, simpleocl_Iterator)
 
-@given(instance=simpleocl::IteratorExp_strategy)
+@given(instance=simpleocl_IteratorExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::iteratorexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::IteratorExp)
-
-@given(instance=simpleocl::IteratorExp_strategy)
-def test_simpleocl::iteratorexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleocl_iteratorexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_IteratorExp)
 
 
-@given(instance=simpleocl::IteratorExp_strategy)
-def test_simpleocl::iteratorexp_name_setter(instance):
+
+@given(instance=simpleocl_IteratorExp_strategy)
+def test_simpleocl_iteratorexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2436,18 +2430,15 @@ def test_simpleocl::iteratorexp_name_setter(instance):
 def test_propertycall_instantiation(instance):
     assert isinstance(instance, PropertyCall)
 
-@given(instance=simpleocl::NavigationOrAttributeCall_strategy)
+@given(instance=simpleocl_NavigationOrAttributeCall_strategy)
 @settings(max_examples=50)
-def test_simpleocl::navigationorattributecall_instantiation(instance):
-    assert isinstance(instance, simpleocl::NavigationOrAttributeCall)
-
-@given(instance=simpleocl::NavigationOrAttributeCall_strategy)
-def test_simpleocl::navigationorattributecall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleocl_navigationorattributecall_instantiation(instance):
+    assert isinstance(instance, simpleocl_NavigationOrAttributeCall)
 
 
-@given(instance=simpleocl::NavigationOrAttributeCall_strategy)
-def test_simpleocl::navigationorattributecall_name_setter(instance):
+
+@given(instance=simpleocl_NavigationOrAttributeCall_strategy)
+def test_simpleocl_navigationorattributecall_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2457,79 +2448,73 @@ def test_simpleocl::navigationorattributecall_name_setter(instance):
 def test_variableexp_instantiation(instance):
     assert isinstance(instance, VariableExp)
 
-@given(instance=simpleocl::LambdaCallExp_strategy)
+@given(instance=simpleocl_LambdaCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::lambdacallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::LambdaCallExp)
+def test_simpleocl_lambdacallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_LambdaCallExp)
 
 @given(instance=OperatorCallExp_strategy)
 @settings(max_examples=50)
 def test_operatorcallexp_instantiation(instance):
     assert isinstance(instance, OperatorCallExp)
 
-@given(instance=simpleocl::EqOpCallExp_strategy)
+@given(instance=simpleocl_IntOpCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::eqopcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::EqOpCallExp)
+def test_simpleocl_intopcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_IntOpCallExp)
 
-@given(instance=simpleocl::RelOpCallExp_strategy)
+@given(instance=simpleocl_MulOpCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::relopcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::RelOpCallExp)
+def test_simpleocl_mulopcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_MulOpCallExp)
 
-@given(instance=simpleocl::MulOpCallExp_strategy)
+@given(instance=simpleocl_AddOpCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::mulopcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::MulOpCallExp)
+def test_simpleocl_addopcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_AddOpCallExp)
 
-@given(instance=simpleocl::IntOpCallExp_strategy)
+@given(instance=simpleocl_EqOpCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::intopcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::IntOpCallExp)
+def test_simpleocl_eqopcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_EqOpCallExp)
 
-@given(instance=simpleocl::AddOpCallExp_strategy)
+@given(instance=simpleocl_RelOpCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::addopcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::AddOpCallExp)
+def test_simpleocl_relopcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_RelOpCallExp)
 
-@given(instance=simpleocl::NotOpCallExp_strategy)
+@given(instance=simpleocl_NotOpCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::notopcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::NotOpCallExp)
+def test_simpleocl_notopcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_NotOpCallExp)
 
 @given(instance=StaticPropertyCall_strategy)
 @settings(max_examples=50)
 def test_staticpropertycall_instantiation(instance):
     assert isinstance(instance, StaticPropertyCall)
 
-@given(instance=simpleocl::StaticOperationCall_strategy)
+@given(instance=simpleocl_StaticOperationCall_strategy)
 @settings(max_examples=50)
-def test_simpleocl::staticoperationcall_instantiation(instance):
-    assert isinstance(instance, simpleocl::StaticOperationCall)
-
-@given(instance=simpleocl::StaticOperationCall_strategy)
-def test_simpleocl::staticoperationcall_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
+def test_simpleocl_staticoperationcall_instantiation(instance):
+    assert isinstance(instance, simpleocl_StaticOperationCall)
 
 
-@given(instance=simpleocl::StaticOperationCall_strategy)
-def test_simpleocl::staticoperationcall_operationName_setter(instance):
+
+@given(instance=simpleocl_StaticOperationCall_strategy)
+def test_simpleocl_staticoperationcall_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=simpleocl::StaticNavigationOrAttributeCall_strategy)
+@given(instance=simpleocl_StaticNavigationOrAttributeCall_strategy)
 @settings(max_examples=50)
-def test_simpleocl::staticnavigationorattributecall_instantiation(instance):
-    assert isinstance(instance, simpleocl::StaticNavigationOrAttributeCall)
-
-@given(instance=simpleocl::StaticNavigationOrAttributeCall_strategy)
-def test_simpleocl::staticnavigationorattributecall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleocl_staticnavigationorattributecall_instantiation(instance):
+    assert isinstance(instance, simpleocl_StaticNavigationOrAttributeCall)
 
 
-@given(instance=simpleocl::StaticNavigationOrAttributeCall_strategy)
-def test_simpleocl::staticnavigationorattributecall_name_setter(instance):
+
+@given(instance=simpleocl_StaticNavigationOrAttributeCall_strategy)
+def test_simpleocl_staticnavigationorattributecall_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2539,34 +2524,28 @@ def test_simpleocl::staticnavigationorattributecall_name_setter(instance):
 def test_numericexp_instantiation(instance):
     assert isinstance(instance, NumericExp)
 
-@given(instance=simpleocl::IntegerExp_strategy)
+@given(instance=simpleocl_IntegerExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::integerexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::IntegerExp)
-
-@given(instance=simpleocl::IntegerExp_strategy)
-def test_simpleocl::integerexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_simpleocl_integerexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_IntegerExp)
 
 
-@given(instance=simpleocl::IntegerExp_strategy)
-def test_simpleocl::integerexp_integerSymbol_setter(instance):
+
+@given(instance=simpleocl_IntegerExp_strategy)
+def test_simpleocl_integerexp_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
 
-@given(instance=simpleocl::RealExp_strategy)
+@given(instance=simpleocl_RealExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::realexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::RealExp)
-
-@given(instance=simpleocl::RealExp_strategy)
-def test_simpleocl::realexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
+def test_simpleocl_realexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_RealExp)
 
 
-@given(instance=simpleocl::RealExp_strategy)
-def test_simpleocl::realexp_realSymbol_setter(instance):
+
+@given(instance=simpleocl_RealExp_strategy)
+def test_simpleocl_realexp_realSymbol_setter(instance):
     original = instance.realSymbol
     instance.realSymbol = original
     assert instance.realSymbol == original
@@ -2576,89 +2555,83 @@ def test_simpleocl::realexp_realSymbol_setter(instance):
 def test_localvariable_instantiation(instance):
     assert isinstance(instance, LocalVariable)
 
-@given(instance=simpleocl::TuplePart_strategy)
+@given(instance=simpleocl_TuplePart_strategy)
 @settings(max_examples=50)
-def test_simpleocl::tuplepart_instantiation(instance):
-    assert isinstance(instance, simpleocl::TuplePart)
+def test_simpleocl_tuplepart_instantiation(instance):
+    assert isinstance(instance, simpleocl_TuplePart)
 
 @given(instance=CollectionExp_strategy)
 @settings(max_examples=50)
 def test_collectionexp_instantiation(instance):
     assert isinstance(instance, CollectionExp)
 
-@given(instance=simpleocl::OrderedSetExp_strategy)
+@given(instance=simpleocl_SequenceExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::orderedsetexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::OrderedSetExp)
+def test_simpleocl_sequenceexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_SequenceExp)
 
-@given(instance=simpleocl::SetExp_strategy)
+@given(instance=simpleocl_OrderedSetExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::setexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::SetExp)
+def test_simpleocl_orderedsetexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_OrderedSetExp)
 
-@given(instance=simpleocl::SequenceExp_strategy)
+@given(instance=simpleocl_SetExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::sequenceexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::SequenceExp)
+def test_simpleocl_setexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_SetExp)
 
-@given(instance=simpleocl::BagExp_strategy)
+@given(instance=simpleocl_BagExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::bagexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::BagExp)
+def test_simpleocl_bagexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_BagExp)
 
 @given(instance=CollectionPart_strategy)
 @settings(max_examples=50)
 def test_collectionpart_instantiation(instance):
     assert isinstance(instance, CollectionPart)
 
-@given(instance=simpleocl::CollectionItem_strategy)
+@given(instance=simpleocl_CollectionItem_strategy)
 @settings(max_examples=50)
-def test_simpleocl::collectionitem_instantiation(instance):
-    assert isinstance(instance, simpleocl::CollectionItem)
+def test_simpleocl_collectionitem_instantiation(instance):
+    assert isinstance(instance, simpleocl_CollectionItem)
 
-@given(instance=simpleocl::CollectionRange_strategy)
+@given(instance=simpleocl_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_simpleocl::collectionrange_instantiation(instance):
-    assert isinstance(instance, simpleocl::CollectionRange)
+def test_simpleocl_collectionrange_instantiation(instance):
+    assert isinstance(instance, simpleocl_CollectionRange)
 
 @given(instance=PrimitiveExp_strategy)
 @settings(max_examples=50)
 def test_primitiveexp_instantiation(instance):
     assert isinstance(instance, PrimitiveExp)
 
-@given(instance=simpleocl::NumericExp_strategy)
+@given(instance=simpleocl_NumericExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::numericexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::NumericExp)
+def test_simpleocl_numericexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_NumericExp)
 
-@given(instance=simpleocl::BooleanExp_strategy)
+@given(instance=simpleocl_BooleanExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::booleanexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::BooleanExp)
-
-@given(instance=simpleocl::BooleanExp_strategy)
-def test_simpleocl::booleanexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
+def test_simpleocl_booleanexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_BooleanExp)
 
 
-@given(instance=simpleocl::BooleanExp_strategy)
-def test_simpleocl::booleanexp_booleanSymbol_setter(instance):
+
+@given(instance=simpleocl_BooleanExp_strategy)
+def test_simpleocl_booleanexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
 
-@given(instance=simpleocl::StringExp_strategy)
+@given(instance=simpleocl_StringExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::stringexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::StringExp)
-
-@given(instance=simpleocl::StringExp_strategy)
-def test_simpleocl::stringexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_simpleocl_stringexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_StringExp)
 
 
-@given(instance=simpleocl::StringExp_strategy)
-def test_simpleocl::stringexp_stringSymbol_setter(instance):
+
+@given(instance=simpleocl_StringExp_strategy)
+def test_simpleocl_stringexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
@@ -2668,126 +2641,114 @@ def test_simpleocl::stringexp_stringSymbol_setter(instance):
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=simpleocl::EnumLiteralExp_strategy)
+@given(instance=simpleocl_OclUndefinedExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::EnumLiteralExp)
+def test_simpleocl_oclundefinedexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclUndefinedExp)
 
-@given(instance=simpleocl::EnumLiteralExp_strategy)
-def test_simpleocl::enumliteralexp_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=simpleocl_StaticPropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_simpleocl_staticpropertycallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_StaticPropertyCallExp)
+
+@given(instance=simpleocl_OclModelElementExp_strategy)
+@settings(max_examples=50)
+def test_simpleocl_oclmodelelementexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclModelElementExp)
 
 
-@given(instance=simpleocl::EnumLiteralExp_strategy)
-def test_simpleocl::enumliteralexp_name_setter(instance):
+
+@given(instance=simpleocl_OclModelElementExp_strategy)
+def test_simpleocl_oclmodelelementexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleocl::PrimitiveExp_strategy)
+@given(instance=simpleocl_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::primitiveexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::PrimitiveExp)
-
-@given(instance=simpleocl::OclUndefinedExp_strategy)
-@settings(max_examples=50)
-def test_simpleocl::oclundefinedexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclUndefinedExp)
-
-@given(instance=simpleocl::EnvExp_strategy)
-@settings(max_examples=50)
-def test_simpleocl::envexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::EnvExp)
-
-@given(instance=simpleocl::CollectionExp_strategy)
-@settings(max_examples=50)
-def test_simpleocl::collectionexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::CollectionExp)
-
-@given(instance=simpleocl::TupleExp_strategy)
-@settings(max_examples=50)
-def test_simpleocl::tupleexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::TupleExp)
-
-@given(instance=simpleocl::StaticPropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_simpleocl::staticpropertycallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::StaticPropertyCallExp)
-
-@given(instance=simpleocl::OclModelElementExp_strategy)
-@settings(max_examples=50)
-def test_simpleocl::oclmodelelementexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclModelElementExp)
-
-@given(instance=simpleocl::OclModelElementExp_strategy)
-def test_simpleocl::oclmodelelementexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleocl_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_EnumLiteralExp)
 
 
-@given(instance=simpleocl::OclModelElementExp_strategy)
-def test_simpleocl::oclmodelelementexp_name_setter(instance):
+
+@given(instance=simpleocl_EnumLiteralExp_strategy)
+def test_simpleocl_enumliteralexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleocl::BraceExp_strategy)
+@given(instance=simpleocl_PrimitiveExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::braceexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::BraceExp)
+def test_simpleocl_primitiveexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_PrimitiveExp)
 
-@given(instance=simpleocl::SelfExp_strategy)
+@given(instance=simpleocl_CollectionExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::selfexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::SelfExp)
+def test_simpleocl_collectionexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_CollectionExp)
 
-@given(instance=simpleocl::SuperExp_strategy)
+@given(instance=simpleocl_EnvExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::superexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::SuperExp)
+def test_simpleocl_envexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_EnvExp)
 
-@given(instance=simpleocl::MapExp_strategy)
+@given(instance=simpleocl_BraceExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::mapexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::MapExp)
+def test_simpleocl_braceexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_BraceExp)
 
-@given(instance=simpleocl::VariableExp_strategy)
+@given(instance=simpleocl_MapExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::variableexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::VariableExp)
+def test_simpleocl_mapexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_MapExp)
 
-@given(instance=simpleocl::OperatorCallExp_strategy)
+@given(instance=simpleocl_TupleExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::operatorcallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::OperatorCallExp)
+def test_simpleocl_tupleexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_TupleExp)
 
-@given(instance=simpleocl::OperatorCallExp_strategy)
-def test_simpleocl::operatorcallexp_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
+@given(instance=simpleocl_SelfExp_strategy)
+@settings(max_examples=50)
+def test_simpleocl_selfexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_SelfExp)
+
+@given(instance=simpleocl_SuperExp_strategy)
+@settings(max_examples=50)
+def test_simpleocl_superexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_SuperExp)
+
+@given(instance=simpleocl_VariableExp_strategy)
+@settings(max_examples=50)
+def test_simpleocl_variableexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_VariableExp)
+
+@given(instance=simpleocl_OperatorCallExp_strategy)
+@settings(max_examples=50)
+def test_simpleocl_operatorcallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_OperatorCallExp)
 
 
-@given(instance=simpleocl::OperatorCallExp_strategy)
-def test_simpleocl::operatorcallexp_operationName_setter(instance):
+
+@given(instance=simpleocl_OperatorCallExp_strategy)
+def test_simpleocl_operatorcallexp_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=simpleocl::Attribute_strategy)
+@given(instance=simpleocl_Attribute_strategy)
 @settings(max_examples=50)
-def test_simpleocl::attribute_instantiation(instance):
-    assert isinstance(instance, simpleocl::Attribute)
+def test_simpleocl_attribute_instantiation(instance):
+    assert isinstance(instance, simpleocl_Attribute)
 
-@given(instance=simpleocl::OclMetamodel_strategy)
+@given(instance=simpleocl_OclMetamodel_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclmetamodel_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclMetamodel)
-
-@given(instance=simpleocl::OclMetamodel_strategy)
-def test_simpleocl::oclmetamodel_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_simpleocl_oclmetamodel_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclMetamodel)
 
 
-@given(instance=simpleocl::OclMetamodel_strategy)
-def test_simpleocl::oclmetamodel_uri_setter(instance):
+
+@given(instance=simpleocl_OclMetamodel_strategy)
+def test_simpleocl_oclmetamodel_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
@@ -2797,243 +2758,210 @@ def test_simpleocl::oclmetamodel_uri_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simpleocl::OclModel_strategy)
+@given(instance=simpleocl_OclModel_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclmodel_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclModel)
+def test_simpleocl_oclmodel_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclModel)
 
-@given(instance=simpleocl::OclFeature_strategy)
+@given(instance=simpleocl_OclFeature_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclfeature_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclFeature)
-
-@given(instance=simpleocl::OclFeature_strategy)
-def test_simpleocl::oclfeature_eq_type(instance):
-    assert isinstance(instance.eq, str)
+def test_simpleocl_oclfeature_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclFeature)
 
 
-@given(instance=simpleocl::OclFeature_strategy)
-def test_simpleocl::oclfeature_eq_setter(instance):
+
+@given(instance=simpleocl_OclFeature_strategy)
+def test_simpleocl_oclfeature_eq_setter(instance):
     original = instance.eq
     instance.eq = original
     assert instance.eq == original
 
-@given(instance=simpleocl::Module_strategy)
+@given(instance=simpleocl_Module_strategy)
 @settings(max_examples=50)
-def test_simpleocl::module_instantiation(instance):
-    assert isinstance(instance, simpleocl::Module)
+def test_simpleocl_module_instantiation(instance):
+    assert isinstance(instance, simpleocl_Module)
 
 @given(instance=LocatedElement_strategy)
 @settings(max_examples=50)
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=simpleocl::MapElement_strategy)
+@given(instance=simpleocl_OclContextDefinition_strategy)
 @settings(max_examples=50)
-def test_simpleocl::mapelement_instantiation(instance):
-    assert isinstance(instance, simpleocl::MapElement)
+def test_simpleocl_oclcontextdefinition_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclContextDefinition)
 
-@given(instance=simpleocl::TupleTypeAttribute_strategy)
+@given(instance=simpleocl_MapElement_strategy)
 @settings(max_examples=50)
-def test_simpleocl::tupletypeattribute_instantiation(instance):
-    assert isinstance(instance, simpleocl::TupleTypeAttribute)
+def test_simpleocl_mapelement_instantiation(instance):
+    assert isinstance(instance, simpleocl_MapElement)
 
-@given(instance=simpleocl::TupleTypeAttribute_strategy)
-def test_simpleocl::tupletypeattribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simpleocl::TupleTypeAttribute_strategy)
-def test_simpleocl::tupletypeattribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=simpleocl::StaticPropertyCall_strategy)
+@given(instance=simpleocl_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_simpleocl::staticpropertycall_instantiation(instance):
-    assert isinstance(instance, simpleocl::StaticPropertyCall)
-
-@given(instance=simpleocl::VariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_simpleocl::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, simpleocl::VariableDeclaration)
-
-@given(instance=simpleocl::VariableDeclaration_strategy)
-def test_simpleocl::variabledeclaration_varName_type(instance):
-    assert isinstance(instance.varName, str)
+def test_simpleocl_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, simpleocl_VariableDeclaration)
 
 
-@given(instance=simpleocl::VariableDeclaration_strategy)
-def test_simpleocl::variabledeclaration_varName_setter(instance):
+
+@given(instance=simpleocl_VariableDeclaration_strategy)
+def test_simpleocl_variabledeclaration_varName_setter(instance):
     original = instance.varName
     instance.varName = original
     assert instance.varName == original
 
-@given(instance=simpleocl::OclContextDefinition_strategy)
+@given(instance=simpleocl_TupleTypeAttribute_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclcontextdefinition_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclContextDefinition)
-
-@given(instance=simpleocl::CollectionPart_strategy)
-@settings(max_examples=50)
-def test_simpleocl::collectionpart_instantiation(instance):
-    assert isinstance(instance, simpleocl::CollectionPart)
-
-@given(instance=simpleocl::PropertyCall_strategy)
-@settings(max_examples=50)
-def test_simpleocl::propertycall_instantiation(instance):
-    assert isinstance(instance, simpleocl::PropertyCall)
-
-@given(instance=simpleocl::NamedElement_strategy)
-@settings(max_examples=50)
-def test_simpleocl::namedelement_instantiation(instance):
-    assert isinstance(instance, simpleocl::NamedElement)
-
-@given(instance=simpleocl::NamedElement_strategy)
-def test_simpleocl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleocl_tupletypeattribute_instantiation(instance):
+    assert isinstance(instance, simpleocl_TupleTypeAttribute)
 
 
-@given(instance=simpleocl::NamedElement_strategy)
-def test_simpleocl::namedelement_name_setter(instance):
+
+@given(instance=simpleocl_TupleTypeAttribute_strategy)
+def test_simpleocl_tupletypeattribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleocl::Operation_strategy)
+@given(instance=simpleocl_PropertyCall_strategy)
 @settings(max_examples=50)
-def test_simpleocl::operation_instantiation(instance):
-    assert isinstance(instance, simpleocl::Operation)
+def test_simpleocl_propertycall_instantiation(instance):
+    assert isinstance(instance, simpleocl_PropertyCall)
 
-@given(instance=simpleocl::LocalVariable_strategy)
+@given(instance=simpleocl_CollectionPart_strategy)
 @settings(max_examples=50)
-def test_simpleocl::localvariable_instantiation(instance):
-    assert isinstance(instance, simpleocl::LocalVariable)
+def test_simpleocl_collectionpart_instantiation(instance):
+    assert isinstance(instance, simpleocl_CollectionPart)
 
-@given(instance=simpleocl::LocalVariable_strategy)
-def test_simpleocl::localvariable_eq_type(instance):
-    assert isinstance(instance.eq, str)
+@given(instance=simpleocl_StaticPropertyCall_strategy)
+@settings(max_examples=50)
+def test_simpleocl_staticpropertycall_instantiation(instance):
+    assert isinstance(instance, simpleocl_StaticPropertyCall)
+
+@given(instance=simpleocl_NamedElement_strategy)
+@settings(max_examples=50)
+def test_simpleocl_namedelement_instantiation(instance):
+    assert isinstance(instance, simpleocl_NamedElement)
 
 
-@given(instance=simpleocl::LocalVariable_strategy)
-def test_simpleocl::localvariable_eq_setter(instance):
+
+@given(instance=simpleocl_NamedElement_strategy)
+def test_simpleocl_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=simpleocl_Operation_strategy)
+@settings(max_examples=50)
+def test_simpleocl_operation_instantiation(instance):
+    assert isinstance(instance, simpleocl_Operation)
+
+@given(instance=simpleocl_LocalVariable_strategy)
+@settings(max_examples=50)
+def test_simpleocl_localvariable_instantiation(instance):
+    assert isinstance(instance, simpleocl_LocalVariable)
+
+
+
+@given(instance=simpleocl_LocalVariable_strategy)
+def test_simpleocl_localvariable_eq_setter(instance):
     original = instance.eq
     instance.eq = original
     assert instance.eq == original
 
-@given(instance=simpleocl::OperationCall_strategy)
+@given(instance=simpleocl_OperationCall_strategy)
 @settings(max_examples=50)
-def test_simpleocl::operationcall_instantiation(instance):
-    assert isinstance(instance, simpleocl::OperationCall)
-
-@given(instance=simpleocl::OperationCall_strategy)
-def test_simpleocl::operationcall_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
+def test_simpleocl_operationcall_instantiation(instance):
+    assert isinstance(instance, simpleocl_OperationCall)
 
 
-@given(instance=simpleocl::OperationCall_strategy)
-def test_simpleocl::operationcall_operationName_setter(instance):
+
+@given(instance=simpleocl_OperationCall_strategy)
+def test_simpleocl_operationcall_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=simpleocl::LoopExp_strategy)
+@given(instance=simpleocl_LoopExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::loopexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::LoopExp)
+def test_simpleocl_loopexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_LoopExp)
 
-@given(instance=simpleocl::LetExp_strategy)
+@given(instance=simpleocl_LetExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::letexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::LetExp)
+def test_simpleocl_letexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_LetExp)
 
-@given(instance=simpleocl::PropertyCallExp_strategy)
+@given(instance=simpleocl_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::propertycallexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::PropertyCallExp)
+def test_simpleocl_propertycallexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_PropertyCallExp)
 
-@given(instance=simpleocl::IfExp_strategy)
+@given(instance=simpleocl_IfExp_strategy)
 @settings(max_examples=50)
-def test_simpleocl::ifexp_instantiation(instance):
-    assert isinstance(instance, simpleocl::IfExp)
+def test_simpleocl_ifexp_instantiation(instance):
+    assert isinstance(instance, simpleocl_IfExp)
 
-@given(instance=simpleocl::OclType_strategy)
+@given(instance=simpleocl_OclType_strategy)
 @settings(max_examples=50)
-def test_simpleocl::ocltype_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclType)
-
-@given(instance=simpleocl::OclType_strategy)
-def test_simpleocl::ocltype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleocl_ocltype_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclType)
 
 
-@given(instance=simpleocl::OclType_strategy)
-def test_simpleocl::ocltype_name_setter(instance):
+
+@given(instance=simpleocl_OclType_strategy)
+def test_simpleocl_ocltype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleocl::OclExpression_strategy)
+@given(instance=simpleocl_OclExpression_strategy)
 @settings(max_examples=50)
-def test_simpleocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, simpleocl::OclExpression)
+def test_simpleocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, simpleocl_OclExpression)
 
-@given(instance=simpleocl::ModuleElement_strategy)
+@given(instance=simpleocl_ModuleElement_strategy)
 @settings(max_examples=50)
-def test_simpleocl::moduleelement_instantiation(instance):
-    assert isinstance(instance, simpleocl::ModuleElement)
+def test_simpleocl_moduleelement_instantiation(instance):
+    assert isinstance(instance, simpleocl_ModuleElement)
 
-@given(instance=simpleocl::Import_strategy)
+@given(instance=simpleocl_Import_strategy)
 @settings(max_examples=50)
-def test_simpleocl::import_instantiation(instance):
-    assert isinstance(instance, simpleocl::Import)
+def test_simpleocl_import_instantiation(instance):
+    assert isinstance(instance, simpleocl_Import)
 
-@given(instance=simpleocl::LocatedElement_strategy)
+@given(instance=simpleocl_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_simpleocl::locatedelement_instantiation(instance):
-    assert isinstance(instance, simpleocl::LocatedElement)
-
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_line_type(instance):
-    assert isinstance(instance.line, str)
+def test_simpleocl_locatedelement_instantiation(instance):
+    assert isinstance(instance, simpleocl_LocatedElement)
 
 
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
 
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_column_type(instance):
-    assert isinstance(instance.column, str)
-
-
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_column_setter(instance):
-    original = instance.column
-    instance.column = original
-    assert instance.column == original
-
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_charEnd_type(instance):
-    assert isinstance(instance.charEnd, str)
-
-
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_charEnd_setter(instance):
+@given(instance=simpleocl_LocatedElement_strategy)
+def test_simpleocl_locatedelement_charEnd_setter(instance):
     original = instance.charEnd
     instance.charEnd = original
     assert instance.charEnd == original
 
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_charStart_type(instance):
-    assert isinstance(instance.charStart, str)
 
 
-@given(instance=simpleocl::LocatedElement_strategy)
-def test_simpleocl::locatedelement_charStart_setter(instance):
+@given(instance=simpleocl_LocatedElement_strategy)
+def test_simpleocl_locatedelement_column_setter(instance):
+    original = instance.column
+    instance.column = original
+    assert instance.column == original
+
+
+
+@given(instance=simpleocl_LocatedElement_strategy)
+def test_simpleocl_locatedelement_charStart_setter(instance):
     original = instance.charStart
     instance.charStart = original
     assert instance.charStart == original
+
+
+
+@given(instance=simpleocl_LocatedElement_strategy)
+def test_simpleocl_locatedelement_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original

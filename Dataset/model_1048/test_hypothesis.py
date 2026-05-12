@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    minifsm::FinalState,
-    minifsm::Transition,
-    minifsm::State,
-    minifsm::FSM,
+    minifsm_FinalState,
+    minifsm_Transition,
+    minifsm_State,
+    minifsm_FSM,
 )
 
 # =============================================================================
@@ -33,37 +33,37 @@ def test_state_constructor_args():
 
 
 
-def test_minifsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(minifsm::FinalState)
+def test_minifsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(minifsm_FinalState)
 
 
-def test_minifsm::finalstate_constructor_exists():
-    assert callable(minifsm::FinalState.__init__)
+def test_minifsm_finalstate_constructor_exists():
+    assert callable(minifsm_FinalState.__init__)
 
 
-def test_minifsm::finalstate_constructor_args():
-    sig = inspect.signature(minifsm::FinalState.__init__)
+def test_minifsm_finalstate_constructor_args():
+    sig = inspect.signature(minifsm_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_minifsm::transition_is_not_abstract():
-    assert not inspect.isabstract(minifsm::Transition)
+def test_minifsm_transition_is_not_abstract():
+    assert not inspect.isabstract(minifsm_Transition)
 
 
-def test_minifsm::transition_constructor_exists():
-    assert callable(minifsm::Transition.__init__)
+def test_minifsm_transition_constructor_exists():
+    assert callable(minifsm_Transition.__init__)
 
 
-def test_minifsm::transition_constructor_args():
-    sig = inspect.signature(minifsm::Transition.__init__)
+def test_minifsm_transition_constructor_args():
+    sig = inspect.signature(minifsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_minifsm::transition_has_event():
-    assert hasattr(minifsm::Transition, "event")
+def test_minifsm_transition_has_event():
+    assert hasattr(minifsm_Transition, "event")
     descriptor = None
-    for klass in minifsm::Transition.__mro__:
+    for klass in minifsm_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -71,23 +71,23 @@ def test_minifsm::transition_has_event():
 
 
 
-def test_minifsm::state_is_not_abstract():
-    assert not inspect.isabstract(minifsm::State)
+def test_minifsm_state_is_not_abstract():
+    assert not inspect.isabstract(minifsm_State)
 
 
-def test_minifsm::state_constructor_exists():
-    assert callable(minifsm::State.__init__)
+def test_minifsm_state_constructor_exists():
+    assert callable(minifsm_State.__init__)
 
 
-def test_minifsm::state_constructor_args():
-    sig = inspect.signature(minifsm::State.__init__)
+def test_minifsm_state_constructor_args():
+    sig = inspect.signature(minifsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_minifsm::state_has_name():
-    assert hasattr(minifsm::State, "name")
+def test_minifsm_state_has_name():
+    assert hasattr(minifsm_State, "name")
     descriptor = None
-    for klass in minifsm::State.__mro__:
+    for klass in minifsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -95,16 +95,16 @@ def test_minifsm::state_has_name():
 
 
 
-def test_minifsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(minifsm::FSM)
+def test_minifsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(minifsm_FSM)
 
 
-def test_minifsm::fsm_constructor_exists():
-    assert callable(minifsm::FSM.__init__)
+def test_minifsm_fsm_constructor_exists():
+    assert callable(minifsm_FSM.__init__)
 
 
-def test_minifsm::fsm_constructor_args():
-    sig = inspect.signature(minifsm::FSM.__init__)
+def test_minifsm_fsm_constructor_args():
+    sig = inspect.signature(minifsm_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -122,21 +122,21 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-minifsm::FinalState_strategy = st.builds(
-    minifsm::FinalState,
+minifsm_FinalState_strategy = st.builds(
+    minifsm_FinalState,
 )
-minifsm::Transition_strategy = st.builds(
-    minifsm::Transition,
+minifsm_Transition_strategy = st.builds(
+    minifsm_Transition,
     event=
         safe_text
 )
-minifsm::State_strategy = st.builds(
-    minifsm::State,
+minifsm_State_strategy = st.builds(
+    minifsm_State,
     name=
         safe_text
 )
-minifsm::FSM_strategy = st.builds(
-    minifsm::FSM,
+minifsm_FSM_strategy = st.builds(
+    minifsm_FSM,
 )
 
 @given(instance=State_strategy)
@@ -144,44 +144,38 @@ minifsm::FSM_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=minifsm::FinalState_strategy)
+@given(instance=minifsm_FinalState_strategy)
 @settings(max_examples=50)
-def test_minifsm::finalstate_instantiation(instance):
-    assert isinstance(instance, minifsm::FinalState)
+def test_minifsm_finalstate_instantiation(instance):
+    assert isinstance(instance, minifsm_FinalState)
 
-@given(instance=minifsm::Transition_strategy)
+@given(instance=minifsm_Transition_strategy)
 @settings(max_examples=50)
-def test_minifsm::transition_instantiation(instance):
-    assert isinstance(instance, minifsm::Transition)
-
-@given(instance=minifsm::Transition_strategy)
-def test_minifsm::transition_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_minifsm_transition_instantiation(instance):
+    assert isinstance(instance, minifsm_Transition)
 
 
-@given(instance=minifsm::Transition_strategy)
-def test_minifsm::transition_event_setter(instance):
+
+@given(instance=minifsm_Transition_strategy)
+def test_minifsm_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=minifsm::State_strategy)
+@given(instance=minifsm_State_strategy)
 @settings(max_examples=50)
-def test_minifsm::state_instantiation(instance):
-    assert isinstance(instance, minifsm::State)
-
-@given(instance=minifsm::State_strategy)
-def test_minifsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_minifsm_state_instantiation(instance):
+    assert isinstance(instance, minifsm_State)
 
 
-@given(instance=minifsm::State_strategy)
-def test_minifsm::state_name_setter(instance):
+
+@given(instance=minifsm_State_strategy)
+def test_minifsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=minifsm::FSM_strategy)
+@given(instance=minifsm_FSM_strategy)
 @settings(max_examples=50)
-def test_minifsm::fsm_instantiation(instance):
-    assert isinstance(instance, minifsm::FSM)
+def test_minifsm_fsm_instantiation(instance):
+    assert isinstance(instance, minifsm_FSM)

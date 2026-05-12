@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Condition,
-    arduinoML::BaseCondition,
-    arduinoML::Condition,
-    arduinoML::NamedElement,
-    arduinoML::BooleanCondition,
+    arduinoML_BaseCondition,
+    arduinoML_Condition,
+    arduinoML_NamedElement,
+    arduinoML_BooleanCondition,
     NamedElement,
-    arduinoML::Brick,
-    arduinoML::SinkError,
-    arduinoML::Transition,
-    arduinoML::Action,
-    arduinoML::State,
-    arduinoML::App,
+    arduinoML_Brick,
+    arduinoML_SinkError,
+    arduinoML_Transition,
+    arduinoML_Action,
+    arduinoML_State,
+    arduinoML_App,
     Brick,
-    arduinoML::Sensor,
-    arduinoML::Actuator,
-    Operator,
+    arduinoML_Sensor,
+    arduinoML_Actuator,
     Signal,
-    Type,
     Comparator,
+    Operator,
+    Type,
 )
 
 # =============================================================================
@@ -47,81 +47,81 @@ def test_condition_constructor_args():
 
 
 
-def test_arduinoml::basecondition_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::BaseCondition)
+def test_arduinoml_basecondition_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_BaseCondition)
 
 
-def test_arduinoml::basecondition_constructor_exists():
-    assert callable(arduinoML::BaseCondition.__init__)
+def test_arduinoml_basecondition_constructor_exists():
+    assert callable(arduinoML_BaseCondition.__init__)
 
 
-def test_arduinoml::basecondition_constructor_args():
-    sig = inspect.signature(arduinoML::BaseCondition.__init__)
+def test_arduinoml_basecondition_constructor_args():
+    sig = inspect.signature(arduinoML_BaseCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::condition_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Condition)
+def test_arduinoml_condition_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Condition)
 
 
-def test_arduinoml::condition_constructor_exists():
-    assert callable(arduinoML::Condition.__init__)
+def test_arduinoml_condition_constructor_exists():
+    assert callable(arduinoML_Condition.__init__)
 
 
-def test_arduinoml::condition_constructor_args():
-    sig = inspect.signature(arduinoML::Condition.__init__)
+def test_arduinoml_condition_constructor_args():
+    sig = inspect.signature(arduinoML_Condition.__init__)
     params = list(sig.parameters.keys())
-    assert "comparator" in params, "Missing parameter 'comparator'"
-    assert "analogvalue" in params, "Missing parameter 'analogvalue'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "analogvalue" in params, "Missing parameter 'analogvalue'"
+    assert "comparator" in params, "Missing parameter 'comparator'"
 
-def test_arduinoml::condition_has_comparator():
-    assert hasattr(arduinoML::Condition, "comparator")
+def test_arduinoml_condition_has_value():
+    assert hasattr(arduinoML_Condition, "value")
     descriptor = None
-    for klass in arduinoML::Condition.__mro__:
-        if "comparator" in klass.__dict__:
-            descriptor = klass.__dict__["comparator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arduinoml::condition_has_analogvalue():
-    assert hasattr(arduinoML::Condition, "analogvalue")
-    descriptor = None
-    for klass in arduinoML::Condition.__mro__:
-        if "analogvalue" in klass.__dict__:
-            descriptor = klass.__dict__["analogvalue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arduinoml::condition_has_value():
-    assert hasattr(arduinoML::Condition, "value")
-    descriptor = None
-    for klass in arduinoML::Condition.__mro__:
+    for klass in arduinoML_Condition.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_arduinoml_condition_has_analogvalue():
+    assert hasattr(arduinoML_Condition, "analogvalue")
+    descriptor = None
+    for klass in arduinoML_Condition.__mro__:
+        if "analogvalue" in klass.__dict__:
+            descriptor = klass.__dict__["analogvalue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_arduinoml_condition_has_comparator():
+    assert hasattr(arduinoML_Condition, "comparator")
+    descriptor = None
+    for klass in arduinoML_Condition.__mro__:
+        if "comparator" in klass.__dict__:
+            descriptor = klass.__dict__["comparator"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_arduinoml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::NamedElement)
+
+def test_arduinoml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_NamedElement)
 
 
-def test_arduinoml::namedelement_constructor_exists():
-    assert callable(arduinoML::NamedElement.__init__)
+def test_arduinoml_namedelement_constructor_exists():
+    assert callable(arduinoML_NamedElement.__init__)
 
 
-def test_arduinoml::namedelement_constructor_args():
-    sig = inspect.signature(arduinoML::NamedElement.__init__)
+def test_arduinoml_namedelement_constructor_args():
+    sig = inspect.signature(arduinoML_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arduinoml::namedelement_has_name():
-    assert hasattr(arduinoML::NamedElement, "name")
+def test_arduinoml_namedelement_has_name():
+    assert hasattr(arduinoML_NamedElement, "name")
     descriptor = None
-    for klass in arduinoML::NamedElement.__mro__:
+    for klass in arduinoML_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -129,23 +129,23 @@ def test_arduinoml::namedelement_has_name():
 
 
 
-def test_arduinoml::booleancondition_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::BooleanCondition)
+def test_arduinoml_booleancondition_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_BooleanCondition)
 
 
-def test_arduinoml::booleancondition_constructor_exists():
-    assert callable(arduinoML::BooleanCondition.__init__)
+def test_arduinoml_booleancondition_constructor_exists():
+    assert callable(arduinoML_BooleanCondition.__init__)
 
 
-def test_arduinoml::booleancondition_constructor_args():
-    sig = inspect.signature(arduinoML::BooleanCondition.__init__)
+def test_arduinoml_booleancondition_constructor_args():
+    sig = inspect.signature(arduinoML_BooleanCondition.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_arduinoml::booleancondition_has_operator():
-    assert hasattr(arduinoML::BooleanCondition, "operator")
+def test_arduinoml_booleancondition_has_operator():
+    assert hasattr(arduinoML_BooleanCondition, "operator")
     descriptor = None
-    for klass in arduinoML::BooleanCondition.__mro__:
+    for klass in arduinoML_BooleanCondition.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -167,57 +167,57 @@ def test_namedelement_constructor_args():
 
 
 
-def test_arduinoml::brick_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Brick)
+def test_arduinoml_brick_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Brick)
 
 
-def test_arduinoml::brick_constructor_exists():
-    assert callable(arduinoML::Brick.__init__)
+def test_arduinoml_brick_constructor_exists():
+    assert callable(arduinoML_Brick.__init__)
 
 
-def test_arduinoml::brick_constructor_args():
-    sig = inspect.signature(arduinoML::Brick.__init__)
+def test_arduinoml_brick_constructor_args():
+    sig = inspect.signature(arduinoML_Brick.__init__)
     params = list(sig.parameters.keys())
-    assert "pin" in params, "Missing parameter 'pin'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "pin" in params, "Missing parameter 'pin'"
 
-def test_arduinoml::brick_has_pin():
-    assert hasattr(arduinoML::Brick, "pin")
+def test_arduinoml_brick_has_type():
+    assert hasattr(arduinoML_Brick, "type")
     descriptor = None
-    for klass in arduinoML::Brick.__mro__:
-        if "pin" in klass.__dict__:
-            descriptor = klass.__dict__["pin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arduinoml::brick_has_type():
-    assert hasattr(arduinoML::Brick, "type")
-    descriptor = None
-    for klass in arduinoML::Brick.__mro__:
+    for klass in arduinoML_Brick.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_arduinoml_brick_has_pin():
+    assert hasattr(arduinoML_Brick, "pin")
+    descriptor = None
+    for klass in arduinoML_Brick.__mro__:
+        if "pin" in klass.__dict__:
+            descriptor = klass.__dict__["pin"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_arduinoml::sinkerror_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::SinkError)
+
+def test_arduinoml_sinkerror_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_SinkError)
 
 
-def test_arduinoml::sinkerror_constructor_exists():
-    assert callable(arduinoML::SinkError.__init__)
+def test_arduinoml_sinkerror_constructor_exists():
+    assert callable(arduinoML_SinkError.__init__)
 
 
-def test_arduinoml::sinkerror_constructor_args():
-    sig = inspect.signature(arduinoML::SinkError.__init__)
+def test_arduinoml_sinkerror_constructor_args():
+    sig = inspect.signature(arduinoML_SinkError.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arduinoml::sinkerror_has_value():
-    assert hasattr(arduinoML::SinkError, "value")
+def test_arduinoml_sinkerror_has_value():
+    assert hasattr(arduinoML_SinkError, "value")
     descriptor = None
-    for klass in arduinoML::SinkError.__mro__:
+    for klass in arduinoML_SinkError.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -225,47 +225,47 @@ def test_arduinoml::sinkerror_has_value():
 
 
 
-def test_arduinoml::transition_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Transition)
+def test_arduinoml_transition_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Transition)
 
 
-def test_arduinoml::transition_constructor_exists():
-    assert callable(arduinoML::Transition.__init__)
+def test_arduinoml_transition_constructor_exists():
+    assert callable(arduinoML_Transition.__init__)
 
 
-def test_arduinoml::transition_constructor_args():
-    sig = inspect.signature(arduinoML::Transition.__init__)
+def test_arduinoml_transition_constructor_args():
+    sig = inspect.signature(arduinoML_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::action_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Action)
+def test_arduinoml_action_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Action)
 
 
-def test_arduinoml::action_constructor_exists():
-    assert callable(arduinoML::Action.__init__)
+def test_arduinoml_action_constructor_exists():
+    assert callable(arduinoML_Action.__init__)
 
 
-def test_arduinoml::action_constructor_args():
-    sig = inspect.signature(arduinoML::Action.__init__)
+def test_arduinoml_action_constructor_args():
+    sig = inspect.signature(arduinoML_Action.__init__)
     params = list(sig.parameters.keys())
     assert "analogvalue" in params, "Missing parameter 'analogvalue'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arduinoml::action_has_analogvalue():
-    assert hasattr(arduinoML::Action, "analogvalue")
+def test_arduinoml_action_has_analogvalue():
+    assert hasattr(arduinoML_Action, "analogvalue")
     descriptor = None
-    for klass in arduinoML::Action.__mro__:
+    for klass in arduinoML_Action.__mro__:
         if "analogvalue" in klass.__dict__:
             descriptor = klass.__dict__["analogvalue"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduinoml::action_has_value():
-    assert hasattr(arduinoML::Action, "value")
+def test_arduinoml_action_has_value():
+    assert hasattr(arduinoML_Action, "value")
     descriptor = None
-    for klass in arduinoML::Action.__mro__:
+    for klass in arduinoML_Action.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -273,30 +273,30 @@ def test_arduinoml::action_has_value():
 
 
 
-def test_arduinoml::state_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::State)
+def test_arduinoml_state_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_State)
 
 
-def test_arduinoml::state_constructor_exists():
-    assert callable(arduinoML::State.__init__)
+def test_arduinoml_state_constructor_exists():
+    assert callable(arduinoML_State.__init__)
 
 
-def test_arduinoml::state_constructor_args():
-    sig = inspect.signature(arduinoML::State.__init__)
+def test_arduinoml_state_constructor_args():
+    sig = inspect.signature(arduinoML_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::app_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::App)
+def test_arduinoml_app_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_App)
 
 
-def test_arduinoml::app_constructor_exists():
-    assert callable(arduinoML::App.__init__)
+def test_arduinoml_app_constructor_exists():
+    assert callable(arduinoML_App.__init__)
 
 
-def test_arduinoml::app_constructor_args():
-    sig = inspect.signature(arduinoML::App.__init__)
+def test_arduinoml_app_constructor_args():
+    sig = inspect.signature(arduinoML_App.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -315,46 +315,31 @@ def test_brick_constructor_args():
 
 
 
-def test_arduinoml::sensor_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Sensor)
+def test_arduinoml_sensor_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Sensor)
 
 
-def test_arduinoml::sensor_constructor_exists():
-    assert callable(arduinoML::Sensor.__init__)
+def test_arduinoml_sensor_constructor_exists():
+    assert callable(arduinoML_Sensor.__init__)
 
 
-def test_arduinoml::sensor_constructor_args():
-    sig = inspect.signature(arduinoML::Sensor.__init__)
+def test_arduinoml_sensor_constructor_args():
+    sig = inspect.signature(arduinoML_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinoml::actuator_is_not_abstract():
-    assert not inspect.isabstract(arduinoML::Actuator)
+def test_arduinoml_actuator_is_not_abstract():
+    assert not inspect.isabstract(arduinoML_Actuator)
 
 
-def test_arduinoml::actuator_constructor_exists():
-    assert callable(arduinoML::Actuator.__init__)
+def test_arduinoml_actuator_constructor_exists():
+    assert callable(arduinoML_Actuator.__init__)
 
 
-def test_arduinoml::actuator_constructor_args():
-    sig = inspect.signature(arduinoML::Actuator.__init__)
+def test_arduinoml_actuator_constructor_args():
+    sig = inspect.signature(arduinoML_Actuator.__init__)
     params = list(sig.parameters.keys())
-
-def test_operator_exists():
-    # Check that the Enumeration exists
-    assert Operator is not None
-
-def test_operator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Operator]
-    expected_literals = [
-        "OR",
-        "AND",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Operator"
 
 def test_signal_exists():
     # Check that the Enumeration exists
@@ -371,6 +356,39 @@ def test_signal_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Signal"
 
+def test_comparator_exists():
+    # Check that the Enumeration exists
+    assert Comparator is not None
+
+def test_comparator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Comparator]
+    expected_literals = [
+        "einf",
+        "equ",
+        "inf",
+        "sup",
+        "esup",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Comparator"
+
+def test_operator_exists():
+    # Check that the Enumeration exists
+    assert Operator is not None
+
+def test_operator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Operator]
+    expected_literals = [
+        "AND",
+        "OR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Operator"
+
 def test_type_exists():
     # Check that the Enumeration exists
     assert Type is not None
@@ -385,24 +403,6 @@ def test_type_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Type"
-
-def test_comparator_exists():
-    # Check that the Enumeration exists
-    assert Comparator is not None
-
-def test_comparator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Comparator]
-    expected_literals = [
-        "sup",
-        "inf",
-        "equ",
-        "esup",
-        "einf",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Comparator"
 
 
 # =============================================================================
@@ -419,67 +419,67 @@ safe_text = st.text(
 Condition_strategy = st.builds(
     Condition,
 )
-arduinoML::BaseCondition_strategy = st.builds(
-    arduinoML::BaseCondition,
+arduinoML_BaseCondition_strategy = st.builds(
+    arduinoML_BaseCondition,
 )
-arduinoML::Condition_strategy = st.builds(
-    arduinoML::Condition,
-    comparator=
+arduinoML_Condition_strategy = st.builds(
+    arduinoML_Condition,
+    value=
         safe_text,
     analogvalue=
         st.integers(),
-    value=
+    comparator=
         safe_text
 )
-arduinoML::NamedElement_strategy = st.builds(
-    arduinoML::NamedElement,
+arduinoML_NamedElement_strategy = st.builds(
+    arduinoML_NamedElement,
     name=
         safe_text
 )
-arduinoML::BooleanCondition_strategy = st.builds(
-    arduinoML::BooleanCondition,
+arduinoML_BooleanCondition_strategy = st.builds(
+    arduinoML_BooleanCondition,
     operator=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-arduinoML::Brick_strategy = st.builds(
-    arduinoML::Brick,
-    pin=
-        st.integers(),
+arduinoML_Brick_strategy = st.builds(
+    arduinoML_Brick,
     type=
-        safe_text
+        safe_text,
+    pin=
+        st.integers()
 )
-arduinoML::SinkError_strategy = st.builds(
-    arduinoML::SinkError,
+arduinoML_SinkError_strategy = st.builds(
+    arduinoML_SinkError,
     value=
         st.integers()
 )
-arduinoML::Transition_strategy = st.builds(
-    arduinoML::Transition,
+arduinoML_Transition_strategy = st.builds(
+    arduinoML_Transition,
 )
-arduinoML::Action_strategy = st.builds(
-    arduinoML::Action,
+arduinoML_Action_strategy = st.builds(
+    arduinoML_Action,
     analogvalue=
         st.integers(),
     value=
         safe_text
 )
-arduinoML::State_strategy = st.builds(
-    arduinoML::State,
+arduinoML_State_strategy = st.builds(
+    arduinoML_State,
 )
-arduinoML::App_strategy = st.builds(
-    arduinoML::App,
+arduinoML_App_strategy = st.builds(
+    arduinoML_App,
 )
 Brick_strategy = st.builds(
     Brick,
 )
-arduinoML::Sensor_strategy = st.builds(
-    arduinoML::Sensor,
+arduinoML_Sensor_strategy = st.builds(
+    arduinoML_Sensor,
 )
-arduinoML::Actuator_strategy = st.builds(
-    arduinoML::Actuator,
+arduinoML_Actuator_strategy = st.builds(
+    arduinoML_Actuator,
 )
 
 @given(instance=Condition_strategy)
@@ -487,77 +487,62 @@ arduinoML::Actuator_strategy = st.builds(
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=arduinoML::BaseCondition_strategy)
+@given(instance=arduinoML_BaseCondition_strategy)
 @settings(max_examples=50)
-def test_arduinoml::basecondition_instantiation(instance):
-    assert isinstance(instance, arduinoML::BaseCondition)
+def test_arduinoml_basecondition_instantiation(instance):
+    assert isinstance(instance, arduinoML_BaseCondition)
 
-@given(instance=arduinoML::Condition_strategy)
+@given(instance=arduinoML_Condition_strategy)
 @settings(max_examples=50)
-def test_arduinoml::condition_instantiation(instance):
-    assert isinstance(instance, arduinoML::Condition)
-
-@given(instance=arduinoML::Condition_strategy)
-def test_arduinoml::condition_comparator_type(instance):
-    assert isinstance(instance.comparator, str)
+def test_arduinoml_condition_instantiation(instance):
+    assert isinstance(instance, arduinoML_Condition)
 
 
-@given(instance=arduinoML::Condition_strategy)
-def test_arduinoml::condition_comparator_setter(instance):
-    original = instance.comparator
-    instance.comparator = original
-    assert instance.comparator == original
 
-@given(instance=arduinoML::Condition_strategy)
-def test_arduinoml::condition_analogvalue_type(instance):
-    assert isinstance(instance.analogvalue, int)
-
-
-@given(instance=arduinoML::Condition_strategy)
-def test_arduinoml::condition_analogvalue_setter(instance):
-    original = instance.analogvalue
-    instance.analogvalue = original
-    assert instance.analogvalue == original
-
-@given(instance=arduinoML::Condition_strategy)
-def test_arduinoml::condition_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=arduinoML::Condition_strategy)
-def test_arduinoml::condition_value_setter(instance):
+@given(instance=arduinoML_Condition_strategy)
+def test_arduinoml_condition_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arduinoML::NamedElement_strategy)
+
+
+@given(instance=arduinoML_Condition_strategy)
+def test_arduinoml_condition_analogvalue_setter(instance):
+    original = instance.analogvalue
+    instance.analogvalue = original
+    assert instance.analogvalue == original
+
+
+
+@given(instance=arduinoML_Condition_strategy)
+def test_arduinoml_condition_comparator_setter(instance):
+    original = instance.comparator
+    instance.comparator = original
+    assert instance.comparator == original
+
+@given(instance=arduinoML_NamedElement_strategy)
 @settings(max_examples=50)
-def test_arduinoml::namedelement_instantiation(instance):
-    assert isinstance(instance, arduinoML::NamedElement)
-
-@given(instance=arduinoML::NamedElement_strategy)
-def test_arduinoml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arduinoml_namedelement_instantiation(instance):
+    assert isinstance(instance, arduinoML_NamedElement)
 
 
-@given(instance=arduinoML::NamedElement_strategy)
-def test_arduinoml::namedelement_name_setter(instance):
+
+@given(instance=arduinoML_NamedElement_strategy)
+def test_arduinoml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=arduinoML::BooleanCondition_strategy)
+@given(instance=arduinoML_BooleanCondition_strategy)
 @settings(max_examples=50)
-def test_arduinoml::booleancondition_instantiation(instance):
-    assert isinstance(instance, arduinoML::BooleanCondition)
-
-@given(instance=arduinoML::BooleanCondition_strategy)
-def test_arduinoml::booleancondition_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_arduinoml_booleancondition_instantiation(instance):
+    assert isinstance(instance, arduinoML_BooleanCondition)
 
 
-@given(instance=arduinoML::BooleanCondition_strategy)
-def test_arduinoml::booleancondition_operator_setter(instance):
+
+@given(instance=arduinoML_BooleanCondition_strategy)
+def test_arduinoml_booleancondition_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -567,102 +552,87 @@ def test_arduinoml::booleancondition_operator_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=arduinoML::Brick_strategy)
+@given(instance=arduinoML_Brick_strategy)
 @settings(max_examples=50)
-def test_arduinoml::brick_instantiation(instance):
-    assert isinstance(instance, arduinoML::Brick)
-
-@given(instance=arduinoML::Brick_strategy)
-def test_arduinoml::brick_pin_type(instance):
-    assert isinstance(instance.pin, int)
+def test_arduinoml_brick_instantiation(instance):
+    assert isinstance(instance, arduinoML_Brick)
 
 
-@given(instance=arduinoML::Brick_strategy)
-def test_arduinoml::brick_pin_setter(instance):
-    original = instance.pin
-    instance.pin = original
-    assert instance.pin == original
 
-@given(instance=arduinoML::Brick_strategy)
-def test_arduinoml::brick_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=arduinoML::Brick_strategy)
-def test_arduinoml::brick_type_setter(instance):
+@given(instance=arduinoML_Brick_strategy)
+def test_arduinoml_brick_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=arduinoML::SinkError_strategy)
+
+
+@given(instance=arduinoML_Brick_strategy)
+def test_arduinoml_brick_pin_setter(instance):
+    original = instance.pin
+    instance.pin = original
+    assert instance.pin == original
+
+@given(instance=arduinoML_SinkError_strategy)
 @settings(max_examples=50)
-def test_arduinoml::sinkerror_instantiation(instance):
-    assert isinstance(instance, arduinoML::SinkError)
-
-@given(instance=arduinoML::SinkError_strategy)
-def test_arduinoml::sinkerror_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_arduinoml_sinkerror_instantiation(instance):
+    assert isinstance(instance, arduinoML_SinkError)
 
 
-@given(instance=arduinoML::SinkError_strategy)
-def test_arduinoml::sinkerror_value_setter(instance):
+
+@given(instance=arduinoML_SinkError_strategy)
+def test_arduinoml_sinkerror_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arduinoML::Transition_strategy)
+@given(instance=arduinoML_Transition_strategy)
 @settings(max_examples=50)
-def test_arduinoml::transition_instantiation(instance):
-    assert isinstance(instance, arduinoML::Transition)
+def test_arduinoml_transition_instantiation(instance):
+    assert isinstance(instance, arduinoML_Transition)
 
-@given(instance=arduinoML::Action_strategy)
+@given(instance=arduinoML_Action_strategy)
 @settings(max_examples=50)
-def test_arduinoml::action_instantiation(instance):
-    assert isinstance(instance, arduinoML::Action)
-
-@given(instance=arduinoML::Action_strategy)
-def test_arduinoml::action_analogvalue_type(instance):
-    assert isinstance(instance.analogvalue, int)
+def test_arduinoml_action_instantiation(instance):
+    assert isinstance(instance, arduinoML_Action)
 
 
-@given(instance=arduinoML::Action_strategy)
-def test_arduinoml::action_analogvalue_setter(instance):
+
+@given(instance=arduinoML_Action_strategy)
+def test_arduinoml_action_analogvalue_setter(instance):
     original = instance.analogvalue
     instance.analogvalue = original
     assert instance.analogvalue == original
 
-@given(instance=arduinoML::Action_strategy)
-def test_arduinoml::action_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=arduinoML::Action_strategy)
-def test_arduinoml::action_value_setter(instance):
+@given(instance=arduinoML_Action_strategy)
+def test_arduinoml_action_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arduinoML::State_strategy)
+@given(instance=arduinoML_State_strategy)
 @settings(max_examples=50)
-def test_arduinoml::state_instantiation(instance):
-    assert isinstance(instance, arduinoML::State)
+def test_arduinoml_state_instantiation(instance):
+    assert isinstance(instance, arduinoML_State)
 
-@given(instance=arduinoML::App_strategy)
+@given(instance=arduinoML_App_strategy)
 @settings(max_examples=50)
-def test_arduinoml::app_instantiation(instance):
-    assert isinstance(instance, arduinoML::App)
+def test_arduinoml_app_instantiation(instance):
+    assert isinstance(instance, arduinoML_App)
 
 @given(instance=Brick_strategy)
 @settings(max_examples=50)
 def test_brick_instantiation(instance):
     assert isinstance(instance, Brick)
 
-@given(instance=arduinoML::Sensor_strategy)
+@given(instance=arduinoML_Sensor_strategy)
 @settings(max_examples=50)
-def test_arduinoml::sensor_instantiation(instance):
-    assert isinstance(instance, arduinoML::Sensor)
+def test_arduinoml_sensor_instantiation(instance):
+    assert isinstance(instance, arduinoML_Sensor)
 
-@given(instance=arduinoML::Actuator_strategy)
+@given(instance=arduinoML_Actuator_strategy)
 @settings(max_examples=50)
-def test_arduinoml::actuator_instantiation(instance):
-    assert isinstance(instance, arduinoML::Actuator)
+def test_arduinoml_actuator_instantiation(instance):
+    assert isinstance(instance, arduinoML_Actuator)

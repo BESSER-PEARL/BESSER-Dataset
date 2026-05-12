@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testmerge::F,
-    testmerge::E,
-    testmerge::C,
-    testmerge::D,
+from python_code import (
+    testmerge_F,
+    testmerge_E,
+    testmerge_C,
+    testmerge_D,
 )
 
 # =============================================================================
@@ -18,51 +18,51 @@ from classes import (
 
 
 
-def test_testmerge::f_is_not_abstract():
-    assert not inspect.isabstract(testmerge::F)
+def test_testmerge_f_is_not_abstract():
+    assert not inspect.isabstract(testmerge_F)
 
 
-def test_testmerge::f_constructor_exists():
-    assert callable(testmerge::F.__init__)
+def test_testmerge_f_constructor_exists():
+    assert callable(testmerge_F.__init__)
 
 
-def test_testmerge::f_constructor_args():
-    sig = inspect.signature(testmerge::F.__init__)
+def test_testmerge_f_constructor_args():
+    sig = inspect.signature(testmerge_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmerge::e_is_not_abstract():
-    assert not inspect.isabstract(testmerge::E)
+def test_testmerge_e_is_not_abstract():
+    assert not inspect.isabstract(testmerge_E)
 
 
-def test_testmerge::e_constructor_exists():
-    assert callable(testmerge::E.__init__)
+def test_testmerge_e_constructor_exists():
+    assert callable(testmerge_E.__init__)
 
 
-def test_testmerge::e_constructor_args():
-    sig = inspect.signature(testmerge::E.__init__)
+def test_testmerge_e_constructor_args():
+    sig = inspect.signature(testmerge_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmerge::c_is_not_abstract():
-    assert not inspect.isabstract(testmerge::C)
+def test_testmerge_c_is_not_abstract():
+    assert not inspect.isabstract(testmerge_C)
 
 
-def test_testmerge::c_constructor_exists():
-    assert callable(testmerge::C.__init__)
+def test_testmerge_c_constructor_exists():
+    assert callable(testmerge_C.__init__)
 
 
-def test_testmerge::c_constructor_args():
-    sig = inspect.signature(testmerge::C.__init__)
+def test_testmerge_c_constructor_args():
+    sig = inspect.signature(testmerge_C.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_testmerge::c_has_dataType():
-    assert hasattr(testmerge::C, "dataType")
+def test_testmerge_c_has_dataType():
+    assert hasattr(testmerge_C, "dataType")
     descriptor = None
-    for klass in testmerge::C.__mro__:
+    for klass in testmerge_C.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -70,23 +70,23 @@ def test_testmerge::c_has_dataType():
 
 
 
-def test_testmerge::d_is_not_abstract():
-    assert not inspect.isabstract(testmerge::D)
+def test_testmerge_d_is_not_abstract():
+    assert not inspect.isabstract(testmerge_D)
 
 
-def test_testmerge::d_constructor_exists():
-    assert callable(testmerge::D.__init__)
+def test_testmerge_d_constructor_exists():
+    assert callable(testmerge_D.__init__)
 
 
-def test_testmerge::d_constructor_args():
-    sig = inspect.signature(testmerge::D.__init__)
+def test_testmerge_d_constructor_args():
+    sig = inspect.signature(testmerge_D.__init__)
     params = list(sig.parameters.keys())
     assert "emfDataType" in params, "Missing parameter 'emfDataType'"
 
-def test_testmerge::d_has_emfDataType():
-    assert hasattr(testmerge::D, "emfDataType")
+def test_testmerge_d_has_emfDataType():
+    assert hasattr(testmerge_D, "emfDataType")
     descriptor = None
-    for klass in testmerge::D.__mro__:
+    for klass in testmerge_D.__mro__:
         if "emfDataType" in klass.__dict__:
             descriptor = klass.__dict__["emfDataType"]
             break
@@ -104,61 +104,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testmerge::F_strategy = st.builds(
-    testmerge::F,
+testmerge_F_strategy = st.builds(
+    testmerge_F,
 )
-testmerge::E_strategy = st.builds(
-    testmerge::E,
+testmerge_E_strategy = st.builds(
+    testmerge_E,
 )
-testmerge::C_strategy = st.builds(
-    testmerge::C,
+testmerge_C_strategy = st.builds(
+    testmerge_C,
     dataType=
         safe_text
 )
-testmerge::D_strategy = st.builds(
-    testmerge::D,
+testmerge_D_strategy = st.builds(
+    testmerge_D,
     emfDataType=
         safe_text
 )
 
-@given(instance=testmerge::F_strategy)
+@given(instance=testmerge_F_strategy)
 @settings(max_examples=50)
-def test_testmerge::f_instantiation(instance):
-    assert isinstance(instance, testmerge::F)
+def test_testmerge_f_instantiation(instance):
+    assert isinstance(instance, testmerge_F)
 
-@given(instance=testmerge::E_strategy)
+@given(instance=testmerge_E_strategy)
 @settings(max_examples=50)
-def test_testmerge::e_instantiation(instance):
-    assert isinstance(instance, testmerge::E)
+def test_testmerge_e_instantiation(instance):
+    assert isinstance(instance, testmerge_E)
 
-@given(instance=testmerge::C_strategy)
+@given(instance=testmerge_C_strategy)
 @settings(max_examples=50)
-def test_testmerge::c_instantiation(instance):
-    assert isinstance(instance, testmerge::C)
-
-@given(instance=testmerge::C_strategy)
-def test_testmerge::c_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+def test_testmerge_c_instantiation(instance):
+    assert isinstance(instance, testmerge_C)
 
 
-@given(instance=testmerge::C_strategy)
-def test_testmerge::c_dataType_setter(instance):
+
+@given(instance=testmerge_C_strategy)
+def test_testmerge_c_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=testmerge::D_strategy)
+@given(instance=testmerge_D_strategy)
 @settings(max_examples=50)
-def test_testmerge::d_instantiation(instance):
-    assert isinstance(instance, testmerge::D)
-
-@given(instance=testmerge::D_strategy)
-def test_testmerge::d_emfDataType_type(instance):
-    assert isinstance(instance.emfDataType, str)
+def test_testmerge_d_instantiation(instance):
+    assert isinstance(instance, testmerge_D)
 
 
-@given(instance=testmerge::D_strategy)
-def test_testmerge::d_emfDataType_setter(instance):
+
+@given(instance=testmerge_D_strategy)
+def test_testmerge_d_emfDataType_setter(instance):
     original = instance.emfDataType
     instance.emfDataType = original
     assert instance.emfDataType == original

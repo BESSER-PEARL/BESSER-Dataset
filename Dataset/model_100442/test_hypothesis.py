@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Invariant,
-    statemachines::EventBElement,
+from python_code import (
+    statemachines_EventBElement,
     StatemachineOwner,
     EventBNamed,
     AbstractNode,
-    statemachines::Final,
-    statemachines::Initial,
-    statemachines::State,
+    statemachines_Initial,
+    statemachines_State,
     EventBElement,
     Event,
     EventBLabeled,
     EventBCommentedElement,
-    statemachines::Transition,
-    statemachines::StatemachineOwner,
-    statemachines::EventBNamedCommentedElement,
-    statemachines::AbstractNode,
+    statemachines_Transition,
+    statemachines_StatemachineOwner,
+    statemachines_EventBNamedCommentedElement,
+    statemachines_AbstractNode,
     Diagram,
     AbstractExtension,
     EventBNamedCommentedElement,
-    statemachines::Statemachine,
+    statemachines_Statemachine,
+    Invariant,
+    statemachines_Final,
     TranslationKind,
 )
 
@@ -35,30 +35,16 @@ from classes import (
 
 
 
-def test_invariant_is_not_abstract():
-    assert not inspect.isabstract(Invariant)
+def test_statemachines_eventbelement_is_not_abstract():
+    assert not inspect.isabstract(statemachines_EventBElement)
 
 
-def test_invariant_constructor_exists():
-    assert callable(Invariant.__init__)
+def test_statemachines_eventbelement_constructor_exists():
+    assert callable(statemachines_EventBElement.__init__)
 
 
-def test_invariant_constructor_args():
-    sig = inspect.signature(Invariant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachines::eventbelement_is_not_abstract():
-    assert not inspect.isabstract(statemachines::EventBElement)
-
-
-def test_statemachines::eventbelement_constructor_exists():
-    assert callable(statemachines::EventBElement.__init__)
-
-
-def test_statemachines::eventbelement_constructor_args():
-    sig = inspect.signature(statemachines::EventBElement.__init__)
+def test_statemachines_eventbelement_constructor_args():
+    sig = inspect.signature(statemachines_EventBElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,51 +91,37 @@ def test_abstractnode_constructor_args():
 
 
 
-def test_statemachines::final_is_not_abstract():
-    assert not inspect.isabstract(statemachines::Final)
+def test_statemachines_initial_is_not_abstract():
+    assert not inspect.isabstract(statemachines_Initial)
 
 
-def test_statemachines::final_constructor_exists():
-    assert callable(statemachines::Final.__init__)
+def test_statemachines_initial_constructor_exists():
+    assert callable(statemachines_Initial.__init__)
 
 
-def test_statemachines::final_constructor_args():
-    sig = inspect.signature(statemachines::Final.__init__)
+def test_statemachines_initial_constructor_args():
+    sig = inspect.signature(statemachines_Initial.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::initial_is_not_abstract():
-    assert not inspect.isabstract(statemachines::Initial)
+def test_statemachines_state_is_not_abstract():
+    assert not inspect.isabstract(statemachines_State)
 
 
-def test_statemachines::initial_constructor_exists():
-    assert callable(statemachines::Initial.__init__)
+def test_statemachines_state_constructor_exists():
+    assert callable(statemachines_State.__init__)
 
 
-def test_statemachines::initial_constructor_args():
-    sig = inspect.signature(statemachines::Initial.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachines::state_is_not_abstract():
-    assert not inspect.isabstract(statemachines::State)
-
-
-def test_statemachines::state_constructor_exists():
-    assert callable(statemachines::State.__init__)
-
-
-def test_statemachines::state_constructor_args():
-    sig = inspect.signature(statemachines::State.__init__)
+def test_statemachines_state_constructor_args():
+    sig = inspect.signature(statemachines_State.__init__)
     params = list(sig.parameters.keys())
     assert "active" in params, "Missing parameter 'active'"
 
-def test_statemachines::state_has_active():
-    assert hasattr(statemachines::State, "active")
+def test_statemachines_state_has_active():
+    assert hasattr(statemachines_State, "active")
     descriptor = None
-    for klass in statemachines::State.__mro__:
+    for klass in statemachines_State.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
@@ -213,23 +185,23 @@ def test_eventbcommentedelement_constructor_args():
 
 
 
-def test_statemachines::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachines::Transition)
+def test_statemachines_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachines_Transition)
 
 
-def test_statemachines::transition_constructor_exists():
-    assert callable(statemachines::Transition.__init__)
+def test_statemachines_transition_constructor_exists():
+    assert callable(statemachines_Transition.__init__)
 
 
-def test_statemachines::transition_constructor_args():
-    sig = inspect.signature(statemachines::Transition.__init__)
+def test_statemachines_transition_constructor_args():
+    sig = inspect.signature(statemachines_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "operations" in params, "Missing parameter 'operations'"
 
-def test_statemachines::transition_has_operations():
-    assert hasattr(statemachines::Transition, "operations")
+def test_statemachines_transition_has_operations():
+    assert hasattr(statemachines_Transition, "operations")
     descriptor = None
-    for klass in statemachines::Transition.__mro__:
+    for klass in statemachines_Transition.__mro__:
         if "operations" in klass.__dict__:
             descriptor = klass.__dict__["operations"]
             break
@@ -237,44 +209,44 @@ def test_statemachines::transition_has_operations():
 
 
 
-def test_statemachines::statemachineowner_is_not_abstract():
-    assert not inspect.isabstract(statemachines::StatemachineOwner)
+def test_statemachines_statemachineowner_is_not_abstract():
+    assert not inspect.isabstract(statemachines_StatemachineOwner)
 
 
-def test_statemachines::statemachineowner_constructor_exists():
-    assert callable(statemachines::StatemachineOwner.__init__)
+def test_statemachines_statemachineowner_constructor_exists():
+    assert callable(statemachines_StatemachineOwner.__init__)
 
 
-def test_statemachines::statemachineowner_constructor_args():
-    sig = inspect.signature(statemachines::StatemachineOwner.__init__)
+def test_statemachines_statemachineowner_constructor_args():
+    sig = inspect.signature(statemachines_StatemachineOwner.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::eventbnamedcommentedelement_is_not_abstract():
-    assert not inspect.isabstract(statemachines::EventBNamedCommentedElement)
+def test_statemachines_eventbnamedcommentedelement_is_not_abstract():
+    assert not inspect.isabstract(statemachines_EventBNamedCommentedElement)
 
 
-def test_statemachines::eventbnamedcommentedelement_constructor_exists():
-    assert callable(statemachines::EventBNamedCommentedElement.__init__)
+def test_statemachines_eventbnamedcommentedelement_constructor_exists():
+    assert callable(statemachines_EventBNamedCommentedElement.__init__)
 
 
-def test_statemachines::eventbnamedcommentedelement_constructor_args():
-    sig = inspect.signature(statemachines::EventBNamedCommentedElement.__init__)
+def test_statemachines_eventbnamedcommentedelement_constructor_args():
+    sig = inspect.signature(statemachines_EventBNamedCommentedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::abstractnode_is_not_abstract():
-    assert not inspect.isabstract(statemachines::AbstractNode)
+def test_statemachines_abstractnode_is_not_abstract():
+    assert not inspect.isabstract(statemachines_AbstractNode)
 
 
-def test_statemachines::abstractnode_constructor_exists():
-    assert callable(statemachines::AbstractNode.__init__)
+def test_statemachines_abstractnode_constructor_exists():
+    assert callable(statemachines_AbstractNode.__init__)
 
 
-def test_statemachines::abstractnode_constructor_args():
-    sig = inspect.signature(statemachines::AbstractNode.__init__)
+def test_statemachines_abstractnode_constructor_args():
+    sig = inspect.signature(statemachines_AbstractNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -321,37 +293,65 @@ def test_eventbnamedcommentedelement_constructor_args():
 
 
 
-def test_statemachines::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachines::Statemachine)
+def test_statemachines_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachines_Statemachine)
 
 
-def test_statemachines::statemachine_constructor_exists():
-    assert callable(statemachines::Statemachine.__init__)
+def test_statemachines_statemachine_constructor_exists():
+    assert callable(statemachines_Statemachine.__init__)
 
 
-def test_statemachines::statemachine_constructor_args():
-    sig = inspect.signature(statemachines::Statemachine.__init__)
+def test_statemachines_statemachine_constructor_args():
+    sig = inspect.signature(statemachines_Statemachine.__init__)
     params = list(sig.parameters.keys())
-    assert "selfName" in params, "Missing parameter 'selfName'"
     assert "translation" in params, "Missing parameter 'translation'"
+    assert "selfName" in params, "Missing parameter 'selfName'"
 
-def test_statemachines::statemachine_has_selfName():
-    assert hasattr(statemachines::Statemachine, "selfName")
+def test_statemachines_statemachine_has_translation():
+    assert hasattr(statemachines_Statemachine, "translation")
     descriptor = None
-    for klass in statemachines::Statemachine.__mro__:
+    for klass in statemachines_Statemachine.__mro__:
+        if "translation" in klass.__dict__:
+            descriptor = klass.__dict__["translation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachines_statemachine_has_selfName():
+    assert hasattr(statemachines_Statemachine, "selfName")
+    descriptor = None
+    for klass in statemachines_Statemachine.__mro__:
         if "selfName" in klass.__dict__:
             descriptor = klass.__dict__["selfName"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachines::statemachine_has_translation():
-    assert hasattr(statemachines::Statemachine, "translation")
-    descriptor = None
-    for klass in statemachines::Statemachine.__mro__:
-        if "translation" in klass.__dict__:
-            descriptor = klass.__dict__["translation"]
-            break
-    assert isinstance(descriptor, property)
+
+
+def test_invariant_is_not_abstract():
+    assert not inspect.isabstract(Invariant)
+
+
+def test_invariant_constructor_exists():
+    assert callable(Invariant.__init__)
+
+
+def test_invariant_constructor_args():
+    sig = inspect.signature(Invariant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachines_final_is_not_abstract():
+    assert not inspect.isabstract(statemachines_Final)
+
+
+def test_statemachines_final_constructor_exists():
+    assert callable(statemachines_Final.__init__)
+
+
+def test_statemachines_final_constructor_args():
+    sig = inspect.signature(statemachines_Final.__init__)
+    params = list(sig.parameters.keys())
 
 def test_translationkind_exists():
     # Check that the Enumeration exists
@@ -361,9 +361,9 @@ def test_translationkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TranslationKind]
     expected_literals = [
-        "REFINEDVAR",
-        "MULTIVAR",
         "SINGLEVAR",
+        "MULTIVAR",
+        "REFINEDVAR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -381,11 +381,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Invariant_strategy = st.builds(
-    Invariant,
-)
-statemachines::EventBElement_strategy = st.builds(
-    statemachines::EventBElement,
+statemachines_EventBElement_strategy = st.builds(
+    statemachines_EventBElement,
 )
 StatemachineOwner_strategy = st.builds(
     StatemachineOwner,
@@ -396,14 +393,11 @@ EventBNamed_strategy = st.builds(
 AbstractNode_strategy = st.builds(
     AbstractNode,
 )
-statemachines::Final_strategy = st.builds(
-    statemachines::Final,
+statemachines_Initial_strategy = st.builds(
+    statemachines_Initial,
 )
-statemachines::Initial_strategy = st.builds(
-    statemachines::Initial,
-)
-statemachines::State_strategy = st.builds(
-    statemachines::State,
+statemachines_State_strategy = st.builds(
+    statemachines_State,
     active=
         st.booleans()
 )
@@ -419,19 +413,19 @@ EventBLabeled_strategy = st.builds(
 EventBCommentedElement_strategy = st.builds(
     EventBCommentedElement,
 )
-statemachines::Transition_strategy = st.builds(
-    statemachines::Transition,
+statemachines_Transition_strategy = st.builds(
+    statemachines_Transition,
     operations=
         safe_text
 )
-statemachines::StatemachineOwner_strategy = st.builds(
-    statemachines::StatemachineOwner,
+statemachines_StatemachineOwner_strategy = st.builds(
+    statemachines_StatemachineOwner,
 )
-statemachines::EventBNamedCommentedElement_strategy = st.builds(
-    statemachines::EventBNamedCommentedElement,
+statemachines_EventBNamedCommentedElement_strategy = st.builds(
+    statemachines_EventBNamedCommentedElement,
 )
-statemachines::AbstractNode_strategy = st.builds(
-    statemachines::AbstractNode,
+statemachines_AbstractNode_strategy = st.builds(
+    statemachines_AbstractNode,
 )
 Diagram_strategy = st.builds(
     Diagram,
@@ -442,23 +436,24 @@ AbstractExtension_strategy = st.builds(
 EventBNamedCommentedElement_strategy = st.builds(
     EventBNamedCommentedElement,
 )
-statemachines::Statemachine_strategy = st.builds(
-    statemachines::Statemachine,
-    selfName=
-        safe_text,
+statemachines_Statemachine_strategy = st.builds(
+    statemachines_Statemachine,
     translation=
+        safe_text,
+    selfName=
         safe_text
 )
+Invariant_strategy = st.builds(
+    Invariant,
+)
+statemachines_Final_strategy = st.builds(
+    statemachines_Final,
+)
 
-@given(instance=Invariant_strategy)
+@given(instance=statemachines_EventBElement_strategy)
 @settings(max_examples=50)
-def test_invariant_instantiation(instance):
-    assert isinstance(instance, Invariant)
-
-@given(instance=statemachines::EventBElement_strategy)
-@settings(max_examples=50)
-def test_statemachines::eventbelement_instantiation(instance):
-    assert isinstance(instance, statemachines::EventBElement)
+def test_statemachines_eventbelement_instantiation(instance):
+    assert isinstance(instance, statemachines_EventBElement)
 
 @given(instance=StatemachineOwner_strategy)
 @settings(max_examples=50)
@@ -475,28 +470,20 @@ def test_eventbnamed_instantiation(instance):
 def test_abstractnode_instantiation(instance):
     assert isinstance(instance, AbstractNode)
 
-@given(instance=statemachines::Final_strategy)
+@given(instance=statemachines_Initial_strategy)
 @settings(max_examples=50)
-def test_statemachines::final_instantiation(instance):
-    assert isinstance(instance, statemachines::Final)
+def test_statemachines_initial_instantiation(instance):
+    assert isinstance(instance, statemachines_Initial)
 
-@given(instance=statemachines::Initial_strategy)
+@given(instance=statemachines_State_strategy)
 @settings(max_examples=50)
-def test_statemachines::initial_instantiation(instance):
-    assert isinstance(instance, statemachines::Initial)
-
-@given(instance=statemachines::State_strategy)
-@settings(max_examples=50)
-def test_statemachines::state_instantiation(instance):
-    assert isinstance(instance, statemachines::State)
-
-@given(instance=statemachines::State_strategy)
-def test_statemachines::state_active_type(instance):
-    assert isinstance(instance.active, bool)
+def test_statemachines_state_instantiation(instance):
+    assert isinstance(instance, statemachines_State)
 
 
-@given(instance=statemachines::State_strategy)
-def test_statemachines::state_active_setter(instance):
+
+@given(instance=statemachines_State_strategy)
+def test_statemachines_state_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
@@ -521,36 +508,33 @@ def test_eventblabeled_instantiation(instance):
 def test_eventbcommentedelement_instantiation(instance):
     assert isinstance(instance, EventBCommentedElement)
 
-@given(instance=statemachines::Transition_strategy)
+@given(instance=statemachines_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachines::transition_instantiation(instance):
-    assert isinstance(instance, statemachines::Transition)
-
-@given(instance=statemachines::Transition_strategy)
-def test_statemachines::transition_operations_type(instance):
-    assert isinstance(instance.operations, str)
+def test_statemachines_transition_instantiation(instance):
+    assert isinstance(instance, statemachines_Transition)
 
 
-@given(instance=statemachines::Transition_strategy)
-def test_statemachines::transition_operations_setter(instance):
+
+@given(instance=statemachines_Transition_strategy)
+def test_statemachines_transition_operations_setter(instance):
     original = instance.operations
     instance.operations = original
     assert instance.operations == original
 
-@given(instance=statemachines::StatemachineOwner_strategy)
+@given(instance=statemachines_StatemachineOwner_strategy)
 @settings(max_examples=50)
-def test_statemachines::statemachineowner_instantiation(instance):
-    assert isinstance(instance, statemachines::StatemachineOwner)
+def test_statemachines_statemachineowner_instantiation(instance):
+    assert isinstance(instance, statemachines_StatemachineOwner)
 
-@given(instance=statemachines::EventBNamedCommentedElement_strategy)
+@given(instance=statemachines_EventBNamedCommentedElement_strategy)
 @settings(max_examples=50)
-def test_statemachines::eventbnamedcommentedelement_instantiation(instance):
-    assert isinstance(instance, statemachines::EventBNamedCommentedElement)
+def test_statemachines_eventbnamedcommentedelement_instantiation(instance):
+    assert isinstance(instance, statemachines_EventBNamedCommentedElement)
 
-@given(instance=statemachines::AbstractNode_strategy)
+@given(instance=statemachines_AbstractNode_strategy)
 @settings(max_examples=50)
-def test_statemachines::abstractnode_instantiation(instance):
-    assert isinstance(instance, statemachines::AbstractNode)
+def test_statemachines_abstractnode_instantiation(instance):
+    assert isinstance(instance, statemachines_AbstractNode)
 
 @given(instance=Diagram_strategy)
 @settings(max_examples=50)
@@ -567,29 +551,33 @@ def test_abstractextension_instantiation(instance):
 def test_eventbnamedcommentedelement_instantiation(instance):
     assert isinstance(instance, EventBNamedCommentedElement)
 
-@given(instance=statemachines::Statemachine_strategy)
+@given(instance=statemachines_Statemachine_strategy)
 @settings(max_examples=50)
-def test_statemachines::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachines::Statemachine)
-
-@given(instance=statemachines::Statemachine_strategy)
-def test_statemachines::statemachine_selfName_type(instance):
-    assert isinstance(instance.selfName, str)
+def test_statemachines_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachines_Statemachine)
 
 
-@given(instance=statemachines::Statemachine_strategy)
-def test_statemachines::statemachine_selfName_setter(instance):
+
+@given(instance=statemachines_Statemachine_strategy)
+def test_statemachines_statemachine_translation_setter(instance):
+    original = instance.translation
+    instance.translation = original
+    assert instance.translation == original
+
+
+
+@given(instance=statemachines_Statemachine_strategy)
+def test_statemachines_statemachine_selfName_setter(instance):
     original = instance.selfName
     instance.selfName = original
     assert instance.selfName == original
 
-@given(instance=statemachines::Statemachine_strategy)
-def test_statemachines::statemachine_translation_type(instance):
-    assert isinstance(instance.translation, str)
+@given(instance=Invariant_strategy)
+@settings(max_examples=50)
+def test_invariant_instantiation(instance):
+    assert isinstance(instance, Invariant)
 
-
-@given(instance=statemachines::Statemachine_strategy)
-def test_statemachines::statemachine_translation_setter(instance):
-    original = instance.translation
-    instance.translation = original
-    assert instance.translation == original
+@given(instance=statemachines_Final_strategy)
+@settings(max_examples=50)
+def test_statemachines_final_instantiation(instance):
+    assert isinstance(instance, statemachines_Final)

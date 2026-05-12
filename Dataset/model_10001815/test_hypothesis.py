@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     C2,
@@ -356,9 +356,18 @@ def test_personnel_constructor_exists():
 def test_personnel_constructor_args():
     sig = inspect.signature(PERSONNEL.__init__)
     params = list(sig.parameters.keys())
+    assert "unPrivate" in params, "Missing parameter 'unPrivate'"
     assert "prenomPersonnel" in params, "Missing parameter 'prenomPersonnel'"
     assert "nomPersonnel" in params, "Missing parameter 'nomPersonnel'"
-    assert "unPrivate" in params, "Missing parameter 'unPrivate'"
+
+def test_personnel_has_unPrivate():
+    assert hasattr(PERSONNEL, "unPrivate")
+    descriptor = None
+    for klass in PERSONNEL.__mro__:
+        if "unPrivate" in klass.__dict__:
+            descriptor = klass.__dict__["unPrivate"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_personnel_has_prenomPersonnel():
     assert hasattr(PERSONNEL, "prenomPersonnel")
@@ -375,15 +384,6 @@ def test_personnel_has_nomPersonnel():
     for klass in PERSONNEL.__mro__:
         if "nomPersonnel" in klass.__dict__:
             descriptor = klass.__dict__["nomPersonnel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_personnel_has_unPrivate():
-    assert hasattr(PERSONNEL, "unPrivate")
-    descriptor = None
-    for klass in PERSONNEL.__mro__:
-        if "unPrivate" in klass.__dict__:
-            descriptor = klass.__dict__["unPrivate"]
             break
     assert isinstance(descriptor, property)
 
@@ -467,12 +467,12 @@ PERMIS_strategy = st.builds(
 )
 PERSONNEL_strategy = st.builds(
     PERSONNEL,
+    unPrivate=
+        st.booleans(),
     prenomPersonnel=
         safe_text,
     nomPersonnel=
-        safe_text,
-    unPrivate=
-        st.booleans()
+        safe_text
 )
 
 @given(instance=C2_strategy)
@@ -490,9 +490,6 @@ def test_c11_instantiation(instance):
 def test_c1_instantiation(instance):
     assert isinstance(instance, C1)
 
-@given(instance=C1_strategy)
-def test_c1_attC1_type(instance):
-    assert isinstance(instance.attC1, int)
 
 
 @given(instance=C1_strategy)
@@ -501,9 +498,6 @@ def test_c1_attC1_setter(instance):
     instance.attC1 = original
     assert instance.attC1 == original
 
-@given(instance=C1_strategy)
-def test_c1_attC2_type(instance):
-    assert isinstance(instance.attC2, bool)
 
 
 @given(instance=C1_strategy)
@@ -517,9 +511,6 @@ def test_c1_attC2_setter(instance):
 def test_b1_instantiation(instance):
     assert isinstance(instance, B1)
 
-@given(instance=B1_strategy)
-def test_b1_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B1_strategy)
@@ -538,9 +529,6 @@ def test_z_instantiation(instance):
 def test_a1_instantiation(instance):
     assert isinstance(instance, A1)
 
-@given(instance=A1_strategy)
-def test_a1_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A1_strategy)
@@ -559,9 +547,6 @@ def test_r_instantiation(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_attY_type(instance):
-    assert isinstance(instance.attY, str)
 
 
 @given(instance=Y_strategy)
@@ -575,9 +560,6 @@ def test_y_attY_setter(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_attC1_type(instance):
-    assert isinstance(instance.attC1, int)
 
 
 @given(instance=C_strategy)
@@ -586,9 +568,6 @@ def test_c_attC1_setter(instance):
     instance.attC1 = original
     assert instance.attC1 == original
 
-@given(instance=C_strategy)
-def test_c_attC2_type(instance):
-    assert isinstance(instance.attC2, bool)
 
 
 @given(instance=C_strategy)
@@ -602,9 +581,6 @@ def test_c_attC2_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B_strategy)
@@ -618,9 +594,6 @@ def test_b_attB_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A_strategy)
@@ -639,9 +612,6 @@ def test_reservation_instantiation(instance):
 def test_chauffeur_instantiation(instance):
     assert isinstance(instance, CHAUFFEUR)
 
-@given(instance=CHAUFFEUR_strategy)
-def test_chauffeur_nomPersonnel_type(instance):
-    assert isinstance(instance.nomPersonnel, str)
 
 
 @given(instance=CHAUFFEUR_strategy)
@@ -650,9 +620,6 @@ def test_chauffeur_nomPersonnel_setter(instance):
     instance.nomPersonnel = original
     assert instance.nomPersonnel == original
 
-@given(instance=CHAUFFEUR_strategy)
-def test_chauffeur_prenomPersonnel_type(instance):
-    assert isinstance(instance.prenomPersonnel, str)
 
 
 @given(instance=CHAUFFEUR_strategy)
@@ -666,9 +633,6 @@ def test_chauffeur_prenomPersonnel_setter(instance):
 def test_permis_instantiation(instance):
     assert isinstance(instance, PERMIS)
 
-@given(instance=PERMIS_strategy)
-def test_permis_libPermis_type(instance):
-    assert isinstance(instance.libPermis, str)
 
 
 @given(instance=PERMIS_strategy)
@@ -682,9 +646,14 @@ def test_permis_libPermis_setter(instance):
 def test_personnel_instantiation(instance):
     assert isinstance(instance, PERSONNEL)
 
+
+
 @given(instance=PERSONNEL_strategy)
-def test_personnel_prenomPersonnel_type(instance):
-    assert isinstance(instance.prenomPersonnel, str)
+def test_personnel_unPrivate_setter(instance):
+    original = instance.unPrivate
+    instance.unPrivate = original
+    assert instance.unPrivate == original
+
 
 
 @given(instance=PERSONNEL_strategy)
@@ -693,9 +662,6 @@ def test_personnel_prenomPersonnel_setter(instance):
     instance.prenomPersonnel = original
     assert instance.prenomPersonnel == original
 
-@given(instance=PERSONNEL_strategy)
-def test_personnel_nomPersonnel_type(instance):
-    assert isinstance(instance.nomPersonnel, str)
 
 
 @given(instance=PERSONNEL_strategy)
@@ -703,14 +669,3 @@ def test_personnel_nomPersonnel_setter(instance):
     original = instance.nomPersonnel
     instance.nomPersonnel = original
     assert instance.nomPersonnel == original
-
-@given(instance=PERSONNEL_strategy)
-def test_personnel_unPrivate_type(instance):
-    assert isinstance(instance.unPrivate, bool)
-
-
-@given(instance=PERSONNEL_strategy)
-def test_personnel_unPrivate_setter(instance):
-    original = instance.unPrivate
-    instance.unPrivate = original
-    assert instance.unPrivate == original

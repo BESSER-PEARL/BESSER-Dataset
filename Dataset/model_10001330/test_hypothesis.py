@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     RiderStatusUpdate,
@@ -44,9 +44,18 @@ def test_riderstatusupdate_constructor_exists():
 def test_riderstatusupdate_constructor_args():
     sig = inspect.signature(RiderStatusUpdate.__init__)
     params = list(sig.parameters.keys())
+    assert "ItemList" in params, "Missing parameter 'ItemList'"
     assert "CustomerName" in params, "Missing parameter 'CustomerName'"
     assert "OrderDate_Time" in params, "Missing parameter 'OrderDate_Time'"
-    assert "ItemList" in params, "Missing parameter 'ItemList'"
+
+def test_riderstatusupdate_has_ItemList():
+    assert hasattr(RiderStatusUpdate, "ItemList")
+    descriptor = None
+    for klass in RiderStatusUpdate.__mro__:
+        if "ItemList" in klass.__dict__:
+            descriptor = klass.__dict__["ItemList"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_riderstatusupdate_has_CustomerName():
     assert hasattr(RiderStatusUpdate, "CustomerName")
@@ -66,15 +75,6 @@ def test_riderstatusupdate_has_OrderDate_Time():
             break
     assert isinstance(descriptor, property)
 
-def test_riderstatusupdate_has_ItemList():
-    assert hasattr(RiderStatusUpdate, "ItemList")
-    descriptor = None
-    for klass in RiderStatusUpdate.__mro__:
-        if "ItemList" in klass.__dict__:
-            descriptor = klass.__dict__["ItemList"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_order_is_not_abstract():
@@ -88,18 +88,18 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "OrderTime_Date" in params, "Missing parameter 'OrderTime_Date'"
-    assert "OrderReview" in params, "Missing parameter 'OrderReview'"
-    assert "OrderStatus" in params, "Missing parameter 'OrderStatus'"
     assert "OrderPrice" in params, "Missing parameter 'OrderPrice'"
+    assert "OrderReview" in params, "Missing parameter 'OrderReview'"
+    assert "OrderTime_Date" in params, "Missing parameter 'OrderTime_Date'"
+    assert "OrderStatus" in params, "Missing parameter 'OrderStatus'"
     assert "OrderRider" in params, "Missing parameter 'OrderRider'"
 
-def test_order_has_OrderTime_Date():
-    assert hasattr(Order, "OrderTime_Date")
+def test_order_has_OrderPrice():
+    assert hasattr(Order, "OrderPrice")
     descriptor = None
     for klass in Order.__mro__:
-        if "OrderTime_Date" in klass.__dict__:
-            descriptor = klass.__dict__["OrderTime_Date"]
+        if "OrderPrice" in klass.__dict__:
+            descriptor = klass.__dict__["OrderPrice"]
             break
     assert isinstance(descriptor, property)
 
@@ -112,21 +112,21 @@ def test_order_has_OrderReview():
             break
     assert isinstance(descriptor, property)
 
+def test_order_has_OrderTime_Date():
+    assert hasattr(Order, "OrderTime_Date")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "OrderTime_Date" in klass.__dict__:
+            descriptor = klass.__dict__["OrderTime_Date"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_order_has_OrderStatus():
     assert hasattr(Order, "OrderStatus")
     descriptor = None
     for klass in Order.__mro__:
         if "OrderStatus" in klass.__dict__:
             descriptor = klass.__dict__["OrderStatus"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_OrderPrice():
-    assert hasattr(Order, "OrderPrice")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "OrderPrice" in klass.__dict__:
-            descriptor = klass.__dict__["OrderPrice"]
             break
     assert isinstance(descriptor, property)
 
@@ -152,19 +152,10 @@ def test_companytrackorder_constructor_exists():
 def test_companytrackorder_constructor_args():
     sig = inspect.signature(CompanyTrackOrder.__init__)
     params = list(sig.parameters.keys())
-    assert "OrderRider" in params, "Missing parameter 'OrderRider'"
     assert "OrderDate_Time" in params, "Missing parameter 'OrderDate_Time'"
-    assert "OrderStatus" in params, "Missing parameter 'OrderStatus'"
     assert "CustomerName" in params, "Missing parameter 'CustomerName'"
-
-def test_companytrackorder_has_OrderRider():
-    assert hasattr(CompanyTrackOrder, "OrderRider")
-    descriptor = None
-    for klass in CompanyTrackOrder.__mro__:
-        if "OrderRider" in klass.__dict__:
-            descriptor = klass.__dict__["OrderRider"]
-            break
-    assert isinstance(descriptor, property)
+    assert "OrderRider" in params, "Missing parameter 'OrderRider'"
+    assert "OrderStatus" in params, "Missing parameter 'OrderStatus'"
 
 def test_companytrackorder_has_OrderDate_Time():
     assert hasattr(CompanyTrackOrder, "OrderDate_Time")
@@ -175,21 +166,30 @@ def test_companytrackorder_has_OrderDate_Time():
             break
     assert isinstance(descriptor, property)
 
-def test_companytrackorder_has_OrderStatus():
-    assert hasattr(CompanyTrackOrder, "OrderStatus")
-    descriptor = None
-    for klass in CompanyTrackOrder.__mro__:
-        if "OrderStatus" in klass.__dict__:
-            descriptor = klass.__dict__["OrderStatus"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_companytrackorder_has_CustomerName():
     assert hasattr(CompanyTrackOrder, "CustomerName")
     descriptor = None
     for klass in CompanyTrackOrder.__mro__:
         if "CustomerName" in klass.__dict__:
             descriptor = klass.__dict__["CustomerName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companytrackorder_has_OrderRider():
+    assert hasattr(CompanyTrackOrder, "OrderRider")
+    descriptor = None
+    for klass in CompanyTrackOrder.__mro__:
+        if "OrderRider" in klass.__dict__:
+            descriptor = klass.__dict__["OrderRider"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companytrackorder_has_OrderStatus():
+    assert hasattr(CompanyTrackOrder, "OrderStatus")
+    descriptor = None
+    for klass in CompanyTrackOrder.__mro__:
+        if "OrderStatus" in klass.__dict__:
+            descriptor = klass.__dict__["OrderStatus"]
             break
     assert isinstance(descriptor, property)
 
@@ -206,10 +206,19 @@ def test_companyorderhistory_constructor_exists():
 def test_companyorderhistory_constructor_args():
     sig = inspect.signature(CompanyOrderHistory.__init__)
     params = list(sig.parameters.keys())
+    assert "CustomerName" in params, "Missing parameter 'CustomerName'"
     assert "OrderDate_Time" in params, "Missing parameter 'OrderDate_Time'"
     assert "OrderRider" in params, "Missing parameter 'OrderRider'"
-    assert "CustomerName" in params, "Missing parameter 'CustomerName'"
     assert "OrderReview" in params, "Missing parameter 'OrderReview'"
+
+def test_companyorderhistory_has_CustomerName():
+    assert hasattr(CompanyOrderHistory, "CustomerName")
+    descriptor = None
+    for klass in CompanyOrderHistory.__mro__:
+        if "CustomerName" in klass.__dict__:
+            descriptor = klass.__dict__["CustomerName"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_companyorderhistory_has_OrderDate_Time():
     assert hasattr(CompanyOrderHistory, "OrderDate_Time")
@@ -226,15 +235,6 @@ def test_companyorderhistory_has_OrderRider():
     for klass in CompanyOrderHistory.__mro__:
         if "OrderRider" in klass.__dict__:
             descriptor = klass.__dict__["OrderRider"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companyorderhistory_has_CustomerName():
-    assert hasattr(CompanyOrderHistory, "CustomerName")
-    descriptor = None
-    for klass in CompanyOrderHistory.__mro__:
-        if "CustomerName" in klass.__dict__:
-            descriptor = klass.__dict__["CustomerName"]
             break
     assert isinstance(descriptor, property)
 
@@ -260,18 +260,9 @@ def test_companyassignrider_constructor_exists():
 def test_companyassignrider_constructor_args():
     sig = inspect.signature(CompanyAssignRider.__init__)
     params = list(sig.parameters.keys())
-    assert "OrderDate_Time" in params, "Missing parameter 'OrderDate_Time'"
     assert "OrderRider" in params, "Missing parameter 'OrderRider'"
+    assert "OrderDate_Time" in params, "Missing parameter 'OrderDate_Time'"
     assert "CustomerName" in params, "Missing parameter 'CustomerName'"
-
-def test_companyassignrider_has_OrderDate_Time():
-    assert hasattr(CompanyAssignRider, "OrderDate_Time")
-    descriptor = None
-    for klass in CompanyAssignRider.__mro__:
-        if "OrderDate_Time" in klass.__dict__:
-            descriptor = klass.__dict__["OrderDate_Time"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_companyassignrider_has_OrderRider():
     assert hasattr(CompanyAssignRider, "OrderRider")
@@ -279,6 +270,15 @@ def test_companyassignrider_has_OrderRider():
     for klass in CompanyAssignRider.__mro__:
         if "OrderRider" in klass.__dict__:
             descriptor = klass.__dict__["OrderRider"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companyassignrider_has_OrderDate_Time():
+    assert hasattr(CompanyAssignRider, "OrderDate_Time")
+    descriptor = None
+    for klass in CompanyAssignRider.__mro__:
+        if "OrderDate_Time" in klass.__dict__:
+            descriptor = klass.__dict__["OrderDate_Time"]
             break
     assert isinstance(descriptor, property)
 
@@ -318,40 +318,13 @@ def test_companyaddrider_constructor_exists():
 def test_companyaddrider_constructor_args():
     sig = inspect.signature(CompanyAddRider.__init__)
     params = list(sig.parameters.keys())
-    assert "Password" in params, "Missing parameter 'Password'"
-    assert "Email" in params, "Missing parameter 'Email'"
-    assert "CNIC" in params, "Missing parameter 'CNIC'"
     assert "Name" in params, "Missing parameter 'Name'"
-    assert "Address" in params, "Missing parameter 'Address'"
     assert "UserName" in params, "Missing parameter 'UserName'"
+    assert "Password" in params, "Missing parameter 'Password'"
+    assert "CNIC" in params, "Missing parameter 'CNIC'"
+    assert "Address" in params, "Missing parameter 'Address'"
     assert "Phone" in params, "Missing parameter 'Phone'"
-
-def test_companyaddrider_has_Password():
-    assert hasattr(CompanyAddRider, "Password")
-    descriptor = None
-    for klass in CompanyAddRider.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companyaddrider_has_Email():
-    assert hasattr(CompanyAddRider, "Email")
-    descriptor = None
-    for klass in CompanyAddRider.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companyaddrider_has_CNIC():
-    assert hasattr(CompanyAddRider, "CNIC")
-    descriptor = None
-    for klass in CompanyAddRider.__mro__:
-        if "CNIC" in klass.__dict__:
-            descriptor = klass.__dict__["CNIC"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Email" in params, "Missing parameter 'Email'"
 
 def test_companyaddrider_has_Name():
     assert hasattr(CompanyAddRider, "Name")
@@ -359,15 +332,6 @@ def test_companyaddrider_has_Name():
     for klass in CompanyAddRider.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companyaddrider_has_Address():
-    assert hasattr(CompanyAddRider, "Address")
-    descriptor = None
-    for klass in CompanyAddRider.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -380,12 +344,48 @@ def test_companyaddrider_has_UserName():
             break
     assert isinstance(descriptor, property)
 
+def test_companyaddrider_has_Password():
+    assert hasattr(CompanyAddRider, "Password")
+    descriptor = None
+    for klass in CompanyAddRider.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companyaddrider_has_CNIC():
+    assert hasattr(CompanyAddRider, "CNIC")
+    descriptor = None
+    for klass in CompanyAddRider.__mro__:
+        if "CNIC" in klass.__dict__:
+            descriptor = klass.__dict__["CNIC"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companyaddrider_has_Address():
+    assert hasattr(CompanyAddRider, "Address")
+    descriptor = None
+    for klass in CompanyAddRider.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_companyaddrider_has_Phone():
     assert hasattr(CompanyAddRider, "Phone")
     descriptor = None
     for klass in CompanyAddRider.__mro__:
         if "Phone" in klass.__dict__:
             descriptor = klass.__dict__["Phone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companyaddrider_has_Email():
+    assert hasattr(CompanyAddRider, "Email")
+    descriptor = None
+    for klass in CompanyAddRider.__mro__:
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
             break
     assert isinstance(descriptor, property)
 
@@ -402,10 +402,19 @@ def test_companyadditem_constructor_exists():
 def test_companyadditem_constructor_args():
     sig = inspect.signature(CompanyAddItem.__init__)
     params = list(sig.parameters.keys())
-    assert "Description" in params, "Missing parameter 'Description'"
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "Price" in params, "Missing parameter 'Price'"
     assert "Category" in params, "Missing parameter 'Category'"
+    assert "Description" in params, "Missing parameter 'Description'"
+    assert "Price" in params, "Missing parameter 'Price'"
+    assert "Name" in params, "Missing parameter 'Name'"
+
+def test_companyadditem_has_Category():
+    assert hasattr(CompanyAddItem, "Category")
+    descriptor = None
+    for klass in CompanyAddItem.__mro__:
+        if "Category" in klass.__dict__:
+            descriptor = klass.__dict__["Category"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_companyadditem_has_Description():
     assert hasattr(CompanyAddItem, "Description")
@@ -413,15 +422,6 @@ def test_companyadditem_has_Description():
     for klass in CompanyAddItem.__mro__:
         if "Description" in klass.__dict__:
             descriptor = klass.__dict__["Description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companyadditem_has_Name():
-    assert hasattr(CompanyAddItem, "Name")
-    descriptor = None
-    for klass in CompanyAddItem.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -434,12 +434,12 @@ def test_companyadditem_has_Price():
             break
     assert isinstance(descriptor, property)
 
-def test_companyadditem_has_Category():
-    assert hasattr(CompanyAddItem, "Category")
+def test_companyadditem_has_Name():
+    assert hasattr(CompanyAddItem, "Name")
     descriptor = None
     for klass in CompanyAddItem.__mro__:
-        if "Category" in klass.__dict__:
-            descriptor = klass.__dict__["Category"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -490,17 +490,8 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
-    assert "Password" in params, "Missing parameter 'Password'"
     assert "Email" in params, "Missing parameter 'Email'"
-
-def test_login_has_Password():
-    assert hasattr(Login, "Password")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Password" in params, "Missing parameter 'Password'"
 
 def test_login_has_Email():
     assert hasattr(Login, "Email")
@@ -508,6 +499,15 @@ def test_login_has_Email():
     for klass in Login.__mro__:
         if "Email" in klass.__dict__:
             descriptor = klass.__dict__["Email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_Password():
+    assert hasattr(Login, "Password")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
             break
     assert isinstance(descriptor, property)
 
@@ -524,49 +524,13 @@ def test_userregisteration_constructor_exists():
 def test_userregisteration_constructor_args():
     sig = inspect.signature(UserRegisteration.__init__)
     params = list(sig.parameters.keys())
-    assert "Address" in params, "Missing parameter 'Address'"
-    assert "UserName" in params, "Missing parameter 'UserName'"
-    assert "FirstName" in params, "Missing parameter 'FirstName'"
-    assert "Email" in params, "Missing parameter 'Email'"
     assert "LastName" in params, "Missing parameter 'LastName'"
     assert "Password" in params, "Missing parameter 'Password'"
+    assert "Email" in params, "Missing parameter 'Email'"
     assert "Phone" in params, "Missing parameter 'Phone'"
-
-def test_userregisteration_has_Address():
-    assert hasattr(UserRegisteration, "Address")
-    descriptor = None
-    for klass in UserRegisteration.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_userregisteration_has_UserName():
-    assert hasattr(UserRegisteration, "UserName")
-    descriptor = None
-    for klass in UserRegisteration.__mro__:
-        if "UserName" in klass.__dict__:
-            descriptor = klass.__dict__["UserName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_userregisteration_has_FirstName():
-    assert hasattr(UserRegisteration, "FirstName")
-    descriptor = None
-    for klass in UserRegisteration.__mro__:
-        if "FirstName" in klass.__dict__:
-            descriptor = klass.__dict__["FirstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_userregisteration_has_Email():
-    assert hasattr(UserRegisteration, "Email")
-    descriptor = None
-    for klass in UserRegisteration.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "FirstName" in params, "Missing parameter 'FirstName'"
+    assert "UserName" in params, "Missing parameter 'UserName'"
+    assert "Address" in params, "Missing parameter 'Address'"
 
 def test_userregisteration_has_LastName():
     assert hasattr(UserRegisteration, "LastName")
@@ -586,12 +550,48 @@ def test_userregisteration_has_Password():
             break
     assert isinstance(descriptor, property)
 
+def test_userregisteration_has_Email():
+    assert hasattr(UserRegisteration, "Email")
+    descriptor = None
+    for klass in UserRegisteration.__mro__:
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_userregisteration_has_Phone():
     assert hasattr(UserRegisteration, "Phone")
     descriptor = None
     for klass in UserRegisteration.__mro__:
         if "Phone" in klass.__dict__:
             descriptor = klass.__dict__["Phone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userregisteration_has_FirstName():
+    assert hasattr(UserRegisteration, "FirstName")
+    descriptor = None
+    for klass in UserRegisteration.__mro__:
+        if "FirstName" in klass.__dict__:
+            descriptor = klass.__dict__["FirstName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userregisteration_has_UserName():
+    assert hasattr(UserRegisteration, "UserName")
+    descriptor = None
+    for klass in UserRegisteration.__mro__:
+        if "UserName" in klass.__dict__:
+            descriptor = klass.__dict__["UserName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_userregisteration_has_Address():
+    assert hasattr(UserRegisteration, "Address")
+    descriptor = None
+    for klass in UserRegisteration.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -608,17 +608,8 @@ def test_placeorder_constructor_exists():
 def test_placeorder_constructor_args():
     sig = inspect.signature(PlaceOrder.__init__)
     params = list(sig.parameters.keys())
-    assert "Price" in params, "Missing parameter 'Price'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_placeorder_has_Price():
-    assert hasattr(PlaceOrder, "Price")
-    descriptor = None
-    for klass in PlaceOrder.__mro__:
-        if "Price" in klass.__dict__:
-            descriptor = klass.__dict__["Price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Price" in params, "Missing parameter 'Price'"
 
 def test_placeorder_has_Name():
     assert hasattr(PlaceOrder, "Name")
@@ -626,6 +617,15 @@ def test_placeorder_has_Name():
     for klass in PlaceOrder.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_placeorder_has_Price():
+    assert hasattr(PlaceOrder, "Price")
+    descriptor = None
+    for klass in PlaceOrder.__mro__:
+        if "Price" in klass.__dict__:
+            descriptor = klass.__dict__["Price"]
             break
     assert isinstance(descriptor, property)
 
@@ -720,10 +720,19 @@ def test_orderhistory_constructor_exists():
 def test_orderhistory_constructor_args():
     sig = inspect.signature(OrderHistory.__init__)
     params = list(sig.parameters.keys())
+    assert "OrderReview" in params, "Missing parameter 'OrderReview'"
     assert "OrderDate_Time" in params, "Missing parameter 'OrderDate_Time'"
     assert "OrderStatus" in params, "Missing parameter 'OrderStatus'"
     assert "OrderRider" in params, "Missing parameter 'OrderRider'"
-    assert "OrderReview" in params, "Missing parameter 'OrderReview'"
+
+def test_orderhistory_has_OrderReview():
+    assert hasattr(OrderHistory, "OrderReview")
+    descriptor = None
+    for klass in OrderHistory.__mro__:
+        if "OrderReview" in klass.__dict__:
+            descriptor = klass.__dict__["OrderReview"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_orderhistory_has_OrderDate_Time():
     assert hasattr(OrderHistory, "OrderDate_Time")
@@ -752,15 +761,6 @@ def test_orderhistory_has_OrderRider():
             break
     assert isinstance(descriptor, property)
 
-def test_orderhistory_has_OrderReview():
-    assert hasattr(OrderHistory, "OrderReview")
-    descriptor = None
-    for klass in OrderHistory.__mro__:
-        if "OrderReview" in klass.__dict__:
-            descriptor = klass.__dict__["OrderReview"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_revieworder_is_not_abstract():
@@ -774,18 +774,9 @@ def test_revieworder_constructor_exists():
 def test_revieworder_constructor_args():
     sig = inspect.signature(ReviewOrder.__init__)
     params = list(sig.parameters.keys())
-    assert "Review" in params, "Missing parameter 'Review'"
     assert "RiderName" in params, "Missing parameter 'RiderName'"
     assert "OrderTime_Date" in params, "Missing parameter 'OrderTime_Date'"
-
-def test_revieworder_has_Review():
-    assert hasattr(ReviewOrder, "Review")
-    descriptor = None
-    for klass in ReviewOrder.__mro__:
-        if "Review" in klass.__dict__:
-            descriptor = klass.__dict__["Review"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Review" in params, "Missing parameter 'Review'"
 
 def test_revieworder_has_RiderName():
     assert hasattr(ReviewOrder, "RiderName")
@@ -802,6 +793,15 @@ def test_revieworder_has_OrderTime_Date():
     for klass in ReviewOrder.__mro__:
         if "OrderTime_Date" in klass.__dict__:
             descriptor = klass.__dict__["OrderTime_Date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_revieworder_has_Review():
+    assert hasattr(ReviewOrder, "Review")
+    descriptor = None
+    for klass in ReviewOrder.__mro__:
+        if "Review" in klass.__dict__:
+            descriptor = klass.__dict__["Review"]
             break
     assert isinstance(descriptor, property)
 
@@ -891,53 +891,53 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 RiderStatusUpdate_strategy = st.builds(
     RiderStatusUpdate,
+    ItemList=
+        safe_text,
     CustomerName=
         safe_text,
     OrderDate_Time=
-        safe_text,
-    ItemList=
         safe_text
 )
 Order_strategy = st.builds(
     Order,
-    OrderTime_Date=
+    OrderPrice=
         safe_text,
     OrderReview=
         safe_text,
-    OrderStatus=
+    OrderTime_Date=
         safe_text,
-    OrderPrice=
+    OrderStatus=
         safe_text,
     OrderRider=
         safe_text
 )
 CompanyTrackOrder_strategy = st.builds(
     CompanyTrackOrder,
-    OrderRider=
-        safe_text,
     OrderDate_Time=
         safe_text,
-    OrderStatus=
-        safe_text,
     CustomerName=
+        safe_text,
+    OrderRider=
+        safe_text,
+    OrderStatus=
         safe_text
 )
 CompanyOrderHistory_strategy = st.builds(
     CompanyOrderHistory,
+    CustomerName=
+        safe_text,
     OrderDate_Time=
         safe_text,
     OrderRider=
-        safe_text,
-    CustomerName=
         safe_text,
     OrderReview=
         safe_text
 )
 CompanyAssignRider_strategy = st.builds(
     CompanyAssignRider,
-    OrderDate_Time=
-        safe_text,
     OrderRider=
+        safe_text,
+    OrderDate_Time=
         safe_text,
     CustomerName=
         safe_text
@@ -947,30 +947,30 @@ phon_strategy = st.builds(
 )
 CompanyAddRider_strategy = st.builds(
     CompanyAddRider,
-    Password=
-        safe_text,
-    Email=
-        safe_text,
-    CNIC=
-        st.integers(),
     Name=
-        safe_text,
-    Address=
         safe_text,
     UserName=
         safe_text,
+    Password=
+        safe_text,
+    CNIC=
+        st.integers(),
+    Address=
+        safe_text,
     Phone=
+        safe_text,
+    Email=
         safe_text
 )
 CompanyAddItem_strategy = st.builds(
     CompanyAddItem,
-    Description=
+    Category=
         safe_text,
-    Name=
+    Description=
         safe_text,
     Price=
         safe_text,
-    Category=
+    Name=
         safe_text
 )
 CartItems_strategy = st.builds(
@@ -982,33 +982,33 @@ CartItems_strategy = st.builds(
 )
 Login_strategy = st.builds(
     Login,
-    Password=
-        safe_text,
     Email=
+        safe_text,
+    Password=
         safe_text
 )
 UserRegisteration_strategy = st.builds(
     UserRegisteration,
-    Address=
-        safe_text,
-    UserName=
-        safe_text,
-    FirstName=
-        safe_text,
-    Email=
-        safe_text,
     LastName=
         safe_text,
     Password=
         safe_text,
+    Email=
+        safe_text,
     Phone=
+        safe_text,
+    FirstName=
+        safe_text,
+    UserName=
+        safe_text,
+    Address=
         safe_text
 )
 PlaceOrder_strategy = st.builds(
     PlaceOrder,
-    Price=
-        safe_text,
     Name=
+        safe_text,
+    Price=
         safe_text
 )
 Categories_strategy = st.builds(
@@ -1029,22 +1029,22 @@ ConfirmOrder_strategy = st.builds(
 )
 OrderHistory_strategy = st.builds(
     OrderHistory,
+    OrderReview=
+        safe_text,
     OrderDate_Time=
         safe_text,
     OrderStatus=
         safe_text,
     OrderRider=
-        safe_text,
-    OrderReview=
         safe_text
 )
 ReviewOrder_strategy = st.builds(
     ReviewOrder,
-    Review=
-        safe_text,
     RiderName=
         safe_text,
     OrderTime_Date=
+        safe_text,
+    Review=
         safe_text
 )
 void_Interface_strategy = st.builds(
@@ -1068,31 +1068,6 @@ TrackOrder_strategy = st.builds(
 def test_riderstatusupdate_instantiation(instance):
     assert isinstance(instance, RiderStatusUpdate)
 
-@given(instance=RiderStatusUpdate_strategy)
-def test_riderstatusupdate_CustomerName_type(instance):
-    assert isinstance(instance.CustomerName, str)
-
-
-@given(instance=RiderStatusUpdate_strategy)
-def test_riderstatusupdate_CustomerName_setter(instance):
-    original = instance.CustomerName
-    instance.CustomerName = original
-    assert instance.CustomerName == original
-
-@given(instance=RiderStatusUpdate_strategy)
-def test_riderstatusupdate_OrderDate_Time_type(instance):
-    assert isinstance(instance.OrderDate_Time, str)
-
-
-@given(instance=RiderStatusUpdate_strategy)
-def test_riderstatusupdate_OrderDate_Time_setter(instance):
-    original = instance.OrderDate_Time
-    instance.OrderDate_Time = original
-    assert instance.OrderDate_Time == original
-
-@given(instance=RiderStatusUpdate_strategy)
-def test_riderstatusupdate_ItemList_type(instance):
-    assert isinstance(instance.ItemList, str)
 
 
 @given(instance=RiderStatusUpdate_strategy)
@@ -1101,47 +1076,27 @@ def test_riderstatusupdate_ItemList_setter(instance):
     instance.ItemList = original
     assert instance.ItemList == original
 
+
+
+@given(instance=RiderStatusUpdate_strategy)
+def test_riderstatusupdate_CustomerName_setter(instance):
+    original = instance.CustomerName
+    instance.CustomerName = original
+    assert instance.CustomerName == original
+
+
+
+@given(instance=RiderStatusUpdate_strategy)
+def test_riderstatusupdate_OrderDate_Time_setter(instance):
+    original = instance.OrderDate_Time
+    instance.OrderDate_Time = original
+    assert instance.OrderDate_Time == original
+
 @given(instance=Order_strategy)
 @settings(max_examples=50)
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_OrderTime_Date_type(instance):
-    assert isinstance(instance.OrderTime_Date, str)
-
-
-@given(instance=Order_strategy)
-def test_order_OrderTime_Date_setter(instance):
-    original = instance.OrderTime_Date
-    instance.OrderTime_Date = original
-    assert instance.OrderTime_Date == original
-
-@given(instance=Order_strategy)
-def test_order_OrderReview_type(instance):
-    assert isinstance(instance.OrderReview, str)
-
-
-@given(instance=Order_strategy)
-def test_order_OrderReview_setter(instance):
-    original = instance.OrderReview
-    instance.OrderReview = original
-    assert instance.OrderReview == original
-
-@given(instance=Order_strategy)
-def test_order_OrderStatus_type(instance):
-    assert isinstance(instance.OrderStatus, str)
-
-
-@given(instance=Order_strategy)
-def test_order_OrderStatus_setter(instance):
-    original = instance.OrderStatus
-    instance.OrderStatus = original
-    assert instance.OrderStatus == original
-
-@given(instance=Order_strategy)
-def test_order_OrderPrice_type(instance):
-    assert isinstance(instance.OrderPrice, str)
 
 
 @given(instance=Order_strategy)
@@ -1150,9 +1105,30 @@ def test_order_OrderPrice_setter(instance):
     instance.OrderPrice = original
     assert instance.OrderPrice == original
 
+
+
 @given(instance=Order_strategy)
-def test_order_OrderRider_type(instance):
-    assert isinstance(instance.OrderRider, str)
+def test_order_OrderReview_setter(instance):
+    original = instance.OrderReview
+    instance.OrderReview = original
+    assert instance.OrderReview == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_OrderTime_Date_setter(instance):
+    original = instance.OrderTime_Date
+    instance.OrderTime_Date = original
+    assert instance.OrderTime_Date == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_OrderStatus_setter(instance):
+    original = instance.OrderStatus
+    instance.OrderStatus = original
+    assert instance.OrderStatus == original
+
 
 
 @given(instance=Order_strategy)
@@ -1166,20 +1142,6 @@ def test_order_OrderRider_setter(instance):
 def test_companytrackorder_instantiation(instance):
     assert isinstance(instance, CompanyTrackOrder)
 
-@given(instance=CompanyTrackOrder_strategy)
-def test_companytrackorder_OrderRider_type(instance):
-    assert isinstance(instance.OrderRider, str)
-
-
-@given(instance=CompanyTrackOrder_strategy)
-def test_companytrackorder_OrderRider_setter(instance):
-    original = instance.OrderRider
-    instance.OrderRider = original
-    assert instance.OrderRider == original
-
-@given(instance=CompanyTrackOrder_strategy)
-def test_companytrackorder_OrderDate_Time_type(instance):
-    assert isinstance(instance.OrderDate_Time, str)
 
 
 @given(instance=CompanyTrackOrder_strategy)
@@ -1188,20 +1150,6 @@ def test_companytrackorder_OrderDate_Time_setter(instance):
     instance.OrderDate_Time = original
     assert instance.OrderDate_Time == original
 
-@given(instance=CompanyTrackOrder_strategy)
-def test_companytrackorder_OrderStatus_type(instance):
-    assert isinstance(instance.OrderStatus, str)
-
-
-@given(instance=CompanyTrackOrder_strategy)
-def test_companytrackorder_OrderStatus_setter(instance):
-    original = instance.OrderStatus
-    instance.OrderStatus = original
-    assert instance.OrderStatus == original
-
-@given(instance=CompanyTrackOrder_strategy)
-def test_companytrackorder_CustomerName_type(instance):
-    assert isinstance(instance.CustomerName, str)
 
 
 @given(instance=CompanyTrackOrder_strategy)
@@ -1210,36 +1158,27 @@ def test_companytrackorder_CustomerName_setter(instance):
     instance.CustomerName = original
     assert instance.CustomerName == original
 
+
+
+@given(instance=CompanyTrackOrder_strategy)
+def test_companytrackorder_OrderRider_setter(instance):
+    original = instance.OrderRider
+    instance.OrderRider = original
+    assert instance.OrderRider == original
+
+
+
+@given(instance=CompanyTrackOrder_strategy)
+def test_companytrackorder_OrderStatus_setter(instance):
+    original = instance.OrderStatus
+    instance.OrderStatus = original
+    assert instance.OrderStatus == original
+
 @given(instance=CompanyOrderHistory_strategy)
 @settings(max_examples=50)
 def test_companyorderhistory_instantiation(instance):
     assert isinstance(instance, CompanyOrderHistory)
 
-@given(instance=CompanyOrderHistory_strategy)
-def test_companyorderhistory_OrderDate_Time_type(instance):
-    assert isinstance(instance.OrderDate_Time, str)
-
-
-@given(instance=CompanyOrderHistory_strategy)
-def test_companyorderhistory_OrderDate_Time_setter(instance):
-    original = instance.OrderDate_Time
-    instance.OrderDate_Time = original
-    assert instance.OrderDate_Time == original
-
-@given(instance=CompanyOrderHistory_strategy)
-def test_companyorderhistory_OrderRider_type(instance):
-    assert isinstance(instance.OrderRider, str)
-
-
-@given(instance=CompanyOrderHistory_strategy)
-def test_companyorderhistory_OrderRider_setter(instance):
-    original = instance.OrderRider
-    instance.OrderRider = original
-    assert instance.OrderRider == original
-
-@given(instance=CompanyOrderHistory_strategy)
-def test_companyorderhistory_CustomerName_type(instance):
-    assert isinstance(instance.CustomerName, str)
 
 
 @given(instance=CompanyOrderHistory_strategy)
@@ -1248,9 +1187,22 @@ def test_companyorderhistory_CustomerName_setter(instance):
     instance.CustomerName = original
     assert instance.CustomerName == original
 
+
+
 @given(instance=CompanyOrderHistory_strategy)
-def test_companyorderhistory_OrderReview_type(instance):
-    assert isinstance(instance.OrderReview, str)
+def test_companyorderhistory_OrderDate_Time_setter(instance):
+    original = instance.OrderDate_Time
+    instance.OrderDate_Time = original
+    assert instance.OrderDate_Time == original
+
+
+
+@given(instance=CompanyOrderHistory_strategy)
+def test_companyorderhistory_OrderRider_setter(instance):
+    original = instance.OrderRider
+    instance.OrderRider = original
+    assert instance.OrderRider == original
+
 
 
 @given(instance=CompanyOrderHistory_strategy)
@@ -1264,20 +1216,6 @@ def test_companyorderhistory_OrderReview_setter(instance):
 def test_companyassignrider_instantiation(instance):
     assert isinstance(instance, CompanyAssignRider)
 
-@given(instance=CompanyAssignRider_strategy)
-def test_companyassignrider_OrderDate_Time_type(instance):
-    assert isinstance(instance.OrderDate_Time, str)
-
-
-@given(instance=CompanyAssignRider_strategy)
-def test_companyassignrider_OrderDate_Time_setter(instance):
-    original = instance.OrderDate_Time
-    instance.OrderDate_Time = original
-    assert instance.OrderDate_Time == original
-
-@given(instance=CompanyAssignRider_strategy)
-def test_companyassignrider_OrderRider_type(instance):
-    assert isinstance(instance.OrderRider, str)
 
 
 @given(instance=CompanyAssignRider_strategy)
@@ -1286,9 +1224,14 @@ def test_companyassignrider_OrderRider_setter(instance):
     instance.OrderRider = original
     assert instance.OrderRider == original
 
+
+
 @given(instance=CompanyAssignRider_strategy)
-def test_companyassignrider_CustomerName_type(instance):
-    assert isinstance(instance.CustomerName, str)
+def test_companyassignrider_OrderDate_Time_setter(instance):
+    original = instance.OrderDate_Time
+    instance.OrderDate_Time = original
+    assert instance.OrderDate_Time == original
+
 
 
 @given(instance=CompanyAssignRider_strategy)
@@ -1307,42 +1250,6 @@ def test_phon_instantiation(instance):
 def test_companyaddrider_instantiation(instance):
     assert isinstance(instance, CompanyAddRider)
 
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Password_type(instance):
-    assert isinstance(instance.Password, str)
-
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_CNIC_type(instance):
-    assert isinstance(instance.CNIC, int)
-
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_CNIC_setter(instance):
-    original = instance.CNIC
-    instance.CNIC = original
-    assert instance.CNIC == original
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=CompanyAddRider_strategy)
@@ -1351,20 +1258,6 @@ def test_companyaddrider_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
 
 
 @given(instance=CompanyAddRider_strategy)
@@ -1373,9 +1266,30 @@ def test_companyaddrider_UserName_setter(instance):
     instance.UserName = original
     assert instance.UserName == original
 
+
+
 @given(instance=CompanyAddRider_strategy)
-def test_companyaddrider_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
+def test_companyaddrider_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
+
+
+
+@given(instance=CompanyAddRider_strategy)
+def test_companyaddrider_CNIC_setter(instance):
+    original = instance.CNIC
+    instance.CNIC = original
+    assert instance.CNIC == original
+
+
+
+@given(instance=CompanyAddRider_strategy)
+def test_companyaddrider_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
 
 
 @given(instance=CompanyAddRider_strategy)
@@ -1384,47 +1298,19 @@ def test_companyaddrider_Phone_setter(instance):
     instance.Phone = original
     assert instance.Phone == original
 
+
+
+@given(instance=CompanyAddRider_strategy)
+def test_companyaddrider_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
 @given(instance=CompanyAddItem_strategy)
 @settings(max_examples=50)
 def test_companyadditem_instantiation(instance):
     assert isinstance(instance, CompanyAddItem)
 
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Description_type(instance):
-    assert isinstance(instance.Description, str)
-
-
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Description_setter(instance):
-    original = instance.Description
-    instance.Description = original
-    assert instance.Description == original
-
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Price_type(instance):
-    assert isinstance(instance.Price, str)
-
-
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Price_setter(instance):
-    original = instance.Price
-    instance.Price = original
-    assert instance.Price == original
-
-@given(instance=CompanyAddItem_strategy)
-def test_companyadditem_Category_type(instance):
-    assert isinstance(instance.Category, str)
 
 
 @given(instance=CompanyAddItem_strategy)
@@ -1433,14 +1319,35 @@ def test_companyadditem_Category_setter(instance):
     instance.Category = original
     assert instance.Category == original
 
+
+
+@given(instance=CompanyAddItem_strategy)
+def test_companyadditem_Description_setter(instance):
+    original = instance.Description
+    instance.Description = original
+    assert instance.Description == original
+
+
+
+@given(instance=CompanyAddItem_strategy)
+def test_companyadditem_Price_setter(instance):
+    original = instance.Price
+    instance.Price = original
+    assert instance.Price == original
+
+
+
+@given(instance=CompanyAddItem_strategy)
+def test_companyadditem_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=CartItems_strategy)
 @settings(max_examples=50)
 def test_cartitems_instantiation(instance):
     assert isinstance(instance, CartItems)
 
-@given(instance=CartItems_strategy)
-def test_cartitems_Price_type(instance):
-    assert isinstance(instance.Price, str)
 
 
 @given(instance=CartItems_strategy)
@@ -1449,9 +1356,6 @@ def test_cartitems_Price_setter(instance):
     instance.Price = original
     assert instance.Price == original
 
-@given(instance=CartItems_strategy)
-def test_cartitems_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=CartItems_strategy)
@@ -1465,20 +1369,6 @@ def test_cartitems_Name_setter(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_Password_type(instance):
-    assert isinstance(instance.Password, str)
-
-
-@given(instance=Login_strategy)
-def test_login_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
-
-@given(instance=Login_strategy)
-def test_login_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Login_strategy)
@@ -1487,58 +1377,19 @@ def test_login_Email_setter(instance):
     instance.Email = original
     assert instance.Email == original
 
+
+
+@given(instance=Login_strategy)
+def test_login_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
+
 @given(instance=UserRegisteration_strategy)
 @settings(max_examples=50)
 def test_userregisteration_instantiation(instance):
     assert isinstance(instance, UserRegisteration)
 
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
-
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_UserName_setter(instance):
-    original = instance.UserName
-    instance.UserName = original
-    assert instance.UserName == original
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_FirstName_type(instance):
-    assert isinstance(instance.FirstName, str)
-
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_FirstName_setter(instance):
-    original = instance.FirstName
-    instance.FirstName = original
-    assert instance.FirstName == original
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_LastName_type(instance):
-    assert isinstance(instance.LastName, str)
 
 
 @given(instance=UserRegisteration_strategy)
@@ -1547,9 +1398,6 @@ def test_userregisteration_LastName_setter(instance):
     instance.LastName = original
     assert instance.LastName == original
 
-@given(instance=UserRegisteration_strategy)
-def test_userregisteration_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=UserRegisteration_strategy)
@@ -1558,9 +1406,14 @@ def test_userregisteration_Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
+
+
 @given(instance=UserRegisteration_strategy)
-def test_userregisteration_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
+def test_userregisteration_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
 
 
 @given(instance=UserRegisteration_strategy)
@@ -1569,25 +1422,35 @@ def test_userregisteration_Phone_setter(instance):
     instance.Phone = original
     assert instance.Phone == original
 
+
+
+@given(instance=UserRegisteration_strategy)
+def test_userregisteration_FirstName_setter(instance):
+    original = instance.FirstName
+    instance.FirstName = original
+    assert instance.FirstName == original
+
+
+
+@given(instance=UserRegisteration_strategy)
+def test_userregisteration_UserName_setter(instance):
+    original = instance.UserName
+    instance.UserName = original
+    assert instance.UserName == original
+
+
+
+@given(instance=UserRegisteration_strategy)
+def test_userregisteration_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
 @given(instance=PlaceOrder_strategy)
 @settings(max_examples=50)
 def test_placeorder_instantiation(instance):
     assert isinstance(instance, PlaceOrder)
 
-@given(instance=PlaceOrder_strategy)
-def test_placeorder_Price_type(instance):
-    assert isinstance(instance.Price, str)
-
-
-@given(instance=PlaceOrder_strategy)
-def test_placeorder_Price_setter(instance):
-    original = instance.Price
-    instance.Price = original
-    assert instance.Price == original
-
-@given(instance=PlaceOrder_strategy)
-def test_placeorder_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=PlaceOrder_strategy)
@@ -1596,14 +1459,19 @@ def test_placeorder_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=PlaceOrder_strategy)
+def test_placeorder_Price_setter(instance):
+    original = instance.Price
+    instance.Price = original
+    assert instance.Price == original
+
 @given(instance=Categories_strategy)
 @settings(max_examples=50)
 def test_categories_instantiation(instance):
     assert isinstance(instance, Categories)
 
-@given(instance=Categories_strategy)
-def test_categories_Categories_type(instance):
-    assert isinstance(instance.Categories, str)
 
 
 @given(instance=Categories_strategy)
@@ -1617,9 +1485,6 @@ def test_categories_Categories_setter(instance):
 def test_confirmorder_instantiation(instance):
     assert isinstance(instance, ConfirmOrder)
 
-@given(instance=ConfirmOrder_strategy)
-def test_confirmorder_OrderName_type(instance):
-    assert isinstance(instance.OrderName, str)
 
 
 @given(instance=ConfirmOrder_strategy)
@@ -1628,9 +1493,6 @@ def test_confirmorder_OrderName_setter(instance):
     instance.OrderName = original
     assert instance.OrderName == original
 
-@given(instance=ConfirmOrder_strategy)
-def test_confirmorder_StoreName_type(instance):
-    assert isinstance(instance.StoreName, str)
 
 
 @given(instance=ConfirmOrder_strategy)
@@ -1639,9 +1501,6 @@ def test_confirmorder_StoreName_setter(instance):
     instance.StoreName = original
     assert instance.StoreName == original
 
-@given(instance=ConfirmOrder_strategy)
-def test_confirmorder_Quantity_type(instance):
-    assert isinstance(instance.Quantity, str)
 
 
 @given(instance=ConfirmOrder_strategy)
@@ -1650,9 +1509,6 @@ def test_confirmorder_Quantity_setter(instance):
     instance.Quantity = original
     assert instance.Quantity == original
 
-@given(instance=ConfirmOrder_strategy)
-def test_confirmorder_OrderPrice_type(instance):
-    assert isinstance(instance.OrderPrice, str)
 
 
 @given(instance=ConfirmOrder_strategy)
@@ -1666,42 +1522,6 @@ def test_confirmorder_OrderPrice_setter(instance):
 def test_orderhistory_instantiation(instance):
     assert isinstance(instance, OrderHistory)
 
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderDate_Time_type(instance):
-    assert isinstance(instance.OrderDate_Time, str)
-
-
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderDate_Time_setter(instance):
-    original = instance.OrderDate_Time
-    instance.OrderDate_Time = original
-    assert instance.OrderDate_Time == original
-
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderStatus_type(instance):
-    assert isinstance(instance.OrderStatus, str)
-
-
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderStatus_setter(instance):
-    original = instance.OrderStatus
-    instance.OrderStatus = original
-    assert instance.OrderStatus == original
-
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderRider_type(instance):
-    assert isinstance(instance.OrderRider, str)
-
-
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderRider_setter(instance):
-    original = instance.OrderRider
-    instance.OrderRider = original
-    assert instance.OrderRider == original
-
-@given(instance=OrderHistory_strategy)
-def test_orderhistory_OrderReview_type(instance):
-    assert isinstance(instance.OrderReview, str)
 
 
 @given(instance=OrderHistory_strategy)
@@ -1710,25 +1530,35 @@ def test_orderhistory_OrderReview_setter(instance):
     instance.OrderReview = original
     assert instance.OrderReview == original
 
+
+
+@given(instance=OrderHistory_strategy)
+def test_orderhistory_OrderDate_Time_setter(instance):
+    original = instance.OrderDate_Time
+    instance.OrderDate_Time = original
+    assert instance.OrderDate_Time == original
+
+
+
+@given(instance=OrderHistory_strategy)
+def test_orderhistory_OrderStatus_setter(instance):
+    original = instance.OrderStatus
+    instance.OrderStatus = original
+    assert instance.OrderStatus == original
+
+
+
+@given(instance=OrderHistory_strategy)
+def test_orderhistory_OrderRider_setter(instance):
+    original = instance.OrderRider
+    instance.OrderRider = original
+    assert instance.OrderRider == original
+
 @given(instance=ReviewOrder_strategy)
 @settings(max_examples=50)
 def test_revieworder_instantiation(instance):
     assert isinstance(instance, ReviewOrder)
 
-@given(instance=ReviewOrder_strategy)
-def test_revieworder_Review_type(instance):
-    assert isinstance(instance.Review, str)
-
-
-@given(instance=ReviewOrder_strategy)
-def test_revieworder_Review_setter(instance):
-    original = instance.Review
-    instance.Review = original
-    assert instance.Review == original
-
-@given(instance=ReviewOrder_strategy)
-def test_revieworder_RiderName_type(instance):
-    assert isinstance(instance.RiderName, str)
 
 
 @given(instance=ReviewOrder_strategy)
@@ -1737,9 +1567,6 @@ def test_revieworder_RiderName_setter(instance):
     instance.RiderName = original
     assert instance.RiderName == original
 
-@given(instance=ReviewOrder_strategy)
-def test_revieworder_OrderTime_Date_type(instance):
-    assert isinstance(instance.OrderTime_Date, str)
 
 
 @given(instance=ReviewOrder_strategy)
@@ -1747,6 +1574,14 @@ def test_revieworder_OrderTime_Date_setter(instance):
     original = instance.OrderTime_Date
     instance.OrderTime_Date = original
     assert instance.OrderTime_Date == original
+
+
+
+@given(instance=ReviewOrder_strategy)
+def test_revieworder_Review_setter(instance):
+    original = instance.Review
+    instance.Review = original
+    assert instance.Review == original
 
 @given(instance=void_Interface_strategy)
 @settings(max_examples=50)
@@ -1758,9 +1593,6 @@ def test_void_interface_instantiation(instance):
 def test_store_instantiation(instance):
     assert isinstance(instance, Store)
 
-@given(instance=Store_strategy)
-def test_store_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Store_strategy)
@@ -1774,9 +1606,6 @@ def test_store_Name_setter(instance):
 def test_trackorder_instantiation(instance):
     assert isinstance(instance, TrackOrder)
 
-@given(instance=TrackOrder_strategy)
-def test_trackorder_OrderTime_Date_type(instance):
-    assert isinstance(instance.OrderTime_Date, str)
 
 
 @given(instance=TrackOrder_strategy)
@@ -1785,9 +1614,6 @@ def test_trackorder_OrderTime_Date_setter(instance):
     instance.OrderTime_Date = original
     assert instance.OrderTime_Date == original
 
-@given(instance=TrackOrder_strategy)
-def test_trackorder_OrderTrack_type(instance):
-    assert isinstance(instance.OrderTrack, str)
 
 
 @given(instance=TrackOrder_strategy)

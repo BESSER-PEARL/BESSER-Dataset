@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Cards_Deck_Interface,
@@ -44,17 +44,8 @@ def test_cards_starndarddeck_constructor_exists():
 def test_cards_starndarddeck_constructor_args():
     sig = inspect.signature(Cards_StarndardDeck.__init__)
     params = list(sig.parameters.keys())
-    assert "rand" in params, "Missing parameter 'rand'"
     assert "cards" in params, "Missing parameter 'cards'"
-
-def test_cards_starndarddeck_has_rand():
-    assert hasattr(Cards_StarndardDeck, "rand")
-    descriptor = None
-    for klass in Cards_StarndardDeck.__mro__:
-        if "rand" in klass.__dict__:
-            descriptor = klass.__dict__["rand"]
-            break
-    assert isinstance(descriptor, property)
+    assert "rand" in params, "Missing parameter 'rand'"
 
 def test_cards_starndarddeck_has_cards():
     assert hasattr(Cards_StarndardDeck, "cards")
@@ -62,6 +53,15 @@ def test_cards_starndarddeck_has_cards():
     for klass in Cards_StarndardDeck.__mro__:
         if "cards" in klass.__dict__:
             descriptor = klass.__dict__["cards"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cards_starndarddeck_has_rand():
+    assert hasattr(Cards_StarndardDeck, "rand")
+    descriptor = None
+    for klass in Cards_StarndardDeck.__mro__:
+        if "rand" in klass.__dict__:
+            descriptor = klass.__dict__["rand"]
             break
     assert isinstance(descriptor, property)
 
@@ -78,17 +78,8 @@ def test_cards_card_constructor_exists():
 def test_cards_card_constructor_args():
     sig = inspect.signature(Cards_Card.__init__)
     params = list(sig.parameters.keys())
-    assert "rank" in params, "Missing parameter 'rank'"
     assert "suit" in params, "Missing parameter 'suit'"
-
-def test_cards_card_has_rank():
-    assert hasattr(Cards_Card, "rank")
-    descriptor = None
-    for klass in Cards_Card.__mro__:
-        if "rank" in klass.__dict__:
-            descriptor = klass.__dict__["rank"]
-            break
-    assert isinstance(descriptor, property)
+    assert "rank" in params, "Missing parameter 'rank'"
 
 def test_cards_card_has_suit():
     assert hasattr(Cards_Card, "suit")
@@ -96,6 +87,15 @@ def test_cards_card_has_suit():
     for klass in Cards_Card.__mro__:
         if "suit" in klass.__dict__:
             descriptor = klass.__dict__["suit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cards_card_has_rank():
+    assert hasattr(Cards_Card, "rank")
+    descriptor = None
+    for klass in Cards_Card.__mro__:
+        if "rank" in klass.__dict__:
+            descriptor = klass.__dict__["rank"]
             break
     assert isinstance(descriptor, property)
 
@@ -142,16 +142,16 @@ Cards_Deck_Interface_strategy = st.builds(
 )
 Cards_StarndardDeck_strategy = st.builds(
     Cards_StarndardDeck,
-    rand=
-        safe_text,
     cards=
-        st.none()
+        st.none(),
+    rand=
+        safe_text
 )
 Cards_Card_strategy = st.builds(
     Cards_Card,
-    rank=
-        st.none(),
     suit=
+        st.none(),
+    rank=
         st.none()
 )
 
@@ -165,20 +165,6 @@ def test_cards_deck_interface_instantiation(instance):
 def test_cards_starndarddeck_instantiation(instance):
     assert isinstance(instance, Cards_StarndardDeck)
 
-@given(instance=Cards_StarndardDeck_strategy)
-def test_cards_starndarddeck_rand_type(instance):
-    assert isinstance(instance.rand, str)
-
-
-@given(instance=Cards_StarndardDeck_strategy)
-def test_cards_starndarddeck_rand_setter(instance):
-    original = instance.rand
-    instance.rand = original
-    assert instance.rand == original
-
-@given(instance=Cards_StarndardDeck_strategy)
-def test_cards_starndarddeck_cards_type(instance):
-    assert isinstance(instance.cards, cards_card)
 
 
 @given(instance=Cards_StarndardDeck_strategy)
@@ -187,25 +173,19 @@ def test_cards_starndarddeck_cards_setter(instance):
     instance.cards = original
     assert instance.cards == original
 
+
+
+@given(instance=Cards_StarndardDeck_strategy)
+def test_cards_starndarddeck_rand_setter(instance):
+    original = instance.rand
+    instance.rand = original
+    assert instance.rand == original
+
 @given(instance=Cards_Card_strategy)
 @settings(max_examples=50)
 def test_cards_card_instantiation(instance):
     assert isinstance(instance, Cards_Card)
 
-@given(instance=Cards_Card_strategy)
-def test_cards_card_rank_type(instance):
-    assert isinstance(instance.rank, cards_rank)
-
-
-@given(instance=Cards_Card_strategy)
-def test_cards_card_rank_setter(instance):
-    original = instance.rank
-    instance.rank = original
-    assert instance.rank == original
-
-@given(instance=Cards_Card_strategy)
-def test_cards_card_suit_type(instance):
-    assert isinstance(instance.suit, cards_suit)
 
 
 @given(instance=Cards_Card_strategy)
@@ -213,3 +193,11 @@ def test_cards_card_suit_setter(instance):
     original = instance.suit
     instance.suit = original
     assert instance.suit == original
+
+
+
+@given(instance=Cards_Card_strategy)
+def test_cards_card_rank_setter(instance):
+    original = instance.rank
+    instance.rank = original
+    assert instance.rank == original

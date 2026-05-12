@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StructuralFeature,
-    UML2::Property,
+    UML2_Property,
     Property,
-    UML2::ExtensionEnd,
-    UML2::Port,
-    UML2::MultiplicityElement,
+    UML2_ExtensionEnd,
+    UML2_Port,
+    UML2_MultiplicityElement,
     InputPin,
-    UML2::ValuePin,
+    UML2_ValuePin,
     Pin,
-    UML2::OutputPin,
-    UML2::InputPin,
+    UML2_OutputPin,
+    UML2_InputPin,
     MultiplicityElement,
-    UML2::Parameter,
-    UML2::Operation,
-    UML2::ConnectorEnd,
-    UML2::Variable,
-    UML2::StructuralFeature,
-    UML2::Pin,
+    UML2_StructuralFeature,
+    UML2_Parameter,
+    UML2_ConnectorEnd,
+    UML2_Variable,
+    UML2_Operation,
+    UML2_Pin,
     ParameterDirectionKind,
 )
 
@@ -47,16 +47,16 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_uml2::property_is_not_abstract():
-    assert not inspect.isabstract(UML2::Property)
+def test_uml2_property_is_not_abstract():
+    assert not inspect.isabstract(UML2_Property)
 
 
-def test_uml2::property_constructor_exists():
-    assert callable(UML2::Property.__init__)
+def test_uml2_property_constructor_exists():
+    assert callable(UML2_Property.__init__)
 
 
-def test_uml2::property_constructor_args():
-    sig = inspect.signature(UML2::Property.__init__)
+def test_uml2_property_constructor_args():
+    sig = inspect.signature(UML2_Property.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -75,51 +75,51 @@ def test_property_constructor_args():
 
 
 
-def test_uml2::extensionend_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExtensionEnd)
+def test_uml2_extensionend_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExtensionEnd)
 
 
-def test_uml2::extensionend_constructor_exists():
-    assert callable(UML2::ExtensionEnd.__init__)
+def test_uml2_extensionend_constructor_exists():
+    assert callable(UML2_ExtensionEnd.__init__)
 
 
-def test_uml2::extensionend_constructor_args():
-    sig = inspect.signature(UML2::ExtensionEnd.__init__)
+def test_uml2_extensionend_constructor_args():
+    sig = inspect.signature(UML2_ExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::port_is_not_abstract():
-    assert not inspect.isabstract(UML2::Port)
+def test_uml2_port_is_not_abstract():
+    assert not inspect.isabstract(UML2_Port)
 
 
-def test_uml2::port_constructor_exists():
-    assert callable(UML2::Port.__init__)
+def test_uml2_port_constructor_exists():
+    assert callable(UML2_Port.__init__)
 
 
-def test_uml2::port_constructor_args():
-    sig = inspect.signature(UML2::Port.__init__)
+def test_uml2_port_constructor_args():
+    sig = inspect.signature(UML2_Port.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::MultiplicityElement)
+def test_uml2_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_MultiplicityElement)
 
 
-def test_uml2::multiplicityelement_constructor_exists():
-    assert callable(UML2::MultiplicityElement.__init__)
+def test_uml2_multiplicityelement_constructor_exists():
+    assert callable(UML2_MultiplicityElement.__init__)
 
 
-def test_uml2::multiplicityelement_constructor_args():
-    sig = inspect.signature(UML2::MultiplicityElement.__init__)
+def test_uml2_multiplicityelement_constructor_args():
+    sig = inspect.signature(UML2_MultiplicityElement.__init__)
     params = list(sig.parameters.keys())
     assert "isUnique" in params, "Missing parameter 'isUnique'"
 
-def test_uml2::multiplicityelement_has_isUnique():
-    assert hasattr(UML2::MultiplicityElement, "isUnique")
+def test_uml2_multiplicityelement_has_isUnique():
+    assert hasattr(UML2_MultiplicityElement, "isUnique")
     descriptor = None
-    for klass in UML2::MultiplicityElement.__mro__:
+    for klass in UML2_MultiplicityElement.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
@@ -141,16 +141,16 @@ def test_inputpin_constructor_args():
 
 
 
-def test_uml2::valuepin_is_not_abstract():
-    assert not inspect.isabstract(UML2::ValuePin)
+def test_uml2_valuepin_is_not_abstract():
+    assert not inspect.isabstract(UML2_ValuePin)
 
 
-def test_uml2::valuepin_constructor_exists():
-    assert callable(UML2::ValuePin.__init__)
+def test_uml2_valuepin_constructor_exists():
+    assert callable(UML2_ValuePin.__init__)
 
 
-def test_uml2::valuepin_constructor_args():
-    sig = inspect.signature(UML2::ValuePin.__init__)
+def test_uml2_valuepin_constructor_args():
+    sig = inspect.signature(UML2_ValuePin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,30 +169,30 @@ def test_pin_constructor_args():
 
 
 
-def test_uml2::outputpin_is_not_abstract():
-    assert not inspect.isabstract(UML2::OutputPin)
+def test_uml2_outputpin_is_not_abstract():
+    assert not inspect.isabstract(UML2_OutputPin)
 
 
-def test_uml2::outputpin_constructor_exists():
-    assert callable(UML2::OutputPin.__init__)
+def test_uml2_outputpin_constructor_exists():
+    assert callable(UML2_OutputPin.__init__)
 
 
-def test_uml2::outputpin_constructor_args():
-    sig = inspect.signature(UML2::OutputPin.__init__)
+def test_uml2_outputpin_constructor_args():
+    sig = inspect.signature(UML2_OutputPin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::inputpin_is_not_abstract():
-    assert not inspect.isabstract(UML2::InputPin)
+def test_uml2_inputpin_is_not_abstract():
+    assert not inspect.isabstract(UML2_InputPin)
 
 
-def test_uml2::inputpin_constructor_exists():
-    assert callable(UML2::InputPin.__init__)
+def test_uml2_inputpin_constructor_exists():
+    assert callable(UML2_InputPin.__init__)
 
 
-def test_uml2::inputpin_constructor_args():
-    sig = inspect.signature(UML2::InputPin.__init__)
+def test_uml2_inputpin_constructor_args():
+    sig = inspect.signature(UML2_InputPin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,23 +211,37 @@ def test_multiplicityelement_constructor_args():
 
 
 
-def test_uml2::parameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::Parameter)
+def test_uml2_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(UML2_StructuralFeature)
 
 
-def test_uml2::parameter_constructor_exists():
-    assert callable(UML2::Parameter.__init__)
+def test_uml2_structuralfeature_constructor_exists():
+    assert callable(UML2_StructuralFeature.__init__)
 
 
-def test_uml2::parameter_constructor_args():
-    sig = inspect.signature(UML2::Parameter.__init__)
+def test_uml2_structuralfeature_constructor_args():
+    sig = inspect.signature(UML2_StructuralFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_parameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_Parameter)
+
+
+def test_uml2_parameter_constructor_exists():
+    assert callable(UML2_Parameter.__init__)
+
+
+def test_uml2_parameter_constructor_args():
+    sig = inspect.signature(UML2_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_uml2::parameter_has_direction():
-    assert hasattr(UML2::Parameter, "direction")
+def test_uml2_parameter_has_direction():
+    assert hasattr(UML2_Parameter, "direction")
     descriptor = None
-    for klass in UML2::Parameter.__mro__:
+    for klass in UML2_Parameter.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -235,72 +249,58 @@ def test_uml2::parameter_has_direction():
 
 
 
-def test_uml2::operation_is_not_abstract():
-    assert not inspect.isabstract(UML2::Operation)
+def test_uml2_connectorend_is_not_abstract():
+    assert not inspect.isabstract(UML2_ConnectorEnd)
 
 
-def test_uml2::operation_constructor_exists():
-    assert callable(UML2::Operation.__init__)
+def test_uml2_connectorend_constructor_exists():
+    assert callable(UML2_ConnectorEnd.__init__)
 
 
-def test_uml2::operation_constructor_args():
-    sig = inspect.signature(UML2::Operation.__init__)
+def test_uml2_connectorend_constructor_args():
+    sig = inspect.signature(UML2_ConnectorEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::connectorend_is_not_abstract():
-    assert not inspect.isabstract(UML2::ConnectorEnd)
+def test_uml2_variable_is_not_abstract():
+    assert not inspect.isabstract(UML2_Variable)
 
 
-def test_uml2::connectorend_constructor_exists():
-    assert callable(UML2::ConnectorEnd.__init__)
+def test_uml2_variable_constructor_exists():
+    assert callable(UML2_Variable.__init__)
 
 
-def test_uml2::connectorend_constructor_args():
-    sig = inspect.signature(UML2::ConnectorEnd.__init__)
+def test_uml2_variable_constructor_args():
+    sig = inspect.signature(UML2_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::variable_is_not_abstract():
-    assert not inspect.isabstract(UML2::Variable)
+def test_uml2_operation_is_not_abstract():
+    assert not inspect.isabstract(UML2_Operation)
 
 
-def test_uml2::variable_constructor_exists():
-    assert callable(UML2::Variable.__init__)
+def test_uml2_operation_constructor_exists():
+    assert callable(UML2_Operation.__init__)
 
 
-def test_uml2::variable_constructor_args():
-    sig = inspect.signature(UML2::Variable.__init__)
+def test_uml2_operation_constructor_args():
+    sig = inspect.signature(UML2_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(UML2::StructuralFeature)
+def test_uml2_pin_is_not_abstract():
+    assert not inspect.isabstract(UML2_Pin)
 
 
-def test_uml2::structuralfeature_constructor_exists():
-    assert callable(UML2::StructuralFeature.__init__)
+def test_uml2_pin_constructor_exists():
+    assert callable(UML2_Pin.__init__)
 
 
-def test_uml2::structuralfeature_constructor_args():
-    sig = inspect.signature(UML2::StructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::pin_is_not_abstract():
-    assert not inspect.isabstract(UML2::Pin)
-
-
-def test_uml2::pin_constructor_exists():
-    assert callable(UML2::Pin.__init__)
-
-
-def test_uml2::pin_constructor_args():
-    sig = inspect.signature(UML2::Pin.__init__)
+def test_uml2_pin_constructor_args():
+    sig = inspect.signature(UML2_Pin.__init__)
     params = list(sig.parameters.keys())
 
 def test_parameterdirectionkind_exists():
@@ -312,9 +312,9 @@ def test_parameterdirectionkind_has_all_literals():
     enum_literals = [lit.name for lit in ParameterDirectionKind]
     expected_literals = [
         "in_",
+        "inout",
         "return_",
         "out",
-        "inout",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -335,60 +335,60 @@ safe_text = st.text(
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-UML2::Property_strategy = st.builds(
-    UML2::Property,
+UML2_Property_strategy = st.builds(
+    UML2_Property,
 )
 Property_strategy = st.builds(
     Property,
 )
-UML2::ExtensionEnd_strategy = st.builds(
-    UML2::ExtensionEnd,
+UML2_ExtensionEnd_strategy = st.builds(
+    UML2_ExtensionEnd,
 )
-UML2::Port_strategy = st.builds(
-    UML2::Port,
+UML2_Port_strategy = st.builds(
+    UML2_Port,
 )
-UML2::MultiplicityElement_strategy = st.builds(
-    UML2::MultiplicityElement,
+UML2_MultiplicityElement_strategy = st.builds(
+    UML2_MultiplicityElement,
     isUnique=
         st.booleans()
 )
 InputPin_strategy = st.builds(
     InputPin,
 )
-UML2::ValuePin_strategy = st.builds(
-    UML2::ValuePin,
+UML2_ValuePin_strategy = st.builds(
+    UML2_ValuePin,
 )
 Pin_strategy = st.builds(
     Pin,
 )
-UML2::OutputPin_strategy = st.builds(
-    UML2::OutputPin,
+UML2_OutputPin_strategy = st.builds(
+    UML2_OutputPin,
 )
-UML2::InputPin_strategy = st.builds(
-    UML2::InputPin,
+UML2_InputPin_strategy = st.builds(
+    UML2_InputPin,
 )
 MultiplicityElement_strategy = st.builds(
     MultiplicityElement,
 )
-UML2::Parameter_strategy = st.builds(
-    UML2::Parameter,
+UML2_StructuralFeature_strategy = st.builds(
+    UML2_StructuralFeature,
+)
+UML2_Parameter_strategy = st.builds(
+    UML2_Parameter,
     direction=
         safe_text
 )
-UML2::Operation_strategy = st.builds(
-    UML2::Operation,
+UML2_ConnectorEnd_strategy = st.builds(
+    UML2_ConnectorEnd,
 )
-UML2::ConnectorEnd_strategy = st.builds(
-    UML2::ConnectorEnd,
+UML2_Variable_strategy = st.builds(
+    UML2_Variable,
 )
-UML2::Variable_strategy = st.builds(
-    UML2::Variable,
+UML2_Operation_strategy = st.builds(
+    UML2_Operation,
 )
-UML2::StructuralFeature_strategy = st.builds(
-    UML2::StructuralFeature,
-)
-UML2::Pin_strategy = st.builds(
-    UML2::Pin,
+UML2_Pin_strategy = st.builds(
+    UML2_Pin,
 )
 
 @given(instance=StructuralFeature_strategy)
@@ -396,38 +396,35 @@ UML2::Pin_strategy = st.builds(
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=UML2::Property_strategy)
+@given(instance=UML2_Property_strategy)
 @settings(max_examples=50)
-def test_uml2::property_instantiation(instance):
-    assert isinstance(instance, UML2::Property)
+def test_uml2_property_instantiation(instance):
+    assert isinstance(instance, UML2_Property)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=UML2::ExtensionEnd_strategy)
+@given(instance=UML2_ExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_uml2::extensionend_instantiation(instance):
-    assert isinstance(instance, UML2::ExtensionEnd)
+def test_uml2_extensionend_instantiation(instance):
+    assert isinstance(instance, UML2_ExtensionEnd)
 
-@given(instance=UML2::Port_strategy)
+@given(instance=UML2_Port_strategy)
 @settings(max_examples=50)
-def test_uml2::port_instantiation(instance):
-    assert isinstance(instance, UML2::Port)
+def test_uml2_port_instantiation(instance):
+    assert isinstance(instance, UML2_Port)
 
-@given(instance=UML2::MultiplicityElement_strategy)
+@given(instance=UML2_MultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_uml2::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, UML2::MultiplicityElement)
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, bool)
+def test_uml2_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, UML2_MultiplicityElement)
 
 
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_isUnique_setter(instance):
+
+@given(instance=UML2_MultiplicityElement_strategy)
+def test_uml2_multiplicityelement_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
@@ -437,68 +434,65 @@ def test_uml2::multiplicityelement_isUnique_setter(instance):
 def test_inputpin_instantiation(instance):
     assert isinstance(instance, InputPin)
 
-@given(instance=UML2::ValuePin_strategy)
+@given(instance=UML2_ValuePin_strategy)
 @settings(max_examples=50)
-def test_uml2::valuepin_instantiation(instance):
-    assert isinstance(instance, UML2::ValuePin)
+def test_uml2_valuepin_instantiation(instance):
+    assert isinstance(instance, UML2_ValuePin)
 
 @given(instance=Pin_strategy)
 @settings(max_examples=50)
 def test_pin_instantiation(instance):
     assert isinstance(instance, Pin)
 
-@given(instance=UML2::OutputPin_strategy)
+@given(instance=UML2_OutputPin_strategy)
 @settings(max_examples=50)
-def test_uml2::outputpin_instantiation(instance):
-    assert isinstance(instance, UML2::OutputPin)
+def test_uml2_outputpin_instantiation(instance):
+    assert isinstance(instance, UML2_OutputPin)
 
-@given(instance=UML2::InputPin_strategy)
+@given(instance=UML2_InputPin_strategy)
 @settings(max_examples=50)
-def test_uml2::inputpin_instantiation(instance):
-    assert isinstance(instance, UML2::InputPin)
+def test_uml2_inputpin_instantiation(instance):
+    assert isinstance(instance, UML2_InputPin)
 
 @given(instance=MultiplicityElement_strategy)
 @settings(max_examples=50)
 def test_multiplicityelement_instantiation(instance):
     assert isinstance(instance, MultiplicityElement)
 
-@given(instance=UML2::Parameter_strategy)
+@given(instance=UML2_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_uml2::parameter_instantiation(instance):
-    assert isinstance(instance, UML2::Parameter)
+def test_uml2_structuralfeature_instantiation(instance):
+    assert isinstance(instance, UML2_StructuralFeature)
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_direction_type(instance):
-    assert isinstance(instance.direction, str)
+@given(instance=UML2_Parameter_strategy)
+@settings(max_examples=50)
+def test_uml2_parameter_instantiation(instance):
+    assert isinstance(instance, UML2_Parameter)
 
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_direction_setter(instance):
+
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=UML2::Operation_strategy)
+@given(instance=UML2_ConnectorEnd_strategy)
 @settings(max_examples=50)
-def test_uml2::operation_instantiation(instance):
-    assert isinstance(instance, UML2::Operation)
+def test_uml2_connectorend_instantiation(instance):
+    assert isinstance(instance, UML2_ConnectorEnd)
 
-@given(instance=UML2::ConnectorEnd_strategy)
+@given(instance=UML2_Variable_strategy)
 @settings(max_examples=50)
-def test_uml2::connectorend_instantiation(instance):
-    assert isinstance(instance, UML2::ConnectorEnd)
+def test_uml2_variable_instantiation(instance):
+    assert isinstance(instance, UML2_Variable)
 
-@given(instance=UML2::Variable_strategy)
+@given(instance=UML2_Operation_strategy)
 @settings(max_examples=50)
-def test_uml2::variable_instantiation(instance):
-    assert isinstance(instance, UML2::Variable)
+def test_uml2_operation_instantiation(instance):
+    assert isinstance(instance, UML2_Operation)
 
-@given(instance=UML2::StructuralFeature_strategy)
+@given(instance=UML2_Pin_strategy)
 @settings(max_examples=50)
-def test_uml2::structuralfeature_instantiation(instance):
-    assert isinstance(instance, UML2::StructuralFeature)
-
-@given(instance=UML2::Pin_strategy)
-@settings(max_examples=50)
-def test_uml2::pin_instantiation(instance):
-    assert isinstance(instance, UML2::Pin)
+def test_uml2_pin_instantiation(instance):
+    assert isinstance(instance, UML2_Pin)

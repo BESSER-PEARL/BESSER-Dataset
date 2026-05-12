@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Library::Cards,
-    Library::Library,
+from python_code import (
+    Library_Cards,
+    Library_Library,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_library::cards_is_not_abstract():
-    assert not inspect.isabstract(Library::Cards)
+def test_library_cards_is_not_abstract():
+    assert not inspect.isabstract(Library_Cards)
 
 
-def test_library::cards_constructor_exists():
-    assert callable(Library::Cards.__init__)
+def test_library_cards_constructor_exists():
+    assert callable(Library_Cards.__init__)
 
 
-def test_library::cards_constructor_args():
-    sig = inspect.signature(Library::Cards.__init__)
+def test_library_cards_constructor_args():
+    sig = inspect.signature(Library_Cards.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(Library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(Library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(Library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(Library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(Library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(Library_Library.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Library::Cards_strategy = st.builds(
-    Library::Cards,
+Library_Cards_strategy = st.builds(
+    Library_Cards,
 )
-Library::Library_strategy = st.builds(
-    Library::Library,
+Library_Library_strategy = st.builds(
+    Library_Library,
 )
 
-@given(instance=Library::Cards_strategy)
+@given(instance=Library_Cards_strategy)
 @settings(max_examples=50)
-def test_library::cards_instantiation(instance):
-    assert isinstance(instance, Library::Cards)
+def test_library_cards_instantiation(instance):
+    assert isinstance(instance, Library_Cards)
 
-@given(instance=Library::Library_strategy)
+@given(instance=Library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, Library::Library)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, Library_Library)

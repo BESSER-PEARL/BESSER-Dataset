@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Tag,
@@ -370,9 +370,6 @@ def test_user_instantiation(instance):
 def test_questonoranswer_instantiation(instance):
     assert isinstance(instance, QuestonOrAnswer)
 
-@given(instance=QuestonOrAnswer_strategy)
-def test_questonoranswer_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
 @given(instance=QuestonOrAnswer_strategy)
@@ -391,9 +388,6 @@ def test_answer_instantiation(instance):
 def test_question_instantiation(instance):
     assert isinstance(instance, Question)
 
-@given(instance=Question_strategy)
-def test_question_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Question_strategy)

@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AssignmentStmt,
     Statement,
-    codemodel::statements::IfStmt,
-    codemodel::statements::CompositeStmt,
-    codemodel::statements::AssignmentStmt,
-    codemodel::statements::ForStmt,
-    expressions::codemodel::Variable,
+    codemodel_statements_AssignmentStmt,
+    codemodel_statements_IfStmt,
+    codemodel_statements_CompositeStmt,
+    codemodel_statements_ForStmt,
+    expressions_codemodel_Variable,
     Expression,
-    codemodel::expressions::LiteralExp,
-    codemodel::expressions::BinaryExp,
-    codemodel::expressions::VariableExp,
+    codemodel_expressions_LiteralExp,
+    codemodel_expressions_BinaryExp,
+    codemodel_expressions_VariableExp,
     DataType,
-    codemodel::ScalarType,
-    codemodel::VectorType,
-    codemodel::MatrixType,
+    codemodel_ScalarType,
+    codemodel_VectorType,
+    codemodel_MatrixType,
     Variable,
-    codemodel::LocalVariable,
-    codemodel::FunctionArgument,
-    codemodel::GlobalVariable,
+    codemodel_FunctionArgument,
+    codemodel_LocalVariable,
+    codemodel_GlobalVariable,
     CMElement,
-    codemodel::DataType,
-    codemodel::statements::Statement,
-    codemodel::Variable,
-    codemodel::expressions::Expression,
-    codemodel::Function,
-    codemodel::CodeModule,
-    codemodel::CMElement,
+    codemodel_statements_Statement,
+    codemodel_expressions_Expression,
+    codemodel_Variable,
+    codemodel_DataType,
+    codemodel_Function,
+    codemodel_CodeModule,
+    codemodel_CMElement,
 )
 
 # =============================================================================
@@ -69,72 +69,72 @@ def test_statement_constructor_args():
 
 
 
-def test_codemodel::statements::ifstmt_is_not_abstract():
-    assert not inspect.isabstract(codemodel::statements::IfStmt)
+def test_codemodel_statements_assignmentstmt_is_not_abstract():
+    assert not inspect.isabstract(codemodel_statements_AssignmentStmt)
 
 
-def test_codemodel::statements::ifstmt_constructor_exists():
-    assert callable(codemodel::statements::IfStmt.__init__)
+def test_codemodel_statements_assignmentstmt_constructor_exists():
+    assert callable(codemodel_statements_AssignmentStmt.__init__)
 
 
-def test_codemodel::statements::ifstmt_constructor_args():
-    sig = inspect.signature(codemodel::statements::IfStmt.__init__)
+def test_codemodel_statements_assignmentstmt_constructor_args():
+    sig = inspect.signature(codemodel_statements_AssignmentStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::statements::compositestmt_is_not_abstract():
-    assert not inspect.isabstract(codemodel::statements::CompositeStmt)
+def test_codemodel_statements_ifstmt_is_not_abstract():
+    assert not inspect.isabstract(codemodel_statements_IfStmt)
 
 
-def test_codemodel::statements::compositestmt_constructor_exists():
-    assert callable(codemodel::statements::CompositeStmt.__init__)
+def test_codemodel_statements_ifstmt_constructor_exists():
+    assert callable(codemodel_statements_IfStmt.__init__)
 
 
-def test_codemodel::statements::compositestmt_constructor_args():
-    sig = inspect.signature(codemodel::statements::CompositeStmt.__init__)
+def test_codemodel_statements_ifstmt_constructor_args():
+    sig = inspect.signature(codemodel_statements_IfStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::statements::assignmentstmt_is_not_abstract():
-    assert not inspect.isabstract(codemodel::statements::AssignmentStmt)
+def test_codemodel_statements_compositestmt_is_not_abstract():
+    assert not inspect.isabstract(codemodel_statements_CompositeStmt)
 
 
-def test_codemodel::statements::assignmentstmt_constructor_exists():
-    assert callable(codemodel::statements::AssignmentStmt.__init__)
+def test_codemodel_statements_compositestmt_constructor_exists():
+    assert callable(codemodel_statements_CompositeStmt.__init__)
 
 
-def test_codemodel::statements::assignmentstmt_constructor_args():
-    sig = inspect.signature(codemodel::statements::AssignmentStmt.__init__)
+def test_codemodel_statements_compositestmt_constructor_args():
+    sig = inspect.signature(codemodel_statements_CompositeStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::statements::forstmt_is_not_abstract():
-    assert not inspect.isabstract(codemodel::statements::ForStmt)
+def test_codemodel_statements_forstmt_is_not_abstract():
+    assert not inspect.isabstract(codemodel_statements_ForStmt)
 
 
-def test_codemodel::statements::forstmt_constructor_exists():
-    assert callable(codemodel::statements::ForStmt.__init__)
+def test_codemodel_statements_forstmt_constructor_exists():
+    assert callable(codemodel_statements_ForStmt.__init__)
 
 
-def test_codemodel::statements::forstmt_constructor_args():
-    sig = inspect.signature(codemodel::statements::ForStmt.__init__)
+def test_codemodel_statements_forstmt_constructor_args():
+    sig = inspect.signature(codemodel_statements_ForStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::codemodel::variable_is_not_abstract():
-    assert not inspect.isabstract(expressions::codemodel::Variable)
+def test_expressions_codemodel_variable_is_not_abstract():
+    assert not inspect.isabstract(expressions_codemodel_Variable)
 
 
-def test_expressions::codemodel::variable_constructor_exists():
-    assert callable(expressions::codemodel::Variable.__init__)
+def test_expressions_codemodel_variable_constructor_exists():
+    assert callable(expressions_codemodel_Variable.__init__)
 
 
-def test_expressions::codemodel::variable_constructor_args():
-    sig = inspect.signature(expressions::codemodel::Variable.__init__)
+def test_expressions_codemodel_variable_constructor_args():
+    sig = inspect.signature(expressions_codemodel_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,23 +153,23 @@ def test_expression_constructor_args():
 
 
 
-def test_codemodel::expressions::literalexp_is_not_abstract():
-    assert not inspect.isabstract(codemodel::expressions::LiteralExp)
+def test_codemodel_expressions_literalexp_is_not_abstract():
+    assert not inspect.isabstract(codemodel_expressions_LiteralExp)
 
 
-def test_codemodel::expressions::literalexp_constructor_exists():
-    assert callable(codemodel::expressions::LiteralExp.__init__)
+def test_codemodel_expressions_literalexp_constructor_exists():
+    assert callable(codemodel_expressions_LiteralExp.__init__)
 
 
-def test_codemodel::expressions::literalexp_constructor_args():
-    sig = inspect.signature(codemodel::expressions::LiteralExp.__init__)
+def test_codemodel_expressions_literalexp_constructor_args():
+    sig = inspect.signature(codemodel_expressions_LiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_codemodel::expressions::literalexp_has_value():
-    assert hasattr(codemodel::expressions::LiteralExp, "value")
+def test_codemodel_expressions_literalexp_has_value():
+    assert hasattr(codemodel_expressions_LiteralExp, "value")
     descriptor = None
-    for klass in codemodel::expressions::LiteralExp.__mro__:
+    for klass in codemodel_expressions_LiteralExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -177,23 +177,23 @@ def test_codemodel::expressions::literalexp_has_value():
 
 
 
-def test_codemodel::expressions::binaryexp_is_not_abstract():
-    assert not inspect.isabstract(codemodel::expressions::BinaryExp)
+def test_codemodel_expressions_binaryexp_is_not_abstract():
+    assert not inspect.isabstract(codemodel_expressions_BinaryExp)
 
 
-def test_codemodel::expressions::binaryexp_constructor_exists():
-    assert callable(codemodel::expressions::BinaryExp.__init__)
+def test_codemodel_expressions_binaryexp_constructor_exists():
+    assert callable(codemodel_expressions_BinaryExp.__init__)
 
 
-def test_codemodel::expressions::binaryexp_constructor_args():
-    sig = inspect.signature(codemodel::expressions::BinaryExp.__init__)
+def test_codemodel_expressions_binaryexp_constructor_args():
+    sig = inspect.signature(codemodel_expressions_BinaryExp.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_codemodel::expressions::binaryexp_has_operator():
-    assert hasattr(codemodel::expressions::BinaryExp, "operator")
+def test_codemodel_expressions_binaryexp_has_operator():
+    assert hasattr(codemodel_expressions_BinaryExp, "operator")
     descriptor = None
-    for klass in codemodel::expressions::BinaryExp.__mro__:
+    for klass in codemodel_expressions_BinaryExp.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -201,16 +201,16 @@ def test_codemodel::expressions::binaryexp_has_operator():
 
 
 
-def test_codemodel::expressions::variableexp_is_not_abstract():
-    assert not inspect.isabstract(codemodel::expressions::VariableExp)
+def test_codemodel_expressions_variableexp_is_not_abstract():
+    assert not inspect.isabstract(codemodel_expressions_VariableExp)
 
 
-def test_codemodel::expressions::variableexp_constructor_exists():
-    assert callable(codemodel::expressions::VariableExp.__init__)
+def test_codemodel_expressions_variableexp_constructor_exists():
+    assert callable(codemodel_expressions_VariableExp.__init__)
 
 
-def test_codemodel::expressions::variableexp_constructor_args():
-    sig = inspect.signature(codemodel::expressions::VariableExp.__init__)
+def test_codemodel_expressions_variableexp_constructor_args():
+    sig = inspect.signature(codemodel_expressions_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -229,37 +229,37 @@ def test_datatype_constructor_args():
 
 
 
-def test_codemodel::scalartype_is_not_abstract():
-    assert not inspect.isabstract(codemodel::ScalarType)
+def test_codemodel_scalartype_is_not_abstract():
+    assert not inspect.isabstract(codemodel_ScalarType)
 
 
-def test_codemodel::scalartype_constructor_exists():
-    assert callable(codemodel::ScalarType.__init__)
+def test_codemodel_scalartype_constructor_exists():
+    assert callable(codemodel_ScalarType.__init__)
 
 
-def test_codemodel::scalartype_constructor_args():
-    sig = inspect.signature(codemodel::ScalarType.__init__)
+def test_codemodel_scalartype_constructor_args():
+    sig = inspect.signature(codemodel_ScalarType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::vectortype_is_not_abstract():
-    assert not inspect.isabstract(codemodel::VectorType)
+def test_codemodel_vectortype_is_not_abstract():
+    assert not inspect.isabstract(codemodel_VectorType)
 
 
-def test_codemodel::vectortype_constructor_exists():
-    assert callable(codemodel::VectorType.__init__)
+def test_codemodel_vectortype_constructor_exists():
+    assert callable(codemodel_VectorType.__init__)
 
 
-def test_codemodel::vectortype_constructor_args():
-    sig = inspect.signature(codemodel::VectorType.__init__)
+def test_codemodel_vectortype_constructor_args():
+    sig = inspect.signature(codemodel_VectorType.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_codemodel::vectortype_has_size():
-    assert hasattr(codemodel::VectorType, "size")
+def test_codemodel_vectortype_has_size():
+    assert hasattr(codemodel_VectorType, "size")
     descriptor = None
-    for klass in codemodel::VectorType.__mro__:
+    for klass in codemodel_VectorType.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -267,35 +267,35 @@ def test_codemodel::vectortype_has_size():
 
 
 
-def test_codemodel::matrixtype_is_not_abstract():
-    assert not inspect.isabstract(codemodel::MatrixType)
+def test_codemodel_matrixtype_is_not_abstract():
+    assert not inspect.isabstract(codemodel_MatrixType)
 
 
-def test_codemodel::matrixtype_constructor_exists():
-    assert callable(codemodel::MatrixType.__init__)
+def test_codemodel_matrixtype_constructor_exists():
+    assert callable(codemodel_MatrixType.__init__)
 
 
-def test_codemodel::matrixtype_constructor_args():
-    sig = inspect.signature(codemodel::MatrixType.__init__)
+def test_codemodel_matrixtype_constructor_args():
+    sig = inspect.signature(codemodel_MatrixType.__init__)
     params = list(sig.parameters.keys())
-    assert "rows" in params, "Missing parameter 'rows'"
     assert "columns" in params, "Missing parameter 'columns'"
+    assert "rows" in params, "Missing parameter 'rows'"
 
-def test_codemodel::matrixtype_has_rows():
-    assert hasattr(codemodel::MatrixType, "rows")
+def test_codemodel_matrixtype_has_columns():
+    assert hasattr(codemodel_MatrixType, "columns")
     descriptor = None
-    for klass in codemodel::MatrixType.__mro__:
-        if "rows" in klass.__dict__:
-            descriptor = klass.__dict__["rows"]
+    for klass in codemodel_MatrixType.__mro__:
+        if "columns" in klass.__dict__:
+            descriptor = klass.__dict__["columns"]
             break
     assert isinstance(descriptor, property)
 
-def test_codemodel::matrixtype_has_columns():
-    assert hasattr(codemodel::MatrixType, "columns")
+def test_codemodel_matrixtype_has_rows():
+    assert hasattr(codemodel_MatrixType, "rows")
     descriptor = None
-    for klass in codemodel::MatrixType.__mro__:
-        if "columns" in klass.__dict__:
-            descriptor = klass.__dict__["columns"]
+    for klass in codemodel_MatrixType.__mro__:
+        if "rows" in klass.__dict__:
+            descriptor = klass.__dict__["rows"]
             break
     assert isinstance(descriptor, property)
 
@@ -315,44 +315,44 @@ def test_variable_constructor_args():
 
 
 
-def test_codemodel::localvariable_is_not_abstract():
-    assert not inspect.isabstract(codemodel::LocalVariable)
+def test_codemodel_functionargument_is_not_abstract():
+    assert not inspect.isabstract(codemodel_FunctionArgument)
 
 
-def test_codemodel::localvariable_constructor_exists():
-    assert callable(codemodel::LocalVariable.__init__)
+def test_codemodel_functionargument_constructor_exists():
+    assert callable(codemodel_FunctionArgument.__init__)
 
 
-def test_codemodel::localvariable_constructor_args():
-    sig = inspect.signature(codemodel::LocalVariable.__init__)
+def test_codemodel_functionargument_constructor_args():
+    sig = inspect.signature(codemodel_FunctionArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::functionargument_is_not_abstract():
-    assert not inspect.isabstract(codemodel::FunctionArgument)
+def test_codemodel_localvariable_is_not_abstract():
+    assert not inspect.isabstract(codemodel_LocalVariable)
 
 
-def test_codemodel::functionargument_constructor_exists():
-    assert callable(codemodel::FunctionArgument.__init__)
+def test_codemodel_localvariable_constructor_exists():
+    assert callable(codemodel_LocalVariable.__init__)
 
 
-def test_codemodel::functionargument_constructor_args():
-    sig = inspect.signature(codemodel::FunctionArgument.__init__)
+def test_codemodel_localvariable_constructor_args():
+    sig = inspect.signature(codemodel_LocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::globalvariable_is_not_abstract():
-    assert not inspect.isabstract(codemodel::GlobalVariable)
+def test_codemodel_globalvariable_is_not_abstract():
+    assert not inspect.isabstract(codemodel_GlobalVariable)
 
 
-def test_codemodel::globalvariable_constructor_exists():
-    assert callable(codemodel::GlobalVariable.__init__)
+def test_codemodel_globalvariable_constructor_exists():
+    assert callable(codemodel_GlobalVariable.__init__)
 
 
-def test_codemodel::globalvariable_constructor_args():
-    sig = inspect.signature(codemodel::GlobalVariable.__init__)
+def test_codemodel_globalvariable_constructor_args():
+    sig = inspect.signature(codemodel_GlobalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -371,23 +371,85 @@ def test_cmelement_constructor_args():
 
 
 
-def test_codemodel::datatype_is_not_abstract():
-    assert not inspect.isabstract(codemodel::DataType)
+def test_codemodel_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(codemodel_statements_Statement)
 
 
-def test_codemodel::datatype_constructor_exists():
-    assert callable(codemodel::DataType.__init__)
+def test_codemodel_statements_statement_constructor_exists():
+    assert callable(codemodel_statements_Statement.__init__)
 
 
-def test_codemodel::datatype_constructor_args():
-    sig = inspect.signature(codemodel::DataType.__init__)
+def test_codemodel_statements_statement_constructor_args():
+    sig = inspect.signature(codemodel_statements_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_codemodel_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(codemodel_expressions_Expression)
+
+
+def test_codemodel_expressions_expression_constructor_exists():
+    assert callable(codemodel_expressions_Expression.__init__)
+
+
+def test_codemodel_expressions_expression_constructor_args():
+    sig = inspect.signature(codemodel_expressions_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_codemodel_variable_is_not_abstract():
+    assert not inspect.isabstract(codemodel_Variable)
+
+
+def test_codemodel_variable_constructor_exists():
+    assert callable(codemodel_Variable.__init__)
+
+
+def test_codemodel_variable_constructor_args():
+    sig = inspect.signature(codemodel_Variable.__init__)
+    params = list(sig.parameters.keys())
+    assert "constant" in params, "Missing parameter 'constant'"
+    assert "identifier" in params, "Missing parameter 'identifier'"
+
+def test_codemodel_variable_has_constant():
+    assert hasattr(codemodel_Variable, "constant")
+    descriptor = None
+    for klass in codemodel_Variable.__mro__:
+        if "constant" in klass.__dict__:
+            descriptor = klass.__dict__["constant"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_codemodel_variable_has_identifier():
+    assert hasattr(codemodel_Variable, "identifier")
+    descriptor = None
+    for klass in codemodel_Variable.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_codemodel_datatype_is_not_abstract():
+    assert not inspect.isabstract(codemodel_DataType)
+
+
+def test_codemodel_datatype_constructor_exists():
+    assert callable(codemodel_DataType.__init__)
+
+
+def test_codemodel_datatype_constructor_args():
+    sig = inspect.signature(codemodel_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "basetype" in params, "Missing parameter 'basetype'"
 
-def test_codemodel::datatype_has_basetype():
-    assert hasattr(codemodel::DataType, "basetype")
+def test_codemodel_datatype_has_basetype():
+    assert hasattr(codemodel_DataType, "basetype")
     descriptor = None
-    for klass in codemodel::DataType.__mro__:
+    for klass in codemodel_DataType.__mro__:
         if "basetype" in klass.__dict__:
             descriptor = klass.__dict__["basetype"]
             break
@@ -395,47 +457,23 @@ def test_codemodel::datatype_has_basetype():
 
 
 
-def test_codemodel::statements::statement_is_not_abstract():
-    assert not inspect.isabstract(codemodel::statements::Statement)
+def test_codemodel_function_is_not_abstract():
+    assert not inspect.isabstract(codemodel_Function)
 
 
-def test_codemodel::statements::statement_constructor_exists():
-    assert callable(codemodel::statements::Statement.__init__)
+def test_codemodel_function_constructor_exists():
+    assert callable(codemodel_Function.__init__)
 
 
-def test_codemodel::statements::statement_constructor_args():
-    sig = inspect.signature(codemodel::statements::Statement.__init__)
+def test_codemodel_function_constructor_args():
+    sig = inspect.signature(codemodel_Function.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_codemodel::variable_is_not_abstract():
-    assert not inspect.isabstract(codemodel::Variable)
-
-
-def test_codemodel::variable_constructor_exists():
-    assert callable(codemodel::Variable.__init__)
-
-
-def test_codemodel::variable_constructor_args():
-    sig = inspect.signature(codemodel::Variable.__init__)
-    params = list(sig.parameters.keys())
-    assert "constant" in params, "Missing parameter 'constant'"
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_codemodel::variable_has_constant():
-    assert hasattr(codemodel::Variable, "constant")
+def test_codemodel_function_has_identifier():
+    assert hasattr(codemodel_Function, "identifier")
     descriptor = None
-    for klass in codemodel::Variable.__mro__:
-        if "constant" in klass.__dict__:
-            descriptor = klass.__dict__["constant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_codemodel::variable_has_identifier():
-    assert hasattr(codemodel::Variable, "identifier")
-    descriptor = None
-    for klass in codemodel::Variable.__mro__:
+    for klass in codemodel_Function.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -443,75 +481,37 @@ def test_codemodel::variable_has_identifier():
 
 
 
-def test_codemodel::expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(codemodel::expressions::Expression)
+def test_codemodel_codemodule_is_not_abstract():
+    assert not inspect.isabstract(codemodel_CodeModule)
 
 
-def test_codemodel::expressions::expression_constructor_exists():
-    assert callable(codemodel::expressions::Expression.__init__)
+def test_codemodel_codemodule_constructor_exists():
+    assert callable(codemodel_CodeModule.__init__)
 
 
-def test_codemodel::expressions::expression_constructor_args():
-    sig = inspect.signature(codemodel::expressions::Expression.__init__)
+def test_codemodel_codemodule_constructor_args():
+    sig = inspect.signature(codemodel_CodeModule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_codemodel::function_is_not_abstract():
-    assert not inspect.isabstract(codemodel::Function)
+def test_codemodel_cmelement_is_not_abstract():
+    assert not inspect.isabstract(codemodel_CMElement)
 
 
-def test_codemodel::function_constructor_exists():
-    assert callable(codemodel::Function.__init__)
+def test_codemodel_cmelement_constructor_exists():
+    assert callable(codemodel_CMElement.__init__)
 
 
-def test_codemodel::function_constructor_args():
-    sig = inspect.signature(codemodel::Function.__init__)
-    params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
-
-def test_codemodel::function_has_identifier():
-    assert hasattr(codemodel::Function, "identifier")
-    descriptor = None
-    for klass in codemodel::Function.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_codemodel::codemodule_is_not_abstract():
-    assert not inspect.isabstract(codemodel::CodeModule)
-
-
-def test_codemodel::codemodule_constructor_exists():
-    assert callable(codemodel::CodeModule.__init__)
-
-
-def test_codemodel::codemodule_constructor_args():
-    sig = inspect.signature(codemodel::CodeModule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_codemodel::cmelement_is_not_abstract():
-    assert not inspect.isabstract(codemodel::CMElement)
-
-
-def test_codemodel::cmelement_constructor_exists():
-    assert callable(codemodel::CMElement.__init__)
-
-
-def test_codemodel::cmelement_constructor_args():
-    sig = inspect.signature(codemodel::CMElement.__init__)
+def test_codemodel_cmelement_constructor_args():
+    sig = inspect.signature(codemodel_CMElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_codemodel::cmelement_has_name():
-    assert hasattr(codemodel::CMElement, "name")
+def test_codemodel_cmelement_has_name():
+    assert hasattr(codemodel_CMElement, "name")
     descriptor = None
-    for klass in codemodel::CMElement.__mro__:
+    for klass in codemodel_CMElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -535,98 +535,98 @@ AssignmentStmt_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-codemodel::statements::IfStmt_strategy = st.builds(
-    codemodel::statements::IfStmt,
+codemodel_statements_AssignmentStmt_strategy = st.builds(
+    codemodel_statements_AssignmentStmt,
 )
-codemodel::statements::CompositeStmt_strategy = st.builds(
-    codemodel::statements::CompositeStmt,
+codemodel_statements_IfStmt_strategy = st.builds(
+    codemodel_statements_IfStmt,
 )
-codemodel::statements::AssignmentStmt_strategy = st.builds(
-    codemodel::statements::AssignmentStmt,
+codemodel_statements_CompositeStmt_strategy = st.builds(
+    codemodel_statements_CompositeStmt,
 )
-codemodel::statements::ForStmt_strategy = st.builds(
-    codemodel::statements::ForStmt,
+codemodel_statements_ForStmt_strategy = st.builds(
+    codemodel_statements_ForStmt,
 )
-expressions::codemodel::Variable_strategy = st.builds(
-    expressions::codemodel::Variable,
+expressions_codemodel_Variable_strategy = st.builds(
+    expressions_codemodel_Variable,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-codemodel::expressions::LiteralExp_strategy = st.builds(
-    codemodel::expressions::LiteralExp,
+codemodel_expressions_LiteralExp_strategy = st.builds(
+    codemodel_expressions_LiteralExp,
     value=
         safe_text
 )
-codemodel::expressions::BinaryExp_strategy = st.builds(
-    codemodel::expressions::BinaryExp,
+codemodel_expressions_BinaryExp_strategy = st.builds(
+    codemodel_expressions_BinaryExp,
     operator=
         safe_text
 )
-codemodel::expressions::VariableExp_strategy = st.builds(
-    codemodel::expressions::VariableExp,
+codemodel_expressions_VariableExp_strategy = st.builds(
+    codemodel_expressions_VariableExp,
 )
 DataType_strategy = st.builds(
     DataType,
 )
-codemodel::ScalarType_strategy = st.builds(
-    codemodel::ScalarType,
+codemodel_ScalarType_strategy = st.builds(
+    codemodel_ScalarType,
 )
-codemodel::VectorType_strategy = st.builds(
-    codemodel::VectorType,
+codemodel_VectorType_strategy = st.builds(
+    codemodel_VectorType,
     size=
         safe_text
 )
-codemodel::MatrixType_strategy = st.builds(
-    codemodel::MatrixType,
-    rows=
-        safe_text,
+codemodel_MatrixType_strategy = st.builds(
+    codemodel_MatrixType,
     columns=
+        safe_text,
+    rows=
         safe_text
 )
 Variable_strategy = st.builds(
     Variable,
 )
-codemodel::LocalVariable_strategy = st.builds(
-    codemodel::LocalVariable,
+codemodel_FunctionArgument_strategy = st.builds(
+    codemodel_FunctionArgument,
 )
-codemodel::FunctionArgument_strategy = st.builds(
-    codemodel::FunctionArgument,
+codemodel_LocalVariable_strategy = st.builds(
+    codemodel_LocalVariable,
 )
-codemodel::GlobalVariable_strategy = st.builds(
-    codemodel::GlobalVariable,
+codemodel_GlobalVariable_strategy = st.builds(
+    codemodel_GlobalVariable,
 )
 CMElement_strategy = st.builds(
     CMElement,
 )
-codemodel::DataType_strategy = st.builds(
-    codemodel::DataType,
-    basetype=
-        safe_text
+codemodel_statements_Statement_strategy = st.builds(
+    codemodel_statements_Statement,
 )
-codemodel::statements::Statement_strategy = st.builds(
-    codemodel::statements::Statement,
+codemodel_expressions_Expression_strategy = st.builds(
+    codemodel_expressions_Expression,
 )
-codemodel::Variable_strategy = st.builds(
-    codemodel::Variable,
+codemodel_Variable_strategy = st.builds(
+    codemodel_Variable,
     constant=
         st.booleans(),
     identifier=
         safe_text
 )
-codemodel::expressions::Expression_strategy = st.builds(
-    codemodel::expressions::Expression,
+codemodel_DataType_strategy = st.builds(
+    codemodel_DataType,
+    basetype=
+        safe_text
 )
-codemodel::Function_strategy = st.builds(
-    codemodel::Function,
+codemodel_Function_strategy = st.builds(
+    codemodel_Function,
     identifier=
         safe_text
 )
-codemodel::CodeModule_strategy = st.builds(
-    codemodel::CodeModule,
+codemodel_CodeModule_strategy = st.builds(
+    codemodel_CodeModule,
 )
-codemodel::CMElement_strategy = st.builds(
-    codemodel::CMElement,
+codemodel_CMElement_strategy = st.builds(
+    codemodel_CMElement,
     name=
         safe_text
 )
@@ -641,237 +641,207 @@ def test_assignmentstmt_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=codemodel::statements::IfStmt_strategy)
+@given(instance=codemodel_statements_AssignmentStmt_strategy)
 @settings(max_examples=50)
-def test_codemodel::statements::ifstmt_instantiation(instance):
-    assert isinstance(instance, codemodel::statements::IfStmt)
+def test_codemodel_statements_assignmentstmt_instantiation(instance):
+    assert isinstance(instance, codemodel_statements_AssignmentStmt)
 
-@given(instance=codemodel::statements::CompositeStmt_strategy)
+@given(instance=codemodel_statements_IfStmt_strategy)
 @settings(max_examples=50)
-def test_codemodel::statements::compositestmt_instantiation(instance):
-    assert isinstance(instance, codemodel::statements::CompositeStmt)
+def test_codemodel_statements_ifstmt_instantiation(instance):
+    assert isinstance(instance, codemodel_statements_IfStmt)
 
-@given(instance=codemodel::statements::AssignmentStmt_strategy)
+@given(instance=codemodel_statements_CompositeStmt_strategy)
 @settings(max_examples=50)
-def test_codemodel::statements::assignmentstmt_instantiation(instance):
-    assert isinstance(instance, codemodel::statements::AssignmentStmt)
+def test_codemodel_statements_compositestmt_instantiation(instance):
+    assert isinstance(instance, codemodel_statements_CompositeStmt)
 
-@given(instance=codemodel::statements::ForStmt_strategy)
+@given(instance=codemodel_statements_ForStmt_strategy)
 @settings(max_examples=50)
-def test_codemodel::statements::forstmt_instantiation(instance):
-    assert isinstance(instance, codemodel::statements::ForStmt)
+def test_codemodel_statements_forstmt_instantiation(instance):
+    assert isinstance(instance, codemodel_statements_ForStmt)
 
-@given(instance=expressions::codemodel::Variable_strategy)
+@given(instance=expressions_codemodel_Variable_strategy)
 @settings(max_examples=50)
-def test_expressions::codemodel::variable_instantiation(instance):
-    assert isinstance(instance, expressions::codemodel::Variable)
+def test_expressions_codemodel_variable_instantiation(instance):
+    assert isinstance(instance, expressions_codemodel_Variable)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=codemodel::expressions::LiteralExp_strategy)
+@given(instance=codemodel_expressions_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_codemodel::expressions::literalexp_instantiation(instance):
-    assert isinstance(instance, codemodel::expressions::LiteralExp)
-
-@given(instance=codemodel::expressions::LiteralExp_strategy)
-def test_codemodel::expressions::literalexp_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_codemodel_expressions_literalexp_instantiation(instance):
+    assert isinstance(instance, codemodel_expressions_LiteralExp)
 
 
-@given(instance=codemodel::expressions::LiteralExp_strategy)
-def test_codemodel::expressions::literalexp_value_setter(instance):
+
+@given(instance=codemodel_expressions_LiteralExp_strategy)
+def test_codemodel_expressions_literalexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=codemodel::expressions::BinaryExp_strategy)
+@given(instance=codemodel_expressions_BinaryExp_strategy)
 @settings(max_examples=50)
-def test_codemodel::expressions::binaryexp_instantiation(instance):
-    assert isinstance(instance, codemodel::expressions::BinaryExp)
-
-@given(instance=codemodel::expressions::BinaryExp_strategy)
-def test_codemodel::expressions::binaryexp_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_codemodel_expressions_binaryexp_instantiation(instance):
+    assert isinstance(instance, codemodel_expressions_BinaryExp)
 
 
-@given(instance=codemodel::expressions::BinaryExp_strategy)
-def test_codemodel::expressions::binaryexp_operator_setter(instance):
+
+@given(instance=codemodel_expressions_BinaryExp_strategy)
+def test_codemodel_expressions_binaryexp_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=codemodel::expressions::VariableExp_strategy)
+@given(instance=codemodel_expressions_VariableExp_strategy)
 @settings(max_examples=50)
-def test_codemodel::expressions::variableexp_instantiation(instance):
-    assert isinstance(instance, codemodel::expressions::VariableExp)
+def test_codemodel_expressions_variableexp_instantiation(instance):
+    assert isinstance(instance, codemodel_expressions_VariableExp)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=codemodel::ScalarType_strategy)
+@given(instance=codemodel_ScalarType_strategy)
 @settings(max_examples=50)
-def test_codemodel::scalartype_instantiation(instance):
-    assert isinstance(instance, codemodel::ScalarType)
+def test_codemodel_scalartype_instantiation(instance):
+    assert isinstance(instance, codemodel_ScalarType)
 
-@given(instance=codemodel::VectorType_strategy)
+@given(instance=codemodel_VectorType_strategy)
 @settings(max_examples=50)
-def test_codemodel::vectortype_instantiation(instance):
-    assert isinstance(instance, codemodel::VectorType)
-
-@given(instance=codemodel::VectorType_strategy)
-def test_codemodel::vectortype_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_codemodel_vectortype_instantiation(instance):
+    assert isinstance(instance, codemodel_VectorType)
 
 
-@given(instance=codemodel::VectorType_strategy)
-def test_codemodel::vectortype_size_setter(instance):
+
+@given(instance=codemodel_VectorType_strategy)
+def test_codemodel_vectortype_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=codemodel::MatrixType_strategy)
+@given(instance=codemodel_MatrixType_strategy)
 @settings(max_examples=50)
-def test_codemodel::matrixtype_instantiation(instance):
-    assert isinstance(instance, codemodel::MatrixType)
-
-@given(instance=codemodel::MatrixType_strategy)
-def test_codemodel::matrixtype_rows_type(instance):
-    assert isinstance(instance.rows, str)
+def test_codemodel_matrixtype_instantiation(instance):
+    assert isinstance(instance, codemodel_MatrixType)
 
 
-@given(instance=codemodel::MatrixType_strategy)
-def test_codemodel::matrixtype_rows_setter(instance):
-    original = instance.rows
-    instance.rows = original
-    assert instance.rows == original
 
-@given(instance=codemodel::MatrixType_strategy)
-def test_codemodel::matrixtype_columns_type(instance):
-    assert isinstance(instance.columns, str)
-
-
-@given(instance=codemodel::MatrixType_strategy)
-def test_codemodel::matrixtype_columns_setter(instance):
+@given(instance=codemodel_MatrixType_strategy)
+def test_codemodel_matrixtype_columns_setter(instance):
     original = instance.columns
     instance.columns = original
     assert instance.columns == original
+
+
+
+@given(instance=codemodel_MatrixType_strategy)
+def test_codemodel_matrixtype_rows_setter(instance):
+    original = instance.rows
+    instance.rows = original
+    assert instance.rows == original
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=codemodel::LocalVariable_strategy)
+@given(instance=codemodel_FunctionArgument_strategy)
 @settings(max_examples=50)
-def test_codemodel::localvariable_instantiation(instance):
-    assert isinstance(instance, codemodel::LocalVariable)
+def test_codemodel_functionargument_instantiation(instance):
+    assert isinstance(instance, codemodel_FunctionArgument)
 
-@given(instance=codemodel::FunctionArgument_strategy)
+@given(instance=codemodel_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_codemodel::functionargument_instantiation(instance):
-    assert isinstance(instance, codemodel::FunctionArgument)
+def test_codemodel_localvariable_instantiation(instance):
+    assert isinstance(instance, codemodel_LocalVariable)
 
-@given(instance=codemodel::GlobalVariable_strategy)
+@given(instance=codemodel_GlobalVariable_strategy)
 @settings(max_examples=50)
-def test_codemodel::globalvariable_instantiation(instance):
-    assert isinstance(instance, codemodel::GlobalVariable)
+def test_codemodel_globalvariable_instantiation(instance):
+    assert isinstance(instance, codemodel_GlobalVariable)
 
 @given(instance=CMElement_strategy)
 @settings(max_examples=50)
 def test_cmelement_instantiation(instance):
     assert isinstance(instance, CMElement)
 
-@given(instance=codemodel::DataType_strategy)
+@given(instance=codemodel_statements_Statement_strategy)
 @settings(max_examples=50)
-def test_codemodel::datatype_instantiation(instance):
-    assert isinstance(instance, codemodel::DataType)
+def test_codemodel_statements_statement_instantiation(instance):
+    assert isinstance(instance, codemodel_statements_Statement)
 
-@given(instance=codemodel::DataType_strategy)
-def test_codemodel::datatype_basetype_type(instance):
-    assert isinstance(instance.basetype, str)
-
-
-@given(instance=codemodel::DataType_strategy)
-def test_codemodel::datatype_basetype_setter(instance):
-    original = instance.basetype
-    instance.basetype = original
-    assert instance.basetype == original
-
-@given(instance=codemodel::statements::Statement_strategy)
+@given(instance=codemodel_expressions_Expression_strategy)
 @settings(max_examples=50)
-def test_codemodel::statements::statement_instantiation(instance):
-    assert isinstance(instance, codemodel::statements::Statement)
+def test_codemodel_expressions_expression_instantiation(instance):
+    assert isinstance(instance, codemodel_expressions_Expression)
 
-@given(instance=codemodel::Variable_strategy)
+@given(instance=codemodel_Variable_strategy)
 @settings(max_examples=50)
-def test_codemodel::variable_instantiation(instance):
-    assert isinstance(instance, codemodel::Variable)
-
-@given(instance=codemodel::Variable_strategy)
-def test_codemodel::variable_constant_type(instance):
-    assert isinstance(instance.constant, bool)
+def test_codemodel_variable_instantiation(instance):
+    assert isinstance(instance, codemodel_Variable)
 
 
-@given(instance=codemodel::Variable_strategy)
-def test_codemodel::variable_constant_setter(instance):
+
+@given(instance=codemodel_Variable_strategy)
+def test_codemodel_variable_constant_setter(instance):
     original = instance.constant
     instance.constant = original
     assert instance.constant == original
 
-@given(instance=codemodel::Variable_strategy)
-def test_codemodel::variable_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
 
 
-@given(instance=codemodel::Variable_strategy)
-def test_codemodel::variable_identifier_setter(instance):
+@given(instance=codemodel_Variable_strategy)
+def test_codemodel_variable_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=codemodel::expressions::Expression_strategy)
+@given(instance=codemodel_DataType_strategy)
 @settings(max_examples=50)
-def test_codemodel::expressions::expression_instantiation(instance):
-    assert isinstance(instance, codemodel::expressions::Expression)
+def test_codemodel_datatype_instantiation(instance):
+    assert isinstance(instance, codemodel_DataType)
 
-@given(instance=codemodel::Function_strategy)
+
+
+@given(instance=codemodel_DataType_strategy)
+def test_codemodel_datatype_basetype_setter(instance):
+    original = instance.basetype
+    instance.basetype = original
+    assert instance.basetype == original
+
+@given(instance=codemodel_Function_strategy)
 @settings(max_examples=50)
-def test_codemodel::function_instantiation(instance):
-    assert isinstance(instance, codemodel::Function)
-
-@given(instance=codemodel::Function_strategy)
-def test_codemodel::function_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_codemodel_function_instantiation(instance):
+    assert isinstance(instance, codemodel_Function)
 
 
-@given(instance=codemodel::Function_strategy)
-def test_codemodel::function_identifier_setter(instance):
+
+@given(instance=codemodel_Function_strategy)
+def test_codemodel_function_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=codemodel::CodeModule_strategy)
+@given(instance=codemodel_CodeModule_strategy)
 @settings(max_examples=50)
-def test_codemodel::codemodule_instantiation(instance):
-    assert isinstance(instance, codemodel::CodeModule)
+def test_codemodel_codemodule_instantiation(instance):
+    assert isinstance(instance, codemodel_CodeModule)
 
-@given(instance=codemodel::CMElement_strategy)
+@given(instance=codemodel_CMElement_strategy)
 @settings(max_examples=50)
-def test_codemodel::cmelement_instantiation(instance):
-    assert isinstance(instance, codemodel::CMElement)
-
-@given(instance=codemodel::CMElement_strategy)
-def test_codemodel::cmelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_codemodel_cmelement_instantiation(instance):
+    assert isinstance(instance, codemodel_CMElement)
 
 
-@given(instance=codemodel::CMElement_strategy)
-def test_codemodel::cmelement_name_setter(instance):
+
+@given(instance=codemodel_CMElement_strategy)
+def test_codemodel_cmelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

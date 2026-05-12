@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SafetyCriticalRelation,
-    safetyDSL::ReportsFault,
-    safetyDSL::MonitorToArchitecturalElement,
-    safetyDSL::ArchElementToArchElement,
+    safetyDSL_MonitorToArchitecturalElement,
+    safetyDSL_ReportsFault,
+    safetyDSL_ArchElementToArchElement,
     MonitorToArchitecturalElement,
-    safetyDSL::Inits,
-    safetyDSL::Restarts,
-    safetyDSL::Starts,
-    safetyDSL::Monitors,
-    safetyDSL::Stops,
+    safetyDSL_Restarts,
+    safetyDSL_Starts,
+    safetyDSL_Inits,
+    safetyDSL_Monitors,
+    safetyDSL_Stops,
     ArchElementToArchElement,
-    safetyDSL::Writes,
-    safetyDSL::Commands,
-    safetyDSL::Reads,
+    safetyDSL_Writes,
+    safetyDSL_Commands,
+    safetyDSL_Reads,
     State,
-    safetyDSL::SafeState,
+    safetyDSL_SafeState,
     CriticalityLevel,
-    safetyDSL::LevelC,
-    safetyDSL::LevelB,
-    safetyDSL::LevelD,
-    safetyDSL::LevelA,
+    safetyDSL_LevelB,
+    safetyDSL_LevelD,
+    safetyDSL_LevelC,
+    safetyDSL_LevelA,
     FaultTreeNode,
-    safetyDSL::ANDNodeExpression,
-    safetyDSL::ORNodeExpression,
-    safetyDSL::ClassDef,
-    safetyDSL::ClassTestCaseRelation,
-    safetyDSL::ModuleClassRelation,
+    safetyDSL_ANDNodeExpression,
+    safetyDSL_ORNodeExpression,
+    safetyDSL_ClassDef,
+    safetyDSL_ClassTestCaseRelation,
+    safetyDSL_ModuleClassRelation,
     SafetyTactic,
-    safetyDSL::FaultAvoidance,
-    safetyDSL::SafetyTactic,
+    safetyDSL_FaultAvoidance,
+    safetyDSL_SafetyTactic,
     HazardRelation,
-    safetyDSL::Causes,
-    safetyDSL::CausedBy,
-    safetyDSL::DerivedFrom,
-    safetyDSL::State,
-    safetyDSL::CriticalityLevel,
+    safetyDSL_Causes,
+    safetyDSL_CausedBy,
+    safetyDSL_DerivedFrom,
+    safetyDSL_State,
+    safetyDSL_CriticalityLevel,
     ArchitecturalElement,
-    safetyDSL::Monitor,
-    safetyDSL::NonSafetyCritical,
-    safetyDSL::SafetyCritical,
-    safetyDSL::SafetyCriticalRelation,
-    safetyDSL::ArchitecturalElement,
-    safetyDSL::FaultContainment,
-    safetyDSL::FaultDetection,
-    safetyDSL::FaultTreeNode,
+    safetyDSL_Monitor,
+    safetyDSL_NonSafetyCritical,
+    safetyDSL_SafetyCritical,
+    safetyDSL_SafetyCriticalRelation,
+    safetyDSL_ArchitecturalElement,
+    safetyDSL_FaultContainment,
+    safetyDSL_FaultDetection,
+    safetyDSL_FaultTreeNode,
     HazardElement,
-    safetyDSL::SafetyRequirement,
-    safetyDSL::Fault,
-    safetyDSL::FaultTree,
-    safetyDSL::Consequence,
-    safetyDSL::Hazard,
-    safetyDSL::HazardRelation,
-    safetyDSL::HazardElement,
+    safetyDSL_Consequence,
+    safetyDSL_Fault,
+    safetyDSL_FaultTree,
+    safetyDSL_SafetyRequirement,
+    safetyDSL_Hazard,
+    safetyDSL_HazardRelation,
+    safetyDSL_HazardElement,
     SafetyViewpoint,
-    safetyDSL::SafetyCriticalViewpoint,
-    safetyDSL::SafetyTacticViewpoint,
-    safetyDSL::HazardViewpoint,
-    safetyDSL::ImplementationDetail,
-    safetyDSL::SafetyViewpoint,
-    safetyDSL::SafetyFramework,
+    safetyDSL_SafetyTacticViewpoint,
+    safetyDSL_SafetyCriticalViewpoint,
+    safetyDSL_HazardViewpoint,
+    safetyDSL_ImplementationDetail,
+    safetyDSL_SafetyViewpoint,
+    safetyDSL_SafetyFramework,
 )
 
 # =============================================================================
@@ -88,44 +88,44 @@ def test_safetycriticalrelation_constructor_args():
 
 
 
-def test_safetydsl::reportsfault_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ReportsFault)
+def test_safetydsl_monitortoarchitecturalelement_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_MonitorToArchitecturalElement)
 
 
-def test_safetydsl::reportsfault_constructor_exists():
-    assert callable(safetyDSL::ReportsFault.__init__)
+def test_safetydsl_monitortoarchitecturalelement_constructor_exists():
+    assert callable(safetyDSL_MonitorToArchitecturalElement.__init__)
 
 
-def test_safetydsl::reportsfault_constructor_args():
-    sig = inspect.signature(safetyDSL::ReportsFault.__init__)
+def test_safetydsl_monitortoarchitecturalelement_constructor_args():
+    sig = inspect.signature(safetyDSL_MonitorToArchitecturalElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::monitortoarchitecturalelement_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::MonitorToArchitecturalElement)
+def test_safetydsl_reportsfault_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ReportsFault)
 
 
-def test_safetydsl::monitortoarchitecturalelement_constructor_exists():
-    assert callable(safetyDSL::MonitorToArchitecturalElement.__init__)
+def test_safetydsl_reportsfault_constructor_exists():
+    assert callable(safetyDSL_ReportsFault.__init__)
 
 
-def test_safetydsl::monitortoarchitecturalelement_constructor_args():
-    sig = inspect.signature(safetyDSL::MonitorToArchitecturalElement.__init__)
+def test_safetydsl_reportsfault_constructor_args():
+    sig = inspect.signature(safetyDSL_ReportsFault.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::archelementtoarchelement_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ArchElementToArchElement)
+def test_safetydsl_archelementtoarchelement_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ArchElementToArchElement)
 
 
-def test_safetydsl::archelementtoarchelement_constructor_exists():
-    assert callable(safetyDSL::ArchElementToArchElement.__init__)
+def test_safetydsl_archelementtoarchelement_constructor_exists():
+    assert callable(safetyDSL_ArchElementToArchElement.__init__)
 
 
-def test_safetydsl::archelementtoarchelement_constructor_args():
-    sig = inspect.signature(safetyDSL::ArchElementToArchElement.__init__)
+def test_safetydsl_archelementtoarchelement_constructor_args():
+    sig = inspect.signature(safetyDSL_ArchElementToArchElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,72 +144,72 @@ def test_monitortoarchitecturalelement_constructor_args():
 
 
 
-def test_safetydsl::inits_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Inits)
+def test_safetydsl_restarts_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Restarts)
 
 
-def test_safetydsl::inits_constructor_exists():
-    assert callable(safetyDSL::Inits.__init__)
+def test_safetydsl_restarts_constructor_exists():
+    assert callable(safetyDSL_Restarts.__init__)
 
 
-def test_safetydsl::inits_constructor_args():
-    sig = inspect.signature(safetyDSL::Inits.__init__)
+def test_safetydsl_restarts_constructor_args():
+    sig = inspect.signature(safetyDSL_Restarts.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::restarts_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Restarts)
+def test_safetydsl_starts_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Starts)
 
 
-def test_safetydsl::restarts_constructor_exists():
-    assert callable(safetyDSL::Restarts.__init__)
+def test_safetydsl_starts_constructor_exists():
+    assert callable(safetyDSL_Starts.__init__)
 
 
-def test_safetydsl::restarts_constructor_args():
-    sig = inspect.signature(safetyDSL::Restarts.__init__)
+def test_safetydsl_starts_constructor_args():
+    sig = inspect.signature(safetyDSL_Starts.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::starts_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Starts)
+def test_safetydsl_inits_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Inits)
 
 
-def test_safetydsl::starts_constructor_exists():
-    assert callable(safetyDSL::Starts.__init__)
+def test_safetydsl_inits_constructor_exists():
+    assert callable(safetyDSL_Inits.__init__)
 
 
-def test_safetydsl::starts_constructor_args():
-    sig = inspect.signature(safetyDSL::Starts.__init__)
+def test_safetydsl_inits_constructor_args():
+    sig = inspect.signature(safetyDSL_Inits.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::monitors_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Monitors)
+def test_safetydsl_monitors_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Monitors)
 
 
-def test_safetydsl::monitors_constructor_exists():
-    assert callable(safetyDSL::Monitors.__init__)
+def test_safetydsl_monitors_constructor_exists():
+    assert callable(safetyDSL_Monitors.__init__)
 
 
-def test_safetydsl::monitors_constructor_args():
-    sig = inspect.signature(safetyDSL::Monitors.__init__)
+def test_safetydsl_monitors_constructor_args():
+    sig = inspect.signature(safetyDSL_Monitors.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::stops_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Stops)
+def test_safetydsl_stops_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Stops)
 
 
-def test_safetydsl::stops_constructor_exists():
-    assert callable(safetyDSL::Stops.__init__)
+def test_safetydsl_stops_constructor_exists():
+    assert callable(safetyDSL_Stops.__init__)
 
 
-def test_safetydsl::stops_constructor_args():
-    sig = inspect.signature(safetyDSL::Stops.__init__)
+def test_safetydsl_stops_constructor_args():
+    sig = inspect.signature(safetyDSL_Stops.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -228,44 +228,44 @@ def test_archelementtoarchelement_constructor_args():
 
 
 
-def test_safetydsl::writes_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Writes)
+def test_safetydsl_writes_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Writes)
 
 
-def test_safetydsl::writes_constructor_exists():
-    assert callable(safetyDSL::Writes.__init__)
+def test_safetydsl_writes_constructor_exists():
+    assert callable(safetyDSL_Writes.__init__)
 
 
-def test_safetydsl::writes_constructor_args():
-    sig = inspect.signature(safetyDSL::Writes.__init__)
+def test_safetydsl_writes_constructor_args():
+    sig = inspect.signature(safetyDSL_Writes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::commands_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Commands)
+def test_safetydsl_commands_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Commands)
 
 
-def test_safetydsl::commands_constructor_exists():
-    assert callable(safetyDSL::Commands.__init__)
+def test_safetydsl_commands_constructor_exists():
+    assert callable(safetyDSL_Commands.__init__)
 
 
-def test_safetydsl::commands_constructor_args():
-    sig = inspect.signature(safetyDSL::Commands.__init__)
+def test_safetydsl_commands_constructor_args():
+    sig = inspect.signature(safetyDSL_Commands.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::reads_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Reads)
+def test_safetydsl_reads_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Reads)
 
 
-def test_safetydsl::reads_constructor_exists():
-    assert callable(safetyDSL::Reads.__init__)
+def test_safetydsl_reads_constructor_exists():
+    assert callable(safetyDSL_Reads.__init__)
 
 
-def test_safetydsl::reads_constructor_args():
-    sig = inspect.signature(safetyDSL::Reads.__init__)
+def test_safetydsl_reads_constructor_args():
+    sig = inspect.signature(safetyDSL_Reads.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -284,16 +284,16 @@ def test_state_constructor_args():
 
 
 
-def test_safetydsl::safestate_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafeState)
+def test_safetydsl_safestate_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafeState)
 
 
-def test_safetydsl::safestate_constructor_exists():
-    assert callable(safetyDSL::SafeState.__init__)
+def test_safetydsl_safestate_constructor_exists():
+    assert callable(safetyDSL_SafeState.__init__)
 
 
-def test_safetydsl::safestate_constructor_args():
-    sig = inspect.signature(safetyDSL::SafeState.__init__)
+def test_safetydsl_safestate_constructor_args():
+    sig = inspect.signature(safetyDSL_SafeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -312,58 +312,58 @@ def test_criticalitylevel_constructor_args():
 
 
 
-def test_safetydsl::levelc_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::LevelC)
+def test_safetydsl_levelb_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_LevelB)
 
 
-def test_safetydsl::levelc_constructor_exists():
-    assert callable(safetyDSL::LevelC.__init__)
+def test_safetydsl_levelb_constructor_exists():
+    assert callable(safetyDSL_LevelB.__init__)
 
 
-def test_safetydsl::levelc_constructor_args():
-    sig = inspect.signature(safetyDSL::LevelC.__init__)
+def test_safetydsl_levelb_constructor_args():
+    sig = inspect.signature(safetyDSL_LevelB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::levelb_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::LevelB)
+def test_safetydsl_leveld_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_LevelD)
 
 
-def test_safetydsl::levelb_constructor_exists():
-    assert callable(safetyDSL::LevelB.__init__)
+def test_safetydsl_leveld_constructor_exists():
+    assert callable(safetyDSL_LevelD.__init__)
 
 
-def test_safetydsl::levelb_constructor_args():
-    sig = inspect.signature(safetyDSL::LevelB.__init__)
+def test_safetydsl_leveld_constructor_args():
+    sig = inspect.signature(safetyDSL_LevelD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::leveld_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::LevelD)
+def test_safetydsl_levelc_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_LevelC)
 
 
-def test_safetydsl::leveld_constructor_exists():
-    assert callable(safetyDSL::LevelD.__init__)
+def test_safetydsl_levelc_constructor_exists():
+    assert callable(safetyDSL_LevelC.__init__)
 
 
-def test_safetydsl::leveld_constructor_args():
-    sig = inspect.signature(safetyDSL::LevelD.__init__)
+def test_safetydsl_levelc_constructor_args():
+    sig = inspect.signature(safetyDSL_LevelC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::levela_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::LevelA)
+def test_safetydsl_levela_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_LevelA)
 
 
-def test_safetydsl::levela_constructor_exists():
-    assert callable(safetyDSL::LevelA.__init__)
+def test_safetydsl_levela_constructor_exists():
+    assert callable(safetyDSL_LevelA.__init__)
 
 
-def test_safetydsl::levela_constructor_args():
-    sig = inspect.signature(safetyDSL::LevelA.__init__)
+def test_safetydsl_levela_constructor_args():
+    sig = inspect.signature(safetyDSL_LevelA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -382,51 +382,51 @@ def test_faulttreenode_constructor_args():
 
 
 
-def test_safetydsl::andnodeexpression_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ANDNodeExpression)
+def test_safetydsl_andnodeexpression_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ANDNodeExpression)
 
 
-def test_safetydsl::andnodeexpression_constructor_exists():
-    assert callable(safetyDSL::ANDNodeExpression.__init__)
+def test_safetydsl_andnodeexpression_constructor_exists():
+    assert callable(safetyDSL_ANDNodeExpression.__init__)
 
 
-def test_safetydsl::andnodeexpression_constructor_args():
-    sig = inspect.signature(safetyDSL::ANDNodeExpression.__init__)
+def test_safetydsl_andnodeexpression_constructor_args():
+    sig = inspect.signature(safetyDSL_ANDNodeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::ornodeexpression_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ORNodeExpression)
+def test_safetydsl_ornodeexpression_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ORNodeExpression)
 
 
-def test_safetydsl::ornodeexpression_constructor_exists():
-    assert callable(safetyDSL::ORNodeExpression.__init__)
+def test_safetydsl_ornodeexpression_constructor_exists():
+    assert callable(safetyDSL_ORNodeExpression.__init__)
 
 
-def test_safetydsl::ornodeexpression_constructor_args():
-    sig = inspect.signature(safetyDSL::ORNodeExpression.__init__)
+def test_safetydsl_ornodeexpression_constructor_args():
+    sig = inspect.signature(safetyDSL_ORNodeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::classdef_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ClassDef)
+def test_safetydsl_classdef_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ClassDef)
 
 
-def test_safetydsl::classdef_constructor_exists():
-    assert callable(safetyDSL::ClassDef.__init__)
+def test_safetydsl_classdef_constructor_exists():
+    assert callable(safetyDSL_ClassDef.__init__)
 
 
-def test_safetydsl::classdef_constructor_args():
-    sig = inspect.signature(safetyDSL::ClassDef.__init__)
+def test_safetydsl_classdef_constructor_args():
+    sig = inspect.signature(safetyDSL_ClassDef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_safetydsl::classdef_has_name():
-    assert hasattr(safetyDSL::ClassDef, "name")
+def test_safetydsl_classdef_has_name():
+    assert hasattr(safetyDSL_ClassDef, "name")
     descriptor = None
-    for klass in safetyDSL::ClassDef.__mro__:
+    for klass in safetyDSL_ClassDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -434,23 +434,23 @@ def test_safetydsl::classdef_has_name():
 
 
 
-def test_safetydsl::classtestcaserelation_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ClassTestCaseRelation)
+def test_safetydsl_classtestcaserelation_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ClassTestCaseRelation)
 
 
-def test_safetydsl::classtestcaserelation_constructor_exists():
-    assert callable(safetyDSL::ClassTestCaseRelation.__init__)
+def test_safetydsl_classtestcaserelation_constructor_exists():
+    assert callable(safetyDSL_ClassTestCaseRelation.__init__)
 
 
-def test_safetydsl::classtestcaserelation_constructor_args():
-    sig = inspect.signature(safetyDSL::ClassTestCaseRelation.__init__)
+def test_safetydsl_classtestcaserelation_constructor_args():
+    sig = inspect.signature(safetyDSL_ClassTestCaseRelation.__init__)
     params = list(sig.parameters.keys())
     assert "testCases" in params, "Missing parameter 'testCases'"
 
-def test_safetydsl::classtestcaserelation_has_testCases():
-    assert hasattr(safetyDSL::ClassTestCaseRelation, "testCases")
+def test_safetydsl_classtestcaserelation_has_testCases():
+    assert hasattr(safetyDSL_ClassTestCaseRelation, "testCases")
     descriptor = None
-    for klass in safetyDSL::ClassTestCaseRelation.__mro__:
+    for klass in safetyDSL_ClassTestCaseRelation.__mro__:
         if "testCases" in klass.__dict__:
             descriptor = klass.__dict__["testCases"]
             break
@@ -458,16 +458,16 @@ def test_safetydsl::classtestcaserelation_has_testCases():
 
 
 
-def test_safetydsl::moduleclassrelation_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ModuleClassRelation)
+def test_safetydsl_moduleclassrelation_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ModuleClassRelation)
 
 
-def test_safetydsl::moduleclassrelation_constructor_exists():
-    assert callable(safetyDSL::ModuleClassRelation.__init__)
+def test_safetydsl_moduleclassrelation_constructor_exists():
+    assert callable(safetyDSL_ModuleClassRelation.__init__)
 
 
-def test_safetydsl::moduleclassrelation_constructor_args():
-    sig = inspect.signature(safetyDSL::ModuleClassRelation.__init__)
+def test_safetydsl_moduleclassrelation_constructor_args():
+    sig = inspect.signature(safetyDSL_ModuleClassRelation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -486,47 +486,47 @@ def test_safetytactic_constructor_args():
 
 
 
-def test_safetydsl::faultavoidance_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::FaultAvoidance)
+def test_safetydsl_faultavoidance_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_FaultAvoidance)
 
 
-def test_safetydsl::faultavoidance_constructor_exists():
-    assert callable(safetyDSL::FaultAvoidance.__init__)
+def test_safetydsl_faultavoidance_constructor_exists():
+    assert callable(safetyDSL_FaultAvoidance.__init__)
 
 
-def test_safetydsl::faultavoidance_constructor_args():
-    sig = inspect.signature(safetyDSL::FaultAvoidance.__init__)
+def test_safetydsl_faultavoidance_constructor_args():
+    sig = inspect.signature(safetyDSL_FaultAvoidance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::safetytactic_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyTactic)
+def test_safetydsl_safetytactic_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyTactic)
 
 
-def test_safetydsl::safetytactic_constructor_exists():
-    assert callable(safetyDSL::SafetyTactic.__init__)
+def test_safetydsl_safetytactic_constructor_exists():
+    assert callable(safetyDSL_SafetyTactic.__init__)
 
 
-def test_safetydsl::safetytactic_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyTactic.__init__)
+def test_safetydsl_safetytactic_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyTactic.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_safetydsl::safetytactic_has_type():
-    assert hasattr(safetyDSL::SafetyTactic, "type")
+def test_safetydsl_safetytactic_has_type():
+    assert hasattr(safetyDSL_SafetyTactic, "type")
     descriptor = None
-    for klass in safetyDSL::SafetyTactic.__mro__:
+    for klass in safetyDSL_SafetyTactic.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_safetydsl::safetytactic_has_name():
-    assert hasattr(safetyDSL::SafetyTactic, "name")
+def test_safetydsl_safetytactic_has_name():
+    assert hasattr(safetyDSL_SafetyTactic, "name")
     descriptor = None
-    for klass in safetyDSL::SafetyTactic.__mro__:
+    for klass in safetyDSL_SafetyTactic.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -548,65 +548,65 @@ def test_hazardrelation_constructor_args():
 
 
 
-def test_safetydsl::causes_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Causes)
+def test_safetydsl_causes_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Causes)
 
 
-def test_safetydsl::causes_constructor_exists():
-    assert callable(safetyDSL::Causes.__init__)
+def test_safetydsl_causes_constructor_exists():
+    assert callable(safetyDSL_Causes.__init__)
 
 
-def test_safetydsl::causes_constructor_args():
-    sig = inspect.signature(safetyDSL::Causes.__init__)
+def test_safetydsl_causes_constructor_args():
+    sig = inspect.signature(safetyDSL_Causes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::causedby_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::CausedBy)
+def test_safetydsl_causedby_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_CausedBy)
 
 
-def test_safetydsl::causedby_constructor_exists():
-    assert callable(safetyDSL::CausedBy.__init__)
+def test_safetydsl_causedby_constructor_exists():
+    assert callable(safetyDSL_CausedBy.__init__)
 
 
-def test_safetydsl::causedby_constructor_args():
-    sig = inspect.signature(safetyDSL::CausedBy.__init__)
+def test_safetydsl_causedby_constructor_args():
+    sig = inspect.signature(safetyDSL_CausedBy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::derivedfrom_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::DerivedFrom)
+def test_safetydsl_derivedfrom_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_DerivedFrom)
 
 
-def test_safetydsl::derivedfrom_constructor_exists():
-    assert callable(safetyDSL::DerivedFrom.__init__)
+def test_safetydsl_derivedfrom_constructor_exists():
+    assert callable(safetyDSL_DerivedFrom.__init__)
 
 
-def test_safetydsl::derivedfrom_constructor_args():
-    sig = inspect.signature(safetyDSL::DerivedFrom.__init__)
+def test_safetydsl_derivedfrom_constructor_args():
+    sig = inspect.signature(safetyDSL_DerivedFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::state_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::State)
+def test_safetydsl_state_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_State)
 
 
-def test_safetydsl::state_constructor_exists():
-    assert callable(safetyDSL::State.__init__)
+def test_safetydsl_state_constructor_exists():
+    assert callable(safetyDSL_State.__init__)
 
 
-def test_safetydsl::state_constructor_args():
-    sig = inspect.signature(safetyDSL::State.__init__)
+def test_safetydsl_state_constructor_args():
+    sig = inspect.signature(safetyDSL_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_safetydsl::state_has_name():
-    assert hasattr(safetyDSL::State, "name")
+def test_safetydsl_state_has_name():
+    assert hasattr(safetyDSL_State, "name")
     descriptor = None
-    for klass in safetyDSL::State.__mro__:
+    for klass in safetyDSL_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -614,16 +614,16 @@ def test_safetydsl::state_has_name():
 
 
 
-def test_safetydsl::criticalitylevel_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::CriticalityLevel)
+def test_safetydsl_criticalitylevel_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_CriticalityLevel)
 
 
-def test_safetydsl::criticalitylevel_constructor_exists():
-    assert callable(safetyDSL::CriticalityLevel.__init__)
+def test_safetydsl_criticalitylevel_constructor_exists():
+    assert callable(safetyDSL_CriticalityLevel.__init__)
 
 
-def test_safetydsl::criticalitylevel_constructor_args():
-    sig = inspect.signature(safetyDSL::CriticalityLevel.__init__)
+def test_safetydsl_criticalitylevel_constructor_args():
+    sig = inspect.signature(safetyDSL_CriticalityLevel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -642,79 +642,79 @@ def test_architecturalelement_constructor_args():
 
 
 
-def test_safetydsl::monitor_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Monitor)
+def test_safetydsl_monitor_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Monitor)
 
 
-def test_safetydsl::monitor_constructor_exists():
-    assert callable(safetyDSL::Monitor.__init__)
+def test_safetydsl_monitor_constructor_exists():
+    assert callable(safetyDSL_Monitor.__init__)
 
 
-def test_safetydsl::monitor_constructor_args():
-    sig = inspect.signature(safetyDSL::Monitor.__init__)
+def test_safetydsl_monitor_constructor_args():
+    sig = inspect.signature(safetyDSL_Monitor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::nonsafetycritical_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::NonSafetyCritical)
+def test_safetydsl_nonsafetycritical_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_NonSafetyCritical)
 
 
-def test_safetydsl::nonsafetycritical_constructor_exists():
-    assert callable(safetyDSL::NonSafetyCritical.__init__)
+def test_safetydsl_nonsafetycritical_constructor_exists():
+    assert callable(safetyDSL_NonSafetyCritical.__init__)
 
 
-def test_safetydsl::nonsafetycritical_constructor_args():
-    sig = inspect.signature(safetyDSL::NonSafetyCritical.__init__)
+def test_safetydsl_nonsafetycritical_constructor_args():
+    sig = inspect.signature(safetyDSL_NonSafetyCritical.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::safetycritical_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyCritical)
+def test_safetydsl_safetycritical_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyCritical)
 
 
-def test_safetydsl::safetycritical_constructor_exists():
-    assert callable(safetyDSL::SafetyCritical.__init__)
+def test_safetydsl_safetycritical_constructor_exists():
+    assert callable(safetyDSL_SafetyCritical.__init__)
 
 
-def test_safetydsl::safetycritical_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyCritical.__init__)
+def test_safetydsl_safetycritical_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyCritical.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::safetycriticalrelation_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyCriticalRelation)
+def test_safetydsl_safetycriticalrelation_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyCriticalRelation)
 
 
-def test_safetydsl::safetycriticalrelation_constructor_exists():
-    assert callable(safetyDSL::SafetyCriticalRelation.__init__)
+def test_safetydsl_safetycriticalrelation_constructor_exists():
+    assert callable(safetyDSL_SafetyCriticalRelation.__init__)
 
 
-def test_safetydsl::safetycriticalrelation_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyCriticalRelation.__init__)
+def test_safetydsl_safetycriticalrelation_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyCriticalRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::architecturalelement_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ArchitecturalElement)
+def test_safetydsl_architecturalelement_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ArchitecturalElement)
 
 
-def test_safetydsl::architecturalelement_constructor_exists():
-    assert callable(safetyDSL::ArchitecturalElement.__init__)
+def test_safetydsl_architecturalelement_constructor_exists():
+    assert callable(safetyDSL_ArchitecturalElement.__init__)
 
 
-def test_safetydsl::architecturalelement_constructor_args():
-    sig = inspect.signature(safetyDSL::ArchitecturalElement.__init__)
+def test_safetydsl_architecturalelement_constructor_args():
+    sig = inspect.signature(safetyDSL_ArchitecturalElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_safetydsl::architecturalelement_has_name():
-    assert hasattr(safetyDSL::ArchitecturalElement, "name")
+def test_safetydsl_architecturalelement_has_name():
+    assert hasattr(safetyDSL_ArchitecturalElement, "name")
     descriptor = None
-    for klass in safetyDSL::ArchitecturalElement.__mro__:
+    for klass in safetyDSL_ArchitecturalElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -722,44 +722,44 @@ def test_safetydsl::architecturalelement_has_name():
 
 
 
-def test_safetydsl::faultcontainment_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::FaultContainment)
+def test_safetydsl_faultcontainment_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_FaultContainment)
 
 
-def test_safetydsl::faultcontainment_constructor_exists():
-    assert callable(safetyDSL::FaultContainment.__init__)
+def test_safetydsl_faultcontainment_constructor_exists():
+    assert callable(safetyDSL_FaultContainment.__init__)
 
 
-def test_safetydsl::faultcontainment_constructor_args():
-    sig = inspect.signature(safetyDSL::FaultContainment.__init__)
+def test_safetydsl_faultcontainment_constructor_args():
+    sig = inspect.signature(safetyDSL_FaultContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::faultdetection_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::FaultDetection)
+def test_safetydsl_faultdetection_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_FaultDetection)
 
 
-def test_safetydsl::faultdetection_constructor_exists():
-    assert callable(safetyDSL::FaultDetection.__init__)
+def test_safetydsl_faultdetection_constructor_exists():
+    assert callable(safetyDSL_FaultDetection.__init__)
 
 
-def test_safetydsl::faultdetection_constructor_args():
-    sig = inspect.signature(safetyDSL::FaultDetection.__init__)
+def test_safetydsl_faultdetection_constructor_args():
+    sig = inspect.signature(safetyDSL_FaultDetection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::faulttreenode_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::FaultTreeNode)
+def test_safetydsl_faulttreenode_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_FaultTreeNode)
 
 
-def test_safetydsl::faulttreenode_constructor_exists():
-    assert callable(safetyDSL::FaultTreeNode.__init__)
+def test_safetydsl_faulttreenode_constructor_exists():
+    assert callable(safetyDSL_FaultTreeNode.__init__)
 
 
-def test_safetydsl::faulttreenode_constructor_args():
-    sig = inspect.signature(safetyDSL::FaultTreeNode.__init__)
+def test_safetydsl_faulttreenode_constructor_args():
+    sig = inspect.signature(safetyDSL_FaultTreeNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -778,107 +778,107 @@ def test_hazardelement_constructor_args():
 
 
 
-def test_safetydsl::safetyrequirement_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyRequirement)
+def test_safetydsl_consequence_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Consequence)
 
 
-def test_safetydsl::safetyrequirement_constructor_exists():
-    assert callable(safetyDSL::SafetyRequirement.__init__)
+def test_safetydsl_consequence_constructor_exists():
+    assert callable(safetyDSL_Consequence.__init__)
 
 
-def test_safetydsl::safetyrequirement_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyRequirement.__init__)
+def test_safetydsl_consequence_constructor_args():
+    sig = inspect.signature(safetyDSL_Consequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::fault_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Fault)
+def test_safetydsl_fault_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Fault)
 
 
-def test_safetydsl::fault_constructor_exists():
-    assert callable(safetyDSL::Fault.__init__)
+def test_safetydsl_fault_constructor_exists():
+    assert callable(safetyDSL_Fault.__init__)
 
 
-def test_safetydsl::fault_constructor_args():
-    sig = inspect.signature(safetyDSL::Fault.__init__)
+def test_safetydsl_fault_constructor_args():
+    sig = inspect.signature(safetyDSL_Fault.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::faulttree_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::FaultTree)
+def test_safetydsl_faulttree_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_FaultTree)
 
 
-def test_safetydsl::faulttree_constructor_exists():
-    assert callable(safetyDSL::FaultTree.__init__)
+def test_safetydsl_faulttree_constructor_exists():
+    assert callable(safetyDSL_FaultTree.__init__)
 
 
-def test_safetydsl::faulttree_constructor_args():
-    sig = inspect.signature(safetyDSL::FaultTree.__init__)
+def test_safetydsl_faulttree_constructor_args():
+    sig = inspect.signature(safetyDSL_FaultTree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::consequence_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Consequence)
+def test_safetydsl_safetyrequirement_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyRequirement)
 
 
-def test_safetydsl::consequence_constructor_exists():
-    assert callable(safetyDSL::Consequence.__init__)
+def test_safetydsl_safetyrequirement_constructor_exists():
+    assert callable(safetyDSL_SafetyRequirement.__init__)
 
 
-def test_safetydsl::consequence_constructor_args():
-    sig = inspect.signature(safetyDSL::Consequence.__init__)
+def test_safetydsl_safetyrequirement_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::hazard_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::Hazard)
+def test_safetydsl_hazard_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_Hazard)
 
 
-def test_safetydsl::hazard_constructor_exists():
-    assert callable(safetyDSL::Hazard.__init__)
+def test_safetydsl_hazard_constructor_exists():
+    assert callable(safetyDSL_Hazard.__init__)
 
 
-def test_safetydsl::hazard_constructor_args():
-    sig = inspect.signature(safetyDSL::Hazard.__init__)
+def test_safetydsl_hazard_constructor_args():
+    sig = inspect.signature(safetyDSL_Hazard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::hazardrelation_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::HazardRelation)
+def test_safetydsl_hazardrelation_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_HazardRelation)
 
 
-def test_safetydsl::hazardrelation_constructor_exists():
-    assert callable(safetyDSL::HazardRelation.__init__)
+def test_safetydsl_hazardrelation_constructor_exists():
+    assert callable(safetyDSL_HazardRelation.__init__)
 
 
-def test_safetydsl::hazardrelation_constructor_args():
-    sig = inspect.signature(safetyDSL::HazardRelation.__init__)
+def test_safetydsl_hazardrelation_constructor_args():
+    sig = inspect.signature(safetyDSL_HazardRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::hazardelement_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::HazardElement)
+def test_safetydsl_hazardelement_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_HazardElement)
 
 
-def test_safetydsl::hazardelement_constructor_exists():
-    assert callable(safetyDSL::HazardElement.__init__)
+def test_safetydsl_hazardelement_constructor_exists():
+    assert callable(safetyDSL_HazardElement.__init__)
 
 
-def test_safetydsl::hazardelement_constructor_args():
-    sig = inspect.signature(safetyDSL::HazardElement.__init__)
+def test_safetydsl_hazardelement_constructor_args():
+    sig = inspect.signature(safetyDSL_HazardElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_safetydsl::hazardelement_has_name():
-    assert hasattr(safetyDSL::HazardElement, "name")
+def test_safetydsl_hazardelement_has_name():
+    assert hasattr(safetyDSL_HazardElement, "name")
     descriptor = None
-    for klass in safetyDSL::HazardElement.__mro__:
+    for klass in safetyDSL_HazardElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -900,79 +900,79 @@ def test_safetyviewpoint_constructor_args():
 
 
 
-def test_safetydsl::safetycriticalviewpoint_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyCriticalViewpoint)
+def test_safetydsl_safetytacticviewpoint_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyTacticViewpoint)
 
 
-def test_safetydsl::safetycriticalviewpoint_constructor_exists():
-    assert callable(safetyDSL::SafetyCriticalViewpoint.__init__)
+def test_safetydsl_safetytacticviewpoint_constructor_exists():
+    assert callable(safetyDSL_SafetyTacticViewpoint.__init__)
 
 
-def test_safetydsl::safetycriticalviewpoint_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyCriticalViewpoint.__init__)
+def test_safetydsl_safetytacticviewpoint_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyTacticViewpoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::safetytacticviewpoint_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyTacticViewpoint)
+def test_safetydsl_safetycriticalviewpoint_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyCriticalViewpoint)
 
 
-def test_safetydsl::safetytacticviewpoint_constructor_exists():
-    assert callable(safetyDSL::SafetyTacticViewpoint.__init__)
+def test_safetydsl_safetycriticalviewpoint_constructor_exists():
+    assert callable(safetyDSL_SafetyCriticalViewpoint.__init__)
 
 
-def test_safetydsl::safetytacticviewpoint_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyTacticViewpoint.__init__)
+def test_safetydsl_safetycriticalviewpoint_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyCriticalViewpoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::hazardviewpoint_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::HazardViewpoint)
+def test_safetydsl_hazardviewpoint_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_HazardViewpoint)
 
 
-def test_safetydsl::hazardviewpoint_constructor_exists():
-    assert callable(safetyDSL::HazardViewpoint.__init__)
+def test_safetydsl_hazardviewpoint_constructor_exists():
+    assert callable(safetyDSL_HazardViewpoint.__init__)
 
 
-def test_safetydsl::hazardviewpoint_constructor_args():
-    sig = inspect.signature(safetyDSL::HazardViewpoint.__init__)
+def test_safetydsl_hazardviewpoint_constructor_args():
+    sig = inspect.signature(safetyDSL_HazardViewpoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::implementationdetail_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::ImplementationDetail)
+def test_safetydsl_implementationdetail_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_ImplementationDetail)
 
 
-def test_safetydsl::implementationdetail_constructor_exists():
-    assert callable(safetyDSL::ImplementationDetail.__init__)
+def test_safetydsl_implementationdetail_constructor_exists():
+    assert callable(safetyDSL_ImplementationDetail.__init__)
 
 
-def test_safetydsl::implementationdetail_constructor_args():
-    sig = inspect.signature(safetyDSL::ImplementationDetail.__init__)
+def test_safetydsl_implementationdetail_constructor_args():
+    sig = inspect.signature(safetyDSL_ImplementationDetail.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_safetydsl::safetyviewpoint_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyViewpoint)
+def test_safetydsl_safetyviewpoint_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyViewpoint)
 
 
-def test_safetydsl::safetyviewpoint_constructor_exists():
-    assert callable(safetyDSL::SafetyViewpoint.__init__)
+def test_safetydsl_safetyviewpoint_constructor_exists():
+    assert callable(safetyDSL_SafetyViewpoint.__init__)
 
 
-def test_safetydsl::safetyviewpoint_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyViewpoint.__init__)
+def test_safetydsl_safetyviewpoint_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyViewpoint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_safetydsl::safetyviewpoint_has_name():
-    assert hasattr(safetyDSL::SafetyViewpoint, "name")
+def test_safetydsl_safetyviewpoint_has_name():
+    assert hasattr(safetyDSL_SafetyViewpoint, "name")
     descriptor = None
-    for klass in safetyDSL::SafetyViewpoint.__mro__:
+    for klass in safetyDSL_SafetyViewpoint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -980,16 +980,16 @@ def test_safetydsl::safetyviewpoint_has_name():
 
 
 
-def test_safetydsl::safetyframework_is_not_abstract():
-    assert not inspect.isabstract(safetyDSL::SafetyFramework)
+def test_safetydsl_safetyframework_is_not_abstract():
+    assert not inspect.isabstract(safetyDSL_SafetyFramework)
 
 
-def test_safetydsl::safetyframework_constructor_exists():
-    assert callable(safetyDSL::SafetyFramework.__init__)
+def test_safetydsl_safetyframework_constructor_exists():
+    assert callable(safetyDSL_SafetyFramework.__init__)
 
 
-def test_safetydsl::safetyframework_constructor_args():
-    sig = inspect.signature(safetyDSL::SafetyFramework.__init__)
+def test_safetydsl_safetyframework_constructor_args():
+    sig = inspect.signature(safetyDSL_SafetyFramework.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1007,96 +1007,96 @@ safe_text = st.text(
 SafetyCriticalRelation_strategy = st.builds(
     SafetyCriticalRelation,
 )
-safetyDSL::ReportsFault_strategy = st.builds(
-    safetyDSL::ReportsFault,
+safetyDSL_MonitorToArchitecturalElement_strategy = st.builds(
+    safetyDSL_MonitorToArchitecturalElement,
 )
-safetyDSL::MonitorToArchitecturalElement_strategy = st.builds(
-    safetyDSL::MonitorToArchitecturalElement,
+safetyDSL_ReportsFault_strategy = st.builds(
+    safetyDSL_ReportsFault,
 )
-safetyDSL::ArchElementToArchElement_strategy = st.builds(
-    safetyDSL::ArchElementToArchElement,
+safetyDSL_ArchElementToArchElement_strategy = st.builds(
+    safetyDSL_ArchElementToArchElement,
 )
 MonitorToArchitecturalElement_strategy = st.builds(
     MonitorToArchitecturalElement,
 )
-safetyDSL::Inits_strategy = st.builds(
-    safetyDSL::Inits,
+safetyDSL_Restarts_strategy = st.builds(
+    safetyDSL_Restarts,
 )
-safetyDSL::Restarts_strategy = st.builds(
-    safetyDSL::Restarts,
+safetyDSL_Starts_strategy = st.builds(
+    safetyDSL_Starts,
 )
-safetyDSL::Starts_strategy = st.builds(
-    safetyDSL::Starts,
+safetyDSL_Inits_strategy = st.builds(
+    safetyDSL_Inits,
 )
-safetyDSL::Monitors_strategy = st.builds(
-    safetyDSL::Monitors,
+safetyDSL_Monitors_strategy = st.builds(
+    safetyDSL_Monitors,
 )
-safetyDSL::Stops_strategy = st.builds(
-    safetyDSL::Stops,
+safetyDSL_Stops_strategy = st.builds(
+    safetyDSL_Stops,
 )
 ArchElementToArchElement_strategy = st.builds(
     ArchElementToArchElement,
 )
-safetyDSL::Writes_strategy = st.builds(
-    safetyDSL::Writes,
+safetyDSL_Writes_strategy = st.builds(
+    safetyDSL_Writes,
 )
-safetyDSL::Commands_strategy = st.builds(
-    safetyDSL::Commands,
+safetyDSL_Commands_strategy = st.builds(
+    safetyDSL_Commands,
 )
-safetyDSL::Reads_strategy = st.builds(
-    safetyDSL::Reads,
+safetyDSL_Reads_strategy = st.builds(
+    safetyDSL_Reads,
 )
 State_strategy = st.builds(
     State,
 )
-safetyDSL::SafeState_strategy = st.builds(
-    safetyDSL::SafeState,
+safetyDSL_SafeState_strategy = st.builds(
+    safetyDSL_SafeState,
 )
 CriticalityLevel_strategy = st.builds(
     CriticalityLevel,
 )
-safetyDSL::LevelC_strategy = st.builds(
-    safetyDSL::LevelC,
+safetyDSL_LevelB_strategy = st.builds(
+    safetyDSL_LevelB,
 )
-safetyDSL::LevelB_strategy = st.builds(
-    safetyDSL::LevelB,
+safetyDSL_LevelD_strategy = st.builds(
+    safetyDSL_LevelD,
 )
-safetyDSL::LevelD_strategy = st.builds(
-    safetyDSL::LevelD,
+safetyDSL_LevelC_strategy = st.builds(
+    safetyDSL_LevelC,
 )
-safetyDSL::LevelA_strategy = st.builds(
-    safetyDSL::LevelA,
+safetyDSL_LevelA_strategy = st.builds(
+    safetyDSL_LevelA,
 )
 FaultTreeNode_strategy = st.builds(
     FaultTreeNode,
 )
-safetyDSL::ANDNodeExpression_strategy = st.builds(
-    safetyDSL::ANDNodeExpression,
+safetyDSL_ANDNodeExpression_strategy = st.builds(
+    safetyDSL_ANDNodeExpression,
 )
-safetyDSL::ORNodeExpression_strategy = st.builds(
-    safetyDSL::ORNodeExpression,
+safetyDSL_ORNodeExpression_strategy = st.builds(
+    safetyDSL_ORNodeExpression,
 )
-safetyDSL::ClassDef_strategy = st.builds(
-    safetyDSL::ClassDef,
+safetyDSL_ClassDef_strategy = st.builds(
+    safetyDSL_ClassDef,
     name=
         safe_text
 )
-safetyDSL::ClassTestCaseRelation_strategy = st.builds(
-    safetyDSL::ClassTestCaseRelation,
+safetyDSL_ClassTestCaseRelation_strategy = st.builds(
+    safetyDSL_ClassTestCaseRelation,
     testCases=
         safe_text
 )
-safetyDSL::ModuleClassRelation_strategy = st.builds(
-    safetyDSL::ModuleClassRelation,
+safetyDSL_ModuleClassRelation_strategy = st.builds(
+    safetyDSL_ModuleClassRelation,
 )
 SafetyTactic_strategy = st.builds(
     SafetyTactic,
 )
-safetyDSL::FaultAvoidance_strategy = st.builds(
-    safetyDSL::FaultAvoidance,
+safetyDSL_FaultAvoidance_strategy = st.builds(
+    safetyDSL_FaultAvoidance,
 )
-safetyDSL::SafetyTactic_strategy = st.builds(
-    safetyDSL::SafetyTactic,
+safetyDSL_SafetyTactic_strategy = st.builds(
+    safetyDSL_SafetyTactic,
     type=
         safe_text,
     name=
@@ -1105,100 +1105,100 @@ safetyDSL::SafetyTactic_strategy = st.builds(
 HazardRelation_strategy = st.builds(
     HazardRelation,
 )
-safetyDSL::Causes_strategy = st.builds(
-    safetyDSL::Causes,
+safetyDSL_Causes_strategy = st.builds(
+    safetyDSL_Causes,
 )
-safetyDSL::CausedBy_strategy = st.builds(
-    safetyDSL::CausedBy,
+safetyDSL_CausedBy_strategy = st.builds(
+    safetyDSL_CausedBy,
 )
-safetyDSL::DerivedFrom_strategy = st.builds(
-    safetyDSL::DerivedFrom,
+safetyDSL_DerivedFrom_strategy = st.builds(
+    safetyDSL_DerivedFrom,
 )
-safetyDSL::State_strategy = st.builds(
-    safetyDSL::State,
+safetyDSL_State_strategy = st.builds(
+    safetyDSL_State,
     name=
         safe_text
 )
-safetyDSL::CriticalityLevel_strategy = st.builds(
-    safetyDSL::CriticalityLevel,
+safetyDSL_CriticalityLevel_strategy = st.builds(
+    safetyDSL_CriticalityLevel,
 )
 ArchitecturalElement_strategy = st.builds(
     ArchitecturalElement,
 )
-safetyDSL::Monitor_strategy = st.builds(
-    safetyDSL::Monitor,
+safetyDSL_Monitor_strategy = st.builds(
+    safetyDSL_Monitor,
 )
-safetyDSL::NonSafetyCritical_strategy = st.builds(
-    safetyDSL::NonSafetyCritical,
+safetyDSL_NonSafetyCritical_strategy = st.builds(
+    safetyDSL_NonSafetyCritical,
 )
-safetyDSL::SafetyCritical_strategy = st.builds(
-    safetyDSL::SafetyCritical,
+safetyDSL_SafetyCritical_strategy = st.builds(
+    safetyDSL_SafetyCritical,
 )
-safetyDSL::SafetyCriticalRelation_strategy = st.builds(
-    safetyDSL::SafetyCriticalRelation,
+safetyDSL_SafetyCriticalRelation_strategy = st.builds(
+    safetyDSL_SafetyCriticalRelation,
 )
-safetyDSL::ArchitecturalElement_strategy = st.builds(
-    safetyDSL::ArchitecturalElement,
+safetyDSL_ArchitecturalElement_strategy = st.builds(
+    safetyDSL_ArchitecturalElement,
     name=
         safe_text
 )
-safetyDSL::FaultContainment_strategy = st.builds(
-    safetyDSL::FaultContainment,
+safetyDSL_FaultContainment_strategy = st.builds(
+    safetyDSL_FaultContainment,
 )
-safetyDSL::FaultDetection_strategy = st.builds(
-    safetyDSL::FaultDetection,
+safetyDSL_FaultDetection_strategy = st.builds(
+    safetyDSL_FaultDetection,
 )
-safetyDSL::FaultTreeNode_strategy = st.builds(
-    safetyDSL::FaultTreeNode,
+safetyDSL_FaultTreeNode_strategy = st.builds(
+    safetyDSL_FaultTreeNode,
 )
 HazardElement_strategy = st.builds(
     HazardElement,
 )
-safetyDSL::SafetyRequirement_strategy = st.builds(
-    safetyDSL::SafetyRequirement,
+safetyDSL_Consequence_strategy = st.builds(
+    safetyDSL_Consequence,
 )
-safetyDSL::Fault_strategy = st.builds(
-    safetyDSL::Fault,
+safetyDSL_Fault_strategy = st.builds(
+    safetyDSL_Fault,
 )
-safetyDSL::FaultTree_strategy = st.builds(
-    safetyDSL::FaultTree,
+safetyDSL_FaultTree_strategy = st.builds(
+    safetyDSL_FaultTree,
 )
-safetyDSL::Consequence_strategy = st.builds(
-    safetyDSL::Consequence,
+safetyDSL_SafetyRequirement_strategy = st.builds(
+    safetyDSL_SafetyRequirement,
 )
-safetyDSL::Hazard_strategy = st.builds(
-    safetyDSL::Hazard,
+safetyDSL_Hazard_strategy = st.builds(
+    safetyDSL_Hazard,
 )
-safetyDSL::HazardRelation_strategy = st.builds(
-    safetyDSL::HazardRelation,
+safetyDSL_HazardRelation_strategy = st.builds(
+    safetyDSL_HazardRelation,
 )
-safetyDSL::HazardElement_strategy = st.builds(
-    safetyDSL::HazardElement,
+safetyDSL_HazardElement_strategy = st.builds(
+    safetyDSL_HazardElement,
     name=
         safe_text
 )
 SafetyViewpoint_strategy = st.builds(
     SafetyViewpoint,
 )
-safetyDSL::SafetyCriticalViewpoint_strategy = st.builds(
-    safetyDSL::SafetyCriticalViewpoint,
+safetyDSL_SafetyTacticViewpoint_strategy = st.builds(
+    safetyDSL_SafetyTacticViewpoint,
 )
-safetyDSL::SafetyTacticViewpoint_strategy = st.builds(
-    safetyDSL::SafetyTacticViewpoint,
+safetyDSL_SafetyCriticalViewpoint_strategy = st.builds(
+    safetyDSL_SafetyCriticalViewpoint,
 )
-safetyDSL::HazardViewpoint_strategy = st.builds(
-    safetyDSL::HazardViewpoint,
+safetyDSL_HazardViewpoint_strategy = st.builds(
+    safetyDSL_HazardViewpoint,
 )
-safetyDSL::ImplementationDetail_strategy = st.builds(
-    safetyDSL::ImplementationDetail,
+safetyDSL_ImplementationDetail_strategy = st.builds(
+    safetyDSL_ImplementationDetail,
 )
-safetyDSL::SafetyViewpoint_strategy = st.builds(
-    safetyDSL::SafetyViewpoint,
+safetyDSL_SafetyViewpoint_strategy = st.builds(
+    safetyDSL_SafetyViewpoint,
     name=
         safe_text
 )
-safetyDSL::SafetyFramework_strategy = st.builds(
-    safetyDSL::SafetyFramework,
+safetyDSL_SafetyFramework_strategy = st.builds(
+    safetyDSL_SafetyFramework,
 )
 
 @given(instance=SafetyCriticalRelation_strategy)
@@ -1206,191 +1206,179 @@ safetyDSL::SafetyFramework_strategy = st.builds(
 def test_safetycriticalrelation_instantiation(instance):
     assert isinstance(instance, SafetyCriticalRelation)
 
-@given(instance=safetyDSL::ReportsFault_strategy)
+@given(instance=safetyDSL_MonitorToArchitecturalElement_strategy)
 @settings(max_examples=50)
-def test_safetydsl::reportsfault_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ReportsFault)
+def test_safetydsl_monitortoarchitecturalelement_instantiation(instance):
+    assert isinstance(instance, safetyDSL_MonitorToArchitecturalElement)
 
-@given(instance=safetyDSL::MonitorToArchitecturalElement_strategy)
+@given(instance=safetyDSL_ReportsFault_strategy)
 @settings(max_examples=50)
-def test_safetydsl::monitortoarchitecturalelement_instantiation(instance):
-    assert isinstance(instance, safetyDSL::MonitorToArchitecturalElement)
+def test_safetydsl_reportsfault_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ReportsFault)
 
-@given(instance=safetyDSL::ArchElementToArchElement_strategy)
+@given(instance=safetyDSL_ArchElementToArchElement_strategy)
 @settings(max_examples=50)
-def test_safetydsl::archelementtoarchelement_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ArchElementToArchElement)
+def test_safetydsl_archelementtoarchelement_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ArchElementToArchElement)
 
 @given(instance=MonitorToArchitecturalElement_strategy)
 @settings(max_examples=50)
 def test_monitortoarchitecturalelement_instantiation(instance):
     assert isinstance(instance, MonitorToArchitecturalElement)
 
-@given(instance=safetyDSL::Inits_strategy)
+@given(instance=safetyDSL_Restarts_strategy)
 @settings(max_examples=50)
-def test_safetydsl::inits_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Inits)
+def test_safetydsl_restarts_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Restarts)
 
-@given(instance=safetyDSL::Restarts_strategy)
+@given(instance=safetyDSL_Starts_strategy)
 @settings(max_examples=50)
-def test_safetydsl::restarts_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Restarts)
+def test_safetydsl_starts_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Starts)
 
-@given(instance=safetyDSL::Starts_strategy)
+@given(instance=safetyDSL_Inits_strategy)
 @settings(max_examples=50)
-def test_safetydsl::starts_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Starts)
+def test_safetydsl_inits_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Inits)
 
-@given(instance=safetyDSL::Monitors_strategy)
+@given(instance=safetyDSL_Monitors_strategy)
 @settings(max_examples=50)
-def test_safetydsl::monitors_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Monitors)
+def test_safetydsl_monitors_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Monitors)
 
-@given(instance=safetyDSL::Stops_strategy)
+@given(instance=safetyDSL_Stops_strategy)
 @settings(max_examples=50)
-def test_safetydsl::stops_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Stops)
+def test_safetydsl_stops_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Stops)
 
 @given(instance=ArchElementToArchElement_strategy)
 @settings(max_examples=50)
 def test_archelementtoarchelement_instantiation(instance):
     assert isinstance(instance, ArchElementToArchElement)
 
-@given(instance=safetyDSL::Writes_strategy)
+@given(instance=safetyDSL_Writes_strategy)
 @settings(max_examples=50)
-def test_safetydsl::writes_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Writes)
+def test_safetydsl_writes_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Writes)
 
-@given(instance=safetyDSL::Commands_strategy)
+@given(instance=safetyDSL_Commands_strategy)
 @settings(max_examples=50)
-def test_safetydsl::commands_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Commands)
+def test_safetydsl_commands_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Commands)
 
-@given(instance=safetyDSL::Reads_strategy)
+@given(instance=safetyDSL_Reads_strategy)
 @settings(max_examples=50)
-def test_safetydsl::reads_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Reads)
+def test_safetydsl_reads_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Reads)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=safetyDSL::SafeState_strategy)
+@given(instance=safetyDSL_SafeState_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safestate_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafeState)
+def test_safetydsl_safestate_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafeState)
 
 @given(instance=CriticalityLevel_strategy)
 @settings(max_examples=50)
 def test_criticalitylevel_instantiation(instance):
     assert isinstance(instance, CriticalityLevel)
 
-@given(instance=safetyDSL::LevelC_strategy)
+@given(instance=safetyDSL_LevelB_strategy)
 @settings(max_examples=50)
-def test_safetydsl::levelc_instantiation(instance):
-    assert isinstance(instance, safetyDSL::LevelC)
+def test_safetydsl_levelb_instantiation(instance):
+    assert isinstance(instance, safetyDSL_LevelB)
 
-@given(instance=safetyDSL::LevelB_strategy)
+@given(instance=safetyDSL_LevelD_strategy)
 @settings(max_examples=50)
-def test_safetydsl::levelb_instantiation(instance):
-    assert isinstance(instance, safetyDSL::LevelB)
+def test_safetydsl_leveld_instantiation(instance):
+    assert isinstance(instance, safetyDSL_LevelD)
 
-@given(instance=safetyDSL::LevelD_strategy)
+@given(instance=safetyDSL_LevelC_strategy)
 @settings(max_examples=50)
-def test_safetydsl::leveld_instantiation(instance):
-    assert isinstance(instance, safetyDSL::LevelD)
+def test_safetydsl_levelc_instantiation(instance):
+    assert isinstance(instance, safetyDSL_LevelC)
 
-@given(instance=safetyDSL::LevelA_strategy)
+@given(instance=safetyDSL_LevelA_strategy)
 @settings(max_examples=50)
-def test_safetydsl::levela_instantiation(instance):
-    assert isinstance(instance, safetyDSL::LevelA)
+def test_safetydsl_levela_instantiation(instance):
+    assert isinstance(instance, safetyDSL_LevelA)
 
 @given(instance=FaultTreeNode_strategy)
 @settings(max_examples=50)
 def test_faulttreenode_instantiation(instance):
     assert isinstance(instance, FaultTreeNode)
 
-@given(instance=safetyDSL::ANDNodeExpression_strategy)
+@given(instance=safetyDSL_ANDNodeExpression_strategy)
 @settings(max_examples=50)
-def test_safetydsl::andnodeexpression_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ANDNodeExpression)
+def test_safetydsl_andnodeexpression_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ANDNodeExpression)
 
-@given(instance=safetyDSL::ORNodeExpression_strategy)
+@given(instance=safetyDSL_ORNodeExpression_strategy)
 @settings(max_examples=50)
-def test_safetydsl::ornodeexpression_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ORNodeExpression)
+def test_safetydsl_ornodeexpression_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ORNodeExpression)
 
-@given(instance=safetyDSL::ClassDef_strategy)
+@given(instance=safetyDSL_ClassDef_strategy)
 @settings(max_examples=50)
-def test_safetydsl::classdef_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ClassDef)
-
-@given(instance=safetyDSL::ClassDef_strategy)
-def test_safetydsl::classdef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_safetydsl_classdef_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ClassDef)
 
 
-@given(instance=safetyDSL::ClassDef_strategy)
-def test_safetydsl::classdef_name_setter(instance):
+
+@given(instance=safetyDSL_ClassDef_strategy)
+def test_safetydsl_classdef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=safetyDSL::ClassTestCaseRelation_strategy)
+@given(instance=safetyDSL_ClassTestCaseRelation_strategy)
 @settings(max_examples=50)
-def test_safetydsl::classtestcaserelation_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ClassTestCaseRelation)
-
-@given(instance=safetyDSL::ClassTestCaseRelation_strategy)
-def test_safetydsl::classtestcaserelation_testCases_type(instance):
-    assert isinstance(instance.testCases, str)
+def test_safetydsl_classtestcaserelation_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ClassTestCaseRelation)
 
 
-@given(instance=safetyDSL::ClassTestCaseRelation_strategy)
-def test_safetydsl::classtestcaserelation_testCases_setter(instance):
+
+@given(instance=safetyDSL_ClassTestCaseRelation_strategy)
+def test_safetydsl_classtestcaserelation_testCases_setter(instance):
     original = instance.testCases
     instance.testCases = original
     assert instance.testCases == original
 
-@given(instance=safetyDSL::ModuleClassRelation_strategy)
+@given(instance=safetyDSL_ModuleClassRelation_strategy)
 @settings(max_examples=50)
-def test_safetydsl::moduleclassrelation_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ModuleClassRelation)
+def test_safetydsl_moduleclassrelation_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ModuleClassRelation)
 
 @given(instance=SafetyTactic_strategy)
 @settings(max_examples=50)
 def test_safetytactic_instantiation(instance):
     assert isinstance(instance, SafetyTactic)
 
-@given(instance=safetyDSL::FaultAvoidance_strategy)
+@given(instance=safetyDSL_FaultAvoidance_strategy)
 @settings(max_examples=50)
-def test_safetydsl::faultavoidance_instantiation(instance):
-    assert isinstance(instance, safetyDSL::FaultAvoidance)
+def test_safetydsl_faultavoidance_instantiation(instance):
+    assert isinstance(instance, safetyDSL_FaultAvoidance)
 
-@given(instance=safetyDSL::SafetyTactic_strategy)
+@given(instance=safetyDSL_SafetyTactic_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetytactic_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyTactic)
-
-@given(instance=safetyDSL::SafetyTactic_strategy)
-def test_safetydsl::safetytactic_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_safetydsl_safetytactic_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyTactic)
 
 
-@given(instance=safetyDSL::SafetyTactic_strategy)
-def test_safetydsl::safetytactic_type_setter(instance):
+
+@given(instance=safetyDSL_SafetyTactic_strategy)
+def test_safetydsl_safetytactic_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=safetyDSL::SafetyTactic_strategy)
-def test_safetydsl::safetytactic_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=safetyDSL::SafetyTactic_strategy)
-def test_safetydsl::safetytactic_name_setter(instance):
+@given(instance=safetyDSL_SafetyTactic_strategy)
+def test_safetydsl_safetytactic_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1400,145 +1388,136 @@ def test_safetydsl::safetytactic_name_setter(instance):
 def test_hazardrelation_instantiation(instance):
     assert isinstance(instance, HazardRelation)
 
-@given(instance=safetyDSL::Causes_strategy)
+@given(instance=safetyDSL_Causes_strategy)
 @settings(max_examples=50)
-def test_safetydsl::causes_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Causes)
+def test_safetydsl_causes_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Causes)
 
-@given(instance=safetyDSL::CausedBy_strategy)
+@given(instance=safetyDSL_CausedBy_strategy)
 @settings(max_examples=50)
-def test_safetydsl::causedby_instantiation(instance):
-    assert isinstance(instance, safetyDSL::CausedBy)
+def test_safetydsl_causedby_instantiation(instance):
+    assert isinstance(instance, safetyDSL_CausedBy)
 
-@given(instance=safetyDSL::DerivedFrom_strategy)
+@given(instance=safetyDSL_DerivedFrom_strategy)
 @settings(max_examples=50)
-def test_safetydsl::derivedfrom_instantiation(instance):
-    assert isinstance(instance, safetyDSL::DerivedFrom)
+def test_safetydsl_derivedfrom_instantiation(instance):
+    assert isinstance(instance, safetyDSL_DerivedFrom)
 
-@given(instance=safetyDSL::State_strategy)
+@given(instance=safetyDSL_State_strategy)
 @settings(max_examples=50)
-def test_safetydsl::state_instantiation(instance):
-    assert isinstance(instance, safetyDSL::State)
-
-@given(instance=safetyDSL::State_strategy)
-def test_safetydsl::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_safetydsl_state_instantiation(instance):
+    assert isinstance(instance, safetyDSL_State)
 
 
-@given(instance=safetyDSL::State_strategy)
-def test_safetydsl::state_name_setter(instance):
+
+@given(instance=safetyDSL_State_strategy)
+def test_safetydsl_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=safetyDSL::CriticalityLevel_strategy)
+@given(instance=safetyDSL_CriticalityLevel_strategy)
 @settings(max_examples=50)
-def test_safetydsl::criticalitylevel_instantiation(instance):
-    assert isinstance(instance, safetyDSL::CriticalityLevel)
+def test_safetydsl_criticalitylevel_instantiation(instance):
+    assert isinstance(instance, safetyDSL_CriticalityLevel)
 
 @given(instance=ArchitecturalElement_strategy)
 @settings(max_examples=50)
 def test_architecturalelement_instantiation(instance):
     assert isinstance(instance, ArchitecturalElement)
 
-@given(instance=safetyDSL::Monitor_strategy)
+@given(instance=safetyDSL_Monitor_strategy)
 @settings(max_examples=50)
-def test_safetydsl::monitor_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Monitor)
+def test_safetydsl_monitor_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Monitor)
 
-@given(instance=safetyDSL::NonSafetyCritical_strategy)
+@given(instance=safetyDSL_NonSafetyCritical_strategy)
 @settings(max_examples=50)
-def test_safetydsl::nonsafetycritical_instantiation(instance):
-    assert isinstance(instance, safetyDSL::NonSafetyCritical)
+def test_safetydsl_nonsafetycritical_instantiation(instance):
+    assert isinstance(instance, safetyDSL_NonSafetyCritical)
 
-@given(instance=safetyDSL::SafetyCritical_strategy)
+@given(instance=safetyDSL_SafetyCritical_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetycritical_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyCritical)
+def test_safetydsl_safetycritical_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyCritical)
 
-@given(instance=safetyDSL::SafetyCriticalRelation_strategy)
+@given(instance=safetyDSL_SafetyCriticalRelation_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetycriticalrelation_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyCriticalRelation)
+def test_safetydsl_safetycriticalrelation_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyCriticalRelation)
 
-@given(instance=safetyDSL::ArchitecturalElement_strategy)
+@given(instance=safetyDSL_ArchitecturalElement_strategy)
 @settings(max_examples=50)
-def test_safetydsl::architecturalelement_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ArchitecturalElement)
-
-@given(instance=safetyDSL::ArchitecturalElement_strategy)
-def test_safetydsl::architecturalelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_safetydsl_architecturalelement_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ArchitecturalElement)
 
 
-@given(instance=safetyDSL::ArchitecturalElement_strategy)
-def test_safetydsl::architecturalelement_name_setter(instance):
+
+@given(instance=safetyDSL_ArchitecturalElement_strategy)
+def test_safetydsl_architecturalelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=safetyDSL::FaultContainment_strategy)
+@given(instance=safetyDSL_FaultContainment_strategy)
 @settings(max_examples=50)
-def test_safetydsl::faultcontainment_instantiation(instance):
-    assert isinstance(instance, safetyDSL::FaultContainment)
+def test_safetydsl_faultcontainment_instantiation(instance):
+    assert isinstance(instance, safetyDSL_FaultContainment)
 
-@given(instance=safetyDSL::FaultDetection_strategy)
+@given(instance=safetyDSL_FaultDetection_strategy)
 @settings(max_examples=50)
-def test_safetydsl::faultdetection_instantiation(instance):
-    assert isinstance(instance, safetyDSL::FaultDetection)
+def test_safetydsl_faultdetection_instantiation(instance):
+    assert isinstance(instance, safetyDSL_FaultDetection)
 
-@given(instance=safetyDSL::FaultTreeNode_strategy)
+@given(instance=safetyDSL_FaultTreeNode_strategy)
 @settings(max_examples=50)
-def test_safetydsl::faulttreenode_instantiation(instance):
-    assert isinstance(instance, safetyDSL::FaultTreeNode)
+def test_safetydsl_faulttreenode_instantiation(instance):
+    assert isinstance(instance, safetyDSL_FaultTreeNode)
 
 @given(instance=HazardElement_strategy)
 @settings(max_examples=50)
 def test_hazardelement_instantiation(instance):
     assert isinstance(instance, HazardElement)
 
-@given(instance=safetyDSL::SafetyRequirement_strategy)
+@given(instance=safetyDSL_Consequence_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetyrequirement_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyRequirement)
+def test_safetydsl_consequence_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Consequence)
 
-@given(instance=safetyDSL::Fault_strategy)
+@given(instance=safetyDSL_Fault_strategy)
 @settings(max_examples=50)
-def test_safetydsl::fault_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Fault)
+def test_safetydsl_fault_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Fault)
 
-@given(instance=safetyDSL::FaultTree_strategy)
+@given(instance=safetyDSL_FaultTree_strategy)
 @settings(max_examples=50)
-def test_safetydsl::faulttree_instantiation(instance):
-    assert isinstance(instance, safetyDSL::FaultTree)
+def test_safetydsl_faulttree_instantiation(instance):
+    assert isinstance(instance, safetyDSL_FaultTree)
 
-@given(instance=safetyDSL::Consequence_strategy)
+@given(instance=safetyDSL_SafetyRequirement_strategy)
 @settings(max_examples=50)
-def test_safetydsl::consequence_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Consequence)
+def test_safetydsl_safetyrequirement_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyRequirement)
 
-@given(instance=safetyDSL::Hazard_strategy)
+@given(instance=safetyDSL_Hazard_strategy)
 @settings(max_examples=50)
-def test_safetydsl::hazard_instantiation(instance):
-    assert isinstance(instance, safetyDSL::Hazard)
+def test_safetydsl_hazard_instantiation(instance):
+    assert isinstance(instance, safetyDSL_Hazard)
 
-@given(instance=safetyDSL::HazardRelation_strategy)
+@given(instance=safetyDSL_HazardRelation_strategy)
 @settings(max_examples=50)
-def test_safetydsl::hazardrelation_instantiation(instance):
-    assert isinstance(instance, safetyDSL::HazardRelation)
+def test_safetydsl_hazardrelation_instantiation(instance):
+    assert isinstance(instance, safetyDSL_HazardRelation)
 
-@given(instance=safetyDSL::HazardElement_strategy)
+@given(instance=safetyDSL_HazardElement_strategy)
 @settings(max_examples=50)
-def test_safetydsl::hazardelement_instantiation(instance):
-    assert isinstance(instance, safetyDSL::HazardElement)
-
-@given(instance=safetyDSL::HazardElement_strategy)
-def test_safetydsl::hazardelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_safetydsl_hazardelement_instantiation(instance):
+    assert isinstance(instance, safetyDSL_HazardElement)
 
 
-@given(instance=safetyDSL::HazardElement_strategy)
-def test_safetydsl::hazardelement_name_setter(instance):
+
+@given(instance=safetyDSL_HazardElement_strategy)
+def test_safetydsl_hazardelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1548,43 +1527,40 @@ def test_safetydsl::hazardelement_name_setter(instance):
 def test_safetyviewpoint_instantiation(instance):
     assert isinstance(instance, SafetyViewpoint)
 
-@given(instance=safetyDSL::SafetyCriticalViewpoint_strategy)
+@given(instance=safetyDSL_SafetyTacticViewpoint_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetycriticalviewpoint_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyCriticalViewpoint)
+def test_safetydsl_safetytacticviewpoint_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyTacticViewpoint)
 
-@given(instance=safetyDSL::SafetyTacticViewpoint_strategy)
+@given(instance=safetyDSL_SafetyCriticalViewpoint_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetytacticviewpoint_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyTacticViewpoint)
+def test_safetydsl_safetycriticalviewpoint_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyCriticalViewpoint)
 
-@given(instance=safetyDSL::HazardViewpoint_strategy)
+@given(instance=safetyDSL_HazardViewpoint_strategy)
 @settings(max_examples=50)
-def test_safetydsl::hazardviewpoint_instantiation(instance):
-    assert isinstance(instance, safetyDSL::HazardViewpoint)
+def test_safetydsl_hazardviewpoint_instantiation(instance):
+    assert isinstance(instance, safetyDSL_HazardViewpoint)
 
-@given(instance=safetyDSL::ImplementationDetail_strategy)
+@given(instance=safetyDSL_ImplementationDetail_strategy)
 @settings(max_examples=50)
-def test_safetydsl::implementationdetail_instantiation(instance):
-    assert isinstance(instance, safetyDSL::ImplementationDetail)
+def test_safetydsl_implementationdetail_instantiation(instance):
+    assert isinstance(instance, safetyDSL_ImplementationDetail)
 
-@given(instance=safetyDSL::SafetyViewpoint_strategy)
+@given(instance=safetyDSL_SafetyViewpoint_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetyviewpoint_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyViewpoint)
-
-@given(instance=safetyDSL::SafetyViewpoint_strategy)
-def test_safetydsl::safetyviewpoint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_safetydsl_safetyviewpoint_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyViewpoint)
 
 
-@given(instance=safetyDSL::SafetyViewpoint_strategy)
-def test_safetydsl::safetyviewpoint_name_setter(instance):
+
+@given(instance=safetyDSL_SafetyViewpoint_strategy)
+def test_safetydsl_safetyviewpoint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=safetyDSL::SafetyFramework_strategy)
+@given(instance=safetyDSL_SafetyFramework_strategy)
 @settings(max_examples=50)
-def test_safetydsl::safetyframework_instantiation(instance):
-    assert isinstance(instance, safetyDSL::SafetyFramework)
+def test_safetydsl_safetyframework_instantiation(instance):
+    assert isinstance(instance, safetyDSL_SafetyFramework)

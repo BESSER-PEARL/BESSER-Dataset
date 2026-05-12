@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     PseudoState,
-    SimplStateMachineDC::InitialState,
+    SimplStateMachineDC_InitialState,
     State,
-    SimplStateMachineDC::PseudoState,
-    SimplStateMachineDC::CompositeState,
-    SimplStateMachineDC::State,
-    SimplStateMachineDC::Transition,
-    SimplStateMachineDC::StateMachine,
+    SimplStateMachineDC_PseudoState,
+    SimplStateMachineDC_CompositeState,
+    SimplStateMachineDC_State,
+    SimplStateMachineDC_Transition,
+    SimplStateMachineDC_StateMachine,
 )
 
 # =============================================================================
@@ -36,16 +36,16 @@ def test_pseudostate_constructor_args():
 
 
 
-def test_simplstatemachinedc::initialstate_is_not_abstract():
-    assert not inspect.isabstract(SimplStateMachineDC::InitialState)
+def test_simplstatemachinedc_initialstate_is_not_abstract():
+    assert not inspect.isabstract(SimplStateMachineDC_InitialState)
 
 
-def test_simplstatemachinedc::initialstate_constructor_exists():
-    assert callable(SimplStateMachineDC::InitialState.__init__)
+def test_simplstatemachinedc_initialstate_constructor_exists():
+    assert callable(SimplStateMachineDC_InitialState.__init__)
 
 
-def test_simplstatemachinedc::initialstate_constructor_args():
-    sig = inspect.signature(SimplStateMachineDC::InitialState.__init__)
+def test_simplstatemachinedc_initialstate_constructor_args():
+    sig = inspect.signature(SimplStateMachineDC_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,125 +64,125 @@ def test_state_constructor_args():
 
 
 
-def test_simplstatemachinedc::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(SimplStateMachineDC::PseudoState)
+def test_simplstatemachinedc_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(SimplStateMachineDC_PseudoState)
 
 
-def test_simplstatemachinedc::pseudostate_constructor_exists():
-    assert callable(SimplStateMachineDC::PseudoState.__init__)
+def test_simplstatemachinedc_pseudostate_constructor_exists():
+    assert callable(SimplStateMachineDC_PseudoState.__init__)
 
 
-def test_simplstatemachinedc::pseudostate_constructor_args():
-    sig = inspect.signature(SimplStateMachineDC::PseudoState.__init__)
+def test_simplstatemachinedc_pseudostate_constructor_args():
+    sig = inspect.signature(SimplStateMachineDC_PseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplstatemachinedc::compositestate_is_not_abstract():
-    assert not inspect.isabstract(SimplStateMachineDC::CompositeState)
+def test_simplstatemachinedc_compositestate_is_not_abstract():
+    assert not inspect.isabstract(SimplStateMachineDC_CompositeState)
 
 
-def test_simplstatemachinedc::compositestate_constructor_exists():
-    assert callable(SimplStateMachineDC::CompositeState.__init__)
+def test_simplstatemachinedc_compositestate_constructor_exists():
+    assert callable(SimplStateMachineDC_CompositeState.__init__)
 
 
-def test_simplstatemachinedc::compositestate_constructor_args():
-    sig = inspect.signature(SimplStateMachineDC::CompositeState.__init__)
+def test_simplstatemachinedc_compositestate_constructor_args():
+    sig = inspect.signature(SimplStateMachineDC_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplstatemachinedc::state_is_not_abstract():
-    assert not inspect.isabstract(SimplStateMachineDC::State)
+def test_simplstatemachinedc_state_is_not_abstract():
+    assert not inspect.isabstract(SimplStateMachineDC_State)
 
 
-def test_simplstatemachinedc::state_constructor_exists():
-    assert callable(SimplStateMachineDC::State.__init__)
+def test_simplstatemachinedc_state_constructor_exists():
+    assert callable(SimplStateMachineDC_State.__init__)
 
 
-def test_simplstatemachinedc::state_constructor_args():
-    sig = inspect.signature(SimplStateMachineDC::State.__init__)
+def test_simplstatemachinedc_state_constructor_args():
+    sig = inspect.signature(SimplStateMachineDC_State.__init__)
     params = list(sig.parameters.keys())
-    assert "Ord" in params, "Missing parameter 'Ord'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "Inh" in params, "Missing parameter 'Inh'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "isActive" in params, "Missing parameter 'isActive'"
-    assert "OrdIf" in params, "Missing parameter 'OrdIf'"
     assert "InhIf" in params, "Missing parameter 'InhIf'"
+    assert "OrdIf" in params, "Missing parameter 'OrdIf'"
+    assert "Ord" in params, "Missing parameter 'Ord'"
 
-def test_simplstatemachinedc::state_has_Ord():
-    assert hasattr(SimplStateMachineDC::State, "Ord")
+def test_simplstatemachinedc_state_has_Inh():
+    assert hasattr(SimplStateMachineDC_State, "Inh")
     descriptor = None
-    for klass in SimplStateMachineDC::State.__mro__:
-        if "Ord" in klass.__dict__:
-            descriptor = klass.__dict__["Ord"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplstatemachinedc::state_has_name():
-    assert hasattr(SimplStateMachineDC::State, "name")
-    descriptor = None
-    for klass in SimplStateMachineDC::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplstatemachinedc::state_has_Inh():
-    assert hasattr(SimplStateMachineDC::State, "Inh")
-    descriptor = None
-    for klass in SimplStateMachineDC::State.__mro__:
+    for klass in SimplStateMachineDC_State.__mro__:
         if "Inh" in klass.__dict__:
             descriptor = klass.__dict__["Inh"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplstatemachinedc::state_has_isActive():
-    assert hasattr(SimplStateMachineDC::State, "isActive")
+def test_simplstatemachinedc_state_has_name():
+    assert hasattr(SimplStateMachineDC_State, "name")
     descriptor = None
-    for klass in SimplStateMachineDC::State.__mro__:
+    for klass in SimplStateMachineDC_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplstatemachinedc_state_has_isActive():
+    assert hasattr(SimplStateMachineDC_State, "isActive")
+    descriptor = None
+    for klass in SimplStateMachineDC_State.__mro__:
         if "isActive" in klass.__dict__:
             descriptor = klass.__dict__["isActive"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplstatemachinedc::state_has_OrdIf():
-    assert hasattr(SimplStateMachineDC::State, "OrdIf")
+def test_simplstatemachinedc_state_has_InhIf():
+    assert hasattr(SimplStateMachineDC_State, "InhIf")
     descriptor = None
-    for klass in SimplStateMachineDC::State.__mro__:
-        if "OrdIf" in klass.__dict__:
-            descriptor = klass.__dict__["OrdIf"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplstatemachinedc::state_has_InhIf():
-    assert hasattr(SimplStateMachineDC::State, "InhIf")
-    descriptor = None
-    for klass in SimplStateMachineDC::State.__mro__:
+    for klass in SimplStateMachineDC_State.__mro__:
         if "InhIf" in klass.__dict__:
             descriptor = klass.__dict__["InhIf"]
             break
     assert isinstance(descriptor, property)
 
+def test_simplstatemachinedc_state_has_OrdIf():
+    assert hasattr(SimplStateMachineDC_State, "OrdIf")
+    descriptor = None
+    for klass in SimplStateMachineDC_State.__mro__:
+        if "OrdIf" in klass.__dict__:
+            descriptor = klass.__dict__["OrdIf"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplstatemachinedc_state_has_Ord():
+    assert hasattr(SimplStateMachineDC_State, "Ord")
+    descriptor = None
+    for klass in SimplStateMachineDC_State.__mro__:
+        if "Ord" in klass.__dict__:
+            descriptor = klass.__dict__["Ord"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simplstatemachinedc::transition_is_not_abstract():
-    assert not inspect.isabstract(SimplStateMachineDC::Transition)
+
+def test_simplstatemachinedc_transition_is_not_abstract():
+    assert not inspect.isabstract(SimplStateMachineDC_Transition)
 
 
-def test_simplstatemachinedc::transition_constructor_exists():
-    assert callable(SimplStateMachineDC::Transition.__init__)
+def test_simplstatemachinedc_transition_constructor_exists():
+    assert callable(SimplStateMachineDC_Transition.__init__)
 
 
-def test_simplstatemachinedc::transition_constructor_args():
-    sig = inspect.signature(SimplStateMachineDC::Transition.__init__)
+def test_simplstatemachinedc_transition_constructor_args():
+    sig = inspect.signature(SimplStateMachineDC_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_simplstatemachinedc::transition_has_event():
-    assert hasattr(SimplStateMachineDC::Transition, "event")
+def test_simplstatemachinedc_transition_has_event():
+    assert hasattr(SimplStateMachineDC_Transition, "event")
     descriptor = None
-    for klass in SimplStateMachineDC::Transition.__mro__:
+    for klass in SimplStateMachineDC_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -190,16 +190,16 @@ def test_simplstatemachinedc::transition_has_event():
 
 
 
-def test_simplstatemachinedc::statemachine_is_not_abstract():
-    assert not inspect.isabstract(SimplStateMachineDC::StateMachine)
+def test_simplstatemachinedc_statemachine_is_not_abstract():
+    assert not inspect.isabstract(SimplStateMachineDC_StateMachine)
 
 
-def test_simplstatemachinedc::statemachine_constructor_exists():
-    assert callable(SimplStateMachineDC::StateMachine.__init__)
+def test_simplstatemachinedc_statemachine_constructor_exists():
+    assert callable(SimplStateMachineDC_StateMachine.__init__)
 
 
-def test_simplstatemachinedc::statemachine_constructor_args():
-    sig = inspect.signature(SimplStateMachineDC::StateMachine.__init__)
+def test_simplstatemachinedc_statemachine_constructor_args():
+    sig = inspect.signature(SimplStateMachineDC_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,40 +217,40 @@ safe_text = st.text(
 PseudoState_strategy = st.builds(
     PseudoState,
 )
-SimplStateMachineDC::InitialState_strategy = st.builds(
-    SimplStateMachineDC::InitialState,
+SimplStateMachineDC_InitialState_strategy = st.builds(
+    SimplStateMachineDC_InitialState,
 )
 State_strategy = st.builds(
     State,
 )
-SimplStateMachineDC::PseudoState_strategy = st.builds(
-    SimplStateMachineDC::PseudoState,
+SimplStateMachineDC_PseudoState_strategy = st.builds(
+    SimplStateMachineDC_PseudoState,
 )
-SimplStateMachineDC::CompositeState_strategy = st.builds(
-    SimplStateMachineDC::CompositeState,
+SimplStateMachineDC_CompositeState_strategy = st.builds(
+    SimplStateMachineDC_CompositeState,
 )
-SimplStateMachineDC::State_strategy = st.builds(
-    SimplStateMachineDC::State,
-    Ord=
+SimplStateMachineDC_State_strategy = st.builds(
+    SimplStateMachineDC_State,
+    Inh=
         safe_text,
     name=
         safe_text,
-    Inh=
-        safe_text,
     isActive=
         st.booleans(),
+    InhIf=
+        safe_text,
     OrdIf=
         safe_text,
-    InhIf=
+    Ord=
         safe_text
 )
-SimplStateMachineDC::Transition_strategy = st.builds(
-    SimplStateMachineDC::Transition,
+SimplStateMachineDC_Transition_strategy = st.builds(
+    SimplStateMachineDC_Transition,
     event=
         safe_text
 )
-SimplStateMachineDC::StateMachine_strategy = st.builds(
-    SimplStateMachineDC::StateMachine,
+SimplStateMachineDC_StateMachine_strategy = st.builds(
+    SimplStateMachineDC_StateMachine,
 )
 
 @given(instance=PseudoState_strategy)
@@ -258,114 +258,93 @@ SimplStateMachineDC::StateMachine_strategy = st.builds(
 def test_pseudostate_instantiation(instance):
     assert isinstance(instance, PseudoState)
 
-@given(instance=SimplStateMachineDC::InitialState_strategy)
+@given(instance=SimplStateMachineDC_InitialState_strategy)
 @settings(max_examples=50)
-def test_simplstatemachinedc::initialstate_instantiation(instance):
-    assert isinstance(instance, SimplStateMachineDC::InitialState)
+def test_simplstatemachinedc_initialstate_instantiation(instance):
+    assert isinstance(instance, SimplStateMachineDC_InitialState)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=SimplStateMachineDC::PseudoState_strategy)
+@given(instance=SimplStateMachineDC_PseudoState_strategy)
 @settings(max_examples=50)
-def test_simplstatemachinedc::pseudostate_instantiation(instance):
-    assert isinstance(instance, SimplStateMachineDC::PseudoState)
+def test_simplstatemachinedc_pseudostate_instantiation(instance):
+    assert isinstance(instance, SimplStateMachineDC_PseudoState)
 
-@given(instance=SimplStateMachineDC::CompositeState_strategy)
+@given(instance=SimplStateMachineDC_CompositeState_strategy)
 @settings(max_examples=50)
-def test_simplstatemachinedc::compositestate_instantiation(instance):
-    assert isinstance(instance, SimplStateMachineDC::CompositeState)
+def test_simplstatemachinedc_compositestate_instantiation(instance):
+    assert isinstance(instance, SimplStateMachineDC_CompositeState)
 
-@given(instance=SimplStateMachineDC::State_strategy)
+@given(instance=SimplStateMachineDC_State_strategy)
 @settings(max_examples=50)
-def test_simplstatemachinedc::state_instantiation(instance):
-    assert isinstance(instance, SimplStateMachineDC::State)
-
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_Ord_type(instance):
-    assert isinstance(instance.Ord, str)
+def test_simplstatemachinedc_state_instantiation(instance):
+    assert isinstance(instance, SimplStateMachineDC_State)
 
 
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_Ord_setter(instance):
-    original = instance.Ord
-    instance.Ord = original
-    assert instance.Ord == original
 
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_Inh_type(instance):
-    assert isinstance(instance.Inh, str)
-
-
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_Inh_setter(instance):
+@given(instance=SimplStateMachineDC_State_strategy)
+def test_simplstatemachinedc_state_Inh_setter(instance):
     original = instance.Inh
     instance.Inh = original
     assert instance.Inh == original
 
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_isActive_type(instance):
-    assert isinstance(instance.isActive, bool)
 
 
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_isActive_setter(instance):
+@given(instance=SimplStateMachineDC_State_strategy)
+def test_simplstatemachinedc_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=SimplStateMachineDC_State_strategy)
+def test_simplstatemachinedc_state_isActive_setter(instance):
     original = instance.isActive
     instance.isActive = original
     assert instance.isActive == original
 
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_OrdIf_type(instance):
-    assert isinstance(instance.OrdIf, str)
 
 
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_OrdIf_setter(instance):
-    original = instance.OrdIf
-    instance.OrdIf = original
-    assert instance.OrdIf == original
-
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_InhIf_type(instance):
-    assert isinstance(instance.InhIf, str)
-
-
-@given(instance=SimplStateMachineDC::State_strategy)
-def test_simplstatemachinedc::state_InhIf_setter(instance):
+@given(instance=SimplStateMachineDC_State_strategy)
+def test_simplstatemachinedc_state_InhIf_setter(instance):
     original = instance.InhIf
     instance.InhIf = original
     assert instance.InhIf == original
 
-@given(instance=SimplStateMachineDC::Transition_strategy)
+
+
+@given(instance=SimplStateMachineDC_State_strategy)
+def test_simplstatemachinedc_state_OrdIf_setter(instance):
+    original = instance.OrdIf
+    instance.OrdIf = original
+    assert instance.OrdIf == original
+
+
+
+@given(instance=SimplStateMachineDC_State_strategy)
+def test_simplstatemachinedc_state_Ord_setter(instance):
+    original = instance.Ord
+    instance.Ord = original
+    assert instance.Ord == original
+
+@given(instance=SimplStateMachineDC_Transition_strategy)
 @settings(max_examples=50)
-def test_simplstatemachinedc::transition_instantiation(instance):
-    assert isinstance(instance, SimplStateMachineDC::Transition)
-
-@given(instance=SimplStateMachineDC::Transition_strategy)
-def test_simplstatemachinedc::transition_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_simplstatemachinedc_transition_instantiation(instance):
+    assert isinstance(instance, SimplStateMachineDC_Transition)
 
 
-@given(instance=SimplStateMachineDC::Transition_strategy)
-def test_simplstatemachinedc::transition_event_setter(instance):
+
+@given(instance=SimplStateMachineDC_Transition_strategy)
+def test_simplstatemachinedc_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=SimplStateMachineDC::StateMachine_strategy)
+@given(instance=SimplStateMachineDC_StateMachine_strategy)
 @settings(max_examples=50)
-def test_simplstatemachinedc::statemachine_instantiation(instance):
-    assert isinstance(instance, SimplStateMachineDC::StateMachine)
+def test_simplstatemachinedc_statemachine_instantiation(instance):
+    assert isinstance(instance, SimplStateMachineDC_StateMachine)

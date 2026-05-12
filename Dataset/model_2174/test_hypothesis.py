@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graphDsl::ComponentOrFacet,
-    graphDsl::Graph,
-    graphDsl::ExportsProperty,
-    graphDsl::ChildrenProperty,
-    graphDsl::FacetProperty,
-    graphDsl::InstallerProperty,
-    graphDsl::OptionalProperty,
-    graphDsl::FacetProperties,
-    graphDsl::ComponentProperties,
-    graphDsl::Facet,
-    graphDsl::Component,
-    graphDsl::ImportsVariable,
-    graphDsl::ExportsVariable,
-    graphDsl::ExtendsProperty,
-    graphDsl::FacetsProperty,
-    graphDsl::ImportsProperty,
+from python_code import (
+    graphDsl_ExportsProperty,
+    graphDsl_ChildrenProperty,
+    graphDsl_FacetProperty,
+    graphDsl_InstallerProperty,
+    graphDsl_OptionalProperty,
+    graphDsl_FacetProperties,
+    graphDsl_ComponentProperties,
+    graphDsl_Facet,
+    graphDsl_Component,
+    graphDsl_ImportsVariable,
+    graphDsl_ExportsVariable,
+    graphDsl_ExtendsProperty,
+    graphDsl_FacetsProperty,
+    graphDsl_ImportsProperty,
+    graphDsl_ComponentOrFacet,
+    graphDsl_Graph,
 )
 
 # =============================================================================
@@ -30,75 +30,37 @@ from classes import (
 
 
 
-def test_graphdsl::componentorfacet_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ComponentOrFacet)
+def test_graphdsl_exportsproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ExportsProperty)
 
 
-def test_graphdsl::componentorfacet_constructor_exists():
-    assert callable(graphDsl::ComponentOrFacet.__init__)
+def test_graphdsl_exportsproperty_constructor_exists():
+    assert callable(graphDsl_ExportsProperty.__init__)
 
 
-def test_graphdsl::componentorfacet_constructor_args():
-    sig = inspect.signature(graphDsl::ComponentOrFacet.__init__)
+def test_graphdsl_exportsproperty_constructor_args():
+    sig = inspect.signature(graphDsl_ExportsProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphdsl::graph_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::Graph)
+def test_graphdsl_childrenproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ChildrenProperty)
 
 
-def test_graphdsl::graph_constructor_exists():
-    assert callable(graphDsl::Graph.__init__)
+def test_graphdsl_childrenproperty_constructor_exists():
+    assert callable(graphDsl_ChildrenProperty.__init__)
 
 
-def test_graphdsl::graph_constructor_args():
-    sig = inspect.signature(graphDsl::Graph.__init__)
-    params = list(sig.parameters.keys())
-    assert "comments" in params, "Missing parameter 'comments'"
-
-def test_graphdsl::graph_has_comments():
-    assert hasattr(graphDsl::Graph, "comments")
-    descriptor = None
-    for klass in graphDsl::Graph.__mro__:
-        if "comments" in klass.__dict__:
-            descriptor = klass.__dict__["comments"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_graphdsl::exportsproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ExportsProperty)
-
-
-def test_graphdsl::exportsproperty_constructor_exists():
-    assert callable(graphDsl::ExportsProperty.__init__)
-
-
-def test_graphdsl::exportsproperty_constructor_args():
-    sig = inspect.signature(graphDsl::ExportsProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graphdsl::childrenproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ChildrenProperty)
-
-
-def test_graphdsl::childrenproperty_constructor_exists():
-    assert callable(graphDsl::ChildrenProperty.__init__)
-
-
-def test_graphdsl::childrenproperty_constructor_args():
-    sig = inspect.signature(graphDsl::ChildrenProperty.__init__)
+def test_graphdsl_childrenproperty_constructor_args():
+    sig = inspect.signature(graphDsl_ChildrenProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphdsl::childrenproperty_has_name():
-    assert hasattr(graphDsl::ChildrenProperty, "name")
+def test_graphdsl_childrenproperty_has_name():
+    assert hasattr(graphDsl_ChildrenProperty, "name")
     descriptor = None
-    for klass in graphDsl::ChildrenProperty.__mro__:
+    for klass in graphDsl_ChildrenProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,37 +68,37 @@ def test_graphdsl::childrenproperty_has_name():
 
 
 
-def test_graphdsl::facetproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::FacetProperty)
+def test_graphdsl_facetproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_FacetProperty)
 
 
-def test_graphdsl::facetproperty_constructor_exists():
-    assert callable(graphDsl::FacetProperty.__init__)
+def test_graphdsl_facetproperty_constructor_exists():
+    assert callable(graphDsl_FacetProperty.__init__)
 
 
-def test_graphdsl::facetproperty_constructor_args():
-    sig = inspect.signature(graphDsl::FacetProperty.__init__)
+def test_graphdsl_facetproperty_constructor_args():
+    sig = inspect.signature(graphDsl_FacetProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphdsl::installerproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::InstallerProperty)
+def test_graphdsl_installerproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_InstallerProperty)
 
 
-def test_graphdsl::installerproperty_constructor_exists():
-    assert callable(graphDsl::InstallerProperty.__init__)
+def test_graphdsl_installerproperty_constructor_exists():
+    assert callable(graphDsl_InstallerProperty.__init__)
 
 
-def test_graphdsl::installerproperty_constructor_args():
-    sig = inspect.signature(graphDsl::InstallerProperty.__init__)
+def test_graphdsl_installerproperty_constructor_args():
+    sig = inspect.signature(graphDsl_InstallerProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphdsl::installerproperty_has_name():
-    assert hasattr(graphDsl::InstallerProperty, "name")
+def test_graphdsl_installerproperty_has_name():
+    assert hasattr(graphDsl_InstallerProperty, "name")
     descriptor = None
-    for klass in graphDsl::InstallerProperty.__mro__:
+    for klass in graphDsl_InstallerProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -144,65 +106,65 @@ def test_graphdsl::installerproperty_has_name():
 
 
 
-def test_graphdsl::optionalproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::OptionalProperty)
+def test_graphdsl_optionalproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_OptionalProperty)
 
 
-def test_graphdsl::optionalproperty_constructor_exists():
-    assert callable(graphDsl::OptionalProperty.__init__)
+def test_graphdsl_optionalproperty_constructor_exists():
+    assert callable(graphDsl_OptionalProperty.__init__)
 
 
-def test_graphdsl::optionalproperty_constructor_args():
-    sig = inspect.signature(graphDsl::OptionalProperty.__init__)
+def test_graphdsl_optionalproperty_constructor_args():
+    sig = inspect.signature(graphDsl_OptionalProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphdsl::facetproperties_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::FacetProperties)
+def test_graphdsl_facetproperties_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_FacetProperties)
 
 
-def test_graphdsl::facetproperties_constructor_exists():
-    assert callable(graphDsl::FacetProperties.__init__)
+def test_graphdsl_facetproperties_constructor_exists():
+    assert callable(graphDsl_FacetProperties.__init__)
 
 
-def test_graphdsl::facetproperties_constructor_args():
-    sig = inspect.signature(graphDsl::FacetProperties.__init__)
+def test_graphdsl_facetproperties_constructor_args():
+    sig = inspect.signature(graphDsl_FacetProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphdsl::componentproperties_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ComponentProperties)
+def test_graphdsl_componentproperties_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ComponentProperties)
 
 
-def test_graphdsl::componentproperties_constructor_exists():
-    assert callable(graphDsl::ComponentProperties.__init__)
+def test_graphdsl_componentproperties_constructor_exists():
+    assert callable(graphDsl_ComponentProperties.__init__)
 
 
-def test_graphdsl::componentproperties_constructor_args():
-    sig = inspect.signature(graphDsl::ComponentProperties.__init__)
+def test_graphdsl_componentproperties_constructor_args():
+    sig = inspect.signature(graphDsl_ComponentProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphdsl::facet_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::Facet)
+def test_graphdsl_facet_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_Facet)
 
 
-def test_graphdsl::facet_constructor_exists():
-    assert callable(graphDsl::Facet.__init__)
+def test_graphdsl_facet_constructor_exists():
+    assert callable(graphDsl_Facet.__init__)
 
 
-def test_graphdsl::facet_constructor_args():
-    sig = inspect.signature(graphDsl::Facet.__init__)
+def test_graphdsl_facet_constructor_args():
+    sig = inspect.signature(graphDsl_Facet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphdsl::facet_has_name():
-    assert hasattr(graphDsl::Facet, "name")
+def test_graphdsl_facet_has_name():
+    assert hasattr(graphDsl_Facet, "name")
     descriptor = None
-    for klass in graphDsl::Facet.__mro__:
+    for klass in graphDsl_Facet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -210,23 +172,23 @@ def test_graphdsl::facet_has_name():
 
 
 
-def test_graphdsl::component_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::Component)
+def test_graphdsl_component_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_Component)
 
 
-def test_graphdsl::component_constructor_exists():
-    assert callable(graphDsl::Component.__init__)
+def test_graphdsl_component_constructor_exists():
+    assert callable(graphDsl_Component.__init__)
 
 
-def test_graphdsl::component_constructor_args():
-    sig = inspect.signature(graphDsl::Component.__init__)
+def test_graphdsl_component_constructor_args():
+    sig = inspect.signature(graphDsl_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphdsl::component_has_name():
-    assert hasattr(graphDsl::Component, "name")
+def test_graphdsl_component_has_name():
+    assert hasattr(graphDsl_Component, "name")
     descriptor = None
-    for klass in graphDsl::Component.__mro__:
+    for klass in graphDsl_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -234,121 +196,121 @@ def test_graphdsl::component_has_name():
 
 
 
-def test_graphdsl::importsvariable_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ImportsVariable)
+def test_graphdsl_importsvariable_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ImportsVariable)
 
 
-def test_graphdsl::importsvariable_constructor_exists():
-    assert callable(graphDsl::ImportsVariable.__init__)
+def test_graphdsl_importsvariable_constructor_exists():
+    assert callable(graphDsl_ImportsVariable.__init__)
 
 
-def test_graphdsl::importsvariable_constructor_args():
-    sig = inspect.signature(graphDsl::ImportsVariable.__init__)
+def test_graphdsl_importsvariable_constructor_args():
+    sig = inspect.signature(graphDsl_ImportsVariable.__init__)
     params = list(sig.parameters.keys())
     assert "componentProperty" in params, "Missing parameter 'componentProperty'"
-    assert "componentName" in params, "Missing parameter 'componentName'"
     assert "isExternal" in params, "Missing parameter 'isExternal'"
     assert "isOptional" in params, "Missing parameter 'isOptional'"
+    assert "componentName" in params, "Missing parameter 'componentName'"
 
-def test_graphdsl::importsvariable_has_componentProperty():
-    assert hasattr(graphDsl::ImportsVariable, "componentProperty")
+def test_graphdsl_importsvariable_has_componentProperty():
+    assert hasattr(graphDsl_ImportsVariable, "componentProperty")
     descriptor = None
-    for klass in graphDsl::ImportsVariable.__mro__:
+    for klass in graphDsl_ImportsVariable.__mro__:
         if "componentProperty" in klass.__dict__:
             descriptor = klass.__dict__["componentProperty"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphdsl::importsvariable_has_componentName():
-    assert hasattr(graphDsl::ImportsVariable, "componentName")
+def test_graphdsl_importsvariable_has_isExternal():
+    assert hasattr(graphDsl_ImportsVariable, "isExternal")
     descriptor = None
-    for klass in graphDsl::ImportsVariable.__mro__:
-        if "componentName" in klass.__dict__:
-            descriptor = klass.__dict__["componentName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphdsl::importsvariable_has_isExternal():
-    assert hasattr(graphDsl::ImportsVariable, "isExternal")
-    descriptor = None
-    for klass in graphDsl::ImportsVariable.__mro__:
+    for klass in graphDsl_ImportsVariable.__mro__:
         if "isExternal" in klass.__dict__:
             descriptor = klass.__dict__["isExternal"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphdsl::importsvariable_has_isOptional():
-    assert hasattr(graphDsl::ImportsVariable, "isOptional")
+def test_graphdsl_importsvariable_has_isOptional():
+    assert hasattr(graphDsl_ImportsVariable, "isOptional")
     descriptor = None
-    for klass in graphDsl::ImportsVariable.__mro__:
+    for klass in graphDsl_ImportsVariable.__mro__:
         if "isOptional" in klass.__dict__:
             descriptor = klass.__dict__["isOptional"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_graphdsl::exportsvariable_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ExportsVariable)
-
-
-def test_graphdsl::exportsvariable_constructor_exists():
-    assert callable(graphDsl::ExportsVariable.__init__)
-
-
-def test_graphdsl::exportsvariable_constructor_args():
-    sig = inspect.signature(graphDsl::ExportsVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "strValue" in params, "Missing parameter 'strValue'"
-    assert "intValue" in params, "Missing parameter 'intValue'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_graphdsl::exportsvariable_has_strValue():
-    assert hasattr(graphDsl::ExportsVariable, "strValue")
+def test_graphdsl_importsvariable_has_componentName():
+    assert hasattr(graphDsl_ImportsVariable, "componentName")
     descriptor = None
-    for klass in graphDsl::ExportsVariable.__mro__:
-        if "strValue" in klass.__dict__:
-            descriptor = klass.__dict__["strValue"]
+    for klass in graphDsl_ImportsVariable.__mro__:
+        if "componentName" in klass.__dict__:
+            descriptor = klass.__dict__["componentName"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphdsl::exportsvariable_has_intValue():
-    assert hasattr(graphDsl::ExportsVariable, "intValue")
+
+
+def test_graphdsl_exportsvariable_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ExportsVariable)
+
+
+def test_graphdsl_exportsvariable_constructor_exists():
+    assert callable(graphDsl_ExportsVariable.__init__)
+
+
+def test_graphdsl_exportsvariable_constructor_args():
+    sig = inspect.signature(graphDsl_ExportsVariable.__init__)
+    params = list(sig.parameters.keys())
+    assert "intValue" in params, "Missing parameter 'intValue'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "strValue" in params, "Missing parameter 'strValue'"
+
+def test_graphdsl_exportsvariable_has_intValue():
+    assert hasattr(graphDsl_ExportsVariable, "intValue")
     descriptor = None
-    for klass in graphDsl::ExportsVariable.__mro__:
+    for klass in graphDsl_ExportsVariable.__mro__:
         if "intValue" in klass.__dict__:
             descriptor = klass.__dict__["intValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphdsl::exportsvariable_has_name():
-    assert hasattr(graphDsl::ExportsVariable, "name")
+def test_graphdsl_exportsvariable_has_name():
+    assert hasattr(graphDsl_ExportsVariable, "name")
     descriptor = None
-    for klass in graphDsl::ExportsVariable.__mro__:
+    for klass in graphDsl_ExportsVariable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_graphdsl_exportsvariable_has_strValue():
+    assert hasattr(graphDsl_ExportsVariable, "strValue")
+    descriptor = None
+    for klass in graphDsl_ExportsVariable.__mro__:
+        if "strValue" in klass.__dict__:
+            descriptor = klass.__dict__["strValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graphdsl::extendsproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ExtendsProperty)
+
+def test_graphdsl_extendsproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ExtendsProperty)
 
 
-def test_graphdsl::extendsproperty_constructor_exists():
-    assert callable(graphDsl::ExtendsProperty.__init__)
+def test_graphdsl_extendsproperty_constructor_exists():
+    assert callable(graphDsl_ExtendsProperty.__init__)
 
 
-def test_graphdsl::extendsproperty_constructor_args():
-    sig = inspect.signature(graphDsl::ExtendsProperty.__init__)
+def test_graphdsl_extendsproperty_constructor_args():
+    sig = inspect.signature(graphDsl_ExtendsProperty.__init__)
     params = list(sig.parameters.keys())
     assert "extendsNames" in params, "Missing parameter 'extendsNames'"
 
-def test_graphdsl::extendsproperty_has_extendsNames():
-    assert hasattr(graphDsl::ExtendsProperty, "extendsNames")
+def test_graphdsl_extendsproperty_has_extendsNames():
+    assert hasattr(graphDsl_ExtendsProperty, "extendsNames")
     descriptor = None
-    for klass in graphDsl::ExtendsProperty.__mro__:
+    for klass in graphDsl_ExtendsProperty.__mro__:
         if "extendsNames" in klass.__dict__:
             descriptor = klass.__dict__["extendsNames"]
             break
@@ -356,23 +318,23 @@ def test_graphdsl::extendsproperty_has_extendsNames():
 
 
 
-def test_graphdsl::facetsproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::FacetsProperty)
+def test_graphdsl_facetsproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_FacetsProperty)
 
 
-def test_graphdsl::facetsproperty_constructor_exists():
-    assert callable(graphDsl::FacetsProperty.__init__)
+def test_graphdsl_facetsproperty_constructor_exists():
+    assert callable(graphDsl_FacetsProperty.__init__)
 
 
-def test_graphdsl::facetsproperty_constructor_args():
-    sig = inspect.signature(graphDsl::FacetsProperty.__init__)
+def test_graphdsl_facetsproperty_constructor_args():
+    sig = inspect.signature(graphDsl_FacetsProperty.__init__)
     params = list(sig.parameters.keys())
     assert "facetsNames" in params, "Missing parameter 'facetsNames'"
 
-def test_graphdsl::facetsproperty_has_facetsNames():
-    assert hasattr(graphDsl::FacetsProperty, "facetsNames")
+def test_graphdsl_facetsproperty_has_facetsNames():
+    assert hasattr(graphDsl_FacetsProperty, "facetsNames")
     descriptor = None
-    for klass in graphDsl::FacetsProperty.__mro__:
+    for klass in graphDsl_FacetsProperty.__mro__:
         if "facetsNames" in klass.__dict__:
             descriptor = klass.__dict__["facetsNames"]
             break
@@ -380,17 +342,55 @@ def test_graphdsl::facetsproperty_has_facetsNames():
 
 
 
-def test_graphdsl::importsproperty_is_not_abstract():
-    assert not inspect.isabstract(graphDsl::ImportsProperty)
+def test_graphdsl_importsproperty_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ImportsProperty)
 
 
-def test_graphdsl::importsproperty_constructor_exists():
-    assert callable(graphDsl::ImportsProperty.__init__)
+def test_graphdsl_importsproperty_constructor_exists():
+    assert callable(graphDsl_ImportsProperty.__init__)
 
 
-def test_graphdsl::importsproperty_constructor_args():
-    sig = inspect.signature(graphDsl::ImportsProperty.__init__)
+def test_graphdsl_importsproperty_constructor_args():
+    sig = inspect.signature(graphDsl_ImportsProperty.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_graphdsl_componentorfacet_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_ComponentOrFacet)
+
+
+def test_graphdsl_componentorfacet_constructor_exists():
+    assert callable(graphDsl_ComponentOrFacet.__init__)
+
+
+def test_graphdsl_componentorfacet_constructor_args():
+    sig = inspect.signature(graphDsl_ComponentOrFacet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graphdsl_graph_is_not_abstract():
+    assert not inspect.isabstract(graphDsl_Graph)
+
+
+def test_graphdsl_graph_constructor_exists():
+    assert callable(graphDsl_Graph.__init__)
+
+
+def test_graphdsl_graph_constructor_args():
+    sig = inspect.signature(graphDsl_Graph.__init__)
+    params = list(sig.parameters.keys())
+    assert "comments" in params, "Missing parameter 'comments'"
+
+def test_graphdsl_graph_has_comments():
+    assert hasattr(graphDsl_Graph, "comments")
+    descriptor = None
+    for klass in graphDsl_Graph.__mro__:
+        if "comments" in klass.__dict__:
+            descriptor = klass.__dict__["comments"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -404,313 +404,271 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graphDsl::ComponentOrFacet_strategy = st.builds(
-    graphDsl::ComponentOrFacet,
+graphDsl_ExportsProperty_strategy = st.builds(
+    graphDsl_ExportsProperty,
 )
-graphDsl::Graph_strategy = st.builds(
-    graphDsl::Graph,
-    comments=
-        safe_text
-)
-graphDsl::ExportsProperty_strategy = st.builds(
-    graphDsl::ExportsProperty,
-)
-graphDsl::ChildrenProperty_strategy = st.builds(
-    graphDsl::ChildrenProperty,
+graphDsl_ChildrenProperty_strategy = st.builds(
+    graphDsl_ChildrenProperty,
     name=
         safe_text
 )
-graphDsl::FacetProperty_strategy = st.builds(
-    graphDsl::FacetProperty,
+graphDsl_FacetProperty_strategy = st.builds(
+    graphDsl_FacetProperty,
 )
-graphDsl::InstallerProperty_strategy = st.builds(
-    graphDsl::InstallerProperty,
+graphDsl_InstallerProperty_strategy = st.builds(
+    graphDsl_InstallerProperty,
     name=
         safe_text
 )
-graphDsl::OptionalProperty_strategy = st.builds(
-    graphDsl::OptionalProperty,
+graphDsl_OptionalProperty_strategy = st.builds(
+    graphDsl_OptionalProperty,
 )
-graphDsl::FacetProperties_strategy = st.builds(
-    graphDsl::FacetProperties,
+graphDsl_FacetProperties_strategy = st.builds(
+    graphDsl_FacetProperties,
 )
-graphDsl::ComponentProperties_strategy = st.builds(
-    graphDsl::ComponentProperties,
+graphDsl_ComponentProperties_strategy = st.builds(
+    graphDsl_ComponentProperties,
 )
-graphDsl::Facet_strategy = st.builds(
-    graphDsl::Facet,
+graphDsl_Facet_strategy = st.builds(
+    graphDsl_Facet,
     name=
         safe_text
 )
-graphDsl::Component_strategy = st.builds(
-    graphDsl::Component,
+graphDsl_Component_strategy = st.builds(
+    graphDsl_Component,
     name=
         safe_text
 )
-graphDsl::ImportsVariable_strategy = st.builds(
-    graphDsl::ImportsVariable,
+graphDsl_ImportsVariable_strategy = st.builds(
+    graphDsl_ImportsVariable,
     componentProperty=
-        safe_text,
-    componentName=
         safe_text,
     isExternal=
         st.booleans(),
     isOptional=
-        st.booleans()
+        st.booleans(),
+    componentName=
+        safe_text
 )
-graphDsl::ExportsVariable_strategy = st.builds(
-    graphDsl::ExportsVariable,
-    strValue=
-        safe_text,
+graphDsl_ExportsVariable_strategy = st.builds(
+    graphDsl_ExportsVariable,
     intValue=
         st.integers(),
     name=
+        safe_text,
+    strValue=
         safe_text
 )
-graphDsl::ExtendsProperty_strategy = st.builds(
-    graphDsl::ExtendsProperty,
+graphDsl_ExtendsProperty_strategy = st.builds(
+    graphDsl_ExtendsProperty,
     extendsNames=
         safe_text
 )
-graphDsl::FacetsProperty_strategy = st.builds(
-    graphDsl::FacetsProperty,
+graphDsl_FacetsProperty_strategy = st.builds(
+    graphDsl_FacetsProperty,
     facetsNames=
         safe_text
 )
-graphDsl::ImportsProperty_strategy = st.builds(
-    graphDsl::ImportsProperty,
+graphDsl_ImportsProperty_strategy = st.builds(
+    graphDsl_ImportsProperty,
+)
+graphDsl_ComponentOrFacet_strategy = st.builds(
+    graphDsl_ComponentOrFacet,
+)
+graphDsl_Graph_strategy = st.builds(
+    graphDsl_Graph,
+    comments=
+        safe_text
 )
 
-@given(instance=graphDsl::ComponentOrFacet_strategy)
+@given(instance=graphDsl_ExportsProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::componentorfacet_instantiation(instance):
-    assert isinstance(instance, graphDsl::ComponentOrFacet)
+def test_graphdsl_exportsproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_ExportsProperty)
 
-@given(instance=graphDsl::Graph_strategy)
+@given(instance=graphDsl_ChildrenProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::graph_instantiation(instance):
-    assert isinstance(instance, graphDsl::Graph)
-
-@given(instance=graphDsl::Graph_strategy)
-def test_graphdsl::graph_comments_type(instance):
-    assert isinstance(instance.comments, str)
+def test_graphdsl_childrenproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_ChildrenProperty)
 
 
-@given(instance=graphDsl::Graph_strategy)
-def test_graphdsl::graph_comments_setter(instance):
-    original = instance.comments
-    instance.comments = original
-    assert instance.comments == original
 
-@given(instance=graphDsl::ExportsProperty_strategy)
-@settings(max_examples=50)
-def test_graphdsl::exportsproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::ExportsProperty)
-
-@given(instance=graphDsl::ChildrenProperty_strategy)
-@settings(max_examples=50)
-def test_graphdsl::childrenproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::ChildrenProperty)
-
-@given(instance=graphDsl::ChildrenProperty_strategy)
-def test_graphdsl::childrenproperty_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=graphDsl::ChildrenProperty_strategy)
-def test_graphdsl::childrenproperty_name_setter(instance):
+@given(instance=graphDsl_ChildrenProperty_strategy)
+def test_graphdsl_childrenproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphDsl::FacetProperty_strategy)
+@given(instance=graphDsl_FacetProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::facetproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::FacetProperty)
+def test_graphdsl_facetproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_FacetProperty)
 
-@given(instance=graphDsl::InstallerProperty_strategy)
+@given(instance=graphDsl_InstallerProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::installerproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::InstallerProperty)
-
-@given(instance=graphDsl::InstallerProperty_strategy)
-def test_graphdsl::installerproperty_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphdsl_installerproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_InstallerProperty)
 
 
-@given(instance=graphDsl::InstallerProperty_strategy)
-def test_graphdsl::installerproperty_name_setter(instance):
+
+@given(instance=graphDsl_InstallerProperty_strategy)
+def test_graphdsl_installerproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphDsl::OptionalProperty_strategy)
+@given(instance=graphDsl_OptionalProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::optionalproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::OptionalProperty)
+def test_graphdsl_optionalproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_OptionalProperty)
 
-@given(instance=graphDsl::FacetProperties_strategy)
+@given(instance=graphDsl_FacetProperties_strategy)
 @settings(max_examples=50)
-def test_graphdsl::facetproperties_instantiation(instance):
-    assert isinstance(instance, graphDsl::FacetProperties)
+def test_graphdsl_facetproperties_instantiation(instance):
+    assert isinstance(instance, graphDsl_FacetProperties)
 
-@given(instance=graphDsl::ComponentProperties_strategy)
+@given(instance=graphDsl_ComponentProperties_strategy)
 @settings(max_examples=50)
-def test_graphdsl::componentproperties_instantiation(instance):
-    assert isinstance(instance, graphDsl::ComponentProperties)
+def test_graphdsl_componentproperties_instantiation(instance):
+    assert isinstance(instance, graphDsl_ComponentProperties)
 
-@given(instance=graphDsl::Facet_strategy)
+@given(instance=graphDsl_Facet_strategy)
 @settings(max_examples=50)
-def test_graphdsl::facet_instantiation(instance):
-    assert isinstance(instance, graphDsl::Facet)
-
-@given(instance=graphDsl::Facet_strategy)
-def test_graphdsl::facet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphdsl_facet_instantiation(instance):
+    assert isinstance(instance, graphDsl_Facet)
 
 
-@given(instance=graphDsl::Facet_strategy)
-def test_graphdsl::facet_name_setter(instance):
+
+@given(instance=graphDsl_Facet_strategy)
+def test_graphdsl_facet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphDsl::Component_strategy)
+@given(instance=graphDsl_Component_strategy)
 @settings(max_examples=50)
-def test_graphdsl::component_instantiation(instance):
-    assert isinstance(instance, graphDsl::Component)
-
-@given(instance=graphDsl::Component_strategy)
-def test_graphdsl::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphdsl_component_instantiation(instance):
+    assert isinstance(instance, graphDsl_Component)
 
 
-@given(instance=graphDsl::Component_strategy)
-def test_graphdsl::component_name_setter(instance):
+
+@given(instance=graphDsl_Component_strategy)
+def test_graphdsl_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphDsl::ImportsVariable_strategy)
+@given(instance=graphDsl_ImportsVariable_strategy)
 @settings(max_examples=50)
-def test_graphdsl::importsvariable_instantiation(instance):
-    assert isinstance(instance, graphDsl::ImportsVariable)
-
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_componentProperty_type(instance):
-    assert isinstance(instance.componentProperty, str)
+def test_graphdsl_importsvariable_instantiation(instance):
+    assert isinstance(instance, graphDsl_ImportsVariable)
 
 
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_componentProperty_setter(instance):
+
+@given(instance=graphDsl_ImportsVariable_strategy)
+def test_graphdsl_importsvariable_componentProperty_setter(instance):
     original = instance.componentProperty
     instance.componentProperty = original
     assert instance.componentProperty == original
 
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_componentName_type(instance):
-    assert isinstance(instance.componentName, str)
 
 
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_componentName_setter(instance):
-    original = instance.componentName
-    instance.componentName = original
-    assert instance.componentName == original
-
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_isExternal_type(instance):
-    assert isinstance(instance.isExternal, bool)
-
-
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_isExternal_setter(instance):
+@given(instance=graphDsl_ImportsVariable_strategy)
+def test_graphdsl_importsvariable_isExternal_setter(instance):
     original = instance.isExternal
     instance.isExternal = original
     assert instance.isExternal == original
 
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_isOptional_type(instance):
-    assert isinstance(instance.isOptional, bool)
 
 
-@given(instance=graphDsl::ImportsVariable_strategy)
-def test_graphdsl::importsvariable_isOptional_setter(instance):
+@given(instance=graphDsl_ImportsVariable_strategy)
+def test_graphdsl_importsvariable_isOptional_setter(instance):
     original = instance.isOptional
     instance.isOptional = original
     assert instance.isOptional == original
 
-@given(instance=graphDsl::ExportsVariable_strategy)
+
+
+@given(instance=graphDsl_ImportsVariable_strategy)
+def test_graphdsl_importsvariable_componentName_setter(instance):
+    original = instance.componentName
+    instance.componentName = original
+    assert instance.componentName == original
+
+@given(instance=graphDsl_ExportsVariable_strategy)
 @settings(max_examples=50)
-def test_graphdsl::exportsvariable_instantiation(instance):
-    assert isinstance(instance, graphDsl::ExportsVariable)
-
-@given(instance=graphDsl::ExportsVariable_strategy)
-def test_graphdsl::exportsvariable_strValue_type(instance):
-    assert isinstance(instance.strValue, str)
+def test_graphdsl_exportsvariable_instantiation(instance):
+    assert isinstance(instance, graphDsl_ExportsVariable)
 
 
-@given(instance=graphDsl::ExportsVariable_strategy)
-def test_graphdsl::exportsvariable_strValue_setter(instance):
-    original = instance.strValue
-    instance.strValue = original
-    assert instance.strValue == original
 
-@given(instance=graphDsl::ExportsVariable_strategy)
-def test_graphdsl::exportsvariable_intValue_type(instance):
-    assert isinstance(instance.intValue, int)
-
-
-@given(instance=graphDsl::ExportsVariable_strategy)
-def test_graphdsl::exportsvariable_intValue_setter(instance):
+@given(instance=graphDsl_ExportsVariable_strategy)
+def test_graphdsl_exportsvariable_intValue_setter(instance):
     original = instance.intValue
     instance.intValue = original
     assert instance.intValue == original
 
-@given(instance=graphDsl::ExportsVariable_strategy)
-def test_graphdsl::exportsvariable_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=graphDsl::ExportsVariable_strategy)
-def test_graphdsl::exportsvariable_name_setter(instance):
+@given(instance=graphDsl_ExportsVariable_strategy)
+def test_graphdsl_exportsvariable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphDsl::ExtendsProperty_strategy)
+
+
+@given(instance=graphDsl_ExportsVariable_strategy)
+def test_graphdsl_exportsvariable_strValue_setter(instance):
+    original = instance.strValue
+    instance.strValue = original
+    assert instance.strValue == original
+
+@given(instance=graphDsl_ExtendsProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::extendsproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::ExtendsProperty)
-
-@given(instance=graphDsl::ExtendsProperty_strategy)
-def test_graphdsl::extendsproperty_extendsNames_type(instance):
-    assert isinstance(instance.extendsNames, str)
+def test_graphdsl_extendsproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_ExtendsProperty)
 
 
-@given(instance=graphDsl::ExtendsProperty_strategy)
-def test_graphdsl::extendsproperty_extendsNames_setter(instance):
+
+@given(instance=graphDsl_ExtendsProperty_strategy)
+def test_graphdsl_extendsproperty_extendsNames_setter(instance):
     original = instance.extendsNames
     instance.extendsNames = original
     assert instance.extendsNames == original
 
-@given(instance=graphDsl::FacetsProperty_strategy)
+@given(instance=graphDsl_FacetsProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::facetsproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::FacetsProperty)
-
-@given(instance=graphDsl::FacetsProperty_strategy)
-def test_graphdsl::facetsproperty_facetsNames_type(instance):
-    assert isinstance(instance.facetsNames, str)
+def test_graphdsl_facetsproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_FacetsProperty)
 
 
-@given(instance=graphDsl::FacetsProperty_strategy)
-def test_graphdsl::facetsproperty_facetsNames_setter(instance):
+
+@given(instance=graphDsl_FacetsProperty_strategy)
+def test_graphdsl_facetsproperty_facetsNames_setter(instance):
     original = instance.facetsNames
     instance.facetsNames = original
     assert instance.facetsNames == original
 
-@given(instance=graphDsl::ImportsProperty_strategy)
+@given(instance=graphDsl_ImportsProperty_strategy)
 @settings(max_examples=50)
-def test_graphdsl::importsproperty_instantiation(instance):
-    assert isinstance(instance, graphDsl::ImportsProperty)
+def test_graphdsl_importsproperty_instantiation(instance):
+    assert isinstance(instance, graphDsl_ImportsProperty)
+
+@given(instance=graphDsl_ComponentOrFacet_strategy)
+@settings(max_examples=50)
+def test_graphdsl_componentorfacet_instantiation(instance):
+    assert isinstance(instance, graphDsl_ComponentOrFacet)
+
+@given(instance=graphDsl_Graph_strategy)
+@settings(max_examples=50)
+def test_graphdsl_graph_instantiation(instance):
+    assert isinstance(instance, graphDsl_Graph)
+
+
+
+@given(instance=graphDsl_Graph_strategy)
+def test_graphdsl_graph_comments_setter(instance):
+    original = instance.comments
+    instance.comments = original
+    assert instance.comments == original

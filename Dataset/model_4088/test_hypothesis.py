@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleuml::Classifier,
+from python_code import (
+    simpleuml_Classifier,
     Classifier,
-    simpleuml::Class,
+    simpleuml_Class,
 )
 
 # =============================================================================
@@ -17,16 +17,16 @@ from classes import (
 
 
 
-def test_simpleuml::classifier_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::Classifier)
+def test_simpleuml_classifier_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_Classifier)
 
 
-def test_simpleuml::classifier_constructor_exists():
-    assert callable(simpleuml::Classifier.__init__)
+def test_simpleuml_classifier_constructor_exists():
+    assert callable(simpleuml_Classifier.__init__)
 
 
-def test_simpleuml::classifier_constructor_args():
-    sig = inspect.signature(simpleuml::Classifier.__init__)
+def test_simpleuml_classifier_constructor_args():
+    sig = inspect.signature(simpleuml_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -45,23 +45,23 @@ def test_classifier_constructor_args():
 
 
 
-def test_simpleuml::class_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::Class)
+def test_simpleuml_class_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_Class)
 
 
-def test_simpleuml::class_constructor_exists():
-    assert callable(simpleuml::Class.__init__)
+def test_simpleuml_class_constructor_exists():
+    assert callable(simpleuml_Class.__init__)
 
 
-def test_simpleuml::class_constructor_args():
-    sig = inspect.signature(simpleuml::Class.__init__)
+def test_simpleuml_class_constructor_args():
+    sig = inspect.signature(simpleuml_Class.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleuml::class_has_name():
-    assert hasattr(simpleuml::Class, "name")
+def test_simpleuml_class_has_name():
+    assert hasattr(simpleuml_Class, "name")
     descriptor = None
-    for klass in simpleuml::Class.__mro__:
+    for klass in simpleuml_Class.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleuml::Classifier_strategy = st.builds(
-    simpleuml::Classifier,
+simpleuml_Classifier_strategy = st.builds(
+    simpleuml_Classifier,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-simpleuml::Class_strategy = st.builds(
-    simpleuml::Class,
+simpleuml_Class_strategy = st.builds(
+    simpleuml_Class,
     name=
         safe_text
 )
 
-@given(instance=simpleuml::Classifier_strategy)
+@given(instance=simpleuml_Classifier_strategy)
 @settings(max_examples=50)
-def test_simpleuml::classifier_instantiation(instance):
-    assert isinstance(instance, simpleuml::Classifier)
+def test_simpleuml_classifier_instantiation(instance):
+    assert isinstance(instance, simpleuml_Classifier)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=simpleuml::Class_strategy)
+@given(instance=simpleuml_Class_strategy)
 @settings(max_examples=50)
-def test_simpleuml::class_instantiation(instance):
-    assert isinstance(instance, simpleuml::Class)
-
-@given(instance=simpleuml::Class_strategy)
-def test_simpleuml::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleuml_class_instantiation(instance):
+    assert isinstance(instance, simpleuml_Class)
 
 
-@given(instance=simpleuml::Class_strategy)
-def test_simpleuml::class_name_setter(instance):
+
+@given(instance=simpleuml_Class_strategy)
+def test_simpleuml_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

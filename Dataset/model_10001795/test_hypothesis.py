@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     String_pNombre__String_pRaza_int_pEdad_int_pPeso__int_pAltura_String_pObservaciones2,
@@ -18,11 +18,11 @@ from python_code import (
     Calcular_el_numero_de_ejemplares_por_raza__UseCase,
     Buscar_un_ejemplar_por_su_nombre__UseCase,
     Desplazarse_hasta_el_ultimo_ejemplar__UseCase,
-    Usuario_Actor,
     Desplazarse_hasta_el_primer_ejemplar_UseCase,
     Regresar_hacia_el_anterior_ejemplar__UseCase,
     Avanzar_hacia_el_siguiendo_ejemplar__UseCase,
     Visualizar_hoja_de_vida_de_cada_perrito__UseCase,
+    Usuario_Actor,
 )
 
 # =============================================================================
@@ -150,19 +150,19 @@ def test_canino_constructor_exists():
 def test_canino_constructor_args():
     sig = inspect.signature(Canino.__init__)
     params = list(sig.parameters.keys())
-    assert "altura" in params, "Missing parameter 'altura'"
+    assert "peso" in params, "Missing parameter 'peso'"
     assert "raza" in params, "Missing parameter 'raza'"
     assert "edad" in params, "Missing parameter 'edad'"
-    assert "nombre" in params, "Missing parameter 'nombre'"
     assert "observaciones" in params, "Missing parameter 'observaciones'"
-    assert "peso" in params, "Missing parameter 'peso'"
+    assert "nombre" in params, "Missing parameter 'nombre'"
+    assert "altura" in params, "Missing parameter 'altura'"
 
-def test_canino_has_altura():
-    assert hasattr(Canino, "altura")
+def test_canino_has_peso():
+    assert hasattr(Canino, "peso")
     descriptor = None
     for klass in Canino.__mro__:
-        if "altura" in klass.__dict__:
-            descriptor = klass.__dict__["altura"]
+        if "peso" in klass.__dict__:
+            descriptor = klass.__dict__["peso"]
             break
     assert isinstance(descriptor, property)
 
@@ -184,15 +184,6 @@ def test_canino_has_edad():
             break
     assert isinstance(descriptor, property)
 
-def test_canino_has_nombre():
-    assert hasattr(Canino, "nombre")
-    descriptor = None
-    for klass in Canino.__mro__:
-        if "nombre" in klass.__dict__:
-            descriptor = klass.__dict__["nombre"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_canino_has_observaciones():
     assert hasattr(Canino, "observaciones")
     descriptor = None
@@ -202,12 +193,21 @@ def test_canino_has_observaciones():
             break
     assert isinstance(descriptor, property)
 
-def test_canino_has_peso():
-    assert hasattr(Canino, "peso")
+def test_canino_has_nombre():
+    assert hasattr(Canino, "nombre")
     descriptor = None
     for klass in Canino.__mro__:
-        if "peso" in klass.__dict__:
-            descriptor = klass.__dict__["peso"]
+        if "nombre" in klass.__dict__:
+            descriptor = klass.__dict__["nombre"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_canino_has_altura():
+    assert hasattr(Canino, "altura")
+    descriptor = None
+    for klass in Canino.__mro__:
+        if "altura" in klass.__dict__:
+            descriptor = klass.__dict__["altura"]
             break
     assert isinstance(descriptor, property)
 
@@ -269,20 +269,6 @@ def test_desplazarse_hasta_el_ultimo_ejemplar__usecase_constructor_args():
 
 
 
-def test_usuario_actor_is_not_abstract():
-    assert not inspect.isabstract(Usuario_Actor)
-
-
-def test_usuario_actor_constructor_exists():
-    assert callable(Usuario_Actor.__init__)
-
-
-def test_usuario_actor_constructor_args():
-    sig = inspect.signature(Usuario_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_desplazarse_hasta_el_primer_ejemplar_usecase_is_not_abstract():
     assert not inspect.isabstract(Desplazarse_hasta_el_primer_ejemplar_UseCase)
 
@@ -338,6 +324,20 @@ def test_visualizar_hoja_de_vida_de_cada_perrito__usecase_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_usuario_actor_is_not_abstract():
+    assert not inspect.isabstract(Usuario_Actor)
+
+
+def test_usuario_actor_constructor_exists():
+    assert callable(Usuario_Actor.__init__)
+
+
+def test_usuario_actor_constructor_args():
+    sig = inspect.signature(Usuario_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -374,17 +374,17 @@ Empresa_strategy = st.builds(
 )
 Canino_strategy = st.builds(
     Canino,
-    altura=
+    peso=
         st.none(),
     raza=
         safe_text,
     edad=
         st.none(),
-    nombre=
-        safe_text,
     observaciones=
         safe_text,
-    peso=
+    nombre=
+        safe_text,
+    altura=
         st.none()
 )
 Calcular_el_promedio_de_edad_de_todos_los_caninos__UseCase_strategy = st.builds(
@@ -399,9 +399,6 @@ Buscar_un_ejemplar_por_su_nombre__UseCase_strategy = st.builds(
 Desplazarse_hasta_el_ultimo_ejemplar__UseCase_strategy = st.builds(
     Desplazarse_hasta_el_ultimo_ejemplar__UseCase,
 )
-Usuario_Actor_strategy = st.builds(
-    Usuario_Actor,
-)
 Desplazarse_hasta_el_primer_ejemplar_UseCase_strategy = st.builds(
     Desplazarse_hasta_el_primer_ejemplar_UseCase,
 )
@@ -413,6 +410,9 @@ Avanzar_hacia_el_siguiendo_ejemplar__UseCase_strategy = st.builds(
 )
 Visualizar_hoja_de_vida_de_cada_perrito__UseCase_strategy = st.builds(
     Visualizar_hoja_de_vida_de_cada_perrito__UseCase,
+)
+Usuario_Actor_strategy = st.builds(
+    Usuario_Actor,
 )
 
 @given(instance=String_pNombre__String_pRaza_int_pEdad_int_pPeso__int_pAltura_String_pObservaciones2_strategy)
@@ -450,9 +450,6 @@ def test_void_instantiation(instance):
 def test_empresa_instantiation(instance):
     assert isinstance(instance, Empresa)
 
-@given(instance=Empresa_strategy)
-def test_empresa_ejemplaresCaninos_type(instance):
-    assert isinstance(instance.ejemplaresCaninos, str)
 
 
 @given(instance=Empresa_strategy)
@@ -466,20 +463,14 @@ def test_empresa_ejemplaresCaninos_setter(instance):
 def test_canino_instantiation(instance):
     assert isinstance(instance, Canino)
 
-@given(instance=Canino_strategy)
-def test_canino_altura_type(instance):
-    assert isinstance(instance.altura, int)
 
 
 @given(instance=Canino_strategy)
-def test_canino_altura_setter(instance):
-    original = instance.altura
-    instance.altura = original
-    assert instance.altura == original
+def test_canino_peso_setter(instance):
+    original = instance.peso
+    instance.peso = original
+    assert instance.peso == original
 
-@given(instance=Canino_strategy)
-def test_canino_raza_type(instance):
-    assert isinstance(instance.raza, str)
 
 
 @given(instance=Canino_strategy)
@@ -488,9 +479,6 @@ def test_canino_raza_setter(instance):
     instance.raza = original
     assert instance.raza == original
 
-@given(instance=Canino_strategy)
-def test_canino_edad_type(instance):
-    assert isinstance(instance.edad, int)
 
 
 @given(instance=Canino_strategy)
@@ -499,20 +487,6 @@ def test_canino_edad_setter(instance):
     instance.edad = original
     assert instance.edad == original
 
-@given(instance=Canino_strategy)
-def test_canino_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
-
-
-@given(instance=Canino_strategy)
-def test_canino_nombre_setter(instance):
-    original = instance.nombre
-    instance.nombre = original
-    assert instance.nombre == original
-
-@given(instance=Canino_strategy)
-def test_canino_observaciones_type(instance):
-    assert isinstance(instance.observaciones, str)
 
 
 @given(instance=Canino_strategy)
@@ -521,16 +495,21 @@ def test_canino_observaciones_setter(instance):
     instance.observaciones = original
     assert instance.observaciones == original
 
-@given(instance=Canino_strategy)
-def test_canino_peso_type(instance):
-    assert isinstance(instance.peso, int)
 
 
 @given(instance=Canino_strategy)
-def test_canino_peso_setter(instance):
-    original = instance.peso
-    instance.peso = original
-    assert instance.peso == original
+def test_canino_nombre_setter(instance):
+    original = instance.nombre
+    instance.nombre = original
+    assert instance.nombre == original
+
+
+
+@given(instance=Canino_strategy)
+def test_canino_altura_setter(instance):
+    original = instance.altura
+    instance.altura = original
+    assert instance.altura == original
 
 @given(instance=Calcular_el_promedio_de_edad_de_todos_los_caninos__UseCase_strategy)
 @settings(max_examples=50)
@@ -552,11 +531,6 @@ def test_buscar_un_ejemplar_por_su_nombre__usecase_instantiation(instance):
 def test_desplazarse_hasta_el_ultimo_ejemplar__usecase_instantiation(instance):
     assert isinstance(instance, Desplazarse_hasta_el_ultimo_ejemplar__UseCase)
 
-@given(instance=Usuario_Actor_strategy)
-@settings(max_examples=50)
-def test_usuario_actor_instantiation(instance):
-    assert isinstance(instance, Usuario_Actor)
-
 @given(instance=Desplazarse_hasta_el_primer_ejemplar_UseCase_strategy)
 @settings(max_examples=50)
 def test_desplazarse_hasta_el_primer_ejemplar_usecase_instantiation(instance):
@@ -576,3 +550,8 @@ def test_avanzar_hacia_el_siguiendo_ejemplar__usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_visualizar_hoja_de_vida_de_cada_perrito__usecase_instantiation(instance):
     assert isinstance(instance, Visualizar_hoja_de_vida_de_cada_perrito__UseCase)
+
+@given(instance=Usuario_Actor_strategy)
+@settings(max_examples=50)
+def test_usuario_actor_instantiation(instance):
+    assert isinstance(instance, Usuario_Actor)

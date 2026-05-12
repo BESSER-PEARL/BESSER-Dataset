@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    university::Course,
-    university::CourseCatalog,
+from python_code import (
+    university_Course,
+    university_CourseCatalog,
 )
 
 # =============================================================================
@@ -16,43 +16,43 @@ from classes import (
 
 
 
-def test_university::course_is_not_abstract():
-    assert not inspect.isabstract(university::Course)
+def test_university_course_is_not_abstract():
+    assert not inspect.isabstract(university_Course)
 
 
-def test_university::course_constructor_exists():
-    assert callable(university::Course.__init__)
+def test_university_course_constructor_exists():
+    assert callable(university_Course.__init__)
 
 
-def test_university::course_constructor_args():
-    sig = inspect.signature(university::Course.__init__)
+def test_university_course_constructor_args():
+    sig = inspect.signature(university_Course.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
     assert "etcs" in params, "Missing parameter 'etcs'"
 
-def test_university::course_has_id():
-    assert hasattr(university::Course, "id")
+def test_university_course_has_id():
+    assert hasattr(university_Course, "id")
     descriptor = None
-    for klass in university::Course.__mro__:
+    for klass in university_Course.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_university::course_has_name():
-    assert hasattr(university::Course, "name")
+def test_university_course_has_name():
+    assert hasattr(university_Course, "name")
     descriptor = None
-    for klass in university::Course.__mro__:
+    for klass in university_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_university::course_has_etcs():
-    assert hasattr(university::Course, "etcs")
+def test_university_course_has_etcs():
+    assert hasattr(university_Course, "etcs")
     descriptor = None
-    for klass in university::Course.__mro__:
+    for klass in university_Course.__mro__:
         if "etcs" in klass.__dict__:
             descriptor = klass.__dict__["etcs"]
             break
@@ -60,16 +60,16 @@ def test_university::course_has_etcs():
 
 
 
-def test_university::coursecatalog_is_not_abstract():
-    assert not inspect.isabstract(university::CourseCatalog)
+def test_university_coursecatalog_is_not_abstract():
+    assert not inspect.isabstract(university_CourseCatalog)
 
 
-def test_university::coursecatalog_constructor_exists():
-    assert callable(university::CourseCatalog.__init__)
+def test_university_coursecatalog_constructor_exists():
+    assert callable(university_CourseCatalog.__init__)
 
 
-def test_university::coursecatalog_constructor_args():
-    sig = inspect.signature(university::CourseCatalog.__init__)
+def test_university_coursecatalog_constructor_args():
+    sig = inspect.signature(university_CourseCatalog.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,8 +84,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-university::Course_strategy = st.builds(
-    university::Course,
+university_Course_strategy = st.builds(
+    university_Course,
     id=
         safe_text,
     name=
@@ -93,49 +93,40 @@ university::Course_strategy = st.builds(
     etcs=
         st.integers()
 )
-university::CourseCatalog_strategy = st.builds(
-    university::CourseCatalog,
+university_CourseCatalog_strategy = st.builds(
+    university_CourseCatalog,
 )
 
-@given(instance=university::Course_strategy)
+@given(instance=university_Course_strategy)
 @settings(max_examples=50)
-def test_university::course_instantiation(instance):
-    assert isinstance(instance, university::Course)
-
-@given(instance=university::Course_strategy)
-def test_university::course_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_university_course_instantiation(instance):
+    assert isinstance(instance, university_Course)
 
 
-@given(instance=university::Course_strategy)
-def test_university::course_id_setter(instance):
+
+@given(instance=university_Course_strategy)
+def test_university_course_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=university::Course_strategy)
-def test_university::course_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=university::Course_strategy)
-def test_university::course_name_setter(instance):
+@given(instance=university_Course_strategy)
+def test_university_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=university::Course_strategy)
-def test_university::course_etcs_type(instance):
-    assert isinstance(instance.etcs, int)
 
 
-@given(instance=university::Course_strategy)
-def test_university::course_etcs_setter(instance):
+@given(instance=university_Course_strategy)
+def test_university_course_etcs_setter(instance):
     original = instance.etcs
     instance.etcs = original
     assert instance.etcs == original
 
-@given(instance=university::CourseCatalog_strategy)
+@given(instance=university_CourseCatalog_strategy)
 @settings(max_examples=50)
-def test_university::coursecatalog_instantiation(instance):
-    assert isinstance(instance, university::CourseCatalog)
+def test_university_coursecatalog_instantiation(instance):
+    assert isinstance(instance, university_CourseCatalog)

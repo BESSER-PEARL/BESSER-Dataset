@@ -3,38 +3,38 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ThesisEntry,
-    bibtex::MasterThesis,
-    bibtex::PhDThesis,
+    bibtex_MasterThesis,
+    bibtex_PhDThesis,
     TitledEntry,
     DatedEntry,
     AuthoredEntry,
-    bibtex::TechReport,
-    bibtex::Article,
+    bibtex_TechReport,
+    bibtex_Article,
     BibTeXEntry,
-    bibtex::DatedEntry,
-    bibtex::TitledEntry,
-    bibtex::BookTitledEntry,
-    bibtex::AuthoredEntry,
-    bibtex::ThesisEntry,
-    bibtex::Misc,
+    bibtex_DatedEntry,
+    bibtex_BookTitledEntry,
+    bibtex_TitledEntry,
+    bibtex_AuthoredEntry,
+    bibtex_ThesisEntry,
+    bibtex_Misc,
     Book,
-    bibtex::InBook,
-    bibtex::Book,
-    bibtex::Booklet,
+    bibtex_InBook,
+    bibtex_Book,
+    bibtex_Booklet,
     BookTitledEntry,
-    bibtex::InCollection,
+    bibtex_InCollection,
     Proceedings,
-    bibtex::InProceedings,
-    bibtex::Proceedings,
-    bibtex::Manual,
-    bibtex::Unpublished,
-    bibtex::Author,
-    bibtex::BibTeXEntry,
-    bibtex::BibTeXFile,
+    bibtex_InProceedings,
+    bibtex_Proceedings,
+    bibtex_Manual,
+    bibtex_Unpublished,
+    bibtex_Author,
+    bibtex_BibTeXEntry,
+    bibtex_BibTeXFile,
 )
 
 # =============================================================================
@@ -57,30 +57,30 @@ def test_thesisentry_constructor_args():
 
 
 
-def test_bibtex::masterthesis_is_not_abstract():
-    assert not inspect.isabstract(bibtex::MasterThesis)
+def test_bibtex_masterthesis_is_not_abstract():
+    assert not inspect.isabstract(bibtex_MasterThesis)
 
 
-def test_bibtex::masterthesis_constructor_exists():
-    assert callable(bibtex::MasterThesis.__init__)
+def test_bibtex_masterthesis_constructor_exists():
+    assert callable(bibtex_MasterThesis.__init__)
 
 
-def test_bibtex::masterthesis_constructor_args():
-    sig = inspect.signature(bibtex::MasterThesis.__init__)
+def test_bibtex_masterthesis_constructor_args():
+    sig = inspect.signature(bibtex_MasterThesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtex::phdthesis_is_not_abstract():
-    assert not inspect.isabstract(bibtex::PhDThesis)
+def test_bibtex_phdthesis_is_not_abstract():
+    assert not inspect.isabstract(bibtex_PhDThesis)
 
 
-def test_bibtex::phdthesis_constructor_exists():
-    assert callable(bibtex::PhDThesis.__init__)
+def test_bibtex_phdthesis_constructor_exists():
+    assert callable(bibtex_PhDThesis.__init__)
 
 
-def test_bibtex::phdthesis_constructor_args():
-    sig = inspect.signature(bibtex::PhDThesis.__init__)
+def test_bibtex_phdthesis_constructor_args():
+    sig = inspect.signature(bibtex_PhDThesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,37 +127,37 @@ def test_authoredentry_constructor_args():
 
 
 
-def test_bibtex::techreport_is_not_abstract():
-    assert not inspect.isabstract(bibtex::TechReport)
+def test_bibtex_techreport_is_not_abstract():
+    assert not inspect.isabstract(bibtex_TechReport)
 
 
-def test_bibtex::techreport_constructor_exists():
-    assert callable(bibtex::TechReport.__init__)
+def test_bibtex_techreport_constructor_exists():
+    assert callable(bibtex_TechReport.__init__)
 
 
-def test_bibtex::techreport_constructor_args():
-    sig = inspect.signature(bibtex::TechReport.__init__)
+def test_bibtex_techreport_constructor_args():
+    sig = inspect.signature(bibtex_TechReport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtex::article_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Article)
+def test_bibtex_article_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Article)
 
 
-def test_bibtex::article_constructor_exists():
-    assert callable(bibtex::Article.__init__)
+def test_bibtex_article_constructor_exists():
+    assert callable(bibtex_Article.__init__)
 
 
-def test_bibtex::article_constructor_args():
-    sig = inspect.signature(bibtex::Article.__init__)
+def test_bibtex_article_constructor_args():
+    sig = inspect.signature(bibtex_Article.__init__)
     params = list(sig.parameters.keys())
     assert "journal" in params, "Missing parameter 'journal'"
 
-def test_bibtex::article_has_journal():
-    assert hasattr(bibtex::Article, "journal")
+def test_bibtex_article_has_journal():
+    assert hasattr(bibtex_Article, "journal")
     descriptor = None
-    for klass in bibtex::Article.__mro__:
+    for klass in bibtex_Article.__mro__:
         if "journal" in klass.__dict__:
             descriptor = klass.__dict__["journal"]
             break
@@ -179,23 +179,23 @@ def test_bibtexentry_constructor_args():
 
 
 
-def test_bibtex::datedentry_is_not_abstract():
-    assert not inspect.isabstract(bibtex::DatedEntry)
+def test_bibtex_datedentry_is_not_abstract():
+    assert not inspect.isabstract(bibtex_DatedEntry)
 
 
-def test_bibtex::datedentry_constructor_exists():
-    assert callable(bibtex::DatedEntry.__init__)
+def test_bibtex_datedentry_constructor_exists():
+    assert callable(bibtex_DatedEntry.__init__)
 
 
-def test_bibtex::datedentry_constructor_args():
-    sig = inspect.signature(bibtex::DatedEntry.__init__)
+def test_bibtex_datedentry_constructor_args():
+    sig = inspect.signature(bibtex_DatedEntry.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
 
-def test_bibtex::datedentry_has_year():
-    assert hasattr(bibtex::DatedEntry, "year")
+def test_bibtex_datedentry_has_year():
+    assert hasattr(bibtex_DatedEntry, "year")
     descriptor = None
-    for klass in bibtex::DatedEntry.__mro__:
+    for klass in bibtex_DatedEntry.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
@@ -203,47 +203,23 @@ def test_bibtex::datedentry_has_year():
 
 
 
-def test_bibtex::titledentry_is_not_abstract():
-    assert not inspect.isabstract(bibtex::TitledEntry)
+def test_bibtex_booktitledentry_is_not_abstract():
+    assert not inspect.isabstract(bibtex_BookTitledEntry)
 
 
-def test_bibtex::titledentry_constructor_exists():
-    assert callable(bibtex::TitledEntry.__init__)
+def test_bibtex_booktitledentry_constructor_exists():
+    assert callable(bibtex_BookTitledEntry.__init__)
 
 
-def test_bibtex::titledentry_constructor_args():
-    sig = inspect.signature(bibtex::TitledEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-
-def test_bibtex::titledentry_has_title():
-    assert hasattr(bibtex::TitledEntry, "title")
-    descriptor = None
-    for klass in bibtex::TitledEntry.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bibtex::booktitledentry_is_not_abstract():
-    assert not inspect.isabstract(bibtex::BookTitledEntry)
-
-
-def test_bibtex::booktitledentry_constructor_exists():
-    assert callable(bibtex::BookTitledEntry.__init__)
-
-
-def test_bibtex::booktitledentry_constructor_args():
-    sig = inspect.signature(bibtex::BookTitledEntry.__init__)
+def test_bibtex_booktitledentry_constructor_args():
+    sig = inspect.signature(bibtex_BookTitledEntry.__init__)
     params = list(sig.parameters.keys())
     assert "booktitle" in params, "Missing parameter 'booktitle'"
 
-def test_bibtex::booktitledentry_has_booktitle():
-    assert hasattr(bibtex::BookTitledEntry, "booktitle")
+def test_bibtex_booktitledentry_has_booktitle():
+    assert hasattr(bibtex_BookTitledEntry, "booktitle")
     descriptor = None
-    for klass in bibtex::BookTitledEntry.__mro__:
+    for klass in bibtex_BookTitledEntry.__mro__:
         if "booktitle" in klass.__dict__:
             descriptor = klass.__dict__["booktitle"]
             break
@@ -251,37 +227,61 @@ def test_bibtex::booktitledentry_has_booktitle():
 
 
 
-def test_bibtex::authoredentry_is_not_abstract():
-    assert not inspect.isabstract(bibtex::AuthoredEntry)
+def test_bibtex_titledentry_is_not_abstract():
+    assert not inspect.isabstract(bibtex_TitledEntry)
 
 
-def test_bibtex::authoredentry_constructor_exists():
-    assert callable(bibtex::AuthoredEntry.__init__)
+def test_bibtex_titledentry_constructor_exists():
+    assert callable(bibtex_TitledEntry.__init__)
 
 
-def test_bibtex::authoredentry_constructor_args():
-    sig = inspect.signature(bibtex::AuthoredEntry.__init__)
+def test_bibtex_titledentry_constructor_args():
+    sig = inspect.signature(bibtex_TitledEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_bibtex_titledentry_has_title():
+    assert hasattr(bibtex_TitledEntry, "title")
+    descriptor = None
+    for klass in bibtex_TitledEntry.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bibtex_authoredentry_is_not_abstract():
+    assert not inspect.isabstract(bibtex_AuthoredEntry)
+
+
+def test_bibtex_authoredentry_constructor_exists():
+    assert callable(bibtex_AuthoredEntry.__init__)
+
+
+def test_bibtex_authoredentry_constructor_args():
+    sig = inspect.signature(bibtex_AuthoredEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtex::thesisentry_is_not_abstract():
-    assert not inspect.isabstract(bibtex::ThesisEntry)
+def test_bibtex_thesisentry_is_not_abstract():
+    assert not inspect.isabstract(bibtex_ThesisEntry)
 
 
-def test_bibtex::thesisentry_constructor_exists():
-    assert callable(bibtex::ThesisEntry.__init__)
+def test_bibtex_thesisentry_constructor_exists():
+    assert callable(bibtex_ThesisEntry.__init__)
 
 
-def test_bibtex::thesisentry_constructor_args():
-    sig = inspect.signature(bibtex::ThesisEntry.__init__)
+def test_bibtex_thesisentry_constructor_args():
+    sig = inspect.signature(bibtex_ThesisEntry.__init__)
     params = list(sig.parameters.keys())
     assert "school" in params, "Missing parameter 'school'"
 
-def test_bibtex::thesisentry_has_school():
-    assert hasattr(bibtex::ThesisEntry, "school")
+def test_bibtex_thesisentry_has_school():
+    assert hasattr(bibtex_ThesisEntry, "school")
     descriptor = None
-    for klass in bibtex::ThesisEntry.__mro__:
+    for klass in bibtex_ThesisEntry.__mro__:
         if "school" in klass.__dict__:
             descriptor = klass.__dict__["school"]
             break
@@ -289,16 +289,16 @@ def test_bibtex::thesisentry_has_school():
 
 
 
-def test_bibtex::misc_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Misc)
+def test_bibtex_misc_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Misc)
 
 
-def test_bibtex::misc_constructor_exists():
-    assert callable(bibtex::Misc.__init__)
+def test_bibtex_misc_constructor_exists():
+    assert callable(bibtex_Misc.__init__)
 
 
-def test_bibtex::misc_constructor_args():
-    sig = inspect.signature(bibtex::Misc.__init__)
+def test_bibtex_misc_constructor_args():
+    sig = inspect.signature(bibtex_Misc.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -317,23 +317,23 @@ def test_book_constructor_args():
 
 
 
-def test_bibtex::inbook_is_not_abstract():
-    assert not inspect.isabstract(bibtex::InBook)
+def test_bibtex_inbook_is_not_abstract():
+    assert not inspect.isabstract(bibtex_InBook)
 
 
-def test_bibtex::inbook_constructor_exists():
-    assert callable(bibtex::InBook.__init__)
+def test_bibtex_inbook_constructor_exists():
+    assert callable(bibtex_InBook.__init__)
 
 
-def test_bibtex::inbook_constructor_args():
-    sig = inspect.signature(bibtex::InBook.__init__)
+def test_bibtex_inbook_constructor_args():
+    sig = inspect.signature(bibtex_InBook.__init__)
     params = list(sig.parameters.keys())
     assert "chapter" in params, "Missing parameter 'chapter'"
 
-def test_bibtex::inbook_has_chapter():
-    assert hasattr(bibtex::InBook, "chapter")
+def test_bibtex_inbook_has_chapter():
+    assert hasattr(bibtex_InBook, "chapter")
     descriptor = None
-    for klass in bibtex::InBook.__mro__:
+    for klass in bibtex_InBook.__mro__:
         if "chapter" in klass.__dict__:
             descriptor = klass.__dict__["chapter"]
             break
@@ -341,23 +341,23 @@ def test_bibtex::inbook_has_chapter():
 
 
 
-def test_bibtex::book_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Book)
+def test_bibtex_book_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Book)
 
 
-def test_bibtex::book_constructor_exists():
-    assert callable(bibtex::Book.__init__)
+def test_bibtex_book_constructor_exists():
+    assert callable(bibtex_Book.__init__)
 
 
-def test_bibtex::book_constructor_args():
-    sig = inspect.signature(bibtex::Book.__init__)
+def test_bibtex_book_constructor_args():
+    sig = inspect.signature(bibtex_Book.__init__)
     params = list(sig.parameters.keys())
     assert "publisher" in params, "Missing parameter 'publisher'"
 
-def test_bibtex::book_has_publisher():
-    assert hasattr(bibtex::Book, "publisher")
+def test_bibtex_book_has_publisher():
+    assert hasattr(bibtex_Book, "publisher")
     descriptor = None
-    for klass in bibtex::Book.__mro__:
+    for klass in bibtex_Book.__mro__:
         if "publisher" in klass.__dict__:
             descriptor = klass.__dict__["publisher"]
             break
@@ -365,16 +365,16 @@ def test_bibtex::book_has_publisher():
 
 
 
-def test_bibtex::booklet_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Booklet)
+def test_bibtex_booklet_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Booklet)
 
 
-def test_bibtex::booklet_constructor_exists():
-    assert callable(bibtex::Booklet.__init__)
+def test_bibtex_booklet_constructor_exists():
+    assert callable(bibtex_Booklet.__init__)
 
 
-def test_bibtex::booklet_constructor_args():
-    sig = inspect.signature(bibtex::Booklet.__init__)
+def test_bibtex_booklet_constructor_args():
+    sig = inspect.signature(bibtex_Booklet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -393,16 +393,16 @@ def test_booktitledentry_constructor_args():
 
 
 
-def test_bibtex::incollection_is_not_abstract():
-    assert not inspect.isabstract(bibtex::InCollection)
+def test_bibtex_incollection_is_not_abstract():
+    assert not inspect.isabstract(bibtex_InCollection)
 
 
-def test_bibtex::incollection_constructor_exists():
-    assert callable(bibtex::InCollection.__init__)
+def test_bibtex_incollection_constructor_exists():
+    assert callable(bibtex_InCollection.__init__)
 
 
-def test_bibtex::incollection_constructor_args():
-    sig = inspect.signature(bibtex::InCollection.__init__)
+def test_bibtex_incollection_constructor_args():
+    sig = inspect.signature(bibtex_InCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -421,65 +421,65 @@ def test_proceedings_constructor_args():
 
 
 
-def test_bibtex::inproceedings_is_not_abstract():
-    assert not inspect.isabstract(bibtex::InProceedings)
+def test_bibtex_inproceedings_is_not_abstract():
+    assert not inspect.isabstract(bibtex_InProceedings)
 
 
-def test_bibtex::inproceedings_constructor_exists():
-    assert callable(bibtex::InProceedings.__init__)
+def test_bibtex_inproceedings_constructor_exists():
+    assert callable(bibtex_InProceedings.__init__)
 
 
-def test_bibtex::inproceedings_constructor_args():
-    sig = inspect.signature(bibtex::InProceedings.__init__)
+def test_bibtex_inproceedings_constructor_args():
+    sig = inspect.signature(bibtex_InProceedings.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtex::proceedings_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Proceedings)
+def test_bibtex_proceedings_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Proceedings)
 
 
-def test_bibtex::proceedings_constructor_exists():
-    assert callable(bibtex::Proceedings.__init__)
+def test_bibtex_proceedings_constructor_exists():
+    assert callable(bibtex_Proceedings.__init__)
 
 
-def test_bibtex::proceedings_constructor_args():
-    sig = inspect.signature(bibtex::Proceedings.__init__)
+def test_bibtex_proceedings_constructor_args():
+    sig = inspect.signature(bibtex_Proceedings.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtex::manual_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Manual)
+def test_bibtex_manual_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Manual)
 
 
-def test_bibtex::manual_constructor_exists():
-    assert callable(bibtex::Manual.__init__)
+def test_bibtex_manual_constructor_exists():
+    assert callable(bibtex_Manual.__init__)
 
 
-def test_bibtex::manual_constructor_args():
-    sig = inspect.signature(bibtex::Manual.__init__)
+def test_bibtex_manual_constructor_args():
+    sig = inspect.signature(bibtex_Manual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtex::unpublished_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Unpublished)
+def test_bibtex_unpublished_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Unpublished)
 
 
-def test_bibtex::unpublished_constructor_exists():
-    assert callable(bibtex::Unpublished.__init__)
+def test_bibtex_unpublished_constructor_exists():
+    assert callable(bibtex_Unpublished.__init__)
 
 
-def test_bibtex::unpublished_constructor_args():
-    sig = inspect.signature(bibtex::Unpublished.__init__)
+def test_bibtex_unpublished_constructor_args():
+    sig = inspect.signature(bibtex_Unpublished.__init__)
     params = list(sig.parameters.keys())
     assert "note" in params, "Missing parameter 'note'"
 
-def test_bibtex::unpublished_has_note():
-    assert hasattr(bibtex::Unpublished, "note")
+def test_bibtex_unpublished_has_note():
+    assert hasattr(bibtex_Unpublished, "note")
     descriptor = None
-    for klass in bibtex::Unpublished.__mro__:
+    for klass in bibtex_Unpublished.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
@@ -487,23 +487,23 @@ def test_bibtex::unpublished_has_note():
 
 
 
-def test_bibtex::author_is_not_abstract():
-    assert not inspect.isabstract(bibtex::Author)
+def test_bibtex_author_is_not_abstract():
+    assert not inspect.isabstract(bibtex_Author)
 
 
-def test_bibtex::author_constructor_exists():
-    assert callable(bibtex::Author.__init__)
+def test_bibtex_author_constructor_exists():
+    assert callable(bibtex_Author.__init__)
 
 
-def test_bibtex::author_constructor_args():
-    sig = inspect.signature(bibtex::Author.__init__)
+def test_bibtex_author_constructor_args():
+    sig = inspect.signature(bibtex_Author.__init__)
     params = list(sig.parameters.keys())
     assert "author" in params, "Missing parameter 'author'"
 
-def test_bibtex::author_has_author():
-    assert hasattr(bibtex::Author, "author")
+def test_bibtex_author_has_author():
+    assert hasattr(bibtex_Author, "author")
     descriptor = None
-    for klass in bibtex::Author.__mro__:
+    for klass in bibtex_Author.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
@@ -511,23 +511,23 @@ def test_bibtex::author_has_author():
 
 
 
-def test_bibtex::bibtexentry_is_not_abstract():
-    assert not inspect.isabstract(bibtex::BibTeXEntry)
+def test_bibtex_bibtexentry_is_not_abstract():
+    assert not inspect.isabstract(bibtex_BibTeXEntry)
 
 
-def test_bibtex::bibtexentry_constructor_exists():
-    assert callable(bibtex::BibTeXEntry.__init__)
+def test_bibtex_bibtexentry_constructor_exists():
+    assert callable(bibtex_BibTeXEntry.__init__)
 
 
-def test_bibtex::bibtexentry_constructor_args():
-    sig = inspect.signature(bibtex::BibTeXEntry.__init__)
+def test_bibtex_bibtexentry_constructor_args():
+    sig = inspect.signature(bibtex_BibTeXEntry.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_bibtex::bibtexentry_has_id():
-    assert hasattr(bibtex::BibTeXEntry, "id")
+def test_bibtex_bibtexentry_has_id():
+    assert hasattr(bibtex_BibTeXEntry, "id")
     descriptor = None
-    for klass in bibtex::BibTeXEntry.__mro__:
+    for klass in bibtex_BibTeXEntry.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -535,16 +535,16 @@ def test_bibtex::bibtexentry_has_id():
 
 
 
-def test_bibtex::bibtexfile_is_not_abstract():
-    assert not inspect.isabstract(bibtex::BibTeXFile)
+def test_bibtex_bibtexfile_is_not_abstract():
+    assert not inspect.isabstract(bibtex_BibTeXFile)
 
 
-def test_bibtex::bibtexfile_constructor_exists():
-    assert callable(bibtex::BibTeXFile.__init__)
+def test_bibtex_bibtexfile_constructor_exists():
+    assert callable(bibtex_BibTeXFile.__init__)
 
 
-def test_bibtex::bibtexfile_constructor_args():
-    sig = inspect.signature(bibtex::BibTeXFile.__init__)
+def test_bibtex_bibtexfile_constructor_args():
+    sig = inspect.signature(bibtex_BibTeXFile.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -562,11 +562,11 @@ safe_text = st.text(
 ThesisEntry_strategy = st.builds(
     ThesisEntry,
 )
-bibtex::MasterThesis_strategy = st.builds(
-    bibtex::MasterThesis,
+bibtex_MasterThesis_strategy = st.builds(
+    bibtex_MasterThesis,
 )
-bibtex::PhDThesis_strategy = st.builds(
-    bibtex::PhDThesis,
+bibtex_PhDThesis_strategy = st.builds(
+    bibtex_PhDThesis,
 )
 TitledEntry_strategy = st.builds(
     TitledEntry,
@@ -577,94 +577,94 @@ DatedEntry_strategy = st.builds(
 AuthoredEntry_strategy = st.builds(
     AuthoredEntry,
 )
-bibtex::TechReport_strategy = st.builds(
-    bibtex::TechReport,
+bibtex_TechReport_strategy = st.builds(
+    bibtex_TechReport,
 )
-bibtex::Article_strategy = st.builds(
-    bibtex::Article,
+bibtex_Article_strategy = st.builds(
+    bibtex_Article,
     journal=
         safe_text
 )
 BibTeXEntry_strategy = st.builds(
     BibTeXEntry,
 )
-bibtex::DatedEntry_strategy = st.builds(
-    bibtex::DatedEntry,
+bibtex_DatedEntry_strategy = st.builds(
+    bibtex_DatedEntry,
     year=
         safe_text
 )
-bibtex::TitledEntry_strategy = st.builds(
-    bibtex::TitledEntry,
-    title=
-        safe_text
-)
-bibtex::BookTitledEntry_strategy = st.builds(
-    bibtex::BookTitledEntry,
+bibtex_BookTitledEntry_strategy = st.builds(
+    bibtex_BookTitledEntry,
     booktitle=
         safe_text
 )
-bibtex::AuthoredEntry_strategy = st.builds(
-    bibtex::AuthoredEntry,
+bibtex_TitledEntry_strategy = st.builds(
+    bibtex_TitledEntry,
+    title=
+        safe_text
 )
-bibtex::ThesisEntry_strategy = st.builds(
-    bibtex::ThesisEntry,
+bibtex_AuthoredEntry_strategy = st.builds(
+    bibtex_AuthoredEntry,
+)
+bibtex_ThesisEntry_strategy = st.builds(
+    bibtex_ThesisEntry,
     school=
         safe_text
 )
-bibtex::Misc_strategy = st.builds(
-    bibtex::Misc,
+bibtex_Misc_strategy = st.builds(
+    bibtex_Misc,
 )
 Book_strategy = st.builds(
     Book,
 )
-bibtex::InBook_strategy = st.builds(
-    bibtex::InBook,
+bibtex_InBook_strategy = st.builds(
+    bibtex_InBook,
     chapter=
         st.integers()
 )
-bibtex::Book_strategy = st.builds(
-    bibtex::Book,
+bibtex_Book_strategy = st.builds(
+    bibtex_Book,
     publisher=
         safe_text
 )
-bibtex::Booklet_strategy = st.builds(
-    bibtex::Booklet,
+bibtex_Booklet_strategy = st.builds(
+    bibtex_Booklet,
 )
 BookTitledEntry_strategy = st.builds(
     BookTitledEntry,
 )
-bibtex::InCollection_strategy = st.builds(
-    bibtex::InCollection,
+bibtex_InCollection_strategy = st.builds(
+    bibtex_InCollection,
 )
 Proceedings_strategy = st.builds(
     Proceedings,
 )
-bibtex::InProceedings_strategy = st.builds(
-    bibtex::InProceedings,
+bibtex_InProceedings_strategy = st.builds(
+    bibtex_InProceedings,
 )
-bibtex::Proceedings_strategy = st.builds(
-    bibtex::Proceedings,
+bibtex_Proceedings_strategy = st.builds(
+    bibtex_Proceedings,
 )
-bibtex::Manual_strategy = st.builds(
-    bibtex::Manual,
+bibtex_Manual_strategy = st.builds(
+    bibtex_Manual,
 )
-bibtex::Unpublished_strategy = st.builds(
-    bibtex::Unpublished,
+bibtex_Unpublished_strategy = st.builds(
+    bibtex_Unpublished,
     note=
         safe_text
 )
-bibtex::Author_strategy = st.builds(
-    bibtex::Author,
+bibtex_Author_strategy = st.builds(
+    bibtex_Author,
     author=
         safe_text
 )
-bibtex::BibTeXEntry_strategy = st.builds(
-    bibtex::BibTeXEntry,
+bibtex_BibTeXEntry_strategy = st.builds(
+    bibtex_BibTeXEntry,
     id=
         safe_text
 )
-bibtex::BibTeXFile_strategy = st.builds(
-    bibtex::BibTeXFile,
+bibtex_BibTeXFile_strategy = st.builds(
+    bibtex_BibTeXFile,
 )
 
 @given(instance=ThesisEntry_strategy)
@@ -672,15 +672,15 @@ bibtex::BibTeXFile_strategy = st.builds(
 def test_thesisentry_instantiation(instance):
     assert isinstance(instance, ThesisEntry)
 
-@given(instance=bibtex::MasterThesis_strategy)
+@given(instance=bibtex_MasterThesis_strategy)
 @settings(max_examples=50)
-def test_bibtex::masterthesis_instantiation(instance):
-    assert isinstance(instance, bibtex::MasterThesis)
+def test_bibtex_masterthesis_instantiation(instance):
+    assert isinstance(instance, bibtex_MasterThesis)
 
-@given(instance=bibtex::PhDThesis_strategy)
+@given(instance=bibtex_PhDThesis_strategy)
 @settings(max_examples=50)
-def test_bibtex::phdthesis_instantiation(instance):
-    assert isinstance(instance, bibtex::PhDThesis)
+def test_bibtex_phdthesis_instantiation(instance):
+    assert isinstance(instance, bibtex_PhDThesis)
 
 @given(instance=TitledEntry_strategy)
 @settings(max_examples=50)
@@ -697,23 +697,20 @@ def test_datedentry_instantiation(instance):
 def test_authoredentry_instantiation(instance):
     assert isinstance(instance, AuthoredEntry)
 
-@given(instance=bibtex::TechReport_strategy)
+@given(instance=bibtex_TechReport_strategy)
 @settings(max_examples=50)
-def test_bibtex::techreport_instantiation(instance):
-    assert isinstance(instance, bibtex::TechReport)
+def test_bibtex_techreport_instantiation(instance):
+    assert isinstance(instance, bibtex_TechReport)
 
-@given(instance=bibtex::Article_strategy)
+@given(instance=bibtex_Article_strategy)
 @settings(max_examples=50)
-def test_bibtex::article_instantiation(instance):
-    assert isinstance(instance, bibtex::Article)
-
-@given(instance=bibtex::Article_strategy)
-def test_bibtex::article_journal_type(instance):
-    assert isinstance(instance.journal, str)
+def test_bibtex_article_instantiation(instance):
+    assert isinstance(instance, bibtex_Article)
 
 
-@given(instance=bibtex::Article_strategy)
-def test_bibtex::article_journal_setter(instance):
+
+@given(instance=bibtex_Article_strategy)
+def test_bibtex_article_journal_setter(instance):
     original = instance.journal
     instance.journal = original
     assert instance.journal == original
@@ -723,201 +720,174 @@ def test_bibtex::article_journal_setter(instance):
 def test_bibtexentry_instantiation(instance):
     assert isinstance(instance, BibTeXEntry)
 
-@given(instance=bibtex::DatedEntry_strategy)
+@given(instance=bibtex_DatedEntry_strategy)
 @settings(max_examples=50)
-def test_bibtex::datedentry_instantiation(instance):
-    assert isinstance(instance, bibtex::DatedEntry)
-
-@given(instance=bibtex::DatedEntry_strategy)
-def test_bibtex::datedentry_year_type(instance):
-    assert isinstance(instance.year, str)
+def test_bibtex_datedentry_instantiation(instance):
+    assert isinstance(instance, bibtex_DatedEntry)
 
 
-@given(instance=bibtex::DatedEntry_strategy)
-def test_bibtex::datedentry_year_setter(instance):
+
+@given(instance=bibtex_DatedEntry_strategy)
+def test_bibtex_datedentry_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
 
-@given(instance=bibtex::TitledEntry_strategy)
+@given(instance=bibtex_BookTitledEntry_strategy)
 @settings(max_examples=50)
-def test_bibtex::titledentry_instantiation(instance):
-    assert isinstance(instance, bibtex::TitledEntry)
-
-@given(instance=bibtex::TitledEntry_strategy)
-def test_bibtex::titledentry_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bibtex_booktitledentry_instantiation(instance):
+    assert isinstance(instance, bibtex_BookTitledEntry)
 
 
-@given(instance=bibtex::TitledEntry_strategy)
-def test_bibtex::titledentry_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=bibtex::BookTitledEntry_strategy)
-@settings(max_examples=50)
-def test_bibtex::booktitledentry_instantiation(instance):
-    assert isinstance(instance, bibtex::BookTitledEntry)
-
-@given(instance=bibtex::BookTitledEntry_strategy)
-def test_bibtex::booktitledentry_booktitle_type(instance):
-    assert isinstance(instance.booktitle, str)
-
-
-@given(instance=bibtex::BookTitledEntry_strategy)
-def test_bibtex::booktitledentry_booktitle_setter(instance):
+@given(instance=bibtex_BookTitledEntry_strategy)
+def test_bibtex_booktitledentry_booktitle_setter(instance):
     original = instance.booktitle
     instance.booktitle = original
     assert instance.booktitle == original
 
-@given(instance=bibtex::AuthoredEntry_strategy)
+@given(instance=bibtex_TitledEntry_strategy)
 @settings(max_examples=50)
-def test_bibtex::authoredentry_instantiation(instance):
-    assert isinstance(instance, bibtex::AuthoredEntry)
+def test_bibtex_titledentry_instantiation(instance):
+    assert isinstance(instance, bibtex_TitledEntry)
 
-@given(instance=bibtex::ThesisEntry_strategy)
+
+
+@given(instance=bibtex_TitledEntry_strategy)
+def test_bibtex_titledentry_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=bibtex_AuthoredEntry_strategy)
 @settings(max_examples=50)
-def test_bibtex::thesisentry_instantiation(instance):
-    assert isinstance(instance, bibtex::ThesisEntry)
+def test_bibtex_authoredentry_instantiation(instance):
+    assert isinstance(instance, bibtex_AuthoredEntry)
 
-@given(instance=bibtex::ThesisEntry_strategy)
-def test_bibtex::thesisentry_school_type(instance):
-    assert isinstance(instance.school, str)
+@given(instance=bibtex_ThesisEntry_strategy)
+@settings(max_examples=50)
+def test_bibtex_thesisentry_instantiation(instance):
+    assert isinstance(instance, bibtex_ThesisEntry)
 
 
-@given(instance=bibtex::ThesisEntry_strategy)
-def test_bibtex::thesisentry_school_setter(instance):
+
+@given(instance=bibtex_ThesisEntry_strategy)
+def test_bibtex_thesisentry_school_setter(instance):
     original = instance.school
     instance.school = original
     assert instance.school == original
 
-@given(instance=bibtex::Misc_strategy)
+@given(instance=bibtex_Misc_strategy)
 @settings(max_examples=50)
-def test_bibtex::misc_instantiation(instance):
-    assert isinstance(instance, bibtex::Misc)
+def test_bibtex_misc_instantiation(instance):
+    assert isinstance(instance, bibtex_Misc)
 
 @given(instance=Book_strategy)
 @settings(max_examples=50)
 def test_book_instantiation(instance):
     assert isinstance(instance, Book)
 
-@given(instance=bibtex::InBook_strategy)
+@given(instance=bibtex_InBook_strategy)
 @settings(max_examples=50)
-def test_bibtex::inbook_instantiation(instance):
-    assert isinstance(instance, bibtex::InBook)
-
-@given(instance=bibtex::InBook_strategy)
-def test_bibtex::inbook_chapter_type(instance):
-    assert isinstance(instance.chapter, int)
+def test_bibtex_inbook_instantiation(instance):
+    assert isinstance(instance, bibtex_InBook)
 
 
-@given(instance=bibtex::InBook_strategy)
-def test_bibtex::inbook_chapter_setter(instance):
+
+@given(instance=bibtex_InBook_strategy)
+def test_bibtex_inbook_chapter_setter(instance):
     original = instance.chapter
     instance.chapter = original
     assert instance.chapter == original
 
-@given(instance=bibtex::Book_strategy)
+@given(instance=bibtex_Book_strategy)
 @settings(max_examples=50)
-def test_bibtex::book_instantiation(instance):
-    assert isinstance(instance, bibtex::Book)
-
-@given(instance=bibtex::Book_strategy)
-def test_bibtex::book_publisher_type(instance):
-    assert isinstance(instance.publisher, str)
+def test_bibtex_book_instantiation(instance):
+    assert isinstance(instance, bibtex_Book)
 
 
-@given(instance=bibtex::Book_strategy)
-def test_bibtex::book_publisher_setter(instance):
+
+@given(instance=bibtex_Book_strategy)
+def test_bibtex_book_publisher_setter(instance):
     original = instance.publisher
     instance.publisher = original
     assert instance.publisher == original
 
-@given(instance=bibtex::Booklet_strategy)
+@given(instance=bibtex_Booklet_strategy)
 @settings(max_examples=50)
-def test_bibtex::booklet_instantiation(instance):
-    assert isinstance(instance, bibtex::Booklet)
+def test_bibtex_booklet_instantiation(instance):
+    assert isinstance(instance, bibtex_Booklet)
 
 @given(instance=BookTitledEntry_strategy)
 @settings(max_examples=50)
 def test_booktitledentry_instantiation(instance):
     assert isinstance(instance, BookTitledEntry)
 
-@given(instance=bibtex::InCollection_strategy)
+@given(instance=bibtex_InCollection_strategy)
 @settings(max_examples=50)
-def test_bibtex::incollection_instantiation(instance):
-    assert isinstance(instance, bibtex::InCollection)
+def test_bibtex_incollection_instantiation(instance):
+    assert isinstance(instance, bibtex_InCollection)
 
 @given(instance=Proceedings_strategy)
 @settings(max_examples=50)
 def test_proceedings_instantiation(instance):
     assert isinstance(instance, Proceedings)
 
-@given(instance=bibtex::InProceedings_strategy)
+@given(instance=bibtex_InProceedings_strategy)
 @settings(max_examples=50)
-def test_bibtex::inproceedings_instantiation(instance):
-    assert isinstance(instance, bibtex::InProceedings)
+def test_bibtex_inproceedings_instantiation(instance):
+    assert isinstance(instance, bibtex_InProceedings)
 
-@given(instance=bibtex::Proceedings_strategy)
+@given(instance=bibtex_Proceedings_strategy)
 @settings(max_examples=50)
-def test_bibtex::proceedings_instantiation(instance):
-    assert isinstance(instance, bibtex::Proceedings)
+def test_bibtex_proceedings_instantiation(instance):
+    assert isinstance(instance, bibtex_Proceedings)
 
-@given(instance=bibtex::Manual_strategy)
+@given(instance=bibtex_Manual_strategy)
 @settings(max_examples=50)
-def test_bibtex::manual_instantiation(instance):
-    assert isinstance(instance, bibtex::Manual)
+def test_bibtex_manual_instantiation(instance):
+    assert isinstance(instance, bibtex_Manual)
 
-@given(instance=bibtex::Unpublished_strategy)
+@given(instance=bibtex_Unpublished_strategy)
 @settings(max_examples=50)
-def test_bibtex::unpublished_instantiation(instance):
-    assert isinstance(instance, bibtex::Unpublished)
-
-@given(instance=bibtex::Unpublished_strategy)
-def test_bibtex::unpublished_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_bibtex_unpublished_instantiation(instance):
+    assert isinstance(instance, bibtex_Unpublished)
 
 
-@given(instance=bibtex::Unpublished_strategy)
-def test_bibtex::unpublished_note_setter(instance):
+
+@given(instance=bibtex_Unpublished_strategy)
+def test_bibtex_unpublished_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=bibtex::Author_strategy)
+@given(instance=bibtex_Author_strategy)
 @settings(max_examples=50)
-def test_bibtex::author_instantiation(instance):
-    assert isinstance(instance, bibtex::Author)
-
-@given(instance=bibtex::Author_strategy)
-def test_bibtex::author_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_bibtex_author_instantiation(instance):
+    assert isinstance(instance, bibtex_Author)
 
 
-@given(instance=bibtex::Author_strategy)
-def test_bibtex::author_author_setter(instance):
+
+@given(instance=bibtex_Author_strategy)
+def test_bibtex_author_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=bibtex::BibTeXEntry_strategy)
+@given(instance=bibtex_BibTeXEntry_strategy)
 @settings(max_examples=50)
-def test_bibtex::bibtexentry_instantiation(instance):
-    assert isinstance(instance, bibtex::BibTeXEntry)
-
-@given(instance=bibtex::BibTeXEntry_strategy)
-def test_bibtex::bibtexentry_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_bibtex_bibtexentry_instantiation(instance):
+    assert isinstance(instance, bibtex_BibTeXEntry)
 
 
-@given(instance=bibtex::BibTeXEntry_strategy)
-def test_bibtex::bibtexentry_id_setter(instance):
+
+@given(instance=bibtex_BibTeXEntry_strategy)
+def test_bibtex_bibtexentry_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=bibtex::BibTeXFile_strategy)
+@given(instance=bibtex_BibTeXFile_strategy)
 @settings(max_examples=50)
-def test_bibtex::bibtexfile_instantiation(instance):
-    assert isinstance(instance, bibtex::BibTeXFile)
+def test_bibtex_bibtexfile_instantiation(instance):
+    assert isinstance(instance, bibtex_BibTeXFile)

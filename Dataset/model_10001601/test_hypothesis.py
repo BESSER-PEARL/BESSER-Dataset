@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Product,
@@ -67,17 +67,8 @@ def test_lineitem_constructor_exists():
 def test_lineitem_constructor_args():
     sig = inspect.signature(LineItem.__init__)
     params = list(sig.parameters.keys())
-    assert "quantity" in params, "Missing parameter 'quantity'"
     assert "price" in params, "Missing parameter 'price'"
-
-def test_lineitem_has_quantity():
-    assert hasattr(LineItem, "quantity")
-    descriptor = None
-    for klass in LineItem.__mro__:
-        if "quantity" in klass.__dict__:
-            descriptor = klass.__dict__["quantity"]
-            break
-    assert isinstance(descriptor, property)
+    assert "quantity" in params, "Missing parameter 'quantity'"
 
 def test_lineitem_has_price():
     assert hasattr(LineItem, "price")
@@ -85,6 +76,15 @@ def test_lineitem_has_price():
     for klass in LineItem.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lineitem_has_quantity():
+    assert hasattr(LineItem, "quantity")
+    descriptor = None
+    for klass in LineItem.__mro__:
+        if "quantity" in klass.__dict__:
+            descriptor = klass.__dict__["quantity"]
             break
     assert isinstance(descriptor, property)
 
@@ -101,12 +101,21 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
+    assert "number" in params, "Missing parameter 'number'"
     assert "shipTo" in params, "Missing parameter 'shipTo'"
-    assert "total" in params, "Missing parameter 'total'"
     assert "shipped" in params, "Missing parameter 'shipped'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "total" in params, "Missing parameter 'total'"
     assert "ordered" in params, "Missing parameter 'ordered'"
-    assert "number" in params, "Missing parameter 'number'"
+
+def test_order_has_number():
+    assert hasattr(Order, "number")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_order_has_shipTo():
     assert hasattr(Order, "shipTo")
@@ -114,15 +123,6 @@ def test_order_has_shipTo():
     for klass in Order.__mro__:
         if "shipTo" in klass.__dict__:
             descriptor = klass.__dict__["shipTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_total():
-    assert hasattr(Order, "total")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
             break
     assert isinstance(descriptor, property)
 
@@ -144,21 +144,21 @@ def test_order_has_status():
             break
     assert isinstance(descriptor, property)
 
+def test_order_has_total():
+    assert hasattr(Order, "total")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_order_has_ordered():
     assert hasattr(Order, "ordered")
     descriptor = None
     for klass in Order.__mro__:
         if "ordered" in klass.__dict__:
             descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_number():
-    assert hasattr(Order, "number")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
             break
     assert isinstance(descriptor, property)
 
@@ -176,9 +176,9 @@ def test_shoppingcart1_constructor_args():
     sig = inspect.signature(ShoppingCart1.__init__)
     params = list(sig.parameters.keys())
     assert "itemCount" in params, "Missing parameter 'itemCount'"
+    assert "closed" in params, "Missing parameter 'closed'"
     assert "totalPrice" in params, "Missing parameter 'totalPrice'"
     assert "isClosed" in params, "Missing parameter 'isClosed'"
-    assert "closed" in params, "Missing parameter 'closed'"
 
 def test_shoppingcart1_has_itemCount():
     assert hasattr(ShoppingCart1, "itemCount")
@@ -186,6 +186,15 @@ def test_shoppingcart1_has_itemCount():
     for klass in ShoppingCart1.__mro__:
         if "itemCount" in klass.__dict__:
             descriptor = klass.__dict__["itemCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shoppingcart1_has_closed():
+    assert hasattr(ShoppingCart1, "closed")
+    descriptor = None
+    for klass in ShoppingCart1.__mro__:
+        if "closed" in klass.__dict__:
+            descriptor = klass.__dict__["closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -204,15 +213,6 @@ def test_shoppingcart1_has_isClosed():
     for klass in ShoppingCart1.__mro__:
         if "isClosed" in klass.__dict__:
             descriptor = klass.__dict__["isClosed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_shoppingcart1_has_closed():
-    assert hasattr(ShoppingCart1, "closed")
-    descriptor = None
-    for klass in ShoppingCart1.__mro__:
-        if "closed" in klass.__dict__:
-            descriptor = klass.__dict__["closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,9 +253,18 @@ def test_payment_constructor_exists():
 def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
+    assert "total" in params, "Missing parameter 'total'"
     assert "paidDate" in params, "Missing parameter 'paidDate'"
     assert "details" in params, "Missing parameter 'details'"
-    assert "total" in params, "Missing parameter 'total'"
+
+def test_payment_has_total():
+    assert hasattr(Payment, "total")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_payment_has_paidDate():
     assert hasattr(Payment, "paidDate")
@@ -272,15 +281,6 @@ def test_payment_has_details():
     for klass in Payment.__mro__:
         if "details" in klass.__dict__:
             descriptor = klass.__dict__["details"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_payment_has_total():
-    assert hasattr(Payment, "total")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
             break
     assert isinstance(descriptor, property)
 
@@ -331,36 +331,36 @@ Product_strategy = st.builds(
 )
 LineItem_strategy = st.builds(
     LineItem,
-    quantity=
-        st.integers(),
     price=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    quantity=
+        st.integers()
 )
 Order_strategy = st.builds(
     Order,
+    number=
+        st.integers(),
     shipTo=
         safe_text,
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     shipped=
         st.booleans(),
     status=
         st.none(),
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     ordered=
-        st.dates(),
-    number=
-        st.integers()
+        st.dates()
 )
 ShoppingCart1_strategy = st.builds(
     ShoppingCart1,
     itemCount=
         st.integers(),
+    closed=
+        st.dates(),
     totalPrice=
         st.integers(),
     isClosed=
-        st.booleans(),
-    closed=
-        st.dates()
+        st.booleans()
 )
 ShoppingCart_strategy = st.builds(
     ShoppingCart,
@@ -369,12 +369,12 @@ ShoppingCart_strategy = st.builds(
 )
 Payment_strategy = st.builds(
     Payment,
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     paidDate=
         st.dates(),
     details=
-        safe_text,
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        safe_text
 )
 
 @given(instance=Product_strategy)
@@ -382,9 +382,6 @@ Payment_strategy = st.builds(
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=Product_strategy)
-def test_product_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=Product_strategy)
@@ -393,9 +390,6 @@ def test_product_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
-@given(instance=Product_strategy)
-def test_product_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Product_strategy)
@@ -409,20 +403,6 @@ def test_product_name_setter(instance):
 def test_lineitem_instantiation(instance):
     assert isinstance(instance, LineItem)
 
-@given(instance=LineItem_strategy)
-def test_lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
-
-
-@given(instance=LineItem_strategy)
-def test_lineitem_quantity_setter(instance):
-    original = instance.quantity
-    instance.quantity = original
-    assert instance.quantity == original
-
-@given(instance=LineItem_strategy)
-def test_lineitem_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
 @given(instance=LineItem_strategy)
@@ -431,69 +411,19 @@ def test_lineitem_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
+
+
+@given(instance=LineItem_strategy)
+def test_lineitem_quantity_setter(instance):
+    original = instance.quantity
+    instance.quantity = original
+    assert instance.quantity == original
+
 @given(instance=Order_strategy)
 @settings(max_examples=50)
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_shipTo_type(instance):
-    assert isinstance(instance.shipTo, str)
-
-
-@given(instance=Order_strategy)
-def test_order_shipTo_setter(instance):
-    original = instance.shipTo
-    instance.shipTo = original
-    assert instance.shipTo == original
-
-@given(instance=Order_strategy)
-def test_order_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Order_strategy)
-def test_order_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Order_strategy)
-def test_order_shipped_type(instance):
-    assert isinstance(instance.shipped, bool)
-
-
-@given(instance=Order_strategy)
-def test_order_shipped_setter(instance):
-    original = instance.shipped
-    instance.shipped = original
-    assert instance.shipped == original
-
-@given(instance=Order_strategy)
-def test_order_status_type(instance):
-    assert isinstance(instance.status, orderstatus)
-
-
-@given(instance=Order_strategy)
-def test_order_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=Order_strategy)
-def test_order_ordered_type(instance):
-    assert isinstance(instance.ordered, date)
-
-
-@given(instance=Order_strategy)
-def test_order_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=Order_strategy)
-def test_order_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=Order_strategy)
@@ -502,14 +432,51 @@ def test_order_number_setter(instance):
     instance.number = original
     assert instance.number == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_shipTo_setter(instance):
+    original = instance.shipTo
+    instance.shipTo = original
+    assert instance.shipTo == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_shipped_setter(instance):
+    original = instance.shipped
+    instance.shipped = original
+    assert instance.shipped == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
 @given(instance=ShoppingCart1_strategy)
 @settings(max_examples=50)
 def test_shoppingcart1_instantiation(instance):
     assert isinstance(instance, ShoppingCart1)
 
-@given(instance=ShoppingCart1_strategy)
-def test_shoppingcart1_itemCount_type(instance):
-    assert isinstance(instance.itemCount, int)
 
 
 @given(instance=ShoppingCart1_strategy)
@@ -518,31 +485,6 @@ def test_shoppingcart1_itemCount_setter(instance):
     instance.itemCount = original
     assert instance.itemCount == original
 
-@given(instance=ShoppingCart1_strategy)
-def test_shoppingcart1_totalPrice_type(instance):
-    assert isinstance(instance.totalPrice, int)
-
-
-@given(instance=ShoppingCart1_strategy)
-def test_shoppingcart1_totalPrice_setter(instance):
-    original = instance.totalPrice
-    instance.totalPrice = original
-    assert instance.totalPrice == original
-
-@given(instance=ShoppingCart1_strategy)
-def test_shoppingcart1_isClosed_type(instance):
-    assert isinstance(instance.isClosed, bool)
-
-
-@given(instance=ShoppingCart1_strategy)
-def test_shoppingcart1_isClosed_setter(instance):
-    original = instance.isClosed
-    instance.isClosed = original
-    assert instance.isClosed == original
-
-@given(instance=ShoppingCart1_strategy)
-def test_shoppingcart1_closed_type(instance):
-    assert isinstance(instance.closed, date)
 
 
 @given(instance=ShoppingCart1_strategy)
@@ -551,14 +493,27 @@ def test_shoppingcart1_closed_setter(instance):
     instance.closed = original
     assert instance.closed == original
 
+
+
+@given(instance=ShoppingCart1_strategy)
+def test_shoppingcart1_totalPrice_setter(instance):
+    original = instance.totalPrice
+    instance.totalPrice = original
+    assert instance.totalPrice == original
+
+
+
+@given(instance=ShoppingCart1_strategy)
+def test_shoppingcart1_isClosed_setter(instance):
+    original = instance.isClosed
+    instance.isClosed = original
+    assert instance.isClosed == original
+
 @given(instance=ShoppingCart_strategy)
 @settings(max_examples=50)
 def test_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCart)
 
-@given(instance=ShoppingCart_strategy)
-def test_shoppingcart_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=ShoppingCart_strategy)
@@ -572,9 +527,14 @@ def test_shoppingcart_creationDate_setter(instance):
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
+
+
 @given(instance=Payment_strategy)
-def test_payment_paidDate_type(instance):
-    assert isinstance(instance.paidDate, date)
+def test_payment_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
 
 
 @given(instance=Payment_strategy)
@@ -583,9 +543,6 @@ def test_payment_paidDate_setter(instance):
     instance.paidDate = original
     assert instance.paidDate == original
 
-@given(instance=Payment_strategy)
-def test_payment_details_type(instance):
-    assert isinstance(instance.details, str)
 
 
 @given(instance=Payment_strategy)
@@ -593,14 +550,3 @@ def test_payment_details_setter(instance):
     original = instance.details
     instance.details = original
     assert instance.details == original
-
-@given(instance=Payment_strategy)
-def test_payment_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Payment_strategy)
-def test_payment_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original

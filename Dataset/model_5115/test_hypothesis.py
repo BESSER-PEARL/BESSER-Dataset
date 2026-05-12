@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SuperClass,
     SuperSuperClass,
-    testPackage::DerivedClass,
-    testPackage::SuperClass,
-    testPackage::SuperSuperClass,
+    testPackage_DerivedClass,
+    testPackage_SuperClass,
+    testPackage_SuperSuperClass,
 )
 
 # =============================================================================
@@ -47,44 +47,44 @@ def test_supersuperclass_constructor_args():
 
 
 
-def test_testpackage::derivedclass_is_not_abstract():
-    assert not inspect.isabstract(testPackage::DerivedClass)
+def test_testpackage_derivedclass_is_not_abstract():
+    assert not inspect.isabstract(testPackage_DerivedClass)
 
 
-def test_testpackage::derivedclass_constructor_exists():
-    assert callable(testPackage::DerivedClass.__init__)
+def test_testpackage_derivedclass_constructor_exists():
+    assert callable(testPackage_DerivedClass.__init__)
 
 
-def test_testpackage::derivedclass_constructor_args():
-    sig = inspect.signature(testPackage::DerivedClass.__init__)
+def test_testpackage_derivedclass_constructor_args():
+    sig = inspect.signature(testPackage_DerivedClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::superclass_is_not_abstract():
-    assert not inspect.isabstract(testPackage::SuperClass)
+def test_testpackage_superclass_is_not_abstract():
+    assert not inspect.isabstract(testPackage_SuperClass)
 
 
-def test_testpackage::superclass_constructor_exists():
-    assert callable(testPackage::SuperClass.__init__)
+def test_testpackage_superclass_constructor_exists():
+    assert callable(testPackage_SuperClass.__init__)
 
 
-def test_testpackage::superclass_constructor_args():
-    sig = inspect.signature(testPackage::SuperClass.__init__)
+def test_testpackage_superclass_constructor_args():
+    sig = inspect.signature(testPackage_SuperClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::supersuperclass_is_not_abstract():
-    assert not inspect.isabstract(testPackage::SuperSuperClass)
+def test_testpackage_supersuperclass_is_not_abstract():
+    assert not inspect.isabstract(testPackage_SuperSuperClass)
 
 
-def test_testpackage::supersuperclass_constructor_exists():
-    assert callable(testPackage::SuperSuperClass.__init__)
+def test_testpackage_supersuperclass_constructor_exists():
+    assert callable(testPackage_SuperSuperClass.__init__)
 
 
-def test_testpackage::supersuperclass_constructor_args():
-    sig = inspect.signature(testPackage::SuperSuperClass.__init__)
+def test_testpackage_supersuperclass_constructor_args():
+    sig = inspect.signature(testPackage_SuperSuperClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,14 +105,14 @@ SuperClass_strategy = st.builds(
 SuperSuperClass_strategy = st.builds(
     SuperSuperClass,
 )
-testPackage::DerivedClass_strategy = st.builds(
-    testPackage::DerivedClass,
+testPackage_DerivedClass_strategy = st.builds(
+    testPackage_DerivedClass,
 )
-testPackage::SuperClass_strategy = st.builds(
-    testPackage::SuperClass,
+testPackage_SuperClass_strategy = st.builds(
+    testPackage_SuperClass,
 )
-testPackage::SuperSuperClass_strategy = st.builds(
-    testPackage::SuperSuperClass,
+testPackage_SuperSuperClass_strategy = st.builds(
+    testPackage_SuperSuperClass,
 )
 
 @given(instance=SuperClass_strategy)
@@ -125,17 +125,17 @@ def test_superclass_instantiation(instance):
 def test_supersuperclass_instantiation(instance):
     assert isinstance(instance, SuperSuperClass)
 
-@given(instance=testPackage::DerivedClass_strategy)
+@given(instance=testPackage_DerivedClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::derivedclass_instantiation(instance):
-    assert isinstance(instance, testPackage::DerivedClass)
+def test_testpackage_derivedclass_instantiation(instance):
+    assert isinstance(instance, testPackage_DerivedClass)
 
-@given(instance=testPackage::SuperClass_strategy)
+@given(instance=testPackage_SuperClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::superclass_instantiation(instance):
-    assert isinstance(instance, testPackage::SuperClass)
+def test_testpackage_superclass_instantiation(instance):
+    assert isinstance(instance, testPackage_SuperClass)
 
-@given(instance=testPackage::SuperSuperClass_strategy)
+@given(instance=testPackage_SuperSuperClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::supersuperclass_instantiation(instance):
-    assert isinstance(instance, testPackage::SuperSuperClass)
+def test_testpackage_supersuperclass_instantiation(instance):
+    assert isinstance(instance, testPackage_SuperSuperClass)

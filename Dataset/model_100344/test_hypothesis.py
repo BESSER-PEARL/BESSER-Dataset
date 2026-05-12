@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    automaton::ParameterBinding,
+from python_code import (
+    automaton_ParameterBinding,
     TimedZone,
-    automaton::HoldsFor,
-    automaton::Within,
-    automaton::EventPattern,
+    automaton_HoldsFor,
+    automaton_Within,
+    automaton_EventPattern,
     TypedTransition,
-    automaton::NegativeTransition,
-    automaton::Parameter,
-    automaton::Guard,
+    automaton_NegativeTransition,
+    automaton_Parameter,
+    automaton_Guard,
     Transition,
-    automaton::EpsilonTransition,
-    automaton::TypedTransition,
-    automaton::Transition,
+    automaton_EpsilonTransition,
+    automaton_TypedTransition,
+    automaton_Transition,
     State,
-    automaton::TrapState,
-    automaton::FinalState,
-    automaton::ParameterTable,
-    automaton::EventToken,
-    automaton::InitState,
-    automaton::TimedZone,
-    automaton::State,
-    automaton::Event,
-    automaton::Automaton,
-    automaton::InternalModel,
+    automaton_TrapState,
+    automaton_FinalState,
+    automaton_ParameterTable,
+    automaton_EventToken,
+    automaton_InitState,
+    automaton_TimedZone,
+    automaton_State,
+    automaton_Event,
+    automaton_Automaton,
+    automaton_InternalModel,
     EventContext,
 )
 
@@ -39,35 +39,35 @@ from classes import (
 
 
 
-def test_automaton::parameterbinding_is_not_abstract():
-    assert not inspect.isabstract(automaton::ParameterBinding)
+def test_automaton_parameterbinding_is_not_abstract():
+    assert not inspect.isabstract(automaton_ParameterBinding)
 
 
-def test_automaton::parameterbinding_constructor_exists():
-    assert callable(automaton::ParameterBinding.__init__)
+def test_automaton_parameterbinding_constructor_exists():
+    assert callable(automaton_ParameterBinding.__init__)
 
 
-def test_automaton::parameterbinding_constructor_args():
-    sig = inspect.signature(automaton::ParameterBinding.__init__)
+def test_automaton_parameterbinding_constructor_args():
+    sig = inspect.signature(automaton_ParameterBinding.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "symbolicName" in params, "Missing parameter 'symbolicName'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_automaton::parameterbinding_has_value():
-    assert hasattr(automaton::ParameterBinding, "value")
+def test_automaton_parameterbinding_has_symbolicName():
+    assert hasattr(automaton_ParameterBinding, "symbolicName")
     descriptor = None
-    for klass in automaton::ParameterBinding.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in automaton_ParameterBinding.__mro__:
+        if "symbolicName" in klass.__dict__:
+            descriptor = klass.__dict__["symbolicName"]
             break
     assert isinstance(descriptor, property)
 
-def test_automaton::parameterbinding_has_symbolicName():
-    assert hasattr(automaton::ParameterBinding, "symbolicName")
+def test_automaton_parameterbinding_has_value():
+    assert hasattr(automaton_ParameterBinding, "value")
     descriptor = None
-    for klass in automaton::ParameterBinding.__mro__:
-        if "symbolicName" in klass.__dict__:
-            descriptor = klass.__dict__["symbolicName"]
+    for klass in automaton_ParameterBinding.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,44 +87,44 @@ def test_timedzone_constructor_args():
 
 
 
-def test_automaton::holdsfor_is_not_abstract():
-    assert not inspect.isabstract(automaton::HoldsFor)
+def test_automaton_holdsfor_is_not_abstract():
+    assert not inspect.isabstract(automaton_HoldsFor)
 
 
-def test_automaton::holdsfor_constructor_exists():
-    assert callable(automaton::HoldsFor.__init__)
+def test_automaton_holdsfor_constructor_exists():
+    assert callable(automaton_HoldsFor.__init__)
 
 
-def test_automaton::holdsfor_constructor_args():
-    sig = inspect.signature(automaton::HoldsFor.__init__)
+def test_automaton_holdsfor_constructor_args():
+    sig = inspect.signature(automaton_HoldsFor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::within_is_not_abstract():
-    assert not inspect.isabstract(automaton::Within)
+def test_automaton_within_is_not_abstract():
+    assert not inspect.isabstract(automaton_Within)
 
 
-def test_automaton::within_constructor_exists():
-    assert callable(automaton::Within.__init__)
+def test_automaton_within_constructor_exists():
+    assert callable(automaton_Within.__init__)
 
 
-def test_automaton::within_constructor_args():
-    sig = inspect.signature(automaton::Within.__init__)
+def test_automaton_within_constructor_args():
+    sig = inspect.signature(automaton_Within.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::eventpattern_is_not_abstract():
-    assert not inspect.isabstract(automaton::EventPattern)
+def test_automaton_eventpattern_is_not_abstract():
+    assert not inspect.isabstract(automaton_EventPattern)
 
 
-def test_automaton::eventpattern_constructor_exists():
-    assert callable(automaton::EventPattern.__init__)
+def test_automaton_eventpattern_constructor_exists():
+    assert callable(automaton_EventPattern.__init__)
 
 
-def test_automaton::eventpattern_constructor_args():
-    sig = inspect.signature(automaton::EventPattern.__init__)
+def test_automaton_eventpattern_constructor_args():
+    sig = inspect.signature(automaton_EventPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -143,64 +143,64 @@ def test_typedtransition_constructor_args():
 
 
 
-def test_automaton::negativetransition_is_not_abstract():
-    assert not inspect.isabstract(automaton::NegativeTransition)
+def test_automaton_negativetransition_is_not_abstract():
+    assert not inspect.isabstract(automaton_NegativeTransition)
 
 
-def test_automaton::negativetransition_constructor_exists():
-    assert callable(automaton::NegativeTransition.__init__)
+def test_automaton_negativetransition_constructor_exists():
+    assert callable(automaton_NegativeTransition.__init__)
 
 
-def test_automaton::negativetransition_constructor_args():
-    sig = inspect.signature(automaton::NegativeTransition.__init__)
+def test_automaton_negativetransition_constructor_args():
+    sig = inspect.signature(automaton_NegativeTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::parameter_is_not_abstract():
-    assert not inspect.isabstract(automaton::Parameter)
+def test_automaton_parameter_is_not_abstract():
+    assert not inspect.isabstract(automaton_Parameter)
 
 
-def test_automaton::parameter_constructor_exists():
-    assert callable(automaton::Parameter.__init__)
+def test_automaton_parameter_constructor_exists():
+    assert callable(automaton_Parameter.__init__)
 
 
-def test_automaton::parameter_constructor_args():
-    sig = inspect.signature(automaton::Parameter.__init__)
+def test_automaton_parameter_constructor_args():
+    sig = inspect.signature(automaton_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "symbolicName" in params, "Missing parameter 'symbolicName'"
     assert "position" in params, "Missing parameter 'position'"
+    assert "symbolicName" in params, "Missing parameter 'symbolicName'"
 
-def test_automaton::parameter_has_symbolicName():
-    assert hasattr(automaton::Parameter, "symbolicName")
+def test_automaton_parameter_has_position():
+    assert hasattr(automaton_Parameter, "position")
     descriptor = None
-    for klass in automaton::Parameter.__mro__:
-        if "symbolicName" in klass.__dict__:
-            descriptor = klass.__dict__["symbolicName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaton::parameter_has_position():
-    assert hasattr(automaton::Parameter, "position")
-    descriptor = None
-    for klass in automaton::Parameter.__mro__:
+    for klass in automaton_Parameter.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
     assert isinstance(descriptor, property)
 
+def test_automaton_parameter_has_symbolicName():
+    assert hasattr(automaton_Parameter, "symbolicName")
+    descriptor = None
+    for klass in automaton_Parameter.__mro__:
+        if "symbolicName" in klass.__dict__:
+            descriptor = klass.__dict__["symbolicName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_automaton::guard_is_not_abstract():
-    assert not inspect.isabstract(automaton::Guard)
+
+def test_automaton_guard_is_not_abstract():
+    assert not inspect.isabstract(automaton_Guard)
 
 
-def test_automaton::guard_constructor_exists():
-    assert callable(automaton::Guard.__init__)
+def test_automaton_guard_constructor_exists():
+    assert callable(automaton_Guard.__init__)
 
 
-def test_automaton::guard_constructor_args():
-    sig = inspect.signature(automaton::Guard.__init__)
+def test_automaton_guard_constructor_args():
+    sig = inspect.signature(automaton_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,44 +219,44 @@ def test_transition_constructor_args():
 
 
 
-def test_automaton::epsilontransition_is_not_abstract():
-    assert not inspect.isabstract(automaton::EpsilonTransition)
+def test_automaton_epsilontransition_is_not_abstract():
+    assert not inspect.isabstract(automaton_EpsilonTransition)
 
 
-def test_automaton::epsilontransition_constructor_exists():
-    assert callable(automaton::EpsilonTransition.__init__)
+def test_automaton_epsilontransition_constructor_exists():
+    assert callable(automaton_EpsilonTransition.__init__)
 
 
-def test_automaton::epsilontransition_constructor_args():
-    sig = inspect.signature(automaton::EpsilonTransition.__init__)
+def test_automaton_epsilontransition_constructor_args():
+    sig = inspect.signature(automaton_EpsilonTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::typedtransition_is_not_abstract():
-    assert not inspect.isabstract(automaton::TypedTransition)
+def test_automaton_typedtransition_is_not_abstract():
+    assert not inspect.isabstract(automaton_TypedTransition)
 
 
-def test_automaton::typedtransition_constructor_exists():
-    assert callable(automaton::TypedTransition.__init__)
+def test_automaton_typedtransition_constructor_exists():
+    assert callable(automaton_TypedTransition.__init__)
 
 
-def test_automaton::typedtransition_constructor_args():
-    sig = inspect.signature(automaton::TypedTransition.__init__)
+def test_automaton_typedtransition_constructor_args():
+    sig = inspect.signature(automaton_TypedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::transition_is_not_abstract():
-    assert not inspect.isabstract(automaton::Transition)
+def test_automaton_transition_is_not_abstract():
+    assert not inspect.isabstract(automaton_Transition)
 
 
-def test_automaton::transition_constructor_exists():
-    assert callable(automaton::Transition.__init__)
+def test_automaton_transition_constructor_exists():
+    assert callable(automaton_Transition.__init__)
 
 
-def test_automaton::transition_constructor_args():
-    sig = inspect.signature(automaton::Transition.__init__)
+def test_automaton_transition_constructor_args():
+    sig = inspect.signature(automaton_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -275,93 +275,93 @@ def test_state_constructor_args():
 
 
 
-def test_automaton::trapstate_is_not_abstract():
-    assert not inspect.isabstract(automaton::TrapState)
+def test_automaton_trapstate_is_not_abstract():
+    assert not inspect.isabstract(automaton_TrapState)
 
 
-def test_automaton::trapstate_constructor_exists():
-    assert callable(automaton::TrapState.__init__)
+def test_automaton_trapstate_constructor_exists():
+    assert callable(automaton_TrapState.__init__)
 
 
-def test_automaton::trapstate_constructor_args():
-    sig = inspect.signature(automaton::TrapState.__init__)
+def test_automaton_trapstate_constructor_args():
+    sig = inspect.signature(automaton_TrapState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::finalstate_is_not_abstract():
-    assert not inspect.isabstract(automaton::FinalState)
+def test_automaton_finalstate_is_not_abstract():
+    assert not inspect.isabstract(automaton_FinalState)
 
 
-def test_automaton::finalstate_constructor_exists():
-    assert callable(automaton::FinalState.__init__)
+def test_automaton_finalstate_constructor_exists():
+    assert callable(automaton_FinalState.__init__)
 
 
-def test_automaton::finalstate_constructor_args():
-    sig = inspect.signature(automaton::FinalState.__init__)
+def test_automaton_finalstate_constructor_args():
+    sig = inspect.signature(automaton_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::parametertable_is_not_abstract():
-    assert not inspect.isabstract(automaton::ParameterTable)
+def test_automaton_parametertable_is_not_abstract():
+    assert not inspect.isabstract(automaton_ParameterTable)
 
 
-def test_automaton::parametertable_constructor_exists():
-    assert callable(automaton::ParameterTable.__init__)
+def test_automaton_parametertable_constructor_exists():
+    assert callable(automaton_ParameterTable.__init__)
 
 
-def test_automaton::parametertable_constructor_args():
-    sig = inspect.signature(automaton::ParameterTable.__init__)
+def test_automaton_parametertable_constructor_args():
+    sig = inspect.signature(automaton_ParameterTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::eventtoken_is_not_abstract():
-    assert not inspect.isabstract(automaton::EventToken)
+def test_automaton_eventtoken_is_not_abstract():
+    assert not inspect.isabstract(automaton_EventToken)
 
 
-def test_automaton::eventtoken_constructor_exists():
-    assert callable(automaton::EventToken.__init__)
+def test_automaton_eventtoken_constructor_exists():
+    assert callable(automaton_EventToken.__init__)
 
 
-def test_automaton::eventtoken_constructor_args():
-    sig = inspect.signature(automaton::EventToken.__init__)
+def test_automaton_eventtoken_constructor_args():
+    sig = inspect.signature(automaton_EventToken.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::initstate_is_not_abstract():
-    assert not inspect.isabstract(automaton::InitState)
+def test_automaton_initstate_is_not_abstract():
+    assert not inspect.isabstract(automaton_InitState)
 
 
-def test_automaton::initstate_constructor_exists():
-    assert callable(automaton::InitState.__init__)
+def test_automaton_initstate_constructor_exists():
+    assert callable(automaton_InitState.__init__)
 
 
-def test_automaton::initstate_constructor_args():
-    sig = inspect.signature(automaton::InitState.__init__)
+def test_automaton_initstate_constructor_args():
+    sig = inspect.signature(automaton_InitState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::timedzone_is_not_abstract():
-    assert not inspect.isabstract(automaton::TimedZone)
+def test_automaton_timedzone_is_not_abstract():
+    assert not inspect.isabstract(automaton_TimedZone)
 
 
-def test_automaton::timedzone_constructor_exists():
-    assert callable(automaton::TimedZone.__init__)
+def test_automaton_timedzone_constructor_exists():
+    assert callable(automaton_TimedZone.__init__)
 
 
-def test_automaton::timedzone_constructor_args():
-    sig = inspect.signature(automaton::TimedZone.__init__)
+def test_automaton_timedzone_constructor_args():
+    sig = inspect.signature(automaton_TimedZone.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_automaton::timedzone_has_time():
-    assert hasattr(automaton::TimedZone, "time")
+def test_automaton_timedzone_has_time():
+    assert hasattr(automaton_TimedZone, "time")
     descriptor = None
-    for klass in automaton::TimedZone.__mro__:
+    for klass in automaton_TimedZone.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -369,23 +369,23 @@ def test_automaton::timedzone_has_time():
 
 
 
-def test_automaton::state_is_not_abstract():
-    assert not inspect.isabstract(automaton::State)
+def test_automaton_state_is_not_abstract():
+    assert not inspect.isabstract(automaton_State)
 
 
-def test_automaton::state_constructor_exists():
-    assert callable(automaton::State.__init__)
+def test_automaton_state_constructor_exists():
+    assert callable(automaton_State.__init__)
 
 
-def test_automaton::state_constructor_args():
-    sig = inspect.signature(automaton::State.__init__)
+def test_automaton_state_constructor_args():
+    sig = inspect.signature(automaton_State.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_automaton::state_has_label():
-    assert hasattr(automaton::State, "label")
+def test_automaton_state_has_label():
+    assert hasattr(automaton_State, "label")
     descriptor = None
-    for klass in automaton::State.__mro__:
+    for klass in automaton_State.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -393,37 +393,37 @@ def test_automaton::state_has_label():
 
 
 
-def test_automaton::event_is_not_abstract():
-    assert not inspect.isabstract(automaton::Event)
+def test_automaton_event_is_not_abstract():
+    assert not inspect.isabstract(automaton_Event)
 
 
-def test_automaton::event_constructor_exists():
-    assert callable(automaton::Event.__init__)
+def test_automaton_event_constructor_exists():
+    assert callable(automaton_Event.__init__)
 
 
-def test_automaton::event_constructor_args():
-    sig = inspect.signature(automaton::Event.__init__)
+def test_automaton_event_constructor_args():
+    sig = inspect.signature(automaton_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_automaton::automaton_is_not_abstract():
-    assert not inspect.isabstract(automaton::Automaton)
+def test_automaton_automaton_is_not_abstract():
+    assert not inspect.isabstract(automaton_Automaton)
 
 
-def test_automaton::automaton_constructor_exists():
-    assert callable(automaton::Automaton.__init__)
+def test_automaton_automaton_constructor_exists():
+    assert callable(automaton_Automaton.__init__)
 
 
-def test_automaton::automaton_constructor_args():
-    sig = inspect.signature(automaton::Automaton.__init__)
+def test_automaton_automaton_constructor_args():
+    sig = inspect.signature(automaton_Automaton.__init__)
     params = list(sig.parameters.keys())
     assert "eventPatternId" in params, "Missing parameter 'eventPatternId'"
 
-def test_automaton::automaton_has_eventPatternId():
-    assert hasattr(automaton::Automaton, "eventPatternId")
+def test_automaton_automaton_has_eventPatternId():
+    assert hasattr(automaton_Automaton, "eventPatternId")
     descriptor = None
-    for klass in automaton::Automaton.__mro__:
+    for klass in automaton_Automaton.__mro__:
         if "eventPatternId" in klass.__dict__:
             descriptor = klass.__dict__["eventPatternId"]
             break
@@ -431,16 +431,16 @@ def test_automaton::automaton_has_eventPatternId():
 
 
 
-def test_automaton::internalmodel_is_not_abstract():
-    assert not inspect.isabstract(automaton::InternalModel)
+def test_automaton_internalmodel_is_not_abstract():
+    assert not inspect.isabstract(automaton_InternalModel)
 
 
-def test_automaton::internalmodel_constructor_exists():
-    assert callable(automaton::InternalModel.__init__)
+def test_automaton_internalmodel_constructor_exists():
+    assert callable(automaton_InternalModel.__init__)
 
 
-def test_automaton::internalmodel_constructor_args():
-    sig = inspect.signature(automaton::InternalModel.__init__)
+def test_automaton_internalmodel_constructor_args():
+    sig = inspect.signature(automaton_InternalModel.__init__)
     params = list(sig.parameters.keys())
 
 def test_eventcontext_exists():
@@ -452,11 +452,11 @@ def test_eventcontext_has_all_literals():
     enum_literals = [lit.name for lit in EventContext]
     expected_literals = [
         "CHRONICLE",
-        "UNRESTRICTED",
-        "RECENT",
         "STRICT_IMMEDIATE",
         "IMMEDIATE",
         "NOT_SET",
+        "UNRESTRICTED",
+        "RECENT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -474,286 +474,265 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-automaton::ParameterBinding_strategy = st.builds(
-    automaton::ParameterBinding,
-    value=
-        safe_text,
+automaton_ParameterBinding_strategy = st.builds(
+    automaton_ParameterBinding,
     symbolicName=
+        safe_text,
+    value=
         safe_text
 )
 TimedZone_strategy = st.builds(
     TimedZone,
 )
-automaton::HoldsFor_strategy = st.builds(
-    automaton::HoldsFor,
+automaton_HoldsFor_strategy = st.builds(
+    automaton_HoldsFor,
 )
-automaton::Within_strategy = st.builds(
-    automaton::Within,
+automaton_Within_strategy = st.builds(
+    automaton_Within,
 )
-automaton::EventPattern_strategy = st.builds(
-    automaton::EventPattern,
+automaton_EventPattern_strategy = st.builds(
+    automaton_EventPattern,
 )
 TypedTransition_strategy = st.builds(
     TypedTransition,
 )
-automaton::NegativeTransition_strategy = st.builds(
-    automaton::NegativeTransition,
+automaton_NegativeTransition_strategy = st.builds(
+    automaton_NegativeTransition,
 )
-automaton::Parameter_strategy = st.builds(
-    automaton::Parameter,
-    symbolicName=
-        safe_text,
+automaton_Parameter_strategy = st.builds(
+    automaton_Parameter,
     position=
-        st.integers()
+        st.integers(),
+    symbolicName=
+        safe_text
 )
-automaton::Guard_strategy = st.builds(
-    automaton::Guard,
+automaton_Guard_strategy = st.builds(
+    automaton_Guard,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-automaton::EpsilonTransition_strategy = st.builds(
-    automaton::EpsilonTransition,
+automaton_EpsilonTransition_strategy = st.builds(
+    automaton_EpsilonTransition,
 )
-automaton::TypedTransition_strategy = st.builds(
-    automaton::TypedTransition,
+automaton_TypedTransition_strategy = st.builds(
+    automaton_TypedTransition,
 )
-automaton::Transition_strategy = st.builds(
-    automaton::Transition,
+automaton_Transition_strategy = st.builds(
+    automaton_Transition,
 )
 State_strategy = st.builds(
     State,
 )
-automaton::TrapState_strategy = st.builds(
-    automaton::TrapState,
+automaton_TrapState_strategy = st.builds(
+    automaton_TrapState,
 )
-automaton::FinalState_strategy = st.builds(
-    automaton::FinalState,
+automaton_FinalState_strategy = st.builds(
+    automaton_FinalState,
 )
-automaton::ParameterTable_strategy = st.builds(
-    automaton::ParameterTable,
+automaton_ParameterTable_strategy = st.builds(
+    automaton_ParameterTable,
 )
-automaton::EventToken_strategy = st.builds(
-    automaton::EventToken,
+automaton_EventToken_strategy = st.builds(
+    automaton_EventToken,
 )
-automaton::InitState_strategy = st.builds(
-    automaton::InitState,
+automaton_InitState_strategy = st.builds(
+    automaton_InitState,
 )
-automaton::TimedZone_strategy = st.builds(
-    automaton::TimedZone,
+automaton_TimedZone_strategy = st.builds(
+    automaton_TimedZone,
     time=
         safe_text
 )
-automaton::State_strategy = st.builds(
-    automaton::State,
+automaton_State_strategy = st.builds(
+    automaton_State,
     label=
         safe_text
 )
-automaton::Event_strategy = st.builds(
-    automaton::Event,
+automaton_Event_strategy = st.builds(
+    automaton_Event,
 )
-automaton::Automaton_strategy = st.builds(
-    automaton::Automaton,
+automaton_Automaton_strategy = st.builds(
+    automaton_Automaton,
     eventPatternId=
         safe_text
 )
-automaton::InternalModel_strategy = st.builds(
-    automaton::InternalModel,
+automaton_InternalModel_strategy = st.builds(
+    automaton_InternalModel,
 )
 
-@given(instance=automaton::ParameterBinding_strategy)
+@given(instance=automaton_ParameterBinding_strategy)
 @settings(max_examples=50)
-def test_automaton::parameterbinding_instantiation(instance):
-    assert isinstance(instance, automaton::ParameterBinding)
-
-@given(instance=automaton::ParameterBinding_strategy)
-def test_automaton::parameterbinding_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_automaton_parameterbinding_instantiation(instance):
+    assert isinstance(instance, automaton_ParameterBinding)
 
 
-@given(instance=automaton::ParameterBinding_strategy)
-def test_automaton::parameterbinding_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=automaton::ParameterBinding_strategy)
-def test_automaton::parameterbinding_symbolicName_type(instance):
-    assert isinstance(instance.symbolicName, str)
-
-
-@given(instance=automaton::ParameterBinding_strategy)
-def test_automaton::parameterbinding_symbolicName_setter(instance):
+@given(instance=automaton_ParameterBinding_strategy)
+def test_automaton_parameterbinding_symbolicName_setter(instance):
     original = instance.symbolicName
     instance.symbolicName = original
     assert instance.symbolicName == original
+
+
+
+@given(instance=automaton_ParameterBinding_strategy)
+def test_automaton_parameterbinding_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=TimedZone_strategy)
 @settings(max_examples=50)
 def test_timedzone_instantiation(instance):
     assert isinstance(instance, TimedZone)
 
-@given(instance=automaton::HoldsFor_strategy)
+@given(instance=automaton_HoldsFor_strategy)
 @settings(max_examples=50)
-def test_automaton::holdsfor_instantiation(instance):
-    assert isinstance(instance, automaton::HoldsFor)
+def test_automaton_holdsfor_instantiation(instance):
+    assert isinstance(instance, automaton_HoldsFor)
 
-@given(instance=automaton::Within_strategy)
+@given(instance=automaton_Within_strategy)
 @settings(max_examples=50)
-def test_automaton::within_instantiation(instance):
-    assert isinstance(instance, automaton::Within)
+def test_automaton_within_instantiation(instance):
+    assert isinstance(instance, automaton_Within)
 
-@given(instance=automaton::EventPattern_strategy)
+@given(instance=automaton_EventPattern_strategy)
 @settings(max_examples=50)
-def test_automaton::eventpattern_instantiation(instance):
-    assert isinstance(instance, automaton::EventPattern)
+def test_automaton_eventpattern_instantiation(instance):
+    assert isinstance(instance, automaton_EventPattern)
 
 @given(instance=TypedTransition_strategy)
 @settings(max_examples=50)
 def test_typedtransition_instantiation(instance):
     assert isinstance(instance, TypedTransition)
 
-@given(instance=automaton::NegativeTransition_strategy)
+@given(instance=automaton_NegativeTransition_strategy)
 @settings(max_examples=50)
-def test_automaton::negativetransition_instantiation(instance):
-    assert isinstance(instance, automaton::NegativeTransition)
+def test_automaton_negativetransition_instantiation(instance):
+    assert isinstance(instance, automaton_NegativeTransition)
 
-@given(instance=automaton::Parameter_strategy)
+@given(instance=automaton_Parameter_strategy)
 @settings(max_examples=50)
-def test_automaton::parameter_instantiation(instance):
-    assert isinstance(instance, automaton::Parameter)
-
-@given(instance=automaton::Parameter_strategy)
-def test_automaton::parameter_symbolicName_type(instance):
-    assert isinstance(instance.symbolicName, str)
+def test_automaton_parameter_instantiation(instance):
+    assert isinstance(instance, automaton_Parameter)
 
 
-@given(instance=automaton::Parameter_strategy)
-def test_automaton::parameter_symbolicName_setter(instance):
-    original = instance.symbolicName
-    instance.symbolicName = original
-    assert instance.symbolicName == original
 
-@given(instance=automaton::Parameter_strategy)
-def test_automaton::parameter_position_type(instance):
-    assert isinstance(instance.position, int)
-
-
-@given(instance=automaton::Parameter_strategy)
-def test_automaton::parameter_position_setter(instance):
+@given(instance=automaton_Parameter_strategy)
+def test_automaton_parameter_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=automaton::Guard_strategy)
+
+
+@given(instance=automaton_Parameter_strategy)
+def test_automaton_parameter_symbolicName_setter(instance):
+    original = instance.symbolicName
+    instance.symbolicName = original
+    assert instance.symbolicName == original
+
+@given(instance=automaton_Guard_strategy)
 @settings(max_examples=50)
-def test_automaton::guard_instantiation(instance):
-    assert isinstance(instance, automaton::Guard)
+def test_automaton_guard_instantiation(instance):
+    assert isinstance(instance, automaton_Guard)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=automaton::EpsilonTransition_strategy)
+@given(instance=automaton_EpsilonTransition_strategy)
 @settings(max_examples=50)
-def test_automaton::epsilontransition_instantiation(instance):
-    assert isinstance(instance, automaton::EpsilonTransition)
+def test_automaton_epsilontransition_instantiation(instance):
+    assert isinstance(instance, automaton_EpsilonTransition)
 
-@given(instance=automaton::TypedTransition_strategy)
+@given(instance=automaton_TypedTransition_strategy)
 @settings(max_examples=50)
-def test_automaton::typedtransition_instantiation(instance):
-    assert isinstance(instance, automaton::TypedTransition)
+def test_automaton_typedtransition_instantiation(instance):
+    assert isinstance(instance, automaton_TypedTransition)
 
-@given(instance=automaton::Transition_strategy)
+@given(instance=automaton_Transition_strategy)
 @settings(max_examples=50)
-def test_automaton::transition_instantiation(instance):
-    assert isinstance(instance, automaton::Transition)
+def test_automaton_transition_instantiation(instance):
+    assert isinstance(instance, automaton_Transition)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=automaton::TrapState_strategy)
+@given(instance=automaton_TrapState_strategy)
 @settings(max_examples=50)
-def test_automaton::trapstate_instantiation(instance):
-    assert isinstance(instance, automaton::TrapState)
+def test_automaton_trapstate_instantiation(instance):
+    assert isinstance(instance, automaton_TrapState)
 
-@given(instance=automaton::FinalState_strategy)
+@given(instance=automaton_FinalState_strategy)
 @settings(max_examples=50)
-def test_automaton::finalstate_instantiation(instance):
-    assert isinstance(instance, automaton::FinalState)
+def test_automaton_finalstate_instantiation(instance):
+    assert isinstance(instance, automaton_FinalState)
 
-@given(instance=automaton::ParameterTable_strategy)
+@given(instance=automaton_ParameterTable_strategy)
 @settings(max_examples=50)
-def test_automaton::parametertable_instantiation(instance):
-    assert isinstance(instance, automaton::ParameterTable)
+def test_automaton_parametertable_instantiation(instance):
+    assert isinstance(instance, automaton_ParameterTable)
 
-@given(instance=automaton::EventToken_strategy)
+@given(instance=automaton_EventToken_strategy)
 @settings(max_examples=50)
-def test_automaton::eventtoken_instantiation(instance):
-    assert isinstance(instance, automaton::EventToken)
+def test_automaton_eventtoken_instantiation(instance):
+    assert isinstance(instance, automaton_EventToken)
 
-@given(instance=automaton::InitState_strategy)
+@given(instance=automaton_InitState_strategy)
 @settings(max_examples=50)
-def test_automaton::initstate_instantiation(instance):
-    assert isinstance(instance, automaton::InitState)
+def test_automaton_initstate_instantiation(instance):
+    assert isinstance(instance, automaton_InitState)
 
-@given(instance=automaton::TimedZone_strategy)
+@given(instance=automaton_TimedZone_strategy)
 @settings(max_examples=50)
-def test_automaton::timedzone_instantiation(instance):
-    assert isinstance(instance, automaton::TimedZone)
-
-@given(instance=automaton::TimedZone_strategy)
-def test_automaton::timedzone_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_automaton_timedzone_instantiation(instance):
+    assert isinstance(instance, automaton_TimedZone)
 
 
-@given(instance=automaton::TimedZone_strategy)
-def test_automaton::timedzone_time_setter(instance):
+
+@given(instance=automaton_TimedZone_strategy)
+def test_automaton_timedzone_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=automaton::State_strategy)
+@given(instance=automaton_State_strategy)
 @settings(max_examples=50)
-def test_automaton::state_instantiation(instance):
-    assert isinstance(instance, automaton::State)
-
-@given(instance=automaton::State_strategy)
-def test_automaton::state_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_automaton_state_instantiation(instance):
+    assert isinstance(instance, automaton_State)
 
 
-@given(instance=automaton::State_strategy)
-def test_automaton::state_label_setter(instance):
+
+@given(instance=automaton_State_strategy)
+def test_automaton_state_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=automaton::Event_strategy)
+@given(instance=automaton_Event_strategy)
 @settings(max_examples=50)
-def test_automaton::event_instantiation(instance):
-    assert isinstance(instance, automaton::Event)
+def test_automaton_event_instantiation(instance):
+    assert isinstance(instance, automaton_Event)
 
-@given(instance=automaton::Automaton_strategy)
+@given(instance=automaton_Automaton_strategy)
 @settings(max_examples=50)
-def test_automaton::automaton_instantiation(instance):
-    assert isinstance(instance, automaton::Automaton)
-
-@given(instance=automaton::Automaton_strategy)
-def test_automaton::automaton_eventPatternId_type(instance):
-    assert isinstance(instance.eventPatternId, str)
+def test_automaton_automaton_instantiation(instance):
+    assert isinstance(instance, automaton_Automaton)
 
 
-@given(instance=automaton::Automaton_strategy)
-def test_automaton::automaton_eventPatternId_setter(instance):
+
+@given(instance=automaton_Automaton_strategy)
+def test_automaton_automaton_eventPatternId_setter(instance):
     original = instance.eventPatternId
     instance.eventPatternId = original
     assert instance.eventPatternId == original
 
-@given(instance=automaton::InternalModel_strategy)
+@given(instance=automaton_InternalModel_strategy)
 @settings(max_examples=50)
-def test_automaton::internalmodel_instantiation(instance):
-    assert isinstance(instance, automaton::InternalModel)
+def test_automaton_internalmodel_instantiation(instance):
+    assert isinstance(instance, automaton_InternalModel)

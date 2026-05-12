@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    mathDSL::Minus,
-    mathDSL::Plus,
-    mathDSL::NumberLiteral,
-    mathDSL::Div,
-    mathDSL::Multi,
-    mathDSL::Expression,
-    mathDSL::Math,
+    mathDSL_Minus,
+    mathDSL_Plus,
+    mathDSL_NumberLiteral,
+    mathDSL_Div,
+    mathDSL_Multi,
+    mathDSL_Expression,
+    mathDSL_Math,
 )
 
 # =============================================================================
@@ -36,51 +36,51 @@ def test_expression_constructor_args():
 
 
 
-def test_mathdsl::minus_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::Minus)
+def test_mathdsl_minus_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_Minus)
 
 
-def test_mathdsl::minus_constructor_exists():
-    assert callable(mathDSL::Minus.__init__)
+def test_mathdsl_minus_constructor_exists():
+    assert callable(mathDSL_Minus.__init__)
 
 
-def test_mathdsl::minus_constructor_args():
-    sig = inspect.signature(mathDSL::Minus.__init__)
+def test_mathdsl_minus_constructor_args():
+    sig = inspect.signature(mathDSL_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathdsl::plus_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::Plus)
+def test_mathdsl_plus_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_Plus)
 
 
-def test_mathdsl::plus_constructor_exists():
-    assert callable(mathDSL::Plus.__init__)
+def test_mathdsl_plus_constructor_exists():
+    assert callable(mathDSL_Plus.__init__)
 
 
-def test_mathdsl::plus_constructor_args():
-    sig = inspect.signature(mathDSL::Plus.__init__)
+def test_mathdsl_plus_constructor_args():
+    sig = inspect.signature(mathDSL_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathdsl::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::NumberLiteral)
+def test_mathdsl_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_NumberLiteral)
 
 
-def test_mathdsl::numberliteral_constructor_exists():
-    assert callable(mathDSL::NumberLiteral.__init__)
+def test_mathdsl_numberliteral_constructor_exists():
+    assert callable(mathDSL_NumberLiteral.__init__)
 
 
-def test_mathdsl::numberliteral_constructor_args():
-    sig = inspect.signature(mathDSL::NumberLiteral.__init__)
+def test_mathdsl_numberliteral_constructor_args():
+    sig = inspect.signature(mathDSL_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mathdsl::numberliteral_has_value():
-    assert hasattr(mathDSL::NumberLiteral, "value")
+def test_mathdsl_numberliteral_has_value():
+    assert hasattr(mathDSL_NumberLiteral, "value")
     descriptor = None
-    for klass in mathDSL::NumberLiteral.__mro__:
+    for klass in mathDSL_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -88,58 +88,58 @@ def test_mathdsl::numberliteral_has_value():
 
 
 
-def test_mathdsl::div_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::Div)
+def test_mathdsl_div_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_Div)
 
 
-def test_mathdsl::div_constructor_exists():
-    assert callable(mathDSL::Div.__init__)
+def test_mathdsl_div_constructor_exists():
+    assert callable(mathDSL_Div.__init__)
 
 
-def test_mathdsl::div_constructor_args():
-    sig = inspect.signature(mathDSL::Div.__init__)
+def test_mathdsl_div_constructor_args():
+    sig = inspect.signature(mathDSL_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathdsl::multi_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::Multi)
+def test_mathdsl_multi_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_Multi)
 
 
-def test_mathdsl::multi_constructor_exists():
-    assert callable(mathDSL::Multi.__init__)
+def test_mathdsl_multi_constructor_exists():
+    assert callable(mathDSL_Multi.__init__)
 
 
-def test_mathdsl::multi_constructor_args():
-    sig = inspect.signature(mathDSL::Multi.__init__)
+def test_mathdsl_multi_constructor_args():
+    sig = inspect.signature(mathDSL_Multi.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathdsl::expression_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::Expression)
+def test_mathdsl_expression_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_Expression)
 
 
-def test_mathdsl::expression_constructor_exists():
-    assert callable(mathDSL::Expression.__init__)
+def test_mathdsl_expression_constructor_exists():
+    assert callable(mathDSL_Expression.__init__)
 
 
-def test_mathdsl::expression_constructor_args():
-    sig = inspect.signature(mathDSL::Expression.__init__)
+def test_mathdsl_expression_constructor_args():
+    sig = inspect.signature(mathDSL_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathdsl::math_is_not_abstract():
-    assert not inspect.isabstract(mathDSL::Math)
+def test_mathdsl_math_is_not_abstract():
+    assert not inspect.isabstract(mathDSL_Math)
 
 
-def test_mathdsl::math_constructor_exists():
-    assert callable(mathDSL::Math.__init__)
+def test_mathdsl_math_constructor_exists():
+    assert callable(mathDSL_Math.__init__)
 
 
-def test_mathdsl::math_constructor_args():
-    sig = inspect.signature(mathDSL::Math.__init__)
+def test_mathdsl_math_constructor_args():
+    sig = inspect.signature(mathDSL_Math.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,28 +157,28 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-mathDSL::Minus_strategy = st.builds(
-    mathDSL::Minus,
+mathDSL_Minus_strategy = st.builds(
+    mathDSL_Minus,
 )
-mathDSL::Plus_strategy = st.builds(
-    mathDSL::Plus,
+mathDSL_Plus_strategy = st.builds(
+    mathDSL_Plus,
 )
-mathDSL::NumberLiteral_strategy = st.builds(
-    mathDSL::NumberLiteral,
+mathDSL_NumberLiteral_strategy = st.builds(
+    mathDSL_NumberLiteral,
     value=
         safe_text
 )
-mathDSL::Div_strategy = st.builds(
-    mathDSL::Div,
+mathDSL_Div_strategy = st.builds(
+    mathDSL_Div,
 )
-mathDSL::Multi_strategy = st.builds(
-    mathDSL::Multi,
+mathDSL_Multi_strategy = st.builds(
+    mathDSL_Multi,
 )
-mathDSL::Expression_strategy = st.builds(
-    mathDSL::Expression,
+mathDSL_Expression_strategy = st.builds(
+    mathDSL_Expression,
 )
-mathDSL::Math_strategy = st.builds(
-    mathDSL::Math,
+mathDSL_Math_strategy = st.builds(
+    mathDSL_Math,
 )
 
 @given(instance=Expression_strategy)
@@ -186,48 +186,45 @@ mathDSL::Math_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=mathDSL::Minus_strategy)
+@given(instance=mathDSL_Minus_strategy)
 @settings(max_examples=50)
-def test_mathdsl::minus_instantiation(instance):
-    assert isinstance(instance, mathDSL::Minus)
+def test_mathdsl_minus_instantiation(instance):
+    assert isinstance(instance, mathDSL_Minus)
 
-@given(instance=mathDSL::Plus_strategy)
+@given(instance=mathDSL_Plus_strategy)
 @settings(max_examples=50)
-def test_mathdsl::plus_instantiation(instance):
-    assert isinstance(instance, mathDSL::Plus)
+def test_mathdsl_plus_instantiation(instance):
+    assert isinstance(instance, mathDSL_Plus)
 
-@given(instance=mathDSL::NumberLiteral_strategy)
+@given(instance=mathDSL_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_mathdsl::numberliteral_instantiation(instance):
-    assert isinstance(instance, mathDSL::NumberLiteral)
-
-@given(instance=mathDSL::NumberLiteral_strategy)
-def test_mathdsl::numberliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mathdsl_numberliteral_instantiation(instance):
+    assert isinstance(instance, mathDSL_NumberLiteral)
 
 
-@given(instance=mathDSL::NumberLiteral_strategy)
-def test_mathdsl::numberliteral_value_setter(instance):
+
+@given(instance=mathDSL_NumberLiteral_strategy)
+def test_mathdsl_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mathDSL::Div_strategy)
+@given(instance=mathDSL_Div_strategy)
 @settings(max_examples=50)
-def test_mathdsl::div_instantiation(instance):
-    assert isinstance(instance, mathDSL::Div)
+def test_mathdsl_div_instantiation(instance):
+    assert isinstance(instance, mathDSL_Div)
 
-@given(instance=mathDSL::Multi_strategy)
+@given(instance=mathDSL_Multi_strategy)
 @settings(max_examples=50)
-def test_mathdsl::multi_instantiation(instance):
-    assert isinstance(instance, mathDSL::Multi)
+def test_mathdsl_multi_instantiation(instance):
+    assert isinstance(instance, mathDSL_Multi)
 
-@given(instance=mathDSL::Expression_strategy)
+@given(instance=mathDSL_Expression_strategy)
 @settings(max_examples=50)
-def test_mathdsl::expression_instantiation(instance):
-    assert isinstance(instance, mathDSL::Expression)
+def test_mathdsl_expression_instantiation(instance):
+    assert isinstance(instance, mathDSL_Expression)
 
-@given(instance=mathDSL::Math_strategy)
+@given(instance=mathDSL_Math_strategy)
 @settings(max_examples=50)
-def test_mathdsl::math_instantiation(instance):
-    assert isinstance(instance, mathDSL::Math)
+def test_mathdsl_math_instantiation(instance):
+    assert isinstance(instance, mathDSL_Math)

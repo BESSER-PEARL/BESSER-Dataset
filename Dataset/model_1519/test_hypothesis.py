@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sm1::State,
-    sm1::StateMachine,
-    sm1::Transition,
+from python_code import (
+    sm1_State,
+    sm1_StateMachine,
+    sm1_Transition,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_sm1::state_is_not_abstract():
-    assert not inspect.isabstract(sm1::State)
+def test_sm1_state_is_not_abstract():
+    assert not inspect.isabstract(sm1_State)
 
 
-def test_sm1::state_constructor_exists():
-    assert callable(sm1::State.__init__)
+def test_sm1_state_constructor_exists():
+    assert callable(sm1_State.__init__)
 
 
-def test_sm1::state_constructor_args():
-    sig = inspect.signature(sm1::State.__init__)
+def test_sm1_state_constructor_args():
+    sig = inspect.signature(sm1_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sm1::state_has_name():
-    assert hasattr(sm1::State, "name")
+def test_sm1_state_has_name():
+    assert hasattr(sm1_State, "name")
     descriptor = None
-    for klass in sm1::State.__mro__:
+    for klass in sm1_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,37 +41,37 @@ def test_sm1::state_has_name():
 
 
 
-def test_sm1::statemachine_is_not_abstract():
-    assert not inspect.isabstract(sm1::StateMachine)
+def test_sm1_statemachine_is_not_abstract():
+    assert not inspect.isabstract(sm1_StateMachine)
 
 
-def test_sm1::statemachine_constructor_exists():
-    assert callable(sm1::StateMachine.__init__)
+def test_sm1_statemachine_constructor_exists():
+    assert callable(sm1_StateMachine.__init__)
 
 
-def test_sm1::statemachine_constructor_args():
-    sig = inspect.signature(sm1::StateMachine.__init__)
+def test_sm1_statemachine_constructor_args():
+    sig = inspect.signature(sm1_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sm1::transition_is_not_abstract():
-    assert not inspect.isabstract(sm1::Transition)
+def test_sm1_transition_is_not_abstract():
+    assert not inspect.isabstract(sm1_Transition)
 
 
-def test_sm1::transition_constructor_exists():
-    assert callable(sm1::Transition.__init__)
+def test_sm1_transition_constructor_exists():
+    assert callable(sm1_Transition.__init__)
 
 
-def test_sm1::transition_constructor_args():
-    sig = inspect.signature(sm1::Transition.__init__)
+def test_sm1_transition_constructor_args():
+    sig = inspect.signature(sm1_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_sm1::transition_has_event():
-    assert hasattr(sm1::Transition, "event")
+def test_sm1_transition_has_event():
+    assert hasattr(sm1_Transition, "event")
     descriptor = None
-    for klass in sm1::Transition.__mro__:
+    for klass in sm1_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sm1::State_strategy = st.builds(
-    sm1::State,
+sm1_State_strategy = st.builds(
+    sm1_State,
     name=
         safe_text
 )
-sm1::StateMachine_strategy = st.builds(
-    sm1::StateMachine,
+sm1_StateMachine_strategy = st.builds(
+    sm1_StateMachine,
 )
-sm1::Transition_strategy = st.builds(
-    sm1::Transition,
+sm1_Transition_strategy = st.builds(
+    sm1_Transition,
     event=
         safe_text
 )
 
-@given(instance=sm1::State_strategy)
+@given(instance=sm1_State_strategy)
 @settings(max_examples=50)
-def test_sm1::state_instantiation(instance):
-    assert isinstance(instance, sm1::State)
-
-@given(instance=sm1::State_strategy)
-def test_sm1::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sm1_state_instantiation(instance):
+    assert isinstance(instance, sm1_State)
 
 
-@given(instance=sm1::State_strategy)
-def test_sm1::state_name_setter(instance):
+
+@given(instance=sm1_State_strategy)
+def test_sm1_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sm1::StateMachine_strategy)
+@given(instance=sm1_StateMachine_strategy)
 @settings(max_examples=50)
-def test_sm1::statemachine_instantiation(instance):
-    assert isinstance(instance, sm1::StateMachine)
+def test_sm1_statemachine_instantiation(instance):
+    assert isinstance(instance, sm1_StateMachine)
 
-@given(instance=sm1::Transition_strategy)
+@given(instance=sm1_Transition_strategy)
 @settings(max_examples=50)
-def test_sm1::transition_instantiation(instance):
-    assert isinstance(instance, sm1::Transition)
-
-@given(instance=sm1::Transition_strategy)
-def test_sm1::transition_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_sm1_transition_instantiation(instance):
+    assert isinstance(instance, sm1_Transition)
 
 
-@given(instance=sm1::Transition_strategy)
-def test_sm1::transition_event_setter(instance):
+
+@given(instance=sm1_Transition_strategy)
+def test_sm1_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original

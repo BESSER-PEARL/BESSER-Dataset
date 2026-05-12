@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TestMM1::Action,
-    TestMM1::Test,
+from python_code import (
+    TestMM1_Action,
+    TestMM1_Test,
     ActionType,
 )
 
@@ -17,63 +17,63 @@ from classes import (
 
 
 
-def test_testmm1::action_is_not_abstract():
-    assert not inspect.isabstract(TestMM1::Action)
+def test_testmm1_action_is_not_abstract():
+    assert not inspect.isabstract(TestMM1_Action)
 
 
-def test_testmm1::action_constructor_exists():
-    assert callable(TestMM1::Action.__init__)
+def test_testmm1_action_constructor_exists():
+    assert callable(TestMM1_Action.__init__)
 
 
-def test_testmm1::action_constructor_args():
-    sig = inspect.signature(TestMM1::Action.__init__)
+def test_testmm1_action_constructor_args():
+    sig = inspect.signature(TestMM1_Action.__init__)
     params = list(sig.parameters.keys())
-    assert "xpath" in params, "Missing parameter 'xpath'"
     assert "description" in params, "Missing parameter 'description'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "xpath" in params, "Missing parameter 'xpath'"
     assert "value" in params, "Missing parameter 'value'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_testmm1::action_has_xpath():
-    assert hasattr(TestMM1::Action, "xpath")
+def test_testmm1_action_has_description():
+    assert hasattr(TestMM1_Action, "description")
     descriptor = None
-    for klass in TestMM1::Action.__mro__:
-        if "xpath" in klass.__dict__:
-            descriptor = klass.__dict__["xpath"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_testmm1::action_has_description():
-    assert hasattr(TestMM1::Action, "description")
-    descriptor = None
-    for klass in TestMM1::Action.__mro__:
+    for klass in TestMM1_Action.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_testmm1::action_has_id():
-    assert hasattr(TestMM1::Action, "id")
+def test_testmm1_action_has_id():
+    assert hasattr(TestMM1_Action, "id")
     descriptor = None
-    for klass in TestMM1::Action.__mro__:
+    for klass in TestMM1_Action.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_testmm1::action_has_value():
-    assert hasattr(TestMM1::Action, "value")
+def test_testmm1_action_has_xpath():
+    assert hasattr(TestMM1_Action, "xpath")
     descriptor = None
-    for klass in TestMM1::Action.__mro__:
+    for klass in TestMM1_Action.__mro__:
+        if "xpath" in klass.__dict__:
+            descriptor = klass.__dict__["xpath"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_testmm1_action_has_value():
+    assert hasattr(TestMM1_Action, "value")
+    descriptor = None
+    for klass in TestMM1_Action.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_testmm1::action_has_type():
-    assert hasattr(TestMM1::Action, "type")
+def test_testmm1_action_has_type():
+    assert hasattr(TestMM1_Action, "type")
     descriptor = None
-    for klass in TestMM1::Action.__mro__:
+    for klass in TestMM1_Action.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -81,23 +81,23 @@ def test_testmm1::action_has_type():
 
 
 
-def test_testmm1::test_is_not_abstract():
-    assert not inspect.isabstract(TestMM1::Test)
+def test_testmm1_test_is_not_abstract():
+    assert not inspect.isabstract(TestMM1_Test)
 
 
-def test_testmm1::test_constructor_exists():
-    assert callable(TestMM1::Test.__init__)
+def test_testmm1_test_constructor_exists():
+    assert callable(TestMM1_Test.__init__)
 
 
-def test_testmm1::test_constructor_args():
-    sig = inspect.signature(TestMM1::Test.__init__)
+def test_testmm1_test_constructor_args():
+    sig = inspect.signature(TestMM1_Test.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_testmm1::test_has_id():
-    assert hasattr(TestMM1::Test, "id")
+def test_testmm1_test_has_id():
+    assert hasattr(TestMM1_Test, "id")
     descriptor = None
-    for klass in TestMM1::Test.__mro__:
+    for klass in TestMM1_Test.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -111,10 +111,10 @@ def test_actiontype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ActionType]
     expected_literals = [
-        "click",
-        "copy",
-        "comment",
         "insert",
+        "comment",
+        "copy",
+        "click",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -132,97 +132,79 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TestMM1::Action_strategy = st.builds(
-    TestMM1::Action,
-    xpath=
-        safe_text,
+TestMM1_Action_strategy = st.builds(
+    TestMM1_Action,
     description=
         safe_text,
     id=
+        safe_text,
+    xpath=
         safe_text,
     value=
         safe_text,
     type=
         safe_text
 )
-TestMM1::Test_strategy = st.builds(
-    TestMM1::Test,
+TestMM1_Test_strategy = st.builds(
+    TestMM1_Test,
     id=
         safe_text
 )
 
-@given(instance=TestMM1::Action_strategy)
+@given(instance=TestMM1_Action_strategy)
 @settings(max_examples=50)
-def test_testmm1::action_instantiation(instance):
-    assert isinstance(instance, TestMM1::Action)
-
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_xpath_type(instance):
-    assert isinstance(instance.xpath, str)
+def test_testmm1_action_instantiation(instance):
+    assert isinstance(instance, TestMM1_Action)
 
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_xpath_setter(instance):
-    original = instance.xpath
-    instance.xpath = original
-    assert instance.xpath == original
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_description_setter(instance):
+@given(instance=TestMM1_Action_strategy)
+def test_testmm1_action_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_id_setter(instance):
+@given(instance=TestMM1_Action_strategy)
+def test_testmm1_action_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_value_setter(instance):
+@given(instance=TestMM1_Action_strategy)
+def test_testmm1_action_xpath_setter(instance):
+    original = instance.xpath
+    instance.xpath = original
+    assert instance.xpath == original
+
+
+
+@given(instance=TestMM1_Action_strategy)
+def test_testmm1_action_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=TestMM1::Action_strategy)
-def test_testmm1::action_type_setter(instance):
+@given(instance=TestMM1_Action_strategy)
+def test_testmm1_action_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=TestMM1::Test_strategy)
+@given(instance=TestMM1_Test_strategy)
 @settings(max_examples=50)
-def test_testmm1::test_instantiation(instance):
-    assert isinstance(instance, TestMM1::Test)
-
-@given(instance=TestMM1::Test_strategy)
-def test_testmm1::test_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_testmm1_test_instantiation(instance):
+    assert isinstance(instance, TestMM1_Test)
 
 
-@given(instance=TestMM1::Test_strategy)
-def test_testmm1::test_id_setter(instance):
+
+@given(instance=TestMM1_Test_strategy)
+def test_testmm1_test_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

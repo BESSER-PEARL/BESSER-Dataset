@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    agentDSL::Goal,
-    agentDSL::Attribute,
-    agentDSL::JAVAID,
+from python_code import (
+    agentDSL_Goal,
+    agentDSL_Attribute,
+    agentDSL_JAVAID,
     Type,
-    agentDSL::Task,
-    agentDSL::Outcome,
-    agentDSL::Entity,
-    agentDSL::TypeDef,
-    agentDSL::Type,
-    agentDSL::Model,
-    agentDSL::Function,
+    agentDSL_Entity,
+    agentDSL_Outcome,
+    agentDSL_Task,
+    agentDSL_TypeDef,
+    agentDSL_Type,
+    agentDSL_Model,
+    agentDSL_Function,
 )
 
 # =============================================================================
@@ -25,23 +25,23 @@ from classes import (
 
 
 
-def test_agentdsl::goal_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Goal)
+def test_agentdsl_goal_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Goal)
 
 
-def test_agentdsl::goal_constructor_exists():
-    assert callable(agentDSL::Goal.__init__)
+def test_agentdsl_goal_constructor_exists():
+    assert callable(agentDSL_Goal.__init__)
 
 
-def test_agentdsl::goal_constructor_args():
-    sig = inspect.signature(agentDSL::Goal.__init__)
+def test_agentdsl_goal_constructor_args():
+    sig = inspect.signature(agentDSL_Goal.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_agentdsl::goal_has_name():
-    assert hasattr(agentDSL::Goal, "name")
+def test_agentdsl_goal_has_name():
+    assert hasattr(agentDSL_Goal, "name")
     descriptor = None
-    for klass in agentDSL::Goal.__mro__:
+    for klass in agentDSL_Goal.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -49,57 +49,57 @@ def test_agentdsl::goal_has_name():
 
 
 
-def test_agentdsl::attribute_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Attribute)
+def test_agentdsl_attribute_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Attribute)
 
 
-def test_agentdsl::attribute_constructor_exists():
-    assert callable(agentDSL::Attribute.__init__)
+def test_agentdsl_attribute_constructor_exists():
+    assert callable(agentDSL_Attribute.__init__)
 
 
-def test_agentdsl::attribute_constructor_args():
-    sig = inspect.signature(agentDSL::Attribute.__init__)
+def test_agentdsl_attribute_constructor_args():
+    sig = inspect.signature(agentDSL_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "many" in params, "Missing parameter 'many'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_agentdsl::attribute_has_name():
-    assert hasattr(agentDSL::Attribute, "name")
+def test_agentdsl_attribute_has_many():
+    assert hasattr(agentDSL_Attribute, "many")
     descriptor = None
-    for klass in agentDSL::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_agentdsl::attribute_has_many():
-    assert hasattr(agentDSL::Attribute, "many")
-    descriptor = None
-    for klass in agentDSL::Attribute.__mro__:
+    for klass in agentDSL_Attribute.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
+def test_agentdsl_attribute_has_name():
+    assert hasattr(agentDSL_Attribute, "name")
+    descriptor = None
+    for klass in agentDSL_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_agentdsl::javaid_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::JAVAID)
+
+def test_agentdsl_javaid_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_JAVAID)
 
 
-def test_agentdsl::javaid_constructor_exists():
-    assert callable(agentDSL::JAVAID.__init__)
+def test_agentdsl_javaid_constructor_exists():
+    assert callable(agentDSL_JAVAID.__init__)
 
 
-def test_agentdsl::javaid_constructor_args():
-    sig = inspect.signature(agentDSL::JAVAID.__init__)
+def test_agentdsl_javaid_constructor_args():
+    sig = inspect.signature(agentDSL_JAVAID.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_agentdsl::javaid_has_name():
-    assert hasattr(agentDSL::JAVAID, "name")
+def test_agentdsl_javaid_has_name():
+    assert hasattr(agentDSL_JAVAID, "name")
     descriptor = None
-    for klass in agentDSL::JAVAID.__mro__:
+    for klass in agentDSL_JAVAID.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -121,79 +121,79 @@ def test_type_constructor_args():
 
 
 
-def test_agentdsl::task_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Task)
+def test_agentdsl_entity_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Entity)
 
 
-def test_agentdsl::task_constructor_exists():
-    assert callable(agentDSL::Task.__init__)
+def test_agentdsl_entity_constructor_exists():
+    assert callable(agentDSL_Entity.__init__)
 
 
-def test_agentdsl::task_constructor_args():
-    sig = inspect.signature(agentDSL::Task.__init__)
+def test_agentdsl_entity_constructor_args():
+    sig = inspect.signature(agentDSL_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_agentdsl::outcome_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Outcome)
+def test_agentdsl_outcome_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Outcome)
 
 
-def test_agentdsl::outcome_constructor_exists():
-    assert callable(agentDSL::Outcome.__init__)
+def test_agentdsl_outcome_constructor_exists():
+    assert callable(agentDSL_Outcome.__init__)
 
 
-def test_agentdsl::outcome_constructor_args():
-    sig = inspect.signature(agentDSL::Outcome.__init__)
+def test_agentdsl_outcome_constructor_args():
+    sig = inspect.signature(agentDSL_Outcome.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_agentdsl::entity_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Entity)
+def test_agentdsl_task_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Task)
 
 
-def test_agentdsl::entity_constructor_exists():
-    assert callable(agentDSL::Entity.__init__)
+def test_agentdsl_task_constructor_exists():
+    assert callable(agentDSL_Task.__init__)
 
 
-def test_agentdsl::entity_constructor_args():
-    sig = inspect.signature(agentDSL::Entity.__init__)
+def test_agentdsl_task_constructor_args():
+    sig = inspect.signature(agentDSL_Task.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_agentdsl::typedef_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::TypeDef)
+def test_agentdsl_typedef_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_TypeDef)
 
 
-def test_agentdsl::typedef_constructor_exists():
-    assert callable(agentDSL::TypeDef.__init__)
+def test_agentdsl_typedef_constructor_exists():
+    assert callable(agentDSL_TypeDef.__init__)
 
 
-def test_agentdsl::typedef_constructor_args():
-    sig = inspect.signature(agentDSL::TypeDef.__init__)
+def test_agentdsl_typedef_constructor_args():
+    sig = inspect.signature(agentDSL_TypeDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_agentdsl::type_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Type)
+def test_agentdsl_type_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Type)
 
 
-def test_agentdsl::type_constructor_exists():
-    assert callable(agentDSL::Type.__init__)
+def test_agentdsl_type_constructor_exists():
+    assert callable(agentDSL_Type.__init__)
 
 
-def test_agentdsl::type_constructor_args():
-    sig = inspect.signature(agentDSL::Type.__init__)
+def test_agentdsl_type_constructor_args():
+    sig = inspect.signature(agentDSL_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_agentdsl::type_has_name():
-    assert hasattr(agentDSL::Type, "name")
+def test_agentdsl_type_has_name():
+    assert hasattr(agentDSL_Type, "name")
     descriptor = None
-    for klass in agentDSL::Type.__mro__:
+    for klass in agentDSL_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -201,30 +201,30 @@ def test_agentdsl::type_has_name():
 
 
 
-def test_agentdsl::model_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Model)
+def test_agentdsl_model_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Model)
 
 
-def test_agentdsl::model_constructor_exists():
-    assert callable(agentDSL::Model.__init__)
+def test_agentdsl_model_constructor_exists():
+    assert callable(agentDSL_Model.__init__)
 
 
-def test_agentdsl::model_constructor_args():
-    sig = inspect.signature(agentDSL::Model.__init__)
+def test_agentdsl_model_constructor_args():
+    sig = inspect.signature(agentDSL_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_agentdsl::function_is_not_abstract():
-    assert not inspect.isabstract(agentDSL::Function)
+def test_agentdsl_function_is_not_abstract():
+    assert not inspect.isabstract(agentDSL_Function)
 
 
-def test_agentdsl::function_constructor_exists():
-    assert callable(agentDSL::Function.__init__)
+def test_agentdsl_function_constructor_exists():
+    assert callable(agentDSL_Function.__init__)
 
 
-def test_agentdsl::function_constructor_args():
-    sig = inspect.signature(agentDSL::Function.__init__)
+def test_agentdsl_function_constructor_args():
+    sig = inspect.signature(agentDSL_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,105 +239,93 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-agentDSL::Goal_strategy = st.builds(
-    agentDSL::Goal,
+agentDSL_Goal_strategy = st.builds(
+    agentDSL_Goal,
     name=
         safe_text
 )
-agentDSL::Attribute_strategy = st.builds(
-    agentDSL::Attribute,
-    name=
-        safe_text,
+agentDSL_Attribute_strategy = st.builds(
+    agentDSL_Attribute,
     many=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
-agentDSL::JAVAID_strategy = st.builds(
-    agentDSL::JAVAID,
+agentDSL_JAVAID_strategy = st.builds(
+    agentDSL_JAVAID,
     name=
         safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-agentDSL::Task_strategy = st.builds(
-    agentDSL::Task,
+agentDSL_Entity_strategy = st.builds(
+    agentDSL_Entity,
 )
-agentDSL::Outcome_strategy = st.builds(
-    agentDSL::Outcome,
+agentDSL_Outcome_strategy = st.builds(
+    agentDSL_Outcome,
 )
-agentDSL::Entity_strategy = st.builds(
-    agentDSL::Entity,
+agentDSL_Task_strategy = st.builds(
+    agentDSL_Task,
 )
-agentDSL::TypeDef_strategy = st.builds(
-    agentDSL::TypeDef,
+agentDSL_TypeDef_strategy = st.builds(
+    agentDSL_TypeDef,
 )
-agentDSL::Type_strategy = st.builds(
-    agentDSL::Type,
+agentDSL_Type_strategy = st.builds(
+    agentDSL_Type,
     name=
         safe_text
 )
-agentDSL::Model_strategy = st.builds(
-    agentDSL::Model,
+agentDSL_Model_strategy = st.builds(
+    agentDSL_Model,
 )
-agentDSL::Function_strategy = st.builds(
-    agentDSL::Function,
+agentDSL_Function_strategy = st.builds(
+    agentDSL_Function,
 )
 
-@given(instance=agentDSL::Goal_strategy)
+@given(instance=agentDSL_Goal_strategy)
 @settings(max_examples=50)
-def test_agentdsl::goal_instantiation(instance):
-    assert isinstance(instance, agentDSL::Goal)
-
-@given(instance=agentDSL::Goal_strategy)
-def test_agentdsl::goal_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_agentdsl_goal_instantiation(instance):
+    assert isinstance(instance, agentDSL_Goal)
 
 
-@given(instance=agentDSL::Goal_strategy)
-def test_agentdsl::goal_name_setter(instance):
+
+@given(instance=agentDSL_Goal_strategy)
+def test_agentdsl_goal_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=agentDSL::Attribute_strategy)
+@given(instance=agentDSL_Attribute_strategy)
 @settings(max_examples=50)
-def test_agentdsl::attribute_instantiation(instance):
-    assert isinstance(instance, agentDSL::Attribute)
-
-@given(instance=agentDSL::Attribute_strategy)
-def test_agentdsl::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_agentdsl_attribute_instantiation(instance):
+    assert isinstance(instance, agentDSL_Attribute)
 
 
-@given(instance=agentDSL::Attribute_strategy)
-def test_agentdsl::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=agentDSL::Attribute_strategy)
-def test_agentdsl::attribute_many_type(instance):
-    assert isinstance(instance.many, bool)
-
-
-@given(instance=agentDSL::Attribute_strategy)
-def test_agentdsl::attribute_many_setter(instance):
+@given(instance=agentDSL_Attribute_strategy)
+def test_agentdsl_attribute_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=agentDSL::JAVAID_strategy)
+
+
+@given(instance=agentDSL_Attribute_strategy)
+def test_agentdsl_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=agentDSL_JAVAID_strategy)
 @settings(max_examples=50)
-def test_agentdsl::javaid_instantiation(instance):
-    assert isinstance(instance, agentDSL::JAVAID)
-
-@given(instance=agentDSL::JAVAID_strategy)
-def test_agentdsl::javaid_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_agentdsl_javaid_instantiation(instance):
+    assert isinstance(instance, agentDSL_JAVAID)
 
 
-@given(instance=agentDSL::JAVAID_strategy)
-def test_agentdsl::javaid_name_setter(instance):
+
+@given(instance=agentDSL_JAVAID_strategy)
+def test_agentdsl_javaid_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -347,48 +335,45 @@ def test_agentdsl::javaid_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=agentDSL::Task_strategy)
+@given(instance=agentDSL_Entity_strategy)
 @settings(max_examples=50)
-def test_agentdsl::task_instantiation(instance):
-    assert isinstance(instance, agentDSL::Task)
+def test_agentdsl_entity_instantiation(instance):
+    assert isinstance(instance, agentDSL_Entity)
 
-@given(instance=agentDSL::Outcome_strategy)
+@given(instance=agentDSL_Outcome_strategy)
 @settings(max_examples=50)
-def test_agentdsl::outcome_instantiation(instance):
-    assert isinstance(instance, agentDSL::Outcome)
+def test_agentdsl_outcome_instantiation(instance):
+    assert isinstance(instance, agentDSL_Outcome)
 
-@given(instance=agentDSL::Entity_strategy)
+@given(instance=agentDSL_Task_strategy)
 @settings(max_examples=50)
-def test_agentdsl::entity_instantiation(instance):
-    assert isinstance(instance, agentDSL::Entity)
+def test_agentdsl_task_instantiation(instance):
+    assert isinstance(instance, agentDSL_Task)
 
-@given(instance=agentDSL::TypeDef_strategy)
+@given(instance=agentDSL_TypeDef_strategy)
 @settings(max_examples=50)
-def test_agentdsl::typedef_instantiation(instance):
-    assert isinstance(instance, agentDSL::TypeDef)
+def test_agentdsl_typedef_instantiation(instance):
+    assert isinstance(instance, agentDSL_TypeDef)
 
-@given(instance=agentDSL::Type_strategy)
+@given(instance=agentDSL_Type_strategy)
 @settings(max_examples=50)
-def test_agentdsl::type_instantiation(instance):
-    assert isinstance(instance, agentDSL::Type)
-
-@given(instance=agentDSL::Type_strategy)
-def test_agentdsl::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_agentdsl_type_instantiation(instance):
+    assert isinstance(instance, agentDSL_Type)
 
 
-@given(instance=agentDSL::Type_strategy)
-def test_agentdsl::type_name_setter(instance):
+
+@given(instance=agentDSL_Type_strategy)
+def test_agentdsl_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=agentDSL::Model_strategy)
+@given(instance=agentDSL_Model_strategy)
 @settings(max_examples=50)
-def test_agentdsl::model_instantiation(instance):
-    assert isinstance(instance, agentDSL::Model)
+def test_agentdsl_model_instantiation(instance):
+    assert isinstance(instance, agentDSL_Model)
 
-@given(instance=agentDSL::Function_strategy)
+@given(instance=agentDSL_Function_strategy)
 @settings(max_examples=50)
-def test_agentdsl::function_instantiation(instance):
-    assert isinstance(instance, agentDSL::Function)
+def test_agentdsl_function_instantiation(instance):
+    assert isinstance(instance, agentDSL_Function)

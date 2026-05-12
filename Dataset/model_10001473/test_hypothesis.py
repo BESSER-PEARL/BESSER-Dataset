@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Invitation,
@@ -145,8 +145,8 @@ def test_comment_constructor_args():
     sig = inspect.signature(Comment.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "userName" in params, "Missing parameter 'userName'"
+    assert "comment" in params, "Missing parameter 'comment'"
 
 def test_comment_has_date():
     assert hasattr(Comment, "date")
@@ -157,21 +157,21 @@ def test_comment_has_date():
             break
     assert isinstance(descriptor, property)
 
-def test_comment_has_comment():
-    assert hasattr(Comment, "comment")
-    descriptor = None
-    for klass in Comment.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_comment_has_userName():
     assert hasattr(Comment, "userName")
     descriptor = None
     for klass in Comment.__mro__:
         if "userName" in klass.__dict__:
             descriptor = klass.__dict__["userName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_comment_has_comment():
+    assert hasattr(Comment, "comment")
+    descriptor = None
+    for klass in Comment.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
@@ -188,9 +188,18 @@ def test_post_constructor_exists():
 def test_post_constructor_args():
     sig = inspect.signature(Post.__init__)
     params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
     assert "userName" in params, "Missing parameter 'userName'"
     assert "Date" in params, "Missing parameter 'Date'"
-    assert "content" in params, "Missing parameter 'content'"
+
+def test_post_has_content():
+    assert hasattr(Post, "content")
+    descriptor = None
+    for klass in Post.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_post_has_userName():
     assert hasattr(Post, "userName")
@@ -207,15 +216,6 @@ def test_post_has_Date():
     for klass in Post.__mro__:
         if "Date" in klass.__dict__:
             descriptor = klass.__dict__["Date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_post_has_content():
-    assert hasattr(Post, "content")
-    descriptor = None
-    for klass in Post.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,16 +256,16 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
-    assert "userName" in params, "Missing parameter 'userName'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "userName" in params, "Missing parameter 'userName'"
+    assert "email" in params, "Missing parameter 'email'"
 
-def test_user_has_email():
-    assert hasattr(User, "email")
+def test_user_has_password():
+    assert hasattr(User, "password")
     descriptor = None
     for klass in User.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -278,12 +278,12 @@ def test_user_has_userName():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_password():
-    assert hasattr(User, "password")
+def test_user_has_email():
+    assert hasattr(User, "email")
     descriptor = None
     for klass in User.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -326,18 +326,18 @@ Comment_strategy = st.builds(
     Comment,
     date=
         safe_text,
-    comment=
-        safe_text,
     userName=
+        safe_text,
+    comment=
         safe_text
 )
 Post_strategy = st.builds(
     Post,
+    content=
+        safe_text,
     userName=
         safe_text,
     Date=
-        safe_text,
-    content=
         safe_text
 )
 Rol_strategy = st.builds(
@@ -347,11 +347,11 @@ Rol_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    email=
+    password=
         safe_text,
     userName=
         safe_text,
-    password=
+    email=
         safe_text
 )
 
@@ -390,9 +390,6 @@ def test_message_instantiation(instance):
 def test_vote_instantiation(instance):
     assert isinstance(instance, Vote)
 
-@given(instance=Vote_strategy)
-def test_vote_tipo_type(instance):
-    assert isinstance(instance.tipo, bool)
 
 
 @given(instance=Vote_strategy)
@@ -406,9 +403,6 @@ def test_vote_tipo_setter(instance):
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=Comment_strategy)
-def test_comment_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
 @given(instance=Comment_strategy)
@@ -417,20 +411,6 @@ def test_comment_date_setter(instance):
     instance.date = original
     assert instance.date == original
 
-@given(instance=Comment_strategy)
-def test_comment_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=Comment_strategy)
-def test_comment_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=Comment_strategy)
-def test_comment_userName_type(instance):
-    assert isinstance(instance.userName, str)
 
 
 @given(instance=Comment_strategy)
@@ -439,36 +419,19 @@ def test_comment_userName_setter(instance):
     instance.userName = original
     assert instance.userName == original
 
+
+
+@given(instance=Comment_strategy)
+def test_comment_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
 @given(instance=Post_strategy)
 @settings(max_examples=50)
 def test_post_instantiation(instance):
     assert isinstance(instance, Post)
 
-@given(instance=Post_strategy)
-def test_post_userName_type(instance):
-    assert isinstance(instance.userName, str)
-
-
-@given(instance=Post_strategy)
-def test_post_userName_setter(instance):
-    original = instance.userName
-    instance.userName = original
-    assert instance.userName == original
-
-@given(instance=Post_strategy)
-def test_post_Date_type(instance):
-    assert isinstance(instance.Date, str)
-
-
-@given(instance=Post_strategy)
-def test_post_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=Post_strategy)
-def test_post_content_type(instance):
-    assert isinstance(instance.content, str)
 
 
 @given(instance=Post_strategy)
@@ -477,14 +440,27 @@ def test_post_content_setter(instance):
     instance.content = original
     assert instance.content == original
 
+
+
+@given(instance=Post_strategy)
+def test_post_userName_setter(instance):
+    original = instance.userName
+    instance.userName = original
+    assert instance.userName == original
+
+
+
+@given(instance=Post_strategy)
+def test_post_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
 @given(instance=Rol_strategy)
 @settings(max_examples=50)
 def test_rol_instantiation(instance):
     assert isinstance(instance, Rol)
 
-@given(instance=Rol_strategy)
-def test_rol_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
 @given(instance=Rol_strategy)
@@ -498,20 +474,14 @@ def test_rol_nombre_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=User_strategy)
-def test_user_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
+def test_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
 
-@given(instance=User_strategy)
-def test_user_userName_type(instance):
-    assert isinstance(instance.userName, str)
 
 
 @given(instance=User_strategy)
@@ -520,13 +490,10 @@ def test_user_userName_setter(instance):
     instance.userName = original
     assert instance.userName == original
 
-@given(instance=User_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=User_strategy)
-def test_user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
+def test_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original

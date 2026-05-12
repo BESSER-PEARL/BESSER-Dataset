@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Game,
     Player,
     Spectator,
     King,
@@ -14,25 +13,12 @@ from python_code import (
     Piece,
     Square,
     Grid,
+    Game,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_game_is_not_abstract():
-    assert not inspect.isabstract(Game)
-
-
-def test_game_constructor_exists():
-    assert callable(Game.__init__)
-
-
-def test_game_constructor_args():
-    sig = inspect.signature(Game.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -133,6 +119,20 @@ def test_grid_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_game_is_not_abstract():
+    assert not inspect.isabstract(Game)
+
+
+def test_game_constructor_exists():
+    assert callable(Game.__init__)
+
+
+def test_game_constructor_args():
+    sig = inspect.signature(Game.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -144,9 +144,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Game_strategy = st.builds(
-    Game,
-)
 Player_strategy = st.builds(
     Player,
 )
@@ -168,11 +165,9 @@ Square_strategy = st.builds(
 Grid_strategy = st.builds(
     Grid,
 )
-
-@given(instance=Game_strategy)
-@settings(max_examples=50)
-def test_game_instantiation(instance):
-    assert isinstance(instance, Game)
+Game_strategy = st.builds(
+    Game,
+)
 
 @given(instance=Player_strategy)
 @settings(max_examples=50)
@@ -208,3 +203,8 @@ def test_square_instantiation(instance):
 @settings(max_examples=50)
 def test_grid_instantiation(instance):
     assert isinstance(instance, Grid)
+
+@given(instance=Game_strategy)
+@settings(max_examples=50)
+def test_game_instantiation(instance):
+    assert isinstance(instance, Game)

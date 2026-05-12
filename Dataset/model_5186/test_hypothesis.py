@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
     A,
-    multi::C,
-    multi::B,
-    multi::A,
+    multi_C,
+    multi_B,
+    multi_A,
 )
 
 # =============================================================================
@@ -47,44 +47,44 @@ def test_a_constructor_args():
 
 
 
-def test_multi::c_is_not_abstract():
-    assert not inspect.isabstract(multi::C)
+def test_multi_c_is_not_abstract():
+    assert not inspect.isabstract(multi_C)
 
 
-def test_multi::c_constructor_exists():
-    assert callable(multi::C.__init__)
+def test_multi_c_constructor_exists():
+    assert callable(multi_C.__init__)
 
 
-def test_multi::c_constructor_args():
-    sig = inspect.signature(multi::C.__init__)
+def test_multi_c_constructor_args():
+    sig = inspect.signature(multi_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multi::b_is_not_abstract():
-    assert not inspect.isabstract(multi::B)
+def test_multi_b_is_not_abstract():
+    assert not inspect.isabstract(multi_B)
 
 
-def test_multi::b_constructor_exists():
-    assert callable(multi::B.__init__)
+def test_multi_b_constructor_exists():
+    assert callable(multi_B.__init__)
 
 
-def test_multi::b_constructor_args():
-    sig = inspect.signature(multi::B.__init__)
+def test_multi_b_constructor_args():
+    sig = inspect.signature(multi_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_multi::a_is_not_abstract():
-    assert not inspect.isabstract(multi::A)
+def test_multi_a_is_not_abstract():
+    assert not inspect.isabstract(multi_A)
 
 
-def test_multi::a_constructor_exists():
-    assert callable(multi::A.__init__)
+def test_multi_a_constructor_exists():
+    assert callable(multi_A.__init__)
 
 
-def test_multi::a_constructor_args():
-    sig = inspect.signature(multi::A.__init__)
+def test_multi_a_constructor_args():
+    sig = inspect.signature(multi_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,14 +105,14 @@ B_strategy = st.builds(
 A_strategy = st.builds(
     A,
 )
-multi::C_strategy = st.builds(
-    multi::C,
+multi_C_strategy = st.builds(
+    multi_C,
 )
-multi::B_strategy = st.builds(
-    multi::B,
+multi_B_strategy = st.builds(
+    multi_B,
 )
-multi::A_strategy = st.builds(
-    multi::A,
+multi_A_strategy = st.builds(
+    multi_A,
 )
 
 @given(instance=B_strategy)
@@ -125,17 +125,17 @@ def test_b_instantiation(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=multi::C_strategy)
+@given(instance=multi_C_strategy)
 @settings(max_examples=50)
-def test_multi::c_instantiation(instance):
-    assert isinstance(instance, multi::C)
+def test_multi_c_instantiation(instance):
+    assert isinstance(instance, multi_C)
 
-@given(instance=multi::B_strategy)
+@given(instance=multi_B_strategy)
 @settings(max_examples=50)
-def test_multi::b_instantiation(instance):
-    assert isinstance(instance, multi::B)
+def test_multi_b_instantiation(instance):
+    assert isinstance(instance, multi_B)
 
-@given(instance=multi::A_strategy)
+@given(instance=multi_A_strategy)
 @settings(max_examples=50)
-def test_multi::a_instantiation(instance):
-    assert isinstance(instance, multi::A)
+def test_multi_a_instantiation(instance):
+    assert isinstance(instance, multi_A)

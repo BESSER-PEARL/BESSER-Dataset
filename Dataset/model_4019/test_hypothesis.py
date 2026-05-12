@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Data::Model,
-    Data::Methode,
-    Data::Attribut,
-    Data::Classe,
+from python_code import (
+    Data_Model,
+    Data_Methode,
+    Data_Attribut,
+    Data_Classe,
 )
 
 # =============================================================================
@@ -18,47 +18,47 @@ from classes import (
 
 
 
-def test_data::model_is_not_abstract():
-    assert not inspect.isabstract(Data::Model)
+def test_data_model_is_not_abstract():
+    assert not inspect.isabstract(Data_Model)
 
 
-def test_data::model_constructor_exists():
-    assert callable(Data::Model.__init__)
+def test_data_model_constructor_exists():
+    assert callable(Data_Model.__init__)
 
 
-def test_data::model_constructor_args():
-    sig = inspect.signature(Data::Model.__init__)
+def test_data_model_constructor_args():
+    sig = inspect.signature(Data_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::methode_is_not_abstract():
-    assert not inspect.isabstract(Data::Methode)
+def test_data_methode_is_not_abstract():
+    assert not inspect.isabstract(Data_Methode)
 
 
-def test_data::methode_constructor_exists():
-    assert callable(Data::Methode.__init__)
+def test_data_methode_constructor_exists():
+    assert callable(Data_Methode.__init__)
 
 
-def test_data::methode_constructor_args():
-    sig = inspect.signature(Data::Methode.__init__)
+def test_data_methode_constructor_args():
+    sig = inspect.signature(Data_Methode.__init__)
     params = list(sig.parameters.keys())
     assert "nom" in params, "Missing parameter 'nom'"
     assert "typeRetour" in params, "Missing parameter 'typeRetour'"
 
-def test_data::methode_has_nom():
-    assert hasattr(Data::Methode, "nom")
+def test_data_methode_has_nom():
+    assert hasattr(Data_Methode, "nom")
     descriptor = None
-    for klass in Data::Methode.__mro__:
+    for klass in Data_Methode.__mro__:
         if "nom" in klass.__dict__:
             descriptor = klass.__dict__["nom"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::methode_has_typeRetour():
-    assert hasattr(Data::Methode, "typeRetour")
+def test_data_methode_has_typeRetour():
+    assert hasattr(Data_Methode, "typeRetour")
     descriptor = None
-    for klass in Data::Methode.__mro__:
+    for klass in Data_Methode.__mro__:
         if "typeRetour" in klass.__dict__:
             descriptor = klass.__dict__["typeRetour"]
             break
@@ -66,57 +66,57 @@ def test_data::methode_has_typeRetour():
 
 
 
-def test_data::attribut_is_not_abstract():
-    assert not inspect.isabstract(Data::Attribut)
+def test_data_attribut_is_not_abstract():
+    assert not inspect.isabstract(Data_Attribut)
 
 
-def test_data::attribut_constructor_exists():
-    assert callable(Data::Attribut.__init__)
+def test_data_attribut_constructor_exists():
+    assert callable(Data_Attribut.__init__)
 
 
-def test_data::attribut_constructor_args():
-    sig = inspect.signature(Data::Attribut.__init__)
+def test_data_attribut_constructor_args():
+    sig = inspect.signature(Data_Attribut.__init__)
     params = list(sig.parameters.keys())
-    assert "nom" in params, "Missing parameter 'nom'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "nom" in params, "Missing parameter 'nom'"
 
-def test_data::attribut_has_nom():
-    assert hasattr(Data::Attribut, "nom")
+def test_data_attribut_has_type():
+    assert hasattr(Data_Attribut, "type")
     descriptor = None
-    for klass in Data::Attribut.__mro__:
-        if "nom" in klass.__dict__:
-            descriptor = klass.__dict__["nom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::attribut_has_type():
-    assert hasattr(Data::Attribut, "type")
-    descriptor = None
-    for klass in Data::Attribut.__mro__:
+    for klass in Data_Attribut.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_data_attribut_has_nom():
+    assert hasattr(Data_Attribut, "nom")
+    descriptor = None
+    for klass in Data_Attribut.__mro__:
+        if "nom" in klass.__dict__:
+            descriptor = klass.__dict__["nom"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_data::classe_is_not_abstract():
-    assert not inspect.isabstract(Data::Classe)
+
+def test_data_classe_is_not_abstract():
+    assert not inspect.isabstract(Data_Classe)
 
 
-def test_data::classe_constructor_exists():
-    assert callable(Data::Classe.__init__)
+def test_data_classe_constructor_exists():
+    assert callable(Data_Classe.__init__)
 
 
-def test_data::classe_constructor_args():
-    sig = inspect.signature(Data::Classe.__init__)
+def test_data_classe_constructor_args():
+    sig = inspect.signature(Data_Classe.__init__)
     params = list(sig.parameters.keys())
     assert "nom" in params, "Missing parameter 'nom'"
 
-def test_data::classe_has_nom():
-    assert hasattr(Data::Classe, "nom")
+def test_data_classe_has_nom():
+    assert hasattr(Data_Classe, "nom")
     descriptor = None
-    for klass in Data::Classe.__mro__:
+    for klass in Data_Classe.__mro__:
         if "nom" in klass.__dict__:
             descriptor = klass.__dict__["nom"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Data::Model_strategy = st.builds(
-    Data::Model,
+Data_Model_strategy = st.builds(
+    Data_Model,
 )
-Data::Methode_strategy = st.builds(
-    Data::Methode,
+Data_Methode_strategy = st.builds(
+    Data_Methode,
     nom=
         safe_text,
     typeRetour=
         safe_text
 )
-Data::Attribut_strategy = st.builds(
-    Data::Attribut,
-    nom=
-        safe_text,
+Data_Attribut_strategy = st.builds(
+    Data_Attribut,
     type=
+        safe_text,
+    nom=
         safe_text
 )
-Data::Classe_strategy = st.builds(
-    Data::Classe,
+Data_Classe_strategy = st.builds(
+    Data_Classe,
     nom=
         safe_text
 )
 
-@given(instance=Data::Model_strategy)
+@given(instance=Data_Model_strategy)
 @settings(max_examples=50)
-def test_data::model_instantiation(instance):
-    assert isinstance(instance, Data::Model)
+def test_data_model_instantiation(instance):
+    assert isinstance(instance, Data_Model)
 
-@given(instance=Data::Methode_strategy)
+@given(instance=Data_Methode_strategy)
 @settings(max_examples=50)
-def test_data::methode_instantiation(instance):
-    assert isinstance(instance, Data::Methode)
-
-@given(instance=Data::Methode_strategy)
-def test_data::methode_nom_type(instance):
-    assert isinstance(instance.nom, str)
+def test_data_methode_instantiation(instance):
+    assert isinstance(instance, Data_Methode)
 
 
-@given(instance=Data::Methode_strategy)
-def test_data::methode_nom_setter(instance):
+
+@given(instance=Data_Methode_strategy)
+def test_data_methode_nom_setter(instance):
     original = instance.nom
     instance.nom = original
     assert instance.nom == original
 
-@given(instance=Data::Methode_strategy)
-def test_data::methode_typeRetour_type(instance):
-    assert isinstance(instance.typeRetour, str)
 
 
-@given(instance=Data::Methode_strategy)
-def test_data::methode_typeRetour_setter(instance):
+@given(instance=Data_Methode_strategy)
+def test_data_methode_typeRetour_setter(instance):
     original = instance.typeRetour
     instance.typeRetour = original
     assert instance.typeRetour == original
 
-@given(instance=Data::Attribut_strategy)
+@given(instance=Data_Attribut_strategy)
 @settings(max_examples=50)
-def test_data::attribut_instantiation(instance):
-    assert isinstance(instance, Data::Attribut)
-
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_nom_type(instance):
-    assert isinstance(instance.nom, str)
+def test_data_attribut_instantiation(instance):
+    assert isinstance(instance, Data_Attribut)
 
 
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_nom_setter(instance):
-    original = instance.nom
-    instance.nom = original
-    assert instance.nom == original
 
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Data::Attribut_strategy)
-def test_data::attribut_type_setter(instance):
+@given(instance=Data_Attribut_strategy)
+def test_data_attribut_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Data::Classe_strategy)
+
+
+@given(instance=Data_Attribut_strategy)
+def test_data_attribut_nom_setter(instance):
+    original = instance.nom
+    instance.nom = original
+    assert instance.nom == original
+
+@given(instance=Data_Classe_strategy)
 @settings(max_examples=50)
-def test_data::classe_instantiation(instance):
-    assert isinstance(instance, Data::Classe)
-
-@given(instance=Data::Classe_strategy)
-def test_data::classe_nom_type(instance):
-    assert isinstance(instance.nom, str)
+def test_data_classe_instantiation(instance):
+    assert isinstance(instance, Data_Classe)
 
 
-@given(instance=Data::Classe_strategy)
-def test_data::classe_nom_setter(instance):
+
+@given(instance=Data_Classe_strategy)
+def test_data_classe_nom_setter(instance):
     original = instance.nom
     instance.nom = original
     assert instance.nom == original

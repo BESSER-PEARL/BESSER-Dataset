@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    scrShYQYaSD::ak,
-    scrShYQYaSD::HVOwDYkMdHvynG,
-    scrShYQYaSD::xvHXdRr,
+from python_code import (
+    scrShYQYaSD_ak,
+    scrShYQYaSD_HVOwDYkMdHvynG,
+    scrShYQYaSD_xvHXdRr,
 )
 
 # =============================================================================
@@ -17,67 +17,67 @@ from classes import (
 
 
 
-def test_scrshyqyasd::ak_is_not_abstract():
-    assert not inspect.isabstract(scrShYQYaSD::ak)
+def test_scrshyqyasd_ak_is_not_abstract():
+    assert not inspect.isabstract(scrShYQYaSD_ak)
 
 
-def test_scrshyqyasd::ak_constructor_exists():
-    assert callable(scrShYQYaSD::ak.__init__)
+def test_scrshyqyasd_ak_constructor_exists():
+    assert callable(scrShYQYaSD_ak.__init__)
 
 
-def test_scrshyqyasd::ak_constructor_args():
-    sig = inspect.signature(scrShYQYaSD::ak.__init__)
+def test_scrshyqyasd_ak_constructor_args():
+    sig = inspect.signature(scrShYQYaSD_ak.__init__)
     params = list(sig.parameters.keys())
     assert "CXmvqzTe" in params, "Missing parameter 'CXmvqzTe'"
-    assert "zBIcb" in params, "Missing parameter 'zBIcb'"
     assert "MHQpVCYtERyk" in params, "Missing parameter 'MHQpVCYtERyk'"
+    assert "zBIcb" in params, "Missing parameter 'zBIcb'"
 
-def test_scrshyqyasd::ak_has_CXmvqzTe():
-    assert hasattr(scrShYQYaSD::ak, "CXmvqzTe")
+def test_scrshyqyasd_ak_has_CXmvqzTe():
+    assert hasattr(scrShYQYaSD_ak, "CXmvqzTe")
     descriptor = None
-    for klass in scrShYQYaSD::ak.__mro__:
+    for klass in scrShYQYaSD_ak.__mro__:
         if "CXmvqzTe" in klass.__dict__:
             descriptor = klass.__dict__["CXmvqzTe"]
             break
     assert isinstance(descriptor, property)
 
-def test_scrshyqyasd::ak_has_zBIcb():
-    assert hasattr(scrShYQYaSD::ak, "zBIcb")
+def test_scrshyqyasd_ak_has_MHQpVCYtERyk():
+    assert hasattr(scrShYQYaSD_ak, "MHQpVCYtERyk")
     descriptor = None
-    for klass in scrShYQYaSD::ak.__mro__:
-        if "zBIcb" in klass.__dict__:
-            descriptor = klass.__dict__["zBIcb"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scrshyqyasd::ak_has_MHQpVCYtERyk():
-    assert hasattr(scrShYQYaSD::ak, "MHQpVCYtERyk")
-    descriptor = None
-    for klass in scrShYQYaSD::ak.__mro__:
+    for klass in scrShYQYaSD_ak.__mro__:
         if "MHQpVCYtERyk" in klass.__dict__:
             descriptor = klass.__dict__["MHQpVCYtERyk"]
             break
     assert isinstance(descriptor, property)
 
+def test_scrshyqyasd_ak_has_zBIcb():
+    assert hasattr(scrShYQYaSD_ak, "zBIcb")
+    descriptor = None
+    for klass in scrShYQYaSD_ak.__mro__:
+        if "zBIcb" in klass.__dict__:
+            descriptor = klass.__dict__["zBIcb"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_scrshyqyasd::hvowdykmdhvyng_is_not_abstract():
-    assert not inspect.isabstract(scrShYQYaSD::HVOwDYkMdHvynG)
+
+def test_scrshyqyasd_hvowdykmdhvyng_is_not_abstract():
+    assert not inspect.isabstract(scrShYQYaSD_HVOwDYkMdHvynG)
 
 
-def test_scrshyqyasd::hvowdykmdhvyng_constructor_exists():
-    assert callable(scrShYQYaSD::HVOwDYkMdHvynG.__init__)
+def test_scrshyqyasd_hvowdykmdhvyng_constructor_exists():
+    assert callable(scrShYQYaSD_HVOwDYkMdHvynG.__init__)
 
 
-def test_scrshyqyasd::hvowdykmdhvyng_constructor_args():
-    sig = inspect.signature(scrShYQYaSD::HVOwDYkMdHvynG.__init__)
+def test_scrshyqyasd_hvowdykmdhvyng_constructor_args():
+    sig = inspect.signature(scrShYQYaSD_HVOwDYkMdHvynG.__init__)
     params = list(sig.parameters.keys())
     assert "vdjNPHX" in params, "Missing parameter 'vdjNPHX'"
 
-def test_scrshyqyasd::hvowdykmdhvyng_has_vdjNPHX():
-    assert hasattr(scrShYQYaSD::HVOwDYkMdHvynG, "vdjNPHX")
+def test_scrshyqyasd_hvowdykmdhvyng_has_vdjNPHX():
+    assert hasattr(scrShYQYaSD_HVOwDYkMdHvynG, "vdjNPHX")
     descriptor = None
-    for klass in scrShYQYaSD::HVOwDYkMdHvynG.__mro__:
+    for klass in scrShYQYaSD_HVOwDYkMdHvynG.__mro__:
         if "vdjNPHX" in klass.__dict__:
             descriptor = klass.__dict__["vdjNPHX"]
             break
@@ -85,16 +85,16 @@ def test_scrshyqyasd::hvowdykmdhvyng_has_vdjNPHX():
 
 
 
-def test_scrshyqyasd::xvhxdrr_is_not_abstract():
-    assert not inspect.isabstract(scrShYQYaSD::xvHXdRr)
+def test_scrshyqyasd_xvhxdrr_is_not_abstract():
+    assert not inspect.isabstract(scrShYQYaSD_xvHXdRr)
 
 
-def test_scrshyqyasd::xvhxdrr_constructor_exists():
-    assert callable(scrShYQYaSD::xvHXdRr.__init__)
+def test_scrshyqyasd_xvhxdrr_constructor_exists():
+    assert callable(scrShYQYaSD_xvHXdRr.__init__)
 
 
-def test_scrshyqyasd::xvhxdrr_constructor_args():
-    sig = inspect.signature(scrShYQYaSD::xvHXdRr.__init__)
+def test_scrshyqyasd_xvhxdrr_constructor_args():
+    sig = inspect.signature(scrShYQYaSD_xvHXdRr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,79 +109,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-scrShYQYaSD::ak_strategy = st.builds(
-    scrShYQYaSD::ak,
+scrShYQYaSD_ak_strategy = st.builds(
+    scrShYQYaSD_ak,
     CXmvqzTe=
         safe_text,
-    zBIcb=
-        safe_text,
     MHQpVCYtERyk=
+        safe_text,
+    zBIcb=
         safe_text
 )
-scrShYQYaSD::HVOwDYkMdHvynG_strategy = st.builds(
-    scrShYQYaSD::HVOwDYkMdHvynG,
+scrShYQYaSD_HVOwDYkMdHvynG_strategy = st.builds(
+    scrShYQYaSD_HVOwDYkMdHvynG,
     vdjNPHX=
         safe_text
 )
-scrShYQYaSD::xvHXdRr_strategy = st.builds(
-    scrShYQYaSD::xvHXdRr,
+scrShYQYaSD_xvHXdRr_strategy = st.builds(
+    scrShYQYaSD_xvHXdRr,
 )
 
-@given(instance=scrShYQYaSD::ak_strategy)
+@given(instance=scrShYQYaSD_ak_strategy)
 @settings(max_examples=50)
-def test_scrshyqyasd::ak_instantiation(instance):
-    assert isinstance(instance, scrShYQYaSD::ak)
-
-@given(instance=scrShYQYaSD::ak_strategy)
-def test_scrshyqyasd::ak_CXmvqzTe_type(instance):
-    assert isinstance(instance.CXmvqzTe, str)
+def test_scrshyqyasd_ak_instantiation(instance):
+    assert isinstance(instance, scrShYQYaSD_ak)
 
 
-@given(instance=scrShYQYaSD::ak_strategy)
-def test_scrshyqyasd::ak_CXmvqzTe_setter(instance):
+
+@given(instance=scrShYQYaSD_ak_strategy)
+def test_scrshyqyasd_ak_CXmvqzTe_setter(instance):
     original = instance.CXmvqzTe
     instance.CXmvqzTe = original
     assert instance.CXmvqzTe == original
 
-@given(instance=scrShYQYaSD::ak_strategy)
-def test_scrshyqyasd::ak_zBIcb_type(instance):
-    assert isinstance(instance.zBIcb, str)
 
 
-@given(instance=scrShYQYaSD::ak_strategy)
-def test_scrshyqyasd::ak_zBIcb_setter(instance):
-    original = instance.zBIcb
-    instance.zBIcb = original
-    assert instance.zBIcb == original
-
-@given(instance=scrShYQYaSD::ak_strategy)
-def test_scrshyqyasd::ak_MHQpVCYtERyk_type(instance):
-    assert isinstance(instance.MHQpVCYtERyk, str)
-
-
-@given(instance=scrShYQYaSD::ak_strategy)
-def test_scrshyqyasd::ak_MHQpVCYtERyk_setter(instance):
+@given(instance=scrShYQYaSD_ak_strategy)
+def test_scrshyqyasd_ak_MHQpVCYtERyk_setter(instance):
     original = instance.MHQpVCYtERyk
     instance.MHQpVCYtERyk = original
     assert instance.MHQpVCYtERyk == original
 
-@given(instance=scrShYQYaSD::HVOwDYkMdHvynG_strategy)
+
+
+@given(instance=scrShYQYaSD_ak_strategy)
+def test_scrshyqyasd_ak_zBIcb_setter(instance):
+    original = instance.zBIcb
+    instance.zBIcb = original
+    assert instance.zBIcb == original
+
+@given(instance=scrShYQYaSD_HVOwDYkMdHvynG_strategy)
 @settings(max_examples=50)
-def test_scrshyqyasd::hvowdykmdhvyng_instantiation(instance):
-    assert isinstance(instance, scrShYQYaSD::HVOwDYkMdHvynG)
-
-@given(instance=scrShYQYaSD::HVOwDYkMdHvynG_strategy)
-def test_scrshyqyasd::hvowdykmdhvyng_vdjNPHX_type(instance):
-    assert isinstance(instance.vdjNPHX, str)
+def test_scrshyqyasd_hvowdykmdhvyng_instantiation(instance):
+    assert isinstance(instance, scrShYQYaSD_HVOwDYkMdHvynG)
 
 
-@given(instance=scrShYQYaSD::HVOwDYkMdHvynG_strategy)
-def test_scrshyqyasd::hvowdykmdhvyng_vdjNPHX_setter(instance):
+
+@given(instance=scrShYQYaSD_HVOwDYkMdHvynG_strategy)
+def test_scrshyqyasd_hvowdykmdhvyng_vdjNPHX_setter(instance):
     original = instance.vdjNPHX
     instance.vdjNPHX = original
     assert instance.vdjNPHX == original
 
-@given(instance=scrShYQYaSD::xvHXdRr_strategy)
+@given(instance=scrShYQYaSD_xvHXdRr_strategy)
 @settings(max_examples=50)
-def test_scrshyqyasd::xvhxdrr_instantiation(instance):
-    assert isinstance(instance, scrShYQYaSD::xvHXdRr)
+def test_scrshyqyasd_xvhxdrr_instantiation(instance):
+    assert isinstance(instance, scrShYQYaSD_xvHXdRr)

@@ -3,114 +3,114 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    room::KeyValue,
-    room::Guard,
-    room::MessageFromIf,
+from python_code import (
+    room_KeyValue,
+    room_Guard,
+    room_MessageFromIf,
     TransitionTerminal,
-    room::ChoicepointTerminal,
-    room::TrPointTerminal,
-    room::SubStateTrPointTerminal,
-    room::StateTerminal,
-    room::Trigger,
+    room_ChoicepointTerminal,
+    room_TrPointTerminal,
+    room_SubStateTrPointTerminal,
+    room_StateTerminal,
+    room_Trigger,
     TransitionChainStartTransition,
-    room::GuardedTransition,
-    room::TriggeredTransition,
+    room_GuardedTransition,
+    room_TriggeredTransition,
     NonInitialTransition,
-    room::ContinuationTransition,
-    room::CPBranchTransition,
-    room::TransitionChainStartTransition,
+    room_CPBranchTransition,
+    room_ContinuationTransition,
+    room_TransitionChainStartTransition,
     Transition,
-    room::InitialTransition,
-    room::NonInitialTransition,
-    room::TransitionTerminal,
+    room_InitialTransition,
+    room_NonInitialTransition,
+    room_TransitionTerminal,
     TrPoint,
-    room::EntryPoint,
-    room::ExitPoint,
-    room::TransitionPoint,
+    room_ExitPoint,
+    room_EntryPoint,
+    room_TransitionPoint,
     State,
-    room::RefinedState,
-    room::SimpleState,
-    room::RefinedTransition,
+    room_RefinedState,
+    room_SimpleState,
+    room_RefinedTransition,
     StateGraphNode,
-    room::TrPoint,
-    room::ChoicePoint,
-    room::State,
-    room::StateGraphItem,
+    room_TrPoint,
+    room_ChoicePoint,
+    room_State,
+    room_StateGraphItem,
     StateGraphItem,
-    room::Transition,
-    room::StateGraphNode,
+    room_Transition,
+    room_StateGraphNode,
     ActorContainerRef,
     SAPoint,
-    room::RelaySAPoint,
-    room::RefSAPoint,
-    room::SPPoint,
-    room::SAPoint,
-    room::BindingEndPoint,
-    room::ActorInstancePath,
-    room::LogicalThread,
-    room::StateGraph,
-    room::ActorContainerRef,
-    room::SubSystemRef,
+    room_RelaySAPoint,
+    room_RefSAPoint,
+    room_SPPoint,
+    room_SAPoint,
+    room_BindingEndPoint,
+    room_ActorInstancePath,
+    room_LogicalThread,
+    room_StateGraph,
+    room_ActorContainerRef,
+    room_SubSystemRef,
     InterfaceItem,
-    room::InterfaceItem,
+    room_InterfaceItem,
     MessageHandler,
-    room::OutMessageHandler,
-    room::InMessageHandler,
-    room::SAPRef,
-    room::ServiceImplementation,
-    room::ExternalPort,
-    room::Port,
+    room_OutMessageHandler,
+    room_InMessageHandler,
+    room_SAPRef,
+    room_ServiceImplementation,
+    room_ExternalPort,
+    room_Port,
     ActorContainerClass,
     SemanticsRule,
-    room::OutSemanticsRule,
-    room::InSemanticsRule,
-    room::SemanticsRule,
+    room_OutSemanticsRule,
+    room_InSemanticsRule,
+    room_SemanticsRule,
     GeneralProtocolClass,
-    room::ProtocolClass,
-    room::MessageHandler,
-    room::SubProtocol,
-    room::CompoundProtocolClass,
-    room::ProtocolSemantics,
-    room::PortClass,
+    room_ProtocolClass,
+    room_MessageHandler,
+    room_SubProtocol,
+    room_CompoundProtocolClass,
+    room_ProtocolSemantics,
+    room_PortClass,
     ComplexType,
-    room::Message,
+    room_Message,
     Operation,
-    room::PortOperation,
-    room::Operation,
-    room::StandardOperation,
-    room::Attribute,
-    room::SubSystemClass,
-    room::ActorClass,
+    room_PortOperation,
+    room_Operation,
+    room_StandardOperation,
+    room_Attribute,
+    room_SubSystemClass,
+    room_ActorClass,
     DataType,
-    room::ComplexType,
-    room::RefableType,
-    room::VarDecl,
-    room::ActorRef,
-    room::DetailCode,
-    room::SPPRef,
+    room_ComplexType,
+    room_RefableType,
+    room_VarDecl,
+    room_ActorRef,
+    room_DetailCode,
+    room_SPPRef,
     StructureClass,
-    room::ActorContainerClass,
-    room::LayerConnection,
-    room::Binding,
-    room::Annotation,
+    room_ActorContainerClass,
+    room_LayerConnection,
+    room_Binding,
+    room_Annotation,
     RoomClass,
-    room::GeneralProtocolClass,
-    room::DataType,
-    room::StructureClass,
-    room::RoomClass,
-    room::LogicalSystem,
-    room::DataClass,
-    room::ExternalType,
-    room::PrimitiveType,
-    room::Import,
-    room::Documentation,
-    room::RoomModel,
+    room_DataType,
+    room_GeneralProtocolClass,
+    room_StructureClass,
+    room_RoomClass,
+    room_LogicalSystem,
+    room_DataClass,
+    room_ExternalType,
+    room_PrimitiveType,
+    room_Import,
+    room_Documentation,
+    room_RoomModel,
+    LiteralType,
     ActorCommunicationType,
     CommunicationType,
-    LiteralType,
 )
 
 # =============================================================================
@@ -119,33 +119,33 @@ from classes import (
 
 
 
-def test_room::keyvalue_is_not_abstract():
-    assert not inspect.isabstract(room::KeyValue)
+def test_room_keyvalue_is_not_abstract():
+    assert not inspect.isabstract(room_KeyValue)
 
 
-def test_room::keyvalue_constructor_exists():
-    assert callable(room::KeyValue.__init__)
+def test_room_keyvalue_constructor_exists():
+    assert callable(room_KeyValue.__init__)
 
 
-def test_room::keyvalue_constructor_args():
-    sig = inspect.signature(room::KeyValue.__init__)
+def test_room_keyvalue_constructor_args():
+    sig = inspect.signature(room_KeyValue.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_room::keyvalue_has_key():
-    assert hasattr(room::KeyValue, "key")
+def test_room_keyvalue_has_key():
+    assert hasattr(room_KeyValue, "key")
     descriptor = None
-    for klass in room::KeyValue.__mro__:
+    for klass in room_KeyValue.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::keyvalue_has_value():
-    assert hasattr(room::KeyValue, "value")
+def test_room_keyvalue_has_value():
+    assert hasattr(room_KeyValue, "value")
     descriptor = None
-    for klass in room::KeyValue.__mro__:
+    for klass in room_KeyValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -153,30 +153,30 @@ def test_room::keyvalue_has_value():
 
 
 
-def test_room::guard_is_not_abstract():
-    assert not inspect.isabstract(room::Guard)
+def test_room_guard_is_not_abstract():
+    assert not inspect.isabstract(room_Guard)
 
 
-def test_room::guard_constructor_exists():
-    assert callable(room::Guard.__init__)
+def test_room_guard_constructor_exists():
+    assert callable(room_Guard.__init__)
 
 
-def test_room::guard_constructor_args():
-    sig = inspect.signature(room::Guard.__init__)
+def test_room_guard_constructor_args():
+    sig = inspect.signature(room_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::messagefromif_is_not_abstract():
-    assert not inspect.isabstract(room::MessageFromIf)
+def test_room_messagefromif_is_not_abstract():
+    assert not inspect.isabstract(room_MessageFromIf)
 
 
-def test_room::messagefromif_constructor_exists():
-    assert callable(room::MessageFromIf.__init__)
+def test_room_messagefromif_constructor_exists():
+    assert callable(room_MessageFromIf.__init__)
 
 
-def test_room::messagefromif_constructor_args():
-    sig = inspect.signature(room::MessageFromIf.__init__)
+def test_room_messagefromif_constructor_args():
+    sig = inspect.signature(room_MessageFromIf.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -195,72 +195,72 @@ def test_transitionterminal_constructor_args():
 
 
 
-def test_room::choicepointterminal_is_not_abstract():
-    assert not inspect.isabstract(room::ChoicepointTerminal)
+def test_room_choicepointterminal_is_not_abstract():
+    assert not inspect.isabstract(room_ChoicepointTerminal)
 
 
-def test_room::choicepointterminal_constructor_exists():
-    assert callable(room::ChoicepointTerminal.__init__)
+def test_room_choicepointterminal_constructor_exists():
+    assert callable(room_ChoicepointTerminal.__init__)
 
 
-def test_room::choicepointterminal_constructor_args():
-    sig = inspect.signature(room::ChoicepointTerminal.__init__)
+def test_room_choicepointterminal_constructor_args():
+    sig = inspect.signature(room_ChoicepointTerminal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::trpointterminal_is_not_abstract():
-    assert not inspect.isabstract(room::TrPointTerminal)
+def test_room_trpointterminal_is_not_abstract():
+    assert not inspect.isabstract(room_TrPointTerminal)
 
 
-def test_room::trpointterminal_constructor_exists():
-    assert callable(room::TrPointTerminal.__init__)
+def test_room_trpointterminal_constructor_exists():
+    assert callable(room_TrPointTerminal.__init__)
 
 
-def test_room::trpointterminal_constructor_args():
-    sig = inspect.signature(room::TrPointTerminal.__init__)
+def test_room_trpointterminal_constructor_args():
+    sig = inspect.signature(room_TrPointTerminal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::substatetrpointterminal_is_not_abstract():
-    assert not inspect.isabstract(room::SubStateTrPointTerminal)
+def test_room_substatetrpointterminal_is_not_abstract():
+    assert not inspect.isabstract(room_SubStateTrPointTerminal)
 
 
-def test_room::substatetrpointterminal_constructor_exists():
-    assert callable(room::SubStateTrPointTerminal.__init__)
+def test_room_substatetrpointterminal_constructor_exists():
+    assert callable(room_SubStateTrPointTerminal.__init__)
 
 
-def test_room::substatetrpointterminal_constructor_args():
-    sig = inspect.signature(room::SubStateTrPointTerminal.__init__)
+def test_room_substatetrpointterminal_constructor_args():
+    sig = inspect.signature(room_SubStateTrPointTerminal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::stateterminal_is_not_abstract():
-    assert not inspect.isabstract(room::StateTerminal)
+def test_room_stateterminal_is_not_abstract():
+    assert not inspect.isabstract(room_StateTerminal)
 
 
-def test_room::stateterminal_constructor_exists():
-    assert callable(room::StateTerminal.__init__)
+def test_room_stateterminal_constructor_exists():
+    assert callable(room_StateTerminal.__init__)
 
 
-def test_room::stateterminal_constructor_args():
-    sig = inspect.signature(room::StateTerminal.__init__)
+def test_room_stateterminal_constructor_args():
+    sig = inspect.signature(room_StateTerminal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::trigger_is_not_abstract():
-    assert not inspect.isabstract(room::Trigger)
+def test_room_trigger_is_not_abstract():
+    assert not inspect.isabstract(room_Trigger)
 
 
-def test_room::trigger_constructor_exists():
-    assert callable(room::Trigger.__init__)
+def test_room_trigger_constructor_exists():
+    assert callable(room_Trigger.__init__)
 
 
-def test_room::trigger_constructor_args():
-    sig = inspect.signature(room::Trigger.__init__)
+def test_room_trigger_constructor_args():
+    sig = inspect.signature(room_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -279,30 +279,30 @@ def test_transitionchainstarttransition_constructor_args():
 
 
 
-def test_room::guardedtransition_is_not_abstract():
-    assert not inspect.isabstract(room::GuardedTransition)
+def test_room_guardedtransition_is_not_abstract():
+    assert not inspect.isabstract(room_GuardedTransition)
 
 
-def test_room::guardedtransition_constructor_exists():
-    assert callable(room::GuardedTransition.__init__)
+def test_room_guardedtransition_constructor_exists():
+    assert callable(room_GuardedTransition.__init__)
 
 
-def test_room::guardedtransition_constructor_args():
-    sig = inspect.signature(room::GuardedTransition.__init__)
+def test_room_guardedtransition_constructor_args():
+    sig = inspect.signature(room_GuardedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::triggeredtransition_is_not_abstract():
-    assert not inspect.isabstract(room::TriggeredTransition)
+def test_room_triggeredtransition_is_not_abstract():
+    assert not inspect.isabstract(room_TriggeredTransition)
 
 
-def test_room::triggeredtransition_constructor_exists():
-    assert callable(room::TriggeredTransition.__init__)
+def test_room_triggeredtransition_constructor_exists():
+    assert callable(room_TriggeredTransition.__init__)
 
 
-def test_room::triggeredtransition_constructor_args():
-    sig = inspect.signature(room::TriggeredTransition.__init__)
+def test_room_triggeredtransition_constructor_args():
+    sig = inspect.signature(room_TriggeredTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -321,44 +321,44 @@ def test_noninitialtransition_constructor_args():
 
 
 
-def test_room::continuationtransition_is_not_abstract():
-    assert not inspect.isabstract(room::ContinuationTransition)
+def test_room_cpbranchtransition_is_not_abstract():
+    assert not inspect.isabstract(room_CPBranchTransition)
 
 
-def test_room::continuationtransition_constructor_exists():
-    assert callable(room::ContinuationTransition.__init__)
+def test_room_cpbranchtransition_constructor_exists():
+    assert callable(room_CPBranchTransition.__init__)
 
 
-def test_room::continuationtransition_constructor_args():
-    sig = inspect.signature(room::ContinuationTransition.__init__)
+def test_room_cpbranchtransition_constructor_args():
+    sig = inspect.signature(room_CPBranchTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::cpbranchtransition_is_not_abstract():
-    assert not inspect.isabstract(room::CPBranchTransition)
+def test_room_continuationtransition_is_not_abstract():
+    assert not inspect.isabstract(room_ContinuationTransition)
 
 
-def test_room::cpbranchtransition_constructor_exists():
-    assert callable(room::CPBranchTransition.__init__)
+def test_room_continuationtransition_constructor_exists():
+    assert callable(room_ContinuationTransition.__init__)
 
 
-def test_room::cpbranchtransition_constructor_args():
-    sig = inspect.signature(room::CPBranchTransition.__init__)
+def test_room_continuationtransition_constructor_args():
+    sig = inspect.signature(room_ContinuationTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::transitionchainstarttransition_is_not_abstract():
-    assert not inspect.isabstract(room::TransitionChainStartTransition)
+def test_room_transitionchainstarttransition_is_not_abstract():
+    assert not inspect.isabstract(room_TransitionChainStartTransition)
 
 
-def test_room::transitionchainstarttransition_constructor_exists():
-    assert callable(room::TransitionChainStartTransition.__init__)
+def test_room_transitionchainstarttransition_constructor_exists():
+    assert callable(room_TransitionChainStartTransition.__init__)
 
 
-def test_room::transitionchainstarttransition_constructor_args():
-    sig = inspect.signature(room::TransitionChainStartTransition.__init__)
+def test_room_transitionchainstarttransition_constructor_args():
+    sig = inspect.signature(room_TransitionChainStartTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -377,44 +377,44 @@ def test_transition_constructor_args():
 
 
 
-def test_room::initialtransition_is_not_abstract():
-    assert not inspect.isabstract(room::InitialTransition)
+def test_room_initialtransition_is_not_abstract():
+    assert not inspect.isabstract(room_InitialTransition)
 
 
-def test_room::initialtransition_constructor_exists():
-    assert callable(room::InitialTransition.__init__)
+def test_room_initialtransition_constructor_exists():
+    assert callable(room_InitialTransition.__init__)
 
 
-def test_room::initialtransition_constructor_args():
-    sig = inspect.signature(room::InitialTransition.__init__)
+def test_room_initialtransition_constructor_args():
+    sig = inspect.signature(room_InitialTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::noninitialtransition_is_not_abstract():
-    assert not inspect.isabstract(room::NonInitialTransition)
+def test_room_noninitialtransition_is_not_abstract():
+    assert not inspect.isabstract(room_NonInitialTransition)
 
 
-def test_room::noninitialtransition_constructor_exists():
-    assert callable(room::NonInitialTransition.__init__)
+def test_room_noninitialtransition_constructor_exists():
+    assert callable(room_NonInitialTransition.__init__)
 
 
-def test_room::noninitialtransition_constructor_args():
-    sig = inspect.signature(room::NonInitialTransition.__init__)
+def test_room_noninitialtransition_constructor_args():
+    sig = inspect.signature(room_NonInitialTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::transitionterminal_is_not_abstract():
-    assert not inspect.isabstract(room::TransitionTerminal)
+def test_room_transitionterminal_is_not_abstract():
+    assert not inspect.isabstract(room_TransitionTerminal)
 
 
-def test_room::transitionterminal_constructor_exists():
-    assert callable(room::TransitionTerminal.__init__)
+def test_room_transitionterminal_constructor_exists():
+    assert callable(room_TransitionTerminal.__init__)
 
 
-def test_room::transitionterminal_constructor_args():
-    sig = inspect.signature(room::TransitionTerminal.__init__)
+def test_room_transitionterminal_constructor_args():
+    sig = inspect.signature(room_TransitionTerminal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -433,51 +433,51 @@ def test_trpoint_constructor_args():
 
 
 
-def test_room::entrypoint_is_not_abstract():
-    assert not inspect.isabstract(room::EntryPoint)
+def test_room_exitpoint_is_not_abstract():
+    assert not inspect.isabstract(room_ExitPoint)
 
 
-def test_room::entrypoint_constructor_exists():
-    assert callable(room::EntryPoint.__init__)
+def test_room_exitpoint_constructor_exists():
+    assert callable(room_ExitPoint.__init__)
 
 
-def test_room::entrypoint_constructor_args():
-    sig = inspect.signature(room::EntryPoint.__init__)
+def test_room_exitpoint_constructor_args():
+    sig = inspect.signature(room_ExitPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::exitpoint_is_not_abstract():
-    assert not inspect.isabstract(room::ExitPoint)
+def test_room_entrypoint_is_not_abstract():
+    assert not inspect.isabstract(room_EntryPoint)
 
 
-def test_room::exitpoint_constructor_exists():
-    assert callable(room::ExitPoint.__init__)
+def test_room_entrypoint_constructor_exists():
+    assert callable(room_EntryPoint.__init__)
 
 
-def test_room::exitpoint_constructor_args():
-    sig = inspect.signature(room::ExitPoint.__init__)
+def test_room_entrypoint_constructor_args():
+    sig = inspect.signature(room_EntryPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::transitionpoint_is_not_abstract():
-    assert not inspect.isabstract(room::TransitionPoint)
+def test_room_transitionpoint_is_not_abstract():
+    assert not inspect.isabstract(room_TransitionPoint)
 
 
-def test_room::transitionpoint_constructor_exists():
-    assert callable(room::TransitionPoint.__init__)
+def test_room_transitionpoint_constructor_exists():
+    assert callable(room_TransitionPoint.__init__)
 
 
-def test_room::transitionpoint_constructor_args():
-    sig = inspect.signature(room::TransitionPoint.__init__)
+def test_room_transitionpoint_constructor_args():
+    sig = inspect.signature(room_TransitionPoint.__init__)
     params = list(sig.parameters.keys())
     assert "handler" in params, "Missing parameter 'handler'"
 
-def test_room::transitionpoint_has_handler():
-    assert hasattr(room::TransitionPoint, "handler")
+def test_room_transitionpoint_has_handler():
+    assert hasattr(room_TransitionPoint, "handler")
     descriptor = None
-    for klass in room::TransitionPoint.__mro__:
+    for klass in room_TransitionPoint.__mro__:
         if "handler" in klass.__dict__:
             descriptor = klass.__dict__["handler"]
             break
@@ -499,37 +499,37 @@ def test_state_constructor_args():
 
 
 
-def test_room::refinedstate_is_not_abstract():
-    assert not inspect.isabstract(room::RefinedState)
+def test_room_refinedstate_is_not_abstract():
+    assert not inspect.isabstract(room_RefinedState)
 
 
-def test_room::refinedstate_constructor_exists():
-    assert callable(room::RefinedState.__init__)
+def test_room_refinedstate_constructor_exists():
+    assert callable(room_RefinedState.__init__)
 
 
-def test_room::refinedstate_constructor_args():
-    sig = inspect.signature(room::RefinedState.__init__)
+def test_room_refinedstate_constructor_args():
+    sig = inspect.signature(room_RefinedState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::simplestate_is_not_abstract():
-    assert not inspect.isabstract(room::SimpleState)
+def test_room_simplestate_is_not_abstract():
+    assert not inspect.isabstract(room_SimpleState)
 
 
-def test_room::simplestate_constructor_exists():
-    assert callable(room::SimpleState.__init__)
+def test_room_simplestate_constructor_exists():
+    assert callable(room_SimpleState.__init__)
 
 
-def test_room::simplestate_constructor_args():
-    sig = inspect.signature(room::SimpleState.__init__)
+def test_room_simplestate_constructor_args():
+    sig = inspect.signature(room_SimpleState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::simplestate_has_name():
-    assert hasattr(room::SimpleState, "name")
+def test_room_simplestate_has_name():
+    assert hasattr(room_SimpleState, "name")
     descriptor = None
-    for klass in room::SimpleState.__mro__:
+    for klass in room_SimpleState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -537,16 +537,16 @@ def test_room::simplestate_has_name():
 
 
 
-def test_room::refinedtransition_is_not_abstract():
-    assert not inspect.isabstract(room::RefinedTransition)
+def test_room_refinedtransition_is_not_abstract():
+    assert not inspect.isabstract(room_RefinedTransition)
 
 
-def test_room::refinedtransition_constructor_exists():
-    assert callable(room::RefinedTransition.__init__)
+def test_room_refinedtransition_constructor_exists():
+    assert callable(room_RefinedTransition.__init__)
 
 
-def test_room::refinedtransition_constructor_args():
-    sig = inspect.signature(room::RefinedTransition.__init__)
+def test_room_refinedtransition_constructor_args():
+    sig = inspect.signature(room_RefinedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -565,23 +565,23 @@ def test_stategraphnode_constructor_args():
 
 
 
-def test_room::trpoint_is_not_abstract():
-    assert not inspect.isabstract(room::TrPoint)
+def test_room_trpoint_is_not_abstract():
+    assert not inspect.isabstract(room_TrPoint)
 
 
-def test_room::trpoint_constructor_exists():
-    assert callable(room::TrPoint.__init__)
+def test_room_trpoint_constructor_exists():
+    assert callable(room_TrPoint.__init__)
 
 
-def test_room::trpoint_constructor_args():
-    sig = inspect.signature(room::TrPoint.__init__)
+def test_room_trpoint_constructor_args():
+    sig = inspect.signature(room_TrPoint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::trpoint_has_name():
-    assert hasattr(room::TrPoint, "name")
+def test_room_trpoint_has_name():
+    assert hasattr(room_TrPoint, "name")
     descriptor = None
-    for klass in room::TrPoint.__mro__:
+    for klass in room_TrPoint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -589,23 +589,23 @@ def test_room::trpoint_has_name():
 
 
 
-def test_room::choicepoint_is_not_abstract():
-    assert not inspect.isabstract(room::ChoicePoint)
+def test_room_choicepoint_is_not_abstract():
+    assert not inspect.isabstract(room_ChoicePoint)
 
 
-def test_room::choicepoint_constructor_exists():
-    assert callable(room::ChoicePoint.__init__)
+def test_room_choicepoint_constructor_exists():
+    assert callable(room_ChoicePoint.__init__)
 
 
-def test_room::choicepoint_constructor_args():
-    sig = inspect.signature(room::ChoicePoint.__init__)
+def test_room_choicepoint_constructor_args():
+    sig = inspect.signature(room_ChoicePoint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::choicepoint_has_name():
-    assert hasattr(room::ChoicePoint, "name")
+def test_room_choicepoint_has_name():
+    assert hasattr(room_ChoicePoint, "name")
     descriptor = None
-    for klass in room::ChoicePoint.__mro__:
+    for klass in room_ChoicePoint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -613,30 +613,30 @@ def test_room::choicepoint_has_name():
 
 
 
-def test_room::state_is_not_abstract():
-    assert not inspect.isabstract(room::State)
+def test_room_state_is_not_abstract():
+    assert not inspect.isabstract(room_State)
 
 
-def test_room::state_constructor_exists():
-    assert callable(room::State.__init__)
+def test_room_state_constructor_exists():
+    assert callable(room_State.__init__)
 
 
-def test_room::state_constructor_args():
-    sig = inspect.signature(room::State.__init__)
+def test_room_state_constructor_args():
+    sig = inspect.signature(room_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::stategraphitem_is_not_abstract():
-    assert not inspect.isabstract(room::StateGraphItem)
+def test_room_stategraphitem_is_not_abstract():
+    assert not inspect.isabstract(room_StateGraphItem)
 
 
-def test_room::stategraphitem_constructor_exists():
-    assert callable(room::StateGraphItem.__init__)
+def test_room_stategraphitem_constructor_exists():
+    assert callable(room_StateGraphItem.__init__)
 
 
-def test_room::stategraphitem_constructor_args():
-    sig = inspect.signature(room::StateGraphItem.__init__)
+def test_room_stategraphitem_constructor_args():
+    sig = inspect.signature(room_StateGraphItem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -655,23 +655,23 @@ def test_stategraphitem_constructor_args():
 
 
 
-def test_room::transition_is_not_abstract():
-    assert not inspect.isabstract(room::Transition)
+def test_room_transition_is_not_abstract():
+    assert not inspect.isabstract(room_Transition)
 
 
-def test_room::transition_constructor_exists():
-    assert callable(room::Transition.__init__)
+def test_room_transition_constructor_exists():
+    assert callable(room_Transition.__init__)
 
 
-def test_room::transition_constructor_args():
-    sig = inspect.signature(room::Transition.__init__)
+def test_room_transition_constructor_args():
+    sig = inspect.signature(room_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::transition_has_name():
-    assert hasattr(room::Transition, "name")
+def test_room_transition_has_name():
+    assert hasattr(room_Transition, "name")
     descriptor = None
-    for klass in room::Transition.__mro__:
+    for klass in room_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -679,16 +679,16 @@ def test_room::transition_has_name():
 
 
 
-def test_room::stategraphnode_is_not_abstract():
-    assert not inspect.isabstract(room::StateGraphNode)
+def test_room_stategraphnode_is_not_abstract():
+    assert not inspect.isabstract(room_StateGraphNode)
 
 
-def test_room::stategraphnode_constructor_exists():
-    assert callable(room::StateGraphNode.__init__)
+def test_room_stategraphnode_constructor_exists():
+    assert callable(room_StateGraphNode.__init__)
 
 
-def test_room::stategraphnode_constructor_args():
-    sig = inspect.signature(room::StateGraphNode.__init__)
+def test_room_stategraphnode_constructor_args():
+    sig = inspect.signature(room_StateGraphNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -721,93 +721,93 @@ def test_sapoint_constructor_args():
 
 
 
-def test_room::relaysapoint_is_not_abstract():
-    assert not inspect.isabstract(room::RelaySAPoint)
+def test_room_relaysapoint_is_not_abstract():
+    assert not inspect.isabstract(room_RelaySAPoint)
 
 
-def test_room::relaysapoint_constructor_exists():
-    assert callable(room::RelaySAPoint.__init__)
+def test_room_relaysapoint_constructor_exists():
+    assert callable(room_RelaySAPoint.__init__)
 
 
-def test_room::relaysapoint_constructor_args():
-    sig = inspect.signature(room::RelaySAPoint.__init__)
+def test_room_relaysapoint_constructor_args():
+    sig = inspect.signature(room_RelaySAPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::refsapoint_is_not_abstract():
-    assert not inspect.isabstract(room::RefSAPoint)
+def test_room_refsapoint_is_not_abstract():
+    assert not inspect.isabstract(room_RefSAPoint)
 
 
-def test_room::refsapoint_constructor_exists():
-    assert callable(room::RefSAPoint.__init__)
+def test_room_refsapoint_constructor_exists():
+    assert callable(room_RefSAPoint.__init__)
 
 
-def test_room::refsapoint_constructor_args():
-    sig = inspect.signature(room::RefSAPoint.__init__)
+def test_room_refsapoint_constructor_args():
+    sig = inspect.signature(room_RefSAPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::sppoint_is_not_abstract():
-    assert not inspect.isabstract(room::SPPoint)
+def test_room_sppoint_is_not_abstract():
+    assert not inspect.isabstract(room_SPPoint)
 
 
-def test_room::sppoint_constructor_exists():
-    assert callable(room::SPPoint.__init__)
+def test_room_sppoint_constructor_exists():
+    assert callable(room_SPPoint.__init__)
 
 
-def test_room::sppoint_constructor_args():
-    sig = inspect.signature(room::SPPoint.__init__)
+def test_room_sppoint_constructor_args():
+    sig = inspect.signature(room_SPPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::sapoint_is_not_abstract():
-    assert not inspect.isabstract(room::SAPoint)
+def test_room_sapoint_is_not_abstract():
+    assert not inspect.isabstract(room_SAPoint)
 
 
-def test_room::sapoint_constructor_exists():
-    assert callable(room::SAPoint.__init__)
+def test_room_sapoint_constructor_exists():
+    assert callable(room_SAPoint.__init__)
 
 
-def test_room::sapoint_constructor_args():
-    sig = inspect.signature(room::SAPoint.__init__)
+def test_room_sapoint_constructor_args():
+    sig = inspect.signature(room_SAPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::bindingendpoint_is_not_abstract():
-    assert not inspect.isabstract(room::BindingEndPoint)
+def test_room_bindingendpoint_is_not_abstract():
+    assert not inspect.isabstract(room_BindingEndPoint)
 
 
-def test_room::bindingendpoint_constructor_exists():
-    assert callable(room::BindingEndPoint.__init__)
+def test_room_bindingendpoint_constructor_exists():
+    assert callable(room_BindingEndPoint.__init__)
 
 
-def test_room::bindingendpoint_constructor_args():
-    sig = inspect.signature(room::BindingEndPoint.__init__)
+def test_room_bindingendpoint_constructor_args():
+    sig = inspect.signature(room_BindingEndPoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::actorinstancepath_is_not_abstract():
-    assert not inspect.isabstract(room::ActorInstancePath)
+def test_room_actorinstancepath_is_not_abstract():
+    assert not inspect.isabstract(room_ActorInstancePath)
 
 
-def test_room::actorinstancepath_constructor_exists():
-    assert callable(room::ActorInstancePath.__init__)
+def test_room_actorinstancepath_constructor_exists():
+    assert callable(room_ActorInstancePath.__init__)
 
 
-def test_room::actorinstancepath_constructor_args():
-    sig = inspect.signature(room::ActorInstancePath.__init__)
+def test_room_actorinstancepath_constructor_args():
+    sig = inspect.signature(room_ActorInstancePath.__init__)
     params = list(sig.parameters.keys())
     assert "segments" in params, "Missing parameter 'segments'"
 
-def test_room::actorinstancepath_has_segments():
-    assert hasattr(room::ActorInstancePath, "segments")
+def test_room_actorinstancepath_has_segments():
+    assert hasattr(room_ActorInstancePath, "segments")
     descriptor = None
-    for klass in room::ActorInstancePath.__mro__:
+    for klass in room_ActorInstancePath.__mro__:
         if "segments" in klass.__dict__:
             descriptor = klass.__dict__["segments"]
             break
@@ -815,33 +815,33 @@ def test_room::actorinstancepath_has_segments():
 
 
 
-def test_room::logicalthread_is_not_abstract():
-    assert not inspect.isabstract(room::LogicalThread)
+def test_room_logicalthread_is_not_abstract():
+    assert not inspect.isabstract(room_LogicalThread)
 
 
-def test_room::logicalthread_constructor_exists():
-    assert callable(room::LogicalThread.__init__)
+def test_room_logicalthread_constructor_exists():
+    assert callable(room_LogicalThread.__init__)
 
 
-def test_room::logicalthread_constructor_args():
-    sig = inspect.signature(room::LogicalThread.__init__)
+def test_room_logicalthread_constructor_args():
+    sig = inspect.signature(room_LogicalThread.__init__)
     params = list(sig.parameters.keys())
     assert "prio" in params, "Missing parameter 'prio'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::logicalthread_has_prio():
-    assert hasattr(room::LogicalThread, "prio")
+def test_room_logicalthread_has_prio():
+    assert hasattr(room_LogicalThread, "prio")
     descriptor = None
-    for klass in room::LogicalThread.__mro__:
+    for klass in room_LogicalThread.__mro__:
         if "prio" in klass.__dict__:
             descriptor = klass.__dict__["prio"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::logicalthread_has_name():
-    assert hasattr(room::LogicalThread, "name")
+def test_room_logicalthread_has_name():
+    assert hasattr(room_LogicalThread, "name")
     descriptor = None
-    for klass in room::LogicalThread.__mro__:
+    for klass in room_LogicalThread.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -849,37 +849,37 @@ def test_room::logicalthread_has_name():
 
 
 
-def test_room::stategraph_is_not_abstract():
-    assert not inspect.isabstract(room::StateGraph)
+def test_room_stategraph_is_not_abstract():
+    assert not inspect.isabstract(room_StateGraph)
 
 
-def test_room::stategraph_constructor_exists():
-    assert callable(room::StateGraph.__init__)
+def test_room_stategraph_constructor_exists():
+    assert callable(room_StateGraph.__init__)
 
 
-def test_room::stategraph_constructor_args():
-    sig = inspect.signature(room::StateGraph.__init__)
+def test_room_stategraph_constructor_args():
+    sig = inspect.signature(room_StateGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::actorcontainerref_is_not_abstract():
-    assert not inspect.isabstract(room::ActorContainerRef)
+def test_room_actorcontainerref_is_not_abstract():
+    assert not inspect.isabstract(room_ActorContainerRef)
 
 
-def test_room::actorcontainerref_constructor_exists():
-    assert callable(room::ActorContainerRef.__init__)
+def test_room_actorcontainerref_constructor_exists():
+    assert callable(room_ActorContainerRef.__init__)
 
 
-def test_room::actorcontainerref_constructor_args():
-    sig = inspect.signature(room::ActorContainerRef.__init__)
+def test_room_actorcontainerref_constructor_args():
+    sig = inspect.signature(room_ActorContainerRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::actorcontainerref_has_name():
-    assert hasattr(room::ActorContainerRef, "name")
+def test_room_actorcontainerref_has_name():
+    assert hasattr(room_ActorContainerRef, "name")
     descriptor = None
-    for klass in room::ActorContainerRef.__mro__:
+    for klass in room_ActorContainerRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -887,16 +887,16 @@ def test_room::actorcontainerref_has_name():
 
 
 
-def test_room::subsystemref_is_not_abstract():
-    assert not inspect.isabstract(room::SubSystemRef)
+def test_room_subsystemref_is_not_abstract():
+    assert not inspect.isabstract(room_SubSystemRef)
 
 
-def test_room::subsystemref_constructor_exists():
-    assert callable(room::SubSystemRef.__init__)
+def test_room_subsystemref_constructor_exists():
+    assert callable(room_SubSystemRef.__init__)
 
 
-def test_room::subsystemref_constructor_args():
-    sig = inspect.signature(room::SubSystemRef.__init__)
+def test_room_subsystemref_constructor_args():
+    sig = inspect.signature(room_SubSystemRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -915,23 +915,23 @@ def test_interfaceitem_constructor_args():
 
 
 
-def test_room::interfaceitem_is_not_abstract():
-    assert not inspect.isabstract(room::InterfaceItem)
+def test_room_interfaceitem_is_not_abstract():
+    assert not inspect.isabstract(room_InterfaceItem)
 
 
-def test_room::interfaceitem_constructor_exists():
-    assert callable(room::InterfaceItem.__init__)
+def test_room_interfaceitem_constructor_exists():
+    assert callable(room_InterfaceItem.__init__)
 
 
-def test_room::interfaceitem_constructor_args():
-    sig = inspect.signature(room::InterfaceItem.__init__)
+def test_room_interfaceitem_constructor_args():
+    sig = inspect.signature(room_InterfaceItem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::interfaceitem_has_name():
-    assert hasattr(room::InterfaceItem, "name")
+def test_room_interfaceitem_has_name():
+    assert hasattr(room_InterfaceItem, "name")
     descriptor = None
-    for klass in room::InterfaceItem.__mro__:
+    for klass in room_InterfaceItem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -953,105 +953,105 @@ def test_messagehandler_constructor_args():
 
 
 
-def test_room::outmessagehandler_is_not_abstract():
-    assert not inspect.isabstract(room::OutMessageHandler)
+def test_room_outmessagehandler_is_not_abstract():
+    assert not inspect.isabstract(room_OutMessageHandler)
 
 
-def test_room::outmessagehandler_constructor_exists():
-    assert callable(room::OutMessageHandler.__init__)
+def test_room_outmessagehandler_constructor_exists():
+    assert callable(room_OutMessageHandler.__init__)
 
 
-def test_room::outmessagehandler_constructor_args():
-    sig = inspect.signature(room::OutMessageHandler.__init__)
+def test_room_outmessagehandler_constructor_args():
+    sig = inspect.signature(room_OutMessageHandler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::inmessagehandler_is_not_abstract():
-    assert not inspect.isabstract(room::InMessageHandler)
+def test_room_inmessagehandler_is_not_abstract():
+    assert not inspect.isabstract(room_InMessageHandler)
 
 
-def test_room::inmessagehandler_constructor_exists():
-    assert callable(room::InMessageHandler.__init__)
+def test_room_inmessagehandler_constructor_exists():
+    assert callable(room_InMessageHandler.__init__)
 
 
-def test_room::inmessagehandler_constructor_args():
-    sig = inspect.signature(room::InMessageHandler.__init__)
+def test_room_inmessagehandler_constructor_args():
+    sig = inspect.signature(room_InMessageHandler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::sapref_is_not_abstract():
-    assert not inspect.isabstract(room::SAPRef)
+def test_room_sapref_is_not_abstract():
+    assert not inspect.isabstract(room_SAPRef)
 
 
-def test_room::sapref_constructor_exists():
-    assert callable(room::SAPRef.__init__)
+def test_room_sapref_constructor_exists():
+    assert callable(room_SAPRef.__init__)
 
 
-def test_room::sapref_constructor_args():
-    sig = inspect.signature(room::SAPRef.__init__)
+def test_room_sapref_constructor_args():
+    sig = inspect.signature(room_SAPRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::serviceimplementation_is_not_abstract():
-    assert not inspect.isabstract(room::ServiceImplementation)
+def test_room_serviceimplementation_is_not_abstract():
+    assert not inspect.isabstract(room_ServiceImplementation)
 
 
-def test_room::serviceimplementation_constructor_exists():
-    assert callable(room::ServiceImplementation.__init__)
+def test_room_serviceimplementation_constructor_exists():
+    assert callable(room_ServiceImplementation.__init__)
 
 
-def test_room::serviceimplementation_constructor_args():
-    sig = inspect.signature(room::ServiceImplementation.__init__)
+def test_room_serviceimplementation_constructor_args():
+    sig = inspect.signature(room_ServiceImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::externalport_is_not_abstract():
-    assert not inspect.isabstract(room::ExternalPort)
+def test_room_externalport_is_not_abstract():
+    assert not inspect.isabstract(room_ExternalPort)
 
 
-def test_room::externalport_constructor_exists():
-    assert callable(room::ExternalPort.__init__)
+def test_room_externalport_constructor_exists():
+    assert callable(room_ExternalPort.__init__)
 
 
-def test_room::externalport_constructor_args():
-    sig = inspect.signature(room::ExternalPort.__init__)
+def test_room_externalport_constructor_args():
+    sig = inspect.signature(room_ExternalPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::port_is_not_abstract():
-    assert not inspect.isabstract(room::Port)
+def test_room_port_is_not_abstract():
+    assert not inspect.isabstract(room_Port)
 
 
-def test_room::port_constructor_exists():
-    assert callable(room::Port.__init__)
+def test_room_port_constructor_exists():
+    assert callable(room_Port.__init__)
 
 
-def test_room::port_constructor_args():
-    sig = inspect.signature(room::Port.__init__)
+def test_room_port_constructor_args():
+    sig = inspect.signature(room_Port.__init__)
     params = list(sig.parameters.keys())
-    assert "multiplicity" in params, "Missing parameter 'multiplicity'"
     assert "conjugated" in params, "Missing parameter 'conjugated'"
+    assert "multiplicity" in params, "Missing parameter 'multiplicity'"
 
-def test_room::port_has_multiplicity():
-    assert hasattr(room::Port, "multiplicity")
+def test_room_port_has_conjugated():
+    assert hasattr(room_Port, "conjugated")
     descriptor = None
-    for klass in room::Port.__mro__:
-        if "multiplicity" in klass.__dict__:
-            descriptor = klass.__dict__["multiplicity"]
+    for klass in room_Port.__mro__:
+        if "conjugated" in klass.__dict__:
+            descriptor = klass.__dict__["conjugated"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::port_has_conjugated():
-    assert hasattr(room::Port, "conjugated")
+def test_room_port_has_multiplicity():
+    assert hasattr(room_Port, "multiplicity")
     descriptor = None
-    for klass in room::Port.__mro__:
-        if "conjugated" in klass.__dict__:
-            descriptor = klass.__dict__["conjugated"]
+    for klass in room_Port.__mro__:
+        if "multiplicity" in klass.__dict__:
+            descriptor = klass.__dict__["multiplicity"]
             break
     assert isinstance(descriptor, property)
 
@@ -1085,44 +1085,44 @@ def test_semanticsrule_constructor_args():
 
 
 
-def test_room::outsemanticsrule_is_not_abstract():
-    assert not inspect.isabstract(room::OutSemanticsRule)
+def test_room_outsemanticsrule_is_not_abstract():
+    assert not inspect.isabstract(room_OutSemanticsRule)
 
 
-def test_room::outsemanticsrule_constructor_exists():
-    assert callable(room::OutSemanticsRule.__init__)
+def test_room_outsemanticsrule_constructor_exists():
+    assert callable(room_OutSemanticsRule.__init__)
 
 
-def test_room::outsemanticsrule_constructor_args():
-    sig = inspect.signature(room::OutSemanticsRule.__init__)
+def test_room_outsemanticsrule_constructor_args():
+    sig = inspect.signature(room_OutSemanticsRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::insemanticsrule_is_not_abstract():
-    assert not inspect.isabstract(room::InSemanticsRule)
+def test_room_insemanticsrule_is_not_abstract():
+    assert not inspect.isabstract(room_InSemanticsRule)
 
 
-def test_room::insemanticsrule_constructor_exists():
-    assert callable(room::InSemanticsRule.__init__)
+def test_room_insemanticsrule_constructor_exists():
+    assert callable(room_InSemanticsRule.__init__)
 
 
-def test_room::insemanticsrule_constructor_args():
-    sig = inspect.signature(room::InSemanticsRule.__init__)
+def test_room_insemanticsrule_constructor_args():
+    sig = inspect.signature(room_InSemanticsRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::semanticsrule_is_not_abstract():
-    assert not inspect.isabstract(room::SemanticsRule)
+def test_room_semanticsrule_is_not_abstract():
+    assert not inspect.isabstract(room_SemanticsRule)
 
 
-def test_room::semanticsrule_constructor_exists():
-    assert callable(room::SemanticsRule.__init__)
+def test_room_semanticsrule_constructor_exists():
+    assert callable(room_SemanticsRule.__init__)
 
 
-def test_room::semanticsrule_constructor_args():
-    sig = inspect.signature(room::SemanticsRule.__init__)
+def test_room_semanticsrule_constructor_args():
+    sig = inspect.signature(room_SemanticsRule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1141,23 +1141,23 @@ def test_generalprotocolclass_constructor_args():
 
 
 
-def test_room::protocolclass_is_not_abstract():
-    assert not inspect.isabstract(room::ProtocolClass)
+def test_room_protocolclass_is_not_abstract():
+    assert not inspect.isabstract(room_ProtocolClass)
 
 
-def test_room::protocolclass_constructor_exists():
-    assert callable(room::ProtocolClass.__init__)
+def test_room_protocolclass_constructor_exists():
+    assert callable(room_ProtocolClass.__init__)
 
 
-def test_room::protocolclass_constructor_args():
-    sig = inspect.signature(room::ProtocolClass.__init__)
+def test_room_protocolclass_constructor_args():
+    sig = inspect.signature(room_ProtocolClass.__init__)
     params = list(sig.parameters.keys())
     assert "commType" in params, "Missing parameter 'commType'"
 
-def test_room::protocolclass_has_commType():
-    assert hasattr(room::ProtocolClass, "commType")
+def test_room_protocolclass_has_commType():
+    assert hasattr(room_ProtocolClass, "commType")
     descriptor = None
-    for klass in room::ProtocolClass.__mro__:
+    for klass in room_ProtocolClass.__mro__:
         if "commType" in klass.__dict__:
             descriptor = klass.__dict__["commType"]
             break
@@ -1165,37 +1165,37 @@ def test_room::protocolclass_has_commType():
 
 
 
-def test_room::messagehandler_is_not_abstract():
-    assert not inspect.isabstract(room::MessageHandler)
+def test_room_messagehandler_is_not_abstract():
+    assert not inspect.isabstract(room_MessageHandler)
 
 
-def test_room::messagehandler_constructor_exists():
-    assert callable(room::MessageHandler.__init__)
+def test_room_messagehandler_constructor_exists():
+    assert callable(room_MessageHandler.__init__)
 
 
-def test_room::messagehandler_constructor_args():
-    sig = inspect.signature(room::MessageHandler.__init__)
+def test_room_messagehandler_constructor_args():
+    sig = inspect.signature(room_MessageHandler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::subprotocol_is_not_abstract():
-    assert not inspect.isabstract(room::SubProtocol)
+def test_room_subprotocol_is_not_abstract():
+    assert not inspect.isabstract(room_SubProtocol)
 
 
-def test_room::subprotocol_constructor_exists():
-    assert callable(room::SubProtocol.__init__)
+def test_room_subprotocol_constructor_exists():
+    assert callable(room_SubProtocol.__init__)
 
 
-def test_room::subprotocol_constructor_args():
-    sig = inspect.signature(room::SubProtocol.__init__)
+def test_room_subprotocol_constructor_args():
+    sig = inspect.signature(room_SubProtocol.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::subprotocol_has_name():
-    assert hasattr(room::SubProtocol, "name")
+def test_room_subprotocol_has_name():
+    assert hasattr(room_SubProtocol, "name")
     descriptor = None
-    for klass in room::SubProtocol.__mro__:
+    for klass in room_SubProtocol.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1203,44 +1203,44 @@ def test_room::subprotocol_has_name():
 
 
 
-def test_room::compoundprotocolclass_is_not_abstract():
-    assert not inspect.isabstract(room::CompoundProtocolClass)
+def test_room_compoundprotocolclass_is_not_abstract():
+    assert not inspect.isabstract(room_CompoundProtocolClass)
 
 
-def test_room::compoundprotocolclass_constructor_exists():
-    assert callable(room::CompoundProtocolClass.__init__)
+def test_room_compoundprotocolclass_constructor_exists():
+    assert callable(room_CompoundProtocolClass.__init__)
 
 
-def test_room::compoundprotocolclass_constructor_args():
-    sig = inspect.signature(room::CompoundProtocolClass.__init__)
+def test_room_compoundprotocolclass_constructor_args():
+    sig = inspect.signature(room_CompoundProtocolClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::protocolsemantics_is_not_abstract():
-    assert not inspect.isabstract(room::ProtocolSemantics)
+def test_room_protocolsemantics_is_not_abstract():
+    assert not inspect.isabstract(room_ProtocolSemantics)
 
 
-def test_room::protocolsemantics_constructor_exists():
-    assert callable(room::ProtocolSemantics.__init__)
+def test_room_protocolsemantics_constructor_exists():
+    assert callable(room_ProtocolSemantics.__init__)
 
 
-def test_room::protocolsemantics_constructor_args():
-    sig = inspect.signature(room::ProtocolSemantics.__init__)
+def test_room_protocolsemantics_constructor_args():
+    sig = inspect.signature(room_ProtocolSemantics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::portclass_is_not_abstract():
-    assert not inspect.isabstract(room::PortClass)
+def test_room_portclass_is_not_abstract():
+    assert not inspect.isabstract(room_PortClass)
 
 
-def test_room::portclass_constructor_exists():
-    assert callable(room::PortClass.__init__)
+def test_room_portclass_constructor_exists():
+    assert callable(room_PortClass.__init__)
 
 
-def test_room::portclass_constructor_args():
-    sig = inspect.signature(room::PortClass.__init__)
+def test_room_portclass_constructor_args():
+    sig = inspect.signature(room_PortClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1259,33 +1259,33 @@ def test_complextype_constructor_args():
 
 
 
-def test_room::message_is_not_abstract():
-    assert not inspect.isabstract(room::Message)
+def test_room_message_is_not_abstract():
+    assert not inspect.isabstract(room_Message)
 
 
-def test_room::message_constructor_exists():
-    assert callable(room::Message.__init__)
+def test_room_message_constructor_exists():
+    assert callable(room_Message.__init__)
 
 
-def test_room::message_constructor_args():
-    sig = inspect.signature(room::Message.__init__)
+def test_room_message_constructor_args():
+    sig = inspect.signature(room_Message.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "priv" in params, "Missing parameter 'priv'"
 
-def test_room::message_has_name():
-    assert hasattr(room::Message, "name")
+def test_room_message_has_name():
+    assert hasattr(room_Message, "name")
     descriptor = None
-    for klass in room::Message.__mro__:
+    for klass in room_Message.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::message_has_priv():
-    assert hasattr(room::Message, "priv")
+def test_room_message_has_priv():
+    assert hasattr(room_Message, "priv")
     descriptor = None
-    for klass in room::Message.__mro__:
+    for klass in room_Message.__mro__:
         if "priv" in klass.__dict__:
             descriptor = klass.__dict__["priv"]
             break
@@ -1307,37 +1307,37 @@ def test_operation_constructor_args():
 
 
 
-def test_room::portoperation_is_not_abstract():
-    assert not inspect.isabstract(room::PortOperation)
+def test_room_portoperation_is_not_abstract():
+    assert not inspect.isabstract(room_PortOperation)
 
 
-def test_room::portoperation_constructor_exists():
-    assert callable(room::PortOperation.__init__)
+def test_room_portoperation_constructor_exists():
+    assert callable(room_PortOperation.__init__)
 
 
-def test_room::portoperation_constructor_args():
-    sig = inspect.signature(room::PortOperation.__init__)
+def test_room_portoperation_constructor_args():
+    sig = inspect.signature(room_PortOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::operation_is_not_abstract():
-    assert not inspect.isabstract(room::Operation)
+def test_room_operation_is_not_abstract():
+    assert not inspect.isabstract(room_Operation)
 
 
-def test_room::operation_constructor_exists():
-    assert callable(room::Operation.__init__)
+def test_room_operation_constructor_exists():
+    assert callable(room_Operation.__init__)
 
 
-def test_room::operation_constructor_args():
-    sig = inspect.signature(room::Operation.__init__)
+def test_room_operation_constructor_args():
+    sig = inspect.signature(room_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::operation_has_name():
-    assert hasattr(room::Operation, "name")
+def test_room_operation_has_name():
+    assert hasattr(room_Operation, "name")
     descriptor = None
-    for klass in room::Operation.__mro__:
+    for klass in room_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1345,23 +1345,23 @@ def test_room::operation_has_name():
 
 
 
-def test_room::standardoperation_is_not_abstract():
-    assert not inspect.isabstract(room::StandardOperation)
+def test_room_standardoperation_is_not_abstract():
+    assert not inspect.isabstract(room_StandardOperation)
 
 
-def test_room::standardoperation_constructor_exists():
-    assert callable(room::StandardOperation.__init__)
+def test_room_standardoperation_constructor_exists():
+    assert callable(room_StandardOperation.__init__)
 
 
-def test_room::standardoperation_constructor_args():
-    sig = inspect.signature(room::StandardOperation.__init__)
+def test_room_standardoperation_constructor_args():
+    sig = inspect.signature(room_StandardOperation.__init__)
     params = list(sig.parameters.keys())
     assert "destructor" in params, "Missing parameter 'destructor'"
 
-def test_room::standardoperation_has_destructor():
-    assert hasattr(room::StandardOperation, "destructor")
+def test_room_standardoperation_has_destructor():
+    assert hasattr(room_StandardOperation, "destructor")
     descriptor = None
-    for klass in room::StandardOperation.__mro__:
+    for klass in room_StandardOperation.__mro__:
         if "destructor" in klass.__dict__:
             descriptor = klass.__dict__["destructor"]
             break
@@ -1369,43 +1369,43 @@ def test_room::standardoperation_has_destructor():
 
 
 
-def test_room::attribute_is_not_abstract():
-    assert not inspect.isabstract(room::Attribute)
+def test_room_attribute_is_not_abstract():
+    assert not inspect.isabstract(room_Attribute)
 
 
-def test_room::attribute_constructor_exists():
-    assert callable(room::Attribute.__init__)
+def test_room_attribute_constructor_exists():
+    assert callable(room_Attribute.__init__)
 
 
-def test_room::attribute_constructor_args():
-    sig = inspect.signature(room::Attribute.__init__)
+def test_room_attribute_constructor_args():
+    sig = inspect.signature(room_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
     assert "name" in params, "Missing parameter 'name'"
     assert "defaultValueLiteral" in params, "Missing parameter 'defaultValueLiteral'"
 
-def test_room::attribute_has_size():
-    assert hasattr(room::Attribute, "size")
+def test_room_attribute_has_size():
+    assert hasattr(room_Attribute, "size")
     descriptor = None
-    for klass in room::Attribute.__mro__:
+    for klass in room_Attribute.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::attribute_has_name():
-    assert hasattr(room::Attribute, "name")
+def test_room_attribute_has_name():
+    assert hasattr(room_Attribute, "name")
     descriptor = None
-    for klass in room::Attribute.__mro__:
+    for klass in room_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::attribute_has_defaultValueLiteral():
-    assert hasattr(room::Attribute, "defaultValueLiteral")
+def test_room_attribute_has_defaultValueLiteral():
+    assert hasattr(room_Attribute, "defaultValueLiteral")
     descriptor = None
-    for klass in room::Attribute.__mro__:
+    for klass in room_Attribute.__mro__:
         if "defaultValueLiteral" in klass.__dict__:
             descriptor = klass.__dict__["defaultValueLiteral"]
             break
@@ -1413,49 +1413,49 @@ def test_room::attribute_has_defaultValueLiteral():
 
 
 
-def test_room::subsystemclass_is_not_abstract():
-    assert not inspect.isabstract(room::SubSystemClass)
+def test_room_subsystemclass_is_not_abstract():
+    assert not inspect.isabstract(room_SubSystemClass)
 
 
-def test_room::subsystemclass_constructor_exists():
-    assert callable(room::SubSystemClass.__init__)
+def test_room_subsystemclass_constructor_exists():
+    assert callable(room_SubSystemClass.__init__)
 
 
-def test_room::subsystemclass_constructor_args():
-    sig = inspect.signature(room::SubSystemClass.__init__)
+def test_room_subsystemclass_constructor_args():
+    sig = inspect.signature(room_SubSystemClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::actorclass_is_not_abstract():
-    assert not inspect.isabstract(room::ActorClass)
+def test_room_actorclass_is_not_abstract():
+    assert not inspect.isabstract(room_ActorClass)
 
 
-def test_room::actorclass_constructor_exists():
-    assert callable(room::ActorClass.__init__)
+def test_room_actorclass_constructor_exists():
+    assert callable(room_ActorClass.__init__)
 
 
-def test_room::actorclass_constructor_args():
-    sig = inspect.signature(room::ActorClass.__init__)
+def test_room_actorclass_constructor_args():
+    sig = inspect.signature(room_ActorClass.__init__)
     params = list(sig.parameters.keys())
-    assert "commType" in params, "Missing parameter 'commType'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "commType" in params, "Missing parameter 'commType'"
 
-def test_room::actorclass_has_commType():
-    assert hasattr(room::ActorClass, "commType")
+def test_room_actorclass_has_abstract():
+    assert hasattr(room_ActorClass, "abstract")
     descriptor = None
-    for klass in room::ActorClass.__mro__:
-        if "commType" in klass.__dict__:
-            descriptor = klass.__dict__["commType"]
+    for klass in room_ActorClass.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::actorclass_has_abstract():
-    assert hasattr(room::ActorClass, "abstract")
+def test_room_actorclass_has_commType():
+    assert hasattr(room_ActorClass, "commType")
     descriptor = None
-    for klass in room::ActorClass.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
+    for klass in room_ActorClass.__mro__:
+        if "commType" in klass.__dict__:
+            descriptor = klass.__dict__["commType"]
             break
     assert isinstance(descriptor, property)
 
@@ -1475,37 +1475,37 @@ def test_datatype_constructor_args():
 
 
 
-def test_room::complextype_is_not_abstract():
-    assert not inspect.isabstract(room::ComplexType)
+def test_room_complextype_is_not_abstract():
+    assert not inspect.isabstract(room_ComplexType)
 
 
-def test_room::complextype_constructor_exists():
-    assert callable(room::ComplexType.__init__)
+def test_room_complextype_constructor_exists():
+    assert callable(room_ComplexType.__init__)
 
 
-def test_room::complextype_constructor_args():
-    sig = inspect.signature(room::ComplexType.__init__)
+def test_room_complextype_constructor_args():
+    sig = inspect.signature(room_ComplexType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::refabletype_is_not_abstract():
-    assert not inspect.isabstract(room::RefableType)
+def test_room_refabletype_is_not_abstract():
+    assert not inspect.isabstract(room_RefableType)
 
 
-def test_room::refabletype_constructor_exists():
-    assert callable(room::RefableType.__init__)
+def test_room_refabletype_constructor_exists():
+    assert callable(room_RefableType.__init__)
 
 
-def test_room::refabletype_constructor_args():
-    sig = inspect.signature(room::RefableType.__init__)
+def test_room_refabletype_constructor_args():
+    sig = inspect.signature(room_RefableType.__init__)
     params = list(sig.parameters.keys())
     assert "ref" in params, "Missing parameter 'ref'"
 
-def test_room::refabletype_has_ref():
-    assert hasattr(room::RefableType, "ref")
+def test_room_refabletype_has_ref():
+    assert hasattr(room_RefableType, "ref")
     descriptor = None
-    for klass in room::RefableType.__mro__:
+    for klass in room_RefableType.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
@@ -1513,23 +1513,23 @@ def test_room::refabletype_has_ref():
 
 
 
-def test_room::vardecl_is_not_abstract():
-    assert not inspect.isabstract(room::VarDecl)
+def test_room_vardecl_is_not_abstract():
+    assert not inspect.isabstract(room_VarDecl)
 
 
-def test_room::vardecl_constructor_exists():
-    assert callable(room::VarDecl.__init__)
+def test_room_vardecl_constructor_exists():
+    assert callable(room_VarDecl.__init__)
 
 
-def test_room::vardecl_constructor_args():
-    sig = inspect.signature(room::VarDecl.__init__)
+def test_room_vardecl_constructor_args():
+    sig = inspect.signature(room_VarDecl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::vardecl_has_name():
-    assert hasattr(room::VarDecl, "name")
+def test_room_vardecl_has_name():
+    assert hasattr(room_VarDecl, "name")
     descriptor = None
-    for klass in room::VarDecl.__mro__:
+    for klass in room_VarDecl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1537,23 +1537,23 @@ def test_room::vardecl_has_name():
 
 
 
-def test_room::actorref_is_not_abstract():
-    assert not inspect.isabstract(room::ActorRef)
+def test_room_actorref_is_not_abstract():
+    assert not inspect.isabstract(room_ActorRef)
 
 
-def test_room::actorref_constructor_exists():
-    assert callable(room::ActorRef.__init__)
+def test_room_actorref_constructor_exists():
+    assert callable(room_ActorRef.__init__)
 
 
-def test_room::actorref_constructor_args():
-    sig = inspect.signature(room::ActorRef.__init__)
+def test_room_actorref_constructor_args():
+    sig = inspect.signature(room_ActorRef.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_room::actorref_has_size():
-    assert hasattr(room::ActorRef, "size")
+def test_room_actorref_has_size():
+    assert hasattr(room_ActorRef, "size")
     descriptor = None
-    for klass in room::ActorRef.__mro__:
+    for klass in room_ActorRef.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -1561,23 +1561,23 @@ def test_room::actorref_has_size():
 
 
 
-def test_room::detailcode_is_not_abstract():
-    assert not inspect.isabstract(room::DetailCode)
+def test_room_detailcode_is_not_abstract():
+    assert not inspect.isabstract(room_DetailCode)
 
 
-def test_room::detailcode_constructor_exists():
-    assert callable(room::DetailCode.__init__)
+def test_room_detailcode_constructor_exists():
+    assert callable(room_DetailCode.__init__)
 
 
-def test_room::detailcode_constructor_args():
-    sig = inspect.signature(room::DetailCode.__init__)
+def test_room_detailcode_constructor_args():
+    sig = inspect.signature(room_DetailCode.__init__)
     params = list(sig.parameters.keys())
     assert "commands" in params, "Missing parameter 'commands'"
 
-def test_room::detailcode_has_commands():
-    assert hasattr(room::DetailCode, "commands")
+def test_room_detailcode_has_commands():
+    assert hasattr(room_DetailCode, "commands")
     descriptor = None
-    for klass in room::DetailCode.__mro__:
+    for klass in room_DetailCode.__mro__:
         if "commands" in klass.__dict__:
             descriptor = klass.__dict__["commands"]
             break
@@ -1585,16 +1585,16 @@ def test_room::detailcode_has_commands():
 
 
 
-def test_room::sppref_is_not_abstract():
-    assert not inspect.isabstract(room::SPPRef)
+def test_room_sppref_is_not_abstract():
+    assert not inspect.isabstract(room_SPPRef)
 
 
-def test_room::sppref_constructor_exists():
-    assert callable(room::SPPRef.__init__)
+def test_room_sppref_constructor_exists():
+    assert callable(room_SPPRef.__init__)
 
 
-def test_room::sppref_constructor_args():
-    sig = inspect.signature(room::SPPRef.__init__)
+def test_room_sppref_constructor_args():
+    sig = inspect.signature(room_SPPRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1613,65 +1613,65 @@ def test_structureclass_constructor_args():
 
 
 
-def test_room::actorcontainerclass_is_not_abstract():
-    assert not inspect.isabstract(room::ActorContainerClass)
+def test_room_actorcontainerclass_is_not_abstract():
+    assert not inspect.isabstract(room_ActorContainerClass)
 
 
-def test_room::actorcontainerclass_constructor_exists():
-    assert callable(room::ActorContainerClass.__init__)
+def test_room_actorcontainerclass_constructor_exists():
+    assert callable(room_ActorContainerClass.__init__)
 
 
-def test_room::actorcontainerclass_constructor_args():
-    sig = inspect.signature(room::ActorContainerClass.__init__)
+def test_room_actorcontainerclass_constructor_args():
+    sig = inspect.signature(room_ActorContainerClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::layerconnection_is_not_abstract():
-    assert not inspect.isabstract(room::LayerConnection)
+def test_room_layerconnection_is_not_abstract():
+    assert not inspect.isabstract(room_LayerConnection)
 
 
-def test_room::layerconnection_constructor_exists():
-    assert callable(room::LayerConnection.__init__)
+def test_room_layerconnection_constructor_exists():
+    assert callable(room_LayerConnection.__init__)
 
 
-def test_room::layerconnection_constructor_args():
-    sig = inspect.signature(room::LayerConnection.__init__)
+def test_room_layerconnection_constructor_args():
+    sig = inspect.signature(room_LayerConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::binding_is_not_abstract():
-    assert not inspect.isabstract(room::Binding)
+def test_room_binding_is_not_abstract():
+    assert not inspect.isabstract(room_Binding)
 
 
-def test_room::binding_constructor_exists():
-    assert callable(room::Binding.__init__)
+def test_room_binding_constructor_exists():
+    assert callable(room_Binding.__init__)
 
 
-def test_room::binding_constructor_args():
-    sig = inspect.signature(room::Binding.__init__)
+def test_room_binding_constructor_args():
+    sig = inspect.signature(room_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::annotation_is_not_abstract():
-    assert not inspect.isabstract(room::Annotation)
+def test_room_annotation_is_not_abstract():
+    assert not inspect.isabstract(room_Annotation)
 
 
-def test_room::annotation_constructor_exists():
-    assert callable(room::Annotation.__init__)
+def test_room_annotation_constructor_exists():
+    assert callable(room_Annotation.__init__)
 
 
-def test_room::annotation_constructor_args():
-    sig = inspect.signature(room::Annotation.__init__)
+def test_room_annotation_constructor_args():
+    sig = inspect.signature(room_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::annotation_has_name():
-    assert hasattr(room::Annotation, "name")
+def test_room_annotation_has_name():
+    assert hasattr(room_Annotation, "name")
     descriptor = None
-    for klass in room::Annotation.__mro__:
+    for klass in room_Annotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1693,65 +1693,65 @@ def test_roomclass_constructor_args():
 
 
 
-def test_room::generalprotocolclass_is_not_abstract():
-    assert not inspect.isabstract(room::GeneralProtocolClass)
+def test_room_datatype_is_not_abstract():
+    assert not inspect.isabstract(room_DataType)
 
 
-def test_room::generalprotocolclass_constructor_exists():
-    assert callable(room::GeneralProtocolClass.__init__)
+def test_room_datatype_constructor_exists():
+    assert callable(room_DataType.__init__)
 
 
-def test_room::generalprotocolclass_constructor_args():
-    sig = inspect.signature(room::GeneralProtocolClass.__init__)
+def test_room_datatype_constructor_args():
+    sig = inspect.signature(room_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::datatype_is_not_abstract():
-    assert not inspect.isabstract(room::DataType)
+def test_room_generalprotocolclass_is_not_abstract():
+    assert not inspect.isabstract(room_GeneralProtocolClass)
 
 
-def test_room::datatype_constructor_exists():
-    assert callable(room::DataType.__init__)
+def test_room_generalprotocolclass_constructor_exists():
+    assert callable(room_GeneralProtocolClass.__init__)
 
 
-def test_room::datatype_constructor_args():
-    sig = inspect.signature(room::DataType.__init__)
+def test_room_generalprotocolclass_constructor_args():
+    sig = inspect.signature(room_GeneralProtocolClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::structureclass_is_not_abstract():
-    assert not inspect.isabstract(room::StructureClass)
+def test_room_structureclass_is_not_abstract():
+    assert not inspect.isabstract(room_StructureClass)
 
 
-def test_room::structureclass_constructor_exists():
-    assert callable(room::StructureClass.__init__)
+def test_room_structureclass_constructor_exists():
+    assert callable(room_StructureClass.__init__)
 
 
-def test_room::structureclass_constructor_args():
-    sig = inspect.signature(room::StructureClass.__init__)
+def test_room_structureclass_constructor_args():
+    sig = inspect.signature(room_StructureClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::roomclass_is_not_abstract():
-    assert not inspect.isabstract(room::RoomClass)
+def test_room_roomclass_is_not_abstract():
+    assert not inspect.isabstract(room_RoomClass)
 
 
-def test_room::roomclass_constructor_exists():
-    assert callable(room::RoomClass.__init__)
+def test_room_roomclass_constructor_exists():
+    assert callable(room_RoomClass.__init__)
 
 
-def test_room::roomclass_constructor_args():
-    sig = inspect.signature(room::RoomClass.__init__)
+def test_room_roomclass_constructor_args():
+    sig = inspect.signature(room_RoomClass.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::roomclass_has_name():
-    assert hasattr(room::RoomClass, "name")
+def test_room_roomclass_has_name():
+    assert hasattr(room_RoomClass, "name")
     descriptor = None
-    for klass in room::RoomClass.__mro__:
+    for klass in room_RoomClass.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1759,51 +1759,51 @@ def test_room::roomclass_has_name():
 
 
 
-def test_room::logicalsystem_is_not_abstract():
-    assert not inspect.isabstract(room::LogicalSystem)
+def test_room_logicalsystem_is_not_abstract():
+    assert not inspect.isabstract(room_LogicalSystem)
 
 
-def test_room::logicalsystem_constructor_exists():
-    assert callable(room::LogicalSystem.__init__)
+def test_room_logicalsystem_constructor_exists():
+    assert callable(room_LogicalSystem.__init__)
 
 
-def test_room::logicalsystem_constructor_args():
-    sig = inspect.signature(room::LogicalSystem.__init__)
+def test_room_logicalsystem_constructor_args():
+    sig = inspect.signature(room_LogicalSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::dataclass_is_not_abstract():
-    assert not inspect.isabstract(room::DataClass)
+def test_room_dataclass_is_not_abstract():
+    assert not inspect.isabstract(room_DataClass)
 
 
-def test_room::dataclass_constructor_exists():
-    assert callable(room::DataClass.__init__)
+def test_room_dataclass_constructor_exists():
+    assert callable(room_DataClass.__init__)
 
 
-def test_room::dataclass_constructor_args():
-    sig = inspect.signature(room::DataClass.__init__)
+def test_room_dataclass_constructor_args():
+    sig = inspect.signature(room_DataClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_room::externaltype_is_not_abstract():
-    assert not inspect.isabstract(room::ExternalType)
+def test_room_externaltype_is_not_abstract():
+    assert not inspect.isabstract(room_ExternalType)
 
 
-def test_room::externaltype_constructor_exists():
-    assert callable(room::ExternalType.__init__)
+def test_room_externaltype_constructor_exists():
+    assert callable(room_ExternalType.__init__)
 
 
-def test_room::externaltype_constructor_args():
-    sig = inspect.signature(room::ExternalType.__init__)
+def test_room_externaltype_constructor_args():
+    sig = inspect.signature(room_ExternalType.__init__)
     params = list(sig.parameters.keys())
     assert "targetName" in params, "Missing parameter 'targetName'"
 
-def test_room::externaltype_has_targetName():
-    assert hasattr(room::ExternalType, "targetName")
+def test_room_externaltype_has_targetName():
+    assert hasattr(room_ExternalType, "targetName")
     descriptor = None
-    for klass in room::ExternalType.__mro__:
+    for klass in room_ExternalType.__mro__:
         if "targetName" in klass.__dict__:
             descriptor = klass.__dict__["targetName"]
             break
@@ -1811,53 +1811,53 @@ def test_room::externaltype_has_targetName():
 
 
 
-def test_room::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(room::PrimitiveType)
+def test_room_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(room_PrimitiveType)
 
 
-def test_room::primitivetype_constructor_exists():
-    assert callable(room::PrimitiveType.__init__)
+def test_room_primitivetype_constructor_exists():
+    assert callable(room_PrimitiveType.__init__)
 
 
-def test_room::primitivetype_constructor_args():
-    sig = inspect.signature(room::PrimitiveType.__init__)
+def test_room_primitivetype_constructor_args():
+    sig = inspect.signature(room_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
+    assert "castName" in params, "Missing parameter 'castName'"
     assert "type" in params, "Missing parameter 'type'"
     assert "targetName" in params, "Missing parameter 'targetName'"
-    assert "castName" in params, "Missing parameter 'castName'"
     assert "defaultValueLiteral" in params, "Missing parameter 'defaultValueLiteral'"
 
-def test_room::primitivetype_has_type():
-    assert hasattr(room::PrimitiveType, "type")
+def test_room_primitivetype_has_castName():
+    assert hasattr(room_PrimitiveType, "castName")
     descriptor = None
-    for klass in room::PrimitiveType.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_room::primitivetype_has_targetName():
-    assert hasattr(room::PrimitiveType, "targetName")
-    descriptor = None
-    for klass in room::PrimitiveType.__mro__:
-        if "targetName" in klass.__dict__:
-            descriptor = klass.__dict__["targetName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_room::primitivetype_has_castName():
-    assert hasattr(room::PrimitiveType, "castName")
-    descriptor = None
-    for klass in room::PrimitiveType.__mro__:
+    for klass in room_PrimitiveType.__mro__:
         if "castName" in klass.__dict__:
             descriptor = klass.__dict__["castName"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::primitivetype_has_defaultValueLiteral():
-    assert hasattr(room::PrimitiveType, "defaultValueLiteral")
+def test_room_primitivetype_has_type():
+    assert hasattr(room_PrimitiveType, "type")
     descriptor = None
-    for klass in room::PrimitiveType.__mro__:
+    for klass in room_PrimitiveType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_room_primitivetype_has_targetName():
+    assert hasattr(room_PrimitiveType, "targetName")
+    descriptor = None
+    for klass in room_PrimitiveType.__mro__:
+        if "targetName" in klass.__dict__:
+            descriptor = klass.__dict__["targetName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_room_primitivetype_has_defaultValueLiteral():
+    assert hasattr(room_PrimitiveType, "defaultValueLiteral")
+    descriptor = None
+    for klass in room_PrimitiveType.__mro__:
         if "defaultValueLiteral" in klass.__dict__:
             descriptor = klass.__dict__["defaultValueLiteral"]
             break
@@ -1865,33 +1865,33 @@ def test_room::primitivetype_has_defaultValueLiteral():
 
 
 
-def test_room::import_is_not_abstract():
-    assert not inspect.isabstract(room::Import)
+def test_room_import_is_not_abstract():
+    assert not inspect.isabstract(room_Import)
 
 
-def test_room::import_constructor_exists():
-    assert callable(room::Import.__init__)
+def test_room_import_constructor_exists():
+    assert callable(room_Import.__init__)
 
 
-def test_room::import_constructor_args():
-    sig = inspect.signature(room::Import.__init__)
+def test_room_import_constructor_args():
+    sig = inspect.signature(room_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_room::import_has_importURI():
-    assert hasattr(room::Import, "importURI")
+def test_room_import_has_importURI():
+    assert hasattr(room_Import, "importURI")
     descriptor = None
-    for klass in room::Import.__mro__:
+    for klass in room_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_room::import_has_importedNamespace():
-    assert hasattr(room::Import, "importedNamespace")
+def test_room_import_has_importedNamespace():
+    assert hasattr(room_Import, "importedNamespace")
     descriptor = None
-    for klass in room::Import.__mro__:
+    for klass in room_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -1899,23 +1899,23 @@ def test_room::import_has_importedNamespace():
 
 
 
-def test_room::documentation_is_not_abstract():
-    assert not inspect.isabstract(room::Documentation)
+def test_room_documentation_is_not_abstract():
+    assert not inspect.isabstract(room_Documentation)
 
 
-def test_room::documentation_constructor_exists():
-    assert callable(room::Documentation.__init__)
+def test_room_documentation_constructor_exists():
+    assert callable(room_Documentation.__init__)
 
 
-def test_room::documentation_constructor_args():
-    sig = inspect.signature(room::Documentation.__init__)
+def test_room_documentation_constructor_args():
+    sig = inspect.signature(room_Documentation.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_room::documentation_has_text():
-    assert hasattr(room::Documentation, "text")
+def test_room_documentation_has_text():
+    assert hasattr(room_Documentation, "text")
     descriptor = None
-    for klass in room::Documentation.__mro__:
+    for klass in room_Documentation.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1923,27 +1923,44 @@ def test_room::documentation_has_text():
 
 
 
-def test_room::roommodel_is_not_abstract():
-    assert not inspect.isabstract(room::RoomModel)
+def test_room_roommodel_is_not_abstract():
+    assert not inspect.isabstract(room_RoomModel)
 
 
-def test_room::roommodel_constructor_exists():
-    assert callable(room::RoomModel.__init__)
+def test_room_roommodel_constructor_exists():
+    assert callable(room_RoomModel.__init__)
 
 
-def test_room::roommodel_constructor_args():
-    sig = inspect.signature(room::RoomModel.__init__)
+def test_room_roommodel_constructor_args():
+    sig = inspect.signature(room_RoomModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_room::roommodel_has_name():
-    assert hasattr(room::RoomModel, "name")
+def test_room_roommodel_has_name():
+    assert hasattr(room_RoomModel, "name")
     descriptor = None
-    for klass in room::RoomModel.__mro__:
+    for klass in room_RoomModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+def test_literaltype_exists():
+    # Check that the Enumeration exists
+    assert LiteralType is not None
+
+def test_literaltype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LiteralType]
+    expected_literals = [
+        "BOOL",
+        "CHAR",
+        "REAL",
+        "INT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LiteralType"
 
 def test_actorcommunicationtype_exists():
     # Check that the Enumeration exists
@@ -1953,10 +1970,10 @@ def test_actorcommunicationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ActorCommunicationType]
     expected_literals = [
-        "EVENT_DRIVEN",
         "ASYNCHRONOUS",
         "DATA_DRIVEN",
         "SYNCHRONOUS",
+        "EVENT_DRIVEN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1970,30 +1987,13 @@ def test_communicationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CommunicationType]
     expected_literals = [
-        "DATA_DRIVEN",
-        "EVENT_DRIVEN",
         "SYNCHRONOUS",
+        "EVENT_DRIVEN",
+        "DATA_DRIVEN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CommunicationType"
-
-def test_literaltype_exists():
-    # Check that the Enumeration exists
-    assert LiteralType is not None
-
-def test_literaltype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LiteralType]
-    expected_literals = [
-        "INT",
-        "BOOL",
-        "REAL",
-        "CHAR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LiteralType"
 
 
 # =============================================================================
@@ -2007,127 +2007,127 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-room::KeyValue_strategy = st.builds(
-    room::KeyValue,
+room_KeyValue_strategy = st.builds(
+    room_KeyValue,
     key=
         safe_text,
     value=
         safe_text
 )
-room::Guard_strategy = st.builds(
-    room::Guard,
+room_Guard_strategy = st.builds(
+    room_Guard,
 )
-room::MessageFromIf_strategy = st.builds(
-    room::MessageFromIf,
+room_MessageFromIf_strategy = st.builds(
+    room_MessageFromIf,
 )
 TransitionTerminal_strategy = st.builds(
     TransitionTerminal,
 )
-room::ChoicepointTerminal_strategy = st.builds(
-    room::ChoicepointTerminal,
+room_ChoicepointTerminal_strategy = st.builds(
+    room_ChoicepointTerminal,
 )
-room::TrPointTerminal_strategy = st.builds(
-    room::TrPointTerminal,
+room_TrPointTerminal_strategy = st.builds(
+    room_TrPointTerminal,
 )
-room::SubStateTrPointTerminal_strategy = st.builds(
-    room::SubStateTrPointTerminal,
+room_SubStateTrPointTerminal_strategy = st.builds(
+    room_SubStateTrPointTerminal,
 )
-room::StateTerminal_strategy = st.builds(
-    room::StateTerminal,
+room_StateTerminal_strategy = st.builds(
+    room_StateTerminal,
 )
-room::Trigger_strategy = st.builds(
-    room::Trigger,
+room_Trigger_strategy = st.builds(
+    room_Trigger,
 )
 TransitionChainStartTransition_strategy = st.builds(
     TransitionChainStartTransition,
 )
-room::GuardedTransition_strategy = st.builds(
-    room::GuardedTransition,
+room_GuardedTransition_strategy = st.builds(
+    room_GuardedTransition,
 )
-room::TriggeredTransition_strategy = st.builds(
-    room::TriggeredTransition,
+room_TriggeredTransition_strategy = st.builds(
+    room_TriggeredTransition,
 )
 NonInitialTransition_strategy = st.builds(
     NonInitialTransition,
 )
-room::ContinuationTransition_strategy = st.builds(
-    room::ContinuationTransition,
+room_CPBranchTransition_strategy = st.builds(
+    room_CPBranchTransition,
 )
-room::CPBranchTransition_strategy = st.builds(
-    room::CPBranchTransition,
+room_ContinuationTransition_strategy = st.builds(
+    room_ContinuationTransition,
 )
-room::TransitionChainStartTransition_strategy = st.builds(
-    room::TransitionChainStartTransition,
+room_TransitionChainStartTransition_strategy = st.builds(
+    room_TransitionChainStartTransition,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-room::InitialTransition_strategy = st.builds(
-    room::InitialTransition,
+room_InitialTransition_strategy = st.builds(
+    room_InitialTransition,
 )
-room::NonInitialTransition_strategy = st.builds(
-    room::NonInitialTransition,
+room_NonInitialTransition_strategy = st.builds(
+    room_NonInitialTransition,
 )
-room::TransitionTerminal_strategy = st.builds(
-    room::TransitionTerminal,
+room_TransitionTerminal_strategy = st.builds(
+    room_TransitionTerminal,
 )
 TrPoint_strategy = st.builds(
     TrPoint,
 )
-room::EntryPoint_strategy = st.builds(
-    room::EntryPoint,
+room_ExitPoint_strategy = st.builds(
+    room_ExitPoint,
 )
-room::ExitPoint_strategy = st.builds(
-    room::ExitPoint,
+room_EntryPoint_strategy = st.builds(
+    room_EntryPoint,
 )
-room::TransitionPoint_strategy = st.builds(
-    room::TransitionPoint,
+room_TransitionPoint_strategy = st.builds(
+    room_TransitionPoint,
     handler=
         st.booleans()
 )
 State_strategy = st.builds(
     State,
 )
-room::RefinedState_strategy = st.builds(
-    room::RefinedState,
+room_RefinedState_strategy = st.builds(
+    room_RefinedState,
 )
-room::SimpleState_strategy = st.builds(
-    room::SimpleState,
+room_SimpleState_strategy = st.builds(
+    room_SimpleState,
     name=
         safe_text
 )
-room::RefinedTransition_strategy = st.builds(
-    room::RefinedTransition,
+room_RefinedTransition_strategy = st.builds(
+    room_RefinedTransition,
 )
 StateGraphNode_strategy = st.builds(
     StateGraphNode,
 )
-room::TrPoint_strategy = st.builds(
-    room::TrPoint,
+room_TrPoint_strategy = st.builds(
+    room_TrPoint,
     name=
         safe_text
 )
-room::ChoicePoint_strategy = st.builds(
-    room::ChoicePoint,
+room_ChoicePoint_strategy = st.builds(
+    room_ChoicePoint,
     name=
         safe_text
 )
-room::State_strategy = st.builds(
-    room::State,
+room_State_strategy = st.builds(
+    room_State,
 )
-room::StateGraphItem_strategy = st.builds(
-    room::StateGraphItem,
+room_StateGraphItem_strategy = st.builds(
+    room_StateGraphItem,
 )
 StateGraphItem_strategy = st.builds(
     StateGraphItem,
 )
-room::Transition_strategy = st.builds(
-    room::Transition,
+room_Transition_strategy = st.builds(
+    room_Transition,
     name=
         safe_text
 )
-room::StateGraphNode_strategy = st.builds(
-    room::StateGraphNode,
+room_StateGraphNode_strategy = st.builds(
+    room_StateGraphNode,
 )
 ActorContainerRef_strategy = st.builds(
     ActorContainerRef,
@@ -2135,76 +2135,76 @@ ActorContainerRef_strategy = st.builds(
 SAPoint_strategy = st.builds(
     SAPoint,
 )
-room::RelaySAPoint_strategy = st.builds(
-    room::RelaySAPoint,
+room_RelaySAPoint_strategy = st.builds(
+    room_RelaySAPoint,
 )
-room::RefSAPoint_strategy = st.builds(
-    room::RefSAPoint,
+room_RefSAPoint_strategy = st.builds(
+    room_RefSAPoint,
 )
-room::SPPoint_strategy = st.builds(
-    room::SPPoint,
+room_SPPoint_strategy = st.builds(
+    room_SPPoint,
 )
-room::SAPoint_strategy = st.builds(
-    room::SAPoint,
+room_SAPoint_strategy = st.builds(
+    room_SAPoint,
 )
-room::BindingEndPoint_strategy = st.builds(
-    room::BindingEndPoint,
+room_BindingEndPoint_strategy = st.builds(
+    room_BindingEndPoint,
 )
-room::ActorInstancePath_strategy = st.builds(
-    room::ActorInstancePath,
+room_ActorInstancePath_strategy = st.builds(
+    room_ActorInstancePath,
     segments=
         safe_text
 )
-room::LogicalThread_strategy = st.builds(
-    room::LogicalThread,
+room_LogicalThread_strategy = st.builds(
+    room_LogicalThread,
     prio=
         st.integers(),
     name=
         safe_text
 )
-room::StateGraph_strategy = st.builds(
-    room::StateGraph,
+room_StateGraph_strategy = st.builds(
+    room_StateGraph,
 )
-room::ActorContainerRef_strategy = st.builds(
-    room::ActorContainerRef,
+room_ActorContainerRef_strategy = st.builds(
+    room_ActorContainerRef,
     name=
         safe_text
 )
-room::SubSystemRef_strategy = st.builds(
-    room::SubSystemRef,
+room_SubSystemRef_strategy = st.builds(
+    room_SubSystemRef,
 )
 InterfaceItem_strategy = st.builds(
     InterfaceItem,
 )
-room::InterfaceItem_strategy = st.builds(
-    room::InterfaceItem,
+room_InterfaceItem_strategy = st.builds(
+    room_InterfaceItem,
     name=
         safe_text
 )
 MessageHandler_strategy = st.builds(
     MessageHandler,
 )
-room::OutMessageHandler_strategy = st.builds(
-    room::OutMessageHandler,
+room_OutMessageHandler_strategy = st.builds(
+    room_OutMessageHandler,
 )
-room::InMessageHandler_strategy = st.builds(
-    room::InMessageHandler,
+room_InMessageHandler_strategy = st.builds(
+    room_InMessageHandler,
 )
-room::SAPRef_strategy = st.builds(
-    room::SAPRef,
+room_SAPRef_strategy = st.builds(
+    room_SAPRef,
 )
-room::ServiceImplementation_strategy = st.builds(
-    room::ServiceImplementation,
+room_ServiceImplementation_strategy = st.builds(
+    room_ServiceImplementation,
 )
-room::ExternalPort_strategy = st.builds(
-    room::ExternalPort,
+room_ExternalPort_strategy = st.builds(
+    room_ExternalPort,
 )
-room::Port_strategy = st.builds(
-    room::Port,
-    multiplicity=
-        st.integers(),
+room_Port_strategy = st.builds(
+    room_Port,
     conjugated=
-        st.booleans()
+        st.booleans(),
+    multiplicity=
+        st.integers()
 )
 ActorContainerClass_strategy = st.builds(
     ActorContainerClass,
@@ -2212,45 +2212,45 @@ ActorContainerClass_strategy = st.builds(
 SemanticsRule_strategy = st.builds(
     SemanticsRule,
 )
-room::OutSemanticsRule_strategy = st.builds(
-    room::OutSemanticsRule,
+room_OutSemanticsRule_strategy = st.builds(
+    room_OutSemanticsRule,
 )
-room::InSemanticsRule_strategy = st.builds(
-    room::InSemanticsRule,
+room_InSemanticsRule_strategy = st.builds(
+    room_InSemanticsRule,
 )
-room::SemanticsRule_strategy = st.builds(
-    room::SemanticsRule,
+room_SemanticsRule_strategy = st.builds(
+    room_SemanticsRule,
 )
 GeneralProtocolClass_strategy = st.builds(
     GeneralProtocolClass,
 )
-room::ProtocolClass_strategy = st.builds(
-    room::ProtocolClass,
+room_ProtocolClass_strategy = st.builds(
+    room_ProtocolClass,
     commType=
         safe_text
 )
-room::MessageHandler_strategy = st.builds(
-    room::MessageHandler,
+room_MessageHandler_strategy = st.builds(
+    room_MessageHandler,
 )
-room::SubProtocol_strategy = st.builds(
-    room::SubProtocol,
+room_SubProtocol_strategy = st.builds(
+    room_SubProtocol,
     name=
         safe_text
 )
-room::CompoundProtocolClass_strategy = st.builds(
-    room::CompoundProtocolClass,
+room_CompoundProtocolClass_strategy = st.builds(
+    room_CompoundProtocolClass,
 )
-room::ProtocolSemantics_strategy = st.builds(
-    room::ProtocolSemantics,
+room_ProtocolSemantics_strategy = st.builds(
+    room_ProtocolSemantics,
 )
-room::PortClass_strategy = st.builds(
-    room::PortClass,
+room_PortClass_strategy = st.builds(
+    room_PortClass,
 )
 ComplexType_strategy = st.builds(
     ComplexType,
 )
-room::Message_strategy = st.builds(
-    room::Message,
+room_Message_strategy = st.builds(
+    room_Message,
     name=
         safe_text,
     priv=
@@ -2259,21 +2259,21 @@ room::Message_strategy = st.builds(
 Operation_strategy = st.builds(
     Operation,
 )
-room::PortOperation_strategy = st.builds(
-    room::PortOperation,
+room_PortOperation_strategy = st.builds(
+    room_PortOperation,
 )
-room::Operation_strategy = st.builds(
-    room::Operation,
+room_Operation_strategy = st.builds(
+    room_Operation,
     name=
         safe_text
 )
-room::StandardOperation_strategy = st.builds(
-    room::StandardOperation,
+room_StandardOperation_strategy = st.builds(
+    room_StandardOperation,
     destructor=
         st.booleans()
 )
-room::Attribute_strategy = st.builds(
-    room::Attribute,
+room_Attribute_strategy = st.builds(
+    room_Attribute,
     size=
         st.integers(),
     name=
@@ -2281,268 +2281,259 @@ room::Attribute_strategy = st.builds(
     defaultValueLiteral=
         safe_text
 )
-room::SubSystemClass_strategy = st.builds(
-    room::SubSystemClass,
+room_SubSystemClass_strategy = st.builds(
+    room_SubSystemClass,
 )
-room::ActorClass_strategy = st.builds(
-    room::ActorClass,
-    commType=
-        safe_text,
+room_ActorClass_strategy = st.builds(
+    room_ActorClass,
     abstract=
-        st.booleans()
+        st.booleans(),
+    commType=
+        safe_text
 )
 DataType_strategy = st.builds(
     DataType,
 )
-room::ComplexType_strategy = st.builds(
-    room::ComplexType,
+room_ComplexType_strategy = st.builds(
+    room_ComplexType,
 )
-room::RefableType_strategy = st.builds(
-    room::RefableType,
+room_RefableType_strategy = st.builds(
+    room_RefableType,
     ref=
         st.booleans()
 )
-room::VarDecl_strategy = st.builds(
-    room::VarDecl,
+room_VarDecl_strategy = st.builds(
+    room_VarDecl,
     name=
         safe_text
 )
-room::ActorRef_strategy = st.builds(
-    room::ActorRef,
+room_ActorRef_strategy = st.builds(
+    room_ActorRef,
     size=
         st.integers()
 )
-room::DetailCode_strategy = st.builds(
-    room::DetailCode,
+room_DetailCode_strategy = st.builds(
+    room_DetailCode,
     commands=
         safe_text
 )
-room::SPPRef_strategy = st.builds(
-    room::SPPRef,
+room_SPPRef_strategy = st.builds(
+    room_SPPRef,
 )
 StructureClass_strategy = st.builds(
     StructureClass,
 )
-room::ActorContainerClass_strategy = st.builds(
-    room::ActorContainerClass,
+room_ActorContainerClass_strategy = st.builds(
+    room_ActorContainerClass,
 )
-room::LayerConnection_strategy = st.builds(
-    room::LayerConnection,
+room_LayerConnection_strategy = st.builds(
+    room_LayerConnection,
 )
-room::Binding_strategy = st.builds(
-    room::Binding,
+room_Binding_strategy = st.builds(
+    room_Binding,
 )
-room::Annotation_strategy = st.builds(
-    room::Annotation,
+room_Annotation_strategy = st.builds(
+    room_Annotation,
     name=
         safe_text
 )
 RoomClass_strategy = st.builds(
     RoomClass,
 )
-room::GeneralProtocolClass_strategy = st.builds(
-    room::GeneralProtocolClass,
+room_DataType_strategy = st.builds(
+    room_DataType,
 )
-room::DataType_strategy = st.builds(
-    room::DataType,
+room_GeneralProtocolClass_strategy = st.builds(
+    room_GeneralProtocolClass,
 )
-room::StructureClass_strategy = st.builds(
-    room::StructureClass,
+room_StructureClass_strategy = st.builds(
+    room_StructureClass,
 )
-room::RoomClass_strategy = st.builds(
-    room::RoomClass,
+room_RoomClass_strategy = st.builds(
+    room_RoomClass,
     name=
         safe_text
 )
-room::LogicalSystem_strategy = st.builds(
-    room::LogicalSystem,
+room_LogicalSystem_strategy = st.builds(
+    room_LogicalSystem,
 )
-room::DataClass_strategy = st.builds(
-    room::DataClass,
+room_DataClass_strategy = st.builds(
+    room_DataClass,
 )
-room::ExternalType_strategy = st.builds(
-    room::ExternalType,
+room_ExternalType_strategy = st.builds(
+    room_ExternalType,
     targetName=
         safe_text
 )
-room::PrimitiveType_strategy = st.builds(
-    room::PrimitiveType,
+room_PrimitiveType_strategy = st.builds(
+    room_PrimitiveType,
+    castName=
+        safe_text,
     type=
         safe_text,
     targetName=
         safe_text,
-    castName=
-        safe_text,
     defaultValueLiteral=
         safe_text
 )
-room::Import_strategy = st.builds(
-    room::Import,
+room_Import_strategy = st.builds(
+    room_Import,
     importURI=
         safe_text,
     importedNamespace=
         safe_text
 )
-room::Documentation_strategy = st.builds(
-    room::Documentation,
+room_Documentation_strategy = st.builds(
+    room_Documentation,
     text=
         safe_text
 )
-room::RoomModel_strategy = st.builds(
-    room::RoomModel,
+room_RoomModel_strategy = st.builds(
+    room_RoomModel,
     name=
         safe_text
 )
 
-@given(instance=room::KeyValue_strategy)
+@given(instance=room_KeyValue_strategy)
 @settings(max_examples=50)
-def test_room::keyvalue_instantiation(instance):
-    assert isinstance(instance, room::KeyValue)
-
-@given(instance=room::KeyValue_strategy)
-def test_room::keyvalue_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_room_keyvalue_instantiation(instance):
+    assert isinstance(instance, room_KeyValue)
 
 
-@given(instance=room::KeyValue_strategy)
-def test_room::keyvalue_key_setter(instance):
+
+@given(instance=room_KeyValue_strategy)
+def test_room_keyvalue_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=room::KeyValue_strategy)
-def test_room::keyvalue_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=room::KeyValue_strategy)
-def test_room::keyvalue_value_setter(instance):
+@given(instance=room_KeyValue_strategy)
+def test_room_keyvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=room::Guard_strategy)
+@given(instance=room_Guard_strategy)
 @settings(max_examples=50)
-def test_room::guard_instantiation(instance):
-    assert isinstance(instance, room::Guard)
+def test_room_guard_instantiation(instance):
+    assert isinstance(instance, room_Guard)
 
-@given(instance=room::MessageFromIf_strategy)
+@given(instance=room_MessageFromIf_strategy)
 @settings(max_examples=50)
-def test_room::messagefromif_instantiation(instance):
-    assert isinstance(instance, room::MessageFromIf)
+def test_room_messagefromif_instantiation(instance):
+    assert isinstance(instance, room_MessageFromIf)
 
 @given(instance=TransitionTerminal_strategy)
 @settings(max_examples=50)
 def test_transitionterminal_instantiation(instance):
     assert isinstance(instance, TransitionTerminal)
 
-@given(instance=room::ChoicepointTerminal_strategy)
+@given(instance=room_ChoicepointTerminal_strategy)
 @settings(max_examples=50)
-def test_room::choicepointterminal_instantiation(instance):
-    assert isinstance(instance, room::ChoicepointTerminal)
+def test_room_choicepointterminal_instantiation(instance):
+    assert isinstance(instance, room_ChoicepointTerminal)
 
-@given(instance=room::TrPointTerminal_strategy)
+@given(instance=room_TrPointTerminal_strategy)
 @settings(max_examples=50)
-def test_room::trpointterminal_instantiation(instance):
-    assert isinstance(instance, room::TrPointTerminal)
+def test_room_trpointterminal_instantiation(instance):
+    assert isinstance(instance, room_TrPointTerminal)
 
-@given(instance=room::SubStateTrPointTerminal_strategy)
+@given(instance=room_SubStateTrPointTerminal_strategy)
 @settings(max_examples=50)
-def test_room::substatetrpointterminal_instantiation(instance):
-    assert isinstance(instance, room::SubStateTrPointTerminal)
+def test_room_substatetrpointterminal_instantiation(instance):
+    assert isinstance(instance, room_SubStateTrPointTerminal)
 
-@given(instance=room::StateTerminal_strategy)
+@given(instance=room_StateTerminal_strategy)
 @settings(max_examples=50)
-def test_room::stateterminal_instantiation(instance):
-    assert isinstance(instance, room::StateTerminal)
+def test_room_stateterminal_instantiation(instance):
+    assert isinstance(instance, room_StateTerminal)
 
-@given(instance=room::Trigger_strategy)
+@given(instance=room_Trigger_strategy)
 @settings(max_examples=50)
-def test_room::trigger_instantiation(instance):
-    assert isinstance(instance, room::Trigger)
+def test_room_trigger_instantiation(instance):
+    assert isinstance(instance, room_Trigger)
 
 @given(instance=TransitionChainStartTransition_strategy)
 @settings(max_examples=50)
 def test_transitionchainstarttransition_instantiation(instance):
     assert isinstance(instance, TransitionChainStartTransition)
 
-@given(instance=room::GuardedTransition_strategy)
+@given(instance=room_GuardedTransition_strategy)
 @settings(max_examples=50)
-def test_room::guardedtransition_instantiation(instance):
-    assert isinstance(instance, room::GuardedTransition)
+def test_room_guardedtransition_instantiation(instance):
+    assert isinstance(instance, room_GuardedTransition)
 
-@given(instance=room::TriggeredTransition_strategy)
+@given(instance=room_TriggeredTransition_strategy)
 @settings(max_examples=50)
-def test_room::triggeredtransition_instantiation(instance):
-    assert isinstance(instance, room::TriggeredTransition)
+def test_room_triggeredtransition_instantiation(instance):
+    assert isinstance(instance, room_TriggeredTransition)
 
 @given(instance=NonInitialTransition_strategy)
 @settings(max_examples=50)
 def test_noninitialtransition_instantiation(instance):
     assert isinstance(instance, NonInitialTransition)
 
-@given(instance=room::ContinuationTransition_strategy)
+@given(instance=room_CPBranchTransition_strategy)
 @settings(max_examples=50)
-def test_room::continuationtransition_instantiation(instance):
-    assert isinstance(instance, room::ContinuationTransition)
+def test_room_cpbranchtransition_instantiation(instance):
+    assert isinstance(instance, room_CPBranchTransition)
 
-@given(instance=room::CPBranchTransition_strategy)
+@given(instance=room_ContinuationTransition_strategy)
 @settings(max_examples=50)
-def test_room::cpbranchtransition_instantiation(instance):
-    assert isinstance(instance, room::CPBranchTransition)
+def test_room_continuationtransition_instantiation(instance):
+    assert isinstance(instance, room_ContinuationTransition)
 
-@given(instance=room::TransitionChainStartTransition_strategy)
+@given(instance=room_TransitionChainStartTransition_strategy)
 @settings(max_examples=50)
-def test_room::transitionchainstarttransition_instantiation(instance):
-    assert isinstance(instance, room::TransitionChainStartTransition)
+def test_room_transitionchainstarttransition_instantiation(instance):
+    assert isinstance(instance, room_TransitionChainStartTransition)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=room::InitialTransition_strategy)
+@given(instance=room_InitialTransition_strategy)
 @settings(max_examples=50)
-def test_room::initialtransition_instantiation(instance):
-    assert isinstance(instance, room::InitialTransition)
+def test_room_initialtransition_instantiation(instance):
+    assert isinstance(instance, room_InitialTransition)
 
-@given(instance=room::NonInitialTransition_strategy)
+@given(instance=room_NonInitialTransition_strategy)
 @settings(max_examples=50)
-def test_room::noninitialtransition_instantiation(instance):
-    assert isinstance(instance, room::NonInitialTransition)
+def test_room_noninitialtransition_instantiation(instance):
+    assert isinstance(instance, room_NonInitialTransition)
 
-@given(instance=room::TransitionTerminal_strategy)
+@given(instance=room_TransitionTerminal_strategy)
 @settings(max_examples=50)
-def test_room::transitionterminal_instantiation(instance):
-    assert isinstance(instance, room::TransitionTerminal)
+def test_room_transitionterminal_instantiation(instance):
+    assert isinstance(instance, room_TransitionTerminal)
 
 @given(instance=TrPoint_strategy)
 @settings(max_examples=50)
 def test_trpoint_instantiation(instance):
     assert isinstance(instance, TrPoint)
 
-@given(instance=room::EntryPoint_strategy)
+@given(instance=room_ExitPoint_strategy)
 @settings(max_examples=50)
-def test_room::entrypoint_instantiation(instance):
-    assert isinstance(instance, room::EntryPoint)
+def test_room_exitpoint_instantiation(instance):
+    assert isinstance(instance, room_ExitPoint)
 
-@given(instance=room::ExitPoint_strategy)
+@given(instance=room_EntryPoint_strategy)
 @settings(max_examples=50)
-def test_room::exitpoint_instantiation(instance):
-    assert isinstance(instance, room::ExitPoint)
+def test_room_entrypoint_instantiation(instance):
+    assert isinstance(instance, room_EntryPoint)
 
-@given(instance=room::TransitionPoint_strategy)
+@given(instance=room_TransitionPoint_strategy)
 @settings(max_examples=50)
-def test_room::transitionpoint_instantiation(instance):
-    assert isinstance(instance, room::TransitionPoint)
-
-@given(instance=room::TransitionPoint_strategy)
-def test_room::transitionpoint_handler_type(instance):
-    assert isinstance(instance.handler, bool)
+def test_room_transitionpoint_instantiation(instance):
+    assert isinstance(instance, room_TransitionPoint)
 
 
-@given(instance=room::TransitionPoint_strategy)
-def test_room::transitionpoint_handler_setter(instance):
+
+@given(instance=room_TransitionPoint_strategy)
+def test_room_transitionpoint_handler_setter(instance):
     original = instance.handler
     instance.handler = original
     assert instance.handler == original
@@ -2552,104 +2543,92 @@ def test_room::transitionpoint_handler_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=room::RefinedState_strategy)
+@given(instance=room_RefinedState_strategy)
 @settings(max_examples=50)
-def test_room::refinedstate_instantiation(instance):
-    assert isinstance(instance, room::RefinedState)
+def test_room_refinedstate_instantiation(instance):
+    assert isinstance(instance, room_RefinedState)
 
-@given(instance=room::SimpleState_strategy)
+@given(instance=room_SimpleState_strategy)
 @settings(max_examples=50)
-def test_room::simplestate_instantiation(instance):
-    assert isinstance(instance, room::SimpleState)
-
-@given(instance=room::SimpleState_strategy)
-def test_room::simplestate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_simplestate_instantiation(instance):
+    assert isinstance(instance, room_SimpleState)
 
 
-@given(instance=room::SimpleState_strategy)
-def test_room::simplestate_name_setter(instance):
+
+@given(instance=room_SimpleState_strategy)
+def test_room_simplestate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::RefinedTransition_strategy)
+@given(instance=room_RefinedTransition_strategy)
 @settings(max_examples=50)
-def test_room::refinedtransition_instantiation(instance):
-    assert isinstance(instance, room::RefinedTransition)
+def test_room_refinedtransition_instantiation(instance):
+    assert isinstance(instance, room_RefinedTransition)
 
 @given(instance=StateGraphNode_strategy)
 @settings(max_examples=50)
 def test_stategraphnode_instantiation(instance):
     assert isinstance(instance, StateGraphNode)
 
-@given(instance=room::TrPoint_strategy)
+@given(instance=room_TrPoint_strategy)
 @settings(max_examples=50)
-def test_room::trpoint_instantiation(instance):
-    assert isinstance(instance, room::TrPoint)
-
-@given(instance=room::TrPoint_strategy)
-def test_room::trpoint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_trpoint_instantiation(instance):
+    assert isinstance(instance, room_TrPoint)
 
 
-@given(instance=room::TrPoint_strategy)
-def test_room::trpoint_name_setter(instance):
+
+@given(instance=room_TrPoint_strategy)
+def test_room_trpoint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::ChoicePoint_strategy)
+@given(instance=room_ChoicePoint_strategy)
 @settings(max_examples=50)
-def test_room::choicepoint_instantiation(instance):
-    assert isinstance(instance, room::ChoicePoint)
-
-@given(instance=room::ChoicePoint_strategy)
-def test_room::choicepoint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_choicepoint_instantiation(instance):
+    assert isinstance(instance, room_ChoicePoint)
 
 
-@given(instance=room::ChoicePoint_strategy)
-def test_room::choicepoint_name_setter(instance):
+
+@given(instance=room_ChoicePoint_strategy)
+def test_room_choicepoint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::State_strategy)
+@given(instance=room_State_strategy)
 @settings(max_examples=50)
-def test_room::state_instantiation(instance):
-    assert isinstance(instance, room::State)
+def test_room_state_instantiation(instance):
+    assert isinstance(instance, room_State)
 
-@given(instance=room::StateGraphItem_strategy)
+@given(instance=room_StateGraphItem_strategy)
 @settings(max_examples=50)
-def test_room::stategraphitem_instantiation(instance):
-    assert isinstance(instance, room::StateGraphItem)
+def test_room_stategraphitem_instantiation(instance):
+    assert isinstance(instance, room_StateGraphItem)
 
 @given(instance=StateGraphItem_strategy)
 @settings(max_examples=50)
 def test_stategraphitem_instantiation(instance):
     assert isinstance(instance, StateGraphItem)
 
-@given(instance=room::Transition_strategy)
+@given(instance=room_Transition_strategy)
 @settings(max_examples=50)
-def test_room::transition_instantiation(instance):
-    assert isinstance(instance, room::Transition)
-
-@given(instance=room::Transition_strategy)
-def test_room::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_transition_instantiation(instance):
+    assert isinstance(instance, room_Transition)
 
 
-@given(instance=room::Transition_strategy)
-def test_room::transition_name_setter(instance):
+
+@given(instance=room_Transition_strategy)
+def test_room_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::StateGraphNode_strategy)
+@given(instance=room_StateGraphNode_strategy)
 @settings(max_examples=50)
-def test_room::stategraphnode_instantiation(instance):
-    assert isinstance(instance, room::StateGraphNode)
+def test_room_stategraphnode_instantiation(instance):
+    assert isinstance(instance, room_StateGraphNode)
 
 @given(instance=ActorContainerRef_strategy)
 @settings(max_examples=50)
@@ -2661,117 +2640,102 @@ def test_actorcontainerref_instantiation(instance):
 def test_sapoint_instantiation(instance):
     assert isinstance(instance, SAPoint)
 
-@given(instance=room::RelaySAPoint_strategy)
+@given(instance=room_RelaySAPoint_strategy)
 @settings(max_examples=50)
-def test_room::relaysapoint_instantiation(instance):
-    assert isinstance(instance, room::RelaySAPoint)
+def test_room_relaysapoint_instantiation(instance):
+    assert isinstance(instance, room_RelaySAPoint)
 
-@given(instance=room::RefSAPoint_strategy)
+@given(instance=room_RefSAPoint_strategy)
 @settings(max_examples=50)
-def test_room::refsapoint_instantiation(instance):
-    assert isinstance(instance, room::RefSAPoint)
+def test_room_refsapoint_instantiation(instance):
+    assert isinstance(instance, room_RefSAPoint)
 
-@given(instance=room::SPPoint_strategy)
+@given(instance=room_SPPoint_strategy)
 @settings(max_examples=50)
-def test_room::sppoint_instantiation(instance):
-    assert isinstance(instance, room::SPPoint)
+def test_room_sppoint_instantiation(instance):
+    assert isinstance(instance, room_SPPoint)
 
-@given(instance=room::SAPoint_strategy)
+@given(instance=room_SAPoint_strategy)
 @settings(max_examples=50)
-def test_room::sapoint_instantiation(instance):
-    assert isinstance(instance, room::SAPoint)
+def test_room_sapoint_instantiation(instance):
+    assert isinstance(instance, room_SAPoint)
 
-@given(instance=room::BindingEndPoint_strategy)
+@given(instance=room_BindingEndPoint_strategy)
 @settings(max_examples=50)
-def test_room::bindingendpoint_instantiation(instance):
-    assert isinstance(instance, room::BindingEndPoint)
+def test_room_bindingendpoint_instantiation(instance):
+    assert isinstance(instance, room_BindingEndPoint)
 
-@given(instance=room::ActorInstancePath_strategy)
+@given(instance=room_ActorInstancePath_strategy)
 @settings(max_examples=50)
-def test_room::actorinstancepath_instantiation(instance):
-    assert isinstance(instance, room::ActorInstancePath)
-
-@given(instance=room::ActorInstancePath_strategy)
-def test_room::actorinstancepath_segments_type(instance):
-    assert isinstance(instance.segments, str)
+def test_room_actorinstancepath_instantiation(instance):
+    assert isinstance(instance, room_ActorInstancePath)
 
 
-@given(instance=room::ActorInstancePath_strategy)
-def test_room::actorinstancepath_segments_setter(instance):
+
+@given(instance=room_ActorInstancePath_strategy)
+def test_room_actorinstancepath_segments_setter(instance):
     original = instance.segments
     instance.segments = original
     assert instance.segments == original
 
-@given(instance=room::LogicalThread_strategy)
+@given(instance=room_LogicalThread_strategy)
 @settings(max_examples=50)
-def test_room::logicalthread_instantiation(instance):
-    assert isinstance(instance, room::LogicalThread)
-
-@given(instance=room::LogicalThread_strategy)
-def test_room::logicalthread_prio_type(instance):
-    assert isinstance(instance.prio, int)
+def test_room_logicalthread_instantiation(instance):
+    assert isinstance(instance, room_LogicalThread)
 
 
-@given(instance=room::LogicalThread_strategy)
-def test_room::logicalthread_prio_setter(instance):
+
+@given(instance=room_LogicalThread_strategy)
+def test_room_logicalthread_prio_setter(instance):
     original = instance.prio
     instance.prio = original
     assert instance.prio == original
 
-@given(instance=room::LogicalThread_strategy)
-def test_room::logicalthread_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=room::LogicalThread_strategy)
-def test_room::logicalthread_name_setter(instance):
+@given(instance=room_LogicalThread_strategy)
+def test_room_logicalthread_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::StateGraph_strategy)
+@given(instance=room_StateGraph_strategy)
 @settings(max_examples=50)
-def test_room::stategraph_instantiation(instance):
-    assert isinstance(instance, room::StateGraph)
+def test_room_stategraph_instantiation(instance):
+    assert isinstance(instance, room_StateGraph)
 
-@given(instance=room::ActorContainerRef_strategy)
+@given(instance=room_ActorContainerRef_strategy)
 @settings(max_examples=50)
-def test_room::actorcontainerref_instantiation(instance):
-    assert isinstance(instance, room::ActorContainerRef)
-
-@given(instance=room::ActorContainerRef_strategy)
-def test_room::actorcontainerref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_actorcontainerref_instantiation(instance):
+    assert isinstance(instance, room_ActorContainerRef)
 
 
-@given(instance=room::ActorContainerRef_strategy)
-def test_room::actorcontainerref_name_setter(instance):
+
+@given(instance=room_ActorContainerRef_strategy)
+def test_room_actorcontainerref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::SubSystemRef_strategy)
+@given(instance=room_SubSystemRef_strategy)
 @settings(max_examples=50)
-def test_room::subsystemref_instantiation(instance):
-    assert isinstance(instance, room::SubSystemRef)
+def test_room_subsystemref_instantiation(instance):
+    assert isinstance(instance, room_SubSystemRef)
 
 @given(instance=InterfaceItem_strategy)
 @settings(max_examples=50)
 def test_interfaceitem_instantiation(instance):
     assert isinstance(instance, InterfaceItem)
 
-@given(instance=room::InterfaceItem_strategy)
+@given(instance=room_InterfaceItem_strategy)
 @settings(max_examples=50)
-def test_room::interfaceitem_instantiation(instance):
-    assert isinstance(instance, room::InterfaceItem)
-
-@given(instance=room::InterfaceItem_strategy)
-def test_room::interfaceitem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_interfaceitem_instantiation(instance):
+    assert isinstance(instance, room_InterfaceItem)
 
 
-@given(instance=room::InterfaceItem_strategy)
-def test_room::interfaceitem_name_setter(instance):
+
+@given(instance=room_InterfaceItem_strategy)
+def test_room_interfaceitem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2781,57 +2745,51 @@ def test_room::interfaceitem_name_setter(instance):
 def test_messagehandler_instantiation(instance):
     assert isinstance(instance, MessageHandler)
 
-@given(instance=room::OutMessageHandler_strategy)
+@given(instance=room_OutMessageHandler_strategy)
 @settings(max_examples=50)
-def test_room::outmessagehandler_instantiation(instance):
-    assert isinstance(instance, room::OutMessageHandler)
+def test_room_outmessagehandler_instantiation(instance):
+    assert isinstance(instance, room_OutMessageHandler)
 
-@given(instance=room::InMessageHandler_strategy)
+@given(instance=room_InMessageHandler_strategy)
 @settings(max_examples=50)
-def test_room::inmessagehandler_instantiation(instance):
-    assert isinstance(instance, room::InMessageHandler)
+def test_room_inmessagehandler_instantiation(instance):
+    assert isinstance(instance, room_InMessageHandler)
 
-@given(instance=room::SAPRef_strategy)
+@given(instance=room_SAPRef_strategy)
 @settings(max_examples=50)
-def test_room::sapref_instantiation(instance):
-    assert isinstance(instance, room::SAPRef)
+def test_room_sapref_instantiation(instance):
+    assert isinstance(instance, room_SAPRef)
 
-@given(instance=room::ServiceImplementation_strategy)
+@given(instance=room_ServiceImplementation_strategy)
 @settings(max_examples=50)
-def test_room::serviceimplementation_instantiation(instance):
-    assert isinstance(instance, room::ServiceImplementation)
+def test_room_serviceimplementation_instantiation(instance):
+    assert isinstance(instance, room_ServiceImplementation)
 
-@given(instance=room::ExternalPort_strategy)
+@given(instance=room_ExternalPort_strategy)
 @settings(max_examples=50)
-def test_room::externalport_instantiation(instance):
-    assert isinstance(instance, room::ExternalPort)
+def test_room_externalport_instantiation(instance):
+    assert isinstance(instance, room_ExternalPort)
 
-@given(instance=room::Port_strategy)
+@given(instance=room_Port_strategy)
 @settings(max_examples=50)
-def test_room::port_instantiation(instance):
-    assert isinstance(instance, room::Port)
-
-@given(instance=room::Port_strategy)
-def test_room::port_multiplicity_type(instance):
-    assert isinstance(instance.multiplicity, int)
+def test_room_port_instantiation(instance):
+    assert isinstance(instance, room_Port)
 
 
-@given(instance=room::Port_strategy)
-def test_room::port_multiplicity_setter(instance):
-    original = instance.multiplicity
-    instance.multiplicity = original
-    assert instance.multiplicity == original
 
-@given(instance=room::Port_strategy)
-def test_room::port_conjugated_type(instance):
-    assert isinstance(instance.conjugated, bool)
-
-
-@given(instance=room::Port_strategy)
-def test_room::port_conjugated_setter(instance):
+@given(instance=room_Port_strategy)
+def test_room_port_conjugated_setter(instance):
     original = instance.conjugated
     instance.conjugated = original
     assert instance.conjugated == original
+
+
+
+@given(instance=room_Port_strategy)
+def test_room_port_multiplicity_setter(instance):
+    original = instance.multiplicity
+    instance.multiplicity = original
+    assert instance.multiplicity == original
 
 import warnings
 import copy
@@ -2839,9 +2797,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=room::Port_strategy)
+@given(instance=room_Port_strategy)
 @settings(max_examples=30)
-def test_room::port_isreplicated_changes_state(instance):
+def test_room_port_isreplicated_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2853,14 +2811,14 @@ def test_room::port_isreplicated_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isReplicated' in room::Port is empty"
+        assert has_statements, f"Function 'isReplicated' in room_Port is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isReplicated' in room::Port did not change state; check implementation")
+            warnings.warn(f"Operation 'isReplicated' in room_Port did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isReplicated' in room::Port is not implemented or raised an error")
+        warnings.warn(f"Operation 'isReplicated' in room_Port is not implemented or raised an error")
 
 @given(instance=ActorContainerClass_strategy)
 @settings(max_examples=50)
@@ -2872,106 +2830,94 @@ def test_actorcontainerclass_instantiation(instance):
 def test_semanticsrule_instantiation(instance):
     assert isinstance(instance, SemanticsRule)
 
-@given(instance=room::OutSemanticsRule_strategy)
+@given(instance=room_OutSemanticsRule_strategy)
 @settings(max_examples=50)
-def test_room::outsemanticsrule_instantiation(instance):
-    assert isinstance(instance, room::OutSemanticsRule)
+def test_room_outsemanticsrule_instantiation(instance):
+    assert isinstance(instance, room_OutSemanticsRule)
 
-@given(instance=room::InSemanticsRule_strategy)
+@given(instance=room_InSemanticsRule_strategy)
 @settings(max_examples=50)
-def test_room::insemanticsrule_instantiation(instance):
-    assert isinstance(instance, room::InSemanticsRule)
+def test_room_insemanticsrule_instantiation(instance):
+    assert isinstance(instance, room_InSemanticsRule)
 
-@given(instance=room::SemanticsRule_strategy)
+@given(instance=room_SemanticsRule_strategy)
 @settings(max_examples=50)
-def test_room::semanticsrule_instantiation(instance):
-    assert isinstance(instance, room::SemanticsRule)
+def test_room_semanticsrule_instantiation(instance):
+    assert isinstance(instance, room_SemanticsRule)
 
 @given(instance=GeneralProtocolClass_strategy)
 @settings(max_examples=50)
 def test_generalprotocolclass_instantiation(instance):
     assert isinstance(instance, GeneralProtocolClass)
 
-@given(instance=room::ProtocolClass_strategy)
+@given(instance=room_ProtocolClass_strategy)
 @settings(max_examples=50)
-def test_room::protocolclass_instantiation(instance):
-    assert isinstance(instance, room::ProtocolClass)
-
-@given(instance=room::ProtocolClass_strategy)
-def test_room::protocolclass_commType_type(instance):
-    assert isinstance(instance.commType, str)
+def test_room_protocolclass_instantiation(instance):
+    assert isinstance(instance, room_ProtocolClass)
 
 
-@given(instance=room::ProtocolClass_strategy)
-def test_room::protocolclass_commType_setter(instance):
+
+@given(instance=room_ProtocolClass_strategy)
+def test_room_protocolclass_commType_setter(instance):
     original = instance.commType
     instance.commType = original
     assert instance.commType == original
 
-@given(instance=room::MessageHandler_strategy)
+@given(instance=room_MessageHandler_strategy)
 @settings(max_examples=50)
-def test_room::messagehandler_instantiation(instance):
-    assert isinstance(instance, room::MessageHandler)
+def test_room_messagehandler_instantiation(instance):
+    assert isinstance(instance, room_MessageHandler)
 
-@given(instance=room::SubProtocol_strategy)
+@given(instance=room_SubProtocol_strategy)
 @settings(max_examples=50)
-def test_room::subprotocol_instantiation(instance):
-    assert isinstance(instance, room::SubProtocol)
-
-@given(instance=room::SubProtocol_strategy)
-def test_room::subprotocol_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_subprotocol_instantiation(instance):
+    assert isinstance(instance, room_SubProtocol)
 
 
-@given(instance=room::SubProtocol_strategy)
-def test_room::subprotocol_name_setter(instance):
+
+@given(instance=room_SubProtocol_strategy)
+def test_room_subprotocol_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::CompoundProtocolClass_strategy)
+@given(instance=room_CompoundProtocolClass_strategy)
 @settings(max_examples=50)
-def test_room::compoundprotocolclass_instantiation(instance):
-    assert isinstance(instance, room::CompoundProtocolClass)
+def test_room_compoundprotocolclass_instantiation(instance):
+    assert isinstance(instance, room_CompoundProtocolClass)
 
-@given(instance=room::ProtocolSemantics_strategy)
+@given(instance=room_ProtocolSemantics_strategy)
 @settings(max_examples=50)
-def test_room::protocolsemantics_instantiation(instance):
-    assert isinstance(instance, room::ProtocolSemantics)
+def test_room_protocolsemantics_instantiation(instance):
+    assert isinstance(instance, room_ProtocolSemantics)
 
-@given(instance=room::PortClass_strategy)
+@given(instance=room_PortClass_strategy)
 @settings(max_examples=50)
-def test_room::portclass_instantiation(instance):
-    assert isinstance(instance, room::PortClass)
+def test_room_portclass_instantiation(instance):
+    assert isinstance(instance, room_PortClass)
 
 @given(instance=ComplexType_strategy)
 @settings(max_examples=50)
 def test_complextype_instantiation(instance):
     assert isinstance(instance, ComplexType)
 
-@given(instance=room::Message_strategy)
+@given(instance=room_Message_strategy)
 @settings(max_examples=50)
-def test_room::message_instantiation(instance):
-    assert isinstance(instance, room::Message)
-
-@given(instance=room::Message_strategy)
-def test_room::message_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_message_instantiation(instance):
+    assert isinstance(instance, room_Message)
 
 
-@given(instance=room::Message_strategy)
-def test_room::message_name_setter(instance):
+
+@given(instance=room_Message_strategy)
+def test_room_message_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::Message_strategy)
-def test_room::message_priv_type(instance):
-    assert isinstance(instance.priv, bool)
 
 
-@given(instance=room::Message_strategy)
-def test_room::message_priv_setter(instance):
+@given(instance=room_Message_strategy)
+def test_room_message_priv_setter(instance):
     original = instance.priv
     instance.priv = original
     assert instance.priv == original
@@ -2981,224 +2927,188 @@ def test_room::message_priv_setter(instance):
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=room::PortOperation_strategy)
+@given(instance=room_PortOperation_strategy)
 @settings(max_examples=50)
-def test_room::portoperation_instantiation(instance):
-    assert isinstance(instance, room::PortOperation)
+def test_room_portoperation_instantiation(instance):
+    assert isinstance(instance, room_PortOperation)
 
-@given(instance=room::Operation_strategy)
+@given(instance=room_Operation_strategy)
 @settings(max_examples=50)
-def test_room::operation_instantiation(instance):
-    assert isinstance(instance, room::Operation)
-
-@given(instance=room::Operation_strategy)
-def test_room::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_operation_instantiation(instance):
+    assert isinstance(instance, room_Operation)
 
 
-@given(instance=room::Operation_strategy)
-def test_room::operation_name_setter(instance):
+
+@given(instance=room_Operation_strategy)
+def test_room_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::StandardOperation_strategy)
+@given(instance=room_StandardOperation_strategy)
 @settings(max_examples=50)
-def test_room::standardoperation_instantiation(instance):
-    assert isinstance(instance, room::StandardOperation)
-
-@given(instance=room::StandardOperation_strategy)
-def test_room::standardoperation_destructor_type(instance):
-    assert isinstance(instance.destructor, bool)
+def test_room_standardoperation_instantiation(instance):
+    assert isinstance(instance, room_StandardOperation)
 
 
-@given(instance=room::StandardOperation_strategy)
-def test_room::standardoperation_destructor_setter(instance):
+
+@given(instance=room_StandardOperation_strategy)
+def test_room_standardoperation_destructor_setter(instance):
     original = instance.destructor
     instance.destructor = original
     assert instance.destructor == original
 
-@given(instance=room::Attribute_strategy)
+@given(instance=room_Attribute_strategy)
 @settings(max_examples=50)
-def test_room::attribute_instantiation(instance):
-    assert isinstance(instance, room::Attribute)
-
-@given(instance=room::Attribute_strategy)
-def test_room::attribute_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_room_attribute_instantiation(instance):
+    assert isinstance(instance, room_Attribute)
 
 
-@given(instance=room::Attribute_strategy)
-def test_room::attribute_size_setter(instance):
+
+@given(instance=room_Attribute_strategy)
+def test_room_attribute_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=room::Attribute_strategy)
-def test_room::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=room::Attribute_strategy)
-def test_room::attribute_name_setter(instance):
+@given(instance=room_Attribute_strategy)
+def test_room_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::Attribute_strategy)
-def test_room::attribute_defaultValueLiteral_type(instance):
-    assert isinstance(instance.defaultValueLiteral, str)
 
 
-@given(instance=room::Attribute_strategy)
-def test_room::attribute_defaultValueLiteral_setter(instance):
+@given(instance=room_Attribute_strategy)
+def test_room_attribute_defaultValueLiteral_setter(instance):
     original = instance.defaultValueLiteral
     instance.defaultValueLiteral = original
     assert instance.defaultValueLiteral == original
 
-@given(instance=room::SubSystemClass_strategy)
+@given(instance=room_SubSystemClass_strategy)
 @settings(max_examples=50)
-def test_room::subsystemclass_instantiation(instance):
-    assert isinstance(instance, room::SubSystemClass)
+def test_room_subsystemclass_instantiation(instance):
+    assert isinstance(instance, room_SubSystemClass)
 
-@given(instance=room::ActorClass_strategy)
+@given(instance=room_ActorClass_strategy)
 @settings(max_examples=50)
-def test_room::actorclass_instantiation(instance):
-    assert isinstance(instance, room::ActorClass)
-
-@given(instance=room::ActorClass_strategy)
-def test_room::actorclass_commType_type(instance):
-    assert isinstance(instance.commType, str)
+def test_room_actorclass_instantiation(instance):
+    assert isinstance(instance, room_ActorClass)
 
 
-@given(instance=room::ActorClass_strategy)
-def test_room::actorclass_commType_setter(instance):
-    original = instance.commType
-    instance.commType = original
-    assert instance.commType == original
 
-@given(instance=room::ActorClass_strategy)
-def test_room::actorclass_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=room::ActorClass_strategy)
-def test_room::actorclass_abstract_setter(instance):
+@given(instance=room_ActorClass_strategy)
+def test_room_actorclass_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
+
+
+
+@given(instance=room_ActorClass_strategy)
+def test_room_actorclass_commType_setter(instance):
+    original = instance.commType
+    instance.commType = original
+    assert instance.commType == original
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=room::ComplexType_strategy)
+@given(instance=room_ComplexType_strategy)
 @settings(max_examples=50)
-def test_room::complextype_instantiation(instance):
-    assert isinstance(instance, room::ComplexType)
+def test_room_complextype_instantiation(instance):
+    assert isinstance(instance, room_ComplexType)
 
-@given(instance=room::RefableType_strategy)
+@given(instance=room_RefableType_strategy)
 @settings(max_examples=50)
-def test_room::refabletype_instantiation(instance):
-    assert isinstance(instance, room::RefableType)
-
-@given(instance=room::RefableType_strategy)
-def test_room::refabletype_ref_type(instance):
-    assert isinstance(instance.ref, bool)
+def test_room_refabletype_instantiation(instance):
+    assert isinstance(instance, room_RefableType)
 
 
-@given(instance=room::RefableType_strategy)
-def test_room::refabletype_ref_setter(instance):
+
+@given(instance=room_RefableType_strategy)
+def test_room_refabletype_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=room::VarDecl_strategy)
+@given(instance=room_VarDecl_strategy)
 @settings(max_examples=50)
-def test_room::vardecl_instantiation(instance):
-    assert isinstance(instance, room::VarDecl)
-
-@given(instance=room::VarDecl_strategy)
-def test_room::vardecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_vardecl_instantiation(instance):
+    assert isinstance(instance, room_VarDecl)
 
 
-@given(instance=room::VarDecl_strategy)
-def test_room::vardecl_name_setter(instance):
+
+@given(instance=room_VarDecl_strategy)
+def test_room_vardecl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::ActorRef_strategy)
+@given(instance=room_ActorRef_strategy)
 @settings(max_examples=50)
-def test_room::actorref_instantiation(instance):
-    assert isinstance(instance, room::ActorRef)
-
-@given(instance=room::ActorRef_strategy)
-def test_room::actorref_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_room_actorref_instantiation(instance):
+    assert isinstance(instance, room_ActorRef)
 
 
-@given(instance=room::ActorRef_strategy)
-def test_room::actorref_size_setter(instance):
+
+@given(instance=room_ActorRef_strategy)
+def test_room_actorref_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=room::DetailCode_strategy)
+@given(instance=room_DetailCode_strategy)
 @settings(max_examples=50)
-def test_room::detailcode_instantiation(instance):
-    assert isinstance(instance, room::DetailCode)
-
-@given(instance=room::DetailCode_strategy)
-def test_room::detailcode_commands_type(instance):
-    assert isinstance(instance.commands, str)
+def test_room_detailcode_instantiation(instance):
+    assert isinstance(instance, room_DetailCode)
 
 
-@given(instance=room::DetailCode_strategy)
-def test_room::detailcode_commands_setter(instance):
+
+@given(instance=room_DetailCode_strategy)
+def test_room_detailcode_commands_setter(instance):
     original = instance.commands
     instance.commands = original
     assert instance.commands == original
 
-@given(instance=room::SPPRef_strategy)
+@given(instance=room_SPPRef_strategy)
 @settings(max_examples=50)
-def test_room::sppref_instantiation(instance):
-    assert isinstance(instance, room::SPPRef)
+def test_room_sppref_instantiation(instance):
+    assert isinstance(instance, room_SPPRef)
 
 @given(instance=StructureClass_strategy)
 @settings(max_examples=50)
 def test_structureclass_instantiation(instance):
     assert isinstance(instance, StructureClass)
 
-@given(instance=room::ActorContainerClass_strategy)
+@given(instance=room_ActorContainerClass_strategy)
 @settings(max_examples=50)
-def test_room::actorcontainerclass_instantiation(instance):
-    assert isinstance(instance, room::ActorContainerClass)
+def test_room_actorcontainerclass_instantiation(instance):
+    assert isinstance(instance, room_ActorContainerClass)
 
-@given(instance=room::LayerConnection_strategy)
+@given(instance=room_LayerConnection_strategy)
 @settings(max_examples=50)
-def test_room::layerconnection_instantiation(instance):
-    assert isinstance(instance, room::LayerConnection)
+def test_room_layerconnection_instantiation(instance):
+    assert isinstance(instance, room_LayerConnection)
 
-@given(instance=room::Binding_strategy)
+@given(instance=room_Binding_strategy)
 @settings(max_examples=50)
-def test_room::binding_instantiation(instance):
-    assert isinstance(instance, room::Binding)
+def test_room_binding_instantiation(instance):
+    assert isinstance(instance, room_Binding)
 
-@given(instance=room::Annotation_strategy)
+@given(instance=room_Annotation_strategy)
 @settings(max_examples=50)
-def test_room::annotation_instantiation(instance):
-    assert isinstance(instance, room::Annotation)
-
-@given(instance=room::Annotation_strategy)
-def test_room::annotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_annotation_instantiation(instance):
+    assert isinstance(instance, room_Annotation)
 
 
-@given(instance=room::Annotation_strategy)
-def test_room::annotation_name_setter(instance):
+
+@given(instance=room_Annotation_strategy)
+def test_room_annotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3208,167 +3118,137 @@ def test_room::annotation_name_setter(instance):
 def test_roomclass_instantiation(instance):
     assert isinstance(instance, RoomClass)
 
-@given(instance=room::GeneralProtocolClass_strategy)
+@given(instance=room_DataType_strategy)
 @settings(max_examples=50)
-def test_room::generalprotocolclass_instantiation(instance):
-    assert isinstance(instance, room::GeneralProtocolClass)
+def test_room_datatype_instantiation(instance):
+    assert isinstance(instance, room_DataType)
 
-@given(instance=room::DataType_strategy)
+@given(instance=room_GeneralProtocolClass_strategy)
 @settings(max_examples=50)
-def test_room::datatype_instantiation(instance):
-    assert isinstance(instance, room::DataType)
+def test_room_generalprotocolclass_instantiation(instance):
+    assert isinstance(instance, room_GeneralProtocolClass)
 
-@given(instance=room::StructureClass_strategy)
+@given(instance=room_StructureClass_strategy)
 @settings(max_examples=50)
-def test_room::structureclass_instantiation(instance):
-    assert isinstance(instance, room::StructureClass)
+def test_room_structureclass_instantiation(instance):
+    assert isinstance(instance, room_StructureClass)
 
-@given(instance=room::RoomClass_strategy)
+@given(instance=room_RoomClass_strategy)
 @settings(max_examples=50)
-def test_room::roomclass_instantiation(instance):
-    assert isinstance(instance, room::RoomClass)
-
-@given(instance=room::RoomClass_strategy)
-def test_room::roomclass_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_roomclass_instantiation(instance):
+    assert isinstance(instance, room_RoomClass)
 
 
-@given(instance=room::RoomClass_strategy)
-def test_room::roomclass_name_setter(instance):
+
+@given(instance=room_RoomClass_strategy)
+def test_room_roomclass_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=room::LogicalSystem_strategy)
+@given(instance=room_LogicalSystem_strategy)
 @settings(max_examples=50)
-def test_room::logicalsystem_instantiation(instance):
-    assert isinstance(instance, room::LogicalSystem)
+def test_room_logicalsystem_instantiation(instance):
+    assert isinstance(instance, room_LogicalSystem)
 
-@given(instance=room::DataClass_strategy)
+@given(instance=room_DataClass_strategy)
 @settings(max_examples=50)
-def test_room::dataclass_instantiation(instance):
-    assert isinstance(instance, room::DataClass)
+def test_room_dataclass_instantiation(instance):
+    assert isinstance(instance, room_DataClass)
 
-@given(instance=room::ExternalType_strategy)
+@given(instance=room_ExternalType_strategy)
 @settings(max_examples=50)
-def test_room::externaltype_instantiation(instance):
-    assert isinstance(instance, room::ExternalType)
-
-@given(instance=room::ExternalType_strategy)
-def test_room::externaltype_targetName_type(instance):
-    assert isinstance(instance.targetName, str)
+def test_room_externaltype_instantiation(instance):
+    assert isinstance(instance, room_ExternalType)
 
 
-@given(instance=room::ExternalType_strategy)
-def test_room::externaltype_targetName_setter(instance):
+
+@given(instance=room_ExternalType_strategy)
+def test_room_externaltype_targetName_setter(instance):
     original = instance.targetName
     instance.targetName = original
     assert instance.targetName == original
 
-@given(instance=room::PrimitiveType_strategy)
+@given(instance=room_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_room::primitivetype_instantiation(instance):
-    assert isinstance(instance, room::PrimitiveType)
-
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_room_primitivetype_instantiation(instance):
+    assert isinstance(instance, room_PrimitiveType)
 
 
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_targetName_type(instance):
-    assert isinstance(instance.targetName, str)
-
-
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_targetName_setter(instance):
-    original = instance.targetName
-    instance.targetName = original
-    assert instance.targetName == original
-
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_castName_type(instance):
-    assert isinstance(instance.castName, str)
-
-
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_castName_setter(instance):
+@given(instance=room_PrimitiveType_strategy)
+def test_room_primitivetype_castName_setter(instance):
     original = instance.castName
     instance.castName = original
     assert instance.castName == original
 
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_defaultValueLiteral_type(instance):
-    assert isinstance(instance.defaultValueLiteral, str)
 
 
-@given(instance=room::PrimitiveType_strategy)
-def test_room::primitivetype_defaultValueLiteral_setter(instance):
+@given(instance=room_PrimitiveType_strategy)
+def test_room_primitivetype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=room_PrimitiveType_strategy)
+def test_room_primitivetype_targetName_setter(instance):
+    original = instance.targetName
+    instance.targetName = original
+    assert instance.targetName == original
+
+
+
+@given(instance=room_PrimitiveType_strategy)
+def test_room_primitivetype_defaultValueLiteral_setter(instance):
     original = instance.defaultValueLiteral
     instance.defaultValueLiteral = original
     assert instance.defaultValueLiteral == original
 
-@given(instance=room::Import_strategy)
+@given(instance=room_Import_strategy)
 @settings(max_examples=50)
-def test_room::import_instantiation(instance):
-    assert isinstance(instance, room::Import)
-
-@given(instance=room::Import_strategy)
-def test_room::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_room_import_instantiation(instance):
+    assert isinstance(instance, room_Import)
 
 
-@given(instance=room::Import_strategy)
-def test_room::import_importURI_setter(instance):
+
+@given(instance=room_Import_strategy)
+def test_room_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=room::Import_strategy)
-def test_room::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
 
 
-@given(instance=room::Import_strategy)
-def test_room::import_importedNamespace_setter(instance):
+@given(instance=room_Import_strategy)
+def test_room_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=room::Documentation_strategy)
+@given(instance=room_Documentation_strategy)
 @settings(max_examples=50)
-def test_room::documentation_instantiation(instance):
-    assert isinstance(instance, room::Documentation)
-
-@given(instance=room::Documentation_strategy)
-def test_room::documentation_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_room_documentation_instantiation(instance):
+    assert isinstance(instance, room_Documentation)
 
 
-@given(instance=room::Documentation_strategy)
-def test_room::documentation_text_setter(instance):
+
+@given(instance=room_Documentation_strategy)
+def test_room_documentation_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=room::RoomModel_strategy)
+@given(instance=room_RoomModel_strategy)
 @settings(max_examples=50)
-def test_room::roommodel_instantiation(instance):
-    assert isinstance(instance, room::RoomModel)
-
-@given(instance=room::RoomModel_strategy)
-def test_room::roommodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_room_roommodel_instantiation(instance):
+    assert isinstance(instance, room_RoomModel)
 
 
-@given(instance=room::RoomModel_strategy)
-def test_room::roommodel_name_setter(instance):
+
+@given(instance=room_RoomModel_strategy)
+def test_room_roommodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

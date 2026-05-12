@@ -3,212 +3,112 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Constant,
-    AsmL::StringConstant,
-    AsmL::NullConstant,
-    AsmL::IntegerConstant,
-    AsmL::BooleanConstant,
+from python_code import (
     SequenceTerm,
-    AsmL::RangeSequence,
-    AsmL::EnumerateSequence,
+    AsmL_EnumerateSequence,
     SetTerm,
-    AsmL::RangeSet,
-    AsmL::AlgorithmSet,
-    AsmL::EnumerateSet,
+    AsmL_AlgorithmSet,
+    AsmL_RangeSet,
+    AsmL_EnumerateSet,
     PredicateTerm,
-    AsmL::ExistsTerm,
-    AsmL::AnyIn,
-    AsmL::ForAllTerm,
+    AsmL_AnyIn,
+    AsmL_ExistsTerm,
+    AsmL_ForAllTerm,
     ConditionalRule,
-    AsmL::ElseIf,
+    AsmL_ElseIf,
     ElseIf,
     UpdateRule,
-    AsmL::UpdateMapRule,
-    AsmL::UpdateFieldRule,
-    AsmL::UpdateVarRule,
+    AsmL_UpdateMapRule,
+    AsmL_UpdateFieldRule,
+    AsmL_UpdateVarRule,
     MethodCallTerm,
-    AsmL::NewInstance,
+    AsmL_NewInstance,
     InWhereHolds,
     StepExpression,
-    AsmL::StepUntil,
-    AsmL::StepWhile,
+    AsmL_StepUntil,
+    AsmL_StepWhile,
     Step,
-    AsmL::StepExpression,
-    AsmL::StepForEach,
-    AsmL::StepUntilFixPoint,
+    AsmL_StepForEach,
+    AsmL_StepExpression,
+    AsmL_StepUntilFixPoint,
     Method,
     VarTerm,
     Initially,
     Body,
     Parameter,
     Function,
-    AsmL::Main,
+    AsmL_Main,
     Class,
     Enumerator,
     Structure,
     VarDeclaration,
     Type,
-    AsmL::SequenceType,
-    AsmL::TupletType,
-    AsmL::NamedType,
-    AsmL::SetType,
-    AsmL::MapType,
+    AsmL_TupletType,
+    AsmL_SequenceType,
+    AsmL_SetType,
+    AsmL_MapType,
+    AsmL_NamedType,
     VarOrMethod,
-    AsmL::Method,
+    AsmL_Method,
     VarOrCase,
-    AsmL::Case,
+    AsmL_Case,
     AsmLFile,
     Main,
     AsmLElement,
-    AsmL::Class,
-    AsmL::Function,
-    AsmL::Structure,
-    AsmL::VarDeclaration,
-    AsmL::Type,
-    AsmL::Namespace,
-    AsmL::Enumeration,
+    AsmL_Function,
+    AsmL_Type,
+    AsmL_Namespace,
+    AsmL_Class,
+    AsmL_Structure,
+    AsmL_VarDeclaration,
+    AsmL_Enumeration,
     Term,
-    AsmL::VarTerm,
-    AsmL::SequenceTerm,
-    AsmL::TulpletTerm,
-    AsmL::PredicateTerm,
-    AsmL::Constant,
-    AsmL::SetTerm,
-    AsmL::MapTerm,
-    AsmL::Operator,
-    AsmL::MethodCallTerm,
+    AsmL_MapTerm,
+    AsmL_PredicateTerm,
+    AsmL_SetTerm,
+    AsmL_Operator,
+    AsmL_VarTerm,
+    AsmL_SequenceTerm,
+    AsmL_TulpletTerm,
+    AsmL_MethodCallTerm,
     Rule,
-    AsmL::RemoveRule,
-    AsmL::MethodInvocation,
-    AsmL::ReturnRule,
-    AsmL::ConditionalRule,
-    AsmL::AddRule,
-    AsmL::ChooseRule,
-    AsmL::ForallRule,
-    AsmL::UpdateRule,
-    AsmL::SkipRule,
-    AsmL::Step,
+    AsmL_AddRule,
+    AsmL_RemoveRule,
+    AsmL_ChooseRule,
+    AsmL_ForallRule,
+    AsmL_ConditionalRule,
+    AsmL_MethodInvocation,
+    AsmL_ReturnRule,
+    AsmL_UpdateRule,
+    AsmL_SkipRule,
+    AsmL_Step,
     LocatedElement,
-    AsmL::VarOrCase,
-    AsmL::AsmLFile,
-    AsmL::InWhereHolds,
-    AsmL::Initially,
-    AsmL::Enumerator,
-    AsmL::Term,
-    AsmL::Rule,
-    AsmL::VarOrMethod,
-    AsmL::AsmLElement,
-    AsmL::Parameter,
-    AsmL::Body,
-    AsmL::LocatedElement,
+    AsmL_InWhereHolds,
+    AsmL_Parameter,
+    AsmL_AsmLFile,
+    AsmL_VarOrCase,
+    AsmL_Enumerator,
+    AsmL_Initially,
+    AsmL_VarOrMethod,
+    AsmL_Rule,
+    AsmL_AsmLElement,
+    AsmL_Term,
+    AsmL_Body,
+    AsmL_LocatedElement,
+    Constant,
+    AsmL_IntegerConstant,
+    AsmL_StringConstant,
+    AsmL_NullConstant,
+    AsmL_BooleanConstant,
+    AsmL_Constant,
+    AsmL_RangeSequence,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_constant_is_not_abstract():
-    assert not inspect.isabstract(Constant)
-
-
-def test_constant_constructor_exists():
-    assert callable(Constant.__init__)
-
-
-def test_constant_constructor_args():
-    sig = inspect.signature(Constant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(AsmL::StringConstant)
-
-
-def test_asml::stringconstant_constructor_exists():
-    assert callable(AsmL::StringConstant.__init__)
-
-
-def test_asml::stringconstant_constructor_args():
-    sig = inspect.signature(AsmL::StringConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "val" in params, "Missing parameter 'val'"
-
-def test_asml::stringconstant_has_val():
-    assert hasattr(AsmL::StringConstant, "val")
-    descriptor = None
-    for klass in AsmL::StringConstant.__mro__:
-        if "val" in klass.__dict__:
-            descriptor = klass.__dict__["val"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asml::nullconstant_is_not_abstract():
-    assert not inspect.isabstract(AsmL::NullConstant)
-
-
-def test_asml::nullconstant_constructor_exists():
-    assert callable(AsmL::NullConstant.__init__)
-
-
-def test_asml::nullconstant_constructor_args():
-    sig = inspect.signature(AsmL::NullConstant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::integerconstant_is_not_abstract():
-    assert not inspect.isabstract(AsmL::IntegerConstant)
-
-
-def test_asml::integerconstant_constructor_exists():
-    assert callable(AsmL::IntegerConstant.__init__)
-
-
-def test_asml::integerconstant_constructor_args():
-    sig = inspect.signature(AsmL::IntegerConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "val" in params, "Missing parameter 'val'"
-
-def test_asml::integerconstant_has_val():
-    assert hasattr(AsmL::IntegerConstant, "val")
-    descriptor = None
-    for klass in AsmL::IntegerConstant.__mro__:
-        if "val" in klass.__dict__:
-            descriptor = klass.__dict__["val"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asml::booleanconstant_is_not_abstract():
-    assert not inspect.isabstract(AsmL::BooleanConstant)
-
-
-def test_asml::booleanconstant_constructor_exists():
-    assert callable(AsmL::BooleanConstant.__init__)
-
-
-def test_asml::booleanconstant_constructor_args():
-    sig = inspect.signature(AsmL::BooleanConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "val" in params, "Missing parameter 'val'"
-
-def test_asml::booleanconstant_has_val():
-    assert hasattr(AsmL::BooleanConstant, "val")
-    descriptor = None
-    for klass in AsmL::BooleanConstant.__mro__:
-        if "val" in klass.__dict__:
-            descriptor = klass.__dict__["val"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -226,30 +126,16 @@ def test_sequenceterm_constructor_args():
 
 
 
-def test_asml::rangesequence_is_not_abstract():
-    assert not inspect.isabstract(AsmL::RangeSequence)
+def test_asml_enumeratesequence_is_not_abstract():
+    assert not inspect.isabstract(AsmL_EnumerateSequence)
 
 
-def test_asml::rangesequence_constructor_exists():
-    assert callable(AsmL::RangeSequence.__init__)
+def test_asml_enumeratesequence_constructor_exists():
+    assert callable(AsmL_EnumerateSequence.__init__)
 
 
-def test_asml::rangesequence_constructor_args():
-    sig = inspect.signature(AsmL::RangeSequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::enumeratesequence_is_not_abstract():
-    assert not inspect.isabstract(AsmL::EnumerateSequence)
-
-
-def test_asml::enumeratesequence_constructor_exists():
-    assert callable(AsmL::EnumerateSequence.__init__)
-
-
-def test_asml::enumeratesequence_constructor_args():
-    sig = inspect.signature(AsmL::EnumerateSequence.__init__)
+def test_asml_enumeratesequence_constructor_args():
+    sig = inspect.signature(AsmL_EnumerateSequence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -268,44 +154,44 @@ def test_setterm_constructor_args():
 
 
 
-def test_asml::rangeset_is_not_abstract():
-    assert not inspect.isabstract(AsmL::RangeSet)
+def test_asml_algorithmset_is_not_abstract():
+    assert not inspect.isabstract(AsmL_AlgorithmSet)
 
 
-def test_asml::rangeset_constructor_exists():
-    assert callable(AsmL::RangeSet.__init__)
+def test_asml_algorithmset_constructor_exists():
+    assert callable(AsmL_AlgorithmSet.__init__)
 
 
-def test_asml::rangeset_constructor_args():
-    sig = inspect.signature(AsmL::RangeSet.__init__)
+def test_asml_algorithmset_constructor_args():
+    sig = inspect.signature(AsmL_AlgorithmSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::algorithmset_is_not_abstract():
-    assert not inspect.isabstract(AsmL::AlgorithmSet)
+def test_asml_rangeset_is_not_abstract():
+    assert not inspect.isabstract(AsmL_RangeSet)
 
 
-def test_asml::algorithmset_constructor_exists():
-    assert callable(AsmL::AlgorithmSet.__init__)
+def test_asml_rangeset_constructor_exists():
+    assert callable(AsmL_RangeSet.__init__)
 
 
-def test_asml::algorithmset_constructor_args():
-    sig = inspect.signature(AsmL::AlgorithmSet.__init__)
+def test_asml_rangeset_constructor_args():
+    sig = inspect.signature(AsmL_RangeSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::enumerateset_is_not_abstract():
-    assert not inspect.isabstract(AsmL::EnumerateSet)
+def test_asml_enumerateset_is_not_abstract():
+    assert not inspect.isabstract(AsmL_EnumerateSet)
 
 
-def test_asml::enumerateset_constructor_exists():
-    assert callable(AsmL::EnumerateSet.__init__)
+def test_asml_enumerateset_constructor_exists():
+    assert callable(AsmL_EnumerateSet.__init__)
 
 
-def test_asml::enumerateset_constructor_args():
-    sig = inspect.signature(AsmL::EnumerateSet.__init__)
+def test_asml_enumerateset_constructor_args():
+    sig = inspect.signature(AsmL_EnumerateSet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -324,23 +210,37 @@ def test_predicateterm_constructor_args():
 
 
 
-def test_asml::existsterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ExistsTerm)
+def test_asml_anyin_is_not_abstract():
+    assert not inspect.isabstract(AsmL_AnyIn)
 
 
-def test_asml::existsterm_constructor_exists():
-    assert callable(AsmL::ExistsTerm.__init__)
+def test_asml_anyin_constructor_exists():
+    assert callable(AsmL_AnyIn.__init__)
 
 
-def test_asml::existsterm_constructor_args():
-    sig = inspect.signature(AsmL::ExistsTerm.__init__)
+def test_asml_anyin_constructor_args():
+    sig = inspect.signature(AsmL_AnyIn.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_existsterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ExistsTerm)
+
+
+def test_asml_existsterm_constructor_exists():
+    assert callable(AsmL_ExistsTerm.__init__)
+
+
+def test_asml_existsterm_constructor_args():
+    sig = inspect.signature(AsmL_ExistsTerm.__init__)
     params = list(sig.parameters.keys())
     assert "isUnique" in params, "Missing parameter 'isUnique'"
 
-def test_asml::existsterm_has_isUnique():
-    assert hasattr(AsmL::ExistsTerm, "isUnique")
+def test_asml_existsterm_has_isUnique():
+    assert hasattr(AsmL_ExistsTerm, "isUnique")
     descriptor = None
-    for klass in AsmL::ExistsTerm.__mro__:
+    for klass in AsmL_ExistsTerm.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
@@ -348,30 +248,16 @@ def test_asml::existsterm_has_isUnique():
 
 
 
-def test_asml::anyin_is_not_abstract():
-    assert not inspect.isabstract(AsmL::AnyIn)
+def test_asml_forallterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ForAllTerm)
 
 
-def test_asml::anyin_constructor_exists():
-    assert callable(AsmL::AnyIn.__init__)
+def test_asml_forallterm_constructor_exists():
+    assert callable(AsmL_ForAllTerm.__init__)
 
 
-def test_asml::anyin_constructor_args():
-    sig = inspect.signature(AsmL::AnyIn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::forallterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ForAllTerm)
-
-
-def test_asml::forallterm_constructor_exists():
-    assert callable(AsmL::ForAllTerm.__init__)
-
-
-def test_asml::forallterm_constructor_args():
-    sig = inspect.signature(AsmL::ForAllTerm.__init__)
+def test_asml_forallterm_constructor_args():
+    sig = inspect.signature(AsmL_ForAllTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -390,16 +276,16 @@ def test_conditionalrule_constructor_args():
 
 
 
-def test_asml::elseif_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ElseIf)
+def test_asml_elseif_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ElseIf)
 
 
-def test_asml::elseif_constructor_exists():
-    assert callable(AsmL::ElseIf.__init__)
+def test_asml_elseif_constructor_exists():
+    assert callable(AsmL_ElseIf.__init__)
 
 
-def test_asml::elseif_constructor_args():
-    sig = inspect.signature(AsmL::ElseIf.__init__)
+def test_asml_elseif_constructor_args():
+    sig = inspect.signature(AsmL_ElseIf.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,44 +318,44 @@ def test_updaterule_constructor_args():
 
 
 
-def test_asml::updatemaprule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::UpdateMapRule)
+def test_asml_updatemaprule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_UpdateMapRule)
 
 
-def test_asml::updatemaprule_constructor_exists():
-    assert callable(AsmL::UpdateMapRule.__init__)
+def test_asml_updatemaprule_constructor_exists():
+    assert callable(AsmL_UpdateMapRule.__init__)
 
 
-def test_asml::updatemaprule_constructor_args():
-    sig = inspect.signature(AsmL::UpdateMapRule.__init__)
+def test_asml_updatemaprule_constructor_args():
+    sig = inspect.signature(AsmL_UpdateMapRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::updatefieldrule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::UpdateFieldRule)
+def test_asml_updatefieldrule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_UpdateFieldRule)
 
 
-def test_asml::updatefieldrule_constructor_exists():
-    assert callable(AsmL::UpdateFieldRule.__init__)
+def test_asml_updatefieldrule_constructor_exists():
+    assert callable(AsmL_UpdateFieldRule.__init__)
 
 
-def test_asml::updatefieldrule_constructor_args():
-    sig = inspect.signature(AsmL::UpdateFieldRule.__init__)
+def test_asml_updatefieldrule_constructor_args():
+    sig = inspect.signature(AsmL_UpdateFieldRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::updatevarrule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::UpdateVarRule)
+def test_asml_updatevarrule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_UpdateVarRule)
 
 
-def test_asml::updatevarrule_constructor_exists():
-    assert callable(AsmL::UpdateVarRule.__init__)
+def test_asml_updatevarrule_constructor_exists():
+    assert callable(AsmL_UpdateVarRule.__init__)
 
 
-def test_asml::updatevarrule_constructor_args():
-    sig = inspect.signature(AsmL::UpdateVarRule.__init__)
+def test_asml_updatevarrule_constructor_args():
+    sig = inspect.signature(AsmL_UpdateVarRule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -488,16 +374,16 @@ def test_methodcallterm_constructor_args():
 
 
 
-def test_asml::newinstance_is_not_abstract():
-    assert not inspect.isabstract(AsmL::NewInstance)
+def test_asml_newinstance_is_not_abstract():
+    assert not inspect.isabstract(AsmL_NewInstance)
 
 
-def test_asml::newinstance_constructor_exists():
-    assert callable(AsmL::NewInstance.__init__)
+def test_asml_newinstance_constructor_exists():
+    assert callable(AsmL_NewInstance.__init__)
 
 
-def test_asml::newinstance_constructor_args():
-    sig = inspect.signature(AsmL::NewInstance.__init__)
+def test_asml_newinstance_constructor_args():
+    sig = inspect.signature(AsmL_NewInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -530,30 +416,30 @@ def test_stepexpression_constructor_args():
 
 
 
-def test_asml::stepuntil_is_not_abstract():
-    assert not inspect.isabstract(AsmL::StepUntil)
+def test_asml_stepuntil_is_not_abstract():
+    assert not inspect.isabstract(AsmL_StepUntil)
 
 
-def test_asml::stepuntil_constructor_exists():
-    assert callable(AsmL::StepUntil.__init__)
+def test_asml_stepuntil_constructor_exists():
+    assert callable(AsmL_StepUntil.__init__)
 
 
-def test_asml::stepuntil_constructor_args():
-    sig = inspect.signature(AsmL::StepUntil.__init__)
+def test_asml_stepuntil_constructor_args():
+    sig = inspect.signature(AsmL_StepUntil.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::stepwhile_is_not_abstract():
-    assert not inspect.isabstract(AsmL::StepWhile)
+def test_asml_stepwhile_is_not_abstract():
+    assert not inspect.isabstract(AsmL_StepWhile)
 
 
-def test_asml::stepwhile_constructor_exists():
-    assert callable(AsmL::StepWhile.__init__)
+def test_asml_stepwhile_constructor_exists():
+    assert callable(AsmL_StepWhile.__init__)
 
 
-def test_asml::stepwhile_constructor_args():
-    sig = inspect.signature(AsmL::StepWhile.__init__)
+def test_asml_stepwhile_constructor_args():
+    sig = inspect.signature(AsmL_StepWhile.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -572,44 +458,44 @@ def test_step_constructor_args():
 
 
 
-def test_asml::stepexpression_is_not_abstract():
-    assert not inspect.isabstract(AsmL::StepExpression)
+def test_asml_stepforeach_is_not_abstract():
+    assert not inspect.isabstract(AsmL_StepForEach)
 
 
-def test_asml::stepexpression_constructor_exists():
-    assert callable(AsmL::StepExpression.__init__)
+def test_asml_stepforeach_constructor_exists():
+    assert callable(AsmL_StepForEach.__init__)
 
 
-def test_asml::stepexpression_constructor_args():
-    sig = inspect.signature(AsmL::StepExpression.__init__)
+def test_asml_stepforeach_constructor_args():
+    sig = inspect.signature(AsmL_StepForEach.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::stepforeach_is_not_abstract():
-    assert not inspect.isabstract(AsmL::StepForEach)
+def test_asml_stepexpression_is_not_abstract():
+    assert not inspect.isabstract(AsmL_StepExpression)
 
 
-def test_asml::stepforeach_constructor_exists():
-    assert callable(AsmL::StepForEach.__init__)
+def test_asml_stepexpression_constructor_exists():
+    assert callable(AsmL_StepExpression.__init__)
 
 
-def test_asml::stepforeach_constructor_args():
-    sig = inspect.signature(AsmL::StepForEach.__init__)
+def test_asml_stepexpression_constructor_args():
+    sig = inspect.signature(AsmL_StepExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::stepuntilfixpoint_is_not_abstract():
-    assert not inspect.isabstract(AsmL::StepUntilFixPoint)
+def test_asml_stepuntilfixpoint_is_not_abstract():
+    assert not inspect.isabstract(AsmL_StepUntilFixPoint)
 
 
-def test_asml::stepuntilfixpoint_constructor_exists():
-    assert callable(AsmL::StepUntilFixPoint.__init__)
+def test_asml_stepuntilfixpoint_constructor_exists():
+    assert callable(AsmL_StepUntilFixPoint.__init__)
 
 
-def test_asml::stepuntilfixpoint_constructor_args():
-    sig = inspect.signature(AsmL::StepUntilFixPoint.__init__)
+def test_asml_stepuntilfixpoint_constructor_args():
+    sig = inspect.signature(AsmL_StepUntilFixPoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -698,16 +584,16 @@ def test_function_constructor_args():
 
 
 
-def test_asml::main_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Main)
+def test_asml_main_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Main)
 
 
-def test_asml::main_constructor_exists():
-    assert callable(AsmL::Main.__init__)
+def test_asml_main_constructor_exists():
+    assert callable(AsmL_Main.__init__)
 
 
-def test_asml::main_constructor_args():
-    sig = inspect.signature(AsmL::Main.__init__)
+def test_asml_main_constructor_args():
+    sig = inspect.signature(AsmL_Main.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -782,83 +668,83 @@ def test_type_constructor_args():
 
 
 
-def test_asml::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(AsmL::SequenceType)
+def test_asml_tuplettype_is_not_abstract():
+    assert not inspect.isabstract(AsmL_TupletType)
 
 
-def test_asml::sequencetype_constructor_exists():
-    assert callable(AsmL::SequenceType.__init__)
+def test_asml_tuplettype_constructor_exists():
+    assert callable(AsmL_TupletType.__init__)
 
 
-def test_asml::sequencetype_constructor_args():
-    sig = inspect.signature(AsmL::SequenceType.__init__)
+def test_asml_tuplettype_constructor_args():
+    sig = inspect.signature(AsmL_TupletType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::tuplettype_is_not_abstract():
-    assert not inspect.isabstract(AsmL::TupletType)
+def test_asml_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(AsmL_SequenceType)
 
 
-def test_asml::tuplettype_constructor_exists():
-    assert callable(AsmL::TupletType.__init__)
+def test_asml_sequencetype_constructor_exists():
+    assert callable(AsmL_SequenceType.__init__)
 
 
-def test_asml::tuplettype_constructor_args():
-    sig = inspect.signature(AsmL::TupletType.__init__)
+def test_asml_sequencetype_constructor_args():
+    sig = inspect.signature(AsmL_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::namedtype_is_not_abstract():
-    assert not inspect.isabstract(AsmL::NamedType)
+def test_asml_settype_is_not_abstract():
+    assert not inspect.isabstract(AsmL_SetType)
 
 
-def test_asml::namedtype_constructor_exists():
-    assert callable(AsmL::NamedType.__init__)
+def test_asml_settype_constructor_exists():
+    assert callable(AsmL_SetType.__init__)
 
 
-def test_asml::namedtype_constructor_args():
-    sig = inspect.signature(AsmL::NamedType.__init__)
+def test_asml_settype_constructor_args():
+    sig = inspect.signature(AsmL_SetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_maptype_is_not_abstract():
+    assert not inspect.isabstract(AsmL_MapType)
+
+
+def test_asml_maptype_constructor_exists():
+    assert callable(AsmL_MapType.__init__)
+
+
+def test_asml_maptype_constructor_args():
+    sig = inspect.signature(AsmL_MapType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_namedtype_is_not_abstract():
+    assert not inspect.isabstract(AsmL_NamedType)
+
+
+def test_asml_namedtype_constructor_exists():
+    assert callable(AsmL_NamedType.__init__)
+
+
+def test_asml_namedtype_constructor_args():
+    sig = inspect.signature(AsmL_NamedType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::namedtype_has_name():
-    assert hasattr(AsmL::NamedType, "name")
+def test_asml_namedtype_has_name():
+    assert hasattr(AsmL_NamedType, "name")
     descriptor = None
-    for klass in AsmL::NamedType.__mro__:
+    for klass in AsmL_NamedType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_asml::settype_is_not_abstract():
-    assert not inspect.isabstract(AsmL::SetType)
-
-
-def test_asml::settype_constructor_exists():
-    assert callable(AsmL::SetType.__init__)
-
-
-def test_asml::settype_constructor_args():
-    sig = inspect.signature(AsmL::SetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::maptype_is_not_abstract():
-    assert not inspect.isabstract(AsmL::MapType)
-
-
-def test_asml::maptype_constructor_exists():
-    assert callable(AsmL::MapType.__init__)
-
-
-def test_asml::maptype_constructor_args():
-    sig = inspect.signature(AsmL::MapType.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -876,53 +762,53 @@ def test_varormethod_constructor_args():
 
 
 
-def test_asml::method_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Method)
+def test_asml_method_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Method)
 
 
-def test_asml::method_constructor_exists():
-    assert callable(AsmL::Method.__init__)
+def test_asml_method_constructor_exists():
+    assert callable(AsmL_Method.__init__)
 
 
-def test_asml::method_constructor_args():
-    sig = inspect.signature(AsmL::Method.__init__)
+def test_asml_method_constructor_args():
+    sig = inspect.signature(AsmL_Method.__init__)
     params = list(sig.parameters.keys())
-    assert "isOverride" in params, "Missing parameter 'isOverride'"
-    assert "isShared" in params, "Missing parameter 'isShared'"
     assert "isEntryPoint" in params, "Missing parameter 'isEntryPoint'"
+    assert "isShared" in params, "Missing parameter 'isShared'"
+    assert "isOverride" in params, "Missing parameter 'isOverride'"
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_asml::method_has_isOverride():
-    assert hasattr(AsmL::Method, "isOverride")
+def test_asml_method_has_isEntryPoint():
+    assert hasattr(AsmL_Method, "isEntryPoint")
     descriptor = None
-    for klass in AsmL::Method.__mro__:
-        if "isOverride" in klass.__dict__:
-            descriptor = klass.__dict__["isOverride"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::method_has_isShared():
-    assert hasattr(AsmL::Method, "isShared")
-    descriptor = None
-    for klass in AsmL::Method.__mro__:
-        if "isShared" in klass.__dict__:
-            descriptor = klass.__dict__["isShared"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::method_has_isEntryPoint():
-    assert hasattr(AsmL::Method, "isEntryPoint")
-    descriptor = None
-    for klass in AsmL::Method.__mro__:
+    for klass in AsmL_Method.__mro__:
         if "isEntryPoint" in klass.__dict__:
             descriptor = klass.__dict__["isEntryPoint"]
             break
     assert isinstance(descriptor, property)
 
-def test_asml::method_has_isAbstract():
-    assert hasattr(AsmL::Method, "isAbstract")
+def test_asml_method_has_isShared():
+    assert hasattr(AsmL_Method, "isShared")
     descriptor = None
-    for klass in AsmL::Method.__mro__:
+    for klass in AsmL_Method.__mro__:
+        if "isShared" in klass.__dict__:
+            descriptor = klass.__dict__["isShared"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_method_has_isOverride():
+    assert hasattr(AsmL_Method, "isOverride")
+    descriptor = None
+    for klass in AsmL_Method.__mro__:
+        if "isOverride" in klass.__dict__:
+            descriptor = klass.__dict__["isOverride"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_method_has_isAbstract():
+    assert hasattr(AsmL_Method, "isAbstract")
+    descriptor = None
+    for klass in AsmL_Method.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -944,23 +830,23 @@ def test_varorcase_constructor_args():
 
 
 
-def test_asml::case_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Case)
+def test_asml_case_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Case)
 
 
-def test_asml::case_constructor_exists():
-    assert callable(AsmL::Case.__init__)
+def test_asml_case_constructor_exists():
+    assert callable(AsmL_Case.__init__)
 
 
-def test_asml::case_constructor_args():
-    sig = inspect.signature(AsmL::Case.__init__)
+def test_asml_case_constructor_args():
+    sig = inspect.signature(AsmL_Case.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::case_has_name():
-    assert hasattr(AsmL::Case, "name")
+def test_asml_case_has_name():
+    assert hasattr(AsmL_Case, "name")
     descriptor = None
-    for klass in AsmL::Case.__mro__:
+    for klass in AsmL_Case.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1010,67 +896,23 @@ def test_asmlelement_constructor_args():
 
 
 
-def test_asml::class_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Class)
+def test_asml_function_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Function)
 
 
-def test_asml::class_constructor_exists():
-    assert callable(AsmL::Class.__init__)
+def test_asml_function_constructor_exists():
+    assert callable(AsmL_Function.__init__)
 
 
-def test_asml::class_constructor_args():
-    sig = inspect.signature(AsmL::Class.__init__)
-    params = list(sig.parameters.keys())
-    assert "superClassName" in params, "Missing parameter 'superClassName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-
-def test_asml::class_has_superClassName():
-    assert hasattr(AsmL::Class, "superClassName")
-    descriptor = None
-    for klass in AsmL::Class.__mro__:
-        if "superClassName" in klass.__dict__:
-            descriptor = klass.__dict__["superClassName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::class_has_name():
-    assert hasattr(AsmL::Class, "name")
-    descriptor = None
-    for klass in AsmL::Class.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::class_has_isAbstract():
-    assert hasattr(AsmL::Class, "isAbstract")
-    descriptor = None
-    for klass in AsmL::Class.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asml::function_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Function)
-
-
-def test_asml::function_constructor_exists():
-    assert callable(AsmL::Function.__init__)
-
-
-def test_asml::function_constructor_args():
-    sig = inspect.signature(AsmL::Function.__init__)
+def test_asml_function_constructor_args():
+    sig = inspect.signature(AsmL_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::function_has_name():
-    assert hasattr(AsmL::Function, "name")
+def test_asml_function_has_name():
+    assert hasattr(AsmL_Function, "name")
     descriptor = None
-    for klass in AsmL::Function.__mro__:
+    for klass in AsmL_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1078,111 +920,23 @@ def test_asml::function_has_name():
 
 
 
-def test_asml::structure_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Structure)
+def test_asml_type_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Type)
 
 
-def test_asml::structure_constructor_exists():
-    assert callable(AsmL::Structure.__init__)
+def test_asml_type_constructor_exists():
+    assert callable(AsmL_Type.__init__)
 
 
-def test_asml::structure_constructor_args():
-    sig = inspect.signature(AsmL::Structure.__init__)
-    params = list(sig.parameters.keys())
-    assert "superStructureName" in params, "Missing parameter 'superStructureName'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_asml::structure_has_superStructureName():
-    assert hasattr(AsmL::Structure, "superStructureName")
-    descriptor = None
-    for klass in AsmL::Structure.__mro__:
-        if "superStructureName" in klass.__dict__:
-            descriptor = klass.__dict__["superStructureName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::structure_has_name():
-    assert hasattr(AsmL::Structure, "name")
-    descriptor = None
-    for klass in AsmL::Structure.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asml::vardeclaration_is_not_abstract():
-    assert not inspect.isabstract(AsmL::VarDeclaration)
-
-
-def test_asml::vardeclaration_constructor_exists():
-    assert callable(AsmL::VarDeclaration.__init__)
-
-
-def test_asml::vardeclaration_constructor_args():
-    sig = inspect.signature(AsmL::VarDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "isLocal" in params, "Missing parameter 'isLocal'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "isDeclaration" in params, "Missing parameter 'isDeclaration'"
-    assert "isConstant" in params, "Missing parameter 'isConstant'"
-
-def test_asml::vardeclaration_has_isLocal():
-    assert hasattr(AsmL::VarDeclaration, "isLocal")
-    descriptor = None
-    for klass in AsmL::VarDeclaration.__mro__:
-        if "isLocal" in klass.__dict__:
-            descriptor = klass.__dict__["isLocal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::vardeclaration_has_name():
-    assert hasattr(AsmL::VarDeclaration, "name")
-    descriptor = None
-    for klass in AsmL::VarDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::vardeclaration_has_isDeclaration():
-    assert hasattr(AsmL::VarDeclaration, "isDeclaration")
-    descriptor = None
-    for klass in AsmL::VarDeclaration.__mro__:
-        if "isDeclaration" in klass.__dict__:
-            descriptor = klass.__dict__["isDeclaration"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asml::vardeclaration_has_isConstant():
-    assert hasattr(AsmL::VarDeclaration, "isConstant")
-    descriptor = None
-    for klass in AsmL::VarDeclaration.__mro__:
-        if "isConstant" in klass.__dict__:
-            descriptor = klass.__dict__["isConstant"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asml::type_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Type)
-
-
-def test_asml::type_constructor_exists():
-    assert callable(AsmL::Type.__init__)
-
-
-def test_asml::type_constructor_args():
-    sig = inspect.signature(AsmL::Type.__init__)
+def test_asml_type_constructor_args():
+    sig = inspect.signature(AsmL_Type.__init__)
     params = list(sig.parameters.keys())
     assert "withNull" in params, "Missing parameter 'withNull'"
 
-def test_asml::type_has_withNull():
-    assert hasattr(AsmL::Type, "withNull")
+def test_asml_type_has_withNull():
+    assert hasattr(AsmL_Type, "withNull")
     descriptor = None
-    for klass in AsmL::Type.__mro__:
+    for klass in AsmL_Type.__mro__:
         if "withNull" in klass.__dict__:
             descriptor = klass.__dict__["withNull"]
             break
@@ -1190,23 +944,23 @@ def test_asml::type_has_withNull():
 
 
 
-def test_asml::namespace_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Namespace)
+def test_asml_namespace_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Namespace)
 
 
-def test_asml::namespace_constructor_exists():
-    assert callable(AsmL::Namespace.__init__)
+def test_asml_namespace_constructor_exists():
+    assert callable(AsmL_Namespace.__init__)
 
 
-def test_asml::namespace_constructor_args():
-    sig = inspect.signature(AsmL::Namespace.__init__)
+def test_asml_namespace_constructor_args():
+    sig = inspect.signature(AsmL_Namespace.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::namespace_has_name():
-    assert hasattr(AsmL::Namespace, "name")
+def test_asml_namespace_has_name():
+    assert hasattr(AsmL_Namespace, "name")
     descriptor = None
-    for klass in AsmL::Namespace.__mro__:
+    for klass in AsmL_Namespace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1214,23 +968,155 @@ def test_asml::namespace_has_name():
 
 
 
-def test_asml::enumeration_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Enumeration)
+def test_asml_class_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Class)
 
 
-def test_asml::enumeration_constructor_exists():
-    assert callable(AsmL::Enumeration.__init__)
+def test_asml_class_constructor_exists():
+    assert callable(AsmL_Class.__init__)
 
 
-def test_asml::enumeration_constructor_args():
-    sig = inspect.signature(AsmL::Enumeration.__init__)
+def test_asml_class_constructor_args():
+    sig = inspect.signature(AsmL_Class.__init__)
+    params = list(sig.parameters.keys())
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "superClassName" in params, "Missing parameter 'superClassName'"
+
+def test_asml_class_has_isAbstract():
+    assert hasattr(AsmL_Class, "isAbstract")
+    descriptor = None
+    for klass in AsmL_Class.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_class_has_name():
+    assert hasattr(AsmL_Class, "name")
+    descriptor = None
+    for klass in AsmL_Class.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_class_has_superClassName():
+    assert hasattr(AsmL_Class, "superClassName")
+    descriptor = None
+    for klass in AsmL_Class.__mro__:
+        if "superClassName" in klass.__dict__:
+            descriptor = klass.__dict__["superClassName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asml_structure_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Structure)
+
+
+def test_asml_structure_constructor_exists():
+    assert callable(AsmL_Structure.__init__)
+
+
+def test_asml_structure_constructor_args():
+    sig = inspect.signature(AsmL_Structure.__init__)
+    params = list(sig.parameters.keys())
+    assert "superStructureName" in params, "Missing parameter 'superStructureName'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_asml_structure_has_superStructureName():
+    assert hasattr(AsmL_Structure, "superStructureName")
+    descriptor = None
+    for klass in AsmL_Structure.__mro__:
+        if "superStructureName" in klass.__dict__:
+            descriptor = klass.__dict__["superStructureName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_structure_has_name():
+    assert hasattr(AsmL_Structure, "name")
+    descriptor = None
+    for klass in AsmL_Structure.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asml_vardeclaration_is_not_abstract():
+    assert not inspect.isabstract(AsmL_VarDeclaration)
+
+
+def test_asml_vardeclaration_constructor_exists():
+    assert callable(AsmL_VarDeclaration.__init__)
+
+
+def test_asml_vardeclaration_constructor_args():
+    sig = inspect.signature(AsmL_VarDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "isConstant" in params, "Missing parameter 'isConstant'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isDeclaration" in params, "Missing parameter 'isDeclaration'"
+    assert "isLocal" in params, "Missing parameter 'isLocal'"
+
+def test_asml_vardeclaration_has_isConstant():
+    assert hasattr(AsmL_VarDeclaration, "isConstant")
+    descriptor = None
+    for klass in AsmL_VarDeclaration.__mro__:
+        if "isConstant" in klass.__dict__:
+            descriptor = klass.__dict__["isConstant"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_vardeclaration_has_name():
+    assert hasattr(AsmL_VarDeclaration, "name")
+    descriptor = None
+    for klass in AsmL_VarDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_vardeclaration_has_isDeclaration():
+    assert hasattr(AsmL_VarDeclaration, "isDeclaration")
+    descriptor = None
+    for klass in AsmL_VarDeclaration.__mro__:
+        if "isDeclaration" in klass.__dict__:
+            descriptor = klass.__dict__["isDeclaration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_vardeclaration_has_isLocal():
+    assert hasattr(AsmL_VarDeclaration, "isLocal")
+    descriptor = None
+    for klass in AsmL_VarDeclaration.__mro__:
+        if "isLocal" in klass.__dict__:
+            descriptor = klass.__dict__["isLocal"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asml_enumeration_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Enumeration)
+
+
+def test_asml_enumeration_constructor_exists():
+    assert callable(AsmL_Enumeration.__init__)
+
+
+def test_asml_enumeration_constructor_args():
+    sig = inspect.signature(AsmL_Enumeration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::enumeration_has_name():
-    assert hasattr(AsmL::Enumeration, "name")
+def test_asml_enumeration_has_name():
+    assert hasattr(AsmL_Enumeration, "name")
     descriptor = None
-    for klass in AsmL::Enumeration.__mro__:
+    for klass in AsmL_Enumeration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1252,117 +1138,23 @@ def test_term_constructor_args():
 
 
 
-def test_asml::varterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::VarTerm)
+def test_asml_mapterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_MapTerm)
 
 
-def test_asml::varterm_constructor_exists():
-    assert callable(AsmL::VarTerm.__init__)
+def test_asml_mapterm_constructor_exists():
+    assert callable(AsmL_MapTerm.__init__)
 
 
-def test_asml::varterm_constructor_args():
-    sig = inspect.signature(AsmL::VarTerm.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_asml::varterm_has_name():
-    assert hasattr(AsmL::VarTerm, "name")
-    descriptor = None
-    for klass in AsmL::VarTerm.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asml::sequenceterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::SequenceTerm)
-
-
-def test_asml::sequenceterm_constructor_exists():
-    assert callable(AsmL::SequenceTerm.__init__)
-
-
-def test_asml::sequenceterm_constructor_args():
-    sig = inspect.signature(AsmL::SequenceTerm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::tulpletterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::TulpletTerm)
-
-
-def test_asml::tulpletterm_constructor_exists():
-    assert callable(AsmL::TulpletTerm.__init__)
-
-
-def test_asml::tulpletterm_constructor_args():
-    sig = inspect.signature(AsmL::TulpletTerm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::predicateterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::PredicateTerm)
-
-
-def test_asml::predicateterm_constructor_exists():
-    assert callable(AsmL::PredicateTerm.__init__)
-
-
-def test_asml::predicateterm_constructor_args():
-    sig = inspect.signature(AsmL::PredicateTerm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::constant_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Constant)
-
-
-def test_asml::constant_constructor_exists():
-    assert callable(AsmL::Constant.__init__)
-
-
-def test_asml::constant_constructor_args():
-    sig = inspect.signature(AsmL::Constant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::setterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::SetTerm)
-
-
-def test_asml::setterm_constructor_exists():
-    assert callable(AsmL::SetTerm.__init__)
-
-
-def test_asml::setterm_constructor_args():
-    sig = inspect.signature(AsmL::SetTerm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::mapterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::MapTerm)
-
-
-def test_asml::mapterm_constructor_exists():
-    assert callable(AsmL::MapTerm.__init__)
-
-
-def test_asml::mapterm_constructor_args():
-    sig = inspect.signature(AsmL::MapTerm.__init__)
+def test_asml_mapterm_constructor_args():
+    sig = inspect.signature(AsmL_MapTerm.__init__)
     params = list(sig.parameters.keys())
     assert "separator" in params, "Missing parameter 'separator'"
 
-def test_asml::mapterm_has_separator():
-    assert hasattr(AsmL::MapTerm, "separator")
+def test_asml_mapterm_has_separator():
+    assert hasattr(AsmL_MapTerm, "separator")
     descriptor = None
-    for klass in AsmL::MapTerm.__mro__:
+    for klass in AsmL_MapTerm.__mro__:
         if "separator" in klass.__dict__:
             descriptor = klass.__dict__["separator"]
             break
@@ -1370,23 +1162,51 @@ def test_asml::mapterm_has_separator():
 
 
 
-def test_asml::operator_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Operator)
+def test_asml_predicateterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_PredicateTerm)
 
 
-def test_asml::operator_constructor_exists():
-    assert callable(AsmL::Operator.__init__)
+def test_asml_predicateterm_constructor_exists():
+    assert callable(AsmL_PredicateTerm.__init__)
 
 
-def test_asml::operator_constructor_args():
-    sig = inspect.signature(AsmL::Operator.__init__)
+def test_asml_predicateterm_constructor_args():
+    sig = inspect.signature(AsmL_PredicateTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_setterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_SetTerm)
+
+
+def test_asml_setterm_constructor_exists():
+    assert callable(AsmL_SetTerm.__init__)
+
+
+def test_asml_setterm_constructor_args():
+    sig = inspect.signature(AsmL_SetTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_operator_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Operator)
+
+
+def test_asml_operator_constructor_exists():
+    assert callable(AsmL_Operator.__init__)
+
+
+def test_asml_operator_constructor_args():
+    sig = inspect.signature(AsmL_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "opName" in params, "Missing parameter 'opName'"
 
-def test_asml::operator_has_opName():
-    assert hasattr(AsmL::Operator, "opName")
+def test_asml_operator_has_opName():
+    assert hasattr(AsmL_Operator, "opName")
     descriptor = None
-    for klass in AsmL::Operator.__mro__:
+    for klass in AsmL_Operator.__mro__:
         if "opName" in klass.__dict__:
             descriptor = klass.__dict__["opName"]
             break
@@ -1394,23 +1214,75 @@ def test_asml::operator_has_opName():
 
 
 
-def test_asml::methodcallterm_is_not_abstract():
-    assert not inspect.isabstract(AsmL::MethodCallTerm)
+def test_asml_varterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_VarTerm)
 
 
-def test_asml::methodcallterm_constructor_exists():
-    assert callable(AsmL::MethodCallTerm.__init__)
+def test_asml_varterm_constructor_exists():
+    assert callable(AsmL_VarTerm.__init__)
 
 
-def test_asml::methodcallterm_constructor_args():
-    sig = inspect.signature(AsmL::MethodCallTerm.__init__)
+def test_asml_varterm_constructor_args():
+    sig = inspect.signature(AsmL_VarTerm.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::methodcallterm_has_name():
-    assert hasattr(AsmL::MethodCallTerm, "name")
+def test_asml_varterm_has_name():
+    assert hasattr(AsmL_VarTerm, "name")
     descriptor = None
-    for klass in AsmL::MethodCallTerm.__mro__:
+    for klass in AsmL_VarTerm.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asml_sequenceterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_SequenceTerm)
+
+
+def test_asml_sequenceterm_constructor_exists():
+    assert callable(AsmL_SequenceTerm.__init__)
+
+
+def test_asml_sequenceterm_constructor_args():
+    sig = inspect.signature(AsmL_SequenceTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_tulpletterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_TulpletTerm)
+
+
+def test_asml_tulpletterm_constructor_exists():
+    assert callable(AsmL_TulpletTerm.__init__)
+
+
+def test_asml_tulpletterm_constructor_args():
+    sig = inspect.signature(AsmL_TulpletTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_methodcallterm_is_not_abstract():
+    assert not inspect.isabstract(AsmL_MethodCallTerm)
+
+
+def test_asml_methodcallterm_constructor_exists():
+    assert callable(AsmL_MethodCallTerm.__init__)
+
+
+def test_asml_methodcallterm_constructor_args():
+    sig = inspect.signature(AsmL_MethodCallTerm.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_asml_methodcallterm_has_name():
+    assert hasattr(AsmL_MethodCallTerm, "name")
+    descriptor = None
+    for klass in AsmL_MethodCallTerm.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1432,149 +1304,149 @@ def test_rule_constructor_args():
 
 
 
-def test_asml::removerule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::RemoveRule)
+def test_asml_addrule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_AddRule)
 
 
-def test_asml::removerule_constructor_exists():
-    assert callable(AsmL::RemoveRule.__init__)
+def test_asml_addrule_constructor_exists():
+    assert callable(AsmL_AddRule.__init__)
 
 
-def test_asml::removerule_constructor_args():
-    sig = inspect.signature(AsmL::RemoveRule.__init__)
+def test_asml_addrule_constructor_args():
+    sig = inspect.signature(AsmL_AddRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(AsmL::MethodInvocation)
+def test_asml_removerule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_RemoveRule)
 
 
-def test_asml::methodinvocation_constructor_exists():
-    assert callable(AsmL::MethodInvocation.__init__)
+def test_asml_removerule_constructor_exists():
+    assert callable(AsmL_RemoveRule.__init__)
 
 
-def test_asml::methodinvocation_constructor_args():
-    sig = inspect.signature(AsmL::MethodInvocation.__init__)
+def test_asml_removerule_constructor_args():
+    sig = inspect.signature(AsmL_RemoveRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::returnrule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ReturnRule)
+def test_asml_chooserule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ChooseRule)
 
 
-def test_asml::returnrule_constructor_exists():
-    assert callable(AsmL::ReturnRule.__init__)
+def test_asml_chooserule_constructor_exists():
+    assert callable(AsmL_ChooseRule.__init__)
 
 
-def test_asml::returnrule_constructor_args():
-    sig = inspect.signature(AsmL::ReturnRule.__init__)
+def test_asml_chooserule_constructor_args():
+    sig = inspect.signature(AsmL_ChooseRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::conditionalrule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ConditionalRule)
+def test_asml_forallrule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ForallRule)
 
 
-def test_asml::conditionalrule_constructor_exists():
-    assert callable(AsmL::ConditionalRule.__init__)
+def test_asml_forallrule_constructor_exists():
+    assert callable(AsmL_ForallRule.__init__)
 
 
-def test_asml::conditionalrule_constructor_args():
-    sig = inspect.signature(AsmL::ConditionalRule.__init__)
+def test_asml_forallrule_constructor_args():
+    sig = inspect.signature(AsmL_ForallRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::addrule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::AddRule)
+def test_asml_conditionalrule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ConditionalRule)
 
 
-def test_asml::addrule_constructor_exists():
-    assert callable(AsmL::AddRule.__init__)
+def test_asml_conditionalrule_constructor_exists():
+    assert callable(AsmL_ConditionalRule.__init__)
 
 
-def test_asml::addrule_constructor_args():
-    sig = inspect.signature(AsmL::AddRule.__init__)
+def test_asml_conditionalrule_constructor_args():
+    sig = inspect.signature(AsmL_ConditionalRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::chooserule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ChooseRule)
+def test_asml_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(AsmL_MethodInvocation)
 
 
-def test_asml::chooserule_constructor_exists():
-    assert callable(AsmL::ChooseRule.__init__)
+def test_asml_methodinvocation_constructor_exists():
+    assert callable(AsmL_MethodInvocation.__init__)
 
 
-def test_asml::chooserule_constructor_args():
-    sig = inspect.signature(AsmL::ChooseRule.__init__)
+def test_asml_methodinvocation_constructor_args():
+    sig = inspect.signature(AsmL_MethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::forallrule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::ForallRule)
+def test_asml_returnrule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_ReturnRule)
 
 
-def test_asml::forallrule_constructor_exists():
-    assert callable(AsmL::ForallRule.__init__)
+def test_asml_returnrule_constructor_exists():
+    assert callable(AsmL_ReturnRule.__init__)
 
 
-def test_asml::forallrule_constructor_args():
-    sig = inspect.signature(AsmL::ForallRule.__init__)
+def test_asml_returnrule_constructor_args():
+    sig = inspect.signature(AsmL_ReturnRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::updaterule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::UpdateRule)
+def test_asml_updaterule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_UpdateRule)
 
 
-def test_asml::updaterule_constructor_exists():
-    assert callable(AsmL::UpdateRule.__init__)
+def test_asml_updaterule_constructor_exists():
+    assert callable(AsmL_UpdateRule.__init__)
 
 
-def test_asml::updaterule_constructor_args():
-    sig = inspect.signature(AsmL::UpdateRule.__init__)
+def test_asml_updaterule_constructor_args():
+    sig = inspect.signature(AsmL_UpdateRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::skiprule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::SkipRule)
+def test_asml_skiprule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_SkipRule)
 
 
-def test_asml::skiprule_constructor_exists():
-    assert callable(AsmL::SkipRule.__init__)
+def test_asml_skiprule_constructor_exists():
+    assert callable(AsmL_SkipRule.__init__)
 
 
-def test_asml::skiprule_constructor_args():
-    sig = inspect.signature(AsmL::SkipRule.__init__)
+def test_asml_skiprule_constructor_args():
+    sig = inspect.signature(AsmL_SkipRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::step_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Step)
+def test_asml_step_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Step)
 
 
-def test_asml::step_constructor_exists():
-    assert callable(AsmL::Step.__init__)
+def test_asml_step_constructor_exists():
+    assert callable(AsmL_Step.__init__)
 
 
-def test_asml::step_constructor_args():
-    sig = inspect.signature(AsmL::Step.__init__)
+def test_asml_step_constructor_args():
+    sig = inspect.signature(AsmL_Step.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::step_has_name():
-    assert hasattr(AsmL::Step, "name")
+def test_asml_step_has_name():
+    assert hasattr(AsmL_Step, "name")
     descriptor = None
-    for klass in AsmL::Step.__mro__:
+    for klass in AsmL_Step.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1596,79 +1468,37 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_asml::varorcase_is_not_abstract():
-    assert not inspect.isabstract(AsmL::VarOrCase)
+def test_asml_inwhereholds_is_not_abstract():
+    assert not inspect.isabstract(AsmL_InWhereHolds)
 
 
-def test_asml::varorcase_constructor_exists():
-    assert callable(AsmL::VarOrCase.__init__)
+def test_asml_inwhereholds_constructor_exists():
+    assert callable(AsmL_InWhereHolds.__init__)
 
 
-def test_asml::varorcase_constructor_args():
-    sig = inspect.signature(AsmL::VarOrCase.__init__)
+def test_asml_inwhereholds_constructor_args():
+    sig = inspect.signature(AsmL_InWhereHolds.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::asmlfile_is_not_abstract():
-    assert not inspect.isabstract(AsmL::AsmLFile)
+def test_asml_parameter_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Parameter)
 
 
-def test_asml::asmlfile_constructor_exists():
-    assert callable(AsmL::AsmLFile.__init__)
+def test_asml_parameter_constructor_exists():
+    assert callable(AsmL_Parameter.__init__)
 
 
-def test_asml::asmlfile_constructor_args():
-    sig = inspect.signature(AsmL::AsmLFile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::inwhereholds_is_not_abstract():
-    assert not inspect.isabstract(AsmL::InWhereHolds)
-
-
-def test_asml::inwhereholds_constructor_exists():
-    assert callable(AsmL::InWhereHolds.__init__)
-
-
-def test_asml::inwhereholds_constructor_args():
-    sig = inspect.signature(AsmL::InWhereHolds.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::initially_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Initially)
-
-
-def test_asml::initially_constructor_exists():
-    assert callable(AsmL::Initially.__init__)
-
-
-def test_asml::initially_constructor_args():
-    sig = inspect.signature(AsmL::Initially.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::enumerator_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Enumerator)
-
-
-def test_asml::enumerator_constructor_exists():
-    assert callable(AsmL::Enumerator.__init__)
-
-
-def test_asml::enumerator_constructor_args():
-    sig = inspect.signature(AsmL::Enumerator.__init__)
+def test_asml_parameter_constructor_args():
+    sig = inspect.signature(AsmL_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::enumerator_has_name():
-    assert hasattr(AsmL::Enumerator, "name")
+def test_asml_parameter_has_name():
+    assert hasattr(AsmL_Parameter, "name")
     descriptor = None
-    for klass in AsmL::Enumerator.__mro__:
+    for klass in AsmL_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1676,79 +1506,51 @@ def test_asml::enumerator_has_name():
 
 
 
-def test_asml::term_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Term)
+def test_asml_asmlfile_is_not_abstract():
+    assert not inspect.isabstract(AsmL_AsmLFile)
 
 
-def test_asml::term_constructor_exists():
-    assert callable(AsmL::Term.__init__)
+def test_asml_asmlfile_constructor_exists():
+    assert callable(AsmL_AsmLFile.__init__)
 
 
-def test_asml::term_constructor_args():
-    sig = inspect.signature(AsmL::Term.__init__)
+def test_asml_asmlfile_constructor_args():
+    sig = inspect.signature(AsmL_AsmLFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::rule_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Rule)
+def test_asml_varorcase_is_not_abstract():
+    assert not inspect.isabstract(AsmL_VarOrCase)
 
 
-def test_asml::rule_constructor_exists():
-    assert callable(AsmL::Rule.__init__)
+def test_asml_varorcase_constructor_exists():
+    assert callable(AsmL_VarOrCase.__init__)
 
 
-def test_asml::rule_constructor_args():
-    sig = inspect.signature(AsmL::Rule.__init__)
+def test_asml_varorcase_constructor_args():
+    sig = inspect.signature(AsmL_VarOrCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::varormethod_is_not_abstract():
-    assert not inspect.isabstract(AsmL::VarOrMethod)
+def test_asml_enumerator_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Enumerator)
 
 
-def test_asml::varormethod_constructor_exists():
-    assert callable(AsmL::VarOrMethod.__init__)
+def test_asml_enumerator_constructor_exists():
+    assert callable(AsmL_Enumerator.__init__)
 
 
-def test_asml::varormethod_constructor_args():
-    sig = inspect.signature(AsmL::VarOrMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::asmlelement_is_not_abstract():
-    assert not inspect.isabstract(AsmL::AsmLElement)
-
-
-def test_asml::asmlelement_constructor_exists():
-    assert callable(AsmL::AsmLElement.__init__)
-
-
-def test_asml::asmlelement_constructor_args():
-    sig = inspect.signature(AsmL::AsmLElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asml::parameter_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Parameter)
-
-
-def test_asml::parameter_constructor_exists():
-    assert callable(AsmL::Parameter.__init__)
-
-
-def test_asml::parameter_constructor_args():
-    sig = inspect.signature(AsmL::Parameter.__init__)
+def test_asml_enumerator_constructor_args():
+    sig = inspect.signature(AsmL_Enumerator.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_asml::parameter_has_name():
-    assert hasattr(AsmL::Parameter, "name")
+def test_asml_enumerator_has_name():
+    assert hasattr(AsmL_Enumerator, "name")
     descriptor = None
-    for klass in AsmL::Parameter.__mro__:
+    for klass in AsmL_Enumerator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1756,61 +1558,259 @@ def test_asml::parameter_has_name():
 
 
 
-def test_asml::body_is_not_abstract():
-    assert not inspect.isabstract(AsmL::Body)
+def test_asml_initially_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Initially)
 
 
-def test_asml::body_constructor_exists():
-    assert callable(AsmL::Body.__init__)
+def test_asml_initially_constructor_exists():
+    assert callable(AsmL_Initially.__init__)
 
 
-def test_asml::body_constructor_args():
-    sig = inspect.signature(AsmL::Body.__init__)
+def test_asml_initially_constructor_args():
+    sig = inspect.signature(AsmL_Initially.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asml::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(AsmL::LocatedElement)
+def test_asml_varormethod_is_not_abstract():
+    assert not inspect.isabstract(AsmL_VarOrMethod)
 
 
-def test_asml::locatedelement_constructor_exists():
-    assert callable(AsmL::LocatedElement.__init__)
+def test_asml_varormethod_constructor_exists():
+    assert callable(AsmL_VarOrMethod.__init__)
 
 
-def test_asml::locatedelement_constructor_args():
-    sig = inspect.signature(AsmL::LocatedElement.__init__)
+def test_asml_varormethod_constructor_args():
+    sig = inspect.signature(AsmL_VarOrMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_rule_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Rule)
+
+
+def test_asml_rule_constructor_exists():
+    assert callable(AsmL_Rule.__init__)
+
+
+def test_asml_rule_constructor_args():
+    sig = inspect.signature(AsmL_Rule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_asmlelement_is_not_abstract():
+    assert not inspect.isabstract(AsmL_AsmLElement)
+
+
+def test_asml_asmlelement_constructor_exists():
+    assert callable(AsmL_AsmLElement.__init__)
+
+
+def test_asml_asmlelement_constructor_args():
+    sig = inspect.signature(AsmL_AsmLElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_term_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Term)
+
+
+def test_asml_term_constructor_exists():
+    assert callable(AsmL_Term.__init__)
+
+
+def test_asml_term_constructor_args():
+    sig = inspect.signature(AsmL_Term.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_body_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Body)
+
+
+def test_asml_body_constructor_exists():
+    assert callable(AsmL_Body.__init__)
+
+
+def test_asml_body_constructor_args():
+    sig = inspect.signature(AsmL_Body.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(AsmL_LocatedElement)
+
+
+def test_asml_locatedelement_constructor_exists():
+    assert callable(AsmL_LocatedElement.__init__)
+
+
+def test_asml_locatedelement_constructor_args():
+    sig = inspect.signature(AsmL_LocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
-    assert "commentsAfter" in params, "Missing parameter 'commentsAfter'"
     assert "commentsBefore" in params, "Missing parameter 'commentsBefore'"
+    assert "commentsAfter" in params, "Missing parameter 'commentsAfter'"
 
-def test_asml::locatedelement_has_location():
-    assert hasattr(AsmL::LocatedElement, "location")
+def test_asml_locatedelement_has_location():
+    assert hasattr(AsmL_LocatedElement, "location")
     descriptor = None
-    for klass in AsmL::LocatedElement.__mro__:
+    for klass in AsmL_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_asml::locatedelement_has_commentsAfter():
-    assert hasattr(AsmL::LocatedElement, "commentsAfter")
+def test_asml_locatedelement_has_commentsBefore():
+    assert hasattr(AsmL_LocatedElement, "commentsBefore")
     descriptor = None
-    for klass in AsmL::LocatedElement.__mro__:
+    for klass in AsmL_LocatedElement.__mro__:
+        if "commentsBefore" in klass.__dict__:
+            descriptor = klass.__dict__["commentsBefore"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asml_locatedelement_has_commentsAfter():
+    assert hasattr(AsmL_LocatedElement, "commentsAfter")
+    descriptor = None
+    for klass in AsmL_LocatedElement.__mro__:
         if "commentsAfter" in klass.__dict__:
             descriptor = klass.__dict__["commentsAfter"]
             break
     assert isinstance(descriptor, property)
 
-def test_asml::locatedelement_has_commentsBefore():
-    assert hasattr(AsmL::LocatedElement, "commentsBefore")
+
+
+def test_constant_is_not_abstract():
+    assert not inspect.isabstract(Constant)
+
+
+def test_constant_constructor_exists():
+    assert callable(Constant.__init__)
+
+
+def test_constant_constructor_args():
+    sig = inspect.signature(Constant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_integerconstant_is_not_abstract():
+    assert not inspect.isabstract(AsmL_IntegerConstant)
+
+
+def test_asml_integerconstant_constructor_exists():
+    assert callable(AsmL_IntegerConstant.__init__)
+
+
+def test_asml_integerconstant_constructor_args():
+    sig = inspect.signature(AsmL_IntegerConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "val" in params, "Missing parameter 'val'"
+
+def test_asml_integerconstant_has_val():
+    assert hasattr(AsmL_IntegerConstant, "val")
     descriptor = None
-    for klass in AsmL::LocatedElement.__mro__:
-        if "commentsBefore" in klass.__dict__:
-            descriptor = klass.__dict__["commentsBefore"]
+    for klass in AsmL_IntegerConstant.__mro__:
+        if "val" in klass.__dict__:
+            descriptor = klass.__dict__["val"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_asml_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(AsmL_StringConstant)
+
+
+def test_asml_stringconstant_constructor_exists():
+    assert callable(AsmL_StringConstant.__init__)
+
+
+def test_asml_stringconstant_constructor_args():
+    sig = inspect.signature(AsmL_StringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "val" in params, "Missing parameter 'val'"
+
+def test_asml_stringconstant_has_val():
+    assert hasattr(AsmL_StringConstant, "val")
+    descriptor = None
+    for klass in AsmL_StringConstant.__mro__:
+        if "val" in klass.__dict__:
+            descriptor = klass.__dict__["val"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asml_nullconstant_is_not_abstract():
+    assert not inspect.isabstract(AsmL_NullConstant)
+
+
+def test_asml_nullconstant_constructor_exists():
+    assert callable(AsmL_NullConstant.__init__)
+
+
+def test_asml_nullconstant_constructor_args():
+    sig = inspect.signature(AsmL_NullConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_booleanconstant_is_not_abstract():
+    assert not inspect.isabstract(AsmL_BooleanConstant)
+
+
+def test_asml_booleanconstant_constructor_exists():
+    assert callable(AsmL_BooleanConstant.__init__)
+
+
+def test_asml_booleanconstant_constructor_args():
+    sig = inspect.signature(AsmL_BooleanConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "val" in params, "Missing parameter 'val'"
+
+def test_asml_booleanconstant_has_val():
+    assert hasattr(AsmL_BooleanConstant, "val")
+    descriptor = None
+    for klass in AsmL_BooleanConstant.__mro__:
+        if "val" in klass.__dict__:
+            descriptor = klass.__dict__["val"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asml_constant_is_not_abstract():
+    assert not inspect.isabstract(AsmL_Constant)
+
+
+def test_asml_constant_constructor_exists():
+    assert callable(AsmL_Constant.__init__)
+
+
+def test_asml_constant_constructor_args():
+    sig = inspect.signature(AsmL_Constant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asml_rangesequence_is_not_abstract():
+    assert not inspect.isabstract(AsmL_RangeSequence)
+
+
+def test_asml_rangesequence_constructor_exists():
+    assert callable(AsmL_RangeSequence.__init__)
+
+
+def test_asml_rangesequence_constructor_args():
+    sig = inspect.signature(AsmL_RangeSequence.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -1824,67 +1824,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Constant_strategy = st.builds(
-    Constant,
-)
-AsmL::StringConstant_strategy = st.builds(
-    AsmL::StringConstant,
-    val=
-        safe_text
-)
-AsmL::NullConstant_strategy = st.builds(
-    AsmL::NullConstant,
-)
-AsmL::IntegerConstant_strategy = st.builds(
-    AsmL::IntegerConstant,
-    val=
-        safe_text
-)
-AsmL::BooleanConstant_strategy = st.builds(
-    AsmL::BooleanConstant,
-    val=
-        safe_text
-)
 SequenceTerm_strategy = st.builds(
     SequenceTerm,
 )
-AsmL::RangeSequence_strategy = st.builds(
-    AsmL::RangeSequence,
-)
-AsmL::EnumerateSequence_strategy = st.builds(
-    AsmL::EnumerateSequence,
+AsmL_EnumerateSequence_strategy = st.builds(
+    AsmL_EnumerateSequence,
 )
 SetTerm_strategy = st.builds(
     SetTerm,
 )
-AsmL::RangeSet_strategy = st.builds(
-    AsmL::RangeSet,
+AsmL_AlgorithmSet_strategy = st.builds(
+    AsmL_AlgorithmSet,
 )
-AsmL::AlgorithmSet_strategy = st.builds(
-    AsmL::AlgorithmSet,
+AsmL_RangeSet_strategy = st.builds(
+    AsmL_RangeSet,
 )
-AsmL::EnumerateSet_strategy = st.builds(
-    AsmL::EnumerateSet,
+AsmL_EnumerateSet_strategy = st.builds(
+    AsmL_EnumerateSet,
 )
 PredicateTerm_strategy = st.builds(
     PredicateTerm,
 )
-AsmL::ExistsTerm_strategy = st.builds(
-    AsmL::ExistsTerm,
+AsmL_AnyIn_strategy = st.builds(
+    AsmL_AnyIn,
+)
+AsmL_ExistsTerm_strategy = st.builds(
+    AsmL_ExistsTerm,
     isUnique=
         safe_text
 )
-AsmL::AnyIn_strategy = st.builds(
-    AsmL::AnyIn,
-)
-AsmL::ForAllTerm_strategy = st.builds(
-    AsmL::ForAllTerm,
+AsmL_ForAllTerm_strategy = st.builds(
+    AsmL_ForAllTerm,
 )
 ConditionalRule_strategy = st.builds(
     ConditionalRule,
 )
-AsmL::ElseIf_strategy = st.builds(
-    AsmL::ElseIf,
+AsmL_ElseIf_strategy = st.builds(
+    AsmL_ElseIf,
 )
 ElseIf_strategy = st.builds(
     ElseIf,
@@ -1892,20 +1868,20 @@ ElseIf_strategy = st.builds(
 UpdateRule_strategy = st.builds(
     UpdateRule,
 )
-AsmL::UpdateMapRule_strategy = st.builds(
-    AsmL::UpdateMapRule,
+AsmL_UpdateMapRule_strategy = st.builds(
+    AsmL_UpdateMapRule,
 )
-AsmL::UpdateFieldRule_strategy = st.builds(
-    AsmL::UpdateFieldRule,
+AsmL_UpdateFieldRule_strategy = st.builds(
+    AsmL_UpdateFieldRule,
 )
-AsmL::UpdateVarRule_strategy = st.builds(
-    AsmL::UpdateVarRule,
+AsmL_UpdateVarRule_strategy = st.builds(
+    AsmL_UpdateVarRule,
 )
 MethodCallTerm_strategy = st.builds(
     MethodCallTerm,
 )
-AsmL::NewInstance_strategy = st.builds(
-    AsmL::NewInstance,
+AsmL_NewInstance_strategy = st.builds(
+    AsmL_NewInstance,
 )
 InWhereHolds_strategy = st.builds(
     InWhereHolds,
@@ -1913,23 +1889,23 @@ InWhereHolds_strategy = st.builds(
 StepExpression_strategy = st.builds(
     StepExpression,
 )
-AsmL::StepUntil_strategy = st.builds(
-    AsmL::StepUntil,
+AsmL_StepUntil_strategy = st.builds(
+    AsmL_StepUntil,
 )
-AsmL::StepWhile_strategy = st.builds(
-    AsmL::StepWhile,
+AsmL_StepWhile_strategy = st.builds(
+    AsmL_StepWhile,
 )
 Step_strategy = st.builds(
     Step,
 )
-AsmL::StepExpression_strategy = st.builds(
-    AsmL::StepExpression,
+AsmL_StepForEach_strategy = st.builds(
+    AsmL_StepForEach,
 )
-AsmL::StepForEach_strategy = st.builds(
-    AsmL::StepForEach,
+AsmL_StepExpression_strategy = st.builds(
+    AsmL_StepExpression,
 )
-AsmL::StepUntilFixPoint_strategy = st.builds(
-    AsmL::StepUntilFixPoint,
+AsmL_StepUntilFixPoint_strategy = st.builds(
+    AsmL_StepUntilFixPoint,
 )
 Method_strategy = st.builds(
     Method,
@@ -1949,8 +1925,8 @@ Parameter_strategy = st.builds(
 Function_strategy = st.builds(
     Function,
 )
-AsmL::Main_strategy = st.builds(
-    AsmL::Main,
+AsmL_Main_strategy = st.builds(
+    AsmL_Main,
 )
 Class_strategy = st.builds(
     Class,
@@ -1967,33 +1943,33 @@ VarDeclaration_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-AsmL::SequenceType_strategy = st.builds(
-    AsmL::SequenceType,
+AsmL_TupletType_strategy = st.builds(
+    AsmL_TupletType,
 )
-AsmL::TupletType_strategy = st.builds(
-    AsmL::TupletType,
+AsmL_SequenceType_strategy = st.builds(
+    AsmL_SequenceType,
 )
-AsmL::NamedType_strategy = st.builds(
-    AsmL::NamedType,
+AsmL_SetType_strategy = st.builds(
+    AsmL_SetType,
+)
+AsmL_MapType_strategy = st.builds(
+    AsmL_MapType,
+)
+AsmL_NamedType_strategy = st.builds(
+    AsmL_NamedType,
     name=
         safe_text
-)
-AsmL::SetType_strategy = st.builds(
-    AsmL::SetType,
-)
-AsmL::MapType_strategy = st.builds(
-    AsmL::MapType,
 )
 VarOrMethod_strategy = st.builds(
     VarOrMethod,
 )
-AsmL::Method_strategy = st.builds(
-    AsmL::Method,
-    isOverride=
+AsmL_Method_strategy = st.builds(
+    AsmL_Method,
+    isEntryPoint=
         safe_text,
     isShared=
         safe_text,
-    isEntryPoint=
+    isOverride=
         safe_text,
     isAbstract=
         safe_text
@@ -2001,8 +1977,8 @@ AsmL::Method_strategy = st.builds(
 VarOrCase_strategy = st.builds(
     VarOrCase,
 )
-AsmL::Case_strategy = st.builds(
-    AsmL::Case,
+AsmL_Case_strategy = st.builds(
+    AsmL_Case,
     name=
         safe_text
 )
@@ -2015,309 +1991,267 @@ Main_strategy = st.builds(
 AsmLElement_strategy = st.builds(
     AsmLElement,
 )
-AsmL::Class_strategy = st.builds(
-    AsmL::Class,
-    superClassName=
-        safe_text,
+AsmL_Function_strategy = st.builds(
+    AsmL_Function,
     name=
-        safe_text,
+        safe_text
+)
+AsmL_Type_strategy = st.builds(
+    AsmL_Type,
+    withNull=
+        safe_text
+)
+AsmL_Namespace_strategy = st.builds(
+    AsmL_Namespace,
+    name=
+        safe_text
+)
+AsmL_Class_strategy = st.builds(
+    AsmL_Class,
     isAbstract=
-        safe_text
-)
-AsmL::Function_strategy = st.builds(
-    AsmL::Function,
+        safe_text,
     name=
+        safe_text,
+    superClassName=
         safe_text
 )
-AsmL::Structure_strategy = st.builds(
-    AsmL::Structure,
+AsmL_Structure_strategy = st.builds(
+    AsmL_Structure,
     superStructureName=
         safe_text,
     name=
         safe_text
 )
-AsmL::VarDeclaration_strategy = st.builds(
-    AsmL::VarDeclaration,
-    isLocal=
+AsmL_VarDeclaration_strategy = st.builds(
+    AsmL_VarDeclaration,
+    isConstant=
         safe_text,
     name=
         safe_text,
     isDeclaration=
         safe_text,
-    isConstant=
+    isLocal=
         safe_text
 )
-AsmL::Type_strategy = st.builds(
-    AsmL::Type,
-    withNull=
-        safe_text
-)
-AsmL::Namespace_strategy = st.builds(
-    AsmL::Namespace,
-    name=
-        safe_text
-)
-AsmL::Enumeration_strategy = st.builds(
-    AsmL::Enumeration,
+AsmL_Enumeration_strategy = st.builds(
+    AsmL_Enumeration,
     name=
         safe_text
 )
 Term_strategy = st.builds(
     Term,
 )
-AsmL::VarTerm_strategy = st.builds(
-    AsmL::VarTerm,
-    name=
-        safe_text
-)
-AsmL::SequenceTerm_strategy = st.builds(
-    AsmL::SequenceTerm,
-)
-AsmL::TulpletTerm_strategy = st.builds(
-    AsmL::TulpletTerm,
-)
-AsmL::PredicateTerm_strategy = st.builds(
-    AsmL::PredicateTerm,
-)
-AsmL::Constant_strategy = st.builds(
-    AsmL::Constant,
-)
-AsmL::SetTerm_strategy = st.builds(
-    AsmL::SetTerm,
-)
-AsmL::MapTerm_strategy = st.builds(
-    AsmL::MapTerm,
+AsmL_MapTerm_strategy = st.builds(
+    AsmL_MapTerm,
     separator=
         safe_text
 )
-AsmL::Operator_strategy = st.builds(
-    AsmL::Operator,
+AsmL_PredicateTerm_strategy = st.builds(
+    AsmL_PredicateTerm,
+)
+AsmL_SetTerm_strategy = st.builds(
+    AsmL_SetTerm,
+)
+AsmL_Operator_strategy = st.builds(
+    AsmL_Operator,
     opName=
         safe_text
 )
-AsmL::MethodCallTerm_strategy = st.builds(
-    AsmL::MethodCallTerm,
+AsmL_VarTerm_strategy = st.builds(
+    AsmL_VarTerm,
+    name=
+        safe_text
+)
+AsmL_SequenceTerm_strategy = st.builds(
+    AsmL_SequenceTerm,
+)
+AsmL_TulpletTerm_strategy = st.builds(
+    AsmL_TulpletTerm,
+)
+AsmL_MethodCallTerm_strategy = st.builds(
+    AsmL_MethodCallTerm,
     name=
         safe_text
 )
 Rule_strategy = st.builds(
     Rule,
 )
-AsmL::RemoveRule_strategy = st.builds(
-    AsmL::RemoveRule,
+AsmL_AddRule_strategy = st.builds(
+    AsmL_AddRule,
 )
-AsmL::MethodInvocation_strategy = st.builds(
-    AsmL::MethodInvocation,
+AsmL_RemoveRule_strategy = st.builds(
+    AsmL_RemoveRule,
 )
-AsmL::ReturnRule_strategy = st.builds(
-    AsmL::ReturnRule,
+AsmL_ChooseRule_strategy = st.builds(
+    AsmL_ChooseRule,
 )
-AsmL::ConditionalRule_strategy = st.builds(
-    AsmL::ConditionalRule,
+AsmL_ForallRule_strategy = st.builds(
+    AsmL_ForallRule,
 )
-AsmL::AddRule_strategy = st.builds(
-    AsmL::AddRule,
+AsmL_ConditionalRule_strategy = st.builds(
+    AsmL_ConditionalRule,
 )
-AsmL::ChooseRule_strategy = st.builds(
-    AsmL::ChooseRule,
+AsmL_MethodInvocation_strategy = st.builds(
+    AsmL_MethodInvocation,
 )
-AsmL::ForallRule_strategy = st.builds(
-    AsmL::ForallRule,
+AsmL_ReturnRule_strategy = st.builds(
+    AsmL_ReturnRule,
 )
-AsmL::UpdateRule_strategy = st.builds(
-    AsmL::UpdateRule,
+AsmL_UpdateRule_strategy = st.builds(
+    AsmL_UpdateRule,
 )
-AsmL::SkipRule_strategy = st.builds(
-    AsmL::SkipRule,
+AsmL_SkipRule_strategy = st.builds(
+    AsmL_SkipRule,
 )
-AsmL::Step_strategy = st.builds(
-    AsmL::Step,
+AsmL_Step_strategy = st.builds(
+    AsmL_Step,
     name=
         safe_text
 )
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-AsmL::VarOrCase_strategy = st.builds(
-    AsmL::VarOrCase,
+AsmL_InWhereHolds_strategy = st.builds(
+    AsmL_InWhereHolds,
 )
-AsmL::AsmLFile_strategy = st.builds(
-    AsmL::AsmLFile,
-)
-AsmL::InWhereHolds_strategy = st.builds(
-    AsmL::InWhereHolds,
-)
-AsmL::Initially_strategy = st.builds(
-    AsmL::Initially,
-)
-AsmL::Enumerator_strategy = st.builds(
-    AsmL::Enumerator,
+AsmL_Parameter_strategy = st.builds(
+    AsmL_Parameter,
     name=
         safe_text
 )
-AsmL::Term_strategy = st.builds(
-    AsmL::Term,
+AsmL_AsmLFile_strategy = st.builds(
+    AsmL_AsmLFile,
 )
-AsmL::Rule_strategy = st.builds(
-    AsmL::Rule,
+AsmL_VarOrCase_strategy = st.builds(
+    AsmL_VarOrCase,
 )
-AsmL::VarOrMethod_strategy = st.builds(
-    AsmL::VarOrMethod,
-)
-AsmL::AsmLElement_strategy = st.builds(
-    AsmL::AsmLElement,
-)
-AsmL::Parameter_strategy = st.builds(
-    AsmL::Parameter,
+AsmL_Enumerator_strategy = st.builds(
+    AsmL_Enumerator,
     name=
         safe_text
 )
-AsmL::Body_strategy = st.builds(
-    AsmL::Body,
+AsmL_Initially_strategy = st.builds(
+    AsmL_Initially,
 )
-AsmL::LocatedElement_strategy = st.builds(
-    AsmL::LocatedElement,
+AsmL_VarOrMethod_strategy = st.builds(
+    AsmL_VarOrMethod,
+)
+AsmL_Rule_strategy = st.builds(
+    AsmL_Rule,
+)
+AsmL_AsmLElement_strategy = st.builds(
+    AsmL_AsmLElement,
+)
+AsmL_Term_strategy = st.builds(
+    AsmL_Term,
+)
+AsmL_Body_strategy = st.builds(
+    AsmL_Body,
+)
+AsmL_LocatedElement_strategy = st.builds(
+    AsmL_LocatedElement,
     location=
         safe_text,
-    commentsAfter=
-        safe_text,
     commentsBefore=
+        safe_text,
+    commentsAfter=
         safe_text
 )
-
-@given(instance=Constant_strategy)
-@settings(max_examples=50)
-def test_constant_instantiation(instance):
-    assert isinstance(instance, Constant)
-
-@given(instance=AsmL::StringConstant_strategy)
-@settings(max_examples=50)
-def test_asml::stringconstant_instantiation(instance):
-    assert isinstance(instance, AsmL::StringConstant)
-
-@given(instance=AsmL::StringConstant_strategy)
-def test_asml::stringconstant_val_type(instance):
-    assert isinstance(instance.val, str)
-
-
-@given(instance=AsmL::StringConstant_strategy)
-def test_asml::stringconstant_val_setter(instance):
-    original = instance.val
-    instance.val = original
-    assert instance.val == original
-
-@given(instance=AsmL::NullConstant_strategy)
-@settings(max_examples=50)
-def test_asml::nullconstant_instantiation(instance):
-    assert isinstance(instance, AsmL::NullConstant)
-
-@given(instance=AsmL::IntegerConstant_strategy)
-@settings(max_examples=50)
-def test_asml::integerconstant_instantiation(instance):
-    assert isinstance(instance, AsmL::IntegerConstant)
-
-@given(instance=AsmL::IntegerConstant_strategy)
-def test_asml::integerconstant_val_type(instance):
-    assert isinstance(instance.val, str)
-
-
-@given(instance=AsmL::IntegerConstant_strategy)
-def test_asml::integerconstant_val_setter(instance):
-    original = instance.val
-    instance.val = original
-    assert instance.val == original
-
-@given(instance=AsmL::BooleanConstant_strategy)
-@settings(max_examples=50)
-def test_asml::booleanconstant_instantiation(instance):
-    assert isinstance(instance, AsmL::BooleanConstant)
-
-@given(instance=AsmL::BooleanConstant_strategy)
-def test_asml::booleanconstant_val_type(instance):
-    assert isinstance(instance.val, str)
-
-
-@given(instance=AsmL::BooleanConstant_strategy)
-def test_asml::booleanconstant_val_setter(instance):
-    original = instance.val
-    instance.val = original
-    assert instance.val == original
+Constant_strategy = st.builds(
+    Constant,
+)
+AsmL_IntegerConstant_strategy = st.builds(
+    AsmL_IntegerConstant,
+    val=
+        safe_text
+)
+AsmL_StringConstant_strategy = st.builds(
+    AsmL_StringConstant,
+    val=
+        safe_text
+)
+AsmL_NullConstant_strategy = st.builds(
+    AsmL_NullConstant,
+)
+AsmL_BooleanConstant_strategy = st.builds(
+    AsmL_BooleanConstant,
+    val=
+        safe_text
+)
+AsmL_Constant_strategy = st.builds(
+    AsmL_Constant,
+)
+AsmL_RangeSequence_strategy = st.builds(
+    AsmL_RangeSequence,
+)
 
 @given(instance=SequenceTerm_strategy)
 @settings(max_examples=50)
 def test_sequenceterm_instantiation(instance):
     assert isinstance(instance, SequenceTerm)
 
-@given(instance=AsmL::RangeSequence_strategy)
+@given(instance=AsmL_EnumerateSequence_strategy)
 @settings(max_examples=50)
-def test_asml::rangesequence_instantiation(instance):
-    assert isinstance(instance, AsmL::RangeSequence)
-
-@given(instance=AsmL::EnumerateSequence_strategy)
-@settings(max_examples=50)
-def test_asml::enumeratesequence_instantiation(instance):
-    assert isinstance(instance, AsmL::EnumerateSequence)
+def test_asml_enumeratesequence_instantiation(instance):
+    assert isinstance(instance, AsmL_EnumerateSequence)
 
 @given(instance=SetTerm_strategy)
 @settings(max_examples=50)
 def test_setterm_instantiation(instance):
     assert isinstance(instance, SetTerm)
 
-@given(instance=AsmL::RangeSet_strategy)
+@given(instance=AsmL_AlgorithmSet_strategy)
 @settings(max_examples=50)
-def test_asml::rangeset_instantiation(instance):
-    assert isinstance(instance, AsmL::RangeSet)
+def test_asml_algorithmset_instantiation(instance):
+    assert isinstance(instance, AsmL_AlgorithmSet)
 
-@given(instance=AsmL::AlgorithmSet_strategy)
+@given(instance=AsmL_RangeSet_strategy)
 @settings(max_examples=50)
-def test_asml::algorithmset_instantiation(instance):
-    assert isinstance(instance, AsmL::AlgorithmSet)
+def test_asml_rangeset_instantiation(instance):
+    assert isinstance(instance, AsmL_RangeSet)
 
-@given(instance=AsmL::EnumerateSet_strategy)
+@given(instance=AsmL_EnumerateSet_strategy)
 @settings(max_examples=50)
-def test_asml::enumerateset_instantiation(instance):
-    assert isinstance(instance, AsmL::EnumerateSet)
+def test_asml_enumerateset_instantiation(instance):
+    assert isinstance(instance, AsmL_EnumerateSet)
 
 @given(instance=PredicateTerm_strategy)
 @settings(max_examples=50)
 def test_predicateterm_instantiation(instance):
     assert isinstance(instance, PredicateTerm)
 
-@given(instance=AsmL::ExistsTerm_strategy)
+@given(instance=AsmL_AnyIn_strategy)
 @settings(max_examples=50)
-def test_asml::existsterm_instantiation(instance):
-    assert isinstance(instance, AsmL::ExistsTerm)
+def test_asml_anyin_instantiation(instance):
+    assert isinstance(instance, AsmL_AnyIn)
 
-@given(instance=AsmL::ExistsTerm_strategy)
-def test_asml::existsterm_isUnique_type(instance):
-    assert isinstance(instance.isUnique, str)
+@given(instance=AsmL_ExistsTerm_strategy)
+@settings(max_examples=50)
+def test_asml_existsterm_instantiation(instance):
+    assert isinstance(instance, AsmL_ExistsTerm)
 
 
-@given(instance=AsmL::ExistsTerm_strategy)
-def test_asml::existsterm_isUnique_setter(instance):
+
+@given(instance=AsmL_ExistsTerm_strategy)
+def test_asml_existsterm_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
 
-@given(instance=AsmL::AnyIn_strategy)
+@given(instance=AsmL_ForAllTerm_strategy)
 @settings(max_examples=50)
-def test_asml::anyin_instantiation(instance):
-    assert isinstance(instance, AsmL::AnyIn)
-
-@given(instance=AsmL::ForAllTerm_strategy)
-@settings(max_examples=50)
-def test_asml::forallterm_instantiation(instance):
-    assert isinstance(instance, AsmL::ForAllTerm)
+def test_asml_forallterm_instantiation(instance):
+    assert isinstance(instance, AsmL_ForAllTerm)
 
 @given(instance=ConditionalRule_strategy)
 @settings(max_examples=50)
 def test_conditionalrule_instantiation(instance):
     assert isinstance(instance, ConditionalRule)
 
-@given(instance=AsmL::ElseIf_strategy)
+@given(instance=AsmL_ElseIf_strategy)
 @settings(max_examples=50)
-def test_asml::elseif_instantiation(instance):
-    assert isinstance(instance, AsmL::ElseIf)
+def test_asml_elseif_instantiation(instance):
+    assert isinstance(instance, AsmL_ElseIf)
 
 @given(instance=ElseIf_strategy)
 @settings(max_examples=50)
@@ -2329,30 +2263,30 @@ def test_elseif_instantiation(instance):
 def test_updaterule_instantiation(instance):
     assert isinstance(instance, UpdateRule)
 
-@given(instance=AsmL::UpdateMapRule_strategy)
+@given(instance=AsmL_UpdateMapRule_strategy)
 @settings(max_examples=50)
-def test_asml::updatemaprule_instantiation(instance):
-    assert isinstance(instance, AsmL::UpdateMapRule)
+def test_asml_updatemaprule_instantiation(instance):
+    assert isinstance(instance, AsmL_UpdateMapRule)
 
-@given(instance=AsmL::UpdateFieldRule_strategy)
+@given(instance=AsmL_UpdateFieldRule_strategy)
 @settings(max_examples=50)
-def test_asml::updatefieldrule_instantiation(instance):
-    assert isinstance(instance, AsmL::UpdateFieldRule)
+def test_asml_updatefieldrule_instantiation(instance):
+    assert isinstance(instance, AsmL_UpdateFieldRule)
 
-@given(instance=AsmL::UpdateVarRule_strategy)
+@given(instance=AsmL_UpdateVarRule_strategy)
 @settings(max_examples=50)
-def test_asml::updatevarrule_instantiation(instance):
-    assert isinstance(instance, AsmL::UpdateVarRule)
+def test_asml_updatevarrule_instantiation(instance):
+    assert isinstance(instance, AsmL_UpdateVarRule)
 
 @given(instance=MethodCallTerm_strategy)
 @settings(max_examples=50)
 def test_methodcallterm_instantiation(instance):
     assert isinstance(instance, MethodCallTerm)
 
-@given(instance=AsmL::NewInstance_strategy)
+@given(instance=AsmL_NewInstance_strategy)
 @settings(max_examples=50)
-def test_asml::newinstance_instantiation(instance):
-    assert isinstance(instance, AsmL::NewInstance)
+def test_asml_newinstance_instantiation(instance):
+    assert isinstance(instance, AsmL_NewInstance)
 
 @given(instance=InWhereHolds_strategy)
 @settings(max_examples=50)
@@ -2364,35 +2298,35 @@ def test_inwhereholds_instantiation(instance):
 def test_stepexpression_instantiation(instance):
     assert isinstance(instance, StepExpression)
 
-@given(instance=AsmL::StepUntil_strategy)
+@given(instance=AsmL_StepUntil_strategy)
 @settings(max_examples=50)
-def test_asml::stepuntil_instantiation(instance):
-    assert isinstance(instance, AsmL::StepUntil)
+def test_asml_stepuntil_instantiation(instance):
+    assert isinstance(instance, AsmL_StepUntil)
 
-@given(instance=AsmL::StepWhile_strategy)
+@given(instance=AsmL_StepWhile_strategy)
 @settings(max_examples=50)
-def test_asml::stepwhile_instantiation(instance):
-    assert isinstance(instance, AsmL::StepWhile)
+def test_asml_stepwhile_instantiation(instance):
+    assert isinstance(instance, AsmL_StepWhile)
 
 @given(instance=Step_strategy)
 @settings(max_examples=50)
 def test_step_instantiation(instance):
     assert isinstance(instance, Step)
 
-@given(instance=AsmL::StepExpression_strategy)
+@given(instance=AsmL_StepForEach_strategy)
 @settings(max_examples=50)
-def test_asml::stepexpression_instantiation(instance):
-    assert isinstance(instance, AsmL::StepExpression)
+def test_asml_stepforeach_instantiation(instance):
+    assert isinstance(instance, AsmL_StepForEach)
 
-@given(instance=AsmL::StepForEach_strategy)
+@given(instance=AsmL_StepExpression_strategy)
 @settings(max_examples=50)
-def test_asml::stepforeach_instantiation(instance):
-    assert isinstance(instance, AsmL::StepForEach)
+def test_asml_stepexpression_instantiation(instance):
+    assert isinstance(instance, AsmL_StepExpression)
 
-@given(instance=AsmL::StepUntilFixPoint_strategy)
+@given(instance=AsmL_StepUntilFixPoint_strategy)
 @settings(max_examples=50)
-def test_asml::stepuntilfixpoint_instantiation(instance):
-    assert isinstance(instance, AsmL::StepUntilFixPoint)
+def test_asml_stepuntilfixpoint_instantiation(instance):
+    assert isinstance(instance, AsmL_StepUntilFixPoint)
 
 @given(instance=Method_strategy)
 @settings(max_examples=50)
@@ -2424,10 +2358,10 @@ def test_parameter_instantiation(instance):
 def test_function_instantiation(instance):
     assert isinstance(instance, Function)
 
-@given(instance=AsmL::Main_strategy)
+@given(instance=AsmL_Main_strategy)
 @settings(max_examples=50)
-def test_asml::main_instantiation(instance):
-    assert isinstance(instance, AsmL::Main)
+def test_asml_main_instantiation(instance):
+    assert isinstance(instance, AsmL_Main)
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
@@ -2454,92 +2388,77 @@ def test_vardeclaration_instantiation(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=AsmL::SequenceType_strategy)
+@given(instance=AsmL_TupletType_strategy)
 @settings(max_examples=50)
-def test_asml::sequencetype_instantiation(instance):
-    assert isinstance(instance, AsmL::SequenceType)
+def test_asml_tuplettype_instantiation(instance):
+    assert isinstance(instance, AsmL_TupletType)
 
-@given(instance=AsmL::TupletType_strategy)
+@given(instance=AsmL_SequenceType_strategy)
 @settings(max_examples=50)
-def test_asml::tuplettype_instantiation(instance):
-    assert isinstance(instance, AsmL::TupletType)
+def test_asml_sequencetype_instantiation(instance):
+    assert isinstance(instance, AsmL_SequenceType)
 
-@given(instance=AsmL::NamedType_strategy)
+@given(instance=AsmL_SetType_strategy)
 @settings(max_examples=50)
-def test_asml::namedtype_instantiation(instance):
-    assert isinstance(instance, AsmL::NamedType)
+def test_asml_settype_instantiation(instance):
+    assert isinstance(instance, AsmL_SetType)
 
-@given(instance=AsmL::NamedType_strategy)
-def test_asml::namedtype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=AsmL_MapType_strategy)
+@settings(max_examples=50)
+def test_asml_maptype_instantiation(instance):
+    assert isinstance(instance, AsmL_MapType)
+
+@given(instance=AsmL_NamedType_strategy)
+@settings(max_examples=50)
+def test_asml_namedtype_instantiation(instance):
+    assert isinstance(instance, AsmL_NamedType)
 
 
-@given(instance=AsmL::NamedType_strategy)
-def test_asml::namedtype_name_setter(instance):
+
+@given(instance=AsmL_NamedType_strategy)
+def test_asml_namedtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=AsmL::SetType_strategy)
-@settings(max_examples=50)
-def test_asml::settype_instantiation(instance):
-    assert isinstance(instance, AsmL::SetType)
-
-@given(instance=AsmL::MapType_strategy)
-@settings(max_examples=50)
-def test_asml::maptype_instantiation(instance):
-    assert isinstance(instance, AsmL::MapType)
 
 @given(instance=VarOrMethod_strategy)
 @settings(max_examples=50)
 def test_varormethod_instantiation(instance):
     assert isinstance(instance, VarOrMethod)
 
-@given(instance=AsmL::Method_strategy)
+@given(instance=AsmL_Method_strategy)
 @settings(max_examples=50)
-def test_asml::method_instantiation(instance):
-    assert isinstance(instance, AsmL::Method)
-
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isOverride_type(instance):
-    assert isinstance(instance.isOverride, str)
+def test_asml_method_instantiation(instance):
+    assert isinstance(instance, AsmL_Method)
 
 
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isOverride_setter(instance):
-    original = instance.isOverride
-    instance.isOverride = original
-    assert instance.isOverride == original
 
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isShared_type(instance):
-    assert isinstance(instance.isShared, str)
-
-
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isShared_setter(instance):
-    original = instance.isShared
-    instance.isShared = original
-    assert instance.isShared == original
-
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isEntryPoint_type(instance):
-    assert isinstance(instance.isEntryPoint, str)
-
-
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isEntryPoint_setter(instance):
+@given(instance=AsmL_Method_strategy)
+def test_asml_method_isEntryPoint_setter(instance):
     original = instance.isEntryPoint
     instance.isEntryPoint = original
     assert instance.isEntryPoint == original
 
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
 
 
-@given(instance=AsmL::Method_strategy)
-def test_asml::method_isAbstract_setter(instance):
+@given(instance=AsmL_Method_strategy)
+def test_asml_method_isShared_setter(instance):
+    original = instance.isShared
+    instance.isShared = original
+    assert instance.isShared == original
+
+
+
+@given(instance=AsmL_Method_strategy)
+def test_asml_method_isOverride_setter(instance):
+    original = instance.isOverride
+    instance.isOverride = original
+    assert instance.isOverride == original
+
+
+
+@given(instance=AsmL_Method_strategy)
+def test_asml_method_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -2549,18 +2468,15 @@ def test_asml::method_isAbstract_setter(instance):
 def test_varorcase_instantiation(instance):
     assert isinstance(instance, VarOrCase)
 
-@given(instance=AsmL::Case_strategy)
+@given(instance=AsmL_Case_strategy)
 @settings(max_examples=50)
-def test_asml::case_instantiation(instance):
-    assert isinstance(instance, AsmL::Case)
-
-@given(instance=AsmL::Case_strategy)
-def test_asml::case_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_case_instantiation(instance):
+    assert isinstance(instance, AsmL_Case)
 
 
-@given(instance=AsmL::Case_strategy)
-def test_asml::case_name_setter(instance):
+
+@given(instance=AsmL_Case_strategy)
+def test_asml_case_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2580,180 +2496,141 @@ def test_main_instantiation(instance):
 def test_asmlelement_instantiation(instance):
     assert isinstance(instance, AsmLElement)
 
-@given(instance=AsmL::Class_strategy)
+@given(instance=AsmL_Function_strategy)
 @settings(max_examples=50)
-def test_asml::class_instantiation(instance):
-    assert isinstance(instance, AsmL::Class)
-
-@given(instance=AsmL::Class_strategy)
-def test_asml::class_superClassName_type(instance):
-    assert isinstance(instance.superClassName, str)
+def test_asml_function_instantiation(instance):
+    assert isinstance(instance, AsmL_Function)
 
 
-@given(instance=AsmL::Class_strategy)
-def test_asml::class_superClassName_setter(instance):
-    original = instance.superClassName
-    instance.superClassName = original
-    assert instance.superClassName == original
 
-@given(instance=AsmL::Class_strategy)
-def test_asml::class_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=AsmL::Class_strategy)
-def test_asml::class_name_setter(instance):
+@given(instance=AsmL_Function_strategy)
+def test_asml_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=AsmL::Class_strategy)
-def test_asml::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
-
-
-@given(instance=AsmL::Class_strategy)
-def test_asml::class_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
-
-@given(instance=AsmL::Function_strategy)
+@given(instance=AsmL_Type_strategy)
 @settings(max_examples=50)
-def test_asml::function_instantiation(instance):
-    assert isinstance(instance, AsmL::Function)
-
-@given(instance=AsmL::Function_strategy)
-def test_asml::function_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_type_instantiation(instance):
+    assert isinstance(instance, AsmL_Type)
 
 
-@given(instance=AsmL::Function_strategy)
-def test_asml::function_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=AsmL::Structure_strategy)
-@settings(max_examples=50)
-def test_asml::structure_instantiation(instance):
-    assert isinstance(instance, AsmL::Structure)
-
-@given(instance=AsmL::Structure_strategy)
-def test_asml::structure_superStructureName_type(instance):
-    assert isinstance(instance.superStructureName, str)
-
-
-@given(instance=AsmL::Structure_strategy)
-def test_asml::structure_superStructureName_setter(instance):
-    original = instance.superStructureName
-    instance.superStructureName = original
-    assert instance.superStructureName == original
-
-@given(instance=AsmL::Structure_strategy)
-def test_asml::structure_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=AsmL::Structure_strategy)
-def test_asml::structure_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=AsmL::VarDeclaration_strategy)
-@settings(max_examples=50)
-def test_asml::vardeclaration_instantiation(instance):
-    assert isinstance(instance, AsmL::VarDeclaration)
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_isLocal_type(instance):
-    assert isinstance(instance.isLocal, str)
-
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_isLocal_setter(instance):
-    original = instance.isLocal
-    instance.isLocal = original
-    assert instance.isLocal == original
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_isDeclaration_type(instance):
-    assert isinstance(instance.isDeclaration, str)
-
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_isDeclaration_setter(instance):
-    original = instance.isDeclaration
-    instance.isDeclaration = original
-    assert instance.isDeclaration == original
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_isConstant_type(instance):
-    assert isinstance(instance.isConstant, str)
-
-
-@given(instance=AsmL::VarDeclaration_strategy)
-def test_asml::vardeclaration_isConstant_setter(instance):
-    original = instance.isConstant
-    instance.isConstant = original
-    assert instance.isConstant == original
-
-@given(instance=AsmL::Type_strategy)
-@settings(max_examples=50)
-def test_asml::type_instantiation(instance):
-    assert isinstance(instance, AsmL::Type)
-
-@given(instance=AsmL::Type_strategy)
-def test_asml::type_withNull_type(instance):
-    assert isinstance(instance.withNull, str)
-
-
-@given(instance=AsmL::Type_strategy)
-def test_asml::type_withNull_setter(instance):
+@given(instance=AsmL_Type_strategy)
+def test_asml_type_withNull_setter(instance):
     original = instance.withNull
     instance.withNull = original
     assert instance.withNull == original
 
-@given(instance=AsmL::Namespace_strategy)
+@given(instance=AsmL_Namespace_strategy)
 @settings(max_examples=50)
-def test_asml::namespace_instantiation(instance):
-    assert isinstance(instance, AsmL::Namespace)
-
-@given(instance=AsmL::Namespace_strategy)
-def test_asml::namespace_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_namespace_instantiation(instance):
+    assert isinstance(instance, AsmL_Namespace)
 
 
-@given(instance=AsmL::Namespace_strategy)
-def test_asml::namespace_name_setter(instance):
+
+@given(instance=AsmL_Namespace_strategy)
+def test_asml_namespace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=AsmL::Enumeration_strategy)
+@given(instance=AsmL_Class_strategy)
 @settings(max_examples=50)
-def test_asml::enumeration_instantiation(instance):
-    assert isinstance(instance, AsmL::Enumeration)
-
-@given(instance=AsmL::Enumeration_strategy)
-def test_asml::enumeration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_class_instantiation(instance):
+    assert isinstance(instance, AsmL_Class)
 
 
-@given(instance=AsmL::Enumeration_strategy)
-def test_asml::enumeration_name_setter(instance):
+
+@given(instance=AsmL_Class_strategy)
+def test_asml_class_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+
+
+@given(instance=AsmL_Class_strategy)
+def test_asml_class_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=AsmL_Class_strategy)
+def test_asml_class_superClassName_setter(instance):
+    original = instance.superClassName
+    instance.superClassName = original
+    assert instance.superClassName == original
+
+@given(instance=AsmL_Structure_strategy)
+@settings(max_examples=50)
+def test_asml_structure_instantiation(instance):
+    assert isinstance(instance, AsmL_Structure)
+
+
+
+@given(instance=AsmL_Structure_strategy)
+def test_asml_structure_superStructureName_setter(instance):
+    original = instance.superStructureName
+    instance.superStructureName = original
+    assert instance.superStructureName == original
+
+
+
+@given(instance=AsmL_Structure_strategy)
+def test_asml_structure_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=AsmL_VarDeclaration_strategy)
+@settings(max_examples=50)
+def test_asml_vardeclaration_instantiation(instance):
+    assert isinstance(instance, AsmL_VarDeclaration)
+
+
+
+@given(instance=AsmL_VarDeclaration_strategy)
+def test_asml_vardeclaration_isConstant_setter(instance):
+    original = instance.isConstant
+    instance.isConstant = original
+    assert instance.isConstant == original
+
+
+
+@given(instance=AsmL_VarDeclaration_strategy)
+def test_asml_vardeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=AsmL_VarDeclaration_strategy)
+def test_asml_vardeclaration_isDeclaration_setter(instance):
+    original = instance.isDeclaration
+    instance.isDeclaration = original
+    assert instance.isDeclaration == original
+
+
+
+@given(instance=AsmL_VarDeclaration_strategy)
+def test_asml_vardeclaration_isLocal_setter(instance):
+    original = instance.isLocal
+    instance.isLocal = original
+    assert instance.isLocal == original
+
+@given(instance=AsmL_Enumeration_strategy)
+@settings(max_examples=50)
+def test_asml_enumeration_instantiation(instance):
+    assert isinstance(instance, AsmL_Enumeration)
+
+
+
+@given(instance=AsmL_Enumeration_strategy)
+def test_asml_enumeration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2763,91 +2640,74 @@ def test_asml::enumeration_name_setter(instance):
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=AsmL::VarTerm_strategy)
+@given(instance=AsmL_MapTerm_strategy)
 @settings(max_examples=50)
-def test_asml::varterm_instantiation(instance):
-    assert isinstance(instance, AsmL::VarTerm)
-
-@given(instance=AsmL::VarTerm_strategy)
-def test_asml::varterm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_mapterm_instantiation(instance):
+    assert isinstance(instance, AsmL_MapTerm)
 
 
-@given(instance=AsmL::VarTerm_strategy)
-def test_asml::varterm_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=AsmL::SequenceTerm_strategy)
-@settings(max_examples=50)
-def test_asml::sequenceterm_instantiation(instance):
-    assert isinstance(instance, AsmL::SequenceTerm)
-
-@given(instance=AsmL::TulpletTerm_strategy)
-@settings(max_examples=50)
-def test_asml::tulpletterm_instantiation(instance):
-    assert isinstance(instance, AsmL::TulpletTerm)
-
-@given(instance=AsmL::PredicateTerm_strategy)
-@settings(max_examples=50)
-def test_asml::predicateterm_instantiation(instance):
-    assert isinstance(instance, AsmL::PredicateTerm)
-
-@given(instance=AsmL::Constant_strategy)
-@settings(max_examples=50)
-def test_asml::constant_instantiation(instance):
-    assert isinstance(instance, AsmL::Constant)
-
-@given(instance=AsmL::SetTerm_strategy)
-@settings(max_examples=50)
-def test_asml::setterm_instantiation(instance):
-    assert isinstance(instance, AsmL::SetTerm)
-
-@given(instance=AsmL::MapTerm_strategy)
-@settings(max_examples=50)
-def test_asml::mapterm_instantiation(instance):
-    assert isinstance(instance, AsmL::MapTerm)
-
-@given(instance=AsmL::MapTerm_strategy)
-def test_asml::mapterm_separator_type(instance):
-    assert isinstance(instance.separator, str)
-
-
-@given(instance=AsmL::MapTerm_strategy)
-def test_asml::mapterm_separator_setter(instance):
+@given(instance=AsmL_MapTerm_strategy)
+def test_asml_mapterm_separator_setter(instance):
     original = instance.separator
     instance.separator = original
     assert instance.separator == original
 
-@given(instance=AsmL::Operator_strategy)
+@given(instance=AsmL_PredicateTerm_strategy)
 @settings(max_examples=50)
-def test_asml::operator_instantiation(instance):
-    assert isinstance(instance, AsmL::Operator)
+def test_asml_predicateterm_instantiation(instance):
+    assert isinstance(instance, AsmL_PredicateTerm)
 
-@given(instance=AsmL::Operator_strategy)
-def test_asml::operator_opName_type(instance):
-    assert isinstance(instance.opName, str)
+@given(instance=AsmL_SetTerm_strategy)
+@settings(max_examples=50)
+def test_asml_setterm_instantiation(instance):
+    assert isinstance(instance, AsmL_SetTerm)
+
+@given(instance=AsmL_Operator_strategy)
+@settings(max_examples=50)
+def test_asml_operator_instantiation(instance):
+    assert isinstance(instance, AsmL_Operator)
 
 
-@given(instance=AsmL::Operator_strategy)
-def test_asml::operator_opName_setter(instance):
+
+@given(instance=AsmL_Operator_strategy)
+def test_asml_operator_opName_setter(instance):
     original = instance.opName
     instance.opName = original
     assert instance.opName == original
 
-@given(instance=AsmL::MethodCallTerm_strategy)
+@given(instance=AsmL_VarTerm_strategy)
 @settings(max_examples=50)
-def test_asml::methodcallterm_instantiation(instance):
-    assert isinstance(instance, AsmL::MethodCallTerm)
-
-@given(instance=AsmL::MethodCallTerm_strategy)
-def test_asml::methodcallterm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_varterm_instantiation(instance):
+    assert isinstance(instance, AsmL_VarTerm)
 
 
-@given(instance=AsmL::MethodCallTerm_strategy)
-def test_asml::methodcallterm_name_setter(instance):
+
+@given(instance=AsmL_VarTerm_strategy)
+def test_asml_varterm_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=AsmL_SequenceTerm_strategy)
+@settings(max_examples=50)
+def test_asml_sequenceterm_instantiation(instance):
+    assert isinstance(instance, AsmL_SequenceTerm)
+
+@given(instance=AsmL_TulpletTerm_strategy)
+@settings(max_examples=50)
+def test_asml_tulpletterm_instantiation(instance):
+    assert isinstance(instance, AsmL_TulpletTerm)
+
+@given(instance=AsmL_MethodCallTerm_strategy)
+@settings(max_examples=50)
+def test_asml_methodcallterm_instantiation(instance):
+    assert isinstance(instance, AsmL_MethodCallTerm)
+
+
+
+@given(instance=AsmL_MethodCallTerm_strategy)
+def test_asml_methodcallterm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2857,63 +2717,60 @@ def test_asml::methodcallterm_name_setter(instance):
 def test_rule_instantiation(instance):
     assert isinstance(instance, Rule)
 
-@given(instance=AsmL::RemoveRule_strategy)
+@given(instance=AsmL_AddRule_strategy)
 @settings(max_examples=50)
-def test_asml::removerule_instantiation(instance):
-    assert isinstance(instance, AsmL::RemoveRule)
+def test_asml_addrule_instantiation(instance):
+    assert isinstance(instance, AsmL_AddRule)
 
-@given(instance=AsmL::MethodInvocation_strategy)
+@given(instance=AsmL_RemoveRule_strategy)
 @settings(max_examples=50)
-def test_asml::methodinvocation_instantiation(instance):
-    assert isinstance(instance, AsmL::MethodInvocation)
+def test_asml_removerule_instantiation(instance):
+    assert isinstance(instance, AsmL_RemoveRule)
 
-@given(instance=AsmL::ReturnRule_strategy)
+@given(instance=AsmL_ChooseRule_strategy)
 @settings(max_examples=50)
-def test_asml::returnrule_instantiation(instance):
-    assert isinstance(instance, AsmL::ReturnRule)
+def test_asml_chooserule_instantiation(instance):
+    assert isinstance(instance, AsmL_ChooseRule)
 
-@given(instance=AsmL::ConditionalRule_strategy)
+@given(instance=AsmL_ForallRule_strategy)
 @settings(max_examples=50)
-def test_asml::conditionalrule_instantiation(instance):
-    assert isinstance(instance, AsmL::ConditionalRule)
+def test_asml_forallrule_instantiation(instance):
+    assert isinstance(instance, AsmL_ForallRule)
 
-@given(instance=AsmL::AddRule_strategy)
+@given(instance=AsmL_ConditionalRule_strategy)
 @settings(max_examples=50)
-def test_asml::addrule_instantiation(instance):
-    assert isinstance(instance, AsmL::AddRule)
+def test_asml_conditionalrule_instantiation(instance):
+    assert isinstance(instance, AsmL_ConditionalRule)
 
-@given(instance=AsmL::ChooseRule_strategy)
+@given(instance=AsmL_MethodInvocation_strategy)
 @settings(max_examples=50)
-def test_asml::chooserule_instantiation(instance):
-    assert isinstance(instance, AsmL::ChooseRule)
+def test_asml_methodinvocation_instantiation(instance):
+    assert isinstance(instance, AsmL_MethodInvocation)
 
-@given(instance=AsmL::ForallRule_strategy)
+@given(instance=AsmL_ReturnRule_strategy)
 @settings(max_examples=50)
-def test_asml::forallrule_instantiation(instance):
-    assert isinstance(instance, AsmL::ForallRule)
+def test_asml_returnrule_instantiation(instance):
+    assert isinstance(instance, AsmL_ReturnRule)
 
-@given(instance=AsmL::UpdateRule_strategy)
+@given(instance=AsmL_UpdateRule_strategy)
 @settings(max_examples=50)
-def test_asml::updaterule_instantiation(instance):
-    assert isinstance(instance, AsmL::UpdateRule)
+def test_asml_updaterule_instantiation(instance):
+    assert isinstance(instance, AsmL_UpdateRule)
 
-@given(instance=AsmL::SkipRule_strategy)
+@given(instance=AsmL_SkipRule_strategy)
 @settings(max_examples=50)
-def test_asml::skiprule_instantiation(instance):
-    assert isinstance(instance, AsmL::SkipRule)
+def test_asml_skiprule_instantiation(instance):
+    assert isinstance(instance, AsmL_SkipRule)
 
-@given(instance=AsmL::Step_strategy)
+@given(instance=AsmL_Step_strategy)
 @settings(max_examples=50)
-def test_asml::step_instantiation(instance):
-    assert isinstance(instance, AsmL::Step)
-
-@given(instance=AsmL::Step_strategy)
-def test_asml::step_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_step_instantiation(instance):
+    assert isinstance(instance, AsmL_Step)
 
 
-@given(instance=AsmL::Step_strategy)
-def test_asml::step_name_setter(instance):
+
+@given(instance=AsmL_Step_strategy)
+def test_asml_step_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2923,117 +2780,161 @@ def test_asml::step_name_setter(instance):
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=AsmL::VarOrCase_strategy)
+@given(instance=AsmL_InWhereHolds_strategy)
 @settings(max_examples=50)
-def test_asml::varorcase_instantiation(instance):
-    assert isinstance(instance, AsmL::VarOrCase)
+def test_asml_inwhereholds_instantiation(instance):
+    assert isinstance(instance, AsmL_InWhereHolds)
 
-@given(instance=AsmL::AsmLFile_strategy)
+@given(instance=AsmL_Parameter_strategy)
 @settings(max_examples=50)
-def test_asml::asmlfile_instantiation(instance):
-    assert isinstance(instance, AsmL::AsmLFile)
-
-@given(instance=AsmL::InWhereHolds_strategy)
-@settings(max_examples=50)
-def test_asml::inwhereholds_instantiation(instance):
-    assert isinstance(instance, AsmL::InWhereHolds)
-
-@given(instance=AsmL::Initially_strategy)
-@settings(max_examples=50)
-def test_asml::initially_instantiation(instance):
-    assert isinstance(instance, AsmL::Initially)
-
-@given(instance=AsmL::Enumerator_strategy)
-@settings(max_examples=50)
-def test_asml::enumerator_instantiation(instance):
-    assert isinstance(instance, AsmL::Enumerator)
-
-@given(instance=AsmL::Enumerator_strategy)
-def test_asml::enumerator_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_parameter_instantiation(instance):
+    assert isinstance(instance, AsmL_Parameter)
 
 
-@given(instance=AsmL::Enumerator_strategy)
-def test_asml::enumerator_name_setter(instance):
+
+@given(instance=AsmL_Parameter_strategy)
+def test_asml_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=AsmL::Term_strategy)
+@given(instance=AsmL_AsmLFile_strategy)
 @settings(max_examples=50)
-def test_asml::term_instantiation(instance):
-    assert isinstance(instance, AsmL::Term)
+def test_asml_asmlfile_instantiation(instance):
+    assert isinstance(instance, AsmL_AsmLFile)
 
-@given(instance=AsmL::Rule_strategy)
+@given(instance=AsmL_VarOrCase_strategy)
 @settings(max_examples=50)
-def test_asml::rule_instantiation(instance):
-    assert isinstance(instance, AsmL::Rule)
+def test_asml_varorcase_instantiation(instance):
+    assert isinstance(instance, AsmL_VarOrCase)
 
-@given(instance=AsmL::VarOrMethod_strategy)
+@given(instance=AsmL_Enumerator_strategy)
 @settings(max_examples=50)
-def test_asml::varormethod_instantiation(instance):
-    assert isinstance(instance, AsmL::VarOrMethod)
-
-@given(instance=AsmL::AsmLElement_strategy)
-@settings(max_examples=50)
-def test_asml::asmlelement_instantiation(instance):
-    assert isinstance(instance, AsmL::AsmLElement)
-
-@given(instance=AsmL::Parameter_strategy)
-@settings(max_examples=50)
-def test_asml::parameter_instantiation(instance):
-    assert isinstance(instance, AsmL::Parameter)
-
-@given(instance=AsmL::Parameter_strategy)
-def test_asml::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asml_enumerator_instantiation(instance):
+    assert isinstance(instance, AsmL_Enumerator)
 
 
-@given(instance=AsmL::Parameter_strategy)
-def test_asml::parameter_name_setter(instance):
+
+@given(instance=AsmL_Enumerator_strategy)
+def test_asml_enumerator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=AsmL::Body_strategy)
+@given(instance=AsmL_Initially_strategy)
 @settings(max_examples=50)
-def test_asml::body_instantiation(instance):
-    assert isinstance(instance, AsmL::Body)
+def test_asml_initially_instantiation(instance):
+    assert isinstance(instance, AsmL_Initially)
 
-@given(instance=AsmL::LocatedElement_strategy)
+@given(instance=AsmL_VarOrMethod_strategy)
 @settings(max_examples=50)
-def test_asml::locatedelement_instantiation(instance):
-    assert isinstance(instance, AsmL::LocatedElement)
+def test_asml_varormethod_instantiation(instance):
+    assert isinstance(instance, AsmL_VarOrMethod)
 
-@given(instance=AsmL::LocatedElement_strategy)
-def test_asml::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+@given(instance=AsmL_Rule_strategy)
+@settings(max_examples=50)
+def test_asml_rule_instantiation(instance):
+    assert isinstance(instance, AsmL_Rule)
+
+@given(instance=AsmL_AsmLElement_strategy)
+@settings(max_examples=50)
+def test_asml_asmlelement_instantiation(instance):
+    assert isinstance(instance, AsmL_AsmLElement)
+
+@given(instance=AsmL_Term_strategy)
+@settings(max_examples=50)
+def test_asml_term_instantiation(instance):
+    assert isinstance(instance, AsmL_Term)
+
+@given(instance=AsmL_Body_strategy)
+@settings(max_examples=50)
+def test_asml_body_instantiation(instance):
+    assert isinstance(instance, AsmL_Body)
+
+@given(instance=AsmL_LocatedElement_strategy)
+@settings(max_examples=50)
+def test_asml_locatedelement_instantiation(instance):
+    assert isinstance(instance, AsmL_LocatedElement)
 
 
-@given(instance=AsmL::LocatedElement_strategy)
-def test_asml::locatedelement_location_setter(instance):
+
+@given(instance=AsmL_LocatedElement_strategy)
+def test_asml_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=AsmL::LocatedElement_strategy)
-def test_asml::locatedelement_commentsAfter_type(instance):
-    assert isinstance(instance.commentsAfter, str)
 
 
-@given(instance=AsmL::LocatedElement_strategy)
-def test_asml::locatedelement_commentsAfter_setter(instance):
+@given(instance=AsmL_LocatedElement_strategy)
+def test_asml_locatedelement_commentsBefore_setter(instance):
+    original = instance.commentsBefore
+    instance.commentsBefore = original
+    assert instance.commentsBefore == original
+
+
+
+@given(instance=AsmL_LocatedElement_strategy)
+def test_asml_locatedelement_commentsAfter_setter(instance):
     original = instance.commentsAfter
     instance.commentsAfter = original
     assert instance.commentsAfter == original
 
-@given(instance=AsmL::LocatedElement_strategy)
-def test_asml::locatedelement_commentsBefore_type(instance):
-    assert isinstance(instance.commentsBefore, str)
+@given(instance=Constant_strategy)
+@settings(max_examples=50)
+def test_constant_instantiation(instance):
+    assert isinstance(instance, Constant)
+
+@given(instance=AsmL_IntegerConstant_strategy)
+@settings(max_examples=50)
+def test_asml_integerconstant_instantiation(instance):
+    assert isinstance(instance, AsmL_IntegerConstant)
 
 
-@given(instance=AsmL::LocatedElement_strategy)
-def test_asml::locatedelement_commentsBefore_setter(instance):
-    original = instance.commentsBefore
-    instance.commentsBefore = original
-    assert instance.commentsBefore == original
+
+@given(instance=AsmL_IntegerConstant_strategy)
+def test_asml_integerconstant_val_setter(instance):
+    original = instance.val
+    instance.val = original
+    assert instance.val == original
+
+@given(instance=AsmL_StringConstant_strategy)
+@settings(max_examples=50)
+def test_asml_stringconstant_instantiation(instance):
+    assert isinstance(instance, AsmL_StringConstant)
+
+
+
+@given(instance=AsmL_StringConstant_strategy)
+def test_asml_stringconstant_val_setter(instance):
+    original = instance.val
+    instance.val = original
+    assert instance.val == original
+
+@given(instance=AsmL_NullConstant_strategy)
+@settings(max_examples=50)
+def test_asml_nullconstant_instantiation(instance):
+    assert isinstance(instance, AsmL_NullConstant)
+
+@given(instance=AsmL_BooleanConstant_strategy)
+@settings(max_examples=50)
+def test_asml_booleanconstant_instantiation(instance):
+    assert isinstance(instance, AsmL_BooleanConstant)
+
+
+
+@given(instance=AsmL_BooleanConstant_strategy)
+def test_asml_booleanconstant_val_setter(instance):
+    original = instance.val
+    instance.val = original
+    assert instance.val == original
+
+@given(instance=AsmL_Constant_strategy)
+@settings(max_examples=50)
+def test_asml_constant_instantiation(instance):
+    assert isinstance(instance, AsmL_Constant)
+
+@given(instance=AsmL_RangeSequence_strategy)
+@settings(max_examples=50)
+def test_asml_rangesequence_instantiation(instance):
+    assert isinstance(instance, AsmL_RangeSequence)

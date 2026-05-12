@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ArrPrint,
@@ -64,17 +64,17 @@ def test_documents_constructor_exists():
 def test_documents_constructor_args():
     sig = inspect.signature(Documents.__init__)
     params = list(sig.parameters.keys())
-    assert "tab_counter" in params, "Missing parameter 'tab_counter'"
-    assert "file_name" in params, "Missing parameter 'file_name'"
-    assert "data" in params, "Missing parameter 'data'"
     assert "file" in params, "Missing parameter 'file'"
+    assert "file_name" in params, "Missing parameter 'file_name'"
+    assert "tab_counter" in params, "Missing parameter 'tab_counter'"
+    assert "data" in params, "Missing parameter 'data'"
 
-def test_documents_has_tab_counter():
-    assert hasattr(Documents, "tab_counter")
+def test_documents_has_file():
+    assert hasattr(Documents, "file")
     descriptor = None
     for klass in Documents.__mro__:
-        if "tab_counter" in klass.__dict__:
-            descriptor = klass.__dict__["tab_counter"]
+        if "file" in klass.__dict__:
+            descriptor = klass.__dict__["file"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,21 +87,21 @@ def test_documents_has_file_name():
             break
     assert isinstance(descriptor, property)
 
+def test_documents_has_tab_counter():
+    assert hasattr(Documents, "tab_counter")
+    descriptor = None
+    for klass in Documents.__mro__:
+        if "tab_counter" in klass.__dict__:
+            descriptor = klass.__dict__["tab_counter"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_documents_has_data():
     assert hasattr(Documents, "data")
     descriptor = None
     for klass in Documents.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_documents_has_file():
-    assert hasattr(Documents, "file")
-    descriptor = None
-    for klass in Documents.__mro__:
-        if "file" in klass.__dict__:
-            descriptor = klass.__dict__["file"]
             break
     assert isinstance(descriptor, property)
 
@@ -118,27 +118,18 @@ def test_provider_constructor_exists():
 def test_provider_constructor_args():
     sig = inspect.signature(Provider.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
-    assert "providerId" in params, "Missing parameter 'providerId'"
-    assert "uid" in params, "Missing parameter 'uid'"
-    assert "photoURL" in params, "Missing parameter 'photoURL'"
     assert "displayName" in params, "Missing parameter 'displayName'"
+    assert "uid" in params, "Missing parameter 'uid'"
+    assert "providerId" in params, "Missing parameter 'providerId'"
+    assert "email" in params, "Missing parameter 'email'"
+    assert "photoURL" in params, "Missing parameter 'photoURL'"
 
-def test_provider_has_email():
-    assert hasattr(Provider, "email")
+def test_provider_has_displayName():
+    assert hasattr(Provider, "displayName")
     descriptor = None
     for klass in Provider.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_provider_has_providerId():
-    assert hasattr(Provider, "providerId")
-    descriptor = None
-    for klass in Provider.__mro__:
-        if "providerId" in klass.__dict__:
-            descriptor = klass.__dict__["providerId"]
+        if "displayName" in klass.__dict__:
+            descriptor = klass.__dict__["displayName"]
             break
     assert isinstance(descriptor, property)
 
@@ -151,21 +142,30 @@ def test_provider_has_uid():
             break
     assert isinstance(descriptor, property)
 
+def test_provider_has_providerId():
+    assert hasattr(Provider, "providerId")
+    descriptor = None
+    for klass in Provider.__mro__:
+        if "providerId" in klass.__dict__:
+            descriptor = klass.__dict__["providerId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_provider_has_email():
+    assert hasattr(Provider, "email")
+    descriptor = None
+    for klass in Provider.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_provider_has_photoURL():
     assert hasattr(Provider, "photoURL")
     descriptor = None
     for klass in Provider.__mro__:
         if "photoURL" in klass.__dict__:
             descriptor = klass.__dict__["photoURL"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_provider_has_displayName():
-    assert hasattr(Provider, "displayName")
-    descriptor = None
-    for klass in Provider.__mro__:
-        if "displayName" in klass.__dict__:
-            descriptor = klass.__dict__["displayName"]
             break
     assert isinstance(descriptor, property)
 
@@ -244,28 +244,10 @@ def test_category_constructor_exists():
 def test_category_constructor_args():
     sig = inspect.signature(Category.__init__)
     params = list(sig.parameters.keys())
-    assert "parent" in params, "Missing parameter 'parent'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "parent" in params, "Missing parameter 'parent'"
     assert "section" in params, "Missing parameter 'section'"
-
-def test_category_has_parent():
-    assert hasattr(Category, "parent")
-    descriptor = None
-    for klass in Category.__mro__:
-        if "parent" in klass.__dict__:
-            descriptor = klass.__dict__["parent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_category_has_name():
-    assert hasattr(Category, "name")
-    descriptor = None
-    for klass in Category.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_category_has_id():
     assert hasattr(Category, "id")
@@ -276,12 +258,30 @@ def test_category_has_id():
             break
     assert isinstance(descriptor, property)
 
+def test_category_has_parent():
+    assert hasattr(Category, "parent")
+    descriptor = None
+    for klass in Category.__mro__:
+        if "parent" in klass.__dict__:
+            descriptor = klass.__dict__["parent"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_category_has_section():
     assert hasattr(Category, "section")
     descriptor = None
     for klass in Category.__mro__:
         if "section" in klass.__dict__:
             descriptor = klass.__dict__["section"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_category_has_name():
+    assert hasattr(Category, "name")
+    descriptor = None
+    for klass in Category.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -336,31 +336,13 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "lastName" in params, "Missing parameter 'lastName'"
-    assert "address" in params, "Missing parameter 'address'"
     assert "firstName" in params, "Missing parameter 'firstName'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "phone" in params, "Missing parameter 'phone'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
     assert "photoURL" in params, "Missing parameter 'photoURL'"
-
-def test_user_has_lastName():
-    assert hasattr(User, "lastName")
-    descriptor = None
-    for klass in User.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_address():
-    assert hasattr(User, "address")
-    descriptor = None
-    for klass in User.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
+    assert "phone" in params, "Missing parameter 'phone'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "address" in params, "Missing parameter 'address'"
 
 def test_user_has_firstName():
     assert hasattr(User, "firstName")
@@ -368,24 +350,6 @@ def test_user_has_firstName():
     for klass in User.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_id():
-    assert hasattr(User, "id")
-    descriptor = None
-    for klass in User.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_phone():
-    assert hasattr(User, "phone")
-    descriptor = None
-    for klass in User.__mro__:
-        if "phone" in klass.__dict__:
-            descriptor = klass.__dict__["phone"]
             break
     assert isinstance(descriptor, property)
 
@@ -398,12 +362,48 @@ def test_user_has_email():
             break
     assert isinstance(descriptor, property)
 
+def test_user_has_lastName():
+    assert hasattr(User, "lastName")
+    descriptor = None
+    for klass in User.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_user_has_photoURL():
     assert hasattr(User, "photoURL")
     descriptor = None
     for klass in User.__mro__:
         if "photoURL" in klass.__dict__:
             descriptor = klass.__dict__["photoURL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_phone():
+    assert hasattr(User, "phone")
+    descriptor = None
+    for klass in User.__mro__:
+        if "phone" in klass.__dict__:
+            descriptor = klass.__dict__["phone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_id():
+    assert hasattr(User, "id")
+    descriptor = None
+    for klass in User.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_address():
+    assert hasattr(User, "address")
+    descriptor = None
+    for klass in User.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -427,26 +427,26 @@ Print_strategy = st.builds(
 )
 Documents_strategy = st.builds(
     Documents,
-    tab_counter=
-        st.integers(),
+    file=
+        safe_text,
     file_name=
         safe_text,
+    tab_counter=
+        st.integers(),
     data=
-        st.none(),
-    file=
-        safe_text
+        st.none()
 )
 Provider_strategy = st.builds(
     Provider,
-    email=
-        st.none(),
-    providerId=
+    displayName=
         st.none(),
     uid=
         safe_text,
-    photoURL=
+    providerId=
         st.none(),
-    displayName=
+    email=
+        st.none(),
+    photoURL=
         st.none()
 )
 Visitor_strategy = st.builds(
@@ -464,13 +464,13 @@ Number_strategy = st.builds(
 )
 Category_strategy = st.builds(
     Category,
-    parent=
-        st.none(),
-    name=
-        st.none(),
     id=
         safe_text,
+    parent=
+        st.none(),
     section=
+        st.none(),
+    name=
         st.none()
 )
 String_strategy = st.builds(
@@ -483,19 +483,19 @@ Null_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    lastName=
-        st.none(),
-    address=
-        st.none(),
     firstName=
-        st.none(),
-    id=
-        safe_text,
-    phone=
         st.none(),
     email=
         st.none(),
+    lastName=
+        st.none(),
     photoURL=
+        st.none(),
+    phone=
+        st.none(),
+    id=
+        safe_text,
+    address=
         st.none()
 )
 
@@ -514,42 +514,6 @@ def test_print_instantiation(instance):
 def test_documents_instantiation(instance):
     assert isinstance(instance, Documents)
 
-@given(instance=Documents_strategy)
-def test_documents_tab_counter_type(instance):
-    assert isinstance(instance.tab_counter, int)
-
-
-@given(instance=Documents_strategy)
-def test_documents_tab_counter_setter(instance):
-    original = instance.tab_counter
-    instance.tab_counter = original
-    assert instance.tab_counter == original
-
-@given(instance=Documents_strategy)
-def test_documents_file_name_type(instance):
-    assert isinstance(instance.file_name, str)
-
-
-@given(instance=Documents_strategy)
-def test_documents_file_name_setter(instance):
-    original = instance.file_name
-    instance.file_name = original
-    assert instance.file_name == original
-
-@given(instance=Documents_strategy)
-def test_documents_data_type(instance):
-    assert isinstance(instance.data, provider)
-
-
-@given(instance=Documents_strategy)
-def test_documents_data_setter(instance):
-    original = instance.data
-    instance.data = original
-    assert instance.data == original
-
-@given(instance=Documents_strategy)
-def test_documents_file_type(instance):
-    assert isinstance(instance.file, str)
 
 
 @given(instance=Documents_strategy)
@@ -558,36 +522,43 @@ def test_documents_file_setter(instance):
     instance.file = original
     assert instance.file == original
 
+
+
+@given(instance=Documents_strategy)
+def test_documents_file_name_setter(instance):
+    original = instance.file_name
+    instance.file_name = original
+    assert instance.file_name == original
+
+
+
+@given(instance=Documents_strategy)
+def test_documents_tab_counter_setter(instance):
+    original = instance.tab_counter
+    instance.tab_counter = original
+    assert instance.tab_counter == original
+
+
+
+@given(instance=Documents_strategy)
+def test_documents_data_setter(instance):
+    original = instance.data
+    instance.data = original
+    assert instance.data == original
+
 @given(instance=Provider_strategy)
 @settings(max_examples=50)
 def test_provider_instantiation(instance):
     assert isinstance(instance, Provider)
 
-@given(instance=Provider_strategy)
-def test_provider_email_type(instance):
-    assert isinstance(instance.email, string)
 
 
 @given(instance=Provider_strategy)
-def test_provider_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
+def test_provider_displayName_setter(instance):
+    original = instance.displayName
+    instance.displayName = original
+    assert instance.displayName == original
 
-@given(instance=Provider_strategy)
-def test_provider_providerId_type(instance):
-    assert isinstance(instance.providerId, string)
-
-
-@given(instance=Provider_strategy)
-def test_provider_providerId_setter(instance):
-    original = instance.providerId
-    instance.providerId = original
-    assert instance.providerId == original
-
-@given(instance=Provider_strategy)
-def test_provider_uid_type(instance):
-    assert isinstance(instance.uid, str)
 
 
 @given(instance=Provider_strategy)
@@ -596,9 +567,22 @@ def test_provider_uid_setter(instance):
     instance.uid = original
     assert instance.uid == original
 
+
+
 @given(instance=Provider_strategy)
-def test_provider_photoURL_type(instance):
-    assert isinstance(instance.photoURL, string)
+def test_provider_providerId_setter(instance):
+    original = instance.providerId
+    instance.providerId = original
+    assert instance.providerId == original
+
+
+
+@given(instance=Provider_strategy)
+def test_provider_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 
 
 @given(instance=Provider_strategy)
@@ -606,17 +590,6 @@ def test_provider_photoURL_setter(instance):
     original = instance.photoURL
     instance.photoURL = original
     assert instance.photoURL == original
-
-@given(instance=Provider_strategy)
-def test_provider_displayName_type(instance):
-    assert isinstance(instance.displayName, string)
-
-
-@given(instance=Provider_strategy)
-def test_provider_displayName_setter(instance):
-    original = instance.displayName
-    instance.displayName = original
-    assert instance.displayName == original
 
 @given(instance=Visitor_strategy)
 @settings(max_examples=50)
@@ -628,9 +601,6 @@ def test_visitor_instantiation(instance):
 def test_array_instantiation(instance):
     assert isinstance(instance, Array)
 
-@given(instance=Array_strategy)
-def test_array_data_type(instance):
-    assert isinstance(instance.data, user)
 
 
 @given(instance=Array_strategy)
@@ -644,9 +614,6 @@ def test_array_data_setter(instance):
 def test_number_instantiation(instance):
     assert isinstance(instance, Number)
 
-@given(instance=Number_strategy)
-def test_number_data_type(instance):
-    assert isinstance(instance.data, int)
 
 
 @given(instance=Number_strategy)
@@ -660,31 +627,6 @@ def test_number_data_setter(instance):
 def test_category_instantiation(instance):
     assert isinstance(instance, Category)
 
-@given(instance=Category_strategy)
-def test_category_parent_type(instance):
-    assert isinstance(instance.parent, string)
-
-
-@given(instance=Category_strategy)
-def test_category_parent_setter(instance):
-    original = instance.parent
-    instance.parent = original
-    assert instance.parent == original
-
-@given(instance=Category_strategy)
-def test_category_name_type(instance):
-    assert isinstance(instance.name, string)
-
-
-@given(instance=Category_strategy)
-def test_category_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Category_strategy)
-def test_category_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Category_strategy)
@@ -693,9 +635,14 @@ def test_category_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=Category_strategy)
-def test_category_section_type(instance):
-    assert isinstance(instance.section, string)
+def test_category_parent_setter(instance):
+    original = instance.parent
+    instance.parent = original
+    assert instance.parent == original
+
 
 
 @given(instance=Category_strategy)
@@ -704,14 +651,19 @@ def test_category_section_setter(instance):
     instance.section = original
     assert instance.section == original
 
+
+
+@given(instance=Category_strategy)
+def test_category_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=String_strategy)
 @settings(max_examples=50)
 def test_string_instantiation(instance):
     assert isinstance(instance, String)
 
-@given(instance=String_strategy)
-def test_string_data_type(instance):
-    assert isinstance(instance.data, string)
 
 
 @given(instance=String_strategy)
@@ -730,31 +682,6 @@ def test_null_instantiation(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_lastName_type(instance):
-    assert isinstance(instance.lastName, string)
-
-
-@given(instance=User_strategy)
-def test_user_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=User_strategy)
-def test_user_address_type(instance):
-    assert isinstance(instance.address, documents)
-
-
-@given(instance=User_strategy)
-def test_user_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=User_strategy)
-def test_user_firstName_type(instance):
-    assert isinstance(instance.firstName, string)
 
 
 @given(instance=User_strategy)
@@ -763,31 +690,6 @@ def test_user_firstName_setter(instance):
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=User_strategy)
-def test_user_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=User_strategy)
-def test_user_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=User_strategy)
-def test_user_phone_type(instance):
-    assert isinstance(instance.phone, string)
-
-
-@given(instance=User_strategy)
-def test_user_phone_setter(instance):
-    original = instance.phone
-    instance.phone = original
-    assert instance.phone == original
-
-@given(instance=User_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, string)
 
 
 @given(instance=User_strategy)
@@ -796,9 +698,14 @@ def test_user_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
 @given(instance=User_strategy)
-def test_user_photoURL_type(instance):
-    assert isinstance(instance.photoURL, string)
+def test_user_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
 
 
 @given(instance=User_strategy)
@@ -806,3 +713,27 @@ def test_user_photoURL_setter(instance):
     original = instance.photoURL
     instance.photoURL = original
     assert instance.photoURL == original
+
+
+
+@given(instance=User_strategy)
+def test_user_phone_setter(instance):
+    original = instance.phone
+    instance.phone = original
+    assert instance.phone == original
+
+
+
+@given(instance=User_strategy)
+def test_user_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=User_strategy)
+def test_user_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original

@@ -3,20 +3,49 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    project::JvmIdentifiableElement,
+from python_code import (
+    GapDuration,
+    project_LimitAttribute,
+    WeeklyMin,
+    project_ColumnAttribute,
+    project_WorkHours,
+    project_Weekdays,
+    project_TreeLevel,
+    project_TimesheetReportAttribute,
+    project_TimesheetAttribute,
+    StatusSheetAttribute,
+    project_TaskTimesheetAttribute,
+    project_TaskStatusSheetAttribute,
+    project_StatusSheetReportAttribute,
+    project_StatusSheetAttribute,
+    project_StatusTimesheetAttribute,
+    project_Criterion,
+    SortTasks,
+    SortResources,
+    SortJournalEntries,
+    SortAccounts,
+    project_Sort,
+    project_StatusStatusSheetAttribute,
+    TaskStatusSheetAttribute,
+    project_TaskStatusSheet,
+    project_StatusStatusSheet,
+    project_ShiftsLimit,
+    ShiftsTask,
+    ShiftsResource,
+    project_Shifts,
+    project_JvmIdentifiableElement,
     LogicalExpression,
-    project::LogicalNumeralLiteral,
-    project::LogicalFunctionExpression,
-    project::LogicalAbsoluteIdExression,
-    project::LogicalDateLiteral,
-    project::LogicalBooleanLiteral,
-    project::LogicalStringLiteral,
-    project::XBinaryOperation,
+    project_LogicalDateLiteral,
+    project_LogicalStringLiteral,
+    project_LogicalBooleanLiteral,
+    project_LogicalNumeralLiteral,
+    project_LogicalFunctionExpression,
+    project_LogicalAbsoluteIdExression,
+    project_XBinaryOperation,
     Definitions,
-    project::Defintions,
+    project_Defintions,
     Header,
     Footer,
     Epilog,
@@ -29,13 +58,13 @@ from classes import (
     ListItem,
     Left,
     Headline,
-    project::RichText,
+    project_RichText,
     Precedes,
     Depends,
-    project::TaskDependency,
+    project_TaskDependency,
     NumberFormat,
     CurrencyFormat,
-    project::RealFormat,
+    project_RealFormat,
     WeeklyMax,
     MonthlyMin,
     MonthlyMax,
@@ -43,275 +72,246 @@ from classes import (
     Maximum,
     DailyMin,
     DailyMax,
+    project_Limit,
     GapLength,
-    GapDuration,
-    project::LimitAttribute,
-    WeeklyMin,
-    project::Limit,
-    project::ColumnAttribute,
-    project::WorkHours,
-    project::Weekdays,
-    project::TreeLevel,
-    project::TimesheetReportAttribute,
-    project::TimesheetAttribute,
-    StatusSheetAttribute,
-    project::TaskTimesheetAttribute,
-    project::TaskStatusSheetAttribute,
-    project::StatusSheetReportAttribute,
-    project::StatusSheetAttribute,
-    project::StatusTimesheetAttribute,
-    project::Criterion,
-    SortTasks,
-    SortResources,
-    SortJournalEntries,
-    SortAccounts,
-    project::Sort,
-    project::StatusStatusSheetAttribute,
-    TaskStatusSheetAttribute,
-    project::TaskStatusSheet,
-    project::StatusStatusSheet,
-    project::ShiftsLimit,
-    ShiftsTask,
-    ShiftsResource,
-    project::Shifts,
-    project::LimitsAttribute,
-    project::Interval3,
-    project::Interval1,
-    project::IncludePropertiesAttribute,
-    project::Function,
+    project_LimitsAttribute,
+    project_Interval3,
+    project_Interval1,
+    project_IncludePropertiesAttribute,
+    project_Function,
     NavigatorAttribute,
-    project::HideReport,
-    project::GapLength,
-    project::GapDuration,
-    project::Extend,
+    project_HideReport,
+    project_GapLength,
+    project_GapDuration,
+    project_Extend,
     ExportAttribute,
-    project::TaskAttributes,
-    project::ResourceAttributes,
-    project::Definitions,
+    project_ResourceAttributes,
+    project_TaskAttributes,
+    project_Definitions,
     LimitsAttribute,
-    project::WeeklyMin,
-    project::Maximum,
-    project::MonthlyMax,
-    project::WeeklyMax,
-    project::Minimum,
-    project::DailyMin,
-    project::MonthlyMin,
-    project::DailyMax,
+    project_DailyMin,
+    project_WeeklyMax,
+    project_Minimum,
+    project_Maximum,
+    project_MonthlyMin,
+    project_MonthlyMax,
+    project_WeeklyMin,
+    project_DailyMax,
     ProjectAttribute,
-    project::TimingResolution,
-    project::ExtendResource,
-    project::ExtendTask,
-    project::DailyWorkingHours,
-    project::ShortTimeFormat,
-    project::WeekStarts,
-    project::Scenario,
-    project::Include,
-    project::TrackingScenario,
-    project::Now,
-    project::YearlyWorkingDays,
-    project::Currency,
+    project_TrackingScenario,
+    project_TimingResolution,
+    project_DailyWorkingHours,
+    project_WeekStarts,
+    project_Scenario,
+    project_ExtendResource,
+    project_ExtendTask,
+    project_ShortTimeFormat,
+    project_YearlyWorkingDays,
+    project_Include,
+    project_Now,
+    project_Currency,
     TimesheetReportAttribute,
     TaskTimesheetAttribute,
     StatusSheetReportAttribute,
     NikuReportAttribute,
-    project::Timeoff,
+    project_Timeoff,
     NewTaskAttribute,
-    project::Remaining,
-    project::Work,
+    project_Work,
+    project_Remaining,
     IcalReportAttribute,
-    project::ScenarioIcal,
-    project::DurationQuantity,
+    project_ScenarioIcal,
+    project_DurationQuantity,
     StatusTimesheetAttribute,
-    project::RGB,
-    project::LogicalExpression,
+    project_RGB,
+    project_LogicalExpression,
     ColumnAttribute,
-    project::ToolTip,
-    project::ListItem,
-    project::FontColor,
-    project::Scale,
-    project::HAlign,
-    project::ListType,
-    project::Width,
-    project::CellText,
-    project::CellColor,
-    project::Column,
-    project::AccountShare,
+    project_CellText,
+    project_Width,
+    project_FontColor,
+    project_ToolTip,
+    project_ListType,
+    project_ListItem,
+    project_HAlign,
+    project_Scale,
+    project_CellColor,
+    project_Column,
+    project_AccountShare,
     StatusStatusSheetAttribute,
-    project::Details,
-    project::Summary,
-    project::Author,
+    project_Summary,
+    project_Details,
+    project_Author,
     AllocateResourceAttribute,
-    project::Select,
-    project::ShiftsAllocate,
-    project::Persistent,
-    project::Mandatory,
-    project::Alternative,
-    project::Alert,
-    project::NikuReportAttribute,
-    project::Interval4,
-    project::Booking,
-    project::AllocateResourceAttribute,
-    project::AllocateResource,
-    project::NewTaskAttribute,
+    project_ShiftsAllocate,
+    project_Mandatory,
+    project_Select,
+    project_Persistent,
+    project_Alternative,
+    project_Alert,
+    project_NikuReportAttribute,
+    project_Interval4,
+    project_Booking,
+    project_AllocateResourceAttribute,
+    project_AllocateResource,
+    project_NewTaskAttribute,
     TimesheetAttribute,
-    project::TaskTimesheet,
-    project::ShiftTimesheet,
-    project::StatusTimesheet,
-    project::NewTask,
-    project::NavigatorAttribute,
-    project::ReportAttribute,
-    project::ResourceAttribute,
+    project_ShiftTimesheet,
+    project_TaskTimesheet,
+    project_StatusTimesheet,
+    project_NewTask,
+    project_NavigatorAttribute,
+    project_ReportAttribute,
+    project_ResourceAttribute,
     ResourceAttribute,
-    project::Efficiency,
-    project::PurgeResource,
-    project::WorkingHours,
-    project::ShiftsResource,
-    project::ExtendedResourceAttribute,
-    project::BookingResource,
-    project::Email,
-    project::Managers,
-    project::ExportAttribute,
-    project::IcalReportAttribute,
+    project_Email,
+    project_ShiftsResource,
+    project_WorkingHours,
+    project_ExtendedResourceAttribute,
+    project_PurgeResource,
+    project_Managers,
+    project_Efficiency,
+    project_BookingResource,
+    project_ExportAttribute,
+    project_IcalReportAttribute,
     ReportAttribute,
-    project::RollupTask,
-    project::RollupResource,
-    project::PurgeReport,
-    project::SelfContained,
-    project::Scenarios,
-    project::Right,
-    project::JournalMode,
-    project::Center,
-    project::SortResources,
-    project::HideAccount,
-    project::CurrencyFormat,
-    project::LoadUnit,
-    project::Epilog,
-    project::Left,
-    project::HideJournalEntry,
-    project::ResourceRoot,
-    project::Timezone,
-    project::Caption,
-    project::SortJournalEntries,
-    project::HideResource,
-    project::Formats,
-    project::JournalAttributes,
-    project::SortTasks,
-    project::Title,
-    project::NumberFormat,
-    project::AccountRoot,
-    project::RollupAccount,
-    project::HideTask,
-    project::Header,
-    project::TimeFormat,
-    project::Footer,
-    project::TaskRoot,
-    project::Headline,
-    project::Columns,
-    project::SortAccounts,
-    project::Prolog,
+    project_HideTask,
+    project_Formats,
+    project_Left,
+    project_HideAccount,
+    project_SortJournalEntries,
+    project_Title,
+    project_Right,
+    project_Prolog,
+    project_SelfContained,
+    project_RollupAccount,
+    project_AccountRoot,
+    project_Epilog,
+    project_RollupResource,
+    project_HideJournalEntry,
+    project_HideResource,
+    project_Headline,
+    project_Footer,
+    project_Timezone,
+    project_TaskRoot,
+    project_SortResources,
+    project_NumberFormat,
+    project_PurgeReport,
+    project_Scenarios,
+    project_CurrencyFormat,
+    project_TimeFormat,
+    project_SortAccounts,
+    project_JournalAttributes,
+    project_Center,
+    project_ResourceRoot,
+    project_RollupTask,
+    project_LoadUnit,
+    project_Columns,
+    project_Caption,
+    project_Header,
+    project_JournalMode,
+    project_SortTasks,
     TextReport,
     TaskReport,
     ResourceReport,
     AccountReport,
-    project::Report,
-    project::TaskAttribute,
+    project_Report,
+    project_TaskAttribute,
     TaskAttribute,
-    project::Note,
-    project::Milestone,
-    project::BookingTask,
-    project::Duration,
-    project::Depends,
-    project::Warn,
-    project::Scheduling,
-    project::Start,
-    project::ProjectId,
-    project::MinStart,
-    project::Allocate,
-    project::Complete,
-    project::MinEnd,
-    project::MaxEnd,
-    project::Length,
-    project::Charge,
-    project::JournalEntry,
-    project::Precedes,
-    project::PurgeTask,
-    project::Priority,
-    project::Responsible,
-    project::End,
-    project::ShiftsTask,
-    project::ChargeSet,
-    project::Fail,
-    project::Scheduled,
-    project::Effort,
-    project::ExtendedTaskAttribute,
-    project::MaxStart,
-    project::EndCredit,
-    project::Period,
-    project::ProjectAttribute,
-    project::Interval2,
-    project::Global,
+    project_Note,
+    project_ShiftsTask,
+    project_Period,
+    project_Priority,
+    project_Warn,
+    project_Charge,
+    project_Scheduled,
+    project_Start,
+    project_End,
+    project_MinEnd,
+    project_Allocate,
+    project_Length,
+    project_MinStart,
+    project_Duration,
+    project_Complete,
+    project_EndCredit,
+    project_Effort,
+    project_JournalEntry,
+    project_PurgeTask,
+    project_BookingTask,
+    project_ChargeSet,
+    project_MaxEnd,
+    project_Milestone,
+    project_Scheduling,
+    project_Precedes,
+    project_Depends,
+    project_Fail,
+    project_ProjectId,
+    project_ExtendedTaskAttribute,
+    project_MaxStart,
+    project_Responsible,
+    project_ProjectAttribute,
+    project_Interval2,
+    project_Global,
     IncludePropertiesAttribute,
-    project::ReportPrefix,
-    project::ResourcePrefix,
-    project::TaskPrefix,
-    project::AccountPrefix,
-    project::AccountAttribute,
+    project_TaskPrefix,
+    project_ReportPrefix,
+    project_ResourcePrefix,
+    project_AccountPrefix,
+    project_AccountAttribute,
     AccountAttribute,
-    project::Credit,
+    project_Credit,
     Property,
-    project::IncludeProperties,
-    project::Export,
-    project::TimesheetReport,
-    project::Resource,
-    project::TaskReport,
-    project::Rate,
-    project::SupplementAccount,
-    project::NikuReport,
-    project::Macro,
-    project::TagFile,
-    project::StatusSheetReport,
-    project::AccountReport,
-    project::TextReport,
-    project::StatusSheet,
-    project::Balance,
-    project::Navigator,
-    project::Timesheet,
-    project::Shift,
-    project::SupplementTask,
-    project::SupplementResource,
-    project::ResourceReport,
-    project::Copyright,
-    project::Task,
-    project::IcalReport,
-    project::Flags,
-    project::Vacation,
-    project::ProjectIds,
-    project::SupplementReport,
-    project::Limits,
-    project::Account,
-    project::Property,
-    project::Project,
-    SchedulingPolicy,
-    JournalEntrySortCriterion,
-    JournalModeValue,
-    PurgeResourceAttribute,
-    Weekday,
-    ScaleResolution,
-    DependsPolicy,
-    ListTypeValues,
-    ReportFormat,
-    WorkQuantityUnit,
-    AlertLevel,
-    LoadDisplayUnit,
+    project_AccountReport,
+    project_SupplementAccount,
+    project_StatusSheet,
+    project_Flags,
+    project_Navigator,
+    project_TimesheetReport,
+    project_StatusSheetReport,
+    project_Vacation,
+    project_Rate,
+    project_Macro,
+    project_NikuReport,
+    project_TextReport,
+    project_Resource,
+    project_Limits,
+    project_IcalReport,
+    project_Export,
+    project_Timesheet,
+    project_SupplementReport,
+    project_SupplementResource,
+    project_Copyright,
+    project_Shift,
+    project_IncludeProperties,
+    project_Task,
+    project_ProjectIds,
+    project_ResourceReport,
+    project_TaskReport,
+    project_SupplementTask,
+    project_Balance,
+    project_TagFile,
+    project_Account,
+    project_Property,
+    project_Project,
     CriterionDirection,
     ColumnId,
+    Weekday,
+    LoadDisplayUnit,
     SelectArgument,
-    PurgeTaskAttribute,
-    PurgeReportAttribute,
+    TimeUnit,
+    ListTypeValues,
     YesNo,
     Justification,
+    PurgeResourceAttribute,
+    ScaleResolution,
+    ReportFormat,
+    SchedulingPolicy,
+    WorkQuantityUnit,
+    JournalEntrySortCriterion,
+    AlertLevel,
+    PurgeReportAttribute,
     ChargeApplies,
-    TimeUnit,
+    PurgeTaskAttribute,
+    JournalModeValue,
+    DependsPolicy,
 )
 
 # =============================================================================
@@ -320,16 +320,542 @@ from classes import (
 
 
 
-def test_project::jvmidentifiableelement_is_not_abstract():
-    assert not inspect.isabstract(project::JvmIdentifiableElement)
+def test_gapduration_is_not_abstract():
+    assert not inspect.isabstract(GapDuration)
 
 
-def test_project::jvmidentifiableelement_constructor_exists():
-    assert callable(project::JvmIdentifiableElement.__init__)
+def test_gapduration_constructor_exists():
+    assert callable(GapDuration.__init__)
 
 
-def test_project::jvmidentifiableelement_constructor_args():
-    sig = inspect.signature(project::JvmIdentifiableElement.__init__)
+def test_gapduration_constructor_args():
+    sig = inspect.signature(GapDuration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_limitattribute_is_not_abstract():
+    assert not inspect.isabstract(project_LimitAttribute)
+
+
+def test_project_limitattribute_constructor_exists():
+    assert callable(project_LimitAttribute.__init__)
+
+
+def test_project_limitattribute_constructor_args():
+    sig = inspect.signature(project_LimitAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "end" in params, "Missing parameter 'end'"
+    assert "start" in params, "Missing parameter 'start'"
+
+def test_project_limitattribute_has_end():
+    assert hasattr(project_LimitAttribute, "end")
+    descriptor = None
+    for klass in project_LimitAttribute.__mro__:
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_limitattribute_has_start():
+    assert hasattr(project_LimitAttribute, "start")
+    descriptor = None
+    for klass in project_LimitAttribute.__mro__:
+        if "start" in klass.__dict__:
+            descriptor = klass.__dict__["start"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_weeklymin_is_not_abstract():
+    assert not inspect.isabstract(WeeklyMin)
+
+
+def test_weeklymin_constructor_exists():
+    assert callable(WeeklyMin.__init__)
+
+
+def test_weeklymin_constructor_args():
+    sig = inspect.signature(WeeklyMin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_columnattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ColumnAttribute)
+
+
+def test_project_columnattribute_constructor_exists():
+    assert callable(project_ColumnAttribute.__init__)
+
+
+def test_project_columnattribute_constructor_args():
+    sig = inspect.signature(project_ColumnAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_workhours_is_not_abstract():
+    assert not inspect.isabstract(project_WorkHours)
+
+
+def test_project_workhours_constructor_exists():
+    assert callable(project_WorkHours.__init__)
+
+
+def test_project_workhours_constructor_args():
+    sig = inspect.signature(project_WorkHours.__init__)
+    params = list(sig.parameters.keys())
+    assert "start" in params, "Missing parameter 'start'"
+    assert "stop" in params, "Missing parameter 'stop'"
+
+def test_project_workhours_has_start():
+    assert hasattr(project_WorkHours, "start")
+    descriptor = None
+    for klass in project_WorkHours.__mro__:
+        if "start" in klass.__dict__:
+            descriptor = klass.__dict__["start"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_workhours_has_stop():
+    assert hasattr(project_WorkHours, "stop")
+    descriptor = None
+    for klass in project_WorkHours.__mro__:
+        if "stop" in klass.__dict__:
+            descriptor = klass.__dict__["stop"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_weekdays_is_not_abstract():
+    assert not inspect.isabstract(project_Weekdays)
+
+
+def test_project_weekdays_constructor_exists():
+    assert callable(project_Weekdays.__init__)
+
+
+def test_project_weekdays_constructor_args():
+    sig = inspect.signature(project_Weekdays.__init__)
+    params = list(sig.parameters.keys())
+    assert "first" in params, "Missing parameter 'first'"
+    assert "last" in params, "Missing parameter 'last'"
+
+def test_project_weekdays_has_first():
+    assert hasattr(project_Weekdays, "first")
+    descriptor = None
+    for klass in project_Weekdays.__mro__:
+        if "first" in klass.__dict__:
+            descriptor = klass.__dict__["first"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_weekdays_has_last():
+    assert hasattr(project_Weekdays, "last")
+    descriptor = None
+    for klass in project_Weekdays.__mro__:
+        if "last" in klass.__dict__:
+            descriptor = klass.__dict__["last"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_treelevel_is_not_abstract():
+    assert not inspect.isabstract(project_TreeLevel)
+
+
+def test_project_treelevel_constructor_exists():
+    assert callable(project_TreeLevel.__init__)
+
+
+def test_project_treelevel_constructor_args():
+    sig = inspect.signature(project_TreeLevel.__init__)
+    params = list(sig.parameters.keys())
+    assert "level" in params, "Missing parameter 'level'"
+
+def test_project_treelevel_has_level():
+    assert hasattr(project_TreeLevel, "level")
+    descriptor = None
+    for klass in project_TreeLevel.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_timesheetreportattribute_is_not_abstract():
+    assert not inspect.isabstract(project_TimesheetReportAttribute)
+
+
+def test_project_timesheetreportattribute_constructor_exists():
+    assert callable(project_TimesheetReportAttribute.__init__)
+
+
+def test_project_timesheetreportattribute_constructor_args():
+    sig = inspect.signature(project_TimesheetReportAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_timesheetattribute_is_not_abstract():
+    assert not inspect.isabstract(project_TimesheetAttribute)
+
+
+def test_project_timesheetattribute_constructor_exists():
+    assert callable(project_TimesheetAttribute.__init__)
+
+
+def test_project_timesheetattribute_constructor_args():
+    sig = inspect.signature(project_TimesheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statussheetattribute_is_not_abstract():
+    assert not inspect.isabstract(StatusSheetAttribute)
+
+
+def test_statussheetattribute_constructor_exists():
+    assert callable(StatusSheetAttribute.__init__)
+
+
+def test_statussheetattribute_constructor_args():
+    sig = inspect.signature(StatusSheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_tasktimesheetattribute_is_not_abstract():
+    assert not inspect.isabstract(project_TaskTimesheetAttribute)
+
+
+def test_project_tasktimesheetattribute_constructor_exists():
+    assert callable(project_TaskTimesheetAttribute.__init__)
+
+
+def test_project_tasktimesheetattribute_constructor_args():
+    sig = inspect.signature(project_TaskTimesheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_taskstatussheetattribute_is_not_abstract():
+    assert not inspect.isabstract(project_TaskStatusSheetAttribute)
+
+
+def test_project_taskstatussheetattribute_constructor_exists():
+    assert callable(project_TaskStatusSheetAttribute.__init__)
+
+
+def test_project_taskstatussheetattribute_constructor_args():
+    sig = inspect.signature(project_TaskStatusSheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_statussheetreportattribute_is_not_abstract():
+    assert not inspect.isabstract(project_StatusSheetReportAttribute)
+
+
+def test_project_statussheetreportattribute_constructor_exists():
+    assert callable(project_StatusSheetReportAttribute.__init__)
+
+
+def test_project_statussheetreportattribute_constructor_args():
+    sig = inspect.signature(project_StatusSheetReportAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_statussheetattribute_is_not_abstract():
+    assert not inspect.isabstract(project_StatusSheetAttribute)
+
+
+def test_project_statussheetattribute_constructor_exists():
+    assert callable(project_StatusSheetAttribute.__init__)
+
+
+def test_project_statussheetattribute_constructor_args():
+    sig = inspect.signature(project_StatusSheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_statustimesheetattribute_is_not_abstract():
+    assert not inspect.isabstract(project_StatusTimesheetAttribute)
+
+
+def test_project_statustimesheetattribute_constructor_exists():
+    assert callable(project_StatusTimesheetAttribute.__init__)
+
+
+def test_project_statustimesheetattribute_constructor_args():
+    sig = inspect.signature(project_StatusTimesheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_criterion_is_not_abstract():
+    assert not inspect.isabstract(project_Criterion)
+
+
+def test_project_criterion_constructor_exists():
+    assert callable(project_Criterion.__init__)
+
+
+def test_project_criterion_constructor_args():
+    sig = inspect.signature(project_Criterion.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+    assert "columnId" in params, "Missing parameter 'columnId'"
+
+def test_project_criterion_has_direction():
+    assert hasattr(project_Criterion, "direction")
+    descriptor = None
+    for klass in project_Criterion.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_criterion_has_columnId():
+    assert hasattr(project_Criterion, "columnId")
+    descriptor = None
+    for klass in project_Criterion.__mro__:
+        if "columnId" in klass.__dict__:
+            descriptor = klass.__dict__["columnId"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sorttasks_is_not_abstract():
+    assert not inspect.isabstract(SortTasks)
+
+
+def test_sorttasks_constructor_exists():
+    assert callable(SortTasks.__init__)
+
+
+def test_sorttasks_constructor_args():
+    sig = inspect.signature(SortTasks.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sortresources_is_not_abstract():
+    assert not inspect.isabstract(SortResources)
+
+
+def test_sortresources_constructor_exists():
+    assert callable(SortResources.__init__)
+
+
+def test_sortresources_constructor_args():
+    sig = inspect.signature(SortResources.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sortjournalentries_is_not_abstract():
+    assert not inspect.isabstract(SortJournalEntries)
+
+
+def test_sortjournalentries_constructor_exists():
+    assert callable(SortJournalEntries.__init__)
+
+
+def test_sortjournalentries_constructor_args():
+    sig = inspect.signature(SortJournalEntries.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sortaccounts_is_not_abstract():
+    assert not inspect.isabstract(SortAccounts)
+
+
+def test_sortaccounts_constructor_exists():
+    assert callable(SortAccounts.__init__)
+
+
+def test_sortaccounts_constructor_args():
+    sig = inspect.signature(SortAccounts.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_sort_is_not_abstract():
+    assert not inspect.isabstract(project_Sort)
+
+
+def test_project_sort_constructor_exists():
+    assert callable(project_Sort.__init__)
+
+
+def test_project_sort_constructor_args():
+    sig = inspect.signature(project_Sort.__init__)
+    params = list(sig.parameters.keys())
+    assert "tree" in params, "Missing parameter 'tree'"
+
+def test_project_sort_has_tree():
+    assert hasattr(project_Sort, "tree")
+    descriptor = None
+    for klass in project_Sort.__mro__:
+        if "tree" in klass.__dict__:
+            descriptor = klass.__dict__["tree"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_statusstatussheetattribute_is_not_abstract():
+    assert not inspect.isabstract(project_StatusStatusSheetAttribute)
+
+
+def test_project_statusstatussheetattribute_constructor_exists():
+    assert callable(project_StatusStatusSheetAttribute.__init__)
+
+
+def test_project_statusstatussheetattribute_constructor_args():
+    sig = inspect.signature(project_StatusStatusSheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_taskstatussheetattribute_is_not_abstract():
+    assert not inspect.isabstract(TaskStatusSheetAttribute)
+
+
+def test_taskstatussheetattribute_constructor_exists():
+    assert callable(TaskStatusSheetAttribute.__init__)
+
+
+def test_taskstatussheetattribute_constructor_args():
+    sig = inspect.signature(TaskStatusSheetAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_taskstatussheet_is_not_abstract():
+    assert not inspect.isabstract(project_TaskStatusSheet)
+
+
+def test_project_taskstatussheet_constructor_exists():
+    assert callable(project_TaskStatusSheet.__init__)
+
+
+def test_project_taskstatussheet_constructor_args():
+    sig = inspect.signature(project_TaskStatusSheet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_statusstatussheet_is_not_abstract():
+    assert not inspect.isabstract(project_StatusStatusSheet)
+
+
+def test_project_statusstatussheet_constructor_exists():
+    assert callable(project_StatusStatusSheet.__init__)
+
+
+def test_project_statusstatussheet_constructor_args():
+    sig = inspect.signature(project_StatusStatusSheet.__init__)
+    params = list(sig.parameters.keys())
+    assert "level" in params, "Missing parameter 'level'"
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_project_statusstatussheet_has_level():
+    assert hasattr(project_StatusStatusSheet, "level")
+    descriptor = None
+    for klass in project_StatusStatusSheet.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_statusstatussheet_has_text():
+    assert hasattr(project_StatusStatusSheet, "text")
+    descriptor = None
+    for klass in project_StatusStatusSheet.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_shiftslimit_is_not_abstract():
+    assert not inspect.isabstract(project_ShiftsLimit)
+
+
+def test_project_shiftslimit_constructor_exists():
+    assert callable(project_ShiftsLimit.__init__)
+
+
+def test_project_shiftslimit_constructor_args():
+    sig = inspect.signature(project_ShiftsLimit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shiftstask_is_not_abstract():
+    assert not inspect.isabstract(ShiftsTask)
+
+
+def test_shiftstask_constructor_exists():
+    assert callable(ShiftsTask.__init__)
+
+
+def test_shiftstask_constructor_args():
+    sig = inspect.signature(ShiftsTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shiftsresource_is_not_abstract():
+    assert not inspect.isabstract(ShiftsResource)
+
+
+def test_shiftsresource_constructor_exists():
+    assert callable(ShiftsResource.__init__)
+
+
+def test_shiftsresource_constructor_args():
+    sig = inspect.signature(ShiftsResource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_shifts_is_not_abstract():
+    assert not inspect.isabstract(project_Shifts)
+
+
+def test_project_shifts_constructor_exists():
+    assert callable(project_Shifts.__init__)
+
+
+def test_project_shifts_constructor_args():
+    sig = inspect.signature(project_Shifts.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_jvmidentifiableelement_is_not_abstract():
+    assert not inspect.isabstract(project_JvmIdentifiableElement)
+
+
+def test_project_jvmidentifiableelement_constructor_exists():
+    assert callable(project_JvmIdentifiableElement.__init__)
+
+
+def test_project_jvmidentifiableelement_constructor_args():
+    sig = inspect.signature(project_JvmIdentifiableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -348,23 +874,23 @@ def test_logicalexpression_constructor_args():
 
 
 
-def test_project::logicalnumeralliteral_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalNumeralLiteral)
+def test_project_logicaldateliteral_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalDateLiteral)
 
 
-def test_project::logicalnumeralliteral_constructor_exists():
-    assert callable(project::LogicalNumeralLiteral.__init__)
+def test_project_logicaldateliteral_constructor_exists():
+    assert callable(project_LogicalDateLiteral.__init__)
 
 
-def test_project::logicalnumeralliteral_constructor_args():
-    sig = inspect.signature(project::LogicalNumeralLiteral.__init__)
+def test_project_logicaldateliteral_constructor_args():
+    sig = inspect.signature(project_LogicalDateLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_project::logicalnumeralliteral_has_value():
-    assert hasattr(project::LogicalNumeralLiteral, "value")
+def test_project_logicaldateliteral_has_value():
+    assert hasattr(project_LogicalDateLiteral, "value")
     descriptor = None
-    for klass in project::LogicalNumeralLiteral.__mro__:
+    for klass in project_LogicalDateLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -372,37 +898,23 @@ def test_project::logicalnumeralliteral_has_value():
 
 
 
-def test_project::logicalfunctionexpression_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalFunctionExpression)
+def test_project_logicalstringliteral_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalStringLiteral)
 
 
-def test_project::logicalfunctionexpression_constructor_exists():
-    assert callable(project::LogicalFunctionExpression.__init__)
+def test_project_logicalstringliteral_constructor_exists():
+    assert callable(project_LogicalStringLiteral.__init__)
 
 
-def test_project::logicalfunctionexpression_constructor_args():
-    sig = inspect.signature(project::LogicalFunctionExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::logicalabsoluteidexression_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalAbsoluteIdExression)
-
-
-def test_project::logicalabsoluteidexression_constructor_exists():
-    assert callable(project::LogicalAbsoluteIdExression.__init__)
-
-
-def test_project::logicalabsoluteidexression_constructor_args():
-    sig = inspect.signature(project::LogicalAbsoluteIdExression.__init__)
+def test_project_logicalstringliteral_constructor_args():
+    sig = inspect.signature(project_LogicalStringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_project::logicalabsoluteidexression_has_value():
-    assert hasattr(project::LogicalAbsoluteIdExression, "value")
+def test_project_logicalstringliteral_has_value():
+    assert hasattr(project_LogicalStringLiteral, "value")
     descriptor = None
-    for klass in project::LogicalAbsoluteIdExression.__mro__:
+    for klass in project_LogicalStringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -410,47 +922,23 @@ def test_project::logicalabsoluteidexression_has_value():
 
 
 
-def test_project::logicaldateliteral_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalDateLiteral)
+def test_project_logicalbooleanliteral_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalBooleanLiteral)
 
 
-def test_project::logicaldateliteral_constructor_exists():
-    assert callable(project::LogicalDateLiteral.__init__)
+def test_project_logicalbooleanliteral_constructor_exists():
+    assert callable(project_LogicalBooleanLiteral.__init__)
 
 
-def test_project::logicaldateliteral_constructor_args():
-    sig = inspect.signature(project::LogicalDateLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_project::logicaldateliteral_has_value():
-    assert hasattr(project::LogicalDateLiteral, "value")
-    descriptor = None
-    for klass in project::LogicalDateLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::logicalbooleanliteral_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalBooleanLiteral)
-
-
-def test_project::logicalbooleanliteral_constructor_exists():
-    assert callable(project::LogicalBooleanLiteral.__init__)
-
-
-def test_project::logicalbooleanliteral_constructor_args():
-    sig = inspect.signature(project::LogicalBooleanLiteral.__init__)
+def test_project_logicalbooleanliteral_constructor_args():
+    sig = inspect.signature(project_LogicalBooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "isTrue" in params, "Missing parameter 'isTrue'"
 
-def test_project::logicalbooleanliteral_has_isTrue():
-    assert hasattr(project::LogicalBooleanLiteral, "isTrue")
+def test_project_logicalbooleanliteral_has_isTrue():
+    assert hasattr(project_LogicalBooleanLiteral, "isTrue")
     descriptor = None
-    for klass in project::LogicalBooleanLiteral.__mro__:
+    for klass in project_LogicalBooleanLiteral.__mro__:
         if "isTrue" in klass.__dict__:
             descriptor = klass.__dict__["isTrue"]
             break
@@ -458,23 +946,23 @@ def test_project::logicalbooleanliteral_has_isTrue():
 
 
 
-def test_project::logicalstringliteral_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalStringLiteral)
+def test_project_logicalnumeralliteral_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalNumeralLiteral)
 
 
-def test_project::logicalstringliteral_constructor_exists():
-    assert callable(project::LogicalStringLiteral.__init__)
+def test_project_logicalnumeralliteral_constructor_exists():
+    assert callable(project_LogicalNumeralLiteral.__init__)
 
 
-def test_project::logicalstringliteral_constructor_args():
-    sig = inspect.signature(project::LogicalStringLiteral.__init__)
+def test_project_logicalnumeralliteral_constructor_args():
+    sig = inspect.signature(project_LogicalNumeralLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_project::logicalstringliteral_has_value():
-    assert hasattr(project::LogicalStringLiteral, "value")
+def test_project_logicalnumeralliteral_has_value():
+    assert hasattr(project_LogicalNumeralLiteral, "value")
     descriptor = None
-    for klass in project::LogicalStringLiteral.__mro__:
+    for klass in project_LogicalNumeralLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -482,16 +970,54 @@ def test_project::logicalstringliteral_has_value():
 
 
 
-def test_project::xbinaryoperation_is_not_abstract():
-    assert not inspect.isabstract(project::XBinaryOperation)
+def test_project_logicalfunctionexpression_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalFunctionExpression)
 
 
-def test_project::xbinaryoperation_constructor_exists():
-    assert callable(project::XBinaryOperation.__init__)
+def test_project_logicalfunctionexpression_constructor_exists():
+    assert callable(project_LogicalFunctionExpression.__init__)
 
 
-def test_project::xbinaryoperation_constructor_args():
-    sig = inspect.signature(project::XBinaryOperation.__init__)
+def test_project_logicalfunctionexpression_constructor_args():
+    sig = inspect.signature(project_LogicalFunctionExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_logicalabsoluteidexression_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalAbsoluteIdExression)
+
+
+def test_project_logicalabsoluteidexression_constructor_exists():
+    assert callable(project_LogicalAbsoluteIdExression.__init__)
+
+
+def test_project_logicalabsoluteidexression_constructor_args():
+    sig = inspect.signature(project_LogicalAbsoluteIdExression.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_project_logicalabsoluteidexression_has_value():
+    assert hasattr(project_LogicalAbsoluteIdExression, "value")
+    descriptor = None
+    for klass in project_LogicalAbsoluteIdExression.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_xbinaryoperation_is_not_abstract():
+    assert not inspect.isabstract(project_XBinaryOperation)
+
+
+def test_project_xbinaryoperation_constructor_exists():
+    assert callable(project_XBinaryOperation.__init__)
+
+
+def test_project_xbinaryoperation_constructor_args():
+    sig = inspect.signature(project_XBinaryOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -510,65 +1036,65 @@ def test_definitions_constructor_args():
 
 
 
-def test_project::defintions_is_not_abstract():
-    assert not inspect.isabstract(project::Defintions)
+def test_project_defintions_is_not_abstract():
+    assert not inspect.isabstract(project_Defintions)
 
 
-def test_project::defintions_constructor_exists():
-    assert callable(project::Defintions.__init__)
+def test_project_defintions_constructor_exists():
+    assert callable(project_Defintions.__init__)
 
 
-def test_project::defintions_constructor_args():
-    sig = inspect.signature(project::Defintions.__init__)
+def test_project_defintions_constructor_args():
+    sig = inspect.signature(project_Defintions.__init__)
     params = list(sig.parameters.keys())
-    assert "flags" in params, "Missing parameter 'flags'"
+    assert "projectids" in params, "Missing parameter 'projectids'"
     assert "project" in params, "Missing parameter 'project'"
     assert "tasks" in params, "Missing parameter 'tasks'"
-    assert "projectids" in params, "Missing parameter 'projectids'"
     assert "resources" in params, "Missing parameter 'resources'"
+    assert "flags" in params, "Missing parameter 'flags'"
 
-def test_project::defintions_has_flags():
-    assert hasattr(project::Defintions, "flags")
+def test_project_defintions_has_projectids():
+    assert hasattr(project_Defintions, "projectids")
     descriptor = None
-    for klass in project::Defintions.__mro__:
-        if "flags" in klass.__dict__:
-            descriptor = klass.__dict__["flags"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::defintions_has_project():
-    assert hasattr(project::Defintions, "project")
-    descriptor = None
-    for klass in project::Defintions.__mro__:
-        if "project" in klass.__dict__:
-            descriptor = klass.__dict__["project"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::defintions_has_tasks():
-    assert hasattr(project::Defintions, "tasks")
-    descriptor = None
-    for klass in project::Defintions.__mro__:
-        if "tasks" in klass.__dict__:
-            descriptor = klass.__dict__["tasks"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::defintions_has_projectids():
-    assert hasattr(project::Defintions, "projectids")
-    descriptor = None
-    for klass in project::Defintions.__mro__:
+    for klass in project_Defintions.__mro__:
         if "projectids" in klass.__dict__:
             descriptor = klass.__dict__["projectids"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::defintions_has_resources():
-    assert hasattr(project::Defintions, "resources")
+def test_project_defintions_has_project():
+    assert hasattr(project_Defintions, "project")
     descriptor = None
-    for klass in project::Defintions.__mro__:
+    for klass in project_Defintions.__mro__:
+        if "project" in klass.__dict__:
+            descriptor = klass.__dict__["project"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_defintions_has_tasks():
+    assert hasattr(project_Defintions, "tasks")
+    descriptor = None
+    for klass in project_Defintions.__mro__:
+        if "tasks" in klass.__dict__:
+            descriptor = klass.__dict__["tasks"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_defintions_has_resources():
+    assert hasattr(project_Defintions, "resources")
+    descriptor = None
+    for klass in project_Defintions.__mro__:
         if "resources" in klass.__dict__:
             descriptor = klass.__dict__["resources"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_defintions_has_flags():
+    assert hasattr(project_Defintions, "flags")
+    descriptor = None
+    for klass in project_Defintions.__mro__:
+        if "flags" in klass.__dict__:
+            descriptor = klass.__dict__["flags"]
             break
     assert isinstance(descriptor, property)
 
@@ -742,23 +1268,23 @@ def test_headline_constructor_args():
 
 
 
-def test_project::richtext_is_not_abstract():
-    assert not inspect.isabstract(project::RichText)
+def test_project_richtext_is_not_abstract():
+    assert not inspect.isabstract(project_RichText)
 
 
-def test_project::richtext_constructor_exists():
-    assert callable(project::RichText.__init__)
+def test_project_richtext_constructor_exists():
+    assert callable(project_RichText.__init__)
 
 
-def test_project::richtext_constructor_args():
-    sig = inspect.signature(project::RichText.__init__)
+def test_project_richtext_constructor_args():
+    sig = inspect.signature(project_RichText.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_project::richtext_has_text():
-    assert hasattr(project::RichText, "text")
+def test_project_richtext_has_text():
+    assert hasattr(project_RichText, "text")
     descriptor = None
-    for klass in project::RichText.__mro__:
+    for klass in project_RichText.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -794,23 +1320,23 @@ def test_depends_constructor_args():
 
 
 
-def test_project::taskdependency_is_not_abstract():
-    assert not inspect.isabstract(project::TaskDependency)
+def test_project_taskdependency_is_not_abstract():
+    assert not inspect.isabstract(project_TaskDependency)
 
 
-def test_project::taskdependency_constructor_exists():
-    assert callable(project::TaskDependency.__init__)
+def test_project_taskdependency_constructor_exists():
+    assert callable(project_TaskDependency.__init__)
 
 
-def test_project::taskdependency_constructor_args():
-    sig = inspect.signature(project::TaskDependency.__init__)
+def test_project_taskdependency_constructor_args():
+    sig = inspect.signature(project_TaskDependency.__init__)
     params = list(sig.parameters.keys())
     assert "policy" in params, "Missing parameter 'policy'"
 
-def test_project::taskdependency_has_policy():
-    assert hasattr(project::TaskDependency, "policy")
+def test_project_taskdependency_has_policy():
+    assert hasattr(project_TaskDependency, "policy")
     descriptor = None
-    for klass in project::TaskDependency.__mro__:
+    for klass in project_TaskDependency.__mro__:
         if "policy" in klass.__dict__:
             descriptor = klass.__dict__["policy"]
             break
@@ -846,65 +1372,65 @@ def test_currencyformat_constructor_args():
 
 
 
-def test_project::realformat_is_not_abstract():
-    assert not inspect.isabstract(project::RealFormat)
+def test_project_realformat_is_not_abstract():
+    assert not inspect.isabstract(project_RealFormat)
 
 
-def test_project::realformat_constructor_exists():
-    assert callable(project::RealFormat.__init__)
+def test_project_realformat_constructor_exists():
+    assert callable(project_RealFormat.__init__)
 
 
-def test_project::realformat_constructor_args():
-    sig = inspect.signature(project::RealFormat.__init__)
+def test_project_realformat_constructor_args():
+    sig = inspect.signature(project_RealFormat.__init__)
     params = list(sig.parameters.keys())
-    assert "negativeSuffix" in params, "Missing parameter 'negativeSuffix'"
     assert "fractionSeparator" in params, "Missing parameter 'fractionSeparator'"
     assert "negativePrefix" in params, "Missing parameter 'negativePrefix'"
-    assert "fractionDigits" in params, "Missing parameter 'fractionDigits'"
     assert "thousandsSeparator" in params, "Missing parameter 'thousandsSeparator'"
+    assert "negativeSuffix" in params, "Missing parameter 'negativeSuffix'"
+    assert "fractionDigits" in params, "Missing parameter 'fractionDigits'"
 
-def test_project::realformat_has_negativeSuffix():
-    assert hasattr(project::RealFormat, "negativeSuffix")
+def test_project_realformat_has_fractionSeparator():
+    assert hasattr(project_RealFormat, "fractionSeparator")
     descriptor = None
-    for klass in project::RealFormat.__mro__:
-        if "negativeSuffix" in klass.__dict__:
-            descriptor = klass.__dict__["negativeSuffix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::realformat_has_fractionSeparator():
-    assert hasattr(project::RealFormat, "fractionSeparator")
-    descriptor = None
-    for klass in project::RealFormat.__mro__:
+    for klass in project_RealFormat.__mro__:
         if "fractionSeparator" in klass.__dict__:
             descriptor = klass.__dict__["fractionSeparator"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::realformat_has_negativePrefix():
-    assert hasattr(project::RealFormat, "negativePrefix")
+def test_project_realformat_has_negativePrefix():
+    assert hasattr(project_RealFormat, "negativePrefix")
     descriptor = None
-    for klass in project::RealFormat.__mro__:
+    for klass in project_RealFormat.__mro__:
         if "negativePrefix" in klass.__dict__:
             descriptor = klass.__dict__["negativePrefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::realformat_has_fractionDigits():
-    assert hasattr(project::RealFormat, "fractionDigits")
+def test_project_realformat_has_thousandsSeparator():
+    assert hasattr(project_RealFormat, "thousandsSeparator")
     descriptor = None
-    for klass in project::RealFormat.__mro__:
-        if "fractionDigits" in klass.__dict__:
-            descriptor = klass.__dict__["fractionDigits"]
+    for klass in project_RealFormat.__mro__:
+        if "thousandsSeparator" in klass.__dict__:
+            descriptor = klass.__dict__["thousandsSeparator"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::realformat_has_thousandsSeparator():
-    assert hasattr(project::RealFormat, "thousandsSeparator")
+def test_project_realformat_has_negativeSuffix():
+    assert hasattr(project_RealFormat, "negativeSuffix")
     descriptor = None
-    for klass in project::RealFormat.__mro__:
-        if "thousandsSeparator" in klass.__dict__:
-            descriptor = klass.__dict__["thousandsSeparator"]
+    for klass in project_RealFormat.__mro__:
+        if "negativeSuffix" in klass.__dict__:
+            descriptor = klass.__dict__["negativeSuffix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_realformat_has_fractionDigits():
+    assert hasattr(project_RealFormat, "fractionDigits")
+    descriptor = None
+    for klass in project_RealFormat.__mro__:
+        if "fractionDigits" in klass.__dict__:
+            descriptor = klass.__dict__["fractionDigits"]
             break
     assert isinstance(descriptor, property)
 
@@ -1008,6 +1534,20 @@ def test_dailymax_constructor_args():
 
 
 
+def test_project_limit_is_not_abstract():
+    assert not inspect.isabstract(project_Limit)
+
+
+def test_project_limit_constructor_exists():
+    assert callable(project_Limit.__init__)
+
+
+def test_project_limit_constructor_args():
+    sig = inspect.signature(project_Limit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_gaplength_is_not_abstract():
     assert not inspect.isabstract(GapLength)
 
@@ -1022,47 +1562,47 @@ def test_gaplength_constructor_args():
 
 
 
-def test_gapduration_is_not_abstract():
-    assert not inspect.isabstract(GapDuration)
+def test_project_limitsattribute_is_not_abstract():
+    assert not inspect.isabstract(project_LimitsAttribute)
 
 
-def test_gapduration_constructor_exists():
-    assert callable(GapDuration.__init__)
+def test_project_limitsattribute_constructor_exists():
+    assert callable(project_LimitsAttribute.__init__)
 
 
-def test_gapduration_constructor_args():
-    sig = inspect.signature(GapDuration.__init__)
+def test_project_limitsattribute_constructor_args():
+    sig = inspect.signature(project_LimitsAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::limitattribute_is_not_abstract():
-    assert not inspect.isabstract(project::LimitAttribute)
+def test_project_interval3_is_not_abstract():
+    assert not inspect.isabstract(project_Interval3)
 
 
-def test_project::limitattribute_constructor_exists():
-    assert callable(project::LimitAttribute.__init__)
+def test_project_interval3_constructor_exists():
+    assert callable(project_Interval3.__init__)
 
 
-def test_project::limitattribute_constructor_args():
-    sig = inspect.signature(project::LimitAttribute.__init__)
+def test_project_interval3_constructor_args():
+    sig = inspect.signature(project_Interval3.__init__)
     params = list(sig.parameters.keys())
     assert "end" in params, "Missing parameter 'end'"
     assert "start" in params, "Missing parameter 'start'"
 
-def test_project::limitattribute_has_end():
-    assert hasattr(project::LimitAttribute, "end")
+def test_project_interval3_has_end():
+    assert hasattr(project_Interval3, "end")
     descriptor = None
-    for klass in project::LimitAttribute.__mro__:
+    for klass in project_Interval3.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::limitattribute_has_start():
-    assert hasattr(project::LimitAttribute, "start")
+def test_project_interval3_has_start():
+    assert hasattr(project_Interval3, "start")
     descriptor = None
-    for klass in project::LimitAttribute.__mro__:
+    for klass in project_Interval3.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
@@ -1070,643 +1610,103 @@ def test_project::limitattribute_has_start():
 
 
 
-def test_weeklymin_is_not_abstract():
-    assert not inspect.isabstract(WeeklyMin)
+def test_project_interval1_is_not_abstract():
+    assert not inspect.isabstract(project_Interval1)
 
 
-def test_weeklymin_constructor_exists():
-    assert callable(WeeklyMin.__init__)
+def test_project_interval1_constructor_exists():
+    assert callable(project_Interval1.__init__)
 
 
-def test_weeklymin_constructor_args():
-    sig = inspect.signature(WeeklyMin.__init__)
+def test_project_interval1_constructor_args():
+    sig = inspect.signature(project_Interval1.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_project::limit_is_not_abstract():
-    assert not inspect.isabstract(project::Limit)
-
-
-def test_project::limit_constructor_exists():
-    assert callable(project::Limit.__init__)
-
-
-def test_project::limit_constructor_args():
-    sig = inspect.signature(project::Limit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::columnattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ColumnAttribute)
-
-
-def test_project::columnattribute_constructor_exists():
-    assert callable(project::ColumnAttribute.__init__)
-
-
-def test_project::columnattribute_constructor_args():
-    sig = inspect.signature(project::ColumnAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::workhours_is_not_abstract():
-    assert not inspect.isabstract(project::WorkHours)
-
-
-def test_project::workhours_constructor_exists():
-    assert callable(project::WorkHours.__init__)
-
-
-def test_project::workhours_constructor_args():
-    sig = inspect.signature(project::WorkHours.__init__)
-    params = list(sig.parameters.keys())
-    assert "start" in params, "Missing parameter 'start'"
-    assert "stop" in params, "Missing parameter 'stop'"
-
-def test_project::workhours_has_start():
-    assert hasattr(project::WorkHours, "start")
-    descriptor = None
-    for klass in project::WorkHours.__mro__:
-        if "start" in klass.__dict__:
-            descriptor = klass.__dict__["start"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::workhours_has_stop():
-    assert hasattr(project::WorkHours, "stop")
-    descriptor = None
-    for klass in project::WorkHours.__mro__:
-        if "stop" in klass.__dict__:
-            descriptor = klass.__dict__["stop"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::weekdays_is_not_abstract():
-    assert not inspect.isabstract(project::Weekdays)
-
-
-def test_project::weekdays_constructor_exists():
-    assert callable(project::Weekdays.__init__)
-
-
-def test_project::weekdays_constructor_args():
-    sig = inspect.signature(project::Weekdays.__init__)
-    params = list(sig.parameters.keys())
-    assert "first" in params, "Missing parameter 'first'"
-    assert "last" in params, "Missing parameter 'last'"
-
-def test_project::weekdays_has_first():
-    assert hasattr(project::Weekdays, "first")
-    descriptor = None
-    for klass in project::Weekdays.__mro__:
-        if "first" in klass.__dict__:
-            descriptor = klass.__dict__["first"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::weekdays_has_last():
-    assert hasattr(project::Weekdays, "last")
-    descriptor = None
-    for klass in project::Weekdays.__mro__:
-        if "last" in klass.__dict__:
-            descriptor = klass.__dict__["last"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::treelevel_is_not_abstract():
-    assert not inspect.isabstract(project::TreeLevel)
-
-
-def test_project::treelevel_constructor_exists():
-    assert callable(project::TreeLevel.__init__)
-
-
-def test_project::treelevel_constructor_args():
-    sig = inspect.signature(project::TreeLevel.__init__)
-    params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
-
-def test_project::treelevel_has_level():
-    assert hasattr(project::TreeLevel, "level")
-    descriptor = None
-    for klass in project::TreeLevel.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::timesheetreportattribute_is_not_abstract():
-    assert not inspect.isabstract(project::TimesheetReportAttribute)
-
-
-def test_project::timesheetreportattribute_constructor_exists():
-    assert callable(project::TimesheetReportAttribute.__init__)
-
-
-def test_project::timesheetreportattribute_constructor_args():
-    sig = inspect.signature(project::TimesheetReportAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::timesheetattribute_is_not_abstract():
-    assert not inspect.isabstract(project::TimesheetAttribute)
-
-
-def test_project::timesheetattribute_constructor_exists():
-    assert callable(project::TimesheetAttribute.__init__)
-
-
-def test_project::timesheetattribute_constructor_args():
-    sig = inspect.signature(project::TimesheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statussheetattribute_is_not_abstract():
-    assert not inspect.isabstract(StatusSheetAttribute)
-
-
-def test_statussheetattribute_constructor_exists():
-    assert callable(StatusSheetAttribute.__init__)
-
-
-def test_statussheetattribute_constructor_args():
-    sig = inspect.signature(StatusSheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::tasktimesheetattribute_is_not_abstract():
-    assert not inspect.isabstract(project::TaskTimesheetAttribute)
-
-
-def test_project::tasktimesheetattribute_constructor_exists():
-    assert callable(project::TaskTimesheetAttribute.__init__)
-
-
-def test_project::tasktimesheetattribute_constructor_args():
-    sig = inspect.signature(project::TaskTimesheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::taskstatussheetattribute_is_not_abstract():
-    assert not inspect.isabstract(project::TaskStatusSheetAttribute)
-
-
-def test_project::taskstatussheetattribute_constructor_exists():
-    assert callable(project::TaskStatusSheetAttribute.__init__)
-
-
-def test_project::taskstatussheetattribute_constructor_args():
-    sig = inspect.signature(project::TaskStatusSheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::statussheetreportattribute_is_not_abstract():
-    assert not inspect.isabstract(project::StatusSheetReportAttribute)
-
-
-def test_project::statussheetreportattribute_constructor_exists():
-    assert callable(project::StatusSheetReportAttribute.__init__)
-
-
-def test_project::statussheetreportattribute_constructor_args():
-    sig = inspect.signature(project::StatusSheetReportAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::statussheetattribute_is_not_abstract():
-    assert not inspect.isabstract(project::StatusSheetAttribute)
-
-
-def test_project::statussheetattribute_constructor_exists():
-    assert callable(project::StatusSheetAttribute.__init__)
-
-
-def test_project::statussheetattribute_constructor_args():
-    sig = inspect.signature(project::StatusSheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::statustimesheetattribute_is_not_abstract():
-    assert not inspect.isabstract(project::StatusTimesheetAttribute)
-
-
-def test_project::statustimesheetattribute_constructor_exists():
-    assert callable(project::StatusTimesheetAttribute.__init__)
-
-
-def test_project::statustimesheetattribute_constructor_args():
-    sig = inspect.signature(project::StatusTimesheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::criterion_is_not_abstract():
-    assert not inspect.isabstract(project::Criterion)
-
-
-def test_project::criterion_constructor_exists():
-    assert callable(project::Criterion.__init__)
-
-
-def test_project::criterion_constructor_args():
-    sig = inspect.signature(project::Criterion.__init__)
-    params = list(sig.parameters.keys())
-    assert "columnId" in params, "Missing parameter 'columnId'"
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_project::criterion_has_columnId():
-    assert hasattr(project::Criterion, "columnId")
-    descriptor = None
-    for klass in project::Criterion.__mro__:
-        if "columnId" in klass.__dict__:
-            descriptor = klass.__dict__["columnId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::criterion_has_direction():
-    assert hasattr(project::Criterion, "direction")
-    descriptor = None
-    for klass in project::Criterion.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sorttasks_is_not_abstract():
-    assert not inspect.isabstract(SortTasks)
-
-
-def test_sorttasks_constructor_exists():
-    assert callable(SortTasks.__init__)
-
-
-def test_sorttasks_constructor_args():
-    sig = inspect.signature(SortTasks.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sortresources_is_not_abstract():
-    assert not inspect.isabstract(SortResources)
-
-
-def test_sortresources_constructor_exists():
-    assert callable(SortResources.__init__)
-
-
-def test_sortresources_constructor_args():
-    sig = inspect.signature(SortResources.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sortjournalentries_is_not_abstract():
-    assert not inspect.isabstract(SortJournalEntries)
-
-
-def test_sortjournalentries_constructor_exists():
-    assert callable(SortJournalEntries.__init__)
-
-
-def test_sortjournalentries_constructor_args():
-    sig = inspect.signature(SortJournalEntries.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sortaccounts_is_not_abstract():
-    assert not inspect.isabstract(SortAccounts)
-
-
-def test_sortaccounts_constructor_exists():
-    assert callable(SortAccounts.__init__)
-
-
-def test_sortaccounts_constructor_args():
-    sig = inspect.signature(SortAccounts.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::sort_is_not_abstract():
-    assert not inspect.isabstract(project::Sort)
-
-
-def test_project::sort_constructor_exists():
-    assert callable(project::Sort.__init__)
-
-
-def test_project::sort_constructor_args():
-    sig = inspect.signature(project::Sort.__init__)
-    params = list(sig.parameters.keys())
-    assert "tree" in params, "Missing parameter 'tree'"
-
-def test_project::sort_has_tree():
-    assert hasattr(project::Sort, "tree")
-    descriptor = None
-    for klass in project::Sort.__mro__:
-        if "tree" in klass.__dict__:
-            descriptor = klass.__dict__["tree"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::statusstatussheetattribute_is_not_abstract():
-    assert not inspect.isabstract(project::StatusStatusSheetAttribute)
-
-
-def test_project::statusstatussheetattribute_constructor_exists():
-    assert callable(project::StatusStatusSheetAttribute.__init__)
-
-
-def test_project::statusstatussheetattribute_constructor_args():
-    sig = inspect.signature(project::StatusStatusSheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_taskstatussheetattribute_is_not_abstract():
-    assert not inspect.isabstract(TaskStatusSheetAttribute)
-
-
-def test_taskstatussheetattribute_constructor_exists():
-    assert callable(TaskStatusSheetAttribute.__init__)
-
-
-def test_taskstatussheetattribute_constructor_args():
-    sig = inspect.signature(TaskStatusSheetAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::taskstatussheet_is_not_abstract():
-    assert not inspect.isabstract(project::TaskStatusSheet)
-
-
-def test_project::taskstatussheet_constructor_exists():
-    assert callable(project::TaskStatusSheet.__init__)
-
-
-def test_project::taskstatussheet_constructor_args():
-    sig = inspect.signature(project::TaskStatusSheet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::statusstatussheet_is_not_abstract():
-    assert not inspect.isabstract(project::StatusStatusSheet)
-
-
-def test_project::statusstatussheet_constructor_exists():
-    assert callable(project::StatusStatusSheet.__init__)
-
-
-def test_project::statusstatussheet_constructor_args():
-    sig = inspect.signature(project::StatusStatusSheet.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-    assert "level" in params, "Missing parameter 'level'"
-
-def test_project::statusstatussheet_has_text():
-    assert hasattr(project::StatusStatusSheet, "text")
-    descriptor = None
-    for klass in project::StatusStatusSheet.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::statusstatussheet_has_level():
-    assert hasattr(project::StatusStatusSheet, "level")
-    descriptor = None
-    for klass in project::StatusStatusSheet.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::shiftslimit_is_not_abstract():
-    assert not inspect.isabstract(project::ShiftsLimit)
-
-
-def test_project::shiftslimit_constructor_exists():
-    assert callable(project::ShiftsLimit.__init__)
-
-
-def test_project::shiftslimit_constructor_args():
-    sig = inspect.signature(project::ShiftsLimit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shiftstask_is_not_abstract():
-    assert not inspect.isabstract(ShiftsTask)
-
-
-def test_shiftstask_constructor_exists():
-    assert callable(ShiftsTask.__init__)
-
-
-def test_shiftstask_constructor_args():
-    sig = inspect.signature(ShiftsTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shiftsresource_is_not_abstract():
-    assert not inspect.isabstract(ShiftsResource)
-
-
-def test_shiftsresource_constructor_exists():
-    assert callable(ShiftsResource.__init__)
-
-
-def test_shiftsresource_constructor_args():
-    sig = inspect.signature(ShiftsResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::shifts_is_not_abstract():
-    assert not inspect.isabstract(project::Shifts)
-
-
-def test_project::shifts_constructor_exists():
-    assert callable(project::Shifts.__init__)
-
-
-def test_project::shifts_constructor_args():
-    sig = inspect.signature(project::Shifts.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::limitsattribute_is_not_abstract():
-    assert not inspect.isabstract(project::LimitsAttribute)
-
-
-def test_project::limitsattribute_constructor_exists():
-    assert callable(project::LimitsAttribute.__init__)
-
-
-def test_project::limitsattribute_constructor_args():
-    sig = inspect.signature(project::LimitsAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::interval3_is_not_abstract():
-    assert not inspect.isabstract(project::Interval3)
-
-
-def test_project::interval3_constructor_exists():
-    assert callable(project::Interval3.__init__)
-
-
-def test_project::interval3_constructor_args():
-    sig = inspect.signature(project::Interval3.__init__)
-    params = list(sig.parameters.keys())
-    assert "start" in params, "Missing parameter 'start'"
     assert "end" in params, "Missing parameter 'end'"
+    assert "start" in params, "Missing parameter 'start'"
 
-def test_project::interval3_has_start():
-    assert hasattr(project::Interval3, "start")
+def test_project_interval1_has_end():
+    assert hasattr(project_Interval1, "end")
     descriptor = None
-    for klass in project::Interval3.__mro__:
-        if "start" in klass.__dict__:
-            descriptor = klass.__dict__["start"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::interval3_has_end():
-    assert hasattr(project::Interval3, "end")
-    descriptor = None
-    for klass in project::Interval3.__mro__:
+    for klass in project_Interval1.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_project::interval1_is_not_abstract():
-    assert not inspect.isabstract(project::Interval1)
-
-
-def test_project::interval1_constructor_exists():
-    assert callable(project::Interval1.__init__)
-
-
-def test_project::interval1_constructor_args():
-    sig = inspect.signature(project::Interval1.__init__)
-    params = list(sig.parameters.keys())
-    assert "start" in params, "Missing parameter 'start'"
-    assert "end" in params, "Missing parameter 'end'"
-
-def test_project::interval1_has_start():
-    assert hasattr(project::Interval1, "start")
+def test_project_interval1_has_start():
+    assert hasattr(project_Interval1, "start")
     descriptor = None
-    for klass in project::Interval1.__mro__:
+    for klass in project_Interval1.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::interval1_has_end():
-    assert hasattr(project::Interval1, "end")
-    descriptor = None
-    for klass in project::Interval1.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_project::includepropertiesattribute_is_not_abstract():
-    assert not inspect.isabstract(project::IncludePropertiesAttribute)
-
-
-def test_project::includepropertiesattribute_constructor_exists():
-    assert callable(project::IncludePropertiesAttribute.__init__)
+def test_project_includepropertiesattribute_is_not_abstract():
+    assert not inspect.isabstract(project_IncludePropertiesAttribute)
 
 
-def test_project::includepropertiesattribute_constructor_args():
-    sig = inspect.signature(project::IncludePropertiesAttribute.__init__)
+def test_project_includepropertiesattribute_constructor_exists():
+    assert callable(project_IncludePropertiesAttribute.__init__)
+
+
+def test_project_includepropertiesattribute_constructor_args():
+    sig = inspect.signature(project_IncludePropertiesAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::function_is_not_abstract():
-    assert not inspect.isabstract(project::Function)
+def test_project_function_is_not_abstract():
+    assert not inspect.isabstract(project_Function)
 
 
-def test_project::function_constructor_exists():
-    assert callable(project::Function.__init__)
+def test_project_function_constructor_exists():
+    assert callable(project_Function.__init__)
 
 
-def test_project::function_constructor_args():
-    sig = inspect.signature(project::Function.__init__)
+def test_project_function_constructor_args():
+    sig = inspect.signature(project_Function.__init__)
     params = list(sig.parameters.keys())
-    assert "parentId" in params, "Missing parameter 'parentId'"
-    assert "level" in params, "Missing parameter 'level'"
-    assert "date" in params, "Missing parameter 'date'"
     assert "distance" in params, "Missing parameter 'distance'"
+    assert "level" in params, "Missing parameter 'level'"
+    assert "parentId" in params, "Missing parameter 'parentId'"
+    assert "date" in params, "Missing parameter 'date'"
 
-def test_project::function_has_parentId():
-    assert hasattr(project::Function, "parentId")
+def test_project_function_has_distance():
+    assert hasattr(project_Function, "distance")
     descriptor = None
-    for klass in project::Function.__mro__:
+    for klass in project_Function.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_function_has_level():
+    assert hasattr(project_Function, "level")
+    descriptor = None
+    for klass in project_Function.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_function_has_parentId():
+    assert hasattr(project_Function, "parentId")
+    descriptor = None
+    for klass in project_Function.__mro__:
         if "parentId" in klass.__dict__:
             descriptor = klass.__dict__["parentId"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::function_has_level():
-    assert hasattr(project::Function, "level")
+def test_project_function_has_date():
+    assert hasattr(project_Function, "date")
     descriptor = None
-    for klass in project::Function.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::function_has_date():
-    assert hasattr(project::Function, "date")
-    descriptor = None
-    for klass in project::Function.__mro__:
+    for klass in project_Function.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::function_has_distance():
-    assert hasattr(project::Function, "distance")
-    descriptor = None
-    for klass in project::Function.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
             break
     assert isinstance(descriptor, property)
 
@@ -1726,97 +1726,97 @@ def test_navigatorattribute_constructor_args():
 
 
 
-def test_project::hidereport_is_not_abstract():
-    assert not inspect.isabstract(project::HideReport)
+def test_project_hidereport_is_not_abstract():
+    assert not inspect.isabstract(project_HideReport)
 
 
-def test_project::hidereport_constructor_exists():
-    assert callable(project::HideReport.__init__)
+def test_project_hidereport_constructor_exists():
+    assert callable(project_HideReport.__init__)
 
 
-def test_project::hidereport_constructor_args():
-    sig = inspect.signature(project::HideReport.__init__)
+def test_project_hidereport_constructor_args():
+    sig = inspect.signature(project_HideReport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::gaplength_is_not_abstract():
-    assert not inspect.isabstract(project::GapLength)
+def test_project_gaplength_is_not_abstract():
+    assert not inspect.isabstract(project_GapLength)
 
 
-def test_project::gaplength_constructor_exists():
-    assert callable(project::GapLength.__init__)
+def test_project_gaplength_constructor_exists():
+    assert callable(project_GapLength.__init__)
 
 
-def test_project::gaplength_constructor_args():
-    sig = inspect.signature(project::GapLength.__init__)
+def test_project_gaplength_constructor_args():
+    sig = inspect.signature(project_GapLength.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::gapduration_is_not_abstract():
-    assert not inspect.isabstract(project::GapDuration)
+def test_project_gapduration_is_not_abstract():
+    assert not inspect.isabstract(project_GapDuration)
 
 
-def test_project::gapduration_constructor_exists():
-    assert callable(project::GapDuration.__init__)
+def test_project_gapduration_constructor_exists():
+    assert callable(project_GapDuration.__init__)
 
 
-def test_project::gapduration_constructor_args():
-    sig = inspect.signature(project::GapDuration.__init__)
+def test_project_gapduration_constructor_args():
+    sig = inspect.signature(project_GapDuration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::extend_is_not_abstract():
-    assert not inspect.isabstract(project::Extend)
+def test_project_extend_is_not_abstract():
+    assert not inspect.isabstract(project_Extend)
 
 
-def test_project::extend_constructor_exists():
-    assert callable(project::Extend.__init__)
+def test_project_extend_constructor_exists():
+    assert callable(project_Extend.__init__)
 
 
-def test_project::extend_constructor_args():
-    sig = inspect.signature(project::Extend.__init__)
+def test_project_extend_constructor_args():
+    sig = inspect.signature(project_Extend.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "scenariospecific" in params, "Missing parameter 'scenariospecific'"
-    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "inherit" in params, "Missing parameter 'inherit'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_project::extend_has_name():
-    assert hasattr(project::Extend, "name")
+def test_project_extend_has_scenariospecific():
+    assert hasattr(project_Extend, "scenariospecific")
     descriptor = None
-    for klass in project::Extend.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::extend_has_scenariospecific():
-    assert hasattr(project::Extend, "scenariospecific")
-    descriptor = None
-    for klass in project::Extend.__mro__:
+    for klass in project_Extend.__mro__:
         if "scenariospecific" in klass.__dict__:
             descriptor = klass.__dict__["scenariospecific"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::extend_has_id():
-    assert hasattr(project::Extend, "id")
+def test_project_extend_has_name():
+    assert hasattr(project_Extend, "name")
     descriptor = None
-    for klass in project::Extend.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in project_Extend.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::extend_has_inherit():
-    assert hasattr(project::Extend, "inherit")
+def test_project_extend_has_inherit():
+    assert hasattr(project_Extend, "inherit")
     descriptor = None
-    for klass in project::Extend.__mro__:
+    for klass in project_Extend.__mro__:
         if "inherit" in klass.__dict__:
             descriptor = klass.__dict__["inherit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_extend_has_id():
+    assert hasattr(project_Extend, "id")
+    descriptor = None
+    for klass in project_Extend.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -1836,241 +1836,241 @@ def test_exportattribute_constructor_args():
 
 
 
-def test_project::taskattributes_is_not_abstract():
-    assert not inspect.isabstract(project::TaskAttributes)
+def test_project_resourceattributes_is_not_abstract():
+    assert not inspect.isabstract(project_ResourceAttributes)
 
 
-def test_project::taskattributes_constructor_exists():
-    assert callable(project::TaskAttributes.__init__)
+def test_project_resourceattributes_constructor_exists():
+    assert callable(project_ResourceAttributes.__init__)
 
 
-def test_project::taskattributes_constructor_args():
-    sig = inspect.signature(project::TaskAttributes.__init__)
-    params = list(sig.parameters.keys())
-    assert "flags" in params, "Missing parameter 'flags'"
-    assert "maxstart" in params, "Missing parameter 'maxstart'"
-    assert "booking" in params, "Missing parameter 'booking'"
-    assert "note" in params, "Missing parameter 'note'"
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "complete" in params, "Missing parameter 'complete'"
-    assert "none" in params, "Missing parameter 'none'"
-    assert "maxend" in params, "Missing parameter 'maxend'"
-    assert "minstart" in params, "Missing parameter 'minstart'"
-    assert "all" in params, "Missing parameter 'all'"
-    assert "minend" in params, "Missing parameter 'minend'"
-    assert "depends" in params, "Missing parameter 'depends'"
-    assert "responsible" in params, "Missing parameter 'responsible'"
-
-def test_project::taskattributes_has_flags():
-    assert hasattr(project::TaskAttributes, "flags")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "flags" in klass.__dict__:
-            descriptor = klass.__dict__["flags"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_maxstart():
-    assert hasattr(project::TaskAttributes, "maxstart")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "maxstart" in klass.__dict__:
-            descriptor = klass.__dict__["maxstart"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_booking():
-    assert hasattr(project::TaskAttributes, "booking")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "booking" in klass.__dict__:
-            descriptor = klass.__dict__["booking"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_note():
-    assert hasattr(project::TaskAttributes, "note")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_priority():
-    assert hasattr(project::TaskAttributes, "priority")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_complete():
-    assert hasattr(project::TaskAttributes, "complete")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "complete" in klass.__dict__:
-            descriptor = klass.__dict__["complete"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_none():
-    assert hasattr(project::TaskAttributes, "none")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "none" in klass.__dict__:
-            descriptor = klass.__dict__["none"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_maxend():
-    assert hasattr(project::TaskAttributes, "maxend")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "maxend" in klass.__dict__:
-            descriptor = klass.__dict__["maxend"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_minstart():
-    assert hasattr(project::TaskAttributes, "minstart")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "minstart" in klass.__dict__:
-            descriptor = klass.__dict__["minstart"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_all():
-    assert hasattr(project::TaskAttributes, "all")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "all" in klass.__dict__:
-            descriptor = klass.__dict__["all"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_minend():
-    assert hasattr(project::TaskAttributes, "minend")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "minend" in klass.__dict__:
-            descriptor = klass.__dict__["minend"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_depends():
-    assert hasattr(project::TaskAttributes, "depends")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "depends" in klass.__dict__:
-            descriptor = klass.__dict__["depends"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::taskattributes_has_responsible():
-    assert hasattr(project::TaskAttributes, "responsible")
-    descriptor = None
-    for klass in project::TaskAttributes.__mro__:
-        if "responsible" in klass.__dict__:
-            descriptor = klass.__dict__["responsible"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::resourceattributes_is_not_abstract():
-    assert not inspect.isabstract(project::ResourceAttributes)
-
-
-def test_project::resourceattributes_constructor_exists():
-    assert callable(project::ResourceAttributes.__init__)
-
-
-def test_project::resourceattributes_constructor_args():
-    sig = inspect.signature(project::ResourceAttributes.__init__)
+def test_project_resourceattributes_constructor_args():
+    sig = inspect.signature(project_ResourceAttributes.__init__)
     params = list(sig.parameters.keys())
     assert "none" in params, "Missing parameter 'none'"
-    assert "booking" in params, "Missing parameter 'booking'"
-    assert "workingHours" in params, "Missing parameter 'workingHours'"
     assert "vacation" in params, "Missing parameter 'vacation'"
+    assert "workingHours" in params, "Missing parameter 'workingHours'"
     assert "all" in params, "Missing parameter 'all'"
+    assert "booking" in params, "Missing parameter 'booking'"
 
-def test_project::resourceattributes_has_none():
-    assert hasattr(project::ResourceAttributes, "none")
+def test_project_resourceattributes_has_none():
+    assert hasattr(project_ResourceAttributes, "none")
     descriptor = None
-    for klass in project::ResourceAttributes.__mro__:
+    for klass in project_ResourceAttributes.__mro__:
         if "none" in klass.__dict__:
             descriptor = klass.__dict__["none"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::resourceattributes_has_booking():
-    assert hasattr(project::ResourceAttributes, "booking")
+def test_project_resourceattributes_has_vacation():
+    assert hasattr(project_ResourceAttributes, "vacation")
     descriptor = None
-    for klass in project::ResourceAttributes.__mro__:
-        if "booking" in klass.__dict__:
-            descriptor = klass.__dict__["booking"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::resourceattributes_has_workingHours():
-    assert hasattr(project::ResourceAttributes, "workingHours")
-    descriptor = None
-    for klass in project::ResourceAttributes.__mro__:
-        if "workingHours" in klass.__dict__:
-            descriptor = klass.__dict__["workingHours"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::resourceattributes_has_vacation():
-    assert hasattr(project::ResourceAttributes, "vacation")
-    descriptor = None
-    for klass in project::ResourceAttributes.__mro__:
+    for klass in project_ResourceAttributes.__mro__:
         if "vacation" in klass.__dict__:
             descriptor = klass.__dict__["vacation"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::resourceattributes_has_all():
-    assert hasattr(project::ResourceAttributes, "all")
+def test_project_resourceattributes_has_workingHours():
+    assert hasattr(project_ResourceAttributes, "workingHours")
     descriptor = None
-    for klass in project::ResourceAttributes.__mro__:
+    for klass in project_ResourceAttributes.__mro__:
+        if "workingHours" in klass.__dict__:
+            descriptor = klass.__dict__["workingHours"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_resourceattributes_has_all():
+    assert hasattr(project_ResourceAttributes, "all")
+    descriptor = None
+    for klass in project_ResourceAttributes.__mro__:
         if "all" in klass.__dict__:
             descriptor = klass.__dict__["all"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_project::definitions_is_not_abstract():
-    assert not inspect.isabstract(project::Definitions)
-
-
-def test_project::definitions_constructor_exists():
-    assert callable(project::Definitions.__init__)
-
-
-def test_project::definitions_constructor_args():
-    sig = inspect.signature(project::Definitions.__init__)
-    params = list(sig.parameters.keys())
-    assert "none" in params, "Missing parameter 'none'"
-    assert "all" in params, "Missing parameter 'all'"
-
-def test_project::definitions_has_none():
-    assert hasattr(project::Definitions, "none")
+def test_project_resourceattributes_has_booking():
+    assert hasattr(project_ResourceAttributes, "booking")
     descriptor = None
-    for klass in project::Definitions.__mro__:
+    for klass in project_ResourceAttributes.__mro__:
+        if "booking" in klass.__dict__:
+            descriptor = klass.__dict__["booking"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_taskattributes_is_not_abstract():
+    assert not inspect.isabstract(project_TaskAttributes)
+
+
+def test_project_taskattributes_constructor_exists():
+    assert callable(project_TaskAttributes.__init__)
+
+
+def test_project_taskattributes_constructor_args():
+    sig = inspect.signature(project_TaskAttributes.__init__)
+    params = list(sig.parameters.keys())
+    assert "minstart" in params, "Missing parameter 'minstart'"
+    assert "booking" in params, "Missing parameter 'booking'"
+    assert "complete" in params, "Missing parameter 'complete'"
+    assert "minend" in params, "Missing parameter 'minend'"
+    assert "none" in params, "Missing parameter 'none'"
+    assert "flags" in params, "Missing parameter 'flags'"
+    assert "depends" in params, "Missing parameter 'depends'"
+    assert "priority" in params, "Missing parameter 'priority'"
+    assert "all" in params, "Missing parameter 'all'"
+    assert "responsible" in params, "Missing parameter 'responsible'"
+    assert "maxend" in params, "Missing parameter 'maxend'"
+    assert "maxstart" in params, "Missing parameter 'maxstart'"
+    assert "note" in params, "Missing parameter 'note'"
+
+def test_project_taskattributes_has_minstart():
+    assert hasattr(project_TaskAttributes, "minstart")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "minstart" in klass.__dict__:
+            descriptor = klass.__dict__["minstart"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_booking():
+    assert hasattr(project_TaskAttributes, "booking")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "booking" in klass.__dict__:
+            descriptor = klass.__dict__["booking"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_complete():
+    assert hasattr(project_TaskAttributes, "complete")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "complete" in klass.__dict__:
+            descriptor = klass.__dict__["complete"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_minend():
+    assert hasattr(project_TaskAttributes, "minend")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "minend" in klass.__dict__:
+            descriptor = klass.__dict__["minend"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_none():
+    assert hasattr(project_TaskAttributes, "none")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
         if "none" in klass.__dict__:
             descriptor = klass.__dict__["none"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::definitions_has_all():
-    assert hasattr(project::Definitions, "all")
+def test_project_taskattributes_has_flags():
+    assert hasattr(project_TaskAttributes, "flags")
     descriptor = None
-    for klass in project::Definitions.__mro__:
+    for klass in project_TaskAttributes.__mro__:
+        if "flags" in klass.__dict__:
+            descriptor = klass.__dict__["flags"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_depends():
+    assert hasattr(project_TaskAttributes, "depends")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "depends" in klass.__dict__:
+            descriptor = klass.__dict__["depends"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_priority():
+    assert hasattr(project_TaskAttributes, "priority")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_all():
+    assert hasattr(project_TaskAttributes, "all")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "all" in klass.__dict__:
+            descriptor = klass.__dict__["all"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_responsible():
+    assert hasattr(project_TaskAttributes, "responsible")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "responsible" in klass.__dict__:
+            descriptor = klass.__dict__["responsible"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_maxend():
+    assert hasattr(project_TaskAttributes, "maxend")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "maxend" in klass.__dict__:
+            descriptor = klass.__dict__["maxend"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_maxstart():
+    assert hasattr(project_TaskAttributes, "maxstart")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "maxstart" in klass.__dict__:
+            descriptor = klass.__dict__["maxstart"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_taskattributes_has_note():
+    assert hasattr(project_TaskAttributes, "note")
+    descriptor = None
+    for klass in project_TaskAttributes.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_definitions_is_not_abstract():
+    assert not inspect.isabstract(project_Definitions)
+
+
+def test_project_definitions_constructor_exists():
+    assert callable(project_Definitions.__init__)
+
+
+def test_project_definitions_constructor_args():
+    sig = inspect.signature(project_Definitions.__init__)
+    params = list(sig.parameters.keys())
+    assert "none" in params, "Missing parameter 'none'"
+    assert "all" in params, "Missing parameter 'all'"
+
+def test_project_definitions_has_none():
+    assert hasattr(project_Definitions, "none")
+    descriptor = None
+    for klass in project_Definitions.__mro__:
+        if "none" in klass.__dict__:
+            descriptor = klass.__dict__["none"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_definitions_has_all():
+    assert hasattr(project_Definitions, "all")
+    descriptor = None
+    for klass in project_Definitions.__mro__:
         if "all" in klass.__dict__:
             descriptor = klass.__dict__["all"]
             break
@@ -2092,114 +2092,114 @@ def test_limitsattribute_constructor_args():
 
 
 
-def test_project::weeklymin_is_not_abstract():
-    assert not inspect.isabstract(project::WeeklyMin)
+def test_project_dailymin_is_not_abstract():
+    assert not inspect.isabstract(project_DailyMin)
 
 
-def test_project::weeklymin_constructor_exists():
-    assert callable(project::WeeklyMin.__init__)
+def test_project_dailymin_constructor_exists():
+    assert callable(project_DailyMin.__init__)
 
 
-def test_project::weeklymin_constructor_args():
-    sig = inspect.signature(project::WeeklyMin.__init__)
+def test_project_dailymin_constructor_args():
+    sig = inspect.signature(project_DailyMin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::maximum_is_not_abstract():
-    assert not inspect.isabstract(project::Maximum)
+def test_project_weeklymax_is_not_abstract():
+    assert not inspect.isabstract(project_WeeklyMax)
 
 
-def test_project::maximum_constructor_exists():
-    assert callable(project::Maximum.__init__)
+def test_project_weeklymax_constructor_exists():
+    assert callable(project_WeeklyMax.__init__)
 
 
-def test_project::maximum_constructor_args():
-    sig = inspect.signature(project::Maximum.__init__)
+def test_project_weeklymax_constructor_args():
+    sig = inspect.signature(project_WeeklyMax.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::monthlymax_is_not_abstract():
-    assert not inspect.isabstract(project::MonthlyMax)
+def test_project_minimum_is_not_abstract():
+    assert not inspect.isabstract(project_Minimum)
 
 
-def test_project::monthlymax_constructor_exists():
-    assert callable(project::MonthlyMax.__init__)
+def test_project_minimum_constructor_exists():
+    assert callable(project_Minimum.__init__)
 
 
-def test_project::monthlymax_constructor_args():
-    sig = inspect.signature(project::MonthlyMax.__init__)
+def test_project_minimum_constructor_args():
+    sig = inspect.signature(project_Minimum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::weeklymax_is_not_abstract():
-    assert not inspect.isabstract(project::WeeklyMax)
+def test_project_maximum_is_not_abstract():
+    assert not inspect.isabstract(project_Maximum)
 
 
-def test_project::weeklymax_constructor_exists():
-    assert callable(project::WeeklyMax.__init__)
+def test_project_maximum_constructor_exists():
+    assert callable(project_Maximum.__init__)
 
 
-def test_project::weeklymax_constructor_args():
-    sig = inspect.signature(project::WeeklyMax.__init__)
+def test_project_maximum_constructor_args():
+    sig = inspect.signature(project_Maximum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::minimum_is_not_abstract():
-    assert not inspect.isabstract(project::Minimum)
+def test_project_monthlymin_is_not_abstract():
+    assert not inspect.isabstract(project_MonthlyMin)
 
 
-def test_project::minimum_constructor_exists():
-    assert callable(project::Minimum.__init__)
+def test_project_monthlymin_constructor_exists():
+    assert callable(project_MonthlyMin.__init__)
 
 
-def test_project::minimum_constructor_args():
-    sig = inspect.signature(project::Minimum.__init__)
+def test_project_monthlymin_constructor_args():
+    sig = inspect.signature(project_MonthlyMin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::dailymin_is_not_abstract():
-    assert not inspect.isabstract(project::DailyMin)
+def test_project_monthlymax_is_not_abstract():
+    assert not inspect.isabstract(project_MonthlyMax)
 
 
-def test_project::dailymin_constructor_exists():
-    assert callable(project::DailyMin.__init__)
+def test_project_monthlymax_constructor_exists():
+    assert callable(project_MonthlyMax.__init__)
 
 
-def test_project::dailymin_constructor_args():
-    sig = inspect.signature(project::DailyMin.__init__)
+def test_project_monthlymax_constructor_args():
+    sig = inspect.signature(project_MonthlyMax.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::monthlymin_is_not_abstract():
-    assert not inspect.isabstract(project::MonthlyMin)
+def test_project_weeklymin_is_not_abstract():
+    assert not inspect.isabstract(project_WeeklyMin)
 
 
-def test_project::monthlymin_constructor_exists():
-    assert callable(project::MonthlyMin.__init__)
+def test_project_weeklymin_constructor_exists():
+    assert callable(project_WeeklyMin.__init__)
 
 
-def test_project::monthlymin_constructor_args():
-    sig = inspect.signature(project::MonthlyMin.__init__)
+def test_project_weeklymin_constructor_args():
+    sig = inspect.signature(project_WeeklyMin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::dailymax_is_not_abstract():
-    assert not inspect.isabstract(project::DailyMax)
+def test_project_dailymax_is_not_abstract():
+    assert not inspect.isabstract(project_DailyMax)
 
 
-def test_project::dailymax_constructor_exists():
-    assert callable(project::DailyMax.__init__)
+def test_project_dailymax_constructor_exists():
+    assert callable(project_DailyMax.__init__)
 
 
-def test_project::dailymax_constructor_args():
-    sig = inspect.signature(project::DailyMax.__init__)
+def test_project_dailymax_constructor_args():
+    sig = inspect.signature(project_DailyMax.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2218,23 +2218,37 @@ def test_projectattribute_constructor_args():
 
 
 
-def test_project::timingresolution_is_not_abstract():
-    assert not inspect.isabstract(project::TimingResolution)
+def test_project_trackingscenario_is_not_abstract():
+    assert not inspect.isabstract(project_TrackingScenario)
 
 
-def test_project::timingresolution_constructor_exists():
-    assert callable(project::TimingResolution.__init__)
+def test_project_trackingscenario_constructor_exists():
+    assert callable(project_TrackingScenario.__init__)
 
 
-def test_project::timingresolution_constructor_args():
-    sig = inspect.signature(project::TimingResolution.__init__)
+def test_project_trackingscenario_constructor_args():
+    sig = inspect.signature(project_TrackingScenario.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_timingresolution_is_not_abstract():
+    assert not inspect.isabstract(project_TimingResolution)
+
+
+def test_project_timingresolution_constructor_exists():
+    assert callable(project_TimingResolution.__init__)
+
+
+def test_project_timingresolution_constructor_args():
+    sig = inspect.signature(project_TimingResolution.__init__)
     params = list(sig.parameters.keys())
     assert "timingResolution" in params, "Missing parameter 'timingResolution'"
 
-def test_project::timingresolution_has_timingResolution():
-    assert hasattr(project::TimingResolution, "timingResolution")
+def test_project_timingresolution_has_timingResolution():
+    assert hasattr(project_TimingResolution, "timingResolution")
     descriptor = None
-    for klass in project::TimingResolution.__mro__:
+    for klass in project_TimingResolution.__mro__:
         if "timingResolution" in klass.__dict__:
             descriptor = klass.__dict__["timingResolution"]
             break
@@ -2242,51 +2256,23 @@ def test_project::timingresolution_has_timingResolution():
 
 
 
-def test_project::extendresource_is_not_abstract():
-    assert not inspect.isabstract(project::ExtendResource)
+def test_project_dailyworkinghours_is_not_abstract():
+    assert not inspect.isabstract(project_DailyWorkingHours)
 
 
-def test_project::extendresource_constructor_exists():
-    assert callable(project::ExtendResource.__init__)
+def test_project_dailyworkinghours_constructor_exists():
+    assert callable(project_DailyWorkingHours.__init__)
 
 
-def test_project::extendresource_constructor_args():
-    sig = inspect.signature(project::ExtendResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::extendtask_is_not_abstract():
-    assert not inspect.isabstract(project::ExtendTask)
-
-
-def test_project::extendtask_constructor_exists():
-    assert callable(project::ExtendTask.__init__)
-
-
-def test_project::extendtask_constructor_args():
-    sig = inspect.signature(project::ExtendTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::dailyworkinghours_is_not_abstract():
-    assert not inspect.isabstract(project::DailyWorkingHours)
-
-
-def test_project::dailyworkinghours_constructor_exists():
-    assert callable(project::DailyWorkingHours.__init__)
-
-
-def test_project::dailyworkinghours_constructor_args():
-    sig = inspect.signature(project::DailyWorkingHours.__init__)
+def test_project_dailyworkinghours_constructor_args():
+    sig = inspect.signature(project_DailyWorkingHours.__init__)
     params = list(sig.parameters.keys())
     assert "dailyWorkingHours" in params, "Missing parameter 'dailyWorkingHours'"
 
-def test_project::dailyworkinghours_has_dailyWorkingHours():
-    assert hasattr(project::DailyWorkingHours, "dailyWorkingHours")
+def test_project_dailyworkinghours_has_dailyWorkingHours():
+    assert hasattr(project_DailyWorkingHours, "dailyWorkingHours")
     descriptor = None
-    for klass in project::DailyWorkingHours.__mro__:
+    for klass in project_DailyWorkingHours.__mro__:
         if "dailyWorkingHours" in klass.__dict__:
             descriptor = klass.__dict__["dailyWorkingHours"]
             break
@@ -2294,101 +2280,77 @@ def test_project::dailyworkinghours_has_dailyWorkingHours():
 
 
 
-def test_project::shorttimeformat_is_not_abstract():
-    assert not inspect.isabstract(project::ShortTimeFormat)
+def test_project_weekstarts_is_not_abstract():
+    assert not inspect.isabstract(project_WeekStarts)
 
 
-def test_project::shorttimeformat_constructor_exists():
-    assert callable(project::ShortTimeFormat.__init__)
+def test_project_weekstarts_constructor_exists():
+    assert callable(project_WeekStarts.__init__)
 
 
-def test_project::shorttimeformat_constructor_args():
-    sig = inspect.signature(project::ShortTimeFormat.__init__)
+def test_project_weekstarts_constructor_args():
+    sig = inspect.signature(project_WeekStarts.__init__)
     params = list(sig.parameters.keys())
-    assert "shortTimeFormat" in params, "Missing parameter 'shortTimeFormat'"
-
-def test_project::shorttimeformat_has_shortTimeFormat():
-    assert hasattr(project::ShortTimeFormat, "shortTimeFormat")
-    descriptor = None
-    for klass in project::ShortTimeFormat.__mro__:
-        if "shortTimeFormat" in klass.__dict__:
-            descriptor = klass.__dict__["shortTimeFormat"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::weekstarts_is_not_abstract():
-    assert not inspect.isabstract(project::WeekStarts)
-
-
-def test_project::weekstarts_constructor_exists():
-    assert callable(project::WeekStarts.__init__)
-
-
-def test_project::weekstarts_constructor_args():
-    sig = inspect.signature(project::WeekStarts.__init__)
-    params = list(sig.parameters.keys())
-    assert "sunday" in params, "Missing parameter 'sunday'"
     assert "monday" in params, "Missing parameter 'monday'"
+    assert "sunday" in params, "Missing parameter 'sunday'"
 
-def test_project::weekstarts_has_sunday():
-    assert hasattr(project::WeekStarts, "sunday")
+def test_project_weekstarts_has_monday():
+    assert hasattr(project_WeekStarts, "monday")
     descriptor = None
-    for klass in project::WeekStarts.__mro__:
-        if "sunday" in klass.__dict__:
-            descriptor = klass.__dict__["sunday"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::weekstarts_has_monday():
-    assert hasattr(project::WeekStarts, "monday")
-    descriptor = None
-    for klass in project::WeekStarts.__mro__:
+    for klass in project_WeekStarts.__mro__:
         if "monday" in klass.__dict__:
             descriptor = klass.__dict__["monday"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_project::scenario_is_not_abstract():
-    assert not inspect.isabstract(project::Scenario)
-
-
-def test_project::scenario_constructor_exists():
-    assert callable(project::Scenario.__init__)
-
-
-def test_project::scenario_constructor_args():
-    sig = inspect.signature(project::Scenario.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "active" in params, "Missing parameter 'active'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_project::scenario_has_name():
-    assert hasattr(project::Scenario, "name")
+def test_project_weekstarts_has_sunday():
+    assert hasattr(project_WeekStarts, "sunday")
     descriptor = None
-    for klass in project::Scenario.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in project_WeekStarts.__mro__:
+        if "sunday" in klass.__dict__:
+            descriptor = klass.__dict__["sunday"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::scenario_has_active():
-    assert hasattr(project::Scenario, "active")
+
+
+def test_project_scenario_is_not_abstract():
+    assert not inspect.isabstract(project_Scenario)
+
+
+def test_project_scenario_constructor_exists():
+    assert callable(project_Scenario.__init__)
+
+
+def test_project_scenario_constructor_args():
+    sig = inspect.signature(project_Scenario.__init__)
+    params = list(sig.parameters.keys())
+    assert "active" in params, "Missing parameter 'active'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_project_scenario_has_active():
+    assert hasattr(project_Scenario, "active")
     descriptor = None
-    for klass in project::Scenario.__mro__:
+    for klass in project_Scenario.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::scenario_has_id():
-    assert hasattr(project::Scenario, "id")
+def test_project_scenario_has_name():
+    assert hasattr(project_Scenario, "name")
     descriptor = None
-    for klass in project::Scenario.__mro__:
+    for klass in project_Scenario.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_scenario_has_id():
+    assert hasattr(project_Scenario, "id")
+    descriptor = None
+    for klass in project_Scenario.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2396,85 +2358,75 @@ def test_project::scenario_has_id():
 
 
 
-def test_project::include_is_not_abstract():
-    assert not inspect.isabstract(project::Include)
+def test_project_extendresource_is_not_abstract():
+    assert not inspect.isabstract(project_ExtendResource)
 
 
-def test_project::include_constructor_exists():
-    assert callable(project::Include.__init__)
+def test_project_extendresource_constructor_exists():
+    assert callable(project_ExtendResource.__init__)
 
 
-def test_project::include_constructor_args():
-    sig = inspect.signature(project::Include.__init__)
+def test_project_extendresource_constructor_args():
+    sig = inspect.signature(project_ExtendResource.__init__)
     params = list(sig.parameters.keys())
-    assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_project::include_has_importURI():
-    assert hasattr(project::Include, "importURI")
+
+
+def test_project_extendtask_is_not_abstract():
+    assert not inspect.isabstract(project_ExtendTask)
+
+
+def test_project_extendtask_constructor_exists():
+    assert callable(project_ExtendTask.__init__)
+
+
+def test_project_extendtask_constructor_args():
+    sig = inspect.signature(project_ExtendTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_shorttimeformat_is_not_abstract():
+    assert not inspect.isabstract(project_ShortTimeFormat)
+
+
+def test_project_shorttimeformat_constructor_exists():
+    assert callable(project_ShortTimeFormat.__init__)
+
+
+def test_project_shorttimeformat_constructor_args():
+    sig = inspect.signature(project_ShortTimeFormat.__init__)
+    params = list(sig.parameters.keys())
+    assert "shortTimeFormat" in params, "Missing parameter 'shortTimeFormat'"
+
+def test_project_shorttimeformat_has_shortTimeFormat():
+    assert hasattr(project_ShortTimeFormat, "shortTimeFormat")
     descriptor = None
-    for klass in project::Include.__mro__:
-        if "importURI" in klass.__dict__:
-            descriptor = klass.__dict__["importURI"]
+    for klass in project_ShortTimeFormat.__mro__:
+        if "shortTimeFormat" in klass.__dict__:
+            descriptor = klass.__dict__["shortTimeFormat"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_project::trackingscenario_is_not_abstract():
-    assert not inspect.isabstract(project::TrackingScenario)
+def test_project_yearlyworkingdays_is_not_abstract():
+    assert not inspect.isabstract(project_YearlyWorkingDays)
 
 
-def test_project::trackingscenario_constructor_exists():
-    assert callable(project::TrackingScenario.__init__)
+def test_project_yearlyworkingdays_constructor_exists():
+    assert callable(project_YearlyWorkingDays.__init__)
 
 
-def test_project::trackingscenario_constructor_args():
-    sig = inspect.signature(project::TrackingScenario.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::now_is_not_abstract():
-    assert not inspect.isabstract(project::Now)
-
-
-def test_project::now_constructor_exists():
-    assert callable(project::Now.__init__)
-
-
-def test_project::now_constructor_args():
-    sig = inspect.signature(project::Now.__init__)
-    params = list(sig.parameters.keys())
-    assert "now" in params, "Missing parameter 'now'"
-
-def test_project::now_has_now():
-    assert hasattr(project::Now, "now")
-    descriptor = None
-    for klass in project::Now.__mro__:
-        if "now" in klass.__dict__:
-            descriptor = klass.__dict__["now"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::yearlyworkingdays_is_not_abstract():
-    assert not inspect.isabstract(project::YearlyWorkingDays)
-
-
-def test_project::yearlyworkingdays_constructor_exists():
-    assert callable(project::YearlyWorkingDays.__init__)
-
-
-def test_project::yearlyworkingdays_constructor_args():
-    sig = inspect.signature(project::YearlyWorkingDays.__init__)
+def test_project_yearlyworkingdays_constructor_args():
+    sig = inspect.signature(project_YearlyWorkingDays.__init__)
     params = list(sig.parameters.keys())
     assert "yearlyWorkingDays" in params, "Missing parameter 'yearlyWorkingDays'"
 
-def test_project::yearlyworkingdays_has_yearlyWorkingDays():
-    assert hasattr(project::YearlyWorkingDays, "yearlyWorkingDays")
+def test_project_yearlyworkingdays_has_yearlyWorkingDays():
+    assert hasattr(project_YearlyWorkingDays, "yearlyWorkingDays")
     descriptor = None
-    for klass in project::YearlyWorkingDays.__mro__:
+    for klass in project_YearlyWorkingDays.__mro__:
         if "yearlyWorkingDays" in klass.__dict__:
             descriptor = klass.__dict__["yearlyWorkingDays"]
             break
@@ -2482,23 +2434,71 @@ def test_project::yearlyworkingdays_has_yearlyWorkingDays():
 
 
 
-def test_project::currency_is_not_abstract():
-    assert not inspect.isabstract(project::Currency)
+def test_project_include_is_not_abstract():
+    assert not inspect.isabstract(project_Include)
 
 
-def test_project::currency_constructor_exists():
-    assert callable(project::Currency.__init__)
+def test_project_include_constructor_exists():
+    assert callable(project_Include.__init__)
 
 
-def test_project::currency_constructor_args():
-    sig = inspect.signature(project::Currency.__init__)
+def test_project_include_constructor_args():
+    sig = inspect.signature(project_Include.__init__)
+    params = list(sig.parameters.keys())
+    assert "importURI" in params, "Missing parameter 'importURI'"
+
+def test_project_include_has_importURI():
+    assert hasattr(project_Include, "importURI")
+    descriptor = None
+    for klass in project_Include.__mro__:
+        if "importURI" in klass.__dict__:
+            descriptor = klass.__dict__["importURI"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_now_is_not_abstract():
+    assert not inspect.isabstract(project_Now)
+
+
+def test_project_now_constructor_exists():
+    assert callable(project_Now.__init__)
+
+
+def test_project_now_constructor_args():
+    sig = inspect.signature(project_Now.__init__)
+    params = list(sig.parameters.keys())
+    assert "now" in params, "Missing parameter 'now'"
+
+def test_project_now_has_now():
+    assert hasattr(project_Now, "now")
+    descriptor = None
+    for klass in project_Now.__mro__:
+        if "now" in klass.__dict__:
+            descriptor = klass.__dict__["now"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_currency_is_not_abstract():
+    assert not inspect.isabstract(project_Currency)
+
+
+def test_project_currency_constructor_exists():
+    assert callable(project_Currency.__init__)
+
+
+def test_project_currency_constructor_args():
+    sig = inspect.signature(project_Currency.__init__)
     params = list(sig.parameters.keys())
     assert "currency" in params, "Missing parameter 'currency'"
 
-def test_project::currency_has_currency():
-    assert hasattr(project::Currency, "currency")
+def test_project_currency_has_currency():
+    assert hasattr(project_Currency, "currency")
     descriptor = None
-    for klass in project::Currency.__mro__:
+    for klass in project_Currency.__mro__:
         if "currency" in klass.__dict__:
             descriptor = klass.__dict__["currency"]
             break
@@ -2562,33 +2562,33 @@ def test_nikureportattribute_constructor_args():
 
 
 
-def test_project::timeoff_is_not_abstract():
-    assert not inspect.isabstract(project::Timeoff)
+def test_project_timeoff_is_not_abstract():
+    assert not inspect.isabstract(project_Timeoff)
 
 
-def test_project::timeoff_constructor_exists():
-    assert callable(project::Timeoff.__init__)
+def test_project_timeoff_constructor_exists():
+    assert callable(project_Timeoff.__init__)
 
 
-def test_project::timeoff_constructor_args():
-    sig = inspect.signature(project::Timeoff.__init__)
+def test_project_timeoff_constructor_args():
+    sig = inspect.signature(project_Timeoff.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_project::timeoff_has_name():
-    assert hasattr(project::Timeoff, "name")
+def test_project_timeoff_has_name():
+    assert hasattr(project_Timeoff, "name")
     descriptor = None
-    for klass in project::Timeoff.__mro__:
+    for klass in project_Timeoff.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::timeoff_has_id():
-    assert hasattr(project::Timeoff, "id")
+def test_project_timeoff_has_id():
+    assert hasattr(project_Timeoff, "id")
     descriptor = None
-    for klass in project::Timeoff.__mro__:
+    for klass in project_Timeoff.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2610,51 +2610,51 @@ def test_newtaskattribute_constructor_args():
 
 
 
-def test_project::remaining_is_not_abstract():
-    assert not inspect.isabstract(project::Remaining)
+def test_project_work_is_not_abstract():
+    assert not inspect.isabstract(project_Work)
 
 
-def test_project::remaining_constructor_exists():
-    assert callable(project::Remaining.__init__)
+def test_project_work_constructor_exists():
+    assert callable(project_Work.__init__)
 
 
-def test_project::remaining_constructor_args():
-    sig = inspect.signature(project::Remaining.__init__)
+def test_project_work_constructor_args():
+    sig = inspect.signature(project_Work.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_project::work_is_not_abstract():
-    assert not inspect.isabstract(project::Work)
-
-
-def test_project::work_constructor_exists():
-    assert callable(project::Work.__init__)
-
-
-def test_project::work_constructor_args():
-    sig = inspect.signature(project::Work.__init__)
-    params = list(sig.parameters.keys())
-    assert "unit" in params, "Missing parameter 'unit'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "unit" in params, "Missing parameter 'unit'"
 
-def test_project::work_has_unit():
-    assert hasattr(project::Work, "unit")
+def test_project_work_has_value():
+    assert hasattr(project_Work, "value")
     descriptor = None
-    for klass in project::Work.__mro__:
+    for klass in project_Work.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_work_has_unit():
+    assert hasattr(project_Work, "unit")
+    descriptor = None
+    for klass in project_Work.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::work_has_value():
-    assert hasattr(project::Work, "value")
-    descriptor = None
-    for klass in project::Work.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
+
+
+def test_project_remaining_is_not_abstract():
+    assert not inspect.isabstract(project_Remaining)
+
+
+def test_project_remaining_constructor_exists():
+    assert callable(project_Remaining.__init__)
+
+
+def test_project_remaining_constructor_args():
+    sig = inspect.signature(project_Remaining.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -2672,47 +2672,47 @@ def test_icalreportattribute_constructor_args():
 
 
 
-def test_project::scenarioical_is_not_abstract():
-    assert not inspect.isabstract(project::ScenarioIcal)
+def test_project_scenarioical_is_not_abstract():
+    assert not inspect.isabstract(project_ScenarioIcal)
 
 
-def test_project::scenarioical_constructor_exists():
-    assert callable(project::ScenarioIcal.__init__)
+def test_project_scenarioical_constructor_exists():
+    assert callable(project_ScenarioIcal.__init__)
 
 
-def test_project::scenarioical_constructor_args():
-    sig = inspect.signature(project::ScenarioIcal.__init__)
+def test_project_scenarioical_constructor_args():
+    sig = inspect.signature(project_ScenarioIcal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::durationquantity_is_not_abstract():
-    assert not inspect.isabstract(project::DurationQuantity)
+def test_project_durationquantity_is_not_abstract():
+    assert not inspect.isabstract(project_DurationQuantity)
 
 
-def test_project::durationquantity_constructor_exists():
-    assert callable(project::DurationQuantity.__init__)
+def test_project_durationquantity_constructor_exists():
+    assert callable(project_DurationQuantity.__init__)
 
 
-def test_project::durationquantity_constructor_args():
-    sig = inspect.signature(project::DurationQuantity.__init__)
+def test_project_durationquantity_constructor_args():
+    sig = inspect.signature(project_DurationQuantity.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_project::durationquantity_has_unit():
-    assert hasattr(project::DurationQuantity, "unit")
+def test_project_durationquantity_has_unit():
+    assert hasattr(project_DurationQuantity, "unit")
     descriptor = None
-    for klass in project::DurationQuantity.__mro__:
+    for klass in project_DurationQuantity.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::durationquantity_has_value():
-    assert hasattr(project::DurationQuantity, "value")
+def test_project_durationquantity_has_value():
+    assert hasattr(project_DurationQuantity, "value")
     descriptor = None
-    for klass in project::DurationQuantity.__mro__:
+    for klass in project_DurationQuantity.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2734,23 +2734,23 @@ def test_statustimesheetattribute_constructor_args():
 
 
 
-def test_project::rgb_is_not_abstract():
-    assert not inspect.isabstract(project::RGB)
+def test_project_rgb_is_not_abstract():
+    assert not inspect.isabstract(project_RGB)
 
 
-def test_project::rgb_constructor_exists():
-    assert callable(project::RGB.__init__)
+def test_project_rgb_constructor_exists():
+    assert callable(project_RGB.__init__)
 
 
-def test_project::rgb_constructor_args():
-    sig = inspect.signature(project::RGB.__init__)
+def test_project_rgb_constructor_args():
+    sig = inspect.signature(project_RGB.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_project::rgb_has_value():
-    assert hasattr(project::RGB, "value")
+def test_project_rgb_has_value():
+    assert hasattr(project_RGB, "value")
     descriptor = None
-    for klass in project::RGB.__mro__:
+    for klass in project_RGB.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2758,16 +2758,16 @@ def test_project::rgb_has_value():
 
 
 
-def test_project::logicalexpression_is_not_abstract():
-    assert not inspect.isabstract(project::LogicalExpression)
+def test_project_logicalexpression_is_not_abstract():
+    assert not inspect.isabstract(project_LogicalExpression)
 
 
-def test_project::logicalexpression_constructor_exists():
-    assert callable(project::LogicalExpression.__init__)
+def test_project_logicalexpression_constructor_exists():
+    assert callable(project_LogicalExpression.__init__)
 
 
-def test_project::logicalexpression_constructor_args():
-    sig = inspect.signature(project::LogicalExpression.__init__)
+def test_project_logicalexpression_constructor_args():
+    sig = inspect.signature(project_LogicalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2786,181 +2786,23 @@ def test_columnattribute_constructor_args():
 
 
 
-def test_project::tooltip_is_not_abstract():
-    assert not inspect.isabstract(project::ToolTip)
+def test_project_celltext_is_not_abstract():
+    assert not inspect.isabstract(project_CellText)
 
 
-def test_project::tooltip_constructor_exists():
-    assert callable(project::ToolTip.__init__)
+def test_project_celltext_constructor_exists():
+    assert callable(project_CellText.__init__)
 
 
-def test_project::tooltip_constructor_args():
-    sig = inspect.signature(project::ToolTip.__init__)
-    params = list(sig.parameters.keys())
-    assert "tip" in params, "Missing parameter 'tip'"
-
-def test_project::tooltip_has_tip():
-    assert hasattr(project::ToolTip, "tip")
-    descriptor = None
-    for klass in project::ToolTip.__mro__:
-        if "tip" in klass.__dict__:
-            descriptor = klass.__dict__["tip"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::listitem_is_not_abstract():
-    assert not inspect.isabstract(project::ListItem)
-
-
-def test_project::listitem_constructor_exists():
-    assert callable(project::ListItem.__init__)
-
-
-def test_project::listitem_constructor_args():
-    sig = inspect.signature(project::ListItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::fontcolor_is_not_abstract():
-    assert not inspect.isabstract(project::FontColor)
-
-
-def test_project::fontcolor_constructor_exists():
-    assert callable(project::FontColor.__init__)
-
-
-def test_project::fontcolor_constructor_args():
-    sig = inspect.signature(project::FontColor.__init__)
-    params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
-
-def test_project::fontcolor_has_color():
-    assert hasattr(project::FontColor, "color")
-    descriptor = None
-    for klass in project::FontColor.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::scale_is_not_abstract():
-    assert not inspect.isabstract(project::Scale)
-
-
-def test_project::scale_constructor_exists():
-    assert callable(project::Scale.__init__)
-
-
-def test_project::scale_constructor_args():
-    sig = inspect.signature(project::Scale.__init__)
-    params = list(sig.parameters.keys())
-    assert "scale" in params, "Missing parameter 'scale'"
-
-def test_project::scale_has_scale():
-    assert hasattr(project::Scale, "scale")
-    descriptor = None
-    for klass in project::Scale.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::halign_is_not_abstract():
-    assert not inspect.isabstract(project::HAlign)
-
-
-def test_project::halign_constructor_exists():
-    assert callable(project::HAlign.__init__)
-
-
-def test_project::halign_constructor_args():
-    sig = inspect.signature(project::HAlign.__init__)
-    params = list(sig.parameters.keys())
-    assert "justification" in params, "Missing parameter 'justification'"
-
-def test_project::halign_has_justification():
-    assert hasattr(project::HAlign, "justification")
-    descriptor = None
-    for klass in project::HAlign.__mro__:
-        if "justification" in klass.__dict__:
-            descriptor = klass.__dict__["justification"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::listtype_is_not_abstract():
-    assert not inspect.isabstract(project::ListType)
-
-
-def test_project::listtype_constructor_exists():
-    assert callable(project::ListType.__init__)
-
-
-def test_project::listtype_constructor_args():
-    sig = inspect.signature(project::ListType.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_project::listtype_has_type():
-    assert hasattr(project::ListType, "type")
-    descriptor = None
-    for klass in project::ListType.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::width_is_not_abstract():
-    assert not inspect.isabstract(project::Width)
-
-
-def test_project::width_constructor_exists():
-    assert callable(project::Width.__init__)
-
-
-def test_project::width_constructor_args():
-    sig = inspect.signature(project::Width.__init__)
-    params = list(sig.parameters.keys())
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_project::width_has_width():
-    assert hasattr(project::Width, "width")
-    descriptor = None
-    for klass in project::Width.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::celltext_is_not_abstract():
-    assert not inspect.isabstract(project::CellText)
-
-
-def test_project::celltext_constructor_exists():
-    assert callable(project::CellText.__init__)
-
-
-def test_project::celltext_constructor_args():
-    sig = inspect.signature(project::CellText.__init__)
+def test_project_celltext_constructor_args():
+    sig = inspect.signature(project_CellText.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_project::celltext_has_text():
-    assert hasattr(project::CellText, "text")
+def test_project_celltext_has_text():
+    assert hasattr(project_CellText, "text")
     descriptor = None
-    for klass in project::CellText.__mro__:
+    for klass in project_CellText.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -2968,37 +2810,195 @@ def test_project::celltext_has_text():
 
 
 
-def test_project::cellcolor_is_not_abstract():
-    assert not inspect.isabstract(project::CellColor)
+def test_project_width_is_not_abstract():
+    assert not inspect.isabstract(project_Width)
 
 
-def test_project::cellcolor_constructor_exists():
-    assert callable(project::CellColor.__init__)
+def test_project_width_constructor_exists():
+    assert callable(project_Width.__init__)
 
 
-def test_project::cellcolor_constructor_args():
-    sig = inspect.signature(project::CellColor.__init__)
+def test_project_width_constructor_args():
+    sig = inspect.signature(project_Width.__init__)
+    params = list(sig.parameters.keys())
+    assert "width" in params, "Missing parameter 'width'"
+
+def test_project_width_has_width():
+    assert hasattr(project_Width, "width")
+    descriptor = None
+    for klass in project_Width.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_fontcolor_is_not_abstract():
+    assert not inspect.isabstract(project_FontColor)
+
+
+def test_project_fontcolor_constructor_exists():
+    assert callable(project_FontColor.__init__)
+
+
+def test_project_fontcolor_constructor_args():
+    sig = inspect.signature(project_FontColor.__init__)
+    params = list(sig.parameters.keys())
+    assert "color" in params, "Missing parameter 'color'"
+
+def test_project_fontcolor_has_color():
+    assert hasattr(project_FontColor, "color")
+    descriptor = None
+    for klass in project_FontColor.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_tooltip_is_not_abstract():
+    assert not inspect.isabstract(project_ToolTip)
+
+
+def test_project_tooltip_constructor_exists():
+    assert callable(project_ToolTip.__init__)
+
+
+def test_project_tooltip_constructor_args():
+    sig = inspect.signature(project_ToolTip.__init__)
+    params = list(sig.parameters.keys())
+    assert "tip" in params, "Missing parameter 'tip'"
+
+def test_project_tooltip_has_tip():
+    assert hasattr(project_ToolTip, "tip")
+    descriptor = None
+    for klass in project_ToolTip.__mro__:
+        if "tip" in klass.__dict__:
+            descriptor = klass.__dict__["tip"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_listtype_is_not_abstract():
+    assert not inspect.isabstract(project_ListType)
+
+
+def test_project_listtype_constructor_exists():
+    assert callable(project_ListType.__init__)
+
+
+def test_project_listtype_constructor_args():
+    sig = inspect.signature(project_ListType.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_project_listtype_has_type():
+    assert hasattr(project_ListType, "type")
+    descriptor = None
+    for klass in project_ListType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_listitem_is_not_abstract():
+    assert not inspect.isabstract(project_ListItem)
+
+
+def test_project_listitem_constructor_exists():
+    assert callable(project_ListItem.__init__)
+
+
+def test_project_listitem_constructor_args():
+    sig = inspect.signature(project_ListItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::column_is_not_abstract():
-    assert not inspect.isabstract(project::Column)
+def test_project_halign_is_not_abstract():
+    assert not inspect.isabstract(project_HAlign)
 
 
-def test_project::column_constructor_exists():
-    assert callable(project::Column.__init__)
+def test_project_halign_constructor_exists():
+    assert callable(project_HAlign.__init__)
 
 
-def test_project::column_constructor_args():
-    sig = inspect.signature(project::Column.__init__)
+def test_project_halign_constructor_args():
+    sig = inspect.signature(project_HAlign.__init__)
+    params = list(sig.parameters.keys())
+    assert "justification" in params, "Missing parameter 'justification'"
+
+def test_project_halign_has_justification():
+    assert hasattr(project_HAlign, "justification")
+    descriptor = None
+    for klass in project_HAlign.__mro__:
+        if "justification" in klass.__dict__:
+            descriptor = klass.__dict__["justification"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_scale_is_not_abstract():
+    assert not inspect.isabstract(project_Scale)
+
+
+def test_project_scale_constructor_exists():
+    assert callable(project_Scale.__init__)
+
+
+def test_project_scale_constructor_args():
+    sig = inspect.signature(project_Scale.__init__)
+    params = list(sig.parameters.keys())
+    assert "scale" in params, "Missing parameter 'scale'"
+
+def test_project_scale_has_scale():
+    assert hasattr(project_Scale, "scale")
+    descriptor = None
+    for klass in project_Scale.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_cellcolor_is_not_abstract():
+    assert not inspect.isabstract(project_CellColor)
+
+
+def test_project_cellcolor_constructor_exists():
+    assert callable(project_CellColor.__init__)
+
+
+def test_project_cellcolor_constructor_args():
+    sig = inspect.signature(project_CellColor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_column_is_not_abstract():
+    assert not inspect.isabstract(project_Column)
+
+
+def test_project_column_constructor_exists():
+    assert callable(project_Column.__init__)
+
+
+def test_project_column_constructor_args():
+    sig = inspect.signature(project_Column.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_project::column_has_id():
-    assert hasattr(project::Column, "id")
+def test_project_column_has_id():
+    assert hasattr(project_Column, "id")
     descriptor = None
-    for klass in project::Column.__mro__:
+    for klass in project_Column.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -3006,23 +3006,23 @@ def test_project::column_has_id():
 
 
 
-def test_project::accountshare_is_not_abstract():
-    assert not inspect.isabstract(project::AccountShare)
+def test_project_accountshare_is_not_abstract():
+    assert not inspect.isabstract(project_AccountShare)
 
 
-def test_project::accountshare_constructor_exists():
-    assert callable(project::AccountShare.__init__)
+def test_project_accountshare_constructor_exists():
+    assert callable(project_AccountShare.__init__)
 
 
-def test_project::accountshare_constructor_args():
-    sig = inspect.signature(project::AccountShare.__init__)
+def test_project_accountshare_constructor_args():
+    sig = inspect.signature(project_AccountShare.__init__)
     params = list(sig.parameters.keys())
     assert "share" in params, "Missing parameter 'share'"
 
-def test_project::accountshare_has_share():
-    assert hasattr(project::AccountShare, "share")
+def test_project_accountshare_has_share():
+    assert hasattr(project_AccountShare, "share")
     descriptor = None
-    for klass in project::AccountShare.__mro__:
+    for klass in project_AccountShare.__mro__:
         if "share" in klass.__dict__:
             descriptor = klass.__dict__["share"]
             break
@@ -3044,44 +3044,44 @@ def test_statusstatussheetattribute_constructor_args():
 
 
 
-def test_project::details_is_not_abstract():
-    assert not inspect.isabstract(project::Details)
+def test_project_summary_is_not_abstract():
+    assert not inspect.isabstract(project_Summary)
 
 
-def test_project::details_constructor_exists():
-    assert callable(project::Details.__init__)
+def test_project_summary_constructor_exists():
+    assert callable(project_Summary.__init__)
 
 
-def test_project::details_constructor_args():
-    sig = inspect.signature(project::Details.__init__)
+def test_project_summary_constructor_args():
+    sig = inspect.signature(project_Summary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::summary_is_not_abstract():
-    assert not inspect.isabstract(project::Summary)
+def test_project_details_is_not_abstract():
+    assert not inspect.isabstract(project_Details)
 
 
-def test_project::summary_constructor_exists():
-    assert callable(project::Summary.__init__)
+def test_project_details_constructor_exists():
+    assert callable(project_Details.__init__)
 
 
-def test_project::summary_constructor_args():
-    sig = inspect.signature(project::Summary.__init__)
+def test_project_details_constructor_args():
+    sig = inspect.signature(project_Details.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::author_is_not_abstract():
-    assert not inspect.isabstract(project::Author)
+def test_project_author_is_not_abstract():
+    assert not inspect.isabstract(project_Author)
 
 
-def test_project::author_constructor_exists():
-    assert callable(project::Author.__init__)
+def test_project_author_constructor_exists():
+    assert callable(project_Author.__init__)
 
 
-def test_project::author_constructor_args():
-    sig = inspect.signature(project::Author.__init__)
+def test_project_author_constructor_args():
+    sig = inspect.signature(project_Author.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3100,85 +3100,37 @@ def test_allocateresourceattribute_constructor_args():
 
 
 
-def test_project::select_is_not_abstract():
-    assert not inspect.isabstract(project::Select)
+def test_project_shiftsallocate_is_not_abstract():
+    assert not inspect.isabstract(project_ShiftsAllocate)
 
 
-def test_project::select_constructor_exists():
-    assert callable(project::Select.__init__)
+def test_project_shiftsallocate_constructor_exists():
+    assert callable(project_ShiftsAllocate.__init__)
 
 
-def test_project::select_constructor_args():
-    sig = inspect.signature(project::Select.__init__)
-    params = list(sig.parameters.keys())
-    assert "argument" in params, "Missing parameter 'argument'"
-
-def test_project::select_has_argument():
-    assert hasattr(project::Select, "argument")
-    descriptor = None
-    for klass in project::Select.__mro__:
-        if "argument" in klass.__dict__:
-            descriptor = klass.__dict__["argument"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::shiftsallocate_is_not_abstract():
-    assert not inspect.isabstract(project::ShiftsAllocate)
-
-
-def test_project::shiftsallocate_constructor_exists():
-    assert callable(project::ShiftsAllocate.__init__)
-
-
-def test_project::shiftsallocate_constructor_args():
-    sig = inspect.signature(project::ShiftsAllocate.__init__)
+def test_project_shiftsallocate_constructor_args():
+    sig = inspect.signature(project_ShiftsAllocate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::persistent_is_not_abstract():
-    assert not inspect.isabstract(project::Persistent)
+def test_project_mandatory_is_not_abstract():
+    assert not inspect.isabstract(project_Mandatory)
 
 
-def test_project::persistent_constructor_exists():
-    assert callable(project::Persistent.__init__)
+def test_project_mandatory_constructor_exists():
+    assert callable(project_Mandatory.__init__)
 
 
-def test_project::persistent_constructor_args():
-    sig = inspect.signature(project::Persistent.__init__)
-    params = list(sig.parameters.keys())
-    assert "persistent" in params, "Missing parameter 'persistent'"
-
-def test_project::persistent_has_persistent():
-    assert hasattr(project::Persistent, "persistent")
-    descriptor = None
-    for klass in project::Persistent.__mro__:
-        if "persistent" in klass.__dict__:
-            descriptor = klass.__dict__["persistent"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::mandatory_is_not_abstract():
-    assert not inspect.isabstract(project::Mandatory)
-
-
-def test_project::mandatory_constructor_exists():
-    assert callable(project::Mandatory.__init__)
-
-
-def test_project::mandatory_constructor_args():
-    sig = inspect.signature(project::Mandatory.__init__)
+def test_project_mandatory_constructor_args():
+    sig = inspect.signature(project_Mandatory.__init__)
     params = list(sig.parameters.keys())
     assert "mandatory" in params, "Missing parameter 'mandatory'"
 
-def test_project::mandatory_has_mandatory():
-    assert hasattr(project::Mandatory, "mandatory")
+def test_project_mandatory_has_mandatory():
+    assert hasattr(project_Mandatory, "mandatory")
     descriptor = None
-    for klass in project::Mandatory.__mro__:
+    for klass in project_Mandatory.__mro__:
         if "mandatory" in klass.__dict__:
             descriptor = klass.__dict__["mandatory"]
             break
@@ -3186,37 +3138,85 @@ def test_project::mandatory_has_mandatory():
 
 
 
-def test_project::alternative_is_not_abstract():
-    assert not inspect.isabstract(project::Alternative)
+def test_project_select_is_not_abstract():
+    assert not inspect.isabstract(project_Select)
 
 
-def test_project::alternative_constructor_exists():
-    assert callable(project::Alternative.__init__)
+def test_project_select_constructor_exists():
+    assert callable(project_Select.__init__)
 
 
-def test_project::alternative_constructor_args():
-    sig = inspect.signature(project::Alternative.__init__)
+def test_project_select_constructor_args():
+    sig = inspect.signature(project_Select.__init__)
+    params = list(sig.parameters.keys())
+    assert "argument" in params, "Missing parameter 'argument'"
+
+def test_project_select_has_argument():
+    assert hasattr(project_Select, "argument")
+    descriptor = None
+    for klass in project_Select.__mro__:
+        if "argument" in klass.__dict__:
+            descriptor = klass.__dict__["argument"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_persistent_is_not_abstract():
+    assert not inspect.isabstract(project_Persistent)
+
+
+def test_project_persistent_constructor_exists():
+    assert callable(project_Persistent.__init__)
+
+
+def test_project_persistent_constructor_args():
+    sig = inspect.signature(project_Persistent.__init__)
+    params = list(sig.parameters.keys())
+    assert "persistent" in params, "Missing parameter 'persistent'"
+
+def test_project_persistent_has_persistent():
+    assert hasattr(project_Persistent, "persistent")
+    descriptor = None
+    for klass in project_Persistent.__mro__:
+        if "persistent" in klass.__dict__:
+            descriptor = klass.__dict__["persistent"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_alternative_is_not_abstract():
+    assert not inspect.isabstract(project_Alternative)
+
+
+def test_project_alternative_constructor_exists():
+    assert callable(project_Alternative.__init__)
+
+
+def test_project_alternative_constructor_args():
+    sig = inspect.signature(project_Alternative.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::alert_is_not_abstract():
-    assert not inspect.isabstract(project::Alert)
+def test_project_alert_is_not_abstract():
+    assert not inspect.isabstract(project_Alert)
 
 
-def test_project::alert_constructor_exists():
-    assert callable(project::Alert.__init__)
+def test_project_alert_constructor_exists():
+    assert callable(project_Alert.__init__)
 
 
-def test_project::alert_constructor_args():
-    sig = inspect.signature(project::Alert.__init__)
+def test_project_alert_constructor_args():
+    sig = inspect.signature(project_Alert.__init__)
     params = list(sig.parameters.keys())
     assert "level" in params, "Missing parameter 'level'"
 
-def test_project::alert_has_level():
-    assert hasattr(project::Alert, "level")
+def test_project_alert_has_level():
+    assert hasattr(project_Alert, "level")
     descriptor = None
-    for klass in project::Alert.__mro__:
+    for klass in project_Alert.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
@@ -3224,81 +3224,81 @@ def test_project::alert_has_level():
 
 
 
-def test_project::nikureportattribute_is_not_abstract():
-    assert not inspect.isabstract(project::NikuReportAttribute)
+def test_project_nikureportattribute_is_not_abstract():
+    assert not inspect.isabstract(project_NikuReportAttribute)
 
 
-def test_project::nikureportattribute_constructor_exists():
-    assert callable(project::NikuReportAttribute.__init__)
+def test_project_nikureportattribute_constructor_exists():
+    assert callable(project_NikuReportAttribute.__init__)
 
 
-def test_project::nikureportattribute_constructor_args():
-    sig = inspect.signature(project::NikuReportAttribute.__init__)
+def test_project_nikureportattribute_constructor_args():
+    sig = inspect.signature(project_NikuReportAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::interval4_is_not_abstract():
-    assert not inspect.isabstract(project::Interval4)
+def test_project_interval4_is_not_abstract():
+    assert not inspect.isabstract(project_Interval4)
 
 
-def test_project::interval4_constructor_exists():
-    assert callable(project::Interval4.__init__)
+def test_project_interval4_constructor_exists():
+    assert callable(project_Interval4.__init__)
 
 
-def test_project::interval4_constructor_args():
-    sig = inspect.signature(project::Interval4.__init__)
+def test_project_interval4_constructor_args():
+    sig = inspect.signature(project_Interval4.__init__)
     params = list(sig.parameters.keys())
-    assert "end" in params, "Missing parameter 'end'"
     assert "start" in params, "Missing parameter 'start'"
+    assert "end" in params, "Missing parameter 'end'"
 
-def test_project::interval4_has_end():
-    assert hasattr(project::Interval4, "end")
+def test_project_interval4_has_start():
+    assert hasattr(project_Interval4, "start")
     descriptor = None
-    for klass in project::Interval4.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::interval4_has_start():
-    assert hasattr(project::Interval4, "start")
-    descriptor = None
-    for klass in project::Interval4.__mro__:
+    for klass in project_Interval4.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
     assert isinstance(descriptor, property)
 
+def test_project_interval4_has_end():
+    assert hasattr(project_Interval4, "end")
+    descriptor = None
+    for klass in project_Interval4.__mro__:
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_project::booking_is_not_abstract():
-    assert not inspect.isabstract(project::Booking)
+
+def test_project_booking_is_not_abstract():
+    assert not inspect.isabstract(project_Booking)
 
 
-def test_project::booking_constructor_exists():
-    assert callable(project::Booking.__init__)
+def test_project_booking_constructor_exists():
+    assert callable(project_Booking.__init__)
 
 
-def test_project::booking_constructor_args():
-    sig = inspect.signature(project::Booking.__init__)
+def test_project_booking_constructor_args():
+    sig = inspect.signature(project_Booking.__init__)
     params = list(sig.parameters.keys())
     assert "sloppy" in params, "Missing parameter 'sloppy'"
     assert "overtime" in params, "Missing parameter 'overtime'"
 
-def test_project::booking_has_sloppy():
-    assert hasattr(project::Booking, "sloppy")
+def test_project_booking_has_sloppy():
+    assert hasattr(project_Booking, "sloppy")
     descriptor = None
-    for klass in project::Booking.__mro__:
+    for klass in project_Booking.__mro__:
         if "sloppy" in klass.__dict__:
             descriptor = klass.__dict__["sloppy"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::booking_has_overtime():
-    assert hasattr(project::Booking, "overtime")
+def test_project_booking_has_overtime():
+    assert hasattr(project_Booking, "overtime")
     descriptor = None
-    for klass in project::Booking.__mro__:
+    for klass in project_Booking.__mro__:
         if "overtime" in klass.__dict__:
             descriptor = klass.__dict__["overtime"]
             break
@@ -3306,44 +3306,44 @@ def test_project::booking_has_overtime():
 
 
 
-def test_project::allocateresourceattribute_is_not_abstract():
-    assert not inspect.isabstract(project::AllocateResourceAttribute)
+def test_project_allocateresourceattribute_is_not_abstract():
+    assert not inspect.isabstract(project_AllocateResourceAttribute)
 
 
-def test_project::allocateresourceattribute_constructor_exists():
-    assert callable(project::AllocateResourceAttribute.__init__)
+def test_project_allocateresourceattribute_constructor_exists():
+    assert callable(project_AllocateResourceAttribute.__init__)
 
 
-def test_project::allocateresourceattribute_constructor_args():
-    sig = inspect.signature(project::AllocateResourceAttribute.__init__)
+def test_project_allocateresourceattribute_constructor_args():
+    sig = inspect.signature(project_AllocateResourceAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::allocateresource_is_not_abstract():
-    assert not inspect.isabstract(project::AllocateResource)
+def test_project_allocateresource_is_not_abstract():
+    assert not inspect.isabstract(project_AllocateResource)
 
 
-def test_project::allocateresource_constructor_exists():
-    assert callable(project::AllocateResource.__init__)
+def test_project_allocateresource_constructor_exists():
+    assert callable(project_AllocateResource.__init__)
 
 
-def test_project::allocateresource_constructor_args():
-    sig = inspect.signature(project::AllocateResource.__init__)
+def test_project_allocateresource_constructor_args():
+    sig = inspect.signature(project_AllocateResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::newtaskattribute_is_not_abstract():
-    assert not inspect.isabstract(project::NewTaskAttribute)
+def test_project_newtaskattribute_is_not_abstract():
+    assert not inspect.isabstract(project_NewTaskAttribute)
 
 
-def test_project::newtaskattribute_constructor_exists():
-    assert callable(project::NewTaskAttribute.__init__)
+def test_project_newtaskattribute_constructor_exists():
+    assert callable(project_NewTaskAttribute.__init__)
 
 
-def test_project::newtaskattribute_constructor_args():
-    sig = inspect.signature(project::NewTaskAttribute.__init__)
+def test_project_newtaskattribute_constructor_args():
+    sig = inspect.signature(project_NewTaskAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3362,61 +3362,61 @@ def test_timesheetattribute_constructor_args():
 
 
 
-def test_project::tasktimesheet_is_not_abstract():
-    assert not inspect.isabstract(project::TaskTimesheet)
+def test_project_shifttimesheet_is_not_abstract():
+    assert not inspect.isabstract(project_ShiftTimesheet)
 
 
-def test_project::tasktimesheet_constructor_exists():
-    assert callable(project::TaskTimesheet.__init__)
+def test_project_shifttimesheet_constructor_exists():
+    assert callable(project_ShiftTimesheet.__init__)
 
 
-def test_project::tasktimesheet_constructor_args():
-    sig = inspect.signature(project::TaskTimesheet.__init__)
+def test_project_shifttimesheet_constructor_args():
+    sig = inspect.signature(project_ShiftTimesheet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::shifttimesheet_is_not_abstract():
-    assert not inspect.isabstract(project::ShiftTimesheet)
+def test_project_tasktimesheet_is_not_abstract():
+    assert not inspect.isabstract(project_TaskTimesheet)
 
 
-def test_project::shifttimesheet_constructor_exists():
-    assert callable(project::ShiftTimesheet.__init__)
+def test_project_tasktimesheet_constructor_exists():
+    assert callable(project_TaskTimesheet.__init__)
 
 
-def test_project::shifttimesheet_constructor_args():
-    sig = inspect.signature(project::ShiftTimesheet.__init__)
+def test_project_tasktimesheet_constructor_args():
+    sig = inspect.signature(project_TaskTimesheet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::statustimesheet_is_not_abstract():
-    assert not inspect.isabstract(project::StatusTimesheet)
+def test_project_statustimesheet_is_not_abstract():
+    assert not inspect.isabstract(project_StatusTimesheet)
 
 
-def test_project::statustimesheet_constructor_exists():
-    assert callable(project::StatusTimesheet.__init__)
+def test_project_statustimesheet_constructor_exists():
+    assert callable(project_StatusTimesheet.__init__)
 
 
-def test_project::statustimesheet_constructor_args():
-    sig = inspect.signature(project::StatusTimesheet.__init__)
+def test_project_statustimesheet_constructor_args():
+    sig = inspect.signature(project_StatusTimesheet.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
     assert "level" in params, "Missing parameter 'level'"
 
-def test_project::statustimesheet_has_text():
-    assert hasattr(project::StatusTimesheet, "text")
+def test_project_statustimesheet_has_text():
+    assert hasattr(project_StatusTimesheet, "text")
     descriptor = None
-    for klass in project::StatusTimesheet.__mro__:
+    for klass in project_StatusTimesheet.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::statustimesheet_has_level():
-    assert hasattr(project::StatusTimesheet, "level")
+def test_project_statustimesheet_has_level():
+    assert hasattr(project_StatusTimesheet, "level")
     descriptor = None
-    for klass in project::StatusTimesheet.__mro__:
+    for klass in project_StatusTimesheet.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
@@ -3424,33 +3424,33 @@ def test_project::statustimesheet_has_level():
 
 
 
-def test_project::newtask_is_not_abstract():
-    assert not inspect.isabstract(project::NewTask)
+def test_project_newtask_is_not_abstract():
+    assert not inspect.isabstract(project_NewTask)
 
 
-def test_project::newtask_constructor_exists():
-    assert callable(project::NewTask.__init__)
+def test_project_newtask_constructor_exists():
+    assert callable(project_NewTask.__init__)
 
 
-def test_project::newtask_constructor_args():
-    sig = inspect.signature(project::NewTask.__init__)
+def test_project_newtask_constructor_args():
+    sig = inspect.signature(project_NewTask.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_project::newtask_has_text():
-    assert hasattr(project::NewTask, "text")
+def test_project_newtask_has_text():
+    assert hasattr(project_NewTask, "text")
     descriptor = None
-    for klass in project::NewTask.__mro__:
+    for klass in project_NewTask.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::newtask_has_id():
-    assert hasattr(project::NewTask, "id")
+def test_project_newtask_has_id():
+    assert hasattr(project_NewTask, "id")
     descriptor = None
-    for klass in project::NewTask.__mro__:
+    for klass in project_NewTask.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -3458,44 +3458,44 @@ def test_project::newtask_has_id():
 
 
 
-def test_project::navigatorattribute_is_not_abstract():
-    assert not inspect.isabstract(project::NavigatorAttribute)
+def test_project_navigatorattribute_is_not_abstract():
+    assert not inspect.isabstract(project_NavigatorAttribute)
 
 
-def test_project::navigatorattribute_constructor_exists():
-    assert callable(project::NavigatorAttribute.__init__)
+def test_project_navigatorattribute_constructor_exists():
+    assert callable(project_NavigatorAttribute.__init__)
 
 
-def test_project::navigatorattribute_constructor_args():
-    sig = inspect.signature(project::NavigatorAttribute.__init__)
+def test_project_navigatorattribute_constructor_args():
+    sig = inspect.signature(project_NavigatorAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::reportattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ReportAttribute)
+def test_project_reportattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ReportAttribute)
 
 
-def test_project::reportattribute_constructor_exists():
-    assert callable(project::ReportAttribute.__init__)
+def test_project_reportattribute_constructor_exists():
+    assert callable(project_ReportAttribute.__init__)
 
 
-def test_project::reportattribute_constructor_args():
-    sig = inspect.signature(project::ReportAttribute.__init__)
+def test_project_reportattribute_constructor_args():
+    sig = inspect.signature(project_ReportAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::resourceattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ResourceAttribute)
+def test_project_resourceattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ResourceAttribute)
 
 
-def test_project::resourceattribute_constructor_exists():
-    assert callable(project::ResourceAttribute.__init__)
+def test_project_resourceattribute_constructor_exists():
+    assert callable(project_ResourceAttribute.__init__)
 
 
-def test_project::resourceattribute_constructor_args():
-    sig = inspect.signature(project::ResourceAttribute.__init__)
+def test_project_resourceattribute_constructor_args():
+    sig = inspect.signature(project_ResourceAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3514,147 +3514,23 @@ def test_resourceattribute_constructor_args():
 
 
 
-def test_project::efficiency_is_not_abstract():
-    assert not inspect.isabstract(project::Efficiency)
+def test_project_email_is_not_abstract():
+    assert not inspect.isabstract(project_Email)
 
 
-def test_project::efficiency_constructor_exists():
-    assert callable(project::Efficiency.__init__)
+def test_project_email_constructor_exists():
+    assert callable(project_Email.__init__)
 
 
-def test_project::efficiency_constructor_args():
-    sig = inspect.signature(project::Efficiency.__init__)
-    params = list(sig.parameters.keys())
-    assert "efficiency" in params, "Missing parameter 'efficiency'"
-
-def test_project::efficiency_has_efficiency():
-    assert hasattr(project::Efficiency, "efficiency")
-    descriptor = None
-    for klass in project::Efficiency.__mro__:
-        if "efficiency" in klass.__dict__:
-            descriptor = klass.__dict__["efficiency"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::purgeresource_is_not_abstract():
-    assert not inspect.isabstract(project::PurgeResource)
-
-
-def test_project::purgeresource_constructor_exists():
-    assert callable(project::PurgeResource.__init__)
-
-
-def test_project::purgeresource_constructor_args():
-    sig = inspect.signature(project::PurgeResource.__init__)
-    params = list(sig.parameters.keys())
-    assert "listAttribute" in params, "Missing parameter 'listAttribute'"
-
-def test_project::purgeresource_has_listAttribute():
-    assert hasattr(project::PurgeResource, "listAttribute")
-    descriptor = None
-    for klass in project::PurgeResource.__mro__:
-        if "listAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["listAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::workinghours_is_not_abstract():
-    assert not inspect.isabstract(project::WorkingHours)
-
-
-def test_project::workinghours_constructor_exists():
-    assert callable(project::WorkingHours.__init__)
-
-
-def test_project::workinghours_constructor_args():
-    sig = inspect.signature(project::WorkingHours.__init__)
-    params = list(sig.parameters.keys())
-    assert "off" in params, "Missing parameter 'off'"
-
-def test_project::workinghours_has_off():
-    assert hasattr(project::WorkingHours, "off")
-    descriptor = None
-    for klass in project::WorkingHours.__mro__:
-        if "off" in klass.__dict__:
-            descriptor = klass.__dict__["off"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::shiftsresource_is_not_abstract():
-    assert not inspect.isabstract(project::ShiftsResource)
-
-
-def test_project::shiftsresource_constructor_exists():
-    assert callable(project::ShiftsResource.__init__)
-
-
-def test_project::shiftsresource_constructor_args():
-    sig = inspect.signature(project::ShiftsResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::extendedresourceattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ExtendedResourceAttribute)
-
-
-def test_project::extendedresourceattribute_constructor_exists():
-    assert callable(project::ExtendedResourceAttribute.__init__)
-
-
-def test_project::extendedresourceattribute_constructor_args():
-    sig = inspect.signature(project::ExtendedResourceAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_project::extendedresourceattribute_has_value():
-    assert hasattr(project::ExtendedResourceAttribute, "value")
-    descriptor = None
-    for klass in project::ExtendedResourceAttribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::bookingresource_is_not_abstract():
-    assert not inspect.isabstract(project::BookingResource)
-
-
-def test_project::bookingresource_constructor_exists():
-    assert callable(project::BookingResource.__init__)
-
-
-def test_project::bookingresource_constructor_args():
-    sig = inspect.signature(project::BookingResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::email_is_not_abstract():
-    assert not inspect.isabstract(project::Email)
-
-
-def test_project::email_constructor_exists():
-    assert callable(project::Email.__init__)
-
-
-def test_project::email_constructor_args():
-    sig = inspect.signature(project::Email.__init__)
+def test_project_email_constructor_args():
+    sig = inspect.signature(project_Email.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_project::email_has_address():
-    assert hasattr(project::Email, "address")
+def test_project_email_has_address():
+    assert hasattr(project_Email, "address")
     descriptor = None
-    for klass in project::Email.__mro__:
+    for klass in project_Email.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -3662,44 +3538,168 @@ def test_project::email_has_address():
 
 
 
-def test_project::managers_is_not_abstract():
-    assert not inspect.isabstract(project::Managers)
+def test_project_shiftsresource_is_not_abstract():
+    assert not inspect.isabstract(project_ShiftsResource)
 
 
-def test_project::managers_constructor_exists():
-    assert callable(project::Managers.__init__)
+def test_project_shiftsresource_constructor_exists():
+    assert callable(project_ShiftsResource.__init__)
 
 
-def test_project::managers_constructor_args():
-    sig = inspect.signature(project::Managers.__init__)
+def test_project_shiftsresource_constructor_args():
+    sig = inspect.signature(project_ShiftsResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::exportattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ExportAttribute)
+def test_project_workinghours_is_not_abstract():
+    assert not inspect.isabstract(project_WorkingHours)
 
 
-def test_project::exportattribute_constructor_exists():
-    assert callable(project::ExportAttribute.__init__)
+def test_project_workinghours_constructor_exists():
+    assert callable(project_WorkingHours.__init__)
 
 
-def test_project::exportattribute_constructor_args():
-    sig = inspect.signature(project::ExportAttribute.__init__)
+def test_project_workinghours_constructor_args():
+    sig = inspect.signature(project_WorkingHours.__init__)
+    params = list(sig.parameters.keys())
+    assert "off" in params, "Missing parameter 'off'"
+
+def test_project_workinghours_has_off():
+    assert hasattr(project_WorkingHours, "off")
+    descriptor = None
+    for klass in project_WorkingHours.__mro__:
+        if "off" in klass.__dict__:
+            descriptor = klass.__dict__["off"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_extendedresourceattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ExtendedResourceAttribute)
+
+
+def test_project_extendedresourceattribute_constructor_exists():
+    assert callable(project_ExtendedResourceAttribute.__init__)
+
+
+def test_project_extendedresourceattribute_constructor_args():
+    sig = inspect.signature(project_ExtendedResourceAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_project_extendedresourceattribute_has_value():
+    assert hasattr(project_ExtendedResourceAttribute, "value")
+    descriptor = None
+    for klass in project_ExtendedResourceAttribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_purgeresource_is_not_abstract():
+    assert not inspect.isabstract(project_PurgeResource)
+
+
+def test_project_purgeresource_constructor_exists():
+    assert callable(project_PurgeResource.__init__)
+
+
+def test_project_purgeresource_constructor_args():
+    sig = inspect.signature(project_PurgeResource.__init__)
+    params = list(sig.parameters.keys())
+    assert "listAttribute" in params, "Missing parameter 'listAttribute'"
+
+def test_project_purgeresource_has_listAttribute():
+    assert hasattr(project_PurgeResource, "listAttribute")
+    descriptor = None
+    for klass in project_PurgeResource.__mro__:
+        if "listAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["listAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_managers_is_not_abstract():
+    assert not inspect.isabstract(project_Managers)
+
+
+def test_project_managers_constructor_exists():
+    assert callable(project_Managers.__init__)
+
+
+def test_project_managers_constructor_args():
+    sig = inspect.signature(project_Managers.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::icalreportattribute_is_not_abstract():
-    assert not inspect.isabstract(project::IcalReportAttribute)
+def test_project_efficiency_is_not_abstract():
+    assert not inspect.isabstract(project_Efficiency)
 
 
-def test_project::icalreportattribute_constructor_exists():
-    assert callable(project::IcalReportAttribute.__init__)
+def test_project_efficiency_constructor_exists():
+    assert callable(project_Efficiency.__init__)
 
 
-def test_project::icalreportattribute_constructor_args():
-    sig = inspect.signature(project::IcalReportAttribute.__init__)
+def test_project_efficiency_constructor_args():
+    sig = inspect.signature(project_Efficiency.__init__)
+    params = list(sig.parameters.keys())
+    assert "efficiency" in params, "Missing parameter 'efficiency'"
+
+def test_project_efficiency_has_efficiency():
+    assert hasattr(project_Efficiency, "efficiency")
+    descriptor = None
+    for klass in project_Efficiency.__mro__:
+        if "efficiency" in klass.__dict__:
+            descriptor = klass.__dict__["efficiency"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_bookingresource_is_not_abstract():
+    assert not inspect.isabstract(project_BookingResource)
+
+
+def test_project_bookingresource_constructor_exists():
+    assert callable(project_BookingResource.__init__)
+
+
+def test_project_bookingresource_constructor_args():
+    sig = inspect.signature(project_BookingResource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_exportattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ExportAttribute)
+
+
+def test_project_exportattribute_constructor_exists():
+    assert callable(project_ExportAttribute.__init__)
+
+
+def test_project_exportattribute_constructor_args():
+    sig = inspect.signature(project_ExportAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_icalreportattribute_is_not_abstract():
+    assert not inspect.isabstract(project_IcalReportAttribute)
+
+
+def test_project_icalreportattribute_constructor_exists():
+    assert callable(project_IcalReportAttribute.__init__)
+
+
+def test_project_icalreportattribute_constructor_args():
+    sig = inspect.signature(project_IcalReportAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3718,373 +3718,37 @@ def test_reportattribute_constructor_args():
 
 
 
-def test_project::rolluptask_is_not_abstract():
-    assert not inspect.isabstract(project::RollupTask)
+def test_project_hidetask_is_not_abstract():
+    assert not inspect.isabstract(project_HideTask)
 
 
-def test_project::rolluptask_constructor_exists():
-    assert callable(project::RollupTask.__init__)
+def test_project_hidetask_constructor_exists():
+    assert callable(project_HideTask.__init__)
 
 
-def test_project::rolluptask_constructor_args():
-    sig = inspect.signature(project::RollupTask.__init__)
+def test_project_hidetask_constructor_args():
+    sig = inspect.signature(project_HideTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::rollupresource_is_not_abstract():
-    assert not inspect.isabstract(project::RollupResource)
+def test_project_formats_is_not_abstract():
+    assert not inspect.isabstract(project_Formats)
 
 
-def test_project::rollupresource_constructor_exists():
-    assert callable(project::RollupResource.__init__)
+def test_project_formats_constructor_exists():
+    assert callable(project_Formats.__init__)
 
 
-def test_project::rollupresource_constructor_args():
-    sig = inspect.signature(project::RollupResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::purgereport_is_not_abstract():
-    assert not inspect.isabstract(project::PurgeReport)
-
-
-def test_project::purgereport_constructor_exists():
-    assert callable(project::PurgeReport.__init__)
-
-
-def test_project::purgereport_constructor_args():
-    sig = inspect.signature(project::PurgeReport.__init__)
-    params = list(sig.parameters.keys())
-    assert "listAttribute" in params, "Missing parameter 'listAttribute'"
-
-def test_project::purgereport_has_listAttribute():
-    assert hasattr(project::PurgeReport, "listAttribute")
-    descriptor = None
-    for klass in project::PurgeReport.__mro__:
-        if "listAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["listAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::selfcontained_is_not_abstract():
-    assert not inspect.isabstract(project::SelfContained)
-
-
-def test_project::selfcontained_constructor_exists():
-    assert callable(project::SelfContained.__init__)
-
-
-def test_project::selfcontained_constructor_args():
-    sig = inspect.signature(project::SelfContained.__init__)
-    params = list(sig.parameters.keys())
-    assert "selfcontained" in params, "Missing parameter 'selfcontained'"
-
-def test_project::selfcontained_has_selfcontained():
-    assert hasattr(project::SelfContained, "selfcontained")
-    descriptor = None
-    for klass in project::SelfContained.__mro__:
-        if "selfcontained" in klass.__dict__:
-            descriptor = klass.__dict__["selfcontained"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::scenarios_is_not_abstract():
-    assert not inspect.isabstract(project::Scenarios)
-
-
-def test_project::scenarios_constructor_exists():
-    assert callable(project::Scenarios.__init__)
-
-
-def test_project::scenarios_constructor_args():
-    sig = inspect.signature(project::Scenarios.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::right_is_not_abstract():
-    assert not inspect.isabstract(project::Right)
-
-
-def test_project::right_constructor_exists():
-    assert callable(project::Right.__init__)
-
-
-def test_project::right_constructor_args():
-    sig = inspect.signature(project::Right.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::journalmode_is_not_abstract():
-    assert not inspect.isabstract(project::JournalMode)
-
-
-def test_project::journalmode_constructor_exists():
-    assert callable(project::JournalMode.__init__)
-
-
-def test_project::journalmode_constructor_args():
-    sig = inspect.signature(project::JournalMode.__init__)
-    params = list(sig.parameters.keys())
-    assert "mode" in params, "Missing parameter 'mode'"
-
-def test_project::journalmode_has_mode():
-    assert hasattr(project::JournalMode, "mode")
-    descriptor = None
-    for klass in project::JournalMode.__mro__:
-        if "mode" in klass.__dict__:
-            descriptor = klass.__dict__["mode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::center_is_not_abstract():
-    assert not inspect.isabstract(project::Center)
-
-
-def test_project::center_constructor_exists():
-    assert callable(project::Center.__init__)
-
-
-def test_project::center_constructor_args():
-    sig = inspect.signature(project::Center.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::sortresources_is_not_abstract():
-    assert not inspect.isabstract(project::SortResources)
-
-
-def test_project::sortresources_constructor_exists():
-    assert callable(project::SortResources.__init__)
-
-
-def test_project::sortresources_constructor_args():
-    sig = inspect.signature(project::SortResources.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::hideaccount_is_not_abstract():
-    assert not inspect.isabstract(project::HideAccount)
-
-
-def test_project::hideaccount_constructor_exists():
-    assert callable(project::HideAccount.__init__)
-
-
-def test_project::hideaccount_constructor_args():
-    sig = inspect.signature(project::HideAccount.__init__)
-    params = list(sig.parameters.keys())
-    assert "expression" in params, "Missing parameter 'expression'"
-
-def test_project::hideaccount_has_expression():
-    assert hasattr(project::HideAccount, "expression")
-    descriptor = None
-    for klass in project::HideAccount.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::currencyformat_is_not_abstract():
-    assert not inspect.isabstract(project::CurrencyFormat)
-
-
-def test_project::currencyformat_constructor_exists():
-    assert callable(project::CurrencyFormat.__init__)
-
-
-def test_project::currencyformat_constructor_args():
-    sig = inspect.signature(project::CurrencyFormat.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::loadunit_is_not_abstract():
-    assert not inspect.isabstract(project::LoadUnit)
-
-
-def test_project::loadunit_constructor_exists():
-    assert callable(project::LoadUnit.__init__)
-
-
-def test_project::loadunit_constructor_args():
-    sig = inspect.signature(project::LoadUnit.__init__)
-    params = list(sig.parameters.keys())
-    assert "unit" in params, "Missing parameter 'unit'"
-
-def test_project::loadunit_has_unit():
-    assert hasattr(project::LoadUnit, "unit")
-    descriptor = None
-    for klass in project::LoadUnit.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::epilog_is_not_abstract():
-    assert not inspect.isabstract(project::Epilog)
-
-
-def test_project::epilog_constructor_exists():
-    assert callable(project::Epilog.__init__)
-
-
-def test_project::epilog_constructor_args():
-    sig = inspect.signature(project::Epilog.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::left_is_not_abstract():
-    assert not inspect.isabstract(project::Left)
-
-
-def test_project::left_constructor_exists():
-    assert callable(project::Left.__init__)
-
-
-def test_project::left_constructor_args():
-    sig = inspect.signature(project::Left.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::hidejournalentry_is_not_abstract():
-    assert not inspect.isabstract(project::HideJournalEntry)
-
-
-def test_project::hidejournalentry_constructor_exists():
-    assert callable(project::HideJournalEntry.__init__)
-
-
-def test_project::hidejournalentry_constructor_args():
-    sig = inspect.signature(project::HideJournalEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "expression" in params, "Missing parameter 'expression'"
-
-def test_project::hidejournalentry_has_expression():
-    assert hasattr(project::HideJournalEntry, "expression")
-    descriptor = None
-    for klass in project::HideJournalEntry.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::resourceroot_is_not_abstract():
-    assert not inspect.isabstract(project::ResourceRoot)
-
-
-def test_project::resourceroot_constructor_exists():
-    assert callable(project::ResourceRoot.__init__)
-
-
-def test_project::resourceroot_constructor_args():
-    sig = inspect.signature(project::ResourceRoot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::timezone_is_not_abstract():
-    assert not inspect.isabstract(project::Timezone)
-
-
-def test_project::timezone_constructor_exists():
-    assert callable(project::Timezone.__init__)
-
-
-def test_project::timezone_constructor_args():
-    sig = inspect.signature(project::Timezone.__init__)
-    params = list(sig.parameters.keys())
-    assert "timezone" in params, "Missing parameter 'timezone'"
-
-def test_project::timezone_has_timezone():
-    assert hasattr(project::Timezone, "timezone")
-    descriptor = None
-    for klass in project::Timezone.__mro__:
-        if "timezone" in klass.__dict__:
-            descriptor = klass.__dict__["timezone"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::caption_is_not_abstract():
-    assert not inspect.isabstract(project::Caption)
-
-
-def test_project::caption_constructor_exists():
-    assert callable(project::Caption.__init__)
-
-
-def test_project::caption_constructor_args():
-    sig = inspect.signature(project::Caption.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::sortjournalentries_is_not_abstract():
-    assert not inspect.isabstract(project::SortJournalEntries)
-
-
-def test_project::sortjournalentries_constructor_exists():
-    assert callable(project::SortJournalEntries.__init__)
-
-
-def test_project::sortjournalentries_constructor_args():
-    sig = inspect.signature(project::SortJournalEntries.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::hideresource_is_not_abstract():
-    assert not inspect.isabstract(project::HideResource)
-
-
-def test_project::hideresource_constructor_exists():
-    assert callable(project::HideResource.__init__)
-
-
-def test_project::hideresource_constructor_args():
-    sig = inspect.signature(project::HideResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::formats_is_not_abstract():
-    assert not inspect.isabstract(project::Formats)
-
-
-def test_project::formats_constructor_exists():
-    assert callable(project::Formats.__init__)
-
-
-def test_project::formats_constructor_args():
-    sig = inspect.signature(project::Formats.__init__)
+def test_project_formats_constructor_args():
+    sig = inspect.signature(project_Formats.__init__)
     params = list(sig.parameters.keys())
     assert "formats" in params, "Missing parameter 'formats'"
 
-def test_project::formats_has_formats():
-    assert hasattr(project::Formats, "formats")
+def test_project_formats_has_formats():
+    assert hasattr(project_Formats, "formats")
     descriptor = None
-    for klass in project::Formats.__mro__:
+    for klass in project_Formats.__mro__:
         if "formats" in klass.__dict__:
             descriptor = klass.__dict__["formats"]
             break
@@ -4092,161 +3756,75 @@ def test_project::formats_has_formats():
 
 
 
-def test_project::journalattributes_is_not_abstract():
-    assert not inspect.isabstract(project::JournalAttributes)
+def test_project_left_is_not_abstract():
+    assert not inspect.isabstract(project_Left)
 
 
-def test_project::journalattributes_constructor_exists():
-    assert callable(project::JournalAttributes.__init__)
+def test_project_left_constructor_exists():
+    assert callable(project_Left.__init__)
 
 
-def test_project::journalattributes_constructor_args():
-    sig = inspect.signature(project::JournalAttributes.__init__)
-    params = list(sig.parameters.keys())
-    assert "propertyid" in params, "Missing parameter 'propertyid'"
-    assert "all" in params, "Missing parameter 'all'"
-    assert "none" in params, "Missing parameter 'none'"
-    assert "_property" in params, "Missing parameter '_property'"
-    assert "summary" in params, "Missing parameter 'summary'"
-    assert "details" in params, "Missing parameter 'details'"
-    assert "author" in params, "Missing parameter 'author'"
-    assert "headline" in params, "Missing parameter 'headline'"
-    assert "timesheet" in params, "Missing parameter 'timesheet'"
-    assert "date" in params, "Missing parameter 'date'"
-    assert "flags" in params, "Missing parameter 'flags'"
-
-def test_project::journalattributes_has_propertyid():
-    assert hasattr(project::JournalAttributes, "propertyid")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "propertyid" in klass.__dict__:
-            descriptor = klass.__dict__["propertyid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_all():
-    assert hasattr(project::JournalAttributes, "all")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "all" in klass.__dict__:
-            descriptor = klass.__dict__["all"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_none():
-    assert hasattr(project::JournalAttributes, "none")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "none" in klass.__dict__:
-            descriptor = klass.__dict__["none"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has__property():
-    assert hasattr(project::JournalAttributes, "_property")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "_property" in klass.__dict__:
-            descriptor = klass.__dict__["_property"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_summary():
-    assert hasattr(project::JournalAttributes, "summary")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "summary" in klass.__dict__:
-            descriptor = klass.__dict__["summary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_details():
-    assert hasattr(project::JournalAttributes, "details")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "details" in klass.__dict__:
-            descriptor = klass.__dict__["details"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_author():
-    assert hasattr(project::JournalAttributes, "author")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_headline():
-    assert hasattr(project::JournalAttributes, "headline")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "headline" in klass.__dict__:
-            descriptor = klass.__dict__["headline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_timesheet():
-    assert hasattr(project::JournalAttributes, "timesheet")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "timesheet" in klass.__dict__:
-            descriptor = klass.__dict__["timesheet"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_date():
-    assert hasattr(project::JournalAttributes, "date")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalattributes_has_flags():
-    assert hasattr(project::JournalAttributes, "flags")
-    descriptor = None
-    for klass in project::JournalAttributes.__mro__:
-        if "flags" in klass.__dict__:
-            descriptor = klass.__dict__["flags"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::sorttasks_is_not_abstract():
-    assert not inspect.isabstract(project::SortTasks)
-
-
-def test_project::sorttasks_constructor_exists():
-    assert callable(project::SortTasks.__init__)
-
-
-def test_project::sorttasks_constructor_args():
-    sig = inspect.signature(project::SortTasks.__init__)
+def test_project_left_constructor_args():
+    sig = inspect.signature(project_Left.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::title_is_not_abstract():
-    assert not inspect.isabstract(project::Title)
+def test_project_hideaccount_is_not_abstract():
+    assert not inspect.isabstract(project_HideAccount)
 
 
-def test_project::title_constructor_exists():
-    assert callable(project::Title.__init__)
+def test_project_hideaccount_constructor_exists():
+    assert callable(project_HideAccount.__init__)
 
 
-def test_project::title_constructor_args():
-    sig = inspect.signature(project::Title.__init__)
+def test_project_hideaccount_constructor_args():
+    sig = inspect.signature(project_HideAccount.__init__)
+    params = list(sig.parameters.keys())
+    assert "expression" in params, "Missing parameter 'expression'"
+
+def test_project_hideaccount_has_expression():
+    assert hasattr(project_HideAccount, "expression")
+    descriptor = None
+    for klass in project_HideAccount.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_sortjournalentries_is_not_abstract():
+    assert not inspect.isabstract(project_SortJournalEntries)
+
+
+def test_project_sortjournalentries_constructor_exists():
+    assert callable(project_SortJournalEntries.__init__)
+
+
+def test_project_sortjournalentries_constructor_args():
+    sig = inspect.signature(project_SortJournalEntries.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_title_is_not_abstract():
+    assert not inspect.isabstract(project_Title)
+
+
+def test_project_title_constructor_exists():
+    assert callable(project_Title.__init__)
+
+
+def test_project_title_constructor_args():
+    sig = inspect.signature(project_Title.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_project::title_has_title():
-    assert hasattr(project::Title, "title")
+def test_project_title_has_title():
+    assert hasattr(project_Title, "title")
     descriptor = None
-    for klass in project::Title.__mro__:
+    for klass in project_Title.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -4254,93 +3832,315 @@ def test_project::title_has_title():
 
 
 
-def test_project::numberformat_is_not_abstract():
-    assert not inspect.isabstract(project::NumberFormat)
+def test_project_right_is_not_abstract():
+    assert not inspect.isabstract(project_Right)
 
 
-def test_project::numberformat_constructor_exists():
-    assert callable(project::NumberFormat.__init__)
+def test_project_right_constructor_exists():
+    assert callable(project_Right.__init__)
 
 
-def test_project::numberformat_constructor_args():
-    sig = inspect.signature(project::NumberFormat.__init__)
+def test_project_right_constructor_args():
+    sig = inspect.signature(project_Right.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::accountroot_is_not_abstract():
-    assert not inspect.isabstract(project::AccountRoot)
+def test_project_prolog_is_not_abstract():
+    assert not inspect.isabstract(project_Prolog)
 
 
-def test_project::accountroot_constructor_exists():
-    assert callable(project::AccountRoot.__init__)
+def test_project_prolog_constructor_exists():
+    assert callable(project_Prolog.__init__)
 
 
-def test_project::accountroot_constructor_args():
-    sig = inspect.signature(project::AccountRoot.__init__)
+def test_project_prolog_constructor_args():
+    sig = inspect.signature(project_Prolog.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::rollupaccount_is_not_abstract():
-    assert not inspect.isabstract(project::RollupAccount)
+def test_project_selfcontained_is_not_abstract():
+    assert not inspect.isabstract(project_SelfContained)
 
 
-def test_project::rollupaccount_constructor_exists():
-    assert callable(project::RollupAccount.__init__)
+def test_project_selfcontained_constructor_exists():
+    assert callable(project_SelfContained.__init__)
 
 
-def test_project::rollupaccount_constructor_args():
-    sig = inspect.signature(project::RollupAccount.__init__)
+def test_project_selfcontained_constructor_args():
+    sig = inspect.signature(project_SelfContained.__init__)
+    params = list(sig.parameters.keys())
+    assert "selfcontained" in params, "Missing parameter 'selfcontained'"
+
+def test_project_selfcontained_has_selfcontained():
+    assert hasattr(project_SelfContained, "selfcontained")
+    descriptor = None
+    for klass in project_SelfContained.__mro__:
+        if "selfcontained" in klass.__dict__:
+            descriptor = klass.__dict__["selfcontained"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_rollupaccount_is_not_abstract():
+    assert not inspect.isabstract(project_RollupAccount)
+
+
+def test_project_rollupaccount_constructor_exists():
+    assert callable(project_RollupAccount.__init__)
+
+
+def test_project_rollupaccount_constructor_args():
+    sig = inspect.signature(project_RollupAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::hidetask_is_not_abstract():
-    assert not inspect.isabstract(project::HideTask)
+def test_project_accountroot_is_not_abstract():
+    assert not inspect.isabstract(project_AccountRoot)
 
 
-def test_project::hidetask_constructor_exists():
-    assert callable(project::HideTask.__init__)
+def test_project_accountroot_constructor_exists():
+    assert callable(project_AccountRoot.__init__)
 
 
-def test_project::hidetask_constructor_args():
-    sig = inspect.signature(project::HideTask.__init__)
+def test_project_accountroot_constructor_args():
+    sig = inspect.signature(project_AccountRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::header_is_not_abstract():
-    assert not inspect.isabstract(project::Header)
+def test_project_epilog_is_not_abstract():
+    assert not inspect.isabstract(project_Epilog)
 
 
-def test_project::header_constructor_exists():
-    assert callable(project::Header.__init__)
+def test_project_epilog_constructor_exists():
+    assert callable(project_Epilog.__init__)
 
 
-def test_project::header_constructor_args():
-    sig = inspect.signature(project::Header.__init__)
+def test_project_epilog_constructor_args():
+    sig = inspect.signature(project_Epilog.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::timeformat_is_not_abstract():
-    assert not inspect.isabstract(project::TimeFormat)
+def test_project_rollupresource_is_not_abstract():
+    assert not inspect.isabstract(project_RollupResource)
 
 
-def test_project::timeformat_constructor_exists():
-    assert callable(project::TimeFormat.__init__)
+def test_project_rollupresource_constructor_exists():
+    assert callable(project_RollupResource.__init__)
 
 
-def test_project::timeformat_constructor_args():
-    sig = inspect.signature(project::TimeFormat.__init__)
+def test_project_rollupresource_constructor_args():
+    sig = inspect.signature(project_RollupResource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_hidejournalentry_is_not_abstract():
+    assert not inspect.isabstract(project_HideJournalEntry)
+
+
+def test_project_hidejournalentry_constructor_exists():
+    assert callable(project_HideJournalEntry.__init__)
+
+
+def test_project_hidejournalentry_constructor_args():
+    sig = inspect.signature(project_HideJournalEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "expression" in params, "Missing parameter 'expression'"
+
+def test_project_hidejournalentry_has_expression():
+    assert hasattr(project_HideJournalEntry, "expression")
+    descriptor = None
+    for klass in project_HideJournalEntry.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_hideresource_is_not_abstract():
+    assert not inspect.isabstract(project_HideResource)
+
+
+def test_project_hideresource_constructor_exists():
+    assert callable(project_HideResource.__init__)
+
+
+def test_project_hideresource_constructor_args():
+    sig = inspect.signature(project_HideResource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_headline_is_not_abstract():
+    assert not inspect.isabstract(project_Headline)
+
+
+def test_project_headline_constructor_exists():
+    assert callable(project_Headline.__init__)
+
+
+def test_project_headline_constructor_args():
+    sig = inspect.signature(project_Headline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_footer_is_not_abstract():
+    assert not inspect.isabstract(project_Footer)
+
+
+def test_project_footer_constructor_exists():
+    assert callable(project_Footer.__init__)
+
+
+def test_project_footer_constructor_args():
+    sig = inspect.signature(project_Footer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_timezone_is_not_abstract():
+    assert not inspect.isabstract(project_Timezone)
+
+
+def test_project_timezone_constructor_exists():
+    assert callable(project_Timezone.__init__)
+
+
+def test_project_timezone_constructor_args():
+    sig = inspect.signature(project_Timezone.__init__)
+    params = list(sig.parameters.keys())
+    assert "timezone" in params, "Missing parameter 'timezone'"
+
+def test_project_timezone_has_timezone():
+    assert hasattr(project_Timezone, "timezone")
+    descriptor = None
+    for klass in project_Timezone.__mro__:
+        if "timezone" in klass.__dict__:
+            descriptor = klass.__dict__["timezone"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_taskroot_is_not_abstract():
+    assert not inspect.isabstract(project_TaskRoot)
+
+
+def test_project_taskroot_constructor_exists():
+    assert callable(project_TaskRoot.__init__)
+
+
+def test_project_taskroot_constructor_args():
+    sig = inspect.signature(project_TaskRoot.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_sortresources_is_not_abstract():
+    assert not inspect.isabstract(project_SortResources)
+
+
+def test_project_sortresources_constructor_exists():
+    assert callable(project_SortResources.__init__)
+
+
+def test_project_sortresources_constructor_args():
+    sig = inspect.signature(project_SortResources.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_numberformat_is_not_abstract():
+    assert not inspect.isabstract(project_NumberFormat)
+
+
+def test_project_numberformat_constructor_exists():
+    assert callable(project_NumberFormat.__init__)
+
+
+def test_project_numberformat_constructor_args():
+    sig = inspect.signature(project_NumberFormat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_purgereport_is_not_abstract():
+    assert not inspect.isabstract(project_PurgeReport)
+
+
+def test_project_purgereport_constructor_exists():
+    assert callable(project_PurgeReport.__init__)
+
+
+def test_project_purgereport_constructor_args():
+    sig = inspect.signature(project_PurgeReport.__init__)
+    params = list(sig.parameters.keys())
+    assert "listAttribute" in params, "Missing parameter 'listAttribute'"
+
+def test_project_purgereport_has_listAttribute():
+    assert hasattr(project_PurgeReport, "listAttribute")
+    descriptor = None
+    for klass in project_PurgeReport.__mro__:
+        if "listAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["listAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_scenarios_is_not_abstract():
+    assert not inspect.isabstract(project_Scenarios)
+
+
+def test_project_scenarios_constructor_exists():
+    assert callable(project_Scenarios.__init__)
+
+
+def test_project_scenarios_constructor_args():
+    sig = inspect.signature(project_Scenarios.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_currencyformat_is_not_abstract():
+    assert not inspect.isabstract(project_CurrencyFormat)
+
+
+def test_project_currencyformat_constructor_exists():
+    assert callable(project_CurrencyFormat.__init__)
+
+
+def test_project_currencyformat_constructor_args():
+    sig = inspect.signature(project_CurrencyFormat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_timeformat_is_not_abstract():
+    assert not inspect.isabstract(project_TimeFormat)
+
+
+def test_project_timeformat_constructor_exists():
+    assert callable(project_TimeFormat.__init__)
+
+
+def test_project_timeformat_constructor_args():
+    sig = inspect.signature(project_TimeFormat.__init__)
     params = list(sig.parameters.keys())
     assert "timeformat" in params, "Missing parameter 'timeformat'"
 
-def test_project::timeformat_has_timeformat():
-    assert hasattr(project::TimeFormat, "timeformat")
+def test_project_timeformat_has_timeformat():
+    assert hasattr(project_TimeFormat, "timeformat")
     descriptor = None
-    for klass in project::TimeFormat.__mro__:
+    for klass in project_TimeFormat.__mro__:
         if "timeformat" in klass.__dict__:
             descriptor = klass.__dict__["timeformat"]
             break
@@ -4348,86 +4148,286 @@ def test_project::timeformat_has_timeformat():
 
 
 
-def test_project::footer_is_not_abstract():
-    assert not inspect.isabstract(project::Footer)
+def test_project_sortaccounts_is_not_abstract():
+    assert not inspect.isabstract(project_SortAccounts)
 
 
-def test_project::footer_constructor_exists():
-    assert callable(project::Footer.__init__)
+def test_project_sortaccounts_constructor_exists():
+    assert callable(project_SortAccounts.__init__)
 
 
-def test_project::footer_constructor_args():
-    sig = inspect.signature(project::Footer.__init__)
+def test_project_sortaccounts_constructor_args():
+    sig = inspect.signature(project_SortAccounts.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::taskroot_is_not_abstract():
-    assert not inspect.isabstract(project::TaskRoot)
+def test_project_journalattributes_is_not_abstract():
+    assert not inspect.isabstract(project_JournalAttributes)
 
 
-def test_project::taskroot_constructor_exists():
-    assert callable(project::TaskRoot.__init__)
+def test_project_journalattributes_constructor_exists():
+    assert callable(project_JournalAttributes.__init__)
 
 
-def test_project::taskroot_constructor_args():
-    sig = inspect.signature(project::TaskRoot.__init__)
+def test_project_journalattributes_constructor_args():
+    sig = inspect.signature(project_JournalAttributes.__init__)
+    params = list(sig.parameters.keys())
+    assert "propertyid" in params, "Missing parameter 'propertyid'"
+    assert "all" in params, "Missing parameter 'all'"
+    assert "none" in params, "Missing parameter 'none'"
+    assert "summary" in params, "Missing parameter 'summary'"
+    assert "author" in params, "Missing parameter 'author'"
+    assert "_property" in params, "Missing parameter '_property'"
+    assert "details" in params, "Missing parameter 'details'"
+    assert "flags" in params, "Missing parameter 'flags'"
+    assert "date" in params, "Missing parameter 'date'"
+    assert "headline" in params, "Missing parameter 'headline'"
+    assert "timesheet" in params, "Missing parameter 'timesheet'"
+
+def test_project_journalattributes_has_propertyid():
+    assert hasattr(project_JournalAttributes, "propertyid")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "propertyid" in klass.__dict__:
+            descriptor = klass.__dict__["propertyid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_all():
+    assert hasattr(project_JournalAttributes, "all")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "all" in klass.__dict__:
+            descriptor = klass.__dict__["all"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_none():
+    assert hasattr(project_JournalAttributes, "none")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "none" in klass.__dict__:
+            descriptor = klass.__dict__["none"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_summary():
+    assert hasattr(project_JournalAttributes, "summary")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "summary" in klass.__dict__:
+            descriptor = klass.__dict__["summary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_author():
+    assert hasattr(project_JournalAttributes, "author")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has__property():
+    assert hasattr(project_JournalAttributes, "_property")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "_property" in klass.__dict__:
+            descriptor = klass.__dict__["_property"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_details():
+    assert hasattr(project_JournalAttributes, "details")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "details" in klass.__dict__:
+            descriptor = klass.__dict__["details"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_flags():
+    assert hasattr(project_JournalAttributes, "flags")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "flags" in klass.__dict__:
+            descriptor = klass.__dict__["flags"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_date():
+    assert hasattr(project_JournalAttributes, "date")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_headline():
+    assert hasattr(project_JournalAttributes, "headline")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "headline" in klass.__dict__:
+            descriptor = klass.__dict__["headline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalattributes_has_timesheet():
+    assert hasattr(project_JournalAttributes, "timesheet")
+    descriptor = None
+    for klass in project_JournalAttributes.__mro__:
+        if "timesheet" in klass.__dict__:
+            descriptor = klass.__dict__["timesheet"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_center_is_not_abstract():
+    assert not inspect.isabstract(project_Center)
+
+
+def test_project_center_constructor_exists():
+    assert callable(project_Center.__init__)
+
+
+def test_project_center_constructor_args():
+    sig = inspect.signature(project_Center.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::headline_is_not_abstract():
-    assert not inspect.isabstract(project::Headline)
+def test_project_resourceroot_is_not_abstract():
+    assert not inspect.isabstract(project_ResourceRoot)
 
 
-def test_project::headline_constructor_exists():
-    assert callable(project::Headline.__init__)
+def test_project_resourceroot_constructor_exists():
+    assert callable(project_ResourceRoot.__init__)
 
 
-def test_project::headline_constructor_args():
-    sig = inspect.signature(project::Headline.__init__)
+def test_project_resourceroot_constructor_args():
+    sig = inspect.signature(project_ResourceRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::columns_is_not_abstract():
-    assert not inspect.isabstract(project::Columns)
+def test_project_rolluptask_is_not_abstract():
+    assert not inspect.isabstract(project_RollupTask)
 
 
-def test_project::columns_constructor_exists():
-    assert callable(project::Columns.__init__)
+def test_project_rolluptask_constructor_exists():
+    assert callable(project_RollupTask.__init__)
 
 
-def test_project::columns_constructor_args():
-    sig = inspect.signature(project::Columns.__init__)
+def test_project_rolluptask_constructor_args():
+    sig = inspect.signature(project_RollupTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::sortaccounts_is_not_abstract():
-    assert not inspect.isabstract(project::SortAccounts)
+def test_project_loadunit_is_not_abstract():
+    assert not inspect.isabstract(project_LoadUnit)
 
 
-def test_project::sortaccounts_constructor_exists():
-    assert callable(project::SortAccounts.__init__)
+def test_project_loadunit_constructor_exists():
+    assert callable(project_LoadUnit.__init__)
 
 
-def test_project::sortaccounts_constructor_args():
-    sig = inspect.signature(project::SortAccounts.__init__)
+def test_project_loadunit_constructor_args():
+    sig = inspect.signature(project_LoadUnit.__init__)
+    params = list(sig.parameters.keys())
+    assert "unit" in params, "Missing parameter 'unit'"
+
+def test_project_loadunit_has_unit():
+    assert hasattr(project_LoadUnit, "unit")
+    descriptor = None
+    for klass in project_LoadUnit.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_columns_is_not_abstract():
+    assert not inspect.isabstract(project_Columns)
+
+
+def test_project_columns_constructor_exists():
+    assert callable(project_Columns.__init__)
+
+
+def test_project_columns_constructor_args():
+    sig = inspect.signature(project_Columns.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::prolog_is_not_abstract():
-    assert not inspect.isabstract(project::Prolog)
+def test_project_caption_is_not_abstract():
+    assert not inspect.isabstract(project_Caption)
 
 
-def test_project::prolog_constructor_exists():
-    assert callable(project::Prolog.__init__)
+def test_project_caption_constructor_exists():
+    assert callable(project_Caption.__init__)
 
 
-def test_project::prolog_constructor_args():
-    sig = inspect.signature(project::Prolog.__init__)
+def test_project_caption_constructor_args():
+    sig = inspect.signature(project_Caption.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_header_is_not_abstract():
+    assert not inspect.isabstract(project_Header)
+
+
+def test_project_header_constructor_exists():
+    assert callable(project_Header.__init__)
+
+
+def test_project_header_constructor_args():
+    sig = inspect.signature(project_Header.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_journalmode_is_not_abstract():
+    assert not inspect.isabstract(project_JournalMode)
+
+
+def test_project_journalmode_constructor_exists():
+    assert callable(project_JournalMode.__init__)
+
+
+def test_project_journalmode_constructor_args():
+    sig = inspect.signature(project_JournalMode.__init__)
+    params = list(sig.parameters.keys())
+    assert "mode" in params, "Missing parameter 'mode'"
+
+def test_project_journalmode_has_mode():
+    assert hasattr(project_JournalMode, "mode")
+    descriptor = None
+    for klass in project_JournalMode.__mro__:
+        if "mode" in klass.__dict__:
+            descriptor = klass.__dict__["mode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_sorttasks_is_not_abstract():
+    assert not inspect.isabstract(project_SortTasks)
+
+
+def test_project_sorttasks_constructor_exists():
+    assert callable(project_SortTasks.__init__)
+
+
+def test_project_sorttasks_constructor_args():
+    sig = inspect.signature(project_SortTasks.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4488,33 +4488,33 @@ def test_accountreport_constructor_args():
 
 
 
-def test_project::report_is_not_abstract():
-    assert not inspect.isabstract(project::Report)
+def test_project_report_is_not_abstract():
+    assert not inspect.isabstract(project_Report)
 
 
-def test_project::report_constructor_exists():
-    assert callable(project::Report.__init__)
+def test_project_report_constructor_exists():
+    assert callable(project_Report.__init__)
 
 
-def test_project::report_constructor_args():
-    sig = inspect.signature(project::Report.__init__)
+def test_project_report_constructor_args():
+    sig = inspect.signature(project_Report.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_project::report_has_id():
-    assert hasattr(project::Report, "id")
+def test_project_report_has_id():
+    assert hasattr(project_Report, "id")
     descriptor = None
-    for klass in project::Report.__mro__:
+    for klass in project_Report.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::report_has_name():
-    assert hasattr(project::Report, "name")
+def test_project_report_has_name():
+    assert hasattr(project_Report, "name")
     descriptor = None
-    for klass in project::Report.__mro__:
+    for klass in project_Report.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4522,16 +4522,16 @@ def test_project::report_has_name():
 
 
 
-def test_project::taskattribute_is_not_abstract():
-    assert not inspect.isabstract(project::TaskAttribute)
+def test_project_taskattribute_is_not_abstract():
+    assert not inspect.isabstract(project_TaskAttribute)
 
 
-def test_project::taskattribute_constructor_exists():
-    assert callable(project::TaskAttribute.__init__)
+def test_project_taskattribute_constructor_exists():
+    assert callable(project_TaskAttribute.__init__)
 
 
-def test_project::taskattribute_constructor_args():
-    sig = inspect.signature(project::TaskAttribute.__init__)
+def test_project_taskattribute_constructor_args():
+    sig = inspect.signature(project_TaskAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4550,23 +4550,23 @@ def test_taskattribute_constructor_args():
 
 
 
-def test_project::note_is_not_abstract():
-    assert not inspect.isabstract(project::Note)
+def test_project_note_is_not_abstract():
+    assert not inspect.isabstract(project_Note)
 
 
-def test_project::note_constructor_exists():
-    assert callable(project::Note.__init__)
+def test_project_note_constructor_exists():
+    assert callable(project_Note.__init__)
 
 
-def test_project::note_constructor_args():
-    sig = inspect.signature(project::Note.__init__)
+def test_project_note_constructor_args():
+    sig = inspect.signature(project_Note.__init__)
     params = list(sig.parameters.keys())
     assert "note" in params, "Missing parameter 'note'"
 
-def test_project::note_has_note():
-    assert hasattr(project::Note, "note")
+def test_project_note_has_note():
+    assert hasattr(project_Note, "note")
     descriptor = None
-    for klass in project::Note.__mro__:
+    for klass in project_Note.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
@@ -4574,405 +4574,51 @@ def test_project::note_has_note():
 
 
 
-def test_project::milestone_is_not_abstract():
-    assert not inspect.isabstract(project::Milestone)
+def test_project_shiftstask_is_not_abstract():
+    assert not inspect.isabstract(project_ShiftsTask)
 
 
-def test_project::milestone_constructor_exists():
-    assert callable(project::Milestone.__init__)
+def test_project_shiftstask_constructor_exists():
+    assert callable(project_ShiftsTask.__init__)
 
 
-def test_project::milestone_constructor_args():
-    sig = inspect.signature(project::Milestone.__init__)
-    params = list(sig.parameters.keys())
-    assert "milestone" in params, "Missing parameter 'milestone'"
-
-def test_project::milestone_has_milestone():
-    assert hasattr(project::Milestone, "milestone")
-    descriptor = None
-    for klass in project::Milestone.__mro__:
-        if "milestone" in klass.__dict__:
-            descriptor = klass.__dict__["milestone"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::bookingtask_is_not_abstract():
-    assert not inspect.isabstract(project::BookingTask)
-
-
-def test_project::bookingtask_constructor_exists():
-    assert callable(project::BookingTask.__init__)
-
-
-def test_project::bookingtask_constructor_args():
-    sig = inspect.signature(project::BookingTask.__init__)
+def test_project_shiftstask_constructor_args():
+    sig = inspect.signature(project_ShiftsTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::duration_is_not_abstract():
-    assert not inspect.isabstract(project::Duration)
+def test_project_period_is_not_abstract():
+    assert not inspect.isabstract(project_Period)
 
 
-def test_project::duration_constructor_exists():
-    assert callable(project::Duration.__init__)
+def test_project_period_constructor_exists():
+    assert callable(project_Period.__init__)
 
 
-def test_project::duration_constructor_args():
-    sig = inspect.signature(project::Duration.__init__)
+def test_project_period_constructor_args():
+    sig = inspect.signature(project_Period.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::depends_is_not_abstract():
-    assert not inspect.isabstract(project::Depends)
+def test_project_priority_is_not_abstract():
+    assert not inspect.isabstract(project_Priority)
 
 
-def test_project::depends_constructor_exists():
-    assert callable(project::Depends.__init__)
+def test_project_priority_constructor_exists():
+    assert callable(project_Priority.__init__)
 
 
-def test_project::depends_constructor_args():
-    sig = inspect.signature(project::Depends.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::warn_is_not_abstract():
-    assert not inspect.isabstract(project::Warn)
-
-
-def test_project::warn_constructor_exists():
-    assert callable(project::Warn.__init__)
-
-
-def test_project::warn_constructor_args():
-    sig = inspect.signature(project::Warn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::scheduling_is_not_abstract():
-    assert not inspect.isabstract(project::Scheduling)
-
-
-def test_project::scheduling_constructor_exists():
-    assert callable(project::Scheduling.__init__)
-
-
-def test_project::scheduling_constructor_args():
-    sig = inspect.signature(project::Scheduling.__init__)
-    params = list(sig.parameters.keys())
-    assert "scheduling" in params, "Missing parameter 'scheduling'"
-
-def test_project::scheduling_has_scheduling():
-    assert hasattr(project::Scheduling, "scheduling")
-    descriptor = None
-    for klass in project::Scheduling.__mro__:
-        if "scheduling" in klass.__dict__:
-            descriptor = klass.__dict__["scheduling"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::start_is_not_abstract():
-    assert not inspect.isabstract(project::Start)
-
-
-def test_project::start_constructor_exists():
-    assert callable(project::Start.__init__)
-
-
-def test_project::start_constructor_args():
-    sig = inspect.signature(project::Start.__init__)
-    params = list(sig.parameters.keys())
-    assert "start" in params, "Missing parameter 'start'"
-
-def test_project::start_has_start():
-    assert hasattr(project::Start, "start")
-    descriptor = None
-    for klass in project::Start.__mro__:
-        if "start" in klass.__dict__:
-            descriptor = klass.__dict__["start"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::projectid_is_not_abstract():
-    assert not inspect.isabstract(project::ProjectId)
-
-
-def test_project::projectid_constructor_exists():
-    assert callable(project::ProjectId.__init__)
-
-
-def test_project::projectid_constructor_args():
-    sig = inspect.signature(project::ProjectId.__init__)
-    params = list(sig.parameters.keys())
-    assert "projectId" in params, "Missing parameter 'projectId'"
-
-def test_project::projectid_has_projectId():
-    assert hasattr(project::ProjectId, "projectId")
-    descriptor = None
-    for klass in project::ProjectId.__mro__:
-        if "projectId" in klass.__dict__:
-            descriptor = klass.__dict__["projectId"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::minstart_is_not_abstract():
-    assert not inspect.isabstract(project::MinStart)
-
-
-def test_project::minstart_constructor_exists():
-    assert callable(project::MinStart.__init__)
-
-
-def test_project::minstart_constructor_args():
-    sig = inspect.signature(project::MinStart.__init__)
-    params = list(sig.parameters.keys())
-    assert "minStart" in params, "Missing parameter 'minStart'"
-
-def test_project::minstart_has_minStart():
-    assert hasattr(project::MinStart, "minStart")
-    descriptor = None
-    for klass in project::MinStart.__mro__:
-        if "minStart" in klass.__dict__:
-            descriptor = klass.__dict__["minStart"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::allocate_is_not_abstract():
-    assert not inspect.isabstract(project::Allocate)
-
-
-def test_project::allocate_constructor_exists():
-    assert callable(project::Allocate.__init__)
-
-
-def test_project::allocate_constructor_args():
-    sig = inspect.signature(project::Allocate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::complete_is_not_abstract():
-    assert not inspect.isabstract(project::Complete)
-
-
-def test_project::complete_constructor_exists():
-    assert callable(project::Complete.__init__)
-
-
-def test_project::complete_constructor_args():
-    sig = inspect.signature(project::Complete.__init__)
-    params = list(sig.parameters.keys())
-    assert "complete" in params, "Missing parameter 'complete'"
-
-def test_project::complete_has_complete():
-    assert hasattr(project::Complete, "complete")
-    descriptor = None
-    for klass in project::Complete.__mro__:
-        if "complete" in klass.__dict__:
-            descriptor = klass.__dict__["complete"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::minend_is_not_abstract():
-    assert not inspect.isabstract(project::MinEnd)
-
-
-def test_project::minend_constructor_exists():
-    assert callable(project::MinEnd.__init__)
-
-
-def test_project::minend_constructor_args():
-    sig = inspect.signature(project::MinEnd.__init__)
-    params = list(sig.parameters.keys())
-    assert "minEnd" in params, "Missing parameter 'minEnd'"
-
-def test_project::minend_has_minEnd():
-    assert hasattr(project::MinEnd, "minEnd")
-    descriptor = None
-    for klass in project::MinEnd.__mro__:
-        if "minEnd" in klass.__dict__:
-            descriptor = klass.__dict__["minEnd"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::maxend_is_not_abstract():
-    assert not inspect.isabstract(project::MaxEnd)
-
-
-def test_project::maxend_constructor_exists():
-    assert callable(project::MaxEnd.__init__)
-
-
-def test_project::maxend_constructor_args():
-    sig = inspect.signature(project::MaxEnd.__init__)
-    params = list(sig.parameters.keys())
-    assert "maxEnd" in params, "Missing parameter 'maxEnd'"
-
-def test_project::maxend_has_maxEnd():
-    assert hasattr(project::MaxEnd, "maxEnd")
-    descriptor = None
-    for klass in project::MaxEnd.__mro__:
-        if "maxEnd" in klass.__dict__:
-            descriptor = klass.__dict__["maxEnd"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::length_is_not_abstract():
-    assert not inspect.isabstract(project::Length)
-
-
-def test_project::length_constructor_exists():
-    assert callable(project::Length.__init__)
-
-
-def test_project::length_constructor_args():
-    sig = inspect.signature(project::Length.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::charge_is_not_abstract():
-    assert not inspect.isabstract(project::Charge)
-
-
-def test_project::charge_constructor_exists():
-    assert callable(project::Charge.__init__)
-
-
-def test_project::charge_constructor_args():
-    sig = inspect.signature(project::Charge.__init__)
-    params = list(sig.parameters.keys())
-    assert "applies" in params, "Missing parameter 'applies'"
-    assert "amount" in params, "Missing parameter 'amount'"
-
-def test_project::charge_has_applies():
-    assert hasattr(project::Charge, "applies")
-    descriptor = None
-    for klass in project::Charge.__mro__:
-        if "applies" in klass.__dict__:
-            descriptor = klass.__dict__["applies"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::charge_has_amount():
-    assert hasattr(project::Charge, "amount")
-    descriptor = None
-    for klass in project::Charge.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::journalentry_is_not_abstract():
-    assert not inspect.isabstract(project::JournalEntry)
-
-
-def test_project::journalentry_constructor_exists():
-    assert callable(project::JournalEntry.__init__)
-
-
-def test_project::journalentry_constructor_args():
-    sig = inspect.signature(project::JournalEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "headline" in params, "Missing parameter 'headline'"
-    assert "date" in params, "Missing parameter 'date'"
-
-def test_project::journalentry_has_headline():
-    assert hasattr(project::JournalEntry, "headline")
-    descriptor = None
-    for klass in project::JournalEntry.__mro__:
-        if "headline" in klass.__dict__:
-            descriptor = klass.__dict__["headline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::journalentry_has_date():
-    assert hasattr(project::JournalEntry, "date")
-    descriptor = None
-    for klass in project::JournalEntry.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::precedes_is_not_abstract():
-    assert not inspect.isabstract(project::Precedes)
-
-
-def test_project::precedes_constructor_exists():
-    assert callable(project::Precedes.__init__)
-
-
-def test_project::precedes_constructor_args():
-    sig = inspect.signature(project::Precedes.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::purgetask_is_not_abstract():
-    assert not inspect.isabstract(project::PurgeTask)
-
-
-def test_project::purgetask_constructor_exists():
-    assert callable(project::PurgeTask.__init__)
-
-
-def test_project::purgetask_constructor_args():
-    sig = inspect.signature(project::PurgeTask.__init__)
-    params = list(sig.parameters.keys())
-    assert "listAttribute" in params, "Missing parameter 'listAttribute'"
-
-def test_project::purgetask_has_listAttribute():
-    assert hasattr(project::PurgeTask, "listAttribute")
-    descriptor = None
-    for klass in project::PurgeTask.__mro__:
-        if "listAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["listAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::priority_is_not_abstract():
-    assert not inspect.isabstract(project::Priority)
-
-
-def test_project::priority_constructor_exists():
-    assert callable(project::Priority.__init__)
-
-
-def test_project::priority_constructor_args():
-    sig = inspect.signature(project::Priority.__init__)
+def test_project_priority_constructor_args():
+    sig = inspect.signature(project_Priority.__init__)
     params = list(sig.parameters.keys())
     assert "priority" in params, "Missing parameter 'priority'"
 
-def test_project::priority_has_priority():
-    assert hasattr(project::Priority, "priority")
+def test_project_priority_has_priority():
+    assert hasattr(project_Priority, "priority")
     descriptor = None
-    for klass in project::Priority.__mro__:
+    for klass in project_Priority.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
@@ -4980,103 +4626,71 @@ def test_project::priority_has_priority():
 
 
 
-def test_project::responsible_is_not_abstract():
-    assert not inspect.isabstract(project::Responsible)
+def test_project_warn_is_not_abstract():
+    assert not inspect.isabstract(project_Warn)
 
 
-def test_project::responsible_constructor_exists():
-    assert callable(project::Responsible.__init__)
+def test_project_warn_constructor_exists():
+    assert callable(project_Warn.__init__)
 
 
-def test_project::responsible_constructor_args():
-    sig = inspect.signature(project::Responsible.__init__)
+def test_project_warn_constructor_args():
+    sig = inspect.signature(project_Warn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::end_is_not_abstract():
-    assert not inspect.isabstract(project::End)
+def test_project_charge_is_not_abstract():
+    assert not inspect.isabstract(project_Charge)
 
 
-def test_project::end_constructor_exists():
-    assert callable(project::End.__init__)
+def test_project_charge_constructor_exists():
+    assert callable(project_Charge.__init__)
 
 
-def test_project::end_constructor_args():
-    sig = inspect.signature(project::End.__init__)
+def test_project_charge_constructor_args():
+    sig = inspect.signature(project_Charge.__init__)
     params = list(sig.parameters.keys())
-    assert "end" in params, "Missing parameter 'end'"
+    assert "amount" in params, "Missing parameter 'amount'"
+    assert "applies" in params, "Missing parameter 'applies'"
 
-def test_project::end_has_end():
-    assert hasattr(project::End, "end")
+def test_project_charge_has_amount():
+    assert hasattr(project_Charge, "amount")
     descriptor = None
-    for klass in project::End.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
+    for klass in project_Charge.__mro__:
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_charge_has_applies():
+    assert hasattr(project_Charge, "applies")
+    descriptor = None
+    for klass in project_Charge.__mro__:
+        if "applies" in klass.__dict__:
+            descriptor = klass.__dict__["applies"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_project::shiftstask_is_not_abstract():
-    assert not inspect.isabstract(project::ShiftsTask)
+def test_project_scheduled_is_not_abstract():
+    assert not inspect.isabstract(project_Scheduled)
 
 
-def test_project::shiftstask_constructor_exists():
-    assert callable(project::ShiftsTask.__init__)
+def test_project_scheduled_constructor_exists():
+    assert callable(project_Scheduled.__init__)
 
 
-def test_project::shiftstask_constructor_args():
-    sig = inspect.signature(project::ShiftsTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::chargeset_is_not_abstract():
-    assert not inspect.isabstract(project::ChargeSet)
-
-
-def test_project::chargeset_constructor_exists():
-    assert callable(project::ChargeSet.__init__)
-
-
-def test_project::chargeset_constructor_args():
-    sig = inspect.signature(project::ChargeSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::fail_is_not_abstract():
-    assert not inspect.isabstract(project::Fail)
-
-
-def test_project::fail_constructor_exists():
-    assert callable(project::Fail.__init__)
-
-
-def test_project::fail_constructor_args():
-    sig = inspect.signature(project::Fail.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::scheduled_is_not_abstract():
-    assert not inspect.isabstract(project::Scheduled)
-
-
-def test_project::scheduled_constructor_exists():
-    assert callable(project::Scheduled.__init__)
-
-
-def test_project::scheduled_constructor_args():
-    sig = inspect.signature(project::Scheduled.__init__)
+def test_project_scheduled_constructor_args():
+    sig = inspect.signature(project_Scheduled.__init__)
     params = list(sig.parameters.keys())
     assert "scheduled" in params, "Missing parameter 'scheduled'"
 
-def test_project::scheduled_has_scheduled():
-    assert hasattr(project::Scheduled, "scheduled")
+def test_project_scheduled_has_scheduled():
+    assert hasattr(project_Scheduled, "scheduled")
     descriptor = None
-    for klass in project::Scheduled.__mro__:
+    for klass in project_Scheduled.__mro__:
         if "scheduled" in klass.__dict__:
             descriptor = klass.__dict__["scheduled"]
             break
@@ -5084,147 +4698,23 @@ def test_project::scheduled_has_scheduled():
 
 
 
-def test_project::effort_is_not_abstract():
-    assert not inspect.isabstract(project::Effort)
+def test_project_start_is_not_abstract():
+    assert not inspect.isabstract(project_Start)
 
 
-def test_project::effort_constructor_exists():
-    assert callable(project::Effort.__init__)
+def test_project_start_constructor_exists():
+    assert callable(project_Start.__init__)
 
 
-def test_project::effort_constructor_args():
-    sig = inspect.signature(project::Effort.__init__)
+def test_project_start_constructor_args():
+    sig = inspect.signature(project_Start.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_project::extendedtaskattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ExtendedTaskAttribute)
-
-
-def test_project::extendedtaskattribute_constructor_exists():
-    assert callable(project::ExtendedTaskAttribute.__init__)
-
-
-def test_project::extendedtaskattribute_constructor_args():
-    sig = inspect.signature(project::ExtendedTaskAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_project::extendedtaskattribute_has_value():
-    assert hasattr(project::ExtendedTaskAttribute, "value")
-    descriptor = None
-    for klass in project::ExtendedTaskAttribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::maxstart_is_not_abstract():
-    assert not inspect.isabstract(project::MaxStart)
-
-
-def test_project::maxstart_constructor_exists():
-    assert callable(project::MaxStart.__init__)
-
-
-def test_project::maxstart_constructor_args():
-    sig = inspect.signature(project::MaxStart.__init__)
-    params = list(sig.parameters.keys())
-    assert "maxStart" in params, "Missing parameter 'maxStart'"
-
-def test_project::maxstart_has_maxStart():
-    assert hasattr(project::MaxStart, "maxStart")
-    descriptor = None
-    for klass in project::MaxStart.__mro__:
-        if "maxStart" in klass.__dict__:
-            descriptor = klass.__dict__["maxStart"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::endcredit_is_not_abstract():
-    assert not inspect.isabstract(project::EndCredit)
-
-
-def test_project::endcredit_constructor_exists():
-    assert callable(project::EndCredit.__init__)
-
-
-def test_project::endcredit_constructor_args():
-    sig = inspect.signature(project::EndCredit.__init__)
-    params = list(sig.parameters.keys())
-    assert "credit" in params, "Missing parameter 'credit'"
-
-def test_project::endcredit_has_credit():
-    assert hasattr(project::EndCredit, "credit")
-    descriptor = None
-    for klass in project::EndCredit.__mro__:
-        if "credit" in klass.__dict__:
-            descriptor = klass.__dict__["credit"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::period_is_not_abstract():
-    assert not inspect.isabstract(project::Period)
-
-
-def test_project::period_constructor_exists():
-    assert callable(project::Period.__init__)
-
-
-def test_project::period_constructor_args():
-    sig = inspect.signature(project::Period.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::projectattribute_is_not_abstract():
-    assert not inspect.isabstract(project::ProjectAttribute)
-
-
-def test_project::projectattribute_constructor_exists():
-    assert callable(project::ProjectAttribute.__init__)
-
-
-def test_project::projectattribute_constructor_args():
-    sig = inspect.signature(project::ProjectAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::interval2_is_not_abstract():
-    assert not inspect.isabstract(project::Interval2)
-
-
-def test_project::interval2_constructor_exists():
-    assert callable(project::Interval2.__init__)
-
-
-def test_project::interval2_constructor_args():
-    sig = inspect.signature(project::Interval2.__init__)
-    params = list(sig.parameters.keys())
-    assert "end" in params, "Missing parameter 'end'"
     assert "start" in params, "Missing parameter 'start'"
 
-def test_project::interval2_has_end():
-    assert hasattr(project::Interval2, "end")
+def test_project_start_has_start():
+    assert hasattr(project_Start, "start")
     descriptor = None
-    for klass in project::Interval2.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::interval2_has_start():
-    assert hasattr(project::Interval2, "start")
-    descriptor = None
-    for klass in project::Interval2.__mro__:
+    for klass in project_Start.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
@@ -5232,16 +4722,526 @@ def test_project::interval2_has_start():
 
 
 
-def test_project::global_is_not_abstract():
-    assert not inspect.isabstract(project::Global)
+def test_project_end_is_not_abstract():
+    assert not inspect.isabstract(project_End)
 
 
-def test_project::global_constructor_exists():
-    assert callable(project::Global.__init__)
+def test_project_end_constructor_exists():
+    assert callable(project_End.__init__)
 
 
-def test_project::global_constructor_args():
-    sig = inspect.signature(project::Global.__init__)
+def test_project_end_constructor_args():
+    sig = inspect.signature(project_End.__init__)
+    params = list(sig.parameters.keys())
+    assert "end" in params, "Missing parameter 'end'"
+
+def test_project_end_has_end():
+    assert hasattr(project_End, "end")
+    descriptor = None
+    for klass in project_End.__mro__:
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_minend_is_not_abstract():
+    assert not inspect.isabstract(project_MinEnd)
+
+
+def test_project_minend_constructor_exists():
+    assert callable(project_MinEnd.__init__)
+
+
+def test_project_minend_constructor_args():
+    sig = inspect.signature(project_MinEnd.__init__)
+    params = list(sig.parameters.keys())
+    assert "minEnd" in params, "Missing parameter 'minEnd'"
+
+def test_project_minend_has_minEnd():
+    assert hasattr(project_MinEnd, "minEnd")
+    descriptor = None
+    for klass in project_MinEnd.__mro__:
+        if "minEnd" in klass.__dict__:
+            descriptor = klass.__dict__["minEnd"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_allocate_is_not_abstract():
+    assert not inspect.isabstract(project_Allocate)
+
+
+def test_project_allocate_constructor_exists():
+    assert callable(project_Allocate.__init__)
+
+
+def test_project_allocate_constructor_args():
+    sig = inspect.signature(project_Allocate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_length_is_not_abstract():
+    assert not inspect.isabstract(project_Length)
+
+
+def test_project_length_constructor_exists():
+    assert callable(project_Length.__init__)
+
+
+def test_project_length_constructor_args():
+    sig = inspect.signature(project_Length.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_minstart_is_not_abstract():
+    assert not inspect.isabstract(project_MinStart)
+
+
+def test_project_minstart_constructor_exists():
+    assert callable(project_MinStart.__init__)
+
+
+def test_project_minstart_constructor_args():
+    sig = inspect.signature(project_MinStart.__init__)
+    params = list(sig.parameters.keys())
+    assert "minStart" in params, "Missing parameter 'minStart'"
+
+def test_project_minstart_has_minStart():
+    assert hasattr(project_MinStart, "minStart")
+    descriptor = None
+    for klass in project_MinStart.__mro__:
+        if "minStart" in klass.__dict__:
+            descriptor = klass.__dict__["minStart"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_duration_is_not_abstract():
+    assert not inspect.isabstract(project_Duration)
+
+
+def test_project_duration_constructor_exists():
+    assert callable(project_Duration.__init__)
+
+
+def test_project_duration_constructor_args():
+    sig = inspect.signature(project_Duration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_complete_is_not_abstract():
+    assert not inspect.isabstract(project_Complete)
+
+
+def test_project_complete_constructor_exists():
+    assert callable(project_Complete.__init__)
+
+
+def test_project_complete_constructor_args():
+    sig = inspect.signature(project_Complete.__init__)
+    params = list(sig.parameters.keys())
+    assert "complete" in params, "Missing parameter 'complete'"
+
+def test_project_complete_has_complete():
+    assert hasattr(project_Complete, "complete")
+    descriptor = None
+    for klass in project_Complete.__mro__:
+        if "complete" in klass.__dict__:
+            descriptor = klass.__dict__["complete"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_endcredit_is_not_abstract():
+    assert not inspect.isabstract(project_EndCredit)
+
+
+def test_project_endcredit_constructor_exists():
+    assert callable(project_EndCredit.__init__)
+
+
+def test_project_endcredit_constructor_args():
+    sig = inspect.signature(project_EndCredit.__init__)
+    params = list(sig.parameters.keys())
+    assert "credit" in params, "Missing parameter 'credit'"
+
+def test_project_endcredit_has_credit():
+    assert hasattr(project_EndCredit, "credit")
+    descriptor = None
+    for klass in project_EndCredit.__mro__:
+        if "credit" in klass.__dict__:
+            descriptor = klass.__dict__["credit"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_effort_is_not_abstract():
+    assert not inspect.isabstract(project_Effort)
+
+
+def test_project_effort_constructor_exists():
+    assert callable(project_Effort.__init__)
+
+
+def test_project_effort_constructor_args():
+    sig = inspect.signature(project_Effort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_journalentry_is_not_abstract():
+    assert not inspect.isabstract(project_JournalEntry)
+
+
+def test_project_journalentry_constructor_exists():
+    assert callable(project_JournalEntry.__init__)
+
+
+def test_project_journalentry_constructor_args():
+    sig = inspect.signature(project_JournalEntry.__init__)
+    params = list(sig.parameters.keys())
+    assert "headline" in params, "Missing parameter 'headline'"
+    assert "date" in params, "Missing parameter 'date'"
+
+def test_project_journalentry_has_headline():
+    assert hasattr(project_JournalEntry, "headline")
+    descriptor = None
+    for klass in project_JournalEntry.__mro__:
+        if "headline" in klass.__dict__:
+            descriptor = klass.__dict__["headline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_journalentry_has_date():
+    assert hasattr(project_JournalEntry, "date")
+    descriptor = None
+    for klass in project_JournalEntry.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_purgetask_is_not_abstract():
+    assert not inspect.isabstract(project_PurgeTask)
+
+
+def test_project_purgetask_constructor_exists():
+    assert callable(project_PurgeTask.__init__)
+
+
+def test_project_purgetask_constructor_args():
+    sig = inspect.signature(project_PurgeTask.__init__)
+    params = list(sig.parameters.keys())
+    assert "listAttribute" in params, "Missing parameter 'listAttribute'"
+
+def test_project_purgetask_has_listAttribute():
+    assert hasattr(project_PurgeTask, "listAttribute")
+    descriptor = None
+    for klass in project_PurgeTask.__mro__:
+        if "listAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["listAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_bookingtask_is_not_abstract():
+    assert not inspect.isabstract(project_BookingTask)
+
+
+def test_project_bookingtask_constructor_exists():
+    assert callable(project_BookingTask.__init__)
+
+
+def test_project_bookingtask_constructor_args():
+    sig = inspect.signature(project_BookingTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_chargeset_is_not_abstract():
+    assert not inspect.isabstract(project_ChargeSet)
+
+
+def test_project_chargeset_constructor_exists():
+    assert callable(project_ChargeSet.__init__)
+
+
+def test_project_chargeset_constructor_args():
+    sig = inspect.signature(project_ChargeSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_maxend_is_not_abstract():
+    assert not inspect.isabstract(project_MaxEnd)
+
+
+def test_project_maxend_constructor_exists():
+    assert callable(project_MaxEnd.__init__)
+
+
+def test_project_maxend_constructor_args():
+    sig = inspect.signature(project_MaxEnd.__init__)
+    params = list(sig.parameters.keys())
+    assert "maxEnd" in params, "Missing parameter 'maxEnd'"
+
+def test_project_maxend_has_maxEnd():
+    assert hasattr(project_MaxEnd, "maxEnd")
+    descriptor = None
+    for klass in project_MaxEnd.__mro__:
+        if "maxEnd" in klass.__dict__:
+            descriptor = klass.__dict__["maxEnd"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_milestone_is_not_abstract():
+    assert not inspect.isabstract(project_Milestone)
+
+
+def test_project_milestone_constructor_exists():
+    assert callable(project_Milestone.__init__)
+
+
+def test_project_milestone_constructor_args():
+    sig = inspect.signature(project_Milestone.__init__)
+    params = list(sig.parameters.keys())
+    assert "milestone" in params, "Missing parameter 'milestone'"
+
+def test_project_milestone_has_milestone():
+    assert hasattr(project_Milestone, "milestone")
+    descriptor = None
+    for klass in project_Milestone.__mro__:
+        if "milestone" in klass.__dict__:
+            descriptor = klass.__dict__["milestone"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_scheduling_is_not_abstract():
+    assert not inspect.isabstract(project_Scheduling)
+
+
+def test_project_scheduling_constructor_exists():
+    assert callable(project_Scheduling.__init__)
+
+
+def test_project_scheduling_constructor_args():
+    sig = inspect.signature(project_Scheduling.__init__)
+    params = list(sig.parameters.keys())
+    assert "scheduling" in params, "Missing parameter 'scheduling'"
+
+def test_project_scheduling_has_scheduling():
+    assert hasattr(project_Scheduling, "scheduling")
+    descriptor = None
+    for klass in project_Scheduling.__mro__:
+        if "scheduling" in klass.__dict__:
+            descriptor = klass.__dict__["scheduling"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_precedes_is_not_abstract():
+    assert not inspect.isabstract(project_Precedes)
+
+
+def test_project_precedes_constructor_exists():
+    assert callable(project_Precedes.__init__)
+
+
+def test_project_precedes_constructor_args():
+    sig = inspect.signature(project_Precedes.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_depends_is_not_abstract():
+    assert not inspect.isabstract(project_Depends)
+
+
+def test_project_depends_constructor_exists():
+    assert callable(project_Depends.__init__)
+
+
+def test_project_depends_constructor_args():
+    sig = inspect.signature(project_Depends.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_fail_is_not_abstract():
+    assert not inspect.isabstract(project_Fail)
+
+
+def test_project_fail_constructor_exists():
+    assert callable(project_Fail.__init__)
+
+
+def test_project_fail_constructor_args():
+    sig = inspect.signature(project_Fail.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_projectid_is_not_abstract():
+    assert not inspect.isabstract(project_ProjectId)
+
+
+def test_project_projectid_constructor_exists():
+    assert callable(project_ProjectId.__init__)
+
+
+def test_project_projectid_constructor_args():
+    sig = inspect.signature(project_ProjectId.__init__)
+    params = list(sig.parameters.keys())
+    assert "projectId" in params, "Missing parameter 'projectId'"
+
+def test_project_projectid_has_projectId():
+    assert hasattr(project_ProjectId, "projectId")
+    descriptor = None
+    for klass in project_ProjectId.__mro__:
+        if "projectId" in klass.__dict__:
+            descriptor = klass.__dict__["projectId"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_extendedtaskattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ExtendedTaskAttribute)
+
+
+def test_project_extendedtaskattribute_constructor_exists():
+    assert callable(project_ExtendedTaskAttribute.__init__)
+
+
+def test_project_extendedtaskattribute_constructor_args():
+    sig = inspect.signature(project_ExtendedTaskAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_project_extendedtaskattribute_has_value():
+    assert hasattr(project_ExtendedTaskAttribute, "value")
+    descriptor = None
+    for klass in project_ExtendedTaskAttribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_maxstart_is_not_abstract():
+    assert not inspect.isabstract(project_MaxStart)
+
+
+def test_project_maxstart_constructor_exists():
+    assert callable(project_MaxStart.__init__)
+
+
+def test_project_maxstart_constructor_args():
+    sig = inspect.signature(project_MaxStart.__init__)
+    params = list(sig.parameters.keys())
+    assert "maxStart" in params, "Missing parameter 'maxStart'"
+
+def test_project_maxstart_has_maxStart():
+    assert hasattr(project_MaxStart, "maxStart")
+    descriptor = None
+    for klass in project_MaxStart.__mro__:
+        if "maxStart" in klass.__dict__:
+            descriptor = klass.__dict__["maxStart"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_responsible_is_not_abstract():
+    assert not inspect.isabstract(project_Responsible)
+
+
+def test_project_responsible_constructor_exists():
+    assert callable(project_Responsible.__init__)
+
+
+def test_project_responsible_constructor_args():
+    sig = inspect.signature(project_Responsible.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_projectattribute_is_not_abstract():
+    assert not inspect.isabstract(project_ProjectAttribute)
+
+
+def test_project_projectattribute_constructor_exists():
+    assert callable(project_ProjectAttribute.__init__)
+
+
+def test_project_projectattribute_constructor_args():
+    sig = inspect.signature(project_ProjectAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_interval2_is_not_abstract():
+    assert not inspect.isabstract(project_Interval2)
+
+
+def test_project_interval2_constructor_exists():
+    assert callable(project_Interval2.__init__)
+
+
+def test_project_interval2_constructor_args():
+    sig = inspect.signature(project_Interval2.__init__)
+    params = list(sig.parameters.keys())
+    assert "end" in params, "Missing parameter 'end'"
+    assert "start" in params, "Missing parameter 'start'"
+
+def test_project_interval2_has_end():
+    assert hasattr(project_Interval2, "end")
+    descriptor = None
+    for klass in project_Interval2.__mro__:
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_interval2_has_start():
+    assert hasattr(project_Interval2, "start")
+    descriptor = None
+    for klass in project_Interval2.__mro__:
+        if "start" in klass.__dict__:
+            descriptor = klass.__dict__["start"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_global_is_not_abstract():
+    assert not inspect.isabstract(project_Global)
+
+
+def test_project_global_constructor_exists():
+    assert callable(project_Global.__init__)
+
+
+def test_project_global_constructor_args():
+    sig = inspect.signature(project_Global.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5260,72 +5260,72 @@ def test_includepropertiesattribute_constructor_args():
 
 
 
-def test_project::reportprefix_is_not_abstract():
-    assert not inspect.isabstract(project::ReportPrefix)
+def test_project_taskprefix_is_not_abstract():
+    assert not inspect.isabstract(project_TaskPrefix)
 
 
-def test_project::reportprefix_constructor_exists():
-    assert callable(project::ReportPrefix.__init__)
+def test_project_taskprefix_constructor_exists():
+    assert callable(project_TaskPrefix.__init__)
 
 
-def test_project::reportprefix_constructor_args():
-    sig = inspect.signature(project::ReportPrefix.__init__)
+def test_project_taskprefix_constructor_args():
+    sig = inspect.signature(project_TaskPrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::resourceprefix_is_not_abstract():
-    assert not inspect.isabstract(project::ResourcePrefix)
+def test_project_reportprefix_is_not_abstract():
+    assert not inspect.isabstract(project_ReportPrefix)
 
 
-def test_project::resourceprefix_constructor_exists():
-    assert callable(project::ResourcePrefix.__init__)
+def test_project_reportprefix_constructor_exists():
+    assert callable(project_ReportPrefix.__init__)
 
 
-def test_project::resourceprefix_constructor_args():
-    sig = inspect.signature(project::ResourcePrefix.__init__)
+def test_project_reportprefix_constructor_args():
+    sig = inspect.signature(project_ReportPrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::taskprefix_is_not_abstract():
-    assert not inspect.isabstract(project::TaskPrefix)
+def test_project_resourceprefix_is_not_abstract():
+    assert not inspect.isabstract(project_ResourcePrefix)
 
 
-def test_project::taskprefix_constructor_exists():
-    assert callable(project::TaskPrefix.__init__)
+def test_project_resourceprefix_constructor_exists():
+    assert callable(project_ResourcePrefix.__init__)
 
 
-def test_project::taskprefix_constructor_args():
-    sig = inspect.signature(project::TaskPrefix.__init__)
+def test_project_resourceprefix_constructor_args():
+    sig = inspect.signature(project_ResourcePrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::accountprefix_is_not_abstract():
-    assert not inspect.isabstract(project::AccountPrefix)
+def test_project_accountprefix_is_not_abstract():
+    assert not inspect.isabstract(project_AccountPrefix)
 
 
-def test_project::accountprefix_constructor_exists():
-    assert callable(project::AccountPrefix.__init__)
+def test_project_accountprefix_constructor_exists():
+    assert callable(project_AccountPrefix.__init__)
 
 
-def test_project::accountprefix_constructor_args():
-    sig = inspect.signature(project::AccountPrefix.__init__)
+def test_project_accountprefix_constructor_args():
+    sig = inspect.signature(project_AccountPrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::accountattribute_is_not_abstract():
-    assert not inspect.isabstract(project::AccountAttribute)
+def test_project_accountattribute_is_not_abstract():
+    assert not inspect.isabstract(project_AccountAttribute)
 
 
-def test_project::accountattribute_constructor_exists():
-    assert callable(project::AccountAttribute.__init__)
+def test_project_accountattribute_constructor_exists():
+    assert callable(project_AccountAttribute.__init__)
 
 
-def test_project::accountattribute_constructor_args():
-    sig = inspect.signature(project::AccountAttribute.__init__)
+def test_project_accountattribute_constructor_args():
+    sig = inspect.signature(project_AccountAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5344,43 +5344,43 @@ def test_accountattribute_constructor_args():
 
 
 
-def test_project::credit_is_not_abstract():
-    assert not inspect.isabstract(project::Credit)
+def test_project_credit_is_not_abstract():
+    assert not inspect.isabstract(project_Credit)
 
 
-def test_project::credit_constructor_exists():
-    assert callable(project::Credit.__init__)
+def test_project_credit_constructor_exists():
+    assert callable(project_Credit.__init__)
 
 
-def test_project::credit_constructor_args():
-    sig = inspect.signature(project::Credit.__init__)
+def test_project_credit_constructor_args():
+    sig = inspect.signature(project_Credit.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "date" in params, "Missing parameter 'date'"
     assert "amount" in params, "Missing parameter 'amount'"
 
-def test_project::credit_has_date():
-    assert hasattr(project::Credit, "date")
+def test_project_credit_has_description():
+    assert hasattr(project_Credit, "description")
     descriptor = None
-    for klass in project::Credit.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::credit_has_description():
-    assert hasattr(project::Credit, "description")
-    descriptor = None
-    for klass in project::Credit.__mro__:
+    for klass in project_Credit.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::credit_has_amount():
-    assert hasattr(project::Credit, "amount")
+def test_project_credit_has_date():
+    assert hasattr(project_Credit, "date")
     descriptor = None
-    for klass in project::Credit.__mro__:
+    for klass in project_Credit.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_credit_has_amount():
+    assert hasattr(project_Credit, "amount")
+    descriptor = None
+    for klass in project_Credit.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
@@ -5402,569 +5402,65 @@ def test_property_constructor_args():
 
 
 
-def test_project::includeproperties_is_not_abstract():
-    assert not inspect.isabstract(project::IncludeProperties)
+def test_project_accountreport_is_not_abstract():
+    assert not inspect.isabstract(project_AccountReport)
 
 
-def test_project::includeproperties_constructor_exists():
-    assert callable(project::IncludeProperties.__init__)
+def test_project_accountreport_constructor_exists():
+    assert callable(project_AccountReport.__init__)
 
 
-def test_project::includeproperties_constructor_args():
-    sig = inspect.signature(project::IncludeProperties.__init__)
-    params = list(sig.parameters.keys())
-    assert "importURI" in params, "Missing parameter 'importURI'"
-
-def test_project::includeproperties_has_importURI():
-    assert hasattr(project::IncludeProperties, "importURI")
-    descriptor = None
-    for klass in project::IncludeProperties.__mro__:
-        if "importURI" in klass.__dict__:
-            descriptor = klass.__dict__["importURI"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::export_is_not_abstract():
-    assert not inspect.isabstract(project::Export)
-
-
-def test_project::export_constructor_exists():
-    assert callable(project::Export.__init__)
-
-
-def test_project::export_constructor_args():
-    sig = inspect.signature(project::Export.__init__)
-    params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_project::export_has_filename():
-    assert hasattr(project::Export, "filename")
-    descriptor = None
-    for klass in project::Export.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::export_has_id():
-    assert hasattr(project::Export, "id")
-    descriptor = None
-    for klass in project::Export.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::timesheetreport_is_not_abstract():
-    assert not inspect.isabstract(project::TimesheetReport)
-
-
-def test_project::timesheetreport_constructor_exists():
-    assert callable(project::TimesheetReport.__init__)
-
-
-def test_project::timesheetreport_constructor_args():
-    sig = inspect.signature(project::TimesheetReport.__init__)
-    params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
-
-def test_project::timesheetreport_has_filename():
-    assert hasattr(project::TimesheetReport, "filename")
-    descriptor = None
-    for klass in project::TimesheetReport.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::resource_is_not_abstract():
-    assert not inspect.isabstract(project::Resource)
-
-
-def test_project::resource_constructor_exists():
-    assert callable(project::Resource.__init__)
-
-
-def test_project::resource_constructor_args():
-    sig = inspect.signature(project::Resource.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_project::resource_has_id():
-    assert hasattr(project::Resource, "id")
-    descriptor = None
-    for klass in project::Resource.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::resource_has_name():
-    assert hasattr(project::Resource, "name")
-    descriptor = None
-    for klass in project::Resource.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::taskreport_is_not_abstract():
-    assert not inspect.isabstract(project::TaskReport)
-
-
-def test_project::taskreport_constructor_exists():
-    assert callable(project::TaskReport.__init__)
-
-
-def test_project::taskreport_constructor_args():
-    sig = inspect.signature(project::TaskReport.__init__)
+def test_project_accountreport_constructor_args():
+    sig = inspect.signature(project_AccountReport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::rate_is_not_abstract():
-    assert not inspect.isabstract(project::Rate)
+def test_project_supplementaccount_is_not_abstract():
+    assert not inspect.isabstract(project_SupplementAccount)
 
 
-def test_project::rate_constructor_exists():
-    assert callable(project::Rate.__init__)
+def test_project_supplementaccount_constructor_exists():
+    assert callable(project_SupplementAccount.__init__)
 
 
-def test_project::rate_constructor_args():
-    sig = inspect.signature(project::Rate.__init__)
-    params = list(sig.parameters.keys())
-    assert "rate" in params, "Missing parameter 'rate'"
-
-def test_project::rate_has_rate():
-    assert hasattr(project::Rate, "rate")
-    descriptor = None
-    for klass in project::Rate.__mro__:
-        if "rate" in klass.__dict__:
-            descriptor = klass.__dict__["rate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::supplementaccount_is_not_abstract():
-    assert not inspect.isabstract(project::SupplementAccount)
-
-
-def test_project::supplementaccount_constructor_exists():
-    assert callable(project::SupplementAccount.__init__)
-
-
-def test_project::supplementaccount_constructor_args():
-    sig = inspect.signature(project::SupplementAccount.__init__)
+def test_project_supplementaccount_constructor_args():
+    sig = inspect.signature(project_SupplementAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::nikureport_is_not_abstract():
-    assert not inspect.isabstract(project::NikuReport)
+def test_project_statussheet_is_not_abstract():
+    assert not inspect.isabstract(project_StatusSheet)
 
 
-def test_project::nikureport_constructor_exists():
-    assert callable(project::NikuReport.__init__)
+def test_project_statussheet_constructor_exists():
+    assert callable(project_StatusSheet.__init__)
 
 
-def test_project::nikureport_constructor_args():
-    sig = inspect.signature(project::NikuReport.__init__)
-    params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
-
-def test_project::nikureport_has_filename():
-    assert hasattr(project::NikuReport, "filename")
-    descriptor = None
-    for klass in project::NikuReport.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::macro_is_not_abstract():
-    assert not inspect.isabstract(project::Macro)
-
-
-def test_project::macro_constructor_exists():
-    assert callable(project::Macro.__init__)
-
-
-def test_project::macro_constructor_args():
-    sig = inspect.signature(project::Macro.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_project::macro_has_value():
-    assert hasattr(project::Macro, "value")
-    descriptor = None
-    for klass in project::Macro.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::tagfile_is_not_abstract():
-    assert not inspect.isabstract(project::TagFile)
-
-
-def test_project::tagfile_constructor_exists():
-    assert callable(project::TagFile.__init__)
-
-
-def test_project::tagfile_constructor_args():
-    sig = inspect.signature(project::TagFile.__init__)
-    params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_project::tagfile_has_filename():
-    assert hasattr(project::TagFile, "filename")
-    descriptor = None
-    for klass in project::TagFile.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::tagfile_has_id():
-    assert hasattr(project::TagFile, "id")
-    descriptor = None
-    for klass in project::TagFile.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::statussheetreport_is_not_abstract():
-    assert not inspect.isabstract(project::StatusSheetReport)
-
-
-def test_project::statussheetreport_constructor_exists():
-    assert callable(project::StatusSheetReport.__init__)
-
-
-def test_project::statussheetreport_constructor_args():
-    sig = inspect.signature(project::StatusSheetReport.__init__)
-    params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
-
-def test_project::statussheetreport_has_filename():
-    assert hasattr(project::StatusSheetReport, "filename")
-    descriptor = None
-    for klass in project::StatusSheetReport.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::accountreport_is_not_abstract():
-    assert not inspect.isabstract(project::AccountReport)
-
-
-def test_project::accountreport_constructor_exists():
-    assert callable(project::AccountReport.__init__)
-
-
-def test_project::accountreport_constructor_args():
-    sig = inspect.signature(project::AccountReport.__init__)
+def test_project_statussheet_constructor_args():
+    sig = inspect.signature(project_StatusSheet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::textreport_is_not_abstract():
-    assert not inspect.isabstract(project::TextReport)
+def test_project_flags_is_not_abstract():
+    assert not inspect.isabstract(project_Flags)
 
 
-def test_project::textreport_constructor_exists():
-    assert callable(project::TextReport.__init__)
+def test_project_flags_constructor_exists():
+    assert callable(project_Flags.__init__)
 
 
-def test_project::textreport_constructor_args():
-    sig = inspect.signature(project::TextReport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::statussheet_is_not_abstract():
-    assert not inspect.isabstract(project::StatusSheet)
-
-
-def test_project::statussheet_constructor_exists():
-    assert callable(project::StatusSheet.__init__)
-
-
-def test_project::statussheet_constructor_args():
-    sig = inspect.signature(project::StatusSheet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::balance_is_not_abstract():
-    assert not inspect.isabstract(project::Balance)
-
-
-def test_project::balance_constructor_exists():
-    assert callable(project::Balance.__init__)
-
-
-def test_project::balance_constructor_args():
-    sig = inspect.signature(project::Balance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::navigator_is_not_abstract():
-    assert not inspect.isabstract(project::Navigator)
-
-
-def test_project::navigator_constructor_exists():
-    assert callable(project::Navigator.__init__)
-
-
-def test_project::navigator_constructor_args():
-    sig = inspect.signature(project::Navigator.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_project::navigator_has_id():
-    assert hasattr(project::Navigator, "id")
-    descriptor = None
-    for klass in project::Navigator.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::timesheet_is_not_abstract():
-    assert not inspect.isabstract(project::Timesheet)
-
-
-def test_project::timesheet_constructor_exists():
-    assert callable(project::Timesheet.__init__)
-
-
-def test_project::timesheet_constructor_args():
-    sig = inspect.signature(project::Timesheet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::shift_is_not_abstract():
-    assert not inspect.isabstract(project::Shift)
-
-
-def test_project::shift_constructor_exists():
-    assert callable(project::Shift.__init__)
-
-
-def test_project::shift_constructor_args():
-    sig = inspect.signature(project::Shift.__init__)
-    params = list(sig.parameters.keys())
-    assert "timezone" in params, "Missing parameter 'timezone'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "replace" in params, "Missing parameter 'replace'"
-
-def test_project::shift_has_timezone():
-    assert hasattr(project::Shift, "timezone")
-    descriptor = None
-    for klass in project::Shift.__mro__:
-        if "timezone" in klass.__dict__:
-            descriptor = klass.__dict__["timezone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::shift_has_id():
-    assert hasattr(project::Shift, "id")
-    descriptor = None
-    for klass in project::Shift.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::shift_has_name():
-    assert hasattr(project::Shift, "name")
-    descriptor = None
-    for klass in project::Shift.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::shift_has_replace():
-    assert hasattr(project::Shift, "replace")
-    descriptor = None
-    for klass in project::Shift.__mro__:
-        if "replace" in klass.__dict__:
-            descriptor = klass.__dict__["replace"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::supplementtask_is_not_abstract():
-    assert not inspect.isabstract(project::SupplementTask)
-
-
-def test_project::supplementtask_constructor_exists():
-    assert callable(project::SupplementTask.__init__)
-
-
-def test_project::supplementtask_constructor_args():
-    sig = inspect.signature(project::SupplementTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::supplementresource_is_not_abstract():
-    assert not inspect.isabstract(project::SupplementResource)
-
-
-def test_project::supplementresource_constructor_exists():
-    assert callable(project::SupplementResource.__init__)
-
-
-def test_project::supplementresource_constructor_args():
-    sig = inspect.signature(project::SupplementResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::resourcereport_is_not_abstract():
-    assert not inspect.isabstract(project::ResourceReport)
-
-
-def test_project::resourcereport_constructor_exists():
-    assert callable(project::ResourceReport.__init__)
-
-
-def test_project::resourcereport_constructor_args():
-    sig = inspect.signature(project::ResourceReport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::copyright_is_not_abstract():
-    assert not inspect.isabstract(project::Copyright)
-
-
-def test_project::copyright_constructor_exists():
-    assert callable(project::Copyright.__init__)
-
-
-def test_project::copyright_constructor_args():
-    sig = inspect.signature(project::Copyright.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_project::copyright_has_text():
-    assert hasattr(project::Copyright, "text")
-    descriptor = None
-    for klass in project::Copyright.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::task_is_not_abstract():
-    assert not inspect.isabstract(project::Task)
-
-
-def test_project::task_constructor_exists():
-    assert callable(project::Task.__init__)
-
-
-def test_project::task_constructor_args():
-    sig = inspect.signature(project::Task.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_project::task_has_name():
-    assert hasattr(project::Task, "name")
-    descriptor = None
-    for klass in project::Task.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::task_has_id():
-    assert hasattr(project::Task, "id")
-    descriptor = None
-    for klass in project::Task.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::icalreport_is_not_abstract():
-    assert not inspect.isabstract(project::IcalReport)
-
-
-def test_project::icalreport_constructor_exists():
-    assert callable(project::IcalReport.__init__)
-
-
-def test_project::icalreport_constructor_args():
-    sig = inspect.signature(project::IcalReport.__init__)
-    params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
-
-def test_project::icalreport_has_filename():
-    assert hasattr(project::IcalReport, "filename")
-    descriptor = None
-    for klass in project::IcalReport.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_project::flags_is_not_abstract():
-    assert not inspect.isabstract(project::Flags)
-
-
-def test_project::flags_constructor_exists():
-    assert callable(project::Flags.__init__)
-
-
-def test_project::flags_constructor_args():
-    sig = inspect.signature(project::Flags.__init__)
+def test_project_flags_constructor_args():
+    sig = inspect.signature(project_Flags.__init__)
     params = list(sig.parameters.keys())
     assert "flags" in params, "Missing parameter 'flags'"
 
-def test_project::flags_has_flags():
-    assert hasattr(project::Flags, "flags")
+def test_project_flags_has_flags():
+    assert hasattr(project_Flags, "flags")
     descriptor = None
-    for klass in project::Flags.__mro__:
+    for klass in project_Flags.__mro__:
         if "flags" in klass.__dict__:
             descriptor = klass.__dict__["flags"]
             break
@@ -5972,23 +5468,95 @@ def test_project::flags_has_flags():
 
 
 
-def test_project::vacation_is_not_abstract():
-    assert not inspect.isabstract(project::Vacation)
+def test_project_navigator_is_not_abstract():
+    assert not inspect.isabstract(project_Navigator)
 
 
-def test_project::vacation_constructor_exists():
-    assert callable(project::Vacation.__init__)
+def test_project_navigator_constructor_exists():
+    assert callable(project_Navigator.__init__)
 
 
-def test_project::vacation_constructor_args():
-    sig = inspect.signature(project::Vacation.__init__)
+def test_project_navigator_constructor_args():
+    sig = inspect.signature(project_Navigator.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_project_navigator_has_id():
+    assert hasattr(project_Navigator, "id")
+    descriptor = None
+    for klass in project_Navigator.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_timesheetreport_is_not_abstract():
+    assert not inspect.isabstract(project_TimesheetReport)
+
+
+def test_project_timesheetreport_constructor_exists():
+    assert callable(project_TimesheetReport.__init__)
+
+
+def test_project_timesheetreport_constructor_args():
+    sig = inspect.signature(project_TimesheetReport.__init__)
+    params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
+
+def test_project_timesheetreport_has_filename():
+    assert hasattr(project_TimesheetReport, "filename")
+    descriptor = None
+    for klass in project_TimesheetReport.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_statussheetreport_is_not_abstract():
+    assert not inspect.isabstract(project_StatusSheetReport)
+
+
+def test_project_statussheetreport_constructor_exists():
+    assert callable(project_StatusSheetReport.__init__)
+
+
+def test_project_statussheetreport_constructor_args():
+    sig = inspect.signature(project_StatusSheetReport.__init__)
+    params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
+
+def test_project_statussheetreport_has_filename():
+    assert hasattr(project_StatusSheetReport, "filename")
+    descriptor = None
+    for klass in project_StatusSheetReport.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_vacation_is_not_abstract():
+    assert not inspect.isabstract(project_Vacation)
+
+
+def test_project_vacation_constructor_exists():
+    assert callable(project_Vacation.__init__)
+
+
+def test_project_vacation_constructor_args():
+    sig = inspect.signature(project_Vacation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_project::vacation_has_name():
-    assert hasattr(project::Vacation, "name")
+def test_project_vacation_has_name():
+    assert hasattr(project_Vacation, "name")
     descriptor = None
-    for klass in project::Vacation.__mro__:
+    for klass in project_Vacation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -5996,23 +5564,393 @@ def test_project::vacation_has_name():
 
 
 
-def test_project::projectids_is_not_abstract():
-    assert not inspect.isabstract(project::ProjectIds)
+def test_project_rate_is_not_abstract():
+    assert not inspect.isabstract(project_Rate)
 
 
-def test_project::projectids_constructor_exists():
-    assert callable(project::ProjectIds.__init__)
+def test_project_rate_constructor_exists():
+    assert callable(project_Rate.__init__)
 
 
-def test_project::projectids_constructor_args():
-    sig = inspect.signature(project::ProjectIds.__init__)
+def test_project_rate_constructor_args():
+    sig = inspect.signature(project_Rate.__init__)
+    params = list(sig.parameters.keys())
+    assert "rate" in params, "Missing parameter 'rate'"
+
+def test_project_rate_has_rate():
+    assert hasattr(project_Rate, "rate")
+    descriptor = None
+    for klass in project_Rate.__mro__:
+        if "rate" in klass.__dict__:
+            descriptor = klass.__dict__["rate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_macro_is_not_abstract():
+    assert not inspect.isabstract(project_Macro)
+
+
+def test_project_macro_constructor_exists():
+    assert callable(project_Macro.__init__)
+
+
+def test_project_macro_constructor_args():
+    sig = inspect.signature(project_Macro.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_project_macro_has_value():
+    assert hasattr(project_Macro, "value")
+    descriptor = None
+    for klass in project_Macro.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_nikureport_is_not_abstract():
+    assert not inspect.isabstract(project_NikuReport)
+
+
+def test_project_nikureport_constructor_exists():
+    assert callable(project_NikuReport.__init__)
+
+
+def test_project_nikureport_constructor_args():
+    sig = inspect.signature(project_NikuReport.__init__)
+    params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
+
+def test_project_nikureport_has_filename():
+    assert hasattr(project_NikuReport, "filename")
+    descriptor = None
+    for klass in project_NikuReport.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_textreport_is_not_abstract():
+    assert not inspect.isabstract(project_TextReport)
+
+
+def test_project_textreport_constructor_exists():
+    assert callable(project_TextReport.__init__)
+
+
+def test_project_textreport_constructor_args():
+    sig = inspect.signature(project_TextReport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_resource_is_not_abstract():
+    assert not inspect.isabstract(project_Resource)
+
+
+def test_project_resource_constructor_exists():
+    assert callable(project_Resource.__init__)
+
+
+def test_project_resource_constructor_args():
+    sig = inspect.signature(project_Resource.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_project_resource_has_id():
+    assert hasattr(project_Resource, "id")
+    descriptor = None
+    for klass in project_Resource.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_resource_has_name():
+    assert hasattr(project_Resource, "name")
+    descriptor = None
+    for klass in project_Resource.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_limits_is_not_abstract():
+    assert not inspect.isabstract(project_Limits)
+
+
+def test_project_limits_constructor_exists():
+    assert callable(project_Limits.__init__)
+
+
+def test_project_limits_constructor_args():
+    sig = inspect.signature(project_Limits.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_icalreport_is_not_abstract():
+    assert not inspect.isabstract(project_IcalReport)
+
+
+def test_project_icalreport_constructor_exists():
+    assert callable(project_IcalReport.__init__)
+
+
+def test_project_icalreport_constructor_args():
+    sig = inspect.signature(project_IcalReport.__init__)
+    params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
+
+def test_project_icalreport_has_filename():
+    assert hasattr(project_IcalReport, "filename")
+    descriptor = None
+    for klass in project_IcalReport.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_export_is_not_abstract():
+    assert not inspect.isabstract(project_Export)
+
+
+def test_project_export_constructor_exists():
+    assert callable(project_Export.__init__)
+
+
+def test_project_export_constructor_args():
+    sig = inspect.signature(project_Export.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "filename" in params, "Missing parameter 'filename'"
+
+def test_project_export_has_id():
+    assert hasattr(project_Export, "id")
+    descriptor = None
+    for klass in project_Export.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_export_has_filename():
+    assert hasattr(project_Export, "filename")
+    descriptor = None
+    for klass in project_Export.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_timesheet_is_not_abstract():
+    assert not inspect.isabstract(project_Timesheet)
+
+
+def test_project_timesheet_constructor_exists():
+    assert callable(project_Timesheet.__init__)
+
+
+def test_project_timesheet_constructor_args():
+    sig = inspect.signature(project_Timesheet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_supplementreport_is_not_abstract():
+    assert not inspect.isabstract(project_SupplementReport)
+
+
+def test_project_supplementreport_constructor_exists():
+    assert callable(project_SupplementReport.__init__)
+
+
+def test_project_supplementreport_constructor_args():
+    sig = inspect.signature(project_SupplementReport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_supplementresource_is_not_abstract():
+    assert not inspect.isabstract(project_SupplementResource)
+
+
+def test_project_supplementresource_constructor_exists():
+    assert callable(project_SupplementResource.__init__)
+
+
+def test_project_supplementresource_constructor_args():
+    sig = inspect.signature(project_SupplementResource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_copyright_is_not_abstract():
+    assert not inspect.isabstract(project_Copyright)
+
+
+def test_project_copyright_constructor_exists():
+    assert callable(project_Copyright.__init__)
+
+
+def test_project_copyright_constructor_args():
+    sig = inspect.signature(project_Copyright.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_project_copyright_has_text():
+    assert hasattr(project_Copyright, "text")
+    descriptor = None
+    for klass in project_Copyright.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_shift_is_not_abstract():
+    assert not inspect.isabstract(project_Shift)
+
+
+def test_project_shift_constructor_exists():
+    assert callable(project_Shift.__init__)
+
+
+def test_project_shift_constructor_args():
+    sig = inspect.signature(project_Shift.__init__)
+    params = list(sig.parameters.keys())
+    assert "replace" in params, "Missing parameter 'replace'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "timezone" in params, "Missing parameter 'timezone'"
+
+def test_project_shift_has_replace():
+    assert hasattr(project_Shift, "replace")
+    descriptor = None
+    for klass in project_Shift.__mro__:
+        if "replace" in klass.__dict__:
+            descriptor = klass.__dict__["replace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_shift_has_id():
+    assert hasattr(project_Shift, "id")
+    descriptor = None
+    for klass in project_Shift.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_shift_has_name():
+    assert hasattr(project_Shift, "name")
+    descriptor = None
+    for klass in project_Shift.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_shift_has_timezone():
+    assert hasattr(project_Shift, "timezone")
+    descriptor = None
+    for klass in project_Shift.__mro__:
+        if "timezone" in klass.__dict__:
+            descriptor = klass.__dict__["timezone"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_includeproperties_is_not_abstract():
+    assert not inspect.isabstract(project_IncludeProperties)
+
+
+def test_project_includeproperties_constructor_exists():
+    assert callable(project_IncludeProperties.__init__)
+
+
+def test_project_includeproperties_constructor_args():
+    sig = inspect.signature(project_IncludeProperties.__init__)
+    params = list(sig.parameters.keys())
+    assert "importURI" in params, "Missing parameter 'importURI'"
+
+def test_project_includeproperties_has_importURI():
+    assert hasattr(project_IncludeProperties, "importURI")
+    descriptor = None
+    for klass in project_IncludeProperties.__mro__:
+        if "importURI" in klass.__dict__:
+            descriptor = klass.__dict__["importURI"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_task_is_not_abstract():
+    assert not inspect.isabstract(project_Task)
+
+
+def test_project_task_constructor_exists():
+    assert callable(project_Task.__init__)
+
+
+def test_project_task_constructor_args():
+    sig = inspect.signature(project_Task.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_project_task_has_id():
+    assert hasattr(project_Task, "id")
+    descriptor = None
+    for klass in project_Task.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_task_has_name():
+    assert hasattr(project_Task, "name")
+    descriptor = None
+    for klass in project_Task.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_projectids_is_not_abstract():
+    assert not inspect.isabstract(project_ProjectIds)
+
+
+def test_project_projectids_constructor_exists():
+    assert callable(project_ProjectIds.__init__)
+
+
+def test_project_projectids_constructor_args():
+    sig = inspect.signature(project_ProjectIds.__init__)
     params = list(sig.parameters.keys())
     assert "ids" in params, "Missing parameter 'ids'"
 
-def test_project::projectids_has_ids():
-    assert hasattr(project::ProjectIds, "ids")
+def test_project_projectids_has_ids():
+    assert hasattr(project_ProjectIds, "ids")
     descriptor = None
-    for klass in project::ProjectIds.__mro__:
+    for klass in project_ProjectIds.__mro__:
         if "ids" in klass.__dict__:
             descriptor = klass.__dict__["ids"]
             break
@@ -6020,61 +5958,89 @@ def test_project::projectids_has_ids():
 
 
 
-def test_project::supplementreport_is_not_abstract():
-    assert not inspect.isabstract(project::SupplementReport)
+def test_project_resourcereport_is_not_abstract():
+    assert not inspect.isabstract(project_ResourceReport)
 
 
-def test_project::supplementreport_constructor_exists():
-    assert callable(project::SupplementReport.__init__)
+def test_project_resourcereport_constructor_exists():
+    assert callable(project_ResourceReport.__init__)
 
 
-def test_project::supplementreport_constructor_args():
-    sig = inspect.signature(project::SupplementReport.__init__)
+def test_project_resourcereport_constructor_args():
+    sig = inspect.signature(project_ResourceReport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::limits_is_not_abstract():
-    assert not inspect.isabstract(project::Limits)
+def test_project_taskreport_is_not_abstract():
+    assert not inspect.isabstract(project_TaskReport)
 
 
-def test_project::limits_constructor_exists():
-    assert callable(project::Limits.__init__)
+def test_project_taskreport_constructor_exists():
+    assert callable(project_TaskReport.__init__)
 
 
-def test_project::limits_constructor_args():
-    sig = inspect.signature(project::Limits.__init__)
+def test_project_taskreport_constructor_args():
+    sig = inspect.signature(project_TaskReport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_project::account_is_not_abstract():
-    assert not inspect.isabstract(project::Account)
+def test_project_supplementtask_is_not_abstract():
+    assert not inspect.isabstract(project_SupplementTask)
 
 
-def test_project::account_constructor_exists():
-    assert callable(project::Account.__init__)
+def test_project_supplementtask_constructor_exists():
+    assert callable(project_SupplementTask.__init__)
 
 
-def test_project::account_constructor_args():
-    sig = inspect.signature(project::Account.__init__)
+def test_project_supplementtask_constructor_args():
+    sig = inspect.signature(project_SupplementTask.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
+
+
+
+def test_project_balance_is_not_abstract():
+    assert not inspect.isabstract(project_Balance)
+
+
+def test_project_balance_constructor_exists():
+    assert callable(project_Balance.__init__)
+
+
+def test_project_balance_constructor_args():
+    sig = inspect.signature(project_Balance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_tagfile_is_not_abstract():
+    assert not inspect.isabstract(project_TagFile)
+
+
+def test_project_tagfile_constructor_exists():
+    assert callable(project_TagFile.__init__)
+
+
+def test_project_tagfile_constructor_args():
+    sig = inspect.signature(project_TagFile.__init__)
+    params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_project::account_has_name():
-    assert hasattr(project::Account, "name")
+def test_project_tagfile_has_filename():
+    assert hasattr(project_TagFile, "filename")
     descriptor = None
-    for klass in project::Account.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in project_TagFile.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::account_has_id():
-    assert hasattr(project::Account, "id")
+def test_project_tagfile_has_id():
+    assert hasattr(project_TagFile, "id")
     descriptor = None
-    for klass in project::Account.__mro__:
+    for klass in project_TagFile.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -6082,271 +6048,95 @@ def test_project::account_has_id():
 
 
 
-def test_project::property_is_not_abstract():
-    assert not inspect.isabstract(project::Property)
+def test_project_account_is_not_abstract():
+    assert not inspect.isabstract(project_Account)
 
 
-def test_project::property_constructor_exists():
-    assert callable(project::Property.__init__)
+def test_project_account_constructor_exists():
+    assert callable(project_Account.__init__)
 
 
-def test_project::property_constructor_args():
-    sig = inspect.signature(project::Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_project::project_is_not_abstract():
-    assert not inspect.isabstract(project::Project)
-
-
-def test_project::project_constructor_exists():
-    assert callable(project::Project.__init__)
-
-
-def test_project::project_constructor_args():
-    sig = inspect.signature(project::Project.__init__)
+def test_project_account_constructor_args():
+    sig = inspect.signature(project_Account.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+
+def test_project_account_has_name():
+    assert hasattr(project_Account, "name")
+    descriptor = None
+    for klass in project_Account.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_account_has_id():
+    assert hasattr(project_Account, "id")
+    descriptor = None
+    for klass in project_Account.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_project_property_is_not_abstract():
+    assert not inspect.isabstract(project_Property)
+
+
+def test_project_property_constructor_exists():
+    assert callable(project_Property.__init__)
+
+
+def test_project_property_constructor_args():
+    sig = inspect.signature(project_Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_project_project_is_not_abstract():
+    assert not inspect.isabstract(project_Project)
+
+
+def test_project_project_constructor_exists():
+    assert callable(project_Project.__init__)
+
+
+def test_project_project_constructor_args():
+    sig = inspect.signature(project_Project.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "version" in params, "Missing parameter 'version'"
 
-def test_project::project_has_name():
-    assert hasattr(project::Project, "name")
+def test_project_project_has_id():
+    assert hasattr(project_Project, "id")
     descriptor = None
-    for klass in project::Project.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project::project_has_id():
-    assert hasattr(project::Project, "id")
-    descriptor = None
-    for klass in project::Project.__mro__:
+    for klass in project_Project.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_project::project_has_version():
-    assert hasattr(project::Project, "version")
+def test_project_project_has_name():
+    assert hasattr(project_Project, "name")
     descriptor = None
-    for klass in project::Project.__mro__:
+    for klass in project_Project.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_project_has_version():
+    assert hasattr(project_Project, "version")
+    descriptor = None
+    for klass in project_Project.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
-
-def test_schedulingpolicy_exists():
-    # Check that the Enumeration exists
-    assert SchedulingPolicy is not None
-
-def test_schedulingpolicy_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SchedulingPolicy]
-    expected_literals = [
-        "ASAP",
-        "ALAP",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SchedulingPolicy"
-
-def test_journalentrysortcriterion_exists():
-    # Check that the Enumeration exists
-    assert JournalEntrySortCriterion is not None
-
-def test_journalentrysortcriterion_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in JournalEntrySortCriterion]
-    expected_literals = [
-        "ALERT_UP",
-        "PROPERTY_UP",
-        "DATE_DOWN",
-        "DATE_UP",
-        "ALERT_DOWN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in JournalEntrySortCriterion"
-
-def test_journalmodevalue_exists():
-    # Check that the Enumeration exists
-    assert JournalModeValue is not None
-
-def test_journalmodevalue_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in JournalModeValue]
-    expected_literals = [
-        "ALERTS_DOWN",
-        "JOURNAL_SUB",
-        "STATUS_DOWN",
-        "STATUS_UP",
-        "JOURNAL",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in JournalModeValue"
-
-def test_purgeresourceattribute_exists():
-    # Check that the Enumeration exists
-    assert PurgeResourceAttribute is not None
-
-def test_purgeresourceattribute_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PurgeResourceAttribute]
-    expected_literals = [
-        "FAIL",
-        "REPORTS",
-        "WARN",
-        "FLAGS",
-        "VACATIONS",
-        "MANAGERS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PurgeResourceAttribute"
-
-def test_weekday_exists():
-    # Check that the Enumeration exists
-    assert Weekday is not None
-
-def test_weekday_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Weekday]
-    expected_literals = [
-        "MON",
-        "THR",
-        "FRI",
-        "SAT",
-        "SUN",
-        "WED",
-        "TUE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Weekday"
-
-def test_scaleresolution_exists():
-    # Check that the Enumeration exists
-    assert ScaleResolution is not None
-
-def test_scaleresolution_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ScaleResolution]
-    expected_literals = [
-        "MONTH",
-        "WEEK",
-        "QUARTER",
-        "HOUR",
-        "DAY",
-        "YEAR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ScaleResolution"
-
-def test_dependspolicy_exists():
-    # Check that the Enumeration exists
-    assert DependsPolicy is not None
-
-def test_dependspolicy_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DependsPolicy]
-    expected_literals = [
-        "ONSTART",
-        "ONEND",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DependsPolicy"
-
-def test_listtypevalues_exists():
-    # Check that the Enumeration exists
-    assert ListTypeValues is not None
-
-def test_listtypevalues_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ListTypeValues]
-    expected_literals = [
-        "COMMA",
-        "NUMBERED",
-        "BULLETS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ListTypeValues"
-
-def test_reportformat_exists():
-    # Check that the Enumeration exists
-    assert ReportFormat is not None
-
-def test_reportformat_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ReportFormat]
-    expected_literals = [
-        "NIKU",
-        "CSV",
-        "HTML",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ReportFormat"
-
-def test_workquantityunit_exists():
-    # Check that the Enumeration exists
-    assert WorkQuantityUnit is not None
-
-def test_workquantityunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WorkQuantityUnit]
-    expected_literals = [
-        "DAYS",
-        "PERCENT",
-        "HOURS",
-        "MINUTES",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WorkQuantityUnit"
-
-def test_alertlevel_exists():
-    # Check that the Enumeration exists
-    assert AlertLevel is not None
-
-def test_alertlevel_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AlertLevel]
-    expected_literals = [
-        "YELLOW",
-        "RED",
-        "GREEN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AlertLevel"
-
-def test_loaddisplayunit_exists():
-    # Check that the Enumeration exists
-    assert LoadDisplayUnit is not None
-
-def test_loaddisplayunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LoadDisplayUnit]
-    expected_literals = [
-        "LONGAUTO",
-        "MONTHS",
-        "YEARS",
-        "SHORTAUTO",
-        "WEEKS",
-        "DAYS",
-        "MINUTES",
-        "HOURS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LoadDisplayUnit"
 
 def test_criteriondirection_exists():
     # Check that the Enumeration exists
@@ -6371,64 +6161,105 @@ def test_columnid_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ColumnId]
     expected_literals = [
-        "RESPONSIBLE",
-        "HIERARCHINDEX",
-        "CHART",
-        "HEADCOUNT",
-        "FREEWORK",
-        "REVENUE",
-        "MINSTART",
-        "END",
-        "SCENARIO",
-        "TARGETS",
-        "EFFORTLEFT",
-        "EFFICIENCY",
-        "EFFORTDONE",
-        "START",
-        "FREETIME",
-        "HOURLY",
-        "ALERTSUMMARY",
-        "MONTHLY",
-        "QUARTERLY",
-        "INDEX",
-        "RATE",
         "RESOURCES",
-        "FLAGS",
-        "DAILY",
+        "ALERT",
+        "FREEWORK",
+        "MAXEND",
+        "HIERARCHINDEX",
+        "YEARLY",
+        "REVENUE",
+        "LINE",
+        "NAME",
+        "PATHCRITICALNESS",
+        "DUTIES",
         "SEQNO",
-        "EMAIL",
-        "DURATION",
-        "NOTE",
-        "WBS",
-        "FOLLOWERS",
         "PRIORITY",
         "WEEKLY",
-        "PATHCRITICALNESS",
-        "MINEND",
+        "EFFICIENCY",
         "STATUS",
-        "LINE",
-        "COST",
-        "COMPLETE",
-        "ALERTTREND",
-        "FTE",
-        "DUTIES",
-        "COMPLETED",
-        "YEARLY",
-        "ALERTMESSAGE",
-        "EFFORT",
-        "NAME",
-        "MAXEND",
-        "ALERT",
-        "ID",
-        "JOURNAL",
         "CRITICALNESS",
+        "INDEX",
+        "COMPLETE",
+        "CHART",
+        "JOURNAL",
         "NO",
+        "NOTE",
+        "MINEND",
+        "WBS",
+        "EFFORT",
+        "FREETIME",
+        "MONTHLY",
+        "FLAGS",
+        "EMAIL",
+        "EFFORTDONE",
+        "HEADCOUNT",
+        "FOLLOWERS",
+        "HOURLY",
+        "FTE",
+        "END",
+        "MINSTART",
+        "ALERTTREND",
+        "QUARTERLY",
+        "START",
         "PRECURSOR",
+        "RESPONSIBLE",
+        "RATE",
+        "SCENARIO",
+        "DURATION",
+        "TARGETS",
+        "DAILY",
+        "EFFORTLEFT",
+        "ID",
         "MAXSTART",
+        "COMPLETED",
+        "ALERTSUMMARY",
+        "COST",
+        "ALERTMESSAGE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ColumnId"
+
+def test_weekday_exists():
+    # Check that the Enumeration exists
+    assert Weekday is not None
+
+def test_weekday_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Weekday]
+    expected_literals = [
+        "MON",
+        "SAT",
+        "TUE",
+        "THR",
+        "WED",
+        "FRI",
+        "SUN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Weekday"
+
+def test_loaddisplayunit_exists():
+    # Check that the Enumeration exists
+    assert LoadDisplayUnit is not None
+
+def test_loaddisplayunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LoadDisplayUnit]
+    expected_literals = [
+        "SHORTAUTO",
+        "MINUTES",
+        "LONGAUTO",
+        "WEEKS",
+        "MONTHS",
+        "YEARS",
+        "DAYS",
+        "HOURS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LoadDisplayUnit"
 
 def test_selectargument_exists():
     # Check that the Enumeration exists
@@ -6438,59 +6269,50 @@ def test_selectargument_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SelectArgument]
     expected_literals = [
-        "ORDER",
-        "MINLOADED",
-        "MAXLOADED",
         "MINALLOCATED",
+        "MINLOADED",
         "RANDOM",
+        "ORDER",
+        "MAXLOADED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SelectArgument"
 
-def test_purgetaskattribute_exists():
+def test_timeunit_exists():
     # Check that the Enumeration exists
-    assert PurgeTaskAttribute is not None
+    assert TimeUnit is not None
 
-def test_purgetaskattribute_has_all_literals():
+def test_timeunit_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PurgeTaskAttribute]
+    enum_literals = [lit.name for lit in TimeUnit]
     expected_literals = [
-        "WARN",
-        "DEPENDS",
-        "CHARGESET",
-        "BOOKING",
-        "PRECEDES",
-        "CHARGE",
-        "FAIL",
-        "FLAGS",
+        "YEAR",
+        "MONTH",
+        "DAY",
+        "WEEK",
+        "HOUR",
+        "MINUTE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PurgeTaskAttribute"
+        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
 
-def test_purgereportattribute_exists():
+def test_listtypevalues_exists():
     # Check that the Enumeration exists
-    assert PurgeReportAttribute is not None
+    assert ListTypeValues is not None
 
-def test_purgereportattribute_has_all_literals():
+def test_listtypevalues_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PurgeReportAttribute]
+    enum_literals = [lit.name for lit in ListTypeValues]
     expected_literals = [
-        "JOURNALATTRIBUTES",
-        "DEFINITIONS",
-        "FORMATS",
-        "SORTRESOURCES",
-        "SCENARIOS",
-        "SORTTASKS",
-        "COLUMNS",
-        "FLAGS",
-        "SORTACCOUNTS",
-        "SORTJOURNALENTRIES",
+        "COMMA",
+        "NUMBERED",
+        "BULLETS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PurgeReportAttribute"
+        assert lit_name in enum_literals, f"Literal '' missing in ListTypeValues"
 
 def test_yesno_exists():
     # Check that the Enumeration exists
@@ -6500,8 +6322,8 @@ def test_yesno_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in YesNo]
     expected_literals = [
-        "NO",
         "YES",
+        "NO",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -6516,12 +6338,155 @@ def test_justification_has_all_literals():
     enum_literals = [lit.name for lit in Justification]
     expected_literals = [
         "LEFT",
-        "RIGHT",
         "CENTER",
+        "RIGHT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Justification"
+
+def test_purgeresourceattribute_exists():
+    # Check that the Enumeration exists
+    assert PurgeResourceAttribute is not None
+
+def test_purgeresourceattribute_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PurgeResourceAttribute]
+    expected_literals = [
+        "REPORTS",
+        "FAIL",
+        "MANAGERS",
+        "VACATIONS",
+        "WARN",
+        "FLAGS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PurgeResourceAttribute"
+
+def test_scaleresolution_exists():
+    # Check that the Enumeration exists
+    assert ScaleResolution is not None
+
+def test_scaleresolution_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ScaleResolution]
+    expected_literals = [
+        "HOUR",
+        "WEEK",
+        "DAY",
+        "YEAR",
+        "QUARTER",
+        "MONTH",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ScaleResolution"
+
+def test_reportformat_exists():
+    # Check that the Enumeration exists
+    assert ReportFormat is not None
+
+def test_reportformat_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ReportFormat]
+    expected_literals = [
+        "HTML",
+        "NIKU",
+        "CSV",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ReportFormat"
+
+def test_schedulingpolicy_exists():
+    # Check that the Enumeration exists
+    assert SchedulingPolicy is not None
+
+def test_schedulingpolicy_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SchedulingPolicy]
+    expected_literals = [
+        "ASAP",
+        "ALAP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SchedulingPolicy"
+
+def test_workquantityunit_exists():
+    # Check that the Enumeration exists
+    assert WorkQuantityUnit is not None
+
+def test_workquantityunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WorkQuantityUnit]
+    expected_literals = [
+        "HOURS",
+        "DAYS",
+        "PERCENT",
+        "MINUTES",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WorkQuantityUnit"
+
+def test_journalentrysortcriterion_exists():
+    # Check that the Enumeration exists
+    assert JournalEntrySortCriterion is not None
+
+def test_journalentrysortcriterion_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in JournalEntrySortCriterion]
+    expected_literals = [
+        "DATE_UP",
+        "ALERT_DOWN",
+        "PROPERTY_UP",
+        "DATE_DOWN",
+        "ALERT_UP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in JournalEntrySortCriterion"
+
+def test_alertlevel_exists():
+    # Check that the Enumeration exists
+    assert AlertLevel is not None
+
+def test_alertlevel_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AlertLevel]
+    expected_literals = [
+        "RED",
+        "GREEN",
+        "YELLOW",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AlertLevel"
+
+def test_purgereportattribute_exists():
+    # Check that the Enumeration exists
+    assert PurgeReportAttribute is not None
+
+def test_purgereportattribute_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PurgeReportAttribute]
+    expected_literals = [
+        "SORTJOURNALENTRIES",
+        "DEFINITIONS",
+        "SORTRESOURCES",
+        "SORTACCOUNTS",
+        "JOURNALATTRIBUTES",
+        "FLAGS",
+        "FORMATS",
+        "COLUMNS",
+        "SCENARIOS",
+        "SORTTASKS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PurgeReportAttribute"
 
 def test_chargeapplies_exists():
     # Check that the Enumeration exists
@@ -6531,34 +6496,69 @@ def test_chargeapplies_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ChargeApplies]
     expected_literals = [
+        "PERHOUR",
+        "PERDAY",
+        "PERWEEK",
         "ONEND",
         "ONSTART",
-        "PERHOUR",
-        "PERWEEK",
-        "PERDAY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ChargeApplies"
 
-def test_timeunit_exists():
+def test_purgetaskattribute_exists():
     # Check that the Enumeration exists
-    assert TimeUnit is not None
+    assert PurgeTaskAttribute is not None
 
-def test_timeunit_has_all_literals():
+def test_purgetaskattribute_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimeUnit]
+    enum_literals = [lit.name for lit in PurgeTaskAttribute]
     expected_literals = [
-        "MINUTE",
-        "HOUR",
-        "DAY",
-        "YEAR",
-        "MONTH",
-        "WEEK",
+        "CHARGESET",
+        "BOOKING",
+        "FAIL",
+        "CHARGE",
+        "PRECEDES",
+        "WARN",
+        "DEPENDS",
+        "FLAGS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
+        assert lit_name in enum_literals, f"Literal '' missing in PurgeTaskAttribute"
+
+def test_journalmodevalue_exists():
+    # Check that the Enumeration exists
+    assert JournalModeValue is not None
+
+def test_journalmodevalue_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in JournalModeValue]
+    expected_literals = [
+        "JOURNAL",
+        "STATUS_UP",
+        "ALERTS_DOWN",
+        "STATUS_DOWN",
+        "JOURNAL_SUB",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in JournalModeValue"
+
+def test_dependspolicy_exists():
+    # Check that the Enumeration exists
+    assert DependsPolicy is not None
+
+def test_dependspolicy_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DependsPolicy]
+    expected_literals = [
+        "ONSTART",
+        "ONEND",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DependsPolicy"
 
 
 # =============================================================================
@@ -6572,57 +6572,168 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-project::JvmIdentifiableElement_strategy = st.builds(
-    project::JvmIdentifiableElement,
+GapDuration_strategy = st.builds(
+    GapDuration,
+)
+project_LimitAttribute_strategy = st.builds(
+    project_LimitAttribute,
+    end=
+        safe_text,
+    start=
+        safe_text
+)
+WeeklyMin_strategy = st.builds(
+    WeeklyMin,
+)
+project_ColumnAttribute_strategy = st.builds(
+    project_ColumnAttribute,
+)
+project_WorkHours_strategy = st.builds(
+    project_WorkHours,
+    start=
+        safe_text,
+    stop=
+        safe_text
+)
+project_Weekdays_strategy = st.builds(
+    project_Weekdays,
+    first=
+        safe_text,
+    last=
+        safe_text
+)
+project_TreeLevel_strategy = st.builds(
+    project_TreeLevel,
+    level=
+        safe_text
+)
+project_TimesheetReportAttribute_strategy = st.builds(
+    project_TimesheetReportAttribute,
+)
+project_TimesheetAttribute_strategy = st.builds(
+    project_TimesheetAttribute,
+)
+StatusSheetAttribute_strategy = st.builds(
+    StatusSheetAttribute,
+)
+project_TaskTimesheetAttribute_strategy = st.builds(
+    project_TaskTimesheetAttribute,
+)
+project_TaskStatusSheetAttribute_strategy = st.builds(
+    project_TaskStatusSheetAttribute,
+)
+project_StatusSheetReportAttribute_strategy = st.builds(
+    project_StatusSheetReportAttribute,
+)
+project_StatusSheetAttribute_strategy = st.builds(
+    project_StatusSheetAttribute,
+)
+project_StatusTimesheetAttribute_strategy = st.builds(
+    project_StatusTimesheetAttribute,
+)
+project_Criterion_strategy = st.builds(
+    project_Criterion,
+    direction=
+        safe_text,
+    columnId=
+        safe_text
+)
+SortTasks_strategy = st.builds(
+    SortTasks,
+)
+SortResources_strategy = st.builds(
+    SortResources,
+)
+SortJournalEntries_strategy = st.builds(
+    SortJournalEntries,
+)
+SortAccounts_strategy = st.builds(
+    SortAccounts,
+)
+project_Sort_strategy = st.builds(
+    project_Sort,
+    tree=
+        st.booleans()
+)
+project_StatusStatusSheetAttribute_strategy = st.builds(
+    project_StatusStatusSheetAttribute,
+)
+TaskStatusSheetAttribute_strategy = st.builds(
+    TaskStatusSheetAttribute,
+)
+project_TaskStatusSheet_strategy = st.builds(
+    project_TaskStatusSheet,
+)
+project_StatusStatusSheet_strategy = st.builds(
+    project_StatusStatusSheet,
+    level=
+        safe_text,
+    text=
+        safe_text
+)
+project_ShiftsLimit_strategy = st.builds(
+    project_ShiftsLimit,
+)
+ShiftsTask_strategy = st.builds(
+    ShiftsTask,
+)
+ShiftsResource_strategy = st.builds(
+    ShiftsResource,
+)
+project_Shifts_strategy = st.builds(
+    project_Shifts,
+)
+project_JvmIdentifiableElement_strategy = st.builds(
+    project_JvmIdentifiableElement,
 )
 LogicalExpression_strategy = st.builds(
     LogicalExpression,
 )
-project::LogicalNumeralLiteral_strategy = st.builds(
-    project::LogicalNumeralLiteral,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-project::LogicalFunctionExpression_strategy = st.builds(
-    project::LogicalFunctionExpression,
-)
-project::LogicalAbsoluteIdExression_strategy = st.builds(
-    project::LogicalAbsoluteIdExression,
+project_LogicalDateLiteral_strategy = st.builds(
+    project_LogicalDateLiteral,
     value=
         safe_text
 )
-project::LogicalDateLiteral_strategy = st.builds(
-    project::LogicalDateLiteral,
+project_LogicalStringLiteral_strategy = st.builds(
+    project_LogicalStringLiteral,
     value=
         safe_text
 )
-project::LogicalBooleanLiteral_strategy = st.builds(
-    project::LogicalBooleanLiteral,
+project_LogicalBooleanLiteral_strategy = st.builds(
+    project_LogicalBooleanLiteral,
     isTrue=
         st.booleans()
 )
-project::LogicalStringLiteral_strategy = st.builds(
-    project::LogicalStringLiteral,
+project_LogicalNumeralLiteral_strategy = st.builds(
+    project_LogicalNumeralLiteral,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+project_LogicalFunctionExpression_strategy = st.builds(
+    project_LogicalFunctionExpression,
+)
+project_LogicalAbsoluteIdExression_strategy = st.builds(
+    project_LogicalAbsoluteIdExression,
     value=
         safe_text
 )
-project::XBinaryOperation_strategy = st.builds(
-    project::XBinaryOperation,
+project_XBinaryOperation_strategy = st.builds(
+    project_XBinaryOperation,
 )
 Definitions_strategy = st.builds(
     Definitions,
 )
-project::Defintions_strategy = st.builds(
-    project::Defintions,
-    flags=
+project_Defintions_strategy = st.builds(
+    project_Defintions,
+    projectids=
         st.booleans(),
     project=
         st.booleans(),
     tasks=
         st.booleans(),
-    projectids=
-        st.booleans(),
     resources=
+        st.booleans(),
+    flags=
         st.booleans()
 )
 Header_strategy = st.builds(
@@ -6661,8 +6772,8 @@ Left_strategy = st.builds(
 Headline_strategy = st.builds(
     Headline,
 )
-project::RichText_strategy = st.builds(
-    project::RichText,
+project_RichText_strategy = st.builds(
+    project_RichText,
     text=
         safe_text
 )
@@ -6672,8 +6783,8 @@ Precedes_strategy = st.builds(
 Depends_strategy = st.builds(
     Depends,
 )
-project::TaskDependency_strategy = st.builds(
-    project::TaskDependency,
+project_TaskDependency_strategy = st.builds(
+    project_TaskDependency,
     policy=
         safe_text
 )
@@ -6683,18 +6794,18 @@ NumberFormat_strategy = st.builds(
 CurrencyFormat_strategy = st.builds(
     CurrencyFormat,
 )
-project::RealFormat_strategy = st.builds(
-    project::RealFormat,
-    negativeSuffix=
-        safe_text,
+project_RealFormat_strategy = st.builds(
+    project_RealFormat,
     fractionSeparator=
         safe_text,
     negativePrefix=
         safe_text,
-    fractionDigits=
-        st.integers(),
     thousandsSeparator=
-        safe_text
+        safe_text,
+    negativeSuffix=
+        safe_text,
+    fractionDigits=
+        st.integers()
 )
 WeeklyMax_strategy = st.builds(
     WeeklyMax,
@@ -6717,224 +6828,113 @@ DailyMin_strategy = st.builds(
 DailyMax_strategy = st.builds(
     DailyMax,
 )
+project_Limit_strategy = st.builds(
+    project_Limit,
+)
 GapLength_strategy = st.builds(
     GapLength,
 )
-GapDuration_strategy = st.builds(
-    GapDuration,
+project_LimitsAttribute_strategy = st.builds(
+    project_LimitsAttribute,
 )
-project::LimitAttribute_strategy = st.builds(
-    project::LimitAttribute,
+project_Interval3_strategy = st.builds(
+    project_Interval3,
     end=
         safe_text,
     start=
         safe_text
 )
-WeeklyMin_strategy = st.builds(
-    WeeklyMin,
-)
-project::Limit_strategy = st.builds(
-    project::Limit,
-)
-project::ColumnAttribute_strategy = st.builds(
-    project::ColumnAttribute,
-)
-project::WorkHours_strategy = st.builds(
-    project::WorkHours,
-    start=
-        safe_text,
-    stop=
-        safe_text
-)
-project::Weekdays_strategy = st.builds(
-    project::Weekdays,
-    first=
-        safe_text,
-    last=
-        safe_text
-)
-project::TreeLevel_strategy = st.builds(
-    project::TreeLevel,
-    level=
-        safe_text
-)
-project::TimesheetReportAttribute_strategy = st.builds(
-    project::TimesheetReportAttribute,
-)
-project::TimesheetAttribute_strategy = st.builds(
-    project::TimesheetAttribute,
-)
-StatusSheetAttribute_strategy = st.builds(
-    StatusSheetAttribute,
-)
-project::TaskTimesheetAttribute_strategy = st.builds(
-    project::TaskTimesheetAttribute,
-)
-project::TaskStatusSheetAttribute_strategy = st.builds(
-    project::TaskStatusSheetAttribute,
-)
-project::StatusSheetReportAttribute_strategy = st.builds(
-    project::StatusSheetReportAttribute,
-)
-project::StatusSheetAttribute_strategy = st.builds(
-    project::StatusSheetAttribute,
-)
-project::StatusTimesheetAttribute_strategy = st.builds(
-    project::StatusTimesheetAttribute,
-)
-project::Criterion_strategy = st.builds(
-    project::Criterion,
-    columnId=
-        safe_text,
-    direction=
-        safe_text
-)
-SortTasks_strategy = st.builds(
-    SortTasks,
-)
-SortResources_strategy = st.builds(
-    SortResources,
-)
-SortJournalEntries_strategy = st.builds(
-    SortJournalEntries,
-)
-SortAccounts_strategy = st.builds(
-    SortAccounts,
-)
-project::Sort_strategy = st.builds(
-    project::Sort,
-    tree=
-        st.booleans()
-)
-project::StatusStatusSheetAttribute_strategy = st.builds(
-    project::StatusStatusSheetAttribute,
-)
-TaskStatusSheetAttribute_strategy = st.builds(
-    TaskStatusSheetAttribute,
-)
-project::TaskStatusSheet_strategy = st.builds(
-    project::TaskStatusSheet,
-)
-project::StatusStatusSheet_strategy = st.builds(
-    project::StatusStatusSheet,
-    text=
-        safe_text,
-    level=
-        safe_text
-)
-project::ShiftsLimit_strategy = st.builds(
-    project::ShiftsLimit,
-)
-ShiftsTask_strategy = st.builds(
-    ShiftsTask,
-)
-ShiftsResource_strategy = st.builds(
-    ShiftsResource,
-)
-project::Shifts_strategy = st.builds(
-    project::Shifts,
-)
-project::LimitsAttribute_strategy = st.builds(
-    project::LimitsAttribute,
-)
-project::Interval3_strategy = st.builds(
-    project::Interval3,
-    start=
-        safe_text,
+project_Interval1_strategy = st.builds(
+    project_Interval1,
     end=
-        safe_text
-)
-project::Interval1_strategy = st.builds(
-    project::Interval1,
+        safe_text,
     start=
-        safe_text,
-    end=
         safe_text
 )
-project::IncludePropertiesAttribute_strategy = st.builds(
-    project::IncludePropertiesAttribute,
+project_IncludePropertiesAttribute_strategy = st.builds(
+    project_IncludePropertiesAttribute,
 )
-project::Function_strategy = st.builds(
-    project::Function,
-    parentId=
-        safe_text,
+project_Function_strategy = st.builds(
+    project_Function,
+    distance=
+        st.integers(),
     level=
         st.integers(),
-    date=
+    parentId=
         safe_text,
-    distance=
-        st.integers()
+    date=
+        safe_text
 )
 NavigatorAttribute_strategy = st.builds(
     NavigatorAttribute,
 )
-project::HideReport_strategy = st.builds(
-    project::HideReport,
+project_HideReport_strategy = st.builds(
+    project_HideReport,
 )
-project::GapLength_strategy = st.builds(
-    project::GapLength,
+project_GapLength_strategy = st.builds(
+    project_GapLength,
 )
-project::GapDuration_strategy = st.builds(
-    project::GapDuration,
+project_GapDuration_strategy = st.builds(
+    project_GapDuration,
 )
-project::Extend_strategy = st.builds(
-    project::Extend,
-    name=
-        safe_text,
+project_Extend_strategy = st.builds(
+    project_Extend,
     scenariospecific=
         st.booleans(),
-    id=
+    name=
         safe_text,
     inherit=
-        st.booleans()
+        st.booleans(),
+    id=
+        safe_text
 )
 ExportAttribute_strategy = st.builds(
     ExportAttribute,
 )
-project::TaskAttributes_strategy = st.builds(
-    project::TaskAttributes,
-    flags=
-        st.booleans(),
-    maxstart=
-        st.booleans(),
-    booking=
-        st.booleans(),
-    note=
-        st.booleans(),
-    priority=
-        st.booleans(),
-    complete=
-        st.booleans(),
+project_ResourceAttributes_strategy = st.builds(
+    project_ResourceAttributes,
     none=
-        st.booleans(),
-    maxend=
-        st.booleans(),
-    minstart=
-        st.booleans(),
-    all=
-        st.booleans(),
-    minend=
-        st.booleans(),
-    depends=
-        st.booleans(),
-    responsible=
-        st.booleans()
-)
-project::ResourceAttributes_strategy = st.builds(
-    project::ResourceAttributes,
-    none=
-        st.booleans(),
-    booking=
-        st.booleans(),
-    workingHours=
         st.booleans(),
     vacation=
         st.booleans(),
+    workingHours=
+        st.booleans(),
     all=
+        st.booleans(),
+    booking=
         st.booleans()
 )
-project::Definitions_strategy = st.builds(
-    project::Definitions,
+project_TaskAttributes_strategy = st.builds(
+    project_TaskAttributes,
+    minstart=
+        st.booleans(),
+    booking=
+        st.booleans(),
+    complete=
+        st.booleans(),
+    minend=
+        st.booleans(),
+    none=
+        st.booleans(),
+    flags=
+        st.booleans(),
+    depends=
+        st.booleans(),
+    priority=
+        st.booleans(),
+    all=
+        st.booleans(),
+    responsible=
+        st.booleans(),
+    maxend=
+        st.booleans(),
+    maxstart=
+        st.booleans(),
+    note=
+        st.booleans()
+)
+project_Definitions_strategy = st.builds(
+    project_Definitions,
     none=
         st.booleans(),
     all=
@@ -6943,90 +6943,90 @@ project::Definitions_strategy = st.builds(
 LimitsAttribute_strategy = st.builds(
     LimitsAttribute,
 )
-project::WeeklyMin_strategy = st.builds(
-    project::WeeklyMin,
+project_DailyMin_strategy = st.builds(
+    project_DailyMin,
 )
-project::Maximum_strategy = st.builds(
-    project::Maximum,
+project_WeeklyMax_strategy = st.builds(
+    project_WeeklyMax,
 )
-project::MonthlyMax_strategy = st.builds(
-    project::MonthlyMax,
+project_Minimum_strategy = st.builds(
+    project_Minimum,
 )
-project::WeeklyMax_strategy = st.builds(
-    project::WeeklyMax,
+project_Maximum_strategy = st.builds(
+    project_Maximum,
 )
-project::Minimum_strategy = st.builds(
-    project::Minimum,
+project_MonthlyMin_strategy = st.builds(
+    project_MonthlyMin,
 )
-project::DailyMin_strategy = st.builds(
-    project::DailyMin,
+project_MonthlyMax_strategy = st.builds(
+    project_MonthlyMax,
 )
-project::MonthlyMin_strategy = st.builds(
-    project::MonthlyMin,
+project_WeeklyMin_strategy = st.builds(
+    project_WeeklyMin,
 )
-project::DailyMax_strategy = st.builds(
-    project::DailyMax,
+project_DailyMax_strategy = st.builds(
+    project_DailyMax,
 )
 ProjectAttribute_strategy = st.builds(
     ProjectAttribute,
 )
-project::TimingResolution_strategy = st.builds(
-    project::TimingResolution,
+project_TrackingScenario_strategy = st.builds(
+    project_TrackingScenario,
+)
+project_TimingResolution_strategy = st.builds(
+    project_TimingResolution,
     timingResolution=
         st.integers()
 )
-project::ExtendResource_strategy = st.builds(
-    project::ExtendResource,
-)
-project::ExtendTask_strategy = st.builds(
-    project::ExtendTask,
-)
-project::DailyWorkingHours_strategy = st.builds(
-    project::DailyWorkingHours,
+project_DailyWorkingHours_strategy = st.builds(
+    project_DailyWorkingHours,
     dailyWorkingHours=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-project::ShortTimeFormat_strategy = st.builds(
-    project::ShortTimeFormat,
-    shortTimeFormat=
-        safe_text
-)
-project::WeekStarts_strategy = st.builds(
-    project::WeekStarts,
-    sunday=
-        st.booleans(),
+project_WeekStarts_strategy = st.builds(
+    project_WeekStarts,
     monday=
+        st.booleans(),
+    sunday=
         st.booleans()
 )
-project::Scenario_strategy = st.builds(
-    project::Scenario,
-    name=
-        safe_text,
+project_Scenario_strategy = st.builds(
+    project_Scenario,
     active=
+        safe_text,
+    name=
         safe_text,
     id=
         safe_text
 )
-project::Include_strategy = st.builds(
-    project::Include,
-    importURI=
+project_ExtendResource_strategy = st.builds(
+    project_ExtendResource,
+)
+project_ExtendTask_strategy = st.builds(
+    project_ExtendTask,
+)
+project_ShortTimeFormat_strategy = st.builds(
+    project_ShortTimeFormat,
+    shortTimeFormat=
         safe_text
 )
-project::TrackingScenario_strategy = st.builds(
-    project::TrackingScenario,
-)
-project::Now_strategy = st.builds(
-    project::Now,
-    now=
-        safe_text
-)
-project::YearlyWorkingDays_strategy = st.builds(
-    project::YearlyWorkingDays,
+project_YearlyWorkingDays_strategy = st.builds(
+    project_YearlyWorkingDays,
     yearlyWorkingDays=
         st.integers()
 )
-project::Currency_strategy = st.builds(
-    project::Currency,
+project_Include_strategy = st.builds(
+    project_Include,
+    importURI=
+        safe_text
+)
+project_Now_strategy = st.builds(
+    project_Now,
+    now=
+        safe_text
+)
+project_Currency_strategy = st.builds(
+    project_Currency,
     currency=
         safe_text
 )
@@ -7042,8 +7042,8 @@ StatusSheetReportAttribute_strategy = st.builds(
 NikuReportAttribute_strategy = st.builds(
     NikuReportAttribute,
 )
-project::Timeoff_strategy = st.builds(
-    project::Timeoff,
+project_Timeoff_strategy = st.builds(
+    project_Timeoff,
     name=
         safe_text,
     id=
@@ -7052,24 +7052,24 @@ project::Timeoff_strategy = st.builds(
 NewTaskAttribute_strategy = st.builds(
     NewTaskAttribute,
 )
-project::Remaining_strategy = st.builds(
-    project::Remaining,
-)
-project::Work_strategy = st.builds(
-    project::Work,
-    unit=
-        safe_text,
+project_Work_strategy = st.builds(
+    project_Work,
     value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    unit=
+        safe_text
+)
+project_Remaining_strategy = st.builds(
+    project_Remaining,
 )
 IcalReportAttribute_strategy = st.builds(
     IcalReportAttribute,
 )
-project::ScenarioIcal_strategy = st.builds(
-    project::ScenarioIcal,
+project_ScenarioIcal_strategy = st.builds(
+    project_ScenarioIcal,
 )
-project::DurationQuantity_strategy = st.builds(
-    project::DurationQuantity,
+project_DurationQuantity_strategy = st.builds(
+    project_DurationQuantity,
     unit=
         safe_text,
     value=
@@ -7078,362 +7078,362 @@ project::DurationQuantity_strategy = st.builds(
 StatusTimesheetAttribute_strategy = st.builds(
     StatusTimesheetAttribute,
 )
-project::RGB_strategy = st.builds(
-    project::RGB,
+project_RGB_strategy = st.builds(
+    project_RGB,
     value=
         safe_text
 )
-project::LogicalExpression_strategy = st.builds(
-    project::LogicalExpression,
+project_LogicalExpression_strategy = st.builds(
+    project_LogicalExpression,
 )
 ColumnAttribute_strategy = st.builds(
     ColumnAttribute,
 )
-project::ToolTip_strategy = st.builds(
-    project::ToolTip,
-    tip=
-        safe_text
-)
-project::ListItem_strategy = st.builds(
-    project::ListItem,
-)
-project::FontColor_strategy = st.builds(
-    project::FontColor,
-    color=
-        safe_text
-)
-project::Scale_strategy = st.builds(
-    project::Scale,
-    scale=
-        safe_text
-)
-project::HAlign_strategy = st.builds(
-    project::HAlign,
-    justification=
-        safe_text
-)
-project::ListType_strategy = st.builds(
-    project::ListType,
-    type=
-        safe_text
-)
-project::Width_strategy = st.builds(
-    project::Width,
-    width=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-project::CellText_strategy = st.builds(
-    project::CellText,
+project_CellText_strategy = st.builds(
+    project_CellText,
     text=
         safe_text
 )
-project::CellColor_strategy = st.builds(
-    project::CellColor,
+project_Width_strategy = st.builds(
+    project_Width,
+    width=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-project::Column_strategy = st.builds(
-    project::Column,
+project_FontColor_strategy = st.builds(
+    project_FontColor,
+    color=
+        safe_text
+)
+project_ToolTip_strategy = st.builds(
+    project_ToolTip,
+    tip=
+        safe_text
+)
+project_ListType_strategy = st.builds(
+    project_ListType,
+    type=
+        safe_text
+)
+project_ListItem_strategy = st.builds(
+    project_ListItem,
+)
+project_HAlign_strategy = st.builds(
+    project_HAlign,
+    justification=
+        safe_text
+)
+project_Scale_strategy = st.builds(
+    project_Scale,
+    scale=
+        safe_text
+)
+project_CellColor_strategy = st.builds(
+    project_CellColor,
+)
+project_Column_strategy = st.builds(
+    project_Column,
     id=
         safe_text
 )
-project::AccountShare_strategy = st.builds(
-    project::AccountShare,
+project_AccountShare_strategy = st.builds(
+    project_AccountShare,
     share=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 StatusStatusSheetAttribute_strategy = st.builds(
     StatusStatusSheetAttribute,
 )
-project::Details_strategy = st.builds(
-    project::Details,
+project_Summary_strategy = st.builds(
+    project_Summary,
 )
-project::Summary_strategy = st.builds(
-    project::Summary,
+project_Details_strategy = st.builds(
+    project_Details,
 )
-project::Author_strategy = st.builds(
-    project::Author,
+project_Author_strategy = st.builds(
+    project_Author,
 )
 AllocateResourceAttribute_strategy = st.builds(
     AllocateResourceAttribute,
 )
-project::Select_strategy = st.builds(
-    project::Select,
-    argument=
-        safe_text
+project_ShiftsAllocate_strategy = st.builds(
+    project_ShiftsAllocate,
 )
-project::ShiftsAllocate_strategy = st.builds(
-    project::ShiftsAllocate,
-)
-project::Persistent_strategy = st.builds(
-    project::Persistent,
-    persistent=
-        st.booleans()
-)
-project::Mandatory_strategy = st.builds(
-    project::Mandatory,
+project_Mandatory_strategy = st.builds(
+    project_Mandatory,
     mandatory=
         st.booleans()
 )
-project::Alternative_strategy = st.builds(
-    project::Alternative,
+project_Select_strategy = st.builds(
+    project_Select,
+    argument=
+        safe_text
 )
-project::Alert_strategy = st.builds(
-    project::Alert,
+project_Persistent_strategy = st.builds(
+    project_Persistent,
+    persistent=
+        st.booleans()
+)
+project_Alternative_strategy = st.builds(
+    project_Alternative,
+)
+project_Alert_strategy = st.builds(
+    project_Alert,
     level=
         safe_text
 )
-project::NikuReportAttribute_strategy = st.builds(
-    project::NikuReportAttribute,
+project_NikuReportAttribute_strategy = st.builds(
+    project_NikuReportAttribute,
 )
-project::Interval4_strategy = st.builds(
-    project::Interval4,
-    end=
-        safe_text,
+project_Interval4_strategy = st.builds(
+    project_Interval4,
     start=
+        safe_text,
+    end=
         safe_text
 )
-project::Booking_strategy = st.builds(
-    project::Booking,
+project_Booking_strategy = st.builds(
+    project_Booking,
     sloppy=
         st.integers(),
     overtime=
         st.integers()
 )
-project::AllocateResourceAttribute_strategy = st.builds(
-    project::AllocateResourceAttribute,
+project_AllocateResourceAttribute_strategy = st.builds(
+    project_AllocateResourceAttribute,
 )
-project::AllocateResource_strategy = st.builds(
-    project::AllocateResource,
+project_AllocateResource_strategy = st.builds(
+    project_AllocateResource,
 )
-project::NewTaskAttribute_strategy = st.builds(
-    project::NewTaskAttribute,
+project_NewTaskAttribute_strategy = st.builds(
+    project_NewTaskAttribute,
 )
 TimesheetAttribute_strategy = st.builds(
     TimesheetAttribute,
 )
-project::TaskTimesheet_strategy = st.builds(
-    project::TaskTimesheet,
+project_ShiftTimesheet_strategy = st.builds(
+    project_ShiftTimesheet,
 )
-project::ShiftTimesheet_strategy = st.builds(
-    project::ShiftTimesheet,
+project_TaskTimesheet_strategy = st.builds(
+    project_TaskTimesheet,
 )
-project::StatusTimesheet_strategy = st.builds(
-    project::StatusTimesheet,
+project_StatusTimesheet_strategy = st.builds(
+    project_StatusTimesheet,
     text=
         safe_text,
     level=
         safe_text
 )
-project::NewTask_strategy = st.builds(
-    project::NewTask,
+project_NewTask_strategy = st.builds(
+    project_NewTask,
     text=
         safe_text,
     id=
         safe_text
 )
-project::NavigatorAttribute_strategy = st.builds(
-    project::NavigatorAttribute,
+project_NavigatorAttribute_strategy = st.builds(
+    project_NavigatorAttribute,
 )
-project::ReportAttribute_strategy = st.builds(
-    project::ReportAttribute,
+project_ReportAttribute_strategy = st.builds(
+    project_ReportAttribute,
 )
-project::ResourceAttribute_strategy = st.builds(
-    project::ResourceAttribute,
+project_ResourceAttribute_strategy = st.builds(
+    project_ResourceAttribute,
 )
 ResourceAttribute_strategy = st.builds(
     ResourceAttribute,
 )
-project::Efficiency_strategy = st.builds(
-    project::Efficiency,
-    efficiency=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-project::PurgeResource_strategy = st.builds(
-    project::PurgeResource,
-    listAttribute=
-        safe_text
-)
-project::WorkingHours_strategy = st.builds(
-    project::WorkingHours,
-    off=
-        st.booleans()
-)
-project::ShiftsResource_strategy = st.builds(
-    project::ShiftsResource,
-)
-project::ExtendedResourceAttribute_strategy = st.builds(
-    project::ExtendedResourceAttribute,
-    value=
-        safe_text
-)
-project::BookingResource_strategy = st.builds(
-    project::BookingResource,
-)
-project::Email_strategy = st.builds(
-    project::Email,
+project_Email_strategy = st.builds(
+    project_Email,
     address=
         safe_text
 )
-project::Managers_strategy = st.builds(
-    project::Managers,
+project_ShiftsResource_strategy = st.builds(
+    project_ShiftsResource,
 )
-project::ExportAttribute_strategy = st.builds(
-    project::ExportAttribute,
+project_WorkingHours_strategy = st.builds(
+    project_WorkingHours,
+    off=
+        st.booleans()
 )
-project::IcalReportAttribute_strategy = st.builds(
-    project::IcalReportAttribute,
+project_ExtendedResourceAttribute_strategy = st.builds(
+    project_ExtendedResourceAttribute,
+    value=
+        safe_text
+)
+project_PurgeResource_strategy = st.builds(
+    project_PurgeResource,
+    listAttribute=
+        safe_text
+)
+project_Managers_strategy = st.builds(
+    project_Managers,
+)
+project_Efficiency_strategy = st.builds(
+    project_Efficiency,
+    efficiency=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+project_BookingResource_strategy = st.builds(
+    project_BookingResource,
+)
+project_ExportAttribute_strategy = st.builds(
+    project_ExportAttribute,
+)
+project_IcalReportAttribute_strategy = st.builds(
+    project_IcalReportAttribute,
 )
 ReportAttribute_strategy = st.builds(
     ReportAttribute,
 )
-project::RollupTask_strategy = st.builds(
-    project::RollupTask,
+project_HideTask_strategy = st.builds(
+    project_HideTask,
 )
-project::RollupResource_strategy = st.builds(
-    project::RollupResource,
-)
-project::PurgeReport_strategy = st.builds(
-    project::PurgeReport,
-    listAttribute=
-        safe_text
-)
-project::SelfContained_strategy = st.builds(
-    project::SelfContained,
-    selfcontained=
-        safe_text
-)
-project::Scenarios_strategy = st.builds(
-    project::Scenarios,
-)
-project::Right_strategy = st.builds(
-    project::Right,
-)
-project::JournalMode_strategy = st.builds(
-    project::JournalMode,
-    mode=
-        safe_text
-)
-project::Center_strategy = st.builds(
-    project::Center,
-)
-project::SortResources_strategy = st.builds(
-    project::SortResources,
-)
-project::HideAccount_strategy = st.builds(
-    project::HideAccount,
-    expression=
-        safe_text
-)
-project::CurrencyFormat_strategy = st.builds(
-    project::CurrencyFormat,
-)
-project::LoadUnit_strategy = st.builds(
-    project::LoadUnit,
-    unit=
-        safe_text
-)
-project::Epilog_strategy = st.builds(
-    project::Epilog,
-)
-project::Left_strategy = st.builds(
-    project::Left,
-)
-project::HideJournalEntry_strategy = st.builds(
-    project::HideJournalEntry,
-    expression=
-        safe_text
-)
-project::ResourceRoot_strategy = st.builds(
-    project::ResourceRoot,
-)
-project::Timezone_strategy = st.builds(
-    project::Timezone,
-    timezone=
-        safe_text
-)
-project::Caption_strategy = st.builds(
-    project::Caption,
-)
-project::SortJournalEntries_strategy = st.builds(
-    project::SortJournalEntries,
-)
-project::HideResource_strategy = st.builds(
-    project::HideResource,
-)
-project::Formats_strategy = st.builds(
-    project::Formats,
+project_Formats_strategy = st.builds(
+    project_Formats,
     formats=
         safe_text
 )
-project::JournalAttributes_strategy = st.builds(
-    project::JournalAttributes,
+project_Left_strategy = st.builds(
+    project_Left,
+)
+project_HideAccount_strategy = st.builds(
+    project_HideAccount,
+    expression=
+        safe_text
+)
+project_SortJournalEntries_strategy = st.builds(
+    project_SortJournalEntries,
+)
+project_Title_strategy = st.builds(
+    project_Title,
+    title=
+        safe_text
+)
+project_Right_strategy = st.builds(
+    project_Right,
+)
+project_Prolog_strategy = st.builds(
+    project_Prolog,
+)
+project_SelfContained_strategy = st.builds(
+    project_SelfContained,
+    selfcontained=
+        safe_text
+)
+project_RollupAccount_strategy = st.builds(
+    project_RollupAccount,
+)
+project_AccountRoot_strategy = st.builds(
+    project_AccountRoot,
+)
+project_Epilog_strategy = st.builds(
+    project_Epilog,
+)
+project_RollupResource_strategy = st.builds(
+    project_RollupResource,
+)
+project_HideJournalEntry_strategy = st.builds(
+    project_HideJournalEntry,
+    expression=
+        safe_text
+)
+project_HideResource_strategy = st.builds(
+    project_HideResource,
+)
+project_Headline_strategy = st.builds(
+    project_Headline,
+)
+project_Footer_strategy = st.builds(
+    project_Footer,
+)
+project_Timezone_strategy = st.builds(
+    project_Timezone,
+    timezone=
+        safe_text
+)
+project_TaskRoot_strategy = st.builds(
+    project_TaskRoot,
+)
+project_SortResources_strategy = st.builds(
+    project_SortResources,
+)
+project_NumberFormat_strategy = st.builds(
+    project_NumberFormat,
+)
+project_PurgeReport_strategy = st.builds(
+    project_PurgeReport,
+    listAttribute=
+        safe_text
+)
+project_Scenarios_strategy = st.builds(
+    project_Scenarios,
+)
+project_CurrencyFormat_strategy = st.builds(
+    project_CurrencyFormat,
+)
+project_TimeFormat_strategy = st.builds(
+    project_TimeFormat,
+    timeformat=
+        safe_text
+)
+project_SortAccounts_strategy = st.builds(
+    project_SortAccounts,
+)
+project_JournalAttributes_strategy = st.builds(
+    project_JournalAttributes,
     propertyid=
         st.booleans(),
     all=
         st.booleans(),
     none=
         st.booleans(),
-    _property=
-        st.booleans(),
     summary=
+        st.booleans(),
+    author=
+        st.booleans(),
+    _property=
         st.booleans(),
     details=
         st.booleans(),
-    author=
+    flags=
+        st.booleans(),
+    date=
         st.booleans(),
     headline=
         st.booleans(),
     timesheet=
-        st.booleans(),
-    date=
-        st.booleans(),
-    flags=
         st.booleans()
 )
-project::SortTasks_strategy = st.builds(
-    project::SortTasks,
+project_Center_strategy = st.builds(
+    project_Center,
 )
-project::Title_strategy = st.builds(
-    project::Title,
-    title=
+project_ResourceRoot_strategy = st.builds(
+    project_ResourceRoot,
+)
+project_RollupTask_strategy = st.builds(
+    project_RollupTask,
+)
+project_LoadUnit_strategy = st.builds(
+    project_LoadUnit,
+    unit=
         safe_text
 )
-project::NumberFormat_strategy = st.builds(
-    project::NumberFormat,
+project_Columns_strategy = st.builds(
+    project_Columns,
 )
-project::AccountRoot_strategy = st.builds(
-    project::AccountRoot,
+project_Caption_strategy = st.builds(
+    project_Caption,
 )
-project::RollupAccount_strategy = st.builds(
-    project::RollupAccount,
+project_Header_strategy = st.builds(
+    project_Header,
 )
-project::HideTask_strategy = st.builds(
-    project::HideTask,
-)
-project::Header_strategy = st.builds(
-    project::Header,
-)
-project::TimeFormat_strategy = st.builds(
-    project::TimeFormat,
-    timeformat=
+project_JournalMode_strategy = st.builds(
+    project_JournalMode,
+    mode=
         safe_text
 )
-project::Footer_strategy = st.builds(
-    project::Footer,
-)
-project::TaskRoot_strategy = st.builds(
-    project::TaskRoot,
-)
-project::Headline_strategy = st.builds(
-    project::Headline,
-)
-project::Columns_strategy = st.builds(
-    project::Columns,
-)
-project::SortAccounts_strategy = st.builds(
-    project::SortAccounts,
-)
-project::Prolog_strategy = st.builds(
-    project::Prolog,
+project_SortTasks_strategy = st.builds(
+    project_SortTasks,
 )
 TextReport_strategy = st.builds(
     TextReport,
@@ -7447,191 +7447,191 @@ ResourceReport_strategy = st.builds(
 AccountReport_strategy = st.builds(
     AccountReport,
 )
-project::Report_strategy = st.builds(
-    project::Report,
+project_Report_strategy = st.builds(
+    project_Report,
     id=
         safe_text,
     name=
         safe_text
 )
-project::TaskAttribute_strategy = st.builds(
-    project::TaskAttribute,
+project_TaskAttribute_strategy = st.builds(
+    project_TaskAttribute,
 )
 TaskAttribute_strategy = st.builds(
     TaskAttribute,
 )
-project::Note_strategy = st.builds(
-    project::Note,
+project_Note_strategy = st.builds(
+    project_Note,
     note=
         safe_text
 )
-project::Milestone_strategy = st.builds(
-    project::Milestone,
-    milestone=
-        st.booleans()
+project_ShiftsTask_strategy = st.builds(
+    project_ShiftsTask,
 )
-project::BookingTask_strategy = st.builds(
-    project::BookingTask,
+project_Period_strategy = st.builds(
+    project_Period,
 )
-project::Duration_strategy = st.builds(
-    project::Duration,
+project_Priority_strategy = st.builds(
+    project_Priority,
+    priority=
+        st.integers()
 )
-project::Depends_strategy = st.builds(
-    project::Depends,
+project_Warn_strategy = st.builds(
+    project_Warn,
 )
-project::Warn_strategy = st.builds(
-    project::Warn,
-)
-project::Scheduling_strategy = st.builds(
-    project::Scheduling,
-    scheduling=
+project_Charge_strategy = st.builds(
+    project_Charge,
+    amount=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    applies=
         safe_text
 )
-project::Start_strategy = st.builds(
-    project::Start,
+project_Scheduled_strategy = st.builds(
+    project_Scheduled,
+    scheduled=
+        st.booleans()
+)
+project_Start_strategy = st.builds(
+    project_Start,
     start=
         safe_text
 )
-project::ProjectId_strategy = st.builds(
-    project::ProjectId,
-    projectId=
+project_End_strategy = st.builds(
+    project_End,
+    end=
         safe_text
 )
-project::MinStart_strategy = st.builds(
-    project::MinStart,
-    minStart=
-        safe_text
-)
-project::Allocate_strategy = st.builds(
-    project::Allocate,
-)
-project::Complete_strategy = st.builds(
-    project::Complete,
-    complete=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-project::MinEnd_strategy = st.builds(
-    project::MinEnd,
+project_MinEnd_strategy = st.builds(
+    project_MinEnd,
     minEnd=
         safe_text
 )
-project::MaxEnd_strategy = st.builds(
-    project::MaxEnd,
-    maxEnd=
+project_Allocate_strategy = st.builds(
+    project_Allocate,
+)
+project_Length_strategy = st.builds(
+    project_Length,
+)
+project_MinStart_strategy = st.builds(
+    project_MinStart,
+    minStart=
         safe_text
 )
-project::Length_strategy = st.builds(
-    project::Length,
+project_Duration_strategy = st.builds(
+    project_Duration,
 )
-project::Charge_strategy = st.builds(
-    project::Charge,
-    applies=
-        safe_text,
-    amount=
+project_Complete_strategy = st.builds(
+    project_Complete,
+    complete=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-project::JournalEntry_strategy = st.builds(
-    project::JournalEntry,
+project_EndCredit_strategy = st.builds(
+    project_EndCredit,
+    credit=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+project_Effort_strategy = st.builds(
+    project_Effort,
+)
+project_JournalEntry_strategy = st.builds(
+    project_JournalEntry,
     headline=
         safe_text,
     date=
         safe_text
 )
-project::Precedes_strategy = st.builds(
-    project::Precedes,
-)
-project::PurgeTask_strategy = st.builds(
-    project::PurgeTask,
+project_PurgeTask_strategy = st.builds(
+    project_PurgeTask,
     listAttribute=
         safe_text
 )
-project::Priority_strategy = st.builds(
-    project::Priority,
-    priority=
-        st.integers()
+project_BookingTask_strategy = st.builds(
+    project_BookingTask,
 )
-project::Responsible_strategy = st.builds(
-    project::Responsible,
+project_ChargeSet_strategy = st.builds(
+    project_ChargeSet,
 )
-project::End_strategy = st.builds(
-    project::End,
-    end=
+project_MaxEnd_strategy = st.builds(
+    project_MaxEnd,
+    maxEnd=
         safe_text
 )
-project::ShiftsTask_strategy = st.builds(
-    project::ShiftsTask,
-)
-project::ChargeSet_strategy = st.builds(
-    project::ChargeSet,
-)
-project::Fail_strategy = st.builds(
-    project::Fail,
-)
-project::Scheduled_strategy = st.builds(
-    project::Scheduled,
-    scheduled=
+project_Milestone_strategy = st.builds(
+    project_Milestone,
+    milestone=
         st.booleans()
 )
-project::Effort_strategy = st.builds(
-    project::Effort,
+project_Scheduling_strategy = st.builds(
+    project_Scheduling,
+    scheduling=
+        safe_text
 )
-project::ExtendedTaskAttribute_strategy = st.builds(
-    project::ExtendedTaskAttribute,
+project_Precedes_strategy = st.builds(
+    project_Precedes,
+)
+project_Depends_strategy = st.builds(
+    project_Depends,
+)
+project_Fail_strategy = st.builds(
+    project_Fail,
+)
+project_ProjectId_strategy = st.builds(
+    project_ProjectId,
+    projectId=
+        safe_text
+)
+project_ExtendedTaskAttribute_strategy = st.builds(
+    project_ExtendedTaskAttribute,
     value=
         safe_text
 )
-project::MaxStart_strategy = st.builds(
-    project::MaxStart,
+project_MaxStart_strategy = st.builds(
+    project_MaxStart,
     maxStart=
         safe_text
 )
-project::EndCredit_strategy = st.builds(
-    project::EndCredit,
-    credit=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+project_Responsible_strategy = st.builds(
+    project_Responsible,
 )
-project::Period_strategy = st.builds(
-    project::Period,
+project_ProjectAttribute_strategy = st.builds(
+    project_ProjectAttribute,
 )
-project::ProjectAttribute_strategy = st.builds(
-    project::ProjectAttribute,
-)
-project::Interval2_strategy = st.builds(
-    project::Interval2,
+project_Interval2_strategy = st.builds(
+    project_Interval2,
     end=
         safe_text,
     start=
         safe_text
 )
-project::Global_strategy = st.builds(
-    project::Global,
+project_Global_strategy = st.builds(
+    project_Global,
 )
 IncludePropertiesAttribute_strategy = st.builds(
     IncludePropertiesAttribute,
 )
-project::ReportPrefix_strategy = st.builds(
-    project::ReportPrefix,
+project_TaskPrefix_strategy = st.builds(
+    project_TaskPrefix,
 )
-project::ResourcePrefix_strategy = st.builds(
-    project::ResourcePrefix,
+project_ReportPrefix_strategy = st.builds(
+    project_ReportPrefix,
 )
-project::TaskPrefix_strategy = st.builds(
-    project::TaskPrefix,
+project_ResourcePrefix_strategy = st.builds(
+    project_ResourcePrefix,
 )
-project::AccountPrefix_strategy = st.builds(
-    project::AccountPrefix,
+project_AccountPrefix_strategy = st.builds(
+    project_AccountPrefix,
 )
-project::AccountAttribute_strategy = st.builds(
-    project::AccountAttribute,
+project_AccountAttribute_strategy = st.builds(
+    project_AccountAttribute,
 )
 AccountAttribute_strategy = st.builds(
     AccountAttribute,
 )
-project::Credit_strategy = st.builds(
-    project::Credit,
-    date=
-        safe_text,
+project_Credit_strategy = st.builds(
+    project_Credit,
     description=
+        safe_text,
+    date=
         safe_text,
     amount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
@@ -7639,325 +7639,536 @@ project::Credit_strategy = st.builds(
 Property_strategy = st.builds(
     Property,
 )
-project::IncludeProperties_strategy = st.builds(
-    project::IncludeProperties,
-    importURI=
-        safe_text
+project_AccountReport_strategy = st.builds(
+    project_AccountReport,
 )
-project::Export_strategy = st.builds(
-    project::Export,
-    filename=
-        safe_text,
-    id=
-        safe_text
+project_SupplementAccount_strategy = st.builds(
+    project_SupplementAccount,
 )
-project::TimesheetReport_strategy = st.builds(
-    project::TimesheetReport,
-    filename=
-        safe_text
+project_StatusSheet_strategy = st.builds(
+    project_StatusSheet,
 )
-project::Resource_strategy = st.builds(
-    project::Resource,
-    id=
-        safe_text,
-    name=
-        safe_text
-)
-project::TaskReport_strategy = st.builds(
-    project::TaskReport,
-)
-project::Rate_strategy = st.builds(
-    project::Rate,
-    rate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-project::SupplementAccount_strategy = st.builds(
-    project::SupplementAccount,
-)
-project::NikuReport_strategy = st.builds(
-    project::NikuReport,
-    filename=
-        safe_text
-)
-project::Macro_strategy = st.builds(
-    project::Macro,
-    value=
-        safe_text
-)
-project::TagFile_strategy = st.builds(
-    project::TagFile,
-    filename=
-        safe_text,
-    id=
-        safe_text
-)
-project::StatusSheetReport_strategy = st.builds(
-    project::StatusSheetReport,
-    filename=
-        safe_text
-)
-project::AccountReport_strategy = st.builds(
-    project::AccountReport,
-)
-project::TextReport_strategy = st.builds(
-    project::TextReport,
-)
-project::StatusSheet_strategy = st.builds(
-    project::StatusSheet,
-)
-project::Balance_strategy = st.builds(
-    project::Balance,
-)
-project::Navigator_strategy = st.builds(
-    project::Navigator,
-    id=
-        safe_text
-)
-project::Timesheet_strategy = st.builds(
-    project::Timesheet,
-)
-project::Shift_strategy = st.builds(
-    project::Shift,
-    timezone=
-        safe_text,
-    id=
-        safe_text,
-    name=
-        safe_text,
-    replace=
-        safe_text
-)
-project::SupplementTask_strategy = st.builds(
-    project::SupplementTask,
-)
-project::SupplementResource_strategy = st.builds(
-    project::SupplementResource,
-)
-project::ResourceReport_strategy = st.builds(
-    project::ResourceReport,
-)
-project::Copyright_strategy = st.builds(
-    project::Copyright,
-    text=
-        safe_text
-)
-project::Task_strategy = st.builds(
-    project::Task,
-    name=
-        safe_text,
-    id=
-        safe_text
-)
-project::IcalReport_strategy = st.builds(
-    project::IcalReport,
-    filename=
-        safe_text
-)
-project::Flags_strategy = st.builds(
-    project::Flags,
+project_Flags_strategy = st.builds(
+    project_Flags,
     flags=
         safe_text
 )
-project::Vacation_strategy = st.builds(
-    project::Vacation,
+project_Navigator_strategy = st.builds(
+    project_Navigator,
+    id=
+        safe_text
+)
+project_TimesheetReport_strategy = st.builds(
+    project_TimesheetReport,
+    filename=
+        safe_text
+)
+project_StatusSheetReport_strategy = st.builds(
+    project_StatusSheetReport,
+    filename=
+        safe_text
+)
+project_Vacation_strategy = st.builds(
+    project_Vacation,
     name=
         safe_text
 )
-project::ProjectIds_strategy = st.builds(
-    project::ProjectIds,
+project_Rate_strategy = st.builds(
+    project_Rate,
+    rate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+project_Macro_strategy = st.builds(
+    project_Macro,
+    value=
+        safe_text
+)
+project_NikuReport_strategy = st.builds(
+    project_NikuReport,
+    filename=
+        safe_text
+)
+project_TextReport_strategy = st.builds(
+    project_TextReport,
+)
+project_Resource_strategy = st.builds(
+    project_Resource,
+    id=
+        safe_text,
+    name=
+        safe_text
+)
+project_Limits_strategy = st.builds(
+    project_Limits,
+)
+project_IcalReport_strategy = st.builds(
+    project_IcalReport,
+    filename=
+        safe_text
+)
+project_Export_strategy = st.builds(
+    project_Export,
+    id=
+        safe_text,
+    filename=
+        safe_text
+)
+project_Timesheet_strategy = st.builds(
+    project_Timesheet,
+)
+project_SupplementReport_strategy = st.builds(
+    project_SupplementReport,
+)
+project_SupplementResource_strategy = st.builds(
+    project_SupplementResource,
+)
+project_Copyright_strategy = st.builds(
+    project_Copyright,
+    text=
+        safe_text
+)
+project_Shift_strategy = st.builds(
+    project_Shift,
+    replace=
+        safe_text,
+    id=
+        safe_text,
+    name=
+        safe_text,
+    timezone=
+        safe_text
+)
+project_IncludeProperties_strategy = st.builds(
+    project_IncludeProperties,
+    importURI=
+        safe_text
+)
+project_Task_strategy = st.builds(
+    project_Task,
+    id=
+        safe_text,
+    name=
+        safe_text
+)
+project_ProjectIds_strategy = st.builds(
+    project_ProjectIds,
     ids=
         safe_text
 )
-project::SupplementReport_strategy = st.builds(
-    project::SupplementReport,
+project_ResourceReport_strategy = st.builds(
+    project_ResourceReport,
 )
-project::Limits_strategy = st.builds(
-    project::Limits,
+project_TaskReport_strategy = st.builds(
+    project_TaskReport,
 )
-project::Account_strategy = st.builds(
-    project::Account,
+project_SupplementTask_strategy = st.builds(
+    project_SupplementTask,
+)
+project_Balance_strategy = st.builds(
+    project_Balance,
+)
+project_TagFile_strategy = st.builds(
+    project_TagFile,
+    filename=
+        safe_text,
+    id=
+        safe_text
+)
+project_Account_strategy = st.builds(
+    project_Account,
     name=
         safe_text,
     id=
         safe_text
 )
-project::Property_strategy = st.builds(
-    project::Property,
+project_Property_strategy = st.builds(
+    project_Property,
 )
-project::Project_strategy = st.builds(
-    project::Project,
-    name=
-        safe_text,
+project_Project_strategy = st.builds(
+    project_Project,
     id=
+        safe_text,
+    name=
         safe_text,
     version=
         safe_text
 )
 
-@given(instance=project::JvmIdentifiableElement_strategy)
+@given(instance=GapDuration_strategy)
 @settings(max_examples=50)
-def test_project::jvmidentifiableelement_instantiation(instance):
-    assert isinstance(instance, project::JvmIdentifiableElement)
+def test_gapduration_instantiation(instance):
+    assert isinstance(instance, GapDuration)
+
+@given(instance=project_LimitAttribute_strategy)
+@settings(max_examples=50)
+def test_project_limitattribute_instantiation(instance):
+    assert isinstance(instance, project_LimitAttribute)
+
+
+
+@given(instance=project_LimitAttribute_strategy)
+def test_project_limitattribute_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
+
+
+@given(instance=project_LimitAttribute_strategy)
+def test_project_limitattribute_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+@given(instance=WeeklyMin_strategy)
+@settings(max_examples=50)
+def test_weeklymin_instantiation(instance):
+    assert isinstance(instance, WeeklyMin)
+
+@given(instance=project_ColumnAttribute_strategy)
+@settings(max_examples=50)
+def test_project_columnattribute_instantiation(instance):
+    assert isinstance(instance, project_ColumnAttribute)
+
+@given(instance=project_WorkHours_strategy)
+@settings(max_examples=50)
+def test_project_workhours_instantiation(instance):
+    assert isinstance(instance, project_WorkHours)
+
+
+
+@given(instance=project_WorkHours_strategy)
+def test_project_workhours_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+
+
+@given(instance=project_WorkHours_strategy)
+def test_project_workhours_stop_setter(instance):
+    original = instance.stop
+    instance.stop = original
+    assert instance.stop == original
+
+@given(instance=project_Weekdays_strategy)
+@settings(max_examples=50)
+def test_project_weekdays_instantiation(instance):
+    assert isinstance(instance, project_Weekdays)
+
+
+
+@given(instance=project_Weekdays_strategy)
+def test_project_weekdays_first_setter(instance):
+    original = instance.first
+    instance.first = original
+    assert instance.first == original
+
+
+
+@given(instance=project_Weekdays_strategy)
+def test_project_weekdays_last_setter(instance):
+    original = instance.last
+    instance.last = original
+    assert instance.last == original
+
+@given(instance=project_TreeLevel_strategy)
+@settings(max_examples=50)
+def test_project_treelevel_instantiation(instance):
+    assert isinstance(instance, project_TreeLevel)
+
+
+
+@given(instance=project_TreeLevel_strategy)
+def test_project_treelevel_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+@given(instance=project_TimesheetReportAttribute_strategy)
+@settings(max_examples=50)
+def test_project_timesheetreportattribute_instantiation(instance):
+    assert isinstance(instance, project_TimesheetReportAttribute)
+
+@given(instance=project_TimesheetAttribute_strategy)
+@settings(max_examples=50)
+def test_project_timesheetattribute_instantiation(instance):
+    assert isinstance(instance, project_TimesheetAttribute)
+
+@given(instance=StatusSheetAttribute_strategy)
+@settings(max_examples=50)
+def test_statussheetattribute_instantiation(instance):
+    assert isinstance(instance, StatusSheetAttribute)
+
+@given(instance=project_TaskTimesheetAttribute_strategy)
+@settings(max_examples=50)
+def test_project_tasktimesheetattribute_instantiation(instance):
+    assert isinstance(instance, project_TaskTimesheetAttribute)
+
+@given(instance=project_TaskStatusSheetAttribute_strategy)
+@settings(max_examples=50)
+def test_project_taskstatussheetattribute_instantiation(instance):
+    assert isinstance(instance, project_TaskStatusSheetAttribute)
+
+@given(instance=project_StatusSheetReportAttribute_strategy)
+@settings(max_examples=50)
+def test_project_statussheetreportattribute_instantiation(instance):
+    assert isinstance(instance, project_StatusSheetReportAttribute)
+
+@given(instance=project_StatusSheetAttribute_strategy)
+@settings(max_examples=50)
+def test_project_statussheetattribute_instantiation(instance):
+    assert isinstance(instance, project_StatusSheetAttribute)
+
+@given(instance=project_StatusTimesheetAttribute_strategy)
+@settings(max_examples=50)
+def test_project_statustimesheetattribute_instantiation(instance):
+    assert isinstance(instance, project_StatusTimesheetAttribute)
+
+@given(instance=project_Criterion_strategy)
+@settings(max_examples=50)
+def test_project_criterion_instantiation(instance):
+    assert isinstance(instance, project_Criterion)
+
+
+
+@given(instance=project_Criterion_strategy)
+def test_project_criterion_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+
+
+@given(instance=project_Criterion_strategy)
+def test_project_criterion_columnId_setter(instance):
+    original = instance.columnId
+    instance.columnId = original
+    assert instance.columnId == original
+
+@given(instance=SortTasks_strategy)
+@settings(max_examples=50)
+def test_sorttasks_instantiation(instance):
+    assert isinstance(instance, SortTasks)
+
+@given(instance=SortResources_strategy)
+@settings(max_examples=50)
+def test_sortresources_instantiation(instance):
+    assert isinstance(instance, SortResources)
+
+@given(instance=SortJournalEntries_strategy)
+@settings(max_examples=50)
+def test_sortjournalentries_instantiation(instance):
+    assert isinstance(instance, SortJournalEntries)
+
+@given(instance=SortAccounts_strategy)
+@settings(max_examples=50)
+def test_sortaccounts_instantiation(instance):
+    assert isinstance(instance, SortAccounts)
+
+@given(instance=project_Sort_strategy)
+@settings(max_examples=50)
+def test_project_sort_instantiation(instance):
+    assert isinstance(instance, project_Sort)
+
+
+
+@given(instance=project_Sort_strategy)
+def test_project_sort_tree_setter(instance):
+    original = instance.tree
+    instance.tree = original
+    assert instance.tree == original
+
+@given(instance=project_StatusStatusSheetAttribute_strategy)
+@settings(max_examples=50)
+def test_project_statusstatussheetattribute_instantiation(instance):
+    assert isinstance(instance, project_StatusStatusSheetAttribute)
+
+@given(instance=TaskStatusSheetAttribute_strategy)
+@settings(max_examples=50)
+def test_taskstatussheetattribute_instantiation(instance):
+    assert isinstance(instance, TaskStatusSheetAttribute)
+
+@given(instance=project_TaskStatusSheet_strategy)
+@settings(max_examples=50)
+def test_project_taskstatussheet_instantiation(instance):
+    assert isinstance(instance, project_TaskStatusSheet)
+
+@given(instance=project_StatusStatusSheet_strategy)
+@settings(max_examples=50)
+def test_project_statusstatussheet_instantiation(instance):
+    assert isinstance(instance, project_StatusStatusSheet)
+
+
+
+@given(instance=project_StatusStatusSheet_strategy)
+def test_project_statusstatussheet_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+
+
+@given(instance=project_StatusStatusSheet_strategy)
+def test_project_statusstatussheet_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=project_ShiftsLimit_strategy)
+@settings(max_examples=50)
+def test_project_shiftslimit_instantiation(instance):
+    assert isinstance(instance, project_ShiftsLimit)
+
+@given(instance=ShiftsTask_strategy)
+@settings(max_examples=50)
+def test_shiftstask_instantiation(instance):
+    assert isinstance(instance, ShiftsTask)
+
+@given(instance=ShiftsResource_strategy)
+@settings(max_examples=50)
+def test_shiftsresource_instantiation(instance):
+    assert isinstance(instance, ShiftsResource)
+
+@given(instance=project_Shifts_strategy)
+@settings(max_examples=50)
+def test_project_shifts_instantiation(instance):
+    assert isinstance(instance, project_Shifts)
+
+@given(instance=project_JvmIdentifiableElement_strategy)
+@settings(max_examples=50)
+def test_project_jvmidentifiableelement_instantiation(instance):
+    assert isinstance(instance, project_JvmIdentifiableElement)
 
 @given(instance=LogicalExpression_strategy)
 @settings(max_examples=50)
 def test_logicalexpression_instantiation(instance):
     assert isinstance(instance, LogicalExpression)
 
-@given(instance=project::LogicalNumeralLiteral_strategy)
+@given(instance=project_LogicalDateLiteral_strategy)
 @settings(max_examples=50)
-def test_project::logicalnumeralliteral_instantiation(instance):
-    assert isinstance(instance, project::LogicalNumeralLiteral)
-
-@given(instance=project::LogicalNumeralLiteral_strategy)
-def test_project::logicalnumeralliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_project_logicaldateliteral_instantiation(instance):
+    assert isinstance(instance, project_LogicalDateLiteral)
 
 
-@given(instance=project::LogicalNumeralLiteral_strategy)
-def test_project::logicalnumeralliteral_value_setter(instance):
+
+@given(instance=project_LogicalDateLiteral_strategy)
+def test_project_logicaldateliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=project::LogicalFunctionExpression_strategy)
+@given(instance=project_LogicalStringLiteral_strategy)
 @settings(max_examples=50)
-def test_project::logicalfunctionexpression_instantiation(instance):
-    assert isinstance(instance, project::LogicalFunctionExpression)
-
-@given(instance=project::LogicalAbsoluteIdExression_strategy)
-@settings(max_examples=50)
-def test_project::logicalabsoluteidexression_instantiation(instance):
-    assert isinstance(instance, project::LogicalAbsoluteIdExression)
-
-@given(instance=project::LogicalAbsoluteIdExression_strategy)
-def test_project::logicalabsoluteidexression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_project_logicalstringliteral_instantiation(instance):
+    assert isinstance(instance, project_LogicalStringLiteral)
 
 
-@given(instance=project::LogicalAbsoluteIdExression_strategy)
-def test_project::logicalabsoluteidexression_value_setter(instance):
+
+@given(instance=project_LogicalStringLiteral_strategy)
+def test_project_logicalstringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=project::LogicalDateLiteral_strategy)
+@given(instance=project_LogicalBooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_project::logicaldateliteral_instantiation(instance):
-    assert isinstance(instance, project::LogicalDateLiteral)
-
-@given(instance=project::LogicalDateLiteral_strategy)
-def test_project::logicaldateliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_project_logicalbooleanliteral_instantiation(instance):
+    assert isinstance(instance, project_LogicalBooleanLiteral)
 
 
-@given(instance=project::LogicalDateLiteral_strategy)
-def test_project::logicaldateliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=project::LogicalBooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_project::logicalbooleanliteral_instantiation(instance):
-    assert isinstance(instance, project::LogicalBooleanLiteral)
-
-@given(instance=project::LogicalBooleanLiteral_strategy)
-def test_project::logicalbooleanliteral_isTrue_type(instance):
-    assert isinstance(instance.isTrue, bool)
-
-
-@given(instance=project::LogicalBooleanLiteral_strategy)
-def test_project::logicalbooleanliteral_isTrue_setter(instance):
+@given(instance=project_LogicalBooleanLiteral_strategy)
+def test_project_logicalbooleanliteral_isTrue_setter(instance):
     original = instance.isTrue
     instance.isTrue = original
     assert instance.isTrue == original
 
-@given(instance=project::LogicalStringLiteral_strategy)
+@given(instance=project_LogicalNumeralLiteral_strategy)
 @settings(max_examples=50)
-def test_project::logicalstringliteral_instantiation(instance):
-    assert isinstance(instance, project::LogicalStringLiteral)
-
-@given(instance=project::LogicalStringLiteral_strategy)
-def test_project::logicalstringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_project_logicalnumeralliteral_instantiation(instance):
+    assert isinstance(instance, project_LogicalNumeralLiteral)
 
 
-@given(instance=project::LogicalStringLiteral_strategy)
-def test_project::logicalstringliteral_value_setter(instance):
+
+@given(instance=project_LogicalNumeralLiteral_strategy)
+def test_project_logicalnumeralliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=project::XBinaryOperation_strategy)
+@given(instance=project_LogicalFunctionExpression_strategy)
 @settings(max_examples=50)
-def test_project::xbinaryoperation_instantiation(instance):
-    assert isinstance(instance, project::XBinaryOperation)
+def test_project_logicalfunctionexpression_instantiation(instance):
+    assert isinstance(instance, project_LogicalFunctionExpression)
+
+@given(instance=project_LogicalAbsoluteIdExression_strategy)
+@settings(max_examples=50)
+def test_project_logicalabsoluteidexression_instantiation(instance):
+    assert isinstance(instance, project_LogicalAbsoluteIdExression)
+
+
+
+@given(instance=project_LogicalAbsoluteIdExression_strategy)
+def test_project_logicalabsoluteidexression_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=project_XBinaryOperation_strategy)
+@settings(max_examples=50)
+def test_project_xbinaryoperation_instantiation(instance):
+    assert isinstance(instance, project_XBinaryOperation)
 
 @given(instance=Definitions_strategy)
 @settings(max_examples=50)
 def test_definitions_instantiation(instance):
     assert isinstance(instance, Definitions)
 
-@given(instance=project::Defintions_strategy)
+@given(instance=project_Defintions_strategy)
 @settings(max_examples=50)
-def test_project::defintions_instantiation(instance):
-    assert isinstance(instance, project::Defintions)
-
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_flags_type(instance):
-    assert isinstance(instance.flags, bool)
+def test_project_defintions_instantiation(instance):
+    assert isinstance(instance, project_Defintions)
 
 
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_flags_setter(instance):
-    original = instance.flags
-    instance.flags = original
-    assert instance.flags == original
 
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_project_type(instance):
-    assert isinstance(instance.project, bool)
-
-
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_project_setter(instance):
-    original = instance.project
-    instance.project = original
-    assert instance.project == original
-
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_tasks_type(instance):
-    assert isinstance(instance.tasks, bool)
-
-
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_tasks_setter(instance):
-    original = instance.tasks
-    instance.tasks = original
-    assert instance.tasks == original
-
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_projectids_type(instance):
-    assert isinstance(instance.projectids, bool)
-
-
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_projectids_setter(instance):
+@given(instance=project_Defintions_strategy)
+def test_project_defintions_projectids_setter(instance):
     original = instance.projectids
     instance.projectids = original
     assert instance.projectids == original
 
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_resources_type(instance):
-    assert isinstance(instance.resources, bool)
 
 
-@given(instance=project::Defintions_strategy)
-def test_project::defintions_resources_setter(instance):
+@given(instance=project_Defintions_strategy)
+def test_project_defintions_project_setter(instance):
+    original = instance.project
+    instance.project = original
+    assert instance.project == original
+
+
+
+@given(instance=project_Defintions_strategy)
+def test_project_defintions_tasks_setter(instance):
+    original = instance.tasks
+    instance.tasks = original
+    assert instance.tasks == original
+
+
+
+@given(instance=project_Defintions_strategy)
+def test_project_defintions_resources_setter(instance):
     original = instance.resources
     instance.resources = original
     assert instance.resources == original
+
+
+
+@given(instance=project_Defintions_strategy)
+def test_project_defintions_flags_setter(instance):
+    original = instance.flags
+    instance.flags = original
+    assert instance.flags == original
 
 @given(instance=Header_strategy)
 @settings(max_examples=50)
@@ -8019,18 +8230,15 @@ def test_left_instantiation(instance):
 def test_headline_instantiation(instance):
     assert isinstance(instance, Headline)
 
-@given(instance=project::RichText_strategy)
+@given(instance=project_RichText_strategy)
 @settings(max_examples=50)
-def test_project::richtext_instantiation(instance):
-    assert isinstance(instance, project::RichText)
-
-@given(instance=project::RichText_strategy)
-def test_project::richtext_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_project_richtext_instantiation(instance):
+    assert isinstance(instance, project_RichText)
 
 
-@given(instance=project::RichText_strategy)
-def test_project::richtext_text_setter(instance):
+
+@given(instance=project_RichText_strategy)
+def test_project_richtext_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -8045,18 +8253,15 @@ def test_precedes_instantiation(instance):
 def test_depends_instantiation(instance):
     assert isinstance(instance, Depends)
 
-@given(instance=project::TaskDependency_strategy)
+@given(instance=project_TaskDependency_strategy)
 @settings(max_examples=50)
-def test_project::taskdependency_instantiation(instance):
-    assert isinstance(instance, project::TaskDependency)
-
-@given(instance=project::TaskDependency_strategy)
-def test_project::taskdependency_policy_type(instance):
-    assert isinstance(instance.policy, str)
+def test_project_taskdependency_instantiation(instance):
+    assert isinstance(instance, project_TaskDependency)
 
 
-@given(instance=project::TaskDependency_strategy)
-def test_project::taskdependency_policy_setter(instance):
+
+@given(instance=project_TaskDependency_strategy)
+def test_project_taskdependency_policy_setter(instance):
     original = instance.policy
     instance.policy = original
     assert instance.policy == original
@@ -8071,65 +8276,50 @@ def test_numberformat_instantiation(instance):
 def test_currencyformat_instantiation(instance):
     assert isinstance(instance, CurrencyFormat)
 
-@given(instance=project::RealFormat_strategy)
+@given(instance=project_RealFormat_strategy)
 @settings(max_examples=50)
-def test_project::realformat_instantiation(instance):
-    assert isinstance(instance, project::RealFormat)
-
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_negativeSuffix_type(instance):
-    assert isinstance(instance.negativeSuffix, str)
+def test_project_realformat_instantiation(instance):
+    assert isinstance(instance, project_RealFormat)
 
 
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_negativeSuffix_setter(instance):
-    original = instance.negativeSuffix
-    instance.negativeSuffix = original
-    assert instance.negativeSuffix == original
 
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_fractionSeparator_type(instance):
-    assert isinstance(instance.fractionSeparator, str)
-
-
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_fractionSeparator_setter(instance):
+@given(instance=project_RealFormat_strategy)
+def test_project_realformat_fractionSeparator_setter(instance):
     original = instance.fractionSeparator
     instance.fractionSeparator = original
     assert instance.fractionSeparator == original
 
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_negativePrefix_type(instance):
-    assert isinstance(instance.negativePrefix, str)
 
 
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_negativePrefix_setter(instance):
+@given(instance=project_RealFormat_strategy)
+def test_project_realformat_negativePrefix_setter(instance):
     original = instance.negativePrefix
     instance.negativePrefix = original
     assert instance.negativePrefix == original
 
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_fractionDigits_type(instance):
-    assert isinstance(instance.fractionDigits, int)
 
 
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_fractionDigits_setter(instance):
-    original = instance.fractionDigits
-    instance.fractionDigits = original
-    assert instance.fractionDigits == original
-
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_thousandsSeparator_type(instance):
-    assert isinstance(instance.thousandsSeparator, str)
-
-
-@given(instance=project::RealFormat_strategy)
-def test_project::realformat_thousandsSeparator_setter(instance):
+@given(instance=project_RealFormat_strategy)
+def test_project_realformat_thousandsSeparator_setter(instance):
     original = instance.thousandsSeparator
     instance.thousandsSeparator = original
     assert instance.thousandsSeparator == original
+
+
+
+@given(instance=project_RealFormat_strategy)
+def test_project_realformat_negativeSuffix_setter(instance):
+    original = instance.negativeSuffix
+    instance.negativeSuffix = original
+    assert instance.negativeSuffix == original
+
+
+
+@given(instance=project_RealFormat_strategy)
+def test_project_realformat_fractionDigits_setter(instance):
+    original = instance.fractionDigits
+    instance.fractionDigits = original
+    assert instance.fractionDigits == original
 
 @given(instance=WeeklyMax_strategy)
 @settings(max_examples=50)
@@ -8166,711 +8356,338 @@ def test_dailymin_instantiation(instance):
 def test_dailymax_instantiation(instance):
     assert isinstance(instance, DailyMax)
 
+@given(instance=project_Limit_strategy)
+@settings(max_examples=50)
+def test_project_limit_instantiation(instance):
+    assert isinstance(instance, project_Limit)
+
 @given(instance=GapLength_strategy)
 @settings(max_examples=50)
 def test_gaplength_instantiation(instance):
     assert isinstance(instance, GapLength)
 
-@given(instance=GapDuration_strategy)
+@given(instance=project_LimitsAttribute_strategy)
 @settings(max_examples=50)
-def test_gapduration_instantiation(instance):
-    assert isinstance(instance, GapDuration)
+def test_project_limitsattribute_instantiation(instance):
+    assert isinstance(instance, project_LimitsAttribute)
 
-@given(instance=project::LimitAttribute_strategy)
+@given(instance=project_Interval3_strategy)
 @settings(max_examples=50)
-def test_project::limitattribute_instantiation(instance):
-    assert isinstance(instance, project::LimitAttribute)
-
-@given(instance=project::LimitAttribute_strategy)
-def test_project::limitattribute_end_type(instance):
-    assert isinstance(instance.end, str)
+def test_project_interval3_instantiation(instance):
+    assert isinstance(instance, project_Interval3)
 
 
-@given(instance=project::LimitAttribute_strategy)
-def test_project::limitattribute_end_setter(instance):
+
+@given(instance=project_Interval3_strategy)
+def test_project_interval3_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=project::LimitAttribute_strategy)
-def test_project::limitattribute_start_type(instance):
-    assert isinstance(instance.start, str)
 
 
-@given(instance=project::LimitAttribute_strategy)
-def test_project::limitattribute_start_setter(instance):
+@given(instance=project_Interval3_strategy)
+def test_project_interval3_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=WeeklyMin_strategy)
+@given(instance=project_Interval1_strategy)
 @settings(max_examples=50)
-def test_weeklymin_instantiation(instance):
-    assert isinstance(instance, WeeklyMin)
-
-@given(instance=project::Limit_strategy)
-@settings(max_examples=50)
-def test_project::limit_instantiation(instance):
-    assert isinstance(instance, project::Limit)
-
-@given(instance=project::ColumnAttribute_strategy)
-@settings(max_examples=50)
-def test_project::columnattribute_instantiation(instance):
-    assert isinstance(instance, project::ColumnAttribute)
-
-@given(instance=project::WorkHours_strategy)
-@settings(max_examples=50)
-def test_project::workhours_instantiation(instance):
-    assert isinstance(instance, project::WorkHours)
-
-@given(instance=project::WorkHours_strategy)
-def test_project::workhours_start_type(instance):
-    assert isinstance(instance.start, str)
+def test_project_interval1_instantiation(instance):
+    assert isinstance(instance, project_Interval1)
 
 
-@given(instance=project::WorkHours_strategy)
-def test_project::workhours_start_setter(instance):
+
+@given(instance=project_Interval1_strategy)
+def test_project_interval1_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
+
+
+@given(instance=project_Interval1_strategy)
+def test_project_interval1_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=project::WorkHours_strategy)
-def test_project::workhours_stop_type(instance):
-    assert isinstance(instance.stop, str)
-
-
-@given(instance=project::WorkHours_strategy)
-def test_project::workhours_stop_setter(instance):
-    original = instance.stop
-    instance.stop = original
-    assert instance.stop == original
-
-@given(instance=project::Weekdays_strategy)
+@given(instance=project_IncludePropertiesAttribute_strategy)
 @settings(max_examples=50)
-def test_project::weekdays_instantiation(instance):
-    assert isinstance(instance, project::Weekdays)
+def test_project_includepropertiesattribute_instantiation(instance):
+    assert isinstance(instance, project_IncludePropertiesAttribute)
 
-@given(instance=project::Weekdays_strategy)
-def test_project::weekdays_first_type(instance):
-    assert isinstance(instance.first, str)
-
-
-@given(instance=project::Weekdays_strategy)
-def test_project::weekdays_first_setter(instance):
-    original = instance.first
-    instance.first = original
-    assert instance.first == original
-
-@given(instance=project::Weekdays_strategy)
-def test_project::weekdays_last_type(instance):
-    assert isinstance(instance.last, str)
-
-
-@given(instance=project::Weekdays_strategy)
-def test_project::weekdays_last_setter(instance):
-    original = instance.last
-    instance.last = original
-    assert instance.last == original
-
-@given(instance=project::TreeLevel_strategy)
+@given(instance=project_Function_strategy)
 @settings(max_examples=50)
-def test_project::treelevel_instantiation(instance):
-    assert isinstance(instance, project::TreeLevel)
-
-@given(instance=project::TreeLevel_strategy)
-def test_project::treelevel_level_type(instance):
-    assert isinstance(instance.level, str)
+def test_project_function_instantiation(instance):
+    assert isinstance(instance, project_Function)
 
 
-@given(instance=project::TreeLevel_strategy)
-def test_project::treelevel_level_setter(instance):
+
+@given(instance=project_Function_strategy)
+def test_project_function_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+
+
+@given(instance=project_Function_strategy)
+def test_project_function_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=project::TimesheetReportAttribute_strategy)
-@settings(max_examples=50)
-def test_project::timesheetreportattribute_instantiation(instance):
-    assert isinstance(instance, project::TimesheetReportAttribute)
-
-@given(instance=project::TimesheetAttribute_strategy)
-@settings(max_examples=50)
-def test_project::timesheetattribute_instantiation(instance):
-    assert isinstance(instance, project::TimesheetAttribute)
-
-@given(instance=StatusSheetAttribute_strategy)
-@settings(max_examples=50)
-def test_statussheetattribute_instantiation(instance):
-    assert isinstance(instance, StatusSheetAttribute)
-
-@given(instance=project::TaskTimesheetAttribute_strategy)
-@settings(max_examples=50)
-def test_project::tasktimesheetattribute_instantiation(instance):
-    assert isinstance(instance, project::TaskTimesheetAttribute)
-
-@given(instance=project::TaskStatusSheetAttribute_strategy)
-@settings(max_examples=50)
-def test_project::taskstatussheetattribute_instantiation(instance):
-    assert isinstance(instance, project::TaskStatusSheetAttribute)
-
-@given(instance=project::StatusSheetReportAttribute_strategy)
-@settings(max_examples=50)
-def test_project::statussheetreportattribute_instantiation(instance):
-    assert isinstance(instance, project::StatusSheetReportAttribute)
-
-@given(instance=project::StatusSheetAttribute_strategy)
-@settings(max_examples=50)
-def test_project::statussheetattribute_instantiation(instance):
-    assert isinstance(instance, project::StatusSheetAttribute)
-
-@given(instance=project::StatusTimesheetAttribute_strategy)
-@settings(max_examples=50)
-def test_project::statustimesheetattribute_instantiation(instance):
-    assert isinstance(instance, project::StatusTimesheetAttribute)
-
-@given(instance=project::Criterion_strategy)
-@settings(max_examples=50)
-def test_project::criterion_instantiation(instance):
-    assert isinstance(instance, project::Criterion)
-
-@given(instance=project::Criterion_strategy)
-def test_project::criterion_columnId_type(instance):
-    assert isinstance(instance.columnId, str)
 
 
-@given(instance=project::Criterion_strategy)
-def test_project::criterion_columnId_setter(instance):
-    original = instance.columnId
-    instance.columnId = original
-    assert instance.columnId == original
-
-@given(instance=project::Criterion_strategy)
-def test_project::criterion_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=project::Criterion_strategy)
-def test_project::criterion_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=SortTasks_strategy)
-@settings(max_examples=50)
-def test_sorttasks_instantiation(instance):
-    assert isinstance(instance, SortTasks)
-
-@given(instance=SortResources_strategy)
-@settings(max_examples=50)
-def test_sortresources_instantiation(instance):
-    assert isinstance(instance, SortResources)
-
-@given(instance=SortJournalEntries_strategy)
-@settings(max_examples=50)
-def test_sortjournalentries_instantiation(instance):
-    assert isinstance(instance, SortJournalEntries)
-
-@given(instance=SortAccounts_strategy)
-@settings(max_examples=50)
-def test_sortaccounts_instantiation(instance):
-    assert isinstance(instance, SortAccounts)
-
-@given(instance=project::Sort_strategy)
-@settings(max_examples=50)
-def test_project::sort_instantiation(instance):
-    assert isinstance(instance, project::Sort)
-
-@given(instance=project::Sort_strategy)
-def test_project::sort_tree_type(instance):
-    assert isinstance(instance.tree, bool)
-
-
-@given(instance=project::Sort_strategy)
-def test_project::sort_tree_setter(instance):
-    original = instance.tree
-    instance.tree = original
-    assert instance.tree == original
-
-@given(instance=project::StatusStatusSheetAttribute_strategy)
-@settings(max_examples=50)
-def test_project::statusstatussheetattribute_instantiation(instance):
-    assert isinstance(instance, project::StatusStatusSheetAttribute)
-
-@given(instance=TaskStatusSheetAttribute_strategy)
-@settings(max_examples=50)
-def test_taskstatussheetattribute_instantiation(instance):
-    assert isinstance(instance, TaskStatusSheetAttribute)
-
-@given(instance=project::TaskStatusSheet_strategy)
-@settings(max_examples=50)
-def test_project::taskstatussheet_instantiation(instance):
-    assert isinstance(instance, project::TaskStatusSheet)
-
-@given(instance=project::StatusStatusSheet_strategy)
-@settings(max_examples=50)
-def test_project::statusstatussheet_instantiation(instance):
-    assert isinstance(instance, project::StatusStatusSheet)
-
-@given(instance=project::StatusStatusSheet_strategy)
-def test_project::statusstatussheet_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=project::StatusStatusSheet_strategy)
-def test_project::statusstatussheet_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=project::StatusStatusSheet_strategy)
-def test_project::statusstatussheet_level_type(instance):
-    assert isinstance(instance.level, str)
-
-
-@given(instance=project::StatusStatusSheet_strategy)
-def test_project::statusstatussheet_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=project::ShiftsLimit_strategy)
-@settings(max_examples=50)
-def test_project::shiftslimit_instantiation(instance):
-    assert isinstance(instance, project::ShiftsLimit)
-
-@given(instance=ShiftsTask_strategy)
-@settings(max_examples=50)
-def test_shiftstask_instantiation(instance):
-    assert isinstance(instance, ShiftsTask)
-
-@given(instance=ShiftsResource_strategy)
-@settings(max_examples=50)
-def test_shiftsresource_instantiation(instance):
-    assert isinstance(instance, ShiftsResource)
-
-@given(instance=project::Shifts_strategy)
-@settings(max_examples=50)
-def test_project::shifts_instantiation(instance):
-    assert isinstance(instance, project::Shifts)
-
-@given(instance=project::LimitsAttribute_strategy)
-@settings(max_examples=50)
-def test_project::limitsattribute_instantiation(instance):
-    assert isinstance(instance, project::LimitsAttribute)
-
-@given(instance=project::Interval3_strategy)
-@settings(max_examples=50)
-def test_project::interval3_instantiation(instance):
-    assert isinstance(instance, project::Interval3)
-
-@given(instance=project::Interval3_strategy)
-def test_project::interval3_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=project::Interval3_strategy)
-def test_project::interval3_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
-
-@given(instance=project::Interval3_strategy)
-def test_project::interval3_end_type(instance):
-    assert isinstance(instance.end, str)
-
-
-@given(instance=project::Interval3_strategy)
-def test_project::interval3_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
-
-@given(instance=project::Interval1_strategy)
-@settings(max_examples=50)
-def test_project::interval1_instantiation(instance):
-    assert isinstance(instance, project::Interval1)
-
-@given(instance=project::Interval1_strategy)
-def test_project::interval1_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=project::Interval1_strategy)
-def test_project::interval1_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
-
-@given(instance=project::Interval1_strategy)
-def test_project::interval1_end_type(instance):
-    assert isinstance(instance.end, str)
-
-
-@given(instance=project::Interval1_strategy)
-def test_project::interval1_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
-
-@given(instance=project::IncludePropertiesAttribute_strategy)
-@settings(max_examples=50)
-def test_project::includepropertiesattribute_instantiation(instance):
-    assert isinstance(instance, project::IncludePropertiesAttribute)
-
-@given(instance=project::Function_strategy)
-@settings(max_examples=50)
-def test_project::function_instantiation(instance):
-    assert isinstance(instance, project::Function)
-
-@given(instance=project::Function_strategy)
-def test_project::function_parentId_type(instance):
-    assert isinstance(instance.parentId, str)
-
-
-@given(instance=project::Function_strategy)
-def test_project::function_parentId_setter(instance):
+@given(instance=project_Function_strategy)
+def test_project_function_parentId_setter(instance):
     original = instance.parentId
     instance.parentId = original
     assert instance.parentId == original
 
-@given(instance=project::Function_strategy)
-def test_project::function_level_type(instance):
-    assert isinstance(instance.level, int)
 
 
-@given(instance=project::Function_strategy)
-def test_project::function_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=project::Function_strategy)
-def test_project::function_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=project::Function_strategy)
-def test_project::function_date_setter(instance):
+@given(instance=project_Function_strategy)
+def test_project_function_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
-
-@given(instance=project::Function_strategy)
-def test_project::function_distance_type(instance):
-    assert isinstance(instance.distance, int)
-
-
-@given(instance=project::Function_strategy)
-def test_project::function_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
 
 @given(instance=NavigatorAttribute_strategy)
 @settings(max_examples=50)
 def test_navigatorattribute_instantiation(instance):
     assert isinstance(instance, NavigatorAttribute)
 
-@given(instance=project::HideReport_strategy)
+@given(instance=project_HideReport_strategy)
 @settings(max_examples=50)
-def test_project::hidereport_instantiation(instance):
-    assert isinstance(instance, project::HideReport)
+def test_project_hidereport_instantiation(instance):
+    assert isinstance(instance, project_HideReport)
 
-@given(instance=project::GapLength_strategy)
+@given(instance=project_GapLength_strategy)
 @settings(max_examples=50)
-def test_project::gaplength_instantiation(instance):
-    assert isinstance(instance, project::GapLength)
+def test_project_gaplength_instantiation(instance):
+    assert isinstance(instance, project_GapLength)
 
-@given(instance=project::GapDuration_strategy)
+@given(instance=project_GapDuration_strategy)
 @settings(max_examples=50)
-def test_project::gapduration_instantiation(instance):
-    assert isinstance(instance, project::GapDuration)
+def test_project_gapduration_instantiation(instance):
+    assert isinstance(instance, project_GapDuration)
 
-@given(instance=project::Extend_strategy)
+@given(instance=project_Extend_strategy)
 @settings(max_examples=50)
-def test_project::extend_instantiation(instance):
-    assert isinstance(instance, project::Extend)
-
-@given(instance=project::Extend_strategy)
-def test_project::extend_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_project_extend_instantiation(instance):
+    assert isinstance(instance, project_Extend)
 
 
-@given(instance=project::Extend_strategy)
-def test_project::extend_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=project::Extend_strategy)
-def test_project::extend_scenariospecific_type(instance):
-    assert isinstance(instance.scenariospecific, bool)
-
-
-@given(instance=project::Extend_strategy)
-def test_project::extend_scenariospecific_setter(instance):
+@given(instance=project_Extend_strategy)
+def test_project_extend_scenariospecific_setter(instance):
     original = instance.scenariospecific
     instance.scenariospecific = original
     assert instance.scenariospecific == original
 
-@given(instance=project::Extend_strategy)
-def test_project::extend_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=project::Extend_strategy)
-def test_project::extend_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::Extend_strategy)
-def test_project::extend_inherit_type(instance):
-    assert isinstance(instance.inherit, bool)
+@given(instance=project_Extend_strategy)
+def test_project_extend_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=project::Extend_strategy)
-def test_project::extend_inherit_setter(instance):
+
+@given(instance=project_Extend_strategy)
+def test_project_extend_inherit_setter(instance):
     original = instance.inherit
     instance.inherit = original
     assert instance.inherit == original
+
+
+
+@given(instance=project_Extend_strategy)
+def test_project_extend_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 @given(instance=ExportAttribute_strategy)
 @settings(max_examples=50)
 def test_exportattribute_instantiation(instance):
     assert isinstance(instance, ExportAttribute)
 
-@given(instance=project::TaskAttributes_strategy)
+@given(instance=project_ResourceAttributes_strategy)
 @settings(max_examples=50)
-def test_project::taskattributes_instantiation(instance):
-    assert isinstance(instance, project::TaskAttributes)
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_flags_type(instance):
-    assert isinstance(instance.flags, bool)
+def test_project_resourceattributes_instantiation(instance):
+    assert isinstance(instance, project_ResourceAttributes)
 
 
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_flags_setter(instance):
-    original = instance.flags
-    instance.flags = original
-    assert instance.flags == original
 
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_maxstart_type(instance):
-    assert isinstance(instance.maxstart, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_maxstart_setter(instance):
-    original = instance.maxstart
-    instance.maxstart = original
-    assert instance.maxstart == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_booking_type(instance):
-    assert isinstance(instance.booking, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_booking_setter(instance):
-    original = instance.booking
-    instance.booking = original
-    assert instance.booking == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_note_type(instance):
-    assert isinstance(instance.note, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_note_setter(instance):
-    original = instance.note
-    instance.note = original
-    assert instance.note == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_priority_type(instance):
-    assert isinstance(instance.priority, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_complete_type(instance):
-    assert isinstance(instance.complete, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_complete_setter(instance):
-    original = instance.complete
-    instance.complete = original
-    assert instance.complete == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_none_type(instance):
-    assert isinstance(instance.none, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_none_setter(instance):
+@given(instance=project_ResourceAttributes_strategy)
+def test_project_resourceattributes_none_setter(instance):
     original = instance.none
     instance.none = original
     assert instance.none == original
 
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_maxend_type(instance):
-    assert isinstance(instance.maxend, bool)
 
 
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_maxend_setter(instance):
-    original = instance.maxend
-    instance.maxend = original
-    assert instance.maxend == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_minstart_type(instance):
-    assert isinstance(instance.minstart, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_minstart_setter(instance):
-    original = instance.minstart
-    instance.minstart = original
-    assert instance.minstart == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_all_type(instance):
-    assert isinstance(instance.all, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_all_setter(instance):
-    original = instance.all
-    instance.all = original
-    assert instance.all == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_minend_type(instance):
-    assert isinstance(instance.minend, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_minend_setter(instance):
-    original = instance.minend
-    instance.minend = original
-    assert instance.minend == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_depends_type(instance):
-    assert isinstance(instance.depends, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_depends_setter(instance):
-    original = instance.depends
-    instance.depends = original
-    assert instance.depends == original
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_responsible_type(instance):
-    assert isinstance(instance.responsible, bool)
-
-
-@given(instance=project::TaskAttributes_strategy)
-def test_project::taskattributes_responsible_setter(instance):
-    original = instance.responsible
-    instance.responsible = original
-    assert instance.responsible == original
-
-@given(instance=project::ResourceAttributes_strategy)
-@settings(max_examples=50)
-def test_project::resourceattributes_instantiation(instance):
-    assert isinstance(instance, project::ResourceAttributes)
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_none_type(instance):
-    assert isinstance(instance.none, bool)
-
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_none_setter(instance):
-    original = instance.none
-    instance.none = original
-    assert instance.none == original
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_booking_type(instance):
-    assert isinstance(instance.booking, bool)
-
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_booking_setter(instance):
-    original = instance.booking
-    instance.booking = original
-    assert instance.booking == original
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_workingHours_type(instance):
-    assert isinstance(instance.workingHours, bool)
-
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_workingHours_setter(instance):
-    original = instance.workingHours
-    instance.workingHours = original
-    assert instance.workingHours == original
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_vacation_type(instance):
-    assert isinstance(instance.vacation, bool)
-
-
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_vacation_setter(instance):
+@given(instance=project_ResourceAttributes_strategy)
+def test_project_resourceattributes_vacation_setter(instance):
     original = instance.vacation
     instance.vacation = original
     assert instance.vacation == original
 
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_all_type(instance):
-    assert isinstance(instance.all, bool)
 
 
-@given(instance=project::ResourceAttributes_strategy)
-def test_project::resourceattributes_all_setter(instance):
+@given(instance=project_ResourceAttributes_strategy)
+def test_project_resourceattributes_workingHours_setter(instance):
+    original = instance.workingHours
+    instance.workingHours = original
+    assert instance.workingHours == original
+
+
+
+@given(instance=project_ResourceAttributes_strategy)
+def test_project_resourceattributes_all_setter(instance):
     original = instance.all
     instance.all = original
     assert instance.all == original
 
-@given(instance=project::Definitions_strategy)
+
+
+@given(instance=project_ResourceAttributes_strategy)
+def test_project_resourceattributes_booking_setter(instance):
+    original = instance.booking
+    instance.booking = original
+    assert instance.booking == original
+
+@given(instance=project_TaskAttributes_strategy)
 @settings(max_examples=50)
-def test_project::definitions_instantiation(instance):
-    assert isinstance(instance, project::Definitions)
-
-@given(instance=project::Definitions_strategy)
-def test_project::definitions_none_type(instance):
-    assert isinstance(instance.none, bool)
+def test_project_taskattributes_instantiation(instance):
+    assert isinstance(instance, project_TaskAttributes)
 
 
-@given(instance=project::Definitions_strategy)
-def test_project::definitions_none_setter(instance):
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_minstart_setter(instance):
+    original = instance.minstart
+    instance.minstart = original
+    assert instance.minstart == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_booking_setter(instance):
+    original = instance.booking
+    instance.booking = original
+    assert instance.booking == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_complete_setter(instance):
+    original = instance.complete
+    instance.complete = original
+    assert instance.complete == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_minend_setter(instance):
+    original = instance.minend
+    instance.minend = original
+    assert instance.minend == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_none_setter(instance):
     original = instance.none
     instance.none = original
     assert instance.none == original
 
-@given(instance=project::Definitions_strategy)
-def test_project::definitions_all_type(instance):
-    assert isinstance(instance.all, bool)
 
 
-@given(instance=project::Definitions_strategy)
-def test_project::definitions_all_setter(instance):
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_flags_setter(instance):
+    original = instance.flags
+    instance.flags = original
+    assert instance.flags == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_depends_setter(instance):
+    original = instance.depends
+    instance.depends = original
+    assert instance.depends == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_all_setter(instance):
+    original = instance.all
+    instance.all = original
+    assert instance.all == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_responsible_setter(instance):
+    original = instance.responsible
+    instance.responsible = original
+    assert instance.responsible == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_maxend_setter(instance):
+    original = instance.maxend
+    instance.maxend = original
+    assert instance.maxend == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_maxstart_setter(instance):
+    original = instance.maxstart
+    instance.maxstart = original
+    assert instance.maxstart == original
+
+
+
+@given(instance=project_TaskAttributes_strategy)
+def test_project_taskattributes_note_setter(instance):
+    original = instance.note
+    instance.note = original
+    assert instance.note == original
+
+@given(instance=project_Definitions_strategy)
+@settings(max_examples=50)
+def test_project_definitions_instantiation(instance):
+    assert isinstance(instance, project_Definitions)
+
+
+
+@given(instance=project_Definitions_strategy)
+def test_project_definitions_none_setter(instance):
+    original = instance.none
+    instance.none = original
+    assert instance.none == original
+
+
+
+@given(instance=project_Definitions_strategy)
+def test_project_definitions_all_setter(instance):
     original = instance.all
     instance.all = original
     assert instance.all == original
@@ -8880,239 +8697,203 @@ def test_project::definitions_all_setter(instance):
 def test_limitsattribute_instantiation(instance):
     assert isinstance(instance, LimitsAttribute)
 
-@given(instance=project::WeeklyMin_strategy)
+@given(instance=project_DailyMin_strategy)
 @settings(max_examples=50)
-def test_project::weeklymin_instantiation(instance):
-    assert isinstance(instance, project::WeeklyMin)
+def test_project_dailymin_instantiation(instance):
+    assert isinstance(instance, project_DailyMin)
 
-@given(instance=project::Maximum_strategy)
+@given(instance=project_WeeklyMax_strategy)
 @settings(max_examples=50)
-def test_project::maximum_instantiation(instance):
-    assert isinstance(instance, project::Maximum)
+def test_project_weeklymax_instantiation(instance):
+    assert isinstance(instance, project_WeeklyMax)
 
-@given(instance=project::MonthlyMax_strategy)
+@given(instance=project_Minimum_strategy)
 @settings(max_examples=50)
-def test_project::monthlymax_instantiation(instance):
-    assert isinstance(instance, project::MonthlyMax)
+def test_project_minimum_instantiation(instance):
+    assert isinstance(instance, project_Minimum)
 
-@given(instance=project::WeeklyMax_strategy)
+@given(instance=project_Maximum_strategy)
 @settings(max_examples=50)
-def test_project::weeklymax_instantiation(instance):
-    assert isinstance(instance, project::WeeklyMax)
+def test_project_maximum_instantiation(instance):
+    assert isinstance(instance, project_Maximum)
 
-@given(instance=project::Minimum_strategy)
+@given(instance=project_MonthlyMin_strategy)
 @settings(max_examples=50)
-def test_project::minimum_instantiation(instance):
-    assert isinstance(instance, project::Minimum)
+def test_project_monthlymin_instantiation(instance):
+    assert isinstance(instance, project_MonthlyMin)
 
-@given(instance=project::DailyMin_strategy)
+@given(instance=project_MonthlyMax_strategy)
 @settings(max_examples=50)
-def test_project::dailymin_instantiation(instance):
-    assert isinstance(instance, project::DailyMin)
+def test_project_monthlymax_instantiation(instance):
+    assert isinstance(instance, project_MonthlyMax)
 
-@given(instance=project::MonthlyMin_strategy)
+@given(instance=project_WeeklyMin_strategy)
 @settings(max_examples=50)
-def test_project::monthlymin_instantiation(instance):
-    assert isinstance(instance, project::MonthlyMin)
+def test_project_weeklymin_instantiation(instance):
+    assert isinstance(instance, project_WeeklyMin)
 
-@given(instance=project::DailyMax_strategy)
+@given(instance=project_DailyMax_strategy)
 @settings(max_examples=50)
-def test_project::dailymax_instantiation(instance):
-    assert isinstance(instance, project::DailyMax)
+def test_project_dailymax_instantiation(instance):
+    assert isinstance(instance, project_DailyMax)
 
 @given(instance=ProjectAttribute_strategy)
 @settings(max_examples=50)
 def test_projectattribute_instantiation(instance):
     assert isinstance(instance, ProjectAttribute)
 
-@given(instance=project::TimingResolution_strategy)
+@given(instance=project_TrackingScenario_strategy)
 @settings(max_examples=50)
-def test_project::timingresolution_instantiation(instance):
-    assert isinstance(instance, project::TimingResolution)
+def test_project_trackingscenario_instantiation(instance):
+    assert isinstance(instance, project_TrackingScenario)
 
-@given(instance=project::TimingResolution_strategy)
-def test_project::timingresolution_timingResolution_type(instance):
-    assert isinstance(instance.timingResolution, int)
+@given(instance=project_TimingResolution_strategy)
+@settings(max_examples=50)
+def test_project_timingresolution_instantiation(instance):
+    assert isinstance(instance, project_TimingResolution)
 
 
-@given(instance=project::TimingResolution_strategy)
-def test_project::timingresolution_timingResolution_setter(instance):
+
+@given(instance=project_TimingResolution_strategy)
+def test_project_timingresolution_timingResolution_setter(instance):
     original = instance.timingResolution
     instance.timingResolution = original
     assert instance.timingResolution == original
 
-@given(instance=project::ExtendResource_strategy)
+@given(instance=project_DailyWorkingHours_strategy)
 @settings(max_examples=50)
-def test_project::extendresource_instantiation(instance):
-    assert isinstance(instance, project::ExtendResource)
-
-@given(instance=project::ExtendTask_strategy)
-@settings(max_examples=50)
-def test_project::extendtask_instantiation(instance):
-    assert isinstance(instance, project::ExtendTask)
-
-@given(instance=project::DailyWorkingHours_strategy)
-@settings(max_examples=50)
-def test_project::dailyworkinghours_instantiation(instance):
-    assert isinstance(instance, project::DailyWorkingHours)
-
-@given(instance=project::DailyWorkingHours_strategy)
-def test_project::dailyworkinghours_dailyWorkingHours_type(instance):
-    assert isinstance(instance.dailyWorkingHours, float)
+def test_project_dailyworkinghours_instantiation(instance):
+    assert isinstance(instance, project_DailyWorkingHours)
 
 
-@given(instance=project::DailyWorkingHours_strategy)
-def test_project::dailyworkinghours_dailyWorkingHours_setter(instance):
+
+@given(instance=project_DailyWorkingHours_strategy)
+def test_project_dailyworkinghours_dailyWorkingHours_setter(instance):
     original = instance.dailyWorkingHours
     instance.dailyWorkingHours = original
     assert instance.dailyWorkingHours == original
 
-@given(instance=project::ShortTimeFormat_strategy)
+@given(instance=project_WeekStarts_strategy)
 @settings(max_examples=50)
-def test_project::shorttimeformat_instantiation(instance):
-    assert isinstance(instance, project::ShortTimeFormat)
-
-@given(instance=project::ShortTimeFormat_strategy)
-def test_project::shorttimeformat_shortTimeFormat_type(instance):
-    assert isinstance(instance.shortTimeFormat, str)
+def test_project_weekstarts_instantiation(instance):
+    assert isinstance(instance, project_WeekStarts)
 
 
-@given(instance=project::ShortTimeFormat_strategy)
-def test_project::shorttimeformat_shortTimeFormat_setter(instance):
-    original = instance.shortTimeFormat
-    instance.shortTimeFormat = original
-    assert instance.shortTimeFormat == original
 
-@given(instance=project::WeekStarts_strategy)
-@settings(max_examples=50)
-def test_project::weekstarts_instantiation(instance):
-    assert isinstance(instance, project::WeekStarts)
-
-@given(instance=project::WeekStarts_strategy)
-def test_project::weekstarts_sunday_type(instance):
-    assert isinstance(instance.sunday, bool)
-
-
-@given(instance=project::WeekStarts_strategy)
-def test_project::weekstarts_sunday_setter(instance):
-    original = instance.sunday
-    instance.sunday = original
-    assert instance.sunday == original
-
-@given(instance=project::WeekStarts_strategy)
-def test_project::weekstarts_monday_type(instance):
-    assert isinstance(instance.monday, bool)
-
-
-@given(instance=project::WeekStarts_strategy)
-def test_project::weekstarts_monday_setter(instance):
+@given(instance=project_WeekStarts_strategy)
+def test_project_weekstarts_monday_setter(instance):
     original = instance.monday
     instance.monday = original
     assert instance.monday == original
 
-@given(instance=project::Scenario_strategy)
+
+
+@given(instance=project_WeekStarts_strategy)
+def test_project_weekstarts_sunday_setter(instance):
+    original = instance.sunday
+    instance.sunday = original
+    assert instance.sunday == original
+
+@given(instance=project_Scenario_strategy)
 @settings(max_examples=50)
-def test_project::scenario_instantiation(instance):
-    assert isinstance(instance, project::Scenario)
-
-@given(instance=project::Scenario_strategy)
-def test_project::scenario_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_project_scenario_instantiation(instance):
+    assert isinstance(instance, project_Scenario)
 
 
-@given(instance=project::Scenario_strategy)
-def test_project::scenario_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=project::Scenario_strategy)
-def test_project::scenario_active_type(instance):
-    assert isinstance(instance.active, str)
-
-
-@given(instance=project::Scenario_strategy)
-def test_project::scenario_active_setter(instance):
+@given(instance=project_Scenario_strategy)
+def test_project_scenario_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
 
-@given(instance=project::Scenario_strategy)
-def test_project::scenario_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=project::Scenario_strategy)
-def test_project::scenario_id_setter(instance):
+@given(instance=project_Scenario_strategy)
+def test_project_scenario_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=project_Scenario_strategy)
+def test_project_scenario_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=project::Include_strategy)
+@given(instance=project_ExtendResource_strategy)
 @settings(max_examples=50)
-def test_project::include_instantiation(instance):
-    assert isinstance(instance, project::Include)
+def test_project_extendresource_instantiation(instance):
+    assert isinstance(instance, project_ExtendResource)
 
-@given(instance=project::Include_strategy)
-def test_project::include_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
-
-
-@given(instance=project::Include_strategy)
-def test_project::include_importURI_setter(instance):
-    original = instance.importURI
-    instance.importURI = original
-    assert instance.importURI == original
-
-@given(instance=project::TrackingScenario_strategy)
+@given(instance=project_ExtendTask_strategy)
 @settings(max_examples=50)
-def test_project::trackingscenario_instantiation(instance):
-    assert isinstance(instance, project::TrackingScenario)
+def test_project_extendtask_instantiation(instance):
+    assert isinstance(instance, project_ExtendTask)
 
-@given(instance=project::Now_strategy)
+@given(instance=project_ShortTimeFormat_strategy)
 @settings(max_examples=50)
-def test_project::now_instantiation(instance):
-    assert isinstance(instance, project::Now)
-
-@given(instance=project::Now_strategy)
-def test_project::now_now_type(instance):
-    assert isinstance(instance.now, str)
+def test_project_shorttimeformat_instantiation(instance):
+    assert isinstance(instance, project_ShortTimeFormat)
 
 
-@given(instance=project::Now_strategy)
-def test_project::now_now_setter(instance):
-    original = instance.now
-    instance.now = original
-    assert instance.now == original
 
-@given(instance=project::YearlyWorkingDays_strategy)
+@given(instance=project_ShortTimeFormat_strategy)
+def test_project_shorttimeformat_shortTimeFormat_setter(instance):
+    original = instance.shortTimeFormat
+    instance.shortTimeFormat = original
+    assert instance.shortTimeFormat == original
+
+@given(instance=project_YearlyWorkingDays_strategy)
 @settings(max_examples=50)
-def test_project::yearlyworkingdays_instantiation(instance):
-    assert isinstance(instance, project::YearlyWorkingDays)
-
-@given(instance=project::YearlyWorkingDays_strategy)
-def test_project::yearlyworkingdays_yearlyWorkingDays_type(instance):
-    assert isinstance(instance.yearlyWorkingDays, int)
+def test_project_yearlyworkingdays_instantiation(instance):
+    assert isinstance(instance, project_YearlyWorkingDays)
 
 
-@given(instance=project::YearlyWorkingDays_strategy)
-def test_project::yearlyworkingdays_yearlyWorkingDays_setter(instance):
+
+@given(instance=project_YearlyWorkingDays_strategy)
+def test_project_yearlyworkingdays_yearlyWorkingDays_setter(instance):
     original = instance.yearlyWorkingDays
     instance.yearlyWorkingDays = original
     assert instance.yearlyWorkingDays == original
 
-@given(instance=project::Currency_strategy)
+@given(instance=project_Include_strategy)
 @settings(max_examples=50)
-def test_project::currency_instantiation(instance):
-    assert isinstance(instance, project::Currency)
-
-@given(instance=project::Currency_strategy)
-def test_project::currency_currency_type(instance):
-    assert isinstance(instance.currency, str)
+def test_project_include_instantiation(instance):
+    assert isinstance(instance, project_Include)
 
 
-@given(instance=project::Currency_strategy)
-def test_project::currency_currency_setter(instance):
+
+@given(instance=project_Include_strategy)
+def test_project_include_importURI_setter(instance):
+    original = instance.importURI
+    instance.importURI = original
+    assert instance.importURI == original
+
+@given(instance=project_Now_strategy)
+@settings(max_examples=50)
+def test_project_now_instantiation(instance):
+    assert isinstance(instance, project_Now)
+
+
+
+@given(instance=project_Now_strategy)
+def test_project_now_now_setter(instance):
+    original = instance.now
+    instance.now = original
+    assert instance.now == original
+
+@given(instance=project_Currency_strategy)
+@settings(max_examples=50)
+def test_project_currency_instantiation(instance):
+    assert isinstance(instance, project_Currency)
+
+
+
+@given(instance=project_Currency_strategy)
+def test_project_currency_currency_setter(instance):
     original = instance.currency
     instance.currency = original
     assert instance.currency == original
@@ -9137,29 +8918,23 @@ def test_statussheetreportattribute_instantiation(instance):
 def test_nikureportattribute_instantiation(instance):
     assert isinstance(instance, NikuReportAttribute)
 
-@given(instance=project::Timeoff_strategy)
+@given(instance=project_Timeoff_strategy)
 @settings(max_examples=50)
-def test_project::timeoff_instantiation(instance):
-    assert isinstance(instance, project::Timeoff)
-
-@given(instance=project::Timeoff_strategy)
-def test_project::timeoff_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_project_timeoff_instantiation(instance):
+    assert isinstance(instance, project_Timeoff)
 
 
-@given(instance=project::Timeoff_strategy)
-def test_project::timeoff_name_setter(instance):
+
+@given(instance=project_Timeoff_strategy)
+def test_project_timeoff_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=project::Timeoff_strategy)
-def test_project::timeoff_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=project::Timeoff_strategy)
-def test_project::timeoff_id_setter(instance):
+@given(instance=project_Timeoff_strategy)
+def test_project_timeoff_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -9169,71 +8944,59 @@ def test_project::timeoff_id_setter(instance):
 def test_newtaskattribute_instantiation(instance):
     assert isinstance(instance, NewTaskAttribute)
 
-@given(instance=project::Remaining_strategy)
+@given(instance=project_Work_strategy)
 @settings(max_examples=50)
-def test_project::remaining_instantiation(instance):
-    assert isinstance(instance, project::Remaining)
-
-@given(instance=project::Work_strategy)
-@settings(max_examples=50)
-def test_project::work_instantiation(instance):
-    assert isinstance(instance, project::Work)
-
-@given(instance=project::Work_strategy)
-def test_project::work_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_project_work_instantiation(instance):
+    assert isinstance(instance, project_Work)
 
 
-@given(instance=project::Work_strategy)
-def test_project::work_unit_setter(instance):
+
+@given(instance=project_Work_strategy)
+def test_project_work_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=project_Work_strategy)
+def test_project_work_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=project::Work_strategy)
-def test_project::work_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=project::Work_strategy)
-def test_project::work_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
+@given(instance=project_Remaining_strategy)
+@settings(max_examples=50)
+def test_project_remaining_instantiation(instance):
+    assert isinstance(instance, project_Remaining)
 
 @given(instance=IcalReportAttribute_strategy)
 @settings(max_examples=50)
 def test_icalreportattribute_instantiation(instance):
     assert isinstance(instance, IcalReportAttribute)
 
-@given(instance=project::ScenarioIcal_strategy)
+@given(instance=project_ScenarioIcal_strategy)
 @settings(max_examples=50)
-def test_project::scenarioical_instantiation(instance):
-    assert isinstance(instance, project::ScenarioIcal)
+def test_project_scenarioical_instantiation(instance):
+    assert isinstance(instance, project_ScenarioIcal)
 
-@given(instance=project::DurationQuantity_strategy)
+@given(instance=project_DurationQuantity_strategy)
 @settings(max_examples=50)
-def test_project::durationquantity_instantiation(instance):
-    assert isinstance(instance, project::DurationQuantity)
-
-@given(instance=project::DurationQuantity_strategy)
-def test_project::durationquantity_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_project_durationquantity_instantiation(instance):
+    assert isinstance(instance, project_DurationQuantity)
 
 
-@given(instance=project::DurationQuantity_strategy)
-def test_project::durationquantity_unit_setter(instance):
+
+@given(instance=project_DurationQuantity_strategy)
+def test_project_durationquantity_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=project::DurationQuantity_strategy)
-def test_project::durationquantity_value_type(instance):
-    assert isinstance(instance.value, float)
 
 
-@given(instance=project::DurationQuantity_strategy)
-def test_project::durationquantity_value_setter(instance):
+@given(instance=project_DurationQuantity_strategy)
+def test_project_durationquantity_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -9243,182 +9006,152 @@ def test_project::durationquantity_value_setter(instance):
 def test_statustimesheetattribute_instantiation(instance):
     assert isinstance(instance, StatusTimesheetAttribute)
 
-@given(instance=project::RGB_strategy)
+@given(instance=project_RGB_strategy)
 @settings(max_examples=50)
-def test_project::rgb_instantiation(instance):
-    assert isinstance(instance, project::RGB)
-
-@given(instance=project::RGB_strategy)
-def test_project::rgb_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_project_rgb_instantiation(instance):
+    assert isinstance(instance, project_RGB)
 
 
-@given(instance=project::RGB_strategy)
-def test_project::rgb_value_setter(instance):
+
+@given(instance=project_RGB_strategy)
+def test_project_rgb_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=project::LogicalExpression_strategy)
+@given(instance=project_LogicalExpression_strategy)
 @settings(max_examples=50)
-def test_project::logicalexpression_instantiation(instance):
-    assert isinstance(instance, project::LogicalExpression)
+def test_project_logicalexpression_instantiation(instance):
+    assert isinstance(instance, project_LogicalExpression)
 
 @given(instance=ColumnAttribute_strategy)
 @settings(max_examples=50)
 def test_columnattribute_instantiation(instance):
     assert isinstance(instance, ColumnAttribute)
 
-@given(instance=project::ToolTip_strategy)
+@given(instance=project_CellText_strategy)
 @settings(max_examples=50)
-def test_project::tooltip_instantiation(instance):
-    assert isinstance(instance, project::ToolTip)
-
-@given(instance=project::ToolTip_strategy)
-def test_project::tooltip_tip_type(instance):
-    assert isinstance(instance.tip, str)
+def test_project_celltext_instantiation(instance):
+    assert isinstance(instance, project_CellText)
 
 
-@given(instance=project::ToolTip_strategy)
-def test_project::tooltip_tip_setter(instance):
-    original = instance.tip
-    instance.tip = original
-    assert instance.tip == original
 
-@given(instance=project::ListItem_strategy)
-@settings(max_examples=50)
-def test_project::listitem_instantiation(instance):
-    assert isinstance(instance, project::ListItem)
-
-@given(instance=project::FontColor_strategy)
-@settings(max_examples=50)
-def test_project::fontcolor_instantiation(instance):
-    assert isinstance(instance, project::FontColor)
-
-@given(instance=project::FontColor_strategy)
-def test_project::fontcolor_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=project::FontColor_strategy)
-def test_project::fontcolor_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=project::Scale_strategy)
-@settings(max_examples=50)
-def test_project::scale_instantiation(instance):
-    assert isinstance(instance, project::Scale)
-
-@given(instance=project::Scale_strategy)
-def test_project::scale_scale_type(instance):
-    assert isinstance(instance.scale, str)
-
-
-@given(instance=project::Scale_strategy)
-def test_project::scale_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
-
-@given(instance=project::HAlign_strategy)
-@settings(max_examples=50)
-def test_project::halign_instantiation(instance):
-    assert isinstance(instance, project::HAlign)
-
-@given(instance=project::HAlign_strategy)
-def test_project::halign_justification_type(instance):
-    assert isinstance(instance.justification, str)
-
-
-@given(instance=project::HAlign_strategy)
-def test_project::halign_justification_setter(instance):
-    original = instance.justification
-    instance.justification = original
-    assert instance.justification == original
-
-@given(instance=project::ListType_strategy)
-@settings(max_examples=50)
-def test_project::listtype_instantiation(instance):
-    assert isinstance(instance, project::ListType)
-
-@given(instance=project::ListType_strategy)
-def test_project::listtype_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=project::ListType_strategy)
-def test_project::listtype_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=project::Width_strategy)
-@settings(max_examples=50)
-def test_project::width_instantiation(instance):
-    assert isinstance(instance, project::Width)
-
-@given(instance=project::Width_strategy)
-def test_project::width_width_type(instance):
-    assert isinstance(instance.width, float)
-
-
-@given(instance=project::Width_strategy)
-def test_project::width_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=project::CellText_strategy)
-@settings(max_examples=50)
-def test_project::celltext_instantiation(instance):
-    assert isinstance(instance, project::CellText)
-
-@given(instance=project::CellText_strategy)
-def test_project::celltext_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=project::CellText_strategy)
-def test_project::celltext_text_setter(instance):
+@given(instance=project_CellText_strategy)
+def test_project_celltext_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=project::CellColor_strategy)
+@given(instance=project_Width_strategy)
 @settings(max_examples=50)
-def test_project::cellcolor_instantiation(instance):
-    assert isinstance(instance, project::CellColor)
+def test_project_width_instantiation(instance):
+    assert isinstance(instance, project_Width)
 
-@given(instance=project::Column_strategy)
+
+
+@given(instance=project_Width_strategy)
+def test_project_width_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+@given(instance=project_FontColor_strategy)
 @settings(max_examples=50)
-def test_project::column_instantiation(instance):
-    assert isinstance(instance, project::Column)
-
-@given(instance=project::Column_strategy)
-def test_project::column_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_project_fontcolor_instantiation(instance):
+    assert isinstance(instance, project_FontColor)
 
 
-@given(instance=project::Column_strategy)
-def test_project::column_id_setter(instance):
+
+@given(instance=project_FontColor_strategy)
+def test_project_fontcolor_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+@given(instance=project_ToolTip_strategy)
+@settings(max_examples=50)
+def test_project_tooltip_instantiation(instance):
+    assert isinstance(instance, project_ToolTip)
+
+
+
+@given(instance=project_ToolTip_strategy)
+def test_project_tooltip_tip_setter(instance):
+    original = instance.tip
+    instance.tip = original
+    assert instance.tip == original
+
+@given(instance=project_ListType_strategy)
+@settings(max_examples=50)
+def test_project_listtype_instantiation(instance):
+    assert isinstance(instance, project_ListType)
+
+
+
+@given(instance=project_ListType_strategy)
+def test_project_listtype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=project_ListItem_strategy)
+@settings(max_examples=50)
+def test_project_listitem_instantiation(instance):
+    assert isinstance(instance, project_ListItem)
+
+@given(instance=project_HAlign_strategy)
+@settings(max_examples=50)
+def test_project_halign_instantiation(instance):
+    assert isinstance(instance, project_HAlign)
+
+
+
+@given(instance=project_HAlign_strategy)
+def test_project_halign_justification_setter(instance):
+    original = instance.justification
+    instance.justification = original
+    assert instance.justification == original
+
+@given(instance=project_Scale_strategy)
+@settings(max_examples=50)
+def test_project_scale_instantiation(instance):
+    assert isinstance(instance, project_Scale)
+
+
+
+@given(instance=project_Scale_strategy)
+def test_project_scale_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+@given(instance=project_CellColor_strategy)
+@settings(max_examples=50)
+def test_project_cellcolor_instantiation(instance):
+    assert isinstance(instance, project_CellColor)
+
+@given(instance=project_Column_strategy)
+@settings(max_examples=50)
+def test_project_column_instantiation(instance):
+    assert isinstance(instance, project_Column)
+
+
+
+@given(instance=project_Column_strategy)
+def test_project_column_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=project::AccountShare_strategy)
+@given(instance=project_AccountShare_strategy)
 @settings(max_examples=50)
-def test_project::accountshare_instantiation(instance):
-    assert isinstance(instance, project::AccountShare)
-
-@given(instance=project::AccountShare_strategy)
-def test_project::accountshare_share_type(instance):
-    assert isinstance(instance.share, float)
+def test_project_accountshare_instantiation(instance):
+    assert isinstance(instance, project_AccountShare)
 
 
-@given(instance=project::AccountShare_strategy)
-def test_project::accountshare_share_setter(instance):
+
+@given(instance=project_AccountShare_strategy)
+def test_project_accountshare_share_setter(instance):
     original = instance.share
     instance.share = original
     assert instance.share == original
@@ -9428,783 +9161,669 @@ def test_project::accountshare_share_setter(instance):
 def test_statusstatussheetattribute_instantiation(instance):
     assert isinstance(instance, StatusStatusSheetAttribute)
 
-@given(instance=project::Details_strategy)
+@given(instance=project_Summary_strategy)
 @settings(max_examples=50)
-def test_project::details_instantiation(instance):
-    assert isinstance(instance, project::Details)
+def test_project_summary_instantiation(instance):
+    assert isinstance(instance, project_Summary)
 
-@given(instance=project::Summary_strategy)
+@given(instance=project_Details_strategy)
 @settings(max_examples=50)
-def test_project::summary_instantiation(instance):
-    assert isinstance(instance, project::Summary)
+def test_project_details_instantiation(instance):
+    assert isinstance(instance, project_Details)
 
-@given(instance=project::Author_strategy)
+@given(instance=project_Author_strategy)
 @settings(max_examples=50)
-def test_project::author_instantiation(instance):
-    assert isinstance(instance, project::Author)
+def test_project_author_instantiation(instance):
+    assert isinstance(instance, project_Author)
 
 @given(instance=AllocateResourceAttribute_strategy)
 @settings(max_examples=50)
 def test_allocateresourceattribute_instantiation(instance):
     assert isinstance(instance, AllocateResourceAttribute)
 
-@given(instance=project::Select_strategy)
+@given(instance=project_ShiftsAllocate_strategy)
 @settings(max_examples=50)
-def test_project::select_instantiation(instance):
-    assert isinstance(instance, project::Select)
+def test_project_shiftsallocate_instantiation(instance):
+    assert isinstance(instance, project_ShiftsAllocate)
 
-@given(instance=project::Select_strategy)
-def test_project::select_argument_type(instance):
-    assert isinstance(instance.argument, str)
-
-
-@given(instance=project::Select_strategy)
-def test_project::select_argument_setter(instance):
-    original = instance.argument
-    instance.argument = original
-    assert instance.argument == original
-
-@given(instance=project::ShiftsAllocate_strategy)
+@given(instance=project_Mandatory_strategy)
 @settings(max_examples=50)
-def test_project::shiftsallocate_instantiation(instance):
-    assert isinstance(instance, project::ShiftsAllocate)
-
-@given(instance=project::Persistent_strategy)
-@settings(max_examples=50)
-def test_project::persistent_instantiation(instance):
-    assert isinstance(instance, project::Persistent)
-
-@given(instance=project::Persistent_strategy)
-def test_project::persistent_persistent_type(instance):
-    assert isinstance(instance.persistent, bool)
+def test_project_mandatory_instantiation(instance):
+    assert isinstance(instance, project_Mandatory)
 
 
-@given(instance=project::Persistent_strategy)
-def test_project::persistent_persistent_setter(instance):
-    original = instance.persistent
-    instance.persistent = original
-    assert instance.persistent == original
 
-@given(instance=project::Mandatory_strategy)
-@settings(max_examples=50)
-def test_project::mandatory_instantiation(instance):
-    assert isinstance(instance, project::Mandatory)
-
-@given(instance=project::Mandatory_strategy)
-def test_project::mandatory_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
-
-
-@given(instance=project::Mandatory_strategy)
-def test_project::mandatory_mandatory_setter(instance):
+@given(instance=project_Mandatory_strategy)
+def test_project_mandatory_mandatory_setter(instance):
     original = instance.mandatory
     instance.mandatory = original
     assert instance.mandatory == original
 
-@given(instance=project::Alternative_strategy)
+@given(instance=project_Select_strategy)
 @settings(max_examples=50)
-def test_project::alternative_instantiation(instance):
-    assert isinstance(instance, project::Alternative)
+def test_project_select_instantiation(instance):
+    assert isinstance(instance, project_Select)
 
-@given(instance=project::Alert_strategy)
+
+
+@given(instance=project_Select_strategy)
+def test_project_select_argument_setter(instance):
+    original = instance.argument
+    instance.argument = original
+    assert instance.argument == original
+
+@given(instance=project_Persistent_strategy)
 @settings(max_examples=50)
-def test_project::alert_instantiation(instance):
-    assert isinstance(instance, project::Alert)
-
-@given(instance=project::Alert_strategy)
-def test_project::alert_level_type(instance):
-    assert isinstance(instance.level, str)
+def test_project_persistent_instantiation(instance):
+    assert isinstance(instance, project_Persistent)
 
 
-@given(instance=project::Alert_strategy)
-def test_project::alert_level_setter(instance):
+
+@given(instance=project_Persistent_strategy)
+def test_project_persistent_persistent_setter(instance):
+    original = instance.persistent
+    instance.persistent = original
+    assert instance.persistent == original
+
+@given(instance=project_Alternative_strategy)
+@settings(max_examples=50)
+def test_project_alternative_instantiation(instance):
+    assert isinstance(instance, project_Alternative)
+
+@given(instance=project_Alert_strategy)
+@settings(max_examples=50)
+def test_project_alert_instantiation(instance):
+    assert isinstance(instance, project_Alert)
+
+
+
+@given(instance=project_Alert_strategy)
+def test_project_alert_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=project::NikuReportAttribute_strategy)
+@given(instance=project_NikuReportAttribute_strategy)
 @settings(max_examples=50)
-def test_project::nikureportattribute_instantiation(instance):
-    assert isinstance(instance, project::NikuReportAttribute)
+def test_project_nikureportattribute_instantiation(instance):
+    assert isinstance(instance, project_NikuReportAttribute)
 
-@given(instance=project::Interval4_strategy)
+@given(instance=project_Interval4_strategy)
 @settings(max_examples=50)
-def test_project::interval4_instantiation(instance):
-    assert isinstance(instance, project::Interval4)
-
-@given(instance=project::Interval4_strategy)
-def test_project::interval4_end_type(instance):
-    assert isinstance(instance.end, str)
+def test_project_interval4_instantiation(instance):
+    assert isinstance(instance, project_Interval4)
 
 
-@given(instance=project::Interval4_strategy)
-def test_project::interval4_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
 
-@given(instance=project::Interval4_strategy)
-def test_project::interval4_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=project::Interval4_strategy)
-def test_project::interval4_start_setter(instance):
+@given(instance=project_Interval4_strategy)
+def test_project_interval4_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=project::Booking_strategy)
+
+
+@given(instance=project_Interval4_strategy)
+def test_project_interval4_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
+@given(instance=project_Booking_strategy)
 @settings(max_examples=50)
-def test_project::booking_instantiation(instance):
-    assert isinstance(instance, project::Booking)
-
-@given(instance=project::Booking_strategy)
-def test_project::booking_sloppy_type(instance):
-    assert isinstance(instance.sloppy, int)
+def test_project_booking_instantiation(instance):
+    assert isinstance(instance, project_Booking)
 
 
-@given(instance=project::Booking_strategy)
-def test_project::booking_sloppy_setter(instance):
+
+@given(instance=project_Booking_strategy)
+def test_project_booking_sloppy_setter(instance):
     original = instance.sloppy
     instance.sloppy = original
     assert instance.sloppy == original
 
-@given(instance=project::Booking_strategy)
-def test_project::booking_overtime_type(instance):
-    assert isinstance(instance.overtime, int)
 
 
-@given(instance=project::Booking_strategy)
-def test_project::booking_overtime_setter(instance):
+@given(instance=project_Booking_strategy)
+def test_project_booking_overtime_setter(instance):
     original = instance.overtime
     instance.overtime = original
     assert instance.overtime == original
 
-@given(instance=project::AllocateResourceAttribute_strategy)
+@given(instance=project_AllocateResourceAttribute_strategy)
 @settings(max_examples=50)
-def test_project::allocateresourceattribute_instantiation(instance):
-    assert isinstance(instance, project::AllocateResourceAttribute)
+def test_project_allocateresourceattribute_instantiation(instance):
+    assert isinstance(instance, project_AllocateResourceAttribute)
 
-@given(instance=project::AllocateResource_strategy)
+@given(instance=project_AllocateResource_strategy)
 @settings(max_examples=50)
-def test_project::allocateresource_instantiation(instance):
-    assert isinstance(instance, project::AllocateResource)
+def test_project_allocateresource_instantiation(instance):
+    assert isinstance(instance, project_AllocateResource)
 
-@given(instance=project::NewTaskAttribute_strategy)
+@given(instance=project_NewTaskAttribute_strategy)
 @settings(max_examples=50)
-def test_project::newtaskattribute_instantiation(instance):
-    assert isinstance(instance, project::NewTaskAttribute)
+def test_project_newtaskattribute_instantiation(instance):
+    assert isinstance(instance, project_NewTaskAttribute)
 
 @given(instance=TimesheetAttribute_strategy)
 @settings(max_examples=50)
 def test_timesheetattribute_instantiation(instance):
     assert isinstance(instance, TimesheetAttribute)
 
-@given(instance=project::TaskTimesheet_strategy)
+@given(instance=project_ShiftTimesheet_strategy)
 @settings(max_examples=50)
-def test_project::tasktimesheet_instantiation(instance):
-    assert isinstance(instance, project::TaskTimesheet)
+def test_project_shifttimesheet_instantiation(instance):
+    assert isinstance(instance, project_ShiftTimesheet)
 
-@given(instance=project::ShiftTimesheet_strategy)
+@given(instance=project_TaskTimesheet_strategy)
 @settings(max_examples=50)
-def test_project::shifttimesheet_instantiation(instance):
-    assert isinstance(instance, project::ShiftTimesheet)
+def test_project_tasktimesheet_instantiation(instance):
+    assert isinstance(instance, project_TaskTimesheet)
 
-@given(instance=project::StatusTimesheet_strategy)
+@given(instance=project_StatusTimesheet_strategy)
 @settings(max_examples=50)
-def test_project::statustimesheet_instantiation(instance):
-    assert isinstance(instance, project::StatusTimesheet)
-
-@given(instance=project::StatusTimesheet_strategy)
-def test_project::statustimesheet_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_project_statustimesheet_instantiation(instance):
+    assert isinstance(instance, project_StatusTimesheet)
 
 
-@given(instance=project::StatusTimesheet_strategy)
-def test_project::statustimesheet_text_setter(instance):
+
+@given(instance=project_StatusTimesheet_strategy)
+def test_project_statustimesheet_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=project::StatusTimesheet_strategy)
-def test_project::statustimesheet_level_type(instance):
-    assert isinstance(instance.level, str)
 
 
-@given(instance=project::StatusTimesheet_strategy)
-def test_project::statustimesheet_level_setter(instance):
+@given(instance=project_StatusTimesheet_strategy)
+def test_project_statustimesheet_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=project::NewTask_strategy)
+@given(instance=project_NewTask_strategy)
 @settings(max_examples=50)
-def test_project::newtask_instantiation(instance):
-    assert isinstance(instance, project::NewTask)
-
-@given(instance=project::NewTask_strategy)
-def test_project::newtask_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_project_newtask_instantiation(instance):
+    assert isinstance(instance, project_NewTask)
 
 
-@given(instance=project::NewTask_strategy)
-def test_project::newtask_text_setter(instance):
+
+@given(instance=project_NewTask_strategy)
+def test_project_newtask_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=project::NewTask_strategy)
-def test_project::newtask_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=project::NewTask_strategy)
-def test_project::newtask_id_setter(instance):
+@given(instance=project_NewTask_strategy)
+def test_project_newtask_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=project::NavigatorAttribute_strategy)
+@given(instance=project_NavigatorAttribute_strategy)
 @settings(max_examples=50)
-def test_project::navigatorattribute_instantiation(instance):
-    assert isinstance(instance, project::NavigatorAttribute)
+def test_project_navigatorattribute_instantiation(instance):
+    assert isinstance(instance, project_NavigatorAttribute)
 
-@given(instance=project::ReportAttribute_strategy)
+@given(instance=project_ReportAttribute_strategy)
 @settings(max_examples=50)
-def test_project::reportattribute_instantiation(instance):
-    assert isinstance(instance, project::ReportAttribute)
+def test_project_reportattribute_instantiation(instance):
+    assert isinstance(instance, project_ReportAttribute)
 
-@given(instance=project::ResourceAttribute_strategy)
+@given(instance=project_ResourceAttribute_strategy)
 @settings(max_examples=50)
-def test_project::resourceattribute_instantiation(instance):
-    assert isinstance(instance, project::ResourceAttribute)
+def test_project_resourceattribute_instantiation(instance):
+    assert isinstance(instance, project_ResourceAttribute)
 
 @given(instance=ResourceAttribute_strategy)
 @settings(max_examples=50)
 def test_resourceattribute_instantiation(instance):
     assert isinstance(instance, ResourceAttribute)
 
-@given(instance=project::Efficiency_strategy)
+@given(instance=project_Email_strategy)
 @settings(max_examples=50)
-def test_project::efficiency_instantiation(instance):
-    assert isinstance(instance, project::Efficiency)
-
-@given(instance=project::Efficiency_strategy)
-def test_project::efficiency_efficiency_type(instance):
-    assert isinstance(instance.efficiency, float)
+def test_project_email_instantiation(instance):
+    assert isinstance(instance, project_Email)
 
 
-@given(instance=project::Efficiency_strategy)
-def test_project::efficiency_efficiency_setter(instance):
-    original = instance.efficiency
-    instance.efficiency = original
-    assert instance.efficiency == original
 
-@given(instance=project::PurgeResource_strategy)
-@settings(max_examples=50)
-def test_project::purgeresource_instantiation(instance):
-    assert isinstance(instance, project::PurgeResource)
-
-@given(instance=project::PurgeResource_strategy)
-def test_project::purgeresource_listAttribute_type(instance):
-    assert isinstance(instance.listAttribute, str)
-
-
-@given(instance=project::PurgeResource_strategy)
-def test_project::purgeresource_listAttribute_setter(instance):
-    original = instance.listAttribute
-    instance.listAttribute = original
-    assert instance.listAttribute == original
-
-@given(instance=project::WorkingHours_strategy)
-@settings(max_examples=50)
-def test_project::workinghours_instantiation(instance):
-    assert isinstance(instance, project::WorkingHours)
-
-@given(instance=project::WorkingHours_strategy)
-def test_project::workinghours_off_type(instance):
-    assert isinstance(instance.off, bool)
-
-
-@given(instance=project::WorkingHours_strategy)
-def test_project::workinghours_off_setter(instance):
-    original = instance.off
-    instance.off = original
-    assert instance.off == original
-
-@given(instance=project::ShiftsResource_strategy)
-@settings(max_examples=50)
-def test_project::shiftsresource_instantiation(instance):
-    assert isinstance(instance, project::ShiftsResource)
-
-@given(instance=project::ExtendedResourceAttribute_strategy)
-@settings(max_examples=50)
-def test_project::extendedresourceattribute_instantiation(instance):
-    assert isinstance(instance, project::ExtendedResourceAttribute)
-
-@given(instance=project::ExtendedResourceAttribute_strategy)
-def test_project::extendedresourceattribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=project::ExtendedResourceAttribute_strategy)
-def test_project::extendedresourceattribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=project::BookingResource_strategy)
-@settings(max_examples=50)
-def test_project::bookingresource_instantiation(instance):
-    assert isinstance(instance, project::BookingResource)
-
-@given(instance=project::Email_strategy)
-@settings(max_examples=50)
-def test_project::email_instantiation(instance):
-    assert isinstance(instance, project::Email)
-
-@given(instance=project::Email_strategy)
-def test_project::email_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=project::Email_strategy)
-def test_project::email_address_setter(instance):
+@given(instance=project_Email_strategy)
+def test_project_email_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=project::Managers_strategy)
+@given(instance=project_ShiftsResource_strategy)
 @settings(max_examples=50)
-def test_project::managers_instantiation(instance):
-    assert isinstance(instance, project::Managers)
+def test_project_shiftsresource_instantiation(instance):
+    assert isinstance(instance, project_ShiftsResource)
 
-@given(instance=project::ExportAttribute_strategy)
+@given(instance=project_WorkingHours_strategy)
 @settings(max_examples=50)
-def test_project::exportattribute_instantiation(instance):
-    assert isinstance(instance, project::ExportAttribute)
+def test_project_workinghours_instantiation(instance):
+    assert isinstance(instance, project_WorkingHours)
 
-@given(instance=project::IcalReportAttribute_strategy)
+
+
+@given(instance=project_WorkingHours_strategy)
+def test_project_workinghours_off_setter(instance):
+    original = instance.off
+    instance.off = original
+    assert instance.off == original
+
+@given(instance=project_ExtendedResourceAttribute_strategy)
 @settings(max_examples=50)
-def test_project::icalreportattribute_instantiation(instance):
-    assert isinstance(instance, project::IcalReportAttribute)
+def test_project_extendedresourceattribute_instantiation(instance):
+    assert isinstance(instance, project_ExtendedResourceAttribute)
+
+
+
+@given(instance=project_ExtendedResourceAttribute_strategy)
+def test_project_extendedresourceattribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=project_PurgeResource_strategy)
+@settings(max_examples=50)
+def test_project_purgeresource_instantiation(instance):
+    assert isinstance(instance, project_PurgeResource)
+
+
+
+@given(instance=project_PurgeResource_strategy)
+def test_project_purgeresource_listAttribute_setter(instance):
+    original = instance.listAttribute
+    instance.listAttribute = original
+    assert instance.listAttribute == original
+
+@given(instance=project_Managers_strategy)
+@settings(max_examples=50)
+def test_project_managers_instantiation(instance):
+    assert isinstance(instance, project_Managers)
+
+@given(instance=project_Efficiency_strategy)
+@settings(max_examples=50)
+def test_project_efficiency_instantiation(instance):
+    assert isinstance(instance, project_Efficiency)
+
+
+
+@given(instance=project_Efficiency_strategy)
+def test_project_efficiency_efficiency_setter(instance):
+    original = instance.efficiency
+    instance.efficiency = original
+    assert instance.efficiency == original
+
+@given(instance=project_BookingResource_strategy)
+@settings(max_examples=50)
+def test_project_bookingresource_instantiation(instance):
+    assert isinstance(instance, project_BookingResource)
+
+@given(instance=project_ExportAttribute_strategy)
+@settings(max_examples=50)
+def test_project_exportattribute_instantiation(instance):
+    assert isinstance(instance, project_ExportAttribute)
+
+@given(instance=project_IcalReportAttribute_strategy)
+@settings(max_examples=50)
+def test_project_icalreportattribute_instantiation(instance):
+    assert isinstance(instance, project_IcalReportAttribute)
 
 @given(instance=ReportAttribute_strategy)
 @settings(max_examples=50)
 def test_reportattribute_instantiation(instance):
     assert isinstance(instance, ReportAttribute)
 
-@given(instance=project::RollupTask_strategy)
+@given(instance=project_HideTask_strategy)
 @settings(max_examples=50)
-def test_project::rolluptask_instantiation(instance):
-    assert isinstance(instance, project::RollupTask)
+def test_project_hidetask_instantiation(instance):
+    assert isinstance(instance, project_HideTask)
 
-@given(instance=project::RollupResource_strategy)
+@given(instance=project_Formats_strategy)
 @settings(max_examples=50)
-def test_project::rollupresource_instantiation(instance):
-    assert isinstance(instance, project::RollupResource)
-
-@given(instance=project::PurgeReport_strategy)
-@settings(max_examples=50)
-def test_project::purgereport_instantiation(instance):
-    assert isinstance(instance, project::PurgeReport)
-
-@given(instance=project::PurgeReport_strategy)
-def test_project::purgereport_listAttribute_type(instance):
-    assert isinstance(instance.listAttribute, str)
+def test_project_formats_instantiation(instance):
+    assert isinstance(instance, project_Formats)
 
 
-@given(instance=project::PurgeReport_strategy)
-def test_project::purgereport_listAttribute_setter(instance):
-    original = instance.listAttribute
-    instance.listAttribute = original
-    assert instance.listAttribute == original
 
-@given(instance=project::SelfContained_strategy)
-@settings(max_examples=50)
-def test_project::selfcontained_instantiation(instance):
-    assert isinstance(instance, project::SelfContained)
-
-@given(instance=project::SelfContained_strategy)
-def test_project::selfcontained_selfcontained_type(instance):
-    assert isinstance(instance.selfcontained, str)
-
-
-@given(instance=project::SelfContained_strategy)
-def test_project::selfcontained_selfcontained_setter(instance):
-    original = instance.selfcontained
-    instance.selfcontained = original
-    assert instance.selfcontained == original
-
-@given(instance=project::Scenarios_strategy)
-@settings(max_examples=50)
-def test_project::scenarios_instantiation(instance):
-    assert isinstance(instance, project::Scenarios)
-
-@given(instance=project::Right_strategy)
-@settings(max_examples=50)
-def test_project::right_instantiation(instance):
-    assert isinstance(instance, project::Right)
-
-@given(instance=project::JournalMode_strategy)
-@settings(max_examples=50)
-def test_project::journalmode_instantiation(instance):
-    assert isinstance(instance, project::JournalMode)
-
-@given(instance=project::JournalMode_strategy)
-def test_project::journalmode_mode_type(instance):
-    assert isinstance(instance.mode, str)
-
-
-@given(instance=project::JournalMode_strategy)
-def test_project::journalmode_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
-
-@given(instance=project::Center_strategy)
-@settings(max_examples=50)
-def test_project::center_instantiation(instance):
-    assert isinstance(instance, project::Center)
-
-@given(instance=project::SortResources_strategy)
-@settings(max_examples=50)
-def test_project::sortresources_instantiation(instance):
-    assert isinstance(instance, project::SortResources)
-
-@given(instance=project::HideAccount_strategy)
-@settings(max_examples=50)
-def test_project::hideaccount_instantiation(instance):
-    assert isinstance(instance, project::HideAccount)
-
-@given(instance=project::HideAccount_strategy)
-def test_project::hideaccount_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=project::HideAccount_strategy)
-def test_project::hideaccount_expression_setter(instance):
-    original = instance.expression
-    instance.expression = original
-    assert instance.expression == original
-
-@given(instance=project::CurrencyFormat_strategy)
-@settings(max_examples=50)
-def test_project::currencyformat_instantiation(instance):
-    assert isinstance(instance, project::CurrencyFormat)
-
-@given(instance=project::LoadUnit_strategy)
-@settings(max_examples=50)
-def test_project::loadunit_instantiation(instance):
-    assert isinstance(instance, project::LoadUnit)
-
-@given(instance=project::LoadUnit_strategy)
-def test_project::loadunit_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=project::LoadUnit_strategy)
-def test_project::loadunit_unit_setter(instance):
-    original = instance.unit
-    instance.unit = original
-    assert instance.unit == original
-
-@given(instance=project::Epilog_strategy)
-@settings(max_examples=50)
-def test_project::epilog_instantiation(instance):
-    assert isinstance(instance, project::Epilog)
-
-@given(instance=project::Left_strategy)
-@settings(max_examples=50)
-def test_project::left_instantiation(instance):
-    assert isinstance(instance, project::Left)
-
-@given(instance=project::HideJournalEntry_strategy)
-@settings(max_examples=50)
-def test_project::hidejournalentry_instantiation(instance):
-    assert isinstance(instance, project::HideJournalEntry)
-
-@given(instance=project::HideJournalEntry_strategy)
-def test_project::hidejournalentry_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=project::HideJournalEntry_strategy)
-def test_project::hidejournalentry_expression_setter(instance):
-    original = instance.expression
-    instance.expression = original
-    assert instance.expression == original
-
-@given(instance=project::ResourceRoot_strategy)
-@settings(max_examples=50)
-def test_project::resourceroot_instantiation(instance):
-    assert isinstance(instance, project::ResourceRoot)
-
-@given(instance=project::Timezone_strategy)
-@settings(max_examples=50)
-def test_project::timezone_instantiation(instance):
-    assert isinstance(instance, project::Timezone)
-
-@given(instance=project::Timezone_strategy)
-def test_project::timezone_timezone_type(instance):
-    assert isinstance(instance.timezone, str)
-
-
-@given(instance=project::Timezone_strategy)
-def test_project::timezone_timezone_setter(instance):
-    original = instance.timezone
-    instance.timezone = original
-    assert instance.timezone == original
-
-@given(instance=project::Caption_strategy)
-@settings(max_examples=50)
-def test_project::caption_instantiation(instance):
-    assert isinstance(instance, project::Caption)
-
-@given(instance=project::SortJournalEntries_strategy)
-@settings(max_examples=50)
-def test_project::sortjournalentries_instantiation(instance):
-    assert isinstance(instance, project::SortJournalEntries)
-
-@given(instance=project::HideResource_strategy)
-@settings(max_examples=50)
-def test_project::hideresource_instantiation(instance):
-    assert isinstance(instance, project::HideResource)
-
-@given(instance=project::Formats_strategy)
-@settings(max_examples=50)
-def test_project::formats_instantiation(instance):
-    assert isinstance(instance, project::Formats)
-
-@given(instance=project::Formats_strategy)
-def test_project::formats_formats_type(instance):
-    assert isinstance(instance.formats, str)
-
-
-@given(instance=project::Formats_strategy)
-def test_project::formats_formats_setter(instance):
+@given(instance=project_Formats_strategy)
+def test_project_formats_formats_setter(instance):
     original = instance.formats
     instance.formats = original
     assert instance.formats == original
 
-@given(instance=project::JournalAttributes_strategy)
+@given(instance=project_Left_strategy)
 @settings(max_examples=50)
-def test_project::journalattributes_instantiation(instance):
-    assert isinstance(instance, project::JournalAttributes)
+def test_project_left_instantiation(instance):
+    assert isinstance(instance, project_Left)
 
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_propertyid_type(instance):
-    assert isinstance(instance.propertyid, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_propertyid_setter(instance):
-    original = instance.propertyid
-    instance.propertyid = original
-    assert instance.propertyid == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_all_type(instance):
-    assert isinstance(instance.all, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_all_setter(instance):
-    original = instance.all
-    instance.all = original
-    assert instance.all == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_none_type(instance):
-    assert isinstance(instance.none, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_none_setter(instance):
-    original = instance.none
-    instance.none = original
-    assert instance.none == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes__property_type(instance):
-    assert isinstance(instance._property, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes__property_setter(instance):
-    original = instance._property
-    instance._property = original
-    assert instance._property == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_summary_type(instance):
-    assert isinstance(instance.summary, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_summary_setter(instance):
-    original = instance.summary
-    instance.summary = original
-    assert instance.summary == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_details_type(instance):
-    assert isinstance(instance.details, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_details_setter(instance):
-    original = instance.details
-    instance.details = original
-    assert instance.details == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_author_type(instance):
-    assert isinstance(instance.author, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_headline_type(instance):
-    assert isinstance(instance.headline, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_headline_setter(instance):
-    original = instance.headline
-    instance.headline = original
-    assert instance.headline == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_timesheet_type(instance):
-    assert isinstance(instance.timesheet, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_timesheet_setter(instance):
-    original = instance.timesheet
-    instance.timesheet = original
-    assert instance.timesheet == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_date_type(instance):
-    assert isinstance(instance.date, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_flags_type(instance):
-    assert isinstance(instance.flags, bool)
-
-
-@given(instance=project::JournalAttributes_strategy)
-def test_project::journalattributes_flags_setter(instance):
-    original = instance.flags
-    instance.flags = original
-    assert instance.flags == original
-
-@given(instance=project::SortTasks_strategy)
+@given(instance=project_HideAccount_strategy)
 @settings(max_examples=50)
-def test_project::sorttasks_instantiation(instance):
-    assert isinstance(instance, project::SortTasks)
+def test_project_hideaccount_instantiation(instance):
+    assert isinstance(instance, project_HideAccount)
 
-@given(instance=project::Title_strategy)
+
+
+@given(instance=project_HideAccount_strategy)
+def test_project_hideaccount_expression_setter(instance):
+    original = instance.expression
+    instance.expression = original
+    assert instance.expression == original
+
+@given(instance=project_SortJournalEntries_strategy)
 @settings(max_examples=50)
-def test_project::title_instantiation(instance):
-    assert isinstance(instance, project::Title)
+def test_project_sortjournalentries_instantiation(instance):
+    assert isinstance(instance, project_SortJournalEntries)
 
-@given(instance=project::Title_strategy)
-def test_project::title_title_type(instance):
-    assert isinstance(instance.title, str)
+@given(instance=project_Title_strategy)
+@settings(max_examples=50)
+def test_project_title_instantiation(instance):
+    assert isinstance(instance, project_Title)
 
 
-@given(instance=project::Title_strategy)
-def test_project::title_title_setter(instance):
+
+@given(instance=project_Title_strategy)
+def test_project_title_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=project::NumberFormat_strategy)
+@given(instance=project_Right_strategy)
 @settings(max_examples=50)
-def test_project::numberformat_instantiation(instance):
-    assert isinstance(instance, project::NumberFormat)
+def test_project_right_instantiation(instance):
+    assert isinstance(instance, project_Right)
 
-@given(instance=project::AccountRoot_strategy)
+@given(instance=project_Prolog_strategy)
 @settings(max_examples=50)
-def test_project::accountroot_instantiation(instance):
-    assert isinstance(instance, project::AccountRoot)
+def test_project_prolog_instantiation(instance):
+    assert isinstance(instance, project_Prolog)
 
-@given(instance=project::RollupAccount_strategy)
+@given(instance=project_SelfContained_strategy)
 @settings(max_examples=50)
-def test_project::rollupaccount_instantiation(instance):
-    assert isinstance(instance, project::RollupAccount)
+def test_project_selfcontained_instantiation(instance):
+    assert isinstance(instance, project_SelfContained)
 
-@given(instance=project::HideTask_strategy)
+
+
+@given(instance=project_SelfContained_strategy)
+def test_project_selfcontained_selfcontained_setter(instance):
+    original = instance.selfcontained
+    instance.selfcontained = original
+    assert instance.selfcontained == original
+
+@given(instance=project_RollupAccount_strategy)
 @settings(max_examples=50)
-def test_project::hidetask_instantiation(instance):
-    assert isinstance(instance, project::HideTask)
+def test_project_rollupaccount_instantiation(instance):
+    assert isinstance(instance, project_RollupAccount)
 
-@given(instance=project::Header_strategy)
+@given(instance=project_AccountRoot_strategy)
 @settings(max_examples=50)
-def test_project::header_instantiation(instance):
-    assert isinstance(instance, project::Header)
+def test_project_accountroot_instantiation(instance):
+    assert isinstance(instance, project_AccountRoot)
 
-@given(instance=project::TimeFormat_strategy)
+@given(instance=project_Epilog_strategy)
 @settings(max_examples=50)
-def test_project::timeformat_instantiation(instance):
-    assert isinstance(instance, project::TimeFormat)
+def test_project_epilog_instantiation(instance):
+    assert isinstance(instance, project_Epilog)
 
-@given(instance=project::TimeFormat_strategy)
-def test_project::timeformat_timeformat_type(instance):
-    assert isinstance(instance.timeformat, str)
+@given(instance=project_RollupResource_strategy)
+@settings(max_examples=50)
+def test_project_rollupresource_instantiation(instance):
+    assert isinstance(instance, project_RollupResource)
+
+@given(instance=project_HideJournalEntry_strategy)
+@settings(max_examples=50)
+def test_project_hidejournalentry_instantiation(instance):
+    assert isinstance(instance, project_HideJournalEntry)
 
 
-@given(instance=project::TimeFormat_strategy)
-def test_project::timeformat_timeformat_setter(instance):
+
+@given(instance=project_HideJournalEntry_strategy)
+def test_project_hidejournalentry_expression_setter(instance):
+    original = instance.expression
+    instance.expression = original
+    assert instance.expression == original
+
+@given(instance=project_HideResource_strategy)
+@settings(max_examples=50)
+def test_project_hideresource_instantiation(instance):
+    assert isinstance(instance, project_HideResource)
+
+@given(instance=project_Headline_strategy)
+@settings(max_examples=50)
+def test_project_headline_instantiation(instance):
+    assert isinstance(instance, project_Headline)
+
+@given(instance=project_Footer_strategy)
+@settings(max_examples=50)
+def test_project_footer_instantiation(instance):
+    assert isinstance(instance, project_Footer)
+
+@given(instance=project_Timezone_strategy)
+@settings(max_examples=50)
+def test_project_timezone_instantiation(instance):
+    assert isinstance(instance, project_Timezone)
+
+
+
+@given(instance=project_Timezone_strategy)
+def test_project_timezone_timezone_setter(instance):
+    original = instance.timezone
+    instance.timezone = original
+    assert instance.timezone == original
+
+@given(instance=project_TaskRoot_strategy)
+@settings(max_examples=50)
+def test_project_taskroot_instantiation(instance):
+    assert isinstance(instance, project_TaskRoot)
+
+@given(instance=project_SortResources_strategy)
+@settings(max_examples=50)
+def test_project_sortresources_instantiation(instance):
+    assert isinstance(instance, project_SortResources)
+
+@given(instance=project_NumberFormat_strategy)
+@settings(max_examples=50)
+def test_project_numberformat_instantiation(instance):
+    assert isinstance(instance, project_NumberFormat)
+
+@given(instance=project_PurgeReport_strategy)
+@settings(max_examples=50)
+def test_project_purgereport_instantiation(instance):
+    assert isinstance(instance, project_PurgeReport)
+
+
+
+@given(instance=project_PurgeReport_strategy)
+def test_project_purgereport_listAttribute_setter(instance):
+    original = instance.listAttribute
+    instance.listAttribute = original
+    assert instance.listAttribute == original
+
+@given(instance=project_Scenarios_strategy)
+@settings(max_examples=50)
+def test_project_scenarios_instantiation(instance):
+    assert isinstance(instance, project_Scenarios)
+
+@given(instance=project_CurrencyFormat_strategy)
+@settings(max_examples=50)
+def test_project_currencyformat_instantiation(instance):
+    assert isinstance(instance, project_CurrencyFormat)
+
+@given(instance=project_TimeFormat_strategy)
+@settings(max_examples=50)
+def test_project_timeformat_instantiation(instance):
+    assert isinstance(instance, project_TimeFormat)
+
+
+
+@given(instance=project_TimeFormat_strategy)
+def test_project_timeformat_timeformat_setter(instance):
     original = instance.timeformat
     instance.timeformat = original
     assert instance.timeformat == original
 
-@given(instance=project::Footer_strategy)
+@given(instance=project_SortAccounts_strategy)
 @settings(max_examples=50)
-def test_project::footer_instantiation(instance):
-    assert isinstance(instance, project::Footer)
+def test_project_sortaccounts_instantiation(instance):
+    assert isinstance(instance, project_SortAccounts)
 
-@given(instance=project::TaskRoot_strategy)
+@given(instance=project_JournalAttributes_strategy)
 @settings(max_examples=50)
-def test_project::taskroot_instantiation(instance):
-    assert isinstance(instance, project::TaskRoot)
+def test_project_journalattributes_instantiation(instance):
+    assert isinstance(instance, project_JournalAttributes)
 
-@given(instance=project::Headline_strategy)
-@settings(max_examples=50)
-def test_project::headline_instantiation(instance):
-    assert isinstance(instance, project::Headline)
 
-@given(instance=project::Columns_strategy)
-@settings(max_examples=50)
-def test_project::columns_instantiation(instance):
-    assert isinstance(instance, project::Columns)
 
-@given(instance=project::SortAccounts_strategy)
-@settings(max_examples=50)
-def test_project::sortaccounts_instantiation(instance):
-    assert isinstance(instance, project::SortAccounts)
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_propertyid_setter(instance):
+    original = instance.propertyid
+    instance.propertyid = original
+    assert instance.propertyid == original
 
-@given(instance=project::Prolog_strategy)
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_all_setter(instance):
+    original = instance.all
+    instance.all = original
+    assert instance.all == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_none_setter(instance):
+    original = instance.none
+    instance.none = original
+    assert instance.none == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_summary_setter(instance):
+    original = instance.summary
+    instance.summary = original
+    assert instance.summary == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes__property_setter(instance):
+    original = instance._property
+    instance._property = original
+    assert instance._property == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_details_setter(instance):
+    original = instance.details
+    instance.details = original
+    assert instance.details == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_flags_setter(instance):
+    original = instance.flags
+    instance.flags = original
+    assert instance.flags == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_headline_setter(instance):
+    original = instance.headline
+    instance.headline = original
+    assert instance.headline == original
+
+
+
+@given(instance=project_JournalAttributes_strategy)
+def test_project_journalattributes_timesheet_setter(instance):
+    original = instance.timesheet
+    instance.timesheet = original
+    assert instance.timesheet == original
+
+@given(instance=project_Center_strategy)
 @settings(max_examples=50)
-def test_project::prolog_instantiation(instance):
-    assert isinstance(instance, project::Prolog)
+def test_project_center_instantiation(instance):
+    assert isinstance(instance, project_Center)
+
+@given(instance=project_ResourceRoot_strategy)
+@settings(max_examples=50)
+def test_project_resourceroot_instantiation(instance):
+    assert isinstance(instance, project_ResourceRoot)
+
+@given(instance=project_RollupTask_strategy)
+@settings(max_examples=50)
+def test_project_rolluptask_instantiation(instance):
+    assert isinstance(instance, project_RollupTask)
+
+@given(instance=project_LoadUnit_strategy)
+@settings(max_examples=50)
+def test_project_loadunit_instantiation(instance):
+    assert isinstance(instance, project_LoadUnit)
+
+
+
+@given(instance=project_LoadUnit_strategy)
+def test_project_loadunit_unit_setter(instance):
+    original = instance.unit
+    instance.unit = original
+    assert instance.unit == original
+
+@given(instance=project_Columns_strategy)
+@settings(max_examples=50)
+def test_project_columns_instantiation(instance):
+    assert isinstance(instance, project_Columns)
+
+@given(instance=project_Caption_strategy)
+@settings(max_examples=50)
+def test_project_caption_instantiation(instance):
+    assert isinstance(instance, project_Caption)
+
+@given(instance=project_Header_strategy)
+@settings(max_examples=50)
+def test_project_header_instantiation(instance):
+    assert isinstance(instance, project_Header)
+
+@given(instance=project_JournalMode_strategy)
+@settings(max_examples=50)
+def test_project_journalmode_instantiation(instance):
+    assert isinstance(instance, project_JournalMode)
+
+
+
+@given(instance=project_JournalMode_strategy)
+def test_project_journalmode_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+@given(instance=project_SortTasks_strategy)
+@settings(max_examples=50)
+def test_project_sorttasks_instantiation(instance):
+    assert isinstance(instance, project_SortTasks)
 
 @given(instance=TextReport_strategy)
 @settings(max_examples=50)
@@ -10226,524 +9845,443 @@ def test_resourcereport_instantiation(instance):
 def test_accountreport_instantiation(instance):
     assert isinstance(instance, AccountReport)
 
-@given(instance=project::Report_strategy)
+@given(instance=project_Report_strategy)
 @settings(max_examples=50)
-def test_project::report_instantiation(instance):
-    assert isinstance(instance, project::Report)
-
-@given(instance=project::Report_strategy)
-def test_project::report_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_project_report_instantiation(instance):
+    assert isinstance(instance, project_Report)
 
 
-@given(instance=project::Report_strategy)
-def test_project::report_id_setter(instance):
+
+@given(instance=project_Report_strategy)
+def test_project_report_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=project::Report_strategy)
-def test_project::report_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=project::Report_strategy)
-def test_project::report_name_setter(instance):
+@given(instance=project_Report_strategy)
+def test_project_report_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=project::TaskAttribute_strategy)
+@given(instance=project_TaskAttribute_strategy)
 @settings(max_examples=50)
-def test_project::taskattribute_instantiation(instance):
-    assert isinstance(instance, project::TaskAttribute)
+def test_project_taskattribute_instantiation(instance):
+    assert isinstance(instance, project_TaskAttribute)
 
 @given(instance=TaskAttribute_strategy)
 @settings(max_examples=50)
 def test_taskattribute_instantiation(instance):
     assert isinstance(instance, TaskAttribute)
 
-@given(instance=project::Note_strategy)
+@given(instance=project_Note_strategy)
 @settings(max_examples=50)
-def test_project::note_instantiation(instance):
-    assert isinstance(instance, project::Note)
-
-@given(instance=project::Note_strategy)
-def test_project::note_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_project_note_instantiation(instance):
+    assert isinstance(instance, project_Note)
 
 
-@given(instance=project::Note_strategy)
-def test_project::note_note_setter(instance):
+
+@given(instance=project_Note_strategy)
+def test_project_note_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=project::Milestone_strategy)
+@given(instance=project_ShiftsTask_strategy)
 @settings(max_examples=50)
-def test_project::milestone_instantiation(instance):
-    assert isinstance(instance, project::Milestone)
+def test_project_shiftstask_instantiation(instance):
+    assert isinstance(instance, project_ShiftsTask)
 
-@given(instance=project::Milestone_strategy)
-def test_project::milestone_milestone_type(instance):
-    assert isinstance(instance.milestone, bool)
-
-
-@given(instance=project::Milestone_strategy)
-def test_project::milestone_milestone_setter(instance):
-    original = instance.milestone
-    instance.milestone = original
-    assert instance.milestone == original
-
-@given(instance=project::BookingTask_strategy)
+@given(instance=project_Period_strategy)
 @settings(max_examples=50)
-def test_project::bookingtask_instantiation(instance):
-    assert isinstance(instance, project::BookingTask)
+def test_project_period_instantiation(instance):
+    assert isinstance(instance, project_Period)
 
-@given(instance=project::Duration_strategy)
+@given(instance=project_Priority_strategy)
 @settings(max_examples=50)
-def test_project::duration_instantiation(instance):
-    assert isinstance(instance, project::Duration)
-
-@given(instance=project::Depends_strategy)
-@settings(max_examples=50)
-def test_project::depends_instantiation(instance):
-    assert isinstance(instance, project::Depends)
-
-@given(instance=project::Warn_strategy)
-@settings(max_examples=50)
-def test_project::warn_instantiation(instance):
-    assert isinstance(instance, project::Warn)
-
-@given(instance=project::Scheduling_strategy)
-@settings(max_examples=50)
-def test_project::scheduling_instantiation(instance):
-    assert isinstance(instance, project::Scheduling)
-
-@given(instance=project::Scheduling_strategy)
-def test_project::scheduling_scheduling_type(instance):
-    assert isinstance(instance.scheduling, str)
+def test_project_priority_instantiation(instance):
+    assert isinstance(instance, project_Priority)
 
 
-@given(instance=project::Scheduling_strategy)
-def test_project::scheduling_scheduling_setter(instance):
-    original = instance.scheduling
-    instance.scheduling = original
-    assert instance.scheduling == original
 
-@given(instance=project::Start_strategy)
-@settings(max_examples=50)
-def test_project::start_instantiation(instance):
-    assert isinstance(instance, project::Start)
-
-@given(instance=project::Start_strategy)
-def test_project::start_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=project::Start_strategy)
-def test_project::start_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
-
-@given(instance=project::ProjectId_strategy)
-@settings(max_examples=50)
-def test_project::projectid_instantiation(instance):
-    assert isinstance(instance, project::ProjectId)
-
-@given(instance=project::ProjectId_strategy)
-def test_project::projectid_projectId_type(instance):
-    assert isinstance(instance.projectId, str)
-
-
-@given(instance=project::ProjectId_strategy)
-def test_project::projectid_projectId_setter(instance):
-    original = instance.projectId
-    instance.projectId = original
-    assert instance.projectId == original
-
-@given(instance=project::MinStart_strategy)
-@settings(max_examples=50)
-def test_project::minstart_instantiation(instance):
-    assert isinstance(instance, project::MinStart)
-
-@given(instance=project::MinStart_strategy)
-def test_project::minstart_minStart_type(instance):
-    assert isinstance(instance.minStart, str)
-
-
-@given(instance=project::MinStart_strategy)
-def test_project::minstart_minStart_setter(instance):
-    original = instance.minStart
-    instance.minStart = original
-    assert instance.minStart == original
-
-@given(instance=project::Allocate_strategy)
-@settings(max_examples=50)
-def test_project::allocate_instantiation(instance):
-    assert isinstance(instance, project::Allocate)
-
-@given(instance=project::Complete_strategy)
-@settings(max_examples=50)
-def test_project::complete_instantiation(instance):
-    assert isinstance(instance, project::Complete)
-
-@given(instance=project::Complete_strategy)
-def test_project::complete_complete_type(instance):
-    assert isinstance(instance.complete, float)
-
-
-@given(instance=project::Complete_strategy)
-def test_project::complete_complete_setter(instance):
-    original = instance.complete
-    instance.complete = original
-    assert instance.complete == original
-
-@given(instance=project::MinEnd_strategy)
-@settings(max_examples=50)
-def test_project::minend_instantiation(instance):
-    assert isinstance(instance, project::MinEnd)
-
-@given(instance=project::MinEnd_strategy)
-def test_project::minend_minEnd_type(instance):
-    assert isinstance(instance.minEnd, str)
-
-
-@given(instance=project::MinEnd_strategy)
-def test_project::minend_minEnd_setter(instance):
-    original = instance.minEnd
-    instance.minEnd = original
-    assert instance.minEnd == original
-
-@given(instance=project::MaxEnd_strategy)
-@settings(max_examples=50)
-def test_project::maxend_instantiation(instance):
-    assert isinstance(instance, project::MaxEnd)
-
-@given(instance=project::MaxEnd_strategy)
-def test_project::maxend_maxEnd_type(instance):
-    assert isinstance(instance.maxEnd, str)
-
-
-@given(instance=project::MaxEnd_strategy)
-def test_project::maxend_maxEnd_setter(instance):
-    original = instance.maxEnd
-    instance.maxEnd = original
-    assert instance.maxEnd == original
-
-@given(instance=project::Length_strategy)
-@settings(max_examples=50)
-def test_project::length_instantiation(instance):
-    assert isinstance(instance, project::Length)
-
-@given(instance=project::Charge_strategy)
-@settings(max_examples=50)
-def test_project::charge_instantiation(instance):
-    assert isinstance(instance, project::Charge)
-
-@given(instance=project::Charge_strategy)
-def test_project::charge_applies_type(instance):
-    assert isinstance(instance.applies, str)
-
-
-@given(instance=project::Charge_strategy)
-def test_project::charge_applies_setter(instance):
-    original = instance.applies
-    instance.applies = original
-    assert instance.applies == original
-
-@given(instance=project::Charge_strategy)
-def test_project::charge_amount_type(instance):
-    assert isinstance(instance.amount, float)
-
-
-@given(instance=project::Charge_strategy)
-def test_project::charge_amount_setter(instance):
-    original = instance.amount
-    instance.amount = original
-    assert instance.amount == original
-
-@given(instance=project::JournalEntry_strategy)
-@settings(max_examples=50)
-def test_project::journalentry_instantiation(instance):
-    assert isinstance(instance, project::JournalEntry)
-
-@given(instance=project::JournalEntry_strategy)
-def test_project::journalentry_headline_type(instance):
-    assert isinstance(instance.headline, str)
-
-
-@given(instance=project::JournalEntry_strategy)
-def test_project::journalentry_headline_setter(instance):
-    original = instance.headline
-    instance.headline = original
-    assert instance.headline == original
-
-@given(instance=project::JournalEntry_strategy)
-def test_project::journalentry_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=project::JournalEntry_strategy)
-def test_project::journalentry_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=project::Precedes_strategy)
-@settings(max_examples=50)
-def test_project::precedes_instantiation(instance):
-    assert isinstance(instance, project::Precedes)
-
-@given(instance=project::PurgeTask_strategy)
-@settings(max_examples=50)
-def test_project::purgetask_instantiation(instance):
-    assert isinstance(instance, project::PurgeTask)
-
-@given(instance=project::PurgeTask_strategy)
-def test_project::purgetask_listAttribute_type(instance):
-    assert isinstance(instance.listAttribute, str)
-
-
-@given(instance=project::PurgeTask_strategy)
-def test_project::purgetask_listAttribute_setter(instance):
-    original = instance.listAttribute
-    instance.listAttribute = original
-    assert instance.listAttribute == original
-
-@given(instance=project::Priority_strategy)
-@settings(max_examples=50)
-def test_project::priority_instantiation(instance):
-    assert isinstance(instance, project::Priority)
-
-@given(instance=project::Priority_strategy)
-def test_project::priority_priority_type(instance):
-    assert isinstance(instance.priority, int)
-
-
-@given(instance=project::Priority_strategy)
-def test_project::priority_priority_setter(instance):
+@given(instance=project_Priority_strategy)
+def test_project_priority_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=project::Responsible_strategy)
+@given(instance=project_Warn_strategy)
 @settings(max_examples=50)
-def test_project::responsible_instantiation(instance):
-    assert isinstance(instance, project::Responsible)
+def test_project_warn_instantiation(instance):
+    assert isinstance(instance, project_Warn)
 
-@given(instance=project::End_strategy)
+@given(instance=project_Charge_strategy)
 @settings(max_examples=50)
-def test_project::end_instantiation(instance):
-    assert isinstance(instance, project::End)
-
-@given(instance=project::End_strategy)
-def test_project::end_end_type(instance):
-    assert isinstance(instance.end, str)
+def test_project_charge_instantiation(instance):
+    assert isinstance(instance, project_Charge)
 
 
-@given(instance=project::End_strategy)
-def test_project::end_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
 
-@given(instance=project::ShiftsTask_strategy)
+@given(instance=project_Charge_strategy)
+def test_project_charge_amount_setter(instance):
+    original = instance.amount
+    instance.amount = original
+    assert instance.amount == original
+
+
+
+@given(instance=project_Charge_strategy)
+def test_project_charge_applies_setter(instance):
+    original = instance.applies
+    instance.applies = original
+    assert instance.applies == original
+
+@given(instance=project_Scheduled_strategy)
 @settings(max_examples=50)
-def test_project::shiftstask_instantiation(instance):
-    assert isinstance(instance, project::ShiftsTask)
-
-@given(instance=project::ChargeSet_strategy)
-@settings(max_examples=50)
-def test_project::chargeset_instantiation(instance):
-    assert isinstance(instance, project::ChargeSet)
-
-@given(instance=project::Fail_strategy)
-@settings(max_examples=50)
-def test_project::fail_instantiation(instance):
-    assert isinstance(instance, project::Fail)
-
-@given(instance=project::Scheduled_strategy)
-@settings(max_examples=50)
-def test_project::scheduled_instantiation(instance):
-    assert isinstance(instance, project::Scheduled)
-
-@given(instance=project::Scheduled_strategy)
-def test_project::scheduled_scheduled_type(instance):
-    assert isinstance(instance.scheduled, bool)
+def test_project_scheduled_instantiation(instance):
+    assert isinstance(instance, project_Scheduled)
 
 
-@given(instance=project::Scheduled_strategy)
-def test_project::scheduled_scheduled_setter(instance):
+
+@given(instance=project_Scheduled_strategy)
+def test_project_scheduled_scheduled_setter(instance):
     original = instance.scheduled
     instance.scheduled = original
     assert instance.scheduled == original
 
-@given(instance=project::Effort_strategy)
+@given(instance=project_Start_strategy)
 @settings(max_examples=50)
-def test_project::effort_instantiation(instance):
-    assert isinstance(instance, project::Effort)
-
-@given(instance=project::ExtendedTaskAttribute_strategy)
-@settings(max_examples=50)
-def test_project::extendedtaskattribute_instantiation(instance):
-    assert isinstance(instance, project::ExtendedTaskAttribute)
-
-@given(instance=project::ExtendedTaskAttribute_strategy)
-def test_project::extendedtaskattribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_project_start_instantiation(instance):
+    assert isinstance(instance, project_Start)
 
 
-@given(instance=project::ExtendedTaskAttribute_strategy)
-def test_project::extendedtaskattribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=project::MaxStart_strategy)
-@settings(max_examples=50)
-def test_project::maxstart_instantiation(instance):
-    assert isinstance(instance, project::MaxStart)
-
-@given(instance=project::MaxStart_strategy)
-def test_project::maxstart_maxStart_type(instance):
-    assert isinstance(instance.maxStart, str)
-
-
-@given(instance=project::MaxStart_strategy)
-def test_project::maxstart_maxStart_setter(instance):
-    original = instance.maxStart
-    instance.maxStart = original
-    assert instance.maxStart == original
-
-@given(instance=project::EndCredit_strategy)
-@settings(max_examples=50)
-def test_project::endcredit_instantiation(instance):
-    assert isinstance(instance, project::EndCredit)
-
-@given(instance=project::EndCredit_strategy)
-def test_project::endcredit_credit_type(instance):
-    assert isinstance(instance.credit, float)
-
-
-@given(instance=project::EndCredit_strategy)
-def test_project::endcredit_credit_setter(instance):
-    original = instance.credit
-    instance.credit = original
-    assert instance.credit == original
-
-@given(instance=project::Period_strategy)
-@settings(max_examples=50)
-def test_project::period_instantiation(instance):
-    assert isinstance(instance, project::Period)
-
-@given(instance=project::ProjectAttribute_strategy)
-@settings(max_examples=50)
-def test_project::projectattribute_instantiation(instance):
-    assert isinstance(instance, project::ProjectAttribute)
-
-@given(instance=project::Interval2_strategy)
-@settings(max_examples=50)
-def test_project::interval2_instantiation(instance):
-    assert isinstance(instance, project::Interval2)
-
-@given(instance=project::Interval2_strategy)
-def test_project::interval2_end_type(instance):
-    assert isinstance(instance.end, str)
-
-
-@given(instance=project::Interval2_strategy)
-def test_project::interval2_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
-
-@given(instance=project::Interval2_strategy)
-def test_project::interval2_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=project::Interval2_strategy)
-def test_project::interval2_start_setter(instance):
+@given(instance=project_Start_strategy)
+def test_project_start_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=project::Global_strategy)
+@given(instance=project_End_strategy)
 @settings(max_examples=50)
-def test_project::global_instantiation(instance):
-    assert isinstance(instance, project::Global)
+def test_project_end_instantiation(instance):
+    assert isinstance(instance, project_End)
+
+
+
+@given(instance=project_End_strategy)
+def test_project_end_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
+@given(instance=project_MinEnd_strategy)
+@settings(max_examples=50)
+def test_project_minend_instantiation(instance):
+    assert isinstance(instance, project_MinEnd)
+
+
+
+@given(instance=project_MinEnd_strategy)
+def test_project_minend_minEnd_setter(instance):
+    original = instance.minEnd
+    instance.minEnd = original
+    assert instance.minEnd == original
+
+@given(instance=project_Allocate_strategy)
+@settings(max_examples=50)
+def test_project_allocate_instantiation(instance):
+    assert isinstance(instance, project_Allocate)
+
+@given(instance=project_Length_strategy)
+@settings(max_examples=50)
+def test_project_length_instantiation(instance):
+    assert isinstance(instance, project_Length)
+
+@given(instance=project_MinStart_strategy)
+@settings(max_examples=50)
+def test_project_minstart_instantiation(instance):
+    assert isinstance(instance, project_MinStart)
+
+
+
+@given(instance=project_MinStart_strategy)
+def test_project_minstart_minStart_setter(instance):
+    original = instance.minStart
+    instance.minStart = original
+    assert instance.minStart == original
+
+@given(instance=project_Duration_strategy)
+@settings(max_examples=50)
+def test_project_duration_instantiation(instance):
+    assert isinstance(instance, project_Duration)
+
+@given(instance=project_Complete_strategy)
+@settings(max_examples=50)
+def test_project_complete_instantiation(instance):
+    assert isinstance(instance, project_Complete)
+
+
+
+@given(instance=project_Complete_strategy)
+def test_project_complete_complete_setter(instance):
+    original = instance.complete
+    instance.complete = original
+    assert instance.complete == original
+
+@given(instance=project_EndCredit_strategy)
+@settings(max_examples=50)
+def test_project_endcredit_instantiation(instance):
+    assert isinstance(instance, project_EndCredit)
+
+
+
+@given(instance=project_EndCredit_strategy)
+def test_project_endcredit_credit_setter(instance):
+    original = instance.credit
+    instance.credit = original
+    assert instance.credit == original
+
+@given(instance=project_Effort_strategy)
+@settings(max_examples=50)
+def test_project_effort_instantiation(instance):
+    assert isinstance(instance, project_Effort)
+
+@given(instance=project_JournalEntry_strategy)
+@settings(max_examples=50)
+def test_project_journalentry_instantiation(instance):
+    assert isinstance(instance, project_JournalEntry)
+
+
+
+@given(instance=project_JournalEntry_strategy)
+def test_project_journalentry_headline_setter(instance):
+    original = instance.headline
+    instance.headline = original
+    assert instance.headline == original
+
+
+
+@given(instance=project_JournalEntry_strategy)
+def test_project_journalentry_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+@given(instance=project_PurgeTask_strategy)
+@settings(max_examples=50)
+def test_project_purgetask_instantiation(instance):
+    assert isinstance(instance, project_PurgeTask)
+
+
+
+@given(instance=project_PurgeTask_strategy)
+def test_project_purgetask_listAttribute_setter(instance):
+    original = instance.listAttribute
+    instance.listAttribute = original
+    assert instance.listAttribute == original
+
+@given(instance=project_BookingTask_strategy)
+@settings(max_examples=50)
+def test_project_bookingtask_instantiation(instance):
+    assert isinstance(instance, project_BookingTask)
+
+@given(instance=project_ChargeSet_strategy)
+@settings(max_examples=50)
+def test_project_chargeset_instantiation(instance):
+    assert isinstance(instance, project_ChargeSet)
+
+@given(instance=project_MaxEnd_strategy)
+@settings(max_examples=50)
+def test_project_maxend_instantiation(instance):
+    assert isinstance(instance, project_MaxEnd)
+
+
+
+@given(instance=project_MaxEnd_strategy)
+def test_project_maxend_maxEnd_setter(instance):
+    original = instance.maxEnd
+    instance.maxEnd = original
+    assert instance.maxEnd == original
+
+@given(instance=project_Milestone_strategy)
+@settings(max_examples=50)
+def test_project_milestone_instantiation(instance):
+    assert isinstance(instance, project_Milestone)
+
+
+
+@given(instance=project_Milestone_strategy)
+def test_project_milestone_milestone_setter(instance):
+    original = instance.milestone
+    instance.milestone = original
+    assert instance.milestone == original
+
+@given(instance=project_Scheduling_strategy)
+@settings(max_examples=50)
+def test_project_scheduling_instantiation(instance):
+    assert isinstance(instance, project_Scheduling)
+
+
+
+@given(instance=project_Scheduling_strategy)
+def test_project_scheduling_scheduling_setter(instance):
+    original = instance.scheduling
+    instance.scheduling = original
+    assert instance.scheduling == original
+
+@given(instance=project_Precedes_strategy)
+@settings(max_examples=50)
+def test_project_precedes_instantiation(instance):
+    assert isinstance(instance, project_Precedes)
+
+@given(instance=project_Depends_strategy)
+@settings(max_examples=50)
+def test_project_depends_instantiation(instance):
+    assert isinstance(instance, project_Depends)
+
+@given(instance=project_Fail_strategy)
+@settings(max_examples=50)
+def test_project_fail_instantiation(instance):
+    assert isinstance(instance, project_Fail)
+
+@given(instance=project_ProjectId_strategy)
+@settings(max_examples=50)
+def test_project_projectid_instantiation(instance):
+    assert isinstance(instance, project_ProjectId)
+
+
+
+@given(instance=project_ProjectId_strategy)
+def test_project_projectid_projectId_setter(instance):
+    original = instance.projectId
+    instance.projectId = original
+    assert instance.projectId == original
+
+@given(instance=project_ExtendedTaskAttribute_strategy)
+@settings(max_examples=50)
+def test_project_extendedtaskattribute_instantiation(instance):
+    assert isinstance(instance, project_ExtendedTaskAttribute)
+
+
+
+@given(instance=project_ExtendedTaskAttribute_strategy)
+def test_project_extendedtaskattribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=project_MaxStart_strategy)
+@settings(max_examples=50)
+def test_project_maxstart_instantiation(instance):
+    assert isinstance(instance, project_MaxStart)
+
+
+
+@given(instance=project_MaxStart_strategy)
+def test_project_maxstart_maxStart_setter(instance):
+    original = instance.maxStart
+    instance.maxStart = original
+    assert instance.maxStart == original
+
+@given(instance=project_Responsible_strategy)
+@settings(max_examples=50)
+def test_project_responsible_instantiation(instance):
+    assert isinstance(instance, project_Responsible)
+
+@given(instance=project_ProjectAttribute_strategy)
+@settings(max_examples=50)
+def test_project_projectattribute_instantiation(instance):
+    assert isinstance(instance, project_ProjectAttribute)
+
+@given(instance=project_Interval2_strategy)
+@settings(max_examples=50)
+def test_project_interval2_instantiation(instance):
+    assert isinstance(instance, project_Interval2)
+
+
+
+@given(instance=project_Interval2_strategy)
+def test_project_interval2_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
+
+
+@given(instance=project_Interval2_strategy)
+def test_project_interval2_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+@given(instance=project_Global_strategy)
+@settings(max_examples=50)
+def test_project_global_instantiation(instance):
+    assert isinstance(instance, project_Global)
 
 @given(instance=IncludePropertiesAttribute_strategy)
 @settings(max_examples=50)
 def test_includepropertiesattribute_instantiation(instance):
     assert isinstance(instance, IncludePropertiesAttribute)
 
-@given(instance=project::ReportPrefix_strategy)
+@given(instance=project_TaskPrefix_strategy)
 @settings(max_examples=50)
-def test_project::reportprefix_instantiation(instance):
-    assert isinstance(instance, project::ReportPrefix)
+def test_project_taskprefix_instantiation(instance):
+    assert isinstance(instance, project_TaskPrefix)
 
-@given(instance=project::ResourcePrefix_strategy)
+@given(instance=project_ReportPrefix_strategy)
 @settings(max_examples=50)
-def test_project::resourceprefix_instantiation(instance):
-    assert isinstance(instance, project::ResourcePrefix)
+def test_project_reportprefix_instantiation(instance):
+    assert isinstance(instance, project_ReportPrefix)
 
-@given(instance=project::TaskPrefix_strategy)
+@given(instance=project_ResourcePrefix_strategy)
 @settings(max_examples=50)
-def test_project::taskprefix_instantiation(instance):
-    assert isinstance(instance, project::TaskPrefix)
+def test_project_resourceprefix_instantiation(instance):
+    assert isinstance(instance, project_ResourcePrefix)
 
-@given(instance=project::AccountPrefix_strategy)
+@given(instance=project_AccountPrefix_strategy)
 @settings(max_examples=50)
-def test_project::accountprefix_instantiation(instance):
-    assert isinstance(instance, project::AccountPrefix)
+def test_project_accountprefix_instantiation(instance):
+    assert isinstance(instance, project_AccountPrefix)
 
-@given(instance=project::AccountAttribute_strategy)
+@given(instance=project_AccountAttribute_strategy)
 @settings(max_examples=50)
-def test_project::accountattribute_instantiation(instance):
-    assert isinstance(instance, project::AccountAttribute)
+def test_project_accountattribute_instantiation(instance):
+    assert isinstance(instance, project_AccountAttribute)
 
 @given(instance=AccountAttribute_strategy)
 @settings(max_examples=50)
 def test_accountattribute_instantiation(instance):
     assert isinstance(instance, AccountAttribute)
 
-@given(instance=project::Credit_strategy)
+@given(instance=project_Credit_strategy)
 @settings(max_examples=50)
-def test_project::credit_instantiation(instance):
-    assert isinstance(instance, project::Credit)
-
-@given(instance=project::Credit_strategy)
-def test_project::credit_date_type(instance):
-    assert isinstance(instance.date, str)
+def test_project_credit_instantiation(instance):
+    assert isinstance(instance, project_Credit)
 
 
-@given(instance=project::Credit_strategy)
-def test_project::credit_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
 
-@given(instance=project::Credit_strategy)
-def test_project::credit_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=project::Credit_strategy)
-def test_project::credit_description_setter(instance):
+@given(instance=project_Credit_strategy)
+def test_project_credit_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=project::Credit_strategy)
-def test_project::credit_amount_type(instance):
-    assert isinstance(instance.amount, float)
 
 
-@given(instance=project::Credit_strategy)
-def test_project::credit_amount_setter(instance):
+@given(instance=project_Credit_strategy)
+def test_project_credit_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=project_Credit_strategy)
+def test_project_credit_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
@@ -10753,481 +10291,394 @@ def test_project::credit_amount_setter(instance):
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=project::IncludeProperties_strategy)
+@given(instance=project_AccountReport_strategy)
 @settings(max_examples=50)
-def test_project::includeproperties_instantiation(instance):
-    assert isinstance(instance, project::IncludeProperties)
+def test_project_accountreport_instantiation(instance):
+    assert isinstance(instance, project_AccountReport)
 
-@given(instance=project::IncludeProperties_strategy)
-def test_project::includeproperties_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
-
-
-@given(instance=project::IncludeProperties_strategy)
-def test_project::includeproperties_importURI_setter(instance):
-    original = instance.importURI
-    instance.importURI = original
-    assert instance.importURI == original
-
-@given(instance=project::Export_strategy)
+@given(instance=project_SupplementAccount_strategy)
 @settings(max_examples=50)
-def test_project::export_instantiation(instance):
-    assert isinstance(instance, project::Export)
+def test_project_supplementaccount_instantiation(instance):
+    assert isinstance(instance, project_SupplementAccount)
 
-@given(instance=project::Export_strategy)
-def test_project::export_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=project::Export_strategy)
-def test_project::export_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=project::Export_strategy)
-def test_project::export_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=project::Export_strategy)
-def test_project::export_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::TimesheetReport_strategy)
+@given(instance=project_StatusSheet_strategy)
 @settings(max_examples=50)
-def test_project::timesheetreport_instantiation(instance):
-    assert isinstance(instance, project::TimesheetReport)
+def test_project_statussheet_instantiation(instance):
+    assert isinstance(instance, project_StatusSheet)
 
-@given(instance=project::TimesheetReport_strategy)
-def test_project::timesheetreport_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=project::TimesheetReport_strategy)
-def test_project::timesheetreport_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=project::Resource_strategy)
+@given(instance=project_Flags_strategy)
 @settings(max_examples=50)
-def test_project::resource_instantiation(instance):
-    assert isinstance(instance, project::Resource)
+def test_project_flags_instantiation(instance):
+    assert isinstance(instance, project_Flags)
 
-@given(instance=project::Resource_strategy)
-def test_project::resource_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=project::Resource_strategy)
-def test_project::resource_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::Resource_strategy)
-def test_project::resource_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=project::Resource_strategy)
-def test_project::resource_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=project::TaskReport_strategy)
-@settings(max_examples=50)
-def test_project::taskreport_instantiation(instance):
-    assert isinstance(instance, project::TaskReport)
-
-@given(instance=project::Rate_strategy)
-@settings(max_examples=50)
-def test_project::rate_instantiation(instance):
-    assert isinstance(instance, project::Rate)
-
-@given(instance=project::Rate_strategy)
-def test_project::rate_rate_type(instance):
-    assert isinstance(instance.rate, float)
-
-
-@given(instance=project::Rate_strategy)
-def test_project::rate_rate_setter(instance):
-    original = instance.rate
-    instance.rate = original
-    assert instance.rate == original
-
-@given(instance=project::SupplementAccount_strategy)
-@settings(max_examples=50)
-def test_project::supplementaccount_instantiation(instance):
-    assert isinstance(instance, project::SupplementAccount)
-
-@given(instance=project::NikuReport_strategy)
-@settings(max_examples=50)
-def test_project::nikureport_instantiation(instance):
-    assert isinstance(instance, project::NikuReport)
-
-@given(instance=project::NikuReport_strategy)
-def test_project::nikureport_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=project::NikuReport_strategy)
-def test_project::nikureport_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=project::Macro_strategy)
-@settings(max_examples=50)
-def test_project::macro_instantiation(instance):
-    assert isinstance(instance, project::Macro)
-
-@given(instance=project::Macro_strategy)
-def test_project::macro_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=project::Macro_strategy)
-def test_project::macro_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=project::TagFile_strategy)
-@settings(max_examples=50)
-def test_project::tagfile_instantiation(instance):
-    assert isinstance(instance, project::TagFile)
-
-@given(instance=project::TagFile_strategy)
-def test_project::tagfile_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=project::TagFile_strategy)
-def test_project::tagfile_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=project::TagFile_strategy)
-def test_project::tagfile_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=project::TagFile_strategy)
-def test_project::tagfile_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::StatusSheetReport_strategy)
-@settings(max_examples=50)
-def test_project::statussheetreport_instantiation(instance):
-    assert isinstance(instance, project::StatusSheetReport)
-
-@given(instance=project::StatusSheetReport_strategy)
-def test_project::statussheetreport_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=project::StatusSheetReport_strategy)
-def test_project::statussheetreport_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=project::AccountReport_strategy)
-@settings(max_examples=50)
-def test_project::accountreport_instantiation(instance):
-    assert isinstance(instance, project::AccountReport)
-
-@given(instance=project::TextReport_strategy)
-@settings(max_examples=50)
-def test_project::textreport_instantiation(instance):
-    assert isinstance(instance, project::TextReport)
-
-@given(instance=project::StatusSheet_strategy)
-@settings(max_examples=50)
-def test_project::statussheet_instantiation(instance):
-    assert isinstance(instance, project::StatusSheet)
-
-@given(instance=project::Balance_strategy)
-@settings(max_examples=50)
-def test_project::balance_instantiation(instance):
-    assert isinstance(instance, project::Balance)
-
-@given(instance=project::Navigator_strategy)
-@settings(max_examples=50)
-def test_project::navigator_instantiation(instance):
-    assert isinstance(instance, project::Navigator)
-
-@given(instance=project::Navigator_strategy)
-def test_project::navigator_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=project::Navigator_strategy)
-def test_project::navigator_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::Timesheet_strategy)
-@settings(max_examples=50)
-def test_project::timesheet_instantiation(instance):
-    assert isinstance(instance, project::Timesheet)
-
-@given(instance=project::Shift_strategy)
-@settings(max_examples=50)
-def test_project::shift_instantiation(instance):
-    assert isinstance(instance, project::Shift)
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_timezone_type(instance):
-    assert isinstance(instance.timezone, str)
-
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_timezone_setter(instance):
-    original = instance.timezone
-    instance.timezone = original
-    assert instance.timezone == original
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_replace_type(instance):
-    assert isinstance(instance.replace, str)
-
-
-@given(instance=project::Shift_strategy)
-def test_project::shift_replace_setter(instance):
-    original = instance.replace
-    instance.replace = original
-    assert instance.replace == original
-
-@given(instance=project::SupplementTask_strategy)
-@settings(max_examples=50)
-def test_project::supplementtask_instantiation(instance):
-    assert isinstance(instance, project::SupplementTask)
-
-@given(instance=project::SupplementResource_strategy)
-@settings(max_examples=50)
-def test_project::supplementresource_instantiation(instance):
-    assert isinstance(instance, project::SupplementResource)
-
-@given(instance=project::ResourceReport_strategy)
-@settings(max_examples=50)
-def test_project::resourcereport_instantiation(instance):
-    assert isinstance(instance, project::ResourceReport)
-
-@given(instance=project::Copyright_strategy)
-@settings(max_examples=50)
-def test_project::copyright_instantiation(instance):
-    assert isinstance(instance, project::Copyright)
-
-@given(instance=project::Copyright_strategy)
-def test_project::copyright_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=project::Copyright_strategy)
-def test_project::copyright_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=project::Task_strategy)
-@settings(max_examples=50)
-def test_project::task_instantiation(instance):
-    assert isinstance(instance, project::Task)
-
-@given(instance=project::Task_strategy)
-def test_project::task_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=project::Task_strategy)
-def test_project::task_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=project::Task_strategy)
-def test_project::task_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=project::Task_strategy)
-def test_project::task_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=project::IcalReport_strategy)
-@settings(max_examples=50)
-def test_project::icalreport_instantiation(instance):
-    assert isinstance(instance, project::IcalReport)
-
-@given(instance=project::IcalReport_strategy)
-def test_project::icalreport_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=project::IcalReport_strategy)
-def test_project::icalreport_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=project::Flags_strategy)
-@settings(max_examples=50)
-def test_project::flags_instantiation(instance):
-    assert isinstance(instance, project::Flags)
-
-@given(instance=project::Flags_strategy)
-def test_project::flags_flags_type(instance):
-    assert isinstance(instance.flags, str)
-
-
-@given(instance=project::Flags_strategy)
-def test_project::flags_flags_setter(instance):
+@given(instance=project_Flags_strategy)
+def test_project_flags_flags_setter(instance):
     original = instance.flags
     instance.flags = original
     assert instance.flags == original
 
-@given(instance=project::Vacation_strategy)
+@given(instance=project_Navigator_strategy)
 @settings(max_examples=50)
-def test_project::vacation_instantiation(instance):
-    assert isinstance(instance, project::Vacation)
-
-@given(instance=project::Vacation_strategy)
-def test_project::vacation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_project_navigator_instantiation(instance):
+    assert isinstance(instance, project_Navigator)
 
 
-@given(instance=project::Vacation_strategy)
-def test_project::vacation_name_setter(instance):
+
+@given(instance=project_Navigator_strategy)
+def test_project_navigator_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=project_TimesheetReport_strategy)
+@settings(max_examples=50)
+def test_project_timesheetreport_instantiation(instance):
+    assert isinstance(instance, project_TimesheetReport)
+
+
+
+@given(instance=project_TimesheetReport_strategy)
+def test_project_timesheetreport_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+@given(instance=project_StatusSheetReport_strategy)
+@settings(max_examples=50)
+def test_project_statussheetreport_instantiation(instance):
+    assert isinstance(instance, project_StatusSheetReport)
+
+
+
+@given(instance=project_StatusSheetReport_strategy)
+def test_project_statussheetreport_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+@given(instance=project_Vacation_strategy)
+@settings(max_examples=50)
+def test_project_vacation_instantiation(instance):
+    assert isinstance(instance, project_Vacation)
+
+
+
+@given(instance=project_Vacation_strategy)
+def test_project_vacation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=project::ProjectIds_strategy)
+@given(instance=project_Rate_strategy)
 @settings(max_examples=50)
-def test_project::projectids_instantiation(instance):
-    assert isinstance(instance, project::ProjectIds)
-
-@given(instance=project::ProjectIds_strategy)
-def test_project::projectids_ids_type(instance):
-    assert isinstance(instance.ids, str)
+def test_project_rate_instantiation(instance):
+    assert isinstance(instance, project_Rate)
 
 
-@given(instance=project::ProjectIds_strategy)
-def test_project::projectids_ids_setter(instance):
+
+@given(instance=project_Rate_strategy)
+def test_project_rate_rate_setter(instance):
+    original = instance.rate
+    instance.rate = original
+    assert instance.rate == original
+
+@given(instance=project_Macro_strategy)
+@settings(max_examples=50)
+def test_project_macro_instantiation(instance):
+    assert isinstance(instance, project_Macro)
+
+
+
+@given(instance=project_Macro_strategy)
+def test_project_macro_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=project_NikuReport_strategy)
+@settings(max_examples=50)
+def test_project_nikureport_instantiation(instance):
+    assert isinstance(instance, project_NikuReport)
+
+
+
+@given(instance=project_NikuReport_strategy)
+def test_project_nikureport_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+@given(instance=project_TextReport_strategy)
+@settings(max_examples=50)
+def test_project_textreport_instantiation(instance):
+    assert isinstance(instance, project_TextReport)
+
+@given(instance=project_Resource_strategy)
+@settings(max_examples=50)
+def test_project_resource_instantiation(instance):
+    assert isinstance(instance, project_Resource)
+
+
+
+@given(instance=project_Resource_strategy)
+def test_project_resource_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=project_Resource_strategy)
+def test_project_resource_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=project_Limits_strategy)
+@settings(max_examples=50)
+def test_project_limits_instantiation(instance):
+    assert isinstance(instance, project_Limits)
+
+@given(instance=project_IcalReport_strategy)
+@settings(max_examples=50)
+def test_project_icalreport_instantiation(instance):
+    assert isinstance(instance, project_IcalReport)
+
+
+
+@given(instance=project_IcalReport_strategy)
+def test_project_icalreport_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+@given(instance=project_Export_strategy)
+@settings(max_examples=50)
+def test_project_export_instantiation(instance):
+    assert isinstance(instance, project_Export)
+
+
+
+@given(instance=project_Export_strategy)
+def test_project_export_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=project_Export_strategy)
+def test_project_export_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+@given(instance=project_Timesheet_strategy)
+@settings(max_examples=50)
+def test_project_timesheet_instantiation(instance):
+    assert isinstance(instance, project_Timesheet)
+
+@given(instance=project_SupplementReport_strategy)
+@settings(max_examples=50)
+def test_project_supplementreport_instantiation(instance):
+    assert isinstance(instance, project_SupplementReport)
+
+@given(instance=project_SupplementResource_strategy)
+@settings(max_examples=50)
+def test_project_supplementresource_instantiation(instance):
+    assert isinstance(instance, project_SupplementResource)
+
+@given(instance=project_Copyright_strategy)
+@settings(max_examples=50)
+def test_project_copyright_instantiation(instance):
+    assert isinstance(instance, project_Copyright)
+
+
+
+@given(instance=project_Copyright_strategy)
+def test_project_copyright_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=project_Shift_strategy)
+@settings(max_examples=50)
+def test_project_shift_instantiation(instance):
+    assert isinstance(instance, project_Shift)
+
+
+
+@given(instance=project_Shift_strategy)
+def test_project_shift_replace_setter(instance):
+    original = instance.replace
+    instance.replace = original
+    assert instance.replace == original
+
+
+
+@given(instance=project_Shift_strategy)
+def test_project_shift_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=project_Shift_strategy)
+def test_project_shift_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=project_Shift_strategy)
+def test_project_shift_timezone_setter(instance):
+    original = instance.timezone
+    instance.timezone = original
+    assert instance.timezone == original
+
+@given(instance=project_IncludeProperties_strategy)
+@settings(max_examples=50)
+def test_project_includeproperties_instantiation(instance):
+    assert isinstance(instance, project_IncludeProperties)
+
+
+
+@given(instance=project_IncludeProperties_strategy)
+def test_project_includeproperties_importURI_setter(instance):
+    original = instance.importURI
+    instance.importURI = original
+    assert instance.importURI == original
+
+@given(instance=project_Task_strategy)
+@settings(max_examples=50)
+def test_project_task_instantiation(instance):
+    assert isinstance(instance, project_Task)
+
+
+
+@given(instance=project_Task_strategy)
+def test_project_task_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=project_Task_strategy)
+def test_project_task_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=project_ProjectIds_strategy)
+@settings(max_examples=50)
+def test_project_projectids_instantiation(instance):
+    assert isinstance(instance, project_ProjectIds)
+
+
+
+@given(instance=project_ProjectIds_strategy)
+def test_project_projectids_ids_setter(instance):
     original = instance.ids
     instance.ids = original
     assert instance.ids == original
 
-@given(instance=project::SupplementReport_strategy)
+@given(instance=project_ResourceReport_strategy)
 @settings(max_examples=50)
-def test_project::supplementreport_instantiation(instance):
-    assert isinstance(instance, project::SupplementReport)
+def test_project_resourcereport_instantiation(instance):
+    assert isinstance(instance, project_ResourceReport)
 
-@given(instance=project::Limits_strategy)
+@given(instance=project_TaskReport_strategy)
 @settings(max_examples=50)
-def test_project::limits_instantiation(instance):
-    assert isinstance(instance, project::Limits)
+def test_project_taskreport_instantiation(instance):
+    assert isinstance(instance, project_TaskReport)
 
-@given(instance=project::Account_strategy)
+@given(instance=project_SupplementTask_strategy)
 @settings(max_examples=50)
-def test_project::account_instantiation(instance):
-    assert isinstance(instance, project::Account)
+def test_project_supplementtask_instantiation(instance):
+    assert isinstance(instance, project_SupplementTask)
 
-@given(instance=project::Account_strategy)
-def test_project::account_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=project_Balance_strategy)
+@settings(max_examples=50)
+def test_project_balance_instantiation(instance):
+    assert isinstance(instance, project_Balance)
 
-
-@given(instance=project::Account_strategy)
-def test_project::account_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=project::Account_strategy)
-def test_project::account_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=project_TagFile_strategy)
+@settings(max_examples=50)
+def test_project_tagfile_instantiation(instance):
+    assert isinstance(instance, project_TagFile)
 
 
-@given(instance=project::Account_strategy)
-def test_project::account_id_setter(instance):
+
+@given(instance=project_TagFile_strategy)
+def test_project_tagfile_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+
+
+@given(instance=project_TagFile_strategy)
+def test_project_tagfile_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=project::Property_strategy)
+@given(instance=project_Account_strategy)
 @settings(max_examples=50)
-def test_project::property_instantiation(instance):
-    assert isinstance(instance, project::Property)
-
-@given(instance=project::Project_strategy)
-@settings(max_examples=50)
-def test_project::project_instantiation(instance):
-    assert isinstance(instance, project::Project)
-
-@given(instance=project::Project_strategy)
-def test_project::project_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_project_account_instantiation(instance):
+    assert isinstance(instance, project_Account)
 
 
-@given(instance=project::Project_strategy)
-def test_project::project_name_setter(instance):
+
+@given(instance=project_Account_strategy)
+def test_project_account_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=project::Project_strategy)
-def test_project::project_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=project::Project_strategy)
-def test_project::project_id_setter(instance):
+@given(instance=project_Account_strategy)
+def test_project_account_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=project::Project_strategy)
-def test_project::project_version_type(instance):
-    assert isinstance(instance.version, str)
+@given(instance=project_Property_strategy)
+@settings(max_examples=50)
+def test_project_property_instantiation(instance):
+    assert isinstance(instance, project_Property)
+
+@given(instance=project_Project_strategy)
+@settings(max_examples=50)
+def test_project_project_instantiation(instance):
+    assert isinstance(instance, project_Project)
 
 
-@given(instance=project::Project_strategy)
-def test_project::project_version_setter(instance):
+
+@given(instance=project_Project_strategy)
+def test_project_project_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=project_Project_strategy)
+def test_project_project_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=project_Project_strategy)
+def test_project_project_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original

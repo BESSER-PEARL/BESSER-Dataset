@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    interaction::ValueSpecification,
+from python_code import (
+    interaction_ValueSpecification,
     CapellaElement,
     AbstractFunctionalChainContainer,
     Structure,
-    interaction::AbstractCapability,
-    interaction::ExchangeItemElement,
-    interaction::FunctionalChain,
-    interaction::State,
-    interaction::ExchangeItem,
-    interaction::AbstractEventOperation,
-    interaction::Constraint,
+    interaction_AbstractCapability,
+    interaction_ExchangeItemElement,
+    interaction_FunctionalChain,
+    interaction_State,
+    interaction_ExchangeItem,
+    interaction_AbstractEventOperation,
+    interaction_Constraint,
     NamedElement,
-    interaction::CombinedFragment,
-    interaction::InteractionOperand,
-    interaction::SequenceMessage,
+    interaction_InteractionOperand,
+    interaction_CombinedFragment,
+    interaction_SequenceMessage,
     AbstractBehavior,
     Namespace,
-    interaction::Scenario,
-    interaction::SequenceMessageValuation,
-    interaction::AbstractFunction,
-    interaction::Part,
+    interaction_Scenario,
+    interaction_SequenceMessageValuation,
+    interaction_AbstractFunction,
+    interaction_Part,
     ScenarioKind,
-    InteractionOperatorKind,
     MessageKind,
+    InteractionOperatorKind,
 )
 
 # =============================================================================
@@ -38,16 +38,16 @@ from classes import (
 
 
 
-def test_interaction::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(interaction::ValueSpecification)
+def test_interaction_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(interaction_ValueSpecification)
 
 
-def test_interaction::valuespecification_constructor_exists():
-    assert callable(interaction::ValueSpecification.__init__)
+def test_interaction_valuespecification_constructor_exists():
+    assert callable(interaction_ValueSpecification.__init__)
 
 
-def test_interaction::valuespecification_constructor_args():
-    sig = inspect.signature(interaction::ValueSpecification.__init__)
+def test_interaction_valuespecification_constructor_args():
+    sig = inspect.signature(interaction_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,100 +94,100 @@ def test_structure_constructor_args():
 
 
 
-def test_interaction::abstractcapability_is_not_abstract():
-    assert not inspect.isabstract(interaction::AbstractCapability)
+def test_interaction_abstractcapability_is_not_abstract():
+    assert not inspect.isabstract(interaction_AbstractCapability)
 
 
-def test_interaction::abstractcapability_constructor_exists():
-    assert callable(interaction::AbstractCapability.__init__)
+def test_interaction_abstractcapability_constructor_exists():
+    assert callable(interaction_AbstractCapability.__init__)
 
 
-def test_interaction::abstractcapability_constructor_args():
-    sig = inspect.signature(interaction::AbstractCapability.__init__)
+def test_interaction_abstractcapability_constructor_args():
+    sig = inspect.signature(interaction_AbstractCapability.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::exchangeitemelement_is_not_abstract():
-    assert not inspect.isabstract(interaction::ExchangeItemElement)
+def test_interaction_exchangeitemelement_is_not_abstract():
+    assert not inspect.isabstract(interaction_ExchangeItemElement)
 
 
-def test_interaction::exchangeitemelement_constructor_exists():
-    assert callable(interaction::ExchangeItemElement.__init__)
+def test_interaction_exchangeitemelement_constructor_exists():
+    assert callable(interaction_ExchangeItemElement.__init__)
 
 
-def test_interaction::exchangeitemelement_constructor_args():
-    sig = inspect.signature(interaction::ExchangeItemElement.__init__)
+def test_interaction_exchangeitemelement_constructor_args():
+    sig = inspect.signature(interaction_ExchangeItemElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::functionalchain_is_not_abstract():
-    assert not inspect.isabstract(interaction::FunctionalChain)
+def test_interaction_functionalchain_is_not_abstract():
+    assert not inspect.isabstract(interaction_FunctionalChain)
 
 
-def test_interaction::functionalchain_constructor_exists():
-    assert callable(interaction::FunctionalChain.__init__)
+def test_interaction_functionalchain_constructor_exists():
+    assert callable(interaction_FunctionalChain.__init__)
 
 
-def test_interaction::functionalchain_constructor_args():
-    sig = inspect.signature(interaction::FunctionalChain.__init__)
+def test_interaction_functionalchain_constructor_args():
+    sig = inspect.signature(interaction_FunctionalChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::state_is_not_abstract():
-    assert not inspect.isabstract(interaction::State)
+def test_interaction_state_is_not_abstract():
+    assert not inspect.isabstract(interaction_State)
 
 
-def test_interaction::state_constructor_exists():
-    assert callable(interaction::State.__init__)
+def test_interaction_state_constructor_exists():
+    assert callable(interaction_State.__init__)
 
 
-def test_interaction::state_constructor_args():
-    sig = inspect.signature(interaction::State.__init__)
+def test_interaction_state_constructor_args():
+    sig = inspect.signature(interaction_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::exchangeitem_is_not_abstract():
-    assert not inspect.isabstract(interaction::ExchangeItem)
+def test_interaction_exchangeitem_is_not_abstract():
+    assert not inspect.isabstract(interaction_ExchangeItem)
 
 
-def test_interaction::exchangeitem_constructor_exists():
-    assert callable(interaction::ExchangeItem.__init__)
+def test_interaction_exchangeitem_constructor_exists():
+    assert callable(interaction_ExchangeItem.__init__)
 
 
-def test_interaction::exchangeitem_constructor_args():
-    sig = inspect.signature(interaction::ExchangeItem.__init__)
+def test_interaction_exchangeitem_constructor_args():
+    sig = inspect.signature(interaction_ExchangeItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::abstracteventoperation_is_not_abstract():
-    assert not inspect.isabstract(interaction::AbstractEventOperation)
+def test_interaction_abstracteventoperation_is_not_abstract():
+    assert not inspect.isabstract(interaction_AbstractEventOperation)
 
 
-def test_interaction::abstracteventoperation_constructor_exists():
-    assert callable(interaction::AbstractEventOperation.__init__)
+def test_interaction_abstracteventoperation_constructor_exists():
+    assert callable(interaction_AbstractEventOperation.__init__)
 
 
-def test_interaction::abstracteventoperation_constructor_args():
-    sig = inspect.signature(interaction::AbstractEventOperation.__init__)
+def test_interaction_abstracteventoperation_constructor_args():
+    sig = inspect.signature(interaction_AbstractEventOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::constraint_is_not_abstract():
-    assert not inspect.isabstract(interaction::Constraint)
+def test_interaction_constraint_is_not_abstract():
+    assert not inspect.isabstract(interaction_Constraint)
 
 
-def test_interaction::constraint_constructor_exists():
-    assert callable(interaction::Constraint.__init__)
+def test_interaction_constraint_constructor_exists():
+    assert callable(interaction_Constraint.__init__)
 
 
-def test_interaction::constraint_constructor_args():
-    sig = inspect.signature(interaction::Constraint.__init__)
+def test_interaction_constraint_constructor_args():
+    sig = inspect.signature(interaction_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -206,23 +206,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_interaction::combinedfragment_is_not_abstract():
-    assert not inspect.isabstract(interaction::CombinedFragment)
+def test_interaction_interactionoperand_is_not_abstract():
+    assert not inspect.isabstract(interaction_InteractionOperand)
 
 
-def test_interaction::combinedfragment_constructor_exists():
-    assert callable(interaction::CombinedFragment.__init__)
+def test_interaction_interactionoperand_constructor_exists():
+    assert callable(interaction_InteractionOperand.__init__)
 
 
-def test_interaction::combinedfragment_constructor_args():
-    sig = inspect.signature(interaction::CombinedFragment.__init__)
+def test_interaction_interactionoperand_constructor_args():
+    sig = inspect.signature(interaction_InteractionOperand.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interaction_combinedfragment_is_not_abstract():
+    assert not inspect.isabstract(interaction_CombinedFragment)
+
+
+def test_interaction_combinedfragment_constructor_exists():
+    assert callable(interaction_CombinedFragment.__init__)
+
+
+def test_interaction_combinedfragment_constructor_args():
+    sig = inspect.signature(interaction_CombinedFragment.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_interaction::combinedfragment_has_operator():
-    assert hasattr(interaction::CombinedFragment, "operator")
+def test_interaction_combinedfragment_has_operator():
+    assert hasattr(interaction_CombinedFragment, "operator")
     descriptor = None
-    for klass in interaction::CombinedFragment.__mro__:
+    for klass in interaction_CombinedFragment.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -230,37 +244,23 @@ def test_interaction::combinedfragment_has_operator():
 
 
 
-def test_interaction::interactionoperand_is_not_abstract():
-    assert not inspect.isabstract(interaction::InteractionOperand)
+def test_interaction_sequencemessage_is_not_abstract():
+    assert not inspect.isabstract(interaction_SequenceMessage)
 
 
-def test_interaction::interactionoperand_constructor_exists():
-    assert callable(interaction::InteractionOperand.__init__)
+def test_interaction_sequencemessage_constructor_exists():
+    assert callable(interaction_SequenceMessage.__init__)
 
 
-def test_interaction::interactionoperand_constructor_args():
-    sig = inspect.signature(interaction::InteractionOperand.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interaction::sequencemessage_is_not_abstract():
-    assert not inspect.isabstract(interaction::SequenceMessage)
-
-
-def test_interaction::sequencemessage_constructor_exists():
-    assert callable(interaction::SequenceMessage.__init__)
-
-
-def test_interaction::sequencemessage_constructor_args():
-    sig = inspect.signature(interaction::SequenceMessage.__init__)
+def test_interaction_sequencemessage_constructor_args():
+    sig = inspect.signature(interaction_SequenceMessage.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_interaction::sequencemessage_has_kind():
-    assert hasattr(interaction::SequenceMessage, "kind")
+def test_interaction_sequencemessage_has_kind():
+    assert hasattr(interaction_SequenceMessage, "kind")
     descriptor = None
-    for klass in interaction::SequenceMessage.__mro__:
+    for klass in interaction_SequenceMessage.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -296,78 +296,78 @@ def test_namespace_constructor_args():
 
 
 
-def test_interaction::scenario_is_not_abstract():
-    assert not inspect.isabstract(interaction::Scenario)
+def test_interaction_scenario_is_not_abstract():
+    assert not inspect.isabstract(interaction_Scenario)
 
 
-def test_interaction::scenario_constructor_exists():
-    assert callable(interaction::Scenario.__init__)
+def test_interaction_scenario_constructor_exists():
+    assert callable(interaction_Scenario.__init__)
 
 
-def test_interaction::scenario_constructor_args():
-    sig = inspect.signature(interaction::Scenario.__init__)
+def test_interaction_scenario_constructor_args():
+    sig = inspect.signature(interaction_Scenario.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "merged" in params, "Missing parameter 'merged'"
+    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_interaction::scenario_has_kind():
-    assert hasattr(interaction::Scenario, "kind")
+def test_interaction_scenario_has_merged():
+    assert hasattr(interaction_Scenario, "merged")
     descriptor = None
-    for klass in interaction::Scenario.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_interaction::scenario_has_merged():
-    assert hasattr(interaction::Scenario, "merged")
-    descriptor = None
-    for klass in interaction::Scenario.__mro__:
+    for klass in interaction_Scenario.__mro__:
         if "merged" in klass.__dict__:
             descriptor = klass.__dict__["merged"]
             break
     assert isinstance(descriptor, property)
 
+def test_interaction_scenario_has_kind():
+    assert hasattr(interaction_Scenario, "kind")
+    descriptor = None
+    for klass in interaction_Scenario.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_interaction::sequencemessagevaluation_is_not_abstract():
-    assert not inspect.isabstract(interaction::SequenceMessageValuation)
+
+def test_interaction_sequencemessagevaluation_is_not_abstract():
+    assert not inspect.isabstract(interaction_SequenceMessageValuation)
 
 
-def test_interaction::sequencemessagevaluation_constructor_exists():
-    assert callable(interaction::SequenceMessageValuation.__init__)
+def test_interaction_sequencemessagevaluation_constructor_exists():
+    assert callable(interaction_SequenceMessageValuation.__init__)
 
 
-def test_interaction::sequencemessagevaluation_constructor_args():
-    sig = inspect.signature(interaction::SequenceMessageValuation.__init__)
+def test_interaction_sequencemessagevaluation_constructor_args():
+    sig = inspect.signature(interaction_SequenceMessageValuation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::abstractfunction_is_not_abstract():
-    assert not inspect.isabstract(interaction::AbstractFunction)
+def test_interaction_abstractfunction_is_not_abstract():
+    assert not inspect.isabstract(interaction_AbstractFunction)
 
 
-def test_interaction::abstractfunction_constructor_exists():
-    assert callable(interaction::AbstractFunction.__init__)
+def test_interaction_abstractfunction_constructor_exists():
+    assert callable(interaction_AbstractFunction.__init__)
 
 
-def test_interaction::abstractfunction_constructor_args():
-    sig = inspect.signature(interaction::AbstractFunction.__init__)
+def test_interaction_abstractfunction_constructor_args():
+    sig = inspect.signature(interaction_AbstractFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_interaction::part_is_not_abstract():
-    assert not inspect.isabstract(interaction::Part)
+def test_interaction_part_is_not_abstract():
+    assert not inspect.isabstract(interaction_Part)
 
 
-def test_interaction::part_constructor_exists():
-    assert callable(interaction::Part.__init__)
+def test_interaction_part_constructor_exists():
+    assert callable(interaction_Part.__init__)
 
 
-def test_interaction::part_constructor_args():
-    sig = inspect.signature(interaction::Part.__init__)
+def test_interaction_part_constructor_args():
+    sig = inspect.signature(interaction_Part.__init__)
     params = list(sig.parameters.keys())
 
 def test_scenariokind_exists():
@@ -381,37 +381,12 @@ def test_scenariokind_has_all_literals():
         "DATA_FLOW",
         "INTERFACE",
         "UNSET",
-        "FUNCTIONAL",
         "INTERACTION",
+        "FUNCTIONAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ScenarioKind"
-
-def test_interactionoperatorkind_exists():
-    # Check that the Enumeration exists
-    assert InteractionOperatorKind is not None
-
-def test_interactionoperatorkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InteractionOperatorKind]
-    expected_literals = [
-        "UNSET",
-        "LOOP",
-        "ASSERT",
-        "IGNORE",
-        "CRITICAL",
-        "SEQ",
-        "CONSIDER",
-        "PAR",
-        "NEG",
-        "OPT",
-        "ALT",
-        "STRICT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InteractionOperatorKind"
 
 def test_messagekind_exists():
     # Check that the Enumeration exists
@@ -421,17 +396,42 @@ def test_messagekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MessageKind]
     expected_literals = [
-        "UNSET",
-        "REPLY",
-        "TIMER",
         "CREATE",
-        "SYNCHRONOUS_CALL",
-        "DELETE",
         "ASYNCHRONOUS_CALL",
+        "TIMER",
+        "SYNCHRONOUS_CALL",
+        "REPLY",
+        "UNSET",
+        "DELETE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MessageKind"
+
+def test_interactionoperatorkind_exists():
+    # Check that the Enumeration exists
+    assert InteractionOperatorKind is not None
+
+def test_interactionoperatorkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InteractionOperatorKind]
+    expected_literals = [
+        "STRICT",
+        "NEG",
+        "SEQ",
+        "PAR",
+        "OPT",
+        "CRITICAL",
+        "UNSET",
+        "ALT",
+        "IGNORE",
+        "ASSERT",
+        "CONSIDER",
+        "LOOP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InteractionOperatorKind"
 
 
 # =============================================================================
@@ -445,8 +445,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-interaction::ValueSpecification_strategy = st.builds(
-    interaction::ValueSpecification,
+interaction_ValueSpecification_strategy = st.builds(
+    interaction_ValueSpecification,
 )
 CapellaElement_strategy = st.builds(
     CapellaElement,
@@ -457,40 +457,40 @@ AbstractFunctionalChainContainer_strategy = st.builds(
 Structure_strategy = st.builds(
     Structure,
 )
-interaction::AbstractCapability_strategy = st.builds(
-    interaction::AbstractCapability,
+interaction_AbstractCapability_strategy = st.builds(
+    interaction_AbstractCapability,
 )
-interaction::ExchangeItemElement_strategy = st.builds(
-    interaction::ExchangeItemElement,
+interaction_ExchangeItemElement_strategy = st.builds(
+    interaction_ExchangeItemElement,
 )
-interaction::FunctionalChain_strategy = st.builds(
-    interaction::FunctionalChain,
+interaction_FunctionalChain_strategy = st.builds(
+    interaction_FunctionalChain,
 )
-interaction::State_strategy = st.builds(
-    interaction::State,
+interaction_State_strategy = st.builds(
+    interaction_State,
 )
-interaction::ExchangeItem_strategy = st.builds(
-    interaction::ExchangeItem,
+interaction_ExchangeItem_strategy = st.builds(
+    interaction_ExchangeItem,
 )
-interaction::AbstractEventOperation_strategy = st.builds(
-    interaction::AbstractEventOperation,
+interaction_AbstractEventOperation_strategy = st.builds(
+    interaction_AbstractEventOperation,
 )
-interaction::Constraint_strategy = st.builds(
-    interaction::Constraint,
+interaction_Constraint_strategy = st.builds(
+    interaction_Constraint,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-interaction::CombinedFragment_strategy = st.builds(
-    interaction::CombinedFragment,
+interaction_InteractionOperand_strategy = st.builds(
+    interaction_InteractionOperand,
+)
+interaction_CombinedFragment_strategy = st.builds(
+    interaction_CombinedFragment,
     operator=
         safe_text
 )
-interaction::InteractionOperand_strategy = st.builds(
-    interaction::InteractionOperand,
-)
-interaction::SequenceMessage_strategy = st.builds(
-    interaction::SequenceMessage,
+interaction_SequenceMessage_strategy = st.builds(
+    interaction_SequenceMessage,
     kind=
         safe_text
 )
@@ -500,27 +500,27 @@ AbstractBehavior_strategy = st.builds(
 Namespace_strategy = st.builds(
     Namespace,
 )
-interaction::Scenario_strategy = st.builds(
-    interaction::Scenario,
-    kind=
-        safe_text,
+interaction_Scenario_strategy = st.builds(
+    interaction_Scenario,
     merged=
-        st.booleans()
+        st.booleans(),
+    kind=
+        safe_text
 )
-interaction::SequenceMessageValuation_strategy = st.builds(
-    interaction::SequenceMessageValuation,
+interaction_SequenceMessageValuation_strategy = st.builds(
+    interaction_SequenceMessageValuation,
 )
-interaction::AbstractFunction_strategy = st.builds(
-    interaction::AbstractFunction,
+interaction_AbstractFunction_strategy = st.builds(
+    interaction_AbstractFunction,
 )
-interaction::Part_strategy = st.builds(
-    interaction::Part,
+interaction_Part_strategy = st.builds(
+    interaction_Part,
 )
 
-@given(instance=interaction::ValueSpecification_strategy)
+@given(instance=interaction_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_interaction::valuespecification_instantiation(instance):
-    assert isinstance(instance, interaction::ValueSpecification)
+def test_interaction_valuespecification_instantiation(instance):
+    assert isinstance(instance, interaction_ValueSpecification)
 
 @given(instance=CapellaElement_strategy)
 @settings(max_examples=50)
@@ -537,79 +537,73 @@ def test_abstractfunctionalchaincontainer_instantiation(instance):
 def test_structure_instantiation(instance):
     assert isinstance(instance, Structure)
 
-@given(instance=interaction::AbstractCapability_strategy)
+@given(instance=interaction_AbstractCapability_strategy)
 @settings(max_examples=50)
-def test_interaction::abstractcapability_instantiation(instance):
-    assert isinstance(instance, interaction::AbstractCapability)
+def test_interaction_abstractcapability_instantiation(instance):
+    assert isinstance(instance, interaction_AbstractCapability)
 
-@given(instance=interaction::ExchangeItemElement_strategy)
+@given(instance=interaction_ExchangeItemElement_strategy)
 @settings(max_examples=50)
-def test_interaction::exchangeitemelement_instantiation(instance):
-    assert isinstance(instance, interaction::ExchangeItemElement)
+def test_interaction_exchangeitemelement_instantiation(instance):
+    assert isinstance(instance, interaction_ExchangeItemElement)
 
-@given(instance=interaction::FunctionalChain_strategy)
+@given(instance=interaction_FunctionalChain_strategy)
 @settings(max_examples=50)
-def test_interaction::functionalchain_instantiation(instance):
-    assert isinstance(instance, interaction::FunctionalChain)
+def test_interaction_functionalchain_instantiation(instance):
+    assert isinstance(instance, interaction_FunctionalChain)
 
-@given(instance=interaction::State_strategy)
+@given(instance=interaction_State_strategy)
 @settings(max_examples=50)
-def test_interaction::state_instantiation(instance):
-    assert isinstance(instance, interaction::State)
+def test_interaction_state_instantiation(instance):
+    assert isinstance(instance, interaction_State)
 
-@given(instance=interaction::ExchangeItem_strategy)
+@given(instance=interaction_ExchangeItem_strategy)
 @settings(max_examples=50)
-def test_interaction::exchangeitem_instantiation(instance):
-    assert isinstance(instance, interaction::ExchangeItem)
+def test_interaction_exchangeitem_instantiation(instance):
+    assert isinstance(instance, interaction_ExchangeItem)
 
-@given(instance=interaction::AbstractEventOperation_strategy)
+@given(instance=interaction_AbstractEventOperation_strategy)
 @settings(max_examples=50)
-def test_interaction::abstracteventoperation_instantiation(instance):
-    assert isinstance(instance, interaction::AbstractEventOperation)
+def test_interaction_abstracteventoperation_instantiation(instance):
+    assert isinstance(instance, interaction_AbstractEventOperation)
 
-@given(instance=interaction::Constraint_strategy)
+@given(instance=interaction_Constraint_strategy)
 @settings(max_examples=50)
-def test_interaction::constraint_instantiation(instance):
-    assert isinstance(instance, interaction::Constraint)
+def test_interaction_constraint_instantiation(instance):
+    assert isinstance(instance, interaction_Constraint)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=interaction::CombinedFragment_strategy)
+@given(instance=interaction_InteractionOperand_strategy)
 @settings(max_examples=50)
-def test_interaction::combinedfragment_instantiation(instance):
-    assert isinstance(instance, interaction::CombinedFragment)
+def test_interaction_interactionoperand_instantiation(instance):
+    assert isinstance(instance, interaction_InteractionOperand)
 
-@given(instance=interaction::CombinedFragment_strategy)
-def test_interaction::combinedfragment_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=interaction_CombinedFragment_strategy)
+@settings(max_examples=50)
+def test_interaction_combinedfragment_instantiation(instance):
+    assert isinstance(instance, interaction_CombinedFragment)
 
 
-@given(instance=interaction::CombinedFragment_strategy)
-def test_interaction::combinedfragment_operator_setter(instance):
+
+@given(instance=interaction_CombinedFragment_strategy)
+def test_interaction_combinedfragment_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=interaction::InteractionOperand_strategy)
+@given(instance=interaction_SequenceMessage_strategy)
 @settings(max_examples=50)
-def test_interaction::interactionoperand_instantiation(instance):
-    assert isinstance(instance, interaction::InteractionOperand)
-
-@given(instance=interaction::SequenceMessage_strategy)
-@settings(max_examples=50)
-def test_interaction::sequencemessage_instantiation(instance):
-    assert isinstance(instance, interaction::SequenceMessage)
-
-@given(instance=interaction::SequenceMessage_strategy)
-def test_interaction::sequencemessage_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_interaction_sequencemessage_instantiation(instance):
+    assert isinstance(instance, interaction_SequenceMessage)
 
 
-@given(instance=interaction::SequenceMessage_strategy)
-def test_interaction::sequencemessage_kind_setter(instance):
+
+@given(instance=interaction_SequenceMessage_strategy)
+def test_interaction_sequencemessage_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -624,44 +618,38 @@ def test_abstractbehavior_instantiation(instance):
 def test_namespace_instantiation(instance):
     assert isinstance(instance, Namespace)
 
-@given(instance=interaction::Scenario_strategy)
+@given(instance=interaction_Scenario_strategy)
 @settings(max_examples=50)
-def test_interaction::scenario_instantiation(instance):
-    assert isinstance(instance, interaction::Scenario)
-
-@given(instance=interaction::Scenario_strategy)
-def test_interaction::scenario_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_interaction_scenario_instantiation(instance):
+    assert isinstance(instance, interaction_Scenario)
 
 
-@given(instance=interaction::Scenario_strategy)
-def test_interaction::scenario_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
 
-@given(instance=interaction::Scenario_strategy)
-def test_interaction::scenario_merged_type(instance):
-    assert isinstance(instance.merged, bool)
-
-
-@given(instance=interaction::Scenario_strategy)
-def test_interaction::scenario_merged_setter(instance):
+@given(instance=interaction_Scenario_strategy)
+def test_interaction_scenario_merged_setter(instance):
     original = instance.merged
     instance.merged = original
     assert instance.merged == original
 
-@given(instance=interaction::SequenceMessageValuation_strategy)
-@settings(max_examples=50)
-def test_interaction::sequencemessagevaluation_instantiation(instance):
-    assert isinstance(instance, interaction::SequenceMessageValuation)
 
-@given(instance=interaction::AbstractFunction_strategy)
-@settings(max_examples=50)
-def test_interaction::abstractfunction_instantiation(instance):
-    assert isinstance(instance, interaction::AbstractFunction)
 
-@given(instance=interaction::Part_strategy)
+@given(instance=interaction_Scenario_strategy)
+def test_interaction_scenario_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=interaction_SequenceMessageValuation_strategy)
 @settings(max_examples=50)
-def test_interaction::part_instantiation(instance):
-    assert isinstance(instance, interaction::Part)
+def test_interaction_sequencemessagevaluation_instantiation(instance):
+    assert isinstance(instance, interaction_SequenceMessageValuation)
+
+@given(instance=interaction_AbstractFunction_strategy)
+@settings(max_examples=50)
+def test_interaction_abstractfunction_instantiation(instance):
+    assert isinstance(instance, interaction_AbstractFunction)
+
+@given(instance=interaction_Part_strategy)
+@settings(max_examples=50)
+def test_interaction_part_instantiation(instance):
+    assert isinstance(instance, interaction_Part)

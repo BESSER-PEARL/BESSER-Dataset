@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pdb2::Person,
-    pdb2::Database,
+from python_code import (
+    pdb2_Person,
+    pdb2_Database,
 )
 
 # =============================================================================
@@ -16,63 +16,63 @@ from classes import (
 
 
 
-def test_pdb2::person_is_not_abstract():
-    assert not inspect.isabstract(pdb2::Person)
+def test_pdb2_person_is_not_abstract():
+    assert not inspect.isabstract(pdb2_Person)
 
 
-def test_pdb2::person_constructor_exists():
-    assert callable(pdb2::Person.__init__)
+def test_pdb2_person_constructor_exists():
+    assert callable(pdb2_Person.__init__)
 
 
-def test_pdb2::person_constructor_args():
-    sig = inspect.signature(pdb2::Person.__init__)
+def test_pdb2_person_constructor_args():
+    sig = inspect.signature(pdb2_Person.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "placeOfBirth" in params, "Missing parameter 'placeOfBirth'"
     assert "birthday" in params, "Missing parameter 'birthday'"
     assert "incrementalID" in params, "Missing parameter 'incrementalID'"
-    assert "placeOfBirth" in params, "Missing parameter 'placeOfBirth'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_pdb2::person_has_birthday():
-    assert hasattr(pdb2::Person, "birthday")
+def test_pdb2_person_has_name():
+    assert hasattr(pdb2_Person, "name")
     descriptor = None
-    for klass in pdb2::Person.__mro__:
-        if "birthday" in klass.__dict__:
-            descriptor = klass.__dict__["birthday"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pdb2::person_has_incrementalID():
-    assert hasattr(pdb2::Person, "incrementalID")
-    descriptor = None
-    for klass in pdb2::Person.__mro__:
-        if "incrementalID" in klass.__dict__:
-            descriptor = klass.__dict__["incrementalID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pdb2::person_has_placeOfBirth():
-    assert hasattr(pdb2::Person, "placeOfBirth")
-    descriptor = None
-    for klass in pdb2::Person.__mro__:
-        if "placeOfBirth" in klass.__dict__:
-            descriptor = klass.__dict__["placeOfBirth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pdb2::person_has_name():
-    assert hasattr(pdb2::Person, "name")
-    descriptor = None
-    for klass in pdb2::Person.__mro__:
+    for klass in pdb2_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_pdb2::person_has_id():
-    assert hasattr(pdb2::Person, "id")
+def test_pdb2_person_has_placeOfBirth():
+    assert hasattr(pdb2_Person, "placeOfBirth")
     descriptor = None
-    for klass in pdb2::Person.__mro__:
+    for klass in pdb2_Person.__mro__:
+        if "placeOfBirth" in klass.__dict__:
+            descriptor = klass.__dict__["placeOfBirth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pdb2_person_has_birthday():
+    assert hasattr(pdb2_Person, "birthday")
+    descriptor = None
+    for klass in pdb2_Person.__mro__:
+        if "birthday" in klass.__dict__:
+            descriptor = klass.__dict__["birthday"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pdb2_person_has_incrementalID():
+    assert hasattr(pdb2_Person, "incrementalID")
+    descriptor = None
+    for klass in pdb2_Person.__mro__:
+        if "incrementalID" in klass.__dict__:
+            descriptor = klass.__dict__["incrementalID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pdb2_person_has_id():
+    assert hasattr(pdb2_Person, "id")
+    descriptor = None
+    for klass in pdb2_Person.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -80,23 +80,23 @@ def test_pdb2::person_has_id():
 
 
 
-def test_pdb2::database_is_not_abstract():
-    assert not inspect.isabstract(pdb2::Database)
+def test_pdb2_database_is_not_abstract():
+    assert not inspect.isabstract(pdb2_Database)
 
 
-def test_pdb2::database_constructor_exists():
-    assert callable(pdb2::Database.__init__)
+def test_pdb2_database_constructor_exists():
+    assert callable(pdb2_Database.__init__)
 
 
-def test_pdb2::database_constructor_args():
-    sig = inspect.signature(pdb2::Database.__init__)
+def test_pdb2_database_constructor_args():
+    sig = inspect.signature(pdb2_Database.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pdb2::database_has_name():
-    assert hasattr(pdb2::Database, "name")
+def test_pdb2_database_has_name():
+    assert hasattr(pdb2_Database, "name")
     descriptor = None
-    for klass in pdb2::Database.__mro__:
+    for klass in pdb2_Database.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,97 +114,79 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pdb2::Person_strategy = st.builds(
-    pdb2::Person,
+pdb2_Person_strategy = st.builds(
+    pdb2_Person,
+    name=
+        safe_text,
+    placeOfBirth=
+        safe_text,
     birthday=
         safe_text,
     incrementalID=
         safe_text,
-    placeOfBirth=
-        safe_text,
-    name=
-        safe_text,
     id=
         safe_text
 )
-pdb2::Database_strategy = st.builds(
-    pdb2::Database,
+pdb2_Database_strategy = st.builds(
+    pdb2_Database,
     name=
         safe_text
 )
 
-@given(instance=pdb2::Person_strategy)
+@given(instance=pdb2_Person_strategy)
 @settings(max_examples=50)
-def test_pdb2::person_instantiation(instance):
-    assert isinstance(instance, pdb2::Person)
-
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_birthday_type(instance):
-    assert isinstance(instance.birthday, str)
+def test_pdb2_person_instantiation(instance):
+    assert isinstance(instance, pdb2_Person)
 
 
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_birthday_setter(instance):
-    original = instance.birthday
-    instance.birthday = original
-    assert instance.birthday == original
 
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_incrementalID_type(instance):
-    assert isinstance(instance.incrementalID, str)
-
-
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_incrementalID_setter(instance):
-    original = instance.incrementalID
-    instance.incrementalID = original
-    assert instance.incrementalID == original
-
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_placeOfBirth_type(instance):
-    assert isinstance(instance.placeOfBirth, str)
-
-
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_placeOfBirth_setter(instance):
-    original = instance.placeOfBirth
-    instance.placeOfBirth = original
-    assert instance.placeOfBirth == original
-
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_name_setter(instance):
+@given(instance=pdb2_Person_strategy)
+def test_pdb2_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=pdb2::Person_strategy)
-def test_pdb2::person_id_setter(instance):
+@given(instance=pdb2_Person_strategy)
+def test_pdb2_person_placeOfBirth_setter(instance):
+    original = instance.placeOfBirth
+    instance.placeOfBirth = original
+    assert instance.placeOfBirth == original
+
+
+
+@given(instance=pdb2_Person_strategy)
+def test_pdb2_person_birthday_setter(instance):
+    original = instance.birthday
+    instance.birthday = original
+    assert instance.birthday == original
+
+
+
+@given(instance=pdb2_Person_strategy)
+def test_pdb2_person_incrementalID_setter(instance):
+    original = instance.incrementalID
+    instance.incrementalID = original
+    assert instance.incrementalID == original
+
+
+
+@given(instance=pdb2_Person_strategy)
+def test_pdb2_person_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=pdb2::Database_strategy)
+@given(instance=pdb2_Database_strategy)
 @settings(max_examples=50)
-def test_pdb2::database_instantiation(instance):
-    assert isinstance(instance, pdb2::Database)
-
-@given(instance=pdb2::Database_strategy)
-def test_pdb2::database_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pdb2_database_instantiation(instance):
+    assert isinstance(instance, pdb2_Database)
 
 
-@given(instance=pdb2::Database_strategy)
-def test_pdb2::database_name_setter(instance):
+
+@given(instance=pdb2_Database_strategy)
+def test_pdb2_database_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

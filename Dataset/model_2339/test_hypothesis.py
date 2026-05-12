@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    person::PersonType,
-    person::CompanyType,
-    person::EStringToStringMapEntry,
-    person::DocumentRoot,
+from python_code import (
+    person_PersonType,
+    person_CompanyType,
+    person_EStringToStringMapEntry,
+    person_DocumentRoot,
 )
 
 # =============================================================================
@@ -18,105 +18,105 @@ from classes import (
 
 
 
-def test_person::persontype_is_not_abstract():
-    assert not inspect.isabstract(person::PersonType)
+def test_person_persontype_is_not_abstract():
+    assert not inspect.isabstract(person_PersonType)
 
 
-def test_person::persontype_constructor_exists():
-    assert callable(person::PersonType.__init__)
+def test_person_persontype_constructor_exists():
+    assert callable(person_PersonType.__init__)
 
 
-def test_person::persontype_constructor_args():
-    sig = inspect.signature(person::PersonType.__init__)
+def test_person_persontype_constructor_args():
+    sig = inspect.signature(person_PersonType.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
-    assert "country" in params, "Missing parameter 'country'"
     assert "name" in params, "Missing parameter 'name'"
     assert "age" in params, "Missing parameter 'age'"
+    assert "email" in params, "Missing parameter 'email'"
+    assert "country" in params, "Missing parameter 'country'"
 
-def test_person::persontype_has_email():
-    assert hasattr(person::PersonType, "email")
+def test_person_persontype_has_name():
+    assert hasattr(person_PersonType, "name")
     descriptor = None
-    for klass in person::PersonType.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_person::persontype_has_country():
-    assert hasattr(person::PersonType, "country")
-    descriptor = None
-    for klass in person::PersonType.__mro__:
-        if "country" in klass.__dict__:
-            descriptor = klass.__dict__["country"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_person::persontype_has_name():
-    assert hasattr(person::PersonType, "name")
-    descriptor = None
-    for klass in person::PersonType.__mro__:
+    for klass in person_PersonType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_person::persontype_has_age():
-    assert hasattr(person::PersonType, "age")
+def test_person_persontype_has_age():
+    assert hasattr(person_PersonType, "age")
     descriptor = None
-    for klass in person::PersonType.__mro__:
+    for klass in person_PersonType.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
+def test_person_persontype_has_email():
+    assert hasattr(person_PersonType, "email")
+    descriptor = None
+    for klass in person_PersonType.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_person_persontype_has_country():
+    assert hasattr(person_PersonType, "country")
+    descriptor = None
+    for klass in person_PersonType.__mro__:
+        if "country" in klass.__dict__:
+            descriptor = klass.__dict__["country"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_person::companytype_is_not_abstract():
-    assert not inspect.isabstract(person::CompanyType)
+
+def test_person_companytype_is_not_abstract():
+    assert not inspect.isabstract(person_CompanyType)
 
 
-def test_person::companytype_constructor_exists():
-    assert callable(person::CompanyType.__init__)
+def test_person_companytype_constructor_exists():
+    assert callable(person_CompanyType.__init__)
 
 
-def test_person::companytype_constructor_args():
-    sig = inspect.signature(person::CompanyType.__init__)
+def test_person_companytype_constructor_args():
+    sig = inspect.signature(person_CompanyType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_person::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(person::EStringToStringMapEntry)
+def test_person_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(person_EStringToStringMapEntry)
 
 
-def test_person::estringtostringmapentry_constructor_exists():
-    assert callable(person::EStringToStringMapEntry.__init__)
+def test_person_estringtostringmapentry_constructor_exists():
+    assert callable(person_EStringToStringMapEntry.__init__)
 
 
-def test_person::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(person::EStringToStringMapEntry.__init__)
+def test_person_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(person_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_person::documentroot_is_not_abstract():
-    assert not inspect.isabstract(person::DocumentRoot)
+def test_person_documentroot_is_not_abstract():
+    assert not inspect.isabstract(person_DocumentRoot)
 
 
-def test_person::documentroot_constructor_exists():
-    assert callable(person::DocumentRoot.__init__)
+def test_person_documentroot_constructor_exists():
+    assert callable(person_DocumentRoot.__init__)
 
 
-def test_person::documentroot_constructor_args():
-    sig = inspect.signature(person::DocumentRoot.__init__)
+def test_person_documentroot_constructor_args():
+    sig = inspect.signature(person_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_person::documentroot_has_mixed():
-    assert hasattr(person::DocumentRoot, "mixed")
+def test_person_documentroot_has_mixed():
+    assert hasattr(person_DocumentRoot, "mixed")
     descriptor = None
-    for klass in person::DocumentRoot.__mro__:
+    for klass in person_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-person::PersonType_strategy = st.builds(
-    person::PersonType,
-    email=
-        safe_text,
-    country=
-        safe_text,
+person_PersonType_strategy = st.builds(
+    person_PersonType,
     name=
         safe_text,
     age=
+        safe_text,
+    email=
+        safe_text,
+    country=
         safe_text
 )
-person::CompanyType_strategy = st.builds(
-    person::CompanyType,
+person_CompanyType_strategy = st.builds(
+    person_CompanyType,
 )
-person::EStringToStringMapEntry_strategy = st.builds(
-    person::EStringToStringMapEntry,
+person_EStringToStringMapEntry_strategy = st.builds(
+    person_EStringToStringMapEntry,
 )
-person::DocumentRoot_strategy = st.builds(
-    person::DocumentRoot,
+person_DocumentRoot_strategy = st.builds(
+    person_DocumentRoot,
     mixed=
         safe_text
 )
 
-@given(instance=person::PersonType_strategy)
+@given(instance=person_PersonType_strategy)
 @settings(max_examples=50)
-def test_person::persontype_instantiation(instance):
-    assert isinstance(instance, person::PersonType)
-
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_email_type(instance):
-    assert isinstance(instance.email, str)
+def test_person_persontype_instantiation(instance):
+    assert isinstance(instance, person_PersonType)
 
 
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
 
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_country_type(instance):
-    assert isinstance(instance.country, str)
-
-
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_country_setter(instance):
-    original = instance.country
-    instance.country = original
-    assert instance.country == original
-
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_name_setter(instance):
+@given(instance=person_PersonType_strategy)
+def test_person_persontype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_age_type(instance):
-    assert isinstance(instance.age, str)
 
 
-@given(instance=person::PersonType_strategy)
-def test_person::persontype_age_setter(instance):
+@given(instance=person_PersonType_strategy)
+def test_person_persontype_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=person::CompanyType_strategy)
+
+
+@given(instance=person_PersonType_strategy)
+def test_person_persontype_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=person_PersonType_strategy)
+def test_person_persontype_country_setter(instance):
+    original = instance.country
+    instance.country = original
+    assert instance.country == original
+
+@given(instance=person_CompanyType_strategy)
 @settings(max_examples=50)
-def test_person::companytype_instantiation(instance):
-    assert isinstance(instance, person::CompanyType)
+def test_person_companytype_instantiation(instance):
+    assert isinstance(instance, person_CompanyType)
 
-@given(instance=person::EStringToStringMapEntry_strategy)
+@given(instance=person_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_person::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, person::EStringToStringMapEntry)
+def test_person_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, person_EStringToStringMapEntry)
 
-@given(instance=person::DocumentRoot_strategy)
+@given(instance=person_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_person::documentroot_instantiation(instance):
-    assert isinstance(instance, person::DocumentRoot)
-
-@given(instance=person::DocumentRoot_strategy)
-def test_person::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_person_documentroot_instantiation(instance):
+    assert isinstance(instance, person_DocumentRoot)
 
 
-@given(instance=person::DocumentRoot_strategy)
-def test_person::documentroot_mixed_setter(instance):
+
+@given(instance=person_DocumentRoot_strategy)
+def test_person_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original

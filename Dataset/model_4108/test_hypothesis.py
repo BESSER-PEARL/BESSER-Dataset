@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    wh::ExprEq,
-    wh::ExprNot,
-    wh::ExprOr,
-    wh::ExprAnd,
-    wh::ListExpr,
-    wh::Cons,
-    wh::ExprSimple,
-    wh::Expr,
-    wh::Exprs,
-    wh::Vars,
-    wh::Affect,
-    wh::Nop,
-    wh::EObject,
-    wh::Command,
-    wh::Output,
-    wh::Input,
-    wh::Definition,
-    wh::Program,
-    wh::Wh,
-    wh::Commands,
+from python_code import (
+    wh_ExprEq,
+    wh_ExprNot,
+    wh_ExprOr,
+    wh_ExprAnd,
+    wh_ListExpr,
+    wh_Cons,
+    wh_ExprSimple,
+    wh_Expr,
+    wh_Exprs,
+    wh_Vars,
+    wh_Affect,
+    wh_Nop,
+    wh_EObject,
+    wh_Command,
+    wh_Output,
+    wh_Input,
+    wh_Definition,
+    wh_Program,
+    wh_Wh,
+    wh_Commands,
 )
 
 # =============================================================================
@@ -34,37 +34,37 @@ from classes import (
 
 
 
-def test_wh::expreq_is_not_abstract():
-    assert not inspect.isabstract(wh::ExprEq)
+def test_wh_expreq_is_not_abstract():
+    assert not inspect.isabstract(wh_ExprEq)
 
 
-def test_wh::expreq_constructor_exists():
-    assert callable(wh::ExprEq.__init__)
+def test_wh_expreq_constructor_exists():
+    assert callable(wh_ExprEq.__init__)
 
 
-def test_wh::expreq_constructor_args():
-    sig = inspect.signature(wh::ExprEq.__init__)
+def test_wh_expreq_constructor_args():
+    sig = inspect.signature(wh_ExprEq.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::exprnot_is_not_abstract():
-    assert not inspect.isabstract(wh::ExprNot)
+def test_wh_exprnot_is_not_abstract():
+    assert not inspect.isabstract(wh_ExprNot)
 
 
-def test_wh::exprnot_constructor_exists():
-    assert callable(wh::ExprNot.__init__)
+def test_wh_exprnot_constructor_exists():
+    assert callable(wh_ExprNot.__init__)
 
 
-def test_wh::exprnot_constructor_args():
-    sig = inspect.signature(wh::ExprNot.__init__)
+def test_wh_exprnot_constructor_args():
+    sig = inspect.signature(wh_ExprNot.__init__)
     params = list(sig.parameters.keys())
     assert "not_" in params, "Missing parameter 'not_'"
 
-def test_wh::exprnot_has_not_():
-    assert hasattr(wh::ExprNot, "not_")
+def test_wh_exprnot_has_not_():
+    assert hasattr(wh_ExprNot, "not_")
     descriptor = None
-    for klass in wh::ExprNot.__mro__:
+    for klass in wh_ExprNot.__mro__:
         if "not_" in klass.__dict__:
             descriptor = klass.__dict__["not_"]
             break
@@ -72,79 +72,79 @@ def test_wh::exprnot_has_not_():
 
 
 
-def test_wh::expror_is_not_abstract():
-    assert not inspect.isabstract(wh::ExprOr)
+def test_wh_expror_is_not_abstract():
+    assert not inspect.isabstract(wh_ExprOr)
 
 
-def test_wh::expror_constructor_exists():
-    assert callable(wh::ExprOr.__init__)
+def test_wh_expror_constructor_exists():
+    assert callable(wh_ExprOr.__init__)
 
 
-def test_wh::expror_constructor_args():
-    sig = inspect.signature(wh::ExprOr.__init__)
+def test_wh_expror_constructor_args():
+    sig = inspect.signature(wh_ExprOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::exprand_is_not_abstract():
-    assert not inspect.isabstract(wh::ExprAnd)
+def test_wh_exprand_is_not_abstract():
+    assert not inspect.isabstract(wh_ExprAnd)
 
 
-def test_wh::exprand_constructor_exists():
-    assert callable(wh::ExprAnd.__init__)
+def test_wh_exprand_constructor_exists():
+    assert callable(wh_ExprAnd.__init__)
 
 
-def test_wh::exprand_constructor_args():
-    sig = inspect.signature(wh::ExprAnd.__init__)
+def test_wh_exprand_constructor_args():
+    sig = inspect.signature(wh_ExprAnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::listexpr_is_not_abstract():
-    assert not inspect.isabstract(wh::ListExpr)
+def test_wh_listexpr_is_not_abstract():
+    assert not inspect.isabstract(wh_ListExpr)
 
 
-def test_wh::listexpr_constructor_exists():
-    assert callable(wh::ListExpr.__init__)
+def test_wh_listexpr_constructor_exists():
+    assert callable(wh_ListExpr.__init__)
 
 
-def test_wh::listexpr_constructor_args():
-    sig = inspect.signature(wh::ListExpr.__init__)
+def test_wh_listexpr_constructor_args():
+    sig = inspect.signature(wh_ListExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::cons_is_not_abstract():
-    assert not inspect.isabstract(wh::Cons)
+def test_wh_cons_is_not_abstract():
+    assert not inspect.isabstract(wh_Cons)
 
 
-def test_wh::cons_constructor_exists():
-    assert callable(wh::Cons.__init__)
+def test_wh_cons_constructor_exists():
+    assert callable(wh_Cons.__init__)
 
 
-def test_wh::cons_constructor_args():
-    sig = inspect.signature(wh::Cons.__init__)
+def test_wh_cons_constructor_args():
+    sig = inspect.signature(wh_Cons.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::exprsimple_is_not_abstract():
-    assert not inspect.isabstract(wh::ExprSimple)
+def test_wh_exprsimple_is_not_abstract():
+    assert not inspect.isabstract(wh_ExprSimple)
 
 
-def test_wh::exprsimple_constructor_exists():
-    assert callable(wh::ExprSimple.__init__)
+def test_wh_exprsimple_constructor_exists():
+    assert callable(wh_ExprSimple.__init__)
 
 
-def test_wh::exprsimple_constructor_args():
-    sig = inspect.signature(wh::ExprSimple.__init__)
+def test_wh_exprsimple_constructor_args():
+    sig = inspect.signature(wh_ExprSimple.__init__)
     params = list(sig.parameters.keys())
     assert "str" in params, "Missing parameter 'str'"
 
-def test_wh::exprsimple_has_str():
-    assert hasattr(wh::ExprSimple, "str")
+def test_wh_exprsimple_has_str():
+    assert hasattr(wh_ExprSimple, "str")
     descriptor = None
-    for klass in wh::ExprSimple.__mro__:
+    for klass in wh_ExprSimple.__mro__:
         if "str" in klass.__dict__:
             descriptor = klass.__dict__["str"]
             break
@@ -152,51 +152,51 @@ def test_wh::exprsimple_has_str():
 
 
 
-def test_wh::expr_is_not_abstract():
-    assert not inspect.isabstract(wh::Expr)
+def test_wh_expr_is_not_abstract():
+    assert not inspect.isabstract(wh_Expr)
 
 
-def test_wh::expr_constructor_exists():
-    assert callable(wh::Expr.__init__)
+def test_wh_expr_constructor_exists():
+    assert callable(wh_Expr.__init__)
 
 
-def test_wh::expr_constructor_args():
-    sig = inspect.signature(wh::Expr.__init__)
+def test_wh_expr_constructor_args():
+    sig = inspect.signature(wh_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::exprs_is_not_abstract():
-    assert not inspect.isabstract(wh::Exprs)
+def test_wh_exprs_is_not_abstract():
+    assert not inspect.isabstract(wh_Exprs)
 
 
-def test_wh::exprs_constructor_exists():
-    assert callable(wh::Exprs.__init__)
+def test_wh_exprs_constructor_exists():
+    assert callable(wh_Exprs.__init__)
 
 
-def test_wh::exprs_constructor_args():
-    sig = inspect.signature(wh::Exprs.__init__)
+def test_wh_exprs_constructor_args():
+    sig = inspect.signature(wh_Exprs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::vars_is_not_abstract():
-    assert not inspect.isabstract(wh::Vars)
+def test_wh_vars_is_not_abstract():
+    assert not inspect.isabstract(wh_Vars)
 
 
-def test_wh::vars_constructor_exists():
-    assert callable(wh::Vars.__init__)
+def test_wh_vars_constructor_exists():
+    assert callable(wh_Vars.__init__)
 
 
-def test_wh::vars_constructor_args():
-    sig = inspect.signature(wh::Vars.__init__)
+def test_wh_vars_constructor_args():
+    sig = inspect.signature(wh_Vars.__init__)
     params = list(sig.parameters.keys())
     assert "vars" in params, "Missing parameter 'vars'"
 
-def test_wh::vars_has_vars():
-    assert hasattr(wh::Vars, "vars")
+def test_wh_vars_has_vars():
+    assert hasattr(wh_Vars, "vars")
     descriptor = None
-    for klass in wh::Vars.__mro__:
+    for klass in wh_Vars.__mro__:
         if "vars" in klass.__dict__:
             descriptor = klass.__dict__["vars"]
             break
@@ -204,37 +204,37 @@ def test_wh::vars_has_vars():
 
 
 
-def test_wh::affect_is_not_abstract():
-    assert not inspect.isabstract(wh::Affect)
+def test_wh_affect_is_not_abstract():
+    assert not inspect.isabstract(wh_Affect)
 
 
-def test_wh::affect_constructor_exists():
-    assert callable(wh::Affect.__init__)
+def test_wh_affect_constructor_exists():
+    assert callable(wh_Affect.__init__)
 
 
-def test_wh::affect_constructor_args():
-    sig = inspect.signature(wh::Affect.__init__)
+def test_wh_affect_constructor_args():
+    sig = inspect.signature(wh_Affect.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::nop_is_not_abstract():
-    assert not inspect.isabstract(wh::Nop)
+def test_wh_nop_is_not_abstract():
+    assert not inspect.isabstract(wh_Nop)
 
 
-def test_wh::nop_constructor_exists():
-    assert callable(wh::Nop.__init__)
+def test_wh_nop_constructor_exists():
+    assert callable(wh_Nop.__init__)
 
 
-def test_wh::nop_constructor_args():
-    sig = inspect.signature(wh::Nop.__init__)
+def test_wh_nop_constructor_args():
+    sig = inspect.signature(wh_Nop.__init__)
     params = list(sig.parameters.keys())
     assert "nop" in params, "Missing parameter 'nop'"
 
-def test_wh::nop_has_nop():
-    assert hasattr(wh::Nop, "nop")
+def test_wh_nop_has_nop():
+    assert hasattr(wh_Nop, "nop")
     descriptor = None
-    for klass in wh::Nop.__mro__:
+    for klass in wh_Nop.__mro__:
         if "nop" in klass.__dict__:
             descriptor = klass.__dict__["nop"]
             break
@@ -242,51 +242,51 @@ def test_wh::nop_has_nop():
 
 
 
-def test_wh::eobject_is_not_abstract():
-    assert not inspect.isabstract(wh::EObject)
+def test_wh_eobject_is_not_abstract():
+    assert not inspect.isabstract(wh_EObject)
 
 
-def test_wh::eobject_constructor_exists():
-    assert callable(wh::EObject.__init__)
+def test_wh_eobject_constructor_exists():
+    assert callable(wh_EObject.__init__)
 
 
-def test_wh::eobject_constructor_args():
-    sig = inspect.signature(wh::EObject.__init__)
+def test_wh_eobject_constructor_args():
+    sig = inspect.signature(wh_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::command_is_not_abstract():
-    assert not inspect.isabstract(wh::Command)
+def test_wh_command_is_not_abstract():
+    assert not inspect.isabstract(wh_Command)
 
 
-def test_wh::command_constructor_exists():
-    assert callable(wh::Command.__init__)
+def test_wh_command_constructor_exists():
+    assert callable(wh_Command.__init__)
 
 
-def test_wh::command_constructor_args():
-    sig = inspect.signature(wh::Command.__init__)
+def test_wh_command_constructor_args():
+    sig = inspect.signature(wh_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::output_is_not_abstract():
-    assert not inspect.isabstract(wh::Output)
+def test_wh_output_is_not_abstract():
+    assert not inspect.isabstract(wh_Output)
 
 
-def test_wh::output_constructor_exists():
-    assert callable(wh::Output.__init__)
+def test_wh_output_constructor_exists():
+    assert callable(wh_Output.__init__)
 
 
-def test_wh::output_constructor_args():
-    sig = inspect.signature(wh::Output.__init__)
+def test_wh_output_constructor_args():
+    sig = inspect.signature(wh_Output.__init__)
     params = list(sig.parameters.keys())
     assert "vars" in params, "Missing parameter 'vars'"
 
-def test_wh::output_has_vars():
-    assert hasattr(wh::Output, "vars")
+def test_wh_output_has_vars():
+    assert hasattr(wh_Output, "vars")
     descriptor = None
-    for klass in wh::Output.__mro__:
+    for klass in wh_Output.__mro__:
         if "vars" in klass.__dict__:
             descriptor = klass.__dict__["vars"]
             break
@@ -294,23 +294,23 @@ def test_wh::output_has_vars():
 
 
 
-def test_wh::input_is_not_abstract():
-    assert not inspect.isabstract(wh::Input)
+def test_wh_input_is_not_abstract():
+    assert not inspect.isabstract(wh_Input)
 
 
-def test_wh::input_constructor_exists():
-    assert callable(wh::Input.__init__)
+def test_wh_input_constructor_exists():
+    assert callable(wh_Input.__init__)
 
 
-def test_wh::input_constructor_args():
-    sig = inspect.signature(wh::Input.__init__)
+def test_wh_input_constructor_args():
+    sig = inspect.signature(wh_Input.__init__)
     params = list(sig.parameters.keys())
     assert "vars" in params, "Missing parameter 'vars'"
 
-def test_wh::input_has_vars():
-    assert hasattr(wh::Input, "vars")
+def test_wh_input_has_vars():
+    assert hasattr(wh_Input, "vars")
     descriptor = None
-    for klass in wh::Input.__mro__:
+    for klass in wh_Input.__mro__:
         if "vars" in klass.__dict__:
             descriptor = klass.__dict__["vars"]
             break
@@ -318,37 +318,37 @@ def test_wh::input_has_vars():
 
 
 
-def test_wh::definition_is_not_abstract():
-    assert not inspect.isabstract(wh::Definition)
+def test_wh_definition_is_not_abstract():
+    assert not inspect.isabstract(wh_Definition)
 
 
-def test_wh::definition_constructor_exists():
-    assert callable(wh::Definition.__init__)
+def test_wh_definition_constructor_exists():
+    assert callable(wh_Definition.__init__)
 
 
-def test_wh::definition_constructor_args():
-    sig = inspect.signature(wh::Definition.__init__)
+def test_wh_definition_constructor_args():
+    sig = inspect.signature(wh_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::program_is_not_abstract():
-    assert not inspect.isabstract(wh::Program)
+def test_wh_program_is_not_abstract():
+    assert not inspect.isabstract(wh_Program)
 
 
-def test_wh::program_constructor_exists():
-    assert callable(wh::Program.__init__)
+def test_wh_program_constructor_exists():
+    assert callable(wh_Program.__init__)
 
 
-def test_wh::program_constructor_args():
-    sig = inspect.signature(wh::Program.__init__)
+def test_wh_program_constructor_args():
+    sig = inspect.signature(wh_Program.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wh::program_has_name():
-    assert hasattr(wh::Program, "name")
+def test_wh_program_has_name():
+    assert hasattr(wh_Program, "name")
     descriptor = None
-    for klass in wh::Program.__mro__:
+    for klass in wh_Program.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -356,30 +356,30 @@ def test_wh::program_has_name():
 
 
 
-def test_wh::wh_is_not_abstract():
-    assert not inspect.isabstract(wh::Wh)
+def test_wh_wh_is_not_abstract():
+    assert not inspect.isabstract(wh_Wh)
 
 
-def test_wh::wh_constructor_exists():
-    assert callable(wh::Wh.__init__)
+def test_wh_wh_constructor_exists():
+    assert callable(wh_Wh.__init__)
 
 
-def test_wh::wh_constructor_args():
-    sig = inspect.signature(wh::Wh.__init__)
+def test_wh_wh_constructor_args():
+    sig = inspect.signature(wh_Wh.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::commands_is_not_abstract():
-    assert not inspect.isabstract(wh::Commands)
+def test_wh_commands_is_not_abstract():
+    assert not inspect.isabstract(wh_Commands)
 
 
-def test_wh::commands_constructor_exists():
-    assert callable(wh::Commands.__init__)
+def test_wh_commands_constructor_exists():
+    assert callable(wh_Commands.__init__)
 
 
-def test_wh::commands_constructor_args():
-    sig = inspect.signature(wh::Commands.__init__)
+def test_wh_commands_constructor_args():
+    sig = inspect.signature(wh_Commands.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -394,254 +394,233 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-wh::ExprEq_strategy = st.builds(
-    wh::ExprEq,
+wh_ExprEq_strategy = st.builds(
+    wh_ExprEq,
 )
-wh::ExprNot_strategy = st.builds(
-    wh::ExprNot,
+wh_ExprNot_strategy = st.builds(
+    wh_ExprNot,
     not_=
         safe_text
 )
-wh::ExprOr_strategy = st.builds(
-    wh::ExprOr,
+wh_ExprOr_strategy = st.builds(
+    wh_ExprOr,
 )
-wh::ExprAnd_strategy = st.builds(
-    wh::ExprAnd,
+wh_ExprAnd_strategy = st.builds(
+    wh_ExprAnd,
 )
-wh::ListExpr_strategy = st.builds(
-    wh::ListExpr,
+wh_ListExpr_strategy = st.builds(
+    wh_ListExpr,
 )
-wh::Cons_strategy = st.builds(
-    wh::Cons,
+wh_Cons_strategy = st.builds(
+    wh_Cons,
 )
-wh::ExprSimple_strategy = st.builds(
-    wh::ExprSimple,
+wh_ExprSimple_strategy = st.builds(
+    wh_ExprSimple,
     str=
         safe_text
 )
-wh::Expr_strategy = st.builds(
-    wh::Expr,
+wh_Expr_strategy = st.builds(
+    wh_Expr,
 )
-wh::Exprs_strategy = st.builds(
-    wh::Exprs,
+wh_Exprs_strategy = st.builds(
+    wh_Exprs,
 )
-wh::Vars_strategy = st.builds(
-    wh::Vars,
+wh_Vars_strategy = st.builds(
+    wh_Vars,
     vars=
         safe_text
 )
-wh::Affect_strategy = st.builds(
-    wh::Affect,
+wh_Affect_strategy = st.builds(
+    wh_Affect,
 )
-wh::Nop_strategy = st.builds(
-    wh::Nop,
+wh_Nop_strategy = st.builds(
+    wh_Nop,
     nop=
         safe_text
 )
-wh::EObject_strategy = st.builds(
-    wh::EObject,
+wh_EObject_strategy = st.builds(
+    wh_EObject,
 )
-wh::Command_strategy = st.builds(
-    wh::Command,
+wh_Command_strategy = st.builds(
+    wh_Command,
 )
-wh::Output_strategy = st.builds(
-    wh::Output,
+wh_Output_strategy = st.builds(
+    wh_Output,
     vars=
         safe_text
 )
-wh::Input_strategy = st.builds(
-    wh::Input,
+wh_Input_strategy = st.builds(
+    wh_Input,
     vars=
         safe_text
 )
-wh::Definition_strategy = st.builds(
-    wh::Definition,
+wh_Definition_strategy = st.builds(
+    wh_Definition,
 )
-wh::Program_strategy = st.builds(
-    wh::Program,
+wh_Program_strategy = st.builds(
+    wh_Program,
     name=
         safe_text
 )
-wh::Wh_strategy = st.builds(
-    wh::Wh,
+wh_Wh_strategy = st.builds(
+    wh_Wh,
 )
-wh::Commands_strategy = st.builds(
-    wh::Commands,
+wh_Commands_strategy = st.builds(
+    wh_Commands,
 )
 
-@given(instance=wh::ExprEq_strategy)
+@given(instance=wh_ExprEq_strategy)
 @settings(max_examples=50)
-def test_wh::expreq_instantiation(instance):
-    assert isinstance(instance, wh::ExprEq)
+def test_wh_expreq_instantiation(instance):
+    assert isinstance(instance, wh_ExprEq)
 
-@given(instance=wh::ExprNot_strategy)
+@given(instance=wh_ExprNot_strategy)
 @settings(max_examples=50)
-def test_wh::exprnot_instantiation(instance):
-    assert isinstance(instance, wh::ExprNot)
-
-@given(instance=wh::ExprNot_strategy)
-def test_wh::exprnot_not__type(instance):
-    assert isinstance(instance.not_, str)
+def test_wh_exprnot_instantiation(instance):
+    assert isinstance(instance, wh_ExprNot)
 
 
-@given(instance=wh::ExprNot_strategy)
-def test_wh::exprnot_not__setter(instance):
+
+@given(instance=wh_ExprNot_strategy)
+def test_wh_exprnot_not__setter(instance):
     original = instance.not_
     instance.not_ = original
     assert instance.not_ == original
 
-@given(instance=wh::ExprOr_strategy)
+@given(instance=wh_ExprOr_strategy)
 @settings(max_examples=50)
-def test_wh::expror_instantiation(instance):
-    assert isinstance(instance, wh::ExprOr)
+def test_wh_expror_instantiation(instance):
+    assert isinstance(instance, wh_ExprOr)
 
-@given(instance=wh::ExprAnd_strategy)
+@given(instance=wh_ExprAnd_strategy)
 @settings(max_examples=50)
-def test_wh::exprand_instantiation(instance):
-    assert isinstance(instance, wh::ExprAnd)
+def test_wh_exprand_instantiation(instance):
+    assert isinstance(instance, wh_ExprAnd)
 
-@given(instance=wh::ListExpr_strategy)
+@given(instance=wh_ListExpr_strategy)
 @settings(max_examples=50)
-def test_wh::listexpr_instantiation(instance):
-    assert isinstance(instance, wh::ListExpr)
+def test_wh_listexpr_instantiation(instance):
+    assert isinstance(instance, wh_ListExpr)
 
-@given(instance=wh::Cons_strategy)
+@given(instance=wh_Cons_strategy)
 @settings(max_examples=50)
-def test_wh::cons_instantiation(instance):
-    assert isinstance(instance, wh::Cons)
+def test_wh_cons_instantiation(instance):
+    assert isinstance(instance, wh_Cons)
 
-@given(instance=wh::ExprSimple_strategy)
+@given(instance=wh_ExprSimple_strategy)
 @settings(max_examples=50)
-def test_wh::exprsimple_instantiation(instance):
-    assert isinstance(instance, wh::ExprSimple)
-
-@given(instance=wh::ExprSimple_strategy)
-def test_wh::exprsimple_str_type(instance):
-    assert isinstance(instance.str, str)
+def test_wh_exprsimple_instantiation(instance):
+    assert isinstance(instance, wh_ExprSimple)
 
 
-@given(instance=wh::ExprSimple_strategy)
-def test_wh::exprsimple_str_setter(instance):
+
+@given(instance=wh_ExprSimple_strategy)
+def test_wh_exprsimple_str_setter(instance):
     original = instance.str
     instance.str = original
     assert instance.str == original
 
-@given(instance=wh::Expr_strategy)
+@given(instance=wh_Expr_strategy)
 @settings(max_examples=50)
-def test_wh::expr_instantiation(instance):
-    assert isinstance(instance, wh::Expr)
+def test_wh_expr_instantiation(instance):
+    assert isinstance(instance, wh_Expr)
 
-@given(instance=wh::Exprs_strategy)
+@given(instance=wh_Exprs_strategy)
 @settings(max_examples=50)
-def test_wh::exprs_instantiation(instance):
-    assert isinstance(instance, wh::Exprs)
+def test_wh_exprs_instantiation(instance):
+    assert isinstance(instance, wh_Exprs)
 
-@given(instance=wh::Vars_strategy)
+@given(instance=wh_Vars_strategy)
 @settings(max_examples=50)
-def test_wh::vars_instantiation(instance):
-    assert isinstance(instance, wh::Vars)
-
-@given(instance=wh::Vars_strategy)
-def test_wh::vars_vars_type(instance):
-    assert isinstance(instance.vars, str)
+def test_wh_vars_instantiation(instance):
+    assert isinstance(instance, wh_Vars)
 
 
-@given(instance=wh::Vars_strategy)
-def test_wh::vars_vars_setter(instance):
+
+@given(instance=wh_Vars_strategy)
+def test_wh_vars_vars_setter(instance):
     original = instance.vars
     instance.vars = original
     assert instance.vars == original
 
-@given(instance=wh::Affect_strategy)
+@given(instance=wh_Affect_strategy)
 @settings(max_examples=50)
-def test_wh::affect_instantiation(instance):
-    assert isinstance(instance, wh::Affect)
+def test_wh_affect_instantiation(instance):
+    assert isinstance(instance, wh_Affect)
 
-@given(instance=wh::Nop_strategy)
+@given(instance=wh_Nop_strategy)
 @settings(max_examples=50)
-def test_wh::nop_instantiation(instance):
-    assert isinstance(instance, wh::Nop)
-
-@given(instance=wh::Nop_strategy)
-def test_wh::nop_nop_type(instance):
-    assert isinstance(instance.nop, str)
+def test_wh_nop_instantiation(instance):
+    assert isinstance(instance, wh_Nop)
 
 
-@given(instance=wh::Nop_strategy)
-def test_wh::nop_nop_setter(instance):
+
+@given(instance=wh_Nop_strategy)
+def test_wh_nop_nop_setter(instance):
     original = instance.nop
     instance.nop = original
     assert instance.nop == original
 
-@given(instance=wh::EObject_strategy)
+@given(instance=wh_EObject_strategy)
 @settings(max_examples=50)
-def test_wh::eobject_instantiation(instance):
-    assert isinstance(instance, wh::EObject)
+def test_wh_eobject_instantiation(instance):
+    assert isinstance(instance, wh_EObject)
 
-@given(instance=wh::Command_strategy)
+@given(instance=wh_Command_strategy)
 @settings(max_examples=50)
-def test_wh::command_instantiation(instance):
-    assert isinstance(instance, wh::Command)
+def test_wh_command_instantiation(instance):
+    assert isinstance(instance, wh_Command)
 
-@given(instance=wh::Output_strategy)
+@given(instance=wh_Output_strategy)
 @settings(max_examples=50)
-def test_wh::output_instantiation(instance):
-    assert isinstance(instance, wh::Output)
-
-@given(instance=wh::Output_strategy)
-def test_wh::output_vars_type(instance):
-    assert isinstance(instance.vars, str)
+def test_wh_output_instantiation(instance):
+    assert isinstance(instance, wh_Output)
 
 
-@given(instance=wh::Output_strategy)
-def test_wh::output_vars_setter(instance):
+
+@given(instance=wh_Output_strategy)
+def test_wh_output_vars_setter(instance):
     original = instance.vars
     instance.vars = original
     assert instance.vars == original
 
-@given(instance=wh::Input_strategy)
+@given(instance=wh_Input_strategy)
 @settings(max_examples=50)
-def test_wh::input_instantiation(instance):
-    assert isinstance(instance, wh::Input)
-
-@given(instance=wh::Input_strategy)
-def test_wh::input_vars_type(instance):
-    assert isinstance(instance.vars, str)
+def test_wh_input_instantiation(instance):
+    assert isinstance(instance, wh_Input)
 
 
-@given(instance=wh::Input_strategy)
-def test_wh::input_vars_setter(instance):
+
+@given(instance=wh_Input_strategy)
+def test_wh_input_vars_setter(instance):
     original = instance.vars
     instance.vars = original
     assert instance.vars == original
 
-@given(instance=wh::Definition_strategy)
+@given(instance=wh_Definition_strategy)
 @settings(max_examples=50)
-def test_wh::definition_instantiation(instance):
-    assert isinstance(instance, wh::Definition)
+def test_wh_definition_instantiation(instance):
+    assert isinstance(instance, wh_Definition)
 
-@given(instance=wh::Program_strategy)
+@given(instance=wh_Program_strategy)
 @settings(max_examples=50)
-def test_wh::program_instantiation(instance):
-    assert isinstance(instance, wh::Program)
-
-@given(instance=wh::Program_strategy)
-def test_wh::program_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wh_program_instantiation(instance):
+    assert isinstance(instance, wh_Program)
 
 
-@given(instance=wh::Program_strategy)
-def test_wh::program_name_setter(instance):
+
+@given(instance=wh_Program_strategy)
+def test_wh_program_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=wh::Wh_strategy)
+@given(instance=wh_Wh_strategy)
 @settings(max_examples=50)
-def test_wh::wh_instantiation(instance):
-    assert isinstance(instance, wh::Wh)
+def test_wh_wh_instantiation(instance):
+    assert isinstance(instance, wh_Wh)
 
-@given(instance=wh::Commands_strategy)
+@given(instance=wh_Commands_strategy)
 @settings(max_examples=50)
-def test_wh::commands_instantiation(instance):
-    assert isinstance(instance, wh::Commands)
+def test_wh_commands_instantiation(instance):
+    assert isinstance(instance, wh_Commands)

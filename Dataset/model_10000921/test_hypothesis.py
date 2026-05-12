@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     KeyPressEventArgs_,
@@ -40,8 +40,8 @@ from python_code import (
     Groesse,
     PlaetzchenForm,
     Zutat,
-    PL_Groesse,
     PL_Form,
+    PL_Groesse,
 )
 
 # =============================================================================
@@ -329,20 +329,11 @@ def test_rezept_constructor_exists():
 def test_rezept_constructor_args():
     sig = inspect.signature(Rezept.__init__)
     params = list(sig.parameters.keys())
-    assert "basismenge" in params, "Missing parameter 'basismenge'"
     assert "rezeptname" in params, "Missing parameter 'rezeptname'"
+    assert "basismenge" in params, "Missing parameter 'basismenge'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "basis" in params, "Missing parameter 'basis'"
-
-def test_rezept_has_basismenge():
-    assert hasattr(Rezept, "basismenge")
-    descriptor = None
-    for klass in Rezept.__mro__:
-        if "basismenge" in klass.__dict__:
-            descriptor = klass.__dict__["basismenge"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_rezept_has_rezeptname():
     assert hasattr(Rezept, "rezeptname")
@@ -350,6 +341,15 @@ def test_rezept_has_rezeptname():
     for klass in Rezept.__mro__:
         if "rezeptname" in klass.__dict__:
             descriptor = klass.__dict__["rezeptname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rezept_has_basismenge():
+    assert hasattr(Rezept, "basismenge")
+    descriptor = None
+    for klass in Rezept.__mro__:
+        if "basismenge" in klass.__dict__:
+            descriptor = klass.__dict__["basismenge"]
             break
     assert isinstance(descriptor, property)
 
@@ -362,21 +362,21 @@ def test_rezept_has_attribute2():
             break
     assert isinstance(descriptor, property)
 
-def test_rezept_has_attribute():
-    assert hasattr(Rezept, "attribute")
-    descriptor = None
-    for klass in Rezept.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_rezept_has_basis():
     assert hasattr(Rezept, "basis")
     descriptor = None
     for klass in Rezept.__mro__:
         if "basis" in klass.__dict__:
             descriptor = klass.__dict__["basis"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rezept_has_attribute():
+    assert hasattr(Rezept, "attribute")
+    descriptor = None
+    for klass in Rezept.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -394,9 +394,9 @@ def test_dekorrezept_constructor_args():
     sig = inspect.signature(DekorRezept.__init__)
     params = list(sig.parameters.keys())
     assert "basismenge" in params, "Missing parameter 'basismenge'"
-    assert "dekor" in params, "Missing parameter 'dekor'"
     assert "zutaten" in params, "Missing parameter 'zutaten'"
     assert "basis" in params, "Missing parameter 'basis'"
+    assert "dekor" in params, "Missing parameter 'dekor'"
 
 def test_dekorrezept_has_basismenge():
     assert hasattr(DekorRezept, "basismenge")
@@ -404,15 +404,6 @@ def test_dekorrezept_has_basismenge():
     for klass in DekorRezept.__mro__:
         if "basismenge" in klass.__dict__:
             descriptor = klass.__dict__["basismenge"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dekorrezept_has_dekor():
-    assert hasattr(DekorRezept, "dekor")
-    descriptor = None
-    for klass in DekorRezept.__mro__:
-        if "dekor" in klass.__dict__:
-            descriptor = klass.__dict__["dekor"]
             break
     assert isinstance(descriptor, property)
 
@@ -431,6 +422,15 @@ def test_dekorrezept_has_basis():
     for klass in DekorRezept.__mro__:
         if "basis" in klass.__dict__:
             descriptor = klass.__dict__["basis"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dekorrezept_has_dekor():
+    assert hasattr(DekorRezept, "dekor")
+    descriptor = None
+    for klass in DekorRezept.__mro__:
+        if "dekor" in klass.__dict__:
+            descriptor = klass.__dict__["dekor"]
             break
     assert isinstance(descriptor, property)
 
@@ -527,33 +527,15 @@ def test_plaetzchen_constructor_exists():
 def test_plaetzchen_constructor_args():
     sig = inspect.signature(Plaetzchen.__init__)
     params = list(sig.parameters.keys())
-    assert "deko" in params, "Missing parameter 'deko'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "menge" in params, "Missing parameter 'menge'"
-    assert "rezeptDeko" in params, "Missing parameter 'rezeptDeko'"
-    assert "form" in params, "Missing parameter 'form'"
-    assert "teig" in params, "Missing parameter 'teig'"
+    assert "deko" in params, "Missing parameter 'deko'"
     assert "rezeptTeig" in params, "Missing parameter 'rezeptTeig'"
+    assert "form" in params, "Missing parameter 'form'"
     assert "guss" in params, "Missing parameter 'guss'"
+    assert "rezeptDeko" in params, "Missing parameter 'rezeptDeko'"
+    assert "teig" in params, "Missing parameter 'teig'"
     assert "rezeptGuss" in params, "Missing parameter 'rezeptGuss'"
-
-def test_plaetzchen_has_deko():
-    assert hasattr(Plaetzchen, "deko")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "deko" in klass.__dict__:
-            descriptor = klass.__dict__["deko"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchen_has_name():
-    assert hasattr(Plaetzchen, "name")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_plaetzchen_has_menge():
     assert hasattr(Plaetzchen, "menge")
@@ -564,30 +546,12 @@ def test_plaetzchen_has_menge():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchen_has_rezeptDeko():
-    assert hasattr(Plaetzchen, "rezeptDeko")
+def test_plaetzchen_has_deko():
+    assert hasattr(Plaetzchen, "deko")
     descriptor = None
     for klass in Plaetzchen.__mro__:
-        if "rezeptDeko" in klass.__dict__:
-            descriptor = klass.__dict__["rezeptDeko"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchen_has_form():
-    assert hasattr(Plaetzchen, "form")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchen_has_teig():
-    assert hasattr(Plaetzchen, "teig")
-    descriptor = None
-    for klass in Plaetzchen.__mro__:
-        if "teig" in klass.__dict__:
-            descriptor = klass.__dict__["teig"]
+        if "deko" in klass.__dict__:
+            descriptor = klass.__dict__["deko"]
             break
     assert isinstance(descriptor, property)
 
@@ -600,6 +564,15 @@ def test_plaetzchen_has_rezeptTeig():
             break
     assert isinstance(descriptor, property)
 
+def test_plaetzchen_has_form():
+    assert hasattr(Plaetzchen, "form")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_plaetzchen_has_guss():
     assert hasattr(Plaetzchen, "guss")
     descriptor = None
@@ -609,12 +582,39 @@ def test_plaetzchen_has_guss():
             break
     assert isinstance(descriptor, property)
 
+def test_plaetzchen_has_rezeptDeko():
+    assert hasattr(Plaetzchen, "rezeptDeko")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "rezeptDeko" in klass.__dict__:
+            descriptor = klass.__dict__["rezeptDeko"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_teig():
+    assert hasattr(Plaetzchen, "teig")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "teig" in klass.__dict__:
+            descriptor = klass.__dict__["teig"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_plaetzchen_has_rezeptGuss():
     assert hasattr(Plaetzchen, "rezeptGuss")
     descriptor = None
     for klass in Plaetzchen.__mro__:
         if "rezeptGuss" in klass.__dict__:
             descriptor = klass.__dict__["rezeptGuss"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_name():
+    assert hasattr(Plaetzchen, "name")
+    descriptor = None
+    for klass in Plaetzchen.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -645,20 +645,11 @@ def test_teigrezept_constructor_exists():
 def test_teigrezept_constructor_args():
     sig = inspect.signature(TeigRezept.__init__)
     params = list(sig.parameters.keys())
-    assert "zutaten" in params, "Missing parameter 'zutaten'"
     assert "basismenge" in params, "Missing parameter 'basismenge'"
-    assert "backtemp" in params, "Missing parameter 'backtemp'"
-    assert "backzeit" in params, "Missing parameter 'backzeit'"
     assert "basis" in params, "Missing parameter 'basis'"
-
-def test_teigrezept_has_zutaten():
-    assert hasattr(TeigRezept, "zutaten")
-    descriptor = None
-    for klass in TeigRezept.__mro__:
-        if "zutaten" in klass.__dict__:
-            descriptor = klass.__dict__["zutaten"]
-            break
-    assert isinstance(descriptor, property)
+    assert "zutaten" in params, "Missing parameter 'zutaten'"
+    assert "backzeit" in params, "Missing parameter 'backzeit'"
+    assert "backtemp" in params, "Missing parameter 'backtemp'"
 
 def test_teigrezept_has_basismenge():
     assert hasattr(TeigRezept, "basismenge")
@@ -669,12 +660,21 @@ def test_teigrezept_has_basismenge():
             break
     assert isinstance(descriptor, property)
 
-def test_teigrezept_has_backtemp():
-    assert hasattr(TeigRezept, "backtemp")
+def test_teigrezept_has_basis():
+    assert hasattr(TeigRezept, "basis")
     descriptor = None
     for klass in TeigRezept.__mro__:
-        if "backtemp" in klass.__dict__:
-            descriptor = klass.__dict__["backtemp"]
+        if "basis" in klass.__dict__:
+            descriptor = klass.__dict__["basis"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_teigrezept_has_zutaten():
+    assert hasattr(TeigRezept, "zutaten")
+    descriptor = None
+    for klass in TeigRezept.__mro__:
+        if "zutaten" in klass.__dict__:
+            descriptor = klass.__dict__["zutaten"]
             break
     assert isinstance(descriptor, property)
 
@@ -687,12 +687,12 @@ def test_teigrezept_has_backzeit():
             break
     assert isinstance(descriptor, property)
 
-def test_teigrezept_has_basis():
-    assert hasattr(TeigRezept, "basis")
+def test_teigrezept_has_backtemp():
+    assert hasattr(TeigRezept, "backtemp")
     descriptor = None
     for klass in TeigRezept.__mro__:
-        if "basis" in klass.__dict__:
-            descriptor = klass.__dict__["basis"]
+        if "backtemp" in klass.__dict__:
+            descriptor = klass.__dict__["backtemp"]
             break
     assert isinstance(descriptor, property)
 
@@ -725,12 +725,12 @@ def test_konfigdatei_constructor_args():
     params = list(sig.parameters.keys())
     assert "menge1" in params, "Missing parameter 'menge1'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "plaetzchen" in params, "Missing parameter 'plaetzchen'"
+    assert "menge" in params, "Missing parameter 'menge'"
     assert "backtemp" in params, "Missing parameter 'backtemp'"
+    assert "plaetzchen" in params, "Missing parameter 'plaetzchen'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "backzeit" in params, "Missing parameter 'backzeit'"
-    assert "menge" in params, "Missing parameter 'menge'"
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_konfigdatei_has_menge1():
     assert hasattr(KonfigDatei, "menge1")
@@ -750,21 +750,12 @@ def test_konfigdatei_has_attribute():
             break
     assert isinstance(descriptor, property)
 
-def test_konfigdatei_has_name():
-    assert hasattr(KonfigDatei, "name")
+def test_konfigdatei_has_menge():
+    assert hasattr(KonfigDatei, "menge")
     descriptor = None
     for klass in KonfigDatei.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_konfigdatei_has_plaetzchen():
-    assert hasattr(KonfigDatei, "plaetzchen")
-    descriptor = None
-    for klass in KonfigDatei.__mro__:
-        if "plaetzchen" in klass.__dict__:
-            descriptor = klass.__dict__["plaetzchen"]
+        if "menge" in klass.__dict__:
+            descriptor = klass.__dict__["menge"]
             break
     assert isinstance(descriptor, property)
 
@@ -774,6 +765,15 @@ def test_konfigdatei_has_backtemp():
     for klass in KonfigDatei.__mro__:
         if "backtemp" in klass.__dict__:
             descriptor = klass.__dict__["backtemp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_konfigdatei_has_plaetzchen():
+    assert hasattr(KonfigDatei, "plaetzchen")
+    descriptor = None
+    for klass in KonfigDatei.__mro__:
+        if "plaetzchen" in klass.__dict__:
+            descriptor = klass.__dict__["plaetzchen"]
             break
     assert isinstance(descriptor, property)
 
@@ -795,12 +795,12 @@ def test_konfigdatei_has_backzeit():
             break
     assert isinstance(descriptor, property)
 
-def test_konfigdatei_has_menge():
-    assert hasattr(KonfigDatei, "menge")
+def test_konfigdatei_has_name():
+    assert hasattr(KonfigDatei, "name")
     descriptor = None
     for klass in KonfigDatei.__mro__:
-        if "menge" in klass.__dict__:
-            descriptor = klass.__dict__["menge"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -817,19 +817,10 @@ def test_guikeksform_constructor_exists():
 def test_guikeksform_constructor_args():
     sig = inspect.signature(GUIKeksform.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "breite" in params, "Missing parameter 'breite'"
     assert "laenge" in params, "Missing parameter 'laenge'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "pl__f" in params, "Missing parameter 'pl__f'"
-
-def test_guikeksform_has_name():
-    assert hasattr(GUIKeksform, "name")
-    descriptor = None
-    for klass in GUIKeksform.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_guikeksform_has_breite():
     assert hasattr(GUIKeksform, "breite")
@@ -846,6 +837,15 @@ def test_guikeksform_has_laenge():
     for klass in GUIKeksform.__mro__:
         if "laenge" in klass.__dict__:
             descriptor = klass.__dict__["laenge"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guikeksform_has_name():
+    assert hasattr(GUIKeksform, "name")
+    descriptor = None
+    for klass in GUIKeksform.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -871,67 +871,22 @@ def test_gui_constructor_exists():
 def test_gui_constructor_args():
     sig = inspect.signature(GUI.__init__)
     params = list(sig.parameters.keys())
-    assert "plaetzchenname" in params, "Missing parameter 'plaetzchenname'"
-    assert "zutatenList" in params, "Missing parameter 'zutatenList'"
-    assert "dekorList" in params, "Missing parameter 'dekorList'"
-    assert "datei" in params, "Missing parameter 'datei'"
-    assert "form" in params, "Missing parameter 'form'"
     assert "groesse" in params, "Missing parameter 'groesse'"
-    assert "deko" in params, "Missing parameter 'deko'"
-    assert "dateiname" in params, "Missing parameter 'dateiname'"
-    assert "teigsorte" in params, "Missing parameter 'teigsorte'"
-    assert "plaetzchen" in params, "Missing parameter 'plaetzchen'"
-    assert "teigList" in params, "Missing parameter 'teigList'"
     assert "guss" in params, "Missing parameter 'guss'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "plformList" in params, "Missing parameter 'plformList'"
+    assert "plaetzchenname" in params, "Missing parameter 'plaetzchenname'"
     assert "gussList" in params, "Missing parameter 'gussList'"
     assert "stueckzahl" in params, "Missing parameter 'stueckzahl'"
-
-def test_gui_has_plaetzchenname():
-    assert hasattr(GUI, "plaetzchenname")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "plaetzchenname" in klass.__dict__:
-            descriptor = klass.__dict__["plaetzchenname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_zutatenList():
-    assert hasattr(GUI, "zutatenList")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "zutatenList" in klass.__dict__:
-            descriptor = klass.__dict__["zutatenList"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_dekorList():
-    assert hasattr(GUI, "dekorList")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "dekorList" in klass.__dict__:
-            descriptor = klass.__dict__["dekorList"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_datei():
-    assert hasattr(GUI, "datei")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "datei" in klass.__dict__:
-            descriptor = klass.__dict__["datei"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_form():
-    assert hasattr(GUI, "form")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
-            break
-    assert isinstance(descriptor, property)
+    assert "dekorList" in params, "Missing parameter 'dekorList'"
+    assert "zutatenList" in params, "Missing parameter 'zutatenList'"
+    assert "deko" in params, "Missing parameter 'deko'"
+    assert "teigsorte" in params, "Missing parameter 'teigsorte'"
+    assert "teigList" in params, "Missing parameter 'teigList'"
+    assert "plaetzchen" in params, "Missing parameter 'plaetzchen'"
+    assert "dateiname" in params, "Missing parameter 'dateiname'"
+    assert "datei" in params, "Missing parameter 'datei'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "form" in params, "Missing parameter 'form'"
+    assert "plformList" in params, "Missing parameter 'plformList'"
 
 def test_gui_has_groesse():
     assert hasattr(GUI, "groesse")
@@ -939,51 +894,6 @@ def test_gui_has_groesse():
     for klass in GUI.__mro__:
         if "groesse" in klass.__dict__:
             descriptor = klass.__dict__["groesse"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_deko():
-    assert hasattr(GUI, "deko")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "deko" in klass.__dict__:
-            descriptor = klass.__dict__["deko"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_dateiname():
-    assert hasattr(GUI, "dateiname")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "dateiname" in klass.__dict__:
-            descriptor = klass.__dict__["dateiname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_teigsorte():
-    assert hasattr(GUI, "teigsorte")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "teigsorte" in klass.__dict__:
-            descriptor = klass.__dict__["teigsorte"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_plaetzchen():
-    assert hasattr(GUI, "plaetzchen")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "plaetzchen" in klass.__dict__:
-            descriptor = klass.__dict__["plaetzchen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_teigList():
-    assert hasattr(GUI, "teigList")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "teigList" in klass.__dict__:
-            descriptor = klass.__dict__["teigList"]
             break
     assert isinstance(descriptor, property)
 
@@ -996,21 +906,12 @@ def test_gui_has_guss():
             break
     assert isinstance(descriptor, property)
 
-def test_gui_has_attribute():
-    assert hasattr(GUI, "attribute")
+def test_gui_has_plaetzchenname():
+    assert hasattr(GUI, "plaetzchenname")
     descriptor = None
     for klass in GUI.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gui_has_plformList():
-    assert hasattr(GUI, "plformList")
-    descriptor = None
-    for klass in GUI.__mro__:
-        if "plformList" in klass.__dict__:
-            descriptor = klass.__dict__["plformList"]
+        if "plaetzchenname" in klass.__dict__:
+            descriptor = klass.__dict__["plaetzchenname"]
             break
     assert isinstance(descriptor, property)
 
@@ -1032,6 +933,105 @@ def test_gui_has_stueckzahl():
             break
     assert isinstance(descriptor, property)
 
+def test_gui_has_dekorList():
+    assert hasattr(GUI, "dekorList")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "dekorList" in klass.__dict__:
+            descriptor = klass.__dict__["dekorList"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_zutatenList():
+    assert hasattr(GUI, "zutatenList")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "zutatenList" in klass.__dict__:
+            descriptor = klass.__dict__["zutatenList"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_deko():
+    assert hasattr(GUI, "deko")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "deko" in klass.__dict__:
+            descriptor = klass.__dict__["deko"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_teigsorte():
+    assert hasattr(GUI, "teigsorte")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "teigsorte" in klass.__dict__:
+            descriptor = klass.__dict__["teigsorte"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_teigList():
+    assert hasattr(GUI, "teigList")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "teigList" in klass.__dict__:
+            descriptor = klass.__dict__["teigList"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_plaetzchen():
+    assert hasattr(GUI, "plaetzchen")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "plaetzchen" in klass.__dict__:
+            descriptor = klass.__dict__["plaetzchen"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_dateiname():
+    assert hasattr(GUI, "dateiname")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "dateiname" in klass.__dict__:
+            descriptor = klass.__dict__["dateiname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_datei():
+    assert hasattr(GUI, "datei")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "datei" in klass.__dict__:
+            descriptor = klass.__dict__["datei"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_attribute():
+    assert hasattr(GUI, "attribute")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_form():
+    assert hasattr(GUI, "form")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gui_has_plformList():
+    assert hasattr(GUI, "plformList")
+    descriptor = None
+    for klass in GUI.__mro__:
+        if "plformList" in klass.__dict__:
+            descriptor = klass.__dict__["plformList"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_groesse_is_not_abstract():
@@ -1045,26 +1045,17 @@ def test_groesse_constructor_exists():
 def test_groesse_constructor_args():
     sig = inspect.signature(Groesse.__init__)
     params = list(sig.parameters.keys())
-    assert "laenge" in params, "Missing parameter 'laenge'"
-    assert "name1" in params, "Missing parameter 'name1'"
-    assert "breite" in params, "Missing parameter 'breite'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "breite" in params, "Missing parameter 'breite'"
+    assert "name1" in params, "Missing parameter 'name1'"
+    assert "laenge" in params, "Missing parameter 'laenge'"
 
-def test_groesse_has_laenge():
-    assert hasattr(Groesse, "laenge")
+def test_groesse_has_name():
+    assert hasattr(Groesse, "name")
     descriptor = None
     for klass in Groesse.__mro__:
-        if "laenge" in klass.__dict__:
-            descriptor = klass.__dict__["laenge"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_groesse_has_name1():
-    assert hasattr(Groesse, "name1")
-    descriptor = None
-    for klass in Groesse.__mro__:
-        if "name1" in klass.__dict__:
-            descriptor = klass.__dict__["name1"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -1077,12 +1068,21 @@ def test_groesse_has_breite():
             break
     assert isinstance(descriptor, property)
 
-def test_groesse_has_name():
-    assert hasattr(Groesse, "name")
+def test_groesse_has_name1():
+    assert hasattr(Groesse, "name1")
     descriptor = None
     for klass in Groesse.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+        if "name1" in klass.__dict__:
+            descriptor = klass.__dict__["name1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_groesse_has_laenge():
+    assert hasattr(Groesse, "laenge")
+    descriptor = None
+    for klass in Groesse.__mro__:
+        if "laenge" in klass.__dict__:
+            descriptor = klass.__dict__["laenge"]
             break
     assert isinstance(descriptor, property)
 
@@ -1099,18 +1099,9 @@ def test_plaetzchenform_constructor_exists():
 def test_plaetzchenform_constructor_args():
     sig = inspect.signature(PlaetzchenForm.__init__)
     params = list(sig.parameters.keys())
-    assert "pl_form" in params, "Missing parameter 'pl_form'"
     assert "faktor" in params, "Missing parameter 'faktor'"
     assert "pl_groesse" in params, "Missing parameter 'pl_groesse'"
-
-def test_plaetzchenform_has_pl_form():
-    assert hasattr(PlaetzchenForm, "pl_form")
-    descriptor = None
-    for klass in PlaetzchenForm.__mro__:
-        if "pl_form" in klass.__dict__:
-            descriptor = klass.__dict__["pl_form"]
-            break
-    assert isinstance(descriptor, property)
+    assert "pl_form" in params, "Missing parameter 'pl_form'"
 
 def test_plaetzchenform_has_faktor():
     assert hasattr(PlaetzchenForm, "faktor")
@@ -1130,6 +1121,15 @@ def test_plaetzchenform_has_pl_groesse():
             break
     assert isinstance(descriptor, property)
 
+def test_plaetzchenform_has_pl_form():
+    assert hasattr(PlaetzchenForm, "pl_form")
+    descriptor = None
+    for klass in PlaetzchenForm.__mro__:
+        if "pl_form" in klass.__dict__:
+            descriptor = klass.__dict__["pl_form"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_zutat_is_not_abstract():
@@ -1143,9 +1143,18 @@ def test_zutat_constructor_exists():
 def test_zutat_constructor_args():
     sig = inspect.signature(Zutat.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "einheit" in params, "Missing parameter 'einheit'"
     assert "menge" in params, "Missing parameter 'menge'"
-    assert "name" in params, "Missing parameter 'name'"
+
+def test_zutat_has_name():
+    assert hasattr(Zutat, "name")
+    descriptor = None
+    for klass in Zutat.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_zutat_has_einheit():
     assert hasattr(Zutat, "einheit")
@@ -1165,14 +1174,18 @@ def test_zutat_has_menge():
             break
     assert isinstance(descriptor, property)
 
-def test_zutat_has_name():
-    assert hasattr(Zutat, "name")
-    descriptor = None
-    for klass in Zutat.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+def test_pl_form_exists():
+    # Check that the Enumeration exists
+    assert PL_Form is not None
+
+def test_pl_form_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PL_Form]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PL_Form"
 
 def test_pl_groesse_exists():
     # Check that the Enumeration exists
@@ -1186,19 +1199,6 @@ def test_pl_groesse_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PL_Groesse"
-
-def test_pl_form_exists():
-    # Check that the Enumeration exists
-    assert PL_Form is not None
-
-def test_pl_form_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PL_Form]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PL_Form"
 
 
 # =============================================================================
@@ -1271,26 +1271,26 @@ Zutat__strategy = st.builds(
 )
 Rezept_strategy = st.builds(
     Rezept,
-    basismenge=
-        st.integers(),
     rezeptname=
         st.none(),
+    basismenge=
+        st.integers(),
     attribute2=
         safe_text,
-    attribute=
-        safe_text,
     basis=
-        st.none()
+        st.none(),
+    attribute=
+        safe_text
 )
 DekorRezept_strategy = st.builds(
     DekorRezept,
     basismenge=
         st.integers(),
-    dekor=
-        st.none(),
     zutaten=
         st.none(),
     basis=
+        st.none(),
+    dekor=
         st.none()
 )
 GUIRezept_strategy = st.builds(
@@ -1312,40 +1312,40 @@ Plaetzchen__strategy = st.builds(
 )
 Plaetzchen_strategy = st.builds(
     Plaetzchen,
-    deko=
-        st.none(),
-    name=
-        st.none(),
     menge=
         st.integers(),
-    rezeptDeko=
-        safe_text,
-    form=
-        st.none(),
-    teig=
+    deko=
         st.none(),
     rezeptTeig=
         st.none(),
+    form=
+        st.none(),
     guss=
         st.none(),
+    rezeptDeko=
+        safe_text,
+    teig=
+        st.none(),
     rezeptGuss=
-        safe_text
+        safe_text,
+    name=
+        st.none()
 )
 TeigRezept__strategy = st.builds(
     TeigRezept_,
 )
 TeigRezept_strategy = st.builds(
     TeigRezept,
-    zutaten=
-        st.none(),
     basismenge=
         st.integers(),
-    backtemp=
-        st.integers(),
+    basis=
+        st.none(),
+    zutaten=
+        st.none(),
     backzeit=
         st.integers(),
-    basis=
-        st.none()
+    backtemp=
+        st.integers()
 )
 KonfigDatei__strategy = st.builds(
     KonfigDatei_,
@@ -1356,93 +1356,93 @@ KonfigDatei_strategy = st.builds(
         st.integers(),
     attribute=
         safe_text,
-    name=
-        st.none(),
-    plaetzchen=
-        st.none(),
+    menge=
+        st.integers(),
     backtemp=
         st.integers(),
+    plaetzchen=
+        st.none(),
     attribute2=
         safe_text,
     backzeit=
         st.integers(),
-    menge=
-        st.integers()
+    name=
+        st.none()
 )
 GUIKeksform_strategy = st.builds(
     GUIKeksform,
-    name=
-        safe_text,
     breite=
         st.integers(),
     laenge=
         st.integers(),
+    name=
+        safe_text,
     pl__f=
         st.none()
 )
 GUI_strategy = st.builds(
     GUI,
-    plaetzchenname=
-        safe_text,
-    zutatenList=
-        st.none(),
-    dekorList=
-        st.none(),
-    datei=
-        st.none(),
-    form=
-        st.none(),
     groesse=
-        st.none(),
-    deko=
-        st.none(),
-    dateiname=
-        safe_text,
-    teigsorte=
-        st.none(),
-    plaetzchen=
-        st.none(),
-    teigList=
         st.none(),
     guss=
         st.none(),
-    attribute=
+    plaetzchenname=
         safe_text,
-    plformList=
-        st.none(),
     gussList=
         st.none(),
     stueckzahl=
-        safe_text
+        safe_text,
+    dekorList=
+        st.none(),
+    zutatenList=
+        st.none(),
+    deko=
+        st.none(),
+    teigsorte=
+        st.none(),
+    teigList=
+        st.none(),
+    plaetzchen=
+        st.none(),
+    dateiname=
+        safe_text,
+    datei=
+        st.none(),
+    attribute=
+        safe_text,
+    form=
+        st.none(),
+    plformList=
+        st.none()
 )
 Groesse_strategy = st.builds(
     Groesse,
-    laenge=
+    name=
+        safe_text,
+    breite=
         st.integers(),
     name1=
         st.none(),
-    breite=
-        st.integers(),
-    name=
-        safe_text
+    laenge=
+        st.integers()
 )
 PlaetzchenForm_strategy = st.builds(
     PlaetzchenForm,
-    pl_form=
-        st.none(),
     faktor=
         safe_text,
     pl_groesse=
+        st.none(),
+    pl_form=
         st.none()
 )
 Zutat_strategy = st.builds(
     Zutat,
+    name=
+        st.none(),
     einheit=
         st.none(),
     menge=
-        st.integers(),
-    name=
-        st.none()
+        st.integers()
 )
 
 @given(instance=KeyPressEventArgs__strategy)
@@ -1525,9 +1525,6 @@ def test_list_zutat____instantiation(instance):
 def test_gussrezept_instantiation(instance):
     assert isinstance(instance, GussRezept)
 
-@given(instance=GussRezept_strategy)
-def test_gussrezept_basis_type(instance):
-    assert isinstance(instance.basis, plaetzchenform_)
 
 
 @given(instance=GussRezept_strategy)
@@ -1536,9 +1533,6 @@ def test_gussrezept_basis_setter(instance):
     instance.basis = original
     assert instance.basis == original
 
-@given(instance=GussRezept_strategy)
-def test_gussrezept_zutat_type(instance):
-    assert isinstance(instance.zutat, zutat)
 
 
 @given(instance=GussRezept_strategy)
@@ -1547,9 +1541,6 @@ def test_gussrezept_zutat_setter(instance):
     instance.zutat = original
     assert instance.zutat == original
 
-@given(instance=GussRezept_strategy)
-def test_gussrezept_basismenge_type(instance):
-    assert isinstance(instance.basismenge, int)
 
 
 @given(instance=GussRezept_strategy)
@@ -1568,20 +1559,6 @@ def test_zutat__instantiation(instance):
 def test_rezept_instantiation(instance):
     assert isinstance(instance, Rezept)
 
-@given(instance=Rezept_strategy)
-def test_rezept_basismenge_type(instance):
-    assert isinstance(instance.basismenge, int)
-
-
-@given(instance=Rezept_strategy)
-def test_rezept_basismenge_setter(instance):
-    original = instance.basismenge
-    instance.basismenge = original
-    assert instance.basismenge == original
-
-@given(instance=Rezept_strategy)
-def test_rezept_rezeptname_type(instance):
-    assert isinstance(instance.rezeptname, string_)
 
 
 @given(instance=Rezept_strategy)
@@ -1590,9 +1567,14 @@ def test_rezept_rezeptname_setter(instance):
     instance.rezeptname = original
     assert instance.rezeptname == original
 
+
+
 @given(instance=Rezept_strategy)
-def test_rezept_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
+def test_rezept_basismenge_setter(instance):
+    original = instance.basismenge
+    instance.basismenge = original
+    assert instance.basismenge == original
+
 
 
 @given(instance=Rezept_strategy)
@@ -1601,20 +1583,6 @@ def test_rezept_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Rezept_strategy)
-def test_rezept_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Rezept_strategy)
-def test_rezept_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Rezept_strategy)
-def test_rezept_basis_type(instance):
-    assert isinstance(instance.basis, plaetzchenform_)
 
 
 @given(instance=Rezept_strategy)
@@ -1623,14 +1591,19 @@ def test_rezept_basis_setter(instance):
     instance.basis = original
     assert instance.basis == original
 
+
+
+@given(instance=Rezept_strategy)
+def test_rezept_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=DekorRezept_strategy)
 @settings(max_examples=50)
 def test_dekorrezept_instantiation(instance):
     assert isinstance(instance, DekorRezept)
 
-@given(instance=DekorRezept_strategy)
-def test_dekorrezept_basismenge_type(instance):
-    assert isinstance(instance.basismenge, int)
 
 
 @given(instance=DekorRezept_strategy)
@@ -1639,20 +1612,6 @@ def test_dekorrezept_basismenge_setter(instance):
     instance.basismenge = original
     assert instance.basismenge == original
 
-@given(instance=DekorRezept_strategy)
-def test_dekorrezept_dekor_type(instance):
-    assert isinstance(instance.dekor, zutat_)
-
-
-@given(instance=DekorRezept_strategy)
-def test_dekorrezept_dekor_setter(instance):
-    original = instance.dekor
-    instance.dekor = original
-    assert instance.dekor == original
-
-@given(instance=DekorRezept_strategy)
-def test_dekorrezept_zutaten_type(instance):
-    assert isinstance(instance.zutaten, list_zutat___)
 
 
 @given(instance=DekorRezept_strategy)
@@ -1661,9 +1620,6 @@ def test_dekorrezept_zutaten_setter(instance):
     instance.zutaten = original
     assert instance.zutaten == original
 
-@given(instance=DekorRezept_strategy)
-def test_dekorrezept_basis_type(instance):
-    assert isinstance(instance.basis, plaetzchenform_)
 
 
 @given(instance=DekorRezept_strategy)
@@ -1672,14 +1628,19 @@ def test_dekorrezept_basis_setter(instance):
     instance.basis = original
     assert instance.basis == original
 
+
+
+@given(instance=DekorRezept_strategy)
+def test_dekorrezept_dekor_setter(instance):
+    original = instance.dekor
+    instance.dekor = original
+    assert instance.dekor == original
+
 @given(instance=GUIRezept_strategy)
 @settings(max_examples=50)
 def test_guirezept_instantiation(instance):
     assert isinstance(instance, GUIRezept)
 
-@given(instance=GUIRezept_strategy)
-def test_guirezept_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=GUIRezept_strategy)
@@ -1713,31 +1674,6 @@ def test_plaetzchen__instantiation(instance):
 def test_plaetzchen_instantiation(instance):
     assert isinstance(instance, Plaetzchen)
 
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_deko_type(instance):
-    assert isinstance(instance.deko, zutat_)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_deko_setter(instance):
-    original = instance.deko
-    instance.deko = original
-    assert instance.deko == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_name_type(instance):
-    assert isinstance(instance.name, string_)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_menge_type(instance):
-    assert isinstance(instance.menge, int)
 
 
 @given(instance=Plaetzchen_strategy)
@@ -1746,42 +1682,14 @@ def test_plaetzchen_menge_setter(instance):
     instance.menge = original
     assert instance.menge == original
 
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_rezeptDeko_type(instance):
-    assert isinstance(instance.rezeptDeko, str)
 
 
 @given(instance=Plaetzchen_strategy)
-def test_plaetzchen_rezeptDeko_setter(instance):
-    original = instance.rezeptDeko
-    instance.rezeptDeko = original
-    assert instance.rezeptDeko == original
+def test_plaetzchen_deko_setter(instance):
+    original = instance.deko
+    instance.deko = original
+    assert instance.deko == original
 
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_form_type(instance):
-    assert isinstance(instance.form, plaetzchenform_)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_form_setter(instance):
-    original = instance.form
-    instance.form = original
-    assert instance.form == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_teig_type(instance):
-    assert isinstance(instance.teig, list_zutat___)
-
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_teig_setter(instance):
-    original = instance.teig
-    instance.teig = original
-    assert instance.teig == original
-
-@given(instance=Plaetzchen_strategy)
-def test_plaetzchen_rezeptTeig_type(instance):
-    assert isinstance(instance.rezeptTeig, teigrezept_)
 
 
 @given(instance=Plaetzchen_strategy)
@@ -1790,9 +1698,14 @@ def test_plaetzchen_rezeptTeig_setter(instance):
     instance.rezeptTeig = original
     assert instance.rezeptTeig == original
 
+
+
 @given(instance=Plaetzchen_strategy)
-def test_plaetzchen_guss_type(instance):
-    assert isinstance(instance.guss, zutat_)
+def test_plaetzchen_form_setter(instance):
+    original = instance.form
+    instance.form = original
+    assert instance.form == original
+
 
 
 @given(instance=Plaetzchen_strategy)
@@ -1801,9 +1714,22 @@ def test_plaetzchen_guss_setter(instance):
     instance.guss = original
     assert instance.guss == original
 
+
+
 @given(instance=Plaetzchen_strategy)
-def test_plaetzchen_rezeptGuss_type(instance):
-    assert isinstance(instance.rezeptGuss, str)
+def test_plaetzchen_rezeptDeko_setter(instance):
+    original = instance.rezeptDeko
+    instance.rezeptDeko = original
+    assert instance.rezeptDeko == original
+
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_teig_setter(instance):
+    original = instance.teig
+    instance.teig = original
+    assert instance.teig == original
+
 
 
 @given(instance=Plaetzchen_strategy)
@@ -1811,6 +1737,14 @@ def test_plaetzchen_rezeptGuss_setter(instance):
     original = instance.rezeptGuss
     instance.rezeptGuss = original
     assert instance.rezeptGuss == original
+
+
+
+@given(instance=Plaetzchen_strategy)
+def test_plaetzchen_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=TeigRezept__strategy)
 @settings(max_examples=50)
@@ -1822,20 +1756,6 @@ def test_teigrezept__instantiation(instance):
 def test_teigrezept_instantiation(instance):
     assert isinstance(instance, TeigRezept)
 
-@given(instance=TeigRezept_strategy)
-def test_teigrezept_zutaten_type(instance):
-    assert isinstance(instance.zutaten, list_zutat___)
-
-
-@given(instance=TeigRezept_strategy)
-def test_teigrezept_zutaten_setter(instance):
-    original = instance.zutaten
-    instance.zutaten = original
-    assert instance.zutaten == original
-
-@given(instance=TeigRezept_strategy)
-def test_teigrezept_basismenge_type(instance):
-    assert isinstance(instance.basismenge, int)
 
 
 @given(instance=TeigRezept_strategy)
@@ -1844,20 +1764,22 @@ def test_teigrezept_basismenge_setter(instance):
     instance.basismenge = original
     assert instance.basismenge == original
 
-@given(instance=TeigRezept_strategy)
-def test_teigrezept_backtemp_type(instance):
-    assert isinstance(instance.backtemp, int)
 
 
 @given(instance=TeigRezept_strategy)
-def test_teigrezept_backtemp_setter(instance):
-    original = instance.backtemp
-    instance.backtemp = original
-    assert instance.backtemp == original
+def test_teigrezept_basis_setter(instance):
+    original = instance.basis
+    instance.basis = original
+    assert instance.basis == original
+
+
 
 @given(instance=TeigRezept_strategy)
-def test_teigrezept_backzeit_type(instance):
-    assert isinstance(instance.backzeit, int)
+def test_teigrezept_zutaten_setter(instance):
+    original = instance.zutaten
+    instance.zutaten = original
+    assert instance.zutaten == original
+
 
 
 @given(instance=TeigRezept_strategy)
@@ -1866,16 +1788,13 @@ def test_teigrezept_backzeit_setter(instance):
     instance.backzeit = original
     assert instance.backzeit == original
 
-@given(instance=TeigRezept_strategy)
-def test_teigrezept_basis_type(instance):
-    assert isinstance(instance.basis, plaetzchenform_)
 
 
 @given(instance=TeigRezept_strategy)
-def test_teigrezept_basis_setter(instance):
-    original = instance.basis
-    instance.basis = original
-    assert instance.basis == original
+def test_teigrezept_backtemp_setter(instance):
+    original = instance.backtemp
+    instance.backtemp = original
+    assert instance.backtemp == original
 
 @given(instance=KonfigDatei__strategy)
 @settings(max_examples=50)
@@ -1887,9 +1806,6 @@ def test_konfigdatei__instantiation(instance):
 def test_konfigdatei_instantiation(instance):
     assert isinstance(instance, KonfigDatei)
 
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_menge1_type(instance):
-    assert isinstance(instance.menge1, int)
 
 
 @given(instance=KonfigDatei_strategy)
@@ -1898,9 +1814,6 @@ def test_konfigdatei_menge1_setter(instance):
     instance.menge1 = original
     assert instance.menge1 == original
 
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=KonfigDatei_strategy)
@@ -1909,64 +1822,6 @@ def test_konfigdatei_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_name_type(instance):
-    assert isinstance(instance.name, string_)
-
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_plaetzchen_type(instance):
-    assert isinstance(instance.plaetzchen, plaetzchen_)
-
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_plaetzchen_setter(instance):
-    original = instance.plaetzchen
-    instance.plaetzchen = original
-    assert instance.plaetzchen == original
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_backtemp_type(instance):
-    assert isinstance(instance.backtemp, int)
-
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_backtemp_setter(instance):
-    original = instance.backtemp
-    instance.backtemp = original
-    assert instance.backtemp == original
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_backzeit_type(instance):
-    assert isinstance(instance.backzeit, int)
-
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_backzeit_setter(instance):
-    original = instance.backzeit
-    instance.backzeit = original
-    assert instance.backzeit == original
-
-@given(instance=KonfigDatei_strategy)
-def test_konfigdatei_menge_type(instance):
-    assert isinstance(instance.menge, int)
 
 
 @given(instance=KonfigDatei_strategy)
@@ -1975,25 +1830,51 @@ def test_konfigdatei_menge_setter(instance):
     instance.menge = original
     assert instance.menge == original
 
-@given(instance=GUIKeksform_strategy)
-@settings(max_examples=50)
-def test_guikeksform_instantiation(instance):
-    assert isinstance(instance, GUIKeksform)
-
-@given(instance=GUIKeksform_strategy)
-def test_guikeksform_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=GUIKeksform_strategy)
-def test_guikeksform_name_setter(instance):
+@given(instance=KonfigDatei_strategy)
+def test_konfigdatei_backtemp_setter(instance):
+    original = instance.backtemp
+    instance.backtemp = original
+    assert instance.backtemp == original
+
+
+
+@given(instance=KonfigDatei_strategy)
+def test_konfigdatei_plaetzchen_setter(instance):
+    original = instance.plaetzchen
+    instance.plaetzchen = original
+    assert instance.plaetzchen == original
+
+
+
+@given(instance=KonfigDatei_strategy)
+def test_konfigdatei_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
+
+
+@given(instance=KonfigDatei_strategy)
+def test_konfigdatei_backzeit_setter(instance):
+    original = instance.backzeit
+    instance.backzeit = original
+    assert instance.backzeit == original
+
+
+
+@given(instance=KonfigDatei_strategy)
+def test_konfigdatei_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
 @given(instance=GUIKeksform_strategy)
-def test_guikeksform_breite_type(instance):
-    assert isinstance(instance.breite, int)
+@settings(max_examples=50)
+def test_guikeksform_instantiation(instance):
+    assert isinstance(instance, GUIKeksform)
+
 
 
 @given(instance=GUIKeksform_strategy)
@@ -2002,9 +1883,6 @@ def test_guikeksform_breite_setter(instance):
     instance.breite = original
     assert instance.breite == original
 
-@given(instance=GUIKeksform_strategy)
-def test_guikeksform_laenge_type(instance):
-    assert isinstance(instance.laenge, int)
 
 
 @given(instance=GUIKeksform_strategy)
@@ -2013,9 +1891,14 @@ def test_guikeksform_laenge_setter(instance):
     instance.laenge = original
     assert instance.laenge == original
 
+
+
 @given(instance=GUIKeksform_strategy)
-def test_guikeksform_pl__f_type(instance):
-    assert isinstance(instance.pl__f, pl_form_)
+def test_guikeksform_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 
 
 @given(instance=GUIKeksform_strategy)
@@ -2029,64 +1912,6 @@ def test_guikeksform_pl__f_setter(instance):
 def test_gui_instantiation(instance):
     assert isinstance(instance, GUI)
 
-@given(instance=GUI_strategy)
-def test_gui_plaetzchenname_type(instance):
-    assert isinstance(instance.plaetzchenname, str)
-
-
-@given(instance=GUI_strategy)
-def test_gui_plaetzchenname_setter(instance):
-    original = instance.plaetzchenname
-    instance.plaetzchenname = original
-    assert instance.plaetzchenname == original
-
-@given(instance=GUI_strategy)
-def test_gui_zutatenList_type(instance):
-    assert isinstance(instance.zutatenList, list_zutat___)
-
-
-@given(instance=GUI_strategy)
-def test_gui_zutatenList_setter(instance):
-    original = instance.zutatenList
-    instance.zutatenList = original
-    assert instance.zutatenList == original
-
-@given(instance=GUI_strategy)
-def test_gui_dekorList_type(instance):
-    assert isinstance(instance.dekorList, list_dekorrezept___)
-
-
-@given(instance=GUI_strategy)
-def test_gui_dekorList_setter(instance):
-    original = instance.dekorList
-    instance.dekorList = original
-    assert instance.dekorList == original
-
-@given(instance=GUI_strategy)
-def test_gui_datei_type(instance):
-    assert isinstance(instance.datei, konfigdatei_)
-
-
-@given(instance=GUI_strategy)
-def test_gui_datei_setter(instance):
-    original = instance.datei
-    instance.datei = original
-    assert instance.datei == original
-
-@given(instance=GUI_strategy)
-def test_gui_form_type(instance):
-    assert isinstance(instance.form, combobox)
-
-
-@given(instance=GUI_strategy)
-def test_gui_form_setter(instance):
-    original = instance.form
-    instance.form = original
-    assert instance.form == original
-
-@given(instance=GUI_strategy)
-def test_gui_groesse_type(instance):
-    assert isinstance(instance.groesse, combobox)
 
 
 @given(instance=GUI_strategy)
@@ -2095,64 +1920,6 @@ def test_gui_groesse_setter(instance):
     instance.groesse = original
     assert instance.groesse == original
 
-@given(instance=GUI_strategy)
-def test_gui_deko_type(instance):
-    assert isinstance(instance.deko, combobox)
-
-
-@given(instance=GUI_strategy)
-def test_gui_deko_setter(instance):
-    original = instance.deko
-    instance.deko = original
-    assert instance.deko == original
-
-@given(instance=GUI_strategy)
-def test_gui_dateiname_type(instance):
-    assert isinstance(instance.dateiname, str)
-
-
-@given(instance=GUI_strategy)
-def test_gui_dateiname_setter(instance):
-    original = instance.dateiname
-    instance.dateiname = original
-    assert instance.dateiname == original
-
-@given(instance=GUI_strategy)
-def test_gui_teigsorte_type(instance):
-    assert isinstance(instance.teigsorte, combobox)
-
-
-@given(instance=GUI_strategy)
-def test_gui_teigsorte_setter(instance):
-    original = instance.teigsorte
-    instance.teigsorte = original
-    assert instance.teigsorte == original
-
-@given(instance=GUI_strategy)
-def test_gui_plaetzchen_type(instance):
-    assert isinstance(instance.plaetzchen, plaetzchen_)
-
-
-@given(instance=GUI_strategy)
-def test_gui_plaetzchen_setter(instance):
-    original = instance.plaetzchen
-    instance.plaetzchen = original
-    assert instance.plaetzchen == original
-
-@given(instance=GUI_strategy)
-def test_gui_teigList_type(instance):
-    assert isinstance(instance.teigList, list_teigrezept___)
-
-
-@given(instance=GUI_strategy)
-def test_gui_teigList_setter(instance):
-    original = instance.teigList
-    instance.teigList = original
-    assert instance.teigList == original
-
-@given(instance=GUI_strategy)
-def test_gui_guss_type(instance):
-    assert isinstance(instance.guss, combobox)
 
 
 @given(instance=GUI_strategy)
@@ -2161,31 +1928,14 @@ def test_gui_guss_setter(instance):
     instance.guss = original
     assert instance.guss == original
 
-@given(instance=GUI_strategy)
-def test_gui_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=GUI_strategy)
-def test_gui_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
+def test_gui_plaetzchenname_setter(instance):
+    original = instance.plaetzchenname
+    instance.plaetzchenname = original
+    assert instance.plaetzchenname == original
 
-@given(instance=GUI_strategy)
-def test_gui_plformList_type(instance):
-    assert isinstance(instance.plformList, list_plaetzchenform___)
-
-
-@given(instance=GUI_strategy)
-def test_gui_plformList_setter(instance):
-    original = instance.plformList
-    instance.plformList = original
-    assert instance.plformList == original
-
-@given(instance=GUI_strategy)
-def test_gui_gussList_type(instance):
-    assert isinstance(instance.gussList, list_dekorrezept___)
 
 
 @given(instance=GUI_strategy)
@@ -2194,9 +1944,6 @@ def test_gui_gussList_setter(instance):
     instance.gussList = original
     assert instance.gussList == original
 
-@given(instance=GUI_strategy)
-def test_gui_stueckzahl_type(instance):
-    assert isinstance(instance.stueckzahl, str)
 
 
 @given(instance=GUI_strategy)
@@ -2205,47 +1952,99 @@ def test_gui_stueckzahl_setter(instance):
     instance.stueckzahl = original
     assert instance.stueckzahl == original
 
+
+
+@given(instance=GUI_strategy)
+def test_gui_dekorList_setter(instance):
+    original = instance.dekorList
+    instance.dekorList = original
+    assert instance.dekorList == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_zutatenList_setter(instance):
+    original = instance.zutatenList
+    instance.zutatenList = original
+    assert instance.zutatenList == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_deko_setter(instance):
+    original = instance.deko
+    instance.deko = original
+    assert instance.deko == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_teigsorte_setter(instance):
+    original = instance.teigsorte
+    instance.teigsorte = original
+    assert instance.teigsorte == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_teigList_setter(instance):
+    original = instance.teigList
+    instance.teigList = original
+    assert instance.teigList == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_plaetzchen_setter(instance):
+    original = instance.plaetzchen
+    instance.plaetzchen = original
+    assert instance.plaetzchen == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_dateiname_setter(instance):
+    original = instance.dateiname
+    instance.dateiname = original
+    assert instance.dateiname == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_datei_setter(instance):
+    original = instance.datei
+    instance.datei = original
+    assert instance.datei == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_form_setter(instance):
+    original = instance.form
+    instance.form = original
+    assert instance.form == original
+
+
+
+@given(instance=GUI_strategy)
+def test_gui_plformList_setter(instance):
+    original = instance.plformList
+    instance.plformList = original
+    assert instance.plformList == original
+
 @given(instance=Groesse_strategy)
 @settings(max_examples=50)
 def test_groesse_instantiation(instance):
     assert isinstance(instance, Groesse)
 
-@given(instance=Groesse_strategy)
-def test_groesse_laenge_type(instance):
-    assert isinstance(instance.laenge, int)
-
-
-@given(instance=Groesse_strategy)
-def test_groesse_laenge_setter(instance):
-    original = instance.laenge
-    instance.laenge = original
-    assert instance.laenge == original
-
-@given(instance=Groesse_strategy)
-def test_groesse_name1_type(instance):
-    assert isinstance(instance.name1, pl_groesse_)
-
-
-@given(instance=Groesse_strategy)
-def test_groesse_name1_setter(instance):
-    original = instance.name1
-    instance.name1 = original
-    assert instance.name1 == original
-
-@given(instance=Groesse_strategy)
-def test_groesse_breite_type(instance):
-    assert isinstance(instance.breite, int)
-
-
-@given(instance=Groesse_strategy)
-def test_groesse_breite_setter(instance):
-    original = instance.breite
-    instance.breite = original
-    assert instance.breite == original
-
-@given(instance=Groesse_strategy)
-def test_groesse_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Groesse_strategy)
@@ -2254,25 +2053,35 @@ def test_groesse_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Groesse_strategy)
+def test_groesse_breite_setter(instance):
+    original = instance.breite
+    instance.breite = original
+    assert instance.breite == original
+
+
+
+@given(instance=Groesse_strategy)
+def test_groesse_name1_setter(instance):
+    original = instance.name1
+    instance.name1 = original
+    assert instance.name1 == original
+
+
+
+@given(instance=Groesse_strategy)
+def test_groesse_laenge_setter(instance):
+    original = instance.laenge
+    instance.laenge = original
+    assert instance.laenge == original
+
 @given(instance=PlaetzchenForm_strategy)
 @settings(max_examples=50)
 def test_plaetzchenform_instantiation(instance):
     assert isinstance(instance, PlaetzchenForm)
 
-@given(instance=PlaetzchenForm_strategy)
-def test_plaetzchenform_pl_form_type(instance):
-    assert isinstance(instance.pl_form, pl_form_)
-
-
-@given(instance=PlaetzchenForm_strategy)
-def test_plaetzchenform_pl_form_setter(instance):
-    original = instance.pl_form
-    instance.pl_form = original
-    assert instance.pl_form == original
-
-@given(instance=PlaetzchenForm_strategy)
-def test_plaetzchenform_faktor_type(instance):
-    assert isinstance(instance.faktor, str)
 
 
 @given(instance=PlaetzchenForm_strategy)
@@ -2281,9 +2090,6 @@ def test_plaetzchenform_faktor_setter(instance):
     instance.faktor = original
     assert instance.faktor == original
 
-@given(instance=PlaetzchenForm_strategy)
-def test_plaetzchenform_pl_groesse_type(instance):
-    assert isinstance(instance.pl_groesse, groesse_)
 
 
 @given(instance=PlaetzchenForm_strategy)
@@ -2292,14 +2098,27 @@ def test_plaetzchenform_pl_groesse_setter(instance):
     instance.pl_groesse = original
     assert instance.pl_groesse == original
 
+
+
+@given(instance=PlaetzchenForm_strategy)
+def test_plaetzchenform_pl_form_setter(instance):
+    original = instance.pl_form
+    instance.pl_form = original
+    assert instance.pl_form == original
+
 @given(instance=Zutat_strategy)
 @settings(max_examples=50)
 def test_zutat_instantiation(instance):
     assert isinstance(instance, Zutat)
 
+
+
 @given(instance=Zutat_strategy)
-def test_zutat_einheit_type(instance):
-    assert isinstance(instance.einheit, string_)
+def test_zutat_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 
 
 @given(instance=Zutat_strategy)
@@ -2308,9 +2127,6 @@ def test_zutat_einheit_setter(instance):
     instance.einheit = original
     assert instance.einheit == original
 
-@given(instance=Zutat_strategy)
-def test_zutat_menge_type(instance):
-    assert isinstance(instance.menge, int)
 
 
 @given(instance=Zutat_strategy)
@@ -2318,14 +2134,3 @@ def test_zutat_menge_setter(instance):
     original = instance.menge
     instance.menge = original
     assert instance.menge == original
-
-@given(instance=Zutat_strategy)
-def test_zutat_name_type(instance):
-    assert isinstance(instance.name, string_)
-
-
-@given(instance=Zutat_strategy)
-def test_zutat_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original

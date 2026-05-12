@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dag::Edge,
-    dag::Vertex,
-    dag::DAG,
+from python_code import (
+    dag_Edge,
+    dag_Vertex,
+    dag_DAG,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_dag::edge_is_not_abstract():
-    assert not inspect.isabstract(dag::Edge)
+def test_dag_edge_is_not_abstract():
+    assert not inspect.isabstract(dag_Edge)
 
 
-def test_dag::edge_constructor_exists():
-    assert callable(dag::Edge.__init__)
+def test_dag_edge_constructor_exists():
+    assert callable(dag_Edge.__init__)
 
 
-def test_dag::edge_constructor_args():
-    sig = inspect.signature(dag::Edge.__init__)
+def test_dag_edge_constructor_args():
+    sig = inspect.signature(dag_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dag::edge_has_id():
-    assert hasattr(dag::Edge, "id")
+def test_dag_edge_has_id():
+    assert hasattr(dag_Edge, "id")
     descriptor = None
-    for klass in dag::Edge.__mro__:
+    for klass in dag_Edge.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -41,23 +41,23 @@ def test_dag::edge_has_id():
 
 
 
-def test_dag::vertex_is_not_abstract():
-    assert not inspect.isabstract(dag::Vertex)
+def test_dag_vertex_is_not_abstract():
+    assert not inspect.isabstract(dag_Vertex)
 
 
-def test_dag::vertex_constructor_exists():
-    assert callable(dag::Vertex.__init__)
+def test_dag_vertex_constructor_exists():
+    assert callable(dag_Vertex.__init__)
 
 
-def test_dag::vertex_constructor_args():
-    sig = inspect.signature(dag::Vertex.__init__)
+def test_dag_vertex_constructor_args():
+    sig = inspect.signature(dag_Vertex.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dag::vertex_has_id():
-    assert hasattr(dag::Vertex, "id")
+def test_dag_vertex_has_id():
+    assert hasattr(dag_Vertex, "id")
     descriptor = None
-    for klass in dag::Vertex.__mro__:
+    for klass in dag_Vertex.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -65,16 +65,16 @@ def test_dag::vertex_has_id():
 
 
 
-def test_dag::dag_is_not_abstract():
-    assert not inspect.isabstract(dag::DAG)
+def test_dag_dag_is_not_abstract():
+    assert not inspect.isabstract(dag_DAG)
 
 
-def test_dag::dag_constructor_exists():
-    assert callable(dag::DAG.__init__)
+def test_dag_dag_constructor_exists():
+    assert callable(dag_DAG.__init__)
 
 
-def test_dag::dag_constructor_args():
-    sig = inspect.signature(dag::DAG.__init__)
+def test_dag_dag_constructor_args():
+    sig = inspect.signature(dag_DAG.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dag::Edge_strategy = st.builds(
-    dag::Edge,
+dag_Edge_strategy = st.builds(
+    dag_Edge,
     id=
         safe_text
 )
-dag::Vertex_strategy = st.builds(
-    dag::Vertex,
+dag_Vertex_strategy = st.builds(
+    dag_Vertex,
     id=
         safe_text
 )
-dag::DAG_strategy = st.builds(
-    dag::DAG,
+dag_DAG_strategy = st.builds(
+    dag_DAG,
 )
 
-@given(instance=dag::Edge_strategy)
+@given(instance=dag_Edge_strategy)
 @settings(max_examples=50)
-def test_dag::edge_instantiation(instance):
-    assert isinstance(instance, dag::Edge)
-
-@given(instance=dag::Edge_strategy)
-def test_dag::edge_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dag_edge_instantiation(instance):
+    assert isinstance(instance, dag_Edge)
 
 
-@given(instance=dag::Edge_strategy)
-def test_dag::edge_id_setter(instance):
+
+@given(instance=dag_Edge_strategy)
+def test_dag_edge_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dag::Vertex_strategy)
+@given(instance=dag_Vertex_strategy)
 @settings(max_examples=50)
-def test_dag::vertex_instantiation(instance):
-    assert isinstance(instance, dag::Vertex)
-
-@given(instance=dag::Vertex_strategy)
-def test_dag::vertex_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dag_vertex_instantiation(instance):
+    assert isinstance(instance, dag_Vertex)
 
 
-@given(instance=dag::Vertex_strategy)
-def test_dag::vertex_id_setter(instance):
+
+@given(instance=dag_Vertex_strategy)
+def test_dag_vertex_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dag::DAG_strategy)
+@given(instance=dag_DAG_strategy)
 @settings(max_examples=50)
-def test_dag::dag_instantiation(instance):
-    assert isinstance(instance, dag::DAG)
+def test_dag_dag_instantiation(instance):
+    assert isinstance(instance, dag_DAG)

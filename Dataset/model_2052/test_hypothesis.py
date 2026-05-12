@@ -3,62 +3,62 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    activitydiagram::Input,
-    activitydiagram::InputValue,
-    Variable,
-    activitydiagram::IntegerVariable,
-    activitydiagram::Value,
-    IntegerExpression,
-    activitydiagram::IntegerComparisonExpression,
-    activitydiagram::IntegerCalculationExpression,
-    Expression,
-    activitydiagram::BooleanExpression,
-    activitydiagram::IntegerExpression,
-    Value,
-    activitydiagram::IntegerValue,
-    activitydiagram::BooleanValue,
-    activitydiagram::BooleanVariable,
-    ActivityEdge,
-    activitydiagram::ControlFlow,
-    activitydiagram::Offer,
-    activitydiagram::Token,
-    FinalNode,
-    activitydiagram::ActivityFinalNode,
-    ControlNode,
-    activitydiagram::DecisionNode,
-    activitydiagram::ForkNode,
-    activitydiagram::FinalNode,
-    activitydiagram::JoinNode,
-    activitydiagram::MergeNode,
-    activitydiagram::InitialNode,
-    activitydiagram::NamedElement,
-    activitydiagram::Expression,
-    Action,
-    activitydiagram::OpaqueAction,
-    ExecutableNode,
-    activitydiagram::Action,
-    ActivityNode,
-    activitydiagram::ExecutableNode,
-    activitydiagram::ControlNode,
-    NamedElement,
-    activitydiagram::ActivityEdge,
-    activitydiagram::ActivityNode,
-    activitydiagram::Activity,
-    activitydiagram::Trace,
-    activitydiagram::Variable,
+from python_code import (
     Token,
-    activitydiagram::ForkedToken,
-    activitydiagram::ControlToken,
+    activitydiagram_ForkedToken,
+    activitydiagram_ControlToken,
     BooleanExpression,
-    activitydiagram::BooleanBinaryExpression,
-    activitydiagram::BooleanUnaryExpression,
+    activitydiagram_BooleanBinaryExpression,
+    activitydiagram_BooleanUnaryExpression,
+    activitydiagram_Input,
+    activitydiagram_InputValue,
+    Variable,
+    activitydiagram_IntegerVariable,
+    activitydiagram_Value,
+    IntegerExpression,
+    activitydiagram_IntegerComparisonExpression,
+    activitydiagram_IntegerCalculationExpression,
+    Expression,
+    activitydiagram_BooleanExpression,
+    activitydiagram_IntegerExpression,
+    Value,
+    activitydiagram_IntegerValue,
+    activitydiagram_BooleanValue,
+    activitydiagram_BooleanVariable,
+    ActivityEdge,
+    activitydiagram_ControlFlow,
+    activitydiagram_Offer,
+    activitydiagram_Token,
+    FinalNode,
+    activitydiagram_ActivityFinalNode,
+    ControlNode,
+    activitydiagram_FinalNode,
+    activitydiagram_ForkNode,
+    activitydiagram_JoinNode,
+    activitydiagram_DecisionNode,
+    activitydiagram_MergeNode,
+    activitydiagram_InitialNode,
+    activitydiagram_NamedElement,
+    activitydiagram_Expression,
+    Action,
+    activitydiagram_OpaqueAction,
+    ExecutableNode,
+    activitydiagram_Action,
+    ActivityNode,
+    activitydiagram_ExecutableNode,
+    activitydiagram_ControlNode,
+    NamedElement,
+    activitydiagram_ActivityNode,
+    activitydiagram_ActivityEdge,
+    activitydiagram_Activity,
+    activitydiagram_Trace,
+    activitydiagram_Variable,
     IntegerCalculationOperator,
+    IntegerComparisonOperator,
     BooleanBinaryOperator,
     BooleanUnaryOperator,
-    IntegerComparisonOperator,
 )
 
 # =============================================================================
@@ -67,30 +67,144 @@ from classes import (
 
 
 
-def test_activitydiagram::input_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Input)
+def test_token_is_not_abstract():
+    assert not inspect.isabstract(Token)
 
 
-def test_activitydiagram::input_constructor_exists():
-    assert callable(activitydiagram::Input.__init__)
+def test_token_constructor_exists():
+    assert callable(Token.__init__)
 
 
-def test_activitydiagram::input_constructor_args():
-    sig = inspect.signature(activitydiagram::Input.__init__)
+def test_token_constructor_args():
+    sig = inspect.signature(Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::inputvalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::InputValue)
+def test_activitydiagram_forkedtoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ForkedToken)
 
 
-def test_activitydiagram::inputvalue_constructor_exists():
-    assert callable(activitydiagram::InputValue.__init__)
+def test_activitydiagram_forkedtoken_constructor_exists():
+    assert callable(activitydiagram_ForkedToken.__init__)
 
 
-def test_activitydiagram::inputvalue_constructor_args():
-    sig = inspect.signature(activitydiagram::InputValue.__init__)
+def test_activitydiagram_forkedtoken_constructor_args():
+    sig = inspect.signature(activitydiagram_ForkedToken.__init__)
+    params = list(sig.parameters.keys())
+    assert "remainingOffersCount" in params, "Missing parameter 'remainingOffersCount'"
+
+def test_activitydiagram_forkedtoken_has_remainingOffersCount():
+    assert hasattr(activitydiagram_ForkedToken, "remainingOffersCount")
+    descriptor = None
+    for klass in activitydiagram_ForkedToken.__mro__:
+        if "remainingOffersCount" in klass.__dict__:
+            descriptor = klass.__dict__["remainingOffersCount"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activitydiagram_controltoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ControlToken)
+
+
+def test_activitydiagram_controltoken_constructor_exists():
+    assert callable(activitydiagram_ControlToken.__init__)
+
+
+def test_activitydiagram_controltoken_constructor_args():
+    sig = inspect.signature(activitydiagram_ControlToken.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(BooleanExpression)
+
+
+def test_booleanexpression_constructor_exists():
+    assert callable(BooleanExpression.__init__)
+
+
+def test_booleanexpression_constructor_args():
+    sig = inspect.signature(BooleanExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_booleanbinaryexpression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanBinaryExpression)
+
+
+def test_activitydiagram_booleanbinaryexpression_constructor_exists():
+    assert callable(activitydiagram_BooleanBinaryExpression.__init__)
+
+
+def test_activitydiagram_booleanbinaryexpression_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanBinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_activitydiagram_booleanbinaryexpression_has_operator():
+    assert hasattr(activitydiagram_BooleanBinaryExpression, "operator")
+    descriptor = None
+    for klass in activitydiagram_BooleanBinaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activitydiagram_booleanunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanUnaryExpression)
+
+
+def test_activitydiagram_booleanunaryexpression_constructor_exists():
+    assert callable(activitydiagram_BooleanUnaryExpression.__init__)
+
+
+def test_activitydiagram_booleanunaryexpression_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanUnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_activitydiagram_booleanunaryexpression_has_operator():
+    assert hasattr(activitydiagram_BooleanUnaryExpression, "operator")
+    descriptor = None
+    for klass in activitydiagram_BooleanUnaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activitydiagram_input_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Input)
+
+
+def test_activitydiagram_input_constructor_exists():
+    assert callable(activitydiagram_Input.__init__)
+
+
+def test_activitydiagram_input_constructor_args():
+    sig = inspect.signature(activitydiagram_Input.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_inputvalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_InputValue)
+
+
+def test_activitydiagram_inputvalue_constructor_exists():
+    assert callable(activitydiagram_InputValue.__init__)
+
+
+def test_activitydiagram_inputvalue_constructor_args():
+    sig = inspect.signature(activitydiagram_InputValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,30 +223,30 @@ def test_variable_constructor_args():
 
 
 
-def test_activitydiagram::integervariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerVariable)
+def test_activitydiagram_integervariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerVariable)
 
 
-def test_activitydiagram::integervariable_constructor_exists():
-    assert callable(activitydiagram::IntegerVariable.__init__)
+def test_activitydiagram_integervariable_constructor_exists():
+    assert callable(activitydiagram_IntegerVariable.__init__)
 
 
-def test_activitydiagram::integervariable_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerVariable.__init__)
+def test_activitydiagram_integervariable_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::value_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Value)
+def test_activitydiagram_value_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Value)
 
 
-def test_activitydiagram::value_constructor_exists():
-    assert callable(activitydiagram::Value.__init__)
+def test_activitydiagram_value_constructor_exists():
+    assert callable(activitydiagram_Value.__init__)
 
 
-def test_activitydiagram::value_constructor_args():
-    sig = inspect.signature(activitydiagram::Value.__init__)
+def test_activitydiagram_value_constructor_args():
+    sig = inspect.signature(activitydiagram_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -151,23 +265,23 @@ def test_integerexpression_constructor_args():
 
 
 
-def test_activitydiagram::integercomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerComparisonExpression)
+def test_activitydiagram_integercomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerComparisonExpression)
 
 
-def test_activitydiagram::integercomparisonexpression_constructor_exists():
-    assert callable(activitydiagram::IntegerComparisonExpression.__init__)
+def test_activitydiagram_integercomparisonexpression_constructor_exists():
+    assert callable(activitydiagram_IntegerComparisonExpression.__init__)
 
 
-def test_activitydiagram::integercomparisonexpression_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerComparisonExpression.__init__)
+def test_activitydiagram_integercomparisonexpression_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerComparisonExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_activitydiagram::integercomparisonexpression_has_operator():
-    assert hasattr(activitydiagram::IntegerComparisonExpression, "operator")
+def test_activitydiagram_integercomparisonexpression_has_operator():
+    assert hasattr(activitydiagram_IntegerComparisonExpression, "operator")
     descriptor = None
-    for klass in activitydiagram::IntegerComparisonExpression.__mro__:
+    for klass in activitydiagram_IntegerComparisonExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -175,23 +289,23 @@ def test_activitydiagram::integercomparisonexpression_has_operator():
 
 
 
-def test_activitydiagram::integercalculationexpression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerCalculationExpression)
+def test_activitydiagram_integercalculationexpression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerCalculationExpression)
 
 
-def test_activitydiagram::integercalculationexpression_constructor_exists():
-    assert callable(activitydiagram::IntegerCalculationExpression.__init__)
+def test_activitydiagram_integercalculationexpression_constructor_exists():
+    assert callable(activitydiagram_IntegerCalculationExpression.__init__)
 
 
-def test_activitydiagram::integercalculationexpression_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerCalculationExpression.__init__)
+def test_activitydiagram_integercalculationexpression_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerCalculationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_activitydiagram::integercalculationexpression_has_operator():
-    assert hasattr(activitydiagram::IntegerCalculationExpression, "operator")
+def test_activitydiagram_integercalculationexpression_has_operator():
+    assert hasattr(activitydiagram_IntegerCalculationExpression, "operator")
     descriptor = None
-    for klass in activitydiagram::IntegerCalculationExpression.__mro__:
+    for klass in activitydiagram_IntegerCalculationExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -213,30 +327,30 @@ def test_expression_constructor_args():
 
 
 
-def test_activitydiagram::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanExpression)
+def test_activitydiagram_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanExpression)
 
 
-def test_activitydiagram::booleanexpression_constructor_exists():
-    assert callable(activitydiagram::BooleanExpression.__init__)
+def test_activitydiagram_booleanexpression_constructor_exists():
+    assert callable(activitydiagram_BooleanExpression.__init__)
 
 
-def test_activitydiagram::booleanexpression_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanExpression.__init__)
+def test_activitydiagram_booleanexpression_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerExpression)
+def test_activitydiagram_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerExpression)
 
 
-def test_activitydiagram::integerexpression_constructor_exists():
-    assert callable(activitydiagram::IntegerExpression.__init__)
+def test_activitydiagram_integerexpression_constructor_exists():
+    assert callable(activitydiagram_IntegerExpression.__init__)
 
 
-def test_activitydiagram::integerexpression_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerExpression.__init__)
+def test_activitydiagram_integerexpression_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -255,23 +369,23 @@ def test_value_constructor_args():
 
 
 
-def test_activitydiagram::integervalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerValue)
+def test_activitydiagram_integervalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerValue)
 
 
-def test_activitydiagram::integervalue_constructor_exists():
-    assert callable(activitydiagram::IntegerValue.__init__)
+def test_activitydiagram_integervalue_constructor_exists():
+    assert callable(activitydiagram_IntegerValue.__init__)
 
 
-def test_activitydiagram::integervalue_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerValue.__init__)
+def test_activitydiagram_integervalue_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activitydiagram::integervalue_has_value():
-    assert hasattr(activitydiagram::IntegerValue, "value")
+def test_activitydiagram_integervalue_has_value():
+    assert hasattr(activitydiagram_IntegerValue, "value")
     descriptor = None
-    for klass in activitydiagram::IntegerValue.__mro__:
+    for klass in activitydiagram_IntegerValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -279,23 +393,23 @@ def test_activitydiagram::integervalue_has_value():
 
 
 
-def test_activitydiagram::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanValue)
+def test_activitydiagram_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanValue)
 
 
-def test_activitydiagram::booleanvalue_constructor_exists():
-    assert callable(activitydiagram::BooleanValue.__init__)
+def test_activitydiagram_booleanvalue_constructor_exists():
+    assert callable(activitydiagram_BooleanValue.__init__)
 
 
-def test_activitydiagram::booleanvalue_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanValue.__init__)
+def test_activitydiagram_booleanvalue_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activitydiagram::booleanvalue_has_value():
-    assert hasattr(activitydiagram::BooleanValue, "value")
+def test_activitydiagram_booleanvalue_has_value():
+    assert hasattr(activitydiagram_BooleanValue, "value")
     descriptor = None
-    for klass in activitydiagram::BooleanValue.__mro__:
+    for klass in activitydiagram_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -303,16 +417,16 @@ def test_activitydiagram::booleanvalue_has_value():
 
 
 
-def test_activitydiagram::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanVariable)
+def test_activitydiagram_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanVariable)
 
 
-def test_activitydiagram::booleanvariable_constructor_exists():
-    assert callable(activitydiagram::BooleanVariable.__init__)
+def test_activitydiagram_booleanvariable_constructor_exists():
+    assert callable(activitydiagram_BooleanVariable.__init__)
 
 
-def test_activitydiagram::booleanvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanVariable.__init__)
+def test_activitydiagram_booleanvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -331,44 +445,44 @@ def test_activityedge_constructor_args():
 
 
 
-def test_activitydiagram::controlflow_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ControlFlow)
+def test_activitydiagram_controlflow_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ControlFlow)
 
 
-def test_activitydiagram::controlflow_constructor_exists():
-    assert callable(activitydiagram::ControlFlow.__init__)
+def test_activitydiagram_controlflow_constructor_exists():
+    assert callable(activitydiagram_ControlFlow.__init__)
 
 
-def test_activitydiagram::controlflow_constructor_args():
-    sig = inspect.signature(activitydiagram::ControlFlow.__init__)
+def test_activitydiagram_controlflow_constructor_args():
+    sig = inspect.signature(activitydiagram_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::offer_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Offer)
+def test_activitydiagram_offer_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Offer)
 
 
-def test_activitydiagram::offer_constructor_exists():
-    assert callable(activitydiagram::Offer.__init__)
+def test_activitydiagram_offer_constructor_exists():
+    assert callable(activitydiagram_Offer.__init__)
 
 
-def test_activitydiagram::offer_constructor_args():
-    sig = inspect.signature(activitydiagram::Offer.__init__)
+def test_activitydiagram_offer_constructor_args():
+    sig = inspect.signature(activitydiagram_Offer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::token_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Token)
+def test_activitydiagram_token_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Token)
 
 
-def test_activitydiagram::token_constructor_exists():
-    assert callable(activitydiagram::Token.__init__)
+def test_activitydiagram_token_constructor_exists():
+    assert callable(activitydiagram_Token.__init__)
 
 
-def test_activitydiagram::token_constructor_args():
-    sig = inspect.signature(activitydiagram::Token.__init__)
+def test_activitydiagram_token_constructor_args():
+    sig = inspect.signature(activitydiagram_Token.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -387,16 +501,16 @@ def test_finalnode_constructor_args():
 
 
 
-def test_activitydiagram::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ActivityFinalNode)
+def test_activitydiagram_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ActivityFinalNode)
 
 
-def test_activitydiagram::activityfinalnode_constructor_exists():
-    assert callable(activitydiagram::ActivityFinalNode.__init__)
+def test_activitydiagram_activityfinalnode_constructor_exists():
+    assert callable(activitydiagram_ActivityFinalNode.__init__)
 
 
-def test_activitydiagram::activityfinalnode_constructor_args():
-    sig = inspect.signature(activitydiagram::ActivityFinalNode.__init__)
+def test_activitydiagram_activityfinalnode_constructor_args():
+    sig = inspect.signature(activitydiagram_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -415,107 +529,107 @@ def test_controlnode_constructor_args():
 
 
 
-def test_activitydiagram::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::DecisionNode)
+def test_activitydiagram_finalnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_FinalNode)
 
 
-def test_activitydiagram::decisionnode_constructor_exists():
-    assert callable(activitydiagram::DecisionNode.__init__)
+def test_activitydiagram_finalnode_constructor_exists():
+    assert callable(activitydiagram_FinalNode.__init__)
 
 
-def test_activitydiagram::decisionnode_constructor_args():
-    sig = inspect.signature(activitydiagram::DecisionNode.__init__)
+def test_activitydiagram_finalnode_constructor_args():
+    sig = inspect.signature(activitydiagram_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::forknode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ForkNode)
+def test_activitydiagram_forknode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ForkNode)
 
 
-def test_activitydiagram::forknode_constructor_exists():
-    assert callable(activitydiagram::ForkNode.__init__)
+def test_activitydiagram_forknode_constructor_exists():
+    assert callable(activitydiagram_ForkNode.__init__)
 
 
-def test_activitydiagram::forknode_constructor_args():
-    sig = inspect.signature(activitydiagram::ForkNode.__init__)
+def test_activitydiagram_forknode_constructor_args():
+    sig = inspect.signature(activitydiagram_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::finalnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::FinalNode)
+def test_activitydiagram_joinnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_JoinNode)
 
 
-def test_activitydiagram::finalnode_constructor_exists():
-    assert callable(activitydiagram::FinalNode.__init__)
+def test_activitydiagram_joinnode_constructor_exists():
+    assert callable(activitydiagram_JoinNode.__init__)
 
 
-def test_activitydiagram::finalnode_constructor_args():
-    sig = inspect.signature(activitydiagram::FinalNode.__init__)
+def test_activitydiagram_joinnode_constructor_args():
+    sig = inspect.signature(activitydiagram_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::joinnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::JoinNode)
+def test_activitydiagram_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_DecisionNode)
 
 
-def test_activitydiagram::joinnode_constructor_exists():
-    assert callable(activitydiagram::JoinNode.__init__)
+def test_activitydiagram_decisionnode_constructor_exists():
+    assert callable(activitydiagram_DecisionNode.__init__)
 
 
-def test_activitydiagram::joinnode_constructor_args():
-    sig = inspect.signature(activitydiagram::JoinNode.__init__)
+def test_activitydiagram_decisionnode_constructor_args():
+    sig = inspect.signature(activitydiagram_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::mergenode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::MergeNode)
+def test_activitydiagram_mergenode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_MergeNode)
 
 
-def test_activitydiagram::mergenode_constructor_exists():
-    assert callable(activitydiagram::MergeNode.__init__)
+def test_activitydiagram_mergenode_constructor_exists():
+    assert callable(activitydiagram_MergeNode.__init__)
 
 
-def test_activitydiagram::mergenode_constructor_args():
-    sig = inspect.signature(activitydiagram::MergeNode.__init__)
+def test_activitydiagram_mergenode_constructor_args():
+    sig = inspect.signature(activitydiagram_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::initialnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::InitialNode)
+def test_activitydiagram_initialnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_InitialNode)
 
 
-def test_activitydiagram::initialnode_constructor_exists():
-    assert callable(activitydiagram::InitialNode.__init__)
+def test_activitydiagram_initialnode_constructor_exists():
+    assert callable(activitydiagram_InitialNode.__init__)
 
 
-def test_activitydiagram::initialnode_constructor_args():
-    sig = inspect.signature(activitydiagram::InitialNode.__init__)
+def test_activitydiagram_initialnode_constructor_args():
+    sig = inspect.signature(activitydiagram_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::namedelement_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::NamedElement)
+def test_activitydiagram_namedelement_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_NamedElement)
 
 
-def test_activitydiagram::namedelement_constructor_exists():
-    assert callable(activitydiagram::NamedElement.__init__)
+def test_activitydiagram_namedelement_constructor_exists():
+    assert callable(activitydiagram_NamedElement.__init__)
 
 
-def test_activitydiagram::namedelement_constructor_args():
-    sig = inspect.signature(activitydiagram::NamedElement.__init__)
+def test_activitydiagram_namedelement_constructor_args():
+    sig = inspect.signature(activitydiagram_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activitydiagram::namedelement_has_name():
-    assert hasattr(activitydiagram::NamedElement, "name")
+def test_activitydiagram_namedelement_has_name():
+    assert hasattr(activitydiagram_NamedElement, "name")
     descriptor = None
-    for klass in activitydiagram::NamedElement.__mro__:
+    for klass in activitydiagram_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -523,16 +637,16 @@ def test_activitydiagram::namedelement_has_name():
 
 
 
-def test_activitydiagram::expression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Expression)
+def test_activitydiagram_expression_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Expression)
 
 
-def test_activitydiagram::expression_constructor_exists():
-    assert callable(activitydiagram::Expression.__init__)
+def test_activitydiagram_expression_constructor_exists():
+    assert callable(activitydiagram_Expression.__init__)
 
 
-def test_activitydiagram::expression_constructor_args():
-    sig = inspect.signature(activitydiagram::Expression.__init__)
+def test_activitydiagram_expression_constructor_args():
+    sig = inspect.signature(activitydiagram_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -551,16 +665,16 @@ def test_action_constructor_args():
 
 
 
-def test_activitydiagram::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::OpaqueAction)
+def test_activitydiagram_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_OpaqueAction)
 
 
-def test_activitydiagram::opaqueaction_constructor_exists():
-    assert callable(activitydiagram::OpaqueAction.__init__)
+def test_activitydiagram_opaqueaction_constructor_exists():
+    assert callable(activitydiagram_OpaqueAction.__init__)
 
 
-def test_activitydiagram::opaqueaction_constructor_args():
-    sig = inspect.signature(activitydiagram::OpaqueAction.__init__)
+def test_activitydiagram_opaqueaction_constructor_args():
+    sig = inspect.signature(activitydiagram_OpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -579,16 +693,16 @@ def test_executablenode_constructor_args():
 
 
 
-def test_activitydiagram::action_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Action)
+def test_activitydiagram_action_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Action)
 
 
-def test_activitydiagram::action_constructor_exists():
-    assert callable(activitydiagram::Action.__init__)
+def test_activitydiagram_action_constructor_exists():
+    assert callable(activitydiagram_Action.__init__)
 
 
-def test_activitydiagram::action_constructor_args():
-    sig = inspect.signature(activitydiagram::Action.__init__)
+def test_activitydiagram_action_constructor_args():
+    sig = inspect.signature(activitydiagram_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -607,30 +721,30 @@ def test_activitynode_constructor_args():
 
 
 
-def test_activitydiagram::executablenode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ExecutableNode)
+def test_activitydiagram_executablenode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ExecutableNode)
 
 
-def test_activitydiagram::executablenode_constructor_exists():
-    assert callable(activitydiagram::ExecutableNode.__init__)
+def test_activitydiagram_executablenode_constructor_exists():
+    assert callable(activitydiagram_ExecutableNode.__init__)
 
 
-def test_activitydiagram::executablenode_constructor_args():
-    sig = inspect.signature(activitydiagram::ExecutableNode.__init__)
+def test_activitydiagram_executablenode_constructor_args():
+    sig = inspect.signature(activitydiagram_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::controlnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ControlNode)
+def test_activitydiagram_controlnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ControlNode)
 
 
-def test_activitydiagram::controlnode_constructor_exists():
-    assert callable(activitydiagram::ControlNode.__init__)
+def test_activitydiagram_controlnode_constructor_exists():
+    assert callable(activitydiagram_ControlNode.__init__)
 
 
-def test_activitydiagram::controlnode_constructor_args():
-    sig = inspect.signature(activitydiagram::ControlNode.__init__)
+def test_activitydiagram_controlnode_constructor_args():
+    sig = inspect.signature(activitydiagram_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -649,37 +763,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_activitydiagram::activityedge_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ActivityEdge)
+def test_activitydiagram_activitynode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ActivityNode)
 
 
-def test_activitydiagram::activityedge_constructor_exists():
-    assert callable(activitydiagram::ActivityEdge.__init__)
+def test_activitydiagram_activitynode_constructor_exists():
+    assert callable(activitydiagram_ActivityNode.__init__)
 
 
-def test_activitydiagram::activityedge_constructor_args():
-    sig = inspect.signature(activitydiagram::ActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::activitynode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ActivityNode)
-
-
-def test_activitydiagram::activitynode_constructor_exists():
-    assert callable(activitydiagram::ActivityNode.__init__)
-
-
-def test_activitydiagram::activitynode_constructor_args():
-    sig = inspect.signature(activitydiagram::ActivityNode.__init__)
+def test_activitydiagram_activitynode_constructor_args():
+    sig = inspect.signature(activitydiagram_ActivityNode.__init__)
     params = list(sig.parameters.keys())
     assert "running" in params, "Missing parameter 'running'"
 
-def test_activitydiagram::activitynode_has_running():
-    assert hasattr(activitydiagram::ActivityNode, "running")
+def test_activitydiagram_activitynode_has_running():
+    assert hasattr(activitydiagram_ActivityNode, "running")
     descriptor = None
-    for klass in activitydiagram::ActivityNode.__mro__:
+    for klass in activitydiagram_ActivityNode.__mro__:
         if "running" in klass.__dict__:
             descriptor = klass.__dict__["running"]
             break
@@ -687,167 +787,67 @@ def test_activitydiagram::activitynode_has_running():
 
 
 
-def test_activitydiagram::activity_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Activity)
+def test_activitydiagram_activityedge_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ActivityEdge)
 
 
-def test_activitydiagram::activity_constructor_exists():
-    assert callable(activitydiagram::Activity.__init__)
+def test_activitydiagram_activityedge_constructor_exists():
+    assert callable(activitydiagram_ActivityEdge.__init__)
 
 
-def test_activitydiagram::activity_constructor_args():
-    sig = inspect.signature(activitydiagram::Activity.__init__)
+def test_activitydiagram_activityedge_constructor_args():
+    sig = inspect.signature(activitydiagram_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::trace_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Trace)
+def test_activitydiagram_activity_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Activity)
 
 
-def test_activitydiagram::trace_constructor_exists():
-    assert callable(activitydiagram::Trace.__init__)
+def test_activitydiagram_activity_constructor_exists():
+    assert callable(activitydiagram_Activity.__init__)
 
 
-def test_activitydiagram::trace_constructor_args():
-    sig = inspect.signature(activitydiagram::Trace.__init__)
+def test_activitydiagram_activity_constructor_args():
+    sig = inspect.signature(activitydiagram_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::variable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Variable)
+def test_activitydiagram_trace_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Trace)
 
 
-def test_activitydiagram::variable_constructor_exists():
-    assert callable(activitydiagram::Variable.__init__)
+def test_activitydiagram_trace_constructor_exists():
+    assert callable(activitydiagram_Trace.__init__)
 
 
-def test_activitydiagram::variable_constructor_args():
-    sig = inspect.signature(activitydiagram::Variable.__init__)
+def test_activitydiagram_trace_constructor_args():
+    sig = inspect.signature(activitydiagram_Trace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_variable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Variable)
+
+
+def test_activitydiagram_variable_constructor_exists():
+    assert callable(activitydiagram_Variable.__init__)
+
+
+def test_activitydiagram_variable_constructor_args():
+    sig = inspect.signature(activitydiagram_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activitydiagram::variable_has_name():
-    assert hasattr(activitydiagram::Variable, "name")
+def test_activitydiagram_variable_has_name():
+    assert hasattr(activitydiagram_Variable, "name")
     descriptor = None
-    for klass in activitydiagram::Variable.__mro__:
+    for klass in activitydiagram_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_token_is_not_abstract():
-    assert not inspect.isabstract(Token)
-
-
-def test_token_constructor_exists():
-    assert callable(Token.__init__)
-
-
-def test_token_constructor_args():
-    sig = inspect.signature(Token.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::forkedtoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ForkedToken)
-
-
-def test_activitydiagram::forkedtoken_constructor_exists():
-    assert callable(activitydiagram::ForkedToken.__init__)
-
-
-def test_activitydiagram::forkedtoken_constructor_args():
-    sig = inspect.signature(activitydiagram::ForkedToken.__init__)
-    params = list(sig.parameters.keys())
-    assert "remainingOffersCount" in params, "Missing parameter 'remainingOffersCount'"
-
-def test_activitydiagram::forkedtoken_has_remainingOffersCount():
-    assert hasattr(activitydiagram::ForkedToken, "remainingOffersCount")
-    descriptor = None
-    for klass in activitydiagram::ForkedToken.__mro__:
-        if "remainingOffersCount" in klass.__dict__:
-            descriptor = klass.__dict__["remainingOffersCount"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activitydiagram::controltoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ControlToken)
-
-
-def test_activitydiagram::controltoken_constructor_exists():
-    assert callable(activitydiagram::ControlToken.__init__)
-
-
-def test_activitydiagram::controltoken_constructor_args():
-    sig = inspect.signature(activitydiagram::ControlToken.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(BooleanExpression)
-
-
-def test_booleanexpression_constructor_exists():
-    assert callable(BooleanExpression.__init__)
-
-
-def test_booleanexpression_constructor_args():
-    sig = inspect.signature(BooleanExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::booleanbinaryexpression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanBinaryExpression)
-
-
-def test_activitydiagram::booleanbinaryexpression_constructor_exists():
-    assert callable(activitydiagram::BooleanBinaryExpression.__init__)
-
-
-def test_activitydiagram::booleanbinaryexpression_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanBinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_activitydiagram::booleanbinaryexpression_has_operator():
-    assert hasattr(activitydiagram::BooleanBinaryExpression, "operator")
-    descriptor = None
-    for klass in activitydiagram::BooleanBinaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activitydiagram::booleanunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanUnaryExpression)
-
-
-def test_activitydiagram::booleanunaryexpression_constructor_exists():
-    assert callable(activitydiagram::BooleanUnaryExpression.__init__)
-
-
-def test_activitydiagram::booleanunaryexpression_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanUnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_activitydiagram::booleanunaryexpression_has_operator():
-    assert hasattr(activitydiagram::BooleanUnaryExpression, "operator")
-    descriptor = None
-    for klass in activitydiagram::BooleanUnaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
@@ -865,6 +865,24 @@ def test_integercalculationoperator_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in IntegerCalculationOperator"
+
+def test_integercomparisonoperator_exists():
+    # Check that the Enumeration exists
+    assert IntegerComparisonOperator is not None
+
+def test_integercomparisonoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in IntegerComparisonOperator]
+    expected_literals = [
+        "GREATER_EQUALS",
+        "GREATER",
+        "SMALLER_EQUALS",
+        "SMALLER",
+        "EQUALS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in IntegerComparisonOperator"
 
 def test_booleanbinaryoperator_exists():
     # Check that the Enumeration exists
@@ -895,24 +913,6 @@ def test_booleanunaryoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BooleanUnaryOperator"
 
-def test_integercomparisonoperator_exists():
-    # Check that the Enumeration exists
-    assert IntegerComparisonOperator is not None
-
-def test_integercomparisonoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IntegerComparisonOperator]
-    expected_literals = [
-        "EQUALS",
-        "SMALLER",
-        "GREATER_EQUALS",
-        "SMALLER_EQUALS",
-        "GREATER",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IntegerComparisonOperator"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -925,193 +925,305 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-activitydiagram::Input_strategy = st.builds(
-    activitydiagram::Input,
+Token_strategy = st.builds(
+    Token,
 )
-activitydiagram::InputValue_strategy = st.builds(
-    activitydiagram::InputValue,
+activitydiagram_ForkedToken_strategy = st.builds(
+    activitydiagram_ForkedToken,
+    remainingOffersCount=
+        st.integers()
+)
+activitydiagram_ControlToken_strategy = st.builds(
+    activitydiagram_ControlToken,
+)
+BooleanExpression_strategy = st.builds(
+    BooleanExpression,
+)
+activitydiagram_BooleanBinaryExpression_strategy = st.builds(
+    activitydiagram_BooleanBinaryExpression,
+    operator=
+        st.booleans()
+)
+activitydiagram_BooleanUnaryExpression_strategy = st.builds(
+    activitydiagram_BooleanUnaryExpression,
+    operator=
+        safe_text
+)
+activitydiagram_Input_strategy = st.builds(
+    activitydiagram_Input,
+)
+activitydiagram_InputValue_strategy = st.builds(
+    activitydiagram_InputValue,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-activitydiagram::IntegerVariable_strategy = st.builds(
-    activitydiagram::IntegerVariable,
+activitydiagram_IntegerVariable_strategy = st.builds(
+    activitydiagram_IntegerVariable,
 )
-activitydiagram::Value_strategy = st.builds(
-    activitydiagram::Value,
+activitydiagram_Value_strategy = st.builds(
+    activitydiagram_Value,
 )
 IntegerExpression_strategy = st.builds(
     IntegerExpression,
 )
-activitydiagram::IntegerComparisonExpression_strategy = st.builds(
-    activitydiagram::IntegerComparisonExpression,
+activitydiagram_IntegerComparisonExpression_strategy = st.builds(
+    activitydiagram_IntegerComparisonExpression,
     operator=
         safe_text
 )
-activitydiagram::IntegerCalculationExpression_strategy = st.builds(
-    activitydiagram::IntegerCalculationExpression,
+activitydiagram_IntegerCalculationExpression_strategy = st.builds(
+    activitydiagram_IntegerCalculationExpression,
     operator=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-activitydiagram::BooleanExpression_strategy = st.builds(
-    activitydiagram::BooleanExpression,
+activitydiagram_BooleanExpression_strategy = st.builds(
+    activitydiagram_BooleanExpression,
 )
-activitydiagram::IntegerExpression_strategy = st.builds(
-    activitydiagram::IntegerExpression,
+activitydiagram_IntegerExpression_strategy = st.builds(
+    activitydiagram_IntegerExpression,
 )
 Value_strategy = st.builds(
     Value,
 )
-activitydiagram::IntegerValue_strategy = st.builds(
-    activitydiagram::IntegerValue,
+activitydiagram_IntegerValue_strategy = st.builds(
+    activitydiagram_IntegerValue,
     value=
         st.integers()
 )
-activitydiagram::BooleanValue_strategy = st.builds(
-    activitydiagram::BooleanValue,
+activitydiagram_BooleanValue_strategy = st.builds(
+    activitydiagram_BooleanValue,
     value=
         st.booleans()
 )
-activitydiagram::BooleanVariable_strategy = st.builds(
-    activitydiagram::BooleanVariable,
+activitydiagram_BooleanVariable_strategy = st.builds(
+    activitydiagram_BooleanVariable,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-activitydiagram::ControlFlow_strategy = st.builds(
-    activitydiagram::ControlFlow,
+activitydiagram_ControlFlow_strategy = st.builds(
+    activitydiagram_ControlFlow,
 )
-activitydiagram::Offer_strategy = st.builds(
-    activitydiagram::Offer,
+activitydiagram_Offer_strategy = st.builds(
+    activitydiagram_Offer,
 )
-activitydiagram::Token_strategy = st.builds(
-    activitydiagram::Token,
+activitydiagram_Token_strategy = st.builds(
+    activitydiagram_Token,
 )
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-activitydiagram::ActivityFinalNode_strategy = st.builds(
-    activitydiagram::ActivityFinalNode,
+activitydiagram_ActivityFinalNode_strategy = st.builds(
+    activitydiagram_ActivityFinalNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-activitydiagram::DecisionNode_strategy = st.builds(
-    activitydiagram::DecisionNode,
+activitydiagram_FinalNode_strategy = st.builds(
+    activitydiagram_FinalNode,
 )
-activitydiagram::ForkNode_strategy = st.builds(
-    activitydiagram::ForkNode,
+activitydiagram_ForkNode_strategy = st.builds(
+    activitydiagram_ForkNode,
 )
-activitydiagram::FinalNode_strategy = st.builds(
-    activitydiagram::FinalNode,
+activitydiagram_JoinNode_strategy = st.builds(
+    activitydiagram_JoinNode,
 )
-activitydiagram::JoinNode_strategy = st.builds(
-    activitydiagram::JoinNode,
+activitydiagram_DecisionNode_strategy = st.builds(
+    activitydiagram_DecisionNode,
 )
-activitydiagram::MergeNode_strategy = st.builds(
-    activitydiagram::MergeNode,
+activitydiagram_MergeNode_strategy = st.builds(
+    activitydiagram_MergeNode,
 )
-activitydiagram::InitialNode_strategy = st.builds(
-    activitydiagram::InitialNode,
+activitydiagram_InitialNode_strategy = st.builds(
+    activitydiagram_InitialNode,
 )
-activitydiagram::NamedElement_strategy = st.builds(
-    activitydiagram::NamedElement,
+activitydiagram_NamedElement_strategy = st.builds(
+    activitydiagram_NamedElement,
     name=
         safe_text
 )
-activitydiagram::Expression_strategy = st.builds(
-    activitydiagram::Expression,
+activitydiagram_Expression_strategy = st.builds(
+    activitydiagram_Expression,
 )
 Action_strategy = st.builds(
     Action,
 )
-activitydiagram::OpaqueAction_strategy = st.builds(
-    activitydiagram::OpaqueAction,
+activitydiagram_OpaqueAction_strategy = st.builds(
+    activitydiagram_OpaqueAction,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-activitydiagram::Action_strategy = st.builds(
-    activitydiagram::Action,
+activitydiagram_Action_strategy = st.builds(
+    activitydiagram_Action,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-activitydiagram::ExecutableNode_strategy = st.builds(
-    activitydiagram::ExecutableNode,
+activitydiagram_ExecutableNode_strategy = st.builds(
+    activitydiagram_ExecutableNode,
 )
-activitydiagram::ControlNode_strategy = st.builds(
-    activitydiagram::ControlNode,
+activitydiagram_ControlNode_strategy = st.builds(
+    activitydiagram_ControlNode,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-activitydiagram::ActivityEdge_strategy = st.builds(
-    activitydiagram::ActivityEdge,
-)
-activitydiagram::ActivityNode_strategy = st.builds(
-    activitydiagram::ActivityNode,
+activitydiagram_ActivityNode_strategy = st.builds(
+    activitydiagram_ActivityNode,
     running=
         st.booleans()
 )
-activitydiagram::Activity_strategy = st.builds(
-    activitydiagram::Activity,
+activitydiagram_ActivityEdge_strategy = st.builds(
+    activitydiagram_ActivityEdge,
 )
-activitydiagram::Trace_strategy = st.builds(
-    activitydiagram::Trace,
+activitydiagram_Activity_strategy = st.builds(
+    activitydiagram_Activity,
 )
-activitydiagram::Variable_strategy = st.builds(
-    activitydiagram::Variable,
+activitydiagram_Trace_strategy = st.builds(
+    activitydiagram_Trace,
+)
+activitydiagram_Variable_strategy = st.builds(
+    activitydiagram_Variable,
     name=
         safe_text
 )
-Token_strategy = st.builds(
-    Token,
-)
-activitydiagram::ForkedToken_strategy = st.builds(
-    activitydiagram::ForkedToken,
-    remainingOffersCount=
-        st.integers()
-)
-activitydiagram::ControlToken_strategy = st.builds(
-    activitydiagram::ControlToken,
-)
-BooleanExpression_strategy = st.builds(
-    BooleanExpression,
-)
-activitydiagram::BooleanBinaryExpression_strategy = st.builds(
-    activitydiagram::BooleanBinaryExpression,
-    operator=
-        st.booleans()
-)
-activitydiagram::BooleanUnaryExpression_strategy = st.builds(
-    activitydiagram::BooleanUnaryExpression,
-    operator=
-        safe_text
-)
 
-@given(instance=activitydiagram::Input_strategy)
+@given(instance=Token_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::input_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Input)
+def test_token_instantiation(instance):
+    assert isinstance(instance, Token)
 
-@given(instance=activitydiagram::InputValue_strategy)
+@given(instance=activitydiagram_ForkedToken_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::inputvalue_instantiation(instance):
-    assert isinstance(instance, activitydiagram::InputValue)
+def test_activitydiagram_forkedtoken_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ForkedToken)
+
+
+
+@given(instance=activitydiagram_ForkedToken_strategy)
+def test_activitydiagram_forkedtoken_remainingOffersCount_setter(instance):
+    original = instance.remainingOffersCount
+    instance.remainingOffersCount = original
+    assert instance.remainingOffersCount == original
+
+@given(instance=activitydiagram_ControlToken_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_controltoken_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ControlToken)
+
+@given(instance=BooleanExpression_strategy)
+@settings(max_examples=50)
+def test_booleanexpression_instantiation(instance):
+    assert isinstance(instance, BooleanExpression)
+
+@given(instance=activitydiagram_BooleanBinaryExpression_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_booleanbinaryexpression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanBinaryExpression)
+
+
+
+@given(instance=activitydiagram_BooleanBinaryExpression_strategy)
+def test_activitydiagram_booleanbinaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_BooleanBinaryExpression_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_booleanbinaryexpression_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_BooleanBinaryExpression is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_BooleanBinaryExpression did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_BooleanBinaryExpression is not implemented or raised an error")
+
+@given(instance=activitydiagram_BooleanUnaryExpression_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_booleanunaryexpression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanUnaryExpression)
+
+
+
+@given(instance=activitydiagram_BooleanUnaryExpression_strategy)
+def test_activitydiagram_booleanunaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_BooleanUnaryExpression_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_booleanunaryexpression_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_BooleanUnaryExpression is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_BooleanUnaryExpression did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_BooleanUnaryExpression is not implemented or raised an error")
+
+@given(instance=activitydiagram_Input_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_input_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Input)
+
+@given(instance=activitydiagram_InputValue_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_inputvalue_instantiation(instance):
+    assert isinstance(instance, activitydiagram_InputValue)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=activitydiagram::IntegerVariable_strategy)
+@given(instance=activitydiagram_IntegerVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integervariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerVariable)
+def test_activitydiagram_integervariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerVariable)
 
 import warnings
 import copy
@@ -1119,9 +1231,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::IntegerVariable_strategy)
+@given(instance=activitydiagram_IntegerVariable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::integervariable_execute_changes_state(instance):
+def test_activitydiagram_integervariable_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1133,14 +1245,14 @@ def test_activitydiagram::integervariable_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::IntegerVariable is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_IntegerVariable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::IntegerVariable did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_IntegerVariable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::IntegerVariable is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_IntegerVariable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1148,9 +1260,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::IntegerVariable_strategy)
+@given(instance=activitydiagram_IntegerVariable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::integervariable_print_changes_state(instance):
+def test_activitydiagram_integervariable_print_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1162,14 +1274,14 @@ def test_activitydiagram::integervariable_print_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in activitydiagram::IntegerVariable is empty"
+        assert has_statements, f"Function 'print' in activitydiagram_IntegerVariable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in activitydiagram::IntegerVariable did not change state; check implementation")
+            warnings.warn(f"Operation 'print' in activitydiagram_IntegerVariable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in activitydiagram::IntegerVariable is not implemented or raised an error")
+        warnings.warn(f"Operation 'print' in activitydiagram_IntegerVariable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1177,9 +1289,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::IntegerVariable_strategy)
+@given(instance=activitydiagram_IntegerVariable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::integervariable_init_changes_state(instance):
+def test_activitydiagram_integervariable_init_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1191,37 +1303,34 @@ def test_activitydiagram::integervariable_init_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'init' in activitydiagram::IntegerVariable is empty"
+        assert has_statements, f"Function 'init' in activitydiagram_IntegerVariable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'init' in activitydiagram::IntegerVariable did not change state; check implementation")
+            warnings.warn(f"Operation 'init' in activitydiagram_IntegerVariable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'init' in activitydiagram::IntegerVariable is not implemented or raised an error")
+        warnings.warn(f"Operation 'init' in activitydiagram_IntegerVariable is not implemented or raised an error")
 
-@given(instance=activitydiagram::Value_strategy)
+@given(instance=activitydiagram_Value_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::value_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Value)
+def test_activitydiagram_value_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Value)
 
 @given(instance=IntegerExpression_strategy)
 @settings(max_examples=50)
 def test_integerexpression_instantiation(instance):
     assert isinstance(instance, IntegerExpression)
 
-@given(instance=activitydiagram::IntegerComparisonExpression_strategy)
+@given(instance=activitydiagram_IntegerComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integercomparisonexpression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerComparisonExpression)
-
-@given(instance=activitydiagram::IntegerComparisonExpression_strategy)
-def test_activitydiagram::integercomparisonexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_activitydiagram_integercomparisonexpression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerComparisonExpression)
 
 
-@given(instance=activitydiagram::IntegerComparisonExpression_strategy)
-def test_activitydiagram::integercomparisonexpression_operator_setter(instance):
+
+@given(instance=activitydiagram_IntegerComparisonExpression_strategy)
+def test_activitydiagram_integercomparisonexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -1232,9 +1341,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::IntegerComparisonExpression_strategy)
+@given(instance=activitydiagram_IntegerComparisonExpression_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::integercomparisonexpression_execute_changes_state(instance):
+def test_activitydiagram_integercomparisonexpression_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1246,27 +1355,24 @@ def test_activitydiagram::integercomparisonexpression_execute_changes_state(inst
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::IntegerComparisonExpression is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_IntegerComparisonExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::IntegerComparisonExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_IntegerComparisonExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::IntegerComparisonExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_IntegerComparisonExpression is not implemented or raised an error")
 
-@given(instance=activitydiagram::IntegerCalculationExpression_strategy)
+@given(instance=activitydiagram_IntegerCalculationExpression_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integercalculationexpression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerCalculationExpression)
-
-@given(instance=activitydiagram::IntegerCalculationExpression_strategy)
-def test_activitydiagram::integercalculationexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_activitydiagram_integercalculationexpression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerCalculationExpression)
 
 
-@given(instance=activitydiagram::IntegerCalculationExpression_strategy)
-def test_activitydiagram::integercalculationexpression_operator_setter(instance):
+
+@given(instance=activitydiagram_IntegerCalculationExpression_strategy)
+def test_activitydiagram_integercalculationexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -1277,9 +1383,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::IntegerCalculationExpression_strategy)
+@given(instance=activitydiagram_IntegerCalculationExpression_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::integercalculationexpression_execute_changes_state(instance):
+def test_activitydiagram_integercalculationexpression_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1291,71 +1397,65 @@ def test_activitydiagram::integercalculationexpression_execute_changes_state(ins
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::IntegerCalculationExpression is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_IntegerCalculationExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::IntegerCalculationExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_IntegerCalculationExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::IntegerCalculationExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_IntegerCalculationExpression is not implemented or raised an error")
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=activitydiagram::BooleanExpression_strategy)
+@given(instance=activitydiagram_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::booleanexpression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanExpression)
+def test_activitydiagram_booleanexpression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanExpression)
 
-@given(instance=activitydiagram::IntegerExpression_strategy)
+@given(instance=activitydiagram_IntegerExpression_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integerexpression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerExpression)
+def test_activitydiagram_integerexpression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerExpression)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=activitydiagram::IntegerValue_strategy)
+@given(instance=activitydiagram_IntegerValue_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integervalue_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerValue)
-
-@given(instance=activitydiagram::IntegerValue_strategy)
-def test_activitydiagram::integervalue_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_activitydiagram_integervalue_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerValue)
 
 
-@given(instance=activitydiagram::IntegerValue_strategy)
-def test_activitydiagram::integervalue_value_setter(instance):
+
+@given(instance=activitydiagram_IntegerValue_strategy)
+def test_activitydiagram_integervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=activitydiagram::BooleanValue_strategy)
+@given(instance=activitydiagram_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::booleanvalue_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanValue)
-
-@given(instance=activitydiagram::BooleanValue_strategy)
-def test_activitydiagram::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_activitydiagram_booleanvalue_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanValue)
 
 
-@given(instance=activitydiagram::BooleanValue_strategy)
-def test_activitydiagram::booleanvalue_value_setter(instance):
+
+@given(instance=activitydiagram_BooleanValue_strategy)
+def test_activitydiagram_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=activitydiagram::BooleanVariable_strategy)
+@given(instance=activitydiagram_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::booleanvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanVariable)
+def test_activitydiagram_booleanvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanVariable)
 
 import warnings
 import copy
@@ -1363,67 +1463,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::BooleanVariable_strategy)
+@given(instance=activitydiagram_BooleanVariable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::booleanvariable_print_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.print()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.print).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in activitydiagram::BooleanVariable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in activitydiagram::BooleanVariable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in activitydiagram::BooleanVariable is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::BooleanVariable_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::booleanvariable_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::BooleanVariable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::BooleanVariable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::BooleanVariable is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::BooleanVariable_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::booleanvariable_init_changes_state(instance):
+def test_activitydiagram_booleanvariable_init_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1435,29 +1477,14 @@ def test_activitydiagram::booleanvariable_init_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'init' in activitydiagram::BooleanVariable is empty"
+        assert has_statements, f"Function 'init' in activitydiagram_BooleanVariable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'init' in activitydiagram::BooleanVariable did not change state; check implementation")
+            warnings.warn(f"Operation 'init' in activitydiagram_BooleanVariable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'init' in activitydiagram::BooleanVariable is not implemented or raised an error")
-
-@given(instance=ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_activityedge_instantiation(instance):
-    assert isinstance(instance, ActivityEdge)
-
-@given(instance=activitydiagram::ControlFlow_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::controlflow_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ControlFlow)
-
-@given(instance=activitydiagram::Offer_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::offer_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Offer)
+        warnings.warn(f"Operation 'init' in activitydiagram_BooleanVariable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1465,9 +1492,82 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Offer_strategy)
+@given(instance=activitydiagram_BooleanVariable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::offer_removewithdrawntokens_changes_state(instance):
+def test_activitydiagram_booleanvariable_print_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.print()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.print).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'print' in activitydiagram_BooleanVariable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'print' in activitydiagram_BooleanVariable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'print' in activitydiagram_BooleanVariable is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_BooleanVariable_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_booleanvariable_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_BooleanVariable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_BooleanVariable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_BooleanVariable is not implemented or raised an error")
+
+@given(instance=ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_activityedge_instantiation(instance):
+    assert isinstance(instance, ActivityEdge)
+
+@given(instance=activitydiagram_ControlFlow_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_controlflow_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ControlFlow)
+
+@given(instance=activitydiagram_Offer_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_offer_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Offer)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_Offer_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_offer_removewithdrawntokens_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1479,14 +1579,14 @@ def test_activitydiagram::offer_removewithdrawntokens_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeWithdrawnTokens' in activitydiagram::Offer is empty"
+        assert has_statements, f"Function 'removeWithdrawnTokens' in activitydiagram_Offer is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeWithdrawnTokens' in activitydiagram::Offer did not change state; check implementation")
+            warnings.warn(f"Operation 'removeWithdrawnTokens' in activitydiagram_Offer did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeWithdrawnTokens' in activitydiagram::Offer is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeWithdrawnTokens' in activitydiagram_Offer is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1494,9 +1594,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Offer_strategy)
+@given(instance=activitydiagram_Offer_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::offer_hastokens_changes_state(instance):
+def test_activitydiagram_offer_hastokens_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1508,19 +1608,19 @@ def test_activitydiagram::offer_hastokens_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasTokens' in activitydiagram::Offer is empty"
+        assert has_statements, f"Function 'hasTokens' in activitydiagram_Offer is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasTokens' in activitydiagram::Offer did not change state; check implementation")
+            warnings.warn(f"Operation 'hasTokens' in activitydiagram_Offer did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasTokens' in activitydiagram::Offer is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasTokens' in activitydiagram_Offer is not implemented or raised an error")
 
-@given(instance=activitydiagram::Token_strategy)
+@given(instance=activitydiagram_Token_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::token_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Token)
+def test_activitydiagram_token_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Token)
 
 import warnings
 import copy
@@ -1528,9 +1628,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Token_strategy)
+@given(instance=activitydiagram_Token_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::token_iswithdrawn_changes_state(instance):
+def test_activitydiagram_token_iswithdrawn_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1542,24 +1642,24 @@ def test_activitydiagram::token_iswithdrawn_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isWithdrawn' in activitydiagram::Token is empty"
+        assert has_statements, f"Function 'isWithdrawn' in activitydiagram_Token is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isWithdrawn' in activitydiagram::Token did not change state; check implementation")
+            warnings.warn(f"Operation 'isWithdrawn' in activitydiagram_Token did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isWithdrawn' in activitydiagram::Token is not implemented or raised an error")
+        warnings.warn(f"Operation 'isWithdrawn' in activitydiagram_Token is not implemented or raised an error")
 
 @given(instance=FinalNode_strategy)
 @settings(max_examples=50)
 def test_finalnode_instantiation(instance):
     assert isinstance(instance, FinalNode)
 
-@given(instance=activitydiagram::ActivityFinalNode_strategy)
+@given(instance=activitydiagram_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ActivityFinalNode)
+def test_activitydiagram_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ActivityFinalNode)
 
 import warnings
 import copy
@@ -1567,9 +1667,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityFinalNode_strategy)
+@given(instance=activitydiagram_ActivityFinalNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activityfinalnode_execute_changes_state(instance):
+def test_activitydiagram_activityfinalnode_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1581,24 +1681,29 @@ def test_activitydiagram::activityfinalnode_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::ActivityFinalNode is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_ActivityFinalNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::ActivityFinalNode did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_ActivityFinalNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::ActivityFinalNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_ActivityFinalNode is not implemented or raised an error")
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=activitydiagram::DecisionNode_strategy)
+@given(instance=activitydiagram_FinalNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::decisionnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::DecisionNode)
+def test_activitydiagram_finalnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_FinalNode)
+
+@given(instance=activitydiagram_ForkNode_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_forknode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ForkNode)
 
 import warnings
 import copy
@@ -1606,9 +1711,106 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::DecisionNode_strategy)
+@given(instance=activitydiagram_ForkNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::decisionnode_sendoffers_changes_state(instance):
+def test_activitydiagram_forknode_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_ForkNode is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_ForkNode did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_ForkNode is not implemented or raised an error")
+
+@given(instance=activitydiagram_JoinNode_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_joinnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_JoinNode)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_JoinNode_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_joinnode_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_JoinNode is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_JoinNode did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_JoinNode is not implemented or raised an error")
+
+@given(instance=activitydiagram_DecisionNode_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_decisionnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_DecisionNode)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_DecisionNode_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_decisionnode_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_DecisionNode is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_DecisionNode did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_DecisionNode is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_DecisionNode_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_decisionnode_sendoffers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1622,14 +1824,19 @@ def test_activitydiagram::decisionnode_sendoffers_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'sendOffers' in activitydiagram::DecisionNode is empty"
+        assert has_statements, f"Function 'sendOffers' in activitydiagram_DecisionNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'sendOffers' in activitydiagram::DecisionNode did not change state; check implementation")
+            warnings.warn(f"Operation 'sendOffers' in activitydiagram_DecisionNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'sendOffers' in activitydiagram::DecisionNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'sendOffers' in activitydiagram_DecisionNode is not implemented or raised an error")
+
+@given(instance=activitydiagram_MergeNode_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_mergenode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_MergeNode)
 
 import warnings
 import copy
@@ -1637,9 +1844,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::DecisionNode_strategy)
+@given(instance=activitydiagram_MergeNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::decisionnode_execute_changes_state(instance):
+def test_activitydiagram_mergenode_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1651,19 +1858,14 @@ def test_activitydiagram::decisionnode_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::DecisionNode is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_MergeNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::DecisionNode did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_MergeNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::DecisionNode is not implemented or raised an error")
-
-@given(instance=activitydiagram::ForkNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::forknode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ForkNode)
+        warnings.warn(f"Operation 'execute' in activitydiagram_MergeNode is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1671,82 +1873,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ForkNode_strategy)
+@given(instance=activitydiagram_MergeNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::forknode_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::ForkNode is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::ForkNode did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::ForkNode is not implemented or raised an error")
-
-@given(instance=activitydiagram::FinalNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::finalnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::FinalNode)
-
-@given(instance=activitydiagram::JoinNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::joinnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::JoinNode)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::JoinNode_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::joinnode_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::JoinNode is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::JoinNode did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::JoinNode is not implemented or raised an error")
-
-@given(instance=activitydiagram::MergeNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::mergenode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::MergeNode)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::MergeNode_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::mergenode_hasoffers_changes_state(instance):
+def test_activitydiagram_mergenode_hasoffers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1758,48 +1887,19 @@ def test_activitydiagram::mergenode_hasoffers_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasOffers' in activitydiagram::MergeNode is empty"
+        assert has_statements, f"Function 'hasOffers' in activitydiagram_MergeNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasOffers' in activitydiagram::MergeNode did not change state; check implementation")
+            warnings.warn(f"Operation 'hasOffers' in activitydiagram_MergeNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasOffers' in activitydiagram::MergeNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasOffers' in activitydiagram_MergeNode is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::MergeNode_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::mergenode_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::MergeNode is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::MergeNode did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::MergeNode is not implemented or raised an error")
-
-@given(instance=activitydiagram::InitialNode_strategy)
+@given(instance=activitydiagram_InitialNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::initialnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::InitialNode)
+def test_activitydiagram_initialnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_InitialNode)
 
 import warnings
 import copy
@@ -1807,38 +1907,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::InitialNode_strategy)
+@given(instance=activitydiagram_InitialNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::initialnode_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::InitialNode is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::InitialNode did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::InitialNode is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::InitialNode_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::initialnode_hasoffers_changes_state(instance):
+def test_activitydiagram_initialnode_hasoffers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1850,27 +1921,53 @@ def test_activitydiagram::initialnode_hasoffers_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasOffers' in activitydiagram::InitialNode is empty"
+        assert has_statements, f"Function 'hasOffers' in activitydiagram_InitialNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasOffers' in activitydiagram::InitialNode did not change state; check implementation")
+            warnings.warn(f"Operation 'hasOffers' in activitydiagram_InitialNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasOffers' in activitydiagram::InitialNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasOffers' in activitydiagram_InitialNode is not implemented or raised an error")
 
-@given(instance=activitydiagram::NamedElement_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_InitialNode_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_initialnode_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_InitialNode is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_InitialNode did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_InitialNode is not implemented or raised an error")
+
+@given(instance=activitydiagram_NamedElement_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::namedelement_instantiation(instance):
-    assert isinstance(instance, activitydiagram::NamedElement)
-
-@given(instance=activitydiagram::NamedElement_strategy)
-def test_activitydiagram::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activitydiagram_namedelement_instantiation(instance):
+    assert isinstance(instance, activitydiagram_NamedElement)
 
 
-@given(instance=activitydiagram::NamedElement_strategy)
-def test_activitydiagram::namedelement_name_setter(instance):
+
+@given(instance=activitydiagram_NamedElement_strategy)
+def test_activitydiagram_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1881,9 +1978,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::NamedElement_strategy)
+@given(instance=activitydiagram_NamedElement_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::namedelement_execute_changes_state(instance):
+def test_activitydiagram_namedelement_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1895,19 +1992,19 @@ def test_activitydiagram::namedelement_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::NamedElement is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_NamedElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::NamedElement did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_NamedElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::NamedElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_NamedElement is not implemented or raised an error")
 
-@given(instance=activitydiagram::Expression_strategy)
+@given(instance=activitydiagram_Expression_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::expression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Expression)
+def test_activitydiagram_expression_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Expression)
 
 import warnings
 import copy
@@ -1915,9 +2012,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Expression_strategy)
+@given(instance=activitydiagram_Expression_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::expression_execute_changes_state(instance):
+def test_activitydiagram_expression_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1929,24 +2026,24 @@ def test_activitydiagram::expression_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::Expression is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_Expression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::Expression did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_Expression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::Expression is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_Expression is not implemented or raised an error")
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=activitydiagram::OpaqueAction_strategy)
+@given(instance=activitydiagram_OpaqueAction_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::opaqueaction_instantiation(instance):
-    assert isinstance(instance, activitydiagram::OpaqueAction)
+def test_activitydiagram_opaqueaction_instantiation(instance):
+    assert isinstance(instance, activitydiagram_OpaqueAction)
 
 import warnings
 import copy
@@ -1954,9 +2051,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::OpaqueAction_strategy)
+@given(instance=activitydiagram_OpaqueAction_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::opaqueaction_execute_changes_state(instance):
+def test_activitydiagram_opaqueaction_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1968,151 +2065,54 @@ def test_activitydiagram::opaqueaction_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::OpaqueAction is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_OpaqueAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::OpaqueAction did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_OpaqueAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::OpaqueAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_OpaqueAction is not implemented or raised an error")
 
 @given(instance=ExecutableNode_strategy)
 @settings(max_examples=50)
 def test_executablenode_instantiation(instance):
     assert isinstance(instance, ExecutableNode)
 
-@given(instance=activitydiagram::Action_strategy)
+@given(instance=activitydiagram_Action_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::action_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Action)
+def test_activitydiagram_action_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Action)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=activitydiagram::ExecutableNode_strategy)
+@given(instance=activitydiagram_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::executablenode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ExecutableNode)
+def test_activitydiagram_executablenode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ExecutableNode)
 
-@given(instance=activitydiagram::ControlNode_strategy)
+@given(instance=activitydiagram_ControlNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::controlnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ControlNode)
+def test_activitydiagram_controlnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ControlNode)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=activitydiagram::ActivityEdge_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::activityedge_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ActivityEdge)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::ActivityEdge_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::activityedge_hasoffer_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasOffer()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasOffer).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasOffer' in activitydiagram::ActivityEdge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasOffer' in activitydiagram::ActivityEdge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasOffer' in activitydiagram::ActivityEdge is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::ActivityEdge_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::activityedge_sendoffer_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.sendOffer(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.sendOffer).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'sendOffer' in activitydiagram::ActivityEdge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'sendOffer' in activitydiagram::ActivityEdge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'sendOffer' in activitydiagram::ActivityEdge is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::ActivityEdge_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::activityedge_takeofferedtokens_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.takeOfferedTokens()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.takeOfferedTokens).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'takeOfferedTokens' in activitydiagram::ActivityEdge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'takeOfferedTokens' in activitydiagram::ActivityEdge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'takeOfferedTokens' in activitydiagram::ActivityEdge is not implemented or raised an error")
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::activitynode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ActivityNode)
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-def test_activitydiagram::activitynode_running_type(instance):
-    assert isinstance(instance.running, bool)
+def test_activitydiagram_activitynode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ActivityNode)
 
 
-@given(instance=activitydiagram::ActivityNode_strategy)
-def test_activitydiagram::activitynode_running_setter(instance):
+
+@given(instance=activitydiagram_ActivityNode_strategy)
+def test_activitydiagram_activitynode_running_setter(instance):
     original = instance.running
     instance.running = original
     assert instance.running == original
@@ -2123,9 +2123,67 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityNode_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activitynode_takeofferdtokens_changes_state(instance):
+def test_activitydiagram_activitynode_isready_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isReady()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isReady).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isReady' in activitydiagram_ActivityNode is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isReady' in activitydiagram_ActivityNode did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isReady' in activitydiagram_ActivityNode is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_ActivityNode_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_activitynode_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in activitydiagram_ActivityNode is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in activitydiagram_ActivityNode did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in activitydiagram_ActivityNode is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_ActivityNode_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_activitynode_takeofferdtokens_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2137,14 +2195,14 @@ def test_activitydiagram::activitynode_takeofferdtokens_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'takeOfferdTokens' in activitydiagram::ActivityNode is empty"
+        assert has_statements, f"Function 'takeOfferdTokens' in activitydiagram_ActivityNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'takeOfferdTokens' in activitydiagram::ActivityNode did not change state; check implementation")
+            warnings.warn(f"Operation 'takeOfferdTokens' in activitydiagram_ActivityNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'takeOfferdTokens' in activitydiagram::ActivityNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'takeOfferdTokens' in activitydiagram_ActivityNode is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2152,30 +2210,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityNode_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activitynode_sendoffers_changes_state(instance):
+def test_activitydiagram_activitynode_hasoffers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.sendOffers(
-            "test"
-        )
+        instance.hasOffers()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.sendOffers).strip()
+        source = inspect.getsource(instance.hasOffers).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'sendOffers' in activitydiagram::ActivityNode is empty"
+        assert has_statements, f"Function 'hasOffers' in activitydiagram_ActivityNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'sendOffers' in activitydiagram::ActivityNode did not change state; check implementation")
+            warnings.warn(f"Operation 'hasOffers' in activitydiagram_ActivityNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'sendOffers' in activitydiagram::ActivityNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasOffers' in activitydiagram_ActivityNode is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2183,67 +2239,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityNode_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activitynode_terminate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.terminate()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.terminate).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'terminate' in activitydiagram::ActivityNode is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'terminate' in activitydiagram::ActivityNode did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'terminate' in activitydiagram::ActivityNode is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::activitynode_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::ActivityNode is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::ActivityNode did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::ActivityNode is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-@settings(max_examples=30)
-def test_activitydiagram::activitynode_addtokens_changes_state(instance):
+def test_activitydiagram_activitynode_addtokens_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2257,14 +2255,14 @@ def test_activitydiagram::activitynode_addtokens_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTokens' in activitydiagram::ActivityNode is empty"
+        assert has_statements, f"Function 'addTokens' in activitydiagram_ActivityNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTokens' in activitydiagram::ActivityNode did not change state; check implementation")
+            warnings.warn(f"Operation 'addTokens' in activitydiagram_ActivityNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTokens' in activitydiagram::ActivityNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'addTokens' in activitydiagram_ActivityNode is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2272,28 +2270,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityNode_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activitynode_isready_changes_state(instance):
+def test_activitydiagram_activitynode_terminate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isReady()
+        instance.terminate()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isReady).strip()
+        source = inspect.getsource(instance.terminate).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isReady' in activitydiagram::ActivityNode is empty"
+        assert has_statements, f"Function 'terminate' in activitydiagram_ActivityNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isReady' in activitydiagram::ActivityNode did not change state; check implementation")
+            warnings.warn(f"Operation 'terminate' in activitydiagram_ActivityNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isReady' in activitydiagram::ActivityNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'terminate' in activitydiagram_ActivityNode is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2301,9 +2299,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityNode_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activitynode_removetoken1_changes_state(instance):
+def test_activitydiagram_activitynode_removetoken1_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2317,14 +2315,14 @@ def test_activitydiagram::activitynode_removetoken1_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeToken1' in activitydiagram::ActivityNode is empty"
+        assert has_statements, f"Function 'removeToken1' in activitydiagram_ActivityNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeToken1' in activitydiagram::ActivityNode did not change state; check implementation")
+            warnings.warn(f"Operation 'removeToken1' in activitydiagram_ActivityNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeToken1' in activitydiagram::ActivityNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeToken1' in activitydiagram_ActivityNode is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2332,33 +2330,35 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::ActivityNode_strategy)
+@given(instance=activitydiagram_ActivityNode_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activitynode_hasoffers_changes_state(instance):
+def test_activitydiagram_activitynode_sendoffers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.hasOffers()
+        instance.sendOffers(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasOffers).strip()
+        source = inspect.getsource(instance.sendOffers).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasOffers' in activitydiagram::ActivityNode is empty"
+        assert has_statements, f"Function 'sendOffers' in activitydiagram_ActivityNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasOffers' in activitydiagram::ActivityNode did not change state; check implementation")
+            warnings.warn(f"Operation 'sendOffers' in activitydiagram_ActivityNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasOffers' in activitydiagram::ActivityNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'sendOffers' in activitydiagram_ActivityNode is not implemented or raised an error")
 
-@given(instance=activitydiagram::Activity_strategy)
+@given(instance=activitydiagram_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::activity_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Activity)
+def test_activitydiagram_activityedge_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ActivityEdge)
 
 import warnings
 import copy
@@ -2366,28 +2366,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Activity_strategy)
+@given(instance=activitydiagram_ActivityEdge_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activity_execute_changes_state(instance):
+def test_activitydiagram_activityedge_sendoffer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.execute()
+        instance.sendOffer(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
+        source = inspect.getsource(instance.sendOffer).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::Activity is empty"
+        assert has_statements, f"Function 'sendOffer' in activitydiagram_ActivityEdge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::Activity did not change state; check implementation")
+            warnings.warn(f"Operation 'sendOffer' in activitydiagram_ActivityEdge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::Activity is not implemented or raised an error")
+        warnings.warn(f"Operation 'sendOffer' in activitydiagram_ActivityEdge is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2395,28 +2397,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Activity_strategy)
+@given(instance=activitydiagram_ActivityEdge_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activity_main_changes_state(instance):
+def test_activitydiagram_activityedge_takeofferedtokens_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.main()
+        instance.takeOfferedTokens()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.main).strip()
+        source = inspect.getsource(instance.takeOfferedTokens).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'main' in activitydiagram::Activity is empty"
+        assert has_statements, f"Function 'takeOfferedTokens' in activitydiagram_ActivityEdge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'main' in activitydiagram::Activity did not change state; check implementation")
+            warnings.warn(f"Operation 'takeOfferedTokens' in activitydiagram_ActivityEdge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'main' in activitydiagram::Activity is not implemented or raised an error")
+        warnings.warn(f"Operation 'takeOfferedTokens' in activitydiagram_ActivityEdge is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2424,28 +2426,33 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Activity_strategy)
+@given(instance=activitydiagram_ActivityEdge_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activity_reset_changes_state(instance):
+def test_activitydiagram_activityedge_hasoffer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.reset()
+        instance.hasOffer()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.reset).strip()
+        source = inspect.getsource(instance.hasOffer).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reset' in activitydiagram::Activity is empty"
+        assert has_statements, f"Function 'hasOffer' in activitydiagram_ActivityEdge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reset' in activitydiagram::Activity did not change state; check implementation")
+            warnings.warn(f"Operation 'hasOffer' in activitydiagram_ActivityEdge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reset' in activitydiagram::Activity is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasOffer' in activitydiagram_ActivityEdge is not implemented or raised an error")
+
+@given(instance=activitydiagram_Activity_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_activity_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Activity)
 
 import warnings
 import copy
@@ -2453,9 +2460,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Activity_strategy)
+@given(instance=activitydiagram_Activity_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::activity_initializemodel_changes_state(instance):
+def test_activitydiagram_activity_initializemodel_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2469,35 +2476,14 @@ def test_activitydiagram::activity_initializemodel_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initializeModel' in activitydiagram::Activity is empty"
+        assert has_statements, f"Function 'initializeModel' in activitydiagram_Activity is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initializeModel' in activitydiagram::Activity did not change state; check implementation")
+            warnings.warn(f"Operation 'initializeModel' in activitydiagram_Activity did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initializeModel' in activitydiagram::Activity is not implemented or raised an error")
-
-@given(instance=activitydiagram::Trace_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::trace_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Trace)
-
-@given(instance=activitydiagram::Variable_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::variable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Variable)
-
-@given(instance=activitydiagram::Variable_strategy)
-def test_activitydiagram::variable_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=activitydiagram::Variable_strategy)
-def test_activitydiagram::variable_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+        warnings.warn(f"Operation 'initializeModel' in activitydiagram_Activity is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2505,28 +2491,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Variable_strategy)
+@given(instance=activitydiagram_Activity_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::variable_init_changes_state(instance):
+def test_activitydiagram_activity_main_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.init()
+        instance.main()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.init).strip()
+        source = inspect.getsource(instance.main).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'init' in activitydiagram::Variable is empty"
+        assert has_statements, f"Function 'main' in activitydiagram_Activity is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'init' in activitydiagram::Variable did not change state; check implementation")
+            warnings.warn(f"Operation 'main' in activitydiagram_Activity did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'init' in activitydiagram::Variable is not implemented or raised an error")
+        warnings.warn(f"Operation 'main' in activitydiagram_Activity is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2534,9 +2520,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Variable_strategy)
+@given(instance=activitydiagram_Activity_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::variable_execute_changes_state(instance):
+def test_activitydiagram_activity_reset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.reset()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.reset).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'reset' in activitydiagram_Activity is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'reset' in activitydiagram_Activity did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'reset' in activitydiagram_Activity is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=activitydiagram_Activity_strategy)
+@settings(max_examples=30)
+def test_activitydiagram_activity_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2548,14 +2563,32 @@ def test_activitydiagram::variable_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::Variable is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_Activity is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::Variable did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_Activity did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::Variable is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in activitydiagram_Activity is not implemented or raised an error")
+
+@given(instance=activitydiagram_Trace_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_trace_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Trace)
+
+@given(instance=activitydiagram_Variable_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_variable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Variable)
+
+
+
+@given(instance=activitydiagram_Variable_strategy)
+def test_activitydiagram_variable_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -2563,9 +2596,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::Variable_strategy)
+@given(instance=activitydiagram_Variable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::variable_print_changes_state(instance):
+def test_activitydiagram_variable_print_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2577,61 +2610,14 @@ def test_activitydiagram::variable_print_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in activitydiagram::Variable is empty"
+        assert has_statements, f"Function 'print' in activitydiagram_Variable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in activitydiagram::Variable did not change state; check implementation")
+            warnings.warn(f"Operation 'print' in activitydiagram_Variable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in activitydiagram::Variable is not implemented or raised an error")
-
-@given(instance=Token_strategy)
-@settings(max_examples=50)
-def test_token_instantiation(instance):
-    assert isinstance(instance, Token)
-
-@given(instance=activitydiagram::ForkedToken_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::forkedtoken_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ForkedToken)
-
-@given(instance=activitydiagram::ForkedToken_strategy)
-def test_activitydiagram::forkedtoken_remainingOffersCount_type(instance):
-    assert isinstance(instance.remainingOffersCount, int)
-
-
-@given(instance=activitydiagram::ForkedToken_strategy)
-def test_activitydiagram::forkedtoken_remainingOffersCount_setter(instance):
-    original = instance.remainingOffersCount
-    instance.remainingOffersCount = original
-    assert instance.remainingOffersCount == original
-
-@given(instance=activitydiagram::ControlToken_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::controltoken_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ControlToken)
-
-@given(instance=BooleanExpression_strategy)
-@settings(max_examples=50)
-def test_booleanexpression_instantiation(instance):
-    assert isinstance(instance, BooleanExpression)
-
-@given(instance=activitydiagram::BooleanBinaryExpression_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::booleanbinaryexpression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanBinaryExpression)
-
-@given(instance=activitydiagram::BooleanBinaryExpression_strategy)
-def test_activitydiagram::booleanbinaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, bool)
-
-
-@given(instance=activitydiagram::BooleanBinaryExpression_strategy)
-def test_activitydiagram::booleanbinaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
+        warnings.warn(f"Operation 'print' in activitydiagram_Variable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2639,9 +2625,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::BooleanBinaryExpression_strategy)
+@given(instance=activitydiagram_Variable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::booleanbinaryexpression_execute_changes_state(instance):
+def test_activitydiagram_variable_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2653,30 +2639,14 @@ def test_activitydiagram::booleanbinaryexpression_execute_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::BooleanBinaryExpression is empty"
+        assert has_statements, f"Function 'execute' in activitydiagram_Variable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::BooleanBinaryExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in activitydiagram_Variable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::BooleanBinaryExpression is not implemented or raised an error")
-
-@given(instance=activitydiagram::BooleanUnaryExpression_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::booleanunaryexpression_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanUnaryExpression)
-
-@given(instance=activitydiagram::BooleanUnaryExpression_strategy)
-def test_activitydiagram::booleanunaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=activitydiagram::BooleanUnaryExpression_strategy)
-def test_activitydiagram::booleanunaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
+        warnings.warn(f"Operation 'execute' in activitydiagram_Variable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2684,25 +2654,25 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=activitydiagram::BooleanUnaryExpression_strategy)
+@given(instance=activitydiagram_Variable_strategy)
 @settings(max_examples=30)
-def test_activitydiagram::booleanunaryexpression_execute_changes_state(instance):
+def test_activitydiagram_variable_init_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.execute()
+        instance.init()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
+        source = inspect.getsource(instance.init).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in activitydiagram::BooleanUnaryExpression is empty"
+        assert has_statements, f"Function 'init' in activitydiagram_Variable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in activitydiagram::BooleanUnaryExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'init' in activitydiagram_Variable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in activitydiagram::BooleanUnaryExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'init' in activitydiagram_Variable is not implemented or raised an error")

@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    markov::Label,
+from python_code import (
+    markov_Label,
     Entity,
-    markov::Transition,
-    markov::State,
-    markov::Entity,
-    markov::MarkovChain,
+    markov_Transition,
+    markov_State,
+    markov_Entity,
+    markov_MarkovChain,
     StateType,
 )
 
@@ -21,35 +21,35 @@ from classes import (
 
 
 
-def test_markov::label_is_not_abstract():
-    assert not inspect.isabstract(markov::Label)
+def test_markov_label_is_not_abstract():
+    assert not inspect.isabstract(markov_Label)
 
 
-def test_markov::label_constructor_exists():
-    assert callable(markov::Label.__init__)
+def test_markov_label_constructor_exists():
+    assert callable(markov_Label.__init__)
 
 
-def test_markov::label_constructor_args():
-    sig = inspect.signature(markov::Label.__init__)
+def test_markov_label_constructor_args():
+    sig = inspect.signature(markov_Label.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_markov::label_has_value():
-    assert hasattr(markov::Label, "value")
+def test_markov_label_has_key():
+    assert hasattr(markov_Label, "key")
     descriptor = None
-    for klass in markov::Label.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in markov_Label.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_markov::label_has_key():
-    assert hasattr(markov::Label, "key")
+def test_markov_label_has_value():
+    assert hasattr(markov_Label, "value")
     descriptor = None
-    for klass in markov::Label.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
+    for klass in markov_Label.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -69,23 +69,23 @@ def test_entity_constructor_args():
 
 
 
-def test_markov::transition_is_not_abstract():
-    assert not inspect.isabstract(markov::Transition)
+def test_markov_transition_is_not_abstract():
+    assert not inspect.isabstract(markov_Transition)
 
 
-def test_markov::transition_constructor_exists():
-    assert callable(markov::Transition.__init__)
+def test_markov_transition_constructor_exists():
+    assert callable(markov_Transition.__init__)
 
 
-def test_markov::transition_constructor_args():
-    sig = inspect.signature(markov::Transition.__init__)
+def test_markov_transition_constructor_args():
+    sig = inspect.signature(markov_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "probability" in params, "Missing parameter 'probability'"
 
-def test_markov::transition_has_probability():
-    assert hasattr(markov::Transition, "probability")
+def test_markov_transition_has_probability():
+    assert hasattr(markov_Transition, "probability")
     descriptor = None
-    for klass in markov::Transition.__mro__:
+    for klass in markov_Transition.__mro__:
         if "probability" in klass.__dict__:
             descriptor = klass.__dict__["probability"]
             break
@@ -93,57 +93,57 @@ def test_markov::transition_has_probability():
 
 
 
-def test_markov::state_is_not_abstract():
-    assert not inspect.isabstract(markov::State)
+def test_markov_state_is_not_abstract():
+    assert not inspect.isabstract(markov_State)
 
 
-def test_markov::state_constructor_exists():
-    assert callable(markov::State.__init__)
+def test_markov_state_constructor_exists():
+    assert callable(markov_State.__init__)
 
 
-def test_markov::state_constructor_args():
-    sig = inspect.signature(markov::State.__init__)
+def test_markov_state_constructor_args():
+    sig = inspect.signature(markov_State.__init__)
     params = list(sig.parameters.keys())
-    assert "traces" in params, "Missing parameter 'traces'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "traces" in params, "Missing parameter 'traces'"
 
-def test_markov::state_has_traces():
-    assert hasattr(markov::State, "traces")
+def test_markov_state_has_type():
+    assert hasattr(markov_State, "type")
     descriptor = None
-    for klass in markov::State.__mro__:
-        if "traces" in klass.__dict__:
-            descriptor = klass.__dict__["traces"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_markov::state_has_type():
-    assert hasattr(markov::State, "type")
-    descriptor = None
-    for klass in markov::State.__mro__:
+    for klass in markov_State.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_markov_state_has_traces():
+    assert hasattr(markov_State, "traces")
+    descriptor = None
+    for klass in markov_State.__mro__:
+        if "traces" in klass.__dict__:
+            descriptor = klass.__dict__["traces"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_markov::entity_is_not_abstract():
-    assert not inspect.isabstract(markov::Entity)
+
+def test_markov_entity_is_not_abstract():
+    assert not inspect.isabstract(markov_Entity)
 
 
-def test_markov::entity_constructor_exists():
-    assert callable(markov::Entity.__init__)
+def test_markov_entity_constructor_exists():
+    assert callable(markov_Entity.__init__)
 
 
-def test_markov::entity_constructor_args():
-    sig = inspect.signature(markov::Entity.__init__)
+def test_markov_entity_constructor_args():
+    sig = inspect.signature(markov_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_markov::entity_has_Name():
-    assert hasattr(markov::Entity, "Name")
+def test_markov_entity_has_Name():
+    assert hasattr(markov_Entity, "Name")
     descriptor = None
-    for klass in markov::Entity.__mro__:
+    for klass in markov_Entity.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -151,16 +151,16 @@ def test_markov::entity_has_Name():
 
 
 
-def test_markov::markovchain_is_not_abstract():
-    assert not inspect.isabstract(markov::MarkovChain)
+def test_markov_markovchain_is_not_abstract():
+    assert not inspect.isabstract(markov_MarkovChain)
 
 
-def test_markov::markovchain_constructor_exists():
-    assert callable(markov::MarkovChain.__init__)
+def test_markov_markovchain_constructor_exists():
+    assert callable(markov_MarkovChain.__init__)
 
 
-def test_markov::markovchain_constructor_args():
-    sig = inspect.signature(markov::MarkovChain.__init__)
+def test_markov_markovchain_constructor_args():
+    sig = inspect.signature(markov_MarkovChain.__init__)
     params = list(sig.parameters.keys())
 
 def test_statetype_exists():
@@ -171,10 +171,10 @@ def test_statetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StateType]
     expected_literals = [
-        "Default",
-        "Failure",
         "Start",
+        "Default",
         "Success",
+        "Failure",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -192,129 +192,111 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-markov::Label_strategy = st.builds(
-    markov::Label,
-    value=
-        safe_text,
+markov_Label_strategy = st.builds(
+    markov_Label,
     key=
+        safe_text,
+    value=
         safe_text
 )
 Entity_strategy = st.builds(
     Entity,
 )
-markov::Transition_strategy = st.builds(
-    markov::Transition,
+markov_Transition_strategy = st.builds(
+    markov_Transition,
     probability=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-markov::State_strategy = st.builds(
-    markov::State,
-    traces=
-        safe_text,
+markov_State_strategy = st.builds(
+    markov_State,
     type=
+        safe_text,
+    traces=
         safe_text
 )
-markov::Entity_strategy = st.builds(
-    markov::Entity,
+markov_Entity_strategy = st.builds(
+    markov_Entity,
     Name=
         safe_text
 )
-markov::MarkovChain_strategy = st.builds(
-    markov::MarkovChain,
+markov_MarkovChain_strategy = st.builds(
+    markov_MarkovChain,
 )
 
-@given(instance=markov::Label_strategy)
+@given(instance=markov_Label_strategy)
 @settings(max_examples=50)
-def test_markov::label_instantiation(instance):
-    assert isinstance(instance, markov::Label)
-
-@given(instance=markov::Label_strategy)
-def test_markov::label_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_markov_label_instantiation(instance):
+    assert isinstance(instance, markov_Label)
 
 
-@given(instance=markov::Label_strategy)
-def test_markov::label_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=markov::Label_strategy)
-def test_markov::label_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=markov::Label_strategy)
-def test_markov::label_key_setter(instance):
+@given(instance=markov_Label_strategy)
+def test_markov_label_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
+
+
+
+@given(instance=markov_Label_strategy)
+def test_markov_label_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=Entity_strategy)
 @settings(max_examples=50)
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=markov::Transition_strategy)
+@given(instance=markov_Transition_strategy)
 @settings(max_examples=50)
-def test_markov::transition_instantiation(instance):
-    assert isinstance(instance, markov::Transition)
-
-@given(instance=markov::Transition_strategy)
-def test_markov::transition_probability_type(instance):
-    assert isinstance(instance.probability, float)
+def test_markov_transition_instantiation(instance):
+    assert isinstance(instance, markov_Transition)
 
 
-@given(instance=markov::Transition_strategy)
-def test_markov::transition_probability_setter(instance):
+
+@given(instance=markov_Transition_strategy)
+def test_markov_transition_probability_setter(instance):
     original = instance.probability
     instance.probability = original
     assert instance.probability == original
 
-@given(instance=markov::State_strategy)
+@given(instance=markov_State_strategy)
 @settings(max_examples=50)
-def test_markov::state_instantiation(instance):
-    assert isinstance(instance, markov::State)
-
-@given(instance=markov::State_strategy)
-def test_markov::state_traces_type(instance):
-    assert isinstance(instance.traces, str)
+def test_markov_state_instantiation(instance):
+    assert isinstance(instance, markov_State)
 
 
-@given(instance=markov::State_strategy)
-def test_markov::state_traces_setter(instance):
-    original = instance.traces
-    instance.traces = original
-    assert instance.traces == original
 
-@given(instance=markov::State_strategy)
-def test_markov::state_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=markov::State_strategy)
-def test_markov::state_type_setter(instance):
+@given(instance=markov_State_strategy)
+def test_markov_state_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=markov::Entity_strategy)
+
+
+@given(instance=markov_State_strategy)
+def test_markov_state_traces_setter(instance):
+    original = instance.traces
+    instance.traces = original
+    assert instance.traces == original
+
+@given(instance=markov_Entity_strategy)
 @settings(max_examples=50)
-def test_markov::entity_instantiation(instance):
-    assert isinstance(instance, markov::Entity)
-
-@given(instance=markov::Entity_strategy)
-def test_markov::entity_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_markov_entity_instantiation(instance):
+    assert isinstance(instance, markov_Entity)
 
 
-@given(instance=markov::Entity_strategy)
-def test_markov::entity_Name_setter(instance):
+
+@given(instance=markov_Entity_strategy)
+def test_markov_entity_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=markov::MarkovChain_strategy)
+@given(instance=markov_MarkovChain_strategy)
 @settings(max_examples=50)
-def test_markov::markovchain_instantiation(instance):
-    assert isinstance(instance, markov::MarkovChain)
+def test_markov_markovchain_instantiation(instance):
+    assert isinstance(instance, markov_MarkovChain)

@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Item,
-    iot::Controller,
-    iot::Component,
-    iot::RequiredPort,
-    iot::ProvidedPort,
+    iot_Controller,
+    iot_Component,
+    iot_RequiredPort,
+    iot_ProvidedPort,
     Hardware,
-    iot::Sensor,
-    iot::Actuator,
+    iot_Sensor,
+    iot_Actuator,
     RequiredPort,
-    iot::ElsePort,
-    iot::ConditionPort,
-    iot::ThenPort,
-    iot::IfPort,
+    iot_ThenPort,
+    iot_ElsePort,
+    iot_ConditionPort,
+    iot_IfPort,
     Iteration,
-    iot::IterativeLoop,
-    iot::CounterLoop,
+    iot_IterativeLoop,
+    iot_CounterLoop,
     Controller,
-    iot::Sequence,
-    iot::Iteration,
-    iot::Branching,
-    iot::Item,
+    iot_Iteration,
+    iot_Sequence,
+    iot_Branching,
+    iot_Item,
     Component,
-    iot::Hardware,
-    iot::Snippet,
-    iot::Software,
+    iot_Snippet,
+    iot_Hardware,
+    iot_Software,
     Operator,
 )
 
@@ -54,115 +54,115 @@ def test_item_constructor_args():
 
 
 
-def test_iot::controller_is_not_abstract():
-    assert not inspect.isabstract(iot::Controller)
+def test_iot_controller_is_not_abstract():
+    assert not inspect.isabstract(iot_Controller)
 
 
-def test_iot::controller_constructor_exists():
-    assert callable(iot::Controller.__init__)
+def test_iot_controller_constructor_exists():
+    assert callable(iot_Controller.__init__)
 
 
-def test_iot::controller_constructor_args():
-    sig = inspect.signature(iot::Controller.__init__)
+def test_iot_controller_constructor_args():
+    sig = inspect.signature(iot_Controller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::component_is_not_abstract():
-    assert not inspect.isabstract(iot::Component)
+def test_iot_component_is_not_abstract():
+    assert not inspect.isabstract(iot_Component)
 
 
-def test_iot::component_constructor_exists():
-    assert callable(iot::Component.__init__)
+def test_iot_component_constructor_exists():
+    assert callable(iot_Component.__init__)
 
 
-def test_iot::component_constructor_args():
-    sig = inspect.signature(iot::Component.__init__)
+def test_iot_component_constructor_args():
+    sig = inspect.signature(iot_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::requiredport_is_not_abstract():
-    assert not inspect.isabstract(iot::RequiredPort)
+def test_iot_requiredport_is_not_abstract():
+    assert not inspect.isabstract(iot_RequiredPort)
 
 
-def test_iot::requiredport_constructor_exists():
-    assert callable(iot::RequiredPort.__init__)
+def test_iot_requiredport_constructor_exists():
+    assert callable(iot_RequiredPort.__init__)
 
 
-def test_iot::requiredport_constructor_args():
-    sig = inspect.signature(iot::RequiredPort.__init__)
+def test_iot_requiredport_constructor_args():
+    sig = inspect.signature(iot_RequiredPort.__init__)
     params = list(sig.parameters.keys())
-    assert "method" in params, "Missing parameter 'method'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "UUID" in params, "Missing parameter 'UUID'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "args" in params, "Missing parameter 'args'"
+    assert "method" in params, "Missing parameter 'method'"
 
-def test_iot::requiredport_has_method():
-    assert hasattr(iot::RequiredPort, "method")
+def test_iot_requiredport_has_UUID():
+    assert hasattr(iot_RequiredPort, "UUID")
     descriptor = None
-    for klass in iot::RequiredPort.__mro__:
-        if "method" in klass.__dict__:
-            descriptor = klass.__dict__["method"]
+    for klass in iot_RequiredPort.__mro__:
+        if "UUID" in klass.__dict__:
+            descriptor = klass.__dict__["UUID"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::requiredport_has_name():
-    assert hasattr(iot::RequiredPort, "name")
+def test_iot_requiredport_has_name():
+    assert hasattr(iot_RequiredPort, "name")
     descriptor = None
-    for klass in iot::RequiredPort.__mro__:
+    for klass in iot_RequiredPort.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::requiredport_has_UUID():
-    assert hasattr(iot::RequiredPort, "UUID")
+def test_iot_requiredport_has_args():
+    assert hasattr(iot_RequiredPort, "args")
     descriptor = None
-    for klass in iot::RequiredPort.__mro__:
-        if "UUID" in klass.__dict__:
-            descriptor = klass.__dict__["UUID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::requiredport_has_args():
-    assert hasattr(iot::RequiredPort, "args")
-    descriptor = None
-    for klass in iot::RequiredPort.__mro__:
+    for klass in iot_RequiredPort.__mro__:
         if "args" in klass.__dict__:
             descriptor = klass.__dict__["args"]
             break
     assert isinstance(descriptor, property)
 
+def test_iot_requiredport_has_method():
+    assert hasattr(iot_RequiredPort, "method")
+    descriptor = None
+    for klass in iot_RequiredPort.__mro__:
+        if "method" in klass.__dict__:
+            descriptor = klass.__dict__["method"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iot::providedport_is_not_abstract():
-    assert not inspect.isabstract(iot::ProvidedPort)
+
+def test_iot_providedport_is_not_abstract():
+    assert not inspect.isabstract(iot_ProvidedPort)
 
 
-def test_iot::providedport_constructor_exists():
-    assert callable(iot::ProvidedPort.__init__)
+def test_iot_providedport_constructor_exists():
+    assert callable(iot_ProvidedPort.__init__)
 
 
-def test_iot::providedport_constructor_args():
-    sig = inspect.signature(iot::ProvidedPort.__init__)
+def test_iot_providedport_constructor_args():
+    sig = inspect.signature(iot_ProvidedPort.__init__)
     params = list(sig.parameters.keys())
     assert "UUID" in params, "Missing parameter 'UUID'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::providedport_has_UUID():
-    assert hasattr(iot::ProvidedPort, "UUID")
+def test_iot_providedport_has_UUID():
+    assert hasattr(iot_ProvidedPort, "UUID")
     descriptor = None
-    for klass in iot::ProvidedPort.__mro__:
+    for klass in iot_ProvidedPort.__mro__:
         if "UUID" in klass.__dict__:
             descriptor = klass.__dict__["UUID"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::providedport_has_name():
-    assert hasattr(iot::ProvidedPort, "name")
+def test_iot_providedport_has_name():
+    assert hasattr(iot_ProvidedPort, "name")
     descriptor = None
-    for klass in iot::ProvidedPort.__mro__:
+    for klass in iot_ProvidedPort.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -184,23 +184,23 @@ def test_hardware_constructor_args():
 
 
 
-def test_iot::sensor_is_not_abstract():
-    assert not inspect.isabstract(iot::Sensor)
+def test_iot_sensor_is_not_abstract():
+    assert not inspect.isabstract(iot_Sensor)
 
 
-def test_iot::sensor_constructor_exists():
-    assert callable(iot::Sensor.__init__)
+def test_iot_sensor_constructor_exists():
+    assert callable(iot_Sensor.__init__)
 
 
-def test_iot::sensor_constructor_args():
-    sig = inspect.signature(iot::Sensor.__init__)
+def test_iot_sensor_constructor_args():
+    sig = inspect.signature(iot_Sensor.__init__)
     params = list(sig.parameters.keys())
     assert "script" in params, "Missing parameter 'script'"
 
-def test_iot::sensor_has_script():
-    assert hasattr(iot::Sensor, "script")
+def test_iot_sensor_has_script():
+    assert hasattr(iot_Sensor, "script")
     descriptor = None
-    for klass in iot::Sensor.__mro__:
+    for klass in iot_Sensor.__mro__:
         if "script" in klass.__dict__:
             descriptor = klass.__dict__["script"]
             break
@@ -208,23 +208,23 @@ def test_iot::sensor_has_script():
 
 
 
-def test_iot::actuator_is_not_abstract():
-    assert not inspect.isabstract(iot::Actuator)
+def test_iot_actuator_is_not_abstract():
+    assert not inspect.isabstract(iot_Actuator)
 
 
-def test_iot::actuator_constructor_exists():
-    assert callable(iot::Actuator.__init__)
+def test_iot_actuator_constructor_exists():
+    assert callable(iot_Actuator.__init__)
 
 
-def test_iot::actuator_constructor_args():
-    sig = inspect.signature(iot::Actuator.__init__)
+def test_iot_actuator_constructor_args():
+    sig = inspect.signature(iot_Actuator.__init__)
     params = list(sig.parameters.keys())
     assert "toggle" in params, "Missing parameter 'toggle'"
 
-def test_iot::actuator_has_toggle():
-    assert hasattr(iot::Actuator, "toggle")
+def test_iot_actuator_has_toggle():
+    assert hasattr(iot_Actuator, "toggle")
     descriptor = None
-    for klass in iot::Actuator.__mro__:
+    for klass in iot_Actuator.__mro__:
         if "toggle" in klass.__dict__:
             descriptor = klass.__dict__["toggle"]
             break
@@ -246,85 +246,85 @@ def test_requiredport_constructor_args():
 
 
 
-def test_iot::elseport_is_not_abstract():
-    assert not inspect.isabstract(iot::ElsePort)
+def test_iot_thenport_is_not_abstract():
+    assert not inspect.isabstract(iot_ThenPort)
 
 
-def test_iot::elseport_constructor_exists():
-    assert callable(iot::ElsePort.__init__)
+def test_iot_thenport_constructor_exists():
+    assert callable(iot_ThenPort.__init__)
 
 
-def test_iot::elseport_constructor_args():
-    sig = inspect.signature(iot::ElsePort.__init__)
+def test_iot_thenport_constructor_args():
+    sig = inspect.signature(iot_ThenPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::conditionport_is_not_abstract():
-    assert not inspect.isabstract(iot::ConditionPort)
+def test_iot_elseport_is_not_abstract():
+    assert not inspect.isabstract(iot_ElsePort)
 
 
-def test_iot::conditionport_constructor_exists():
-    assert callable(iot::ConditionPort.__init__)
+def test_iot_elseport_constructor_exists():
+    assert callable(iot_ElsePort.__init__)
 
 
-def test_iot::conditionport_constructor_args():
-    sig = inspect.signature(iot::ConditionPort.__init__)
+def test_iot_elseport_constructor_args():
+    sig = inspect.signature(iot_ElsePort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::thenport_is_not_abstract():
-    assert not inspect.isabstract(iot::ThenPort)
+def test_iot_conditionport_is_not_abstract():
+    assert not inspect.isabstract(iot_ConditionPort)
 
 
-def test_iot::thenport_constructor_exists():
-    assert callable(iot::ThenPort.__init__)
+def test_iot_conditionport_constructor_exists():
+    assert callable(iot_ConditionPort.__init__)
 
 
-def test_iot::thenport_constructor_args():
-    sig = inspect.signature(iot::ThenPort.__init__)
+def test_iot_conditionport_constructor_args():
+    sig = inspect.signature(iot_ConditionPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::ifport_is_not_abstract():
-    assert not inspect.isabstract(iot::IfPort)
+def test_iot_ifport_is_not_abstract():
+    assert not inspect.isabstract(iot_IfPort)
 
 
-def test_iot::ifport_constructor_exists():
-    assert callable(iot::IfPort.__init__)
+def test_iot_ifport_constructor_exists():
+    assert callable(iot_IfPort.__init__)
 
 
-def test_iot::ifport_constructor_args():
-    sig = inspect.signature(iot::IfPort.__init__)
+def test_iot_ifport_constructor_args():
+    sig = inspect.signature(iot_IfPort.__init__)
     params = list(sig.parameters.keys())
-    assert "var" in params, "Missing parameter 'var'"
     assert "operator" in params, "Missing parameter 'operator'"
+    assert "var" in params, "Missing parameter 'var'"
     assert "condition" in params, "Missing parameter 'condition'"
 
-def test_iot::ifport_has_var():
-    assert hasattr(iot::IfPort, "var")
+def test_iot_ifport_has_operator():
+    assert hasattr(iot_IfPort, "operator")
     descriptor = None
-    for klass in iot::IfPort.__mro__:
-        if "var" in klass.__dict__:
-            descriptor = klass.__dict__["var"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::ifport_has_operator():
-    assert hasattr(iot::IfPort, "operator")
-    descriptor = None
-    for klass in iot::IfPort.__mro__:
+    for klass in iot_IfPort.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::ifport_has_condition():
-    assert hasattr(iot::IfPort, "condition")
+def test_iot_ifport_has_var():
+    assert hasattr(iot_IfPort, "var")
     descriptor = None
-    for klass in iot::IfPort.__mro__:
+    for klass in iot_IfPort.__mro__:
+        if "var" in klass.__dict__:
+            descriptor = klass.__dict__["var"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot_ifport_has_condition():
+    assert hasattr(iot_IfPort, "condition")
+    descriptor = None
+    for klass in iot_IfPort.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
@@ -346,33 +346,33 @@ def test_iteration_constructor_args():
 
 
 
-def test_iot::iterativeloop_is_not_abstract():
-    assert not inspect.isabstract(iot::IterativeLoop)
+def test_iot_iterativeloop_is_not_abstract():
+    assert not inspect.isabstract(iot_IterativeLoop)
 
 
-def test_iot::iterativeloop_constructor_exists():
-    assert callable(iot::IterativeLoop.__init__)
+def test_iot_iterativeloop_constructor_exists():
+    assert callable(iot_IterativeLoop.__init__)
 
 
-def test_iot::iterativeloop_constructor_args():
-    sig = inspect.signature(iot::IterativeLoop.__init__)
+def test_iot_iterativeloop_constructor_args():
+    sig = inspect.signature(iot_IterativeLoop.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
     assert "var" in params, "Missing parameter 'var'"
 
-def test_iot::iterativeloop_has_operator():
-    assert hasattr(iot::IterativeLoop, "operator")
+def test_iot_iterativeloop_has_operator():
+    assert hasattr(iot_IterativeLoop, "operator")
     descriptor = None
-    for klass in iot::IterativeLoop.__mro__:
+    for klass in iot_IterativeLoop.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::iterativeloop_has_var():
-    assert hasattr(iot::IterativeLoop, "var")
+def test_iot_iterativeloop_has_var():
+    assert hasattr(iot_IterativeLoop, "var")
     descriptor = None
-    for klass in iot::IterativeLoop.__mro__:
+    for klass in iot_IterativeLoop.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
             break
@@ -380,23 +380,23 @@ def test_iot::iterativeloop_has_var():
 
 
 
-def test_iot::counterloop_is_not_abstract():
-    assert not inspect.isabstract(iot::CounterLoop)
+def test_iot_counterloop_is_not_abstract():
+    assert not inspect.isabstract(iot_CounterLoop)
 
 
-def test_iot::counterloop_constructor_exists():
-    assert callable(iot::CounterLoop.__init__)
+def test_iot_counterloop_constructor_exists():
+    assert callable(iot_CounterLoop.__init__)
 
 
-def test_iot::counterloop_constructor_args():
-    sig = inspect.signature(iot::CounterLoop.__init__)
+def test_iot_counterloop_constructor_args():
+    sig = inspect.signature(iot_CounterLoop.__init__)
     params = list(sig.parameters.keys())
     assert "counter" in params, "Missing parameter 'counter'"
 
-def test_iot::counterloop_has_counter():
-    assert hasattr(iot::CounterLoop, "counter")
+def test_iot_counterloop_has_counter():
+    assert hasattr(iot_CounterLoop, "counter")
     descriptor = None
-    for klass in iot::CounterLoop.__mro__:
+    for klass in iot_CounterLoop.__mro__:
         if "counter" in klass.__dict__:
             descriptor = klass.__dict__["counter"]
             break
@@ -418,85 +418,85 @@ def test_controller_constructor_args():
 
 
 
-def test_iot::sequence_is_not_abstract():
-    assert not inspect.isabstract(iot::Sequence)
+def test_iot_iteration_is_not_abstract():
+    assert not inspect.isabstract(iot_Iteration)
 
 
-def test_iot::sequence_constructor_exists():
-    assert callable(iot::Sequence.__init__)
+def test_iot_iteration_constructor_exists():
+    assert callable(iot_Iteration.__init__)
 
 
-def test_iot::sequence_constructor_args():
-    sig = inspect.signature(iot::Sequence.__init__)
+def test_iot_iteration_constructor_args():
+    sig = inspect.signature(iot_Iteration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::iteration_is_not_abstract():
-    assert not inspect.isabstract(iot::Iteration)
+def test_iot_sequence_is_not_abstract():
+    assert not inspect.isabstract(iot_Sequence)
 
 
-def test_iot::iteration_constructor_exists():
-    assert callable(iot::Iteration.__init__)
+def test_iot_sequence_constructor_exists():
+    assert callable(iot_Sequence.__init__)
 
 
-def test_iot::iteration_constructor_args():
-    sig = inspect.signature(iot::Iteration.__init__)
+def test_iot_sequence_constructor_args():
+    sig = inspect.signature(iot_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::branching_is_not_abstract():
-    assert not inspect.isabstract(iot::Branching)
+def test_iot_branching_is_not_abstract():
+    assert not inspect.isabstract(iot_Branching)
 
 
-def test_iot::branching_constructor_exists():
-    assert callable(iot::Branching.__init__)
+def test_iot_branching_constructor_exists():
+    assert callable(iot_Branching.__init__)
 
 
-def test_iot::branching_constructor_args():
-    sig = inspect.signature(iot::Branching.__init__)
+def test_iot_branching_constructor_args():
+    sig = inspect.signature(iot_Branching.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::item_is_not_abstract():
-    assert not inspect.isabstract(iot::Item)
+def test_iot_item_is_not_abstract():
+    assert not inspect.isabstract(iot_Item)
 
 
-def test_iot::item_constructor_exists():
-    assert callable(iot::Item.__init__)
+def test_iot_item_constructor_exists():
+    assert callable(iot_Item.__init__)
 
 
-def test_iot::item_constructor_args():
-    sig = inspect.signature(iot::Item.__init__)
+def test_iot_item_constructor_args():
+    sig = inspect.signature(iot_Item.__init__)
     params = list(sig.parameters.keys())
-    assert "UUID" in params, "Missing parameter 'UUID'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "UUID" in params, "Missing parameter 'UUID'"
     assert "newThread" in params, "Missing parameter 'newThread'"
 
-def test_iot::item_has_UUID():
-    assert hasattr(iot::Item, "UUID")
+def test_iot_item_has_name():
+    assert hasattr(iot_Item, "name")
     descriptor = None
-    for klass in iot::Item.__mro__:
-        if "UUID" in klass.__dict__:
-            descriptor = klass.__dict__["UUID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::item_has_name():
-    assert hasattr(iot::Item, "name")
-    descriptor = None
-    for klass in iot::Item.__mro__:
+    for klass in iot_Item.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::item_has_newThread():
-    assert hasattr(iot::Item, "newThread")
+def test_iot_item_has_UUID():
+    assert hasattr(iot_Item, "UUID")
     descriptor = None
-    for klass in iot::Item.__mro__:
+    for klass in iot_Item.__mro__:
+        if "UUID" in klass.__dict__:
+            descriptor = klass.__dict__["UUID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot_item_has_newThread():
+    assert hasattr(iot_Item, "newThread")
+    descriptor = None
+    for klass in iot_Item.__mro__:
         if "newThread" in klass.__dict__:
             descriptor = klass.__dict__["newThread"]
             break
@@ -518,77 +518,23 @@ def test_component_constructor_args():
 
 
 
-def test_iot::hardware_is_not_abstract():
-    assert not inspect.isabstract(iot::Hardware)
+def test_iot_snippet_is_not_abstract():
+    assert not inspect.isabstract(iot_Snippet)
 
 
-def test_iot::hardware_constructor_exists():
-    assert callable(iot::Hardware.__init__)
+def test_iot_snippet_constructor_exists():
+    assert callable(iot_Snippet.__init__)
 
 
-def test_iot::hardware_constructor_args():
-    sig = inspect.signature(iot::Hardware.__init__)
-    params = list(sig.parameters.keys())
-    assert "mode" in params, "Missing parameter 'mode'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "pinNumber" in params, "Missing parameter 'pinNumber'"
-    assert "timeInterval" in params, "Missing parameter 'timeInterval'"
-
-def test_iot::hardware_has_mode():
-    assert hasattr(iot::Hardware, "mode")
-    descriptor = None
-    for klass in iot::Hardware.__mro__:
-        if "mode" in klass.__dict__:
-            descriptor = klass.__dict__["mode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::hardware_has_type():
-    assert hasattr(iot::Hardware, "type")
-    descriptor = None
-    for klass in iot::Hardware.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::hardware_has_pinNumber():
-    assert hasattr(iot::Hardware, "pinNumber")
-    descriptor = None
-    for klass in iot::Hardware.__mro__:
-        if "pinNumber" in klass.__dict__:
-            descriptor = klass.__dict__["pinNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::hardware_has_timeInterval():
-    assert hasattr(iot::Hardware, "timeInterval")
-    descriptor = None
-    for klass in iot::Hardware.__mro__:
-        if "timeInterval" in klass.__dict__:
-            descriptor = klass.__dict__["timeInterval"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot::snippet_is_not_abstract():
-    assert not inspect.isabstract(iot::Snippet)
-
-
-def test_iot::snippet_constructor_exists():
-    assert callable(iot::Snippet.__init__)
-
-
-def test_iot::snippet_constructor_args():
-    sig = inspect.signature(iot::Snippet.__init__)
+def test_iot_snippet_constructor_args():
+    sig = inspect.signature(iot_Snippet.__init__)
     params = list(sig.parameters.keys())
     assert "scriptPath" in params, "Missing parameter 'scriptPath'"
 
-def test_iot::snippet_has_scriptPath():
-    assert hasattr(iot::Snippet, "scriptPath")
+def test_iot_snippet_has_scriptPath():
+    assert hasattr(iot_Snippet, "scriptPath")
     descriptor = None
-    for klass in iot::Snippet.__mro__:
+    for klass in iot_Snippet.__mro__:
         if "scriptPath" in klass.__dict__:
             descriptor = klass.__dict__["scriptPath"]
             break
@@ -596,16 +542,70 @@ def test_iot::snippet_has_scriptPath():
 
 
 
-def test_iot::software_is_not_abstract():
-    assert not inspect.isabstract(iot::Software)
+def test_iot_hardware_is_not_abstract():
+    assert not inspect.isabstract(iot_Hardware)
 
 
-def test_iot::software_constructor_exists():
-    assert callable(iot::Software.__init__)
+def test_iot_hardware_constructor_exists():
+    assert callable(iot_Hardware.__init__)
 
 
-def test_iot::software_constructor_args():
-    sig = inspect.signature(iot::Software.__init__)
+def test_iot_hardware_constructor_args():
+    sig = inspect.signature(iot_Hardware.__init__)
+    params = list(sig.parameters.keys())
+    assert "pinNumber" in params, "Missing parameter 'pinNumber'"
+    assert "mode" in params, "Missing parameter 'mode'"
+    assert "timeInterval" in params, "Missing parameter 'timeInterval'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_iot_hardware_has_pinNumber():
+    assert hasattr(iot_Hardware, "pinNumber")
+    descriptor = None
+    for klass in iot_Hardware.__mro__:
+        if "pinNumber" in klass.__dict__:
+            descriptor = klass.__dict__["pinNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot_hardware_has_mode():
+    assert hasattr(iot_Hardware, "mode")
+    descriptor = None
+    for klass in iot_Hardware.__mro__:
+        if "mode" in klass.__dict__:
+            descriptor = klass.__dict__["mode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot_hardware_has_timeInterval():
+    assert hasattr(iot_Hardware, "timeInterval")
+    descriptor = None
+    for klass in iot_Hardware.__mro__:
+        if "timeInterval" in klass.__dict__:
+            descriptor = klass.__dict__["timeInterval"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot_hardware_has_type():
+    assert hasattr(iot_Hardware, "type")
+    descriptor = None
+    for klass in iot_Hardware.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot_software_is_not_abstract():
+    assert not inspect.isabstract(iot_Software)
+
+
+def test_iot_software_constructor_exists():
+    assert callable(iot_Software.__init__)
+
+
+def test_iot_software_constructor_args():
+    sig = inspect.signature(iot_Software.__init__)
     params = list(sig.parameters.keys())
 
 def test_operator_exists():
@@ -617,11 +617,11 @@ def test_operator_has_all_literals():
     enum_literals = [lit.name for lit in Operator]
     expected_literals = [
         "EQ",
-        "LT",
-        "GE",
-        "GT",
         "LE",
         "NE",
+        "LT",
+        "GT",
+        "GE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -642,25 +642,25 @@ safe_text = st.text(
 Item_strategy = st.builds(
     Item,
 )
-iot::Controller_strategy = st.builds(
-    iot::Controller,
+iot_Controller_strategy = st.builds(
+    iot_Controller,
 )
-iot::Component_strategy = st.builds(
-    iot::Component,
+iot_Component_strategy = st.builds(
+    iot_Component,
 )
-iot::RequiredPort_strategy = st.builds(
-    iot::RequiredPort,
-    method=
+iot_RequiredPort_strategy = st.builds(
+    iot_RequiredPort,
+    UUID=
         safe_text,
     name=
         safe_text,
-    UUID=
-        safe_text,
     args=
+        safe_text,
+    method=
         safe_text
 )
-iot::ProvidedPort_strategy = st.builds(
-    iot::ProvidedPort,
+iot_ProvidedPort_strategy = st.builds(
+    iot_ProvidedPort,
     UUID=
         safe_text,
     name=
@@ -669,33 +669,33 @@ iot::ProvidedPort_strategy = st.builds(
 Hardware_strategy = st.builds(
     Hardware,
 )
-iot::Sensor_strategy = st.builds(
-    iot::Sensor,
+iot_Sensor_strategy = st.builds(
+    iot_Sensor,
     script=
         safe_text
 )
-iot::Actuator_strategy = st.builds(
-    iot::Actuator,
+iot_Actuator_strategy = st.builds(
+    iot_Actuator,
     toggle=
         st.booleans()
 )
 RequiredPort_strategy = st.builds(
     RequiredPort,
 )
-iot::ElsePort_strategy = st.builds(
-    iot::ElsePort,
+iot_ThenPort_strategy = st.builds(
+    iot_ThenPort,
 )
-iot::ConditionPort_strategy = st.builds(
-    iot::ConditionPort,
+iot_ElsePort_strategy = st.builds(
+    iot_ElsePort,
 )
-iot::ThenPort_strategy = st.builds(
-    iot::ThenPort,
+iot_ConditionPort_strategy = st.builds(
+    iot_ConditionPort,
 )
-iot::IfPort_strategy = st.builds(
-    iot::IfPort,
-    var=
-        safe_text,
+iot_IfPort_strategy = st.builds(
+    iot_IfPort,
     operator=
+        safe_text,
+    var=
         safe_text,
     condition=
         st.booleans()
@@ -703,35 +703,35 @@ iot::IfPort_strategy = st.builds(
 Iteration_strategy = st.builds(
     Iteration,
 )
-iot::IterativeLoop_strategy = st.builds(
-    iot::IterativeLoop,
+iot_IterativeLoop_strategy = st.builds(
+    iot_IterativeLoop,
     operator=
         safe_text,
     var=
         safe_text
 )
-iot::CounterLoop_strategy = st.builds(
-    iot::CounterLoop,
+iot_CounterLoop_strategy = st.builds(
+    iot_CounterLoop,
     counter=
         st.integers()
 )
 Controller_strategy = st.builds(
     Controller,
 )
-iot::Sequence_strategy = st.builds(
-    iot::Sequence,
+iot_Iteration_strategy = st.builds(
+    iot_Iteration,
 )
-iot::Iteration_strategy = st.builds(
-    iot::Iteration,
+iot_Sequence_strategy = st.builds(
+    iot_Sequence,
 )
-iot::Branching_strategy = st.builds(
-    iot::Branching,
+iot_Branching_strategy = st.builds(
+    iot_Branching,
 )
-iot::Item_strategy = st.builds(
-    iot::Item,
-    UUID=
-        safe_text,
+iot_Item_strategy = st.builds(
+    iot_Item,
     name=
+        safe_text,
+    UUID=
         safe_text,
     newThread=
         st.booleans()
@@ -739,24 +739,24 @@ iot::Item_strategy = st.builds(
 Component_strategy = st.builds(
     Component,
 )
-iot::Hardware_strategy = st.builds(
-    iot::Hardware,
-    mode=
-        st.booleans(),
-    type=
-        safe_text,
-    pinNumber=
-        st.integers(),
-    timeInterval=
-        st.integers()
-)
-iot::Snippet_strategy = st.builds(
-    iot::Snippet,
+iot_Snippet_strategy = st.builds(
+    iot_Snippet,
     scriptPath=
         safe_text
 )
-iot::Software_strategy = st.builds(
-    iot::Software,
+iot_Hardware_strategy = st.builds(
+    iot_Hardware,
+    pinNumber=
+        st.integers(),
+    mode=
+        st.booleans(),
+    timeInterval=
+        st.integers(),
+    type=
+        safe_text
+)
+iot_Software_strategy = st.builds(
+    iot_Software,
 )
 
 @given(instance=Item_strategy)
@@ -764,64 +764,52 @@ iot::Software_strategy = st.builds(
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=iot::Controller_strategy)
+@given(instance=iot_Controller_strategy)
 @settings(max_examples=50)
-def test_iot::controller_instantiation(instance):
-    assert isinstance(instance, iot::Controller)
+def test_iot_controller_instantiation(instance):
+    assert isinstance(instance, iot_Controller)
 
-@given(instance=iot::Component_strategy)
+@given(instance=iot_Component_strategy)
 @settings(max_examples=50)
-def test_iot::component_instantiation(instance):
-    assert isinstance(instance, iot::Component)
+def test_iot_component_instantiation(instance):
+    assert isinstance(instance, iot_Component)
 
-@given(instance=iot::RequiredPort_strategy)
+@given(instance=iot_RequiredPort_strategy)
 @settings(max_examples=50)
-def test_iot::requiredport_instantiation(instance):
-    assert isinstance(instance, iot::RequiredPort)
-
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_method_type(instance):
-    assert isinstance(instance.method, str)
+def test_iot_requiredport_instantiation(instance):
+    assert isinstance(instance, iot_RequiredPort)
 
 
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_method_setter(instance):
-    original = instance.method
-    instance.method = original
-    assert instance.method == original
 
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_UUID_type(instance):
-    assert isinstance(instance.UUID, str)
-
-
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_UUID_setter(instance):
+@given(instance=iot_RequiredPort_strategy)
+def test_iot_requiredport_UUID_setter(instance):
     original = instance.UUID
     instance.UUID = original
     assert instance.UUID == original
 
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_args_type(instance):
-    assert isinstance(instance.args, str)
 
 
-@given(instance=iot::RequiredPort_strategy)
-def test_iot::requiredport_args_setter(instance):
+@given(instance=iot_RequiredPort_strategy)
+def test_iot_requiredport_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=iot_RequiredPort_strategy)
+def test_iot_requiredport_args_setter(instance):
     original = instance.args
     instance.args = original
     assert instance.args == original
+
+
+
+@given(instance=iot_RequiredPort_strategy)
+def test_iot_requiredport_method_setter(instance):
+    original = instance.method
+    instance.method = original
+    assert instance.method == original
 
 import warnings
 import copy
@@ -829,9 +817,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iot::RequiredPort_strategy)
+@given(instance=iot_RequiredPort_strategy)
 @settings(max_examples=30)
-def test_iot::requiredport_invoke_changes_state(instance):
+def test_iot_requiredport_invoke_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -845,38 +833,32 @@ def test_iot::requiredport_invoke_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invoke' in iot::RequiredPort is empty"
+        assert has_statements, f"Function 'invoke' in iot_RequiredPort is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invoke' in iot::RequiredPort did not change state; check implementation")
+            warnings.warn(f"Operation 'invoke' in iot_RequiredPort did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invoke' in iot::RequiredPort is not implemented or raised an error")
+        warnings.warn(f"Operation 'invoke' in iot_RequiredPort is not implemented or raised an error")
 
-@given(instance=iot::ProvidedPort_strategy)
+@given(instance=iot_ProvidedPort_strategy)
 @settings(max_examples=50)
-def test_iot::providedport_instantiation(instance):
-    assert isinstance(instance, iot::ProvidedPort)
-
-@given(instance=iot::ProvidedPort_strategy)
-def test_iot::providedport_UUID_type(instance):
-    assert isinstance(instance.UUID, str)
+def test_iot_providedport_instantiation(instance):
+    assert isinstance(instance, iot_ProvidedPort)
 
 
-@given(instance=iot::ProvidedPort_strategy)
-def test_iot::providedport_UUID_setter(instance):
+
+@given(instance=iot_ProvidedPort_strategy)
+def test_iot_providedport_UUID_setter(instance):
     original = instance.UUID
     instance.UUID = original
     assert instance.UUID == original
 
-@given(instance=iot::ProvidedPort_strategy)
-def test_iot::providedport_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=iot::ProvidedPort_strategy)
-def test_iot::providedport_name_setter(instance):
+@given(instance=iot_ProvidedPort_strategy)
+def test_iot_providedport_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -887,9 +869,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iot::ProvidedPort_strategy)
+@given(instance=iot_ProvidedPort_strategy)
 @settings(max_examples=30)
-def test_iot::providedport_invoke_changes_state(instance):
+def test_iot_providedport_invoke_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -904,48 +886,42 @@ def test_iot::providedport_invoke_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invoke' in iot::ProvidedPort is empty"
+        assert has_statements, f"Function 'invoke' in iot_ProvidedPort is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invoke' in iot::ProvidedPort did not change state; check implementation")
+            warnings.warn(f"Operation 'invoke' in iot_ProvidedPort did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invoke' in iot::ProvidedPort is not implemented or raised an error")
+        warnings.warn(f"Operation 'invoke' in iot_ProvidedPort is not implemented or raised an error")
 
 @given(instance=Hardware_strategy)
 @settings(max_examples=50)
 def test_hardware_instantiation(instance):
     assert isinstance(instance, Hardware)
 
-@given(instance=iot::Sensor_strategy)
+@given(instance=iot_Sensor_strategy)
 @settings(max_examples=50)
-def test_iot::sensor_instantiation(instance):
-    assert isinstance(instance, iot::Sensor)
-
-@given(instance=iot::Sensor_strategy)
-def test_iot::sensor_script_type(instance):
-    assert isinstance(instance.script, str)
+def test_iot_sensor_instantiation(instance):
+    assert isinstance(instance, iot_Sensor)
 
 
-@given(instance=iot::Sensor_strategy)
-def test_iot::sensor_script_setter(instance):
+
+@given(instance=iot_Sensor_strategy)
+def test_iot_sensor_script_setter(instance):
     original = instance.script
     instance.script = original
     assert instance.script == original
 
-@given(instance=iot::Actuator_strategy)
+@given(instance=iot_Actuator_strategy)
 @settings(max_examples=50)
-def test_iot::actuator_instantiation(instance):
-    assert isinstance(instance, iot::Actuator)
-
-@given(instance=iot::Actuator_strategy)
-def test_iot::actuator_toggle_type(instance):
-    assert isinstance(instance.toggle, bool)
+def test_iot_actuator_instantiation(instance):
+    assert isinstance(instance, iot_Actuator)
 
 
-@given(instance=iot::Actuator_strategy)
-def test_iot::actuator_toggle_setter(instance):
+
+@given(instance=iot_Actuator_strategy)
+def test_iot_actuator_toggle_setter(instance):
     original = instance.toggle
     instance.toggle = original
     assert instance.toggle == original
@@ -956,9 +932,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iot::Actuator_strategy)
+@given(instance=iot_Actuator_strategy)
 @settings(max_examples=30)
-def test_iot::actuator_switchonoff_changes_state(instance):
+def test_iot_actuator_toggle_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.toggle()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.toggle).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'toggle' in iot_Actuator is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'toggle' in iot_Actuator did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'toggle' in iot_Actuator is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=iot_Actuator_strategy)
+@settings(max_examples=30)
+def test_iot_actuator_switchonoff_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -972,98 +977,60 @@ def test_iot::actuator_switchonoff_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'switchOnOff' in iot::Actuator is empty"
+        assert has_statements, f"Function 'switchOnOff' in iot_Actuator is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'switchOnOff' in iot::Actuator did not change state; check implementation")
+            warnings.warn(f"Operation 'switchOnOff' in iot_Actuator did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'switchOnOff' in iot::Actuator is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=iot::Actuator_strategy)
-@settings(max_examples=30)
-def test_iot::actuator_toggle_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.toggle()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.toggle).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toggle' in iot::Actuator is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toggle' in iot::Actuator did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toggle' in iot::Actuator is not implemented or raised an error")
+        warnings.warn(f"Operation 'switchOnOff' in iot_Actuator is not implemented or raised an error")
 
 @given(instance=RequiredPort_strategy)
 @settings(max_examples=50)
 def test_requiredport_instantiation(instance):
     assert isinstance(instance, RequiredPort)
 
-@given(instance=iot::ElsePort_strategy)
+@given(instance=iot_ThenPort_strategy)
 @settings(max_examples=50)
-def test_iot::elseport_instantiation(instance):
-    assert isinstance(instance, iot::ElsePort)
+def test_iot_thenport_instantiation(instance):
+    assert isinstance(instance, iot_ThenPort)
 
-@given(instance=iot::ConditionPort_strategy)
+@given(instance=iot_ElsePort_strategy)
 @settings(max_examples=50)
-def test_iot::conditionport_instantiation(instance):
-    assert isinstance(instance, iot::ConditionPort)
+def test_iot_elseport_instantiation(instance):
+    assert isinstance(instance, iot_ElsePort)
 
-@given(instance=iot::ThenPort_strategy)
+@given(instance=iot_ConditionPort_strategy)
 @settings(max_examples=50)
-def test_iot::thenport_instantiation(instance):
-    assert isinstance(instance, iot::ThenPort)
+def test_iot_conditionport_instantiation(instance):
+    assert isinstance(instance, iot_ConditionPort)
 
-@given(instance=iot::IfPort_strategy)
+@given(instance=iot_IfPort_strategy)
 @settings(max_examples=50)
-def test_iot::ifport_instantiation(instance):
-    assert isinstance(instance, iot::IfPort)
-
-@given(instance=iot::IfPort_strategy)
-def test_iot::ifport_var_type(instance):
-    assert isinstance(instance.var, str)
+def test_iot_ifport_instantiation(instance):
+    assert isinstance(instance, iot_IfPort)
 
 
-@given(instance=iot::IfPort_strategy)
-def test_iot::ifport_var_setter(instance):
-    original = instance.var
-    instance.var = original
-    assert instance.var == original
 
-@given(instance=iot::IfPort_strategy)
-def test_iot::ifport_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=iot::IfPort_strategy)
-def test_iot::ifport_operator_setter(instance):
+@given(instance=iot_IfPort_strategy)
+def test_iot_ifport_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=iot::IfPort_strategy)
-def test_iot::ifport_condition_type(instance):
-    assert isinstance(instance.condition, bool)
 
 
-@given(instance=iot::IfPort_strategy)
-def test_iot::ifport_condition_setter(instance):
+@given(instance=iot_IfPort_strategy)
+def test_iot_ifport_var_setter(instance):
+    original = instance.var
+    instance.var = original
+    assert instance.var == original
+
+
+
+@given(instance=iot_IfPort_strategy)
+def test_iot_ifport_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
@@ -1073,45 +1040,36 @@ def test_iot::ifport_condition_setter(instance):
 def test_iteration_instantiation(instance):
     assert isinstance(instance, Iteration)
 
-@given(instance=iot::IterativeLoop_strategy)
+@given(instance=iot_IterativeLoop_strategy)
 @settings(max_examples=50)
-def test_iot::iterativeloop_instantiation(instance):
-    assert isinstance(instance, iot::IterativeLoop)
-
-@given(instance=iot::IterativeLoop_strategy)
-def test_iot::iterativeloop_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_iot_iterativeloop_instantiation(instance):
+    assert isinstance(instance, iot_IterativeLoop)
 
 
-@given(instance=iot::IterativeLoop_strategy)
-def test_iot::iterativeloop_operator_setter(instance):
+
+@given(instance=iot_IterativeLoop_strategy)
+def test_iot_iterativeloop_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=iot::IterativeLoop_strategy)
-def test_iot::iterativeloop_var_type(instance):
-    assert isinstance(instance.var, str)
 
 
-@given(instance=iot::IterativeLoop_strategy)
-def test_iot::iterativeloop_var_setter(instance):
+@given(instance=iot_IterativeLoop_strategy)
+def test_iot_iterativeloop_var_setter(instance):
     original = instance.var
     instance.var = original
     assert instance.var == original
 
-@given(instance=iot::CounterLoop_strategy)
+@given(instance=iot_CounterLoop_strategy)
 @settings(max_examples=50)
-def test_iot::counterloop_instantiation(instance):
-    assert isinstance(instance, iot::CounterLoop)
-
-@given(instance=iot::CounterLoop_strategy)
-def test_iot::counterloop_counter_type(instance):
-    assert isinstance(instance.counter, int)
+def test_iot_counterloop_instantiation(instance):
+    assert isinstance(instance, iot_CounterLoop)
 
 
-@given(instance=iot::CounterLoop_strategy)
-def test_iot::counterloop_counter_setter(instance):
+
+@given(instance=iot_CounterLoop_strategy)
+def test_iot_counterloop_counter_setter(instance):
     original = instance.counter
     instance.counter = original
     assert instance.counter == original
@@ -1121,55 +1079,46 @@ def test_iot::counterloop_counter_setter(instance):
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=iot::Sequence_strategy)
+@given(instance=iot_Iteration_strategy)
 @settings(max_examples=50)
-def test_iot::sequence_instantiation(instance):
-    assert isinstance(instance, iot::Sequence)
+def test_iot_iteration_instantiation(instance):
+    assert isinstance(instance, iot_Iteration)
 
-@given(instance=iot::Iteration_strategy)
+@given(instance=iot_Sequence_strategy)
 @settings(max_examples=50)
-def test_iot::iteration_instantiation(instance):
-    assert isinstance(instance, iot::Iteration)
+def test_iot_sequence_instantiation(instance):
+    assert isinstance(instance, iot_Sequence)
 
-@given(instance=iot::Branching_strategy)
+@given(instance=iot_Branching_strategy)
 @settings(max_examples=50)
-def test_iot::branching_instantiation(instance):
-    assert isinstance(instance, iot::Branching)
+def test_iot_branching_instantiation(instance):
+    assert isinstance(instance, iot_Branching)
 
-@given(instance=iot::Item_strategy)
+@given(instance=iot_Item_strategy)
 @settings(max_examples=50)
-def test_iot::item_instantiation(instance):
-    assert isinstance(instance, iot::Item)
-
-@given(instance=iot::Item_strategy)
-def test_iot::item_UUID_type(instance):
-    assert isinstance(instance.UUID, str)
+def test_iot_item_instantiation(instance):
+    assert isinstance(instance, iot_Item)
 
 
-@given(instance=iot::Item_strategy)
-def test_iot::item_UUID_setter(instance):
-    original = instance.UUID
-    instance.UUID = original
-    assert instance.UUID == original
 
-@given(instance=iot::Item_strategy)
-def test_iot::item_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=iot::Item_strategy)
-def test_iot::item_name_setter(instance):
+@given(instance=iot_Item_strategy)
+def test_iot_item_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot::Item_strategy)
-def test_iot::item_newThread_type(instance):
-    assert isinstance(instance.newThread, bool)
 
 
-@given(instance=iot::Item_strategy)
-def test_iot::item_newThread_setter(instance):
+@given(instance=iot_Item_strategy)
+def test_iot_item_UUID_setter(instance):
+    original = instance.UUID
+    instance.UUID = original
+    assert instance.UUID == original
+
+
+
+@given(instance=iot_Item_strategy)
+def test_iot_item_newThread_setter(instance):
     original = instance.newThread
     instance.newThread = original
     assert instance.newThread == original
@@ -1180,9 +1129,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=iot::Item_strategy)
+@given(instance=iot_Item_strategy)
 @settings(max_examples=30)
-def test_iot::item_invoke_changes_state(instance):
+def test_iot_item_invoke_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1194,86 +1143,71 @@ def test_iot::item_invoke_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invoke' in iot::Item is empty"
+        assert has_statements, f"Function 'invoke' in iot_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invoke' in iot::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'invoke' in iot_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invoke' in iot::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'invoke' in iot_Item is not implemented or raised an error")
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=iot::Hardware_strategy)
+@given(instance=iot_Snippet_strategy)
 @settings(max_examples=50)
-def test_iot::hardware_instantiation(instance):
-    assert isinstance(instance, iot::Hardware)
-
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_mode_type(instance):
-    assert isinstance(instance.mode, bool)
+def test_iot_snippet_instantiation(instance):
+    assert isinstance(instance, iot_Snippet)
 
 
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
 
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_pinNumber_type(instance):
-    assert isinstance(instance.pinNumber, int)
-
-
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_pinNumber_setter(instance):
-    original = instance.pinNumber
-    instance.pinNumber = original
-    assert instance.pinNumber == original
-
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_timeInterval_type(instance):
-    assert isinstance(instance.timeInterval, int)
-
-
-@given(instance=iot::Hardware_strategy)
-def test_iot::hardware_timeInterval_setter(instance):
-    original = instance.timeInterval
-    instance.timeInterval = original
-    assert instance.timeInterval == original
-
-@given(instance=iot::Snippet_strategy)
-@settings(max_examples=50)
-def test_iot::snippet_instantiation(instance):
-    assert isinstance(instance, iot::Snippet)
-
-@given(instance=iot::Snippet_strategy)
-def test_iot::snippet_scriptPath_type(instance):
-    assert isinstance(instance.scriptPath, str)
-
-
-@given(instance=iot::Snippet_strategy)
-def test_iot::snippet_scriptPath_setter(instance):
+@given(instance=iot_Snippet_strategy)
+def test_iot_snippet_scriptPath_setter(instance):
     original = instance.scriptPath
     instance.scriptPath = original
     assert instance.scriptPath == original
 
-@given(instance=iot::Software_strategy)
+@given(instance=iot_Hardware_strategy)
 @settings(max_examples=50)
-def test_iot::software_instantiation(instance):
-    assert isinstance(instance, iot::Software)
+def test_iot_hardware_instantiation(instance):
+    assert isinstance(instance, iot_Hardware)
+
+
+
+@given(instance=iot_Hardware_strategy)
+def test_iot_hardware_pinNumber_setter(instance):
+    original = instance.pinNumber
+    instance.pinNumber = original
+    assert instance.pinNumber == original
+
+
+
+@given(instance=iot_Hardware_strategy)
+def test_iot_hardware_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+
+
+@given(instance=iot_Hardware_strategy)
+def test_iot_hardware_timeInterval_setter(instance):
+    original = instance.timeInterval
+    instance.timeInterval = original
+    assert instance.timeInterval == original
+
+
+
+@given(instance=iot_Hardware_strategy)
+def test_iot_hardware_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=iot_Software_strategy)
+@settings(max_examples=50)
+def test_iot_software_instantiation(instance):
+    assert isinstance(instance, iot_Software)

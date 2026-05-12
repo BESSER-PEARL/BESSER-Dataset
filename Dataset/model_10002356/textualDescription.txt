@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'admin' has the following attributes: 'cost' of type int; 'name_of_flight' of type str; 'username' of type str; 'seats' of type int; 'pwd' of type str; 'type' of type str.
+The class 'credit_card' has no attributes.
+The class 'payement' has the following attributes: 'pay_date' of type int; 'pay_amt' of type int; 'transc_id' of type int; 'paymethod' of type str; 'customer_info' of type str.
+The class 'cash' has no attributes.
+The class 'flights' has the following attributes: 'time' of type int; 'depart' of type str; 'number' of type int; 'name' of type str; 'dest' of type str.
+The class 'customer' has the following attributes: 'address' of type str; 'age' of type int; 'name' of type str; 'source' of type str.
+The class 'ticket' has the following attributes: 'tiketno_' of type int; 'dest' of type str; 'custid' of type int; 'attribute' of type str; 'source' of type str.
+'flights' (role 'admin9', cardinality 0..*) is associated with 'admin' (role 'flights8', cardinality 0..*).
+'admin' (role 'customer5', cardinality 0..*) is associated with 'customer' (role 'admin4', cardinality 0..*).
+'customer' (role 'payement1', cardinality 0..*) is associated with 'payement' (role 'customer0', cardinality 0..*).
+'ticket' (role 'customer3', cardinality 0..*) is associated with 'customer' (role 'ticket2', cardinality 0..*).
+'flights' (role 'customer7', cardinality 0..*) is associated with 'customer' (role 'flights6', cardinality 0..*).

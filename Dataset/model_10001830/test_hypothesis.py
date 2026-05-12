@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Room,
@@ -31,17 +31,8 @@ def test_room_constructor_exists():
 def test_room_constructor_args():
     sig = inspect.signature(Room.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_room_has_id():
-    assert hasattr(Room, "id")
-    descriptor = None
-    for klass in Room.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_room_has_name():
     assert hasattr(Room, "name")
@@ -49,6 +40,15 @@ def test_room_has_name():
     for klass in Room.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_room_has_id():
+    assert hasattr(Room, "id")
+    descriptor = None
+    for klass in Room.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,13 +109,31 @@ def test_session_constructor_exists():
 def test_session_constructor_args():
     sig = inspect.signature(Session.__init__)
     params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
     assert "room" in params, "Missing parameter 'room'"
-    assert "end" in params, "Missing parameter 'end'"
-    assert "start" in params, "Missing parameter 'start'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "Events" in params, "Missing parameter 'Events'"
-    assert "type" in params, "Missing parameter 'type'"
+    assert "start" in params, "Missing parameter 'start'"
+    assert "end" in params, "Missing parameter 'end'"
+
+def test_session_has_type():
+    assert hasattr(Session, "type")
+    descriptor = None
+    for klass in Session.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_session_has_name():
+    assert hasattr(Session, "name")
+    descriptor = None
+    for klass in Session.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_session_has_id():
     assert hasattr(Session, "id")
@@ -135,12 +153,12 @@ def test_session_has_room():
             break
     assert isinstance(descriptor, property)
 
-def test_session_has_end():
-    assert hasattr(Session, "end")
+def test_session_has_Events():
+    assert hasattr(Session, "Events")
     descriptor = None
     for klass in Session.__mro__:
-        if "end" in klass.__dict__:
-            descriptor = klass.__dict__["end"]
+        if "Events" in klass.__dict__:
+            descriptor = klass.__dict__["Events"]
             break
     assert isinstance(descriptor, property)
 
@@ -153,30 +171,12 @@ def test_session_has_start():
             break
     assert isinstance(descriptor, property)
 
-def test_session_has_name():
-    assert hasattr(Session, "name")
+def test_session_has_end():
+    assert hasattr(Session, "end")
     descriptor = None
     for klass in Session.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_session_has_Events():
-    assert hasattr(Session, "Events")
-    descriptor = None
-    for klass in Session.__mro__:
-        if "Events" in klass.__dict__:
-            descriptor = klass.__dict__["Events"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_session_has_type():
-    assert hasattr(Session, "type")
-    descriptor = None
-    for klass in Session.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+        if "end" in klass.__dict__:
+            descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
@@ -218,10 +218,10 @@ def test_event_constructor_args():
     sig = inspect.signature(Event.__init__)
     params = list(sig.parameters.keys())
     assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "edition" in params, "Missing parameter 'edition'"
     assert "acronym" in params, "Missing parameter 'acronym'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "id" in params, "Missing parameter 'id'"
 
 def test_event_has_attribute():
     assert hasattr(Event, "attribute")
@@ -229,6 +229,24 @@ def test_event_has_attribute():
     for klass in Event.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_id():
+    assert hasattr(Event, "id")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_name():
+    assert hasattr(Event, "name")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -247,24 +265,6 @@ def test_event_has_acronym():
     for klass in Event.__mro__:
         if "acronym" in klass.__dict__:
             descriptor = klass.__dict__["acronym"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_name():
-    assert hasattr(Event, "name")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_id():
-    assert hasattr(Event, "id")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -295,10 +295,10 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Room_strategy = st.builds(
     Room,
-    id=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
 SessionType_strategy = st.builds(
     SessionType,
@@ -311,20 +311,20 @@ SessionType_strategy = st.builds(
 )
 Session_strategy = st.builds(
     Session,
+    type=
+        st.none(),
+    name=
+        safe_text,
     id=
         st.integers(),
     room=
         st.none(),
-    end=
-        safe_text,
-    start=
-        safe_text,
-    name=
-        safe_text,
     Events=
         st.none(),
-    type=
-        st.none()
+    start=
+        safe_text,
+    end=
+        safe_text
 )
 Serie_strategy = st.builds(
     Serie,
@@ -335,14 +335,14 @@ Event_strategy = st.builds(
     Event,
     attribute=
         safe_text,
+    id=
+        st.integers(),
+    name=
+        safe_text,
     edition=
         st.integers(),
     acronym=
-        safe_text,
-    name=
-        safe_text,
-    id=
-        st.integers()
+        safe_text
 )
 
 @given(instance=Room_strategy)
@@ -350,20 +350,6 @@ Event_strategy = st.builds(
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Room_strategy)
-def test_room_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Room_strategy)
-def test_room_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Room_strategy)
@@ -372,14 +358,19 @@ def test_room_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Room_strategy)
+def test_room_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=SessionType_strategy)
 @settings(max_examples=50)
 def test_sessiontype_instantiation(instance):
     assert isinstance(instance, SessionType)
 
-@given(instance=SessionType_strategy)
-def test_sessiontype_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
 @given(instance=SessionType_strategy)
@@ -388,9 +379,6 @@ def test_sessiontype_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
-@given(instance=SessionType_strategy)
-def test_sessiontype_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=SessionType_strategy)
@@ -399,9 +387,6 @@ def test_sessiontype_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=SessionType_strategy)
-def test_sessiontype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=SessionType_strategy)
@@ -415,75 +400,6 @@ def test_sessiontype_name_setter(instance):
 def test_session_instantiation(instance):
     assert isinstance(instance, Session)
 
-@given(instance=Session_strategy)
-def test_session_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Session_strategy)
-def test_session_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Session_strategy)
-def test_session_room_type(instance):
-    assert isinstance(instance.room, room)
-
-
-@given(instance=Session_strategy)
-def test_session_room_setter(instance):
-    original = instance.room
-    instance.room = original
-    assert instance.room == original
-
-@given(instance=Session_strategy)
-def test_session_end_type(instance):
-    assert isinstance(instance.end, str)
-
-
-@given(instance=Session_strategy)
-def test_session_end_setter(instance):
-    original = instance.end
-    instance.end = original
-    assert instance.end == original
-
-@given(instance=Session_strategy)
-def test_session_start_type(instance):
-    assert isinstance(instance.start, str)
-
-
-@given(instance=Session_strategy)
-def test_session_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
-
-@given(instance=Session_strategy)
-def test_session_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Session_strategy)
-def test_session_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Session_strategy)
-def test_session_Events_type(instance):
-    assert isinstance(instance.Events, event)
-
-
-@given(instance=Session_strategy)
-def test_session_Events_setter(instance):
-    original = instance.Events
-    instance.Events = original
-    assert instance.Events == original
-
-@given(instance=Session_strategy)
-def test_session_type_type(instance):
-    assert isinstance(instance.type, sessiontype)
 
 
 @given(instance=Session_strategy)
@@ -492,14 +408,59 @@ def test_session_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
+
+
+@given(instance=Session_strategy)
+def test_session_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Session_strategy)
+def test_session_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Session_strategy)
+def test_session_room_setter(instance):
+    original = instance.room
+    instance.room = original
+    assert instance.room == original
+
+
+
+@given(instance=Session_strategy)
+def test_session_Events_setter(instance):
+    original = instance.Events
+    instance.Events = original
+    assert instance.Events == original
+
+
+
+@given(instance=Session_strategy)
+def test_session_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+
+
+@given(instance=Session_strategy)
+def test_session_end_setter(instance):
+    original = instance.end
+    instance.end = original
+    assert instance.end == original
+
 @given(instance=Serie_strategy)
 @settings(max_examples=50)
 def test_serie_instantiation(instance):
     assert isinstance(instance, Serie)
 
-@given(instance=Serie_strategy)
-def test_serie_Events_type(instance):
-    assert isinstance(instance.Events, event)
 
 
 @given(instance=Serie_strategy)
@@ -513,9 +474,6 @@ def test_serie_Events_setter(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=Event_strategy)
-def test_event_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Event_strategy)
@@ -524,31 +482,14 @@ def test_event_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Event_strategy)
-def test_event_edition_type(instance):
-    assert isinstance(instance.edition, int)
 
 
 @given(instance=Event_strategy)
-def test_event_edition_setter(instance):
-    original = instance.edition
-    instance.edition = original
-    assert instance.edition == original
+def test_event_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
-@given(instance=Event_strategy)
-def test_event_acronym_type(instance):
-    assert isinstance(instance.acronym, str)
-
-
-@given(instance=Event_strategy)
-def test_event_acronym_setter(instance):
-    original = instance.acronym
-    instance.acronym = original
-    assert instance.acronym == original
-
-@given(instance=Event_strategy)
-def test_event_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Event_strategy)
@@ -557,13 +498,18 @@ def test_event_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Event_strategy)
-def test_event_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Event_strategy)
-def test_event_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+def test_event_edition_setter(instance):
+    original = instance.edition
+    instance.edition = original
+    assert instance.edition == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_acronym_setter(instance):
+    original = instance.acronym
+    instance.acronym = original
+    assert instance.acronym == original

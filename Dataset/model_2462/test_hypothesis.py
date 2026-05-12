@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     OclExpression,
-    operators::IfExp,
-    operators::OperationCallExp,
-    operators::Type,
-    operators::OclExpression,
-    operators::OclType,
+    operators_IfExp,
+    operators_OclType,
+    operators_OperationCallExp,
+    operators_Type,
+    operators_OclExpression,
 )
 
 # =============================================================================
@@ -34,37 +34,51 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_operators::ifexp_is_not_abstract():
-    assert not inspect.isabstract(operators::IfExp)
+def test_operators_ifexp_is_not_abstract():
+    assert not inspect.isabstract(operators_IfExp)
 
 
-def test_operators::ifexp_constructor_exists():
-    assert callable(operators::IfExp.__init__)
+def test_operators_ifexp_constructor_exists():
+    assert callable(operators_IfExp.__init__)
 
 
-def test_operators::ifexp_constructor_args():
-    sig = inspect.signature(operators::IfExp.__init__)
+def test_operators_ifexp_constructor_args():
+    sig = inspect.signature(operators_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(operators::OperationCallExp)
+def test_operators_ocltype_is_not_abstract():
+    assert not inspect.isabstract(operators_OclType)
 
 
-def test_operators::operationcallexp_constructor_exists():
-    assert callable(operators::OperationCallExp.__init__)
+def test_operators_ocltype_constructor_exists():
+    assert callable(operators_OclType.__init__)
 
 
-def test_operators::operationcallexp_constructor_args():
-    sig = inspect.signature(operators::OperationCallExp.__init__)
+def test_operators_ocltype_constructor_args():
+    sig = inspect.signature(operators_OclType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(operators_OperationCallExp)
+
+
+def test_operators_operationcallexp_constructor_exists():
+    assert callable(operators_OperationCallExp.__init__)
+
+
+def test_operators_operationcallexp_constructor_args():
+    sig = inspect.signature(operators_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_operators::operationcallexp_has_name():
-    assert hasattr(operators::OperationCallExp, "name")
+def test_operators_operationcallexp_has_name():
+    assert hasattr(operators_OperationCallExp, "name")
     descriptor = None
-    for klass in operators::OperationCallExp.__mro__:
+    for klass in operators_OperationCallExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -72,44 +86,30 @@ def test_operators::operationcallexp_has_name():
 
 
 
-def test_operators::type_is_not_abstract():
-    assert not inspect.isabstract(operators::Type)
+def test_operators_type_is_not_abstract():
+    assert not inspect.isabstract(operators_Type)
 
 
-def test_operators::type_constructor_exists():
-    assert callable(operators::Type.__init__)
+def test_operators_type_constructor_exists():
+    assert callable(operators_Type.__init__)
 
 
-def test_operators::type_constructor_args():
-    sig = inspect.signature(operators::Type.__init__)
+def test_operators_type_constructor_args():
+    sig = inspect.signature(operators_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(operators::OclExpression)
+def test_operators_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(operators_OclExpression)
 
 
-def test_operators::oclexpression_constructor_exists():
-    assert callable(operators::OclExpression.__init__)
+def test_operators_oclexpression_constructor_exists():
+    assert callable(operators_OclExpression.__init__)
 
 
-def test_operators::oclexpression_constructor_args():
-    sig = inspect.signature(operators::OclExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::ocltype_is_not_abstract():
-    assert not inspect.isabstract(operators::OclType)
-
-
-def test_operators::ocltype_constructor_exists():
-    assert callable(operators::OclType.__init__)
-
-
-def test_operators::ocltype_constructor_args():
-    sig = inspect.signature(operators::OclType.__init__)
+def test_operators_oclexpression_constructor_args():
+    sig = inspect.signature(operators_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,22 +127,22 @@ safe_text = st.text(
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-operators::IfExp_strategy = st.builds(
-    operators::IfExp,
+operators_IfExp_strategy = st.builds(
+    operators_IfExp,
 )
-operators::OperationCallExp_strategy = st.builds(
-    operators::OperationCallExp,
+operators_OclType_strategy = st.builds(
+    operators_OclType,
+)
+operators_OperationCallExp_strategy = st.builds(
+    operators_OperationCallExp,
     name=
         safe_text
 )
-operators::Type_strategy = st.builds(
-    operators::Type,
+operators_Type_strategy = st.builds(
+    operators_Type,
 )
-operators::OclExpression_strategy = st.builds(
-    operators::OclExpression,
-)
-operators::OclType_strategy = st.builds(
-    operators::OclType,
+operators_OclExpression_strategy = st.builds(
+    operators_OclExpression,
 )
 
 @given(instance=OclExpression_strategy)
@@ -150,31 +150,33 @@ operators::OclType_strategy = st.builds(
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=operators::IfExp_strategy)
+@given(instance=operators_IfExp_strategy)
 @settings(max_examples=50)
-def test_operators::ifexp_instantiation(instance):
-    assert isinstance(instance, operators::IfExp)
+def test_operators_ifexp_instantiation(instance):
+    assert isinstance(instance, operators_IfExp)
 
-@given(instance=operators::OperationCallExp_strategy)
+@given(instance=operators_OclType_strategy)
 @settings(max_examples=50)
-def test_operators::operationcallexp_instantiation(instance):
-    assert isinstance(instance, operators::OperationCallExp)
+def test_operators_ocltype_instantiation(instance):
+    assert isinstance(instance, operators_OclType)
 
-@given(instance=operators::OperationCallExp_strategy)
-def test_operators::operationcallexp_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=operators_OperationCallExp_strategy)
+@settings(max_examples=50)
+def test_operators_operationcallexp_instantiation(instance):
+    assert isinstance(instance, operators_OperationCallExp)
 
 
-@given(instance=operators::OperationCallExp_strategy)
-def test_operators::operationcallexp_name_setter(instance):
+
+@given(instance=operators_OperationCallExp_strategy)
+def test_operators_operationcallexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=operators::Type_strategy)
+@given(instance=operators_Type_strategy)
 @settings(max_examples=50)
-def test_operators::type_instantiation(instance):
-    assert isinstance(instance, operators::Type)
+def test_operators_type_instantiation(instance):
+    assert isinstance(instance, operators_Type)
 
 import warnings
 import copy
@@ -182,40 +184,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=operators::Type_strategy)
+@given(instance=operators_Type_strategy)
 @settings(max_examples=30)
-def test_operators::type_issupertypeof_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSuperTypeOf(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSuperTypeOf).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperTypeOf' in operators::Type is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperTypeOf' in operators::Type did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperTypeOf' in operators::Type is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=operators::Type_strategy)
-@settings(max_examples=30)
-def test_operators::type_issametype_changes_state(instance):
+def test_operators_type_issametype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -229,21 +200,47 @@ def test_operators::type_issametype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSameType' in operators::Type is empty"
+        assert has_statements, f"Function 'isSameType' in operators_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSameType' in operators::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'isSameType' in operators_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSameType' in operators::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'isSameType' in operators_Type is not implemented or raised an error")
 
-@given(instance=operators::OclExpression_strategy)
-@settings(max_examples=50)
-def test_operators::oclexpression_instantiation(instance):
-    assert isinstance(instance, operators::OclExpression)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=operators::OclType_strategy)
+@given(instance=operators_Type_strategy)
+@settings(max_examples=30)
+def test_operators_type_issupertypeof_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSuperTypeOf(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSuperTypeOf).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSuperTypeOf' in operators_Type is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSuperTypeOf' in operators_Type did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSuperTypeOf' in operators_Type is not implemented or raised an error")
+
+@given(instance=operators_OclExpression_strategy)
 @settings(max_examples=50)
-def test_operators::ocltype_instantiation(instance):
-    assert isinstance(instance, operators::OclType)
+def test_operators_oclexpression_instantiation(instance):
+    assert isinstance(instance, operators_OclExpression)

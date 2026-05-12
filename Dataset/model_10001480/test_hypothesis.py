@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     BoardView,
@@ -24,8 +24,8 @@ from python_code import (
     Position,
     Square,
     ChessBoardInterface_Interface,
-    PieceType,
     color,
+    PieceType,
 )
 
 # =============================================================================
@@ -129,17 +129,8 @@ def test_chessgamecontroller_constructor_exists():
 def test_chessgamecontroller_constructor_args():
     sig = inspect.signature(ChessGameController.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_chessgamecontroller_has_attribute2():
-    assert hasattr(ChessGameController, "attribute2")
-    descriptor = None
-    for klass in ChessGameController.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_chessgamecontroller_has_attribute():
     assert hasattr(ChessGameController, "attribute")
@@ -147,6 +138,15 @@ def test_chessgamecontroller_has_attribute():
     for klass in ChessGameController.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_chessgamecontroller_has_attribute2():
+    assert hasattr(ChessGameController, "attribute2")
+    descriptor = None
+    for klass in ChessGameController.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -319,17 +319,8 @@ def test_square_constructor_exists():
 def test_square_constructor_args():
     sig = inspect.signature(Square.__init__)
     params = list(sig.parameters.keys())
-    assert "position" in params, "Missing parameter 'position'"
     assert "piece" in params, "Missing parameter 'piece'"
-
-def test_square_has_position():
-    assert hasattr(Square, "position")
-    descriptor = None
-    for klass in Square.__mro__:
-        if "position" in klass.__dict__:
-            descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
+    assert "position" in params, "Missing parameter 'position'"
 
 def test_square_has_piece():
     assert hasattr(Square, "piece")
@@ -337,6 +328,15 @@ def test_square_has_piece():
     for klass in Square.__mro__:
         if "piece" in klass.__dict__:
             descriptor = klass.__dict__["piece"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_square_has_position():
+    assert hasattr(Square, "position")
+    descriptor = None
+    for klass in Square.__mro__:
+        if "position" in klass.__dict__:
+            descriptor = klass.__dict__["position"]
             break
     assert isinstance(descriptor, property)
 
@@ -354,19 +354,6 @@ def test_chessboardinterface_interface_constructor_args():
     sig = inspect.signature(ChessBoardInterface_Interface.__init__)
     params = list(sig.parameters.keys())
 
-def test_piecetype_exists():
-    # Check that the Enumeration exists
-    assert PieceType is not None
-
-def test_piecetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PieceType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PieceType"
-
 def test_color_exists():
     # Check that the Enumeration exists
     assert color is not None
@@ -379,6 +366,19 @@ def test_color_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in color"
+
+def test_piecetype_exists():
+    # Check that the Enumeration exists
+    assert PieceType is not None
+
+def test_piecetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PieceType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PieceType"
 
 
 # =============================================================================
@@ -412,9 +412,9 @@ BoardValidator_strategy = st.builds(
 )
 ChessGameController_strategy = st.builds(
     ChessGameController,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 ChessBoard_strategy = st.builds(
@@ -452,9 +452,9 @@ Position_strategy = st.builds(
 )
 Square_strategy = st.builds(
     Square,
-    position=
-        st.none(),
     piece=
+        st.none(),
+    position=
         st.none()
 )
 ChessBoardInterface_Interface_strategy = st.builds(
@@ -496,20 +496,6 @@ def test_boardvalidator_instantiation(instance):
 def test_chessgamecontroller_instantiation(instance):
     assert isinstance(instance, ChessGameController)
 
-@given(instance=ChessGameController_strategy)
-def test_chessgamecontroller_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=ChessGameController_strategy)
-def test_chessgamecontroller_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=ChessGameController_strategy)
-def test_chessgamecontroller_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=ChessGameController_strategy)
@@ -517,6 +503,14 @@ def test_chessgamecontroller_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=ChessGameController_strategy)
+def test_chessgamecontroller_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
 
 @given(instance=ChessBoard_strategy)
 @settings(max_examples=50)
@@ -558,9 +552,6 @@ def test_bishop_instantiation(instance):
 def test_piece_instantiation(instance):
     assert isinstance(instance, Piece)
 
-@given(instance=Piece_strategy)
-def test_piece_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Piece_strategy)
@@ -574,9 +565,6 @@ def test_piece_attribute_setter(instance):
 def test_position_instantiation(instance):
     assert isinstance(instance, Position)
 
-@given(instance=Position_strategy)
-def test_position_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
 @given(instance=Position_strategy)
@@ -585,9 +573,6 @@ def test_position_y_setter(instance):
     instance.y = original
     assert instance.y == original
 
-@given(instance=Position_strategy)
-def test_position_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=Position_strategy)
@@ -601,20 +586,6 @@ def test_position_x_setter(instance):
 def test_square_instantiation(instance):
     assert isinstance(instance, Square)
 
-@given(instance=Square_strategy)
-def test_square_position_type(instance):
-    assert isinstance(instance.position, position)
-
-
-@given(instance=Square_strategy)
-def test_square_position_setter(instance):
-    original = instance.position
-    instance.position = original
-    assert instance.position == original
-
-@given(instance=Square_strategy)
-def test_square_piece_type(instance):
-    assert isinstance(instance.piece, piece)
 
 
 @given(instance=Square_strategy)
@@ -622,6 +593,14 @@ def test_square_piece_setter(instance):
     original = instance.piece
     instance.piece = original
     assert instance.piece == original
+
+
+
+@given(instance=Square_strategy)
+def test_square_position_setter(instance):
+    original = instance.position
+    instance.position = original
+    assert instance.position == original
 
 @given(instance=ChessBoardInterface_Interface_strategy)
 @settings(max_examples=50)

@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BinaryExpression,
-    core::Mod,
-    core::Equal,
-    core::Minus,
-    core::Mult,
-    core::Div,
-    core::Add,
-    core::Filter,
-    core::Lower,
-    core::Greater,
+    core_Mod,
+    core_Equal,
+    core_Minus,
+    core_Div,
+    core_Mult,
+    core_Add,
+    core_Filter,
+    core_Lower,
+    core_Greater,
     UnaryExpression,
-    core::UMinus,
-    core::Not,
-    core::Or,
-    core::And,
+    core_UMinus,
+    core_Not,
+    core_Or,
+    core_And,
     IntegerExpression,
-    core::BinaryExpression,
-    core::Conditional,
-    core::IntegerLiteral,
-    core::UnaryExpression,
-    core::IntegerExpression,
-    core::Rule,
+    core_IntegerLiteral,
+    core_BinaryExpression,
+    core_Conditional,
+    core_UnaryExpression,
+    core_IntegerExpression,
+    core_Rule,
 )
 
 # =============================================================================
@@ -50,128 +50,128 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_core::mod_is_not_abstract():
-    assert not inspect.isabstract(core::Mod)
+def test_core_mod_is_not_abstract():
+    assert not inspect.isabstract(core_Mod)
 
 
-def test_core::mod_constructor_exists():
-    assert callable(core::Mod.__init__)
+def test_core_mod_constructor_exists():
+    assert callable(core_Mod.__init__)
 
 
-def test_core::mod_constructor_args():
-    sig = inspect.signature(core::Mod.__init__)
+def test_core_mod_constructor_args():
+    sig = inspect.signature(core_Mod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::equal_is_not_abstract():
-    assert not inspect.isabstract(core::Equal)
+def test_core_equal_is_not_abstract():
+    assert not inspect.isabstract(core_Equal)
 
 
-def test_core::equal_constructor_exists():
-    assert callable(core::Equal.__init__)
+def test_core_equal_constructor_exists():
+    assert callable(core_Equal.__init__)
 
 
-def test_core::equal_constructor_args():
-    sig = inspect.signature(core::Equal.__init__)
+def test_core_equal_constructor_args():
+    sig = inspect.signature(core_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::minus_is_not_abstract():
-    assert not inspect.isabstract(core::Minus)
+def test_core_minus_is_not_abstract():
+    assert not inspect.isabstract(core_Minus)
 
 
-def test_core::minus_constructor_exists():
-    assert callable(core::Minus.__init__)
+def test_core_minus_constructor_exists():
+    assert callable(core_Minus.__init__)
 
 
-def test_core::minus_constructor_args():
-    sig = inspect.signature(core::Minus.__init__)
+def test_core_minus_constructor_args():
+    sig = inspect.signature(core_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::mult_is_not_abstract():
-    assert not inspect.isabstract(core::Mult)
+def test_core_div_is_not_abstract():
+    assert not inspect.isabstract(core_Div)
 
 
-def test_core::mult_constructor_exists():
-    assert callable(core::Mult.__init__)
+def test_core_div_constructor_exists():
+    assert callable(core_Div.__init__)
 
 
-def test_core::mult_constructor_args():
-    sig = inspect.signature(core::Mult.__init__)
+def test_core_div_constructor_args():
+    sig = inspect.signature(core_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::div_is_not_abstract():
-    assert not inspect.isabstract(core::Div)
+def test_core_mult_is_not_abstract():
+    assert not inspect.isabstract(core_Mult)
 
 
-def test_core::div_constructor_exists():
-    assert callable(core::Div.__init__)
+def test_core_mult_constructor_exists():
+    assert callable(core_Mult.__init__)
 
 
-def test_core::div_constructor_args():
-    sig = inspect.signature(core::Div.__init__)
+def test_core_mult_constructor_args():
+    sig = inspect.signature(core_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::add_is_not_abstract():
-    assert not inspect.isabstract(core::Add)
+def test_core_add_is_not_abstract():
+    assert not inspect.isabstract(core_Add)
 
 
-def test_core::add_constructor_exists():
-    assert callable(core::Add.__init__)
+def test_core_add_constructor_exists():
+    assert callable(core_Add.__init__)
 
 
-def test_core::add_constructor_args():
-    sig = inspect.signature(core::Add.__init__)
+def test_core_add_constructor_args():
+    sig = inspect.signature(core_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::filter_is_not_abstract():
-    assert not inspect.isabstract(core::Filter)
+def test_core_filter_is_not_abstract():
+    assert not inspect.isabstract(core_Filter)
 
 
-def test_core::filter_constructor_exists():
-    assert callable(core::Filter.__init__)
+def test_core_filter_constructor_exists():
+    assert callable(core_Filter.__init__)
 
 
-def test_core::filter_constructor_args():
-    sig = inspect.signature(core::Filter.__init__)
+def test_core_filter_constructor_args():
+    sig = inspect.signature(core_Filter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::lower_is_not_abstract():
-    assert not inspect.isabstract(core::Lower)
+def test_core_lower_is_not_abstract():
+    assert not inspect.isabstract(core_Lower)
 
 
-def test_core::lower_constructor_exists():
-    assert callable(core::Lower.__init__)
+def test_core_lower_constructor_exists():
+    assert callable(core_Lower.__init__)
 
 
-def test_core::lower_constructor_args():
-    sig = inspect.signature(core::Lower.__init__)
+def test_core_lower_constructor_args():
+    sig = inspect.signature(core_Lower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::greater_is_not_abstract():
-    assert not inspect.isabstract(core::Greater)
+def test_core_greater_is_not_abstract():
+    assert not inspect.isabstract(core_Greater)
 
 
-def test_core::greater_constructor_exists():
-    assert callable(core::Greater.__init__)
+def test_core_greater_constructor_exists():
+    assert callable(core_Greater.__init__)
 
 
-def test_core::greater_constructor_args():
-    sig = inspect.signature(core::Greater.__init__)
+def test_core_greater_constructor_args():
+    sig = inspect.signature(core_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -190,58 +190,58 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_core::uminus_is_not_abstract():
-    assert not inspect.isabstract(core::UMinus)
+def test_core_uminus_is_not_abstract():
+    assert not inspect.isabstract(core_UMinus)
 
 
-def test_core::uminus_constructor_exists():
-    assert callable(core::UMinus.__init__)
+def test_core_uminus_constructor_exists():
+    assert callable(core_UMinus.__init__)
 
 
-def test_core::uminus_constructor_args():
-    sig = inspect.signature(core::UMinus.__init__)
+def test_core_uminus_constructor_args():
+    sig = inspect.signature(core_UMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::not_is_not_abstract():
-    assert not inspect.isabstract(core::Not)
+def test_core_not_is_not_abstract():
+    assert not inspect.isabstract(core_Not)
 
 
-def test_core::not_constructor_exists():
-    assert callable(core::Not.__init__)
+def test_core_not_constructor_exists():
+    assert callable(core_Not.__init__)
 
 
-def test_core::not_constructor_args():
-    sig = inspect.signature(core::Not.__init__)
+def test_core_not_constructor_args():
+    sig = inspect.signature(core_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::or_is_not_abstract():
-    assert not inspect.isabstract(core::Or)
+def test_core_or_is_not_abstract():
+    assert not inspect.isabstract(core_Or)
 
 
-def test_core::or_constructor_exists():
-    assert callable(core::Or.__init__)
+def test_core_or_constructor_exists():
+    assert callable(core_Or.__init__)
 
 
-def test_core::or_constructor_args():
-    sig = inspect.signature(core::Or.__init__)
+def test_core_or_constructor_args():
+    sig = inspect.signature(core_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::and_is_not_abstract():
-    assert not inspect.isabstract(core::And)
+def test_core_and_is_not_abstract():
+    assert not inspect.isabstract(core_And)
 
 
-def test_core::and_constructor_exists():
-    assert callable(core::And.__init__)
+def test_core_and_constructor_exists():
+    assert callable(core_And.__init__)
 
 
-def test_core::and_constructor_args():
-    sig = inspect.signature(core::And.__init__)
+def test_core_and_constructor_args():
+    sig = inspect.signature(core_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -260,51 +260,23 @@ def test_integerexpression_constructor_args():
 
 
 
-def test_core::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(core::BinaryExpression)
+def test_core_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(core_IntegerLiteral)
 
 
-def test_core::binaryexpression_constructor_exists():
-    assert callable(core::BinaryExpression.__init__)
+def test_core_integerliteral_constructor_exists():
+    assert callable(core_IntegerLiteral.__init__)
 
 
-def test_core::binaryexpression_constructor_args():
-    sig = inspect.signature(core::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_core::conditional_is_not_abstract():
-    assert not inspect.isabstract(core::Conditional)
-
-
-def test_core::conditional_constructor_exists():
-    assert callable(core::Conditional.__init__)
-
-
-def test_core::conditional_constructor_args():
-    sig = inspect.signature(core::Conditional.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_core::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(core::IntegerLiteral)
-
-
-def test_core::integerliteral_constructor_exists():
-    assert callable(core::IntegerLiteral.__init__)
-
-
-def test_core::integerliteral_constructor_args():
-    sig = inspect.signature(core::IntegerLiteral.__init__)
+def test_core_integerliteral_constructor_args():
+    sig = inspect.signature(core_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_core::integerliteral_has_val():
-    assert hasattr(core::IntegerLiteral, "val")
+def test_core_integerliteral_has_val():
+    assert hasattr(core_IntegerLiteral, "val")
     descriptor = None
-    for klass in core::IntegerLiteral.__mro__:
+    for klass in core_IntegerLiteral.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -312,44 +284,72 @@ def test_core::integerliteral_has_val():
 
 
 
-def test_core::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(core::UnaryExpression)
+def test_core_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(core_BinaryExpression)
 
 
-def test_core::unaryexpression_constructor_exists():
-    assert callable(core::UnaryExpression.__init__)
+def test_core_binaryexpression_constructor_exists():
+    assert callable(core_BinaryExpression.__init__)
 
 
-def test_core::unaryexpression_constructor_args():
-    sig = inspect.signature(core::UnaryExpression.__init__)
+def test_core_binaryexpression_constructor_args():
+    sig = inspect.signature(core_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(core::IntegerExpression)
+def test_core_conditional_is_not_abstract():
+    assert not inspect.isabstract(core_Conditional)
 
 
-def test_core::integerexpression_constructor_exists():
-    assert callable(core::IntegerExpression.__init__)
+def test_core_conditional_constructor_exists():
+    assert callable(core_Conditional.__init__)
 
 
-def test_core::integerexpression_constructor_args():
-    sig = inspect.signature(core::IntegerExpression.__init__)
+def test_core_conditional_constructor_args():
+    sig = inspect.signature(core_Conditional.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::rule_is_not_abstract():
-    assert not inspect.isabstract(core::Rule)
+def test_core_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(core_UnaryExpression)
 
 
-def test_core::rule_constructor_exists():
-    assert callable(core::Rule.__init__)
+def test_core_unaryexpression_constructor_exists():
+    assert callable(core_UnaryExpression.__init__)
 
 
-def test_core::rule_constructor_args():
-    sig = inspect.signature(core::Rule.__init__)
+def test_core_unaryexpression_constructor_args():
+    sig = inspect.signature(core_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_core_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(core_IntegerExpression)
+
+
+def test_core_integerexpression_constructor_exists():
+    assert callable(core_IntegerExpression.__init__)
+
+
+def test_core_integerexpression_constructor_args():
+    sig = inspect.signature(core_IntegerExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_core_rule_is_not_abstract():
+    assert not inspect.isabstract(core_Rule)
+
+
+def test_core_rule_constructor_exists():
+    assert callable(core_Rule.__init__)
+
+
+def test_core_rule_constructor_args():
+    sig = inspect.signature(core_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -367,70 +367,70 @@ safe_text = st.text(
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-core::Mod_strategy = st.builds(
-    core::Mod,
+core_Mod_strategy = st.builds(
+    core_Mod,
 )
-core::Equal_strategy = st.builds(
-    core::Equal,
+core_Equal_strategy = st.builds(
+    core_Equal,
 )
-core::Minus_strategy = st.builds(
-    core::Minus,
+core_Minus_strategy = st.builds(
+    core_Minus,
 )
-core::Mult_strategy = st.builds(
-    core::Mult,
+core_Div_strategy = st.builds(
+    core_Div,
 )
-core::Div_strategy = st.builds(
-    core::Div,
+core_Mult_strategy = st.builds(
+    core_Mult,
 )
-core::Add_strategy = st.builds(
-    core::Add,
+core_Add_strategy = st.builds(
+    core_Add,
 )
-core::Filter_strategy = st.builds(
-    core::Filter,
+core_Filter_strategy = st.builds(
+    core_Filter,
 )
-core::Lower_strategy = st.builds(
-    core::Lower,
+core_Lower_strategy = st.builds(
+    core_Lower,
 )
-core::Greater_strategy = st.builds(
-    core::Greater,
+core_Greater_strategy = st.builds(
+    core_Greater,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-core::UMinus_strategy = st.builds(
-    core::UMinus,
+core_UMinus_strategy = st.builds(
+    core_UMinus,
 )
-core::Not_strategy = st.builds(
-    core::Not,
+core_Not_strategy = st.builds(
+    core_Not,
 )
-core::Or_strategy = st.builds(
-    core::Or,
+core_Or_strategy = st.builds(
+    core_Or,
 )
-core::And_strategy = st.builds(
-    core::And,
+core_And_strategy = st.builds(
+    core_And,
 )
 IntegerExpression_strategy = st.builds(
     IntegerExpression,
 )
-core::BinaryExpression_strategy = st.builds(
-    core::BinaryExpression,
-)
-core::Conditional_strategy = st.builds(
-    core::Conditional,
-)
-core::IntegerLiteral_strategy = st.builds(
-    core::IntegerLiteral,
+core_IntegerLiteral_strategy = st.builds(
+    core_IntegerLiteral,
     val=
         st.integers()
 )
-core::UnaryExpression_strategy = st.builds(
-    core::UnaryExpression,
+core_BinaryExpression_strategy = st.builds(
+    core_BinaryExpression,
 )
-core::IntegerExpression_strategy = st.builds(
-    core::IntegerExpression,
+core_Conditional_strategy = st.builds(
+    core_Conditional,
 )
-core::Rule_strategy = st.builds(
-    core::Rule,
+core_UnaryExpression_strategy = st.builds(
+    core_UnaryExpression,
+)
+core_IntegerExpression_strategy = st.builds(
+    core_IntegerExpression,
+)
+core_Rule_strategy = st.builds(
+    core_Rule,
 )
 
 @given(instance=BinaryExpression_strategy)
@@ -438,118 +438,115 @@ core::Rule_strategy = st.builds(
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=core::Mod_strategy)
+@given(instance=core_Mod_strategy)
 @settings(max_examples=50)
-def test_core::mod_instantiation(instance):
-    assert isinstance(instance, core::Mod)
+def test_core_mod_instantiation(instance):
+    assert isinstance(instance, core_Mod)
 
-@given(instance=core::Equal_strategy)
+@given(instance=core_Equal_strategy)
 @settings(max_examples=50)
-def test_core::equal_instantiation(instance):
-    assert isinstance(instance, core::Equal)
+def test_core_equal_instantiation(instance):
+    assert isinstance(instance, core_Equal)
 
-@given(instance=core::Minus_strategy)
+@given(instance=core_Minus_strategy)
 @settings(max_examples=50)
-def test_core::minus_instantiation(instance):
-    assert isinstance(instance, core::Minus)
+def test_core_minus_instantiation(instance):
+    assert isinstance(instance, core_Minus)
 
-@given(instance=core::Mult_strategy)
+@given(instance=core_Div_strategy)
 @settings(max_examples=50)
-def test_core::mult_instantiation(instance):
-    assert isinstance(instance, core::Mult)
+def test_core_div_instantiation(instance):
+    assert isinstance(instance, core_Div)
 
-@given(instance=core::Div_strategy)
+@given(instance=core_Mult_strategy)
 @settings(max_examples=50)
-def test_core::div_instantiation(instance):
-    assert isinstance(instance, core::Div)
+def test_core_mult_instantiation(instance):
+    assert isinstance(instance, core_Mult)
 
-@given(instance=core::Add_strategy)
+@given(instance=core_Add_strategy)
 @settings(max_examples=50)
-def test_core::add_instantiation(instance):
-    assert isinstance(instance, core::Add)
+def test_core_add_instantiation(instance):
+    assert isinstance(instance, core_Add)
 
-@given(instance=core::Filter_strategy)
+@given(instance=core_Filter_strategy)
 @settings(max_examples=50)
-def test_core::filter_instantiation(instance):
-    assert isinstance(instance, core::Filter)
+def test_core_filter_instantiation(instance):
+    assert isinstance(instance, core_Filter)
 
-@given(instance=core::Lower_strategy)
+@given(instance=core_Lower_strategy)
 @settings(max_examples=50)
-def test_core::lower_instantiation(instance):
-    assert isinstance(instance, core::Lower)
+def test_core_lower_instantiation(instance):
+    assert isinstance(instance, core_Lower)
 
-@given(instance=core::Greater_strategy)
+@given(instance=core_Greater_strategy)
 @settings(max_examples=50)
-def test_core::greater_instantiation(instance):
-    assert isinstance(instance, core::Greater)
+def test_core_greater_instantiation(instance):
+    assert isinstance(instance, core_Greater)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=core::UMinus_strategy)
+@given(instance=core_UMinus_strategy)
 @settings(max_examples=50)
-def test_core::uminus_instantiation(instance):
-    assert isinstance(instance, core::UMinus)
+def test_core_uminus_instantiation(instance):
+    assert isinstance(instance, core_UMinus)
 
-@given(instance=core::Not_strategy)
+@given(instance=core_Not_strategy)
 @settings(max_examples=50)
-def test_core::not_instantiation(instance):
-    assert isinstance(instance, core::Not)
+def test_core_not_instantiation(instance):
+    assert isinstance(instance, core_Not)
 
-@given(instance=core::Or_strategy)
+@given(instance=core_Or_strategy)
 @settings(max_examples=50)
-def test_core::or_instantiation(instance):
-    assert isinstance(instance, core::Or)
+def test_core_or_instantiation(instance):
+    assert isinstance(instance, core_Or)
 
-@given(instance=core::And_strategy)
+@given(instance=core_And_strategy)
 @settings(max_examples=50)
-def test_core::and_instantiation(instance):
-    assert isinstance(instance, core::And)
+def test_core_and_instantiation(instance):
+    assert isinstance(instance, core_And)
 
 @given(instance=IntegerExpression_strategy)
 @settings(max_examples=50)
 def test_integerexpression_instantiation(instance):
     assert isinstance(instance, IntegerExpression)
 
-@given(instance=core::BinaryExpression_strategy)
+@given(instance=core_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_core::binaryexpression_instantiation(instance):
-    assert isinstance(instance, core::BinaryExpression)
-
-@given(instance=core::Conditional_strategy)
-@settings(max_examples=50)
-def test_core::conditional_instantiation(instance):
-    assert isinstance(instance, core::Conditional)
-
-@given(instance=core::IntegerLiteral_strategy)
-@settings(max_examples=50)
-def test_core::integerliteral_instantiation(instance):
-    assert isinstance(instance, core::IntegerLiteral)
-
-@given(instance=core::IntegerLiteral_strategy)
-def test_core::integerliteral_val_type(instance):
-    assert isinstance(instance.val, int)
+def test_core_integerliteral_instantiation(instance):
+    assert isinstance(instance, core_IntegerLiteral)
 
 
-@given(instance=core::IntegerLiteral_strategy)
-def test_core::integerliteral_val_setter(instance):
+
+@given(instance=core_IntegerLiteral_strategy)
+def test_core_integerliteral_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=core::UnaryExpression_strategy)
+@given(instance=core_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_core::unaryexpression_instantiation(instance):
-    assert isinstance(instance, core::UnaryExpression)
+def test_core_binaryexpression_instantiation(instance):
+    assert isinstance(instance, core_BinaryExpression)
 
-@given(instance=core::IntegerExpression_strategy)
+@given(instance=core_Conditional_strategy)
 @settings(max_examples=50)
-def test_core::integerexpression_instantiation(instance):
-    assert isinstance(instance, core::IntegerExpression)
+def test_core_conditional_instantiation(instance):
+    assert isinstance(instance, core_Conditional)
 
-@given(instance=core::Rule_strategy)
+@given(instance=core_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_core::rule_instantiation(instance):
-    assert isinstance(instance, core::Rule)
+def test_core_unaryexpression_instantiation(instance):
+    assert isinstance(instance, core_UnaryExpression)
+
+@given(instance=core_IntegerExpression_strategy)
+@settings(max_examples=50)
+def test_core_integerexpression_instantiation(instance):
+    assert isinstance(instance, core_IntegerExpression)
+
+@given(instance=core_Rule_strategy)
+@settings(max_examples=50)
+def test_core_rule_instantiation(instance):
+    assert isinstance(instance, core_Rule)

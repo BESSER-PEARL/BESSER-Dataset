@@ -3,87 +3,87 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Logic,
-    henshin::text::ConditionGraphRef,
-    henshin::text::AND,
-    henshin::text::Not,
-    henshin::text::ORorXOR,
+    henshin_text_Not,
+    henshin_text_ConditionGraphRef,
+    henshin_text_AND,
+    henshin_text_ORorXOR,
     Expression,
-    henshin::text::JavaClassValue,
-    henshin::text::MinusExpression,
-    henshin::text::IntegerValue,
-    henshin::text::PlusExpression,
-    henshin::text::JavaAttributeValue,
-    henshin::text::NumberValue,
-    henshin::text::ParameterValue,
-    henshin::text::NotExpression,
-    henshin::text::NaturalValue,
-    henshin::text::BoolValue,
-    henshin::text::BracketExpression,
-    henshin::text::StringValue,
-    henshin::text::MulOrDivExpression,
-    henshin::text::AndExpression,
-    henshin::text::ComparisonExpression,
-    henshin::text::EqualityExpression,
-    henshin::text::OrExpression,
+    henshin_text_JavaAttributeValue,
+    henshin_text_MulOrDivExpression,
+    henshin_text_NotExpression,
+    henshin_text_AndExpression,
+    henshin_text_PlusExpression,
+    henshin_text_MinusExpression,
+    henshin_text_IntegerValue,
+    henshin_text_EqualityExpression,
+    henshin_text_BracketExpression,
+    henshin_text_NaturalValue,
+    henshin_text_JavaClassValue,
+    henshin_text_BoolValue,
+    henshin_text_NumberValue,
+    henshin_text_ComparisonExpression,
+    henshin_text_ParameterValue,
+    henshin_text_StringValue,
+    henshin_text_OrExpression,
     ModelElement,
-    henshin::text::Rule,
-    henshin::text::Unit,
-    henshin::text::List,
-    henshin::text::ParameterType,
-    henshin::text::Match,
-    henshin::text::ConditionNodeTypes,
-    henshin::text::ConditionEdge,
-    henshin::text::ConditionGraphElements,
+    henshin_text_Rule,
+    henshin_text_Unit,
+    henshin_text_List,
+    henshin_text_ParameterType,
+    henshin_text_Match,
+    henshin_text_ConditionNodeTypes,
+    henshin_text_ConditionEdge,
+    henshin_text_ConditionGraphElements,
     SequentialProperties,
-    henshin::text::Rollback,
-    henshin::text::Strict,
+    henshin_text_Rollback,
+    henshin_text_Strict,
     UnitElement,
-    henshin::text::IteratedUnit,
-    henshin::text::PriorityUnit,
-    henshin::text::IndependentUnit,
-    henshin::text::Call,
-    henshin::text::ConditionalUnit,
-    henshin::text::LoopUnit,
-    henshin::text::SequentialProperties,
-    henshin::text::UnitElement,
-    henshin::text::EAttribute,
-    henshin::text::Attribute,
-    henshin::text::EClass,
+    henshin_text_IteratedUnit,
+    henshin_text_PriorityUnit,
+    henshin_text_IndependentUnit,
+    henshin_text_ConditionalUnit,
+    henshin_text_Call,
+    henshin_text_LoopUnit,
+    henshin_text_SequentialProperties,
+    henshin_text_UnitElement,
+    henshin_text_EAttribute,
+    henshin_text_Attribute,
+    henshin_text_EClass,
     ConditionNodeTypes,
     RuleNodeTypes,
-    henshin::text::EReference,
-    henshin::text::ConditionGraph,
-    henshin::text::Logic,
+    henshin_text_EReference,
+    henshin_text_ConditionGraph,
+    henshin_text_Logic,
     ConditionGraphElements,
-    henshin::text::ConditionReuseNode,
-    henshin::text::ConditionNode,
-    henshin::text::ConditionEdges,
-    henshin::text::GraphElements,
-    henshin::text::Expression,
+    henshin_text_ConditionNode,
+    henshin_text_ConditionReuseNode,
+    henshin_text_ConditionEdges,
+    henshin_text_GraphElements,
+    henshin_text_Expression,
     RuleElement,
-    henshin::text::Graph,
-    henshin::text::Conditions,
-    henshin::text::CheckDangling,
-    henshin::text::InjectiveMatching,
-    henshin::text::JavaImport,
-    henshin::text::RuleElement,
-    henshin::text::Parameter,
-    henshin::text::EPackage,
-    henshin::text::ModelElement,
-    henshin::text::RuleNodeTypes,
-    henshin::text::Edge,
+    henshin_text_CheckDangling,
+    henshin_text_Conditions,
+    henshin_text_InjectiveMatching,
+    henshin_text_Graph,
+    henshin_text_JavaImport,
+    henshin_text_RuleElement,
+    henshin_text_Parameter,
+    henshin_text_EPackage,
+    henshin_text_ModelElement,
+    henshin_text_RuleNodeTypes,
+    henshin_text_Edge,
     GraphElements,
-    henshin::text::MultiRuleReuseNode,
-    henshin::text::Formula,
-    henshin::text::Node,
-    henshin::text::MultiRule,
-    henshin::text::Edges,
-    henshin::text::EPackageImport,
-    henshin::text::Model,
+    henshin_text_MultiRule,
+    henshin_text_Node,
+    henshin_text_MultiRuleReuseNode,
+    henshin_text_Formula,
+    henshin_text_Edges,
+    henshin_text_EPackageImport,
+    henshin_text_Model,
     Type,
 )
 
@@ -107,65 +107,65 @@ def test_logic_constructor_args():
 
 
 
-def test_henshin::text::conditiongraphref_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionGraphRef)
+def test_henshin_text_not_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Not)
 
 
-def test_henshin::text::conditiongraphref_constructor_exists():
-    assert callable(henshin::text::ConditionGraphRef.__init__)
+def test_henshin_text_not_constructor_exists():
+    assert callable(henshin_text_Not.__init__)
 
 
-def test_henshin::text::conditiongraphref_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionGraphRef.__init__)
+def test_henshin_text_not_constructor_args():
+    sig = inspect.signature(henshin_text_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::and_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::AND)
+def test_henshin_text_conditiongraphref_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionGraphRef)
 
 
-def test_henshin::text::and_constructor_exists():
-    assert callable(henshin::text::AND.__init__)
+def test_henshin_text_conditiongraphref_constructor_exists():
+    assert callable(henshin_text_ConditionGraphRef.__init__)
 
 
-def test_henshin::text::and_constructor_args():
-    sig = inspect.signature(henshin::text::AND.__init__)
+def test_henshin_text_conditiongraphref_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionGraphRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::not_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Not)
+def test_henshin_text_and_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_AND)
 
 
-def test_henshin::text::not_constructor_exists():
-    assert callable(henshin::text::Not.__init__)
+def test_henshin_text_and_constructor_exists():
+    assert callable(henshin_text_AND.__init__)
 
 
-def test_henshin::text::not_constructor_args():
-    sig = inspect.signature(henshin::text::Not.__init__)
+def test_henshin_text_and_constructor_args():
+    sig = inspect.signature(henshin_text_AND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::ororxor_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ORorXOR)
+def test_henshin_text_ororxor_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ORorXOR)
 
 
-def test_henshin::text::ororxor_constructor_exists():
-    assert callable(henshin::text::ORorXOR.__init__)
+def test_henshin_text_ororxor_constructor_exists():
+    assert callable(henshin_text_ORorXOR.__init__)
 
 
-def test_henshin::text::ororxor_constructor_args():
-    sig = inspect.signature(henshin::text::ORorXOR.__init__)
+def test_henshin_text_ororxor_constructor_args():
+    sig = inspect.signature(henshin_text_ORorXOR.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_henshin::text::ororxor_has_op():
-    assert hasattr(henshin::text::ORorXOR, "op")
+def test_henshin_text_ororxor_has_op():
+    assert hasattr(henshin_text_ORorXOR, "op")
     descriptor = None
-    for klass in henshin::text::ORorXOR.__mro__:
+    for klass in henshin_text_ORorXOR.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -187,23 +187,23 @@ def test_expression_constructor_args():
 
 
 
-def test_henshin::text::javaclassvalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::JavaClassValue)
+def test_henshin_text_javaattributevalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_JavaAttributeValue)
 
 
-def test_henshin::text::javaclassvalue_constructor_exists():
-    assert callable(henshin::text::JavaClassValue.__init__)
+def test_henshin_text_javaattributevalue_constructor_exists():
+    assert callable(henshin_text_JavaAttributeValue.__init__)
 
 
-def test_henshin::text::javaclassvalue_constructor_args():
-    sig = inspect.signature(henshin::text::JavaClassValue.__init__)
+def test_henshin_text_javaattributevalue_constructor_args():
+    sig = inspect.signature(henshin_text_JavaAttributeValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_henshin::text::javaclassvalue_has_value():
-    assert hasattr(henshin::text::JavaClassValue, "value")
+def test_henshin_text_javaattributevalue_has_value():
+    assert hasattr(henshin_text_JavaAttributeValue, "value")
     descriptor = None
-    for klass in henshin::text::JavaClassValue.__mro__:
+    for klass in henshin_text_JavaAttributeValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -211,237 +211,23 @@ def test_henshin::text::javaclassvalue_has_value():
 
 
 
-def test_henshin::text::minusexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::MinusExpression)
+def test_henshin_text_mulordivexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_MulOrDivExpression)
 
 
-def test_henshin::text::minusexpression_constructor_exists():
-    assert callable(henshin::text::MinusExpression.__init__)
+def test_henshin_text_mulordivexpression_constructor_exists():
+    assert callable(henshin_text_MulOrDivExpression.__init__)
 
 
-def test_henshin::text::minusexpression_constructor_args():
-    sig = inspect.signature(henshin::text::MinusExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::integervalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::IntegerValue)
-
-
-def test_henshin::text::integervalue_constructor_exists():
-    assert callable(henshin::text::IntegerValue.__init__)
-
-
-def test_henshin::text::integervalue_constructor_args():
-    sig = inspect.signature(henshin::text::IntegerValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_henshin::text::integervalue_has_value():
-    assert hasattr(henshin::text::IntegerValue, "value")
-    descriptor = None
-    for klass in henshin::text::IntegerValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::plusexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::PlusExpression)
-
-
-def test_henshin::text::plusexpression_constructor_exists():
-    assert callable(henshin::text::PlusExpression.__init__)
-
-
-def test_henshin::text::plusexpression_constructor_args():
-    sig = inspect.signature(henshin::text::PlusExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::javaattributevalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::JavaAttributeValue)
-
-
-def test_henshin::text::javaattributevalue_constructor_exists():
-    assert callable(henshin::text::JavaAttributeValue.__init__)
-
-
-def test_henshin::text::javaattributevalue_constructor_args():
-    sig = inspect.signature(henshin::text::JavaAttributeValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_henshin::text::javaattributevalue_has_value():
-    assert hasattr(henshin::text::JavaAttributeValue, "value")
-    descriptor = None
-    for klass in henshin::text::JavaAttributeValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::NumberValue)
-
-
-def test_henshin::text::numbervalue_constructor_exists():
-    assert callable(henshin::text::NumberValue.__init__)
-
-
-def test_henshin::text::numbervalue_constructor_args():
-    sig = inspect.signature(henshin::text::NumberValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_henshin::text::numbervalue_has_value():
-    assert hasattr(henshin::text::NumberValue, "value")
-    descriptor = None
-    for klass in henshin::text::NumberValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::parametervalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ParameterValue)
-
-
-def test_henshin::text::parametervalue_constructor_exists():
-    assert callable(henshin::text::ParameterValue.__init__)
-
-
-def test_henshin::text::parametervalue_constructor_args():
-    sig = inspect.signature(henshin::text::ParameterValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::notexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::NotExpression)
-
-
-def test_henshin::text::notexpression_constructor_exists():
-    assert callable(henshin::text::NotExpression.__init__)
-
-
-def test_henshin::text::notexpression_constructor_args():
-    sig = inspect.signature(henshin::text::NotExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::naturalvalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::NaturalValue)
-
-
-def test_henshin::text::naturalvalue_constructor_exists():
-    assert callable(henshin::text::NaturalValue.__init__)
-
-
-def test_henshin::text::naturalvalue_constructor_args():
-    sig = inspect.signature(henshin::text::NaturalValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_henshin::text::naturalvalue_has_value():
-    assert hasattr(henshin::text::NaturalValue, "value")
-    descriptor = None
-    for klass in henshin::text::NaturalValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::boolvalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::BoolValue)
-
-
-def test_henshin::text::boolvalue_constructor_exists():
-    assert callable(henshin::text::BoolValue.__init__)
-
-
-def test_henshin::text::boolvalue_constructor_args():
-    sig = inspect.signature(henshin::text::BoolValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_henshin::text::boolvalue_has_value():
-    assert hasattr(henshin::text::BoolValue, "value")
-    descriptor = None
-    for klass in henshin::text::BoolValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::bracketexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::BracketExpression)
-
-
-def test_henshin::text::bracketexpression_constructor_exists():
-    assert callable(henshin::text::BracketExpression.__init__)
-
-
-def test_henshin::text::bracketexpression_constructor_args():
-    sig = inspect.signature(henshin::text::BracketExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::StringValue)
-
-
-def test_henshin::text::stringvalue_constructor_exists():
-    assert callable(henshin::text::StringValue.__init__)
-
-
-def test_henshin::text::stringvalue_constructor_args():
-    sig = inspect.signature(henshin::text::StringValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_henshin::text::stringvalue_has_value():
-    assert hasattr(henshin::text::StringValue, "value")
-    descriptor = None
-    for klass in henshin::text::StringValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::mulordivexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::MulOrDivExpression)
-
-
-def test_henshin::text::mulordivexpression_constructor_exists():
-    assert callable(henshin::text::MulOrDivExpression.__init__)
-
-
-def test_henshin::text::mulordivexpression_constructor_args():
-    sig = inspect.signature(henshin::text::MulOrDivExpression.__init__)
+def test_henshin_text_mulordivexpression_constructor_args():
+    sig = inspect.signature(henshin_text_MulOrDivExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_henshin::text::mulordivexpression_has_op():
-    assert hasattr(henshin::text::MulOrDivExpression, "op")
+def test_henshin_text_mulordivexpression_has_op():
+    assert hasattr(henshin_text_MulOrDivExpression, "op")
     descriptor = None
-    for klass in henshin::text::MulOrDivExpression.__mro__:
+    for klass in henshin_text_MulOrDivExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -449,37 +235,103 @@ def test_henshin::text::mulordivexpression_has_op():
 
 
 
-def test_henshin::text::andexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::AndExpression)
+def test_henshin_text_notexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_NotExpression)
 
 
-def test_henshin::text::andexpression_constructor_exists():
-    assert callable(henshin::text::AndExpression.__init__)
+def test_henshin_text_notexpression_constructor_exists():
+    assert callable(henshin_text_NotExpression.__init__)
 
 
-def test_henshin::text::andexpression_constructor_args():
-    sig = inspect.signature(henshin::text::AndExpression.__init__)
+def test_henshin_text_notexpression_constructor_args():
+    sig = inspect.signature(henshin_text_NotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::comparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ComparisonExpression)
+def test_henshin_text_andexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_AndExpression)
 
 
-def test_henshin::text::comparisonexpression_constructor_exists():
-    assert callable(henshin::text::ComparisonExpression.__init__)
+def test_henshin_text_andexpression_constructor_exists():
+    assert callable(henshin_text_AndExpression.__init__)
 
 
-def test_henshin::text::comparisonexpression_constructor_args():
-    sig = inspect.signature(henshin::text::ComparisonExpression.__init__)
+def test_henshin_text_andexpression_constructor_args():
+    sig = inspect.signature(henshin_text_AndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_plusexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_PlusExpression)
+
+
+def test_henshin_text_plusexpression_constructor_exists():
+    assert callable(henshin_text_PlusExpression.__init__)
+
+
+def test_henshin_text_plusexpression_constructor_args():
+    sig = inspect.signature(henshin_text_PlusExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_minusexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_MinusExpression)
+
+
+def test_henshin_text_minusexpression_constructor_exists():
+    assert callable(henshin_text_MinusExpression.__init__)
+
+
+def test_henshin_text_minusexpression_constructor_args():
+    sig = inspect.signature(henshin_text_MinusExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_integervalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_IntegerValue)
+
+
+def test_henshin_text_integervalue_constructor_exists():
+    assert callable(henshin_text_IntegerValue.__init__)
+
+
+def test_henshin_text_integervalue_constructor_args():
+    sig = inspect.signature(henshin_text_IntegerValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_henshin_text_integervalue_has_value():
+    assert hasattr(henshin_text_IntegerValue, "value")
+    descriptor = None
+    for klass in henshin_text_IntegerValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_EqualityExpression)
+
+
+def test_henshin_text_equalityexpression_constructor_exists():
+    assert callable(henshin_text_EqualityExpression.__init__)
+
+
+def test_henshin_text_equalityexpression_constructor_args():
+    sig = inspect.signature(henshin_text_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_henshin::text::comparisonexpression_has_op():
-    assert hasattr(henshin::text::ComparisonExpression, "op")
+def test_henshin_text_equalityexpression_has_op():
+    assert hasattr(henshin_text_EqualityExpression, "op")
     descriptor = None
-    for klass in henshin::text::ComparisonExpression.__mro__:
+    for klass in henshin_text_EqualityExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -487,23 +339,133 @@ def test_henshin::text::comparisonexpression_has_op():
 
 
 
-def test_henshin::text::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::EqualityExpression)
+def test_henshin_text_bracketexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_BracketExpression)
 
 
-def test_henshin::text::equalityexpression_constructor_exists():
-    assert callable(henshin::text::EqualityExpression.__init__)
+def test_henshin_text_bracketexpression_constructor_exists():
+    assert callable(henshin_text_BracketExpression.__init__)
 
 
-def test_henshin::text::equalityexpression_constructor_args():
-    sig = inspect.signature(henshin::text::EqualityExpression.__init__)
+def test_henshin_text_bracketexpression_constructor_args():
+    sig = inspect.signature(henshin_text_BracketExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_naturalvalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_NaturalValue)
+
+
+def test_henshin_text_naturalvalue_constructor_exists():
+    assert callable(henshin_text_NaturalValue.__init__)
+
+
+def test_henshin_text_naturalvalue_constructor_args():
+    sig = inspect.signature(henshin_text_NaturalValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_henshin_text_naturalvalue_has_value():
+    assert hasattr(henshin_text_NaturalValue, "value")
+    descriptor = None
+    for klass in henshin_text_NaturalValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_javaclassvalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_JavaClassValue)
+
+
+def test_henshin_text_javaclassvalue_constructor_exists():
+    assert callable(henshin_text_JavaClassValue.__init__)
+
+
+def test_henshin_text_javaclassvalue_constructor_args():
+    sig = inspect.signature(henshin_text_JavaClassValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_henshin_text_javaclassvalue_has_value():
+    assert hasattr(henshin_text_JavaClassValue, "value")
+    descriptor = None
+    for klass in henshin_text_JavaClassValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_boolvalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_BoolValue)
+
+
+def test_henshin_text_boolvalue_constructor_exists():
+    assert callable(henshin_text_BoolValue.__init__)
+
+
+def test_henshin_text_boolvalue_constructor_args():
+    sig = inspect.signature(henshin_text_BoolValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_henshin_text_boolvalue_has_value():
+    assert hasattr(henshin_text_BoolValue, "value")
+    descriptor = None
+    for klass in henshin_text_BoolValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_NumberValue)
+
+
+def test_henshin_text_numbervalue_constructor_exists():
+    assert callable(henshin_text_NumberValue.__init__)
+
+
+def test_henshin_text_numbervalue_constructor_args():
+    sig = inspect.signature(henshin_text_NumberValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_henshin_text_numbervalue_has_value():
+    assert hasattr(henshin_text_NumberValue, "value")
+    descriptor = None
+    for klass in henshin_text_NumberValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_comparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ComparisonExpression)
+
+
+def test_henshin_text_comparisonexpression_constructor_exists():
+    assert callable(henshin_text_ComparisonExpression.__init__)
+
+
+def test_henshin_text_comparisonexpression_constructor_args():
+    sig = inspect.signature(henshin_text_ComparisonExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_henshin::text::equalityexpression_has_op():
-    assert hasattr(henshin::text::EqualityExpression, "op")
+def test_henshin_text_comparisonexpression_has_op():
+    assert hasattr(henshin_text_ComparisonExpression, "op")
     descriptor = None
-    for klass in henshin::text::EqualityExpression.__mro__:
+    for klass in henshin_text_ComparisonExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -511,16 +473,54 @@ def test_henshin::text::equalityexpression_has_op():
 
 
 
-def test_henshin::text::orexpression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::OrExpression)
+def test_henshin_text_parametervalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ParameterValue)
 
 
-def test_henshin::text::orexpression_constructor_exists():
-    assert callable(henshin::text::OrExpression.__init__)
+def test_henshin_text_parametervalue_constructor_exists():
+    assert callable(henshin_text_ParameterValue.__init__)
 
 
-def test_henshin::text::orexpression_constructor_args():
-    sig = inspect.signature(henshin::text::OrExpression.__init__)
+def test_henshin_text_parametervalue_constructor_args():
+    sig = inspect.signature(henshin_text_ParameterValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_StringValue)
+
+
+def test_henshin_text_stringvalue_constructor_exists():
+    assert callable(henshin_text_StringValue.__init__)
+
+
+def test_henshin_text_stringvalue_constructor_args():
+    sig = inspect.signature(henshin_text_StringValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_henshin_text_stringvalue_has_value():
+    assert hasattr(henshin_text_StringValue, "value")
+    descriptor = None
+    for klass in henshin_text_StringValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_orexpression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_OrExpression)
+
+
+def test_henshin_text_orexpression_constructor_exists():
+    assert callable(henshin_text_OrExpression.__init__)
+
+
+def test_henshin_text_orexpression_constructor_args():
+    sig = inspect.signature(henshin_text_OrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -539,65 +539,65 @@ def test_modelelement_constructor_args():
 
 
 
-def test_henshin::text::rule_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Rule)
+def test_henshin_text_rule_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Rule)
 
 
-def test_henshin::text::rule_constructor_exists():
-    assert callable(henshin::text::Rule.__init__)
+def test_henshin_text_rule_constructor_exists():
+    assert callable(henshin_text_Rule.__init__)
 
 
-def test_henshin::text::rule_constructor_args():
-    sig = inspect.signature(henshin::text::Rule.__init__)
+def test_henshin_text_rule_constructor_args():
+    sig = inspect.signature(henshin_text_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::unit_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Unit)
+def test_henshin_text_unit_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Unit)
 
 
-def test_henshin::text::unit_constructor_exists():
-    assert callable(henshin::text::Unit.__init__)
+def test_henshin_text_unit_constructor_exists():
+    assert callable(henshin_text_Unit.__init__)
 
 
-def test_henshin::text::unit_constructor_args():
-    sig = inspect.signature(henshin::text::Unit.__init__)
+def test_henshin_text_unit_constructor_args():
+    sig = inspect.signature(henshin_text_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::list_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::List)
+def test_henshin_text_list_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_List)
 
 
-def test_henshin::text::list_constructor_exists():
-    assert callable(henshin::text::List.__init__)
+def test_henshin_text_list_constructor_exists():
+    assert callable(henshin_text_List.__init__)
 
 
-def test_henshin::text::list_constructor_args():
-    sig = inspect.signature(henshin::text::List.__init__)
+def test_henshin_text_list_constructor_args():
+    sig = inspect.signature(henshin_text_List.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::parametertype_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ParameterType)
+def test_henshin_text_parametertype_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ParameterType)
 
 
-def test_henshin::text::parametertype_constructor_exists():
-    assert callable(henshin::text::ParameterType.__init__)
+def test_henshin_text_parametertype_constructor_exists():
+    assert callable(henshin_text_ParameterType.__init__)
 
 
-def test_henshin::text::parametertype_constructor_args():
-    sig = inspect.signature(henshin::text::ParameterType.__init__)
+def test_henshin_text_parametertype_constructor_args():
+    sig = inspect.signature(henshin_text_ParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "enumType" in params, "Missing parameter 'enumType'"
 
-def test_henshin::text::parametertype_has_enumType():
-    assert hasattr(henshin::text::ParameterType, "enumType")
+def test_henshin_text_parametertype_has_enumType():
+    assert hasattr(henshin_text_ParameterType, "enumType")
     descriptor = None
-    for klass in henshin::text::ParameterType.__mro__:
+    for klass in henshin_text_ParameterType.__mro__:
         if "enumType" in klass.__dict__:
             descriptor = klass.__dict__["enumType"]
             break
@@ -605,37 +605,37 @@ def test_henshin::text::parametertype_has_enumType():
 
 
 
-def test_henshin::text::match_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Match)
+def test_henshin_text_match_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Match)
 
 
-def test_henshin::text::match_constructor_exists():
-    assert callable(henshin::text::Match.__init__)
+def test_henshin_text_match_constructor_exists():
+    assert callable(henshin_text_Match.__init__)
 
 
-def test_henshin::text::match_constructor_args():
-    sig = inspect.signature(henshin::text::Match.__init__)
+def test_henshin_text_match_constructor_args():
+    sig = inspect.signature(henshin_text_Match.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::conditionnodetypes_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionNodeTypes)
+def test_henshin_text_conditionnodetypes_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionNodeTypes)
 
 
-def test_henshin::text::conditionnodetypes_constructor_exists():
-    assert callable(henshin::text::ConditionNodeTypes.__init__)
+def test_henshin_text_conditionnodetypes_constructor_exists():
+    assert callable(henshin_text_ConditionNodeTypes.__init__)
 
 
-def test_henshin::text::conditionnodetypes_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionNodeTypes.__init__)
+def test_henshin_text_conditionnodetypes_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionNodeTypes.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_henshin::text::conditionnodetypes_has_name():
-    assert hasattr(henshin::text::ConditionNodeTypes, "name")
+def test_henshin_text_conditionnodetypes_has_name():
+    assert hasattr(henshin_text_ConditionNodeTypes, "name")
     descriptor = None
-    for klass in henshin::text::ConditionNodeTypes.__mro__:
+    for klass in henshin_text_ConditionNodeTypes.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -643,30 +643,30 @@ def test_henshin::text::conditionnodetypes_has_name():
 
 
 
-def test_henshin::text::conditionedge_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionEdge)
+def test_henshin_text_conditionedge_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionEdge)
 
 
-def test_henshin::text::conditionedge_constructor_exists():
-    assert callable(henshin::text::ConditionEdge.__init__)
+def test_henshin_text_conditionedge_constructor_exists():
+    assert callable(henshin_text_ConditionEdge.__init__)
 
 
-def test_henshin::text::conditionedge_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionEdge.__init__)
+def test_henshin_text_conditionedge_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::conditiongraphelements_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionGraphElements)
+def test_henshin_text_conditiongraphelements_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionGraphElements)
 
 
-def test_henshin::text::conditiongraphelements_constructor_exists():
-    assert callable(henshin::text::ConditionGraphElements.__init__)
+def test_henshin_text_conditiongraphelements_constructor_exists():
+    assert callable(henshin_text_ConditionGraphElements.__init__)
 
 
-def test_henshin::text::conditiongraphelements_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionGraphElements.__init__)
+def test_henshin_text_conditiongraphelements_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionGraphElements.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -685,23 +685,23 @@ def test_sequentialproperties_constructor_args():
 
 
 
-def test_henshin::text::rollback_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Rollback)
+def test_henshin_text_rollback_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Rollback)
 
 
-def test_henshin::text::rollback_constructor_exists():
-    assert callable(henshin::text::Rollback.__init__)
+def test_henshin_text_rollback_constructor_exists():
+    assert callable(henshin_text_Rollback.__init__)
 
 
-def test_henshin::text::rollback_constructor_args():
-    sig = inspect.signature(henshin::text::Rollback.__init__)
+def test_henshin_text_rollback_constructor_args():
+    sig = inspect.signature(henshin_text_Rollback.__init__)
     params = list(sig.parameters.keys())
     assert "rollback" in params, "Missing parameter 'rollback'"
 
-def test_henshin::text::rollback_has_rollback():
-    assert hasattr(henshin::text::Rollback, "rollback")
+def test_henshin_text_rollback_has_rollback():
+    assert hasattr(henshin_text_Rollback, "rollback")
     descriptor = None
-    for klass in henshin::text::Rollback.__mro__:
+    for klass in henshin_text_Rollback.__mro__:
         if "rollback" in klass.__dict__:
             descriptor = klass.__dict__["rollback"]
             break
@@ -709,23 +709,23 @@ def test_henshin::text::rollback_has_rollback():
 
 
 
-def test_henshin::text::strict_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Strict)
+def test_henshin_text_strict_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Strict)
 
 
-def test_henshin::text::strict_constructor_exists():
-    assert callable(henshin::text::Strict.__init__)
+def test_henshin_text_strict_constructor_exists():
+    assert callable(henshin_text_Strict.__init__)
 
 
-def test_henshin::text::strict_constructor_args():
-    sig = inspect.signature(henshin::text::Strict.__init__)
+def test_henshin_text_strict_constructor_args():
+    sig = inspect.signature(henshin_text_Strict.__init__)
     params = list(sig.parameters.keys())
     assert "strict" in params, "Missing parameter 'strict'"
 
-def test_henshin::text::strict_has_strict():
-    assert hasattr(henshin::text::Strict, "strict")
+def test_henshin_text_strict_has_strict():
+    assert hasattr(henshin_text_Strict, "strict")
     descriptor = None
-    for klass in henshin::text::Strict.__mro__:
+    for klass in henshin_text_Strict.__mro__:
         if "strict" in klass.__dict__:
             descriptor = klass.__dict__["strict"]
             break
@@ -747,176 +747,176 @@ def test_unitelement_constructor_args():
 
 
 
-def test_henshin::text::iteratedunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::IteratedUnit)
+def test_henshin_text_iteratedunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_IteratedUnit)
 
 
-def test_henshin::text::iteratedunit_constructor_exists():
-    assert callable(henshin::text::IteratedUnit.__init__)
+def test_henshin_text_iteratedunit_constructor_exists():
+    assert callable(henshin_text_IteratedUnit.__init__)
 
 
-def test_henshin::text::iteratedunit_constructor_args():
-    sig = inspect.signature(henshin::text::IteratedUnit.__init__)
+def test_henshin_text_iteratedunit_constructor_args():
+    sig = inspect.signature(henshin_text_IteratedUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::priorityunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::PriorityUnit)
+def test_henshin_text_priorityunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_PriorityUnit)
 
 
-def test_henshin::text::priorityunit_constructor_exists():
-    assert callable(henshin::text::PriorityUnit.__init__)
+def test_henshin_text_priorityunit_constructor_exists():
+    assert callable(henshin_text_PriorityUnit.__init__)
 
 
-def test_henshin::text::priorityunit_constructor_args():
-    sig = inspect.signature(henshin::text::PriorityUnit.__init__)
+def test_henshin_text_priorityunit_constructor_args():
+    sig = inspect.signature(henshin_text_PriorityUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::independentunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::IndependentUnit)
+def test_henshin_text_independentunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_IndependentUnit)
 
 
-def test_henshin::text::independentunit_constructor_exists():
-    assert callable(henshin::text::IndependentUnit.__init__)
+def test_henshin_text_independentunit_constructor_exists():
+    assert callable(henshin_text_IndependentUnit.__init__)
 
 
-def test_henshin::text::independentunit_constructor_args():
-    sig = inspect.signature(henshin::text::IndependentUnit.__init__)
+def test_henshin_text_independentunit_constructor_args():
+    sig = inspect.signature(henshin_text_IndependentUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::call_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Call)
+def test_henshin_text_conditionalunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionalUnit)
 
 
-def test_henshin::text::call_constructor_exists():
-    assert callable(henshin::text::Call.__init__)
+def test_henshin_text_conditionalunit_constructor_exists():
+    assert callable(henshin_text_ConditionalUnit.__init__)
 
 
-def test_henshin::text::call_constructor_args():
-    sig = inspect.signature(henshin::text::Call.__init__)
+def test_henshin_text_conditionalunit_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionalUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::conditionalunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionalUnit)
+def test_henshin_text_call_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Call)
 
 
-def test_henshin::text::conditionalunit_constructor_exists():
-    assert callable(henshin::text::ConditionalUnit.__init__)
+def test_henshin_text_call_constructor_exists():
+    assert callable(henshin_text_Call.__init__)
 
 
-def test_henshin::text::conditionalunit_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionalUnit.__init__)
+def test_henshin_text_call_constructor_args():
+    sig = inspect.signature(henshin_text_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::loopunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::LoopUnit)
+def test_henshin_text_loopunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_LoopUnit)
 
 
-def test_henshin::text::loopunit_constructor_exists():
-    assert callable(henshin::text::LoopUnit.__init__)
+def test_henshin_text_loopunit_constructor_exists():
+    assert callable(henshin_text_LoopUnit.__init__)
 
 
-def test_henshin::text::loopunit_constructor_args():
-    sig = inspect.signature(henshin::text::LoopUnit.__init__)
+def test_henshin_text_loopunit_constructor_args():
+    sig = inspect.signature(henshin_text_LoopUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::sequentialproperties_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::SequentialProperties)
+def test_henshin_text_sequentialproperties_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_SequentialProperties)
 
 
-def test_henshin::text::sequentialproperties_constructor_exists():
-    assert callable(henshin::text::SequentialProperties.__init__)
+def test_henshin_text_sequentialproperties_constructor_exists():
+    assert callable(henshin_text_SequentialProperties.__init__)
 
 
-def test_henshin::text::sequentialproperties_constructor_args():
-    sig = inspect.signature(henshin::text::SequentialProperties.__init__)
+def test_henshin_text_sequentialproperties_constructor_args():
+    sig = inspect.signature(henshin_text_SequentialProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::unitelement_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::UnitElement)
+def test_henshin_text_unitelement_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_UnitElement)
 
 
-def test_henshin::text::unitelement_constructor_exists():
-    assert callable(henshin::text::UnitElement.__init__)
+def test_henshin_text_unitelement_constructor_exists():
+    assert callable(henshin_text_UnitElement.__init__)
 
 
-def test_henshin::text::unitelement_constructor_args():
-    sig = inspect.signature(henshin::text::UnitElement.__init__)
+def test_henshin_text_unitelement_constructor_args():
+    sig = inspect.signature(henshin_text_UnitElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::eattribute_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::EAttribute)
+def test_henshin_text_eattribute_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_EAttribute)
 
 
-def test_henshin::text::eattribute_constructor_exists():
-    assert callable(henshin::text::EAttribute.__init__)
+def test_henshin_text_eattribute_constructor_exists():
+    assert callable(henshin_text_EAttribute.__init__)
 
 
-def test_henshin::text::eattribute_constructor_args():
-    sig = inspect.signature(henshin::text::EAttribute.__init__)
+def test_henshin_text_eattribute_constructor_args():
+    sig = inspect.signature(henshin_text_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::attribute_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Attribute)
+def test_henshin_text_attribute_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Attribute)
 
 
-def test_henshin::text::attribute_constructor_exists():
-    assert callable(henshin::text::Attribute.__init__)
+def test_henshin_text_attribute_constructor_exists():
+    assert callable(henshin_text_Attribute.__init__)
 
 
-def test_henshin::text::attribute_constructor_args():
-    sig = inspect.signature(henshin::text::Attribute.__init__)
+def test_henshin_text_attribute_constructor_args():
+    sig = inspect.signature(henshin_text_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "update" in params, "Missing parameter 'update'"
     assert "actiontype" in params, "Missing parameter 'actiontype'"
+    assert "update" in params, "Missing parameter 'update'"
 
-def test_henshin::text::attribute_has_update():
-    assert hasattr(henshin::text::Attribute, "update")
+def test_henshin_text_attribute_has_actiontype():
+    assert hasattr(henshin_text_Attribute, "actiontype")
     descriptor = None
-    for klass in henshin::text::Attribute.__mro__:
-        if "update" in klass.__dict__:
-            descriptor = klass.__dict__["update"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_henshin::text::attribute_has_actiontype():
-    assert hasattr(henshin::text::Attribute, "actiontype")
-    descriptor = None
-    for klass in henshin::text::Attribute.__mro__:
+    for klass in henshin_text_Attribute.__mro__:
         if "actiontype" in klass.__dict__:
             descriptor = klass.__dict__["actiontype"]
             break
     assert isinstance(descriptor, property)
 
+def test_henshin_text_attribute_has_update():
+    assert hasattr(henshin_text_Attribute, "update")
+    descriptor = None
+    for klass in henshin_text_Attribute.__mro__:
+        if "update" in klass.__dict__:
+            descriptor = klass.__dict__["update"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_henshin::text::eclass_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::EClass)
+
+def test_henshin_text_eclass_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_EClass)
 
 
-def test_henshin::text::eclass_constructor_exists():
-    assert callable(henshin::text::EClass.__init__)
+def test_henshin_text_eclass_constructor_exists():
+    assert callable(henshin_text_EClass.__init__)
 
 
-def test_henshin::text::eclass_constructor_args():
-    sig = inspect.signature(henshin::text::EClass.__init__)
+def test_henshin_text_eclass_constructor_args():
+    sig = inspect.signature(henshin_text_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -949,37 +949,37 @@ def test_rulenodetypes_constructor_args():
 
 
 
-def test_henshin::text::ereference_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::EReference)
+def test_henshin_text_ereference_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_EReference)
 
 
-def test_henshin::text::ereference_constructor_exists():
-    assert callable(henshin::text::EReference.__init__)
+def test_henshin_text_ereference_constructor_exists():
+    assert callable(henshin_text_EReference.__init__)
 
 
-def test_henshin::text::ereference_constructor_args():
-    sig = inspect.signature(henshin::text::EReference.__init__)
+def test_henshin_text_ereference_constructor_args():
+    sig = inspect.signature(henshin_text_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::conditiongraph_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionGraph)
+def test_henshin_text_conditiongraph_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionGraph)
 
 
-def test_henshin::text::conditiongraph_constructor_exists():
-    assert callable(henshin::text::ConditionGraph.__init__)
+def test_henshin_text_conditiongraph_constructor_exists():
+    assert callable(henshin_text_ConditionGraph.__init__)
 
 
-def test_henshin::text::conditiongraph_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionGraph.__init__)
+def test_henshin_text_conditiongraph_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionGraph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_henshin::text::conditiongraph_has_name():
-    assert hasattr(henshin::text::ConditionGraph, "name")
+def test_henshin_text_conditiongraph_has_name():
+    assert hasattr(henshin_text_ConditionGraph, "name")
     descriptor = None
-    for klass in henshin::text::ConditionGraph.__mro__:
+    for klass in henshin_text_ConditionGraph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -987,16 +987,16 @@ def test_henshin::text::conditiongraph_has_name():
 
 
 
-def test_henshin::text::logic_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Logic)
+def test_henshin_text_logic_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Logic)
 
 
-def test_henshin::text::logic_constructor_exists():
-    assert callable(henshin::text::Logic.__init__)
+def test_henshin_text_logic_constructor_exists():
+    assert callable(henshin_text_Logic.__init__)
 
 
-def test_henshin::text::logic_constructor_args():
-    sig = inspect.signature(henshin::text::Logic.__init__)
+def test_henshin_text_logic_constructor_args():
+    sig = inspect.signature(henshin_text_Logic.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1015,72 +1015,72 @@ def test_conditiongraphelements_constructor_args():
 
 
 
-def test_henshin::text::conditionreusenode_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionReuseNode)
+def test_henshin_text_conditionnode_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionNode)
 
 
-def test_henshin::text::conditionreusenode_constructor_exists():
-    assert callable(henshin::text::ConditionReuseNode.__init__)
+def test_henshin_text_conditionnode_constructor_exists():
+    assert callable(henshin_text_ConditionNode.__init__)
 
 
-def test_henshin::text::conditionreusenode_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionReuseNode.__init__)
+def test_henshin_text_conditionnode_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::conditionnode_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionNode)
+def test_henshin_text_conditionreusenode_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionReuseNode)
 
 
-def test_henshin::text::conditionnode_constructor_exists():
-    assert callable(henshin::text::ConditionNode.__init__)
+def test_henshin_text_conditionreusenode_constructor_exists():
+    assert callable(henshin_text_ConditionReuseNode.__init__)
 
 
-def test_henshin::text::conditionnode_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionNode.__init__)
+def test_henshin_text_conditionreusenode_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionReuseNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::conditionedges_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ConditionEdges)
+def test_henshin_text_conditionedges_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ConditionEdges)
 
 
-def test_henshin::text::conditionedges_constructor_exists():
-    assert callable(henshin::text::ConditionEdges.__init__)
+def test_henshin_text_conditionedges_constructor_exists():
+    assert callable(henshin_text_ConditionEdges.__init__)
 
 
-def test_henshin::text::conditionedges_constructor_args():
-    sig = inspect.signature(henshin::text::ConditionEdges.__init__)
+def test_henshin_text_conditionedges_constructor_args():
+    sig = inspect.signature(henshin_text_ConditionEdges.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::graphelements_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::GraphElements)
+def test_henshin_text_graphelements_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_GraphElements)
 
 
-def test_henshin::text::graphelements_constructor_exists():
-    assert callable(henshin::text::GraphElements.__init__)
+def test_henshin_text_graphelements_constructor_exists():
+    assert callable(henshin_text_GraphElements.__init__)
 
 
-def test_henshin::text::graphelements_constructor_args():
-    sig = inspect.signature(henshin::text::GraphElements.__init__)
+def test_henshin_text_graphelements_constructor_args():
+    sig = inspect.signature(henshin_text_GraphElements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::expression_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Expression)
+def test_henshin_text_expression_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Expression)
 
 
-def test_henshin::text::expression_constructor_exists():
-    assert callable(henshin::text::Expression.__init__)
+def test_henshin_text_expression_constructor_exists():
+    assert callable(henshin_text_Expression.__init__)
 
 
-def test_henshin::text::expression_constructor_args():
-    sig = inspect.signature(henshin::text::Expression.__init__)
+def test_henshin_text_expression_constructor_args():
+    sig = inspect.signature(henshin_text_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1099,51 +1099,23 @@ def test_ruleelement_constructor_args():
 
 
 
-def test_henshin::text::graph_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Graph)
+def test_henshin_text_checkdangling_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_CheckDangling)
 
 
-def test_henshin::text::graph_constructor_exists():
-    assert callable(henshin::text::Graph.__init__)
+def test_henshin_text_checkdangling_constructor_exists():
+    assert callable(henshin_text_CheckDangling.__init__)
 
 
-def test_henshin::text::graph_constructor_args():
-    sig = inspect.signature(henshin::text::Graph.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::conditions_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Conditions)
-
-
-def test_henshin::text::conditions_constructor_exists():
-    assert callable(henshin::text::Conditions.__init__)
-
-
-def test_henshin::text::conditions_constructor_args():
-    sig = inspect.signature(henshin::text::Conditions.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::checkdangling_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::CheckDangling)
-
-
-def test_henshin::text::checkdangling_constructor_exists():
-    assert callable(henshin::text::CheckDangling.__init__)
-
-
-def test_henshin::text::checkdangling_constructor_args():
-    sig = inspect.signature(henshin::text::CheckDangling.__init__)
+def test_henshin_text_checkdangling_constructor_args():
+    sig = inspect.signature(henshin_text_CheckDangling.__init__)
     params = list(sig.parameters.keys())
     assert "checkDangling" in params, "Missing parameter 'checkDangling'"
 
-def test_henshin::text::checkdangling_has_checkDangling():
-    assert hasattr(henshin::text::CheckDangling, "checkDangling")
+def test_henshin_text_checkdangling_has_checkDangling():
+    assert hasattr(henshin_text_CheckDangling, "checkDangling")
     descriptor = None
-    for klass in henshin::text::CheckDangling.__mro__:
+    for klass in henshin_text_CheckDangling.__mro__:
         if "checkDangling" in klass.__dict__:
             descriptor = klass.__dict__["checkDangling"]
             break
@@ -1151,23 +1123,37 @@ def test_henshin::text::checkdangling_has_checkDangling():
 
 
 
-def test_henshin::text::injectivematching_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::InjectiveMatching)
+def test_henshin_text_conditions_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Conditions)
 
 
-def test_henshin::text::injectivematching_constructor_exists():
-    assert callable(henshin::text::InjectiveMatching.__init__)
+def test_henshin_text_conditions_constructor_exists():
+    assert callable(henshin_text_Conditions.__init__)
 
 
-def test_henshin::text::injectivematching_constructor_args():
-    sig = inspect.signature(henshin::text::InjectiveMatching.__init__)
+def test_henshin_text_conditions_constructor_args():
+    sig = inspect.signature(henshin_text_Conditions.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_injectivematching_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_InjectiveMatching)
+
+
+def test_henshin_text_injectivematching_constructor_exists():
+    assert callable(henshin_text_InjectiveMatching.__init__)
+
+
+def test_henshin_text_injectivematching_constructor_args():
+    sig = inspect.signature(henshin_text_InjectiveMatching.__init__)
     params = list(sig.parameters.keys())
     assert "injectiveMatching" in params, "Missing parameter 'injectiveMatching'"
 
-def test_henshin::text::injectivematching_has_injectiveMatching():
-    assert hasattr(henshin::text::InjectiveMatching, "injectiveMatching")
+def test_henshin_text_injectivematching_has_injectiveMatching():
+    assert hasattr(henshin_text_InjectiveMatching, "injectiveMatching")
     descriptor = None
-    for klass in henshin::text::InjectiveMatching.__mro__:
+    for klass in henshin_text_InjectiveMatching.__mro__:
         if "injectiveMatching" in klass.__dict__:
             descriptor = klass.__dict__["injectiveMatching"]
             break
@@ -1175,23 +1161,37 @@ def test_henshin::text::injectivematching_has_injectiveMatching():
 
 
 
-def test_henshin::text::javaimport_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::JavaImport)
+def test_henshin_text_graph_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Graph)
 
 
-def test_henshin::text::javaimport_constructor_exists():
-    assert callable(henshin::text::JavaImport.__init__)
+def test_henshin_text_graph_constructor_exists():
+    assert callable(henshin_text_Graph.__init__)
 
 
-def test_henshin::text::javaimport_constructor_args():
-    sig = inspect.signature(henshin::text::JavaImport.__init__)
+def test_henshin_text_graph_constructor_args():
+    sig = inspect.signature(henshin_text_Graph.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_javaimport_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_JavaImport)
+
+
+def test_henshin_text_javaimport_constructor_exists():
+    assert callable(henshin_text_JavaImport.__init__)
+
+
+def test_henshin_text_javaimport_constructor_args():
+    sig = inspect.signature(henshin_text_JavaImport.__init__)
     params = list(sig.parameters.keys())
     assert "packagename" in params, "Missing parameter 'packagename'"
 
-def test_henshin::text::javaimport_has_packagename():
-    assert hasattr(henshin::text::JavaImport, "packagename")
+def test_henshin_text_javaimport_has_packagename():
+    assert hasattr(henshin_text_JavaImport, "packagename")
     descriptor = None
-    for klass in henshin::text::JavaImport.__mro__:
+    for klass in henshin_text_JavaImport.__mro__:
         if "packagename" in klass.__dict__:
             descriptor = klass.__dict__["packagename"]
             break
@@ -1199,37 +1199,37 @@ def test_henshin::text::javaimport_has_packagename():
 
 
 
-def test_henshin::text::ruleelement_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::RuleElement)
+def test_henshin_text_ruleelement_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_RuleElement)
 
 
-def test_henshin::text::ruleelement_constructor_exists():
-    assert callable(henshin::text::RuleElement.__init__)
+def test_henshin_text_ruleelement_constructor_exists():
+    assert callable(henshin_text_RuleElement.__init__)
 
 
-def test_henshin::text::ruleelement_constructor_args():
-    sig = inspect.signature(henshin::text::RuleElement.__init__)
+def test_henshin_text_ruleelement_constructor_args():
+    sig = inspect.signature(henshin_text_RuleElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::parameter_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Parameter)
+def test_henshin_text_parameter_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Parameter)
 
 
-def test_henshin::text::parameter_constructor_exists():
-    assert callable(henshin::text::Parameter.__init__)
+def test_henshin_text_parameter_constructor_exists():
+    assert callable(henshin_text_Parameter.__init__)
 
 
-def test_henshin::text::parameter_constructor_args():
-    sig = inspect.signature(henshin::text::Parameter.__init__)
+def test_henshin_text_parameter_constructor_args():
+    sig = inspect.signature(henshin_text_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_henshin::text::parameter_has_name():
-    assert hasattr(henshin::text::Parameter, "name")
+def test_henshin_text_parameter_has_name():
+    assert hasattr(henshin_text_Parameter, "name")
     descriptor = None
-    for klass in henshin::text::Parameter.__mro__:
+    for klass in henshin_text_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1237,37 +1237,37 @@ def test_henshin::text::parameter_has_name():
 
 
 
-def test_henshin::text::epackage_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::EPackage)
+def test_henshin_text_epackage_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_EPackage)
 
 
-def test_henshin::text::epackage_constructor_exists():
-    assert callable(henshin::text::EPackage.__init__)
+def test_henshin_text_epackage_constructor_exists():
+    assert callable(henshin_text_EPackage.__init__)
 
 
-def test_henshin::text::epackage_constructor_args():
-    sig = inspect.signature(henshin::text::EPackage.__init__)
+def test_henshin_text_epackage_constructor_args():
+    sig = inspect.signature(henshin_text_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::modelelement_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::ModelElement)
+def test_henshin_text_modelelement_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_ModelElement)
 
 
-def test_henshin::text::modelelement_constructor_exists():
-    assert callable(henshin::text::ModelElement.__init__)
+def test_henshin_text_modelelement_constructor_exists():
+    assert callable(henshin_text_ModelElement.__init__)
 
 
-def test_henshin::text::modelelement_constructor_args():
-    sig = inspect.signature(henshin::text::ModelElement.__init__)
+def test_henshin_text_modelelement_constructor_args():
+    sig = inspect.signature(henshin_text_ModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_henshin::text::modelelement_has_name():
-    assert hasattr(henshin::text::ModelElement, "name")
+def test_henshin_text_modelelement_has_name():
+    assert hasattr(henshin_text_ModelElement, "name")
     descriptor = None
-    for klass in henshin::text::ModelElement.__mro__:
+    for klass in henshin_text_ModelElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1275,37 +1275,37 @@ def test_henshin::text::modelelement_has_name():
 
 
 
-def test_henshin::text::rulenodetypes_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::RuleNodeTypes)
+def test_henshin_text_rulenodetypes_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_RuleNodeTypes)
 
 
-def test_henshin::text::rulenodetypes_constructor_exists():
-    assert callable(henshin::text::RuleNodeTypes.__init__)
+def test_henshin_text_rulenodetypes_constructor_exists():
+    assert callable(henshin_text_RuleNodeTypes.__init__)
 
 
-def test_henshin::text::rulenodetypes_constructor_args():
-    sig = inspect.signature(henshin::text::RuleNodeTypes.__init__)
+def test_henshin_text_rulenodetypes_constructor_args():
+    sig = inspect.signature(henshin_text_RuleNodeTypes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::edge_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Edge)
+def test_henshin_text_edge_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Edge)
 
 
-def test_henshin::text::edge_constructor_exists():
-    assert callable(henshin::text::Edge.__init__)
+def test_henshin_text_edge_constructor_exists():
+    assert callable(henshin_text_Edge.__init__)
 
 
-def test_henshin::text::edge_constructor_args():
-    sig = inspect.signature(henshin::text::Edge.__init__)
+def test_henshin_text_edge_constructor_args():
+    sig = inspect.signature(henshin_text_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "actiontype" in params, "Missing parameter 'actiontype'"
 
-def test_henshin::text::edge_has_actiontype():
-    assert hasattr(henshin::text::Edge, "actiontype")
+def test_henshin_text_edge_has_actiontype():
+    assert hasattr(henshin_text_Edge, "actiontype")
     descriptor = None
-    for klass in henshin::text::Edge.__mro__:
+    for klass in henshin_text_Edge.__mro__:
         if "actiontype" in klass.__dict__:
             descriptor = klass.__dict__["actiontype"]
             break
@@ -1327,75 +1327,23 @@ def test_graphelements_constructor_args():
 
 
 
-def test_henshin::text::multirulereusenode_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::MultiRuleReuseNode)
+def test_henshin_text_multirule_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_MultiRule)
 
 
-def test_henshin::text::multirulereusenode_constructor_exists():
-    assert callable(henshin::text::MultiRuleReuseNode.__init__)
+def test_henshin_text_multirule_constructor_exists():
+    assert callable(henshin_text_MultiRule.__init__)
 
 
-def test_henshin::text::multirulereusenode_constructor_args():
-    sig = inspect.signature(henshin::text::MultiRuleReuseNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::formula_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Formula)
-
-
-def test_henshin::text::formula_constructor_exists():
-    assert callable(henshin::text::Formula.__init__)
-
-
-def test_henshin::text::formula_constructor_args():
-    sig = inspect.signature(henshin::text::Formula.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::text::node_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Node)
-
-
-def test_henshin::text::node_constructor_exists():
-    assert callable(henshin::text::Node.__init__)
-
-
-def test_henshin::text::node_constructor_args():
-    sig = inspect.signature(henshin::text::Node.__init__)
-    params = list(sig.parameters.keys())
-    assert "actiontype" in params, "Missing parameter 'actiontype'"
-
-def test_henshin::text::node_has_actiontype():
-    assert hasattr(henshin::text::Node, "actiontype")
-    descriptor = None
-    for klass in henshin::text::Node.__mro__:
-        if "actiontype" in klass.__dict__:
-            descriptor = klass.__dict__["actiontype"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::text::multirule_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::MultiRule)
-
-
-def test_henshin::text::multirule_constructor_exists():
-    assert callable(henshin::text::MultiRule.__init__)
-
-
-def test_henshin::text::multirule_constructor_args():
-    sig = inspect.signature(henshin::text::MultiRule.__init__)
+def test_henshin_text_multirule_constructor_args():
+    sig = inspect.signature(henshin_text_MultiRule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_henshin::text::multirule_has_name():
-    assert hasattr(henshin::text::MultiRule, "name")
+def test_henshin_text_multirule_has_name():
+    assert hasattr(henshin_text_MultiRule, "name")
     descriptor = None
-    for klass in henshin::text::MultiRule.__mro__:
+    for klass in henshin_text_MultiRule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1403,44 +1351,96 @@ def test_henshin::text::multirule_has_name():
 
 
 
-def test_henshin::text::edges_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Edges)
+def test_henshin_text_node_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Node)
 
 
-def test_henshin::text::edges_constructor_exists():
-    assert callable(henshin::text::Edges.__init__)
+def test_henshin_text_node_constructor_exists():
+    assert callable(henshin_text_Node.__init__)
 
 
-def test_henshin::text::edges_constructor_args():
-    sig = inspect.signature(henshin::text::Edges.__init__)
+def test_henshin_text_node_constructor_args():
+    sig = inspect.signature(henshin_text_Node.__init__)
+    params = list(sig.parameters.keys())
+    assert "actiontype" in params, "Missing parameter 'actiontype'"
+
+def test_henshin_text_node_has_actiontype():
+    assert hasattr(henshin_text_Node, "actiontype")
+    descriptor = None
+    for klass in henshin_text_Node.__mro__:
+        if "actiontype" in klass.__dict__:
+            descriptor = klass.__dict__["actiontype"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_henshin_text_multirulereusenode_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_MultiRuleReuseNode)
+
+
+def test_henshin_text_multirulereusenode_constructor_exists():
+    assert callable(henshin_text_MultiRuleReuseNode.__init__)
+
+
+def test_henshin_text_multirulereusenode_constructor_args():
+    sig = inspect.signature(henshin_text_MultiRuleReuseNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::epackageimport_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::EPackageImport)
+def test_henshin_text_formula_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Formula)
 
 
-def test_henshin::text::epackageimport_constructor_exists():
-    assert callable(henshin::text::EPackageImport.__init__)
+def test_henshin_text_formula_constructor_exists():
+    assert callable(henshin_text_Formula.__init__)
 
 
-def test_henshin::text::epackageimport_constructor_args():
-    sig = inspect.signature(henshin::text::EPackageImport.__init__)
+def test_henshin_text_formula_constructor_args():
+    sig = inspect.signature(henshin_text_Formula.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::text::model_is_not_abstract():
-    assert not inspect.isabstract(henshin::text::Model)
+def test_henshin_text_edges_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Edges)
 
 
-def test_henshin::text::model_constructor_exists():
-    assert callable(henshin::text::Model.__init__)
+def test_henshin_text_edges_constructor_exists():
+    assert callable(henshin_text_Edges.__init__)
 
 
-def test_henshin::text::model_constructor_args():
-    sig = inspect.signature(henshin::text::Model.__init__)
+def test_henshin_text_edges_constructor_args():
+    sig = inspect.signature(henshin_text_Edges.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_epackageimport_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_EPackageImport)
+
+
+def test_henshin_text_epackageimport_constructor_exists():
+    assert callable(henshin_text_EPackageImport.__init__)
+
+
+def test_henshin_text_epackageimport_constructor_args():
+    sig = inspect.signature(henshin_text_EPackageImport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_text_model_is_not_abstract():
+    assert not inspect.isabstract(henshin_text_Model)
+
+
+def test_henshin_text_model_constructor_exists():
+    assert callable(henshin_text_Model.__init__)
+
+
+def test_henshin_text_model_constructor_args():
+    sig = inspect.signature(henshin_text_Model.__init__)
     params = list(sig.parameters.keys())
 
 def test_type_exists():
@@ -1451,39 +1451,39 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
+        "eLong",
+        "eResource",
+        "eBoolean",
+        "eDate",
+        "eLongObject",
+        "eBigInteger",
+        "eDoubleObject",
+        "eDouble",
+        "eJavaClass",
+        "eInt",
+        "eByteArray",
+        "eEList",
+        "eBooleanObject",
+        "eDiagnosticChain",
+        "eResourceSet",
+        "eChar",
+        "eEnumerator",
         "eMap",
         "eIntegerObject",
-        "eLong",
-        "eResourceSet",
-        "eBooleanObject",
-        "eDate",
-        "eByteObject",
-        "eDoubleObject",
-        "eFloatObject",
-        "eShort",
-        "eByteArray",
-        "eString",
-        "eChar",
-        "eDouble",
-        "eCharacterObject",
-        "eFeatureMap",
-        "eBigDecimal",
-        "eEList",
-        "eEnumerator",
-        "eBigInteger",
-        "eDiagnosticChain",
         "eFloat",
-        "eJavaClass",
-        "eResource",
-        "eShortObject",
-        "eFeatureMapEntry",
-        "eLongObject",
-        "eInvocationTargetException",
         "eJavaObject",
-        "eBoolean",
-        "eInt",
-        "eTreeIterator",
+        "eFloatObject",
+        "eInvocationTargetException",
+        "eShortObject",
+        "eShort",
+        "eByteObject",
+        "eCharacterObject",
+        "eBigDecimal",
         "eByte",
+        "eTreeIterator",
+        "eFeatureMap",
+        "eString",
+        "eFeatureMapEntry",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1504,177 +1504,177 @@ safe_text = st.text(
 Logic_strategy = st.builds(
     Logic,
 )
-henshin::text::ConditionGraphRef_strategy = st.builds(
-    henshin::text::ConditionGraphRef,
+henshin_text_Not_strategy = st.builds(
+    henshin_text_Not,
 )
-henshin::text::AND_strategy = st.builds(
-    henshin::text::AND,
+henshin_text_ConditionGraphRef_strategy = st.builds(
+    henshin_text_ConditionGraphRef,
 )
-henshin::text::Not_strategy = st.builds(
-    henshin::text::Not,
+henshin_text_AND_strategy = st.builds(
+    henshin_text_AND,
 )
-henshin::text::ORorXOR_strategy = st.builds(
-    henshin::text::ORorXOR,
+henshin_text_ORorXOR_strategy = st.builds(
+    henshin_text_ORorXOR,
     op=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-henshin::text::JavaClassValue_strategy = st.builds(
-    henshin::text::JavaClassValue,
+henshin_text_JavaAttributeValue_strategy = st.builds(
+    henshin_text_JavaAttributeValue,
     value=
         safe_text
 )
-henshin::text::MinusExpression_strategy = st.builds(
-    henshin::text::MinusExpression,
+henshin_text_MulOrDivExpression_strategy = st.builds(
+    henshin_text_MulOrDivExpression,
+    op=
+        safe_text
 )
-henshin::text::IntegerValue_strategy = st.builds(
-    henshin::text::IntegerValue,
+henshin_text_NotExpression_strategy = st.builds(
+    henshin_text_NotExpression,
+)
+henshin_text_AndExpression_strategy = st.builds(
+    henshin_text_AndExpression,
+)
+henshin_text_PlusExpression_strategy = st.builds(
+    henshin_text_PlusExpression,
+)
+henshin_text_MinusExpression_strategy = st.builds(
+    henshin_text_MinusExpression,
+)
+henshin_text_IntegerValue_strategy = st.builds(
+    henshin_text_IntegerValue,
     value=
         safe_text
 )
-henshin::text::PlusExpression_strategy = st.builds(
-    henshin::text::PlusExpression,
-)
-henshin::text::JavaAttributeValue_strategy = st.builds(
-    henshin::text::JavaAttributeValue,
-    value=
+henshin_text_EqualityExpression_strategy = st.builds(
+    henshin_text_EqualityExpression,
+    op=
         safe_text
 )
-henshin::text::NumberValue_strategy = st.builds(
-    henshin::text::NumberValue,
-    value=
-        safe_text
+henshin_text_BracketExpression_strategy = st.builds(
+    henshin_text_BracketExpression,
 )
-henshin::text::ParameterValue_strategy = st.builds(
-    henshin::text::ParameterValue,
-)
-henshin::text::NotExpression_strategy = st.builds(
-    henshin::text::NotExpression,
-)
-henshin::text::NaturalValue_strategy = st.builds(
-    henshin::text::NaturalValue,
+henshin_text_NaturalValue_strategy = st.builds(
+    henshin_text_NaturalValue,
     value=
         st.integers()
 )
-henshin::text::BoolValue_strategy = st.builds(
-    henshin::text::BoolValue,
+henshin_text_JavaClassValue_strategy = st.builds(
+    henshin_text_JavaClassValue,
+    value=
+        safe_text
+)
+henshin_text_BoolValue_strategy = st.builds(
+    henshin_text_BoolValue,
     value=
         st.booleans()
 )
-henshin::text::BracketExpression_strategy = st.builds(
-    henshin::text::BracketExpression,
-)
-henshin::text::StringValue_strategy = st.builds(
-    henshin::text::StringValue,
+henshin_text_NumberValue_strategy = st.builds(
+    henshin_text_NumberValue,
     value=
         safe_text
 )
-henshin::text::MulOrDivExpression_strategy = st.builds(
-    henshin::text::MulOrDivExpression,
+henshin_text_ComparisonExpression_strategy = st.builds(
+    henshin_text_ComparisonExpression,
     op=
         safe_text
 )
-henshin::text::AndExpression_strategy = st.builds(
-    henshin::text::AndExpression,
+henshin_text_ParameterValue_strategy = st.builds(
+    henshin_text_ParameterValue,
 )
-henshin::text::ComparisonExpression_strategy = st.builds(
-    henshin::text::ComparisonExpression,
-    op=
+henshin_text_StringValue_strategy = st.builds(
+    henshin_text_StringValue,
+    value=
         safe_text
 )
-henshin::text::EqualityExpression_strategy = st.builds(
-    henshin::text::EqualityExpression,
-    op=
-        safe_text
-)
-henshin::text::OrExpression_strategy = st.builds(
-    henshin::text::OrExpression,
+henshin_text_OrExpression_strategy = st.builds(
+    henshin_text_OrExpression,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-henshin::text::Rule_strategy = st.builds(
-    henshin::text::Rule,
+henshin_text_Rule_strategy = st.builds(
+    henshin_text_Rule,
 )
-henshin::text::Unit_strategy = st.builds(
-    henshin::text::Unit,
+henshin_text_Unit_strategy = st.builds(
+    henshin_text_Unit,
 )
-henshin::text::List_strategy = st.builds(
-    henshin::text::List,
+henshin_text_List_strategy = st.builds(
+    henshin_text_List,
 )
-henshin::text::ParameterType_strategy = st.builds(
-    henshin::text::ParameterType,
+henshin_text_ParameterType_strategy = st.builds(
+    henshin_text_ParameterType,
     enumType=
         safe_text
 )
-henshin::text::Match_strategy = st.builds(
-    henshin::text::Match,
+henshin_text_Match_strategy = st.builds(
+    henshin_text_Match,
 )
-henshin::text::ConditionNodeTypes_strategy = st.builds(
-    henshin::text::ConditionNodeTypes,
+henshin_text_ConditionNodeTypes_strategy = st.builds(
+    henshin_text_ConditionNodeTypes,
     name=
         safe_text
 )
-henshin::text::ConditionEdge_strategy = st.builds(
-    henshin::text::ConditionEdge,
+henshin_text_ConditionEdge_strategy = st.builds(
+    henshin_text_ConditionEdge,
 )
-henshin::text::ConditionGraphElements_strategy = st.builds(
-    henshin::text::ConditionGraphElements,
+henshin_text_ConditionGraphElements_strategy = st.builds(
+    henshin_text_ConditionGraphElements,
 )
 SequentialProperties_strategy = st.builds(
     SequentialProperties,
 )
-henshin::text::Rollback_strategy = st.builds(
-    henshin::text::Rollback,
+henshin_text_Rollback_strategy = st.builds(
+    henshin_text_Rollback,
     rollback=
         st.booleans()
 )
-henshin::text::Strict_strategy = st.builds(
-    henshin::text::Strict,
+henshin_text_Strict_strategy = st.builds(
+    henshin_text_Strict,
     strict=
         st.booleans()
 )
 UnitElement_strategy = st.builds(
     UnitElement,
 )
-henshin::text::IteratedUnit_strategy = st.builds(
-    henshin::text::IteratedUnit,
+henshin_text_IteratedUnit_strategy = st.builds(
+    henshin_text_IteratedUnit,
 )
-henshin::text::PriorityUnit_strategy = st.builds(
-    henshin::text::PriorityUnit,
+henshin_text_PriorityUnit_strategy = st.builds(
+    henshin_text_PriorityUnit,
 )
-henshin::text::IndependentUnit_strategy = st.builds(
-    henshin::text::IndependentUnit,
+henshin_text_IndependentUnit_strategy = st.builds(
+    henshin_text_IndependentUnit,
 )
-henshin::text::Call_strategy = st.builds(
-    henshin::text::Call,
+henshin_text_ConditionalUnit_strategy = st.builds(
+    henshin_text_ConditionalUnit,
 )
-henshin::text::ConditionalUnit_strategy = st.builds(
-    henshin::text::ConditionalUnit,
+henshin_text_Call_strategy = st.builds(
+    henshin_text_Call,
 )
-henshin::text::LoopUnit_strategy = st.builds(
-    henshin::text::LoopUnit,
+henshin_text_LoopUnit_strategy = st.builds(
+    henshin_text_LoopUnit,
 )
-henshin::text::SequentialProperties_strategy = st.builds(
-    henshin::text::SequentialProperties,
+henshin_text_SequentialProperties_strategy = st.builds(
+    henshin_text_SequentialProperties,
 )
-henshin::text::UnitElement_strategy = st.builds(
-    henshin::text::UnitElement,
+henshin_text_UnitElement_strategy = st.builds(
+    henshin_text_UnitElement,
 )
-henshin::text::EAttribute_strategy = st.builds(
-    henshin::text::EAttribute,
+henshin_text_EAttribute_strategy = st.builds(
+    henshin_text_EAttribute,
 )
-henshin::text::Attribute_strategy = st.builds(
-    henshin::text::Attribute,
-    update=
-        safe_text,
+henshin_text_Attribute_strategy = st.builds(
+    henshin_text_Attribute,
     actiontype=
+        safe_text,
+    update=
         safe_text
 )
-henshin::text::EClass_strategy = st.builds(
-    henshin::text::EClass,
+henshin_text_EClass_strategy = st.builds(
+    henshin_text_EClass,
 )
 ConditionNodeTypes_strategy = st.builds(
     ConditionNodeTypes,
@@ -1682,110 +1682,110 @@ ConditionNodeTypes_strategy = st.builds(
 RuleNodeTypes_strategy = st.builds(
     RuleNodeTypes,
 )
-henshin::text::EReference_strategy = st.builds(
-    henshin::text::EReference,
+henshin_text_EReference_strategy = st.builds(
+    henshin_text_EReference,
 )
-henshin::text::ConditionGraph_strategy = st.builds(
-    henshin::text::ConditionGraph,
+henshin_text_ConditionGraph_strategy = st.builds(
+    henshin_text_ConditionGraph,
     name=
         safe_text
 )
-henshin::text::Logic_strategy = st.builds(
-    henshin::text::Logic,
+henshin_text_Logic_strategy = st.builds(
+    henshin_text_Logic,
 )
 ConditionGraphElements_strategy = st.builds(
     ConditionGraphElements,
 )
-henshin::text::ConditionReuseNode_strategy = st.builds(
-    henshin::text::ConditionReuseNode,
+henshin_text_ConditionNode_strategy = st.builds(
+    henshin_text_ConditionNode,
 )
-henshin::text::ConditionNode_strategy = st.builds(
-    henshin::text::ConditionNode,
+henshin_text_ConditionReuseNode_strategy = st.builds(
+    henshin_text_ConditionReuseNode,
 )
-henshin::text::ConditionEdges_strategy = st.builds(
-    henshin::text::ConditionEdges,
+henshin_text_ConditionEdges_strategy = st.builds(
+    henshin_text_ConditionEdges,
 )
-henshin::text::GraphElements_strategy = st.builds(
-    henshin::text::GraphElements,
+henshin_text_GraphElements_strategy = st.builds(
+    henshin_text_GraphElements,
 )
-henshin::text::Expression_strategy = st.builds(
-    henshin::text::Expression,
+henshin_text_Expression_strategy = st.builds(
+    henshin_text_Expression,
 )
 RuleElement_strategy = st.builds(
     RuleElement,
 )
-henshin::text::Graph_strategy = st.builds(
-    henshin::text::Graph,
-)
-henshin::text::Conditions_strategy = st.builds(
-    henshin::text::Conditions,
-)
-henshin::text::CheckDangling_strategy = st.builds(
-    henshin::text::CheckDangling,
+henshin_text_CheckDangling_strategy = st.builds(
+    henshin_text_CheckDangling,
     checkDangling=
         st.booleans()
 )
-henshin::text::InjectiveMatching_strategy = st.builds(
-    henshin::text::InjectiveMatching,
+henshin_text_Conditions_strategy = st.builds(
+    henshin_text_Conditions,
+)
+henshin_text_InjectiveMatching_strategy = st.builds(
+    henshin_text_InjectiveMatching,
     injectiveMatching=
         st.booleans()
 )
-henshin::text::JavaImport_strategy = st.builds(
-    henshin::text::JavaImport,
+henshin_text_Graph_strategy = st.builds(
+    henshin_text_Graph,
+)
+henshin_text_JavaImport_strategy = st.builds(
+    henshin_text_JavaImport,
     packagename=
         safe_text
 )
-henshin::text::RuleElement_strategy = st.builds(
-    henshin::text::RuleElement,
+henshin_text_RuleElement_strategy = st.builds(
+    henshin_text_RuleElement,
 )
-henshin::text::Parameter_strategy = st.builds(
-    henshin::text::Parameter,
+henshin_text_Parameter_strategy = st.builds(
+    henshin_text_Parameter,
     name=
         safe_text
 )
-henshin::text::EPackage_strategy = st.builds(
-    henshin::text::EPackage,
+henshin_text_EPackage_strategy = st.builds(
+    henshin_text_EPackage,
 )
-henshin::text::ModelElement_strategy = st.builds(
-    henshin::text::ModelElement,
+henshin_text_ModelElement_strategy = st.builds(
+    henshin_text_ModelElement,
     name=
         safe_text
 )
-henshin::text::RuleNodeTypes_strategy = st.builds(
-    henshin::text::RuleNodeTypes,
+henshin_text_RuleNodeTypes_strategy = st.builds(
+    henshin_text_RuleNodeTypes,
 )
-henshin::text::Edge_strategy = st.builds(
-    henshin::text::Edge,
+henshin_text_Edge_strategy = st.builds(
+    henshin_text_Edge,
     actiontype=
         safe_text
 )
 GraphElements_strategy = st.builds(
     GraphElements,
 )
-henshin::text::MultiRuleReuseNode_strategy = st.builds(
-    henshin::text::MultiRuleReuseNode,
-)
-henshin::text::Formula_strategy = st.builds(
-    henshin::text::Formula,
-)
-henshin::text::Node_strategy = st.builds(
-    henshin::text::Node,
-    actiontype=
-        safe_text
-)
-henshin::text::MultiRule_strategy = st.builds(
-    henshin::text::MultiRule,
+henshin_text_MultiRule_strategy = st.builds(
+    henshin_text_MultiRule,
     name=
         safe_text
 )
-henshin::text::Edges_strategy = st.builds(
-    henshin::text::Edges,
+henshin_text_Node_strategy = st.builds(
+    henshin_text_Node,
+    actiontype=
+        safe_text
 )
-henshin::text::EPackageImport_strategy = st.builds(
-    henshin::text::EPackageImport,
+henshin_text_MultiRuleReuseNode_strategy = st.builds(
+    henshin_text_MultiRuleReuseNode,
 )
-henshin::text::Model_strategy = st.builds(
-    henshin::text::Model,
+henshin_text_Formula_strategy = st.builds(
+    henshin_text_Formula,
+)
+henshin_text_Edges_strategy = st.builds(
+    henshin_text_Edges,
+)
+henshin_text_EPackageImport_strategy = st.builds(
+    henshin_text_EPackageImport,
+)
+henshin_text_Model_strategy = st.builds(
+    henshin_text_Model,
 )
 
 @given(instance=Logic_strategy)
@@ -1793,33 +1793,30 @@ henshin::text::Model_strategy = st.builds(
 def test_logic_instantiation(instance):
     assert isinstance(instance, Logic)
 
-@given(instance=henshin::text::ConditionGraphRef_strategy)
+@given(instance=henshin_text_Not_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditiongraphref_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionGraphRef)
+def test_henshin_text_not_instantiation(instance):
+    assert isinstance(instance, henshin_text_Not)
 
-@given(instance=henshin::text::AND_strategy)
+@given(instance=henshin_text_ConditionGraphRef_strategy)
 @settings(max_examples=50)
-def test_henshin::text::and_instantiation(instance):
-    assert isinstance(instance, henshin::text::AND)
+def test_henshin_text_conditiongraphref_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionGraphRef)
 
-@given(instance=henshin::text::Not_strategy)
+@given(instance=henshin_text_AND_strategy)
 @settings(max_examples=50)
-def test_henshin::text::not_instantiation(instance):
-    assert isinstance(instance, henshin::text::Not)
+def test_henshin_text_and_instantiation(instance):
+    assert isinstance(instance, henshin_text_AND)
 
-@given(instance=henshin::text::ORorXOR_strategy)
+@given(instance=henshin_text_ORorXOR_strategy)
 @settings(max_examples=50)
-def test_henshin::text::ororxor_instantiation(instance):
-    assert isinstance(instance, henshin::text::ORorXOR)
-
-@given(instance=henshin::text::ORorXOR_strategy)
-def test_henshin::text::ororxor_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_henshin_text_ororxor_instantiation(instance):
+    assert isinstance(instance, henshin_text_ORorXOR)
 
 
-@given(instance=henshin::text::ORorXOR_strategy)
-def test_henshin::text::ororxor_op_setter(instance):
+
+@given(instance=henshin_text_ORorXOR_strategy)
+def test_henshin_text_ororxor_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -1829,301 +1826,259 @@ def test_henshin::text::ororxor_op_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=henshin::text::JavaClassValue_strategy)
+@given(instance=henshin_text_JavaAttributeValue_strategy)
 @settings(max_examples=50)
-def test_henshin::text::javaclassvalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::JavaClassValue)
-
-@given(instance=henshin::text::JavaClassValue_strategy)
-def test_henshin::text::javaclassvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_henshin_text_javaattributevalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_JavaAttributeValue)
 
 
-@given(instance=henshin::text::JavaClassValue_strategy)
-def test_henshin::text::javaclassvalue_value_setter(instance):
+
+@given(instance=henshin_text_JavaAttributeValue_strategy)
+def test_henshin_text_javaattributevalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=henshin::text::MinusExpression_strategy)
+@given(instance=henshin_text_MulOrDivExpression_strategy)
 @settings(max_examples=50)
-def test_henshin::text::minusexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::MinusExpression)
-
-@given(instance=henshin::text::IntegerValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::integervalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::IntegerValue)
-
-@given(instance=henshin::text::IntegerValue_strategy)
-def test_henshin::text::integervalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_henshin_text_mulordivexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_MulOrDivExpression)
 
 
-@given(instance=henshin::text::IntegerValue_strategy)
-def test_henshin::text::integervalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=henshin::text::PlusExpression_strategy)
-@settings(max_examples=50)
-def test_henshin::text::plusexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::PlusExpression)
-
-@given(instance=henshin::text::JavaAttributeValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::javaattributevalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::JavaAttributeValue)
-
-@given(instance=henshin::text::JavaAttributeValue_strategy)
-def test_henshin::text::javaattributevalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=henshin::text::JavaAttributeValue_strategy)
-def test_henshin::text::javaattributevalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=henshin::text::NumberValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::numbervalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::NumberValue)
-
-@given(instance=henshin::text::NumberValue_strategy)
-def test_henshin::text::numbervalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=henshin::text::NumberValue_strategy)
-def test_henshin::text::numbervalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=henshin::text::ParameterValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::parametervalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::ParameterValue)
-
-@given(instance=henshin::text::NotExpression_strategy)
-@settings(max_examples=50)
-def test_henshin::text::notexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::NotExpression)
-
-@given(instance=henshin::text::NaturalValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::naturalvalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::NaturalValue)
-
-@given(instance=henshin::text::NaturalValue_strategy)
-def test_henshin::text::naturalvalue_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=henshin::text::NaturalValue_strategy)
-def test_henshin::text::naturalvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=henshin::text::BoolValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::boolvalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::BoolValue)
-
-@given(instance=henshin::text::BoolValue_strategy)
-def test_henshin::text::boolvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=henshin::text::BoolValue_strategy)
-def test_henshin::text::boolvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=henshin::text::BracketExpression_strategy)
-@settings(max_examples=50)
-def test_henshin::text::bracketexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::BracketExpression)
-
-@given(instance=henshin::text::StringValue_strategy)
-@settings(max_examples=50)
-def test_henshin::text::stringvalue_instantiation(instance):
-    assert isinstance(instance, henshin::text::StringValue)
-
-@given(instance=henshin::text::StringValue_strategy)
-def test_henshin::text::stringvalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=henshin::text::StringValue_strategy)
-def test_henshin::text::stringvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=henshin::text::MulOrDivExpression_strategy)
-@settings(max_examples=50)
-def test_henshin::text::mulordivexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::MulOrDivExpression)
-
-@given(instance=henshin::text::MulOrDivExpression_strategy)
-def test_henshin::text::mulordivexpression_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=henshin::text::MulOrDivExpression_strategy)
-def test_henshin::text::mulordivexpression_op_setter(instance):
+@given(instance=henshin_text_MulOrDivExpression_strategy)
+def test_henshin_text_mulordivexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=henshin::text::AndExpression_strategy)
+@given(instance=henshin_text_NotExpression_strategy)
 @settings(max_examples=50)
-def test_henshin::text::andexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::AndExpression)
+def test_henshin_text_notexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_NotExpression)
 
-@given(instance=henshin::text::ComparisonExpression_strategy)
+@given(instance=henshin_text_AndExpression_strategy)
 @settings(max_examples=50)
-def test_henshin::text::comparisonexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::ComparisonExpression)
+def test_henshin_text_andexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_AndExpression)
 
-@given(instance=henshin::text::ComparisonExpression_strategy)
-def test_henshin::text::comparisonexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=henshin_text_PlusExpression_strategy)
+@settings(max_examples=50)
+def test_henshin_text_plusexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_PlusExpression)
+
+@given(instance=henshin_text_MinusExpression_strategy)
+@settings(max_examples=50)
+def test_henshin_text_minusexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_MinusExpression)
+
+@given(instance=henshin_text_IntegerValue_strategy)
+@settings(max_examples=50)
+def test_henshin_text_integervalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_IntegerValue)
 
 
-@given(instance=henshin::text::ComparisonExpression_strategy)
-def test_henshin::text::comparisonexpression_op_setter(instance):
+
+@given(instance=henshin_text_IntegerValue_strategy)
+def test_henshin_text_integervalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_text_EqualityExpression_strategy)
+@settings(max_examples=50)
+def test_henshin_text_equalityexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_EqualityExpression)
+
+
+
+@given(instance=henshin_text_EqualityExpression_strategy)
+def test_henshin_text_equalityexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=henshin::text::EqualityExpression_strategy)
+@given(instance=henshin_text_BracketExpression_strategy)
 @settings(max_examples=50)
-def test_henshin::text::equalityexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::EqualityExpression)
+def test_henshin_text_bracketexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_BracketExpression)
 
-@given(instance=henshin::text::EqualityExpression_strategy)
-def test_henshin::text::equalityexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=henshin_text_NaturalValue_strategy)
+@settings(max_examples=50)
+def test_henshin_text_naturalvalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_NaturalValue)
 
 
-@given(instance=henshin::text::EqualityExpression_strategy)
-def test_henshin::text::equalityexpression_op_setter(instance):
+
+@given(instance=henshin_text_NaturalValue_strategy)
+def test_henshin_text_naturalvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_text_JavaClassValue_strategy)
+@settings(max_examples=50)
+def test_henshin_text_javaclassvalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_JavaClassValue)
+
+
+
+@given(instance=henshin_text_JavaClassValue_strategy)
+def test_henshin_text_javaclassvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_text_BoolValue_strategy)
+@settings(max_examples=50)
+def test_henshin_text_boolvalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_BoolValue)
+
+
+
+@given(instance=henshin_text_BoolValue_strategy)
+def test_henshin_text_boolvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_text_NumberValue_strategy)
+@settings(max_examples=50)
+def test_henshin_text_numbervalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_NumberValue)
+
+
+
+@given(instance=henshin_text_NumberValue_strategy)
+def test_henshin_text_numbervalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_text_ComparisonExpression_strategy)
+@settings(max_examples=50)
+def test_henshin_text_comparisonexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_ComparisonExpression)
+
+
+
+@given(instance=henshin_text_ComparisonExpression_strategy)
+def test_henshin_text_comparisonexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=henshin::text::OrExpression_strategy)
+@given(instance=henshin_text_ParameterValue_strategy)
 @settings(max_examples=50)
-def test_henshin::text::orexpression_instantiation(instance):
-    assert isinstance(instance, henshin::text::OrExpression)
+def test_henshin_text_parametervalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_ParameterValue)
+
+@given(instance=henshin_text_StringValue_strategy)
+@settings(max_examples=50)
+def test_henshin_text_stringvalue_instantiation(instance):
+    assert isinstance(instance, henshin_text_StringValue)
+
+
+
+@given(instance=henshin_text_StringValue_strategy)
+def test_henshin_text_stringvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_text_OrExpression_strategy)
+@settings(max_examples=50)
+def test_henshin_text_orexpression_instantiation(instance):
+    assert isinstance(instance, henshin_text_OrExpression)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=henshin::text::Rule_strategy)
+@given(instance=henshin_text_Rule_strategy)
 @settings(max_examples=50)
-def test_henshin::text::rule_instantiation(instance):
-    assert isinstance(instance, henshin::text::Rule)
+def test_henshin_text_rule_instantiation(instance):
+    assert isinstance(instance, henshin_text_Rule)
 
-@given(instance=henshin::text::Unit_strategy)
+@given(instance=henshin_text_Unit_strategy)
 @settings(max_examples=50)
-def test_henshin::text::unit_instantiation(instance):
-    assert isinstance(instance, henshin::text::Unit)
+def test_henshin_text_unit_instantiation(instance):
+    assert isinstance(instance, henshin_text_Unit)
 
-@given(instance=henshin::text::List_strategy)
+@given(instance=henshin_text_List_strategy)
 @settings(max_examples=50)
-def test_henshin::text::list_instantiation(instance):
-    assert isinstance(instance, henshin::text::List)
+def test_henshin_text_list_instantiation(instance):
+    assert isinstance(instance, henshin_text_List)
 
-@given(instance=henshin::text::ParameterType_strategy)
+@given(instance=henshin_text_ParameterType_strategy)
 @settings(max_examples=50)
-def test_henshin::text::parametertype_instantiation(instance):
-    assert isinstance(instance, henshin::text::ParameterType)
-
-@given(instance=henshin::text::ParameterType_strategy)
-def test_henshin::text::parametertype_enumType_type(instance):
-    assert isinstance(instance.enumType, str)
+def test_henshin_text_parametertype_instantiation(instance):
+    assert isinstance(instance, henshin_text_ParameterType)
 
 
-@given(instance=henshin::text::ParameterType_strategy)
-def test_henshin::text::parametertype_enumType_setter(instance):
+
+@given(instance=henshin_text_ParameterType_strategy)
+def test_henshin_text_parametertype_enumType_setter(instance):
     original = instance.enumType
     instance.enumType = original
     assert instance.enumType == original
 
-@given(instance=henshin::text::Match_strategy)
+@given(instance=henshin_text_Match_strategy)
 @settings(max_examples=50)
-def test_henshin::text::match_instantiation(instance):
-    assert isinstance(instance, henshin::text::Match)
+def test_henshin_text_match_instantiation(instance):
+    assert isinstance(instance, henshin_text_Match)
 
-@given(instance=henshin::text::ConditionNodeTypes_strategy)
+@given(instance=henshin_text_ConditionNodeTypes_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditionnodetypes_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionNodeTypes)
-
-@given(instance=henshin::text::ConditionNodeTypes_strategy)
-def test_henshin::text::conditionnodetypes_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_henshin_text_conditionnodetypes_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionNodeTypes)
 
 
-@given(instance=henshin::text::ConditionNodeTypes_strategy)
-def test_henshin::text::conditionnodetypes_name_setter(instance):
+
+@given(instance=henshin_text_ConditionNodeTypes_strategy)
+def test_henshin_text_conditionnodetypes_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=henshin::text::ConditionEdge_strategy)
+@given(instance=henshin_text_ConditionEdge_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditionedge_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionEdge)
+def test_henshin_text_conditionedge_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionEdge)
 
-@given(instance=henshin::text::ConditionGraphElements_strategy)
+@given(instance=henshin_text_ConditionGraphElements_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditiongraphelements_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionGraphElements)
+def test_henshin_text_conditiongraphelements_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionGraphElements)
 
 @given(instance=SequentialProperties_strategy)
 @settings(max_examples=50)
 def test_sequentialproperties_instantiation(instance):
     assert isinstance(instance, SequentialProperties)
 
-@given(instance=henshin::text::Rollback_strategy)
+@given(instance=henshin_text_Rollback_strategy)
 @settings(max_examples=50)
-def test_henshin::text::rollback_instantiation(instance):
-    assert isinstance(instance, henshin::text::Rollback)
-
-@given(instance=henshin::text::Rollback_strategy)
-def test_henshin::text::rollback_rollback_type(instance):
-    assert isinstance(instance.rollback, bool)
+def test_henshin_text_rollback_instantiation(instance):
+    assert isinstance(instance, henshin_text_Rollback)
 
 
-@given(instance=henshin::text::Rollback_strategy)
-def test_henshin::text::rollback_rollback_setter(instance):
+
+@given(instance=henshin_text_Rollback_strategy)
+def test_henshin_text_rollback_rollback_setter(instance):
     original = instance.rollback
     instance.rollback = original
     assert instance.rollback == original
 
-@given(instance=henshin::text::Strict_strategy)
+@given(instance=henshin_text_Strict_strategy)
 @settings(max_examples=50)
-def test_henshin::text::strict_instantiation(instance):
-    assert isinstance(instance, henshin::text::Strict)
-
-@given(instance=henshin::text::Strict_strategy)
-def test_henshin::text::strict_strict_type(instance):
-    assert isinstance(instance.strict, bool)
+def test_henshin_text_strict_instantiation(instance):
+    assert isinstance(instance, henshin_text_Strict)
 
 
-@given(instance=henshin::text::Strict_strategy)
-def test_henshin::text::strict_strict_setter(instance):
+
+@given(instance=henshin_text_Strict_strategy)
+def test_henshin_text_strict_strict_setter(instance):
     original = instance.strict
     instance.strict = original
     assert instance.strict == original
@@ -2133,82 +2088,76 @@ def test_henshin::text::strict_strict_setter(instance):
 def test_unitelement_instantiation(instance):
     assert isinstance(instance, UnitElement)
 
-@given(instance=henshin::text::IteratedUnit_strategy)
+@given(instance=henshin_text_IteratedUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::text::iteratedunit_instantiation(instance):
-    assert isinstance(instance, henshin::text::IteratedUnit)
+def test_henshin_text_iteratedunit_instantiation(instance):
+    assert isinstance(instance, henshin_text_IteratedUnit)
 
-@given(instance=henshin::text::PriorityUnit_strategy)
+@given(instance=henshin_text_PriorityUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::text::priorityunit_instantiation(instance):
-    assert isinstance(instance, henshin::text::PriorityUnit)
+def test_henshin_text_priorityunit_instantiation(instance):
+    assert isinstance(instance, henshin_text_PriorityUnit)
 
-@given(instance=henshin::text::IndependentUnit_strategy)
+@given(instance=henshin_text_IndependentUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::text::independentunit_instantiation(instance):
-    assert isinstance(instance, henshin::text::IndependentUnit)
+def test_henshin_text_independentunit_instantiation(instance):
+    assert isinstance(instance, henshin_text_IndependentUnit)
 
-@given(instance=henshin::text::Call_strategy)
+@given(instance=henshin_text_ConditionalUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::text::call_instantiation(instance):
-    assert isinstance(instance, henshin::text::Call)
+def test_henshin_text_conditionalunit_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionalUnit)
 
-@given(instance=henshin::text::ConditionalUnit_strategy)
+@given(instance=henshin_text_Call_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditionalunit_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionalUnit)
+def test_henshin_text_call_instantiation(instance):
+    assert isinstance(instance, henshin_text_Call)
 
-@given(instance=henshin::text::LoopUnit_strategy)
+@given(instance=henshin_text_LoopUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::text::loopunit_instantiation(instance):
-    assert isinstance(instance, henshin::text::LoopUnit)
+def test_henshin_text_loopunit_instantiation(instance):
+    assert isinstance(instance, henshin_text_LoopUnit)
 
-@given(instance=henshin::text::SequentialProperties_strategy)
+@given(instance=henshin_text_SequentialProperties_strategy)
 @settings(max_examples=50)
-def test_henshin::text::sequentialproperties_instantiation(instance):
-    assert isinstance(instance, henshin::text::SequentialProperties)
+def test_henshin_text_sequentialproperties_instantiation(instance):
+    assert isinstance(instance, henshin_text_SequentialProperties)
 
-@given(instance=henshin::text::UnitElement_strategy)
+@given(instance=henshin_text_UnitElement_strategy)
 @settings(max_examples=50)
-def test_henshin::text::unitelement_instantiation(instance):
-    assert isinstance(instance, henshin::text::UnitElement)
+def test_henshin_text_unitelement_instantiation(instance):
+    assert isinstance(instance, henshin_text_UnitElement)
 
-@given(instance=henshin::text::EAttribute_strategy)
+@given(instance=henshin_text_EAttribute_strategy)
 @settings(max_examples=50)
-def test_henshin::text::eattribute_instantiation(instance):
-    assert isinstance(instance, henshin::text::EAttribute)
+def test_henshin_text_eattribute_instantiation(instance):
+    assert isinstance(instance, henshin_text_EAttribute)
 
-@given(instance=henshin::text::Attribute_strategy)
+@given(instance=henshin_text_Attribute_strategy)
 @settings(max_examples=50)
-def test_henshin::text::attribute_instantiation(instance):
-    assert isinstance(instance, henshin::text::Attribute)
-
-@given(instance=henshin::text::Attribute_strategy)
-def test_henshin::text::attribute_update_type(instance):
-    assert isinstance(instance.update, str)
+def test_henshin_text_attribute_instantiation(instance):
+    assert isinstance(instance, henshin_text_Attribute)
 
 
-@given(instance=henshin::text::Attribute_strategy)
-def test_henshin::text::attribute_update_setter(instance):
-    original = instance.update
-    instance.update = original
-    assert instance.update == original
 
-@given(instance=henshin::text::Attribute_strategy)
-def test_henshin::text::attribute_actiontype_type(instance):
-    assert isinstance(instance.actiontype, str)
-
-
-@given(instance=henshin::text::Attribute_strategy)
-def test_henshin::text::attribute_actiontype_setter(instance):
+@given(instance=henshin_text_Attribute_strategy)
+def test_henshin_text_attribute_actiontype_setter(instance):
     original = instance.actiontype
     instance.actiontype = original
     assert instance.actiontype == original
 
-@given(instance=henshin::text::EClass_strategy)
+
+
+@given(instance=henshin_text_Attribute_strategy)
+def test_henshin_text_attribute_update_setter(instance):
+    original = instance.update
+    instance.update = original
+    assert instance.update == original
+
+@given(instance=henshin_text_EClass_strategy)
 @settings(max_examples=50)
-def test_henshin::text::eclass_instantiation(instance):
-    assert isinstance(instance, henshin::text::EClass)
+def test_henshin_text_eclass_instantiation(instance):
+    assert isinstance(instance, henshin_text_EClass)
 
 @given(instance=ConditionNodeTypes_strategy)
 @settings(max_examples=50)
@@ -2220,184 +2169,163 @@ def test_conditionnodetypes_instantiation(instance):
 def test_rulenodetypes_instantiation(instance):
     assert isinstance(instance, RuleNodeTypes)
 
-@given(instance=henshin::text::EReference_strategy)
+@given(instance=henshin_text_EReference_strategy)
 @settings(max_examples=50)
-def test_henshin::text::ereference_instantiation(instance):
-    assert isinstance(instance, henshin::text::EReference)
+def test_henshin_text_ereference_instantiation(instance):
+    assert isinstance(instance, henshin_text_EReference)
 
-@given(instance=henshin::text::ConditionGraph_strategy)
+@given(instance=henshin_text_ConditionGraph_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditiongraph_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionGraph)
-
-@given(instance=henshin::text::ConditionGraph_strategy)
-def test_henshin::text::conditiongraph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_henshin_text_conditiongraph_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionGraph)
 
 
-@given(instance=henshin::text::ConditionGraph_strategy)
-def test_henshin::text::conditiongraph_name_setter(instance):
+
+@given(instance=henshin_text_ConditionGraph_strategy)
+def test_henshin_text_conditiongraph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=henshin::text::Logic_strategy)
+@given(instance=henshin_text_Logic_strategy)
 @settings(max_examples=50)
-def test_henshin::text::logic_instantiation(instance):
-    assert isinstance(instance, henshin::text::Logic)
+def test_henshin_text_logic_instantiation(instance):
+    assert isinstance(instance, henshin_text_Logic)
 
 @given(instance=ConditionGraphElements_strategy)
 @settings(max_examples=50)
 def test_conditiongraphelements_instantiation(instance):
     assert isinstance(instance, ConditionGraphElements)
 
-@given(instance=henshin::text::ConditionReuseNode_strategy)
+@given(instance=henshin_text_ConditionNode_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditionreusenode_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionReuseNode)
+def test_henshin_text_conditionnode_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionNode)
 
-@given(instance=henshin::text::ConditionNode_strategy)
+@given(instance=henshin_text_ConditionReuseNode_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditionnode_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionNode)
+def test_henshin_text_conditionreusenode_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionReuseNode)
 
-@given(instance=henshin::text::ConditionEdges_strategy)
+@given(instance=henshin_text_ConditionEdges_strategy)
 @settings(max_examples=50)
-def test_henshin::text::conditionedges_instantiation(instance):
-    assert isinstance(instance, henshin::text::ConditionEdges)
+def test_henshin_text_conditionedges_instantiation(instance):
+    assert isinstance(instance, henshin_text_ConditionEdges)
 
-@given(instance=henshin::text::GraphElements_strategy)
+@given(instance=henshin_text_GraphElements_strategy)
 @settings(max_examples=50)
-def test_henshin::text::graphelements_instantiation(instance):
-    assert isinstance(instance, henshin::text::GraphElements)
+def test_henshin_text_graphelements_instantiation(instance):
+    assert isinstance(instance, henshin_text_GraphElements)
 
-@given(instance=henshin::text::Expression_strategy)
+@given(instance=henshin_text_Expression_strategy)
 @settings(max_examples=50)
-def test_henshin::text::expression_instantiation(instance):
-    assert isinstance(instance, henshin::text::Expression)
+def test_henshin_text_expression_instantiation(instance):
+    assert isinstance(instance, henshin_text_Expression)
 
 @given(instance=RuleElement_strategy)
 @settings(max_examples=50)
 def test_ruleelement_instantiation(instance):
     assert isinstance(instance, RuleElement)
 
-@given(instance=henshin::text::Graph_strategy)
+@given(instance=henshin_text_CheckDangling_strategy)
 @settings(max_examples=50)
-def test_henshin::text::graph_instantiation(instance):
-    assert isinstance(instance, henshin::text::Graph)
-
-@given(instance=henshin::text::Conditions_strategy)
-@settings(max_examples=50)
-def test_henshin::text::conditions_instantiation(instance):
-    assert isinstance(instance, henshin::text::Conditions)
-
-@given(instance=henshin::text::CheckDangling_strategy)
-@settings(max_examples=50)
-def test_henshin::text::checkdangling_instantiation(instance):
-    assert isinstance(instance, henshin::text::CheckDangling)
-
-@given(instance=henshin::text::CheckDangling_strategy)
-def test_henshin::text::checkdangling_checkDangling_type(instance):
-    assert isinstance(instance.checkDangling, bool)
+def test_henshin_text_checkdangling_instantiation(instance):
+    assert isinstance(instance, henshin_text_CheckDangling)
 
 
-@given(instance=henshin::text::CheckDangling_strategy)
-def test_henshin::text::checkdangling_checkDangling_setter(instance):
+
+@given(instance=henshin_text_CheckDangling_strategy)
+def test_henshin_text_checkdangling_checkDangling_setter(instance):
     original = instance.checkDangling
     instance.checkDangling = original
     assert instance.checkDangling == original
 
-@given(instance=henshin::text::InjectiveMatching_strategy)
+@given(instance=henshin_text_Conditions_strategy)
 @settings(max_examples=50)
-def test_henshin::text::injectivematching_instantiation(instance):
-    assert isinstance(instance, henshin::text::InjectiveMatching)
+def test_henshin_text_conditions_instantiation(instance):
+    assert isinstance(instance, henshin_text_Conditions)
 
-@given(instance=henshin::text::InjectiveMatching_strategy)
-def test_henshin::text::injectivematching_injectiveMatching_type(instance):
-    assert isinstance(instance.injectiveMatching, bool)
+@given(instance=henshin_text_InjectiveMatching_strategy)
+@settings(max_examples=50)
+def test_henshin_text_injectivematching_instantiation(instance):
+    assert isinstance(instance, henshin_text_InjectiveMatching)
 
 
-@given(instance=henshin::text::InjectiveMatching_strategy)
-def test_henshin::text::injectivematching_injectiveMatching_setter(instance):
+
+@given(instance=henshin_text_InjectiveMatching_strategy)
+def test_henshin_text_injectivematching_injectiveMatching_setter(instance):
     original = instance.injectiveMatching
     instance.injectiveMatching = original
     assert instance.injectiveMatching == original
 
-@given(instance=henshin::text::JavaImport_strategy)
+@given(instance=henshin_text_Graph_strategy)
 @settings(max_examples=50)
-def test_henshin::text::javaimport_instantiation(instance):
-    assert isinstance(instance, henshin::text::JavaImport)
+def test_henshin_text_graph_instantiation(instance):
+    assert isinstance(instance, henshin_text_Graph)
 
-@given(instance=henshin::text::JavaImport_strategy)
-def test_henshin::text::javaimport_packagename_type(instance):
-    assert isinstance(instance.packagename, str)
+@given(instance=henshin_text_JavaImport_strategy)
+@settings(max_examples=50)
+def test_henshin_text_javaimport_instantiation(instance):
+    assert isinstance(instance, henshin_text_JavaImport)
 
 
-@given(instance=henshin::text::JavaImport_strategy)
-def test_henshin::text::javaimport_packagename_setter(instance):
+
+@given(instance=henshin_text_JavaImport_strategy)
+def test_henshin_text_javaimport_packagename_setter(instance):
     original = instance.packagename
     instance.packagename = original
     assert instance.packagename == original
 
-@given(instance=henshin::text::RuleElement_strategy)
+@given(instance=henshin_text_RuleElement_strategy)
 @settings(max_examples=50)
-def test_henshin::text::ruleelement_instantiation(instance):
-    assert isinstance(instance, henshin::text::RuleElement)
+def test_henshin_text_ruleelement_instantiation(instance):
+    assert isinstance(instance, henshin_text_RuleElement)
 
-@given(instance=henshin::text::Parameter_strategy)
+@given(instance=henshin_text_Parameter_strategy)
 @settings(max_examples=50)
-def test_henshin::text::parameter_instantiation(instance):
-    assert isinstance(instance, henshin::text::Parameter)
-
-@given(instance=henshin::text::Parameter_strategy)
-def test_henshin::text::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_henshin_text_parameter_instantiation(instance):
+    assert isinstance(instance, henshin_text_Parameter)
 
 
-@given(instance=henshin::text::Parameter_strategy)
-def test_henshin::text::parameter_name_setter(instance):
+
+@given(instance=henshin_text_Parameter_strategy)
+def test_henshin_text_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=henshin::text::EPackage_strategy)
+@given(instance=henshin_text_EPackage_strategy)
 @settings(max_examples=50)
-def test_henshin::text::epackage_instantiation(instance):
-    assert isinstance(instance, henshin::text::EPackage)
+def test_henshin_text_epackage_instantiation(instance):
+    assert isinstance(instance, henshin_text_EPackage)
 
-@given(instance=henshin::text::ModelElement_strategy)
+@given(instance=henshin_text_ModelElement_strategy)
 @settings(max_examples=50)
-def test_henshin::text::modelelement_instantiation(instance):
-    assert isinstance(instance, henshin::text::ModelElement)
-
-@given(instance=henshin::text::ModelElement_strategy)
-def test_henshin::text::modelelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_henshin_text_modelelement_instantiation(instance):
+    assert isinstance(instance, henshin_text_ModelElement)
 
 
-@given(instance=henshin::text::ModelElement_strategy)
-def test_henshin::text::modelelement_name_setter(instance):
+
+@given(instance=henshin_text_ModelElement_strategy)
+def test_henshin_text_modelelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=henshin::text::RuleNodeTypes_strategy)
+@given(instance=henshin_text_RuleNodeTypes_strategy)
 @settings(max_examples=50)
-def test_henshin::text::rulenodetypes_instantiation(instance):
-    assert isinstance(instance, henshin::text::RuleNodeTypes)
+def test_henshin_text_rulenodetypes_instantiation(instance):
+    assert isinstance(instance, henshin_text_RuleNodeTypes)
 
-@given(instance=henshin::text::Edge_strategy)
+@given(instance=henshin_text_Edge_strategy)
 @settings(max_examples=50)
-def test_henshin::text::edge_instantiation(instance):
-    assert isinstance(instance, henshin::text::Edge)
-
-@given(instance=henshin::text::Edge_strategy)
-def test_henshin::text::edge_actiontype_type(instance):
-    assert isinstance(instance.actiontype, str)
+def test_henshin_text_edge_instantiation(instance):
+    assert isinstance(instance, henshin_text_Edge)
 
 
-@given(instance=henshin::text::Edge_strategy)
-def test_henshin::text::edge_actiontype_setter(instance):
+
+@given(instance=henshin_text_Edge_strategy)
+def test_henshin_text_edge_actiontype_setter(instance):
     original = instance.actiontype
     instance.actiontype = original
     assert instance.actiontype == original
@@ -2407,59 +2335,53 @@ def test_henshin::text::edge_actiontype_setter(instance):
 def test_graphelements_instantiation(instance):
     assert isinstance(instance, GraphElements)
 
-@given(instance=henshin::text::MultiRuleReuseNode_strategy)
+@given(instance=henshin_text_MultiRule_strategy)
 @settings(max_examples=50)
-def test_henshin::text::multirulereusenode_instantiation(instance):
-    assert isinstance(instance, henshin::text::MultiRuleReuseNode)
-
-@given(instance=henshin::text::Formula_strategy)
-@settings(max_examples=50)
-def test_henshin::text::formula_instantiation(instance):
-    assert isinstance(instance, henshin::text::Formula)
-
-@given(instance=henshin::text::Node_strategy)
-@settings(max_examples=50)
-def test_henshin::text::node_instantiation(instance):
-    assert isinstance(instance, henshin::text::Node)
-
-@given(instance=henshin::text::Node_strategy)
-def test_henshin::text::node_actiontype_type(instance):
-    assert isinstance(instance.actiontype, str)
+def test_henshin_text_multirule_instantiation(instance):
+    assert isinstance(instance, henshin_text_MultiRule)
 
 
-@given(instance=henshin::text::Node_strategy)
-def test_henshin::text::node_actiontype_setter(instance):
-    original = instance.actiontype
-    instance.actiontype = original
-    assert instance.actiontype == original
 
-@given(instance=henshin::text::MultiRule_strategy)
-@settings(max_examples=50)
-def test_henshin::text::multirule_instantiation(instance):
-    assert isinstance(instance, henshin::text::MultiRule)
-
-@given(instance=henshin::text::MultiRule_strategy)
-def test_henshin::text::multirule_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=henshin::text::MultiRule_strategy)
-def test_henshin::text::multirule_name_setter(instance):
+@given(instance=henshin_text_MultiRule_strategy)
+def test_henshin_text_multirule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=henshin::text::Edges_strategy)
+@given(instance=henshin_text_Node_strategy)
 @settings(max_examples=50)
-def test_henshin::text::edges_instantiation(instance):
-    assert isinstance(instance, henshin::text::Edges)
+def test_henshin_text_node_instantiation(instance):
+    assert isinstance(instance, henshin_text_Node)
 
-@given(instance=henshin::text::EPackageImport_strategy)
-@settings(max_examples=50)
-def test_henshin::text::epackageimport_instantiation(instance):
-    assert isinstance(instance, henshin::text::EPackageImport)
 
-@given(instance=henshin::text::Model_strategy)
+
+@given(instance=henshin_text_Node_strategy)
+def test_henshin_text_node_actiontype_setter(instance):
+    original = instance.actiontype
+    instance.actiontype = original
+    assert instance.actiontype == original
+
+@given(instance=henshin_text_MultiRuleReuseNode_strategy)
 @settings(max_examples=50)
-def test_henshin::text::model_instantiation(instance):
-    assert isinstance(instance, henshin::text::Model)
+def test_henshin_text_multirulereusenode_instantiation(instance):
+    assert isinstance(instance, henshin_text_MultiRuleReuseNode)
+
+@given(instance=henshin_text_Formula_strategy)
+@settings(max_examples=50)
+def test_henshin_text_formula_instantiation(instance):
+    assert isinstance(instance, henshin_text_Formula)
+
+@given(instance=henshin_text_Edges_strategy)
+@settings(max_examples=50)
+def test_henshin_text_edges_instantiation(instance):
+    assert isinstance(instance, henshin_text_Edges)
+
+@given(instance=henshin_text_EPackageImport_strategy)
+@settings(max_examples=50)
+def test_henshin_text_epackageimport_instantiation(instance):
+    assert isinstance(instance, henshin_text_EPackageImport)
+
+@given(instance=henshin_text_Model_strategy)
+@settings(max_examples=50)
+def test_henshin_text_model_instantiation(instance):
+    assert isinstance(instance, henshin_text_Model)

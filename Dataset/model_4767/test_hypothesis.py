@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    types::EEnum,
+from python_code import (
+    types_EEnum,
     FunctionType,
-    types::MethodType,
-    types::EClass,
+    types_MethodType,
+    types_EClass,
     NumberType,
-    types::RealType,
+    types_RealType,
     RealType,
-    types::IntegerType,
+    types_IntegerType,
     DataType,
-    types::NumberType,
-    types::StringType,
-    types::BooleanType,
+    types_StringType,
+    types_NumberType,
+    types_BooleanType,
     Type,
-    types::MapType,
-    types::EnumType,
-    types::CollectionType,
-    types::FunctionType,
-    types::ObjectType,
-    types::DataType,
-    types::Type,
+    types_CollectionType,
+    types_FunctionType,
+    types_EnumType,
+    types_ObjectType,
+    types_MapType,
+    types_DataType,
+    types_Type,
 )
 
 # =============================================================================
@@ -34,16 +34,16 @@ from classes import (
 
 
 
-def test_types::eenum_is_not_abstract():
-    assert not inspect.isabstract(types::EEnum)
+def test_types_eenum_is_not_abstract():
+    assert not inspect.isabstract(types_EEnum)
 
 
-def test_types::eenum_constructor_exists():
-    assert callable(types::EEnum.__init__)
+def test_types_eenum_constructor_exists():
+    assert callable(types_EEnum.__init__)
 
 
-def test_types::eenum_constructor_args():
-    sig = inspect.signature(types::EEnum.__init__)
+def test_types_eenum_constructor_args():
+    sig = inspect.signature(types_EEnum.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -62,30 +62,30 @@ def test_functiontype_constructor_args():
 
 
 
-def test_types::methodtype_is_not_abstract():
-    assert not inspect.isabstract(types::MethodType)
+def test_types_methodtype_is_not_abstract():
+    assert not inspect.isabstract(types_MethodType)
 
 
-def test_types::methodtype_constructor_exists():
-    assert callable(types::MethodType.__init__)
+def test_types_methodtype_constructor_exists():
+    assert callable(types_MethodType.__init__)
 
 
-def test_types::methodtype_constructor_args():
-    sig = inspect.signature(types::MethodType.__init__)
+def test_types_methodtype_constructor_args():
+    sig = inspect.signature(types_MethodType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::eclass_is_not_abstract():
-    assert not inspect.isabstract(types::EClass)
+def test_types_eclass_is_not_abstract():
+    assert not inspect.isabstract(types_EClass)
 
 
-def test_types::eclass_constructor_exists():
-    assert callable(types::EClass.__init__)
+def test_types_eclass_constructor_exists():
+    assert callable(types_EClass.__init__)
 
 
-def test_types::eclass_constructor_args():
-    sig = inspect.signature(types::EClass.__init__)
+def test_types_eclass_constructor_args():
+    sig = inspect.signature(types_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -104,16 +104,16 @@ def test_numbertype_constructor_args():
 
 
 
-def test_types::realtype_is_not_abstract():
-    assert not inspect.isabstract(types::RealType)
+def test_types_realtype_is_not_abstract():
+    assert not inspect.isabstract(types_RealType)
 
 
-def test_types::realtype_constructor_exists():
-    assert callable(types::RealType.__init__)
+def test_types_realtype_constructor_exists():
+    assert callable(types_RealType.__init__)
 
 
-def test_types::realtype_constructor_args():
-    sig = inspect.signature(types::RealType.__init__)
+def test_types_realtype_constructor_args():
+    sig = inspect.signature(types_RealType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -132,16 +132,16 @@ def test_realtype_constructor_args():
 
 
 
-def test_types::integertype_is_not_abstract():
-    assert not inspect.isabstract(types::IntegerType)
+def test_types_integertype_is_not_abstract():
+    assert not inspect.isabstract(types_IntegerType)
 
 
-def test_types::integertype_constructor_exists():
-    assert callable(types::IntegerType.__init__)
+def test_types_integertype_constructor_exists():
+    assert callable(types_IntegerType.__init__)
 
 
-def test_types::integertype_constructor_args():
-    sig = inspect.signature(types::IntegerType.__init__)
+def test_types_integertype_constructor_args():
+    sig = inspect.signature(types_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -160,44 +160,44 @@ def test_datatype_constructor_args():
 
 
 
-def test_types::numbertype_is_not_abstract():
-    assert not inspect.isabstract(types::NumberType)
+def test_types_stringtype_is_not_abstract():
+    assert not inspect.isabstract(types_StringType)
 
 
-def test_types::numbertype_constructor_exists():
-    assert callable(types::NumberType.__init__)
+def test_types_stringtype_constructor_exists():
+    assert callable(types_StringType.__init__)
 
 
-def test_types::numbertype_constructor_args():
-    sig = inspect.signature(types::NumberType.__init__)
+def test_types_stringtype_constructor_args():
+    sig = inspect.signature(types_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::stringtype_is_not_abstract():
-    assert not inspect.isabstract(types::StringType)
+def test_types_numbertype_is_not_abstract():
+    assert not inspect.isabstract(types_NumberType)
 
 
-def test_types::stringtype_constructor_exists():
-    assert callable(types::StringType.__init__)
+def test_types_numbertype_constructor_exists():
+    assert callable(types_NumberType.__init__)
 
 
-def test_types::stringtype_constructor_args():
-    sig = inspect.signature(types::StringType.__init__)
+def test_types_numbertype_constructor_args():
+    sig = inspect.signature(types_NumberType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::booleantype_is_not_abstract():
-    assert not inspect.isabstract(types::BooleanType)
+def test_types_booleantype_is_not_abstract():
+    assert not inspect.isabstract(types_BooleanType)
 
 
-def test_types::booleantype_constructor_exists():
-    assert callable(types::BooleanType.__init__)
+def test_types_booleantype_constructor_exists():
+    assert callable(types_BooleanType.__init__)
 
 
-def test_types::booleantype_constructor_args():
-    sig = inspect.signature(types::BooleanType.__init__)
+def test_types_booleantype_constructor_args():
+    sig = inspect.signature(types_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -216,65 +216,37 @@ def test_type_constructor_args():
 
 
 
-def test_types::maptype_is_not_abstract():
-    assert not inspect.isabstract(types::MapType)
+def test_types_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(types_CollectionType)
 
 
-def test_types::maptype_constructor_exists():
-    assert callable(types::MapType.__init__)
+def test_types_collectiontype_constructor_exists():
+    assert callable(types_CollectionType.__init__)
 
 
-def test_types::maptype_constructor_args():
-    sig = inspect.signature(types::MapType.__init__)
+def test_types_collectiontype_constructor_args():
+    sig = inspect.signature(types_CollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::enumtype_is_not_abstract():
-    assert not inspect.isabstract(types::EnumType)
+def test_types_functiontype_is_not_abstract():
+    assert not inspect.isabstract(types_FunctionType)
 
 
-def test_types::enumtype_constructor_exists():
-    assert callable(types::EnumType.__init__)
+def test_types_functiontype_constructor_exists():
+    assert callable(types_FunctionType.__init__)
 
 
-def test_types::enumtype_constructor_args():
-    sig = inspect.signature(types::EnumType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(types::CollectionType)
-
-
-def test_types::collectiontype_constructor_exists():
-    assert callable(types::CollectionType.__init__)
-
-
-def test_types::collectiontype_constructor_args():
-    sig = inspect.signature(types::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::functiontype_is_not_abstract():
-    assert not inspect.isabstract(types::FunctionType)
-
-
-def test_types::functiontype_constructor_exists():
-    assert callable(types::FunctionType.__init__)
-
-
-def test_types::functiontype_constructor_args():
-    sig = inspect.signature(types::FunctionType.__init__)
+def test_types_functiontype_constructor_args():
+    sig = inspect.signature(types_FunctionType.__init__)
     params = list(sig.parameters.keys())
     assert "optionalParameterCount" in params, "Missing parameter 'optionalParameterCount'"
 
-def test_types::functiontype_has_optionalParameterCount():
-    assert hasattr(types::FunctionType, "optionalParameterCount")
+def test_types_functiontype_has_optionalParameterCount():
+    assert hasattr(types_FunctionType, "optionalParameterCount")
     descriptor = None
-    for klass in types::FunctionType.__mro__:
+    for klass in types_FunctionType.__mro__:
         if "optionalParameterCount" in klass.__dict__:
             descriptor = klass.__dict__["optionalParameterCount"]
             break
@@ -282,51 +254,79 @@ def test_types::functiontype_has_optionalParameterCount():
 
 
 
-def test_types::objecttype_is_not_abstract():
-    assert not inspect.isabstract(types::ObjectType)
+def test_types_enumtype_is_not_abstract():
+    assert not inspect.isabstract(types_EnumType)
 
 
-def test_types::objecttype_constructor_exists():
-    assert callable(types::ObjectType.__init__)
+def test_types_enumtype_constructor_exists():
+    assert callable(types_EnumType.__init__)
 
 
-def test_types::objecttype_constructor_args():
-    sig = inspect.signature(types::ObjectType.__init__)
+def test_types_enumtype_constructor_args():
+    sig = inspect.signature(types_EnumType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::datatype_is_not_abstract():
-    assert not inspect.isabstract(types::DataType)
+def test_types_objecttype_is_not_abstract():
+    assert not inspect.isabstract(types_ObjectType)
 
 
-def test_types::datatype_constructor_exists():
-    assert callable(types::DataType.__init__)
+def test_types_objecttype_constructor_exists():
+    assert callable(types_ObjectType.__init__)
 
 
-def test_types::datatype_constructor_args():
-    sig = inspect.signature(types::DataType.__init__)
+def test_types_objecttype_constructor_args():
+    sig = inspect.signature(types_ObjectType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::type_is_not_abstract():
-    assert not inspect.isabstract(types::Type)
+def test_types_maptype_is_not_abstract():
+    assert not inspect.isabstract(types_MapType)
 
 
-def test_types::type_constructor_exists():
-    assert callable(types::Type.__init__)
+def test_types_maptype_constructor_exists():
+    assert callable(types_MapType.__init__)
 
 
-def test_types::type_constructor_args():
-    sig = inspect.signature(types::Type.__init__)
+def test_types_maptype_constructor_args():
+    sig = inspect.signature(types_MapType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_datatype_is_not_abstract():
+    assert not inspect.isabstract(types_DataType)
+
+
+def test_types_datatype_constructor_exists():
+    assert callable(types_DataType.__init__)
+
+
+def test_types_datatype_constructor_args():
+    sig = inspect.signature(types_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_type_is_not_abstract():
+    assert not inspect.isabstract(types_Type)
+
+
+def test_types_type_constructor_exists():
+    assert callable(types_Type.__init__)
+
+
+def test_types_type_constructor_args():
+    sig = inspect.signature(types_Type.__init__)
     params = list(sig.parameters.keys())
     assert "inExtentDomain" in params, "Missing parameter 'inExtentDomain'"
 
-def test_types::type_has_inExtentDomain():
-    assert hasattr(types::Type, "inExtentDomain")
+def test_types_type_has_inExtentDomain():
+    assert hasattr(types_Type, "inExtentDomain")
     descriptor = None
-    for klass in types::Type.__mro__:
+    for klass in types_Type.__mro__:
         if "inExtentDomain" in klass.__dict__:
             descriptor = klass.__dict__["inExtentDomain"]
             break
@@ -344,189 +344,183 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-types::EEnum_strategy = st.builds(
-    types::EEnum,
+types_EEnum_strategy = st.builds(
+    types_EEnum,
 )
 FunctionType_strategy = st.builds(
     FunctionType,
 )
-types::MethodType_strategy = st.builds(
-    types::MethodType,
+types_MethodType_strategy = st.builds(
+    types_MethodType,
 )
-types::EClass_strategy = st.builds(
-    types::EClass,
+types_EClass_strategy = st.builds(
+    types_EClass,
 )
 NumberType_strategy = st.builds(
     NumberType,
 )
-types::RealType_strategy = st.builds(
-    types::RealType,
+types_RealType_strategy = st.builds(
+    types_RealType,
 )
 RealType_strategy = st.builds(
     RealType,
 )
-types::IntegerType_strategy = st.builds(
-    types::IntegerType,
+types_IntegerType_strategy = st.builds(
+    types_IntegerType,
 )
 DataType_strategy = st.builds(
     DataType,
 )
-types::NumberType_strategy = st.builds(
-    types::NumberType,
+types_StringType_strategy = st.builds(
+    types_StringType,
 )
-types::StringType_strategy = st.builds(
-    types::StringType,
+types_NumberType_strategy = st.builds(
+    types_NumberType,
 )
-types::BooleanType_strategy = st.builds(
-    types::BooleanType,
+types_BooleanType_strategy = st.builds(
+    types_BooleanType,
 )
 Type_strategy = st.builds(
     Type,
 )
-types::MapType_strategy = st.builds(
-    types::MapType,
+types_CollectionType_strategy = st.builds(
+    types_CollectionType,
 )
-types::EnumType_strategy = st.builds(
-    types::EnumType,
-)
-types::CollectionType_strategy = st.builds(
-    types::CollectionType,
-)
-types::FunctionType_strategy = st.builds(
-    types::FunctionType,
+types_FunctionType_strategy = st.builds(
+    types_FunctionType,
     optionalParameterCount=
         st.integers()
 )
-types::ObjectType_strategy = st.builds(
-    types::ObjectType,
+types_EnumType_strategy = st.builds(
+    types_EnumType,
 )
-types::DataType_strategy = st.builds(
-    types::DataType,
+types_ObjectType_strategy = st.builds(
+    types_ObjectType,
 )
-types::Type_strategy = st.builds(
-    types::Type,
+types_MapType_strategy = st.builds(
+    types_MapType,
+)
+types_DataType_strategy = st.builds(
+    types_DataType,
+)
+types_Type_strategy = st.builds(
+    types_Type,
     inExtentDomain=
         st.booleans()
 )
 
-@given(instance=types::EEnum_strategy)
+@given(instance=types_EEnum_strategy)
 @settings(max_examples=50)
-def test_types::eenum_instantiation(instance):
-    assert isinstance(instance, types::EEnum)
+def test_types_eenum_instantiation(instance):
+    assert isinstance(instance, types_EEnum)
 
 @given(instance=FunctionType_strategy)
 @settings(max_examples=50)
 def test_functiontype_instantiation(instance):
     assert isinstance(instance, FunctionType)
 
-@given(instance=types::MethodType_strategy)
+@given(instance=types_MethodType_strategy)
 @settings(max_examples=50)
-def test_types::methodtype_instantiation(instance):
-    assert isinstance(instance, types::MethodType)
+def test_types_methodtype_instantiation(instance):
+    assert isinstance(instance, types_MethodType)
 
-@given(instance=types::EClass_strategy)
+@given(instance=types_EClass_strategy)
 @settings(max_examples=50)
-def test_types::eclass_instantiation(instance):
-    assert isinstance(instance, types::EClass)
+def test_types_eclass_instantiation(instance):
+    assert isinstance(instance, types_EClass)
 
 @given(instance=NumberType_strategy)
 @settings(max_examples=50)
 def test_numbertype_instantiation(instance):
     assert isinstance(instance, NumberType)
 
-@given(instance=types::RealType_strategy)
+@given(instance=types_RealType_strategy)
 @settings(max_examples=50)
-def test_types::realtype_instantiation(instance):
-    assert isinstance(instance, types::RealType)
+def test_types_realtype_instantiation(instance):
+    assert isinstance(instance, types_RealType)
 
 @given(instance=RealType_strategy)
 @settings(max_examples=50)
 def test_realtype_instantiation(instance):
     assert isinstance(instance, RealType)
 
-@given(instance=types::IntegerType_strategy)
+@given(instance=types_IntegerType_strategy)
 @settings(max_examples=50)
-def test_types::integertype_instantiation(instance):
-    assert isinstance(instance, types::IntegerType)
+def test_types_integertype_instantiation(instance):
+    assert isinstance(instance, types_IntegerType)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=types::NumberType_strategy)
+@given(instance=types_StringType_strategy)
 @settings(max_examples=50)
-def test_types::numbertype_instantiation(instance):
-    assert isinstance(instance, types::NumberType)
+def test_types_stringtype_instantiation(instance):
+    assert isinstance(instance, types_StringType)
 
-@given(instance=types::StringType_strategy)
+@given(instance=types_NumberType_strategy)
 @settings(max_examples=50)
-def test_types::stringtype_instantiation(instance):
-    assert isinstance(instance, types::StringType)
+def test_types_numbertype_instantiation(instance):
+    assert isinstance(instance, types_NumberType)
 
-@given(instance=types::BooleanType_strategy)
+@given(instance=types_BooleanType_strategy)
 @settings(max_examples=50)
-def test_types::booleantype_instantiation(instance):
-    assert isinstance(instance, types::BooleanType)
+def test_types_booleantype_instantiation(instance):
+    assert isinstance(instance, types_BooleanType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=types::MapType_strategy)
+@given(instance=types_CollectionType_strategy)
 @settings(max_examples=50)
-def test_types::maptype_instantiation(instance):
-    assert isinstance(instance, types::MapType)
+def test_types_collectiontype_instantiation(instance):
+    assert isinstance(instance, types_CollectionType)
 
-@given(instance=types::EnumType_strategy)
+@given(instance=types_FunctionType_strategy)
 @settings(max_examples=50)
-def test_types::enumtype_instantiation(instance):
-    assert isinstance(instance, types::EnumType)
-
-@given(instance=types::CollectionType_strategy)
-@settings(max_examples=50)
-def test_types::collectiontype_instantiation(instance):
-    assert isinstance(instance, types::CollectionType)
-
-@given(instance=types::FunctionType_strategy)
-@settings(max_examples=50)
-def test_types::functiontype_instantiation(instance):
-    assert isinstance(instance, types::FunctionType)
-
-@given(instance=types::FunctionType_strategy)
-def test_types::functiontype_optionalParameterCount_type(instance):
-    assert isinstance(instance.optionalParameterCount, int)
+def test_types_functiontype_instantiation(instance):
+    assert isinstance(instance, types_FunctionType)
 
 
-@given(instance=types::FunctionType_strategy)
-def test_types::functiontype_optionalParameterCount_setter(instance):
+
+@given(instance=types_FunctionType_strategy)
+def test_types_functiontype_optionalParameterCount_setter(instance):
     original = instance.optionalParameterCount
     instance.optionalParameterCount = original
     assert instance.optionalParameterCount == original
 
-@given(instance=types::ObjectType_strategy)
+@given(instance=types_EnumType_strategy)
 @settings(max_examples=50)
-def test_types::objecttype_instantiation(instance):
-    assert isinstance(instance, types::ObjectType)
+def test_types_enumtype_instantiation(instance):
+    assert isinstance(instance, types_EnumType)
 
-@given(instance=types::DataType_strategy)
+@given(instance=types_ObjectType_strategy)
 @settings(max_examples=50)
-def test_types::datatype_instantiation(instance):
-    assert isinstance(instance, types::DataType)
+def test_types_objecttype_instantiation(instance):
+    assert isinstance(instance, types_ObjectType)
 
-@given(instance=types::Type_strategy)
+@given(instance=types_MapType_strategy)
 @settings(max_examples=50)
-def test_types::type_instantiation(instance):
-    assert isinstance(instance, types::Type)
+def test_types_maptype_instantiation(instance):
+    assert isinstance(instance, types_MapType)
 
-@given(instance=types::Type_strategy)
-def test_types::type_inExtentDomain_type(instance):
-    assert isinstance(instance.inExtentDomain, bool)
+@given(instance=types_DataType_strategy)
+@settings(max_examples=50)
+def test_types_datatype_instantiation(instance):
+    assert isinstance(instance, types_DataType)
+
+@given(instance=types_Type_strategy)
+@settings(max_examples=50)
+def test_types_type_instantiation(instance):
+    assert isinstance(instance, types_Type)
 
 
-@given(instance=types::Type_strategy)
-def test_types::type_inExtentDomain_setter(instance):
+
+@given(instance=types_Type_strategy)
+def test_types_type_inExtentDomain_setter(instance):
     original = instance.inExtentDomain
     instance.inExtentDomain = original
     assert instance.inExtentDomain == original

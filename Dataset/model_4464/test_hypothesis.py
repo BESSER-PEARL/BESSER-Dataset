@@ -3,45 +3,45 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Var,
-    robot::Declaration,
-    robot::Affectation,
+    robot_Declaration,
+    robot_Affectation,
     Condition,
-    robot::Compare,
-    robot::Value,
+    robot_Compare,
+    robot_Value,
     Operator,
-    robot::Different,
-    robot::Operator,
+    robot_Different,
+    robot_Operator,
     Movement,
-    robot::Stop,
-    robot::Backward,
-    robot::Sleep,
-    robot::Forward,
+    robot_Stop,
+    robot_Sleep,
+    robot_Backward,
+    robot_Forward,
     Values,
-    robot::Variable,
-    robot::TInteger,
-    robot::TString,
-    robot::TBoolean,
-    robot::TFloat,
-    robot::Sensor,
-    robot::Values,
-    robot::Condition,
-    robot::TurnRight,
-    robot::TurnLeft,
-    robot::Operation,
+    robot_TInteger,
+    robot_TFloat,
+    robot_TBoolean,
+    robot_TString,
+    robot_Variable,
+    robot_Sensor,
+    robot_Values,
+    robot_Condition,
+    robot_TurnRight,
+    robot_TurnLeft,
+    robot_Operation,
     Operation,
-    robot::Event,
-    robot::Echo,
-    robot::Alternative,
-    robot::Var,
-    robot::While,
-    robot::Whenever,
-    robot::Movement,
-    robot::Sequence,
-    robot::Mission,
+    robot_While,
+    robot_Event,
+    robot_Echo,
+    robot_Alternative,
+    robot_Whenever,
+    robot_Movement,
+    robot_Var,
+    robot_Sequence,
+    robot_Mission,
     ESensor,
     EOperator,
 )
@@ -66,30 +66,30 @@ def test_var_constructor_args():
 
 
 
-def test_robot::declaration_is_not_abstract():
-    assert not inspect.isabstract(robot::Declaration)
+def test_robot_declaration_is_not_abstract():
+    assert not inspect.isabstract(robot_Declaration)
 
 
-def test_robot::declaration_constructor_exists():
-    assert callable(robot::Declaration.__init__)
+def test_robot_declaration_constructor_exists():
+    assert callable(robot_Declaration.__init__)
 
 
-def test_robot::declaration_constructor_args():
-    sig = inspect.signature(robot::Declaration.__init__)
+def test_robot_declaration_constructor_args():
+    sig = inspect.signature(robot_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::affectation_is_not_abstract():
-    assert not inspect.isabstract(robot::Affectation)
+def test_robot_affectation_is_not_abstract():
+    assert not inspect.isabstract(robot_Affectation)
 
 
-def test_robot::affectation_constructor_exists():
-    assert callable(robot::Affectation.__init__)
+def test_robot_affectation_constructor_exists():
+    assert callable(robot_Affectation.__init__)
 
 
-def test_robot::affectation_constructor_args():
-    sig = inspect.signature(robot::Affectation.__init__)
+def test_robot_affectation_constructor_args():
+    sig = inspect.signature(robot_Affectation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,30 +108,30 @@ def test_condition_constructor_args():
 
 
 
-def test_robot::compare_is_not_abstract():
-    assert not inspect.isabstract(robot::Compare)
+def test_robot_compare_is_not_abstract():
+    assert not inspect.isabstract(robot_Compare)
 
 
-def test_robot::compare_constructor_exists():
-    assert callable(robot::Compare.__init__)
+def test_robot_compare_constructor_exists():
+    assert callable(robot_Compare.__init__)
 
 
-def test_robot::compare_constructor_args():
-    sig = inspect.signature(robot::Compare.__init__)
+def test_robot_compare_constructor_args():
+    sig = inspect.signature(robot_Compare.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::value_is_not_abstract():
-    assert not inspect.isabstract(robot::Value)
+def test_robot_value_is_not_abstract():
+    assert not inspect.isabstract(robot_Value)
 
 
-def test_robot::value_constructor_exists():
-    assert callable(robot::Value.__init__)
+def test_robot_value_constructor_exists():
+    assert callable(robot_Value.__init__)
 
 
-def test_robot::value_constructor_args():
-    sig = inspect.signature(robot::Value.__init__)
+def test_robot_value_constructor_args():
+    sig = inspect.signature(robot_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -150,37 +150,37 @@ def test_operator_constructor_args():
 
 
 
-def test_robot::different_is_not_abstract():
-    assert not inspect.isabstract(robot::Different)
+def test_robot_different_is_not_abstract():
+    assert not inspect.isabstract(robot_Different)
 
 
-def test_robot::different_constructor_exists():
-    assert callable(robot::Different.__init__)
+def test_robot_different_constructor_exists():
+    assert callable(robot_Different.__init__)
 
 
-def test_robot::different_constructor_args():
-    sig = inspect.signature(robot::Different.__init__)
+def test_robot_different_constructor_args():
+    sig = inspect.signature(robot_Different.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::operator_is_not_abstract():
-    assert not inspect.isabstract(robot::Operator)
+def test_robot_operator_is_not_abstract():
+    assert not inspect.isabstract(robot_Operator)
 
 
-def test_robot::operator_constructor_exists():
-    assert callable(robot::Operator.__init__)
+def test_robot_operator_constructor_exists():
+    assert callable(robot_Operator.__init__)
 
 
-def test_robot::operator_constructor_args():
-    sig = inspect.signature(robot::Operator.__init__)
+def test_robot_operator_constructor_args():
+    sig = inspect.signature(robot_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_robot::operator_has_type():
-    assert hasattr(robot::Operator, "type")
+def test_robot_operator_has_type():
+    assert hasattr(robot_Operator, "type")
     descriptor = None
-    for klass in robot::Operator.__mro__:
+    for klass in robot_Operator.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -202,58 +202,58 @@ def test_movement_constructor_args():
 
 
 
-def test_robot::stop_is_not_abstract():
-    assert not inspect.isabstract(robot::Stop)
+def test_robot_stop_is_not_abstract():
+    assert not inspect.isabstract(robot_Stop)
 
 
-def test_robot::stop_constructor_exists():
-    assert callable(robot::Stop.__init__)
+def test_robot_stop_constructor_exists():
+    assert callable(robot_Stop.__init__)
 
 
-def test_robot::stop_constructor_args():
-    sig = inspect.signature(robot::Stop.__init__)
+def test_robot_stop_constructor_args():
+    sig = inspect.signature(robot_Stop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::backward_is_not_abstract():
-    assert not inspect.isabstract(robot::Backward)
+def test_robot_sleep_is_not_abstract():
+    assert not inspect.isabstract(robot_Sleep)
 
 
-def test_robot::backward_constructor_exists():
-    assert callable(robot::Backward.__init__)
+def test_robot_sleep_constructor_exists():
+    assert callable(robot_Sleep.__init__)
 
 
-def test_robot::backward_constructor_args():
-    sig = inspect.signature(robot::Backward.__init__)
+def test_robot_sleep_constructor_args():
+    sig = inspect.signature(robot_Sleep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::sleep_is_not_abstract():
-    assert not inspect.isabstract(robot::Sleep)
+def test_robot_backward_is_not_abstract():
+    assert not inspect.isabstract(robot_Backward)
 
 
-def test_robot::sleep_constructor_exists():
-    assert callable(robot::Sleep.__init__)
+def test_robot_backward_constructor_exists():
+    assert callable(robot_Backward.__init__)
 
 
-def test_robot::sleep_constructor_args():
-    sig = inspect.signature(robot::Sleep.__init__)
+def test_robot_backward_constructor_args():
+    sig = inspect.signature(robot_Backward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::forward_is_not_abstract():
-    assert not inspect.isabstract(robot::Forward)
+def test_robot_forward_is_not_abstract():
+    assert not inspect.isabstract(robot_Forward)
 
 
-def test_robot::forward_constructor_exists():
-    assert callable(robot::Forward.__init__)
+def test_robot_forward_constructor_exists():
+    assert callable(robot_Forward.__init__)
 
 
-def test_robot::forward_constructor_args():
-    sig = inspect.signature(robot::Forward.__init__)
+def test_robot_forward_constructor_args():
+    sig = inspect.signature(robot_Forward.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -272,23 +272,119 @@ def test_values_constructor_args():
 
 
 
-def test_robot::variable_is_not_abstract():
-    assert not inspect.isabstract(robot::Variable)
+def test_robot_tinteger_is_not_abstract():
+    assert not inspect.isabstract(robot_TInteger)
 
 
-def test_robot::variable_constructor_exists():
-    assert callable(robot::Variable.__init__)
+def test_robot_tinteger_constructor_exists():
+    assert callable(robot_TInteger.__init__)
 
 
-def test_robot::variable_constructor_args():
-    sig = inspect.signature(robot::Variable.__init__)
+def test_robot_tinteger_constructor_args():
+    sig = inspect.signature(robot_TInteger.__init__)
+    params = list(sig.parameters.keys())
+    assert "Value" in params, "Missing parameter 'Value'"
+
+def test_robot_tinteger_has_Value():
+    assert hasattr(robot_TInteger, "Value")
+    descriptor = None
+    for klass in robot_TInteger.__mro__:
+        if "Value" in klass.__dict__:
+            descriptor = klass.__dict__["Value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_tfloat_is_not_abstract():
+    assert not inspect.isabstract(robot_TFloat)
+
+
+def test_robot_tfloat_constructor_exists():
+    assert callable(robot_TFloat.__init__)
+
+
+def test_robot_tfloat_constructor_args():
+    sig = inspect.signature(robot_TFloat.__init__)
+    params = list(sig.parameters.keys())
+    assert "Value" in params, "Missing parameter 'Value'"
+
+def test_robot_tfloat_has_Value():
+    assert hasattr(robot_TFloat, "Value")
+    descriptor = None
+    for klass in robot_TFloat.__mro__:
+        if "Value" in klass.__dict__:
+            descriptor = klass.__dict__["Value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_tboolean_is_not_abstract():
+    assert not inspect.isabstract(robot_TBoolean)
+
+
+def test_robot_tboolean_constructor_exists():
+    assert callable(robot_TBoolean.__init__)
+
+
+def test_robot_tboolean_constructor_args():
+    sig = inspect.signature(robot_TBoolean.__init__)
+    params = list(sig.parameters.keys())
+    assert "Value" in params, "Missing parameter 'Value'"
+
+def test_robot_tboolean_has_Value():
+    assert hasattr(robot_TBoolean, "Value")
+    descriptor = None
+    for klass in robot_TBoolean.__mro__:
+        if "Value" in klass.__dict__:
+            descriptor = klass.__dict__["Value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_tstring_is_not_abstract():
+    assert not inspect.isabstract(robot_TString)
+
+
+def test_robot_tstring_constructor_exists():
+    assert callable(robot_TString.__init__)
+
+
+def test_robot_tstring_constructor_args():
+    sig = inspect.signature(robot_TString.__init__)
+    params = list(sig.parameters.keys())
+    assert "Value" in params, "Missing parameter 'Value'"
+
+def test_robot_tstring_has_Value():
+    assert hasattr(robot_TString, "Value")
+    descriptor = None
+    for klass in robot_TString.__mro__:
+        if "Value" in klass.__dict__:
+            descriptor = klass.__dict__["Value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_variable_is_not_abstract():
+    assert not inspect.isabstract(robot_Variable)
+
+
+def test_robot_variable_constructor_exists():
+    assert callable(robot_Variable.__init__)
+
+
+def test_robot_variable_constructor_args():
+    sig = inspect.signature(robot_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_robot::variable_has_Name():
-    assert hasattr(robot::Variable, "Name")
+def test_robot_variable_has_Name():
+    assert hasattr(robot_Variable, "Name")
     descriptor = None
-    for klass in robot::Variable.__mro__:
+    for klass in robot_Variable.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -296,119 +392,23 @@ def test_robot::variable_has_Name():
 
 
 
-def test_robot::tinteger_is_not_abstract():
-    assert not inspect.isabstract(robot::TInteger)
+def test_robot_sensor_is_not_abstract():
+    assert not inspect.isabstract(robot_Sensor)
 
 
-def test_robot::tinteger_constructor_exists():
-    assert callable(robot::TInteger.__init__)
+def test_robot_sensor_constructor_exists():
+    assert callable(robot_Sensor.__init__)
 
 
-def test_robot::tinteger_constructor_args():
-    sig = inspect.signature(robot::TInteger.__init__)
-    params = list(sig.parameters.keys())
-    assert "Value" in params, "Missing parameter 'Value'"
-
-def test_robot::tinteger_has_Value():
-    assert hasattr(robot::TInteger, "Value")
-    descriptor = None
-    for klass in robot::TInteger.__mro__:
-        if "Value" in klass.__dict__:
-            descriptor = klass.__dict__["Value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::tstring_is_not_abstract():
-    assert not inspect.isabstract(robot::TString)
-
-
-def test_robot::tstring_constructor_exists():
-    assert callable(robot::TString.__init__)
-
-
-def test_robot::tstring_constructor_args():
-    sig = inspect.signature(robot::TString.__init__)
-    params = list(sig.parameters.keys())
-    assert "Value" in params, "Missing parameter 'Value'"
-
-def test_robot::tstring_has_Value():
-    assert hasattr(robot::TString, "Value")
-    descriptor = None
-    for klass in robot::TString.__mro__:
-        if "Value" in klass.__dict__:
-            descriptor = klass.__dict__["Value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::tboolean_is_not_abstract():
-    assert not inspect.isabstract(robot::TBoolean)
-
-
-def test_robot::tboolean_constructor_exists():
-    assert callable(robot::TBoolean.__init__)
-
-
-def test_robot::tboolean_constructor_args():
-    sig = inspect.signature(robot::TBoolean.__init__)
-    params = list(sig.parameters.keys())
-    assert "Value" in params, "Missing parameter 'Value'"
-
-def test_robot::tboolean_has_Value():
-    assert hasattr(robot::TBoolean, "Value")
-    descriptor = None
-    for klass in robot::TBoolean.__mro__:
-        if "Value" in klass.__dict__:
-            descriptor = klass.__dict__["Value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::tfloat_is_not_abstract():
-    assert not inspect.isabstract(robot::TFloat)
-
-
-def test_robot::tfloat_constructor_exists():
-    assert callable(robot::TFloat.__init__)
-
-
-def test_robot::tfloat_constructor_args():
-    sig = inspect.signature(robot::TFloat.__init__)
-    params = list(sig.parameters.keys())
-    assert "Value" in params, "Missing parameter 'Value'"
-
-def test_robot::tfloat_has_Value():
-    assert hasattr(robot::TFloat, "Value")
-    descriptor = None
-    for klass in robot::TFloat.__mro__:
-        if "Value" in klass.__dict__:
-            descriptor = klass.__dict__["Value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::sensor_is_not_abstract():
-    assert not inspect.isabstract(robot::Sensor)
-
-
-def test_robot::sensor_constructor_exists():
-    assert callable(robot::Sensor.__init__)
-
-
-def test_robot::sensor_constructor_args():
-    sig = inspect.signature(robot::Sensor.__init__)
+def test_robot_sensor_constructor_args():
+    sig = inspect.signature(robot_Sensor.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_robot::sensor_has_name():
-    assert hasattr(robot::Sensor, "name")
+def test_robot_sensor_has_name():
+    assert hasattr(robot_Sensor, "name")
     descriptor = None
-    for klass in robot::Sensor.__mro__:
+    for klass in robot_Sensor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -416,72 +416,72 @@ def test_robot::sensor_has_name():
 
 
 
-def test_robot::values_is_not_abstract():
-    assert not inspect.isabstract(robot::Values)
+def test_robot_values_is_not_abstract():
+    assert not inspect.isabstract(robot_Values)
 
 
-def test_robot::values_constructor_exists():
-    assert callable(robot::Values.__init__)
+def test_robot_values_constructor_exists():
+    assert callable(robot_Values.__init__)
 
 
-def test_robot::values_constructor_args():
-    sig = inspect.signature(robot::Values.__init__)
+def test_robot_values_constructor_args():
+    sig = inspect.signature(robot_Values.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::condition_is_not_abstract():
-    assert not inspect.isabstract(robot::Condition)
+def test_robot_condition_is_not_abstract():
+    assert not inspect.isabstract(robot_Condition)
 
 
-def test_robot::condition_constructor_exists():
-    assert callable(robot::Condition.__init__)
+def test_robot_condition_constructor_exists():
+    assert callable(robot_Condition.__init__)
 
 
-def test_robot::condition_constructor_args():
-    sig = inspect.signature(robot::Condition.__init__)
+def test_robot_condition_constructor_args():
+    sig = inspect.signature(robot_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::turnright_is_not_abstract():
-    assert not inspect.isabstract(robot::TurnRight)
+def test_robot_turnright_is_not_abstract():
+    assert not inspect.isabstract(robot_TurnRight)
 
 
-def test_robot::turnright_constructor_exists():
-    assert callable(robot::TurnRight.__init__)
+def test_robot_turnright_constructor_exists():
+    assert callable(robot_TurnRight.__init__)
 
 
-def test_robot::turnright_constructor_args():
-    sig = inspect.signature(robot::TurnRight.__init__)
+def test_robot_turnright_constructor_args():
+    sig = inspect.signature(robot_TurnRight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::turnleft_is_not_abstract():
-    assert not inspect.isabstract(robot::TurnLeft)
+def test_robot_turnleft_is_not_abstract():
+    assert not inspect.isabstract(robot_TurnLeft)
 
 
-def test_robot::turnleft_constructor_exists():
-    assert callable(robot::TurnLeft.__init__)
+def test_robot_turnleft_constructor_exists():
+    assert callable(robot_TurnLeft.__init__)
 
 
-def test_robot::turnleft_constructor_args():
-    sig = inspect.signature(robot::TurnLeft.__init__)
+def test_robot_turnleft_constructor_args():
+    sig = inspect.signature(robot_TurnLeft.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::operation_is_not_abstract():
-    assert not inspect.isabstract(robot::Operation)
+def test_robot_operation_is_not_abstract():
+    assert not inspect.isabstract(robot_Operation)
 
 
-def test_robot::operation_constructor_exists():
-    assert callable(robot::Operation.__init__)
+def test_robot_operation_constructor_exists():
+    assert callable(robot_Operation.__init__)
 
 
-def test_robot::operation_constructor_args():
-    sig = inspect.signature(robot::Operation.__init__)
+def test_robot_operation_constructor_args():
+    sig = inspect.signature(robot_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -500,37 +500,51 @@ def test_operation_constructor_args():
 
 
 
-def test_robot::event_is_not_abstract():
-    assert not inspect.isabstract(robot::Event)
+def test_robot_while_is_not_abstract():
+    assert not inspect.isabstract(robot_While)
 
 
-def test_robot::event_constructor_exists():
-    assert callable(robot::Event.__init__)
+def test_robot_while_constructor_exists():
+    assert callable(robot_While.__init__)
 
 
-def test_robot::event_constructor_args():
-    sig = inspect.signature(robot::Event.__init__)
+def test_robot_while_constructor_args():
+    sig = inspect.signature(robot_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::echo_is_not_abstract():
-    assert not inspect.isabstract(robot::Echo)
+def test_robot_event_is_not_abstract():
+    assert not inspect.isabstract(robot_Event)
 
 
-def test_robot::echo_constructor_exists():
-    assert callable(robot::Echo.__init__)
+def test_robot_event_constructor_exists():
+    assert callable(robot_Event.__init__)
 
 
-def test_robot::echo_constructor_args():
-    sig = inspect.signature(robot::Echo.__init__)
+def test_robot_event_constructor_args():
+    sig = inspect.signature(robot_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_echo_is_not_abstract():
+    assert not inspect.isabstract(robot_Echo)
+
+
+def test_robot_echo_constructor_exists():
+    assert callable(robot_Echo.__init__)
+
+
+def test_robot_echo_constructor_args():
+    sig = inspect.signature(robot_Echo.__init__)
     params = list(sig.parameters.keys())
     assert "param" in params, "Missing parameter 'param'"
 
-def test_robot::echo_has_param():
-    assert hasattr(robot::Echo, "param")
+def test_robot_echo_has_param():
+    assert hasattr(robot_Echo, "param")
     descriptor = None
-    for klass in robot::Echo.__mro__:
+    for klass in robot_Echo.__mro__:
         if "param" in klass.__dict__:
             descriptor = klass.__dict__["param"]
             break
@@ -538,89 +552,51 @@ def test_robot::echo_has_param():
 
 
 
-def test_robot::alternative_is_not_abstract():
-    assert not inspect.isabstract(robot::Alternative)
+def test_robot_alternative_is_not_abstract():
+    assert not inspect.isabstract(robot_Alternative)
 
 
-def test_robot::alternative_constructor_exists():
-    assert callable(robot::Alternative.__init__)
+def test_robot_alternative_constructor_exists():
+    assert callable(robot_Alternative.__init__)
 
 
-def test_robot::alternative_constructor_args():
-    sig = inspect.signature(robot::Alternative.__init__)
+def test_robot_alternative_constructor_args():
+    sig = inspect.signature(robot_Alternative.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::var_is_not_abstract():
-    assert not inspect.isabstract(robot::Var)
+def test_robot_whenever_is_not_abstract():
+    assert not inspect.isabstract(robot_Whenever)
 
 
-def test_robot::var_constructor_exists():
-    assert callable(robot::Var.__init__)
+def test_robot_whenever_constructor_exists():
+    assert callable(robot_Whenever.__init__)
 
 
-def test_robot::var_constructor_args():
-    sig = inspect.signature(robot::Var.__init__)
-    params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
-
-def test_robot::var_has_Name():
-    assert hasattr(robot::Var, "Name")
-    descriptor = None
-    for klass in robot::Var.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::while_is_not_abstract():
-    assert not inspect.isabstract(robot::While)
-
-
-def test_robot::while_constructor_exists():
-    assert callable(robot::While.__init__)
-
-
-def test_robot::while_constructor_args():
-    sig = inspect.signature(robot::While.__init__)
+def test_robot_whenever_constructor_args():
+    sig = inspect.signature(robot_Whenever.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::whenever_is_not_abstract():
-    assert not inspect.isabstract(robot::Whenever)
+def test_robot_movement_is_not_abstract():
+    assert not inspect.isabstract(robot_Movement)
 
 
-def test_robot::whenever_constructor_exists():
-    assert callable(robot::Whenever.__init__)
+def test_robot_movement_constructor_exists():
+    assert callable(robot_Movement.__init__)
 
 
-def test_robot::whenever_constructor_args():
-    sig = inspect.signature(robot::Whenever.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::movement_is_not_abstract():
-    assert not inspect.isabstract(robot::Movement)
-
-
-def test_robot::movement_constructor_exists():
-    assert callable(robot::Movement.__init__)
-
-
-def test_robot::movement_constructor_args():
-    sig = inspect.signature(robot::Movement.__init__)
+def test_robot_movement_constructor_args():
+    sig = inspect.signature(robot_Movement.__init__)
     params = list(sig.parameters.keys())
     assert "duration" in params, "Missing parameter 'duration'"
 
-def test_robot::movement_has_duration():
-    assert hasattr(robot::Movement, "duration")
+def test_robot_movement_has_duration():
+    assert hasattr(robot_Movement, "duration")
     descriptor = None
-    for klass in robot::Movement.__mro__:
+    for klass in robot_Movement.__mro__:
         if "duration" in klass.__dict__:
             descriptor = klass.__dict__["duration"]
             break
@@ -628,30 +604,54 @@ def test_robot::movement_has_duration():
 
 
 
-def test_robot::sequence_is_not_abstract():
-    assert not inspect.isabstract(robot::Sequence)
+def test_robot_var_is_not_abstract():
+    assert not inspect.isabstract(robot_Var)
 
 
-def test_robot::sequence_constructor_exists():
-    assert callable(robot::Sequence.__init__)
+def test_robot_var_constructor_exists():
+    assert callable(robot_Var.__init__)
 
 
-def test_robot::sequence_constructor_args():
-    sig = inspect.signature(robot::Sequence.__init__)
+def test_robot_var_constructor_args():
+    sig = inspect.signature(robot_Var.__init__)
+    params = list(sig.parameters.keys())
+    assert "Name" in params, "Missing parameter 'Name'"
+
+def test_robot_var_has_Name():
+    assert hasattr(robot_Var, "Name")
+    descriptor = None
+    for klass in robot_Var.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_robot_sequence_is_not_abstract():
+    assert not inspect.isabstract(robot_Sequence)
+
+
+def test_robot_sequence_constructor_exists():
+    assert callable(robot_Sequence.__init__)
+
+
+def test_robot_sequence_constructor_args():
+    sig = inspect.signature(robot_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::mission_is_not_abstract():
-    assert not inspect.isabstract(robot::Mission)
+def test_robot_mission_is_not_abstract():
+    assert not inspect.isabstract(robot_Mission)
 
 
-def test_robot::mission_constructor_exists():
-    assert callable(robot::Mission.__init__)
+def test_robot_mission_constructor_exists():
+    assert callable(robot_Mission.__init__)
 
 
-def test_robot::mission_constructor_args():
-    sig = inspect.signature(robot::Mission.__init__)
+def test_robot_mission_constructor_args():
+    sig = inspect.signature(robot_Mission.__init__)
     params = list(sig.parameters.keys())
 
 def test_esensor_exists():
@@ -662,22 +662,22 @@ def test_esensor_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ESensor]
     expected_literals = [
-        "lightFLF",
-        "distanceFRB",
-        "lightFRB",
-        "distanceR",
-        "distanceFLB",
         "lightL",
         "distanceFRF",
-        "lightBR",
-        "lightR",
-        "distanceBL",
-        "lightFRF",
-        "distanceL",
-        "distanceFLF",
+        "lightFRB",
         "lightBL",
         "distanceBR",
         "lightFLB",
+        "lightFRF",
+        "distanceFRB",
+        "distanceR",
+        "lightFLF",
+        "distanceBL",
+        "distanceFLF",
+        "distanceL",
+        "lightR",
+        "lightBR",
+        "distanceFLB",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -691,14 +691,14 @@ def test_eoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EOperator]
     expected_literals = [
-        "GT",
-        "GTE",
-        "LT",
-        "OR",
-        "DIFF",
-        "LTE",
-        "EQ",
         "AND",
+        "OR",
+        "LTE",
+        "GTE",
+        "EQ",
+        "DIFF",
+        "GT",
+        "LT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -719,130 +719,130 @@ safe_text = st.text(
 Var_strategy = st.builds(
     Var,
 )
-robot::Declaration_strategy = st.builds(
-    robot::Declaration,
+robot_Declaration_strategy = st.builds(
+    robot_Declaration,
 )
-robot::Affectation_strategy = st.builds(
-    robot::Affectation,
+robot_Affectation_strategy = st.builds(
+    robot_Affectation,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-robot::Compare_strategy = st.builds(
-    robot::Compare,
+robot_Compare_strategy = st.builds(
+    robot_Compare,
 )
-robot::Value_strategy = st.builds(
-    robot::Value,
+robot_Value_strategy = st.builds(
+    robot_Value,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-robot::Different_strategy = st.builds(
-    robot::Different,
+robot_Different_strategy = st.builds(
+    robot_Different,
 )
-robot::Operator_strategy = st.builds(
-    robot::Operator,
+robot_Operator_strategy = st.builds(
+    robot_Operator,
     type=
         safe_text
 )
 Movement_strategy = st.builds(
     Movement,
 )
-robot::Stop_strategy = st.builds(
-    robot::Stop,
+robot_Stop_strategy = st.builds(
+    robot_Stop,
 )
-robot::Backward_strategy = st.builds(
-    robot::Backward,
+robot_Sleep_strategy = st.builds(
+    robot_Sleep,
 )
-robot::Sleep_strategy = st.builds(
-    robot::Sleep,
+robot_Backward_strategy = st.builds(
+    robot_Backward,
 )
-robot::Forward_strategy = st.builds(
-    robot::Forward,
+robot_Forward_strategy = st.builds(
+    robot_Forward,
 )
 Values_strategy = st.builds(
     Values,
 )
-robot::Variable_strategy = st.builds(
-    robot::Variable,
+robot_TInteger_strategy = st.builds(
+    robot_TInteger,
+    Value=
+        safe_text
+)
+robot_TFloat_strategy = st.builds(
+    robot_TFloat,
+    Value=
+        safe_text
+)
+robot_TBoolean_strategy = st.builds(
+    robot_TBoolean,
+    Value=
+        safe_text
+)
+robot_TString_strategy = st.builds(
+    robot_TString,
+    Value=
+        safe_text
+)
+robot_Variable_strategy = st.builds(
+    robot_Variable,
     Name=
         safe_text
 )
-robot::TInteger_strategy = st.builds(
-    robot::TInteger,
-    Value=
-        safe_text
-)
-robot::TString_strategy = st.builds(
-    robot::TString,
-    Value=
-        safe_text
-)
-robot::TBoolean_strategy = st.builds(
-    robot::TBoolean,
-    Value=
-        safe_text
-)
-robot::TFloat_strategy = st.builds(
-    robot::TFloat,
-    Value=
-        safe_text
-)
-robot::Sensor_strategy = st.builds(
-    robot::Sensor,
+robot_Sensor_strategy = st.builds(
+    robot_Sensor,
     name=
         safe_text
 )
-robot::Values_strategy = st.builds(
-    robot::Values,
+robot_Values_strategy = st.builds(
+    robot_Values,
 )
-robot::Condition_strategy = st.builds(
-    robot::Condition,
+robot_Condition_strategy = st.builds(
+    robot_Condition,
 )
-robot::TurnRight_strategy = st.builds(
-    robot::TurnRight,
+robot_TurnRight_strategy = st.builds(
+    robot_TurnRight,
 )
-robot::TurnLeft_strategy = st.builds(
-    robot::TurnLeft,
+robot_TurnLeft_strategy = st.builds(
+    robot_TurnLeft,
 )
-robot::Operation_strategy = st.builds(
-    robot::Operation,
+robot_Operation_strategy = st.builds(
+    robot_Operation,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-robot::Event_strategy = st.builds(
-    robot::Event,
+robot_While_strategy = st.builds(
+    robot_While,
 )
-robot::Echo_strategy = st.builds(
-    robot::Echo,
+robot_Event_strategy = st.builds(
+    robot_Event,
+)
+robot_Echo_strategy = st.builds(
+    robot_Echo,
     param=
         safe_text
 )
-robot::Alternative_strategy = st.builds(
-    robot::Alternative,
+robot_Alternative_strategy = st.builds(
+    robot_Alternative,
 )
-robot::Var_strategy = st.builds(
-    robot::Var,
-    Name=
-        safe_text
+robot_Whenever_strategy = st.builds(
+    robot_Whenever,
 )
-robot::While_strategy = st.builds(
-    robot::While,
-)
-robot::Whenever_strategy = st.builds(
-    robot::Whenever,
-)
-robot::Movement_strategy = st.builds(
-    robot::Movement,
+robot_Movement_strategy = st.builds(
+    robot_Movement,
     duration=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-robot::Sequence_strategy = st.builds(
-    robot::Sequence,
+robot_Var_strategy = st.builds(
+    robot_Var,
+    Name=
+        safe_text
 )
-robot::Mission_strategy = st.builds(
-    robot::Mission,
+robot_Sequence_strategy = st.builds(
+    robot_Sequence,
+)
+robot_Mission_strategy = st.builds(
+    robot_Mission,
 )
 
 @given(instance=Var_strategy)
@@ -850,53 +850,50 @@ robot::Mission_strategy = st.builds(
 def test_var_instantiation(instance):
     assert isinstance(instance, Var)
 
-@given(instance=robot::Declaration_strategy)
+@given(instance=robot_Declaration_strategy)
 @settings(max_examples=50)
-def test_robot::declaration_instantiation(instance):
-    assert isinstance(instance, robot::Declaration)
+def test_robot_declaration_instantiation(instance):
+    assert isinstance(instance, robot_Declaration)
 
-@given(instance=robot::Affectation_strategy)
+@given(instance=robot_Affectation_strategy)
 @settings(max_examples=50)
-def test_robot::affectation_instantiation(instance):
-    assert isinstance(instance, robot::Affectation)
+def test_robot_affectation_instantiation(instance):
+    assert isinstance(instance, robot_Affectation)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=robot::Compare_strategy)
+@given(instance=robot_Compare_strategy)
 @settings(max_examples=50)
-def test_robot::compare_instantiation(instance):
-    assert isinstance(instance, robot::Compare)
+def test_robot_compare_instantiation(instance):
+    assert isinstance(instance, robot_Compare)
 
-@given(instance=robot::Value_strategy)
+@given(instance=robot_Value_strategy)
 @settings(max_examples=50)
-def test_robot::value_instantiation(instance):
-    assert isinstance(instance, robot::Value)
+def test_robot_value_instantiation(instance):
+    assert isinstance(instance, robot_Value)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=robot::Different_strategy)
+@given(instance=robot_Different_strategy)
 @settings(max_examples=50)
-def test_robot::different_instantiation(instance):
-    assert isinstance(instance, robot::Different)
+def test_robot_different_instantiation(instance):
+    assert isinstance(instance, robot_Different)
 
-@given(instance=robot::Operator_strategy)
+@given(instance=robot_Operator_strategy)
 @settings(max_examples=50)
-def test_robot::operator_instantiation(instance):
-    assert isinstance(instance, robot::Operator)
-
-@given(instance=robot::Operator_strategy)
-def test_robot::operator_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_robot_operator_instantiation(instance):
+    assert isinstance(instance, robot_Operator)
 
 
-@given(instance=robot::Operator_strategy)
-def test_robot::operator_type_setter(instance):
+
+@given(instance=robot_Operator_strategy)
+def test_robot_operator_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -906,231 +903,204 @@ def test_robot::operator_type_setter(instance):
 def test_movement_instantiation(instance):
     assert isinstance(instance, Movement)
 
-@given(instance=robot::Stop_strategy)
+@given(instance=robot_Stop_strategy)
 @settings(max_examples=50)
-def test_robot::stop_instantiation(instance):
-    assert isinstance(instance, robot::Stop)
+def test_robot_stop_instantiation(instance):
+    assert isinstance(instance, robot_Stop)
 
-@given(instance=robot::Backward_strategy)
+@given(instance=robot_Sleep_strategy)
 @settings(max_examples=50)
-def test_robot::backward_instantiation(instance):
-    assert isinstance(instance, robot::Backward)
+def test_robot_sleep_instantiation(instance):
+    assert isinstance(instance, robot_Sleep)
 
-@given(instance=robot::Sleep_strategy)
+@given(instance=robot_Backward_strategy)
 @settings(max_examples=50)
-def test_robot::sleep_instantiation(instance):
-    assert isinstance(instance, robot::Sleep)
+def test_robot_backward_instantiation(instance):
+    assert isinstance(instance, robot_Backward)
 
-@given(instance=robot::Forward_strategy)
+@given(instance=robot_Forward_strategy)
 @settings(max_examples=50)
-def test_robot::forward_instantiation(instance):
-    assert isinstance(instance, robot::Forward)
+def test_robot_forward_instantiation(instance):
+    assert isinstance(instance, robot_Forward)
 
 @given(instance=Values_strategy)
 @settings(max_examples=50)
 def test_values_instantiation(instance):
     assert isinstance(instance, Values)
 
-@given(instance=robot::Variable_strategy)
+@given(instance=robot_TInteger_strategy)
 @settings(max_examples=50)
-def test_robot::variable_instantiation(instance):
-    assert isinstance(instance, robot::Variable)
-
-@given(instance=robot::Variable_strategy)
-def test_robot::variable_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_robot_tinteger_instantiation(instance):
+    assert isinstance(instance, robot_TInteger)
 
 
-@given(instance=robot::Variable_strategy)
-def test_robot::variable_Name_setter(instance):
+
+@given(instance=robot_TInteger_strategy)
+def test_robot_tinteger_Value_setter(instance):
+    original = instance.Value
+    instance.Value = original
+    assert instance.Value == original
+
+@given(instance=robot_TFloat_strategy)
+@settings(max_examples=50)
+def test_robot_tfloat_instantiation(instance):
+    assert isinstance(instance, robot_TFloat)
+
+
+
+@given(instance=robot_TFloat_strategy)
+def test_robot_tfloat_Value_setter(instance):
+    original = instance.Value
+    instance.Value = original
+    assert instance.Value == original
+
+@given(instance=robot_TBoolean_strategy)
+@settings(max_examples=50)
+def test_robot_tboolean_instantiation(instance):
+    assert isinstance(instance, robot_TBoolean)
+
+
+
+@given(instance=robot_TBoolean_strategy)
+def test_robot_tboolean_Value_setter(instance):
+    original = instance.Value
+    instance.Value = original
+    assert instance.Value == original
+
+@given(instance=robot_TString_strategy)
+@settings(max_examples=50)
+def test_robot_tstring_instantiation(instance):
+    assert isinstance(instance, robot_TString)
+
+
+
+@given(instance=robot_TString_strategy)
+def test_robot_tstring_Value_setter(instance):
+    original = instance.Value
+    instance.Value = original
+    assert instance.Value == original
+
+@given(instance=robot_Variable_strategy)
+@settings(max_examples=50)
+def test_robot_variable_instantiation(instance):
+    assert isinstance(instance, robot_Variable)
+
+
+
+@given(instance=robot_Variable_strategy)
+def test_robot_variable_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=robot::TInteger_strategy)
+@given(instance=robot_Sensor_strategy)
 @settings(max_examples=50)
-def test_robot::tinteger_instantiation(instance):
-    assert isinstance(instance, robot::TInteger)
-
-@given(instance=robot::TInteger_strategy)
-def test_robot::tinteger_Value_type(instance):
-    assert isinstance(instance.Value, str)
+def test_robot_sensor_instantiation(instance):
+    assert isinstance(instance, robot_Sensor)
 
 
-@given(instance=robot::TInteger_strategy)
-def test_robot::tinteger_Value_setter(instance):
-    original = instance.Value
-    instance.Value = original
-    assert instance.Value == original
 
-@given(instance=robot::TString_strategy)
-@settings(max_examples=50)
-def test_robot::tstring_instantiation(instance):
-    assert isinstance(instance, robot::TString)
-
-@given(instance=robot::TString_strategy)
-def test_robot::tstring_Value_type(instance):
-    assert isinstance(instance.Value, str)
-
-
-@given(instance=robot::TString_strategy)
-def test_robot::tstring_Value_setter(instance):
-    original = instance.Value
-    instance.Value = original
-    assert instance.Value == original
-
-@given(instance=robot::TBoolean_strategy)
-@settings(max_examples=50)
-def test_robot::tboolean_instantiation(instance):
-    assert isinstance(instance, robot::TBoolean)
-
-@given(instance=robot::TBoolean_strategy)
-def test_robot::tboolean_Value_type(instance):
-    assert isinstance(instance.Value, str)
-
-
-@given(instance=robot::TBoolean_strategy)
-def test_robot::tboolean_Value_setter(instance):
-    original = instance.Value
-    instance.Value = original
-    assert instance.Value == original
-
-@given(instance=robot::TFloat_strategy)
-@settings(max_examples=50)
-def test_robot::tfloat_instantiation(instance):
-    assert isinstance(instance, robot::TFloat)
-
-@given(instance=robot::TFloat_strategy)
-def test_robot::tfloat_Value_type(instance):
-    assert isinstance(instance.Value, str)
-
-
-@given(instance=robot::TFloat_strategy)
-def test_robot::tfloat_Value_setter(instance):
-    original = instance.Value
-    instance.Value = original
-    assert instance.Value == original
-
-@given(instance=robot::Sensor_strategy)
-@settings(max_examples=50)
-def test_robot::sensor_instantiation(instance):
-    assert isinstance(instance, robot::Sensor)
-
-@given(instance=robot::Sensor_strategy)
-def test_robot::sensor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=robot::Sensor_strategy)
-def test_robot::sensor_name_setter(instance):
+@given(instance=robot_Sensor_strategy)
+def test_robot_sensor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=robot::Values_strategy)
+@given(instance=robot_Values_strategy)
 @settings(max_examples=50)
-def test_robot::values_instantiation(instance):
-    assert isinstance(instance, robot::Values)
+def test_robot_values_instantiation(instance):
+    assert isinstance(instance, robot_Values)
 
-@given(instance=robot::Condition_strategy)
+@given(instance=robot_Condition_strategy)
 @settings(max_examples=50)
-def test_robot::condition_instantiation(instance):
-    assert isinstance(instance, robot::Condition)
+def test_robot_condition_instantiation(instance):
+    assert isinstance(instance, robot_Condition)
 
-@given(instance=robot::TurnRight_strategy)
+@given(instance=robot_TurnRight_strategy)
 @settings(max_examples=50)
-def test_robot::turnright_instantiation(instance):
-    assert isinstance(instance, robot::TurnRight)
+def test_robot_turnright_instantiation(instance):
+    assert isinstance(instance, robot_TurnRight)
 
-@given(instance=robot::TurnLeft_strategy)
+@given(instance=robot_TurnLeft_strategy)
 @settings(max_examples=50)
-def test_robot::turnleft_instantiation(instance):
-    assert isinstance(instance, robot::TurnLeft)
+def test_robot_turnleft_instantiation(instance):
+    assert isinstance(instance, robot_TurnLeft)
 
-@given(instance=robot::Operation_strategy)
+@given(instance=robot_Operation_strategy)
 @settings(max_examples=50)
-def test_robot::operation_instantiation(instance):
-    assert isinstance(instance, robot::Operation)
+def test_robot_operation_instantiation(instance):
+    assert isinstance(instance, robot_Operation)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=robot::Event_strategy)
+@given(instance=robot_While_strategy)
 @settings(max_examples=50)
-def test_robot::event_instantiation(instance):
-    assert isinstance(instance, robot::Event)
+def test_robot_while_instantiation(instance):
+    assert isinstance(instance, robot_While)
 
-@given(instance=robot::Echo_strategy)
+@given(instance=robot_Event_strategy)
 @settings(max_examples=50)
-def test_robot::echo_instantiation(instance):
-    assert isinstance(instance, robot::Echo)
+def test_robot_event_instantiation(instance):
+    assert isinstance(instance, robot_Event)
 
-@given(instance=robot::Echo_strategy)
-def test_robot::echo_param_type(instance):
-    assert isinstance(instance.param, str)
+@given(instance=robot_Echo_strategy)
+@settings(max_examples=50)
+def test_robot_echo_instantiation(instance):
+    assert isinstance(instance, robot_Echo)
 
 
-@given(instance=robot::Echo_strategy)
-def test_robot::echo_param_setter(instance):
+
+@given(instance=robot_Echo_strategy)
+def test_robot_echo_param_setter(instance):
     original = instance.param
     instance.param = original
     assert instance.param == original
 
-@given(instance=robot::Alternative_strategy)
+@given(instance=robot_Alternative_strategy)
 @settings(max_examples=50)
-def test_robot::alternative_instantiation(instance):
-    assert isinstance(instance, robot::Alternative)
+def test_robot_alternative_instantiation(instance):
+    assert isinstance(instance, robot_Alternative)
 
-@given(instance=robot::Var_strategy)
+@given(instance=robot_Whenever_strategy)
 @settings(max_examples=50)
-def test_robot::var_instantiation(instance):
-    assert isinstance(instance, robot::Var)
+def test_robot_whenever_instantiation(instance):
+    assert isinstance(instance, robot_Whenever)
 
-@given(instance=robot::Var_strategy)
-def test_robot::var_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=robot::Var_strategy)
-def test_robot::var_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=robot::While_strategy)
+@given(instance=robot_Movement_strategy)
 @settings(max_examples=50)
-def test_robot::while_instantiation(instance):
-    assert isinstance(instance, robot::While)
-
-@given(instance=robot::Whenever_strategy)
-@settings(max_examples=50)
-def test_robot::whenever_instantiation(instance):
-    assert isinstance(instance, robot::Whenever)
-
-@given(instance=robot::Movement_strategy)
-@settings(max_examples=50)
-def test_robot::movement_instantiation(instance):
-    assert isinstance(instance, robot::Movement)
-
-@given(instance=robot::Movement_strategy)
-def test_robot::movement_duration_type(instance):
-    assert isinstance(instance.duration, float)
+def test_robot_movement_instantiation(instance):
+    assert isinstance(instance, robot_Movement)
 
 
-@given(instance=robot::Movement_strategy)
-def test_robot::movement_duration_setter(instance):
+
+@given(instance=robot_Movement_strategy)
+def test_robot_movement_duration_setter(instance):
     original = instance.duration
     instance.duration = original
     assert instance.duration == original
 
-@given(instance=robot::Sequence_strategy)
+@given(instance=robot_Var_strategy)
 @settings(max_examples=50)
-def test_robot::sequence_instantiation(instance):
-    assert isinstance(instance, robot::Sequence)
+def test_robot_var_instantiation(instance):
+    assert isinstance(instance, robot_Var)
 
-@given(instance=robot::Mission_strategy)
+
+
+@given(instance=robot_Var_strategy)
+def test_robot_var_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+@given(instance=robot_Sequence_strategy)
 @settings(max_examples=50)
-def test_robot::mission_instantiation(instance):
-    assert isinstance(instance, robot::Mission)
+def test_robot_sequence_instantiation(instance):
+    assert isinstance(instance, robot_Sequence)
+
+@given(instance=robot_Mission_strategy)
+@settings(max_examples=50)
+def test_robot_mission_instantiation(instance):
+    assert isinstance(instance, robot_Mission)

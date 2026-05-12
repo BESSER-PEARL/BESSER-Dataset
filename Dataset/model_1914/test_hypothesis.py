@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ClassDiagram::FacilityManager,
-    ClassDiagram::HotelAdministration,
-    ClassDiagram::FacilityAdministration,
-    ClassDiagram::StaffAdministration,
-    ClassDiagram::ApplianceAdministration,
-    ClassDiagram::RoomAdministration,
-    ClassDiagram::BillManager,
-    ClassDiagram::GuestManager,
-    ClassDiagram::RoomManager,
-    ClassDiagram::Booking::PurchasedService,
-    ClassDiagram::BookingManager,
-    ClassDiagram::IServiceBooking,
-    ClassDiagram::Facility::FacilityType,
-    ClassDiagram::Hotel::Facility,
-    ClassDiagram::Room::RoomAppliance,
-    ClassDiagram::ApplianceType::ApplianceService,
-    ClassDiagram::RoomAppliance::ApplianceType,
-    ClassDiagram::Facility::FacilityService,
-    ClassDiagram::Booking::Bill,
-    ClassDiagram::Booking::BookedService,
-    ClassDiagram::Room::RoomKey,
-    ClassDiagram::Room::RoomType,
-    ClassDiagram::Hotel::Booking,
-    ClassDiagram::Hotel::Staff,
-    ClassDiagram::Hotel::Room,
-    ClassDiagram::Company::GuestRecord,
-    ClassDiagram::Company::Hotel,
-    ClassDiagram::Company,
+from python_code import (
+    ClassDiagram_FacilityManager,
+    ClassDiagram_HotelAdministration,
+    ClassDiagram_FacilityAdministration,
+    ClassDiagram_StaffAdministration,
+    ClassDiagram_ApplianceAdministration,
+    ClassDiagram_RoomAdministration,
+    ClassDiagram_BillManager,
+    ClassDiagram_GuestManager,
+    ClassDiagram_RoomManager,
+    ClassDiagram_Booking_PurchasedService,
+    ClassDiagram_BookingManager,
+    ClassDiagram_IServiceBooking,
+    ClassDiagram_Facility_FacilityType,
+    ClassDiagram_Hotel_Facility,
+    ClassDiagram_Room_RoomAppliance,
+    ClassDiagram_ApplianceType_ApplianceService,
+    ClassDiagram_RoomAppliance_ApplianceType,
+    ClassDiagram_Facility_FacilityService,
+    ClassDiagram_Booking_Bill,
+    ClassDiagram_Booking_BookedService,
+    ClassDiagram_Room_RoomKey,
+    ClassDiagram_Room_RoomType,
+    ClassDiagram_Hotel_Booking,
+    ClassDiagram_Hotel_Staff,
+    ClassDiagram_Hotel_Room,
+    ClassDiagram_Company_GuestRecord,
+    ClassDiagram_Company_Hotel,
+    ClassDiagram_Company,
     StaffType,
 )
 
@@ -43,159 +43,159 @@ from classes import (
 
 
 
-def test_classdiagram::facilitymanager_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::FacilityManager)
+def test_classdiagram_facilitymanager_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_FacilityManager)
 
 
-def test_classdiagram::facilitymanager_constructor_exists():
-    assert callable(ClassDiagram::FacilityManager.__init__)
+def test_classdiagram_facilitymanager_constructor_exists():
+    assert callable(ClassDiagram_FacilityManager.__init__)
 
 
-def test_classdiagram::facilitymanager_constructor_args():
-    sig = inspect.signature(ClassDiagram::FacilityManager.__init__)
+def test_classdiagram_facilitymanager_constructor_args():
+    sig = inspect.signature(ClassDiagram_FacilityManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::hoteladministration_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::HotelAdministration)
+def test_classdiagram_hoteladministration_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_HotelAdministration)
 
 
-def test_classdiagram::hoteladministration_constructor_exists():
-    assert callable(ClassDiagram::HotelAdministration.__init__)
+def test_classdiagram_hoteladministration_constructor_exists():
+    assert callable(ClassDiagram_HotelAdministration.__init__)
 
 
-def test_classdiagram::hoteladministration_constructor_args():
-    sig = inspect.signature(ClassDiagram::HotelAdministration.__init__)
+def test_classdiagram_hoteladministration_constructor_args():
+    sig = inspect.signature(ClassDiagram_HotelAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::facilityadministration_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::FacilityAdministration)
+def test_classdiagram_facilityadministration_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_FacilityAdministration)
 
 
-def test_classdiagram::facilityadministration_constructor_exists():
-    assert callable(ClassDiagram::FacilityAdministration.__init__)
+def test_classdiagram_facilityadministration_constructor_exists():
+    assert callable(ClassDiagram_FacilityAdministration.__init__)
 
 
-def test_classdiagram::facilityadministration_constructor_args():
-    sig = inspect.signature(ClassDiagram::FacilityAdministration.__init__)
+def test_classdiagram_facilityadministration_constructor_args():
+    sig = inspect.signature(ClassDiagram_FacilityAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::staffadministration_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::StaffAdministration)
+def test_classdiagram_staffadministration_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_StaffAdministration)
 
 
-def test_classdiagram::staffadministration_constructor_exists():
-    assert callable(ClassDiagram::StaffAdministration.__init__)
+def test_classdiagram_staffadministration_constructor_exists():
+    assert callable(ClassDiagram_StaffAdministration.__init__)
 
 
-def test_classdiagram::staffadministration_constructor_args():
-    sig = inspect.signature(ClassDiagram::StaffAdministration.__init__)
+def test_classdiagram_staffadministration_constructor_args():
+    sig = inspect.signature(ClassDiagram_StaffAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::applianceadministration_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::ApplianceAdministration)
+def test_classdiagram_applianceadministration_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_ApplianceAdministration)
 
 
-def test_classdiagram::applianceadministration_constructor_exists():
-    assert callable(ClassDiagram::ApplianceAdministration.__init__)
+def test_classdiagram_applianceadministration_constructor_exists():
+    assert callable(ClassDiagram_ApplianceAdministration.__init__)
 
 
-def test_classdiagram::applianceadministration_constructor_args():
-    sig = inspect.signature(ClassDiagram::ApplianceAdministration.__init__)
+def test_classdiagram_applianceadministration_constructor_args():
+    sig = inspect.signature(ClassDiagram_ApplianceAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::roomadministration_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::RoomAdministration)
+def test_classdiagram_roomadministration_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_RoomAdministration)
 
 
-def test_classdiagram::roomadministration_constructor_exists():
-    assert callable(ClassDiagram::RoomAdministration.__init__)
+def test_classdiagram_roomadministration_constructor_exists():
+    assert callable(ClassDiagram_RoomAdministration.__init__)
 
 
-def test_classdiagram::roomadministration_constructor_args():
-    sig = inspect.signature(ClassDiagram::RoomAdministration.__init__)
+def test_classdiagram_roomadministration_constructor_args():
+    sig = inspect.signature(ClassDiagram_RoomAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::billmanager_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::BillManager)
+def test_classdiagram_billmanager_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_BillManager)
 
 
-def test_classdiagram::billmanager_constructor_exists():
-    assert callable(ClassDiagram::BillManager.__init__)
+def test_classdiagram_billmanager_constructor_exists():
+    assert callable(ClassDiagram_BillManager.__init__)
 
 
-def test_classdiagram::billmanager_constructor_args():
-    sig = inspect.signature(ClassDiagram::BillManager.__init__)
+def test_classdiagram_billmanager_constructor_args():
+    sig = inspect.signature(ClassDiagram_BillManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::guestmanager_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::GuestManager)
+def test_classdiagram_guestmanager_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_GuestManager)
 
 
-def test_classdiagram::guestmanager_constructor_exists():
-    assert callable(ClassDiagram::GuestManager.__init__)
+def test_classdiagram_guestmanager_constructor_exists():
+    assert callable(ClassDiagram_GuestManager.__init__)
 
 
-def test_classdiagram::guestmanager_constructor_args():
-    sig = inspect.signature(ClassDiagram::GuestManager.__init__)
+def test_classdiagram_guestmanager_constructor_args():
+    sig = inspect.signature(ClassDiagram_GuestManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::roommanager_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::RoomManager)
+def test_classdiagram_roommanager_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_RoomManager)
 
 
-def test_classdiagram::roommanager_constructor_exists():
-    assert callable(ClassDiagram::RoomManager.__init__)
+def test_classdiagram_roommanager_constructor_exists():
+    assert callable(ClassDiagram_RoomManager.__init__)
 
 
-def test_classdiagram::roommanager_constructor_args():
-    sig = inspect.signature(ClassDiagram::RoomManager.__init__)
+def test_classdiagram_roommanager_constructor_args():
+    sig = inspect.signature(ClassDiagram_RoomManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::booking::purchasedservice_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Booking::PurchasedService)
+def test_classdiagram_booking_purchasedservice_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Booking_PurchasedService)
 
 
-def test_classdiagram::booking::purchasedservice_constructor_exists():
-    assert callable(ClassDiagram::Booking::PurchasedService.__init__)
+def test_classdiagram_booking_purchasedservice_constructor_exists():
+    assert callable(ClassDiagram_Booking_PurchasedService.__init__)
 
 
-def test_classdiagram::booking::purchasedservice_constructor_args():
-    sig = inspect.signature(ClassDiagram::Booking::PurchasedService.__init__)
+def test_classdiagram_booking_purchasedservice_constructor_args():
+    sig = inspect.signature(ClassDiagram_Booking_PurchasedService.__init__)
     params = list(sig.parameters.keys())
     assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::booking::purchasedservice_has_price():
-    assert hasattr(ClassDiagram::Booking::PurchasedService, "price")
+def test_classdiagram_booking_purchasedservice_has_price():
+    assert hasattr(ClassDiagram_Booking_PurchasedService, "price")
     descriptor = None
-    for klass in ClassDiagram::Booking::PurchasedService.__mro__:
+    for klass in ClassDiagram_Booking_PurchasedService.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::booking::purchasedservice_has_name():
-    assert hasattr(ClassDiagram::Booking::PurchasedService, "name")
+def test_classdiagram_booking_purchasedservice_has_name():
+    assert hasattr(ClassDiagram_Booking_PurchasedService, "name")
     descriptor = None
-    for klass in ClassDiagram::Booking::PurchasedService.__mro__:
+    for klass in ClassDiagram_Booking_PurchasedService.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -203,51 +203,51 @@ def test_classdiagram::booking::purchasedservice_has_name():
 
 
 
-def test_classdiagram::bookingmanager_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::BookingManager)
+def test_classdiagram_bookingmanager_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_BookingManager)
 
 
-def test_classdiagram::bookingmanager_constructor_exists():
-    assert callable(ClassDiagram::BookingManager.__init__)
+def test_classdiagram_bookingmanager_constructor_exists():
+    assert callable(ClassDiagram_BookingManager.__init__)
 
 
-def test_classdiagram::bookingmanager_constructor_args():
-    sig = inspect.signature(ClassDiagram::BookingManager.__init__)
+def test_classdiagram_bookingmanager_constructor_args():
+    sig = inspect.signature(ClassDiagram_BookingManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::iservicebooking_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::IServiceBooking)
+def test_classdiagram_iservicebooking_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_IServiceBooking)
 
 
-def test_classdiagram::iservicebooking_constructor_exists():
-    assert callable(ClassDiagram::IServiceBooking.__init__)
+def test_classdiagram_iservicebooking_constructor_exists():
+    assert callable(ClassDiagram_IServiceBooking.__init__)
 
 
-def test_classdiagram::iservicebooking_constructor_args():
-    sig = inspect.signature(ClassDiagram::IServiceBooking.__init__)
+def test_classdiagram_iservicebooking_constructor_args():
+    sig = inspect.signature(ClassDiagram_IServiceBooking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::facility::facilitytype_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Facility::FacilityType)
+def test_classdiagram_facility_facilitytype_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Facility_FacilityType)
 
 
-def test_classdiagram::facility::facilitytype_constructor_exists():
-    assert callable(ClassDiagram::Facility::FacilityType.__init__)
+def test_classdiagram_facility_facilitytype_constructor_exists():
+    assert callable(ClassDiagram_Facility_FacilityType.__init__)
 
 
-def test_classdiagram::facility::facilitytype_constructor_args():
-    sig = inspect.signature(ClassDiagram::Facility::FacilityType.__init__)
+def test_classdiagram_facility_facilitytype_constructor_args():
+    sig = inspect.signature(ClassDiagram_Facility_FacilityType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::facility::facilitytype_has_name():
-    assert hasattr(ClassDiagram::Facility::FacilityType, "name")
+def test_classdiagram_facility_facilitytype_has_name():
+    assert hasattr(ClassDiagram_Facility_FacilityType, "name")
     descriptor = None
-    for klass in ClassDiagram::Facility::FacilityType.__mro__:
+    for klass in ClassDiagram_Facility_FacilityType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -255,23 +255,23 @@ def test_classdiagram::facility::facilitytype_has_name():
 
 
 
-def test_classdiagram::hotel::facility_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Hotel::Facility)
+def test_classdiagram_hotel_facility_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Hotel_Facility)
 
 
-def test_classdiagram::hotel::facility_constructor_exists():
-    assert callable(ClassDiagram::Hotel::Facility.__init__)
+def test_classdiagram_hotel_facility_constructor_exists():
+    assert callable(ClassDiagram_Hotel_Facility.__init__)
 
 
-def test_classdiagram::hotel::facility_constructor_args():
-    sig = inspect.signature(ClassDiagram::Hotel::Facility.__init__)
+def test_classdiagram_hotel_facility_constructor_args():
+    sig = inspect.signature(ClassDiagram_Hotel_Facility.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::hotel::facility_has_name():
-    assert hasattr(ClassDiagram::Hotel::Facility, "name")
+def test_classdiagram_hotel_facility_has_name():
+    assert hasattr(ClassDiagram_Hotel_Facility, "name")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Facility.__mro__:
+    for klass in ClassDiagram_Hotel_Facility.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -279,23 +279,23 @@ def test_classdiagram::hotel::facility_has_name():
 
 
 
-def test_classdiagram::room::roomappliance_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Room::RoomAppliance)
+def test_classdiagram_room_roomappliance_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Room_RoomAppliance)
 
 
-def test_classdiagram::room::roomappliance_constructor_exists():
-    assert callable(ClassDiagram::Room::RoomAppliance.__init__)
+def test_classdiagram_room_roomappliance_constructor_exists():
+    assert callable(ClassDiagram_Room_RoomAppliance.__init__)
 
 
-def test_classdiagram::room::roomappliance_constructor_args():
-    sig = inspect.signature(ClassDiagram::Room::RoomAppliance.__init__)
+def test_classdiagram_room_roomappliance_constructor_args():
+    sig = inspect.signature(ClassDiagram_Room_RoomAppliance.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::room::roomappliance_has_name():
-    assert hasattr(ClassDiagram::Room::RoomAppliance, "name")
+def test_classdiagram_room_roomappliance_has_name():
+    assert hasattr(ClassDiagram_Room_RoomAppliance, "name")
     descriptor = None
-    for klass in ClassDiagram::Room::RoomAppliance.__mro__:
+    for klass in ClassDiagram_Room_RoomAppliance.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -303,33 +303,33 @@ def test_classdiagram::room::roomappliance_has_name():
 
 
 
-def test_classdiagram::appliancetype::applianceservice_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::ApplianceType::ApplianceService)
+def test_classdiagram_appliancetype_applianceservice_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_ApplianceType_ApplianceService)
 
 
-def test_classdiagram::appliancetype::applianceservice_constructor_exists():
-    assert callable(ClassDiagram::ApplianceType::ApplianceService.__init__)
+def test_classdiagram_appliancetype_applianceservice_constructor_exists():
+    assert callable(ClassDiagram_ApplianceType_ApplianceService.__init__)
 
 
-def test_classdiagram::appliancetype::applianceservice_constructor_args():
-    sig = inspect.signature(ClassDiagram::ApplianceType::ApplianceService.__init__)
+def test_classdiagram_appliancetype_applianceservice_constructor_args():
+    sig = inspect.signature(ClassDiagram_ApplianceType_ApplianceService.__init__)
     params = list(sig.parameters.keys())
     assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::appliancetype::applianceservice_has_price():
-    assert hasattr(ClassDiagram::ApplianceType::ApplianceService, "price")
+def test_classdiagram_appliancetype_applianceservice_has_price():
+    assert hasattr(ClassDiagram_ApplianceType_ApplianceService, "price")
     descriptor = None
-    for klass in ClassDiagram::ApplianceType::ApplianceService.__mro__:
+    for klass in ClassDiagram_ApplianceType_ApplianceService.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::appliancetype::applianceservice_has_name():
-    assert hasattr(ClassDiagram::ApplianceType::ApplianceService, "name")
+def test_classdiagram_appliancetype_applianceservice_has_name():
+    assert hasattr(ClassDiagram_ApplianceType_ApplianceService, "name")
     descriptor = None
-    for klass in ClassDiagram::ApplianceType::ApplianceService.__mro__:
+    for klass in ClassDiagram_ApplianceType_ApplianceService.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -337,23 +337,23 @@ def test_classdiagram::appliancetype::applianceservice_has_name():
 
 
 
-def test_classdiagram::roomappliance::appliancetype_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::RoomAppliance::ApplianceType)
+def test_classdiagram_roomappliance_appliancetype_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_RoomAppliance_ApplianceType)
 
 
-def test_classdiagram::roomappliance::appliancetype_constructor_exists():
-    assert callable(ClassDiagram::RoomAppliance::ApplianceType.__init__)
+def test_classdiagram_roomappliance_appliancetype_constructor_exists():
+    assert callable(ClassDiagram_RoomAppliance_ApplianceType.__init__)
 
 
-def test_classdiagram::roomappliance::appliancetype_constructor_args():
-    sig = inspect.signature(ClassDiagram::RoomAppliance::ApplianceType.__init__)
+def test_classdiagram_roomappliance_appliancetype_constructor_args():
+    sig = inspect.signature(ClassDiagram_RoomAppliance_ApplianceType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::roomappliance::appliancetype_has_name():
-    assert hasattr(ClassDiagram::RoomAppliance::ApplianceType, "name")
+def test_classdiagram_roomappliance_appliancetype_has_name():
+    assert hasattr(ClassDiagram_RoomAppliance_ApplianceType, "name")
     descriptor = None
-    for klass in ClassDiagram::RoomAppliance::ApplianceType.__mro__:
+    for klass in ClassDiagram_RoomAppliance_ApplianceType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -361,33 +361,33 @@ def test_classdiagram::roomappliance::appliancetype_has_name():
 
 
 
-def test_classdiagram::facility::facilityservice_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Facility::FacilityService)
+def test_classdiagram_facility_facilityservice_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Facility_FacilityService)
 
 
-def test_classdiagram::facility::facilityservice_constructor_exists():
-    assert callable(ClassDiagram::Facility::FacilityService.__init__)
+def test_classdiagram_facility_facilityservice_constructor_exists():
+    assert callable(ClassDiagram_Facility_FacilityService.__init__)
 
 
-def test_classdiagram::facility::facilityservice_constructor_args():
-    sig = inspect.signature(ClassDiagram::Facility::FacilityService.__init__)
+def test_classdiagram_facility_facilityservice_constructor_args():
+    sig = inspect.signature(ClassDiagram_Facility_FacilityService.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "price" in params, "Missing parameter 'price'"
 
-def test_classdiagram::facility::facilityservice_has_name():
-    assert hasattr(ClassDiagram::Facility::FacilityService, "name")
+def test_classdiagram_facility_facilityservice_has_name():
+    assert hasattr(ClassDiagram_Facility_FacilityService, "name")
     descriptor = None
-    for klass in ClassDiagram::Facility::FacilityService.__mro__:
+    for klass in ClassDiagram_Facility_FacilityService.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::facility::facilityservice_has_price():
-    assert hasattr(ClassDiagram::Facility::FacilityService, "price")
+def test_classdiagram_facility_facilityservice_has_price():
+    assert hasattr(ClassDiagram_Facility_FacilityService, "price")
     descriptor = None
-    for klass in ClassDiagram::Facility::FacilityService.__mro__:
+    for klass in ClassDiagram_Facility_FacilityService.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
@@ -395,23 +395,23 @@ def test_classdiagram::facility::facilityservice_has_price():
 
 
 
-def test_classdiagram::booking::bill_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Booking::Bill)
+def test_classdiagram_booking_bill_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Booking_Bill)
 
 
-def test_classdiagram::booking::bill_constructor_exists():
-    assert callable(ClassDiagram::Booking::Bill.__init__)
+def test_classdiagram_booking_bill_constructor_exists():
+    assert callable(ClassDiagram_Booking_Bill.__init__)
 
 
-def test_classdiagram::booking::bill_constructor_args():
-    sig = inspect.signature(ClassDiagram::Booking::Bill.__init__)
+def test_classdiagram_booking_bill_constructor_args():
+    sig = inspect.signature(ClassDiagram_Booking_Bill.__init__)
     params = list(sig.parameters.keys())
     assert "paidAmount" in params, "Missing parameter 'paidAmount'"
 
-def test_classdiagram::booking::bill_has_paidAmount():
-    assert hasattr(ClassDiagram::Booking::Bill, "paidAmount")
+def test_classdiagram_booking_bill_has_paidAmount():
+    assert hasattr(ClassDiagram_Booking_Bill, "paidAmount")
     descriptor = None
-    for klass in ClassDiagram::Booking::Bill.__mro__:
+    for klass in ClassDiagram_Booking_Bill.__mro__:
         if "paidAmount" in klass.__dict__:
             descriptor = klass.__dict__["paidAmount"]
             break
@@ -419,23 +419,23 @@ def test_classdiagram::booking::bill_has_paidAmount():
 
 
 
-def test_classdiagram::booking::bookedservice_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Booking::BookedService)
+def test_classdiagram_booking_bookedservice_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Booking_BookedService)
 
 
-def test_classdiagram::booking::bookedservice_constructor_exists():
-    assert callable(ClassDiagram::Booking::BookedService.__init__)
+def test_classdiagram_booking_bookedservice_constructor_exists():
+    assert callable(ClassDiagram_Booking_BookedService.__init__)
 
 
-def test_classdiagram::booking::bookedservice_constructor_args():
-    sig = inspect.signature(ClassDiagram::Booking::BookedService.__init__)
+def test_classdiagram_booking_bookedservice_constructor_args():
+    sig = inspect.signature(ClassDiagram_Booking_BookedService.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
 
-def test_classdiagram::booking::bookedservice_has_date():
-    assert hasattr(ClassDiagram::Booking::BookedService, "date")
+def test_classdiagram_booking_bookedservice_has_date():
+    assert hasattr(ClassDiagram_Booking_BookedService, "date")
     descriptor = None
-    for klass in ClassDiagram::Booking::BookedService.__mro__:
+    for klass in ClassDiagram_Booking_BookedService.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -443,23 +443,23 @@ def test_classdiagram::booking::bookedservice_has_date():
 
 
 
-def test_classdiagram::room::roomkey_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Room::RoomKey)
+def test_classdiagram_room_roomkey_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Room_RoomKey)
 
 
-def test_classdiagram::room::roomkey_constructor_exists():
-    assert callable(ClassDiagram::Room::RoomKey.__init__)
+def test_classdiagram_room_roomkey_constructor_exists():
+    assert callable(ClassDiagram_Room_RoomKey.__init__)
 
 
-def test_classdiagram::room::roomkey_constructor_args():
-    sig = inspect.signature(ClassDiagram::Room::RoomKey.__init__)
+def test_classdiagram_room_roomkey_constructor_args():
+    sig = inspect.signature(ClassDiagram_Room_RoomKey.__init__)
     params = list(sig.parameters.keys())
     assert "expirationDate" in params, "Missing parameter 'expirationDate'"
 
-def test_classdiagram::room::roomkey_has_expirationDate():
-    assert hasattr(ClassDiagram::Room::RoomKey, "expirationDate")
+def test_classdiagram_room_roomkey_has_expirationDate():
+    assert hasattr(ClassDiagram_Room_RoomKey, "expirationDate")
     descriptor = None
-    for klass in ClassDiagram::Room::RoomKey.__mro__:
+    for klass in ClassDiagram_Room_RoomKey.__mro__:
         if "expirationDate" in klass.__dict__:
             descriptor = klass.__dict__["expirationDate"]
             break
@@ -467,117 +467,117 @@ def test_classdiagram::room::roomkey_has_expirationDate():
 
 
 
-def test_classdiagram::room::roomtype_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Room::RoomType)
+def test_classdiagram_room_roomtype_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Room_RoomType)
 
 
-def test_classdiagram::room::roomtype_constructor_exists():
-    assert callable(ClassDiagram::Room::RoomType.__init__)
+def test_classdiagram_room_roomtype_constructor_exists():
+    assert callable(ClassDiagram_Room_RoomType.__init__)
 
 
-def test_classdiagram::room::roomtype_constructor_args():
-    sig = inspect.signature(ClassDiagram::Room::RoomType.__init__)
+def test_classdiagram_room_roomtype_constructor_args():
+    sig = inspect.signature(ClassDiagram_Room_RoomType.__init__)
     params = list(sig.parameters.keys())
     assert "maxNumberOfGuests" in params, "Missing parameter 'maxNumberOfGuests'"
-    assert "area" in params, "Missing parameter 'area'"
     assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "area" in params, "Missing parameter 'area'"
 
-def test_classdiagram::room::roomtype_has_maxNumberOfGuests():
-    assert hasattr(ClassDiagram::Room::RoomType, "maxNumberOfGuests")
+def test_classdiagram_room_roomtype_has_maxNumberOfGuests():
+    assert hasattr(ClassDiagram_Room_RoomType, "maxNumberOfGuests")
     descriptor = None
-    for klass in ClassDiagram::Room::RoomType.__mro__:
+    for klass in ClassDiagram_Room_RoomType.__mro__:
         if "maxNumberOfGuests" in klass.__dict__:
             descriptor = klass.__dict__["maxNumberOfGuests"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::room::roomtype_has_area():
-    assert hasattr(ClassDiagram::Room::RoomType, "area")
+def test_classdiagram_room_roomtype_has_price():
+    assert hasattr(ClassDiagram_Room_RoomType, "price")
     descriptor = None
-    for klass in ClassDiagram::Room::RoomType.__mro__:
+    for klass in ClassDiagram_Room_RoomType.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_room_roomtype_has_name():
+    assert hasattr(ClassDiagram_Room_RoomType, "name")
+    descriptor = None
+    for klass in ClassDiagram_Room_RoomType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_room_roomtype_has_area():
+    assert hasattr(ClassDiagram_Room_RoomType, "area")
+    descriptor = None
+    for klass in ClassDiagram_Room_RoomType.__mro__:
         if "area" in klass.__dict__:
             descriptor = klass.__dict__["area"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::room::roomtype_has_price():
-    assert hasattr(ClassDiagram::Room::RoomType, "price")
-    descriptor = None
-    for klass in ClassDiagram::Room::RoomType.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::room::roomtype_has_name():
-    assert hasattr(ClassDiagram::Room::RoomType, "name")
-    descriptor = None
-    for klass in ClassDiagram::Room::RoomType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_classdiagram::hotel::booking_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Hotel::Booking)
-
-
-def test_classdiagram::hotel::booking_constructor_exists():
-    assert callable(ClassDiagram::Hotel::Booking.__init__)
+def test_classdiagram_hotel_booking_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Hotel_Booking)
 
 
-def test_classdiagram::hotel::booking_constructor_args():
-    sig = inspect.signature(ClassDiagram::Hotel::Booking.__init__)
+def test_classdiagram_hotel_booking_constructor_exists():
+    assert callable(ClassDiagram_Hotel_Booking.__init__)
+
+
+def test_classdiagram_hotel_booking_constructor_args():
+    sig = inspect.signature(ClassDiagram_Hotel_Booking.__init__)
     params = list(sig.parameters.keys())
+    assert "checkedIn" in params, "Missing parameter 'checkedIn'"
     assert "bookingID" in params, "Missing parameter 'bookingID'"
     assert "endDate" in params, "Missing parameter 'endDate'"
-    assert "checkedIn" in params, "Missing parameter 'checkedIn'"
     assert "startDate" in params, "Missing parameter 'startDate'"
     assert "price" in params, "Missing parameter 'price'"
 
-def test_classdiagram::hotel::booking_has_bookingID():
-    assert hasattr(ClassDiagram::Hotel::Booking, "bookingID")
+def test_classdiagram_hotel_booking_has_checkedIn():
+    assert hasattr(ClassDiagram_Hotel_Booking, "checkedIn")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Booking.__mro__:
-        if "bookingID" in klass.__dict__:
-            descriptor = klass.__dict__["bookingID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::hotel::booking_has_endDate():
-    assert hasattr(ClassDiagram::Hotel::Booking, "endDate")
-    descriptor = None
-    for klass in ClassDiagram::Hotel::Booking.__mro__:
-        if "endDate" in klass.__dict__:
-            descriptor = klass.__dict__["endDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::hotel::booking_has_checkedIn():
-    assert hasattr(ClassDiagram::Hotel::Booking, "checkedIn")
-    descriptor = None
-    for klass in ClassDiagram::Hotel::Booking.__mro__:
+    for klass in ClassDiagram_Hotel_Booking.__mro__:
         if "checkedIn" in klass.__dict__:
             descriptor = klass.__dict__["checkedIn"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::hotel::booking_has_startDate():
-    assert hasattr(ClassDiagram::Hotel::Booking, "startDate")
+def test_classdiagram_hotel_booking_has_bookingID():
+    assert hasattr(ClassDiagram_Hotel_Booking, "bookingID")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Booking.__mro__:
+    for klass in ClassDiagram_Hotel_Booking.__mro__:
+        if "bookingID" in klass.__dict__:
+            descriptor = klass.__dict__["bookingID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_hotel_booking_has_endDate():
+    assert hasattr(ClassDiagram_Hotel_Booking, "endDate")
+    descriptor = None
+    for klass in ClassDiagram_Hotel_Booking.__mro__:
+        if "endDate" in klass.__dict__:
+            descriptor = klass.__dict__["endDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_hotel_booking_has_startDate():
+    assert hasattr(ClassDiagram_Hotel_Booking, "startDate")
+    descriptor = None
+    for klass in ClassDiagram_Hotel_Booking.__mro__:
         if "startDate" in klass.__dict__:
             descriptor = klass.__dict__["startDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::hotel::booking_has_price():
-    assert hasattr(ClassDiagram::Hotel::Booking, "price")
+def test_classdiagram_hotel_booking_has_price():
+    assert hasattr(ClassDiagram_Hotel_Booking, "price")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Booking.__mro__:
+    for klass in ClassDiagram_Hotel_Booking.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
             break
@@ -585,185 +585,161 @@ def test_classdiagram::hotel::booking_has_price():
 
 
 
-def test_classdiagram::hotel::staff_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Hotel::Staff)
+def test_classdiagram_hotel_staff_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Hotel_Staff)
 
 
-def test_classdiagram::hotel::staff_constructor_exists():
-    assert callable(ClassDiagram::Hotel::Staff.__init__)
+def test_classdiagram_hotel_staff_constructor_exists():
+    assert callable(ClassDiagram_Hotel_Staff.__init__)
 
 
-def test_classdiagram::hotel::staff_constructor_args():
-    sig = inspect.signature(ClassDiagram::Hotel::Staff.__init__)
+def test_classdiagram_hotel_staff_constructor_args():
+    sig = inspect.signature(ClassDiagram_Hotel_Staff.__init__)
     params = list(sig.parameters.keys())
-    assert "hasWorkTitel" in params, "Missing parameter 'hasWorkTitel'"
     assert "ssn" in params, "Missing parameter 'ssn'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "hasWorkTitel" in params, "Missing parameter 'hasWorkTitel'"
     assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_classdiagram::hotel::staff_has_hasWorkTitel():
-    assert hasattr(ClassDiagram::Hotel::Staff, "hasWorkTitel")
+def test_classdiagram_hotel_staff_has_ssn():
+    assert hasattr(ClassDiagram_Hotel_Staff, "ssn")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Staff.__mro__:
+    for klass in ClassDiagram_Hotel_Staff.__mro__:
+        if "ssn" in klass.__dict__:
+            descriptor = klass.__dict__["ssn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_hotel_staff_has_hasWorkTitel():
+    assert hasattr(ClassDiagram_Hotel_Staff, "hasWorkTitel")
+    descriptor = None
+    for klass in ClassDiagram_Hotel_Staff.__mro__:
         if "hasWorkTitel" in klass.__dict__:
             descriptor = klass.__dict__["hasWorkTitel"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::hotel::staff_has_ssn():
-    assert hasattr(ClassDiagram::Hotel::Staff, "ssn")
+def test_classdiagram_hotel_staff_has_lastName():
+    assert hasattr(ClassDiagram_Hotel_Staff, "lastName")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Staff.__mro__:
-        if "ssn" in klass.__dict__:
-            descriptor = klass.__dict__["ssn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::hotel::staff_has_firstName():
-    assert hasattr(ClassDiagram::Hotel::Staff, "firstName")
-    descriptor = None
-    for klass in ClassDiagram::Hotel::Staff.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::hotel::staff_has_lastName():
-    assert hasattr(ClassDiagram::Hotel::Staff, "lastName")
-    descriptor = None
-    for klass in ClassDiagram::Hotel::Staff.__mro__:
+    for klass in ClassDiagram_Hotel_Staff.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
+def test_classdiagram_hotel_staff_has_firstName():
+    assert hasattr(ClassDiagram_Hotel_Staff, "firstName")
+    descriptor = None
+    for klass in ClassDiagram_Hotel_Staff.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_classdiagram::hotel::room_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Hotel::Room)
+
+def test_classdiagram_hotel_room_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Hotel_Room)
 
 
-def test_classdiagram::hotel::room_constructor_exists():
-    assert callable(ClassDiagram::Hotel::Room.__init__)
+def test_classdiagram_hotel_room_constructor_exists():
+    assert callable(ClassDiagram_Hotel_Room.__init__)
 
 
-def test_classdiagram::hotel::room_constructor_args():
-    sig = inspect.signature(ClassDiagram::Hotel::Room.__init__)
+def test_classdiagram_hotel_room_constructor_args():
+    sig = inspect.signature(ClassDiagram_Hotel_Room.__init__)
     params = list(sig.parameters.keys())
-    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
-    assert "cleaningStatus" in params, "Missing parameter 'cleaningStatus'"
     assert "maintenceStatus" in params, "Missing parameter 'maintenceStatus'"
+    assert "cleaningStatus" in params, "Missing parameter 'cleaningStatus'"
+    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
 
-def test_classdiagram::hotel::room_has_roomNumber():
-    assert hasattr(ClassDiagram::Hotel::Room, "roomNumber")
+def test_classdiagram_hotel_room_has_maintenceStatus():
+    assert hasattr(ClassDiagram_Hotel_Room, "maintenceStatus")
     descriptor = None
-    for klass in ClassDiagram::Hotel::Room.__mro__:
-        if "roomNumber" in klass.__dict__:
-            descriptor = klass.__dict__["roomNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::hotel::room_has_cleaningStatus():
-    assert hasattr(ClassDiagram::Hotel::Room, "cleaningStatus")
-    descriptor = None
-    for klass in ClassDiagram::Hotel::Room.__mro__:
-        if "cleaningStatus" in klass.__dict__:
-            descriptor = klass.__dict__["cleaningStatus"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::hotel::room_has_maintenceStatus():
-    assert hasattr(ClassDiagram::Hotel::Room, "maintenceStatus")
-    descriptor = None
-    for klass in ClassDiagram::Hotel::Room.__mro__:
+    for klass in ClassDiagram_Hotel_Room.__mro__:
         if "maintenceStatus" in klass.__dict__:
             descriptor = klass.__dict__["maintenceStatus"]
             break
     assert isinstance(descriptor, property)
 
+def test_classdiagram_hotel_room_has_cleaningStatus():
+    assert hasattr(ClassDiagram_Hotel_Room, "cleaningStatus")
+    descriptor = None
+    for klass in ClassDiagram_Hotel_Room.__mro__:
+        if "cleaningStatus" in klass.__dict__:
+            descriptor = klass.__dict__["cleaningStatus"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_hotel_room_has_roomNumber():
+    assert hasattr(ClassDiagram_Hotel_Room, "roomNumber")
+    descriptor = None
+    for klass in ClassDiagram_Hotel_Room.__mro__:
+        if "roomNumber" in klass.__dict__:
+            descriptor = klass.__dict__["roomNumber"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_classdiagram::company::guestrecord_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Company::GuestRecord)
+
+def test_classdiagram_company_guestrecord_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Company_GuestRecord)
 
 
-def test_classdiagram::company::guestrecord_constructor_exists():
-    assert callable(ClassDiagram::Company::GuestRecord.__init__)
+def test_classdiagram_company_guestrecord_constructor_exists():
+    assert callable(ClassDiagram_Company_GuestRecord.__init__)
 
 
-def test_classdiagram::company::guestrecord_constructor_args():
-    sig = inspect.signature(ClassDiagram::Company::GuestRecord.__init__)
+def test_classdiagram_company_guestrecord_constructor_args():
+    sig = inspect.signature(ClassDiagram_Company_GuestRecord.__init__)
     params = list(sig.parameters.keys())
-    assert "adress" in params, "Missing parameter 'adress'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "ssn" in params, "Missing parameter 'ssn'"
-    assert "paymentInformation" in params, "Missing parameter 'paymentInformation'"
     assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
+    assert "adress" in params, "Missing parameter 'adress'"
+    assert "paymentInformation" in params, "Missing parameter 'paymentInformation'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::company::guestrecord_has_adress():
-    assert hasattr(ClassDiagram::Company::GuestRecord, "adress")
+def test_classdiagram_company_guestrecord_has_ssn():
+    assert hasattr(ClassDiagram_Company_GuestRecord, "ssn")
     descriptor = None
-    for klass in ClassDiagram::Company::GuestRecord.__mro__:
-        if "adress" in klass.__dict__:
-            descriptor = klass.__dict__["adress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::company::guestrecord_has_name():
-    assert hasattr(ClassDiagram::Company::GuestRecord, "name")
-    descriptor = None
-    for klass in ClassDiagram::Company::GuestRecord.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::company::guestrecord_has_ssn():
-    assert hasattr(ClassDiagram::Company::GuestRecord, "ssn")
-    descriptor = None
-    for klass in ClassDiagram::Company::GuestRecord.__mro__:
+    for klass in ClassDiagram_Company_GuestRecord.__mro__:
         if "ssn" in klass.__dict__:
             descriptor = klass.__dict__["ssn"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::company::guestrecord_has_paymentInformation():
-    assert hasattr(ClassDiagram::Company::GuestRecord, "paymentInformation")
+def test_classdiagram_company_guestrecord_has_phoneNumber():
+    assert hasattr(ClassDiagram_Company_GuestRecord, "phoneNumber")
     descriptor = None
-    for klass in ClassDiagram::Company::GuestRecord.__mro__:
-        if "paymentInformation" in klass.__dict__:
-            descriptor = klass.__dict__["paymentInformation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::company::guestrecord_has_phoneNumber():
-    assert hasattr(ClassDiagram::Company::GuestRecord, "phoneNumber")
-    descriptor = None
-    for klass in ClassDiagram::Company::GuestRecord.__mro__:
+    for klass in ClassDiagram_Company_GuestRecord.__mro__:
         if "phoneNumber" in klass.__dict__:
             descriptor = klass.__dict__["phoneNumber"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_classdiagram::company::hotel_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Company::Hotel)
-
-
-def test_classdiagram::company::hotel_constructor_exists():
-    assert callable(ClassDiagram::Company::Hotel.__init__)
-
-
-def test_classdiagram::company::hotel_constructor_args():
-    sig = inspect.signature(ClassDiagram::Company::Hotel.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_classdiagram::company::hotel_has_name():
-    assert hasattr(ClassDiagram::Company::Hotel, "name")
+def test_classdiagram_company_guestrecord_has_adress():
+    assert hasattr(ClassDiagram_Company_GuestRecord, "adress")
     descriptor = None
-    for klass in ClassDiagram::Company::Hotel.__mro__:
+    for klass in ClassDiagram_Company_GuestRecord.__mro__:
+        if "adress" in klass.__dict__:
+            descriptor = klass.__dict__["adress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_company_guestrecord_has_paymentInformation():
+    assert hasattr(ClassDiagram_Company_GuestRecord, "paymentInformation")
+    descriptor = None
+    for klass in ClassDiagram_Company_GuestRecord.__mro__:
+        if "paymentInformation" in klass.__dict__:
+            descriptor = klass.__dict__["paymentInformation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_company_guestrecord_has_name():
+    assert hasattr(ClassDiagram_Company_GuestRecord, "name")
+    descriptor = None
+    for klass in ClassDiagram_Company_GuestRecord.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -771,23 +747,47 @@ def test_classdiagram::company::hotel_has_name():
 
 
 
-def test_classdiagram::company_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Company)
+def test_classdiagram_company_hotel_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Company_Hotel)
 
 
-def test_classdiagram::company_constructor_exists():
-    assert callable(ClassDiagram::Company.__init__)
+def test_classdiagram_company_hotel_constructor_exists():
+    assert callable(ClassDiagram_Company_Hotel.__init__)
 
 
-def test_classdiagram::company_constructor_args():
-    sig = inspect.signature(ClassDiagram::Company.__init__)
+def test_classdiagram_company_hotel_constructor_args():
+    sig = inspect.signature(ClassDiagram_Company_Hotel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::company_has_name():
-    assert hasattr(ClassDiagram::Company, "name")
+def test_classdiagram_company_hotel_has_name():
+    assert hasattr(ClassDiagram_Company_Hotel, "name")
     descriptor = None
-    for klass in ClassDiagram::Company.__mro__:
+    for klass in ClassDiagram_Company_Hotel.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classdiagram_company_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Company)
+
+
+def test_classdiagram_company_constructor_exists():
+    assert callable(ClassDiagram_Company.__init__)
+
+
+def test_classdiagram_company_constructor_args():
+    sig = inspect.signature(ClassDiagram_Company.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_classdiagram_company_has_name():
+    assert hasattr(ClassDiagram_Company, "name")
+    descriptor = None
+    for klass in ClassDiagram_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -801,9 +801,9 @@ def test_stafftype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StaffType]
     expected_literals = [
+        "Janitor",
         "Receptionist",
         "HouseKeeper",
-        "Janitor",
         "Manager",
     ]
     # Check that all expected literals exist
@@ -822,167 +822,167 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ClassDiagram::FacilityManager_strategy = st.builds(
-    ClassDiagram::FacilityManager,
+ClassDiagram_FacilityManager_strategy = st.builds(
+    ClassDiagram_FacilityManager,
 )
-ClassDiagram::HotelAdministration_strategy = st.builds(
-    ClassDiagram::HotelAdministration,
+ClassDiagram_HotelAdministration_strategy = st.builds(
+    ClassDiagram_HotelAdministration,
 )
-ClassDiagram::FacilityAdministration_strategy = st.builds(
-    ClassDiagram::FacilityAdministration,
+ClassDiagram_FacilityAdministration_strategy = st.builds(
+    ClassDiagram_FacilityAdministration,
 )
-ClassDiagram::StaffAdministration_strategy = st.builds(
-    ClassDiagram::StaffAdministration,
+ClassDiagram_StaffAdministration_strategy = st.builds(
+    ClassDiagram_StaffAdministration,
 )
-ClassDiagram::ApplianceAdministration_strategy = st.builds(
-    ClassDiagram::ApplianceAdministration,
+ClassDiagram_ApplianceAdministration_strategy = st.builds(
+    ClassDiagram_ApplianceAdministration,
 )
-ClassDiagram::RoomAdministration_strategy = st.builds(
-    ClassDiagram::RoomAdministration,
+ClassDiagram_RoomAdministration_strategy = st.builds(
+    ClassDiagram_RoomAdministration,
 )
-ClassDiagram::BillManager_strategy = st.builds(
-    ClassDiagram::BillManager,
+ClassDiagram_BillManager_strategy = st.builds(
+    ClassDiagram_BillManager,
 )
-ClassDiagram::GuestManager_strategy = st.builds(
-    ClassDiagram::GuestManager,
+ClassDiagram_GuestManager_strategy = st.builds(
+    ClassDiagram_GuestManager,
 )
-ClassDiagram::RoomManager_strategy = st.builds(
-    ClassDiagram::RoomManager,
+ClassDiagram_RoomManager_strategy = st.builds(
+    ClassDiagram_RoomManager,
 )
-ClassDiagram::Booking::PurchasedService_strategy = st.builds(
-    ClassDiagram::Booking::PurchasedService,
+ClassDiagram_Booking_PurchasedService_strategy = st.builds(
+    ClassDiagram_Booking_PurchasedService,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
         safe_text
 )
-ClassDiagram::BookingManager_strategy = st.builds(
-    ClassDiagram::BookingManager,
+ClassDiagram_BookingManager_strategy = st.builds(
+    ClassDiagram_BookingManager,
 )
-ClassDiagram::IServiceBooking_strategy = st.builds(
-    ClassDiagram::IServiceBooking,
+ClassDiagram_IServiceBooking_strategy = st.builds(
+    ClassDiagram_IServiceBooking,
 )
-ClassDiagram::Facility::FacilityType_strategy = st.builds(
-    ClassDiagram::Facility::FacilityType,
+ClassDiagram_Facility_FacilityType_strategy = st.builds(
+    ClassDiagram_Facility_FacilityType,
     name=
         safe_text
 )
-ClassDiagram::Hotel::Facility_strategy = st.builds(
-    ClassDiagram::Hotel::Facility,
+ClassDiagram_Hotel_Facility_strategy = st.builds(
+    ClassDiagram_Hotel_Facility,
     name=
         safe_text
 )
-ClassDiagram::Room::RoomAppliance_strategy = st.builds(
-    ClassDiagram::Room::RoomAppliance,
+ClassDiagram_Room_RoomAppliance_strategy = st.builds(
+    ClassDiagram_Room_RoomAppliance,
     name=
         safe_text
 )
-ClassDiagram::ApplianceType::ApplianceService_strategy = st.builds(
-    ClassDiagram::ApplianceType::ApplianceService,
+ClassDiagram_ApplianceType_ApplianceService_strategy = st.builds(
+    ClassDiagram_ApplianceType_ApplianceService,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
         safe_text
 )
-ClassDiagram::RoomAppliance::ApplianceType_strategy = st.builds(
-    ClassDiagram::RoomAppliance::ApplianceType,
+ClassDiagram_RoomAppliance_ApplianceType_strategy = st.builds(
+    ClassDiagram_RoomAppliance_ApplianceType,
     name=
         safe_text
 )
-ClassDiagram::Facility::FacilityService_strategy = st.builds(
-    ClassDiagram::Facility::FacilityService,
+ClassDiagram_Facility_FacilityService_strategy = st.builds(
+    ClassDiagram_Facility_FacilityService,
     name=
         safe_text,
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ClassDiagram::Booking::Bill_strategy = st.builds(
-    ClassDiagram::Booking::Bill,
+ClassDiagram_Booking_Bill_strategy = st.builds(
+    ClassDiagram_Booking_Bill,
     paidAmount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ClassDiagram::Booking::BookedService_strategy = st.builds(
-    ClassDiagram::Booking::BookedService,
+ClassDiagram_Booking_BookedService_strategy = st.builds(
+    ClassDiagram_Booking_BookedService,
     date=
         st.dates()
 )
-ClassDiagram::Room::RoomKey_strategy = st.builds(
-    ClassDiagram::Room::RoomKey,
+ClassDiagram_Room_RoomKey_strategy = st.builds(
+    ClassDiagram_Room_RoomKey,
     expirationDate=
         st.dates()
 )
-ClassDiagram::Room::RoomType_strategy = st.builds(
-    ClassDiagram::Room::RoomType,
+ClassDiagram_Room_RoomType_strategy = st.builds(
+    ClassDiagram_Room_RoomType,
     maxNumberOfGuests=
         st.integers(),
-    area=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
-        safe_text
+        safe_text,
+    area=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ClassDiagram::Hotel::Booking_strategy = st.builds(
-    ClassDiagram::Hotel::Booking,
+ClassDiagram_Hotel_Booking_strategy = st.builds(
+    ClassDiagram_Hotel_Booking,
+    checkedIn=
+        st.booleans(),
     bookingID=
         st.integers(),
     endDate=
         st.dates(),
-    checkedIn=
-        st.booleans(),
     startDate=
         st.dates(),
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ClassDiagram::Hotel::Staff_strategy = st.builds(
-    ClassDiagram::Hotel::Staff,
+ClassDiagram_Hotel_Staff_strategy = st.builds(
+    ClassDiagram_Hotel_Staff,
+    ssn=
+        safe_text,
     hasWorkTitel=
         safe_text,
-    ssn=
+    lastName=
         safe_text,
     firstName=
-        safe_text,
-    lastName=
         safe_text
 )
-ClassDiagram::Hotel::Room_strategy = st.builds(
-    ClassDiagram::Hotel::Room,
-    roomNumber=
-        st.integers(),
+ClassDiagram_Hotel_Room_strategy = st.builds(
+    ClassDiagram_Hotel_Room,
+    maintenceStatus=
+        st.booleans(),
     cleaningStatus=
         st.booleans(),
-    maintenceStatus=
-        st.booleans()
+    roomNumber=
+        st.integers()
 )
-ClassDiagram::Company::GuestRecord_strategy = st.builds(
-    ClassDiagram::Company::GuestRecord,
-    adress=
-        safe_text,
-    name=
-        safe_text,
+ClassDiagram_Company_GuestRecord_strategy = st.builds(
+    ClassDiagram_Company_GuestRecord,
     ssn=
+        safe_text,
+    phoneNumber=
+        safe_text,
+    adress=
         safe_text,
     paymentInformation=
         safe_text,
-    phoneNumber=
-        safe_text
-)
-ClassDiagram::Company::Hotel_strategy = st.builds(
-    ClassDiagram::Company::Hotel,
     name=
         safe_text
 )
-ClassDiagram::Company_strategy = st.builds(
-    ClassDiagram::Company,
+ClassDiagram_Company_Hotel_strategy = st.builds(
+    ClassDiagram_Company_Hotel,
+    name=
+        safe_text
+)
+ClassDiagram_Company_strategy = st.builds(
+    ClassDiagram_Company,
     name=
         safe_text
 )
 
-@given(instance=ClassDiagram::FacilityManager_strategy)
+@given(instance=ClassDiagram_FacilityManager_strategy)
 @settings(max_examples=50)
-def test_classdiagram::facilitymanager_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::FacilityManager)
+def test_classdiagram_facilitymanager_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_FacilityManager)
 
 import warnings
 import copy
@@ -990,9 +990,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::FacilityManager_strategy)
+@given(instance=ClassDiagram_FacilityManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::facilitymanager_findservices_changes_state(instance):
+def test_classdiagram_facilitymanager_findservices_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1008,14 +1008,14 @@ def test_classdiagram::facilitymanager_findservices_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findServices' in ClassDiagram::FacilityManager is empty"
+        assert has_statements, f"Function 'findServices' in ClassDiagram_FacilityManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findServices' in ClassDiagram::FacilityManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findServices' in ClassDiagram_FacilityManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findServices' in ClassDiagram::FacilityManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findServices' in ClassDiagram_FacilityManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1023,9 +1023,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::FacilityManager_strategy)
+@given(instance=ClassDiagram_FacilityManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::facilitymanager_findbookedservices_changes_state(instance):
+def test_classdiagram_facilitymanager_findbookedservices_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1039,19 +1039,19 @@ def test_classdiagram::facilitymanager_findbookedservices_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBookedServices' in ClassDiagram::FacilityManager is empty"
+        assert has_statements, f"Function 'findBookedServices' in ClassDiagram_FacilityManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBookedServices' in ClassDiagram::FacilityManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findBookedServices' in ClassDiagram_FacilityManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBookedServices' in ClassDiagram::FacilityManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findBookedServices' in ClassDiagram_FacilityManager is not implemented or raised an error")
 
-@given(instance=ClassDiagram::HotelAdministration_strategy)
+@given(instance=ClassDiagram_HotelAdministration_strategy)
 @settings(max_examples=50)
-def test_classdiagram::hoteladministration_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::HotelAdministration)
+def test_classdiagram_hoteladministration_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_HotelAdministration)
 
 import warnings
 import copy
@@ -1059,9 +1059,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::HotelAdministration_strategy)
+@given(instance=ClassDiagram_HotelAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::hoteladministration_addhotel_changes_state(instance):
+def test_classdiagram_hoteladministration_addhotel_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1075,14 +1075,14 @@ def test_classdiagram::hoteladministration_addhotel_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addHotel' in ClassDiagram::HotelAdministration is empty"
+        assert has_statements, f"Function 'addHotel' in ClassDiagram_HotelAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addHotel' in ClassDiagram::HotelAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addHotel' in ClassDiagram_HotelAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addHotel' in ClassDiagram::HotelAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addHotel' in ClassDiagram_HotelAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1090,9 +1090,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::HotelAdministration_strategy)
+@given(instance=ClassDiagram_HotelAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::hoteladministration_edithotel_changes_state(instance):
+def test_classdiagram_hoteladministration_edithotel_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1106,14 +1106,14 @@ def test_classdiagram::hoteladministration_edithotel_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editHotel' in ClassDiagram::HotelAdministration is empty"
+        assert has_statements, f"Function 'editHotel' in ClassDiagram_HotelAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editHotel' in ClassDiagram::HotelAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editHotel' in ClassDiagram_HotelAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editHotel' in ClassDiagram::HotelAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editHotel' in ClassDiagram_HotelAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1121,9 +1121,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::HotelAdministration_strategy)
+@given(instance=ClassDiagram_HotelAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::hoteladministration_removehotel_changes_state(instance):
+def test_classdiagram_hoteladministration_removehotel_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1137,19 +1137,19 @@ def test_classdiagram::hoteladministration_removehotel_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeHotel' in ClassDiagram::HotelAdministration is empty"
+        assert has_statements, f"Function 'removeHotel' in ClassDiagram_HotelAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeHotel' in ClassDiagram::HotelAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'removeHotel' in ClassDiagram_HotelAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeHotel' in ClassDiagram::HotelAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeHotel' in ClassDiagram_HotelAdministration is not implemented or raised an error")
 
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
 @settings(max_examples=50)
-def test_classdiagram::facilityadministration_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::FacilityAdministration)
+def test_classdiagram_facilityadministration_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_FacilityAdministration)
 
 import warnings
 import copy
@@ -1157,9 +1157,195 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::facilityadministration_addservice_changes_state(instance):
+def test_classdiagram_facilityadministration_removefacility_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeFacility(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeFacility).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeFacility' in ClassDiagram_FacilityAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeFacility' in ClassDiagram_FacilityAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeFacility' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_facilityadministration_editservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editService(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editService' in ClassDiagram_FacilityAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editService' in ClassDiagram_FacilityAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editService' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_facilityadministration_removefacilitytype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeFacilityType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeFacilityType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeFacilityType' in ClassDiagram_FacilityAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeFacilityType' in ClassDiagram_FacilityAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeFacilityType' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_facilityadministration_editfacility_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editFacility(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editFacility).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editFacility' in ClassDiagram_FacilityAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editFacility' in ClassDiagram_FacilityAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editFacility' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_facilityadministration_editfacilitytype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editFacilityType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editFacilityType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editFacilityType' in ClassDiagram_FacilityAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editFacilityType' in ClassDiagram_FacilityAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editFacilityType' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_facilityadministration_addfacilitytype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addFacilityType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addFacilityType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addFacilityType' in ClassDiagram_FacilityAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addFacilityType' in ClassDiagram_FacilityAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addFacilityType' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_facilityadministration_addservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1175,14 +1361,14 @@ def test_classdiagram::facilityadministration_addservice_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addService' in ClassDiagram::FacilityAdministration is empty"
+        assert has_statements, f"Function 'addService' in ClassDiagram_FacilityAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addService' in ClassDiagram::FacilityAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addService' in ClassDiagram_FacilityAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addService' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addService' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1190,30 +1376,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::facilityadministration_editfacilitytype_changes_state(instance):
+def test_classdiagram_facilityadministration_removeservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.editFacilityType(
+        instance.removeService(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editFacilityType).strip()
+        source = inspect.getsource(instance.removeService).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editFacilityType' in ClassDiagram::FacilityAdministration is empty"
+        assert has_statements, f"Function 'removeService' in ClassDiagram_FacilityAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editFacilityType' in ClassDiagram::FacilityAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'removeService' in ClassDiagram_FacilityAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editFacilityType' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeService' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1221,40 +1407,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
+@given(instance=ClassDiagram_FacilityAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::facilityadministration_removefacilitytype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeFacilityType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeFacilityType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeFacilityType' in ClassDiagram::FacilityAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeFacilityType' in ClassDiagram::FacilityAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeFacilityType' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::facilityadministration_addfacility_changes_state(instance):
+def test_classdiagram_facilityadministration_addfacility_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1269,174 +1424,19 @@ def test_classdiagram::facilityadministration_addfacility_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addFacility' in ClassDiagram::FacilityAdministration is empty"
+        assert has_statements, f"Function 'addFacility' in ClassDiagram_FacilityAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addFacility' in ClassDiagram::FacilityAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addFacility' in ClassDiagram_FacilityAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addFacility' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addFacility' in ClassDiagram_FacilityAdministration is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::facilityadministration_removeservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeService' in ClassDiagram::FacilityAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeService' in ClassDiagram::FacilityAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeService' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::facilityadministration_removefacility_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeFacility(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeFacility).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeFacility' in ClassDiagram::FacilityAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeFacility' in ClassDiagram::FacilityAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeFacility' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::facilityadministration_editfacility_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editFacility(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editFacility).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editFacility' in ClassDiagram::FacilityAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editFacility' in ClassDiagram::FacilityAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editFacility' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::facilityadministration_addfacilitytype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addFacilityType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addFacilityType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addFacilityType' in ClassDiagram::FacilityAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addFacilityType' in ClassDiagram::FacilityAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addFacilityType' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::FacilityAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::facilityadministration_editservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editService' in ClassDiagram::FacilityAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editService' in ClassDiagram::FacilityAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editService' in ClassDiagram::FacilityAdministration is not implemented or raised an error")
-
-@given(instance=ClassDiagram::StaffAdministration_strategy)
+@given(instance=ClassDiagram_StaffAdministration_strategy)
 @settings(max_examples=50)
-def test_classdiagram::staffadministration_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::StaffAdministration)
+def test_classdiagram_staffadministration_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_StaffAdministration)
 
 import warnings
 import copy
@@ -1444,9 +1444,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::StaffAdministration_strategy)
+@given(instance=ClassDiagram_StaffAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::staffadministration_removestaff_changes_state(instance):
+def test_classdiagram_staffadministration_removestaff_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1460,14 +1460,14 @@ def test_classdiagram::staffadministration_removestaff_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeStaff' in ClassDiagram::StaffAdministration is empty"
+        assert has_statements, f"Function 'removeStaff' in ClassDiagram_StaffAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeStaff' in ClassDiagram::StaffAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'removeStaff' in ClassDiagram_StaffAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeStaff' in ClassDiagram::StaffAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeStaff' in ClassDiagram_StaffAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1475,40 +1475,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::StaffAdministration_strategy)
+@given(instance=ClassDiagram_StaffAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::staffadministration_editstaff_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editStaff(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editStaff).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editStaff' in ClassDiagram::StaffAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editStaff' in ClassDiagram::StaffAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editStaff' in ClassDiagram::StaffAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::StaffAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::staffadministration_addstaff_changes_state(instance):
+def test_classdiagram_staffadministration_addstaff_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1525,19 +1494,50 @@ def test_classdiagram::staffadministration_addstaff_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addStaff' in ClassDiagram::StaffAdministration is empty"
+        assert has_statements, f"Function 'addStaff' in ClassDiagram_StaffAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addStaff' in ClassDiagram::StaffAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addStaff' in ClassDiagram_StaffAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addStaff' in ClassDiagram::StaffAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addStaff' in ClassDiagram_StaffAdministration is not implemented or raised an error")
 
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_StaffAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_staffadministration_editstaff_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editStaff(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editStaff).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editStaff' in ClassDiagram_StaffAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editStaff' in ClassDiagram_StaffAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editStaff' in ClassDiagram_StaffAdministration is not implemented or raised an error")
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
 @settings(max_examples=50)
-def test_classdiagram::applianceadministration_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::ApplianceAdministration)
+def test_classdiagram_applianceadministration_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_ApplianceAdministration)
 
 import warnings
 import copy
@@ -1545,257 +1545,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::applianceadministration_removeapplianceserver_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeApplianceServer(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeApplianceServer).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeApplianceServer' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeApplianceServer' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeApplianceServer' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_addapplianceservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addApplianceService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addApplianceService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addApplianceService' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addApplianceService' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addApplianceService' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_removeappliance_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeAppliance(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeAppliance).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeAppliance' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeAppliance' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeAppliance' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_editapplianceservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editApplianceService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editApplianceService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editApplianceService' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editApplianceService' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editApplianceService' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_removeappliancetype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeApplianceType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeApplianceType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeApplianceType' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeApplianceType' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeApplianceType' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_addappliancetype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addApplianceType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addApplianceType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addApplianceType' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addApplianceType' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addApplianceType' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_addappliance_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAppliance(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAppliance).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAppliance' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAppliance' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAppliance' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_editappliance_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editAppliance(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editAppliance).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editAppliance' in ClassDiagram::ApplianceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editAppliance' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editAppliance' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::ApplianceAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::applianceadministration_editappliancetype_changes_state(instance):
+def test_classdiagram_applianceadministration_editappliancetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1809,19 +1561,14 @@ def test_classdiagram::applianceadministration_editappliancetype_changes_state(i
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editApplianceType' in ClassDiagram::ApplianceAdministration is empty"
+        assert has_statements, f"Function 'editApplianceType' in ClassDiagram_ApplianceAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editApplianceType' in ClassDiagram::ApplianceAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editApplianceType' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editApplianceType' in ClassDiagram::ApplianceAdministration is not implemented or raised an error")
-
-@given(instance=ClassDiagram::RoomAdministration_strategy)
-@settings(max_examples=50)
-def test_classdiagram::roomadministration_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::RoomAdministration)
+        warnings.warn(f"Operation 'editApplianceType' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1829,30 +1576,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomAdministration_strategy)
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roomadministration_editroomtype_changes_state(instance):
+def test_classdiagram_applianceadministration_addappliancetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.editRoomType(
+        instance.addApplianceType(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editRoomType).strip()
+        source = inspect.getsource(instance.addApplianceType).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editRoomType' in ClassDiagram::RoomAdministration is empty"
+        assert has_statements, f"Function 'addApplianceType' in ClassDiagram_ApplianceAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editRoomType' in ClassDiagram::RoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addApplianceType' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editRoomType' in ClassDiagram::RoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addApplianceType' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1860,9 +1607,231 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomAdministration_strategy)
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roomadministration_addroom_changes_state(instance):
+def test_classdiagram_applianceadministration_addappliance_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addAppliance(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addAppliance).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addAppliance' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addAppliance' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addAppliance' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_applianceadministration_editappliance_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editAppliance(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editAppliance).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editAppliance' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editAppliance' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editAppliance' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_applianceadministration_editapplianceservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editApplianceService(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editApplianceService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editApplianceService' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editApplianceService' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editApplianceService' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_applianceadministration_addapplianceservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addApplianceService(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addApplianceService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addApplianceService' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addApplianceService' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addApplianceService' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_applianceadministration_removeappliance_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeAppliance(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeAppliance).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeAppliance' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeAppliance' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeAppliance' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_applianceadministration_removeappliancetype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeApplianceType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeApplianceType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeApplianceType' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeApplianceType' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeApplianceType' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_ApplianceAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_applianceadministration_removeapplianceserver_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeApplianceServer(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeApplianceServer).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeApplianceServer' in ClassDiagram_ApplianceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeApplianceServer' in ClassDiagram_ApplianceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeApplianceServer' in ClassDiagram_ApplianceAdministration is not implemented or raised an error")
+
+@given(instance=ClassDiagram_RoomAdministration_strategy)
+@settings(max_examples=50)
+def test_classdiagram_roomadministration_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_RoomAdministration)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_RoomAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_roomadministration_addroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1878,14 +1847,14 @@ def test_classdiagram::roomadministration_addroom_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRoom' in ClassDiagram::RoomAdministration is empty"
+        assert has_statements, f"Function 'addRoom' in ClassDiagram_RoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRoom' in ClassDiagram::RoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addRoom' in ClassDiagram_RoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRoom' in ClassDiagram::RoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addRoom' in ClassDiagram_RoomAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1893,9 +1862,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomAdministration_strategy)
+@given(instance=ClassDiagram_RoomAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roomadministration_editroom_changes_state(instance):
+def test_classdiagram_roomadministration_removeroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRoom(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRoom' in ClassDiagram_RoomAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRoom' in ClassDiagram_RoomAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRoom' in ClassDiagram_RoomAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_RoomAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_roomadministration_removeroomtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRoomType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRoomType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRoomType' in ClassDiagram_RoomAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRoomType' in ClassDiagram_RoomAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRoomType' in ClassDiagram_RoomAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_RoomAdministration_strategy)
+@settings(max_examples=30)
+def test_classdiagram_roomadministration_editroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1909,14 +1940,14 @@ def test_classdiagram::roomadministration_editroom_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editRoom' in ClassDiagram::RoomAdministration is empty"
+        assert has_statements, f"Function 'editRoom' in ClassDiagram_RoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editRoom' in ClassDiagram::RoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editRoom' in ClassDiagram_RoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editRoom' in ClassDiagram::RoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editRoom' in ClassDiagram_RoomAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1924,9 +1955,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomAdministration_strategy)
+@given(instance=ClassDiagram_RoomAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roomadministration_createroomtype_changes_state(instance):
+def test_classdiagram_roomadministration_createroomtype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1943,14 +1974,14 @@ def test_classdiagram::roomadministration_createroomtype_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createRoomType' in ClassDiagram::RoomAdministration is empty"
+        assert has_statements, f"Function 'createRoomType' in ClassDiagram_RoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createRoomType' in ClassDiagram::RoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'createRoomType' in ClassDiagram_RoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createRoomType' in ClassDiagram::RoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'createRoomType' in ClassDiagram_RoomAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1958,66 +1989,35 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomAdministration_strategy)
+@given(instance=ClassDiagram_RoomAdministration_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roomadministration_removeroomtype_changes_state(instance):
+def test_classdiagram_roomadministration_editroomtype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.removeRoomType(
+        instance.editRoomType(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRoomType).strip()
+        source = inspect.getsource(instance.editRoomType).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoomType' in ClassDiagram::RoomAdministration is empty"
+        assert has_statements, f"Function 'editRoomType' in ClassDiagram_RoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoomType' in ClassDiagram::RoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editRoomType' in ClassDiagram_RoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoomType' in ClassDiagram::RoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editRoomType' in ClassDiagram_RoomAdministration is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::RoomAdministration_strategy)
-@settings(max_examples=30)
-def test_classdiagram::roomadministration_removeroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeRoom(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoom' in ClassDiagram::RoomAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoom' in ClassDiagram::RoomAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoom' in ClassDiagram::RoomAdministration is not implemented or raised an error")
-
-@given(instance=ClassDiagram::BillManager_strategy)
+@given(instance=ClassDiagram_BillManager_strategy)
 @settings(max_examples=50)
-def test_classdiagram::billmanager_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::BillManager)
+def test_classdiagram_billmanager_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_BillManager)
 
 import warnings
 import copy
@@ -2025,9 +2025,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BillManager_strategy)
+@given(instance=ClassDiagram_BillManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::billmanager_addpurchasedservice_changes_state(instance):
+def test_classdiagram_billmanager_addpurchasedservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2043,14 +2043,14 @@ def test_classdiagram::billmanager_addpurchasedservice_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addPurchasedService' in ClassDiagram::BillManager is empty"
+        assert has_statements, f"Function 'addPurchasedService' in ClassDiagram_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addPurchasedService' in ClassDiagram::BillManager did not change state; check implementation")
+            warnings.warn(f"Operation 'addPurchasedService' in ClassDiagram_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addPurchasedService' in ClassDiagram::BillManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'addPurchasedService' in ClassDiagram_BillManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2058,9 +2058,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BillManager_strategy)
+@given(instance=ClassDiagram_BillManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::billmanager_pay_changes_state(instance):
+def test_classdiagram_billmanager_pay_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2074,14 +2074,14 @@ def test_classdiagram::billmanager_pay_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'pay' in ClassDiagram::BillManager is empty"
+        assert has_statements, f"Function 'pay' in ClassDiagram_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'pay' in ClassDiagram::BillManager did not change state; check implementation")
+            warnings.warn(f"Operation 'pay' in ClassDiagram_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'pay' in ClassDiagram::BillManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'pay' in ClassDiagram_BillManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2089,40 +2089,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BillManager_strategy)
+@given(instance=ClassDiagram_BillManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::billmanager_findbill_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findBill(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findBill).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBill' in ClassDiagram::BillManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBill' in ClassDiagram::BillManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBill' in ClassDiagram::BillManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::BillManager_strategy)
-@settings(max_examples=30)
-def test_classdiagram::billmanager_createreceipt_changes_state(instance):
+def test_classdiagram_billmanager_createreceipt_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2136,19 +2105,14 @@ def test_classdiagram::billmanager_createreceipt_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createReceipt' in ClassDiagram::BillManager is empty"
+        assert has_statements, f"Function 'createReceipt' in ClassDiagram_BillManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createReceipt' in ClassDiagram::BillManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createReceipt' in ClassDiagram_BillManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createReceipt' in ClassDiagram::BillManager is not implemented or raised an error")
-
-@given(instance=ClassDiagram::GuestManager_strategy)
-@settings(max_examples=50)
-def test_classdiagram::guestmanager_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::GuestManager)
+        warnings.warn(f"Operation 'createReceipt' in ClassDiagram_BillManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2156,9 +2120,45 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::GuestManager_strategy)
+@given(instance=ClassDiagram_BillManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::guestmanager_findguestrecords_changes_state(instance):
+def test_classdiagram_billmanager_findbill_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findBill(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findBill).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findBill' in ClassDiagram_BillManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findBill' in ClassDiagram_BillManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findBill' in ClassDiagram_BillManager is not implemented or raised an error")
+
+@given(instance=ClassDiagram_GuestManager_strategy)
+@settings(max_examples=50)
+def test_classdiagram_guestmanager_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_GuestManager)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_GuestManager_strategy)
+@settings(max_examples=30)
+def test_classdiagram_guestmanager_findguestrecords_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2173,14 +2173,14 @@ def test_classdiagram::guestmanager_findguestrecords_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findGuestRecords' in ClassDiagram::GuestManager is empty"
+        assert has_statements, f"Function 'findGuestRecords' in ClassDiagram_GuestManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findGuestRecords' in ClassDiagram::GuestManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findGuestRecords' in ClassDiagram_GuestManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findGuestRecords' in ClassDiagram::GuestManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findGuestRecords' in ClassDiagram_GuestManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2188,9 +2188,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::GuestManager_strategy)
+@given(instance=ClassDiagram_GuestManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::guestmanager_removeguestrecord_changes_state(instance):
+def test_classdiagram_guestmanager_removeguestrecord_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2204,14 +2204,14 @@ def test_classdiagram::guestmanager_removeguestrecord_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeGuestRecord' in ClassDiagram::GuestManager is empty"
+        assert has_statements, f"Function 'removeGuestRecord' in ClassDiagram_GuestManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeGuestRecord' in ClassDiagram::GuestManager did not change state; check implementation")
+            warnings.warn(f"Operation 'removeGuestRecord' in ClassDiagram_GuestManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeGuestRecord' in ClassDiagram::GuestManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeGuestRecord' in ClassDiagram_GuestManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2219,40 +2219,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::GuestManager_strategy)
+@given(instance=ClassDiagram_GuestManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::guestmanager_findguestrecord_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findGuestRecord(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findGuestRecord).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findGuestRecord' in ClassDiagram::GuestManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findGuestRecord' in ClassDiagram::GuestManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findGuestRecord' in ClassDiagram::GuestManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::GuestManager_strategy)
-@settings(max_examples=30)
-def test_classdiagram::guestmanager_editguestrecord_changes_state(instance):
+def test_classdiagram_guestmanager_editguestrecord_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2266,14 +2235,14 @@ def test_classdiagram::guestmanager_editguestrecord_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editGuestRecord' in ClassDiagram::GuestManager is empty"
+        assert has_statements, f"Function 'editGuestRecord' in ClassDiagram_GuestManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editGuestRecord' in ClassDiagram::GuestManager did not change state; check implementation")
+            warnings.warn(f"Operation 'editGuestRecord' in ClassDiagram_GuestManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editGuestRecord' in ClassDiagram::GuestManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'editGuestRecord' in ClassDiagram_GuestManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2281,9 +2250,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::GuestManager_strategy)
+@given(instance=ClassDiagram_GuestManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::guestmanager_createguestrecord_changes_state(instance):
+def test_classdiagram_guestmanager_createguestrecord_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2302,19 +2271,14 @@ def test_classdiagram::guestmanager_createguestrecord_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createGuestRecord' in ClassDiagram::GuestManager is empty"
+        assert has_statements, f"Function 'createGuestRecord' in ClassDiagram_GuestManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createGuestRecord' in ClassDiagram::GuestManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createGuestRecord' in ClassDiagram_GuestManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createGuestRecord' in ClassDiagram::GuestManager is not implemented or raised an error")
-
-@given(instance=ClassDiagram::RoomManager_strategy)
-@settings(max_examples=50)
-def test_classdiagram::roommanager_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::RoomManager)
+        warnings.warn(f"Operation 'createGuestRecord' in ClassDiagram_GuestManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2322,30 +2286,35 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomManager_strategy)
+@given(instance=ClassDiagram_GuestManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roommanager_maintenancestatus_changes_state(instance):
+def test_classdiagram_guestmanager_findguestrecord_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.maintenanceStatus(
+        instance.findGuestRecord(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.maintenanceStatus).strip()
+        source = inspect.getsource(instance.findGuestRecord).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'maintenanceStatus' in ClassDiagram::RoomManager is empty"
+        assert has_statements, f"Function 'findGuestRecord' in ClassDiagram_GuestManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'maintenanceStatus' in ClassDiagram::RoomManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findGuestRecord' in ClassDiagram_GuestManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'maintenanceStatus' in ClassDiagram::RoomManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findGuestRecord' in ClassDiagram_GuestManager is not implemented or raised an error")
+
+@given(instance=ClassDiagram_RoomManager_strategy)
+@settings(max_examples=50)
+def test_classdiagram_roommanager_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_RoomManager)
 
 import warnings
 import copy
@@ -2353,9 +2322,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomManager_strategy)
+@given(instance=ClassDiagram_RoomManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roommanager_roomexists_changes_state(instance):
+def test_classdiagram_roommanager_cleaningstatus_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.cleaningStatus(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.cleaningStatus).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'cleaningStatus' in ClassDiagram_RoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'cleaningStatus' in ClassDiagram_RoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'cleaningStatus' in ClassDiagram_RoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_RoomManager_strategy)
+@settings(max_examples=30)
+def test_classdiagram_roommanager_findroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findRoom(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findRoom' in ClassDiagram_RoomManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findRoom' in ClassDiagram_RoomManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findRoom' in ClassDiagram_RoomManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_RoomManager_strategy)
+@settings(max_examples=30)
+def test_classdiagram_roommanager_roomexists_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2370,14 +2401,14 @@ def test_classdiagram::roommanager_roomexists_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'roomExists' in ClassDiagram::RoomManager is empty"
+        assert has_statements, f"Function 'roomExists' in ClassDiagram_RoomManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'roomExists' in ClassDiagram::RoomManager did not change state; check implementation")
+            warnings.warn(f"Operation 'roomExists' in ClassDiagram_RoomManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'roomExists' in ClassDiagram::RoomManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'roomExists' in ClassDiagram_RoomManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2385,93 +2416,56 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::RoomManager_strategy)
+@given(instance=ClassDiagram_RoomManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::roommanager_cleaningstatus_changes_state(instance):
+def test_classdiagram_roommanager_maintenancestatus_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.cleaningStatus(
+        instance.maintenanceStatus(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.cleaningStatus).strip()
+        source = inspect.getsource(instance.maintenanceStatus).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cleaningStatus' in ClassDiagram::RoomManager is empty"
+        assert has_statements, f"Function 'maintenanceStatus' in ClassDiagram_RoomManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cleaningStatus' in ClassDiagram::RoomManager did not change state; check implementation")
+            warnings.warn(f"Operation 'maintenanceStatus' in ClassDiagram_RoomManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cleaningStatus' in ClassDiagram::RoomManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'maintenanceStatus' in ClassDiagram_RoomManager is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::RoomManager_strategy)
-@settings(max_examples=30)
-def test_classdiagram::roommanager_findroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findRoom(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findRoom' in ClassDiagram::RoomManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findRoom' in ClassDiagram::RoomManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findRoom' in ClassDiagram::RoomManager is not implemented or raised an error")
-
-@given(instance=ClassDiagram::Booking::PurchasedService_strategy)
+@given(instance=ClassDiagram_Booking_PurchasedService_strategy)
 @settings(max_examples=50)
-def test_classdiagram::booking::purchasedservice_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Booking::PurchasedService)
-
-@given(instance=ClassDiagram::Booking::PurchasedService_strategy)
-def test_classdiagram::booking::purchasedservice_price_type(instance):
-    assert isinstance(instance.price, float)
+def test_classdiagram_booking_purchasedservice_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Booking_PurchasedService)
 
 
-@given(instance=ClassDiagram::Booking::PurchasedService_strategy)
-def test_classdiagram::booking::purchasedservice_price_setter(instance):
+
+@given(instance=ClassDiagram_Booking_PurchasedService_strategy)
+def test_classdiagram_booking_purchasedservice_price_setter(instance):
     original = instance.price
     instance.price = original
     assert instance.price == original
 
-@given(instance=ClassDiagram::Booking::PurchasedService_strategy)
-def test_classdiagram::booking::purchasedservice_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ClassDiagram::Booking::PurchasedService_strategy)
-def test_classdiagram::booking::purchasedservice_name_setter(instance):
+@given(instance=ClassDiagram_Booking_PurchasedService_strategy)
+def test_classdiagram_booking_purchasedservice_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=50)
-def test_classdiagram::bookingmanager_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::BookingManager)
+def test_classdiagram_bookingmanager_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_BookingManager)
 
 import warnings
 import copy
@@ -2479,31 +2473,33 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_findavailableroomtypes_changes_state(instance):
+def test_classdiagram_bookingmanager_findavailablerooms_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.findAvailableRoomTypes(
+        instance.findAvailableRooms(
+            "test", 
+            "test", 
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findAvailableRoomTypes).strip()
+        source = inspect.getsource(instance.findAvailableRooms).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findAvailableRoomTypes' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'findAvailableRooms' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findAvailableRoomTypes' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findAvailableRooms' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findAvailableRoomTypes' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findAvailableRooms' in ClassDiagram_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2511,9 +2507,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_createbooking_changes_state(instance):
+def test_classdiagram_bookingmanager_checkin_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.checkIn(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.checkIn).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'checkIn' in ClassDiagram_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'checkIn' in ClassDiagram_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'checkIn' in ClassDiagram_BookingManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_BookingManager_strategy)
+@settings(max_examples=30)
+def test_classdiagram_bookingmanager_findbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findBooking' in ClassDiagram_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findBooking' in ClassDiagram_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findBooking' in ClassDiagram_BookingManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_BookingManager_strategy)
+@settings(max_examples=30)
+def test_classdiagram_bookingmanager_createbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2531,14 +2589,14 @@ def test_classdiagram::bookingmanager_createbooking_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createBooking' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'createBooking' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createBooking' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'createBooking' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createBooking' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'createBooking' in ClassDiagram_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2546,9 +2604,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_initbooking_changes_state(instance):
+def test_classdiagram_bookingmanager_initbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2560,14 +2618,14 @@ def test_classdiagram::bookingmanager_initbooking_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initBooking' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'initBooking' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initBooking' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'initBooking' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initBooking' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'initBooking' in ClassDiagram_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2575,95 +2633,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_findbooking_changes_state(instance):
+def test_classdiagram_bookingmanager_findavailableroomtypes_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.findBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBooking' in ClassDiagram::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBooking' in ClassDiagram::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBooking' in ClassDiagram::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::BookingManager_strategy)
-@settings(max_examples=30)
-def test_classdiagram::bookingmanager_editbooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editBooking' in ClassDiagram::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editBooking' in ClassDiagram::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editBooking' in ClassDiagram::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::BookingManager_strategy)
-@settings(max_examples=30)
-def test_classdiagram::bookingmanager_findavailablerooms_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findAvailableRooms(
-            "test", 
-            "test", 
+        instance.findAvailableRoomTypes(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findAvailableRooms).strip()
+        source = inspect.getsource(instance.findAvailableRoomTypes).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findAvailableRooms' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'findAvailableRoomTypes' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findAvailableRooms' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findAvailableRoomTypes' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findAvailableRooms' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findAvailableRoomTypes' in ClassDiagram_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2671,9 +2665,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_checkout_changes_state(instance):
+def test_classdiagram_bookingmanager_checkout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2687,14 +2681,14 @@ def test_classdiagram::bookingmanager_checkout_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkOut' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'checkOut' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkOut' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'checkOut' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkOut' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkOut' in ClassDiagram_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2702,40 +2696,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_checkin_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.checkIn(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkIn).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkIn' in ClassDiagram::BookingManager is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkIn' in ClassDiagram::BookingManager did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkIn' in ClassDiagram::BookingManager is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::BookingManager_strategy)
-@settings(max_examples=30)
-def test_classdiagram::bookingmanager_assignkey_changes_state(instance):
+def test_classdiagram_bookingmanager_assignkey_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2751,14 +2714,14 @@ def test_classdiagram::bookingmanager_assignkey_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'assignKey' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'assignKey' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'assignKey' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'assignKey' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'assignKey' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'assignKey' in ClassDiagram_BookingManager is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2766,9 +2729,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::BookingManager_strategy)
+@given(instance=ClassDiagram_BookingManager_strategy)
 @settings(max_examples=30)
-def test_classdiagram::bookingmanager_cancelbooking_changes_state(instance):
+def test_classdiagram_bookingmanager_editbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.editBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.editBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'editBooking' in ClassDiagram_BookingManager is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'editBooking' in ClassDiagram_BookingManager did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'editBooking' in ClassDiagram_BookingManager is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_BookingManager_strategy)
+@settings(max_examples=30)
+def test_classdiagram_bookingmanager_cancelbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2782,19 +2776,19 @@ def test_classdiagram::bookingmanager_cancelbooking_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cancelBooking' in ClassDiagram::BookingManager is empty"
+        assert has_statements, f"Function 'cancelBooking' in ClassDiagram_BookingManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cancelBooking' in ClassDiagram::BookingManager did not change state; check implementation")
+            warnings.warn(f"Operation 'cancelBooking' in ClassDiagram_BookingManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cancelBooking' in ClassDiagram::BookingManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'cancelBooking' in ClassDiagram_BookingManager is not implemented or raised an error")
 
-@given(instance=ClassDiagram::IServiceBooking_strategy)
+@given(instance=ClassDiagram_IServiceBooking_strategy)
 @settings(max_examples=50)
-def test_classdiagram::iservicebooking_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::IServiceBooking)
+def test_classdiagram_iservicebooking_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_IServiceBooking)
 
 import warnings
 import copy
@@ -2802,30 +2796,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::IServiceBooking_strategy)
+@given(instance=ClassDiagram_IServiceBooking_strategy)
 @settings(max_examples=30)
-def test_classdiagram::iservicebooking_cancelbookedservice_changes_state(instance):
+def test_classdiagram_iservicebooking_findbookedservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.cancelBookedService(
+        instance.findBookedService(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.cancelBookedService).strip()
+        source = inspect.getsource(instance.findBookedService).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cancelBookedService' in ClassDiagram::IServiceBooking is empty"
+        assert has_statements, f"Function 'findBookedService' in ClassDiagram_IServiceBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cancelBookedService' in ClassDiagram::IServiceBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'findBookedService' in ClassDiagram_IServiceBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cancelBookedService' in ClassDiagram::IServiceBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'findBookedService' in ClassDiagram_IServiceBooking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2833,9 +2827,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::IServiceBooking_strategy)
+@given(instance=ClassDiagram_IServiceBooking_strategy)
 @settings(max_examples=30)
-def test_classdiagram::iservicebooking_findavailableservices_changes_state(instance):
+def test_classdiagram_iservicebooking_findavailableservices_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2850,14 +2844,14 @@ def test_classdiagram::iservicebooking_findavailableservices_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findAvailableServices' in ClassDiagram::IServiceBooking is empty"
+        assert has_statements, f"Function 'findAvailableServices' in ClassDiagram_IServiceBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findAvailableServices' in ClassDiagram::IServiceBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'findAvailableServices' in ClassDiagram_IServiceBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findAvailableServices' in ClassDiagram::IServiceBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'findAvailableServices' in ClassDiagram_IServiceBooking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2865,40 +2859,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ClassDiagram::IServiceBooking_strategy)
+@given(instance=ClassDiagram_IServiceBooking_strategy)
 @settings(max_examples=30)
-def test_classdiagram::iservicebooking_findbookedservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findBookedService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findBookedService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBookedService' in ClassDiagram::IServiceBooking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBookedService' in ClassDiagram::IServiceBooking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBookedService' in ClassDiagram::IServiceBooking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=ClassDiagram::IServiceBooking_strategy)
-@settings(max_examples=30)
-def test_classdiagram::iservicebooking_bookfacilityservice_changes_state(instance):
+def test_classdiagram_iservicebooking_bookfacilityservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2916,465 +2879,394 @@ def test_classdiagram::iservicebooking_bookfacilityservice_changes_state(instanc
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bookFacilityService' in ClassDiagram::IServiceBooking is empty"
+        assert has_statements, f"Function 'bookFacilityService' in ClassDiagram_IServiceBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bookFacilityService' in ClassDiagram::IServiceBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'bookFacilityService' in ClassDiagram_IServiceBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bookFacilityService' in ClassDiagram::IServiceBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'bookFacilityService' in ClassDiagram_IServiceBooking is not implemented or raised an error")
 
-@given(instance=ClassDiagram::Facility::FacilityType_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=ClassDiagram_IServiceBooking_strategy)
+@settings(max_examples=30)
+def test_classdiagram_iservicebooking_cancelbookedservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.cancelBookedService(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.cancelBookedService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'cancelBookedService' in ClassDiagram_IServiceBooking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'cancelBookedService' in ClassDiagram_IServiceBooking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'cancelBookedService' in ClassDiagram_IServiceBooking is not implemented or raised an error")
+
+@given(instance=ClassDiagram_Facility_FacilityType_strategy)
 @settings(max_examples=50)
-def test_classdiagram::facility::facilitytype_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Facility::FacilityType)
-
-@given(instance=ClassDiagram::Facility::FacilityType_strategy)
-def test_classdiagram::facility::facilitytype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_facility_facilitytype_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Facility_FacilityType)
 
 
-@given(instance=ClassDiagram::Facility::FacilityType_strategy)
-def test_classdiagram::facility::facilitytype_name_setter(instance):
+
+@given(instance=ClassDiagram_Facility_FacilityType_strategy)
+def test_classdiagram_facility_facilitytype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Hotel::Facility_strategy)
+@given(instance=ClassDiagram_Hotel_Facility_strategy)
 @settings(max_examples=50)
-def test_classdiagram::hotel::facility_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Hotel::Facility)
-
-@given(instance=ClassDiagram::Hotel::Facility_strategy)
-def test_classdiagram::hotel::facility_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_hotel_facility_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Hotel_Facility)
 
 
-@given(instance=ClassDiagram::Hotel::Facility_strategy)
-def test_classdiagram::hotel::facility_name_setter(instance):
+
+@given(instance=ClassDiagram_Hotel_Facility_strategy)
+def test_classdiagram_hotel_facility_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Room::RoomAppliance_strategy)
+@given(instance=ClassDiagram_Room_RoomAppliance_strategy)
 @settings(max_examples=50)
-def test_classdiagram::room::roomappliance_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Room::RoomAppliance)
-
-@given(instance=ClassDiagram::Room::RoomAppliance_strategy)
-def test_classdiagram::room::roomappliance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_room_roomappliance_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Room_RoomAppliance)
 
 
-@given(instance=ClassDiagram::Room::RoomAppliance_strategy)
-def test_classdiagram::room::roomappliance_name_setter(instance):
+
+@given(instance=ClassDiagram_Room_RoomAppliance_strategy)
+def test_classdiagram_room_roomappliance_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::ApplianceType::ApplianceService_strategy)
+@given(instance=ClassDiagram_ApplianceType_ApplianceService_strategy)
 @settings(max_examples=50)
-def test_classdiagram::appliancetype::applianceservice_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::ApplianceType::ApplianceService)
-
-@given(instance=ClassDiagram::ApplianceType::ApplianceService_strategy)
-def test_classdiagram::appliancetype::applianceservice_price_type(instance):
-    assert isinstance(instance.price, float)
+def test_classdiagram_appliancetype_applianceservice_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_ApplianceType_ApplianceService)
 
 
-@given(instance=ClassDiagram::ApplianceType::ApplianceService_strategy)
-def test_classdiagram::appliancetype::applianceservice_price_setter(instance):
+
+@given(instance=ClassDiagram_ApplianceType_ApplianceService_strategy)
+def test_classdiagram_appliancetype_applianceservice_price_setter(instance):
     original = instance.price
     instance.price = original
     assert instance.price == original
 
-@given(instance=ClassDiagram::ApplianceType::ApplianceService_strategy)
-def test_classdiagram::appliancetype::applianceservice_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ClassDiagram::ApplianceType::ApplianceService_strategy)
-def test_classdiagram::appliancetype::applianceservice_name_setter(instance):
+@given(instance=ClassDiagram_ApplianceType_ApplianceService_strategy)
+def test_classdiagram_appliancetype_applianceservice_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::RoomAppliance::ApplianceType_strategy)
+@given(instance=ClassDiagram_RoomAppliance_ApplianceType_strategy)
 @settings(max_examples=50)
-def test_classdiagram::roomappliance::appliancetype_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::RoomAppliance::ApplianceType)
-
-@given(instance=ClassDiagram::RoomAppliance::ApplianceType_strategy)
-def test_classdiagram::roomappliance::appliancetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_roomappliance_appliancetype_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_RoomAppliance_ApplianceType)
 
 
-@given(instance=ClassDiagram::RoomAppliance::ApplianceType_strategy)
-def test_classdiagram::roomappliance::appliancetype_name_setter(instance):
+
+@given(instance=ClassDiagram_RoomAppliance_ApplianceType_strategy)
+def test_classdiagram_roomappliance_appliancetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Facility::FacilityService_strategy)
+@given(instance=ClassDiagram_Facility_FacilityService_strategy)
 @settings(max_examples=50)
-def test_classdiagram::facility::facilityservice_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Facility::FacilityService)
-
-@given(instance=ClassDiagram::Facility::FacilityService_strategy)
-def test_classdiagram::facility::facilityservice_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_facility_facilityservice_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Facility_FacilityService)
 
 
-@given(instance=ClassDiagram::Facility::FacilityService_strategy)
-def test_classdiagram::facility::facilityservice_name_setter(instance):
+
+@given(instance=ClassDiagram_Facility_FacilityService_strategy)
+def test_classdiagram_facility_facilityservice_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Facility::FacilityService_strategy)
-def test_classdiagram::facility::facilityservice_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
-@given(instance=ClassDiagram::Facility::FacilityService_strategy)
-def test_classdiagram::facility::facilityservice_price_setter(instance):
+@given(instance=ClassDiagram_Facility_FacilityService_strategy)
+def test_classdiagram_facility_facilityservice_price_setter(instance):
     original = instance.price
     instance.price = original
     assert instance.price == original
 
-@given(instance=ClassDiagram::Booking::Bill_strategy)
+@given(instance=ClassDiagram_Booking_Bill_strategy)
 @settings(max_examples=50)
-def test_classdiagram::booking::bill_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Booking::Bill)
-
-@given(instance=ClassDiagram::Booking::Bill_strategy)
-def test_classdiagram::booking::bill_paidAmount_type(instance):
-    assert isinstance(instance.paidAmount, float)
+def test_classdiagram_booking_bill_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Booking_Bill)
 
 
-@given(instance=ClassDiagram::Booking::Bill_strategy)
-def test_classdiagram::booking::bill_paidAmount_setter(instance):
+
+@given(instance=ClassDiagram_Booking_Bill_strategy)
+def test_classdiagram_booking_bill_paidAmount_setter(instance):
     original = instance.paidAmount
     instance.paidAmount = original
     assert instance.paidAmount == original
 
-@given(instance=ClassDiagram::Booking::BookedService_strategy)
+@given(instance=ClassDiagram_Booking_BookedService_strategy)
 @settings(max_examples=50)
-def test_classdiagram::booking::bookedservice_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Booking::BookedService)
-
-@given(instance=ClassDiagram::Booking::BookedService_strategy)
-def test_classdiagram::booking::bookedservice_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_classdiagram_booking_bookedservice_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Booking_BookedService)
 
 
-@given(instance=ClassDiagram::Booking::BookedService_strategy)
-def test_classdiagram::booking::bookedservice_date_setter(instance):
+
+@given(instance=ClassDiagram_Booking_BookedService_strategy)
+def test_classdiagram_booking_bookedservice_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=ClassDiagram::Room::RoomKey_strategy)
+@given(instance=ClassDiagram_Room_RoomKey_strategy)
 @settings(max_examples=50)
-def test_classdiagram::room::roomkey_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Room::RoomKey)
-
-@given(instance=ClassDiagram::Room::RoomKey_strategy)
-def test_classdiagram::room::roomkey_expirationDate_type(instance):
-    assert isinstance(instance.expirationDate, date)
+def test_classdiagram_room_roomkey_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Room_RoomKey)
 
 
-@given(instance=ClassDiagram::Room::RoomKey_strategy)
-def test_classdiagram::room::roomkey_expirationDate_setter(instance):
+
+@given(instance=ClassDiagram_Room_RoomKey_strategy)
+def test_classdiagram_room_roomkey_expirationDate_setter(instance):
     original = instance.expirationDate
     instance.expirationDate = original
     assert instance.expirationDate == original
 
-@given(instance=ClassDiagram::Room::RoomType_strategy)
+@given(instance=ClassDiagram_Room_RoomType_strategy)
 @settings(max_examples=50)
-def test_classdiagram::room::roomtype_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Room::RoomType)
-
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_maxNumberOfGuests_type(instance):
-    assert isinstance(instance.maxNumberOfGuests, int)
+def test_classdiagram_room_roomtype_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Room_RoomType)
 
 
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_maxNumberOfGuests_setter(instance):
+
+@given(instance=ClassDiagram_Room_RoomType_strategy)
+def test_classdiagram_room_roomtype_maxNumberOfGuests_setter(instance):
     original = instance.maxNumberOfGuests
     instance.maxNumberOfGuests = original
     assert instance.maxNumberOfGuests == original
 
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_area_type(instance):
-    assert isinstance(instance.area, float)
 
 
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_area_setter(instance):
+@given(instance=ClassDiagram_Room_RoomType_strategy)
+def test_classdiagram_room_roomtype_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=ClassDiagram_Room_RoomType_strategy)
+def test_classdiagram_room_roomtype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ClassDiagram_Room_RoomType_strategy)
+def test_classdiagram_room_roomtype_area_setter(instance):
     original = instance.area
     instance.area = original
     assert instance.area == original
 
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ClassDiagram::Room::RoomType_strategy)
-def test_classdiagram::room::roomtype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
+@given(instance=ClassDiagram_Hotel_Booking_strategy)
 @settings(max_examples=50)
-def test_classdiagram::hotel::booking_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Hotel::Booking)
-
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_bookingID_type(instance):
-    assert isinstance(instance.bookingID, int)
+def test_classdiagram_hotel_booking_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Hotel_Booking)
 
 
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_bookingID_setter(instance):
-    original = instance.bookingID
-    instance.bookingID = original
-    assert instance.bookingID == original
 
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_endDate_type(instance):
-    assert isinstance(instance.endDate, date)
-
-
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_endDate_setter(instance):
-    original = instance.endDate
-    instance.endDate = original
-    assert instance.endDate == original
-
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_checkedIn_type(instance):
-    assert isinstance(instance.checkedIn, bool)
-
-
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_checkedIn_setter(instance):
+@given(instance=ClassDiagram_Hotel_Booking_strategy)
+def test_classdiagram_hotel_booking_checkedIn_setter(instance):
     original = instance.checkedIn
     instance.checkedIn = original
     assert instance.checkedIn == original
 
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_startDate_type(instance):
-    assert isinstance(instance.startDate, date)
 
 
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_startDate_setter(instance):
+@given(instance=ClassDiagram_Hotel_Booking_strategy)
+def test_classdiagram_hotel_booking_bookingID_setter(instance):
+    original = instance.bookingID
+    instance.bookingID = original
+    assert instance.bookingID == original
+
+
+
+@given(instance=ClassDiagram_Hotel_Booking_strategy)
+def test_classdiagram_hotel_booking_endDate_setter(instance):
+    original = instance.endDate
+    instance.endDate = original
+    assert instance.endDate == original
+
+
+
+@given(instance=ClassDiagram_Hotel_Booking_strategy)
+def test_classdiagram_hotel_booking_startDate_setter(instance):
     original = instance.startDate
     instance.startDate = original
     assert instance.startDate == original
 
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
-@given(instance=ClassDiagram::Hotel::Booking_strategy)
-def test_classdiagram::hotel::booking_price_setter(instance):
+@given(instance=ClassDiagram_Hotel_Booking_strategy)
+def test_classdiagram_hotel_booking_price_setter(instance):
     original = instance.price
     instance.price = original
     assert instance.price == original
 
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
+@given(instance=ClassDiagram_Hotel_Staff_strategy)
 @settings(max_examples=50)
-def test_classdiagram::hotel::staff_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Hotel::Staff)
-
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_hasWorkTitel_type(instance):
-    assert isinstance(instance.hasWorkTitel, str)
+def test_classdiagram_hotel_staff_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Hotel_Staff)
 
 
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_hasWorkTitel_setter(instance):
+
+@given(instance=ClassDiagram_Hotel_Staff_strategy)
+def test_classdiagram_hotel_staff_ssn_setter(instance):
+    original = instance.ssn
+    instance.ssn = original
+    assert instance.ssn == original
+
+
+
+@given(instance=ClassDiagram_Hotel_Staff_strategy)
+def test_classdiagram_hotel_staff_hasWorkTitel_setter(instance):
     original = instance.hasWorkTitel
     instance.hasWorkTitel = original
     assert instance.hasWorkTitel == original
 
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_ssn_type(instance):
-    assert isinstance(instance.ssn, str)
 
 
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_ssn_setter(instance):
-    original = instance.ssn
-    instance.ssn = original
-    assert instance.ssn == original
-
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
-
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=ClassDiagram::Hotel::Staff_strategy)
-def test_classdiagram::hotel::staff_lastName_setter(instance):
+@given(instance=ClassDiagram_Hotel_Staff_strategy)
+def test_classdiagram_hotel_staff_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=ClassDiagram::Hotel::Room_strategy)
+
+
+@given(instance=ClassDiagram_Hotel_Staff_strategy)
+def test_classdiagram_hotel_staff_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+@given(instance=ClassDiagram_Hotel_Room_strategy)
 @settings(max_examples=50)
-def test_classdiagram::hotel::room_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Hotel::Room)
-
-@given(instance=ClassDiagram::Hotel::Room_strategy)
-def test_classdiagram::hotel::room_roomNumber_type(instance):
-    assert isinstance(instance.roomNumber, int)
+def test_classdiagram_hotel_room_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Hotel_Room)
 
 
-@given(instance=ClassDiagram::Hotel::Room_strategy)
-def test_classdiagram::hotel::room_roomNumber_setter(instance):
-    original = instance.roomNumber
-    instance.roomNumber = original
-    assert instance.roomNumber == original
 
-@given(instance=ClassDiagram::Hotel::Room_strategy)
-def test_classdiagram::hotel::room_cleaningStatus_type(instance):
-    assert isinstance(instance.cleaningStatus, bool)
-
-
-@given(instance=ClassDiagram::Hotel::Room_strategy)
-def test_classdiagram::hotel::room_cleaningStatus_setter(instance):
-    original = instance.cleaningStatus
-    instance.cleaningStatus = original
-    assert instance.cleaningStatus == original
-
-@given(instance=ClassDiagram::Hotel::Room_strategy)
-def test_classdiagram::hotel::room_maintenceStatus_type(instance):
-    assert isinstance(instance.maintenceStatus, bool)
-
-
-@given(instance=ClassDiagram::Hotel::Room_strategy)
-def test_classdiagram::hotel::room_maintenceStatus_setter(instance):
+@given(instance=ClassDiagram_Hotel_Room_strategy)
+def test_classdiagram_hotel_room_maintenceStatus_setter(instance):
     original = instance.maintenceStatus
     instance.maintenceStatus = original
     assert instance.maintenceStatus == original
 
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
+
+
+@given(instance=ClassDiagram_Hotel_Room_strategy)
+def test_classdiagram_hotel_room_cleaningStatus_setter(instance):
+    original = instance.cleaningStatus
+    instance.cleaningStatus = original
+    assert instance.cleaningStatus == original
+
+
+
+@given(instance=ClassDiagram_Hotel_Room_strategy)
+def test_classdiagram_hotel_room_roomNumber_setter(instance):
+    original = instance.roomNumber
+    instance.roomNumber = original
+    assert instance.roomNumber == original
+
+@given(instance=ClassDiagram_Company_GuestRecord_strategy)
 @settings(max_examples=50)
-def test_classdiagram::company::guestrecord_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Company::GuestRecord)
-
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_adress_type(instance):
-    assert isinstance(instance.adress, str)
+def test_classdiagram_company_guestrecord_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Company_GuestRecord)
 
 
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_adress_setter(instance):
-    original = instance.adress
-    instance.adress = original
-    assert instance.adress == original
 
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_ssn_type(instance):
-    assert isinstance(instance.ssn, str)
-
-
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_ssn_setter(instance):
+@given(instance=ClassDiagram_Company_GuestRecord_strategy)
+def test_classdiagram_company_guestrecord_ssn_setter(instance):
     original = instance.ssn
     instance.ssn = original
     assert instance.ssn == original
 
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_paymentInformation_type(instance):
-    assert isinstance(instance.paymentInformation, str)
 
 
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_paymentInformation_setter(instance):
-    original = instance.paymentInformation
-    instance.paymentInformation = original
-    assert instance.paymentInformation == original
-
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, str)
-
-
-@given(instance=ClassDiagram::Company::GuestRecord_strategy)
-def test_classdiagram::company::guestrecord_phoneNumber_setter(instance):
+@given(instance=ClassDiagram_Company_GuestRecord_strategy)
+def test_classdiagram_company_guestrecord_phoneNumber_setter(instance):
     original = instance.phoneNumber
     instance.phoneNumber = original
     assert instance.phoneNumber == original
 
-@given(instance=ClassDiagram::Company::Hotel_strategy)
-@settings(max_examples=50)
-def test_classdiagram::company::hotel_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Company::Hotel)
-
-@given(instance=ClassDiagram::Company::Hotel_strategy)
-def test_classdiagram::company::hotel_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ClassDiagram::Company::Hotel_strategy)
-def test_classdiagram::company::hotel_name_setter(instance):
+@given(instance=ClassDiagram_Company_GuestRecord_strategy)
+def test_classdiagram_company_guestrecord_adress_setter(instance):
+    original = instance.adress
+    instance.adress = original
+    assert instance.adress == original
+
+
+
+@given(instance=ClassDiagram_Company_GuestRecord_strategy)
+def test_classdiagram_company_guestrecord_paymentInformation_setter(instance):
+    original = instance.paymentInformation
+    instance.paymentInformation = original
+    assert instance.paymentInformation == original
+
+
+
+@given(instance=ClassDiagram_Company_GuestRecord_strategy)
+def test_classdiagram_company_guestrecord_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Company_strategy)
+@given(instance=ClassDiagram_Company_Hotel_strategy)
 @settings(max_examples=50)
-def test_classdiagram::company_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Company)
-
-@given(instance=ClassDiagram::Company_strategy)
-def test_classdiagram::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_company_hotel_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Company_Hotel)
 
 
-@given(instance=ClassDiagram::Company_strategy)
-def test_classdiagram::company_name_setter(instance):
+
+@given(instance=ClassDiagram_Company_Hotel_strategy)
+def test_classdiagram_company_hotel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=ClassDiagram_Company_strategy)
+@settings(max_examples=50)
+def test_classdiagram_company_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Company)
+
+
+
+@given(instance=ClassDiagram_Company_strategy)
+def test_classdiagram_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

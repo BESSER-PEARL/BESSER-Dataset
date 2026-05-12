@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    family::Family,
-    family::Member,
+from python_code import (
+    family_Family,
+    family_Member,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_family::family_is_not_abstract():
-    assert not inspect.isabstract(family::Family)
+def test_family_family_is_not_abstract():
+    assert not inspect.isabstract(family_Family)
 
 
-def test_family::family_constructor_exists():
-    assert callable(family::Family.__init__)
+def test_family_family_constructor_exists():
+    assert callable(family_Family.__init__)
 
 
-def test_family::family_constructor_args():
-    sig = inspect.signature(family::Family.__init__)
+def test_family_family_constructor_args():
+    sig = inspect.signature(family_Family.__init__)
     params = list(sig.parameters.keys())
     assert "lastName" in params, "Missing parameter 'lastName'"
 
-def test_family::family_has_lastName():
-    assert hasattr(family::Family, "lastName")
+def test_family_family_has_lastName():
+    assert hasattr(family_Family, "lastName")
     descriptor = None
-    for klass in family::Family.__mro__:
+    for klass in family_Family.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
@@ -40,23 +40,23 @@ def test_family::family_has_lastName():
 
 
 
-def test_family::member_is_not_abstract():
-    assert not inspect.isabstract(family::Member)
+def test_family_member_is_not_abstract():
+    assert not inspect.isabstract(family_Member)
 
 
-def test_family::member_constructor_exists():
-    assert callable(family::Member.__init__)
+def test_family_member_constructor_exists():
+    assert callable(family_Member.__init__)
 
 
-def test_family::member_constructor_args():
-    sig = inspect.signature(family::Member.__init__)
+def test_family_member_constructor_args():
+    sig = inspect.signature(family_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_family::member_has_name():
-    assert hasattr(family::Member, "name")
+def test_family_member_has_name():
+    assert hasattr(family_Member, "name")
     descriptor = None
-    for klass in family::Member.__mro__:
+    for klass in family_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-family::Family_strategy = st.builds(
-    family::Family,
+family_Family_strategy = st.builds(
+    family_Family,
     lastName=
         safe_text
 )
-family::Member_strategy = st.builds(
-    family::Member,
+family_Member_strategy = st.builds(
+    family_Member,
     name=
         safe_text
 )
 
-@given(instance=family::Family_strategy)
+@given(instance=family_Family_strategy)
 @settings(max_examples=50)
-def test_family::family_instantiation(instance):
-    assert isinstance(instance, family::Family)
-
-@given(instance=family::Family_strategy)
-def test_family::family_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_family_family_instantiation(instance):
+    assert isinstance(instance, family_Family)
 
 
-@given(instance=family::Family_strategy)
-def test_family::family_lastName_setter(instance):
+
+@given(instance=family_Family_strategy)
+def test_family_family_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=family::Member_strategy)
+@given(instance=family_Member_strategy)
 @settings(max_examples=50)
-def test_family::member_instantiation(instance):
-    assert isinstance(instance, family::Member)
-
-@given(instance=family::Member_strategy)
-def test_family::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_family_member_instantiation(instance):
+    assert isinstance(instance, family_Member)
 
 
-@given(instance=family::Member_strategy)
-def test_family::member_name_setter(instance):
+
+@given(instance=family_Member_strategy)
+def test_family_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

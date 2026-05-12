@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ProductSpaceElement,
-    list::VersionedList,
-    list::ProductSpaceElement,
+    list_VersionedList,
+    list_ProductSpaceElement,
     UUIDElement,
-    list::VersionedListStartReference,
-    list::VersionedListEdge,
-    list::VersionedListVertex,
+    list_VersionedListStartReference,
+    list_VersionedListEdge,
+    list_VersionedListVertex,
 )
 
 # =============================================================================
@@ -35,30 +35,30 @@ def test_productspaceelement_constructor_args():
 
 
 
-def test_list::versionedlist_is_not_abstract():
-    assert not inspect.isabstract(list::VersionedList)
+def test_list_versionedlist_is_not_abstract():
+    assert not inspect.isabstract(list_VersionedList)
 
 
-def test_list::versionedlist_constructor_exists():
-    assert callable(list::VersionedList.__init__)
+def test_list_versionedlist_constructor_exists():
+    assert callable(list_VersionedList.__init__)
 
 
-def test_list::versionedlist_constructor_args():
-    sig = inspect.signature(list::VersionedList.__init__)
+def test_list_versionedlist_constructor_args():
+    sig = inspect.signature(list_VersionedList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_list::productspaceelement_is_not_abstract():
-    assert not inspect.isabstract(list::ProductSpaceElement)
+def test_list_productspaceelement_is_not_abstract():
+    assert not inspect.isabstract(list_ProductSpaceElement)
 
 
-def test_list::productspaceelement_constructor_exists():
-    assert callable(list::ProductSpaceElement.__init__)
+def test_list_productspaceelement_constructor_exists():
+    assert callable(list_ProductSpaceElement.__init__)
 
 
-def test_list::productspaceelement_constructor_args():
-    sig = inspect.signature(list::ProductSpaceElement.__init__)
+def test_list_productspaceelement_constructor_args():
+    sig = inspect.signature(list_ProductSpaceElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,44 +77,44 @@ def test_uuidelement_constructor_args():
 
 
 
-def test_list::versionedliststartreference_is_not_abstract():
-    assert not inspect.isabstract(list::VersionedListStartReference)
+def test_list_versionedliststartreference_is_not_abstract():
+    assert not inspect.isabstract(list_VersionedListStartReference)
 
 
-def test_list::versionedliststartreference_constructor_exists():
-    assert callable(list::VersionedListStartReference.__init__)
+def test_list_versionedliststartreference_constructor_exists():
+    assert callable(list_VersionedListStartReference.__init__)
 
 
-def test_list::versionedliststartreference_constructor_args():
-    sig = inspect.signature(list::VersionedListStartReference.__init__)
+def test_list_versionedliststartreference_constructor_args():
+    sig = inspect.signature(list_VersionedListStartReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_list::versionedlistedge_is_not_abstract():
-    assert not inspect.isabstract(list::VersionedListEdge)
+def test_list_versionedlistedge_is_not_abstract():
+    assert not inspect.isabstract(list_VersionedListEdge)
 
 
-def test_list::versionedlistedge_constructor_exists():
-    assert callable(list::VersionedListEdge.__init__)
+def test_list_versionedlistedge_constructor_exists():
+    assert callable(list_VersionedListEdge.__init__)
 
 
-def test_list::versionedlistedge_constructor_args():
-    sig = inspect.signature(list::VersionedListEdge.__init__)
+def test_list_versionedlistedge_constructor_args():
+    sig = inspect.signature(list_VersionedListEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_list::versionedlistvertex_is_not_abstract():
-    assert not inspect.isabstract(list::VersionedListVertex)
+def test_list_versionedlistvertex_is_not_abstract():
+    assert not inspect.isabstract(list_VersionedListVertex)
 
 
-def test_list::versionedlistvertex_constructor_exists():
-    assert callable(list::VersionedListVertex.__init__)
+def test_list_versionedlistvertex_constructor_exists():
+    assert callable(list_VersionedListVertex.__init__)
 
 
-def test_list::versionedlistvertex_constructor_args():
-    sig = inspect.signature(list::VersionedListVertex.__init__)
+def test_list_versionedlistvertex_constructor_args():
+    sig = inspect.signature(list_VersionedListVertex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -132,23 +132,23 @@ safe_text = st.text(
 ProductSpaceElement_strategy = st.builds(
     ProductSpaceElement,
 )
-list::VersionedList_strategy = st.builds(
-    list::VersionedList,
+list_VersionedList_strategy = st.builds(
+    list_VersionedList,
 )
-list::ProductSpaceElement_strategy = st.builds(
-    list::ProductSpaceElement,
+list_ProductSpaceElement_strategy = st.builds(
+    list_ProductSpaceElement,
 )
 UUIDElement_strategy = st.builds(
     UUIDElement,
 )
-list::VersionedListStartReference_strategy = st.builds(
-    list::VersionedListStartReference,
+list_VersionedListStartReference_strategy = st.builds(
+    list_VersionedListStartReference,
 )
-list::VersionedListEdge_strategy = st.builds(
-    list::VersionedListEdge,
+list_VersionedListEdge_strategy = st.builds(
+    list_VersionedListEdge,
 )
-list::VersionedListVertex_strategy = st.builds(
-    list::VersionedListVertex,
+list_VersionedListVertex_strategy = st.builds(
+    list_VersionedListVertex,
 )
 
 @given(instance=ProductSpaceElement_strategy)
@@ -156,10 +156,10 @@ list::VersionedListVertex_strategy = st.builds(
 def test_productspaceelement_instantiation(instance):
     assert isinstance(instance, ProductSpaceElement)
 
-@given(instance=list::VersionedList_strategy)
+@given(instance=list_VersionedList_strategy)
 @settings(max_examples=50)
-def test_list::versionedlist_instantiation(instance):
-    assert isinstance(instance, list::VersionedList)
+def test_list_versionedlist_instantiation(instance):
+    assert isinstance(instance, list_VersionedList)
 
 import warnings
 import copy
@@ -167,9 +167,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=list::VersionedList_strategy)
+@given(instance=list_VersionedList_strategy)
 @settings(max_examples=30)
-def test_list::versionedlist_linearize_changes_state(instance):
+def test_list_versionedlist_linearize_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -181,36 +181,36 @@ def test_list::versionedlist_linearize_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'linearize' in list::VersionedList is empty"
+        assert has_statements, f"Function 'linearize' in list_VersionedList is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'linearize' in list::VersionedList did not change state; check implementation")
+            warnings.warn(f"Operation 'linearize' in list_VersionedList did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'linearize' in list::VersionedList is not implemented or raised an error")
+        warnings.warn(f"Operation 'linearize' in list_VersionedList is not implemented or raised an error")
 
-@given(instance=list::ProductSpaceElement_strategy)
+@given(instance=list_ProductSpaceElement_strategy)
 @settings(max_examples=50)
-def test_list::productspaceelement_instantiation(instance):
-    assert isinstance(instance, list::ProductSpaceElement)
+def test_list_productspaceelement_instantiation(instance):
+    assert isinstance(instance, list_ProductSpaceElement)
 
 @given(instance=UUIDElement_strategy)
 @settings(max_examples=50)
 def test_uuidelement_instantiation(instance):
     assert isinstance(instance, UUIDElement)
 
-@given(instance=list::VersionedListStartReference_strategy)
+@given(instance=list_VersionedListStartReference_strategy)
 @settings(max_examples=50)
-def test_list::versionedliststartreference_instantiation(instance):
-    assert isinstance(instance, list::VersionedListStartReference)
+def test_list_versionedliststartreference_instantiation(instance):
+    assert isinstance(instance, list_VersionedListStartReference)
 
-@given(instance=list::VersionedListEdge_strategy)
+@given(instance=list_VersionedListEdge_strategy)
 @settings(max_examples=50)
-def test_list::versionedlistedge_instantiation(instance):
-    assert isinstance(instance, list::VersionedListEdge)
+def test_list_versionedlistedge_instantiation(instance):
+    assert isinstance(instance, list_VersionedListEdge)
 
-@given(instance=list::VersionedListVertex_strategy)
+@given(instance=list_VersionedListVertex_strategy)
 @settings(max_examples=50)
-def test_list::versionedlistvertex_instantiation(instance):
-    assert isinstance(instance, list::VersionedListVertex)
+def test_list_versionedlistvertex_instantiation(instance):
+    assert isinstance(instance, list_VersionedListVertex)

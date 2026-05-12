@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pack::eCls,
+from python_code import (
+    pack_eCls,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_pack::ecls_is_not_abstract():
-    assert not inspect.isabstract(pack::eCls)
+def test_pack_ecls_is_not_abstract():
+    assert not inspect.isabstract(pack_eCls)
 
 
-def test_pack::ecls_constructor_exists():
-    assert callable(pack::eCls.__init__)
+def test_pack_ecls_constructor_exists():
+    assert callable(pack_eCls.__init__)
 
 
-def test_pack::ecls_constructor_args():
-    sig = inspect.signature(pack::eCls.__init__)
+def test_pack_ecls_constructor_args():
+    sig = inspect.signature(pack_eCls.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pack::eCls_strategy = st.builds(
-    pack::eCls,
+pack_eCls_strategy = st.builds(
+    pack_eCls,
 )
 
-@given(instance=pack::eCls_strategy)
+@given(instance=pack_eCls_strategy)
 @settings(max_examples=50)
-def test_pack::ecls_instantiation(instance):
-    assert isinstance(instance, pack::eCls)
+def test_pack_ecls_instantiation(instance):
+    assert isinstance(instance, pack_eCls)

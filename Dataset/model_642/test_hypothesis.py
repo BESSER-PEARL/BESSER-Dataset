@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mm1::Library,
-    mm1::Film,
-    mm1::Book,
-    mm1::Member,
+from python_code import (
+    mm1_Library,
+    mm1_Film,
+    mm1_Book,
+    mm1_Member,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_mm1::library_is_not_abstract():
-    assert not inspect.isabstract(mm1::Library)
+def test_mm1_library_is_not_abstract():
+    assert not inspect.isabstract(mm1_Library)
 
 
-def test_mm1::library_constructor_exists():
-    assert callable(mm1::Library.__init__)
+def test_mm1_library_constructor_exists():
+    assert callable(mm1_Library.__init__)
 
 
-def test_mm1::library_constructor_args():
-    sig = inspect.signature(mm1::Library.__init__)
+def test_mm1_library_constructor_args():
+    sig = inspect.signature(mm1_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm1::library_has_name():
-    assert hasattr(mm1::Library, "name")
+def test_mm1_library_has_name():
+    assert hasattr(mm1_Library, "name")
     descriptor = None
-    for klass in mm1::Library.__mro__:
+    for klass in mm1_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_mm1::library_has_name():
 
 
 
-def test_mm1::film_is_not_abstract():
-    assert not inspect.isabstract(mm1::Film)
+def test_mm1_film_is_not_abstract():
+    assert not inspect.isabstract(mm1_Film)
 
 
-def test_mm1::film_constructor_exists():
-    assert callable(mm1::Film.__init__)
+def test_mm1_film_constructor_exists():
+    assert callable(mm1_Film.__init__)
 
 
-def test_mm1::film_constructor_args():
-    sig = inspect.signature(mm1::Film.__init__)
+def test_mm1_film_constructor_args():
+    sig = inspect.signature(mm1_Film.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm1::film_has_name():
-    assert hasattr(mm1::Film, "name")
+def test_mm1_film_has_name():
+    assert hasattr(mm1_Film, "name")
     descriptor = None
-    for klass in mm1::Film.__mro__:
+    for klass in mm1_Film.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_mm1::film_has_name():
 
 
 
-def test_mm1::book_is_not_abstract():
-    assert not inspect.isabstract(mm1::Book)
+def test_mm1_book_is_not_abstract():
+    assert not inspect.isabstract(mm1_Book)
 
 
-def test_mm1::book_constructor_exists():
-    assert callable(mm1::Book.__init__)
+def test_mm1_book_constructor_exists():
+    assert callable(mm1_Book.__init__)
 
 
-def test_mm1::book_constructor_args():
-    sig = inspect.signature(mm1::Book.__init__)
+def test_mm1_book_constructor_args():
+    sig = inspect.signature(mm1_Book.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm1::book_has_name():
-    assert hasattr(mm1::Book, "name")
+def test_mm1_book_has_name():
+    assert hasattr(mm1_Book, "name")
     descriptor = None
-    for klass in mm1::Book.__mro__:
+    for klass in mm1_Book.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,23 +90,23 @@ def test_mm1::book_has_name():
 
 
 
-def test_mm1::member_is_not_abstract():
-    assert not inspect.isabstract(mm1::Member)
+def test_mm1_member_is_not_abstract():
+    assert not inspect.isabstract(mm1_Member)
 
 
-def test_mm1::member_constructor_exists():
-    assert callable(mm1::Member.__init__)
+def test_mm1_member_constructor_exists():
+    assert callable(mm1_Member.__init__)
 
 
-def test_mm1::member_constructor_args():
-    sig = inspect.signature(mm1::Member.__init__)
+def test_mm1_member_constructor_args():
+    sig = inspect.signature(mm1_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm1::member_has_name():
-    assert hasattr(mm1::Member, "name")
+def test_mm1_member_has_name():
+    assert hasattr(mm1_Member, "name")
     descriptor = None
-    for klass in mm1::Member.__mro__:
+    for klass in mm1_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mm1::Library_strategy = st.builds(
-    mm1::Library,
+mm1_Library_strategy = st.builds(
+    mm1_Library,
     name=
         safe_text
 )
-mm1::Film_strategy = st.builds(
-    mm1::Film,
+mm1_Film_strategy = st.builds(
+    mm1_Film,
     name=
         safe_text
 )
-mm1::Book_strategy = st.builds(
-    mm1::Book,
+mm1_Book_strategy = st.builds(
+    mm1_Book,
     name=
         safe_text
 )
-mm1::Member_strategy = st.builds(
-    mm1::Member,
+mm1_Member_strategy = st.builds(
+    mm1_Member,
     name=
         safe_text
 )
 
-@given(instance=mm1::Library_strategy)
+@given(instance=mm1_Library_strategy)
 @settings(max_examples=50)
-def test_mm1::library_instantiation(instance):
-    assert isinstance(instance, mm1::Library)
-
-@given(instance=mm1::Library_strategy)
-def test_mm1::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm1_library_instantiation(instance):
+    assert isinstance(instance, mm1_Library)
 
 
-@given(instance=mm1::Library_strategy)
-def test_mm1::library_name_setter(instance):
+
+@given(instance=mm1_Library_strategy)
+def test_mm1_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm1::Film_strategy)
+@given(instance=mm1_Film_strategy)
 @settings(max_examples=50)
-def test_mm1::film_instantiation(instance):
-    assert isinstance(instance, mm1::Film)
-
-@given(instance=mm1::Film_strategy)
-def test_mm1::film_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm1_film_instantiation(instance):
+    assert isinstance(instance, mm1_Film)
 
 
-@given(instance=mm1::Film_strategy)
-def test_mm1::film_name_setter(instance):
+
+@given(instance=mm1_Film_strategy)
+def test_mm1_film_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm1::Book_strategy)
+@given(instance=mm1_Book_strategy)
 @settings(max_examples=50)
-def test_mm1::book_instantiation(instance):
-    assert isinstance(instance, mm1::Book)
-
-@given(instance=mm1::Book_strategy)
-def test_mm1::book_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm1_book_instantiation(instance):
+    assert isinstance(instance, mm1_Book)
 
 
-@given(instance=mm1::Book_strategy)
-def test_mm1::book_name_setter(instance):
+
+@given(instance=mm1_Book_strategy)
+def test_mm1_book_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm1::Member_strategy)
+@given(instance=mm1_Member_strategy)
 @settings(max_examples=50)
-def test_mm1::member_instantiation(instance):
-    assert isinstance(instance, mm1::Member)
-
-@given(instance=mm1::Member_strategy)
-def test_mm1::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm1_member_instantiation(instance):
+    assert isinstance(instance, mm1_Member)
 
 
-@given(instance=mm1::Member_strategy)
-def test_mm1::member_name_setter(instance):
+
+@given(instance=mm1_Member_strategy)
+def test_mm1_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

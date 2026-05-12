@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Laporan_data_sortir_UseCase,
@@ -413,9 +413,6 @@ def test_direktur_utama_actor_instantiation(instance):
 def test_barang_instantiation(instance):
     assert isinstance(instance, Barang)
 
-@given(instance=Barang_strategy)
-def test_barang_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Barang_strategy)
@@ -424,9 +421,6 @@ def test_barang_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Barang_strategy)
-def test_barang_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Barang_strategy)

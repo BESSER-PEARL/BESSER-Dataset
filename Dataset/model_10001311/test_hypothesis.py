@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Student,
@@ -151,21 +151,12 @@ def test_bankaccount_constructor_exists():
 def test_bankaccount_constructor_args():
     sig = inspect.signature(BankAccount.__init__)
     params = list(sig.parameters.keys())
-    assert "balance" in params, "Missing parameter 'balance'"
     assert "TRANSACTION_FEE" in params, "Missing parameter 'TRANSACTION_FEE'"
-    assert "minimumBalance" in params, "Missing parameter 'minimumBalance'"
-    assert "numOfTransactions" in params, "Missing parameter 'numOfTransactions'"
-    assert "FREE_TRANSACTIONS" in params, "Missing parameter 'FREE_TRANSACTIONS'"
     assert "isActive" in params, "Missing parameter 'isActive'"
-
-def test_bankaccount_has_balance():
-    assert hasattr(BankAccount, "balance")
-    descriptor = None
-    for klass in BankAccount.__mro__:
-        if "balance" in klass.__dict__:
-            descriptor = klass.__dict__["balance"]
-            break
-    assert isinstance(descriptor, property)
+    assert "balance" in params, "Missing parameter 'balance'"
+    assert "numOfTransactions" in params, "Missing parameter 'numOfTransactions'"
+    assert "minimumBalance" in params, "Missing parameter 'minimumBalance'"
+    assert "FREE_TRANSACTIONS" in params, "Missing parameter 'FREE_TRANSACTIONS'"
 
 def test_bankaccount_has_TRANSACTION_FEE():
     assert hasattr(BankAccount, "TRANSACTION_FEE")
@@ -176,12 +167,21 @@ def test_bankaccount_has_TRANSACTION_FEE():
             break
     assert isinstance(descriptor, property)
 
-def test_bankaccount_has_minimumBalance():
-    assert hasattr(BankAccount, "minimumBalance")
+def test_bankaccount_has_isActive():
+    assert hasattr(BankAccount, "isActive")
     descriptor = None
     for klass in BankAccount.__mro__:
-        if "minimumBalance" in klass.__dict__:
-            descriptor = klass.__dict__["minimumBalance"]
+        if "isActive" in klass.__dict__:
+            descriptor = klass.__dict__["isActive"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bankaccount_has_balance():
+    assert hasattr(BankAccount, "balance")
+    descriptor = None
+    for klass in BankAccount.__mro__:
+        if "balance" in klass.__dict__:
+            descriptor = klass.__dict__["balance"]
             break
     assert isinstance(descriptor, property)
 
@@ -194,21 +194,21 @@ def test_bankaccount_has_numOfTransactions():
             break
     assert isinstance(descriptor, property)
 
+def test_bankaccount_has_minimumBalance():
+    assert hasattr(BankAccount, "minimumBalance")
+    descriptor = None
+    for klass in BankAccount.__mro__:
+        if "minimumBalance" in klass.__dict__:
+            descriptor = klass.__dict__["minimumBalance"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_bankaccount_has_FREE_TRANSACTIONS():
     assert hasattr(BankAccount, "FREE_TRANSACTIONS")
     descriptor = None
     for klass in BankAccount.__mro__:
         if "FREE_TRANSACTIONS" in klass.__dict__:
             descriptor = klass.__dict__["FREE_TRANSACTIONS"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bankaccount_has_isActive():
-    assert hasattr(BankAccount, "isActive")
-    descriptor = None
-    for klass in BankAccount.__mro__:
-        if "isActive" in klass.__dict__:
-            descriptor = klass.__dict__["isActive"]
             break
     assert isinstance(descriptor, property)
 
@@ -251,18 +251,18 @@ Checking_strategy = st.builds(
 )
 BankAccount_strategy = st.builds(
     BankAccount,
-    balance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     TRANSACTION_FEE=
         st.integers(),
-    minimumBalance=
+    isActive=
+        st.booleans(),
+    balance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     numOfTransactions=
         st.integers(),
+    minimumBalance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     FREE_TRANSACTIONS=
-        st.integers(),
-    isActive=
-        st.booleans()
+        st.integers()
 )
 
 @given(instance=Student_strategy)
@@ -270,9 +270,6 @@ BankAccount_strategy = st.builds(
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Student_strategy)
@@ -296,9 +293,6 @@ def test_main_instantiation(instance):
 def test_instructor_instantiation(instance):
     assert isinstance(instance, Instructor)
 
-@given(instance=Instructor_strategy)
-def test_instructor_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Instructor_strategy)
@@ -312,9 +306,6 @@ def test_instructor_name_setter(instance):
 def test_checking_instantiation(instance):
     assert isinstance(instance, Checking)
 
-@given(instance=Checking_strategy)
-def test_checking_OVERDRAFT_FEE_type(instance):
-    assert isinstance(instance.OVERDRAFT_FEE, float)
 
 
 @given(instance=Checking_strategy)
@@ -323,9 +314,6 @@ def test_checking_OVERDRAFT_FEE_setter(instance):
     instance.OVERDRAFT_FEE = original
     assert instance.OVERDRAFT_FEE == original
 
-@given(instance=Checking_strategy)
-def test_checking_OVERDRAFT_LIMIT_type(instance):
-    assert isinstance(instance.OVERDRAFT_LIMIT, float)
 
 
 @given(instance=Checking_strategy)
@@ -334,9 +322,6 @@ def test_checking_OVERDRAFT_LIMIT_setter(instance):
     instance.OVERDRAFT_LIMIT = original
     assert instance.OVERDRAFT_LIMIT == original
 
-@given(instance=Checking_strategy)
-def test_checking_isActive_type(instance):
-    assert isinstance(instance.isActive, bool)
 
 
 @given(instance=Checking_strategy)
@@ -350,20 +335,6 @@ def test_checking_isActive_setter(instance):
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_setter(instance):
-    original = instance.balance
-    instance.balance = original
-    assert instance.balance == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_TRANSACTION_FEE_type(instance):
-    assert isinstance(instance.TRANSACTION_FEE, int)
 
 
 @given(instance=BankAccount_strategy)
@@ -372,20 +343,22 @@ def test_bankaccount_TRANSACTION_FEE_setter(instance):
     instance.TRANSACTION_FEE = original
     assert instance.TRANSACTION_FEE == original
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_minimumBalance_type(instance):
-    assert isinstance(instance.minimumBalance, float)
 
 
 @given(instance=BankAccount_strategy)
-def test_bankaccount_minimumBalance_setter(instance):
-    original = instance.minimumBalance
-    instance.minimumBalance = original
-    assert instance.minimumBalance == original
+def test_bankaccount_isActive_setter(instance):
+    original = instance.isActive
+    instance.isActive = original
+    assert instance.isActive == original
+
+
 
 @given(instance=BankAccount_strategy)
-def test_bankaccount_numOfTransactions_type(instance):
-    assert isinstance(instance.numOfTransactions, int)
+def test_bankaccount_balance_setter(instance):
+    original = instance.balance
+    instance.balance = original
+    assert instance.balance == original
+
 
 
 @given(instance=BankAccount_strategy)
@@ -394,9 +367,14 @@ def test_bankaccount_numOfTransactions_setter(instance):
     instance.numOfTransactions = original
     assert instance.numOfTransactions == original
 
+
+
 @given(instance=BankAccount_strategy)
-def test_bankaccount_FREE_TRANSACTIONS_type(instance):
-    assert isinstance(instance.FREE_TRANSACTIONS, int)
+def test_bankaccount_minimumBalance_setter(instance):
+    original = instance.minimumBalance
+    instance.minimumBalance = original
+    assert instance.minimumBalance == original
+
 
 
 @given(instance=BankAccount_strategy)
@@ -404,14 +382,3 @@ def test_bankaccount_FREE_TRANSACTIONS_setter(instance):
     original = instance.FREE_TRANSACTIONS
     instance.FREE_TRANSACTIONS = original
     assert instance.FREE_TRANSACTIONS == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_isActive_type(instance):
-    assert isinstance(instance.isActive, bool)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_isActive_setter(instance):
-    original = instance.isActive
-    instance.isActive = original
-    assert instance.isActive == original

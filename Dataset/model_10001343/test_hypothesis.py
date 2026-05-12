@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Actor7_Actor,
@@ -201,18 +201,9 @@ def test_pessoa_constructor_exists():
 def test_pessoa_constructor_args():
     sig = inspect.signature(Pessoa.__init__)
     params = list(sig.parameters.keys())
-    assert "Nome" in params, "Missing parameter 'Nome'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "Nome" in params, "Missing parameter 'Nome'"
     assert "idade" in params, "Missing parameter 'idade'"
-
-def test_pessoa_has_Nome():
-    assert hasattr(Pessoa, "Nome")
-    descriptor = None
-    for klass in Pessoa.__mro__:
-        if "Nome" in klass.__dict__:
-            descriptor = klass.__dict__["Nome"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_pessoa_has_id():
     assert hasattr(Pessoa, "id")
@@ -220,6 +211,15 @@ def test_pessoa_has_id():
     for klass in Pessoa.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pessoa_has_Nome():
+    assert hasattr(Pessoa, "Nome")
+    descriptor = None
+    for klass in Pessoa.__mro__:
+        if "Nome" in klass.__dict__:
+            descriptor = klass.__dict__["Nome"]
             break
     assert isinstance(descriptor, property)
 
@@ -281,10 +281,10 @@ Funcionario_strategy = st.builds(
 )
 Pessoa_strategy = st.builds(
     Pessoa,
-    Nome=
-        safe_text,
     id=
         st.integers(),
+    Nome=
+        safe_text,
     idade=
         st.integers()
 )
@@ -344,9 +344,6 @@ def test_actor_actor_instantiation(instance):
 def test_funcionario_instantiation(instance):
     assert isinstance(instance, Funcionario)
 
-@given(instance=Funcionario_strategy)
-def test_funcionario_cracha_type(instance):
-    assert isinstance(instance.cracha, int)
 
 
 @given(instance=Funcionario_strategy)
@@ -360,20 +357,6 @@ def test_funcionario_cracha_setter(instance):
 def test_pessoa_instantiation(instance):
     assert isinstance(instance, Pessoa)
 
-@given(instance=Pessoa_strategy)
-def test_pessoa_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
-
-
-@given(instance=Pessoa_strategy)
-def test_pessoa_Nome_setter(instance):
-    original = instance.Nome
-    instance.Nome = original
-    assert instance.Nome == original
-
-@given(instance=Pessoa_strategy)
-def test_pessoa_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Pessoa_strategy)
@@ -382,9 +365,14 @@ def test_pessoa_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=Pessoa_strategy)
-def test_pessoa_idade_type(instance):
-    assert isinstance(instance.idade, int)
+def test_pessoa_Nome_setter(instance):
+    original = instance.Nome
+    instance.Nome = original
+    assert instance.Nome == original
+
 
 
 @given(instance=Pessoa_strategy)

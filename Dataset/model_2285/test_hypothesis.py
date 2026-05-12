@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    UniverityU::uncertainty::aUniversity,
+from python_code import (
+    UniverityU_uncertainty_aUniversity,
     uUniversity,
     aUniversity,
-    UniverityU::uncertainty::aPerson,
+    UniverityU_uncertainty_aPerson,
     uPerson,
     ModelElement,
-    UniverityU::uncertainty::ModelElement,
-    uncertainty::aUniversity,
-    uncertainty::aPerson,
+    UniverityU_uncertainty_ModelElement,
+    uncertainty_aUniversity,
+    uncertainty_aPerson,
     aPerson,
     aCourses,
-    uncertainty::aCourses,
-    uncertainty::ModelElement,
-    UniverityU::University,
-    UniverityU::Person,
-    UniverityU::uncertainty::aCourses,
+    uncertainty_aCourses,
+    uncertainty_ModelElement,
+    UniverityU_Person,
+    UniverityU_University,
+    UniverityU_uncertainty_aCourses,
     uCourses,
-    uncertainty::UData,
-    UniverityU::uncertainty::uPerson,
-    UniverityU::uncertainty::uUniversity,
-    UniverityU::uncertainty::uCourses,
-    UniverityU::uncertainty::UData,
-    UniverityU::Courses,
+    uncertainty_UData,
+    UniverityU_uncertainty_uUniversity,
+    UniverityU_uncertainty_uPerson,
+    UniverityU_uncertainty_uCourses,
+    UniverityU_uncertainty_UData,
+    UniverityU_Courses,
     OperatorType,
 )
 
@@ -38,16 +38,16 @@ from classes import (
 
 
 
-def test_univerityu::uncertainty::auniversity_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::aUniversity)
+def test_univerityu_uncertainty_auniversity_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_aUniversity)
 
 
-def test_univerityu::uncertainty::auniversity_constructor_exists():
-    assert callable(UniverityU::uncertainty::aUniversity.__init__)
+def test_univerityu_uncertainty_auniversity_constructor_exists():
+    assert callable(UniverityU_uncertainty_aUniversity.__init__)
 
 
-def test_univerityu::uncertainty::auniversity_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::aUniversity.__init__)
+def test_univerityu_uncertainty_auniversity_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_aUniversity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -80,16 +80,16 @@ def test_auniversity_constructor_args():
 
 
 
-def test_univerityu::uncertainty::aperson_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::aPerson)
+def test_univerityu_uncertainty_aperson_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_aPerson)
 
 
-def test_univerityu::uncertainty::aperson_constructor_exists():
-    assert callable(UniverityU::uncertainty::aPerson.__init__)
+def test_univerityu_uncertainty_aperson_constructor_exists():
+    assert callable(UniverityU_uncertainty_aPerson.__init__)
 
 
-def test_univerityu::uncertainty::aperson_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::aPerson.__init__)
+def test_univerityu_uncertainty_aperson_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_aPerson.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -122,44 +122,44 @@ def test_modelelement_constructor_args():
 
 
 
-def test_univerityu::uncertainty::modelelement_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::ModelElement)
+def test_univerityu_uncertainty_modelelement_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_ModelElement)
 
 
-def test_univerityu::uncertainty::modelelement_constructor_exists():
-    assert callable(UniverityU::uncertainty::ModelElement.__init__)
+def test_univerityu_uncertainty_modelelement_constructor_exists():
+    assert callable(UniverityU_uncertainty_ModelElement.__init__)
 
 
-def test_univerityu::uncertainty::modelelement_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::ModelElement.__init__)
+def test_univerityu_uncertainty_modelelement_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uncertainty::auniversity_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::aUniversity)
+def test_uncertainty_auniversity_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_aUniversity)
 
 
-def test_uncertainty::auniversity_constructor_exists():
-    assert callable(uncertainty::aUniversity.__init__)
+def test_uncertainty_auniversity_constructor_exists():
+    assert callable(uncertainty_aUniversity.__init__)
 
 
-def test_uncertainty::auniversity_constructor_args():
-    sig = inspect.signature(uncertainty::aUniversity.__init__)
+def test_uncertainty_auniversity_constructor_args():
+    sig = inspect.signature(uncertainty_aUniversity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uncertainty::aperson_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::aPerson)
+def test_uncertainty_aperson_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_aPerson)
 
 
-def test_uncertainty::aperson_constructor_exists():
-    assert callable(uncertainty::aPerson.__init__)
+def test_uncertainty_aperson_constructor_exists():
+    assert callable(uncertainty_aPerson.__init__)
 
 
-def test_uncertainty::aperson_constructor_args():
-    sig = inspect.signature(uncertainty::aPerson.__init__)
+def test_uncertainty_aperson_constructor_args():
+    sig = inspect.signature(uncertainty_aPerson.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,75 +192,61 @@ def test_acourses_constructor_args():
 
 
 
-def test_uncertainty::acourses_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::aCourses)
+def test_uncertainty_acourses_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_aCourses)
 
 
-def test_uncertainty::acourses_constructor_exists():
-    assert callable(uncertainty::aCourses.__init__)
+def test_uncertainty_acourses_constructor_exists():
+    assert callable(uncertainty_aCourses.__init__)
 
 
-def test_uncertainty::acourses_constructor_args():
-    sig = inspect.signature(uncertainty::aCourses.__init__)
+def test_uncertainty_acourses_constructor_args():
+    sig = inspect.signature(uncertainty_aCourses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uncertainty::modelelement_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::ModelElement)
+def test_uncertainty_modelelement_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_ModelElement)
 
 
-def test_uncertainty::modelelement_constructor_exists():
-    assert callable(uncertainty::ModelElement.__init__)
+def test_uncertainty_modelelement_constructor_exists():
+    assert callable(uncertainty_ModelElement.__init__)
 
 
-def test_uncertainty::modelelement_constructor_args():
-    sig = inspect.signature(uncertainty::ModelElement.__init__)
+def test_uncertainty_modelelement_constructor_args():
+    sig = inspect.signature(uncertainty_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_univerityu::university_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::University)
+def test_univerityu_person_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_Person)
 
 
-def test_univerityu::university_constructor_exists():
-    assert callable(UniverityU::University.__init__)
+def test_univerityu_person_constructor_exists():
+    assert callable(UniverityU_Person.__init__)
 
 
-def test_univerityu::university_constructor_args():
-    sig = inspect.signature(UniverityU::University.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_univerityu::person_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::Person)
-
-
-def test_univerityu::person_constructor_exists():
-    assert callable(UniverityU::Person.__init__)
-
-
-def test_univerityu::person_constructor_args():
-    sig = inspect.signature(UniverityU::Person.__init__)
+def test_univerityu_person_constructor_args():
+    sig = inspect.signature(UniverityU_Person.__init__)
     params = list(sig.parameters.keys())
     assert "Email" in params, "Missing parameter 'Email'"
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_univerityu::person_has_Email():
-    assert hasattr(UniverityU::Person, "Email")
+def test_univerityu_person_has_Email():
+    assert hasattr(UniverityU_Person, "Email")
     descriptor = None
-    for klass in UniverityU::Person.__mro__:
+    for klass in UniverityU_Person.__mro__:
         if "Email" in klass.__dict__:
             descriptor = klass.__dict__["Email"]
             break
     assert isinstance(descriptor, property)
 
-def test_univerityu::person_has_Name():
-    assert hasattr(UniverityU::Person, "Name")
+def test_univerityu_person_has_Name():
+    assert hasattr(UniverityU_Person, "Name")
     descriptor = None
-    for klass in UniverityU::Person.__mro__:
+    for klass in UniverityU_Person.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -268,16 +254,30 @@ def test_univerityu::person_has_Name():
 
 
 
-def test_univerityu::uncertainty::acourses_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::aCourses)
+def test_univerityu_university_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_University)
 
 
-def test_univerityu::uncertainty::acourses_constructor_exists():
-    assert callable(UniverityU::uncertainty::aCourses.__init__)
+def test_univerityu_university_constructor_exists():
+    assert callable(UniverityU_University.__init__)
 
 
-def test_univerityu::uncertainty::acourses_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::aCourses.__init__)
+def test_univerityu_university_constructor_args():
+    sig = inspect.signature(UniverityU_University.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_univerityu_uncertainty_acourses_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_aCourses)
+
+
+def test_univerityu_uncertainty_acourses_constructor_exists():
+    assert callable(UniverityU_uncertainty_aCourses.__init__)
+
+
+def test_univerityu_uncertainty_acourses_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_aCourses.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -296,135 +296,135 @@ def test_ucourses_constructor_args():
 
 
 
-def test_uncertainty::udata_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::UData)
+def test_uncertainty_udata_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_UData)
 
 
-def test_uncertainty::udata_constructor_exists():
-    assert callable(uncertainty::UData.__init__)
+def test_uncertainty_udata_constructor_exists():
+    assert callable(uncertainty_UData.__init__)
 
 
-def test_uncertainty::udata_constructor_args():
-    sig = inspect.signature(uncertainty::UData.__init__)
+def test_uncertainty_udata_constructor_args():
+    sig = inspect.signature(uncertainty_UData.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_univerityu::uncertainty::uperson_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::uPerson)
+def test_univerityu_uncertainty_uuniversity_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_uUniversity)
 
 
-def test_univerityu::uncertainty::uperson_constructor_exists():
-    assert callable(UniverityU::uncertainty::uPerson.__init__)
+def test_univerityu_uncertainty_uuniversity_constructor_exists():
+    assert callable(UniverityU_uncertainty_uUniversity.__init__)
 
 
-def test_univerityu::uncertainty::uperson_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::uPerson.__init__)
+def test_univerityu_uncertainty_uuniversity_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_uUniversity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_univerityu::uncertainty::uuniversity_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::uUniversity)
+def test_univerityu_uncertainty_uperson_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_uPerson)
 
 
-def test_univerityu::uncertainty::uuniversity_constructor_exists():
-    assert callable(UniverityU::uncertainty::uUniversity.__init__)
+def test_univerityu_uncertainty_uperson_constructor_exists():
+    assert callable(UniverityU_uncertainty_uPerson.__init__)
 
 
-def test_univerityu::uncertainty::uuniversity_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::uUniversity.__init__)
+def test_univerityu_uncertainty_uperson_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_uPerson.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_univerityu::uncertainty::ucourses_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::uCourses)
+def test_univerityu_uncertainty_ucourses_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_uCourses)
 
 
-def test_univerityu::uncertainty::ucourses_constructor_exists():
-    assert callable(UniverityU::uncertainty::uCourses.__init__)
+def test_univerityu_uncertainty_ucourses_constructor_exists():
+    assert callable(UniverityU_uncertainty_uCourses.__init__)
 
 
-def test_univerityu::uncertainty::ucourses_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::uCourses.__init__)
+def test_univerityu_uncertainty_ucourses_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_uCourses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_univerityu::uncertainty::udata_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::uncertainty::UData)
+def test_univerityu_uncertainty_udata_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_uncertainty_UData)
 
 
-def test_univerityu::uncertainty::udata_constructor_exists():
-    assert callable(UniverityU::uncertainty::UData.__init__)
+def test_univerityu_uncertainty_udata_constructor_exists():
+    assert callable(UniverityU_uncertainty_UData.__init__)
 
 
-def test_univerityu::uncertainty::udata_constructor_args():
-    sig = inspect.signature(UniverityU::uncertainty::UData.__init__)
+def test_univerityu_uncertainty_udata_constructor_args():
+    sig = inspect.signature(UniverityU_uncertainty_UData.__init__)
     params = list(sig.parameters.keys())
-    assert "utype" in params, "Missing parameter 'utype'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "utype" in params, "Missing parameter 'utype'"
 
-def test_univerityu::uncertainty::udata_has_utype():
-    assert hasattr(UniverityU::uncertainty::UData, "utype")
+def test_univerityu_uncertainty_udata_has_name():
+    assert hasattr(UniverityU_uncertainty_UData, "name")
     descriptor = None
-    for klass in UniverityU::uncertainty::UData.__mro__:
-        if "utype" in klass.__dict__:
-            descriptor = klass.__dict__["utype"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_univerityu::uncertainty::udata_has_name():
-    assert hasattr(UniverityU::uncertainty::UData, "name")
-    descriptor = None
-    for klass in UniverityU::uncertainty::UData.__mro__:
+    for klass in UniverityU_uncertainty_UData.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_univerityu_uncertainty_udata_has_utype():
+    assert hasattr(UniverityU_uncertainty_UData, "utype")
+    descriptor = None
+    for klass in UniverityU_uncertainty_UData.__mro__:
+        if "utype" in klass.__dict__:
+            descriptor = klass.__dict__["utype"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_univerityu::courses_is_not_abstract():
-    assert not inspect.isabstract(UniverityU::Courses)
+
+def test_univerityu_courses_is_not_abstract():
+    assert not inspect.isabstract(UniverityU_Courses)
 
 
-def test_univerityu::courses_constructor_exists():
-    assert callable(UniverityU::Courses.__init__)
+def test_univerityu_courses_constructor_exists():
+    assert callable(UniverityU_Courses.__init__)
 
 
-def test_univerityu::courses_constructor_args():
-    sig = inspect.signature(UniverityU::Courses.__init__)
+def test_univerityu_courses_constructor_args():
+    sig = inspect.signature(UniverityU_Courses.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
-    assert "CFU" in params, "Missing parameter 'CFU'"
     assert "Semester" in params, "Missing parameter 'Semester'"
+    assert "CFU" in params, "Missing parameter 'CFU'"
 
-def test_univerityu::courses_has_Name():
-    assert hasattr(UniverityU::Courses, "Name")
+def test_univerityu_courses_has_Name():
+    assert hasattr(UniverityU_Courses, "Name")
     descriptor = None
-    for klass in UniverityU::Courses.__mro__:
+    for klass in UniverityU_Courses.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_univerityu::courses_has_CFU():
-    assert hasattr(UniverityU::Courses, "CFU")
+def test_univerityu_courses_has_Semester():
+    assert hasattr(UniverityU_Courses, "Semester")
     descriptor = None
-    for klass in UniverityU::Courses.__mro__:
-        if "CFU" in klass.__dict__:
-            descriptor = klass.__dict__["CFU"]
+    for klass in UniverityU_Courses.__mro__:
+        if "Semester" in klass.__dict__:
+            descriptor = klass.__dict__["Semester"]
             break
     assert isinstance(descriptor, property)
 
-def test_univerityu::courses_has_Semester():
-    assert hasattr(UniverityU::Courses, "Semester")
+def test_univerityu_courses_has_CFU():
+    assert hasattr(UniverityU_Courses, "CFU")
     descriptor = None
-    for klass in UniverityU::Courses.__mro__:
-        if "Semester" in klass.__dict__:
-            descriptor = klass.__dict__["Semester"]
+    for klass in UniverityU_Courses.__mro__:
+        if "CFU" in klass.__dict__:
+            descriptor = klass.__dict__["CFU"]
             break
     assert isinstance(descriptor, property)
 
@@ -436,8 +436,8 @@ def test_operatortype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OperatorType]
     expected_literals = [
-        "AND",
         "XOR",
+        "AND",
         "OR",
     ]
     # Check that all expected literals exist
@@ -456,8 +456,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-UniverityU::uncertainty::aUniversity_strategy = st.builds(
-    UniverityU::uncertainty::aUniversity,
+UniverityU_uncertainty_aUniversity_strategy = st.builds(
+    UniverityU_uncertainty_aUniversity,
 )
 uUniversity_strategy = st.builds(
     uUniversity,
@@ -465,8 +465,8 @@ uUniversity_strategy = st.builds(
 aUniversity_strategy = st.builds(
     aUniversity,
 )
-UniverityU::uncertainty::aPerson_strategy = st.builds(
-    UniverityU::uncertainty::aPerson,
+UniverityU_uncertainty_aPerson_strategy = st.builds(
+    UniverityU_uncertainty_aPerson,
 )
 uPerson_strategy = st.builds(
     uPerson,
@@ -474,14 +474,14 @@ uPerson_strategy = st.builds(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-UniverityU::uncertainty::ModelElement_strategy = st.builds(
-    UniverityU::uncertainty::ModelElement,
+UniverityU_uncertainty_ModelElement_strategy = st.builds(
+    UniverityU_uncertainty_ModelElement,
 )
-uncertainty::aUniversity_strategy = st.builds(
-    uncertainty::aUniversity,
+uncertainty_aUniversity_strategy = st.builds(
+    uncertainty_aUniversity,
 )
-uncertainty::aPerson_strategy = st.builds(
-    uncertainty::aPerson,
+uncertainty_aPerson_strategy = st.builds(
+    uncertainty_aPerson,
 )
 aPerson_strategy = st.builds(
     aPerson,
@@ -489,61 +489,61 @@ aPerson_strategy = st.builds(
 aCourses_strategy = st.builds(
     aCourses,
 )
-uncertainty::aCourses_strategy = st.builds(
-    uncertainty::aCourses,
+uncertainty_aCourses_strategy = st.builds(
+    uncertainty_aCourses,
 )
-uncertainty::ModelElement_strategy = st.builds(
-    uncertainty::ModelElement,
+uncertainty_ModelElement_strategy = st.builds(
+    uncertainty_ModelElement,
 )
-UniverityU::University_strategy = st.builds(
-    UniverityU::University,
-)
-UniverityU::Person_strategy = st.builds(
-    UniverityU::Person,
+UniverityU_Person_strategy = st.builds(
+    UniverityU_Person,
     Email=
         safe_text,
     Name=
         safe_text
 )
-UniverityU::uncertainty::aCourses_strategy = st.builds(
-    UniverityU::uncertainty::aCourses,
+UniverityU_University_strategy = st.builds(
+    UniverityU_University,
+)
+UniverityU_uncertainty_aCourses_strategy = st.builds(
+    UniverityU_uncertainty_aCourses,
 )
 uCourses_strategy = st.builds(
     uCourses,
 )
-uncertainty::UData_strategy = st.builds(
-    uncertainty::UData,
+uncertainty_UData_strategy = st.builds(
+    uncertainty_UData,
 )
-UniverityU::uncertainty::uPerson_strategy = st.builds(
-    UniverityU::uncertainty::uPerson,
+UniverityU_uncertainty_uUniversity_strategy = st.builds(
+    UniverityU_uncertainty_uUniversity,
 )
-UniverityU::uncertainty::uUniversity_strategy = st.builds(
-    UniverityU::uncertainty::uUniversity,
+UniverityU_uncertainty_uPerson_strategy = st.builds(
+    UniverityU_uncertainty_uPerson,
 )
-UniverityU::uncertainty::uCourses_strategy = st.builds(
-    UniverityU::uncertainty::uCourses,
+UniverityU_uncertainty_uCourses_strategy = st.builds(
+    UniverityU_uncertainty_uCourses,
 )
-UniverityU::uncertainty::UData_strategy = st.builds(
-    UniverityU::uncertainty::UData,
-    utype=
-        safe_text,
+UniverityU_uncertainty_UData_strategy = st.builds(
+    UniverityU_uncertainty_UData,
     name=
+        safe_text,
+    utype=
         safe_text
 )
-UniverityU::Courses_strategy = st.builds(
-    UniverityU::Courses,
+UniverityU_Courses_strategy = st.builds(
+    UniverityU_Courses,
     Name=
         safe_text,
-    CFU=
-        st.integers(),
     Semester=
-        safe_text
+        safe_text,
+    CFU=
+        st.integers()
 )
 
-@given(instance=UniverityU::uncertainty::aUniversity_strategy)
+@given(instance=UniverityU_uncertainty_aUniversity_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::auniversity_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::aUniversity)
+def test_univerityu_uncertainty_auniversity_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_aUniversity)
 
 @given(instance=uUniversity_strategy)
 @settings(max_examples=50)
@@ -555,10 +555,10 @@ def test_uuniversity_instantiation(instance):
 def test_auniversity_instantiation(instance):
     assert isinstance(instance, aUniversity)
 
-@given(instance=UniverityU::uncertainty::aPerson_strategy)
+@given(instance=UniverityU_uncertainty_aPerson_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::aperson_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::aPerson)
+def test_univerityu_uncertainty_aperson_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_aPerson)
 
 @given(instance=uPerson_strategy)
 @settings(max_examples=50)
@@ -570,20 +570,20 @@ def test_uperson_instantiation(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=UniverityU::uncertainty::ModelElement_strategy)
+@given(instance=UniverityU_uncertainty_ModelElement_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::modelelement_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::ModelElement)
+def test_univerityu_uncertainty_modelelement_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_ModelElement)
 
-@given(instance=uncertainty::aUniversity_strategy)
+@given(instance=uncertainty_aUniversity_strategy)
 @settings(max_examples=50)
-def test_uncertainty::auniversity_instantiation(instance):
-    assert isinstance(instance, uncertainty::aUniversity)
+def test_uncertainty_auniversity_instantiation(instance):
+    assert isinstance(instance, uncertainty_aUniversity)
 
-@given(instance=uncertainty::aPerson_strategy)
+@given(instance=uncertainty_aPerson_strategy)
 @settings(max_examples=50)
-def test_uncertainty::aperson_instantiation(instance):
-    assert isinstance(instance, uncertainty::aPerson)
+def test_uncertainty_aperson_instantiation(instance):
+    assert isinstance(instance, uncertainty_aPerson)
 
 @given(instance=aPerson_strategy)
 @settings(max_examples=50)
@@ -595,139 +595,118 @@ def test_aperson_instantiation(instance):
 def test_acourses_instantiation(instance):
     assert isinstance(instance, aCourses)
 
-@given(instance=uncertainty::aCourses_strategy)
+@given(instance=uncertainty_aCourses_strategy)
 @settings(max_examples=50)
-def test_uncertainty::acourses_instantiation(instance):
-    assert isinstance(instance, uncertainty::aCourses)
+def test_uncertainty_acourses_instantiation(instance):
+    assert isinstance(instance, uncertainty_aCourses)
 
-@given(instance=uncertainty::ModelElement_strategy)
+@given(instance=uncertainty_ModelElement_strategy)
 @settings(max_examples=50)
-def test_uncertainty::modelelement_instantiation(instance):
-    assert isinstance(instance, uncertainty::ModelElement)
+def test_uncertainty_modelelement_instantiation(instance):
+    assert isinstance(instance, uncertainty_ModelElement)
 
-@given(instance=UniverityU::University_strategy)
+@given(instance=UniverityU_Person_strategy)
 @settings(max_examples=50)
-def test_univerityu::university_instantiation(instance):
-    assert isinstance(instance, UniverityU::University)
-
-@given(instance=UniverityU::Person_strategy)
-@settings(max_examples=50)
-def test_univerityu::person_instantiation(instance):
-    assert isinstance(instance, UniverityU::Person)
-
-@given(instance=UniverityU::Person_strategy)
-def test_univerityu::person_Email_type(instance):
-    assert isinstance(instance.Email, str)
+def test_univerityu_person_instantiation(instance):
+    assert isinstance(instance, UniverityU_Person)
 
 
-@given(instance=UniverityU::Person_strategy)
-def test_univerityu::person_Email_setter(instance):
+
+@given(instance=UniverityU_Person_strategy)
+def test_univerityu_person_Email_setter(instance):
     original = instance.Email
     instance.Email = original
     assert instance.Email == original
 
-@given(instance=UniverityU::Person_strategy)
-def test_univerityu::person_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
-@given(instance=UniverityU::Person_strategy)
-def test_univerityu::person_Name_setter(instance):
+@given(instance=UniverityU_Person_strategy)
+def test_univerityu_person_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=UniverityU::uncertainty::aCourses_strategy)
+@given(instance=UniverityU_University_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::acourses_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::aCourses)
+def test_univerityu_university_instantiation(instance):
+    assert isinstance(instance, UniverityU_University)
+
+@given(instance=UniverityU_uncertainty_aCourses_strategy)
+@settings(max_examples=50)
+def test_univerityu_uncertainty_acourses_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_aCourses)
 
 @given(instance=uCourses_strategy)
 @settings(max_examples=50)
 def test_ucourses_instantiation(instance):
     assert isinstance(instance, uCourses)
 
-@given(instance=uncertainty::UData_strategy)
+@given(instance=uncertainty_UData_strategy)
 @settings(max_examples=50)
-def test_uncertainty::udata_instantiation(instance):
-    assert isinstance(instance, uncertainty::UData)
+def test_uncertainty_udata_instantiation(instance):
+    assert isinstance(instance, uncertainty_UData)
 
-@given(instance=UniverityU::uncertainty::uPerson_strategy)
+@given(instance=UniverityU_uncertainty_uUniversity_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::uperson_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::uPerson)
+def test_univerityu_uncertainty_uuniversity_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_uUniversity)
 
-@given(instance=UniverityU::uncertainty::uUniversity_strategy)
+@given(instance=UniverityU_uncertainty_uPerson_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::uuniversity_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::uUniversity)
+def test_univerityu_uncertainty_uperson_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_uPerson)
 
-@given(instance=UniverityU::uncertainty::uCourses_strategy)
+@given(instance=UniverityU_uncertainty_uCourses_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::ucourses_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::uCourses)
+def test_univerityu_uncertainty_ucourses_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_uCourses)
 
-@given(instance=UniverityU::uncertainty::UData_strategy)
+@given(instance=UniverityU_uncertainty_UData_strategy)
 @settings(max_examples=50)
-def test_univerityu::uncertainty::udata_instantiation(instance):
-    assert isinstance(instance, UniverityU::uncertainty::UData)
-
-@given(instance=UniverityU::uncertainty::UData_strategy)
-def test_univerityu::uncertainty::udata_utype_type(instance):
-    assert isinstance(instance.utype, str)
+def test_univerityu_uncertainty_udata_instantiation(instance):
+    assert isinstance(instance, UniverityU_uncertainty_UData)
 
 
-@given(instance=UniverityU::uncertainty::UData_strategy)
-def test_univerityu::uncertainty::udata_utype_setter(instance):
-    original = instance.utype
-    instance.utype = original
-    assert instance.utype == original
 
-@given(instance=UniverityU::uncertainty::UData_strategy)
-def test_univerityu::uncertainty::udata_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=UniverityU::uncertainty::UData_strategy)
-def test_univerityu::uncertainty::udata_name_setter(instance):
+@given(instance=UniverityU_uncertainty_UData_strategy)
+def test_univerityu_uncertainty_udata_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=UniverityU::Courses_strategy)
+
+
+@given(instance=UniverityU_uncertainty_UData_strategy)
+def test_univerityu_uncertainty_udata_utype_setter(instance):
+    original = instance.utype
+    instance.utype = original
+    assert instance.utype == original
+
+@given(instance=UniverityU_Courses_strategy)
 @settings(max_examples=50)
-def test_univerityu::courses_instantiation(instance):
-    assert isinstance(instance, UniverityU::Courses)
-
-@given(instance=UniverityU::Courses_strategy)
-def test_univerityu::courses_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_univerityu_courses_instantiation(instance):
+    assert isinstance(instance, UniverityU_Courses)
 
 
-@given(instance=UniverityU::Courses_strategy)
-def test_univerityu::courses_Name_setter(instance):
+
+@given(instance=UniverityU_Courses_strategy)
+def test_univerityu_courses_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=UniverityU::Courses_strategy)
-def test_univerityu::courses_CFU_type(instance):
-    assert isinstance(instance.CFU, int)
 
 
-@given(instance=UniverityU::Courses_strategy)
-def test_univerityu::courses_CFU_setter(instance):
-    original = instance.CFU
-    instance.CFU = original
-    assert instance.CFU == original
-
-@given(instance=UniverityU::Courses_strategy)
-def test_univerityu::courses_Semester_type(instance):
-    assert isinstance(instance.Semester, str)
-
-
-@given(instance=UniverityU::Courses_strategy)
-def test_univerityu::courses_Semester_setter(instance):
+@given(instance=UniverityU_Courses_strategy)
+def test_univerityu_courses_Semester_setter(instance):
     original = instance.Semester
     instance.Semester = original
     assert instance.Semester == original
+
+
+
+@given(instance=UniverityU_Courses_strategy)
+def test_univerityu_courses_CFU_setter(instance):
+    original = instance.CFU
+    instance.CFU = original
+    assert instance.CFU == original

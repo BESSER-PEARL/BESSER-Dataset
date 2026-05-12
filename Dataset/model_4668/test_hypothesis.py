@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Exp,
-    exp::Add,
-    exp::Lit,
-    exp::Exp,
+    exp_Add,
+    exp_Lit,
+    exp_Exp,
 )
 
 # =============================================================================
@@ -32,37 +32,37 @@ def test_exp_constructor_args():
 
 
 
-def test_exp::add_is_not_abstract():
-    assert not inspect.isabstract(exp::Add)
+def test_exp_add_is_not_abstract():
+    assert not inspect.isabstract(exp_Add)
 
 
-def test_exp::add_constructor_exists():
-    assert callable(exp::Add.__init__)
+def test_exp_add_constructor_exists():
+    assert callable(exp_Add.__init__)
 
 
-def test_exp::add_constructor_args():
-    sig = inspect.signature(exp::Add.__init__)
+def test_exp_add_constructor_args():
+    sig = inspect.signature(exp_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_exp::lit_is_not_abstract():
-    assert not inspect.isabstract(exp::Lit)
+def test_exp_lit_is_not_abstract():
+    assert not inspect.isabstract(exp_Lit)
 
 
-def test_exp::lit_constructor_exists():
-    assert callable(exp::Lit.__init__)
+def test_exp_lit_constructor_exists():
+    assert callable(exp_Lit.__init__)
 
 
-def test_exp::lit_constructor_args():
-    sig = inspect.signature(exp::Lit.__init__)
+def test_exp_lit_constructor_args():
+    sig = inspect.signature(exp_Lit.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_exp::lit_has_value():
-    assert hasattr(exp::Lit, "value")
+def test_exp_lit_has_value():
+    assert hasattr(exp_Lit, "value")
     descriptor = None
-    for klass in exp::Lit.__mro__:
+    for klass in exp_Lit.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -70,16 +70,16 @@ def test_exp::lit_has_value():
 
 
 
-def test_exp::exp_is_not_abstract():
-    assert not inspect.isabstract(exp::Exp)
+def test_exp_exp_is_not_abstract():
+    assert not inspect.isabstract(exp_Exp)
 
 
-def test_exp::exp_constructor_exists():
-    assert callable(exp::Exp.__init__)
+def test_exp_exp_constructor_exists():
+    assert callable(exp_Exp.__init__)
 
 
-def test_exp::exp_constructor_args():
-    sig = inspect.signature(exp::Exp.__init__)
+def test_exp_exp_constructor_args():
+    sig = inspect.signature(exp_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -97,16 +97,16 @@ safe_text = st.text(
 Exp_strategy = st.builds(
     Exp,
 )
-exp::Add_strategy = st.builds(
-    exp::Add,
+exp_Add_strategy = st.builds(
+    exp_Add,
 )
-exp::Lit_strategy = st.builds(
-    exp::Lit,
+exp_Lit_strategy = st.builds(
+    exp_Lit,
     value=
         st.integers()
 )
-exp::Exp_strategy = st.builds(
-    exp::Exp,
+exp_Exp_strategy = st.builds(
+    exp_Exp,
 )
 
 @given(instance=Exp_strategy)
@@ -114,28 +114,25 @@ exp::Exp_strategy = st.builds(
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=exp::Add_strategy)
+@given(instance=exp_Add_strategy)
 @settings(max_examples=50)
-def test_exp::add_instantiation(instance):
-    assert isinstance(instance, exp::Add)
+def test_exp_add_instantiation(instance):
+    assert isinstance(instance, exp_Add)
 
-@given(instance=exp::Lit_strategy)
+@given(instance=exp_Lit_strategy)
 @settings(max_examples=50)
-def test_exp::lit_instantiation(instance):
-    assert isinstance(instance, exp::Lit)
-
-@given(instance=exp::Lit_strategy)
-def test_exp::lit_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_exp_lit_instantiation(instance):
+    assert isinstance(instance, exp_Lit)
 
 
-@given(instance=exp::Lit_strategy)
-def test_exp::lit_value_setter(instance):
+
+@given(instance=exp_Lit_strategy)
+def test_exp_lit_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=exp::Exp_strategy)
+@given(instance=exp_Exp_strategy)
 @settings(max_examples=50)
-def test_exp::exp_instantiation(instance):
-    assert isinstance(instance, exp::Exp)
+def test_exp_exp_instantiation(instance):
+    assert isinstance(instance, exp_Exp)

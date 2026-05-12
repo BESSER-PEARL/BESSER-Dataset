@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractType,
-    entityDsl::IntType,
-    entityDsl::EntityReference,
-    entityDsl::StringType,
-    entityDsl::BooleanType,
-    entityDsl::Named,
-    entityDsl::AbstractType,
+    entityDsl_IntType,
+    entityDsl_EntityReference,
+    entityDsl_StringType,
+    entityDsl_BooleanType,
+    entityDsl_Named,
+    entityDsl_AbstractType,
     Named,
-    entityDsl::Entity,
-    entityDsl::Attribute,
-    entityDsl::Module,
+    entityDsl_Attribute,
+    entityDsl_Entity,
+    entityDsl_Module,
 )
 
 # =============================================================================
@@ -39,79 +39,79 @@ def test_abstracttype_constructor_args():
 
 
 
-def test_entitydsl::inttype_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::IntType)
+def test_entitydsl_inttype_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_IntType)
 
 
-def test_entitydsl::inttype_constructor_exists():
-    assert callable(entityDsl::IntType.__init__)
+def test_entitydsl_inttype_constructor_exists():
+    assert callable(entityDsl_IntType.__init__)
 
 
-def test_entitydsl::inttype_constructor_args():
-    sig = inspect.signature(entityDsl::IntType.__init__)
+def test_entitydsl_inttype_constructor_args():
+    sig = inspect.signature(entityDsl_IntType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::entityreference_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::EntityReference)
+def test_entitydsl_entityreference_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_EntityReference)
 
 
-def test_entitydsl::entityreference_constructor_exists():
-    assert callable(entityDsl::EntityReference.__init__)
+def test_entitydsl_entityreference_constructor_exists():
+    assert callable(entityDsl_EntityReference.__init__)
 
 
-def test_entitydsl::entityreference_constructor_args():
-    sig = inspect.signature(entityDsl::EntityReference.__init__)
+def test_entitydsl_entityreference_constructor_args():
+    sig = inspect.signature(entityDsl_EntityReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::StringType)
+def test_entitydsl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_StringType)
 
 
-def test_entitydsl::stringtype_constructor_exists():
-    assert callable(entityDsl::StringType.__init__)
+def test_entitydsl_stringtype_constructor_exists():
+    assert callable(entityDsl_StringType.__init__)
 
 
-def test_entitydsl::stringtype_constructor_args():
-    sig = inspect.signature(entityDsl::StringType.__init__)
+def test_entitydsl_stringtype_constructor_args():
+    sig = inspect.signature(entityDsl_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::booleantype_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::BooleanType)
+def test_entitydsl_booleantype_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_BooleanType)
 
 
-def test_entitydsl::booleantype_constructor_exists():
-    assert callable(entityDsl::BooleanType.__init__)
+def test_entitydsl_booleantype_constructor_exists():
+    assert callable(entityDsl_BooleanType.__init__)
 
 
-def test_entitydsl::booleantype_constructor_args():
-    sig = inspect.signature(entityDsl::BooleanType.__init__)
+def test_entitydsl_booleantype_constructor_args():
+    sig = inspect.signature(entityDsl_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::named_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Named)
+def test_entitydsl_named_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Named)
 
 
-def test_entitydsl::named_constructor_exists():
-    assert callable(entityDsl::Named.__init__)
+def test_entitydsl_named_constructor_exists():
+    assert callable(entityDsl_Named.__init__)
 
 
-def test_entitydsl::named_constructor_args():
-    sig = inspect.signature(entityDsl::Named.__init__)
+def test_entitydsl_named_constructor_args():
+    sig = inspect.signature(entityDsl_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entitydsl::named_has_name():
-    assert hasattr(entityDsl::Named, "name")
+def test_entitydsl_named_has_name():
+    assert hasattr(entityDsl_Named, "name")
     descriptor = None
-    for klass in entityDsl::Named.__mro__:
+    for klass in entityDsl_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -119,16 +119,16 @@ def test_entitydsl::named_has_name():
 
 
 
-def test_entitydsl::abstracttype_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::AbstractType)
+def test_entitydsl_abstracttype_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_AbstractType)
 
 
-def test_entitydsl::abstracttype_constructor_exists():
-    assert callable(entityDsl::AbstractType.__init__)
+def test_entitydsl_abstracttype_constructor_exists():
+    assert callable(entityDsl_AbstractType.__init__)
 
 
-def test_entitydsl::abstracttype_constructor_args():
-    sig = inspect.signature(entityDsl::AbstractType.__init__)
+def test_entitydsl_abstracttype_constructor_args():
+    sig = inspect.signature(entityDsl_AbstractType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,44 +147,44 @@ def test_named_constructor_args():
 
 
 
-def test_entitydsl::entity_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Entity)
+def test_entitydsl_attribute_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Attribute)
 
 
-def test_entitydsl::entity_constructor_exists():
-    assert callable(entityDsl::Entity.__init__)
+def test_entitydsl_attribute_constructor_exists():
+    assert callable(entityDsl_Attribute.__init__)
 
 
-def test_entitydsl::entity_constructor_args():
-    sig = inspect.signature(entityDsl::Entity.__init__)
+def test_entitydsl_attribute_constructor_args():
+    sig = inspect.signature(entityDsl_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::attribute_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Attribute)
+def test_entitydsl_entity_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Entity)
 
 
-def test_entitydsl::attribute_constructor_exists():
-    assert callable(entityDsl::Attribute.__init__)
+def test_entitydsl_entity_constructor_exists():
+    assert callable(entityDsl_Entity.__init__)
 
 
-def test_entitydsl::attribute_constructor_args():
-    sig = inspect.signature(entityDsl::Attribute.__init__)
+def test_entitydsl_entity_constructor_args():
+    sig = inspect.signature(entityDsl_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::module_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Module)
+def test_entitydsl_module_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Module)
 
 
-def test_entitydsl::module_constructor_exists():
-    assert callable(entityDsl::Module.__init__)
+def test_entitydsl_module_constructor_exists():
+    assert callable(entityDsl_Module.__init__)
 
 
-def test_entitydsl::module_constructor_args():
-    sig = inspect.signature(entityDsl::Module.__init__)
+def test_entitydsl_module_constructor_args():
+    sig = inspect.signature(entityDsl_Module.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -202,37 +202,37 @@ safe_text = st.text(
 AbstractType_strategy = st.builds(
     AbstractType,
 )
-entityDsl::IntType_strategy = st.builds(
-    entityDsl::IntType,
+entityDsl_IntType_strategy = st.builds(
+    entityDsl_IntType,
 )
-entityDsl::EntityReference_strategy = st.builds(
-    entityDsl::EntityReference,
+entityDsl_EntityReference_strategy = st.builds(
+    entityDsl_EntityReference,
 )
-entityDsl::StringType_strategy = st.builds(
-    entityDsl::StringType,
+entityDsl_StringType_strategy = st.builds(
+    entityDsl_StringType,
 )
-entityDsl::BooleanType_strategy = st.builds(
-    entityDsl::BooleanType,
+entityDsl_BooleanType_strategy = st.builds(
+    entityDsl_BooleanType,
 )
-entityDsl::Named_strategy = st.builds(
-    entityDsl::Named,
+entityDsl_Named_strategy = st.builds(
+    entityDsl_Named,
     name=
         safe_text
 )
-entityDsl::AbstractType_strategy = st.builds(
-    entityDsl::AbstractType,
+entityDsl_AbstractType_strategy = st.builds(
+    entityDsl_AbstractType,
 )
 Named_strategy = st.builds(
     Named,
 )
-entityDsl::Entity_strategy = st.builds(
-    entityDsl::Entity,
+entityDsl_Attribute_strategy = st.builds(
+    entityDsl_Attribute,
 )
-entityDsl::Attribute_strategy = st.builds(
-    entityDsl::Attribute,
+entityDsl_Entity_strategy = st.builds(
+    entityDsl_Entity,
 )
-entityDsl::Module_strategy = st.builds(
-    entityDsl::Module,
+entityDsl_Module_strategy = st.builds(
+    entityDsl_Module,
 )
 
 @given(instance=AbstractType_strategy)
@@ -240,63 +240,60 @@ entityDsl::Module_strategy = st.builds(
 def test_abstracttype_instantiation(instance):
     assert isinstance(instance, AbstractType)
 
-@given(instance=entityDsl::IntType_strategy)
+@given(instance=entityDsl_IntType_strategy)
 @settings(max_examples=50)
-def test_entitydsl::inttype_instantiation(instance):
-    assert isinstance(instance, entityDsl::IntType)
+def test_entitydsl_inttype_instantiation(instance):
+    assert isinstance(instance, entityDsl_IntType)
 
-@given(instance=entityDsl::EntityReference_strategy)
+@given(instance=entityDsl_EntityReference_strategy)
 @settings(max_examples=50)
-def test_entitydsl::entityreference_instantiation(instance):
-    assert isinstance(instance, entityDsl::EntityReference)
+def test_entitydsl_entityreference_instantiation(instance):
+    assert isinstance(instance, entityDsl_EntityReference)
 
-@given(instance=entityDsl::StringType_strategy)
+@given(instance=entityDsl_StringType_strategy)
 @settings(max_examples=50)
-def test_entitydsl::stringtype_instantiation(instance):
-    assert isinstance(instance, entityDsl::StringType)
+def test_entitydsl_stringtype_instantiation(instance):
+    assert isinstance(instance, entityDsl_StringType)
 
-@given(instance=entityDsl::BooleanType_strategy)
+@given(instance=entityDsl_BooleanType_strategy)
 @settings(max_examples=50)
-def test_entitydsl::booleantype_instantiation(instance):
-    assert isinstance(instance, entityDsl::BooleanType)
+def test_entitydsl_booleantype_instantiation(instance):
+    assert isinstance(instance, entityDsl_BooleanType)
 
-@given(instance=entityDsl::Named_strategy)
+@given(instance=entityDsl_Named_strategy)
 @settings(max_examples=50)
-def test_entitydsl::named_instantiation(instance):
-    assert isinstance(instance, entityDsl::Named)
-
-@given(instance=entityDsl::Named_strategy)
-def test_entitydsl::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entitydsl_named_instantiation(instance):
+    assert isinstance(instance, entityDsl_Named)
 
 
-@given(instance=entityDsl::Named_strategy)
-def test_entitydsl::named_name_setter(instance):
+
+@given(instance=entityDsl_Named_strategy)
+def test_entitydsl_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entityDsl::AbstractType_strategy)
+@given(instance=entityDsl_AbstractType_strategy)
 @settings(max_examples=50)
-def test_entitydsl::abstracttype_instantiation(instance):
-    assert isinstance(instance, entityDsl::AbstractType)
+def test_entitydsl_abstracttype_instantiation(instance):
+    assert isinstance(instance, entityDsl_AbstractType)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=entityDsl::Entity_strategy)
+@given(instance=entityDsl_Attribute_strategy)
 @settings(max_examples=50)
-def test_entitydsl::entity_instantiation(instance):
-    assert isinstance(instance, entityDsl::Entity)
+def test_entitydsl_attribute_instantiation(instance):
+    assert isinstance(instance, entityDsl_Attribute)
 
-@given(instance=entityDsl::Attribute_strategy)
+@given(instance=entityDsl_Entity_strategy)
 @settings(max_examples=50)
-def test_entitydsl::attribute_instantiation(instance):
-    assert isinstance(instance, entityDsl::Attribute)
+def test_entitydsl_entity_instantiation(instance):
+    assert isinstance(instance, entityDsl_Entity)
 
-@given(instance=entityDsl::Module_strategy)
+@given(instance=entityDsl_Module_strategy)
 @settings(max_examples=50)
-def test_entitydsl::module_instantiation(instance):
-    assert isinstance(instance, entityDsl::Module)
+def test_entitydsl_module_instantiation(instance):
+    assert isinstance(instance, entityDsl_Module)

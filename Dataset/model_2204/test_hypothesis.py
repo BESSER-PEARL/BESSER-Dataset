@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TreeElement,
-    MMTree::Leaf,
-    MMTree::Node,
-    MMTree::TreeElement,
+    MMTree_Leaf,
+    MMTree_Node,
+    MMTree_TreeElement,
     LeafSize,
 )
 
@@ -33,23 +33,23 @@ def test_treeelement_constructor_args():
 
 
 
-def test_mmtree::leaf_is_not_abstract():
-    assert not inspect.isabstract(MMTree::Leaf)
+def test_mmtree_leaf_is_not_abstract():
+    assert not inspect.isabstract(MMTree_Leaf)
 
 
-def test_mmtree::leaf_constructor_exists():
-    assert callable(MMTree::Leaf.__init__)
+def test_mmtree_leaf_constructor_exists():
+    assert callable(MMTree_Leaf.__init__)
 
 
-def test_mmtree::leaf_constructor_args():
-    sig = inspect.signature(MMTree::Leaf.__init__)
+def test_mmtree_leaf_constructor_args():
+    sig = inspect.signature(MMTree_Leaf.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_mmtree::leaf_has_size():
-    assert hasattr(MMTree::Leaf, "size")
+def test_mmtree_leaf_has_size():
+    assert hasattr(MMTree_Leaf, "size")
     descriptor = None
-    for klass in MMTree::Leaf.__mro__:
+    for klass in MMTree_Leaf.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -57,37 +57,37 @@ def test_mmtree::leaf_has_size():
 
 
 
-def test_mmtree::node_is_not_abstract():
-    assert not inspect.isabstract(MMTree::Node)
+def test_mmtree_node_is_not_abstract():
+    assert not inspect.isabstract(MMTree_Node)
 
 
-def test_mmtree::node_constructor_exists():
-    assert callable(MMTree::Node.__init__)
+def test_mmtree_node_constructor_exists():
+    assert callable(MMTree_Node.__init__)
 
 
-def test_mmtree::node_constructor_args():
-    sig = inspect.signature(MMTree::Node.__init__)
+def test_mmtree_node_constructor_args():
+    sig = inspect.signature(MMTree_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mmtree::treeelement_is_not_abstract():
-    assert not inspect.isabstract(MMTree::TreeElement)
+def test_mmtree_treeelement_is_not_abstract():
+    assert not inspect.isabstract(MMTree_TreeElement)
 
 
-def test_mmtree::treeelement_constructor_exists():
-    assert callable(MMTree::TreeElement.__init__)
+def test_mmtree_treeelement_constructor_exists():
+    assert callable(MMTree_TreeElement.__init__)
 
 
-def test_mmtree::treeelement_constructor_args():
-    sig = inspect.signature(MMTree::TreeElement.__init__)
+def test_mmtree_treeelement_constructor_args():
+    sig = inspect.signature(MMTree_TreeElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mmtree::treeelement_has_name():
-    assert hasattr(MMTree::TreeElement, "name")
+def test_mmtree_treeelement_has_name():
+    assert hasattr(MMTree_TreeElement, "name")
     descriptor = None
-    for klass in MMTree::TreeElement.__mro__:
+    for klass in MMTree_TreeElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -101,9 +101,9 @@ def test_leafsize_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LeafSize]
     expected_literals = [
-        "small",
         "medium",
         "big",
+        "small",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -124,16 +124,16 @@ safe_text = st.text(
 TreeElement_strategy = st.builds(
     TreeElement,
 )
-MMTree::Leaf_strategy = st.builds(
-    MMTree::Leaf,
+MMTree_Leaf_strategy = st.builds(
+    MMTree_Leaf,
     size=
         safe_text
 )
-MMTree::Node_strategy = st.builds(
-    MMTree::Node,
+MMTree_Node_strategy = st.builds(
+    MMTree_Node,
 )
-MMTree::TreeElement_strategy = st.builds(
-    MMTree::TreeElement,
+MMTree_TreeElement_strategy = st.builds(
+    MMTree_TreeElement,
     name=
         safe_text
 )
@@ -143,39 +143,33 @@ MMTree::TreeElement_strategy = st.builds(
 def test_treeelement_instantiation(instance):
     assert isinstance(instance, TreeElement)
 
-@given(instance=MMTree::Leaf_strategy)
+@given(instance=MMTree_Leaf_strategy)
 @settings(max_examples=50)
-def test_mmtree::leaf_instantiation(instance):
-    assert isinstance(instance, MMTree::Leaf)
-
-@given(instance=MMTree::Leaf_strategy)
-def test_mmtree::leaf_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_mmtree_leaf_instantiation(instance):
+    assert isinstance(instance, MMTree_Leaf)
 
 
-@given(instance=MMTree::Leaf_strategy)
-def test_mmtree::leaf_size_setter(instance):
+
+@given(instance=MMTree_Leaf_strategy)
+def test_mmtree_leaf_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=MMTree::Node_strategy)
+@given(instance=MMTree_Node_strategy)
 @settings(max_examples=50)
-def test_mmtree::node_instantiation(instance):
-    assert isinstance(instance, MMTree::Node)
+def test_mmtree_node_instantiation(instance):
+    assert isinstance(instance, MMTree_Node)
 
-@given(instance=MMTree::TreeElement_strategy)
+@given(instance=MMTree_TreeElement_strategy)
 @settings(max_examples=50)
-def test_mmtree::treeelement_instantiation(instance):
-    assert isinstance(instance, MMTree::TreeElement)
-
-@given(instance=MMTree::TreeElement_strategy)
-def test_mmtree::treeelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mmtree_treeelement_instantiation(instance):
+    assert isinstance(instance, MMTree_TreeElement)
 
 
-@given(instance=MMTree::TreeElement_strategy)
-def test_mmtree::treeelement_name_setter(instance):
+
+@given(instance=MMTree_TreeElement_strategy)
+def test_mmtree_treeelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class,
@@ -103,33 +103,15 @@ def test_patientto_constructor_exists():
 def test_patientto_constructor_args():
     sig = inspect.signature(PatientTO.__init__)
     params = list(sig.parameters.keys())
-    assert "first_name" in params, "Missing parameter 'first_name'"
-    assert "last_name" in params, "Missing parameter 'last_name'"
     assert "password" in params, "Missing parameter 'password'"
-    assert "plan_id" in params, "Missing parameter 'plan_id'"
-    assert "state_id" in params, "Missing parameter 'state_id'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "date_of_birth" in params, "Missing parameter 'date_of_birth'"
+    assert "last_name" in params, "Missing parameter 'last_name'"
+    assert "plan_id" in params, "Missing parameter 'plan_id'"
+    assert "email" in params, "Missing parameter 'email'"
     assert "contact_no" in params, "Missing parameter 'contact_no'"
+    assert "state_id" in params, "Missing parameter 'state_id'"
     assert "patient_id" in params, "Missing parameter 'patient_id'"
-
-def test_patientto_has_first_name():
-    assert hasattr(PatientTO, "first_name")
-    descriptor = None
-    for klass in PatientTO.__mro__:
-        if "first_name" in klass.__dict__:
-            descriptor = klass.__dict__["first_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patientto_has_last_name():
-    assert hasattr(PatientTO, "last_name")
-    descriptor = None
-    for klass in PatientTO.__mro__:
-        if "last_name" in klass.__dict__:
-            descriptor = klass.__dict__["last_name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "first_name" in params, "Missing parameter 'first_name'"
 
 def test_patientto_has_password():
     assert hasattr(PatientTO, "password")
@@ -137,33 +119,6 @@ def test_patientto_has_password():
     for klass in PatientTO.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patientto_has_plan_id():
-    assert hasattr(PatientTO, "plan_id")
-    descriptor = None
-    for klass in PatientTO.__mro__:
-        if "plan_id" in klass.__dict__:
-            descriptor = klass.__dict__["plan_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patientto_has_state_id():
-    assert hasattr(PatientTO, "state_id")
-    descriptor = None
-    for klass in PatientTO.__mro__:
-        if "state_id" in klass.__dict__:
-            descriptor = klass.__dict__["state_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patientto_has_email():
-    assert hasattr(PatientTO, "email")
-    descriptor = None
-    for klass in PatientTO.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -176,6 +131,33 @@ def test_patientto_has_date_of_birth():
             break
     assert isinstance(descriptor, property)
 
+def test_patientto_has_last_name():
+    assert hasattr(PatientTO, "last_name")
+    descriptor = None
+    for klass in PatientTO.__mro__:
+        if "last_name" in klass.__dict__:
+            descriptor = klass.__dict__["last_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_patientto_has_plan_id():
+    assert hasattr(PatientTO, "plan_id")
+    descriptor = None
+    for klass in PatientTO.__mro__:
+        if "plan_id" in klass.__dict__:
+            descriptor = klass.__dict__["plan_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_patientto_has_email():
+    assert hasattr(PatientTO, "email")
+    descriptor = None
+    for klass in PatientTO.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_patientto_has_contact_no():
     assert hasattr(PatientTO, "contact_no")
     descriptor = None
@@ -185,12 +167,30 @@ def test_patientto_has_contact_no():
             break
     assert isinstance(descriptor, property)
 
+def test_patientto_has_state_id():
+    assert hasattr(PatientTO, "state_id")
+    descriptor = None
+    for klass in PatientTO.__mro__:
+        if "state_id" in klass.__dict__:
+            descriptor = klass.__dict__["state_id"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_patientto_has_patient_id():
     assert hasattr(PatientTO, "patient_id")
     descriptor = None
     for klass in PatientTO.__mro__:
         if "patient_id" in klass.__dict__:
             descriptor = klass.__dict__["patient_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_patientto_has_first_name():
+    assert hasattr(PatientTO, "first_name")
+    descriptor = None
+    for klass in PatientTO.__mro__:
+        if "first_name" in klass.__dict__:
+            descriptor = klass.__dict__["first_name"]
             break
     assert isinstance(descriptor, property)
 
@@ -251,24 +251,24 @@ StateDAO1_strategy = st.builds(
 )
 PatientTO_strategy = st.builds(
     PatientTO,
-    first_name=
-        safe_text,
-    last_name=
-        safe_text,
     password=
-        safe_text,
-    plan_id=
-        st.integers(),
-    state_id=
-        st.integers(),
-    email=
         safe_text,
     date_of_birth=
         st.dates(),
+    last_name=
+        safe_text,
+    plan_id=
+        st.integers(),
+    email=
+        safe_text,
     contact_no=
         st.integers(),
+    state_id=
+        st.integers(),
     patient_id=
-        st.integers()
+        st.integers(),
+    first_name=
+        safe_text
 )
 StateDAO_strategy = st.builds(
     StateDAO,
@@ -307,31 +307,6 @@ def test_statedao1_instantiation(instance):
 def test_patientto_instantiation(instance):
     assert isinstance(instance, PatientTO)
 
-@given(instance=PatientTO_strategy)
-def test_patientto_first_name_type(instance):
-    assert isinstance(instance.first_name, str)
-
-
-@given(instance=PatientTO_strategy)
-def test_patientto_first_name_setter(instance):
-    original = instance.first_name
-    instance.first_name = original
-    assert instance.first_name == original
-
-@given(instance=PatientTO_strategy)
-def test_patientto_last_name_type(instance):
-    assert isinstance(instance.last_name, str)
-
-
-@given(instance=PatientTO_strategy)
-def test_patientto_last_name_setter(instance):
-    original = instance.last_name
-    instance.last_name = original
-    assert instance.last_name == original
-
-@given(instance=PatientTO_strategy)
-def test_patientto_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=PatientTO_strategy)
@@ -340,42 +315,6 @@ def test_patientto_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=PatientTO_strategy)
-def test_patientto_plan_id_type(instance):
-    assert isinstance(instance.plan_id, int)
-
-
-@given(instance=PatientTO_strategy)
-def test_patientto_plan_id_setter(instance):
-    original = instance.plan_id
-    instance.plan_id = original
-    assert instance.plan_id == original
-
-@given(instance=PatientTO_strategy)
-def test_patientto_state_id_type(instance):
-    assert isinstance(instance.state_id, int)
-
-
-@given(instance=PatientTO_strategy)
-def test_patientto_state_id_setter(instance):
-    original = instance.state_id
-    instance.state_id = original
-    assert instance.state_id == original
-
-@given(instance=PatientTO_strategy)
-def test_patientto_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=PatientTO_strategy)
-def test_patientto_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=PatientTO_strategy)
-def test_patientto_date_of_birth_type(instance):
-    assert isinstance(instance.date_of_birth, date)
 
 
 @given(instance=PatientTO_strategy)
@@ -384,9 +323,30 @@ def test_patientto_date_of_birth_setter(instance):
     instance.date_of_birth = original
     assert instance.date_of_birth == original
 
+
+
 @given(instance=PatientTO_strategy)
-def test_patientto_contact_no_type(instance):
-    assert isinstance(instance.contact_no, int)
+def test_patientto_last_name_setter(instance):
+    original = instance.last_name
+    instance.last_name = original
+    assert instance.last_name == original
+
+
+
+@given(instance=PatientTO_strategy)
+def test_patientto_plan_id_setter(instance):
+    original = instance.plan_id
+    instance.plan_id = original
+    assert instance.plan_id == original
+
+
+
+@given(instance=PatientTO_strategy)
+def test_patientto_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 
 
 @given(instance=PatientTO_strategy)
@@ -395,9 +355,14 @@ def test_patientto_contact_no_setter(instance):
     instance.contact_no = original
     assert instance.contact_no == original
 
+
+
 @given(instance=PatientTO_strategy)
-def test_patientto_patient_id_type(instance):
-    assert isinstance(instance.patient_id, int)
+def test_patientto_state_id_setter(instance):
+    original = instance.state_id
+    instance.state_id = original
+    assert instance.state_id == original
+
 
 
 @given(instance=PatientTO_strategy)
@@ -405,6 +370,14 @@ def test_patientto_patient_id_setter(instance):
     original = instance.patient_id
     instance.patient_id = original
     assert instance.patient_id == original
+
+
+
+@given(instance=PatientTO_strategy)
+def test_patientto_first_name_setter(instance):
+    original = instance.first_name
+    instance.first_name = original
+    assert instance.first_name == original
 
 @given(instance=StateDAO_strategy)
 @settings(max_examples=50)

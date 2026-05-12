@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    StructuredTree::NodeKind,
-    StructuredTree::Tree,
+from python_code import (
+    StructuredTree_NodeKind,
+    StructuredTree_Tree,
     NodeKind,
-    StructuredTree::BranchKind,
-    StructuredTree::LeafKind,
+    StructuredTree_BranchKind,
+    StructuredTree_LeafKind,
 )
 
 # =============================================================================
@@ -19,30 +19,30 @@ from classes import (
 
 
 
-def test_structuredtree::nodekind_is_not_abstract():
-    assert not inspect.isabstract(StructuredTree::NodeKind)
+def test_structuredtree_nodekind_is_not_abstract():
+    assert not inspect.isabstract(StructuredTree_NodeKind)
 
 
-def test_structuredtree::nodekind_constructor_exists():
-    assert callable(StructuredTree::NodeKind.__init__)
+def test_structuredtree_nodekind_constructor_exists():
+    assert callable(StructuredTree_NodeKind.__init__)
 
 
-def test_structuredtree::nodekind_constructor_args():
-    sig = inspect.signature(StructuredTree::NodeKind.__init__)
+def test_structuredtree_nodekind_constructor_args():
+    sig = inspect.signature(StructuredTree_NodeKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structuredtree::tree_is_not_abstract():
-    assert not inspect.isabstract(StructuredTree::Tree)
+def test_structuredtree_tree_is_not_abstract():
+    assert not inspect.isabstract(StructuredTree_Tree)
 
 
-def test_structuredtree::tree_constructor_exists():
-    assert callable(StructuredTree::Tree.__init__)
+def test_structuredtree_tree_constructor_exists():
+    assert callable(StructuredTree_Tree.__init__)
 
 
-def test_structuredtree::tree_constructor_args():
-    sig = inspect.signature(StructuredTree::Tree.__init__)
+def test_structuredtree_tree_constructor_args():
+    sig = inspect.signature(StructuredTree_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -61,30 +61,30 @@ def test_nodekind_constructor_args():
 
 
 
-def test_structuredtree::branchkind_is_not_abstract():
-    assert not inspect.isabstract(StructuredTree::BranchKind)
+def test_structuredtree_branchkind_is_not_abstract():
+    assert not inspect.isabstract(StructuredTree_BranchKind)
 
 
-def test_structuredtree::branchkind_constructor_exists():
-    assert callable(StructuredTree::BranchKind.__init__)
+def test_structuredtree_branchkind_constructor_exists():
+    assert callable(StructuredTree_BranchKind.__init__)
 
 
-def test_structuredtree::branchkind_constructor_args():
-    sig = inspect.signature(StructuredTree::BranchKind.__init__)
+def test_structuredtree_branchkind_constructor_args():
+    sig = inspect.signature(StructuredTree_BranchKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structuredtree::leafkind_is_not_abstract():
-    assert not inspect.isabstract(StructuredTree::LeafKind)
+def test_structuredtree_leafkind_is_not_abstract():
+    assert not inspect.isabstract(StructuredTree_LeafKind)
 
 
-def test_structuredtree::leafkind_constructor_exists():
-    assert callable(StructuredTree::LeafKind.__init__)
+def test_structuredtree_leafkind_constructor_exists():
+    assert callable(StructuredTree_LeafKind.__init__)
 
 
-def test_structuredtree::leafkind_constructor_args():
-    sig = inspect.signature(StructuredTree::LeafKind.__init__)
+def test_structuredtree_leafkind_constructor_args():
+    sig = inspect.signature(StructuredTree_LeafKind.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,43 +99,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-StructuredTree::NodeKind_strategy = st.builds(
-    StructuredTree::NodeKind,
+StructuredTree_NodeKind_strategy = st.builds(
+    StructuredTree_NodeKind,
 )
-StructuredTree::Tree_strategy = st.builds(
-    StructuredTree::Tree,
+StructuredTree_Tree_strategy = st.builds(
+    StructuredTree_Tree,
 )
 NodeKind_strategy = st.builds(
     NodeKind,
 )
-StructuredTree::BranchKind_strategy = st.builds(
-    StructuredTree::BranchKind,
+StructuredTree_BranchKind_strategy = st.builds(
+    StructuredTree_BranchKind,
 )
-StructuredTree::LeafKind_strategy = st.builds(
-    StructuredTree::LeafKind,
+StructuredTree_LeafKind_strategy = st.builds(
+    StructuredTree_LeafKind,
 )
 
-@given(instance=StructuredTree::NodeKind_strategy)
+@given(instance=StructuredTree_NodeKind_strategy)
 @settings(max_examples=50)
-def test_structuredtree::nodekind_instantiation(instance):
-    assert isinstance(instance, StructuredTree::NodeKind)
+def test_structuredtree_nodekind_instantiation(instance):
+    assert isinstance(instance, StructuredTree_NodeKind)
 
-@given(instance=StructuredTree::Tree_strategy)
+@given(instance=StructuredTree_Tree_strategy)
 @settings(max_examples=50)
-def test_structuredtree::tree_instantiation(instance):
-    assert isinstance(instance, StructuredTree::Tree)
+def test_structuredtree_tree_instantiation(instance):
+    assert isinstance(instance, StructuredTree_Tree)
 
 @given(instance=NodeKind_strategy)
 @settings(max_examples=50)
 def test_nodekind_instantiation(instance):
     assert isinstance(instance, NodeKind)
 
-@given(instance=StructuredTree::BranchKind_strategy)
+@given(instance=StructuredTree_BranchKind_strategy)
 @settings(max_examples=50)
-def test_structuredtree::branchkind_instantiation(instance):
-    assert isinstance(instance, StructuredTree::BranchKind)
+def test_structuredtree_branchkind_instantiation(instance):
+    assert isinstance(instance, StructuredTree_BranchKind)
 
-@given(instance=StructuredTree::LeafKind_strategy)
+@given(instance=StructuredTree_LeafKind_strategy)
 @settings(max_examples=50)
-def test_structuredtree::leafkind_instantiation(instance):
-    assert isinstance(instance, StructuredTree::LeafKind)
+def test_structuredtree_leafkind_instantiation(instance):
+    assert isinstance(instance, StructuredTree_LeafKind)

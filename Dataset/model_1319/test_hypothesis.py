@@ -3,53 +3,53 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stateMachineDsl::SetAction,
-    stateMachineDsl::EObject,
+from python_code import (
+    stateMachineDsl_SetAction,
+    stateMachineDsl_EObject,
     ChangeAction,
-    stateMachineDsl::DecrementAction,
-    stateMachineDsl::ResetAction,
-    stateMachineDsl::IncrementAction,
-    stateMachineDsl::ProcedureUse,
+    stateMachineDsl_ResetAction,
+    stateMachineDsl_DecrementAction,
+    stateMachineDsl_IncrementAction,
+    stateMachineDsl_ProcedureUse,
     Expression,
-    stateMachineDsl::Parenthesis,
-    stateMachineDsl::And,
-    stateMachineDsl::MinusCond,
-    stateMachineDsl::Or,
-    stateMachineDsl::MulOrDiv,
-    stateMachineDsl::BoolExp,
-    stateMachineDsl::Not,
-    stateMachineDsl::Equality,
-    stateMachineDsl::PlusCond,
-    stateMachineDsl::Comparison,
-    stateMachineDsl::DoubleExp,
-    stateMachineDsl::NumberExp,
-    stateMachineDsl::StringExp,
-    stateMachineDsl::VarRef,
-    stateMachineDsl::FunctionUse,
-    stateMachineDsl::ChangeAction,
-    stateMachineDsl::Expression,
-    stateMachineDsl::VarType,
-    stateMachineDsl::VarParName,
+    stateMachineDsl_NumberExp,
+    stateMachineDsl_Or,
+    stateMachineDsl_MulOrDiv,
+    stateMachineDsl_DoubleExp,
+    stateMachineDsl_VarRef,
+    stateMachineDsl_StringExp,
+    stateMachineDsl_MinusCond,
+    stateMachineDsl_Comparison,
+    stateMachineDsl_Equality,
+    stateMachineDsl_BoolExp,
+    stateMachineDsl_Parenthesis,
+    stateMachineDsl_And,
+    stateMachineDsl_Not,
+    stateMachineDsl_PlusCond,
+    stateMachineDsl_FunctionUse,
+    stateMachineDsl_ChangeAction,
+    stateMachineDsl_Expression,
+    stateMachineDsl_VarType,
+    stateMachineDsl_VarParName,
     ExtDeclaration,
-    stateMachineDsl::Function,
-    stateMachineDsl::Parameter,
-    stateMachineDsl::Member,
-    stateMachineDsl::ParameterFunction,
-    stateMachineDsl::Declaration,
-    stateMachineDsl::StateMachine,
-    stateMachineDsl::Condition,
-    stateMachineDsl::CommandAction,
-    stateMachineDsl::Transition,
-    stateMachineDsl::Action,
-    stateMachineDsl::MemberState,
-    stateMachineDsl::Procedure,
-    stateMachineDsl::Event,
-    stateMachineDsl::ExtDeclaration,
-    stateMachineDsl::Variable,
-    stateMachineDsl::State,
+    stateMachineDsl_Function,
+    stateMachineDsl_Parameter,
+    stateMachineDsl_Member,
+    stateMachineDsl_ParameterFunction,
+    stateMachineDsl_Declaration,
+    stateMachineDsl_StateMachine,
+    stateMachineDsl_Condition,
+    stateMachineDsl_CommandAction,
+    stateMachineDsl_Transition,
+    stateMachineDsl_Action,
+    stateMachineDsl_MemberState,
+    stateMachineDsl_Procedure,
+    stateMachineDsl_Event,
+    stateMachineDsl_ExtDeclaration,
+    stateMachineDsl_Variable,
+    stateMachineDsl_State,
 )
 
 # =============================================================================
@@ -58,30 +58,30 @@ from classes import (
 
 
 
-def test_statemachinedsl::setaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::SetAction)
+def test_statemachinedsl_setaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_SetAction)
 
 
-def test_statemachinedsl::setaction_constructor_exists():
-    assert callable(stateMachineDsl::SetAction.__init__)
+def test_statemachinedsl_setaction_constructor_exists():
+    assert callable(stateMachineDsl_SetAction.__init__)
 
 
-def test_statemachinedsl::setaction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::SetAction.__init__)
+def test_statemachinedsl_setaction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_SetAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::eobject_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::EObject)
+def test_statemachinedsl_eobject_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_EObject)
 
 
-def test_statemachinedsl::eobject_constructor_exists():
-    assert callable(stateMachineDsl::EObject.__init__)
+def test_statemachinedsl_eobject_constructor_exists():
+    assert callable(stateMachineDsl_EObject.__init__)
 
 
-def test_statemachinedsl::eobject_constructor_args():
-    sig = inspect.signature(stateMachineDsl::EObject.__init__)
+def test_statemachinedsl_eobject_constructor_args():
+    sig = inspect.signature(stateMachineDsl_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,58 +100,58 @@ def test_changeaction_constructor_args():
 
 
 
-def test_statemachinedsl::decrementaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::DecrementAction)
+def test_statemachinedsl_resetaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_ResetAction)
 
 
-def test_statemachinedsl::decrementaction_constructor_exists():
-    assert callable(stateMachineDsl::DecrementAction.__init__)
+def test_statemachinedsl_resetaction_constructor_exists():
+    assert callable(stateMachineDsl_ResetAction.__init__)
 
 
-def test_statemachinedsl::decrementaction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::DecrementAction.__init__)
+def test_statemachinedsl_resetaction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_ResetAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::resetaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::ResetAction)
+def test_statemachinedsl_decrementaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_DecrementAction)
 
 
-def test_statemachinedsl::resetaction_constructor_exists():
-    assert callable(stateMachineDsl::ResetAction.__init__)
+def test_statemachinedsl_decrementaction_constructor_exists():
+    assert callable(stateMachineDsl_DecrementAction.__init__)
 
 
-def test_statemachinedsl::resetaction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::ResetAction.__init__)
+def test_statemachinedsl_decrementaction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_DecrementAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::incrementaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::IncrementAction)
+def test_statemachinedsl_incrementaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_IncrementAction)
 
 
-def test_statemachinedsl::incrementaction_constructor_exists():
-    assert callable(stateMachineDsl::IncrementAction.__init__)
+def test_statemachinedsl_incrementaction_constructor_exists():
+    assert callable(stateMachineDsl_IncrementAction.__init__)
 
 
-def test_statemachinedsl::incrementaction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::IncrementAction.__init__)
+def test_statemachinedsl_incrementaction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_IncrementAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::procedureuse_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::ProcedureUse)
+def test_statemachinedsl_procedureuse_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_ProcedureUse)
 
 
-def test_statemachinedsl::procedureuse_constructor_exists():
-    assert callable(stateMachineDsl::ProcedureUse.__init__)
+def test_statemachinedsl_procedureuse_constructor_exists():
+    assert callable(stateMachineDsl_ProcedureUse.__init__)
 
 
-def test_statemachinedsl::procedureuse_constructor_args():
-    sig = inspect.signature(stateMachineDsl::ProcedureUse.__init__)
+def test_statemachinedsl_procedureuse_constructor_args():
+    sig = inspect.signature(stateMachineDsl_ProcedureUse.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -170,223 +170,115 @@ def test_expression_constructor_args():
 
 
 
-def test_statemachinedsl::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Parenthesis)
+def test_statemachinedsl_numberexp_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_NumberExp)
 
 
-def test_statemachinedsl::parenthesis_constructor_exists():
-    assert callable(stateMachineDsl::Parenthesis.__init__)
+def test_statemachinedsl_numberexp_constructor_exists():
+    assert callable(stateMachineDsl_NumberExp.__init__)
 
 
-def test_statemachinedsl::parenthesis_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Parenthesis.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachinedsl::and_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::And)
-
-
-def test_statemachinedsl::and_constructor_exists():
-    assert callable(stateMachineDsl::And.__init__)
-
-
-def test_statemachinedsl::and_constructor_args():
-    sig = inspect.signature(stateMachineDsl::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachinedsl::minuscond_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::MinusCond)
-
-
-def test_statemachinedsl::minuscond_constructor_exists():
-    assert callable(stateMachineDsl::MinusCond.__init__)
-
-
-def test_statemachinedsl::minuscond_constructor_args():
-    sig = inspect.signature(stateMachineDsl::MinusCond.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachinedsl::or_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Or)
-
-
-def test_statemachinedsl::or_constructor_exists():
-    assert callable(stateMachineDsl::Or.__init__)
-
-
-def test_statemachinedsl::or_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachinedsl::mulordiv_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::MulOrDiv)
-
-
-def test_statemachinedsl::mulordiv_constructor_exists():
-    assert callable(stateMachineDsl::MulOrDiv.__init__)
-
-
-def test_statemachinedsl::mulordiv_constructor_args():
-    sig = inspect.signature(stateMachineDsl::MulOrDiv.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_statemachinedsl::mulordiv_has_op():
-    assert hasattr(stateMachineDsl::MulOrDiv, "op")
-    descriptor = None
-    for klass in stateMachineDsl::MulOrDiv.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachinedsl::boolexp_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::BoolExp)
-
-
-def test_statemachinedsl::boolexp_constructor_exists():
-    assert callable(stateMachineDsl::BoolExp.__init__)
-
-
-def test_statemachinedsl::boolexp_constructor_args():
-    sig = inspect.signature(stateMachineDsl::BoolExp.__init__)
+def test_statemachinedsl_numberexp_constructor_args():
+    sig = inspect.signature(stateMachineDsl_NumberExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
+    assert "negative" in params, "Missing parameter 'negative'"
 
-def test_statemachinedsl::boolexp_has_value():
-    assert hasattr(stateMachineDsl::BoolExp, "value")
+def test_statemachinedsl_numberexp_has_value():
+    assert hasattr(stateMachineDsl_NumberExp, "value")
     descriptor = None
-    for klass in stateMachineDsl::BoolExp.__mro__:
+    for klass in stateMachineDsl_NumberExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_statemachinedsl::not_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Not)
-
-
-def test_statemachinedsl::not_constructor_exists():
-    assert callable(stateMachineDsl::Not.__init__)
-
-
-def test_statemachinedsl::not_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Not.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachinedsl::equality_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Equality)
-
-
-def test_statemachinedsl::equality_constructor_exists():
-    assert callable(stateMachineDsl::Equality.__init__)
-
-
-def test_statemachinedsl::equality_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Equality.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_statemachinedsl::equality_has_op():
-    assert hasattr(stateMachineDsl::Equality, "op")
+def test_statemachinedsl_numberexp_has_negative():
+    assert hasattr(stateMachineDsl_NumberExp, "negative")
     descriptor = None
-    for klass in stateMachineDsl::Equality.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachinedsl::pluscond_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::PlusCond)
-
-
-def test_statemachinedsl::pluscond_constructor_exists():
-    assert callable(stateMachineDsl::PlusCond.__init__)
-
-
-def test_statemachinedsl::pluscond_constructor_args():
-    sig = inspect.signature(stateMachineDsl::PlusCond.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachinedsl::comparison_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Comparison)
-
-
-def test_statemachinedsl::comparison_constructor_exists():
-    assert callable(stateMachineDsl::Comparison.__init__)
-
-
-def test_statemachinedsl::comparison_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Comparison.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_statemachinedsl::comparison_has_op():
-    assert hasattr(stateMachineDsl::Comparison, "op")
-    descriptor = None
-    for klass in stateMachineDsl::Comparison.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachinedsl::doubleexp_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::DoubleExp)
-
-
-def test_statemachinedsl::doubleexp_constructor_exists():
-    assert callable(stateMachineDsl::DoubleExp.__init__)
-
-
-def test_statemachinedsl::doubleexp_constructor_args():
-    sig = inspect.signature(stateMachineDsl::DoubleExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "negative" in params, "Missing parameter 'negative'"
-    assert "number" in params, "Missing parameter 'number'"
-    assert "decimal" in params, "Missing parameter 'decimal'"
-
-def test_statemachinedsl::doubleexp_has_negative():
-    assert hasattr(stateMachineDsl::DoubleExp, "negative")
-    descriptor = None
-    for klass in stateMachineDsl::DoubleExp.__mro__:
+    for klass in stateMachineDsl_NumberExp.__mro__:
         if "negative" in klass.__dict__:
             descriptor = klass.__dict__["negative"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachinedsl::doubleexp_has_number():
-    assert hasattr(stateMachineDsl::DoubleExp, "number")
+
+
+def test_statemachinedsl_or_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Or)
+
+
+def test_statemachinedsl_or_constructor_exists():
+    assert callable(stateMachineDsl_Or.__init__)
+
+
+def test_statemachinedsl_or_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Or.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachinedsl_mulordiv_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_MulOrDiv)
+
+
+def test_statemachinedsl_mulordiv_constructor_exists():
+    assert callable(stateMachineDsl_MulOrDiv.__init__)
+
+
+def test_statemachinedsl_mulordiv_constructor_args():
+    sig = inspect.signature(stateMachineDsl_MulOrDiv.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_statemachinedsl_mulordiv_has_op():
+    assert hasattr(stateMachineDsl_MulOrDiv, "op")
     descriptor = None
-    for klass in stateMachineDsl::DoubleExp.__mro__:
+    for klass in stateMachineDsl_MulOrDiv.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachinedsl_doubleexp_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_DoubleExp)
+
+
+def test_statemachinedsl_doubleexp_constructor_exists():
+    assert callable(stateMachineDsl_DoubleExp.__init__)
+
+
+def test_statemachinedsl_doubleexp_constructor_args():
+    sig = inspect.signature(stateMachineDsl_DoubleExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "number" in params, "Missing parameter 'number'"
+    assert "negative" in params, "Missing parameter 'negative'"
+    assert "decimal" in params, "Missing parameter 'decimal'"
+
+def test_statemachinedsl_doubleexp_has_number():
+    assert hasattr(stateMachineDsl_DoubleExp, "number")
+    descriptor = None
+    for klass in stateMachineDsl_DoubleExp.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachinedsl::doubleexp_has_decimal():
-    assert hasattr(stateMachineDsl::DoubleExp, "decimal")
+def test_statemachinedsl_doubleexp_has_negative():
+    assert hasattr(stateMachineDsl_DoubleExp, "negative")
     descriptor = None
-    for klass in stateMachineDsl::DoubleExp.__mro__:
+    for klass in stateMachineDsl_DoubleExp.__mro__:
+        if "negative" in klass.__dict__:
+            descriptor = klass.__dict__["negative"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachinedsl_doubleexp_has_decimal():
+    assert hasattr(stateMachineDsl_DoubleExp, "decimal")
+    descriptor = None
+    for klass in stateMachineDsl_DoubleExp.__mro__:
         if "decimal" in klass.__dict__:
             descriptor = klass.__dict__["decimal"]
             break
@@ -394,33 +286,37 @@ def test_statemachinedsl::doubleexp_has_decimal():
 
 
 
-def test_statemachinedsl::numberexp_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::NumberExp)
+def test_statemachinedsl_varref_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_VarRef)
 
 
-def test_statemachinedsl::numberexp_constructor_exists():
-    assert callable(stateMachineDsl::NumberExp.__init__)
+def test_statemachinedsl_varref_constructor_exists():
+    assert callable(stateMachineDsl_VarRef.__init__)
 
 
-def test_statemachinedsl::numberexp_constructor_args():
-    sig = inspect.signature(stateMachineDsl::NumberExp.__init__)
+def test_statemachinedsl_varref_constructor_args():
+    sig = inspect.signature(stateMachineDsl_VarRef.__init__)
     params = list(sig.parameters.keys())
-    assert "negative" in params, "Missing parameter 'negative'"
+
+
+
+def test_statemachinedsl_stringexp_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_StringExp)
+
+
+def test_statemachinedsl_stringexp_constructor_exists():
+    assert callable(stateMachineDsl_StringExp.__init__)
+
+
+def test_statemachinedsl_stringexp_constructor_args():
+    sig = inspect.signature(stateMachineDsl_StringExp.__init__)
+    params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statemachinedsl::numberexp_has_negative():
-    assert hasattr(stateMachineDsl::NumberExp, "negative")
+def test_statemachinedsl_stringexp_has_value():
+    assert hasattr(stateMachineDsl_StringExp, "value")
     descriptor = None
-    for klass in stateMachineDsl::NumberExp.__mro__:
-        if "negative" in klass.__dict__:
-            descriptor = klass.__dict__["negative"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachinedsl::numberexp_has_value():
-    assert hasattr(stateMachineDsl::NumberExp, "value")
-    descriptor = None
-    for klass in stateMachineDsl::NumberExp.__mro__:
+    for klass in stateMachineDsl_StringExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -428,23 +324,85 @@ def test_statemachinedsl::numberexp_has_value():
 
 
 
-def test_statemachinedsl::stringexp_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::StringExp)
+def test_statemachinedsl_minuscond_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_MinusCond)
 
 
-def test_statemachinedsl::stringexp_constructor_exists():
-    assert callable(stateMachineDsl::StringExp.__init__)
+def test_statemachinedsl_minuscond_constructor_exists():
+    assert callable(stateMachineDsl_MinusCond.__init__)
 
 
-def test_statemachinedsl::stringexp_constructor_args():
-    sig = inspect.signature(stateMachineDsl::StringExp.__init__)
+def test_statemachinedsl_minuscond_constructor_args():
+    sig = inspect.signature(stateMachineDsl_MinusCond.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachinedsl_comparison_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Comparison)
+
+
+def test_statemachinedsl_comparison_constructor_exists():
+    assert callable(stateMachineDsl_Comparison.__init__)
+
+
+def test_statemachinedsl_comparison_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Comparison.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_statemachinedsl_comparison_has_op():
+    assert hasattr(stateMachineDsl_Comparison, "op")
+    descriptor = None
+    for klass in stateMachineDsl_Comparison.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachinedsl_equality_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Equality)
+
+
+def test_statemachinedsl_equality_constructor_exists():
+    assert callable(stateMachineDsl_Equality.__init__)
+
+
+def test_statemachinedsl_equality_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Equality.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_statemachinedsl_equality_has_op():
+    assert hasattr(stateMachineDsl_Equality, "op")
+    descriptor = None
+    for klass in stateMachineDsl_Equality.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachinedsl_boolexp_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_BoolExp)
+
+
+def test_statemachinedsl_boolexp_constructor_exists():
+    assert callable(stateMachineDsl_BoolExp.__init__)
+
+
+def test_statemachinedsl_boolexp_constructor_args():
+    sig = inspect.signature(stateMachineDsl_BoolExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statemachinedsl::stringexp_has_value():
-    assert hasattr(stateMachineDsl::StringExp, "value")
+def test_statemachinedsl_boolexp_has_value():
+    assert hasattr(stateMachineDsl_BoolExp, "value")
     descriptor = None
-    for klass in stateMachineDsl::StringExp.__mro__:
+    for klass in stateMachineDsl_BoolExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -452,79 +410,121 @@ def test_statemachinedsl::stringexp_has_value():
 
 
 
-def test_statemachinedsl::varref_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::VarRef)
+def test_statemachinedsl_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Parenthesis)
 
 
-def test_statemachinedsl::varref_constructor_exists():
-    assert callable(stateMachineDsl::VarRef.__init__)
+def test_statemachinedsl_parenthesis_constructor_exists():
+    assert callable(stateMachineDsl_Parenthesis.__init__)
 
 
-def test_statemachinedsl::varref_constructor_args():
-    sig = inspect.signature(stateMachineDsl::VarRef.__init__)
+def test_statemachinedsl_parenthesis_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Parenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::functionuse_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::FunctionUse)
+def test_statemachinedsl_and_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_And)
 
 
-def test_statemachinedsl::functionuse_constructor_exists():
-    assert callable(stateMachineDsl::FunctionUse.__init__)
+def test_statemachinedsl_and_constructor_exists():
+    assert callable(stateMachineDsl_And.__init__)
 
 
-def test_statemachinedsl::functionuse_constructor_args():
-    sig = inspect.signature(stateMachineDsl::FunctionUse.__init__)
+def test_statemachinedsl_and_constructor_args():
+    sig = inspect.signature(stateMachineDsl_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::changeaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::ChangeAction)
+def test_statemachinedsl_not_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Not)
 
 
-def test_statemachinedsl::changeaction_constructor_exists():
-    assert callable(stateMachineDsl::ChangeAction.__init__)
+def test_statemachinedsl_not_constructor_exists():
+    assert callable(stateMachineDsl_Not.__init__)
 
 
-def test_statemachinedsl::changeaction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::ChangeAction.__init__)
+def test_statemachinedsl_not_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::expression_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Expression)
+def test_statemachinedsl_pluscond_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_PlusCond)
 
 
-def test_statemachinedsl::expression_constructor_exists():
-    assert callable(stateMachineDsl::Expression.__init__)
+def test_statemachinedsl_pluscond_constructor_exists():
+    assert callable(stateMachineDsl_PlusCond.__init__)
 
 
-def test_statemachinedsl::expression_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Expression.__init__)
+def test_statemachinedsl_pluscond_constructor_args():
+    sig = inspect.signature(stateMachineDsl_PlusCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::vartype_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::VarType)
+def test_statemachinedsl_functionuse_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_FunctionUse)
 
 
-def test_statemachinedsl::vartype_constructor_exists():
-    assert callable(stateMachineDsl::VarType.__init__)
+def test_statemachinedsl_functionuse_constructor_exists():
+    assert callable(stateMachineDsl_FunctionUse.__init__)
 
 
-def test_statemachinedsl::vartype_constructor_args():
-    sig = inspect.signature(stateMachineDsl::VarType.__init__)
+def test_statemachinedsl_functionuse_constructor_args():
+    sig = inspect.signature(stateMachineDsl_FunctionUse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachinedsl_changeaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_ChangeAction)
+
+
+def test_statemachinedsl_changeaction_constructor_exists():
+    assert callable(stateMachineDsl_ChangeAction.__init__)
+
+
+def test_statemachinedsl_changeaction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_ChangeAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachinedsl_expression_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Expression)
+
+
+def test_statemachinedsl_expression_constructor_exists():
+    assert callable(stateMachineDsl_Expression.__init__)
+
+
+def test_statemachinedsl_expression_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachinedsl_vartype_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_VarType)
+
+
+def test_statemachinedsl_vartype_constructor_exists():
+    assert callable(stateMachineDsl_VarType.__init__)
+
+
+def test_statemachinedsl_vartype_constructor_args():
+    sig = inspect.signature(stateMachineDsl_VarType.__init__)
     params = list(sig.parameters.keys())
     assert "vt" in params, "Missing parameter 'vt'"
 
-def test_statemachinedsl::vartype_has_vt():
-    assert hasattr(stateMachineDsl::VarType, "vt")
+def test_statemachinedsl_vartype_has_vt():
+    assert hasattr(stateMachineDsl_VarType, "vt")
     descriptor = None
-    for klass in stateMachineDsl::VarType.__mro__:
+    for klass in stateMachineDsl_VarType.__mro__:
         if "vt" in klass.__dict__:
             descriptor = klass.__dict__["vt"]
             break
@@ -532,23 +532,23 @@ def test_statemachinedsl::vartype_has_vt():
 
 
 
-def test_statemachinedsl::varparname_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::VarParName)
+def test_statemachinedsl_varparname_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_VarParName)
 
 
-def test_statemachinedsl::varparname_constructor_exists():
-    assert callable(stateMachineDsl::VarParName.__init__)
+def test_statemachinedsl_varparname_constructor_exists():
+    assert callable(stateMachineDsl_VarParName.__init__)
 
 
-def test_statemachinedsl::varparname_constructor_args():
-    sig = inspect.signature(stateMachineDsl::VarParName.__init__)
+def test_statemachinedsl_varparname_constructor_args():
+    sig = inspect.signature(stateMachineDsl_VarParName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::varparname_has_name():
-    assert hasattr(stateMachineDsl::VarParName, "name")
+def test_statemachinedsl_varparname_has_name():
+    assert hasattr(stateMachineDsl_VarParName, "name")
     descriptor = None
-    for klass in stateMachineDsl::VarParName.__mro__:
+    for klass in stateMachineDsl_VarParName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -570,65 +570,65 @@ def test_extdeclaration_constructor_args():
 
 
 
-def test_statemachinedsl::function_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Function)
+def test_statemachinedsl_function_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Function)
 
 
-def test_statemachinedsl::function_constructor_exists():
-    assert callable(stateMachineDsl::Function.__init__)
+def test_statemachinedsl_function_constructor_exists():
+    assert callable(stateMachineDsl_Function.__init__)
 
 
-def test_statemachinedsl::function_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Function.__init__)
+def test_statemachinedsl_function_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::parameter_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Parameter)
+def test_statemachinedsl_parameter_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Parameter)
 
 
-def test_statemachinedsl::parameter_constructor_exists():
-    assert callable(stateMachineDsl::Parameter.__init__)
+def test_statemachinedsl_parameter_constructor_exists():
+    assert callable(stateMachineDsl_Parameter.__init__)
 
 
-def test_statemachinedsl::parameter_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Parameter.__init__)
+def test_statemachinedsl_parameter_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::member_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Member)
+def test_statemachinedsl_member_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Member)
 
 
-def test_statemachinedsl::member_constructor_exists():
-    assert callable(stateMachineDsl::Member.__init__)
+def test_statemachinedsl_member_constructor_exists():
+    assert callable(stateMachineDsl_Member.__init__)
 
 
-def test_statemachinedsl::member_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Member.__init__)
+def test_statemachinedsl_member_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::parameterfunction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::ParameterFunction)
+def test_statemachinedsl_parameterfunction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_ParameterFunction)
 
 
-def test_statemachinedsl::parameterfunction_constructor_exists():
-    assert callable(stateMachineDsl::ParameterFunction.__init__)
+def test_statemachinedsl_parameterfunction_constructor_exists():
+    assert callable(stateMachineDsl_ParameterFunction.__init__)
 
 
-def test_statemachinedsl::parameterfunction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::ParameterFunction.__init__)
+def test_statemachinedsl_parameterfunction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_ParameterFunction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::parameterfunction_has_name():
-    assert hasattr(stateMachineDsl::ParameterFunction, "name")
+def test_statemachinedsl_parameterfunction_has_name():
+    assert hasattr(stateMachineDsl_ParameterFunction, "name")
     descriptor = None
-    for klass in stateMachineDsl::ParameterFunction.__mro__:
+    for klass in stateMachineDsl_ParameterFunction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -636,37 +636,37 @@ def test_statemachinedsl::parameterfunction_has_name():
 
 
 
-def test_statemachinedsl::declaration_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Declaration)
+def test_statemachinedsl_declaration_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Declaration)
 
 
-def test_statemachinedsl::declaration_constructor_exists():
-    assert callable(stateMachineDsl::Declaration.__init__)
+def test_statemachinedsl_declaration_constructor_exists():
+    assert callable(stateMachineDsl_Declaration.__init__)
 
 
-def test_statemachinedsl::declaration_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Declaration.__init__)
+def test_statemachinedsl_declaration_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::statemachine_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::StateMachine)
+def test_statemachinedsl_statemachine_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_StateMachine)
 
 
-def test_statemachinedsl::statemachine_constructor_exists():
-    assert callable(stateMachineDsl::StateMachine.__init__)
+def test_statemachinedsl_statemachine_constructor_exists():
+    assert callable(stateMachineDsl_StateMachine.__init__)
 
 
-def test_statemachinedsl::statemachine_constructor_args():
-    sig = inspect.signature(stateMachineDsl::StateMachine.__init__)
+def test_statemachinedsl_statemachine_constructor_args():
+    sig = inspect.signature(stateMachineDsl_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::statemachine_has_name():
-    assert hasattr(stateMachineDsl::StateMachine, "name")
+def test_statemachinedsl_statemachine_has_name():
+    assert hasattr(stateMachineDsl_StateMachine, "name")
     descriptor = None
-    for klass in stateMachineDsl::StateMachine.__mro__:
+    for klass in stateMachineDsl_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -674,93 +674,93 @@ def test_statemachinedsl::statemachine_has_name():
 
 
 
-def test_statemachinedsl::condition_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Condition)
+def test_statemachinedsl_condition_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Condition)
 
 
-def test_statemachinedsl::condition_constructor_exists():
-    assert callable(stateMachineDsl::Condition.__init__)
+def test_statemachinedsl_condition_constructor_exists():
+    assert callable(stateMachineDsl_Condition.__init__)
 
 
-def test_statemachinedsl::condition_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Condition.__init__)
+def test_statemachinedsl_condition_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::commandaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::CommandAction)
+def test_statemachinedsl_commandaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_CommandAction)
 
 
-def test_statemachinedsl::commandaction_constructor_exists():
-    assert callable(stateMachineDsl::CommandAction.__init__)
+def test_statemachinedsl_commandaction_constructor_exists():
+    assert callable(stateMachineDsl_CommandAction.__init__)
 
 
-def test_statemachinedsl::commandaction_constructor_args():
-    sig = inspect.signature(stateMachineDsl::CommandAction.__init__)
+def test_statemachinedsl_commandaction_constructor_args():
+    sig = inspect.signature(stateMachineDsl_CommandAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::transition_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Transition)
+def test_statemachinedsl_transition_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Transition)
 
 
-def test_statemachinedsl::transition_constructor_exists():
-    assert callable(stateMachineDsl::Transition.__init__)
+def test_statemachinedsl_transition_constructor_exists():
+    assert callable(stateMachineDsl_Transition.__init__)
 
 
-def test_statemachinedsl::transition_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Transition.__init__)
+def test_statemachinedsl_transition_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::action_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Action)
+def test_statemachinedsl_action_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Action)
 
 
-def test_statemachinedsl::action_constructor_exists():
-    assert callable(stateMachineDsl::Action.__init__)
+def test_statemachinedsl_action_constructor_exists():
+    assert callable(stateMachineDsl_Action.__init__)
 
 
-def test_statemachinedsl::action_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Action.__init__)
+def test_statemachinedsl_action_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::memberstate_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::MemberState)
+def test_statemachinedsl_memberstate_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_MemberState)
 
 
-def test_statemachinedsl::memberstate_constructor_exists():
-    assert callable(stateMachineDsl::MemberState.__init__)
+def test_statemachinedsl_memberstate_constructor_exists():
+    assert callable(stateMachineDsl_MemberState.__init__)
 
 
-def test_statemachinedsl::memberstate_constructor_args():
-    sig = inspect.signature(stateMachineDsl::MemberState.__init__)
+def test_statemachinedsl_memberstate_constructor_args():
+    sig = inspect.signature(stateMachineDsl_MemberState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::procedure_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Procedure)
+def test_statemachinedsl_procedure_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Procedure)
 
 
-def test_statemachinedsl::procedure_constructor_exists():
-    assert callable(stateMachineDsl::Procedure.__init__)
+def test_statemachinedsl_procedure_constructor_exists():
+    assert callable(stateMachineDsl_Procedure.__init__)
 
 
-def test_statemachinedsl::procedure_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Procedure.__init__)
+def test_statemachinedsl_procedure_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Procedure.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::procedure_has_name():
-    assert hasattr(stateMachineDsl::Procedure, "name")
+def test_statemachinedsl_procedure_has_name():
+    assert hasattr(stateMachineDsl_Procedure, "name")
     descriptor = None
-    for klass in stateMachineDsl::Procedure.__mro__:
+    for klass in stateMachineDsl_Procedure.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -768,23 +768,23 @@ def test_statemachinedsl::procedure_has_name():
 
 
 
-def test_statemachinedsl::event_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Event)
+def test_statemachinedsl_event_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Event)
 
 
-def test_statemachinedsl::event_constructor_exists():
-    assert callable(stateMachineDsl::Event.__init__)
+def test_statemachinedsl_event_constructor_exists():
+    assert callable(stateMachineDsl_Event.__init__)
 
 
-def test_statemachinedsl::event_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Event.__init__)
+def test_statemachinedsl_event_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::event_has_name():
-    assert hasattr(stateMachineDsl::Event, "name")
+def test_statemachinedsl_event_has_name():
+    assert hasattr(stateMachineDsl_Event, "name")
     descriptor = None
-    for klass in stateMachineDsl::Event.__mro__:
+    for klass in stateMachineDsl_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -792,23 +792,23 @@ def test_statemachinedsl::event_has_name():
 
 
 
-def test_statemachinedsl::extdeclaration_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::ExtDeclaration)
+def test_statemachinedsl_extdeclaration_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_ExtDeclaration)
 
 
-def test_statemachinedsl::extdeclaration_constructor_exists():
-    assert callable(stateMachineDsl::ExtDeclaration.__init__)
+def test_statemachinedsl_extdeclaration_constructor_exists():
+    assert callable(stateMachineDsl_ExtDeclaration.__init__)
 
 
-def test_statemachinedsl::extdeclaration_constructor_args():
-    sig = inspect.signature(stateMachineDsl::ExtDeclaration.__init__)
+def test_statemachinedsl_extdeclaration_constructor_args():
+    sig = inspect.signature(stateMachineDsl_ExtDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::extdeclaration_has_name():
-    assert hasattr(stateMachineDsl::ExtDeclaration, "name")
+def test_statemachinedsl_extdeclaration_has_name():
+    assert hasattr(stateMachineDsl_ExtDeclaration, "name")
     descriptor = None
-    for klass in stateMachineDsl::ExtDeclaration.__mro__:
+    for klass in stateMachineDsl_ExtDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -816,37 +816,37 @@ def test_statemachinedsl::extdeclaration_has_name():
 
 
 
-def test_statemachinedsl::variable_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::Variable)
+def test_statemachinedsl_variable_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_Variable)
 
 
-def test_statemachinedsl::variable_constructor_exists():
-    assert callable(stateMachineDsl::Variable.__init__)
+def test_statemachinedsl_variable_constructor_exists():
+    assert callable(stateMachineDsl_Variable.__init__)
 
 
-def test_statemachinedsl::variable_constructor_args():
-    sig = inspect.signature(stateMachineDsl::Variable.__init__)
+def test_statemachinedsl_variable_constructor_args():
+    sig = inspect.signature(stateMachineDsl_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinedsl::state_is_not_abstract():
-    assert not inspect.isabstract(stateMachineDsl::State)
+def test_statemachinedsl_state_is_not_abstract():
+    assert not inspect.isabstract(stateMachineDsl_State)
 
 
-def test_statemachinedsl::state_constructor_exists():
-    assert callable(stateMachineDsl::State.__init__)
+def test_statemachinedsl_state_constructor_exists():
+    assert callable(stateMachineDsl_State.__init__)
 
 
-def test_statemachinedsl::state_constructor_args():
-    sig = inspect.signature(stateMachineDsl::State.__init__)
+def test_statemachinedsl_state_constructor_args():
+    sig = inspect.signature(stateMachineDsl_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinedsl::state_has_name():
-    assert hasattr(stateMachineDsl::State, "name")
+def test_statemachinedsl_state_has_name():
+    assert hasattr(stateMachineDsl_State, "name")
     descriptor = None
-    for klass in stateMachineDsl::State.__mro__:
+    for klass in stateMachineDsl_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -864,438 +864,402 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stateMachineDsl::SetAction_strategy = st.builds(
-    stateMachineDsl::SetAction,
+stateMachineDsl_SetAction_strategy = st.builds(
+    stateMachineDsl_SetAction,
 )
-stateMachineDsl::EObject_strategy = st.builds(
-    stateMachineDsl::EObject,
+stateMachineDsl_EObject_strategy = st.builds(
+    stateMachineDsl_EObject,
 )
 ChangeAction_strategy = st.builds(
     ChangeAction,
 )
-stateMachineDsl::DecrementAction_strategy = st.builds(
-    stateMachineDsl::DecrementAction,
+stateMachineDsl_ResetAction_strategy = st.builds(
+    stateMachineDsl_ResetAction,
 )
-stateMachineDsl::ResetAction_strategy = st.builds(
-    stateMachineDsl::ResetAction,
+stateMachineDsl_DecrementAction_strategy = st.builds(
+    stateMachineDsl_DecrementAction,
 )
-stateMachineDsl::IncrementAction_strategy = st.builds(
-    stateMachineDsl::IncrementAction,
+stateMachineDsl_IncrementAction_strategy = st.builds(
+    stateMachineDsl_IncrementAction,
 )
-stateMachineDsl::ProcedureUse_strategy = st.builds(
-    stateMachineDsl::ProcedureUse,
+stateMachineDsl_ProcedureUse_strategy = st.builds(
+    stateMachineDsl_ProcedureUse,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-stateMachineDsl::Parenthesis_strategy = st.builds(
-    stateMachineDsl::Parenthesis,
-)
-stateMachineDsl::And_strategy = st.builds(
-    stateMachineDsl::And,
-)
-stateMachineDsl::MinusCond_strategy = st.builds(
-    stateMachineDsl::MinusCond,
-)
-stateMachineDsl::Or_strategy = st.builds(
-    stateMachineDsl::Or,
-)
-stateMachineDsl::MulOrDiv_strategy = st.builds(
-    stateMachineDsl::MulOrDiv,
-    op=
-        safe_text
-)
-stateMachineDsl::BoolExp_strategy = st.builds(
-    stateMachineDsl::BoolExp,
+stateMachineDsl_NumberExp_strategy = st.builds(
+    stateMachineDsl_NumberExp,
     value=
-        safe_text
-)
-stateMachineDsl::Not_strategy = st.builds(
-    stateMachineDsl::Not,
-)
-stateMachineDsl::Equality_strategy = st.builds(
-    stateMachineDsl::Equality,
-    op=
-        safe_text
-)
-stateMachineDsl::PlusCond_strategy = st.builds(
-    stateMachineDsl::PlusCond,
-)
-stateMachineDsl::Comparison_strategy = st.builds(
-    stateMachineDsl::Comparison,
-    op=
-        safe_text
-)
-stateMachineDsl::DoubleExp_strategy = st.builds(
-    stateMachineDsl::DoubleExp,
+        st.integers(),
     negative=
-        safe_text,
+        safe_text
+)
+stateMachineDsl_Or_strategy = st.builds(
+    stateMachineDsl_Or,
+)
+stateMachineDsl_MulOrDiv_strategy = st.builds(
+    stateMachineDsl_MulOrDiv,
+    op=
+        safe_text
+)
+stateMachineDsl_DoubleExp_strategy = st.builds(
+    stateMachineDsl_DoubleExp,
     number=
         st.integers(),
+    negative=
+        safe_text,
     decimal=
         st.integers()
 )
-stateMachineDsl::NumberExp_strategy = st.builds(
-    stateMachineDsl::NumberExp,
-    negative=
-        safe_text,
-    value=
-        st.integers()
+stateMachineDsl_VarRef_strategy = st.builds(
+    stateMachineDsl_VarRef,
 )
-stateMachineDsl::StringExp_strategy = st.builds(
-    stateMachineDsl::StringExp,
+stateMachineDsl_StringExp_strategy = st.builds(
+    stateMachineDsl_StringExp,
     value=
         safe_text
 )
-stateMachineDsl::VarRef_strategy = st.builds(
-    stateMachineDsl::VarRef,
+stateMachineDsl_MinusCond_strategy = st.builds(
+    stateMachineDsl_MinusCond,
 )
-stateMachineDsl::FunctionUse_strategy = st.builds(
-    stateMachineDsl::FunctionUse,
+stateMachineDsl_Comparison_strategy = st.builds(
+    stateMachineDsl_Comparison,
+    op=
+        safe_text
 )
-stateMachineDsl::ChangeAction_strategy = st.builds(
-    stateMachineDsl::ChangeAction,
+stateMachineDsl_Equality_strategy = st.builds(
+    stateMachineDsl_Equality,
+    op=
+        safe_text
 )
-stateMachineDsl::Expression_strategy = st.builds(
-    stateMachineDsl::Expression,
+stateMachineDsl_BoolExp_strategy = st.builds(
+    stateMachineDsl_BoolExp,
+    value=
+        safe_text
 )
-stateMachineDsl::VarType_strategy = st.builds(
-    stateMachineDsl::VarType,
+stateMachineDsl_Parenthesis_strategy = st.builds(
+    stateMachineDsl_Parenthesis,
+)
+stateMachineDsl_And_strategy = st.builds(
+    stateMachineDsl_And,
+)
+stateMachineDsl_Not_strategy = st.builds(
+    stateMachineDsl_Not,
+)
+stateMachineDsl_PlusCond_strategy = st.builds(
+    stateMachineDsl_PlusCond,
+)
+stateMachineDsl_FunctionUse_strategy = st.builds(
+    stateMachineDsl_FunctionUse,
+)
+stateMachineDsl_ChangeAction_strategy = st.builds(
+    stateMachineDsl_ChangeAction,
+)
+stateMachineDsl_Expression_strategy = st.builds(
+    stateMachineDsl_Expression,
+)
+stateMachineDsl_VarType_strategy = st.builds(
+    stateMachineDsl_VarType,
     vt=
         safe_text
 )
-stateMachineDsl::VarParName_strategy = st.builds(
-    stateMachineDsl::VarParName,
+stateMachineDsl_VarParName_strategy = st.builds(
+    stateMachineDsl_VarParName,
     name=
         safe_text
 )
 ExtDeclaration_strategy = st.builds(
     ExtDeclaration,
 )
-stateMachineDsl::Function_strategy = st.builds(
-    stateMachineDsl::Function,
+stateMachineDsl_Function_strategy = st.builds(
+    stateMachineDsl_Function,
 )
-stateMachineDsl::Parameter_strategy = st.builds(
-    stateMachineDsl::Parameter,
+stateMachineDsl_Parameter_strategy = st.builds(
+    stateMachineDsl_Parameter,
 )
-stateMachineDsl::Member_strategy = st.builds(
-    stateMachineDsl::Member,
+stateMachineDsl_Member_strategy = st.builds(
+    stateMachineDsl_Member,
 )
-stateMachineDsl::ParameterFunction_strategy = st.builds(
-    stateMachineDsl::ParameterFunction,
+stateMachineDsl_ParameterFunction_strategy = st.builds(
+    stateMachineDsl_ParameterFunction,
     name=
         safe_text
 )
-stateMachineDsl::Declaration_strategy = st.builds(
-    stateMachineDsl::Declaration,
+stateMachineDsl_Declaration_strategy = st.builds(
+    stateMachineDsl_Declaration,
 )
-stateMachineDsl::StateMachine_strategy = st.builds(
-    stateMachineDsl::StateMachine,
+stateMachineDsl_StateMachine_strategy = st.builds(
+    stateMachineDsl_StateMachine,
     name=
         safe_text
 )
-stateMachineDsl::Condition_strategy = st.builds(
-    stateMachineDsl::Condition,
+stateMachineDsl_Condition_strategy = st.builds(
+    stateMachineDsl_Condition,
 )
-stateMachineDsl::CommandAction_strategy = st.builds(
-    stateMachineDsl::CommandAction,
+stateMachineDsl_CommandAction_strategy = st.builds(
+    stateMachineDsl_CommandAction,
 )
-stateMachineDsl::Transition_strategy = st.builds(
-    stateMachineDsl::Transition,
+stateMachineDsl_Transition_strategy = st.builds(
+    stateMachineDsl_Transition,
 )
-stateMachineDsl::Action_strategy = st.builds(
-    stateMachineDsl::Action,
+stateMachineDsl_Action_strategy = st.builds(
+    stateMachineDsl_Action,
 )
-stateMachineDsl::MemberState_strategy = st.builds(
-    stateMachineDsl::MemberState,
+stateMachineDsl_MemberState_strategy = st.builds(
+    stateMachineDsl_MemberState,
 )
-stateMachineDsl::Procedure_strategy = st.builds(
-    stateMachineDsl::Procedure,
+stateMachineDsl_Procedure_strategy = st.builds(
+    stateMachineDsl_Procedure,
     name=
         safe_text
 )
-stateMachineDsl::Event_strategy = st.builds(
-    stateMachineDsl::Event,
+stateMachineDsl_Event_strategy = st.builds(
+    stateMachineDsl_Event,
     name=
         safe_text
 )
-stateMachineDsl::ExtDeclaration_strategy = st.builds(
-    stateMachineDsl::ExtDeclaration,
+stateMachineDsl_ExtDeclaration_strategy = st.builds(
+    stateMachineDsl_ExtDeclaration,
     name=
         safe_text
 )
-stateMachineDsl::Variable_strategy = st.builds(
-    stateMachineDsl::Variable,
+stateMachineDsl_Variable_strategy = st.builds(
+    stateMachineDsl_Variable,
 )
-stateMachineDsl::State_strategy = st.builds(
-    stateMachineDsl::State,
+stateMachineDsl_State_strategy = st.builds(
+    stateMachineDsl_State,
     name=
         safe_text
 )
 
-@given(instance=stateMachineDsl::SetAction_strategy)
+@given(instance=stateMachineDsl_SetAction_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::setaction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::SetAction)
+def test_statemachinedsl_setaction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_SetAction)
 
-@given(instance=stateMachineDsl::EObject_strategy)
+@given(instance=stateMachineDsl_EObject_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::eobject_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::EObject)
+def test_statemachinedsl_eobject_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_EObject)
 
 @given(instance=ChangeAction_strategy)
 @settings(max_examples=50)
 def test_changeaction_instantiation(instance):
     assert isinstance(instance, ChangeAction)
 
-@given(instance=stateMachineDsl::DecrementAction_strategy)
+@given(instance=stateMachineDsl_ResetAction_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::decrementaction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::DecrementAction)
+def test_statemachinedsl_resetaction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_ResetAction)
 
-@given(instance=stateMachineDsl::ResetAction_strategy)
+@given(instance=stateMachineDsl_DecrementAction_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::resetaction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::ResetAction)
+def test_statemachinedsl_decrementaction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_DecrementAction)
 
-@given(instance=stateMachineDsl::IncrementAction_strategy)
+@given(instance=stateMachineDsl_IncrementAction_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::incrementaction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::IncrementAction)
+def test_statemachinedsl_incrementaction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_IncrementAction)
 
-@given(instance=stateMachineDsl::ProcedureUse_strategy)
+@given(instance=stateMachineDsl_ProcedureUse_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::procedureuse_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::ProcedureUse)
+def test_statemachinedsl_procedureuse_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_ProcedureUse)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=stateMachineDsl::Parenthesis_strategy)
+@given(instance=stateMachineDsl_NumberExp_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::parenthesis_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Parenthesis)
-
-@given(instance=stateMachineDsl::And_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::and_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::And)
-
-@given(instance=stateMachineDsl::MinusCond_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::minuscond_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::MinusCond)
-
-@given(instance=stateMachineDsl::Or_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::or_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Or)
-
-@given(instance=stateMachineDsl::MulOrDiv_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::mulordiv_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::MulOrDiv)
-
-@given(instance=stateMachineDsl::MulOrDiv_strategy)
-def test_statemachinedsl::mulordiv_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_statemachinedsl_numberexp_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_NumberExp)
 
 
-@given(instance=stateMachineDsl::MulOrDiv_strategy)
-def test_statemachinedsl::mulordiv_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
 
-@given(instance=stateMachineDsl::BoolExp_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::boolexp_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::BoolExp)
-
-@given(instance=stateMachineDsl::BoolExp_strategy)
-def test_statemachinedsl::boolexp_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=stateMachineDsl::BoolExp_strategy)
-def test_statemachinedsl::boolexp_value_setter(instance):
+@given(instance=stateMachineDsl_NumberExp_strategy)
+def test_statemachinedsl_numberexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stateMachineDsl::Not_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::not_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Not)
-
-@given(instance=stateMachineDsl::Equality_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::equality_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Equality)
-
-@given(instance=stateMachineDsl::Equality_strategy)
-def test_statemachinedsl::equality_op_type(instance):
-    assert isinstance(instance.op, str)
 
 
-@given(instance=stateMachineDsl::Equality_strategy)
-def test_statemachinedsl::equality_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=stateMachineDsl::PlusCond_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::pluscond_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::PlusCond)
-
-@given(instance=stateMachineDsl::Comparison_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::comparison_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Comparison)
-
-@given(instance=stateMachineDsl::Comparison_strategy)
-def test_statemachinedsl::comparison_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=stateMachineDsl::Comparison_strategy)
-def test_statemachinedsl::comparison_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::doubleexp_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::DoubleExp)
-
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-def test_statemachinedsl::doubleexp_negative_type(instance):
-    assert isinstance(instance.negative, str)
-
-
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-def test_statemachinedsl::doubleexp_negative_setter(instance):
+@given(instance=stateMachineDsl_NumberExp_strategy)
+def test_statemachinedsl_numberexp_negative_setter(instance):
     original = instance.negative
     instance.negative = original
     assert instance.negative == original
 
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-def test_statemachinedsl::doubleexp_number_type(instance):
-    assert isinstance(instance.number, int)
+@given(instance=stateMachineDsl_Or_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_or_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Or)
+
+@given(instance=stateMachineDsl_MulOrDiv_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_mulordiv_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_MulOrDiv)
 
 
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-def test_statemachinedsl::doubleexp_number_setter(instance):
+
+@given(instance=stateMachineDsl_MulOrDiv_strategy)
+def test_statemachinedsl_mulordiv_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=stateMachineDsl_DoubleExp_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_doubleexp_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_DoubleExp)
+
+
+
+@given(instance=stateMachineDsl_DoubleExp_strategy)
+def test_statemachinedsl_doubleexp_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
 
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-def test_statemachinedsl::doubleexp_decimal_type(instance):
-    assert isinstance(instance.decimal, int)
 
 
-@given(instance=stateMachineDsl::DoubleExp_strategy)
-def test_statemachinedsl::doubleexp_decimal_setter(instance):
-    original = instance.decimal
-    instance.decimal = original
-    assert instance.decimal == original
-
-@given(instance=stateMachineDsl::NumberExp_strategy)
-@settings(max_examples=50)
-def test_statemachinedsl::numberexp_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::NumberExp)
-
-@given(instance=stateMachineDsl::NumberExp_strategy)
-def test_statemachinedsl::numberexp_negative_type(instance):
-    assert isinstance(instance.negative, str)
-
-
-@given(instance=stateMachineDsl::NumberExp_strategy)
-def test_statemachinedsl::numberexp_negative_setter(instance):
+@given(instance=stateMachineDsl_DoubleExp_strategy)
+def test_statemachinedsl_doubleexp_negative_setter(instance):
     original = instance.negative
     instance.negative = original
     assert instance.negative == original
 
-@given(instance=stateMachineDsl::NumberExp_strategy)
-def test_statemachinedsl::numberexp_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=stateMachineDsl::NumberExp_strategy)
-def test_statemachinedsl::numberexp_value_setter(instance):
+@given(instance=stateMachineDsl_DoubleExp_strategy)
+def test_statemachinedsl_doubleexp_decimal_setter(instance):
+    original = instance.decimal
+    instance.decimal = original
+    assert instance.decimal == original
+
+@given(instance=stateMachineDsl_VarRef_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_varref_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_VarRef)
+
+@given(instance=stateMachineDsl_StringExp_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_stringexp_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_StringExp)
+
+
+
+@given(instance=stateMachineDsl_StringExp_strategy)
+def test_statemachinedsl_stringexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stateMachineDsl::StringExp_strategy)
+@given(instance=stateMachineDsl_MinusCond_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::stringexp_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::StringExp)
+def test_statemachinedsl_minuscond_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_MinusCond)
 
-@given(instance=stateMachineDsl::StringExp_strategy)
-def test_statemachinedsl::stringexp_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=stateMachineDsl_Comparison_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_comparison_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Comparison)
 
 
-@given(instance=stateMachineDsl::StringExp_strategy)
-def test_statemachinedsl::stringexp_value_setter(instance):
+
+@given(instance=stateMachineDsl_Comparison_strategy)
+def test_statemachinedsl_comparison_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=stateMachineDsl_Equality_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_equality_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Equality)
+
+
+
+@given(instance=stateMachineDsl_Equality_strategy)
+def test_statemachinedsl_equality_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=stateMachineDsl_BoolExp_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_boolexp_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_BoolExp)
+
+
+
+@given(instance=stateMachineDsl_BoolExp_strategy)
+def test_statemachinedsl_boolexp_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stateMachineDsl::VarRef_strategy)
+@given(instance=stateMachineDsl_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::varref_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::VarRef)
+def test_statemachinedsl_parenthesis_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Parenthesis)
 
-@given(instance=stateMachineDsl::FunctionUse_strategy)
+@given(instance=stateMachineDsl_And_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::functionuse_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::FunctionUse)
+def test_statemachinedsl_and_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_And)
 
-@given(instance=stateMachineDsl::ChangeAction_strategy)
+@given(instance=stateMachineDsl_Not_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::changeaction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::ChangeAction)
+def test_statemachinedsl_not_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Not)
 
-@given(instance=stateMachineDsl::Expression_strategy)
+@given(instance=stateMachineDsl_PlusCond_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::expression_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Expression)
+def test_statemachinedsl_pluscond_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_PlusCond)
 
-@given(instance=stateMachineDsl::VarType_strategy)
+@given(instance=stateMachineDsl_FunctionUse_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::vartype_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::VarType)
+def test_statemachinedsl_functionuse_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_FunctionUse)
 
-@given(instance=stateMachineDsl::VarType_strategy)
-def test_statemachinedsl::vartype_vt_type(instance):
-    assert isinstance(instance.vt, str)
+@given(instance=stateMachineDsl_ChangeAction_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_changeaction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_ChangeAction)
+
+@given(instance=stateMachineDsl_Expression_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_expression_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Expression)
+
+@given(instance=stateMachineDsl_VarType_strategy)
+@settings(max_examples=50)
+def test_statemachinedsl_vartype_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_VarType)
 
 
-@given(instance=stateMachineDsl::VarType_strategy)
-def test_statemachinedsl::vartype_vt_setter(instance):
+
+@given(instance=stateMachineDsl_VarType_strategy)
+def test_statemachinedsl_vartype_vt_setter(instance):
     original = instance.vt
     instance.vt = original
     assert instance.vt == original
 
-@given(instance=stateMachineDsl::VarParName_strategy)
+@given(instance=stateMachineDsl_VarParName_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::varparname_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::VarParName)
-
-@given(instance=stateMachineDsl::VarParName_strategy)
-def test_statemachinedsl::varparname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_varparname_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_VarParName)
 
 
-@given(instance=stateMachineDsl::VarParName_strategy)
-def test_statemachinedsl::varparname_name_setter(instance):
+
+@given(instance=stateMachineDsl_VarParName_strategy)
+def test_statemachinedsl_varparname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1305,148 +1269,130 @@ def test_statemachinedsl::varparname_name_setter(instance):
 def test_extdeclaration_instantiation(instance):
     assert isinstance(instance, ExtDeclaration)
 
-@given(instance=stateMachineDsl::Function_strategy)
+@given(instance=stateMachineDsl_Function_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::function_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Function)
+def test_statemachinedsl_function_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Function)
 
-@given(instance=stateMachineDsl::Parameter_strategy)
+@given(instance=stateMachineDsl_Parameter_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::parameter_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Parameter)
+def test_statemachinedsl_parameter_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Parameter)
 
-@given(instance=stateMachineDsl::Member_strategy)
+@given(instance=stateMachineDsl_Member_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::member_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Member)
+def test_statemachinedsl_member_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Member)
 
-@given(instance=stateMachineDsl::ParameterFunction_strategy)
+@given(instance=stateMachineDsl_ParameterFunction_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::parameterfunction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::ParameterFunction)
-
-@given(instance=stateMachineDsl::ParameterFunction_strategy)
-def test_statemachinedsl::parameterfunction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_parameterfunction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_ParameterFunction)
 
 
-@given(instance=stateMachineDsl::ParameterFunction_strategy)
-def test_statemachinedsl::parameterfunction_name_setter(instance):
+
+@given(instance=stateMachineDsl_ParameterFunction_strategy)
+def test_statemachinedsl_parameterfunction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stateMachineDsl::Declaration_strategy)
+@given(instance=stateMachineDsl_Declaration_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::declaration_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Declaration)
+def test_statemachinedsl_declaration_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Declaration)
 
-@given(instance=stateMachineDsl::StateMachine_strategy)
+@given(instance=stateMachineDsl_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::statemachine_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::StateMachine)
-
-@given(instance=stateMachineDsl::StateMachine_strategy)
-def test_statemachinedsl::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_statemachine_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_StateMachine)
 
 
-@given(instance=stateMachineDsl::StateMachine_strategy)
-def test_statemachinedsl::statemachine_name_setter(instance):
+
+@given(instance=stateMachineDsl_StateMachine_strategy)
+def test_statemachinedsl_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stateMachineDsl::Condition_strategy)
+@given(instance=stateMachineDsl_Condition_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::condition_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Condition)
+def test_statemachinedsl_condition_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Condition)
 
-@given(instance=stateMachineDsl::CommandAction_strategy)
+@given(instance=stateMachineDsl_CommandAction_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::commandaction_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::CommandAction)
+def test_statemachinedsl_commandaction_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_CommandAction)
 
-@given(instance=stateMachineDsl::Transition_strategy)
+@given(instance=stateMachineDsl_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::transition_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Transition)
+def test_statemachinedsl_transition_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Transition)
 
-@given(instance=stateMachineDsl::Action_strategy)
+@given(instance=stateMachineDsl_Action_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::action_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Action)
+def test_statemachinedsl_action_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Action)
 
-@given(instance=stateMachineDsl::MemberState_strategy)
+@given(instance=stateMachineDsl_MemberState_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::memberstate_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::MemberState)
+def test_statemachinedsl_memberstate_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_MemberState)
 
-@given(instance=stateMachineDsl::Procedure_strategy)
+@given(instance=stateMachineDsl_Procedure_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::procedure_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Procedure)
-
-@given(instance=stateMachineDsl::Procedure_strategy)
-def test_statemachinedsl::procedure_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_procedure_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Procedure)
 
 
-@given(instance=stateMachineDsl::Procedure_strategy)
-def test_statemachinedsl::procedure_name_setter(instance):
+
+@given(instance=stateMachineDsl_Procedure_strategy)
+def test_statemachinedsl_procedure_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stateMachineDsl::Event_strategy)
+@given(instance=stateMachineDsl_Event_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::event_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Event)
-
-@given(instance=stateMachineDsl::Event_strategy)
-def test_statemachinedsl::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_event_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Event)
 
 
-@given(instance=stateMachineDsl::Event_strategy)
-def test_statemachinedsl::event_name_setter(instance):
+
+@given(instance=stateMachineDsl_Event_strategy)
+def test_statemachinedsl_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stateMachineDsl::ExtDeclaration_strategy)
+@given(instance=stateMachineDsl_ExtDeclaration_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::extdeclaration_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::ExtDeclaration)
-
-@given(instance=stateMachineDsl::ExtDeclaration_strategy)
-def test_statemachinedsl::extdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_extdeclaration_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_ExtDeclaration)
 
 
-@given(instance=stateMachineDsl::ExtDeclaration_strategy)
-def test_statemachinedsl::extdeclaration_name_setter(instance):
+
+@given(instance=stateMachineDsl_ExtDeclaration_strategy)
+def test_statemachinedsl_extdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stateMachineDsl::Variable_strategy)
+@given(instance=stateMachineDsl_Variable_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::variable_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::Variable)
+def test_statemachinedsl_variable_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_Variable)
 
-@given(instance=stateMachineDsl::State_strategy)
+@given(instance=stateMachineDsl_State_strategy)
 @settings(max_examples=50)
-def test_statemachinedsl::state_instantiation(instance):
-    assert isinstance(instance, stateMachineDsl::State)
-
-@given(instance=stateMachineDsl::State_strategy)
-def test_statemachinedsl::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinedsl_state_instantiation(instance):
+    assert isinstance(instance, stateMachineDsl_State)
 
 
-@given(instance=stateMachineDsl::State_strategy)
-def test_statemachinedsl::state_name_setter(instance):
+
+@given(instance=stateMachineDsl_State_strategy)
+def test_statemachinedsl_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

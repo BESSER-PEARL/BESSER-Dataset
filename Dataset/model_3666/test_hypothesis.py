@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sample::Person,
-    sample::Group,
-    sample::Department,
-    sample::Company,
+from python_code import (
+    sample_Person,
+    sample_Group,
+    sample_Department,
+    sample_Company,
 )
 
 # =============================================================================
@@ -18,33 +18,33 @@ from classes import (
 
 
 
-def test_sample::person_is_not_abstract():
-    assert not inspect.isabstract(sample::Person)
+def test_sample_person_is_not_abstract():
+    assert not inspect.isabstract(sample_Person)
 
 
-def test_sample::person_constructor_exists():
-    assert callable(sample::Person.__init__)
+def test_sample_person_constructor_exists():
+    assert callable(sample_Person.__init__)
 
 
-def test_sample::person_constructor_args():
-    sig = inspect.signature(sample::Person.__init__)
+def test_sample_person_constructor_args():
+    sig = inspect.signature(sample_Person.__init__)
     params = list(sig.parameters.keys())
     assert "birthdate" in params, "Missing parameter 'birthdate'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sample::person_has_birthdate():
-    assert hasattr(sample::Person, "birthdate")
+def test_sample_person_has_birthdate():
+    assert hasattr(sample_Person, "birthdate")
     descriptor = None
-    for klass in sample::Person.__mro__:
+    for klass in sample_Person.__mro__:
         if "birthdate" in klass.__dict__:
             descriptor = klass.__dict__["birthdate"]
             break
     assert isinstance(descriptor, property)
 
-def test_sample::person_has_name():
-    assert hasattr(sample::Person, "name")
+def test_sample_person_has_name():
+    assert hasattr(sample_Person, "name")
     descriptor = None
-    for klass in sample::Person.__mro__:
+    for klass in sample_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -52,23 +52,23 @@ def test_sample::person_has_name():
 
 
 
-def test_sample::group_is_not_abstract():
-    assert not inspect.isabstract(sample::Group)
+def test_sample_group_is_not_abstract():
+    assert not inspect.isabstract(sample_Group)
 
 
-def test_sample::group_constructor_exists():
-    assert callable(sample::Group.__init__)
+def test_sample_group_constructor_exists():
+    assert callable(sample_Group.__init__)
 
 
-def test_sample::group_constructor_args():
-    sig = inspect.signature(sample::Group.__init__)
+def test_sample_group_constructor_args():
+    sig = inspect.signature(sample_Group.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sample::group_has_name():
-    assert hasattr(sample::Group, "name")
+def test_sample_group_has_name():
+    assert hasattr(sample_Group, "name")
     descriptor = None
-    for klass in sample::Group.__mro__:
+    for klass in sample_Group.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -76,23 +76,23 @@ def test_sample::group_has_name():
 
 
 
-def test_sample::department_is_not_abstract():
-    assert not inspect.isabstract(sample::Department)
+def test_sample_department_is_not_abstract():
+    assert not inspect.isabstract(sample_Department)
 
 
-def test_sample::department_constructor_exists():
-    assert callable(sample::Department.__init__)
+def test_sample_department_constructor_exists():
+    assert callable(sample_Department.__init__)
 
 
-def test_sample::department_constructor_args():
-    sig = inspect.signature(sample::Department.__init__)
+def test_sample_department_constructor_args():
+    sig = inspect.signature(sample_Department.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sample::department_has_name():
-    assert hasattr(sample::Department, "name")
+def test_sample_department_has_name():
+    assert hasattr(sample_Department, "name")
     descriptor = None
-    for klass in sample::Department.__mro__:
+    for klass in sample_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -100,23 +100,23 @@ def test_sample::department_has_name():
 
 
 
-def test_sample::company_is_not_abstract():
-    assert not inspect.isabstract(sample::Company)
+def test_sample_company_is_not_abstract():
+    assert not inspect.isabstract(sample_Company)
 
 
-def test_sample::company_constructor_exists():
-    assert callable(sample::Company.__init__)
+def test_sample_company_constructor_exists():
+    assert callable(sample_Company.__init__)
 
 
-def test_sample::company_constructor_args():
-    sig = inspect.signature(sample::Company.__init__)
+def test_sample_company_constructor_args():
+    sig = inspect.signature(sample_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sample::company_has_name():
-    assert hasattr(sample::Company, "name")
+def test_sample_company_has_name():
+    assert hasattr(sample_Company, "name")
     descriptor = None
-    for klass in sample::Company.__mro__:
+    for klass in sample_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sample::Person_strategy = st.builds(
-    sample::Person,
+sample_Person_strategy = st.builds(
+    sample_Person,
     birthdate=
         st.dates(),
     name=
         safe_text
 )
-sample::Group_strategy = st.builds(
-    sample::Group,
+sample_Group_strategy = st.builds(
+    sample_Group,
     name=
         safe_text
 )
-sample::Department_strategy = st.builds(
-    sample::Department,
+sample_Department_strategy = st.builds(
+    sample_Department,
     name=
         safe_text
 )
-sample::Company_strategy = st.builds(
-    sample::Company,
+sample_Company_strategy = st.builds(
+    sample_Company,
     name=
         safe_text
 )
 
-@given(instance=sample::Person_strategy)
+@given(instance=sample_Person_strategy)
 @settings(max_examples=50)
-def test_sample::person_instantiation(instance):
-    assert isinstance(instance, sample::Person)
-
-@given(instance=sample::Person_strategy)
-def test_sample::person_birthdate_type(instance):
-    assert isinstance(instance.birthdate, date)
+def test_sample_person_instantiation(instance):
+    assert isinstance(instance, sample_Person)
 
 
-@given(instance=sample::Person_strategy)
-def test_sample::person_birthdate_setter(instance):
+
+@given(instance=sample_Person_strategy)
+def test_sample_person_birthdate_setter(instance):
     original = instance.birthdate
     instance.birthdate = original
     assert instance.birthdate == original
 
-@given(instance=sample::Person_strategy)
-def test_sample::person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sample::Person_strategy)
-def test_sample::person_name_setter(instance):
+@given(instance=sample_Person_strategy)
+def test_sample_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sample::Group_strategy)
+@given(instance=sample_Group_strategy)
 @settings(max_examples=50)
-def test_sample::group_instantiation(instance):
-    assert isinstance(instance, sample::Group)
-
-@given(instance=sample::Group_strategy)
-def test_sample::group_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sample_group_instantiation(instance):
+    assert isinstance(instance, sample_Group)
 
 
-@given(instance=sample::Group_strategy)
-def test_sample::group_name_setter(instance):
+
+@given(instance=sample_Group_strategy)
+def test_sample_group_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sample::Department_strategy)
+@given(instance=sample_Department_strategy)
 @settings(max_examples=50)
-def test_sample::department_instantiation(instance):
-    assert isinstance(instance, sample::Department)
-
-@given(instance=sample::Department_strategy)
-def test_sample::department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sample_department_instantiation(instance):
+    assert isinstance(instance, sample_Department)
 
 
-@given(instance=sample::Department_strategy)
-def test_sample::department_name_setter(instance):
+
+@given(instance=sample_Department_strategy)
+def test_sample_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sample::Company_strategy)
+@given(instance=sample_Company_strategy)
 @settings(max_examples=50)
-def test_sample::company_instantiation(instance):
-    assert isinstance(instance, sample::Company)
-
-@given(instance=sample::Company_strategy)
-def test_sample::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sample_company_instantiation(instance):
+    assert isinstance(instance, sample_Company)
 
 
-@given(instance=sample::Company_strategy)
-def test_sample::company_name_setter(instance):
+
+@given(instance=sample_Company_strategy)
+def test_sample_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

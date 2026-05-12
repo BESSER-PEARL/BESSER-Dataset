@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    db::DatabaseElement,
-    db::Database,
-    db::NamedElement,
+    db_DatabaseElement,
+    db_Database,
+    db_NamedElement,
     DatabaseElement,
-    db::ForeignKey,
-    db::Column,
-    db::Table,
+    db_Column,
+    db_ForeignKey,
+    db_Table,
 )
 
 # =============================================================================
@@ -36,51 +36,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_db::databaseelement_is_not_abstract():
-    assert not inspect.isabstract(db::DatabaseElement)
+def test_db_databaseelement_is_not_abstract():
+    assert not inspect.isabstract(db_DatabaseElement)
 
 
-def test_db::databaseelement_constructor_exists():
-    assert callable(db::DatabaseElement.__init__)
+def test_db_databaseelement_constructor_exists():
+    assert callable(db_DatabaseElement.__init__)
 
 
-def test_db::databaseelement_constructor_args():
-    sig = inspect.signature(db::DatabaseElement.__init__)
+def test_db_databaseelement_constructor_args():
+    sig = inspect.signature(db_DatabaseElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_db::database_is_not_abstract():
-    assert not inspect.isabstract(db::Database)
+def test_db_database_is_not_abstract():
+    assert not inspect.isabstract(db_Database)
 
 
-def test_db::database_constructor_exists():
-    assert callable(db::Database.__init__)
+def test_db_database_constructor_exists():
+    assert callable(db_Database.__init__)
 
 
-def test_db::database_constructor_args():
-    sig = inspect.signature(db::Database.__init__)
+def test_db_database_constructor_args():
+    sig = inspect.signature(db_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_db::namedelement_is_not_abstract():
-    assert not inspect.isabstract(db::NamedElement)
+def test_db_namedelement_is_not_abstract():
+    assert not inspect.isabstract(db_NamedElement)
 
 
-def test_db::namedelement_constructor_exists():
-    assert callable(db::NamedElement.__init__)
+def test_db_namedelement_constructor_exists():
+    assert callable(db_NamedElement.__init__)
 
 
-def test_db::namedelement_constructor_args():
-    sig = inspect.signature(db::NamedElement.__init__)
+def test_db_namedelement_constructor_args():
+    sig = inspect.signature(db_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_db::namedelement_has_name():
-    assert hasattr(db::NamedElement, "name")
+def test_db_namedelement_has_name():
+    assert hasattr(db_NamedElement, "name")
     descriptor = None
-    for klass in db::NamedElement.__mro__:
+    for klass in db_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -102,47 +102,23 @@ def test_databaseelement_constructor_args():
 
 
 
-def test_db::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(db::ForeignKey)
+def test_db_column_is_not_abstract():
+    assert not inspect.isabstract(db_Column)
 
 
-def test_db::foreignkey_constructor_exists():
-    assert callable(db::ForeignKey.__init__)
+def test_db_column_constructor_exists():
+    assert callable(db_Column.__init__)
 
 
-def test_db::foreignkey_constructor_args():
-    sig = inspect.signature(db::ForeignKey.__init__)
-    params = list(sig.parameters.keys())
-    assert "isMany" in params, "Missing parameter 'isMany'"
-
-def test_db::foreignkey_has_isMany():
-    assert hasattr(db::ForeignKey, "isMany")
-    descriptor = None
-    for klass in db::ForeignKey.__mro__:
-        if "isMany" in klass.__dict__:
-            descriptor = klass.__dict__["isMany"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_db::column_is_not_abstract():
-    assert not inspect.isabstract(db::Column)
-
-
-def test_db::column_constructor_exists():
-    assert callable(db::Column.__init__)
-
-
-def test_db::column_constructor_args():
-    sig = inspect.signature(db::Column.__init__)
+def test_db_column_constructor_args():
+    sig = inspect.signature(db_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_db::column_has_type():
-    assert hasattr(db::Column, "type")
+def test_db_column_has_type():
+    assert hasattr(db_Column, "type")
     descriptor = None
-    for klass in db::Column.__mro__:
+    for klass in db_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -150,16 +126,40 @@ def test_db::column_has_type():
 
 
 
-def test_db::table_is_not_abstract():
-    assert not inspect.isabstract(db::Table)
+def test_db_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(db_ForeignKey)
 
 
-def test_db::table_constructor_exists():
-    assert callable(db::Table.__init__)
+def test_db_foreignkey_constructor_exists():
+    assert callable(db_ForeignKey.__init__)
 
 
-def test_db::table_constructor_args():
-    sig = inspect.signature(db::Table.__init__)
+def test_db_foreignkey_constructor_args():
+    sig = inspect.signature(db_ForeignKey.__init__)
+    params = list(sig.parameters.keys())
+    assert "isMany" in params, "Missing parameter 'isMany'"
+
+def test_db_foreignkey_has_isMany():
+    assert hasattr(db_ForeignKey, "isMany")
+    descriptor = None
+    for klass in db_ForeignKey.__mro__:
+        if "isMany" in klass.__dict__:
+            descriptor = klass.__dict__["isMany"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_db_table_is_not_abstract():
+    assert not inspect.isabstract(db_Table)
+
+
+def test_db_table_constructor_exists():
+    assert callable(db_Table.__init__)
+
+
+def test_db_table_constructor_args():
+    sig = inspect.signature(db_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,32 +177,32 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-db::DatabaseElement_strategy = st.builds(
-    db::DatabaseElement,
+db_DatabaseElement_strategy = st.builds(
+    db_DatabaseElement,
 )
-db::Database_strategy = st.builds(
-    db::Database,
+db_Database_strategy = st.builds(
+    db_Database,
 )
-db::NamedElement_strategy = st.builds(
-    db::NamedElement,
+db_NamedElement_strategy = st.builds(
+    db_NamedElement,
     name=
         safe_text
 )
 DatabaseElement_strategy = st.builds(
     DatabaseElement,
 )
-db::ForeignKey_strategy = st.builds(
-    db::ForeignKey,
-    isMany=
-        safe_text
-)
-db::Column_strategy = st.builds(
-    db::Column,
+db_Column_strategy = st.builds(
+    db_Column,
     type=
         safe_text
 )
-db::Table_strategy = st.builds(
-    db::Table,
+db_ForeignKey_strategy = st.builds(
+    db_ForeignKey,
+    isMany=
+        safe_text
+)
+db_Table_strategy = st.builds(
+    db_Table,
 )
 
 @given(instance=NamedElement_strategy)
@@ -210,28 +210,25 @@ db::Table_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=db::DatabaseElement_strategy)
+@given(instance=db_DatabaseElement_strategy)
 @settings(max_examples=50)
-def test_db::databaseelement_instantiation(instance):
-    assert isinstance(instance, db::DatabaseElement)
+def test_db_databaseelement_instantiation(instance):
+    assert isinstance(instance, db_DatabaseElement)
 
-@given(instance=db::Database_strategy)
+@given(instance=db_Database_strategy)
 @settings(max_examples=50)
-def test_db::database_instantiation(instance):
-    assert isinstance(instance, db::Database)
+def test_db_database_instantiation(instance):
+    assert isinstance(instance, db_Database)
 
-@given(instance=db::NamedElement_strategy)
+@given(instance=db_NamedElement_strategy)
 @settings(max_examples=50)
-def test_db::namedelement_instantiation(instance):
-    assert isinstance(instance, db::NamedElement)
-
-@given(instance=db::NamedElement_strategy)
-def test_db::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_db_namedelement_instantiation(instance):
+    assert isinstance(instance, db_NamedElement)
 
 
-@given(instance=db::NamedElement_strategy)
-def test_db::namedelement_name_setter(instance):
+
+@given(instance=db_NamedElement_strategy)
+def test_db_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -241,39 +238,33 @@ def test_db::namedelement_name_setter(instance):
 def test_databaseelement_instantiation(instance):
     assert isinstance(instance, DatabaseElement)
 
-@given(instance=db::ForeignKey_strategy)
+@given(instance=db_Column_strategy)
 @settings(max_examples=50)
-def test_db::foreignkey_instantiation(instance):
-    assert isinstance(instance, db::ForeignKey)
-
-@given(instance=db::ForeignKey_strategy)
-def test_db::foreignkey_isMany_type(instance):
-    assert isinstance(instance.isMany, str)
+def test_db_column_instantiation(instance):
+    assert isinstance(instance, db_Column)
 
 
-@given(instance=db::ForeignKey_strategy)
-def test_db::foreignkey_isMany_setter(instance):
-    original = instance.isMany
-    instance.isMany = original
-    assert instance.isMany == original
 
-@given(instance=db::Column_strategy)
-@settings(max_examples=50)
-def test_db::column_instantiation(instance):
-    assert isinstance(instance, db::Column)
-
-@given(instance=db::Column_strategy)
-def test_db::column_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=db::Column_strategy)
-def test_db::column_type_setter(instance):
+@given(instance=db_Column_strategy)
+def test_db_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=db::Table_strategy)
+@given(instance=db_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_db::table_instantiation(instance):
-    assert isinstance(instance, db::Table)
+def test_db_foreignkey_instantiation(instance):
+    assert isinstance(instance, db_ForeignKey)
+
+
+
+@given(instance=db_ForeignKey_strategy)
+def test_db_foreignkey_isMany_setter(instance):
+    original = instance.isMany
+    instance.isMany = original
+    assert instance.isMany == original
+
+@given(instance=db_Table_strategy)
+@settings(max_examples=50)
+def test_db_table_instantiation(instance):
+    assert isinstance(instance, db_Table)

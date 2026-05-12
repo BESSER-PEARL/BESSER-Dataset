@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloworld::HelloWorld,
+from python_code import (
+    helloworld_HelloWorld,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_helloworld::helloworld_is_not_abstract():
-    assert not inspect.isabstract(helloworld::HelloWorld)
+def test_helloworld_helloworld_is_not_abstract():
+    assert not inspect.isabstract(helloworld_HelloWorld)
 
 
-def test_helloworld::helloworld_constructor_exists():
-    assert callable(helloworld::HelloWorld.__init__)
+def test_helloworld_helloworld_constructor_exists():
+    assert callable(helloworld_HelloWorld.__init__)
 
 
-def test_helloworld::helloworld_constructor_args():
-    sig = inspect.signature(helloworld::HelloWorld.__init__)
+def test_helloworld_helloworld_constructor_args():
+    sig = inspect.signature(helloworld_HelloWorld.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,14 +39,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloworld::HelloWorld_strategy = st.builds(
-    helloworld::HelloWorld,
+helloworld_HelloWorld_strategy = st.builds(
+    helloworld_HelloWorld,
 )
 
-@given(instance=helloworld::HelloWorld_strategy)
+@given(instance=helloworld_HelloWorld_strategy)
 @settings(max_examples=50)
-def test_helloworld::helloworld_instantiation(instance):
-    assert isinstance(instance, helloworld::HelloWorld)
+def test_helloworld_helloworld_instantiation(instance):
+    assert isinstance(instance, helloworld_HelloWorld)
 
 import warnings
 import copy
@@ -54,9 +54,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=helloworld::HelloWorld_strategy)
+@given(instance=helloworld_HelloWorld_strategy)
 @settings(max_examples=30)
-def test_helloworld::helloworld_greeting_changes_state(instance):
+def test_helloworld_helloworld_greeting_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -68,11 +68,11 @@ def test_helloworld::helloworld_greeting_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'greeting' in helloworld::HelloWorld is empty"
+        assert has_statements, f"Function 'greeting' in helloworld_HelloWorld is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'greeting' in helloworld::HelloWorld did not change state; check implementation")
+            warnings.warn(f"Operation 'greeting' in helloworld_HelloWorld did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'greeting' in helloworld::HelloWorld is not implemented or raised an error")
+        warnings.warn(f"Operation 'greeting' in helloworld_HelloWorld is not implemented or raised an error")

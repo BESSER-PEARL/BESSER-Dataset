@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Legolang::controlflow::Program,
+from python_code import (
+    Legolang_controlflow_Program,
     opUnaire,
-    Legolang::controlflow::not,
+    Legolang_controlflow_not,
     opBinaire,
-    Legolang::controlflow::and,
+    Legolang_controlflow_and,
     operator,
-    Legolang::controlflow::opBinaire,
-    controlflow::ExprBool,
-    controlflow::operator,
-    Legolang::controlflow::opUnaire,
-    Legolang::controlflow::operator,
+    Legolang_controlflow_opBinaire,
+    controlflow_ExprBool,
+    controlflow_operator,
+    Legolang_controlflow_opUnaire,
+    Legolang_controlflow_operator,
     tantqueue,
-    Legolang::controlflow::Expr,
+    Legolang_controlflow_Expr,
     ExprBool,
     OrderRobot,
-    Legolang::Robot::display,
-    Legolang::Robot::bip,
-    Legolang::Robot::turn,
-    Legolang::Robot::stopEngine,
-    Legolang::Robot::turnAngle,
-    Legolang::Robot::obstacle,
-    Legolang::Robot::hasTurned,
-    Legolang::Robot::move,
+    Legolang_Robot_turn,
+    Legolang_Robot_hasTurned,
+    Legolang_Robot_turnAngle,
+    Legolang_Robot_stopEngine,
+    Legolang_Robot_obstacle,
+    Legolang_Robot_display,
+    Legolang_Robot_bip,
+    Legolang_Robot_move,
     Expr,
-    Legolang::controlflow::si,
-    Legolang::controlflow::tantqueue,
-    Legolang::controlflow::ExprBool,
-    Legolang::Robot::OrderRobot,
+    Legolang_controlflow_ExprBool,
+    Legolang_controlflow_si,
+    Legolang_controlflow_tantqueue,
+    Legolang_Robot_OrderRobot,
 )
 
 # =============================================================================
@@ -42,16 +42,16 @@ from classes import (
 
 
 
-def test_legolang::controlflow::program_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::Program)
+def test_legolang_controlflow_program_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_Program)
 
 
-def test_legolang::controlflow::program_constructor_exists():
-    assert callable(Legolang::controlflow::Program.__init__)
+def test_legolang_controlflow_program_constructor_exists():
+    assert callable(Legolang_controlflow_Program.__init__)
 
 
-def test_legolang::controlflow::program_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::Program.__init__)
+def test_legolang_controlflow_program_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -70,16 +70,16 @@ def test_opunaire_constructor_args():
 
 
 
-def test_legolang::controlflow::not_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::not)
+def test_legolang_controlflow_not_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_not)
 
 
-def test_legolang::controlflow::not_constructor_exists():
-    assert callable(Legolang::controlflow::not.__init__)
+def test_legolang_controlflow_not_constructor_exists():
+    assert callable(Legolang_controlflow_not.__init__)
 
 
-def test_legolang::controlflow::not_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::not.__init__)
+def test_legolang_controlflow_not_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_not.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -98,16 +98,16 @@ def test_opbinaire_constructor_args():
 
 
 
-def test_legolang::controlflow::and_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::and)
+def test_legolang_controlflow_and_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_and)
 
 
-def test_legolang::controlflow::and_constructor_exists():
-    assert callable(Legolang::controlflow::and.__init__)
+def test_legolang_controlflow_and_constructor_exists():
+    assert callable(Legolang_controlflow_and.__init__)
 
 
-def test_legolang::controlflow::and_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::and.__init__)
+def test_legolang_controlflow_and_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_and.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -126,72 +126,72 @@ def test_operator_constructor_args():
 
 
 
-def test_legolang::controlflow::opbinaire_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::opBinaire)
+def test_legolang_controlflow_opbinaire_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_opBinaire)
 
 
-def test_legolang::controlflow::opbinaire_constructor_exists():
-    assert callable(Legolang::controlflow::opBinaire.__init__)
+def test_legolang_controlflow_opbinaire_constructor_exists():
+    assert callable(Legolang_controlflow_opBinaire.__init__)
 
 
-def test_legolang::controlflow::opbinaire_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::opBinaire.__init__)
+def test_legolang_controlflow_opbinaire_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_opBinaire.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlflow::exprbool_is_not_abstract():
-    assert not inspect.isabstract(controlflow::ExprBool)
+def test_controlflow_exprbool_is_not_abstract():
+    assert not inspect.isabstract(controlflow_ExprBool)
 
 
-def test_controlflow::exprbool_constructor_exists():
-    assert callable(controlflow::ExprBool.__init__)
+def test_controlflow_exprbool_constructor_exists():
+    assert callable(controlflow_ExprBool.__init__)
 
 
-def test_controlflow::exprbool_constructor_args():
-    sig = inspect.signature(controlflow::ExprBool.__init__)
+def test_controlflow_exprbool_constructor_args():
+    sig = inspect.signature(controlflow_ExprBool.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlflow::operator_is_not_abstract():
-    assert not inspect.isabstract(controlflow::operator)
+def test_controlflow_operator_is_not_abstract():
+    assert not inspect.isabstract(controlflow_operator)
 
 
-def test_controlflow::operator_constructor_exists():
-    assert callable(controlflow::operator.__init__)
+def test_controlflow_operator_constructor_exists():
+    assert callable(controlflow_operator.__init__)
 
 
-def test_controlflow::operator_constructor_args():
-    sig = inspect.signature(controlflow::operator.__init__)
+def test_controlflow_operator_constructor_args():
+    sig = inspect.signature(controlflow_operator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::controlflow::opunaire_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::opUnaire)
+def test_legolang_controlflow_opunaire_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_opUnaire)
 
 
-def test_legolang::controlflow::opunaire_constructor_exists():
-    assert callable(Legolang::controlflow::opUnaire.__init__)
+def test_legolang_controlflow_opunaire_constructor_exists():
+    assert callable(Legolang_controlflow_opUnaire.__init__)
 
 
-def test_legolang::controlflow::opunaire_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::opUnaire.__init__)
+def test_legolang_controlflow_opunaire_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_opUnaire.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::controlflow::operator_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::operator)
+def test_legolang_controlflow_operator_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_operator)
 
 
-def test_legolang::controlflow::operator_constructor_exists():
-    assert callable(Legolang::controlflow::operator.__init__)
+def test_legolang_controlflow_operator_constructor_exists():
+    assert callable(Legolang_controlflow_operator.__init__)
 
 
-def test_legolang::controlflow::operator_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::operator.__init__)
+def test_legolang_controlflow_operator_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_operator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -210,16 +210,16 @@ def test_tantqueue_constructor_args():
 
 
 
-def test_legolang::controlflow::expr_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::Expr)
+def test_legolang_controlflow_expr_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_Expr)
 
 
-def test_legolang::controlflow::expr_constructor_exists():
-    assert callable(Legolang::controlflow::Expr.__init__)
+def test_legolang_controlflow_expr_constructor_exists():
+    assert callable(Legolang_controlflow_Expr.__init__)
 
 
-def test_legolang::controlflow::expr_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::Expr.__init__)
+def test_legolang_controlflow_expr_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,114 +252,114 @@ def test_orderrobot_constructor_args():
 
 
 
-def test_legolang::robot::display_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::display)
+def test_legolang_robot_turn_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_turn)
 
 
-def test_legolang::robot::display_constructor_exists():
-    assert callable(Legolang::Robot::display.__init__)
+def test_legolang_robot_turn_constructor_exists():
+    assert callable(Legolang_Robot_turn.__init__)
 
 
-def test_legolang::robot::display_constructor_args():
-    sig = inspect.signature(Legolang::Robot::display.__init__)
+def test_legolang_robot_turn_constructor_args():
+    sig = inspect.signature(Legolang_Robot_turn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::bip_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::bip)
+def test_legolang_robot_hasturned_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_hasTurned)
 
 
-def test_legolang::robot::bip_constructor_exists():
-    assert callable(Legolang::Robot::bip.__init__)
+def test_legolang_robot_hasturned_constructor_exists():
+    assert callable(Legolang_Robot_hasTurned.__init__)
 
 
-def test_legolang::robot::bip_constructor_args():
-    sig = inspect.signature(Legolang::Robot::bip.__init__)
+def test_legolang_robot_hasturned_constructor_args():
+    sig = inspect.signature(Legolang_Robot_hasTurned.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::turn_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::turn)
+def test_legolang_robot_turnangle_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_turnAngle)
 
 
-def test_legolang::robot::turn_constructor_exists():
-    assert callable(Legolang::Robot::turn.__init__)
+def test_legolang_robot_turnangle_constructor_exists():
+    assert callable(Legolang_Robot_turnAngle.__init__)
 
 
-def test_legolang::robot::turn_constructor_args():
-    sig = inspect.signature(Legolang::Robot::turn.__init__)
+def test_legolang_robot_turnangle_constructor_args():
+    sig = inspect.signature(Legolang_Robot_turnAngle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::stopengine_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::stopEngine)
+def test_legolang_robot_stopengine_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_stopEngine)
 
 
-def test_legolang::robot::stopengine_constructor_exists():
-    assert callable(Legolang::Robot::stopEngine.__init__)
+def test_legolang_robot_stopengine_constructor_exists():
+    assert callable(Legolang_Robot_stopEngine.__init__)
 
 
-def test_legolang::robot::stopengine_constructor_args():
-    sig = inspect.signature(Legolang::Robot::stopEngine.__init__)
+def test_legolang_robot_stopengine_constructor_args():
+    sig = inspect.signature(Legolang_Robot_stopEngine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::turnangle_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::turnAngle)
+def test_legolang_robot_obstacle_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_obstacle)
 
 
-def test_legolang::robot::turnangle_constructor_exists():
-    assert callable(Legolang::Robot::turnAngle.__init__)
+def test_legolang_robot_obstacle_constructor_exists():
+    assert callable(Legolang_Robot_obstacle.__init__)
 
 
-def test_legolang::robot::turnangle_constructor_args():
-    sig = inspect.signature(Legolang::Robot::turnAngle.__init__)
+def test_legolang_robot_obstacle_constructor_args():
+    sig = inspect.signature(Legolang_Robot_obstacle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::obstacle_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::obstacle)
+def test_legolang_robot_display_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_display)
 
 
-def test_legolang::robot::obstacle_constructor_exists():
-    assert callable(Legolang::Robot::obstacle.__init__)
+def test_legolang_robot_display_constructor_exists():
+    assert callable(Legolang_Robot_display.__init__)
 
 
-def test_legolang::robot::obstacle_constructor_args():
-    sig = inspect.signature(Legolang::Robot::obstacle.__init__)
+def test_legolang_robot_display_constructor_args():
+    sig = inspect.signature(Legolang_Robot_display.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::hasturned_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::hasTurned)
+def test_legolang_robot_bip_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_bip)
 
 
-def test_legolang::robot::hasturned_constructor_exists():
-    assert callable(Legolang::Robot::hasTurned.__init__)
+def test_legolang_robot_bip_constructor_exists():
+    assert callable(Legolang_Robot_bip.__init__)
 
 
-def test_legolang::robot::hasturned_constructor_args():
-    sig = inspect.signature(Legolang::Robot::hasTurned.__init__)
+def test_legolang_robot_bip_constructor_args():
+    sig = inspect.signature(Legolang_Robot_bip.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::move_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::move)
+def test_legolang_robot_move_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_move)
 
 
-def test_legolang::robot::move_constructor_exists():
-    assert callable(Legolang::Robot::move.__init__)
+def test_legolang_robot_move_constructor_exists():
+    assert callable(Legolang_Robot_move.__init__)
 
 
-def test_legolang::robot::move_constructor_args():
-    sig = inspect.signature(Legolang::Robot::move.__init__)
+def test_legolang_robot_move_constructor_args():
+    sig = inspect.signature(Legolang_Robot_move.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -378,58 +378,58 @@ def test_expr_constructor_args():
 
 
 
-def test_legolang::controlflow::si_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::si)
+def test_legolang_controlflow_exprbool_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_ExprBool)
 
 
-def test_legolang::controlflow::si_constructor_exists():
-    assert callable(Legolang::controlflow::si.__init__)
+def test_legolang_controlflow_exprbool_constructor_exists():
+    assert callable(Legolang_controlflow_ExprBool.__init__)
 
 
-def test_legolang::controlflow::si_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::si.__init__)
+def test_legolang_controlflow_exprbool_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_ExprBool.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::controlflow::tantqueue_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::tantqueue)
+def test_legolang_controlflow_si_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_si)
 
 
-def test_legolang::controlflow::tantqueue_constructor_exists():
-    assert callable(Legolang::controlflow::tantqueue.__init__)
+def test_legolang_controlflow_si_constructor_exists():
+    assert callable(Legolang_controlflow_si.__init__)
 
 
-def test_legolang::controlflow::tantqueue_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::tantqueue.__init__)
+def test_legolang_controlflow_si_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_si.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::controlflow::exprbool_is_not_abstract():
-    assert not inspect.isabstract(Legolang::controlflow::ExprBool)
+def test_legolang_controlflow_tantqueue_is_not_abstract():
+    assert not inspect.isabstract(Legolang_controlflow_tantqueue)
 
 
-def test_legolang::controlflow::exprbool_constructor_exists():
-    assert callable(Legolang::controlflow::ExprBool.__init__)
+def test_legolang_controlflow_tantqueue_constructor_exists():
+    assert callable(Legolang_controlflow_tantqueue.__init__)
 
 
-def test_legolang::controlflow::exprbool_constructor_args():
-    sig = inspect.signature(Legolang::controlflow::ExprBool.__init__)
+def test_legolang_controlflow_tantqueue_constructor_args():
+    sig = inspect.signature(Legolang_controlflow_tantqueue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_legolang::robot::orderrobot_is_not_abstract():
-    assert not inspect.isabstract(Legolang::Robot::OrderRobot)
+def test_legolang_robot_orderrobot_is_not_abstract():
+    assert not inspect.isabstract(Legolang_Robot_OrderRobot)
 
 
-def test_legolang::robot::orderrobot_constructor_exists():
-    assert callable(Legolang::Robot::OrderRobot.__init__)
+def test_legolang_robot_orderrobot_constructor_exists():
+    assert callable(Legolang_Robot_OrderRobot.__init__)
 
 
-def test_legolang::robot::orderrobot_constructor_args():
-    sig = inspect.signature(Legolang::Robot::OrderRobot.__init__)
+def test_legolang_robot_orderrobot_constructor_args():
+    sig = inspect.signature(Legolang_Robot_OrderRobot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -444,44 +444,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Legolang::controlflow::Program_strategy = st.builds(
-    Legolang::controlflow::Program,
+Legolang_controlflow_Program_strategy = st.builds(
+    Legolang_controlflow_Program,
 )
 opUnaire_strategy = st.builds(
     opUnaire,
 )
-Legolang::controlflow::not_strategy = st.builds(
-    Legolang::controlflow::not,
+Legolang_controlflow_not_strategy = st.builds(
+    Legolang_controlflow_not,
 )
 opBinaire_strategy = st.builds(
     opBinaire,
 )
-Legolang::controlflow::and_strategy = st.builds(
-    Legolang::controlflow::and,
+Legolang_controlflow_and_strategy = st.builds(
+    Legolang_controlflow_and,
 )
 operator_strategy = st.builds(
     operator,
 )
-Legolang::controlflow::opBinaire_strategy = st.builds(
-    Legolang::controlflow::opBinaire,
+Legolang_controlflow_opBinaire_strategy = st.builds(
+    Legolang_controlflow_opBinaire,
 )
-controlflow::ExprBool_strategy = st.builds(
-    controlflow::ExprBool,
+controlflow_ExprBool_strategy = st.builds(
+    controlflow_ExprBool,
 )
-controlflow::operator_strategy = st.builds(
-    controlflow::operator,
+controlflow_operator_strategy = st.builds(
+    controlflow_operator,
 )
-Legolang::controlflow::opUnaire_strategy = st.builds(
-    Legolang::controlflow::opUnaire,
+Legolang_controlflow_opUnaire_strategy = st.builds(
+    Legolang_controlflow_opUnaire,
 )
-Legolang::controlflow::operator_strategy = st.builds(
-    Legolang::controlflow::operator,
+Legolang_controlflow_operator_strategy = st.builds(
+    Legolang_controlflow_operator,
 )
 tantqueue_strategy = st.builds(
     tantqueue,
 )
-Legolang::controlflow::Expr_strategy = st.builds(
-    Legolang::controlflow::Expr,
+Legolang_controlflow_Expr_strategy = st.builds(
+    Legolang_controlflow_Expr,
 )
 ExprBool_strategy = st.builds(
     ExprBool,
@@ -489,110 +489,110 @@ ExprBool_strategy = st.builds(
 OrderRobot_strategy = st.builds(
     OrderRobot,
 )
-Legolang::Robot::display_strategy = st.builds(
-    Legolang::Robot::display,
+Legolang_Robot_turn_strategy = st.builds(
+    Legolang_Robot_turn,
 )
-Legolang::Robot::bip_strategy = st.builds(
-    Legolang::Robot::bip,
+Legolang_Robot_hasTurned_strategy = st.builds(
+    Legolang_Robot_hasTurned,
 )
-Legolang::Robot::turn_strategy = st.builds(
-    Legolang::Robot::turn,
+Legolang_Robot_turnAngle_strategy = st.builds(
+    Legolang_Robot_turnAngle,
 )
-Legolang::Robot::stopEngine_strategy = st.builds(
-    Legolang::Robot::stopEngine,
+Legolang_Robot_stopEngine_strategy = st.builds(
+    Legolang_Robot_stopEngine,
 )
-Legolang::Robot::turnAngle_strategy = st.builds(
-    Legolang::Robot::turnAngle,
+Legolang_Robot_obstacle_strategy = st.builds(
+    Legolang_Robot_obstacle,
 )
-Legolang::Robot::obstacle_strategy = st.builds(
-    Legolang::Robot::obstacle,
+Legolang_Robot_display_strategy = st.builds(
+    Legolang_Robot_display,
 )
-Legolang::Robot::hasTurned_strategy = st.builds(
-    Legolang::Robot::hasTurned,
+Legolang_Robot_bip_strategy = st.builds(
+    Legolang_Robot_bip,
 )
-Legolang::Robot::move_strategy = st.builds(
-    Legolang::Robot::move,
+Legolang_Robot_move_strategy = st.builds(
+    Legolang_Robot_move,
 )
 Expr_strategy = st.builds(
     Expr,
 )
-Legolang::controlflow::si_strategy = st.builds(
-    Legolang::controlflow::si,
+Legolang_controlflow_ExprBool_strategy = st.builds(
+    Legolang_controlflow_ExprBool,
 )
-Legolang::controlflow::tantqueue_strategy = st.builds(
-    Legolang::controlflow::tantqueue,
+Legolang_controlflow_si_strategy = st.builds(
+    Legolang_controlflow_si,
 )
-Legolang::controlflow::ExprBool_strategy = st.builds(
-    Legolang::controlflow::ExprBool,
+Legolang_controlflow_tantqueue_strategy = st.builds(
+    Legolang_controlflow_tantqueue,
 )
-Legolang::Robot::OrderRobot_strategy = st.builds(
-    Legolang::Robot::OrderRobot,
+Legolang_Robot_OrderRobot_strategy = st.builds(
+    Legolang_Robot_OrderRobot,
 )
 
-@given(instance=Legolang::controlflow::Program_strategy)
+@given(instance=Legolang_controlflow_Program_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::program_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::Program)
+def test_legolang_controlflow_program_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_Program)
 
 @given(instance=opUnaire_strategy)
 @settings(max_examples=50)
 def test_opunaire_instantiation(instance):
     assert isinstance(instance, opUnaire)
 
-@given(instance=Legolang::controlflow::not_strategy)
+@given(instance=Legolang_controlflow_not_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::not_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::not)
+def test_legolang_controlflow_not_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_not)
 
 @given(instance=opBinaire_strategy)
 @settings(max_examples=50)
 def test_opbinaire_instantiation(instance):
     assert isinstance(instance, opBinaire)
 
-@given(instance=Legolang::controlflow::and_strategy)
+@given(instance=Legolang_controlflow_and_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::and_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::and)
+def test_legolang_controlflow_and_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_and)
 
 @given(instance=operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, operator)
 
-@given(instance=Legolang::controlflow::opBinaire_strategy)
+@given(instance=Legolang_controlflow_opBinaire_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::opbinaire_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::opBinaire)
+def test_legolang_controlflow_opbinaire_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_opBinaire)
 
-@given(instance=controlflow::ExprBool_strategy)
+@given(instance=controlflow_ExprBool_strategy)
 @settings(max_examples=50)
-def test_controlflow::exprbool_instantiation(instance):
-    assert isinstance(instance, controlflow::ExprBool)
+def test_controlflow_exprbool_instantiation(instance):
+    assert isinstance(instance, controlflow_ExprBool)
 
-@given(instance=controlflow::operator_strategy)
+@given(instance=controlflow_operator_strategy)
 @settings(max_examples=50)
-def test_controlflow::operator_instantiation(instance):
-    assert isinstance(instance, controlflow::operator)
+def test_controlflow_operator_instantiation(instance):
+    assert isinstance(instance, controlflow_operator)
 
-@given(instance=Legolang::controlflow::opUnaire_strategy)
+@given(instance=Legolang_controlflow_opUnaire_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::opunaire_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::opUnaire)
+def test_legolang_controlflow_opunaire_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_opUnaire)
 
-@given(instance=Legolang::controlflow::operator_strategy)
+@given(instance=Legolang_controlflow_operator_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::operator_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::operator)
+def test_legolang_controlflow_operator_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_operator)
 
 @given(instance=tantqueue_strategy)
 @settings(max_examples=50)
 def test_tantqueue_instantiation(instance):
     assert isinstance(instance, tantqueue)
 
-@given(instance=Legolang::controlflow::Expr_strategy)
+@given(instance=Legolang_controlflow_Expr_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::expr_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::Expr)
+def test_legolang_controlflow_expr_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_Expr)
 
 @given(instance=ExprBool_strategy)
 @settings(max_examples=50)
@@ -604,67 +604,67 @@ def test_exprbool_instantiation(instance):
 def test_orderrobot_instantiation(instance):
     assert isinstance(instance, OrderRobot)
 
-@given(instance=Legolang::Robot::display_strategy)
+@given(instance=Legolang_Robot_turn_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::display_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::display)
+def test_legolang_robot_turn_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_turn)
 
-@given(instance=Legolang::Robot::bip_strategy)
+@given(instance=Legolang_Robot_hasTurned_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::bip_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::bip)
+def test_legolang_robot_hasturned_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_hasTurned)
 
-@given(instance=Legolang::Robot::turn_strategy)
+@given(instance=Legolang_Robot_turnAngle_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::turn_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::turn)
+def test_legolang_robot_turnangle_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_turnAngle)
 
-@given(instance=Legolang::Robot::stopEngine_strategy)
+@given(instance=Legolang_Robot_stopEngine_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::stopengine_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::stopEngine)
+def test_legolang_robot_stopengine_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_stopEngine)
 
-@given(instance=Legolang::Robot::turnAngle_strategy)
+@given(instance=Legolang_Robot_obstacle_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::turnangle_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::turnAngle)
+def test_legolang_robot_obstacle_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_obstacle)
 
-@given(instance=Legolang::Robot::obstacle_strategy)
+@given(instance=Legolang_Robot_display_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::obstacle_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::obstacle)
+def test_legolang_robot_display_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_display)
 
-@given(instance=Legolang::Robot::hasTurned_strategy)
+@given(instance=Legolang_Robot_bip_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::hasturned_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::hasTurned)
+def test_legolang_robot_bip_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_bip)
 
-@given(instance=Legolang::Robot::move_strategy)
+@given(instance=Legolang_Robot_move_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::move_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::move)
+def test_legolang_robot_move_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_move)
 
 @given(instance=Expr_strategy)
 @settings(max_examples=50)
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=Legolang::controlflow::si_strategy)
+@given(instance=Legolang_controlflow_ExprBool_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::si_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::si)
+def test_legolang_controlflow_exprbool_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_ExprBool)
 
-@given(instance=Legolang::controlflow::tantqueue_strategy)
+@given(instance=Legolang_controlflow_si_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::tantqueue_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::tantqueue)
+def test_legolang_controlflow_si_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_si)
 
-@given(instance=Legolang::controlflow::ExprBool_strategy)
+@given(instance=Legolang_controlflow_tantqueue_strategy)
 @settings(max_examples=50)
-def test_legolang::controlflow::exprbool_instantiation(instance):
-    assert isinstance(instance, Legolang::controlflow::ExprBool)
+def test_legolang_controlflow_tantqueue_instantiation(instance):
+    assert isinstance(instance, Legolang_controlflow_tantqueue)
 
-@given(instance=Legolang::Robot::OrderRobot_strategy)
+@given(instance=Legolang_Robot_OrderRobot_strategy)
 @settings(max_examples=50)
-def test_legolang::robot::orderrobot_instantiation(instance):
-    assert isinstance(instance, Legolang::Robot::OrderRobot)
+def test_legolang_robot_orderrobot_instantiation(instance):
+    assert isinstance(instance, Legolang_Robot_OrderRobot)

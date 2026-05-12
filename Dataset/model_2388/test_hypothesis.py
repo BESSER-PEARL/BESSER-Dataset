@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    relationaldatabase::ForeignKey,
-    relationaldatabase::Column,
-    relationaldatabase::NamedElement,
-    relationaldatabase::Table,
-    relationaldatabase::RelationalDatabase,
+    relationaldatabase_ForeignKey,
+    relationaldatabase_Column,
+    relationaldatabase_NamedElement,
+    relationaldatabase_Table,
+    relationaldatabase_RelationalDatabase,
 )
 
 # =============================================================================
@@ -34,51 +34,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_relationaldatabase::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(relationaldatabase::ForeignKey)
+def test_relationaldatabase_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(relationaldatabase_ForeignKey)
 
 
-def test_relationaldatabase::foreignkey_constructor_exists():
-    assert callable(relationaldatabase::ForeignKey.__init__)
+def test_relationaldatabase_foreignkey_constructor_exists():
+    assert callable(relationaldatabase_ForeignKey.__init__)
 
 
-def test_relationaldatabase::foreignkey_constructor_args():
-    sig = inspect.signature(relationaldatabase::ForeignKey.__init__)
+def test_relationaldatabase_foreignkey_constructor_args():
+    sig = inspect.signature(relationaldatabase_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationaldatabase::column_is_not_abstract():
-    assert not inspect.isabstract(relationaldatabase::Column)
+def test_relationaldatabase_column_is_not_abstract():
+    assert not inspect.isabstract(relationaldatabase_Column)
 
 
-def test_relationaldatabase::column_constructor_exists():
-    assert callable(relationaldatabase::Column.__init__)
+def test_relationaldatabase_column_constructor_exists():
+    assert callable(relationaldatabase_Column.__init__)
 
 
-def test_relationaldatabase::column_constructor_args():
-    sig = inspect.signature(relationaldatabase::Column.__init__)
+def test_relationaldatabase_column_constructor_args():
+    sig = inspect.signature(relationaldatabase_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationaldatabase::namedelement_is_not_abstract():
-    assert not inspect.isabstract(relationaldatabase::NamedElement)
+def test_relationaldatabase_namedelement_is_not_abstract():
+    assert not inspect.isabstract(relationaldatabase_NamedElement)
 
 
-def test_relationaldatabase::namedelement_constructor_exists():
-    assert callable(relationaldatabase::NamedElement.__init__)
+def test_relationaldatabase_namedelement_constructor_exists():
+    assert callable(relationaldatabase_NamedElement.__init__)
 
 
-def test_relationaldatabase::namedelement_constructor_args():
-    sig = inspect.signature(relationaldatabase::NamedElement.__init__)
+def test_relationaldatabase_namedelement_constructor_args():
+    sig = inspect.signature(relationaldatabase_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_relationaldatabase::namedelement_has_name():
-    assert hasattr(relationaldatabase::NamedElement, "name")
+def test_relationaldatabase_namedelement_has_name():
+    assert hasattr(relationaldatabase_NamedElement, "name")
     descriptor = None
-    for klass in relationaldatabase::NamedElement.__mro__:
+    for klass in relationaldatabase_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,30 +86,30 @@ def test_relationaldatabase::namedelement_has_name():
 
 
 
-def test_relationaldatabase::table_is_not_abstract():
-    assert not inspect.isabstract(relationaldatabase::Table)
+def test_relationaldatabase_table_is_not_abstract():
+    assert not inspect.isabstract(relationaldatabase_Table)
 
 
-def test_relationaldatabase::table_constructor_exists():
-    assert callable(relationaldatabase::Table.__init__)
+def test_relationaldatabase_table_constructor_exists():
+    assert callable(relationaldatabase_Table.__init__)
 
 
-def test_relationaldatabase::table_constructor_args():
-    sig = inspect.signature(relationaldatabase::Table.__init__)
+def test_relationaldatabase_table_constructor_args():
+    sig = inspect.signature(relationaldatabase_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relationaldatabase::relationaldatabase_is_not_abstract():
-    assert not inspect.isabstract(relationaldatabase::RelationalDatabase)
+def test_relationaldatabase_relationaldatabase_is_not_abstract():
+    assert not inspect.isabstract(relationaldatabase_RelationalDatabase)
 
 
-def test_relationaldatabase::relationaldatabase_constructor_exists():
-    assert callable(relationaldatabase::RelationalDatabase.__init__)
+def test_relationaldatabase_relationaldatabase_constructor_exists():
+    assert callable(relationaldatabase_RelationalDatabase.__init__)
 
 
-def test_relationaldatabase::relationaldatabase_constructor_args():
-    sig = inspect.signature(relationaldatabase::RelationalDatabase.__init__)
+def test_relationaldatabase_relationaldatabase_constructor_args():
+    sig = inspect.signature(relationaldatabase_RelationalDatabase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,22 +127,22 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-relationaldatabase::ForeignKey_strategy = st.builds(
-    relationaldatabase::ForeignKey,
+relationaldatabase_ForeignKey_strategy = st.builds(
+    relationaldatabase_ForeignKey,
 )
-relationaldatabase::Column_strategy = st.builds(
-    relationaldatabase::Column,
+relationaldatabase_Column_strategy = st.builds(
+    relationaldatabase_Column,
 )
-relationaldatabase::NamedElement_strategy = st.builds(
-    relationaldatabase::NamedElement,
+relationaldatabase_NamedElement_strategy = st.builds(
+    relationaldatabase_NamedElement,
     name=
         safe_text
 )
-relationaldatabase::Table_strategy = st.builds(
-    relationaldatabase::Table,
+relationaldatabase_Table_strategy = st.builds(
+    relationaldatabase_Table,
 )
-relationaldatabase::RelationalDatabase_strategy = st.builds(
-    relationaldatabase::RelationalDatabase,
+relationaldatabase_RelationalDatabase_strategy = st.builds(
+    relationaldatabase_RelationalDatabase,
 )
 
 @given(instance=NamedElement_strategy)
@@ -150,38 +150,35 @@ relationaldatabase::RelationalDatabase_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=relationaldatabase::ForeignKey_strategy)
+@given(instance=relationaldatabase_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_relationaldatabase::foreignkey_instantiation(instance):
-    assert isinstance(instance, relationaldatabase::ForeignKey)
+def test_relationaldatabase_foreignkey_instantiation(instance):
+    assert isinstance(instance, relationaldatabase_ForeignKey)
 
-@given(instance=relationaldatabase::Column_strategy)
+@given(instance=relationaldatabase_Column_strategy)
 @settings(max_examples=50)
-def test_relationaldatabase::column_instantiation(instance):
-    assert isinstance(instance, relationaldatabase::Column)
+def test_relationaldatabase_column_instantiation(instance):
+    assert isinstance(instance, relationaldatabase_Column)
 
-@given(instance=relationaldatabase::NamedElement_strategy)
+@given(instance=relationaldatabase_NamedElement_strategy)
 @settings(max_examples=50)
-def test_relationaldatabase::namedelement_instantiation(instance):
-    assert isinstance(instance, relationaldatabase::NamedElement)
-
-@given(instance=relationaldatabase::NamedElement_strategy)
-def test_relationaldatabase::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_relationaldatabase_namedelement_instantiation(instance):
+    assert isinstance(instance, relationaldatabase_NamedElement)
 
 
-@given(instance=relationaldatabase::NamedElement_strategy)
-def test_relationaldatabase::namedelement_name_setter(instance):
+
+@given(instance=relationaldatabase_NamedElement_strategy)
+def test_relationaldatabase_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=relationaldatabase::Table_strategy)
+@given(instance=relationaldatabase_Table_strategy)
 @settings(max_examples=50)
-def test_relationaldatabase::table_instantiation(instance):
-    assert isinstance(instance, relationaldatabase::Table)
+def test_relationaldatabase_table_instantiation(instance):
+    assert isinstance(instance, relationaldatabase_Table)
 
-@given(instance=relationaldatabase::RelationalDatabase_strategy)
+@given(instance=relationaldatabase_RelationalDatabase_strategy)
 @settings(max_examples=50)
-def test_relationaldatabase::relationaldatabase_instantiation(instance):
-    assert isinstance(instance, relationaldatabase::RelationalDatabase)
+def test_relationaldatabase_relationaldatabase_instantiation(instance):
+    assert isinstance(instance, relationaldatabase_RelationalDatabase)

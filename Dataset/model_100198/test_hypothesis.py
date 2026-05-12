@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SInlinedSQLType,
-    sqlDSL::SDecimal,
-    sqlDSL::SString,
-    sqlDSL::SEnumLiteral,
+    sqlDSL_SDecimal,
+    sqlDSL_SString,
+    sqlDSL_SEnumLiteral,
     SExtDeclaredSQLType,
-    sqlDSL::SInlinedSQLType,
+    sqlDSL_SInlinedSQLType,
     SArtifact,
-    sqlDSL::SEnum,
-    sqlDSL::STable,
-    sqlDSL::SExtDeclaredSQLType,
+    sqlDSL_SEnum,
+    sqlDSL_STable,
+    sqlDSL_SExtDeclaredSQLType,
     STableMember,
-    sqlDSL::SJoinColumn,
-    sqlDSL::SColumn,
-    sqlDSL::SColumnProps,
-    sqlDSL::STableMember,
-    sqlDSL::SSettings,
-    sqlDSL::SModel,
-    sqlDSL::SArtifact,
+    sqlDSL_SJoinColumn,
+    sqlDSL_SColumn,
+    sqlDSL_SColumnProps,
+    sqlDSL_STableMember,
+    sqlDSL_SSettings,
+    sqlDSL_SModel,
+    sqlDSL_SArtifact,
     SIndex,
-    SDBEngine,
     SSimpleTypes,
+    SDBEngine,
 )
 
 # =============================================================================
@@ -49,61 +49,61 @@ def test_sinlinedsqltype_constructor_args():
 
 
 
-def test_sqldsl::sdecimal_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SDecimal)
+def test_sqldsl_sdecimal_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SDecimal)
 
 
-def test_sqldsl::sdecimal_constructor_exists():
-    assert callable(sqlDSL::SDecimal.__init__)
+def test_sqldsl_sdecimal_constructor_exists():
+    assert callable(sqlDSL_SDecimal.__init__)
 
 
-def test_sqldsl::sdecimal_constructor_args():
-    sig = inspect.signature(sqlDSL::SDecimal.__init__)
+def test_sqldsl_sdecimal_constructor_args():
+    sig = inspect.signature(sqlDSL_SDecimal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqldsl::sstring_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SString)
+def test_sqldsl_sstring_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SString)
 
 
-def test_sqldsl::sstring_constructor_exists():
-    assert callable(sqlDSL::SString.__init__)
+def test_sqldsl_sstring_constructor_exists():
+    assert callable(sqlDSL_SString.__init__)
 
 
-def test_sqldsl::sstring_constructor_args():
-    sig = inspect.signature(sqlDSL::SString.__init__)
+def test_sqldsl_sstring_constructor_args():
+    sig = inspect.signature(sqlDSL_SString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqldsl::senumliteral_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SEnumLiteral)
+def test_sqldsl_senumliteral_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SEnumLiteral)
 
 
-def test_sqldsl::senumliteral_constructor_exists():
-    assert callable(sqlDSL::SEnumLiteral.__init__)
+def test_sqldsl_senumliteral_constructor_exists():
+    assert callable(sqlDSL_SEnumLiteral.__init__)
 
 
-def test_sqldsl::senumliteral_constructor_args():
-    sig = inspect.signature(sqlDSL::SEnumLiteral.__init__)
+def test_sqldsl_senumliteral_constructor_args():
+    sig = inspect.signature(sqlDSL_SEnumLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_sqldsl::senumliteral_has_name():
-    assert hasattr(sqlDSL::SEnumLiteral, "name")
+def test_sqldsl_senumliteral_has_name():
+    assert hasattr(sqlDSL_SEnumLiteral, "name")
     descriptor = None
-    for klass in sqlDSL::SEnumLiteral.__mro__:
+    for klass in sqlDSL_SEnumLiteral.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqldsl::senumliteral_has_value():
-    assert hasattr(sqlDSL::SEnumLiteral, "value")
+def test_sqldsl_senumliteral_has_value():
+    assert hasattr(sqlDSL_SEnumLiteral, "value")
     descriptor = None
-    for klass in sqlDSL::SEnumLiteral.__mro__:
+    for klass in sqlDSL_SEnumLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -125,23 +125,23 @@ def test_sextdeclaredsqltype_constructor_args():
 
 
 
-def test_sqldsl::sinlinedsqltype_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SInlinedSQLType)
+def test_sqldsl_sinlinedsqltype_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SInlinedSQLType)
 
 
-def test_sqldsl::sinlinedsqltype_constructor_exists():
-    assert callable(sqlDSL::SInlinedSQLType.__init__)
+def test_sqldsl_sinlinedsqltype_constructor_exists():
+    assert callable(sqlDSL_SInlinedSQLType.__init__)
 
 
-def test_sqldsl::sinlinedsqltype_constructor_args():
-    sig = inspect.signature(sqlDSL::SInlinedSQLType.__init__)
+def test_sqldsl_sinlinedsqltype_constructor_args():
+    sig = inspect.signature(sqlDSL_SInlinedSQLType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_sqldsl::sinlinedsqltype_has_value():
-    assert hasattr(sqlDSL::SInlinedSQLType, "value")
+def test_sqldsl_sinlinedsqltype_has_value():
+    assert hasattr(sqlDSL_SInlinedSQLType, "value")
     descriptor = None
-    for klass in sqlDSL::SInlinedSQLType.__mro__:
+    for klass in sqlDSL_SInlinedSQLType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -163,74 +163,74 @@ def test_sartifact_constructor_args():
 
 
 
-def test_sqldsl::senum_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SEnum)
+def test_sqldsl_senum_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SEnum)
 
 
-def test_sqldsl::senum_constructor_exists():
-    assert callable(sqlDSL::SEnum.__init__)
+def test_sqldsl_senum_constructor_exists():
+    assert callable(sqlDSL_SEnum.__init__)
 
 
-def test_sqldsl::senum_constructor_args():
-    sig = inspect.signature(sqlDSL::SEnum.__init__)
+def test_sqldsl_senum_constructor_args():
+    sig = inspect.signature(sqlDSL_SEnum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqldsl::stable_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::STable)
+def test_sqldsl_stable_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_STable)
 
 
-def test_sqldsl::stable_constructor_exists():
-    assert callable(sqlDSL::STable.__init__)
+def test_sqldsl_stable_constructor_exists():
+    assert callable(sqlDSL_STable.__init__)
 
 
-def test_sqldsl::stable_constructor_args():
-    sig = inspect.signature(sqlDSL::STable.__init__)
+def test_sqldsl_stable_constructor_args():
+    sig = inspect.signature(sqlDSL_STable.__init__)
     params = list(sig.parameters.keys())
+    assert "prefix" in params, "Missing parameter 'prefix'"
     assert "cached" in params, "Missing parameter 'cached'"
     assert "entityname" in params, "Missing parameter 'entityname'"
-    assert "prefix" in params, "Missing parameter 'prefix'"
 
-def test_sqldsl::stable_has_cached():
-    assert hasattr(sqlDSL::STable, "cached")
+def test_sqldsl_stable_has_prefix():
+    assert hasattr(sqlDSL_STable, "prefix")
     descriptor = None
-    for klass in sqlDSL::STable.__mro__:
-        if "cached" in klass.__dict__:
-            descriptor = klass.__dict__["cached"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqldsl::stable_has_entityname():
-    assert hasattr(sqlDSL::STable, "entityname")
-    descriptor = None
-    for klass in sqlDSL::STable.__mro__:
-        if "entityname" in klass.__dict__:
-            descriptor = klass.__dict__["entityname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqldsl::stable_has_prefix():
-    assert hasattr(sqlDSL::STable, "prefix")
-    descriptor = None
-    for klass in sqlDSL::STable.__mro__:
+    for klass in sqlDSL_STable.__mro__:
         if "prefix" in klass.__dict__:
             descriptor = klass.__dict__["prefix"]
             break
     assert isinstance(descriptor, property)
 
+def test_sqldsl_stable_has_cached():
+    assert hasattr(sqlDSL_STable, "cached")
+    descriptor = None
+    for klass in sqlDSL_STable.__mro__:
+        if "cached" in klass.__dict__:
+            descriptor = klass.__dict__["cached"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sqldsl_stable_has_entityname():
+    assert hasattr(sqlDSL_STable, "entityname")
+    descriptor = None
+    for klass in sqlDSL_STable.__mro__:
+        if "entityname" in klass.__dict__:
+            descriptor = klass.__dict__["entityname"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sqldsl::sextdeclaredsqltype_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SExtDeclaredSQLType)
+
+def test_sqldsl_sextdeclaredsqltype_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SExtDeclaredSQLType)
 
 
-def test_sqldsl::sextdeclaredsqltype_constructor_exists():
-    assert callable(sqlDSL::SExtDeclaredSQLType.__init__)
+def test_sqldsl_sextdeclaredsqltype_constructor_exists():
+    assert callable(sqlDSL_SExtDeclaredSQLType.__init__)
 
 
-def test_sqldsl::sextdeclaredsqltype_constructor_args():
-    sig = inspect.signature(sqlDSL::SExtDeclaredSQLType.__init__)
+def test_sqldsl_sextdeclaredsqltype_constructor_args():
+    sig = inspect.signature(sqlDSL_SExtDeclaredSQLType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -249,37 +249,37 @@ def test_stablemember_constructor_args():
 
 
 
-def test_sqldsl::sjoincolumn_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SJoinColumn)
+def test_sqldsl_sjoincolumn_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SJoinColumn)
 
 
-def test_sqldsl::sjoincolumn_constructor_exists():
-    assert callable(sqlDSL::SJoinColumn.__init__)
+def test_sqldsl_sjoincolumn_constructor_exists():
+    assert callable(sqlDSL_SJoinColumn.__init__)
 
 
-def test_sqldsl::sjoincolumn_constructor_args():
-    sig = inspect.signature(sqlDSL::SJoinColumn.__init__)
+def test_sqldsl_sjoincolumn_constructor_args():
+    sig = inspect.signature(sqlDSL_SJoinColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqldsl::scolumn_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SColumn)
+def test_sqldsl_scolumn_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SColumn)
 
 
-def test_sqldsl::scolumn_constructor_exists():
-    assert callable(sqlDSL::SColumn.__init__)
+def test_sqldsl_scolumn_constructor_exists():
+    assert callable(sqlDSL_SColumn.__init__)
 
 
-def test_sqldsl::scolumn_constructor_args():
-    sig = inspect.signature(sqlDSL::SColumn.__init__)
+def test_sqldsl_scolumn_constructor_args():
+    sig = inspect.signature(sqlDSL_SColumn.__init__)
     params = list(sig.parameters.keys())
     assert "simpleType" in params, "Missing parameter 'simpleType'"
 
-def test_sqldsl::scolumn_has_simpleType():
-    assert hasattr(sqlDSL::SColumn, "simpleType")
+def test_sqldsl_scolumn_has_simpleType():
+    assert hasattr(sqlDSL_SColumn, "simpleType")
     descriptor = None
-    for klass in sqlDSL::SColumn.__mro__:
+    for klass in sqlDSL_SColumn.__mro__:
         if "simpleType" in klass.__dict__:
             descriptor = klass.__dict__["simpleType"]
             break
@@ -287,77 +287,77 @@ def test_sqldsl::scolumn_has_simpleType():
 
 
 
-def test_sqldsl::scolumnprops_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SColumnProps)
+def test_sqldsl_scolumnprops_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SColumnProps)
 
 
-def test_sqldsl::scolumnprops_constructor_exists():
-    assert callable(sqlDSL::SColumnProps.__init__)
+def test_sqldsl_scolumnprops_constructor_exists():
+    assert callable(sqlDSL_SColumnProps.__init__)
 
 
-def test_sqldsl::scolumnprops_constructor_args():
-    sig = inspect.signature(sqlDSL::SColumnProps.__init__)
+def test_sqldsl_scolumnprops_constructor_args():
+    sig = inspect.signature(sqlDSL_SColumnProps.__init__)
     params = list(sig.parameters.keys())
+    assert "nullable" in params, "Missing parameter 'nullable'"
     assert "aes" in params, "Missing parameter 'aes'"
     assert "index" in params, "Missing parameter 'index'"
     assert "javacolumn" in params, "Missing parameter 'javacolumn'"
-    assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_sqldsl::scolumnprops_has_aes():
-    assert hasattr(sqlDSL::SColumnProps, "aes")
+def test_sqldsl_scolumnprops_has_nullable():
+    assert hasattr(sqlDSL_SColumnProps, "nullable")
     descriptor = None
-    for klass in sqlDSL::SColumnProps.__mro__:
-        if "aes" in klass.__dict__:
-            descriptor = klass.__dict__["aes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqldsl::scolumnprops_has_index():
-    assert hasattr(sqlDSL::SColumnProps, "index")
-    descriptor = None
-    for klass in sqlDSL::SColumnProps.__mro__:
-        if "index" in klass.__dict__:
-            descriptor = klass.__dict__["index"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqldsl::scolumnprops_has_javacolumn():
-    assert hasattr(sqlDSL::SColumnProps, "javacolumn")
-    descriptor = None
-    for klass in sqlDSL::SColumnProps.__mro__:
-        if "javacolumn" in klass.__dict__:
-            descriptor = klass.__dict__["javacolumn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqldsl::scolumnprops_has_nullable():
-    assert hasattr(sqlDSL::SColumnProps, "nullable")
-    descriptor = None
-    for klass in sqlDSL::SColumnProps.__mro__:
+    for klass in sqlDSL_SColumnProps.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
     assert isinstance(descriptor, property)
 
+def test_sqldsl_scolumnprops_has_aes():
+    assert hasattr(sqlDSL_SColumnProps, "aes")
+    descriptor = None
+    for klass in sqlDSL_SColumnProps.__mro__:
+        if "aes" in klass.__dict__:
+            descriptor = klass.__dict__["aes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sqldsl_scolumnprops_has_index():
+    assert hasattr(sqlDSL_SColumnProps, "index")
+    descriptor = None
+    for klass in sqlDSL_SColumnProps.__mro__:
+        if "index" in klass.__dict__:
+            descriptor = klass.__dict__["index"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sqldsl_scolumnprops_has_javacolumn():
+    assert hasattr(sqlDSL_SColumnProps, "javacolumn")
+    descriptor = None
+    for klass in sqlDSL_SColumnProps.__mro__:
+        if "javacolumn" in klass.__dict__:
+            descriptor = klass.__dict__["javacolumn"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sqldsl::stablemember_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::STableMember)
+
+def test_sqldsl_stablemember_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_STableMember)
 
 
-def test_sqldsl::stablemember_constructor_exists():
-    assert callable(sqlDSL::STableMember.__init__)
+def test_sqldsl_stablemember_constructor_exists():
+    assert callable(sqlDSL_STableMember.__init__)
 
 
-def test_sqldsl::stablemember_constructor_args():
-    sig = inspect.signature(sqlDSL::STableMember.__init__)
+def test_sqldsl_stablemember_constructor_args():
+    sig = inspect.signature(sqlDSL_STableMember.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqldsl::stablemember_has_name():
-    assert hasattr(sqlDSL::STableMember, "name")
+def test_sqldsl_stablemember_has_name():
+    assert hasattr(sqlDSL_STableMember, "name")
     descriptor = None
-    for klass in sqlDSL::STableMember.__mro__:
+    for klass in sqlDSL_STableMember.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -365,43 +365,43 @@ def test_sqldsl::stablemember_has_name():
 
 
 
-def test_sqldsl::ssettings_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SSettings)
+def test_sqldsl_ssettings_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SSettings)
 
 
-def test_sqldsl::ssettings_constructor_exists():
-    assert callable(sqlDSL::SSettings.__init__)
+def test_sqldsl_ssettings_constructor_exists():
+    assert callable(sqlDSL_SSettings.__init__)
 
 
-def test_sqldsl::ssettings_constructor_args():
-    sig = inspect.signature(sqlDSL::SSettings.__init__)
+def test_sqldsl_ssettings_constructor_args():
+    sig = inspect.signature(sqlDSL_SSettings.__init__)
     params = list(sig.parameters.keys())
     assert "javapackage" in params, "Missing parameter 'javapackage'"
     assert "schema" in params, "Missing parameter 'schema'"
     assert "engine" in params, "Missing parameter 'engine'"
 
-def test_sqldsl::ssettings_has_javapackage():
-    assert hasattr(sqlDSL::SSettings, "javapackage")
+def test_sqldsl_ssettings_has_javapackage():
+    assert hasattr(sqlDSL_SSettings, "javapackage")
     descriptor = None
-    for klass in sqlDSL::SSettings.__mro__:
+    for klass in sqlDSL_SSettings.__mro__:
         if "javapackage" in klass.__dict__:
             descriptor = klass.__dict__["javapackage"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqldsl::ssettings_has_schema():
-    assert hasattr(sqlDSL::SSettings, "schema")
+def test_sqldsl_ssettings_has_schema():
+    assert hasattr(sqlDSL_SSettings, "schema")
     descriptor = None
-    for klass in sqlDSL::SSettings.__mro__:
+    for klass in sqlDSL_SSettings.__mro__:
         if "schema" in klass.__dict__:
             descriptor = klass.__dict__["schema"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqldsl::ssettings_has_engine():
-    assert hasattr(sqlDSL::SSettings, "engine")
+def test_sqldsl_ssettings_has_engine():
+    assert hasattr(sqlDSL_SSettings, "engine")
     descriptor = None
-    for klass in sqlDSL::SSettings.__mro__:
+    for klass in sqlDSL_SSettings.__mro__:
         if "engine" in klass.__dict__:
             descriptor = klass.__dict__["engine"]
             break
@@ -409,23 +409,23 @@ def test_sqldsl::ssettings_has_engine():
 
 
 
-def test_sqldsl::smodel_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SModel)
+def test_sqldsl_smodel_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SModel)
 
 
-def test_sqldsl::smodel_constructor_exists():
-    assert callable(sqlDSL::SModel.__init__)
+def test_sqldsl_smodel_constructor_exists():
+    assert callable(sqlDSL_SModel.__init__)
 
 
-def test_sqldsl::smodel_constructor_args():
-    sig = inspect.signature(sqlDSL::SModel.__init__)
+def test_sqldsl_smodel_constructor_args():
+    sig = inspect.signature(sqlDSL_SModel.__init__)
     params = list(sig.parameters.keys())
     assert "generatedFile" in params, "Missing parameter 'generatedFile'"
 
-def test_sqldsl::smodel_has_generatedFile():
-    assert hasattr(sqlDSL::SModel, "generatedFile")
+def test_sqldsl_smodel_has_generatedFile():
+    assert hasattr(sqlDSL_SModel, "generatedFile")
     descriptor = None
-    for klass in sqlDSL::SModel.__mro__:
+    for klass in sqlDSL_SModel.__mro__:
         if "generatedFile" in klass.__dict__:
             descriptor = klass.__dict__["generatedFile"]
             break
@@ -433,23 +433,23 @@ def test_sqldsl::smodel_has_generatedFile():
 
 
 
-def test_sqldsl::sartifact_is_not_abstract():
-    assert not inspect.isabstract(sqlDSL::SArtifact)
+def test_sqldsl_sartifact_is_not_abstract():
+    assert not inspect.isabstract(sqlDSL_SArtifact)
 
 
-def test_sqldsl::sartifact_constructor_exists():
-    assert callable(sqlDSL::SArtifact.__init__)
+def test_sqldsl_sartifact_constructor_exists():
+    assert callable(sqlDSL_SArtifact.__init__)
 
 
-def test_sqldsl::sartifact_constructor_args():
-    sig = inspect.signature(sqlDSL::SArtifact.__init__)
+def test_sqldsl_sartifact_constructor_args():
+    sig = inspect.signature(sqlDSL_SArtifact.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqldsl::sartifact_has_name():
-    assert hasattr(sqlDSL::SArtifact, "name")
+def test_sqldsl_sartifact_has_name():
+    assert hasattr(sqlDSL_SArtifact, "name")
     descriptor = None
-    for klass in sqlDSL::SArtifact.__mro__:
+    for klass in sqlDSL_SArtifact.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -463,29 +463,14 @@ def test_sindex_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SIndex]
     expected_literals = [
-        "YES",
-        "SPATIAL",
         "UNIQUE",
         "NO",
+        "SPATIAL",
+        "YES",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SIndex"
-
-def test_sdbengine_exists():
-    # Check that the Enumeration exists
-    assert SDBEngine is not None
-
-def test_sdbengine_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SDBEngine]
-    expected_literals = [
-        "INNODB",
-        "MYISAM",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SDBEngine"
 
 def test_ssimpletypes_exists():
     # Check that the Enumeration exists
@@ -495,24 +480,39 @@ def test_ssimpletypes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SSimpleTypes]
     expected_literals = [
-        "Coordinate",
-        "SMALL_INT",
         "MEDIUM_INT",
-        "Currency",
-        "BLOB",
-        "FOTO",
-        "POLYGON",
-        "POINT",
-        "TIME",
-        "TINY_INT",
-        "BOOLEAN",
         "DATETIME",
-        "DATE",
+        "BLOB",
+        "Currency",
+        "POLYGON",
         "INT",
+        "DATE",
+        "SMALL_INT",
+        "TINY_INT",
+        "FOTO",
+        "TIME",
+        "BOOLEAN",
+        "Coordinate",
+        "POINT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SSimpleTypes"
+
+def test_sdbengine_exists():
+    # Check that the Enumeration exists
+    assert SDBEngine is not None
+
+def test_sdbengine_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SDBEngine]
+    expected_literals = [
+        "MYISAM",
+        "INNODB",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SDBEngine"
 
 
 # =============================================================================
@@ -529,14 +529,14 @@ safe_text = st.text(
 SInlinedSQLType_strategy = st.builds(
     SInlinedSQLType,
 )
-sqlDSL::SDecimal_strategy = st.builds(
-    sqlDSL::SDecimal,
+sqlDSL_SDecimal_strategy = st.builds(
+    sqlDSL_SDecimal,
 )
-sqlDSL::SString_strategy = st.builds(
-    sqlDSL::SString,
+sqlDSL_SString_strategy = st.builds(
+    sqlDSL_SString,
 )
-sqlDSL::SEnumLiteral_strategy = st.builds(
-    sqlDSL::SEnumLiteral,
+sqlDSL_SEnumLiteral_strategy = st.builds(
+    sqlDSL_SEnumLiteral,
     name=
         safe_text,
     value=
@@ -545,58 +545,58 @@ sqlDSL::SEnumLiteral_strategy = st.builds(
 SExtDeclaredSQLType_strategy = st.builds(
     SExtDeclaredSQLType,
 )
-sqlDSL::SInlinedSQLType_strategy = st.builds(
-    sqlDSL::SInlinedSQLType,
+sqlDSL_SInlinedSQLType_strategy = st.builds(
+    sqlDSL_SInlinedSQLType,
     value=
         st.integers()
 )
 SArtifact_strategy = st.builds(
     SArtifact,
 )
-sqlDSL::SEnum_strategy = st.builds(
-    sqlDSL::SEnum,
+sqlDSL_SEnum_strategy = st.builds(
+    sqlDSL_SEnum,
 )
-sqlDSL::STable_strategy = st.builds(
-    sqlDSL::STable,
+sqlDSL_STable_strategy = st.builds(
+    sqlDSL_STable,
+    prefix=
+        safe_text,
     cached=
         st.booleans(),
     entityname=
-        safe_text,
-    prefix=
         safe_text
 )
-sqlDSL::SExtDeclaredSQLType_strategy = st.builds(
-    sqlDSL::SExtDeclaredSQLType,
+sqlDSL_SExtDeclaredSQLType_strategy = st.builds(
+    sqlDSL_SExtDeclaredSQLType,
 )
 STableMember_strategy = st.builds(
     STableMember,
 )
-sqlDSL::SJoinColumn_strategy = st.builds(
-    sqlDSL::SJoinColumn,
+sqlDSL_SJoinColumn_strategy = st.builds(
+    sqlDSL_SJoinColumn,
 )
-sqlDSL::SColumn_strategy = st.builds(
-    sqlDSL::SColumn,
+sqlDSL_SColumn_strategy = st.builds(
+    sqlDSL_SColumn,
     simpleType=
         safe_text
 )
-sqlDSL::SColumnProps_strategy = st.builds(
-    sqlDSL::SColumnProps,
+sqlDSL_SColumnProps_strategy = st.builds(
+    sqlDSL_SColumnProps,
+    nullable=
+        st.booleans(),
     aes=
         st.booleans(),
     index=
         safe_text,
     javacolumn=
-        safe_text,
-    nullable=
-        st.booleans()
+        safe_text
 )
-sqlDSL::STableMember_strategy = st.builds(
-    sqlDSL::STableMember,
+sqlDSL_STableMember_strategy = st.builds(
+    sqlDSL_STableMember,
     name=
         safe_text
 )
-sqlDSL::SSettings_strategy = st.builds(
-    sqlDSL::SSettings,
+sqlDSL_SSettings_strategy = st.builds(
+    sqlDSL_SSettings,
     javapackage=
         safe_text,
     schema=
@@ -604,13 +604,13 @@ sqlDSL::SSettings_strategy = st.builds(
     engine=
         safe_text
 )
-sqlDSL::SModel_strategy = st.builds(
-    sqlDSL::SModel,
+sqlDSL_SModel_strategy = st.builds(
+    sqlDSL_SModel,
     generatedFile=
         safe_text
 )
-sqlDSL::SArtifact_strategy = st.builds(
-    sqlDSL::SArtifact,
+sqlDSL_SArtifact_strategy = st.builds(
+    sqlDSL_SArtifact,
     name=
         safe_text
 )
@@ -620,39 +620,33 @@ sqlDSL::SArtifact_strategy = st.builds(
 def test_sinlinedsqltype_instantiation(instance):
     assert isinstance(instance, SInlinedSQLType)
 
-@given(instance=sqlDSL::SDecimal_strategy)
+@given(instance=sqlDSL_SDecimal_strategy)
 @settings(max_examples=50)
-def test_sqldsl::sdecimal_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SDecimal)
+def test_sqldsl_sdecimal_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SDecimal)
 
-@given(instance=sqlDSL::SString_strategy)
+@given(instance=sqlDSL_SString_strategy)
 @settings(max_examples=50)
-def test_sqldsl::sstring_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SString)
+def test_sqldsl_sstring_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SString)
 
-@given(instance=sqlDSL::SEnumLiteral_strategy)
+@given(instance=sqlDSL_SEnumLiteral_strategy)
 @settings(max_examples=50)
-def test_sqldsl::senumliteral_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SEnumLiteral)
-
-@given(instance=sqlDSL::SEnumLiteral_strategy)
-def test_sqldsl::senumliteral_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqldsl_senumliteral_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SEnumLiteral)
 
 
-@given(instance=sqlDSL::SEnumLiteral_strategy)
-def test_sqldsl::senumliteral_name_setter(instance):
+
+@given(instance=sqlDSL_SEnumLiteral_strategy)
+def test_sqldsl_senumliteral_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlDSL::SEnumLiteral_strategy)
-def test_sqldsl::senumliteral_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=sqlDSL::SEnumLiteral_strategy)
-def test_sqldsl::senumliteral_value_setter(instance):
+@given(instance=sqlDSL_SEnumLiteral_strategy)
+def test_sqldsl_senumliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -662,18 +656,15 @@ def test_sqldsl::senumliteral_value_setter(instance):
 def test_sextdeclaredsqltype_instantiation(instance):
     assert isinstance(instance, SExtDeclaredSQLType)
 
-@given(instance=sqlDSL::SInlinedSQLType_strategy)
+@given(instance=sqlDSL_SInlinedSQLType_strategy)
 @settings(max_examples=50)
-def test_sqldsl::sinlinedsqltype_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SInlinedSQLType)
-
-@given(instance=sqlDSL::SInlinedSQLType_strategy)
-def test_sqldsl::sinlinedsqltype_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_sqldsl_sinlinedsqltype_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SInlinedSQLType)
 
 
-@given(instance=sqlDSL::SInlinedSQLType_strategy)
-def test_sqldsl::sinlinedsqltype_value_setter(instance):
+
+@given(instance=sqlDSL_SInlinedSQLType_strategy)
+def test_sqldsl_sinlinedsqltype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -683,211 +674,169 @@ def test_sqldsl::sinlinedsqltype_value_setter(instance):
 def test_sartifact_instantiation(instance):
     assert isinstance(instance, SArtifact)
 
-@given(instance=sqlDSL::SEnum_strategy)
+@given(instance=sqlDSL_SEnum_strategy)
 @settings(max_examples=50)
-def test_sqldsl::senum_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SEnum)
+def test_sqldsl_senum_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SEnum)
 
-@given(instance=sqlDSL::STable_strategy)
+@given(instance=sqlDSL_STable_strategy)
 @settings(max_examples=50)
-def test_sqldsl::stable_instantiation(instance):
-    assert isinstance(instance, sqlDSL::STable)
-
-@given(instance=sqlDSL::STable_strategy)
-def test_sqldsl::stable_cached_type(instance):
-    assert isinstance(instance.cached, bool)
+def test_sqldsl_stable_instantiation(instance):
+    assert isinstance(instance, sqlDSL_STable)
 
 
-@given(instance=sqlDSL::STable_strategy)
-def test_sqldsl::stable_cached_setter(instance):
-    original = instance.cached
-    instance.cached = original
-    assert instance.cached == original
 
-@given(instance=sqlDSL::STable_strategy)
-def test_sqldsl::stable_entityname_type(instance):
-    assert isinstance(instance.entityname, str)
-
-
-@given(instance=sqlDSL::STable_strategy)
-def test_sqldsl::stable_entityname_setter(instance):
-    original = instance.entityname
-    instance.entityname = original
-    assert instance.entityname == original
-
-@given(instance=sqlDSL::STable_strategy)
-def test_sqldsl::stable_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=sqlDSL::STable_strategy)
-def test_sqldsl::stable_prefix_setter(instance):
+@given(instance=sqlDSL_STable_strategy)
+def test_sqldsl_stable_prefix_setter(instance):
     original = instance.prefix
     instance.prefix = original
     assert instance.prefix == original
 
-@given(instance=sqlDSL::SExtDeclaredSQLType_strategy)
+
+
+@given(instance=sqlDSL_STable_strategy)
+def test_sqldsl_stable_cached_setter(instance):
+    original = instance.cached
+    instance.cached = original
+    assert instance.cached == original
+
+
+
+@given(instance=sqlDSL_STable_strategy)
+def test_sqldsl_stable_entityname_setter(instance):
+    original = instance.entityname
+    instance.entityname = original
+    assert instance.entityname == original
+
+@given(instance=sqlDSL_SExtDeclaredSQLType_strategy)
 @settings(max_examples=50)
-def test_sqldsl::sextdeclaredsqltype_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SExtDeclaredSQLType)
+def test_sqldsl_sextdeclaredsqltype_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SExtDeclaredSQLType)
 
 @given(instance=STableMember_strategy)
 @settings(max_examples=50)
 def test_stablemember_instantiation(instance):
     assert isinstance(instance, STableMember)
 
-@given(instance=sqlDSL::SJoinColumn_strategy)
+@given(instance=sqlDSL_SJoinColumn_strategy)
 @settings(max_examples=50)
-def test_sqldsl::sjoincolumn_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SJoinColumn)
+def test_sqldsl_sjoincolumn_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SJoinColumn)
 
-@given(instance=sqlDSL::SColumn_strategy)
+@given(instance=sqlDSL_SColumn_strategy)
 @settings(max_examples=50)
-def test_sqldsl::scolumn_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SColumn)
-
-@given(instance=sqlDSL::SColumn_strategy)
-def test_sqldsl::scolumn_simpleType_type(instance):
-    assert isinstance(instance.simpleType, str)
+def test_sqldsl_scolumn_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SColumn)
 
 
-@given(instance=sqlDSL::SColumn_strategy)
-def test_sqldsl::scolumn_simpleType_setter(instance):
+
+@given(instance=sqlDSL_SColumn_strategy)
+def test_sqldsl_scolumn_simpleType_setter(instance):
     original = instance.simpleType
     instance.simpleType = original
     assert instance.simpleType == original
 
-@given(instance=sqlDSL::SColumnProps_strategy)
+@given(instance=sqlDSL_SColumnProps_strategy)
 @settings(max_examples=50)
-def test_sqldsl::scolumnprops_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SColumnProps)
-
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_aes_type(instance):
-    assert isinstance(instance.aes, bool)
+def test_sqldsl_scolumnprops_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SColumnProps)
 
 
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_aes_setter(instance):
-    original = instance.aes
-    instance.aes = original
-    assert instance.aes == original
 
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_index_type(instance):
-    assert isinstance(instance.index, str)
-
-
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_index_setter(instance):
-    original = instance.index
-    instance.index = original
-    assert instance.index == original
-
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_javacolumn_type(instance):
-    assert isinstance(instance.javacolumn, str)
-
-
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_javacolumn_setter(instance):
-    original = instance.javacolumn
-    instance.javacolumn = original
-    assert instance.javacolumn == original
-
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
-
-
-@given(instance=sqlDSL::SColumnProps_strategy)
-def test_sqldsl::scolumnprops_nullable_setter(instance):
+@given(instance=sqlDSL_SColumnProps_strategy)
+def test_sqldsl_scolumnprops_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=sqlDSL::STableMember_strategy)
+
+
+@given(instance=sqlDSL_SColumnProps_strategy)
+def test_sqldsl_scolumnprops_aes_setter(instance):
+    original = instance.aes
+    instance.aes = original
+    assert instance.aes == original
+
+
+
+@given(instance=sqlDSL_SColumnProps_strategy)
+def test_sqldsl_scolumnprops_index_setter(instance):
+    original = instance.index
+    instance.index = original
+    assert instance.index == original
+
+
+
+@given(instance=sqlDSL_SColumnProps_strategy)
+def test_sqldsl_scolumnprops_javacolumn_setter(instance):
+    original = instance.javacolumn
+    instance.javacolumn = original
+    assert instance.javacolumn == original
+
+@given(instance=sqlDSL_STableMember_strategy)
 @settings(max_examples=50)
-def test_sqldsl::stablemember_instantiation(instance):
-    assert isinstance(instance, sqlDSL::STableMember)
-
-@given(instance=sqlDSL::STableMember_strategy)
-def test_sqldsl::stablemember_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqldsl_stablemember_instantiation(instance):
+    assert isinstance(instance, sqlDSL_STableMember)
 
 
-@given(instance=sqlDSL::STableMember_strategy)
-def test_sqldsl::stablemember_name_setter(instance):
+
+@given(instance=sqlDSL_STableMember_strategy)
+def test_sqldsl_stablemember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqlDSL::SSettings_strategy)
+@given(instance=sqlDSL_SSettings_strategy)
 @settings(max_examples=50)
-def test_sqldsl::ssettings_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SSettings)
-
-@given(instance=sqlDSL::SSettings_strategy)
-def test_sqldsl::ssettings_javapackage_type(instance):
-    assert isinstance(instance.javapackage, str)
+def test_sqldsl_ssettings_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SSettings)
 
 
-@given(instance=sqlDSL::SSettings_strategy)
-def test_sqldsl::ssettings_javapackage_setter(instance):
+
+@given(instance=sqlDSL_SSettings_strategy)
+def test_sqldsl_ssettings_javapackage_setter(instance):
     original = instance.javapackage
     instance.javapackage = original
     assert instance.javapackage == original
 
-@given(instance=sqlDSL::SSettings_strategy)
-def test_sqldsl::ssettings_schema_type(instance):
-    assert isinstance(instance.schema, str)
 
 
-@given(instance=sqlDSL::SSettings_strategy)
-def test_sqldsl::ssettings_schema_setter(instance):
+@given(instance=sqlDSL_SSettings_strategy)
+def test_sqldsl_ssettings_schema_setter(instance):
     original = instance.schema
     instance.schema = original
     assert instance.schema == original
 
-@given(instance=sqlDSL::SSettings_strategy)
-def test_sqldsl::ssettings_engine_type(instance):
-    assert isinstance(instance.engine, str)
 
 
-@given(instance=sqlDSL::SSettings_strategy)
-def test_sqldsl::ssettings_engine_setter(instance):
+@given(instance=sqlDSL_SSettings_strategy)
+def test_sqldsl_ssettings_engine_setter(instance):
     original = instance.engine
     instance.engine = original
     assert instance.engine == original
 
-@given(instance=sqlDSL::SModel_strategy)
+@given(instance=sqlDSL_SModel_strategy)
 @settings(max_examples=50)
-def test_sqldsl::smodel_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SModel)
-
-@given(instance=sqlDSL::SModel_strategy)
-def test_sqldsl::smodel_generatedFile_type(instance):
-    assert isinstance(instance.generatedFile, str)
+def test_sqldsl_smodel_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SModel)
 
 
-@given(instance=sqlDSL::SModel_strategy)
-def test_sqldsl::smodel_generatedFile_setter(instance):
+
+@given(instance=sqlDSL_SModel_strategy)
+def test_sqldsl_smodel_generatedFile_setter(instance):
     original = instance.generatedFile
     instance.generatedFile = original
     assert instance.generatedFile == original
 
-@given(instance=sqlDSL::SArtifact_strategy)
+@given(instance=sqlDSL_SArtifact_strategy)
 @settings(max_examples=50)
-def test_sqldsl::sartifact_instantiation(instance):
-    assert isinstance(instance, sqlDSL::SArtifact)
-
-@given(instance=sqlDSL::SArtifact_strategy)
-def test_sqldsl::sartifact_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqldsl_sartifact_instantiation(instance):
+    assert isinstance(instance, sqlDSL_SArtifact)
 
 
-@given(instance=sqlDSL::SArtifact_strategy)
-def test_sqldsl::sartifact_name_setter(instance):
+
+@given(instance=sqlDSL_SArtifact_strategy)
+def test_sqldsl_sartifact_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     C,
@@ -96,17 +96,8 @@ def test_a_constructor_exists():
 def test_a_constructor_args():
     sig = inspect.signature(A.__init__)
     params = list(sig.parameters.keys())
-    assert "attrA1" in params, "Missing parameter 'attrA1'"
     assert "attrA2" in params, "Missing parameter 'attrA2'"
-
-def test_a_has_attrA1():
-    assert hasattr(A, "attrA1")
-    descriptor = None
-    for klass in A.__mro__:
-        if "attrA1" in klass.__dict__:
-            descriptor = klass.__dict__["attrA1"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attrA1" in params, "Missing parameter 'attrA1'"
 
 def test_a_has_attrA2():
     assert hasattr(A, "attrA2")
@@ -114,6 +105,15 @@ def test_a_has_attrA2():
     for klass in A.__mro__:
         if "attrA2" in klass.__dict__:
             descriptor = klass.__dict__["attrA2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_a_has_attrA1():
+    assert hasattr(A, "attrA1")
+    descriptor = None
+    for klass in A.__mro__:
+        if "attrA1" in klass.__dict__:
+            descriptor = klass.__dict__["attrA1"]
             break
     assert isinstance(descriptor, property)
 
@@ -145,10 +145,10 @@ B_strategy = st.builds(
 )
 A_strategy = st.builds(
     A,
-    attrA1=
-        st.integers(),
     attrA2=
-        safe_text
+        safe_text,
+    attrA1=
+        st.integers()
 )
 
 @given(instance=C_strategy)
@@ -156,9 +156,6 @@ A_strategy = st.builds(
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_attrC1_type(instance):
-    assert isinstance(instance.attrC1, int)
 
 
 @given(instance=C_strategy)
@@ -167,9 +164,6 @@ def test_c_attrC1_setter(instance):
     instance.attrC1 = original
     assert instance.attrC1 == original
 
-@given(instance=C_strategy)
-def test_c_attrC2_type(instance):
-    assert isinstance(instance.attrC2, str)
 
 
 @given(instance=C_strategy)
@@ -183,9 +177,6 @@ def test_c_attrC2_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attrB1_type(instance):
-    assert isinstance(instance.attrB1, int)
 
 
 @given(instance=B_strategy)
@@ -194,9 +185,6 @@ def test_b_attrB1_setter(instance):
     instance.attrB1 = original
     assert instance.attrB1 == original
 
-@given(instance=B_strategy)
-def test_b_attrB2_type(instance):
-    assert isinstance(instance.attrB2, str)
 
 
 @given(instance=B_strategy)
@@ -210,20 +198,6 @@ def test_b_attrB2_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_attrA1_type(instance):
-    assert isinstance(instance.attrA1, int)
-
-
-@given(instance=A_strategy)
-def test_a_attrA1_setter(instance):
-    original = instance.attrA1
-    instance.attrA1 = original
-    assert instance.attrA1 == original
-
-@given(instance=A_strategy)
-def test_a_attrA2_type(instance):
-    assert isinstance(instance.attrA2, str)
 
 
 @given(instance=A_strategy)
@@ -231,3 +205,11 @@ def test_a_attrA2_setter(instance):
     original = instance.attrA2
     instance.attrA2 = original
     assert instance.attrA2 == original
+
+
+
+@given(instance=A_strategy)
+def test_a_attrA1_setter(instance):
+    original = instance.attrA1
+    instance.attrA1 = original
+    assert instance.attrA1 == original

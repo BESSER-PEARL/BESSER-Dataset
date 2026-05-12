@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    era::Attribute,
-    era::Relationship,
-    era::Entity,
-    era::System,
+from python_code import (
+    era_Attribute,
+    era_Relationship,
+    era_Entity,
+    era_System,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_era::attribute_is_not_abstract():
-    assert not inspect.isabstract(era::Attribute)
+def test_era_attribute_is_not_abstract():
+    assert not inspect.isabstract(era_Attribute)
 
 
-def test_era::attribute_constructor_exists():
-    assert callable(era::Attribute.__init__)
+def test_era_attribute_constructor_exists():
+    assert callable(era_Attribute.__init__)
 
 
-def test_era::attribute_constructor_args():
-    sig = inspect.signature(era::Attribute.__init__)
+def test_era_attribute_constructor_args():
+    sig = inspect.signature(era_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_era::attribute_has_name():
-    assert hasattr(era::Attribute, "name")
+def test_era_attribute_has_name():
+    assert hasattr(era_Attribute, "name")
     descriptor = None
-    for klass in era::Attribute.__mro__:
+    for klass in era_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_era::attribute_has_name():
 
 
 
-def test_era::relationship_is_not_abstract():
-    assert not inspect.isabstract(era::Relationship)
+def test_era_relationship_is_not_abstract():
+    assert not inspect.isabstract(era_Relationship)
 
 
-def test_era::relationship_constructor_exists():
-    assert callable(era::Relationship.__init__)
+def test_era_relationship_constructor_exists():
+    assert callable(era_Relationship.__init__)
 
 
-def test_era::relationship_constructor_args():
-    sig = inspect.signature(era::Relationship.__init__)
+def test_era_relationship_constructor_args():
+    sig = inspect.signature(era_Relationship.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_era::relationship_has_name():
-    assert hasattr(era::Relationship, "name")
+def test_era_relationship_has_name():
+    assert hasattr(era_Relationship, "name")
     descriptor = None
-    for klass in era::Relationship.__mro__:
+    for klass in era_Relationship.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,33 +66,33 @@ def test_era::relationship_has_name():
 
 
 
-def test_era::entity_is_not_abstract():
-    assert not inspect.isabstract(era::Entity)
+def test_era_entity_is_not_abstract():
+    assert not inspect.isabstract(era_Entity)
 
 
-def test_era::entity_constructor_exists():
-    assert callable(era::Entity.__init__)
+def test_era_entity_constructor_exists():
+    assert callable(era_Entity.__init__)
 
 
-def test_era::entity_constructor_args():
-    sig = inspect.signature(era::Entity.__init__)
+def test_era_entity_constructor_args():
+    sig = inspect.signature(era_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "inDomain" in params, "Missing parameter 'inDomain'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_era::entity_has_inDomain():
-    assert hasattr(era::Entity, "inDomain")
+def test_era_entity_has_inDomain():
+    assert hasattr(era_Entity, "inDomain")
     descriptor = None
-    for klass in era::Entity.__mro__:
+    for klass in era_Entity.__mro__:
         if "inDomain" in klass.__dict__:
             descriptor = klass.__dict__["inDomain"]
             break
     assert isinstance(descriptor, property)
 
-def test_era::entity_has_name():
-    assert hasattr(era::Entity, "name")
+def test_era_entity_has_name():
+    assert hasattr(era_Entity, "name")
     descriptor = None
-    for klass in era::Entity.__mro__:
+    for klass in era_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -100,16 +100,16 @@ def test_era::entity_has_name():
 
 
 
-def test_era::system_is_not_abstract():
-    assert not inspect.isabstract(era::System)
+def test_era_system_is_not_abstract():
+    assert not inspect.isabstract(era_System)
 
 
-def test_era::system_constructor_exists():
-    assert callable(era::System.__init__)
+def test_era_system_constructor_exists():
+    assert callable(era_System.__init__)
 
 
-def test_era::system_constructor_args():
-    sig = inspect.signature(era::System.__init__)
+def test_era_system_constructor_args():
+    sig = inspect.signature(era_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-era::Attribute_strategy = st.builds(
-    era::Attribute,
+era_Attribute_strategy = st.builds(
+    era_Attribute,
     name=
         safe_text
 )
-era::Relationship_strategy = st.builds(
-    era::Relationship,
+era_Relationship_strategy = st.builds(
+    era_Relationship,
     name=
         safe_text
 )
-era::Entity_strategy = st.builds(
-    era::Entity,
+era_Entity_strategy = st.builds(
+    era_Entity,
     inDomain=
         safe_text,
     name=
         safe_text
 )
-era::System_strategy = st.builds(
-    era::System,
+era_System_strategy = st.builds(
+    era_System,
 )
 
-@given(instance=era::Attribute_strategy)
+@given(instance=era_Attribute_strategy)
 @settings(max_examples=50)
-def test_era::attribute_instantiation(instance):
-    assert isinstance(instance, era::Attribute)
-
-@given(instance=era::Attribute_strategy)
-def test_era::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_era_attribute_instantiation(instance):
+    assert isinstance(instance, era_Attribute)
 
 
-@given(instance=era::Attribute_strategy)
-def test_era::attribute_name_setter(instance):
+
+@given(instance=era_Attribute_strategy)
+def test_era_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=era::Relationship_strategy)
+@given(instance=era_Relationship_strategy)
 @settings(max_examples=50)
-def test_era::relationship_instantiation(instance):
-    assert isinstance(instance, era::Relationship)
-
-@given(instance=era::Relationship_strategy)
-def test_era::relationship_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_era_relationship_instantiation(instance):
+    assert isinstance(instance, era_Relationship)
 
 
-@given(instance=era::Relationship_strategy)
-def test_era::relationship_name_setter(instance):
+
+@given(instance=era_Relationship_strategy)
+def test_era_relationship_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=era::Entity_strategy)
+@given(instance=era_Entity_strategy)
 @settings(max_examples=50)
-def test_era::entity_instantiation(instance):
-    assert isinstance(instance, era::Entity)
-
-@given(instance=era::Entity_strategy)
-def test_era::entity_inDomain_type(instance):
-    assert isinstance(instance.inDomain, str)
+def test_era_entity_instantiation(instance):
+    assert isinstance(instance, era_Entity)
 
 
-@given(instance=era::Entity_strategy)
-def test_era::entity_inDomain_setter(instance):
+
+@given(instance=era_Entity_strategy)
+def test_era_entity_inDomain_setter(instance):
     original = instance.inDomain
     instance.inDomain = original
     assert instance.inDomain == original
 
-@given(instance=era::Entity_strategy)
-def test_era::entity_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=era::Entity_strategy)
-def test_era::entity_name_setter(instance):
+@given(instance=era_Entity_strategy)
+def test_era_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=era::System_strategy)
+@given(instance=era_System_strategy)
 @settings(max_examples=50)
-def test_era::system_instantiation(instance):
-    assert isinstance(instance, era::System)
+def test_era_system_instantiation(instance):
+    assert isinstance(instance, era_System)

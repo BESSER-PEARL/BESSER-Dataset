@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     member_profile,
@@ -446,9 +446,6 @@ def test_book_instantiation(instance):
 def test_file_instantiation(instance):
     assert isinstance(instance, File)
 
-@given(instance=File_strategy)
-def test_file_file_type_type(instance):
-    assert isinstance(instance.file_type, file)
 
 
 @given(instance=File_strategy)
@@ -462,9 +459,6 @@ def test_file_file_type_setter(instance):
 def test_xml_instantiation(instance):
     assert isinstance(instance, XML)
 
-@given(instance=XML_strategy)
-def test_xml_element_type(instance):
-    assert isinstance(instance.element, str)
 
 
 @given(instance=XML_strategy)
@@ -473,9 +467,6 @@ def test_xml_element_setter(instance):
     instance.element = original
     assert instance.element == original
 
-@given(instance=XML_strategy)
-def test_xml_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=XML_strategy)
@@ -489,9 +480,6 @@ def test_xml_attribute_setter(instance):
 def test_csv_instantiation(instance):
     assert isinstance(instance, CSV)
 
-@given(instance=CSV_strategy)
-def test_csv_cloumn_type(instance):
-    assert isinstance(instance.cloumn, str)
 
 
 @given(instance=CSV_strategy)
@@ -500,9 +488,6 @@ def test_csv_cloumn_setter(instance):
     instance.cloumn = original
     assert instance.cloumn == original
 
-@given(instance=CSV_strategy)
-def test_csv_row_type(instance):
-    assert isinstance(instance.row, str)
 
 
 @given(instance=CSV_strategy)
@@ -516,9 +501,6 @@ def test_csv_row_setter(instance):
 def test_data_instantiation(instance):
     assert isinstance(instance, Data)
 
-@given(instance=Data_strategy)
-def test_data_key_type(instance):
-    assert isinstance(instance.key, str)
 
 
 @given(instance=Data_strategy)
@@ -527,9 +509,6 @@ def test_data_key_setter(instance):
     instance.key = original
     assert instance.key == original
 
-@given(instance=Data_strategy)
-def test_data_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=Data_strategy)
@@ -543,9 +522,6 @@ def test_data_value_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_user_id_type(instance):
-    assert isinstance(instance.user_id, user)
 
 
 @given(instance=User_strategy)

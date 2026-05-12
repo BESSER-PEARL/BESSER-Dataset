@@ -3,48 +3,48 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Documentation,
-    mtl::ModuleElementDocumentation,
-    mtl::ModuleDocumentation,
-    mtl::DocumentedElement,
+    mtl_ModuleElementDocumentation,
+    mtl_ModuleDocumentation,
+    mtl_DocumentedElement,
     Comment,
-    mtl::ParameterDocumentation,
-    mtl::Documentation,
-    mtl::CommentBody,
-    mtl::EPackage,
+    mtl_ParameterDocumentation,
+    mtl_Documentation,
+    mtl_CommentBody,
+    mtl_EPackage,
     ModuleElement,
-    mtl::Comment,
+    mtl_Comment,
     Block,
-    mtl::LetBlock,
-    mtl::TraceBlock,
-    mtl::IfBlock,
-    mtl::FileBlock,
-    mtl::ForBlock,
-    mtl::ProtectedAreaBlock,
-    mtl::EClassifier,
+    mtl_LetBlock,
+    mtl_FileBlock,
+    mtl_TraceBlock,
+    mtl_IfBlock,
+    mtl_ForBlock,
+    mtl_ProtectedAreaBlock,
+    mtl_EClassifier,
     EPackage,
     Variable,
     ASTNode,
-    mtl::InitSection,
+    mtl_InitSection,
     TemplateExpression,
-    mtl::QueryInvocation,
-    mtl::MacroInvocation,
-    mtl::TemplateInvocation,
-    mtl::Block,
+    mtl_TemplateInvocation,
+    mtl_MacroInvocation,
+    mtl_QueryInvocation,
+    mtl_Block,
     OCLExpression,
-    mtl::TemplateExpression,
-    utilities::ASTNode,
+    mtl_TemplateExpression,
+    utilities_ASTNode,
     ENamedElement,
-    mtl::ModuleElement,
-    mtl::TypedModel,
+    mtl_ModuleElement,
+    mtl_TypedModel,
     DocumentedElement,
-    mtl::Template,
-    mtl::Query,
-    mtl::Module,
-    mtl::Macro,
+    mtl_Template,
+    mtl_Query,
+    mtl_Macro,
+    mtl_Module,
     OpenModeKind,
     VisibilityKind,
 )
@@ -69,57 +69,57 @@ def test_documentation_constructor_args():
 
 
 
-def test_mtl::moduleelementdocumentation_is_not_abstract():
-    assert not inspect.isabstract(mtl::ModuleElementDocumentation)
+def test_mtl_moduleelementdocumentation_is_not_abstract():
+    assert not inspect.isabstract(mtl_ModuleElementDocumentation)
 
 
-def test_mtl::moduleelementdocumentation_constructor_exists():
-    assert callable(mtl::ModuleElementDocumentation.__init__)
+def test_mtl_moduleelementdocumentation_constructor_exists():
+    assert callable(mtl_ModuleElementDocumentation.__init__)
 
 
-def test_mtl::moduleelementdocumentation_constructor_args():
-    sig = inspect.signature(mtl::ModuleElementDocumentation.__init__)
+def test_mtl_moduleelementdocumentation_constructor_args():
+    sig = inspect.signature(mtl_ModuleElementDocumentation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::moduledocumentation_is_not_abstract():
-    assert not inspect.isabstract(mtl::ModuleDocumentation)
+def test_mtl_moduledocumentation_is_not_abstract():
+    assert not inspect.isabstract(mtl_ModuleDocumentation)
 
 
-def test_mtl::moduledocumentation_constructor_exists():
-    assert callable(mtl::ModuleDocumentation.__init__)
+def test_mtl_moduledocumentation_constructor_exists():
+    assert callable(mtl_ModuleDocumentation.__init__)
 
 
-def test_mtl::moduledocumentation_constructor_args():
-    sig = inspect.signature(mtl::ModuleDocumentation.__init__)
+def test_mtl_moduledocumentation_constructor_args():
+    sig = inspect.signature(mtl_ModuleDocumentation.__init__)
     params = list(sig.parameters.keys())
     assert "author" in params, "Missing parameter 'author'"
     assert "version" in params, "Missing parameter 'version'"
     assert "since" in params, "Missing parameter 'since'"
 
-def test_mtl::moduledocumentation_has_author():
-    assert hasattr(mtl::ModuleDocumentation, "author")
+def test_mtl_moduledocumentation_has_author():
+    assert hasattr(mtl_ModuleDocumentation, "author")
     descriptor = None
-    for klass in mtl::ModuleDocumentation.__mro__:
+    for klass in mtl_ModuleDocumentation.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_mtl::moduledocumentation_has_version():
-    assert hasattr(mtl::ModuleDocumentation, "version")
+def test_mtl_moduledocumentation_has_version():
+    assert hasattr(mtl_ModuleDocumentation, "version")
     descriptor = None
-    for klass in mtl::ModuleDocumentation.__mro__:
+    for klass in mtl_ModuleDocumentation.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_mtl::moduledocumentation_has_since():
-    assert hasattr(mtl::ModuleDocumentation, "since")
+def test_mtl_moduledocumentation_has_since():
+    assert hasattr(mtl_ModuleDocumentation, "since")
     descriptor = None
-    for klass in mtl::ModuleDocumentation.__mro__:
+    for klass in mtl_ModuleDocumentation.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -127,23 +127,23 @@ def test_mtl::moduledocumentation_has_since():
 
 
 
-def test_mtl::documentedelement_is_not_abstract():
-    assert not inspect.isabstract(mtl::DocumentedElement)
+def test_mtl_documentedelement_is_not_abstract():
+    assert not inspect.isabstract(mtl_DocumentedElement)
 
 
-def test_mtl::documentedelement_constructor_exists():
-    assert callable(mtl::DocumentedElement.__init__)
+def test_mtl_documentedelement_constructor_exists():
+    assert callable(mtl_DocumentedElement.__init__)
 
 
-def test_mtl::documentedelement_constructor_args():
-    sig = inspect.signature(mtl::DocumentedElement.__init__)
+def test_mtl_documentedelement_constructor_args():
+    sig = inspect.signature(mtl_DocumentedElement.__init__)
     params = list(sig.parameters.keys())
     assert "deprecated" in params, "Missing parameter 'deprecated'"
 
-def test_mtl::documentedelement_has_deprecated():
-    assert hasattr(mtl::DocumentedElement, "deprecated")
+def test_mtl_documentedelement_has_deprecated():
+    assert hasattr(mtl_DocumentedElement, "deprecated")
     descriptor = None
-    for klass in mtl::DocumentedElement.__mro__:
+    for klass in mtl_DocumentedElement.__mro__:
         if "deprecated" in klass.__dict__:
             descriptor = klass.__dict__["deprecated"]
             break
@@ -165,88 +165,88 @@ def test_comment_constructor_args():
 
 
 
-def test_mtl::parameterdocumentation_is_not_abstract():
-    assert not inspect.isabstract(mtl::ParameterDocumentation)
+def test_mtl_parameterdocumentation_is_not_abstract():
+    assert not inspect.isabstract(mtl_ParameterDocumentation)
 
 
-def test_mtl::parameterdocumentation_constructor_exists():
-    assert callable(mtl::ParameterDocumentation.__init__)
+def test_mtl_parameterdocumentation_constructor_exists():
+    assert callable(mtl_ParameterDocumentation.__init__)
 
 
-def test_mtl::parameterdocumentation_constructor_args():
-    sig = inspect.signature(mtl::ParameterDocumentation.__init__)
+def test_mtl_parameterdocumentation_constructor_args():
+    sig = inspect.signature(mtl_ParameterDocumentation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::documentation_is_not_abstract():
-    assert not inspect.isabstract(mtl::Documentation)
+def test_mtl_documentation_is_not_abstract():
+    assert not inspect.isabstract(mtl_Documentation)
 
 
-def test_mtl::documentation_constructor_exists():
-    assert callable(mtl::Documentation.__init__)
+def test_mtl_documentation_constructor_exists():
+    assert callable(mtl_Documentation.__init__)
 
 
-def test_mtl::documentation_constructor_args():
-    sig = inspect.signature(mtl::Documentation.__init__)
+def test_mtl_documentation_constructor_args():
+    sig = inspect.signature(mtl_Documentation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::commentbody_is_not_abstract():
-    assert not inspect.isabstract(mtl::CommentBody)
+def test_mtl_commentbody_is_not_abstract():
+    assert not inspect.isabstract(mtl_CommentBody)
 
 
-def test_mtl::commentbody_constructor_exists():
-    assert callable(mtl::CommentBody.__init__)
+def test_mtl_commentbody_constructor_exists():
+    assert callable(mtl_CommentBody.__init__)
 
 
-def test_mtl::commentbody_constructor_args():
-    sig = inspect.signature(mtl::CommentBody.__init__)
+def test_mtl_commentbody_constructor_args():
+    sig = inspect.signature(mtl_CommentBody.__init__)
     params = list(sig.parameters.keys())
     assert "startPosition" in params, "Missing parameter 'startPosition'"
-    assert "value" in params, "Missing parameter 'value'"
     assert "endPosition" in params, "Missing parameter 'endPosition'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_mtl::commentbody_has_startPosition():
-    assert hasattr(mtl::CommentBody, "startPosition")
+def test_mtl_commentbody_has_startPosition():
+    assert hasattr(mtl_CommentBody, "startPosition")
     descriptor = None
-    for klass in mtl::CommentBody.__mro__:
+    for klass in mtl_CommentBody.__mro__:
         if "startPosition" in klass.__dict__:
             descriptor = klass.__dict__["startPosition"]
             break
     assert isinstance(descriptor, property)
 
-def test_mtl::commentbody_has_value():
-    assert hasattr(mtl::CommentBody, "value")
+def test_mtl_commentbody_has_endPosition():
+    assert hasattr(mtl_CommentBody, "endPosition")
     descriptor = None
-    for klass in mtl::CommentBody.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mtl::commentbody_has_endPosition():
-    assert hasattr(mtl::CommentBody, "endPosition")
-    descriptor = None
-    for klass in mtl::CommentBody.__mro__:
+    for klass in mtl_CommentBody.__mro__:
         if "endPosition" in klass.__dict__:
             descriptor = klass.__dict__["endPosition"]
             break
     assert isinstance(descriptor, property)
 
+def test_mtl_commentbody_has_value():
+    assert hasattr(mtl_CommentBody, "value")
+    descriptor = None
+    for klass in mtl_CommentBody.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mtl::epackage_is_not_abstract():
-    assert not inspect.isabstract(mtl::EPackage)
+
+def test_mtl_epackage_is_not_abstract():
+    assert not inspect.isabstract(mtl_EPackage)
 
 
-def test_mtl::epackage_constructor_exists():
-    assert callable(mtl::EPackage.__init__)
+def test_mtl_epackage_constructor_exists():
+    assert callable(mtl_EPackage.__init__)
 
 
-def test_mtl::epackage_constructor_args():
-    sig = inspect.signature(mtl::EPackage.__init__)
+def test_mtl_epackage_constructor_args():
+    sig = inspect.signature(mtl_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -265,16 +265,16 @@ def test_moduleelement_constructor_args():
 
 
 
-def test_mtl::comment_is_not_abstract():
-    assert not inspect.isabstract(mtl::Comment)
+def test_mtl_comment_is_not_abstract():
+    assert not inspect.isabstract(mtl_Comment)
 
 
-def test_mtl::comment_constructor_exists():
-    assert callable(mtl::Comment.__init__)
+def test_mtl_comment_constructor_exists():
+    assert callable(mtl_Comment.__init__)
 
 
-def test_mtl::comment_constructor_args():
-    sig = inspect.signature(mtl::Comment.__init__)
+def test_mtl_comment_constructor_args():
+    sig = inspect.signature(mtl_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -293,65 +293,37 @@ def test_block_constructor_args():
 
 
 
-def test_mtl::letblock_is_not_abstract():
-    assert not inspect.isabstract(mtl::LetBlock)
+def test_mtl_letblock_is_not_abstract():
+    assert not inspect.isabstract(mtl_LetBlock)
 
 
-def test_mtl::letblock_constructor_exists():
-    assert callable(mtl::LetBlock.__init__)
+def test_mtl_letblock_constructor_exists():
+    assert callable(mtl_LetBlock.__init__)
 
 
-def test_mtl::letblock_constructor_args():
-    sig = inspect.signature(mtl::LetBlock.__init__)
+def test_mtl_letblock_constructor_args():
+    sig = inspect.signature(mtl_LetBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::traceblock_is_not_abstract():
-    assert not inspect.isabstract(mtl::TraceBlock)
+def test_mtl_fileblock_is_not_abstract():
+    assert not inspect.isabstract(mtl_FileBlock)
 
 
-def test_mtl::traceblock_constructor_exists():
-    assert callable(mtl::TraceBlock.__init__)
+def test_mtl_fileblock_constructor_exists():
+    assert callable(mtl_FileBlock.__init__)
 
 
-def test_mtl::traceblock_constructor_args():
-    sig = inspect.signature(mtl::TraceBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mtl::ifblock_is_not_abstract():
-    assert not inspect.isabstract(mtl::IfBlock)
-
-
-def test_mtl::ifblock_constructor_exists():
-    assert callable(mtl::IfBlock.__init__)
-
-
-def test_mtl::ifblock_constructor_args():
-    sig = inspect.signature(mtl::IfBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mtl::fileblock_is_not_abstract():
-    assert not inspect.isabstract(mtl::FileBlock)
-
-
-def test_mtl::fileblock_constructor_exists():
-    assert callable(mtl::FileBlock.__init__)
-
-
-def test_mtl::fileblock_constructor_args():
-    sig = inspect.signature(mtl::FileBlock.__init__)
+def test_mtl_fileblock_constructor_args():
+    sig = inspect.signature(mtl_FileBlock.__init__)
     params = list(sig.parameters.keys())
     assert "openMode" in params, "Missing parameter 'openMode'"
 
-def test_mtl::fileblock_has_openMode():
-    assert hasattr(mtl::FileBlock, "openMode")
+def test_mtl_fileblock_has_openMode():
+    assert hasattr(mtl_FileBlock, "openMode")
     descriptor = None
-    for klass in mtl::FileBlock.__mro__:
+    for klass in mtl_FileBlock.__mro__:
         if "openMode" in klass.__dict__:
             descriptor = klass.__dict__["openMode"]
             break
@@ -359,44 +331,72 @@ def test_mtl::fileblock_has_openMode():
 
 
 
-def test_mtl::forblock_is_not_abstract():
-    assert not inspect.isabstract(mtl::ForBlock)
+def test_mtl_traceblock_is_not_abstract():
+    assert not inspect.isabstract(mtl_TraceBlock)
 
 
-def test_mtl::forblock_constructor_exists():
-    assert callable(mtl::ForBlock.__init__)
+def test_mtl_traceblock_constructor_exists():
+    assert callable(mtl_TraceBlock.__init__)
 
 
-def test_mtl::forblock_constructor_args():
-    sig = inspect.signature(mtl::ForBlock.__init__)
+def test_mtl_traceblock_constructor_args():
+    sig = inspect.signature(mtl_TraceBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::protectedareablock_is_not_abstract():
-    assert not inspect.isabstract(mtl::ProtectedAreaBlock)
+def test_mtl_ifblock_is_not_abstract():
+    assert not inspect.isabstract(mtl_IfBlock)
 
 
-def test_mtl::protectedareablock_constructor_exists():
-    assert callable(mtl::ProtectedAreaBlock.__init__)
+def test_mtl_ifblock_constructor_exists():
+    assert callable(mtl_IfBlock.__init__)
 
 
-def test_mtl::protectedareablock_constructor_args():
-    sig = inspect.signature(mtl::ProtectedAreaBlock.__init__)
+def test_mtl_ifblock_constructor_args():
+    sig = inspect.signature(mtl_IfBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(mtl::EClassifier)
+def test_mtl_forblock_is_not_abstract():
+    assert not inspect.isabstract(mtl_ForBlock)
 
 
-def test_mtl::eclassifier_constructor_exists():
-    assert callable(mtl::EClassifier.__init__)
+def test_mtl_forblock_constructor_exists():
+    assert callable(mtl_ForBlock.__init__)
 
 
-def test_mtl::eclassifier_constructor_args():
-    sig = inspect.signature(mtl::EClassifier.__init__)
+def test_mtl_forblock_constructor_args():
+    sig = inspect.signature(mtl_ForBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mtl_protectedareablock_is_not_abstract():
+    assert not inspect.isabstract(mtl_ProtectedAreaBlock)
+
+
+def test_mtl_protectedareablock_constructor_exists():
+    assert callable(mtl_ProtectedAreaBlock.__init__)
+
+
+def test_mtl_protectedareablock_constructor_args():
+    sig = inspect.signature(mtl_ProtectedAreaBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mtl_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(mtl_EClassifier)
+
+
+def test_mtl_eclassifier_constructor_exists():
+    assert callable(mtl_EClassifier.__init__)
+
+
+def test_mtl_eclassifier_constructor_args():
+    sig = inspect.signature(mtl_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -443,16 +443,16 @@ def test_astnode_constructor_args():
 
 
 
-def test_mtl::initsection_is_not_abstract():
-    assert not inspect.isabstract(mtl::InitSection)
+def test_mtl_initsection_is_not_abstract():
+    assert not inspect.isabstract(mtl_InitSection)
 
 
-def test_mtl::initsection_constructor_exists():
-    assert callable(mtl::InitSection.__init__)
+def test_mtl_initsection_constructor_exists():
+    assert callable(mtl_InitSection.__init__)
 
 
-def test_mtl::initsection_constructor_args():
-    sig = inspect.signature(mtl::InitSection.__init__)
+def test_mtl_initsection_constructor_args():
+    sig = inspect.signature(mtl_InitSection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -471,51 +471,23 @@ def test_templateexpression_constructor_args():
 
 
 
-def test_mtl::queryinvocation_is_not_abstract():
-    assert not inspect.isabstract(mtl::QueryInvocation)
+def test_mtl_templateinvocation_is_not_abstract():
+    assert not inspect.isabstract(mtl_TemplateInvocation)
 
 
-def test_mtl::queryinvocation_constructor_exists():
-    assert callable(mtl::QueryInvocation.__init__)
+def test_mtl_templateinvocation_constructor_exists():
+    assert callable(mtl_TemplateInvocation.__init__)
 
 
-def test_mtl::queryinvocation_constructor_args():
-    sig = inspect.signature(mtl::QueryInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mtl::macroinvocation_is_not_abstract():
-    assert not inspect.isabstract(mtl::MacroInvocation)
-
-
-def test_mtl::macroinvocation_constructor_exists():
-    assert callable(mtl::MacroInvocation.__init__)
-
-
-def test_mtl::macroinvocation_constructor_args():
-    sig = inspect.signature(mtl::MacroInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mtl::templateinvocation_is_not_abstract():
-    assert not inspect.isabstract(mtl::TemplateInvocation)
-
-
-def test_mtl::templateinvocation_constructor_exists():
-    assert callable(mtl::TemplateInvocation.__init__)
-
-
-def test_mtl::templateinvocation_constructor_args():
-    sig = inspect.signature(mtl::TemplateInvocation.__init__)
+def test_mtl_templateinvocation_constructor_args():
+    sig = inspect.signature(mtl_TemplateInvocation.__init__)
     params = list(sig.parameters.keys())
     assert "super" in params, "Missing parameter 'super'"
 
-def test_mtl::templateinvocation_has_super():
-    assert hasattr(mtl::TemplateInvocation, "super")
+def test_mtl_templateinvocation_has_super():
+    assert hasattr(mtl_TemplateInvocation, "super")
     descriptor = None
-    for klass in mtl::TemplateInvocation.__mro__:
+    for klass in mtl_TemplateInvocation.__mro__:
         if "super" in klass.__dict__:
             descriptor = klass.__dict__["super"]
             break
@@ -523,16 +495,44 @@ def test_mtl::templateinvocation_has_super():
 
 
 
-def test_mtl::block_is_not_abstract():
-    assert not inspect.isabstract(mtl::Block)
+def test_mtl_macroinvocation_is_not_abstract():
+    assert not inspect.isabstract(mtl_MacroInvocation)
 
 
-def test_mtl::block_constructor_exists():
-    assert callable(mtl::Block.__init__)
+def test_mtl_macroinvocation_constructor_exists():
+    assert callable(mtl_MacroInvocation.__init__)
 
 
-def test_mtl::block_constructor_args():
-    sig = inspect.signature(mtl::Block.__init__)
+def test_mtl_macroinvocation_constructor_args():
+    sig = inspect.signature(mtl_MacroInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mtl_queryinvocation_is_not_abstract():
+    assert not inspect.isabstract(mtl_QueryInvocation)
+
+
+def test_mtl_queryinvocation_constructor_exists():
+    assert callable(mtl_QueryInvocation.__init__)
+
+
+def test_mtl_queryinvocation_constructor_args():
+    sig = inspect.signature(mtl_QueryInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mtl_block_is_not_abstract():
+    assert not inspect.isabstract(mtl_Block)
+
+
+def test_mtl_block_constructor_exists():
+    assert callable(mtl_Block.__init__)
+
+
+def test_mtl_block_constructor_args():
+    sig = inspect.signature(mtl_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -551,30 +551,30 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_mtl::templateexpression_is_not_abstract():
-    assert not inspect.isabstract(mtl::TemplateExpression)
+def test_mtl_templateexpression_is_not_abstract():
+    assert not inspect.isabstract(mtl_TemplateExpression)
 
 
-def test_mtl::templateexpression_constructor_exists():
-    assert callable(mtl::TemplateExpression.__init__)
+def test_mtl_templateexpression_constructor_exists():
+    assert callable(mtl_TemplateExpression.__init__)
 
 
-def test_mtl::templateexpression_constructor_args():
-    sig = inspect.signature(mtl::TemplateExpression.__init__)
+def test_mtl_templateexpression_constructor_args():
+    sig = inspect.signature(mtl_TemplateExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_utilities::astnode_is_not_abstract():
-    assert not inspect.isabstract(utilities::ASTNode)
+def test_utilities_astnode_is_not_abstract():
+    assert not inspect.isabstract(utilities_ASTNode)
 
 
-def test_utilities::astnode_constructor_exists():
-    assert callable(utilities::ASTNode.__init__)
+def test_utilities_astnode_constructor_exists():
+    assert callable(utilities_ASTNode.__init__)
 
 
-def test_utilities::astnode_constructor_args():
-    sig = inspect.signature(utilities::ASTNode.__init__)
+def test_utilities_astnode_constructor_args():
+    sig = inspect.signature(utilities_ASTNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -593,23 +593,23 @@ def test_enamedelement_constructor_args():
 
 
 
-def test_mtl::moduleelement_is_not_abstract():
-    assert not inspect.isabstract(mtl::ModuleElement)
+def test_mtl_moduleelement_is_not_abstract():
+    assert not inspect.isabstract(mtl_ModuleElement)
 
 
-def test_mtl::moduleelement_constructor_exists():
-    assert callable(mtl::ModuleElement.__init__)
+def test_mtl_moduleelement_constructor_exists():
+    assert callable(mtl_ModuleElement.__init__)
 
 
-def test_mtl::moduleelement_constructor_args():
-    sig = inspect.signature(mtl::ModuleElement.__init__)
+def test_mtl_moduleelement_constructor_args():
+    sig = inspect.signature(mtl_ModuleElement.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_mtl::moduleelement_has_visibility():
-    assert hasattr(mtl::ModuleElement, "visibility")
+def test_mtl_moduleelement_has_visibility():
+    assert hasattr(mtl_ModuleElement, "visibility")
     descriptor = None
-    for klass in mtl::ModuleElement.__mro__:
+    for klass in mtl_ModuleElement.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -617,16 +617,16 @@ def test_mtl::moduleelement_has_visibility():
 
 
 
-def test_mtl::typedmodel_is_not_abstract():
-    assert not inspect.isabstract(mtl::TypedModel)
+def test_mtl_typedmodel_is_not_abstract():
+    assert not inspect.isabstract(mtl_TypedModel)
 
 
-def test_mtl::typedmodel_constructor_exists():
-    assert callable(mtl::TypedModel.__init__)
+def test_mtl_typedmodel_constructor_exists():
+    assert callable(mtl_TypedModel.__init__)
 
 
-def test_mtl::typedmodel_constructor_args():
-    sig = inspect.signature(mtl::TypedModel.__init__)
+def test_mtl_typedmodel_constructor_args():
+    sig = inspect.signature(mtl_TypedModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -645,23 +645,23 @@ def test_documentedelement_constructor_args():
 
 
 
-def test_mtl::template_is_not_abstract():
-    assert not inspect.isabstract(mtl::Template)
+def test_mtl_template_is_not_abstract():
+    assert not inspect.isabstract(mtl_Template)
 
 
-def test_mtl::template_constructor_exists():
-    assert callable(mtl::Template.__init__)
+def test_mtl_template_constructor_exists():
+    assert callable(mtl_Template.__init__)
 
 
-def test_mtl::template_constructor_args():
-    sig = inspect.signature(mtl::Template.__init__)
+def test_mtl_template_constructor_args():
+    sig = inspect.signature(mtl_Template.__init__)
     params = list(sig.parameters.keys())
     assert "main" in params, "Missing parameter 'main'"
 
-def test_mtl::template_has_main():
-    assert hasattr(mtl::Template, "main")
+def test_mtl_template_has_main():
+    assert hasattr(mtl_Template, "main")
     descriptor = None
-    for klass in mtl::Template.__mro__:
+    for klass in mtl_Template.__mro__:
         if "main" in klass.__dict__:
             descriptor = klass.__dict__["main"]
             break
@@ -669,65 +669,65 @@ def test_mtl::template_has_main():
 
 
 
-def test_mtl::query_is_not_abstract():
-    assert not inspect.isabstract(mtl::Query)
+def test_mtl_query_is_not_abstract():
+    assert not inspect.isabstract(mtl_Query)
 
 
-def test_mtl::query_constructor_exists():
-    assert callable(mtl::Query.__init__)
+def test_mtl_query_constructor_exists():
+    assert callable(mtl_Query.__init__)
 
 
-def test_mtl::query_constructor_args():
-    sig = inspect.signature(mtl::Query.__init__)
+def test_mtl_query_constructor_args():
+    sig = inspect.signature(mtl_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mtl::module_is_not_abstract():
-    assert not inspect.isabstract(mtl::Module)
+def test_mtl_macro_is_not_abstract():
+    assert not inspect.isabstract(mtl_Macro)
 
 
-def test_mtl::module_constructor_exists():
-    assert callable(mtl::Module.__init__)
+def test_mtl_macro_constructor_exists():
+    assert callable(mtl_Macro.__init__)
 
 
-def test_mtl::module_constructor_args():
-    sig = inspect.signature(mtl::Module.__init__)
+def test_mtl_macro_constructor_args():
+    sig = inspect.signature(mtl_Macro.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mtl_module_is_not_abstract():
+    assert not inspect.isabstract(mtl_Module)
+
+
+def test_mtl_module_constructor_exists():
+    assert callable(mtl_Module.__init__)
+
+
+def test_mtl_module_constructor_args():
+    sig = inspect.signature(mtl_Module.__init__)
     params = list(sig.parameters.keys())
     assert "startHeaderPosition" in params, "Missing parameter 'startHeaderPosition'"
     assert "endHeaderPosition" in params, "Missing parameter 'endHeaderPosition'"
 
-def test_mtl::module_has_startHeaderPosition():
-    assert hasattr(mtl::Module, "startHeaderPosition")
+def test_mtl_module_has_startHeaderPosition():
+    assert hasattr(mtl_Module, "startHeaderPosition")
     descriptor = None
-    for klass in mtl::Module.__mro__:
+    for klass in mtl_Module.__mro__:
         if "startHeaderPosition" in klass.__dict__:
             descriptor = klass.__dict__["startHeaderPosition"]
             break
     assert isinstance(descriptor, property)
 
-def test_mtl::module_has_endHeaderPosition():
-    assert hasattr(mtl::Module, "endHeaderPosition")
+def test_mtl_module_has_endHeaderPosition():
+    assert hasattr(mtl_Module, "endHeaderPosition")
     descriptor = None
-    for klass in mtl::Module.__mro__:
+    for klass in mtl_Module.__mro__:
         if "endHeaderPosition" in klass.__dict__:
             descriptor = klass.__dict__["endHeaderPosition"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_mtl::macro_is_not_abstract():
-    assert not inspect.isabstract(mtl::Macro)
-
-
-def test_mtl::macro_constructor_exists():
-    assert callable(mtl::Macro.__init__)
-
-
-def test_mtl::macro_constructor_args():
-    sig = inspect.signature(mtl::Macro.__init__)
-    params = list(sig.parameters.keys())
 
 def test_openmodekind_exists():
     # Check that the Enumeration exists
@@ -737,8 +737,8 @@ def test_openmodekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OpenModeKind]
     expected_literals = [
-        "Append",
         "OverWrite",
+        "Append",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -752,9 +752,9 @@ def test_visibilitykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VisibilityKind]
     expected_literals = [
-        "Private",
-        "Protected",
         "Public",
+        "Protected",
+        "Private",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -775,11 +775,11 @@ safe_text = st.text(
 Documentation_strategy = st.builds(
     Documentation,
 )
-mtl::ModuleElementDocumentation_strategy = st.builds(
-    mtl::ModuleElementDocumentation,
+mtl_ModuleElementDocumentation_strategy = st.builds(
+    mtl_ModuleElementDocumentation,
 )
-mtl::ModuleDocumentation_strategy = st.builds(
-    mtl::ModuleDocumentation,
+mtl_ModuleDocumentation_strategy = st.builds(
+    mtl_ModuleDocumentation,
     author=
         safe_text,
     version=
@@ -787,63 +787,63 @@ mtl::ModuleDocumentation_strategy = st.builds(
     since=
         safe_text
 )
-mtl::DocumentedElement_strategy = st.builds(
-    mtl::DocumentedElement,
+mtl_DocumentedElement_strategy = st.builds(
+    mtl_DocumentedElement,
     deprecated=
         st.booleans()
 )
 Comment_strategy = st.builds(
     Comment,
 )
-mtl::ParameterDocumentation_strategy = st.builds(
-    mtl::ParameterDocumentation,
+mtl_ParameterDocumentation_strategy = st.builds(
+    mtl_ParameterDocumentation,
 )
-mtl::Documentation_strategy = st.builds(
-    mtl::Documentation,
+mtl_Documentation_strategy = st.builds(
+    mtl_Documentation,
 )
-mtl::CommentBody_strategy = st.builds(
-    mtl::CommentBody,
+mtl_CommentBody_strategy = st.builds(
+    mtl_CommentBody,
     startPosition=
         st.integers(),
-    value=
-        safe_text,
     endPosition=
-        st.integers()
+        st.integers(),
+    value=
+        safe_text
 )
-mtl::EPackage_strategy = st.builds(
-    mtl::EPackage,
+mtl_EPackage_strategy = st.builds(
+    mtl_EPackage,
 )
 ModuleElement_strategy = st.builds(
     ModuleElement,
 )
-mtl::Comment_strategy = st.builds(
-    mtl::Comment,
+mtl_Comment_strategy = st.builds(
+    mtl_Comment,
 )
 Block_strategy = st.builds(
     Block,
 )
-mtl::LetBlock_strategy = st.builds(
-    mtl::LetBlock,
+mtl_LetBlock_strategy = st.builds(
+    mtl_LetBlock,
 )
-mtl::TraceBlock_strategy = st.builds(
-    mtl::TraceBlock,
-)
-mtl::IfBlock_strategy = st.builds(
-    mtl::IfBlock,
-)
-mtl::FileBlock_strategy = st.builds(
-    mtl::FileBlock,
+mtl_FileBlock_strategy = st.builds(
+    mtl_FileBlock,
     openMode=
         safe_text
 )
-mtl::ForBlock_strategy = st.builds(
-    mtl::ForBlock,
+mtl_TraceBlock_strategy = st.builds(
+    mtl_TraceBlock,
 )
-mtl::ProtectedAreaBlock_strategy = st.builds(
-    mtl::ProtectedAreaBlock,
+mtl_IfBlock_strategy = st.builds(
+    mtl_IfBlock,
 )
-mtl::EClassifier_strategy = st.builds(
-    mtl::EClassifier,
+mtl_ForBlock_strategy = st.builds(
+    mtl_ForBlock,
+)
+mtl_ProtectedAreaBlock_strategy = st.builds(
+    mtl_ProtectedAreaBlock,
+)
+mtl_EClassifier_strategy = st.builds(
+    mtl_EClassifier,
 )
 EPackage_strategy = st.builds(
     EPackage,
@@ -854,66 +854,66 @@ Variable_strategy = st.builds(
 ASTNode_strategy = st.builds(
     ASTNode,
 )
-mtl::InitSection_strategy = st.builds(
-    mtl::InitSection,
+mtl_InitSection_strategy = st.builds(
+    mtl_InitSection,
 )
 TemplateExpression_strategy = st.builds(
     TemplateExpression,
 )
-mtl::QueryInvocation_strategy = st.builds(
-    mtl::QueryInvocation,
-)
-mtl::MacroInvocation_strategy = st.builds(
-    mtl::MacroInvocation,
-)
-mtl::TemplateInvocation_strategy = st.builds(
-    mtl::TemplateInvocation,
+mtl_TemplateInvocation_strategy = st.builds(
+    mtl_TemplateInvocation,
     super=
         st.booleans()
 )
-mtl::Block_strategy = st.builds(
-    mtl::Block,
+mtl_MacroInvocation_strategy = st.builds(
+    mtl_MacroInvocation,
+)
+mtl_QueryInvocation_strategy = st.builds(
+    mtl_QueryInvocation,
+)
+mtl_Block_strategy = st.builds(
+    mtl_Block,
 )
 OCLExpression_strategy = st.builds(
     OCLExpression,
 )
-mtl::TemplateExpression_strategy = st.builds(
-    mtl::TemplateExpression,
+mtl_TemplateExpression_strategy = st.builds(
+    mtl_TemplateExpression,
 )
-utilities::ASTNode_strategy = st.builds(
-    utilities::ASTNode,
+utilities_ASTNode_strategy = st.builds(
+    utilities_ASTNode,
 )
 ENamedElement_strategy = st.builds(
     ENamedElement,
 )
-mtl::ModuleElement_strategy = st.builds(
-    mtl::ModuleElement,
+mtl_ModuleElement_strategy = st.builds(
+    mtl_ModuleElement,
     visibility=
         safe_text
 )
-mtl::TypedModel_strategy = st.builds(
-    mtl::TypedModel,
+mtl_TypedModel_strategy = st.builds(
+    mtl_TypedModel,
 )
 DocumentedElement_strategy = st.builds(
     DocumentedElement,
 )
-mtl::Template_strategy = st.builds(
-    mtl::Template,
+mtl_Template_strategy = st.builds(
+    mtl_Template,
     main=
         st.booleans()
 )
-mtl::Query_strategy = st.builds(
-    mtl::Query,
+mtl_Query_strategy = st.builds(
+    mtl_Query,
 )
-mtl::Module_strategy = st.builds(
-    mtl::Module,
+mtl_Macro_strategy = st.builds(
+    mtl_Macro,
+)
+mtl_Module_strategy = st.builds(
+    mtl_Module,
     startHeaderPosition=
         st.integers(),
     endHeaderPosition=
         st.integers()
-)
-mtl::Macro_strategy = st.builds(
-    mtl::Macro,
 )
 
 @given(instance=Documentation_strategy)
@@ -921,61 +921,49 @@ mtl::Macro_strategy = st.builds(
 def test_documentation_instantiation(instance):
     assert isinstance(instance, Documentation)
 
-@given(instance=mtl::ModuleElementDocumentation_strategy)
+@given(instance=mtl_ModuleElementDocumentation_strategy)
 @settings(max_examples=50)
-def test_mtl::moduleelementdocumentation_instantiation(instance):
-    assert isinstance(instance, mtl::ModuleElementDocumentation)
+def test_mtl_moduleelementdocumentation_instantiation(instance):
+    assert isinstance(instance, mtl_ModuleElementDocumentation)
 
-@given(instance=mtl::ModuleDocumentation_strategy)
+@given(instance=mtl_ModuleDocumentation_strategy)
 @settings(max_examples=50)
-def test_mtl::moduledocumentation_instantiation(instance):
-    assert isinstance(instance, mtl::ModuleDocumentation)
-
-@given(instance=mtl::ModuleDocumentation_strategy)
-def test_mtl::moduledocumentation_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_mtl_moduledocumentation_instantiation(instance):
+    assert isinstance(instance, mtl_ModuleDocumentation)
 
 
-@given(instance=mtl::ModuleDocumentation_strategy)
-def test_mtl::moduledocumentation_author_setter(instance):
+
+@given(instance=mtl_ModuleDocumentation_strategy)
+def test_mtl_moduledocumentation_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=mtl::ModuleDocumentation_strategy)
-def test_mtl::moduledocumentation_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=mtl::ModuleDocumentation_strategy)
-def test_mtl::moduledocumentation_version_setter(instance):
+@given(instance=mtl_ModuleDocumentation_strategy)
+def test_mtl_moduledocumentation_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=mtl::ModuleDocumentation_strategy)
-def test_mtl::moduledocumentation_since_type(instance):
-    assert isinstance(instance.since, str)
 
 
-@given(instance=mtl::ModuleDocumentation_strategy)
-def test_mtl::moduledocumentation_since_setter(instance):
+@given(instance=mtl_ModuleDocumentation_strategy)
+def test_mtl_moduledocumentation_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=mtl::DocumentedElement_strategy)
+@given(instance=mtl_DocumentedElement_strategy)
 @settings(max_examples=50)
-def test_mtl::documentedelement_instantiation(instance):
-    assert isinstance(instance, mtl::DocumentedElement)
-
-@given(instance=mtl::DocumentedElement_strategy)
-def test_mtl::documentedelement_deprecated_type(instance):
-    assert isinstance(instance.deprecated, bool)
+def test_mtl_documentedelement_instantiation(instance):
+    assert isinstance(instance, mtl_DocumentedElement)
 
 
-@given(instance=mtl::DocumentedElement_strategy)
-def test_mtl::documentedelement_deprecated_setter(instance):
+
+@given(instance=mtl_DocumentedElement_strategy)
+def test_mtl_documentedelement_deprecated_setter(instance):
     original = instance.deprecated
     instance.deprecated = original
     assert instance.deprecated == original
@@ -985,119 +973,107 @@ def test_mtl::documentedelement_deprecated_setter(instance):
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=mtl::ParameterDocumentation_strategy)
+@given(instance=mtl_ParameterDocumentation_strategy)
 @settings(max_examples=50)
-def test_mtl::parameterdocumentation_instantiation(instance):
-    assert isinstance(instance, mtl::ParameterDocumentation)
+def test_mtl_parameterdocumentation_instantiation(instance):
+    assert isinstance(instance, mtl_ParameterDocumentation)
 
-@given(instance=mtl::Documentation_strategy)
+@given(instance=mtl_Documentation_strategy)
 @settings(max_examples=50)
-def test_mtl::documentation_instantiation(instance):
-    assert isinstance(instance, mtl::Documentation)
+def test_mtl_documentation_instantiation(instance):
+    assert isinstance(instance, mtl_Documentation)
 
-@given(instance=mtl::CommentBody_strategy)
+@given(instance=mtl_CommentBody_strategy)
 @settings(max_examples=50)
-def test_mtl::commentbody_instantiation(instance):
-    assert isinstance(instance, mtl::CommentBody)
-
-@given(instance=mtl::CommentBody_strategy)
-def test_mtl::commentbody_startPosition_type(instance):
-    assert isinstance(instance.startPosition, int)
+def test_mtl_commentbody_instantiation(instance):
+    assert isinstance(instance, mtl_CommentBody)
 
 
-@given(instance=mtl::CommentBody_strategy)
-def test_mtl::commentbody_startPosition_setter(instance):
+
+@given(instance=mtl_CommentBody_strategy)
+def test_mtl_commentbody_startPosition_setter(instance):
     original = instance.startPosition
     instance.startPosition = original
     assert instance.startPosition == original
 
-@given(instance=mtl::CommentBody_strategy)
-def test_mtl::commentbody_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=mtl::CommentBody_strategy)
-def test_mtl::commentbody_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=mtl::CommentBody_strategy)
-def test_mtl::commentbody_endPosition_type(instance):
-    assert isinstance(instance.endPosition, int)
-
-
-@given(instance=mtl::CommentBody_strategy)
-def test_mtl::commentbody_endPosition_setter(instance):
+@given(instance=mtl_CommentBody_strategy)
+def test_mtl_commentbody_endPosition_setter(instance):
     original = instance.endPosition
     instance.endPosition = original
     assert instance.endPosition == original
 
-@given(instance=mtl::EPackage_strategy)
+
+
+@given(instance=mtl_CommentBody_strategy)
+def test_mtl_commentbody_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=mtl_EPackage_strategy)
 @settings(max_examples=50)
-def test_mtl::epackage_instantiation(instance):
-    assert isinstance(instance, mtl::EPackage)
+def test_mtl_epackage_instantiation(instance):
+    assert isinstance(instance, mtl_EPackage)
 
 @given(instance=ModuleElement_strategy)
 @settings(max_examples=50)
 def test_moduleelement_instantiation(instance):
     assert isinstance(instance, ModuleElement)
 
-@given(instance=mtl::Comment_strategy)
+@given(instance=mtl_Comment_strategy)
 @settings(max_examples=50)
-def test_mtl::comment_instantiation(instance):
-    assert isinstance(instance, mtl::Comment)
+def test_mtl_comment_instantiation(instance):
+    assert isinstance(instance, mtl_Comment)
 
 @given(instance=Block_strategy)
 @settings(max_examples=50)
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=mtl::LetBlock_strategy)
+@given(instance=mtl_LetBlock_strategy)
 @settings(max_examples=50)
-def test_mtl::letblock_instantiation(instance):
-    assert isinstance(instance, mtl::LetBlock)
+def test_mtl_letblock_instantiation(instance):
+    assert isinstance(instance, mtl_LetBlock)
 
-@given(instance=mtl::TraceBlock_strategy)
+@given(instance=mtl_FileBlock_strategy)
 @settings(max_examples=50)
-def test_mtl::traceblock_instantiation(instance):
-    assert isinstance(instance, mtl::TraceBlock)
-
-@given(instance=mtl::IfBlock_strategy)
-@settings(max_examples=50)
-def test_mtl::ifblock_instantiation(instance):
-    assert isinstance(instance, mtl::IfBlock)
-
-@given(instance=mtl::FileBlock_strategy)
-@settings(max_examples=50)
-def test_mtl::fileblock_instantiation(instance):
-    assert isinstance(instance, mtl::FileBlock)
-
-@given(instance=mtl::FileBlock_strategy)
-def test_mtl::fileblock_openMode_type(instance):
-    assert isinstance(instance.openMode, str)
+def test_mtl_fileblock_instantiation(instance):
+    assert isinstance(instance, mtl_FileBlock)
 
 
-@given(instance=mtl::FileBlock_strategy)
-def test_mtl::fileblock_openMode_setter(instance):
+
+@given(instance=mtl_FileBlock_strategy)
+def test_mtl_fileblock_openMode_setter(instance):
     original = instance.openMode
     instance.openMode = original
     assert instance.openMode == original
 
-@given(instance=mtl::ForBlock_strategy)
+@given(instance=mtl_TraceBlock_strategy)
 @settings(max_examples=50)
-def test_mtl::forblock_instantiation(instance):
-    assert isinstance(instance, mtl::ForBlock)
+def test_mtl_traceblock_instantiation(instance):
+    assert isinstance(instance, mtl_TraceBlock)
 
-@given(instance=mtl::ProtectedAreaBlock_strategy)
+@given(instance=mtl_IfBlock_strategy)
 @settings(max_examples=50)
-def test_mtl::protectedareablock_instantiation(instance):
-    assert isinstance(instance, mtl::ProtectedAreaBlock)
+def test_mtl_ifblock_instantiation(instance):
+    assert isinstance(instance, mtl_IfBlock)
 
-@given(instance=mtl::EClassifier_strategy)
+@given(instance=mtl_ForBlock_strategy)
 @settings(max_examples=50)
-def test_mtl::eclassifier_instantiation(instance):
-    assert isinstance(instance, mtl::EClassifier)
+def test_mtl_forblock_instantiation(instance):
+    assert isinstance(instance, mtl_ForBlock)
+
+@given(instance=mtl_ProtectedAreaBlock_strategy)
+@settings(max_examples=50)
+def test_mtl_protectedareablock_instantiation(instance):
+    assert isinstance(instance, mtl_ProtectedAreaBlock)
+
+@given(instance=mtl_EClassifier_strategy)
+@settings(max_examples=50)
+def test_mtl_eclassifier_instantiation(instance):
+    assert isinstance(instance, mtl_EClassifier)
 
 @given(instance=EPackage_strategy)
 @settings(max_examples=50)
@@ -1114,142 +1090,127 @@ def test_variable_instantiation(instance):
 def test_astnode_instantiation(instance):
     assert isinstance(instance, ASTNode)
 
-@given(instance=mtl::InitSection_strategy)
+@given(instance=mtl_InitSection_strategy)
 @settings(max_examples=50)
-def test_mtl::initsection_instantiation(instance):
-    assert isinstance(instance, mtl::InitSection)
+def test_mtl_initsection_instantiation(instance):
+    assert isinstance(instance, mtl_InitSection)
 
 @given(instance=TemplateExpression_strategy)
 @settings(max_examples=50)
 def test_templateexpression_instantiation(instance):
     assert isinstance(instance, TemplateExpression)
 
-@given(instance=mtl::QueryInvocation_strategy)
+@given(instance=mtl_TemplateInvocation_strategy)
 @settings(max_examples=50)
-def test_mtl::queryinvocation_instantiation(instance):
-    assert isinstance(instance, mtl::QueryInvocation)
-
-@given(instance=mtl::MacroInvocation_strategy)
-@settings(max_examples=50)
-def test_mtl::macroinvocation_instantiation(instance):
-    assert isinstance(instance, mtl::MacroInvocation)
-
-@given(instance=mtl::TemplateInvocation_strategy)
-@settings(max_examples=50)
-def test_mtl::templateinvocation_instantiation(instance):
-    assert isinstance(instance, mtl::TemplateInvocation)
-
-@given(instance=mtl::TemplateInvocation_strategy)
-def test_mtl::templateinvocation_super_type(instance):
-    assert isinstance(instance.super, bool)
+def test_mtl_templateinvocation_instantiation(instance):
+    assert isinstance(instance, mtl_TemplateInvocation)
 
 
-@given(instance=mtl::TemplateInvocation_strategy)
-def test_mtl::templateinvocation_super_setter(instance):
+
+@given(instance=mtl_TemplateInvocation_strategy)
+def test_mtl_templateinvocation_super_setter(instance):
     original = instance.super
     instance.super = original
     assert instance.super == original
 
-@given(instance=mtl::Block_strategy)
+@given(instance=mtl_MacroInvocation_strategy)
 @settings(max_examples=50)
-def test_mtl::block_instantiation(instance):
-    assert isinstance(instance, mtl::Block)
+def test_mtl_macroinvocation_instantiation(instance):
+    assert isinstance(instance, mtl_MacroInvocation)
+
+@given(instance=mtl_QueryInvocation_strategy)
+@settings(max_examples=50)
+def test_mtl_queryinvocation_instantiation(instance):
+    assert isinstance(instance, mtl_QueryInvocation)
+
+@given(instance=mtl_Block_strategy)
+@settings(max_examples=50)
+def test_mtl_block_instantiation(instance):
+    assert isinstance(instance, mtl_Block)
 
 @given(instance=OCLExpression_strategy)
 @settings(max_examples=50)
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OCLExpression)
 
-@given(instance=mtl::TemplateExpression_strategy)
+@given(instance=mtl_TemplateExpression_strategy)
 @settings(max_examples=50)
-def test_mtl::templateexpression_instantiation(instance):
-    assert isinstance(instance, mtl::TemplateExpression)
+def test_mtl_templateexpression_instantiation(instance):
+    assert isinstance(instance, mtl_TemplateExpression)
 
-@given(instance=utilities::ASTNode_strategy)
+@given(instance=utilities_ASTNode_strategy)
 @settings(max_examples=50)
-def test_utilities::astnode_instantiation(instance):
-    assert isinstance(instance, utilities::ASTNode)
+def test_utilities_astnode_instantiation(instance):
+    assert isinstance(instance, utilities_ASTNode)
 
 @given(instance=ENamedElement_strategy)
 @settings(max_examples=50)
 def test_enamedelement_instantiation(instance):
     assert isinstance(instance, ENamedElement)
 
-@given(instance=mtl::ModuleElement_strategy)
+@given(instance=mtl_ModuleElement_strategy)
 @settings(max_examples=50)
-def test_mtl::moduleelement_instantiation(instance):
-    assert isinstance(instance, mtl::ModuleElement)
-
-@given(instance=mtl::ModuleElement_strategy)
-def test_mtl::moduleelement_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_mtl_moduleelement_instantiation(instance):
+    assert isinstance(instance, mtl_ModuleElement)
 
 
-@given(instance=mtl::ModuleElement_strategy)
-def test_mtl::moduleelement_visibility_setter(instance):
+
+@given(instance=mtl_ModuleElement_strategy)
+def test_mtl_moduleelement_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=mtl::TypedModel_strategy)
+@given(instance=mtl_TypedModel_strategy)
 @settings(max_examples=50)
-def test_mtl::typedmodel_instantiation(instance):
-    assert isinstance(instance, mtl::TypedModel)
+def test_mtl_typedmodel_instantiation(instance):
+    assert isinstance(instance, mtl_TypedModel)
 
 @given(instance=DocumentedElement_strategy)
 @settings(max_examples=50)
 def test_documentedelement_instantiation(instance):
     assert isinstance(instance, DocumentedElement)
 
-@given(instance=mtl::Template_strategy)
+@given(instance=mtl_Template_strategy)
 @settings(max_examples=50)
-def test_mtl::template_instantiation(instance):
-    assert isinstance(instance, mtl::Template)
-
-@given(instance=mtl::Template_strategy)
-def test_mtl::template_main_type(instance):
-    assert isinstance(instance.main, bool)
+def test_mtl_template_instantiation(instance):
+    assert isinstance(instance, mtl_Template)
 
 
-@given(instance=mtl::Template_strategy)
-def test_mtl::template_main_setter(instance):
+
+@given(instance=mtl_Template_strategy)
+def test_mtl_template_main_setter(instance):
     original = instance.main
     instance.main = original
     assert instance.main == original
 
-@given(instance=mtl::Query_strategy)
+@given(instance=mtl_Query_strategy)
 @settings(max_examples=50)
-def test_mtl::query_instantiation(instance):
-    assert isinstance(instance, mtl::Query)
+def test_mtl_query_instantiation(instance):
+    assert isinstance(instance, mtl_Query)
 
-@given(instance=mtl::Module_strategy)
+@given(instance=mtl_Macro_strategy)
 @settings(max_examples=50)
-def test_mtl::module_instantiation(instance):
-    assert isinstance(instance, mtl::Module)
+def test_mtl_macro_instantiation(instance):
+    assert isinstance(instance, mtl_Macro)
 
-@given(instance=mtl::Module_strategy)
-def test_mtl::module_startHeaderPosition_type(instance):
-    assert isinstance(instance.startHeaderPosition, int)
+@given(instance=mtl_Module_strategy)
+@settings(max_examples=50)
+def test_mtl_module_instantiation(instance):
+    assert isinstance(instance, mtl_Module)
 
 
-@given(instance=mtl::Module_strategy)
-def test_mtl::module_startHeaderPosition_setter(instance):
+
+@given(instance=mtl_Module_strategy)
+def test_mtl_module_startHeaderPosition_setter(instance):
     original = instance.startHeaderPosition
     instance.startHeaderPosition = original
     assert instance.startHeaderPosition == original
 
-@given(instance=mtl::Module_strategy)
-def test_mtl::module_endHeaderPosition_type(instance):
-    assert isinstance(instance.endHeaderPosition, int)
 
 
-@given(instance=mtl::Module_strategy)
-def test_mtl::module_endHeaderPosition_setter(instance):
+@given(instance=mtl_Module_strategy)
+def test_mtl_module_endHeaderPosition_setter(instance):
     original = instance.endHeaderPosition
     instance.endHeaderPosition = original
     assert instance.endHeaderPosition == original
-
-@given(instance=mtl::Macro_strategy)
-@settings(max_examples=50)
-def test_mtl::macro_instantiation(instance):
-    assert isinstance(instance, mtl::Macro)

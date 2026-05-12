@@ -3,183 +3,185 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    repository::av::RepositoryComponent,
+from python_code import (
+    repository_av_RepositoryComponent,
     AllocationContext,
     ParametricResourceDemand,
-    pcm::av::completions::av::NetworkDemandParametricResourceDemand,
+    pcm_av_completions_av_NetworkDemandParametricResourceDemand,
     ExternalCallAction,
-    pcm::av::completions::av::DelegatingExternalCallAction,
+    pcm_av_completions_av_DelegatingExternalCallAction,
     Completion,
-    pcm::av::completions::av::CompletionRepository,
+    pcm_av_completions_av_CompletionRepository,
     Allocation,
     ResourceEnvironment,
     ResourceContainer,
     LinkingResource,
     ExternalFailureOccurrenceDescription,
-    pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction,
+    pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction,
     SpecifiedQoSAnnotation,
-    pcm::av::qos::performance::av::SpecifiedExecutionTime,
-    pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation,
+    pcm_av_qos_performance_av_SpecifiedExecutionTime,
+    pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation,
     System,
     QoSAnnotations,
-    pcm::av::qosannotations::av::SpecifiedQoSAnnotation,
+    pcm_av_qosannotations_av_SpecifiedQoSAnnotation,
     SpecifiedExecutionTime,
-    pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime,
-    pcm::av::qos::performance::av::SystemSpecifiedExecutionTime,
-    seff::reliability::av::RecoveryAction,
-    seff::reliability::av::RecoveryActionBehaviour,
-    pcm::av::seff::performance::av::ParametricResourceDemand,
-    seff::av::AbstractInternalControlFlowAction,
-    seff::av::CallAction,
-    pcm::av::seff::av::InternalCallAction,
-    pcm::av::seff::av::SynchronisationPoint,
+    pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime,
+    pcm_av_qos_performance_av_SystemSpecifiedExecutionTime,
+    seff_reliability_av_RecoveryAction,
+    seff_reliability_av_RecoveryActionBehaviour,
+    pcm_av_seff_performance_av_ParametricResourceDemand,
+    seff_av_AbstractInternalControlFlowAction,
+    seff_av_CallAction,
+    pcm_av_seff_av_InternalCallAction,
+    pcm_av_seff_av_SynchronisationPoint,
     ForkAction,
     ForkedBehaviour,
     ResourceDemandingSEFF,
     ResourceDemandingInternalBehaviour,
-    seff::av::ResourceDemandingBehaviour,
-    seff::av::ServiceEffectSpecification,
+    seff_av_ResourceDemandingBehaviour,
+    seff_reliability_av_FailureHandlingEntity,
+    pcm_av_seff_reliability_av_RecoveryActionBehaviour,
+    seff_av_CallReturnAction,
+    seff_av_AbstractAction,
+    pcm_av_seff_av_EmitEventAction,
+    pcm_av_seff_av_ExternalCallAction,
+    pcm_av_seff_av_ServiceEffectSpecification,
+    pcm_av_seff_av_CallAction,
+    seff_av_ServiceEffectSpecification,
     AbstractBranchTransition,
-    pcm::av::seff::av::ProbabilisticBranchTransition,
-    pcm::av::seff::av::GuardedBranchTransition,
+    pcm_av_seff_av_GuardedBranchTransition,
+    pcm_av_seff_av_ProbabilisticBranchTransition,
     AbstractLoopAction,
-    pcm::av::seff::av::LoopAction,
-    pcm::av::seff::av::CollectionIteratorAction,
+    pcm_av_seff_av_LoopAction,
+    pcm_av_seff_av_CollectionIteratorAction,
     ResourceDemandingBehaviour,
-    pcm::av::seff::av::ResourceDemandingInternalBehaviour,
-    pcm::av::seff::av::ForkedBehaviour,
+    pcm_av_seff_av_ForkedBehaviour,
+    pcm_av_seff_av_ResourceDemandingInternalBehaviour,
     BranchAction,
     AbstractAction,
-    pcm::av::seff::av::AbstractInternalControlFlowAction,
-    seff::reliability::av::FailureHandlingEntity,
-    pcm::av::seff::reliability::av::RecoveryActionBehaviour,
-    seff::av::CallReturnAction,
+    pcm_av_seff_av_AbstractInternalControlFlowAction,
     AbstractInternalControlFlowAction,
-    pcm::av::seff::av::ForkAction,
-    pcm::av::seff::av::InternalAction,
-    pcm::av::seff::av::SetVariableAction,
-    pcm::av::seff::reliability::av::RecoveryAction,
-    pcm::av::seff::av::AcquireAction,
-    pcm::av::seff::av::BranchAction,
-    pcm::av::seff::av::ReleaseAction,
-    pcm::av::seff::av::AbstractLoopAction,
-    seff::av::AbstractAction,
-    pcm::av::seff::av::EmitEventAction,
-    pcm::av::seff::av::ExternalCallAction,
-    pcm::av::seff::av::ServiceEffectSpecification,
-    pcm::av::seff::av::StartAction,
-    pcm::av::seff::av::CallAction,
-    qos::reliability::av::SpecifiedReliabilityAnnotation,
+    pcm_av_seff_reliability_av_RecoveryAction,
+    pcm_av_seff_av_SetVariableAction,
+    pcm_av_seff_av_InternalAction,
+    pcm_av_seff_av_AcquireAction,
+    pcm_av_seff_av_AbstractLoopAction,
+    pcm_av_seff_av_StartAction,
+    pcm_av_seff_av_ForkAction,
+    pcm_av_seff_av_BranchAction,
+    pcm_av_seff_av_ReleaseAction,
+    pcm_av_seff_av_StopAction,
+    qos_reliability_av_SpecifiedReliabilityAnnotation,
     CommunicationLinkResourceType,
     SoftwareInducedFailureType,
+    pcm_av_reliability_av_ResourceTimeoutFailureType,
     InternalAction,
     FailureOccurrenceDescription,
-    pcm::av::reliability::av::ExternalFailureOccurrenceDescription,
-    pcm::av::reliability::av::InternalFailureOccurrenceDescription,
+    pcm_av_reliability_av_ExternalFailureOccurrenceDescription,
+    pcm_av_reliability_av_InternalFailureOccurrenceDescription,
     InternalFailureOccurrenceDescription,
     ProcessingResourceType,
     Variable,
-    pcm::av::parameter::av::CharacterisedVariable,
-    pcm::av::parameter::av::VariableCharacterisation,
-    parameter::av::pcm::av::AbstractNamedReference,
-    pcm::av::reliability::av::FailureOccurrenceDescription,
+    pcm_av_parameter_av_CharacterisedVariable,
+    pcm_av_parameter_av_VariableCharacterisation,
+    parameter_av_pcm_av_AbstractNamedReference,
+    pcm_av_reliability_av_FailureOccurrenceDescription,
     SpecifiedOutputParameterAbstraction,
     SetVariableAction,
     CallReturnAction,
     SynchronisationPoint,
     CallAction,
-    pcm::av::seff::performance::av::InfrastructureCall,
-    pcm::av::seff::performance::av::ResourceCall,
-    pcm::av::seff::av::CallReturnAction,
-    pcm::av::parameter::av::VariableUsage,
-    pcm::av::protocol::av::Protocol,
+    pcm_av_seff_performance_av_InfrastructureCall,
+    pcm_av_seff_performance_av_ResourceCall,
+    pcm_av_seff_av_CallReturnAction,
+    pcm_av_parameter_av_VariableUsage,
+    pcm_av_protocol_av_Protocol,
     EntryLevelSystemCall,
     NetworkInducedFailureType,
     SchedulingPolicy,
-    pcm::av::resourcetype::av::ResourceRepository,
+    pcm_av_resourcetype_av_ResourceRepository,
     ResourceRepository,
     UnitCarryingElement,
     HardwareInducedFailureType,
     ResourceType,
-    pcm::av::resourcetype::av::CommunicationLinkResourceType,
-    pcm::av::resourcetype::av::ProcessingResourceType,
+    pcm_av_resourcetype_av_CommunicationLinkResourceType,
+    pcm_av_resourcetype_av_ProcessingResourceType,
     NamedElement,
-    pcm::av::resourceenvironment::av::ResourceEnvironment,
-    pcm::av::repository::av::InnerDeclaration,
+    pcm_av_resourceenvironment_av_ResourceEnvironment,
+    pcm_av_repository_av_InnerDeclaration,
     InnerDeclaration,
     CompositeDataType,
-    repository::av::DataType,
-    repository::av::ImplementationComponentType,
-    entity::av::ComposedProvidingRequiringEntity,
-    pcm::av::subsystem::av::SubSystem,
-    pcm::av::completions::av::Completion,
-    pcm::av::repository::av::CompositeComponent,
+    repository_av_DataType,
+    repository_av_ImplementationComponentType,
+    entity_av_ComposedProvidingRequiringEntity,
+    pcm_av_subsystem_av_SubSystem,
+    pcm_av_completions_av_Completion,
+    pcm_av_repository_av_CompositeComponent,
     ProvidesComponentType,
     OperationInterface,
-    pcm::av::repository::av::ExceptionType,
+    pcm_av_repository_av_ExceptionType,
     ExceptionType,
     Signature,
-    pcm::av::repository::av::OperationSignature,
-    pcm::av::repository::av::EventType,
+    pcm_av_repository_av_OperationSignature,
+    pcm_av_repository_av_EventType,
     Parameter,
-    pcm::av::repository::av::RequiredCharacterisation,
+    pcm_av_repository_av_RequiredCharacterisation,
     RequiredCharacterisation,
     Protocol,
     InfrastructureInterface,
-    pcm::av::repository::av::InfrastructureSignature,
+    pcm_av_repository_av_InfrastructureSignature,
     FailureType,
-    pcm::av::reliability::av::SoftwareInducedFailureType,
-    pcm::av::reliability::av::NetworkInducedFailureType,
-    pcm::av::reliability::av::HardwareInducedFailureType,
+    pcm_av_reliability_av_HardwareInducedFailureType,
+    pcm_av_reliability_av_NetworkInducedFailureType,
+    pcm_av_reliability_av_SoftwareInducedFailureType,
     Interface,
-    pcm::av::repository::av::OperationInterface,
-    pcm::av::repository::av::InfrastructureInterface,
-    pcm::av::repository::av::EventGroup,
-    pcm::av::repository::av::DataType,
+    pcm_av_repository_av_InfrastructureInterface,
+    pcm_av_repository_av_EventGroup,
+    pcm_av_repository_av_OperationInterface,
+    pcm_av_repository_av_DataType,
     ResourceSignature,
     EventType,
     DataType,
-    pcm::av::repository::av::PrimitiveDataType,
-    pcm::av::repository::av::Parameter,
+    pcm_av_repository_av_PrimitiveDataType,
+    pcm_av_repository_av_Parameter,
     Repository,
     InterfaceProvidingRequiringEntity,
-    pcm::av::repository::av::RepositoryComponent,
+    pcm_av_repository_av_RepositoryComponent,
     CompleteComponentType,
     InfrastructureSignature,
     ServiceEffectSpecification,
     ImplementationComponentType,
-    pcm::av::repository::av::BasicComponent,
+    pcm_av_repository_av_BasicComponent,
     ResourceTimeoutFailureType,
     BasicComponent,
     BranchTransition,
     Branch,
-    pcm::av::usagemodel::av::BranchTransition,
+    pcm_av_usagemodel_av_BranchTransition,
     AbstractUserAction,
-    pcm::av::usagemodel::av::Loop,
-    pcm::av::usagemodel::av::Start,
-    pcm::av::usagemodel::av::Delay,
-    pcm::av::usagemodel::av::Branch,
-    pcm::av::usagemodel::av::Stop,
-    pcm::av::usagemodel::av::EntryLevelSystemCall,
+    pcm_av_usagemodel_av_Delay,
+    pcm_av_usagemodel_av_Loop,
+    pcm_av_usagemodel_av_Branch,
+    pcm_av_usagemodel_av_Start,
+    pcm_av_usagemodel_av_Stop,
+    pcm_av_usagemodel_av_EntryLevelSystemCall,
     UserData,
-    pcm::av::usagemodel::av::UsageModel,
-    pcm::av::usagemodel::av::UserData,
+    pcm_av_usagemodel_av_UsageModel,
+    pcm_av_usagemodel_av_UserData,
     Workload,
-    pcm::av::usagemodel::av::ClosedWorkload,
-    pcm::av::usagemodel::av::OpenWorkload,
+    pcm_av_usagemodel_av_OpenWorkload,
+    pcm_av_usagemodel_av_ClosedWorkload,
     ScenarioBehaviour,
     UsageModel,
     UsageScenario,
-    pcm::av::usagemodel::av::Workload,
+    pcm_av_usagemodel_av_Workload,
     OperationSignature,
     VariableUsage,
     RepositoryComponent,
-    pcm::av::repository::av::CompleteComponentType,
-    pcm::av::repository::av::ProvidesComponentType,
-    pcm::av::repository::av::ImplementationComponentType,
+    pcm_av_repository_av_CompleteComponentType,
+    pcm_av_repository_av_ProvidesComponentType,
+    pcm_av_repository_av_ImplementationComponentType,
     InfrastructureRequiredRole,
     InfrastructureProvidedRole,
     OperationRequiredRole,
@@ -187,124 +189,122 @@ from classes import (
     PCMRandomVariable,
     SinkRole,
     SourceRole,
-    composition::av::EventChannelSourceConnector,
+    composition_av_EventChannelSourceConnector,
     EventGroup,
-    pcm::av::composition::av::ResourceRequiredDelegationConnector,
-    composition::av::Connector,
-    composition::av::EventChannel,
-    composition::av::ResourceRequiredDelegationConnector,
-    composition::av::AssemblyContext,
+    pcm_av_composition_av_ResourceRequiredDelegationConnector,
+    composition_av_Connector,
+    composition_av_EventChannel,
+    composition_av_ResourceRequiredDelegationConnector,
+    composition_av_AssemblyContext,
     DelegationConnector,
-    pcm::av::composition::av::RequiredDelegationConnector,
-    pcm::av::composition::av::ProvidedInfrastructureDelegationConnector,
-    pcm::av::composition::av::RequiredResourceDelegationConnector,
-    pcm::av::composition::av::RequiredInfrastructureDelegationConnector,
-    pcm::av::composition::av::SinkDelegationConnector,
-    pcm::av::composition::av::SourceDelegationConnector,
-    pcm::av::composition::av::ProvidedDelegationConnector,
+    pcm_av_composition_av_RequiredInfrastructureDelegationConnector,
+    pcm_av_composition_av_SinkDelegationConnector,
+    pcm_av_composition_av_RequiredResourceDelegationConnector,
+    pcm_av_composition_av_RequiredDelegationConnector,
+    pcm_av_composition_av_SourceDelegationConnector,
+    pcm_av_composition_av_ProvidedInfrastructureDelegationConnector,
+    pcm_av_composition_av_ProvidedDelegationConnector,
     Connector,
-    pcm::av::composition::av::AssemblyInfrastructureConnector,
-    pcm::av::composition::av::EventChannelSinkConnector,
-    pcm::av::composition::av::EventChannelSourceConnector,
-    pcm::av::composition::av::AssemblyEventConnector,
-    pcm::av::composition::av::AssemblyConnector,
-    pcm::av::composition::av::DelegationConnector,
-    entity::av::NamedElement,
+    pcm_av_composition_av_AssemblyConnector,
+    pcm_av_composition_av_AssemblyInfrastructureConnector,
+    pcm_av_composition_av_AssemblyEventConnector,
+    pcm_av_composition_av_EventChannelSinkConnector,
+    pcm_av_composition_av_EventChannelSourceConnector,
+    pcm_av_composition_av_DelegationConnector,
+    entity_av_NamedElement,
     Identifier,
-    pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification,
-    pcm::av::seff::av::ResourceDemandingBehaviour,
-    pcm::av::seff::av::ResourceDemandingSEFF,
-    pcm::av::resourceenvironment::av::ProcessingResourceSpecification,
-    pcm::av::entity::av::Entity,
-    pcm::av::entity::av::NamedElement,
-    entity::av::InterfaceProvidingRequiringEntity,
-    composition::av::ComposedStructure,
-    pcm::av::entity::av::ComposedProvidingRequiringEntity,
-    entity::av::ResourceProvidedRole,
+    pcm_av_resourceenvironment_av_ProcessingResourceSpecification,
+    pcm_av_seff_av_ResourceDemandingBehaviour,
+    pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification,
+    pcm_av_seff_av_ResourceDemandingSEFF,
+    pcm_av_entity_av_Entity,
+    pcm_av_entity_av_NamedElement,
+    entity_av_InterfaceProvidingRequiringEntity,
+    composition_av_ComposedStructure,
+    pcm_av_entity_av_ComposedProvidingRequiringEntity,
+    entity_av_ResourceProvidedRole,
     RequiredRole,
-    pcm::av::repository::av::InfrastructureRequiredRole,
-    pcm::av::repository::av::SourceRole,
-    pcm::av::repository::av::OperationRequiredRole,
-    entity::av::ResourceInterfaceRequiringEntity,
-    entity::av::Entity,
-    pcm::av::repository::av::CompositeDataType,
-    pcm::av::system::av::System,
-    pcm::av::repository::av::CollectionDataType,
-    pcm::av::entity::av::InterfaceRequiringEntity,
+    pcm_av_repository_av_InfrastructureRequiredRole,
+    pcm_av_repository_av_OperationRequiredRole,
+    pcm_av_repository_av_SourceRole,
+    entity_av_ResourceInterfaceRequiringEntity,
+    entity_av_Entity,
+    pcm_av_repository_av_CompositeDataType,
+    pcm_av_system_av_System,
+    pcm_av_repository_av_CollectionDataType,
+    pcm_av_entity_av_InterfaceRequiringEntity,
     ProvidedRole,
-    pcm::av::repository::av::SinkRole,
-    pcm::av::repository::av::InfrastructureProvidedRole,
-    pcm::av::repository::av::OperationProvidedRole,
+    pcm_av_repository_av_OperationProvidedRole,
+    pcm_av_repository_av_SinkRole,
+    pcm_av_repository_av_InfrastructureProvidedRole,
     Entity,
-    pcm::av::entity::av::ResourceInterfaceProvidingEntity,
-    pcm::av::composition::av::Connector,
-    pcm::av::seff::av::AbstractBranchTransition,
-    pcm::av::usagemodel::av::UsageScenario,
-    pcm::av::resourceenvironment::av::LinkingResource,
-    pcm::av::resourceenvironment::av::ResourceContainer,
-    pcm::av::usagemodel::av::ScenarioBehaviour,
-    pcm::av::repository::av::Signature,
-    pcm::av::allocation::av::AllocationContext,
-    pcm::av::seff::av::AbstractAction,
-    pcm::av::seff::reliability::av::FailureHandlingEntity,
-    pcm::av::composition::av::AssemblyContext,
-    pcm::av::repository::av::PassiveResource,
-    pcm::av::usagemodel::av::AbstractUserAction,
-    pcm::av::repository::av::Repository,
-    pcm::av::allocation::av::Allocation,
-    pcm::av::entity::av::ResourceInterfaceRequiringEntity,
-    pcm::av::resourcetype::av::ResourceInterface,
-    pcm::av::qosannotations::av::QoSAnnotations,
-    pcm::av::resourcetype::av::SchedulingPolicy,
-    pcm::av::repository::av::Interface,
-    pcm::av::composition::av::ComposedStructure,
-    pcm::av::repository::av::Role,
-    pcm::av::composition::av::EventChannel,
-    pcm::av::resourcetype::av::ResourceSignature,
-    pcm::av::entity::av::InterfaceProvidingEntity,
-    entity::av::InterfaceRequiringEntity,
-    entity::av::InterfaceProvidingEntity,
-    pcm::av::entity::av::InterfaceProvidingRequiringEntity,
+    pcm_av_allocation_av_AllocationContext,
+    pcm_av_usagemodel_av_UsageScenario,
+    pcm_av_seff_av_AbstractAction,
+    pcm_av_repository_av_PassiveResource,
+    pcm_av_composition_av_EventChannel,
+    pcm_av_repository_av_Interface,
+    pcm_av_qosannotations_av_QoSAnnotations,
+    pcm_av_repository_av_Repository,
+    pcm_av_resourcetype_av_ResourceSignature,
+    pcm_av_allocation_av_Allocation,
+    pcm_av_entity_av_ResourceInterfaceRequiringEntity,
+    pcm_av_reliability_av_FailureType,
+    pcm_av_resourceenvironment_av_ResourceContainer,
+    pcm_av_composition_av_AssemblyContext,
+    pcm_av_usagemodel_av_ScenarioBehaviour,
+    pcm_av_composition_av_ComposedStructure,
+    pcm_av_repository_av_Role,
+    pcm_av_composition_av_Connector,
+    pcm_av_resourceenvironment_av_LinkingResource,
+    pcm_av_repository_av_Signature,
+    pcm_av_resourcetype_av_SchedulingPolicy,
+    pcm_av_seff_av_AbstractBranchTransition,
+    pcm_av_resourcetype_av_ResourceInterface,
+    pcm_av_usagemodel_av_AbstractUserAction,
+    pcm_av_entity_av_ResourceInterfaceProvidingEntity,
+    pcm_av_seff_reliability_av_FailureHandlingEntity,
+    pcm_av_entity_av_InterfaceProvidingEntity,
+    entity_av_InterfaceRequiringEntity,
+    entity_av_InterfaceProvidingEntity,
+    pcm_av_entity_av_InterfaceProvidingRequiringEntity,
     ResourceInterface,
-    entity::av::ResourceInterfaceProvidingEntity,
-    pcm::av::resourcetype::av::ResourceType,
-    pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity,
+    entity_av_ResourceInterfaceProvidingEntity,
+    pcm_av_resourcetype_av_ResourceType,
+    pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity,
     Role,
-    pcm::av::repository::av::ProvidedRole,
-    pcm::av::repository::av::RequiredRole,
-    pcm::av::entity::av::ResourceProvidedRole,
+    pcm_av_repository_av_ProvidedRole,
+    pcm_av_repository_av_RequiredRole,
+    pcm_av_entity_av_ResourceProvidedRole,
     ProcessingResourceSpecification,
     CommunicationLinkResourceSpecification,
     Delay,
     OpenWorkload,
     Loop,
-    composition::av::AssemblyEventConnector,
-    composition::av::EventChannelSinkConnector,
-    pcm::av::entity::av::ResourceRequiredRole,
-    entity::av::ResourceRequiredRole,
+    composition_av_AssemblyEventConnector,
+    composition_av_EventChannelSinkConnector,
+    pcm_av_entity_av_ResourceRequiredRole,
+    entity_av_ResourceRequiredRole,
     LoopAction,
-    seff::performance::av::ParametricResourceDemand,
-    seff::performance::av::ResourceCall,
-    seff::performance::av::InfrastructureCall,
+    seff_performance_av_ParametricResourceDemand,
+    seff_performance_av_ResourceCall,
+    seff_performance_av_InfrastructureCall,
     VariableCharacterisation,
     PassiveResource,
     ClosedWorkload,
     RandomVariable,
-    pcm::av::core::av::PCMRandomVariable,
-    pcm::av::PerJoinPointScope,
-    pcm::av::GlobalScope,
-    pcm::av::EObject,
-    pcm::av::Advice,
-    pcm::av::DummyClass,
-    qos::performance::av::SpecifiedExecutionTime,
+    pcm_av_core_av_PCMRandomVariable,
+    pcm_av_PerJoinPointScope,
+    pcm_av_GlobalScope,
+    pcm_av_EObject,
+    pcm_av_Advice,
+    pcm_av_DummyClass,
+    qos_performance_av_SpecifiedExecutionTime,
     GuardedBranchTransition,
-    pcm::av::seff::av::StopAction,
-    pcm::av::reliability::av::FailureType,
-    pcm::av::reliability::av::ResourceTimeoutFailureType,
-    ComponentType,
-    PrimitiveTypeEnum,
     VariableCharacterisationType,
+    PrimitiveTypeEnum,
     ParameterModifier,
+    ComponentType,
 )
 
 # =============================================================================
@@ -313,16 +313,16 @@ from classes import (
 
 
 
-def test_repository::av::repositorycomponent_is_not_abstract():
-    assert not inspect.isabstract(repository::av::RepositoryComponent)
+def test_repository_av_repositorycomponent_is_not_abstract():
+    assert not inspect.isabstract(repository_av_RepositoryComponent)
 
 
-def test_repository::av::repositorycomponent_constructor_exists():
-    assert callable(repository::av::RepositoryComponent.__init__)
+def test_repository_av_repositorycomponent_constructor_exists():
+    assert callable(repository_av_RepositoryComponent.__init__)
 
 
-def test_repository::av::repositorycomponent_constructor_args():
-    sig = inspect.signature(repository::av::RepositoryComponent.__init__)
+def test_repository_av_repositorycomponent_constructor_args():
+    sig = inspect.signature(repository_av_RepositoryComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -355,16 +355,16 @@ def test_parametricresourcedemand_constructor_args():
 
 
 
-def test_pcm::av::completions::av::networkdemandparametricresourcedemand_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::completions::av::NetworkDemandParametricResourceDemand)
+def test_pcm_av_completions_av_networkdemandparametricresourcedemand_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_completions_av_NetworkDemandParametricResourceDemand)
 
 
-def test_pcm::av::completions::av::networkdemandparametricresourcedemand_constructor_exists():
-    assert callable(pcm::av::completions::av::NetworkDemandParametricResourceDemand.__init__)
+def test_pcm_av_completions_av_networkdemandparametricresourcedemand_constructor_exists():
+    assert callable(pcm_av_completions_av_NetworkDemandParametricResourceDemand.__init__)
 
 
-def test_pcm::av::completions::av::networkdemandparametricresourcedemand_constructor_args():
-    sig = inspect.signature(pcm::av::completions::av::NetworkDemandParametricResourceDemand.__init__)
+def test_pcm_av_completions_av_networkdemandparametricresourcedemand_constructor_args():
+    sig = inspect.signature(pcm_av_completions_av_NetworkDemandParametricResourceDemand.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -383,16 +383,16 @@ def test_externalcallaction_constructor_args():
 
 
 
-def test_pcm::av::completions::av::delegatingexternalcallaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::completions::av::DelegatingExternalCallAction)
+def test_pcm_av_completions_av_delegatingexternalcallaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_completions_av_DelegatingExternalCallAction)
 
 
-def test_pcm::av::completions::av::delegatingexternalcallaction_constructor_exists():
-    assert callable(pcm::av::completions::av::DelegatingExternalCallAction.__init__)
+def test_pcm_av_completions_av_delegatingexternalcallaction_constructor_exists():
+    assert callable(pcm_av_completions_av_DelegatingExternalCallAction.__init__)
 
 
-def test_pcm::av::completions::av::delegatingexternalcallaction_constructor_args():
-    sig = inspect.signature(pcm::av::completions::av::DelegatingExternalCallAction.__init__)
+def test_pcm_av_completions_av_delegatingexternalcallaction_constructor_args():
+    sig = inspect.signature(pcm_av_completions_av_DelegatingExternalCallAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -411,16 +411,16 @@ def test_completion_constructor_args():
 
 
 
-def test_pcm::av::completions::av::completionrepository_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::completions::av::CompletionRepository)
+def test_pcm_av_completions_av_completionrepository_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_completions_av_CompletionRepository)
 
 
-def test_pcm::av::completions::av::completionrepository_constructor_exists():
-    assert callable(pcm::av::completions::av::CompletionRepository.__init__)
+def test_pcm_av_completions_av_completionrepository_constructor_exists():
+    assert callable(pcm_av_completions_av_CompletionRepository.__init__)
 
 
-def test_pcm::av::completions::av::completionrepository_constructor_args():
-    sig = inspect.signature(pcm::av::completions::av::CompletionRepository.__init__)
+def test_pcm_av_completions_av_completionrepository_constructor_args():
+    sig = inspect.signature(pcm_av_completions_av_CompletionRepository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -495,16 +495,16 @@ def test_externalfailureoccurrencedescription_constructor_args():
 
 
 
-def test_pcm::av::qosannotations::av::specifiedoutputparameterabstraction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction)
+def test_pcm_av_qosannotations_av_specifiedoutputparameterabstraction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction)
 
 
-def test_pcm::av::qosannotations::av::specifiedoutputparameterabstraction_constructor_exists():
-    assert callable(pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction.__init__)
+def test_pcm_av_qosannotations_av_specifiedoutputparameterabstraction_constructor_exists():
+    assert callable(pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction.__init__)
 
 
-def test_pcm::av::qosannotations::av::specifiedoutputparameterabstraction_constructor_args():
-    sig = inspect.signature(pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction.__init__)
+def test_pcm_av_qosannotations_av_specifiedoutputparameterabstraction_constructor_args():
+    sig = inspect.signature(pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -523,30 +523,30 @@ def test_specifiedqosannotation_constructor_args():
 
 
 
-def test_pcm::av::qos::performance::av::specifiedexecutiontime_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qos::performance::av::SpecifiedExecutionTime)
+def test_pcm_av_qos_performance_av_specifiedexecutiontime_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qos_performance_av_SpecifiedExecutionTime)
 
 
-def test_pcm::av::qos::performance::av::specifiedexecutiontime_constructor_exists():
-    assert callable(pcm::av::qos::performance::av::SpecifiedExecutionTime.__init__)
+def test_pcm_av_qos_performance_av_specifiedexecutiontime_constructor_exists():
+    assert callable(pcm_av_qos_performance_av_SpecifiedExecutionTime.__init__)
 
 
-def test_pcm::av::qos::performance::av::specifiedexecutiontime_constructor_args():
-    sig = inspect.signature(pcm::av::qos::performance::av::SpecifiedExecutionTime.__init__)
+def test_pcm_av_qos_performance_av_specifiedexecutiontime_constructor_args():
+    sig = inspect.signature(pcm_av_qos_performance_av_SpecifiedExecutionTime.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation)
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation)
 
 
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_constructor_exists():
-    assert callable(pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation.__init__)
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_constructor_exists():
+    assert callable(pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation.__init__)
 
 
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_constructor_args():
-    sig = inspect.signature(pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation.__init__)
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_constructor_args():
+    sig = inspect.signature(pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -579,16 +579,16 @@ def test_qosannotations_constructor_args():
 
 
 
-def test_pcm::av::qosannotations::av::specifiedqosannotation_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qosannotations::av::SpecifiedQoSAnnotation)
+def test_pcm_av_qosannotations_av_specifiedqosannotation_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qosannotations_av_SpecifiedQoSAnnotation)
 
 
-def test_pcm::av::qosannotations::av::specifiedqosannotation_constructor_exists():
-    assert callable(pcm::av::qosannotations::av::SpecifiedQoSAnnotation.__init__)
+def test_pcm_av_qosannotations_av_specifiedqosannotation_constructor_exists():
+    assert callable(pcm_av_qosannotations_av_SpecifiedQoSAnnotation.__init__)
 
 
-def test_pcm::av::qosannotations::av::specifiedqosannotation_constructor_args():
-    sig = inspect.signature(pcm::av::qosannotations::av::SpecifiedQoSAnnotation.__init__)
+def test_pcm_av_qosannotations_av_specifiedqosannotation_constructor_args():
+    sig = inspect.signature(pcm_av_qosannotations_av_SpecifiedQoSAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -607,128 +607,128 @@ def test_specifiedexecutiontime_constructor_args():
 
 
 
-def test_pcm::av::qos::performance::av::componentspecifiedexecutiontime_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime)
+def test_pcm_av_qos_performance_av_componentspecifiedexecutiontime_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime)
 
 
-def test_pcm::av::qos::performance::av::componentspecifiedexecutiontime_constructor_exists():
-    assert callable(pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime.__init__)
+def test_pcm_av_qos_performance_av_componentspecifiedexecutiontime_constructor_exists():
+    assert callable(pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime.__init__)
 
 
-def test_pcm::av::qos::performance::av::componentspecifiedexecutiontime_constructor_args():
-    sig = inspect.signature(pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime.__init__)
+def test_pcm_av_qos_performance_av_componentspecifiedexecutiontime_constructor_args():
+    sig = inspect.signature(pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::qos::performance::av::systemspecifiedexecutiontime_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qos::performance::av::SystemSpecifiedExecutionTime)
+def test_pcm_av_qos_performance_av_systemspecifiedexecutiontime_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qos_performance_av_SystemSpecifiedExecutionTime)
 
 
-def test_pcm::av::qos::performance::av::systemspecifiedexecutiontime_constructor_exists():
-    assert callable(pcm::av::qos::performance::av::SystemSpecifiedExecutionTime.__init__)
+def test_pcm_av_qos_performance_av_systemspecifiedexecutiontime_constructor_exists():
+    assert callable(pcm_av_qos_performance_av_SystemSpecifiedExecutionTime.__init__)
 
 
-def test_pcm::av::qos::performance::av::systemspecifiedexecutiontime_constructor_args():
-    sig = inspect.signature(pcm::av::qos::performance::av::SystemSpecifiedExecutionTime.__init__)
+def test_pcm_av_qos_performance_av_systemspecifiedexecutiontime_constructor_args():
+    sig = inspect.signature(pcm_av_qos_performance_av_SystemSpecifiedExecutionTime.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::reliability::av::recoveryaction_is_not_abstract():
-    assert not inspect.isabstract(seff::reliability::av::RecoveryAction)
+def test_seff_reliability_av_recoveryaction_is_not_abstract():
+    assert not inspect.isabstract(seff_reliability_av_RecoveryAction)
 
 
-def test_seff::reliability::av::recoveryaction_constructor_exists():
-    assert callable(seff::reliability::av::RecoveryAction.__init__)
+def test_seff_reliability_av_recoveryaction_constructor_exists():
+    assert callable(seff_reliability_av_RecoveryAction.__init__)
 
 
-def test_seff::reliability::av::recoveryaction_constructor_args():
-    sig = inspect.signature(seff::reliability::av::RecoveryAction.__init__)
+def test_seff_reliability_av_recoveryaction_constructor_args():
+    sig = inspect.signature(seff_reliability_av_RecoveryAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::reliability::av::recoveryactionbehaviour_is_not_abstract():
-    assert not inspect.isabstract(seff::reliability::av::RecoveryActionBehaviour)
+def test_seff_reliability_av_recoveryactionbehaviour_is_not_abstract():
+    assert not inspect.isabstract(seff_reliability_av_RecoveryActionBehaviour)
 
 
-def test_seff::reliability::av::recoveryactionbehaviour_constructor_exists():
-    assert callable(seff::reliability::av::RecoveryActionBehaviour.__init__)
+def test_seff_reliability_av_recoveryactionbehaviour_constructor_exists():
+    assert callable(seff_reliability_av_RecoveryActionBehaviour.__init__)
 
 
-def test_seff::reliability::av::recoveryactionbehaviour_constructor_args():
-    sig = inspect.signature(seff::reliability::av::RecoveryActionBehaviour.__init__)
+def test_seff_reliability_av_recoveryactionbehaviour_constructor_args():
+    sig = inspect.signature(seff_reliability_av_RecoveryActionBehaviour.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::performance::av::parametricresourcedemand_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::performance::av::ParametricResourceDemand)
+def test_pcm_av_seff_performance_av_parametricresourcedemand_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_performance_av_ParametricResourceDemand)
 
 
-def test_pcm::av::seff::performance::av::parametricresourcedemand_constructor_exists():
-    assert callable(pcm::av::seff::performance::av::ParametricResourceDemand.__init__)
+def test_pcm_av_seff_performance_av_parametricresourcedemand_constructor_exists():
+    assert callable(pcm_av_seff_performance_av_ParametricResourceDemand.__init__)
 
 
-def test_pcm::av::seff::performance::av::parametricresourcedemand_constructor_args():
-    sig = inspect.signature(pcm::av::seff::performance::av::ParametricResourceDemand.__init__)
+def test_pcm_av_seff_performance_av_parametricresourcedemand_constructor_args():
+    sig = inspect.signature(pcm_av_seff_performance_av_ParametricResourceDemand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::av::abstractinternalcontrolflowaction_is_not_abstract():
-    assert not inspect.isabstract(seff::av::AbstractInternalControlFlowAction)
+def test_seff_av_abstractinternalcontrolflowaction_is_not_abstract():
+    assert not inspect.isabstract(seff_av_AbstractInternalControlFlowAction)
 
 
-def test_seff::av::abstractinternalcontrolflowaction_constructor_exists():
-    assert callable(seff::av::AbstractInternalControlFlowAction.__init__)
+def test_seff_av_abstractinternalcontrolflowaction_constructor_exists():
+    assert callable(seff_av_AbstractInternalControlFlowAction.__init__)
 
 
-def test_seff::av::abstractinternalcontrolflowaction_constructor_args():
-    sig = inspect.signature(seff::av::AbstractInternalControlFlowAction.__init__)
+def test_seff_av_abstractinternalcontrolflowaction_constructor_args():
+    sig = inspect.signature(seff_av_AbstractInternalControlFlowAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::av::callaction_is_not_abstract():
-    assert not inspect.isabstract(seff::av::CallAction)
+def test_seff_av_callaction_is_not_abstract():
+    assert not inspect.isabstract(seff_av_CallAction)
 
 
-def test_seff::av::callaction_constructor_exists():
-    assert callable(seff::av::CallAction.__init__)
+def test_seff_av_callaction_constructor_exists():
+    assert callable(seff_av_CallAction.__init__)
 
 
-def test_seff::av::callaction_constructor_args():
-    sig = inspect.signature(seff::av::CallAction.__init__)
+def test_seff_av_callaction_constructor_args():
+    sig = inspect.signature(seff_av_CallAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::internalcallaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::InternalCallAction)
+def test_pcm_av_seff_av_internalcallaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_InternalCallAction)
 
 
-def test_pcm::av::seff::av::internalcallaction_constructor_exists():
-    assert callable(pcm::av::seff::av::InternalCallAction.__init__)
+def test_pcm_av_seff_av_internalcallaction_constructor_exists():
+    assert callable(pcm_av_seff_av_InternalCallAction.__init__)
 
 
-def test_pcm::av::seff::av::internalcallaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::InternalCallAction.__init__)
+def test_pcm_av_seff_av_internalcallaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_InternalCallAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::synchronisationpoint_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::SynchronisationPoint)
+def test_pcm_av_seff_av_synchronisationpoint_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_SynchronisationPoint)
 
 
-def test_pcm::av::seff::av::synchronisationpoint_constructor_exists():
-    assert callable(pcm::av::seff::av::SynchronisationPoint.__init__)
+def test_pcm_av_seff_av_synchronisationpoint_constructor_exists():
+    assert callable(pcm_av_seff_av_SynchronisationPoint.__init__)
 
 
-def test_pcm::av::seff::av::synchronisationpoint_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::SynchronisationPoint.__init__)
+def test_pcm_av_seff_av_synchronisationpoint_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_SynchronisationPoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -789,30 +789,162 @@ def test_resourcedemandinginternalbehaviour_constructor_args():
 
 
 
-def test_seff::av::resourcedemandingbehaviour_is_not_abstract():
-    assert not inspect.isabstract(seff::av::ResourceDemandingBehaviour)
+def test_seff_av_resourcedemandingbehaviour_is_not_abstract():
+    assert not inspect.isabstract(seff_av_ResourceDemandingBehaviour)
 
 
-def test_seff::av::resourcedemandingbehaviour_constructor_exists():
-    assert callable(seff::av::ResourceDemandingBehaviour.__init__)
+def test_seff_av_resourcedemandingbehaviour_constructor_exists():
+    assert callable(seff_av_ResourceDemandingBehaviour.__init__)
 
 
-def test_seff::av::resourcedemandingbehaviour_constructor_args():
-    sig = inspect.signature(seff::av::ResourceDemandingBehaviour.__init__)
+def test_seff_av_resourcedemandingbehaviour_constructor_args():
+    sig = inspect.signature(seff_av_ResourceDemandingBehaviour.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::av::serviceeffectspecification_is_not_abstract():
-    assert not inspect.isabstract(seff::av::ServiceEffectSpecification)
+def test_seff_reliability_av_failurehandlingentity_is_not_abstract():
+    assert not inspect.isabstract(seff_reliability_av_FailureHandlingEntity)
 
 
-def test_seff::av::serviceeffectspecification_constructor_exists():
-    assert callable(seff::av::ServiceEffectSpecification.__init__)
+def test_seff_reliability_av_failurehandlingentity_constructor_exists():
+    assert callable(seff_reliability_av_FailureHandlingEntity.__init__)
 
 
-def test_seff::av::serviceeffectspecification_constructor_args():
-    sig = inspect.signature(seff::av::ServiceEffectSpecification.__init__)
+def test_seff_reliability_av_failurehandlingentity_constructor_args():
+    sig = inspect.signature(seff_reliability_av_FailureHandlingEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_reliability_av_RecoveryActionBehaviour)
+
+
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_constructor_exists():
+    assert callable(pcm_av_seff_reliability_av_RecoveryActionBehaviour.__init__)
+
+
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_constructor_args():
+    sig = inspect.signature(pcm_av_seff_reliability_av_RecoveryActionBehaviour.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seff_av_callreturnaction_is_not_abstract():
+    assert not inspect.isabstract(seff_av_CallReturnAction)
+
+
+def test_seff_av_callreturnaction_constructor_exists():
+    assert callable(seff_av_CallReturnAction.__init__)
+
+
+def test_seff_av_callreturnaction_constructor_args():
+    sig = inspect.signature(seff_av_CallReturnAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seff_av_abstractaction_is_not_abstract():
+    assert not inspect.isabstract(seff_av_AbstractAction)
+
+
+def test_seff_av_abstractaction_constructor_exists():
+    assert callable(seff_av_AbstractAction.__init__)
+
+
+def test_seff_av_abstractaction_constructor_args():
+    sig = inspect.signature(seff_av_AbstractAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_seff_av_emiteventaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_EmitEventAction)
+
+
+def test_pcm_av_seff_av_emiteventaction_constructor_exists():
+    assert callable(pcm_av_seff_av_EmitEventAction.__init__)
+
+
+def test_pcm_av_seff_av_emiteventaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_EmitEventAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_seff_av_externalcallaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ExternalCallAction)
+
+
+def test_pcm_av_seff_av_externalcallaction_constructor_exists():
+    assert callable(pcm_av_seff_av_ExternalCallAction.__init__)
+
+
+def test_pcm_av_seff_av_externalcallaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ExternalCallAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "retryCount" in params, "Missing parameter 'retryCount'"
+
+def test_pcm_av_seff_av_externalcallaction_has_retryCount():
+    assert hasattr(pcm_av_seff_av_ExternalCallAction, "retryCount")
+    descriptor = None
+    for klass in pcm_av_seff_av_ExternalCallAction.__mro__:
+        if "retryCount" in klass.__dict__:
+            descriptor = klass.__dict__["retryCount"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pcm_av_seff_av_serviceeffectspecification_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ServiceEffectSpecification)
+
+
+def test_pcm_av_seff_av_serviceeffectspecification_constructor_exists():
+    assert callable(pcm_av_seff_av_ServiceEffectSpecification.__init__)
+
+
+def test_pcm_av_seff_av_serviceeffectspecification_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ServiceEffectSpecification.__init__)
+    params = list(sig.parameters.keys())
+    assert "seffTypeID" in params, "Missing parameter 'seffTypeID'"
+
+def test_pcm_av_seff_av_serviceeffectspecification_has_seffTypeID():
+    assert hasattr(pcm_av_seff_av_ServiceEffectSpecification, "seffTypeID")
+    descriptor = None
+    for klass in pcm_av_seff_av_ServiceEffectSpecification.__mro__:
+        if "seffTypeID" in klass.__dict__:
+            descriptor = klass.__dict__["seffTypeID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pcm_av_seff_av_callaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_CallAction)
+
+
+def test_pcm_av_seff_av_callaction_constructor_exists():
+    assert callable(pcm_av_seff_av_CallAction.__init__)
+
+
+def test_pcm_av_seff_av_callaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_CallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seff_av_serviceeffectspecification_is_not_abstract():
+    assert not inspect.isabstract(seff_av_ServiceEffectSpecification)
+
+
+def test_seff_av_serviceeffectspecification_constructor_exists():
+    assert callable(seff_av_ServiceEffectSpecification.__init__)
+
+
+def test_seff_av_serviceeffectspecification_constructor_args():
+    sig = inspect.signature(seff_av_ServiceEffectSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -831,41 +963,41 @@ def test_abstractbranchtransition_constructor_args():
 
 
 
-def test_pcm::av::seff::av::probabilisticbranchtransition_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ProbabilisticBranchTransition)
+def test_pcm_av_seff_av_guardedbranchtransition_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_GuardedBranchTransition)
 
 
-def test_pcm::av::seff::av::probabilisticbranchtransition_constructor_exists():
-    assert callable(pcm::av::seff::av::ProbabilisticBranchTransition.__init__)
+def test_pcm_av_seff_av_guardedbranchtransition_constructor_exists():
+    assert callable(pcm_av_seff_av_GuardedBranchTransition.__init__)
 
 
-def test_pcm::av::seff::av::probabilisticbranchtransition_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ProbabilisticBranchTransition.__init__)
+def test_pcm_av_seff_av_guardedbranchtransition_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_GuardedBranchTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_seff_av_probabilisticbranchtransition_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ProbabilisticBranchTransition)
+
+
+def test_pcm_av_seff_av_probabilisticbranchtransition_constructor_exists():
+    assert callable(pcm_av_seff_av_ProbabilisticBranchTransition.__init__)
+
+
+def test_pcm_av_seff_av_probabilisticbranchtransition_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ProbabilisticBranchTransition.__init__)
     params = list(sig.parameters.keys())
     assert "branchProbability" in params, "Missing parameter 'branchProbability'"
 
-def test_pcm::av::seff::av::probabilisticbranchtransition_has_branchProbability():
-    assert hasattr(pcm::av::seff::av::ProbabilisticBranchTransition, "branchProbability")
+def test_pcm_av_seff_av_probabilisticbranchtransition_has_branchProbability():
+    assert hasattr(pcm_av_seff_av_ProbabilisticBranchTransition, "branchProbability")
     descriptor = None
-    for klass in pcm::av::seff::av::ProbabilisticBranchTransition.__mro__:
+    for klass in pcm_av_seff_av_ProbabilisticBranchTransition.__mro__:
         if "branchProbability" in klass.__dict__:
             descriptor = klass.__dict__["branchProbability"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_pcm::av::seff::av::guardedbranchtransition_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::GuardedBranchTransition)
-
-
-def test_pcm::av::seff::av::guardedbranchtransition_constructor_exists():
-    assert callable(pcm::av::seff::av::GuardedBranchTransition.__init__)
-
-
-def test_pcm::av::seff::av::guardedbranchtransition_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::GuardedBranchTransition.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -883,30 +1015,30 @@ def test_abstractloopaction_constructor_args():
 
 
 
-def test_pcm::av::seff::av::loopaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::LoopAction)
+def test_pcm_av_seff_av_loopaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_LoopAction)
 
 
-def test_pcm::av::seff::av::loopaction_constructor_exists():
-    assert callable(pcm::av::seff::av::LoopAction.__init__)
+def test_pcm_av_seff_av_loopaction_constructor_exists():
+    assert callable(pcm_av_seff_av_LoopAction.__init__)
 
 
-def test_pcm::av::seff::av::loopaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::LoopAction.__init__)
+def test_pcm_av_seff_av_loopaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_LoopAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::collectioniteratoraction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::CollectionIteratorAction)
+def test_pcm_av_seff_av_collectioniteratoraction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_CollectionIteratorAction)
 
 
-def test_pcm::av::seff::av::collectioniteratoraction_constructor_exists():
-    assert callable(pcm::av::seff::av::CollectionIteratorAction.__init__)
+def test_pcm_av_seff_av_collectioniteratoraction_constructor_exists():
+    assert callable(pcm_av_seff_av_CollectionIteratorAction.__init__)
 
 
-def test_pcm::av::seff::av::collectioniteratoraction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::CollectionIteratorAction.__init__)
+def test_pcm_av_seff_av_collectioniteratoraction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_CollectionIteratorAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -925,30 +1057,30 @@ def test_resourcedemandingbehaviour_constructor_args():
 
 
 
-def test_pcm::av::seff::av::resourcedemandinginternalbehaviour_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ResourceDemandingInternalBehaviour)
+def test_pcm_av_seff_av_forkedbehaviour_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ForkedBehaviour)
 
 
-def test_pcm::av::seff::av::resourcedemandinginternalbehaviour_constructor_exists():
-    assert callable(pcm::av::seff::av::ResourceDemandingInternalBehaviour.__init__)
+def test_pcm_av_seff_av_forkedbehaviour_constructor_exists():
+    assert callable(pcm_av_seff_av_ForkedBehaviour.__init__)
 
 
-def test_pcm::av::seff::av::resourcedemandinginternalbehaviour_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ResourceDemandingInternalBehaviour.__init__)
+def test_pcm_av_seff_av_forkedbehaviour_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ForkedBehaviour.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::forkedbehaviour_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ForkedBehaviour)
+def test_pcm_av_seff_av_resourcedemandinginternalbehaviour_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ResourceDemandingInternalBehaviour)
 
 
-def test_pcm::av::seff::av::forkedbehaviour_constructor_exists():
-    assert callable(pcm::av::seff::av::ForkedBehaviour.__init__)
+def test_pcm_av_seff_av_resourcedemandinginternalbehaviour_constructor_exists():
+    assert callable(pcm_av_seff_av_ResourceDemandingInternalBehaviour.__init__)
 
 
-def test_pcm::av::seff::av::forkedbehaviour_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ForkedBehaviour.__init__)
+def test_pcm_av_seff_av_resourcedemandinginternalbehaviour_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ResourceDemandingInternalBehaviour.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -981,58 +1113,16 @@ def test_abstractaction_constructor_args():
 
 
 
-def test_pcm::av::seff::av::abstractinternalcontrolflowaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::AbstractInternalControlFlowAction)
+def test_pcm_av_seff_av_abstractinternalcontrolflowaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_AbstractInternalControlFlowAction)
 
 
-def test_pcm::av::seff::av::abstractinternalcontrolflowaction_constructor_exists():
-    assert callable(pcm::av::seff::av::AbstractInternalControlFlowAction.__init__)
+def test_pcm_av_seff_av_abstractinternalcontrolflowaction_constructor_exists():
+    assert callable(pcm_av_seff_av_AbstractInternalControlFlowAction.__init__)
 
 
-def test_pcm::av::seff::av::abstractinternalcontrolflowaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::AbstractInternalControlFlowAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seff::reliability::av::failurehandlingentity_is_not_abstract():
-    assert not inspect.isabstract(seff::reliability::av::FailureHandlingEntity)
-
-
-def test_seff::reliability::av::failurehandlingentity_constructor_exists():
-    assert callable(seff::reliability::av::FailureHandlingEntity.__init__)
-
-
-def test_seff::reliability::av::failurehandlingentity_constructor_args():
-    sig = inspect.signature(seff::reliability::av::FailureHandlingEntity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::reliability::av::RecoveryActionBehaviour)
-
-
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_constructor_exists():
-    assert callable(pcm::av::seff::reliability::av::RecoveryActionBehaviour.__init__)
-
-
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_constructor_args():
-    sig = inspect.signature(pcm::av::seff::reliability::av::RecoveryActionBehaviour.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seff::av::callreturnaction_is_not_abstract():
-    assert not inspect.isabstract(seff::av::CallReturnAction)
-
-
-def test_seff::av::callreturnaction_constructor_exists():
-    assert callable(seff::av::CallReturnAction.__init__)
-
-
-def test_seff::av::callreturnaction_constructor_args():
-    sig = inspect.signature(seff::av::CallReturnAction.__init__)
+def test_pcm_av_seff_av_abstractinternalcontrolflowaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_AbstractInternalControlFlowAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1051,89 +1141,75 @@ def test_abstractinternalcontrolflowaction_constructor_args():
 
 
 
-def test_pcm::av::seff::av::forkaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ForkAction)
+def test_pcm_av_seff_reliability_av_recoveryaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_reliability_av_RecoveryAction)
 
 
-def test_pcm::av::seff::av::forkaction_constructor_exists():
-    assert callable(pcm::av::seff::av::ForkAction.__init__)
+def test_pcm_av_seff_reliability_av_recoveryaction_constructor_exists():
+    assert callable(pcm_av_seff_reliability_av_RecoveryAction.__init__)
 
 
-def test_pcm::av::seff::av::forkaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ForkAction.__init__)
+def test_pcm_av_seff_reliability_av_recoveryaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_reliability_av_RecoveryAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::internalaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::InternalAction)
+def test_pcm_av_seff_av_setvariableaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_SetVariableAction)
 
 
-def test_pcm::av::seff::av::internalaction_constructor_exists():
-    assert callable(pcm::av::seff::av::InternalAction.__init__)
+def test_pcm_av_seff_av_setvariableaction_constructor_exists():
+    assert callable(pcm_av_seff_av_SetVariableAction.__init__)
 
 
-def test_pcm::av::seff::av::internalaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::InternalAction.__init__)
+def test_pcm_av_seff_av_setvariableaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_SetVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::setvariableaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::SetVariableAction)
+def test_pcm_av_seff_av_internalaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_InternalAction)
 
 
-def test_pcm::av::seff::av::setvariableaction_constructor_exists():
-    assert callable(pcm::av::seff::av::SetVariableAction.__init__)
+def test_pcm_av_seff_av_internalaction_constructor_exists():
+    assert callable(pcm_av_seff_av_InternalAction.__init__)
 
 
-def test_pcm::av::seff::av::setvariableaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::SetVariableAction.__init__)
+def test_pcm_av_seff_av_internalaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_InternalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::reliability::av::recoveryaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::reliability::av::RecoveryAction)
+def test_pcm_av_seff_av_acquireaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_AcquireAction)
 
 
-def test_pcm::av::seff::reliability::av::recoveryaction_constructor_exists():
-    assert callable(pcm::av::seff::reliability::av::RecoveryAction.__init__)
+def test_pcm_av_seff_av_acquireaction_constructor_exists():
+    assert callable(pcm_av_seff_av_AcquireAction.__init__)
 
 
-def test_pcm::av::seff::reliability::av::recoveryaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::reliability::av::RecoveryAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::seff::av::acquireaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::AcquireAction)
-
-
-def test_pcm::av::seff::av::acquireaction_constructor_exists():
-    assert callable(pcm::av::seff::av::AcquireAction.__init__)
-
-
-def test_pcm::av::seff::av::acquireaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::AcquireAction.__init__)
+def test_pcm_av_seff_av_acquireaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_AcquireAction.__init__)
     params = list(sig.parameters.keys())
     assert "timeoutValue" in params, "Missing parameter 'timeoutValue'"
     assert "timeout" in params, "Missing parameter 'timeout'"
 
-def test_pcm::av::seff::av::acquireaction_has_timeoutValue():
-    assert hasattr(pcm::av::seff::av::AcquireAction, "timeoutValue")
+def test_pcm_av_seff_av_acquireaction_has_timeoutValue():
+    assert hasattr(pcm_av_seff_av_AcquireAction, "timeoutValue")
     descriptor = None
-    for klass in pcm::av::seff::av::AcquireAction.__mro__:
+    for klass in pcm_av_seff_av_AcquireAction.__mro__:
         if "timeoutValue" in klass.__dict__:
             descriptor = klass.__dict__["timeoutValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_pcm::av::seff::av::acquireaction_has_timeout():
-    assert hasattr(pcm::av::seff::av::AcquireAction, "timeout")
+def test_pcm_av_seff_av_acquireaction_has_timeout():
+    assert hasattr(pcm_av_seff_av_AcquireAction, "timeout")
     descriptor = None
-    for klass in pcm::av::seff::av::AcquireAction.__mro__:
+    for klass in pcm_av_seff_av_AcquireAction.__mro__:
         if "timeout" in klass.__dict__:
             descriptor = klass.__dict__["timeout"]
             break
@@ -1141,162 +1217,100 @@ def test_pcm::av::seff::av::acquireaction_has_timeout():
 
 
 
-def test_pcm::av::seff::av::branchaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::BranchAction)
+def test_pcm_av_seff_av_abstractloopaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_AbstractLoopAction)
 
 
-def test_pcm::av::seff::av::branchaction_constructor_exists():
-    assert callable(pcm::av::seff::av::BranchAction.__init__)
+def test_pcm_av_seff_av_abstractloopaction_constructor_exists():
+    assert callable(pcm_av_seff_av_AbstractLoopAction.__init__)
 
 
-def test_pcm::av::seff::av::branchaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::BranchAction.__init__)
+def test_pcm_av_seff_av_abstractloopaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_AbstractLoopAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::releaseaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ReleaseAction)
+def test_pcm_av_seff_av_startaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_StartAction)
 
 
-def test_pcm::av::seff::av::releaseaction_constructor_exists():
-    assert callable(pcm::av::seff::av::ReleaseAction.__init__)
+def test_pcm_av_seff_av_startaction_constructor_exists():
+    assert callable(pcm_av_seff_av_StartAction.__init__)
 
 
-def test_pcm::av::seff::av::releaseaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ReleaseAction.__init__)
+def test_pcm_av_seff_av_startaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_StartAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::abstractloopaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::AbstractLoopAction)
+def test_pcm_av_seff_av_forkaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ForkAction)
 
 
-def test_pcm::av::seff::av::abstractloopaction_constructor_exists():
-    assert callable(pcm::av::seff::av::AbstractLoopAction.__init__)
+def test_pcm_av_seff_av_forkaction_constructor_exists():
+    assert callable(pcm_av_seff_av_ForkAction.__init__)
 
 
-def test_pcm::av::seff::av::abstractloopaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::AbstractLoopAction.__init__)
+def test_pcm_av_seff_av_forkaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ForkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::av::abstractaction_is_not_abstract():
-    assert not inspect.isabstract(seff::av::AbstractAction)
+def test_pcm_av_seff_av_branchaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_BranchAction)
 
 
-def test_seff::av::abstractaction_constructor_exists():
-    assert callable(seff::av::AbstractAction.__init__)
+def test_pcm_av_seff_av_branchaction_constructor_exists():
+    assert callable(pcm_av_seff_av_BranchAction.__init__)
 
 
-def test_seff::av::abstractaction_constructor_args():
-    sig = inspect.signature(seff::av::AbstractAction.__init__)
+def test_pcm_av_seff_av_branchaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_BranchAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::emiteventaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::EmitEventAction)
+def test_pcm_av_seff_av_releaseaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ReleaseAction)
 
 
-def test_pcm::av::seff::av::emiteventaction_constructor_exists():
-    assert callable(pcm::av::seff::av::EmitEventAction.__init__)
+def test_pcm_av_seff_av_releaseaction_constructor_exists():
+    assert callable(pcm_av_seff_av_ReleaseAction.__init__)
 
 
-def test_pcm::av::seff::av::emiteventaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::EmitEventAction.__init__)
+def test_pcm_av_seff_av_releaseaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ReleaseAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::externalcallaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ExternalCallAction)
+def test_pcm_av_seff_av_stopaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_StopAction)
 
 
-def test_pcm::av::seff::av::externalcallaction_constructor_exists():
-    assert callable(pcm::av::seff::av::ExternalCallAction.__init__)
+def test_pcm_av_seff_av_stopaction_constructor_exists():
+    assert callable(pcm_av_seff_av_StopAction.__init__)
 
 
-def test_pcm::av::seff::av::externalcallaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ExternalCallAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "retryCount" in params, "Missing parameter 'retryCount'"
-
-def test_pcm::av::seff::av::externalcallaction_has_retryCount():
-    assert hasattr(pcm::av::seff::av::ExternalCallAction, "retryCount")
-    descriptor = None
-    for klass in pcm::av::seff::av::ExternalCallAction.__mro__:
-        if "retryCount" in klass.__dict__:
-            descriptor = klass.__dict__["retryCount"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pcm::av::seff::av::serviceeffectspecification_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ServiceEffectSpecification)
-
-
-def test_pcm::av::seff::av::serviceeffectspecification_constructor_exists():
-    assert callable(pcm::av::seff::av::ServiceEffectSpecification.__init__)
-
-
-def test_pcm::av::seff::av::serviceeffectspecification_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ServiceEffectSpecification.__init__)
-    params = list(sig.parameters.keys())
-    assert "seffTypeID" in params, "Missing parameter 'seffTypeID'"
-
-def test_pcm::av::seff::av::serviceeffectspecification_has_seffTypeID():
-    assert hasattr(pcm::av::seff::av::ServiceEffectSpecification, "seffTypeID")
-    descriptor = None
-    for klass in pcm::av::seff::av::ServiceEffectSpecification.__mro__:
-        if "seffTypeID" in klass.__dict__:
-            descriptor = klass.__dict__["seffTypeID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pcm::av::seff::av::startaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::StartAction)
-
-
-def test_pcm::av::seff::av::startaction_constructor_exists():
-    assert callable(pcm::av::seff::av::StartAction.__init__)
-
-
-def test_pcm::av::seff::av::startaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::StartAction.__init__)
+def test_pcm_av_seff_av_stopaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_StopAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::callaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::CallAction)
+def test_qos_reliability_av_specifiedreliabilityannotation_is_not_abstract():
+    assert not inspect.isabstract(qos_reliability_av_SpecifiedReliabilityAnnotation)
 
 
-def test_pcm::av::seff::av::callaction_constructor_exists():
-    assert callable(pcm::av::seff::av::CallAction.__init__)
+def test_qos_reliability_av_specifiedreliabilityannotation_constructor_exists():
+    assert callable(qos_reliability_av_SpecifiedReliabilityAnnotation.__init__)
 
 
-def test_pcm::av::seff::av::callaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::CallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qos::reliability::av::specifiedreliabilityannotation_is_not_abstract():
-    assert not inspect.isabstract(qos::reliability::av::SpecifiedReliabilityAnnotation)
-
-
-def test_qos::reliability::av::specifiedreliabilityannotation_constructor_exists():
-    assert callable(qos::reliability::av::SpecifiedReliabilityAnnotation.__init__)
-
-
-def test_qos::reliability::av::specifiedreliabilityannotation_constructor_args():
-    sig = inspect.signature(qos::reliability::av::SpecifiedReliabilityAnnotation.__init__)
+def test_qos_reliability_av_specifiedreliabilityannotation_constructor_args():
+    sig = inspect.signature(qos_reliability_av_SpecifiedReliabilityAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1329,6 +1343,20 @@ def test_softwareinducedfailuretype_constructor_args():
 
 
 
+def test_pcm_av_reliability_av_resourcetimeoutfailuretype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_ResourceTimeoutFailureType)
+
+
+def test_pcm_av_reliability_av_resourcetimeoutfailuretype_constructor_exists():
+    assert callable(pcm_av_reliability_av_ResourceTimeoutFailureType.__init__)
+
+
+def test_pcm_av_reliability_av_resourcetimeoutfailuretype_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_ResourceTimeoutFailureType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_internalaction_is_not_abstract():
     assert not inspect.isabstract(InternalAction)
 
@@ -1357,30 +1385,30 @@ def test_failureoccurrencedescription_constructor_args():
 
 
 
-def test_pcm::av::reliability::av::externalfailureoccurrencedescription_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::ExternalFailureOccurrenceDescription)
+def test_pcm_av_reliability_av_externalfailureoccurrencedescription_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_ExternalFailureOccurrenceDescription)
 
 
-def test_pcm::av::reliability::av::externalfailureoccurrencedescription_constructor_exists():
-    assert callable(pcm::av::reliability::av::ExternalFailureOccurrenceDescription.__init__)
+def test_pcm_av_reliability_av_externalfailureoccurrencedescription_constructor_exists():
+    assert callable(pcm_av_reliability_av_ExternalFailureOccurrenceDescription.__init__)
 
 
-def test_pcm::av::reliability::av::externalfailureoccurrencedescription_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::ExternalFailureOccurrenceDescription.__init__)
+def test_pcm_av_reliability_av_externalfailureoccurrencedescription_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_ExternalFailureOccurrenceDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::reliability::av::internalfailureoccurrencedescription_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::InternalFailureOccurrenceDescription)
+def test_pcm_av_reliability_av_internalfailureoccurrencedescription_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_InternalFailureOccurrenceDescription)
 
 
-def test_pcm::av::reliability::av::internalfailureoccurrencedescription_constructor_exists():
-    assert callable(pcm::av::reliability::av::InternalFailureOccurrenceDescription.__init__)
+def test_pcm_av_reliability_av_internalfailureoccurrencedescription_constructor_exists():
+    assert callable(pcm_av_reliability_av_InternalFailureOccurrenceDescription.__init__)
 
 
-def test_pcm::av::reliability::av::internalfailureoccurrencedescription_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::InternalFailureOccurrenceDescription.__init__)
+def test_pcm_av_reliability_av_internalfailureoccurrencedescription_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_InternalFailureOccurrenceDescription.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1427,23 +1455,23 @@ def test_variable_constructor_args():
 
 
 
-def test_pcm::av::parameter::av::characterisedvariable_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::parameter::av::CharacterisedVariable)
+def test_pcm_av_parameter_av_characterisedvariable_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_parameter_av_CharacterisedVariable)
 
 
-def test_pcm::av::parameter::av::characterisedvariable_constructor_exists():
-    assert callable(pcm::av::parameter::av::CharacterisedVariable.__init__)
+def test_pcm_av_parameter_av_characterisedvariable_constructor_exists():
+    assert callable(pcm_av_parameter_av_CharacterisedVariable.__init__)
 
 
-def test_pcm::av::parameter::av::characterisedvariable_constructor_args():
-    sig = inspect.signature(pcm::av::parameter::av::CharacterisedVariable.__init__)
+def test_pcm_av_parameter_av_characterisedvariable_constructor_args():
+    sig = inspect.signature(pcm_av_parameter_av_CharacterisedVariable.__init__)
     params = list(sig.parameters.keys())
     assert "characterisationType" in params, "Missing parameter 'characterisationType'"
 
-def test_pcm::av::parameter::av::characterisedvariable_has_characterisationType():
-    assert hasattr(pcm::av::parameter::av::CharacterisedVariable, "characterisationType")
+def test_pcm_av_parameter_av_characterisedvariable_has_characterisationType():
+    assert hasattr(pcm_av_parameter_av_CharacterisedVariable, "characterisationType")
     descriptor = None
-    for klass in pcm::av::parameter::av::CharacterisedVariable.__mro__:
+    for klass in pcm_av_parameter_av_CharacterisedVariable.__mro__:
         if "characterisationType" in klass.__dict__:
             descriptor = klass.__dict__["characterisationType"]
             break
@@ -1451,23 +1479,23 @@ def test_pcm::av::parameter::av::characterisedvariable_has_characterisationType(
 
 
 
-def test_pcm::av::parameter::av::variablecharacterisation_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::parameter::av::VariableCharacterisation)
+def test_pcm_av_parameter_av_variablecharacterisation_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_parameter_av_VariableCharacterisation)
 
 
-def test_pcm::av::parameter::av::variablecharacterisation_constructor_exists():
-    assert callable(pcm::av::parameter::av::VariableCharacterisation.__init__)
+def test_pcm_av_parameter_av_variablecharacterisation_constructor_exists():
+    assert callable(pcm_av_parameter_av_VariableCharacterisation.__init__)
 
 
-def test_pcm::av::parameter::av::variablecharacterisation_constructor_args():
-    sig = inspect.signature(pcm::av::parameter::av::VariableCharacterisation.__init__)
+def test_pcm_av_parameter_av_variablecharacterisation_constructor_args():
+    sig = inspect.signature(pcm_av_parameter_av_VariableCharacterisation.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_pcm::av::parameter::av::variablecharacterisation_has_type():
-    assert hasattr(pcm::av::parameter::av::VariableCharacterisation, "type")
+def test_pcm_av_parameter_av_variablecharacterisation_has_type():
+    assert hasattr(pcm_av_parameter_av_VariableCharacterisation, "type")
     descriptor = None
-    for klass in pcm::av::parameter::av::VariableCharacterisation.__mro__:
+    for klass in pcm_av_parameter_av_VariableCharacterisation.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1475,37 +1503,37 @@ def test_pcm::av::parameter::av::variablecharacterisation_has_type():
 
 
 
-def test_parameter::av::pcm::av::abstractnamedreference_is_not_abstract():
-    assert not inspect.isabstract(parameter::av::pcm::av::AbstractNamedReference)
+def test_parameter_av_pcm_av_abstractnamedreference_is_not_abstract():
+    assert not inspect.isabstract(parameter_av_pcm_av_AbstractNamedReference)
 
 
-def test_parameter::av::pcm::av::abstractnamedreference_constructor_exists():
-    assert callable(parameter::av::pcm::av::AbstractNamedReference.__init__)
+def test_parameter_av_pcm_av_abstractnamedreference_constructor_exists():
+    assert callable(parameter_av_pcm_av_AbstractNamedReference.__init__)
 
 
-def test_parameter::av::pcm::av::abstractnamedreference_constructor_args():
-    sig = inspect.signature(parameter::av::pcm::av::AbstractNamedReference.__init__)
+def test_parameter_av_pcm_av_abstractnamedreference_constructor_args():
+    sig = inspect.signature(parameter_av_pcm_av_AbstractNamedReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::reliability::av::failureoccurrencedescription_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::FailureOccurrenceDescription)
+def test_pcm_av_reliability_av_failureoccurrencedescription_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_FailureOccurrenceDescription)
 
 
-def test_pcm::av::reliability::av::failureoccurrencedescription_constructor_exists():
-    assert callable(pcm::av::reliability::av::FailureOccurrenceDescription.__init__)
+def test_pcm_av_reliability_av_failureoccurrencedescription_constructor_exists():
+    assert callable(pcm_av_reliability_av_FailureOccurrenceDescription.__init__)
 
 
-def test_pcm::av::reliability::av::failureoccurrencedescription_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::FailureOccurrenceDescription.__init__)
+def test_pcm_av_reliability_av_failureoccurrencedescription_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_FailureOccurrenceDescription.__init__)
     params = list(sig.parameters.keys())
     assert "failureProbability" in params, "Missing parameter 'failureProbability'"
 
-def test_pcm::av::reliability::av::failureoccurrencedescription_has_failureProbability():
-    assert hasattr(pcm::av::reliability::av::FailureOccurrenceDescription, "failureProbability")
+def test_pcm_av_reliability_av_failureoccurrencedescription_has_failureProbability():
+    assert hasattr(pcm_av_reliability_av_FailureOccurrenceDescription, "failureProbability")
     descriptor = None
-    for klass in pcm::av::reliability::av::FailureOccurrenceDescription.__mro__:
+    for klass in pcm_av_reliability_av_FailureOccurrenceDescription.__mro__:
         if "failureProbability" in klass.__dict__:
             descriptor = klass.__dict__["failureProbability"]
             break
@@ -1583,79 +1611,79 @@ def test_callaction_constructor_args():
 
 
 
-def test_pcm::av::seff::performance::av::infrastructurecall_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::performance::av::InfrastructureCall)
+def test_pcm_av_seff_performance_av_infrastructurecall_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_performance_av_InfrastructureCall)
 
 
-def test_pcm::av::seff::performance::av::infrastructurecall_constructor_exists():
-    assert callable(pcm::av::seff::performance::av::InfrastructureCall.__init__)
+def test_pcm_av_seff_performance_av_infrastructurecall_constructor_exists():
+    assert callable(pcm_av_seff_performance_av_InfrastructureCall.__init__)
 
 
-def test_pcm::av::seff::performance::av::infrastructurecall_constructor_args():
-    sig = inspect.signature(pcm::av::seff::performance::av::InfrastructureCall.__init__)
+def test_pcm_av_seff_performance_av_infrastructurecall_constructor_args():
+    sig = inspect.signature(pcm_av_seff_performance_av_InfrastructureCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::performance::av::resourcecall_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::performance::av::ResourceCall)
+def test_pcm_av_seff_performance_av_resourcecall_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_performance_av_ResourceCall)
 
 
-def test_pcm::av::seff::performance::av::resourcecall_constructor_exists():
-    assert callable(pcm::av::seff::performance::av::ResourceCall.__init__)
+def test_pcm_av_seff_performance_av_resourcecall_constructor_exists():
+    assert callable(pcm_av_seff_performance_av_ResourceCall.__init__)
 
 
-def test_pcm::av::seff::performance::av::resourcecall_constructor_args():
-    sig = inspect.signature(pcm::av::seff::performance::av::ResourceCall.__init__)
+def test_pcm_av_seff_performance_av_resourcecall_constructor_args():
+    sig = inspect.signature(pcm_av_seff_performance_av_ResourceCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::callreturnaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::CallReturnAction)
+def test_pcm_av_seff_av_callreturnaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_CallReturnAction)
 
 
-def test_pcm::av::seff::av::callreturnaction_constructor_exists():
-    assert callable(pcm::av::seff::av::CallReturnAction.__init__)
+def test_pcm_av_seff_av_callreturnaction_constructor_exists():
+    assert callable(pcm_av_seff_av_CallReturnAction.__init__)
 
 
-def test_pcm::av::seff::av::callreturnaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::CallReturnAction.__init__)
+def test_pcm_av_seff_av_callreturnaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_CallReturnAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::parameter::av::variableusage_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::parameter::av::VariableUsage)
+def test_pcm_av_parameter_av_variableusage_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_parameter_av_VariableUsage)
 
 
-def test_pcm::av::parameter::av::variableusage_constructor_exists():
-    assert callable(pcm::av::parameter::av::VariableUsage.__init__)
+def test_pcm_av_parameter_av_variableusage_constructor_exists():
+    assert callable(pcm_av_parameter_av_VariableUsage.__init__)
 
 
-def test_pcm::av::parameter::av::variableusage_constructor_args():
-    sig = inspect.signature(pcm::av::parameter::av::VariableUsage.__init__)
+def test_pcm_av_parameter_av_variableusage_constructor_args():
+    sig = inspect.signature(pcm_av_parameter_av_VariableUsage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::protocol::av::protocol_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::protocol::av::Protocol)
+def test_pcm_av_protocol_av_protocol_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_protocol_av_Protocol)
 
 
-def test_pcm::av::protocol::av::protocol_constructor_exists():
-    assert callable(pcm::av::protocol::av::Protocol.__init__)
+def test_pcm_av_protocol_av_protocol_constructor_exists():
+    assert callable(pcm_av_protocol_av_Protocol.__init__)
 
 
-def test_pcm::av::protocol::av::protocol_constructor_args():
-    sig = inspect.signature(pcm::av::protocol::av::Protocol.__init__)
+def test_pcm_av_protocol_av_protocol_constructor_args():
+    sig = inspect.signature(pcm_av_protocol_av_Protocol.__init__)
     params = list(sig.parameters.keys())
     assert "protocolTypeID" in params, "Missing parameter 'protocolTypeID'"
 
-def test_pcm::av::protocol::av::protocol_has_protocolTypeID():
-    assert hasattr(pcm::av::protocol::av::Protocol, "protocolTypeID")
+def test_pcm_av_protocol_av_protocol_has_protocolTypeID():
+    assert hasattr(pcm_av_protocol_av_Protocol, "protocolTypeID")
     descriptor = None
-    for klass in pcm::av::protocol::av::Protocol.__mro__:
+    for klass in pcm_av_protocol_av_Protocol.__mro__:
         if "protocolTypeID" in klass.__dict__:
             descriptor = klass.__dict__["protocolTypeID"]
             break
@@ -1705,16 +1733,16 @@ def test_schedulingpolicy_constructor_args():
 
 
 
-def test_pcm::av::resourcetype::av::resourcerepository_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::ResourceRepository)
+def test_pcm_av_resourcetype_av_resourcerepository_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_ResourceRepository)
 
 
-def test_pcm::av::resourcetype::av::resourcerepository_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::ResourceRepository.__init__)
+def test_pcm_av_resourcetype_av_resourcerepository_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_ResourceRepository.__init__)
 
 
-def test_pcm::av::resourcetype::av::resourcerepository_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::ResourceRepository.__init__)
+def test_pcm_av_resourcetype_av_resourcerepository_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_ResourceRepository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1775,30 +1803,30 @@ def test_resourcetype_constructor_args():
 
 
 
-def test_pcm::av::resourcetype::av::communicationlinkresourcetype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::CommunicationLinkResourceType)
+def test_pcm_av_resourcetype_av_communicationlinkresourcetype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_CommunicationLinkResourceType)
 
 
-def test_pcm::av::resourcetype::av::communicationlinkresourcetype_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::CommunicationLinkResourceType.__init__)
+def test_pcm_av_resourcetype_av_communicationlinkresourcetype_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_CommunicationLinkResourceType.__init__)
 
 
-def test_pcm::av::resourcetype::av::communicationlinkresourcetype_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::CommunicationLinkResourceType.__init__)
+def test_pcm_av_resourcetype_av_communicationlinkresourcetype_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_CommunicationLinkResourceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::resourcetype::av::processingresourcetype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::ProcessingResourceType)
+def test_pcm_av_resourcetype_av_processingresourcetype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_ProcessingResourceType)
 
 
-def test_pcm::av::resourcetype::av::processingresourcetype_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::ProcessingResourceType.__init__)
+def test_pcm_av_resourcetype_av_processingresourcetype_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_ProcessingResourceType.__init__)
 
 
-def test_pcm::av::resourcetype::av::processingresourcetype_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::ProcessingResourceType.__init__)
+def test_pcm_av_resourcetype_av_processingresourcetype_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_ProcessingResourceType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1817,30 +1845,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_pcm::av::resourceenvironment::av::resourceenvironment_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourceenvironment::av::ResourceEnvironment)
+def test_pcm_av_resourceenvironment_av_resourceenvironment_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourceenvironment_av_ResourceEnvironment)
 
 
-def test_pcm::av::resourceenvironment::av::resourceenvironment_constructor_exists():
-    assert callable(pcm::av::resourceenvironment::av::ResourceEnvironment.__init__)
+def test_pcm_av_resourceenvironment_av_resourceenvironment_constructor_exists():
+    assert callable(pcm_av_resourceenvironment_av_ResourceEnvironment.__init__)
 
 
-def test_pcm::av::resourceenvironment::av::resourceenvironment_constructor_args():
-    sig = inspect.signature(pcm::av::resourceenvironment::av::ResourceEnvironment.__init__)
+def test_pcm_av_resourceenvironment_av_resourceenvironment_constructor_args():
+    sig = inspect.signature(pcm_av_resourceenvironment_av_ResourceEnvironment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::innerdeclaration_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::InnerDeclaration)
+def test_pcm_av_repository_av_innerdeclaration_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_InnerDeclaration)
 
 
-def test_pcm::av::repository::av::innerdeclaration_constructor_exists():
-    assert callable(pcm::av::repository::av::InnerDeclaration.__init__)
+def test_pcm_av_repository_av_innerdeclaration_constructor_exists():
+    assert callable(pcm_av_repository_av_InnerDeclaration.__init__)
 
 
-def test_pcm::av::repository::av::innerdeclaration_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::InnerDeclaration.__init__)
+def test_pcm_av_repository_av_innerdeclaration_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_InnerDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1873,86 +1901,86 @@ def test_compositedatatype_constructor_args():
 
 
 
-def test_repository::av::datatype_is_not_abstract():
-    assert not inspect.isabstract(repository::av::DataType)
+def test_repository_av_datatype_is_not_abstract():
+    assert not inspect.isabstract(repository_av_DataType)
 
 
-def test_repository::av::datatype_constructor_exists():
-    assert callable(repository::av::DataType.__init__)
+def test_repository_av_datatype_constructor_exists():
+    assert callable(repository_av_DataType.__init__)
 
 
-def test_repository::av::datatype_constructor_args():
-    sig = inspect.signature(repository::av::DataType.__init__)
+def test_repository_av_datatype_constructor_args():
+    sig = inspect.signature(repository_av_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_repository::av::implementationcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(repository::av::ImplementationComponentType)
+def test_repository_av_implementationcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(repository_av_ImplementationComponentType)
 
 
-def test_repository::av::implementationcomponenttype_constructor_exists():
-    assert callable(repository::av::ImplementationComponentType.__init__)
+def test_repository_av_implementationcomponenttype_constructor_exists():
+    assert callable(repository_av_ImplementationComponentType.__init__)
 
 
-def test_repository::av::implementationcomponenttype_constructor_args():
-    sig = inspect.signature(repository::av::ImplementationComponentType.__init__)
+def test_repository_av_implementationcomponenttype_constructor_args():
+    sig = inspect.signature(repository_av_ImplementationComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::composedprovidingrequiringentity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::ComposedProvidingRequiringEntity)
+def test_entity_av_composedprovidingrequiringentity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_ComposedProvidingRequiringEntity)
 
 
-def test_entity::av::composedprovidingrequiringentity_constructor_exists():
-    assert callable(entity::av::ComposedProvidingRequiringEntity.__init__)
+def test_entity_av_composedprovidingrequiringentity_constructor_exists():
+    assert callable(entity_av_ComposedProvidingRequiringEntity.__init__)
 
 
-def test_entity::av::composedprovidingrequiringentity_constructor_args():
-    sig = inspect.signature(entity::av::ComposedProvidingRequiringEntity.__init__)
+def test_entity_av_composedprovidingrequiringentity_constructor_args():
+    sig = inspect.signature(entity_av_ComposedProvidingRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::subsystem::av::subsystem_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::subsystem::av::SubSystem)
+def test_pcm_av_subsystem_av_subsystem_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_subsystem_av_SubSystem)
 
 
-def test_pcm::av::subsystem::av::subsystem_constructor_exists():
-    assert callable(pcm::av::subsystem::av::SubSystem.__init__)
+def test_pcm_av_subsystem_av_subsystem_constructor_exists():
+    assert callable(pcm_av_subsystem_av_SubSystem.__init__)
 
 
-def test_pcm::av::subsystem::av::subsystem_constructor_args():
-    sig = inspect.signature(pcm::av::subsystem::av::SubSystem.__init__)
+def test_pcm_av_subsystem_av_subsystem_constructor_args():
+    sig = inspect.signature(pcm_av_subsystem_av_SubSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::completions::av::completion_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::completions::av::Completion)
+def test_pcm_av_completions_av_completion_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_completions_av_Completion)
 
 
-def test_pcm::av::completions::av::completion_constructor_exists():
-    assert callable(pcm::av::completions::av::Completion.__init__)
+def test_pcm_av_completions_av_completion_constructor_exists():
+    assert callable(pcm_av_completions_av_Completion.__init__)
 
 
-def test_pcm::av::completions::av::completion_constructor_args():
-    sig = inspect.signature(pcm::av::completions::av::Completion.__init__)
+def test_pcm_av_completions_av_completion_constructor_args():
+    sig = inspect.signature(pcm_av_completions_av_Completion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::compositecomponent_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::CompositeComponent)
+def test_pcm_av_repository_av_compositecomponent_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_CompositeComponent)
 
 
-def test_pcm::av::repository::av::compositecomponent_constructor_exists():
-    assert callable(pcm::av::repository::av::CompositeComponent.__init__)
+def test_pcm_av_repository_av_compositecomponent_constructor_exists():
+    assert callable(pcm_av_repository_av_CompositeComponent.__init__)
 
 
-def test_pcm::av::repository::av::compositecomponent_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::CompositeComponent.__init__)
+def test_pcm_av_repository_av_compositecomponent_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_CompositeComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1985,33 +2013,33 @@ def test_operationinterface_constructor_args():
 
 
 
-def test_pcm::av::repository::av::exceptiontype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::ExceptionType)
+def test_pcm_av_repository_av_exceptiontype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_ExceptionType)
 
 
-def test_pcm::av::repository::av::exceptiontype_constructor_exists():
-    assert callable(pcm::av::repository::av::ExceptionType.__init__)
+def test_pcm_av_repository_av_exceptiontype_constructor_exists():
+    assert callable(pcm_av_repository_av_ExceptionType.__init__)
 
 
-def test_pcm::av::repository::av::exceptiontype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::ExceptionType.__init__)
+def test_pcm_av_repository_av_exceptiontype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_ExceptionType.__init__)
     params = list(sig.parameters.keys())
     assert "exceptionMessage" in params, "Missing parameter 'exceptionMessage'"
     assert "exceptionName" in params, "Missing parameter 'exceptionName'"
 
-def test_pcm::av::repository::av::exceptiontype_has_exceptionMessage():
-    assert hasattr(pcm::av::repository::av::ExceptionType, "exceptionMessage")
+def test_pcm_av_repository_av_exceptiontype_has_exceptionMessage():
+    assert hasattr(pcm_av_repository_av_ExceptionType, "exceptionMessage")
     descriptor = None
-    for klass in pcm::av::repository::av::ExceptionType.__mro__:
+    for klass in pcm_av_repository_av_ExceptionType.__mro__:
         if "exceptionMessage" in klass.__dict__:
             descriptor = klass.__dict__["exceptionMessage"]
             break
     assert isinstance(descriptor, property)
 
-def test_pcm::av::repository::av::exceptiontype_has_exceptionName():
-    assert hasattr(pcm::av::repository::av::ExceptionType, "exceptionName")
+def test_pcm_av_repository_av_exceptiontype_has_exceptionName():
+    assert hasattr(pcm_av_repository_av_ExceptionType, "exceptionName")
     descriptor = None
-    for klass in pcm::av::repository::av::ExceptionType.__mro__:
+    for klass in pcm_av_repository_av_ExceptionType.__mro__:
         if "exceptionName" in klass.__dict__:
             descriptor = klass.__dict__["exceptionName"]
             break
@@ -2047,30 +2075,30 @@ def test_signature_constructor_args():
 
 
 
-def test_pcm::av::repository::av::operationsignature_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::OperationSignature)
+def test_pcm_av_repository_av_operationsignature_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_OperationSignature)
 
 
-def test_pcm::av::repository::av::operationsignature_constructor_exists():
-    assert callable(pcm::av::repository::av::OperationSignature.__init__)
+def test_pcm_av_repository_av_operationsignature_constructor_exists():
+    assert callable(pcm_av_repository_av_OperationSignature.__init__)
 
 
-def test_pcm::av::repository::av::operationsignature_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::OperationSignature.__init__)
+def test_pcm_av_repository_av_operationsignature_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_OperationSignature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::eventtype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::EventType)
+def test_pcm_av_repository_av_eventtype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_EventType)
 
 
-def test_pcm::av::repository::av::eventtype_constructor_exists():
-    assert callable(pcm::av::repository::av::EventType.__init__)
+def test_pcm_av_repository_av_eventtype_constructor_exists():
+    assert callable(pcm_av_repository_av_EventType.__init__)
 
 
-def test_pcm::av::repository::av::eventtype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::EventType.__init__)
+def test_pcm_av_repository_av_eventtype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_EventType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2089,23 +2117,23 @@ def test_parameter_constructor_args():
 
 
 
-def test_pcm::av::repository::av::requiredcharacterisation_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::RequiredCharacterisation)
+def test_pcm_av_repository_av_requiredcharacterisation_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_RequiredCharacterisation)
 
 
-def test_pcm::av::repository::av::requiredcharacterisation_constructor_exists():
-    assert callable(pcm::av::repository::av::RequiredCharacterisation.__init__)
+def test_pcm_av_repository_av_requiredcharacterisation_constructor_exists():
+    assert callable(pcm_av_repository_av_RequiredCharacterisation.__init__)
 
 
-def test_pcm::av::repository::av::requiredcharacterisation_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::RequiredCharacterisation.__init__)
+def test_pcm_av_repository_av_requiredcharacterisation_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_RequiredCharacterisation.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_pcm::av::repository::av::requiredcharacterisation_has_type():
-    assert hasattr(pcm::av::repository::av::RequiredCharacterisation, "type")
+def test_pcm_av_repository_av_requiredcharacterisation_has_type():
+    assert hasattr(pcm_av_repository_av_RequiredCharacterisation, "type")
     descriptor = None
-    for klass in pcm::av::repository::av::RequiredCharacterisation.__mro__:
+    for klass in pcm_av_repository_av_RequiredCharacterisation.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -2155,16 +2183,16 @@ def test_infrastructureinterface_constructor_args():
 
 
 
-def test_pcm::av::repository::av::infrastructuresignature_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::InfrastructureSignature)
+def test_pcm_av_repository_av_infrastructuresignature_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_InfrastructureSignature)
 
 
-def test_pcm::av::repository::av::infrastructuresignature_constructor_exists():
-    assert callable(pcm::av::repository::av::InfrastructureSignature.__init__)
+def test_pcm_av_repository_av_infrastructuresignature_constructor_exists():
+    assert callable(pcm_av_repository_av_InfrastructureSignature.__init__)
 
 
-def test_pcm::av::repository::av::infrastructuresignature_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::InfrastructureSignature.__init__)
+def test_pcm_av_repository_av_infrastructuresignature_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_InfrastructureSignature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2183,44 +2211,44 @@ def test_failuretype_constructor_args():
 
 
 
-def test_pcm::av::reliability::av::softwareinducedfailuretype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::SoftwareInducedFailureType)
+def test_pcm_av_reliability_av_hardwareinducedfailuretype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_HardwareInducedFailureType)
 
 
-def test_pcm::av::reliability::av::softwareinducedfailuretype_constructor_exists():
-    assert callable(pcm::av::reliability::av::SoftwareInducedFailureType.__init__)
+def test_pcm_av_reliability_av_hardwareinducedfailuretype_constructor_exists():
+    assert callable(pcm_av_reliability_av_HardwareInducedFailureType.__init__)
 
 
-def test_pcm::av::reliability::av::softwareinducedfailuretype_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::SoftwareInducedFailureType.__init__)
+def test_pcm_av_reliability_av_hardwareinducedfailuretype_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_HardwareInducedFailureType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::reliability::av::networkinducedfailuretype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::NetworkInducedFailureType)
+def test_pcm_av_reliability_av_networkinducedfailuretype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_NetworkInducedFailureType)
 
 
-def test_pcm::av::reliability::av::networkinducedfailuretype_constructor_exists():
-    assert callable(pcm::av::reliability::av::NetworkInducedFailureType.__init__)
+def test_pcm_av_reliability_av_networkinducedfailuretype_constructor_exists():
+    assert callable(pcm_av_reliability_av_NetworkInducedFailureType.__init__)
 
 
-def test_pcm::av::reliability::av::networkinducedfailuretype_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::NetworkInducedFailureType.__init__)
+def test_pcm_av_reliability_av_networkinducedfailuretype_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_NetworkInducedFailureType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::reliability::av::hardwareinducedfailuretype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::HardwareInducedFailureType)
+def test_pcm_av_reliability_av_softwareinducedfailuretype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_SoftwareInducedFailureType)
 
 
-def test_pcm::av::reliability::av::hardwareinducedfailuretype_constructor_exists():
-    assert callable(pcm::av::reliability::av::HardwareInducedFailureType.__init__)
+def test_pcm_av_reliability_av_softwareinducedfailuretype_constructor_exists():
+    assert callable(pcm_av_reliability_av_SoftwareInducedFailureType.__init__)
 
 
-def test_pcm::av::reliability::av::hardwareinducedfailuretype_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::HardwareInducedFailureType.__init__)
+def test_pcm_av_reliability_av_softwareinducedfailuretype_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_SoftwareInducedFailureType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2239,58 +2267,58 @@ def test_interface_constructor_args():
 
 
 
-def test_pcm::av::repository::av::operationinterface_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::OperationInterface)
+def test_pcm_av_repository_av_infrastructureinterface_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_InfrastructureInterface)
 
 
-def test_pcm::av::repository::av::operationinterface_constructor_exists():
-    assert callable(pcm::av::repository::av::OperationInterface.__init__)
+def test_pcm_av_repository_av_infrastructureinterface_constructor_exists():
+    assert callable(pcm_av_repository_av_InfrastructureInterface.__init__)
 
 
-def test_pcm::av::repository::av::operationinterface_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::OperationInterface.__init__)
+def test_pcm_av_repository_av_infrastructureinterface_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_InfrastructureInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::infrastructureinterface_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::InfrastructureInterface)
+def test_pcm_av_repository_av_eventgroup_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_EventGroup)
 
 
-def test_pcm::av::repository::av::infrastructureinterface_constructor_exists():
-    assert callable(pcm::av::repository::av::InfrastructureInterface.__init__)
+def test_pcm_av_repository_av_eventgroup_constructor_exists():
+    assert callable(pcm_av_repository_av_EventGroup.__init__)
 
 
-def test_pcm::av::repository::av::infrastructureinterface_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::InfrastructureInterface.__init__)
+def test_pcm_av_repository_av_eventgroup_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_EventGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::eventgroup_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::EventGroup)
+def test_pcm_av_repository_av_operationinterface_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_OperationInterface)
 
 
-def test_pcm::av::repository::av::eventgroup_constructor_exists():
-    assert callable(pcm::av::repository::av::EventGroup.__init__)
+def test_pcm_av_repository_av_operationinterface_constructor_exists():
+    assert callable(pcm_av_repository_av_OperationInterface.__init__)
 
 
-def test_pcm::av::repository::av::eventgroup_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::EventGroup.__init__)
+def test_pcm_av_repository_av_operationinterface_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_OperationInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::datatype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::DataType)
+def test_pcm_av_repository_av_datatype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_DataType)
 
 
-def test_pcm::av::repository::av::datatype_constructor_exists():
-    assert callable(pcm::av::repository::av::DataType.__init__)
+def test_pcm_av_repository_av_datatype_constructor_exists():
+    assert callable(pcm_av_repository_av_DataType.__init__)
 
 
-def test_pcm::av::repository::av::datatype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::DataType.__init__)
+def test_pcm_av_repository_av_datatype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2337,23 +2365,23 @@ def test_datatype_constructor_args():
 
 
 
-def test_pcm::av::repository::av::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::PrimitiveDataType)
+def test_pcm_av_repository_av_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_PrimitiveDataType)
 
 
-def test_pcm::av::repository::av::primitivedatatype_constructor_exists():
-    assert callable(pcm::av::repository::av::PrimitiveDataType.__init__)
+def test_pcm_av_repository_av_primitivedatatype_constructor_exists():
+    assert callable(pcm_av_repository_av_PrimitiveDataType.__init__)
 
 
-def test_pcm::av::repository::av::primitivedatatype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::PrimitiveDataType.__init__)
+def test_pcm_av_repository_av_primitivedatatype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_pcm::av::repository::av::primitivedatatype_has_type():
-    assert hasattr(pcm::av::repository::av::PrimitiveDataType, "type")
+def test_pcm_av_repository_av_primitivedatatype_has_type():
+    assert hasattr(pcm_av_repository_av_PrimitiveDataType, "type")
     descriptor = None
-    for klass in pcm::av::repository::av::PrimitiveDataType.__mro__:
+    for klass in pcm_av_repository_av_PrimitiveDataType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -2361,35 +2389,35 @@ def test_pcm::av::repository::av::primitivedatatype_has_type():
 
 
 
-def test_pcm::av::repository::av::parameter_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::Parameter)
+def test_pcm_av_repository_av_parameter_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_Parameter)
 
 
-def test_pcm::av::repository::av::parameter_constructor_exists():
-    assert callable(pcm::av::repository::av::Parameter.__init__)
+def test_pcm_av_repository_av_parameter_constructor_exists():
+    assert callable(pcm_av_repository_av_Parameter.__init__)
 
 
-def test_pcm::av::repository::av::parameter_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::Parameter.__init__)
+def test_pcm_av_repository_av_parameter_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "parameterName" in params, "Missing parameter 'parameterName'"
     assert "modifier__Parameter" in params, "Missing parameter 'modifier__Parameter'"
+    assert "parameterName" in params, "Missing parameter 'parameterName'"
 
-def test_pcm::av::repository::av::parameter_has_parameterName():
-    assert hasattr(pcm::av::repository::av::Parameter, "parameterName")
+def test_pcm_av_repository_av_parameter_has_modifier__Parameter():
+    assert hasattr(pcm_av_repository_av_Parameter, "modifier__Parameter")
     descriptor = None
-    for klass in pcm::av::repository::av::Parameter.__mro__:
-        if "parameterName" in klass.__dict__:
-            descriptor = klass.__dict__["parameterName"]
+    for klass in pcm_av_repository_av_Parameter.__mro__:
+        if "modifier__Parameter" in klass.__dict__:
+            descriptor = klass.__dict__["modifier__Parameter"]
             break
     assert isinstance(descriptor, property)
 
-def test_pcm::av::repository::av::parameter_has_modifier__Parameter():
-    assert hasattr(pcm::av::repository::av::Parameter, "modifier__Parameter")
+def test_pcm_av_repository_av_parameter_has_parameterName():
+    assert hasattr(pcm_av_repository_av_Parameter, "parameterName")
     descriptor = None
-    for klass in pcm::av::repository::av::Parameter.__mro__:
-        if "modifier__Parameter" in klass.__dict__:
-            descriptor = klass.__dict__["modifier__Parameter"]
+    for klass in pcm_av_repository_av_Parameter.__mro__:
+        if "parameterName" in klass.__dict__:
+            descriptor = klass.__dict__["parameterName"]
             break
     assert isinstance(descriptor, property)
 
@@ -2423,16 +2451,16 @@ def test_interfaceprovidingrequiringentity_constructor_args():
 
 
 
-def test_pcm::av::repository::av::repositorycomponent_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::RepositoryComponent)
+def test_pcm_av_repository_av_repositorycomponent_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_RepositoryComponent)
 
 
-def test_pcm::av::repository::av::repositorycomponent_constructor_exists():
-    assert callable(pcm::av::repository::av::RepositoryComponent.__init__)
+def test_pcm_av_repository_av_repositorycomponent_constructor_exists():
+    assert callable(pcm_av_repository_av_RepositoryComponent.__init__)
 
 
-def test_pcm::av::repository::av::repositorycomponent_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::RepositoryComponent.__init__)
+def test_pcm_av_repository_av_repositorycomponent_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_RepositoryComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2493,16 +2521,16 @@ def test_implementationcomponenttype_constructor_args():
 
 
 
-def test_pcm::av::repository::av::basiccomponent_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::BasicComponent)
+def test_pcm_av_repository_av_basiccomponent_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_BasicComponent)
 
 
-def test_pcm::av::repository::av::basiccomponent_constructor_exists():
-    assert callable(pcm::av::repository::av::BasicComponent.__init__)
+def test_pcm_av_repository_av_basiccomponent_constructor_exists():
+    assert callable(pcm_av_repository_av_BasicComponent.__init__)
 
 
-def test_pcm::av::repository::av::basiccomponent_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::BasicComponent.__init__)
+def test_pcm_av_repository_av_basiccomponent_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_BasicComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2563,23 +2591,23 @@ def test_branch_constructor_args():
 
 
 
-def test_pcm::av::usagemodel::av::branchtransition_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::BranchTransition)
+def test_pcm_av_usagemodel_av_branchtransition_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_BranchTransition)
 
 
-def test_pcm::av::usagemodel::av::branchtransition_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::BranchTransition.__init__)
+def test_pcm_av_usagemodel_av_branchtransition_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_BranchTransition.__init__)
 
 
-def test_pcm::av::usagemodel::av::branchtransition_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::BranchTransition.__init__)
+def test_pcm_av_usagemodel_av_branchtransition_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_BranchTransition.__init__)
     params = list(sig.parameters.keys())
     assert "branchProbability" in params, "Missing parameter 'branchProbability'"
 
-def test_pcm::av::usagemodel::av::branchtransition_has_branchProbability():
-    assert hasattr(pcm::av::usagemodel::av::BranchTransition, "branchProbability")
+def test_pcm_av_usagemodel_av_branchtransition_has_branchProbability():
+    assert hasattr(pcm_av_usagemodel_av_BranchTransition, "branchProbability")
     descriptor = None
-    for klass in pcm::av::usagemodel::av::BranchTransition.__mro__:
+    for klass in pcm_av_usagemodel_av_BranchTransition.__mro__:
         if "branchProbability" in klass.__dict__:
             descriptor = klass.__dict__["branchProbability"]
             break
@@ -2601,93 +2629,93 @@ def test_abstractuseraction_constructor_args():
 
 
 
-def test_pcm::av::usagemodel::av::loop_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::Loop)
+def test_pcm_av_usagemodel_av_delay_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_Delay)
 
 
-def test_pcm::av::usagemodel::av::loop_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::Loop.__init__)
+def test_pcm_av_usagemodel_av_delay_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_Delay.__init__)
 
 
-def test_pcm::av::usagemodel::av::loop_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::Loop.__init__)
+def test_pcm_av_usagemodel_av_delay_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_Delay.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::start_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::Start)
+def test_pcm_av_usagemodel_av_loop_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_Loop)
 
 
-def test_pcm::av::usagemodel::av::start_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::Start.__init__)
+def test_pcm_av_usagemodel_av_loop_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_Loop.__init__)
 
 
-def test_pcm::av::usagemodel::av::start_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::Start.__init__)
+def test_pcm_av_usagemodel_av_loop_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::delay_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::Delay)
+def test_pcm_av_usagemodel_av_branch_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_Branch)
 
 
-def test_pcm::av::usagemodel::av::delay_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::Delay.__init__)
+def test_pcm_av_usagemodel_av_branch_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_Branch.__init__)
 
 
-def test_pcm::av::usagemodel::av::delay_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::Delay.__init__)
+def test_pcm_av_usagemodel_av_branch_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::branch_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::Branch)
+def test_pcm_av_usagemodel_av_start_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_Start)
 
 
-def test_pcm::av::usagemodel::av::branch_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::Branch.__init__)
+def test_pcm_av_usagemodel_av_start_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_Start.__init__)
 
 
-def test_pcm::av::usagemodel::av::branch_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::Branch.__init__)
+def test_pcm_av_usagemodel_av_start_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::stop_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::Stop)
+def test_pcm_av_usagemodel_av_stop_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_Stop)
 
 
-def test_pcm::av::usagemodel::av::stop_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::Stop.__init__)
+def test_pcm_av_usagemodel_av_stop_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_Stop.__init__)
 
 
-def test_pcm::av::usagemodel::av::stop_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::Stop.__init__)
+def test_pcm_av_usagemodel_av_stop_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_Stop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::EntryLevelSystemCall)
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_EntryLevelSystemCall)
 
 
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::EntryLevelSystemCall.__init__)
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_EntryLevelSystemCall.__init__)
 
 
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::EntryLevelSystemCall.__init__)
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_EntryLevelSystemCall.__init__)
     params = list(sig.parameters.keys())
     assert "priority" in params, "Missing parameter 'priority'"
 
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_has_priority():
-    assert hasattr(pcm::av::usagemodel::av::EntryLevelSystemCall, "priority")
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_has_priority():
+    assert hasattr(pcm_av_usagemodel_av_EntryLevelSystemCall, "priority")
     descriptor = None
-    for klass in pcm::av::usagemodel::av::EntryLevelSystemCall.__mro__:
+    for klass in pcm_av_usagemodel_av_EntryLevelSystemCall.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
@@ -2709,30 +2737,30 @@ def test_userdata_constructor_args():
 
 
 
-def test_pcm::av::usagemodel::av::usagemodel_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::UsageModel)
+def test_pcm_av_usagemodel_av_usagemodel_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_UsageModel)
 
 
-def test_pcm::av::usagemodel::av::usagemodel_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::UsageModel.__init__)
+def test_pcm_av_usagemodel_av_usagemodel_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_UsageModel.__init__)
 
 
-def test_pcm::av::usagemodel::av::usagemodel_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::UsageModel.__init__)
+def test_pcm_av_usagemodel_av_usagemodel_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_UsageModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::userdata_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::UserData)
+def test_pcm_av_usagemodel_av_userdata_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_UserData)
 
 
-def test_pcm::av::usagemodel::av::userdata_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::UserData.__init__)
+def test_pcm_av_usagemodel_av_userdata_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_UserData.__init__)
 
 
-def test_pcm::av::usagemodel::av::userdata_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::UserData.__init__)
+def test_pcm_av_usagemodel_av_userdata_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_UserData.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2751,41 +2779,41 @@ def test_workload_constructor_args():
 
 
 
-def test_pcm::av::usagemodel::av::closedworkload_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::ClosedWorkload)
+def test_pcm_av_usagemodel_av_openworkload_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_OpenWorkload)
 
 
-def test_pcm::av::usagemodel::av::closedworkload_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::ClosedWorkload.__init__)
+def test_pcm_av_usagemodel_av_openworkload_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_OpenWorkload.__init__)
 
 
-def test_pcm::av::usagemodel::av::closedworkload_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::ClosedWorkload.__init__)
+def test_pcm_av_usagemodel_av_openworkload_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_OpenWorkload.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_usagemodel_av_closedworkload_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_ClosedWorkload)
+
+
+def test_pcm_av_usagemodel_av_closedworkload_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_ClosedWorkload.__init__)
+
+
+def test_pcm_av_usagemodel_av_closedworkload_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_ClosedWorkload.__init__)
     params = list(sig.parameters.keys())
     assert "population" in params, "Missing parameter 'population'"
 
-def test_pcm::av::usagemodel::av::closedworkload_has_population():
-    assert hasattr(pcm::av::usagemodel::av::ClosedWorkload, "population")
+def test_pcm_av_usagemodel_av_closedworkload_has_population():
+    assert hasattr(pcm_av_usagemodel_av_ClosedWorkload, "population")
     descriptor = None
-    for klass in pcm::av::usagemodel::av::ClosedWorkload.__mro__:
+    for klass in pcm_av_usagemodel_av_ClosedWorkload.__mro__:
         if "population" in klass.__dict__:
             descriptor = klass.__dict__["population"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_pcm::av::usagemodel::av::openworkload_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::OpenWorkload)
-
-
-def test_pcm::av::usagemodel::av::openworkload_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::OpenWorkload.__init__)
-
-
-def test_pcm::av::usagemodel::av::openworkload_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::OpenWorkload.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2831,16 +2859,16 @@ def test_usagescenario_constructor_args():
 
 
 
-def test_pcm::av::usagemodel::av::workload_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::Workload)
+def test_pcm_av_usagemodel_av_workload_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_Workload)
 
 
-def test_pcm::av::usagemodel::av::workload_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::Workload.__init__)
+def test_pcm_av_usagemodel_av_workload_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_Workload.__init__)
 
 
-def test_pcm::av::usagemodel::av::workload_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::Workload.__init__)
+def test_pcm_av_usagemodel_av_workload_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_Workload.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2887,51 +2915,51 @@ def test_repositorycomponent_constructor_args():
 
 
 
-def test_pcm::av::repository::av::completecomponenttype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::CompleteComponentType)
+def test_pcm_av_repository_av_completecomponenttype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_CompleteComponentType)
 
 
-def test_pcm::av::repository::av::completecomponenttype_constructor_exists():
-    assert callable(pcm::av::repository::av::CompleteComponentType.__init__)
+def test_pcm_av_repository_av_completecomponenttype_constructor_exists():
+    assert callable(pcm_av_repository_av_CompleteComponentType.__init__)
 
 
-def test_pcm::av::repository::av::completecomponenttype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::CompleteComponentType.__init__)
+def test_pcm_av_repository_av_completecomponenttype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_CompleteComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::providescomponenttype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::ProvidesComponentType)
+def test_pcm_av_repository_av_providescomponenttype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_ProvidesComponentType)
 
 
-def test_pcm::av::repository::av::providescomponenttype_constructor_exists():
-    assert callable(pcm::av::repository::av::ProvidesComponentType.__init__)
+def test_pcm_av_repository_av_providescomponenttype_constructor_exists():
+    assert callable(pcm_av_repository_av_ProvidesComponentType.__init__)
 
 
-def test_pcm::av::repository::av::providescomponenttype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::ProvidesComponentType.__init__)
+def test_pcm_av_repository_av_providescomponenttype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_ProvidesComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::implementationcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::ImplementationComponentType)
+def test_pcm_av_repository_av_implementationcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_ImplementationComponentType)
 
 
-def test_pcm::av::repository::av::implementationcomponenttype_constructor_exists():
-    assert callable(pcm::av::repository::av::ImplementationComponentType.__init__)
+def test_pcm_av_repository_av_implementationcomponenttype_constructor_exists():
+    assert callable(pcm_av_repository_av_ImplementationComponentType.__init__)
 
 
-def test_pcm::av::repository::av::implementationcomponenttype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::ImplementationComponentType.__init__)
+def test_pcm_av_repository_av_implementationcomponenttype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_ImplementationComponentType.__init__)
     params = list(sig.parameters.keys())
     assert "componentType" in params, "Missing parameter 'componentType'"
 
-def test_pcm::av::repository::av::implementationcomponenttype_has_componentType():
-    assert hasattr(pcm::av::repository::av::ImplementationComponentType, "componentType")
+def test_pcm_av_repository_av_implementationcomponenttype_has_componentType():
+    assert hasattr(pcm_av_repository_av_ImplementationComponentType, "componentType")
     descriptor = None
-    for klass in pcm::av::repository::av::ImplementationComponentType.__mro__:
+    for klass in pcm_av_repository_av_ImplementationComponentType.__mro__:
         if "componentType" in klass.__dict__:
             descriptor = klass.__dict__["componentType"]
             break
@@ -3037,16 +3065,16 @@ def test_sourcerole_constructor_args():
 
 
 
-def test_composition::av::eventchannelsourceconnector_is_not_abstract():
-    assert not inspect.isabstract(composition::av::EventChannelSourceConnector)
+def test_composition_av_eventchannelsourceconnector_is_not_abstract():
+    assert not inspect.isabstract(composition_av_EventChannelSourceConnector)
 
 
-def test_composition::av::eventchannelsourceconnector_constructor_exists():
-    assert callable(composition::av::EventChannelSourceConnector.__init__)
+def test_composition_av_eventchannelsourceconnector_constructor_exists():
+    assert callable(composition_av_EventChannelSourceConnector.__init__)
 
 
-def test_composition::av::eventchannelsourceconnector_constructor_args():
-    sig = inspect.signature(composition::av::EventChannelSourceConnector.__init__)
+def test_composition_av_eventchannelsourceconnector_constructor_args():
+    sig = inspect.signature(composition_av_EventChannelSourceConnector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3065,72 +3093,72 @@ def test_eventgroup_constructor_args():
 
 
 
-def test_pcm::av::composition::av::resourcerequireddelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::ResourceRequiredDelegationConnector)
+def test_pcm_av_composition_av_resourcerequireddelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_ResourceRequiredDelegationConnector)
 
 
-def test_pcm::av::composition::av::resourcerequireddelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::ResourceRequiredDelegationConnector.__init__)
+def test_pcm_av_composition_av_resourcerequireddelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_ResourceRequiredDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::resourcerequireddelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::ResourceRequiredDelegationConnector.__init__)
+def test_pcm_av_composition_av_resourcerequireddelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_ResourceRequiredDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_composition::av::connector_is_not_abstract():
-    assert not inspect.isabstract(composition::av::Connector)
+def test_composition_av_connector_is_not_abstract():
+    assert not inspect.isabstract(composition_av_Connector)
 
 
-def test_composition::av::connector_constructor_exists():
-    assert callable(composition::av::Connector.__init__)
+def test_composition_av_connector_constructor_exists():
+    assert callable(composition_av_Connector.__init__)
 
 
-def test_composition::av::connector_constructor_args():
-    sig = inspect.signature(composition::av::Connector.__init__)
+def test_composition_av_connector_constructor_args():
+    sig = inspect.signature(composition_av_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_composition::av::eventchannel_is_not_abstract():
-    assert not inspect.isabstract(composition::av::EventChannel)
+def test_composition_av_eventchannel_is_not_abstract():
+    assert not inspect.isabstract(composition_av_EventChannel)
 
 
-def test_composition::av::eventchannel_constructor_exists():
-    assert callable(composition::av::EventChannel.__init__)
+def test_composition_av_eventchannel_constructor_exists():
+    assert callable(composition_av_EventChannel.__init__)
 
 
-def test_composition::av::eventchannel_constructor_args():
-    sig = inspect.signature(composition::av::EventChannel.__init__)
+def test_composition_av_eventchannel_constructor_args():
+    sig = inspect.signature(composition_av_EventChannel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_composition::av::resourcerequireddelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(composition::av::ResourceRequiredDelegationConnector)
+def test_composition_av_resourcerequireddelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(composition_av_ResourceRequiredDelegationConnector)
 
 
-def test_composition::av::resourcerequireddelegationconnector_constructor_exists():
-    assert callable(composition::av::ResourceRequiredDelegationConnector.__init__)
+def test_composition_av_resourcerequireddelegationconnector_constructor_exists():
+    assert callable(composition_av_ResourceRequiredDelegationConnector.__init__)
 
 
-def test_composition::av::resourcerequireddelegationconnector_constructor_args():
-    sig = inspect.signature(composition::av::ResourceRequiredDelegationConnector.__init__)
+def test_composition_av_resourcerequireddelegationconnector_constructor_args():
+    sig = inspect.signature(composition_av_ResourceRequiredDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_composition::av::assemblycontext_is_not_abstract():
-    assert not inspect.isabstract(composition::av::AssemblyContext)
+def test_composition_av_assemblycontext_is_not_abstract():
+    assert not inspect.isabstract(composition_av_AssemblyContext)
 
 
-def test_composition::av::assemblycontext_constructor_exists():
-    assert callable(composition::av::AssemblyContext.__init__)
+def test_composition_av_assemblycontext_constructor_exists():
+    assert callable(composition_av_AssemblyContext.__init__)
 
 
-def test_composition::av::assemblycontext_constructor_args():
-    sig = inspect.signature(composition::av::AssemblyContext.__init__)
+def test_composition_av_assemblycontext_constructor_args():
+    sig = inspect.signature(composition_av_AssemblyContext.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3149,100 +3177,100 @@ def test_delegationconnector_constructor_args():
 
 
 
-def test_pcm::av::composition::av::requireddelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::RequiredDelegationConnector)
+def test_pcm_av_composition_av_requiredinfrastructuredelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_RequiredInfrastructureDelegationConnector)
 
 
-def test_pcm::av::composition::av::requireddelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::RequiredDelegationConnector.__init__)
+def test_pcm_av_composition_av_requiredinfrastructuredelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_RequiredInfrastructureDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::requireddelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::RequiredDelegationConnector.__init__)
+def test_pcm_av_composition_av_requiredinfrastructuredelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_RequiredInfrastructureDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::providedinfrastructuredelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::ProvidedInfrastructureDelegationConnector)
+def test_pcm_av_composition_av_sinkdelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_SinkDelegationConnector)
 
 
-def test_pcm::av::composition::av::providedinfrastructuredelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::ProvidedInfrastructureDelegationConnector.__init__)
+def test_pcm_av_composition_av_sinkdelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_SinkDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::providedinfrastructuredelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::ProvidedInfrastructureDelegationConnector.__init__)
+def test_pcm_av_composition_av_sinkdelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_SinkDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::requiredresourcedelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::RequiredResourceDelegationConnector)
+def test_pcm_av_composition_av_requiredresourcedelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_RequiredResourceDelegationConnector)
 
 
-def test_pcm::av::composition::av::requiredresourcedelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::RequiredResourceDelegationConnector.__init__)
+def test_pcm_av_composition_av_requiredresourcedelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_RequiredResourceDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::requiredresourcedelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::RequiredResourceDelegationConnector.__init__)
+def test_pcm_av_composition_av_requiredresourcedelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_RequiredResourceDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::requiredinfrastructuredelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::RequiredInfrastructureDelegationConnector)
+def test_pcm_av_composition_av_requireddelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_RequiredDelegationConnector)
 
 
-def test_pcm::av::composition::av::requiredinfrastructuredelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::RequiredInfrastructureDelegationConnector.__init__)
+def test_pcm_av_composition_av_requireddelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_RequiredDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::requiredinfrastructuredelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::RequiredInfrastructureDelegationConnector.__init__)
+def test_pcm_av_composition_av_requireddelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_RequiredDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::sinkdelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::SinkDelegationConnector)
+def test_pcm_av_composition_av_sourcedelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_SourceDelegationConnector)
 
 
-def test_pcm::av::composition::av::sinkdelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::SinkDelegationConnector.__init__)
+def test_pcm_av_composition_av_sourcedelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_SourceDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::sinkdelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::SinkDelegationConnector.__init__)
+def test_pcm_av_composition_av_sourcedelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_SourceDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::sourcedelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::SourceDelegationConnector)
+def test_pcm_av_composition_av_providedinfrastructuredelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_ProvidedInfrastructureDelegationConnector)
 
 
-def test_pcm::av::composition::av::sourcedelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::SourceDelegationConnector.__init__)
+def test_pcm_av_composition_av_providedinfrastructuredelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_ProvidedInfrastructureDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::sourcedelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::SourceDelegationConnector.__init__)
+def test_pcm_av_composition_av_providedinfrastructuredelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_ProvidedInfrastructureDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::provideddelegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::ProvidedDelegationConnector)
+def test_pcm_av_composition_av_provideddelegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_ProvidedDelegationConnector)
 
 
-def test_pcm::av::composition::av::provideddelegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::ProvidedDelegationConnector.__init__)
+def test_pcm_av_composition_av_provideddelegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_ProvidedDelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::provideddelegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::ProvidedDelegationConnector.__init__)
+def test_pcm_av_composition_av_provideddelegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_ProvidedDelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3261,100 +3289,100 @@ def test_connector_constructor_args():
 
 
 
-def test_pcm::av::composition::av::assemblyinfrastructureconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::AssemblyInfrastructureConnector)
+def test_pcm_av_composition_av_assemblyconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_AssemblyConnector)
 
 
-def test_pcm::av::composition::av::assemblyinfrastructureconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::AssemblyInfrastructureConnector.__init__)
+def test_pcm_av_composition_av_assemblyconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_AssemblyConnector.__init__)
 
 
-def test_pcm::av::composition::av::assemblyinfrastructureconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::AssemblyInfrastructureConnector.__init__)
+def test_pcm_av_composition_av_assemblyconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_AssemblyConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::eventchannelsinkconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::EventChannelSinkConnector)
+def test_pcm_av_composition_av_assemblyinfrastructureconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_AssemblyInfrastructureConnector)
 
 
-def test_pcm::av::composition::av::eventchannelsinkconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::EventChannelSinkConnector.__init__)
+def test_pcm_av_composition_av_assemblyinfrastructureconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_AssemblyInfrastructureConnector.__init__)
 
 
-def test_pcm::av::composition::av::eventchannelsinkconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::EventChannelSinkConnector.__init__)
+def test_pcm_av_composition_av_assemblyinfrastructureconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_AssemblyInfrastructureConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::eventchannelsourceconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::EventChannelSourceConnector)
+def test_pcm_av_composition_av_assemblyeventconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_AssemblyEventConnector)
 
 
-def test_pcm::av::composition::av::eventchannelsourceconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::EventChannelSourceConnector.__init__)
+def test_pcm_av_composition_av_assemblyeventconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_AssemblyEventConnector.__init__)
 
 
-def test_pcm::av::composition::av::eventchannelsourceconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::EventChannelSourceConnector.__init__)
+def test_pcm_av_composition_av_assemblyeventconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_AssemblyEventConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::assemblyeventconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::AssemblyEventConnector)
+def test_pcm_av_composition_av_eventchannelsinkconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_EventChannelSinkConnector)
 
 
-def test_pcm::av::composition::av::assemblyeventconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::AssemblyEventConnector.__init__)
+def test_pcm_av_composition_av_eventchannelsinkconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_EventChannelSinkConnector.__init__)
 
 
-def test_pcm::av::composition::av::assemblyeventconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::AssemblyEventConnector.__init__)
+def test_pcm_av_composition_av_eventchannelsinkconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_EventChannelSinkConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::assemblyconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::AssemblyConnector)
+def test_pcm_av_composition_av_eventchannelsourceconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_EventChannelSourceConnector)
 
 
-def test_pcm::av::composition::av::assemblyconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::AssemblyConnector.__init__)
+def test_pcm_av_composition_av_eventchannelsourceconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_EventChannelSourceConnector.__init__)
 
 
-def test_pcm::av::composition::av::assemblyconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::AssemblyConnector.__init__)
+def test_pcm_av_composition_av_eventchannelsourceconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_EventChannelSourceConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::delegationconnector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::DelegationConnector)
+def test_pcm_av_composition_av_delegationconnector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_DelegationConnector)
 
 
-def test_pcm::av::composition::av::delegationconnector_constructor_exists():
-    assert callable(pcm::av::composition::av::DelegationConnector.__init__)
+def test_pcm_av_composition_av_delegationconnector_constructor_exists():
+    assert callable(pcm_av_composition_av_DelegationConnector.__init__)
 
 
-def test_pcm::av::composition::av::delegationconnector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::DelegationConnector.__init__)
+def test_pcm_av_composition_av_delegationconnector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_DelegationConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::namedelement_is_not_abstract():
-    assert not inspect.isabstract(entity::av::NamedElement)
+def test_entity_av_namedelement_is_not_abstract():
+    assert not inspect.isabstract(entity_av_NamedElement)
 
 
-def test_entity::av::namedelement_constructor_exists():
-    assert callable(entity::av::NamedElement.__init__)
+def test_entity_av_namedelement_constructor_exists():
+    assert callable(entity_av_NamedElement.__init__)
 
 
-def test_entity::av::namedelement_constructor_args():
-    sig = inspect.signature(entity::av::NamedElement.__init__)
+def test_entity_av_namedelement_constructor_args():
+    sig = inspect.signature(entity_av_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3373,23 +3401,91 @@ def test_identifier_constructor_args():
 
 
 
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourceenvironment_av_ProcessingResourceSpecification)
 
 
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_constructor_exists():
-    assert callable(pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification.__init__)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_constructor_exists():
+    assert callable(pcm_av_resourceenvironment_av_ProcessingResourceSpecification.__init__)
 
 
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_constructor_args():
-    sig = inspect.signature(pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification.__init__)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_constructor_args():
+    sig = inspect.signature(pcm_av_resourceenvironment_av_ProcessingResourceSpecification.__init__)
+    params = list(sig.parameters.keys())
+    assert "MTTR" in params, "Missing parameter 'MTTR'"
+    assert "requiredByContainer" in params, "Missing parameter 'requiredByContainer'"
+    assert "numberOfReplicas" in params, "Missing parameter 'numberOfReplicas'"
+    assert "MTTF" in params, "Missing parameter 'MTTF'"
+
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_has_MTTR():
+    assert hasattr(pcm_av_resourceenvironment_av_ProcessingResourceSpecification, "MTTR")
+    descriptor = None
+    for klass in pcm_av_resourceenvironment_av_ProcessingResourceSpecification.__mro__:
+        if "MTTR" in klass.__dict__:
+            descriptor = klass.__dict__["MTTR"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_has_requiredByContainer():
+    assert hasattr(pcm_av_resourceenvironment_av_ProcessingResourceSpecification, "requiredByContainer")
+    descriptor = None
+    for klass in pcm_av_resourceenvironment_av_ProcessingResourceSpecification.__mro__:
+        if "requiredByContainer" in klass.__dict__:
+            descriptor = klass.__dict__["requiredByContainer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_has_numberOfReplicas():
+    assert hasattr(pcm_av_resourceenvironment_av_ProcessingResourceSpecification, "numberOfReplicas")
+    descriptor = None
+    for klass in pcm_av_resourceenvironment_av_ProcessingResourceSpecification.__mro__:
+        if "numberOfReplicas" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfReplicas"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_has_MTTF():
+    assert hasattr(pcm_av_resourceenvironment_av_ProcessingResourceSpecification, "MTTF")
+    descriptor = None
+    for klass in pcm_av_resourceenvironment_av_ProcessingResourceSpecification.__mro__:
+        if "MTTF" in klass.__dict__:
+            descriptor = klass.__dict__["MTTF"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pcm_av_seff_av_resourcedemandingbehaviour_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ResourceDemandingBehaviour)
+
+
+def test_pcm_av_seff_av_resourcedemandingbehaviour_constructor_exists():
+    assert callable(pcm_av_seff_av_ResourceDemandingBehaviour.__init__)
+
+
+def test_pcm_av_seff_av_resourcedemandingbehaviour_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ResourceDemandingBehaviour.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_resourceenvironment_av_communicationlinkresourcespecification_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification)
+
+
+def test_pcm_av_resourceenvironment_av_communicationlinkresourcespecification_constructor_exists():
+    assert callable(pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification.__init__)
+
+
+def test_pcm_av_resourceenvironment_av_communicationlinkresourcespecification_constructor_args():
+    sig = inspect.signature(pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "failureProbability" in params, "Missing parameter 'failureProbability'"
 
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_has_failureProbability():
-    assert hasattr(pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification, "failureProbability")
+def test_pcm_av_resourceenvironment_av_communicationlinkresourcespecification_has_failureProbability():
+    assert hasattr(pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification, "failureProbability")
     descriptor = None
-    for klass in pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification.__mro__:
+    for klass in pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification.__mro__:
         if "failureProbability" in klass.__dict__:
             descriptor = klass.__dict__["failureProbability"]
             break
@@ -3397,119 +3493,51 @@ def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecificatio
 
 
 
-def test_pcm::av::seff::av::resourcedemandingbehaviour_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ResourceDemandingBehaviour)
+def test_pcm_av_seff_av_resourcedemandingseff_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_ResourceDemandingSEFF)
 
 
-def test_pcm::av::seff::av::resourcedemandingbehaviour_constructor_exists():
-    assert callable(pcm::av::seff::av::ResourceDemandingBehaviour.__init__)
+def test_pcm_av_seff_av_resourcedemandingseff_constructor_exists():
+    assert callable(pcm_av_seff_av_ResourceDemandingSEFF.__init__)
 
 
-def test_pcm::av::seff::av::resourcedemandingbehaviour_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ResourceDemandingBehaviour.__init__)
+def test_pcm_av_seff_av_resourcedemandingseff_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_ResourceDemandingSEFF.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::resourcedemandingseff_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::ResourceDemandingSEFF)
+def test_pcm_av_entity_av_entity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_Entity)
 
 
-def test_pcm::av::seff::av::resourcedemandingseff_constructor_exists():
-    assert callable(pcm::av::seff::av::ResourceDemandingSEFF.__init__)
+def test_pcm_av_entity_av_entity_constructor_exists():
+    assert callable(pcm_av_entity_av_Entity.__init__)
 
 
-def test_pcm::av::seff::av::resourcedemandingseff_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::ResourceDemandingSEFF.__init__)
+def test_pcm_av_entity_av_entity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourceenvironment::av::ProcessingResourceSpecification)
+def test_pcm_av_entity_av_namedelement_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_NamedElement)
 
 
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_constructor_exists():
-    assert callable(pcm::av::resourceenvironment::av::ProcessingResourceSpecification.__init__)
+def test_pcm_av_entity_av_namedelement_constructor_exists():
+    assert callable(pcm_av_entity_av_NamedElement.__init__)
 
 
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_constructor_args():
-    sig = inspect.signature(pcm::av::resourceenvironment::av::ProcessingResourceSpecification.__init__)
-    params = list(sig.parameters.keys())
-    assert "MTTF" in params, "Missing parameter 'MTTF'"
-    assert "requiredByContainer" in params, "Missing parameter 'requiredByContainer'"
-    assert "MTTR" in params, "Missing parameter 'MTTR'"
-    assert "numberOfReplicas" in params, "Missing parameter 'numberOfReplicas'"
-
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_has_MTTF():
-    assert hasattr(pcm::av::resourceenvironment::av::ProcessingResourceSpecification, "MTTF")
-    descriptor = None
-    for klass in pcm::av::resourceenvironment::av::ProcessingResourceSpecification.__mro__:
-        if "MTTF" in klass.__dict__:
-            descriptor = klass.__dict__["MTTF"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_has_requiredByContainer():
-    assert hasattr(pcm::av::resourceenvironment::av::ProcessingResourceSpecification, "requiredByContainer")
-    descriptor = None
-    for klass in pcm::av::resourceenvironment::av::ProcessingResourceSpecification.__mro__:
-        if "requiredByContainer" in klass.__dict__:
-            descriptor = klass.__dict__["requiredByContainer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_has_MTTR():
-    assert hasattr(pcm::av::resourceenvironment::av::ProcessingResourceSpecification, "MTTR")
-    descriptor = None
-    for klass in pcm::av::resourceenvironment::av::ProcessingResourceSpecification.__mro__:
-        if "MTTR" in klass.__dict__:
-            descriptor = klass.__dict__["MTTR"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_has_numberOfReplicas():
-    assert hasattr(pcm::av::resourceenvironment::av::ProcessingResourceSpecification, "numberOfReplicas")
-    descriptor = None
-    for klass in pcm::av::resourceenvironment::av::ProcessingResourceSpecification.__mro__:
-        if "numberOfReplicas" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfReplicas"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pcm::av::entity::av::entity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::Entity)
-
-
-def test_pcm::av::entity::av::entity_constructor_exists():
-    assert callable(pcm::av::entity::av::Entity.__init__)
-
-
-def test_pcm::av::entity::av::entity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::Entity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::entity::av::namedelement_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::NamedElement)
-
-
-def test_pcm::av::entity::av::namedelement_constructor_exists():
-    assert callable(pcm::av::entity::av::NamedElement.__init__)
-
-
-def test_pcm::av::entity::av::namedelement_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::NamedElement.__init__)
+def test_pcm_av_entity_av_namedelement_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "entityName" in params, "Missing parameter 'entityName'"
 
-def test_pcm::av::entity::av::namedelement_has_entityName():
-    assert hasattr(pcm::av::entity::av::NamedElement, "entityName")
+def test_pcm_av_entity_av_namedelement_has_entityName():
+    assert hasattr(pcm_av_entity_av_NamedElement, "entityName")
     descriptor = None
-    for klass in pcm::av::entity::av::NamedElement.__mro__:
+    for klass in pcm_av_entity_av_NamedElement.__mro__:
         if "entityName" in klass.__dict__:
             descriptor = klass.__dict__["entityName"]
             break
@@ -3517,58 +3545,58 @@ def test_pcm::av::entity::av::namedelement_has_entityName():
 
 
 
-def test_entity::av::interfaceprovidingrequiringentity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::InterfaceProvidingRequiringEntity)
+def test_entity_av_interfaceprovidingrequiringentity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_InterfaceProvidingRequiringEntity)
 
 
-def test_entity::av::interfaceprovidingrequiringentity_constructor_exists():
-    assert callable(entity::av::InterfaceProvidingRequiringEntity.__init__)
+def test_entity_av_interfaceprovidingrequiringentity_constructor_exists():
+    assert callable(entity_av_InterfaceProvidingRequiringEntity.__init__)
 
 
-def test_entity::av::interfaceprovidingrequiringentity_constructor_args():
-    sig = inspect.signature(entity::av::InterfaceProvidingRequiringEntity.__init__)
+def test_entity_av_interfaceprovidingrequiringentity_constructor_args():
+    sig = inspect.signature(entity_av_InterfaceProvidingRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_composition::av::composedstructure_is_not_abstract():
-    assert not inspect.isabstract(composition::av::ComposedStructure)
+def test_composition_av_composedstructure_is_not_abstract():
+    assert not inspect.isabstract(composition_av_ComposedStructure)
 
 
-def test_composition::av::composedstructure_constructor_exists():
-    assert callable(composition::av::ComposedStructure.__init__)
+def test_composition_av_composedstructure_constructor_exists():
+    assert callable(composition_av_ComposedStructure.__init__)
 
 
-def test_composition::av::composedstructure_constructor_args():
-    sig = inspect.signature(composition::av::ComposedStructure.__init__)
+def test_composition_av_composedstructure_constructor_args():
+    sig = inspect.signature(composition_av_ComposedStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::entity::av::composedprovidingrequiringentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::ComposedProvidingRequiringEntity)
+def test_pcm_av_entity_av_composedprovidingrequiringentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_ComposedProvidingRequiringEntity)
 
 
-def test_pcm::av::entity::av::composedprovidingrequiringentity_constructor_exists():
-    assert callable(pcm::av::entity::av::ComposedProvidingRequiringEntity.__init__)
+def test_pcm_av_entity_av_composedprovidingrequiringentity_constructor_exists():
+    assert callable(pcm_av_entity_av_ComposedProvidingRequiringEntity.__init__)
 
 
-def test_pcm::av::entity::av::composedprovidingrequiringentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::ComposedProvidingRequiringEntity.__init__)
+def test_pcm_av_entity_av_composedprovidingrequiringentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_ComposedProvidingRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::resourceprovidedrole_is_not_abstract():
-    assert not inspect.isabstract(entity::av::ResourceProvidedRole)
+def test_entity_av_resourceprovidedrole_is_not_abstract():
+    assert not inspect.isabstract(entity_av_ResourceProvidedRole)
 
 
-def test_entity::av::resourceprovidedrole_constructor_exists():
-    assert callable(entity::av::ResourceProvidedRole.__init__)
+def test_entity_av_resourceprovidedrole_constructor_exists():
+    assert callable(entity_av_ResourceProvidedRole.__init__)
 
 
-def test_entity::av::resourceprovidedrole_constructor_args():
-    sig = inspect.signature(entity::av::ResourceProvidedRole.__init__)
+def test_entity_av_resourceprovidedrole_constructor_args():
+    sig = inspect.signature(entity_av_ResourceProvidedRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3587,128 +3615,128 @@ def test_requiredrole_constructor_args():
 
 
 
-def test_pcm::av::repository::av::infrastructurerequiredrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::InfrastructureRequiredRole)
+def test_pcm_av_repository_av_infrastructurerequiredrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_InfrastructureRequiredRole)
 
 
-def test_pcm::av::repository::av::infrastructurerequiredrole_constructor_exists():
-    assert callable(pcm::av::repository::av::InfrastructureRequiredRole.__init__)
+def test_pcm_av_repository_av_infrastructurerequiredrole_constructor_exists():
+    assert callable(pcm_av_repository_av_InfrastructureRequiredRole.__init__)
 
 
-def test_pcm::av::repository::av::infrastructurerequiredrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::InfrastructureRequiredRole.__init__)
+def test_pcm_av_repository_av_infrastructurerequiredrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_InfrastructureRequiredRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::sourcerole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::SourceRole)
+def test_pcm_av_repository_av_operationrequiredrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_OperationRequiredRole)
 
 
-def test_pcm::av::repository::av::sourcerole_constructor_exists():
-    assert callable(pcm::av::repository::av::SourceRole.__init__)
+def test_pcm_av_repository_av_operationrequiredrole_constructor_exists():
+    assert callable(pcm_av_repository_av_OperationRequiredRole.__init__)
 
 
-def test_pcm::av::repository::av::sourcerole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::SourceRole.__init__)
+def test_pcm_av_repository_av_operationrequiredrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_OperationRequiredRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::operationrequiredrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::OperationRequiredRole)
+def test_pcm_av_repository_av_sourcerole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_SourceRole)
 
 
-def test_pcm::av::repository::av::operationrequiredrole_constructor_exists():
-    assert callable(pcm::av::repository::av::OperationRequiredRole.__init__)
+def test_pcm_av_repository_av_sourcerole_constructor_exists():
+    assert callable(pcm_av_repository_av_SourceRole.__init__)
 
 
-def test_pcm::av::repository::av::operationrequiredrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::OperationRequiredRole.__init__)
+def test_pcm_av_repository_av_sourcerole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_SourceRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::resourceinterfacerequiringentity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::ResourceInterfaceRequiringEntity)
+def test_entity_av_resourceinterfacerequiringentity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_ResourceInterfaceRequiringEntity)
 
 
-def test_entity::av::resourceinterfacerequiringentity_constructor_exists():
-    assert callable(entity::av::ResourceInterfaceRequiringEntity.__init__)
+def test_entity_av_resourceinterfacerequiringentity_constructor_exists():
+    assert callable(entity_av_ResourceInterfaceRequiringEntity.__init__)
 
 
-def test_entity::av::resourceinterfacerequiringentity_constructor_args():
-    sig = inspect.signature(entity::av::ResourceInterfaceRequiringEntity.__init__)
+def test_entity_av_resourceinterfacerequiringentity_constructor_args():
+    sig = inspect.signature(entity_av_ResourceInterfaceRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::entity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::Entity)
+def test_entity_av_entity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_Entity)
 
 
-def test_entity::av::entity_constructor_exists():
-    assert callable(entity::av::Entity.__init__)
+def test_entity_av_entity_constructor_exists():
+    assert callable(entity_av_Entity.__init__)
 
 
-def test_entity::av::entity_constructor_args():
-    sig = inspect.signature(entity::av::Entity.__init__)
+def test_entity_av_entity_constructor_args():
+    sig = inspect.signature(entity_av_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::compositedatatype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::CompositeDataType)
+def test_pcm_av_repository_av_compositedatatype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_CompositeDataType)
 
 
-def test_pcm::av::repository::av::compositedatatype_constructor_exists():
-    assert callable(pcm::av::repository::av::CompositeDataType.__init__)
+def test_pcm_av_repository_av_compositedatatype_constructor_exists():
+    assert callable(pcm_av_repository_av_CompositeDataType.__init__)
 
 
-def test_pcm::av::repository::av::compositedatatype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::CompositeDataType.__init__)
+def test_pcm_av_repository_av_compositedatatype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_CompositeDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::system::av::system_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::system::av::System)
+def test_pcm_av_system_av_system_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_system_av_System)
 
 
-def test_pcm::av::system::av::system_constructor_exists():
-    assert callable(pcm::av::system::av::System.__init__)
+def test_pcm_av_system_av_system_constructor_exists():
+    assert callable(pcm_av_system_av_System.__init__)
 
 
-def test_pcm::av::system::av::system_constructor_args():
-    sig = inspect.signature(pcm::av::system::av::System.__init__)
+def test_pcm_av_system_av_system_constructor_args():
+    sig = inspect.signature(pcm_av_system_av_System.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::collectiondatatype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::CollectionDataType)
+def test_pcm_av_repository_av_collectiondatatype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_CollectionDataType)
 
 
-def test_pcm::av::repository::av::collectiondatatype_constructor_exists():
-    assert callable(pcm::av::repository::av::CollectionDataType.__init__)
+def test_pcm_av_repository_av_collectiondatatype_constructor_exists():
+    assert callable(pcm_av_repository_av_CollectionDataType.__init__)
 
 
-def test_pcm::av::repository::av::collectiondatatype_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::CollectionDataType.__init__)
+def test_pcm_av_repository_av_collectiondatatype_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_CollectionDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::entity::av::interfacerequiringentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::InterfaceRequiringEntity)
+def test_pcm_av_entity_av_interfacerequiringentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_InterfaceRequiringEntity)
 
 
-def test_pcm::av::entity::av::interfacerequiringentity_constructor_exists():
-    assert callable(pcm::av::entity::av::InterfaceRequiringEntity.__init__)
+def test_pcm_av_entity_av_interfacerequiringentity_constructor_exists():
+    assert callable(pcm_av_entity_av_InterfaceRequiringEntity.__init__)
 
 
-def test_pcm::av::entity::av::interfacerequiringentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::InterfaceRequiringEntity.__init__)
+def test_pcm_av_entity_av_interfacerequiringentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_InterfaceRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3727,44 +3755,44 @@ def test_providedrole_constructor_args():
 
 
 
-def test_pcm::av::repository::av::sinkrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::SinkRole)
+def test_pcm_av_repository_av_operationprovidedrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_OperationProvidedRole)
 
 
-def test_pcm::av::repository::av::sinkrole_constructor_exists():
-    assert callable(pcm::av::repository::av::SinkRole.__init__)
+def test_pcm_av_repository_av_operationprovidedrole_constructor_exists():
+    assert callable(pcm_av_repository_av_OperationProvidedRole.__init__)
 
 
-def test_pcm::av::repository::av::sinkrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::SinkRole.__init__)
+def test_pcm_av_repository_av_operationprovidedrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_OperationProvidedRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::infrastructureprovidedrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::InfrastructureProvidedRole)
+def test_pcm_av_repository_av_sinkrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_SinkRole)
 
 
-def test_pcm::av::repository::av::infrastructureprovidedrole_constructor_exists():
-    assert callable(pcm::av::repository::av::InfrastructureProvidedRole.__init__)
+def test_pcm_av_repository_av_sinkrole_constructor_exists():
+    assert callable(pcm_av_repository_av_SinkRole.__init__)
 
 
-def test_pcm::av::repository::av::infrastructureprovidedrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::InfrastructureProvidedRole.__init__)
+def test_pcm_av_repository_av_sinkrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_SinkRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::operationprovidedrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::OperationProvidedRole)
+def test_pcm_av_repository_av_infrastructureprovidedrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_InfrastructureProvidedRole)
 
 
-def test_pcm::av::repository::av::operationprovidedrole_constructor_exists():
-    assert callable(pcm::av::repository::av::OperationProvidedRole.__init__)
+def test_pcm_av_repository_av_infrastructureprovidedrole_constructor_exists():
+    assert callable(pcm_av_repository_av_InfrastructureProvidedRole.__init__)
 
 
-def test_pcm::av::repository::av::operationprovidedrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::OperationProvidedRole.__init__)
+def test_pcm_av_repository_av_infrastructureprovidedrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_InfrastructureProvidedRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3783,219 +3811,121 @@ def test_entity_constructor_args():
 
 
 
-def test_pcm::av::entity::av::resourceinterfaceprovidingentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::ResourceInterfaceProvidingEntity)
+def test_pcm_av_allocation_av_allocationcontext_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_allocation_av_AllocationContext)
 
 
-def test_pcm::av::entity::av::resourceinterfaceprovidingentity_constructor_exists():
-    assert callable(pcm::av::entity::av::ResourceInterfaceProvidingEntity.__init__)
+def test_pcm_av_allocation_av_allocationcontext_constructor_exists():
+    assert callable(pcm_av_allocation_av_AllocationContext.__init__)
 
 
-def test_pcm::av::entity::av::resourceinterfaceprovidingentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::ResourceInterfaceProvidingEntity.__init__)
+def test_pcm_av_allocation_av_allocationcontext_constructor_args():
+    sig = inspect.signature(pcm_av_allocation_av_AllocationContext.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::composition::av::connector_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::Connector)
+def test_pcm_av_usagemodel_av_usagescenario_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_UsageScenario)
 
 
-def test_pcm::av::composition::av::connector_constructor_exists():
-    assert callable(pcm::av::composition::av::Connector.__init__)
+def test_pcm_av_usagemodel_av_usagescenario_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_UsageScenario.__init__)
 
 
-def test_pcm::av::composition::av::connector_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::Connector.__init__)
+def test_pcm_av_usagemodel_av_usagescenario_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_UsageScenario.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::seff::av::abstractbranchtransition_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::AbstractBranchTransition)
+def test_pcm_av_seff_av_abstractaction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_AbstractAction)
 
 
-def test_pcm::av::seff::av::abstractbranchtransition_constructor_exists():
-    assert callable(pcm::av::seff::av::AbstractBranchTransition.__init__)
+def test_pcm_av_seff_av_abstractaction_constructor_exists():
+    assert callable(pcm_av_seff_av_AbstractAction.__init__)
 
 
-def test_pcm::av::seff::av::abstractbranchtransition_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::AbstractBranchTransition.__init__)
+def test_pcm_av_seff_av_abstractaction_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_AbstractAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::usagescenario_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::UsageScenario)
+def test_pcm_av_repository_av_passiveresource_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_PassiveResource)
 
 
-def test_pcm::av::usagemodel::av::usagescenario_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::UsageScenario.__init__)
+def test_pcm_av_repository_av_passiveresource_constructor_exists():
+    assert callable(pcm_av_repository_av_PassiveResource.__init__)
 
 
-def test_pcm::av::usagemodel::av::usagescenario_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::UsageScenario.__init__)
+def test_pcm_av_repository_av_passiveresource_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_PassiveResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::resourceenvironment::av::linkingresource_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourceenvironment::av::LinkingResource)
+def test_pcm_av_composition_av_eventchannel_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_EventChannel)
 
 
-def test_pcm::av::resourceenvironment::av::linkingresource_constructor_exists():
-    assert callable(pcm::av::resourceenvironment::av::LinkingResource.__init__)
+def test_pcm_av_composition_av_eventchannel_constructor_exists():
+    assert callable(pcm_av_composition_av_EventChannel.__init__)
 
 
-def test_pcm::av::resourceenvironment::av::linkingresource_constructor_args():
-    sig = inspect.signature(pcm::av::resourceenvironment::av::LinkingResource.__init__)
+def test_pcm_av_composition_av_eventchannel_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_EventChannel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::resourceenvironment::av::resourcecontainer_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourceenvironment::av::ResourceContainer)
+def test_pcm_av_repository_av_interface_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_Interface)
 
 
-def test_pcm::av::resourceenvironment::av::resourcecontainer_constructor_exists():
-    assert callable(pcm::av::resourceenvironment::av::ResourceContainer.__init__)
+def test_pcm_av_repository_av_interface_constructor_exists():
+    assert callable(pcm_av_repository_av_Interface.__init__)
 
 
-def test_pcm::av::resourceenvironment::av::resourcecontainer_constructor_args():
-    sig = inspect.signature(pcm::av::resourceenvironment::av::ResourceContainer.__init__)
+def test_pcm_av_repository_av_interface_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::usagemodel::av::scenariobehaviour_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::ScenarioBehaviour)
+def test_pcm_av_qosannotations_av_qosannotations_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_qosannotations_av_QoSAnnotations)
 
 
-def test_pcm::av::usagemodel::av::scenariobehaviour_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::ScenarioBehaviour.__init__)
+def test_pcm_av_qosannotations_av_qosannotations_constructor_exists():
+    assert callable(pcm_av_qosannotations_av_QoSAnnotations.__init__)
 
 
-def test_pcm::av::usagemodel::av::scenariobehaviour_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::ScenarioBehaviour.__init__)
+def test_pcm_av_qosannotations_av_qosannotations_constructor_args():
+    sig = inspect.signature(pcm_av_qosannotations_av_QoSAnnotations.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::signature_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::Signature)
+def test_pcm_av_repository_av_repository_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_Repository)
 
 
-def test_pcm::av::repository::av::signature_constructor_exists():
-    assert callable(pcm::av::repository::av::Signature.__init__)
+def test_pcm_av_repository_av_repository_constructor_exists():
+    assert callable(pcm_av_repository_av_Repository.__init__)
 
 
-def test_pcm::av::repository::av::signature_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::Signature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::allocation::av::allocationcontext_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::allocation::av::AllocationContext)
-
-
-def test_pcm::av::allocation::av::allocationcontext_constructor_exists():
-    assert callable(pcm::av::allocation::av::AllocationContext.__init__)
-
-
-def test_pcm::av::allocation::av::allocationcontext_constructor_args():
-    sig = inspect.signature(pcm::av::allocation::av::AllocationContext.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::seff::av::abstractaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::AbstractAction)
-
-
-def test_pcm::av::seff::av::abstractaction_constructor_exists():
-    assert callable(pcm::av::seff::av::AbstractAction.__init__)
-
-
-def test_pcm::av::seff::av::abstractaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::AbstractAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::seff::reliability::av::failurehandlingentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::reliability::av::FailureHandlingEntity)
-
-
-def test_pcm::av::seff::reliability::av::failurehandlingentity_constructor_exists():
-    assert callable(pcm::av::seff::reliability::av::FailureHandlingEntity.__init__)
-
-
-def test_pcm::av::seff::reliability::av::failurehandlingentity_constructor_args():
-    sig = inspect.signature(pcm::av::seff::reliability::av::FailureHandlingEntity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::composition::av::assemblycontext_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::AssemblyContext)
-
-
-def test_pcm::av::composition::av::assemblycontext_constructor_exists():
-    assert callable(pcm::av::composition::av::AssemblyContext.__init__)
-
-
-def test_pcm::av::composition::av::assemblycontext_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::AssemblyContext.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::repository::av::passiveresource_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::PassiveResource)
-
-
-def test_pcm::av::repository::av::passiveresource_constructor_exists():
-    assert callable(pcm::av::repository::av::PassiveResource.__init__)
-
-
-def test_pcm::av::repository::av::passiveresource_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::PassiveResource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::usagemodel::av::abstractuseraction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::usagemodel::av::AbstractUserAction)
-
-
-def test_pcm::av::usagemodel::av::abstractuseraction_constructor_exists():
-    assert callable(pcm::av::usagemodel::av::AbstractUserAction.__init__)
-
-
-def test_pcm::av::usagemodel::av::abstractuseraction_constructor_args():
-    sig = inspect.signature(pcm::av::usagemodel::av::AbstractUserAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::repository::av::repository_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::Repository)
-
-
-def test_pcm::av::repository::av::repository_constructor_exists():
-    assert callable(pcm::av::repository::av::Repository.__init__)
-
-
-def test_pcm::av::repository::av::repository_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::Repository.__init__)
+def test_pcm_av_repository_av_repository_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_Repository.__init__)
     params = list(sig.parameters.keys())
     assert "repositoryDescription" in params, "Missing parameter 'repositoryDescription'"
 
-def test_pcm::av::repository::av::repository_has_repositoryDescription():
-    assert hasattr(pcm::av::repository::av::Repository, "repositoryDescription")
+def test_pcm_av_repository_av_repository_has_repositoryDescription():
+    assert hasattr(pcm_av_repository_av_Repository, "repositoryDescription")
     descriptor = None
-    for klass in pcm::av::repository::av::Repository.__mro__:
+    for klass in pcm_av_repository_av_Repository.__mro__:
         if "repositoryDescription" in klass.__dict__:
             descriptor = klass.__dict__["repositoryDescription"]
             break
@@ -4003,149 +3933,23 @@ def test_pcm::av::repository::av::repository_has_repositoryDescription():
 
 
 
-def test_pcm::av::allocation::av::allocation_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::allocation::av::Allocation)
+def test_pcm_av_resourcetype_av_resourcesignature_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_ResourceSignature)
 
 
-def test_pcm::av::allocation::av::allocation_constructor_exists():
-    assert callable(pcm::av::allocation::av::Allocation.__init__)
+def test_pcm_av_resourcetype_av_resourcesignature_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_ResourceSignature.__init__)
 
 
-def test_pcm::av::allocation::av::allocation_constructor_args():
-    sig = inspect.signature(pcm::av::allocation::av::Allocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::entity::av::resourceinterfacerequiringentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::ResourceInterfaceRequiringEntity)
-
-
-def test_pcm::av::entity::av::resourceinterfacerequiringentity_constructor_exists():
-    assert callable(pcm::av::entity::av::ResourceInterfaceRequiringEntity.__init__)
-
-
-def test_pcm::av::entity::av::resourceinterfacerequiringentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::ResourceInterfaceRequiringEntity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::resourcetype::av::resourceinterface_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::ResourceInterface)
-
-
-def test_pcm::av::resourcetype::av::resourceinterface_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::ResourceInterface.__init__)
-
-
-def test_pcm::av::resourcetype::av::resourceinterface_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::ResourceInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::qosannotations::av::qosannotations_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::qosannotations::av::QoSAnnotations)
-
-
-def test_pcm::av::qosannotations::av::qosannotations_constructor_exists():
-    assert callable(pcm::av::qosannotations::av::QoSAnnotations.__init__)
-
-
-def test_pcm::av::qosannotations::av::qosannotations_constructor_args():
-    sig = inspect.signature(pcm::av::qosannotations::av::QoSAnnotations.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::resourcetype::av::schedulingpolicy_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::SchedulingPolicy)
-
-
-def test_pcm::av::resourcetype::av::schedulingpolicy_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::SchedulingPolicy.__init__)
-
-
-def test_pcm::av::resourcetype::av::schedulingpolicy_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::SchedulingPolicy.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::repository::av::interface_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::Interface)
-
-
-def test_pcm::av::repository::av::interface_constructor_exists():
-    assert callable(pcm::av::repository::av::Interface.__init__)
-
-
-def test_pcm::av::repository::av::interface_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::composition::av::composedstructure_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::ComposedStructure)
-
-
-def test_pcm::av::composition::av::composedstructure_constructor_exists():
-    assert callable(pcm::av::composition::av::ComposedStructure.__init__)
-
-
-def test_pcm::av::composition::av::composedstructure_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::ComposedStructure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::repository::av::role_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::Role)
-
-
-def test_pcm::av::repository::av::role_constructor_exists():
-    assert callable(pcm::av::repository::av::Role.__init__)
-
-
-def test_pcm::av::repository::av::role_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::Role.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::composition::av::eventchannel_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::composition::av::EventChannel)
-
-
-def test_pcm::av::composition::av::eventchannel_constructor_exists():
-    assert callable(pcm::av::composition::av::EventChannel.__init__)
-
-
-def test_pcm::av::composition::av::eventchannel_constructor_args():
-    sig = inspect.signature(pcm::av::composition::av::EventChannel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::resourcetype::av::resourcesignature_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::ResourceSignature)
-
-
-def test_pcm::av::resourcetype::av::resourcesignature_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::ResourceSignature.__init__)
-
-
-def test_pcm::av::resourcetype::av::resourcesignature_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::ResourceSignature.__init__)
+def test_pcm_av_resourcetype_av_resourcesignature_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_ResourceSignature.__init__)
     params = list(sig.parameters.keys())
     assert "resourceServiceId" in params, "Missing parameter 'resourceServiceId'"
 
-def test_pcm::av::resourcetype::av::resourcesignature_has_resourceServiceId():
-    assert hasattr(pcm::av::resourcetype::av::ResourceSignature, "resourceServiceId")
+def test_pcm_av_resourcetype_av_resourcesignature_has_resourceServiceId():
+    assert hasattr(pcm_av_resourcetype_av_ResourceSignature, "resourceServiceId")
     descriptor = None
-    for klass in pcm::av::resourcetype::av::ResourceSignature.__mro__:
+    for klass in pcm_av_resourcetype_av_ResourceSignature.__mro__:
         if "resourceServiceId" in klass.__dict__:
             descriptor = klass.__dict__["resourceServiceId"]
             break
@@ -4153,58 +3957,296 @@ def test_pcm::av::resourcetype::av::resourcesignature_has_resourceServiceId():
 
 
 
-def test_pcm::av::entity::av::interfaceprovidingentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::InterfaceProvidingEntity)
+def test_pcm_av_allocation_av_allocation_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_allocation_av_Allocation)
 
 
-def test_pcm::av::entity::av::interfaceprovidingentity_constructor_exists():
-    assert callable(pcm::av::entity::av::InterfaceProvidingEntity.__init__)
+def test_pcm_av_allocation_av_allocation_constructor_exists():
+    assert callable(pcm_av_allocation_av_Allocation.__init__)
 
 
-def test_pcm::av::entity::av::interfaceprovidingentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::InterfaceProvidingEntity.__init__)
+def test_pcm_av_allocation_av_allocation_constructor_args():
+    sig = inspect.signature(pcm_av_allocation_av_Allocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::interfacerequiringentity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::InterfaceRequiringEntity)
+def test_pcm_av_entity_av_resourceinterfacerequiringentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_ResourceInterfaceRequiringEntity)
 
 
-def test_entity::av::interfacerequiringentity_constructor_exists():
-    assert callable(entity::av::InterfaceRequiringEntity.__init__)
+def test_pcm_av_entity_av_resourceinterfacerequiringentity_constructor_exists():
+    assert callable(pcm_av_entity_av_ResourceInterfaceRequiringEntity.__init__)
 
 
-def test_entity::av::interfacerequiringentity_constructor_args():
-    sig = inspect.signature(entity::av::InterfaceRequiringEntity.__init__)
+def test_pcm_av_entity_av_resourceinterfacerequiringentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_ResourceInterfaceRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::interfaceprovidingentity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::InterfaceProvidingEntity)
+def test_pcm_av_reliability_av_failuretype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_reliability_av_FailureType)
 
 
-def test_entity::av::interfaceprovidingentity_constructor_exists():
-    assert callable(entity::av::InterfaceProvidingEntity.__init__)
+def test_pcm_av_reliability_av_failuretype_constructor_exists():
+    assert callable(pcm_av_reliability_av_FailureType.__init__)
 
 
-def test_entity::av::interfaceprovidingentity_constructor_args():
-    sig = inspect.signature(entity::av::InterfaceProvidingEntity.__init__)
+def test_pcm_av_reliability_av_failuretype_constructor_args():
+    sig = inspect.signature(pcm_av_reliability_av_FailureType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::entity::av::interfaceprovidingrequiringentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::InterfaceProvidingRequiringEntity)
+def test_pcm_av_resourceenvironment_av_resourcecontainer_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourceenvironment_av_ResourceContainer)
 
 
-def test_pcm::av::entity::av::interfaceprovidingrequiringentity_constructor_exists():
-    assert callable(pcm::av::entity::av::InterfaceProvidingRequiringEntity.__init__)
+def test_pcm_av_resourceenvironment_av_resourcecontainer_constructor_exists():
+    assert callable(pcm_av_resourceenvironment_av_ResourceContainer.__init__)
 
 
-def test_pcm::av::entity::av::interfaceprovidingrequiringentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::InterfaceProvidingRequiringEntity.__init__)
+def test_pcm_av_resourceenvironment_av_resourcecontainer_constructor_args():
+    sig = inspect.signature(pcm_av_resourceenvironment_av_ResourceContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_composition_av_assemblycontext_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_AssemblyContext)
+
+
+def test_pcm_av_composition_av_assemblycontext_constructor_exists():
+    assert callable(pcm_av_composition_av_AssemblyContext.__init__)
+
+
+def test_pcm_av_composition_av_assemblycontext_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_AssemblyContext.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_usagemodel_av_scenariobehaviour_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_ScenarioBehaviour)
+
+
+def test_pcm_av_usagemodel_av_scenariobehaviour_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_ScenarioBehaviour.__init__)
+
+
+def test_pcm_av_usagemodel_av_scenariobehaviour_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_ScenarioBehaviour.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_composition_av_composedstructure_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_ComposedStructure)
+
+
+def test_pcm_av_composition_av_composedstructure_constructor_exists():
+    assert callable(pcm_av_composition_av_ComposedStructure.__init__)
+
+
+def test_pcm_av_composition_av_composedstructure_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_ComposedStructure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_repository_av_role_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_Role)
+
+
+def test_pcm_av_repository_av_role_constructor_exists():
+    assert callable(pcm_av_repository_av_Role.__init__)
+
+
+def test_pcm_av_repository_av_role_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_Role.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_composition_av_connector_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_composition_av_Connector)
+
+
+def test_pcm_av_composition_av_connector_constructor_exists():
+    assert callable(pcm_av_composition_av_Connector.__init__)
+
+
+def test_pcm_av_composition_av_connector_constructor_args():
+    sig = inspect.signature(pcm_av_composition_av_Connector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_resourceenvironment_av_linkingresource_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourceenvironment_av_LinkingResource)
+
+
+def test_pcm_av_resourceenvironment_av_linkingresource_constructor_exists():
+    assert callable(pcm_av_resourceenvironment_av_LinkingResource.__init__)
+
+
+def test_pcm_av_resourceenvironment_av_linkingresource_constructor_args():
+    sig = inspect.signature(pcm_av_resourceenvironment_av_LinkingResource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_repository_av_signature_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_Signature)
+
+
+def test_pcm_av_repository_av_signature_constructor_exists():
+    assert callable(pcm_av_repository_av_Signature.__init__)
+
+
+def test_pcm_av_repository_av_signature_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_Signature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_resourcetype_av_schedulingpolicy_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_SchedulingPolicy)
+
+
+def test_pcm_av_resourcetype_av_schedulingpolicy_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_SchedulingPolicy.__init__)
+
+
+def test_pcm_av_resourcetype_av_schedulingpolicy_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_SchedulingPolicy.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_seff_av_abstractbranchtransition_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_av_AbstractBranchTransition)
+
+
+def test_pcm_av_seff_av_abstractbranchtransition_constructor_exists():
+    assert callable(pcm_av_seff_av_AbstractBranchTransition.__init__)
+
+
+def test_pcm_av_seff_av_abstractbranchtransition_constructor_args():
+    sig = inspect.signature(pcm_av_seff_av_AbstractBranchTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_resourcetype_av_resourceinterface_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_ResourceInterface)
+
+
+def test_pcm_av_resourcetype_av_resourceinterface_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_ResourceInterface.__init__)
+
+
+def test_pcm_av_resourcetype_av_resourceinterface_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_ResourceInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_usagemodel_av_abstractuseraction_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_usagemodel_av_AbstractUserAction)
+
+
+def test_pcm_av_usagemodel_av_abstractuseraction_constructor_exists():
+    assert callable(pcm_av_usagemodel_av_AbstractUserAction.__init__)
+
+
+def test_pcm_av_usagemodel_av_abstractuseraction_constructor_args():
+    sig = inspect.signature(pcm_av_usagemodel_av_AbstractUserAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_entity_av_resourceinterfaceprovidingentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_ResourceInterfaceProvidingEntity)
+
+
+def test_pcm_av_entity_av_resourceinterfaceprovidingentity_constructor_exists():
+    assert callable(pcm_av_entity_av_ResourceInterfaceProvidingEntity.__init__)
+
+
+def test_pcm_av_entity_av_resourceinterfaceprovidingentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_ResourceInterfaceProvidingEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_seff_reliability_av_failurehandlingentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_seff_reliability_av_FailureHandlingEntity)
+
+
+def test_pcm_av_seff_reliability_av_failurehandlingentity_constructor_exists():
+    assert callable(pcm_av_seff_reliability_av_FailureHandlingEntity.__init__)
+
+
+def test_pcm_av_seff_reliability_av_failurehandlingentity_constructor_args():
+    sig = inspect.signature(pcm_av_seff_reliability_av_FailureHandlingEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_entity_av_interfaceprovidingentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_InterfaceProvidingEntity)
+
+
+def test_pcm_av_entity_av_interfaceprovidingentity_constructor_exists():
+    assert callable(pcm_av_entity_av_InterfaceProvidingEntity.__init__)
+
+
+def test_pcm_av_entity_av_interfaceprovidingentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_InterfaceProvidingEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_entity_av_interfacerequiringentity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_InterfaceRequiringEntity)
+
+
+def test_entity_av_interfacerequiringentity_constructor_exists():
+    assert callable(entity_av_InterfaceRequiringEntity.__init__)
+
+
+def test_entity_av_interfacerequiringentity_constructor_args():
+    sig = inspect.signature(entity_av_InterfaceRequiringEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_entity_av_interfaceprovidingentity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_InterfaceProvidingEntity)
+
+
+def test_entity_av_interfaceprovidingentity_constructor_exists():
+    assert callable(entity_av_InterfaceProvidingEntity.__init__)
+
+
+def test_entity_av_interfaceprovidingentity_constructor_args():
+    sig = inspect.signature(entity_av_InterfaceProvidingEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pcm_av_entity_av_interfaceprovidingrequiringentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_InterfaceProvidingRequiringEntity)
+
+
+def test_pcm_av_entity_av_interfaceprovidingrequiringentity_constructor_exists():
+    assert callable(pcm_av_entity_av_InterfaceProvidingRequiringEntity.__init__)
+
+
+def test_pcm_av_entity_av_interfaceprovidingrequiringentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_InterfaceProvidingRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4223,44 +4265,44 @@ def test_resourceinterface_constructor_args():
 
 
 
-def test_entity::av::resourceinterfaceprovidingentity_is_not_abstract():
-    assert not inspect.isabstract(entity::av::ResourceInterfaceProvidingEntity)
+def test_entity_av_resourceinterfaceprovidingentity_is_not_abstract():
+    assert not inspect.isabstract(entity_av_ResourceInterfaceProvidingEntity)
 
 
-def test_entity::av::resourceinterfaceprovidingentity_constructor_exists():
-    assert callable(entity::av::ResourceInterfaceProvidingEntity.__init__)
+def test_entity_av_resourceinterfaceprovidingentity_constructor_exists():
+    assert callable(entity_av_ResourceInterfaceProvidingEntity.__init__)
 
 
-def test_entity::av::resourceinterfaceprovidingentity_constructor_args():
-    sig = inspect.signature(entity::av::ResourceInterfaceProvidingEntity.__init__)
+def test_entity_av_resourceinterfaceprovidingentity_constructor_args():
+    sig = inspect.signature(entity_av_ResourceInterfaceProvidingEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::resourcetype::av::resourcetype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::resourcetype::av::ResourceType)
+def test_pcm_av_resourcetype_av_resourcetype_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_resourcetype_av_ResourceType)
 
 
-def test_pcm::av::resourcetype::av::resourcetype_constructor_exists():
-    assert callable(pcm::av::resourcetype::av::ResourceType.__init__)
+def test_pcm_av_resourcetype_av_resourcetype_constructor_exists():
+    assert callable(pcm_av_resourcetype_av_ResourceType.__init__)
 
 
-def test_pcm::av::resourcetype::av::resourcetype_constructor_args():
-    sig = inspect.signature(pcm::av::resourcetype::av::ResourceType.__init__)
+def test_pcm_av_resourcetype_av_resourcetype_constructor_args():
+    sig = inspect.signature(pcm_av_resourcetype_av_ResourceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::entity::av::resourceinterfaceprovidingrequiringentity_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity)
+def test_pcm_av_entity_av_resourceinterfaceprovidingrequiringentity_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity)
 
 
-def test_pcm::av::entity::av::resourceinterfaceprovidingrequiringentity_constructor_exists():
-    assert callable(pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity.__init__)
+def test_pcm_av_entity_av_resourceinterfaceprovidingrequiringentity_constructor_exists():
+    assert callable(pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity.__init__)
 
 
-def test_pcm::av::entity::av::resourceinterfaceprovidingrequiringentity_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity.__init__)
+def test_pcm_av_entity_av_resourceinterfaceprovidingrequiringentity_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4279,44 +4321,44 @@ def test_role_constructor_args():
 
 
 
-def test_pcm::av::repository::av::providedrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::ProvidedRole)
+def test_pcm_av_repository_av_providedrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_ProvidedRole)
 
 
-def test_pcm::av::repository::av::providedrole_constructor_exists():
-    assert callable(pcm::av::repository::av::ProvidedRole.__init__)
+def test_pcm_av_repository_av_providedrole_constructor_exists():
+    assert callable(pcm_av_repository_av_ProvidedRole.__init__)
 
 
-def test_pcm::av::repository::av::providedrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::ProvidedRole.__init__)
+def test_pcm_av_repository_av_providedrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_ProvidedRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::repository::av::requiredrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::repository::av::RequiredRole)
+def test_pcm_av_repository_av_requiredrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_repository_av_RequiredRole)
 
 
-def test_pcm::av::repository::av::requiredrole_constructor_exists():
-    assert callable(pcm::av::repository::av::RequiredRole.__init__)
+def test_pcm_av_repository_av_requiredrole_constructor_exists():
+    assert callable(pcm_av_repository_av_RequiredRole.__init__)
 
 
-def test_pcm::av::repository::av::requiredrole_constructor_args():
-    sig = inspect.signature(pcm::av::repository::av::RequiredRole.__init__)
+def test_pcm_av_repository_av_requiredrole_constructor_args():
+    sig = inspect.signature(pcm_av_repository_av_RequiredRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::entity::av::resourceprovidedrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::ResourceProvidedRole)
+def test_pcm_av_entity_av_resourceprovidedrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_ResourceProvidedRole)
 
 
-def test_pcm::av::entity::av::resourceprovidedrole_constructor_exists():
-    assert callable(pcm::av::entity::av::ResourceProvidedRole.__init__)
+def test_pcm_av_entity_av_resourceprovidedrole_constructor_exists():
+    assert callable(pcm_av_entity_av_ResourceProvidedRole.__init__)
 
 
-def test_pcm::av::entity::av::resourceprovidedrole_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::ResourceProvidedRole.__init__)
+def test_pcm_av_entity_av_resourceprovidedrole_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_ResourceProvidedRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4391,58 +4433,58 @@ def test_loop_constructor_args():
 
 
 
-def test_composition::av::assemblyeventconnector_is_not_abstract():
-    assert not inspect.isabstract(composition::av::AssemblyEventConnector)
+def test_composition_av_assemblyeventconnector_is_not_abstract():
+    assert not inspect.isabstract(composition_av_AssemblyEventConnector)
 
 
-def test_composition::av::assemblyeventconnector_constructor_exists():
-    assert callable(composition::av::AssemblyEventConnector.__init__)
+def test_composition_av_assemblyeventconnector_constructor_exists():
+    assert callable(composition_av_AssemblyEventConnector.__init__)
 
 
-def test_composition::av::assemblyeventconnector_constructor_args():
-    sig = inspect.signature(composition::av::AssemblyEventConnector.__init__)
+def test_composition_av_assemblyeventconnector_constructor_args():
+    sig = inspect.signature(composition_av_AssemblyEventConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_composition::av::eventchannelsinkconnector_is_not_abstract():
-    assert not inspect.isabstract(composition::av::EventChannelSinkConnector)
+def test_composition_av_eventchannelsinkconnector_is_not_abstract():
+    assert not inspect.isabstract(composition_av_EventChannelSinkConnector)
 
 
-def test_composition::av::eventchannelsinkconnector_constructor_exists():
-    assert callable(composition::av::EventChannelSinkConnector.__init__)
+def test_composition_av_eventchannelsinkconnector_constructor_exists():
+    assert callable(composition_av_EventChannelSinkConnector.__init__)
 
 
-def test_composition::av::eventchannelsinkconnector_constructor_args():
-    sig = inspect.signature(composition::av::EventChannelSinkConnector.__init__)
+def test_composition_av_eventchannelsinkconnector_constructor_args():
+    sig = inspect.signature(composition_av_EventChannelSinkConnector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::entity::av::resourcerequiredrole_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::entity::av::ResourceRequiredRole)
+def test_pcm_av_entity_av_resourcerequiredrole_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_entity_av_ResourceRequiredRole)
 
 
-def test_pcm::av::entity::av::resourcerequiredrole_constructor_exists():
-    assert callable(pcm::av::entity::av::ResourceRequiredRole.__init__)
+def test_pcm_av_entity_av_resourcerequiredrole_constructor_exists():
+    assert callable(pcm_av_entity_av_ResourceRequiredRole.__init__)
 
 
-def test_pcm::av::entity::av::resourcerequiredrole_constructor_args():
-    sig = inspect.signature(pcm::av::entity::av::ResourceRequiredRole.__init__)
+def test_pcm_av_entity_av_resourcerequiredrole_constructor_args():
+    sig = inspect.signature(pcm_av_entity_av_ResourceRequiredRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::av::resourcerequiredrole_is_not_abstract():
-    assert not inspect.isabstract(entity::av::ResourceRequiredRole)
+def test_entity_av_resourcerequiredrole_is_not_abstract():
+    assert not inspect.isabstract(entity_av_ResourceRequiredRole)
 
 
-def test_entity::av::resourcerequiredrole_constructor_exists():
-    assert callable(entity::av::ResourceRequiredRole.__init__)
+def test_entity_av_resourcerequiredrole_constructor_exists():
+    assert callable(entity_av_ResourceRequiredRole.__init__)
 
 
-def test_entity::av::resourcerequiredrole_constructor_args():
-    sig = inspect.signature(entity::av::ResourceRequiredRole.__init__)
+def test_entity_av_resourcerequiredrole_constructor_args():
+    sig = inspect.signature(entity_av_ResourceRequiredRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4461,44 +4503,44 @@ def test_loopaction_constructor_args():
 
 
 
-def test_seff::performance::av::parametricresourcedemand_is_not_abstract():
-    assert not inspect.isabstract(seff::performance::av::ParametricResourceDemand)
+def test_seff_performance_av_parametricresourcedemand_is_not_abstract():
+    assert not inspect.isabstract(seff_performance_av_ParametricResourceDemand)
 
 
-def test_seff::performance::av::parametricresourcedemand_constructor_exists():
-    assert callable(seff::performance::av::ParametricResourceDemand.__init__)
+def test_seff_performance_av_parametricresourcedemand_constructor_exists():
+    assert callable(seff_performance_av_ParametricResourceDemand.__init__)
 
 
-def test_seff::performance::av::parametricresourcedemand_constructor_args():
-    sig = inspect.signature(seff::performance::av::ParametricResourceDemand.__init__)
+def test_seff_performance_av_parametricresourcedemand_constructor_args():
+    sig = inspect.signature(seff_performance_av_ParametricResourceDemand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::performance::av::resourcecall_is_not_abstract():
-    assert not inspect.isabstract(seff::performance::av::ResourceCall)
+def test_seff_performance_av_resourcecall_is_not_abstract():
+    assert not inspect.isabstract(seff_performance_av_ResourceCall)
 
 
-def test_seff::performance::av::resourcecall_constructor_exists():
-    assert callable(seff::performance::av::ResourceCall.__init__)
+def test_seff_performance_av_resourcecall_constructor_exists():
+    assert callable(seff_performance_av_ResourceCall.__init__)
 
 
-def test_seff::performance::av::resourcecall_constructor_args():
-    sig = inspect.signature(seff::performance::av::ResourceCall.__init__)
+def test_seff_performance_av_resourcecall_constructor_args():
+    sig = inspect.signature(seff_performance_av_ResourceCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seff::performance::av::infrastructurecall_is_not_abstract():
-    assert not inspect.isabstract(seff::performance::av::InfrastructureCall)
+def test_seff_performance_av_infrastructurecall_is_not_abstract():
+    assert not inspect.isabstract(seff_performance_av_InfrastructureCall)
 
 
-def test_seff::performance::av::infrastructurecall_constructor_exists():
-    assert callable(seff::performance::av::InfrastructureCall.__init__)
+def test_seff_performance_av_infrastructurecall_constructor_exists():
+    assert callable(seff_performance_av_InfrastructureCall.__init__)
 
 
-def test_seff::performance::av::infrastructurecall_constructor_args():
-    sig = inspect.signature(seff::performance::av::InfrastructureCall.__init__)
+def test_seff_performance_av_infrastructurecall_constructor_args():
+    sig = inspect.signature(seff_performance_av_InfrastructureCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4559,100 +4601,100 @@ def test_randomvariable_constructor_args():
 
 
 
-def test_pcm::av::core::av::pcmrandomvariable_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::core::av::PCMRandomVariable)
+def test_pcm_av_core_av_pcmrandomvariable_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_core_av_PCMRandomVariable)
 
 
-def test_pcm::av::core::av::pcmrandomvariable_constructor_exists():
-    assert callable(pcm::av::core::av::PCMRandomVariable.__init__)
+def test_pcm_av_core_av_pcmrandomvariable_constructor_exists():
+    assert callable(pcm_av_core_av_PCMRandomVariable.__init__)
 
 
-def test_pcm::av::core::av::pcmrandomvariable_constructor_args():
-    sig = inspect.signature(pcm::av::core::av::PCMRandomVariable.__init__)
+def test_pcm_av_core_av_pcmrandomvariable_constructor_args():
+    sig = inspect.signature(pcm_av_core_av_PCMRandomVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::perjoinpointscope_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::PerJoinPointScope)
+def test_pcm_av_perjoinpointscope_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_PerJoinPointScope)
 
 
-def test_pcm::av::perjoinpointscope_constructor_exists():
-    assert callable(pcm::av::PerJoinPointScope.__init__)
+def test_pcm_av_perjoinpointscope_constructor_exists():
+    assert callable(pcm_av_PerJoinPointScope.__init__)
 
 
-def test_pcm::av::perjoinpointscope_constructor_args():
-    sig = inspect.signature(pcm::av::PerJoinPointScope.__init__)
+def test_pcm_av_perjoinpointscope_constructor_args():
+    sig = inspect.signature(pcm_av_PerJoinPointScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::globalscope_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::GlobalScope)
+def test_pcm_av_globalscope_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_GlobalScope)
 
 
-def test_pcm::av::globalscope_constructor_exists():
-    assert callable(pcm::av::GlobalScope.__init__)
+def test_pcm_av_globalscope_constructor_exists():
+    assert callable(pcm_av_GlobalScope.__init__)
 
 
-def test_pcm::av::globalscope_constructor_args():
-    sig = inspect.signature(pcm::av::GlobalScope.__init__)
+def test_pcm_av_globalscope_constructor_args():
+    sig = inspect.signature(pcm_av_GlobalScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::eobject_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::EObject)
+def test_pcm_av_eobject_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_EObject)
 
 
-def test_pcm::av::eobject_constructor_exists():
-    assert callable(pcm::av::EObject.__init__)
+def test_pcm_av_eobject_constructor_exists():
+    assert callable(pcm_av_EObject.__init__)
 
 
-def test_pcm::av::eobject_constructor_args():
-    sig = inspect.signature(pcm::av::EObject.__init__)
+def test_pcm_av_eobject_constructor_args():
+    sig = inspect.signature(pcm_av_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::advice_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::Advice)
+def test_pcm_av_advice_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_Advice)
 
 
-def test_pcm::av::advice_constructor_exists():
-    assert callable(pcm::av::Advice.__init__)
+def test_pcm_av_advice_constructor_exists():
+    assert callable(pcm_av_Advice.__init__)
 
 
-def test_pcm::av::advice_constructor_args():
-    sig = inspect.signature(pcm::av::Advice.__init__)
+def test_pcm_av_advice_constructor_args():
+    sig = inspect.signature(pcm_av_Advice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pcm::av::dummyclass_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::DummyClass)
+def test_pcm_av_dummyclass_is_not_abstract():
+    assert not inspect.isabstract(pcm_av_DummyClass)
 
 
-def test_pcm::av::dummyclass_constructor_exists():
-    assert callable(pcm::av::DummyClass.__init__)
+def test_pcm_av_dummyclass_constructor_exists():
+    assert callable(pcm_av_DummyClass.__init__)
 
 
-def test_pcm::av::dummyclass_constructor_args():
-    sig = inspect.signature(pcm::av::DummyClass.__init__)
+def test_pcm_av_dummyclass_constructor_args():
+    sig = inspect.signature(pcm_av_DummyClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qos::performance::av::specifiedexecutiontime_is_not_abstract():
-    assert not inspect.isabstract(qos::performance::av::SpecifiedExecutionTime)
+def test_qos_performance_av_specifiedexecutiontime_is_not_abstract():
+    assert not inspect.isabstract(qos_performance_av_SpecifiedExecutionTime)
 
 
-def test_qos::performance::av::specifiedexecutiontime_constructor_exists():
-    assert callable(qos::performance::av::SpecifiedExecutionTime.__init__)
+def test_qos_performance_av_specifiedexecutiontime_constructor_exists():
+    assert callable(qos_performance_av_SpecifiedExecutionTime.__init__)
 
 
-def test_qos::performance::av::specifiedexecutiontime_constructor_args():
-    sig = inspect.signature(qos::performance::av::SpecifiedExecutionTime.__init__)
+def test_qos_performance_av_specifiedexecutiontime_constructor_args():
+    sig = inspect.signature(qos_performance_av_SpecifiedExecutionTime.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4669,62 +4711,23 @@ def test_guardedbranchtransition_constructor_args():
     sig = inspect.signature(GuardedBranchTransition.__init__)
     params = list(sig.parameters.keys())
 
-
-
-def test_pcm::av::seff::av::stopaction_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::seff::av::StopAction)
-
-
-def test_pcm::av::seff::av::stopaction_constructor_exists():
-    assert callable(pcm::av::seff::av::StopAction.__init__)
-
-
-def test_pcm::av::seff::av::stopaction_constructor_args():
-    sig = inspect.signature(pcm::av::seff::av::StopAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::reliability::av::failuretype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::FailureType)
-
-
-def test_pcm::av::reliability::av::failuretype_constructor_exists():
-    assert callable(pcm::av::reliability::av::FailureType.__init__)
-
-
-def test_pcm::av::reliability::av::failuretype_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::FailureType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pcm::av::reliability::av::resourcetimeoutfailuretype_is_not_abstract():
-    assert not inspect.isabstract(pcm::av::reliability::av::ResourceTimeoutFailureType)
-
-
-def test_pcm::av::reliability::av::resourcetimeoutfailuretype_constructor_exists():
-    assert callable(pcm::av::reliability::av::ResourceTimeoutFailureType.__init__)
-
-
-def test_pcm::av::reliability::av::resourcetimeoutfailuretype_constructor_args():
-    sig = inspect.signature(pcm::av::reliability::av::ResourceTimeoutFailureType.__init__)
-    params = list(sig.parameters.keys())
-
-def test_componenttype_exists():
+def test_variablecharacterisationtype_exists():
     # Check that the Enumeration exists
-    assert ComponentType is not None
+    assert VariableCharacterisationType is not None
 
-def test_componenttype_has_all_literals():
+def test_variablecharacterisationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComponentType]
+    enum_literals = [lit.name for lit in VariableCharacterisationType]
     expected_literals = [
-        "BUSINESS_COMPONENT",
-        "INFRASTRUCTURE_COMPONENT",
+        "NUMBER_OF_ELEMENTS",
+        "VALUE",
+        "STRUCTURE",
+        "BYTESIZE",
+        "TYPE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComponentType"
+        assert lit_name in enum_literals, f"Literal '' missing in VariableCharacterisationType"
 
 def test_primitivetypeenum_exists():
     # Check that the Enumeration exists
@@ -4734,35 +4737,17 @@ def test_primitivetypeenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PrimitiveTypeEnum]
     expected_literals = [
+        "BOOL",
         "DOUBLE",
+        "LONG",
         "STRING",
         "CHAR",
         "BYTE",
-        "BOOL",
         "INT",
-        "LONG",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PrimitiveTypeEnum"
-
-def test_variablecharacterisationtype_exists():
-    # Check that the Enumeration exists
-    assert VariableCharacterisationType is not None
-
-def test_variablecharacterisationtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VariableCharacterisationType]
-    expected_literals = [
-        "TYPE",
-        "NUMBER_OF_ELEMENTS",
-        "VALUE",
-        "BYTESIZE",
-        "STRUCTURE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VariableCharacterisationType"
 
 def test_parametermodifier_exists():
     # Check that the Enumeration exists
@@ -4772,14 +4757,29 @@ def test_parametermodifier_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParameterModifier]
     expected_literals = [
-        "inout",
-        "in_",
         "none",
+        "in_",
+        "inout",
         "out",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ParameterModifier"
+
+def test_componenttype_exists():
+    # Check that the Enumeration exists
+    assert ComponentType is not None
+
+def test_componenttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ComponentType]
+    expected_literals = [
+        "INFRASTRUCTURE_COMPONENT",
+        "BUSINESS_COMPONENT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ComponentType"
 
 
 # =============================================================================
@@ -4793,8 +4793,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-repository::av::RepositoryComponent_strategy = st.builds(
-    repository::av::RepositoryComponent,
+repository_av_RepositoryComponent_strategy = st.builds(
+    repository_av_RepositoryComponent,
 )
 AllocationContext_strategy = st.builds(
     AllocationContext,
@@ -4802,20 +4802,20 @@ AllocationContext_strategy = st.builds(
 ParametricResourceDemand_strategy = st.builds(
     ParametricResourceDemand,
 )
-pcm::av::completions::av::NetworkDemandParametricResourceDemand_strategy = st.builds(
-    pcm::av::completions::av::NetworkDemandParametricResourceDemand,
+pcm_av_completions_av_NetworkDemandParametricResourceDemand_strategy = st.builds(
+    pcm_av_completions_av_NetworkDemandParametricResourceDemand,
 )
 ExternalCallAction_strategy = st.builds(
     ExternalCallAction,
 )
-pcm::av::completions::av::DelegatingExternalCallAction_strategy = st.builds(
-    pcm::av::completions::av::DelegatingExternalCallAction,
+pcm_av_completions_av_DelegatingExternalCallAction_strategy = st.builds(
+    pcm_av_completions_av_DelegatingExternalCallAction,
 )
 Completion_strategy = st.builds(
     Completion,
 )
-pcm::av::completions::av::CompletionRepository_strategy = st.builds(
-    pcm::av::completions::av::CompletionRepository,
+pcm_av_completions_av_CompletionRepository_strategy = st.builds(
+    pcm_av_completions_av_CompletionRepository,
 )
 Allocation_strategy = st.builds(
     Allocation,
@@ -4832,17 +4832,17 @@ LinkingResource_strategy = st.builds(
 ExternalFailureOccurrenceDescription_strategy = st.builds(
     ExternalFailureOccurrenceDescription,
 )
-pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction_strategy = st.builds(
-    pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction,
+pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction_strategy = st.builds(
+    pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction,
 )
 SpecifiedQoSAnnotation_strategy = st.builds(
     SpecifiedQoSAnnotation,
 )
-pcm::av::qos::performance::av::SpecifiedExecutionTime_strategy = st.builds(
-    pcm::av::qos::performance::av::SpecifiedExecutionTime,
+pcm_av_qos_performance_av_SpecifiedExecutionTime_strategy = st.builds(
+    pcm_av_qos_performance_av_SpecifiedExecutionTime,
 )
-pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation_strategy = st.builds(
-    pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation,
+pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation_strategy = st.builds(
+    pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation,
 )
 System_strategy = st.builds(
     System,
@@ -4850,38 +4850,38 @@ System_strategy = st.builds(
 QoSAnnotations_strategy = st.builds(
     QoSAnnotations,
 )
-pcm::av::qosannotations::av::SpecifiedQoSAnnotation_strategy = st.builds(
-    pcm::av::qosannotations::av::SpecifiedQoSAnnotation,
+pcm_av_qosannotations_av_SpecifiedQoSAnnotation_strategy = st.builds(
+    pcm_av_qosannotations_av_SpecifiedQoSAnnotation,
 )
 SpecifiedExecutionTime_strategy = st.builds(
     SpecifiedExecutionTime,
 )
-pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime_strategy = st.builds(
-    pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime,
+pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime_strategy = st.builds(
+    pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime,
 )
-pcm::av::qos::performance::av::SystemSpecifiedExecutionTime_strategy = st.builds(
-    pcm::av::qos::performance::av::SystemSpecifiedExecutionTime,
+pcm_av_qos_performance_av_SystemSpecifiedExecutionTime_strategy = st.builds(
+    pcm_av_qos_performance_av_SystemSpecifiedExecutionTime,
 )
-seff::reliability::av::RecoveryAction_strategy = st.builds(
-    seff::reliability::av::RecoveryAction,
+seff_reliability_av_RecoveryAction_strategy = st.builds(
+    seff_reliability_av_RecoveryAction,
 )
-seff::reliability::av::RecoveryActionBehaviour_strategy = st.builds(
-    seff::reliability::av::RecoveryActionBehaviour,
+seff_reliability_av_RecoveryActionBehaviour_strategy = st.builds(
+    seff_reliability_av_RecoveryActionBehaviour,
 )
-pcm::av::seff::performance::av::ParametricResourceDemand_strategy = st.builds(
-    pcm::av::seff::performance::av::ParametricResourceDemand,
+pcm_av_seff_performance_av_ParametricResourceDemand_strategy = st.builds(
+    pcm_av_seff_performance_av_ParametricResourceDemand,
 )
-seff::av::AbstractInternalControlFlowAction_strategy = st.builds(
-    seff::av::AbstractInternalControlFlowAction,
+seff_av_AbstractInternalControlFlowAction_strategy = st.builds(
+    seff_av_AbstractInternalControlFlowAction,
 )
-seff::av::CallAction_strategy = st.builds(
-    seff::av::CallAction,
+seff_av_CallAction_strategy = st.builds(
+    seff_av_CallAction,
 )
-pcm::av::seff::av::InternalCallAction_strategy = st.builds(
-    pcm::av::seff::av::InternalCallAction,
+pcm_av_seff_av_InternalCallAction_strategy = st.builds(
+    pcm_av_seff_av_InternalCallAction,
 )
-pcm::av::seff::av::SynchronisationPoint_strategy = st.builds(
-    pcm::av::seff::av::SynchronisationPoint,
+pcm_av_seff_av_SynchronisationPoint_strategy = st.builds(
+    pcm_av_seff_av_SynchronisationPoint,
 )
 ForkAction_strategy = st.builds(
     ForkAction,
@@ -4895,40 +4895,68 @@ ResourceDemandingSEFF_strategy = st.builds(
 ResourceDemandingInternalBehaviour_strategy = st.builds(
     ResourceDemandingInternalBehaviour,
 )
-seff::av::ResourceDemandingBehaviour_strategy = st.builds(
-    seff::av::ResourceDemandingBehaviour,
+seff_av_ResourceDemandingBehaviour_strategy = st.builds(
+    seff_av_ResourceDemandingBehaviour,
 )
-seff::av::ServiceEffectSpecification_strategy = st.builds(
-    seff::av::ServiceEffectSpecification,
+seff_reliability_av_FailureHandlingEntity_strategy = st.builds(
+    seff_reliability_av_FailureHandlingEntity,
+)
+pcm_av_seff_reliability_av_RecoveryActionBehaviour_strategy = st.builds(
+    pcm_av_seff_reliability_av_RecoveryActionBehaviour,
+)
+seff_av_CallReturnAction_strategy = st.builds(
+    seff_av_CallReturnAction,
+)
+seff_av_AbstractAction_strategy = st.builds(
+    seff_av_AbstractAction,
+)
+pcm_av_seff_av_EmitEventAction_strategy = st.builds(
+    pcm_av_seff_av_EmitEventAction,
+)
+pcm_av_seff_av_ExternalCallAction_strategy = st.builds(
+    pcm_av_seff_av_ExternalCallAction,
+    retryCount=
+        st.integers()
+)
+pcm_av_seff_av_ServiceEffectSpecification_strategy = st.builds(
+    pcm_av_seff_av_ServiceEffectSpecification,
+    seffTypeID=
+        safe_text
+)
+pcm_av_seff_av_CallAction_strategy = st.builds(
+    pcm_av_seff_av_CallAction,
+)
+seff_av_ServiceEffectSpecification_strategy = st.builds(
+    seff_av_ServiceEffectSpecification,
 )
 AbstractBranchTransition_strategy = st.builds(
     AbstractBranchTransition,
 )
-pcm::av::seff::av::ProbabilisticBranchTransition_strategy = st.builds(
-    pcm::av::seff::av::ProbabilisticBranchTransition,
+pcm_av_seff_av_GuardedBranchTransition_strategy = st.builds(
+    pcm_av_seff_av_GuardedBranchTransition,
+)
+pcm_av_seff_av_ProbabilisticBranchTransition_strategy = st.builds(
+    pcm_av_seff_av_ProbabilisticBranchTransition,
     branchProbability=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-pcm::av::seff::av::GuardedBranchTransition_strategy = st.builds(
-    pcm::av::seff::av::GuardedBranchTransition,
 )
 AbstractLoopAction_strategy = st.builds(
     AbstractLoopAction,
 )
-pcm::av::seff::av::LoopAction_strategy = st.builds(
-    pcm::av::seff::av::LoopAction,
+pcm_av_seff_av_LoopAction_strategy = st.builds(
+    pcm_av_seff_av_LoopAction,
 )
-pcm::av::seff::av::CollectionIteratorAction_strategy = st.builds(
-    pcm::av::seff::av::CollectionIteratorAction,
+pcm_av_seff_av_CollectionIteratorAction_strategy = st.builds(
+    pcm_av_seff_av_CollectionIteratorAction,
 )
 ResourceDemandingBehaviour_strategy = st.builds(
     ResourceDemandingBehaviour,
 )
-pcm::av::seff::av::ResourceDemandingInternalBehaviour_strategy = st.builds(
-    pcm::av::seff::av::ResourceDemandingInternalBehaviour,
+pcm_av_seff_av_ForkedBehaviour_strategy = st.builds(
+    pcm_av_seff_av_ForkedBehaviour,
 )
-pcm::av::seff::av::ForkedBehaviour_strategy = st.builds(
-    pcm::av::seff::av::ForkedBehaviour,
+pcm_av_seff_av_ResourceDemandingInternalBehaviour_strategy = st.builds(
+    pcm_av_seff_av_ResourceDemandingInternalBehaviour,
 )
 BranchAction_strategy = st.builds(
     BranchAction,
@@ -4936,73 +4964,48 @@ BranchAction_strategy = st.builds(
 AbstractAction_strategy = st.builds(
     AbstractAction,
 )
-pcm::av::seff::av::AbstractInternalControlFlowAction_strategy = st.builds(
-    pcm::av::seff::av::AbstractInternalControlFlowAction,
-)
-seff::reliability::av::FailureHandlingEntity_strategy = st.builds(
-    seff::reliability::av::FailureHandlingEntity,
-)
-pcm::av::seff::reliability::av::RecoveryActionBehaviour_strategy = st.builds(
-    pcm::av::seff::reliability::av::RecoveryActionBehaviour,
-)
-seff::av::CallReturnAction_strategy = st.builds(
-    seff::av::CallReturnAction,
+pcm_av_seff_av_AbstractInternalControlFlowAction_strategy = st.builds(
+    pcm_av_seff_av_AbstractInternalControlFlowAction,
 )
 AbstractInternalControlFlowAction_strategy = st.builds(
     AbstractInternalControlFlowAction,
 )
-pcm::av::seff::av::ForkAction_strategy = st.builds(
-    pcm::av::seff::av::ForkAction,
+pcm_av_seff_reliability_av_RecoveryAction_strategy = st.builds(
+    pcm_av_seff_reliability_av_RecoveryAction,
 )
-pcm::av::seff::av::InternalAction_strategy = st.builds(
-    pcm::av::seff::av::InternalAction,
+pcm_av_seff_av_SetVariableAction_strategy = st.builds(
+    pcm_av_seff_av_SetVariableAction,
 )
-pcm::av::seff::av::SetVariableAction_strategy = st.builds(
-    pcm::av::seff::av::SetVariableAction,
+pcm_av_seff_av_InternalAction_strategy = st.builds(
+    pcm_av_seff_av_InternalAction,
 )
-pcm::av::seff::reliability::av::RecoveryAction_strategy = st.builds(
-    pcm::av::seff::reliability::av::RecoveryAction,
-)
-pcm::av::seff::av::AcquireAction_strategy = st.builds(
-    pcm::av::seff::av::AcquireAction,
+pcm_av_seff_av_AcquireAction_strategy = st.builds(
+    pcm_av_seff_av_AcquireAction,
     timeoutValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     timeout=
         st.booleans()
 )
-pcm::av::seff::av::BranchAction_strategy = st.builds(
-    pcm::av::seff::av::BranchAction,
+pcm_av_seff_av_AbstractLoopAction_strategy = st.builds(
+    pcm_av_seff_av_AbstractLoopAction,
 )
-pcm::av::seff::av::ReleaseAction_strategy = st.builds(
-    pcm::av::seff::av::ReleaseAction,
+pcm_av_seff_av_StartAction_strategy = st.builds(
+    pcm_av_seff_av_StartAction,
 )
-pcm::av::seff::av::AbstractLoopAction_strategy = st.builds(
-    pcm::av::seff::av::AbstractLoopAction,
+pcm_av_seff_av_ForkAction_strategy = st.builds(
+    pcm_av_seff_av_ForkAction,
 )
-seff::av::AbstractAction_strategy = st.builds(
-    seff::av::AbstractAction,
+pcm_av_seff_av_BranchAction_strategy = st.builds(
+    pcm_av_seff_av_BranchAction,
 )
-pcm::av::seff::av::EmitEventAction_strategy = st.builds(
-    pcm::av::seff::av::EmitEventAction,
+pcm_av_seff_av_ReleaseAction_strategy = st.builds(
+    pcm_av_seff_av_ReleaseAction,
 )
-pcm::av::seff::av::ExternalCallAction_strategy = st.builds(
-    pcm::av::seff::av::ExternalCallAction,
-    retryCount=
-        st.integers()
+pcm_av_seff_av_StopAction_strategy = st.builds(
+    pcm_av_seff_av_StopAction,
 )
-pcm::av::seff::av::ServiceEffectSpecification_strategy = st.builds(
-    pcm::av::seff::av::ServiceEffectSpecification,
-    seffTypeID=
-        safe_text
-)
-pcm::av::seff::av::StartAction_strategy = st.builds(
-    pcm::av::seff::av::StartAction,
-)
-pcm::av::seff::av::CallAction_strategy = st.builds(
-    pcm::av::seff::av::CallAction,
-)
-qos::reliability::av::SpecifiedReliabilityAnnotation_strategy = st.builds(
-    qos::reliability::av::SpecifiedReliabilityAnnotation,
+qos_reliability_av_SpecifiedReliabilityAnnotation_strategy = st.builds(
+    qos_reliability_av_SpecifiedReliabilityAnnotation,
 )
 CommunicationLinkResourceType_strategy = st.builds(
     CommunicationLinkResourceType,
@@ -5010,17 +5013,20 @@ CommunicationLinkResourceType_strategy = st.builds(
 SoftwareInducedFailureType_strategy = st.builds(
     SoftwareInducedFailureType,
 )
+pcm_av_reliability_av_ResourceTimeoutFailureType_strategy = st.builds(
+    pcm_av_reliability_av_ResourceTimeoutFailureType,
+)
 InternalAction_strategy = st.builds(
     InternalAction,
 )
 FailureOccurrenceDescription_strategy = st.builds(
     FailureOccurrenceDescription,
 )
-pcm::av::reliability::av::ExternalFailureOccurrenceDescription_strategy = st.builds(
-    pcm::av::reliability::av::ExternalFailureOccurrenceDescription,
+pcm_av_reliability_av_ExternalFailureOccurrenceDescription_strategy = st.builds(
+    pcm_av_reliability_av_ExternalFailureOccurrenceDescription,
 )
-pcm::av::reliability::av::InternalFailureOccurrenceDescription_strategy = st.builds(
-    pcm::av::reliability::av::InternalFailureOccurrenceDescription,
+pcm_av_reliability_av_InternalFailureOccurrenceDescription_strategy = st.builds(
+    pcm_av_reliability_av_InternalFailureOccurrenceDescription,
 )
 InternalFailureOccurrenceDescription_strategy = st.builds(
     InternalFailureOccurrenceDescription,
@@ -5031,21 +5037,21 @@ ProcessingResourceType_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-pcm::av::parameter::av::CharacterisedVariable_strategy = st.builds(
-    pcm::av::parameter::av::CharacterisedVariable,
+pcm_av_parameter_av_CharacterisedVariable_strategy = st.builds(
+    pcm_av_parameter_av_CharacterisedVariable,
     characterisationType=
         safe_text
 )
-pcm::av::parameter::av::VariableCharacterisation_strategy = st.builds(
-    pcm::av::parameter::av::VariableCharacterisation,
+pcm_av_parameter_av_VariableCharacterisation_strategy = st.builds(
+    pcm_av_parameter_av_VariableCharacterisation,
     type=
         safe_text
 )
-parameter::av::pcm::av::AbstractNamedReference_strategy = st.builds(
-    parameter::av::pcm::av::AbstractNamedReference,
+parameter_av_pcm_av_AbstractNamedReference_strategy = st.builds(
+    parameter_av_pcm_av_AbstractNamedReference,
 )
-pcm::av::reliability::av::FailureOccurrenceDescription_strategy = st.builds(
-    pcm::av::reliability::av::FailureOccurrenceDescription,
+pcm_av_reliability_av_FailureOccurrenceDescription_strategy = st.builds(
+    pcm_av_reliability_av_FailureOccurrenceDescription,
     failureProbability=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -5064,20 +5070,20 @@ SynchronisationPoint_strategy = st.builds(
 CallAction_strategy = st.builds(
     CallAction,
 )
-pcm::av::seff::performance::av::InfrastructureCall_strategy = st.builds(
-    pcm::av::seff::performance::av::InfrastructureCall,
+pcm_av_seff_performance_av_InfrastructureCall_strategy = st.builds(
+    pcm_av_seff_performance_av_InfrastructureCall,
 )
-pcm::av::seff::performance::av::ResourceCall_strategy = st.builds(
-    pcm::av::seff::performance::av::ResourceCall,
+pcm_av_seff_performance_av_ResourceCall_strategy = st.builds(
+    pcm_av_seff_performance_av_ResourceCall,
 )
-pcm::av::seff::av::CallReturnAction_strategy = st.builds(
-    pcm::av::seff::av::CallReturnAction,
+pcm_av_seff_av_CallReturnAction_strategy = st.builds(
+    pcm_av_seff_av_CallReturnAction,
 )
-pcm::av::parameter::av::VariableUsage_strategy = st.builds(
-    pcm::av::parameter::av::VariableUsage,
+pcm_av_parameter_av_VariableUsage_strategy = st.builds(
+    pcm_av_parameter_av_VariableUsage,
 )
-pcm::av::protocol::av::Protocol_strategy = st.builds(
-    pcm::av::protocol::av::Protocol,
+pcm_av_protocol_av_Protocol_strategy = st.builds(
+    pcm_av_protocol_av_Protocol,
     protocolTypeID=
         safe_text
 )
@@ -5090,8 +5096,8 @@ NetworkInducedFailureType_strategy = st.builds(
 SchedulingPolicy_strategy = st.builds(
     SchedulingPolicy,
 )
-pcm::av::resourcetype::av::ResourceRepository_strategy = st.builds(
-    pcm::av::resourcetype::av::ResourceRepository,
+pcm_av_resourcetype_av_ResourceRepository_strategy = st.builds(
+    pcm_av_resourcetype_av_ResourceRepository,
 )
 ResourceRepository_strategy = st.builds(
     ResourceRepository,
@@ -5105,20 +5111,20 @@ HardwareInducedFailureType_strategy = st.builds(
 ResourceType_strategy = st.builds(
     ResourceType,
 )
-pcm::av::resourcetype::av::CommunicationLinkResourceType_strategy = st.builds(
-    pcm::av::resourcetype::av::CommunicationLinkResourceType,
+pcm_av_resourcetype_av_CommunicationLinkResourceType_strategy = st.builds(
+    pcm_av_resourcetype_av_CommunicationLinkResourceType,
 )
-pcm::av::resourcetype::av::ProcessingResourceType_strategy = st.builds(
-    pcm::av::resourcetype::av::ProcessingResourceType,
+pcm_av_resourcetype_av_ProcessingResourceType_strategy = st.builds(
+    pcm_av_resourcetype_av_ProcessingResourceType,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-pcm::av::resourceenvironment::av::ResourceEnvironment_strategy = st.builds(
-    pcm::av::resourceenvironment::av::ResourceEnvironment,
+pcm_av_resourceenvironment_av_ResourceEnvironment_strategy = st.builds(
+    pcm_av_resourceenvironment_av_ResourceEnvironment,
 )
-pcm::av::repository::av::InnerDeclaration_strategy = st.builds(
-    pcm::av::repository::av::InnerDeclaration,
+pcm_av_repository_av_InnerDeclaration_strategy = st.builds(
+    pcm_av_repository_av_InnerDeclaration,
 )
 InnerDeclaration_strategy = st.builds(
     InnerDeclaration,
@@ -5126,23 +5132,23 @@ InnerDeclaration_strategy = st.builds(
 CompositeDataType_strategy = st.builds(
     CompositeDataType,
 )
-repository::av::DataType_strategy = st.builds(
-    repository::av::DataType,
+repository_av_DataType_strategy = st.builds(
+    repository_av_DataType,
 )
-repository::av::ImplementationComponentType_strategy = st.builds(
-    repository::av::ImplementationComponentType,
+repository_av_ImplementationComponentType_strategy = st.builds(
+    repository_av_ImplementationComponentType,
 )
-entity::av::ComposedProvidingRequiringEntity_strategy = st.builds(
-    entity::av::ComposedProvidingRequiringEntity,
+entity_av_ComposedProvidingRequiringEntity_strategy = st.builds(
+    entity_av_ComposedProvidingRequiringEntity,
 )
-pcm::av::subsystem::av::SubSystem_strategy = st.builds(
-    pcm::av::subsystem::av::SubSystem,
+pcm_av_subsystem_av_SubSystem_strategy = st.builds(
+    pcm_av_subsystem_av_SubSystem,
 )
-pcm::av::completions::av::Completion_strategy = st.builds(
-    pcm::av::completions::av::Completion,
+pcm_av_completions_av_Completion_strategy = st.builds(
+    pcm_av_completions_av_Completion,
 )
-pcm::av::repository::av::CompositeComponent_strategy = st.builds(
-    pcm::av::repository::av::CompositeComponent,
+pcm_av_repository_av_CompositeComponent_strategy = st.builds(
+    pcm_av_repository_av_CompositeComponent,
 )
 ProvidesComponentType_strategy = st.builds(
     ProvidesComponentType,
@@ -5150,8 +5156,8 @@ ProvidesComponentType_strategy = st.builds(
 OperationInterface_strategy = st.builds(
     OperationInterface,
 )
-pcm::av::repository::av::ExceptionType_strategy = st.builds(
-    pcm::av::repository::av::ExceptionType,
+pcm_av_repository_av_ExceptionType_strategy = st.builds(
+    pcm_av_repository_av_ExceptionType,
     exceptionMessage=
         safe_text,
     exceptionName=
@@ -5163,17 +5169,17 @@ ExceptionType_strategy = st.builds(
 Signature_strategy = st.builds(
     Signature,
 )
-pcm::av::repository::av::OperationSignature_strategy = st.builds(
-    pcm::av::repository::av::OperationSignature,
+pcm_av_repository_av_OperationSignature_strategy = st.builds(
+    pcm_av_repository_av_OperationSignature,
 )
-pcm::av::repository::av::EventType_strategy = st.builds(
-    pcm::av::repository::av::EventType,
+pcm_av_repository_av_EventType_strategy = st.builds(
+    pcm_av_repository_av_EventType,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-pcm::av::repository::av::RequiredCharacterisation_strategy = st.builds(
-    pcm::av::repository::av::RequiredCharacterisation,
+pcm_av_repository_av_RequiredCharacterisation_strategy = st.builds(
+    pcm_av_repository_av_RequiredCharacterisation,
     type=
         safe_text
 )
@@ -5186,35 +5192,35 @@ Protocol_strategy = st.builds(
 InfrastructureInterface_strategy = st.builds(
     InfrastructureInterface,
 )
-pcm::av::repository::av::InfrastructureSignature_strategy = st.builds(
-    pcm::av::repository::av::InfrastructureSignature,
+pcm_av_repository_av_InfrastructureSignature_strategy = st.builds(
+    pcm_av_repository_av_InfrastructureSignature,
 )
 FailureType_strategy = st.builds(
     FailureType,
 )
-pcm::av::reliability::av::SoftwareInducedFailureType_strategy = st.builds(
-    pcm::av::reliability::av::SoftwareInducedFailureType,
+pcm_av_reliability_av_HardwareInducedFailureType_strategy = st.builds(
+    pcm_av_reliability_av_HardwareInducedFailureType,
 )
-pcm::av::reliability::av::NetworkInducedFailureType_strategy = st.builds(
-    pcm::av::reliability::av::NetworkInducedFailureType,
+pcm_av_reliability_av_NetworkInducedFailureType_strategy = st.builds(
+    pcm_av_reliability_av_NetworkInducedFailureType,
 )
-pcm::av::reliability::av::HardwareInducedFailureType_strategy = st.builds(
-    pcm::av::reliability::av::HardwareInducedFailureType,
+pcm_av_reliability_av_SoftwareInducedFailureType_strategy = st.builds(
+    pcm_av_reliability_av_SoftwareInducedFailureType,
 )
 Interface_strategy = st.builds(
     Interface,
 )
-pcm::av::repository::av::OperationInterface_strategy = st.builds(
-    pcm::av::repository::av::OperationInterface,
+pcm_av_repository_av_InfrastructureInterface_strategy = st.builds(
+    pcm_av_repository_av_InfrastructureInterface,
 )
-pcm::av::repository::av::InfrastructureInterface_strategy = st.builds(
-    pcm::av::repository::av::InfrastructureInterface,
+pcm_av_repository_av_EventGroup_strategy = st.builds(
+    pcm_av_repository_av_EventGroup,
 )
-pcm::av::repository::av::EventGroup_strategy = st.builds(
-    pcm::av::repository::av::EventGroup,
+pcm_av_repository_av_OperationInterface_strategy = st.builds(
+    pcm_av_repository_av_OperationInterface,
 )
-pcm::av::repository::av::DataType_strategy = st.builds(
-    pcm::av::repository::av::DataType,
+pcm_av_repository_av_DataType_strategy = st.builds(
+    pcm_av_repository_av_DataType,
 )
 ResourceSignature_strategy = st.builds(
     ResourceSignature,
@@ -5225,16 +5231,16 @@ EventType_strategy = st.builds(
 DataType_strategy = st.builds(
     DataType,
 )
-pcm::av::repository::av::PrimitiveDataType_strategy = st.builds(
-    pcm::av::repository::av::PrimitiveDataType,
+pcm_av_repository_av_PrimitiveDataType_strategy = st.builds(
+    pcm_av_repository_av_PrimitiveDataType,
     type=
         safe_text
 )
-pcm::av::repository::av::Parameter_strategy = st.builds(
-    pcm::av::repository::av::Parameter,
-    parameterName=
-        safe_text,
+pcm_av_repository_av_Parameter_strategy = st.builds(
+    pcm_av_repository_av_Parameter,
     modifier__Parameter=
+        safe_text,
+    parameterName=
         safe_text
 )
 Repository_strategy = st.builds(
@@ -5243,8 +5249,8 @@ Repository_strategy = st.builds(
 InterfaceProvidingRequiringEntity_strategy = st.builds(
     InterfaceProvidingRequiringEntity,
 )
-pcm::av::repository::av::RepositoryComponent_strategy = st.builds(
-    pcm::av::repository::av::RepositoryComponent,
+pcm_av_repository_av_RepositoryComponent_strategy = st.builds(
+    pcm_av_repository_av_RepositoryComponent,
 )
 CompleteComponentType_strategy = st.builds(
     CompleteComponentType,
@@ -5258,8 +5264,8 @@ ServiceEffectSpecification_strategy = st.builds(
 ImplementationComponentType_strategy = st.builds(
     ImplementationComponentType,
 )
-pcm::av::repository::av::BasicComponent_strategy = st.builds(
-    pcm::av::repository::av::BasicComponent,
+pcm_av_repository_av_BasicComponent_strategy = st.builds(
+    pcm_av_repository_av_BasicComponent,
 )
 ResourceTimeoutFailureType_strategy = st.builds(
     ResourceTimeoutFailureType,
@@ -5273,53 +5279,53 @@ BranchTransition_strategy = st.builds(
 Branch_strategy = st.builds(
     Branch,
 )
-pcm::av::usagemodel::av::BranchTransition_strategy = st.builds(
-    pcm::av::usagemodel::av::BranchTransition,
+pcm_av_usagemodel_av_BranchTransition_strategy = st.builds(
+    pcm_av_usagemodel_av_BranchTransition,
     branchProbability=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 AbstractUserAction_strategy = st.builds(
     AbstractUserAction,
 )
-pcm::av::usagemodel::av::Loop_strategy = st.builds(
-    pcm::av::usagemodel::av::Loop,
+pcm_av_usagemodel_av_Delay_strategy = st.builds(
+    pcm_av_usagemodel_av_Delay,
 )
-pcm::av::usagemodel::av::Start_strategy = st.builds(
-    pcm::av::usagemodel::av::Start,
+pcm_av_usagemodel_av_Loop_strategy = st.builds(
+    pcm_av_usagemodel_av_Loop,
 )
-pcm::av::usagemodel::av::Delay_strategy = st.builds(
-    pcm::av::usagemodel::av::Delay,
+pcm_av_usagemodel_av_Branch_strategy = st.builds(
+    pcm_av_usagemodel_av_Branch,
 )
-pcm::av::usagemodel::av::Branch_strategy = st.builds(
-    pcm::av::usagemodel::av::Branch,
+pcm_av_usagemodel_av_Start_strategy = st.builds(
+    pcm_av_usagemodel_av_Start,
 )
-pcm::av::usagemodel::av::Stop_strategy = st.builds(
-    pcm::av::usagemodel::av::Stop,
+pcm_av_usagemodel_av_Stop_strategy = st.builds(
+    pcm_av_usagemodel_av_Stop,
 )
-pcm::av::usagemodel::av::EntryLevelSystemCall_strategy = st.builds(
-    pcm::av::usagemodel::av::EntryLevelSystemCall,
+pcm_av_usagemodel_av_EntryLevelSystemCall_strategy = st.builds(
+    pcm_av_usagemodel_av_EntryLevelSystemCall,
     priority=
         st.integers()
 )
 UserData_strategy = st.builds(
     UserData,
 )
-pcm::av::usagemodel::av::UsageModel_strategy = st.builds(
-    pcm::av::usagemodel::av::UsageModel,
+pcm_av_usagemodel_av_UsageModel_strategy = st.builds(
+    pcm_av_usagemodel_av_UsageModel,
 )
-pcm::av::usagemodel::av::UserData_strategy = st.builds(
-    pcm::av::usagemodel::av::UserData,
+pcm_av_usagemodel_av_UserData_strategy = st.builds(
+    pcm_av_usagemodel_av_UserData,
 )
 Workload_strategy = st.builds(
     Workload,
 )
-pcm::av::usagemodel::av::ClosedWorkload_strategy = st.builds(
-    pcm::av::usagemodel::av::ClosedWorkload,
+pcm_av_usagemodel_av_OpenWorkload_strategy = st.builds(
+    pcm_av_usagemodel_av_OpenWorkload,
+)
+pcm_av_usagemodel_av_ClosedWorkload_strategy = st.builds(
+    pcm_av_usagemodel_av_ClosedWorkload,
     population=
         st.integers()
-)
-pcm::av::usagemodel::av::OpenWorkload_strategy = st.builds(
-    pcm::av::usagemodel::av::OpenWorkload,
 )
 ScenarioBehaviour_strategy = st.builds(
     ScenarioBehaviour,
@@ -5330,8 +5336,8 @@ UsageModel_strategy = st.builds(
 UsageScenario_strategy = st.builds(
     UsageScenario,
 )
-pcm::av::usagemodel::av::Workload_strategy = st.builds(
-    pcm::av::usagemodel::av::Workload,
+pcm_av_usagemodel_av_Workload_strategy = st.builds(
+    pcm_av_usagemodel_av_Workload,
 )
 OperationSignature_strategy = st.builds(
     OperationSignature,
@@ -5342,14 +5348,14 @@ VariableUsage_strategy = st.builds(
 RepositoryComponent_strategy = st.builds(
     RepositoryComponent,
 )
-pcm::av::repository::av::CompleteComponentType_strategy = st.builds(
-    pcm::av::repository::av::CompleteComponentType,
+pcm_av_repository_av_CompleteComponentType_strategy = st.builds(
+    pcm_av_repository_av_CompleteComponentType,
 )
-pcm::av::repository::av::ProvidesComponentType_strategy = st.builds(
-    pcm::av::repository::av::ProvidesComponentType,
+pcm_av_repository_av_ProvidesComponentType_strategy = st.builds(
+    pcm_av_repository_av_ProvidesComponentType,
 )
-pcm::av::repository::av::ImplementationComponentType_strategy = st.builds(
-    pcm::av::repository::av::ImplementationComponentType,
+pcm_av_repository_av_ImplementationComponentType_strategy = st.builds(
+    pcm_av_repository_av_ImplementationComponentType,
     componentType=
         safe_text
 )
@@ -5374,279 +5380,282 @@ SinkRole_strategy = st.builds(
 SourceRole_strategy = st.builds(
     SourceRole,
 )
-composition::av::EventChannelSourceConnector_strategy = st.builds(
-    composition::av::EventChannelSourceConnector,
+composition_av_EventChannelSourceConnector_strategy = st.builds(
+    composition_av_EventChannelSourceConnector,
 )
 EventGroup_strategy = st.builds(
     EventGroup,
 )
-pcm::av::composition::av::ResourceRequiredDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::ResourceRequiredDelegationConnector,
+pcm_av_composition_av_ResourceRequiredDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_ResourceRequiredDelegationConnector,
 )
-composition::av::Connector_strategy = st.builds(
-    composition::av::Connector,
+composition_av_Connector_strategy = st.builds(
+    composition_av_Connector,
 )
-composition::av::EventChannel_strategy = st.builds(
-    composition::av::EventChannel,
+composition_av_EventChannel_strategy = st.builds(
+    composition_av_EventChannel,
 )
-composition::av::ResourceRequiredDelegationConnector_strategy = st.builds(
-    composition::av::ResourceRequiredDelegationConnector,
+composition_av_ResourceRequiredDelegationConnector_strategy = st.builds(
+    composition_av_ResourceRequiredDelegationConnector,
 )
-composition::av::AssemblyContext_strategy = st.builds(
-    composition::av::AssemblyContext,
+composition_av_AssemblyContext_strategy = st.builds(
+    composition_av_AssemblyContext,
 )
 DelegationConnector_strategy = st.builds(
     DelegationConnector,
 )
-pcm::av::composition::av::RequiredDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::RequiredDelegationConnector,
+pcm_av_composition_av_RequiredInfrastructureDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_RequiredInfrastructureDelegationConnector,
 )
-pcm::av::composition::av::ProvidedInfrastructureDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::ProvidedInfrastructureDelegationConnector,
+pcm_av_composition_av_SinkDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_SinkDelegationConnector,
 )
-pcm::av::composition::av::RequiredResourceDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::RequiredResourceDelegationConnector,
+pcm_av_composition_av_RequiredResourceDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_RequiredResourceDelegationConnector,
 )
-pcm::av::composition::av::RequiredInfrastructureDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::RequiredInfrastructureDelegationConnector,
+pcm_av_composition_av_RequiredDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_RequiredDelegationConnector,
 )
-pcm::av::composition::av::SinkDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::SinkDelegationConnector,
+pcm_av_composition_av_SourceDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_SourceDelegationConnector,
 )
-pcm::av::composition::av::SourceDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::SourceDelegationConnector,
+pcm_av_composition_av_ProvidedInfrastructureDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_ProvidedInfrastructureDelegationConnector,
 )
-pcm::av::composition::av::ProvidedDelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::ProvidedDelegationConnector,
+pcm_av_composition_av_ProvidedDelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_ProvidedDelegationConnector,
 )
 Connector_strategy = st.builds(
     Connector,
 )
-pcm::av::composition::av::AssemblyInfrastructureConnector_strategy = st.builds(
-    pcm::av::composition::av::AssemblyInfrastructureConnector,
+pcm_av_composition_av_AssemblyConnector_strategy = st.builds(
+    pcm_av_composition_av_AssemblyConnector,
 )
-pcm::av::composition::av::EventChannelSinkConnector_strategy = st.builds(
-    pcm::av::composition::av::EventChannelSinkConnector,
+pcm_av_composition_av_AssemblyInfrastructureConnector_strategy = st.builds(
+    pcm_av_composition_av_AssemblyInfrastructureConnector,
 )
-pcm::av::composition::av::EventChannelSourceConnector_strategy = st.builds(
-    pcm::av::composition::av::EventChannelSourceConnector,
+pcm_av_composition_av_AssemblyEventConnector_strategy = st.builds(
+    pcm_av_composition_av_AssemblyEventConnector,
 )
-pcm::av::composition::av::AssemblyEventConnector_strategy = st.builds(
-    pcm::av::composition::av::AssemblyEventConnector,
+pcm_av_composition_av_EventChannelSinkConnector_strategy = st.builds(
+    pcm_av_composition_av_EventChannelSinkConnector,
 )
-pcm::av::composition::av::AssemblyConnector_strategy = st.builds(
-    pcm::av::composition::av::AssemblyConnector,
+pcm_av_composition_av_EventChannelSourceConnector_strategy = st.builds(
+    pcm_av_composition_av_EventChannelSourceConnector,
 )
-pcm::av::composition::av::DelegationConnector_strategy = st.builds(
-    pcm::av::composition::av::DelegationConnector,
+pcm_av_composition_av_DelegationConnector_strategy = st.builds(
+    pcm_av_composition_av_DelegationConnector,
 )
-entity::av::NamedElement_strategy = st.builds(
-    entity::av::NamedElement,
+entity_av_NamedElement_strategy = st.builds(
+    entity_av_NamedElement,
 )
 Identifier_strategy = st.builds(
     Identifier,
 )
-pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification_strategy = st.builds(
-    pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification,
-    failureProbability=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-pcm::av::seff::av::ResourceDemandingBehaviour_strategy = st.builds(
-    pcm::av::seff::av::ResourceDemandingBehaviour,
-)
-pcm::av::seff::av::ResourceDemandingSEFF_strategy = st.builds(
-    pcm::av::seff::av::ResourceDemandingSEFF,
-)
-pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy = st.builds(
-    pcm::av::resourceenvironment::av::ProcessingResourceSpecification,
-    MTTF=
+pcm_av_resourceenvironment_av_ProcessingResourceSpecification_strategy = st.builds(
+    pcm_av_resourceenvironment_av_ProcessingResourceSpecification,
+    MTTR=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     requiredByContainer=
         st.booleans(),
-    MTTR=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     numberOfReplicas=
-        st.integers()
+        st.integers(),
+    MTTF=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-pcm::av::entity::av::Entity_strategy = st.builds(
-    pcm::av::entity::av::Entity,
+pcm_av_seff_av_ResourceDemandingBehaviour_strategy = st.builds(
+    pcm_av_seff_av_ResourceDemandingBehaviour,
 )
-pcm::av::entity::av::NamedElement_strategy = st.builds(
-    pcm::av::entity::av::NamedElement,
+pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification_strategy = st.builds(
+    pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification,
+    failureProbability=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+pcm_av_seff_av_ResourceDemandingSEFF_strategy = st.builds(
+    pcm_av_seff_av_ResourceDemandingSEFF,
+)
+pcm_av_entity_av_Entity_strategy = st.builds(
+    pcm_av_entity_av_Entity,
+)
+pcm_av_entity_av_NamedElement_strategy = st.builds(
+    pcm_av_entity_av_NamedElement,
     entityName=
         safe_text
 )
-entity::av::InterfaceProvidingRequiringEntity_strategy = st.builds(
-    entity::av::InterfaceProvidingRequiringEntity,
+entity_av_InterfaceProvidingRequiringEntity_strategy = st.builds(
+    entity_av_InterfaceProvidingRequiringEntity,
 )
-composition::av::ComposedStructure_strategy = st.builds(
-    composition::av::ComposedStructure,
+composition_av_ComposedStructure_strategy = st.builds(
+    composition_av_ComposedStructure,
 )
-pcm::av::entity::av::ComposedProvidingRequiringEntity_strategy = st.builds(
-    pcm::av::entity::av::ComposedProvidingRequiringEntity,
+pcm_av_entity_av_ComposedProvidingRequiringEntity_strategy = st.builds(
+    pcm_av_entity_av_ComposedProvidingRequiringEntity,
 )
-entity::av::ResourceProvidedRole_strategy = st.builds(
-    entity::av::ResourceProvidedRole,
+entity_av_ResourceProvidedRole_strategy = st.builds(
+    entity_av_ResourceProvidedRole,
 )
 RequiredRole_strategy = st.builds(
     RequiredRole,
 )
-pcm::av::repository::av::InfrastructureRequiredRole_strategy = st.builds(
-    pcm::av::repository::av::InfrastructureRequiredRole,
+pcm_av_repository_av_InfrastructureRequiredRole_strategy = st.builds(
+    pcm_av_repository_av_InfrastructureRequiredRole,
 )
-pcm::av::repository::av::SourceRole_strategy = st.builds(
-    pcm::av::repository::av::SourceRole,
+pcm_av_repository_av_OperationRequiredRole_strategy = st.builds(
+    pcm_av_repository_av_OperationRequiredRole,
 )
-pcm::av::repository::av::OperationRequiredRole_strategy = st.builds(
-    pcm::av::repository::av::OperationRequiredRole,
+pcm_av_repository_av_SourceRole_strategy = st.builds(
+    pcm_av_repository_av_SourceRole,
 )
-entity::av::ResourceInterfaceRequiringEntity_strategy = st.builds(
-    entity::av::ResourceInterfaceRequiringEntity,
+entity_av_ResourceInterfaceRequiringEntity_strategy = st.builds(
+    entity_av_ResourceInterfaceRequiringEntity,
 )
-entity::av::Entity_strategy = st.builds(
-    entity::av::Entity,
+entity_av_Entity_strategy = st.builds(
+    entity_av_Entity,
 )
-pcm::av::repository::av::CompositeDataType_strategy = st.builds(
-    pcm::av::repository::av::CompositeDataType,
+pcm_av_repository_av_CompositeDataType_strategy = st.builds(
+    pcm_av_repository_av_CompositeDataType,
 )
-pcm::av::system::av::System_strategy = st.builds(
-    pcm::av::system::av::System,
+pcm_av_system_av_System_strategy = st.builds(
+    pcm_av_system_av_System,
 )
-pcm::av::repository::av::CollectionDataType_strategy = st.builds(
-    pcm::av::repository::av::CollectionDataType,
+pcm_av_repository_av_CollectionDataType_strategy = st.builds(
+    pcm_av_repository_av_CollectionDataType,
 )
-pcm::av::entity::av::InterfaceRequiringEntity_strategy = st.builds(
-    pcm::av::entity::av::InterfaceRequiringEntity,
+pcm_av_entity_av_InterfaceRequiringEntity_strategy = st.builds(
+    pcm_av_entity_av_InterfaceRequiringEntity,
 )
 ProvidedRole_strategy = st.builds(
     ProvidedRole,
 )
-pcm::av::repository::av::SinkRole_strategy = st.builds(
-    pcm::av::repository::av::SinkRole,
+pcm_av_repository_av_OperationProvidedRole_strategy = st.builds(
+    pcm_av_repository_av_OperationProvidedRole,
 )
-pcm::av::repository::av::InfrastructureProvidedRole_strategy = st.builds(
-    pcm::av::repository::av::InfrastructureProvidedRole,
+pcm_av_repository_av_SinkRole_strategy = st.builds(
+    pcm_av_repository_av_SinkRole,
 )
-pcm::av::repository::av::OperationProvidedRole_strategy = st.builds(
-    pcm::av::repository::av::OperationProvidedRole,
+pcm_av_repository_av_InfrastructureProvidedRole_strategy = st.builds(
+    pcm_av_repository_av_InfrastructureProvidedRole,
 )
 Entity_strategy = st.builds(
     Entity,
 )
-pcm::av::entity::av::ResourceInterfaceProvidingEntity_strategy = st.builds(
-    pcm::av::entity::av::ResourceInterfaceProvidingEntity,
+pcm_av_allocation_av_AllocationContext_strategy = st.builds(
+    pcm_av_allocation_av_AllocationContext,
 )
-pcm::av::composition::av::Connector_strategy = st.builds(
-    pcm::av::composition::av::Connector,
+pcm_av_usagemodel_av_UsageScenario_strategy = st.builds(
+    pcm_av_usagemodel_av_UsageScenario,
 )
-pcm::av::seff::av::AbstractBranchTransition_strategy = st.builds(
-    pcm::av::seff::av::AbstractBranchTransition,
+pcm_av_seff_av_AbstractAction_strategy = st.builds(
+    pcm_av_seff_av_AbstractAction,
 )
-pcm::av::usagemodel::av::UsageScenario_strategy = st.builds(
-    pcm::av::usagemodel::av::UsageScenario,
+pcm_av_repository_av_PassiveResource_strategy = st.builds(
+    pcm_av_repository_av_PassiveResource,
 )
-pcm::av::resourceenvironment::av::LinkingResource_strategy = st.builds(
-    pcm::av::resourceenvironment::av::LinkingResource,
+pcm_av_composition_av_EventChannel_strategy = st.builds(
+    pcm_av_composition_av_EventChannel,
 )
-pcm::av::resourceenvironment::av::ResourceContainer_strategy = st.builds(
-    pcm::av::resourceenvironment::av::ResourceContainer,
+pcm_av_repository_av_Interface_strategy = st.builds(
+    pcm_av_repository_av_Interface,
 )
-pcm::av::usagemodel::av::ScenarioBehaviour_strategy = st.builds(
-    pcm::av::usagemodel::av::ScenarioBehaviour,
+pcm_av_qosannotations_av_QoSAnnotations_strategy = st.builds(
+    pcm_av_qosannotations_av_QoSAnnotations,
 )
-pcm::av::repository::av::Signature_strategy = st.builds(
-    pcm::av::repository::av::Signature,
-)
-pcm::av::allocation::av::AllocationContext_strategy = st.builds(
-    pcm::av::allocation::av::AllocationContext,
-)
-pcm::av::seff::av::AbstractAction_strategy = st.builds(
-    pcm::av::seff::av::AbstractAction,
-)
-pcm::av::seff::reliability::av::FailureHandlingEntity_strategy = st.builds(
-    pcm::av::seff::reliability::av::FailureHandlingEntity,
-)
-pcm::av::composition::av::AssemblyContext_strategy = st.builds(
-    pcm::av::composition::av::AssemblyContext,
-)
-pcm::av::repository::av::PassiveResource_strategy = st.builds(
-    pcm::av::repository::av::PassiveResource,
-)
-pcm::av::usagemodel::av::AbstractUserAction_strategy = st.builds(
-    pcm::av::usagemodel::av::AbstractUserAction,
-)
-pcm::av::repository::av::Repository_strategy = st.builds(
-    pcm::av::repository::av::Repository,
+pcm_av_repository_av_Repository_strategy = st.builds(
+    pcm_av_repository_av_Repository,
     repositoryDescription=
         safe_text
 )
-pcm::av::allocation::av::Allocation_strategy = st.builds(
-    pcm::av::allocation::av::Allocation,
-)
-pcm::av::entity::av::ResourceInterfaceRequiringEntity_strategy = st.builds(
-    pcm::av::entity::av::ResourceInterfaceRequiringEntity,
-)
-pcm::av::resourcetype::av::ResourceInterface_strategy = st.builds(
-    pcm::av::resourcetype::av::ResourceInterface,
-)
-pcm::av::qosannotations::av::QoSAnnotations_strategy = st.builds(
-    pcm::av::qosannotations::av::QoSAnnotations,
-)
-pcm::av::resourcetype::av::SchedulingPolicy_strategy = st.builds(
-    pcm::av::resourcetype::av::SchedulingPolicy,
-)
-pcm::av::repository::av::Interface_strategy = st.builds(
-    pcm::av::repository::av::Interface,
-)
-pcm::av::composition::av::ComposedStructure_strategy = st.builds(
-    pcm::av::composition::av::ComposedStructure,
-)
-pcm::av::repository::av::Role_strategy = st.builds(
-    pcm::av::repository::av::Role,
-)
-pcm::av::composition::av::EventChannel_strategy = st.builds(
-    pcm::av::composition::av::EventChannel,
-)
-pcm::av::resourcetype::av::ResourceSignature_strategy = st.builds(
-    pcm::av::resourcetype::av::ResourceSignature,
+pcm_av_resourcetype_av_ResourceSignature_strategy = st.builds(
+    pcm_av_resourcetype_av_ResourceSignature,
     resourceServiceId=
         st.integers()
 )
-pcm::av::entity::av::InterfaceProvidingEntity_strategy = st.builds(
-    pcm::av::entity::av::InterfaceProvidingEntity,
+pcm_av_allocation_av_Allocation_strategy = st.builds(
+    pcm_av_allocation_av_Allocation,
 )
-entity::av::InterfaceRequiringEntity_strategy = st.builds(
-    entity::av::InterfaceRequiringEntity,
+pcm_av_entity_av_ResourceInterfaceRequiringEntity_strategy = st.builds(
+    pcm_av_entity_av_ResourceInterfaceRequiringEntity,
 )
-entity::av::InterfaceProvidingEntity_strategy = st.builds(
-    entity::av::InterfaceProvidingEntity,
+pcm_av_reliability_av_FailureType_strategy = st.builds(
+    pcm_av_reliability_av_FailureType,
 )
-pcm::av::entity::av::InterfaceProvidingRequiringEntity_strategy = st.builds(
-    pcm::av::entity::av::InterfaceProvidingRequiringEntity,
+pcm_av_resourceenvironment_av_ResourceContainer_strategy = st.builds(
+    pcm_av_resourceenvironment_av_ResourceContainer,
+)
+pcm_av_composition_av_AssemblyContext_strategy = st.builds(
+    pcm_av_composition_av_AssemblyContext,
+)
+pcm_av_usagemodel_av_ScenarioBehaviour_strategy = st.builds(
+    pcm_av_usagemodel_av_ScenarioBehaviour,
+)
+pcm_av_composition_av_ComposedStructure_strategy = st.builds(
+    pcm_av_composition_av_ComposedStructure,
+)
+pcm_av_repository_av_Role_strategy = st.builds(
+    pcm_av_repository_av_Role,
+)
+pcm_av_composition_av_Connector_strategy = st.builds(
+    pcm_av_composition_av_Connector,
+)
+pcm_av_resourceenvironment_av_LinkingResource_strategy = st.builds(
+    pcm_av_resourceenvironment_av_LinkingResource,
+)
+pcm_av_repository_av_Signature_strategy = st.builds(
+    pcm_av_repository_av_Signature,
+)
+pcm_av_resourcetype_av_SchedulingPolicy_strategy = st.builds(
+    pcm_av_resourcetype_av_SchedulingPolicy,
+)
+pcm_av_seff_av_AbstractBranchTransition_strategy = st.builds(
+    pcm_av_seff_av_AbstractBranchTransition,
+)
+pcm_av_resourcetype_av_ResourceInterface_strategy = st.builds(
+    pcm_av_resourcetype_av_ResourceInterface,
+)
+pcm_av_usagemodel_av_AbstractUserAction_strategy = st.builds(
+    pcm_av_usagemodel_av_AbstractUserAction,
+)
+pcm_av_entity_av_ResourceInterfaceProvidingEntity_strategy = st.builds(
+    pcm_av_entity_av_ResourceInterfaceProvidingEntity,
+)
+pcm_av_seff_reliability_av_FailureHandlingEntity_strategy = st.builds(
+    pcm_av_seff_reliability_av_FailureHandlingEntity,
+)
+pcm_av_entity_av_InterfaceProvidingEntity_strategy = st.builds(
+    pcm_av_entity_av_InterfaceProvidingEntity,
+)
+entity_av_InterfaceRequiringEntity_strategy = st.builds(
+    entity_av_InterfaceRequiringEntity,
+)
+entity_av_InterfaceProvidingEntity_strategy = st.builds(
+    entity_av_InterfaceProvidingEntity,
+)
+pcm_av_entity_av_InterfaceProvidingRequiringEntity_strategy = st.builds(
+    pcm_av_entity_av_InterfaceProvidingRequiringEntity,
 )
 ResourceInterface_strategy = st.builds(
     ResourceInterface,
 )
-entity::av::ResourceInterfaceProvidingEntity_strategy = st.builds(
-    entity::av::ResourceInterfaceProvidingEntity,
+entity_av_ResourceInterfaceProvidingEntity_strategy = st.builds(
+    entity_av_ResourceInterfaceProvidingEntity,
 )
-pcm::av::resourcetype::av::ResourceType_strategy = st.builds(
-    pcm::av::resourcetype::av::ResourceType,
+pcm_av_resourcetype_av_ResourceType_strategy = st.builds(
+    pcm_av_resourcetype_av_ResourceType,
 )
-pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity_strategy = st.builds(
-    pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity,
+pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity_strategy = st.builds(
+    pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity,
 )
 Role_strategy = st.builds(
     Role,
 )
-pcm::av::repository::av::ProvidedRole_strategy = st.builds(
-    pcm::av::repository::av::ProvidedRole,
+pcm_av_repository_av_ProvidedRole_strategy = st.builds(
+    pcm_av_repository_av_ProvidedRole,
 )
-pcm::av::repository::av::RequiredRole_strategy = st.builds(
-    pcm::av::repository::av::RequiredRole,
+pcm_av_repository_av_RequiredRole_strategy = st.builds(
+    pcm_av_repository_av_RequiredRole,
 )
-pcm::av::entity::av::ResourceProvidedRole_strategy = st.builds(
-    pcm::av::entity::av::ResourceProvidedRole,
+pcm_av_entity_av_ResourceProvidedRole_strategy = st.builds(
+    pcm_av_entity_av_ResourceProvidedRole,
 )
 ProcessingResourceSpecification_strategy = st.builds(
     ProcessingResourceSpecification,
@@ -5663,29 +5672,29 @@ OpenWorkload_strategy = st.builds(
 Loop_strategy = st.builds(
     Loop,
 )
-composition::av::AssemblyEventConnector_strategy = st.builds(
-    composition::av::AssemblyEventConnector,
+composition_av_AssemblyEventConnector_strategy = st.builds(
+    composition_av_AssemblyEventConnector,
 )
-composition::av::EventChannelSinkConnector_strategy = st.builds(
-    composition::av::EventChannelSinkConnector,
+composition_av_EventChannelSinkConnector_strategy = st.builds(
+    composition_av_EventChannelSinkConnector,
 )
-pcm::av::entity::av::ResourceRequiredRole_strategy = st.builds(
-    pcm::av::entity::av::ResourceRequiredRole,
+pcm_av_entity_av_ResourceRequiredRole_strategy = st.builds(
+    pcm_av_entity_av_ResourceRequiredRole,
 )
-entity::av::ResourceRequiredRole_strategy = st.builds(
-    entity::av::ResourceRequiredRole,
+entity_av_ResourceRequiredRole_strategy = st.builds(
+    entity_av_ResourceRequiredRole,
 )
 LoopAction_strategy = st.builds(
     LoopAction,
 )
-seff::performance::av::ParametricResourceDemand_strategy = st.builds(
-    seff::performance::av::ParametricResourceDemand,
+seff_performance_av_ParametricResourceDemand_strategy = st.builds(
+    seff_performance_av_ParametricResourceDemand,
 )
-seff::performance::av::ResourceCall_strategy = st.builds(
-    seff::performance::av::ResourceCall,
+seff_performance_av_ResourceCall_strategy = st.builds(
+    seff_performance_av_ResourceCall,
 )
-seff::performance::av::InfrastructureCall_strategy = st.builds(
-    seff::performance::av::InfrastructureCall,
+seff_performance_av_InfrastructureCall_strategy = st.builds(
+    seff_performance_av_InfrastructureCall,
 )
 VariableCharacterisation_strategy = st.builds(
     VariableCharacterisation,
@@ -5699,44 +5708,35 @@ ClosedWorkload_strategy = st.builds(
 RandomVariable_strategy = st.builds(
     RandomVariable,
 )
-pcm::av::core::av::PCMRandomVariable_strategy = st.builds(
-    pcm::av::core::av::PCMRandomVariable,
+pcm_av_core_av_PCMRandomVariable_strategy = st.builds(
+    pcm_av_core_av_PCMRandomVariable,
 )
-pcm::av::PerJoinPointScope_strategy = st.builds(
-    pcm::av::PerJoinPointScope,
+pcm_av_PerJoinPointScope_strategy = st.builds(
+    pcm_av_PerJoinPointScope,
 )
-pcm::av::GlobalScope_strategy = st.builds(
-    pcm::av::GlobalScope,
+pcm_av_GlobalScope_strategy = st.builds(
+    pcm_av_GlobalScope,
 )
-pcm::av::EObject_strategy = st.builds(
-    pcm::av::EObject,
+pcm_av_EObject_strategy = st.builds(
+    pcm_av_EObject,
 )
-pcm::av::Advice_strategy = st.builds(
-    pcm::av::Advice,
+pcm_av_Advice_strategy = st.builds(
+    pcm_av_Advice,
 )
-pcm::av::DummyClass_strategy = st.builds(
-    pcm::av::DummyClass,
+pcm_av_DummyClass_strategy = st.builds(
+    pcm_av_DummyClass,
 )
-qos::performance::av::SpecifiedExecutionTime_strategy = st.builds(
-    qos::performance::av::SpecifiedExecutionTime,
+qos_performance_av_SpecifiedExecutionTime_strategy = st.builds(
+    qos_performance_av_SpecifiedExecutionTime,
 )
 GuardedBranchTransition_strategy = st.builds(
     GuardedBranchTransition,
 )
-pcm::av::seff::av::StopAction_strategy = st.builds(
-    pcm::av::seff::av::StopAction,
-)
-pcm::av::reliability::av::FailureType_strategy = st.builds(
-    pcm::av::reliability::av::FailureType,
-)
-pcm::av::reliability::av::ResourceTimeoutFailureType_strategy = st.builds(
-    pcm::av::reliability::av::ResourceTimeoutFailureType,
-)
 
-@given(instance=repository::av::RepositoryComponent_strategy)
+@given(instance=repository_av_RepositoryComponent_strategy)
 @settings(max_examples=50)
-def test_repository::av::repositorycomponent_instantiation(instance):
-    assert isinstance(instance, repository::av::RepositoryComponent)
+def test_repository_av_repositorycomponent_instantiation(instance):
+    assert isinstance(instance, repository_av_RepositoryComponent)
 
 @given(instance=AllocationContext_strategy)
 @settings(max_examples=50)
@@ -5748,30 +5748,30 @@ def test_allocationcontext_instantiation(instance):
 def test_parametricresourcedemand_instantiation(instance):
     assert isinstance(instance, ParametricResourceDemand)
 
-@given(instance=pcm::av::completions::av::NetworkDemandParametricResourceDemand_strategy)
+@given(instance=pcm_av_completions_av_NetworkDemandParametricResourceDemand_strategy)
 @settings(max_examples=50)
-def test_pcm::av::completions::av::networkdemandparametricresourcedemand_instantiation(instance):
-    assert isinstance(instance, pcm::av::completions::av::NetworkDemandParametricResourceDemand)
+def test_pcm_av_completions_av_networkdemandparametricresourcedemand_instantiation(instance):
+    assert isinstance(instance, pcm_av_completions_av_NetworkDemandParametricResourceDemand)
 
 @given(instance=ExternalCallAction_strategy)
 @settings(max_examples=50)
 def test_externalcallaction_instantiation(instance):
     assert isinstance(instance, ExternalCallAction)
 
-@given(instance=pcm::av::completions::av::DelegatingExternalCallAction_strategy)
+@given(instance=pcm_av_completions_av_DelegatingExternalCallAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::completions::av::delegatingexternalcallaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::completions::av::DelegatingExternalCallAction)
+def test_pcm_av_completions_av_delegatingexternalcallaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_completions_av_DelegatingExternalCallAction)
 
 @given(instance=Completion_strategy)
 @settings(max_examples=50)
 def test_completion_instantiation(instance):
     assert isinstance(instance, Completion)
 
-@given(instance=pcm::av::completions::av::CompletionRepository_strategy)
+@given(instance=pcm_av_completions_av_CompletionRepository_strategy)
 @settings(max_examples=50)
-def test_pcm::av::completions::av::completionrepository_instantiation(instance):
-    assert isinstance(instance, pcm::av::completions::av::CompletionRepository)
+def test_pcm_av_completions_av_completionrepository_instantiation(instance):
+    assert isinstance(instance, pcm_av_completions_av_CompletionRepository)
 
 @given(instance=Allocation_strategy)
 @settings(max_examples=50)
@@ -5798,25 +5798,25 @@ def test_linkingresource_instantiation(instance):
 def test_externalfailureoccurrencedescription_instantiation(instance):
     assert isinstance(instance, ExternalFailureOccurrenceDescription)
 
-@given(instance=pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction_strategy)
+@given(instance=pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::qosannotations::av::specifiedoutputparameterabstraction_instantiation(instance):
-    assert isinstance(instance, pcm::av::qosannotations::av::SpecifiedOutputParameterAbstraction)
+def test_pcm_av_qosannotations_av_specifiedoutputparameterabstraction_instantiation(instance):
+    assert isinstance(instance, pcm_av_qosannotations_av_SpecifiedOutputParameterAbstraction)
 
 @given(instance=SpecifiedQoSAnnotation_strategy)
 @settings(max_examples=50)
 def test_specifiedqosannotation_instantiation(instance):
     assert isinstance(instance, SpecifiedQoSAnnotation)
 
-@given(instance=pcm::av::qos::performance::av::SpecifiedExecutionTime_strategy)
+@given(instance=pcm_av_qos_performance_av_SpecifiedExecutionTime_strategy)
 @settings(max_examples=50)
-def test_pcm::av::qos::performance::av::specifiedexecutiontime_instantiation(instance):
-    assert isinstance(instance, pcm::av::qos::performance::av::SpecifiedExecutionTime)
+def test_pcm_av_qos_performance_av_specifiedexecutiontime_instantiation(instance):
+    assert isinstance(instance, pcm_av_qos_performance_av_SpecifiedExecutionTime)
 
-@given(instance=pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation_strategy)
+@given(instance=pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation_strategy)
 @settings(max_examples=50)
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_instantiation(instance):
-    assert isinstance(instance, pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation)
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_instantiation(instance):
+    assert isinstance(instance, pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation)
 
 import warnings
 import copy
@@ -5824,73 +5824,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation_strategy)
+@given(instance=pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation_strategy)
 @settings(max_examples=30)
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_sumofreliabilityannotationfailureprobabilitiesmustnotexceed1_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation_strategy)
-@settings(max_examples=30)
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_multipleexternaloccurrencedescriptionsperfailuretypenotallowed_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation_strategy)
-@settings(max_examples=30)
-def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_specifiedreliabilityannotationmustreferencerequiredroleofasystem_changes_state(instance):
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_specifiedreliabilityannotationmustreferencerequiredroleofasystem_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5905,14 +5841,78 @@ def test_pcm::av::qos::reliability::av::specifiedreliabilityannotation_specified
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SpecifiedReliabilityAnnotationMustReferenceRequiredRoleOfASystem' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation is empty"
+        assert has_statements, f"Function 'SpecifiedReliabilityAnnotationMustReferenceRequiredRoleOfASystem' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SpecifiedReliabilityAnnotationMustReferenceRequiredRoleOfASystem' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation did not change state; check implementation")
+            warnings.warn(f"Operation 'SpecifiedReliabilityAnnotationMustReferenceRequiredRoleOfASystem' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SpecifiedReliabilityAnnotationMustReferenceRequiredRoleOfASystem' in pcm::av::qos::reliability::av::SpecifiedReliabilityAnnotation is not implemented or raised an error")
+        warnings.warn(f"Operation 'SpecifiedReliabilityAnnotationMustReferenceRequiredRoleOfASystem' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation_strategy)
+@settings(max_examples=30)
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_multipleexternaloccurrencedescriptionsperfailuretypenotallowed_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'MultipleExternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation_strategy)
+@settings(max_examples=30)
+def test_pcm_av_qos_reliability_av_specifiedreliabilityannotation_sumofreliabilityannotationfailureprobabilitiesmustnotexceed1_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SumOfReliabilityAnnotationFailureProbabilitiesMustNotExceed1' in pcm_av_qos_reliability_av_SpecifiedReliabilityAnnotation is not implemented or raised an error")
 
 @given(instance=System_strategy)
 @settings(max_examples=50)
@@ -5924,25 +5924,25 @@ def test_system_instantiation(instance):
 def test_qosannotations_instantiation(instance):
     assert isinstance(instance, QoSAnnotations)
 
-@given(instance=pcm::av::qosannotations::av::SpecifiedQoSAnnotation_strategy)
+@given(instance=pcm_av_qosannotations_av_SpecifiedQoSAnnotation_strategy)
 @settings(max_examples=50)
-def test_pcm::av::qosannotations::av::specifiedqosannotation_instantiation(instance):
-    assert isinstance(instance, pcm::av::qosannotations::av::SpecifiedQoSAnnotation)
+def test_pcm_av_qosannotations_av_specifiedqosannotation_instantiation(instance):
+    assert isinstance(instance, pcm_av_qosannotations_av_SpecifiedQoSAnnotation)
 
 @given(instance=SpecifiedExecutionTime_strategy)
 @settings(max_examples=50)
 def test_specifiedexecutiontime_instantiation(instance):
     assert isinstance(instance, SpecifiedExecutionTime)
 
-@given(instance=pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime_strategy)
+@given(instance=pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime_strategy)
 @settings(max_examples=50)
-def test_pcm::av::qos::performance::av::componentspecifiedexecutiontime_instantiation(instance):
-    assert isinstance(instance, pcm::av::qos::performance::av::ComponentSpecifiedExecutionTime)
+def test_pcm_av_qos_performance_av_componentspecifiedexecutiontime_instantiation(instance):
+    assert isinstance(instance, pcm_av_qos_performance_av_ComponentSpecifiedExecutionTime)
 
-@given(instance=pcm::av::qos::performance::av::SystemSpecifiedExecutionTime_strategy)
+@given(instance=pcm_av_qos_performance_av_SystemSpecifiedExecutionTime_strategy)
 @settings(max_examples=50)
-def test_pcm::av::qos::performance::av::systemspecifiedexecutiontime_instantiation(instance):
-    assert isinstance(instance, pcm::av::qos::performance::av::SystemSpecifiedExecutionTime)
+def test_pcm_av_qos_performance_av_systemspecifiedexecutiontime_instantiation(instance):
+    assert isinstance(instance, pcm_av_qos_performance_av_SystemSpecifiedExecutionTime)
 
 import warnings
 import copy
@@ -5950,9 +5950,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::qos::performance::av::SystemSpecifiedExecutionTime_strategy)
+@given(instance=pcm_av_qos_performance_av_SystemSpecifiedExecutionTime_strategy)
 @settings(max_examples=30)
-def test_pcm::av::qos::performance::av::systemspecifiedexecutiontime_systemspecifiedexecutiontimemustreferencerequiredroleofasystem_changes_state(instance):
+def test_pcm_av_qos_performance_av_systemspecifiedexecutiontime_systemspecifiedexecutiontimemustreferencerequiredroleofasystem_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5967,29 +5967,29 @@ def test_pcm::av::qos::performance::av::systemspecifiedexecutiontime_systemspeci
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SystemSpecifiedExecutionTimeMustReferenceRequiredRoleOfASystem' in pcm::av::qos::performance::av::SystemSpecifiedExecutionTime is empty"
+        assert has_statements, f"Function 'SystemSpecifiedExecutionTimeMustReferenceRequiredRoleOfASystem' in pcm_av_qos_performance_av_SystemSpecifiedExecutionTime is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SystemSpecifiedExecutionTimeMustReferenceRequiredRoleOfASystem' in pcm::av::qos::performance::av::SystemSpecifiedExecutionTime did not change state; check implementation")
+            warnings.warn(f"Operation 'SystemSpecifiedExecutionTimeMustReferenceRequiredRoleOfASystem' in pcm_av_qos_performance_av_SystemSpecifiedExecutionTime did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SystemSpecifiedExecutionTimeMustReferenceRequiredRoleOfASystem' in pcm::av::qos::performance::av::SystemSpecifiedExecutionTime is not implemented or raised an error")
+        warnings.warn(f"Operation 'SystemSpecifiedExecutionTimeMustReferenceRequiredRoleOfASystem' in pcm_av_qos_performance_av_SystemSpecifiedExecutionTime is not implemented or raised an error")
 
-@given(instance=seff::reliability::av::RecoveryAction_strategy)
+@given(instance=seff_reliability_av_RecoveryAction_strategy)
 @settings(max_examples=50)
-def test_seff::reliability::av::recoveryaction_instantiation(instance):
-    assert isinstance(instance, seff::reliability::av::RecoveryAction)
+def test_seff_reliability_av_recoveryaction_instantiation(instance):
+    assert isinstance(instance, seff_reliability_av_RecoveryAction)
 
-@given(instance=seff::reliability::av::RecoveryActionBehaviour_strategy)
+@given(instance=seff_reliability_av_RecoveryActionBehaviour_strategy)
 @settings(max_examples=50)
-def test_seff::reliability::av::recoveryactionbehaviour_instantiation(instance):
-    assert isinstance(instance, seff::reliability::av::RecoveryActionBehaviour)
+def test_seff_reliability_av_recoveryactionbehaviour_instantiation(instance):
+    assert isinstance(instance, seff_reliability_av_RecoveryActionBehaviour)
 
-@given(instance=pcm::av::seff::performance::av::ParametricResourceDemand_strategy)
+@given(instance=pcm_av_seff_performance_av_ParametricResourceDemand_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::performance::av::parametricresourcedemand_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::performance::av::ParametricResourceDemand)
+def test_pcm_av_seff_performance_av_parametricresourcedemand_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_performance_av_ParametricResourceDemand)
 
 import warnings
 import copy
@@ -5997,9 +5997,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::performance::av::ParametricResourceDemand_strategy)
+@given(instance=pcm_av_seff_performance_av_ParametricResourceDemand_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::performance::av::parametricresourcedemand_demandedprocessingresourcemustbeuniquewithinabstractinternalcontrolflowaction_changes_state(instance):
+def test_pcm_av_seff_performance_av_parametricresourcedemand_demandedprocessingresourcemustbeuniquewithinabstractinternalcontrolflowaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6014,34 +6014,34 @@ def test_pcm::av::seff::performance::av::parametricresourcedemand_demandedproces
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'DemandedProcessingResourceMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::ParametricResourceDemand is empty"
+        assert has_statements, f"Function 'DemandedProcessingResourceMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_ParametricResourceDemand is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'DemandedProcessingResourceMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::ParametricResourceDemand did not change state; check implementation")
+            warnings.warn(f"Operation 'DemandedProcessingResourceMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_ParametricResourceDemand did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'DemandedProcessingResourceMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::ParametricResourceDemand is not implemented or raised an error")
+        warnings.warn(f"Operation 'DemandedProcessingResourceMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_ParametricResourceDemand is not implemented or raised an error")
 
-@given(instance=seff::av::AbstractInternalControlFlowAction_strategy)
+@given(instance=seff_av_AbstractInternalControlFlowAction_strategy)
 @settings(max_examples=50)
-def test_seff::av::abstractinternalcontrolflowaction_instantiation(instance):
-    assert isinstance(instance, seff::av::AbstractInternalControlFlowAction)
+def test_seff_av_abstractinternalcontrolflowaction_instantiation(instance):
+    assert isinstance(instance, seff_av_AbstractInternalControlFlowAction)
 
-@given(instance=seff::av::CallAction_strategy)
+@given(instance=seff_av_CallAction_strategy)
 @settings(max_examples=50)
-def test_seff::av::callaction_instantiation(instance):
-    assert isinstance(instance, seff::av::CallAction)
+def test_seff_av_callaction_instantiation(instance):
+    assert isinstance(instance, seff_av_CallAction)
 
-@given(instance=pcm::av::seff::av::InternalCallAction_strategy)
+@given(instance=pcm_av_seff_av_InternalCallAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::internalcallaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::InternalCallAction)
+def test_pcm_av_seff_av_internalcallaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_InternalCallAction)
 
-@given(instance=pcm::av::seff::av::SynchronisationPoint_strategy)
+@given(instance=pcm_av_seff_av_SynchronisationPoint_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::synchronisationpoint_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::SynchronisationPoint)
+def test_pcm_av_seff_av_synchronisationpoint_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_SynchronisationPoint)
 
 @given(instance=ForkAction_strategy)
 @settings(max_examples=50)
@@ -6063,96 +6063,20 @@ def test_resourcedemandingseff_instantiation(instance):
 def test_resourcedemandinginternalbehaviour_instantiation(instance):
     assert isinstance(instance, ResourceDemandingInternalBehaviour)
 
-@given(instance=seff::av::ResourceDemandingBehaviour_strategy)
+@given(instance=seff_av_ResourceDemandingBehaviour_strategy)
 @settings(max_examples=50)
-def test_seff::av::resourcedemandingbehaviour_instantiation(instance):
-    assert isinstance(instance, seff::av::ResourceDemandingBehaviour)
+def test_seff_av_resourcedemandingbehaviour_instantiation(instance):
+    assert isinstance(instance, seff_av_ResourceDemandingBehaviour)
 
-@given(instance=seff::av::ServiceEffectSpecification_strategy)
+@given(instance=seff_reliability_av_FailureHandlingEntity_strategy)
 @settings(max_examples=50)
-def test_seff::av::serviceeffectspecification_instantiation(instance):
-    assert isinstance(instance, seff::av::ServiceEffectSpecification)
+def test_seff_reliability_av_failurehandlingentity_instantiation(instance):
+    assert isinstance(instance, seff_reliability_av_FailureHandlingEntity)
 
-@given(instance=AbstractBranchTransition_strategy)
+@given(instance=pcm_av_seff_reliability_av_RecoveryActionBehaviour_strategy)
 @settings(max_examples=50)
-def test_abstractbranchtransition_instantiation(instance):
-    assert isinstance(instance, AbstractBranchTransition)
-
-@given(instance=pcm::av::seff::av::ProbabilisticBranchTransition_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::probabilisticbranchtransition_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ProbabilisticBranchTransition)
-
-@given(instance=pcm::av::seff::av::ProbabilisticBranchTransition_strategy)
-def test_pcm::av::seff::av::probabilisticbranchtransition_branchProbability_type(instance):
-    assert isinstance(instance.branchProbability, float)
-
-
-@given(instance=pcm::av::seff::av::ProbabilisticBranchTransition_strategy)
-def test_pcm::av::seff::av::probabilisticbranchtransition_branchProbability_setter(instance):
-    original = instance.branchProbability
-    instance.branchProbability = original
-    assert instance.branchProbability == original
-
-@given(instance=pcm::av::seff::av::GuardedBranchTransition_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::guardedbranchtransition_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::GuardedBranchTransition)
-
-@given(instance=AbstractLoopAction_strategy)
-@settings(max_examples=50)
-def test_abstractloopaction_instantiation(instance):
-    assert isinstance(instance, AbstractLoopAction)
-
-@given(instance=pcm::av::seff::av::LoopAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::loopaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::LoopAction)
-
-@given(instance=pcm::av::seff::av::CollectionIteratorAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::collectioniteratoraction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::CollectionIteratorAction)
-
-@given(instance=ResourceDemandingBehaviour_strategy)
-@settings(max_examples=50)
-def test_resourcedemandingbehaviour_instantiation(instance):
-    assert isinstance(instance, ResourceDemandingBehaviour)
-
-@given(instance=pcm::av::seff::av::ResourceDemandingInternalBehaviour_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::resourcedemandinginternalbehaviour_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ResourceDemandingInternalBehaviour)
-
-@given(instance=pcm::av::seff::av::ForkedBehaviour_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::forkedbehaviour_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ForkedBehaviour)
-
-@given(instance=BranchAction_strategy)
-@settings(max_examples=50)
-def test_branchaction_instantiation(instance):
-    assert isinstance(instance, BranchAction)
-
-@given(instance=AbstractAction_strategy)
-@settings(max_examples=50)
-def test_abstractaction_instantiation(instance):
-    assert isinstance(instance, AbstractAction)
-
-@given(instance=pcm::av::seff::av::AbstractInternalControlFlowAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::abstractinternalcontrolflowaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::AbstractInternalControlFlowAction)
-
-@given(instance=seff::reliability::av::FailureHandlingEntity_strategy)
-@settings(max_examples=50)
-def test_seff::reliability::av::failurehandlingentity_instantiation(instance):
-    assert isinstance(instance, seff::reliability::av::FailureHandlingEntity)
-
-@given(instance=pcm::av::seff::reliability::av::RecoveryActionBehaviour_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::reliability::av::RecoveryActionBehaviour)
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_reliability_av_RecoveryActionBehaviour)
 
 import warnings
 import copy
@@ -6160,41 +6084,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::reliability::av::RecoveryActionBehaviour_strategy)
+@given(instance=pcm_av_seff_reliability_av_RecoveryActionBehaviour_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_successorsofrecoveryactionbehaviourhandledisjointfailuretypes_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes' in pcm::av::seff::reliability::av::RecoveryActionBehaviour is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes' in pcm::av::seff::reliability::av::RecoveryActionBehaviour did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes' in pcm::av::seff::reliability::av::RecoveryActionBehaviour is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::reliability::av::RecoveryActionBehaviour_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_recoveryactionbehaviourisnotsuccessorofitself_changes_state(instance):
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_recoveryactionbehaviourisnotsuccessorofitself_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6209,14 +6101,14 @@ def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_recoveryactionb
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RecoveryActionBehaviourIsNotSuccessorOfItself' in pcm::av::seff::reliability::av::RecoveryActionBehaviour is empty"
+        assert has_statements, f"Function 'RecoveryActionBehaviourIsNotSuccessorOfItself' in pcm_av_seff_reliability_av_RecoveryActionBehaviour is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RecoveryActionBehaviourIsNotSuccessorOfItself' in pcm::av::seff::reliability::av::RecoveryActionBehaviour did not change state; check implementation")
+            warnings.warn(f"Operation 'RecoveryActionBehaviourIsNotSuccessorOfItself' in pcm_av_seff_reliability_av_RecoveryActionBehaviour did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RecoveryActionBehaviourIsNotSuccessorOfItself' in pcm::av::seff::reliability::av::RecoveryActionBehaviour is not implemented or raised an error")
+        warnings.warn(f"Operation 'RecoveryActionBehaviourIsNotSuccessorOfItself' in pcm_av_seff_reliability_av_RecoveryActionBehaviour is not implemented or raised an error")
 
 import warnings
 import copy
@@ -6224,9 +6116,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::reliability::av::RecoveryActionBehaviour_strategy)
+@given(instance=pcm_av_seff_reliability_av_RecoveryActionBehaviour_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_recoveryactionbehaviourhasonlyonepredecessor_changes_state(instance):
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_successorsofrecoveryactionbehaviourhandledisjointfailuretypes_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes' in pcm_av_seff_reliability_av_RecoveryActionBehaviour is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes' in pcm_av_seff_reliability_av_RecoveryActionBehaviour did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SuccessorsOfRecoveryActionBehaviourHandleDisjointFailureTypes' in pcm_av_seff_reliability_av_RecoveryActionBehaviour is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_reliability_av_RecoveryActionBehaviour_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_reliability_av_recoveryactionbehaviour_recoveryactionbehaviourhasonlyonepredecessor_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6241,301 +6165,39 @@ def test_pcm::av::seff::reliability::av::recoveryactionbehaviour_recoveryactionb
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RecoveryActionBehaviourHasOnlyOnePredecessor' in pcm::av::seff::reliability::av::RecoveryActionBehaviour is empty"
+        assert has_statements, f"Function 'RecoveryActionBehaviourHasOnlyOnePredecessor' in pcm_av_seff_reliability_av_RecoveryActionBehaviour is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RecoveryActionBehaviourHasOnlyOnePredecessor' in pcm::av::seff::reliability::av::RecoveryActionBehaviour did not change state; check implementation")
+            warnings.warn(f"Operation 'RecoveryActionBehaviourHasOnlyOnePredecessor' in pcm_av_seff_reliability_av_RecoveryActionBehaviour did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RecoveryActionBehaviourHasOnlyOnePredecessor' in pcm::av::seff::reliability::av::RecoveryActionBehaviour is not implemented or raised an error")
+        warnings.warn(f"Operation 'RecoveryActionBehaviourHasOnlyOnePredecessor' in pcm_av_seff_reliability_av_RecoveryActionBehaviour is not implemented or raised an error")
 
-@given(instance=seff::av::CallReturnAction_strategy)
+@given(instance=seff_av_CallReturnAction_strategy)
 @settings(max_examples=50)
-def test_seff::av::callreturnaction_instantiation(instance):
-    assert isinstance(instance, seff::av::CallReturnAction)
+def test_seff_av_callreturnaction_instantiation(instance):
+    assert isinstance(instance, seff_av_CallReturnAction)
 
-@given(instance=AbstractInternalControlFlowAction_strategy)
+@given(instance=seff_av_AbstractAction_strategy)
 @settings(max_examples=50)
-def test_abstractinternalcontrolflowaction_instantiation(instance):
-    assert isinstance(instance, AbstractInternalControlFlowAction)
+def test_seff_av_abstractaction_instantiation(instance):
+    assert isinstance(instance, seff_av_AbstractAction)
 
-@given(instance=pcm::av::seff::av::ForkAction_strategy)
+@given(instance=pcm_av_seff_av_EmitEventAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::forkaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ForkAction)
+def test_pcm_av_seff_av_emiteventaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_EmitEventAction)
 
-@given(instance=pcm::av::seff::av::InternalAction_strategy)
+@given(instance=pcm_av_seff_av_ExternalCallAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::internalaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::InternalAction)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::av::InternalAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::av::internalaction_sumofinternalactionfailureprobabilitiesmustnotexceed1_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SumOfInternalActionFailureProbabilitiesMustNotExceed1(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SumOfInternalActionFailureProbabilitiesMustNotExceed1).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SumOfInternalActionFailureProbabilitiesMustNotExceed1' in pcm::av::seff::av::InternalAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SumOfInternalActionFailureProbabilitiesMustNotExceed1' in pcm::av::seff::av::InternalAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SumOfInternalActionFailureProbabilitiesMustNotExceed1' in pcm::av::seff::av::InternalAction is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::av::InternalAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::av::internalaction_multipleinternaloccurrencedescriptionsperfailuretypenotallowed_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm::av::seff::av::InternalAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm::av::seff::av::InternalAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm::av::seff::av::InternalAction is not implemented or raised an error")
-
-@given(instance=pcm::av::seff::av::SetVariableAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::setvariableaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::SetVariableAction)
-
-@given(instance=pcm::av::seff::reliability::av::RecoveryAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::reliability::av::recoveryaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::reliability::av::RecoveryAction)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::reliability::av::RecoveryAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::reliability::av::recoveryaction_primarybehaviourofrecoveryactionmustbeset_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.PrimaryBehaviourOfRecoveryActionMustBeSet(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.PrimaryBehaviourOfRecoveryActionMustBeSet).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'PrimaryBehaviourOfRecoveryActionMustBeSet' in pcm::av::seff::reliability::av::RecoveryAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'PrimaryBehaviourOfRecoveryActionMustBeSet' in pcm::av::seff::reliability::av::RecoveryAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'PrimaryBehaviourOfRecoveryActionMustBeSet' in pcm::av::seff::reliability::av::RecoveryAction is not implemented or raised an error")
-
-@given(instance=pcm::av::seff::av::AcquireAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::acquireaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::AcquireAction)
-
-@given(instance=pcm::av::seff::av::AcquireAction_strategy)
-def test_pcm::av::seff::av::acquireaction_timeoutValue_type(instance):
-    assert isinstance(instance.timeoutValue, float)
+def test_pcm_av_seff_av_externalcallaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ExternalCallAction)
 
 
-@given(instance=pcm::av::seff::av::AcquireAction_strategy)
-def test_pcm::av::seff::av::acquireaction_timeoutValue_setter(instance):
-    original = instance.timeoutValue
-    instance.timeoutValue = original
-    assert instance.timeoutValue == original
 
-@given(instance=pcm::av::seff::av::AcquireAction_strategy)
-def test_pcm::av::seff::av::acquireaction_timeout_type(instance):
-    assert isinstance(instance.timeout, bool)
-
-
-@given(instance=pcm::av::seff::av::AcquireAction_strategy)
-def test_pcm::av::seff::av::acquireaction_timeout_setter(instance):
-    original = instance.timeout
-    instance.timeout = original
-    assert instance.timeout == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::av::AcquireAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::av::acquireaction_timeoutvalueofacquireactionmustnotbenegative_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.TimeoutValueOfAcquireActionMustNotBeNegative(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.TimeoutValueOfAcquireActionMustNotBeNegative).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TimeoutValueOfAcquireActionMustNotBeNegative' in pcm::av::seff::av::AcquireAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TimeoutValueOfAcquireActionMustNotBeNegative' in pcm::av::seff::av::AcquireAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TimeoutValueOfAcquireActionMustNotBeNegative' in pcm::av::seff::av::AcquireAction is not implemented or raised an error")
-
-@given(instance=pcm::av::seff::av::BranchAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::branchaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::BranchAction)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::av::BranchAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::av::branchaction_eitherguardedbranchesorprobabilisiticbranchtransitions_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.EitherGuardedBranchesOrProbabilisiticBranchTransitions(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.EitherGuardedBranchesOrProbabilisiticBranchTransitions).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EitherGuardedBranchesOrProbabilisiticBranchTransitions' in pcm::av::seff::av::BranchAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EitherGuardedBranchesOrProbabilisiticBranchTransitions' in pcm::av::seff::av::BranchAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EitherGuardedBranchesOrProbabilisiticBranchTransitions' in pcm::av::seff::av::BranchAction is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::av::BranchAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::av::branchaction_allprobabilisticbranchprobabilitiesmustsumupto1_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.AllProbabilisticBranchProbabilitiesMustSumUpTo1(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.AllProbabilisticBranchProbabilitiesMustSumUpTo1).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AllProbabilisticBranchProbabilitiesMustSumUpTo1' in pcm::av::seff::av::BranchAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AllProbabilisticBranchProbabilitiesMustSumUpTo1' in pcm::av::seff::av::BranchAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AllProbabilisticBranchProbabilitiesMustSumUpTo1' in pcm::av::seff::av::BranchAction is not implemented or raised an error")
-
-@given(instance=pcm::av::seff::av::ReleaseAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::releaseaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ReleaseAction)
-
-@given(instance=pcm::av::seff::av::AbstractLoopAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::abstractloopaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::AbstractLoopAction)
-
-@given(instance=seff::av::AbstractAction_strategy)
-@settings(max_examples=50)
-def test_seff::av::abstractaction_instantiation(instance):
-    assert isinstance(instance, seff::av::AbstractAction)
-
-@given(instance=pcm::av::seff::av::EmitEventAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::emiteventaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::EmitEventAction)
-
-@given(instance=pcm::av::seff::av::ExternalCallAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::externalcallaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ExternalCallAction)
-
-@given(instance=pcm::av::seff::av::ExternalCallAction_strategy)
-def test_pcm::av::seff::av::externalcallaction_retryCount_type(instance):
-    assert isinstance(instance.retryCount, int)
-
-
-@given(instance=pcm::av::seff::av::ExternalCallAction_strategy)
-def test_pcm::av::seff::av::externalcallaction_retryCount_setter(instance):
+@given(instance=pcm_av_seff_av_ExternalCallAction_strategy)
+def test_pcm_av_seff_av_externalcallaction_retryCount_setter(instance):
     original = instance.retryCount
     instance.retryCount = original
     assert instance.retryCount == original
@@ -6546,9 +6208,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::ExternalCallAction_strategy)
+@given(instance=pcm_av_seff_av_ExternalCallAction_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::externalcallaction_operationrequiredrolemustbereferencedbycontainer_changes_state(instance):
+def test_pcm_av_seff_av_externalcallaction_operationrequiredrolemustbereferencedbycontainer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6563,14 +6225,14 @@ def test_pcm::av::seff::av::externalcallaction_operationrequiredrolemustberefere
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OperationRequiredRoleMustBeReferencedByContainer' in pcm::av::seff::av::ExternalCallAction is empty"
+        assert has_statements, f"Function 'OperationRequiredRoleMustBeReferencedByContainer' in pcm_av_seff_av_ExternalCallAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OperationRequiredRoleMustBeReferencedByContainer' in pcm::av::seff::av::ExternalCallAction did not change state; check implementation")
+            warnings.warn(f"Operation 'OperationRequiredRoleMustBeReferencedByContainer' in pcm_av_seff_av_ExternalCallAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OperationRequiredRoleMustBeReferencedByContainer' in pcm::av::seff::av::ExternalCallAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'OperationRequiredRoleMustBeReferencedByContainer' in pcm_av_seff_av_ExternalCallAction is not implemented or raised an error")
 
 import warnings
 import copy
@@ -6578,9 +6240,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::ExternalCallAction_strategy)
+@given(instance=pcm_av_seff_av_ExternalCallAction_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::externalcallaction_signaturebelongstorole_changes_state(instance):
+def test_pcm_av_seff_av_externalcallaction_signaturebelongstorole_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6595,27 +6257,24 @@ def test_pcm::av::seff::av::externalcallaction_signaturebelongstorole_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SignatureBelongsToRole' in pcm::av::seff::av::ExternalCallAction is empty"
+        assert has_statements, f"Function 'SignatureBelongsToRole' in pcm_av_seff_av_ExternalCallAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SignatureBelongsToRole' in pcm::av::seff::av::ExternalCallAction did not change state; check implementation")
+            warnings.warn(f"Operation 'SignatureBelongsToRole' in pcm_av_seff_av_ExternalCallAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SignatureBelongsToRole' in pcm::av::seff::av::ExternalCallAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'SignatureBelongsToRole' in pcm_av_seff_av_ExternalCallAction is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::av::ServiceEffectSpecification_strategy)
+@given(instance=pcm_av_seff_av_ServiceEffectSpecification_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::serviceeffectspecification_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ServiceEffectSpecification)
-
-@given(instance=pcm::av::seff::av::ServiceEffectSpecification_strategy)
-def test_pcm::av::seff::av::serviceeffectspecification_seffTypeID_type(instance):
-    assert isinstance(instance.seffTypeID, str)
+def test_pcm_av_seff_av_serviceeffectspecification_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ServiceEffectSpecification)
 
 
-@given(instance=pcm::av::seff::av::ServiceEffectSpecification_strategy)
-def test_pcm::av::seff::av::serviceeffectspecification_seffTypeID_setter(instance):
+
+@given(instance=pcm_av_seff_av_ServiceEffectSpecification_strategy)
+def test_pcm_av_seff_av_serviceeffectspecification_seffTypeID_setter(instance):
     original = instance.seffTypeID
     instance.seffTypeID = original
     assert instance.seffTypeID == original
@@ -6626,9 +6285,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::ServiceEffectSpecification_strategy)
+@given(instance=pcm_av_seff_av_ServiceEffectSpecification_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::serviceeffectspecification_referencedsignaturemustbelongtointerfacereferencedbyprovidedrole_changes_state(instance):
+def test_pcm_av_seff_av_serviceeffectspecification_referencedsignaturemustbelongtointerfacereferencedbyprovidedrole_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6643,19 +6302,102 @@ def test_pcm::av::seff::av::serviceeffectspecification_referencedsignaturemustbe
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ReferencedSignatureMustBelongToInterfaceReferencedByProvidedRole' in pcm::av::seff::av::ServiceEffectSpecification is empty"
+        assert has_statements, f"Function 'ReferencedSignatureMustBelongToInterfaceReferencedByProvidedRole' in pcm_av_seff_av_ServiceEffectSpecification is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ReferencedSignatureMustBelongToInterfaceReferencedByProvidedRole' in pcm::av::seff::av::ServiceEffectSpecification did not change state; check implementation")
+            warnings.warn(f"Operation 'ReferencedSignatureMustBelongToInterfaceReferencedByProvidedRole' in pcm_av_seff_av_ServiceEffectSpecification did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ReferencedSignatureMustBelongToInterfaceReferencedByProvidedRole' in pcm::av::seff::av::ServiceEffectSpecification is not implemented or raised an error")
+        warnings.warn(f"Operation 'ReferencedSignatureMustBelongToInterfaceReferencedByProvidedRole' in pcm_av_seff_av_ServiceEffectSpecification is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::av::StartAction_strategy)
+@given(instance=pcm_av_seff_av_CallAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::startaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::StartAction)
+def test_pcm_av_seff_av_callaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_CallAction)
+
+@given(instance=seff_av_ServiceEffectSpecification_strategy)
+@settings(max_examples=50)
+def test_seff_av_serviceeffectspecification_instantiation(instance):
+    assert isinstance(instance, seff_av_ServiceEffectSpecification)
+
+@given(instance=AbstractBranchTransition_strategy)
+@settings(max_examples=50)
+def test_abstractbranchtransition_instantiation(instance):
+    assert isinstance(instance, AbstractBranchTransition)
+
+@given(instance=pcm_av_seff_av_GuardedBranchTransition_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_guardedbranchtransition_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_GuardedBranchTransition)
+
+@given(instance=pcm_av_seff_av_ProbabilisticBranchTransition_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_probabilisticbranchtransition_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ProbabilisticBranchTransition)
+
+
+
+@given(instance=pcm_av_seff_av_ProbabilisticBranchTransition_strategy)
+def test_pcm_av_seff_av_probabilisticbranchtransition_branchProbability_setter(instance):
+    original = instance.branchProbability
+    instance.branchProbability = original
+    assert instance.branchProbability == original
+
+@given(instance=AbstractLoopAction_strategy)
+@settings(max_examples=50)
+def test_abstractloopaction_instantiation(instance):
+    assert isinstance(instance, AbstractLoopAction)
+
+@given(instance=pcm_av_seff_av_LoopAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_loopaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_LoopAction)
+
+@given(instance=pcm_av_seff_av_CollectionIteratorAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_collectioniteratoraction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_CollectionIteratorAction)
+
+@given(instance=ResourceDemandingBehaviour_strategy)
+@settings(max_examples=50)
+def test_resourcedemandingbehaviour_instantiation(instance):
+    assert isinstance(instance, ResourceDemandingBehaviour)
+
+@given(instance=pcm_av_seff_av_ForkedBehaviour_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_forkedbehaviour_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ForkedBehaviour)
+
+@given(instance=pcm_av_seff_av_ResourceDemandingInternalBehaviour_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_resourcedemandinginternalbehaviour_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ResourceDemandingInternalBehaviour)
+
+@given(instance=BranchAction_strategy)
+@settings(max_examples=50)
+def test_branchaction_instantiation(instance):
+    assert isinstance(instance, BranchAction)
+
+@given(instance=AbstractAction_strategy)
+@settings(max_examples=50)
+def test_abstractaction_instantiation(instance):
+    assert isinstance(instance, AbstractAction)
+
+@given(instance=pcm_av_seff_av_AbstractInternalControlFlowAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_abstractinternalcontrolflowaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_AbstractInternalControlFlowAction)
+
+@given(instance=AbstractInternalControlFlowAction_strategy)
+@settings(max_examples=50)
+def test_abstractinternalcontrolflowaction_instantiation(instance):
+    assert isinstance(instance, AbstractInternalControlFlowAction)
+
+@given(instance=pcm_av_seff_reliability_av_RecoveryAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_reliability_av_recoveryaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_reliability_av_RecoveryAction)
 
 import warnings
 import copy
@@ -6663,9 +6405,178 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::StartAction_strategy)
+@given(instance=pcm_av_seff_reliability_av_RecoveryAction_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::startaction_startactionpredecessormustnotbedefined_changes_state(instance):
+def test_pcm_av_seff_reliability_av_recoveryaction_primarybehaviourofrecoveryactionmustbeset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.PrimaryBehaviourOfRecoveryActionMustBeSet(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.PrimaryBehaviourOfRecoveryActionMustBeSet).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'PrimaryBehaviourOfRecoveryActionMustBeSet' in pcm_av_seff_reliability_av_RecoveryAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'PrimaryBehaviourOfRecoveryActionMustBeSet' in pcm_av_seff_reliability_av_RecoveryAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'PrimaryBehaviourOfRecoveryActionMustBeSet' in pcm_av_seff_reliability_av_RecoveryAction is not implemented or raised an error")
+
+@given(instance=pcm_av_seff_av_SetVariableAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_setvariableaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_SetVariableAction)
+
+@given(instance=pcm_av_seff_av_InternalAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_internalaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_InternalAction)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_InternalAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_internalaction_multipleinternaloccurrencedescriptionsperfailuretypenotallowed_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm_av_seff_av_InternalAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm_av_seff_av_InternalAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'MultipleInternalOccurrenceDescriptionsPerFailureTypeNotAllowed' in pcm_av_seff_av_InternalAction is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_InternalAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_internalaction_sumofinternalactionfailureprobabilitiesmustnotexceed1_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SumOfInternalActionFailureProbabilitiesMustNotExceed1(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SumOfInternalActionFailureProbabilitiesMustNotExceed1).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SumOfInternalActionFailureProbabilitiesMustNotExceed1' in pcm_av_seff_av_InternalAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SumOfInternalActionFailureProbabilitiesMustNotExceed1' in pcm_av_seff_av_InternalAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SumOfInternalActionFailureProbabilitiesMustNotExceed1' in pcm_av_seff_av_InternalAction is not implemented or raised an error")
+
+@given(instance=pcm_av_seff_av_AcquireAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_acquireaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_AcquireAction)
+
+
+
+@given(instance=pcm_av_seff_av_AcquireAction_strategy)
+def test_pcm_av_seff_av_acquireaction_timeoutValue_setter(instance):
+    original = instance.timeoutValue
+    instance.timeoutValue = original
+    assert instance.timeoutValue == original
+
+
+
+@given(instance=pcm_av_seff_av_AcquireAction_strategy)
+def test_pcm_av_seff_av_acquireaction_timeout_setter(instance):
+    original = instance.timeout
+    instance.timeout = original
+    assert instance.timeout == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_AcquireAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_acquireaction_timeoutvalueofacquireactionmustnotbenegative_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.TimeoutValueOfAcquireActionMustNotBeNegative(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.TimeoutValueOfAcquireActionMustNotBeNegative).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'TimeoutValueOfAcquireActionMustNotBeNegative' in pcm_av_seff_av_AcquireAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'TimeoutValueOfAcquireActionMustNotBeNegative' in pcm_av_seff_av_AcquireAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'TimeoutValueOfAcquireActionMustNotBeNegative' in pcm_av_seff_av_AcquireAction is not implemented or raised an error")
+
+@given(instance=pcm_av_seff_av_AbstractLoopAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_abstractloopaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_AbstractLoopAction)
+
+@given(instance=pcm_av_seff_av_StartAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_startaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_StartAction)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_StartAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_startaction_startactionpredecessormustnotbedefined_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6680,24 +6591,135 @@ def test_pcm::av::seff::av::startaction_startactionpredecessormustnotbedefined_c
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'StartActionPredecessorMustNotBeDefined' in pcm::av::seff::av::StartAction is empty"
+        assert has_statements, f"Function 'StartActionPredecessorMustNotBeDefined' in pcm_av_seff_av_StartAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'StartActionPredecessorMustNotBeDefined' in pcm::av::seff::av::StartAction did not change state; check implementation")
+            warnings.warn(f"Operation 'StartActionPredecessorMustNotBeDefined' in pcm_av_seff_av_StartAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'StartActionPredecessorMustNotBeDefined' in pcm::av::seff::av::StartAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'StartActionPredecessorMustNotBeDefined' in pcm_av_seff_av_StartAction is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::av::CallAction_strategy)
+@given(instance=pcm_av_seff_av_ForkAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::callaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::CallAction)
+def test_pcm_av_seff_av_forkaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ForkAction)
 
-@given(instance=qos::reliability::av::SpecifiedReliabilityAnnotation_strategy)
+@given(instance=pcm_av_seff_av_BranchAction_strategy)
 @settings(max_examples=50)
-def test_qos::reliability::av::specifiedreliabilityannotation_instantiation(instance):
-    assert isinstance(instance, qos::reliability::av::SpecifiedReliabilityAnnotation)
+def test_pcm_av_seff_av_branchaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_BranchAction)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_BranchAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_branchaction_allprobabilisticbranchprobabilitiesmustsumupto1_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.AllProbabilisticBranchProbabilitiesMustSumUpTo1(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.AllProbabilisticBranchProbabilitiesMustSumUpTo1).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'AllProbabilisticBranchProbabilitiesMustSumUpTo1' in pcm_av_seff_av_BranchAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'AllProbabilisticBranchProbabilitiesMustSumUpTo1' in pcm_av_seff_av_BranchAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'AllProbabilisticBranchProbabilitiesMustSumUpTo1' in pcm_av_seff_av_BranchAction is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_BranchAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_branchaction_eitherguardedbranchesorprobabilisiticbranchtransitions_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.EitherGuardedBranchesOrProbabilisiticBranchTransitions(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.EitherGuardedBranchesOrProbabilisiticBranchTransitions).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'EitherGuardedBranchesOrProbabilisiticBranchTransitions' in pcm_av_seff_av_BranchAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'EitherGuardedBranchesOrProbabilisiticBranchTransitions' in pcm_av_seff_av_BranchAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'EitherGuardedBranchesOrProbabilisiticBranchTransitions' in pcm_av_seff_av_BranchAction is not implemented or raised an error")
+
+@given(instance=pcm_av_seff_av_ReleaseAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_releaseaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ReleaseAction)
+
+@given(instance=pcm_av_seff_av_StopAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_stopaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_StopAction)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_StopAction_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_stopaction_stopactionsuccessormustnotbedefined_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.StopActionSuccessorMustNotBeDefined(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.StopActionSuccessorMustNotBeDefined).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'StopActionSuccessorMustNotBeDefined' in pcm_av_seff_av_StopAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'StopActionSuccessorMustNotBeDefined' in pcm_av_seff_av_StopAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'StopActionSuccessorMustNotBeDefined' in pcm_av_seff_av_StopAction is not implemented or raised an error")
+
+@given(instance=qos_reliability_av_SpecifiedReliabilityAnnotation_strategy)
+@settings(max_examples=50)
+def test_qos_reliability_av_specifiedreliabilityannotation_instantiation(instance):
+    assert isinstance(instance, qos_reliability_av_SpecifiedReliabilityAnnotation)
 
 @given(instance=CommunicationLinkResourceType_strategy)
 @settings(max_examples=50)
@@ -6709,6 +6731,11 @@ def test_communicationlinkresourcetype_instantiation(instance):
 def test_softwareinducedfailuretype_instantiation(instance):
     assert isinstance(instance, SoftwareInducedFailureType)
 
+@given(instance=pcm_av_reliability_av_ResourceTimeoutFailureType_strategy)
+@settings(max_examples=50)
+def test_pcm_av_reliability_av_resourcetimeoutfailuretype_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_ResourceTimeoutFailureType)
+
 @given(instance=InternalAction_strategy)
 @settings(max_examples=50)
 def test_internalaction_instantiation(instance):
@@ -6719,10 +6746,10 @@ def test_internalaction_instantiation(instance):
 def test_failureoccurrencedescription_instantiation(instance):
     assert isinstance(instance, FailureOccurrenceDescription)
 
-@given(instance=pcm::av::reliability::av::ExternalFailureOccurrenceDescription_strategy)
+@given(instance=pcm_av_reliability_av_ExternalFailureOccurrenceDescription_strategy)
 @settings(max_examples=50)
-def test_pcm::av::reliability::av::externalfailureoccurrencedescription_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::ExternalFailureOccurrenceDescription)
+def test_pcm_av_reliability_av_externalfailureoccurrencedescription_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_ExternalFailureOccurrenceDescription)
 
 import warnings
 import copy
@@ -6730,9 +6757,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::reliability::av::ExternalFailureOccurrenceDescription_strategy)
+@given(instance=pcm_av_reliability_av_ExternalFailureOccurrenceDescription_strategy)
 @settings(max_examples=30)
-def test_pcm::av::reliability::av::externalfailureoccurrencedescription_noresourcetimeoutfailureallowedforexternalfailureoccurrencedescription_changes_state(instance):
+def test_pcm_av_reliability_av_externalfailureoccurrencedescription_noresourcetimeoutfailureallowedforexternalfailureoccurrencedescription_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6747,19 +6774,19 @@ def test_pcm::av::reliability::av::externalfailureoccurrencedescription_noresour
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NoResourceTimeoutFailureAllowedForExternalFailureOccurrenceDescription' in pcm::av::reliability::av::ExternalFailureOccurrenceDescription is empty"
+        assert has_statements, f"Function 'NoResourceTimeoutFailureAllowedForExternalFailureOccurrenceDescription' in pcm_av_reliability_av_ExternalFailureOccurrenceDescription is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForExternalFailureOccurrenceDescription' in pcm::av::reliability::av::ExternalFailureOccurrenceDescription did not change state; check implementation")
+            warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForExternalFailureOccurrenceDescription' in pcm_av_reliability_av_ExternalFailureOccurrenceDescription did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForExternalFailureOccurrenceDescription' in pcm::av::reliability::av::ExternalFailureOccurrenceDescription is not implemented or raised an error")
+        warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForExternalFailureOccurrenceDescription' in pcm_av_reliability_av_ExternalFailureOccurrenceDescription is not implemented or raised an error")
 
-@given(instance=pcm::av::reliability::av::InternalFailureOccurrenceDescription_strategy)
+@given(instance=pcm_av_reliability_av_InternalFailureOccurrenceDescription_strategy)
 @settings(max_examples=50)
-def test_pcm::av::reliability::av::internalfailureoccurrencedescription_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::InternalFailureOccurrenceDescription)
+def test_pcm_av_reliability_av_internalfailureoccurrencedescription_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_InternalFailureOccurrenceDescription)
 
 import warnings
 import copy
@@ -6767,9 +6794,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::reliability::av::InternalFailureOccurrenceDescription_strategy)
+@given(instance=pcm_av_reliability_av_InternalFailureOccurrenceDescription_strategy)
 @settings(max_examples=30)
-def test_pcm::av::reliability::av::internalfailureoccurrencedescription_noresourcetimeoutfailureallowedforinternalfailureoccurrencedescription_changes_state(instance):
+def test_pcm_av_reliability_av_internalfailureoccurrencedescription_noresourcetimeoutfailureallowedforinternalfailureoccurrencedescription_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6784,14 +6811,14 @@ def test_pcm::av::reliability::av::internalfailureoccurrencedescription_noresour
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NoResourceTimeoutFailureAllowedForInternalFailureOccurrenceDescription' in pcm::av::reliability::av::InternalFailureOccurrenceDescription is empty"
+        assert has_statements, f"Function 'NoResourceTimeoutFailureAllowedForInternalFailureOccurrenceDescription' in pcm_av_reliability_av_InternalFailureOccurrenceDescription is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForInternalFailureOccurrenceDescription' in pcm::av::reliability::av::InternalFailureOccurrenceDescription did not change state; check implementation")
+            warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForInternalFailureOccurrenceDescription' in pcm_av_reliability_av_InternalFailureOccurrenceDescription did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForInternalFailureOccurrenceDescription' in pcm::av::reliability::av::InternalFailureOccurrenceDescription is not implemented or raised an error")
+        warnings.warn(f"Operation 'NoResourceTimeoutFailureAllowedForInternalFailureOccurrenceDescription' in pcm_av_reliability_av_InternalFailureOccurrenceDescription is not implemented or raised an error")
 
 @given(instance=InternalFailureOccurrenceDescription_strategy)
 @settings(max_examples=50)
@@ -6808,55 +6835,46 @@ def test_processingresourcetype_instantiation(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=pcm::av::parameter::av::CharacterisedVariable_strategy)
+@given(instance=pcm_av_parameter_av_CharacterisedVariable_strategy)
 @settings(max_examples=50)
-def test_pcm::av::parameter::av::characterisedvariable_instantiation(instance):
-    assert isinstance(instance, pcm::av::parameter::av::CharacterisedVariable)
-
-@given(instance=pcm::av::parameter::av::CharacterisedVariable_strategy)
-def test_pcm::av::parameter::av::characterisedvariable_characterisationType_type(instance):
-    assert isinstance(instance.characterisationType, str)
+def test_pcm_av_parameter_av_characterisedvariable_instantiation(instance):
+    assert isinstance(instance, pcm_av_parameter_av_CharacterisedVariable)
 
 
-@given(instance=pcm::av::parameter::av::CharacterisedVariable_strategy)
-def test_pcm::av::parameter::av::characterisedvariable_characterisationType_setter(instance):
+
+@given(instance=pcm_av_parameter_av_CharacterisedVariable_strategy)
+def test_pcm_av_parameter_av_characterisedvariable_characterisationType_setter(instance):
     original = instance.characterisationType
     instance.characterisationType = original
     assert instance.characterisationType == original
 
-@given(instance=pcm::av::parameter::av::VariableCharacterisation_strategy)
+@given(instance=pcm_av_parameter_av_VariableCharacterisation_strategy)
 @settings(max_examples=50)
-def test_pcm::av::parameter::av::variablecharacterisation_instantiation(instance):
-    assert isinstance(instance, pcm::av::parameter::av::VariableCharacterisation)
-
-@given(instance=pcm::av::parameter::av::VariableCharacterisation_strategy)
-def test_pcm::av::parameter::av::variablecharacterisation_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_pcm_av_parameter_av_variablecharacterisation_instantiation(instance):
+    assert isinstance(instance, pcm_av_parameter_av_VariableCharacterisation)
 
 
-@given(instance=pcm::av::parameter::av::VariableCharacterisation_strategy)
-def test_pcm::av::parameter::av::variablecharacterisation_type_setter(instance):
+
+@given(instance=pcm_av_parameter_av_VariableCharacterisation_strategy)
+def test_pcm_av_parameter_av_variablecharacterisation_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=parameter::av::pcm::av::AbstractNamedReference_strategy)
+@given(instance=parameter_av_pcm_av_AbstractNamedReference_strategy)
 @settings(max_examples=50)
-def test_parameter::av::pcm::av::abstractnamedreference_instantiation(instance):
-    assert isinstance(instance, parameter::av::pcm::av::AbstractNamedReference)
+def test_parameter_av_pcm_av_abstractnamedreference_instantiation(instance):
+    assert isinstance(instance, parameter_av_pcm_av_AbstractNamedReference)
 
-@given(instance=pcm::av::reliability::av::FailureOccurrenceDescription_strategy)
+@given(instance=pcm_av_reliability_av_FailureOccurrenceDescription_strategy)
 @settings(max_examples=50)
-def test_pcm::av::reliability::av::failureoccurrencedescription_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::FailureOccurrenceDescription)
-
-@given(instance=pcm::av::reliability::av::FailureOccurrenceDescription_strategy)
-def test_pcm::av::reliability::av::failureoccurrencedescription_failureProbability_type(instance):
-    assert isinstance(instance.failureProbability, float)
+def test_pcm_av_reliability_av_failureoccurrencedescription_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_FailureOccurrenceDescription)
 
 
-@given(instance=pcm::av::reliability::av::FailureOccurrenceDescription_strategy)
-def test_pcm::av::reliability::av::failureoccurrencedescription_failureProbability_setter(instance):
+
+@given(instance=pcm_av_reliability_av_FailureOccurrenceDescription_strategy)
+def test_pcm_av_reliability_av_failureoccurrencedescription_failureProbability_setter(instance):
     original = instance.failureProbability
     instance.failureProbability = original
     assert instance.failureProbability == original
@@ -6867,9 +6885,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::reliability::av::FailureOccurrenceDescription_strategy)
+@given(instance=pcm_av_reliability_av_FailureOccurrenceDescription_strategy)
 @settings(max_examples=30)
-def test_pcm::av::reliability::av::failureoccurrencedescription_ensurevalidfailureprobabilityrange_changes_state(instance):
+def test_pcm_av_reliability_av_failureoccurrencedescription_ensurevalidfailureprobabilityrange_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6884,14 +6902,14 @@ def test_pcm::av::reliability::av::failureoccurrencedescription_ensurevalidfailu
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EnsureValidFailureProbabilityRange' in pcm::av::reliability::av::FailureOccurrenceDescription is empty"
+        assert has_statements, f"Function 'EnsureValidFailureProbabilityRange' in pcm_av_reliability_av_FailureOccurrenceDescription is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EnsureValidFailureProbabilityRange' in pcm::av::reliability::av::FailureOccurrenceDescription did not change state; check implementation")
+            warnings.warn(f"Operation 'EnsureValidFailureProbabilityRange' in pcm_av_reliability_av_FailureOccurrenceDescription did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EnsureValidFailureProbabilityRange' in pcm::av::reliability::av::FailureOccurrenceDescription is not implemented or raised an error")
+        warnings.warn(f"Operation 'EnsureValidFailureProbabilityRange' in pcm_av_reliability_av_FailureOccurrenceDescription is not implemented or raised an error")
 
 @given(instance=SpecifiedOutputParameterAbstraction_strategy)
 @settings(max_examples=50)
@@ -6918,10 +6936,10 @@ def test_synchronisationpoint_instantiation(instance):
 def test_callaction_instantiation(instance):
     assert isinstance(instance, CallAction)
 
-@given(instance=pcm::av::seff::performance::av::InfrastructureCall_strategy)
+@given(instance=pcm_av_seff_performance_av_InfrastructureCall_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::performance::av::infrastructurecall_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::performance::av::InfrastructureCall)
+def test_pcm_av_seff_performance_av_infrastructurecall_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_performance_av_InfrastructureCall)
 
 import warnings
 import copy
@@ -6929,9 +6947,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::performance::av::InfrastructureCall_strategy)
+@given(instance=pcm_av_seff_performance_av_InfrastructureCall_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::performance::av::infrastructurecall_signaturerolecombinationmustbeuniquewithinabstractinternalcontrolflowaction_changes_state(instance):
+def test_pcm_av_seff_performance_av_infrastructurecall_signaturerolecombinationmustbeuniquewithinabstractinternalcontrolflowaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6946,14 +6964,14 @@ def test_pcm::av::seff::performance::av::infrastructurecall_signaturerolecombina
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::InfrastructureCall is empty"
+        assert has_statements, f"Function 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_InfrastructureCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::InfrastructureCall did not change state; check implementation")
+            warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_InfrastructureCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::InfrastructureCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_InfrastructureCall is not implemented or raised an error")
 
 import warnings
 import copy
@@ -6961,9 +6979,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::performance::av::InfrastructureCall_strategy)
+@given(instance=pcm_av_seff_performance_av_InfrastructureCall_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::performance::av::infrastructurecall_signaturemustbelongtousedrequiredrole_changes_state(instance):
+def test_pcm_av_seff_performance_av_infrastructurecall_signaturemustbelongtousedrequiredrole_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6978,14 +6996,14 @@ def test_pcm::av::seff::performance::av::infrastructurecall_signaturemustbelongt
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SignatureMustBelongToUsedRequiredRole' in pcm::av::seff::performance::av::InfrastructureCall is empty"
+        assert has_statements, f"Function 'SignatureMustBelongToUsedRequiredRole' in pcm_av_seff_performance_av_InfrastructureCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SignatureMustBelongToUsedRequiredRole' in pcm::av::seff::performance::av::InfrastructureCall did not change state; check implementation")
+            warnings.warn(f"Operation 'SignatureMustBelongToUsedRequiredRole' in pcm_av_seff_performance_av_InfrastructureCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SignatureMustBelongToUsedRequiredRole' in pcm::av::seff::performance::av::InfrastructureCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'SignatureMustBelongToUsedRequiredRole' in pcm_av_seff_performance_av_InfrastructureCall is not implemented or raised an error")
 
 import warnings
 import copy
@@ -6993,9 +7011,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::performance::av::InfrastructureCall_strategy)
+@given(instance=pcm_av_seff_performance_av_InfrastructureCall_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::performance::av::infrastructurecall_referencedrequiredrolemustberequiredbycomponent_changes_state(instance):
+def test_pcm_av_seff_performance_av_infrastructurecall_referencedrequiredrolemustberequiredbycomponent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7010,19 +7028,19 @@ def test_pcm::av::seff::performance::av::infrastructurecall_referencedrequiredro
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ReferencedRequiredRoleMustBeRequiredByComponent' in pcm::av::seff::performance::av::InfrastructureCall is empty"
+        assert has_statements, f"Function 'ReferencedRequiredRoleMustBeRequiredByComponent' in pcm_av_seff_performance_av_InfrastructureCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ReferencedRequiredRoleMustBeRequiredByComponent' in pcm::av::seff::performance::av::InfrastructureCall did not change state; check implementation")
+            warnings.warn(f"Operation 'ReferencedRequiredRoleMustBeRequiredByComponent' in pcm_av_seff_performance_av_InfrastructureCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ReferencedRequiredRoleMustBeRequiredByComponent' in pcm::av::seff::performance::av::InfrastructureCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'ReferencedRequiredRoleMustBeRequiredByComponent' in pcm_av_seff_performance_av_InfrastructureCall is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::performance::av::ResourceCall_strategy)
+@given(instance=pcm_av_seff_performance_av_ResourceCall_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::performance::av::resourcecall_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::performance::av::ResourceCall)
+def test_pcm_av_seff_performance_av_resourcecall_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_performance_av_ResourceCall)
 
 import warnings
 import copy
@@ -7030,73 +7048,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::performance::av::ResourceCall_strategy)
+@given(instance=pcm_av_seff_performance_av_ResourceCall_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::performance::av::resourcecall_resourcerequiredrolemustbereferencedbycomponent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ResourceRequiredRoleMustBeReferencedByComponent(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ResourceRequiredRoleMustBeReferencedByComponent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ResourceRequiredRoleMustBeReferencedByComponent' in pcm::av::seff::performance::av::ResourceCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ResourceRequiredRoleMustBeReferencedByComponent' in pcm::av::seff::performance::av::ResourceCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ResourceRequiredRoleMustBeReferencedByComponent' in pcm::av::seff::performance::av::ResourceCall is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::performance::av::ResourceCall_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::performance::av::resourcecall_resourcesignaturebelongstoresourcerequiredrole_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ResourceSignatureBelongsToResourceRequiredRole(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ResourceSignatureBelongsToResourceRequiredRole).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ResourceSignatureBelongsToResourceRequiredRole' in pcm::av::seff::performance::av::ResourceCall is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ResourceSignatureBelongsToResourceRequiredRole' in pcm::av::seff::performance::av::ResourceCall did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ResourceSignatureBelongsToResourceRequiredRole' in pcm::av::seff::performance::av::ResourceCall is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::performance::av::ResourceCall_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::performance::av::resourcecall_signaturerolecombinationmustbeuniquewithinabstractinternalcontrolflowaction_changes_state(instance):
+def test_pcm_av_seff_performance_av_resourcecall_signaturerolecombinationmustbeuniquewithinabstractinternalcontrolflowaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7111,37 +7065,98 @@ def test_pcm::av::seff::performance::av::resourcecall_signaturerolecombinationmu
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::ResourceCall is empty"
+        assert has_statements, f"Function 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_ResourceCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::ResourceCall did not change state; check implementation")
+            warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_ResourceCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm::av::seff::performance::av::ResourceCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'SignatureRoleCombinationMustBeUniqueWithinAbstractInternalControlFlowAction' in pcm_av_seff_performance_av_ResourceCall is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::av::CallReturnAction_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_performance_av_ResourceCall_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_performance_av_resourcecall_resourcesignaturebelongstoresourcerequiredrole_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ResourceSignatureBelongsToResourceRequiredRole(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ResourceSignatureBelongsToResourceRequiredRole).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ResourceSignatureBelongsToResourceRequiredRole' in pcm_av_seff_performance_av_ResourceCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ResourceSignatureBelongsToResourceRequiredRole' in pcm_av_seff_performance_av_ResourceCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ResourceSignatureBelongsToResourceRequiredRole' in pcm_av_seff_performance_av_ResourceCall is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_performance_av_ResourceCall_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_performance_av_resourcecall_resourcerequiredrolemustbereferencedbycomponent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ResourceRequiredRoleMustBeReferencedByComponent(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ResourceRequiredRoleMustBeReferencedByComponent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ResourceRequiredRoleMustBeReferencedByComponent' in pcm_av_seff_performance_av_ResourceCall is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ResourceRequiredRoleMustBeReferencedByComponent' in pcm_av_seff_performance_av_ResourceCall did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ResourceRequiredRoleMustBeReferencedByComponent' in pcm_av_seff_performance_av_ResourceCall is not implemented or raised an error")
+
+@given(instance=pcm_av_seff_av_CallReturnAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::callreturnaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::CallReturnAction)
+def test_pcm_av_seff_av_callreturnaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_CallReturnAction)
 
-@given(instance=pcm::av::parameter::av::VariableUsage_strategy)
+@given(instance=pcm_av_parameter_av_VariableUsage_strategy)
 @settings(max_examples=50)
-def test_pcm::av::parameter::av::variableusage_instantiation(instance):
-    assert isinstance(instance, pcm::av::parameter::av::VariableUsage)
+def test_pcm_av_parameter_av_variableusage_instantiation(instance):
+    assert isinstance(instance, pcm_av_parameter_av_VariableUsage)
 
-@given(instance=pcm::av::protocol::av::Protocol_strategy)
+@given(instance=pcm_av_protocol_av_Protocol_strategy)
 @settings(max_examples=50)
-def test_pcm::av::protocol::av::protocol_instantiation(instance):
-    assert isinstance(instance, pcm::av::protocol::av::Protocol)
-
-@given(instance=pcm::av::protocol::av::Protocol_strategy)
-def test_pcm::av::protocol::av::protocol_protocolTypeID_type(instance):
-    assert isinstance(instance.protocolTypeID, str)
+def test_pcm_av_protocol_av_protocol_instantiation(instance):
+    assert isinstance(instance, pcm_av_protocol_av_Protocol)
 
 
-@given(instance=pcm::av::protocol::av::Protocol_strategy)
-def test_pcm::av::protocol::av::protocol_protocolTypeID_setter(instance):
+
+@given(instance=pcm_av_protocol_av_Protocol_strategy)
+def test_pcm_av_protocol_av_protocol_protocolTypeID_setter(instance):
     original = instance.protocolTypeID
     instance.protocolTypeID = original
     assert instance.protocolTypeID == original
@@ -7161,10 +7176,10 @@ def test_networkinducedfailuretype_instantiation(instance):
 def test_schedulingpolicy_instantiation(instance):
     assert isinstance(instance, SchedulingPolicy)
 
-@given(instance=pcm::av::resourcetype::av::ResourceRepository_strategy)
+@given(instance=pcm_av_resourcetype_av_ResourceRepository_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourcetype::av::resourcerepository_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::ResourceRepository)
+def test_pcm_av_resourcetype_av_resourcerepository_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_ResourceRepository)
 
 @given(instance=ResourceRepository_strategy)
 @settings(max_examples=50)
@@ -7186,30 +7201,30 @@ def test_hardwareinducedfailuretype_instantiation(instance):
 def test_resourcetype_instantiation(instance):
     assert isinstance(instance, ResourceType)
 
-@given(instance=pcm::av::resourcetype::av::CommunicationLinkResourceType_strategy)
+@given(instance=pcm_av_resourcetype_av_CommunicationLinkResourceType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourcetype::av::communicationlinkresourcetype_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::CommunicationLinkResourceType)
+def test_pcm_av_resourcetype_av_communicationlinkresourcetype_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_CommunicationLinkResourceType)
 
-@given(instance=pcm::av::resourcetype::av::ProcessingResourceType_strategy)
+@given(instance=pcm_av_resourcetype_av_ProcessingResourceType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourcetype::av::processingresourcetype_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::ProcessingResourceType)
+def test_pcm_av_resourcetype_av_processingresourcetype_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_ProcessingResourceType)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=pcm::av::resourceenvironment::av::ResourceEnvironment_strategy)
+@given(instance=pcm_av_resourceenvironment_av_ResourceEnvironment_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourceenvironment::av::resourceenvironment_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourceenvironment::av::ResourceEnvironment)
+def test_pcm_av_resourceenvironment_av_resourceenvironment_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourceenvironment_av_ResourceEnvironment)
 
-@given(instance=pcm::av::repository::av::InnerDeclaration_strategy)
+@given(instance=pcm_av_repository_av_InnerDeclaration_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::innerdeclaration_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::InnerDeclaration)
+def test_pcm_av_repository_av_innerdeclaration_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_InnerDeclaration)
 
 @given(instance=InnerDeclaration_strategy)
 @settings(max_examples=50)
@@ -7221,35 +7236,35 @@ def test_innerdeclaration_instantiation(instance):
 def test_compositedatatype_instantiation(instance):
     assert isinstance(instance, CompositeDataType)
 
-@given(instance=repository::av::DataType_strategy)
+@given(instance=repository_av_DataType_strategy)
 @settings(max_examples=50)
-def test_repository::av::datatype_instantiation(instance):
-    assert isinstance(instance, repository::av::DataType)
+def test_repository_av_datatype_instantiation(instance):
+    assert isinstance(instance, repository_av_DataType)
 
-@given(instance=repository::av::ImplementationComponentType_strategy)
+@given(instance=repository_av_ImplementationComponentType_strategy)
 @settings(max_examples=50)
-def test_repository::av::implementationcomponenttype_instantiation(instance):
-    assert isinstance(instance, repository::av::ImplementationComponentType)
+def test_repository_av_implementationcomponenttype_instantiation(instance):
+    assert isinstance(instance, repository_av_ImplementationComponentType)
 
-@given(instance=entity::av::ComposedProvidingRequiringEntity_strategy)
+@given(instance=entity_av_ComposedProvidingRequiringEntity_strategy)
 @settings(max_examples=50)
-def test_entity::av::composedprovidingrequiringentity_instantiation(instance):
-    assert isinstance(instance, entity::av::ComposedProvidingRequiringEntity)
+def test_entity_av_composedprovidingrequiringentity_instantiation(instance):
+    assert isinstance(instance, entity_av_ComposedProvidingRequiringEntity)
 
-@given(instance=pcm::av::subsystem::av::SubSystem_strategy)
+@given(instance=pcm_av_subsystem_av_SubSystem_strategy)
 @settings(max_examples=50)
-def test_pcm::av::subsystem::av::subsystem_instantiation(instance):
-    assert isinstance(instance, pcm::av::subsystem::av::SubSystem)
+def test_pcm_av_subsystem_av_subsystem_instantiation(instance):
+    assert isinstance(instance, pcm_av_subsystem_av_SubSystem)
 
-@given(instance=pcm::av::completions::av::Completion_strategy)
+@given(instance=pcm_av_completions_av_Completion_strategy)
 @settings(max_examples=50)
-def test_pcm::av::completions::av::completion_instantiation(instance):
-    assert isinstance(instance, pcm::av::completions::av::Completion)
+def test_pcm_av_completions_av_completion_instantiation(instance):
+    assert isinstance(instance, pcm_av_completions_av_Completion)
 
-@given(instance=pcm::av::repository::av::CompositeComponent_strategy)
+@given(instance=pcm_av_repository_av_CompositeComponent_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::compositecomponent_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::CompositeComponent)
+def test_pcm_av_repository_av_compositecomponent_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_CompositeComponent)
 
 import warnings
 import copy
@@ -7257,41 +7272,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::CompositeComponent_strategy)
+@given(instance=pcm_av_repository_av_CompositeComponent_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::compositecomponent_providesameinterfaces_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ProvideSameInterfaces(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ProvideSameInterfaces).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ProvideSameInterfaces' in pcm::av::repository::av::CompositeComponent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ProvideSameInterfaces' in pcm::av::repository::av::CompositeComponent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ProvideSameInterfaces' in pcm::av::repository::av::CompositeComponent is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::repository::av::CompositeComponent_strategy)
-@settings(max_examples=30)
-def test_pcm::av::repository::av::compositecomponent_requiresameinterfaces_changes_state(instance):
+def test_pcm_av_repository_av_compositecomponent_requiresameinterfaces_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7306,14 +7289,46 @@ def test_pcm::av::repository::av::compositecomponent_requiresameinterfaces_chang
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RequireSameInterfaces' in pcm::av::repository::av::CompositeComponent is empty"
+        assert has_statements, f"Function 'RequireSameInterfaces' in pcm_av_repository_av_CompositeComponent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RequireSameInterfaces' in pcm::av::repository::av::CompositeComponent did not change state; check implementation")
+            warnings.warn(f"Operation 'RequireSameInterfaces' in pcm_av_repository_av_CompositeComponent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RequireSameInterfaces' in pcm::av::repository::av::CompositeComponent is not implemented or raised an error")
+        warnings.warn(f"Operation 'RequireSameInterfaces' in pcm_av_repository_av_CompositeComponent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_repository_av_CompositeComponent_strategy)
+@settings(max_examples=30)
+def test_pcm_av_repository_av_compositecomponent_providesameinterfaces_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ProvideSameInterfaces(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ProvideSameInterfaces).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ProvideSameInterfaces' in pcm_av_repository_av_CompositeComponent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ProvideSameInterfaces' in pcm_av_repository_av_CompositeComponent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ProvideSameInterfaces' in pcm_av_repository_av_CompositeComponent is not implemented or raised an error")
 
 @given(instance=ProvidesComponentType_strategy)
 @settings(max_examples=50)
@@ -7325,29 +7340,23 @@ def test_providescomponenttype_instantiation(instance):
 def test_operationinterface_instantiation(instance):
     assert isinstance(instance, OperationInterface)
 
-@given(instance=pcm::av::repository::av::ExceptionType_strategy)
+@given(instance=pcm_av_repository_av_ExceptionType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::exceptiontype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::ExceptionType)
-
-@given(instance=pcm::av::repository::av::ExceptionType_strategy)
-def test_pcm::av::repository::av::exceptiontype_exceptionMessage_type(instance):
-    assert isinstance(instance.exceptionMessage, str)
+def test_pcm_av_repository_av_exceptiontype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_ExceptionType)
 
 
-@given(instance=pcm::av::repository::av::ExceptionType_strategy)
-def test_pcm::av::repository::av::exceptiontype_exceptionMessage_setter(instance):
+
+@given(instance=pcm_av_repository_av_ExceptionType_strategy)
+def test_pcm_av_repository_av_exceptiontype_exceptionMessage_setter(instance):
     original = instance.exceptionMessage
     instance.exceptionMessage = original
     assert instance.exceptionMessage == original
 
-@given(instance=pcm::av::repository::av::ExceptionType_strategy)
-def test_pcm::av::repository::av::exceptiontype_exceptionName_type(instance):
-    assert isinstance(instance.exceptionName, str)
 
 
-@given(instance=pcm::av::repository::av::ExceptionType_strategy)
-def test_pcm::av::repository::av::exceptiontype_exceptionName_setter(instance):
+@given(instance=pcm_av_repository_av_ExceptionType_strategy)
+def test_pcm_av_repository_av_exceptiontype_exceptionName_setter(instance):
     original = instance.exceptionName
     instance.exceptionName = original
     assert instance.exceptionName == original
@@ -7362,10 +7371,10 @@ def test_exceptiontype_instantiation(instance):
 def test_signature_instantiation(instance):
     assert isinstance(instance, Signature)
 
-@given(instance=pcm::av::repository::av::OperationSignature_strategy)
+@given(instance=pcm_av_repository_av_OperationSignature_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::operationsignature_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::OperationSignature)
+def test_pcm_av_repository_av_operationsignature_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_OperationSignature)
 
 import warnings
 import copy
@@ -7373,9 +7382,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::OperationSignature_strategy)
+@given(instance=pcm_av_repository_av_OperationSignature_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::operationsignature_parameternameshavetobeuniqueforasignature_changes_state(instance):
+def test_pcm_av_repository_av_operationsignature_parameternameshavetobeuniqueforasignature_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7390,37 +7399,34 @@ def test_pcm::av::repository::av::operationsignature_parameternameshavetobeuniqu
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ParameterNamesHaveToBeUniqueForASignature' in pcm::av::repository::av::OperationSignature is empty"
+        assert has_statements, f"Function 'ParameterNamesHaveToBeUniqueForASignature' in pcm_av_repository_av_OperationSignature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ParameterNamesHaveToBeUniqueForASignature' in pcm::av::repository::av::OperationSignature did not change state; check implementation")
+            warnings.warn(f"Operation 'ParameterNamesHaveToBeUniqueForASignature' in pcm_av_repository_av_OperationSignature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ParameterNamesHaveToBeUniqueForASignature' in pcm::av::repository::av::OperationSignature is not implemented or raised an error")
+        warnings.warn(f"Operation 'ParameterNamesHaveToBeUniqueForASignature' in pcm_av_repository_av_OperationSignature is not implemented or raised an error")
 
-@given(instance=pcm::av::repository::av::EventType_strategy)
+@given(instance=pcm_av_repository_av_EventType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::eventtype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::EventType)
+def test_pcm_av_repository_av_eventtype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_EventType)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=pcm::av::repository::av::RequiredCharacterisation_strategy)
+@given(instance=pcm_av_repository_av_RequiredCharacterisation_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::requiredcharacterisation_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::RequiredCharacterisation)
-
-@given(instance=pcm::av::repository::av::RequiredCharacterisation_strategy)
-def test_pcm::av::repository::av::requiredcharacterisation_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_pcm_av_repository_av_requiredcharacterisation_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_RequiredCharacterisation)
 
 
-@given(instance=pcm::av::repository::av::RequiredCharacterisation_strategy)
-def test_pcm::av::repository::av::requiredcharacterisation_type_setter(instance):
+
+@given(instance=pcm_av_repository_av_RequiredCharacterisation_strategy)
+def test_pcm_av_repository_av_requiredcharacterisation_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -7440,25 +7446,20 @@ def test_protocol_instantiation(instance):
 def test_infrastructureinterface_instantiation(instance):
     assert isinstance(instance, InfrastructureInterface)
 
-@given(instance=pcm::av::repository::av::InfrastructureSignature_strategy)
+@given(instance=pcm_av_repository_av_InfrastructureSignature_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::infrastructuresignature_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::InfrastructureSignature)
+def test_pcm_av_repository_av_infrastructuresignature_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_InfrastructureSignature)
 
 @given(instance=FailureType_strategy)
 @settings(max_examples=50)
 def test_failuretype_instantiation(instance):
     assert isinstance(instance, FailureType)
 
-@given(instance=pcm::av::reliability::av::SoftwareInducedFailureType_strategy)
+@given(instance=pcm_av_reliability_av_HardwareInducedFailureType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::reliability::av::softwareinducedfailuretype_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::SoftwareInducedFailureType)
-
-@given(instance=pcm::av::reliability::av::NetworkInducedFailureType_strategy)
-@settings(max_examples=50)
-def test_pcm::av::reliability::av::networkinducedfailuretype_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::NetworkInducedFailureType)
+def test_pcm_av_reliability_av_hardwareinducedfailuretype_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_HardwareInducedFailureType)
 
 import warnings
 import copy
@@ -7466,46 +7467,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::reliability::av::NetworkInducedFailureType_strategy)
+@given(instance=pcm_av_reliability_av_HardwareInducedFailureType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::reliability::av::networkinducedfailuretype_networkinducedfailuretypehascommunicationlinkresourcetype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.NetworkInducedFailureTypeHasCommunicationLinkResourceType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.NetworkInducedFailureTypeHasCommunicationLinkResourceType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NetworkInducedFailureTypeHasCommunicationLinkResourceType' in pcm::av::reliability::av::NetworkInducedFailureType is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NetworkInducedFailureTypeHasCommunicationLinkResourceType' in pcm::av::reliability::av::NetworkInducedFailureType did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NetworkInducedFailureTypeHasCommunicationLinkResourceType' in pcm::av::reliability::av::NetworkInducedFailureType is not implemented or raised an error")
-
-@given(instance=pcm::av::reliability::av::HardwareInducedFailureType_strategy)
-@settings(max_examples=50)
-def test_pcm::av::reliability::av::hardwareinducedfailuretype_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::HardwareInducedFailureType)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::reliability::av::HardwareInducedFailureType_strategy)
-@settings(max_examples=30)
-def test_pcm::av::reliability::av::hardwareinducedfailuretype_hardwareinducedfailuretypehasprocessingresourcetype_changes_state(instance):
+def test_pcm_av_reliability_av_hardwareinducedfailuretype_hardwareinducedfailuretypehasprocessingresourcetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7520,24 +7484,19 @@ def test_pcm::av::reliability::av::hardwareinducedfailuretype_hardwareinducedfai
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'HardwareInducedFailureTypeHasProcessingResourceType' in pcm::av::reliability::av::HardwareInducedFailureType is empty"
+        assert has_statements, f"Function 'HardwareInducedFailureTypeHasProcessingResourceType' in pcm_av_reliability_av_HardwareInducedFailureType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'HardwareInducedFailureTypeHasProcessingResourceType' in pcm::av::reliability::av::HardwareInducedFailureType did not change state; check implementation")
+            warnings.warn(f"Operation 'HardwareInducedFailureTypeHasProcessingResourceType' in pcm_av_reliability_av_HardwareInducedFailureType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'HardwareInducedFailureTypeHasProcessingResourceType' in pcm::av::reliability::av::HardwareInducedFailureType is not implemented or raised an error")
+        warnings.warn(f"Operation 'HardwareInducedFailureTypeHasProcessingResourceType' in pcm_av_reliability_av_HardwareInducedFailureType is not implemented or raised an error")
 
-@given(instance=Interface_strategy)
+@given(instance=pcm_av_reliability_av_NetworkInducedFailureType_strategy)
 @settings(max_examples=50)
-def test_interface_instantiation(instance):
-    assert isinstance(instance, Interface)
-
-@given(instance=pcm::av::repository::av::OperationInterface_strategy)
-@settings(max_examples=50)
-def test_pcm::av::repository::av::operationinterface_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::OperationInterface)
+def test_pcm_av_reliability_av_networkinducedfailuretype_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_NetworkInducedFailureType)
 
 import warnings
 import copy
@@ -7545,9 +7504,66 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::OperationInterface_strategy)
+@given(instance=pcm_av_reliability_av_NetworkInducedFailureType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::operationinterface_signatureshavetobeuniqueforaninterface_changes_state(instance):
+def test_pcm_av_reliability_av_networkinducedfailuretype_networkinducedfailuretypehascommunicationlinkresourcetype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.NetworkInducedFailureTypeHasCommunicationLinkResourceType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.NetworkInducedFailureTypeHasCommunicationLinkResourceType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'NetworkInducedFailureTypeHasCommunicationLinkResourceType' in pcm_av_reliability_av_NetworkInducedFailureType is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'NetworkInducedFailureTypeHasCommunicationLinkResourceType' in pcm_av_reliability_av_NetworkInducedFailureType did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'NetworkInducedFailureTypeHasCommunicationLinkResourceType' in pcm_av_reliability_av_NetworkInducedFailureType is not implemented or raised an error")
+
+@given(instance=pcm_av_reliability_av_SoftwareInducedFailureType_strategy)
+@settings(max_examples=50)
+def test_pcm_av_reliability_av_softwareinducedfailuretype_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_SoftwareInducedFailureType)
+
+@given(instance=Interface_strategy)
+@settings(max_examples=50)
+def test_interface_instantiation(instance):
+    assert isinstance(instance, Interface)
+
+@given(instance=pcm_av_repository_av_InfrastructureInterface_strategy)
+@settings(max_examples=50)
+def test_pcm_av_repository_av_infrastructureinterface_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_InfrastructureInterface)
+
+@given(instance=pcm_av_repository_av_EventGroup_strategy)
+@settings(max_examples=50)
+def test_pcm_av_repository_av_eventgroup_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_EventGroup)
+
+@given(instance=pcm_av_repository_av_OperationInterface_strategy)
+@settings(max_examples=50)
+def test_pcm_av_repository_av_operationinterface_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_OperationInterface)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_repository_av_OperationInterface_strategy)
+@settings(max_examples=30)
+def test_pcm_av_repository_av_operationinterface_signatureshavetobeuniqueforaninterface_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7562,29 +7578,19 @@ def test_pcm::av::repository::av::operationinterface_signatureshavetobeuniquefor
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SignaturesHaveToBeUniqueForAnInterface' in pcm::av::repository::av::OperationInterface is empty"
+        assert has_statements, f"Function 'SignaturesHaveToBeUniqueForAnInterface' in pcm_av_repository_av_OperationInterface is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SignaturesHaveToBeUniqueForAnInterface' in pcm::av::repository::av::OperationInterface did not change state; check implementation")
+            warnings.warn(f"Operation 'SignaturesHaveToBeUniqueForAnInterface' in pcm_av_repository_av_OperationInterface did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SignaturesHaveToBeUniqueForAnInterface' in pcm::av::repository::av::OperationInterface is not implemented or raised an error")
+        warnings.warn(f"Operation 'SignaturesHaveToBeUniqueForAnInterface' in pcm_av_repository_av_OperationInterface is not implemented or raised an error")
 
-@given(instance=pcm::av::repository::av::InfrastructureInterface_strategy)
+@given(instance=pcm_av_repository_av_DataType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::infrastructureinterface_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::InfrastructureInterface)
-
-@given(instance=pcm::av::repository::av::EventGroup_strategy)
-@settings(max_examples=50)
-def test_pcm::av::repository::av::eventgroup_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::EventGroup)
-
-@given(instance=pcm::av::repository::av::DataType_strategy)
-@settings(max_examples=50)
-def test_pcm::av::repository::av::datatype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::DataType)
+def test_pcm_av_repository_av_datatype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_DataType)
 
 @given(instance=ResourceSignature_strategy)
 @settings(max_examples=50)
@@ -7601,48 +7607,39 @@ def test_eventtype_instantiation(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=pcm::av::repository::av::PrimitiveDataType_strategy)
+@given(instance=pcm_av_repository_av_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::PrimitiveDataType)
-
-@given(instance=pcm::av::repository::av::PrimitiveDataType_strategy)
-def test_pcm::av::repository::av::primitivedatatype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_pcm_av_repository_av_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_PrimitiveDataType)
 
 
-@given(instance=pcm::av::repository::av::PrimitiveDataType_strategy)
-def test_pcm::av::repository::av::primitivedatatype_type_setter(instance):
+
+@given(instance=pcm_av_repository_av_PrimitiveDataType_strategy)
+def test_pcm_av_repository_av_primitivedatatype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=pcm::av::repository::av::Parameter_strategy)
+@given(instance=pcm_av_repository_av_Parameter_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::parameter_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::Parameter)
-
-@given(instance=pcm::av::repository::av::Parameter_strategy)
-def test_pcm::av::repository::av::parameter_parameterName_type(instance):
-    assert isinstance(instance.parameterName, str)
+def test_pcm_av_repository_av_parameter_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_Parameter)
 
 
-@given(instance=pcm::av::repository::av::Parameter_strategy)
-def test_pcm::av::repository::av::parameter_parameterName_setter(instance):
-    original = instance.parameterName
-    instance.parameterName = original
-    assert instance.parameterName == original
 
-@given(instance=pcm::av::repository::av::Parameter_strategy)
-def test_pcm::av::repository::av::parameter_modifier__Parameter_type(instance):
-    assert isinstance(instance.modifier__Parameter, str)
-
-
-@given(instance=pcm::av::repository::av::Parameter_strategy)
-def test_pcm::av::repository::av::parameter_modifier__Parameter_setter(instance):
+@given(instance=pcm_av_repository_av_Parameter_strategy)
+def test_pcm_av_repository_av_parameter_modifier__Parameter_setter(instance):
     original = instance.modifier__Parameter
     instance.modifier__Parameter = original
     assert instance.modifier__Parameter == original
+
+
+
+@given(instance=pcm_av_repository_av_Parameter_strategy)
+def test_pcm_av_repository_av_parameter_parameterName_setter(instance):
+    original = instance.parameterName
+    instance.parameterName = original
+    assert instance.parameterName == original
 
 @given(instance=Repository_strategy)
 @settings(max_examples=50)
@@ -7654,10 +7651,10 @@ def test_repository_instantiation(instance):
 def test_interfaceprovidingrequiringentity_instantiation(instance):
     assert isinstance(instance, InterfaceProvidingRequiringEntity)
 
-@given(instance=pcm::av::repository::av::RepositoryComponent_strategy)
+@given(instance=pcm_av_repository_av_RepositoryComponent_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::repositorycomponent_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::RepositoryComponent)
+def test_pcm_av_repository_av_repositorycomponent_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_RepositoryComponent)
 
 @given(instance=CompleteComponentType_strategy)
 @settings(max_examples=50)
@@ -7679,10 +7676,10 @@ def test_serviceeffectspecification_instantiation(instance):
 def test_implementationcomponenttype_instantiation(instance):
     assert isinstance(instance, ImplementationComponentType)
 
-@given(instance=pcm::av::repository::av::BasicComponent_strategy)
+@given(instance=pcm_av_repository_av_BasicComponent_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::basiccomponent_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::BasicComponent)
+def test_pcm_av_repository_av_basiccomponent_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_BasicComponent)
 
 import warnings
 import copy
@@ -7690,41 +7687,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::BasicComponent_strategy)
+@given(instance=pcm_av_repository_av_BasicComponent_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::basiccomponent_providesameinterfacesasimplementationtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ProvideSameInterfacesAsImplementationType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ProvideSameInterfacesAsImplementationType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ProvideSameInterfacesAsImplementationType' in pcm::av::repository::av::BasicComponent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ProvideSameInterfacesAsImplementationType' in pcm::av::repository::av::BasicComponent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ProvideSameInterfacesAsImplementationType' in pcm::av::repository::av::BasicComponent is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::repository::av::BasicComponent_strategy)
-@settings(max_examples=30)
-def test_pcm::av::repository::av::basiccomponent_requiresameinterfacesasimplementationtype_changes_state(instance):
+def test_pcm_av_repository_av_basiccomponent_requiresameinterfacesasimplementationtype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7739,14 +7704,14 @@ def test_pcm::av::repository::av::basiccomponent_requiresameinterfacesasimplemen
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RequireSameInterfacesAsImplementationType' in pcm::av::repository::av::BasicComponent is empty"
+        assert has_statements, f"Function 'RequireSameInterfacesAsImplementationType' in pcm_av_repository_av_BasicComponent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RequireSameInterfacesAsImplementationType' in pcm::av::repository::av::BasicComponent did not change state; check implementation")
+            warnings.warn(f"Operation 'RequireSameInterfacesAsImplementationType' in pcm_av_repository_av_BasicComponent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RequireSameInterfacesAsImplementationType' in pcm::av::repository::av::BasicComponent is not implemented or raised an error")
+        warnings.warn(f"Operation 'RequireSameInterfacesAsImplementationType' in pcm_av_repository_av_BasicComponent is not implemented or raised an error")
 
 import warnings
 import copy
@@ -7754,9 +7719,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::BasicComponent_strategy)
+@given(instance=pcm_av_repository_av_BasicComponent_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::basiccomponent_nosefftypeusedtwice_changes_state(instance):
+def test_pcm_av_repository_av_basiccomponent_nosefftypeusedtwice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7771,14 +7736,46 @@ def test_pcm::av::repository::av::basiccomponent_nosefftypeusedtwice_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NoSeffTypeUsedTwice' in pcm::av::repository::av::BasicComponent is empty"
+        assert has_statements, f"Function 'NoSeffTypeUsedTwice' in pcm_av_repository_av_BasicComponent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NoSeffTypeUsedTwice' in pcm::av::repository::av::BasicComponent did not change state; check implementation")
+            warnings.warn(f"Operation 'NoSeffTypeUsedTwice' in pcm_av_repository_av_BasicComponent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NoSeffTypeUsedTwice' in pcm::av::repository::av::BasicComponent is not implemented or raised an error")
+        warnings.warn(f"Operation 'NoSeffTypeUsedTwice' in pcm_av_repository_av_BasicComponent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_repository_av_BasicComponent_strategy)
+@settings(max_examples=30)
+def test_pcm_av_repository_av_basiccomponent_providesameinterfacesasimplementationtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ProvideSameInterfacesAsImplementationType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ProvideSameInterfacesAsImplementationType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ProvideSameInterfacesAsImplementationType' in pcm_av_repository_av_BasicComponent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ProvideSameInterfacesAsImplementationType' in pcm_av_repository_av_BasicComponent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ProvideSameInterfacesAsImplementationType' in pcm_av_repository_av_BasicComponent is not implemented or raised an error")
 
 @given(instance=ResourceTimeoutFailureType_strategy)
 @settings(max_examples=50)
@@ -7800,18 +7797,15 @@ def test_branchtransition_instantiation(instance):
 def test_branch_instantiation(instance):
     assert isinstance(instance, Branch)
 
-@given(instance=pcm::av::usagemodel::av::BranchTransition_strategy)
+@given(instance=pcm_av_usagemodel_av_BranchTransition_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::branchtransition_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::BranchTransition)
-
-@given(instance=pcm::av::usagemodel::av::BranchTransition_strategy)
-def test_pcm::av::usagemodel::av::branchtransition_branchProbability_type(instance):
-    assert isinstance(instance.branchProbability, float)
+def test_pcm_av_usagemodel_av_branchtransition_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_BranchTransition)
 
 
-@given(instance=pcm::av::usagemodel::av::BranchTransition_strategy)
-def test_pcm::av::usagemodel::av::branchtransition_branchProbability_setter(instance):
+
+@given(instance=pcm_av_usagemodel_av_BranchTransition_strategy)
+def test_pcm_av_usagemodel_av_branchtransition_branchProbability_setter(instance):
     original = instance.branchProbability
     instance.branchProbability = original
     assert instance.branchProbability == original
@@ -7821,15 +7815,20 @@ def test_pcm::av::usagemodel::av::branchtransition_branchProbability_setter(inst
 def test_abstractuseraction_instantiation(instance):
     assert isinstance(instance, AbstractUserAction)
 
-@given(instance=pcm::av::usagemodel::av::Loop_strategy)
+@given(instance=pcm_av_usagemodel_av_Delay_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::loop_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::Loop)
+def test_pcm_av_usagemodel_av_delay_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_Delay)
 
-@given(instance=pcm::av::usagemodel::av::Start_strategy)
+@given(instance=pcm_av_usagemodel_av_Loop_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::start_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::Start)
+def test_pcm_av_usagemodel_av_loop_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_Loop)
+
+@given(instance=pcm_av_usagemodel_av_Branch_strategy)
+@settings(max_examples=50)
+def test_pcm_av_usagemodel_av_branch_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_Branch)
 
 import warnings
 import copy
@@ -7837,51 +7836,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::usagemodel::av::Start_strategy)
+@given(instance=pcm_av_usagemodel_av_Branch_strategy)
 @settings(max_examples=30)
-def test_pcm::av::usagemodel::av::start_starthasnopredecessor_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.StartHasNoPredecessor(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.StartHasNoPredecessor).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'StartHasNoPredecessor' in pcm::av::usagemodel::av::Start is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'StartHasNoPredecessor' in pcm::av::usagemodel::av::Start did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'StartHasNoPredecessor' in pcm::av::usagemodel::av::Start is not implemented or raised an error")
-
-@given(instance=pcm::av::usagemodel::av::Delay_strategy)
-@settings(max_examples=50)
-def test_pcm::av::usagemodel::av::delay_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::Delay)
-
-@given(instance=pcm::av::usagemodel::av::Branch_strategy)
-@settings(max_examples=50)
-def test_pcm::av::usagemodel::av::branch_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::Branch)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::usagemodel::av::Branch_strategy)
-@settings(max_examples=30)
-def test_pcm::av::usagemodel::av::branch_allbranchprobabilitiesmustsumupto1_changes_state(instance):
+def test_pcm_av_usagemodel_av_branch_allbranchprobabilitiesmustsumupto1_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7896,19 +7853,19 @@ def test_pcm::av::usagemodel::av::branch_allbranchprobabilitiesmustsumupto1_chan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AllBranchProbabilitiesMustSumUpTo1' in pcm::av::usagemodel::av::Branch is empty"
+        assert has_statements, f"Function 'AllBranchProbabilitiesMustSumUpTo1' in pcm_av_usagemodel_av_Branch is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AllBranchProbabilitiesMustSumUpTo1' in pcm::av::usagemodel::av::Branch did not change state; check implementation")
+            warnings.warn(f"Operation 'AllBranchProbabilitiesMustSumUpTo1' in pcm_av_usagemodel_av_Branch did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AllBranchProbabilitiesMustSumUpTo1' in pcm::av::usagemodel::av::Branch is not implemented or raised an error")
+        warnings.warn(f"Operation 'AllBranchProbabilitiesMustSumUpTo1' in pcm_av_usagemodel_av_Branch is not implemented or raised an error")
 
-@given(instance=pcm::av::usagemodel::av::Stop_strategy)
+@given(instance=pcm_av_usagemodel_av_Start_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::stop_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::Stop)
+def test_pcm_av_usagemodel_av_start_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_Start)
 
 import warnings
 import copy
@@ -7916,9 +7873,46 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::usagemodel::av::Stop_strategy)
+@given(instance=pcm_av_usagemodel_av_Start_strategy)
 @settings(max_examples=30)
-def test_pcm::av::usagemodel::av::stop_stophasnosuccessor_changes_state(instance):
+def test_pcm_av_usagemodel_av_start_starthasnopredecessor_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.StartHasNoPredecessor(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.StartHasNoPredecessor).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'StartHasNoPredecessor' in pcm_av_usagemodel_av_Start is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'StartHasNoPredecessor' in pcm_av_usagemodel_av_Start did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'StartHasNoPredecessor' in pcm_av_usagemodel_av_Start is not implemented or raised an error")
+
+@given(instance=pcm_av_usagemodel_av_Stop_strategy)
+@settings(max_examples=50)
+def test_pcm_av_usagemodel_av_stop_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_Stop)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_usagemodel_av_Stop_strategy)
+@settings(max_examples=30)
+def test_pcm_av_usagemodel_av_stop_stophasnosuccessor_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7933,27 +7927,24 @@ def test_pcm::av::usagemodel::av::stop_stophasnosuccessor_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'StopHasNoSuccessor' in pcm::av::usagemodel::av::Stop is empty"
+        assert has_statements, f"Function 'StopHasNoSuccessor' in pcm_av_usagemodel_av_Stop is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'StopHasNoSuccessor' in pcm::av::usagemodel::av::Stop did not change state; check implementation")
+            warnings.warn(f"Operation 'StopHasNoSuccessor' in pcm_av_usagemodel_av_Stop did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'StopHasNoSuccessor' in pcm::av::usagemodel::av::Stop is not implemented or raised an error")
+        warnings.warn(f"Operation 'StopHasNoSuccessor' in pcm_av_usagemodel_av_Stop is not implemented or raised an error")
 
-@given(instance=pcm::av::usagemodel::av::EntryLevelSystemCall_strategy)
+@given(instance=pcm_av_usagemodel_av_EntryLevelSystemCall_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::EntryLevelSystemCall)
-
-@given(instance=pcm::av::usagemodel::av::EntryLevelSystemCall_strategy)
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_priority_type(instance):
-    assert isinstance(instance.priority, int)
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_EntryLevelSystemCall)
 
 
-@given(instance=pcm::av::usagemodel::av::EntryLevelSystemCall_strategy)
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_priority_setter(instance):
+
+@given(instance=pcm_av_usagemodel_av_EntryLevelSystemCall_strategy)
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
@@ -7964,9 +7955,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::usagemodel::av::EntryLevelSystemCall_strategy)
+@given(instance=pcm_av_usagemodel_av_EntryLevelSystemCall_strategy)
 @settings(max_examples=30)
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_entrylevelsystemcallmustreferenceprovidedroleofasystem_changes_state(instance):
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_entrylevelsystemcallmustreferenceprovidedroleofasystem_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7981,14 +7972,14 @@ def test_pcm::av::usagemodel::av::entrylevelsystemcall_entrylevelsystemcallmustr
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EntryLevelSystemCallMustReferenceProvidedRoleOfASystem' in pcm::av::usagemodel::av::EntryLevelSystemCall is empty"
+        assert has_statements, f"Function 'EntryLevelSystemCallMustReferenceProvidedRoleOfASystem' in pcm_av_usagemodel_av_EntryLevelSystemCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EntryLevelSystemCallMustReferenceProvidedRoleOfASystem' in pcm::av::usagemodel::av::EntryLevelSystemCall did not change state; check implementation")
+            warnings.warn(f"Operation 'EntryLevelSystemCallMustReferenceProvidedRoleOfASystem' in pcm_av_usagemodel_av_EntryLevelSystemCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EntryLevelSystemCallMustReferenceProvidedRoleOfASystem' in pcm::av::usagemodel::av::EntryLevelSystemCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'EntryLevelSystemCallMustReferenceProvidedRoleOfASystem' in pcm_av_usagemodel_av_EntryLevelSystemCall is not implemented or raised an error")
 
 import warnings
 import copy
@@ -7996,9 +7987,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::usagemodel::av::EntryLevelSystemCall_strategy)
+@given(instance=pcm_av_usagemodel_av_EntryLevelSystemCall_strategy)
 @settings(max_examples=30)
-def test_pcm::av::usagemodel::av::entrylevelsystemcall_entrylevelsystemcallsignaturemustmatchitsprovidedrole_changes_state(instance):
+def test_pcm_av_usagemodel_av_entrylevelsystemcall_entrylevelsystemcallsignaturemustmatchitsprovidedrole_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8013,50 +8004,39 @@ def test_pcm::av::usagemodel::av::entrylevelsystemcall_entrylevelsystemcallsigna
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EntryLevelSystemCallSignatureMustMatchItsProvidedRole' in pcm::av::usagemodel::av::EntryLevelSystemCall is empty"
+        assert has_statements, f"Function 'EntryLevelSystemCallSignatureMustMatchItsProvidedRole' in pcm_av_usagemodel_av_EntryLevelSystemCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EntryLevelSystemCallSignatureMustMatchItsProvidedRole' in pcm::av::usagemodel::av::EntryLevelSystemCall did not change state; check implementation")
+            warnings.warn(f"Operation 'EntryLevelSystemCallSignatureMustMatchItsProvidedRole' in pcm_av_usagemodel_av_EntryLevelSystemCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EntryLevelSystemCallSignatureMustMatchItsProvidedRole' in pcm::av::usagemodel::av::EntryLevelSystemCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'EntryLevelSystemCallSignatureMustMatchItsProvidedRole' in pcm_av_usagemodel_av_EntryLevelSystemCall is not implemented or raised an error")
 
 @given(instance=UserData_strategy)
 @settings(max_examples=50)
 def test_userdata_instantiation(instance):
     assert isinstance(instance, UserData)
 
-@given(instance=pcm::av::usagemodel::av::UsageModel_strategy)
+@given(instance=pcm_av_usagemodel_av_UsageModel_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::usagemodel_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::UsageModel)
+def test_pcm_av_usagemodel_av_usagemodel_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_UsageModel)
 
-@given(instance=pcm::av::usagemodel::av::UserData_strategy)
+@given(instance=pcm_av_usagemodel_av_UserData_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::userdata_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::UserData)
+def test_pcm_av_usagemodel_av_userdata_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_UserData)
 
 @given(instance=Workload_strategy)
 @settings(max_examples=50)
 def test_workload_instantiation(instance):
     assert isinstance(instance, Workload)
 
-@given(instance=pcm::av::usagemodel::av::ClosedWorkload_strategy)
+@given(instance=pcm_av_usagemodel_av_OpenWorkload_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::closedworkload_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::ClosedWorkload)
-
-@given(instance=pcm::av::usagemodel::av::ClosedWorkload_strategy)
-def test_pcm::av::usagemodel::av::closedworkload_population_type(instance):
-    assert isinstance(instance.population, int)
-
-
-@given(instance=pcm::av::usagemodel::av::ClosedWorkload_strategy)
-def test_pcm::av::usagemodel::av::closedworkload_population_setter(instance):
-    original = instance.population
-    instance.population = original
-    assert instance.population == original
+def test_pcm_av_usagemodel_av_openworkload_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_OpenWorkload)
 
 import warnings
 import copy
@@ -8064,78 +8044,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::usagemodel::av::ClosedWorkload_strategy)
+@given(instance=pcm_av_usagemodel_av_OpenWorkload_strategy)
 @settings(max_examples=30)
-def test_pcm::av::usagemodel::av::closedworkload_populationinclosedworkloadneedstobespecified_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.PopulationInClosedWorkloadNeedsToBeSpecified(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.PopulationInClosedWorkloadNeedsToBeSpecified).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'PopulationInClosedWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::ClosedWorkload is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'PopulationInClosedWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::ClosedWorkload did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'PopulationInClosedWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::ClosedWorkload is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::usagemodel::av::ClosedWorkload_strategy)
-@settings(max_examples=30)
-def test_pcm::av::usagemodel::av::closedworkload_thinktimeinclosedworkloadneedstobespecified_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ThinkTimeInClosedWorkloadNeedsToBeSpecified(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ThinkTimeInClosedWorkloadNeedsToBeSpecified).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ThinkTimeInClosedWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::ClosedWorkload is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ThinkTimeInClosedWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::ClosedWorkload did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ThinkTimeInClosedWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::ClosedWorkload is not implemented or raised an error")
-
-@given(instance=pcm::av::usagemodel::av::OpenWorkload_strategy)
-@settings(max_examples=50)
-def test_pcm::av::usagemodel::av::openworkload_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::OpenWorkload)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::usagemodel::av::OpenWorkload_strategy)
-@settings(max_examples=30)
-def test_pcm::av::usagemodel::av::openworkload_interarrivaltimeinopenworkloadneedstobespecified_changes_state(instance):
+def test_pcm_av_usagemodel_av_openworkload_interarrivaltimeinopenworkloadneedstobespecified_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8150,14 +8061,91 @@ def test_pcm::av::usagemodel::av::openworkload_interarrivaltimeinopenworkloadnee
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'InterArrivalTimeInOpenWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::OpenWorkload is empty"
+        assert has_statements, f"Function 'InterArrivalTimeInOpenWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_OpenWorkload is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'InterArrivalTimeInOpenWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::OpenWorkload did not change state; check implementation")
+            warnings.warn(f"Operation 'InterArrivalTimeInOpenWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_OpenWorkload did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'InterArrivalTimeInOpenWorkloadNeedsToBeSpecified' in pcm::av::usagemodel::av::OpenWorkload is not implemented or raised an error")
+        warnings.warn(f"Operation 'InterArrivalTimeInOpenWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_OpenWorkload is not implemented or raised an error")
+
+@given(instance=pcm_av_usagemodel_av_ClosedWorkload_strategy)
+@settings(max_examples=50)
+def test_pcm_av_usagemodel_av_closedworkload_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_ClosedWorkload)
+
+
+
+@given(instance=pcm_av_usagemodel_av_ClosedWorkload_strategy)
+def test_pcm_av_usagemodel_av_closedworkload_population_setter(instance):
+    original = instance.population
+    instance.population = original
+    assert instance.population == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_usagemodel_av_ClosedWorkload_strategy)
+@settings(max_examples=30)
+def test_pcm_av_usagemodel_av_closedworkload_thinktimeinclosedworkloadneedstobespecified_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ThinkTimeInClosedWorkloadNeedsToBeSpecified(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ThinkTimeInClosedWorkloadNeedsToBeSpecified).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ThinkTimeInClosedWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_ClosedWorkload is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ThinkTimeInClosedWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_ClosedWorkload did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ThinkTimeInClosedWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_ClosedWorkload is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_usagemodel_av_ClosedWorkload_strategy)
+@settings(max_examples=30)
+def test_pcm_av_usagemodel_av_closedworkload_populationinclosedworkloadneedstobespecified_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.PopulationInClosedWorkloadNeedsToBeSpecified(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.PopulationInClosedWorkloadNeedsToBeSpecified).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'PopulationInClosedWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_ClosedWorkload is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'PopulationInClosedWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_ClosedWorkload did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'PopulationInClosedWorkloadNeedsToBeSpecified' in pcm_av_usagemodel_av_ClosedWorkload is not implemented or raised an error")
 
 @given(instance=ScenarioBehaviour_strategy)
 @settings(max_examples=50)
@@ -8174,10 +8162,10 @@ def test_usagemodel_instantiation(instance):
 def test_usagescenario_instantiation(instance):
     assert isinstance(instance, UsageScenario)
 
-@given(instance=pcm::av::usagemodel::av::Workload_strategy)
+@given(instance=pcm_av_usagemodel_av_Workload_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::workload_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::Workload)
+def test_pcm_av_usagemodel_av_workload_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_Workload)
 
 @given(instance=OperationSignature_strategy)
 @settings(max_examples=50)
@@ -8194,10 +8182,10 @@ def test_variableusage_instantiation(instance):
 def test_repositorycomponent_instantiation(instance):
     assert isinstance(instance, RepositoryComponent)
 
-@given(instance=pcm::av::repository::av::CompleteComponentType_strategy)
+@given(instance=pcm_av_repository_av_CompleteComponentType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::completecomponenttype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::CompleteComponentType)
+def test_pcm_av_repository_av_completecomponenttype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_CompleteComponentType)
 
 import warnings
 import copy
@@ -8205,9 +8193,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::CompleteComponentType_strategy)
+@given(instance=pcm_av_repository_av_CompleteComponentType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::completecomponenttype_atleastoneinterfacehastobeprovidedorrequiredbyausefullcompletecomponenttype_changes_state(instance):
+def test_pcm_av_repository_av_completecomponenttype_atleastoneinterfacehastobeprovidedorrequiredbyausefullcompletecomponenttype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8222,14 +8210,14 @@ def test_pcm::av::repository::av::completecomponenttype_atleastoneinterfacehasto
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AtLeastOneInterfaceHasToBeProvidedOrRequiredByAUsefullCompleteComponentType' in pcm::av::repository::av::CompleteComponentType is empty"
+        assert has_statements, f"Function 'AtLeastOneInterfaceHasToBeProvidedOrRequiredByAUsefullCompleteComponentType' in pcm_av_repository_av_CompleteComponentType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedOrRequiredByAUsefullCompleteComponentType' in pcm::av::repository::av::CompleteComponentType did not change state; check implementation")
+            warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedOrRequiredByAUsefullCompleteComponentType' in pcm_av_repository_av_CompleteComponentType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedOrRequiredByAUsefullCompleteComponentType' in pcm::av::repository::av::CompleteComponentType is not implemented or raised an error")
+        warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedOrRequiredByAUsefullCompleteComponentType' in pcm_av_repository_av_CompleteComponentType is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8237,9 +8225,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::CompleteComponentType_strategy)
+@given(instance=pcm_av_repository_av_CompleteComponentType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::completecomponenttype_providedinterfaceshavetoconformtoprovidedtype2_changes_state(instance):
+def test_pcm_av_repository_av_completecomponenttype_providedinterfaceshavetoconformtoprovidedtype2_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8254,19 +8242,19 @@ def test_pcm::av::repository::av::completecomponenttype_providedinterfaceshaveto
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'providedInterfacesHaveToConformToProvidedType2' in pcm::av::repository::av::CompleteComponentType is empty"
+        assert has_statements, f"Function 'providedInterfacesHaveToConformToProvidedType2' in pcm_av_repository_av_CompleteComponentType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'providedInterfacesHaveToConformToProvidedType2' in pcm::av::repository::av::CompleteComponentType did not change state; check implementation")
+            warnings.warn(f"Operation 'providedInterfacesHaveToConformToProvidedType2' in pcm_av_repository_av_CompleteComponentType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'providedInterfacesHaveToConformToProvidedType2' in pcm::av::repository::av::CompleteComponentType is not implemented or raised an error")
+        warnings.warn(f"Operation 'providedInterfacesHaveToConformToProvidedType2' in pcm_av_repository_av_CompleteComponentType is not implemented or raised an error")
 
-@given(instance=pcm::av::repository::av::ProvidesComponentType_strategy)
+@given(instance=pcm_av_repository_av_ProvidesComponentType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::providescomponenttype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::ProvidesComponentType)
+def test_pcm_av_repository_av_providescomponenttype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_ProvidesComponentType)
 
 import warnings
 import copy
@@ -8274,9 +8262,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::ProvidesComponentType_strategy)
+@given(instance=pcm_av_repository_av_ProvidesComponentType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::providescomponenttype_atleastoneinterfacehastobeprovidedbyausefullprovidescomponenttype_changes_state(instance):
+def test_pcm_av_repository_av_providescomponenttype_atleastoneinterfacehastobeprovidedbyausefullprovidescomponenttype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8291,27 +8279,24 @@ def test_pcm::av::repository::av::providescomponenttype_atleastoneinterfacehasto
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AtLeastOneInterfaceHasToBeProvidedByAUsefullProvidesComponentType' in pcm::av::repository::av::ProvidesComponentType is empty"
+        assert has_statements, f"Function 'AtLeastOneInterfaceHasToBeProvidedByAUsefullProvidesComponentType' in pcm_av_repository_av_ProvidesComponentType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedByAUsefullProvidesComponentType' in pcm::av::repository::av::ProvidesComponentType did not change state; check implementation")
+            warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedByAUsefullProvidesComponentType' in pcm_av_repository_av_ProvidesComponentType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedByAUsefullProvidesComponentType' in pcm::av::repository::av::ProvidesComponentType is not implemented or raised an error")
+        warnings.warn(f"Operation 'AtLeastOneInterfaceHasToBeProvidedByAUsefullProvidesComponentType' in pcm_av_repository_av_ProvidesComponentType is not implemented or raised an error")
 
-@given(instance=pcm::av::repository::av::ImplementationComponentType_strategy)
+@given(instance=pcm_av_repository_av_ImplementationComponentType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::implementationcomponenttype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::ImplementationComponentType)
-
-@given(instance=pcm::av::repository::av::ImplementationComponentType_strategy)
-def test_pcm::av::repository::av::implementationcomponenttype_componentType_type(instance):
-    assert isinstance(instance.componentType, str)
+def test_pcm_av_repository_av_implementationcomponenttype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_ImplementationComponentType)
 
 
-@given(instance=pcm::av::repository::av::ImplementationComponentType_strategy)
-def test_pcm::av::repository::av::implementationcomponenttype_componentType_setter(instance):
+
+@given(instance=pcm_av_repository_av_ImplementationComponentType_strategy)
+def test_pcm_av_repository_av_implementationcomponenttype_componentType_setter(instance):
     original = instance.componentType
     instance.componentType = original
     assert instance.componentType == original
@@ -8322,9 +8307,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::ImplementationComponentType_strategy)
+@given(instance=pcm_av_repository_av_ImplementationComponentType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::implementationcomponenttype_requiredinterfaceshavetoconformtocompletetype_changes_state(instance):
+def test_pcm_av_repository_av_implementationcomponenttype_requiredinterfaceshavetoconformtocompletetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8339,14 +8324,14 @@ def test_pcm::av::repository::av::implementationcomponenttype_requiredinterfaces
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RequiredInterfacesHaveToConformToCompleteType' in pcm::av::repository::av::ImplementationComponentType is empty"
+        assert has_statements, f"Function 'RequiredInterfacesHaveToConformToCompleteType' in pcm_av_repository_av_ImplementationComponentType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RequiredInterfacesHaveToConformToCompleteType' in pcm::av::repository::av::ImplementationComponentType did not change state; check implementation")
+            warnings.warn(f"Operation 'RequiredInterfacesHaveToConformToCompleteType' in pcm_av_repository_av_ImplementationComponentType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RequiredInterfacesHaveToConformToCompleteType' in pcm::av::repository::av::ImplementationComponentType is not implemented or raised an error")
+        warnings.warn(f"Operation 'RequiredInterfacesHaveToConformToCompleteType' in pcm_av_repository_av_ImplementationComponentType is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8354,41 +8339,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::repository::av::ImplementationComponentType_strategy)
+@given(instance=pcm_av_repository_av_ImplementationComponentType_strategy)
 @settings(max_examples=30)
-def test_pcm::av::repository::av::implementationcomponenttype_providedinterfacehavetoconformtocomponenttype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ProvidedInterfaceHaveToConformToComponentType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ProvidedInterfaceHaveToConformToComponentType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ProvidedInterfaceHaveToConformToComponentType' in pcm::av::repository::av::ImplementationComponentType is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ProvidedInterfaceHaveToConformToComponentType' in pcm::av::repository::av::ImplementationComponentType did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ProvidedInterfaceHaveToConformToComponentType' in pcm::av::repository::av::ImplementationComponentType is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::repository::av::ImplementationComponentType_strategy)
-@settings(max_examples=30)
-def test_pcm::av::repository::av::implementationcomponenttype_providedinterfaceshavetoconformtocompletetype_changes_state(instance):
+def test_pcm_av_repository_av_implementationcomponenttype_providedinterfaceshavetoconformtocompletetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8403,14 +8356,46 @@ def test_pcm::av::repository::av::implementationcomponenttype_providedinterfaces
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'providedInterfacesHaveToConformToCompleteType' in pcm::av::repository::av::ImplementationComponentType is empty"
+        assert has_statements, f"Function 'providedInterfacesHaveToConformToCompleteType' in pcm_av_repository_av_ImplementationComponentType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'providedInterfacesHaveToConformToCompleteType' in pcm::av::repository::av::ImplementationComponentType did not change state; check implementation")
+            warnings.warn(f"Operation 'providedInterfacesHaveToConformToCompleteType' in pcm_av_repository_av_ImplementationComponentType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'providedInterfacesHaveToConformToCompleteType' in pcm::av::repository::av::ImplementationComponentType is not implemented or raised an error")
+        warnings.warn(f"Operation 'providedInterfacesHaveToConformToCompleteType' in pcm_av_repository_av_ImplementationComponentType is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_repository_av_ImplementationComponentType_strategy)
+@settings(max_examples=30)
+def test_pcm_av_repository_av_implementationcomponenttype_providedinterfacehavetoconformtocomponenttype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ProvidedInterfaceHaveToConformToComponentType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ProvidedInterfaceHaveToConformToComponentType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ProvidedInterfaceHaveToConformToComponentType' in pcm_av_repository_av_ImplementationComponentType is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ProvidedInterfaceHaveToConformToComponentType' in pcm_av_repository_av_ImplementationComponentType did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ProvidedInterfaceHaveToConformToComponentType' in pcm_av_repository_av_ImplementationComponentType is not implemented or raised an error")
 
 @given(instance=InfrastructureRequiredRole_strategy)
 @settings(max_examples=50)
@@ -8447,50 +8432,65 @@ def test_sinkrole_instantiation(instance):
 def test_sourcerole_instantiation(instance):
     assert isinstance(instance, SourceRole)
 
-@given(instance=composition::av::EventChannelSourceConnector_strategy)
+@given(instance=composition_av_EventChannelSourceConnector_strategy)
 @settings(max_examples=50)
-def test_composition::av::eventchannelsourceconnector_instantiation(instance):
-    assert isinstance(instance, composition::av::EventChannelSourceConnector)
+def test_composition_av_eventchannelsourceconnector_instantiation(instance):
+    assert isinstance(instance, composition_av_EventChannelSourceConnector)
 
 @given(instance=EventGroup_strategy)
 @settings(max_examples=50)
 def test_eventgroup_instantiation(instance):
     assert isinstance(instance, EventGroup)
 
-@given(instance=pcm::av::composition::av::ResourceRequiredDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_ResourceRequiredDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::resourcerequireddelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::ResourceRequiredDelegationConnector)
+def test_pcm_av_composition_av_resourcerequireddelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_ResourceRequiredDelegationConnector)
 
-@given(instance=composition::av::Connector_strategy)
+@given(instance=composition_av_Connector_strategy)
 @settings(max_examples=50)
-def test_composition::av::connector_instantiation(instance):
-    assert isinstance(instance, composition::av::Connector)
+def test_composition_av_connector_instantiation(instance):
+    assert isinstance(instance, composition_av_Connector)
 
-@given(instance=composition::av::EventChannel_strategy)
+@given(instance=composition_av_EventChannel_strategy)
 @settings(max_examples=50)
-def test_composition::av::eventchannel_instantiation(instance):
-    assert isinstance(instance, composition::av::EventChannel)
+def test_composition_av_eventchannel_instantiation(instance):
+    assert isinstance(instance, composition_av_EventChannel)
 
-@given(instance=composition::av::ResourceRequiredDelegationConnector_strategy)
+@given(instance=composition_av_ResourceRequiredDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_composition::av::resourcerequireddelegationconnector_instantiation(instance):
-    assert isinstance(instance, composition::av::ResourceRequiredDelegationConnector)
+def test_composition_av_resourcerequireddelegationconnector_instantiation(instance):
+    assert isinstance(instance, composition_av_ResourceRequiredDelegationConnector)
 
-@given(instance=composition::av::AssemblyContext_strategy)
+@given(instance=composition_av_AssemblyContext_strategy)
 @settings(max_examples=50)
-def test_composition::av::assemblycontext_instantiation(instance):
-    assert isinstance(instance, composition::av::AssemblyContext)
+def test_composition_av_assemblycontext_instantiation(instance):
+    assert isinstance(instance, composition_av_AssemblyContext)
 
 @given(instance=DelegationConnector_strategy)
 @settings(max_examples=50)
 def test_delegationconnector_instantiation(instance):
     assert isinstance(instance, DelegationConnector)
 
-@given(instance=pcm::av::composition::av::RequiredDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_RequiredInfrastructureDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::requireddelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::RequiredDelegationConnector)
+def test_pcm_av_composition_av_requiredinfrastructuredelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_RequiredInfrastructureDelegationConnector)
+
+@given(instance=pcm_av_composition_av_SinkDelegationConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_sinkdelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_SinkDelegationConnector)
+
+@given(instance=pcm_av_composition_av_RequiredResourceDelegationConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_requiredresourcedelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_RequiredResourceDelegationConnector)
+
+@given(instance=pcm_av_composition_av_RequiredDelegationConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_requireddelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_RequiredDelegationConnector)
 
 import warnings
 import copy
@@ -8498,9 +8498,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::RequiredDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_RequiredDelegationConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::requireddelegationconnector_componentofassemblycontextandinnerrolerequiringcomponentneedtobethesame_changes_state(instance):
+def test_pcm_av_composition_av_requireddelegationconnector_componentofassemblycontextandinnerrolerequiringcomponentneedtobethesame_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8515,14 +8515,14 @@ def test_pcm::av::composition::av::requireddelegationconnector_componentofassemb
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ComponentOfAssemblyContextAndInnerRoleRequiringComponentNeedToBeTheSame' in pcm::av::composition::av::RequiredDelegationConnector is empty"
+        assert has_statements, f"Function 'ComponentOfAssemblyContextAndInnerRoleRequiringComponentNeedToBeTheSame' in pcm_av_composition_av_RequiredDelegationConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleRequiringComponentNeedToBeTheSame' in pcm::av::composition::av::RequiredDelegationConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleRequiringComponentNeedToBeTheSame' in pcm_av_composition_av_RequiredDelegationConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleRequiringComponentNeedToBeTheSame' in pcm::av::composition::av::RequiredDelegationConnector is not implemented or raised an error")
+        warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleRequiringComponentNeedToBeTheSame' in pcm_av_composition_av_RequiredDelegationConnector is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8530,9 +8530,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::RequiredDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_RequiredDelegationConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::requireddelegationconnector_requiringentityofouterrequiredrolemustbethesameastheparentoftherequireddelegationconnector_changes_state(instance):
+def test_pcm_av_composition_av_requireddelegationconnector_requiringentityofouterrequiredrolemustbethesameastheparentoftherequireddelegationconnector_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8547,14 +8547,14 @@ def test_pcm::av::composition::av::requireddelegationconnector_requiringentityof
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RequiringEntityOfOuterRequiredRoleMustBeTheSameAsTheParentOfTheRequiredDelegationConnector' in pcm::av::composition::av::RequiredDelegationConnector is empty"
+        assert has_statements, f"Function 'RequiringEntityOfOuterRequiredRoleMustBeTheSameAsTheParentOfTheRequiredDelegationConnector' in pcm_av_composition_av_RequiredDelegationConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RequiringEntityOfOuterRequiredRoleMustBeTheSameAsTheParentOfTheRequiredDelegationConnector' in pcm::av::composition::av::RequiredDelegationConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'RequiringEntityOfOuterRequiredRoleMustBeTheSameAsTheParentOfTheRequiredDelegationConnector' in pcm_av_composition_av_RequiredDelegationConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RequiringEntityOfOuterRequiredRoleMustBeTheSameAsTheParentOfTheRequiredDelegationConnector' in pcm::av::composition::av::RequiredDelegationConnector is not implemented or raised an error")
+        warnings.warn(f"Operation 'RequiringEntityOfOuterRequiredRoleMustBeTheSameAsTheParentOfTheRequiredDelegationConnector' in pcm_av_composition_av_RequiredDelegationConnector is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8562,9 +8562,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::RequiredDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_RequiredDelegationConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::requireddelegationconnector_requireddelegationconnectorandtheconnectedcomponentmustbepartofthesamecompositestructure_changes_state(instance):
+def test_pcm_av_composition_av_requireddelegationconnector_requireddelegationconnectorandtheconnectedcomponentmustbepartofthesamecompositestructure_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8579,44 +8579,29 @@ def test_pcm::av::composition::av::requireddelegationconnector_requireddelegatio
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RequiredDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm::av::composition::av::RequiredDelegationConnector is empty"
+        assert has_statements, f"Function 'RequiredDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm_av_composition_av_RequiredDelegationConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RequiredDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm::av::composition::av::RequiredDelegationConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'RequiredDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm_av_composition_av_RequiredDelegationConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RequiredDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm::av::composition::av::RequiredDelegationConnector is not implemented or raised an error")
+        warnings.warn(f"Operation 'RequiredDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm_av_composition_av_RequiredDelegationConnector is not implemented or raised an error")
 
-@given(instance=pcm::av::composition::av::ProvidedInfrastructureDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_SourceDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::providedinfrastructuredelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::ProvidedInfrastructureDelegationConnector)
+def test_pcm_av_composition_av_sourcedelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_SourceDelegationConnector)
 
-@given(instance=pcm::av::composition::av::RequiredResourceDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_ProvidedInfrastructureDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::requiredresourcedelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::RequiredResourceDelegationConnector)
+def test_pcm_av_composition_av_providedinfrastructuredelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_ProvidedInfrastructureDelegationConnector)
 
-@given(instance=pcm::av::composition::av::RequiredInfrastructureDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_ProvidedDelegationConnector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::requiredinfrastructuredelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::RequiredInfrastructureDelegationConnector)
-
-@given(instance=pcm::av::composition::av::SinkDelegationConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::sinkdelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::SinkDelegationConnector)
-
-@given(instance=pcm::av::composition::av::SourceDelegationConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::sourcedelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::SourceDelegationConnector)
-
-@given(instance=pcm::av::composition::av::ProvidedDelegationConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::provideddelegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::ProvidedDelegationConnector)
+def test_pcm_av_composition_av_provideddelegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_ProvidedDelegationConnector)
 
 import warnings
 import copy
@@ -8624,9 +8609,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::ProvidedDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_ProvidedDelegationConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::provideddelegationconnector_componentofassemblycontextandinnerroleprovidingcomponentneedtobethesame_changes_state(instance):
+def test_pcm_av_composition_av_provideddelegationconnector_componentofassemblycontextandinnerroleprovidingcomponentneedtobethesame_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8641,14 +8626,14 @@ def test_pcm::av::composition::av::provideddelegationconnector_componentofassemb
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ComponentOfAssemblyContextAndInnerRoleProvidingComponentNeedToBeTheSame' in pcm::av::composition::av::ProvidedDelegationConnector is empty"
+        assert has_statements, f"Function 'ComponentOfAssemblyContextAndInnerRoleProvidingComponentNeedToBeTheSame' in pcm_av_composition_av_ProvidedDelegationConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleProvidingComponentNeedToBeTheSame' in pcm::av::composition::av::ProvidedDelegationConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleProvidingComponentNeedToBeTheSame' in pcm_av_composition_av_ProvidedDelegationConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleProvidingComponentNeedToBeTheSame' in pcm::av::composition::av::ProvidedDelegationConnector is not implemented or raised an error")
+        warnings.warn(f"Operation 'ComponentOfAssemblyContextAndInnerRoleProvidingComponentNeedToBeTheSame' in pcm_av_composition_av_ProvidedDelegationConnector is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8656,9 +8641,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::ProvidedDelegationConnector_strategy)
+@given(instance=pcm_av_composition_av_ProvidedDelegationConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::provideddelegationconnector_provideddelegationconnectorandtheconnectedcomponentmustbepartofthesamecompositestructure_changes_state(instance):
+def test_pcm_av_composition_av_provideddelegationconnector_provideddelegationconnectorandtheconnectedcomponentmustbepartofthesamecompositestructure_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8673,44 +8658,24 @@ def test_pcm::av::composition::av::provideddelegationconnector_provideddelegatio
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ProvidedDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm::av::composition::av::ProvidedDelegationConnector is empty"
+        assert has_statements, f"Function 'ProvidedDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm_av_composition_av_ProvidedDelegationConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ProvidedDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm::av::composition::av::ProvidedDelegationConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'ProvidedDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm_av_composition_av_ProvidedDelegationConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ProvidedDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm::av::composition::av::ProvidedDelegationConnector is not implemented or raised an error")
+        warnings.warn(f"Operation 'ProvidedDelegationConnectorandtheconnectedComponentmustbepartofthesamecompositestructure' in pcm_av_composition_av_ProvidedDelegationConnector is not implemented or raised an error")
 
 @given(instance=Connector_strategy)
 @settings(max_examples=50)
 def test_connector_instantiation(instance):
     assert isinstance(instance, Connector)
 
-@given(instance=pcm::av::composition::av::AssemblyInfrastructureConnector_strategy)
+@given(instance=pcm_av_composition_av_AssemblyConnector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::assemblyinfrastructureconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::AssemblyInfrastructureConnector)
-
-@given(instance=pcm::av::composition::av::EventChannelSinkConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::eventchannelsinkconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::EventChannelSinkConnector)
-
-@given(instance=pcm::av::composition::av::EventChannelSourceConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::eventchannelsourceconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::EventChannelSourceConnector)
-
-@given(instance=pcm::av::composition::av::AssemblyEventConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::assemblyeventconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::AssemblyEventConnector)
-
-@given(instance=pcm::av::composition::av::AssemblyConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::assemblyconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::AssemblyConnector)
+def test_pcm_av_composition_av_assemblyconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_AssemblyConnector)
 
 import warnings
 import copy
@@ -8718,41 +8683,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::AssemblyConnector_strategy)
+@given(instance=pcm_av_composition_av_AssemblyConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::assemblyconnector_assemblyconnectorsreferencedrequiredroleandchildcontextmustmatch_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch' in pcm::av::composition::av::AssemblyConnector is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch' in pcm::av::composition::av::AssemblyConnector did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch' in pcm::av::composition::av::AssemblyConnector is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::composition::av::AssemblyConnector_strategy)
-@settings(max_examples=30)
-def test_pcm::av::composition::av::assemblyconnector_assemblyconnectorsreferencedinterfacesmustmatch_changes_state(instance):
+def test_pcm_av_composition_av_assemblyconnector_assemblyconnectorsreferencedinterfacesmustmatch_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8767,14 +8700,14 @@ def test_pcm::av::composition::av::assemblyconnector_assemblyconnectorsreference
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AssemblyConnectorsReferencedInterfacesMustMatch' in pcm::av::composition::av::AssemblyConnector is empty"
+        assert has_statements, f"Function 'AssemblyConnectorsReferencedInterfacesMustMatch' in pcm_av_composition_av_AssemblyConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AssemblyConnectorsReferencedInterfacesMustMatch' in pcm::av::composition::av::AssemblyConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'AssemblyConnectorsReferencedInterfacesMustMatch' in pcm_av_composition_av_AssemblyConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AssemblyConnectorsReferencedInterfacesMustMatch' in pcm::av::composition::av::AssemblyConnector is not implemented or raised an error")
+        warnings.warn(f"Operation 'AssemblyConnectorsReferencedInterfacesMustMatch' in pcm_av_composition_av_AssemblyConnector is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8782,9 +8715,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::AssemblyConnector_strategy)
+@given(instance=pcm_av_composition_av_AssemblyConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::assemblyconnector_assemblyconnectorsreferencedprovidedrolesandchildcontextmustmatch_changes_state(instance):
+def test_pcm_av_composition_av_assemblyconnector_assemblyconnectorsreferencedprovidedrolesandchildcontextmustmatch_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8799,50 +8732,14 @@ def test_pcm::av::composition::av::assemblyconnector_assemblyconnectorsreference
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AssemblyConnectorsReferencedProvidedRolesAndChildContextMustMatch' in pcm::av::composition::av::AssemblyConnector is empty"
+        assert has_statements, f"Function 'AssemblyConnectorsReferencedProvidedRolesAndChildContextMustMatch' in pcm_av_composition_av_AssemblyConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AssemblyConnectorsReferencedProvidedRolesAndChildContextMustMatch' in pcm::av::composition::av::AssemblyConnector did not change state; check implementation")
+            warnings.warn(f"Operation 'AssemblyConnectorsReferencedProvidedRolesAndChildContextMustMatch' in pcm_av_composition_av_AssemblyConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AssemblyConnectorsReferencedProvidedRolesAndChildContextMustMatch' in pcm::av::composition::av::AssemblyConnector is not implemented or raised an error")
-
-@given(instance=pcm::av::composition::av::DelegationConnector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::delegationconnector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::DelegationConnector)
-
-@given(instance=entity::av::NamedElement_strategy)
-@settings(max_examples=50)
-def test_entity::av::namedelement_instantiation(instance):
-    assert isinstance(instance, entity::av::NamedElement)
-
-@given(instance=Identifier_strategy)
-@settings(max_examples=50)
-def test_identifier_instantiation(instance):
-    assert isinstance(instance, Identifier)
-
-@given(instance=pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification_strategy)
-@settings(max_examples=50)
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification)
-
-@given(instance=pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_failureProbability_type(instance):
-    assert isinstance(instance.failureProbability, float)
-
-
-@given(instance=pcm::av::resourceenvironment::av::CommunicationLinkResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::communicationlinkresourcespecification_failureProbability_setter(instance):
-    original = instance.failureProbability
-    instance.failureProbability = original
-    assert instance.failureProbability == original
-
-@given(instance=pcm::av::seff::av::ResourceDemandingBehaviour_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::resourcedemandingbehaviour_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ResourceDemandingBehaviour)
+        warnings.warn(f"Operation 'AssemblyConnectorsReferencedProvidedRolesAndChildContextMustMatch' in pcm_av_composition_av_AssemblyConnector is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8850,31 +8747,108 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::ResourceDemandingBehaviour_strategy)
+@given(instance=pcm_av_composition_av_AssemblyConnector_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::resourcedemandingbehaviour_exactlyonestopaction_changes_state(instance):
+def test_pcm_av_composition_av_assemblyconnector_assemblyconnectorsreferencedrequiredroleandchildcontextmustmatch_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.ExactlyOneStopAction(
+        instance.AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ExactlyOneStopAction).strip()
+        source = inspect.getsource(instance.AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ExactlyOneStopAction' in pcm::av::seff::av::ResourceDemandingBehaviour is empty"
+        assert has_statements, f"Function 'AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch' in pcm_av_composition_av_AssemblyConnector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ExactlyOneStopAction' in pcm::av::seff::av::ResourceDemandingBehaviour did not change state; check implementation")
+            warnings.warn(f"Operation 'AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch' in pcm_av_composition_av_AssemblyConnector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ExactlyOneStopAction' in pcm::av::seff::av::ResourceDemandingBehaviour is not implemented or raised an error")
+        warnings.warn(f"Operation 'AssemblyConnectorsReferencedRequiredRoleAndChildContextMustMatch' in pcm_av_composition_av_AssemblyConnector is not implemented or raised an error")
+
+@given(instance=pcm_av_composition_av_AssemblyInfrastructureConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_assemblyinfrastructureconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_AssemblyInfrastructureConnector)
+
+@given(instance=pcm_av_composition_av_AssemblyEventConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_assemblyeventconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_AssemblyEventConnector)
+
+@given(instance=pcm_av_composition_av_EventChannelSinkConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_eventchannelsinkconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_EventChannelSinkConnector)
+
+@given(instance=pcm_av_composition_av_EventChannelSourceConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_eventchannelsourceconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_EventChannelSourceConnector)
+
+@given(instance=pcm_av_composition_av_DelegationConnector_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_delegationconnector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_DelegationConnector)
+
+@given(instance=entity_av_NamedElement_strategy)
+@settings(max_examples=50)
+def test_entity_av_namedelement_instantiation(instance):
+    assert isinstance(instance, entity_av_NamedElement)
+
+@given(instance=Identifier_strategy)
+@settings(max_examples=50)
+def test_identifier_instantiation(instance):
+    assert isinstance(instance, Identifier)
+
+@given(instance=pcm_av_resourceenvironment_av_ProcessingResourceSpecification_strategy)
+@settings(max_examples=50)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourceenvironment_av_ProcessingResourceSpecification)
+
+
+
+@given(instance=pcm_av_resourceenvironment_av_ProcessingResourceSpecification_strategy)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_MTTR_setter(instance):
+    original = instance.MTTR
+    instance.MTTR = original
+    assert instance.MTTR == original
+
+
+
+@given(instance=pcm_av_resourceenvironment_av_ProcessingResourceSpecification_strategy)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_requiredByContainer_setter(instance):
+    original = instance.requiredByContainer
+    instance.requiredByContainer = original
+    assert instance.requiredByContainer == original
+
+
+
+@given(instance=pcm_av_resourceenvironment_av_ProcessingResourceSpecification_strategy)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_numberOfReplicas_setter(instance):
+    original = instance.numberOfReplicas
+    instance.numberOfReplicas = original
+    assert instance.numberOfReplicas == original
+
+
+
+@given(instance=pcm_av_resourceenvironment_av_ProcessingResourceSpecification_strategy)
+def test_pcm_av_resourceenvironment_av_processingresourcespecification_MTTF_setter(instance):
+    original = instance.MTTF
+    instance.MTTF = original
+    assert instance.MTTF == original
+
+@given(instance=pcm_av_seff_av_ResourceDemandingBehaviour_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_av_resourcedemandingbehaviour_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ResourceDemandingBehaviour)
 
 import warnings
 import copy
@@ -8882,9 +8856,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::ResourceDemandingBehaviour_strategy)
+@given(instance=pcm_av_seff_av_ResourceDemandingBehaviour_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::resourcedemandingbehaviour_eachactionexceptstartactionandstopactionmusthhaveapredecessorandsuccessor_changes_state(instance):
+def test_pcm_av_seff_av_resourcedemandingbehaviour_eachactionexceptstartactionandstopactionmusthhaveapredecessorandsuccessor_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8899,14 +8873,14 @@ def test_pcm::av::seff::av::resourcedemandingbehaviour_eachactionexceptstartacti
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EachActionExceptStartActionandStopActionMustHhaveAPredecessorAndSuccessor' in pcm::av::seff::av::ResourceDemandingBehaviour is empty"
+        assert has_statements, f"Function 'EachActionExceptStartActionandStopActionMustHhaveAPredecessorAndSuccessor' in pcm_av_seff_av_ResourceDemandingBehaviour is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EachActionExceptStartActionandStopActionMustHhaveAPredecessorAndSuccessor' in pcm::av::seff::av::ResourceDemandingBehaviour did not change state; check implementation")
+            warnings.warn(f"Operation 'EachActionExceptStartActionandStopActionMustHhaveAPredecessorAndSuccessor' in pcm_av_seff_av_ResourceDemandingBehaviour did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EachActionExceptStartActionandStopActionMustHhaveAPredecessorAndSuccessor' in pcm::av::seff::av::ResourceDemandingBehaviour is not implemented or raised an error")
+        warnings.warn(f"Operation 'EachActionExceptStartActionandStopActionMustHhaveAPredecessorAndSuccessor' in pcm_av_seff_av_ResourceDemandingBehaviour is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8914,9 +8888,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::seff::av::ResourceDemandingBehaviour_strategy)
+@given(instance=pcm_av_seff_av_ResourceDemandingBehaviour_strategy)
 @settings(max_examples=30)
-def test_pcm::av::seff::av::resourcedemandingbehaviour_exactlyonestartaction_changes_state(instance):
+def test_pcm_av_seff_av_resourcedemandingbehaviour_exactlyonestopaction_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ExactlyOneStopAction(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ExactlyOneStopAction).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ExactlyOneStopAction' in pcm_av_seff_av_ResourceDemandingBehaviour is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ExactlyOneStopAction' in pcm_av_seff_av_ResourceDemandingBehaviour did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ExactlyOneStopAction' in pcm_av_seff_av_ResourceDemandingBehaviour is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_seff_av_ResourceDemandingBehaviour_strategy)
+@settings(max_examples=30)
+def test_pcm_av_seff_av_resourcedemandingbehaviour_exactlyonestartaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8931,104 +8937,65 @@ def test_pcm::av::seff::av::resourcedemandingbehaviour_exactlyonestartaction_cha
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ExactlyOneStartAction' in pcm::av::seff::av::ResourceDemandingBehaviour is empty"
+        assert has_statements, f"Function 'ExactlyOneStartAction' in pcm_av_seff_av_ResourceDemandingBehaviour is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ExactlyOneStartAction' in pcm::av::seff::av::ResourceDemandingBehaviour did not change state; check implementation")
+            warnings.warn(f"Operation 'ExactlyOneStartAction' in pcm_av_seff_av_ResourceDemandingBehaviour did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ExactlyOneStartAction' in pcm::av::seff::av::ResourceDemandingBehaviour is not implemented or raised an error")
+        warnings.warn(f"Operation 'ExactlyOneStartAction' in pcm_av_seff_av_ResourceDemandingBehaviour is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::av::ResourceDemandingSEFF_strategy)
+@given(instance=pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::resourcedemandingseff_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::ResourceDemandingSEFF)
+def test_pcm_av_resourceenvironment_av_communicationlinkresourcespecification_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification)
 
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
+
+
+@given(instance=pcm_av_resourceenvironment_av_CommunicationLinkResourceSpecification_strategy)
+def test_pcm_av_resourceenvironment_av_communicationlinkresourcespecification_failureProbability_setter(instance):
+    original = instance.failureProbability
+    instance.failureProbability = original
+    assert instance.failureProbability == original
+
+@given(instance=pcm_av_seff_av_ResourceDemandingSEFF_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourceenvironment::av::ProcessingResourceSpecification)
+def test_pcm_av_seff_av_resourcedemandingseff_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_ResourceDemandingSEFF)
 
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_MTTF_type(instance):
-    assert isinstance(instance.MTTF, float)
-
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_MTTF_setter(instance):
-    original = instance.MTTF
-    instance.MTTF = original
-    assert instance.MTTF == original
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_requiredByContainer_type(instance):
-    assert isinstance(instance.requiredByContainer, bool)
-
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_requiredByContainer_setter(instance):
-    original = instance.requiredByContainer
-    instance.requiredByContainer = original
-    assert instance.requiredByContainer == original
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_MTTR_type(instance):
-    assert isinstance(instance.MTTR, float)
-
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_MTTR_setter(instance):
-    original = instance.MTTR
-    instance.MTTR = original
-    assert instance.MTTR == original
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_numberOfReplicas_type(instance):
-    assert isinstance(instance.numberOfReplicas, int)
-
-
-@given(instance=pcm::av::resourceenvironment::av::ProcessingResourceSpecification_strategy)
-def test_pcm::av::resourceenvironment::av::processingresourcespecification_numberOfReplicas_setter(instance):
-    original = instance.numberOfReplicas
-    instance.numberOfReplicas = original
-    assert instance.numberOfReplicas == original
-
-@given(instance=pcm::av::entity::av::Entity_strategy)
+@given(instance=pcm_av_entity_av_Entity_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::entity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::Entity)
+def test_pcm_av_entity_av_entity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_Entity)
 
-@given(instance=pcm::av::entity::av::NamedElement_strategy)
+@given(instance=pcm_av_entity_av_NamedElement_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::namedelement_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::NamedElement)
-
-@given(instance=pcm::av::entity::av::NamedElement_strategy)
-def test_pcm::av::entity::av::namedelement_entityName_type(instance):
-    assert isinstance(instance.entityName, str)
+def test_pcm_av_entity_av_namedelement_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_NamedElement)
 
 
-@given(instance=pcm::av::entity::av::NamedElement_strategy)
-def test_pcm::av::entity::av::namedelement_entityName_setter(instance):
+
+@given(instance=pcm_av_entity_av_NamedElement_strategy)
+def test_pcm_av_entity_av_namedelement_entityName_setter(instance):
     original = instance.entityName
     instance.entityName = original
     assert instance.entityName == original
 
-@given(instance=entity::av::InterfaceProvidingRequiringEntity_strategy)
+@given(instance=entity_av_InterfaceProvidingRequiringEntity_strategy)
 @settings(max_examples=50)
-def test_entity::av::interfaceprovidingrequiringentity_instantiation(instance):
-    assert isinstance(instance, entity::av::InterfaceProvidingRequiringEntity)
+def test_entity_av_interfaceprovidingrequiringentity_instantiation(instance):
+    assert isinstance(instance, entity_av_InterfaceProvidingRequiringEntity)
 
-@given(instance=composition::av::ComposedStructure_strategy)
+@given(instance=composition_av_ComposedStructure_strategy)
 @settings(max_examples=50)
-def test_composition::av::composedstructure_instantiation(instance):
-    assert isinstance(instance, composition::av::ComposedStructure)
+def test_composition_av_composedstructure_instantiation(instance):
+    assert isinstance(instance, composition_av_ComposedStructure)
 
-@given(instance=pcm::av::entity::av::ComposedProvidingRequiringEntity_strategy)
+@given(instance=pcm_av_entity_av_ComposedProvidingRequiringEntity_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::composedprovidingrequiringentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::ComposedProvidingRequiringEntity)
+def test_pcm_av_entity_av_composedprovidingrequiringentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_ComposedProvidingRequiringEntity)
 
 import warnings
 import copy
@@ -9036,9 +9003,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::entity::av::ComposedProvidingRequiringEntity_strategy)
+@given(instance=pcm_av_entity_av_ComposedProvidingRequiringEntity_strategy)
 @settings(max_examples=30)
-def test_pcm::av::entity::av::composedprovidingrequiringentity_providedrolesmustbebound_changes_state(instance):
+def test_pcm_av_entity_av_composedprovidingrequiringentity_providedrolesmustbebound_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9053,59 +9020,59 @@ def test_pcm::av::entity::av::composedprovidingrequiringentity_providedrolesmust
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ProvidedRolesMustBeBound' in pcm::av::entity::av::ComposedProvidingRequiringEntity is empty"
+        assert has_statements, f"Function 'ProvidedRolesMustBeBound' in pcm_av_entity_av_ComposedProvidingRequiringEntity is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ProvidedRolesMustBeBound' in pcm::av::entity::av::ComposedProvidingRequiringEntity did not change state; check implementation")
+            warnings.warn(f"Operation 'ProvidedRolesMustBeBound' in pcm_av_entity_av_ComposedProvidingRequiringEntity did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ProvidedRolesMustBeBound' in pcm::av::entity::av::ComposedProvidingRequiringEntity is not implemented or raised an error")
+        warnings.warn(f"Operation 'ProvidedRolesMustBeBound' in pcm_av_entity_av_ComposedProvidingRequiringEntity is not implemented or raised an error")
 
-@given(instance=entity::av::ResourceProvidedRole_strategy)
+@given(instance=entity_av_ResourceProvidedRole_strategy)
 @settings(max_examples=50)
-def test_entity::av::resourceprovidedrole_instantiation(instance):
-    assert isinstance(instance, entity::av::ResourceProvidedRole)
+def test_entity_av_resourceprovidedrole_instantiation(instance):
+    assert isinstance(instance, entity_av_ResourceProvidedRole)
 
 @given(instance=RequiredRole_strategy)
 @settings(max_examples=50)
 def test_requiredrole_instantiation(instance):
     assert isinstance(instance, RequiredRole)
 
-@given(instance=pcm::av::repository::av::InfrastructureRequiredRole_strategy)
+@given(instance=pcm_av_repository_av_InfrastructureRequiredRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::infrastructurerequiredrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::InfrastructureRequiredRole)
+def test_pcm_av_repository_av_infrastructurerequiredrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_InfrastructureRequiredRole)
 
-@given(instance=pcm::av::repository::av::SourceRole_strategy)
+@given(instance=pcm_av_repository_av_OperationRequiredRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::sourcerole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::SourceRole)
+def test_pcm_av_repository_av_operationrequiredrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_OperationRequiredRole)
 
-@given(instance=pcm::av::repository::av::OperationRequiredRole_strategy)
+@given(instance=pcm_av_repository_av_SourceRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::operationrequiredrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::OperationRequiredRole)
+def test_pcm_av_repository_av_sourcerole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_SourceRole)
 
-@given(instance=entity::av::ResourceInterfaceRequiringEntity_strategy)
+@given(instance=entity_av_ResourceInterfaceRequiringEntity_strategy)
 @settings(max_examples=50)
-def test_entity::av::resourceinterfacerequiringentity_instantiation(instance):
-    assert isinstance(instance, entity::av::ResourceInterfaceRequiringEntity)
+def test_entity_av_resourceinterfacerequiringentity_instantiation(instance):
+    assert isinstance(instance, entity_av_ResourceInterfaceRequiringEntity)
 
-@given(instance=entity::av::Entity_strategy)
+@given(instance=entity_av_Entity_strategy)
 @settings(max_examples=50)
-def test_entity::av::entity_instantiation(instance):
-    assert isinstance(instance, entity::av::Entity)
+def test_entity_av_entity_instantiation(instance):
+    assert isinstance(instance, entity_av_Entity)
 
-@given(instance=pcm::av::repository::av::CompositeDataType_strategy)
+@given(instance=pcm_av_repository_av_CompositeDataType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::compositedatatype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::CompositeDataType)
+def test_pcm_av_repository_av_compositedatatype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_CompositeDataType)
 
-@given(instance=pcm::av::system::av::System_strategy)
+@given(instance=pcm_av_system_av_System_strategy)
 @settings(max_examples=50)
-def test_pcm::av::system::av::system_instantiation(instance):
-    assert isinstance(instance, pcm::av::system::av::System)
+def test_pcm_av_system_av_system_instantiation(instance):
+    assert isinstance(instance, pcm_av_system_av_System)
 
 import warnings
 import copy
@@ -9113,9 +9080,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::system::av::System_strategy)
+@given(instance=pcm_av_system_av_System_strategy)
 @settings(max_examples=30)
-def test_pcm::av::system::av::system_systemmusthaveatleastoneprovidedrole_changes_state(instance):
+def test_pcm_av_system_av_system_systemmusthaveatleastoneprovidedrole_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9130,84 +9097,54 @@ def test_pcm::av::system::av::system_systemmusthaveatleastoneprovidedrole_change
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SystemMustHaveAtLeastOneProvidedRole' in pcm::av::system::av::System is empty"
+        assert has_statements, f"Function 'SystemMustHaveAtLeastOneProvidedRole' in pcm_av_system_av_System is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SystemMustHaveAtLeastOneProvidedRole' in pcm::av::system::av::System did not change state; check implementation")
+            warnings.warn(f"Operation 'SystemMustHaveAtLeastOneProvidedRole' in pcm_av_system_av_System did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SystemMustHaveAtLeastOneProvidedRole' in pcm::av::system::av::System is not implemented or raised an error")
+        warnings.warn(f"Operation 'SystemMustHaveAtLeastOneProvidedRole' in pcm_av_system_av_System is not implemented or raised an error")
 
-@given(instance=pcm::av::repository::av::CollectionDataType_strategy)
+@given(instance=pcm_av_repository_av_CollectionDataType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::collectiondatatype_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::CollectionDataType)
+def test_pcm_av_repository_av_collectiondatatype_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_CollectionDataType)
 
-@given(instance=pcm::av::entity::av::InterfaceRequiringEntity_strategy)
+@given(instance=pcm_av_entity_av_InterfaceRequiringEntity_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::interfacerequiringentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::InterfaceRequiringEntity)
+def test_pcm_av_entity_av_interfacerequiringentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_InterfaceRequiringEntity)
 
 @given(instance=ProvidedRole_strategy)
 @settings(max_examples=50)
 def test_providedrole_instantiation(instance):
     assert isinstance(instance, ProvidedRole)
 
-@given(instance=pcm::av::repository::av::SinkRole_strategy)
+@given(instance=pcm_av_repository_av_OperationProvidedRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::sinkrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::SinkRole)
+def test_pcm_av_repository_av_operationprovidedrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_OperationProvidedRole)
 
-@given(instance=pcm::av::repository::av::InfrastructureProvidedRole_strategy)
+@given(instance=pcm_av_repository_av_SinkRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::infrastructureprovidedrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::InfrastructureProvidedRole)
+def test_pcm_av_repository_av_sinkrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_SinkRole)
 
-@given(instance=pcm::av::repository::av::OperationProvidedRole_strategy)
+@given(instance=pcm_av_repository_av_InfrastructureProvidedRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::operationprovidedrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::OperationProvidedRole)
+def test_pcm_av_repository_av_infrastructureprovidedrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_InfrastructureProvidedRole)
 
 @given(instance=Entity_strategy)
 @settings(max_examples=50)
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=pcm::av::entity::av::ResourceInterfaceProvidingEntity_strategy)
+@given(instance=pcm_av_allocation_av_AllocationContext_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::resourceinterfaceprovidingentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::ResourceInterfaceProvidingEntity)
-
-@given(instance=pcm::av::composition::av::Connector_strategy)
-@settings(max_examples=50)
-def test_pcm::av::composition::av::connector_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::Connector)
-
-@given(instance=pcm::av::seff::av::AbstractBranchTransition_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::abstractbranchtransition_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::AbstractBranchTransition)
-
-@given(instance=pcm::av::usagemodel::av::UsageScenario_strategy)
-@settings(max_examples=50)
-def test_pcm::av::usagemodel::av::usagescenario_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::UsageScenario)
-
-@given(instance=pcm::av::resourceenvironment::av::LinkingResource_strategy)
-@settings(max_examples=50)
-def test_pcm::av::resourceenvironment::av::linkingresource_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourceenvironment::av::LinkingResource)
-
-@given(instance=pcm::av::resourceenvironment::av::ResourceContainer_strategy)
-@settings(max_examples=50)
-def test_pcm::av::resourceenvironment::av::resourcecontainer_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourceenvironment::av::ResourceContainer)
-
-@given(instance=pcm::av::usagemodel::av::ScenarioBehaviour_strategy)
-@settings(max_examples=50)
-def test_pcm::av::usagemodel::av::scenariobehaviour_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::ScenarioBehaviour)
+def test_pcm_av_allocation_av_allocationcontext_instantiation(instance):
+    assert isinstance(instance, pcm_av_allocation_av_AllocationContext)
 
 import warnings
 import copy
@@ -9215,115 +9152,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::usagemodel::av::ScenarioBehaviour_strategy)
+@given(instance=pcm_av_allocation_av_AllocationContext_strategy)
 @settings(max_examples=30)
-def test_pcm::av::usagemodel::av::scenariobehaviour_eachuseractionexceptstartandstopmusthaveapredecessorandsuccessor_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor' in pcm::av::usagemodel::av::ScenarioBehaviour is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor' in pcm::av::usagemodel::av::ScenarioBehaviour did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor' in pcm::av::usagemodel::av::ScenarioBehaviour is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::usagemodel::av::ScenarioBehaviour_strategy)
-@settings(max_examples=30)
-def test_pcm::av::usagemodel::av::scenariobehaviour_exactlyonestop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.Exactlyonestop(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.Exactlyonestop).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Exactlyonestop' in pcm::av::usagemodel::av::ScenarioBehaviour is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Exactlyonestop' in pcm::av::usagemodel::av::ScenarioBehaviour did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Exactlyonestop' in pcm::av::usagemodel::av::ScenarioBehaviour is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::usagemodel::av::ScenarioBehaviour_strategy)
-@settings(max_examples=30)
-def test_pcm::av::usagemodel::av::scenariobehaviour_exactlyonestart_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.Exactlyonestart(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.Exactlyonestart).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Exactlyonestart' in pcm::av::usagemodel::av::ScenarioBehaviour is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Exactlyonestart' in pcm::av::usagemodel::av::ScenarioBehaviour did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Exactlyonestart' in pcm::av::usagemodel::av::ScenarioBehaviour is not implemented or raised an error")
-
-@given(instance=pcm::av::repository::av::Signature_strategy)
-@settings(max_examples=50)
-def test_pcm::av::repository::av::signature_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::Signature)
-
-@given(instance=pcm::av::allocation::av::AllocationContext_strategy)
-@settings(max_examples=50)
-def test_pcm::av::allocation::av::allocationcontext_instantiation(instance):
-    assert isinstance(instance, pcm::av::allocation::av::AllocationContext)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::allocation::av::AllocationContext_strategy)
-@settings(max_examples=30)
-def test_pcm::av::allocation::av::allocationcontext_oneassemblycontextoroneeventchannelshouldbereferred_changes_state(instance):
+def test_pcm_av_allocation_av_allocationcontext_oneassemblycontextoroneeventchannelshouldbereferred_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9338,60 +9169,39 @@ def test_pcm::av::allocation::av::allocationcontext_oneassemblycontextoroneevent
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OneAssemblyContextOrOneEventChannelShouldBeReferred' in pcm::av::allocation::av::AllocationContext is empty"
+        assert has_statements, f"Function 'OneAssemblyContextOrOneEventChannelShouldBeReferred' in pcm_av_allocation_av_AllocationContext is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OneAssemblyContextOrOneEventChannelShouldBeReferred' in pcm::av::allocation::av::AllocationContext did not change state; check implementation")
+            warnings.warn(f"Operation 'OneAssemblyContextOrOneEventChannelShouldBeReferred' in pcm_av_allocation_av_AllocationContext did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OneAssemblyContextOrOneEventChannelShouldBeReferred' in pcm::av::allocation::av::AllocationContext is not implemented or raised an error")
+        warnings.warn(f"Operation 'OneAssemblyContextOrOneEventChannelShouldBeReferred' in pcm_av_allocation_av_AllocationContext is not implemented or raised an error")
 
-@given(instance=pcm::av::seff::av::AbstractAction_strategy)
+@given(instance=pcm_av_usagemodel_av_UsageScenario_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::av::abstractaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::AbstractAction)
+def test_pcm_av_usagemodel_av_usagescenario_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_UsageScenario)
 
-@given(instance=pcm::av::seff::reliability::av::FailureHandlingEntity_strategy)
+@given(instance=pcm_av_seff_av_AbstractAction_strategy)
 @settings(max_examples=50)
-def test_pcm::av::seff::reliability::av::failurehandlingentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::reliability::av::FailureHandlingEntity)
+def test_pcm_av_seff_av_abstractaction_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_AbstractAction)
 
-@given(instance=pcm::av::composition::av::AssemblyContext_strategy)
+@given(instance=pcm_av_repository_av_PassiveResource_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::assemblycontext_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::AssemblyContext)
+def test_pcm_av_repository_av_passiveresource_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_PassiveResource)
 
-@given(instance=pcm::av::repository::av::PassiveResource_strategy)
+@given(instance=pcm_av_composition_av_EventChannel_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::passiveresource_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::PassiveResource)
+def test_pcm_av_composition_av_eventchannel_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_EventChannel)
 
-@given(instance=pcm::av::usagemodel::av::AbstractUserAction_strategy)
+@given(instance=pcm_av_repository_av_Interface_strategy)
 @settings(max_examples=50)
-def test_pcm::av::usagemodel::av::abstractuseraction_instantiation(instance):
-    assert isinstance(instance, pcm::av::usagemodel::av::AbstractUserAction)
-
-@given(instance=pcm::av::repository::av::Repository_strategy)
-@settings(max_examples=50)
-def test_pcm::av::repository::av::repository_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::Repository)
-
-@given(instance=pcm::av::repository::av::Repository_strategy)
-def test_pcm::av::repository::av::repository_repositoryDescription_type(instance):
-    assert isinstance(instance.repositoryDescription, str)
-
-
-@given(instance=pcm::av::repository::av::Repository_strategy)
-def test_pcm::av::repository::av::repository_repositoryDescription_setter(instance):
-    original = instance.repositoryDescription
-    instance.repositoryDescription = original
-    assert instance.repositoryDescription == original
-
-@given(instance=pcm::av::allocation::av::Allocation_strategy)
-@settings(max_examples=50)
-def test_pcm::av::allocation::av::allocation_instantiation(instance):
-    assert isinstance(instance, pcm::av::allocation::av::Allocation)
+def test_pcm_av_repository_av_interface_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_Interface)
 
 import warnings
 import copy
@@ -9399,130 +9209,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::allocation::av::Allocation_strategy)
+@given(instance=pcm_av_repository_av_Interface_strategy)
 @settings(max_examples=30)
-def test_pcm::av::allocation::av::allocation_communicatingservershavetobeconnectedbylinkingresource_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CommunicatingServersHaveToBeConnectedByLinkingResource(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CommunicatingServersHaveToBeConnectedByLinkingResource).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CommunicatingServersHaveToBeConnectedByLinkingResource' in pcm::av::allocation::av::Allocation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CommunicatingServersHaveToBeConnectedByLinkingResource' in pcm::av::allocation::av::Allocation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CommunicatingServersHaveToBeConnectedByLinkingResource' in pcm::av::allocation::av::Allocation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::allocation::av::Allocation_strategy)
-@settings(max_examples=30)
-def test_pcm::av::allocation::av::allocation_eachassemblycontextwithinsystemhastobeallocatedexactlyonce_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce' in pcm::av::allocation::av::Allocation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce' in pcm::av::allocation::av::Allocation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce' in pcm::av::allocation::av::Allocation is not implemented or raised an error")
-
-@given(instance=pcm::av::entity::av::ResourceInterfaceRequiringEntity_strategy)
-@settings(max_examples=50)
-def test_pcm::av::entity::av::resourceinterfacerequiringentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::ResourceInterfaceRequiringEntity)
-
-@given(instance=pcm::av::resourcetype::av::ResourceInterface_strategy)
-@settings(max_examples=50)
-def test_pcm::av::resourcetype::av::resourceinterface_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::ResourceInterface)
-
-@given(instance=pcm::av::qosannotations::av::QoSAnnotations_strategy)
-@settings(max_examples=50)
-def test_pcm::av::qosannotations::av::qosannotations_instantiation(instance):
-    assert isinstance(instance, pcm::av::qosannotations::av::QoSAnnotations)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::qosannotations::av::QoSAnnotations_strategy)
-@settings(max_examples=30)
-def test_pcm::av::qosannotations::av::qosannotations_multiplereliabilityannotationsperexternalcallnotallowed_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.MultipleReliabilityAnnotationsPerExternalCallNotAllowed(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.MultipleReliabilityAnnotationsPerExternalCallNotAllowed).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'MultipleReliabilityAnnotationsPerExternalCallNotAllowed' in pcm::av::qosannotations::av::QoSAnnotations is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'MultipleReliabilityAnnotationsPerExternalCallNotAllowed' in pcm::av::qosannotations::av::QoSAnnotations did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'MultipleReliabilityAnnotationsPerExternalCallNotAllowed' in pcm::av::qosannotations::av::QoSAnnotations is not implemented or raised an error")
-
-@given(instance=pcm::av::resourcetype::av::SchedulingPolicy_strategy)
-@settings(max_examples=50)
-def test_pcm::av::resourcetype::av::schedulingpolicy_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::SchedulingPolicy)
-
-@given(instance=pcm::av::repository::av::Interface_strategy)
-@settings(max_examples=50)
-def test_pcm::av::repository::av::interface_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::Interface)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::repository::av::Interface_strategy)
-@settings(max_examples=30)
-def test_pcm::av::repository::av::interface_noprotocoltypeidusedtwice_changes_state(instance):
+def test_pcm_av_repository_av_interface_noprotocoltypeidusedtwice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9537,19 +9226,19 @@ def test_pcm::av::repository::av::interface_noprotocoltypeidusedtwice_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NoProtocolTypeIDUsedTwice' in pcm::av::repository::av::Interface is empty"
+        assert has_statements, f"Function 'NoProtocolTypeIDUsedTwice' in pcm_av_repository_av_Interface is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NoProtocolTypeIDUsedTwice' in pcm::av::repository::av::Interface did not change state; check implementation")
+            warnings.warn(f"Operation 'NoProtocolTypeIDUsedTwice' in pcm_av_repository_av_Interface did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NoProtocolTypeIDUsedTwice' in pcm::av::repository::av::Interface is not implemented or raised an error")
+        warnings.warn(f"Operation 'NoProtocolTypeIDUsedTwice' in pcm_av_repository_av_Interface is not implemented or raised an error")
 
-@given(instance=pcm::av::composition::av::ComposedStructure_strategy)
+@given(instance=pcm_av_qosannotations_av_QoSAnnotations_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::composedstructure_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::ComposedStructure)
+def test_pcm_av_qosannotations_av_qosannotations_instantiation(instance):
+    assert isinstance(instance, pcm_av_qosannotations_av_QoSAnnotations)
 
 import warnings
 import copy
@@ -9557,31 +9246,62 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::ComposedStructure_strategy)
+@given(instance=pcm_av_qosannotations_av_QoSAnnotations_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::composedstructure_multipleconnectorsconstraint_changes_state(instance):
+def test_pcm_av_qosannotations_av_qosannotations_multiplereliabilityannotationsperexternalcallnotallowed_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.MultipleConnectorsConstraint(
+        instance.MultipleReliabilityAnnotationsPerExternalCallNotAllowed(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.MultipleConnectorsConstraint).strip()
+        source = inspect.getsource(instance.MultipleReliabilityAnnotationsPerExternalCallNotAllowed).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'MultipleConnectorsConstraint' in pcm::av::composition::av::ComposedStructure is empty"
+        assert has_statements, f"Function 'MultipleReliabilityAnnotationsPerExternalCallNotAllowed' in pcm_av_qosannotations_av_QoSAnnotations is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'MultipleConnectorsConstraint' in pcm::av::composition::av::ComposedStructure did not change state; check implementation")
+            warnings.warn(f"Operation 'MultipleReliabilityAnnotationsPerExternalCallNotAllowed' in pcm_av_qosannotations_av_QoSAnnotations did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'MultipleConnectorsConstraint' in pcm::av::composition::av::ComposedStructure is not implemented or raised an error")
+        warnings.warn(f"Operation 'MultipleReliabilityAnnotationsPerExternalCallNotAllowed' in pcm_av_qosannotations_av_QoSAnnotations is not implemented or raised an error")
+
+@given(instance=pcm_av_repository_av_Repository_strategy)
+@settings(max_examples=50)
+def test_pcm_av_repository_av_repository_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_Repository)
+
+
+
+@given(instance=pcm_av_repository_av_Repository_strategy)
+def test_pcm_av_repository_av_repository_repositoryDescription_setter(instance):
+    original = instance.repositoryDescription
+    instance.repositoryDescription = original
+    assert instance.repositoryDescription == original
+
+@given(instance=pcm_av_resourcetype_av_ResourceSignature_strategy)
+@settings(max_examples=50)
+def test_pcm_av_resourcetype_av_resourcesignature_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_ResourceSignature)
+
+
+
+@given(instance=pcm_av_resourcetype_av_ResourceSignature_strategy)
+def test_pcm_av_resourcetype_av_resourcesignature_resourceServiceId_setter(instance):
+    original = instance.resourceServiceId
+    instance.resourceServiceId = original
+    assert instance.resourceServiceId == original
+
+@given(instance=pcm_av_allocation_av_Allocation_strategy)
+@settings(max_examples=50)
+def test_pcm_av_allocation_av_allocation_instantiation(instance):
+    assert isinstance(instance, pcm_av_allocation_av_Allocation)
 
 import warnings
 import copy
@@ -9589,9 +9309,199 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::composition::av::ComposedStructure_strategy)
+@given(instance=pcm_av_allocation_av_Allocation_strategy)
 @settings(max_examples=30)
-def test_pcm::av::composition::av::composedstructure_multipleconnectorsconstraintforassemblyconnectors_changes_state(instance):
+def test_pcm_av_allocation_av_allocation_eachassemblycontextwithinsystemhastobeallocatedexactlyonce_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce' in pcm_av_allocation_av_Allocation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce' in pcm_av_allocation_av_Allocation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'EachAssemblyContextWithinSystemHasToBeAllocatedExactlyOnce' in pcm_av_allocation_av_Allocation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_allocation_av_Allocation_strategy)
+@settings(max_examples=30)
+def test_pcm_av_allocation_av_allocation_communicatingservershavetobeconnectedbylinkingresource_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CommunicatingServersHaveToBeConnectedByLinkingResource(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CommunicatingServersHaveToBeConnectedByLinkingResource).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CommunicatingServersHaveToBeConnectedByLinkingResource' in pcm_av_allocation_av_Allocation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CommunicatingServersHaveToBeConnectedByLinkingResource' in pcm_av_allocation_av_Allocation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CommunicatingServersHaveToBeConnectedByLinkingResource' in pcm_av_allocation_av_Allocation is not implemented or raised an error")
+
+@given(instance=pcm_av_entity_av_ResourceInterfaceRequiringEntity_strategy)
+@settings(max_examples=50)
+def test_pcm_av_entity_av_resourceinterfacerequiringentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_ResourceInterfaceRequiringEntity)
+
+@given(instance=pcm_av_reliability_av_FailureType_strategy)
+@settings(max_examples=50)
+def test_pcm_av_reliability_av_failuretype_instantiation(instance):
+    assert isinstance(instance, pcm_av_reliability_av_FailureType)
+
+@given(instance=pcm_av_resourceenvironment_av_ResourceContainer_strategy)
+@settings(max_examples=50)
+def test_pcm_av_resourceenvironment_av_resourcecontainer_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourceenvironment_av_ResourceContainer)
+
+@given(instance=pcm_av_composition_av_AssemblyContext_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_assemblycontext_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_AssemblyContext)
+
+@given(instance=pcm_av_usagemodel_av_ScenarioBehaviour_strategy)
+@settings(max_examples=50)
+def test_pcm_av_usagemodel_av_scenariobehaviour_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_ScenarioBehaviour)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_usagemodel_av_ScenarioBehaviour_strategy)
+@settings(max_examples=30)
+def test_pcm_av_usagemodel_av_scenariobehaviour_exactlyonestart_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.Exactlyonestart(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.Exactlyonestart).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'Exactlyonestart' in pcm_av_usagemodel_av_ScenarioBehaviour is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'Exactlyonestart' in pcm_av_usagemodel_av_ScenarioBehaviour did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'Exactlyonestart' in pcm_av_usagemodel_av_ScenarioBehaviour is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_usagemodel_av_ScenarioBehaviour_strategy)
+@settings(max_examples=30)
+def test_pcm_av_usagemodel_av_scenariobehaviour_exactlyonestop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.Exactlyonestop(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.Exactlyonestop).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'Exactlyonestop' in pcm_av_usagemodel_av_ScenarioBehaviour is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'Exactlyonestop' in pcm_av_usagemodel_av_ScenarioBehaviour did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'Exactlyonestop' in pcm_av_usagemodel_av_ScenarioBehaviour is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_usagemodel_av_ScenarioBehaviour_strategy)
+@settings(max_examples=30)
+def test_pcm_av_usagemodel_av_scenariobehaviour_eachuseractionexceptstartandstopmusthaveapredecessorandsuccessor_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor' in pcm_av_usagemodel_av_ScenarioBehaviour is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor' in pcm_av_usagemodel_av_ScenarioBehaviour did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'EachuseractionexceptStartandStopmusthaveapredecessorandsuccessor' in pcm_av_usagemodel_av_ScenarioBehaviour is not implemented or raised an error")
+
+@given(instance=pcm_av_composition_av_ComposedStructure_strategy)
+@settings(max_examples=50)
+def test_pcm_av_composition_av_composedstructure_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_ComposedStructure)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_composition_av_ComposedStructure_strategy)
+@settings(max_examples=30)
+def test_pcm_av_composition_av_composedstructure_multipleconnectorsconstraintforassemblyconnectors_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9606,100 +9516,156 @@ def test_pcm::av::composition::av::composedstructure_multipleconnectorsconstrain
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'MultipleConnectorsConstraintForAssemblyConnectors' in pcm::av::composition::av::ComposedStructure is empty"
+        assert has_statements, f"Function 'MultipleConnectorsConstraintForAssemblyConnectors' in pcm_av_composition_av_ComposedStructure is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'MultipleConnectorsConstraintForAssemblyConnectors' in pcm::av::composition::av::ComposedStructure did not change state; check implementation")
+            warnings.warn(f"Operation 'MultipleConnectorsConstraintForAssemblyConnectors' in pcm_av_composition_av_ComposedStructure did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'MultipleConnectorsConstraintForAssemblyConnectors' in pcm::av::composition::av::ComposedStructure is not implemented or raised an error")
+        warnings.warn(f"Operation 'MultipleConnectorsConstraintForAssemblyConnectors' in pcm_av_composition_av_ComposedStructure is not implemented or raised an error")
 
-@given(instance=pcm::av::repository::av::Role_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pcm_av_composition_av_ComposedStructure_strategy)
+@settings(max_examples=30)
+def test_pcm_av_composition_av_composedstructure_multipleconnectorsconstraint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.MultipleConnectorsConstraint(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.MultipleConnectorsConstraint).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'MultipleConnectorsConstraint' in pcm_av_composition_av_ComposedStructure is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'MultipleConnectorsConstraint' in pcm_av_composition_av_ComposedStructure did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'MultipleConnectorsConstraint' in pcm_av_composition_av_ComposedStructure is not implemented or raised an error")
+
+@given(instance=pcm_av_repository_av_Role_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::role_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::Role)
+def test_pcm_av_repository_av_role_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_Role)
 
-@given(instance=pcm::av::composition::av::EventChannel_strategy)
+@given(instance=pcm_av_composition_av_Connector_strategy)
 @settings(max_examples=50)
-def test_pcm::av::composition::av::eventchannel_instantiation(instance):
-    assert isinstance(instance, pcm::av::composition::av::EventChannel)
+def test_pcm_av_composition_av_connector_instantiation(instance):
+    assert isinstance(instance, pcm_av_composition_av_Connector)
 
-@given(instance=pcm::av::resourcetype::av::ResourceSignature_strategy)
+@given(instance=pcm_av_resourceenvironment_av_LinkingResource_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourcetype::av::resourcesignature_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::ResourceSignature)
+def test_pcm_av_resourceenvironment_av_linkingresource_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourceenvironment_av_LinkingResource)
 
-@given(instance=pcm::av::resourcetype::av::ResourceSignature_strategy)
-def test_pcm::av::resourcetype::av::resourcesignature_resourceServiceId_type(instance):
-    assert isinstance(instance.resourceServiceId, int)
-
-
-@given(instance=pcm::av::resourcetype::av::ResourceSignature_strategy)
-def test_pcm::av::resourcetype::av::resourcesignature_resourceServiceId_setter(instance):
-    original = instance.resourceServiceId
-    instance.resourceServiceId = original
-    assert instance.resourceServiceId == original
-
-@given(instance=pcm::av::entity::av::InterfaceProvidingEntity_strategy)
+@given(instance=pcm_av_repository_av_Signature_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::interfaceprovidingentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::InterfaceProvidingEntity)
+def test_pcm_av_repository_av_signature_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_Signature)
 
-@given(instance=entity::av::InterfaceRequiringEntity_strategy)
+@given(instance=pcm_av_resourcetype_av_SchedulingPolicy_strategy)
 @settings(max_examples=50)
-def test_entity::av::interfacerequiringentity_instantiation(instance):
-    assert isinstance(instance, entity::av::InterfaceRequiringEntity)
+def test_pcm_av_resourcetype_av_schedulingpolicy_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_SchedulingPolicy)
 
-@given(instance=entity::av::InterfaceProvidingEntity_strategy)
+@given(instance=pcm_av_seff_av_AbstractBranchTransition_strategy)
 @settings(max_examples=50)
-def test_entity::av::interfaceprovidingentity_instantiation(instance):
-    assert isinstance(instance, entity::av::InterfaceProvidingEntity)
+def test_pcm_av_seff_av_abstractbranchtransition_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_av_AbstractBranchTransition)
 
-@given(instance=pcm::av::entity::av::InterfaceProvidingRequiringEntity_strategy)
+@given(instance=pcm_av_resourcetype_av_ResourceInterface_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::interfaceprovidingrequiringentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::InterfaceProvidingRequiringEntity)
+def test_pcm_av_resourcetype_av_resourceinterface_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_ResourceInterface)
+
+@given(instance=pcm_av_usagemodel_av_AbstractUserAction_strategy)
+@settings(max_examples=50)
+def test_pcm_av_usagemodel_av_abstractuseraction_instantiation(instance):
+    assert isinstance(instance, pcm_av_usagemodel_av_AbstractUserAction)
+
+@given(instance=pcm_av_entity_av_ResourceInterfaceProvidingEntity_strategy)
+@settings(max_examples=50)
+def test_pcm_av_entity_av_resourceinterfaceprovidingentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_ResourceInterfaceProvidingEntity)
+
+@given(instance=pcm_av_seff_reliability_av_FailureHandlingEntity_strategy)
+@settings(max_examples=50)
+def test_pcm_av_seff_reliability_av_failurehandlingentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_seff_reliability_av_FailureHandlingEntity)
+
+@given(instance=pcm_av_entity_av_InterfaceProvidingEntity_strategy)
+@settings(max_examples=50)
+def test_pcm_av_entity_av_interfaceprovidingentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_InterfaceProvidingEntity)
+
+@given(instance=entity_av_InterfaceRequiringEntity_strategy)
+@settings(max_examples=50)
+def test_entity_av_interfacerequiringentity_instantiation(instance):
+    assert isinstance(instance, entity_av_InterfaceRequiringEntity)
+
+@given(instance=entity_av_InterfaceProvidingEntity_strategy)
+@settings(max_examples=50)
+def test_entity_av_interfaceprovidingentity_instantiation(instance):
+    assert isinstance(instance, entity_av_InterfaceProvidingEntity)
+
+@given(instance=pcm_av_entity_av_InterfaceProvidingRequiringEntity_strategy)
+@settings(max_examples=50)
+def test_pcm_av_entity_av_interfaceprovidingrequiringentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_InterfaceProvidingRequiringEntity)
 
 @given(instance=ResourceInterface_strategy)
 @settings(max_examples=50)
 def test_resourceinterface_instantiation(instance):
     assert isinstance(instance, ResourceInterface)
 
-@given(instance=entity::av::ResourceInterfaceProvidingEntity_strategy)
+@given(instance=entity_av_ResourceInterfaceProvidingEntity_strategy)
 @settings(max_examples=50)
-def test_entity::av::resourceinterfaceprovidingentity_instantiation(instance):
-    assert isinstance(instance, entity::av::ResourceInterfaceProvidingEntity)
+def test_entity_av_resourceinterfaceprovidingentity_instantiation(instance):
+    assert isinstance(instance, entity_av_ResourceInterfaceProvidingEntity)
 
-@given(instance=pcm::av::resourcetype::av::ResourceType_strategy)
+@given(instance=pcm_av_resourcetype_av_ResourceType_strategy)
 @settings(max_examples=50)
-def test_pcm::av::resourcetype::av::resourcetype_instantiation(instance):
-    assert isinstance(instance, pcm::av::resourcetype::av::ResourceType)
+def test_pcm_av_resourcetype_av_resourcetype_instantiation(instance):
+    assert isinstance(instance, pcm_av_resourcetype_av_ResourceType)
 
-@given(instance=pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity_strategy)
+@given(instance=pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::resourceinterfaceprovidingrequiringentity_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::ResourceInterfaceProvidingRequiringEntity)
+def test_pcm_av_entity_av_resourceinterfaceprovidingrequiringentity_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_ResourceInterfaceProvidingRequiringEntity)
 
 @given(instance=Role_strategy)
 @settings(max_examples=50)
 def test_role_instantiation(instance):
     assert isinstance(instance, Role)
 
-@given(instance=pcm::av::repository::av::ProvidedRole_strategy)
+@given(instance=pcm_av_repository_av_ProvidedRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::providedrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::ProvidedRole)
+def test_pcm_av_repository_av_providedrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_ProvidedRole)
 
-@given(instance=pcm::av::repository::av::RequiredRole_strategy)
+@given(instance=pcm_av_repository_av_RequiredRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::repository::av::requiredrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::repository::av::RequiredRole)
+def test_pcm_av_repository_av_requiredrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_repository_av_RequiredRole)
 
-@given(instance=pcm::av::entity::av::ResourceProvidedRole_strategy)
+@given(instance=pcm_av_entity_av_ResourceProvidedRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::resourceprovidedrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::ResourceProvidedRole)
+def test_pcm_av_entity_av_resourceprovidedrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_ResourceProvidedRole)
 
 @given(instance=ProcessingResourceSpecification_strategy)
 @settings(max_examples=50)
@@ -9726,45 +9692,45 @@ def test_openworkload_instantiation(instance):
 def test_loop_instantiation(instance):
     assert isinstance(instance, Loop)
 
-@given(instance=composition::av::AssemblyEventConnector_strategy)
+@given(instance=composition_av_AssemblyEventConnector_strategy)
 @settings(max_examples=50)
-def test_composition::av::assemblyeventconnector_instantiation(instance):
-    assert isinstance(instance, composition::av::AssemblyEventConnector)
+def test_composition_av_assemblyeventconnector_instantiation(instance):
+    assert isinstance(instance, composition_av_AssemblyEventConnector)
 
-@given(instance=composition::av::EventChannelSinkConnector_strategy)
+@given(instance=composition_av_EventChannelSinkConnector_strategy)
 @settings(max_examples=50)
-def test_composition::av::eventchannelsinkconnector_instantiation(instance):
-    assert isinstance(instance, composition::av::EventChannelSinkConnector)
+def test_composition_av_eventchannelsinkconnector_instantiation(instance):
+    assert isinstance(instance, composition_av_EventChannelSinkConnector)
 
-@given(instance=pcm::av::entity::av::ResourceRequiredRole_strategy)
+@given(instance=pcm_av_entity_av_ResourceRequiredRole_strategy)
 @settings(max_examples=50)
-def test_pcm::av::entity::av::resourcerequiredrole_instantiation(instance):
-    assert isinstance(instance, pcm::av::entity::av::ResourceRequiredRole)
+def test_pcm_av_entity_av_resourcerequiredrole_instantiation(instance):
+    assert isinstance(instance, pcm_av_entity_av_ResourceRequiredRole)
 
-@given(instance=entity::av::ResourceRequiredRole_strategy)
+@given(instance=entity_av_ResourceRequiredRole_strategy)
 @settings(max_examples=50)
-def test_entity::av::resourcerequiredrole_instantiation(instance):
-    assert isinstance(instance, entity::av::ResourceRequiredRole)
+def test_entity_av_resourcerequiredrole_instantiation(instance):
+    assert isinstance(instance, entity_av_ResourceRequiredRole)
 
 @given(instance=LoopAction_strategy)
 @settings(max_examples=50)
 def test_loopaction_instantiation(instance):
     assert isinstance(instance, LoopAction)
 
-@given(instance=seff::performance::av::ParametricResourceDemand_strategy)
+@given(instance=seff_performance_av_ParametricResourceDemand_strategy)
 @settings(max_examples=50)
-def test_seff::performance::av::parametricresourcedemand_instantiation(instance):
-    assert isinstance(instance, seff::performance::av::ParametricResourceDemand)
+def test_seff_performance_av_parametricresourcedemand_instantiation(instance):
+    assert isinstance(instance, seff_performance_av_ParametricResourceDemand)
 
-@given(instance=seff::performance::av::ResourceCall_strategy)
+@given(instance=seff_performance_av_ResourceCall_strategy)
 @settings(max_examples=50)
-def test_seff::performance::av::resourcecall_instantiation(instance):
-    assert isinstance(instance, seff::performance::av::ResourceCall)
+def test_seff_performance_av_resourcecall_instantiation(instance):
+    assert isinstance(instance, seff_performance_av_ResourceCall)
 
-@given(instance=seff::performance::av::InfrastructureCall_strategy)
+@given(instance=seff_performance_av_InfrastructureCall_strategy)
 @settings(max_examples=50)
-def test_seff::performance::av::infrastructurecall_instantiation(instance):
-    assert isinstance(instance, seff::performance::av::InfrastructureCall)
+def test_seff_performance_av_infrastructurecall_instantiation(instance):
+    assert isinstance(instance, seff_performance_av_InfrastructureCall)
 
 @given(instance=VariableCharacterisation_strategy)
 @settings(max_examples=50)
@@ -9786,10 +9752,10 @@ def test_closedworkload_instantiation(instance):
 def test_randomvariable_instantiation(instance):
     assert isinstance(instance, RandomVariable)
 
-@given(instance=pcm::av::core::av::PCMRandomVariable_strategy)
+@given(instance=pcm_av_core_av_PCMRandomVariable_strategy)
 @settings(max_examples=50)
-def test_pcm::av::core::av::pcmrandomvariable_instantiation(instance):
-    assert isinstance(instance, pcm::av::core::av::PCMRandomVariable)
+def test_pcm_av_core_av_pcmrandomvariable_instantiation(instance):
+    assert isinstance(instance, pcm_av_core_av_PCMRandomVariable)
 
 import warnings
 import copy
@@ -9797,9 +9763,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pcm::av::core::av::PCMRandomVariable_strategy)
+@given(instance=pcm_av_core_av_PCMRandomVariable_strategy)
 @settings(max_examples=30)
-def test_pcm::av::core::av::pcmrandomvariable_specificationmustnotbenull_changes_state(instance):
+def test_pcm_av_core_av_pcmrandomvariable_specificationmustnotbenull_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9814,93 +9780,46 @@ def test_pcm::av::core::av::pcmrandomvariable_specificationmustnotbenull_changes
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SpecificationMustNotBeNULL' in pcm::av::core::av::PCMRandomVariable is empty"
+        assert has_statements, f"Function 'SpecificationMustNotBeNULL' in pcm_av_core_av_PCMRandomVariable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SpecificationMustNotBeNULL' in pcm::av::core::av::PCMRandomVariable did not change state; check implementation")
+            warnings.warn(f"Operation 'SpecificationMustNotBeNULL' in pcm_av_core_av_PCMRandomVariable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SpecificationMustNotBeNULL' in pcm::av::core::av::PCMRandomVariable is not implemented or raised an error")
+        warnings.warn(f"Operation 'SpecificationMustNotBeNULL' in pcm_av_core_av_PCMRandomVariable is not implemented or raised an error")
 
-@given(instance=pcm::av::PerJoinPointScope_strategy)
+@given(instance=pcm_av_PerJoinPointScope_strategy)
 @settings(max_examples=50)
-def test_pcm::av::perjoinpointscope_instantiation(instance):
-    assert isinstance(instance, pcm::av::PerJoinPointScope)
+def test_pcm_av_perjoinpointscope_instantiation(instance):
+    assert isinstance(instance, pcm_av_PerJoinPointScope)
 
-@given(instance=pcm::av::GlobalScope_strategy)
+@given(instance=pcm_av_GlobalScope_strategy)
 @settings(max_examples=50)
-def test_pcm::av::globalscope_instantiation(instance):
-    assert isinstance(instance, pcm::av::GlobalScope)
+def test_pcm_av_globalscope_instantiation(instance):
+    assert isinstance(instance, pcm_av_GlobalScope)
 
-@given(instance=pcm::av::EObject_strategy)
+@given(instance=pcm_av_EObject_strategy)
 @settings(max_examples=50)
-def test_pcm::av::eobject_instantiation(instance):
-    assert isinstance(instance, pcm::av::EObject)
+def test_pcm_av_eobject_instantiation(instance):
+    assert isinstance(instance, pcm_av_EObject)
 
-@given(instance=pcm::av::Advice_strategy)
+@given(instance=pcm_av_Advice_strategy)
 @settings(max_examples=50)
-def test_pcm::av::advice_instantiation(instance):
-    assert isinstance(instance, pcm::av::Advice)
+def test_pcm_av_advice_instantiation(instance):
+    assert isinstance(instance, pcm_av_Advice)
 
-@given(instance=pcm::av::DummyClass_strategy)
+@given(instance=pcm_av_DummyClass_strategy)
 @settings(max_examples=50)
-def test_pcm::av::dummyclass_instantiation(instance):
-    assert isinstance(instance, pcm::av::DummyClass)
+def test_pcm_av_dummyclass_instantiation(instance):
+    assert isinstance(instance, pcm_av_DummyClass)
 
-@given(instance=qos::performance::av::SpecifiedExecutionTime_strategy)
+@given(instance=qos_performance_av_SpecifiedExecutionTime_strategy)
 @settings(max_examples=50)
-def test_qos::performance::av::specifiedexecutiontime_instantiation(instance):
-    assert isinstance(instance, qos::performance::av::SpecifiedExecutionTime)
+def test_qos_performance_av_specifiedexecutiontime_instantiation(instance):
+    assert isinstance(instance, qos_performance_av_SpecifiedExecutionTime)
 
 @given(instance=GuardedBranchTransition_strategy)
 @settings(max_examples=50)
 def test_guardedbranchtransition_instantiation(instance):
     assert isinstance(instance, GuardedBranchTransition)
-
-@given(instance=pcm::av::seff::av::StopAction_strategy)
-@settings(max_examples=50)
-def test_pcm::av::seff::av::stopaction_instantiation(instance):
-    assert isinstance(instance, pcm::av::seff::av::StopAction)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pcm::av::seff::av::StopAction_strategy)
-@settings(max_examples=30)
-def test_pcm::av::seff::av::stopaction_stopactionsuccessormustnotbedefined_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.StopActionSuccessorMustNotBeDefined(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.StopActionSuccessorMustNotBeDefined).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'StopActionSuccessorMustNotBeDefined' in pcm::av::seff::av::StopAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'StopActionSuccessorMustNotBeDefined' in pcm::av::seff::av::StopAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'StopActionSuccessorMustNotBeDefined' in pcm::av::seff::av::StopAction is not implemented or raised an error")
-
-@given(instance=pcm::av::reliability::av::FailureType_strategy)
-@settings(max_examples=50)
-def test_pcm::av::reliability::av::failuretype_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::FailureType)
-
-@given(instance=pcm::av::reliability::av::ResourceTimeoutFailureType_strategy)
-@settings(max_examples=50)
-def test_pcm::av::reliability::av::resourcetimeoutfailuretype_instantiation(instance):
-    assert isinstance(instance, pcm::av::reliability::av::ResourceTimeoutFailureType)

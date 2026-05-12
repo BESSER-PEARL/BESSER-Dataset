@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    EtlSimpleTrace::EObject,
-    EtlSimpleTrace::TraceLink,
-    EtlSimpleTrace::Trace,
+from python_code import (
+    EtlSimpleTrace_EObject,
+    EtlSimpleTrace_TraceLink,
+    EtlSimpleTrace_Trace,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_etlsimpletrace::eobject_is_not_abstract():
-    assert not inspect.isabstract(EtlSimpleTrace::EObject)
+def test_etlsimpletrace_eobject_is_not_abstract():
+    assert not inspect.isabstract(EtlSimpleTrace_EObject)
 
 
-def test_etlsimpletrace::eobject_constructor_exists():
-    assert callable(EtlSimpleTrace::EObject.__init__)
+def test_etlsimpletrace_eobject_constructor_exists():
+    assert callable(EtlSimpleTrace_EObject.__init__)
 
 
-def test_etlsimpletrace::eobject_constructor_args():
-    sig = inspect.signature(EtlSimpleTrace::EObject.__init__)
+def test_etlsimpletrace_eobject_constructor_args():
+    sig = inspect.signature(EtlSimpleTrace_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_etlsimpletrace::tracelink_is_not_abstract():
-    assert not inspect.isabstract(EtlSimpleTrace::TraceLink)
+def test_etlsimpletrace_tracelink_is_not_abstract():
+    assert not inspect.isabstract(EtlSimpleTrace_TraceLink)
 
 
-def test_etlsimpletrace::tracelink_constructor_exists():
-    assert callable(EtlSimpleTrace::TraceLink.__init__)
+def test_etlsimpletrace_tracelink_constructor_exists():
+    assert callable(EtlSimpleTrace_TraceLink.__init__)
 
 
-def test_etlsimpletrace::tracelink_constructor_args():
-    sig = inspect.signature(EtlSimpleTrace::TraceLink.__init__)
+def test_etlsimpletrace_tracelink_constructor_args():
+    sig = inspect.signature(EtlSimpleTrace_TraceLink.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_etlsimpletrace::tracelink_has_description():
-    assert hasattr(EtlSimpleTrace::TraceLink, "description")
+def test_etlsimpletrace_tracelink_has_description():
+    assert hasattr(EtlSimpleTrace_TraceLink, "description")
     descriptor = None
-    for klass in EtlSimpleTrace::TraceLink.__mro__:
+    for klass in EtlSimpleTrace_TraceLink.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -55,16 +55,16 @@ def test_etlsimpletrace::tracelink_has_description():
 
 
 
-def test_etlsimpletrace::trace_is_not_abstract():
-    assert not inspect.isabstract(EtlSimpleTrace::Trace)
+def test_etlsimpletrace_trace_is_not_abstract():
+    assert not inspect.isabstract(EtlSimpleTrace_Trace)
 
 
-def test_etlsimpletrace::trace_constructor_exists():
-    assert callable(EtlSimpleTrace::Trace.__init__)
+def test_etlsimpletrace_trace_constructor_exists():
+    assert callable(EtlSimpleTrace_Trace.__init__)
 
 
-def test_etlsimpletrace::trace_constructor_args():
-    sig = inspect.signature(EtlSimpleTrace::Trace.__init__)
+def test_etlsimpletrace_trace_constructor_args():
+    sig = inspect.signature(EtlSimpleTrace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-EtlSimpleTrace::EObject_strategy = st.builds(
-    EtlSimpleTrace::EObject,
+EtlSimpleTrace_EObject_strategy = st.builds(
+    EtlSimpleTrace_EObject,
 )
-EtlSimpleTrace::TraceLink_strategy = st.builds(
-    EtlSimpleTrace::TraceLink,
+EtlSimpleTrace_TraceLink_strategy = st.builds(
+    EtlSimpleTrace_TraceLink,
     description=
         safe_text
 )
-EtlSimpleTrace::Trace_strategy = st.builds(
-    EtlSimpleTrace::Trace,
+EtlSimpleTrace_Trace_strategy = st.builds(
+    EtlSimpleTrace_Trace,
 )
 
-@given(instance=EtlSimpleTrace::EObject_strategy)
+@given(instance=EtlSimpleTrace_EObject_strategy)
 @settings(max_examples=50)
-def test_etlsimpletrace::eobject_instantiation(instance):
-    assert isinstance(instance, EtlSimpleTrace::EObject)
+def test_etlsimpletrace_eobject_instantiation(instance):
+    assert isinstance(instance, EtlSimpleTrace_EObject)
 
-@given(instance=EtlSimpleTrace::TraceLink_strategy)
+@given(instance=EtlSimpleTrace_TraceLink_strategy)
 @settings(max_examples=50)
-def test_etlsimpletrace::tracelink_instantiation(instance):
-    assert isinstance(instance, EtlSimpleTrace::TraceLink)
-
-@given(instance=EtlSimpleTrace::TraceLink_strategy)
-def test_etlsimpletrace::tracelink_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_etlsimpletrace_tracelink_instantiation(instance):
+    assert isinstance(instance, EtlSimpleTrace_TraceLink)
 
 
-@given(instance=EtlSimpleTrace::TraceLink_strategy)
-def test_etlsimpletrace::tracelink_description_setter(instance):
+
+@given(instance=EtlSimpleTrace_TraceLink_strategy)
+def test_etlsimpletrace_tracelink_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=EtlSimpleTrace::Trace_strategy)
+@given(instance=EtlSimpleTrace_Trace_strategy)
 @settings(max_examples=50)
-def test_etlsimpletrace::trace_instantiation(instance):
-    assert isinstance(instance, EtlSimpleTrace::Trace)
+def test_etlsimpletrace_trace_instantiation(instance):
+    assert isinstance(instance, EtlSimpleTrace_Trace)

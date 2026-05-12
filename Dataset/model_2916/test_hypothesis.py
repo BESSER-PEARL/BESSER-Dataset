@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    domainModel::Feature,
+from python_code import (
+    domainModel_Feature,
     Type,
-    domainModel::Entity,
-    domainModel::DataType,
+    domainModel_Entity,
+    domainModel_DataType,
     AbstractElement,
-    domainModel::Import,
-    domainModel::Type,
-    domainModel::PackageDeclaration,
-    domainModel::AbstractElement,
-    domainModel::Model,
+    domainModel_Import,
+    domainModel_Type,
+    domainModel_PackageDeclaration,
+    domainModel_AbstractElement,
+    domainModel_Model,
 )
 
 # =============================================================================
@@ -24,35 +24,35 @@ from classes import (
 
 
 
-def test_domainmodel::feature_is_not_abstract():
-    assert not inspect.isabstract(domainModel::Feature)
+def test_domainmodel_feature_is_not_abstract():
+    assert not inspect.isabstract(domainModel_Feature)
 
 
-def test_domainmodel::feature_constructor_exists():
-    assert callable(domainModel::Feature.__init__)
+def test_domainmodel_feature_constructor_exists():
+    assert callable(domainModel_Feature.__init__)
 
 
-def test_domainmodel::feature_constructor_args():
-    sig = inspect.signature(domainModel::Feature.__init__)
+def test_domainmodel_feature_constructor_args():
+    sig = inspect.signature(domainModel_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "many" in params, "Missing parameter 'many'"
 
-def test_domainmodel::feature_has_many():
-    assert hasattr(domainModel::Feature, "many")
+def test_domainmodel_feature_has_name():
+    assert hasattr(domainModel_Feature, "name")
     descriptor = None
-    for klass in domainModel::Feature.__mro__:
-        if "many" in klass.__dict__:
-            descriptor = klass.__dict__["many"]
+    for klass in domainModel_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_domainmodel::feature_has_name():
-    assert hasattr(domainModel::Feature, "name")
+def test_domainmodel_feature_has_many():
+    assert hasattr(domainModel_Feature, "many")
     descriptor = None
-    for klass in domainModel::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in domainModel_Feature.__mro__:
+        if "many" in klass.__dict__:
+            descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
@@ -72,30 +72,30 @@ def test_type_constructor_args():
 
 
 
-def test_domainmodel::entity_is_not_abstract():
-    assert not inspect.isabstract(domainModel::Entity)
+def test_domainmodel_entity_is_not_abstract():
+    assert not inspect.isabstract(domainModel_Entity)
 
 
-def test_domainmodel::entity_constructor_exists():
-    assert callable(domainModel::Entity.__init__)
+def test_domainmodel_entity_constructor_exists():
+    assert callable(domainModel_Entity.__init__)
 
 
-def test_domainmodel::entity_constructor_args():
-    sig = inspect.signature(domainModel::Entity.__init__)
+def test_domainmodel_entity_constructor_args():
+    sig = inspect.signature(domainModel_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_domainmodel::datatype_is_not_abstract():
-    assert not inspect.isabstract(domainModel::DataType)
+def test_domainmodel_datatype_is_not_abstract():
+    assert not inspect.isabstract(domainModel_DataType)
 
 
-def test_domainmodel::datatype_constructor_exists():
-    assert callable(domainModel::DataType.__init__)
+def test_domainmodel_datatype_constructor_exists():
+    assert callable(domainModel_DataType.__init__)
 
 
-def test_domainmodel::datatype_constructor_args():
-    sig = inspect.signature(domainModel::DataType.__init__)
+def test_domainmodel_datatype_constructor_args():
+    sig = inspect.signature(domainModel_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,23 +114,23 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_domainmodel::import_is_not_abstract():
-    assert not inspect.isabstract(domainModel::Import)
+def test_domainmodel_import_is_not_abstract():
+    assert not inspect.isabstract(domainModel_Import)
 
 
-def test_domainmodel::import_constructor_exists():
-    assert callable(domainModel::Import.__init__)
+def test_domainmodel_import_constructor_exists():
+    assert callable(domainModel_Import.__init__)
 
 
-def test_domainmodel::import_constructor_args():
-    sig = inspect.signature(domainModel::Import.__init__)
+def test_domainmodel_import_constructor_args():
+    sig = inspect.signature(domainModel_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_domainmodel::import_has_importedNamespace():
-    assert hasattr(domainModel::Import, "importedNamespace")
+def test_domainmodel_import_has_importedNamespace():
+    assert hasattr(domainModel_Import, "importedNamespace")
     descriptor = None
-    for klass in domainModel::Import.__mro__:
+    for klass in domainModel_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -138,23 +138,23 @@ def test_domainmodel::import_has_importedNamespace():
 
 
 
-def test_domainmodel::type_is_not_abstract():
-    assert not inspect.isabstract(domainModel::Type)
+def test_domainmodel_type_is_not_abstract():
+    assert not inspect.isabstract(domainModel_Type)
 
 
-def test_domainmodel::type_constructor_exists():
-    assert callable(domainModel::Type.__init__)
+def test_domainmodel_type_constructor_exists():
+    assert callable(domainModel_Type.__init__)
 
 
-def test_domainmodel::type_constructor_args():
-    sig = inspect.signature(domainModel::Type.__init__)
+def test_domainmodel_type_constructor_args():
+    sig = inspect.signature(domainModel_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_domainmodel::type_has_name():
-    assert hasattr(domainModel::Type, "name")
+def test_domainmodel_type_has_name():
+    assert hasattr(domainModel_Type, "name")
     descriptor = None
-    for klass in domainModel::Type.__mro__:
+    for klass in domainModel_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -162,23 +162,23 @@ def test_domainmodel::type_has_name():
 
 
 
-def test_domainmodel::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(domainModel::PackageDeclaration)
+def test_domainmodel_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(domainModel_PackageDeclaration)
 
 
-def test_domainmodel::packagedeclaration_constructor_exists():
-    assert callable(domainModel::PackageDeclaration.__init__)
+def test_domainmodel_packagedeclaration_constructor_exists():
+    assert callable(domainModel_PackageDeclaration.__init__)
 
 
-def test_domainmodel::packagedeclaration_constructor_args():
-    sig = inspect.signature(domainModel::PackageDeclaration.__init__)
+def test_domainmodel_packagedeclaration_constructor_args():
+    sig = inspect.signature(domainModel_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_domainmodel::packagedeclaration_has_name():
-    assert hasattr(domainModel::PackageDeclaration, "name")
+def test_domainmodel_packagedeclaration_has_name():
+    assert hasattr(domainModel_PackageDeclaration, "name")
     descriptor = None
-    for klass in domainModel::PackageDeclaration.__mro__:
+    for klass in domainModel_PackageDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,30 +186,30 @@ def test_domainmodel::packagedeclaration_has_name():
 
 
 
-def test_domainmodel::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(domainModel::AbstractElement)
+def test_domainmodel_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(domainModel_AbstractElement)
 
 
-def test_domainmodel::abstractelement_constructor_exists():
-    assert callable(domainModel::AbstractElement.__init__)
+def test_domainmodel_abstractelement_constructor_exists():
+    assert callable(domainModel_AbstractElement.__init__)
 
 
-def test_domainmodel::abstractelement_constructor_args():
-    sig = inspect.signature(domainModel::AbstractElement.__init__)
+def test_domainmodel_abstractelement_constructor_args():
+    sig = inspect.signature(domainModel_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_domainmodel::model_is_not_abstract():
-    assert not inspect.isabstract(domainModel::Model)
+def test_domainmodel_model_is_not_abstract():
+    assert not inspect.isabstract(domainModel_Model)
 
 
-def test_domainmodel::model_constructor_exists():
-    assert callable(domainModel::Model.__init__)
+def test_domainmodel_model_constructor_exists():
+    assert callable(domainModel_Model.__init__)
 
 
-def test_domainmodel::model_constructor_args():
-    sig = inspect.signature(domainModel::Model.__init__)
+def test_domainmodel_model_constructor_args():
+    sig = inspect.signature(domainModel_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,148 +224,133 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-domainModel::Feature_strategy = st.builds(
-    domainModel::Feature,
-    many=
-        st.booleans(),
+domainModel_Feature_strategy = st.builds(
+    domainModel_Feature,
     name=
-        safe_text
+        safe_text,
+    many=
+        st.booleans()
 )
 Type_strategy = st.builds(
     Type,
 )
-domainModel::Entity_strategy = st.builds(
-    domainModel::Entity,
+domainModel_Entity_strategy = st.builds(
+    domainModel_Entity,
 )
-domainModel::DataType_strategy = st.builds(
-    domainModel::DataType,
+domainModel_DataType_strategy = st.builds(
+    domainModel_DataType,
 )
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-domainModel::Import_strategy = st.builds(
-    domainModel::Import,
+domainModel_Import_strategy = st.builds(
+    domainModel_Import,
     importedNamespace=
         safe_text
 )
-domainModel::Type_strategy = st.builds(
-    domainModel::Type,
+domainModel_Type_strategy = st.builds(
+    domainModel_Type,
     name=
         safe_text
 )
-domainModel::PackageDeclaration_strategy = st.builds(
-    domainModel::PackageDeclaration,
+domainModel_PackageDeclaration_strategy = st.builds(
+    domainModel_PackageDeclaration,
     name=
         safe_text
 )
-domainModel::AbstractElement_strategy = st.builds(
-    domainModel::AbstractElement,
+domainModel_AbstractElement_strategy = st.builds(
+    domainModel_AbstractElement,
 )
-domainModel::Model_strategy = st.builds(
-    domainModel::Model,
+domainModel_Model_strategy = st.builds(
+    domainModel_Model,
 )
 
-@given(instance=domainModel::Feature_strategy)
+@given(instance=domainModel_Feature_strategy)
 @settings(max_examples=50)
-def test_domainmodel::feature_instantiation(instance):
-    assert isinstance(instance, domainModel::Feature)
-
-@given(instance=domainModel::Feature_strategy)
-def test_domainmodel::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_domainmodel_feature_instantiation(instance):
+    assert isinstance(instance, domainModel_Feature)
 
 
-@given(instance=domainModel::Feature_strategy)
-def test_domainmodel::feature_many_setter(instance):
-    original = instance.many
-    instance.many = original
-    assert instance.many == original
 
-@given(instance=domainModel::Feature_strategy)
-def test_domainmodel::feature_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=domainModel::Feature_strategy)
-def test_domainmodel::feature_name_setter(instance):
+@given(instance=domainModel_Feature_strategy)
+def test_domainmodel_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=domainModel_Feature_strategy)
+def test_domainmodel_feature_many_setter(instance):
+    original = instance.many
+    instance.many = original
+    assert instance.many == original
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=domainModel::Entity_strategy)
+@given(instance=domainModel_Entity_strategy)
 @settings(max_examples=50)
-def test_domainmodel::entity_instantiation(instance):
-    assert isinstance(instance, domainModel::Entity)
+def test_domainmodel_entity_instantiation(instance):
+    assert isinstance(instance, domainModel_Entity)
 
-@given(instance=domainModel::DataType_strategy)
+@given(instance=domainModel_DataType_strategy)
 @settings(max_examples=50)
-def test_domainmodel::datatype_instantiation(instance):
-    assert isinstance(instance, domainModel::DataType)
+def test_domainmodel_datatype_instantiation(instance):
+    assert isinstance(instance, domainModel_DataType)
 
 @given(instance=AbstractElement_strategy)
 @settings(max_examples=50)
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=domainModel::Import_strategy)
+@given(instance=domainModel_Import_strategy)
 @settings(max_examples=50)
-def test_domainmodel::import_instantiation(instance):
-    assert isinstance(instance, domainModel::Import)
-
-@given(instance=domainModel::Import_strategy)
-def test_domainmodel::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_domainmodel_import_instantiation(instance):
+    assert isinstance(instance, domainModel_Import)
 
 
-@given(instance=domainModel::Import_strategy)
-def test_domainmodel::import_importedNamespace_setter(instance):
+
+@given(instance=domainModel_Import_strategy)
+def test_domainmodel_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=domainModel::Type_strategy)
+@given(instance=domainModel_Type_strategy)
 @settings(max_examples=50)
-def test_domainmodel::type_instantiation(instance):
-    assert isinstance(instance, domainModel::Type)
-
-@given(instance=domainModel::Type_strategy)
-def test_domainmodel::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_domainmodel_type_instantiation(instance):
+    assert isinstance(instance, domainModel_Type)
 
 
-@given(instance=domainModel::Type_strategy)
-def test_domainmodel::type_name_setter(instance):
+
+@given(instance=domainModel_Type_strategy)
+def test_domainmodel_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=domainModel::PackageDeclaration_strategy)
+@given(instance=domainModel_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_domainmodel::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, domainModel::PackageDeclaration)
-
-@given(instance=domainModel::PackageDeclaration_strategy)
-def test_domainmodel::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_domainmodel_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, domainModel_PackageDeclaration)
 
 
-@given(instance=domainModel::PackageDeclaration_strategy)
-def test_domainmodel::packagedeclaration_name_setter(instance):
+
+@given(instance=domainModel_PackageDeclaration_strategy)
+def test_domainmodel_packagedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=domainModel::AbstractElement_strategy)
+@given(instance=domainModel_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_domainmodel::abstractelement_instantiation(instance):
-    assert isinstance(instance, domainModel::AbstractElement)
+def test_domainmodel_abstractelement_instantiation(instance):
+    assert isinstance(instance, domainModel_AbstractElement)
 
-@given(instance=domainModel::Model_strategy)
+@given(instance=domainModel_Model_strategy)
 @settings(max_examples=50)
-def test_domainmodel::model_instantiation(instance):
-    assert isinstance(instance, domainModel::Model)
+def test_domainmodel_model_instantiation(instance):
+    assert isinstance(instance, domainModel_Model)

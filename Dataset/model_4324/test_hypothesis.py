@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    metrics::Observation,
+from python_code import (
+    metrics_Observation,
     ModelElement,
     Measurement,
-    metrics::ComplexMeasurement,
-    metrics::ValueMeasurement,
-    metrics::Measurement,
-    metrics::LinkMeasurement,
+    metrics_ComplexMeasurement,
+    metrics_ValueMeasurement,
+    metrics_Measurement,
+    metrics_LinkMeasurement,
 )
 
 # =============================================================================
@@ -21,16 +21,16 @@ from classes import (
 
 
 
-def test_metrics::observation_is_not_abstract():
-    assert not inspect.isabstract(metrics::Observation)
+def test_metrics_observation_is_not_abstract():
+    assert not inspect.isabstract(metrics_Observation)
 
 
-def test_metrics::observation_constructor_exists():
-    assert callable(metrics::Observation.__init__)
+def test_metrics_observation_constructor_exists():
+    assert callable(metrics_Observation.__init__)
 
 
-def test_metrics::observation_constructor_args():
-    sig = inspect.signature(metrics::Observation.__init__)
+def test_metrics_observation_constructor_args():
+    sig = inspect.signature(metrics_Observation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -63,37 +63,37 @@ def test_measurement_constructor_args():
 
 
 
-def test_metrics::complexmeasurement_is_not_abstract():
-    assert not inspect.isabstract(metrics::ComplexMeasurement)
+def test_metrics_complexmeasurement_is_not_abstract():
+    assert not inspect.isabstract(metrics_ComplexMeasurement)
 
 
-def test_metrics::complexmeasurement_constructor_exists():
-    assert callable(metrics::ComplexMeasurement.__init__)
+def test_metrics_complexmeasurement_constructor_exists():
+    assert callable(metrics_ComplexMeasurement.__init__)
 
 
-def test_metrics::complexmeasurement_constructor_args():
-    sig = inspect.signature(metrics::ComplexMeasurement.__init__)
+def test_metrics_complexmeasurement_constructor_args():
+    sig = inspect.signature(metrics_ComplexMeasurement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metrics::valuemeasurement_is_not_abstract():
-    assert not inspect.isabstract(metrics::ValueMeasurement)
+def test_metrics_valuemeasurement_is_not_abstract():
+    assert not inspect.isabstract(metrics_ValueMeasurement)
 
 
-def test_metrics::valuemeasurement_constructor_exists():
-    assert callable(metrics::ValueMeasurement.__init__)
+def test_metrics_valuemeasurement_constructor_exists():
+    assert callable(metrics_ValueMeasurement.__init__)
 
 
-def test_metrics::valuemeasurement_constructor_args():
-    sig = inspect.signature(metrics::ValueMeasurement.__init__)
+def test_metrics_valuemeasurement_constructor_args():
+    sig = inspect.signature(metrics_ValueMeasurement.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_metrics::valuemeasurement_has_value():
-    assert hasattr(metrics::ValueMeasurement, "value")
+def test_metrics_valuemeasurement_has_value():
+    assert hasattr(metrics_ValueMeasurement, "value")
     descriptor = None
-    for klass in metrics::ValueMeasurement.__mro__:
+    for klass in metrics_ValueMeasurement.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -101,60 +101,60 @@ def test_metrics::valuemeasurement_has_value():
 
 
 
-def test_metrics::measurement_is_not_abstract():
-    assert not inspect.isabstract(metrics::Measurement)
+def test_metrics_measurement_is_not_abstract():
+    assert not inspect.isabstract(metrics_Measurement)
 
 
-def test_metrics::measurement_constructor_exists():
-    assert callable(metrics::Measurement.__init__)
+def test_metrics_measurement_constructor_exists():
+    assert callable(metrics_Measurement.__init__)
 
 
-def test_metrics::measurement_constructor_args():
-    sig = inspect.signature(metrics::Measurement.__init__)
+def test_metrics_measurement_constructor_args():
+    sig = inspect.signature(metrics_Measurement.__init__)
     params = list(sig.parameters.keys())
+    assert "error" in params, "Missing parameter 'error'"
     assert "tag" in params, "Missing parameter 'tag'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "error" in params, "Missing parameter 'error'"
 
-def test_metrics::measurement_has_tag():
-    assert hasattr(metrics::Measurement, "tag")
+def test_metrics_measurement_has_error():
+    assert hasattr(metrics_Measurement, "error")
     descriptor = None
-    for klass in metrics::Measurement.__mro__:
-        if "tag" in klass.__dict__:
-            descriptor = klass.__dict__["tag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::measurement_has_name():
-    assert hasattr(metrics::Measurement, "name")
-    descriptor = None
-    for klass in metrics::Measurement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::measurement_has_error():
-    assert hasattr(metrics::Measurement, "error")
-    descriptor = None
-    for klass in metrics::Measurement.__mro__:
+    for klass in metrics_Measurement.__mro__:
         if "error" in klass.__dict__:
             descriptor = klass.__dict__["error"]
             break
     assert isinstance(descriptor, property)
 
+def test_metrics_measurement_has_tag():
+    assert hasattr(metrics_Measurement, "tag")
+    descriptor = None
+    for klass in metrics_Measurement.__mro__:
+        if "tag" in klass.__dict__:
+            descriptor = klass.__dict__["tag"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metrics_measurement_has_name():
+    assert hasattr(metrics_Measurement, "name")
+    descriptor = None
+    for klass in metrics_Measurement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metrics::linkmeasurement_is_not_abstract():
-    assert not inspect.isabstract(metrics::LinkMeasurement)
+
+def test_metrics_linkmeasurement_is_not_abstract():
+    assert not inspect.isabstract(metrics_LinkMeasurement)
 
 
-def test_metrics::linkmeasurement_constructor_exists():
-    assert callable(metrics::LinkMeasurement.__init__)
+def test_metrics_linkmeasurement_constructor_exists():
+    assert callable(metrics_LinkMeasurement.__init__)
 
 
-def test_metrics::linkmeasurement_constructor_args():
-    sig = inspect.signature(metrics::LinkMeasurement.__init__)
+def test_metrics_linkmeasurement_constructor_args():
+    sig = inspect.signature(metrics_LinkMeasurement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,8 +169,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-metrics::Observation_strategy = st.builds(
-    metrics::Observation,
+metrics_Observation_strategy = st.builds(
+    metrics_Observation,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
@@ -178,31 +178,31 @@ ModelElement_strategy = st.builds(
 Measurement_strategy = st.builds(
     Measurement,
 )
-metrics::ComplexMeasurement_strategy = st.builds(
-    metrics::ComplexMeasurement,
+metrics_ComplexMeasurement_strategy = st.builds(
+    metrics_ComplexMeasurement,
 )
-metrics::ValueMeasurement_strategy = st.builds(
-    metrics::ValueMeasurement,
+metrics_ValueMeasurement_strategy = st.builds(
+    metrics_ValueMeasurement,
     value=
         safe_text
 )
-metrics::Measurement_strategy = st.builds(
-    metrics::Measurement,
+metrics_Measurement_strategy = st.builds(
+    metrics_Measurement,
+    error=
+        safe_text,
     tag=
         safe_text,
     name=
-        safe_text,
-    error=
         safe_text
 )
-metrics::LinkMeasurement_strategy = st.builds(
-    metrics::LinkMeasurement,
+metrics_LinkMeasurement_strategy = st.builds(
+    metrics_LinkMeasurement,
 )
 
-@given(instance=metrics::Observation_strategy)
+@given(instance=metrics_Observation_strategy)
 @settings(max_examples=50)
-def test_metrics::observation_instantiation(instance):
-    assert isinstance(instance, metrics::Observation)
+def test_metrics_observation_instantiation(instance):
+    assert isinstance(instance, metrics_Observation)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
@@ -214,66 +214,54 @@ def test_modelelement_instantiation(instance):
 def test_measurement_instantiation(instance):
     assert isinstance(instance, Measurement)
 
-@given(instance=metrics::ComplexMeasurement_strategy)
+@given(instance=metrics_ComplexMeasurement_strategy)
 @settings(max_examples=50)
-def test_metrics::complexmeasurement_instantiation(instance):
-    assert isinstance(instance, metrics::ComplexMeasurement)
+def test_metrics_complexmeasurement_instantiation(instance):
+    assert isinstance(instance, metrics_ComplexMeasurement)
 
-@given(instance=metrics::ValueMeasurement_strategy)
+@given(instance=metrics_ValueMeasurement_strategy)
 @settings(max_examples=50)
-def test_metrics::valuemeasurement_instantiation(instance):
-    assert isinstance(instance, metrics::ValueMeasurement)
-
-@given(instance=metrics::ValueMeasurement_strategy)
-def test_metrics::valuemeasurement_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_metrics_valuemeasurement_instantiation(instance):
+    assert isinstance(instance, metrics_ValueMeasurement)
 
 
-@given(instance=metrics::ValueMeasurement_strategy)
-def test_metrics::valuemeasurement_value_setter(instance):
+
+@given(instance=metrics_ValueMeasurement_strategy)
+def test_metrics_valuemeasurement_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=metrics::Measurement_strategy)
+@given(instance=metrics_Measurement_strategy)
 @settings(max_examples=50)
-def test_metrics::measurement_instantiation(instance):
-    assert isinstance(instance, metrics::Measurement)
-
-@given(instance=metrics::Measurement_strategy)
-def test_metrics::measurement_tag_type(instance):
-    assert isinstance(instance.tag, str)
+def test_metrics_measurement_instantiation(instance):
+    assert isinstance(instance, metrics_Measurement)
 
 
-@given(instance=metrics::Measurement_strategy)
-def test_metrics::measurement_tag_setter(instance):
-    original = instance.tag
-    instance.tag = original
-    assert instance.tag == original
 
-@given(instance=metrics::Measurement_strategy)
-def test_metrics::measurement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=metrics::Measurement_strategy)
-def test_metrics::measurement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=metrics::Measurement_strategy)
-def test_metrics::measurement_error_type(instance):
-    assert isinstance(instance.error, str)
-
-
-@given(instance=metrics::Measurement_strategy)
-def test_metrics::measurement_error_setter(instance):
+@given(instance=metrics_Measurement_strategy)
+def test_metrics_measurement_error_setter(instance):
     original = instance.error
     instance.error = original
     assert instance.error == original
 
-@given(instance=metrics::LinkMeasurement_strategy)
+
+
+@given(instance=metrics_Measurement_strategy)
+def test_metrics_measurement_tag_setter(instance):
+    original = instance.tag
+    instance.tag = original
+    assert instance.tag == original
+
+
+
+@given(instance=metrics_Measurement_strategy)
+def test_metrics_measurement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=metrics_LinkMeasurement_strategy)
 @settings(max_examples=50)
-def test_metrics::linkmeasurement_instantiation(instance):
-    assert isinstance(instance, metrics::LinkMeasurement)
+def test_metrics_linkmeasurement_instantiation(instance):
+    assert isinstance(instance, metrics_LinkMeasurement)

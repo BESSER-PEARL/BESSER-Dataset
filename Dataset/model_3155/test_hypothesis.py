@@ -3,116 +3,116 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sadl::ValueRow,
-    sadl::ValueTable,
-    sadl::IntervalValue,
-    sadl::GraphPattern,
-    sadl::OrderElement,
-    sadl::OrderList,
+from python_code import (
+    sadl_ValueRow,
+    sadl_ValueTable,
+    sadl_IntervalValue,
+    sadl_GraphPattern,
+    sadl_OrderElement,
+    sadl_OrderList,
     Expression,
-    sadl::BinaryOpExpression,
-    sadl::AskQueryExpression,
-    sadl::JunctionExpression,
-    sadl::UnaryOpExpression,
-    sadl::ConstructExpression,
-    sadl::SelectExpression,
-    sadl::Expression,
-    sadl::ElementSet,
-    sadl::Object,
-    sadl::VariableList,
+    sadl_AskQueryExpression,
+    sadl_JunctionExpression,
+    sadl_UnaryOpExpression,
+    sadl_ConstructExpression,
+    sadl_BinaryOpExpression,
+    sadl_SelectExpression,
+    sadl_Expression,
+    sadl_ElementSet,
+    sadl_Object,
+    sadl_VariableList,
     GraphPattern,
-    sadl::InstAttrPSV,
-    sadl::SubjProp,
-    sadl::PropOfSubj,
-    sadl::ExistentialNegation,
-    sadl::SubTypeOf,
-    sadl::InstAttrSPV,
-    sadl::MergedTriples,
-    sadl::EmbeddedInstanceDeclaration,
-    sadl::WithPhrase,
-    sadl::WithChain,
-    sadl::OfPhrase,
-    sadl::TypeDeclaration,
+    sadl_InstAttrSPV,
+    sadl_ExistentialNegation,
+    sadl_InstAttrPSV,
+    sadl_PropOfSubj,
+    sadl_SubTypeOf,
+    sadl_SubjProp,
+    sadl_MergedTriples,
+    sadl_EmbeddedInstanceDeclaration,
+    sadl_WithPhrase,
+    sadl_WithChain,
+    sadl_OfPhrase,
+    sadl_TypeDeclaration,
     EmbeddedInstanceDeclaration,
     InstanceDeclarationStatement,
-    sadl::InstanceDeclaration,
-    sadl::OfPatternReturningValues,
-    sadl::PropValPartialTriple,
-    sadl::IsInverseOf,
-    sadl::AdditionalPropertyInfo,
-    sadl::TypedBNode,
-    sadl::ExplicitValue,
-    sadl::EObject,
+    sadl_InstanceDeclaration,
+    sadl_OfPatternReturningValues,
+    sadl_PropValPartialTriple,
+    sadl_IsInverseOf,
+    sadl_AdditionalPropertyInfo,
+    sadl_TypedBNode,
+    sadl_ExplicitValue,
+    sadl_EObject,
     Condition,
-    sadl::CardCondition,
-    sadl::MaxCardCondition,
-    sadl::MinCardCondition,
-    sadl::HasValueCondition,
-    sadl::SomeValuesCondition,
-    sadl::AllValuesCondition,
-    sadl::PropertyOfClass,
-    sadl::Facets,
-    sadl::DataTypeRestriction,
+    sadl_CardCondition,
+    sadl_MaxCardCondition,
+    sadl_MinCardCondition,
+    sadl_HasValueCondition,
+    sadl_SomeValuesCondition,
+    sadl_AllValuesCondition,
+    sadl_PropertyOfClass,
+    sadl_Facets,
+    sadl_DataTypeRestriction,
     Statement,
-    sadl::TransitiveProperty,
-    sadl::NecessaryAndSufficient,
-    sadl::SomeValuesFrom,
-    sadl::InstanceDeclarationStatement,
-    sadl::EnumeratedAllValuesFrom,
-    sadl::InstancesAllDifferent,
-    sadl::HasValue,
-    sadl::DefaultValue,
-    sadl::InstanceDifferentFrom,
-    sadl::DisjointClasses,
-    sadl::EquivalentConcepts,
-    sadl::InverseProperty,
-    sadl::PropertyDeclaration,
-    sadl::ExistingInstanceAttribution,
-    sadl::SymmetricalProperty,
-    sadl::InverseFunctionalProperty,
-    sadl::ComplementOfClass,
-    sadl::AllValuesFrom,
-    sadl::EnumeratedAllAndSomeValuesFrom,
-    sadl::Cardinality,
-    sadl::MaxCardinality,
-    sadl::MinCardinality,
-    sadl::FunctionalProperty,
-    sadl::ClassDeclaration,
-    sadl::UserDefinedDataType,
+    sadl_InstanceDifferentFrom,
+    sadl_EnumeratedAllAndSomeValuesFrom,
+    sadl_InverseProperty,
+    sadl_SymmetricalProperty,
+    sadl_InstancesAllDifferent,
+    sadl_AllValuesFrom,
+    sadl_InstanceDeclarationStatement,
+    sadl_TransitiveProperty,
+    sadl_EquivalentConcepts,
+    sadl_MaxCardinality,
+    sadl_ExistingInstanceAttribution,
+    sadl_DisjointClasses,
+    sadl_DefaultValue,
+    sadl_HasValue,
+    sadl_NecessaryAndSufficient,
+    sadl_SomeValuesFrom,
+    sadl_InverseFunctionalProperty,
+    sadl_ComplementOfClass,
+    sadl_EnumeratedAllValuesFrom,
+    sadl_MinCardinality,
+    sadl_PropertyDeclaration,
+    sadl_FunctionalProperty,
+    sadl_Cardinality,
+    sadl_ClassDeclaration,
+    sadl_UserDefinedDataType,
     ResourceBySetOp,
-    sadl::IntersectionResource,
-    sadl::UnionResource,
-    sadl::RangeType,
-    sadl::Range,
-    sadl::AddlClassInfo,
-    sadl::EnumeratedInstances,
+    sadl_IntersectionResource,
+    sadl_UnionResource,
+    sadl_RangeType,
+    sadl_Range,
+    sadl_AddlClassInfo,
+    sadl_EnumeratedInstances,
     ModelElement,
-    sadl::Explanation,
-    sadl::Rule,
-    sadl::Test,
-    sadl::Display,
-    sadl::Expr,
-    sadl::Query,
-    sadl::Statement,
-    sadl::Condition,
-    sadl::ResourceIdentifier,
-    sadl::ExistingResourceList,
+    sadl_Expr,
+    sadl_Query,
+    sadl_Rule,
+    sadl_Test,
+    sadl_Display,
+    sadl_Explanation,
+    sadl_Statement,
+    sadl_Condition,
+    sadl_ResourceIdentifier,
+    sadl_ExistingResourceList,
     ResourceIdentifier,
-    sadl::ResourceBySetOp,
-    sadl::ResourceByRestriction,
-    sadl::ResourceByName,
-    sadl::LiteralValue,
-    sadl::LiteralList,
-    sadl::ResourceList,
-    sadl::ResourceName,
-    sadl::ContentList,
-    sadl::ModelElement,
-    sadl::Import,
-    sadl::ModelName,
-    sadl::Model,
+    sadl_ResourceByRestriction,
+    sadl_ResourceBySetOp,
+    sadl_ResourceByName,
+    sadl_LiteralValue,
+    sadl_LiteralList,
+    sadl_ResourceList,
+    sadl_ResourceName,
+    sadl_ContentList,
+    sadl_ModelElement,
+    sadl_Import,
+    sadl_ModelName,
+    sadl_Model,
     DataType,
 )
 
@@ -122,51 +122,51 @@ from classes import (
 
 
 
-def test_sadl::valuerow_is_not_abstract():
-    assert not inspect.isabstract(sadl::ValueRow)
+def test_sadl_valuerow_is_not_abstract():
+    assert not inspect.isabstract(sadl_ValueRow)
 
 
-def test_sadl::valuerow_constructor_exists():
-    assert callable(sadl::ValueRow.__init__)
+def test_sadl_valuerow_constructor_exists():
+    assert callable(sadl_ValueRow.__init__)
 
 
-def test_sadl::valuerow_constructor_args():
-    sig = inspect.signature(sadl::ValueRow.__init__)
+def test_sadl_valuerow_constructor_args():
+    sig = inspect.signature(sadl_ValueRow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::valuetable_is_not_abstract():
-    assert not inspect.isabstract(sadl::ValueTable)
+def test_sadl_valuetable_is_not_abstract():
+    assert not inspect.isabstract(sadl_ValueTable)
 
 
-def test_sadl::valuetable_constructor_exists():
-    assert callable(sadl::ValueTable.__init__)
+def test_sadl_valuetable_constructor_exists():
+    assert callable(sadl_ValueTable.__init__)
 
 
-def test_sadl::valuetable_constructor_args():
-    sig = inspect.signature(sadl::ValueTable.__init__)
+def test_sadl_valuetable_constructor_args():
+    sig = inspect.signature(sadl_ValueTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::intervalvalue_is_not_abstract():
-    assert not inspect.isabstract(sadl::IntervalValue)
+def test_sadl_intervalvalue_is_not_abstract():
+    assert not inspect.isabstract(sadl_IntervalValue)
 
 
-def test_sadl::intervalvalue_constructor_exists():
-    assert callable(sadl::IntervalValue.__init__)
+def test_sadl_intervalvalue_constructor_exists():
+    assert callable(sadl_IntervalValue.__init__)
 
 
-def test_sadl::intervalvalue_constructor_args():
-    sig = inspect.signature(sadl::IntervalValue.__init__)
+def test_sadl_intervalvalue_constructor_args():
+    sig = inspect.signature(sadl_IntervalValue.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_sadl::intervalvalue_has_op():
-    assert hasattr(sadl::IntervalValue, "op")
+def test_sadl_intervalvalue_has_op():
+    assert hasattr(sadl_IntervalValue, "op")
     descriptor = None
-    for klass in sadl::IntervalValue.__mro__:
+    for klass in sadl_IntervalValue.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -174,37 +174,37 @@ def test_sadl::intervalvalue_has_op():
 
 
 
-def test_sadl::graphpattern_is_not_abstract():
-    assert not inspect.isabstract(sadl::GraphPattern)
+def test_sadl_graphpattern_is_not_abstract():
+    assert not inspect.isabstract(sadl_GraphPattern)
 
 
-def test_sadl::graphpattern_constructor_exists():
-    assert callable(sadl::GraphPattern.__init__)
+def test_sadl_graphpattern_constructor_exists():
+    assert callable(sadl_GraphPattern.__init__)
 
 
-def test_sadl::graphpattern_constructor_args():
-    sig = inspect.signature(sadl::GraphPattern.__init__)
+def test_sadl_graphpattern_constructor_args():
+    sig = inspect.signature(sadl_GraphPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::orderelement_is_not_abstract():
-    assert not inspect.isabstract(sadl::OrderElement)
+def test_sadl_orderelement_is_not_abstract():
+    assert not inspect.isabstract(sadl_OrderElement)
 
 
-def test_sadl::orderelement_constructor_exists():
-    assert callable(sadl::OrderElement.__init__)
+def test_sadl_orderelement_constructor_exists():
+    assert callable(sadl_OrderElement.__init__)
 
 
-def test_sadl::orderelement_constructor_args():
-    sig = inspect.signature(sadl::OrderElement.__init__)
+def test_sadl_orderelement_constructor_args():
+    sig = inspect.signature(sadl_OrderElement.__init__)
     params = list(sig.parameters.keys())
     assert "order" in params, "Missing parameter 'order'"
 
-def test_sadl::orderelement_has_order():
-    assert hasattr(sadl::OrderElement, "order")
+def test_sadl_orderelement_has_order():
+    assert hasattr(sadl_OrderElement, "order")
     descriptor = None
-    for klass in sadl::OrderElement.__mro__:
+    for klass in sadl_OrderElement.__mro__:
         if "order" in klass.__dict__:
             descriptor = klass.__dict__["order"]
             break
@@ -212,16 +212,16 @@ def test_sadl::orderelement_has_order():
 
 
 
-def test_sadl::orderlist_is_not_abstract():
-    assert not inspect.isabstract(sadl::OrderList)
+def test_sadl_orderlist_is_not_abstract():
+    assert not inspect.isabstract(sadl_OrderList)
 
 
-def test_sadl::orderlist_constructor_exists():
-    assert callable(sadl::OrderList.__init__)
+def test_sadl_orderlist_constructor_exists():
+    assert callable(sadl_OrderList.__init__)
 
 
-def test_sadl::orderlist_constructor_args():
-    sig = inspect.signature(sadl::OrderList.__init__)
+def test_sadl_orderlist_constructor_args():
+    sig = inspect.signature(sadl_OrderList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,23 +240,37 @@ def test_expression_constructor_args():
 
 
 
-def test_sadl::binaryopexpression_is_not_abstract():
-    assert not inspect.isabstract(sadl::BinaryOpExpression)
+def test_sadl_askqueryexpression_is_not_abstract():
+    assert not inspect.isabstract(sadl_AskQueryExpression)
 
 
-def test_sadl::binaryopexpression_constructor_exists():
-    assert callable(sadl::BinaryOpExpression.__init__)
+def test_sadl_askqueryexpression_constructor_exists():
+    assert callable(sadl_AskQueryExpression.__init__)
 
 
-def test_sadl::binaryopexpression_constructor_args():
-    sig = inspect.signature(sadl::BinaryOpExpression.__init__)
+def test_sadl_askqueryexpression_constructor_args():
+    sig = inspect.signature(sadl_AskQueryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_junctionexpression_is_not_abstract():
+    assert not inspect.isabstract(sadl_JunctionExpression)
+
+
+def test_sadl_junctionexpression_constructor_exists():
+    assert callable(sadl_JunctionExpression.__init__)
+
+
+def test_sadl_junctionexpression_constructor_args():
+    sig = inspect.signature(sadl_JunctionExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_sadl::binaryopexpression_has_op():
-    assert hasattr(sadl::BinaryOpExpression, "op")
+def test_sadl_junctionexpression_has_op():
+    assert hasattr(sadl_JunctionExpression, "op")
     descriptor = None
-    for klass in sadl::BinaryOpExpression.__mro__:
+    for klass in sadl_JunctionExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -264,37 +278,23 @@ def test_sadl::binaryopexpression_has_op():
 
 
 
-def test_sadl::askqueryexpression_is_not_abstract():
-    assert not inspect.isabstract(sadl::AskQueryExpression)
+def test_sadl_unaryopexpression_is_not_abstract():
+    assert not inspect.isabstract(sadl_UnaryOpExpression)
 
 
-def test_sadl::askqueryexpression_constructor_exists():
-    assert callable(sadl::AskQueryExpression.__init__)
+def test_sadl_unaryopexpression_constructor_exists():
+    assert callable(sadl_UnaryOpExpression.__init__)
 
 
-def test_sadl::askqueryexpression_constructor_args():
-    sig = inspect.signature(sadl::AskQueryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::junctionexpression_is_not_abstract():
-    assert not inspect.isabstract(sadl::JunctionExpression)
-
-
-def test_sadl::junctionexpression_constructor_exists():
-    assert callable(sadl::JunctionExpression.__init__)
-
-
-def test_sadl::junctionexpression_constructor_args():
-    sig = inspect.signature(sadl::JunctionExpression.__init__)
+def test_sadl_unaryopexpression_constructor_args():
+    sig = inspect.signature(sadl_UnaryOpExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_sadl::junctionexpression_has_op():
-    assert hasattr(sadl::JunctionExpression, "op")
+def test_sadl_unaryopexpression_has_op():
+    assert hasattr(sadl_UnaryOpExpression, "op")
     descriptor = None
-    for klass in sadl::JunctionExpression.__mro__:
+    for klass in sadl_UnaryOpExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -302,23 +302,37 @@ def test_sadl::junctionexpression_has_op():
 
 
 
-def test_sadl::unaryopexpression_is_not_abstract():
-    assert not inspect.isabstract(sadl::UnaryOpExpression)
+def test_sadl_constructexpression_is_not_abstract():
+    assert not inspect.isabstract(sadl_ConstructExpression)
 
 
-def test_sadl::unaryopexpression_constructor_exists():
-    assert callable(sadl::UnaryOpExpression.__init__)
+def test_sadl_constructexpression_constructor_exists():
+    assert callable(sadl_ConstructExpression.__init__)
 
 
-def test_sadl::unaryopexpression_constructor_args():
-    sig = inspect.signature(sadl::UnaryOpExpression.__init__)
+def test_sadl_constructexpression_constructor_args():
+    sig = inspect.signature(sadl_ConstructExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_binaryopexpression_is_not_abstract():
+    assert not inspect.isabstract(sadl_BinaryOpExpression)
+
+
+def test_sadl_binaryopexpression_constructor_exists():
+    assert callable(sadl_BinaryOpExpression.__init__)
+
+
+def test_sadl_binaryopexpression_constructor_args():
+    sig = inspect.signature(sadl_BinaryOpExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_sadl::unaryopexpression_has_op():
-    assert hasattr(sadl::UnaryOpExpression, "op")
+def test_sadl_binaryopexpression_has_op():
+    assert hasattr(sadl_BinaryOpExpression, "op")
     descriptor = None
-    for klass in sadl::UnaryOpExpression.__mro__:
+    for klass in sadl_BinaryOpExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -326,81 +340,67 @@ def test_sadl::unaryopexpression_has_op():
 
 
 
-def test_sadl::constructexpression_is_not_abstract():
-    assert not inspect.isabstract(sadl::ConstructExpression)
+def test_sadl_selectexpression_is_not_abstract():
+    assert not inspect.isabstract(sadl_SelectExpression)
 
 
-def test_sadl::constructexpression_constructor_exists():
-    assert callable(sadl::ConstructExpression.__init__)
+def test_sadl_selectexpression_constructor_exists():
+    assert callable(sadl_SelectExpression.__init__)
 
 
-def test_sadl::constructexpression_constructor_args():
-    sig = inspect.signature(sadl::ConstructExpression.__init__)
+def test_sadl_selectexpression_constructor_args():
+    sig = inspect.signature(sadl_SelectExpression.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_sadl::selectexpression_is_not_abstract():
-    assert not inspect.isabstract(sadl::SelectExpression)
-
-
-def test_sadl::selectexpression_constructor_exists():
-    assert callable(sadl::SelectExpression.__init__)
-
-
-def test_sadl::selectexpression_constructor_args():
-    sig = inspect.signature(sadl::SelectExpression.__init__)
-    params = list(sig.parameters.keys())
+    assert "orderby" in params, "Missing parameter 'orderby'"
     assert "distinct" in params, "Missing parameter 'distinct'"
     assert "allVars" in params, "Missing parameter 'allVars'"
-    assert "orderby" in params, "Missing parameter 'orderby'"
 
-def test_sadl::selectexpression_has_distinct():
-    assert hasattr(sadl::SelectExpression, "distinct")
+def test_sadl_selectexpression_has_orderby():
+    assert hasattr(sadl_SelectExpression, "orderby")
     descriptor = None
-    for klass in sadl::SelectExpression.__mro__:
-        if "distinct" in klass.__dict__:
-            descriptor = klass.__dict__["distinct"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::selectexpression_has_allVars():
-    assert hasattr(sadl::SelectExpression, "allVars")
-    descriptor = None
-    for klass in sadl::SelectExpression.__mro__:
-        if "allVars" in klass.__dict__:
-            descriptor = klass.__dict__["allVars"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::selectexpression_has_orderby():
-    assert hasattr(sadl::SelectExpression, "orderby")
-    descriptor = None
-    for klass in sadl::SelectExpression.__mro__:
+    for klass in sadl_SelectExpression.__mro__:
         if "orderby" in klass.__dict__:
             descriptor = klass.__dict__["orderby"]
             break
     assert isinstance(descriptor, property)
 
+def test_sadl_selectexpression_has_distinct():
+    assert hasattr(sadl_SelectExpression, "distinct")
+    descriptor = None
+    for klass in sadl_SelectExpression.__mro__:
+        if "distinct" in klass.__dict__:
+            descriptor = klass.__dict__["distinct"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_selectexpression_has_allVars():
+    assert hasattr(sadl_SelectExpression, "allVars")
+    descriptor = None
+    for klass in sadl_SelectExpression.__mro__:
+        if "allVars" in klass.__dict__:
+            descriptor = klass.__dict__["allVars"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sadl::expression_is_not_abstract():
-    assert not inspect.isabstract(sadl::Expression)
+
+def test_sadl_expression_is_not_abstract():
+    assert not inspect.isabstract(sadl_Expression)
 
 
-def test_sadl::expression_constructor_exists():
-    assert callable(sadl::Expression.__init__)
+def test_sadl_expression_constructor_exists():
+    assert callable(sadl_Expression.__init__)
 
 
-def test_sadl::expression_constructor_args():
-    sig = inspect.signature(sadl::Expression.__init__)
+def test_sadl_expression_constructor_args():
+    sig = inspect.signature(sadl_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "func" in params, "Missing parameter 'func'"
 
-def test_sadl::expression_has_func():
-    assert hasattr(sadl::Expression, "func")
+def test_sadl_expression_has_func():
+    assert hasattr(sadl_Expression, "func")
     descriptor = None
-    for klass in sadl::Expression.__mro__:
+    for klass in sadl_Expression.__mro__:
         if "func" in klass.__dict__:
             descriptor = klass.__dict__["func"]
             break
@@ -408,44 +408,44 @@ def test_sadl::expression_has_func():
 
 
 
-def test_sadl::elementset_is_not_abstract():
-    assert not inspect.isabstract(sadl::ElementSet)
+def test_sadl_elementset_is_not_abstract():
+    assert not inspect.isabstract(sadl_ElementSet)
 
 
-def test_sadl::elementset_constructor_exists():
-    assert callable(sadl::ElementSet.__init__)
+def test_sadl_elementset_constructor_exists():
+    assert callable(sadl_ElementSet.__init__)
 
 
-def test_sadl::elementset_constructor_args():
-    sig = inspect.signature(sadl::ElementSet.__init__)
+def test_sadl_elementset_constructor_args():
+    sig = inspect.signature(sadl_ElementSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::object_is_not_abstract():
-    assert not inspect.isabstract(sadl::Object)
+def test_sadl_object_is_not_abstract():
+    assert not inspect.isabstract(sadl_Object)
 
 
-def test_sadl::object_constructor_exists():
-    assert callable(sadl::Object.__init__)
+def test_sadl_object_constructor_exists():
+    assert callable(sadl_Object.__init__)
 
 
-def test_sadl::object_constructor_args():
-    sig = inspect.signature(sadl::Object.__init__)
+def test_sadl_object_constructor_args():
+    sig = inspect.signature(sadl_Object.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::variablelist_is_not_abstract():
-    assert not inspect.isabstract(sadl::VariableList)
+def test_sadl_variablelist_is_not_abstract():
+    assert not inspect.isabstract(sadl_VariableList)
 
 
-def test_sadl::variablelist_constructor_exists():
-    assert callable(sadl::VariableList.__init__)
+def test_sadl_variablelist_constructor_exists():
+    assert callable(sadl_VariableList.__init__)
 
 
-def test_sadl::variablelist_constructor_args():
-    sig = inspect.signature(sadl::VariableList.__init__)
+def test_sadl_variablelist_constructor_args():
+    sig = inspect.signature(sadl_VariableList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -464,163 +464,163 @@ def test_graphpattern_constructor_args():
 
 
 
-def test_sadl::instattrpsv_is_not_abstract():
-    assert not inspect.isabstract(sadl::InstAttrPSV)
+def test_sadl_instattrspv_is_not_abstract():
+    assert not inspect.isabstract(sadl_InstAttrSPV)
 
 
-def test_sadl::instattrpsv_constructor_exists():
-    assert callable(sadl::InstAttrPSV.__init__)
+def test_sadl_instattrspv_constructor_exists():
+    assert callable(sadl_InstAttrSPV.__init__)
 
 
-def test_sadl::instattrpsv_constructor_args():
-    sig = inspect.signature(sadl::InstAttrPSV.__init__)
+def test_sadl_instattrspv_constructor_args():
+    sig = inspect.signature(sadl_InstAttrSPV.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::subjprop_is_not_abstract():
-    assert not inspect.isabstract(sadl::SubjProp)
+def test_sadl_existentialnegation_is_not_abstract():
+    assert not inspect.isabstract(sadl_ExistentialNegation)
 
 
-def test_sadl::subjprop_constructor_exists():
-    assert callable(sadl::SubjProp.__init__)
+def test_sadl_existentialnegation_constructor_exists():
+    assert callable(sadl_ExistentialNegation.__init__)
 
 
-def test_sadl::subjprop_constructor_args():
-    sig = inspect.signature(sadl::SubjProp.__init__)
+def test_sadl_existentialnegation_constructor_args():
+    sig = inspect.signature(sadl_ExistentialNegation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::propofsubj_is_not_abstract():
-    assert not inspect.isabstract(sadl::PropOfSubj)
+def test_sadl_instattrpsv_is_not_abstract():
+    assert not inspect.isabstract(sadl_InstAttrPSV)
 
 
-def test_sadl::propofsubj_constructor_exists():
-    assert callable(sadl::PropOfSubj.__init__)
+def test_sadl_instattrpsv_constructor_exists():
+    assert callable(sadl_InstAttrPSV.__init__)
 
 
-def test_sadl::propofsubj_constructor_args():
-    sig = inspect.signature(sadl::PropOfSubj.__init__)
+def test_sadl_instattrpsv_constructor_args():
+    sig = inspect.signature(sadl_InstAttrPSV.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::existentialnegation_is_not_abstract():
-    assert not inspect.isabstract(sadl::ExistentialNegation)
+def test_sadl_propofsubj_is_not_abstract():
+    assert not inspect.isabstract(sadl_PropOfSubj)
 
 
-def test_sadl::existentialnegation_constructor_exists():
-    assert callable(sadl::ExistentialNegation.__init__)
+def test_sadl_propofsubj_constructor_exists():
+    assert callable(sadl_PropOfSubj.__init__)
 
 
-def test_sadl::existentialnegation_constructor_args():
-    sig = inspect.signature(sadl::ExistentialNegation.__init__)
+def test_sadl_propofsubj_constructor_args():
+    sig = inspect.signature(sadl_PropOfSubj.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::subtypeof_is_not_abstract():
-    assert not inspect.isabstract(sadl::SubTypeOf)
+def test_sadl_subtypeof_is_not_abstract():
+    assert not inspect.isabstract(sadl_SubTypeOf)
 
 
-def test_sadl::subtypeof_constructor_exists():
-    assert callable(sadl::SubTypeOf.__init__)
+def test_sadl_subtypeof_constructor_exists():
+    assert callable(sadl_SubTypeOf.__init__)
 
 
-def test_sadl::subtypeof_constructor_args():
-    sig = inspect.signature(sadl::SubTypeOf.__init__)
+def test_sadl_subtypeof_constructor_args():
+    sig = inspect.signature(sadl_SubTypeOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::instattrspv_is_not_abstract():
-    assert not inspect.isabstract(sadl::InstAttrSPV)
+def test_sadl_subjprop_is_not_abstract():
+    assert not inspect.isabstract(sadl_SubjProp)
 
 
-def test_sadl::instattrspv_constructor_exists():
-    assert callable(sadl::InstAttrSPV.__init__)
+def test_sadl_subjprop_constructor_exists():
+    assert callable(sadl_SubjProp.__init__)
 
 
-def test_sadl::instattrspv_constructor_args():
-    sig = inspect.signature(sadl::InstAttrSPV.__init__)
+def test_sadl_subjprop_constructor_args():
+    sig = inspect.signature(sadl_SubjProp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::mergedtriples_is_not_abstract():
-    assert not inspect.isabstract(sadl::MergedTriples)
+def test_sadl_mergedtriples_is_not_abstract():
+    assert not inspect.isabstract(sadl_MergedTriples)
 
 
-def test_sadl::mergedtriples_constructor_exists():
-    assert callable(sadl::MergedTriples.__init__)
+def test_sadl_mergedtriples_constructor_exists():
+    assert callable(sadl_MergedTriples.__init__)
 
 
-def test_sadl::mergedtriples_constructor_args():
-    sig = inspect.signature(sadl::MergedTriples.__init__)
+def test_sadl_mergedtriples_constructor_args():
+    sig = inspect.signature(sadl_MergedTriples.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::embeddedinstancedeclaration_is_not_abstract():
-    assert not inspect.isabstract(sadl::EmbeddedInstanceDeclaration)
+def test_sadl_embeddedinstancedeclaration_is_not_abstract():
+    assert not inspect.isabstract(sadl_EmbeddedInstanceDeclaration)
 
 
-def test_sadl::embeddedinstancedeclaration_constructor_exists():
-    assert callable(sadl::EmbeddedInstanceDeclaration.__init__)
+def test_sadl_embeddedinstancedeclaration_constructor_exists():
+    assert callable(sadl_EmbeddedInstanceDeclaration.__init__)
 
 
-def test_sadl::embeddedinstancedeclaration_constructor_args():
-    sig = inspect.signature(sadl::EmbeddedInstanceDeclaration.__init__)
+def test_sadl_embeddedinstancedeclaration_constructor_args():
+    sig = inspect.signature(sadl_EmbeddedInstanceDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::withphrase_is_not_abstract():
-    assert not inspect.isabstract(sadl::WithPhrase)
+def test_sadl_withphrase_is_not_abstract():
+    assert not inspect.isabstract(sadl_WithPhrase)
 
 
-def test_sadl::withphrase_constructor_exists():
-    assert callable(sadl::WithPhrase.__init__)
+def test_sadl_withphrase_constructor_exists():
+    assert callable(sadl_WithPhrase.__init__)
 
 
-def test_sadl::withphrase_constructor_args():
-    sig = inspect.signature(sadl::WithPhrase.__init__)
+def test_sadl_withphrase_constructor_args():
+    sig = inspect.signature(sadl_WithPhrase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::withchain_is_not_abstract():
-    assert not inspect.isabstract(sadl::WithChain)
+def test_sadl_withchain_is_not_abstract():
+    assert not inspect.isabstract(sadl_WithChain)
 
 
-def test_sadl::withchain_constructor_exists():
-    assert callable(sadl::WithChain.__init__)
+def test_sadl_withchain_constructor_exists():
+    assert callable(sadl_WithChain.__init__)
 
 
-def test_sadl::withchain_constructor_args():
-    sig = inspect.signature(sadl::WithChain.__init__)
+def test_sadl_withchain_constructor_args():
+    sig = inspect.signature(sadl_WithChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::ofphrase_is_not_abstract():
-    assert not inspect.isabstract(sadl::OfPhrase)
+def test_sadl_ofphrase_is_not_abstract():
+    assert not inspect.isabstract(sadl_OfPhrase)
 
 
-def test_sadl::ofphrase_constructor_exists():
-    assert callable(sadl::OfPhrase.__init__)
+def test_sadl_ofphrase_constructor_exists():
+    assert callable(sadl_OfPhrase.__init__)
 
 
-def test_sadl::ofphrase_constructor_args():
-    sig = inspect.signature(sadl::OfPhrase.__init__)
+def test_sadl_ofphrase_constructor_args():
+    sig = inspect.signature(sadl_OfPhrase.__init__)
     params = list(sig.parameters.keys())
     assert "article" in params, "Missing parameter 'article'"
 
-def test_sadl::ofphrase_has_article():
-    assert hasattr(sadl::OfPhrase, "article")
+def test_sadl_ofphrase_has_article():
+    assert hasattr(sadl_OfPhrase, "article")
     descriptor = None
-    for klass in sadl::OfPhrase.__mro__:
+    for klass in sadl_OfPhrase.__mro__:
         if "article" in klass.__dict__:
             descriptor = klass.__dict__["article"]
             break
@@ -628,16 +628,16 @@ def test_sadl::ofphrase_has_article():
 
 
 
-def test_sadl::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(sadl::TypeDeclaration)
+def test_sadl_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(sadl_TypeDeclaration)
 
 
-def test_sadl::typedeclaration_constructor_exists():
-    assert callable(sadl::TypeDeclaration.__init__)
+def test_sadl_typedeclaration_constructor_exists():
+    assert callable(sadl_TypeDeclaration.__init__)
 
 
-def test_sadl::typedeclaration_constructor_args():
-    sig = inspect.signature(sadl::TypeDeclaration.__init__)
+def test_sadl_typedeclaration_constructor_args():
+    sig = inspect.signature(sadl_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -670,23 +670,23 @@ def test_instancedeclarationstatement_constructor_args():
 
 
 
-def test_sadl::instancedeclaration_is_not_abstract():
-    assert not inspect.isabstract(sadl::InstanceDeclaration)
+def test_sadl_instancedeclaration_is_not_abstract():
+    assert not inspect.isabstract(sadl_InstanceDeclaration)
 
 
-def test_sadl::instancedeclaration_constructor_exists():
-    assert callable(sadl::InstanceDeclaration.__init__)
+def test_sadl_instancedeclaration_constructor_exists():
+    assert callable(sadl_InstanceDeclaration.__init__)
 
 
-def test_sadl::instancedeclaration_constructor_args():
-    sig = inspect.signature(sadl::InstanceDeclaration.__init__)
+def test_sadl_instancedeclaration_constructor_args():
+    sig = inspect.signature(sadl_InstanceDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "article" in params, "Missing parameter 'article'"
 
-def test_sadl::instancedeclaration_has_article():
-    assert hasattr(sadl::InstanceDeclaration, "article")
+def test_sadl_instancedeclaration_has_article():
+    assert hasattr(sadl_InstanceDeclaration, "article")
     descriptor = None
-    for klass in sadl::InstanceDeclaration.__mro__:
+    for klass in sadl_InstanceDeclaration.__mro__:
         if "article" in klass.__dict__:
             descriptor = klass.__dict__["article"]
             break
@@ -694,95 +694,95 @@ def test_sadl::instancedeclaration_has_article():
 
 
 
-def test_sadl::ofpatternreturningvalues_is_not_abstract():
-    assert not inspect.isabstract(sadl::OfPatternReturningValues)
+def test_sadl_ofpatternreturningvalues_is_not_abstract():
+    assert not inspect.isabstract(sadl_OfPatternReturningValues)
 
 
-def test_sadl::ofpatternreturningvalues_constructor_exists():
-    assert callable(sadl::OfPatternReturningValues.__init__)
+def test_sadl_ofpatternreturningvalues_constructor_exists():
+    assert callable(sadl_OfPatternReturningValues.__init__)
 
 
-def test_sadl::ofpatternreturningvalues_constructor_args():
-    sig = inspect.signature(sadl::OfPatternReturningValues.__init__)
+def test_sadl_ofpatternreturningvalues_constructor_args():
+    sig = inspect.signature(sadl_OfPatternReturningValues.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::propvalpartialtriple_is_not_abstract():
-    assert not inspect.isabstract(sadl::PropValPartialTriple)
+def test_sadl_propvalpartialtriple_is_not_abstract():
+    assert not inspect.isabstract(sadl_PropValPartialTriple)
 
 
-def test_sadl::propvalpartialtriple_constructor_exists():
-    assert callable(sadl::PropValPartialTriple.__init__)
+def test_sadl_propvalpartialtriple_constructor_exists():
+    assert callable(sadl_PropValPartialTriple.__init__)
 
 
-def test_sadl::propvalpartialtriple_constructor_args():
-    sig = inspect.signature(sadl::PropValPartialTriple.__init__)
+def test_sadl_propvalpartialtriple_constructor_args():
+    sig = inspect.signature(sadl_PropValPartialTriple.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::isinverseof_is_not_abstract():
-    assert not inspect.isabstract(sadl::IsInverseOf)
+def test_sadl_isinverseof_is_not_abstract():
+    assert not inspect.isabstract(sadl_IsInverseOf)
 
 
-def test_sadl::isinverseof_constructor_exists():
-    assert callable(sadl::IsInverseOf.__init__)
+def test_sadl_isinverseof_constructor_exists():
+    assert callable(sadl_IsInverseOf.__init__)
 
 
-def test_sadl::isinverseof_constructor_args():
-    sig = inspect.signature(sadl::IsInverseOf.__init__)
+def test_sadl_isinverseof_constructor_args():
+    sig = inspect.signature(sadl_IsInverseOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::additionalpropertyinfo_is_not_abstract():
-    assert not inspect.isabstract(sadl::AdditionalPropertyInfo)
+def test_sadl_additionalpropertyinfo_is_not_abstract():
+    assert not inspect.isabstract(sadl_AdditionalPropertyInfo)
 
 
-def test_sadl::additionalpropertyinfo_constructor_exists():
-    assert callable(sadl::AdditionalPropertyInfo.__init__)
+def test_sadl_additionalpropertyinfo_constructor_exists():
+    assert callable(sadl_AdditionalPropertyInfo.__init__)
 
 
-def test_sadl::additionalpropertyinfo_constructor_args():
-    sig = inspect.signature(sadl::AdditionalPropertyInfo.__init__)
+def test_sadl_additionalpropertyinfo_constructor_args():
+    sig = inspect.signature(sadl_AdditionalPropertyInfo.__init__)
     params = list(sig.parameters.keys())
-    assert "isTrans" in params, "Missing parameter 'isTrans'"
     assert "isfunc" in params, "Missing parameter 'isfunc'"
     assert "isinvfunc" in params, "Missing parameter 'isinvfunc'"
+    assert "isTrans" in params, "Missing parameter 'isTrans'"
     assert "isSym" in params, "Missing parameter 'isSym'"
 
-def test_sadl::additionalpropertyinfo_has_isTrans():
-    assert hasattr(sadl::AdditionalPropertyInfo, "isTrans")
+def test_sadl_additionalpropertyinfo_has_isfunc():
+    assert hasattr(sadl_AdditionalPropertyInfo, "isfunc")
     descriptor = None
-    for klass in sadl::AdditionalPropertyInfo.__mro__:
-        if "isTrans" in klass.__dict__:
-            descriptor = klass.__dict__["isTrans"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::additionalpropertyinfo_has_isfunc():
-    assert hasattr(sadl::AdditionalPropertyInfo, "isfunc")
-    descriptor = None
-    for klass in sadl::AdditionalPropertyInfo.__mro__:
+    for klass in sadl_AdditionalPropertyInfo.__mro__:
         if "isfunc" in klass.__dict__:
             descriptor = klass.__dict__["isfunc"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::additionalpropertyinfo_has_isinvfunc():
-    assert hasattr(sadl::AdditionalPropertyInfo, "isinvfunc")
+def test_sadl_additionalpropertyinfo_has_isinvfunc():
+    assert hasattr(sadl_AdditionalPropertyInfo, "isinvfunc")
     descriptor = None
-    for klass in sadl::AdditionalPropertyInfo.__mro__:
+    for klass in sadl_AdditionalPropertyInfo.__mro__:
         if "isinvfunc" in klass.__dict__:
             descriptor = klass.__dict__["isinvfunc"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::additionalpropertyinfo_has_isSym():
-    assert hasattr(sadl::AdditionalPropertyInfo, "isSym")
+def test_sadl_additionalpropertyinfo_has_isTrans():
+    assert hasattr(sadl_AdditionalPropertyInfo, "isTrans")
     descriptor = None
-    for klass in sadl::AdditionalPropertyInfo.__mro__:
+    for klass in sadl_AdditionalPropertyInfo.__mro__:
+        if "isTrans" in klass.__dict__:
+            descriptor = klass.__dict__["isTrans"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_additionalpropertyinfo_has_isSym():
+    assert hasattr(sadl_AdditionalPropertyInfo, "isSym")
+    descriptor = None
+    for klass in sadl_AdditionalPropertyInfo.__mro__:
         if "isSym" in klass.__dict__:
             descriptor = klass.__dict__["isSym"]
             break
@@ -790,23 +790,23 @@ def test_sadl::additionalpropertyinfo_has_isSym():
 
 
 
-def test_sadl::typedbnode_is_not_abstract():
-    assert not inspect.isabstract(sadl::TypedBNode)
+def test_sadl_typedbnode_is_not_abstract():
+    assert not inspect.isabstract(sadl_TypedBNode)
 
 
-def test_sadl::typedbnode_constructor_exists():
-    assert callable(sadl::TypedBNode.__init__)
+def test_sadl_typedbnode_constructor_exists():
+    assert callable(sadl_TypedBNode.__init__)
 
 
-def test_sadl::typedbnode_constructor_args():
-    sig = inspect.signature(sadl::TypedBNode.__init__)
+def test_sadl_typedbnode_constructor_args():
+    sig = inspect.signature(sadl_TypedBNode.__init__)
     params = list(sig.parameters.keys())
     assert "article" in params, "Missing parameter 'article'"
 
-def test_sadl::typedbnode_has_article():
-    assert hasattr(sadl::TypedBNode, "article")
+def test_sadl_typedbnode_has_article():
+    assert hasattr(sadl_TypedBNode, "article")
     descriptor = None
-    for klass in sadl::TypedBNode.__mro__:
+    for klass in sadl_TypedBNode.__mro__:
         if "article" in klass.__dict__:
             descriptor = klass.__dict__["article"]
             break
@@ -814,33 +814,33 @@ def test_sadl::typedbnode_has_article():
 
 
 
-def test_sadl::explicitvalue_is_not_abstract():
-    assert not inspect.isabstract(sadl::ExplicitValue)
+def test_sadl_explicitvalue_is_not_abstract():
+    assert not inspect.isabstract(sadl_ExplicitValue)
 
 
-def test_sadl::explicitvalue_constructor_exists():
-    assert callable(sadl::ExplicitValue.__init__)
+def test_sadl_explicitvalue_constructor_exists():
+    assert callable(sadl_ExplicitValue.__init__)
 
 
-def test_sadl::explicitvalue_constructor_args():
-    sig = inspect.signature(sadl::ExplicitValue.__init__)
+def test_sadl_explicitvalue_constructor_args():
+    sig = inspect.signature(sadl_ExplicitValue.__init__)
     params = list(sig.parameters.keys())
     assert "valueList" in params, "Missing parameter 'valueList'"
     assert "term" in params, "Missing parameter 'term'"
 
-def test_sadl::explicitvalue_has_valueList():
-    assert hasattr(sadl::ExplicitValue, "valueList")
+def test_sadl_explicitvalue_has_valueList():
+    assert hasattr(sadl_ExplicitValue, "valueList")
     descriptor = None
-    for klass in sadl::ExplicitValue.__mro__:
+    for klass in sadl_ExplicitValue.__mro__:
         if "valueList" in klass.__dict__:
             descriptor = klass.__dict__["valueList"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::explicitvalue_has_term():
-    assert hasattr(sadl::ExplicitValue, "term")
+def test_sadl_explicitvalue_has_term():
+    assert hasattr(sadl_ExplicitValue, "term")
     descriptor = None
-    for klass in sadl::ExplicitValue.__mro__:
+    for klass in sadl_ExplicitValue.__mro__:
         if "term" in klass.__dict__:
             descriptor = klass.__dict__["term"]
             break
@@ -848,16 +848,16 @@ def test_sadl::explicitvalue_has_term():
 
 
 
-def test_sadl::eobject_is_not_abstract():
-    assert not inspect.isabstract(sadl::EObject)
+def test_sadl_eobject_is_not_abstract():
+    assert not inspect.isabstract(sadl_EObject)
 
 
-def test_sadl::eobject_constructor_exists():
-    assert callable(sadl::EObject.__init__)
+def test_sadl_eobject_constructor_exists():
+    assert callable(sadl_EObject.__init__)
 
 
-def test_sadl::eobject_constructor_args():
-    sig = inspect.signature(sadl::EObject.__init__)
+def test_sadl_eobject_constructor_args():
+    sig = inspect.signature(sadl_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -876,23 +876,23 @@ def test_condition_constructor_args():
 
 
 
-def test_sadl::cardcondition_is_not_abstract():
-    assert not inspect.isabstract(sadl::CardCondition)
+def test_sadl_cardcondition_is_not_abstract():
+    assert not inspect.isabstract(sadl_CardCondition)
 
 
-def test_sadl::cardcondition_constructor_exists():
-    assert callable(sadl::CardCondition.__init__)
+def test_sadl_cardcondition_constructor_exists():
+    assert callable(sadl_CardCondition.__init__)
 
 
-def test_sadl::cardcondition_constructor_args():
-    sig = inspect.signature(sadl::CardCondition.__init__)
+def test_sadl_cardcondition_constructor_args():
+    sig = inspect.signature(sadl_CardCondition.__init__)
     params = list(sig.parameters.keys())
     assert "card" in params, "Missing parameter 'card'"
 
-def test_sadl::cardcondition_has_card():
-    assert hasattr(sadl::CardCondition, "card")
+def test_sadl_cardcondition_has_card():
+    assert hasattr(sadl_CardCondition, "card")
     descriptor = None
-    for klass in sadl::CardCondition.__mro__:
+    for klass in sadl_CardCondition.__mro__:
         if "card" in klass.__dict__:
             descriptor = klass.__dict__["card"]
             break
@@ -900,23 +900,23 @@ def test_sadl::cardcondition_has_card():
 
 
 
-def test_sadl::maxcardcondition_is_not_abstract():
-    assert not inspect.isabstract(sadl::MaxCardCondition)
+def test_sadl_maxcardcondition_is_not_abstract():
+    assert not inspect.isabstract(sadl_MaxCardCondition)
 
 
-def test_sadl::maxcardcondition_constructor_exists():
-    assert callable(sadl::MaxCardCondition.__init__)
+def test_sadl_maxcardcondition_constructor_exists():
+    assert callable(sadl_MaxCardCondition.__init__)
 
 
-def test_sadl::maxcardcondition_constructor_args():
-    sig = inspect.signature(sadl::MaxCardCondition.__init__)
+def test_sadl_maxcardcondition_constructor_args():
+    sig = inspect.signature(sadl_MaxCardCondition.__init__)
     params = list(sig.parameters.keys())
     assert "card" in params, "Missing parameter 'card'"
 
-def test_sadl::maxcardcondition_has_card():
-    assert hasattr(sadl::MaxCardCondition, "card")
+def test_sadl_maxcardcondition_has_card():
+    assert hasattr(sadl_MaxCardCondition, "card")
     descriptor = None
-    for klass in sadl::MaxCardCondition.__mro__:
+    for klass in sadl_MaxCardCondition.__mro__:
         if "card" in klass.__dict__:
             descriptor = klass.__dict__["card"]
             break
@@ -924,23 +924,23 @@ def test_sadl::maxcardcondition_has_card():
 
 
 
-def test_sadl::mincardcondition_is_not_abstract():
-    assert not inspect.isabstract(sadl::MinCardCondition)
+def test_sadl_mincardcondition_is_not_abstract():
+    assert not inspect.isabstract(sadl_MinCardCondition)
 
 
-def test_sadl::mincardcondition_constructor_exists():
-    assert callable(sadl::MinCardCondition.__init__)
+def test_sadl_mincardcondition_constructor_exists():
+    assert callable(sadl_MinCardCondition.__init__)
 
 
-def test_sadl::mincardcondition_constructor_args():
-    sig = inspect.signature(sadl::MinCardCondition.__init__)
+def test_sadl_mincardcondition_constructor_args():
+    sig = inspect.signature(sadl_MinCardCondition.__init__)
     params = list(sig.parameters.keys())
     assert "card" in params, "Missing parameter 'card'"
 
-def test_sadl::mincardcondition_has_card():
-    assert hasattr(sadl::MinCardCondition, "card")
+def test_sadl_mincardcondition_has_card():
+    assert hasattr(sadl_MinCardCondition, "card")
     descriptor = None
-    for klass in sadl::MinCardCondition.__mro__:
+    for klass in sadl_MinCardCondition.__mro__:
         if "card" in klass.__dict__:
             descriptor = klass.__dict__["card"]
             break
@@ -948,195 +948,195 @@ def test_sadl::mincardcondition_has_card():
 
 
 
-def test_sadl::hasvaluecondition_is_not_abstract():
-    assert not inspect.isabstract(sadl::HasValueCondition)
+def test_sadl_hasvaluecondition_is_not_abstract():
+    assert not inspect.isabstract(sadl_HasValueCondition)
 
 
-def test_sadl::hasvaluecondition_constructor_exists():
-    assert callable(sadl::HasValueCondition.__init__)
+def test_sadl_hasvaluecondition_constructor_exists():
+    assert callable(sadl_HasValueCondition.__init__)
 
 
-def test_sadl::hasvaluecondition_constructor_args():
-    sig = inspect.signature(sadl::HasValueCondition.__init__)
+def test_sadl_hasvaluecondition_constructor_args():
+    sig = inspect.signature(sadl_HasValueCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::somevaluescondition_is_not_abstract():
-    assert not inspect.isabstract(sadl::SomeValuesCondition)
+def test_sadl_somevaluescondition_is_not_abstract():
+    assert not inspect.isabstract(sadl_SomeValuesCondition)
 
 
-def test_sadl::somevaluescondition_constructor_exists():
-    assert callable(sadl::SomeValuesCondition.__init__)
+def test_sadl_somevaluescondition_constructor_exists():
+    assert callable(sadl_SomeValuesCondition.__init__)
 
 
-def test_sadl::somevaluescondition_constructor_args():
-    sig = inspect.signature(sadl::SomeValuesCondition.__init__)
+def test_sadl_somevaluescondition_constructor_args():
+    sig = inspect.signature(sadl_SomeValuesCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::allvaluescondition_is_not_abstract():
-    assert not inspect.isabstract(sadl::AllValuesCondition)
+def test_sadl_allvaluescondition_is_not_abstract():
+    assert not inspect.isabstract(sadl_AllValuesCondition)
 
 
-def test_sadl::allvaluescondition_constructor_exists():
-    assert callable(sadl::AllValuesCondition.__init__)
+def test_sadl_allvaluescondition_constructor_exists():
+    assert callable(sadl_AllValuesCondition.__init__)
 
 
-def test_sadl::allvaluescondition_constructor_args():
-    sig = inspect.signature(sadl::AllValuesCondition.__init__)
+def test_sadl_allvaluescondition_constructor_args():
+    sig = inspect.signature(sadl_AllValuesCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::propertyofclass_is_not_abstract():
-    assert not inspect.isabstract(sadl::PropertyOfClass)
+def test_sadl_propertyofclass_is_not_abstract():
+    assert not inspect.isabstract(sadl_PropertyOfClass)
 
 
-def test_sadl::propertyofclass_constructor_exists():
-    assert callable(sadl::PropertyOfClass.__init__)
+def test_sadl_propertyofclass_constructor_exists():
+    assert callable(sadl_PropertyOfClass.__init__)
 
 
-def test_sadl::propertyofclass_constructor_args():
-    sig = inspect.signature(sadl::PropertyOfClass.__init__)
+def test_sadl_propertyofclass_constructor_args():
+    sig = inspect.signature(sadl_PropertyOfClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::facets_is_not_abstract():
-    assert not inspect.isabstract(sadl::Facets)
+def test_sadl_facets_is_not_abstract():
+    assert not inspect.isabstract(sadl_Facets)
 
 
-def test_sadl::facets_constructor_exists():
-    assert callable(sadl::Facets.__init__)
+def test_sadl_facets_constructor_exists():
+    assert callable(sadl_Facets.__init__)
 
 
-def test_sadl::facets_constructor_args():
-    sig = inspect.signature(sadl::Facets.__init__)
+def test_sadl_facets_constructor_args():
+    sig = inspect.signature(sadl_Facets.__init__)
     params = list(sig.parameters.keys())
-    assert "regex" in params, "Missing parameter 'regex'"
     assert "min" in params, "Missing parameter 'min'"
-    assert "minlen" in params, "Missing parameter 'minlen'"
-    assert "max" in params, "Missing parameter 'max'"
+    assert "len" in params, "Missing parameter 'len'"
     assert "maxlen" in params, "Missing parameter 'maxlen'"
     assert "values" in params, "Missing parameter 'values'"
     assert "maxexin" in params, "Missing parameter 'maxexin'"
+    assert "max" in params, "Missing parameter 'max'"
     assert "minexin" in params, "Missing parameter 'minexin'"
-    assert "len" in params, "Missing parameter 'len'"
+    assert "regex" in params, "Missing parameter 'regex'"
+    assert "minlen" in params, "Missing parameter 'minlen'"
 
-def test_sadl::facets_has_regex():
-    assert hasattr(sadl::Facets, "regex")
+def test_sadl_facets_has_min():
+    assert hasattr(sadl_Facets, "min")
     descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "regex" in klass.__dict__:
-            descriptor = klass.__dict__["regex"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_min():
-    assert hasattr(sadl::Facets, "min")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
+    for klass in sadl_Facets.__mro__:
         if "min" in klass.__dict__:
             descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::facets_has_minlen():
-    assert hasattr(sadl::Facets, "minlen")
+def test_sadl_facets_has_len():
+    assert hasattr(sadl_Facets, "len")
     descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "minlen" in klass.__dict__:
-            descriptor = klass.__dict__["minlen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_max():
-    assert hasattr(sadl::Facets, "max")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_maxlen():
-    assert hasattr(sadl::Facets, "maxlen")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "maxlen" in klass.__dict__:
-            descriptor = klass.__dict__["maxlen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_values():
-    assert hasattr(sadl::Facets, "values")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "values" in klass.__dict__:
-            descriptor = klass.__dict__["values"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_maxexin():
-    assert hasattr(sadl::Facets, "maxexin")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "maxexin" in klass.__dict__:
-            descriptor = klass.__dict__["maxexin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_minexin():
-    assert hasattr(sadl::Facets, "minexin")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
-        if "minexin" in klass.__dict__:
-            descriptor = klass.__dict__["minexin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::facets_has_len():
-    assert hasattr(sadl::Facets, "len")
-    descriptor = None
-    for klass in sadl::Facets.__mro__:
+    for klass in sadl_Facets.__mro__:
         if "len" in klass.__dict__:
             descriptor = klass.__dict__["len"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_sadl::datatyperestriction_is_not_abstract():
-    assert not inspect.isabstract(sadl::DataTypeRestriction)
-
-
-def test_sadl::datatyperestriction_constructor_exists():
-    assert callable(sadl::DataTypeRestriction.__init__)
-
-
-def test_sadl::datatyperestriction_constructor_args():
-    sig = inspect.signature(sadl::DataTypeRestriction.__init__)
-    params = list(sig.parameters.keys())
-    assert "basetype" in params, "Missing parameter 'basetype'"
-    assert "basetypes" in params, "Missing parameter 'basetypes'"
-
-def test_sadl::datatyperestriction_has_basetype():
-    assert hasattr(sadl::DataTypeRestriction, "basetype")
+def test_sadl_facets_has_maxlen():
+    assert hasattr(sadl_Facets, "maxlen")
     descriptor = None
-    for klass in sadl::DataTypeRestriction.__mro__:
-        if "basetype" in klass.__dict__:
-            descriptor = klass.__dict__["basetype"]
+    for klass in sadl_Facets.__mro__:
+        if "maxlen" in klass.__dict__:
+            descriptor = klass.__dict__["maxlen"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::datatyperestriction_has_basetypes():
-    assert hasattr(sadl::DataTypeRestriction, "basetypes")
+def test_sadl_facets_has_values():
+    assert hasattr(sadl_Facets, "values")
     descriptor = None
-    for klass in sadl::DataTypeRestriction.__mro__:
+    for klass in sadl_Facets.__mro__:
+        if "values" in klass.__dict__:
+            descriptor = klass.__dict__["values"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_facets_has_maxexin():
+    assert hasattr(sadl_Facets, "maxexin")
+    descriptor = None
+    for klass in sadl_Facets.__mro__:
+        if "maxexin" in klass.__dict__:
+            descriptor = klass.__dict__["maxexin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_facets_has_max():
+    assert hasattr(sadl_Facets, "max")
+    descriptor = None
+    for klass in sadl_Facets.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_facets_has_minexin():
+    assert hasattr(sadl_Facets, "minexin")
+    descriptor = None
+    for klass in sadl_Facets.__mro__:
+        if "minexin" in klass.__dict__:
+            descriptor = klass.__dict__["minexin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_facets_has_regex():
+    assert hasattr(sadl_Facets, "regex")
+    descriptor = None
+    for klass in sadl_Facets.__mro__:
+        if "regex" in klass.__dict__:
+            descriptor = klass.__dict__["regex"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_facets_has_minlen():
+    assert hasattr(sadl_Facets, "minlen")
+    descriptor = None
+    for klass in sadl_Facets.__mro__:
+        if "minlen" in klass.__dict__:
+            descriptor = klass.__dict__["minlen"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sadl_datatyperestriction_is_not_abstract():
+    assert not inspect.isabstract(sadl_DataTypeRestriction)
+
+
+def test_sadl_datatyperestriction_constructor_exists():
+    assert callable(sadl_DataTypeRestriction.__init__)
+
+
+def test_sadl_datatyperestriction_constructor_args():
+    sig = inspect.signature(sadl_DataTypeRestriction.__init__)
+    params = list(sig.parameters.keys())
+    assert "basetypes" in params, "Missing parameter 'basetypes'"
+    assert "basetype" in params, "Missing parameter 'basetype'"
+
+def test_sadl_datatyperestriction_has_basetypes():
+    assert hasattr(sadl_DataTypeRestriction, "basetypes")
+    descriptor = None
+    for klass in sadl_DataTypeRestriction.__mro__:
         if "basetypes" in klass.__dict__:
             descriptor = klass.__dict__["basetypes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_datatyperestriction_has_basetype():
+    assert hasattr(sadl_DataTypeRestriction, "basetype")
+    descriptor = None
+    for klass in sadl_DataTypeRestriction.__mro__:
+        if "basetype" in klass.__dict__:
+            descriptor = klass.__dict__["basetype"]
             break
     assert isinstance(descriptor, property)
 
@@ -1156,131 +1156,191 @@ def test_statement_constructor_args():
 
 
 
-def test_sadl::transitiveproperty_is_not_abstract():
-    assert not inspect.isabstract(sadl::TransitiveProperty)
+def test_sadl_instancedifferentfrom_is_not_abstract():
+    assert not inspect.isabstract(sadl_InstanceDifferentFrom)
 
 
-def test_sadl::transitiveproperty_constructor_exists():
-    assert callable(sadl::TransitiveProperty.__init__)
+def test_sadl_instancedifferentfrom_constructor_exists():
+    assert callable(sadl_InstanceDifferentFrom.__init__)
 
 
-def test_sadl::transitiveproperty_constructor_args():
-    sig = inspect.signature(sadl::TransitiveProperty.__init__)
+def test_sadl_instancedifferentfrom_constructor_args():
+    sig = inspect.signature(sadl_InstanceDifferentFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::necessaryandsufficient_is_not_abstract():
-    assert not inspect.isabstract(sadl::NecessaryAndSufficient)
+def test_sadl_enumeratedallandsomevaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sadl_EnumeratedAllAndSomeValuesFrom)
 
 
-def test_sadl::necessaryandsufficient_constructor_exists():
-    assert callable(sadl::NecessaryAndSufficient.__init__)
+def test_sadl_enumeratedallandsomevaluesfrom_constructor_exists():
+    assert callable(sadl_EnumeratedAllAndSomeValuesFrom.__init__)
 
 
-def test_sadl::necessaryandsufficient_constructor_args():
-    sig = inspect.signature(sadl::NecessaryAndSufficient.__init__)
-    params = list(sig.parameters.keys())
-    assert "article" in params, "Missing parameter 'article'"
-
-def test_sadl::necessaryandsufficient_has_article():
-    assert hasattr(sadl::NecessaryAndSufficient, "article")
-    descriptor = None
-    for klass in sadl::NecessaryAndSufficient.__mro__:
-        if "article" in klass.__dict__:
-            descriptor = klass.__dict__["article"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sadl::somevaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sadl::SomeValuesFrom)
-
-
-def test_sadl::somevaluesfrom_constructor_exists():
-    assert callable(sadl::SomeValuesFrom.__init__)
-
-
-def test_sadl::somevaluesfrom_constructor_args():
-    sig = inspect.signature(sadl::SomeValuesFrom.__init__)
+def test_sadl_enumeratedallandsomevaluesfrom_constructor_args():
+    sig = inspect.signature(sadl_EnumeratedAllAndSomeValuesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::instancedeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(sadl::InstanceDeclarationStatement)
+def test_sadl_inverseproperty_is_not_abstract():
+    assert not inspect.isabstract(sadl_InverseProperty)
 
 
-def test_sadl::instancedeclarationstatement_constructor_exists():
-    assert callable(sadl::InstanceDeclarationStatement.__init__)
+def test_sadl_inverseproperty_constructor_exists():
+    assert callable(sadl_InverseProperty.__init__)
 
 
-def test_sadl::instancedeclarationstatement_constructor_args():
-    sig = inspect.signature(sadl::InstanceDeclarationStatement.__init__)
+def test_sadl_inverseproperty_constructor_args():
+    sig = inspect.signature(sadl_InverseProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::enumeratedallvaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sadl::EnumeratedAllValuesFrom)
+def test_sadl_symmetricalproperty_is_not_abstract():
+    assert not inspect.isabstract(sadl_SymmetricalProperty)
 
 
-def test_sadl::enumeratedallvaluesfrom_constructor_exists():
-    assert callable(sadl::EnumeratedAllValuesFrom.__init__)
+def test_sadl_symmetricalproperty_constructor_exists():
+    assert callable(sadl_SymmetricalProperty.__init__)
 
 
-def test_sadl::enumeratedallvaluesfrom_constructor_args():
-    sig = inspect.signature(sadl::EnumeratedAllValuesFrom.__init__)
+def test_sadl_symmetricalproperty_constructor_args():
+    sig = inspect.signature(sadl_SymmetricalProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::instancesalldifferent_is_not_abstract():
-    assert not inspect.isabstract(sadl::InstancesAllDifferent)
+def test_sadl_instancesalldifferent_is_not_abstract():
+    assert not inspect.isabstract(sadl_InstancesAllDifferent)
 
 
-def test_sadl::instancesalldifferent_constructor_exists():
-    assert callable(sadl::InstancesAllDifferent.__init__)
+def test_sadl_instancesalldifferent_constructor_exists():
+    assert callable(sadl_InstancesAllDifferent.__init__)
 
 
-def test_sadl::instancesalldifferent_constructor_args():
-    sig = inspect.signature(sadl::InstancesAllDifferent.__init__)
+def test_sadl_instancesalldifferent_constructor_args():
+    sig = inspect.signature(sadl_InstancesAllDifferent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::hasvalue_is_not_abstract():
-    assert not inspect.isabstract(sadl::HasValue)
+def test_sadl_allvaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sadl_AllValuesFrom)
 
 
-def test_sadl::hasvalue_constructor_exists():
-    assert callable(sadl::HasValue.__init__)
+def test_sadl_allvaluesfrom_constructor_exists():
+    assert callable(sadl_AllValuesFrom.__init__)
 
 
-def test_sadl::hasvalue_constructor_args():
-    sig = inspect.signature(sadl::HasValue.__init__)
+def test_sadl_allvaluesfrom_constructor_args():
+    sig = inspect.signature(sadl_AllValuesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::defaultvalue_is_not_abstract():
-    assert not inspect.isabstract(sadl::DefaultValue)
+def test_sadl_instancedeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(sadl_InstanceDeclarationStatement)
 
 
-def test_sadl::defaultvalue_constructor_exists():
-    assert callable(sadl::DefaultValue.__init__)
+def test_sadl_instancedeclarationstatement_constructor_exists():
+    assert callable(sadl_InstanceDeclarationStatement.__init__)
 
 
-def test_sadl::defaultvalue_constructor_args():
-    sig = inspect.signature(sadl::DefaultValue.__init__)
+def test_sadl_instancedeclarationstatement_constructor_args():
+    sig = inspect.signature(sadl_InstanceDeclarationStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_transitiveproperty_is_not_abstract():
+    assert not inspect.isabstract(sadl_TransitiveProperty)
+
+
+def test_sadl_transitiveproperty_constructor_exists():
+    assert callable(sadl_TransitiveProperty.__init__)
+
+
+def test_sadl_transitiveproperty_constructor_args():
+    sig = inspect.signature(sadl_TransitiveProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_equivalentconcepts_is_not_abstract():
+    assert not inspect.isabstract(sadl_EquivalentConcepts)
+
+
+def test_sadl_equivalentconcepts_constructor_exists():
+    assert callable(sadl_EquivalentConcepts.__init__)
+
+
+def test_sadl_equivalentconcepts_constructor_args():
+    sig = inspect.signature(sadl_EquivalentConcepts.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_maxcardinality_is_not_abstract():
+    assert not inspect.isabstract(sadl_MaxCardinality)
+
+
+def test_sadl_maxcardinality_constructor_exists():
+    assert callable(sadl_MaxCardinality.__init__)
+
+
+def test_sadl_maxcardinality_constructor_args():
+    sig = inspect.signature(sadl_MaxCardinality.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_existinginstanceattribution_is_not_abstract():
+    assert not inspect.isabstract(sadl_ExistingInstanceAttribution)
+
+
+def test_sadl_existinginstanceattribution_constructor_exists():
+    assert callable(sadl_ExistingInstanceAttribution.__init__)
+
+
+def test_sadl_existinginstanceattribution_constructor_args():
+    sig = inspect.signature(sadl_ExistingInstanceAttribution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_disjointclasses_is_not_abstract():
+    assert not inspect.isabstract(sadl_DisjointClasses)
+
+
+def test_sadl_disjointclasses_constructor_exists():
+    assert callable(sadl_DisjointClasses.__init__)
+
+
+def test_sadl_disjointclasses_constructor_args():
+    sig = inspect.signature(sadl_DisjointClasses.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_defaultvalue_is_not_abstract():
+    assert not inspect.isabstract(sadl_DefaultValue)
+
+
+def test_sadl_defaultvalue_constructor_exists():
+    assert callable(sadl_DefaultValue.__init__)
+
+
+def test_sadl_defaultvalue_constructor_args():
+    sig = inspect.signature(sadl_DefaultValue.__init__)
     params = list(sig.parameters.keys())
     assert "level" in params, "Missing parameter 'level'"
 
-def test_sadl::defaultvalue_has_level():
-    assert hasattr(sadl::DefaultValue, "level")
+def test_sadl_defaultvalue_has_level():
+    assert hasattr(sadl_DefaultValue, "level")
     descriptor = None
-    for klass in sadl::DefaultValue.__mro__:
+    for klass in sadl_DefaultValue.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
@@ -1288,79 +1348,37 @@ def test_sadl::defaultvalue_has_level():
 
 
 
-def test_sadl::instancedifferentfrom_is_not_abstract():
-    assert not inspect.isabstract(sadl::InstanceDifferentFrom)
+def test_sadl_hasvalue_is_not_abstract():
+    assert not inspect.isabstract(sadl_HasValue)
 
 
-def test_sadl::instancedifferentfrom_constructor_exists():
-    assert callable(sadl::InstanceDifferentFrom.__init__)
+def test_sadl_hasvalue_constructor_exists():
+    assert callable(sadl_HasValue.__init__)
 
 
-def test_sadl::instancedifferentfrom_constructor_args():
-    sig = inspect.signature(sadl::InstanceDifferentFrom.__init__)
+def test_sadl_hasvalue_constructor_args():
+    sig = inspect.signature(sadl_HasValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::disjointclasses_is_not_abstract():
-    assert not inspect.isabstract(sadl::DisjointClasses)
+def test_sadl_necessaryandsufficient_is_not_abstract():
+    assert not inspect.isabstract(sadl_NecessaryAndSufficient)
 
 
-def test_sadl::disjointclasses_constructor_exists():
-    assert callable(sadl::DisjointClasses.__init__)
+def test_sadl_necessaryandsufficient_constructor_exists():
+    assert callable(sadl_NecessaryAndSufficient.__init__)
 
 
-def test_sadl::disjointclasses_constructor_args():
-    sig = inspect.signature(sadl::DisjointClasses.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::equivalentconcepts_is_not_abstract():
-    assert not inspect.isabstract(sadl::EquivalentConcepts)
-
-
-def test_sadl::equivalentconcepts_constructor_exists():
-    assert callable(sadl::EquivalentConcepts.__init__)
-
-
-def test_sadl::equivalentconcepts_constructor_args():
-    sig = inspect.signature(sadl::EquivalentConcepts.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::inverseproperty_is_not_abstract():
-    assert not inspect.isabstract(sadl::InverseProperty)
-
-
-def test_sadl::inverseproperty_constructor_exists():
-    assert callable(sadl::InverseProperty.__init__)
-
-
-def test_sadl::inverseproperty_constructor_args():
-    sig = inspect.signature(sadl::InverseProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::propertydeclaration_is_not_abstract():
-    assert not inspect.isabstract(sadl::PropertyDeclaration)
-
-
-def test_sadl::propertydeclaration_constructor_exists():
-    assert callable(sadl::PropertyDeclaration.__init__)
-
-
-def test_sadl::propertydeclaration_constructor_args():
-    sig = inspect.signature(sadl::PropertyDeclaration.__init__)
+def test_sadl_necessaryandsufficient_constructor_args():
+    sig = inspect.signature(sadl_NecessaryAndSufficient.__init__)
     params = list(sig.parameters.keys())
     assert "article" in params, "Missing parameter 'article'"
 
-def test_sadl::propertydeclaration_has_article():
-    assert hasattr(sadl::PropertyDeclaration, "article")
+def test_sadl_necessaryandsufficient_has_article():
+    assert hasattr(sadl_NecessaryAndSufficient, "article")
     descriptor = None
-    for klass in sadl::PropertyDeclaration.__mro__:
+    for klass in sadl_NecessaryAndSufficient.__mro__:
         if "article" in klass.__dict__:
             descriptor = klass.__dict__["article"]
             break
@@ -1368,170 +1386,152 @@ def test_sadl::propertydeclaration_has_article():
 
 
 
-def test_sadl::existinginstanceattribution_is_not_abstract():
-    assert not inspect.isabstract(sadl::ExistingInstanceAttribution)
+def test_sadl_somevaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sadl_SomeValuesFrom)
 
 
-def test_sadl::existinginstanceattribution_constructor_exists():
-    assert callable(sadl::ExistingInstanceAttribution.__init__)
+def test_sadl_somevaluesfrom_constructor_exists():
+    assert callable(sadl_SomeValuesFrom.__init__)
 
 
-def test_sadl::existinginstanceattribution_constructor_args():
-    sig = inspect.signature(sadl::ExistingInstanceAttribution.__init__)
+def test_sadl_somevaluesfrom_constructor_args():
+    sig = inspect.signature(sadl_SomeValuesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::symmetricalproperty_is_not_abstract():
-    assert not inspect.isabstract(sadl::SymmetricalProperty)
+def test_sadl_inversefunctionalproperty_is_not_abstract():
+    assert not inspect.isabstract(sadl_InverseFunctionalProperty)
 
 
-def test_sadl::symmetricalproperty_constructor_exists():
-    assert callable(sadl::SymmetricalProperty.__init__)
+def test_sadl_inversefunctionalproperty_constructor_exists():
+    assert callable(sadl_InverseFunctionalProperty.__init__)
 
 
-def test_sadl::symmetricalproperty_constructor_args():
-    sig = inspect.signature(sadl::SymmetricalProperty.__init__)
+def test_sadl_inversefunctionalproperty_constructor_args():
+    sig = inspect.signature(sadl_InverseFunctionalProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::inversefunctionalproperty_is_not_abstract():
-    assert not inspect.isabstract(sadl::InverseFunctionalProperty)
+def test_sadl_complementofclass_is_not_abstract():
+    assert not inspect.isabstract(sadl_ComplementOfClass)
 
 
-def test_sadl::inversefunctionalproperty_constructor_exists():
-    assert callable(sadl::InverseFunctionalProperty.__init__)
+def test_sadl_complementofclass_constructor_exists():
+    assert callable(sadl_ComplementOfClass.__init__)
 
 
-def test_sadl::inversefunctionalproperty_constructor_args():
-    sig = inspect.signature(sadl::InverseFunctionalProperty.__init__)
+def test_sadl_complementofclass_constructor_args():
+    sig = inspect.signature(sadl_ComplementOfClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::complementofclass_is_not_abstract():
-    assert not inspect.isabstract(sadl::ComplementOfClass)
+def test_sadl_enumeratedallvaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sadl_EnumeratedAllValuesFrom)
 
 
-def test_sadl::complementofclass_constructor_exists():
-    assert callable(sadl::ComplementOfClass.__init__)
+def test_sadl_enumeratedallvaluesfrom_constructor_exists():
+    assert callable(sadl_EnumeratedAllValuesFrom.__init__)
 
 
-def test_sadl::complementofclass_constructor_args():
-    sig = inspect.signature(sadl::ComplementOfClass.__init__)
+def test_sadl_enumeratedallvaluesfrom_constructor_args():
+    sig = inspect.signature(sadl_EnumeratedAllValuesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::allvaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sadl::AllValuesFrom)
+def test_sadl_mincardinality_is_not_abstract():
+    assert not inspect.isabstract(sadl_MinCardinality)
 
 
-def test_sadl::allvaluesfrom_constructor_exists():
-    assert callable(sadl::AllValuesFrom.__init__)
+def test_sadl_mincardinality_constructor_exists():
+    assert callable(sadl_MinCardinality.__init__)
 
 
-def test_sadl::allvaluesfrom_constructor_args():
-    sig = inspect.signature(sadl::AllValuesFrom.__init__)
+def test_sadl_mincardinality_constructor_args():
+    sig = inspect.signature(sadl_MinCardinality.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::enumeratedallandsomevaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sadl::EnumeratedAllAndSomeValuesFrom)
+def test_sadl_propertydeclaration_is_not_abstract():
+    assert not inspect.isabstract(sadl_PropertyDeclaration)
 
 
-def test_sadl::enumeratedallandsomevaluesfrom_constructor_exists():
-    assert callable(sadl::EnumeratedAllAndSomeValuesFrom.__init__)
+def test_sadl_propertydeclaration_constructor_exists():
+    assert callable(sadl_PropertyDeclaration.__init__)
 
 
-def test_sadl::enumeratedallandsomevaluesfrom_constructor_args():
-    sig = inspect.signature(sadl::EnumeratedAllAndSomeValuesFrom.__init__)
+def test_sadl_propertydeclaration_constructor_args():
+    sig = inspect.signature(sadl_PropertyDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "article" in params, "Missing parameter 'article'"
+
+def test_sadl_propertydeclaration_has_article():
+    assert hasattr(sadl_PropertyDeclaration, "article")
+    descriptor = None
+    for klass in sadl_PropertyDeclaration.__mro__:
+        if "article" in klass.__dict__:
+            descriptor = klass.__dict__["article"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sadl_functionalproperty_is_not_abstract():
+    assert not inspect.isabstract(sadl_FunctionalProperty)
+
+
+def test_sadl_functionalproperty_constructor_exists():
+    assert callable(sadl_FunctionalProperty.__init__)
+
+
+def test_sadl_functionalproperty_constructor_args():
+    sig = inspect.signature(sadl_FunctionalProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::cardinality_is_not_abstract():
-    assert not inspect.isabstract(sadl::Cardinality)
+def test_sadl_cardinality_is_not_abstract():
+    assert not inspect.isabstract(sadl_Cardinality)
 
 
-def test_sadl::cardinality_constructor_exists():
-    assert callable(sadl::Cardinality.__init__)
+def test_sadl_cardinality_constructor_exists():
+    assert callable(sadl_Cardinality.__init__)
 
 
-def test_sadl::cardinality_constructor_args():
-    sig = inspect.signature(sadl::Cardinality.__init__)
+def test_sadl_cardinality_constructor_args():
+    sig = inspect.signature(sadl_Cardinality.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::maxcardinality_is_not_abstract():
-    assert not inspect.isabstract(sadl::MaxCardinality)
+def test_sadl_classdeclaration_is_not_abstract():
+    assert not inspect.isabstract(sadl_ClassDeclaration)
 
 
-def test_sadl::maxcardinality_constructor_exists():
-    assert callable(sadl::MaxCardinality.__init__)
+def test_sadl_classdeclaration_constructor_exists():
+    assert callable(sadl_ClassDeclaration.__init__)
 
 
-def test_sadl::maxcardinality_constructor_args():
-    sig = inspect.signature(sadl::MaxCardinality.__init__)
+def test_sadl_classdeclaration_constructor_args():
+    sig = inspect.signature(sadl_ClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::mincardinality_is_not_abstract():
-    assert not inspect.isabstract(sadl::MinCardinality)
+def test_sadl_userdefineddatatype_is_not_abstract():
+    assert not inspect.isabstract(sadl_UserDefinedDataType)
 
 
-def test_sadl::mincardinality_constructor_exists():
-    assert callable(sadl::MinCardinality.__init__)
+def test_sadl_userdefineddatatype_constructor_exists():
+    assert callable(sadl_UserDefinedDataType.__init__)
 
 
-def test_sadl::mincardinality_constructor_args():
-    sig = inspect.signature(sadl::MinCardinality.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::functionalproperty_is_not_abstract():
-    assert not inspect.isabstract(sadl::FunctionalProperty)
-
-
-def test_sadl::functionalproperty_constructor_exists():
-    assert callable(sadl::FunctionalProperty.__init__)
-
-
-def test_sadl::functionalproperty_constructor_args():
-    sig = inspect.signature(sadl::FunctionalProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::classdeclaration_is_not_abstract():
-    assert not inspect.isabstract(sadl::ClassDeclaration)
-
-
-def test_sadl::classdeclaration_constructor_exists():
-    assert callable(sadl::ClassDeclaration.__init__)
-
-
-def test_sadl::classdeclaration_constructor_args():
-    sig = inspect.signature(sadl::ClassDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::userdefineddatatype_is_not_abstract():
-    assert not inspect.isabstract(sadl::UserDefinedDataType)
-
-
-def test_sadl::userdefineddatatype_constructor_exists():
-    assert callable(sadl::UserDefinedDataType.__init__)
-
-
-def test_sadl::userdefineddatatype_constructor_args():
-    sig = inspect.signature(sadl::UserDefinedDataType.__init__)
+def test_sadl_userdefineddatatype_constructor_args():
+    sig = inspect.signature(sadl_UserDefinedDataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1550,51 +1550,51 @@ def test_resourcebysetop_constructor_args():
 
 
 
-def test_sadl::intersectionresource_is_not_abstract():
-    assert not inspect.isabstract(sadl::IntersectionResource)
+def test_sadl_intersectionresource_is_not_abstract():
+    assert not inspect.isabstract(sadl_IntersectionResource)
 
 
-def test_sadl::intersectionresource_constructor_exists():
-    assert callable(sadl::IntersectionResource.__init__)
+def test_sadl_intersectionresource_constructor_exists():
+    assert callable(sadl_IntersectionResource.__init__)
 
 
-def test_sadl::intersectionresource_constructor_args():
-    sig = inspect.signature(sadl::IntersectionResource.__init__)
+def test_sadl_intersectionresource_constructor_args():
+    sig = inspect.signature(sadl_IntersectionResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::unionresource_is_not_abstract():
-    assert not inspect.isabstract(sadl::UnionResource)
+def test_sadl_unionresource_is_not_abstract():
+    assert not inspect.isabstract(sadl_UnionResource)
 
 
-def test_sadl::unionresource_constructor_exists():
-    assert callable(sadl::UnionResource.__init__)
+def test_sadl_unionresource_constructor_exists():
+    assert callable(sadl_UnionResource.__init__)
 
 
-def test_sadl::unionresource_constructor_args():
-    sig = inspect.signature(sadl::UnionResource.__init__)
+def test_sadl_unionresource_constructor_args():
+    sig = inspect.signature(sadl_UnionResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::rangetype_is_not_abstract():
-    assert not inspect.isabstract(sadl::RangeType)
+def test_sadl_rangetype_is_not_abstract():
+    assert not inspect.isabstract(sadl_RangeType)
 
 
-def test_sadl::rangetype_constructor_exists():
-    assert callable(sadl::RangeType.__init__)
+def test_sadl_rangetype_constructor_exists():
+    assert callable(sadl_RangeType.__init__)
 
 
-def test_sadl::rangetype_constructor_args():
-    sig = inspect.signature(sadl::RangeType.__init__)
+def test_sadl_rangetype_constructor_args():
+    sig = inspect.signature(sadl_RangeType.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_sadl::rangetype_has_dataType():
-    assert hasattr(sadl::RangeType, "dataType")
+def test_sadl_rangetype_has_dataType():
+    assert hasattr(sadl_RangeType, "dataType")
     descriptor = None
-    for klass in sadl::RangeType.__mro__:
+    for klass in sadl_RangeType.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -1602,74 +1602,74 @@ def test_sadl::rangetype_has_dataType():
 
 
 
-def test_sadl::range_is_not_abstract():
-    assert not inspect.isabstract(sadl::Range)
+def test_sadl_range_is_not_abstract():
+    assert not inspect.isabstract(sadl_Range)
 
 
-def test_sadl::range_constructor_exists():
-    assert callable(sadl::Range.__init__)
+def test_sadl_range_constructor_exists():
+    assert callable(sadl_Range.__init__)
 
 
-def test_sadl::range_constructor_args():
-    sig = inspect.signature(sadl::Range.__init__)
+def test_sadl_range_constructor_args():
+    sig = inspect.signature(sadl_Range.__init__)
     params = list(sig.parameters.keys())
     assert "single" in params, "Missing parameter 'single'"
-    assert "list" in params, "Missing parameter 'list'"
     assert "lists" in params, "Missing parameter 'lists'"
+    assert "list" in params, "Missing parameter 'list'"
 
-def test_sadl::range_has_single():
-    assert hasattr(sadl::Range, "single")
+def test_sadl_range_has_single():
+    assert hasattr(sadl_Range, "single")
     descriptor = None
-    for klass in sadl::Range.__mro__:
+    for klass in sadl_Range.__mro__:
         if "single" in klass.__dict__:
             descriptor = klass.__dict__["single"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::range_has_list():
-    assert hasattr(sadl::Range, "list")
+def test_sadl_range_has_lists():
+    assert hasattr(sadl_Range, "lists")
     descriptor = None
-    for klass in sadl::Range.__mro__:
-        if "list" in klass.__dict__:
-            descriptor = klass.__dict__["list"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::range_has_lists():
-    assert hasattr(sadl::Range, "lists")
-    descriptor = None
-    for klass in sadl::Range.__mro__:
+    for klass in sadl_Range.__mro__:
         if "lists" in klass.__dict__:
             descriptor = klass.__dict__["lists"]
             break
     assert isinstance(descriptor, property)
 
+def test_sadl_range_has_list():
+    assert hasattr(sadl_Range, "list")
+    descriptor = None
+    for klass in sadl_Range.__mro__:
+        if "list" in klass.__dict__:
+            descriptor = klass.__dict__["list"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sadl::addlclassinfo_is_not_abstract():
-    assert not inspect.isabstract(sadl::AddlClassInfo)
+
+def test_sadl_addlclassinfo_is_not_abstract():
+    assert not inspect.isabstract(sadl_AddlClassInfo)
 
 
-def test_sadl::addlclassinfo_constructor_exists():
-    assert callable(sadl::AddlClassInfo.__init__)
+def test_sadl_addlclassinfo_constructor_exists():
+    assert callable(sadl_AddlClassInfo.__init__)
 
 
-def test_sadl::addlclassinfo_constructor_args():
-    sig = inspect.signature(sadl::AddlClassInfo.__init__)
+def test_sadl_addlclassinfo_constructor_args():
+    sig = inspect.signature(sadl_AddlClassInfo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::enumeratedinstances_is_not_abstract():
-    assert not inspect.isabstract(sadl::EnumeratedInstances)
+def test_sadl_enumeratedinstances_is_not_abstract():
+    assert not inspect.isabstract(sadl_EnumeratedInstances)
 
 
-def test_sadl::enumeratedinstances_constructor_exists():
-    assert callable(sadl::EnumeratedInstances.__init__)
+def test_sadl_enumeratedinstances_constructor_exists():
+    assert callable(sadl_EnumeratedInstances.__init__)
 
 
-def test_sadl::enumeratedinstances_constructor_args():
-    sig = inspect.signature(sadl::EnumeratedInstances.__init__)
+def test_sadl_enumeratedinstances_constructor_args():
+    sig = inspect.signature(sadl_EnumeratedInstances.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1688,47 +1688,51 @@ def test_modelelement_constructor_args():
 
 
 
-def test_sadl::explanation_is_not_abstract():
-    assert not inspect.isabstract(sadl::Explanation)
+def test_sadl_expr_is_not_abstract():
+    assert not inspect.isabstract(sadl_Expr)
 
 
-def test_sadl::explanation_constructor_exists():
-    assert callable(sadl::Explanation.__init__)
+def test_sadl_expr_constructor_exists():
+    assert callable(sadl_Expr.__init__)
 
 
-def test_sadl::explanation_constructor_args():
-    sig = inspect.signature(sadl::Explanation.__init__)
+def test_sadl_expr_constructor_args():
+    sig = inspect.signature(sadl_Expr.__init__)
     params = list(sig.parameters.keys())
-    assert "rulename" in params, "Missing parameter 'rulename'"
-
-def test_sadl::explanation_has_rulename():
-    assert hasattr(sadl::Explanation, "rulename")
-    descriptor = None
-    for klass in sadl::Explanation.__mro__:
-        if "rulename" in klass.__dict__:
-            descriptor = klass.__dict__["rulename"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_sadl::rule_is_not_abstract():
-    assert not inspect.isabstract(sadl::Rule)
+def test_sadl_query_is_not_abstract():
+    assert not inspect.isabstract(sadl_Query)
 
 
-def test_sadl::rule_constructor_exists():
-    assert callable(sadl::Rule.__init__)
+def test_sadl_query_constructor_exists():
+    assert callable(sadl_Query.__init__)
 
 
-def test_sadl::rule_constructor_args():
-    sig = inspect.signature(sadl::Rule.__init__)
+def test_sadl_query_constructor_args():
+    sig = inspect.signature(sadl_Query.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_rule_is_not_abstract():
+    assert not inspect.isabstract(sadl_Rule)
+
+
+def test_sadl_rule_constructor_exists():
+    assert callable(sadl_Rule.__init__)
+
+
+def test_sadl_rule_constructor_args():
+    sig = inspect.signature(sadl_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sadl::rule_has_name():
-    assert hasattr(sadl::Rule, "name")
+def test_sadl_rule_has_name():
+    assert hasattr(sadl_Rule, "name")
     descriptor = None
-    for klass in sadl::Rule.__mro__:
+    for klass in sadl_Rule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1736,47 +1740,47 @@ def test_sadl::rule_has_name():
 
 
 
-def test_sadl::test_is_not_abstract():
-    assert not inspect.isabstract(sadl::Test)
+def test_sadl_test_is_not_abstract():
+    assert not inspect.isabstract(sadl_Test)
 
 
-def test_sadl::test_constructor_exists():
-    assert callable(sadl::Test.__init__)
+def test_sadl_test_constructor_exists():
+    assert callable(sadl_Test.__init__)
 
 
-def test_sadl::test_constructor_args():
-    sig = inspect.signature(sadl::Test.__init__)
+def test_sadl_test_constructor_args():
+    sig = inspect.signature(sadl_Test.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::display_is_not_abstract():
-    assert not inspect.isabstract(sadl::Display)
+def test_sadl_display_is_not_abstract():
+    assert not inspect.isabstract(sadl_Display)
 
 
-def test_sadl::display_constructor_exists():
-    assert callable(sadl::Display.__init__)
+def test_sadl_display_constructor_exists():
+    assert callable(sadl_Display.__init__)
 
 
-def test_sadl::display_constructor_args():
-    sig = inspect.signature(sadl::Display.__init__)
+def test_sadl_display_constructor_args():
+    sig = inspect.signature(sadl_Display.__init__)
     params = list(sig.parameters.keys())
     assert "displayString" in params, "Missing parameter 'displayString'"
     assert "model" in params, "Missing parameter 'model'"
 
-def test_sadl::display_has_displayString():
-    assert hasattr(sadl::Display, "displayString")
+def test_sadl_display_has_displayString():
+    assert hasattr(sadl_Display, "displayString")
     descriptor = None
-    for klass in sadl::Display.__mro__:
+    for klass in sadl_Display.__mro__:
         if "displayString" in klass.__dict__:
             descriptor = klass.__dict__["displayString"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::display_has_model():
-    assert hasattr(sadl::Display, "model")
+def test_sadl_display_has_model():
+    assert hasattr(sadl_Display, "model")
     descriptor = None
-    for klass in sadl::Display.__mro__:
+    for klass in sadl_Display.__mro__:
         if "model" in klass.__dict__:
             descriptor = klass.__dict__["model"]
             break
@@ -1784,86 +1788,82 @@ def test_sadl::display_has_model():
 
 
 
-def test_sadl::expr_is_not_abstract():
-    assert not inspect.isabstract(sadl::Expr)
+def test_sadl_explanation_is_not_abstract():
+    assert not inspect.isabstract(sadl_Explanation)
 
 
-def test_sadl::expr_constructor_exists():
-    assert callable(sadl::Expr.__init__)
+def test_sadl_explanation_constructor_exists():
+    assert callable(sadl_Explanation.__init__)
 
 
-def test_sadl::expr_constructor_args():
-    sig = inspect.signature(sadl::Expr.__init__)
+def test_sadl_explanation_constructor_args():
+    sig = inspect.signature(sadl_Explanation.__init__)
+    params = list(sig.parameters.keys())
+    assert "rulename" in params, "Missing parameter 'rulename'"
+
+def test_sadl_explanation_has_rulename():
+    assert hasattr(sadl_Explanation, "rulename")
+    descriptor = None
+    for klass in sadl_Explanation.__mro__:
+        if "rulename" in klass.__dict__:
+            descriptor = klass.__dict__["rulename"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sadl_statement_is_not_abstract():
+    assert not inspect.isabstract(sadl_Statement)
+
+
+def test_sadl_statement_constructor_exists():
+    assert callable(sadl_Statement.__init__)
+
+
+def test_sadl_statement_constructor_args():
+    sig = inspect.signature(sadl_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::query_is_not_abstract():
-    assert not inspect.isabstract(sadl::Query)
+def test_sadl_condition_is_not_abstract():
+    assert not inspect.isabstract(sadl_Condition)
 
 
-def test_sadl::query_constructor_exists():
-    assert callable(sadl::Query.__init__)
+def test_sadl_condition_constructor_exists():
+    assert callable(sadl_Condition.__init__)
 
 
-def test_sadl::query_constructor_args():
-    sig = inspect.signature(sadl::Query.__init__)
+def test_sadl_condition_constructor_args():
+    sig = inspect.signature(sadl_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::statement_is_not_abstract():
-    assert not inspect.isabstract(sadl::Statement)
+def test_sadl_resourceidentifier_is_not_abstract():
+    assert not inspect.isabstract(sadl_ResourceIdentifier)
 
 
-def test_sadl::statement_constructor_exists():
-    assert callable(sadl::Statement.__init__)
+def test_sadl_resourceidentifier_constructor_exists():
+    assert callable(sadl_ResourceIdentifier.__init__)
 
 
-def test_sadl::statement_constructor_args():
-    sig = inspect.signature(sadl::Statement.__init__)
+def test_sadl_resourceidentifier_constructor_args():
+    sig = inspect.signature(sadl_ResourceIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::condition_is_not_abstract():
-    assert not inspect.isabstract(sadl::Condition)
+def test_sadl_existingresourcelist_is_not_abstract():
+    assert not inspect.isabstract(sadl_ExistingResourceList)
 
 
-def test_sadl::condition_constructor_exists():
-    assert callable(sadl::Condition.__init__)
+def test_sadl_existingresourcelist_constructor_exists():
+    assert callable(sadl_ExistingResourceList.__init__)
 
 
-def test_sadl::condition_constructor_args():
-    sig = inspect.signature(sadl::Condition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::resourceidentifier_is_not_abstract():
-    assert not inspect.isabstract(sadl::ResourceIdentifier)
-
-
-def test_sadl::resourceidentifier_constructor_exists():
-    assert callable(sadl::ResourceIdentifier.__init__)
-
-
-def test_sadl::resourceidentifier_constructor_args():
-    sig = inspect.signature(sadl::ResourceIdentifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::existingresourcelist_is_not_abstract():
-    assert not inspect.isabstract(sadl::ExistingResourceList)
-
-
-def test_sadl::existingresourcelist_constructor_exists():
-    assert callable(sadl::ExistingResourceList.__init__)
-
-
-def test_sadl::existingresourcelist_constructor_args():
-    sig = inspect.signature(sadl::ExistingResourceList.__init__)
+def test_sadl_existingresourcelist_constructor_args():
+    sig = inspect.signature(sadl_ExistingResourceList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1882,33 +1882,57 @@ def test_resourceidentifier_constructor_args():
 
 
 
-def test_sadl::resourcebysetop_is_not_abstract():
-    assert not inspect.isabstract(sadl::ResourceBySetOp)
+def test_sadl_resourcebyrestriction_is_not_abstract():
+    assert not inspect.isabstract(sadl_ResourceByRestriction)
 
 
-def test_sadl::resourcebysetop_constructor_exists():
-    assert callable(sadl::ResourceBySetOp.__init__)
+def test_sadl_resourcebyrestriction_constructor_exists():
+    assert callable(sadl_ResourceByRestriction.__init__)
 
 
-def test_sadl::resourcebysetop_constructor_args():
-    sig = inspect.signature(sadl::ResourceBySetOp.__init__)
+def test_sadl_resourcebyrestriction_constructor_args():
+    sig = inspect.signature(sadl_ResourceByRestriction.__init__)
+    params = list(sig.parameters.keys())
+    assert "annType" in params, "Missing parameter 'annType'"
+
+def test_sadl_resourcebyrestriction_has_annType():
+    assert hasattr(sadl_ResourceByRestriction, "annType")
+    descriptor = None
+    for klass in sadl_ResourceByRestriction.__mro__:
+        if "annType" in klass.__dict__:
+            descriptor = klass.__dict__["annType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sadl_resourcebysetop_is_not_abstract():
+    assert not inspect.isabstract(sadl_ResourceBySetOp)
+
+
+def test_sadl_resourcebysetop_constructor_exists():
+    assert callable(sadl_ResourceBySetOp.__init__)
+
+
+def test_sadl_resourcebysetop_constructor_args():
+    sig = inspect.signature(sadl_ResourceBySetOp.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
     assert "annType" in params, "Missing parameter 'annType'"
 
-def test_sadl::resourcebysetop_has_op():
-    assert hasattr(sadl::ResourceBySetOp, "op")
+def test_sadl_resourcebysetop_has_op():
+    assert hasattr(sadl_ResourceBySetOp, "op")
     descriptor = None
-    for klass in sadl::ResourceBySetOp.__mro__:
+    for klass in sadl_ResourceBySetOp.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::resourcebysetop_has_annType():
-    assert hasattr(sadl::ResourceBySetOp, "annType")
+def test_sadl_resourcebysetop_has_annType():
+    assert hasattr(sadl_ResourceBySetOp, "annType")
     descriptor = None
-    for klass in sadl::ResourceBySetOp.__mro__:
+    for klass in sadl_ResourceBySetOp.__mro__:
         if "annType" in klass.__dict__:
             descriptor = klass.__dict__["annType"]
             break
@@ -1916,167 +1940,143 @@ def test_sadl::resourcebysetop_has_annType():
 
 
 
-def test_sadl::resourcebyrestriction_is_not_abstract():
-    assert not inspect.isabstract(sadl::ResourceByRestriction)
+def test_sadl_resourcebyname_is_not_abstract():
+    assert not inspect.isabstract(sadl_ResourceByName)
 
 
-def test_sadl::resourcebyrestriction_constructor_exists():
-    assert callable(sadl::ResourceByRestriction.__init__)
+def test_sadl_resourcebyname_constructor_exists():
+    assert callable(sadl_ResourceByName.__init__)
 
 
-def test_sadl::resourcebyrestriction_constructor_args():
-    sig = inspect.signature(sadl::ResourceByRestriction.__init__)
-    params = list(sig.parameters.keys())
-    assert "annType" in params, "Missing parameter 'annType'"
-
-def test_sadl::resourcebyrestriction_has_annType():
-    assert hasattr(sadl::ResourceByRestriction, "annType")
-    descriptor = None
-    for klass in sadl::ResourceByRestriction.__mro__:
-        if "annType" in klass.__dict__:
-            descriptor = klass.__dict__["annType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sadl::resourcebyname_is_not_abstract():
-    assert not inspect.isabstract(sadl::ResourceByName)
-
-
-def test_sadl::resourcebyname_constructor_exists():
-    assert callable(sadl::ResourceByName.__init__)
-
-
-def test_sadl::resourcebyname_constructor_args():
-    sig = inspect.signature(sadl::ResourceByName.__init__)
+def test_sadl_resourcebyname_constructor_args():
+    sig = inspect.signature(sadl_ResourceByName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::literalvalue_is_not_abstract():
-    assert not inspect.isabstract(sadl::LiteralValue)
+def test_sadl_literalvalue_is_not_abstract():
+    assert not inspect.isabstract(sadl_LiteralValue)
 
 
-def test_sadl::literalvalue_constructor_exists():
-    assert callable(sadl::LiteralValue.__init__)
+def test_sadl_literalvalue_constructor_exists():
+    assert callable(sadl_LiteralValue.__init__)
 
 
-def test_sadl::literalvalue_constructor_args():
-    sig = inspect.signature(sadl::LiteralValue.__init__)
+def test_sadl_literalvalue_constructor_args():
+    sig = inspect.signature(sadl_LiteralValue.__init__)
     params = list(sig.parameters.keys())
+    assert "literalBoolean" in params, "Missing parameter 'literalBoolean'"
     assert "literalString" in params, "Missing parameter 'literalString'"
     assert "literalNumber" in params, "Missing parameter 'literalNumber'"
-    assert "literalBoolean" in params, "Missing parameter 'literalBoolean'"
 
-def test_sadl::literalvalue_has_literalString():
-    assert hasattr(sadl::LiteralValue, "literalString")
+def test_sadl_literalvalue_has_literalBoolean():
+    assert hasattr(sadl_LiteralValue, "literalBoolean")
     descriptor = None
-    for klass in sadl::LiteralValue.__mro__:
-        if "literalString" in klass.__dict__:
-            descriptor = klass.__dict__["literalString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::literalvalue_has_literalNumber():
-    assert hasattr(sadl::LiteralValue, "literalNumber")
-    descriptor = None
-    for klass in sadl::LiteralValue.__mro__:
-        if "literalNumber" in klass.__dict__:
-            descriptor = klass.__dict__["literalNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::literalvalue_has_literalBoolean():
-    assert hasattr(sadl::LiteralValue, "literalBoolean")
-    descriptor = None
-    for klass in sadl::LiteralValue.__mro__:
+    for klass in sadl_LiteralValue.__mro__:
         if "literalBoolean" in klass.__dict__:
             descriptor = klass.__dict__["literalBoolean"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_sadl::literallist_is_not_abstract():
-    assert not inspect.isabstract(sadl::LiteralList)
-
-
-def test_sadl::literallist_constructor_exists():
-    assert callable(sadl::LiteralList.__init__)
-
-
-def test_sadl::literallist_constructor_args():
-    sig = inspect.signature(sadl::LiteralList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::resourcelist_is_not_abstract():
-    assert not inspect.isabstract(sadl::ResourceList)
-
-
-def test_sadl::resourcelist_constructor_exists():
-    assert callable(sadl::ResourceList.__init__)
-
-
-def test_sadl::resourcelist_constructor_args():
-    sig = inspect.signature(sadl::ResourceList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sadl::resourcename_is_not_abstract():
-    assert not inspect.isabstract(sadl::ResourceName)
-
-
-def test_sadl::resourcename_constructor_exists():
-    assert callable(sadl::ResourceName.__init__)
-
-
-def test_sadl::resourcename_constructor_args():
-    sig = inspect.signature(sadl::ResourceName.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "annType" in params, "Missing parameter 'annType'"
-
-def test_sadl::resourcename_has_name():
-    assert hasattr(sadl::ResourceName, "name")
+def test_sadl_literalvalue_has_literalString():
+    assert hasattr(sadl_LiteralValue, "literalString")
     descriptor = None
-    for klass in sadl::ResourceName.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in sadl_LiteralValue.__mro__:
+        if "literalString" in klass.__dict__:
+            descriptor = klass.__dict__["literalString"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::resourcename_has_annType():
-    assert hasattr(sadl::ResourceName, "annType")
+def test_sadl_literalvalue_has_literalNumber():
+    assert hasattr(sadl_LiteralValue, "literalNumber")
     descriptor = None
-    for klass in sadl::ResourceName.__mro__:
+    for klass in sadl_LiteralValue.__mro__:
+        if "literalNumber" in klass.__dict__:
+            descriptor = klass.__dict__["literalNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sadl_literallist_is_not_abstract():
+    assert not inspect.isabstract(sadl_LiteralList)
+
+
+def test_sadl_literallist_constructor_exists():
+    assert callable(sadl_LiteralList.__init__)
+
+
+def test_sadl_literallist_constructor_args():
+    sig = inspect.signature(sadl_LiteralList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_resourcelist_is_not_abstract():
+    assert not inspect.isabstract(sadl_ResourceList)
+
+
+def test_sadl_resourcelist_constructor_exists():
+    assert callable(sadl_ResourceList.__init__)
+
+
+def test_sadl_resourcelist_constructor_args():
+    sig = inspect.signature(sadl_ResourceList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sadl_resourcename_is_not_abstract():
+    assert not inspect.isabstract(sadl_ResourceName)
+
+
+def test_sadl_resourcename_constructor_exists():
+    assert callable(sadl_ResourceName.__init__)
+
+
+def test_sadl_resourcename_constructor_args():
+    sig = inspect.signature(sadl_ResourceName.__init__)
+    params = list(sig.parameters.keys())
+    assert "annType" in params, "Missing parameter 'annType'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_sadl_resourcename_has_annType():
+    assert hasattr(sadl_ResourceName, "annType")
+    descriptor = None
+    for klass in sadl_ResourceName.__mro__:
         if "annType" in klass.__dict__:
             descriptor = klass.__dict__["annType"]
             break
     assert isinstance(descriptor, property)
 
+def test_sadl_resourcename_has_name():
+    assert hasattr(sadl_ResourceName, "name")
+    descriptor = None
+    for klass in sadl_ResourceName.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sadl::contentlist_is_not_abstract():
-    assert not inspect.isabstract(sadl::ContentList)
+
+def test_sadl_contentlist_is_not_abstract():
+    assert not inspect.isabstract(sadl_ContentList)
 
 
-def test_sadl::contentlist_constructor_exists():
-    assert callable(sadl::ContentList.__init__)
+def test_sadl_contentlist_constructor_exists():
+    assert callable(sadl_ContentList.__init__)
 
 
-def test_sadl::contentlist_constructor_args():
-    sig = inspect.signature(sadl::ContentList.__init__)
+def test_sadl_contentlist_constructor_args():
+    sig = inspect.signature(sadl_ContentList.__init__)
     params = list(sig.parameters.keys())
     assert "annContent" in params, "Missing parameter 'annContent'"
 
-def test_sadl::contentlist_has_annContent():
-    assert hasattr(sadl::ContentList, "annContent")
+def test_sadl_contentlist_has_annContent():
+    assert hasattr(sadl_ContentList, "annContent")
     descriptor = None
-    for klass in sadl::ContentList.__mro__:
+    for klass in sadl_ContentList.__mro__:
         if "annContent" in klass.__dict__:
             descriptor = klass.__dict__["annContent"]
             break
@@ -2084,47 +2084,47 @@ def test_sadl::contentlist_has_annContent():
 
 
 
-def test_sadl::modelelement_is_not_abstract():
-    assert not inspect.isabstract(sadl::ModelElement)
+def test_sadl_modelelement_is_not_abstract():
+    assert not inspect.isabstract(sadl_ModelElement)
 
 
-def test_sadl::modelelement_constructor_exists():
-    assert callable(sadl::ModelElement.__init__)
+def test_sadl_modelelement_constructor_exists():
+    assert callable(sadl_ModelElement.__init__)
 
 
-def test_sadl::modelelement_constructor_args():
-    sig = inspect.signature(sadl::ModelElement.__init__)
+def test_sadl_modelelement_constructor_args():
+    sig = inspect.signature(sadl_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sadl::import_is_not_abstract():
-    assert not inspect.isabstract(sadl::Import)
+def test_sadl_import_is_not_abstract():
+    assert not inspect.isabstract(sadl_Import)
 
 
-def test_sadl::import_constructor_exists():
-    assert callable(sadl::Import.__init__)
+def test_sadl_import_constructor_exists():
+    assert callable(sadl_Import.__init__)
 
 
-def test_sadl::import_constructor_args():
-    sig = inspect.signature(sadl::Import.__init__)
+def test_sadl_import_constructor_args():
+    sig = inspect.signature(sadl_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_sadl::import_has_importURI():
-    assert hasattr(sadl::Import, "importURI")
+def test_sadl_import_has_importURI():
+    assert hasattr(sadl_Import, "importURI")
     descriptor = None
-    for klass in sadl::Import.__mro__:
+    for klass in sadl_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::import_has_alias():
-    assert hasattr(sadl::Import, "alias")
+def test_sadl_import_has_alias():
+    assert hasattr(sadl_Import, "alias")
     descriptor = None
-    for klass in sadl::Import.__mro__:
+    for klass in sadl_Import.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -2132,70 +2132,70 @@ def test_sadl::import_has_alias():
 
 
 
-def test_sadl::modelname_is_not_abstract():
-    assert not inspect.isabstract(sadl::ModelName)
+def test_sadl_modelname_is_not_abstract():
+    assert not inspect.isabstract(sadl_ModelName)
 
 
-def test_sadl::modelname_constructor_exists():
-    assert callable(sadl::ModelName.__init__)
+def test_sadl_modelname_constructor_exists():
+    assert callable(sadl_ModelName.__init__)
 
 
-def test_sadl::modelname_constructor_args():
-    sig = inspect.signature(sadl::ModelName.__init__)
+def test_sadl_modelname_constructor_args():
+    sig = inspect.signature(sadl_ModelName.__init__)
     params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
-    assert "annType" in params, "Missing parameter 'annType'"
     assert "alias" in params, "Missing parameter 'alias'"
+    assert "version" in params, "Missing parameter 'version'"
     assert "baseUri" in params, "Missing parameter 'baseUri'"
+    assert "annType" in params, "Missing parameter 'annType'"
 
-def test_sadl::modelname_has_version():
-    assert hasattr(sadl::ModelName, "version")
+def test_sadl_modelname_has_alias():
+    assert hasattr(sadl_ModelName, "alias")
     descriptor = None
-    for klass in sadl::ModelName.__mro__:
+    for klass in sadl_ModelName.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sadl_modelname_has_version():
+    assert hasattr(sadl_ModelName, "version")
+    descriptor = None
+    for klass in sadl_ModelName.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_sadl::modelname_has_annType():
-    assert hasattr(sadl::ModelName, "annType")
+def test_sadl_modelname_has_baseUri():
+    assert hasattr(sadl_ModelName, "baseUri")
     descriptor = None
-    for klass in sadl::ModelName.__mro__:
-        if "annType" in klass.__dict__:
-            descriptor = klass.__dict__["annType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::modelname_has_alias():
-    assert hasattr(sadl::ModelName, "alias")
-    descriptor = None
-    for klass in sadl::ModelName.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sadl::modelname_has_baseUri():
-    assert hasattr(sadl::ModelName, "baseUri")
-    descriptor = None
-    for klass in sadl::ModelName.__mro__:
+    for klass in sadl_ModelName.__mro__:
         if "baseUri" in klass.__dict__:
             descriptor = klass.__dict__["baseUri"]
             break
     assert isinstance(descriptor, property)
 
+def test_sadl_modelname_has_annType():
+    assert hasattr(sadl_ModelName, "annType")
+    descriptor = None
+    for klass in sadl_ModelName.__mro__:
+        if "annType" in klass.__dict__:
+            descriptor = klass.__dict__["annType"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sadl::model_is_not_abstract():
-    assert not inspect.isabstract(sadl::Model)
+
+def test_sadl_model_is_not_abstract():
+    assert not inspect.isabstract(sadl_Model)
 
 
-def test_sadl::model_constructor_exists():
-    assert callable(sadl::Model.__init__)
+def test_sadl_model_constructor_exists():
+    assert callable(sadl_Model.__init__)
 
 
-def test_sadl::model_constructor_args():
-    sig = inspect.signature(sadl::Model.__init__)
+def test_sadl_model_constructor_args():
+    sig = inspect.signature(sadl_Model.__init__)
     params = list(sig.parameters.keys())
 
 def test_datatype_exists():
@@ -2206,26 +2206,26 @@ def test_datatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
-        "string",
-        "double",
-        "boolean",
-        "long",
-        "data",
-        "float",
-        "dateTime",
-        "decimal",
-        "hexBinary",
-        "base64Binary",
-        "anyURI",
-        "gDay",
-        "int",
-        "gMonth",
-        "date",
-        "duration",
         "time",
+        "date",
+        "int",
+        "boolean",
+        "dateTime",
+        "long",
+        "float",
+        "data",
+        "gYear",
+        "anyURI",
+        "base64Binary",
+        "hexBinary",
+        "double",
+        "decimal",
+        "string",
+        "gDay",
         "gMonthDay",
         "gYearMonth",
-        "gYear",
+        "duration",
+        "gMonth",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2243,115 +2243,115 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sadl::ValueRow_strategy = st.builds(
-    sadl::ValueRow,
+sadl_ValueRow_strategy = st.builds(
+    sadl_ValueRow,
 )
-sadl::ValueTable_strategy = st.builds(
-    sadl::ValueTable,
+sadl_ValueTable_strategy = st.builds(
+    sadl_ValueTable,
 )
-sadl::IntervalValue_strategy = st.builds(
-    sadl::IntervalValue,
+sadl_IntervalValue_strategy = st.builds(
+    sadl_IntervalValue,
     op=
         safe_text
 )
-sadl::GraphPattern_strategy = st.builds(
-    sadl::GraphPattern,
+sadl_GraphPattern_strategy = st.builds(
+    sadl_GraphPattern,
 )
-sadl::OrderElement_strategy = st.builds(
-    sadl::OrderElement,
+sadl_OrderElement_strategy = st.builds(
+    sadl_OrderElement,
     order=
         safe_text
 )
-sadl::OrderList_strategy = st.builds(
-    sadl::OrderList,
+sadl_OrderList_strategy = st.builds(
+    sadl_OrderList,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-sadl::BinaryOpExpression_strategy = st.builds(
-    sadl::BinaryOpExpression,
+sadl_AskQueryExpression_strategy = st.builds(
+    sadl_AskQueryExpression,
+)
+sadl_JunctionExpression_strategy = st.builds(
+    sadl_JunctionExpression,
     op=
         safe_text
 )
-sadl::AskQueryExpression_strategy = st.builds(
-    sadl::AskQueryExpression,
-)
-sadl::JunctionExpression_strategy = st.builds(
-    sadl::JunctionExpression,
+sadl_UnaryOpExpression_strategy = st.builds(
+    sadl_UnaryOpExpression,
     op=
         safe_text
 )
-sadl::UnaryOpExpression_strategy = st.builds(
-    sadl::UnaryOpExpression,
+sadl_ConstructExpression_strategy = st.builds(
+    sadl_ConstructExpression,
+)
+sadl_BinaryOpExpression_strategy = st.builds(
+    sadl_BinaryOpExpression,
     op=
         safe_text
 )
-sadl::ConstructExpression_strategy = st.builds(
-    sadl::ConstructExpression,
-)
-sadl::SelectExpression_strategy = st.builds(
-    sadl::SelectExpression,
+sadl_SelectExpression_strategy = st.builds(
+    sadl_SelectExpression,
+    orderby=
+        safe_text,
     distinct=
         safe_text,
     allVars=
-        safe_text,
-    orderby=
         safe_text
 )
-sadl::Expression_strategy = st.builds(
-    sadl::Expression,
+sadl_Expression_strategy = st.builds(
+    sadl_Expression,
     func=
         safe_text
 )
-sadl::ElementSet_strategy = st.builds(
-    sadl::ElementSet,
+sadl_ElementSet_strategy = st.builds(
+    sadl_ElementSet,
 )
-sadl::Object_strategy = st.builds(
-    sadl::Object,
+sadl_Object_strategy = st.builds(
+    sadl_Object,
 )
-sadl::VariableList_strategy = st.builds(
-    sadl::VariableList,
+sadl_VariableList_strategy = st.builds(
+    sadl_VariableList,
 )
 GraphPattern_strategy = st.builds(
     GraphPattern,
 )
-sadl::InstAttrPSV_strategy = st.builds(
-    sadl::InstAttrPSV,
+sadl_InstAttrSPV_strategy = st.builds(
+    sadl_InstAttrSPV,
 )
-sadl::SubjProp_strategy = st.builds(
-    sadl::SubjProp,
+sadl_ExistentialNegation_strategy = st.builds(
+    sadl_ExistentialNegation,
 )
-sadl::PropOfSubj_strategy = st.builds(
-    sadl::PropOfSubj,
+sadl_InstAttrPSV_strategy = st.builds(
+    sadl_InstAttrPSV,
 )
-sadl::ExistentialNegation_strategy = st.builds(
-    sadl::ExistentialNegation,
+sadl_PropOfSubj_strategy = st.builds(
+    sadl_PropOfSubj,
 )
-sadl::SubTypeOf_strategy = st.builds(
-    sadl::SubTypeOf,
+sadl_SubTypeOf_strategy = st.builds(
+    sadl_SubTypeOf,
 )
-sadl::InstAttrSPV_strategy = st.builds(
-    sadl::InstAttrSPV,
+sadl_SubjProp_strategy = st.builds(
+    sadl_SubjProp,
 )
-sadl::MergedTriples_strategy = st.builds(
-    sadl::MergedTriples,
+sadl_MergedTriples_strategy = st.builds(
+    sadl_MergedTriples,
 )
-sadl::EmbeddedInstanceDeclaration_strategy = st.builds(
-    sadl::EmbeddedInstanceDeclaration,
+sadl_EmbeddedInstanceDeclaration_strategy = st.builds(
+    sadl_EmbeddedInstanceDeclaration,
 )
-sadl::WithPhrase_strategy = st.builds(
-    sadl::WithPhrase,
+sadl_WithPhrase_strategy = st.builds(
+    sadl_WithPhrase,
 )
-sadl::WithChain_strategy = st.builds(
-    sadl::WithChain,
+sadl_WithChain_strategy = st.builds(
+    sadl_WithChain,
 )
-sadl::OfPhrase_strategy = st.builds(
-    sadl::OfPhrase,
+sadl_OfPhrase_strategy = st.builds(
+    sadl_OfPhrase,
     article=
         safe_text
 )
-sadl::TypeDeclaration_strategy = st.builds(
-    sadl::TypeDeclaration,
+sadl_TypeDeclaration_strategy = st.builds(
+    sadl_TypeDeclaration,
 )
 EmbeddedInstanceDeclaration_strategy = st.builds(
     EmbeddedInstanceDeclaration,
@@ -2359,85 +2359,81 @@ EmbeddedInstanceDeclaration_strategy = st.builds(
 InstanceDeclarationStatement_strategy = st.builds(
     InstanceDeclarationStatement,
 )
-sadl::InstanceDeclaration_strategy = st.builds(
-    sadl::InstanceDeclaration,
+sadl_InstanceDeclaration_strategy = st.builds(
+    sadl_InstanceDeclaration,
     article=
         safe_text
 )
-sadl::OfPatternReturningValues_strategy = st.builds(
-    sadl::OfPatternReturningValues,
+sadl_OfPatternReturningValues_strategy = st.builds(
+    sadl_OfPatternReturningValues,
 )
-sadl::PropValPartialTriple_strategy = st.builds(
-    sadl::PropValPartialTriple,
+sadl_PropValPartialTriple_strategy = st.builds(
+    sadl_PropValPartialTriple,
 )
-sadl::IsInverseOf_strategy = st.builds(
-    sadl::IsInverseOf,
+sadl_IsInverseOf_strategy = st.builds(
+    sadl_IsInverseOf,
 )
-sadl::AdditionalPropertyInfo_strategy = st.builds(
-    sadl::AdditionalPropertyInfo,
-    isTrans=
-        safe_text,
+sadl_AdditionalPropertyInfo_strategy = st.builds(
+    sadl_AdditionalPropertyInfo,
     isfunc=
         safe_text,
     isinvfunc=
         safe_text,
+    isTrans=
+        safe_text,
     isSym=
         safe_text
 )
-sadl::TypedBNode_strategy = st.builds(
-    sadl::TypedBNode,
+sadl_TypedBNode_strategy = st.builds(
+    sadl_TypedBNode,
     article=
         safe_text
 )
-sadl::ExplicitValue_strategy = st.builds(
-    sadl::ExplicitValue,
+sadl_ExplicitValue_strategy = st.builds(
+    sadl_ExplicitValue,
     valueList=
         safe_text,
     term=
         safe_text
 )
-sadl::EObject_strategy = st.builds(
-    sadl::EObject,
+sadl_EObject_strategy = st.builds(
+    sadl_EObject,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-sadl::CardCondition_strategy = st.builds(
-    sadl::CardCondition,
+sadl_CardCondition_strategy = st.builds(
+    sadl_CardCondition,
     card=
         safe_text
 )
-sadl::MaxCardCondition_strategy = st.builds(
-    sadl::MaxCardCondition,
+sadl_MaxCardCondition_strategy = st.builds(
+    sadl_MaxCardCondition,
     card=
         safe_text
 )
-sadl::MinCardCondition_strategy = st.builds(
-    sadl::MinCardCondition,
+sadl_MinCardCondition_strategy = st.builds(
+    sadl_MinCardCondition,
     card=
         safe_text
 )
-sadl::HasValueCondition_strategy = st.builds(
-    sadl::HasValueCondition,
+sadl_HasValueCondition_strategy = st.builds(
+    sadl_HasValueCondition,
 )
-sadl::SomeValuesCondition_strategy = st.builds(
-    sadl::SomeValuesCondition,
+sadl_SomeValuesCondition_strategy = st.builds(
+    sadl_SomeValuesCondition,
 )
-sadl::AllValuesCondition_strategy = st.builds(
-    sadl::AllValuesCondition,
+sadl_AllValuesCondition_strategy = st.builds(
+    sadl_AllValuesCondition,
 )
-sadl::PropertyOfClass_strategy = st.builds(
-    sadl::PropertyOfClass,
+sadl_PropertyOfClass_strategy = st.builds(
+    sadl_PropertyOfClass,
 )
-sadl::Facets_strategy = st.builds(
-    sadl::Facets,
-    regex=
-        safe_text,
+sadl_Facets_strategy = st.builds(
+    sadl_Facets,
     min=
         safe_text,
-    minlen=
-        safe_text,
-    max=
+    len=
         safe_text,
     maxlen=
         safe_text,
@@ -2445,501 +2441,475 @@ sadl::Facets_strategy = st.builds(
         safe_text,
     maxexin=
         safe_text,
+    max=
+        safe_text,
     minexin=
         safe_text,
-    len=
+    regex=
+        safe_text,
+    minlen=
         safe_text
 )
-sadl::DataTypeRestriction_strategy = st.builds(
-    sadl::DataTypeRestriction,
-    basetype=
-        safe_text,
+sadl_DataTypeRestriction_strategy = st.builds(
+    sadl_DataTypeRestriction,
     basetypes=
+        safe_text,
+    basetype=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-sadl::TransitiveProperty_strategy = st.builds(
-    sadl::TransitiveProperty,
+sadl_InstanceDifferentFrom_strategy = st.builds(
+    sadl_InstanceDifferentFrom,
 )
-sadl::NecessaryAndSufficient_strategy = st.builds(
-    sadl::NecessaryAndSufficient,
-    article=
-        safe_text
+sadl_EnumeratedAllAndSomeValuesFrom_strategy = st.builds(
+    sadl_EnumeratedAllAndSomeValuesFrom,
 )
-sadl::SomeValuesFrom_strategy = st.builds(
-    sadl::SomeValuesFrom,
+sadl_InverseProperty_strategy = st.builds(
+    sadl_InverseProperty,
 )
-sadl::InstanceDeclarationStatement_strategy = st.builds(
-    sadl::InstanceDeclarationStatement,
+sadl_SymmetricalProperty_strategy = st.builds(
+    sadl_SymmetricalProperty,
 )
-sadl::EnumeratedAllValuesFrom_strategy = st.builds(
-    sadl::EnumeratedAllValuesFrom,
+sadl_InstancesAllDifferent_strategy = st.builds(
+    sadl_InstancesAllDifferent,
 )
-sadl::InstancesAllDifferent_strategy = st.builds(
-    sadl::InstancesAllDifferent,
+sadl_AllValuesFrom_strategy = st.builds(
+    sadl_AllValuesFrom,
 )
-sadl::HasValue_strategy = st.builds(
-    sadl::HasValue,
+sadl_InstanceDeclarationStatement_strategy = st.builds(
+    sadl_InstanceDeclarationStatement,
 )
-sadl::DefaultValue_strategy = st.builds(
-    sadl::DefaultValue,
+sadl_TransitiveProperty_strategy = st.builds(
+    sadl_TransitiveProperty,
+)
+sadl_EquivalentConcepts_strategy = st.builds(
+    sadl_EquivalentConcepts,
+)
+sadl_MaxCardinality_strategy = st.builds(
+    sadl_MaxCardinality,
+)
+sadl_ExistingInstanceAttribution_strategy = st.builds(
+    sadl_ExistingInstanceAttribution,
+)
+sadl_DisjointClasses_strategy = st.builds(
+    sadl_DisjointClasses,
+)
+sadl_DefaultValue_strategy = st.builds(
+    sadl_DefaultValue,
     level=
         safe_text
 )
-sadl::InstanceDifferentFrom_strategy = st.builds(
-    sadl::InstanceDifferentFrom,
+sadl_HasValue_strategy = st.builds(
+    sadl_HasValue,
 )
-sadl::DisjointClasses_strategy = st.builds(
-    sadl::DisjointClasses,
-)
-sadl::EquivalentConcepts_strategy = st.builds(
-    sadl::EquivalentConcepts,
-)
-sadl::InverseProperty_strategy = st.builds(
-    sadl::InverseProperty,
-)
-sadl::PropertyDeclaration_strategy = st.builds(
-    sadl::PropertyDeclaration,
+sadl_NecessaryAndSufficient_strategy = st.builds(
+    sadl_NecessaryAndSufficient,
     article=
         safe_text
 )
-sadl::ExistingInstanceAttribution_strategy = st.builds(
-    sadl::ExistingInstanceAttribution,
+sadl_SomeValuesFrom_strategy = st.builds(
+    sadl_SomeValuesFrom,
 )
-sadl::SymmetricalProperty_strategy = st.builds(
-    sadl::SymmetricalProperty,
+sadl_InverseFunctionalProperty_strategy = st.builds(
+    sadl_InverseFunctionalProperty,
 )
-sadl::InverseFunctionalProperty_strategy = st.builds(
-    sadl::InverseFunctionalProperty,
+sadl_ComplementOfClass_strategy = st.builds(
+    sadl_ComplementOfClass,
 )
-sadl::ComplementOfClass_strategy = st.builds(
-    sadl::ComplementOfClass,
+sadl_EnumeratedAllValuesFrom_strategy = st.builds(
+    sadl_EnumeratedAllValuesFrom,
 )
-sadl::AllValuesFrom_strategy = st.builds(
-    sadl::AllValuesFrom,
+sadl_MinCardinality_strategy = st.builds(
+    sadl_MinCardinality,
 )
-sadl::EnumeratedAllAndSomeValuesFrom_strategy = st.builds(
-    sadl::EnumeratedAllAndSomeValuesFrom,
+sadl_PropertyDeclaration_strategy = st.builds(
+    sadl_PropertyDeclaration,
+    article=
+        safe_text
 )
-sadl::Cardinality_strategy = st.builds(
-    sadl::Cardinality,
+sadl_FunctionalProperty_strategy = st.builds(
+    sadl_FunctionalProperty,
 )
-sadl::MaxCardinality_strategy = st.builds(
-    sadl::MaxCardinality,
+sadl_Cardinality_strategy = st.builds(
+    sadl_Cardinality,
 )
-sadl::MinCardinality_strategy = st.builds(
-    sadl::MinCardinality,
+sadl_ClassDeclaration_strategy = st.builds(
+    sadl_ClassDeclaration,
 )
-sadl::FunctionalProperty_strategy = st.builds(
-    sadl::FunctionalProperty,
-)
-sadl::ClassDeclaration_strategy = st.builds(
-    sadl::ClassDeclaration,
-)
-sadl::UserDefinedDataType_strategy = st.builds(
-    sadl::UserDefinedDataType,
+sadl_UserDefinedDataType_strategy = st.builds(
+    sadl_UserDefinedDataType,
 )
 ResourceBySetOp_strategy = st.builds(
     ResourceBySetOp,
 )
-sadl::IntersectionResource_strategy = st.builds(
-    sadl::IntersectionResource,
+sadl_IntersectionResource_strategy = st.builds(
+    sadl_IntersectionResource,
 )
-sadl::UnionResource_strategy = st.builds(
-    sadl::UnionResource,
+sadl_UnionResource_strategy = st.builds(
+    sadl_UnionResource,
 )
-sadl::RangeType_strategy = st.builds(
-    sadl::RangeType,
+sadl_RangeType_strategy = st.builds(
+    sadl_RangeType,
     dataType=
         safe_text
 )
-sadl::Range_strategy = st.builds(
-    sadl::Range,
+sadl_Range_strategy = st.builds(
+    sadl_Range,
     single=
         safe_text,
-    list=
-        safe_text,
     lists=
+        safe_text,
+    list=
         safe_text
 )
-sadl::AddlClassInfo_strategy = st.builds(
-    sadl::AddlClassInfo,
+sadl_AddlClassInfo_strategy = st.builds(
+    sadl_AddlClassInfo,
 )
-sadl::EnumeratedInstances_strategy = st.builds(
-    sadl::EnumeratedInstances,
+sadl_EnumeratedInstances_strategy = st.builds(
+    sadl_EnumeratedInstances,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-sadl::Explanation_strategy = st.builds(
-    sadl::Explanation,
-    rulename=
-        safe_text
+sadl_Expr_strategy = st.builds(
+    sadl_Expr,
 )
-sadl::Rule_strategy = st.builds(
-    sadl::Rule,
+sadl_Query_strategy = st.builds(
+    sadl_Query,
+)
+sadl_Rule_strategy = st.builds(
+    sadl_Rule,
     name=
         safe_text
 )
-sadl::Test_strategy = st.builds(
-    sadl::Test,
+sadl_Test_strategy = st.builds(
+    sadl_Test,
 )
-sadl::Display_strategy = st.builds(
-    sadl::Display,
+sadl_Display_strategy = st.builds(
+    sadl_Display,
     displayString=
         safe_text,
     model=
         safe_text
 )
-sadl::Expr_strategy = st.builds(
-    sadl::Expr,
+sadl_Explanation_strategy = st.builds(
+    sadl_Explanation,
+    rulename=
+        safe_text
 )
-sadl::Query_strategy = st.builds(
-    sadl::Query,
+sadl_Statement_strategy = st.builds(
+    sadl_Statement,
 )
-sadl::Statement_strategy = st.builds(
-    sadl::Statement,
+sadl_Condition_strategy = st.builds(
+    sadl_Condition,
 )
-sadl::Condition_strategy = st.builds(
-    sadl::Condition,
+sadl_ResourceIdentifier_strategy = st.builds(
+    sadl_ResourceIdentifier,
 )
-sadl::ResourceIdentifier_strategy = st.builds(
-    sadl::ResourceIdentifier,
-)
-sadl::ExistingResourceList_strategy = st.builds(
-    sadl::ExistingResourceList,
+sadl_ExistingResourceList_strategy = st.builds(
+    sadl_ExistingResourceList,
 )
 ResourceIdentifier_strategy = st.builds(
     ResourceIdentifier,
 )
-sadl::ResourceBySetOp_strategy = st.builds(
-    sadl::ResourceBySetOp,
+sadl_ResourceByRestriction_strategy = st.builds(
+    sadl_ResourceByRestriction,
+    annType=
+        safe_text
+)
+sadl_ResourceBySetOp_strategy = st.builds(
+    sadl_ResourceBySetOp,
     op=
         safe_text,
     annType=
         safe_text
 )
-sadl::ResourceByRestriction_strategy = st.builds(
-    sadl::ResourceByRestriction,
-    annType=
-        safe_text
+sadl_ResourceByName_strategy = st.builds(
+    sadl_ResourceByName,
 )
-sadl::ResourceByName_strategy = st.builds(
-    sadl::ResourceByName,
-)
-sadl::LiteralValue_strategy = st.builds(
-    sadl::LiteralValue,
+sadl_LiteralValue_strategy = st.builds(
+    sadl_LiteralValue,
+    literalBoolean=
+        safe_text,
     literalString=
         safe_text,
     literalNumber=
-        safe_text,
-    literalBoolean=
         safe_text
 )
-sadl::LiteralList_strategy = st.builds(
-    sadl::LiteralList,
+sadl_LiteralList_strategy = st.builds(
+    sadl_LiteralList,
 )
-sadl::ResourceList_strategy = st.builds(
-    sadl::ResourceList,
+sadl_ResourceList_strategy = st.builds(
+    sadl_ResourceList,
 )
-sadl::ResourceName_strategy = st.builds(
-    sadl::ResourceName,
-    name=
-        safe_text,
+sadl_ResourceName_strategy = st.builds(
+    sadl_ResourceName,
     annType=
+        safe_text,
+    name=
         safe_text
 )
-sadl::ContentList_strategy = st.builds(
-    sadl::ContentList,
+sadl_ContentList_strategy = st.builds(
+    sadl_ContentList,
     annContent=
         safe_text
 )
-sadl::ModelElement_strategy = st.builds(
-    sadl::ModelElement,
+sadl_ModelElement_strategy = st.builds(
+    sadl_ModelElement,
 )
-sadl::Import_strategy = st.builds(
-    sadl::Import,
+sadl_Import_strategy = st.builds(
+    sadl_Import,
     importURI=
         safe_text,
     alias=
         safe_text
 )
-sadl::ModelName_strategy = st.builds(
-    sadl::ModelName,
-    version=
-        safe_text,
-    annType=
-        safe_text,
+sadl_ModelName_strategy = st.builds(
+    sadl_ModelName,
     alias=
         safe_text,
+    version=
+        safe_text,
     baseUri=
+        safe_text,
+    annType=
         safe_text
 )
-sadl::Model_strategy = st.builds(
-    sadl::Model,
+sadl_Model_strategy = st.builds(
+    sadl_Model,
 )
 
-@given(instance=sadl::ValueRow_strategy)
+@given(instance=sadl_ValueRow_strategy)
 @settings(max_examples=50)
-def test_sadl::valuerow_instantiation(instance):
-    assert isinstance(instance, sadl::ValueRow)
+def test_sadl_valuerow_instantiation(instance):
+    assert isinstance(instance, sadl_ValueRow)
 
-@given(instance=sadl::ValueTable_strategy)
+@given(instance=sadl_ValueTable_strategy)
 @settings(max_examples=50)
-def test_sadl::valuetable_instantiation(instance):
-    assert isinstance(instance, sadl::ValueTable)
+def test_sadl_valuetable_instantiation(instance):
+    assert isinstance(instance, sadl_ValueTable)
 
-@given(instance=sadl::IntervalValue_strategy)
+@given(instance=sadl_IntervalValue_strategy)
 @settings(max_examples=50)
-def test_sadl::intervalvalue_instantiation(instance):
-    assert isinstance(instance, sadl::IntervalValue)
-
-@given(instance=sadl::IntervalValue_strategy)
-def test_sadl::intervalvalue_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_sadl_intervalvalue_instantiation(instance):
+    assert isinstance(instance, sadl_IntervalValue)
 
 
-@given(instance=sadl::IntervalValue_strategy)
-def test_sadl::intervalvalue_op_setter(instance):
+
+@given(instance=sadl_IntervalValue_strategy)
+def test_sadl_intervalvalue_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=sadl::GraphPattern_strategy)
+@given(instance=sadl_GraphPattern_strategy)
 @settings(max_examples=50)
-def test_sadl::graphpattern_instantiation(instance):
-    assert isinstance(instance, sadl::GraphPattern)
+def test_sadl_graphpattern_instantiation(instance):
+    assert isinstance(instance, sadl_GraphPattern)
 
-@given(instance=sadl::OrderElement_strategy)
+@given(instance=sadl_OrderElement_strategy)
 @settings(max_examples=50)
-def test_sadl::orderelement_instantiation(instance):
-    assert isinstance(instance, sadl::OrderElement)
-
-@given(instance=sadl::OrderElement_strategy)
-def test_sadl::orderelement_order_type(instance):
-    assert isinstance(instance.order, str)
+def test_sadl_orderelement_instantiation(instance):
+    assert isinstance(instance, sadl_OrderElement)
 
 
-@given(instance=sadl::OrderElement_strategy)
-def test_sadl::orderelement_order_setter(instance):
+
+@given(instance=sadl_OrderElement_strategy)
+def test_sadl_orderelement_order_setter(instance):
     original = instance.order
     instance.order = original
     assert instance.order == original
 
-@given(instance=sadl::OrderList_strategy)
+@given(instance=sadl_OrderList_strategy)
 @settings(max_examples=50)
-def test_sadl::orderlist_instantiation(instance):
-    assert isinstance(instance, sadl::OrderList)
+def test_sadl_orderlist_instantiation(instance):
+    assert isinstance(instance, sadl_OrderList)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=sadl::BinaryOpExpression_strategy)
+@given(instance=sadl_AskQueryExpression_strategy)
 @settings(max_examples=50)
-def test_sadl::binaryopexpression_instantiation(instance):
-    assert isinstance(instance, sadl::BinaryOpExpression)
+def test_sadl_askqueryexpression_instantiation(instance):
+    assert isinstance(instance, sadl_AskQueryExpression)
 
-@given(instance=sadl::BinaryOpExpression_strategy)
-def test_sadl::binaryopexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=sadl_JunctionExpression_strategy)
+@settings(max_examples=50)
+def test_sadl_junctionexpression_instantiation(instance):
+    assert isinstance(instance, sadl_JunctionExpression)
 
 
-@given(instance=sadl::BinaryOpExpression_strategy)
-def test_sadl::binaryopexpression_op_setter(instance):
+
+@given(instance=sadl_JunctionExpression_strategy)
+def test_sadl_junctionexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=sadl::AskQueryExpression_strategy)
+@given(instance=sadl_UnaryOpExpression_strategy)
 @settings(max_examples=50)
-def test_sadl::askqueryexpression_instantiation(instance):
-    assert isinstance(instance, sadl::AskQueryExpression)
-
-@given(instance=sadl::JunctionExpression_strategy)
-@settings(max_examples=50)
-def test_sadl::junctionexpression_instantiation(instance):
-    assert isinstance(instance, sadl::JunctionExpression)
-
-@given(instance=sadl::JunctionExpression_strategy)
-def test_sadl::junctionexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_sadl_unaryopexpression_instantiation(instance):
+    assert isinstance(instance, sadl_UnaryOpExpression)
 
 
-@given(instance=sadl::JunctionExpression_strategy)
-def test_sadl::junctionexpression_op_setter(instance):
+
+@given(instance=sadl_UnaryOpExpression_strategy)
+def test_sadl_unaryopexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=sadl::UnaryOpExpression_strategy)
+@given(instance=sadl_ConstructExpression_strategy)
 @settings(max_examples=50)
-def test_sadl::unaryopexpression_instantiation(instance):
-    assert isinstance(instance, sadl::UnaryOpExpression)
+def test_sadl_constructexpression_instantiation(instance):
+    assert isinstance(instance, sadl_ConstructExpression)
 
-@given(instance=sadl::UnaryOpExpression_strategy)
-def test_sadl::unaryopexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=sadl_BinaryOpExpression_strategy)
+@settings(max_examples=50)
+def test_sadl_binaryopexpression_instantiation(instance):
+    assert isinstance(instance, sadl_BinaryOpExpression)
 
 
-@given(instance=sadl::UnaryOpExpression_strategy)
-def test_sadl::unaryopexpression_op_setter(instance):
+
+@given(instance=sadl_BinaryOpExpression_strategy)
+def test_sadl_binaryopexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=sadl::ConstructExpression_strategy)
+@given(instance=sadl_SelectExpression_strategy)
 @settings(max_examples=50)
-def test_sadl::constructexpression_instantiation(instance):
-    assert isinstance(instance, sadl::ConstructExpression)
-
-@given(instance=sadl::SelectExpression_strategy)
-@settings(max_examples=50)
-def test_sadl::selectexpression_instantiation(instance):
-    assert isinstance(instance, sadl::SelectExpression)
-
-@given(instance=sadl::SelectExpression_strategy)
-def test_sadl::selectexpression_distinct_type(instance):
-    assert isinstance(instance.distinct, str)
+def test_sadl_selectexpression_instantiation(instance):
+    assert isinstance(instance, sadl_SelectExpression)
 
 
-@given(instance=sadl::SelectExpression_strategy)
-def test_sadl::selectexpression_distinct_setter(instance):
-    original = instance.distinct
-    instance.distinct = original
-    assert instance.distinct == original
 
-@given(instance=sadl::SelectExpression_strategy)
-def test_sadl::selectexpression_allVars_type(instance):
-    assert isinstance(instance.allVars, str)
-
-
-@given(instance=sadl::SelectExpression_strategy)
-def test_sadl::selectexpression_allVars_setter(instance):
-    original = instance.allVars
-    instance.allVars = original
-    assert instance.allVars == original
-
-@given(instance=sadl::SelectExpression_strategy)
-def test_sadl::selectexpression_orderby_type(instance):
-    assert isinstance(instance.orderby, str)
-
-
-@given(instance=sadl::SelectExpression_strategy)
-def test_sadl::selectexpression_orderby_setter(instance):
+@given(instance=sadl_SelectExpression_strategy)
+def test_sadl_selectexpression_orderby_setter(instance):
     original = instance.orderby
     instance.orderby = original
     assert instance.orderby == original
 
-@given(instance=sadl::Expression_strategy)
+
+
+@given(instance=sadl_SelectExpression_strategy)
+def test_sadl_selectexpression_distinct_setter(instance):
+    original = instance.distinct
+    instance.distinct = original
+    assert instance.distinct == original
+
+
+
+@given(instance=sadl_SelectExpression_strategy)
+def test_sadl_selectexpression_allVars_setter(instance):
+    original = instance.allVars
+    instance.allVars = original
+    assert instance.allVars == original
+
+@given(instance=sadl_Expression_strategy)
 @settings(max_examples=50)
-def test_sadl::expression_instantiation(instance):
-    assert isinstance(instance, sadl::Expression)
-
-@given(instance=sadl::Expression_strategy)
-def test_sadl::expression_func_type(instance):
-    assert isinstance(instance.func, str)
+def test_sadl_expression_instantiation(instance):
+    assert isinstance(instance, sadl_Expression)
 
 
-@given(instance=sadl::Expression_strategy)
-def test_sadl::expression_func_setter(instance):
+
+@given(instance=sadl_Expression_strategy)
+def test_sadl_expression_func_setter(instance):
     original = instance.func
     instance.func = original
     assert instance.func == original
 
-@given(instance=sadl::ElementSet_strategy)
+@given(instance=sadl_ElementSet_strategy)
 @settings(max_examples=50)
-def test_sadl::elementset_instantiation(instance):
-    assert isinstance(instance, sadl::ElementSet)
+def test_sadl_elementset_instantiation(instance):
+    assert isinstance(instance, sadl_ElementSet)
 
-@given(instance=sadl::Object_strategy)
+@given(instance=sadl_Object_strategy)
 @settings(max_examples=50)
-def test_sadl::object_instantiation(instance):
-    assert isinstance(instance, sadl::Object)
+def test_sadl_object_instantiation(instance):
+    assert isinstance(instance, sadl_Object)
 
-@given(instance=sadl::VariableList_strategy)
+@given(instance=sadl_VariableList_strategy)
 @settings(max_examples=50)
-def test_sadl::variablelist_instantiation(instance):
-    assert isinstance(instance, sadl::VariableList)
+def test_sadl_variablelist_instantiation(instance):
+    assert isinstance(instance, sadl_VariableList)
 
 @given(instance=GraphPattern_strategy)
 @settings(max_examples=50)
 def test_graphpattern_instantiation(instance):
     assert isinstance(instance, GraphPattern)
 
-@given(instance=sadl::InstAttrPSV_strategy)
+@given(instance=sadl_InstAttrSPV_strategy)
 @settings(max_examples=50)
-def test_sadl::instattrpsv_instantiation(instance):
-    assert isinstance(instance, sadl::InstAttrPSV)
+def test_sadl_instattrspv_instantiation(instance):
+    assert isinstance(instance, sadl_InstAttrSPV)
 
-@given(instance=sadl::SubjProp_strategy)
+@given(instance=sadl_ExistentialNegation_strategy)
 @settings(max_examples=50)
-def test_sadl::subjprop_instantiation(instance):
-    assert isinstance(instance, sadl::SubjProp)
+def test_sadl_existentialnegation_instantiation(instance):
+    assert isinstance(instance, sadl_ExistentialNegation)
 
-@given(instance=sadl::PropOfSubj_strategy)
+@given(instance=sadl_InstAttrPSV_strategy)
 @settings(max_examples=50)
-def test_sadl::propofsubj_instantiation(instance):
-    assert isinstance(instance, sadl::PropOfSubj)
+def test_sadl_instattrpsv_instantiation(instance):
+    assert isinstance(instance, sadl_InstAttrPSV)
 
-@given(instance=sadl::ExistentialNegation_strategy)
+@given(instance=sadl_PropOfSubj_strategy)
 @settings(max_examples=50)
-def test_sadl::existentialnegation_instantiation(instance):
-    assert isinstance(instance, sadl::ExistentialNegation)
+def test_sadl_propofsubj_instantiation(instance):
+    assert isinstance(instance, sadl_PropOfSubj)
 
-@given(instance=sadl::SubTypeOf_strategy)
+@given(instance=sadl_SubTypeOf_strategy)
 @settings(max_examples=50)
-def test_sadl::subtypeof_instantiation(instance):
-    assert isinstance(instance, sadl::SubTypeOf)
+def test_sadl_subtypeof_instantiation(instance):
+    assert isinstance(instance, sadl_SubTypeOf)
 
-@given(instance=sadl::InstAttrSPV_strategy)
+@given(instance=sadl_SubjProp_strategy)
 @settings(max_examples=50)
-def test_sadl::instattrspv_instantiation(instance):
-    assert isinstance(instance, sadl::InstAttrSPV)
+def test_sadl_subjprop_instantiation(instance):
+    assert isinstance(instance, sadl_SubjProp)
 
-@given(instance=sadl::MergedTriples_strategy)
+@given(instance=sadl_MergedTriples_strategy)
 @settings(max_examples=50)
-def test_sadl::mergedtriples_instantiation(instance):
-    assert isinstance(instance, sadl::MergedTriples)
+def test_sadl_mergedtriples_instantiation(instance):
+    assert isinstance(instance, sadl_MergedTriples)
 
-@given(instance=sadl::EmbeddedInstanceDeclaration_strategy)
+@given(instance=sadl_EmbeddedInstanceDeclaration_strategy)
 @settings(max_examples=50)
-def test_sadl::embeddedinstancedeclaration_instantiation(instance):
-    assert isinstance(instance, sadl::EmbeddedInstanceDeclaration)
+def test_sadl_embeddedinstancedeclaration_instantiation(instance):
+    assert isinstance(instance, sadl_EmbeddedInstanceDeclaration)
 
-@given(instance=sadl::WithPhrase_strategy)
+@given(instance=sadl_WithPhrase_strategy)
 @settings(max_examples=50)
-def test_sadl::withphrase_instantiation(instance):
-    assert isinstance(instance, sadl::WithPhrase)
+def test_sadl_withphrase_instantiation(instance):
+    assert isinstance(instance, sadl_WithPhrase)
 
-@given(instance=sadl::WithChain_strategy)
+@given(instance=sadl_WithChain_strategy)
 @settings(max_examples=50)
-def test_sadl::withchain_instantiation(instance):
-    assert isinstance(instance, sadl::WithChain)
+def test_sadl_withchain_instantiation(instance):
+    assert isinstance(instance, sadl_WithChain)
 
-@given(instance=sadl::OfPhrase_strategy)
+@given(instance=sadl_OfPhrase_strategy)
 @settings(max_examples=50)
-def test_sadl::ofphrase_instantiation(instance):
-    assert isinstance(instance, sadl::OfPhrase)
-
-@given(instance=sadl::OfPhrase_strategy)
-def test_sadl::ofphrase_article_type(instance):
-    assert isinstance(instance.article, str)
+def test_sadl_ofphrase_instantiation(instance):
+    assert isinstance(instance, sadl_OfPhrase)
 
 
-@given(instance=sadl::OfPhrase_strategy)
-def test_sadl::ofphrase_article_setter(instance):
+
+@given(instance=sadl_OfPhrase_strategy)
+def test_sadl_ofphrase_article_setter(instance):
     original = instance.article
     instance.article = original
     assert instance.article == original
 
-@given(instance=sadl::TypeDeclaration_strategy)
+@given(instance=sadl_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_sadl::typedeclaration_instantiation(instance):
-    assert isinstance(instance, sadl::TypeDeclaration)
+def test_sadl_typedeclaration_instantiation(instance):
+    assert isinstance(instance, sadl_TypeDeclaration)
 
 @given(instance=EmbeddedInstanceDeclaration_strategy)
 @settings(max_examples=50)
@@ -2951,905 +2921,761 @@ def test_embeddedinstancedeclaration_instantiation(instance):
 def test_instancedeclarationstatement_instantiation(instance):
     assert isinstance(instance, InstanceDeclarationStatement)
 
-@given(instance=sadl::InstanceDeclaration_strategy)
+@given(instance=sadl_InstanceDeclaration_strategy)
 @settings(max_examples=50)
-def test_sadl::instancedeclaration_instantiation(instance):
-    assert isinstance(instance, sadl::InstanceDeclaration)
-
-@given(instance=sadl::InstanceDeclaration_strategy)
-def test_sadl::instancedeclaration_article_type(instance):
-    assert isinstance(instance.article, str)
+def test_sadl_instancedeclaration_instantiation(instance):
+    assert isinstance(instance, sadl_InstanceDeclaration)
 
 
-@given(instance=sadl::InstanceDeclaration_strategy)
-def test_sadl::instancedeclaration_article_setter(instance):
+
+@given(instance=sadl_InstanceDeclaration_strategy)
+def test_sadl_instancedeclaration_article_setter(instance):
     original = instance.article
     instance.article = original
     assert instance.article == original
 
-@given(instance=sadl::OfPatternReturningValues_strategy)
+@given(instance=sadl_OfPatternReturningValues_strategy)
 @settings(max_examples=50)
-def test_sadl::ofpatternreturningvalues_instantiation(instance):
-    assert isinstance(instance, sadl::OfPatternReturningValues)
+def test_sadl_ofpatternreturningvalues_instantiation(instance):
+    assert isinstance(instance, sadl_OfPatternReturningValues)
 
-@given(instance=sadl::PropValPartialTriple_strategy)
+@given(instance=sadl_PropValPartialTriple_strategy)
 @settings(max_examples=50)
-def test_sadl::propvalpartialtriple_instantiation(instance):
-    assert isinstance(instance, sadl::PropValPartialTriple)
+def test_sadl_propvalpartialtriple_instantiation(instance):
+    assert isinstance(instance, sadl_PropValPartialTriple)
 
-@given(instance=sadl::IsInverseOf_strategy)
+@given(instance=sadl_IsInverseOf_strategy)
 @settings(max_examples=50)
-def test_sadl::isinverseof_instantiation(instance):
-    assert isinstance(instance, sadl::IsInverseOf)
+def test_sadl_isinverseof_instantiation(instance):
+    assert isinstance(instance, sadl_IsInverseOf)
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
+@given(instance=sadl_AdditionalPropertyInfo_strategy)
 @settings(max_examples=50)
-def test_sadl::additionalpropertyinfo_instantiation(instance):
-    assert isinstance(instance, sadl::AdditionalPropertyInfo)
-
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isTrans_type(instance):
-    assert isinstance(instance.isTrans, str)
+def test_sadl_additionalpropertyinfo_instantiation(instance):
+    assert isinstance(instance, sadl_AdditionalPropertyInfo)
 
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isTrans_setter(instance):
-    original = instance.isTrans
-    instance.isTrans = original
-    assert instance.isTrans == original
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isfunc_type(instance):
-    assert isinstance(instance.isfunc, str)
-
-
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isfunc_setter(instance):
+@given(instance=sadl_AdditionalPropertyInfo_strategy)
+def test_sadl_additionalpropertyinfo_isfunc_setter(instance):
     original = instance.isfunc
     instance.isfunc = original
     assert instance.isfunc == original
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isinvfunc_type(instance):
-    assert isinstance(instance.isinvfunc, str)
 
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isinvfunc_setter(instance):
+@given(instance=sadl_AdditionalPropertyInfo_strategy)
+def test_sadl_additionalpropertyinfo_isinvfunc_setter(instance):
     original = instance.isinvfunc
     instance.isinvfunc = original
     assert instance.isinvfunc == original
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isSym_type(instance):
-    assert isinstance(instance.isSym, str)
 
 
-@given(instance=sadl::AdditionalPropertyInfo_strategy)
-def test_sadl::additionalpropertyinfo_isSym_setter(instance):
+@given(instance=sadl_AdditionalPropertyInfo_strategy)
+def test_sadl_additionalpropertyinfo_isTrans_setter(instance):
+    original = instance.isTrans
+    instance.isTrans = original
+    assert instance.isTrans == original
+
+
+
+@given(instance=sadl_AdditionalPropertyInfo_strategy)
+def test_sadl_additionalpropertyinfo_isSym_setter(instance):
     original = instance.isSym
     instance.isSym = original
     assert instance.isSym == original
 
-@given(instance=sadl::TypedBNode_strategy)
+@given(instance=sadl_TypedBNode_strategy)
 @settings(max_examples=50)
-def test_sadl::typedbnode_instantiation(instance):
-    assert isinstance(instance, sadl::TypedBNode)
-
-@given(instance=sadl::TypedBNode_strategy)
-def test_sadl::typedbnode_article_type(instance):
-    assert isinstance(instance.article, str)
+def test_sadl_typedbnode_instantiation(instance):
+    assert isinstance(instance, sadl_TypedBNode)
 
 
-@given(instance=sadl::TypedBNode_strategy)
-def test_sadl::typedbnode_article_setter(instance):
+
+@given(instance=sadl_TypedBNode_strategy)
+def test_sadl_typedbnode_article_setter(instance):
     original = instance.article
     instance.article = original
     assert instance.article == original
 
-@given(instance=sadl::ExplicitValue_strategy)
+@given(instance=sadl_ExplicitValue_strategy)
 @settings(max_examples=50)
-def test_sadl::explicitvalue_instantiation(instance):
-    assert isinstance(instance, sadl::ExplicitValue)
-
-@given(instance=sadl::ExplicitValue_strategy)
-def test_sadl::explicitvalue_valueList_type(instance):
-    assert isinstance(instance.valueList, str)
+def test_sadl_explicitvalue_instantiation(instance):
+    assert isinstance(instance, sadl_ExplicitValue)
 
 
-@given(instance=sadl::ExplicitValue_strategy)
-def test_sadl::explicitvalue_valueList_setter(instance):
+
+@given(instance=sadl_ExplicitValue_strategy)
+def test_sadl_explicitvalue_valueList_setter(instance):
     original = instance.valueList
     instance.valueList = original
     assert instance.valueList == original
 
-@given(instance=sadl::ExplicitValue_strategy)
-def test_sadl::explicitvalue_term_type(instance):
-    assert isinstance(instance.term, str)
 
 
-@given(instance=sadl::ExplicitValue_strategy)
-def test_sadl::explicitvalue_term_setter(instance):
+@given(instance=sadl_ExplicitValue_strategy)
+def test_sadl_explicitvalue_term_setter(instance):
     original = instance.term
     instance.term = original
     assert instance.term == original
 
-@given(instance=sadl::EObject_strategy)
+@given(instance=sadl_EObject_strategy)
 @settings(max_examples=50)
-def test_sadl::eobject_instantiation(instance):
-    assert isinstance(instance, sadl::EObject)
+def test_sadl_eobject_instantiation(instance):
+    assert isinstance(instance, sadl_EObject)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=sadl::CardCondition_strategy)
+@given(instance=sadl_CardCondition_strategy)
 @settings(max_examples=50)
-def test_sadl::cardcondition_instantiation(instance):
-    assert isinstance(instance, sadl::CardCondition)
-
-@given(instance=sadl::CardCondition_strategy)
-def test_sadl::cardcondition_card_type(instance):
-    assert isinstance(instance.card, str)
+def test_sadl_cardcondition_instantiation(instance):
+    assert isinstance(instance, sadl_CardCondition)
 
 
-@given(instance=sadl::CardCondition_strategy)
-def test_sadl::cardcondition_card_setter(instance):
+
+@given(instance=sadl_CardCondition_strategy)
+def test_sadl_cardcondition_card_setter(instance):
     original = instance.card
     instance.card = original
     assert instance.card == original
 
-@given(instance=sadl::MaxCardCondition_strategy)
+@given(instance=sadl_MaxCardCondition_strategy)
 @settings(max_examples=50)
-def test_sadl::maxcardcondition_instantiation(instance):
-    assert isinstance(instance, sadl::MaxCardCondition)
-
-@given(instance=sadl::MaxCardCondition_strategy)
-def test_sadl::maxcardcondition_card_type(instance):
-    assert isinstance(instance.card, str)
+def test_sadl_maxcardcondition_instantiation(instance):
+    assert isinstance(instance, sadl_MaxCardCondition)
 
 
-@given(instance=sadl::MaxCardCondition_strategy)
-def test_sadl::maxcardcondition_card_setter(instance):
+
+@given(instance=sadl_MaxCardCondition_strategy)
+def test_sadl_maxcardcondition_card_setter(instance):
     original = instance.card
     instance.card = original
     assert instance.card == original
 
-@given(instance=sadl::MinCardCondition_strategy)
+@given(instance=sadl_MinCardCondition_strategy)
 @settings(max_examples=50)
-def test_sadl::mincardcondition_instantiation(instance):
-    assert isinstance(instance, sadl::MinCardCondition)
-
-@given(instance=sadl::MinCardCondition_strategy)
-def test_sadl::mincardcondition_card_type(instance):
-    assert isinstance(instance.card, str)
+def test_sadl_mincardcondition_instantiation(instance):
+    assert isinstance(instance, sadl_MinCardCondition)
 
 
-@given(instance=sadl::MinCardCondition_strategy)
-def test_sadl::mincardcondition_card_setter(instance):
+
+@given(instance=sadl_MinCardCondition_strategy)
+def test_sadl_mincardcondition_card_setter(instance):
     original = instance.card
     instance.card = original
     assert instance.card == original
 
-@given(instance=sadl::HasValueCondition_strategy)
+@given(instance=sadl_HasValueCondition_strategy)
 @settings(max_examples=50)
-def test_sadl::hasvaluecondition_instantiation(instance):
-    assert isinstance(instance, sadl::HasValueCondition)
+def test_sadl_hasvaluecondition_instantiation(instance):
+    assert isinstance(instance, sadl_HasValueCondition)
 
-@given(instance=sadl::SomeValuesCondition_strategy)
+@given(instance=sadl_SomeValuesCondition_strategy)
 @settings(max_examples=50)
-def test_sadl::somevaluescondition_instantiation(instance):
-    assert isinstance(instance, sadl::SomeValuesCondition)
+def test_sadl_somevaluescondition_instantiation(instance):
+    assert isinstance(instance, sadl_SomeValuesCondition)
 
-@given(instance=sadl::AllValuesCondition_strategy)
+@given(instance=sadl_AllValuesCondition_strategy)
 @settings(max_examples=50)
-def test_sadl::allvaluescondition_instantiation(instance):
-    assert isinstance(instance, sadl::AllValuesCondition)
+def test_sadl_allvaluescondition_instantiation(instance):
+    assert isinstance(instance, sadl_AllValuesCondition)
 
-@given(instance=sadl::PropertyOfClass_strategy)
+@given(instance=sadl_PropertyOfClass_strategy)
 @settings(max_examples=50)
-def test_sadl::propertyofclass_instantiation(instance):
-    assert isinstance(instance, sadl::PropertyOfClass)
+def test_sadl_propertyofclass_instantiation(instance):
+    assert isinstance(instance, sadl_PropertyOfClass)
 
-@given(instance=sadl::Facets_strategy)
+@given(instance=sadl_Facets_strategy)
 @settings(max_examples=50)
-def test_sadl::facets_instantiation(instance):
-    assert isinstance(instance, sadl::Facets)
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_regex_type(instance):
-    assert isinstance(instance.regex, str)
+def test_sadl_facets_instantiation(instance):
+    assert isinstance(instance, sadl_Facets)
 
 
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_regex_setter(instance):
-    original = instance.regex
-    instance.regex = original
-    assert instance.regex == original
 
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_min_type(instance):
-    assert isinstance(instance.min, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_min_setter(instance):
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_min_setter(instance):
     original = instance.min
     instance.min = original
     assert instance.min == original
 
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_minlen_type(instance):
-    assert isinstance(instance.minlen, str)
 
 
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_minlen_setter(instance):
-    original = instance.minlen
-    instance.minlen = original
-    assert instance.minlen == original
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_max_type(instance):
-    assert isinstance(instance.max, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_maxlen_type(instance):
-    assert isinstance(instance.maxlen, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_maxlen_setter(instance):
-    original = instance.maxlen
-    instance.maxlen = original
-    assert instance.maxlen == original
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_values_type(instance):
-    assert isinstance(instance.values, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_maxexin_type(instance):
-    assert isinstance(instance.maxexin, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_maxexin_setter(instance):
-    original = instance.maxexin
-    instance.maxexin = original
-    assert instance.maxexin == original
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_minexin_type(instance):
-    assert isinstance(instance.minexin, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_minexin_setter(instance):
-    original = instance.minexin
-    instance.minexin = original
-    assert instance.minexin == original
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_len_type(instance):
-    assert isinstance(instance.len, str)
-
-
-@given(instance=sadl::Facets_strategy)
-def test_sadl::facets_len_setter(instance):
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_len_setter(instance):
     original = instance.len
     instance.len = original
     assert instance.len == original
 
-@given(instance=sadl::DataTypeRestriction_strategy)
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_maxlen_setter(instance):
+    original = instance.maxlen
+    instance.maxlen = original
+    assert instance.maxlen == original
+
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_maxexin_setter(instance):
+    original = instance.maxexin
+    instance.maxexin = original
+    assert instance.maxexin == original
+
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
+
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_minexin_setter(instance):
+    original = instance.minexin
+    instance.minexin = original
+    assert instance.minexin == original
+
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_regex_setter(instance):
+    original = instance.regex
+    instance.regex = original
+    assert instance.regex == original
+
+
+
+@given(instance=sadl_Facets_strategy)
+def test_sadl_facets_minlen_setter(instance):
+    original = instance.minlen
+    instance.minlen = original
+    assert instance.minlen == original
+
+@given(instance=sadl_DataTypeRestriction_strategy)
 @settings(max_examples=50)
-def test_sadl::datatyperestriction_instantiation(instance):
-    assert isinstance(instance, sadl::DataTypeRestriction)
-
-@given(instance=sadl::DataTypeRestriction_strategy)
-def test_sadl::datatyperestriction_basetype_type(instance):
-    assert isinstance(instance.basetype, str)
+def test_sadl_datatyperestriction_instantiation(instance):
+    assert isinstance(instance, sadl_DataTypeRestriction)
 
 
-@given(instance=sadl::DataTypeRestriction_strategy)
-def test_sadl::datatyperestriction_basetype_setter(instance):
-    original = instance.basetype
-    instance.basetype = original
-    assert instance.basetype == original
 
-@given(instance=sadl::DataTypeRestriction_strategy)
-def test_sadl::datatyperestriction_basetypes_type(instance):
-    assert isinstance(instance.basetypes, str)
-
-
-@given(instance=sadl::DataTypeRestriction_strategy)
-def test_sadl::datatyperestriction_basetypes_setter(instance):
+@given(instance=sadl_DataTypeRestriction_strategy)
+def test_sadl_datatyperestriction_basetypes_setter(instance):
     original = instance.basetypes
     instance.basetypes = original
     assert instance.basetypes == original
+
+
+
+@given(instance=sadl_DataTypeRestriction_strategy)
+def test_sadl_datatyperestriction_basetype_setter(instance):
+    original = instance.basetype
+    instance.basetype = original
+    assert instance.basetype == original
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=sadl::TransitiveProperty_strategy)
+@given(instance=sadl_InstanceDifferentFrom_strategy)
 @settings(max_examples=50)
-def test_sadl::transitiveproperty_instantiation(instance):
-    assert isinstance(instance, sadl::TransitiveProperty)
+def test_sadl_instancedifferentfrom_instantiation(instance):
+    assert isinstance(instance, sadl_InstanceDifferentFrom)
 
-@given(instance=sadl::NecessaryAndSufficient_strategy)
+@given(instance=sadl_EnumeratedAllAndSomeValuesFrom_strategy)
 @settings(max_examples=50)
-def test_sadl::necessaryandsufficient_instantiation(instance):
-    assert isinstance(instance, sadl::NecessaryAndSufficient)
+def test_sadl_enumeratedallandsomevaluesfrom_instantiation(instance):
+    assert isinstance(instance, sadl_EnumeratedAllAndSomeValuesFrom)
 
-@given(instance=sadl::NecessaryAndSufficient_strategy)
-def test_sadl::necessaryandsufficient_article_type(instance):
-    assert isinstance(instance.article, str)
-
-
-@given(instance=sadl::NecessaryAndSufficient_strategy)
-def test_sadl::necessaryandsufficient_article_setter(instance):
-    original = instance.article
-    instance.article = original
-    assert instance.article == original
-
-@given(instance=sadl::SomeValuesFrom_strategy)
+@given(instance=sadl_InverseProperty_strategy)
 @settings(max_examples=50)
-def test_sadl::somevaluesfrom_instantiation(instance):
-    assert isinstance(instance, sadl::SomeValuesFrom)
+def test_sadl_inverseproperty_instantiation(instance):
+    assert isinstance(instance, sadl_InverseProperty)
 
-@given(instance=sadl::InstanceDeclarationStatement_strategy)
+@given(instance=sadl_SymmetricalProperty_strategy)
 @settings(max_examples=50)
-def test_sadl::instancedeclarationstatement_instantiation(instance):
-    assert isinstance(instance, sadl::InstanceDeclarationStatement)
+def test_sadl_symmetricalproperty_instantiation(instance):
+    assert isinstance(instance, sadl_SymmetricalProperty)
 
-@given(instance=sadl::EnumeratedAllValuesFrom_strategy)
+@given(instance=sadl_InstancesAllDifferent_strategy)
 @settings(max_examples=50)
-def test_sadl::enumeratedallvaluesfrom_instantiation(instance):
-    assert isinstance(instance, sadl::EnumeratedAllValuesFrom)
+def test_sadl_instancesalldifferent_instantiation(instance):
+    assert isinstance(instance, sadl_InstancesAllDifferent)
 
-@given(instance=sadl::InstancesAllDifferent_strategy)
+@given(instance=sadl_AllValuesFrom_strategy)
 @settings(max_examples=50)
-def test_sadl::instancesalldifferent_instantiation(instance):
-    assert isinstance(instance, sadl::InstancesAllDifferent)
+def test_sadl_allvaluesfrom_instantiation(instance):
+    assert isinstance(instance, sadl_AllValuesFrom)
 
-@given(instance=sadl::HasValue_strategy)
+@given(instance=sadl_InstanceDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_sadl::hasvalue_instantiation(instance):
-    assert isinstance(instance, sadl::HasValue)
+def test_sadl_instancedeclarationstatement_instantiation(instance):
+    assert isinstance(instance, sadl_InstanceDeclarationStatement)
 
-@given(instance=sadl::DefaultValue_strategy)
+@given(instance=sadl_TransitiveProperty_strategy)
 @settings(max_examples=50)
-def test_sadl::defaultvalue_instantiation(instance):
-    assert isinstance(instance, sadl::DefaultValue)
+def test_sadl_transitiveproperty_instantiation(instance):
+    assert isinstance(instance, sadl_TransitiveProperty)
 
-@given(instance=sadl::DefaultValue_strategy)
-def test_sadl::defaultvalue_level_type(instance):
-    assert isinstance(instance.level, str)
+@given(instance=sadl_EquivalentConcepts_strategy)
+@settings(max_examples=50)
+def test_sadl_equivalentconcepts_instantiation(instance):
+    assert isinstance(instance, sadl_EquivalentConcepts)
+
+@given(instance=sadl_MaxCardinality_strategy)
+@settings(max_examples=50)
+def test_sadl_maxcardinality_instantiation(instance):
+    assert isinstance(instance, sadl_MaxCardinality)
+
+@given(instance=sadl_ExistingInstanceAttribution_strategy)
+@settings(max_examples=50)
+def test_sadl_existinginstanceattribution_instantiation(instance):
+    assert isinstance(instance, sadl_ExistingInstanceAttribution)
+
+@given(instance=sadl_DisjointClasses_strategy)
+@settings(max_examples=50)
+def test_sadl_disjointclasses_instantiation(instance):
+    assert isinstance(instance, sadl_DisjointClasses)
+
+@given(instance=sadl_DefaultValue_strategy)
+@settings(max_examples=50)
+def test_sadl_defaultvalue_instantiation(instance):
+    assert isinstance(instance, sadl_DefaultValue)
 
 
-@given(instance=sadl::DefaultValue_strategy)
-def test_sadl::defaultvalue_level_setter(instance):
+
+@given(instance=sadl_DefaultValue_strategy)
+def test_sadl_defaultvalue_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=sadl::InstanceDifferentFrom_strategy)
+@given(instance=sadl_HasValue_strategy)
 @settings(max_examples=50)
-def test_sadl::instancedifferentfrom_instantiation(instance):
-    assert isinstance(instance, sadl::InstanceDifferentFrom)
+def test_sadl_hasvalue_instantiation(instance):
+    assert isinstance(instance, sadl_HasValue)
 
-@given(instance=sadl::DisjointClasses_strategy)
+@given(instance=sadl_NecessaryAndSufficient_strategy)
 @settings(max_examples=50)
-def test_sadl::disjointclasses_instantiation(instance):
-    assert isinstance(instance, sadl::DisjointClasses)
-
-@given(instance=sadl::EquivalentConcepts_strategy)
-@settings(max_examples=50)
-def test_sadl::equivalentconcepts_instantiation(instance):
-    assert isinstance(instance, sadl::EquivalentConcepts)
-
-@given(instance=sadl::InverseProperty_strategy)
-@settings(max_examples=50)
-def test_sadl::inverseproperty_instantiation(instance):
-    assert isinstance(instance, sadl::InverseProperty)
-
-@given(instance=sadl::PropertyDeclaration_strategy)
-@settings(max_examples=50)
-def test_sadl::propertydeclaration_instantiation(instance):
-    assert isinstance(instance, sadl::PropertyDeclaration)
-
-@given(instance=sadl::PropertyDeclaration_strategy)
-def test_sadl::propertydeclaration_article_type(instance):
-    assert isinstance(instance.article, str)
+def test_sadl_necessaryandsufficient_instantiation(instance):
+    assert isinstance(instance, sadl_NecessaryAndSufficient)
 
 
-@given(instance=sadl::PropertyDeclaration_strategy)
-def test_sadl::propertydeclaration_article_setter(instance):
+
+@given(instance=sadl_NecessaryAndSufficient_strategy)
+def test_sadl_necessaryandsufficient_article_setter(instance):
     original = instance.article
     instance.article = original
     assert instance.article == original
 
-@given(instance=sadl::ExistingInstanceAttribution_strategy)
+@given(instance=sadl_SomeValuesFrom_strategy)
 @settings(max_examples=50)
-def test_sadl::existinginstanceattribution_instantiation(instance):
-    assert isinstance(instance, sadl::ExistingInstanceAttribution)
+def test_sadl_somevaluesfrom_instantiation(instance):
+    assert isinstance(instance, sadl_SomeValuesFrom)
 
-@given(instance=sadl::SymmetricalProperty_strategy)
+@given(instance=sadl_InverseFunctionalProperty_strategy)
 @settings(max_examples=50)
-def test_sadl::symmetricalproperty_instantiation(instance):
-    assert isinstance(instance, sadl::SymmetricalProperty)
+def test_sadl_inversefunctionalproperty_instantiation(instance):
+    assert isinstance(instance, sadl_InverseFunctionalProperty)
 
-@given(instance=sadl::InverseFunctionalProperty_strategy)
+@given(instance=sadl_ComplementOfClass_strategy)
 @settings(max_examples=50)
-def test_sadl::inversefunctionalproperty_instantiation(instance):
-    assert isinstance(instance, sadl::InverseFunctionalProperty)
+def test_sadl_complementofclass_instantiation(instance):
+    assert isinstance(instance, sadl_ComplementOfClass)
 
-@given(instance=sadl::ComplementOfClass_strategy)
+@given(instance=sadl_EnumeratedAllValuesFrom_strategy)
 @settings(max_examples=50)
-def test_sadl::complementofclass_instantiation(instance):
-    assert isinstance(instance, sadl::ComplementOfClass)
+def test_sadl_enumeratedallvaluesfrom_instantiation(instance):
+    assert isinstance(instance, sadl_EnumeratedAllValuesFrom)
 
-@given(instance=sadl::AllValuesFrom_strategy)
+@given(instance=sadl_MinCardinality_strategy)
 @settings(max_examples=50)
-def test_sadl::allvaluesfrom_instantiation(instance):
-    assert isinstance(instance, sadl::AllValuesFrom)
+def test_sadl_mincardinality_instantiation(instance):
+    assert isinstance(instance, sadl_MinCardinality)
 
-@given(instance=sadl::EnumeratedAllAndSomeValuesFrom_strategy)
+@given(instance=sadl_PropertyDeclaration_strategy)
 @settings(max_examples=50)
-def test_sadl::enumeratedallandsomevaluesfrom_instantiation(instance):
-    assert isinstance(instance, sadl::EnumeratedAllAndSomeValuesFrom)
+def test_sadl_propertydeclaration_instantiation(instance):
+    assert isinstance(instance, sadl_PropertyDeclaration)
 
-@given(instance=sadl::Cardinality_strategy)
-@settings(max_examples=50)
-def test_sadl::cardinality_instantiation(instance):
-    assert isinstance(instance, sadl::Cardinality)
 
-@given(instance=sadl::MaxCardinality_strategy)
-@settings(max_examples=50)
-def test_sadl::maxcardinality_instantiation(instance):
-    assert isinstance(instance, sadl::MaxCardinality)
 
-@given(instance=sadl::MinCardinality_strategy)
-@settings(max_examples=50)
-def test_sadl::mincardinality_instantiation(instance):
-    assert isinstance(instance, sadl::MinCardinality)
+@given(instance=sadl_PropertyDeclaration_strategy)
+def test_sadl_propertydeclaration_article_setter(instance):
+    original = instance.article
+    instance.article = original
+    assert instance.article == original
 
-@given(instance=sadl::FunctionalProperty_strategy)
+@given(instance=sadl_FunctionalProperty_strategy)
 @settings(max_examples=50)
-def test_sadl::functionalproperty_instantiation(instance):
-    assert isinstance(instance, sadl::FunctionalProperty)
+def test_sadl_functionalproperty_instantiation(instance):
+    assert isinstance(instance, sadl_FunctionalProperty)
 
-@given(instance=sadl::ClassDeclaration_strategy)
+@given(instance=sadl_Cardinality_strategy)
 @settings(max_examples=50)
-def test_sadl::classdeclaration_instantiation(instance):
-    assert isinstance(instance, sadl::ClassDeclaration)
+def test_sadl_cardinality_instantiation(instance):
+    assert isinstance(instance, sadl_Cardinality)
 
-@given(instance=sadl::UserDefinedDataType_strategy)
+@given(instance=sadl_ClassDeclaration_strategy)
 @settings(max_examples=50)
-def test_sadl::userdefineddatatype_instantiation(instance):
-    assert isinstance(instance, sadl::UserDefinedDataType)
+def test_sadl_classdeclaration_instantiation(instance):
+    assert isinstance(instance, sadl_ClassDeclaration)
+
+@given(instance=sadl_UserDefinedDataType_strategy)
+@settings(max_examples=50)
+def test_sadl_userdefineddatatype_instantiation(instance):
+    assert isinstance(instance, sadl_UserDefinedDataType)
 
 @given(instance=ResourceBySetOp_strategy)
 @settings(max_examples=50)
 def test_resourcebysetop_instantiation(instance):
     assert isinstance(instance, ResourceBySetOp)
 
-@given(instance=sadl::IntersectionResource_strategy)
+@given(instance=sadl_IntersectionResource_strategy)
 @settings(max_examples=50)
-def test_sadl::intersectionresource_instantiation(instance):
-    assert isinstance(instance, sadl::IntersectionResource)
+def test_sadl_intersectionresource_instantiation(instance):
+    assert isinstance(instance, sadl_IntersectionResource)
 
-@given(instance=sadl::UnionResource_strategy)
+@given(instance=sadl_UnionResource_strategy)
 @settings(max_examples=50)
-def test_sadl::unionresource_instantiation(instance):
-    assert isinstance(instance, sadl::UnionResource)
+def test_sadl_unionresource_instantiation(instance):
+    assert isinstance(instance, sadl_UnionResource)
 
-@given(instance=sadl::RangeType_strategy)
+@given(instance=sadl_RangeType_strategy)
 @settings(max_examples=50)
-def test_sadl::rangetype_instantiation(instance):
-    assert isinstance(instance, sadl::RangeType)
-
-@given(instance=sadl::RangeType_strategy)
-def test_sadl::rangetype_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+def test_sadl_rangetype_instantiation(instance):
+    assert isinstance(instance, sadl_RangeType)
 
 
-@given(instance=sadl::RangeType_strategy)
-def test_sadl::rangetype_dataType_setter(instance):
+
+@given(instance=sadl_RangeType_strategy)
+def test_sadl_rangetype_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=sadl::Range_strategy)
+@given(instance=sadl_Range_strategy)
 @settings(max_examples=50)
-def test_sadl::range_instantiation(instance):
-    assert isinstance(instance, sadl::Range)
-
-@given(instance=sadl::Range_strategy)
-def test_sadl::range_single_type(instance):
-    assert isinstance(instance.single, str)
+def test_sadl_range_instantiation(instance):
+    assert isinstance(instance, sadl_Range)
 
 
-@given(instance=sadl::Range_strategy)
-def test_sadl::range_single_setter(instance):
+
+@given(instance=sadl_Range_strategy)
+def test_sadl_range_single_setter(instance):
     original = instance.single
     instance.single = original
     assert instance.single == original
 
-@given(instance=sadl::Range_strategy)
-def test_sadl::range_list_type(instance):
-    assert isinstance(instance.list, str)
 
 
-@given(instance=sadl::Range_strategy)
-def test_sadl::range_list_setter(instance):
-    original = instance.list
-    instance.list = original
-    assert instance.list == original
-
-@given(instance=sadl::Range_strategy)
-def test_sadl::range_lists_type(instance):
-    assert isinstance(instance.lists, str)
-
-
-@given(instance=sadl::Range_strategy)
-def test_sadl::range_lists_setter(instance):
+@given(instance=sadl_Range_strategy)
+def test_sadl_range_lists_setter(instance):
     original = instance.lists
     instance.lists = original
     assert instance.lists == original
 
-@given(instance=sadl::AddlClassInfo_strategy)
-@settings(max_examples=50)
-def test_sadl::addlclassinfo_instantiation(instance):
-    assert isinstance(instance, sadl::AddlClassInfo)
 
-@given(instance=sadl::EnumeratedInstances_strategy)
+
+@given(instance=sadl_Range_strategy)
+def test_sadl_range_list_setter(instance):
+    original = instance.list
+    instance.list = original
+    assert instance.list == original
+
+@given(instance=sadl_AddlClassInfo_strategy)
 @settings(max_examples=50)
-def test_sadl::enumeratedinstances_instantiation(instance):
-    assert isinstance(instance, sadl::EnumeratedInstances)
+def test_sadl_addlclassinfo_instantiation(instance):
+    assert isinstance(instance, sadl_AddlClassInfo)
+
+@given(instance=sadl_EnumeratedInstances_strategy)
+@settings(max_examples=50)
+def test_sadl_enumeratedinstances_instantiation(instance):
+    assert isinstance(instance, sadl_EnumeratedInstances)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=sadl::Explanation_strategy)
+@given(instance=sadl_Expr_strategy)
 @settings(max_examples=50)
-def test_sadl::explanation_instantiation(instance):
-    assert isinstance(instance, sadl::Explanation)
+def test_sadl_expr_instantiation(instance):
+    assert isinstance(instance, sadl_Expr)
 
-@given(instance=sadl::Explanation_strategy)
-def test_sadl::explanation_rulename_type(instance):
-    assert isinstance(instance.rulename, str)
-
-
-@given(instance=sadl::Explanation_strategy)
-def test_sadl::explanation_rulename_setter(instance):
-    original = instance.rulename
-    instance.rulename = original
-    assert instance.rulename == original
-
-@given(instance=sadl::Rule_strategy)
+@given(instance=sadl_Query_strategy)
 @settings(max_examples=50)
-def test_sadl::rule_instantiation(instance):
-    assert isinstance(instance, sadl::Rule)
+def test_sadl_query_instantiation(instance):
+    assert isinstance(instance, sadl_Query)
 
-@given(instance=sadl::Rule_strategy)
-def test_sadl::rule_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=sadl_Rule_strategy)
+@settings(max_examples=50)
+def test_sadl_rule_instantiation(instance):
+    assert isinstance(instance, sadl_Rule)
 
 
-@given(instance=sadl::Rule_strategy)
-def test_sadl::rule_name_setter(instance):
+
+@given(instance=sadl_Rule_strategy)
+def test_sadl_rule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sadl::Test_strategy)
+@given(instance=sadl_Test_strategy)
 @settings(max_examples=50)
-def test_sadl::test_instantiation(instance):
-    assert isinstance(instance, sadl::Test)
+def test_sadl_test_instantiation(instance):
+    assert isinstance(instance, sadl_Test)
 
-@given(instance=sadl::Display_strategy)
+@given(instance=sadl_Display_strategy)
 @settings(max_examples=50)
-def test_sadl::display_instantiation(instance):
-    assert isinstance(instance, sadl::Display)
-
-@given(instance=sadl::Display_strategy)
-def test_sadl::display_displayString_type(instance):
-    assert isinstance(instance.displayString, str)
+def test_sadl_display_instantiation(instance):
+    assert isinstance(instance, sadl_Display)
 
 
-@given(instance=sadl::Display_strategy)
-def test_sadl::display_displayString_setter(instance):
+
+@given(instance=sadl_Display_strategy)
+def test_sadl_display_displayString_setter(instance):
     original = instance.displayString
     instance.displayString = original
     assert instance.displayString == original
 
-@given(instance=sadl::Display_strategy)
-def test_sadl::display_model_type(instance):
-    assert isinstance(instance.model, str)
 
 
-@given(instance=sadl::Display_strategy)
-def test_sadl::display_model_setter(instance):
+@given(instance=sadl_Display_strategy)
+def test_sadl_display_model_setter(instance):
     original = instance.model
     instance.model = original
     assert instance.model == original
 
-@given(instance=sadl::Expr_strategy)
+@given(instance=sadl_Explanation_strategy)
 @settings(max_examples=50)
-def test_sadl::expr_instantiation(instance):
-    assert isinstance(instance, sadl::Expr)
+def test_sadl_explanation_instantiation(instance):
+    assert isinstance(instance, sadl_Explanation)
 
-@given(instance=sadl::Query_strategy)
-@settings(max_examples=50)
-def test_sadl::query_instantiation(instance):
-    assert isinstance(instance, sadl::Query)
 
-@given(instance=sadl::Statement_strategy)
-@settings(max_examples=50)
-def test_sadl::statement_instantiation(instance):
-    assert isinstance(instance, sadl::Statement)
 
-@given(instance=sadl::Condition_strategy)
-@settings(max_examples=50)
-def test_sadl::condition_instantiation(instance):
-    assert isinstance(instance, sadl::Condition)
+@given(instance=sadl_Explanation_strategy)
+def test_sadl_explanation_rulename_setter(instance):
+    original = instance.rulename
+    instance.rulename = original
+    assert instance.rulename == original
 
-@given(instance=sadl::ResourceIdentifier_strategy)
+@given(instance=sadl_Statement_strategy)
 @settings(max_examples=50)
-def test_sadl::resourceidentifier_instantiation(instance):
-    assert isinstance(instance, sadl::ResourceIdentifier)
+def test_sadl_statement_instantiation(instance):
+    assert isinstance(instance, sadl_Statement)
 
-@given(instance=sadl::ExistingResourceList_strategy)
+@given(instance=sadl_Condition_strategy)
 @settings(max_examples=50)
-def test_sadl::existingresourcelist_instantiation(instance):
-    assert isinstance(instance, sadl::ExistingResourceList)
+def test_sadl_condition_instantiation(instance):
+    assert isinstance(instance, sadl_Condition)
+
+@given(instance=sadl_ResourceIdentifier_strategy)
+@settings(max_examples=50)
+def test_sadl_resourceidentifier_instantiation(instance):
+    assert isinstance(instance, sadl_ResourceIdentifier)
+
+@given(instance=sadl_ExistingResourceList_strategy)
+@settings(max_examples=50)
+def test_sadl_existingresourcelist_instantiation(instance):
+    assert isinstance(instance, sadl_ExistingResourceList)
 
 @given(instance=ResourceIdentifier_strategy)
 @settings(max_examples=50)
 def test_resourceidentifier_instantiation(instance):
     assert isinstance(instance, ResourceIdentifier)
 
-@given(instance=sadl::ResourceBySetOp_strategy)
+@given(instance=sadl_ResourceByRestriction_strategy)
 @settings(max_examples=50)
-def test_sadl::resourcebysetop_instantiation(instance):
-    assert isinstance(instance, sadl::ResourceBySetOp)
-
-@given(instance=sadl::ResourceBySetOp_strategy)
-def test_sadl::resourcebysetop_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_sadl_resourcebyrestriction_instantiation(instance):
+    assert isinstance(instance, sadl_ResourceByRestriction)
 
 
-@given(instance=sadl::ResourceBySetOp_strategy)
-def test_sadl::resourcebysetop_op_setter(instance):
+
+@given(instance=sadl_ResourceByRestriction_strategy)
+def test_sadl_resourcebyrestriction_annType_setter(instance):
+    original = instance.annType
+    instance.annType = original
+    assert instance.annType == original
+
+@given(instance=sadl_ResourceBySetOp_strategy)
+@settings(max_examples=50)
+def test_sadl_resourcebysetop_instantiation(instance):
+    assert isinstance(instance, sadl_ResourceBySetOp)
+
+
+
+@given(instance=sadl_ResourceBySetOp_strategy)
+def test_sadl_resourcebysetop_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=sadl::ResourceBySetOp_strategy)
-def test_sadl::resourcebysetop_annType_type(instance):
-    assert isinstance(instance.annType, str)
 
 
-@given(instance=sadl::ResourceBySetOp_strategy)
-def test_sadl::resourcebysetop_annType_setter(instance):
+@given(instance=sadl_ResourceBySetOp_strategy)
+def test_sadl_resourcebysetop_annType_setter(instance):
     original = instance.annType
     instance.annType = original
     assert instance.annType == original
 
-@given(instance=sadl::ResourceByRestriction_strategy)
+@given(instance=sadl_ResourceByName_strategy)
 @settings(max_examples=50)
-def test_sadl::resourcebyrestriction_instantiation(instance):
-    assert isinstance(instance, sadl::ResourceByRestriction)
+def test_sadl_resourcebyname_instantiation(instance):
+    assert isinstance(instance, sadl_ResourceByName)
 
-@given(instance=sadl::ResourceByRestriction_strategy)
-def test_sadl::resourcebyrestriction_annType_type(instance):
-    assert isinstance(instance.annType, str)
-
-
-@given(instance=sadl::ResourceByRestriction_strategy)
-def test_sadl::resourcebyrestriction_annType_setter(instance):
-    original = instance.annType
-    instance.annType = original
-    assert instance.annType == original
-
-@given(instance=sadl::ResourceByName_strategy)
+@given(instance=sadl_LiteralValue_strategy)
 @settings(max_examples=50)
-def test_sadl::resourcebyname_instantiation(instance):
-    assert isinstance(instance, sadl::ResourceByName)
-
-@given(instance=sadl::LiteralValue_strategy)
-@settings(max_examples=50)
-def test_sadl::literalvalue_instantiation(instance):
-    assert isinstance(instance, sadl::LiteralValue)
-
-@given(instance=sadl::LiteralValue_strategy)
-def test_sadl::literalvalue_literalString_type(instance):
-    assert isinstance(instance.literalString, str)
+def test_sadl_literalvalue_instantiation(instance):
+    assert isinstance(instance, sadl_LiteralValue)
 
 
-@given(instance=sadl::LiteralValue_strategy)
-def test_sadl::literalvalue_literalString_setter(instance):
-    original = instance.literalString
-    instance.literalString = original
-    assert instance.literalString == original
 
-@given(instance=sadl::LiteralValue_strategy)
-def test_sadl::literalvalue_literalNumber_type(instance):
-    assert isinstance(instance.literalNumber, str)
-
-
-@given(instance=sadl::LiteralValue_strategy)
-def test_sadl::literalvalue_literalNumber_setter(instance):
-    original = instance.literalNumber
-    instance.literalNumber = original
-    assert instance.literalNumber == original
-
-@given(instance=sadl::LiteralValue_strategy)
-def test_sadl::literalvalue_literalBoolean_type(instance):
-    assert isinstance(instance.literalBoolean, str)
-
-
-@given(instance=sadl::LiteralValue_strategy)
-def test_sadl::literalvalue_literalBoolean_setter(instance):
+@given(instance=sadl_LiteralValue_strategy)
+def test_sadl_literalvalue_literalBoolean_setter(instance):
     original = instance.literalBoolean
     instance.literalBoolean = original
     assert instance.literalBoolean == original
 
-@given(instance=sadl::LiteralList_strategy)
+
+
+@given(instance=sadl_LiteralValue_strategy)
+def test_sadl_literalvalue_literalString_setter(instance):
+    original = instance.literalString
+    instance.literalString = original
+    assert instance.literalString == original
+
+
+
+@given(instance=sadl_LiteralValue_strategy)
+def test_sadl_literalvalue_literalNumber_setter(instance):
+    original = instance.literalNumber
+    instance.literalNumber = original
+    assert instance.literalNumber == original
+
+@given(instance=sadl_LiteralList_strategy)
 @settings(max_examples=50)
-def test_sadl::literallist_instantiation(instance):
-    assert isinstance(instance, sadl::LiteralList)
+def test_sadl_literallist_instantiation(instance):
+    assert isinstance(instance, sadl_LiteralList)
 
-@given(instance=sadl::ResourceList_strategy)
+@given(instance=sadl_ResourceList_strategy)
 @settings(max_examples=50)
-def test_sadl::resourcelist_instantiation(instance):
-    assert isinstance(instance, sadl::ResourceList)
+def test_sadl_resourcelist_instantiation(instance):
+    assert isinstance(instance, sadl_ResourceList)
 
-@given(instance=sadl::ResourceName_strategy)
+@given(instance=sadl_ResourceName_strategy)
 @settings(max_examples=50)
-def test_sadl::resourcename_instantiation(instance):
-    assert isinstance(instance, sadl::ResourceName)
-
-@given(instance=sadl::ResourceName_strategy)
-def test_sadl::resourcename_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sadl_resourcename_instantiation(instance):
+    assert isinstance(instance, sadl_ResourceName)
 
 
-@given(instance=sadl::ResourceName_strategy)
-def test_sadl::resourcename_name_setter(instance):
+
+@given(instance=sadl_ResourceName_strategy)
+def test_sadl_resourcename_annType_setter(instance):
+    original = instance.annType
+    instance.annType = original
+    assert instance.annType == original
+
+
+
+@given(instance=sadl_ResourceName_strategy)
+def test_sadl_resourcename_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sadl::ResourceName_strategy)
-def test_sadl::resourcename_annType_type(instance):
-    assert isinstance(instance.annType, str)
-
-
-@given(instance=sadl::ResourceName_strategy)
-def test_sadl::resourcename_annType_setter(instance):
-    original = instance.annType
-    instance.annType = original
-    assert instance.annType == original
-
-@given(instance=sadl::ContentList_strategy)
+@given(instance=sadl_ContentList_strategy)
 @settings(max_examples=50)
-def test_sadl::contentlist_instantiation(instance):
-    assert isinstance(instance, sadl::ContentList)
-
-@given(instance=sadl::ContentList_strategy)
-def test_sadl::contentlist_annContent_type(instance):
-    assert isinstance(instance.annContent, str)
+def test_sadl_contentlist_instantiation(instance):
+    assert isinstance(instance, sadl_ContentList)
 
 
-@given(instance=sadl::ContentList_strategy)
-def test_sadl::contentlist_annContent_setter(instance):
+
+@given(instance=sadl_ContentList_strategy)
+def test_sadl_contentlist_annContent_setter(instance):
     original = instance.annContent
     instance.annContent = original
     assert instance.annContent == original
 
-@given(instance=sadl::ModelElement_strategy)
+@given(instance=sadl_ModelElement_strategy)
 @settings(max_examples=50)
-def test_sadl::modelelement_instantiation(instance):
-    assert isinstance(instance, sadl::ModelElement)
+def test_sadl_modelelement_instantiation(instance):
+    assert isinstance(instance, sadl_ModelElement)
 
-@given(instance=sadl::Import_strategy)
+@given(instance=sadl_Import_strategy)
 @settings(max_examples=50)
-def test_sadl::import_instantiation(instance):
-    assert isinstance(instance, sadl::Import)
-
-@given(instance=sadl::Import_strategy)
-def test_sadl::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_sadl_import_instantiation(instance):
+    assert isinstance(instance, sadl_Import)
 
 
-@given(instance=sadl::Import_strategy)
-def test_sadl::import_importURI_setter(instance):
+
+@given(instance=sadl_Import_strategy)
+def test_sadl_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=sadl::Import_strategy)
-def test_sadl::import_alias_type(instance):
-    assert isinstance(instance.alias, str)
 
 
-@given(instance=sadl::Import_strategy)
-def test_sadl::import_alias_setter(instance):
+@given(instance=sadl_Import_strategy)
+def test_sadl_import_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
 
-@given(instance=sadl::ModelName_strategy)
+@given(instance=sadl_ModelName_strategy)
 @settings(max_examples=50)
-def test_sadl::modelname_instantiation(instance):
-    assert isinstance(instance, sadl::ModelName)
-
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_sadl_modelname_instantiation(instance):
+    assert isinstance(instance, sadl_ModelName)
 
 
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_version_setter(instance):
+
+@given(instance=sadl_ModelName_strategy)
+def test_sadl_modelname_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
+
+
+
+@given(instance=sadl_ModelName_strategy)
+def test_sadl_modelname_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_annType_type(instance):
-    assert isinstance(instance.annType, str)
 
 
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_annType_setter(instance):
-    original = instance.annType
-    instance.annType = original
-    assert instance.annType == original
-
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_alias_type(instance):
-    assert isinstance(instance.alias, str)
-
-
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
-
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_baseUri_type(instance):
-    assert isinstance(instance.baseUri, str)
-
-
-@given(instance=sadl::ModelName_strategy)
-def test_sadl::modelname_baseUri_setter(instance):
+@given(instance=sadl_ModelName_strategy)
+def test_sadl_modelname_baseUri_setter(instance):
     original = instance.baseUri
     instance.baseUri = original
     assert instance.baseUri == original
 
-@given(instance=sadl::Model_strategy)
+
+
+@given(instance=sadl_ModelName_strategy)
+def test_sadl_modelname_annType_setter(instance):
+    original = instance.annType
+    instance.annType = original
+    assert instance.annType == original
+
+@given(instance=sadl_Model_strategy)
 @settings(max_examples=50)
-def test_sadl::model_instantiation(instance):
-    assert isinstance(instance, sadl::Model)
+def test_sadl_model_instantiation(instance):
+    assert isinstance(instance, sadl_Model)

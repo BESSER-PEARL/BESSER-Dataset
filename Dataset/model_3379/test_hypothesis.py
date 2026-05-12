@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Anotation,
-    JPA::Column,
-    JPA::OneToMany,
-    JPA::ManyToOne,
-    JPA::ManyToMany,
-    JPA::OneToOne,
-    JPA::Table,
-    JPA::EntityPk,
-    JPA::Anotation,
-    JPA::Property,
-    JPA::Entity,
-    JPA::PersistenceUnit,
+    JPA_OneToOne,
+    JPA_OneToMany,
+    JPA_ManyToOne,
+    JPA_Table,
+    JPA_Column,
+    JPA_ManyToMany,
+    JPA_EntityPk,
+    JPA_Anotation,
+    JPA_Property,
+    JPA_Entity,
+    JPA_PersistenceUnit,
     Cascade,
     Fetch,
 )
@@ -42,87 +42,77 @@ def test_anotation_constructor_args():
 
 
 
-def test_jpa::column_is_not_abstract():
-    assert not inspect.isabstract(JPA::Column)
+def test_jpa_onetoone_is_not_abstract():
+    assert not inspect.isabstract(JPA_OneToOne)
 
 
-def test_jpa::column_constructor_exists():
-    assert callable(JPA::Column.__init__)
+def test_jpa_onetoone_constructor_exists():
+    assert callable(JPA_OneToOne.__init__)
 
 
-def test_jpa::column_constructor_args():
-    sig = inspect.signature(JPA::Column.__init__)
+def test_jpa_onetoone_constructor_args():
+    sig = inspect.signature(JPA_OneToOne.__init__)
     params = list(sig.parameters.keys())
+    assert "updatable" in params, "Missing parameter 'updatable'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "nullable" in params, "Missing parameter 'nullable'"
-    assert "fetch" in params, "Missing parameter 'fetch'"
-    assert "type" in params, "Missing parameter 'type'"
+    assert "referencedColumnName" in params, "Missing parameter 'referencedColumnName'"
 
-def test_jpa::column_has_name():
-    assert hasattr(JPA::Column, "name")
+def test_jpa_onetoone_has_updatable():
+    assert hasattr(JPA_OneToOne, "updatable")
     descriptor = None
-    for klass in JPA::Column.__mro__:
+    for klass in JPA_OneToOne.__mro__:
+        if "updatable" in klass.__dict__:
+            descriptor = klass.__dict__["updatable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpa_onetoone_has_name():
+    assert hasattr(JPA_OneToOne, "name")
+    descriptor = None
+    for klass in JPA_OneToOne.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpa::column_has_nullable():
-    assert hasattr(JPA::Column, "nullable")
+def test_jpa_onetoone_has_referencedColumnName():
+    assert hasattr(JPA_OneToOne, "referencedColumnName")
     descriptor = None
-    for klass in JPA::Column.__mro__:
-        if "nullable" in klass.__dict__:
-            descriptor = klass.__dict__["nullable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpa::column_has_fetch():
-    assert hasattr(JPA::Column, "fetch")
-    descriptor = None
-    for klass in JPA::Column.__mro__:
-        if "fetch" in klass.__dict__:
-            descriptor = klass.__dict__["fetch"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpa::column_has_type():
-    assert hasattr(JPA::Column, "type")
-    descriptor = None
-    for klass in JPA::Column.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in JPA_OneToOne.__mro__:
+        if "referencedColumnName" in klass.__dict__:
+            descriptor = klass.__dict__["referencedColumnName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_jpa::onetomany_is_not_abstract():
-    assert not inspect.isabstract(JPA::OneToMany)
+def test_jpa_onetomany_is_not_abstract():
+    assert not inspect.isabstract(JPA_OneToMany)
 
 
-def test_jpa::onetomany_constructor_exists():
-    assert callable(JPA::OneToMany.__init__)
+def test_jpa_onetomany_constructor_exists():
+    assert callable(JPA_OneToMany.__init__)
 
 
-def test_jpa::onetomany_constructor_args():
-    sig = inspect.signature(JPA::OneToMany.__init__)
+def test_jpa_onetomany_constructor_args():
+    sig = inspect.signature(JPA_OneToMany.__init__)
     params = list(sig.parameters.keys())
     assert "fetch" in params, "Missing parameter 'fetch'"
     assert "cascade" in params, "Missing parameter 'cascade'"
 
-def test_jpa::onetomany_has_fetch():
-    assert hasattr(JPA::OneToMany, "fetch")
+def test_jpa_onetomany_has_fetch():
+    assert hasattr(JPA_OneToMany, "fetch")
     descriptor = None
-    for klass in JPA::OneToMany.__mro__:
+    for klass in JPA_OneToMany.__mro__:
         if "fetch" in klass.__dict__:
             descriptor = klass.__dict__["fetch"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpa::onetomany_has_cascade():
-    assert hasattr(JPA::OneToMany, "cascade")
+def test_jpa_onetomany_has_cascade():
+    assert hasattr(JPA_OneToMany, "cascade")
     descriptor = None
-    for klass in JPA::OneToMany.__mro__:
+    for klass in JPA_OneToMany.__mro__:
         if "cascade" in klass.__dict__:
             descriptor = klass.__dict__["cascade"]
             break
@@ -130,43 +120,121 @@ def test_jpa::onetomany_has_cascade():
 
 
 
-def test_jpa::manytoone_is_not_abstract():
-    assert not inspect.isabstract(JPA::ManyToOne)
+def test_jpa_manytoone_is_not_abstract():
+    assert not inspect.isabstract(JPA_ManyToOne)
 
 
-def test_jpa::manytoone_constructor_exists():
-    assert callable(JPA::ManyToOne.__init__)
+def test_jpa_manytoone_constructor_exists():
+    assert callable(JPA_ManyToOne.__init__)
 
 
-def test_jpa::manytoone_constructor_args():
-    sig = inspect.signature(JPA::ManyToOne.__init__)
+def test_jpa_manytoone_constructor_args():
+    sig = inspect.signature(JPA_ManyToOne.__init__)
     params = list(sig.parameters.keys())
+    assert "fetch" in params, "Missing parameter 'fetch'"
     assert "joinColumn" in params, "Missing parameter 'joinColumn'"
     assert "nullable" in params, "Missing parameter 'nullable'"
-    assert "fetch" in params, "Missing parameter 'fetch'"
 
-def test_jpa::manytoone_has_joinColumn():
-    assert hasattr(JPA::ManyToOne, "joinColumn")
+def test_jpa_manytoone_has_fetch():
+    assert hasattr(JPA_ManyToOne, "fetch")
     descriptor = None
-    for klass in JPA::ManyToOne.__mro__:
+    for klass in JPA_ManyToOne.__mro__:
+        if "fetch" in klass.__dict__:
+            descriptor = klass.__dict__["fetch"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpa_manytoone_has_joinColumn():
+    assert hasattr(JPA_ManyToOne, "joinColumn")
+    descriptor = None
+    for klass in JPA_ManyToOne.__mro__:
         if "joinColumn" in klass.__dict__:
             descriptor = klass.__dict__["joinColumn"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpa::manytoone_has_nullable():
-    assert hasattr(JPA::ManyToOne, "nullable")
+def test_jpa_manytoone_has_nullable():
+    assert hasattr(JPA_ManyToOne, "nullable")
     descriptor = None
-    for klass in JPA::ManyToOne.__mro__:
+    for klass in JPA_ManyToOne.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpa::manytoone_has_fetch():
-    assert hasattr(JPA::ManyToOne, "fetch")
+
+
+def test_jpa_table_is_not_abstract():
+    assert not inspect.isabstract(JPA_Table)
+
+
+def test_jpa_table_constructor_exists():
+    assert callable(JPA_Table.__init__)
+
+
+def test_jpa_table_constructor_args():
+    sig = inspect.signature(JPA_Table.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_jpa_table_has_name():
+    assert hasattr(JPA_Table, "name")
     descriptor = None
-    for klass in JPA::ManyToOne.__mro__:
+    for klass in JPA_Table.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpa_column_is_not_abstract():
+    assert not inspect.isabstract(JPA_Column)
+
+
+def test_jpa_column_constructor_exists():
+    assert callable(JPA_Column.__init__)
+
+
+def test_jpa_column_constructor_args():
+    sig = inspect.signature(JPA_Column.__init__)
+    params = list(sig.parameters.keys())
+    assert "nullable" in params, "Missing parameter 'nullable'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "fetch" in params, "Missing parameter 'fetch'"
+
+def test_jpa_column_has_nullable():
+    assert hasattr(JPA_Column, "nullable")
+    descriptor = None
+    for klass in JPA_Column.__mro__:
+        if "nullable" in klass.__dict__:
+            descriptor = klass.__dict__["nullable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpa_column_has_name():
+    assert hasattr(JPA_Column, "name")
+    descriptor = None
+    for klass in JPA_Column.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpa_column_has_type():
+    assert hasattr(JPA_Column, "type")
+    descriptor = None
+    for klass in JPA_Column.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpa_column_has_fetch():
+    assert hasattr(JPA_Column, "fetch")
+    descriptor = None
+    for klass in JPA_Column.__mro__:
         if "fetch" in klass.__dict__:
             descriptor = klass.__dict__["fetch"]
             break
@@ -174,87 +242,43 @@ def test_jpa::manytoone_has_fetch():
 
 
 
-def test_jpa::manytomany_is_not_abstract():
-    assert not inspect.isabstract(JPA::ManyToMany)
+def test_jpa_manytomany_is_not_abstract():
+    assert not inspect.isabstract(JPA_ManyToMany)
 
 
-def test_jpa::manytomany_constructor_exists():
-    assert callable(JPA::ManyToMany.__init__)
+def test_jpa_manytomany_constructor_exists():
+    assert callable(JPA_ManyToMany.__init__)
 
 
-def test_jpa::manytomany_constructor_args():
-    sig = inspect.signature(JPA::ManyToMany.__init__)
+def test_jpa_manytomany_constructor_args():
+    sig = inspect.signature(JPA_ManyToMany.__init__)
     params = list(sig.parameters.keys())
     assert "inverseJoinColumn" in params, "Missing parameter 'inverseJoinColumn'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "joinColumn" in params, "Missing parameter 'joinColumn'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_jpa::manytomany_has_inverseJoinColumn():
-    assert hasattr(JPA::ManyToMany, "inverseJoinColumn")
+def test_jpa_manytomany_has_inverseJoinColumn():
+    assert hasattr(JPA_ManyToMany, "inverseJoinColumn")
     descriptor = None
-    for klass in JPA::ManyToMany.__mro__:
+    for klass in JPA_ManyToMany.__mro__:
         if "inverseJoinColumn" in klass.__dict__:
             descriptor = klass.__dict__["inverseJoinColumn"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpa::manytomany_has_name():
-    assert hasattr(JPA::ManyToMany, "name")
+def test_jpa_manytomany_has_joinColumn():
+    assert hasattr(JPA_ManyToMany, "joinColumn")
     descriptor = None
-    for klass in JPA::ManyToMany.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpa::manytomany_has_joinColumn():
-    assert hasattr(JPA::ManyToMany, "joinColumn")
-    descriptor = None
-    for klass in JPA::ManyToMany.__mro__:
+    for klass in JPA_ManyToMany.__mro__:
         if "joinColumn" in klass.__dict__:
             descriptor = klass.__dict__["joinColumn"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_jpa::onetoone_is_not_abstract():
-    assert not inspect.isabstract(JPA::OneToOne)
-
-
-def test_jpa::onetoone_constructor_exists():
-    assert callable(JPA::OneToOne.__init__)
-
-
-def test_jpa::onetoone_constructor_args():
-    sig = inspect.signature(JPA::OneToOne.__init__)
-    params = list(sig.parameters.keys())
-    assert "referencedColumnName" in params, "Missing parameter 'referencedColumnName'"
-    assert "updatable" in params, "Missing parameter 'updatable'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_jpa::onetoone_has_referencedColumnName():
-    assert hasattr(JPA::OneToOne, "referencedColumnName")
+def test_jpa_manytomany_has_name():
+    assert hasattr(JPA_ManyToMany, "name")
     descriptor = None
-    for klass in JPA::OneToOne.__mro__:
-        if "referencedColumnName" in klass.__dict__:
-            descriptor = klass.__dict__["referencedColumnName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpa::onetoone_has_updatable():
-    assert hasattr(JPA::OneToOne, "updatable")
-    descriptor = None
-    for klass in JPA::OneToOne.__mro__:
-        if "updatable" in klass.__dict__:
-            descriptor = klass.__dict__["updatable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpa::onetoone_has_name():
-    assert hasattr(JPA::OneToOne, "name")
-    descriptor = None
-    for klass in JPA::OneToOne.__mro__:
+    for klass in JPA_ManyToMany.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -262,23 +286,23 @@ def test_jpa::onetoone_has_name():
 
 
 
-def test_jpa::table_is_not_abstract():
-    assert not inspect.isabstract(JPA::Table)
+def test_jpa_entitypk_is_not_abstract():
+    assert not inspect.isabstract(JPA_EntityPk)
 
 
-def test_jpa::table_constructor_exists():
-    assert callable(JPA::Table.__init__)
+def test_jpa_entitypk_constructor_exists():
+    assert callable(JPA_EntityPk.__init__)
 
 
-def test_jpa::table_constructor_args():
-    sig = inspect.signature(JPA::Table.__init__)
+def test_jpa_entitypk_constructor_args():
+    sig = inspect.signature(JPA_EntityPk.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpa::table_has_name():
-    assert hasattr(JPA::Table, "name")
+def test_jpa_entitypk_has_name():
+    assert hasattr(JPA_EntityPk, "name")
     descriptor = None
-    for klass in JPA::Table.__mro__:
+    for klass in JPA_EntityPk.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -286,23 +310,47 @@ def test_jpa::table_has_name():
 
 
 
-def test_jpa::entitypk_is_not_abstract():
-    assert not inspect.isabstract(JPA::EntityPk)
+def test_jpa_anotation_is_not_abstract():
+    assert not inspect.isabstract(JPA_Anotation)
 
 
-def test_jpa::entitypk_constructor_exists():
-    assert callable(JPA::EntityPk.__init__)
+def test_jpa_anotation_constructor_exists():
+    assert callable(JPA_Anotation.__init__)
 
 
-def test_jpa::entitypk_constructor_args():
-    sig = inspect.signature(JPA::EntityPk.__init__)
+def test_jpa_anotation_constructor_args():
+    sig = inspect.signature(JPA_Anotation.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_jpa_property_is_not_abstract():
+    assert not inspect.isabstract(JPA_Property)
+
+
+def test_jpa_property_constructor_exists():
+    assert callable(JPA_Property.__init__)
+
+
+def test_jpa_property_constructor_args():
+    sig = inspect.signature(JPA_Property.__init__)
+    params = list(sig.parameters.keys())
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpa::entitypk_has_name():
-    assert hasattr(JPA::EntityPk, "name")
+def test_jpa_property_has_comment():
+    assert hasattr(JPA_Property, "comment")
     descriptor = None
-    for klass in JPA::EntityPk.__mro__:
+    for klass in JPA_Property.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jpa_property_has_name():
+    assert hasattr(JPA_Property, "name")
+    descriptor = None
+    for klass in JPA_Property.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -310,47 +358,33 @@ def test_jpa::entitypk_has_name():
 
 
 
-def test_jpa::anotation_is_not_abstract():
-    assert not inspect.isabstract(JPA::Anotation)
+def test_jpa_entity_is_not_abstract():
+    assert not inspect.isabstract(JPA_Entity)
 
 
-def test_jpa::anotation_constructor_exists():
-    assert callable(JPA::Anotation.__init__)
+def test_jpa_entity_constructor_exists():
+    assert callable(JPA_Entity.__init__)
 
 
-def test_jpa::anotation_constructor_args():
-    sig = inspect.signature(JPA::Anotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jpa::property_is_not_abstract():
-    assert not inspect.isabstract(JPA::Property)
-
-
-def test_jpa::property_constructor_exists():
-    assert callable(JPA::Property.__init__)
-
-
-def test_jpa::property_constructor_args():
-    sig = inspect.signature(JPA::Property.__init__)
+def test_jpa_entity_constructor_args():
+    sig = inspect.signature(JPA_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_jpa::property_has_name():
-    assert hasattr(JPA::Property, "name")
+def test_jpa_entity_has_name():
+    assert hasattr(JPA_Entity, "name")
     descriptor = None
-    for klass in JPA::Property.__mro__:
+    for klass in JPA_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpa::property_has_comment():
-    assert hasattr(JPA::Property, "comment")
+def test_jpa_entity_has_comment():
+    assert hasattr(JPA_Entity, "comment")
     descriptor = None
-    for klass in JPA::Property.__mro__:
+    for klass in JPA_Entity.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -358,50 +392,16 @@ def test_jpa::property_has_comment():
 
 
 
-def test_jpa::entity_is_not_abstract():
-    assert not inspect.isabstract(JPA::Entity)
+def test_jpa_persistenceunit_is_not_abstract():
+    assert not inspect.isabstract(JPA_PersistenceUnit)
 
 
-def test_jpa::entity_constructor_exists():
-    assert callable(JPA::Entity.__init__)
+def test_jpa_persistenceunit_constructor_exists():
+    assert callable(JPA_PersistenceUnit.__init__)
 
 
-def test_jpa::entity_constructor_args():
-    sig = inspect.signature(JPA::Entity.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_jpa::entity_has_comment():
-    assert hasattr(JPA::Entity, "comment")
-    descriptor = None
-    for klass in JPA::Entity.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpa::entity_has_name():
-    assert hasattr(JPA::Entity, "name")
-    descriptor = None
-    for klass in JPA::Entity.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jpa::persistenceunit_is_not_abstract():
-    assert not inspect.isabstract(JPA::PersistenceUnit)
-
-
-def test_jpa::persistenceunit_constructor_exists():
-    assert callable(JPA::PersistenceUnit.__init__)
-
-
-def test_jpa::persistenceunit_constructor_args():
-    sig = inspect.signature(JPA::PersistenceUnit.__init__)
+def test_jpa_persistenceunit_constructor_args():
+    sig = inspect.signature(JPA_PersistenceUnit.__init__)
     params = list(sig.parameters.keys())
 
 def test_cascade_exists():
@@ -413,10 +413,10 @@ def test_cascade_has_all_literals():
     enum_literals = [lit.name for lit in Cascade]
     expected_literals = [
         "PERSIST",
-        "ALL",
         "MERGE",
-        "REMOVE",
         "REFRESH",
+        "REMOVE",
+        "ALL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -452,80 +452,80 @@ safe_text = st.text(
 Anotation_strategy = st.builds(
     Anotation,
 )
-JPA::Column_strategy = st.builds(
-    JPA::Column,
+JPA_OneToOne_strategy = st.builds(
+    JPA_OneToOne,
+    updatable=
+        st.booleans(),
     name=
         safe_text,
-    nullable=
-        st.booleans(),
-    fetch=
-        safe_text,
-    type=
+    referencedColumnName=
         safe_text
 )
-JPA::OneToMany_strategy = st.builds(
-    JPA::OneToMany,
+JPA_OneToMany_strategy = st.builds(
+    JPA_OneToMany,
     fetch=
         safe_text,
     cascade=
         safe_text
 )
-JPA::ManyToOne_strategy = st.builds(
-    JPA::ManyToOne,
+JPA_ManyToOne_strategy = st.builds(
+    JPA_ManyToOne,
+    fetch=
+        safe_text,
     joinColumn=
         safe_text,
     nullable=
+        st.booleans()
+)
+JPA_Table_strategy = st.builds(
+    JPA_Table,
+    name=
+        safe_text
+)
+JPA_Column_strategy = st.builds(
+    JPA_Column,
+    nullable=
         st.booleans(),
+    name=
+        safe_text,
+    type=
+        safe_text,
     fetch=
         safe_text
 )
-JPA::ManyToMany_strategy = st.builds(
-    JPA::ManyToMany,
+JPA_ManyToMany_strategy = st.builds(
+    JPA_ManyToMany,
     inverseJoinColumn=
         safe_text,
-    name=
-        safe_text,
     joinColumn=
-        safe_text
-)
-JPA::OneToOne_strategy = st.builds(
-    JPA::OneToOne,
-    referencedColumnName=
         safe_text,
-    updatable=
-        st.booleans(),
     name=
         safe_text
 )
-JPA::Table_strategy = st.builds(
-    JPA::Table,
+JPA_EntityPk_strategy = st.builds(
+    JPA_EntityPk,
     name=
         safe_text
 )
-JPA::EntityPk_strategy = st.builds(
-    JPA::EntityPk,
-    name=
-        safe_text
+JPA_Anotation_strategy = st.builds(
+    JPA_Anotation,
 )
-JPA::Anotation_strategy = st.builds(
-    JPA::Anotation,
-)
-JPA::Property_strategy = st.builds(
-    JPA::Property,
-    name=
-        safe_text,
-    comment=
-        safe_text
-)
-JPA::Entity_strategy = st.builds(
-    JPA::Entity,
+JPA_Property_strategy = st.builds(
+    JPA_Property,
     comment=
         safe_text,
     name=
         safe_text
 )
-JPA::PersistenceUnit_strategy = st.builds(
-    JPA::PersistenceUnit,
+JPA_Entity_strategy = st.builds(
+    JPA_Entity,
+    name=
+        safe_text,
+    comment=
+        safe_text
+)
+JPA_PersistenceUnit_strategy = st.builds(
+    JPA_PersistenceUnit,
 )
 
 @given(instance=Anotation_strategy)
@@ -533,288 +533,225 @@ JPA::PersistenceUnit_strategy = st.builds(
 def test_anotation_instantiation(instance):
     assert isinstance(instance, Anotation)
 
-@given(instance=JPA::Column_strategy)
+@given(instance=JPA_OneToOne_strategy)
 @settings(max_examples=50)
-def test_jpa::column_instantiation(instance):
-    assert isinstance(instance, JPA::Column)
-
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpa_onetoone_instantiation(instance):
+    assert isinstance(instance, JPA_OneToOne)
 
 
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
-
-
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_nullable_setter(instance):
-    original = instance.nullable
-    instance.nullable = original
-    assert instance.nullable == original
-
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_fetch_type(instance):
-    assert isinstance(instance.fetch, str)
-
-
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_fetch_setter(instance):
-    original = instance.fetch
-    instance.fetch = original
-    assert instance.fetch == original
-
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=JPA::Column_strategy)
-def test_jpa::column_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=JPA::OneToMany_strategy)
-@settings(max_examples=50)
-def test_jpa::onetomany_instantiation(instance):
-    assert isinstance(instance, JPA::OneToMany)
-
-@given(instance=JPA::OneToMany_strategy)
-def test_jpa::onetomany_fetch_type(instance):
-    assert isinstance(instance.fetch, str)
-
-
-@given(instance=JPA::OneToMany_strategy)
-def test_jpa::onetomany_fetch_setter(instance):
-    original = instance.fetch
-    instance.fetch = original
-    assert instance.fetch == original
-
-@given(instance=JPA::OneToMany_strategy)
-def test_jpa::onetomany_cascade_type(instance):
-    assert isinstance(instance.cascade, str)
-
-
-@given(instance=JPA::OneToMany_strategy)
-def test_jpa::onetomany_cascade_setter(instance):
-    original = instance.cascade
-    instance.cascade = original
-    assert instance.cascade == original
-
-@given(instance=JPA::ManyToOne_strategy)
-@settings(max_examples=50)
-def test_jpa::manytoone_instantiation(instance):
-    assert isinstance(instance, JPA::ManyToOne)
-
-@given(instance=JPA::ManyToOne_strategy)
-def test_jpa::manytoone_joinColumn_type(instance):
-    assert isinstance(instance.joinColumn, str)
-
-
-@given(instance=JPA::ManyToOne_strategy)
-def test_jpa::manytoone_joinColumn_setter(instance):
-    original = instance.joinColumn
-    instance.joinColumn = original
-    assert instance.joinColumn == original
-
-@given(instance=JPA::ManyToOne_strategy)
-def test_jpa::manytoone_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
-
-
-@given(instance=JPA::ManyToOne_strategy)
-def test_jpa::manytoone_nullable_setter(instance):
-    original = instance.nullable
-    instance.nullable = original
-    assert instance.nullable == original
-
-@given(instance=JPA::ManyToOne_strategy)
-def test_jpa::manytoone_fetch_type(instance):
-    assert isinstance(instance.fetch, str)
-
-
-@given(instance=JPA::ManyToOne_strategy)
-def test_jpa::manytoone_fetch_setter(instance):
-    original = instance.fetch
-    instance.fetch = original
-    assert instance.fetch == original
-
-@given(instance=JPA::ManyToMany_strategy)
-@settings(max_examples=50)
-def test_jpa::manytomany_instantiation(instance):
-    assert isinstance(instance, JPA::ManyToMany)
-
-@given(instance=JPA::ManyToMany_strategy)
-def test_jpa::manytomany_inverseJoinColumn_type(instance):
-    assert isinstance(instance.inverseJoinColumn, str)
-
-
-@given(instance=JPA::ManyToMany_strategy)
-def test_jpa::manytomany_inverseJoinColumn_setter(instance):
-    original = instance.inverseJoinColumn
-    instance.inverseJoinColumn = original
-    assert instance.inverseJoinColumn == original
-
-@given(instance=JPA::ManyToMany_strategy)
-def test_jpa::manytomany_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=JPA::ManyToMany_strategy)
-def test_jpa::manytomany_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=JPA::ManyToMany_strategy)
-def test_jpa::manytomany_joinColumn_type(instance):
-    assert isinstance(instance.joinColumn, str)
-
-
-@given(instance=JPA::ManyToMany_strategy)
-def test_jpa::manytomany_joinColumn_setter(instance):
-    original = instance.joinColumn
-    instance.joinColumn = original
-    assert instance.joinColumn == original
-
-@given(instance=JPA::OneToOne_strategy)
-@settings(max_examples=50)
-def test_jpa::onetoone_instantiation(instance):
-    assert isinstance(instance, JPA::OneToOne)
-
-@given(instance=JPA::OneToOne_strategy)
-def test_jpa::onetoone_referencedColumnName_type(instance):
-    assert isinstance(instance.referencedColumnName, str)
-
-
-@given(instance=JPA::OneToOne_strategy)
-def test_jpa::onetoone_referencedColumnName_setter(instance):
-    original = instance.referencedColumnName
-    instance.referencedColumnName = original
-    assert instance.referencedColumnName == original
-
-@given(instance=JPA::OneToOne_strategy)
-def test_jpa::onetoone_updatable_type(instance):
-    assert isinstance(instance.updatable, bool)
-
-
-@given(instance=JPA::OneToOne_strategy)
-def test_jpa::onetoone_updatable_setter(instance):
+@given(instance=JPA_OneToOne_strategy)
+def test_jpa_onetoone_updatable_setter(instance):
     original = instance.updatable
     instance.updatable = original
     assert instance.updatable == original
 
-@given(instance=JPA::OneToOne_strategy)
-def test_jpa::onetoone_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=JPA::OneToOne_strategy)
-def test_jpa::onetoone_name_setter(instance):
+@given(instance=JPA_OneToOne_strategy)
+def test_jpa_onetoone_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=JPA::Table_strategy)
+
+
+@given(instance=JPA_OneToOne_strategy)
+def test_jpa_onetoone_referencedColumnName_setter(instance):
+    original = instance.referencedColumnName
+    instance.referencedColumnName = original
+    assert instance.referencedColumnName == original
+
+@given(instance=JPA_OneToMany_strategy)
 @settings(max_examples=50)
-def test_jpa::table_instantiation(instance):
-    assert isinstance(instance, JPA::Table)
-
-@given(instance=JPA::Table_strategy)
-def test_jpa::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpa_onetomany_instantiation(instance):
+    assert isinstance(instance, JPA_OneToMany)
 
 
-@given(instance=JPA::Table_strategy)
-def test_jpa::table_name_setter(instance):
+
+@given(instance=JPA_OneToMany_strategy)
+def test_jpa_onetomany_fetch_setter(instance):
+    original = instance.fetch
+    instance.fetch = original
+    assert instance.fetch == original
+
+
+
+@given(instance=JPA_OneToMany_strategy)
+def test_jpa_onetomany_cascade_setter(instance):
+    original = instance.cascade
+    instance.cascade = original
+    assert instance.cascade == original
+
+@given(instance=JPA_ManyToOne_strategy)
+@settings(max_examples=50)
+def test_jpa_manytoone_instantiation(instance):
+    assert isinstance(instance, JPA_ManyToOne)
+
+
+
+@given(instance=JPA_ManyToOne_strategy)
+def test_jpa_manytoone_fetch_setter(instance):
+    original = instance.fetch
+    instance.fetch = original
+    assert instance.fetch == original
+
+
+
+@given(instance=JPA_ManyToOne_strategy)
+def test_jpa_manytoone_joinColumn_setter(instance):
+    original = instance.joinColumn
+    instance.joinColumn = original
+    assert instance.joinColumn == original
+
+
+
+@given(instance=JPA_ManyToOne_strategy)
+def test_jpa_manytoone_nullable_setter(instance):
+    original = instance.nullable
+    instance.nullable = original
+    assert instance.nullable == original
+
+@given(instance=JPA_Table_strategy)
+@settings(max_examples=50)
+def test_jpa_table_instantiation(instance):
+    assert isinstance(instance, JPA_Table)
+
+
+
+@given(instance=JPA_Table_strategy)
+def test_jpa_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=JPA::EntityPk_strategy)
+@given(instance=JPA_Column_strategy)
 @settings(max_examples=50)
-def test_jpa::entitypk_instantiation(instance):
-    assert isinstance(instance, JPA::EntityPk)
-
-@given(instance=JPA::EntityPk_strategy)
-def test_jpa::entitypk_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpa_column_instantiation(instance):
+    assert isinstance(instance, JPA_Column)
 
 
-@given(instance=JPA::EntityPk_strategy)
-def test_jpa::entitypk_name_setter(instance):
+
+@given(instance=JPA_Column_strategy)
+def test_jpa_column_nullable_setter(instance):
+    original = instance.nullable
+    instance.nullable = original
+    assert instance.nullable == original
+
+
+
+@given(instance=JPA_Column_strategy)
+def test_jpa_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=JPA::Anotation_strategy)
+
+
+@given(instance=JPA_Column_strategy)
+def test_jpa_column_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=JPA_Column_strategy)
+def test_jpa_column_fetch_setter(instance):
+    original = instance.fetch
+    instance.fetch = original
+    assert instance.fetch == original
+
+@given(instance=JPA_ManyToMany_strategy)
 @settings(max_examples=50)
-def test_jpa::anotation_instantiation(instance):
-    assert isinstance(instance, JPA::Anotation)
-
-@given(instance=JPA::Property_strategy)
-@settings(max_examples=50)
-def test_jpa::property_instantiation(instance):
-    assert isinstance(instance, JPA::Property)
-
-@given(instance=JPA::Property_strategy)
-def test_jpa::property_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpa_manytomany_instantiation(instance):
+    assert isinstance(instance, JPA_ManyToMany)
 
 
-@given(instance=JPA::Property_strategy)
-def test_jpa::property_name_setter(instance):
+
+@given(instance=JPA_ManyToMany_strategy)
+def test_jpa_manytomany_inverseJoinColumn_setter(instance):
+    original = instance.inverseJoinColumn
+    instance.inverseJoinColumn = original
+    assert instance.inverseJoinColumn == original
+
+
+
+@given(instance=JPA_ManyToMany_strategy)
+def test_jpa_manytomany_joinColumn_setter(instance):
+    original = instance.joinColumn
+    instance.joinColumn = original
+    assert instance.joinColumn == original
+
+
+
+@given(instance=JPA_ManyToMany_strategy)
+def test_jpa_manytomany_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=JPA::Property_strategy)
-def test_jpa::property_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=JPA_EntityPk_strategy)
+@settings(max_examples=50)
+def test_jpa_entitypk_instantiation(instance):
+    assert isinstance(instance, JPA_EntityPk)
 
 
-@given(instance=JPA::Property_strategy)
-def test_jpa::property_comment_setter(instance):
+
+@given(instance=JPA_EntityPk_strategy)
+def test_jpa_entitypk_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=JPA_Anotation_strategy)
+@settings(max_examples=50)
+def test_jpa_anotation_instantiation(instance):
+    assert isinstance(instance, JPA_Anotation)
+
+@given(instance=JPA_Property_strategy)
+@settings(max_examples=50)
+def test_jpa_property_instantiation(instance):
+    assert isinstance(instance, JPA_Property)
+
+
+
+@given(instance=JPA_Property_strategy)
+def test_jpa_property_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=JPA::Entity_strategy)
-@settings(max_examples=50)
-def test_jpa::entity_instantiation(instance):
-    assert isinstance(instance, JPA::Entity)
-
-@given(instance=JPA::Entity_strategy)
-def test_jpa::entity_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=JPA::Entity_strategy)
-def test_jpa::entity_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=JPA::Entity_strategy)
-def test_jpa::entity_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=JPA::Entity_strategy)
-def test_jpa::entity_name_setter(instance):
+@given(instance=JPA_Property_strategy)
+def test_jpa_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=JPA::PersistenceUnit_strategy)
+@given(instance=JPA_Entity_strategy)
 @settings(max_examples=50)
-def test_jpa::persistenceunit_instantiation(instance):
-    assert isinstance(instance, JPA::PersistenceUnit)
+def test_jpa_entity_instantiation(instance):
+    assert isinstance(instance, JPA_Entity)
+
+
+
+@given(instance=JPA_Entity_strategy)
+def test_jpa_entity_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=JPA_Entity_strategy)
+def test_jpa_entity_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=JPA_PersistenceUnit_strategy)
+@settings(max_examples=50)
+def test_jpa_persistenceunit_instantiation(instance):
+    assert isinstance(instance, JPA_PersistenceUnit)

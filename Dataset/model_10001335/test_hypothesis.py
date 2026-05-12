@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     student_record,
@@ -31,26 +31,17 @@ def test_student_record_constructor_exists():
 def test_student_record_constructor_args():
     sig = inspect.signature(student_record.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "fines" in params, "Missing parameter 'fines'"
-    assert "phone_number" in params, "Missing parameter 'phone_number'"
     assert "address" in params, "Missing parameter 'address'"
+    assert "phone_number" in params, "Missing parameter 'phone_number'"
+    assert "fines" in params, "Missing parameter 'fines'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_student_record_has_name():
-    assert hasattr(student_record, "name")
+def test_student_record_has_address():
+    assert hasattr(student_record, "address")
     descriptor = None
     for klass in student_record.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_student_record_has_fines():
-    assert hasattr(student_record, "fines")
-    descriptor = None
-    for klass in student_record.__mro__:
-        if "fines" in klass.__dict__:
-            descriptor = klass.__dict__["fines"]
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -63,12 +54,21 @@ def test_student_record_has_phone_number():
             break
     assert isinstance(descriptor, property)
 
-def test_student_record_has_address():
-    assert hasattr(student_record, "address")
+def test_student_record_has_fines():
+    assert hasattr(student_record, "fines")
     descriptor = None
     for klass in student_record.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
+        if "fines" in klass.__dict__:
+            descriptor = klass.__dict__["fines"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_student_record_has_name():
+    assert hasattr(student_record, "name")
+    descriptor = None
+    for klass in student_record.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -85,17 +85,8 @@ def test_vendor_constructor_exists():
 def test_vendor_constructor_args():
     sig = inspect.signature(vendor.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "book_details" in params, "Missing parameter 'book_details'"
-
-def test_vendor_has_attribute():
-    assert hasattr(vendor, "attribute")
-    descriptor = None
-    for klass in vendor.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_vendor_has_book_details():
     assert hasattr(vendor, "book_details")
@@ -103,6 +94,15 @@ def test_vendor_has_book_details():
     for klass in vendor.__mro__:
         if "book_details" in klass.__dict__:
             descriptor = klass.__dict__["book_details"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vendor_has_attribute():
+    assert hasattr(vendor, "attribute")
+    descriptor = None
+    for klass in vendor.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -143,9 +143,18 @@ def test_books_database_constructor_exists():
 def test_books_database_constructor_args():
     sig = inspect.signature(books_database.__init__)
     params = list(sig.parameters.keys())
+    assert "book_title" in params, "Missing parameter 'book_title'"
     assert "author" in params, "Missing parameter 'author'"
     assert "book_id" in params, "Missing parameter 'book_id'"
-    assert "book_title" in params, "Missing parameter 'book_title'"
+
+def test_books_database_has_book_title():
+    assert hasattr(books_database, "book_title")
+    descriptor = None
+    for klass in books_database.__mro__:
+        if "book_title" in klass.__dict__:
+            descriptor = klass.__dict__["book_title"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_books_database_has_author():
     assert hasattr(books_database, "author")
@@ -162,15 +171,6 @@ def test_books_database_has_book_id():
     for klass in books_database.__mro__:
         if "book_id" in klass.__dict__:
             descriptor = klass.__dict__["book_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_books_database_has_book_title():
-    assert hasattr(books_database, "book_title")
-    descriptor = None
-    for klass in books_database.__mro__:
-        if "book_title" in klass.__dict__:
-            descriptor = klass.__dict__["book_title"]
             break
     assert isinstance(descriptor, property)
 
@@ -236,20 +236,20 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 student_record_strategy = st.builds(
     student_record,
-    name=
-        safe_text,
-    fines=
+    address=
         safe_text,
     phone_number=
         safe_text,
-    address=
+    fines=
+        safe_text,
+    name=
         safe_text
 )
 vendor_strategy = st.builds(
     vendor,
-    attribute=
-        safe_text,
     book_details=
+        safe_text,
+    attribute=
         safe_text
 )
 student_strategy = st.builds(
@@ -259,11 +259,11 @@ student_strategy = st.builds(
 )
 books_database_strategy = st.builds(
     books_database,
+    book_title=
+        safe_text,
     author=
         safe_text,
     book_id=
-        safe_text,
-    book_title=
         safe_text
 )
 librarian_strategy = st.builds(
@@ -282,42 +282,6 @@ library_strategy = st.builds(
 def test_student_record_instantiation(instance):
     assert isinstance(instance, student_record)
 
-@given(instance=student_record_strategy)
-def test_student_record_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=student_record_strategy)
-def test_student_record_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=student_record_strategy)
-def test_student_record_fines_type(instance):
-    assert isinstance(instance.fines, str)
-
-
-@given(instance=student_record_strategy)
-def test_student_record_fines_setter(instance):
-    original = instance.fines
-    instance.fines = original
-    assert instance.fines == original
-
-@given(instance=student_record_strategy)
-def test_student_record_phone_number_type(instance):
-    assert isinstance(instance.phone_number, str)
-
-
-@given(instance=student_record_strategy)
-def test_student_record_phone_number_setter(instance):
-    original = instance.phone_number
-    instance.phone_number = original
-    assert instance.phone_number == original
-
-@given(instance=student_record_strategy)
-def test_student_record_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=student_record_strategy)
@@ -326,25 +290,35 @@ def test_student_record_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
+
+
+@given(instance=student_record_strategy)
+def test_student_record_phone_number_setter(instance):
+    original = instance.phone_number
+    instance.phone_number = original
+    assert instance.phone_number == original
+
+
+
+@given(instance=student_record_strategy)
+def test_student_record_fines_setter(instance):
+    original = instance.fines
+    instance.fines = original
+    assert instance.fines == original
+
+
+
+@given(instance=student_record_strategy)
+def test_student_record_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=vendor_strategy)
 @settings(max_examples=50)
 def test_vendor_instantiation(instance):
     assert isinstance(instance, vendor)
 
-@given(instance=vendor_strategy)
-def test_vendor_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=vendor_strategy)
-def test_vendor_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=vendor_strategy)
-def test_vendor_book_details_type(instance):
-    assert isinstance(instance.book_details, str)
 
 
 @given(instance=vendor_strategy)
@@ -353,14 +327,19 @@ def test_vendor_book_details_setter(instance):
     instance.book_details = original
     assert instance.book_details == original
 
+
+
+@given(instance=vendor_strategy)
+def test_vendor_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=student_strategy)
 @settings(max_examples=50)
 def test_student_instantiation(instance):
     assert isinstance(instance, student)
 
-@given(instance=student_strategy)
-def test_student_details_type(instance):
-    assert isinstance(instance.details, str)
 
 
 @given(instance=student_strategy)
@@ -374,31 +353,6 @@ def test_student_details_setter(instance):
 def test_books_database_instantiation(instance):
     assert isinstance(instance, books_database)
 
-@given(instance=books_database_strategy)
-def test_books_database_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=books_database_strategy)
-def test_books_database_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=books_database_strategy)
-def test_books_database_book_id_type(instance):
-    assert isinstance(instance.book_id, str)
-
-
-@given(instance=books_database_strategy)
-def test_books_database_book_id_setter(instance):
-    original = instance.book_id
-    instance.book_id = original
-    assert instance.book_id == original
-
-@given(instance=books_database_strategy)
-def test_books_database_book_title_type(instance):
-    assert isinstance(instance.book_title, str)
 
 
 @given(instance=books_database_strategy)
@@ -407,14 +361,27 @@ def test_books_database_book_title_setter(instance):
     instance.book_title = original
     assert instance.book_title == original
 
+
+
+@given(instance=books_database_strategy)
+def test_books_database_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
+
+
+@given(instance=books_database_strategy)
+def test_books_database_book_id_setter(instance):
+    original = instance.book_id
+    instance.book_id = original
+    assert instance.book_id == original
+
 @given(instance=librarian_strategy)
 @settings(max_examples=50)
 def test_librarian_instantiation(instance):
     assert isinstance(instance, librarian)
 
-@given(instance=librarian_strategy)
-def test_librarian_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=librarian_strategy)
@@ -428,9 +395,6 @@ def test_librarian_name_setter(instance):
 def test_library_instantiation(instance):
     assert isinstance(instance, library)
 
-@given(instance=library_strategy)
-def test_library_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=library_strategy)

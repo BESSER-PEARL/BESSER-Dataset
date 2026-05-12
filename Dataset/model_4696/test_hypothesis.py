@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Person,
-    basicfamily::Family,
-    basicfamily::Man,
-    basicfamily::Woman,
-    basicfamily::Person,
+    basicfamily_Family,
+    basicfamily_Man,
+    basicfamily_Woman,
+    basicfamily_Person,
 )
 
 # =============================================================================
@@ -33,23 +33,23 @@ def test_person_constructor_args():
 
 
 
-def test_basicfamily::family_is_not_abstract():
-    assert not inspect.isabstract(basicfamily::Family)
+def test_basicfamily_family_is_not_abstract():
+    assert not inspect.isabstract(basicfamily_Family)
 
 
-def test_basicfamily::family_constructor_exists():
-    assert callable(basicfamily::Family.__init__)
+def test_basicfamily_family_constructor_exists():
+    assert callable(basicfamily_Family.__init__)
 
 
-def test_basicfamily::family_constructor_args():
-    sig = inspect.signature(basicfamily::Family.__init__)
+def test_basicfamily_family_constructor_args():
+    sig = inspect.signature(basicfamily_Family.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basicfamily::family_has_name():
-    assert hasattr(basicfamily::Family, "name")
+def test_basicfamily_family_has_name():
+    assert hasattr(basicfamily_Family, "name")
     descriptor = None
-    for klass in basicfamily::Family.__mro__:
+    for klass in basicfamily_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,51 +57,51 @@ def test_basicfamily::family_has_name():
 
 
 
-def test_basicfamily::man_is_not_abstract():
-    assert not inspect.isabstract(basicfamily::Man)
+def test_basicfamily_man_is_not_abstract():
+    assert not inspect.isabstract(basicfamily_Man)
 
 
-def test_basicfamily::man_constructor_exists():
-    assert callable(basicfamily::Man.__init__)
+def test_basicfamily_man_constructor_exists():
+    assert callable(basicfamily_Man.__init__)
 
 
-def test_basicfamily::man_constructor_args():
-    sig = inspect.signature(basicfamily::Man.__init__)
+def test_basicfamily_man_constructor_args():
+    sig = inspect.signature(basicfamily_Man.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicfamily::woman_is_not_abstract():
-    assert not inspect.isabstract(basicfamily::Woman)
+def test_basicfamily_woman_is_not_abstract():
+    assert not inspect.isabstract(basicfamily_Woman)
 
 
-def test_basicfamily::woman_constructor_exists():
-    assert callable(basicfamily::Woman.__init__)
+def test_basicfamily_woman_constructor_exists():
+    assert callable(basicfamily_Woman.__init__)
 
 
-def test_basicfamily::woman_constructor_args():
-    sig = inspect.signature(basicfamily::Woman.__init__)
+def test_basicfamily_woman_constructor_args():
+    sig = inspect.signature(basicfamily_Woman.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicfamily::person_is_not_abstract():
-    assert not inspect.isabstract(basicfamily::Person)
+def test_basicfamily_person_is_not_abstract():
+    assert not inspect.isabstract(basicfamily_Person)
 
 
-def test_basicfamily::person_constructor_exists():
-    assert callable(basicfamily::Person.__init__)
+def test_basicfamily_person_constructor_exists():
+    assert callable(basicfamily_Person.__init__)
 
 
-def test_basicfamily::person_constructor_args():
-    sig = inspect.signature(basicfamily::Person.__init__)
+def test_basicfamily_person_constructor_args():
+    sig = inspect.signature(basicfamily_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basicfamily::person_has_name():
-    assert hasattr(basicfamily::Person, "name")
+def test_basicfamily_person_has_name():
+    assert hasattr(basicfamily_Person, "name")
     descriptor = None
-    for klass in basicfamily::Person.__mro__:
+    for klass in basicfamily_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -122,19 +122,19 @@ safe_text = st.text(
 Person_strategy = st.builds(
     Person,
 )
-basicfamily::Family_strategy = st.builds(
-    basicfamily::Family,
+basicfamily_Family_strategy = st.builds(
+    basicfamily_Family,
     name=
         safe_text
 )
-basicfamily::Man_strategy = st.builds(
-    basicfamily::Man,
+basicfamily_Man_strategy = st.builds(
+    basicfamily_Man,
 )
-basicfamily::Woman_strategy = st.builds(
-    basicfamily::Woman,
+basicfamily_Woman_strategy = st.builds(
+    basicfamily_Woman,
 )
-basicfamily::Person_strategy = st.builds(
-    basicfamily::Person,
+basicfamily_Person_strategy = st.builds(
+    basicfamily_Person,
     name=
         safe_text
 )
@@ -144,44 +144,38 @@ basicfamily::Person_strategy = st.builds(
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=basicfamily::Family_strategy)
+@given(instance=basicfamily_Family_strategy)
 @settings(max_examples=50)
-def test_basicfamily::family_instantiation(instance):
-    assert isinstance(instance, basicfamily::Family)
-
-@given(instance=basicfamily::Family_strategy)
-def test_basicfamily::family_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basicfamily_family_instantiation(instance):
+    assert isinstance(instance, basicfamily_Family)
 
 
-@given(instance=basicfamily::Family_strategy)
-def test_basicfamily::family_name_setter(instance):
+
+@given(instance=basicfamily_Family_strategy)
+def test_basicfamily_family_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=basicfamily::Man_strategy)
+@given(instance=basicfamily_Man_strategy)
 @settings(max_examples=50)
-def test_basicfamily::man_instantiation(instance):
-    assert isinstance(instance, basicfamily::Man)
+def test_basicfamily_man_instantiation(instance):
+    assert isinstance(instance, basicfamily_Man)
 
-@given(instance=basicfamily::Woman_strategy)
+@given(instance=basicfamily_Woman_strategy)
 @settings(max_examples=50)
-def test_basicfamily::woman_instantiation(instance):
-    assert isinstance(instance, basicfamily::Woman)
+def test_basicfamily_woman_instantiation(instance):
+    assert isinstance(instance, basicfamily_Woman)
 
-@given(instance=basicfamily::Person_strategy)
+@given(instance=basicfamily_Person_strategy)
 @settings(max_examples=50)
-def test_basicfamily::person_instantiation(instance):
-    assert isinstance(instance, basicfamily::Person)
-
-@given(instance=basicfamily::Person_strategy)
-def test_basicfamily::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basicfamily_person_instantiation(instance):
+    assert isinstance(instance, basicfamily_Person)
 
 
-@given(instance=basicfamily::Person_strategy)
-def test_basicfamily::person_name_setter(instance):
+
+@given(instance=basicfamily_Person_strategy)
+def test_basicfamily_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

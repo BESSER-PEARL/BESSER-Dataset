@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cbpmni::BranchInst,
-    cbpmni::OCLConstraint,
-    cbpmni::Branch,
-    cbpmni::EObject,
-    cbpmni::ConstraintInst,
+from python_code import (
+    cbpmni_BranchInst,
+    cbpmni_OCLConstraint,
+    cbpmni_Branch,
+    cbpmni_EObject,
+    cbpmni_ConstraintInst,
     FlowNodeInst,
-    cbpmni::EventInst,
-    cbpmni::SplitInst,
-    cbpmni::ActivityInst,
-    cbpmni::FlowNode,
-    cbpmni::FlowNodeInst,
-    cbpmni::ProcessModel,
-    cbpmni::ProcessInst,
+    cbpmni_SplitInst,
+    cbpmni_EventInst,
+    cbpmni_ActivityInst,
+    cbpmni_FlowNode,
+    cbpmni_FlowNodeInst,
+    cbpmni_ProcessModel,
+    cbpmni_ProcessInst,
     FlowNodeStatusType,
 )
 
@@ -28,72 +28,72 @@ from classes import (
 
 
 
-def test_cbpmni::branchinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::BranchInst)
+def test_cbpmni_branchinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_BranchInst)
 
 
-def test_cbpmni::branchinst_constructor_exists():
-    assert callable(cbpmni::BranchInst.__init__)
+def test_cbpmni_branchinst_constructor_exists():
+    assert callable(cbpmni_BranchInst.__init__)
 
 
-def test_cbpmni::branchinst_constructor_args():
-    sig = inspect.signature(cbpmni::BranchInst.__init__)
+def test_cbpmni_branchinst_constructor_args():
+    sig = inspect.signature(cbpmni_BranchInst.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::oclconstraint_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::OCLConstraint)
+def test_cbpmni_oclconstraint_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_OCLConstraint)
 
 
-def test_cbpmni::oclconstraint_constructor_exists():
-    assert callable(cbpmni::OCLConstraint.__init__)
+def test_cbpmni_oclconstraint_constructor_exists():
+    assert callable(cbpmni_OCLConstraint.__init__)
 
 
-def test_cbpmni::oclconstraint_constructor_args():
-    sig = inspect.signature(cbpmni::OCLConstraint.__init__)
+def test_cbpmni_oclconstraint_constructor_args():
+    sig = inspect.signature(cbpmni_OCLConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::branch_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::Branch)
+def test_cbpmni_branch_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_Branch)
 
 
-def test_cbpmni::branch_constructor_exists():
-    assert callable(cbpmni::Branch.__init__)
+def test_cbpmni_branch_constructor_exists():
+    assert callable(cbpmni_Branch.__init__)
 
 
-def test_cbpmni::branch_constructor_args():
-    sig = inspect.signature(cbpmni::Branch.__init__)
+def test_cbpmni_branch_constructor_args():
+    sig = inspect.signature(cbpmni_Branch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::eobject_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::EObject)
+def test_cbpmni_eobject_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_EObject)
 
 
-def test_cbpmni::eobject_constructor_exists():
-    assert callable(cbpmni::EObject.__init__)
+def test_cbpmni_eobject_constructor_exists():
+    assert callable(cbpmni_EObject.__init__)
 
 
-def test_cbpmni::eobject_constructor_args():
-    sig = inspect.signature(cbpmni::EObject.__init__)
+def test_cbpmni_eobject_constructor_args():
+    sig = inspect.signature(cbpmni_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::constraintinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::ConstraintInst)
+def test_cbpmni_constraintinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_ConstraintInst)
 
 
-def test_cbpmni::constraintinst_constructor_exists():
-    assert callable(cbpmni::ConstraintInst.__init__)
+def test_cbpmni_constraintinst_constructor_exists():
+    assert callable(cbpmni_ConstraintInst.__init__)
 
 
-def test_cbpmni::constraintinst_constructor_args():
-    sig = inspect.signature(cbpmni::ConstraintInst.__init__)
+def test_cbpmni_constraintinst_constructor_args():
+    sig = inspect.signature(cbpmni_ConstraintInst.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,79 +112,79 @@ def test_flownodeinst_constructor_args():
 
 
 
-def test_cbpmni::eventinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::EventInst)
+def test_cbpmni_splitinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_SplitInst)
 
 
-def test_cbpmni::eventinst_constructor_exists():
-    assert callable(cbpmni::EventInst.__init__)
+def test_cbpmni_splitinst_constructor_exists():
+    assert callable(cbpmni_SplitInst.__init__)
 
 
-def test_cbpmni::eventinst_constructor_args():
-    sig = inspect.signature(cbpmni::EventInst.__init__)
+def test_cbpmni_splitinst_constructor_args():
+    sig = inspect.signature(cbpmni_SplitInst.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::splitinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::SplitInst)
+def test_cbpmni_eventinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_EventInst)
 
 
-def test_cbpmni::splitinst_constructor_exists():
-    assert callable(cbpmni::SplitInst.__init__)
+def test_cbpmni_eventinst_constructor_exists():
+    assert callable(cbpmni_EventInst.__init__)
 
 
-def test_cbpmni::splitinst_constructor_args():
-    sig = inspect.signature(cbpmni::SplitInst.__init__)
+def test_cbpmni_eventinst_constructor_args():
+    sig = inspect.signature(cbpmni_EventInst.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::activityinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::ActivityInst)
+def test_cbpmni_activityinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_ActivityInst)
 
 
-def test_cbpmni::activityinst_constructor_exists():
-    assert callable(cbpmni::ActivityInst.__init__)
+def test_cbpmni_activityinst_constructor_exists():
+    assert callable(cbpmni_ActivityInst.__init__)
 
 
-def test_cbpmni::activityinst_constructor_args():
-    sig = inspect.signature(cbpmni::ActivityInst.__init__)
+def test_cbpmni_activityinst_constructor_args():
+    sig = inspect.signature(cbpmni_ActivityInst.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::flownode_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::FlowNode)
+def test_cbpmni_flownode_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_FlowNode)
 
 
-def test_cbpmni::flownode_constructor_exists():
-    assert callable(cbpmni::FlowNode.__init__)
+def test_cbpmni_flownode_constructor_exists():
+    assert callable(cbpmni_FlowNode.__init__)
 
 
-def test_cbpmni::flownode_constructor_args():
-    sig = inspect.signature(cbpmni::FlowNode.__init__)
+def test_cbpmni_flownode_constructor_args():
+    sig = inspect.signature(cbpmni_FlowNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::flownodeinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::FlowNodeInst)
+def test_cbpmni_flownodeinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_FlowNodeInst)
 
 
-def test_cbpmni::flownodeinst_constructor_exists():
-    assert callable(cbpmni::FlowNodeInst.__init__)
+def test_cbpmni_flownodeinst_constructor_exists():
+    assert callable(cbpmni_FlowNodeInst.__init__)
 
 
-def test_cbpmni::flownodeinst_constructor_args():
-    sig = inspect.signature(cbpmni::FlowNodeInst.__init__)
+def test_cbpmni_flownodeinst_constructor_args():
+    sig = inspect.signature(cbpmni_FlowNodeInst.__init__)
     params = list(sig.parameters.keys())
     assert "status" in params, "Missing parameter 'status'"
 
-def test_cbpmni::flownodeinst_has_status():
-    assert hasattr(cbpmni::FlowNodeInst, "status")
+def test_cbpmni_flownodeinst_has_status():
+    assert hasattr(cbpmni_FlowNodeInst, "status")
     descriptor = None
-    for klass in cbpmni::FlowNodeInst.__mro__:
+    for klass in cbpmni_FlowNodeInst.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
@@ -192,30 +192,30 @@ def test_cbpmni::flownodeinst_has_status():
 
 
 
-def test_cbpmni::processmodel_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::ProcessModel)
+def test_cbpmni_processmodel_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_ProcessModel)
 
 
-def test_cbpmni::processmodel_constructor_exists():
-    assert callable(cbpmni::ProcessModel.__init__)
+def test_cbpmni_processmodel_constructor_exists():
+    assert callable(cbpmni_ProcessModel.__init__)
 
 
-def test_cbpmni::processmodel_constructor_args():
-    sig = inspect.signature(cbpmni::ProcessModel.__init__)
+def test_cbpmni_processmodel_constructor_args():
+    sig = inspect.signature(cbpmni_ProcessModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cbpmni::processinst_is_not_abstract():
-    assert not inspect.isabstract(cbpmni::ProcessInst)
+def test_cbpmni_processinst_is_not_abstract():
+    assert not inspect.isabstract(cbpmni_ProcessInst)
 
 
-def test_cbpmni::processinst_constructor_exists():
-    assert callable(cbpmni::ProcessInst.__init__)
+def test_cbpmni_processinst_constructor_exists():
+    assert callable(cbpmni_ProcessInst.__init__)
 
 
-def test_cbpmni::processinst_constructor_args():
-    sig = inspect.signature(cbpmni::ProcessInst.__init__)
+def test_cbpmni_processinst_constructor_args():
+    sig = inspect.signature(cbpmni_ProcessInst.__init__)
     params = list(sig.parameters.keys())
 
 def test_flownodestatustype_exists():
@@ -226,10 +226,10 @@ def test_flownodestatustype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FlowNodeStatusType]
     expected_literals = [
-        "INACTIVE",
-        "READY",
-        "COMPLETED",
         "RUNNING",
+        "INACTIVE",
+        "COMPLETED",
+        "READY",
         "ABORTED",
     ]
     # Check that all expected literals exist
@@ -248,110 +248,107 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cbpmni::BranchInst_strategy = st.builds(
-    cbpmni::BranchInst,
+cbpmni_BranchInst_strategy = st.builds(
+    cbpmni_BranchInst,
 )
-cbpmni::OCLConstraint_strategy = st.builds(
-    cbpmni::OCLConstraint,
+cbpmni_OCLConstraint_strategy = st.builds(
+    cbpmni_OCLConstraint,
 )
-cbpmni::Branch_strategy = st.builds(
-    cbpmni::Branch,
+cbpmni_Branch_strategy = st.builds(
+    cbpmni_Branch,
 )
-cbpmni::EObject_strategy = st.builds(
-    cbpmni::EObject,
+cbpmni_EObject_strategy = st.builds(
+    cbpmni_EObject,
 )
-cbpmni::ConstraintInst_strategy = st.builds(
-    cbpmni::ConstraintInst,
+cbpmni_ConstraintInst_strategy = st.builds(
+    cbpmni_ConstraintInst,
 )
 FlowNodeInst_strategy = st.builds(
     FlowNodeInst,
 )
-cbpmni::EventInst_strategy = st.builds(
-    cbpmni::EventInst,
+cbpmni_SplitInst_strategy = st.builds(
+    cbpmni_SplitInst,
 )
-cbpmni::SplitInst_strategy = st.builds(
-    cbpmni::SplitInst,
+cbpmni_EventInst_strategy = st.builds(
+    cbpmni_EventInst,
 )
-cbpmni::ActivityInst_strategy = st.builds(
-    cbpmni::ActivityInst,
+cbpmni_ActivityInst_strategy = st.builds(
+    cbpmni_ActivityInst,
 )
-cbpmni::FlowNode_strategy = st.builds(
-    cbpmni::FlowNode,
+cbpmni_FlowNode_strategy = st.builds(
+    cbpmni_FlowNode,
 )
-cbpmni::FlowNodeInst_strategy = st.builds(
-    cbpmni::FlowNodeInst,
+cbpmni_FlowNodeInst_strategy = st.builds(
+    cbpmni_FlowNodeInst,
     status=
         safe_text
 )
-cbpmni::ProcessModel_strategy = st.builds(
-    cbpmni::ProcessModel,
+cbpmni_ProcessModel_strategy = st.builds(
+    cbpmni_ProcessModel,
 )
-cbpmni::ProcessInst_strategy = st.builds(
-    cbpmni::ProcessInst,
+cbpmni_ProcessInst_strategy = st.builds(
+    cbpmni_ProcessInst,
 )
 
-@given(instance=cbpmni::BranchInst_strategy)
+@given(instance=cbpmni_BranchInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::branchinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::BranchInst)
+def test_cbpmni_branchinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_BranchInst)
 
-@given(instance=cbpmni::OCLConstraint_strategy)
+@given(instance=cbpmni_OCLConstraint_strategy)
 @settings(max_examples=50)
-def test_cbpmni::oclconstraint_instantiation(instance):
-    assert isinstance(instance, cbpmni::OCLConstraint)
+def test_cbpmni_oclconstraint_instantiation(instance):
+    assert isinstance(instance, cbpmni_OCLConstraint)
 
-@given(instance=cbpmni::Branch_strategy)
+@given(instance=cbpmni_Branch_strategy)
 @settings(max_examples=50)
-def test_cbpmni::branch_instantiation(instance):
-    assert isinstance(instance, cbpmni::Branch)
+def test_cbpmni_branch_instantiation(instance):
+    assert isinstance(instance, cbpmni_Branch)
 
-@given(instance=cbpmni::EObject_strategy)
+@given(instance=cbpmni_EObject_strategy)
 @settings(max_examples=50)
-def test_cbpmni::eobject_instantiation(instance):
-    assert isinstance(instance, cbpmni::EObject)
+def test_cbpmni_eobject_instantiation(instance):
+    assert isinstance(instance, cbpmni_EObject)
 
-@given(instance=cbpmni::ConstraintInst_strategy)
+@given(instance=cbpmni_ConstraintInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::constraintinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::ConstraintInst)
+def test_cbpmni_constraintinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_ConstraintInst)
 
 @given(instance=FlowNodeInst_strategy)
 @settings(max_examples=50)
 def test_flownodeinst_instantiation(instance):
     assert isinstance(instance, FlowNodeInst)
 
-@given(instance=cbpmni::EventInst_strategy)
+@given(instance=cbpmni_SplitInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::eventinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::EventInst)
+def test_cbpmni_splitinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_SplitInst)
 
-@given(instance=cbpmni::SplitInst_strategy)
+@given(instance=cbpmni_EventInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::splitinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::SplitInst)
+def test_cbpmni_eventinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_EventInst)
 
-@given(instance=cbpmni::ActivityInst_strategy)
+@given(instance=cbpmni_ActivityInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::activityinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::ActivityInst)
+def test_cbpmni_activityinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_ActivityInst)
 
-@given(instance=cbpmni::FlowNode_strategy)
+@given(instance=cbpmni_FlowNode_strategy)
 @settings(max_examples=50)
-def test_cbpmni::flownode_instantiation(instance):
-    assert isinstance(instance, cbpmni::FlowNode)
+def test_cbpmni_flownode_instantiation(instance):
+    assert isinstance(instance, cbpmni_FlowNode)
 
-@given(instance=cbpmni::FlowNodeInst_strategy)
+@given(instance=cbpmni_FlowNodeInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::flownodeinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::FlowNodeInst)
-
-@given(instance=cbpmni::FlowNodeInst_strategy)
-def test_cbpmni::flownodeinst_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_cbpmni_flownodeinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_FlowNodeInst)
 
 
-@given(instance=cbpmni::FlowNodeInst_strategy)
-def test_cbpmni::flownodeinst_status_setter(instance):
+
+@given(instance=cbpmni_FlowNodeInst_strategy)
+def test_cbpmni_flownodeinst_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
@@ -362,9 +359,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=cbpmni::FlowNodeInst_strategy)
+@given(instance=cbpmni_FlowNodeInst_strategy)
 @settings(max_examples=30)
-def test_cbpmni::flownodeinst_eoperation0_changes_state(instance):
+def test_cbpmni_flownodeinst_eoperation0_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -376,24 +373,24 @@ def test_cbpmni::flownodeinst_eoperation0_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'EOperation0' in cbpmni::FlowNodeInst is empty"
+        assert has_statements, f"Function 'EOperation0' in cbpmni_FlowNodeInst is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'EOperation0' in cbpmni::FlowNodeInst did not change state; check implementation")
+            warnings.warn(f"Operation 'EOperation0' in cbpmni_FlowNodeInst did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'EOperation0' in cbpmni::FlowNodeInst is not implemented or raised an error")
+        warnings.warn(f"Operation 'EOperation0' in cbpmni_FlowNodeInst is not implemented or raised an error")
 
-@given(instance=cbpmni::ProcessModel_strategy)
+@given(instance=cbpmni_ProcessModel_strategy)
 @settings(max_examples=50)
-def test_cbpmni::processmodel_instantiation(instance):
-    assert isinstance(instance, cbpmni::ProcessModel)
+def test_cbpmni_processmodel_instantiation(instance):
+    assert isinstance(instance, cbpmni_ProcessModel)
 
-@given(instance=cbpmni::ProcessInst_strategy)
+@given(instance=cbpmni_ProcessInst_strategy)
 @settings(max_examples=50)
-def test_cbpmni::processinst_instantiation(instance):
-    assert isinstance(instance, cbpmni::ProcessInst)
+def test_cbpmni_processinst_instantiation(instance):
+    assert isinstance(instance, cbpmni_ProcessInst)
 
 import warnings
 import copy
@@ -401,9 +398,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=cbpmni::ProcessInst_strategy)
+@given(instance=cbpmni_ProcessInst_strategy)
 @settings(max_examples=30)
-def test_cbpmni::processinst_setupprocessinstance_changes_state(instance):
+def test_cbpmni_processinst_setupprocessinstance_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -415,11 +412,11 @@ def test_cbpmni::processinst_setupprocessinstance_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setupProcessInstance' in cbpmni::ProcessInst is empty"
+        assert has_statements, f"Function 'setupProcessInstance' in cbpmni_ProcessInst is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setupProcessInstance' in cbpmni::ProcessInst did not change state; check implementation")
+            warnings.warn(f"Operation 'setupProcessInstance' in cbpmni_ProcessInst did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setupProcessInstance' in cbpmni::ProcessInst is not implemented or raised an error")
+        warnings.warn(f"Operation 'setupProcessInstance' in cbpmni_ProcessInst is not implemented or raised an error")

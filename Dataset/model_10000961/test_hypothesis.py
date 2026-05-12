@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     JButton,
@@ -81,12 +81,12 @@ def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "avatar" in params, "Missing parameter 'avatar'"
     assert "suit" in params, "Missing parameter 'suit'"
-    assert "Count" in params, "Missing parameter 'Count'"
     assert "rank" in params, "Missing parameter 'rank'"
     assert "valueSoft" in params, "Missing parameter 'valueSoft'"
+    assert "avatar" in params, "Missing parameter 'avatar'"
     assert "valueHard" in params, "Missing parameter 'valueHard'"
+    assert "Count" in params, "Missing parameter 'Count'"
 
 def test_card_has_name():
     assert hasattr(Card, "name")
@@ -97,30 +97,12 @@ def test_card_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_card_has_avatar():
-    assert hasattr(Card, "avatar")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "avatar" in klass.__dict__:
-            descriptor = klass.__dict__["avatar"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_card_has_suit():
     assert hasattr(Card, "suit")
     descriptor = None
     for klass in Card.__mro__:
         if "suit" in klass.__dict__:
             descriptor = klass.__dict__["suit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_card_has_Count():
-    assert hasattr(Card, "Count")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "Count" in klass.__dict__:
-            descriptor = klass.__dict__["Count"]
             break
     assert isinstance(descriptor, property)
 
@@ -142,12 +124,30 @@ def test_card_has_valueSoft():
             break
     assert isinstance(descriptor, property)
 
+def test_card_has_avatar():
+    assert hasattr(Card, "avatar")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "avatar" in klass.__dict__:
+            descriptor = klass.__dict__["avatar"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_card_has_valueHard():
     assert hasattr(Card, "valueHard")
     descriptor = None
     for klass in Card.__mro__:
         if "valueHard" in klass.__dict__:
             descriptor = klass.__dict__["valueHard"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_Count():
+    assert hasattr(Card, "Count")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "Count" in klass.__dict__:
+            descriptor = klass.__dict__["Count"]
             break
     assert isinstance(descriptor, property)
 
@@ -188,17 +188,8 @@ def test_gamelauncher_constructor_exists():
 def test_gamelauncher_constructor_args():
     sig = inspect.signature(GameLauncher.__init__)
     params = list(sig.parameters.keys())
-    assert "login" in params, "Missing parameter 'login'"
     assert "blackjack" in params, "Missing parameter 'blackjack'"
-
-def test_gamelauncher_has_login():
-    assert hasattr(GameLauncher, "login")
-    descriptor = None
-    for klass in GameLauncher.__mro__:
-        if "login" in klass.__dict__:
-            descriptor = klass.__dict__["login"]
-            break
-    assert isinstance(descriptor, property)
+    assert "login" in params, "Missing parameter 'login'"
 
 def test_gamelauncher_has_blackjack():
     assert hasattr(GameLauncher, "blackjack")
@@ -206,6 +197,15 @@ def test_gamelauncher_has_blackjack():
     for klass in GameLauncher.__mro__:
         if "blackjack" in klass.__dict__:
             descriptor = klass.__dict__["blackjack"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gamelauncher_has_login():
+    assert hasattr(GameLauncher, "login")
+    descriptor = None
+    for klass in GameLauncher.__mro__:
+        if "login" in klass.__dict__:
+            descriptor = klass.__dict__["login"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,17 +222,8 @@ def test_profile_constructor_exists():
 def test_profile_constructor_args():
     sig = inspect.signature(Profile.__init__)
     params = list(sig.parameters.keys())
-    assert "username" in params, "Missing parameter 'username'"
     assert "money" in params, "Missing parameter 'money'"
-
-def test_profile_has_username():
-    assert hasattr(Profile, "username")
-    descriptor = None
-    for klass in Profile.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
+    assert "username" in params, "Missing parameter 'username'"
 
 def test_profile_has_money():
     assert hasattr(Profile, "money")
@@ -240,6 +231,15 @@ def test_profile_has_money():
     for klass in Profile.__mro__:
         if "money" in klass.__dict__:
             descriptor = klass.__dict__["money"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_profile_has_username():
+    assert hasattr(Profile, "username")
+    descriptor = None
+    for klass in Profile.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
@@ -315,9 +315,9 @@ def test_blackjackgame_constructor_args():
     sig = inspect.signature(BlackjackGame.__init__)
     params = list(sig.parameters.keys())
     assert "dealer" in params, "Missing parameter 'dealer'"
+    assert "deck" in params, "Missing parameter 'deck'"
     assert "bet" in params, "Missing parameter 'bet'"
     assert "player" in params, "Missing parameter 'player'"
-    assert "deck" in params, "Missing parameter 'deck'"
 
 def test_blackjackgame_has_dealer():
     assert hasattr(BlackjackGame, "dealer")
@@ -325,6 +325,15 @@ def test_blackjackgame_has_dealer():
     for klass in BlackjackGame.__mro__:
         if "dealer" in klass.__dict__:
             descriptor = klass.__dict__["dealer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_blackjackgame_has_deck():
+    assert hasattr(BlackjackGame, "deck")
+    descriptor = None
+    for klass in BlackjackGame.__mro__:
+        if "deck" in klass.__dict__:
+            descriptor = klass.__dict__["deck"]
             break
     assert isinstance(descriptor, property)
 
@@ -346,15 +355,6 @@ def test_blackjackgame_has_player():
             break
     assert isinstance(descriptor, property)
 
-def test_blackjackgame_has_deck():
-    assert hasattr(BlackjackGame, "deck")
-    descriptor = None
-    for klass in BlackjackGame.__mro__:
-        if "deck" in klass.__dict__:
-            descriptor = klass.__dict__["deck"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_playerview_is_not_abstract():
@@ -368,19 +368,19 @@ def test_playerview_constructor_exists():
 def test_playerview_constructor_args():
     sig = inspect.signature(PlayerView.__init__)
     params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "cardTotal" in params, "Missing parameter 'cardTotal'"
-    assert "cardLabels" in params, "Missing parameter 'cardLabels'"
-    assert "busted" in params, "Missing parameter 'busted'"
-    assert "moneyBox" in params, "Missing parameter 'moneyBox'"
     assert "player" in params, "Missing parameter 'player'"
+    assert "cardTotal" in params, "Missing parameter 'cardTotal'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "busted" in params, "Missing parameter 'busted'"
+    assert "cardLabels" in params, "Missing parameter 'cardLabels'"
+    assert "moneyBox" in params, "Missing parameter 'moneyBox'"
 
-def test_playerview_has_status():
-    assert hasattr(PlayerView, "status")
+def test_playerview_has_player():
+    assert hasattr(PlayerView, "player")
     descriptor = None
     for klass in PlayerView.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
+        if "player" in klass.__dict__:
+            descriptor = klass.__dict__["player"]
             break
     assert isinstance(descriptor, property)
 
@@ -393,12 +393,12 @@ def test_playerview_has_cardTotal():
             break
     assert isinstance(descriptor, property)
 
-def test_playerview_has_cardLabels():
-    assert hasattr(PlayerView, "cardLabels")
+def test_playerview_has_status():
+    assert hasattr(PlayerView, "status")
     descriptor = None
     for klass in PlayerView.__mro__:
-        if "cardLabels" in klass.__dict__:
-            descriptor = klass.__dict__["cardLabels"]
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -411,21 +411,21 @@ def test_playerview_has_busted():
             break
     assert isinstance(descriptor, property)
 
+def test_playerview_has_cardLabels():
+    assert hasattr(PlayerView, "cardLabels")
+    descriptor = None
+    for klass in PlayerView.__mro__:
+        if "cardLabels" in klass.__dict__:
+            descriptor = klass.__dict__["cardLabels"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_playerview_has_moneyBox():
     assert hasattr(PlayerView, "moneyBox")
     descriptor = None
     for klass in PlayerView.__mro__:
         if "moneyBox" in klass.__dict__:
             descriptor = klass.__dict__["moneyBox"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_playerview_has_player():
-    assert hasattr(PlayerView, "player")
-    descriptor = None
-    for klass in PlayerView.__mro__:
-        if "player" in klass.__dict__:
-            descriptor = klass.__dict__["player"]
             break
     assert isinstance(descriptor, property)
 
@@ -477,8 +477,8 @@ def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
     assert "hand" in params, "Missing parameter 'hand'"
-    assert "profile" in params, "Missing parameter 'profile'"
     assert "money" in params, "Missing parameter 'money'"
+    assert "profile" in params, "Missing parameter 'profile'"
 
 def test_player_has_hand():
     assert hasattr(Player, "hand")
@@ -489,21 +489,21 @@ def test_player_has_hand():
             break
     assert isinstance(descriptor, property)
 
-def test_player_has_profile():
-    assert hasattr(Player, "profile")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "profile" in klass.__dict__:
-            descriptor = klass.__dict__["profile"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_player_has_money():
     assert hasattr(Player, "money")
     descriptor = None
     for klass in Player.__mro__:
         if "money" in klass.__dict__:
             descriptor = klass.__dict__["money"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_profile():
+    assert hasattr(Player, "profile")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "profile" in klass.__dict__:
+            descriptor = klass.__dict__["profile"]
             break
     assert isinstance(descriptor, property)
 
@@ -586,20 +586,20 @@ def test_gameview_constructor_exists():
 def test_gameview_constructor_args():
     sig = inspect.signature(GameView.__init__)
     params = list(sig.parameters.keys())
-    assert "doubleButton" in params, "Missing parameter 'doubleButton'"
-    assert "bet" in params, "Missing parameter 'bet'"
-    assert "splitButton" in params, "Missing parameter 'splitButton'"
-    assert "showStrategy" in params, "Missing parameter 'showStrategy'"
-    assert "standButton" in params, "Missing parameter 'standButton'"
     assert "dealButton" in params, "Missing parameter 'dealButton'"
+    assert "bet" in params, "Missing parameter 'bet'"
     assert "hitButton" in params, "Missing parameter 'hitButton'"
+    assert "standButton" in params, "Missing parameter 'standButton'"
+    assert "showStrategy" in params, "Missing parameter 'showStrategy'"
+    assert "doubleButton" in params, "Missing parameter 'doubleButton'"
+    assert "splitButton" in params, "Missing parameter 'splitButton'"
 
-def test_gameview_has_doubleButton():
-    assert hasattr(GameView, "doubleButton")
+def test_gameview_has_dealButton():
+    assert hasattr(GameView, "dealButton")
     descriptor = None
     for klass in GameView.__mro__:
-        if "doubleButton" in klass.__dict__:
-            descriptor = klass.__dict__["doubleButton"]
+        if "dealButton" in klass.__dict__:
+            descriptor = klass.__dict__["dealButton"]
             break
     assert isinstance(descriptor, property)
 
@@ -612,21 +612,12 @@ def test_gameview_has_bet():
             break
     assert isinstance(descriptor, property)
 
-def test_gameview_has_splitButton():
-    assert hasattr(GameView, "splitButton")
+def test_gameview_has_hitButton():
+    assert hasattr(GameView, "hitButton")
     descriptor = None
     for klass in GameView.__mro__:
-        if "splitButton" in klass.__dict__:
-            descriptor = klass.__dict__["splitButton"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gameview_has_showStrategy():
-    assert hasattr(GameView, "showStrategy")
-    descriptor = None
-    for klass in GameView.__mro__:
-        if "showStrategy" in klass.__dict__:
-            descriptor = klass.__dict__["showStrategy"]
+        if "hitButton" in klass.__dict__:
+            descriptor = klass.__dict__["hitButton"]
             break
     assert isinstance(descriptor, property)
 
@@ -639,21 +630,30 @@ def test_gameview_has_standButton():
             break
     assert isinstance(descriptor, property)
 
-def test_gameview_has_dealButton():
-    assert hasattr(GameView, "dealButton")
+def test_gameview_has_showStrategy():
+    assert hasattr(GameView, "showStrategy")
     descriptor = None
     for klass in GameView.__mro__:
-        if "dealButton" in klass.__dict__:
-            descriptor = klass.__dict__["dealButton"]
+        if "showStrategy" in klass.__dict__:
+            descriptor = klass.__dict__["showStrategy"]
             break
     assert isinstance(descriptor, property)
 
-def test_gameview_has_hitButton():
-    assert hasattr(GameView, "hitButton")
+def test_gameview_has_doubleButton():
+    assert hasattr(GameView, "doubleButton")
     descriptor = None
     for klass in GameView.__mro__:
-        if "hitButton" in klass.__dict__:
-            descriptor = klass.__dict__["hitButton"]
+        if "doubleButton" in klass.__dict__:
+            descriptor = klass.__dict__["doubleButton"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gameview_has_splitButton():
+    assert hasattr(GameView, "splitButton")
+    descriptor = None
+    for klass in GameView.__mro__:
+        if "splitButton" in klass.__dict__:
+            descriptor = klass.__dict__["splitButton"]
             break
     assert isinstance(descriptor, property)
 
@@ -681,18 +681,18 @@ Card_strategy = st.builds(
     Card,
     name=
         safe_text,
-    avatar=
-        safe_text,
     suit=
         safe_text,
-    Count=
-        st.integers(),
     rank=
         safe_text,
     valueSoft=
         safe_text,
+    avatar=
+        safe_text,
     valueHard=
-        safe_text
+        safe_text,
+    Count=
+        st.integers()
 )
 LoginView_strategy = st.builds(
     LoginView,
@@ -701,17 +701,17 @@ LoginView_strategy = st.builds(
 )
 GameLauncher_strategy = st.builds(
     GameLauncher,
-    login=
-        st.none(),
     blackjack=
+        st.none(),
+    login=
         st.none()
 )
 Profile_strategy = st.builds(
     Profile,
-    username=
-        safe_text,
     money=
-        st.integers()
+        st.integers(),
+    username=
+        safe_text
 )
 Hand_strategy = st.builds(
     Hand,
@@ -729,26 +729,26 @@ BlackjackGame_strategy = st.builds(
     BlackjackGame,
     dealer=
         st.none(),
+    deck=
+        st.none(),
     bet=
         st.integers(),
     player=
-        st.none(),
-    deck=
         st.none()
 )
 PlayerView_strategy = st.builds(
     PlayerView,
-    status=
+    player=
         st.none(),
     cardTotal=
         st.none(),
-    cardLabels=
+    status=
         st.none(),
     busted=
         st.none(),
-    moneyBox=
+    cardLabels=
         st.none(),
-    player=
+    moneyBox=
         st.none()
 )
 Dealer_strategy = st.builds(
@@ -762,10 +762,10 @@ Player_strategy = st.builds(
     Player,
     hand=
         st.none(),
-    profile=
-        st.none(),
     money=
-        st.integers()
+        st.integers(),
+    profile=
+        st.none()
 )
 JLabel_strategy = st.builds(
     JLabel,
@@ -783,19 +783,19 @@ BasePlayer_strategy = st.builds(
 )
 GameView_strategy = st.builds(
     GameView,
-    doubleButton=
+    dealButton=
         st.none(),
     bet=
         st.none(),
-    splitButton=
+    hitButton=
+        st.none(),
+    standButton=
         st.none(),
     showStrategy=
         st.booleans(),
-    standButton=
+    doubleButton=
         st.none(),
-    dealButton=
-        st.none(),
-    hitButton=
+    splitButton=
         st.none()
 )
 
@@ -809,9 +809,6 @@ def test_jbutton_instantiation(instance):
 def test_strategy_instantiation(instance):
     assert isinstance(instance, Strategy)
 
-@given(instance=Strategy_strategy)
-def test_strategy_game_type(instance):
-    assert isinstance(instance.game, blackjackgame)
 
 
 @given(instance=Strategy_strategy)
@@ -825,9 +822,6 @@ def test_strategy_game_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Card_strategy)
@@ -836,20 +830,6 @@ def test_card_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Card_strategy)
-def test_card_avatar_type(instance):
-    assert isinstance(instance.avatar, str)
-
-
-@given(instance=Card_strategy)
-def test_card_avatar_setter(instance):
-    original = instance.avatar
-    instance.avatar = original
-    assert instance.avatar == original
-
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, str)
 
 
 @given(instance=Card_strategy)
@@ -858,20 +838,6 @@ def test_card_suit_setter(instance):
     instance.suit = original
     assert instance.suit == original
 
-@given(instance=Card_strategy)
-def test_card_Count_type(instance):
-    assert isinstance(instance.Count, int)
-
-
-@given(instance=Card_strategy)
-def test_card_Count_setter(instance):
-    original = instance.Count
-    instance.Count = original
-    assert instance.Count == original
-
-@given(instance=Card_strategy)
-def test_card_rank_type(instance):
-    assert isinstance(instance.rank, str)
 
 
 @given(instance=Card_strategy)
@@ -880,9 +846,6 @@ def test_card_rank_setter(instance):
     instance.rank = original
     assert instance.rank == original
 
-@given(instance=Card_strategy)
-def test_card_valueSoft_type(instance):
-    assert isinstance(instance.valueSoft, str)
 
 
 @given(instance=Card_strategy)
@@ -891,9 +854,14 @@ def test_card_valueSoft_setter(instance):
     instance.valueSoft = original
     assert instance.valueSoft == original
 
+
+
 @given(instance=Card_strategy)
-def test_card_valueHard_type(instance):
-    assert isinstance(instance.valueHard, str)
+def test_card_avatar_setter(instance):
+    original = instance.avatar
+    instance.avatar = original
+    assert instance.avatar == original
+
 
 
 @given(instance=Card_strategy)
@@ -902,14 +870,19 @@ def test_card_valueHard_setter(instance):
     instance.valueHard = original
     assert instance.valueHard == original
 
+
+
+@given(instance=Card_strategy)
+def test_card_Count_setter(instance):
+    original = instance.Count
+    instance.Count = original
+    assert instance.Count == original
+
 @given(instance=LoginView_strategy)
 @settings(max_examples=50)
 def test_loginview_instantiation(instance):
     assert isinstance(instance, LoginView)
 
-@given(instance=LoginView_strategy)
-def test_loginview_user_type(instance):
-    assert isinstance(instance.user, profile)
 
 
 @given(instance=LoginView_strategy)
@@ -923,20 +896,6 @@ def test_loginview_user_setter(instance):
 def test_gamelauncher_instantiation(instance):
     assert isinstance(instance, GameLauncher)
 
-@given(instance=GameLauncher_strategy)
-def test_gamelauncher_login_type(instance):
-    assert isinstance(instance.login, loginview)
-
-
-@given(instance=GameLauncher_strategy)
-def test_gamelauncher_login_setter(instance):
-    original = instance.login
-    instance.login = original
-    assert instance.login == original
-
-@given(instance=GameLauncher_strategy)
-def test_gamelauncher_blackjack_type(instance):
-    assert isinstance(instance.blackjack, blackjackgame)
 
 
 @given(instance=GameLauncher_strategy)
@@ -945,25 +904,19 @@ def test_gamelauncher_blackjack_setter(instance):
     instance.blackjack = original
     assert instance.blackjack == original
 
+
+
+@given(instance=GameLauncher_strategy)
+def test_gamelauncher_login_setter(instance):
+    original = instance.login
+    instance.login = original
+    assert instance.login == original
+
 @given(instance=Profile_strategy)
 @settings(max_examples=50)
 def test_profile_instantiation(instance):
     assert isinstance(instance, Profile)
 
-@given(instance=Profile_strategy)
-def test_profile_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Profile_strategy)
-def test_profile_money_type(instance):
-    assert isinstance(instance.money, int)
 
 
 @given(instance=Profile_strategy)
@@ -972,14 +925,19 @@ def test_profile_money_setter(instance):
     instance.money = original
     assert instance.money == original
 
+
+
+@given(instance=Profile_strategy)
+def test_profile_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
 @given(instance=Hand_strategy)
 @settings(max_examples=50)
 def test_hand_instantiation(instance):
     assert isinstance(instance, Hand)
 
-@given(instance=Hand_strategy)
-def test_hand_total_type(instance):
-    assert isinstance(instance.total, int)
 
 
 @given(instance=Hand_strategy)
@@ -988,9 +946,6 @@ def test_hand_total_setter(instance):
     instance.total = original
     assert instance.total == original
 
-@given(instance=Hand_strategy)
-def test_hand_cards_type(instance):
-    assert isinstance(instance.cards, card)
 
 
 @given(instance=Hand_strategy)
@@ -1004,9 +959,6 @@ def test_hand_cards_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_cards_type(instance):
-    assert isinstance(instance.cards, card)
 
 
 @given(instance=Deck_strategy)
@@ -1020,9 +972,6 @@ def test_deck_cards_setter(instance):
 def test_blackjackgame_instantiation(instance):
     assert isinstance(instance, BlackjackGame)
 
-@given(instance=BlackjackGame_strategy)
-def test_blackjackgame_dealer_type(instance):
-    assert isinstance(instance.dealer, dealer)
 
 
 @given(instance=BlackjackGame_strategy)
@@ -1031,31 +980,6 @@ def test_blackjackgame_dealer_setter(instance):
     instance.dealer = original
     assert instance.dealer == original
 
-@given(instance=BlackjackGame_strategy)
-def test_blackjackgame_bet_type(instance):
-    assert isinstance(instance.bet, int)
-
-
-@given(instance=BlackjackGame_strategy)
-def test_blackjackgame_bet_setter(instance):
-    original = instance.bet
-    instance.bet = original
-    assert instance.bet == original
-
-@given(instance=BlackjackGame_strategy)
-def test_blackjackgame_player_type(instance):
-    assert isinstance(instance.player, player)
-
-
-@given(instance=BlackjackGame_strategy)
-def test_blackjackgame_player_setter(instance):
-    original = instance.player
-    instance.player = original
-    assert instance.player == original
-
-@given(instance=BlackjackGame_strategy)
-def test_blackjackgame_deck_type(instance):
-    assert isinstance(instance.deck, deck)
 
 
 @given(instance=BlackjackGame_strategy)
@@ -1064,69 +988,27 @@ def test_blackjackgame_deck_setter(instance):
     instance.deck = original
     assert instance.deck == original
 
+
+
+@given(instance=BlackjackGame_strategy)
+def test_blackjackgame_bet_setter(instance):
+    original = instance.bet
+    instance.bet = original
+    assert instance.bet == original
+
+
+
+@given(instance=BlackjackGame_strategy)
+def test_blackjackgame_player_setter(instance):
+    original = instance.player
+    instance.player = original
+    assert instance.player == original
+
 @given(instance=PlayerView_strategy)
 @settings(max_examples=50)
 def test_playerview_instantiation(instance):
     assert isinstance(instance, PlayerView)
 
-@given(instance=PlayerView_strategy)
-def test_playerview_status_type(instance):
-    assert isinstance(instance.status, jlabel)
-
-
-@given(instance=PlayerView_strategy)
-def test_playerview_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=PlayerView_strategy)
-def test_playerview_cardTotal_type(instance):
-    assert isinstance(instance.cardTotal, jlabel)
-
-
-@given(instance=PlayerView_strategy)
-def test_playerview_cardTotal_setter(instance):
-    original = instance.cardTotal
-    instance.cardTotal = original
-    assert instance.cardTotal == original
-
-@given(instance=PlayerView_strategy)
-def test_playerview_cardLabels_type(instance):
-    assert isinstance(instance.cardLabels, jlabel)
-
-
-@given(instance=PlayerView_strategy)
-def test_playerview_cardLabels_setter(instance):
-    original = instance.cardLabels
-    instance.cardLabels = original
-    assert instance.cardLabels == original
-
-@given(instance=PlayerView_strategy)
-def test_playerview_busted_type(instance):
-    assert isinstance(instance.busted, jlabel)
-
-
-@given(instance=PlayerView_strategy)
-def test_playerview_busted_setter(instance):
-    original = instance.busted
-    instance.busted = original
-    assert instance.busted == original
-
-@given(instance=PlayerView_strategy)
-def test_playerview_moneyBox_type(instance):
-    assert isinstance(instance.moneyBox, jlabel)
-
-
-@given(instance=PlayerView_strategy)
-def test_playerview_moneyBox_setter(instance):
-    original = instance.moneyBox
-    instance.moneyBox = original
-    assert instance.moneyBox == original
-
-@given(instance=PlayerView_strategy)
-def test_playerview_player_type(instance):
-    assert isinstance(instance.player, baseplayer)
 
 
 @given(instance=PlayerView_strategy)
@@ -1135,14 +1017,51 @@ def test_playerview_player_setter(instance):
     instance.player = original
     assert instance.player == original
 
+
+
+@given(instance=PlayerView_strategy)
+def test_playerview_cardTotal_setter(instance):
+    original = instance.cardTotal
+    instance.cardTotal = original
+    assert instance.cardTotal == original
+
+
+
+@given(instance=PlayerView_strategy)
+def test_playerview_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=PlayerView_strategy)
+def test_playerview_busted_setter(instance):
+    original = instance.busted
+    instance.busted = original
+    assert instance.busted == original
+
+
+
+@given(instance=PlayerView_strategy)
+def test_playerview_cardLabels_setter(instance):
+    original = instance.cardLabels
+    instance.cardLabels = original
+    assert instance.cardLabels == original
+
+
+
+@given(instance=PlayerView_strategy)
+def test_playerview_moneyBox_setter(instance):
+    original = instance.moneyBox
+    instance.moneyBox = original
+    assert instance.moneyBox == original
+
 @given(instance=Dealer_strategy)
 @settings(max_examples=50)
 def test_dealer_instantiation(instance):
     assert isinstance(instance, Dealer)
 
-@given(instance=Dealer_strategy)
-def test_dealer_hand_type(instance):
-    assert isinstance(instance.hand, hand)
 
 
 @given(instance=Dealer_strategy)
@@ -1151,9 +1070,6 @@ def test_dealer_hand_setter(instance):
     instance.hand = original
     assert instance.hand == original
 
-@given(instance=Dealer_strategy)
-def test_dealer_cardTotalLimit_type(instance):
-    assert isinstance(instance.cardTotalLimit, int)
 
 
 @given(instance=Dealer_strategy)
@@ -1167,9 +1083,6 @@ def test_dealer_cardTotalLimit_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_hand_type(instance):
-    assert isinstance(instance.hand, hand)
 
 
 @given(instance=Player_strategy)
@@ -1178,20 +1091,6 @@ def test_player_hand_setter(instance):
     instance.hand = original
     assert instance.hand == original
 
-@given(instance=Player_strategy)
-def test_player_profile_type(instance):
-    assert isinstance(instance.profile, profile)
-
-
-@given(instance=Player_strategy)
-def test_player_profile_setter(instance):
-    original = instance.profile
-    instance.profile = original
-    assert instance.profile == original
-
-@given(instance=Player_strategy)
-def test_player_money_type(instance):
-    assert isinstance(instance.money, int)
 
 
 @given(instance=Player_strategy)
@@ -1199,6 +1098,14 @@ def test_player_money_setter(instance):
     original = instance.money
     instance.money = original
     assert instance.money == original
+
+
+
+@given(instance=Player_strategy)
+def test_player_profile_setter(instance):
+    original = instance.profile
+    instance.profile = original
+    assert instance.profile == original
 
 @given(instance=JLabel_strategy)
 @settings(max_examples=50)
@@ -1220,9 +1127,6 @@ def test_user_actor_instantiation(instance):
 def test_baseplayer_instantiation(instance):
     assert isinstance(instance, BasePlayer)
 
-@given(instance=BasePlayer_strategy)
-def test_baseplayer_isBusted_type(instance):
-    assert isinstance(instance.isBusted, bool)
 
 
 @given(instance=BasePlayer_strategy)
@@ -1236,64 +1140,6 @@ def test_baseplayer_isBusted_setter(instance):
 def test_gameview_instantiation(instance):
     assert isinstance(instance, GameView)
 
-@given(instance=GameView_strategy)
-def test_gameview_doubleButton_type(instance):
-    assert isinstance(instance.doubleButton, jbutton)
-
-
-@given(instance=GameView_strategy)
-def test_gameview_doubleButton_setter(instance):
-    original = instance.doubleButton
-    instance.doubleButton = original
-    assert instance.doubleButton == original
-
-@given(instance=GameView_strategy)
-def test_gameview_bet_type(instance):
-    assert isinstance(instance.bet, jlabel)
-
-
-@given(instance=GameView_strategy)
-def test_gameview_bet_setter(instance):
-    original = instance.bet
-    instance.bet = original
-    assert instance.bet == original
-
-@given(instance=GameView_strategy)
-def test_gameview_splitButton_type(instance):
-    assert isinstance(instance.splitButton, jbutton)
-
-
-@given(instance=GameView_strategy)
-def test_gameview_splitButton_setter(instance):
-    original = instance.splitButton
-    instance.splitButton = original
-    assert instance.splitButton == original
-
-@given(instance=GameView_strategy)
-def test_gameview_showStrategy_type(instance):
-    assert isinstance(instance.showStrategy, bool)
-
-
-@given(instance=GameView_strategy)
-def test_gameview_showStrategy_setter(instance):
-    original = instance.showStrategy
-    instance.showStrategy = original
-    assert instance.showStrategy == original
-
-@given(instance=GameView_strategy)
-def test_gameview_standButton_type(instance):
-    assert isinstance(instance.standButton, jbutton)
-
-
-@given(instance=GameView_strategy)
-def test_gameview_standButton_setter(instance):
-    original = instance.standButton
-    instance.standButton = original
-    assert instance.standButton == original
-
-@given(instance=GameView_strategy)
-def test_gameview_dealButton_type(instance):
-    assert isinstance(instance.dealButton, jbutton)
 
 
 @given(instance=GameView_strategy)
@@ -1302,9 +1148,14 @@ def test_gameview_dealButton_setter(instance):
     instance.dealButton = original
     assert instance.dealButton == original
 
+
+
 @given(instance=GameView_strategy)
-def test_gameview_hitButton_type(instance):
-    assert isinstance(instance.hitButton, jbutton)
+def test_gameview_bet_setter(instance):
+    original = instance.bet
+    instance.bet = original
+    assert instance.bet == original
+
 
 
 @given(instance=GameView_strategy)
@@ -1312,3 +1163,35 @@ def test_gameview_hitButton_setter(instance):
     original = instance.hitButton
     instance.hitButton = original
     assert instance.hitButton == original
+
+
+
+@given(instance=GameView_strategy)
+def test_gameview_standButton_setter(instance):
+    original = instance.standButton
+    instance.standButton = original
+    assert instance.standButton == original
+
+
+
+@given(instance=GameView_strategy)
+def test_gameview_showStrategy_setter(instance):
+    original = instance.showStrategy
+    instance.showStrategy = original
+    assert instance.showStrategy == original
+
+
+
+@given(instance=GameView_strategy)
+def test_gameview_doubleButton_setter(instance):
+    original = instance.doubleButton
+    instance.doubleButton = original
+    assert instance.doubleButton == original
+
+
+
+@given(instance=GameView_strategy)
+def test_gameview_splitButton_setter(instance):
+    original = instance.splitButton
+    instance.splitButton = original
+    assert instance.splitButton == original

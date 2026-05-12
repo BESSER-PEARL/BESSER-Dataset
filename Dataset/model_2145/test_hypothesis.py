@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expr,
-    graph::BoolConstant,
-    graph::VariableRef,
-    graph::StringConstant,
-    graph::ParticleConstant,
-    graph::And,
-    graph::GraphConstant,
-    graph::Or,
-    graph::IntConstant,
-    graph::Not,
-    graph::MulOrDiv,
-    graph::PlusOrMin,
-    graph::Comparison,
-    graph::PathExistence,
-    graph::Statement,
-    graph::Declaration,
-    graph::Program,
-    graph::Edge,
-    graph::Vertex,
-    graph::Expr,
+    graph_GraphConstant,
+    graph_BoolConstant,
+    graph_StringConstant,
+    graph_ParticleConstant,
+    graph_And,
+    graph_VariableRef,
+    graph_Or,
+    graph_IntConstant,
+    graph_Not,
+    graph_MulOrDiv,
+    graph_PlusOrMin,
+    graph_Comparison,
+    graph_PathExistence,
+    graph_Statement,
+    graph_Declaration,
+    graph_Program,
+    graph_Edge,
+    graph_Vertex,
+    graph_Expr,
     Statement,
-    graph::WhileStmt,
-    graph::PrintStmt,
-    graph::IfStmt,
-    graph::MoveStmt,
-    graph::AssignStmt,
+    graph_WhileStmt,
+    graph_IfStmt,
+    graph_MoveStmt,
+    graph_PrintStmt,
+    graph_AssignStmt,
 )
 
 # =============================================================================
@@ -54,23 +54,37 @@ def test_expr_constructor_args():
 
 
 
-def test_graph::boolconstant_is_not_abstract():
-    assert not inspect.isabstract(graph::BoolConstant)
+def test_graph_graphconstant_is_not_abstract():
+    assert not inspect.isabstract(graph_GraphConstant)
 
 
-def test_graph::boolconstant_constructor_exists():
-    assert callable(graph::BoolConstant.__init__)
+def test_graph_graphconstant_constructor_exists():
+    assert callable(graph_GraphConstant.__init__)
 
 
-def test_graph::boolconstant_constructor_args():
-    sig = inspect.signature(graph::BoolConstant.__init__)
+def test_graph_graphconstant_constructor_args():
+    sig = inspect.signature(graph_GraphConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graph_boolconstant_is_not_abstract():
+    assert not inspect.isabstract(graph_BoolConstant)
+
+
+def test_graph_boolconstant_constructor_exists():
+    assert callable(graph_BoolConstant.__init__)
+
+
+def test_graph_boolconstant_constructor_args():
+    sig = inspect.signature(graph_BoolConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graph::boolconstant_has_value():
-    assert hasattr(graph::BoolConstant, "value")
+def test_graph_boolconstant_has_value():
+    assert hasattr(graph_BoolConstant, "value")
     descriptor = None
-    for klass in graph::BoolConstant.__mro__:
+    for klass in graph_BoolConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -78,37 +92,23 @@ def test_graph::boolconstant_has_value():
 
 
 
-def test_graph::variableref_is_not_abstract():
-    assert not inspect.isabstract(graph::VariableRef)
+def test_graph_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(graph_StringConstant)
 
 
-def test_graph::variableref_constructor_exists():
-    assert callable(graph::VariableRef.__init__)
+def test_graph_stringconstant_constructor_exists():
+    assert callable(graph_StringConstant.__init__)
 
 
-def test_graph::variableref_constructor_args():
-    sig = inspect.signature(graph::VariableRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graph::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(graph::StringConstant)
-
-
-def test_graph::stringconstant_constructor_exists():
-    assert callable(graph::StringConstant.__init__)
-
-
-def test_graph::stringconstant_constructor_args():
-    sig = inspect.signature(graph::StringConstant.__init__)
+def test_graph_stringconstant_constructor_args():
+    sig = inspect.signature(graph_StringConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graph::stringconstant_has_value():
-    assert hasattr(graph::StringConstant, "value")
+def test_graph_stringconstant_has_value():
+    assert hasattr(graph_StringConstant, "value")
     descriptor = None
-    for klass in graph::StringConstant.__mro__:
+    for klass in graph_StringConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -116,79 +116,79 @@ def test_graph::stringconstant_has_value():
 
 
 
-def test_graph::particleconstant_is_not_abstract():
-    assert not inspect.isabstract(graph::ParticleConstant)
+def test_graph_particleconstant_is_not_abstract():
+    assert not inspect.isabstract(graph_ParticleConstant)
 
 
-def test_graph::particleconstant_constructor_exists():
-    assert callable(graph::ParticleConstant.__init__)
+def test_graph_particleconstant_constructor_exists():
+    assert callable(graph_ParticleConstant.__init__)
 
 
-def test_graph::particleconstant_constructor_args():
-    sig = inspect.signature(graph::ParticleConstant.__init__)
+def test_graph_particleconstant_constructor_args():
+    sig = inspect.signature(graph_ParticleConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::and_is_not_abstract():
-    assert not inspect.isabstract(graph::And)
+def test_graph_and_is_not_abstract():
+    assert not inspect.isabstract(graph_And)
 
 
-def test_graph::and_constructor_exists():
-    assert callable(graph::And.__init__)
+def test_graph_and_constructor_exists():
+    assert callable(graph_And.__init__)
 
 
-def test_graph::and_constructor_args():
-    sig = inspect.signature(graph::And.__init__)
+def test_graph_and_constructor_args():
+    sig = inspect.signature(graph_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::graphconstant_is_not_abstract():
-    assert not inspect.isabstract(graph::GraphConstant)
+def test_graph_variableref_is_not_abstract():
+    assert not inspect.isabstract(graph_VariableRef)
 
 
-def test_graph::graphconstant_constructor_exists():
-    assert callable(graph::GraphConstant.__init__)
+def test_graph_variableref_constructor_exists():
+    assert callable(graph_VariableRef.__init__)
 
 
-def test_graph::graphconstant_constructor_args():
-    sig = inspect.signature(graph::GraphConstant.__init__)
+def test_graph_variableref_constructor_args():
+    sig = inspect.signature(graph_VariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::or_is_not_abstract():
-    assert not inspect.isabstract(graph::Or)
+def test_graph_or_is_not_abstract():
+    assert not inspect.isabstract(graph_Or)
 
 
-def test_graph::or_constructor_exists():
-    assert callable(graph::Or.__init__)
+def test_graph_or_constructor_exists():
+    assert callable(graph_Or.__init__)
 
 
-def test_graph::or_constructor_args():
-    sig = inspect.signature(graph::Or.__init__)
+def test_graph_or_constructor_args():
+    sig = inspect.signature(graph_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::intconstant_is_not_abstract():
-    assert not inspect.isabstract(graph::IntConstant)
+def test_graph_intconstant_is_not_abstract():
+    assert not inspect.isabstract(graph_IntConstant)
 
 
-def test_graph::intconstant_constructor_exists():
-    assert callable(graph::IntConstant.__init__)
+def test_graph_intconstant_constructor_exists():
+    assert callable(graph_IntConstant.__init__)
 
 
-def test_graph::intconstant_constructor_args():
-    sig = inspect.signature(graph::IntConstant.__init__)
+def test_graph_intconstant_constructor_args():
+    sig = inspect.signature(graph_IntConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graph::intconstant_has_value():
-    assert hasattr(graph::IntConstant, "value")
+def test_graph_intconstant_has_value():
+    assert hasattr(graph_IntConstant, "value")
     descriptor = None
-    for klass in graph::IntConstant.__mro__:
+    for klass in graph_IntConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -196,37 +196,37 @@ def test_graph::intconstant_has_value():
 
 
 
-def test_graph::not_is_not_abstract():
-    assert not inspect.isabstract(graph::Not)
+def test_graph_not_is_not_abstract():
+    assert not inspect.isabstract(graph_Not)
 
 
-def test_graph::not_constructor_exists():
-    assert callable(graph::Not.__init__)
+def test_graph_not_constructor_exists():
+    assert callable(graph_Not.__init__)
 
 
-def test_graph::not_constructor_args():
-    sig = inspect.signature(graph::Not.__init__)
+def test_graph_not_constructor_args():
+    sig = inspect.signature(graph_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::mulordiv_is_not_abstract():
-    assert not inspect.isabstract(graph::MulOrDiv)
+def test_graph_mulordiv_is_not_abstract():
+    assert not inspect.isabstract(graph_MulOrDiv)
 
 
-def test_graph::mulordiv_constructor_exists():
-    assert callable(graph::MulOrDiv.__init__)
+def test_graph_mulordiv_constructor_exists():
+    assert callable(graph_MulOrDiv.__init__)
 
 
-def test_graph::mulordiv_constructor_args():
-    sig = inspect.signature(graph::MulOrDiv.__init__)
+def test_graph_mulordiv_constructor_args():
+    sig = inspect.signature(graph_MulOrDiv.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_graph::mulordiv_has_op():
-    assert hasattr(graph::MulOrDiv, "op")
+def test_graph_mulordiv_has_op():
+    assert hasattr(graph_MulOrDiv, "op")
     descriptor = None
-    for klass in graph::MulOrDiv.__mro__:
+    for klass in graph_MulOrDiv.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -234,23 +234,23 @@ def test_graph::mulordiv_has_op():
 
 
 
-def test_graph::plusormin_is_not_abstract():
-    assert not inspect.isabstract(graph::PlusOrMin)
+def test_graph_plusormin_is_not_abstract():
+    assert not inspect.isabstract(graph_PlusOrMin)
 
 
-def test_graph::plusormin_constructor_exists():
-    assert callable(graph::PlusOrMin.__init__)
+def test_graph_plusormin_constructor_exists():
+    assert callable(graph_PlusOrMin.__init__)
 
 
-def test_graph::plusormin_constructor_args():
-    sig = inspect.signature(graph::PlusOrMin.__init__)
+def test_graph_plusormin_constructor_args():
+    sig = inspect.signature(graph_PlusOrMin.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_graph::plusormin_has_op():
-    assert hasattr(graph::PlusOrMin, "op")
+def test_graph_plusormin_has_op():
+    assert hasattr(graph_PlusOrMin, "op")
     descriptor = None
-    for klass in graph::PlusOrMin.__mro__:
+    for klass in graph_PlusOrMin.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -258,23 +258,23 @@ def test_graph::plusormin_has_op():
 
 
 
-def test_graph::comparison_is_not_abstract():
-    assert not inspect.isabstract(graph::Comparison)
+def test_graph_comparison_is_not_abstract():
+    assert not inspect.isabstract(graph_Comparison)
 
 
-def test_graph::comparison_constructor_exists():
-    assert callable(graph::Comparison.__init__)
+def test_graph_comparison_constructor_exists():
+    assert callable(graph_Comparison.__init__)
 
 
-def test_graph::comparison_constructor_args():
-    sig = inspect.signature(graph::Comparison.__init__)
+def test_graph_comparison_constructor_args():
+    sig = inspect.signature(graph_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_graph::comparison_has_op():
-    assert hasattr(graph::Comparison, "op")
+def test_graph_comparison_has_op():
+    assert hasattr(graph_Comparison, "op")
     descriptor = None
-    for klass in graph::Comparison.__mro__:
+    for klass in graph_Comparison.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -282,113 +282,61 @@ def test_graph::comparison_has_op():
 
 
 
-def test_graph::pathexistence_is_not_abstract():
-    assert not inspect.isabstract(graph::PathExistence)
+def test_graph_pathexistence_is_not_abstract():
+    assert not inspect.isabstract(graph_PathExistence)
 
 
-def test_graph::pathexistence_constructor_exists():
-    assert callable(graph::PathExistence.__init__)
+def test_graph_pathexistence_constructor_exists():
+    assert callable(graph_PathExistence.__init__)
 
 
-def test_graph::pathexistence_constructor_args():
-    sig = inspect.signature(graph::PathExistence.__init__)
+def test_graph_pathexistence_constructor_args():
+    sig = inspect.signature(graph_PathExistence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::statement_is_not_abstract():
-    assert not inspect.isabstract(graph::Statement)
+def test_graph_statement_is_not_abstract():
+    assert not inspect.isabstract(graph_Statement)
 
 
-def test_graph::statement_constructor_exists():
-    assert callable(graph::Statement.__init__)
+def test_graph_statement_constructor_exists():
+    assert callable(graph_Statement.__init__)
 
 
-def test_graph::statement_constructor_args():
-    sig = inspect.signature(graph::Statement.__init__)
+def test_graph_statement_constructor_args():
+    sig = inspect.signature(graph_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::declaration_is_not_abstract():
-    assert not inspect.isabstract(graph::Declaration)
+def test_graph_declaration_is_not_abstract():
+    assert not inspect.isabstract(graph_Declaration)
 
 
-def test_graph::declaration_constructor_exists():
-    assert callable(graph::Declaration.__init__)
+def test_graph_declaration_constructor_exists():
+    assert callable(graph_Declaration.__init__)
 
 
-def test_graph::declaration_constructor_args():
-    sig = inspect.signature(graph::Declaration.__init__)
+def test_graph_declaration_constructor_args():
+    sig = inspect.signature(graph_Declaration.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::declaration_has_name():
-    assert hasattr(graph::Declaration, "name")
+def test_graph_declaration_has_type():
+    assert hasattr(graph_Declaration, "type")
     descriptor = None
-    for klass in graph::Declaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graph::declaration_has_type():
-    assert hasattr(graph::Declaration, "type")
-    descriptor = None
-    for klass in graph::Declaration.__mro__:
+    for klass in graph_Declaration.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_graph::program_is_not_abstract():
-    assert not inspect.isabstract(graph::Program)
-
-
-def test_graph::program_constructor_exists():
-    assert callable(graph::Program.__init__)
-
-
-def test_graph::program_constructor_args():
-    sig = inspect.signature(graph::Program.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(graph::Edge)
-
-
-def test_graph::edge_constructor_exists():
-    assert callable(graph::Edge.__init__)
-
-
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(graph::Edge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_graph::vertex_is_not_abstract():
-    assert not inspect.isabstract(graph::Vertex)
-
-
-def test_graph::vertex_constructor_exists():
-    assert callable(graph::Vertex.__init__)
-
-
-def test_graph::vertex_constructor_args():
-    sig = inspect.signature(graph::Vertex.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_graph::vertex_has_name():
-    assert hasattr(graph::Vertex, "name")
+def test_graph_declaration_has_name():
+    assert hasattr(graph_Declaration, "name")
     descriptor = None
-    for klass in graph::Vertex.__mro__:
+    for klass in graph_Declaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -396,16 +344,68 @@ def test_graph::vertex_has_name():
 
 
 
-def test_graph::expr_is_not_abstract():
-    assert not inspect.isabstract(graph::Expr)
+def test_graph_program_is_not_abstract():
+    assert not inspect.isabstract(graph_Program)
 
 
-def test_graph::expr_constructor_exists():
-    assert callable(graph::Expr.__init__)
+def test_graph_program_constructor_exists():
+    assert callable(graph_Program.__init__)
 
 
-def test_graph::expr_constructor_args():
-    sig = inspect.signature(graph::Expr.__init__)
+def test_graph_program_constructor_args():
+    sig = inspect.signature(graph_Program.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(graph_Edge)
+
+
+def test_graph_edge_constructor_exists():
+    assert callable(graph_Edge.__init__)
+
+
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(graph_Edge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graph_vertex_is_not_abstract():
+    assert not inspect.isabstract(graph_Vertex)
+
+
+def test_graph_vertex_constructor_exists():
+    assert callable(graph_Vertex.__init__)
+
+
+def test_graph_vertex_constructor_args():
+    sig = inspect.signature(graph_Vertex.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_graph_vertex_has_name():
+    assert hasattr(graph_Vertex, "name")
+    descriptor = None
+    for klass in graph_Vertex.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_graph_expr_is_not_abstract():
+    assert not inspect.isabstract(graph_Expr)
+
+
+def test_graph_expr_constructor_exists():
+    assert callable(graph_Expr.__init__)
+
+
+def test_graph_expr_constructor_args():
+    sig = inspect.signature(graph_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -424,72 +424,72 @@ def test_statement_constructor_args():
 
 
 
-def test_graph::whilestmt_is_not_abstract():
-    assert not inspect.isabstract(graph::WhileStmt)
+def test_graph_whilestmt_is_not_abstract():
+    assert not inspect.isabstract(graph_WhileStmt)
 
 
-def test_graph::whilestmt_constructor_exists():
-    assert callable(graph::WhileStmt.__init__)
+def test_graph_whilestmt_constructor_exists():
+    assert callable(graph_WhileStmt.__init__)
 
 
-def test_graph::whilestmt_constructor_args():
-    sig = inspect.signature(graph::WhileStmt.__init__)
+def test_graph_whilestmt_constructor_args():
+    sig = inspect.signature(graph_WhileStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::printstmt_is_not_abstract():
-    assert not inspect.isabstract(graph::PrintStmt)
+def test_graph_ifstmt_is_not_abstract():
+    assert not inspect.isabstract(graph_IfStmt)
 
 
-def test_graph::printstmt_constructor_exists():
-    assert callable(graph::PrintStmt.__init__)
+def test_graph_ifstmt_constructor_exists():
+    assert callable(graph_IfStmt.__init__)
 
 
-def test_graph::printstmt_constructor_args():
-    sig = inspect.signature(graph::PrintStmt.__init__)
+def test_graph_ifstmt_constructor_args():
+    sig = inspect.signature(graph_IfStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::ifstmt_is_not_abstract():
-    assert not inspect.isabstract(graph::IfStmt)
+def test_graph_movestmt_is_not_abstract():
+    assert not inspect.isabstract(graph_MoveStmt)
 
 
-def test_graph::ifstmt_constructor_exists():
-    assert callable(graph::IfStmt.__init__)
+def test_graph_movestmt_constructor_exists():
+    assert callable(graph_MoveStmt.__init__)
 
 
-def test_graph::ifstmt_constructor_args():
-    sig = inspect.signature(graph::IfStmt.__init__)
+def test_graph_movestmt_constructor_args():
+    sig = inspect.signature(graph_MoveStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::movestmt_is_not_abstract():
-    assert not inspect.isabstract(graph::MoveStmt)
+def test_graph_printstmt_is_not_abstract():
+    assert not inspect.isabstract(graph_PrintStmt)
 
 
-def test_graph::movestmt_constructor_exists():
-    assert callable(graph::MoveStmt.__init__)
+def test_graph_printstmt_constructor_exists():
+    assert callable(graph_PrintStmt.__init__)
 
 
-def test_graph::movestmt_constructor_args():
-    sig = inspect.signature(graph::MoveStmt.__init__)
+def test_graph_printstmt_constructor_args():
+    sig = inspect.signature(graph_PrintStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::assignstmt_is_not_abstract():
-    assert not inspect.isabstract(graph::AssignStmt)
+def test_graph_assignstmt_is_not_abstract():
+    assert not inspect.isabstract(graph_AssignStmt)
 
 
-def test_graph::assignstmt_constructor_exists():
-    assert callable(graph::AssignStmt.__init__)
+def test_graph_assignstmt_constructor_exists():
+    assert callable(graph_AssignStmt.__init__)
 
 
-def test_graph::assignstmt_constructor_args():
-    sig = inspect.signature(graph::AssignStmt.__init__)
+def test_graph_assignstmt_constructor_args():
+    sig = inspect.signature(graph_AssignStmt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -507,98 +507,98 @@ safe_text = st.text(
 Expr_strategy = st.builds(
     Expr,
 )
-graph::BoolConstant_strategy = st.builds(
-    graph::BoolConstant,
+graph_GraphConstant_strategy = st.builds(
+    graph_GraphConstant,
+)
+graph_BoolConstant_strategy = st.builds(
+    graph_BoolConstant,
     value=
         safe_text
 )
-graph::VariableRef_strategy = st.builds(
-    graph::VariableRef,
-)
-graph::StringConstant_strategy = st.builds(
-    graph::StringConstant,
+graph_StringConstant_strategy = st.builds(
+    graph_StringConstant,
     value=
         safe_text
 )
-graph::ParticleConstant_strategy = st.builds(
-    graph::ParticleConstant,
+graph_ParticleConstant_strategy = st.builds(
+    graph_ParticleConstant,
 )
-graph::And_strategy = st.builds(
-    graph::And,
+graph_And_strategy = st.builds(
+    graph_And,
 )
-graph::GraphConstant_strategy = st.builds(
-    graph::GraphConstant,
+graph_VariableRef_strategy = st.builds(
+    graph_VariableRef,
 )
-graph::Or_strategy = st.builds(
-    graph::Or,
+graph_Or_strategy = st.builds(
+    graph_Or,
 )
-graph::IntConstant_strategy = st.builds(
-    graph::IntConstant,
+graph_IntConstant_strategy = st.builds(
+    graph_IntConstant,
     value=
         st.integers()
 )
-graph::Not_strategy = st.builds(
-    graph::Not,
+graph_Not_strategy = st.builds(
+    graph_Not,
 )
-graph::MulOrDiv_strategy = st.builds(
-    graph::MulOrDiv,
+graph_MulOrDiv_strategy = st.builds(
+    graph_MulOrDiv,
     op=
         safe_text
 )
-graph::PlusOrMin_strategy = st.builds(
-    graph::PlusOrMin,
+graph_PlusOrMin_strategy = st.builds(
+    graph_PlusOrMin,
     op=
         safe_text
 )
-graph::Comparison_strategy = st.builds(
-    graph::Comparison,
+graph_Comparison_strategy = st.builds(
+    graph_Comparison,
     op=
         safe_text
 )
-graph::PathExistence_strategy = st.builds(
-    graph::PathExistence,
+graph_PathExistence_strategy = st.builds(
+    graph_PathExistence,
 )
-graph::Statement_strategy = st.builds(
-    graph::Statement,
+graph_Statement_strategy = st.builds(
+    graph_Statement,
 )
-graph::Declaration_strategy = st.builds(
-    graph::Declaration,
-    name=
-        safe_text,
+graph_Declaration_strategy = st.builds(
+    graph_Declaration,
     type=
-        safe_text
-)
-graph::Program_strategy = st.builds(
-    graph::Program,
-)
-graph::Edge_strategy = st.builds(
-    graph::Edge,
-)
-graph::Vertex_strategy = st.builds(
-    graph::Vertex,
+        safe_text,
     name=
         safe_text
 )
-graph::Expr_strategy = st.builds(
-    graph::Expr,
+graph_Program_strategy = st.builds(
+    graph_Program,
+)
+graph_Edge_strategy = st.builds(
+    graph_Edge,
+)
+graph_Vertex_strategy = st.builds(
+    graph_Vertex,
+    name=
+        safe_text
+)
+graph_Expr_strategy = st.builds(
+    graph_Expr,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-graph::WhileStmt_strategy = st.builds(
-    graph::WhileStmt,
+graph_WhileStmt_strategy = st.builds(
+    graph_WhileStmt,
 )
-graph::PrintStmt_strategy = st.builds(
-    graph::PrintStmt,
+graph_IfStmt_strategy = st.builds(
+    graph_IfStmt,
 )
-graph::IfStmt_strategy = st.builds(
-    graph::IfStmt,
+graph_MoveStmt_strategy = st.builds(
+    graph_MoveStmt,
 )
-graph::MoveStmt_strategy = st.builds(
-    graph::MoveStmt,
+graph_PrintStmt_strategy = st.builds(
+    graph_PrintStmt,
 )
-graph::AssignStmt_strategy = st.builds(
-    graph::AssignStmt,
+graph_AssignStmt_strategy = st.builds(
+    graph_AssignStmt,
 )
 
 @given(instance=Expr_strategy)
@@ -606,226 +606,199 @@ graph::AssignStmt_strategy = st.builds(
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=graph::BoolConstant_strategy)
+@given(instance=graph_GraphConstant_strategy)
 @settings(max_examples=50)
-def test_graph::boolconstant_instantiation(instance):
-    assert isinstance(instance, graph::BoolConstant)
+def test_graph_graphconstant_instantiation(instance):
+    assert isinstance(instance, graph_GraphConstant)
 
-@given(instance=graph::BoolConstant_strategy)
-def test_graph::boolconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=graph_BoolConstant_strategy)
+@settings(max_examples=50)
+def test_graph_boolconstant_instantiation(instance):
+    assert isinstance(instance, graph_BoolConstant)
 
 
-@given(instance=graph::BoolConstant_strategy)
-def test_graph::boolconstant_value_setter(instance):
+
+@given(instance=graph_BoolConstant_strategy)
+def test_graph_boolconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=graph::VariableRef_strategy)
+@given(instance=graph_StringConstant_strategy)
 @settings(max_examples=50)
-def test_graph::variableref_instantiation(instance):
-    assert isinstance(instance, graph::VariableRef)
-
-@given(instance=graph::StringConstant_strategy)
-@settings(max_examples=50)
-def test_graph::stringconstant_instantiation(instance):
-    assert isinstance(instance, graph::StringConstant)
-
-@given(instance=graph::StringConstant_strategy)
-def test_graph::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_graph_stringconstant_instantiation(instance):
+    assert isinstance(instance, graph_StringConstant)
 
 
-@given(instance=graph::StringConstant_strategy)
-def test_graph::stringconstant_value_setter(instance):
+
+@given(instance=graph_StringConstant_strategy)
+def test_graph_stringconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=graph::ParticleConstant_strategy)
+@given(instance=graph_ParticleConstant_strategy)
 @settings(max_examples=50)
-def test_graph::particleconstant_instantiation(instance):
-    assert isinstance(instance, graph::ParticleConstant)
+def test_graph_particleconstant_instantiation(instance):
+    assert isinstance(instance, graph_ParticleConstant)
 
-@given(instance=graph::And_strategy)
+@given(instance=graph_And_strategy)
 @settings(max_examples=50)
-def test_graph::and_instantiation(instance):
-    assert isinstance(instance, graph::And)
+def test_graph_and_instantiation(instance):
+    assert isinstance(instance, graph_And)
 
-@given(instance=graph::GraphConstant_strategy)
+@given(instance=graph_VariableRef_strategy)
 @settings(max_examples=50)
-def test_graph::graphconstant_instantiation(instance):
-    assert isinstance(instance, graph::GraphConstant)
+def test_graph_variableref_instantiation(instance):
+    assert isinstance(instance, graph_VariableRef)
 
-@given(instance=graph::Or_strategy)
+@given(instance=graph_Or_strategy)
 @settings(max_examples=50)
-def test_graph::or_instantiation(instance):
-    assert isinstance(instance, graph::Or)
+def test_graph_or_instantiation(instance):
+    assert isinstance(instance, graph_Or)
 
-@given(instance=graph::IntConstant_strategy)
+@given(instance=graph_IntConstant_strategy)
 @settings(max_examples=50)
-def test_graph::intconstant_instantiation(instance):
-    assert isinstance(instance, graph::IntConstant)
-
-@given(instance=graph::IntConstant_strategy)
-def test_graph::intconstant_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_graph_intconstant_instantiation(instance):
+    assert isinstance(instance, graph_IntConstant)
 
 
-@given(instance=graph::IntConstant_strategy)
-def test_graph::intconstant_value_setter(instance):
+
+@given(instance=graph_IntConstant_strategy)
+def test_graph_intconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=graph::Not_strategy)
+@given(instance=graph_Not_strategy)
 @settings(max_examples=50)
-def test_graph::not_instantiation(instance):
-    assert isinstance(instance, graph::Not)
+def test_graph_not_instantiation(instance):
+    assert isinstance(instance, graph_Not)
 
-@given(instance=graph::MulOrDiv_strategy)
+@given(instance=graph_MulOrDiv_strategy)
 @settings(max_examples=50)
-def test_graph::mulordiv_instantiation(instance):
-    assert isinstance(instance, graph::MulOrDiv)
-
-@given(instance=graph::MulOrDiv_strategy)
-def test_graph::mulordiv_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_graph_mulordiv_instantiation(instance):
+    assert isinstance(instance, graph_MulOrDiv)
 
 
-@given(instance=graph::MulOrDiv_strategy)
-def test_graph::mulordiv_op_setter(instance):
+
+@given(instance=graph_MulOrDiv_strategy)
+def test_graph_mulordiv_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=graph::PlusOrMin_strategy)
+@given(instance=graph_PlusOrMin_strategy)
 @settings(max_examples=50)
-def test_graph::plusormin_instantiation(instance):
-    assert isinstance(instance, graph::PlusOrMin)
-
-@given(instance=graph::PlusOrMin_strategy)
-def test_graph::plusormin_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_graph_plusormin_instantiation(instance):
+    assert isinstance(instance, graph_PlusOrMin)
 
 
-@given(instance=graph::PlusOrMin_strategy)
-def test_graph::plusormin_op_setter(instance):
+
+@given(instance=graph_PlusOrMin_strategy)
+def test_graph_plusormin_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=graph::Comparison_strategy)
+@given(instance=graph_Comparison_strategy)
 @settings(max_examples=50)
-def test_graph::comparison_instantiation(instance):
-    assert isinstance(instance, graph::Comparison)
-
-@given(instance=graph::Comparison_strategy)
-def test_graph::comparison_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_graph_comparison_instantiation(instance):
+    assert isinstance(instance, graph_Comparison)
 
 
-@given(instance=graph::Comparison_strategy)
-def test_graph::comparison_op_setter(instance):
+
+@given(instance=graph_Comparison_strategy)
+def test_graph_comparison_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=graph::PathExistence_strategy)
+@given(instance=graph_PathExistence_strategy)
 @settings(max_examples=50)
-def test_graph::pathexistence_instantiation(instance):
-    assert isinstance(instance, graph::PathExistence)
+def test_graph_pathexistence_instantiation(instance):
+    assert isinstance(instance, graph_PathExistence)
 
-@given(instance=graph::Statement_strategy)
+@given(instance=graph_Statement_strategy)
 @settings(max_examples=50)
-def test_graph::statement_instantiation(instance):
-    assert isinstance(instance, graph::Statement)
+def test_graph_statement_instantiation(instance):
+    assert isinstance(instance, graph_Statement)
 
-@given(instance=graph::Declaration_strategy)
+@given(instance=graph_Declaration_strategy)
 @settings(max_examples=50)
-def test_graph::declaration_instantiation(instance):
-    assert isinstance(instance, graph::Declaration)
-
-@given(instance=graph::Declaration_strategy)
-def test_graph::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_declaration_instantiation(instance):
+    assert isinstance(instance, graph_Declaration)
 
 
-@given(instance=graph::Declaration_strategy)
-def test_graph::declaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=graph::Declaration_strategy)
-def test_graph::declaration_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=graph::Declaration_strategy)
-def test_graph::declaration_type_setter(instance):
+@given(instance=graph_Declaration_strategy)
+def test_graph_declaration_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=graph::Program_strategy)
-@settings(max_examples=50)
-def test_graph::program_instantiation(instance):
-    assert isinstance(instance, graph::Program)
-
-@given(instance=graph::Edge_strategy)
-@settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, graph::Edge)
-
-@given(instance=graph::Vertex_strategy)
-@settings(max_examples=50)
-def test_graph::vertex_instantiation(instance):
-    assert isinstance(instance, graph::Vertex)
-
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_name_setter(instance):
+@given(instance=graph_Declaration_strategy)
+def test_graph_declaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graph::Expr_strategy)
+@given(instance=graph_Program_strategy)
 @settings(max_examples=50)
-def test_graph::expr_instantiation(instance):
-    assert isinstance(instance, graph::Expr)
+def test_graph_program_instantiation(instance):
+    assert isinstance(instance, graph_Program)
+
+@given(instance=graph_Edge_strategy)
+@settings(max_examples=50)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, graph_Edge)
+
+@given(instance=graph_Vertex_strategy)
+@settings(max_examples=50)
+def test_graph_vertex_instantiation(instance):
+    assert isinstance(instance, graph_Vertex)
+
+
+
+@given(instance=graph_Vertex_strategy)
+def test_graph_vertex_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=graph_Expr_strategy)
+@settings(max_examples=50)
+def test_graph_expr_instantiation(instance):
+    assert isinstance(instance, graph_Expr)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=graph::WhileStmt_strategy)
+@given(instance=graph_WhileStmt_strategy)
 @settings(max_examples=50)
-def test_graph::whilestmt_instantiation(instance):
-    assert isinstance(instance, graph::WhileStmt)
+def test_graph_whilestmt_instantiation(instance):
+    assert isinstance(instance, graph_WhileStmt)
 
-@given(instance=graph::PrintStmt_strategy)
+@given(instance=graph_IfStmt_strategy)
 @settings(max_examples=50)
-def test_graph::printstmt_instantiation(instance):
-    assert isinstance(instance, graph::PrintStmt)
+def test_graph_ifstmt_instantiation(instance):
+    assert isinstance(instance, graph_IfStmt)
 
-@given(instance=graph::IfStmt_strategy)
+@given(instance=graph_MoveStmt_strategy)
 @settings(max_examples=50)
-def test_graph::ifstmt_instantiation(instance):
-    assert isinstance(instance, graph::IfStmt)
+def test_graph_movestmt_instantiation(instance):
+    assert isinstance(instance, graph_MoveStmt)
 
-@given(instance=graph::MoveStmt_strategy)
+@given(instance=graph_PrintStmt_strategy)
 @settings(max_examples=50)
-def test_graph::movestmt_instantiation(instance):
-    assert isinstance(instance, graph::MoveStmt)
+def test_graph_printstmt_instantiation(instance):
+    assert isinstance(instance, graph_PrintStmt)
 
-@given(instance=graph::AssignStmt_strategy)
+@given(instance=graph_AssignStmt_strategy)
 @settings(max_examples=50)
-def test_graph::assignstmt_instantiation(instance):
-    assert isinstance(instance, graph::AssignStmt)
+def test_graph_assignstmt_instantiation(instance):
+    assert isinstance(instance, graph_AssignStmt)

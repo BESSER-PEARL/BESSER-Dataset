@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ControllerUML::Event,
-    ControllerUML::StateMachineAction,
+from python_code import (
+    ControllerUML_Event,
+    ControllerUML_StateMachineAction,
     Event,
-    ControllerUML::StateTransition,
+    ControllerUML_StateTransition,
     StateMachineAction,
-    ControllerUML::State,
+    ControllerUML_State,
     State,
-    ControllerUML::SubControllerState,
-    ControllerUML::ViewState,
-    ControllerUML::StateMachine,
+    ControllerUML_SubControllerState,
+    ControllerUML_ViewState,
+    ControllerUML_StateMachine,
     StateMachine,
     StateTransition,
     Controller,
-    ControllerUML::ControllerAttribute,
+    ControllerUML_ControllerAttribute,
     ControllerAttribute,
-    ControllerUML::Controller,
+    ControllerUML_Controller,
 )
 
 # =============================================================================
@@ -30,30 +30,30 @@ from classes import (
 
 
 
-def test_controlleruml::event_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::Event)
+def test_controlleruml_event_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_Event)
 
 
-def test_controlleruml::event_constructor_exists():
-    assert callable(ControllerUML::Event.__init__)
+def test_controlleruml_event_constructor_exists():
+    assert callable(ControllerUML_Event.__init__)
 
 
-def test_controlleruml::event_constructor_args():
-    sig = inspect.signature(ControllerUML::Event.__init__)
+def test_controlleruml_event_constructor_args():
+    sig = inspect.signature(ControllerUML_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlleruml::statemachineaction_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::StateMachineAction)
+def test_controlleruml_statemachineaction_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_StateMachineAction)
 
 
-def test_controlleruml::statemachineaction_constructor_exists():
-    assert callable(ControllerUML::StateMachineAction.__init__)
+def test_controlleruml_statemachineaction_constructor_exists():
+    assert callable(ControllerUML_StateMachineAction.__init__)
 
 
-def test_controlleruml::statemachineaction_constructor_args():
-    sig = inspect.signature(ControllerUML::StateMachineAction.__init__)
+def test_controlleruml_statemachineaction_constructor_args():
+    sig = inspect.signature(ControllerUML_StateMachineAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -72,16 +72,16 @@ def test_event_constructor_args():
 
 
 
-def test_controlleruml::statetransition_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::StateTransition)
+def test_controlleruml_statetransition_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_StateTransition)
 
 
-def test_controlleruml::statetransition_constructor_exists():
-    assert callable(ControllerUML::StateTransition.__init__)
+def test_controlleruml_statetransition_constructor_exists():
+    assert callable(ControllerUML_StateTransition.__init__)
 
 
-def test_controlleruml::statetransition_constructor_args():
-    sig = inspect.signature(ControllerUML::StateTransition.__init__)
+def test_controlleruml_statetransition_constructor_args():
+    sig = inspect.signature(ControllerUML_StateTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,16 +100,16 @@ def test_statemachineaction_constructor_args():
 
 
 
-def test_controlleruml::state_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::State)
+def test_controlleruml_state_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_State)
 
 
-def test_controlleruml::state_constructor_exists():
-    assert callable(ControllerUML::State.__init__)
+def test_controlleruml_state_constructor_exists():
+    assert callable(ControllerUML_State.__init__)
 
 
-def test_controlleruml::state_constructor_args():
-    sig = inspect.signature(ControllerUML::State.__init__)
+def test_controlleruml_state_constructor_args():
+    sig = inspect.signature(ControllerUML_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,44 +128,44 @@ def test_state_constructor_args():
 
 
 
-def test_controlleruml::subcontrollerstate_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::SubControllerState)
+def test_controlleruml_subcontrollerstate_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_SubControllerState)
 
 
-def test_controlleruml::subcontrollerstate_constructor_exists():
-    assert callable(ControllerUML::SubControllerState.__init__)
+def test_controlleruml_subcontrollerstate_constructor_exists():
+    assert callable(ControllerUML_SubControllerState.__init__)
 
 
-def test_controlleruml::subcontrollerstate_constructor_args():
-    sig = inspect.signature(ControllerUML::SubControllerState.__init__)
+def test_controlleruml_subcontrollerstate_constructor_args():
+    sig = inspect.signature(ControllerUML_SubControllerState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlleruml::viewstate_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::ViewState)
+def test_controlleruml_viewstate_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_ViewState)
 
 
-def test_controlleruml::viewstate_constructor_exists():
-    assert callable(ControllerUML::ViewState.__init__)
+def test_controlleruml_viewstate_constructor_exists():
+    assert callable(ControllerUML_ViewState.__init__)
 
 
-def test_controlleruml::viewstate_constructor_args():
-    sig = inspect.signature(ControllerUML::ViewState.__init__)
+def test_controlleruml_viewstate_constructor_args():
+    sig = inspect.signature(ControllerUML_ViewState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_controlleruml::statemachine_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::StateMachine)
+def test_controlleruml_statemachine_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_StateMachine)
 
 
-def test_controlleruml::statemachine_constructor_exists():
-    assert callable(ControllerUML::StateMachine.__init__)
+def test_controlleruml_statemachine_constructor_exists():
+    assert callable(ControllerUML_StateMachine.__init__)
 
 
-def test_controlleruml::statemachine_constructor_args():
-    sig = inspect.signature(ControllerUML::StateMachine.__init__)
+def test_controlleruml_statemachine_constructor_args():
+    sig = inspect.signature(ControllerUML_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,16 +212,16 @@ def test_controller_constructor_args():
 
 
 
-def test_controlleruml::controllerattribute_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::ControllerAttribute)
+def test_controlleruml_controllerattribute_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_ControllerAttribute)
 
 
-def test_controlleruml::controllerattribute_constructor_exists():
-    assert callable(ControllerUML::ControllerAttribute.__init__)
+def test_controlleruml_controllerattribute_constructor_exists():
+    assert callable(ControllerUML_ControllerAttribute.__init__)
 
 
-def test_controlleruml::controllerattribute_constructor_args():
-    sig = inspect.signature(ControllerUML::ControllerAttribute.__init__)
+def test_controlleruml_controllerattribute_constructor_args():
+    sig = inspect.signature(ControllerUML_ControllerAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,16 +240,16 @@ def test_controllerattribute_constructor_args():
 
 
 
-def test_controlleruml::controller_is_not_abstract():
-    assert not inspect.isabstract(ControllerUML::Controller)
+def test_controlleruml_controller_is_not_abstract():
+    assert not inspect.isabstract(ControllerUML_Controller)
 
 
-def test_controlleruml::controller_constructor_exists():
-    assert callable(ControllerUML::Controller.__init__)
+def test_controlleruml_controller_constructor_exists():
+    assert callable(ControllerUML_Controller.__init__)
 
 
-def test_controlleruml::controller_constructor_args():
-    sig = inspect.signature(ControllerUML::Controller.__init__)
+def test_controlleruml_controller_constructor_args():
+    sig = inspect.signature(ControllerUML_Controller.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -264,35 +264,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ControllerUML::Event_strategy = st.builds(
-    ControllerUML::Event,
+ControllerUML_Event_strategy = st.builds(
+    ControllerUML_Event,
 )
-ControllerUML::StateMachineAction_strategy = st.builds(
-    ControllerUML::StateMachineAction,
+ControllerUML_StateMachineAction_strategy = st.builds(
+    ControllerUML_StateMachineAction,
 )
 Event_strategy = st.builds(
     Event,
 )
-ControllerUML::StateTransition_strategy = st.builds(
-    ControllerUML::StateTransition,
+ControllerUML_StateTransition_strategy = st.builds(
+    ControllerUML_StateTransition,
 )
 StateMachineAction_strategy = st.builds(
     StateMachineAction,
 )
-ControllerUML::State_strategy = st.builds(
-    ControllerUML::State,
+ControllerUML_State_strategy = st.builds(
+    ControllerUML_State,
 )
 State_strategy = st.builds(
     State,
 )
-ControllerUML::SubControllerState_strategy = st.builds(
-    ControllerUML::SubControllerState,
+ControllerUML_SubControllerState_strategy = st.builds(
+    ControllerUML_SubControllerState,
 )
-ControllerUML::ViewState_strategy = st.builds(
-    ControllerUML::ViewState,
+ControllerUML_ViewState_strategy = st.builds(
+    ControllerUML_ViewState,
 )
-ControllerUML::StateMachine_strategy = st.builds(
-    ControllerUML::StateMachine,
+ControllerUML_StateMachine_strategy = st.builds(
+    ControllerUML_StateMachine,
 )
 StateMachine_strategy = st.builds(
     StateMachine,
@@ -303,65 +303,65 @@ StateTransition_strategy = st.builds(
 Controller_strategy = st.builds(
     Controller,
 )
-ControllerUML::ControllerAttribute_strategy = st.builds(
-    ControllerUML::ControllerAttribute,
+ControllerUML_ControllerAttribute_strategy = st.builds(
+    ControllerUML_ControllerAttribute,
 )
 ControllerAttribute_strategy = st.builds(
     ControllerAttribute,
 )
-ControllerUML::Controller_strategy = st.builds(
-    ControllerUML::Controller,
+ControllerUML_Controller_strategy = st.builds(
+    ControllerUML_Controller,
 )
 
-@given(instance=ControllerUML::Event_strategy)
+@given(instance=ControllerUML_Event_strategy)
 @settings(max_examples=50)
-def test_controlleruml::event_instantiation(instance):
-    assert isinstance(instance, ControllerUML::Event)
+def test_controlleruml_event_instantiation(instance):
+    assert isinstance(instance, ControllerUML_Event)
 
-@given(instance=ControllerUML::StateMachineAction_strategy)
+@given(instance=ControllerUML_StateMachineAction_strategy)
 @settings(max_examples=50)
-def test_controlleruml::statemachineaction_instantiation(instance):
-    assert isinstance(instance, ControllerUML::StateMachineAction)
+def test_controlleruml_statemachineaction_instantiation(instance):
+    assert isinstance(instance, ControllerUML_StateMachineAction)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=ControllerUML::StateTransition_strategy)
+@given(instance=ControllerUML_StateTransition_strategy)
 @settings(max_examples=50)
-def test_controlleruml::statetransition_instantiation(instance):
-    assert isinstance(instance, ControllerUML::StateTransition)
+def test_controlleruml_statetransition_instantiation(instance):
+    assert isinstance(instance, ControllerUML_StateTransition)
 
 @given(instance=StateMachineAction_strategy)
 @settings(max_examples=50)
 def test_statemachineaction_instantiation(instance):
     assert isinstance(instance, StateMachineAction)
 
-@given(instance=ControllerUML::State_strategy)
+@given(instance=ControllerUML_State_strategy)
 @settings(max_examples=50)
-def test_controlleruml::state_instantiation(instance):
-    assert isinstance(instance, ControllerUML::State)
+def test_controlleruml_state_instantiation(instance):
+    assert isinstance(instance, ControllerUML_State)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=ControllerUML::SubControllerState_strategy)
+@given(instance=ControllerUML_SubControllerState_strategy)
 @settings(max_examples=50)
-def test_controlleruml::subcontrollerstate_instantiation(instance):
-    assert isinstance(instance, ControllerUML::SubControllerState)
+def test_controlleruml_subcontrollerstate_instantiation(instance):
+    assert isinstance(instance, ControllerUML_SubControllerState)
 
-@given(instance=ControllerUML::ViewState_strategy)
+@given(instance=ControllerUML_ViewState_strategy)
 @settings(max_examples=50)
-def test_controlleruml::viewstate_instantiation(instance):
-    assert isinstance(instance, ControllerUML::ViewState)
+def test_controlleruml_viewstate_instantiation(instance):
+    assert isinstance(instance, ControllerUML_ViewState)
 
-@given(instance=ControllerUML::StateMachine_strategy)
+@given(instance=ControllerUML_StateMachine_strategy)
 @settings(max_examples=50)
-def test_controlleruml::statemachine_instantiation(instance):
-    assert isinstance(instance, ControllerUML::StateMachine)
+def test_controlleruml_statemachine_instantiation(instance):
+    assert isinstance(instance, ControllerUML_StateMachine)
 
 @given(instance=StateMachine_strategy)
 @settings(max_examples=50)
@@ -378,17 +378,17 @@ def test_statetransition_instantiation(instance):
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=ControllerUML::ControllerAttribute_strategy)
+@given(instance=ControllerUML_ControllerAttribute_strategy)
 @settings(max_examples=50)
-def test_controlleruml::controllerattribute_instantiation(instance):
-    assert isinstance(instance, ControllerUML::ControllerAttribute)
+def test_controlleruml_controllerattribute_instantiation(instance):
+    assert isinstance(instance, ControllerUML_ControllerAttribute)
 
 @given(instance=ControllerAttribute_strategy)
 @settings(max_examples=50)
 def test_controllerattribute_instantiation(instance):
     assert isinstance(instance, ControllerAttribute)
 
-@given(instance=ControllerUML::Controller_strategy)
+@given(instance=ControllerUML_Controller_strategy)
 @settings(max_examples=50)
-def test_controlleruml::controller_instantiation(instance):
-    assert isinstance(instance, ControllerUML::Controller)
+def test_controlleruml_controller_instantiation(instance):
+    assert isinstance(instance, ControllerUML_Controller)

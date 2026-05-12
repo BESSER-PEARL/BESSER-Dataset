@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'Booking' has the following attributes: 'guest_name' of type int; 'guest_adress' of type str; 'booking_id' of type int; 'guest_id' of type int; 'guestphn_no' of type int; 'user_id' of type int.
+The class 'User' has the following attributes: 'id' of type int; 'address' of type str; 'mail_id' of type str; 'phn_no' of type int; 'password' of type int; 'Name' of type str.
+The class 'Owner' has the following attributes: 'Name' of type str; 'Phn_no_' of type Owner; 'Address' of type str; 'ID' of type int; 'password' of type int; 'email_id' of type int.
+The class 'Hotels' has the following attributes: 'name' of type int; 'id' of type int; 'hotel_description' of type int.
+The class 'Rooms' has the following attributes: 'id' of type int; 'checkout_date' of type int; 'price' of type int; 'room_description' of type str; 'checkin_date' of type int; 'name' of type str.
+The class 'Location' has the following attributes: 'attribute' of type str; 'loc_id' of type int; 'loc_name' of type str.
+The class 'occupancy' has the following attributes: 'booking_id' of type int.
+'Location' (role 'hotels0', cardinality 0..*) is associated with 'Hotels' (role 'city1', cardinality 0..*).
+'Booking' (role 'occupancy_Booking_111', cardinality 0..*) is associated with 'occupancy' (role 'occupancy_Booking_010', cardinality 0..*).
+'Rooms' (role 'booking8', cardinality 0..*) is associated with 'Booking' (role 'rooms9', cardinality 0..*).
+'Rooms' (role 'hotels3', cardinality 0..*) is associated with 'Hotels' (role 'rooms2', cardinality 0..*).
+'Hotels' (role 'owner6', cardinality 0..*) is associated with 'Owner' (role 'hotels7', cardinality 0..*).
+'User' (role 'User_Booking_04', cardinality 0..*) is associated with 'Booking' (role 'User_Booking_15', cardinality 0..*).

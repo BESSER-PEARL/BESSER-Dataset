@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TypeB::BDescription3,
-    TypeB::BDescription2,
-    TypeB::BDescription1,
-    TypeB::C,
-    TypeB::B,
-    TypeB::A,
-    TypeB::CDescription,
+from python_code import (
+    TypeB_BDescription3,
+    TypeB_BDescription2,
+    TypeB_BDescription1,
+    TypeB_C,
+    TypeB_B,
+    TypeB_A,
+    TypeB_CDescription,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_typeb::bdescription3_is_not_abstract():
-    assert not inspect.isabstract(TypeB::BDescription3)
+def test_typeb_bdescription3_is_not_abstract():
+    assert not inspect.isabstract(TypeB_BDescription3)
 
 
-def test_typeb::bdescription3_constructor_exists():
-    assert callable(TypeB::BDescription3.__init__)
+def test_typeb_bdescription3_constructor_exists():
+    assert callable(TypeB_BDescription3.__init__)
 
 
-def test_typeb::bdescription3_constructor_args():
-    sig = inspect.signature(TypeB::BDescription3.__init__)
+def test_typeb_bdescription3_constructor_args():
+    sig = inspect.signature(TypeB_BDescription3.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_typeb::bdescription3_has_description():
-    assert hasattr(TypeB::BDescription3, "description")
+def test_typeb_bdescription3_has_description():
+    assert hasattr(TypeB_BDescription3, "description")
     descriptor = None
-    for klass in TypeB::BDescription3.__mro__:
+    for klass in TypeB_BDescription3.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -45,23 +45,23 @@ def test_typeb::bdescription3_has_description():
 
 
 
-def test_typeb::bdescription2_is_not_abstract():
-    assert not inspect.isabstract(TypeB::BDescription2)
+def test_typeb_bdescription2_is_not_abstract():
+    assert not inspect.isabstract(TypeB_BDescription2)
 
 
-def test_typeb::bdescription2_constructor_exists():
-    assert callable(TypeB::BDescription2.__init__)
+def test_typeb_bdescription2_constructor_exists():
+    assert callable(TypeB_BDescription2.__init__)
 
 
-def test_typeb::bdescription2_constructor_args():
-    sig = inspect.signature(TypeB::BDescription2.__init__)
+def test_typeb_bdescription2_constructor_args():
+    sig = inspect.signature(TypeB_BDescription2.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_typeb::bdescription2_has_description():
-    assert hasattr(TypeB::BDescription2, "description")
+def test_typeb_bdescription2_has_description():
+    assert hasattr(TypeB_BDescription2, "description")
     descriptor = None
-    for klass in TypeB::BDescription2.__mro__:
+    for klass in TypeB_BDescription2.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -69,23 +69,23 @@ def test_typeb::bdescription2_has_description():
 
 
 
-def test_typeb::bdescription1_is_not_abstract():
-    assert not inspect.isabstract(TypeB::BDescription1)
+def test_typeb_bdescription1_is_not_abstract():
+    assert not inspect.isabstract(TypeB_BDescription1)
 
 
-def test_typeb::bdescription1_constructor_exists():
-    assert callable(TypeB::BDescription1.__init__)
+def test_typeb_bdescription1_constructor_exists():
+    assert callable(TypeB_BDescription1.__init__)
 
 
-def test_typeb::bdescription1_constructor_args():
-    sig = inspect.signature(TypeB::BDescription1.__init__)
+def test_typeb_bdescription1_constructor_args():
+    sig = inspect.signature(TypeB_BDescription1.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_typeb::bdescription1_has_description():
-    assert hasattr(TypeB::BDescription1, "description")
+def test_typeb_bdescription1_has_description():
+    assert hasattr(TypeB_BDescription1, "description")
     descriptor = None
-    for klass in TypeB::BDescription1.__mro__:
+    for klass in TypeB_BDescription1.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -93,23 +93,23 @@ def test_typeb::bdescription1_has_description():
 
 
 
-def test_typeb::c_is_not_abstract():
-    assert not inspect.isabstract(TypeB::C)
+def test_typeb_c_is_not_abstract():
+    assert not inspect.isabstract(TypeB_C)
 
 
-def test_typeb::c_constructor_exists():
-    assert callable(TypeB::C.__init__)
+def test_typeb_c_constructor_exists():
+    assert callable(TypeB_C.__init__)
 
 
-def test_typeb::c_constructor_args():
-    sig = inspect.signature(TypeB::C.__init__)
+def test_typeb_c_constructor_args():
+    sig = inspect.signature(TypeB_C.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeb::c_has_name():
-    assert hasattr(TypeB::C, "name")
+def test_typeb_c_has_name():
+    assert hasattr(TypeB_C, "name")
     descriptor = None
-    for klass in TypeB::C.__mro__:
+    for klass in TypeB_C.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -117,23 +117,23 @@ def test_typeb::c_has_name():
 
 
 
-def test_typeb::b_is_not_abstract():
-    assert not inspect.isabstract(TypeB::B)
+def test_typeb_b_is_not_abstract():
+    assert not inspect.isabstract(TypeB_B)
 
 
-def test_typeb::b_constructor_exists():
-    assert callable(TypeB::B.__init__)
+def test_typeb_b_constructor_exists():
+    assert callable(TypeB_B.__init__)
 
 
-def test_typeb::b_constructor_args():
-    sig = inspect.signature(TypeB::B.__init__)
+def test_typeb_b_constructor_args():
+    sig = inspect.signature(TypeB_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeb::b_has_name():
-    assert hasattr(TypeB::B, "name")
+def test_typeb_b_has_name():
+    assert hasattr(TypeB_B, "name")
     descriptor = None
-    for klass in TypeB::B.__mro__:
+    for klass in TypeB_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -141,23 +141,23 @@ def test_typeb::b_has_name():
 
 
 
-def test_typeb::a_is_not_abstract():
-    assert not inspect.isabstract(TypeB::A)
+def test_typeb_a_is_not_abstract():
+    assert not inspect.isabstract(TypeB_A)
 
 
-def test_typeb::a_constructor_exists():
-    assert callable(TypeB::A.__init__)
+def test_typeb_a_constructor_exists():
+    assert callable(TypeB_A.__init__)
 
 
-def test_typeb::a_constructor_args():
-    sig = inspect.signature(TypeB::A.__init__)
+def test_typeb_a_constructor_args():
+    sig = inspect.signature(TypeB_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeb::a_has_name():
-    assert hasattr(TypeB::A, "name")
+def test_typeb_a_has_name():
+    assert hasattr(TypeB_A, "name")
     descriptor = None
-    for klass in TypeB::A.__mro__:
+    for klass in TypeB_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -165,23 +165,23 @@ def test_typeb::a_has_name():
 
 
 
-def test_typeb::cdescription_is_not_abstract():
-    assert not inspect.isabstract(TypeB::CDescription)
+def test_typeb_cdescription_is_not_abstract():
+    assert not inspect.isabstract(TypeB_CDescription)
 
 
-def test_typeb::cdescription_constructor_exists():
-    assert callable(TypeB::CDescription.__init__)
+def test_typeb_cdescription_constructor_exists():
+    assert callable(TypeB_CDescription.__init__)
 
 
-def test_typeb::cdescription_constructor_args():
-    sig = inspect.signature(TypeB::CDescription.__init__)
+def test_typeb_cdescription_constructor_args():
+    sig = inspect.signature(TypeB_CDescription.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_typeb::cdescription_has_description():
-    assert hasattr(TypeB::CDescription, "description")
+def test_typeb_cdescription_has_description():
+    assert hasattr(TypeB_CDescription, "description")
     descriptor = None
-    for klass in TypeB::CDescription.__mro__:
+    for klass in TypeB_CDescription.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -199,150 +199,129 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TypeB::BDescription3_strategy = st.builds(
-    TypeB::BDescription3,
+TypeB_BDescription3_strategy = st.builds(
+    TypeB_BDescription3,
     description=
         safe_text
 )
-TypeB::BDescription2_strategy = st.builds(
-    TypeB::BDescription2,
+TypeB_BDescription2_strategy = st.builds(
+    TypeB_BDescription2,
     description=
         safe_text
 )
-TypeB::BDescription1_strategy = st.builds(
-    TypeB::BDescription1,
+TypeB_BDescription1_strategy = st.builds(
+    TypeB_BDescription1,
     description=
         safe_text
 )
-TypeB::C_strategy = st.builds(
-    TypeB::C,
+TypeB_C_strategy = st.builds(
+    TypeB_C,
     name=
         safe_text
 )
-TypeB::B_strategy = st.builds(
-    TypeB::B,
+TypeB_B_strategy = st.builds(
+    TypeB_B,
     name=
         safe_text
 )
-TypeB::A_strategy = st.builds(
-    TypeB::A,
+TypeB_A_strategy = st.builds(
+    TypeB_A,
     name=
         safe_text
 )
-TypeB::CDescription_strategy = st.builds(
-    TypeB::CDescription,
+TypeB_CDescription_strategy = st.builds(
+    TypeB_CDescription,
     description=
         safe_text
 )
 
-@given(instance=TypeB::BDescription3_strategy)
+@given(instance=TypeB_BDescription3_strategy)
 @settings(max_examples=50)
-def test_typeb::bdescription3_instantiation(instance):
-    assert isinstance(instance, TypeB::BDescription3)
-
-@given(instance=TypeB::BDescription3_strategy)
-def test_typeb::bdescription3_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_typeb_bdescription3_instantiation(instance):
+    assert isinstance(instance, TypeB_BDescription3)
 
 
-@given(instance=TypeB::BDescription3_strategy)
-def test_typeb::bdescription3_description_setter(instance):
+
+@given(instance=TypeB_BDescription3_strategy)
+def test_typeb_bdescription3_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=TypeB::BDescription2_strategy)
+@given(instance=TypeB_BDescription2_strategy)
 @settings(max_examples=50)
-def test_typeb::bdescription2_instantiation(instance):
-    assert isinstance(instance, TypeB::BDescription2)
-
-@given(instance=TypeB::BDescription2_strategy)
-def test_typeb::bdescription2_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_typeb_bdescription2_instantiation(instance):
+    assert isinstance(instance, TypeB_BDescription2)
 
 
-@given(instance=TypeB::BDescription2_strategy)
-def test_typeb::bdescription2_description_setter(instance):
+
+@given(instance=TypeB_BDescription2_strategy)
+def test_typeb_bdescription2_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=TypeB::BDescription1_strategy)
+@given(instance=TypeB_BDescription1_strategy)
 @settings(max_examples=50)
-def test_typeb::bdescription1_instantiation(instance):
-    assert isinstance(instance, TypeB::BDescription1)
-
-@given(instance=TypeB::BDescription1_strategy)
-def test_typeb::bdescription1_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_typeb_bdescription1_instantiation(instance):
+    assert isinstance(instance, TypeB_BDescription1)
 
 
-@given(instance=TypeB::BDescription1_strategy)
-def test_typeb::bdescription1_description_setter(instance):
+
+@given(instance=TypeB_BDescription1_strategy)
+def test_typeb_bdescription1_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=TypeB::C_strategy)
+@given(instance=TypeB_C_strategy)
 @settings(max_examples=50)
-def test_typeb::c_instantiation(instance):
-    assert isinstance(instance, TypeB::C)
-
-@given(instance=TypeB::C_strategy)
-def test_typeb::c_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeb_c_instantiation(instance):
+    assert isinstance(instance, TypeB_C)
 
 
-@given(instance=TypeB::C_strategy)
-def test_typeb::c_name_setter(instance):
+
+@given(instance=TypeB_C_strategy)
+def test_typeb_c_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeB::B_strategy)
+@given(instance=TypeB_B_strategy)
 @settings(max_examples=50)
-def test_typeb::b_instantiation(instance):
-    assert isinstance(instance, TypeB::B)
-
-@given(instance=TypeB::B_strategy)
-def test_typeb::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeb_b_instantiation(instance):
+    assert isinstance(instance, TypeB_B)
 
 
-@given(instance=TypeB::B_strategy)
-def test_typeb::b_name_setter(instance):
+
+@given(instance=TypeB_B_strategy)
+def test_typeb_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeB::A_strategy)
+@given(instance=TypeB_A_strategy)
 @settings(max_examples=50)
-def test_typeb::a_instantiation(instance):
-    assert isinstance(instance, TypeB::A)
-
-@given(instance=TypeB::A_strategy)
-def test_typeb::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeb_a_instantiation(instance):
+    assert isinstance(instance, TypeB_A)
 
 
-@given(instance=TypeB::A_strategy)
-def test_typeb::a_name_setter(instance):
+
+@given(instance=TypeB_A_strategy)
+def test_typeb_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeB::CDescription_strategy)
+@given(instance=TypeB_CDescription_strategy)
 @settings(max_examples=50)
-def test_typeb::cdescription_instantiation(instance):
-    assert isinstance(instance, TypeB::CDescription)
-
-@given(instance=TypeB::CDescription_strategy)
-def test_typeb::cdescription_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_typeb_cdescription_instantiation(instance):
+    assert isinstance(instance, TypeB_CDescription)
 
 
-@given(instance=TypeB::CDescription_strategy)
-def test_typeb::cdescription_description_setter(instance):
+
+@given(instance=TypeB_CDescription_strategy)
+def test_typeb_cdescription_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

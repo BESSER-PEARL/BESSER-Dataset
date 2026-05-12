@@ -3,117 +3,117 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Substitution,
-    ram::TransitionSubstitution,
-    ram::Constraint,
-    ram::Substitution,
-    ram::StateMachine,
+    ram_TransitionSubstitution,
+    ram_Constraint,
+    ram_Substitution,
+    ram_StateMachine,
     Mapping,
-    ram::OperationMapping,
-    ram::AttributeMapping,
-    ram::ParameterMapping,
-    ram::ElementMap,
-    ram::EObject,
-    ram::ContainerMap,
+    ram_AttributeMapping,
+    ram_OperationMapping,
+    ram_ParameterMapping,
+    ram_ElementMap,
+    ram_EObject,
+    ram_ContainerMap,
     RCollection,
-    ram::RSequence,
-    ram::RSet,
+    ram_RSequence,
+    ram_RSet,
     LiteralSpecification,
-    ram::LiteralInteger,
-    ram::LiteralBoolean,
-    ram::LiteralString,
-    ram::LayoutElement,
-    ram::FragmentContainer,
+    ram_LiteralInteger,
+    ram_LiteralBoolean,
+    ram_LiteralString,
+    ram_LayoutElement,
+    ram_FragmentContainer,
     ValueSpecification,
-    ram::OpaqueExpression,
-    ram::LiteralSpecification,
-    ram::ParameterValue,
-    ram::StructuralFeatureValue,
-    ram::ValueSpecification,
-    ram::ParameterValueMapping,
-    ram::MessageEnd,
+    ram_LiteralSpecification,
+    ram_OpaqueExpression,
+    ram_ParameterValue,
+    ram_StructuralFeatureValue,
+    ram_ValueSpecification,
+    ram_ParameterValueMapping,
+    ram_MessageEnd,
     MessageOccurrenceSpecification,
-    ram::DestructionOccurrenceSpecification,
-    ram::InteractionFragment,
+    ram_DestructionOccurrenceSpecification,
+    ram_InteractionFragment,
     InteractionFragment,
-    ram::OriginalBehaviorExecution,
-    ram::ExecutionStatement,
-    ram::CombinedFragment,
-    ram::OccurrenceSpecification,
+    ram_OriginalBehaviorExecution,
+    ram_CombinedFragment,
+    ram_ExecutionStatement,
+    ram_OccurrenceSpecification,
     MessageEnd,
     OccurrenceSpecification,
-    ram::MessageOccurrenceSpecification,
-    ram::Message,
-    ram::Lifeline,
+    ram_MessageOccurrenceSpecification,
+    ram_Message,
+    ram_Lifeline,
     FragmentContainer,
-    ram::InteractionOperand,
-    ram::Interaction,
+    ram_InteractionOperand,
+    ram_Interaction,
     AbstractMessageView,
-    ram::MessageViewReference,
-    ram::MessageView,
-    ram::TemporaryProperty,
+    ram_MessageViewReference,
+    ram_MessageView,
+    ram_TemporaryProperty,
     PrimitiveType,
-    ram::RArray,
-    ram::RLong,
-    ram::RChar,
-    ram::RInt,
-    ram::RFloat,
-    ram::RDouble,
-    ram::RBoolean,
+    ram_RArray,
+    ram_RLong,
+    ram_RChar,
+    ram_RDouble,
+    ram_RInt,
+    ram_RFloat,
+    ram_RBoolean,
     Type,
-    ram::RVoid,
-    ram::TypeParameter,
+    ram_RVoid,
+    ram_TypeParameter,
     ImplementationClass,
-    ram::RCollection,
+    ram_RCollection,
     ObjectType,
     TypedElement,
-    ram::StructuralFeature,
-    ram::PrimitiveType,
-    ram::REnum,
-    ram::RAny,
-    ram::RString,
-    ram::Mapping,
-    ram::ClassifierMapping,
-    ram::NamedElement,
+    ram_StructuralFeature,
+    ram_PrimitiveType,
+    ram_REnum,
+    ram_RAny,
+    ram_RString,
+    ram_Mapping,
+    ram_ClassifierMapping,
+    ram_NamedElement,
     TemporaryProperty,
     StructuralFeature,
-    ram::Property,
+    ram_Property,
     MappableElement,
-    ram::Parameter,
-    ram::ObjectType,
-    ram::Classifier,
-    ram::Layout,
-    ram::Instantiation,
-    ram::AbstractMessageView,
-    ram::StructuralView,
+    ram_Parameter,
+    ram_ObjectType,
+    ram_Classifier,
+    ram_Layout,
+    ram_Instantiation,
+    ram_AbstractMessageView,
+    ram_StructuralView,
     NamedElement,
-    ram::Type,
-    ram::Gate,
-    ram::State,
-    ram::MappableElement,
-    ram::TypedElement,
-    ram::AspectMessageView,
-    ram::StateView,
-    ram::Operation,
-    ram::Transition,
-    ram::REnumLiteral,
-    ram::Association,
-    ram::Aspect,
+    ram_Association,
+    ram_Type,
+    ram_MappableElement,
+    ram_StateView,
+    ram_State,
+    ram_TypedElement,
+    ram_REnumLiteral,
+    ram_Operation,
+    ram_Transition,
+    ram_AspectMessageView,
+    ram_Gate,
+    ram_Aspect,
     Property,
-    ram::Reference,
-    ram::AssociationEnd,
-    ram::Attribute,
+    ram_Reference,
+    ram_AssociationEnd,
+    ram_Attribute,
     Classifier,
-    ram::ImplementationClass,
-    ram::Class,
-    MessageSort,
+    ram_Class,
+    ram_ImplementationClass,
     InstantiationType,
-    Visibility,
     InteractionOperatorKind,
     ReferenceType,
+    MessageSort,
+    Visibility,
 )
 
 # =============================================================================
@@ -136,58 +136,58 @@ def test_substitution_constructor_args():
 
 
 
-def test_ram::transitionsubstitution_is_not_abstract():
-    assert not inspect.isabstract(ram::TransitionSubstitution)
+def test_ram_transitionsubstitution_is_not_abstract():
+    assert not inspect.isabstract(ram_TransitionSubstitution)
 
 
-def test_ram::transitionsubstitution_constructor_exists():
-    assert callable(ram::TransitionSubstitution.__init__)
+def test_ram_transitionsubstitution_constructor_exists():
+    assert callable(ram_TransitionSubstitution.__init__)
 
 
-def test_ram::transitionsubstitution_constructor_args():
-    sig = inspect.signature(ram::TransitionSubstitution.__init__)
+def test_ram_transitionsubstitution_constructor_args():
+    sig = inspect.signature(ram_TransitionSubstitution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::constraint_is_not_abstract():
-    assert not inspect.isabstract(ram::Constraint)
+def test_ram_constraint_is_not_abstract():
+    assert not inspect.isabstract(ram_Constraint)
 
 
-def test_ram::constraint_constructor_exists():
-    assert callable(ram::Constraint.__init__)
+def test_ram_constraint_constructor_exists():
+    assert callable(ram_Constraint.__init__)
 
 
-def test_ram::constraint_constructor_args():
-    sig = inspect.signature(ram::Constraint.__init__)
+def test_ram_constraint_constructor_args():
+    sig = inspect.signature(ram_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::substitution_is_not_abstract():
-    assert not inspect.isabstract(ram::Substitution)
+def test_ram_substitution_is_not_abstract():
+    assert not inspect.isabstract(ram_Substitution)
 
 
-def test_ram::substitution_constructor_exists():
-    assert callable(ram::Substitution.__init__)
+def test_ram_substitution_constructor_exists():
+    assert callable(ram_Substitution.__init__)
 
 
-def test_ram::substitution_constructor_args():
-    sig = inspect.signature(ram::Substitution.__init__)
+def test_ram_substitution_constructor_args():
+    sig = inspect.signature(ram_Substitution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::statemachine_is_not_abstract():
-    assert not inspect.isabstract(ram::StateMachine)
+def test_ram_statemachine_is_not_abstract():
+    assert not inspect.isabstract(ram_StateMachine)
 
 
-def test_ram::statemachine_constructor_exists():
-    assert callable(ram::StateMachine.__init__)
+def test_ram_statemachine_constructor_exists():
+    assert callable(ram_StateMachine.__init__)
 
 
-def test_ram::statemachine_constructor_args():
-    sig = inspect.signature(ram::StateMachine.__init__)
+def test_ram_statemachine_constructor_args():
+    sig = inspect.signature(ram_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -206,86 +206,86 @@ def test_mapping_constructor_args():
 
 
 
-def test_ram::operationmapping_is_not_abstract():
-    assert not inspect.isabstract(ram::OperationMapping)
+def test_ram_attributemapping_is_not_abstract():
+    assert not inspect.isabstract(ram_AttributeMapping)
 
 
-def test_ram::operationmapping_constructor_exists():
-    assert callable(ram::OperationMapping.__init__)
+def test_ram_attributemapping_constructor_exists():
+    assert callable(ram_AttributeMapping.__init__)
 
 
-def test_ram::operationmapping_constructor_args():
-    sig = inspect.signature(ram::OperationMapping.__init__)
+def test_ram_attributemapping_constructor_args():
+    sig = inspect.signature(ram_AttributeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::attributemapping_is_not_abstract():
-    assert not inspect.isabstract(ram::AttributeMapping)
+def test_ram_operationmapping_is_not_abstract():
+    assert not inspect.isabstract(ram_OperationMapping)
 
 
-def test_ram::attributemapping_constructor_exists():
-    assert callable(ram::AttributeMapping.__init__)
+def test_ram_operationmapping_constructor_exists():
+    assert callable(ram_OperationMapping.__init__)
 
 
-def test_ram::attributemapping_constructor_args():
-    sig = inspect.signature(ram::AttributeMapping.__init__)
+def test_ram_operationmapping_constructor_args():
+    sig = inspect.signature(ram_OperationMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::parametermapping_is_not_abstract():
-    assert not inspect.isabstract(ram::ParameterMapping)
+def test_ram_parametermapping_is_not_abstract():
+    assert not inspect.isabstract(ram_ParameterMapping)
 
 
-def test_ram::parametermapping_constructor_exists():
-    assert callable(ram::ParameterMapping.__init__)
+def test_ram_parametermapping_constructor_exists():
+    assert callable(ram_ParameterMapping.__init__)
 
 
-def test_ram::parametermapping_constructor_args():
-    sig = inspect.signature(ram::ParameterMapping.__init__)
+def test_ram_parametermapping_constructor_args():
+    sig = inspect.signature(ram_ParameterMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::elementmap_is_not_abstract():
-    assert not inspect.isabstract(ram::ElementMap)
+def test_ram_elementmap_is_not_abstract():
+    assert not inspect.isabstract(ram_ElementMap)
 
 
-def test_ram::elementmap_constructor_exists():
-    assert callable(ram::ElementMap.__init__)
+def test_ram_elementmap_constructor_exists():
+    assert callable(ram_ElementMap.__init__)
 
 
-def test_ram::elementmap_constructor_args():
-    sig = inspect.signature(ram::ElementMap.__init__)
+def test_ram_elementmap_constructor_args():
+    sig = inspect.signature(ram_ElementMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::eobject_is_not_abstract():
-    assert not inspect.isabstract(ram::EObject)
+def test_ram_eobject_is_not_abstract():
+    assert not inspect.isabstract(ram_EObject)
 
 
-def test_ram::eobject_constructor_exists():
-    assert callable(ram::EObject.__init__)
+def test_ram_eobject_constructor_exists():
+    assert callable(ram_EObject.__init__)
 
 
-def test_ram::eobject_constructor_args():
-    sig = inspect.signature(ram::EObject.__init__)
+def test_ram_eobject_constructor_args():
+    sig = inspect.signature(ram_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::containermap_is_not_abstract():
-    assert not inspect.isabstract(ram::ContainerMap)
+def test_ram_containermap_is_not_abstract():
+    assert not inspect.isabstract(ram_ContainerMap)
 
 
-def test_ram::containermap_constructor_exists():
-    assert callable(ram::ContainerMap.__init__)
+def test_ram_containermap_constructor_exists():
+    assert callable(ram_ContainerMap.__init__)
 
 
-def test_ram::containermap_constructor_args():
-    sig = inspect.signature(ram::ContainerMap.__init__)
+def test_ram_containermap_constructor_args():
+    sig = inspect.signature(ram_ContainerMap.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -304,30 +304,30 @@ def test_rcollection_constructor_args():
 
 
 
-def test_ram::rsequence_is_not_abstract():
-    assert not inspect.isabstract(ram::RSequence)
+def test_ram_rsequence_is_not_abstract():
+    assert not inspect.isabstract(ram_RSequence)
 
 
-def test_ram::rsequence_constructor_exists():
-    assert callable(ram::RSequence.__init__)
+def test_ram_rsequence_constructor_exists():
+    assert callable(ram_RSequence.__init__)
 
 
-def test_ram::rsequence_constructor_args():
-    sig = inspect.signature(ram::RSequence.__init__)
+def test_ram_rsequence_constructor_args():
+    sig = inspect.signature(ram_RSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rset_is_not_abstract():
-    assert not inspect.isabstract(ram::RSet)
+def test_ram_rset_is_not_abstract():
+    assert not inspect.isabstract(ram_RSet)
 
 
-def test_ram::rset_constructor_exists():
-    assert callable(ram::RSet.__init__)
+def test_ram_rset_constructor_exists():
+    assert callable(ram_RSet.__init__)
 
 
-def test_ram::rset_constructor_args():
-    sig = inspect.signature(ram::RSet.__init__)
+def test_ram_rset_constructor_args():
+    sig = inspect.signature(ram_RSet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -346,23 +346,23 @@ def test_literalspecification_constructor_args():
 
 
 
-def test_ram::literalinteger_is_not_abstract():
-    assert not inspect.isabstract(ram::LiteralInteger)
+def test_ram_literalinteger_is_not_abstract():
+    assert not inspect.isabstract(ram_LiteralInteger)
 
 
-def test_ram::literalinteger_constructor_exists():
-    assert callable(ram::LiteralInteger.__init__)
+def test_ram_literalinteger_constructor_exists():
+    assert callable(ram_LiteralInteger.__init__)
 
 
-def test_ram::literalinteger_constructor_args():
-    sig = inspect.signature(ram::LiteralInteger.__init__)
+def test_ram_literalinteger_constructor_args():
+    sig = inspect.signature(ram_LiteralInteger.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ram::literalinteger_has_value():
-    assert hasattr(ram::LiteralInteger, "value")
+def test_ram_literalinteger_has_value():
+    assert hasattr(ram_LiteralInteger, "value")
     descriptor = None
-    for klass in ram::LiteralInteger.__mro__:
+    for klass in ram_LiteralInteger.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -370,23 +370,23 @@ def test_ram::literalinteger_has_value():
 
 
 
-def test_ram::literalboolean_is_not_abstract():
-    assert not inspect.isabstract(ram::LiteralBoolean)
+def test_ram_literalboolean_is_not_abstract():
+    assert not inspect.isabstract(ram_LiteralBoolean)
 
 
-def test_ram::literalboolean_constructor_exists():
-    assert callable(ram::LiteralBoolean.__init__)
+def test_ram_literalboolean_constructor_exists():
+    assert callable(ram_LiteralBoolean.__init__)
 
 
-def test_ram::literalboolean_constructor_args():
-    sig = inspect.signature(ram::LiteralBoolean.__init__)
+def test_ram_literalboolean_constructor_args():
+    sig = inspect.signature(ram_LiteralBoolean.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ram::literalboolean_has_value():
-    assert hasattr(ram::LiteralBoolean, "value")
+def test_ram_literalboolean_has_value():
+    assert hasattr(ram_LiteralBoolean, "value")
     descriptor = None
-    for klass in ram::LiteralBoolean.__mro__:
+    for klass in ram_LiteralBoolean.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -394,23 +394,23 @@ def test_ram::literalboolean_has_value():
 
 
 
-def test_ram::literalstring_is_not_abstract():
-    assert not inspect.isabstract(ram::LiteralString)
+def test_ram_literalstring_is_not_abstract():
+    assert not inspect.isabstract(ram_LiteralString)
 
 
-def test_ram::literalstring_constructor_exists():
-    assert callable(ram::LiteralString.__init__)
+def test_ram_literalstring_constructor_exists():
+    assert callable(ram_LiteralString.__init__)
 
 
-def test_ram::literalstring_constructor_args():
-    sig = inspect.signature(ram::LiteralString.__init__)
+def test_ram_literalstring_constructor_args():
+    sig = inspect.signature(ram_LiteralString.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ram::literalstring_has_value():
-    assert hasattr(ram::LiteralString, "value")
+def test_ram_literalstring_has_value():
+    assert hasattr(ram_LiteralString, "value")
     descriptor = None
-    for klass in ram::LiteralString.__mro__:
+    for klass in ram_LiteralString.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -418,50 +418,50 @@ def test_ram::literalstring_has_value():
 
 
 
-def test_ram::layoutelement_is_not_abstract():
-    assert not inspect.isabstract(ram::LayoutElement)
+def test_ram_layoutelement_is_not_abstract():
+    assert not inspect.isabstract(ram_LayoutElement)
 
 
-def test_ram::layoutelement_constructor_exists():
-    assert callable(ram::LayoutElement.__init__)
+def test_ram_layoutelement_constructor_exists():
+    assert callable(ram_LayoutElement.__init__)
 
 
-def test_ram::layoutelement_constructor_args():
-    sig = inspect.signature(ram::LayoutElement.__init__)
+def test_ram_layoutelement_constructor_args():
+    sig = inspect.signature(ram_LayoutElement.__init__)
     params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
 
-def test_ram::layoutelement_has_x():
-    assert hasattr(ram::LayoutElement, "x")
+def test_ram_layoutelement_has_y():
+    assert hasattr(ram_LayoutElement, "y")
     descriptor = None
-    for klass in ram::LayoutElement.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ram::layoutelement_has_y():
-    assert hasattr(ram::LayoutElement, "y")
-    descriptor = None
-    for klass in ram::LayoutElement.__mro__:
+    for klass in ram_LayoutElement.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
+def test_ram_layoutelement_has_x():
+    assert hasattr(ram_LayoutElement, "x")
+    descriptor = None
+    for klass in ram_LayoutElement.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ram::fragmentcontainer_is_not_abstract():
-    assert not inspect.isabstract(ram::FragmentContainer)
+
+def test_ram_fragmentcontainer_is_not_abstract():
+    assert not inspect.isabstract(ram_FragmentContainer)
 
 
-def test_ram::fragmentcontainer_constructor_exists():
-    assert callable(ram::FragmentContainer.__init__)
+def test_ram_fragmentcontainer_constructor_exists():
+    assert callable(ram_FragmentContainer.__init__)
 
 
-def test_ram::fragmentcontainer_constructor_args():
-    sig = inspect.signature(ram::FragmentContainer.__init__)
+def test_ram_fragmentcontainer_constructor_args():
+    sig = inspect.signature(ram_FragmentContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -480,33 +480,47 @@ def test_valuespecification_constructor_args():
 
 
 
-def test_ram::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(ram::OpaqueExpression)
+def test_ram_literalspecification_is_not_abstract():
+    assert not inspect.isabstract(ram_LiteralSpecification)
 
 
-def test_ram::opaqueexpression_constructor_exists():
-    assert callable(ram::OpaqueExpression.__init__)
+def test_ram_literalspecification_constructor_exists():
+    assert callable(ram_LiteralSpecification.__init__)
 
 
-def test_ram::opaqueexpression_constructor_args():
-    sig = inspect.signature(ram::OpaqueExpression.__init__)
+def test_ram_literalspecification_constructor_args():
+    sig = inspect.signature(ram_LiteralSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ram_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(ram_OpaqueExpression)
+
+
+def test_ram_opaqueexpression_constructor_exists():
+    assert callable(ram_OpaqueExpression.__init__)
+
+
+def test_ram_opaqueexpression_constructor_args():
+    sig = inspect.signature(ram_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "body" in params, "Missing parameter 'body'"
 
-def test_ram::opaqueexpression_has_language():
-    assert hasattr(ram::OpaqueExpression, "language")
+def test_ram_opaqueexpression_has_language():
+    assert hasattr(ram_OpaqueExpression, "language")
     descriptor = None
-    for klass in ram::OpaqueExpression.__mro__:
+    for klass in ram_OpaqueExpression.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_ram::opaqueexpression_has_body():
-    assert hasattr(ram::OpaqueExpression, "body")
+def test_ram_opaqueexpression_has_body():
+    assert hasattr(ram_OpaqueExpression, "body")
     descriptor = None
-    for klass in ram::OpaqueExpression.__mro__:
+    for klass in ram_OpaqueExpression.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -514,86 +528,72 @@ def test_ram::opaqueexpression_has_body():
 
 
 
-def test_ram::literalspecification_is_not_abstract():
-    assert not inspect.isabstract(ram::LiteralSpecification)
+def test_ram_parametervalue_is_not_abstract():
+    assert not inspect.isabstract(ram_ParameterValue)
 
 
-def test_ram::literalspecification_constructor_exists():
-    assert callable(ram::LiteralSpecification.__init__)
+def test_ram_parametervalue_constructor_exists():
+    assert callable(ram_ParameterValue.__init__)
 
 
-def test_ram::literalspecification_constructor_args():
-    sig = inspect.signature(ram::LiteralSpecification.__init__)
+def test_ram_parametervalue_constructor_args():
+    sig = inspect.signature(ram_ParameterValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::parametervalue_is_not_abstract():
-    assert not inspect.isabstract(ram::ParameterValue)
+def test_ram_structuralfeaturevalue_is_not_abstract():
+    assert not inspect.isabstract(ram_StructuralFeatureValue)
 
 
-def test_ram::parametervalue_constructor_exists():
-    assert callable(ram::ParameterValue.__init__)
+def test_ram_structuralfeaturevalue_constructor_exists():
+    assert callable(ram_StructuralFeatureValue.__init__)
 
 
-def test_ram::parametervalue_constructor_args():
-    sig = inspect.signature(ram::ParameterValue.__init__)
+def test_ram_structuralfeaturevalue_constructor_args():
+    sig = inspect.signature(ram_StructuralFeatureValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::structuralfeaturevalue_is_not_abstract():
-    assert not inspect.isabstract(ram::StructuralFeatureValue)
+def test_ram_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(ram_ValueSpecification)
 
 
-def test_ram::structuralfeaturevalue_constructor_exists():
-    assert callable(ram::StructuralFeatureValue.__init__)
+def test_ram_valuespecification_constructor_exists():
+    assert callable(ram_ValueSpecification.__init__)
 
 
-def test_ram::structuralfeaturevalue_constructor_args():
-    sig = inspect.signature(ram::StructuralFeatureValue.__init__)
+def test_ram_valuespecification_constructor_args():
+    sig = inspect.signature(ram_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(ram::ValueSpecification)
+def test_ram_parametervaluemapping_is_not_abstract():
+    assert not inspect.isabstract(ram_ParameterValueMapping)
 
 
-def test_ram::valuespecification_constructor_exists():
-    assert callable(ram::ValueSpecification.__init__)
+def test_ram_parametervaluemapping_constructor_exists():
+    assert callable(ram_ParameterValueMapping.__init__)
 
 
-def test_ram::valuespecification_constructor_args():
-    sig = inspect.signature(ram::ValueSpecification.__init__)
+def test_ram_parametervaluemapping_constructor_args():
+    sig = inspect.signature(ram_ParameterValueMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::parametervaluemapping_is_not_abstract():
-    assert not inspect.isabstract(ram::ParameterValueMapping)
+def test_ram_messageend_is_not_abstract():
+    assert not inspect.isabstract(ram_MessageEnd)
 
 
-def test_ram::parametervaluemapping_constructor_exists():
-    assert callable(ram::ParameterValueMapping.__init__)
+def test_ram_messageend_constructor_exists():
+    assert callable(ram_MessageEnd.__init__)
 
 
-def test_ram::parametervaluemapping_constructor_args():
-    sig = inspect.signature(ram::ParameterValueMapping.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ram::messageend_is_not_abstract():
-    assert not inspect.isabstract(ram::MessageEnd)
-
-
-def test_ram::messageend_constructor_exists():
-    assert callable(ram::MessageEnd.__init__)
-
-
-def test_ram::messageend_constructor_args():
-    sig = inspect.signature(ram::MessageEnd.__init__)
+def test_ram_messageend_constructor_args():
+    sig = inspect.signature(ram_MessageEnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -612,30 +612,30 @@ def test_messageoccurrencespecification_constructor_args():
 
 
 
-def test_ram::destructionoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(ram::DestructionOccurrenceSpecification)
+def test_ram_destructionoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(ram_DestructionOccurrenceSpecification)
 
 
-def test_ram::destructionoccurrencespecification_constructor_exists():
-    assert callable(ram::DestructionOccurrenceSpecification.__init__)
+def test_ram_destructionoccurrencespecification_constructor_exists():
+    assert callable(ram_DestructionOccurrenceSpecification.__init__)
 
 
-def test_ram::destructionoccurrencespecification_constructor_args():
-    sig = inspect.signature(ram::DestructionOccurrenceSpecification.__init__)
+def test_ram_destructionoccurrencespecification_constructor_args():
+    sig = inspect.signature(ram_DestructionOccurrenceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::interactionfragment_is_not_abstract():
-    assert not inspect.isabstract(ram::InteractionFragment)
+def test_ram_interactionfragment_is_not_abstract():
+    assert not inspect.isabstract(ram_InteractionFragment)
 
 
-def test_ram::interactionfragment_constructor_exists():
-    assert callable(ram::InteractionFragment.__init__)
+def test_ram_interactionfragment_constructor_exists():
+    assert callable(ram_InteractionFragment.__init__)
 
 
-def test_ram::interactionfragment_constructor_args():
-    sig = inspect.signature(ram::InteractionFragment.__init__)
+def test_ram_interactionfragment_constructor_args():
+    sig = inspect.signature(ram_InteractionFragment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -654,51 +654,37 @@ def test_interactionfragment_constructor_args():
 
 
 
-def test_ram::originalbehaviorexecution_is_not_abstract():
-    assert not inspect.isabstract(ram::OriginalBehaviorExecution)
+def test_ram_originalbehaviorexecution_is_not_abstract():
+    assert not inspect.isabstract(ram_OriginalBehaviorExecution)
 
 
-def test_ram::originalbehaviorexecution_constructor_exists():
-    assert callable(ram::OriginalBehaviorExecution.__init__)
+def test_ram_originalbehaviorexecution_constructor_exists():
+    assert callable(ram_OriginalBehaviorExecution.__init__)
 
 
-def test_ram::originalbehaviorexecution_constructor_args():
-    sig = inspect.signature(ram::OriginalBehaviorExecution.__init__)
+def test_ram_originalbehaviorexecution_constructor_args():
+    sig = inspect.signature(ram_OriginalBehaviorExecution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::executionstatement_is_not_abstract():
-    assert not inspect.isabstract(ram::ExecutionStatement)
+def test_ram_combinedfragment_is_not_abstract():
+    assert not inspect.isabstract(ram_CombinedFragment)
 
 
-def test_ram::executionstatement_constructor_exists():
-    assert callable(ram::ExecutionStatement.__init__)
+def test_ram_combinedfragment_constructor_exists():
+    assert callable(ram_CombinedFragment.__init__)
 
 
-def test_ram::executionstatement_constructor_args():
-    sig = inspect.signature(ram::ExecutionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ram::combinedfragment_is_not_abstract():
-    assert not inspect.isabstract(ram::CombinedFragment)
-
-
-def test_ram::combinedfragment_constructor_exists():
-    assert callable(ram::CombinedFragment.__init__)
-
-
-def test_ram::combinedfragment_constructor_args():
-    sig = inspect.signature(ram::CombinedFragment.__init__)
+def test_ram_combinedfragment_constructor_args():
+    sig = inspect.signature(ram_CombinedFragment.__init__)
     params = list(sig.parameters.keys())
     assert "interactionOperator" in params, "Missing parameter 'interactionOperator'"
 
-def test_ram::combinedfragment_has_interactionOperator():
-    assert hasattr(ram::CombinedFragment, "interactionOperator")
+def test_ram_combinedfragment_has_interactionOperator():
+    assert hasattr(ram_CombinedFragment, "interactionOperator")
     descriptor = None
-    for klass in ram::CombinedFragment.__mro__:
+    for klass in ram_CombinedFragment.__mro__:
         if "interactionOperator" in klass.__dict__:
             descriptor = klass.__dict__["interactionOperator"]
             break
@@ -706,16 +692,30 @@ def test_ram::combinedfragment_has_interactionOperator():
 
 
 
-def test_ram::occurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(ram::OccurrenceSpecification)
+def test_ram_executionstatement_is_not_abstract():
+    assert not inspect.isabstract(ram_ExecutionStatement)
 
 
-def test_ram::occurrencespecification_constructor_exists():
-    assert callable(ram::OccurrenceSpecification.__init__)
+def test_ram_executionstatement_constructor_exists():
+    assert callable(ram_ExecutionStatement.__init__)
 
 
-def test_ram::occurrencespecification_constructor_args():
-    sig = inspect.signature(ram::OccurrenceSpecification.__init__)
+def test_ram_executionstatement_constructor_args():
+    sig = inspect.signature(ram_ExecutionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ram_occurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(ram_OccurrenceSpecification)
+
+
+def test_ram_occurrencespecification_constructor_exists():
+    assert callable(ram_OccurrenceSpecification.__init__)
+
+
+def test_ram_occurrencespecification_constructor_args():
+    sig = inspect.signature(ram_OccurrenceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -748,47 +748,47 @@ def test_occurrencespecification_constructor_args():
 
 
 
-def test_ram::messageoccurrencespecification_is_not_abstract():
-    assert not inspect.isabstract(ram::MessageOccurrenceSpecification)
+def test_ram_messageoccurrencespecification_is_not_abstract():
+    assert not inspect.isabstract(ram_MessageOccurrenceSpecification)
 
 
-def test_ram::messageoccurrencespecification_constructor_exists():
-    assert callable(ram::MessageOccurrenceSpecification.__init__)
+def test_ram_messageoccurrencespecification_constructor_exists():
+    assert callable(ram_MessageOccurrenceSpecification.__init__)
 
 
-def test_ram::messageoccurrencespecification_constructor_args():
-    sig = inspect.signature(ram::MessageOccurrenceSpecification.__init__)
+def test_ram_messageoccurrencespecification_constructor_args():
+    sig = inspect.signature(ram_MessageOccurrenceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::message_is_not_abstract():
-    assert not inspect.isabstract(ram::Message)
+def test_ram_message_is_not_abstract():
+    assert not inspect.isabstract(ram_Message)
 
 
-def test_ram::message_constructor_exists():
-    assert callable(ram::Message.__init__)
+def test_ram_message_constructor_exists():
+    assert callable(ram_Message.__init__)
 
 
-def test_ram::message_constructor_args():
-    sig = inspect.signature(ram::Message.__init__)
+def test_ram_message_constructor_args():
+    sig = inspect.signature(ram_Message.__init__)
     params = list(sig.parameters.keys())
     assert "selfMessage" in params, "Missing parameter 'selfMessage'"
     assert "messageSort" in params, "Missing parameter 'messageSort'"
 
-def test_ram::message_has_selfMessage():
-    assert hasattr(ram::Message, "selfMessage")
+def test_ram_message_has_selfMessage():
+    assert hasattr(ram_Message, "selfMessage")
     descriptor = None
-    for klass in ram::Message.__mro__:
+    for klass in ram_Message.__mro__:
         if "selfMessage" in klass.__dict__:
             descriptor = klass.__dict__["selfMessage"]
             break
     assert isinstance(descriptor, property)
 
-def test_ram::message_has_messageSort():
-    assert hasattr(ram::Message, "messageSort")
+def test_ram_message_has_messageSort():
+    assert hasattr(ram_Message, "messageSort")
     descriptor = None
-    for klass in ram::Message.__mro__:
+    for klass in ram_Message.__mro__:
         if "messageSort" in klass.__dict__:
             descriptor = klass.__dict__["messageSort"]
             break
@@ -796,16 +796,16 @@ def test_ram::message_has_messageSort():
 
 
 
-def test_ram::lifeline_is_not_abstract():
-    assert not inspect.isabstract(ram::Lifeline)
+def test_ram_lifeline_is_not_abstract():
+    assert not inspect.isabstract(ram_Lifeline)
 
 
-def test_ram::lifeline_constructor_exists():
-    assert callable(ram::Lifeline.__init__)
+def test_ram_lifeline_constructor_exists():
+    assert callable(ram_Lifeline.__init__)
 
 
-def test_ram::lifeline_constructor_args():
-    sig = inspect.signature(ram::Lifeline.__init__)
+def test_ram_lifeline_constructor_args():
+    sig = inspect.signature(ram_Lifeline.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -824,30 +824,30 @@ def test_fragmentcontainer_constructor_args():
 
 
 
-def test_ram::interactionoperand_is_not_abstract():
-    assert not inspect.isabstract(ram::InteractionOperand)
+def test_ram_interactionoperand_is_not_abstract():
+    assert not inspect.isabstract(ram_InteractionOperand)
 
 
-def test_ram::interactionoperand_constructor_exists():
-    assert callable(ram::InteractionOperand.__init__)
+def test_ram_interactionoperand_constructor_exists():
+    assert callable(ram_InteractionOperand.__init__)
 
 
-def test_ram::interactionoperand_constructor_args():
-    sig = inspect.signature(ram::InteractionOperand.__init__)
+def test_ram_interactionoperand_constructor_args():
+    sig = inspect.signature(ram_InteractionOperand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::interaction_is_not_abstract():
-    assert not inspect.isabstract(ram::Interaction)
+def test_ram_interaction_is_not_abstract():
+    assert not inspect.isabstract(ram_Interaction)
 
 
-def test_ram::interaction_constructor_exists():
-    assert callable(ram::Interaction.__init__)
+def test_ram_interaction_constructor_exists():
+    assert callable(ram_Interaction.__init__)
 
 
-def test_ram::interaction_constructor_args():
-    sig = inspect.signature(ram::Interaction.__init__)
+def test_ram_interaction_constructor_args():
+    sig = inspect.signature(ram_Interaction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -866,44 +866,44 @@ def test_abstractmessageview_constructor_args():
 
 
 
-def test_ram::messageviewreference_is_not_abstract():
-    assert not inspect.isabstract(ram::MessageViewReference)
+def test_ram_messageviewreference_is_not_abstract():
+    assert not inspect.isabstract(ram_MessageViewReference)
 
 
-def test_ram::messageviewreference_constructor_exists():
-    assert callable(ram::MessageViewReference.__init__)
+def test_ram_messageviewreference_constructor_exists():
+    assert callable(ram_MessageViewReference.__init__)
 
 
-def test_ram::messageviewreference_constructor_args():
-    sig = inspect.signature(ram::MessageViewReference.__init__)
+def test_ram_messageviewreference_constructor_args():
+    sig = inspect.signature(ram_MessageViewReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::messageview_is_not_abstract():
-    assert not inspect.isabstract(ram::MessageView)
+def test_ram_messageview_is_not_abstract():
+    assert not inspect.isabstract(ram_MessageView)
 
 
-def test_ram::messageview_constructor_exists():
-    assert callable(ram::MessageView.__init__)
+def test_ram_messageview_constructor_exists():
+    assert callable(ram_MessageView.__init__)
 
 
-def test_ram::messageview_constructor_args():
-    sig = inspect.signature(ram::MessageView.__init__)
+def test_ram_messageview_constructor_args():
+    sig = inspect.signature(ram_MessageView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::temporaryproperty_is_not_abstract():
-    assert not inspect.isabstract(ram::TemporaryProperty)
+def test_ram_temporaryproperty_is_not_abstract():
+    assert not inspect.isabstract(ram_TemporaryProperty)
 
 
-def test_ram::temporaryproperty_constructor_exists():
-    assert callable(ram::TemporaryProperty.__init__)
+def test_ram_temporaryproperty_constructor_exists():
+    assert callable(ram_TemporaryProperty.__init__)
 
 
-def test_ram::temporaryproperty_constructor_args():
-    sig = inspect.signature(ram::TemporaryProperty.__init__)
+def test_ram_temporaryproperty_constructor_args():
+    sig = inspect.signature(ram_TemporaryProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -922,23 +922,23 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_ram::rarray_is_not_abstract():
-    assert not inspect.isabstract(ram::RArray)
+def test_ram_rarray_is_not_abstract():
+    assert not inspect.isabstract(ram_RArray)
 
 
-def test_ram::rarray_constructor_exists():
-    assert callable(ram::RArray.__init__)
+def test_ram_rarray_constructor_exists():
+    assert callable(ram_RArray.__init__)
 
 
-def test_ram::rarray_constructor_args():
-    sig = inspect.signature(ram::RArray.__init__)
+def test_ram_rarray_constructor_args():
+    sig = inspect.signature(ram_RArray.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_ram::rarray_has_size():
-    assert hasattr(ram::RArray, "size")
+def test_ram_rarray_has_size():
+    assert hasattr(ram_RArray, "size")
     descriptor = None
-    for klass in ram::RArray.__mro__:
+    for klass in ram_RArray.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -946,86 +946,86 @@ def test_ram::rarray_has_size():
 
 
 
-def test_ram::rlong_is_not_abstract():
-    assert not inspect.isabstract(ram::RLong)
+def test_ram_rlong_is_not_abstract():
+    assert not inspect.isabstract(ram_RLong)
 
 
-def test_ram::rlong_constructor_exists():
-    assert callable(ram::RLong.__init__)
+def test_ram_rlong_constructor_exists():
+    assert callable(ram_RLong.__init__)
 
 
-def test_ram::rlong_constructor_args():
-    sig = inspect.signature(ram::RLong.__init__)
+def test_ram_rlong_constructor_args():
+    sig = inspect.signature(ram_RLong.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rchar_is_not_abstract():
-    assert not inspect.isabstract(ram::RChar)
+def test_ram_rchar_is_not_abstract():
+    assert not inspect.isabstract(ram_RChar)
 
 
-def test_ram::rchar_constructor_exists():
-    assert callable(ram::RChar.__init__)
+def test_ram_rchar_constructor_exists():
+    assert callable(ram_RChar.__init__)
 
 
-def test_ram::rchar_constructor_args():
-    sig = inspect.signature(ram::RChar.__init__)
+def test_ram_rchar_constructor_args():
+    sig = inspect.signature(ram_RChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rint_is_not_abstract():
-    assert not inspect.isabstract(ram::RInt)
+def test_ram_rdouble_is_not_abstract():
+    assert not inspect.isabstract(ram_RDouble)
 
 
-def test_ram::rint_constructor_exists():
-    assert callable(ram::RInt.__init__)
+def test_ram_rdouble_constructor_exists():
+    assert callable(ram_RDouble.__init__)
 
 
-def test_ram::rint_constructor_args():
-    sig = inspect.signature(ram::RInt.__init__)
+def test_ram_rdouble_constructor_args():
+    sig = inspect.signature(ram_RDouble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rfloat_is_not_abstract():
-    assert not inspect.isabstract(ram::RFloat)
+def test_ram_rint_is_not_abstract():
+    assert not inspect.isabstract(ram_RInt)
 
 
-def test_ram::rfloat_constructor_exists():
-    assert callable(ram::RFloat.__init__)
+def test_ram_rint_constructor_exists():
+    assert callable(ram_RInt.__init__)
 
 
-def test_ram::rfloat_constructor_args():
-    sig = inspect.signature(ram::RFloat.__init__)
+def test_ram_rint_constructor_args():
+    sig = inspect.signature(ram_RInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rdouble_is_not_abstract():
-    assert not inspect.isabstract(ram::RDouble)
+def test_ram_rfloat_is_not_abstract():
+    assert not inspect.isabstract(ram_RFloat)
 
 
-def test_ram::rdouble_constructor_exists():
-    assert callable(ram::RDouble.__init__)
+def test_ram_rfloat_constructor_exists():
+    assert callable(ram_RFloat.__init__)
 
 
-def test_ram::rdouble_constructor_args():
-    sig = inspect.signature(ram::RDouble.__init__)
+def test_ram_rfloat_constructor_args():
+    sig = inspect.signature(ram_RFloat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rboolean_is_not_abstract():
-    assert not inspect.isabstract(ram::RBoolean)
+def test_ram_rboolean_is_not_abstract():
+    assert not inspect.isabstract(ram_RBoolean)
 
 
-def test_ram::rboolean_constructor_exists():
-    assert callable(ram::RBoolean.__init__)
+def test_ram_rboolean_constructor_exists():
+    assert callable(ram_RBoolean.__init__)
 
 
-def test_ram::rboolean_constructor_args():
-    sig = inspect.signature(ram::RBoolean.__init__)
+def test_ram_rboolean_constructor_args():
+    sig = inspect.signature(ram_RBoolean.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1044,30 +1044,30 @@ def test_type_constructor_args():
 
 
 
-def test_ram::rvoid_is_not_abstract():
-    assert not inspect.isabstract(ram::RVoid)
+def test_ram_rvoid_is_not_abstract():
+    assert not inspect.isabstract(ram_RVoid)
 
 
-def test_ram::rvoid_constructor_exists():
-    assert callable(ram::RVoid.__init__)
+def test_ram_rvoid_constructor_exists():
+    assert callable(ram_RVoid.__init__)
 
 
-def test_ram::rvoid_constructor_args():
-    sig = inspect.signature(ram::RVoid.__init__)
+def test_ram_rvoid_constructor_args():
+    sig = inspect.signature(ram_RVoid.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(ram::TypeParameter)
+def test_ram_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(ram_TypeParameter)
 
 
-def test_ram::typeparameter_constructor_exists():
-    assert callable(ram::TypeParameter.__init__)
+def test_ram_typeparameter_constructor_exists():
+    assert callable(ram_TypeParameter.__init__)
 
 
-def test_ram::typeparameter_constructor_args():
-    sig = inspect.signature(ram::TypeParameter.__init__)
+def test_ram_typeparameter_constructor_args():
+    sig = inspect.signature(ram_TypeParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1086,16 +1086,16 @@ def test_implementationclass_constructor_args():
 
 
 
-def test_ram::rcollection_is_not_abstract():
-    assert not inspect.isabstract(ram::RCollection)
+def test_ram_rcollection_is_not_abstract():
+    assert not inspect.isabstract(ram_RCollection)
 
 
-def test_ram::rcollection_constructor_exists():
-    assert callable(ram::RCollection.__init__)
+def test_ram_rcollection_constructor_exists():
+    assert callable(ram_RCollection.__init__)
 
 
-def test_ram::rcollection_constructor_args():
-    sig = inspect.signature(ram::RCollection.__init__)
+def test_ram_rcollection_constructor_args():
+    sig = inspect.signature(ram_RCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1128,23 +1128,23 @@ def test_typedelement_constructor_args():
 
 
 
-def test_ram::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(ram::StructuralFeature)
+def test_ram_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(ram_StructuralFeature)
 
 
-def test_ram::structuralfeature_constructor_exists():
-    assert callable(ram::StructuralFeature.__init__)
+def test_ram_structuralfeature_constructor_exists():
+    assert callable(ram_StructuralFeature.__init__)
 
 
-def test_ram::structuralfeature_constructor_args():
-    sig = inspect.signature(ram::StructuralFeature.__init__)
+def test_ram_structuralfeature_constructor_args():
+    sig = inspect.signature(ram_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "static" in params, "Missing parameter 'static'"
 
-def test_ram::structuralfeature_has_static():
-    assert hasattr(ram::StructuralFeature, "static")
+def test_ram_structuralfeature_has_static():
+    assert hasattr(ram_StructuralFeature, "static")
     descriptor = None
-    for klass in ram::StructuralFeature.__mro__:
+    for klass in ram_StructuralFeature.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
@@ -1152,107 +1152,107 @@ def test_ram::structuralfeature_has_static():
 
 
 
-def test_ram::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ram::PrimitiveType)
+def test_ram_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ram_PrimitiveType)
 
 
-def test_ram::primitivetype_constructor_exists():
-    assert callable(ram::PrimitiveType.__init__)
+def test_ram_primitivetype_constructor_exists():
+    assert callable(ram_PrimitiveType.__init__)
 
 
-def test_ram::primitivetype_constructor_args():
-    sig = inspect.signature(ram::PrimitiveType.__init__)
+def test_ram_primitivetype_constructor_args():
+    sig = inspect.signature(ram_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::renum_is_not_abstract():
-    assert not inspect.isabstract(ram::REnum)
+def test_ram_renum_is_not_abstract():
+    assert not inspect.isabstract(ram_REnum)
 
 
-def test_ram::renum_constructor_exists():
-    assert callable(ram::REnum.__init__)
+def test_ram_renum_constructor_exists():
+    assert callable(ram_REnum.__init__)
 
 
-def test_ram::renum_constructor_args():
-    sig = inspect.signature(ram::REnum.__init__)
+def test_ram_renum_constructor_args():
+    sig = inspect.signature(ram_REnum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rany_is_not_abstract():
-    assert not inspect.isabstract(ram::RAny)
+def test_ram_rany_is_not_abstract():
+    assert not inspect.isabstract(ram_RAny)
 
 
-def test_ram::rany_constructor_exists():
-    assert callable(ram::RAny.__init__)
+def test_ram_rany_constructor_exists():
+    assert callable(ram_RAny.__init__)
 
 
-def test_ram::rany_constructor_args():
-    sig = inspect.signature(ram::RAny.__init__)
+def test_ram_rany_constructor_args():
+    sig = inspect.signature(ram_RAny.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::rstring_is_not_abstract():
-    assert not inspect.isabstract(ram::RString)
+def test_ram_rstring_is_not_abstract():
+    assert not inspect.isabstract(ram_RString)
 
 
-def test_ram::rstring_constructor_exists():
-    assert callable(ram::RString.__init__)
+def test_ram_rstring_constructor_exists():
+    assert callable(ram_RString.__init__)
 
 
-def test_ram::rstring_constructor_args():
-    sig = inspect.signature(ram::RString.__init__)
+def test_ram_rstring_constructor_args():
+    sig = inspect.signature(ram_RString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::mapping_is_not_abstract():
-    assert not inspect.isabstract(ram::Mapping)
+def test_ram_mapping_is_not_abstract():
+    assert not inspect.isabstract(ram_Mapping)
 
 
-def test_ram::mapping_constructor_exists():
-    assert callable(ram::Mapping.__init__)
+def test_ram_mapping_constructor_exists():
+    assert callable(ram_Mapping.__init__)
 
 
-def test_ram::mapping_constructor_args():
-    sig = inspect.signature(ram::Mapping.__init__)
+def test_ram_mapping_constructor_args():
+    sig = inspect.signature(ram_Mapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::classifiermapping_is_not_abstract():
-    assert not inspect.isabstract(ram::ClassifierMapping)
+def test_ram_classifiermapping_is_not_abstract():
+    assert not inspect.isabstract(ram_ClassifierMapping)
 
 
-def test_ram::classifiermapping_constructor_exists():
-    assert callable(ram::ClassifierMapping.__init__)
+def test_ram_classifiermapping_constructor_exists():
+    assert callable(ram_ClassifierMapping.__init__)
 
 
-def test_ram::classifiermapping_constructor_args():
-    sig = inspect.signature(ram::ClassifierMapping.__init__)
+def test_ram_classifiermapping_constructor_args():
+    sig = inspect.signature(ram_ClassifierMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ram::NamedElement)
+def test_ram_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ram_NamedElement)
 
 
-def test_ram::namedelement_constructor_exists():
-    assert callable(ram::NamedElement.__init__)
+def test_ram_namedelement_constructor_exists():
+    assert callable(ram_NamedElement.__init__)
 
 
-def test_ram::namedelement_constructor_args():
-    sig = inspect.signature(ram::NamedElement.__init__)
+def test_ram_namedelement_constructor_args():
+    sig = inspect.signature(ram_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ram::namedelement_has_name():
-    assert hasattr(ram::NamedElement, "name")
+def test_ram_namedelement_has_name():
+    assert hasattr(ram_NamedElement, "name")
     descriptor = None
-    for klass in ram::NamedElement.__mro__:
+    for klass in ram_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1288,45 +1288,45 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_ram::property_is_not_abstract():
-    assert not inspect.isabstract(ram::Property)
+def test_ram_property_is_not_abstract():
+    assert not inspect.isabstract(ram_Property)
 
 
-def test_ram::property_constructor_exists():
-    assert callable(ram::Property.__init__)
+def test_ram_property_constructor_exists():
+    assert callable(ram_Property.__init__)
 
 
-def test_ram::property_constructor_args():
-    sig = inspect.signature(ram::Property.__init__)
+def test_ram_property_constructor_args():
+    sig = inspect.signature(ram_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "referenceType" in params, "Missing parameter 'referenceType'"
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
     assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "referenceType" in params, "Missing parameter 'referenceType'"
 
-def test_ram::property_has_referenceType():
-    assert hasattr(ram::Property, "referenceType")
+def test_ram_property_has_lowerBound():
+    assert hasattr(ram_Property, "lowerBound")
     descriptor = None
-    for klass in ram::Property.__mro__:
-        if "referenceType" in klass.__dict__:
-            descriptor = klass.__dict__["referenceType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ram::property_has_lowerBound():
-    assert hasattr(ram::Property, "lowerBound")
-    descriptor = None
-    for klass in ram::Property.__mro__:
+    for klass in ram_Property.__mro__:
         if "lowerBound" in klass.__dict__:
             descriptor = klass.__dict__["lowerBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_ram::property_has_upperBound():
-    assert hasattr(ram::Property, "upperBound")
+def test_ram_property_has_upperBound():
+    assert hasattr(ram_Property, "upperBound")
     descriptor = None
-    for klass in ram::Property.__mro__:
+    for klass in ram_Property.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ram_property_has_referenceType():
+    assert hasattr(ram_Property, "referenceType")
+    descriptor = None
+    for klass in ram_Property.__mro__:
+        if "referenceType" in klass.__dict__:
+            descriptor = klass.__dict__["referenceType"]
             break
     assert isinstance(descriptor, property)
 
@@ -1346,79 +1346,79 @@ def test_mappableelement_constructor_args():
 
 
 
-def test_ram::parameter_is_not_abstract():
-    assert not inspect.isabstract(ram::Parameter)
+def test_ram_parameter_is_not_abstract():
+    assert not inspect.isabstract(ram_Parameter)
 
 
-def test_ram::parameter_constructor_exists():
-    assert callable(ram::Parameter.__init__)
+def test_ram_parameter_constructor_exists():
+    assert callable(ram_Parameter.__init__)
 
 
-def test_ram::parameter_constructor_args():
-    sig = inspect.signature(ram::Parameter.__init__)
+def test_ram_parameter_constructor_args():
+    sig = inspect.signature(ram_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::objecttype_is_not_abstract():
-    assert not inspect.isabstract(ram::ObjectType)
+def test_ram_objecttype_is_not_abstract():
+    assert not inspect.isabstract(ram_ObjectType)
 
 
-def test_ram::objecttype_constructor_exists():
-    assert callable(ram::ObjectType.__init__)
+def test_ram_objecttype_constructor_exists():
+    assert callable(ram_ObjectType.__init__)
 
 
-def test_ram::objecttype_constructor_args():
-    sig = inspect.signature(ram::ObjectType.__init__)
+def test_ram_objecttype_constructor_args():
+    sig = inspect.signature(ram_ObjectType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::classifier_is_not_abstract():
-    assert not inspect.isabstract(ram::Classifier)
+def test_ram_classifier_is_not_abstract():
+    assert not inspect.isabstract(ram_Classifier)
 
 
-def test_ram::classifier_constructor_exists():
-    assert callable(ram::Classifier.__init__)
+def test_ram_classifier_constructor_exists():
+    assert callable(ram_Classifier.__init__)
 
 
-def test_ram::classifier_constructor_args():
-    sig = inspect.signature(ram::Classifier.__init__)
+def test_ram_classifier_constructor_args():
+    sig = inspect.signature(ram_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::layout_is_not_abstract():
-    assert not inspect.isabstract(ram::Layout)
+def test_ram_layout_is_not_abstract():
+    assert not inspect.isabstract(ram_Layout)
 
 
-def test_ram::layout_constructor_exists():
-    assert callable(ram::Layout.__init__)
+def test_ram_layout_constructor_exists():
+    assert callable(ram_Layout.__init__)
 
 
-def test_ram::layout_constructor_args():
-    sig = inspect.signature(ram::Layout.__init__)
+def test_ram_layout_constructor_args():
+    sig = inspect.signature(ram_Layout.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::instantiation_is_not_abstract():
-    assert not inspect.isabstract(ram::Instantiation)
+def test_ram_instantiation_is_not_abstract():
+    assert not inspect.isabstract(ram_Instantiation)
 
 
-def test_ram::instantiation_constructor_exists():
-    assert callable(ram::Instantiation.__init__)
+def test_ram_instantiation_constructor_exists():
+    assert callable(ram_Instantiation.__init__)
 
 
-def test_ram::instantiation_constructor_args():
-    sig = inspect.signature(ram::Instantiation.__init__)
+def test_ram_instantiation_constructor_args():
+    sig = inspect.signature(ram_Instantiation.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_ram::instantiation_has_type():
-    assert hasattr(ram::Instantiation, "type")
+def test_ram_instantiation_has_type():
+    assert hasattr(ram_Instantiation, "type")
     descriptor = None
-    for klass in ram::Instantiation.__mro__:
+    for klass in ram_Instantiation.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1426,30 +1426,30 @@ def test_ram::instantiation_has_type():
 
 
 
-def test_ram::abstractmessageview_is_not_abstract():
-    assert not inspect.isabstract(ram::AbstractMessageView)
+def test_ram_abstractmessageview_is_not_abstract():
+    assert not inspect.isabstract(ram_AbstractMessageView)
 
 
-def test_ram::abstractmessageview_constructor_exists():
-    assert callable(ram::AbstractMessageView.__init__)
+def test_ram_abstractmessageview_constructor_exists():
+    assert callable(ram_AbstractMessageView.__init__)
 
 
-def test_ram::abstractmessageview_constructor_args():
-    sig = inspect.signature(ram::AbstractMessageView.__init__)
+def test_ram_abstractmessageview_constructor_args():
+    sig = inspect.signature(ram_AbstractMessageView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::structuralview_is_not_abstract():
-    assert not inspect.isabstract(ram::StructuralView)
+def test_ram_structuralview_is_not_abstract():
+    assert not inspect.isabstract(ram_StructuralView)
 
 
-def test_ram::structuralview_constructor_exists():
-    assert callable(ram::StructuralView.__init__)
+def test_ram_structuralview_constructor_exists():
+    assert callable(ram_StructuralView.__init__)
 
 
-def test_ram::structuralview_constructor_args():
-    sig = inspect.signature(ram::StructuralView.__init__)
+def test_ram_structuralview_constructor_args():
+    sig = inspect.signature(ram_StructuralView.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1468,210 +1468,210 @@ def test_namedelement_constructor_args():
 
 
 
-def test_ram::type_is_not_abstract():
-    assert not inspect.isabstract(ram::Type)
+def test_ram_association_is_not_abstract():
+    assert not inspect.isabstract(ram_Association)
 
 
-def test_ram::type_constructor_exists():
-    assert callable(ram::Type.__init__)
+def test_ram_association_constructor_exists():
+    assert callable(ram_Association.__init__)
 
 
-def test_ram::type_constructor_args():
-    sig = inspect.signature(ram::Type.__init__)
+def test_ram_association_constructor_args():
+    sig = inspect.signature(ram_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::gate_is_not_abstract():
-    assert not inspect.isabstract(ram::Gate)
+def test_ram_type_is_not_abstract():
+    assert not inspect.isabstract(ram_Type)
 
 
-def test_ram::gate_constructor_exists():
-    assert callable(ram::Gate.__init__)
+def test_ram_type_constructor_exists():
+    assert callable(ram_Type.__init__)
 
 
-def test_ram::gate_constructor_args():
-    sig = inspect.signature(ram::Gate.__init__)
+def test_ram_type_constructor_args():
+    sig = inspect.signature(ram_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::state_is_not_abstract():
-    assert not inspect.isabstract(ram::State)
+def test_ram_mappableelement_is_not_abstract():
+    assert not inspect.isabstract(ram_MappableElement)
 
 
-def test_ram::state_constructor_exists():
-    assert callable(ram::State.__init__)
+def test_ram_mappableelement_constructor_exists():
+    assert callable(ram_MappableElement.__init__)
 
 
-def test_ram::state_constructor_args():
-    sig = inspect.signature(ram::State.__init__)
+def test_ram_mappableelement_constructor_args():
+    sig = inspect.signature(ram_MappableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::mappableelement_is_not_abstract():
-    assert not inspect.isabstract(ram::MappableElement)
+def test_ram_stateview_is_not_abstract():
+    assert not inspect.isabstract(ram_StateView)
 
 
-def test_ram::mappableelement_constructor_exists():
-    assert callable(ram::MappableElement.__init__)
+def test_ram_stateview_constructor_exists():
+    assert callable(ram_StateView.__init__)
 
 
-def test_ram::mappableelement_constructor_args():
-    sig = inspect.signature(ram::MappableElement.__init__)
+def test_ram_stateview_constructor_args():
+    sig = inspect.signature(ram_StateView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::typedelement_is_not_abstract():
-    assert not inspect.isabstract(ram::TypedElement)
+def test_ram_state_is_not_abstract():
+    assert not inspect.isabstract(ram_State)
 
 
-def test_ram::typedelement_constructor_exists():
-    assert callable(ram::TypedElement.__init__)
+def test_ram_state_constructor_exists():
+    assert callable(ram_State.__init__)
 
 
-def test_ram::typedelement_constructor_args():
-    sig = inspect.signature(ram::TypedElement.__init__)
+def test_ram_state_constructor_args():
+    sig = inspect.signature(ram_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::aspectmessageview_is_not_abstract():
-    assert not inspect.isabstract(ram::AspectMessageView)
+def test_ram_typedelement_is_not_abstract():
+    assert not inspect.isabstract(ram_TypedElement)
 
 
-def test_ram::aspectmessageview_constructor_exists():
-    assert callable(ram::AspectMessageView.__init__)
+def test_ram_typedelement_constructor_exists():
+    assert callable(ram_TypedElement.__init__)
 
 
-def test_ram::aspectmessageview_constructor_args():
-    sig = inspect.signature(ram::AspectMessageView.__init__)
+def test_ram_typedelement_constructor_args():
+    sig = inspect.signature(ram_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::stateview_is_not_abstract():
-    assert not inspect.isabstract(ram::StateView)
+def test_ram_renumliteral_is_not_abstract():
+    assert not inspect.isabstract(ram_REnumLiteral)
 
 
-def test_ram::stateview_constructor_exists():
-    assert callable(ram::StateView.__init__)
+def test_ram_renumliteral_constructor_exists():
+    assert callable(ram_REnumLiteral.__init__)
 
 
-def test_ram::stateview_constructor_args():
-    sig = inspect.signature(ram::StateView.__init__)
+def test_ram_renumliteral_constructor_args():
+    sig = inspect.signature(ram_REnumLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::operation_is_not_abstract():
-    assert not inspect.isabstract(ram::Operation)
+def test_ram_operation_is_not_abstract():
+    assert not inspect.isabstract(ram_Operation)
 
 
-def test_ram::operation_constructor_exists():
-    assert callable(ram::Operation.__init__)
+def test_ram_operation_constructor_exists():
+    assert callable(ram_Operation.__init__)
 
 
-def test_ram::operation_constructor_args():
-    sig = inspect.signature(ram::Operation.__init__)
+def test_ram_operation_constructor_args():
+    sig = inspect.signature(ram_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "partial" in params, "Missing parameter 'partial'"
     assert "static" in params, "Missing parameter 'static'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_ram::operation_has_abstract():
-    assert hasattr(ram::Operation, "abstract")
+def test_ram_operation_has_abstract():
+    assert hasattr(ram_Operation, "abstract")
     descriptor = None
-    for klass in ram::Operation.__mro__:
+    for klass in ram_Operation.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_ram::operation_has_visibility():
-    assert hasattr(ram::Operation, "visibility")
+def test_ram_operation_has_partial():
+    assert hasattr(ram_Operation, "partial")
     descriptor = None
-    for klass in ram::Operation.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ram::operation_has_partial():
-    assert hasattr(ram::Operation, "partial")
-    descriptor = None
-    for klass in ram::Operation.__mro__:
+    for klass in ram_Operation.__mro__:
         if "partial" in klass.__dict__:
             descriptor = klass.__dict__["partial"]
             break
     assert isinstance(descriptor, property)
 
-def test_ram::operation_has_static():
-    assert hasattr(ram::Operation, "static")
+def test_ram_operation_has_static():
+    assert hasattr(ram_Operation, "static")
     descriptor = None
-    for klass in ram::Operation.__mro__:
+    for klass in ram_Operation.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
+def test_ram_operation_has_visibility():
+    assert hasattr(ram_Operation, "visibility")
+    descriptor = None
+    for klass in ram_Operation.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ram::transition_is_not_abstract():
-    assert not inspect.isabstract(ram::Transition)
+
+def test_ram_transition_is_not_abstract():
+    assert not inspect.isabstract(ram_Transition)
 
 
-def test_ram::transition_constructor_exists():
-    assert callable(ram::Transition.__init__)
+def test_ram_transition_constructor_exists():
+    assert callable(ram_Transition.__init__)
 
 
-def test_ram::transition_constructor_args():
-    sig = inspect.signature(ram::Transition.__init__)
+def test_ram_transition_constructor_args():
+    sig = inspect.signature(ram_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::renumliteral_is_not_abstract():
-    assert not inspect.isabstract(ram::REnumLiteral)
+def test_ram_aspectmessageview_is_not_abstract():
+    assert not inspect.isabstract(ram_AspectMessageView)
 
 
-def test_ram::renumliteral_constructor_exists():
-    assert callable(ram::REnumLiteral.__init__)
+def test_ram_aspectmessageview_constructor_exists():
+    assert callable(ram_AspectMessageView.__init__)
 
 
-def test_ram::renumliteral_constructor_args():
-    sig = inspect.signature(ram::REnumLiteral.__init__)
+def test_ram_aspectmessageview_constructor_args():
+    sig = inspect.signature(ram_AspectMessageView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::association_is_not_abstract():
-    assert not inspect.isabstract(ram::Association)
+def test_ram_gate_is_not_abstract():
+    assert not inspect.isabstract(ram_Gate)
 
 
-def test_ram::association_constructor_exists():
-    assert callable(ram::Association.__init__)
+def test_ram_gate_constructor_exists():
+    assert callable(ram_Gate.__init__)
 
 
-def test_ram::association_constructor_args():
-    sig = inspect.signature(ram::Association.__init__)
+def test_ram_gate_constructor_args():
+    sig = inspect.signature(ram_Gate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::aspect_is_not_abstract():
-    assert not inspect.isabstract(ram::Aspect)
+def test_ram_aspect_is_not_abstract():
+    assert not inspect.isabstract(ram_Aspect)
 
 
-def test_ram::aspect_constructor_exists():
-    assert callable(ram::Aspect.__init__)
+def test_ram_aspect_constructor_exists():
+    assert callable(ram_Aspect.__init__)
 
 
-def test_ram::aspect_constructor_args():
-    sig = inspect.signature(ram::Aspect.__init__)
+def test_ram_aspect_constructor_args():
+    sig = inspect.signature(ram_Aspect.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1690,37 +1690,37 @@ def test_property_constructor_args():
 
 
 
-def test_ram::reference_is_not_abstract():
-    assert not inspect.isabstract(ram::Reference)
+def test_ram_reference_is_not_abstract():
+    assert not inspect.isabstract(ram_Reference)
 
 
-def test_ram::reference_constructor_exists():
-    assert callable(ram::Reference.__init__)
+def test_ram_reference_constructor_exists():
+    assert callable(ram_Reference.__init__)
 
 
-def test_ram::reference_constructor_args():
-    sig = inspect.signature(ram::Reference.__init__)
+def test_ram_reference_constructor_args():
+    sig = inspect.signature(ram_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ram::associationend_is_not_abstract():
-    assert not inspect.isabstract(ram::AssociationEnd)
+def test_ram_associationend_is_not_abstract():
+    assert not inspect.isabstract(ram_AssociationEnd)
 
 
-def test_ram::associationend_constructor_exists():
-    assert callable(ram::AssociationEnd.__init__)
+def test_ram_associationend_constructor_exists():
+    assert callable(ram_AssociationEnd.__init__)
 
 
-def test_ram::associationend_constructor_args():
-    sig = inspect.signature(ram::AssociationEnd.__init__)
+def test_ram_associationend_constructor_args():
+    sig = inspect.signature(ram_AssociationEnd.__init__)
     params = list(sig.parameters.keys())
     assert "navigable" in params, "Missing parameter 'navigable'"
 
-def test_ram::associationend_has_navigable():
-    assert hasattr(ram::AssociationEnd, "navigable")
+def test_ram_associationend_has_navigable():
+    assert hasattr(ram_AssociationEnd, "navigable")
     descriptor = None
-    for klass in ram::AssociationEnd.__mro__:
+    for klass in ram_AssociationEnd.__mro__:
         if "navigable" in klass.__dict__:
             descriptor = klass.__dict__["navigable"]
             break
@@ -1728,16 +1728,16 @@ def test_ram::associationend_has_navigable():
 
 
 
-def test_ram::attribute_is_not_abstract():
-    assert not inspect.isabstract(ram::Attribute)
+def test_ram_attribute_is_not_abstract():
+    assert not inspect.isabstract(ram_Attribute)
 
 
-def test_ram::attribute_constructor_exists():
-    assert callable(ram::Attribute.__init__)
+def test_ram_attribute_constructor_exists():
+    assert callable(ram_Attribute.__init__)
 
 
-def test_ram::attribute_constructor_args():
-    sig = inspect.signature(ram::Attribute.__init__)
+def test_ram_attribute_constructor_args():
+    sig = inspect.signature(ram_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1756,88 +1756,71 @@ def test_classifier_constructor_args():
 
 
 
-def test_ram::implementationclass_is_not_abstract():
-    assert not inspect.isabstract(ram::ImplementationClass)
+def test_ram_class_is_not_abstract():
+    assert not inspect.isabstract(ram_Class)
 
 
-def test_ram::implementationclass_constructor_exists():
-    assert callable(ram::ImplementationClass.__init__)
+def test_ram_class_constructor_exists():
+    assert callable(ram_Class.__init__)
 
 
-def test_ram::implementationclass_constructor_args():
-    sig = inspect.signature(ram::ImplementationClass.__init__)
+def test_ram_class_constructor_args():
+    sig = inspect.signature(ram_Class.__init__)
     params = list(sig.parameters.keys())
-    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
-    assert "interface" in params, "Missing parameter 'interface'"
-
-def test_ram::implementationclass_has_instanceClassName():
-    assert hasattr(ram::ImplementationClass, "instanceClassName")
-    descriptor = None
-    for klass in ram::ImplementationClass.__mro__:
-        if "instanceClassName" in klass.__dict__:
-            descriptor = klass.__dict__["instanceClassName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ram::implementationclass_has_interface():
-    assert hasattr(ram::ImplementationClass, "interface")
-    descriptor = None
-    for klass in ram::ImplementationClass.__mro__:
-        if "interface" in klass.__dict__:
-            descriptor = klass.__dict__["interface"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ram::class_is_not_abstract():
-    assert not inspect.isabstract(ram::Class)
-
-
-def test_ram::class_constructor_exists():
-    assert callable(ram::Class.__init__)
-
-
-def test_ram::class_constructor_args():
-    sig = inspect.signature(ram::Class.__init__)
-    params = list(sig.parameters.keys())
-    assert "partial" in params, "Missing parameter 'partial'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "partial" in params, "Missing parameter 'partial'"
 
-def test_ram::class_has_partial():
-    assert hasattr(ram::Class, "partial")
+def test_ram_class_has_abstract():
+    assert hasattr(ram_Class, "abstract")
     descriptor = None
-    for klass in ram::Class.__mro__:
-        if "partial" in klass.__dict__:
-            descriptor = klass.__dict__["partial"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ram::class_has_abstract():
-    assert hasattr(ram::Class, "abstract")
-    descriptor = None
-    for klass in ram::Class.__mro__:
+    for klass in ram_Class.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_messagesort_exists():
-    # Check that the Enumeration exists
-    assert MessageSort is not None
+def test_ram_class_has_partial():
+    assert hasattr(ram_Class, "partial")
+    descriptor = None
+    for klass in ram_Class.__mro__:
+        if "partial" in klass.__dict__:
+            descriptor = klass.__dict__["partial"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_messagesort_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MessageSort]
-    expected_literals = [
-        "synchCall",
-        "reply",
-        "createMessage",
-        "deleteMessage",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MessageSort"
+
+
+def test_ram_implementationclass_is_not_abstract():
+    assert not inspect.isabstract(ram_ImplementationClass)
+
+
+def test_ram_implementationclass_constructor_exists():
+    assert callable(ram_ImplementationClass.__init__)
+
+
+def test_ram_implementationclass_constructor_args():
+    sig = inspect.signature(ram_ImplementationClass.__init__)
+    params = list(sig.parameters.keys())
+    assert "interface" in params, "Missing parameter 'interface'"
+    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
+
+def test_ram_implementationclass_has_interface():
+    assert hasattr(ram_ImplementationClass, "interface")
+    descriptor = None
+    for klass in ram_ImplementationClass.__mro__:
+        if "interface" in klass.__dict__:
+            descriptor = klass.__dict__["interface"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ram_implementationclass_has_instanceClassName():
+    assert hasattr(ram_ImplementationClass, "instanceClassName")
+    descriptor = None
+    for klass in ram_ImplementationClass.__mro__:
+        if "instanceClassName" in klass.__dict__:
+            descriptor = klass.__dict__["instanceClassName"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_instantiationtype_exists():
     # Check that the Enumeration exists
@@ -1847,29 +1830,12 @@ def test_instantiationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in InstantiationType]
     expected_literals = [
-        "Extends",
         "Depends",
+        "Extends",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in InstantiationType"
-
-def test_visibility_exists():
-    # Check that the Enumeration exists
-    assert Visibility is not None
-
-def test_visibility_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Visibility]
-    expected_literals = [
-        "public",
-        "protected",
-        "package",
-        "private",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Visibility"
 
 def test_interactionoperatorkind_exists():
     # Check that the Enumeration exists
@@ -1879,11 +1845,11 @@ def test_interactionoperatorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in InteractionOperatorKind]
     expected_literals = [
-        "opt",
         "alt",
-        "critical",
-        "loop",
         "disruptable",
+        "loop",
+        "opt",
+        "critical",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1897,13 +1863,47 @@ def test_referencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ReferenceType]
     expected_literals = [
-        "Aggregation",
         "Regular",
+        "Aggregation",
         "Composition",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ReferenceType"
+
+def test_messagesort_exists():
+    # Check that the Enumeration exists
+    assert MessageSort is not None
+
+def test_messagesort_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MessageSort]
+    expected_literals = [
+        "createMessage",
+        "synchCall",
+        "deleteMessage",
+        "reply",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MessageSort"
+
+def test_visibility_exists():
+    # Check that the Enumeration exists
+    assert Visibility is not None
+
+def test_visibility_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Visibility]
+    expected_literals = [
+        "private",
+        "package",
+        "public",
+        "protected",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Visibility"
 
 
 # =============================================================================
@@ -1920,129 +1920,129 @@ safe_text = st.text(
 Substitution_strategy = st.builds(
     Substitution,
 )
-ram::TransitionSubstitution_strategy = st.builds(
-    ram::TransitionSubstitution,
+ram_TransitionSubstitution_strategy = st.builds(
+    ram_TransitionSubstitution,
 )
-ram::Constraint_strategy = st.builds(
-    ram::Constraint,
+ram_Constraint_strategy = st.builds(
+    ram_Constraint,
 )
-ram::Substitution_strategy = st.builds(
-    ram::Substitution,
+ram_Substitution_strategy = st.builds(
+    ram_Substitution,
 )
-ram::StateMachine_strategy = st.builds(
-    ram::StateMachine,
+ram_StateMachine_strategy = st.builds(
+    ram_StateMachine,
 )
 Mapping_strategy = st.builds(
     Mapping,
 )
-ram::OperationMapping_strategy = st.builds(
-    ram::OperationMapping,
+ram_AttributeMapping_strategy = st.builds(
+    ram_AttributeMapping,
 )
-ram::AttributeMapping_strategy = st.builds(
-    ram::AttributeMapping,
+ram_OperationMapping_strategy = st.builds(
+    ram_OperationMapping,
 )
-ram::ParameterMapping_strategy = st.builds(
-    ram::ParameterMapping,
+ram_ParameterMapping_strategy = st.builds(
+    ram_ParameterMapping,
 )
-ram::ElementMap_strategy = st.builds(
-    ram::ElementMap,
+ram_ElementMap_strategy = st.builds(
+    ram_ElementMap,
 )
-ram::EObject_strategy = st.builds(
-    ram::EObject,
+ram_EObject_strategy = st.builds(
+    ram_EObject,
 )
-ram::ContainerMap_strategy = st.builds(
-    ram::ContainerMap,
+ram_ContainerMap_strategy = st.builds(
+    ram_ContainerMap,
 )
 RCollection_strategy = st.builds(
     RCollection,
 )
-ram::RSequence_strategy = st.builds(
-    ram::RSequence,
+ram_RSequence_strategy = st.builds(
+    ram_RSequence,
 )
-ram::RSet_strategy = st.builds(
-    ram::RSet,
+ram_RSet_strategy = st.builds(
+    ram_RSet,
 )
 LiteralSpecification_strategy = st.builds(
     LiteralSpecification,
 )
-ram::LiteralInteger_strategy = st.builds(
-    ram::LiteralInteger,
+ram_LiteralInteger_strategy = st.builds(
+    ram_LiteralInteger,
     value=
         st.integers()
 )
-ram::LiteralBoolean_strategy = st.builds(
-    ram::LiteralBoolean,
+ram_LiteralBoolean_strategy = st.builds(
+    ram_LiteralBoolean,
     value=
         st.booleans()
 )
-ram::LiteralString_strategy = st.builds(
-    ram::LiteralString,
+ram_LiteralString_strategy = st.builds(
+    ram_LiteralString,
     value=
         safe_text
 )
-ram::LayoutElement_strategy = st.builds(
-    ram::LayoutElement,
-    x=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+ram_LayoutElement_strategy = st.builds(
+    ram_LayoutElement,
     y=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    x=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ram::FragmentContainer_strategy = st.builds(
-    ram::FragmentContainer,
+ram_FragmentContainer_strategy = st.builds(
+    ram_FragmentContainer,
 )
 ValueSpecification_strategy = st.builds(
     ValueSpecification,
 )
-ram::OpaqueExpression_strategy = st.builds(
-    ram::OpaqueExpression,
+ram_LiteralSpecification_strategy = st.builds(
+    ram_LiteralSpecification,
+)
+ram_OpaqueExpression_strategy = st.builds(
+    ram_OpaqueExpression,
     language=
         safe_text,
     body=
         safe_text
 )
-ram::LiteralSpecification_strategy = st.builds(
-    ram::LiteralSpecification,
+ram_ParameterValue_strategy = st.builds(
+    ram_ParameterValue,
 )
-ram::ParameterValue_strategy = st.builds(
-    ram::ParameterValue,
+ram_StructuralFeatureValue_strategy = st.builds(
+    ram_StructuralFeatureValue,
 )
-ram::StructuralFeatureValue_strategy = st.builds(
-    ram::StructuralFeatureValue,
+ram_ValueSpecification_strategy = st.builds(
+    ram_ValueSpecification,
 )
-ram::ValueSpecification_strategy = st.builds(
-    ram::ValueSpecification,
+ram_ParameterValueMapping_strategy = st.builds(
+    ram_ParameterValueMapping,
 )
-ram::ParameterValueMapping_strategy = st.builds(
-    ram::ParameterValueMapping,
-)
-ram::MessageEnd_strategy = st.builds(
-    ram::MessageEnd,
+ram_MessageEnd_strategy = st.builds(
+    ram_MessageEnd,
 )
 MessageOccurrenceSpecification_strategy = st.builds(
     MessageOccurrenceSpecification,
 )
-ram::DestructionOccurrenceSpecification_strategy = st.builds(
-    ram::DestructionOccurrenceSpecification,
+ram_DestructionOccurrenceSpecification_strategy = st.builds(
+    ram_DestructionOccurrenceSpecification,
 )
-ram::InteractionFragment_strategy = st.builds(
-    ram::InteractionFragment,
+ram_InteractionFragment_strategy = st.builds(
+    ram_InteractionFragment,
 )
 InteractionFragment_strategy = st.builds(
     InteractionFragment,
 )
-ram::OriginalBehaviorExecution_strategy = st.builds(
-    ram::OriginalBehaviorExecution,
+ram_OriginalBehaviorExecution_strategy = st.builds(
+    ram_OriginalBehaviorExecution,
 )
-ram::ExecutionStatement_strategy = st.builds(
-    ram::ExecutionStatement,
-)
-ram::CombinedFragment_strategy = st.builds(
-    ram::CombinedFragment,
+ram_CombinedFragment_strategy = st.builds(
+    ram_CombinedFragment,
     interactionOperator=
         safe_text
 )
-ram::OccurrenceSpecification_strategy = st.builds(
-    ram::OccurrenceSpecification,
+ram_ExecutionStatement_strategy = st.builds(
+    ram_ExecutionStatement,
+)
+ram_OccurrenceSpecification_strategy = st.builds(
+    ram_OccurrenceSpecification,
 )
 MessageEnd_strategy = st.builds(
     MessageEnd,
@@ -2050,80 +2050,80 @@ MessageEnd_strategy = st.builds(
 OccurrenceSpecification_strategy = st.builds(
     OccurrenceSpecification,
 )
-ram::MessageOccurrenceSpecification_strategy = st.builds(
-    ram::MessageOccurrenceSpecification,
+ram_MessageOccurrenceSpecification_strategy = st.builds(
+    ram_MessageOccurrenceSpecification,
 )
-ram::Message_strategy = st.builds(
-    ram::Message,
+ram_Message_strategy = st.builds(
+    ram_Message,
     selfMessage=
         st.booleans(),
     messageSort=
         safe_text
 )
-ram::Lifeline_strategy = st.builds(
-    ram::Lifeline,
+ram_Lifeline_strategy = st.builds(
+    ram_Lifeline,
 )
 FragmentContainer_strategy = st.builds(
     FragmentContainer,
 )
-ram::InteractionOperand_strategy = st.builds(
-    ram::InteractionOperand,
+ram_InteractionOperand_strategy = st.builds(
+    ram_InteractionOperand,
 )
-ram::Interaction_strategy = st.builds(
-    ram::Interaction,
+ram_Interaction_strategy = st.builds(
+    ram_Interaction,
 )
 AbstractMessageView_strategy = st.builds(
     AbstractMessageView,
 )
-ram::MessageViewReference_strategy = st.builds(
-    ram::MessageViewReference,
+ram_MessageViewReference_strategy = st.builds(
+    ram_MessageViewReference,
 )
-ram::MessageView_strategy = st.builds(
-    ram::MessageView,
+ram_MessageView_strategy = st.builds(
+    ram_MessageView,
 )
-ram::TemporaryProperty_strategy = st.builds(
-    ram::TemporaryProperty,
+ram_TemporaryProperty_strategy = st.builds(
+    ram_TemporaryProperty,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-ram::RArray_strategy = st.builds(
-    ram::RArray,
+ram_RArray_strategy = st.builds(
+    ram_RArray,
     size=
         st.integers()
 )
-ram::RLong_strategy = st.builds(
-    ram::RLong,
+ram_RLong_strategy = st.builds(
+    ram_RLong,
 )
-ram::RChar_strategy = st.builds(
-    ram::RChar,
+ram_RChar_strategy = st.builds(
+    ram_RChar,
 )
-ram::RInt_strategy = st.builds(
-    ram::RInt,
+ram_RDouble_strategy = st.builds(
+    ram_RDouble,
 )
-ram::RFloat_strategy = st.builds(
-    ram::RFloat,
+ram_RInt_strategy = st.builds(
+    ram_RInt,
 )
-ram::RDouble_strategy = st.builds(
-    ram::RDouble,
+ram_RFloat_strategy = st.builds(
+    ram_RFloat,
 )
-ram::RBoolean_strategy = st.builds(
-    ram::RBoolean,
+ram_RBoolean_strategy = st.builds(
+    ram_RBoolean,
 )
 Type_strategy = st.builds(
     Type,
 )
-ram::RVoid_strategy = st.builds(
-    ram::RVoid,
+ram_RVoid_strategy = st.builds(
+    ram_RVoid,
 )
-ram::TypeParameter_strategy = st.builds(
-    ram::TypeParameter,
+ram_TypeParameter_strategy = st.builds(
+    ram_TypeParameter,
 )
 ImplementationClass_strategy = st.builds(
     ImplementationClass,
 )
-ram::RCollection_strategy = st.builds(
-    ram::RCollection,
+ram_RCollection_strategy = st.builds(
+    ram_RCollection,
 )
 ObjectType_strategy = st.builds(
     ObjectType,
@@ -2131,31 +2131,31 @@ ObjectType_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-ram::StructuralFeature_strategy = st.builds(
-    ram::StructuralFeature,
+ram_StructuralFeature_strategy = st.builds(
+    ram_StructuralFeature,
     static=
         st.booleans()
 )
-ram::PrimitiveType_strategy = st.builds(
-    ram::PrimitiveType,
+ram_PrimitiveType_strategy = st.builds(
+    ram_PrimitiveType,
 )
-ram::REnum_strategy = st.builds(
-    ram::REnum,
+ram_REnum_strategy = st.builds(
+    ram_REnum,
 )
-ram::RAny_strategy = st.builds(
-    ram::RAny,
+ram_RAny_strategy = st.builds(
+    ram_RAny,
 )
-ram::RString_strategy = st.builds(
-    ram::RString,
+ram_RString_strategy = st.builds(
+    ram_RString,
 )
-ram::Mapping_strategy = st.builds(
-    ram::Mapping,
+ram_Mapping_strategy = st.builds(
+    ram_Mapping,
 )
-ram::ClassifierMapping_strategy = st.builds(
-    ram::ClassifierMapping,
+ram_ClassifierMapping_strategy = st.builds(
+    ram_ClassifierMapping,
 )
-ram::NamedElement_strategy = st.builds(
-    ram::NamedElement,
+ram_NamedElement_strategy = st.builds(
+    ram_NamedElement,
     name=
         safe_text
 )
@@ -2165,118 +2165,118 @@ TemporaryProperty_strategy = st.builds(
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-ram::Property_strategy = st.builds(
-    ram::Property,
-    referenceType=
-        safe_text,
+ram_Property_strategy = st.builds(
+    ram_Property,
     lowerBound=
         st.integers(),
     upperBound=
-        st.integers()
+        st.integers(),
+    referenceType=
+        safe_text
 )
 MappableElement_strategy = st.builds(
     MappableElement,
 )
-ram::Parameter_strategy = st.builds(
-    ram::Parameter,
+ram_Parameter_strategy = st.builds(
+    ram_Parameter,
 )
-ram::ObjectType_strategy = st.builds(
-    ram::ObjectType,
+ram_ObjectType_strategy = st.builds(
+    ram_ObjectType,
 )
-ram::Classifier_strategy = st.builds(
-    ram::Classifier,
+ram_Classifier_strategy = st.builds(
+    ram_Classifier,
 )
-ram::Layout_strategy = st.builds(
-    ram::Layout,
+ram_Layout_strategy = st.builds(
+    ram_Layout,
 )
-ram::Instantiation_strategy = st.builds(
-    ram::Instantiation,
+ram_Instantiation_strategy = st.builds(
+    ram_Instantiation,
     type=
         safe_text
 )
-ram::AbstractMessageView_strategy = st.builds(
-    ram::AbstractMessageView,
+ram_AbstractMessageView_strategy = st.builds(
+    ram_AbstractMessageView,
 )
-ram::StructuralView_strategy = st.builds(
-    ram::StructuralView,
+ram_StructuralView_strategy = st.builds(
+    ram_StructuralView,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ram::Type_strategy = st.builds(
-    ram::Type,
+ram_Association_strategy = st.builds(
+    ram_Association,
 )
-ram::Gate_strategy = st.builds(
-    ram::Gate,
+ram_Type_strategy = st.builds(
+    ram_Type,
 )
-ram::State_strategy = st.builds(
-    ram::State,
+ram_MappableElement_strategy = st.builds(
+    ram_MappableElement,
 )
-ram::MappableElement_strategy = st.builds(
-    ram::MappableElement,
+ram_StateView_strategy = st.builds(
+    ram_StateView,
 )
-ram::TypedElement_strategy = st.builds(
-    ram::TypedElement,
+ram_State_strategy = st.builds(
+    ram_State,
 )
-ram::AspectMessageView_strategy = st.builds(
-    ram::AspectMessageView,
+ram_TypedElement_strategy = st.builds(
+    ram_TypedElement,
 )
-ram::StateView_strategy = st.builds(
-    ram::StateView,
+ram_REnumLiteral_strategy = st.builds(
+    ram_REnumLiteral,
 )
-ram::Operation_strategy = st.builds(
-    ram::Operation,
+ram_Operation_strategy = st.builds(
+    ram_Operation,
     abstract=
         st.booleans(),
-    visibility=
-        safe_text,
     partial=
         st.booleans(),
     static=
-        st.booleans()
+        st.booleans(),
+    visibility=
+        safe_text
 )
-ram::Transition_strategy = st.builds(
-    ram::Transition,
+ram_Transition_strategy = st.builds(
+    ram_Transition,
 )
-ram::REnumLiteral_strategy = st.builds(
-    ram::REnumLiteral,
+ram_AspectMessageView_strategy = st.builds(
+    ram_AspectMessageView,
 )
-ram::Association_strategy = st.builds(
-    ram::Association,
+ram_Gate_strategy = st.builds(
+    ram_Gate,
 )
-ram::Aspect_strategy = st.builds(
-    ram::Aspect,
+ram_Aspect_strategy = st.builds(
+    ram_Aspect,
 )
 Property_strategy = st.builds(
     Property,
 )
-ram::Reference_strategy = st.builds(
-    ram::Reference,
+ram_Reference_strategy = st.builds(
+    ram_Reference,
 )
-ram::AssociationEnd_strategy = st.builds(
-    ram::AssociationEnd,
+ram_AssociationEnd_strategy = st.builds(
+    ram_AssociationEnd,
     navigable=
         st.booleans()
 )
-ram::Attribute_strategy = st.builds(
-    ram::Attribute,
+ram_Attribute_strategy = st.builds(
+    ram_Attribute,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-ram::ImplementationClass_strategy = st.builds(
-    ram::ImplementationClass,
-    instanceClassName=
-        safe_text,
-    interface=
+ram_Class_strategy = st.builds(
+    ram_Class,
+    abstract=
+        st.booleans(),
+    partial=
         st.booleans()
 )
-ram::Class_strategy = st.builds(
-    ram::Class,
-    partial=
+ram_ImplementationClass_strategy = st.builds(
+    ram_ImplementationClass,
+    interface=
         st.booleans(),
-    abstract=
-        st.booleans()
+    instanceClassName=
+        safe_text
 )
 
 @given(instance=Substitution_strategy)
@@ -2284,273 +2284,249 @@ ram::Class_strategy = st.builds(
 def test_substitution_instantiation(instance):
     assert isinstance(instance, Substitution)
 
-@given(instance=ram::TransitionSubstitution_strategy)
+@given(instance=ram_TransitionSubstitution_strategy)
 @settings(max_examples=50)
-def test_ram::transitionsubstitution_instantiation(instance):
-    assert isinstance(instance, ram::TransitionSubstitution)
+def test_ram_transitionsubstitution_instantiation(instance):
+    assert isinstance(instance, ram_TransitionSubstitution)
 
-@given(instance=ram::Constraint_strategy)
+@given(instance=ram_Constraint_strategy)
 @settings(max_examples=50)
-def test_ram::constraint_instantiation(instance):
-    assert isinstance(instance, ram::Constraint)
+def test_ram_constraint_instantiation(instance):
+    assert isinstance(instance, ram_Constraint)
 
-@given(instance=ram::Substitution_strategy)
+@given(instance=ram_Substitution_strategy)
 @settings(max_examples=50)
-def test_ram::substitution_instantiation(instance):
-    assert isinstance(instance, ram::Substitution)
+def test_ram_substitution_instantiation(instance):
+    assert isinstance(instance, ram_Substitution)
 
-@given(instance=ram::StateMachine_strategy)
+@given(instance=ram_StateMachine_strategy)
 @settings(max_examples=50)
-def test_ram::statemachine_instantiation(instance):
-    assert isinstance(instance, ram::StateMachine)
+def test_ram_statemachine_instantiation(instance):
+    assert isinstance(instance, ram_StateMachine)
 
 @given(instance=Mapping_strategy)
 @settings(max_examples=50)
 def test_mapping_instantiation(instance):
     assert isinstance(instance, Mapping)
 
-@given(instance=ram::OperationMapping_strategy)
+@given(instance=ram_AttributeMapping_strategy)
 @settings(max_examples=50)
-def test_ram::operationmapping_instantiation(instance):
-    assert isinstance(instance, ram::OperationMapping)
+def test_ram_attributemapping_instantiation(instance):
+    assert isinstance(instance, ram_AttributeMapping)
 
-@given(instance=ram::AttributeMapping_strategy)
+@given(instance=ram_OperationMapping_strategy)
 @settings(max_examples=50)
-def test_ram::attributemapping_instantiation(instance):
-    assert isinstance(instance, ram::AttributeMapping)
+def test_ram_operationmapping_instantiation(instance):
+    assert isinstance(instance, ram_OperationMapping)
 
-@given(instance=ram::ParameterMapping_strategy)
+@given(instance=ram_ParameterMapping_strategy)
 @settings(max_examples=50)
-def test_ram::parametermapping_instantiation(instance):
-    assert isinstance(instance, ram::ParameterMapping)
+def test_ram_parametermapping_instantiation(instance):
+    assert isinstance(instance, ram_ParameterMapping)
 
-@given(instance=ram::ElementMap_strategy)
+@given(instance=ram_ElementMap_strategy)
 @settings(max_examples=50)
-def test_ram::elementmap_instantiation(instance):
-    assert isinstance(instance, ram::ElementMap)
+def test_ram_elementmap_instantiation(instance):
+    assert isinstance(instance, ram_ElementMap)
 
-@given(instance=ram::EObject_strategy)
+@given(instance=ram_EObject_strategy)
 @settings(max_examples=50)
-def test_ram::eobject_instantiation(instance):
-    assert isinstance(instance, ram::EObject)
+def test_ram_eobject_instantiation(instance):
+    assert isinstance(instance, ram_EObject)
 
-@given(instance=ram::ContainerMap_strategy)
+@given(instance=ram_ContainerMap_strategy)
 @settings(max_examples=50)
-def test_ram::containermap_instantiation(instance):
-    assert isinstance(instance, ram::ContainerMap)
+def test_ram_containermap_instantiation(instance):
+    assert isinstance(instance, ram_ContainerMap)
 
 @given(instance=RCollection_strategy)
 @settings(max_examples=50)
 def test_rcollection_instantiation(instance):
     assert isinstance(instance, RCollection)
 
-@given(instance=ram::RSequence_strategy)
+@given(instance=ram_RSequence_strategy)
 @settings(max_examples=50)
-def test_ram::rsequence_instantiation(instance):
-    assert isinstance(instance, ram::RSequence)
+def test_ram_rsequence_instantiation(instance):
+    assert isinstance(instance, ram_RSequence)
 
-@given(instance=ram::RSet_strategy)
+@given(instance=ram_RSet_strategy)
 @settings(max_examples=50)
-def test_ram::rset_instantiation(instance):
-    assert isinstance(instance, ram::RSet)
+def test_ram_rset_instantiation(instance):
+    assert isinstance(instance, ram_RSet)
 
 @given(instance=LiteralSpecification_strategy)
 @settings(max_examples=50)
 def test_literalspecification_instantiation(instance):
     assert isinstance(instance, LiteralSpecification)
 
-@given(instance=ram::LiteralInteger_strategy)
+@given(instance=ram_LiteralInteger_strategy)
 @settings(max_examples=50)
-def test_ram::literalinteger_instantiation(instance):
-    assert isinstance(instance, ram::LiteralInteger)
-
-@given(instance=ram::LiteralInteger_strategy)
-def test_ram::literalinteger_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_ram_literalinteger_instantiation(instance):
+    assert isinstance(instance, ram_LiteralInteger)
 
 
-@given(instance=ram::LiteralInteger_strategy)
-def test_ram::literalinteger_value_setter(instance):
+
+@given(instance=ram_LiteralInteger_strategy)
+def test_ram_literalinteger_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ram::LiteralBoolean_strategy)
+@given(instance=ram_LiteralBoolean_strategy)
 @settings(max_examples=50)
-def test_ram::literalboolean_instantiation(instance):
-    assert isinstance(instance, ram::LiteralBoolean)
-
-@given(instance=ram::LiteralBoolean_strategy)
-def test_ram::literalboolean_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_ram_literalboolean_instantiation(instance):
+    assert isinstance(instance, ram_LiteralBoolean)
 
 
-@given(instance=ram::LiteralBoolean_strategy)
-def test_ram::literalboolean_value_setter(instance):
+
+@given(instance=ram_LiteralBoolean_strategy)
+def test_ram_literalboolean_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ram::LiteralString_strategy)
+@given(instance=ram_LiteralString_strategy)
 @settings(max_examples=50)
-def test_ram::literalstring_instantiation(instance):
-    assert isinstance(instance, ram::LiteralString)
-
-@given(instance=ram::LiteralString_strategy)
-def test_ram::literalstring_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ram_literalstring_instantiation(instance):
+    assert isinstance(instance, ram_LiteralString)
 
 
-@given(instance=ram::LiteralString_strategy)
-def test_ram::literalstring_value_setter(instance):
+
+@given(instance=ram_LiteralString_strategy)
+def test_ram_literalstring_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ram::LayoutElement_strategy)
+@given(instance=ram_LayoutElement_strategy)
 @settings(max_examples=50)
-def test_ram::layoutelement_instantiation(instance):
-    assert isinstance(instance, ram::LayoutElement)
-
-@given(instance=ram::LayoutElement_strategy)
-def test_ram::layoutelement_x_type(instance):
-    assert isinstance(instance.x, float)
+def test_ram_layoutelement_instantiation(instance):
+    assert isinstance(instance, ram_LayoutElement)
 
 
-@given(instance=ram::LayoutElement_strategy)
-def test_ram::layoutelement_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
-@given(instance=ram::LayoutElement_strategy)
-def test_ram::layoutelement_y_type(instance):
-    assert isinstance(instance.y, float)
-
-
-@given(instance=ram::LayoutElement_strategy)
-def test_ram::layoutelement_y_setter(instance):
+@given(instance=ram_LayoutElement_strategy)
+def test_ram_layoutelement_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=ram::FragmentContainer_strategy)
+
+
+@given(instance=ram_LayoutElement_strategy)
+def test_ram_layoutelement_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=ram_FragmentContainer_strategy)
 @settings(max_examples=50)
-def test_ram::fragmentcontainer_instantiation(instance):
-    assert isinstance(instance, ram::FragmentContainer)
+def test_ram_fragmentcontainer_instantiation(instance):
+    assert isinstance(instance, ram_FragmentContainer)
 
 @given(instance=ValueSpecification_strategy)
 @settings(max_examples=50)
 def test_valuespecification_instantiation(instance):
     assert isinstance(instance, ValueSpecification)
 
-@given(instance=ram::OpaqueExpression_strategy)
+@given(instance=ram_LiteralSpecification_strategy)
 @settings(max_examples=50)
-def test_ram::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, ram::OpaqueExpression)
+def test_ram_literalspecification_instantiation(instance):
+    assert isinstance(instance, ram_LiteralSpecification)
 
-@given(instance=ram::OpaqueExpression_strategy)
-def test_ram::opaqueexpression_language_type(instance):
-    assert isinstance(instance.language, str)
+@given(instance=ram_OpaqueExpression_strategy)
+@settings(max_examples=50)
+def test_ram_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, ram_OpaqueExpression)
 
 
-@given(instance=ram::OpaqueExpression_strategy)
-def test_ram::opaqueexpression_language_setter(instance):
+
+@given(instance=ram_OpaqueExpression_strategy)
+def test_ram_opaqueexpression_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=ram::OpaqueExpression_strategy)
-def test_ram::opaqueexpression_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
-@given(instance=ram::OpaqueExpression_strategy)
-def test_ram::opaqueexpression_body_setter(instance):
+@given(instance=ram_OpaqueExpression_strategy)
+def test_ram_opaqueexpression_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=ram::LiteralSpecification_strategy)
+@given(instance=ram_ParameterValue_strategy)
 @settings(max_examples=50)
-def test_ram::literalspecification_instantiation(instance):
-    assert isinstance(instance, ram::LiteralSpecification)
+def test_ram_parametervalue_instantiation(instance):
+    assert isinstance(instance, ram_ParameterValue)
 
-@given(instance=ram::ParameterValue_strategy)
+@given(instance=ram_StructuralFeatureValue_strategy)
 @settings(max_examples=50)
-def test_ram::parametervalue_instantiation(instance):
-    assert isinstance(instance, ram::ParameterValue)
+def test_ram_structuralfeaturevalue_instantiation(instance):
+    assert isinstance(instance, ram_StructuralFeatureValue)
 
-@given(instance=ram::StructuralFeatureValue_strategy)
+@given(instance=ram_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_ram::structuralfeaturevalue_instantiation(instance):
-    assert isinstance(instance, ram::StructuralFeatureValue)
+def test_ram_valuespecification_instantiation(instance):
+    assert isinstance(instance, ram_ValueSpecification)
 
-@given(instance=ram::ValueSpecification_strategy)
+@given(instance=ram_ParameterValueMapping_strategy)
 @settings(max_examples=50)
-def test_ram::valuespecification_instantiation(instance):
-    assert isinstance(instance, ram::ValueSpecification)
+def test_ram_parametervaluemapping_instantiation(instance):
+    assert isinstance(instance, ram_ParameterValueMapping)
 
-@given(instance=ram::ParameterValueMapping_strategy)
+@given(instance=ram_MessageEnd_strategy)
 @settings(max_examples=50)
-def test_ram::parametervaluemapping_instantiation(instance):
-    assert isinstance(instance, ram::ParameterValueMapping)
-
-@given(instance=ram::MessageEnd_strategy)
-@settings(max_examples=50)
-def test_ram::messageend_instantiation(instance):
-    assert isinstance(instance, ram::MessageEnd)
+def test_ram_messageend_instantiation(instance):
+    assert isinstance(instance, ram_MessageEnd)
 
 @given(instance=MessageOccurrenceSpecification_strategy)
 @settings(max_examples=50)
 def test_messageoccurrencespecification_instantiation(instance):
     assert isinstance(instance, MessageOccurrenceSpecification)
 
-@given(instance=ram::DestructionOccurrenceSpecification_strategy)
+@given(instance=ram_DestructionOccurrenceSpecification_strategy)
 @settings(max_examples=50)
-def test_ram::destructionoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, ram::DestructionOccurrenceSpecification)
+def test_ram_destructionoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, ram_DestructionOccurrenceSpecification)
 
-@given(instance=ram::InteractionFragment_strategy)
+@given(instance=ram_InteractionFragment_strategy)
 @settings(max_examples=50)
-def test_ram::interactionfragment_instantiation(instance):
-    assert isinstance(instance, ram::InteractionFragment)
+def test_ram_interactionfragment_instantiation(instance):
+    assert isinstance(instance, ram_InteractionFragment)
 
 @given(instance=InteractionFragment_strategy)
 @settings(max_examples=50)
 def test_interactionfragment_instantiation(instance):
     assert isinstance(instance, InteractionFragment)
 
-@given(instance=ram::OriginalBehaviorExecution_strategy)
+@given(instance=ram_OriginalBehaviorExecution_strategy)
 @settings(max_examples=50)
-def test_ram::originalbehaviorexecution_instantiation(instance):
-    assert isinstance(instance, ram::OriginalBehaviorExecution)
+def test_ram_originalbehaviorexecution_instantiation(instance):
+    assert isinstance(instance, ram_OriginalBehaviorExecution)
 
-@given(instance=ram::ExecutionStatement_strategy)
+@given(instance=ram_CombinedFragment_strategy)
 @settings(max_examples=50)
-def test_ram::executionstatement_instantiation(instance):
-    assert isinstance(instance, ram::ExecutionStatement)
-
-@given(instance=ram::CombinedFragment_strategy)
-@settings(max_examples=50)
-def test_ram::combinedfragment_instantiation(instance):
-    assert isinstance(instance, ram::CombinedFragment)
-
-@given(instance=ram::CombinedFragment_strategy)
-def test_ram::combinedfragment_interactionOperator_type(instance):
-    assert isinstance(instance.interactionOperator, str)
+def test_ram_combinedfragment_instantiation(instance):
+    assert isinstance(instance, ram_CombinedFragment)
 
 
-@given(instance=ram::CombinedFragment_strategy)
-def test_ram::combinedfragment_interactionOperator_setter(instance):
+
+@given(instance=ram_CombinedFragment_strategy)
+def test_ram_combinedfragment_interactionOperator_setter(instance):
     original = instance.interactionOperator
     instance.interactionOperator = original
     assert instance.interactionOperator == original
 
-@given(instance=ram::OccurrenceSpecification_strategy)
+@given(instance=ram_ExecutionStatement_strategy)
 @settings(max_examples=50)
-def test_ram::occurrencespecification_instantiation(instance):
-    assert isinstance(instance, ram::OccurrenceSpecification)
+def test_ram_executionstatement_instantiation(instance):
+    assert isinstance(instance, ram_ExecutionStatement)
+
+@given(instance=ram_OccurrenceSpecification_strategy)
+@settings(max_examples=50)
+def test_ram_occurrencespecification_instantiation(instance):
+    assert isinstance(instance, ram_OccurrenceSpecification)
 
 @given(instance=MessageEnd_strategy)
 @settings(max_examples=50)
@@ -2562,153 +2538,144 @@ def test_messageend_instantiation(instance):
 def test_occurrencespecification_instantiation(instance):
     assert isinstance(instance, OccurrenceSpecification)
 
-@given(instance=ram::MessageOccurrenceSpecification_strategy)
+@given(instance=ram_MessageOccurrenceSpecification_strategy)
 @settings(max_examples=50)
-def test_ram::messageoccurrencespecification_instantiation(instance):
-    assert isinstance(instance, ram::MessageOccurrenceSpecification)
+def test_ram_messageoccurrencespecification_instantiation(instance):
+    assert isinstance(instance, ram_MessageOccurrenceSpecification)
 
-@given(instance=ram::Message_strategy)
+@given(instance=ram_Message_strategy)
 @settings(max_examples=50)
-def test_ram::message_instantiation(instance):
-    assert isinstance(instance, ram::Message)
-
-@given(instance=ram::Message_strategy)
-def test_ram::message_selfMessage_type(instance):
-    assert isinstance(instance.selfMessage, bool)
+def test_ram_message_instantiation(instance):
+    assert isinstance(instance, ram_Message)
 
 
-@given(instance=ram::Message_strategy)
-def test_ram::message_selfMessage_setter(instance):
+
+@given(instance=ram_Message_strategy)
+def test_ram_message_selfMessage_setter(instance):
     original = instance.selfMessage
     instance.selfMessage = original
     assert instance.selfMessage == original
 
-@given(instance=ram::Message_strategy)
-def test_ram::message_messageSort_type(instance):
-    assert isinstance(instance.messageSort, str)
 
 
-@given(instance=ram::Message_strategy)
-def test_ram::message_messageSort_setter(instance):
+@given(instance=ram_Message_strategy)
+def test_ram_message_messageSort_setter(instance):
     original = instance.messageSort
     instance.messageSort = original
     assert instance.messageSort == original
 
-@given(instance=ram::Lifeline_strategy)
+@given(instance=ram_Lifeline_strategy)
 @settings(max_examples=50)
-def test_ram::lifeline_instantiation(instance):
-    assert isinstance(instance, ram::Lifeline)
+def test_ram_lifeline_instantiation(instance):
+    assert isinstance(instance, ram_Lifeline)
 
 @given(instance=FragmentContainer_strategy)
 @settings(max_examples=50)
 def test_fragmentcontainer_instantiation(instance):
     assert isinstance(instance, FragmentContainer)
 
-@given(instance=ram::InteractionOperand_strategy)
+@given(instance=ram_InteractionOperand_strategy)
 @settings(max_examples=50)
-def test_ram::interactionoperand_instantiation(instance):
-    assert isinstance(instance, ram::InteractionOperand)
+def test_ram_interactionoperand_instantiation(instance):
+    assert isinstance(instance, ram_InteractionOperand)
 
-@given(instance=ram::Interaction_strategy)
+@given(instance=ram_Interaction_strategy)
 @settings(max_examples=50)
-def test_ram::interaction_instantiation(instance):
-    assert isinstance(instance, ram::Interaction)
+def test_ram_interaction_instantiation(instance):
+    assert isinstance(instance, ram_Interaction)
 
 @given(instance=AbstractMessageView_strategy)
 @settings(max_examples=50)
 def test_abstractmessageview_instantiation(instance):
     assert isinstance(instance, AbstractMessageView)
 
-@given(instance=ram::MessageViewReference_strategy)
+@given(instance=ram_MessageViewReference_strategy)
 @settings(max_examples=50)
-def test_ram::messageviewreference_instantiation(instance):
-    assert isinstance(instance, ram::MessageViewReference)
+def test_ram_messageviewreference_instantiation(instance):
+    assert isinstance(instance, ram_MessageViewReference)
 
-@given(instance=ram::MessageView_strategy)
+@given(instance=ram_MessageView_strategy)
 @settings(max_examples=50)
-def test_ram::messageview_instantiation(instance):
-    assert isinstance(instance, ram::MessageView)
+def test_ram_messageview_instantiation(instance):
+    assert isinstance(instance, ram_MessageView)
 
-@given(instance=ram::TemporaryProperty_strategy)
+@given(instance=ram_TemporaryProperty_strategy)
 @settings(max_examples=50)
-def test_ram::temporaryproperty_instantiation(instance):
-    assert isinstance(instance, ram::TemporaryProperty)
+def test_ram_temporaryproperty_instantiation(instance):
+    assert isinstance(instance, ram_TemporaryProperty)
 
 @given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=ram::RArray_strategy)
+@given(instance=ram_RArray_strategy)
 @settings(max_examples=50)
-def test_ram::rarray_instantiation(instance):
-    assert isinstance(instance, ram::RArray)
-
-@given(instance=ram::RArray_strategy)
-def test_ram::rarray_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_ram_rarray_instantiation(instance):
+    assert isinstance(instance, ram_RArray)
 
 
-@given(instance=ram::RArray_strategy)
-def test_ram::rarray_size_setter(instance):
+
+@given(instance=ram_RArray_strategy)
+def test_ram_rarray_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=ram::RLong_strategy)
+@given(instance=ram_RLong_strategy)
 @settings(max_examples=50)
-def test_ram::rlong_instantiation(instance):
-    assert isinstance(instance, ram::RLong)
+def test_ram_rlong_instantiation(instance):
+    assert isinstance(instance, ram_RLong)
 
-@given(instance=ram::RChar_strategy)
+@given(instance=ram_RChar_strategy)
 @settings(max_examples=50)
-def test_ram::rchar_instantiation(instance):
-    assert isinstance(instance, ram::RChar)
+def test_ram_rchar_instantiation(instance):
+    assert isinstance(instance, ram_RChar)
 
-@given(instance=ram::RInt_strategy)
+@given(instance=ram_RDouble_strategy)
 @settings(max_examples=50)
-def test_ram::rint_instantiation(instance):
-    assert isinstance(instance, ram::RInt)
+def test_ram_rdouble_instantiation(instance):
+    assert isinstance(instance, ram_RDouble)
 
-@given(instance=ram::RFloat_strategy)
+@given(instance=ram_RInt_strategy)
 @settings(max_examples=50)
-def test_ram::rfloat_instantiation(instance):
-    assert isinstance(instance, ram::RFloat)
+def test_ram_rint_instantiation(instance):
+    assert isinstance(instance, ram_RInt)
 
-@given(instance=ram::RDouble_strategy)
+@given(instance=ram_RFloat_strategy)
 @settings(max_examples=50)
-def test_ram::rdouble_instantiation(instance):
-    assert isinstance(instance, ram::RDouble)
+def test_ram_rfloat_instantiation(instance):
+    assert isinstance(instance, ram_RFloat)
 
-@given(instance=ram::RBoolean_strategy)
+@given(instance=ram_RBoolean_strategy)
 @settings(max_examples=50)
-def test_ram::rboolean_instantiation(instance):
-    assert isinstance(instance, ram::RBoolean)
+def test_ram_rboolean_instantiation(instance):
+    assert isinstance(instance, ram_RBoolean)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=ram::RVoid_strategy)
+@given(instance=ram_RVoid_strategy)
 @settings(max_examples=50)
-def test_ram::rvoid_instantiation(instance):
-    assert isinstance(instance, ram::RVoid)
+def test_ram_rvoid_instantiation(instance):
+    assert isinstance(instance, ram_RVoid)
 
-@given(instance=ram::TypeParameter_strategy)
+@given(instance=ram_TypeParameter_strategy)
 @settings(max_examples=50)
-def test_ram::typeparameter_instantiation(instance):
-    assert isinstance(instance, ram::TypeParameter)
+def test_ram_typeparameter_instantiation(instance):
+    assert isinstance(instance, ram_TypeParameter)
 
 @given(instance=ImplementationClass_strategy)
 @settings(max_examples=50)
 def test_implementationclass_instantiation(instance):
     assert isinstance(instance, ImplementationClass)
 
-@given(instance=ram::RCollection_strategy)
+@given(instance=ram_RCollection_strategy)
 @settings(max_examples=50)
-def test_ram::rcollection_instantiation(instance):
-    assert isinstance(instance, ram::RCollection)
+def test_ram_rcollection_instantiation(instance):
+    assert isinstance(instance, ram_RCollection)
 
 @given(instance=ObjectType_strategy)
 @settings(max_examples=50)
@@ -2720,64 +2687,58 @@ def test_objecttype_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=ram::StructuralFeature_strategy)
+@given(instance=ram_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_ram::structuralfeature_instantiation(instance):
-    assert isinstance(instance, ram::StructuralFeature)
-
-@given(instance=ram::StructuralFeature_strategy)
-def test_ram::structuralfeature_static_type(instance):
-    assert isinstance(instance.static, bool)
+def test_ram_structuralfeature_instantiation(instance):
+    assert isinstance(instance, ram_StructuralFeature)
 
 
-@given(instance=ram::StructuralFeature_strategy)
-def test_ram::structuralfeature_static_setter(instance):
+
+@given(instance=ram_StructuralFeature_strategy)
+def test_ram_structuralfeature_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=ram::PrimitiveType_strategy)
+@given(instance=ram_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ram::primitivetype_instantiation(instance):
-    assert isinstance(instance, ram::PrimitiveType)
+def test_ram_primitivetype_instantiation(instance):
+    assert isinstance(instance, ram_PrimitiveType)
 
-@given(instance=ram::REnum_strategy)
+@given(instance=ram_REnum_strategy)
 @settings(max_examples=50)
-def test_ram::renum_instantiation(instance):
-    assert isinstance(instance, ram::REnum)
+def test_ram_renum_instantiation(instance):
+    assert isinstance(instance, ram_REnum)
 
-@given(instance=ram::RAny_strategy)
+@given(instance=ram_RAny_strategy)
 @settings(max_examples=50)
-def test_ram::rany_instantiation(instance):
-    assert isinstance(instance, ram::RAny)
+def test_ram_rany_instantiation(instance):
+    assert isinstance(instance, ram_RAny)
 
-@given(instance=ram::RString_strategy)
+@given(instance=ram_RString_strategy)
 @settings(max_examples=50)
-def test_ram::rstring_instantiation(instance):
-    assert isinstance(instance, ram::RString)
+def test_ram_rstring_instantiation(instance):
+    assert isinstance(instance, ram_RString)
 
-@given(instance=ram::Mapping_strategy)
+@given(instance=ram_Mapping_strategy)
 @settings(max_examples=50)
-def test_ram::mapping_instantiation(instance):
-    assert isinstance(instance, ram::Mapping)
+def test_ram_mapping_instantiation(instance):
+    assert isinstance(instance, ram_Mapping)
 
-@given(instance=ram::ClassifierMapping_strategy)
+@given(instance=ram_ClassifierMapping_strategy)
 @settings(max_examples=50)
-def test_ram::classifiermapping_instantiation(instance):
-    assert isinstance(instance, ram::ClassifierMapping)
+def test_ram_classifiermapping_instantiation(instance):
+    assert isinstance(instance, ram_ClassifierMapping)
 
-@given(instance=ram::NamedElement_strategy)
+@given(instance=ram_NamedElement_strategy)
 @settings(max_examples=50)
-def test_ram::namedelement_instantiation(instance):
-    assert isinstance(instance, ram::NamedElement)
-
-@given(instance=ram::NamedElement_strategy)
-def test_ram::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ram_namedelement_instantiation(instance):
+    assert isinstance(instance, ram_NamedElement)
 
 
-@given(instance=ram::NamedElement_strategy)
-def test_ram::namedelement_name_setter(instance):
+
+@given(instance=ram_NamedElement_strategy)
+def test_ram_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2792,290 +2753,251 @@ def test_temporaryproperty_instantiation(instance):
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=ram::Property_strategy)
+@given(instance=ram_Property_strategy)
 @settings(max_examples=50)
-def test_ram::property_instantiation(instance):
-    assert isinstance(instance, ram::Property)
-
-@given(instance=ram::Property_strategy)
-def test_ram::property_referenceType_type(instance):
-    assert isinstance(instance.referenceType, str)
+def test_ram_property_instantiation(instance):
+    assert isinstance(instance, ram_Property)
 
 
-@given(instance=ram::Property_strategy)
-def test_ram::property_referenceType_setter(instance):
-    original = instance.referenceType
-    instance.referenceType = original
-    assert instance.referenceType == original
 
-@given(instance=ram::Property_strategy)
-def test_ram::property_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
-
-
-@given(instance=ram::Property_strategy)
-def test_ram::property_lowerBound_setter(instance):
+@given(instance=ram_Property_strategy)
+def test_ram_property_lowerBound_setter(instance):
     original = instance.lowerBound
     instance.lowerBound = original
     assert instance.lowerBound == original
 
-@given(instance=ram::Property_strategy)
-def test_ram::property_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
 
 
-@given(instance=ram::Property_strategy)
-def test_ram::property_upperBound_setter(instance):
+@given(instance=ram_Property_strategy)
+def test_ram_property_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
+
+
+
+@given(instance=ram_Property_strategy)
+def test_ram_property_referenceType_setter(instance):
+    original = instance.referenceType
+    instance.referenceType = original
+    assert instance.referenceType == original
 
 @given(instance=MappableElement_strategy)
 @settings(max_examples=50)
 def test_mappableelement_instantiation(instance):
     assert isinstance(instance, MappableElement)
 
-@given(instance=ram::Parameter_strategy)
+@given(instance=ram_Parameter_strategy)
 @settings(max_examples=50)
-def test_ram::parameter_instantiation(instance):
-    assert isinstance(instance, ram::Parameter)
+def test_ram_parameter_instantiation(instance):
+    assert isinstance(instance, ram_Parameter)
 
-@given(instance=ram::ObjectType_strategy)
+@given(instance=ram_ObjectType_strategy)
 @settings(max_examples=50)
-def test_ram::objecttype_instantiation(instance):
-    assert isinstance(instance, ram::ObjectType)
+def test_ram_objecttype_instantiation(instance):
+    assert isinstance(instance, ram_ObjectType)
 
-@given(instance=ram::Classifier_strategy)
+@given(instance=ram_Classifier_strategy)
 @settings(max_examples=50)
-def test_ram::classifier_instantiation(instance):
-    assert isinstance(instance, ram::Classifier)
+def test_ram_classifier_instantiation(instance):
+    assert isinstance(instance, ram_Classifier)
 
-@given(instance=ram::Layout_strategy)
+@given(instance=ram_Layout_strategy)
 @settings(max_examples=50)
-def test_ram::layout_instantiation(instance):
-    assert isinstance(instance, ram::Layout)
+def test_ram_layout_instantiation(instance):
+    assert isinstance(instance, ram_Layout)
 
-@given(instance=ram::Instantiation_strategy)
+@given(instance=ram_Instantiation_strategy)
 @settings(max_examples=50)
-def test_ram::instantiation_instantiation(instance):
-    assert isinstance(instance, ram::Instantiation)
-
-@given(instance=ram::Instantiation_strategy)
-def test_ram::instantiation_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_ram_instantiation_instantiation(instance):
+    assert isinstance(instance, ram_Instantiation)
 
 
-@given(instance=ram::Instantiation_strategy)
-def test_ram::instantiation_type_setter(instance):
+
+@given(instance=ram_Instantiation_strategy)
+def test_ram_instantiation_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ram::AbstractMessageView_strategy)
+@given(instance=ram_AbstractMessageView_strategy)
 @settings(max_examples=50)
-def test_ram::abstractmessageview_instantiation(instance):
-    assert isinstance(instance, ram::AbstractMessageView)
+def test_ram_abstractmessageview_instantiation(instance):
+    assert isinstance(instance, ram_AbstractMessageView)
 
-@given(instance=ram::StructuralView_strategy)
+@given(instance=ram_StructuralView_strategy)
 @settings(max_examples=50)
-def test_ram::structuralview_instantiation(instance):
-    assert isinstance(instance, ram::StructuralView)
+def test_ram_structuralview_instantiation(instance):
+    assert isinstance(instance, ram_StructuralView)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ram::Type_strategy)
+@given(instance=ram_Association_strategy)
 @settings(max_examples=50)
-def test_ram::type_instantiation(instance):
-    assert isinstance(instance, ram::Type)
+def test_ram_association_instantiation(instance):
+    assert isinstance(instance, ram_Association)
 
-@given(instance=ram::Gate_strategy)
+@given(instance=ram_Type_strategy)
 @settings(max_examples=50)
-def test_ram::gate_instantiation(instance):
-    assert isinstance(instance, ram::Gate)
+def test_ram_type_instantiation(instance):
+    assert isinstance(instance, ram_Type)
 
-@given(instance=ram::State_strategy)
+@given(instance=ram_MappableElement_strategy)
 @settings(max_examples=50)
-def test_ram::state_instantiation(instance):
-    assert isinstance(instance, ram::State)
+def test_ram_mappableelement_instantiation(instance):
+    assert isinstance(instance, ram_MappableElement)
 
-@given(instance=ram::MappableElement_strategy)
+@given(instance=ram_StateView_strategy)
 @settings(max_examples=50)
-def test_ram::mappableelement_instantiation(instance):
-    assert isinstance(instance, ram::MappableElement)
+def test_ram_stateview_instantiation(instance):
+    assert isinstance(instance, ram_StateView)
 
-@given(instance=ram::TypedElement_strategy)
+@given(instance=ram_State_strategy)
 @settings(max_examples=50)
-def test_ram::typedelement_instantiation(instance):
-    assert isinstance(instance, ram::TypedElement)
+def test_ram_state_instantiation(instance):
+    assert isinstance(instance, ram_State)
 
-@given(instance=ram::AspectMessageView_strategy)
+@given(instance=ram_TypedElement_strategy)
 @settings(max_examples=50)
-def test_ram::aspectmessageview_instantiation(instance):
-    assert isinstance(instance, ram::AspectMessageView)
+def test_ram_typedelement_instantiation(instance):
+    assert isinstance(instance, ram_TypedElement)
 
-@given(instance=ram::StateView_strategy)
+@given(instance=ram_REnumLiteral_strategy)
 @settings(max_examples=50)
-def test_ram::stateview_instantiation(instance):
-    assert isinstance(instance, ram::StateView)
+def test_ram_renumliteral_instantiation(instance):
+    assert isinstance(instance, ram_REnumLiteral)
 
-@given(instance=ram::Operation_strategy)
+@given(instance=ram_Operation_strategy)
 @settings(max_examples=50)
-def test_ram::operation_instantiation(instance):
-    assert isinstance(instance, ram::Operation)
-
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+def test_ram_operation_instantiation(instance):
+    assert isinstance(instance, ram_Operation)
 
 
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_abstract_setter(instance):
+
+@given(instance=ram_Operation_strategy)
+def test_ram_operation_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
 
 
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_partial_type(instance):
-    assert isinstance(instance.partial, bool)
-
-
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_partial_setter(instance):
+@given(instance=ram_Operation_strategy)
+def test_ram_operation_partial_setter(instance):
     original = instance.partial
     instance.partial = original
     assert instance.partial == original
 
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_static_type(instance):
-    assert isinstance(instance.static, bool)
 
 
-@given(instance=ram::Operation_strategy)
-def test_ram::operation_static_setter(instance):
+@given(instance=ram_Operation_strategy)
+def test_ram_operation_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=ram::Transition_strategy)
-@settings(max_examples=50)
-def test_ram::transition_instantiation(instance):
-    assert isinstance(instance, ram::Transition)
 
-@given(instance=ram::REnumLiteral_strategy)
-@settings(max_examples=50)
-def test_ram::renumliteral_instantiation(instance):
-    assert isinstance(instance, ram::REnumLiteral)
 
-@given(instance=ram::Association_strategy)
-@settings(max_examples=50)
-def test_ram::association_instantiation(instance):
-    assert isinstance(instance, ram::Association)
+@given(instance=ram_Operation_strategy)
+def test_ram_operation_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
 
-@given(instance=ram::Aspect_strategy)
+@given(instance=ram_Transition_strategy)
 @settings(max_examples=50)
-def test_ram::aspect_instantiation(instance):
-    assert isinstance(instance, ram::Aspect)
+def test_ram_transition_instantiation(instance):
+    assert isinstance(instance, ram_Transition)
+
+@given(instance=ram_AspectMessageView_strategy)
+@settings(max_examples=50)
+def test_ram_aspectmessageview_instantiation(instance):
+    assert isinstance(instance, ram_AspectMessageView)
+
+@given(instance=ram_Gate_strategy)
+@settings(max_examples=50)
+def test_ram_gate_instantiation(instance):
+    assert isinstance(instance, ram_Gate)
+
+@given(instance=ram_Aspect_strategy)
+@settings(max_examples=50)
+def test_ram_aspect_instantiation(instance):
+    assert isinstance(instance, ram_Aspect)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=ram::Reference_strategy)
+@given(instance=ram_Reference_strategy)
 @settings(max_examples=50)
-def test_ram::reference_instantiation(instance):
-    assert isinstance(instance, ram::Reference)
+def test_ram_reference_instantiation(instance):
+    assert isinstance(instance, ram_Reference)
 
-@given(instance=ram::AssociationEnd_strategy)
+@given(instance=ram_AssociationEnd_strategy)
 @settings(max_examples=50)
-def test_ram::associationend_instantiation(instance):
-    assert isinstance(instance, ram::AssociationEnd)
-
-@given(instance=ram::AssociationEnd_strategy)
-def test_ram::associationend_navigable_type(instance):
-    assert isinstance(instance.navigable, bool)
+def test_ram_associationend_instantiation(instance):
+    assert isinstance(instance, ram_AssociationEnd)
 
 
-@given(instance=ram::AssociationEnd_strategy)
-def test_ram::associationend_navigable_setter(instance):
+
+@given(instance=ram_AssociationEnd_strategy)
+def test_ram_associationend_navigable_setter(instance):
     original = instance.navigable
     instance.navigable = original
     assert instance.navigable == original
 
-@given(instance=ram::Attribute_strategy)
+@given(instance=ram_Attribute_strategy)
 @settings(max_examples=50)
-def test_ram::attribute_instantiation(instance):
-    assert isinstance(instance, ram::Attribute)
+def test_ram_attribute_instantiation(instance):
+    assert isinstance(instance, ram_Attribute)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=ram::ImplementationClass_strategy)
+@given(instance=ram_Class_strategy)
 @settings(max_examples=50)
-def test_ram::implementationclass_instantiation(instance):
-    assert isinstance(instance, ram::ImplementationClass)
-
-@given(instance=ram::ImplementationClass_strategy)
-def test_ram::implementationclass_instanceClassName_type(instance):
-    assert isinstance(instance.instanceClassName, str)
+def test_ram_class_instantiation(instance):
+    assert isinstance(instance, ram_Class)
 
 
-@given(instance=ram::ImplementationClass_strategy)
-def test_ram::implementationclass_instanceClassName_setter(instance):
-    original = instance.instanceClassName
-    instance.instanceClassName = original
-    assert instance.instanceClassName == original
 
-@given(instance=ram::ImplementationClass_strategy)
-def test_ram::implementationclass_interface_type(instance):
-    assert isinstance(instance.interface, bool)
+@given(instance=ram_Class_strategy)
+def test_ram_class_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
 
 
-@given(instance=ram::ImplementationClass_strategy)
-def test_ram::implementationclass_interface_setter(instance):
-    original = instance.interface
-    instance.interface = original
-    assert instance.interface == original
 
-@given(instance=ram::Class_strategy)
-@settings(max_examples=50)
-def test_ram::class_instantiation(instance):
-    assert isinstance(instance, ram::Class)
-
-@given(instance=ram::Class_strategy)
-def test_ram::class_partial_type(instance):
-    assert isinstance(instance.partial, bool)
-
-
-@given(instance=ram::Class_strategy)
-def test_ram::class_partial_setter(instance):
+@given(instance=ram_Class_strategy)
+def test_ram_class_partial_setter(instance):
     original = instance.partial
     instance.partial = original
     assert instance.partial == original
 
-@given(instance=ram::Class_strategy)
-def test_ram::class_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+@given(instance=ram_ImplementationClass_strategy)
+@settings(max_examples=50)
+def test_ram_implementationclass_instantiation(instance):
+    assert isinstance(instance, ram_ImplementationClass)
 
 
-@given(instance=ram::Class_strategy)
-def test_ram::class_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
+
+@given(instance=ram_ImplementationClass_strategy)
+def test_ram_implementationclass_interface_setter(instance):
+    original = instance.interface
+    instance.interface = original
+    assert instance.interface == original
+
+
+
+@given(instance=ram_ImplementationClass_strategy)
+def test_ram_implementationclass_instanceClassName_setter(instance):
+    original = instance.instanceClassName
+    instance.instanceClassName = original
+    assert instance.instanceClassName == original

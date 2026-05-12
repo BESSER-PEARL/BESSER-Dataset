@@ -3,514 +3,144 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    OrderedCollectionType,
-    eol::SequenceType,
-    CollectionType,
-    eol::BagType,
-    eol::EClassifier,
-    NameExpression,
-    eol::SpecialNameExpression,
-    Annotation,
-    eol::SimpleAnnotation,
-    eol::ExecutableAnnotation,
-    UniqueCollectionType,
-    eol::OrderedSetType,
-    eol::SetType,
-    PrimitiveType,
-    eol::StringType,
-    eol::RealType,
-    eol::IntegerType,
-    eol::BooleanType,
-    Type,
-    eol::PrimitiveType,
-    eol::MapType,
-    eol::ModelElementType,
-    eol::NativeType,
-    eol::CollectionType,
-    eol::AnyType,
+from python_code import (
     CollectionExpression,
-    eol::OrderedSetExpression,
-    eol::SequenceExpression,
-    eol::BagExpression,
-    eol::SetExpression,
+    eol_BagExpression,
+    eol_SequenceExpression,
+    eol_OrderedSetExpression,
+    eol_SetExpression,
     LiteralExpression,
-    eol::CollectionExpression,
-    eol::MapExpression,
-    eol::PrimitiveExpression,
+    eol_MapExpression,
+    eol_CollectionExpression,
+    eol_PrimitiveExpression,
     SwitchCaseStatement,
-    eol::EPackage,
-    eol::SwitchCaseDefaultStatement,
-    eol::SwitchCaseExpressionStatement,
+    eol_EPackage,
+    eol_SwitchCaseDefaultStatement,
+    eol_SwitchCaseExpressionStatement,
     Statement,
-    eol::ReturnStatement,
-    eol::ExpressionStatement,
-    eol::SwitchStatement,
-    eol::SwitchCaseStatement,
-    eol::WhileStatement,
-    eol::AssignmentStatement,
-    eol::IfStatement,
-    eol::UniqueCollectionType,
-    eol::OrderedCollectionType,
-    PseudoType,
-    eol::OperationArgType,
-    eol::SelfContentType,
-    eol::SelfInnermostType,
-    eol::SelfType,
-    eol::PseudoType,
-    eol::VoidType,
-    eol::EType,
-    eol::NativeExpression,
-    eol::ModelType,
-    AssignmentStatement,
-    eol::SpecialAssignmentStatement,
-    CollectionInitValue,
-    eol::ExpRange,
-    eol::ExprList,
-    VariableDeclarationExpression,
-    eol::FormalParameterExpression,
-    eol::TransactionStatement,
-    eol::AbortStatement,
-    eol::ThrowStatement,
-    eol::EObject,
-    FeatureCallExpression,
-    eol::FOLMethodCallExpression,
-    eol::MethodCallExpression,
-    EolElement,
-    eol::Annotation,
-    eol::ModelDeclarationParameter,
-    eol::KeyValue,
-    eol::CollectionInitValue,
-    eol::Block,
-    eol::OperationDefinition,
-    eol::Import,
-    eol::Program,
-    BinaryOperatorExpression,
-    eol::MultiplyOperatorExpression,
-    eol::LessThanOperatorExpression,
-    eol::GreaterThanOrEqualToOperatorExpression,
-    eol::ImpliesOperatorExpression,
-    eol::GreaterThanOperatorExpression,
-    eol::MinusOperatorExpression,
-    eol::LessThanOrEqualToOperatorExpression,
-    eol::AndOperatorExpression,
-    OperatorExpression,
-    eol::UnaryOperatorExpression,
-    eol::BinaryOperatorExpression,
-    Expression,
-    eol::NewExpression,
-    eol::LiteralExpression,
-    eol::OperatorExpression,
-    eol::Type,
-    eol::Expression,
-    eol::Statement,
-    eol::ModelDeclarationStatement,
-    eol::NameExpression,
-    eol::TextPosition,
-    eol::TextRegion,
-    eol::EolElement,
-    eol::ForStatement,
-    eol::DeleteStatement,
-    eol::ContinueStatement,
-    eol::BreakAllStatement,
-    eol::BreakStatement,
-    eol::PropertyCallExpression,
-    eol::PlusOperatorExpression,
-    eol::OrOperatorExpression,
-    eol::NotEqualsOperatorExpression,
+    eol_SwitchStatement,
+    eol_WhileStatement,
+    eol_SwitchCaseStatement,
+    eol_ReturnStatement,
+    eol_AssignmentStatement,
+    eol_IfStatement,
+    eol_ForStatement,
+    eol_DeleteStatement,
+    eol_ContinueStatement,
+    eol_BreakAllStatement,
+    eol_BreakStatement,
     UnaryOperatorExpression,
-    eol::NotOperatorExpression,
-    eol::NegativeOperatorExpression,
-    eol::AnnotationBlock,
-    eol::XorOperatorExpression,
-    eol::VariableDeclarationExpression,
-    eol::FeatureCallExpression,
-    eol::EqualsOperatorExpression,
-    eol::ModelExpression,
-    eol::EnumerationLiteralExpression,
-    eol::DivideOperatorExpression,
+    eol_NotOperatorExpression,
+    eol_NegativeOperatorExpression,
+    PseudoType,
+    eol_SelfInnermostType,
+    eol_OperationArgType,
+    eol_SelfContentType,
+    eol_SelfType,
+    eol_NativeExpression,
+    AssignmentStatement,
+    eol_SpecialAssignmentStatement,
+    CollectionInitValue,
+    eol_ExpRange,
+    eol_ExprList,
+    VariableDeclarationExpression,
+    eol_FormalParameterExpression,
+    eol_TransactionStatement,
+    eol_AbortStatement,
+    eol_ThrowStatement,
+    OrderedCollectionType,
+    eol_SequenceType,
+    CollectionType,
+    eol_UniqueCollectionType,
+    eol_OrderedCollectionType,
+    eol_BagType,
+    eol_EClassifier,
+    NameExpression,
+    eol_ModelExpression,
+    eol_SpecialNameExpression,
+    Annotation,
+    eol_SimpleAnnotation,
+    eol_ExecutableAnnotation,
+    eol_ExpressionStatement,
+    UniqueCollectionType,
+    eol_OrderedSetType,
+    eol_SetType,
+    PrimitiveType,
+    eol_IntegerType,
+    eol_StringType,
+    eol_RealType,
+    eol_BooleanType,
+    Type,
+    eol_CollectionType,
+    eol_ModelType,
+    eol_NativeType,
+    eol_MapType,
+    eol_EType,
+    eol_PseudoType,
+    eol_ModelElementType,
+    eol_VoidType,
+    eol_PrimitiveType,
+    eol_AnyType,
     PrimitiveExpression,
-    eol::BooleanExpression,
-    eol::StringExpression,
-    eol::IntegerExpression,
-    eol::RealExpression,
+    eol_RealExpression,
+    eol_BooleanExpression,
+    eol_EObject,
+    FeatureCallExpression,
+    eol_PropertyCallExpression,
+    eol_FOLMethodCallExpression,
+    eol_MethodCallExpression,
+    eol_IntegerExpression,
+    EolElement,
+    eol_AnnotationBlock,
+    eol_OperationDefinition,
+    eol_CollectionInitValue,
+    eol_ModelDeclarationParameter,
+    eol_Block,
+    eol_KeyValue,
+    eol_Import,
+    eol_Annotation,
+    eol_Program,
+    BinaryOperatorExpression,
+    eol_DivideOperatorExpression,
+    eol_XorOperatorExpression,
+    eol_NotEqualsOperatorExpression,
+    eol_GreaterThanOperatorExpression,
+    eol_ImpliesOperatorExpression,
+    eol_PlusOperatorExpression,
+    eol_LessThanOperatorExpression,
+    eol_MultiplyOperatorExpression,
+    eol_LessThanOrEqualToOperatorExpression,
+    eol_OrOperatorExpression,
+    eol_GreaterThanOrEqualToOperatorExpression,
+    eol_MinusOperatorExpression,
+    eol_EqualsOperatorExpression,
+    eol_AndOperatorExpression,
+    OperatorExpression,
+    eol_UnaryOperatorExpression,
+    eol_BinaryOperatorExpression,
+    Expression,
+    eol_NewExpression,
+    eol_FeatureCallExpression,
+    eol_EnumerationLiteralExpression,
+    eol_LiteralExpression,
+    eol_VariableDeclarationExpression,
+    eol_OperatorExpression,
+    eol_Type,
+    eol_Expression,
+    eol_Statement,
+    eol_StringExpression,
+    eol_ModelDeclarationStatement,
+    eol_NameExpression,
+    eol_TextPosition,
+    eol_TextRegion,
+    eol_EolElement,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_orderedcollectiontype_is_not_abstract():
-    assert not inspect.isabstract(OrderedCollectionType)
-
-
-def test_orderedcollectiontype_constructor_exists():
-    assert callable(OrderedCollectionType.__init__)
-
-
-def test_orderedcollectiontype_constructor_args():
-    sig = inspect.signature(OrderedCollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(eol::SequenceType)
-
-
-def test_eol::sequencetype_constructor_exists():
-    assert callable(eol::SequenceType.__init__)
-
-
-def test_eol::sequencetype_constructor_args():
-    sig = inspect.signature(eol::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectiontype_is_not_abstract():
-    assert not inspect.isabstract(CollectionType)
-
-
-def test_collectiontype_constructor_exists():
-    assert callable(CollectionType.__init__)
-
-
-def test_collectiontype_constructor_args():
-    sig = inspect.signature(CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::bagtype_is_not_abstract():
-    assert not inspect.isabstract(eol::BagType)
-
-
-def test_eol::bagtype_constructor_exists():
-    assert callable(eol::BagType.__init__)
-
-
-def test_eol::bagtype_constructor_args():
-    sig = inspect.signature(eol::BagType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(eol::EClassifier)
-
-
-def test_eol::eclassifier_constructor_exists():
-    assert callable(eol::EClassifier.__init__)
-
-
-def test_eol::eclassifier_constructor_args():
-    sig = inspect.signature(eol::EClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_nameexpression_is_not_abstract():
-    assert not inspect.isabstract(NameExpression)
-
-
-def test_nameexpression_constructor_exists():
-    assert callable(NameExpression.__init__)
-
-
-def test_nameexpression_constructor_args():
-    sig = inspect.signature(NameExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::specialnameexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::SpecialNameExpression)
-
-
-def test_eol::specialnameexpression_constructor_exists():
-    assert callable(eol::SpecialNameExpression.__init__)
-
-
-def test_eol::specialnameexpression_constructor_args():
-    sig = inspect.signature(eol::SpecialNameExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotation_is_not_abstract():
-    assert not inspect.isabstract(Annotation)
-
-
-def test_annotation_constructor_exists():
-    assert callable(Annotation.__init__)
-
-
-def test_annotation_constructor_args():
-    sig = inspect.signature(Annotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::simpleannotation_is_not_abstract():
-    assert not inspect.isabstract(eol::SimpleAnnotation)
-
-
-def test_eol::simpleannotation_constructor_exists():
-    assert callable(eol::SimpleAnnotation.__init__)
-
-
-def test_eol::simpleannotation_constructor_args():
-    sig = inspect.signature(eol::SimpleAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::executableannotation_is_not_abstract():
-    assert not inspect.isabstract(eol::ExecutableAnnotation)
-
-
-def test_eol::executableannotation_constructor_exists():
-    assert callable(eol::ExecutableAnnotation.__init__)
-
-
-def test_eol::executableannotation_constructor_args():
-    sig = inspect.signature(eol::ExecutableAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uniquecollectiontype_is_not_abstract():
-    assert not inspect.isabstract(UniqueCollectionType)
-
-
-def test_uniquecollectiontype_constructor_exists():
-    assert callable(UniqueCollectionType.__init__)
-
-
-def test_uniquecollectiontype_constructor_args():
-    sig = inspect.signature(UniqueCollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(eol::OrderedSetType)
-
-
-def test_eol::orderedsettype_constructor_exists():
-    assert callable(eol::OrderedSetType.__init__)
-
-
-def test_eol::orderedsettype_constructor_args():
-    sig = inspect.signature(eol::OrderedSetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::settype_is_not_abstract():
-    assert not inspect.isabstract(eol::SetType)
-
-
-def test_eol::settype_constructor_exists():
-    assert callable(eol::SetType.__init__)
-
-
-def test_eol::settype_constructor_args():
-    sig = inspect.signature(eol::SetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitivetype_is_not_abstract():
-    assert not inspect.isabstract(PrimitiveType)
-
-
-def test_primitivetype_constructor_exists():
-    assert callable(PrimitiveType.__init__)
-
-
-def test_primitivetype_constructor_args():
-    sig = inspect.signature(PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::stringtype_is_not_abstract():
-    assert not inspect.isabstract(eol::StringType)
-
-
-def test_eol::stringtype_constructor_exists():
-    assert callable(eol::StringType.__init__)
-
-
-def test_eol::stringtype_constructor_args():
-    sig = inspect.signature(eol::StringType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::realtype_is_not_abstract():
-    assert not inspect.isabstract(eol::RealType)
-
-
-def test_eol::realtype_constructor_exists():
-    assert callable(eol::RealType.__init__)
-
-
-def test_eol::realtype_constructor_args():
-    sig = inspect.signature(eol::RealType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::integertype_is_not_abstract():
-    assert not inspect.isabstract(eol::IntegerType)
-
-
-def test_eol::integertype_constructor_exists():
-    assert callable(eol::IntegerType.__init__)
-
-
-def test_eol::integertype_constructor_args():
-    sig = inspect.signature(eol::IntegerType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::booleantype_is_not_abstract():
-    assert not inspect.isabstract(eol::BooleanType)
-
-
-def test_eol::booleantype_constructor_exists():
-    assert callable(eol::BooleanType.__init__)
-
-
-def test_eol::booleantype_constructor_args():
-    sig = inspect.signature(eol::BooleanType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(Type)
-
-
-def test_type_constructor_exists():
-    assert callable(Type.__init__)
-
-
-def test_type_constructor_args():
-    sig = inspect.signature(Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(eol::PrimitiveType)
-
-
-def test_eol::primitivetype_constructor_exists():
-    assert callable(eol::PrimitiveType.__init__)
-
-
-def test_eol::primitivetype_constructor_args():
-    sig = inspect.signature(eol::PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::maptype_is_not_abstract():
-    assert not inspect.isabstract(eol::MapType)
-
-
-def test_eol::maptype_constructor_exists():
-    assert callable(eol::MapType.__init__)
-
-
-def test_eol::maptype_constructor_args():
-    sig = inspect.signature(eol::MapType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::modelelementtype_is_not_abstract():
-    assert not inspect.isabstract(eol::ModelElementType)
-
-
-def test_eol::modelelementtype_constructor_exists():
-    assert callable(eol::ModelElementType.__init__)
-
-
-def test_eol::modelelementtype_constructor_args():
-    sig = inspect.signature(eol::ModelElementType.__init__)
-    params = list(sig.parameters.keys())
-    assert "modelName" in params, "Missing parameter 'modelName'"
-    assert "elementName" in params, "Missing parameter 'elementName'"
-
-def test_eol::modelelementtype_has_modelName():
-    assert hasattr(eol::ModelElementType, "modelName")
-    descriptor = None
-    for klass in eol::ModelElementType.__mro__:
-        if "modelName" in klass.__dict__:
-            descriptor = klass.__dict__["modelName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_eol::modelelementtype_has_elementName():
-    assert hasattr(eol::ModelElementType, "elementName")
-    descriptor = None
-    for klass in eol::ModelElementType.__mro__:
-        if "elementName" in klass.__dict__:
-            descriptor = klass.__dict__["elementName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_eol::nativetype_is_not_abstract():
-    assert not inspect.isabstract(eol::NativeType)
-
-
-def test_eol::nativetype_constructor_exists():
-    assert callable(eol::NativeType.__init__)
-
-
-def test_eol::nativetype_constructor_args():
-    sig = inspect.signature(eol::NativeType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(eol::CollectionType)
-
-
-def test_eol::collectiontype_constructor_exists():
-    assert callable(eol::CollectionType.__init__)
-
-
-def test_eol::collectiontype_constructor_args():
-    sig = inspect.signature(eol::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::anytype_is_not_abstract():
-    assert not inspect.isabstract(eol::AnyType)
-
-
-def test_eol::anytype_constructor_exists():
-    assert callable(eol::AnyType.__init__)
-
-
-def test_eol::anytype_constructor_args():
-    sig = inspect.signature(eol::AnyType.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -528,58 +158,58 @@ def test_collectionexpression_constructor_args():
 
 
 
-def test_eol::orderedsetexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::OrderedSetExpression)
+def test_eol_bagexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_BagExpression)
 
 
-def test_eol::orderedsetexpression_constructor_exists():
-    assert callable(eol::OrderedSetExpression.__init__)
+def test_eol_bagexpression_constructor_exists():
+    assert callable(eol_BagExpression.__init__)
 
 
-def test_eol::orderedsetexpression_constructor_args():
-    sig = inspect.signature(eol::OrderedSetExpression.__init__)
+def test_eol_bagexpression_constructor_args():
+    sig = inspect.signature(eol_BagExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::sequenceexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::SequenceExpression)
+def test_eol_sequenceexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_SequenceExpression)
 
 
-def test_eol::sequenceexpression_constructor_exists():
-    assert callable(eol::SequenceExpression.__init__)
+def test_eol_sequenceexpression_constructor_exists():
+    assert callable(eol_SequenceExpression.__init__)
 
 
-def test_eol::sequenceexpression_constructor_args():
-    sig = inspect.signature(eol::SequenceExpression.__init__)
+def test_eol_sequenceexpression_constructor_args():
+    sig = inspect.signature(eol_SequenceExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::bagexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::BagExpression)
+def test_eol_orderedsetexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_OrderedSetExpression)
 
 
-def test_eol::bagexpression_constructor_exists():
-    assert callable(eol::BagExpression.__init__)
+def test_eol_orderedsetexpression_constructor_exists():
+    assert callable(eol_OrderedSetExpression.__init__)
 
 
-def test_eol::bagexpression_constructor_args():
-    sig = inspect.signature(eol::BagExpression.__init__)
+def test_eol_orderedsetexpression_constructor_args():
+    sig = inspect.signature(eol_OrderedSetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::setexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::SetExpression)
+def test_eol_setexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_SetExpression)
 
 
-def test_eol::setexpression_constructor_exists():
-    assert callable(eol::SetExpression.__init__)
+def test_eol_setexpression_constructor_exists():
+    assert callable(eol_SetExpression.__init__)
 
 
-def test_eol::setexpression_constructor_args():
-    sig = inspect.signature(eol::SetExpression.__init__)
+def test_eol_setexpression_constructor_args():
+    sig = inspect.signature(eol_SetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -598,44 +228,44 @@ def test_literalexpression_constructor_args():
 
 
 
-def test_eol::collectionexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::CollectionExpression)
+def test_eol_mapexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_MapExpression)
 
 
-def test_eol::collectionexpression_constructor_exists():
-    assert callable(eol::CollectionExpression.__init__)
+def test_eol_mapexpression_constructor_exists():
+    assert callable(eol_MapExpression.__init__)
 
 
-def test_eol::collectionexpression_constructor_args():
-    sig = inspect.signature(eol::CollectionExpression.__init__)
+def test_eol_mapexpression_constructor_args():
+    sig = inspect.signature(eol_MapExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::mapexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::MapExpression)
+def test_eol_collectionexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_CollectionExpression)
 
 
-def test_eol::mapexpression_constructor_exists():
-    assert callable(eol::MapExpression.__init__)
+def test_eol_collectionexpression_constructor_exists():
+    assert callable(eol_CollectionExpression.__init__)
 
 
-def test_eol::mapexpression_constructor_args():
-    sig = inspect.signature(eol::MapExpression.__init__)
+def test_eol_collectionexpression_constructor_args():
+    sig = inspect.signature(eol_CollectionExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::primitiveexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::PrimitiveExpression)
+def test_eol_primitiveexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_PrimitiveExpression)
 
 
-def test_eol::primitiveexpression_constructor_exists():
-    assert callable(eol::PrimitiveExpression.__init__)
+def test_eol_primitiveexpression_constructor_exists():
+    assert callable(eol_PrimitiveExpression.__init__)
 
 
-def test_eol::primitiveexpression_constructor_args():
-    sig = inspect.signature(eol::PrimitiveExpression.__init__)
+def test_eol_primitiveexpression_constructor_args():
+    sig = inspect.signature(eol_PrimitiveExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -654,44 +284,44 @@ def test_switchcasestatement_constructor_args():
 
 
 
-def test_eol::epackage_is_not_abstract():
-    assert not inspect.isabstract(eol::EPackage)
+def test_eol_epackage_is_not_abstract():
+    assert not inspect.isabstract(eol_EPackage)
 
 
-def test_eol::epackage_constructor_exists():
-    assert callable(eol::EPackage.__init__)
+def test_eol_epackage_constructor_exists():
+    assert callable(eol_EPackage.__init__)
 
 
-def test_eol::epackage_constructor_args():
-    sig = inspect.signature(eol::EPackage.__init__)
+def test_eol_epackage_constructor_args():
+    sig = inspect.signature(eol_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::switchcasedefaultstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::SwitchCaseDefaultStatement)
+def test_eol_switchcasedefaultstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_SwitchCaseDefaultStatement)
 
 
-def test_eol::switchcasedefaultstatement_constructor_exists():
-    assert callable(eol::SwitchCaseDefaultStatement.__init__)
+def test_eol_switchcasedefaultstatement_constructor_exists():
+    assert callable(eol_SwitchCaseDefaultStatement.__init__)
 
 
-def test_eol::switchcasedefaultstatement_constructor_args():
-    sig = inspect.signature(eol::SwitchCaseDefaultStatement.__init__)
+def test_eol_switchcasedefaultstatement_constructor_args():
+    sig = inspect.signature(eol_SwitchCaseDefaultStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::switchcaseexpressionstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::SwitchCaseExpressionStatement)
+def test_eol_switchcaseexpressionstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_SwitchCaseExpressionStatement)
 
 
-def test_eol::switchcaseexpressionstatement_constructor_exists():
-    assert callable(eol::SwitchCaseExpressionStatement.__init__)
+def test_eol_switchcaseexpressionstatement_constructor_exists():
+    assert callable(eol_SwitchCaseExpressionStatement.__init__)
 
 
-def test_eol::switchcaseexpressionstatement_constructor_args():
-    sig = inspect.signature(eol::SwitchCaseExpressionStatement.__init__)
+def test_eol_switchcaseexpressionstatement_constructor_args():
+    sig = inspect.signature(eol_SwitchCaseExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -710,1122 +340,156 @@ def test_statement_constructor_args():
 
 
 
-def test_eol::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::ReturnStatement)
+def test_eol_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_SwitchStatement)
 
 
-def test_eol::returnstatement_constructor_exists():
-    assert callable(eol::ReturnStatement.__init__)
+def test_eol_switchstatement_constructor_exists():
+    assert callable(eol_SwitchStatement.__init__)
 
 
-def test_eol::returnstatement_constructor_args():
-    sig = inspect.signature(eol::ReturnStatement.__init__)
+def test_eol_switchstatement_constructor_args():
+    sig = inspect.signature(eol_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::ExpressionStatement)
+def test_eol_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(eol_WhileStatement)
 
 
-def test_eol::expressionstatement_constructor_exists():
-    assert callable(eol::ExpressionStatement.__init__)
+def test_eol_whilestatement_constructor_exists():
+    assert callable(eol_WhileStatement.__init__)
 
 
-def test_eol::expressionstatement_constructor_args():
-    sig = inspect.signature(eol::ExpressionStatement.__init__)
+def test_eol_whilestatement_constructor_args():
+    sig = inspect.signature(eol_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::SwitchStatement)
+def test_eol_switchcasestatement_is_not_abstract():
+    assert not inspect.isabstract(eol_SwitchCaseStatement)
 
 
-def test_eol::switchstatement_constructor_exists():
-    assert callable(eol::SwitchStatement.__init__)
+def test_eol_switchcasestatement_constructor_exists():
+    assert callable(eol_SwitchCaseStatement.__init__)
 
 
-def test_eol::switchstatement_constructor_args():
-    sig = inspect.signature(eol::SwitchStatement.__init__)
+def test_eol_switchcasestatement_constructor_args():
+    sig = inspect.signature(eol_SwitchCaseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::switchcasestatement_is_not_abstract():
-    assert not inspect.isabstract(eol::SwitchCaseStatement)
+def test_eol_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_ReturnStatement)
 
 
-def test_eol::switchcasestatement_constructor_exists():
-    assert callable(eol::SwitchCaseStatement.__init__)
+def test_eol_returnstatement_constructor_exists():
+    assert callable(eol_ReturnStatement.__init__)
 
 
-def test_eol::switchcasestatement_constructor_args():
-    sig = inspect.signature(eol::SwitchCaseStatement.__init__)
+def test_eol_returnstatement_constructor_args():
+    sig = inspect.signature(eol_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(eol::WhileStatement)
+def test_eol_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_AssignmentStatement)
 
 
-def test_eol::whilestatement_constructor_exists():
-    assert callable(eol::WhileStatement.__init__)
+def test_eol_assignmentstatement_constructor_exists():
+    assert callable(eol_AssignmentStatement.__init__)
 
 
-def test_eol::whilestatement_constructor_args():
-    sig = inspect.signature(eol::WhileStatement.__init__)
+def test_eol_assignmentstatement_constructor_args():
+    sig = inspect.signature(eol_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::AssignmentStatement)
+def test_eol_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_IfStatement)
 
 
-def test_eol::assignmentstatement_constructor_exists():
-    assert callable(eol::AssignmentStatement.__init__)
+def test_eol_ifstatement_constructor_exists():
+    assert callable(eol_IfStatement.__init__)
 
 
-def test_eol::assignmentstatement_constructor_args():
-    sig = inspect.signature(eol::AssignmentStatement.__init__)
+def test_eol_ifstatement_constructor_args():
+    sig = inspect.signature(eol_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::IfStatement)
+def test_eol_forstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_ForStatement)
 
 
-def test_eol::ifstatement_constructor_exists():
-    assert callable(eol::IfStatement.__init__)
+def test_eol_forstatement_constructor_exists():
+    assert callable(eol_ForStatement.__init__)
 
 
-def test_eol::ifstatement_constructor_args():
-    sig = inspect.signature(eol::IfStatement.__init__)
+def test_eol_forstatement_constructor_args():
+    sig = inspect.signature(eol_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::uniquecollectiontype_is_not_abstract():
-    assert not inspect.isabstract(eol::UniqueCollectionType)
+def test_eol_deletestatement_is_not_abstract():
+    assert not inspect.isabstract(eol_DeleteStatement)
 
 
-def test_eol::uniquecollectiontype_constructor_exists():
-    assert callable(eol::UniqueCollectionType.__init__)
+def test_eol_deletestatement_constructor_exists():
+    assert callable(eol_DeleteStatement.__init__)
 
 
-def test_eol::uniquecollectiontype_constructor_args():
-    sig = inspect.signature(eol::UniqueCollectionType.__init__)
+def test_eol_deletestatement_constructor_args():
+    sig = inspect.signature(eol_DeleteStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::orderedcollectiontype_is_not_abstract():
-    assert not inspect.isabstract(eol::OrderedCollectionType)
+def test_eol_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(eol_ContinueStatement)
 
 
-def test_eol::orderedcollectiontype_constructor_exists():
-    assert callable(eol::OrderedCollectionType.__init__)
+def test_eol_continuestatement_constructor_exists():
+    assert callable(eol_ContinueStatement.__init__)
 
 
-def test_eol::orderedcollectiontype_constructor_args():
-    sig = inspect.signature(eol::OrderedCollectionType.__init__)
+def test_eol_continuestatement_constructor_args():
+    sig = inspect.signature(eol_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pseudotype_is_not_abstract():
-    assert not inspect.isabstract(PseudoType)
+def test_eol_breakallstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_BreakAllStatement)
 
 
-def test_pseudotype_constructor_exists():
-    assert callable(PseudoType.__init__)
+def test_eol_breakallstatement_constructor_exists():
+    assert callable(eol_BreakAllStatement.__init__)
 
 
-def test_pseudotype_constructor_args():
-    sig = inspect.signature(PseudoType.__init__)
+def test_eol_breakallstatement_constructor_args():
+    sig = inspect.signature(eol_BreakAllStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::operationargtype_is_not_abstract():
-    assert not inspect.isabstract(eol::OperationArgType)
+def test_eol_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_BreakStatement)
 
 
-def test_eol::operationargtype_constructor_exists():
-    assert callable(eol::OperationArgType.__init__)
+def test_eol_breakstatement_constructor_exists():
+    assert callable(eol_BreakStatement.__init__)
 
 
-def test_eol::operationargtype_constructor_args():
-    sig = inspect.signature(eol::OperationArgType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::selfcontenttype_is_not_abstract():
-    assert not inspect.isabstract(eol::SelfContentType)
-
-
-def test_eol::selfcontenttype_constructor_exists():
-    assert callable(eol::SelfContentType.__init__)
-
-
-def test_eol::selfcontenttype_constructor_args():
-    sig = inspect.signature(eol::SelfContentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::selfinnermosttype_is_not_abstract():
-    assert not inspect.isabstract(eol::SelfInnermostType)
-
-
-def test_eol::selfinnermosttype_constructor_exists():
-    assert callable(eol::SelfInnermostType.__init__)
-
-
-def test_eol::selfinnermosttype_constructor_args():
-    sig = inspect.signature(eol::SelfInnermostType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::selftype_is_not_abstract():
-    assert not inspect.isabstract(eol::SelfType)
-
-
-def test_eol::selftype_constructor_exists():
-    assert callable(eol::SelfType.__init__)
-
-
-def test_eol::selftype_constructor_args():
-    sig = inspect.signature(eol::SelfType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::pseudotype_is_not_abstract():
-    assert not inspect.isabstract(eol::PseudoType)
-
-
-def test_eol::pseudotype_constructor_exists():
-    assert callable(eol::PseudoType.__init__)
-
-
-def test_eol::pseudotype_constructor_args():
-    sig = inspect.signature(eol::PseudoType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::voidtype_is_not_abstract():
-    assert not inspect.isabstract(eol::VoidType)
-
-
-def test_eol::voidtype_constructor_exists():
-    assert callable(eol::VoidType.__init__)
-
-
-def test_eol::voidtype_constructor_args():
-    sig = inspect.signature(eol::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::etype_is_not_abstract():
-    assert not inspect.isabstract(eol::EType)
-
-
-def test_eol::etype_constructor_exists():
-    assert callable(eol::EType.__init__)
-
-
-def test_eol::etype_constructor_args():
-    sig = inspect.signature(eol::EType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::nativeexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::NativeExpression)
-
-
-def test_eol::nativeexpression_constructor_exists():
-    assert callable(eol::NativeExpression.__init__)
-
-
-def test_eol::nativeexpression_constructor_args():
-    sig = inspect.signature(eol::NativeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::modeltype_is_not_abstract():
-    assert not inspect.isabstract(eol::ModelType)
-
-
-def test_eol::modeltype_constructor_exists():
-    assert callable(eol::ModelType.__init__)
-
-
-def test_eol::modeltype_constructor_args():
-    sig = inspect.signature(eol::ModelType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(AssignmentStatement)
-
-
-def test_assignmentstatement_constructor_exists():
-    assert callable(AssignmentStatement.__init__)
-
-
-def test_assignmentstatement_constructor_args():
-    sig = inspect.signature(AssignmentStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::specialassignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::SpecialAssignmentStatement)
-
-
-def test_eol::specialassignmentstatement_constructor_exists():
-    assert callable(eol::SpecialAssignmentStatement.__init__)
-
-
-def test_eol::specialassignmentstatement_constructor_args():
-    sig = inspect.signature(eol::SpecialAssignmentStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectioninitvalue_is_not_abstract():
-    assert not inspect.isabstract(CollectionInitValue)
-
-
-def test_collectioninitvalue_constructor_exists():
-    assert callable(CollectionInitValue.__init__)
-
-
-def test_collectioninitvalue_constructor_args():
-    sig = inspect.signature(CollectionInitValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::exprange_is_not_abstract():
-    assert not inspect.isabstract(eol::ExpRange)
-
-
-def test_eol::exprange_constructor_exists():
-    assert callable(eol::ExpRange.__init__)
-
-
-def test_eol::exprange_constructor_args():
-    sig = inspect.signature(eol::ExpRange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::exprlist_is_not_abstract():
-    assert not inspect.isabstract(eol::ExprList)
-
-
-def test_eol::exprlist_constructor_exists():
-    assert callable(eol::ExprList.__init__)
-
-
-def test_eol::exprlist_constructor_args():
-    sig = inspect.signature(eol::ExprList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_variabledeclarationexpression_is_not_abstract():
-    assert not inspect.isabstract(VariableDeclarationExpression)
-
-
-def test_variabledeclarationexpression_constructor_exists():
-    assert callable(VariableDeclarationExpression.__init__)
-
-
-def test_variabledeclarationexpression_constructor_args():
-    sig = inspect.signature(VariableDeclarationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::formalparameterexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::FormalParameterExpression)
-
-
-def test_eol::formalparameterexpression_constructor_exists():
-    assert callable(eol::FormalParameterExpression.__init__)
-
-
-def test_eol::formalparameterexpression_constructor_args():
-    sig = inspect.signature(eol::FormalParameterExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::transactionstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::TransactionStatement)
-
-
-def test_eol::transactionstatement_constructor_exists():
-    assert callable(eol::TransactionStatement.__init__)
-
-
-def test_eol::transactionstatement_constructor_args():
-    sig = inspect.signature(eol::TransactionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::abortstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::AbortStatement)
-
-
-def test_eol::abortstatement_constructor_exists():
-    assert callable(eol::AbortStatement.__init__)
-
-
-def test_eol::abortstatement_constructor_args():
-    sig = inspect.signature(eol::AbortStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::ThrowStatement)
-
-
-def test_eol::throwstatement_constructor_exists():
-    assert callable(eol::ThrowStatement.__init__)
-
-
-def test_eol::throwstatement_constructor_args():
-    sig = inspect.signature(eol::ThrowStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::eobject_is_not_abstract():
-    assert not inspect.isabstract(eol::EObject)
-
-
-def test_eol::eobject_constructor_exists():
-    assert callable(eol::EObject.__init__)
-
-
-def test_eol::eobject_constructor_args():
-    sig = inspect.signature(eol::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_featurecallexpression_is_not_abstract():
-    assert not inspect.isabstract(FeatureCallExpression)
-
-
-def test_featurecallexpression_constructor_exists():
-    assert callable(FeatureCallExpression.__init__)
-
-
-def test_featurecallexpression_constructor_args():
-    sig = inspect.signature(FeatureCallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::folmethodcallexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::FOLMethodCallExpression)
-
-
-def test_eol::folmethodcallexpression_constructor_exists():
-    assert callable(eol::FOLMethodCallExpression.__init__)
-
-
-def test_eol::folmethodcallexpression_constructor_args():
-    sig = inspect.signature(eol::FOLMethodCallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::methodcallexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::MethodCallExpression)
-
-
-def test_eol::methodcallexpression_constructor_exists():
-    assert callable(eol::MethodCallExpression.__init__)
-
-
-def test_eol::methodcallexpression_constructor_args():
-    sig = inspect.signature(eol::MethodCallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eolelement_is_not_abstract():
-    assert not inspect.isabstract(EolElement)
-
-
-def test_eolelement_constructor_exists():
-    assert callable(EolElement.__init__)
-
-
-def test_eolelement_constructor_args():
-    sig = inspect.signature(EolElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::annotation_is_not_abstract():
-    assert not inspect.isabstract(eol::Annotation)
-
-
-def test_eol::annotation_constructor_exists():
-    assert callable(eol::Annotation.__init__)
-
-
-def test_eol::annotation_constructor_args():
-    sig = inspect.signature(eol::Annotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::modeldeclarationparameter_is_not_abstract():
-    assert not inspect.isabstract(eol::ModelDeclarationParameter)
-
-
-def test_eol::modeldeclarationparameter_constructor_exists():
-    assert callable(eol::ModelDeclarationParameter.__init__)
-
-
-def test_eol::modeldeclarationparameter_constructor_args():
-    sig = inspect.signature(eol::ModelDeclarationParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::keyvalue_is_not_abstract():
-    assert not inspect.isabstract(eol::KeyValue)
-
-
-def test_eol::keyvalue_constructor_exists():
-    assert callable(eol::KeyValue.__init__)
-
-
-def test_eol::keyvalue_constructor_args():
-    sig = inspect.signature(eol::KeyValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::collectioninitvalue_is_not_abstract():
-    assert not inspect.isabstract(eol::CollectionInitValue)
-
-
-def test_eol::collectioninitvalue_constructor_exists():
-    assert callable(eol::CollectionInitValue.__init__)
-
-
-def test_eol::collectioninitvalue_constructor_args():
-    sig = inspect.signature(eol::CollectionInitValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::block_is_not_abstract():
-    assert not inspect.isabstract(eol::Block)
-
-
-def test_eol::block_constructor_exists():
-    assert callable(eol::Block.__init__)
-
-
-def test_eol::block_constructor_args():
-    sig = inspect.signature(eol::Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::operationdefinition_is_not_abstract():
-    assert not inspect.isabstract(eol::OperationDefinition)
-
-
-def test_eol::operationdefinition_constructor_exists():
-    assert callable(eol::OperationDefinition.__init__)
-
-
-def test_eol::operationdefinition_constructor_args():
-    sig = inspect.signature(eol::OperationDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::import_is_not_abstract():
-    assert not inspect.isabstract(eol::Import)
-
-
-def test_eol::import_constructor_exists():
-    assert callable(eol::Import.__init__)
-
-
-def test_eol::import_constructor_args():
-    sig = inspect.signature(eol::Import.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::program_is_not_abstract():
-    assert not inspect.isabstract(eol::Program)
-
-
-def test_eol::program_constructor_exists():
-    assert callable(eol::Program.__init__)
-
-
-def test_eol::program_constructor_args():
-    sig = inspect.signature(eol::Program.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_binaryoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(BinaryOperatorExpression)
-
-
-def test_binaryoperatorexpression_constructor_exists():
-    assert callable(BinaryOperatorExpression.__init__)
-
-
-def test_binaryoperatorexpression_constructor_args():
-    sig = inspect.signature(BinaryOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::multiplyoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::MultiplyOperatorExpression)
-
-
-def test_eol::multiplyoperatorexpression_constructor_exists():
-    assert callable(eol::MultiplyOperatorExpression.__init__)
-
-
-def test_eol::multiplyoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::MultiplyOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::lessthanoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::LessThanOperatorExpression)
-
-
-def test_eol::lessthanoperatorexpression_constructor_exists():
-    assert callable(eol::LessThanOperatorExpression.__init__)
-
-
-def test_eol::lessthanoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::LessThanOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::greaterthanorequaltooperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::GreaterThanOrEqualToOperatorExpression)
-
-
-def test_eol::greaterthanorequaltooperatorexpression_constructor_exists():
-    assert callable(eol::GreaterThanOrEqualToOperatorExpression.__init__)
-
-
-def test_eol::greaterthanorequaltooperatorexpression_constructor_args():
-    sig = inspect.signature(eol::GreaterThanOrEqualToOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::impliesoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::ImpliesOperatorExpression)
-
-
-def test_eol::impliesoperatorexpression_constructor_exists():
-    assert callable(eol::ImpliesOperatorExpression.__init__)
-
-
-def test_eol::impliesoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::ImpliesOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::greaterthanoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::GreaterThanOperatorExpression)
-
-
-def test_eol::greaterthanoperatorexpression_constructor_exists():
-    assert callable(eol::GreaterThanOperatorExpression.__init__)
-
-
-def test_eol::greaterthanoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::GreaterThanOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::minusoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::MinusOperatorExpression)
-
-
-def test_eol::minusoperatorexpression_constructor_exists():
-    assert callable(eol::MinusOperatorExpression.__init__)
-
-
-def test_eol::minusoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::MinusOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::lessthanorequaltooperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::LessThanOrEqualToOperatorExpression)
-
-
-def test_eol::lessthanorequaltooperatorexpression_constructor_exists():
-    assert callable(eol::LessThanOrEqualToOperatorExpression.__init__)
-
-
-def test_eol::lessthanorequaltooperatorexpression_constructor_args():
-    sig = inspect.signature(eol::LessThanOrEqualToOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::andoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::AndOperatorExpression)
-
-
-def test_eol::andoperatorexpression_constructor_exists():
-    assert callable(eol::AndOperatorExpression.__init__)
-
-
-def test_eol::andoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::AndOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operatorexpression_is_not_abstract():
-    assert not inspect.isabstract(OperatorExpression)
-
-
-def test_operatorexpression_constructor_exists():
-    assert callable(OperatorExpression.__init__)
-
-
-def test_operatorexpression_constructor_args():
-    sig = inspect.signature(OperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::unaryoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::UnaryOperatorExpression)
-
-
-def test_eol::unaryoperatorexpression_constructor_exists():
-    assert callable(eol::UnaryOperatorExpression.__init__)
-
-
-def test_eol::unaryoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::UnaryOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::binaryoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::BinaryOperatorExpression)
-
-
-def test_eol::binaryoperatorexpression_constructor_exists():
-    assert callable(eol::BinaryOperatorExpression.__init__)
-
-
-def test_eol::binaryoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::BinaryOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expression_is_not_abstract():
-    assert not inspect.isabstract(Expression)
-
-
-def test_expression_constructor_exists():
-    assert callable(Expression.__init__)
-
-
-def test_expression_constructor_args():
-    sig = inspect.signature(Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::newexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::NewExpression)
-
-
-def test_eol::newexpression_constructor_exists():
-    assert callable(eol::NewExpression.__init__)
-
-
-def test_eol::newexpression_constructor_args():
-    sig = inspect.signature(eol::NewExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::literalexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::LiteralExpression)
-
-
-def test_eol::literalexpression_constructor_exists():
-    assert callable(eol::LiteralExpression.__init__)
-
-
-def test_eol::literalexpression_constructor_args():
-    sig = inspect.signature(eol::LiteralExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::operatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::OperatorExpression)
-
-
-def test_eol::operatorexpression_constructor_exists():
-    assert callable(eol::OperatorExpression.__init__)
-
-
-def test_eol::operatorexpression_constructor_args():
-    sig = inspect.signature(eol::OperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::type_is_not_abstract():
-    assert not inspect.isabstract(eol::Type)
-
-
-def test_eol::type_constructor_exists():
-    assert callable(eol::Type.__init__)
-
-
-def test_eol::type_constructor_args():
-    sig = inspect.signature(eol::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::expression_is_not_abstract():
-    assert not inspect.isabstract(eol::Expression)
-
-
-def test_eol::expression_constructor_exists():
-    assert callable(eol::Expression.__init__)
-
-
-def test_eol::expression_constructor_args():
-    sig = inspect.signature(eol::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::statement_is_not_abstract():
-    assert not inspect.isabstract(eol::Statement)
-
-
-def test_eol::statement_constructor_exists():
-    assert callable(eol::Statement.__init__)
-
-
-def test_eol::statement_constructor_args():
-    sig = inspect.signature(eol::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::modeldeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::ModelDeclarationStatement)
-
-
-def test_eol::modeldeclarationstatement_constructor_exists():
-    assert callable(eol::ModelDeclarationStatement.__init__)
-
-
-def test_eol::modeldeclarationstatement_constructor_args():
-    sig = inspect.signature(eol::ModelDeclarationStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::nameexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::NameExpression)
-
-
-def test_eol::nameexpression_constructor_exists():
-    assert callable(eol::NameExpression.__init__)
-
-
-def test_eol::nameexpression_constructor_args():
-    sig = inspect.signature(eol::NameExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "resolvedContent" in params, "Missing parameter 'resolvedContent'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_eol::nameexpression_has_resolvedContent():
-    assert hasattr(eol::NameExpression, "resolvedContent")
-    descriptor = None
-    for klass in eol::NameExpression.__mro__:
-        if "resolvedContent" in klass.__dict__:
-            descriptor = klass.__dict__["resolvedContent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_eol::nameexpression_has_name():
-    assert hasattr(eol::NameExpression, "name")
-    descriptor = None
-    for klass in eol::NameExpression.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_eol::textposition_is_not_abstract():
-    assert not inspect.isabstract(eol::TextPosition)
-
-
-def test_eol::textposition_constructor_exists():
-    assert callable(eol::TextPosition.__init__)
-
-
-def test_eol::textposition_constructor_args():
-    sig = inspect.signature(eol::TextPosition.__init__)
-    params = list(sig.parameters.keys())
-    assert "column" in params, "Missing parameter 'column'"
-    assert "line" in params, "Missing parameter 'line'"
-
-def test_eol::textposition_has_column():
-    assert hasattr(eol::TextPosition, "column")
-    descriptor = None
-    for klass in eol::TextPosition.__mro__:
-        if "column" in klass.__dict__:
-            descriptor = klass.__dict__["column"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_eol::textposition_has_line():
-    assert hasattr(eol::TextPosition, "line")
-    descriptor = None
-    for klass in eol::TextPosition.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_eol::textregion_is_not_abstract():
-    assert not inspect.isabstract(eol::TextRegion)
-
-
-def test_eol::textregion_constructor_exists():
-    assert callable(eol::TextRegion.__init__)
-
-
-def test_eol::textregion_constructor_args():
-    sig = inspect.signature(eol::TextRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::eolelement_is_not_abstract():
-    assert not inspect.isabstract(eol::EolElement)
-
-
-def test_eol::eolelement_constructor_exists():
-    assert callable(eol::EolElement.__init__)
-
-
-def test_eol::eolelement_constructor_args():
-    sig = inspect.signature(eol::EolElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "column" in params, "Missing parameter 'column'"
-    assert "uri" in params, "Missing parameter 'uri'"
-    assert "line" in params, "Missing parameter 'line'"
-
-def test_eol::eolelement_has_column():
-    assert hasattr(eol::EolElement, "column")
-    descriptor = None
-    for klass in eol::EolElement.__mro__:
-        if "column" in klass.__dict__:
-            descriptor = klass.__dict__["column"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_eol::eolelement_has_uri():
-    assert hasattr(eol::EolElement, "uri")
-    descriptor = None
-    for klass in eol::EolElement.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_eol::eolelement_has_line():
-    assert hasattr(eol::EolElement, "line")
-    descriptor = None
-    for klass in eol::EolElement.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_eol::forstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::ForStatement)
-
-
-def test_eol::forstatement_constructor_exists():
-    assert callable(eol::ForStatement.__init__)
-
-
-def test_eol::forstatement_constructor_args():
-    sig = inspect.signature(eol::ForStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::deletestatement_is_not_abstract():
-    assert not inspect.isabstract(eol::DeleteStatement)
-
-
-def test_eol::deletestatement_constructor_exists():
-    assert callable(eol::DeleteStatement.__init__)
-
-
-def test_eol::deletestatement_constructor_args():
-    sig = inspect.signature(eol::DeleteStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(eol::ContinueStatement)
-
-
-def test_eol::continuestatement_constructor_exists():
-    assert callable(eol::ContinueStatement.__init__)
-
-
-def test_eol::continuestatement_constructor_args():
-    sig = inspect.signature(eol::ContinueStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::breakallstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::BreakAllStatement)
-
-
-def test_eol::breakallstatement_constructor_exists():
-    assert callable(eol::BreakAllStatement.__init__)
-
-
-def test_eol::breakallstatement_constructor_args():
-    sig = inspect.signature(eol::BreakAllStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(eol::BreakStatement)
-
-
-def test_eol::breakstatement_constructor_exists():
-    assert callable(eol::BreakStatement.__init__)
-
-
-def test_eol::breakstatement_constructor_args():
-    sig = inspect.signature(eol::BreakStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::propertycallexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::PropertyCallExpression)
-
-
-def test_eol::propertycallexpression_constructor_exists():
-    assert callable(eol::PropertyCallExpression.__init__)
-
-
-def test_eol::propertycallexpression_constructor_args():
-    sig = inspect.signature(eol::PropertyCallExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::plusoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::PlusOperatorExpression)
-
-
-def test_eol::plusoperatorexpression_constructor_exists():
-    assert callable(eol::PlusOperatorExpression.__init__)
-
-
-def test_eol::plusoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::PlusOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::oroperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::OrOperatorExpression)
-
-
-def test_eol::oroperatorexpression_constructor_exists():
-    assert callable(eol::OrOperatorExpression.__init__)
-
-
-def test_eol::oroperatorexpression_constructor_args():
-    sig = inspect.signature(eol::OrOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::notequalsoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::NotEqualsOperatorExpression)
-
-
-def test_eol::notequalsoperatorexpression_constructor_exists():
-    assert callable(eol::NotEqualsOperatorExpression.__init__)
-
-
-def test_eol::notequalsoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::NotEqualsOperatorExpression.__init__)
+def test_eol_breakstatement_constructor_args():
+    sig = inspect.signature(eol_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1844,152 +508,736 @@ def test_unaryoperatorexpression_constructor_args():
 
 
 
-def test_eol::notoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::NotOperatorExpression)
+def test_eol_notoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_NotOperatorExpression)
 
 
-def test_eol::notoperatorexpression_constructor_exists():
-    assert callable(eol::NotOperatorExpression.__init__)
+def test_eol_notoperatorexpression_constructor_exists():
+    assert callable(eol_NotOperatorExpression.__init__)
 
 
-def test_eol::notoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::NotOperatorExpression.__init__)
+def test_eol_notoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_NotOperatorExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::negativeoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::NegativeOperatorExpression)
+def test_eol_negativeoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_NegativeOperatorExpression)
 
 
-def test_eol::negativeoperatorexpression_constructor_exists():
-    assert callable(eol::NegativeOperatorExpression.__init__)
+def test_eol_negativeoperatorexpression_constructor_exists():
+    assert callable(eol_NegativeOperatorExpression.__init__)
 
 
-def test_eol::negativeoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::NegativeOperatorExpression.__init__)
+def test_eol_negativeoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_NegativeOperatorExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::annotationblock_is_not_abstract():
-    assert not inspect.isabstract(eol::AnnotationBlock)
+def test_pseudotype_is_not_abstract():
+    assert not inspect.isabstract(PseudoType)
 
 
-def test_eol::annotationblock_constructor_exists():
-    assert callable(eol::AnnotationBlock.__init__)
+def test_pseudotype_constructor_exists():
+    assert callable(PseudoType.__init__)
 
 
-def test_eol::annotationblock_constructor_args():
-    sig = inspect.signature(eol::AnnotationBlock.__init__)
+def test_pseudotype_constructor_args():
+    sig = inspect.signature(PseudoType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::xoroperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::XorOperatorExpression)
+def test_eol_selfinnermosttype_is_not_abstract():
+    assert not inspect.isabstract(eol_SelfInnermostType)
 
 
-def test_eol::xoroperatorexpression_constructor_exists():
-    assert callable(eol::XorOperatorExpression.__init__)
+def test_eol_selfinnermosttype_constructor_exists():
+    assert callable(eol_SelfInnermostType.__init__)
 
 
-def test_eol::xoroperatorexpression_constructor_args():
-    sig = inspect.signature(eol::XorOperatorExpression.__init__)
+def test_eol_selfinnermosttype_constructor_args():
+    sig = inspect.signature(eol_SelfInnermostType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::variabledeclarationexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::VariableDeclarationExpression)
+def test_eol_operationargtype_is_not_abstract():
+    assert not inspect.isabstract(eol_OperationArgType)
 
 
-def test_eol::variabledeclarationexpression_constructor_exists():
-    assert callable(eol::VariableDeclarationExpression.__init__)
+def test_eol_operationargtype_constructor_exists():
+    assert callable(eol_OperationArgType.__init__)
 
 
-def test_eol::variabledeclarationexpression_constructor_args():
-    sig = inspect.signature(eol::VariableDeclarationExpression.__init__)
+def test_eol_operationargtype_constructor_args():
+    sig = inspect.signature(eol_OperationArgType.__init__)
     params = list(sig.parameters.keys())
-    assert "lastDefinitionPoint" in params, "Missing parameter 'lastDefinitionPoint'"
 
-def test_eol::variabledeclarationexpression_has_lastDefinitionPoint():
-    assert hasattr(eol::VariableDeclarationExpression, "lastDefinitionPoint")
+
+
+def test_eol_selfcontenttype_is_not_abstract():
+    assert not inspect.isabstract(eol_SelfContentType)
+
+
+def test_eol_selfcontenttype_constructor_exists():
+    assert callable(eol_SelfContentType.__init__)
+
+
+def test_eol_selfcontenttype_constructor_args():
+    sig = inspect.signature(eol_SelfContentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_selftype_is_not_abstract():
+    assert not inspect.isabstract(eol_SelfType)
+
+
+def test_eol_selftype_constructor_exists():
+    assert callable(eol_SelfType.__init__)
+
+
+def test_eol_selftype_constructor_args():
+    sig = inspect.signature(eol_SelfType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_nativeexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_NativeExpression)
+
+
+def test_eol_nativeexpression_constructor_exists():
+    assert callable(eol_NativeExpression.__init__)
+
+
+def test_eol_nativeexpression_constructor_args():
+    sig = inspect.signature(eol_NativeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(AssignmentStatement)
+
+
+def test_assignmentstatement_constructor_exists():
+    assert callable(AssignmentStatement.__init__)
+
+
+def test_assignmentstatement_constructor_args():
+    sig = inspect.signature(AssignmentStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_specialassignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_SpecialAssignmentStatement)
+
+
+def test_eol_specialassignmentstatement_constructor_exists():
+    assert callable(eol_SpecialAssignmentStatement.__init__)
+
+
+def test_eol_specialassignmentstatement_constructor_args():
+    sig = inspect.signature(eol_SpecialAssignmentStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectioninitvalue_is_not_abstract():
+    assert not inspect.isabstract(CollectionInitValue)
+
+
+def test_collectioninitvalue_constructor_exists():
+    assert callable(CollectionInitValue.__init__)
+
+
+def test_collectioninitvalue_constructor_args():
+    sig = inspect.signature(CollectionInitValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_exprange_is_not_abstract():
+    assert not inspect.isabstract(eol_ExpRange)
+
+
+def test_eol_exprange_constructor_exists():
+    assert callable(eol_ExpRange.__init__)
+
+
+def test_eol_exprange_constructor_args():
+    sig = inspect.signature(eol_ExpRange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_exprlist_is_not_abstract():
+    assert not inspect.isabstract(eol_ExprList)
+
+
+def test_eol_exprlist_constructor_exists():
+    assert callable(eol_ExprList.__init__)
+
+
+def test_eol_exprlist_constructor_args():
+    sig = inspect.signature(eol_ExprList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variabledeclarationexpression_is_not_abstract():
+    assert not inspect.isabstract(VariableDeclarationExpression)
+
+
+def test_variabledeclarationexpression_constructor_exists():
+    assert callable(VariableDeclarationExpression.__init__)
+
+
+def test_variabledeclarationexpression_constructor_args():
+    sig = inspect.signature(VariableDeclarationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_formalparameterexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_FormalParameterExpression)
+
+
+def test_eol_formalparameterexpression_constructor_exists():
+    assert callable(eol_FormalParameterExpression.__init__)
+
+
+def test_eol_formalparameterexpression_constructor_args():
+    sig = inspect.signature(eol_FormalParameterExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_transactionstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_TransactionStatement)
+
+
+def test_eol_transactionstatement_constructor_exists():
+    assert callable(eol_TransactionStatement.__init__)
+
+
+def test_eol_transactionstatement_constructor_args():
+    sig = inspect.signature(eol_TransactionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_abortstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_AbortStatement)
+
+
+def test_eol_abortstatement_constructor_exists():
+    assert callable(eol_AbortStatement.__init__)
+
+
+def test_eol_abortstatement_constructor_args():
+    sig = inspect.signature(eol_AbortStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_ThrowStatement)
+
+
+def test_eol_throwstatement_constructor_exists():
+    assert callable(eol_ThrowStatement.__init__)
+
+
+def test_eol_throwstatement_constructor_args():
+    sig = inspect.signature(eol_ThrowStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_orderedcollectiontype_is_not_abstract():
+    assert not inspect.isabstract(OrderedCollectionType)
+
+
+def test_orderedcollectiontype_constructor_exists():
+    assert callable(OrderedCollectionType.__init__)
+
+
+def test_orderedcollectiontype_constructor_args():
+    sig = inspect.signature(OrderedCollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(eol_SequenceType)
+
+
+def test_eol_sequencetype_constructor_exists():
+    assert callable(eol_SequenceType.__init__)
+
+
+def test_eol_sequencetype_constructor_args():
+    sig = inspect.signature(eol_SequenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(CollectionType)
+
+
+def test_collectiontype_constructor_exists():
+    assert callable(CollectionType.__init__)
+
+
+def test_collectiontype_constructor_args():
+    sig = inspect.signature(CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_uniquecollectiontype_is_not_abstract():
+    assert not inspect.isabstract(eol_UniqueCollectionType)
+
+
+def test_eol_uniquecollectiontype_constructor_exists():
+    assert callable(eol_UniqueCollectionType.__init__)
+
+
+def test_eol_uniquecollectiontype_constructor_args():
+    sig = inspect.signature(eol_UniqueCollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_orderedcollectiontype_is_not_abstract():
+    assert not inspect.isabstract(eol_OrderedCollectionType)
+
+
+def test_eol_orderedcollectiontype_constructor_exists():
+    assert callable(eol_OrderedCollectionType.__init__)
+
+
+def test_eol_orderedcollectiontype_constructor_args():
+    sig = inspect.signature(eol_OrderedCollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_bagtype_is_not_abstract():
+    assert not inspect.isabstract(eol_BagType)
+
+
+def test_eol_bagtype_constructor_exists():
+    assert callable(eol_BagType.__init__)
+
+
+def test_eol_bagtype_constructor_args():
+    sig = inspect.signature(eol_BagType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(eol_EClassifier)
+
+
+def test_eol_eclassifier_constructor_exists():
+    assert callable(eol_EClassifier.__init__)
+
+
+def test_eol_eclassifier_constructor_args():
+    sig = inspect.signature(eol_EClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_nameexpression_is_not_abstract():
+    assert not inspect.isabstract(NameExpression)
+
+
+def test_nameexpression_constructor_exists():
+    assert callable(NameExpression.__init__)
+
+
+def test_nameexpression_constructor_args():
+    sig = inspect.signature(NameExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_modelexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_ModelExpression)
+
+
+def test_eol_modelexpression_constructor_exists():
+    assert callable(eol_ModelExpression.__init__)
+
+
+def test_eol_modelexpression_constructor_args():
+    sig = inspect.signature(eol_ModelExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_specialnameexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_SpecialNameExpression)
+
+
+def test_eol_specialnameexpression_constructor_exists():
+    assert callable(eol_SpecialNameExpression.__init__)
+
+
+def test_eol_specialnameexpression_constructor_args():
+    sig = inspect.signature(eol_SpecialNameExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotation_is_not_abstract():
+    assert not inspect.isabstract(Annotation)
+
+
+def test_annotation_constructor_exists():
+    assert callable(Annotation.__init__)
+
+
+def test_annotation_constructor_args():
+    sig = inspect.signature(Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_simpleannotation_is_not_abstract():
+    assert not inspect.isabstract(eol_SimpleAnnotation)
+
+
+def test_eol_simpleannotation_constructor_exists():
+    assert callable(eol_SimpleAnnotation.__init__)
+
+
+def test_eol_simpleannotation_constructor_args():
+    sig = inspect.signature(eol_SimpleAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_executableannotation_is_not_abstract():
+    assert not inspect.isabstract(eol_ExecutableAnnotation)
+
+
+def test_eol_executableannotation_constructor_exists():
+    assert callable(eol_ExecutableAnnotation.__init__)
+
+
+def test_eol_executableannotation_constructor_args():
+    sig = inspect.signature(eol_ExecutableAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_ExpressionStatement)
+
+
+def test_eol_expressionstatement_constructor_exists():
+    assert callable(eol_ExpressionStatement.__init__)
+
+
+def test_eol_expressionstatement_constructor_args():
+    sig = inspect.signature(eol_ExpressionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uniquecollectiontype_is_not_abstract():
+    assert not inspect.isabstract(UniqueCollectionType)
+
+
+def test_uniquecollectiontype_constructor_exists():
+    assert callable(UniqueCollectionType.__init__)
+
+
+def test_uniquecollectiontype_constructor_args():
+    sig = inspect.signature(UniqueCollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(eol_OrderedSetType)
+
+
+def test_eol_orderedsettype_constructor_exists():
+    assert callable(eol_OrderedSetType.__init__)
+
+
+def test_eol_orderedsettype_constructor_args():
+    sig = inspect.signature(eol_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_settype_is_not_abstract():
+    assert not inspect.isabstract(eol_SetType)
+
+
+def test_eol_settype_constructor_exists():
+    assert callable(eol_SetType.__init__)
+
+
+def test_eol_settype_constructor_args():
+    sig = inspect.signature(eol_SetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(PrimitiveType)
+
+
+def test_primitivetype_constructor_exists():
+    assert callable(PrimitiveType.__init__)
+
+
+def test_primitivetype_constructor_args():
+    sig = inspect.signature(PrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_integertype_is_not_abstract():
+    assert not inspect.isabstract(eol_IntegerType)
+
+
+def test_eol_integertype_constructor_exists():
+    assert callable(eol_IntegerType.__init__)
+
+
+def test_eol_integertype_constructor_args():
+    sig = inspect.signature(eol_IntegerType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_stringtype_is_not_abstract():
+    assert not inspect.isabstract(eol_StringType)
+
+
+def test_eol_stringtype_constructor_exists():
+    assert callable(eol_StringType.__init__)
+
+
+def test_eol_stringtype_constructor_args():
+    sig = inspect.signature(eol_StringType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_realtype_is_not_abstract():
+    assert not inspect.isabstract(eol_RealType)
+
+
+def test_eol_realtype_constructor_exists():
+    assert callable(eol_RealType.__init__)
+
+
+def test_eol_realtype_constructor_args():
+    sig = inspect.signature(eol_RealType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_booleantype_is_not_abstract():
+    assert not inspect.isabstract(eol_BooleanType)
+
+
+def test_eol_booleantype_constructor_exists():
+    assert callable(eol_BooleanType.__init__)
+
+
+def test_eol_booleantype_constructor_args():
+    sig = inspect.signature(eol_BooleanType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(Type)
+
+
+def test_type_constructor_exists():
+    assert callable(Type.__init__)
+
+
+def test_type_constructor_args():
+    sig = inspect.signature(Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(eol_CollectionType)
+
+
+def test_eol_collectiontype_constructor_exists():
+    assert callable(eol_CollectionType.__init__)
+
+
+def test_eol_collectiontype_constructor_args():
+    sig = inspect.signature(eol_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_modeltype_is_not_abstract():
+    assert not inspect.isabstract(eol_ModelType)
+
+
+def test_eol_modeltype_constructor_exists():
+    assert callable(eol_ModelType.__init__)
+
+
+def test_eol_modeltype_constructor_args():
+    sig = inspect.signature(eol_ModelType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_nativetype_is_not_abstract():
+    assert not inspect.isabstract(eol_NativeType)
+
+
+def test_eol_nativetype_constructor_exists():
+    assert callable(eol_NativeType.__init__)
+
+
+def test_eol_nativetype_constructor_args():
+    sig = inspect.signature(eol_NativeType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_maptype_is_not_abstract():
+    assert not inspect.isabstract(eol_MapType)
+
+
+def test_eol_maptype_constructor_exists():
+    assert callable(eol_MapType.__init__)
+
+
+def test_eol_maptype_constructor_args():
+    sig = inspect.signature(eol_MapType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_etype_is_not_abstract():
+    assert not inspect.isabstract(eol_EType)
+
+
+def test_eol_etype_constructor_exists():
+    assert callable(eol_EType.__init__)
+
+
+def test_eol_etype_constructor_args():
+    sig = inspect.signature(eol_EType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_pseudotype_is_not_abstract():
+    assert not inspect.isabstract(eol_PseudoType)
+
+
+def test_eol_pseudotype_constructor_exists():
+    assert callable(eol_PseudoType.__init__)
+
+
+def test_eol_pseudotype_constructor_args():
+    sig = inspect.signature(eol_PseudoType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_modelelementtype_is_not_abstract():
+    assert not inspect.isabstract(eol_ModelElementType)
+
+
+def test_eol_modelelementtype_constructor_exists():
+    assert callable(eol_ModelElementType.__init__)
+
+
+def test_eol_modelelementtype_constructor_args():
+    sig = inspect.signature(eol_ModelElementType.__init__)
+    params = list(sig.parameters.keys())
+    assert "elementName" in params, "Missing parameter 'elementName'"
+    assert "modelName" in params, "Missing parameter 'modelName'"
+
+def test_eol_modelelementtype_has_elementName():
+    assert hasattr(eol_ModelElementType, "elementName")
     descriptor = None
-    for klass in eol::VariableDeclarationExpression.__mro__:
-        if "lastDefinitionPoint" in klass.__dict__:
-            descriptor = klass.__dict__["lastDefinitionPoint"]
+    for klass in eol_ModelElementType.__mro__:
+        if "elementName" in klass.__dict__:
+            descriptor = klass.__dict__["elementName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_eol_modelelementtype_has_modelName():
+    assert hasattr(eol_ModelElementType, "modelName")
+    descriptor = None
+    for klass in eol_ModelElementType.__mro__:
+        if "modelName" in klass.__dict__:
+            descriptor = klass.__dict__["modelName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_eol::featurecallexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::FeatureCallExpression)
+def test_eol_voidtype_is_not_abstract():
+    assert not inspect.isabstract(eol_VoidType)
 
 
-def test_eol::featurecallexpression_constructor_exists():
-    assert callable(eol::FeatureCallExpression.__init__)
+def test_eol_voidtype_constructor_exists():
+    assert callable(eol_VoidType.__init__)
 
 
-def test_eol::featurecallexpression_constructor_args():
-    sig = inspect.signature(eol::FeatureCallExpression.__init__)
+def test_eol_voidtype_constructor_args():
+    sig = inspect.signature(eol_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::equalsoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::EqualsOperatorExpression)
+def test_eol_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(eol_PrimitiveType)
 
 
-def test_eol::equalsoperatorexpression_constructor_exists():
-    assert callable(eol::EqualsOperatorExpression.__init__)
+def test_eol_primitivetype_constructor_exists():
+    assert callable(eol_PrimitiveType.__init__)
 
 
-def test_eol::equalsoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::EqualsOperatorExpression.__init__)
+def test_eol_primitivetype_constructor_args():
+    sig = inspect.signature(eol_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eol::modelexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::ModelExpression)
+def test_eol_anytype_is_not_abstract():
+    assert not inspect.isabstract(eol_AnyType)
 
 
-def test_eol::modelexpression_constructor_exists():
-    assert callable(eol::ModelExpression.__init__)
+def test_eol_anytype_constructor_exists():
+    assert callable(eol_AnyType.__init__)
 
 
-def test_eol::modelexpression_constructor_args():
-    sig = inspect.signature(eol::ModelExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::enumerationliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::EnumerationLiteralExpression)
-
-
-def test_eol::enumerationliteralexpression_constructor_exists():
-    assert callable(eol::EnumerationLiteralExpression.__init__)
-
-
-def test_eol::enumerationliteralexpression_constructor_args():
-    sig = inspect.signature(eol::EnumerationLiteralExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eol::divideoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::DivideOperatorExpression)
-
-
-def test_eol::divideoperatorexpression_constructor_exists():
-    assert callable(eol::DivideOperatorExpression.__init__)
-
-
-def test_eol::divideoperatorexpression_constructor_args():
-    sig = inspect.signature(eol::DivideOperatorExpression.__init__)
+def test_eol_anytype_constructor_args():
+    sig = inspect.signature(eol_AnyType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2008,23 +1256,23 @@ def test_primitiveexpression_constructor_args():
 
 
 
-def test_eol::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::BooleanExpression)
+def test_eol_realexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_RealExpression)
 
 
-def test_eol::booleanexpression_constructor_exists():
-    assert callable(eol::BooleanExpression.__init__)
+def test_eol_realexpression_constructor_exists():
+    assert callable(eol_RealExpression.__init__)
 
 
-def test_eol::booleanexpression_constructor_args():
-    sig = inspect.signature(eol::BooleanExpression.__init__)
+def test_eol_realexpression_constructor_args():
+    sig = inspect.signature(eol_RealExpression.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_eol::booleanexpression_has_val():
-    assert hasattr(eol::BooleanExpression, "val")
+def test_eol_realexpression_has_val():
+    assert hasattr(eol_RealExpression, "val")
     descriptor = None
-    for klass in eol::BooleanExpression.__mro__:
+    for klass in eol_RealExpression.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -2032,23 +1280,23 @@ def test_eol::booleanexpression_has_val():
 
 
 
-def test_eol::stringexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::StringExpression)
+def test_eol_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_BooleanExpression)
 
 
-def test_eol::stringexpression_constructor_exists():
-    assert callable(eol::StringExpression.__init__)
+def test_eol_booleanexpression_constructor_exists():
+    assert callable(eol_BooleanExpression.__init__)
 
 
-def test_eol::stringexpression_constructor_args():
-    sig = inspect.signature(eol::StringExpression.__init__)
+def test_eol_booleanexpression_constructor_args():
+    sig = inspect.signature(eol_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_eol::stringexpression_has_val():
-    assert hasattr(eol::StringExpression, "val")
+def test_eol_booleanexpression_has_val():
+    assert hasattr(eol_BooleanExpression, "val")
     descriptor = None
-    for klass in eol::StringExpression.__mro__:
+    for klass in eol_BooleanExpression.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -2056,23 +1304,93 @@ def test_eol::stringexpression_has_val():
 
 
 
-def test_eol::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::IntegerExpression)
+def test_eol_eobject_is_not_abstract():
+    assert not inspect.isabstract(eol_EObject)
 
 
-def test_eol::integerexpression_constructor_exists():
-    assert callable(eol::IntegerExpression.__init__)
+def test_eol_eobject_constructor_exists():
+    assert callable(eol_EObject.__init__)
 
 
-def test_eol::integerexpression_constructor_args():
-    sig = inspect.signature(eol::IntegerExpression.__init__)
+def test_eol_eobject_constructor_args():
+    sig = inspect.signature(eol_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_featurecallexpression_is_not_abstract():
+    assert not inspect.isabstract(FeatureCallExpression)
+
+
+def test_featurecallexpression_constructor_exists():
+    assert callable(FeatureCallExpression.__init__)
+
+
+def test_featurecallexpression_constructor_args():
+    sig = inspect.signature(FeatureCallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_propertycallexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_PropertyCallExpression)
+
+
+def test_eol_propertycallexpression_constructor_exists():
+    assert callable(eol_PropertyCallExpression.__init__)
+
+
+def test_eol_propertycallexpression_constructor_args():
+    sig = inspect.signature(eol_PropertyCallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_folmethodcallexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_FOLMethodCallExpression)
+
+
+def test_eol_folmethodcallexpression_constructor_exists():
+    assert callable(eol_FOLMethodCallExpression.__init__)
+
+
+def test_eol_folmethodcallexpression_constructor_args():
+    sig = inspect.signature(eol_FOLMethodCallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_methodcallexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_MethodCallExpression)
+
+
+def test_eol_methodcallexpression_constructor_exists():
+    assert callable(eol_MethodCallExpression.__init__)
+
+
+def test_eol_methodcallexpression_constructor_args():
+    sig = inspect.signature(eol_MethodCallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_IntegerExpression)
+
+
+def test_eol_integerexpression_constructor_exists():
+    assert callable(eol_IntegerExpression.__init__)
+
+
+def test_eol_integerexpression_constructor_args():
+    sig = inspect.signature(eol_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_eol::integerexpression_has_val():
-    assert hasattr(eol::IntegerExpression, "val")
+def test_eol_integerexpression_has_val():
+    assert hasattr(eol_IntegerExpression, "val")
     descriptor = None
-    for klass in eol::IntegerExpression.__mro__:
+    for klass in eol_IntegerExpression.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -2080,25 +1398,707 @@ def test_eol::integerexpression_has_val():
 
 
 
-def test_eol::realexpression_is_not_abstract():
-    assert not inspect.isabstract(eol::RealExpression)
+def test_eolelement_is_not_abstract():
+    assert not inspect.isabstract(EolElement)
 
 
-def test_eol::realexpression_constructor_exists():
-    assert callable(eol::RealExpression.__init__)
+def test_eolelement_constructor_exists():
+    assert callable(EolElement.__init__)
 
 
-def test_eol::realexpression_constructor_args():
-    sig = inspect.signature(eol::RealExpression.__init__)
+def test_eolelement_constructor_args():
+    sig = inspect.signature(EolElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_annotationblock_is_not_abstract():
+    assert not inspect.isabstract(eol_AnnotationBlock)
+
+
+def test_eol_annotationblock_constructor_exists():
+    assert callable(eol_AnnotationBlock.__init__)
+
+
+def test_eol_annotationblock_constructor_args():
+    sig = inspect.signature(eol_AnnotationBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_operationdefinition_is_not_abstract():
+    assert not inspect.isabstract(eol_OperationDefinition)
+
+
+def test_eol_operationdefinition_constructor_exists():
+    assert callable(eol_OperationDefinition.__init__)
+
+
+def test_eol_operationdefinition_constructor_args():
+    sig = inspect.signature(eol_OperationDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_collectioninitvalue_is_not_abstract():
+    assert not inspect.isabstract(eol_CollectionInitValue)
+
+
+def test_eol_collectioninitvalue_constructor_exists():
+    assert callable(eol_CollectionInitValue.__init__)
+
+
+def test_eol_collectioninitvalue_constructor_args():
+    sig = inspect.signature(eol_CollectionInitValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_modeldeclarationparameter_is_not_abstract():
+    assert not inspect.isabstract(eol_ModelDeclarationParameter)
+
+
+def test_eol_modeldeclarationparameter_constructor_exists():
+    assert callable(eol_ModelDeclarationParameter.__init__)
+
+
+def test_eol_modeldeclarationparameter_constructor_args():
+    sig = inspect.signature(eol_ModelDeclarationParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_block_is_not_abstract():
+    assert not inspect.isabstract(eol_Block)
+
+
+def test_eol_block_constructor_exists():
+    assert callable(eol_Block.__init__)
+
+
+def test_eol_block_constructor_args():
+    sig = inspect.signature(eol_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_keyvalue_is_not_abstract():
+    assert not inspect.isabstract(eol_KeyValue)
+
+
+def test_eol_keyvalue_constructor_exists():
+    assert callable(eol_KeyValue.__init__)
+
+
+def test_eol_keyvalue_constructor_args():
+    sig = inspect.signature(eol_KeyValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_import_is_not_abstract():
+    assert not inspect.isabstract(eol_Import)
+
+
+def test_eol_import_constructor_exists():
+    assert callable(eol_Import.__init__)
+
+
+def test_eol_import_constructor_args():
+    sig = inspect.signature(eol_Import.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_annotation_is_not_abstract():
+    assert not inspect.isabstract(eol_Annotation)
+
+
+def test_eol_annotation_constructor_exists():
+    assert callable(eol_Annotation.__init__)
+
+
+def test_eol_annotation_constructor_args():
+    sig = inspect.signature(eol_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_program_is_not_abstract():
+    assert not inspect.isabstract(eol_Program)
+
+
+def test_eol_program_constructor_exists():
+    assert callable(eol_Program.__init__)
+
+
+def test_eol_program_constructor_args():
+    sig = inspect.signature(eol_Program.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_binaryoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(BinaryOperatorExpression)
+
+
+def test_binaryoperatorexpression_constructor_exists():
+    assert callable(BinaryOperatorExpression.__init__)
+
+
+def test_binaryoperatorexpression_constructor_args():
+    sig = inspect.signature(BinaryOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_divideoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_DivideOperatorExpression)
+
+
+def test_eol_divideoperatorexpression_constructor_exists():
+    assert callable(eol_DivideOperatorExpression.__init__)
+
+
+def test_eol_divideoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_DivideOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_xoroperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_XorOperatorExpression)
+
+
+def test_eol_xoroperatorexpression_constructor_exists():
+    assert callable(eol_XorOperatorExpression.__init__)
+
+
+def test_eol_xoroperatorexpression_constructor_args():
+    sig = inspect.signature(eol_XorOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_notequalsoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_NotEqualsOperatorExpression)
+
+
+def test_eol_notequalsoperatorexpression_constructor_exists():
+    assert callable(eol_NotEqualsOperatorExpression.__init__)
+
+
+def test_eol_notequalsoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_NotEqualsOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_greaterthanoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_GreaterThanOperatorExpression)
+
+
+def test_eol_greaterthanoperatorexpression_constructor_exists():
+    assert callable(eol_GreaterThanOperatorExpression.__init__)
+
+
+def test_eol_greaterthanoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_GreaterThanOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_impliesoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_ImpliesOperatorExpression)
+
+
+def test_eol_impliesoperatorexpression_constructor_exists():
+    assert callable(eol_ImpliesOperatorExpression.__init__)
+
+
+def test_eol_impliesoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_ImpliesOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_plusoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_PlusOperatorExpression)
+
+
+def test_eol_plusoperatorexpression_constructor_exists():
+    assert callable(eol_PlusOperatorExpression.__init__)
+
+
+def test_eol_plusoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_PlusOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_lessthanoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_LessThanOperatorExpression)
+
+
+def test_eol_lessthanoperatorexpression_constructor_exists():
+    assert callable(eol_LessThanOperatorExpression.__init__)
+
+
+def test_eol_lessthanoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_LessThanOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_multiplyoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_MultiplyOperatorExpression)
+
+
+def test_eol_multiplyoperatorexpression_constructor_exists():
+    assert callable(eol_MultiplyOperatorExpression.__init__)
+
+
+def test_eol_multiplyoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_MultiplyOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_lessthanorequaltooperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_LessThanOrEqualToOperatorExpression)
+
+
+def test_eol_lessthanorequaltooperatorexpression_constructor_exists():
+    assert callable(eol_LessThanOrEqualToOperatorExpression.__init__)
+
+
+def test_eol_lessthanorequaltooperatorexpression_constructor_args():
+    sig = inspect.signature(eol_LessThanOrEqualToOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_oroperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_OrOperatorExpression)
+
+
+def test_eol_oroperatorexpression_constructor_exists():
+    assert callable(eol_OrOperatorExpression.__init__)
+
+
+def test_eol_oroperatorexpression_constructor_args():
+    sig = inspect.signature(eol_OrOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_greaterthanorequaltooperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_GreaterThanOrEqualToOperatorExpression)
+
+
+def test_eol_greaterthanorequaltooperatorexpression_constructor_exists():
+    assert callable(eol_GreaterThanOrEqualToOperatorExpression.__init__)
+
+
+def test_eol_greaterthanorequaltooperatorexpression_constructor_args():
+    sig = inspect.signature(eol_GreaterThanOrEqualToOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_minusoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_MinusOperatorExpression)
+
+
+def test_eol_minusoperatorexpression_constructor_exists():
+    assert callable(eol_MinusOperatorExpression.__init__)
+
+
+def test_eol_minusoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_MinusOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_equalsoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_EqualsOperatorExpression)
+
+
+def test_eol_equalsoperatorexpression_constructor_exists():
+    assert callable(eol_EqualsOperatorExpression.__init__)
+
+
+def test_eol_equalsoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_EqualsOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_andoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_AndOperatorExpression)
+
+
+def test_eol_andoperatorexpression_constructor_exists():
+    assert callable(eol_AndOperatorExpression.__init__)
+
+
+def test_eol_andoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_AndOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operatorexpression_is_not_abstract():
+    assert not inspect.isabstract(OperatorExpression)
+
+
+def test_operatorexpression_constructor_exists():
+    assert callable(OperatorExpression.__init__)
+
+
+def test_operatorexpression_constructor_args():
+    sig = inspect.signature(OperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_unaryoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_UnaryOperatorExpression)
+
+
+def test_eol_unaryoperatorexpression_constructor_exists():
+    assert callable(eol_UnaryOperatorExpression.__init__)
+
+
+def test_eol_unaryoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_UnaryOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_binaryoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_BinaryOperatorExpression)
+
+
+def test_eol_binaryoperatorexpression_constructor_exists():
+    assert callable(eol_BinaryOperatorExpression.__init__)
+
+
+def test_eol_binaryoperatorexpression_constructor_args():
+    sig = inspect.signature(eol_BinaryOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expression_is_not_abstract():
+    assert not inspect.isabstract(Expression)
+
+
+def test_expression_constructor_exists():
+    assert callable(Expression.__init__)
+
+
+def test_expression_constructor_args():
+    sig = inspect.signature(Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_newexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_NewExpression)
+
+
+def test_eol_newexpression_constructor_exists():
+    assert callable(eol_NewExpression.__init__)
+
+
+def test_eol_newexpression_constructor_args():
+    sig = inspect.signature(eol_NewExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_featurecallexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_FeatureCallExpression)
+
+
+def test_eol_featurecallexpression_constructor_exists():
+    assert callable(eol_FeatureCallExpression.__init__)
+
+
+def test_eol_featurecallexpression_constructor_args():
+    sig = inspect.signature(eol_FeatureCallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_enumerationliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_EnumerationLiteralExpression)
+
+
+def test_eol_enumerationliteralexpression_constructor_exists():
+    assert callable(eol_EnumerationLiteralExpression.__init__)
+
+
+def test_eol_enumerationliteralexpression_constructor_args():
+    sig = inspect.signature(eol_EnumerationLiteralExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_literalexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_LiteralExpression)
+
+
+def test_eol_literalexpression_constructor_exists():
+    assert callable(eol_LiteralExpression.__init__)
+
+
+def test_eol_literalexpression_constructor_args():
+    sig = inspect.signature(eol_LiteralExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_variabledeclarationexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_VariableDeclarationExpression)
+
+
+def test_eol_variabledeclarationexpression_constructor_exists():
+    assert callable(eol_VariableDeclarationExpression.__init__)
+
+
+def test_eol_variabledeclarationexpression_constructor_args():
+    sig = inspect.signature(eol_VariableDeclarationExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "lastDefinitionPoint" in params, "Missing parameter 'lastDefinitionPoint'"
+
+def test_eol_variabledeclarationexpression_has_lastDefinitionPoint():
+    assert hasattr(eol_VariableDeclarationExpression, "lastDefinitionPoint")
+    descriptor = None
+    for klass in eol_VariableDeclarationExpression.__mro__:
+        if "lastDefinitionPoint" in klass.__dict__:
+            descriptor = klass.__dict__["lastDefinitionPoint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_eol_operatorexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_OperatorExpression)
+
+
+def test_eol_operatorexpression_constructor_exists():
+    assert callable(eol_OperatorExpression.__init__)
+
+
+def test_eol_operatorexpression_constructor_args():
+    sig = inspect.signature(eol_OperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_type_is_not_abstract():
+    assert not inspect.isabstract(eol_Type)
+
+
+def test_eol_type_constructor_exists():
+    assert callable(eol_Type.__init__)
+
+
+def test_eol_type_constructor_args():
+    sig = inspect.signature(eol_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_expression_is_not_abstract():
+    assert not inspect.isabstract(eol_Expression)
+
+
+def test_eol_expression_constructor_exists():
+    assert callable(eol_Expression.__init__)
+
+
+def test_eol_expression_constructor_args():
+    sig = inspect.signature(eol_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_statement_is_not_abstract():
+    assert not inspect.isabstract(eol_Statement)
+
+
+def test_eol_statement_constructor_exists():
+    assert callable(eol_Statement.__init__)
+
+
+def test_eol_statement_constructor_args():
+    sig = inspect.signature(eol_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_stringexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_StringExpression)
+
+
+def test_eol_stringexpression_constructor_exists():
+    assert callable(eol_StringExpression.__init__)
+
+
+def test_eol_stringexpression_constructor_args():
+    sig = inspect.signature(eol_StringExpression.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_eol::realexpression_has_val():
-    assert hasattr(eol::RealExpression, "val")
+def test_eol_stringexpression_has_val():
+    assert hasattr(eol_StringExpression, "val")
     descriptor = None
-    for klass in eol::RealExpression.__mro__:
+    for klass in eol_StringExpression.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_eol_modeldeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(eol_ModelDeclarationStatement)
+
+
+def test_eol_modeldeclarationstatement_constructor_exists():
+    assert callable(eol_ModelDeclarationStatement.__init__)
+
+
+def test_eol_modeldeclarationstatement_constructor_args():
+    sig = inspect.signature(eol_ModelDeclarationStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_nameexpression_is_not_abstract():
+    assert not inspect.isabstract(eol_NameExpression)
+
+
+def test_eol_nameexpression_constructor_exists():
+    assert callable(eol_NameExpression.__init__)
+
+
+def test_eol_nameexpression_constructor_args():
+    sig = inspect.signature(eol_NameExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "resolvedContent" in params, "Missing parameter 'resolvedContent'"
+
+def test_eol_nameexpression_has_name():
+    assert hasattr(eol_NameExpression, "name")
+    descriptor = None
+    for klass in eol_NameExpression.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_eol_nameexpression_has_resolvedContent():
+    assert hasattr(eol_NameExpression, "resolvedContent")
+    descriptor = None
+    for klass in eol_NameExpression.__mro__:
+        if "resolvedContent" in klass.__dict__:
+            descriptor = klass.__dict__["resolvedContent"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_eol_textposition_is_not_abstract():
+    assert not inspect.isabstract(eol_TextPosition)
+
+
+def test_eol_textposition_constructor_exists():
+    assert callable(eol_TextPosition.__init__)
+
+
+def test_eol_textposition_constructor_args():
+    sig = inspect.signature(eol_TextPosition.__init__)
+    params = list(sig.parameters.keys())
+    assert "line" in params, "Missing parameter 'line'"
+    assert "column" in params, "Missing parameter 'column'"
+
+def test_eol_textposition_has_line():
+    assert hasattr(eol_TextPosition, "line")
+    descriptor = None
+    for klass in eol_TextPosition.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_eol_textposition_has_column():
+    assert hasattr(eol_TextPosition, "column")
+    descriptor = None
+    for klass in eol_TextPosition.__mro__:
+        if "column" in klass.__dict__:
+            descriptor = klass.__dict__["column"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_eol_textregion_is_not_abstract():
+    assert not inspect.isabstract(eol_TextRegion)
+
+
+def test_eol_textregion_constructor_exists():
+    assert callable(eol_TextRegion.__init__)
+
+
+def test_eol_textregion_constructor_args():
+    sig = inspect.signature(eol_TextRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eol_eolelement_is_not_abstract():
+    assert not inspect.isabstract(eol_EolElement)
+
+
+def test_eol_eolelement_constructor_exists():
+    assert callable(eol_EolElement.__init__)
+
+
+def test_eol_eolelement_constructor_args():
+    sig = inspect.signature(eol_EolElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "line" in params, "Missing parameter 'line'"
+    assert "column" in params, "Missing parameter 'column'"
+    assert "uri" in params, "Missing parameter 'uri'"
+
+def test_eol_eolelement_has_line():
+    assert hasattr(eol_EolElement, "line")
+    descriptor = None
+    for klass in eol_EolElement.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_eol_eolelement_has_column():
+    assert hasattr(eol_EolElement, "column")
+    descriptor = None
+    for klass in eol_EolElement.__mro__:
+        if "column" in klass.__dict__:
+            descriptor = klass.__dict__["column"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_eol_eolelement_has_uri():
+    assert hasattr(eol_EolElement, "uri")
+    descriptor = None
+    for klass in eol_EolElement.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
@@ -2114,1225 +2114,1183 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-OrderedCollectionType_strategy = st.builds(
-    OrderedCollectionType,
-)
-eol::SequenceType_strategy = st.builds(
-    eol::SequenceType,
-)
-CollectionType_strategy = st.builds(
-    CollectionType,
-)
-eol::BagType_strategy = st.builds(
-    eol::BagType,
-)
-eol::EClassifier_strategy = st.builds(
-    eol::EClassifier,
-)
-NameExpression_strategy = st.builds(
-    NameExpression,
-)
-eol::SpecialNameExpression_strategy = st.builds(
-    eol::SpecialNameExpression,
-)
-Annotation_strategy = st.builds(
-    Annotation,
-)
-eol::SimpleAnnotation_strategy = st.builds(
-    eol::SimpleAnnotation,
-)
-eol::ExecutableAnnotation_strategy = st.builds(
-    eol::ExecutableAnnotation,
-)
-UniqueCollectionType_strategy = st.builds(
-    UniqueCollectionType,
-)
-eol::OrderedSetType_strategy = st.builds(
-    eol::OrderedSetType,
-)
-eol::SetType_strategy = st.builds(
-    eol::SetType,
-)
-PrimitiveType_strategy = st.builds(
-    PrimitiveType,
-)
-eol::StringType_strategy = st.builds(
-    eol::StringType,
-)
-eol::RealType_strategy = st.builds(
-    eol::RealType,
-)
-eol::IntegerType_strategy = st.builds(
-    eol::IntegerType,
-)
-eol::BooleanType_strategy = st.builds(
-    eol::BooleanType,
-)
-Type_strategy = st.builds(
-    Type,
-)
-eol::PrimitiveType_strategy = st.builds(
-    eol::PrimitiveType,
-)
-eol::MapType_strategy = st.builds(
-    eol::MapType,
-)
-eol::ModelElementType_strategy = st.builds(
-    eol::ModelElementType,
-    modelName=
-        safe_text,
-    elementName=
-        safe_text
-)
-eol::NativeType_strategy = st.builds(
-    eol::NativeType,
-)
-eol::CollectionType_strategy = st.builds(
-    eol::CollectionType,
-)
-eol::AnyType_strategy = st.builds(
-    eol::AnyType,
-)
 CollectionExpression_strategy = st.builds(
     CollectionExpression,
 )
-eol::OrderedSetExpression_strategy = st.builds(
-    eol::OrderedSetExpression,
+eol_BagExpression_strategy = st.builds(
+    eol_BagExpression,
 )
-eol::SequenceExpression_strategy = st.builds(
-    eol::SequenceExpression,
+eol_SequenceExpression_strategy = st.builds(
+    eol_SequenceExpression,
 )
-eol::BagExpression_strategy = st.builds(
-    eol::BagExpression,
+eol_OrderedSetExpression_strategy = st.builds(
+    eol_OrderedSetExpression,
 )
-eol::SetExpression_strategy = st.builds(
-    eol::SetExpression,
+eol_SetExpression_strategy = st.builds(
+    eol_SetExpression,
 )
 LiteralExpression_strategy = st.builds(
     LiteralExpression,
 )
-eol::CollectionExpression_strategy = st.builds(
-    eol::CollectionExpression,
+eol_MapExpression_strategy = st.builds(
+    eol_MapExpression,
 )
-eol::MapExpression_strategy = st.builds(
-    eol::MapExpression,
+eol_CollectionExpression_strategy = st.builds(
+    eol_CollectionExpression,
 )
-eol::PrimitiveExpression_strategy = st.builds(
-    eol::PrimitiveExpression,
+eol_PrimitiveExpression_strategy = st.builds(
+    eol_PrimitiveExpression,
 )
 SwitchCaseStatement_strategy = st.builds(
     SwitchCaseStatement,
 )
-eol::EPackage_strategy = st.builds(
-    eol::EPackage,
+eol_EPackage_strategy = st.builds(
+    eol_EPackage,
 )
-eol::SwitchCaseDefaultStatement_strategy = st.builds(
-    eol::SwitchCaseDefaultStatement,
+eol_SwitchCaseDefaultStatement_strategy = st.builds(
+    eol_SwitchCaseDefaultStatement,
 )
-eol::SwitchCaseExpressionStatement_strategy = st.builds(
-    eol::SwitchCaseExpressionStatement,
+eol_SwitchCaseExpressionStatement_strategy = st.builds(
+    eol_SwitchCaseExpressionStatement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-eol::ReturnStatement_strategy = st.builds(
-    eol::ReturnStatement,
+eol_SwitchStatement_strategy = st.builds(
+    eol_SwitchStatement,
 )
-eol::ExpressionStatement_strategy = st.builds(
-    eol::ExpressionStatement,
+eol_WhileStatement_strategy = st.builds(
+    eol_WhileStatement,
 )
-eol::SwitchStatement_strategy = st.builds(
-    eol::SwitchStatement,
+eol_SwitchCaseStatement_strategy = st.builds(
+    eol_SwitchCaseStatement,
 )
-eol::SwitchCaseStatement_strategy = st.builds(
-    eol::SwitchCaseStatement,
+eol_ReturnStatement_strategy = st.builds(
+    eol_ReturnStatement,
 )
-eol::WhileStatement_strategy = st.builds(
-    eol::WhileStatement,
+eol_AssignmentStatement_strategy = st.builds(
+    eol_AssignmentStatement,
 )
-eol::AssignmentStatement_strategy = st.builds(
-    eol::AssignmentStatement,
+eol_IfStatement_strategy = st.builds(
+    eol_IfStatement,
 )
-eol::IfStatement_strategy = st.builds(
-    eol::IfStatement,
+eol_ForStatement_strategy = st.builds(
+    eol_ForStatement,
 )
-eol::UniqueCollectionType_strategy = st.builds(
-    eol::UniqueCollectionType,
+eol_DeleteStatement_strategy = st.builds(
+    eol_DeleteStatement,
 )
-eol::OrderedCollectionType_strategy = st.builds(
-    eol::OrderedCollectionType,
+eol_ContinueStatement_strategy = st.builds(
+    eol_ContinueStatement,
 )
-PseudoType_strategy = st.builds(
-    PseudoType,
+eol_BreakAllStatement_strategy = st.builds(
+    eol_BreakAllStatement,
 )
-eol::OperationArgType_strategy = st.builds(
-    eol::OperationArgType,
-)
-eol::SelfContentType_strategy = st.builds(
-    eol::SelfContentType,
-)
-eol::SelfInnermostType_strategy = st.builds(
-    eol::SelfInnermostType,
-)
-eol::SelfType_strategy = st.builds(
-    eol::SelfType,
-)
-eol::PseudoType_strategy = st.builds(
-    eol::PseudoType,
-)
-eol::VoidType_strategy = st.builds(
-    eol::VoidType,
-)
-eol::EType_strategy = st.builds(
-    eol::EType,
-)
-eol::NativeExpression_strategy = st.builds(
-    eol::NativeExpression,
-)
-eol::ModelType_strategy = st.builds(
-    eol::ModelType,
-)
-AssignmentStatement_strategy = st.builds(
-    AssignmentStatement,
-)
-eol::SpecialAssignmentStatement_strategy = st.builds(
-    eol::SpecialAssignmentStatement,
-)
-CollectionInitValue_strategy = st.builds(
-    CollectionInitValue,
-)
-eol::ExpRange_strategy = st.builds(
-    eol::ExpRange,
-)
-eol::ExprList_strategy = st.builds(
-    eol::ExprList,
-)
-VariableDeclarationExpression_strategy = st.builds(
-    VariableDeclarationExpression,
-)
-eol::FormalParameterExpression_strategy = st.builds(
-    eol::FormalParameterExpression,
-)
-eol::TransactionStatement_strategy = st.builds(
-    eol::TransactionStatement,
-)
-eol::AbortStatement_strategy = st.builds(
-    eol::AbortStatement,
-)
-eol::ThrowStatement_strategy = st.builds(
-    eol::ThrowStatement,
-)
-eol::EObject_strategy = st.builds(
-    eol::EObject,
-)
-FeatureCallExpression_strategy = st.builds(
-    FeatureCallExpression,
-)
-eol::FOLMethodCallExpression_strategy = st.builds(
-    eol::FOLMethodCallExpression,
-)
-eol::MethodCallExpression_strategy = st.builds(
-    eol::MethodCallExpression,
-)
-EolElement_strategy = st.builds(
-    EolElement,
-)
-eol::Annotation_strategy = st.builds(
-    eol::Annotation,
-)
-eol::ModelDeclarationParameter_strategy = st.builds(
-    eol::ModelDeclarationParameter,
-)
-eol::KeyValue_strategy = st.builds(
-    eol::KeyValue,
-)
-eol::CollectionInitValue_strategy = st.builds(
-    eol::CollectionInitValue,
-)
-eol::Block_strategy = st.builds(
-    eol::Block,
-)
-eol::OperationDefinition_strategy = st.builds(
-    eol::OperationDefinition,
-)
-eol::Import_strategy = st.builds(
-    eol::Import,
-)
-eol::Program_strategy = st.builds(
-    eol::Program,
-)
-BinaryOperatorExpression_strategy = st.builds(
-    BinaryOperatorExpression,
-)
-eol::MultiplyOperatorExpression_strategy = st.builds(
-    eol::MultiplyOperatorExpression,
-)
-eol::LessThanOperatorExpression_strategy = st.builds(
-    eol::LessThanOperatorExpression,
-)
-eol::GreaterThanOrEqualToOperatorExpression_strategy = st.builds(
-    eol::GreaterThanOrEqualToOperatorExpression,
-)
-eol::ImpliesOperatorExpression_strategy = st.builds(
-    eol::ImpliesOperatorExpression,
-)
-eol::GreaterThanOperatorExpression_strategy = st.builds(
-    eol::GreaterThanOperatorExpression,
-)
-eol::MinusOperatorExpression_strategy = st.builds(
-    eol::MinusOperatorExpression,
-)
-eol::LessThanOrEqualToOperatorExpression_strategy = st.builds(
-    eol::LessThanOrEqualToOperatorExpression,
-)
-eol::AndOperatorExpression_strategy = st.builds(
-    eol::AndOperatorExpression,
-)
-OperatorExpression_strategy = st.builds(
-    OperatorExpression,
-)
-eol::UnaryOperatorExpression_strategy = st.builds(
-    eol::UnaryOperatorExpression,
-)
-eol::BinaryOperatorExpression_strategy = st.builds(
-    eol::BinaryOperatorExpression,
-)
-Expression_strategy = st.builds(
-    Expression,
-)
-eol::NewExpression_strategy = st.builds(
-    eol::NewExpression,
-)
-eol::LiteralExpression_strategy = st.builds(
-    eol::LiteralExpression,
-)
-eol::OperatorExpression_strategy = st.builds(
-    eol::OperatorExpression,
-)
-eol::Type_strategy = st.builds(
-    eol::Type,
-)
-eol::Expression_strategy = st.builds(
-    eol::Expression,
-)
-eol::Statement_strategy = st.builds(
-    eol::Statement,
-)
-eol::ModelDeclarationStatement_strategy = st.builds(
-    eol::ModelDeclarationStatement,
-)
-eol::NameExpression_strategy = st.builds(
-    eol::NameExpression,
-    resolvedContent=
-        safe_text,
-    name=
-        safe_text
-)
-eol::TextPosition_strategy = st.builds(
-    eol::TextPosition,
-    column=
-        st.integers(),
-    line=
-        st.integers()
-)
-eol::TextRegion_strategy = st.builds(
-    eol::TextRegion,
-)
-eol::EolElement_strategy = st.builds(
-    eol::EolElement,
-    column=
-        st.integers(),
-    uri=
-        safe_text,
-    line=
-        st.integers()
-)
-eol::ForStatement_strategy = st.builds(
-    eol::ForStatement,
-)
-eol::DeleteStatement_strategy = st.builds(
-    eol::DeleteStatement,
-)
-eol::ContinueStatement_strategy = st.builds(
-    eol::ContinueStatement,
-)
-eol::BreakAllStatement_strategy = st.builds(
-    eol::BreakAllStatement,
-)
-eol::BreakStatement_strategy = st.builds(
-    eol::BreakStatement,
-)
-eol::PropertyCallExpression_strategy = st.builds(
-    eol::PropertyCallExpression,
-)
-eol::PlusOperatorExpression_strategy = st.builds(
-    eol::PlusOperatorExpression,
-)
-eol::OrOperatorExpression_strategy = st.builds(
-    eol::OrOperatorExpression,
-)
-eol::NotEqualsOperatorExpression_strategy = st.builds(
-    eol::NotEqualsOperatorExpression,
+eol_BreakStatement_strategy = st.builds(
+    eol_BreakStatement,
 )
 UnaryOperatorExpression_strategy = st.builds(
     UnaryOperatorExpression,
 )
-eol::NotOperatorExpression_strategy = st.builds(
-    eol::NotOperatorExpression,
+eol_NotOperatorExpression_strategy = st.builds(
+    eol_NotOperatorExpression,
 )
-eol::NegativeOperatorExpression_strategy = st.builds(
-    eol::NegativeOperatorExpression,
+eol_NegativeOperatorExpression_strategy = st.builds(
+    eol_NegativeOperatorExpression,
 )
-eol::AnnotationBlock_strategy = st.builds(
-    eol::AnnotationBlock,
+PseudoType_strategy = st.builds(
+    PseudoType,
 )
-eol::XorOperatorExpression_strategy = st.builds(
-    eol::XorOperatorExpression,
+eol_SelfInnermostType_strategy = st.builds(
+    eol_SelfInnermostType,
 )
-eol::VariableDeclarationExpression_strategy = st.builds(
-    eol::VariableDeclarationExpression,
-    lastDefinitionPoint=
+eol_OperationArgType_strategy = st.builds(
+    eol_OperationArgType,
+)
+eol_SelfContentType_strategy = st.builds(
+    eol_SelfContentType,
+)
+eol_SelfType_strategy = st.builds(
+    eol_SelfType,
+)
+eol_NativeExpression_strategy = st.builds(
+    eol_NativeExpression,
+)
+AssignmentStatement_strategy = st.builds(
+    AssignmentStatement,
+)
+eol_SpecialAssignmentStatement_strategy = st.builds(
+    eol_SpecialAssignmentStatement,
+)
+CollectionInitValue_strategy = st.builds(
+    CollectionInitValue,
+)
+eol_ExpRange_strategy = st.builds(
+    eol_ExpRange,
+)
+eol_ExprList_strategy = st.builds(
+    eol_ExprList,
+)
+VariableDeclarationExpression_strategy = st.builds(
+    VariableDeclarationExpression,
+)
+eol_FormalParameterExpression_strategy = st.builds(
+    eol_FormalParameterExpression,
+)
+eol_TransactionStatement_strategy = st.builds(
+    eol_TransactionStatement,
+)
+eol_AbortStatement_strategy = st.builds(
+    eol_AbortStatement,
+)
+eol_ThrowStatement_strategy = st.builds(
+    eol_ThrowStatement,
+)
+OrderedCollectionType_strategy = st.builds(
+    OrderedCollectionType,
+)
+eol_SequenceType_strategy = st.builds(
+    eol_SequenceType,
+)
+CollectionType_strategy = st.builds(
+    CollectionType,
+)
+eol_UniqueCollectionType_strategy = st.builds(
+    eol_UniqueCollectionType,
+)
+eol_OrderedCollectionType_strategy = st.builds(
+    eol_OrderedCollectionType,
+)
+eol_BagType_strategy = st.builds(
+    eol_BagType,
+)
+eol_EClassifier_strategy = st.builds(
+    eol_EClassifier,
+)
+NameExpression_strategy = st.builds(
+    NameExpression,
+)
+eol_ModelExpression_strategy = st.builds(
+    eol_ModelExpression,
+)
+eol_SpecialNameExpression_strategy = st.builds(
+    eol_SpecialNameExpression,
+)
+Annotation_strategy = st.builds(
+    Annotation,
+)
+eol_SimpleAnnotation_strategy = st.builds(
+    eol_SimpleAnnotation,
+)
+eol_ExecutableAnnotation_strategy = st.builds(
+    eol_ExecutableAnnotation,
+)
+eol_ExpressionStatement_strategy = st.builds(
+    eol_ExpressionStatement,
+)
+UniqueCollectionType_strategy = st.builds(
+    UniqueCollectionType,
+)
+eol_OrderedSetType_strategy = st.builds(
+    eol_OrderedSetType,
+)
+eol_SetType_strategy = st.builds(
+    eol_SetType,
+)
+PrimitiveType_strategy = st.builds(
+    PrimitiveType,
+)
+eol_IntegerType_strategy = st.builds(
+    eol_IntegerType,
+)
+eol_StringType_strategy = st.builds(
+    eol_StringType,
+)
+eol_RealType_strategy = st.builds(
+    eol_RealType,
+)
+eol_BooleanType_strategy = st.builds(
+    eol_BooleanType,
+)
+Type_strategy = st.builds(
+    Type,
+)
+eol_CollectionType_strategy = st.builds(
+    eol_CollectionType,
+)
+eol_ModelType_strategy = st.builds(
+    eol_ModelType,
+)
+eol_NativeType_strategy = st.builds(
+    eol_NativeType,
+)
+eol_MapType_strategy = st.builds(
+    eol_MapType,
+)
+eol_EType_strategy = st.builds(
+    eol_EType,
+)
+eol_PseudoType_strategy = st.builds(
+    eol_PseudoType,
+)
+eol_ModelElementType_strategy = st.builds(
+    eol_ModelElementType,
+    elementName=
+        safe_text,
+    modelName=
         safe_text
 )
-eol::FeatureCallExpression_strategy = st.builds(
-    eol::FeatureCallExpression,
+eol_VoidType_strategy = st.builds(
+    eol_VoidType,
 )
-eol::EqualsOperatorExpression_strategy = st.builds(
-    eol::EqualsOperatorExpression,
+eol_PrimitiveType_strategy = st.builds(
+    eol_PrimitiveType,
 )
-eol::ModelExpression_strategy = st.builds(
-    eol::ModelExpression,
-)
-eol::EnumerationLiteralExpression_strategy = st.builds(
-    eol::EnumerationLiteralExpression,
-)
-eol::DivideOperatorExpression_strategy = st.builds(
-    eol::DivideOperatorExpression,
+eol_AnyType_strategy = st.builds(
+    eol_AnyType,
 )
 PrimitiveExpression_strategy = st.builds(
     PrimitiveExpression,
 )
-eol::BooleanExpression_strategy = st.builds(
-    eol::BooleanExpression,
-    val=
-        st.booleans()
-)
-eol::StringExpression_strategy = st.builds(
-    eol::StringExpression,
-    val=
-        safe_text
-)
-eol::IntegerExpression_strategy = st.builds(
-    eol::IntegerExpression,
-    val=
-        st.integers()
-)
-eol::RealExpression_strategy = st.builds(
-    eol::RealExpression,
+eol_RealExpression_strategy = st.builds(
+    eol_RealExpression,
     val=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-
-@given(instance=OrderedCollectionType_strategy)
-@settings(max_examples=50)
-def test_orderedcollectiontype_instantiation(instance):
-    assert isinstance(instance, OrderedCollectionType)
-
-@given(instance=eol::SequenceType_strategy)
-@settings(max_examples=50)
-def test_eol::sequencetype_instantiation(instance):
-    assert isinstance(instance, eol::SequenceType)
-
-@given(instance=CollectionType_strategy)
-@settings(max_examples=50)
-def test_collectiontype_instantiation(instance):
-    assert isinstance(instance, CollectionType)
-
-@given(instance=eol::BagType_strategy)
-@settings(max_examples=50)
-def test_eol::bagtype_instantiation(instance):
-    assert isinstance(instance, eol::BagType)
-
-@given(instance=eol::EClassifier_strategy)
-@settings(max_examples=50)
-def test_eol::eclassifier_instantiation(instance):
-    assert isinstance(instance, eol::EClassifier)
-
-@given(instance=NameExpression_strategy)
-@settings(max_examples=50)
-def test_nameexpression_instantiation(instance):
-    assert isinstance(instance, NameExpression)
-
-@given(instance=eol::SpecialNameExpression_strategy)
-@settings(max_examples=50)
-def test_eol::specialnameexpression_instantiation(instance):
-    assert isinstance(instance, eol::SpecialNameExpression)
-
-@given(instance=Annotation_strategy)
-@settings(max_examples=50)
-def test_annotation_instantiation(instance):
-    assert isinstance(instance, Annotation)
-
-@given(instance=eol::SimpleAnnotation_strategy)
-@settings(max_examples=50)
-def test_eol::simpleannotation_instantiation(instance):
-    assert isinstance(instance, eol::SimpleAnnotation)
-
-@given(instance=eol::ExecutableAnnotation_strategy)
-@settings(max_examples=50)
-def test_eol::executableannotation_instantiation(instance):
-    assert isinstance(instance, eol::ExecutableAnnotation)
-
-@given(instance=UniqueCollectionType_strategy)
-@settings(max_examples=50)
-def test_uniquecollectiontype_instantiation(instance):
-    assert isinstance(instance, UniqueCollectionType)
-
-@given(instance=eol::OrderedSetType_strategy)
-@settings(max_examples=50)
-def test_eol::orderedsettype_instantiation(instance):
-    assert isinstance(instance, eol::OrderedSetType)
-
-@given(instance=eol::SetType_strategy)
-@settings(max_examples=50)
-def test_eol::settype_instantiation(instance):
-    assert isinstance(instance, eol::SetType)
-
-@given(instance=PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_primitivetype_instantiation(instance):
-    assert isinstance(instance, PrimitiveType)
-
-@given(instance=eol::StringType_strategy)
-@settings(max_examples=50)
-def test_eol::stringtype_instantiation(instance):
-    assert isinstance(instance, eol::StringType)
-
-@given(instance=eol::RealType_strategy)
-@settings(max_examples=50)
-def test_eol::realtype_instantiation(instance):
-    assert isinstance(instance, eol::RealType)
-
-@given(instance=eol::IntegerType_strategy)
-@settings(max_examples=50)
-def test_eol::integertype_instantiation(instance):
-    assert isinstance(instance, eol::IntegerType)
-
-@given(instance=eol::BooleanType_strategy)
-@settings(max_examples=50)
-def test_eol::booleantype_instantiation(instance):
-    assert isinstance(instance, eol::BooleanType)
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=eol::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_eol::primitivetype_instantiation(instance):
-    assert isinstance(instance, eol::PrimitiveType)
-
-@given(instance=eol::MapType_strategy)
-@settings(max_examples=50)
-def test_eol::maptype_instantiation(instance):
-    assert isinstance(instance, eol::MapType)
-
-@given(instance=eol::ModelElementType_strategy)
-@settings(max_examples=50)
-def test_eol::modelelementtype_instantiation(instance):
-    assert isinstance(instance, eol::ModelElementType)
-
-@given(instance=eol::ModelElementType_strategy)
-def test_eol::modelelementtype_modelName_type(instance):
-    assert isinstance(instance.modelName, str)
-
-
-@given(instance=eol::ModelElementType_strategy)
-def test_eol::modelelementtype_modelName_setter(instance):
-    original = instance.modelName
-    instance.modelName = original
-    assert instance.modelName == original
-
-@given(instance=eol::ModelElementType_strategy)
-def test_eol::modelelementtype_elementName_type(instance):
-    assert isinstance(instance.elementName, str)
-
-
-@given(instance=eol::ModelElementType_strategy)
-def test_eol::modelelementtype_elementName_setter(instance):
-    original = instance.elementName
-    instance.elementName = original
-    assert instance.elementName == original
-
-@given(instance=eol::NativeType_strategy)
-@settings(max_examples=50)
-def test_eol::nativetype_instantiation(instance):
-    assert isinstance(instance, eol::NativeType)
-
-@given(instance=eol::CollectionType_strategy)
-@settings(max_examples=50)
-def test_eol::collectiontype_instantiation(instance):
-    assert isinstance(instance, eol::CollectionType)
-
-@given(instance=eol::AnyType_strategy)
-@settings(max_examples=50)
-def test_eol::anytype_instantiation(instance):
-    assert isinstance(instance, eol::AnyType)
+eol_BooleanExpression_strategy = st.builds(
+    eol_BooleanExpression,
+    val=
+        st.booleans()
+)
+eol_EObject_strategy = st.builds(
+    eol_EObject,
+)
+FeatureCallExpression_strategy = st.builds(
+    FeatureCallExpression,
+)
+eol_PropertyCallExpression_strategy = st.builds(
+    eol_PropertyCallExpression,
+)
+eol_FOLMethodCallExpression_strategy = st.builds(
+    eol_FOLMethodCallExpression,
+)
+eol_MethodCallExpression_strategy = st.builds(
+    eol_MethodCallExpression,
+)
+eol_IntegerExpression_strategy = st.builds(
+    eol_IntegerExpression,
+    val=
+        st.integers()
+)
+EolElement_strategy = st.builds(
+    EolElement,
+)
+eol_AnnotationBlock_strategy = st.builds(
+    eol_AnnotationBlock,
+)
+eol_OperationDefinition_strategy = st.builds(
+    eol_OperationDefinition,
+)
+eol_CollectionInitValue_strategy = st.builds(
+    eol_CollectionInitValue,
+)
+eol_ModelDeclarationParameter_strategy = st.builds(
+    eol_ModelDeclarationParameter,
+)
+eol_Block_strategy = st.builds(
+    eol_Block,
+)
+eol_KeyValue_strategy = st.builds(
+    eol_KeyValue,
+)
+eol_Import_strategy = st.builds(
+    eol_Import,
+)
+eol_Annotation_strategy = st.builds(
+    eol_Annotation,
+)
+eol_Program_strategy = st.builds(
+    eol_Program,
+)
+BinaryOperatorExpression_strategy = st.builds(
+    BinaryOperatorExpression,
+)
+eol_DivideOperatorExpression_strategy = st.builds(
+    eol_DivideOperatorExpression,
+)
+eol_XorOperatorExpression_strategy = st.builds(
+    eol_XorOperatorExpression,
+)
+eol_NotEqualsOperatorExpression_strategy = st.builds(
+    eol_NotEqualsOperatorExpression,
+)
+eol_GreaterThanOperatorExpression_strategy = st.builds(
+    eol_GreaterThanOperatorExpression,
+)
+eol_ImpliesOperatorExpression_strategy = st.builds(
+    eol_ImpliesOperatorExpression,
+)
+eol_PlusOperatorExpression_strategy = st.builds(
+    eol_PlusOperatorExpression,
+)
+eol_LessThanOperatorExpression_strategy = st.builds(
+    eol_LessThanOperatorExpression,
+)
+eol_MultiplyOperatorExpression_strategy = st.builds(
+    eol_MultiplyOperatorExpression,
+)
+eol_LessThanOrEqualToOperatorExpression_strategy = st.builds(
+    eol_LessThanOrEqualToOperatorExpression,
+)
+eol_OrOperatorExpression_strategy = st.builds(
+    eol_OrOperatorExpression,
+)
+eol_GreaterThanOrEqualToOperatorExpression_strategy = st.builds(
+    eol_GreaterThanOrEqualToOperatorExpression,
+)
+eol_MinusOperatorExpression_strategy = st.builds(
+    eol_MinusOperatorExpression,
+)
+eol_EqualsOperatorExpression_strategy = st.builds(
+    eol_EqualsOperatorExpression,
+)
+eol_AndOperatorExpression_strategy = st.builds(
+    eol_AndOperatorExpression,
+)
+OperatorExpression_strategy = st.builds(
+    OperatorExpression,
+)
+eol_UnaryOperatorExpression_strategy = st.builds(
+    eol_UnaryOperatorExpression,
+)
+eol_BinaryOperatorExpression_strategy = st.builds(
+    eol_BinaryOperatorExpression,
+)
+Expression_strategy = st.builds(
+    Expression,
+)
+eol_NewExpression_strategy = st.builds(
+    eol_NewExpression,
+)
+eol_FeatureCallExpression_strategy = st.builds(
+    eol_FeatureCallExpression,
+)
+eol_EnumerationLiteralExpression_strategy = st.builds(
+    eol_EnumerationLiteralExpression,
+)
+eol_LiteralExpression_strategy = st.builds(
+    eol_LiteralExpression,
+)
+eol_VariableDeclarationExpression_strategy = st.builds(
+    eol_VariableDeclarationExpression,
+    lastDefinitionPoint=
+        safe_text
+)
+eol_OperatorExpression_strategy = st.builds(
+    eol_OperatorExpression,
+)
+eol_Type_strategy = st.builds(
+    eol_Type,
+)
+eol_Expression_strategy = st.builds(
+    eol_Expression,
+)
+eol_Statement_strategy = st.builds(
+    eol_Statement,
+)
+eol_StringExpression_strategy = st.builds(
+    eol_StringExpression,
+    val=
+        safe_text
+)
+eol_ModelDeclarationStatement_strategy = st.builds(
+    eol_ModelDeclarationStatement,
+)
+eol_NameExpression_strategy = st.builds(
+    eol_NameExpression,
+    name=
+        safe_text,
+    resolvedContent=
+        safe_text
+)
+eol_TextPosition_strategy = st.builds(
+    eol_TextPosition,
+    line=
+        st.integers(),
+    column=
+        st.integers()
+)
+eol_TextRegion_strategy = st.builds(
+    eol_TextRegion,
+)
+eol_EolElement_strategy = st.builds(
+    eol_EolElement,
+    line=
+        st.integers(),
+    column=
+        st.integers(),
+    uri=
+        safe_text
+)
 
 @given(instance=CollectionExpression_strategy)
 @settings(max_examples=50)
 def test_collectionexpression_instantiation(instance):
     assert isinstance(instance, CollectionExpression)
 
-@given(instance=eol::OrderedSetExpression_strategy)
+@given(instance=eol_BagExpression_strategy)
 @settings(max_examples=50)
-def test_eol::orderedsetexpression_instantiation(instance):
-    assert isinstance(instance, eol::OrderedSetExpression)
+def test_eol_bagexpression_instantiation(instance):
+    assert isinstance(instance, eol_BagExpression)
 
-@given(instance=eol::SequenceExpression_strategy)
+@given(instance=eol_SequenceExpression_strategy)
 @settings(max_examples=50)
-def test_eol::sequenceexpression_instantiation(instance):
-    assert isinstance(instance, eol::SequenceExpression)
+def test_eol_sequenceexpression_instantiation(instance):
+    assert isinstance(instance, eol_SequenceExpression)
 
-@given(instance=eol::BagExpression_strategy)
+@given(instance=eol_OrderedSetExpression_strategy)
 @settings(max_examples=50)
-def test_eol::bagexpression_instantiation(instance):
-    assert isinstance(instance, eol::BagExpression)
+def test_eol_orderedsetexpression_instantiation(instance):
+    assert isinstance(instance, eol_OrderedSetExpression)
 
-@given(instance=eol::SetExpression_strategy)
+@given(instance=eol_SetExpression_strategy)
 @settings(max_examples=50)
-def test_eol::setexpression_instantiation(instance):
-    assert isinstance(instance, eol::SetExpression)
+def test_eol_setexpression_instantiation(instance):
+    assert isinstance(instance, eol_SetExpression)
 
 @given(instance=LiteralExpression_strategy)
 @settings(max_examples=50)
 def test_literalexpression_instantiation(instance):
     assert isinstance(instance, LiteralExpression)
 
-@given(instance=eol::CollectionExpression_strategy)
+@given(instance=eol_MapExpression_strategy)
 @settings(max_examples=50)
-def test_eol::collectionexpression_instantiation(instance):
-    assert isinstance(instance, eol::CollectionExpression)
+def test_eol_mapexpression_instantiation(instance):
+    assert isinstance(instance, eol_MapExpression)
 
-@given(instance=eol::MapExpression_strategy)
+@given(instance=eol_CollectionExpression_strategy)
 @settings(max_examples=50)
-def test_eol::mapexpression_instantiation(instance):
-    assert isinstance(instance, eol::MapExpression)
+def test_eol_collectionexpression_instantiation(instance):
+    assert isinstance(instance, eol_CollectionExpression)
 
-@given(instance=eol::PrimitiveExpression_strategy)
+@given(instance=eol_PrimitiveExpression_strategy)
 @settings(max_examples=50)
-def test_eol::primitiveexpression_instantiation(instance):
-    assert isinstance(instance, eol::PrimitiveExpression)
+def test_eol_primitiveexpression_instantiation(instance):
+    assert isinstance(instance, eol_PrimitiveExpression)
 
 @given(instance=SwitchCaseStatement_strategy)
 @settings(max_examples=50)
 def test_switchcasestatement_instantiation(instance):
     assert isinstance(instance, SwitchCaseStatement)
 
-@given(instance=eol::EPackage_strategy)
+@given(instance=eol_EPackage_strategy)
 @settings(max_examples=50)
-def test_eol::epackage_instantiation(instance):
-    assert isinstance(instance, eol::EPackage)
+def test_eol_epackage_instantiation(instance):
+    assert isinstance(instance, eol_EPackage)
 
-@given(instance=eol::SwitchCaseDefaultStatement_strategy)
+@given(instance=eol_SwitchCaseDefaultStatement_strategy)
 @settings(max_examples=50)
-def test_eol::switchcasedefaultstatement_instantiation(instance):
-    assert isinstance(instance, eol::SwitchCaseDefaultStatement)
+def test_eol_switchcasedefaultstatement_instantiation(instance):
+    assert isinstance(instance, eol_SwitchCaseDefaultStatement)
 
-@given(instance=eol::SwitchCaseExpressionStatement_strategy)
+@given(instance=eol_SwitchCaseExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_eol::switchcaseexpressionstatement_instantiation(instance):
-    assert isinstance(instance, eol::SwitchCaseExpressionStatement)
+def test_eol_switchcaseexpressionstatement_instantiation(instance):
+    assert isinstance(instance, eol_SwitchCaseExpressionStatement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=eol::ReturnStatement_strategy)
+@given(instance=eol_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_eol::returnstatement_instantiation(instance):
-    assert isinstance(instance, eol::ReturnStatement)
+def test_eol_switchstatement_instantiation(instance):
+    assert isinstance(instance, eol_SwitchStatement)
 
-@given(instance=eol::ExpressionStatement_strategy)
+@given(instance=eol_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_eol::expressionstatement_instantiation(instance):
-    assert isinstance(instance, eol::ExpressionStatement)
+def test_eol_whilestatement_instantiation(instance):
+    assert isinstance(instance, eol_WhileStatement)
 
-@given(instance=eol::SwitchStatement_strategy)
+@given(instance=eol_SwitchCaseStatement_strategy)
 @settings(max_examples=50)
-def test_eol::switchstatement_instantiation(instance):
-    assert isinstance(instance, eol::SwitchStatement)
+def test_eol_switchcasestatement_instantiation(instance):
+    assert isinstance(instance, eol_SwitchCaseStatement)
 
-@given(instance=eol::SwitchCaseStatement_strategy)
+@given(instance=eol_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_eol::switchcasestatement_instantiation(instance):
-    assert isinstance(instance, eol::SwitchCaseStatement)
+def test_eol_returnstatement_instantiation(instance):
+    assert isinstance(instance, eol_ReturnStatement)
 
-@given(instance=eol::WhileStatement_strategy)
+@given(instance=eol_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_eol::whilestatement_instantiation(instance):
-    assert isinstance(instance, eol::WhileStatement)
+def test_eol_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, eol_AssignmentStatement)
 
-@given(instance=eol::AssignmentStatement_strategy)
+@given(instance=eol_IfStatement_strategy)
 @settings(max_examples=50)
-def test_eol::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, eol::AssignmentStatement)
+def test_eol_ifstatement_instantiation(instance):
+    assert isinstance(instance, eol_IfStatement)
 
-@given(instance=eol::IfStatement_strategy)
+@given(instance=eol_ForStatement_strategy)
 @settings(max_examples=50)
-def test_eol::ifstatement_instantiation(instance):
-    assert isinstance(instance, eol::IfStatement)
+def test_eol_forstatement_instantiation(instance):
+    assert isinstance(instance, eol_ForStatement)
 
-@given(instance=eol::UniqueCollectionType_strategy)
+@given(instance=eol_DeleteStatement_strategy)
 @settings(max_examples=50)
-def test_eol::uniquecollectiontype_instantiation(instance):
-    assert isinstance(instance, eol::UniqueCollectionType)
+def test_eol_deletestatement_instantiation(instance):
+    assert isinstance(instance, eol_DeleteStatement)
 
-@given(instance=eol::OrderedCollectionType_strategy)
+@given(instance=eol_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_eol::orderedcollectiontype_instantiation(instance):
-    assert isinstance(instance, eol::OrderedCollectionType)
+def test_eol_continuestatement_instantiation(instance):
+    assert isinstance(instance, eol_ContinueStatement)
 
-@given(instance=PseudoType_strategy)
+@given(instance=eol_BreakAllStatement_strategy)
 @settings(max_examples=50)
-def test_pseudotype_instantiation(instance):
-    assert isinstance(instance, PseudoType)
+def test_eol_breakallstatement_instantiation(instance):
+    assert isinstance(instance, eol_BreakAllStatement)
 
-@given(instance=eol::OperationArgType_strategy)
+@given(instance=eol_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_eol::operationargtype_instantiation(instance):
-    assert isinstance(instance, eol::OperationArgType)
-
-@given(instance=eol::SelfContentType_strategy)
-@settings(max_examples=50)
-def test_eol::selfcontenttype_instantiation(instance):
-    assert isinstance(instance, eol::SelfContentType)
-
-@given(instance=eol::SelfInnermostType_strategy)
-@settings(max_examples=50)
-def test_eol::selfinnermosttype_instantiation(instance):
-    assert isinstance(instance, eol::SelfInnermostType)
-
-@given(instance=eol::SelfType_strategy)
-@settings(max_examples=50)
-def test_eol::selftype_instantiation(instance):
-    assert isinstance(instance, eol::SelfType)
-
-@given(instance=eol::PseudoType_strategy)
-@settings(max_examples=50)
-def test_eol::pseudotype_instantiation(instance):
-    assert isinstance(instance, eol::PseudoType)
-
-@given(instance=eol::VoidType_strategy)
-@settings(max_examples=50)
-def test_eol::voidtype_instantiation(instance):
-    assert isinstance(instance, eol::VoidType)
-
-@given(instance=eol::EType_strategy)
-@settings(max_examples=50)
-def test_eol::etype_instantiation(instance):
-    assert isinstance(instance, eol::EType)
-
-@given(instance=eol::NativeExpression_strategy)
-@settings(max_examples=50)
-def test_eol::nativeexpression_instantiation(instance):
-    assert isinstance(instance, eol::NativeExpression)
-
-@given(instance=eol::ModelType_strategy)
-@settings(max_examples=50)
-def test_eol::modeltype_instantiation(instance):
-    assert isinstance(instance, eol::ModelType)
-
-@given(instance=AssignmentStatement_strategy)
-@settings(max_examples=50)
-def test_assignmentstatement_instantiation(instance):
-    assert isinstance(instance, AssignmentStatement)
-
-@given(instance=eol::SpecialAssignmentStatement_strategy)
-@settings(max_examples=50)
-def test_eol::specialassignmentstatement_instantiation(instance):
-    assert isinstance(instance, eol::SpecialAssignmentStatement)
-
-@given(instance=CollectionInitValue_strategy)
-@settings(max_examples=50)
-def test_collectioninitvalue_instantiation(instance):
-    assert isinstance(instance, CollectionInitValue)
-
-@given(instance=eol::ExpRange_strategy)
-@settings(max_examples=50)
-def test_eol::exprange_instantiation(instance):
-    assert isinstance(instance, eol::ExpRange)
-
-@given(instance=eol::ExprList_strategy)
-@settings(max_examples=50)
-def test_eol::exprlist_instantiation(instance):
-    assert isinstance(instance, eol::ExprList)
-
-@given(instance=VariableDeclarationExpression_strategy)
-@settings(max_examples=50)
-def test_variabledeclarationexpression_instantiation(instance):
-    assert isinstance(instance, VariableDeclarationExpression)
-
-@given(instance=eol::FormalParameterExpression_strategy)
-@settings(max_examples=50)
-def test_eol::formalparameterexpression_instantiation(instance):
-    assert isinstance(instance, eol::FormalParameterExpression)
-
-@given(instance=eol::TransactionStatement_strategy)
-@settings(max_examples=50)
-def test_eol::transactionstatement_instantiation(instance):
-    assert isinstance(instance, eol::TransactionStatement)
-
-@given(instance=eol::AbortStatement_strategy)
-@settings(max_examples=50)
-def test_eol::abortstatement_instantiation(instance):
-    assert isinstance(instance, eol::AbortStatement)
-
-@given(instance=eol::ThrowStatement_strategy)
-@settings(max_examples=50)
-def test_eol::throwstatement_instantiation(instance):
-    assert isinstance(instance, eol::ThrowStatement)
-
-@given(instance=eol::EObject_strategy)
-@settings(max_examples=50)
-def test_eol::eobject_instantiation(instance):
-    assert isinstance(instance, eol::EObject)
-
-@given(instance=FeatureCallExpression_strategy)
-@settings(max_examples=50)
-def test_featurecallexpression_instantiation(instance):
-    assert isinstance(instance, FeatureCallExpression)
-
-@given(instance=eol::FOLMethodCallExpression_strategy)
-@settings(max_examples=50)
-def test_eol::folmethodcallexpression_instantiation(instance):
-    assert isinstance(instance, eol::FOLMethodCallExpression)
-
-@given(instance=eol::MethodCallExpression_strategy)
-@settings(max_examples=50)
-def test_eol::methodcallexpression_instantiation(instance):
-    assert isinstance(instance, eol::MethodCallExpression)
-
-@given(instance=EolElement_strategy)
-@settings(max_examples=50)
-def test_eolelement_instantiation(instance):
-    assert isinstance(instance, EolElement)
-
-@given(instance=eol::Annotation_strategy)
-@settings(max_examples=50)
-def test_eol::annotation_instantiation(instance):
-    assert isinstance(instance, eol::Annotation)
-
-@given(instance=eol::ModelDeclarationParameter_strategy)
-@settings(max_examples=50)
-def test_eol::modeldeclarationparameter_instantiation(instance):
-    assert isinstance(instance, eol::ModelDeclarationParameter)
-
-@given(instance=eol::KeyValue_strategy)
-@settings(max_examples=50)
-def test_eol::keyvalue_instantiation(instance):
-    assert isinstance(instance, eol::KeyValue)
-
-@given(instance=eol::CollectionInitValue_strategy)
-@settings(max_examples=50)
-def test_eol::collectioninitvalue_instantiation(instance):
-    assert isinstance(instance, eol::CollectionInitValue)
-
-@given(instance=eol::Block_strategy)
-@settings(max_examples=50)
-def test_eol::block_instantiation(instance):
-    assert isinstance(instance, eol::Block)
-
-@given(instance=eol::OperationDefinition_strategy)
-@settings(max_examples=50)
-def test_eol::operationdefinition_instantiation(instance):
-    assert isinstance(instance, eol::OperationDefinition)
-
-@given(instance=eol::Import_strategy)
-@settings(max_examples=50)
-def test_eol::import_instantiation(instance):
-    assert isinstance(instance, eol::Import)
-
-@given(instance=eol::Program_strategy)
-@settings(max_examples=50)
-def test_eol::program_instantiation(instance):
-    assert isinstance(instance, eol::Program)
-
-@given(instance=BinaryOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_binaryoperatorexpression_instantiation(instance):
-    assert isinstance(instance, BinaryOperatorExpression)
-
-@given(instance=eol::MultiplyOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::multiplyoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::MultiplyOperatorExpression)
-
-@given(instance=eol::LessThanOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::lessthanoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::LessThanOperatorExpression)
-
-@given(instance=eol::GreaterThanOrEqualToOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::greaterthanorequaltooperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::GreaterThanOrEqualToOperatorExpression)
-
-@given(instance=eol::ImpliesOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::impliesoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::ImpliesOperatorExpression)
-
-@given(instance=eol::GreaterThanOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::greaterthanoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::GreaterThanOperatorExpression)
-
-@given(instance=eol::MinusOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::minusoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::MinusOperatorExpression)
-
-@given(instance=eol::LessThanOrEqualToOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::lessthanorequaltooperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::LessThanOrEqualToOperatorExpression)
-
-@given(instance=eol::AndOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::andoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::AndOperatorExpression)
-
-@given(instance=OperatorExpression_strategy)
-@settings(max_examples=50)
-def test_operatorexpression_instantiation(instance):
-    assert isinstance(instance, OperatorExpression)
-
-@given(instance=eol::UnaryOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::unaryoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::UnaryOperatorExpression)
-
-@given(instance=eol::BinaryOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::binaryoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::BinaryOperatorExpression)
-
-@given(instance=Expression_strategy)
-@settings(max_examples=50)
-def test_expression_instantiation(instance):
-    assert isinstance(instance, Expression)
-
-@given(instance=eol::NewExpression_strategy)
-@settings(max_examples=50)
-def test_eol::newexpression_instantiation(instance):
-    assert isinstance(instance, eol::NewExpression)
-
-@given(instance=eol::LiteralExpression_strategy)
-@settings(max_examples=50)
-def test_eol::literalexpression_instantiation(instance):
-    assert isinstance(instance, eol::LiteralExpression)
-
-@given(instance=eol::OperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::operatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::OperatorExpression)
-
-@given(instance=eol::Type_strategy)
-@settings(max_examples=50)
-def test_eol::type_instantiation(instance):
-    assert isinstance(instance, eol::Type)
-
-@given(instance=eol::Expression_strategy)
-@settings(max_examples=50)
-def test_eol::expression_instantiation(instance):
-    assert isinstance(instance, eol::Expression)
-
-@given(instance=eol::Statement_strategy)
-@settings(max_examples=50)
-def test_eol::statement_instantiation(instance):
-    assert isinstance(instance, eol::Statement)
-
-@given(instance=eol::ModelDeclarationStatement_strategy)
-@settings(max_examples=50)
-def test_eol::modeldeclarationstatement_instantiation(instance):
-    assert isinstance(instance, eol::ModelDeclarationStatement)
-
-@given(instance=eol::NameExpression_strategy)
-@settings(max_examples=50)
-def test_eol::nameexpression_instantiation(instance):
-    assert isinstance(instance, eol::NameExpression)
-
-@given(instance=eol::NameExpression_strategy)
-def test_eol::nameexpression_resolvedContent_type(instance):
-    assert isinstance(instance.resolvedContent, str)
-
-
-@given(instance=eol::NameExpression_strategy)
-def test_eol::nameexpression_resolvedContent_setter(instance):
-    original = instance.resolvedContent
-    instance.resolvedContent = original
-    assert instance.resolvedContent == original
-
-@given(instance=eol::NameExpression_strategy)
-def test_eol::nameexpression_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=eol::NameExpression_strategy)
-def test_eol::nameexpression_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=eol::TextPosition_strategy)
-@settings(max_examples=50)
-def test_eol::textposition_instantiation(instance):
-    assert isinstance(instance, eol::TextPosition)
-
-@given(instance=eol::TextPosition_strategy)
-def test_eol::textposition_column_type(instance):
-    assert isinstance(instance.column, int)
-
-
-@given(instance=eol::TextPosition_strategy)
-def test_eol::textposition_column_setter(instance):
-    original = instance.column
-    instance.column = original
-    assert instance.column == original
-
-@given(instance=eol::TextPosition_strategy)
-def test_eol::textposition_line_type(instance):
-    assert isinstance(instance.line, int)
-
-
-@given(instance=eol::TextPosition_strategy)
-def test_eol::textposition_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
-
-@given(instance=eol::TextRegion_strategy)
-@settings(max_examples=50)
-def test_eol::textregion_instantiation(instance):
-    assert isinstance(instance, eol::TextRegion)
-
-@given(instance=eol::EolElement_strategy)
-@settings(max_examples=50)
-def test_eol::eolelement_instantiation(instance):
-    assert isinstance(instance, eol::EolElement)
-
-@given(instance=eol::EolElement_strategy)
-def test_eol::eolelement_column_type(instance):
-    assert isinstance(instance.column, int)
-
-
-@given(instance=eol::EolElement_strategy)
-def test_eol::eolelement_column_setter(instance):
-    original = instance.column
-    instance.column = original
-    assert instance.column == original
-
-@given(instance=eol::EolElement_strategy)
-def test_eol::eolelement_uri_type(instance):
-    assert isinstance(instance.uri, str)
-
-
-@given(instance=eol::EolElement_strategy)
-def test_eol::eolelement_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
-
-@given(instance=eol::EolElement_strategy)
-def test_eol::eolelement_line_type(instance):
-    assert isinstance(instance.line, int)
-
-
-@given(instance=eol::EolElement_strategy)
-def test_eol::eolelement_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
-
-@given(instance=eol::ForStatement_strategy)
-@settings(max_examples=50)
-def test_eol::forstatement_instantiation(instance):
-    assert isinstance(instance, eol::ForStatement)
-
-@given(instance=eol::DeleteStatement_strategy)
-@settings(max_examples=50)
-def test_eol::deletestatement_instantiation(instance):
-    assert isinstance(instance, eol::DeleteStatement)
-
-@given(instance=eol::ContinueStatement_strategy)
-@settings(max_examples=50)
-def test_eol::continuestatement_instantiation(instance):
-    assert isinstance(instance, eol::ContinueStatement)
-
-@given(instance=eol::BreakAllStatement_strategy)
-@settings(max_examples=50)
-def test_eol::breakallstatement_instantiation(instance):
-    assert isinstance(instance, eol::BreakAllStatement)
-
-@given(instance=eol::BreakStatement_strategy)
-@settings(max_examples=50)
-def test_eol::breakstatement_instantiation(instance):
-    assert isinstance(instance, eol::BreakStatement)
-
-@given(instance=eol::PropertyCallExpression_strategy)
-@settings(max_examples=50)
-def test_eol::propertycallexpression_instantiation(instance):
-    assert isinstance(instance, eol::PropertyCallExpression)
-
-@given(instance=eol::PlusOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::plusoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::PlusOperatorExpression)
-
-@given(instance=eol::OrOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::oroperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::OrOperatorExpression)
-
-@given(instance=eol::NotEqualsOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_eol::notequalsoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::NotEqualsOperatorExpression)
+def test_eol_breakstatement_instantiation(instance):
+    assert isinstance(instance, eol_BreakStatement)
 
 @given(instance=UnaryOperatorExpression_strategy)
 @settings(max_examples=50)
 def test_unaryoperatorexpression_instantiation(instance):
     assert isinstance(instance, UnaryOperatorExpression)
 
-@given(instance=eol::NotOperatorExpression_strategy)
+@given(instance=eol_NotOperatorExpression_strategy)
 @settings(max_examples=50)
-def test_eol::notoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::NotOperatorExpression)
+def test_eol_notoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_NotOperatorExpression)
 
-@given(instance=eol::NegativeOperatorExpression_strategy)
+@given(instance=eol_NegativeOperatorExpression_strategy)
 @settings(max_examples=50)
-def test_eol::negativeoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::NegativeOperatorExpression)
+def test_eol_negativeoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_NegativeOperatorExpression)
 
-@given(instance=eol::AnnotationBlock_strategy)
+@given(instance=PseudoType_strategy)
 @settings(max_examples=50)
-def test_eol::annotationblock_instantiation(instance):
-    assert isinstance(instance, eol::AnnotationBlock)
+def test_pseudotype_instantiation(instance):
+    assert isinstance(instance, PseudoType)
 
-@given(instance=eol::XorOperatorExpression_strategy)
+@given(instance=eol_SelfInnermostType_strategy)
 @settings(max_examples=50)
-def test_eol::xoroperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::XorOperatorExpression)
+def test_eol_selfinnermosttype_instantiation(instance):
+    assert isinstance(instance, eol_SelfInnermostType)
 
-@given(instance=eol::VariableDeclarationExpression_strategy)
+@given(instance=eol_OperationArgType_strategy)
 @settings(max_examples=50)
-def test_eol::variabledeclarationexpression_instantiation(instance):
-    assert isinstance(instance, eol::VariableDeclarationExpression)
+def test_eol_operationargtype_instantiation(instance):
+    assert isinstance(instance, eol_OperationArgType)
 
-@given(instance=eol::VariableDeclarationExpression_strategy)
-def test_eol::variabledeclarationexpression_lastDefinitionPoint_type(instance):
-    assert isinstance(instance.lastDefinitionPoint, str)
-
-
-@given(instance=eol::VariableDeclarationExpression_strategy)
-def test_eol::variabledeclarationexpression_lastDefinitionPoint_setter(instance):
-    original = instance.lastDefinitionPoint
-    instance.lastDefinitionPoint = original
-    assert instance.lastDefinitionPoint == original
-
-@given(instance=eol::FeatureCallExpression_strategy)
+@given(instance=eol_SelfContentType_strategy)
 @settings(max_examples=50)
-def test_eol::featurecallexpression_instantiation(instance):
-    assert isinstance(instance, eol::FeatureCallExpression)
+def test_eol_selfcontenttype_instantiation(instance):
+    assert isinstance(instance, eol_SelfContentType)
 
-@given(instance=eol::EqualsOperatorExpression_strategy)
+@given(instance=eol_SelfType_strategy)
 @settings(max_examples=50)
-def test_eol::equalsoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::EqualsOperatorExpression)
+def test_eol_selftype_instantiation(instance):
+    assert isinstance(instance, eol_SelfType)
 
-@given(instance=eol::ModelExpression_strategy)
+@given(instance=eol_NativeExpression_strategy)
 @settings(max_examples=50)
-def test_eol::modelexpression_instantiation(instance):
-    assert isinstance(instance, eol::ModelExpression)
+def test_eol_nativeexpression_instantiation(instance):
+    assert isinstance(instance, eol_NativeExpression)
 
-@given(instance=eol::EnumerationLiteralExpression_strategy)
+@given(instance=AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_eol::enumerationliteralexpression_instantiation(instance):
-    assert isinstance(instance, eol::EnumerationLiteralExpression)
+def test_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, AssignmentStatement)
 
-@given(instance=eol::DivideOperatorExpression_strategy)
+@given(instance=eol_SpecialAssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_eol::divideoperatorexpression_instantiation(instance):
-    assert isinstance(instance, eol::DivideOperatorExpression)
+def test_eol_specialassignmentstatement_instantiation(instance):
+    assert isinstance(instance, eol_SpecialAssignmentStatement)
+
+@given(instance=CollectionInitValue_strategy)
+@settings(max_examples=50)
+def test_collectioninitvalue_instantiation(instance):
+    assert isinstance(instance, CollectionInitValue)
+
+@given(instance=eol_ExpRange_strategy)
+@settings(max_examples=50)
+def test_eol_exprange_instantiation(instance):
+    assert isinstance(instance, eol_ExpRange)
+
+@given(instance=eol_ExprList_strategy)
+@settings(max_examples=50)
+def test_eol_exprlist_instantiation(instance):
+    assert isinstance(instance, eol_ExprList)
+
+@given(instance=VariableDeclarationExpression_strategy)
+@settings(max_examples=50)
+def test_variabledeclarationexpression_instantiation(instance):
+    assert isinstance(instance, VariableDeclarationExpression)
+
+@given(instance=eol_FormalParameterExpression_strategy)
+@settings(max_examples=50)
+def test_eol_formalparameterexpression_instantiation(instance):
+    assert isinstance(instance, eol_FormalParameterExpression)
+
+@given(instance=eol_TransactionStatement_strategy)
+@settings(max_examples=50)
+def test_eol_transactionstatement_instantiation(instance):
+    assert isinstance(instance, eol_TransactionStatement)
+
+@given(instance=eol_AbortStatement_strategy)
+@settings(max_examples=50)
+def test_eol_abortstatement_instantiation(instance):
+    assert isinstance(instance, eol_AbortStatement)
+
+@given(instance=eol_ThrowStatement_strategy)
+@settings(max_examples=50)
+def test_eol_throwstatement_instantiation(instance):
+    assert isinstance(instance, eol_ThrowStatement)
+
+@given(instance=OrderedCollectionType_strategy)
+@settings(max_examples=50)
+def test_orderedcollectiontype_instantiation(instance):
+    assert isinstance(instance, OrderedCollectionType)
+
+@given(instance=eol_SequenceType_strategy)
+@settings(max_examples=50)
+def test_eol_sequencetype_instantiation(instance):
+    assert isinstance(instance, eol_SequenceType)
+
+@given(instance=CollectionType_strategy)
+@settings(max_examples=50)
+def test_collectiontype_instantiation(instance):
+    assert isinstance(instance, CollectionType)
+
+@given(instance=eol_UniqueCollectionType_strategy)
+@settings(max_examples=50)
+def test_eol_uniquecollectiontype_instantiation(instance):
+    assert isinstance(instance, eol_UniqueCollectionType)
+
+@given(instance=eol_OrderedCollectionType_strategy)
+@settings(max_examples=50)
+def test_eol_orderedcollectiontype_instantiation(instance):
+    assert isinstance(instance, eol_OrderedCollectionType)
+
+@given(instance=eol_BagType_strategy)
+@settings(max_examples=50)
+def test_eol_bagtype_instantiation(instance):
+    assert isinstance(instance, eol_BagType)
+
+@given(instance=eol_EClassifier_strategy)
+@settings(max_examples=50)
+def test_eol_eclassifier_instantiation(instance):
+    assert isinstance(instance, eol_EClassifier)
+
+@given(instance=NameExpression_strategy)
+@settings(max_examples=50)
+def test_nameexpression_instantiation(instance):
+    assert isinstance(instance, NameExpression)
+
+@given(instance=eol_ModelExpression_strategy)
+@settings(max_examples=50)
+def test_eol_modelexpression_instantiation(instance):
+    assert isinstance(instance, eol_ModelExpression)
+
+@given(instance=eol_SpecialNameExpression_strategy)
+@settings(max_examples=50)
+def test_eol_specialnameexpression_instantiation(instance):
+    assert isinstance(instance, eol_SpecialNameExpression)
+
+@given(instance=Annotation_strategy)
+@settings(max_examples=50)
+def test_annotation_instantiation(instance):
+    assert isinstance(instance, Annotation)
+
+@given(instance=eol_SimpleAnnotation_strategy)
+@settings(max_examples=50)
+def test_eol_simpleannotation_instantiation(instance):
+    assert isinstance(instance, eol_SimpleAnnotation)
+
+@given(instance=eol_ExecutableAnnotation_strategy)
+@settings(max_examples=50)
+def test_eol_executableannotation_instantiation(instance):
+    assert isinstance(instance, eol_ExecutableAnnotation)
+
+@given(instance=eol_ExpressionStatement_strategy)
+@settings(max_examples=50)
+def test_eol_expressionstatement_instantiation(instance):
+    assert isinstance(instance, eol_ExpressionStatement)
+
+@given(instance=UniqueCollectionType_strategy)
+@settings(max_examples=50)
+def test_uniquecollectiontype_instantiation(instance):
+    assert isinstance(instance, UniqueCollectionType)
+
+@given(instance=eol_OrderedSetType_strategy)
+@settings(max_examples=50)
+def test_eol_orderedsettype_instantiation(instance):
+    assert isinstance(instance, eol_OrderedSetType)
+
+@given(instance=eol_SetType_strategy)
+@settings(max_examples=50)
+def test_eol_settype_instantiation(instance):
+    assert isinstance(instance, eol_SetType)
+
+@given(instance=PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_primitivetype_instantiation(instance):
+    assert isinstance(instance, PrimitiveType)
+
+@given(instance=eol_IntegerType_strategy)
+@settings(max_examples=50)
+def test_eol_integertype_instantiation(instance):
+    assert isinstance(instance, eol_IntegerType)
+
+@given(instance=eol_StringType_strategy)
+@settings(max_examples=50)
+def test_eol_stringtype_instantiation(instance):
+    assert isinstance(instance, eol_StringType)
+
+@given(instance=eol_RealType_strategy)
+@settings(max_examples=50)
+def test_eol_realtype_instantiation(instance):
+    assert isinstance(instance, eol_RealType)
+
+@given(instance=eol_BooleanType_strategy)
+@settings(max_examples=50)
+def test_eol_booleantype_instantiation(instance):
+    assert isinstance(instance, eol_BooleanType)
+
+@given(instance=Type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
+
+@given(instance=eol_CollectionType_strategy)
+@settings(max_examples=50)
+def test_eol_collectiontype_instantiation(instance):
+    assert isinstance(instance, eol_CollectionType)
+
+@given(instance=eol_ModelType_strategy)
+@settings(max_examples=50)
+def test_eol_modeltype_instantiation(instance):
+    assert isinstance(instance, eol_ModelType)
+
+@given(instance=eol_NativeType_strategy)
+@settings(max_examples=50)
+def test_eol_nativetype_instantiation(instance):
+    assert isinstance(instance, eol_NativeType)
+
+@given(instance=eol_MapType_strategy)
+@settings(max_examples=50)
+def test_eol_maptype_instantiation(instance):
+    assert isinstance(instance, eol_MapType)
+
+@given(instance=eol_EType_strategy)
+@settings(max_examples=50)
+def test_eol_etype_instantiation(instance):
+    assert isinstance(instance, eol_EType)
+
+@given(instance=eol_PseudoType_strategy)
+@settings(max_examples=50)
+def test_eol_pseudotype_instantiation(instance):
+    assert isinstance(instance, eol_PseudoType)
+
+@given(instance=eol_ModelElementType_strategy)
+@settings(max_examples=50)
+def test_eol_modelelementtype_instantiation(instance):
+    assert isinstance(instance, eol_ModelElementType)
+
+
+
+@given(instance=eol_ModelElementType_strategy)
+def test_eol_modelelementtype_elementName_setter(instance):
+    original = instance.elementName
+    instance.elementName = original
+    assert instance.elementName == original
+
+
+
+@given(instance=eol_ModelElementType_strategy)
+def test_eol_modelelementtype_modelName_setter(instance):
+    original = instance.modelName
+    instance.modelName = original
+    assert instance.modelName == original
+
+@given(instance=eol_VoidType_strategy)
+@settings(max_examples=50)
+def test_eol_voidtype_instantiation(instance):
+    assert isinstance(instance, eol_VoidType)
+
+@given(instance=eol_PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_eol_primitivetype_instantiation(instance):
+    assert isinstance(instance, eol_PrimitiveType)
+
+@given(instance=eol_AnyType_strategy)
+@settings(max_examples=50)
+def test_eol_anytype_instantiation(instance):
+    assert isinstance(instance, eol_AnyType)
 
 @given(instance=PrimitiveExpression_strategy)
 @settings(max_examples=50)
 def test_primitiveexpression_instantiation(instance):
     assert isinstance(instance, PrimitiveExpression)
 
-@given(instance=eol::BooleanExpression_strategy)
+@given(instance=eol_RealExpression_strategy)
 @settings(max_examples=50)
-def test_eol::booleanexpression_instantiation(instance):
-    assert isinstance(instance, eol::BooleanExpression)
-
-@given(instance=eol::BooleanExpression_strategy)
-def test_eol::booleanexpression_val_type(instance):
-    assert isinstance(instance.val, bool)
+def test_eol_realexpression_instantiation(instance):
+    assert isinstance(instance, eol_RealExpression)
 
 
-@given(instance=eol::BooleanExpression_strategy)
-def test_eol::booleanexpression_val_setter(instance):
+
+@given(instance=eol_RealExpression_strategy)
+def test_eol_realexpression_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=eol::StringExpression_strategy)
+@given(instance=eol_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_eol::stringexpression_instantiation(instance):
-    assert isinstance(instance, eol::StringExpression)
-
-@given(instance=eol::StringExpression_strategy)
-def test_eol::stringexpression_val_type(instance):
-    assert isinstance(instance.val, str)
+def test_eol_booleanexpression_instantiation(instance):
+    assert isinstance(instance, eol_BooleanExpression)
 
 
-@given(instance=eol::StringExpression_strategy)
-def test_eol::stringexpression_val_setter(instance):
+
+@given(instance=eol_BooleanExpression_strategy)
+def test_eol_booleanexpression_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=eol::IntegerExpression_strategy)
+@given(instance=eol_EObject_strategy)
 @settings(max_examples=50)
-def test_eol::integerexpression_instantiation(instance):
-    assert isinstance(instance, eol::IntegerExpression)
+def test_eol_eobject_instantiation(instance):
+    assert isinstance(instance, eol_EObject)
 
-@given(instance=eol::IntegerExpression_strategy)
-def test_eol::integerexpression_val_type(instance):
-    assert isinstance(instance.val, int)
+@given(instance=FeatureCallExpression_strategy)
+@settings(max_examples=50)
+def test_featurecallexpression_instantiation(instance):
+    assert isinstance(instance, FeatureCallExpression)
+
+@given(instance=eol_PropertyCallExpression_strategy)
+@settings(max_examples=50)
+def test_eol_propertycallexpression_instantiation(instance):
+    assert isinstance(instance, eol_PropertyCallExpression)
+
+@given(instance=eol_FOLMethodCallExpression_strategy)
+@settings(max_examples=50)
+def test_eol_folmethodcallexpression_instantiation(instance):
+    assert isinstance(instance, eol_FOLMethodCallExpression)
+
+@given(instance=eol_MethodCallExpression_strategy)
+@settings(max_examples=50)
+def test_eol_methodcallexpression_instantiation(instance):
+    assert isinstance(instance, eol_MethodCallExpression)
+
+@given(instance=eol_IntegerExpression_strategy)
+@settings(max_examples=50)
+def test_eol_integerexpression_instantiation(instance):
+    assert isinstance(instance, eol_IntegerExpression)
 
 
-@given(instance=eol::IntegerExpression_strategy)
-def test_eol::integerexpression_val_setter(instance):
+
+@given(instance=eol_IntegerExpression_strategy)
+def test_eol_integerexpression_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=eol::RealExpression_strategy)
+@given(instance=EolElement_strategy)
 @settings(max_examples=50)
-def test_eol::realexpression_instantiation(instance):
-    assert isinstance(instance, eol::RealExpression)
+def test_eolelement_instantiation(instance):
+    assert isinstance(instance, EolElement)
 
-@given(instance=eol::RealExpression_strategy)
-def test_eol::realexpression_val_type(instance):
-    assert isinstance(instance.val, float)
+@given(instance=eol_AnnotationBlock_strategy)
+@settings(max_examples=50)
+def test_eol_annotationblock_instantiation(instance):
+    assert isinstance(instance, eol_AnnotationBlock)
+
+@given(instance=eol_OperationDefinition_strategy)
+@settings(max_examples=50)
+def test_eol_operationdefinition_instantiation(instance):
+    assert isinstance(instance, eol_OperationDefinition)
+
+@given(instance=eol_CollectionInitValue_strategy)
+@settings(max_examples=50)
+def test_eol_collectioninitvalue_instantiation(instance):
+    assert isinstance(instance, eol_CollectionInitValue)
+
+@given(instance=eol_ModelDeclarationParameter_strategy)
+@settings(max_examples=50)
+def test_eol_modeldeclarationparameter_instantiation(instance):
+    assert isinstance(instance, eol_ModelDeclarationParameter)
+
+@given(instance=eol_Block_strategy)
+@settings(max_examples=50)
+def test_eol_block_instantiation(instance):
+    assert isinstance(instance, eol_Block)
+
+@given(instance=eol_KeyValue_strategy)
+@settings(max_examples=50)
+def test_eol_keyvalue_instantiation(instance):
+    assert isinstance(instance, eol_KeyValue)
+
+@given(instance=eol_Import_strategy)
+@settings(max_examples=50)
+def test_eol_import_instantiation(instance):
+    assert isinstance(instance, eol_Import)
+
+@given(instance=eol_Annotation_strategy)
+@settings(max_examples=50)
+def test_eol_annotation_instantiation(instance):
+    assert isinstance(instance, eol_Annotation)
+
+@given(instance=eol_Program_strategy)
+@settings(max_examples=50)
+def test_eol_program_instantiation(instance):
+    assert isinstance(instance, eol_Program)
+
+@given(instance=BinaryOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_binaryoperatorexpression_instantiation(instance):
+    assert isinstance(instance, BinaryOperatorExpression)
+
+@given(instance=eol_DivideOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_divideoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_DivideOperatorExpression)
+
+@given(instance=eol_XorOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_xoroperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_XorOperatorExpression)
+
+@given(instance=eol_NotEqualsOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_notequalsoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_NotEqualsOperatorExpression)
+
+@given(instance=eol_GreaterThanOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_greaterthanoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_GreaterThanOperatorExpression)
+
+@given(instance=eol_ImpliesOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_impliesoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_ImpliesOperatorExpression)
+
+@given(instance=eol_PlusOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_plusoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_PlusOperatorExpression)
+
+@given(instance=eol_LessThanOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_lessthanoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_LessThanOperatorExpression)
+
+@given(instance=eol_MultiplyOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_multiplyoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_MultiplyOperatorExpression)
+
+@given(instance=eol_LessThanOrEqualToOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_lessthanorequaltooperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_LessThanOrEqualToOperatorExpression)
+
+@given(instance=eol_OrOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_oroperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_OrOperatorExpression)
+
+@given(instance=eol_GreaterThanOrEqualToOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_greaterthanorequaltooperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_GreaterThanOrEqualToOperatorExpression)
+
+@given(instance=eol_MinusOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_minusoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_MinusOperatorExpression)
+
+@given(instance=eol_EqualsOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_equalsoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_EqualsOperatorExpression)
+
+@given(instance=eol_AndOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_andoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_AndOperatorExpression)
+
+@given(instance=OperatorExpression_strategy)
+@settings(max_examples=50)
+def test_operatorexpression_instantiation(instance):
+    assert isinstance(instance, OperatorExpression)
+
+@given(instance=eol_UnaryOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_unaryoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_UnaryOperatorExpression)
+
+@given(instance=eol_BinaryOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_binaryoperatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_BinaryOperatorExpression)
+
+@given(instance=Expression_strategy)
+@settings(max_examples=50)
+def test_expression_instantiation(instance):
+    assert isinstance(instance, Expression)
+
+@given(instance=eol_NewExpression_strategy)
+@settings(max_examples=50)
+def test_eol_newexpression_instantiation(instance):
+    assert isinstance(instance, eol_NewExpression)
+
+@given(instance=eol_FeatureCallExpression_strategy)
+@settings(max_examples=50)
+def test_eol_featurecallexpression_instantiation(instance):
+    assert isinstance(instance, eol_FeatureCallExpression)
+
+@given(instance=eol_EnumerationLiteralExpression_strategy)
+@settings(max_examples=50)
+def test_eol_enumerationliteralexpression_instantiation(instance):
+    assert isinstance(instance, eol_EnumerationLiteralExpression)
+
+@given(instance=eol_LiteralExpression_strategy)
+@settings(max_examples=50)
+def test_eol_literalexpression_instantiation(instance):
+    assert isinstance(instance, eol_LiteralExpression)
+
+@given(instance=eol_VariableDeclarationExpression_strategy)
+@settings(max_examples=50)
+def test_eol_variabledeclarationexpression_instantiation(instance):
+    assert isinstance(instance, eol_VariableDeclarationExpression)
 
 
-@given(instance=eol::RealExpression_strategy)
-def test_eol::realexpression_val_setter(instance):
+
+@given(instance=eol_VariableDeclarationExpression_strategy)
+def test_eol_variabledeclarationexpression_lastDefinitionPoint_setter(instance):
+    original = instance.lastDefinitionPoint
+    instance.lastDefinitionPoint = original
+    assert instance.lastDefinitionPoint == original
+
+@given(instance=eol_OperatorExpression_strategy)
+@settings(max_examples=50)
+def test_eol_operatorexpression_instantiation(instance):
+    assert isinstance(instance, eol_OperatorExpression)
+
+@given(instance=eol_Type_strategy)
+@settings(max_examples=50)
+def test_eol_type_instantiation(instance):
+    assert isinstance(instance, eol_Type)
+
+@given(instance=eol_Expression_strategy)
+@settings(max_examples=50)
+def test_eol_expression_instantiation(instance):
+    assert isinstance(instance, eol_Expression)
+
+@given(instance=eol_Statement_strategy)
+@settings(max_examples=50)
+def test_eol_statement_instantiation(instance):
+    assert isinstance(instance, eol_Statement)
+
+@given(instance=eol_StringExpression_strategy)
+@settings(max_examples=50)
+def test_eol_stringexpression_instantiation(instance):
+    assert isinstance(instance, eol_StringExpression)
+
+
+
+@given(instance=eol_StringExpression_strategy)
+def test_eol_stringexpression_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
+
+@given(instance=eol_ModelDeclarationStatement_strategy)
+@settings(max_examples=50)
+def test_eol_modeldeclarationstatement_instantiation(instance):
+    assert isinstance(instance, eol_ModelDeclarationStatement)
+
+@given(instance=eol_NameExpression_strategy)
+@settings(max_examples=50)
+def test_eol_nameexpression_instantiation(instance):
+    assert isinstance(instance, eol_NameExpression)
+
+
+
+@given(instance=eol_NameExpression_strategy)
+def test_eol_nameexpression_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=eol_NameExpression_strategy)
+def test_eol_nameexpression_resolvedContent_setter(instance):
+    original = instance.resolvedContent
+    instance.resolvedContent = original
+    assert instance.resolvedContent == original
+
+@given(instance=eol_TextPosition_strategy)
+@settings(max_examples=50)
+def test_eol_textposition_instantiation(instance):
+    assert isinstance(instance, eol_TextPosition)
+
+
+
+@given(instance=eol_TextPosition_strategy)
+def test_eol_textposition_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original
+
+
+
+@given(instance=eol_TextPosition_strategy)
+def test_eol_textposition_column_setter(instance):
+    original = instance.column
+    instance.column = original
+    assert instance.column == original
+
+@given(instance=eol_TextRegion_strategy)
+@settings(max_examples=50)
+def test_eol_textregion_instantiation(instance):
+    assert isinstance(instance, eol_TextRegion)
+
+@given(instance=eol_EolElement_strategy)
+@settings(max_examples=50)
+def test_eol_eolelement_instantiation(instance):
+    assert isinstance(instance, eol_EolElement)
+
+
+
+@given(instance=eol_EolElement_strategy)
+def test_eol_eolelement_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original
+
+
+
+@given(instance=eol_EolElement_strategy)
+def test_eol_eolelement_column_setter(instance):
+    original = instance.column
+    instance.column = original
+    assert instance.column == original
+
+
+
+@given(instance=eol_EolElement_strategy)
+def test_eol_eolelement_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original

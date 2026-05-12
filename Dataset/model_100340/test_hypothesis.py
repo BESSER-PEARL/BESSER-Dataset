@@ -3,67 +3,67 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Extension,
     ElseIf,
     FunctionOrVariableTerm,
     Constant,
-    ASM::IntegerConstant,
-    ASM::StringConstant,
-    ASM::UndefConstant,
-    ASM::BooleanConstant,
+    ASM_IntegerConstant,
+    ASM_UndefConstant,
+    ASM_StringConstant,
+    ASM_BooleanConstant,
     Universe,
     Term,
-    ASM::FunctionOrVariableTerm,
-    ASM::Constant,
-    ASM::OperatorTerm,
+    ASM_Constant,
+    ASM_OperatorTerm,
+    ASM_FunctionOrVariableTerm,
     Parameter,
     ElementDecl,
-    ASM::VariableDecl,
+    ASM_VariableDecl,
     Function,
     VariableDecl,
-    ASM::Argument,
+    ASM_Argument,
     AccessUpdateFunction,
     Rule,
-    ASM::DoForallRule,
-    ASM::ReturnRule,
-    ASM::SkipRule,
-    ASM::ChooseRule,
-    ASM::ConditionalRule,
-    ASM::UpdateRule,
-    ASM::AsmInvocation,
-    ASM::ExtendRule,
+    ASM_ChooseRule,
+    ASM_UpdateRule,
+    ASM_ConditionalRule,
+    ASM_ExtendRule,
+    ASM_DoForallRule,
+    ASM_AsmInvocation,
+    ASM_ReturnRule,
+    ASM_SkipRule,
     Initialization,
     Declaration,
-    ASM::Function,
-    ASM::Universe,
+    ASM_Function,
+    ASM_Universe,
     Argument,
     Body,
     MetaInformation,
     Signature,
     Asm,
     XAsmFile,
-    ASM::Body,
-    ASM::XAsmSpec,
+    ASM_Body,
+    ASM_XAsmSpec,
     LocatedElement,
-    ASM::MetaInformation,
-    ASM::Asm,
-    ASM::Extension,
-    ASM::Signature,
-    ASM::Parameter,
-    ASM::ElementDecl,
-    ASM::Declaration,
-    ASM::Term,
-    ASM::ElseIf,
-    ASM::Initialization,
-    ASM::Rule,
-    ASM::AccessUpdateFunction,
-    ASM::XAsmFile,
-    ASM::LocatedElement,
-    AsmType,
+    ASM_Extension,
+    ASM_Parameter,
+    ASM_Asm,
+    ASM_Signature,
+    ASM_Rule,
+    ASM_Term,
+    ASM_MetaInformation,
+    ASM_ElseIf,
+    ASM_Initialization,
+    ASM_Declaration,
+    ASM_ElementDecl,
+    ASM_AccessUpdateFunction,
+    ASM_XAsmFile,
+    ASM_LocatedElement,
     AccessUpdateType,
+    AsmType,
 )
 
 # =============================================================================
@@ -128,23 +128,23 @@ def test_constant_constructor_args():
 
 
 
-def test_asm::integerconstant_is_not_abstract():
-    assert not inspect.isabstract(ASM::IntegerConstant)
+def test_asm_integerconstant_is_not_abstract():
+    assert not inspect.isabstract(ASM_IntegerConstant)
 
 
-def test_asm::integerconstant_constructor_exists():
-    assert callable(ASM::IntegerConstant.__init__)
+def test_asm_integerconstant_constructor_exists():
+    assert callable(ASM_IntegerConstant.__init__)
 
 
-def test_asm::integerconstant_constructor_args():
-    sig = inspect.signature(ASM::IntegerConstant.__init__)
+def test_asm_integerconstant_constructor_args():
+    sig = inspect.signature(ASM_IntegerConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_asm::integerconstant_has_value():
-    assert hasattr(ASM::IntegerConstant, "value")
+def test_asm_integerconstant_has_value():
+    assert hasattr(ASM_IntegerConstant, "value")
     descriptor = None
-    for klass in ASM::IntegerConstant.__mro__:
+    for klass in ASM_IntegerConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -152,23 +152,37 @@ def test_asm::integerconstant_has_value():
 
 
 
-def test_asm::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(ASM::StringConstant)
+def test_asm_undefconstant_is_not_abstract():
+    assert not inspect.isabstract(ASM_UndefConstant)
 
 
-def test_asm::stringconstant_constructor_exists():
-    assert callable(ASM::StringConstant.__init__)
+def test_asm_undefconstant_constructor_exists():
+    assert callable(ASM_UndefConstant.__init__)
 
 
-def test_asm::stringconstant_constructor_args():
-    sig = inspect.signature(ASM::StringConstant.__init__)
+def test_asm_undefconstant_constructor_args():
+    sig = inspect.signature(ASM_UndefConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asm_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(ASM_StringConstant)
+
+
+def test_asm_stringconstant_constructor_exists():
+    assert callable(ASM_StringConstant.__init__)
+
+
+def test_asm_stringconstant_constructor_args():
+    sig = inspect.signature(ASM_StringConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_asm::stringconstant_has_value():
-    assert hasattr(ASM::StringConstant, "value")
+def test_asm_stringconstant_has_value():
+    assert hasattr(ASM_StringConstant, "value")
     descriptor = None
-    for klass in ASM::StringConstant.__mro__:
+    for klass in ASM_StringConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -176,37 +190,23 @@ def test_asm::stringconstant_has_value():
 
 
 
-def test_asm::undefconstant_is_not_abstract():
-    assert not inspect.isabstract(ASM::UndefConstant)
+def test_asm_booleanconstant_is_not_abstract():
+    assert not inspect.isabstract(ASM_BooleanConstant)
 
 
-def test_asm::undefconstant_constructor_exists():
-    assert callable(ASM::UndefConstant.__init__)
+def test_asm_booleanconstant_constructor_exists():
+    assert callable(ASM_BooleanConstant.__init__)
 
 
-def test_asm::undefconstant_constructor_args():
-    sig = inspect.signature(ASM::UndefConstant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::booleanconstant_is_not_abstract():
-    assert not inspect.isabstract(ASM::BooleanConstant)
-
-
-def test_asm::booleanconstant_constructor_exists():
-    assert callable(ASM::BooleanConstant.__init__)
-
-
-def test_asm::booleanconstant_constructor_args():
-    sig = inspect.signature(ASM::BooleanConstant.__init__)
+def test_asm_booleanconstant_constructor_args():
+    sig = inspect.signature(ASM_BooleanConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_asm::booleanconstant_has_value():
-    assert hasattr(ASM::BooleanConstant, "value")
+def test_asm_booleanconstant_has_value():
+    assert hasattr(ASM_BooleanConstant, "value")
     descriptor = None
-    for klass in ASM::BooleanConstant.__mro__:
+    for klass in ASM_BooleanConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -242,55 +242,55 @@ def test_term_constructor_args():
 
 
 
-def test_asm::functionorvariableterm_is_not_abstract():
-    assert not inspect.isabstract(ASM::FunctionOrVariableTerm)
+def test_asm_constant_is_not_abstract():
+    assert not inspect.isabstract(ASM_Constant)
 
 
-def test_asm::functionorvariableterm_constructor_exists():
-    assert callable(ASM::FunctionOrVariableTerm.__init__)
+def test_asm_constant_constructor_exists():
+    assert callable(ASM_Constant.__init__)
 
 
-def test_asm::functionorvariableterm_constructor_args():
-    sig = inspect.signature(ASM::FunctionOrVariableTerm.__init__)
+def test_asm_constant_constructor_args():
+    sig = inspect.signature(ASM_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::constant_is_not_abstract():
-    assert not inspect.isabstract(ASM::Constant)
+def test_asm_operatorterm_is_not_abstract():
+    assert not inspect.isabstract(ASM_OperatorTerm)
 
 
-def test_asm::constant_constructor_exists():
-    assert callable(ASM::Constant.__init__)
+def test_asm_operatorterm_constructor_exists():
+    assert callable(ASM_OperatorTerm.__init__)
 
 
-def test_asm::constant_constructor_args():
-    sig = inspect.signature(ASM::Constant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::operatorterm_is_not_abstract():
-    assert not inspect.isabstract(ASM::OperatorTerm)
-
-
-def test_asm::operatorterm_constructor_exists():
-    assert callable(ASM::OperatorTerm.__init__)
-
-
-def test_asm::operatorterm_constructor_args():
-    sig = inspect.signature(ASM::OperatorTerm.__init__)
+def test_asm_operatorterm_constructor_args():
+    sig = inspect.signature(ASM_OperatorTerm.__init__)
     params = list(sig.parameters.keys())
     assert "opName" in params, "Missing parameter 'opName'"
 
-def test_asm::operatorterm_has_opName():
-    assert hasattr(ASM::OperatorTerm, "opName")
+def test_asm_operatorterm_has_opName():
+    assert hasattr(ASM_OperatorTerm, "opName")
     descriptor = None
-    for klass in ASM::OperatorTerm.__mro__:
+    for klass in ASM_OperatorTerm.__mro__:
         if "opName" in klass.__dict__:
             descriptor = klass.__dict__["opName"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_asm_functionorvariableterm_is_not_abstract():
+    assert not inspect.isabstract(ASM_FunctionOrVariableTerm)
+
+
+def test_asm_functionorvariableterm_constructor_exists():
+    assert callable(ASM_FunctionOrVariableTerm.__init__)
+
+
+def test_asm_functionorvariableterm_constructor_args():
+    sig = inspect.signature(ASM_FunctionOrVariableTerm.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -322,16 +322,16 @@ def test_elementdecl_constructor_args():
 
 
 
-def test_asm::variabledecl_is_not_abstract():
-    assert not inspect.isabstract(ASM::VariableDecl)
+def test_asm_variabledecl_is_not_abstract():
+    assert not inspect.isabstract(ASM_VariableDecl)
 
 
-def test_asm::variabledecl_constructor_exists():
-    assert callable(ASM::VariableDecl.__init__)
+def test_asm_variabledecl_constructor_exists():
+    assert callable(ASM_VariableDecl.__init__)
 
 
-def test_asm::variabledecl_constructor_args():
-    sig = inspect.signature(ASM::VariableDecl.__init__)
+def test_asm_variabledecl_constructor_args():
+    sig = inspect.signature(ASM_VariableDecl.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -364,23 +364,23 @@ def test_variabledecl_constructor_args():
 
 
 
-def test_asm::argument_is_not_abstract():
-    assert not inspect.isabstract(ASM::Argument)
+def test_asm_argument_is_not_abstract():
+    assert not inspect.isabstract(ASM_Argument)
 
 
-def test_asm::argument_constructor_exists():
-    assert callable(ASM::Argument.__init__)
+def test_asm_argument_constructor_exists():
+    assert callable(ASM_Argument.__init__)
 
 
-def test_asm::argument_constructor_args():
-    sig = inspect.signature(ASM::Argument.__init__)
+def test_asm_argument_constructor_args():
+    sig = inspect.signature(ASM_Argument.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_asm::argument_has_type():
-    assert hasattr(ASM::Argument, "type")
+def test_asm_argument_has_type():
+    assert hasattr(ASM_Argument, "type")
     descriptor = None
-    for klass in ASM::Argument.__mro__:
+    for klass in ASM_Argument.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -416,107 +416,93 @@ def test_rule_constructor_args():
 
 
 
-def test_asm::doforallrule_is_not_abstract():
-    assert not inspect.isabstract(ASM::DoForallRule)
+def test_asm_chooserule_is_not_abstract():
+    assert not inspect.isabstract(ASM_ChooseRule)
 
 
-def test_asm::doforallrule_constructor_exists():
-    assert callable(ASM::DoForallRule.__init__)
+def test_asm_chooserule_constructor_exists():
+    assert callable(ASM_ChooseRule.__init__)
 
 
-def test_asm::doforallrule_constructor_args():
-    sig = inspect.signature(ASM::DoForallRule.__init__)
+def test_asm_chooserule_constructor_args():
+    sig = inspect.signature(ASM_ChooseRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::returnrule_is_not_abstract():
-    assert not inspect.isabstract(ASM::ReturnRule)
+def test_asm_updaterule_is_not_abstract():
+    assert not inspect.isabstract(ASM_UpdateRule)
 
 
-def test_asm::returnrule_constructor_exists():
-    assert callable(ASM::ReturnRule.__init__)
+def test_asm_updaterule_constructor_exists():
+    assert callable(ASM_UpdateRule.__init__)
 
 
-def test_asm::returnrule_constructor_args():
-    sig = inspect.signature(ASM::ReturnRule.__init__)
+def test_asm_updaterule_constructor_args():
+    sig = inspect.signature(ASM_UpdateRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::skiprule_is_not_abstract():
-    assert not inspect.isabstract(ASM::SkipRule)
+def test_asm_conditionalrule_is_not_abstract():
+    assert not inspect.isabstract(ASM_ConditionalRule)
 
 
-def test_asm::skiprule_constructor_exists():
-    assert callable(ASM::SkipRule.__init__)
+def test_asm_conditionalrule_constructor_exists():
+    assert callable(ASM_ConditionalRule.__init__)
 
 
-def test_asm::skiprule_constructor_args():
-    sig = inspect.signature(ASM::SkipRule.__init__)
+def test_asm_conditionalrule_constructor_args():
+    sig = inspect.signature(ASM_ConditionalRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::chooserule_is_not_abstract():
-    assert not inspect.isabstract(ASM::ChooseRule)
+def test_asm_extendrule_is_not_abstract():
+    assert not inspect.isabstract(ASM_ExtendRule)
 
 
-def test_asm::chooserule_constructor_exists():
-    assert callable(ASM::ChooseRule.__init__)
+def test_asm_extendrule_constructor_exists():
+    assert callable(ASM_ExtendRule.__init__)
 
 
-def test_asm::chooserule_constructor_args():
-    sig = inspect.signature(ASM::ChooseRule.__init__)
+def test_asm_extendrule_constructor_args():
+    sig = inspect.signature(ASM_ExtendRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::conditionalrule_is_not_abstract():
-    assert not inspect.isabstract(ASM::ConditionalRule)
+def test_asm_doforallrule_is_not_abstract():
+    assert not inspect.isabstract(ASM_DoForallRule)
 
 
-def test_asm::conditionalrule_constructor_exists():
-    assert callable(ASM::ConditionalRule.__init__)
+def test_asm_doforallrule_constructor_exists():
+    assert callable(ASM_DoForallRule.__init__)
 
 
-def test_asm::conditionalrule_constructor_args():
-    sig = inspect.signature(ASM::ConditionalRule.__init__)
+def test_asm_doforallrule_constructor_args():
+    sig = inspect.signature(ASM_DoForallRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::updaterule_is_not_abstract():
-    assert not inspect.isabstract(ASM::UpdateRule)
+def test_asm_asminvocation_is_not_abstract():
+    assert not inspect.isabstract(ASM_AsmInvocation)
 
 
-def test_asm::updaterule_constructor_exists():
-    assert callable(ASM::UpdateRule.__init__)
+def test_asm_asminvocation_constructor_exists():
+    assert callable(ASM_AsmInvocation.__init__)
 
 
-def test_asm::updaterule_constructor_args():
-    sig = inspect.signature(ASM::UpdateRule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::asminvocation_is_not_abstract():
-    assert not inspect.isabstract(ASM::AsmInvocation)
-
-
-def test_asm::asminvocation_constructor_exists():
-    assert callable(ASM::AsmInvocation.__init__)
-
-
-def test_asm::asminvocation_constructor_args():
-    sig = inspect.signature(ASM::AsmInvocation.__init__)
+def test_asm_asminvocation_constructor_args():
+    sig = inspect.signature(ASM_AsmInvocation.__init__)
     params = list(sig.parameters.keys())
     assert "asmName" in params, "Missing parameter 'asmName'"
 
-def test_asm::asminvocation_has_asmName():
-    assert hasattr(ASM::AsmInvocation, "asmName")
+def test_asm_asminvocation_has_asmName():
+    assert hasattr(ASM_AsmInvocation, "asmName")
     descriptor = None
-    for klass in ASM::AsmInvocation.__mro__:
+    for klass in ASM_AsmInvocation.__mro__:
         if "asmName" in klass.__dict__:
             descriptor = klass.__dict__["asmName"]
             break
@@ -524,16 +510,30 @@ def test_asm::asminvocation_has_asmName():
 
 
 
-def test_asm::extendrule_is_not_abstract():
-    assert not inspect.isabstract(ASM::ExtendRule)
+def test_asm_returnrule_is_not_abstract():
+    assert not inspect.isabstract(ASM_ReturnRule)
 
 
-def test_asm::extendrule_constructor_exists():
-    assert callable(ASM::ExtendRule.__init__)
+def test_asm_returnrule_constructor_exists():
+    assert callable(ASM_ReturnRule.__init__)
 
 
-def test_asm::extendrule_constructor_args():
-    sig = inspect.signature(ASM::ExtendRule.__init__)
+def test_asm_returnrule_constructor_args():
+    sig = inspect.signature(ASM_ReturnRule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asm_skiprule_is_not_abstract():
+    assert not inspect.isabstract(ASM_SkipRule)
+
+
+def test_asm_skiprule_constructor_exists():
+    assert callable(ASM_SkipRule.__init__)
+
+
+def test_asm_skiprule_constructor_args():
+    sig = inspect.signature(ASM_SkipRule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -566,67 +566,67 @@ def test_declaration_constructor_args():
 
 
 
-def test_asm::function_is_not_abstract():
-    assert not inspect.isabstract(ASM::Function)
+def test_asm_function_is_not_abstract():
+    assert not inspect.isabstract(ASM_Function)
 
 
-def test_asm::function_constructor_exists():
-    assert callable(ASM::Function.__init__)
+def test_asm_function_constructor_exists():
+    assert callable(ASM_Function.__init__)
 
 
-def test_asm::function_constructor_args():
-    sig = inspect.signature(ASM::Function.__init__)
+def test_asm_function_constructor_args():
+    sig = inspect.signature(ASM_Function.__init__)
     params = list(sig.parameters.keys())
-    assert "isExternal" in params, "Missing parameter 'isExternal'"
     assert "returnType" in params, "Missing parameter 'returnType'"
+    assert "isExternal" in params, "Missing parameter 'isExternal'"
 
-def test_asm::function_has_isExternal():
-    assert hasattr(ASM::Function, "isExternal")
+def test_asm_function_has_returnType():
+    assert hasattr(ASM_Function, "returnType")
     descriptor = None
-    for klass in ASM::Function.__mro__:
-        if "isExternal" in klass.__dict__:
-            descriptor = klass.__dict__["isExternal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asm::function_has_returnType():
-    assert hasattr(ASM::Function, "returnType")
-    descriptor = None
-    for klass in ASM::Function.__mro__:
+    for klass in ASM_Function.__mro__:
         if "returnType" in klass.__dict__:
             descriptor = klass.__dict__["returnType"]
             break
     assert isinstance(descriptor, property)
 
+def test_asm_function_has_isExternal():
+    assert hasattr(ASM_Function, "isExternal")
+    descriptor = None
+    for klass in ASM_Function.__mro__:
+        if "isExternal" in klass.__dict__:
+            descriptor = klass.__dict__["isExternal"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_asm::universe_is_not_abstract():
-    assert not inspect.isabstract(ASM::Universe)
+
+def test_asm_universe_is_not_abstract():
+    assert not inspect.isabstract(ASM_Universe)
 
 
-def test_asm::universe_constructor_exists():
-    assert callable(ASM::Universe.__init__)
+def test_asm_universe_constructor_exists():
+    assert callable(ASM_Universe.__init__)
 
 
-def test_asm::universe_constructor_args():
-    sig = inspect.signature(ASM::Universe.__init__)
+def test_asm_universe_constructor_args():
+    sig = inspect.signature(ASM_Universe.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "contents" in params, "Missing parameter 'contents'"
 
-def test_asm::universe_has_name():
-    assert hasattr(ASM::Universe, "name")
+def test_asm_universe_has_name():
+    assert hasattr(ASM_Universe, "name")
     descriptor = None
-    for klass in ASM::Universe.__mro__:
+    for klass in ASM_Universe.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_asm::universe_has_contents():
-    assert hasattr(ASM::Universe, "contents")
+def test_asm_universe_has_contents():
+    assert hasattr(ASM_Universe, "contents")
     descriptor = None
-    for klass in ASM::Universe.__mro__:
+    for klass in ASM_Universe.__mro__:
         if "contents" in klass.__dict__:
             descriptor = klass.__dict__["contents"]
             break
@@ -718,30 +718,30 @@ def test_xasmfile_constructor_args():
 
 
 
-def test_asm::body_is_not_abstract():
-    assert not inspect.isabstract(ASM::Body)
+def test_asm_body_is_not_abstract():
+    assert not inspect.isabstract(ASM_Body)
 
 
-def test_asm::body_constructor_exists():
-    assert callable(ASM::Body.__init__)
+def test_asm_body_constructor_exists():
+    assert callable(ASM_Body.__init__)
 
 
-def test_asm::body_constructor_args():
-    sig = inspect.signature(ASM::Body.__init__)
+def test_asm_body_constructor_args():
+    sig = inspect.signature(ASM_Body.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::xasmspec_is_not_abstract():
-    assert not inspect.isabstract(ASM::XAsmSpec)
+def test_asm_xasmspec_is_not_abstract():
+    assert not inspect.isabstract(ASM_XAsmSpec)
 
 
-def test_asm::xasmspec_constructor_exists():
-    assert callable(ASM::XAsmSpec.__init__)
+def test_asm_xasmspec_constructor_exists():
+    assert callable(ASM_XAsmSpec.__init__)
 
 
-def test_asm::xasmspec_constructor_args():
-    sig = inspect.signature(ASM::XAsmSpec.__init__)
+def test_asm_xasmspec_constructor_args():
+    sig = inspect.signature(ASM_XAsmSpec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -760,47 +760,71 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_asm::metainformation_is_not_abstract():
-    assert not inspect.isabstract(ASM::MetaInformation)
+def test_asm_extension_is_not_abstract():
+    assert not inspect.isabstract(ASM_Extension)
 
 
-def test_asm::metainformation_constructor_exists():
-    assert callable(ASM::MetaInformation.__init__)
+def test_asm_extension_constructor_exists():
+    assert callable(ASM_Extension.__init__)
 
 
-def test_asm::metainformation_constructor_args():
-    sig = inspect.signature(ASM::MetaInformation.__init__)
+def test_asm_extension_constructor_args():
+    sig = inspect.signature(ASM_Extension.__init__)
     params = list(sig.parameters.keys())
-    assert "usedAs" in params, "Missing parameter 'usedAs'"
 
-def test_asm::metainformation_has_usedAs():
-    assert hasattr(ASM::MetaInformation, "usedAs")
+
+
+def test_asm_parameter_is_not_abstract():
+    assert not inspect.isabstract(ASM_Parameter)
+
+
+def test_asm_parameter_constructor_exists():
+    assert callable(ASM_Parameter.__init__)
+
+
+def test_asm_parameter_constructor_args():
+    sig = inspect.signature(ASM_Parameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_asm_parameter_has_type():
+    assert hasattr(ASM_Parameter, "type")
     descriptor = None
-    for klass in ASM::MetaInformation.__mro__:
-        if "usedAs" in klass.__dict__:
-            descriptor = klass.__dict__["usedAs"]
+    for klass in ASM_Parameter.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asm_parameter_has_name():
+    assert hasattr(ASM_Parameter, "name")
+    descriptor = None
+    for klass in ASM_Parameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_asm::asm_is_not_abstract():
-    assert not inspect.isabstract(ASM::Asm)
+def test_asm_asm_is_not_abstract():
+    assert not inspect.isabstract(ASM_Asm)
 
 
-def test_asm::asm_constructor_exists():
-    assert callable(ASM::Asm.__init__)
+def test_asm_asm_constructor_exists():
+    assert callable(ASM_Asm.__init__)
 
 
-def test_asm::asm_constructor_args():
-    sig = inspect.signature(ASM::Asm.__init__)
+def test_asm_asm_constructor_args():
+    sig = inspect.signature(ASM_Asm.__init__)
     params = list(sig.parameters.keys())
     assert "returnType" in params, "Missing parameter 'returnType'"
 
-def test_asm::asm_has_returnType():
-    assert hasattr(ASM::Asm, "returnType")
+def test_asm_asm_has_returnType():
+    assert hasattr(ASM_Asm, "returnType")
     descriptor = None
-    for klass in ASM::Asm.__mro__:
+    for klass in ASM_Asm.__mro__:
         if "returnType" in klass.__dict__:
             descriptor = klass.__dict__["returnType"]
             break
@@ -808,81 +832,33 @@ def test_asm::asm_has_returnType():
 
 
 
-def test_asm::extension_is_not_abstract():
-    assert not inspect.isabstract(ASM::Extension)
+def test_asm_signature_is_not_abstract():
+    assert not inspect.isabstract(ASM_Signature)
 
 
-def test_asm::extension_constructor_exists():
-    assert callable(ASM::Extension.__init__)
+def test_asm_signature_constructor_exists():
+    assert callable(ASM_Signature.__init__)
 
 
-def test_asm::extension_constructor_args():
-    sig = inspect.signature(ASM::Extension.__init__)
+def test_asm_signature_constructor_args():
+    sig = inspect.signature(ASM_Signature.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_asm::signature_is_not_abstract():
-    assert not inspect.isabstract(ASM::Signature)
-
-
-def test_asm::signature_constructor_exists():
-    assert callable(ASM::Signature.__init__)
-
-
-def test_asm::signature_constructor_args():
-    sig = inspect.signature(ASM::Signature.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "isMain" in params, "Missing parameter 'isMain'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_asm::signature_has_name():
-    assert hasattr(ASM::Signature, "name")
+def test_asm_signature_has_isMain():
+    assert hasattr(ASM_Signature, "isMain")
     descriptor = None
-    for klass in ASM::Signature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asm::signature_has_isMain():
-    assert hasattr(ASM::Signature, "isMain")
-    descriptor = None
-    for klass in ASM::Signature.__mro__:
+    for klass in ASM_Signature.__mro__:
         if "isMain" in klass.__dict__:
             descriptor = klass.__dict__["isMain"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_asm::parameter_is_not_abstract():
-    assert not inspect.isabstract(ASM::Parameter)
-
-
-def test_asm::parameter_constructor_exists():
-    assert callable(ASM::Parameter.__init__)
-
-
-def test_asm::parameter_constructor_args():
-    sig = inspect.signature(ASM::Parameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_asm::parameter_has_type():
-    assert hasattr(ASM::Parameter, "type")
+def test_asm_signature_has_name():
+    assert hasattr(ASM_Signature, "name")
     descriptor = None
-    for klass in ASM::Parameter.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_asm::parameter_has_name():
-    assert hasattr(ASM::Parameter, "name")
-    descriptor = None
-    for klass in ASM::Parameter.__mro__:
+    for klass in ASM_Signature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -890,103 +866,23 @@ def test_asm::parameter_has_name():
 
 
 
-def test_asm::elementdecl_is_not_abstract():
-    assert not inspect.isabstract(ASM::ElementDecl)
+def test_asm_rule_is_not_abstract():
+    assert not inspect.isabstract(ASM_Rule)
 
 
-def test_asm::elementdecl_constructor_exists():
-    assert callable(ASM::ElementDecl.__init__)
+def test_asm_rule_constructor_exists():
+    assert callable(ASM_Rule.__init__)
 
 
-def test_asm::elementdecl_constructor_args():
-    sig = inspect.signature(ASM::ElementDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_asm::elementdecl_has_name():
-    assert hasattr(ASM::ElementDecl, "name")
-    descriptor = None
-    for klass in ASM::ElementDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_asm::declaration_is_not_abstract():
-    assert not inspect.isabstract(ASM::Declaration)
-
-
-def test_asm::declaration_constructor_exists():
-    assert callable(ASM::Declaration.__init__)
-
-
-def test_asm::declaration_constructor_args():
-    sig = inspect.signature(ASM::Declaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::term_is_not_abstract():
-    assert not inspect.isabstract(ASM::Term)
-
-
-def test_asm::term_constructor_exists():
-    assert callable(ASM::Term.__init__)
-
-
-def test_asm::term_constructor_args():
-    sig = inspect.signature(ASM::Term.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::elseif_is_not_abstract():
-    assert not inspect.isabstract(ASM::ElseIf)
-
-
-def test_asm::elseif_constructor_exists():
-    assert callable(ASM::ElseIf.__init__)
-
-
-def test_asm::elseif_constructor_args():
-    sig = inspect.signature(ASM::ElseIf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::initialization_is_not_abstract():
-    assert not inspect.isabstract(ASM::Initialization)
-
-
-def test_asm::initialization_constructor_exists():
-    assert callable(ASM::Initialization.__init__)
-
-
-def test_asm::initialization_constructor_args():
-    sig = inspect.signature(ASM::Initialization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_asm::rule_is_not_abstract():
-    assert not inspect.isabstract(ASM::Rule)
-
-
-def test_asm::rule_constructor_exists():
-    assert callable(ASM::Rule.__init__)
-
-
-def test_asm::rule_constructor_args():
-    sig = inspect.signature(ASM::Rule.__init__)
+def test_asm_rule_constructor_args():
+    sig = inspect.signature(ASM_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "inSequence" in params, "Missing parameter 'inSequence'"
 
-def test_asm::rule_has_inSequence():
-    assert hasattr(ASM::Rule, "inSequence")
+def test_asm_rule_has_inSequence():
+    assert hasattr(ASM_Rule, "inSequence")
     descriptor = None
-    for klass in ASM::Rule.__mro__:
+    for klass in ASM_Rule.__mro__:
         if "inSequence" in klass.__dict__:
             descriptor = klass.__dict__["inSequence"]
             break
@@ -994,23 +890,127 @@ def test_asm::rule_has_inSequence():
 
 
 
-def test_asm::accessupdatefunction_is_not_abstract():
-    assert not inspect.isabstract(ASM::AccessUpdateFunction)
+def test_asm_term_is_not_abstract():
+    assert not inspect.isabstract(ASM_Term)
 
 
-def test_asm::accessupdatefunction_constructor_exists():
-    assert callable(ASM::AccessUpdateFunction.__init__)
+def test_asm_term_constructor_exists():
+    assert callable(ASM_Term.__init__)
 
 
-def test_asm::accessupdatefunction_constructor_args():
-    sig = inspect.signature(ASM::AccessUpdateFunction.__init__)
+def test_asm_term_constructor_args():
+    sig = inspect.signature(ASM_Term.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asm_metainformation_is_not_abstract():
+    assert not inspect.isabstract(ASM_MetaInformation)
+
+
+def test_asm_metainformation_constructor_exists():
+    assert callable(ASM_MetaInformation.__init__)
+
+
+def test_asm_metainformation_constructor_args():
+    sig = inspect.signature(ASM_MetaInformation.__init__)
+    params = list(sig.parameters.keys())
+    assert "usedAs" in params, "Missing parameter 'usedAs'"
+
+def test_asm_metainformation_has_usedAs():
+    assert hasattr(ASM_MetaInformation, "usedAs")
+    descriptor = None
+    for klass in ASM_MetaInformation.__mro__:
+        if "usedAs" in klass.__dict__:
+            descriptor = klass.__dict__["usedAs"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asm_elseif_is_not_abstract():
+    assert not inspect.isabstract(ASM_ElseIf)
+
+
+def test_asm_elseif_constructor_exists():
+    assert callable(ASM_ElseIf.__init__)
+
+
+def test_asm_elseif_constructor_args():
+    sig = inspect.signature(ASM_ElseIf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asm_initialization_is_not_abstract():
+    assert not inspect.isabstract(ASM_Initialization)
+
+
+def test_asm_initialization_constructor_exists():
+    assert callable(ASM_Initialization.__init__)
+
+
+def test_asm_initialization_constructor_args():
+    sig = inspect.signature(ASM_Initialization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asm_declaration_is_not_abstract():
+    assert not inspect.isabstract(ASM_Declaration)
+
+
+def test_asm_declaration_constructor_exists():
+    assert callable(ASM_Declaration.__init__)
+
+
+def test_asm_declaration_constructor_args():
+    sig = inspect.signature(ASM_Declaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_asm_elementdecl_is_not_abstract():
+    assert not inspect.isabstract(ASM_ElementDecl)
+
+
+def test_asm_elementdecl_constructor_exists():
+    assert callable(ASM_ElementDecl.__init__)
+
+
+def test_asm_elementdecl_constructor_args():
+    sig = inspect.signature(ASM_ElementDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_asm_elementdecl_has_name():
+    assert hasattr(ASM_ElementDecl, "name")
+    descriptor = None
+    for klass in ASM_ElementDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_asm_accessupdatefunction_is_not_abstract():
+    assert not inspect.isabstract(ASM_AccessUpdateFunction)
+
+
+def test_asm_accessupdatefunction_constructor_exists():
+    assert callable(ASM_AccessUpdateFunction.__init__)
+
+
+def test_asm_accessupdatefunction_constructor_args():
+    sig = inspect.signature(ASM_AccessUpdateFunction.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_asm::accessupdatefunction_has_type():
-    assert hasattr(ASM::AccessUpdateFunction, "type")
+def test_asm_accessupdatefunction_has_type():
+    assert hasattr(ASM_AccessUpdateFunction, "type")
     descriptor = None
-    for klass in ASM::AccessUpdateFunction.__mro__:
+    for klass in ASM_AccessUpdateFunction.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1018,41 +1018,56 @@ def test_asm::accessupdatefunction_has_type():
 
 
 
-def test_asm::xasmfile_is_not_abstract():
-    assert not inspect.isabstract(ASM::XAsmFile)
+def test_asm_xasmfile_is_not_abstract():
+    assert not inspect.isabstract(ASM_XAsmFile)
 
 
-def test_asm::xasmfile_constructor_exists():
-    assert callable(ASM::XAsmFile.__init__)
+def test_asm_xasmfile_constructor_exists():
+    assert callable(ASM_XAsmFile.__init__)
 
 
-def test_asm::xasmfile_constructor_args():
-    sig = inspect.signature(ASM::XAsmFile.__init__)
+def test_asm_xasmfile_constructor_args():
+    sig = inspect.signature(ASM_XAsmFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_asm::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(ASM::LocatedElement)
+def test_asm_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(ASM_LocatedElement)
 
 
-def test_asm::locatedelement_constructor_exists():
-    assert callable(ASM::LocatedElement.__init__)
+def test_asm_locatedelement_constructor_exists():
+    assert callable(ASM_LocatedElement.__init__)
 
 
-def test_asm::locatedelement_constructor_args():
-    sig = inspect.signature(ASM::LocatedElement.__init__)
+def test_asm_locatedelement_constructor_args():
+    sig = inspect.signature(ASM_LocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_asm::locatedelement_has_location():
-    assert hasattr(ASM::LocatedElement, "location")
+def test_asm_locatedelement_has_location():
+    assert hasattr(ASM_LocatedElement, "location")
     descriptor = None
-    for klass in ASM::LocatedElement.__mro__:
+    for klass in ASM_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
+
+def test_accessupdatetype_exists():
+    # Check that the Enumeration exists
+    assert AccessUpdateType is not None
+
+def test_accessupdatetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AccessUpdateType]
+    expected_literals = [
+        "access",
+        "update",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AccessUpdateType"
 
 def test_asmtype_exists():
     # Check that the Enumeration exists
@@ -1068,21 +1083,6 @@ def test_asmtype_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AsmType"
-
-def test_accessupdatetype_exists():
-    # Check that the Enumeration exists
-    assert AccessUpdateType is not None
-
-def test_accessupdatetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AccessUpdateType]
-    expected_literals = [
-        "update",
-        "access",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AccessUpdateType"
 
 
 # =============================================================================
@@ -1108,21 +1108,21 @@ FunctionOrVariableTerm_strategy = st.builds(
 Constant_strategy = st.builds(
     Constant,
 )
-ASM::IntegerConstant_strategy = st.builds(
-    ASM::IntegerConstant,
+ASM_IntegerConstant_strategy = st.builds(
+    ASM_IntegerConstant,
     value=
         safe_text
 )
-ASM::StringConstant_strategy = st.builds(
-    ASM::StringConstant,
+ASM_UndefConstant_strategy = st.builds(
+    ASM_UndefConstant,
+)
+ASM_StringConstant_strategy = st.builds(
+    ASM_StringConstant,
     value=
         safe_text
 )
-ASM::UndefConstant_strategy = st.builds(
-    ASM::UndefConstant,
-)
-ASM::BooleanConstant_strategy = st.builds(
-    ASM::BooleanConstant,
+ASM_BooleanConstant_strategy = st.builds(
+    ASM_BooleanConstant,
     value=
         safe_text
 )
@@ -1132,16 +1132,16 @@ Universe_strategy = st.builds(
 Term_strategy = st.builds(
     Term,
 )
-ASM::FunctionOrVariableTerm_strategy = st.builds(
-    ASM::FunctionOrVariableTerm,
+ASM_Constant_strategy = st.builds(
+    ASM_Constant,
 )
-ASM::Constant_strategy = st.builds(
-    ASM::Constant,
-)
-ASM::OperatorTerm_strategy = st.builds(
-    ASM::OperatorTerm,
+ASM_OperatorTerm_strategy = st.builds(
+    ASM_OperatorTerm,
     opName=
         safe_text
+)
+ASM_FunctionOrVariableTerm_strategy = st.builds(
+    ASM_FunctionOrVariableTerm,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -1149,8 +1149,8 @@ Parameter_strategy = st.builds(
 ElementDecl_strategy = st.builds(
     ElementDecl,
 )
-ASM::VariableDecl_strategy = st.builds(
-    ASM::VariableDecl,
+ASM_VariableDecl_strategy = st.builds(
+    ASM_VariableDecl,
 )
 Function_strategy = st.builds(
     Function,
@@ -1158,8 +1158,8 @@ Function_strategy = st.builds(
 VariableDecl_strategy = st.builds(
     VariableDecl,
 )
-ASM::Argument_strategy = st.builds(
-    ASM::Argument,
+ASM_Argument_strategy = st.builds(
+    ASM_Argument,
     type=
         safe_text
 )
@@ -1169,31 +1169,31 @@ AccessUpdateFunction_strategy = st.builds(
 Rule_strategy = st.builds(
     Rule,
 )
-ASM::DoForallRule_strategy = st.builds(
-    ASM::DoForallRule,
+ASM_ChooseRule_strategy = st.builds(
+    ASM_ChooseRule,
 )
-ASM::ReturnRule_strategy = st.builds(
-    ASM::ReturnRule,
+ASM_UpdateRule_strategy = st.builds(
+    ASM_UpdateRule,
 )
-ASM::SkipRule_strategy = st.builds(
-    ASM::SkipRule,
+ASM_ConditionalRule_strategy = st.builds(
+    ASM_ConditionalRule,
 )
-ASM::ChooseRule_strategy = st.builds(
-    ASM::ChooseRule,
+ASM_ExtendRule_strategy = st.builds(
+    ASM_ExtendRule,
 )
-ASM::ConditionalRule_strategy = st.builds(
-    ASM::ConditionalRule,
+ASM_DoForallRule_strategy = st.builds(
+    ASM_DoForallRule,
 )
-ASM::UpdateRule_strategy = st.builds(
-    ASM::UpdateRule,
-)
-ASM::AsmInvocation_strategy = st.builds(
-    ASM::AsmInvocation,
+ASM_AsmInvocation_strategy = st.builds(
+    ASM_AsmInvocation,
     asmName=
         safe_text
 )
-ASM::ExtendRule_strategy = st.builds(
-    ASM::ExtendRule,
+ASM_ReturnRule_strategy = st.builds(
+    ASM_ReturnRule,
+)
+ASM_SkipRule_strategy = st.builds(
+    ASM_SkipRule,
 )
 Initialization_strategy = st.builds(
     Initialization,
@@ -1201,15 +1201,15 @@ Initialization_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-ASM::Function_strategy = st.builds(
-    ASM::Function,
-    isExternal=
-        safe_text,
+ASM_Function_strategy = st.builds(
+    ASM_Function,
     returnType=
+        safe_text,
+    isExternal=
         safe_text
 )
-ASM::Universe_strategy = st.builds(
-    ASM::Universe,
+ASM_Universe_strategy = st.builds(
+    ASM_Universe,
     name=
         safe_text,
     contents=
@@ -1233,74 +1233,74 @@ Asm_strategy = st.builds(
 XAsmFile_strategy = st.builds(
     XAsmFile,
 )
-ASM::Body_strategy = st.builds(
-    ASM::Body,
+ASM_Body_strategy = st.builds(
+    ASM_Body,
 )
-ASM::XAsmSpec_strategy = st.builds(
-    ASM::XAsmSpec,
+ASM_XAsmSpec_strategy = st.builds(
+    ASM_XAsmSpec,
 )
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-ASM::MetaInformation_strategy = st.builds(
-    ASM::MetaInformation,
-    usedAs=
+ASM_Extension_strategy = st.builds(
+    ASM_Extension,
+)
+ASM_Parameter_strategy = st.builds(
+    ASM_Parameter,
+    type=
+        safe_text,
+    name=
         safe_text
 )
-ASM::Asm_strategy = st.builds(
-    ASM::Asm,
+ASM_Asm_strategy = st.builds(
+    ASM_Asm,
     returnType=
         safe_text
 )
-ASM::Extension_strategy = st.builds(
-    ASM::Extension,
-)
-ASM::Signature_strategy = st.builds(
-    ASM::Signature,
-    name=
-        safe_text,
+ASM_Signature_strategy = st.builds(
+    ASM_Signature,
     isMain=
-        safe_text
-)
-ASM::Parameter_strategy = st.builds(
-    ASM::Parameter,
-    type=
         safe_text,
     name=
         safe_text
 )
-ASM::ElementDecl_strategy = st.builds(
-    ASM::ElementDecl,
-    name=
-        safe_text
-)
-ASM::Declaration_strategy = st.builds(
-    ASM::Declaration,
-)
-ASM::Term_strategy = st.builds(
-    ASM::Term,
-)
-ASM::ElseIf_strategy = st.builds(
-    ASM::ElseIf,
-)
-ASM::Initialization_strategy = st.builds(
-    ASM::Initialization,
-)
-ASM::Rule_strategy = st.builds(
-    ASM::Rule,
+ASM_Rule_strategy = st.builds(
+    ASM_Rule,
     inSequence=
         safe_text
 )
-ASM::AccessUpdateFunction_strategy = st.builds(
-    ASM::AccessUpdateFunction,
+ASM_Term_strategy = st.builds(
+    ASM_Term,
+)
+ASM_MetaInformation_strategy = st.builds(
+    ASM_MetaInformation,
+    usedAs=
+        safe_text
+)
+ASM_ElseIf_strategy = st.builds(
+    ASM_ElseIf,
+)
+ASM_Initialization_strategy = st.builds(
+    ASM_Initialization,
+)
+ASM_Declaration_strategy = st.builds(
+    ASM_Declaration,
+)
+ASM_ElementDecl_strategy = st.builds(
+    ASM_ElementDecl,
+    name=
+        safe_text
+)
+ASM_AccessUpdateFunction_strategy = st.builds(
+    ASM_AccessUpdateFunction,
     type=
         safe_text
 )
-ASM::XAsmFile_strategy = st.builds(
-    ASM::XAsmFile,
+ASM_XAsmFile_strategy = st.builds(
+    ASM_XAsmFile,
 )
-ASM::LocatedElement_strategy = st.builds(
-    ASM::LocatedElement,
+ASM_LocatedElement_strategy = st.builds(
+    ASM_LocatedElement,
     location=
         safe_text
 )
@@ -1325,55 +1325,46 @@ def test_functionorvariableterm_instantiation(instance):
 def test_constant_instantiation(instance):
     assert isinstance(instance, Constant)
 
-@given(instance=ASM::IntegerConstant_strategy)
+@given(instance=ASM_IntegerConstant_strategy)
 @settings(max_examples=50)
-def test_asm::integerconstant_instantiation(instance):
-    assert isinstance(instance, ASM::IntegerConstant)
-
-@given(instance=ASM::IntegerConstant_strategy)
-def test_asm::integerconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_asm_integerconstant_instantiation(instance):
+    assert isinstance(instance, ASM_IntegerConstant)
 
 
-@given(instance=ASM::IntegerConstant_strategy)
-def test_asm::integerconstant_value_setter(instance):
+
+@given(instance=ASM_IntegerConstant_strategy)
+def test_asm_integerconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ASM::StringConstant_strategy)
+@given(instance=ASM_UndefConstant_strategy)
 @settings(max_examples=50)
-def test_asm::stringconstant_instantiation(instance):
-    assert isinstance(instance, ASM::StringConstant)
+def test_asm_undefconstant_instantiation(instance):
+    assert isinstance(instance, ASM_UndefConstant)
 
-@given(instance=ASM::StringConstant_strategy)
-def test_asm::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=ASM_StringConstant_strategy)
+@settings(max_examples=50)
+def test_asm_stringconstant_instantiation(instance):
+    assert isinstance(instance, ASM_StringConstant)
 
 
-@given(instance=ASM::StringConstant_strategy)
-def test_asm::stringconstant_value_setter(instance):
+
+@given(instance=ASM_StringConstant_strategy)
+def test_asm_stringconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ASM::UndefConstant_strategy)
+@given(instance=ASM_BooleanConstant_strategy)
 @settings(max_examples=50)
-def test_asm::undefconstant_instantiation(instance):
-    assert isinstance(instance, ASM::UndefConstant)
-
-@given(instance=ASM::BooleanConstant_strategy)
-@settings(max_examples=50)
-def test_asm::booleanconstant_instantiation(instance):
-    assert isinstance(instance, ASM::BooleanConstant)
-
-@given(instance=ASM::BooleanConstant_strategy)
-def test_asm::booleanconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_asm_booleanconstant_instantiation(instance):
+    assert isinstance(instance, ASM_BooleanConstant)
 
 
-@given(instance=ASM::BooleanConstant_strategy)
-def test_asm::booleanconstant_value_setter(instance):
+
+@given(instance=ASM_BooleanConstant_strategy)
+def test_asm_booleanconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1388,31 +1379,28 @@ def test_universe_instantiation(instance):
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=ASM::FunctionOrVariableTerm_strategy)
+@given(instance=ASM_Constant_strategy)
 @settings(max_examples=50)
-def test_asm::functionorvariableterm_instantiation(instance):
-    assert isinstance(instance, ASM::FunctionOrVariableTerm)
+def test_asm_constant_instantiation(instance):
+    assert isinstance(instance, ASM_Constant)
 
-@given(instance=ASM::Constant_strategy)
+@given(instance=ASM_OperatorTerm_strategy)
 @settings(max_examples=50)
-def test_asm::constant_instantiation(instance):
-    assert isinstance(instance, ASM::Constant)
-
-@given(instance=ASM::OperatorTerm_strategy)
-@settings(max_examples=50)
-def test_asm::operatorterm_instantiation(instance):
-    assert isinstance(instance, ASM::OperatorTerm)
-
-@given(instance=ASM::OperatorTerm_strategy)
-def test_asm::operatorterm_opName_type(instance):
-    assert isinstance(instance.opName, str)
+def test_asm_operatorterm_instantiation(instance):
+    assert isinstance(instance, ASM_OperatorTerm)
 
 
-@given(instance=ASM::OperatorTerm_strategy)
-def test_asm::operatorterm_opName_setter(instance):
+
+@given(instance=ASM_OperatorTerm_strategy)
+def test_asm_operatorterm_opName_setter(instance):
     original = instance.opName
     instance.opName = original
     assert instance.opName == original
+
+@given(instance=ASM_FunctionOrVariableTerm_strategy)
+@settings(max_examples=50)
+def test_asm_functionorvariableterm_instantiation(instance):
+    assert isinstance(instance, ASM_FunctionOrVariableTerm)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -1424,10 +1412,10 @@ def test_parameter_instantiation(instance):
 def test_elementdecl_instantiation(instance):
     assert isinstance(instance, ElementDecl)
 
-@given(instance=ASM::VariableDecl_strategy)
+@given(instance=ASM_VariableDecl_strategy)
 @settings(max_examples=50)
-def test_asm::variabledecl_instantiation(instance):
-    assert isinstance(instance, ASM::VariableDecl)
+def test_asm_variabledecl_instantiation(instance):
+    assert isinstance(instance, ASM_VariableDecl)
 
 @given(instance=Function_strategy)
 @settings(max_examples=50)
@@ -1439,18 +1427,15 @@ def test_function_instantiation(instance):
 def test_variabledecl_instantiation(instance):
     assert isinstance(instance, VariableDecl)
 
-@given(instance=ASM::Argument_strategy)
+@given(instance=ASM_Argument_strategy)
 @settings(max_examples=50)
-def test_asm::argument_instantiation(instance):
-    assert isinstance(instance, ASM::Argument)
-
-@given(instance=ASM::Argument_strategy)
-def test_asm::argument_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_asm_argument_instantiation(instance):
+    assert isinstance(instance, ASM_Argument)
 
 
-@given(instance=ASM::Argument_strategy)
-def test_asm::argument_type_setter(instance):
+
+@given(instance=ASM_Argument_strategy)
+def test_asm_argument_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1465,56 +1450,53 @@ def test_accessupdatefunction_instantiation(instance):
 def test_rule_instantiation(instance):
     assert isinstance(instance, Rule)
 
-@given(instance=ASM::DoForallRule_strategy)
+@given(instance=ASM_ChooseRule_strategy)
 @settings(max_examples=50)
-def test_asm::doforallrule_instantiation(instance):
-    assert isinstance(instance, ASM::DoForallRule)
+def test_asm_chooserule_instantiation(instance):
+    assert isinstance(instance, ASM_ChooseRule)
 
-@given(instance=ASM::ReturnRule_strategy)
+@given(instance=ASM_UpdateRule_strategy)
 @settings(max_examples=50)
-def test_asm::returnrule_instantiation(instance):
-    assert isinstance(instance, ASM::ReturnRule)
+def test_asm_updaterule_instantiation(instance):
+    assert isinstance(instance, ASM_UpdateRule)
 
-@given(instance=ASM::SkipRule_strategy)
+@given(instance=ASM_ConditionalRule_strategy)
 @settings(max_examples=50)
-def test_asm::skiprule_instantiation(instance):
-    assert isinstance(instance, ASM::SkipRule)
+def test_asm_conditionalrule_instantiation(instance):
+    assert isinstance(instance, ASM_ConditionalRule)
 
-@given(instance=ASM::ChooseRule_strategy)
+@given(instance=ASM_ExtendRule_strategy)
 @settings(max_examples=50)
-def test_asm::chooserule_instantiation(instance):
-    assert isinstance(instance, ASM::ChooseRule)
+def test_asm_extendrule_instantiation(instance):
+    assert isinstance(instance, ASM_ExtendRule)
 
-@given(instance=ASM::ConditionalRule_strategy)
+@given(instance=ASM_DoForallRule_strategy)
 @settings(max_examples=50)
-def test_asm::conditionalrule_instantiation(instance):
-    assert isinstance(instance, ASM::ConditionalRule)
+def test_asm_doforallrule_instantiation(instance):
+    assert isinstance(instance, ASM_DoForallRule)
 
-@given(instance=ASM::UpdateRule_strategy)
+@given(instance=ASM_AsmInvocation_strategy)
 @settings(max_examples=50)
-def test_asm::updaterule_instantiation(instance):
-    assert isinstance(instance, ASM::UpdateRule)
-
-@given(instance=ASM::AsmInvocation_strategy)
-@settings(max_examples=50)
-def test_asm::asminvocation_instantiation(instance):
-    assert isinstance(instance, ASM::AsmInvocation)
-
-@given(instance=ASM::AsmInvocation_strategy)
-def test_asm::asminvocation_asmName_type(instance):
-    assert isinstance(instance.asmName, str)
+def test_asm_asminvocation_instantiation(instance):
+    assert isinstance(instance, ASM_AsmInvocation)
 
 
-@given(instance=ASM::AsmInvocation_strategy)
-def test_asm::asminvocation_asmName_setter(instance):
+
+@given(instance=ASM_AsmInvocation_strategy)
+def test_asm_asminvocation_asmName_setter(instance):
     original = instance.asmName
     instance.asmName = original
     assert instance.asmName == original
 
-@given(instance=ASM::ExtendRule_strategy)
+@given(instance=ASM_ReturnRule_strategy)
 @settings(max_examples=50)
-def test_asm::extendrule_instantiation(instance):
-    assert isinstance(instance, ASM::ExtendRule)
+def test_asm_returnrule_instantiation(instance):
+    assert isinstance(instance, ASM_ReturnRule)
+
+@given(instance=ASM_SkipRule_strategy)
+@settings(max_examples=50)
+def test_asm_skiprule_instantiation(instance):
+    assert isinstance(instance, ASM_SkipRule)
 
 @given(instance=Initialization_strategy)
 @settings(max_examples=50)
@@ -1526,56 +1508,44 @@ def test_initialization_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=ASM::Function_strategy)
+@given(instance=ASM_Function_strategy)
 @settings(max_examples=50)
-def test_asm::function_instantiation(instance):
-    assert isinstance(instance, ASM::Function)
-
-@given(instance=ASM::Function_strategy)
-def test_asm::function_isExternal_type(instance):
-    assert isinstance(instance.isExternal, str)
+def test_asm_function_instantiation(instance):
+    assert isinstance(instance, ASM_Function)
 
 
-@given(instance=ASM::Function_strategy)
-def test_asm::function_isExternal_setter(instance):
-    original = instance.isExternal
-    instance.isExternal = original
-    assert instance.isExternal == original
 
-@given(instance=ASM::Function_strategy)
-def test_asm::function_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
-
-
-@given(instance=ASM::Function_strategy)
-def test_asm::function_returnType_setter(instance):
+@given(instance=ASM_Function_strategy)
+def test_asm_function_returnType_setter(instance):
     original = instance.returnType
     instance.returnType = original
     assert instance.returnType == original
 
-@given(instance=ASM::Universe_strategy)
+
+
+@given(instance=ASM_Function_strategy)
+def test_asm_function_isExternal_setter(instance):
+    original = instance.isExternal
+    instance.isExternal = original
+    assert instance.isExternal == original
+
+@given(instance=ASM_Universe_strategy)
 @settings(max_examples=50)
-def test_asm::universe_instantiation(instance):
-    assert isinstance(instance, ASM::Universe)
-
-@given(instance=ASM::Universe_strategy)
-def test_asm::universe_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asm_universe_instantiation(instance):
+    assert isinstance(instance, ASM_Universe)
 
 
-@given(instance=ASM::Universe_strategy)
-def test_asm::universe_name_setter(instance):
+
+@given(instance=ASM_Universe_strategy)
+def test_asm_universe_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ASM::Universe_strategy)
-def test_asm::universe_contents_type(instance):
-    assert isinstance(instance.contents, str)
 
 
-@given(instance=ASM::Universe_strategy)
-def test_asm::universe_contents_setter(instance):
+@given(instance=ASM_Universe_strategy)
+def test_asm_universe_contents_setter(instance):
     original = instance.contents
     instance.contents = original
     assert instance.contents == original
@@ -1610,197 +1580,167 @@ def test_asm_instantiation(instance):
 def test_xasmfile_instantiation(instance):
     assert isinstance(instance, XAsmFile)
 
-@given(instance=ASM::Body_strategy)
+@given(instance=ASM_Body_strategy)
 @settings(max_examples=50)
-def test_asm::body_instantiation(instance):
-    assert isinstance(instance, ASM::Body)
+def test_asm_body_instantiation(instance):
+    assert isinstance(instance, ASM_Body)
 
-@given(instance=ASM::XAsmSpec_strategy)
+@given(instance=ASM_XAsmSpec_strategy)
 @settings(max_examples=50)
-def test_asm::xasmspec_instantiation(instance):
-    assert isinstance(instance, ASM::XAsmSpec)
+def test_asm_xasmspec_instantiation(instance):
+    assert isinstance(instance, ASM_XAsmSpec)
 
 @given(instance=LocatedElement_strategy)
 @settings(max_examples=50)
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=ASM::MetaInformation_strategy)
+@given(instance=ASM_Extension_strategy)
 @settings(max_examples=50)
-def test_asm::metainformation_instantiation(instance):
-    assert isinstance(instance, ASM::MetaInformation)
+def test_asm_extension_instantiation(instance):
+    assert isinstance(instance, ASM_Extension)
 
-@given(instance=ASM::MetaInformation_strategy)
-def test_asm::metainformation_usedAs_type(instance):
-    assert isinstance(instance.usedAs, str)
-
-
-@given(instance=ASM::MetaInformation_strategy)
-def test_asm::metainformation_usedAs_setter(instance):
-    original = instance.usedAs
-    instance.usedAs = original
-    assert instance.usedAs == original
-
-@given(instance=ASM::Asm_strategy)
+@given(instance=ASM_Parameter_strategy)
 @settings(max_examples=50)
-def test_asm::asm_instantiation(instance):
-    assert isinstance(instance, ASM::Asm)
-
-@given(instance=ASM::Asm_strategy)
-def test_asm::asm_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
+def test_asm_parameter_instantiation(instance):
+    assert isinstance(instance, ASM_Parameter)
 
 
-@given(instance=ASM::Asm_strategy)
-def test_asm::asm_returnType_setter(instance):
+
+@given(instance=ASM_Parameter_strategy)
+def test_asm_parameter_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=ASM_Parameter_strategy)
+def test_asm_parameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=ASM_Asm_strategy)
+@settings(max_examples=50)
+def test_asm_asm_instantiation(instance):
+    assert isinstance(instance, ASM_Asm)
+
+
+
+@given(instance=ASM_Asm_strategy)
+def test_asm_asm_returnType_setter(instance):
     original = instance.returnType
     instance.returnType = original
     assert instance.returnType == original
 
-@given(instance=ASM::Extension_strategy)
+@given(instance=ASM_Signature_strategy)
 @settings(max_examples=50)
-def test_asm::extension_instantiation(instance):
-    assert isinstance(instance, ASM::Extension)
-
-@given(instance=ASM::Signature_strategy)
-@settings(max_examples=50)
-def test_asm::signature_instantiation(instance):
-    assert isinstance(instance, ASM::Signature)
-
-@given(instance=ASM::Signature_strategy)
-def test_asm::signature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asm_signature_instantiation(instance):
+    assert isinstance(instance, ASM_Signature)
 
 
-@given(instance=ASM::Signature_strategy)
-def test_asm::signature_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ASM::Signature_strategy)
-def test_asm::signature_isMain_type(instance):
-    assert isinstance(instance.isMain, str)
-
-
-@given(instance=ASM::Signature_strategy)
-def test_asm::signature_isMain_setter(instance):
+@given(instance=ASM_Signature_strategy)
+def test_asm_signature_isMain_setter(instance):
     original = instance.isMain
     instance.isMain = original
     assert instance.isMain == original
 
-@given(instance=ASM::Parameter_strategy)
-@settings(max_examples=50)
-def test_asm::parameter_instantiation(instance):
-    assert isinstance(instance, ASM::Parameter)
-
-@given(instance=ASM::Parameter_strategy)
-def test_asm::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=ASM::Parameter_strategy)
-def test_asm::parameter_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=ASM::Parameter_strategy)
-def test_asm::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ASM::Parameter_strategy)
-def test_asm::parameter_name_setter(instance):
+@given(instance=ASM_Signature_strategy)
+def test_asm_signature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ASM::ElementDecl_strategy)
+@given(instance=ASM_Rule_strategy)
 @settings(max_examples=50)
-def test_asm::elementdecl_instantiation(instance):
-    assert isinstance(instance, ASM::ElementDecl)
-
-@given(instance=ASM::ElementDecl_strategy)
-def test_asm::elementdecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_asm_rule_instantiation(instance):
+    assert isinstance(instance, ASM_Rule)
 
 
-@given(instance=ASM::ElementDecl_strategy)
-def test_asm::elementdecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ASM::Declaration_strategy)
-@settings(max_examples=50)
-def test_asm::declaration_instantiation(instance):
-    assert isinstance(instance, ASM::Declaration)
-
-@given(instance=ASM::Term_strategy)
-@settings(max_examples=50)
-def test_asm::term_instantiation(instance):
-    assert isinstance(instance, ASM::Term)
-
-@given(instance=ASM::ElseIf_strategy)
-@settings(max_examples=50)
-def test_asm::elseif_instantiation(instance):
-    assert isinstance(instance, ASM::ElseIf)
-
-@given(instance=ASM::Initialization_strategy)
-@settings(max_examples=50)
-def test_asm::initialization_instantiation(instance):
-    assert isinstance(instance, ASM::Initialization)
-
-@given(instance=ASM::Rule_strategy)
-@settings(max_examples=50)
-def test_asm::rule_instantiation(instance):
-    assert isinstance(instance, ASM::Rule)
-
-@given(instance=ASM::Rule_strategy)
-def test_asm::rule_inSequence_type(instance):
-    assert isinstance(instance.inSequence, str)
-
-
-@given(instance=ASM::Rule_strategy)
-def test_asm::rule_inSequence_setter(instance):
+@given(instance=ASM_Rule_strategy)
+def test_asm_rule_inSequence_setter(instance):
     original = instance.inSequence
     instance.inSequence = original
     assert instance.inSequence == original
 
-@given(instance=ASM::AccessUpdateFunction_strategy)
+@given(instance=ASM_Term_strategy)
 @settings(max_examples=50)
-def test_asm::accessupdatefunction_instantiation(instance):
-    assert isinstance(instance, ASM::AccessUpdateFunction)
+def test_asm_term_instantiation(instance):
+    assert isinstance(instance, ASM_Term)
 
-@given(instance=ASM::AccessUpdateFunction_strategy)
-def test_asm::accessupdatefunction_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=ASM_MetaInformation_strategy)
+@settings(max_examples=50)
+def test_asm_metainformation_instantiation(instance):
+    assert isinstance(instance, ASM_MetaInformation)
 
 
-@given(instance=ASM::AccessUpdateFunction_strategy)
-def test_asm::accessupdatefunction_type_setter(instance):
+
+@given(instance=ASM_MetaInformation_strategy)
+def test_asm_metainformation_usedAs_setter(instance):
+    original = instance.usedAs
+    instance.usedAs = original
+    assert instance.usedAs == original
+
+@given(instance=ASM_ElseIf_strategy)
+@settings(max_examples=50)
+def test_asm_elseif_instantiation(instance):
+    assert isinstance(instance, ASM_ElseIf)
+
+@given(instance=ASM_Initialization_strategy)
+@settings(max_examples=50)
+def test_asm_initialization_instantiation(instance):
+    assert isinstance(instance, ASM_Initialization)
+
+@given(instance=ASM_Declaration_strategy)
+@settings(max_examples=50)
+def test_asm_declaration_instantiation(instance):
+    assert isinstance(instance, ASM_Declaration)
+
+@given(instance=ASM_ElementDecl_strategy)
+@settings(max_examples=50)
+def test_asm_elementdecl_instantiation(instance):
+    assert isinstance(instance, ASM_ElementDecl)
+
+
+
+@given(instance=ASM_ElementDecl_strategy)
+def test_asm_elementdecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=ASM_AccessUpdateFunction_strategy)
+@settings(max_examples=50)
+def test_asm_accessupdatefunction_instantiation(instance):
+    assert isinstance(instance, ASM_AccessUpdateFunction)
+
+
+
+@given(instance=ASM_AccessUpdateFunction_strategy)
+def test_asm_accessupdatefunction_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ASM::XAsmFile_strategy)
+@given(instance=ASM_XAsmFile_strategy)
 @settings(max_examples=50)
-def test_asm::xasmfile_instantiation(instance):
-    assert isinstance(instance, ASM::XAsmFile)
+def test_asm_xasmfile_instantiation(instance):
+    assert isinstance(instance, ASM_XAsmFile)
 
-@given(instance=ASM::LocatedElement_strategy)
+@given(instance=ASM_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_asm::locatedelement_instantiation(instance):
-    assert isinstance(instance, ASM::LocatedElement)
-
-@given(instance=ASM::LocatedElement_strategy)
-def test_asm::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_asm_locatedelement_instantiation(instance):
+    assert isinstance(instance, ASM_LocatedElement)
 
 
-@given(instance=ASM::LocatedElement_strategy)
-def test_asm::locatedelement_location_setter(instance):
+
+@given(instance=ASM_LocatedElement_strategy)
+def test_asm_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original

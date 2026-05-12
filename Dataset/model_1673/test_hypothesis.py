@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    systemworkbench102::NamedElement,
-    systemworkbench102::Named,
-    NamedElement,
-    systemworkbench102::RelatedTo,
-    systemworkbench102::PatternCatalog,
-    systemworkbench102::Thoughts,
-    systemworkbench102::Thing,
+from python_code import (
     Named,
-    systemworkbench102::Function,
-    systemworkbench102::System,
-    systemworkbench102::Component,
-    systemworkbench102::FunctionProperty,
-    systemworkbench102::Workbench,
+    systemworkbench102_Workbench,
+    systemworkbench102_Function,
+    systemworkbench102_Component,
+    systemworkbench102_NamedElement,
+    systemworkbench102_Named,
+    NamedElement,
+    systemworkbench102_RelatedTo,
+    systemworkbench102_PatternCatalog,
+    systemworkbench102_FunctionProperty,
+    systemworkbench102_System,
+    systemworkbench102_Thoughts,
+    systemworkbench102_Thing,
 )
 
 # =============================================================================
@@ -27,23 +27,89 @@ from classes import (
 
 
 
-def test_systemworkbench102::namedelement_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::NamedElement)
+def test_named_is_not_abstract():
+    assert not inspect.isabstract(Named)
 
 
-def test_systemworkbench102::namedelement_constructor_exists():
-    assert callable(systemworkbench102::NamedElement.__init__)
+def test_named_constructor_exists():
+    assert callable(Named.__init__)
 
 
-def test_systemworkbench102::namedelement_constructor_args():
-    sig = inspect.signature(systemworkbench102::NamedElement.__init__)
+def test_named_constructor_args():
+    sig = inspect.signature(Named.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemworkbench102_workbench_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_Workbench)
+
+
+def test_systemworkbench102_workbench_constructor_exists():
+    assert callable(systemworkbench102_Workbench.__init__)
+
+
+def test_systemworkbench102_workbench_constructor_args():
+    sig = inspect.signature(systemworkbench102_Workbench.__init__)
+    params = list(sig.parameters.keys())
+    assert "aprop" in params, "Missing parameter 'aprop'"
+
+def test_systemworkbench102_workbench_has_aprop():
+    assert hasattr(systemworkbench102_Workbench, "aprop")
+    descriptor = None
+    for klass in systemworkbench102_Workbench.__mro__:
+        if "aprop" in klass.__dict__:
+            descriptor = klass.__dict__["aprop"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_systemworkbench102_function_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_Function)
+
+
+def test_systemworkbench102_function_constructor_exists():
+    assert callable(systemworkbench102_Function.__init__)
+
+
+def test_systemworkbench102_function_constructor_args():
+    sig = inspect.signature(systemworkbench102_Function.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemworkbench102_component_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_Component)
+
+
+def test_systemworkbench102_component_constructor_exists():
+    assert callable(systemworkbench102_Component.__init__)
+
+
+def test_systemworkbench102_component_constructor_args():
+    sig = inspect.signature(systemworkbench102_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemworkbench102_namedelement_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_NamedElement)
+
+
+def test_systemworkbench102_namedelement_constructor_exists():
+    assert callable(systemworkbench102_NamedElement.__init__)
+
+
+def test_systemworkbench102_namedelement_constructor_args():
+    sig = inspect.signature(systemworkbench102_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_systemworkbench102::namedelement_has_name():
-    assert hasattr(systemworkbench102::NamedElement, "name")
+def test_systemworkbench102_namedelement_has_name():
+    assert hasattr(systemworkbench102_NamedElement, "name")
     descriptor = None
-    for klass in systemworkbench102::NamedElement.__mro__:
+    for klass in systemworkbench102_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -51,23 +117,23 @@ def test_systemworkbench102::namedelement_has_name():
 
 
 
-def test_systemworkbench102::named_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::Named)
+def test_systemworkbench102_named_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_Named)
 
 
-def test_systemworkbench102::named_constructor_exists():
-    assert callable(systemworkbench102::Named.__init__)
+def test_systemworkbench102_named_constructor_exists():
+    assert callable(systemworkbench102_Named.__init__)
 
 
-def test_systemworkbench102::named_constructor_args():
-    sig = inspect.signature(systemworkbench102::Named.__init__)
+def test_systemworkbench102_named_constructor_args():
+    sig = inspect.signature(systemworkbench102_Named.__init__)
     params = list(sig.parameters.keys())
     assert "ident" in params, "Missing parameter 'ident'"
 
-def test_systemworkbench102::named_has_ident():
-    assert hasattr(systemworkbench102::Named, "ident")
+def test_systemworkbench102_named_has_ident():
+    assert hasattr(systemworkbench102_Named, "ident")
     descriptor = None
-    for klass in systemworkbench102::Named.__mro__:
+    for klass in systemworkbench102_Named.__mro__:
         if "ident" in klass.__dict__:
             descriptor = klass.__dict__["ident"]
             break
@@ -89,23 +155,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_systemworkbench102::relatedto_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::RelatedTo)
+def test_systemworkbench102_relatedto_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_RelatedTo)
 
 
-def test_systemworkbench102::relatedto_constructor_exists():
-    assert callable(systemworkbench102::RelatedTo.__init__)
+def test_systemworkbench102_relatedto_constructor_exists():
+    assert callable(systemworkbench102_RelatedTo.__init__)
 
 
-def test_systemworkbench102::relatedto_constructor_args():
-    sig = inspect.signature(systemworkbench102::RelatedTo.__init__)
+def test_systemworkbench102_relatedto_constructor_args():
+    sig = inspect.signature(systemworkbench102_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_systemworkbench102::relatedto_has_since():
-    assert hasattr(systemworkbench102::RelatedTo, "since")
+def test_systemworkbench102_relatedto_has_since():
+    assert hasattr(systemworkbench102_RelatedTo, "since")
     descriptor = None
-    for klass in systemworkbench102::RelatedTo.__mro__:
+    for klass in systemworkbench102_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -113,23 +179,23 @@ def test_systemworkbench102::relatedto_has_since():
 
 
 
-def test_systemworkbench102::patterncatalog_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::PatternCatalog)
+def test_systemworkbench102_patterncatalog_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_PatternCatalog)
 
 
-def test_systemworkbench102::patterncatalog_constructor_exists():
-    assert callable(systemworkbench102::PatternCatalog.__init__)
+def test_systemworkbench102_patterncatalog_constructor_exists():
+    assert callable(systemworkbench102_PatternCatalog.__init__)
 
 
-def test_systemworkbench102::patterncatalog_constructor_args():
-    sig = inspect.signature(systemworkbench102::PatternCatalog.__init__)
+def test_systemworkbench102_patterncatalog_constructor_args():
+    sig = inspect.signature(systemworkbench102_PatternCatalog.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_systemworkbench102::patterncatalog_has_id():
-    assert hasattr(systemworkbench102::PatternCatalog, "id")
+def test_systemworkbench102_patterncatalog_has_id():
+    assert hasattr(systemworkbench102_PatternCatalog, "id")
     descriptor = None
-    for klass in systemworkbench102::PatternCatalog.__mro__:
+    for klass in systemworkbench102_PatternCatalog.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -137,117 +203,23 @@ def test_systemworkbench102::patterncatalog_has_id():
 
 
 
-def test_systemworkbench102::thoughts_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::Thoughts)
+def test_systemworkbench102_functionproperty_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_FunctionProperty)
 
 
-def test_systemworkbench102::thoughts_constructor_exists():
-    assert callable(systemworkbench102::Thoughts.__init__)
+def test_systemworkbench102_functionproperty_constructor_exists():
+    assert callable(systemworkbench102_FunctionProperty.__init__)
 
 
-def test_systemworkbench102::thoughts_constructor_args():
-    sig = inspect.signature(systemworkbench102::Thoughts.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemworkbench102::thing_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::Thing)
-
-
-def test_systemworkbench102::thing_constructor_exists():
-    assert callable(systemworkbench102::Thing.__init__)
-
-
-def test_systemworkbench102::thing_constructor_args():
-    sig = inspect.signature(systemworkbench102::Thing.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_systemworkbench102::thing_has_id():
-    assert hasattr(systemworkbench102::Thing, "id")
-    descriptor = None
-    for klass in systemworkbench102::Thing.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_named_is_not_abstract():
-    assert not inspect.isabstract(Named)
-
-
-def test_named_constructor_exists():
-    assert callable(Named.__init__)
-
-
-def test_named_constructor_args():
-    sig = inspect.signature(Named.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemworkbench102::function_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::Function)
-
-
-def test_systemworkbench102::function_constructor_exists():
-    assert callable(systemworkbench102::Function.__init__)
-
-
-def test_systemworkbench102::function_constructor_args():
-    sig = inspect.signature(systemworkbench102::Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemworkbench102::system_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::System)
-
-
-def test_systemworkbench102::system_constructor_exists():
-    assert callable(systemworkbench102::System.__init__)
-
-
-def test_systemworkbench102::system_constructor_args():
-    sig = inspect.signature(systemworkbench102::System.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemworkbench102::component_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::Component)
-
-
-def test_systemworkbench102::component_constructor_exists():
-    assert callable(systemworkbench102::Component.__init__)
-
-
-def test_systemworkbench102::component_constructor_args():
-    sig = inspect.signature(systemworkbench102::Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_systemworkbench102::functionproperty_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::FunctionProperty)
-
-
-def test_systemworkbench102::functionproperty_constructor_exists():
-    assert callable(systemworkbench102::FunctionProperty.__init__)
-
-
-def test_systemworkbench102::functionproperty_constructor_args():
-    sig = inspect.signature(systemworkbench102::FunctionProperty.__init__)
+def test_systemworkbench102_functionproperty_constructor_args():
+    sig = inspect.signature(systemworkbench102_FunctionProperty.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_systemworkbench102::functionproperty_has_description():
-    assert hasattr(systemworkbench102::FunctionProperty, "description")
+def test_systemworkbench102_functionproperty_has_description():
+    assert hasattr(systemworkbench102_FunctionProperty, "description")
     descriptor = None
-    for klass in systemworkbench102::FunctionProperty.__mro__:
+    for klass in systemworkbench102_FunctionProperty.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -255,25 +227,53 @@ def test_systemworkbench102::functionproperty_has_description():
 
 
 
-def test_systemworkbench102::workbench_is_not_abstract():
-    assert not inspect.isabstract(systemworkbench102::Workbench)
+def test_systemworkbench102_system_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_System)
 
 
-def test_systemworkbench102::workbench_constructor_exists():
-    assert callable(systemworkbench102::Workbench.__init__)
+def test_systemworkbench102_system_constructor_exists():
+    assert callable(systemworkbench102_System.__init__)
 
 
-def test_systemworkbench102::workbench_constructor_args():
-    sig = inspect.signature(systemworkbench102::Workbench.__init__)
+def test_systemworkbench102_system_constructor_args():
+    sig = inspect.signature(systemworkbench102_System.__init__)
     params = list(sig.parameters.keys())
-    assert "aprop" in params, "Missing parameter 'aprop'"
 
-def test_systemworkbench102::workbench_has_aprop():
-    assert hasattr(systemworkbench102::Workbench, "aprop")
+
+
+def test_systemworkbench102_thoughts_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_Thoughts)
+
+
+def test_systemworkbench102_thoughts_constructor_exists():
+    assert callable(systemworkbench102_Thoughts.__init__)
+
+
+def test_systemworkbench102_thoughts_constructor_args():
+    sig = inspect.signature(systemworkbench102_Thoughts.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_systemworkbench102_thing_is_not_abstract():
+    assert not inspect.isabstract(systemworkbench102_Thing)
+
+
+def test_systemworkbench102_thing_constructor_exists():
+    assert callable(systemworkbench102_Thing.__init__)
+
+
+def test_systemworkbench102_thing_constructor_args():
+    sig = inspect.signature(systemworkbench102_Thing.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_systemworkbench102_thing_has_id():
+    assert hasattr(systemworkbench102_Thing, "id")
     descriptor = None
-    for klass in systemworkbench102::Workbench.__mro__:
-        if "aprop" in klass.__dict__:
-            descriptor = klass.__dict__["aprop"]
+    for klass in systemworkbench102_Thing.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -289,88 +289,110 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-systemworkbench102::NamedElement_strategy = st.builds(
-    systemworkbench102::NamedElement,
+Named_strategy = st.builds(
+    Named,
+)
+systemworkbench102_Workbench_strategy = st.builds(
+    systemworkbench102_Workbench,
+    aprop=
+        safe_text
+)
+systemworkbench102_Function_strategy = st.builds(
+    systemworkbench102_Function,
+)
+systemworkbench102_Component_strategy = st.builds(
+    systemworkbench102_Component,
+)
+systemworkbench102_NamedElement_strategy = st.builds(
+    systemworkbench102_NamedElement,
     name=
         safe_text
 )
-systemworkbench102::Named_strategy = st.builds(
-    systemworkbench102::Named,
+systemworkbench102_Named_strategy = st.builds(
+    systemworkbench102_Named,
     ident=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-systemworkbench102::RelatedTo_strategy = st.builds(
-    systemworkbench102::RelatedTo,
+systemworkbench102_RelatedTo_strategy = st.builds(
+    systemworkbench102_RelatedTo,
     since=
         safe_text
 )
-systemworkbench102::PatternCatalog_strategy = st.builds(
-    systemworkbench102::PatternCatalog,
+systemworkbench102_PatternCatalog_strategy = st.builds(
+    systemworkbench102_PatternCatalog,
     id=
         st.integers()
 )
-systemworkbench102::Thoughts_strategy = st.builds(
-    systemworkbench102::Thoughts,
-)
-systemworkbench102::Thing_strategy = st.builds(
-    systemworkbench102::Thing,
-    id=
-        st.integers()
-)
-Named_strategy = st.builds(
-    Named,
-)
-systemworkbench102::Function_strategy = st.builds(
-    systemworkbench102::Function,
-)
-systemworkbench102::System_strategy = st.builds(
-    systemworkbench102::System,
-)
-systemworkbench102::Component_strategy = st.builds(
-    systemworkbench102::Component,
-)
-systemworkbench102::FunctionProperty_strategy = st.builds(
-    systemworkbench102::FunctionProperty,
+systemworkbench102_FunctionProperty_strategy = st.builds(
+    systemworkbench102_FunctionProperty,
     description=
         safe_text
 )
-systemworkbench102::Workbench_strategy = st.builds(
-    systemworkbench102::Workbench,
-    aprop=
-        safe_text
+systemworkbench102_System_strategy = st.builds(
+    systemworkbench102_System,
+)
+systemworkbench102_Thoughts_strategy = st.builds(
+    systemworkbench102_Thoughts,
+)
+systemworkbench102_Thing_strategy = st.builds(
+    systemworkbench102_Thing,
+    id=
+        st.integers()
 )
 
-@given(instance=systemworkbench102::NamedElement_strategy)
+@given(instance=Named_strategy)
 @settings(max_examples=50)
-def test_systemworkbench102::namedelement_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::NamedElement)
+def test_named_instantiation(instance):
+    assert isinstance(instance, Named)
 
-@given(instance=systemworkbench102::NamedElement_strategy)
-def test_systemworkbench102::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=systemworkbench102_Workbench_strategy)
+@settings(max_examples=50)
+def test_systemworkbench102_workbench_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_Workbench)
 
 
-@given(instance=systemworkbench102::NamedElement_strategy)
-def test_systemworkbench102::namedelement_name_setter(instance):
+
+@given(instance=systemworkbench102_Workbench_strategy)
+def test_systemworkbench102_workbench_aprop_setter(instance):
+    original = instance.aprop
+    instance.aprop = original
+    assert instance.aprop == original
+
+@given(instance=systemworkbench102_Function_strategy)
+@settings(max_examples=50)
+def test_systemworkbench102_function_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_Function)
+
+@given(instance=systemworkbench102_Component_strategy)
+@settings(max_examples=50)
+def test_systemworkbench102_component_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_Component)
+
+@given(instance=systemworkbench102_NamedElement_strategy)
+@settings(max_examples=50)
+def test_systemworkbench102_namedelement_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_NamedElement)
+
+
+
+@given(instance=systemworkbench102_NamedElement_strategy)
+def test_systemworkbench102_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=systemworkbench102::Named_strategy)
+@given(instance=systemworkbench102_Named_strategy)
 @settings(max_examples=50)
-def test_systemworkbench102::named_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::Named)
-
-@given(instance=systemworkbench102::Named_strategy)
-def test_systemworkbench102::named_ident_type(instance):
-    assert isinstance(instance.ident, str)
+def test_systemworkbench102_named_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_Named)
 
 
-@given(instance=systemworkbench102::Named_strategy)
-def test_systemworkbench102::named_ident_setter(instance):
+
+@given(instance=systemworkbench102_Named_strategy)
+def test_systemworkbench102_named_ident_setter(instance):
     original = instance.ident
     instance.ident = original
     assert instance.ident == original
@@ -380,107 +402,64 @@ def test_systemworkbench102::named_ident_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=systemworkbench102::RelatedTo_strategy)
+@given(instance=systemworkbench102_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_systemworkbench102::relatedto_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::RelatedTo)
-
-@given(instance=systemworkbench102::RelatedTo_strategy)
-def test_systemworkbench102::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_systemworkbench102_relatedto_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_RelatedTo)
 
 
-@given(instance=systemworkbench102::RelatedTo_strategy)
-def test_systemworkbench102::relatedto_since_setter(instance):
+
+@given(instance=systemworkbench102_RelatedTo_strategy)
+def test_systemworkbench102_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=systemworkbench102::PatternCatalog_strategy)
+@given(instance=systemworkbench102_PatternCatalog_strategy)
 @settings(max_examples=50)
-def test_systemworkbench102::patterncatalog_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::PatternCatalog)
-
-@given(instance=systemworkbench102::PatternCatalog_strategy)
-def test_systemworkbench102::patterncatalog_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_systemworkbench102_patterncatalog_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_PatternCatalog)
 
 
-@given(instance=systemworkbench102::PatternCatalog_strategy)
-def test_systemworkbench102::patterncatalog_id_setter(instance):
+
+@given(instance=systemworkbench102_PatternCatalog_strategy)
+def test_systemworkbench102_patterncatalog_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=systemworkbench102::Thoughts_strategy)
+@given(instance=systemworkbench102_FunctionProperty_strategy)
 @settings(max_examples=50)
-def test_systemworkbench102::thoughts_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::Thoughts)
-
-@given(instance=systemworkbench102::Thing_strategy)
-@settings(max_examples=50)
-def test_systemworkbench102::thing_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::Thing)
-
-@given(instance=systemworkbench102::Thing_strategy)
-def test_systemworkbench102::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_systemworkbench102_functionproperty_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_FunctionProperty)
 
 
-@given(instance=systemworkbench102::Thing_strategy)
-def test_systemworkbench102::thing_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=Named_strategy)
-@settings(max_examples=50)
-def test_named_instantiation(instance):
-    assert isinstance(instance, Named)
-
-@given(instance=systemworkbench102::Function_strategy)
-@settings(max_examples=50)
-def test_systemworkbench102::function_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::Function)
-
-@given(instance=systemworkbench102::System_strategy)
-@settings(max_examples=50)
-def test_systemworkbench102::system_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::System)
-
-@given(instance=systemworkbench102::Component_strategy)
-@settings(max_examples=50)
-def test_systemworkbench102::component_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::Component)
-
-@given(instance=systemworkbench102::FunctionProperty_strategy)
-@settings(max_examples=50)
-def test_systemworkbench102::functionproperty_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::FunctionProperty)
-
-@given(instance=systemworkbench102::FunctionProperty_strategy)
-def test_systemworkbench102::functionproperty_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=systemworkbench102::FunctionProperty_strategy)
-def test_systemworkbench102::functionproperty_description_setter(instance):
+@given(instance=systemworkbench102_FunctionProperty_strategy)
+def test_systemworkbench102_functionproperty_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=systemworkbench102::Workbench_strategy)
+@given(instance=systemworkbench102_System_strategy)
 @settings(max_examples=50)
-def test_systemworkbench102::workbench_instantiation(instance):
-    assert isinstance(instance, systemworkbench102::Workbench)
+def test_systemworkbench102_system_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_System)
 
-@given(instance=systemworkbench102::Workbench_strategy)
-def test_systemworkbench102::workbench_aprop_type(instance):
-    assert isinstance(instance.aprop, str)
+@given(instance=systemworkbench102_Thoughts_strategy)
+@settings(max_examples=50)
+def test_systemworkbench102_thoughts_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_Thoughts)
+
+@given(instance=systemworkbench102_Thing_strategy)
+@settings(max_examples=50)
+def test_systemworkbench102_thing_instantiation(instance):
+    assert isinstance(instance, systemworkbench102_Thing)
 
 
-@given(instance=systemworkbench102::Workbench_strategy)
-def test_systemworkbench102::workbench_aprop_setter(instance):
-    original = instance.aprop
-    instance.aprop = original
-    assert instance.aprop == original
+
+@given(instance=systemworkbench102_Thing_strategy)
+def test_systemworkbench102_thing_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

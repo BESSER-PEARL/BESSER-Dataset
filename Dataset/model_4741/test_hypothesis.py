@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Page,
-    swml::DynamicPage,
+    swml_DynamicPage,
     DynamicPage,
-    swml::DetailsPage,
-    swml::IndexPage,
-    swml::Link,
+    swml_DetailsPage,
+    swml_IndexPage,
+    swml_Link,
     Link,
-    swml::CLink,
-    swml::NCLink,
-    swml::StaticPage,
-    swml::ContentLayer,
-    swml::Attribute,
-    swml::Class,
-    swml::Page,
-    swml::HypertextLayer,
-    swml::WebModel,
+    swml_CLink,
+    swml_NCLink,
+    swml_StaticPage,
+    swml_ContentLayer,
+    swml_Attribute,
+    swml_Class,
+    swml_Page,
+    swml_HypertextLayer,
+    swml_WebModel,
     SWMLTypes,
 )
 
@@ -45,16 +45,16 @@ def test_page_constructor_args():
 
 
 
-def test_swml::dynamicpage_is_not_abstract():
-    assert not inspect.isabstract(swml::DynamicPage)
+def test_swml_dynamicpage_is_not_abstract():
+    assert not inspect.isabstract(swml_DynamicPage)
 
 
-def test_swml::dynamicpage_constructor_exists():
-    assert callable(swml::DynamicPage.__init__)
+def test_swml_dynamicpage_constructor_exists():
+    assert callable(swml_DynamicPage.__init__)
 
 
-def test_swml::dynamicpage_constructor_args():
-    sig = inspect.signature(swml::DynamicPage.__init__)
+def test_swml_dynamicpage_constructor_args():
+    sig = inspect.signature(swml_DynamicPage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,37 +73,37 @@ def test_dynamicpage_constructor_args():
 
 
 
-def test_swml::detailspage_is_not_abstract():
-    assert not inspect.isabstract(swml::DetailsPage)
+def test_swml_detailspage_is_not_abstract():
+    assert not inspect.isabstract(swml_DetailsPage)
 
 
-def test_swml::detailspage_constructor_exists():
-    assert callable(swml::DetailsPage.__init__)
+def test_swml_detailspage_constructor_exists():
+    assert callable(swml_DetailsPage.__init__)
 
 
-def test_swml::detailspage_constructor_args():
-    sig = inspect.signature(swml::DetailsPage.__init__)
+def test_swml_detailspage_constructor_args():
+    sig = inspect.signature(swml_DetailsPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::indexpage_is_not_abstract():
-    assert not inspect.isabstract(swml::IndexPage)
+def test_swml_indexpage_is_not_abstract():
+    assert not inspect.isabstract(swml_IndexPage)
 
 
-def test_swml::indexpage_constructor_exists():
-    assert callable(swml::IndexPage.__init__)
+def test_swml_indexpage_constructor_exists():
+    assert callable(swml_IndexPage.__init__)
 
 
-def test_swml::indexpage_constructor_args():
-    sig = inspect.signature(swml::IndexPage.__init__)
+def test_swml_indexpage_constructor_args():
+    sig = inspect.signature(swml_IndexPage.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_swml::indexpage_has_size():
-    assert hasattr(swml::IndexPage, "size")
+def test_swml_indexpage_has_size():
+    assert hasattr(swml_IndexPage, "size")
     descriptor = None
-    for klass in swml::IndexPage.__mro__:
+    for klass in swml_IndexPage.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -111,16 +111,16 @@ def test_swml::indexpage_has_size():
 
 
 
-def test_swml::link_is_not_abstract():
-    assert not inspect.isabstract(swml::Link)
+def test_swml_link_is_not_abstract():
+    assert not inspect.isabstract(swml_Link)
 
 
-def test_swml::link_constructor_exists():
-    assert callable(swml::Link.__init__)
+def test_swml_link_constructor_exists():
+    assert callable(swml_Link.__init__)
 
 
-def test_swml::link_constructor_args():
-    sig = inspect.signature(swml::Link.__init__)
+def test_swml_link_constructor_args():
+    sig = inspect.signature(swml_Link.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,89 +139,113 @@ def test_link_constructor_args():
 
 
 
-def test_swml::clink_is_not_abstract():
-    assert not inspect.isabstract(swml::CLink)
+def test_swml_clink_is_not_abstract():
+    assert not inspect.isabstract(swml_CLink)
 
 
-def test_swml::clink_constructor_exists():
-    assert callable(swml::CLink.__init__)
+def test_swml_clink_constructor_exists():
+    assert callable(swml_CLink.__init__)
 
 
-def test_swml::clink_constructor_args():
-    sig = inspect.signature(swml::CLink.__init__)
+def test_swml_clink_constructor_args():
+    sig = inspect.signature(swml_CLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::nclink_is_not_abstract():
-    assert not inspect.isabstract(swml::NCLink)
+def test_swml_nclink_is_not_abstract():
+    assert not inspect.isabstract(swml_NCLink)
 
 
-def test_swml::nclink_constructor_exists():
-    assert callable(swml::NCLink.__init__)
+def test_swml_nclink_constructor_exists():
+    assert callable(swml_NCLink.__init__)
 
 
-def test_swml::nclink_constructor_args():
-    sig = inspect.signature(swml::NCLink.__init__)
+def test_swml_nclink_constructor_args():
+    sig = inspect.signature(swml_NCLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::staticpage_is_not_abstract():
-    assert not inspect.isabstract(swml::StaticPage)
+def test_swml_staticpage_is_not_abstract():
+    assert not inspect.isabstract(swml_StaticPage)
 
 
-def test_swml::staticpage_constructor_exists():
-    assert callable(swml::StaticPage.__init__)
+def test_swml_staticpage_constructor_exists():
+    assert callable(swml_StaticPage.__init__)
 
 
-def test_swml::staticpage_constructor_args():
-    sig = inspect.signature(swml::StaticPage.__init__)
+def test_swml_staticpage_constructor_args():
+    sig = inspect.signature(swml_StaticPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::contentlayer_is_not_abstract():
-    assert not inspect.isabstract(swml::ContentLayer)
+def test_swml_contentlayer_is_not_abstract():
+    assert not inspect.isabstract(swml_ContentLayer)
 
 
-def test_swml::contentlayer_constructor_exists():
-    assert callable(swml::ContentLayer.__init__)
+def test_swml_contentlayer_constructor_exists():
+    assert callable(swml_ContentLayer.__init__)
 
 
-def test_swml::contentlayer_constructor_args():
-    sig = inspect.signature(swml::ContentLayer.__init__)
+def test_swml_contentlayer_constructor_args():
+    sig = inspect.signature(swml_ContentLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swml::attribute_is_not_abstract():
-    assert not inspect.isabstract(swml::Attribute)
+def test_swml_attribute_is_not_abstract():
+    assert not inspect.isabstract(swml_Attribute)
 
 
-def test_swml::attribute_constructor_exists():
-    assert callable(swml::Attribute.__init__)
+def test_swml_attribute_constructor_exists():
+    assert callable(swml_Attribute.__init__)
 
 
-def test_swml::attribute_constructor_args():
-    sig = inspect.signature(swml::Attribute.__init__)
+def test_swml_attribute_constructor_args():
+    sig = inspect.signature(swml_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_swml::attribute_has_type():
-    assert hasattr(swml::Attribute, "type")
+def test_swml_attribute_has_name():
+    assert hasattr(swml_Attribute, "name")
     descriptor = None
-    for klass in swml::Attribute.__mro__:
+    for klass in swml_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swml_attribute_has_type():
+    assert hasattr(swml_Attribute, "type")
+    descriptor = None
+    for klass in swml_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_swml::attribute_has_name():
-    assert hasattr(swml::Attribute, "name")
+
+
+def test_swml_class_is_not_abstract():
+    assert not inspect.isabstract(swml_Class)
+
+
+def test_swml_class_constructor_exists():
+    assert callable(swml_Class.__init__)
+
+
+def test_swml_class_constructor_args():
+    sig = inspect.signature(swml_Class.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_swml_class_has_name():
+    assert hasattr(swml_Class, "name")
     descriptor = None
-    for klass in swml::Attribute.__mro__:
+    for klass in swml_Class.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -229,23 +253,23 @@ def test_swml::attribute_has_name():
 
 
 
-def test_swml::class_is_not_abstract():
-    assert not inspect.isabstract(swml::Class)
+def test_swml_page_is_not_abstract():
+    assert not inspect.isabstract(swml_Page)
 
 
-def test_swml::class_constructor_exists():
-    assert callable(swml::Class.__init__)
+def test_swml_page_constructor_exists():
+    assert callable(swml_Page.__init__)
 
 
-def test_swml::class_constructor_args():
-    sig = inspect.signature(swml::Class.__init__)
+def test_swml_page_constructor_args():
+    sig = inspect.signature(swml_Page.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::class_has_name():
-    assert hasattr(swml::Class, "name")
+def test_swml_page_has_name():
+    assert hasattr(swml_Page, "name")
     descriptor = None
-    for klass in swml::Class.__mro__:
+    for klass in swml_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -253,61 +277,37 @@ def test_swml::class_has_name():
 
 
 
-def test_swml::page_is_not_abstract():
-    assert not inspect.isabstract(swml::Page)
+def test_swml_hypertextlayer_is_not_abstract():
+    assert not inspect.isabstract(swml_HypertextLayer)
 
 
-def test_swml::page_constructor_exists():
-    assert callable(swml::Page.__init__)
+def test_swml_hypertextlayer_constructor_exists():
+    assert callable(swml_HypertextLayer.__init__)
 
 
-def test_swml::page_constructor_args():
-    sig = inspect.signature(swml::Page.__init__)
+def test_swml_hypertextlayer_constructor_args():
+    sig = inspect.signature(swml_HypertextLayer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swml_webmodel_is_not_abstract():
+    assert not inspect.isabstract(swml_WebModel)
+
+
+def test_swml_webmodel_constructor_exists():
+    assert callable(swml_WebModel.__init__)
+
+
+def test_swml_webmodel_constructor_args():
+    sig = inspect.signature(swml_WebModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swml::page_has_name():
-    assert hasattr(swml::Page, "name")
+def test_swml_webmodel_has_name():
+    assert hasattr(swml_WebModel, "name")
     descriptor = None
-    for klass in swml::Page.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swml::hypertextlayer_is_not_abstract():
-    assert not inspect.isabstract(swml::HypertextLayer)
-
-
-def test_swml::hypertextlayer_constructor_exists():
-    assert callable(swml::HypertextLayer.__init__)
-
-
-def test_swml::hypertextlayer_constructor_args():
-    sig = inspect.signature(swml::HypertextLayer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swml::webmodel_is_not_abstract():
-    assert not inspect.isabstract(swml::WebModel)
-
-
-def test_swml::webmodel_constructor_exists():
-    assert callable(swml::WebModel.__init__)
-
-
-def test_swml::webmodel_constructor_args():
-    sig = inspect.signature(swml::WebModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_swml::webmodel_has_name():
-    assert hasattr(swml::WebModel, "name")
-    descriptor = None
-    for klass in swml::WebModel.__mro__:
+    for klass in swml_WebModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -321,8 +321,8 @@ def test_swmltypes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SWMLTypes]
     expected_literals = [
-        "String",
         "Integer",
+        "String",
         "Float",
         "Email",
         "Boolean",
@@ -346,60 +346,60 @@ safe_text = st.text(
 Page_strategy = st.builds(
     Page,
 )
-swml::DynamicPage_strategy = st.builds(
-    swml::DynamicPage,
+swml_DynamicPage_strategy = st.builds(
+    swml_DynamicPage,
 )
 DynamicPage_strategy = st.builds(
     DynamicPage,
 )
-swml::DetailsPage_strategy = st.builds(
-    swml::DetailsPage,
+swml_DetailsPage_strategy = st.builds(
+    swml_DetailsPage,
 )
-swml::IndexPage_strategy = st.builds(
-    swml::IndexPage,
+swml_IndexPage_strategy = st.builds(
+    swml_IndexPage,
     size=
         st.integers()
 )
-swml::Link_strategy = st.builds(
-    swml::Link,
+swml_Link_strategy = st.builds(
+    swml_Link,
 )
 Link_strategy = st.builds(
     Link,
 )
-swml::CLink_strategy = st.builds(
-    swml::CLink,
+swml_CLink_strategy = st.builds(
+    swml_CLink,
 )
-swml::NCLink_strategy = st.builds(
-    swml::NCLink,
+swml_NCLink_strategy = st.builds(
+    swml_NCLink,
 )
-swml::StaticPage_strategy = st.builds(
-    swml::StaticPage,
+swml_StaticPage_strategy = st.builds(
+    swml_StaticPage,
 )
-swml::ContentLayer_strategy = st.builds(
-    swml::ContentLayer,
+swml_ContentLayer_strategy = st.builds(
+    swml_ContentLayer,
 )
-swml::Attribute_strategy = st.builds(
-    swml::Attribute,
-    type=
+swml_Attribute_strategy = st.builds(
+    swml_Attribute,
+    name=
         safe_text,
+    type=
+        safe_text
+)
+swml_Class_strategy = st.builds(
+    swml_Class,
     name=
         safe_text
 )
-swml::Class_strategy = st.builds(
-    swml::Class,
+swml_Page_strategy = st.builds(
+    swml_Page,
     name=
         safe_text
 )
-swml::Page_strategy = st.builds(
-    swml::Page,
-    name=
-        safe_text
+swml_HypertextLayer_strategy = st.builds(
+    swml_HypertextLayer,
 )
-swml::HypertextLayer_strategy = st.builds(
-    swml::HypertextLayer,
-)
-swml::WebModel_strategy = st.builds(
-    swml::WebModel,
+swml_WebModel_strategy = st.builds(
+    swml_WebModel,
     name=
         safe_text
 )
@@ -409,143 +409,125 @@ swml::WebModel_strategy = st.builds(
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=swml::DynamicPage_strategy)
+@given(instance=swml_DynamicPage_strategy)
 @settings(max_examples=50)
-def test_swml::dynamicpage_instantiation(instance):
-    assert isinstance(instance, swml::DynamicPage)
+def test_swml_dynamicpage_instantiation(instance):
+    assert isinstance(instance, swml_DynamicPage)
 
 @given(instance=DynamicPage_strategy)
 @settings(max_examples=50)
 def test_dynamicpage_instantiation(instance):
     assert isinstance(instance, DynamicPage)
 
-@given(instance=swml::DetailsPage_strategy)
+@given(instance=swml_DetailsPage_strategy)
 @settings(max_examples=50)
-def test_swml::detailspage_instantiation(instance):
-    assert isinstance(instance, swml::DetailsPage)
+def test_swml_detailspage_instantiation(instance):
+    assert isinstance(instance, swml_DetailsPage)
 
-@given(instance=swml::IndexPage_strategy)
+@given(instance=swml_IndexPage_strategy)
 @settings(max_examples=50)
-def test_swml::indexpage_instantiation(instance):
-    assert isinstance(instance, swml::IndexPage)
-
-@given(instance=swml::IndexPage_strategy)
-def test_swml::indexpage_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_swml_indexpage_instantiation(instance):
+    assert isinstance(instance, swml_IndexPage)
 
 
-@given(instance=swml::IndexPage_strategy)
-def test_swml::indexpage_size_setter(instance):
+
+@given(instance=swml_IndexPage_strategy)
+def test_swml_indexpage_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=swml::Link_strategy)
+@given(instance=swml_Link_strategy)
 @settings(max_examples=50)
-def test_swml::link_instantiation(instance):
-    assert isinstance(instance, swml::Link)
+def test_swml_link_instantiation(instance):
+    assert isinstance(instance, swml_Link)
 
 @given(instance=Link_strategy)
 @settings(max_examples=50)
 def test_link_instantiation(instance):
     assert isinstance(instance, Link)
 
-@given(instance=swml::CLink_strategy)
+@given(instance=swml_CLink_strategy)
 @settings(max_examples=50)
-def test_swml::clink_instantiation(instance):
-    assert isinstance(instance, swml::CLink)
+def test_swml_clink_instantiation(instance):
+    assert isinstance(instance, swml_CLink)
 
-@given(instance=swml::NCLink_strategy)
+@given(instance=swml_NCLink_strategy)
 @settings(max_examples=50)
-def test_swml::nclink_instantiation(instance):
-    assert isinstance(instance, swml::NCLink)
+def test_swml_nclink_instantiation(instance):
+    assert isinstance(instance, swml_NCLink)
 
-@given(instance=swml::StaticPage_strategy)
+@given(instance=swml_StaticPage_strategy)
 @settings(max_examples=50)
-def test_swml::staticpage_instantiation(instance):
-    assert isinstance(instance, swml::StaticPage)
+def test_swml_staticpage_instantiation(instance):
+    assert isinstance(instance, swml_StaticPage)
 
-@given(instance=swml::ContentLayer_strategy)
+@given(instance=swml_ContentLayer_strategy)
 @settings(max_examples=50)
-def test_swml::contentlayer_instantiation(instance):
-    assert isinstance(instance, swml::ContentLayer)
+def test_swml_contentlayer_instantiation(instance):
+    assert isinstance(instance, swml_ContentLayer)
 
-@given(instance=swml::Attribute_strategy)
+@given(instance=swml_Attribute_strategy)
 @settings(max_examples=50)
-def test_swml::attribute_instantiation(instance):
-    assert isinstance(instance, swml::Attribute)
-
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_swml_attribute_instantiation(instance):
+    assert isinstance(instance, swml_Attribute)
 
 
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_type_setter(instance):
+
+@given(instance=swml_Attribute_strategy)
+def test_swml_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=swml_Attribute_strategy)
+def test_swml_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=swml_Class_strategy)
+@settings(max_examples=50)
+def test_swml_class_instantiation(instance):
+    assert isinstance(instance, swml_Class)
 
 
-@given(instance=swml::Attribute_strategy)
-def test_swml::attribute_name_setter(instance):
+
+@given(instance=swml_Class_strategy)
+def test_swml_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swml::Class_strategy)
+@given(instance=swml_Page_strategy)
 @settings(max_examples=50)
-def test_swml::class_instantiation(instance):
-    assert isinstance(instance, swml::Class)
-
-@given(instance=swml::Class_strategy)
-def test_swml::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_page_instantiation(instance):
+    assert isinstance(instance, swml_Page)
 
 
-@given(instance=swml::Class_strategy)
-def test_swml::class_name_setter(instance):
+
+@given(instance=swml_Page_strategy)
+def test_swml_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swml::Page_strategy)
+@given(instance=swml_HypertextLayer_strategy)
 @settings(max_examples=50)
-def test_swml::page_instantiation(instance):
-    assert isinstance(instance, swml::Page)
+def test_swml_hypertextlayer_instantiation(instance):
+    assert isinstance(instance, swml_HypertextLayer)
 
-@given(instance=swml::Page_strategy)
-def test_swml::page_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=swml::Page_strategy)
-def test_swml::page_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=swml::HypertextLayer_strategy)
+@given(instance=swml_WebModel_strategy)
 @settings(max_examples=50)
-def test_swml::hypertextlayer_instantiation(instance):
-    assert isinstance(instance, swml::HypertextLayer)
-
-@given(instance=swml::WebModel_strategy)
-@settings(max_examples=50)
-def test_swml::webmodel_instantiation(instance):
-    assert isinstance(instance, swml::WebModel)
-
-@given(instance=swml::WebModel_strategy)
-def test_swml::webmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swml_webmodel_instantiation(instance):
+    assert isinstance(instance, swml_WebModel)
 
 
-@given(instance=swml::WebModel_strategy)
-def test_swml::webmodel_name_setter(instance):
+
+@given(instance=swml_WebModel_strategy)
+def test_swml_webmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

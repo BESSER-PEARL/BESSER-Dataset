@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    persons::Committee,
-    persons::District,
+    persons_District,
+    persons_Committee,
     Person,
-    persons::Woman,
-    persons::Man,
-    persons::Association,
+    persons_Woman,
+    persons_Man,
+    persons_Association,
     Facility,
-    persons::OrdinaryFacility,
-    persons::SpecialFacility,
-    persons::Facility,
-    persons::NamedElement,
-    persons::TownHall,
-    persons::Person,
-    persons::Community,
+    persons_OrdinaryFacility,
+    persons_SpecialFacility,
+    persons_Facility,
+    persons_NamedElement,
+    persons_TownHall,
+    persons_Person,
+    persons_Community,
 )
 
 # =============================================================================
@@ -43,30 +43,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_persons::committee_is_not_abstract():
-    assert not inspect.isabstract(persons::Committee)
+def test_persons_district_is_not_abstract():
+    assert not inspect.isabstract(persons_District)
 
 
-def test_persons::committee_constructor_exists():
-    assert callable(persons::Committee.__init__)
+def test_persons_district_constructor_exists():
+    assert callable(persons_District.__init__)
 
 
-def test_persons::committee_constructor_args():
-    sig = inspect.signature(persons::Committee.__init__)
+def test_persons_district_constructor_args():
+    sig = inspect.signature(persons_District.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::district_is_not_abstract():
-    assert not inspect.isabstract(persons::District)
+def test_persons_committee_is_not_abstract():
+    assert not inspect.isabstract(persons_Committee)
 
 
-def test_persons::district_constructor_exists():
-    assert callable(persons::District.__init__)
+def test_persons_committee_constructor_exists():
+    assert callable(persons_Committee.__init__)
 
 
-def test_persons::district_constructor_args():
-    sig = inspect.signature(persons::District.__init__)
+def test_persons_committee_constructor_args():
+    sig = inspect.signature(persons_Committee.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -85,44 +85,44 @@ def test_person_constructor_args():
 
 
 
-def test_persons::woman_is_not_abstract():
-    assert not inspect.isabstract(persons::Woman)
+def test_persons_woman_is_not_abstract():
+    assert not inspect.isabstract(persons_Woman)
 
 
-def test_persons::woman_constructor_exists():
-    assert callable(persons::Woman.__init__)
+def test_persons_woman_constructor_exists():
+    assert callable(persons_Woman.__init__)
 
 
-def test_persons::woman_constructor_args():
-    sig = inspect.signature(persons::Woman.__init__)
+def test_persons_woman_constructor_args():
+    sig = inspect.signature(persons_Woman.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::man_is_not_abstract():
-    assert not inspect.isabstract(persons::Man)
+def test_persons_man_is_not_abstract():
+    assert not inspect.isabstract(persons_Man)
 
 
-def test_persons::man_constructor_exists():
-    assert callable(persons::Man.__init__)
+def test_persons_man_constructor_exists():
+    assert callable(persons_Man.__init__)
 
 
-def test_persons::man_constructor_args():
-    sig = inspect.signature(persons::Man.__init__)
+def test_persons_man_constructor_args():
+    sig = inspect.signature(persons_Man.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::association_is_not_abstract():
-    assert not inspect.isabstract(persons::Association)
+def test_persons_association_is_not_abstract():
+    assert not inspect.isabstract(persons_Association)
 
 
-def test_persons::association_constructor_exists():
-    assert callable(persons::Association.__init__)
+def test_persons_association_constructor_exists():
+    assert callable(persons_Association.__init__)
 
 
-def test_persons::association_constructor_args():
-    sig = inspect.signature(persons::Association.__init__)
+def test_persons_association_constructor_args():
+    sig = inspect.signature(persons_Association.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -141,65 +141,65 @@ def test_facility_constructor_args():
 
 
 
-def test_persons::ordinaryfacility_is_not_abstract():
-    assert not inspect.isabstract(persons::OrdinaryFacility)
+def test_persons_ordinaryfacility_is_not_abstract():
+    assert not inspect.isabstract(persons_OrdinaryFacility)
 
 
-def test_persons::ordinaryfacility_constructor_exists():
-    assert callable(persons::OrdinaryFacility.__init__)
+def test_persons_ordinaryfacility_constructor_exists():
+    assert callable(persons_OrdinaryFacility.__init__)
 
 
-def test_persons::ordinaryfacility_constructor_args():
-    sig = inspect.signature(persons::OrdinaryFacility.__init__)
+def test_persons_ordinaryfacility_constructor_args():
+    sig = inspect.signature(persons_OrdinaryFacility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::specialfacility_is_not_abstract():
-    assert not inspect.isabstract(persons::SpecialFacility)
+def test_persons_specialfacility_is_not_abstract():
+    assert not inspect.isabstract(persons_SpecialFacility)
 
 
-def test_persons::specialfacility_constructor_exists():
-    assert callable(persons::SpecialFacility.__init__)
+def test_persons_specialfacility_constructor_exists():
+    assert callable(persons_SpecialFacility.__init__)
 
 
-def test_persons::specialfacility_constructor_args():
-    sig = inspect.signature(persons::SpecialFacility.__init__)
+def test_persons_specialfacility_constructor_args():
+    sig = inspect.signature(persons_SpecialFacility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::facility_is_not_abstract():
-    assert not inspect.isabstract(persons::Facility)
+def test_persons_facility_is_not_abstract():
+    assert not inspect.isabstract(persons_Facility)
 
 
-def test_persons::facility_constructor_exists():
-    assert callable(persons::Facility.__init__)
+def test_persons_facility_constructor_exists():
+    assert callable(persons_Facility.__init__)
 
 
-def test_persons::facility_constructor_args():
-    sig = inspect.signature(persons::Facility.__init__)
+def test_persons_facility_constructor_args():
+    sig = inspect.signature(persons_Facility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::namedelement_is_not_abstract():
-    assert not inspect.isabstract(persons::NamedElement)
+def test_persons_namedelement_is_not_abstract():
+    assert not inspect.isabstract(persons_NamedElement)
 
 
-def test_persons::namedelement_constructor_exists():
-    assert callable(persons::NamedElement.__init__)
+def test_persons_namedelement_constructor_exists():
+    assert callable(persons_NamedElement.__init__)
 
 
-def test_persons::namedelement_constructor_args():
-    sig = inspect.signature(persons::NamedElement.__init__)
+def test_persons_namedelement_constructor_args():
+    sig = inspect.signature(persons_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_persons::namedelement_has_name():
-    assert hasattr(persons::NamedElement, "name")
+def test_persons_namedelement_has_name():
+    assert hasattr(persons_NamedElement, "name")
     descriptor = None
-    for klass in persons::NamedElement.__mro__:
+    for klass in persons_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -207,37 +207,37 @@ def test_persons::namedelement_has_name():
 
 
 
-def test_persons::townhall_is_not_abstract():
-    assert not inspect.isabstract(persons::TownHall)
+def test_persons_townhall_is_not_abstract():
+    assert not inspect.isabstract(persons_TownHall)
 
 
-def test_persons::townhall_constructor_exists():
-    assert callable(persons::TownHall.__init__)
+def test_persons_townhall_constructor_exists():
+    assert callable(persons_TownHall.__init__)
 
 
-def test_persons::townhall_constructor_args():
-    sig = inspect.signature(persons::TownHall.__init__)
+def test_persons_townhall_constructor_args():
+    sig = inspect.signature(persons_TownHall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::person_is_not_abstract():
-    assert not inspect.isabstract(persons::Person)
+def test_persons_person_is_not_abstract():
+    assert not inspect.isabstract(persons_Person)
 
 
-def test_persons::person_constructor_exists():
-    assert callable(persons::Person.__init__)
+def test_persons_person_constructor_exists():
+    assert callable(persons_Person.__init__)
 
 
-def test_persons::person_constructor_args():
-    sig = inspect.signature(persons::Person.__init__)
+def test_persons_person_constructor_args():
+    sig = inspect.signature(persons_Person.__init__)
     params = list(sig.parameters.keys())
     assert "fullName" in params, "Missing parameter 'fullName'"
 
-def test_persons::person_has_fullName():
-    assert hasattr(persons::Person, "fullName")
+def test_persons_person_has_fullName():
+    assert hasattr(persons_Person, "fullName")
     descriptor = None
-    for klass in persons::Person.__mro__:
+    for klass in persons_Person.__mro__:
         if "fullName" in klass.__dict__:
             descriptor = klass.__dict__["fullName"]
             break
@@ -245,16 +245,16 @@ def test_persons::person_has_fullName():
 
 
 
-def test_persons::community_is_not_abstract():
-    assert not inspect.isabstract(persons::Community)
+def test_persons_community_is_not_abstract():
+    assert not inspect.isabstract(persons_Community)
 
 
-def test_persons::community_constructor_exists():
-    assert callable(persons::Community.__init__)
+def test_persons_community_constructor_exists():
+    assert callable(persons_Community.__init__)
 
 
-def test_persons::community_constructor_args():
-    sig = inspect.signature(persons::Community.__init__)
+def test_persons_community_constructor_args():
+    sig = inspect.signature(persons_Community.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -272,51 +272,51 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-persons::Committee_strategy = st.builds(
-    persons::Committee,
+persons_District_strategy = st.builds(
+    persons_District,
 )
-persons::District_strategy = st.builds(
-    persons::District,
+persons_Committee_strategy = st.builds(
+    persons_Committee,
 )
 Person_strategy = st.builds(
     Person,
 )
-persons::Woman_strategy = st.builds(
-    persons::Woman,
+persons_Woman_strategy = st.builds(
+    persons_Woman,
 )
-persons::Man_strategy = st.builds(
-    persons::Man,
+persons_Man_strategy = st.builds(
+    persons_Man,
 )
-persons::Association_strategy = st.builds(
-    persons::Association,
+persons_Association_strategy = st.builds(
+    persons_Association,
 )
 Facility_strategy = st.builds(
     Facility,
 )
-persons::OrdinaryFacility_strategy = st.builds(
-    persons::OrdinaryFacility,
+persons_OrdinaryFacility_strategy = st.builds(
+    persons_OrdinaryFacility,
 )
-persons::SpecialFacility_strategy = st.builds(
-    persons::SpecialFacility,
+persons_SpecialFacility_strategy = st.builds(
+    persons_SpecialFacility,
 )
-persons::Facility_strategy = st.builds(
-    persons::Facility,
+persons_Facility_strategy = st.builds(
+    persons_Facility,
 )
-persons::NamedElement_strategy = st.builds(
-    persons::NamedElement,
+persons_NamedElement_strategy = st.builds(
+    persons_NamedElement,
     name=
         safe_text
 )
-persons::TownHall_strategy = st.builds(
-    persons::TownHall,
+persons_TownHall_strategy = st.builds(
+    persons_TownHall,
 )
-persons::Person_strategy = st.builds(
-    persons::Person,
+persons_Person_strategy = st.builds(
+    persons_Person,
     fullName=
         safe_text
 )
-persons::Community_strategy = st.builds(
-    persons::Community,
+persons_Community_strategy = st.builds(
+    persons_Community,
 )
 
 @given(instance=NamedElement_strategy)
@@ -324,94 +324,88 @@ persons::Community_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=persons::Committee_strategy)
+@given(instance=persons_District_strategy)
 @settings(max_examples=50)
-def test_persons::committee_instantiation(instance):
-    assert isinstance(instance, persons::Committee)
+def test_persons_district_instantiation(instance):
+    assert isinstance(instance, persons_District)
 
-@given(instance=persons::District_strategy)
+@given(instance=persons_Committee_strategy)
 @settings(max_examples=50)
-def test_persons::district_instantiation(instance):
-    assert isinstance(instance, persons::District)
+def test_persons_committee_instantiation(instance):
+    assert isinstance(instance, persons_Committee)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=persons::Woman_strategy)
+@given(instance=persons_Woman_strategy)
 @settings(max_examples=50)
-def test_persons::woman_instantiation(instance):
-    assert isinstance(instance, persons::Woman)
+def test_persons_woman_instantiation(instance):
+    assert isinstance(instance, persons_Woman)
 
-@given(instance=persons::Man_strategy)
+@given(instance=persons_Man_strategy)
 @settings(max_examples=50)
-def test_persons::man_instantiation(instance):
-    assert isinstance(instance, persons::Man)
+def test_persons_man_instantiation(instance):
+    assert isinstance(instance, persons_Man)
 
-@given(instance=persons::Association_strategy)
+@given(instance=persons_Association_strategy)
 @settings(max_examples=50)
-def test_persons::association_instantiation(instance):
-    assert isinstance(instance, persons::Association)
+def test_persons_association_instantiation(instance):
+    assert isinstance(instance, persons_Association)
 
 @given(instance=Facility_strategy)
 @settings(max_examples=50)
 def test_facility_instantiation(instance):
     assert isinstance(instance, Facility)
 
-@given(instance=persons::OrdinaryFacility_strategy)
+@given(instance=persons_OrdinaryFacility_strategy)
 @settings(max_examples=50)
-def test_persons::ordinaryfacility_instantiation(instance):
-    assert isinstance(instance, persons::OrdinaryFacility)
+def test_persons_ordinaryfacility_instantiation(instance):
+    assert isinstance(instance, persons_OrdinaryFacility)
 
-@given(instance=persons::SpecialFacility_strategy)
+@given(instance=persons_SpecialFacility_strategy)
 @settings(max_examples=50)
-def test_persons::specialfacility_instantiation(instance):
-    assert isinstance(instance, persons::SpecialFacility)
+def test_persons_specialfacility_instantiation(instance):
+    assert isinstance(instance, persons_SpecialFacility)
 
-@given(instance=persons::Facility_strategy)
+@given(instance=persons_Facility_strategy)
 @settings(max_examples=50)
-def test_persons::facility_instantiation(instance):
-    assert isinstance(instance, persons::Facility)
+def test_persons_facility_instantiation(instance):
+    assert isinstance(instance, persons_Facility)
 
-@given(instance=persons::NamedElement_strategy)
+@given(instance=persons_NamedElement_strategy)
 @settings(max_examples=50)
-def test_persons::namedelement_instantiation(instance):
-    assert isinstance(instance, persons::NamedElement)
-
-@given(instance=persons::NamedElement_strategy)
-def test_persons::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_persons_namedelement_instantiation(instance):
+    assert isinstance(instance, persons_NamedElement)
 
 
-@given(instance=persons::NamedElement_strategy)
-def test_persons::namedelement_name_setter(instance):
+
+@given(instance=persons_NamedElement_strategy)
+def test_persons_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=persons::TownHall_strategy)
+@given(instance=persons_TownHall_strategy)
 @settings(max_examples=50)
-def test_persons::townhall_instantiation(instance):
-    assert isinstance(instance, persons::TownHall)
+def test_persons_townhall_instantiation(instance):
+    assert isinstance(instance, persons_TownHall)
 
-@given(instance=persons::Person_strategy)
+@given(instance=persons_Person_strategy)
 @settings(max_examples=50)
-def test_persons::person_instantiation(instance):
-    assert isinstance(instance, persons::Person)
-
-@given(instance=persons::Person_strategy)
-def test_persons::person_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
+def test_persons_person_instantiation(instance):
+    assert isinstance(instance, persons_Person)
 
 
-@given(instance=persons::Person_strategy)
-def test_persons::person_fullName_setter(instance):
+
+@given(instance=persons_Person_strategy)
+def test_persons_person_fullName_setter(instance):
     original = instance.fullName
     instance.fullName = original
     assert instance.fullName == original
 
-@given(instance=persons::Community_strategy)
+@given(instance=persons_Community_strategy)
 @settings(max_examples=50)
-def test_persons::community_instantiation(instance):
-    assert isinstance(instance, persons::Community)
+def test_persons_community_instantiation(instance):
+    assert isinstance(instance, persons_Community)

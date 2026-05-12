@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testpackage::Group,
-    testpackage::User,
+from python_code import (
+    testpackage_User,
+    testpackage_Group,
 )
 
 # =============================================================================
@@ -16,23 +16,33 @@ from classes import (
 
 
 
-def test_testpackage::group_is_not_abstract():
-    assert not inspect.isabstract(testpackage::Group)
+def test_testpackage_user_is_not_abstract():
+    assert not inspect.isabstract(testpackage_User)
 
 
-def test_testpackage::group_constructor_exists():
-    assert callable(testpackage::Group.__init__)
+def test_testpackage_user_constructor_exists():
+    assert callable(testpackage_User.__init__)
 
 
-def test_testpackage::group_constructor_args():
-    sig = inspect.signature(testpackage::Group.__init__)
+def test_testpackage_user_constructor_args():
+    sig = inspect.signature(testpackage_User.__init__)
     params = list(sig.parameters.keys())
+    assert "password" in params, "Missing parameter 'password'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testpackage::group_has_name():
-    assert hasattr(testpackage::Group, "name")
+def test_testpackage_user_has_password():
+    assert hasattr(testpackage_User, "password")
     descriptor = None
-    for klass in testpackage::Group.__mro__:
+    for klass in testpackage_User.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_testpackage_user_has_name():
+    assert hasattr(testpackage_User, "name")
+    descriptor = None
+    for klass in testpackage_User.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,33 +50,23 @@ def test_testpackage::group_has_name():
 
 
 
-def test_testpackage::user_is_not_abstract():
-    assert not inspect.isabstract(testpackage::User)
+def test_testpackage_group_is_not_abstract():
+    assert not inspect.isabstract(testpackage_Group)
 
 
-def test_testpackage::user_constructor_exists():
-    assert callable(testpackage::User.__init__)
+def test_testpackage_group_constructor_exists():
+    assert callable(testpackage_Group.__init__)
 
 
-def test_testpackage::user_constructor_args():
-    sig = inspect.signature(testpackage::User.__init__)
+def test_testpackage_group_constructor_args():
+    sig = inspect.signature(testpackage_Group.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testpackage::user_has_password():
-    assert hasattr(testpackage::User, "password")
+def test_testpackage_group_has_name():
+    assert hasattr(testpackage_Group, "name")
     descriptor = None
-    for klass in testpackage::User.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_testpackage::user_has_name():
-    assert hasattr(testpackage::User, "name")
-    descriptor = None
-    for klass in testpackage::User.__mro__:
+    for klass in testpackage_Group.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -84,31 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testpackage::Group_strategy = st.builds(
-    testpackage::Group,
-    name=
-        safe_text
-)
-testpackage::User_strategy = st.builds(
-    testpackage::User,
+testpackage_User_strategy = st.builds(
+    testpackage_User,
     password=
         safe_text,
     name=
         safe_text
 )
+testpackage_Group_strategy = st.builds(
+    testpackage_Group,
+    name=
+        safe_text
+)
 
-@given(instance=testpackage::Group_strategy)
+@given(instance=testpackage_User_strategy)
 @settings(max_examples=50)
-def test_testpackage::group_instantiation(instance):
-    assert isinstance(instance, testpackage::Group)
-
-@given(instance=testpackage::Group_strategy)
-def test_testpackage::group_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_testpackage_user_instantiation(instance):
+    assert isinstance(instance, testpackage_User)
 
 
-@given(instance=testpackage::Group_strategy)
-def test_testpackage::group_name_setter(instance):
+
+@given(instance=testpackage_User_strategy)
+def test_testpackage_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=testpackage_User_strategy)
+def test_testpackage_user_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=testpackage_Group_strategy)
+@settings(max_examples=50)
+def test_testpackage_group_instantiation(instance):
+    assert isinstance(instance, testpackage_Group)
+
+
+
+@given(instance=testpackage_Group_strategy)
+def test_testpackage_group_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -119,9 +137,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=testpackage::Group_strategy)
+@given(instance=testpackage_Group_strategy)
 @settings(max_examples=30)
-def test_testpackage::group_ismember_changes_state(instance):
+def test_testpackage_group_ismember_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -135,38 +153,11 @@ def test_testpackage::group_ismember_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMember' in testpackage::Group is empty"
+        assert has_statements, f"Function 'isMember' in testpackage_Group is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMember' in testpackage::Group did not change state; check implementation")
+            warnings.warn(f"Operation 'isMember' in testpackage_Group did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMember' in testpackage::Group is not implemented or raised an error")
-
-@given(instance=testpackage::User_strategy)
-@settings(max_examples=50)
-def test_testpackage::user_instantiation(instance):
-    assert isinstance(instance, testpackage::User)
-
-@given(instance=testpackage::User_strategy)
-def test_testpackage::user_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=testpackage::User_strategy)
-def test_testpackage::user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=testpackage::User_strategy)
-def test_testpackage::user_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=testpackage::User_strategy)
-def test_testpackage::user_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+        warnings.warn(f"Operation 'isMember' in testpackage_Group is not implemented or raised an error")

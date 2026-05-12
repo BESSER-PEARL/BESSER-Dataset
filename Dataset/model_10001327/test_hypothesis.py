@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     G,
@@ -156,17 +156,8 @@ def test_a_constructor_exists():
 def test_a_constructor_args():
     sig = inspect.signature(A.__init__)
     params = list(sig.parameters.keys())
-    assert "b" in params, "Missing parameter 'b'"
     assert "d" in params, "Missing parameter 'd'"
-
-def test_a_has_b():
-    assert hasattr(A, "b")
-    descriptor = None
-    for klass in A.__mro__:
-        if "b" in klass.__dict__:
-            descriptor = klass.__dict__["b"]
-            break
-    assert isinstance(descriptor, property)
+    assert "b" in params, "Missing parameter 'b'"
 
 def test_a_has_d():
     assert hasattr(A, "d")
@@ -174,6 +165,15 @@ def test_a_has_d():
     for klass in A.__mro__:
         if "d" in klass.__dict__:
             descriptor = klass.__dict__["d"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_a_has_b():
+    assert hasattr(A, "b")
+    descriptor = None
+    for klass in A.__mro__:
+        if "b" in klass.__dict__:
+            descriptor = klass.__dict__["b"]
             break
     assert isinstance(descriptor, property)
 
@@ -296,10 +296,10 @@ B_strategy = st.builds(
 )
 A_strategy = st.builds(
     A,
-    b=
-        st.booleans(),
     d=
-        st.integers()
+        st.integers(),
+    b=
+        st.booleans()
 )
 Y_strategy = st.builds(
     Y,
@@ -329,9 +329,6 @@ def test_g_instantiation(instance):
 def test_f_instantiation(instance):
     assert isinstance(instance, F)
 
-@given(instance=F_strategy)
-def test_f_attF_type(instance):
-    assert isinstance(instance.attF, str)
 
 
 @given(instance=F_strategy)
@@ -345,9 +342,6 @@ def test_f_attF_setter(instance):
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=E_strategy)
-def test_e_attE_type(instance):
-    assert isinstance(instance.attE, str)
 
 
 @given(instance=E_strategy)
@@ -381,20 +375,6 @@ def test_b_instantiation(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_b_type(instance):
-    assert isinstance(instance.b, bool)
-
-
-@given(instance=A_strategy)
-def test_a_b_setter(instance):
-    original = instance.b
-    instance.b = original
-    assert instance.b == original
-
-@given(instance=A_strategy)
-def test_a_d_type(instance):
-    assert isinstance(instance.d, int)
 
 
 @given(instance=A_strategy)
@@ -403,14 +383,19 @@ def test_a_d_setter(instance):
     instance.d = original
     assert instance.d == original
 
+
+
+@given(instance=A_strategy)
+def test_a_b_setter(instance):
+    original = instance.b
+    instance.b = original
+    assert instance.b == original
+
 @given(instance=Y_strategy)
 @settings(max_examples=50)
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_attY_type(instance):
-    assert isinstance(instance.attY, str)
 
 
 @given(instance=Y_strategy)

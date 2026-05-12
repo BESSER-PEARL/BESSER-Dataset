@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TextBox,
-    webapp::EmailBox,
-    webapp::DateBox,
-    webapp::PasswordBox,
+    webapp_DateBox,
+    webapp_EmailBox,
+    webapp_PasswordBox,
     FormButton,
-    webapp::SubmitButton,
-    webapp::ResetButton,
-    webapp::DynamicWebApp,
+    webapp_SubmitButton,
+    webapp_ResetButton,
+    webapp_DynamicWebApp,
     NormalControl,
-    webapp::NormalButton,
+    webapp_NormalButton,
     Control,
-    webapp::CheckBox,
-    webapp::DropDownList,
-    webapp::FormButton,
-    webapp::Link,
-    webapp::TextBox,
-    webapp::Label,
-    webapp::NormalControl,
-    webapp::Control,
+    webapp_CheckBox,
+    webapp_FormButton,
+    webapp_TextBox,
+    webapp_DropDownList,
+    webapp_Link,
+    webapp_Label,
+    webapp_NormalControl,
+    webapp_Control,
     Page,
-    webapp::NormalPage,
-    webapp::FormPage,
-    webapp::RadioButton,
-    webapp::ListElement,
-    webapp::Page,
+    webapp_NormalPage,
+    webapp_FormPage,
+    webapp_RadioButton,
+    webapp_ListElement,
+    webapp_Page,
     DateFormat,
 )
 
@@ -54,37 +54,23 @@ def test_textbox_constructor_args():
 
 
 
-def test_webapp::emailbox_is_not_abstract():
-    assert not inspect.isabstract(webapp::EmailBox)
+def test_webapp_datebox_is_not_abstract():
+    assert not inspect.isabstract(webapp_DateBox)
 
 
-def test_webapp::emailbox_constructor_exists():
-    assert callable(webapp::EmailBox.__init__)
+def test_webapp_datebox_constructor_exists():
+    assert callable(webapp_DateBox.__init__)
 
 
-def test_webapp::emailbox_constructor_args():
-    sig = inspect.signature(webapp::EmailBox.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_webapp::datebox_is_not_abstract():
-    assert not inspect.isabstract(webapp::DateBox)
-
-
-def test_webapp::datebox_constructor_exists():
-    assert callable(webapp::DateBox.__init__)
-
-
-def test_webapp::datebox_constructor_args():
-    sig = inspect.signature(webapp::DateBox.__init__)
+def test_webapp_datebox_constructor_args():
+    sig = inspect.signature(webapp_DateBox.__init__)
     params = list(sig.parameters.keys())
     assert "format" in params, "Missing parameter 'format'"
 
-def test_webapp::datebox_has_format():
-    assert hasattr(webapp::DateBox, "format")
+def test_webapp_datebox_has_format():
+    assert hasattr(webapp_DateBox, "format")
     descriptor = None
-    for klass in webapp::DateBox.__mro__:
+    for klass in webapp_DateBox.__mro__:
         if "format" in klass.__dict__:
             descriptor = klass.__dict__["format"]
             break
@@ -92,16 +78,30 @@ def test_webapp::datebox_has_format():
 
 
 
-def test_webapp::passwordbox_is_not_abstract():
-    assert not inspect.isabstract(webapp::PasswordBox)
+def test_webapp_emailbox_is_not_abstract():
+    assert not inspect.isabstract(webapp_EmailBox)
 
 
-def test_webapp::passwordbox_constructor_exists():
-    assert callable(webapp::PasswordBox.__init__)
+def test_webapp_emailbox_constructor_exists():
+    assert callable(webapp_EmailBox.__init__)
 
 
-def test_webapp::passwordbox_constructor_args():
-    sig = inspect.signature(webapp::PasswordBox.__init__)
+def test_webapp_emailbox_constructor_args():
+    sig = inspect.signature(webapp_EmailBox.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webapp_passwordbox_is_not_abstract():
+    assert not inspect.isabstract(webapp_PasswordBox)
+
+
+def test_webapp_passwordbox_constructor_exists():
+    assert callable(webapp_PasswordBox.__init__)
+
+
+def test_webapp_passwordbox_constructor_args():
+    sig = inspect.signature(webapp_PasswordBox.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -120,51 +120,51 @@ def test_formbutton_constructor_args():
 
 
 
-def test_webapp::submitbutton_is_not_abstract():
-    assert not inspect.isabstract(webapp::SubmitButton)
+def test_webapp_submitbutton_is_not_abstract():
+    assert not inspect.isabstract(webapp_SubmitButton)
 
 
-def test_webapp::submitbutton_constructor_exists():
-    assert callable(webapp::SubmitButton.__init__)
+def test_webapp_submitbutton_constructor_exists():
+    assert callable(webapp_SubmitButton.__init__)
 
 
-def test_webapp::submitbutton_constructor_args():
-    sig = inspect.signature(webapp::SubmitButton.__init__)
+def test_webapp_submitbutton_constructor_args():
+    sig = inspect.signature(webapp_SubmitButton.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::resetbutton_is_not_abstract():
-    assert not inspect.isabstract(webapp::ResetButton)
+def test_webapp_resetbutton_is_not_abstract():
+    assert not inspect.isabstract(webapp_ResetButton)
 
 
-def test_webapp::resetbutton_constructor_exists():
-    assert callable(webapp::ResetButton.__init__)
+def test_webapp_resetbutton_constructor_exists():
+    assert callable(webapp_ResetButton.__init__)
 
 
-def test_webapp::resetbutton_constructor_args():
-    sig = inspect.signature(webapp::ResetButton.__init__)
+def test_webapp_resetbutton_constructor_args():
+    sig = inspect.signature(webapp_ResetButton.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::dynamicwebapp_is_not_abstract():
-    assert not inspect.isabstract(webapp::DynamicWebApp)
+def test_webapp_dynamicwebapp_is_not_abstract():
+    assert not inspect.isabstract(webapp_DynamicWebApp)
 
 
-def test_webapp::dynamicwebapp_constructor_exists():
-    assert callable(webapp::DynamicWebApp.__init__)
+def test_webapp_dynamicwebapp_constructor_exists():
+    assert callable(webapp_DynamicWebApp.__init__)
 
 
-def test_webapp::dynamicwebapp_constructor_args():
-    sig = inspect.signature(webapp::DynamicWebApp.__init__)
+def test_webapp_dynamicwebapp_constructor_args():
+    sig = inspect.signature(webapp_DynamicWebApp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::dynamicwebapp_has_name():
-    assert hasattr(webapp::DynamicWebApp, "name")
+def test_webapp_dynamicwebapp_has_name():
+    assert hasattr(webapp_DynamicWebApp, "name")
     descriptor = None
-    for klass in webapp::DynamicWebApp.__mro__:
+    for klass in webapp_DynamicWebApp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,16 +186,16 @@ def test_normalcontrol_constructor_args():
 
 
 
-def test_webapp::normalbutton_is_not_abstract():
-    assert not inspect.isabstract(webapp::NormalButton)
+def test_webapp_normalbutton_is_not_abstract():
+    assert not inspect.isabstract(webapp_NormalButton)
 
 
-def test_webapp::normalbutton_constructor_exists():
-    assert callable(webapp::NormalButton.__init__)
+def test_webapp_normalbutton_constructor_exists():
+    assert callable(webapp_NormalButton.__init__)
 
 
-def test_webapp::normalbutton_constructor_args():
-    sig = inspect.signature(webapp::NormalButton.__init__)
+def test_webapp_normalbutton_constructor_args():
+    sig = inspect.signature(webapp_NormalButton.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -214,23 +214,23 @@ def test_control_constructor_args():
 
 
 
-def test_webapp::checkbox_is_not_abstract():
-    assert not inspect.isabstract(webapp::CheckBox)
+def test_webapp_checkbox_is_not_abstract():
+    assert not inspect.isabstract(webapp_CheckBox)
 
 
-def test_webapp::checkbox_constructor_exists():
-    assert callable(webapp::CheckBox.__init__)
+def test_webapp_checkbox_constructor_exists():
+    assert callable(webapp_CheckBox.__init__)
 
 
-def test_webapp::checkbox_constructor_args():
-    sig = inspect.signature(webapp::CheckBox.__init__)
+def test_webapp_checkbox_constructor_args():
+    sig = inspect.signature(webapp_CheckBox.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_webapp::checkbox_has_text():
-    assert hasattr(webapp::CheckBox, "text")
+def test_webapp_checkbox_has_text():
+    assert hasattr(webapp_CheckBox, "text")
     descriptor = None
-    for klass in webapp::CheckBox.__mro__:
+    for klass in webapp_CheckBox.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -238,37 +238,23 @@ def test_webapp::checkbox_has_text():
 
 
 
-def test_webapp::dropdownlist_is_not_abstract():
-    assert not inspect.isabstract(webapp::DropDownList)
+def test_webapp_formbutton_is_not_abstract():
+    assert not inspect.isabstract(webapp_FormButton)
 
 
-def test_webapp::dropdownlist_constructor_exists():
-    assert callable(webapp::DropDownList.__init__)
+def test_webapp_formbutton_constructor_exists():
+    assert callable(webapp_FormButton.__init__)
 
 
-def test_webapp::dropdownlist_constructor_args():
-    sig = inspect.signature(webapp::DropDownList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_webapp::formbutton_is_not_abstract():
-    assert not inspect.isabstract(webapp::FormButton)
-
-
-def test_webapp::formbutton_constructor_exists():
-    assert callable(webapp::FormButton.__init__)
-
-
-def test_webapp::formbutton_constructor_args():
-    sig = inspect.signature(webapp::FormButton.__init__)
+def test_webapp_formbutton_constructor_args():
+    sig = inspect.signature(webapp_FormButton.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_webapp::formbutton_has_text():
-    assert hasattr(webapp::FormButton, "text")
+def test_webapp_formbutton_has_text():
+    assert hasattr(webapp_FormButton, "text")
     descriptor = None
-    for klass in webapp::FormButton.__mro__:
+    for klass in webapp_FormButton.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -276,105 +262,119 @@ def test_webapp::formbutton_has_text():
 
 
 
-def test_webapp::link_is_not_abstract():
-    assert not inspect.isabstract(webapp::Link)
+def test_webapp_textbox_is_not_abstract():
+    assert not inspect.isabstract(webapp_TextBox)
 
 
-def test_webapp::link_constructor_exists():
-    assert callable(webapp::Link.__init__)
+def test_webapp_textbox_constructor_exists():
+    assert callable(webapp_TextBox.__init__)
 
 
-def test_webapp::link_constructor_args():
-    sig = inspect.signature(webapp::Link.__init__)
+def test_webapp_textbox_constructor_args():
+    sig = inspect.signature(webapp_TextBox.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_webapp::textbox_is_not_abstract():
-    assert not inspect.isabstract(webapp::TextBox)
-
-
-def test_webapp::textbox_constructor_exists():
-    assert callable(webapp::TextBox.__init__)
-
-
-def test_webapp::textbox_constructor_args():
-    sig = inspect.signature(webapp::TextBox.__init__)
-    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
     assert "maxLength" in params, "Missing parameter 'maxLength'"
     assert "size" in params, "Missing parameter 'size'"
     assert "required" in params, "Missing parameter 'required'"
-    assert "text" in params, "Missing parameter 'text'"
 
-def test_webapp::textbox_has_maxLength():
-    assert hasattr(webapp::TextBox, "maxLength")
+def test_webapp_textbox_has_text():
+    assert hasattr(webapp_TextBox, "text")
     descriptor = None
-    for klass in webapp::TextBox.__mro__:
+    for klass in webapp_TextBox.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_textbox_has_maxLength():
+    assert hasattr(webapp_TextBox, "maxLength")
+    descriptor = None
+    for klass in webapp_TextBox.__mro__:
         if "maxLength" in klass.__dict__:
             descriptor = klass.__dict__["maxLength"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::textbox_has_size():
-    assert hasattr(webapp::TextBox, "size")
+def test_webapp_textbox_has_size():
+    assert hasattr(webapp_TextBox, "size")
     descriptor = None
-    for klass in webapp::TextBox.__mro__:
+    for klass in webapp_TextBox.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::textbox_has_required():
-    assert hasattr(webapp::TextBox, "required")
+def test_webapp_textbox_has_required():
+    assert hasattr(webapp_TextBox, "required")
     descriptor = None
-    for klass in webapp::TextBox.__mro__:
+    for klass in webapp_TextBox.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::textbox_has_text():
-    assert hasattr(webapp::TextBox, "text")
-    descriptor = None
-    for klass in webapp::TextBox.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_webapp::label_is_not_abstract():
-    assert not inspect.isabstract(webapp::Label)
-
-
-def test_webapp::label_constructor_exists():
-    assert callable(webapp::Label.__init__)
+def test_webapp_dropdownlist_is_not_abstract():
+    assert not inspect.isabstract(webapp_DropDownList)
 
 
-def test_webapp::label_constructor_args():
-    sig = inspect.signature(webapp::Label.__init__)
+def test_webapp_dropdownlist_constructor_exists():
+    assert callable(webapp_DropDownList.__init__)
+
+
+def test_webapp_dropdownlist_constructor_args():
+    sig = inspect.signature(webapp_DropDownList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::normalcontrol_is_not_abstract():
-    assert not inspect.isabstract(webapp::NormalControl)
+def test_webapp_link_is_not_abstract():
+    assert not inspect.isabstract(webapp_Link)
 
 
-def test_webapp::normalcontrol_constructor_exists():
-    assert callable(webapp::NormalControl.__init__)
+def test_webapp_link_constructor_exists():
+    assert callable(webapp_Link.__init__)
 
 
-def test_webapp::normalcontrol_constructor_args():
-    sig = inspect.signature(webapp::NormalControl.__init__)
+def test_webapp_link_constructor_args():
+    sig = inspect.signature(webapp_Link.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webapp_label_is_not_abstract():
+    assert not inspect.isabstract(webapp_Label)
+
+
+def test_webapp_label_constructor_exists():
+    assert callable(webapp_Label.__init__)
+
+
+def test_webapp_label_constructor_args():
+    sig = inspect.signature(webapp_Label.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webapp_normalcontrol_is_not_abstract():
+    assert not inspect.isabstract(webapp_NormalControl)
+
+
+def test_webapp_normalcontrol_constructor_exists():
+    assert callable(webapp_NormalControl.__init__)
+
+
+def test_webapp_normalcontrol_constructor_args():
+    sig = inspect.signature(webapp_NormalControl.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_webapp::normalcontrol_has_text():
-    assert hasattr(webapp::NormalControl, "text")
+def test_webapp_normalcontrol_has_text():
+    assert hasattr(webapp_NormalControl, "text")
     descriptor = None
-    for klass in webapp::NormalControl.__mro__:
+    for klass in webapp_NormalControl.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -382,33 +382,33 @@ def test_webapp::normalcontrol_has_text():
 
 
 
-def test_webapp::control_is_not_abstract():
-    assert not inspect.isabstract(webapp::Control)
+def test_webapp_control_is_not_abstract():
+    assert not inspect.isabstract(webapp_Control)
 
 
-def test_webapp::control_constructor_exists():
-    assert callable(webapp::Control.__init__)
+def test_webapp_control_constructor_exists():
+    assert callable(webapp_Control.__init__)
 
 
-def test_webapp::control_constructor_args():
-    sig = inspect.signature(webapp::Control.__init__)
+def test_webapp_control_constructor_args():
+    sig = inspect.signature(webapp_Control.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_webapp::control_has_name():
-    assert hasattr(webapp::Control, "name")
+def test_webapp_control_has_name():
+    assert hasattr(webapp_Control, "name")
     descriptor = None
-    for klass in webapp::Control.__mro__:
+    for klass in webapp_Control.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::control_has_id():
-    assert hasattr(webapp::Control, "id")
+def test_webapp_control_has_id():
+    assert hasattr(webapp_Control, "id")
     descriptor = None
-    for klass in webapp::Control.__mro__:
+    for klass in webapp_Control.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -430,37 +430,37 @@ def test_page_constructor_args():
 
 
 
-def test_webapp::normalpage_is_not_abstract():
-    assert not inspect.isabstract(webapp::NormalPage)
+def test_webapp_normalpage_is_not_abstract():
+    assert not inspect.isabstract(webapp_NormalPage)
 
 
-def test_webapp::normalpage_constructor_exists():
-    assert callable(webapp::NormalPage.__init__)
+def test_webapp_normalpage_constructor_exists():
+    assert callable(webapp_NormalPage.__init__)
 
 
-def test_webapp::normalpage_constructor_args():
-    sig = inspect.signature(webapp::NormalPage.__init__)
+def test_webapp_normalpage_constructor_args():
+    sig = inspect.signature(webapp_NormalPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::formpage_is_not_abstract():
-    assert not inspect.isabstract(webapp::FormPage)
+def test_webapp_formpage_is_not_abstract():
+    assert not inspect.isabstract(webapp_FormPage)
 
 
-def test_webapp::formpage_constructor_exists():
-    assert callable(webapp::FormPage.__init__)
+def test_webapp_formpage_constructor_exists():
+    assert callable(webapp_FormPage.__init__)
 
 
-def test_webapp::formpage_constructor_args():
-    sig = inspect.signature(webapp::FormPage.__init__)
+def test_webapp_formpage_constructor_args():
+    sig = inspect.signature(webapp_FormPage.__init__)
     params = list(sig.parameters.keys())
     assert "persist" in params, "Missing parameter 'persist'"
 
-def test_webapp::formpage_has_persist():
-    assert hasattr(webapp::FormPage, "persist")
+def test_webapp_formpage_has_persist():
+    assert hasattr(webapp_FormPage, "persist")
     descriptor = None
-    for klass in webapp::FormPage.__mro__:
+    for klass in webapp_FormPage.__mro__:
         if "persist" in klass.__dict__:
             descriptor = klass.__dict__["persist"]
             break
@@ -468,37 +468,37 @@ def test_webapp::formpage_has_persist():
 
 
 
-def test_webapp::radiobutton_is_not_abstract():
-    assert not inspect.isabstract(webapp::RadioButton)
+def test_webapp_radiobutton_is_not_abstract():
+    assert not inspect.isabstract(webapp_RadioButton)
 
 
-def test_webapp::radiobutton_constructor_exists():
-    assert callable(webapp::RadioButton.__init__)
+def test_webapp_radiobutton_constructor_exists():
+    assert callable(webapp_RadioButton.__init__)
 
 
-def test_webapp::radiobutton_constructor_args():
-    sig = inspect.signature(webapp::RadioButton.__init__)
+def test_webapp_radiobutton_constructor_args():
+    sig = inspect.signature(webapp_RadioButton.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::listelement_is_not_abstract():
-    assert not inspect.isabstract(webapp::ListElement)
+def test_webapp_listelement_is_not_abstract():
+    assert not inspect.isabstract(webapp_ListElement)
 
 
-def test_webapp::listelement_constructor_exists():
-    assert callable(webapp::ListElement.__init__)
+def test_webapp_listelement_constructor_exists():
+    assert callable(webapp_ListElement.__init__)
 
 
-def test_webapp::listelement_constructor_args():
-    sig = inspect.signature(webapp::ListElement.__init__)
+def test_webapp_listelement_constructor_args():
+    sig = inspect.signature(webapp_ListElement.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_webapp::listelement_has_value():
-    assert hasattr(webapp::ListElement, "value")
+def test_webapp_listelement_has_value():
+    assert hasattr(webapp_ListElement, "value")
     descriptor = None
-    for klass in webapp::ListElement.__mro__:
+    for klass in webapp_ListElement.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -506,43 +506,43 @@ def test_webapp::listelement_has_value():
 
 
 
-def test_webapp::page_is_not_abstract():
-    assert not inspect.isabstract(webapp::Page)
+def test_webapp_page_is_not_abstract():
+    assert not inspect.isabstract(webapp_Page)
 
 
-def test_webapp::page_constructor_exists():
-    assert callable(webapp::Page.__init__)
+def test_webapp_page_constructor_exists():
+    assert callable(webapp_Page.__init__)
 
 
-def test_webapp::page_constructor_args():
-    sig = inspect.signature(webapp::Page.__init__)
+def test_webapp_page_constructor_args():
+    sig = inspect.signature(webapp_Page.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
     assert "default" in params, "Missing parameter 'default'"
+    assert "title" in params, "Missing parameter 'title'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::page_has_title():
-    assert hasattr(webapp::Page, "title")
+def test_webapp_page_has_default():
+    assert hasattr(webapp_Page, "default")
     descriptor = None
-    for klass in webapp::Page.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::page_has_default():
-    assert hasattr(webapp::Page, "default")
-    descriptor = None
-    for klass in webapp::Page.__mro__:
+    for klass in webapp_Page.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::page_has_name():
-    assert hasattr(webapp::Page, "name")
+def test_webapp_page_has_title():
+    assert hasattr(webapp_Page, "title")
     descriptor = None
-    for klass in webapp::Page.__mro__:
+    for klass in webapp_Page.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_page_has_name():
+    assert hasattr(webapp_Page, "name")
+    descriptor = None
+    for klass in webapp_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -578,77 +578,77 @@ safe_text = st.text(
 TextBox_strategy = st.builds(
     TextBox,
 )
-webapp::EmailBox_strategy = st.builds(
-    webapp::EmailBox,
-)
-webapp::DateBox_strategy = st.builds(
-    webapp::DateBox,
+webapp_DateBox_strategy = st.builds(
+    webapp_DateBox,
     format=
         safe_text
 )
-webapp::PasswordBox_strategy = st.builds(
-    webapp::PasswordBox,
+webapp_EmailBox_strategy = st.builds(
+    webapp_EmailBox,
+)
+webapp_PasswordBox_strategy = st.builds(
+    webapp_PasswordBox,
 )
 FormButton_strategy = st.builds(
     FormButton,
 )
-webapp::SubmitButton_strategy = st.builds(
-    webapp::SubmitButton,
+webapp_SubmitButton_strategy = st.builds(
+    webapp_SubmitButton,
 )
-webapp::ResetButton_strategy = st.builds(
-    webapp::ResetButton,
+webapp_ResetButton_strategy = st.builds(
+    webapp_ResetButton,
 )
-webapp::DynamicWebApp_strategy = st.builds(
-    webapp::DynamicWebApp,
+webapp_DynamicWebApp_strategy = st.builds(
+    webapp_DynamicWebApp,
     name=
         safe_text
 )
 NormalControl_strategy = st.builds(
     NormalControl,
 )
-webapp::NormalButton_strategy = st.builds(
-    webapp::NormalButton,
+webapp_NormalButton_strategy = st.builds(
+    webapp_NormalButton,
 )
 Control_strategy = st.builds(
     Control,
 )
-webapp::CheckBox_strategy = st.builds(
-    webapp::CheckBox,
+webapp_CheckBox_strategy = st.builds(
+    webapp_CheckBox,
     text=
         safe_text
 )
-webapp::DropDownList_strategy = st.builds(
-    webapp::DropDownList,
-)
-webapp::FormButton_strategy = st.builds(
-    webapp::FormButton,
+webapp_FormButton_strategy = st.builds(
+    webapp_FormButton,
     text=
         safe_text
 )
-webapp::Link_strategy = st.builds(
-    webapp::Link,
-)
-webapp::TextBox_strategy = st.builds(
-    webapp::TextBox,
+webapp_TextBox_strategy = st.builds(
+    webapp_TextBox,
+    text=
+        safe_text,
     maxLength=
         st.integers(),
     size=
         st.integers(),
     required=
-        st.booleans(),
+        st.booleans()
+)
+webapp_DropDownList_strategy = st.builds(
+    webapp_DropDownList,
+)
+webapp_Link_strategy = st.builds(
+    webapp_Link,
+)
+webapp_Label_strategy = st.builds(
+    webapp_Label,
+)
+webapp_NormalControl_strategy = st.builds(
+    webapp_NormalControl,
     text=
         safe_text
 )
-webapp::Label_strategy = st.builds(
-    webapp::Label,
-)
-webapp::NormalControl_strategy = st.builds(
-    webapp::NormalControl,
-    text=
-        safe_text
-)
-webapp::Control_strategy = st.builds(
-    webapp::Control,
+webapp_Control_strategy = st.builds(
+    webapp_Control,
     name=
         safe_text,
     id=
@@ -657,28 +657,28 @@ webapp::Control_strategy = st.builds(
 Page_strategy = st.builds(
     Page,
 )
-webapp::NormalPage_strategy = st.builds(
-    webapp::NormalPage,
+webapp_NormalPage_strategy = st.builds(
+    webapp_NormalPage,
 )
-webapp::FormPage_strategy = st.builds(
-    webapp::FormPage,
+webapp_FormPage_strategy = st.builds(
+    webapp_FormPage,
     persist=
         st.booleans()
 )
-webapp::RadioButton_strategy = st.builds(
-    webapp::RadioButton,
+webapp_RadioButton_strategy = st.builds(
+    webapp_RadioButton,
 )
-webapp::ListElement_strategy = st.builds(
-    webapp::ListElement,
+webapp_ListElement_strategy = st.builds(
+    webapp_ListElement,
     value=
         safe_text
 )
-webapp::Page_strategy = st.builds(
-    webapp::Page,
-    title=
-        safe_text,
+webapp_Page_strategy = st.builds(
+    webapp_Page,
     default=
         st.booleans(),
+    title=
+        safe_text,
     name=
         safe_text
 )
@@ -688,59 +688,53 @@ webapp::Page_strategy = st.builds(
 def test_textbox_instantiation(instance):
     assert isinstance(instance, TextBox)
 
-@given(instance=webapp::EmailBox_strategy)
+@given(instance=webapp_DateBox_strategy)
 @settings(max_examples=50)
-def test_webapp::emailbox_instantiation(instance):
-    assert isinstance(instance, webapp::EmailBox)
-
-@given(instance=webapp::DateBox_strategy)
-@settings(max_examples=50)
-def test_webapp::datebox_instantiation(instance):
-    assert isinstance(instance, webapp::DateBox)
-
-@given(instance=webapp::DateBox_strategy)
-def test_webapp::datebox_format_type(instance):
-    assert isinstance(instance.format, str)
+def test_webapp_datebox_instantiation(instance):
+    assert isinstance(instance, webapp_DateBox)
 
 
-@given(instance=webapp::DateBox_strategy)
-def test_webapp::datebox_format_setter(instance):
+
+@given(instance=webapp_DateBox_strategy)
+def test_webapp_datebox_format_setter(instance):
     original = instance.format
     instance.format = original
     assert instance.format == original
 
-@given(instance=webapp::PasswordBox_strategy)
+@given(instance=webapp_EmailBox_strategy)
 @settings(max_examples=50)
-def test_webapp::passwordbox_instantiation(instance):
-    assert isinstance(instance, webapp::PasswordBox)
+def test_webapp_emailbox_instantiation(instance):
+    assert isinstance(instance, webapp_EmailBox)
+
+@given(instance=webapp_PasswordBox_strategy)
+@settings(max_examples=50)
+def test_webapp_passwordbox_instantiation(instance):
+    assert isinstance(instance, webapp_PasswordBox)
 
 @given(instance=FormButton_strategy)
 @settings(max_examples=50)
 def test_formbutton_instantiation(instance):
     assert isinstance(instance, FormButton)
 
-@given(instance=webapp::SubmitButton_strategy)
+@given(instance=webapp_SubmitButton_strategy)
 @settings(max_examples=50)
-def test_webapp::submitbutton_instantiation(instance):
-    assert isinstance(instance, webapp::SubmitButton)
+def test_webapp_submitbutton_instantiation(instance):
+    assert isinstance(instance, webapp_SubmitButton)
 
-@given(instance=webapp::ResetButton_strategy)
+@given(instance=webapp_ResetButton_strategy)
 @settings(max_examples=50)
-def test_webapp::resetbutton_instantiation(instance):
-    assert isinstance(instance, webapp::ResetButton)
+def test_webapp_resetbutton_instantiation(instance):
+    assert isinstance(instance, webapp_ResetButton)
 
-@given(instance=webapp::DynamicWebApp_strategy)
+@given(instance=webapp_DynamicWebApp_strategy)
 @settings(max_examples=50)
-def test_webapp::dynamicwebapp_instantiation(instance):
-    assert isinstance(instance, webapp::DynamicWebApp)
-
-@given(instance=webapp::DynamicWebApp_strategy)
-def test_webapp::dynamicwebapp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_dynamicwebapp_instantiation(instance):
+    assert isinstance(instance, webapp_DynamicWebApp)
 
 
-@given(instance=webapp::DynamicWebApp_strategy)
-def test_webapp::dynamicwebapp_name_setter(instance):
+
+@given(instance=webapp_DynamicWebApp_strategy)
+def test_webapp_dynamicwebapp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -750,151 +744,124 @@ def test_webapp::dynamicwebapp_name_setter(instance):
 def test_normalcontrol_instantiation(instance):
     assert isinstance(instance, NormalControl)
 
-@given(instance=webapp::NormalButton_strategy)
+@given(instance=webapp_NormalButton_strategy)
 @settings(max_examples=50)
-def test_webapp::normalbutton_instantiation(instance):
-    assert isinstance(instance, webapp::NormalButton)
+def test_webapp_normalbutton_instantiation(instance):
+    assert isinstance(instance, webapp_NormalButton)
 
 @given(instance=Control_strategy)
 @settings(max_examples=50)
 def test_control_instantiation(instance):
     assert isinstance(instance, Control)
 
-@given(instance=webapp::CheckBox_strategy)
+@given(instance=webapp_CheckBox_strategy)
 @settings(max_examples=50)
-def test_webapp::checkbox_instantiation(instance):
-    assert isinstance(instance, webapp::CheckBox)
-
-@given(instance=webapp::CheckBox_strategy)
-def test_webapp::checkbox_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_webapp_checkbox_instantiation(instance):
+    assert isinstance(instance, webapp_CheckBox)
 
 
-@given(instance=webapp::CheckBox_strategy)
-def test_webapp::checkbox_text_setter(instance):
+
+@given(instance=webapp_CheckBox_strategy)
+def test_webapp_checkbox_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=webapp::DropDownList_strategy)
+@given(instance=webapp_FormButton_strategy)
 @settings(max_examples=50)
-def test_webapp::dropdownlist_instantiation(instance):
-    assert isinstance(instance, webapp::DropDownList)
-
-@given(instance=webapp::FormButton_strategy)
-@settings(max_examples=50)
-def test_webapp::formbutton_instantiation(instance):
-    assert isinstance(instance, webapp::FormButton)
-
-@given(instance=webapp::FormButton_strategy)
-def test_webapp::formbutton_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_webapp_formbutton_instantiation(instance):
+    assert isinstance(instance, webapp_FormButton)
 
 
-@given(instance=webapp::FormButton_strategy)
-def test_webapp::formbutton_text_setter(instance):
+
+@given(instance=webapp_FormButton_strategy)
+def test_webapp_formbutton_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=webapp::Link_strategy)
+@given(instance=webapp_TextBox_strategy)
 @settings(max_examples=50)
-def test_webapp::link_instantiation(instance):
-    assert isinstance(instance, webapp::Link)
-
-@given(instance=webapp::TextBox_strategy)
-@settings(max_examples=50)
-def test_webapp::textbox_instantiation(instance):
-    assert isinstance(instance, webapp::TextBox)
-
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_maxLength_type(instance):
-    assert isinstance(instance.maxLength, int)
+def test_webapp_textbox_instantiation(instance):
+    assert isinstance(instance, webapp_TextBox)
 
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_maxLength_setter(instance):
+
+@given(instance=webapp_TextBox_strategy)
+def test_webapp_textbox_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=webapp_TextBox_strategy)
+def test_webapp_textbox_maxLength_setter(instance):
     original = instance.maxLength
     instance.maxLength = original
     assert instance.maxLength == original
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_size_setter(instance):
+@given(instance=webapp_TextBox_strategy)
+def test_webapp_textbox_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_required_type(instance):
-    assert isinstance(instance.required, bool)
 
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_required_setter(instance):
+@given(instance=webapp_TextBox_strategy)
+def test_webapp_textbox_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=webapp_DropDownList_strategy)
+@settings(max_examples=50)
+def test_webapp_dropdownlist_instantiation(instance):
+    assert isinstance(instance, webapp_DropDownList)
+
+@given(instance=webapp_Link_strategy)
+@settings(max_examples=50)
+def test_webapp_link_instantiation(instance):
+    assert isinstance(instance, webapp_Link)
+
+@given(instance=webapp_Label_strategy)
+@settings(max_examples=50)
+def test_webapp_label_instantiation(instance):
+    assert isinstance(instance, webapp_Label)
+
+@given(instance=webapp_NormalControl_strategy)
+@settings(max_examples=50)
+def test_webapp_normalcontrol_instantiation(instance):
+    assert isinstance(instance, webapp_NormalControl)
 
 
-@given(instance=webapp::TextBox_strategy)
-def test_webapp::textbox_text_setter(instance):
+
+@given(instance=webapp_NormalControl_strategy)
+def test_webapp_normalcontrol_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=webapp::Label_strategy)
+@given(instance=webapp_Control_strategy)
 @settings(max_examples=50)
-def test_webapp::label_instantiation(instance):
-    assert isinstance(instance, webapp::Label)
-
-@given(instance=webapp::NormalControl_strategy)
-@settings(max_examples=50)
-def test_webapp::normalcontrol_instantiation(instance):
-    assert isinstance(instance, webapp::NormalControl)
-
-@given(instance=webapp::NormalControl_strategy)
-def test_webapp::normalcontrol_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_webapp_control_instantiation(instance):
+    assert isinstance(instance, webapp_Control)
 
 
-@given(instance=webapp::NormalControl_strategy)
-def test_webapp::normalcontrol_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=webapp::Control_strategy)
-@settings(max_examples=50)
-def test_webapp::control_instantiation(instance):
-    assert isinstance(instance, webapp::Control)
-
-@given(instance=webapp::Control_strategy)
-def test_webapp::control_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=webapp::Control_strategy)
-def test_webapp::control_name_setter(instance):
+@given(instance=webapp_Control_strategy)
+def test_webapp_control_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::Control_strategy)
-def test_webapp::control_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=webapp::Control_strategy)
-def test_webapp::control_id_setter(instance):
+@given(instance=webapp_Control_strategy)
+def test_webapp_control_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -904,82 +871,67 @@ def test_webapp::control_id_setter(instance):
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=webapp::NormalPage_strategy)
+@given(instance=webapp_NormalPage_strategy)
 @settings(max_examples=50)
-def test_webapp::normalpage_instantiation(instance):
-    assert isinstance(instance, webapp::NormalPage)
+def test_webapp_normalpage_instantiation(instance):
+    assert isinstance(instance, webapp_NormalPage)
 
-@given(instance=webapp::FormPage_strategy)
+@given(instance=webapp_FormPage_strategy)
 @settings(max_examples=50)
-def test_webapp::formpage_instantiation(instance):
-    assert isinstance(instance, webapp::FormPage)
-
-@given(instance=webapp::FormPage_strategy)
-def test_webapp::formpage_persist_type(instance):
-    assert isinstance(instance.persist, bool)
+def test_webapp_formpage_instantiation(instance):
+    assert isinstance(instance, webapp_FormPage)
 
 
-@given(instance=webapp::FormPage_strategy)
-def test_webapp::formpage_persist_setter(instance):
+
+@given(instance=webapp_FormPage_strategy)
+def test_webapp_formpage_persist_setter(instance):
     original = instance.persist
     instance.persist = original
     assert instance.persist == original
 
-@given(instance=webapp::RadioButton_strategy)
+@given(instance=webapp_RadioButton_strategy)
 @settings(max_examples=50)
-def test_webapp::radiobutton_instantiation(instance):
-    assert isinstance(instance, webapp::RadioButton)
+def test_webapp_radiobutton_instantiation(instance):
+    assert isinstance(instance, webapp_RadioButton)
 
-@given(instance=webapp::ListElement_strategy)
+@given(instance=webapp_ListElement_strategy)
 @settings(max_examples=50)
-def test_webapp::listelement_instantiation(instance):
-    assert isinstance(instance, webapp::ListElement)
-
-@given(instance=webapp::ListElement_strategy)
-def test_webapp::listelement_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_webapp_listelement_instantiation(instance):
+    assert isinstance(instance, webapp_ListElement)
 
 
-@given(instance=webapp::ListElement_strategy)
-def test_webapp::listelement_value_setter(instance):
+
+@given(instance=webapp_ListElement_strategy)
+def test_webapp_listelement_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=webapp::Page_strategy)
+@given(instance=webapp_Page_strategy)
 @settings(max_examples=50)
-def test_webapp::page_instantiation(instance):
-    assert isinstance(instance, webapp::Page)
-
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_webapp_page_instantiation(instance):
+    assert isinstance(instance, webapp_Page)
 
 
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_default_type(instance):
-    assert isinstance(instance.default, bool)
-
-
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_default_setter(instance):
+@given(instance=webapp_Page_strategy)
+def test_webapp_page_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=webapp::Page_strategy)
-def test_webapp::page_name_setter(instance):
+@given(instance=webapp_Page_strategy)
+def test_webapp_page_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=webapp_Page_strategy)
+def test_webapp_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

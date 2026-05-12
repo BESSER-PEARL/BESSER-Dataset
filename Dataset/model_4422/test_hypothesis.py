@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ArduinoMetamodel::Action,
-    ArduinoMetamodel::Transition,
-    ArduinoMetamodel::State,
+from python_code import (
+    ArduinoMetamodel_Action,
+    ArduinoMetamodel_Transition,
+    ArduinoMetamodel_State,
     Instruccion,
-    ArduinoMetamodel::delay,
+    ArduinoMetamodel_delay,
     Pin,
-    ArduinoMetamodel::Pin,
-    ArduinoMetamodel::Analog,
-    ArduinoMetamodel::Digital,
-    ArduinoMetamodel::Instruccion,
+    ArduinoMetamodel_Pin,
+    ArduinoMetamodel_Analog,
+    ArduinoMetamodel_Digital,
+    ArduinoMetamodel_Instruccion,
     Analog,
-    ArduinoMetamodel::PWM,
-    ArduinoMetamodel::FiniteStateMachine,
-    ArduinoMetamodel::Metodo,
-    ArduinoMetamodel::ArduinoBoardUNO,
-    ArduinoMetamodel::Project,
-    DigitalID,
-    AnalogID,
+    ArduinoMetamodel_PWM,
+    ArduinoMetamodel_FiniteStateMachine,
+    ArduinoMetamodel_Metodo,
+    ArduinoMetamodel_ArduinoBoardUNO,
+    ArduinoMetamodel_Project,
     PinMode,
+    AnalogID,
+    DigitalID,
 )
 
 # =============================================================================
@@ -33,63 +33,63 @@ from classes import (
 
 
 
-def test_arduinometamodel::action_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Action)
+def test_arduinometamodel_action_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Action)
 
 
-def test_arduinometamodel::action_constructor_exists():
-    assert callable(ArduinoMetamodel::Action.__init__)
+def test_arduinometamodel_action_constructor_exists():
+    assert callable(ArduinoMetamodel_Action.__init__)
 
 
-def test_arduinometamodel::action_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Action.__init__)
+def test_arduinometamodel_action_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinometamodel::transition_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Transition)
+def test_arduinometamodel_transition_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Transition)
 
 
-def test_arduinometamodel::transition_constructor_exists():
-    assert callable(ArduinoMetamodel::Transition.__init__)
+def test_arduinometamodel_transition_constructor_exists():
+    assert callable(ArduinoMetamodel_Transition.__init__)
 
 
-def test_arduinometamodel::transition_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Transition.__init__)
+def test_arduinometamodel_transition_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinometamodel::state_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::State)
+def test_arduinometamodel_state_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_State)
 
 
-def test_arduinometamodel::state_constructor_exists():
-    assert callable(ArduinoMetamodel::State.__init__)
+def test_arduinometamodel_state_constructor_exists():
+    assert callable(ArduinoMetamodel_State.__init__)
 
 
-def test_arduinometamodel::state_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::State.__init__)
+def test_arduinometamodel_state_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_State.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "isInitial" in params, "Missing parameter 'isInitial'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_arduinometamodel::state_has_name():
-    assert hasattr(ArduinoMetamodel::State, "name")
+def test_arduinometamodel_state_has_isInitial():
+    assert hasattr(ArduinoMetamodel_State, "isInitial")
     descriptor = None
-    for klass in ArduinoMetamodel::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in ArduinoMetamodel_State.__mro__:
+        if "isInitial" in klass.__dict__:
+            descriptor = klass.__dict__["isInitial"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduinometamodel::state_has_isInitial():
-    assert hasattr(ArduinoMetamodel::State, "isInitial")
+def test_arduinometamodel_state_has_name():
+    assert hasattr(ArduinoMetamodel_State, "name")
     descriptor = None
-    for klass in ArduinoMetamodel::State.__mro__:
-        if "isInitial" in klass.__dict__:
-            descriptor = klass.__dict__["isInitial"]
+    for klass in ArduinoMetamodel_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,16 +109,16 @@ def test_instruccion_constructor_args():
 
 
 
-def test_arduinometamodel::delay_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::delay)
+def test_arduinometamodel_delay_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_delay)
 
 
-def test_arduinometamodel::delay_constructor_exists():
-    assert callable(ArduinoMetamodel::delay.__init__)
+def test_arduinometamodel_delay_constructor_exists():
+    assert callable(ArduinoMetamodel_delay.__init__)
 
 
-def test_arduinometamodel::delay_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::delay.__init__)
+def test_arduinometamodel_delay_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_delay.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,57 +137,57 @@ def test_pin_constructor_args():
 
 
 
-def test_arduinometamodel::pin_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Pin)
+def test_arduinometamodel_pin_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Pin)
 
 
-def test_arduinometamodel::pin_constructor_exists():
-    assert callable(ArduinoMetamodel::Pin.__init__)
+def test_arduinometamodel_pin_constructor_exists():
+    assert callable(ArduinoMetamodel_Pin.__init__)
 
 
-def test_arduinometamodel::pin_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Pin.__init__)
+def test_arduinometamodel_pin_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Pin.__init__)
     params = list(sig.parameters.keys())
-    assert "pinMode" in params, "Missing parameter 'pinMode'"
     assert "label" in params, "Missing parameter 'label'"
+    assert "pinMode" in params, "Missing parameter 'pinMode'"
 
-def test_arduinometamodel::pin_has_pinMode():
-    assert hasattr(ArduinoMetamodel::Pin, "pinMode")
+def test_arduinometamodel_pin_has_label():
+    assert hasattr(ArduinoMetamodel_Pin, "label")
     descriptor = None
-    for klass in ArduinoMetamodel::Pin.__mro__:
-        if "pinMode" in klass.__dict__:
-            descriptor = klass.__dict__["pinMode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arduinometamodel::pin_has_label():
-    assert hasattr(ArduinoMetamodel::Pin, "label")
-    descriptor = None
-    for klass in ArduinoMetamodel::Pin.__mro__:
+    for klass in ArduinoMetamodel_Pin.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
+def test_arduinometamodel_pin_has_pinMode():
+    assert hasattr(ArduinoMetamodel_Pin, "pinMode")
+    descriptor = None
+    for klass in ArduinoMetamodel_Pin.__mro__:
+        if "pinMode" in klass.__dict__:
+            descriptor = klass.__dict__["pinMode"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_arduinometamodel::analog_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Analog)
+
+def test_arduinometamodel_analog_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Analog)
 
 
-def test_arduinometamodel::analog_constructor_exists():
-    assert callable(ArduinoMetamodel::Analog.__init__)
+def test_arduinometamodel_analog_constructor_exists():
+    assert callable(ArduinoMetamodel_Analog.__init__)
 
 
-def test_arduinometamodel::analog_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Analog.__init__)
+def test_arduinometamodel_analog_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Analog.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_arduinometamodel::analog_has_ID():
-    assert hasattr(ArduinoMetamodel::Analog, "ID")
+def test_arduinometamodel_analog_has_ID():
+    assert hasattr(ArduinoMetamodel_Analog, "ID")
     descriptor = None
-    for klass in ArduinoMetamodel::Analog.__mro__:
+    for klass in ArduinoMetamodel_Analog.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -195,23 +195,23 @@ def test_arduinometamodel::analog_has_ID():
 
 
 
-def test_arduinometamodel::digital_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Digital)
+def test_arduinometamodel_digital_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Digital)
 
 
-def test_arduinometamodel::digital_constructor_exists():
-    assert callable(ArduinoMetamodel::Digital.__init__)
+def test_arduinometamodel_digital_constructor_exists():
+    assert callable(ArduinoMetamodel_Digital.__init__)
 
 
-def test_arduinometamodel::digital_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Digital.__init__)
+def test_arduinometamodel_digital_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Digital.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_arduinometamodel::digital_has_ID():
-    assert hasattr(ArduinoMetamodel::Digital, "ID")
+def test_arduinometamodel_digital_has_ID():
+    assert hasattr(ArduinoMetamodel_Digital, "ID")
     descriptor = None
-    for klass in ArduinoMetamodel::Digital.__mro__:
+    for klass in ArduinoMetamodel_Digital.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -219,23 +219,23 @@ def test_arduinometamodel::digital_has_ID():
 
 
 
-def test_arduinometamodel::instruccion_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Instruccion)
+def test_arduinometamodel_instruccion_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Instruccion)
 
 
-def test_arduinometamodel::instruccion_constructor_exists():
-    assert callable(ArduinoMetamodel::Instruccion.__init__)
+def test_arduinometamodel_instruccion_constructor_exists():
+    assert callable(ArduinoMetamodel_Instruccion.__init__)
 
 
-def test_arduinometamodel::instruccion_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Instruccion.__init__)
+def test_arduinometamodel_instruccion_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Instruccion.__init__)
     params = list(sig.parameters.keys())
     assert "codigo" in params, "Missing parameter 'codigo'"
 
-def test_arduinometamodel::instruccion_has_codigo():
-    assert hasattr(ArduinoMetamodel::Instruccion, "codigo")
+def test_arduinometamodel_instruccion_has_codigo():
+    assert hasattr(ArduinoMetamodel_Instruccion, "codigo")
     descriptor = None
-    for klass in ArduinoMetamodel::Instruccion.__mro__:
+    for klass in ArduinoMetamodel_Instruccion.__mro__:
         if "codigo" in klass.__dict__:
             descriptor = klass.__dict__["codigo"]
             break
@@ -257,51 +257,51 @@ def test_analog_constructor_args():
 
 
 
-def test_arduinometamodel::pwm_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::PWM)
+def test_arduinometamodel_pwm_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_PWM)
 
 
-def test_arduinometamodel::pwm_constructor_exists():
-    assert callable(ArduinoMetamodel::PWM.__init__)
+def test_arduinometamodel_pwm_constructor_exists():
+    assert callable(ArduinoMetamodel_PWM.__init__)
 
 
-def test_arduinometamodel::pwm_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::PWM.__init__)
+def test_arduinometamodel_pwm_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_PWM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinometamodel::finitestatemachine_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::FiniteStateMachine)
+def test_arduinometamodel_finitestatemachine_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_FiniteStateMachine)
 
 
-def test_arduinometamodel::finitestatemachine_constructor_exists():
-    assert callable(ArduinoMetamodel::FiniteStateMachine.__init__)
+def test_arduinometamodel_finitestatemachine_constructor_exists():
+    assert callable(ArduinoMetamodel_FiniteStateMachine.__init__)
 
 
-def test_arduinometamodel::finitestatemachine_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::FiniteStateMachine.__init__)
+def test_arduinometamodel_finitestatemachine_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_FiniteStateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinometamodel::metodo_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Metodo)
+def test_arduinometamodel_metodo_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Metodo)
 
 
-def test_arduinometamodel::metodo_constructor_exists():
-    assert callable(ArduinoMetamodel::Metodo.__init__)
+def test_arduinometamodel_metodo_constructor_exists():
+    assert callable(ArduinoMetamodel_Metodo.__init__)
 
 
-def test_arduinometamodel::metodo_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Metodo.__init__)
+def test_arduinometamodel_metodo_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Metodo.__init__)
     params = list(sig.parameters.keys())
     assert "nombre" in params, "Missing parameter 'nombre'"
 
-def test_arduinometamodel::metodo_has_nombre():
-    assert hasattr(ArduinoMetamodel::Metodo, "nombre")
+def test_arduinometamodel_metodo_has_nombre():
+    assert hasattr(ArduinoMetamodel_Metodo, "nombre")
     descriptor = None
-    for klass in ArduinoMetamodel::Metodo.__mro__:
+    for klass in ArduinoMetamodel_Metodo.__mro__:
         if "nombre" in klass.__dict__:
             descriptor = klass.__dict__["nombre"]
             break
@@ -309,70 +309,31 @@ def test_arduinometamodel::metodo_has_nombre():
 
 
 
-def test_arduinometamodel::arduinoboarduno_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::ArduinoBoardUNO)
+def test_arduinometamodel_arduinoboarduno_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_ArduinoBoardUNO)
 
 
-def test_arduinometamodel::arduinoboarduno_constructor_exists():
-    assert callable(ArduinoMetamodel::ArduinoBoardUNO.__init__)
+def test_arduinometamodel_arduinoboarduno_constructor_exists():
+    assert callable(ArduinoMetamodel_ArduinoBoardUNO.__init__)
 
 
-def test_arduinometamodel::arduinoboarduno_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::ArduinoBoardUNO.__init__)
+def test_arduinometamodel_arduinoboarduno_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_ArduinoBoardUNO.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduinometamodel::project_is_not_abstract():
-    assert not inspect.isabstract(ArduinoMetamodel::Project)
+def test_arduinometamodel_project_is_not_abstract():
+    assert not inspect.isabstract(ArduinoMetamodel_Project)
 
 
-def test_arduinometamodel::project_constructor_exists():
-    assert callable(ArduinoMetamodel::Project.__init__)
+def test_arduinometamodel_project_constructor_exists():
+    assert callable(ArduinoMetamodel_Project.__init__)
 
 
-def test_arduinometamodel::project_constructor_args():
-    sig = inspect.signature(ArduinoMetamodel::Project.__init__)
+def test_arduinometamodel_project_constructor_args():
+    sig = inspect.signature(ArduinoMetamodel_Project.__init__)
     params = list(sig.parameters.keys())
-
-def test_digitalid_exists():
-    # Check that the Enumeration exists
-    assert DigitalID is not None
-
-def test_digitalid_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DigitalID]
-    expected_literals = [
-        "D7",
-        "D2",
-        "D12",
-        "D8",
-        "D4",
-        "D13",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DigitalID"
-
-def test_analogid_exists():
-    # Check that the Enumeration exists
-    assert AnalogID is not None
-
-def test_analogid_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AnalogID]
-    expected_literals = [
-        "A0",
-        "A5",
-        "A4",
-        "A1",
-        "A6",
-        "A2",
-        "A3",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AnalogID"
 
 def test_pinmode_exists():
     # Check that the Enumeration exists
@@ -382,13 +343,52 @@ def test_pinmode_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PinMode]
     expected_literals = [
-        "INPUT",
         "OUTPUT",
+        "INPUT",
         "INPUT_PULLUP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PinMode"
+
+def test_analogid_exists():
+    # Check that the Enumeration exists
+    assert AnalogID is not None
+
+def test_analogid_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AnalogID]
+    expected_literals = [
+        "A5",
+        "A3",
+        "A1",
+        "A4",
+        "A0",
+        "A2",
+        "A6",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AnalogID"
+
+def test_digitalid_exists():
+    # Check that the Enumeration exists
+    assert DigitalID is not None
+
+def test_digitalid_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DigitalID]
+    expected_literals = [
+        "D8",
+        "D12",
+        "D2",
+        "D13",
+        "D4",
+        "D7",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DigitalID"
 
 
 # =============================================================================
@@ -402,194 +402,173 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ArduinoMetamodel::Action_strategy = st.builds(
-    ArduinoMetamodel::Action,
+ArduinoMetamodel_Action_strategy = st.builds(
+    ArduinoMetamodel_Action,
 )
-ArduinoMetamodel::Transition_strategy = st.builds(
-    ArduinoMetamodel::Transition,
+ArduinoMetamodel_Transition_strategy = st.builds(
+    ArduinoMetamodel_Transition,
 )
-ArduinoMetamodel::State_strategy = st.builds(
-    ArduinoMetamodel::State,
-    name=
-        safe_text,
+ArduinoMetamodel_State_strategy = st.builds(
+    ArduinoMetamodel_State,
     isInitial=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
 Instruccion_strategy = st.builds(
     Instruccion,
 )
-ArduinoMetamodel::delay_strategy = st.builds(
-    ArduinoMetamodel::delay,
+ArduinoMetamodel_delay_strategy = st.builds(
+    ArduinoMetamodel_delay,
 )
 Pin_strategy = st.builds(
     Pin,
 )
-ArduinoMetamodel::Pin_strategy = st.builds(
-    ArduinoMetamodel::Pin,
-    pinMode=
-        safe_text,
+ArduinoMetamodel_Pin_strategy = st.builds(
+    ArduinoMetamodel_Pin,
     label=
+        safe_text,
+    pinMode=
         safe_text
 )
-ArduinoMetamodel::Analog_strategy = st.builds(
-    ArduinoMetamodel::Analog,
+ArduinoMetamodel_Analog_strategy = st.builds(
+    ArduinoMetamodel_Analog,
     ID=
         safe_text
 )
-ArduinoMetamodel::Digital_strategy = st.builds(
-    ArduinoMetamodel::Digital,
+ArduinoMetamodel_Digital_strategy = st.builds(
+    ArduinoMetamodel_Digital,
     ID=
         safe_text
 )
-ArduinoMetamodel::Instruccion_strategy = st.builds(
-    ArduinoMetamodel::Instruccion,
+ArduinoMetamodel_Instruccion_strategy = st.builds(
+    ArduinoMetamodel_Instruccion,
     codigo=
         safe_text
 )
 Analog_strategy = st.builds(
     Analog,
 )
-ArduinoMetamodel::PWM_strategy = st.builds(
-    ArduinoMetamodel::PWM,
+ArduinoMetamodel_PWM_strategy = st.builds(
+    ArduinoMetamodel_PWM,
 )
-ArduinoMetamodel::FiniteStateMachine_strategy = st.builds(
-    ArduinoMetamodel::FiniteStateMachine,
+ArduinoMetamodel_FiniteStateMachine_strategy = st.builds(
+    ArduinoMetamodel_FiniteStateMachine,
 )
-ArduinoMetamodel::Metodo_strategy = st.builds(
-    ArduinoMetamodel::Metodo,
+ArduinoMetamodel_Metodo_strategy = st.builds(
+    ArduinoMetamodel_Metodo,
     nombre=
         safe_text
 )
-ArduinoMetamodel::ArduinoBoardUNO_strategy = st.builds(
-    ArduinoMetamodel::ArduinoBoardUNO,
+ArduinoMetamodel_ArduinoBoardUNO_strategy = st.builds(
+    ArduinoMetamodel_ArduinoBoardUNO,
 )
-ArduinoMetamodel::Project_strategy = st.builds(
-    ArduinoMetamodel::Project,
+ArduinoMetamodel_Project_strategy = st.builds(
+    ArduinoMetamodel_Project,
 )
 
-@given(instance=ArduinoMetamodel::Action_strategy)
+@given(instance=ArduinoMetamodel_Action_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::action_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Action)
+def test_arduinometamodel_action_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Action)
 
-@given(instance=ArduinoMetamodel::Transition_strategy)
+@given(instance=ArduinoMetamodel_Transition_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::transition_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Transition)
+def test_arduinometamodel_transition_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Transition)
 
-@given(instance=ArduinoMetamodel::State_strategy)
+@given(instance=ArduinoMetamodel_State_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::state_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::State)
-
-@given(instance=ArduinoMetamodel::State_strategy)
-def test_arduinometamodel::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arduinometamodel_state_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_State)
 
 
-@given(instance=ArduinoMetamodel::State_strategy)
-def test_arduinometamodel::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ArduinoMetamodel::State_strategy)
-def test_arduinometamodel::state_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
-
-
-@given(instance=ArduinoMetamodel::State_strategy)
-def test_arduinometamodel::state_isInitial_setter(instance):
+@given(instance=ArduinoMetamodel_State_strategy)
+def test_arduinometamodel_state_isInitial_setter(instance):
     original = instance.isInitial
     instance.isInitial = original
     assert instance.isInitial == original
+
+
+
+@given(instance=ArduinoMetamodel_State_strategy)
+def test_arduinometamodel_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Instruccion_strategy)
 @settings(max_examples=50)
 def test_instruccion_instantiation(instance):
     assert isinstance(instance, Instruccion)
 
-@given(instance=ArduinoMetamodel::delay_strategy)
+@given(instance=ArduinoMetamodel_delay_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::delay_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::delay)
+def test_arduinometamodel_delay_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_delay)
 
 @given(instance=Pin_strategy)
 @settings(max_examples=50)
 def test_pin_instantiation(instance):
     assert isinstance(instance, Pin)
 
-@given(instance=ArduinoMetamodel::Pin_strategy)
+@given(instance=ArduinoMetamodel_Pin_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::pin_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Pin)
-
-@given(instance=ArduinoMetamodel::Pin_strategy)
-def test_arduinometamodel::pin_pinMode_type(instance):
-    assert isinstance(instance.pinMode, str)
+def test_arduinometamodel_pin_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Pin)
 
 
-@given(instance=ArduinoMetamodel::Pin_strategy)
-def test_arduinometamodel::pin_pinMode_setter(instance):
-    original = instance.pinMode
-    instance.pinMode = original
-    assert instance.pinMode == original
 
-@given(instance=ArduinoMetamodel::Pin_strategy)
-def test_arduinometamodel::pin_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=ArduinoMetamodel::Pin_strategy)
-def test_arduinometamodel::pin_label_setter(instance):
+@given(instance=ArduinoMetamodel_Pin_strategy)
+def test_arduinometamodel_pin_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=ArduinoMetamodel::Analog_strategy)
+
+
+@given(instance=ArduinoMetamodel_Pin_strategy)
+def test_arduinometamodel_pin_pinMode_setter(instance):
+    original = instance.pinMode
+    instance.pinMode = original
+    assert instance.pinMode == original
+
+@given(instance=ArduinoMetamodel_Analog_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::analog_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Analog)
-
-@given(instance=ArduinoMetamodel::Analog_strategy)
-def test_arduinometamodel::analog_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_arduinometamodel_analog_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Analog)
 
 
-@given(instance=ArduinoMetamodel::Analog_strategy)
-def test_arduinometamodel::analog_ID_setter(instance):
+
+@given(instance=ArduinoMetamodel_Analog_strategy)
+def test_arduinometamodel_analog_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=ArduinoMetamodel::Digital_strategy)
+@given(instance=ArduinoMetamodel_Digital_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::digital_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Digital)
-
-@given(instance=ArduinoMetamodel::Digital_strategy)
-def test_arduinometamodel::digital_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_arduinometamodel_digital_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Digital)
 
 
-@given(instance=ArduinoMetamodel::Digital_strategy)
-def test_arduinometamodel::digital_ID_setter(instance):
+
+@given(instance=ArduinoMetamodel_Digital_strategy)
+def test_arduinometamodel_digital_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=ArduinoMetamodel::Instruccion_strategy)
+@given(instance=ArduinoMetamodel_Instruccion_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::instruccion_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Instruccion)
-
-@given(instance=ArduinoMetamodel::Instruccion_strategy)
-def test_arduinometamodel::instruccion_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
+def test_arduinometamodel_instruccion_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Instruccion)
 
 
-@given(instance=ArduinoMetamodel::Instruccion_strategy)
-def test_arduinometamodel::instruccion_codigo_setter(instance):
+
+@given(instance=ArduinoMetamodel_Instruccion_strategy)
+def test_arduinometamodel_instruccion_codigo_setter(instance):
     original = instance.codigo
     instance.codigo = original
     assert instance.codigo == original
@@ -599,38 +578,35 @@ def test_arduinometamodel::instruccion_codigo_setter(instance):
 def test_analog_instantiation(instance):
     assert isinstance(instance, Analog)
 
-@given(instance=ArduinoMetamodel::PWM_strategy)
+@given(instance=ArduinoMetamodel_PWM_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::pwm_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::PWM)
+def test_arduinometamodel_pwm_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_PWM)
 
-@given(instance=ArduinoMetamodel::FiniteStateMachine_strategy)
+@given(instance=ArduinoMetamodel_FiniteStateMachine_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::finitestatemachine_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::FiniteStateMachine)
+def test_arduinometamodel_finitestatemachine_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_FiniteStateMachine)
 
-@given(instance=ArduinoMetamodel::Metodo_strategy)
+@given(instance=ArduinoMetamodel_Metodo_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::metodo_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Metodo)
-
-@given(instance=ArduinoMetamodel::Metodo_strategy)
-def test_arduinometamodel::metodo_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
+def test_arduinometamodel_metodo_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Metodo)
 
 
-@given(instance=ArduinoMetamodel::Metodo_strategy)
-def test_arduinometamodel::metodo_nombre_setter(instance):
+
+@given(instance=ArduinoMetamodel_Metodo_strategy)
+def test_arduinometamodel_metodo_nombre_setter(instance):
     original = instance.nombre
     instance.nombre = original
     assert instance.nombre == original
 
-@given(instance=ArduinoMetamodel::ArduinoBoardUNO_strategy)
+@given(instance=ArduinoMetamodel_ArduinoBoardUNO_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::arduinoboarduno_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::ArduinoBoardUNO)
+def test_arduinometamodel_arduinoboarduno_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_ArduinoBoardUNO)
 
-@given(instance=ArduinoMetamodel::Project_strategy)
+@given(instance=ArduinoMetamodel_Project_strategy)
 @settings(max_examples=50)
-def test_arduinometamodel::project_instantiation(instance):
-    assert isinstance(instance, ArduinoMetamodel::Project)
+def test_arduinometamodel_project_instantiation(instance):
+    assert isinstance(instance, ArduinoMetamodel_Project)

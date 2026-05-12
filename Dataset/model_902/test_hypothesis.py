@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplePDL::WorkProduct,
+from python_code import (
+    simplePDL_WorkProduct,
     WorkDefinition,
-    simplePDL::Activity,
-    simplePDL::SubProcess,
-    simplePDL::WorkDefinitionParameter,
-    simplePDL::WorkSequence,
-    simplePDL::WorkDefinition,
-    simplePDL::Process,
-    ParameterDirectionKind,
+    simplePDL_Activity,
+    simplePDL_SubProcess,
+    simplePDL_WorkDefinitionParameter,
+    simplePDL_WorkSequence,
+    simplePDL_WorkDefinition,
+    simplePDL_Process,
     WorkSequenceType,
+    ParameterDirectionKind,
 )
 
 # =============================================================================
@@ -24,23 +24,23 @@ from classes import (
 
 
 
-def test_simplepdl::workproduct_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::WorkProduct)
+def test_simplepdl_workproduct_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_WorkProduct)
 
 
-def test_simplepdl::workproduct_constructor_exists():
-    assert callable(simplePDL::WorkProduct.__init__)
+def test_simplepdl_workproduct_constructor_exists():
+    assert callable(simplePDL_WorkProduct.__init__)
 
 
-def test_simplepdl::workproduct_constructor_args():
-    sig = inspect.signature(simplePDL::WorkProduct.__init__)
+def test_simplepdl_workproduct_constructor_args():
+    sig = inspect.signature(simplePDL_WorkProduct.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdl::workproduct_has_name():
-    assert hasattr(simplePDL::WorkProduct, "name")
+def test_simplepdl_workproduct_has_name():
+    assert hasattr(simplePDL_WorkProduct, "name")
     descriptor = None
-    for klass in simplePDL::WorkProduct.__mro__:
+    for klass in simplePDL_WorkProduct.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -62,51 +62,51 @@ def test_workdefinition_constructor_args():
 
 
 
-def test_simplepdl::activity_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::Activity)
+def test_simplepdl_activity_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_Activity)
 
 
-def test_simplepdl::activity_constructor_exists():
-    assert callable(simplePDL::Activity.__init__)
+def test_simplepdl_activity_constructor_exists():
+    assert callable(simplePDL_Activity.__init__)
 
 
-def test_simplepdl::activity_constructor_args():
-    sig = inspect.signature(simplePDL::Activity.__init__)
+def test_simplepdl_activity_constructor_args():
+    sig = inspect.signature(simplePDL_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplepdl::subprocess_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::SubProcess)
+def test_simplepdl_subprocess_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_SubProcess)
 
 
-def test_simplepdl::subprocess_constructor_exists():
-    assert callable(simplePDL::SubProcess.__init__)
+def test_simplepdl_subprocess_constructor_exists():
+    assert callable(simplePDL_SubProcess.__init__)
 
 
-def test_simplepdl::subprocess_constructor_args():
-    sig = inspect.signature(simplePDL::SubProcess.__init__)
+def test_simplepdl_subprocess_constructor_args():
+    sig = inspect.signature(simplePDL_SubProcess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplepdl::workdefinitionparameter_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::WorkDefinitionParameter)
+def test_simplepdl_workdefinitionparameter_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_WorkDefinitionParameter)
 
 
-def test_simplepdl::workdefinitionparameter_constructor_exists():
-    assert callable(simplePDL::WorkDefinitionParameter.__init__)
+def test_simplepdl_workdefinitionparameter_constructor_exists():
+    assert callable(simplePDL_WorkDefinitionParameter.__init__)
 
 
-def test_simplepdl::workdefinitionparameter_constructor_args():
-    sig = inspect.signature(simplePDL::WorkDefinitionParameter.__init__)
+def test_simplepdl_workdefinitionparameter_constructor_args():
+    sig = inspect.signature(simplePDL_WorkDefinitionParameter.__init__)
     params = list(sig.parameters.keys())
     assert "parameterKind" in params, "Missing parameter 'parameterKind'"
 
-def test_simplepdl::workdefinitionparameter_has_parameterKind():
-    assert hasattr(simplePDL::WorkDefinitionParameter, "parameterKind")
+def test_simplepdl_workdefinitionparameter_has_parameterKind():
+    assert hasattr(simplePDL_WorkDefinitionParameter, "parameterKind")
     descriptor = None
-    for klass in simplePDL::WorkDefinitionParameter.__mro__:
+    for klass in simplePDL_WorkDefinitionParameter.__mro__:
         if "parameterKind" in klass.__dict__:
             descriptor = klass.__dict__["parameterKind"]
             break
@@ -114,23 +114,23 @@ def test_simplepdl::workdefinitionparameter_has_parameterKind():
 
 
 
-def test_simplepdl::worksequence_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::WorkSequence)
+def test_simplepdl_worksequence_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_WorkSequence)
 
 
-def test_simplepdl::worksequence_constructor_exists():
-    assert callable(simplePDL::WorkSequence.__init__)
+def test_simplepdl_worksequence_constructor_exists():
+    assert callable(simplePDL_WorkSequence.__init__)
 
 
-def test_simplepdl::worksequence_constructor_args():
-    sig = inspect.signature(simplePDL::WorkSequence.__init__)
+def test_simplepdl_worksequence_constructor_args():
+    sig = inspect.signature(simplePDL_WorkSequence.__init__)
     params = list(sig.parameters.keys())
     assert "linkType" in params, "Missing parameter 'linkType'"
 
-def test_simplepdl::worksequence_has_linkType():
-    assert hasattr(simplePDL::WorkSequence, "linkType")
+def test_simplepdl_worksequence_has_linkType():
+    assert hasattr(simplePDL_WorkSequence, "linkType")
     descriptor = None
-    for klass in simplePDL::WorkSequence.__mro__:
+    for klass in simplePDL_WorkSequence.__mro__:
         if "linkType" in klass.__dict__:
             descriptor = klass.__dict__["linkType"]
             break
@@ -138,23 +138,23 @@ def test_simplepdl::worksequence_has_linkType():
 
 
 
-def test_simplepdl::workdefinition_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::WorkDefinition)
+def test_simplepdl_workdefinition_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_WorkDefinition)
 
 
-def test_simplepdl::workdefinition_constructor_exists():
-    assert callable(simplePDL::WorkDefinition.__init__)
+def test_simplepdl_workdefinition_constructor_exists():
+    assert callable(simplePDL_WorkDefinition.__init__)
 
 
-def test_simplepdl::workdefinition_constructor_args():
-    sig = inspect.signature(simplePDL::WorkDefinition.__init__)
+def test_simplepdl_workdefinition_constructor_args():
+    sig = inspect.signature(simplePDL_WorkDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdl::workdefinition_has_name():
-    assert hasattr(simplePDL::WorkDefinition, "name")
+def test_simplepdl_workdefinition_has_name():
+    assert hasattr(simplePDL_WorkDefinition, "name")
     descriptor = None
-    for klass in simplePDL::WorkDefinition.__mro__:
+    for klass in simplePDL_WorkDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -162,43 +162,27 @@ def test_simplepdl::workdefinition_has_name():
 
 
 
-def test_simplepdl::process_is_not_abstract():
-    assert not inspect.isabstract(simplePDL::Process)
+def test_simplepdl_process_is_not_abstract():
+    assert not inspect.isabstract(simplePDL_Process)
 
 
-def test_simplepdl::process_constructor_exists():
-    assert callable(simplePDL::Process.__init__)
+def test_simplepdl_process_constructor_exists():
+    assert callable(simplePDL_Process.__init__)
 
 
-def test_simplepdl::process_constructor_args():
-    sig = inspect.signature(simplePDL::Process.__init__)
+def test_simplepdl_process_constructor_args():
+    sig = inspect.signature(simplePDL_Process.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdl::process_has_name():
-    assert hasattr(simplePDL::Process, "name")
+def test_simplepdl_process_has_name():
+    assert hasattr(simplePDL_Process, "name")
     descriptor = None
-    for klass in simplePDL::Process.__mro__:
+    for klass in simplePDL_Process.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_parameterdirectionkind_exists():
-    # Check that the Enumeration exists
-    assert ParameterDirectionKind is not None
-
-def test_parameterdirectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterDirectionKind]
-    expected_literals = [
-        "in_",
-        "out",
-        "inout",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
 
 def test_worksequencetype_exists():
     # Check that the Enumeration exists
@@ -208,14 +192,30 @@ def test_worksequencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in WorkSequenceType]
     expected_literals = [
-        "finishToStart",
-        "startToFinish",
         "finishTofinish",
+        "finishToStart",
         "startToStart",
+        "startToFinish",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in WorkSequenceType"
+
+def test_parameterdirectionkind_exists():
+    # Check that the Enumeration exists
+    assert ParameterDirectionKind is not None
+
+def test_parameterdirectionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ParameterDirectionKind]
+    expected_literals = [
+        "inout",
+        "out",
+        "in_",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
 
 
 # =============================================================================
@@ -229,53 +229,50 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplePDL::WorkProduct_strategy = st.builds(
-    simplePDL::WorkProduct,
+simplePDL_WorkProduct_strategy = st.builds(
+    simplePDL_WorkProduct,
     name=
         safe_text
 )
 WorkDefinition_strategy = st.builds(
     WorkDefinition,
 )
-simplePDL::Activity_strategy = st.builds(
-    simplePDL::Activity,
+simplePDL_Activity_strategy = st.builds(
+    simplePDL_Activity,
 )
-simplePDL::SubProcess_strategy = st.builds(
-    simplePDL::SubProcess,
+simplePDL_SubProcess_strategy = st.builds(
+    simplePDL_SubProcess,
 )
-simplePDL::WorkDefinitionParameter_strategy = st.builds(
-    simplePDL::WorkDefinitionParameter,
+simplePDL_WorkDefinitionParameter_strategy = st.builds(
+    simplePDL_WorkDefinitionParameter,
     parameterKind=
         safe_text
 )
-simplePDL::WorkSequence_strategy = st.builds(
-    simplePDL::WorkSequence,
+simplePDL_WorkSequence_strategy = st.builds(
+    simplePDL_WorkSequence,
     linkType=
         safe_text
 )
-simplePDL::WorkDefinition_strategy = st.builds(
-    simplePDL::WorkDefinition,
+simplePDL_WorkDefinition_strategy = st.builds(
+    simplePDL_WorkDefinition,
     name=
         safe_text
 )
-simplePDL::Process_strategy = st.builds(
-    simplePDL::Process,
+simplePDL_Process_strategy = st.builds(
+    simplePDL_Process,
     name=
         safe_text
 )
 
-@given(instance=simplePDL::WorkProduct_strategy)
+@given(instance=simplePDL_WorkProduct_strategy)
 @settings(max_examples=50)
-def test_simplepdl::workproduct_instantiation(instance):
-    assert isinstance(instance, simplePDL::WorkProduct)
-
-@given(instance=simplePDL::WorkProduct_strategy)
-def test_simplepdl::workproduct_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplepdl_workproduct_instantiation(instance):
+    assert isinstance(instance, simplePDL_WorkProduct)
 
 
-@given(instance=simplePDL::WorkProduct_strategy)
-def test_simplepdl::workproduct_name_setter(instance):
+
+@given(instance=simplePDL_WorkProduct_strategy)
+def test_simplepdl_workproduct_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -285,76 +282,64 @@ def test_simplepdl::workproduct_name_setter(instance):
 def test_workdefinition_instantiation(instance):
     assert isinstance(instance, WorkDefinition)
 
-@given(instance=simplePDL::Activity_strategy)
+@given(instance=simplePDL_Activity_strategy)
 @settings(max_examples=50)
-def test_simplepdl::activity_instantiation(instance):
-    assert isinstance(instance, simplePDL::Activity)
+def test_simplepdl_activity_instantiation(instance):
+    assert isinstance(instance, simplePDL_Activity)
 
-@given(instance=simplePDL::SubProcess_strategy)
+@given(instance=simplePDL_SubProcess_strategy)
 @settings(max_examples=50)
-def test_simplepdl::subprocess_instantiation(instance):
-    assert isinstance(instance, simplePDL::SubProcess)
+def test_simplepdl_subprocess_instantiation(instance):
+    assert isinstance(instance, simplePDL_SubProcess)
 
-@given(instance=simplePDL::WorkDefinitionParameter_strategy)
+@given(instance=simplePDL_WorkDefinitionParameter_strategy)
 @settings(max_examples=50)
-def test_simplepdl::workdefinitionparameter_instantiation(instance):
-    assert isinstance(instance, simplePDL::WorkDefinitionParameter)
-
-@given(instance=simplePDL::WorkDefinitionParameter_strategy)
-def test_simplepdl::workdefinitionparameter_parameterKind_type(instance):
-    assert isinstance(instance.parameterKind, str)
+def test_simplepdl_workdefinitionparameter_instantiation(instance):
+    assert isinstance(instance, simplePDL_WorkDefinitionParameter)
 
 
-@given(instance=simplePDL::WorkDefinitionParameter_strategy)
-def test_simplepdl::workdefinitionparameter_parameterKind_setter(instance):
+
+@given(instance=simplePDL_WorkDefinitionParameter_strategy)
+def test_simplepdl_workdefinitionparameter_parameterKind_setter(instance):
     original = instance.parameterKind
     instance.parameterKind = original
     assert instance.parameterKind == original
 
-@given(instance=simplePDL::WorkSequence_strategy)
+@given(instance=simplePDL_WorkSequence_strategy)
 @settings(max_examples=50)
-def test_simplepdl::worksequence_instantiation(instance):
-    assert isinstance(instance, simplePDL::WorkSequence)
-
-@given(instance=simplePDL::WorkSequence_strategy)
-def test_simplepdl::worksequence_linkType_type(instance):
-    assert isinstance(instance.linkType, str)
+def test_simplepdl_worksequence_instantiation(instance):
+    assert isinstance(instance, simplePDL_WorkSequence)
 
 
-@given(instance=simplePDL::WorkSequence_strategy)
-def test_simplepdl::worksequence_linkType_setter(instance):
+
+@given(instance=simplePDL_WorkSequence_strategy)
+def test_simplepdl_worksequence_linkType_setter(instance):
     original = instance.linkType
     instance.linkType = original
     assert instance.linkType == original
 
-@given(instance=simplePDL::WorkDefinition_strategy)
+@given(instance=simplePDL_WorkDefinition_strategy)
 @settings(max_examples=50)
-def test_simplepdl::workdefinition_instantiation(instance):
-    assert isinstance(instance, simplePDL::WorkDefinition)
-
-@given(instance=simplePDL::WorkDefinition_strategy)
-def test_simplepdl::workdefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplepdl_workdefinition_instantiation(instance):
+    assert isinstance(instance, simplePDL_WorkDefinition)
 
 
-@given(instance=simplePDL::WorkDefinition_strategy)
-def test_simplepdl::workdefinition_name_setter(instance):
+
+@given(instance=simplePDL_WorkDefinition_strategy)
+def test_simplepdl_workdefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplePDL::Process_strategy)
+@given(instance=simplePDL_Process_strategy)
 @settings(max_examples=50)
-def test_simplepdl::process_instantiation(instance):
-    assert isinstance(instance, simplePDL::Process)
-
-@given(instance=simplePDL::Process_strategy)
-def test_simplepdl::process_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplepdl_process_instantiation(instance):
+    assert isinstance(instance, simplePDL_Process)
 
 
-@given(instance=simplePDL::Process_strategy)
-def test_simplepdl::process_name_setter(instance):
+
+@given(instance=simplePDL_Process_strategy)
+def test_simplepdl_process_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleTree::NodeKind,
-    SimpleTree::Tree,
+from python_code import (
+    SimpleTree_NodeKind,
+    SimpleTree_Tree,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_simpletree::nodekind_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::NodeKind)
+def test_simpletree_nodekind_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_NodeKind)
 
 
-def test_simpletree::nodekind_constructor_exists():
-    assert callable(SimpleTree::NodeKind.__init__)
+def test_simpletree_nodekind_constructor_exists():
+    assert callable(SimpleTree_NodeKind.__init__)
 
 
-def test_simpletree::nodekind_constructor_args():
-    sig = inspect.signature(SimpleTree::NodeKind.__init__)
+def test_simpletree_nodekind_constructor_args():
+    sig = inspect.signature(SimpleTree_NodeKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletree::tree_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::Tree)
+def test_simpletree_tree_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_Tree)
 
 
-def test_simpletree::tree_constructor_exists():
-    assert callable(SimpleTree::Tree.__init__)
+def test_simpletree_tree_constructor_exists():
+    assert callable(SimpleTree_Tree.__init__)
 
 
-def test_simpletree::tree_constructor_args():
-    sig = inspect.signature(SimpleTree::Tree.__init__)
+def test_simpletree_tree_constructor_args():
+    sig = inspect.signature(SimpleTree_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleTree::NodeKind_strategy = st.builds(
-    SimpleTree::NodeKind,
+SimpleTree_NodeKind_strategy = st.builds(
+    SimpleTree_NodeKind,
 )
-SimpleTree::Tree_strategy = st.builds(
-    SimpleTree::Tree,
+SimpleTree_Tree_strategy = st.builds(
+    SimpleTree_Tree,
 )
 
-@given(instance=SimpleTree::NodeKind_strategy)
+@given(instance=SimpleTree_NodeKind_strategy)
 @settings(max_examples=50)
-def test_simpletree::nodekind_instantiation(instance):
-    assert isinstance(instance, SimpleTree::NodeKind)
+def test_simpletree_nodekind_instantiation(instance):
+    assert isinstance(instance, SimpleTree_NodeKind)
 
-@given(instance=SimpleTree::Tree_strategy)
+@given(instance=SimpleTree_Tree_strategy)
 @settings(max_examples=50)
-def test_simpletree::tree_instantiation(instance):
-    assert isinstance(instance, SimpleTree::Tree)
+def test_simpletree_tree_instantiation(instance):
+    assert isinstance(instance, SimpleTree_Tree)

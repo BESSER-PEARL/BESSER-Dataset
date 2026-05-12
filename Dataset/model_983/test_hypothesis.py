@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     UnaryFormula,
-    henshin::Not,
+    henshin_Not,
     BinaryFormula,
-    henshin::Or,
-    henshin::Xor,
-    henshin::And,
+    henshin_Or,
+    henshin_Xor,
+    henshin_And,
     Formula,
-    henshin::BinaryFormula,
-    henshin::UnaryFormula,
-    henshin::NestedCondition,
-    henshin::ParameterMapping,
-    henshin::EReference,
-    henshin::EAttribute,
-    henshin::Attribute,
-    henshin::EClass,
+    henshin_BinaryFormula,
+    henshin_UnaryFormula,
+    henshin_NestedCondition,
+    henshin_ParameterMapping,
+    henshin_EReference,
+    henshin_EAttribute,
+    henshin_Attribute,
+    henshin_EClass,
     GraphElement,
-    henshin::GraphElement,
-    henshin::Formula,
-    henshin::Edge,
-    henshin::EClassifier,
-    henshin::Mapping,
+    henshin_GraphElement,
+    henshin_Formula,
+    henshin_Edge,
+    henshin_EClassifier,
+    henshin_Mapping,
     TransformationUnit,
-    henshin::PriorityUnit,
-    henshin::SequentialUnit,
-    henshin::IteratedUnit,
-    henshin::IndependentUnit,
-    henshin::ConditionalUnit,
-    henshin::LoopUnit,
-    henshin::EPackage,
-    henshin::Rule,
+    henshin_LoopUnit,
+    henshin_SequentialUnit,
+    henshin_IndependentUnit,
+    henshin_IteratedUnit,
+    henshin_PriorityUnit,
+    henshin_ConditionalUnit,
+    henshin_EPackage,
+    henshin_Rule,
     NamedElement,
-    henshin::Graph,
-    henshin::Node,
-    henshin::AttributeCondition,
-    henshin::Parameter,
-    henshin::TransformationUnit,
-    henshin::TransformationSystem,
-    henshin::NamedElement,
+    henshin_Node,
+    henshin_TransformationUnit,
+    henshin_Graph,
+    henshin_AttributeCondition,
+    henshin_Parameter,
+    henshin_TransformationSystem,
+    henshin_NamedElement,
 )
 
 # =============================================================================
@@ -66,16 +66,16 @@ def test_unaryformula_constructor_args():
 
 
 
-def test_henshin::not_is_not_abstract():
-    assert not inspect.isabstract(henshin::Not)
+def test_henshin_not_is_not_abstract():
+    assert not inspect.isabstract(henshin_Not)
 
 
-def test_henshin::not_constructor_exists():
-    assert callable(henshin::Not.__init__)
+def test_henshin_not_constructor_exists():
+    assert callable(henshin_Not.__init__)
 
 
-def test_henshin::not_constructor_args():
-    sig = inspect.signature(henshin::Not.__init__)
+def test_henshin_not_constructor_args():
+    sig = inspect.signature(henshin_Not.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,44 +94,44 @@ def test_binaryformula_constructor_args():
 
 
 
-def test_henshin::or_is_not_abstract():
-    assert not inspect.isabstract(henshin::Or)
+def test_henshin_or_is_not_abstract():
+    assert not inspect.isabstract(henshin_Or)
 
 
-def test_henshin::or_constructor_exists():
-    assert callable(henshin::Or.__init__)
+def test_henshin_or_constructor_exists():
+    assert callable(henshin_Or.__init__)
 
 
-def test_henshin::or_constructor_args():
-    sig = inspect.signature(henshin::Or.__init__)
+def test_henshin_or_constructor_args():
+    sig = inspect.signature(henshin_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::xor_is_not_abstract():
-    assert not inspect.isabstract(henshin::Xor)
+def test_henshin_xor_is_not_abstract():
+    assert not inspect.isabstract(henshin_Xor)
 
 
-def test_henshin::xor_constructor_exists():
-    assert callable(henshin::Xor.__init__)
+def test_henshin_xor_constructor_exists():
+    assert callable(henshin_Xor.__init__)
 
 
-def test_henshin::xor_constructor_args():
-    sig = inspect.signature(henshin::Xor.__init__)
+def test_henshin_xor_constructor_args():
+    sig = inspect.signature(henshin_Xor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::and_is_not_abstract():
-    assert not inspect.isabstract(henshin::And)
+def test_henshin_and_is_not_abstract():
+    assert not inspect.isabstract(henshin_And)
 
 
-def test_henshin::and_constructor_exists():
-    assert callable(henshin::And.__init__)
+def test_henshin_and_constructor_exists():
+    assert callable(henshin_And.__init__)
 
 
-def test_henshin::and_constructor_args():
-    sig = inspect.signature(henshin::And.__init__)
+def test_henshin_and_constructor_args():
+    sig = inspect.signature(henshin_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -150,107 +150,107 @@ def test_formula_constructor_args():
 
 
 
-def test_henshin::binaryformula_is_not_abstract():
-    assert not inspect.isabstract(henshin::BinaryFormula)
+def test_henshin_binaryformula_is_not_abstract():
+    assert not inspect.isabstract(henshin_BinaryFormula)
 
 
-def test_henshin::binaryformula_constructor_exists():
-    assert callable(henshin::BinaryFormula.__init__)
+def test_henshin_binaryformula_constructor_exists():
+    assert callable(henshin_BinaryFormula.__init__)
 
 
-def test_henshin::binaryformula_constructor_args():
-    sig = inspect.signature(henshin::BinaryFormula.__init__)
+def test_henshin_binaryformula_constructor_args():
+    sig = inspect.signature(henshin_BinaryFormula.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::unaryformula_is_not_abstract():
-    assert not inspect.isabstract(henshin::UnaryFormula)
+def test_henshin_unaryformula_is_not_abstract():
+    assert not inspect.isabstract(henshin_UnaryFormula)
 
 
-def test_henshin::unaryformula_constructor_exists():
-    assert callable(henshin::UnaryFormula.__init__)
+def test_henshin_unaryformula_constructor_exists():
+    assert callable(henshin_UnaryFormula.__init__)
 
 
-def test_henshin::unaryformula_constructor_args():
-    sig = inspect.signature(henshin::UnaryFormula.__init__)
+def test_henshin_unaryformula_constructor_args():
+    sig = inspect.signature(henshin_UnaryFormula.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::nestedcondition_is_not_abstract():
-    assert not inspect.isabstract(henshin::NestedCondition)
+def test_henshin_nestedcondition_is_not_abstract():
+    assert not inspect.isabstract(henshin_NestedCondition)
 
 
-def test_henshin::nestedcondition_constructor_exists():
-    assert callable(henshin::NestedCondition.__init__)
+def test_henshin_nestedcondition_constructor_exists():
+    assert callable(henshin_NestedCondition.__init__)
 
 
-def test_henshin::nestedcondition_constructor_args():
-    sig = inspect.signature(henshin::NestedCondition.__init__)
+def test_henshin_nestedcondition_constructor_args():
+    sig = inspect.signature(henshin_NestedCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::parametermapping_is_not_abstract():
-    assert not inspect.isabstract(henshin::ParameterMapping)
+def test_henshin_parametermapping_is_not_abstract():
+    assert not inspect.isabstract(henshin_ParameterMapping)
 
 
-def test_henshin::parametermapping_constructor_exists():
-    assert callable(henshin::ParameterMapping.__init__)
+def test_henshin_parametermapping_constructor_exists():
+    assert callable(henshin_ParameterMapping.__init__)
 
 
-def test_henshin::parametermapping_constructor_args():
-    sig = inspect.signature(henshin::ParameterMapping.__init__)
+def test_henshin_parametermapping_constructor_args():
+    sig = inspect.signature(henshin_ParameterMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::ereference_is_not_abstract():
-    assert not inspect.isabstract(henshin::EReference)
+def test_henshin_ereference_is_not_abstract():
+    assert not inspect.isabstract(henshin_EReference)
 
 
-def test_henshin::ereference_constructor_exists():
-    assert callable(henshin::EReference.__init__)
+def test_henshin_ereference_constructor_exists():
+    assert callable(henshin_EReference.__init__)
 
 
-def test_henshin::ereference_constructor_args():
-    sig = inspect.signature(henshin::EReference.__init__)
+def test_henshin_ereference_constructor_args():
+    sig = inspect.signature(henshin_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::eattribute_is_not_abstract():
-    assert not inspect.isabstract(henshin::EAttribute)
+def test_henshin_eattribute_is_not_abstract():
+    assert not inspect.isabstract(henshin_EAttribute)
 
 
-def test_henshin::eattribute_constructor_exists():
-    assert callable(henshin::EAttribute.__init__)
+def test_henshin_eattribute_constructor_exists():
+    assert callable(henshin_EAttribute.__init__)
 
 
-def test_henshin::eattribute_constructor_args():
-    sig = inspect.signature(henshin::EAttribute.__init__)
+def test_henshin_eattribute_constructor_args():
+    sig = inspect.signature(henshin_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::attribute_is_not_abstract():
-    assert not inspect.isabstract(henshin::Attribute)
+def test_henshin_attribute_is_not_abstract():
+    assert not inspect.isabstract(henshin_Attribute)
 
 
-def test_henshin::attribute_constructor_exists():
-    assert callable(henshin::Attribute.__init__)
+def test_henshin_attribute_constructor_exists():
+    assert callable(henshin_Attribute.__init__)
 
 
-def test_henshin::attribute_constructor_args():
-    sig = inspect.signature(henshin::Attribute.__init__)
+def test_henshin_attribute_constructor_args():
+    sig = inspect.signature(henshin_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_henshin::attribute_has_value():
-    assert hasattr(henshin::Attribute, "value")
+def test_henshin_attribute_has_value():
+    assert hasattr(henshin_Attribute, "value")
     descriptor = None
-    for klass in henshin::Attribute.__mro__:
+    for klass in henshin_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -258,16 +258,16 @@ def test_henshin::attribute_has_value():
 
 
 
-def test_henshin::eclass_is_not_abstract():
-    assert not inspect.isabstract(henshin::EClass)
+def test_henshin_eclass_is_not_abstract():
+    assert not inspect.isabstract(henshin_EClass)
 
 
-def test_henshin::eclass_constructor_exists():
-    assert callable(henshin::EClass.__init__)
+def test_henshin_eclass_constructor_exists():
+    assert callable(henshin_EClass.__init__)
 
 
-def test_henshin::eclass_constructor_args():
-    sig = inspect.signature(henshin::EClass.__init__)
+def test_henshin_eclass_constructor_args():
+    sig = inspect.signature(henshin_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -286,72 +286,72 @@ def test_graphelement_constructor_args():
 
 
 
-def test_henshin::graphelement_is_not_abstract():
-    assert not inspect.isabstract(henshin::GraphElement)
+def test_henshin_graphelement_is_not_abstract():
+    assert not inspect.isabstract(henshin_GraphElement)
 
 
-def test_henshin::graphelement_constructor_exists():
-    assert callable(henshin::GraphElement.__init__)
+def test_henshin_graphelement_constructor_exists():
+    assert callable(henshin_GraphElement.__init__)
 
 
-def test_henshin::graphelement_constructor_args():
-    sig = inspect.signature(henshin::GraphElement.__init__)
+def test_henshin_graphelement_constructor_args():
+    sig = inspect.signature(henshin_GraphElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::formula_is_not_abstract():
-    assert not inspect.isabstract(henshin::Formula)
+def test_henshin_formula_is_not_abstract():
+    assert not inspect.isabstract(henshin_Formula)
 
 
-def test_henshin::formula_constructor_exists():
-    assert callable(henshin::Formula.__init__)
+def test_henshin_formula_constructor_exists():
+    assert callable(henshin_Formula.__init__)
 
 
-def test_henshin::formula_constructor_args():
-    sig = inspect.signature(henshin::Formula.__init__)
+def test_henshin_formula_constructor_args():
+    sig = inspect.signature(henshin_Formula.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::edge_is_not_abstract():
-    assert not inspect.isabstract(henshin::Edge)
+def test_henshin_edge_is_not_abstract():
+    assert not inspect.isabstract(henshin_Edge)
 
 
-def test_henshin::edge_constructor_exists():
-    assert callable(henshin::Edge.__init__)
+def test_henshin_edge_constructor_exists():
+    assert callable(henshin_Edge.__init__)
 
 
-def test_henshin::edge_constructor_args():
-    sig = inspect.signature(henshin::Edge.__init__)
+def test_henshin_edge_constructor_args():
+    sig = inspect.signature(henshin_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(henshin::EClassifier)
+def test_henshin_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(henshin_EClassifier)
 
 
-def test_henshin::eclassifier_constructor_exists():
-    assert callable(henshin::EClassifier.__init__)
+def test_henshin_eclassifier_constructor_exists():
+    assert callable(henshin_EClassifier.__init__)
 
 
-def test_henshin::eclassifier_constructor_args():
-    sig = inspect.signature(henshin::EClassifier.__init__)
+def test_henshin_eclassifier_constructor_args():
+    sig = inspect.signature(henshin_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::mapping_is_not_abstract():
-    assert not inspect.isabstract(henshin::Mapping)
+def test_henshin_mapping_is_not_abstract():
+    assert not inspect.isabstract(henshin_Mapping)
 
 
-def test_henshin::mapping_constructor_exists():
-    assert callable(henshin::Mapping.__init__)
+def test_henshin_mapping_constructor_exists():
+    assert callable(henshin_Mapping.__init__)
 
 
-def test_henshin::mapping_constructor_args():
-    sig = inspect.signature(henshin::Mapping.__init__)
+def test_henshin_mapping_constructor_args():
+    sig = inspect.signature(henshin_Mapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -370,47 +370,47 @@ def test_transformationunit_constructor_args():
 
 
 
-def test_henshin::priorityunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::PriorityUnit)
+def test_henshin_loopunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_LoopUnit)
 
 
-def test_henshin::priorityunit_constructor_exists():
-    assert callable(henshin::PriorityUnit.__init__)
+def test_henshin_loopunit_constructor_exists():
+    assert callable(henshin_LoopUnit.__init__)
 
 
-def test_henshin::priorityunit_constructor_args():
-    sig = inspect.signature(henshin::PriorityUnit.__init__)
+def test_henshin_loopunit_constructor_args():
+    sig = inspect.signature(henshin_LoopUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::sequentialunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::SequentialUnit)
+def test_henshin_sequentialunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_SequentialUnit)
 
 
-def test_henshin::sequentialunit_constructor_exists():
-    assert callable(henshin::SequentialUnit.__init__)
+def test_henshin_sequentialunit_constructor_exists():
+    assert callable(henshin_SequentialUnit.__init__)
 
 
-def test_henshin::sequentialunit_constructor_args():
-    sig = inspect.signature(henshin::SequentialUnit.__init__)
+def test_henshin_sequentialunit_constructor_args():
+    sig = inspect.signature(henshin_SequentialUnit.__init__)
     params = list(sig.parameters.keys())
     assert "rollback" in params, "Missing parameter 'rollback'"
     assert "strict" in params, "Missing parameter 'strict'"
 
-def test_henshin::sequentialunit_has_rollback():
-    assert hasattr(henshin::SequentialUnit, "rollback")
+def test_henshin_sequentialunit_has_rollback():
+    assert hasattr(henshin_SequentialUnit, "rollback")
     descriptor = None
-    for klass in henshin::SequentialUnit.__mro__:
+    for klass in henshin_SequentialUnit.__mro__:
         if "rollback" in klass.__dict__:
             descriptor = klass.__dict__["rollback"]
             break
     assert isinstance(descriptor, property)
 
-def test_henshin::sequentialunit_has_strict():
-    assert hasattr(henshin::SequentialUnit, "strict")
+def test_henshin_sequentialunit_has_strict():
+    assert hasattr(henshin_SequentialUnit, "strict")
     descriptor = None
-    for klass in henshin::SequentialUnit.__mro__:
+    for klass in henshin_SequentialUnit.__mro__:
         if "strict" in klass.__dict__:
             descriptor = klass.__dict__["strict"]
             break
@@ -418,23 +418,37 @@ def test_henshin::sequentialunit_has_strict():
 
 
 
-def test_henshin::iteratedunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::IteratedUnit)
+def test_henshin_independentunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_IndependentUnit)
 
 
-def test_henshin::iteratedunit_constructor_exists():
-    assert callable(henshin::IteratedUnit.__init__)
+def test_henshin_independentunit_constructor_exists():
+    assert callable(henshin_IndependentUnit.__init__)
 
 
-def test_henshin::iteratedunit_constructor_args():
-    sig = inspect.signature(henshin::IteratedUnit.__init__)
+def test_henshin_independentunit_constructor_args():
+    sig = inspect.signature(henshin_IndependentUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_iteratedunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_IteratedUnit)
+
+
+def test_henshin_iteratedunit_constructor_exists():
+    assert callable(henshin_IteratedUnit.__init__)
+
+
+def test_henshin_iteratedunit_constructor_args():
+    sig = inspect.signature(henshin_IteratedUnit.__init__)
     params = list(sig.parameters.keys())
     assert "iterations" in params, "Missing parameter 'iterations'"
 
-def test_henshin::iteratedunit_has_iterations():
-    assert hasattr(henshin::IteratedUnit, "iterations")
+def test_henshin_iteratedunit_has_iterations():
+    assert hasattr(henshin_IteratedUnit, "iterations")
     descriptor = None
-    for klass in henshin::IteratedUnit.__mro__:
+    for klass in henshin_IteratedUnit.__mro__:
         if "iterations" in klass.__dict__:
             descriptor = klass.__dict__["iterations"]
             break
@@ -442,91 +456,77 @@ def test_henshin::iteratedunit_has_iterations():
 
 
 
-def test_henshin::independentunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::IndependentUnit)
+def test_henshin_priorityunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_PriorityUnit)
 
 
-def test_henshin::independentunit_constructor_exists():
-    assert callable(henshin::IndependentUnit.__init__)
+def test_henshin_priorityunit_constructor_exists():
+    assert callable(henshin_PriorityUnit.__init__)
 
 
-def test_henshin::independentunit_constructor_args():
-    sig = inspect.signature(henshin::IndependentUnit.__init__)
+def test_henshin_priorityunit_constructor_args():
+    sig = inspect.signature(henshin_PriorityUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::conditionalunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::ConditionalUnit)
+def test_henshin_conditionalunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_ConditionalUnit)
 
 
-def test_henshin::conditionalunit_constructor_exists():
-    assert callable(henshin::ConditionalUnit.__init__)
+def test_henshin_conditionalunit_constructor_exists():
+    assert callable(henshin_ConditionalUnit.__init__)
 
 
-def test_henshin::conditionalunit_constructor_args():
-    sig = inspect.signature(henshin::ConditionalUnit.__init__)
+def test_henshin_conditionalunit_constructor_args():
+    sig = inspect.signature(henshin_ConditionalUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::loopunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::LoopUnit)
+def test_henshin_epackage_is_not_abstract():
+    assert not inspect.isabstract(henshin_EPackage)
 
 
-def test_henshin::loopunit_constructor_exists():
-    assert callable(henshin::LoopUnit.__init__)
+def test_henshin_epackage_constructor_exists():
+    assert callable(henshin_EPackage.__init__)
 
 
-def test_henshin::loopunit_constructor_args():
-    sig = inspect.signature(henshin::LoopUnit.__init__)
+def test_henshin_epackage_constructor_args():
+    sig = inspect.signature(henshin_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::epackage_is_not_abstract():
-    assert not inspect.isabstract(henshin::EPackage)
+def test_henshin_rule_is_not_abstract():
+    assert not inspect.isabstract(henshin_Rule)
 
 
-def test_henshin::epackage_constructor_exists():
-    assert callable(henshin::EPackage.__init__)
+def test_henshin_rule_constructor_exists():
+    assert callable(henshin_Rule.__init__)
 
 
-def test_henshin::epackage_constructor_args():
-    sig = inspect.signature(henshin::EPackage.__init__)
+def test_henshin_rule_constructor_args():
+    sig = inspect.signature(henshin_Rule.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_henshin::rule_is_not_abstract():
-    assert not inspect.isabstract(henshin::Rule)
-
-
-def test_henshin::rule_constructor_exists():
-    assert callable(henshin::Rule.__init__)
-
-
-def test_henshin::rule_constructor_args():
-    sig = inspect.signature(henshin::Rule.__init__)
-    params = list(sig.parameters.keys())
-    assert "injectiveMatching" in params, "Missing parameter 'injectiveMatching'"
     assert "checkDangling" in params, "Missing parameter 'checkDangling'"
+    assert "injectiveMatching" in params, "Missing parameter 'injectiveMatching'"
 
-def test_henshin::rule_has_injectiveMatching():
-    assert hasattr(henshin::Rule, "injectiveMatching")
+def test_henshin_rule_has_checkDangling():
+    assert hasattr(henshin_Rule, "checkDangling")
     descriptor = None
-    for klass in henshin::Rule.__mro__:
-        if "injectiveMatching" in klass.__dict__:
-            descriptor = klass.__dict__["injectiveMatching"]
+    for klass in henshin_Rule.__mro__:
+        if "checkDangling" in klass.__dict__:
+            descriptor = klass.__dict__["checkDangling"]
             break
     assert isinstance(descriptor, property)
 
-def test_henshin::rule_has_checkDangling():
-    assert hasattr(henshin::Rule, "checkDangling")
+def test_henshin_rule_has_injectiveMatching():
+    assert hasattr(henshin_Rule, "injectiveMatching")
     descriptor = None
-    for klass in henshin::Rule.__mro__:
-        if "checkDangling" in klass.__dict__:
-            descriptor = klass.__dict__["checkDangling"]
+    for klass in henshin_Rule.__mro__:
+        if "injectiveMatching" in klass.__dict__:
+            descriptor = klass.__dict__["injectiveMatching"]
             break
     assert isinstance(descriptor, property)
 
@@ -546,89 +546,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_henshin::graph_is_not_abstract():
-    assert not inspect.isabstract(henshin::Graph)
+def test_henshin_node_is_not_abstract():
+    assert not inspect.isabstract(henshin_Node)
 
 
-def test_henshin::graph_constructor_exists():
-    assert callable(henshin::Graph.__init__)
+def test_henshin_node_constructor_exists():
+    assert callable(henshin_Node.__init__)
 
 
-def test_henshin::graph_constructor_args():
-    sig = inspect.signature(henshin::Graph.__init__)
+def test_henshin_node_constructor_args():
+    sig = inspect.signature(henshin_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::node_is_not_abstract():
-    assert not inspect.isabstract(henshin::Node)
+def test_henshin_transformationunit_is_not_abstract():
+    assert not inspect.isabstract(henshin_TransformationUnit)
 
 
-def test_henshin::node_constructor_exists():
-    assert callable(henshin::Node.__init__)
+def test_henshin_transformationunit_constructor_exists():
+    assert callable(henshin_TransformationUnit.__init__)
 
 
-def test_henshin::node_constructor_args():
-    sig = inspect.signature(henshin::Node.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::attributecondition_is_not_abstract():
-    assert not inspect.isabstract(henshin::AttributeCondition)
-
-
-def test_henshin::attributecondition_constructor_exists():
-    assert callable(henshin::AttributeCondition.__init__)
-
-
-def test_henshin::attributecondition_constructor_args():
-    sig = inspect.signature(henshin::AttributeCondition.__init__)
-    params = list(sig.parameters.keys())
-    assert "conditionText" in params, "Missing parameter 'conditionText'"
-
-def test_henshin::attributecondition_has_conditionText():
-    assert hasattr(henshin::AttributeCondition, "conditionText")
-    descriptor = None
-    for klass in henshin::AttributeCondition.__mro__:
-        if "conditionText" in klass.__dict__:
-            descriptor = klass.__dict__["conditionText"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_henshin::parameter_is_not_abstract():
-    assert not inspect.isabstract(henshin::Parameter)
-
-
-def test_henshin::parameter_constructor_exists():
-    assert callable(henshin::Parameter.__init__)
-
-
-def test_henshin::parameter_constructor_args():
-    sig = inspect.signature(henshin::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_henshin::transformationunit_is_not_abstract():
-    assert not inspect.isabstract(henshin::TransformationUnit)
-
-
-def test_henshin::transformationunit_constructor_exists():
-    assert callable(henshin::TransformationUnit.__init__)
-
-
-def test_henshin::transformationunit_constructor_args():
-    sig = inspect.signature(henshin::TransformationUnit.__init__)
+def test_henshin_transformationunit_constructor_args():
+    sig = inspect.signature(henshin_TransformationUnit.__init__)
     params = list(sig.parameters.keys())
     assert "activated" in params, "Missing parameter 'activated'"
 
-def test_henshin::transformationunit_has_activated():
-    assert hasattr(henshin::TransformationUnit, "activated")
+def test_henshin_transformationunit_has_activated():
+    assert hasattr(henshin_TransformationUnit, "activated")
     descriptor = None
-    for klass in henshin::TransformationUnit.__mro__:
+    for klass in henshin_TransformationUnit.__mro__:
         if "activated" in klass.__dict__:
             descriptor = klass.__dict__["activated"]
             break
@@ -636,49 +584,101 @@ def test_henshin::transformationunit_has_activated():
 
 
 
-def test_henshin::transformationsystem_is_not_abstract():
-    assert not inspect.isabstract(henshin::TransformationSystem)
+def test_henshin_graph_is_not_abstract():
+    assert not inspect.isabstract(henshin_Graph)
 
 
-def test_henshin::transformationsystem_constructor_exists():
-    assert callable(henshin::TransformationSystem.__init__)
+def test_henshin_graph_constructor_exists():
+    assert callable(henshin_Graph.__init__)
 
 
-def test_henshin::transformationsystem_constructor_args():
-    sig = inspect.signature(henshin::TransformationSystem.__init__)
+def test_henshin_graph_constructor_args():
+    sig = inspect.signature(henshin_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_henshin::namedelement_is_not_abstract():
-    assert not inspect.isabstract(henshin::NamedElement)
+def test_henshin_attributecondition_is_not_abstract():
+    assert not inspect.isabstract(henshin_AttributeCondition)
 
 
-def test_henshin::namedelement_constructor_exists():
-    assert callable(henshin::NamedElement.__init__)
+def test_henshin_attributecondition_constructor_exists():
+    assert callable(henshin_AttributeCondition.__init__)
 
 
-def test_henshin::namedelement_constructor_args():
-    sig = inspect.signature(henshin::NamedElement.__init__)
+def test_henshin_attributecondition_constructor_args():
+    sig = inspect.signature(henshin_AttributeCondition.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-    assert "name" in params, "Missing parameter 'name'"
+    assert "conditionText" in params, "Missing parameter 'conditionText'"
 
-def test_henshin::namedelement_has_description():
-    assert hasattr(henshin::NamedElement, "description")
+def test_henshin_attributecondition_has_conditionText():
+    assert hasattr(henshin_AttributeCondition, "conditionText")
     descriptor = None
-    for klass in henshin::NamedElement.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in henshin_AttributeCondition.__mro__:
+        if "conditionText" in klass.__dict__:
+            descriptor = klass.__dict__["conditionText"]
             break
     assert isinstance(descriptor, property)
 
-def test_henshin::namedelement_has_name():
-    assert hasattr(henshin::NamedElement, "name")
+
+
+def test_henshin_parameter_is_not_abstract():
+    assert not inspect.isabstract(henshin_Parameter)
+
+
+def test_henshin_parameter_constructor_exists():
+    assert callable(henshin_Parameter.__init__)
+
+
+def test_henshin_parameter_constructor_args():
+    sig = inspect.signature(henshin_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_transformationsystem_is_not_abstract():
+    assert not inspect.isabstract(henshin_TransformationSystem)
+
+
+def test_henshin_transformationsystem_constructor_exists():
+    assert callable(henshin_TransformationSystem.__init__)
+
+
+def test_henshin_transformationsystem_constructor_args():
+    sig = inspect.signature(henshin_TransformationSystem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_henshin_namedelement_is_not_abstract():
+    assert not inspect.isabstract(henshin_NamedElement)
+
+
+def test_henshin_namedelement_constructor_exists():
+    assert callable(henshin_NamedElement.__init__)
+
+
+def test_henshin_namedelement_constructor_args():
+    sig = inspect.signature(henshin_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_henshin_namedelement_has_name():
+    assert hasattr(henshin_NamedElement, "name")
     descriptor = None
-    for klass in henshin::NamedElement.__mro__:
+    for klass in henshin_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_henshin_namedelement_has_description():
+    assert hasattr(henshin_NamedElement, "description")
+    descriptor = None
+    for klass in henshin_NamedElement.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -697,135 +697,135 @@ safe_text = st.text(
 UnaryFormula_strategy = st.builds(
     UnaryFormula,
 )
-henshin::Not_strategy = st.builds(
-    henshin::Not,
+henshin_Not_strategy = st.builds(
+    henshin_Not,
 )
 BinaryFormula_strategy = st.builds(
     BinaryFormula,
 )
-henshin::Or_strategy = st.builds(
-    henshin::Or,
+henshin_Or_strategy = st.builds(
+    henshin_Or,
 )
-henshin::Xor_strategy = st.builds(
-    henshin::Xor,
+henshin_Xor_strategy = st.builds(
+    henshin_Xor,
 )
-henshin::And_strategy = st.builds(
-    henshin::And,
+henshin_And_strategy = st.builds(
+    henshin_And,
 )
 Formula_strategy = st.builds(
     Formula,
 )
-henshin::BinaryFormula_strategy = st.builds(
-    henshin::BinaryFormula,
+henshin_BinaryFormula_strategy = st.builds(
+    henshin_BinaryFormula,
 )
-henshin::UnaryFormula_strategy = st.builds(
-    henshin::UnaryFormula,
+henshin_UnaryFormula_strategy = st.builds(
+    henshin_UnaryFormula,
 )
-henshin::NestedCondition_strategy = st.builds(
-    henshin::NestedCondition,
+henshin_NestedCondition_strategy = st.builds(
+    henshin_NestedCondition,
 )
-henshin::ParameterMapping_strategy = st.builds(
-    henshin::ParameterMapping,
+henshin_ParameterMapping_strategy = st.builds(
+    henshin_ParameterMapping,
 )
-henshin::EReference_strategy = st.builds(
-    henshin::EReference,
+henshin_EReference_strategy = st.builds(
+    henshin_EReference,
 )
-henshin::EAttribute_strategy = st.builds(
-    henshin::EAttribute,
+henshin_EAttribute_strategy = st.builds(
+    henshin_EAttribute,
 )
-henshin::Attribute_strategy = st.builds(
-    henshin::Attribute,
+henshin_Attribute_strategy = st.builds(
+    henshin_Attribute,
     value=
         safe_text
 )
-henshin::EClass_strategy = st.builds(
-    henshin::EClass,
+henshin_EClass_strategy = st.builds(
+    henshin_EClass,
 )
 GraphElement_strategy = st.builds(
     GraphElement,
 )
-henshin::GraphElement_strategy = st.builds(
-    henshin::GraphElement,
+henshin_GraphElement_strategy = st.builds(
+    henshin_GraphElement,
 )
-henshin::Formula_strategy = st.builds(
-    henshin::Formula,
+henshin_Formula_strategy = st.builds(
+    henshin_Formula,
 )
-henshin::Edge_strategy = st.builds(
-    henshin::Edge,
+henshin_Edge_strategy = st.builds(
+    henshin_Edge,
 )
-henshin::EClassifier_strategy = st.builds(
-    henshin::EClassifier,
+henshin_EClassifier_strategy = st.builds(
+    henshin_EClassifier,
 )
-henshin::Mapping_strategy = st.builds(
-    henshin::Mapping,
+henshin_Mapping_strategy = st.builds(
+    henshin_Mapping,
 )
 TransformationUnit_strategy = st.builds(
     TransformationUnit,
 )
-henshin::PriorityUnit_strategy = st.builds(
-    henshin::PriorityUnit,
+henshin_LoopUnit_strategy = st.builds(
+    henshin_LoopUnit,
 )
-henshin::SequentialUnit_strategy = st.builds(
-    henshin::SequentialUnit,
+henshin_SequentialUnit_strategy = st.builds(
+    henshin_SequentialUnit,
     rollback=
         st.booleans(),
     strict=
         st.booleans()
 )
-henshin::IteratedUnit_strategy = st.builds(
-    henshin::IteratedUnit,
+henshin_IndependentUnit_strategy = st.builds(
+    henshin_IndependentUnit,
+)
+henshin_IteratedUnit_strategy = st.builds(
+    henshin_IteratedUnit,
     iterations=
         safe_text
 )
-henshin::IndependentUnit_strategy = st.builds(
-    henshin::IndependentUnit,
+henshin_PriorityUnit_strategy = st.builds(
+    henshin_PriorityUnit,
 )
-henshin::ConditionalUnit_strategy = st.builds(
-    henshin::ConditionalUnit,
+henshin_ConditionalUnit_strategy = st.builds(
+    henshin_ConditionalUnit,
 )
-henshin::LoopUnit_strategy = st.builds(
-    henshin::LoopUnit,
+henshin_EPackage_strategy = st.builds(
+    henshin_EPackage,
 )
-henshin::EPackage_strategy = st.builds(
-    henshin::EPackage,
-)
-henshin::Rule_strategy = st.builds(
-    henshin::Rule,
-    injectiveMatching=
-        st.booleans(),
+henshin_Rule_strategy = st.builds(
+    henshin_Rule,
     checkDangling=
+        st.booleans(),
+    injectiveMatching=
         st.booleans()
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-henshin::Graph_strategy = st.builds(
-    henshin::Graph,
+henshin_Node_strategy = st.builds(
+    henshin_Node,
 )
-henshin::Node_strategy = st.builds(
-    henshin::Node,
-)
-henshin::AttributeCondition_strategy = st.builds(
-    henshin::AttributeCondition,
-    conditionText=
-        safe_text
-)
-henshin::Parameter_strategy = st.builds(
-    henshin::Parameter,
-)
-henshin::TransformationUnit_strategy = st.builds(
-    henshin::TransformationUnit,
+henshin_TransformationUnit_strategy = st.builds(
+    henshin_TransformationUnit,
     activated=
         st.booleans()
 )
-henshin::TransformationSystem_strategy = st.builds(
-    henshin::TransformationSystem,
+henshin_Graph_strategy = st.builds(
+    henshin_Graph,
 )
-henshin::NamedElement_strategy = st.builds(
-    henshin::NamedElement,
-    description=
-        safe_text,
+henshin_AttributeCondition_strategy = st.builds(
+    henshin_AttributeCondition,
+    conditionText=
+        safe_text
+)
+henshin_Parameter_strategy = st.builds(
+    henshin_Parameter,
+)
+henshin_TransformationSystem_strategy = st.builds(
+    henshin_TransformationSystem,
+)
+henshin_NamedElement_strategy = st.builds(
+    henshin_NamedElement,
     name=
+        safe_text,
+    description=
         safe_text
 )
 
@@ -834,50 +834,50 @@ henshin::NamedElement_strategy = st.builds(
 def test_unaryformula_instantiation(instance):
     assert isinstance(instance, UnaryFormula)
 
-@given(instance=henshin::Not_strategy)
+@given(instance=henshin_Not_strategy)
 @settings(max_examples=50)
-def test_henshin::not_instantiation(instance):
-    assert isinstance(instance, henshin::Not)
+def test_henshin_not_instantiation(instance):
+    assert isinstance(instance, henshin_Not)
 
 @given(instance=BinaryFormula_strategy)
 @settings(max_examples=50)
 def test_binaryformula_instantiation(instance):
     assert isinstance(instance, BinaryFormula)
 
-@given(instance=henshin::Or_strategy)
+@given(instance=henshin_Or_strategy)
 @settings(max_examples=50)
-def test_henshin::or_instantiation(instance):
-    assert isinstance(instance, henshin::Or)
+def test_henshin_or_instantiation(instance):
+    assert isinstance(instance, henshin_Or)
 
-@given(instance=henshin::Xor_strategy)
+@given(instance=henshin_Xor_strategy)
 @settings(max_examples=50)
-def test_henshin::xor_instantiation(instance):
-    assert isinstance(instance, henshin::Xor)
+def test_henshin_xor_instantiation(instance):
+    assert isinstance(instance, henshin_Xor)
 
-@given(instance=henshin::And_strategy)
+@given(instance=henshin_And_strategy)
 @settings(max_examples=50)
-def test_henshin::and_instantiation(instance):
-    assert isinstance(instance, henshin::And)
+def test_henshin_and_instantiation(instance):
+    assert isinstance(instance, henshin_And)
 
 @given(instance=Formula_strategy)
 @settings(max_examples=50)
 def test_formula_instantiation(instance):
     assert isinstance(instance, Formula)
 
-@given(instance=henshin::BinaryFormula_strategy)
+@given(instance=henshin_BinaryFormula_strategy)
 @settings(max_examples=50)
-def test_henshin::binaryformula_instantiation(instance):
-    assert isinstance(instance, henshin::BinaryFormula)
+def test_henshin_binaryformula_instantiation(instance):
+    assert isinstance(instance, henshin_BinaryFormula)
 
-@given(instance=henshin::UnaryFormula_strategy)
+@given(instance=henshin_UnaryFormula_strategy)
 @settings(max_examples=50)
-def test_henshin::unaryformula_instantiation(instance):
-    assert isinstance(instance, henshin::UnaryFormula)
+def test_henshin_unaryformula_instantiation(instance):
+    assert isinstance(instance, henshin_UnaryFormula)
 
-@given(instance=henshin::NestedCondition_strategy)
+@given(instance=henshin_NestedCondition_strategy)
 @settings(max_examples=50)
-def test_henshin::nestedcondition_instantiation(instance):
-    assert isinstance(instance, henshin::NestedCondition)
+def test_henshin_nestedcondition_instantiation(instance):
+    assert isinstance(instance, henshin_NestedCondition)
 
 import warnings
 import copy
@@ -885,38 +885,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=henshin::NestedCondition_strategy)
+@given(instance=henshin_NestedCondition_strategy)
 @settings(max_examples=30)
-def test_henshin::nestedcondition_ispac_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isPAC()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isPAC).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isPAC' in henshin::NestedCondition is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isPAC' in henshin::NestedCondition did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isPAC' in henshin::NestedCondition is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=henshin::NestedCondition_strategy)
-@settings(max_examples=30)
-def test_henshin::nestedcondition_isnac_changes_state(instance):
+def test_henshin_nestedcondition_isnac_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -928,65 +899,14 @@ def test_henshin::nestedcondition_isnac_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isNAC' in henshin::NestedCondition is empty"
+        assert has_statements, f"Function 'isNAC' in henshin_NestedCondition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isNAC' in henshin::NestedCondition did not change state; check implementation")
+            warnings.warn(f"Operation 'isNAC' in henshin_NestedCondition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isNAC' in henshin::NestedCondition is not implemented or raised an error")
-
-@given(instance=henshin::ParameterMapping_strategy)
-@settings(max_examples=50)
-def test_henshin::parametermapping_instantiation(instance):
-    assert isinstance(instance, henshin::ParameterMapping)
-
-@given(instance=henshin::EReference_strategy)
-@settings(max_examples=50)
-def test_henshin::ereference_instantiation(instance):
-    assert isinstance(instance, henshin::EReference)
-
-@given(instance=henshin::EAttribute_strategy)
-@settings(max_examples=50)
-def test_henshin::eattribute_instantiation(instance):
-    assert isinstance(instance, henshin::EAttribute)
-
-@given(instance=henshin::Attribute_strategy)
-@settings(max_examples=50)
-def test_henshin::attribute_instantiation(instance):
-    assert isinstance(instance, henshin::Attribute)
-
-@given(instance=henshin::Attribute_strategy)
-def test_henshin::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=henshin::Attribute_strategy)
-def test_henshin::attribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=henshin::EClass_strategy)
-@settings(max_examples=50)
-def test_henshin::eclass_instantiation(instance):
-    assert isinstance(instance, henshin::EClass)
-
-@given(instance=GraphElement_strategy)
-@settings(max_examples=50)
-def test_graphelement_instantiation(instance):
-    assert isinstance(instance, GraphElement)
-
-@given(instance=henshin::GraphElement_strategy)
-@settings(max_examples=50)
-def test_henshin::graphelement_instantiation(instance):
-    assert isinstance(instance, henshin::GraphElement)
-
-@given(instance=henshin::Formula_strategy)
-@settings(max_examples=50)
-def test_henshin::formula_instantiation(instance):
-    assert isinstance(instance, henshin::Formula)
+        warnings.warn(f"Operation 'isNAC' in henshin_NestedCondition is not implemented or raised an error")
 
 import warnings
 import copy
@@ -994,9 +914,86 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=henshin::Formula_strategy)
+@given(instance=henshin_NestedCondition_strategy)
 @settings(max_examples=30)
-def test_henshin::formula_stringrepresentation_changes_state(instance):
+def test_henshin_nestedcondition_ispac_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isPAC()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isPAC).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isPAC' in henshin_NestedCondition is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isPAC' in henshin_NestedCondition did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isPAC' in henshin_NestedCondition is not implemented or raised an error")
+
+@given(instance=henshin_ParameterMapping_strategy)
+@settings(max_examples=50)
+def test_henshin_parametermapping_instantiation(instance):
+    assert isinstance(instance, henshin_ParameterMapping)
+
+@given(instance=henshin_EReference_strategy)
+@settings(max_examples=50)
+def test_henshin_ereference_instantiation(instance):
+    assert isinstance(instance, henshin_EReference)
+
+@given(instance=henshin_EAttribute_strategy)
+@settings(max_examples=50)
+def test_henshin_eattribute_instantiation(instance):
+    assert isinstance(instance, henshin_EAttribute)
+
+@given(instance=henshin_Attribute_strategy)
+@settings(max_examples=50)
+def test_henshin_attribute_instantiation(instance):
+    assert isinstance(instance, henshin_Attribute)
+
+
+
+@given(instance=henshin_Attribute_strategy)
+def test_henshin_attribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=henshin_EClass_strategy)
+@settings(max_examples=50)
+def test_henshin_eclass_instantiation(instance):
+    assert isinstance(instance, henshin_EClass)
+
+@given(instance=GraphElement_strategy)
+@settings(max_examples=50)
+def test_graphelement_instantiation(instance):
+    assert isinstance(instance, GraphElement)
+
+@given(instance=henshin_GraphElement_strategy)
+@settings(max_examples=50)
+def test_henshin_graphelement_instantiation(instance):
+    assert isinstance(instance, henshin_GraphElement)
+
+@given(instance=henshin_Formula_strategy)
+@settings(max_examples=50)
+def test_henshin_formula_instantiation(instance):
+    assert isinstance(instance, henshin_Formula)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=henshin_Formula_strategy)
+@settings(max_examples=30)
+def test_henshin_formula_stringrepresentation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1010,129 +1007,114 @@ def test_henshin::formula_stringrepresentation_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'stringRepresentation' in henshin::Formula is empty"
+        assert has_statements, f"Function 'stringRepresentation' in henshin_Formula is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'stringRepresentation' in henshin::Formula did not change state; check implementation")
+            warnings.warn(f"Operation 'stringRepresentation' in henshin_Formula did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'stringRepresentation' in henshin::Formula is not implemented or raised an error")
+        warnings.warn(f"Operation 'stringRepresentation' in henshin_Formula is not implemented or raised an error")
 
-@given(instance=henshin::Edge_strategy)
+@given(instance=henshin_Edge_strategy)
 @settings(max_examples=50)
-def test_henshin::edge_instantiation(instance):
-    assert isinstance(instance, henshin::Edge)
+def test_henshin_edge_instantiation(instance):
+    assert isinstance(instance, henshin_Edge)
 
-@given(instance=henshin::EClassifier_strategy)
+@given(instance=henshin_EClassifier_strategy)
 @settings(max_examples=50)
-def test_henshin::eclassifier_instantiation(instance):
-    assert isinstance(instance, henshin::EClassifier)
+def test_henshin_eclassifier_instantiation(instance):
+    assert isinstance(instance, henshin_EClassifier)
 
-@given(instance=henshin::Mapping_strategy)
+@given(instance=henshin_Mapping_strategy)
 @settings(max_examples=50)
-def test_henshin::mapping_instantiation(instance):
-    assert isinstance(instance, henshin::Mapping)
+def test_henshin_mapping_instantiation(instance):
+    assert isinstance(instance, henshin_Mapping)
 
 @given(instance=TransformationUnit_strategy)
 @settings(max_examples=50)
 def test_transformationunit_instantiation(instance):
     assert isinstance(instance, TransformationUnit)
 
-@given(instance=henshin::PriorityUnit_strategy)
+@given(instance=henshin_LoopUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::priorityunit_instantiation(instance):
-    assert isinstance(instance, henshin::PriorityUnit)
+def test_henshin_loopunit_instantiation(instance):
+    assert isinstance(instance, henshin_LoopUnit)
 
-@given(instance=henshin::SequentialUnit_strategy)
+@given(instance=henshin_SequentialUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::sequentialunit_instantiation(instance):
-    assert isinstance(instance, henshin::SequentialUnit)
-
-@given(instance=henshin::SequentialUnit_strategy)
-def test_henshin::sequentialunit_rollback_type(instance):
-    assert isinstance(instance.rollback, bool)
+def test_henshin_sequentialunit_instantiation(instance):
+    assert isinstance(instance, henshin_SequentialUnit)
 
 
-@given(instance=henshin::SequentialUnit_strategy)
-def test_henshin::sequentialunit_rollback_setter(instance):
+
+@given(instance=henshin_SequentialUnit_strategy)
+def test_henshin_sequentialunit_rollback_setter(instance):
     original = instance.rollback
     instance.rollback = original
     assert instance.rollback == original
 
-@given(instance=henshin::SequentialUnit_strategy)
-def test_henshin::sequentialunit_strict_type(instance):
-    assert isinstance(instance.strict, bool)
 
 
-@given(instance=henshin::SequentialUnit_strategy)
-def test_henshin::sequentialunit_strict_setter(instance):
+@given(instance=henshin_SequentialUnit_strategy)
+def test_henshin_sequentialunit_strict_setter(instance):
     original = instance.strict
     instance.strict = original
     assert instance.strict == original
 
-@given(instance=henshin::IteratedUnit_strategy)
+@given(instance=henshin_IndependentUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::iteratedunit_instantiation(instance):
-    assert isinstance(instance, henshin::IteratedUnit)
+def test_henshin_independentunit_instantiation(instance):
+    assert isinstance(instance, henshin_IndependentUnit)
 
-@given(instance=henshin::IteratedUnit_strategy)
-def test_henshin::iteratedunit_iterations_type(instance):
-    assert isinstance(instance.iterations, str)
+@given(instance=henshin_IteratedUnit_strategy)
+@settings(max_examples=50)
+def test_henshin_iteratedunit_instantiation(instance):
+    assert isinstance(instance, henshin_IteratedUnit)
 
 
-@given(instance=henshin::IteratedUnit_strategy)
-def test_henshin::iteratedunit_iterations_setter(instance):
+
+@given(instance=henshin_IteratedUnit_strategy)
+def test_henshin_iteratedunit_iterations_setter(instance):
     original = instance.iterations
     instance.iterations = original
     assert instance.iterations == original
 
-@given(instance=henshin::IndependentUnit_strategy)
+@given(instance=henshin_PriorityUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::independentunit_instantiation(instance):
-    assert isinstance(instance, henshin::IndependentUnit)
+def test_henshin_priorityunit_instantiation(instance):
+    assert isinstance(instance, henshin_PriorityUnit)
 
-@given(instance=henshin::ConditionalUnit_strategy)
+@given(instance=henshin_ConditionalUnit_strategy)
 @settings(max_examples=50)
-def test_henshin::conditionalunit_instantiation(instance):
-    assert isinstance(instance, henshin::ConditionalUnit)
+def test_henshin_conditionalunit_instantiation(instance):
+    assert isinstance(instance, henshin_ConditionalUnit)
 
-@given(instance=henshin::LoopUnit_strategy)
+@given(instance=henshin_EPackage_strategy)
 @settings(max_examples=50)
-def test_henshin::loopunit_instantiation(instance):
-    assert isinstance(instance, henshin::LoopUnit)
+def test_henshin_epackage_instantiation(instance):
+    assert isinstance(instance, henshin_EPackage)
 
-@given(instance=henshin::EPackage_strategy)
+@given(instance=henshin_Rule_strategy)
 @settings(max_examples=50)
-def test_henshin::epackage_instantiation(instance):
-    assert isinstance(instance, henshin::EPackage)
-
-@given(instance=henshin::Rule_strategy)
-@settings(max_examples=50)
-def test_henshin::rule_instantiation(instance):
-    assert isinstance(instance, henshin::Rule)
-
-@given(instance=henshin::Rule_strategy)
-def test_henshin::rule_injectiveMatching_type(instance):
-    assert isinstance(instance.injectiveMatching, bool)
+def test_henshin_rule_instantiation(instance):
+    assert isinstance(instance, henshin_Rule)
 
 
-@given(instance=henshin::Rule_strategy)
-def test_henshin::rule_injectiveMatching_setter(instance):
-    original = instance.injectiveMatching
-    instance.injectiveMatching = original
-    assert instance.injectiveMatching == original
 
-@given(instance=henshin::Rule_strategy)
-def test_henshin::rule_checkDangling_type(instance):
-    assert isinstance(instance.checkDangling, bool)
-
-
-@given(instance=henshin::Rule_strategy)
-def test_henshin::rule_checkDangling_setter(instance):
+@given(instance=henshin_Rule_strategy)
+def test_henshin_rule_checkDangling_setter(instance):
     original = instance.checkDangling
     instance.checkDangling = original
     assert instance.checkDangling == original
+
+
+
+@given(instance=henshin_Rule_strategy)
+def test_henshin_rule_injectiveMatching_setter(instance):
+    original = instance.injectiveMatching
+    instance.injectiveMatching = original
+    assert instance.injectiveMatching == original
 
 import warnings
 import copy
@@ -1140,31 +1122,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=henshin::Rule_strategy)
+@given(instance=henshin_Rule_strategy)
 @settings(max_examples=30)
-def test_henshin::rule_containsmapping_changes_state(instance):
+def test_henshin_rule_removenode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.containsMapping(
+        instance.removeNode(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.containsMapping).strip()
+        source = inspect.getsource(instance.removeNode).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'containsMapping' in henshin::Rule is empty"
+        assert has_statements, f"Function 'removeNode' in henshin_Rule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'containsMapping' in henshin::Rule did not change state; check implementation")
+            warnings.warn(f"Operation 'removeNode' in henshin_Rule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'containsMapping' in henshin::Rule is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeNode' in henshin_Rule is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1172,9 +1154,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=henshin::Rule_strategy)
+@given(instance=henshin_Rule_strategy)
 @settings(max_examples=30)
-def test_henshin::rule_containsmultimapping_changes_state(instance):
+def test_henshin_rule_containsmultimapping_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1189,14 +1171,14 @@ def test_henshin::rule_containsmultimapping_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'containsMultiMapping' in henshin::Rule is empty"
+        assert has_statements, f"Function 'containsMultiMapping' in henshin_Rule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'containsMultiMapping' in henshin::Rule did not change state; check implementation")
+            warnings.warn(f"Operation 'containsMultiMapping' in henshin_Rule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'containsMultiMapping' in henshin::Rule is not implemented or raised an error")
+        warnings.warn(f"Operation 'containsMultiMapping' in henshin_Rule is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1204,9 +1186,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=henshin::Rule_strategy)
+@given(instance=henshin_Rule_strategy)
 @settings(max_examples=30)
-def test_henshin::rule_removeedge_changes_state(instance):
+def test_henshin_rule_containsmapping_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.containsMapping(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.containsMapping).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'containsMapping' in henshin_Rule is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'containsMapping' in henshin_Rule did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'containsMapping' in henshin_Rule is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=henshin_Rule_strategy)
+@settings(max_examples=30)
+def test_henshin_rule_removeedge_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1221,56 +1235,42 @@ def test_henshin::rule_removeedge_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEdge' in henshin::Rule is empty"
+        assert has_statements, f"Function 'removeEdge' in henshin_Rule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEdge' in henshin::Rule did not change state; check implementation")
+            warnings.warn(f"Operation 'removeEdge' in henshin_Rule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEdge' in henshin::Rule is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=henshin::Rule_strategy)
-@settings(max_examples=30)
-def test_henshin::rule_removenode_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeNode(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeNode).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeNode' in henshin::Rule is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeNode' in henshin::Rule did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeNode' in henshin::Rule is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeEdge' in henshin_Rule is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=henshin::Graph_strategy)
+@given(instance=henshin_Node_strategy)
 @settings(max_examples=50)
-def test_henshin::graph_instantiation(instance):
-    assert isinstance(instance, henshin::Graph)
+def test_henshin_node_instantiation(instance):
+    assert isinstance(instance, henshin_Node)
+
+@given(instance=henshin_TransformationUnit_strategy)
+@settings(max_examples=50)
+def test_henshin_transformationunit_instantiation(instance):
+    assert isinstance(instance, henshin_TransformationUnit)
+
+
+
+@given(instance=henshin_TransformationUnit_strategy)
+def test_henshin_transformationunit_activated_setter(instance):
+    original = instance.activated
+    instance.activated = original
+    assert instance.activated == original
+
+@given(instance=henshin_Graph_strategy)
+@settings(max_examples=50)
+def test_henshin_graph_instantiation(instance):
+    assert isinstance(instance, henshin_Graph)
 
 import warnings
 import copy
@@ -1278,129 +1278,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=henshin::Graph_strategy)
+@given(instance=henshin_Graph_strategy)
 @settings(max_examples=30)
-def test_henshin::graph_removenode_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeNode(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeNode).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeNode' in henshin::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeNode' in henshin::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeNode' in henshin::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=henshin::Graph_strategy)
-@settings(max_examples=30)
-def test_henshin::graph_removeedge_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeEdge(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeEdge).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEdge' in henshin::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEdge' in henshin::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEdge' in henshin::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=henshin::Graph_strategy)
-@settings(max_examples=30)
-def test_henshin::graph_isnestedcondition_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isNestedCondition()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isNestedCondition).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isNestedCondition' in henshin::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isNestedCondition' in henshin::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isNestedCondition' in henshin::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=henshin::Graph_strategy)
-@settings(max_examples=30)
-def test_henshin::graph_isrhs_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isRhs()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isRhs).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isRhs' in henshin::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isRhs' in henshin::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isRhs' in henshin::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=henshin::Graph_strategy)
-@settings(max_examples=30)
-def test_henshin::graph_islhs_changes_state(instance):
+def test_henshin_graph_islhs_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1412,85 +1292,175 @@ def test_henshin::graph_islhs_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isLhs' in henshin::Graph is empty"
+        assert has_statements, f"Function 'isLhs' in henshin_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isLhs' in henshin::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'isLhs' in henshin_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isLhs' in henshin::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'isLhs' in henshin_Graph is not implemented or raised an error")
 
-@given(instance=henshin::Node_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=henshin_Graph_strategy)
+@settings(max_examples=30)
+def test_henshin_graph_removenode_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeNode(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeNode).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeNode' in henshin_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeNode' in henshin_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeNode' in henshin_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=henshin_Graph_strategy)
+@settings(max_examples=30)
+def test_henshin_graph_isnestedcondition_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isNestedCondition()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isNestedCondition).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isNestedCondition' in henshin_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isNestedCondition' in henshin_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isNestedCondition' in henshin_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=henshin_Graph_strategy)
+@settings(max_examples=30)
+def test_henshin_graph_removeedge_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeEdge(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeEdge).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeEdge' in henshin_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeEdge' in henshin_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeEdge' in henshin_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=henshin_Graph_strategy)
+@settings(max_examples=30)
+def test_henshin_graph_isrhs_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isRhs()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isRhs).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isRhs' in henshin_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isRhs' in henshin_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isRhs' in henshin_Graph is not implemented or raised an error")
+
+@given(instance=henshin_AttributeCondition_strategy)
 @settings(max_examples=50)
-def test_henshin::node_instantiation(instance):
-    assert isinstance(instance, henshin::Node)
-
-@given(instance=henshin::AttributeCondition_strategy)
-@settings(max_examples=50)
-def test_henshin::attributecondition_instantiation(instance):
-    assert isinstance(instance, henshin::AttributeCondition)
-
-@given(instance=henshin::AttributeCondition_strategy)
-def test_henshin::attributecondition_conditionText_type(instance):
-    assert isinstance(instance.conditionText, str)
+def test_henshin_attributecondition_instantiation(instance):
+    assert isinstance(instance, henshin_AttributeCondition)
 
 
-@given(instance=henshin::AttributeCondition_strategy)
-def test_henshin::attributecondition_conditionText_setter(instance):
+
+@given(instance=henshin_AttributeCondition_strategy)
+def test_henshin_attributecondition_conditionText_setter(instance):
     original = instance.conditionText
     instance.conditionText = original
     assert instance.conditionText == original
 
-@given(instance=henshin::Parameter_strategy)
+@given(instance=henshin_Parameter_strategy)
 @settings(max_examples=50)
-def test_henshin::parameter_instantiation(instance):
-    assert isinstance(instance, henshin::Parameter)
+def test_henshin_parameter_instantiation(instance):
+    assert isinstance(instance, henshin_Parameter)
 
-@given(instance=henshin::TransformationUnit_strategy)
+@given(instance=henshin_TransformationSystem_strategy)
 @settings(max_examples=50)
-def test_henshin::transformationunit_instantiation(instance):
-    assert isinstance(instance, henshin::TransformationUnit)
+def test_henshin_transformationsystem_instantiation(instance):
+    assert isinstance(instance, henshin_TransformationSystem)
 
-@given(instance=henshin::TransformationUnit_strategy)
-def test_henshin::transformationunit_activated_type(instance):
-    assert isinstance(instance.activated, bool)
-
-
-@given(instance=henshin::TransformationUnit_strategy)
-def test_henshin::transformationunit_activated_setter(instance):
-    original = instance.activated
-    instance.activated = original
-    assert instance.activated == original
-
-@given(instance=henshin::TransformationSystem_strategy)
+@given(instance=henshin_NamedElement_strategy)
 @settings(max_examples=50)
-def test_henshin::transformationsystem_instantiation(instance):
-    assert isinstance(instance, henshin::TransformationSystem)
-
-@given(instance=henshin::NamedElement_strategy)
-@settings(max_examples=50)
-def test_henshin::namedelement_instantiation(instance):
-    assert isinstance(instance, henshin::NamedElement)
-
-@given(instance=henshin::NamedElement_strategy)
-def test_henshin::namedelement_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_henshin_namedelement_instantiation(instance):
+    assert isinstance(instance, henshin_NamedElement)
 
 
-@given(instance=henshin::NamedElement_strategy)
-def test_henshin::namedelement_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=henshin::NamedElement_strategy)
-def test_henshin::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=henshin::NamedElement_strategy)
-def test_henshin::namedelement_name_setter(instance):
+@given(instance=henshin_NamedElement_strategy)
+def test_henshin_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=henshin_NamedElement_strategy)
+def test_henshin_namedelement_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original

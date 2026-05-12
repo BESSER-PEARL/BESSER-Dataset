@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Graph::Edge,
-    Graph::Node,
-    Graph::Graph,
+from python_code import (
+    Graph_Edge,
+    Graph_Node,
+    Graph_Graph,
 )
 
 # =============================================================================
@@ -17,57 +17,57 @@ from classes import (
 
 
 
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(Graph::Edge)
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(Graph_Edge)
 
 
-def test_graph::edge_constructor_exists():
-    assert callable(Graph::Edge.__init__)
+def test_graph_edge_constructor_exists():
+    assert callable(Graph_Edge.__init__)
 
 
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(Graph::Edge.__init__)
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(Graph_Edge.__init__)
     params = list(sig.parameters.keys())
-    assert "degree" in params, "Missing parameter 'degree'"
     assert "relation" in params, "Missing parameter 'relation'"
+    assert "degree" in params, "Missing parameter 'degree'"
 
-def test_graph::edge_has_degree():
-    assert hasattr(Graph::Edge, "degree")
+def test_graph_edge_has_relation():
+    assert hasattr(Graph_Edge, "relation")
     descriptor = None
-    for klass in Graph::Edge.__mro__:
-        if "degree" in klass.__dict__:
-            descriptor = klass.__dict__["degree"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graph::edge_has_relation():
-    assert hasattr(Graph::Edge, "relation")
-    descriptor = None
-    for klass in Graph::Edge.__mro__:
+    for klass in Graph_Edge.__mro__:
         if "relation" in klass.__dict__:
             descriptor = klass.__dict__["relation"]
             break
     assert isinstance(descriptor, property)
 
+def test_graph_edge_has_degree():
+    assert hasattr(Graph_Edge, "degree")
+    descriptor = None
+    for klass in Graph_Edge.__mro__:
+        if "degree" in klass.__dict__:
+            descriptor = klass.__dict__["degree"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graph::node_is_not_abstract():
-    assert not inspect.isabstract(Graph::Node)
+
+def test_graph_node_is_not_abstract():
+    assert not inspect.isabstract(Graph_Node)
 
 
-def test_graph::node_constructor_exists():
-    assert callable(Graph::Node.__init__)
+def test_graph_node_constructor_exists():
+    assert callable(Graph_Node.__init__)
 
 
-def test_graph::node_constructor_args():
-    sig = inspect.signature(Graph::Node.__init__)
+def test_graph_node_constructor_args():
+    sig = inspect.signature(Graph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::node_has_name():
-    assert hasattr(Graph::Node, "name")
+def test_graph_node_has_name():
+    assert hasattr(Graph_Node, "name")
     descriptor = None
-    for klass in Graph::Node.__mro__:
+    for klass in Graph_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -75,16 +75,16 @@ def test_graph::node_has_name():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(Graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(Graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(Graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(Graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(Graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(Graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Graph::Edge_strategy = st.builds(
-    Graph::Edge,
-    degree=
-        st.integers(),
+Graph_Edge_strategy = st.builds(
+    Graph_Edge,
     relation=
-        safe_text
+        safe_text,
+    degree=
+        st.integers()
 )
-Graph::Node_strategy = st.builds(
-    Graph::Node,
+Graph_Node_strategy = st.builds(
+    Graph_Node,
     name=
         safe_text
 )
-Graph::Graph_strategy = st.builds(
-    Graph::Graph,
+Graph_Graph_strategy = st.builds(
+    Graph_Graph,
 )
 
-@given(instance=Graph::Edge_strategy)
+@given(instance=Graph_Edge_strategy)
 @settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, Graph::Edge)
-
-@given(instance=Graph::Edge_strategy)
-def test_graph::edge_degree_type(instance):
-    assert isinstance(instance.degree, int)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, Graph_Edge)
 
 
-@given(instance=Graph::Edge_strategy)
-def test_graph::edge_degree_setter(instance):
-    original = instance.degree
-    instance.degree = original
-    assert instance.degree == original
 
-@given(instance=Graph::Edge_strategy)
-def test_graph::edge_relation_type(instance):
-    assert isinstance(instance.relation, str)
-
-
-@given(instance=Graph::Edge_strategy)
-def test_graph::edge_relation_setter(instance):
+@given(instance=Graph_Edge_strategy)
+def test_graph_edge_relation_setter(instance):
     original = instance.relation
     instance.relation = original
     assert instance.relation == original
 
-@given(instance=Graph::Node_strategy)
+
+
+@given(instance=Graph_Edge_strategy)
+def test_graph_edge_degree_setter(instance):
+    original = instance.degree
+    instance.degree = original
+    assert instance.degree == original
+
+@given(instance=Graph_Node_strategy)
 @settings(max_examples=50)
-def test_graph::node_instantiation(instance):
-    assert isinstance(instance, Graph::Node)
-
-@given(instance=Graph::Node_strategy)
-def test_graph::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_node_instantiation(instance):
+    assert isinstance(instance, Graph_Node)
 
 
-@given(instance=Graph::Node_strategy)
-def test_graph::node_name_setter(instance):
+
+@given(instance=Graph_Node_strategy)
+def test_graph_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Graph::Graph_strategy)
+@given(instance=Graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, Graph::Graph)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, Graph_Graph)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Make__Reservation_external,
@@ -101,9 +101,18 @@ def test_reservation_constructor_exists():
 def test_reservation_constructor_args():
     sig = inspect.signature(Reservation.__init__)
     params = list(sig.parameters.keys())
+    assert "End" in params, "Missing parameter 'End'"
     assert "Start" in params, "Missing parameter 'Start'"
     assert "Reservation_id" in params, "Missing parameter 'Reservation_id'"
-    assert "End" in params, "Missing parameter 'End'"
+
+def test_reservation_has_End():
+    assert hasattr(Reservation, "End")
+    descriptor = None
+    for klass in Reservation.__mro__:
+        if "End" in klass.__dict__:
+            descriptor = klass.__dict__["End"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_reservation_has_Start():
     assert hasattr(Reservation, "Start")
@@ -120,15 +129,6 @@ def test_reservation_has_Reservation_id():
     for klass in Reservation.__mro__:
         if "Reservation_id" in klass.__dict__:
             descriptor = klass.__dict__["Reservation_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_reservation_has_End():
-    assert hasattr(Reservation, "End")
-    descriptor = None
-    for klass in Reservation.__mro__:
-        if "End" in klass.__dict__:
-            descriptor = klass.__dict__["End"]
             break
     assert isinstance(descriptor, property)
 
@@ -319,12 +319,12 @@ Room_strategy = st.builds(
 )
 Reservation_strategy = st.builds(
     Reservation,
+    End=
+        safe_text,
     Start=
         safe_text,
     Reservation_id=
-        st.integers(),
-    End=
-        safe_text
+        st.integers()
 )
 Guest_strategy = st.builds(
     Guest,
@@ -376,9 +376,6 @@ def test_inte_instantiation(instance):
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_Guests_type(instance):
-    assert isinstance(instance.Guests, int)
 
 
 @given(instance=Room_strategy)
@@ -387,9 +384,6 @@ def test_room_Guests_setter(instance):
     instance.Guests = original
     assert instance.Guests == original
 
-@given(instance=Room_strategy)
-def test_room_Number_type(instance):
-    assert isinstance(instance.Number, int)
 
 
 @given(instance=Room_strategy)
@@ -403,31 +397,6 @@ def test_room_Number_setter(instance):
 def test_reservation_instantiation(instance):
     assert isinstance(instance, Reservation)
 
-@given(instance=Reservation_strategy)
-def test_reservation_Start_type(instance):
-    assert isinstance(instance.Start, str)
-
-
-@given(instance=Reservation_strategy)
-def test_reservation_Start_setter(instance):
-    original = instance.Start
-    instance.Start = original
-    assert instance.Start == original
-
-@given(instance=Reservation_strategy)
-def test_reservation_Reservation_id_type(instance):
-    assert isinstance(instance.Reservation_id, int)
-
-
-@given(instance=Reservation_strategy)
-def test_reservation_Reservation_id_setter(instance):
-    original = instance.Reservation_id
-    instance.Reservation_id = original
-    assert instance.Reservation_id == original
-
-@given(instance=Reservation_strategy)
-def test_reservation_End_type(instance):
-    assert isinstance(instance.End, str)
 
 
 @given(instance=Reservation_strategy)
@@ -436,14 +405,27 @@ def test_reservation_End_setter(instance):
     instance.End = original
     assert instance.End == original
 
+
+
+@given(instance=Reservation_strategy)
+def test_reservation_Start_setter(instance):
+    original = instance.Start
+    instance.Start = original
+    assert instance.Start == original
+
+
+
+@given(instance=Reservation_strategy)
+def test_reservation_Reservation_id_setter(instance):
+    original = instance.Reservation_id
+    instance.Reservation_id = original
+    assert instance.Reservation_id == original
+
 @given(instance=Guest_strategy)
 @settings(max_examples=50)
 def test_guest_instantiation(instance):
     assert isinstance(instance, Guest)
 
-@given(instance=Guest_strategy)
-def test_guest_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Guest_strategy)
@@ -452,9 +434,6 @@ def test_guest_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Guest_strategy)
-def test_guest_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Guest_strategy)

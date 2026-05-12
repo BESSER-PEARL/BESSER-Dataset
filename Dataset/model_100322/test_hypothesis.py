@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pnextensions::pnutils::PnUtils,
-    pnextensions::pnutils::ToolInfoUtils,
-    pnextensions::pnutils::DataTypeUtils,
+from python_code import (
+    pnextensions_pnutils_PnUtils,
+    pnextensions_pnutils_ToolInfoUtils,
+    pnextensions_pnutils_DataTypeUtils,
+    ToolInfoConstants,
     ServerType,
     TransitionKind,
-    ToolInfoConstants,
 )
 
 # =============================================================================
@@ -20,45 +20,61 @@ from classes import (
 
 
 
-def test_pnextensions::pnutils::pnutils_is_not_abstract():
-    assert not inspect.isabstract(pnextensions::pnutils::PnUtils)
+def test_pnextensions_pnutils_pnutils_is_not_abstract():
+    assert not inspect.isabstract(pnextensions_pnutils_PnUtils)
 
 
-def test_pnextensions::pnutils::pnutils_constructor_exists():
-    assert callable(pnextensions::pnutils::PnUtils.__init__)
+def test_pnextensions_pnutils_pnutils_constructor_exists():
+    assert callable(pnextensions_pnutils_PnUtils.__init__)
 
 
-def test_pnextensions::pnutils::pnutils_constructor_args():
-    sig = inspect.signature(pnextensions::pnutils::PnUtils.__init__)
+def test_pnextensions_pnutils_pnutils_constructor_args():
+    sig = inspect.signature(pnextensions_pnutils_PnUtils.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnextensions::pnutils::toolinfoutils_is_not_abstract():
-    assert not inspect.isabstract(pnextensions::pnutils::ToolInfoUtils)
+def test_pnextensions_pnutils_toolinfoutils_is_not_abstract():
+    assert not inspect.isabstract(pnextensions_pnutils_ToolInfoUtils)
 
 
-def test_pnextensions::pnutils::toolinfoutils_constructor_exists():
-    assert callable(pnextensions::pnutils::ToolInfoUtils.__init__)
+def test_pnextensions_pnutils_toolinfoutils_constructor_exists():
+    assert callable(pnextensions_pnutils_ToolInfoUtils.__init__)
 
 
-def test_pnextensions::pnutils::toolinfoutils_constructor_args():
-    sig = inspect.signature(pnextensions::pnutils::ToolInfoUtils.__init__)
+def test_pnextensions_pnutils_toolinfoutils_constructor_args():
+    sig = inspect.signature(pnextensions_pnutils_ToolInfoUtils.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnextensions::pnutils::datatypeutils_is_not_abstract():
-    assert not inspect.isabstract(pnextensions::pnutils::DataTypeUtils)
+def test_pnextensions_pnutils_datatypeutils_is_not_abstract():
+    assert not inspect.isabstract(pnextensions_pnutils_DataTypeUtils)
 
 
-def test_pnextensions::pnutils::datatypeutils_constructor_exists():
-    assert callable(pnextensions::pnutils::DataTypeUtils.__init__)
+def test_pnextensions_pnutils_datatypeutils_constructor_exists():
+    assert callable(pnextensions_pnutils_DataTypeUtils.__init__)
 
 
-def test_pnextensions::pnutils::datatypeutils_constructor_args():
-    sig = inspect.signature(pnextensions::pnutils::DataTypeUtils.__init__)
+def test_pnextensions_pnutils_datatypeutils_constructor_args():
+    sig = inspect.signature(pnextensions_pnutils_DataTypeUtils.__init__)
     params = list(sig.parameters.keys())
+
+def test_toolinfoconstants_exists():
+    # Check that the Enumeration exists
+    assert ToolInfoConstants is not None
+
+def test_toolinfoconstants_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ToolInfoConstants]
+    expected_literals = [
+        "uri",
+        "toolName",
+        "toolVersion",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ToolInfoConstants"
 
 def test_servertype_exists():
     # Check that the Enumeration exists
@@ -68,10 +84,10 @@ def test_servertype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ServerType]
     expected_literals = [
-        "OneServer",
-        "MarkingDependent",
-        "InfiniteServer",
         "LoadDependent",
+        "InfiniteServer",
+        "MarkingDependent",
+        "OneServer",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -86,28 +102,12 @@ def test_transitionkind_has_all_literals():
     enum_literals = [lit.name for lit in TransitionKind]
     expected_literals = [
         "Immediate",
-        "Exponential",
         "Deterministic",
+        "Exponential",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TransitionKind"
-
-def test_toolinfoconstants_exists():
-    # Check that the Enumeration exists
-    assert ToolInfoConstants is not None
-
-def test_toolinfoconstants_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ToolInfoConstants]
-    expected_literals = [
-        "toolName",
-        "toolVersion",
-        "uri",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ToolInfoConstants"
 
 
 # =============================================================================
@@ -121,20 +121,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pnextensions::pnutils::PnUtils_strategy = st.builds(
-    pnextensions::pnutils::PnUtils,
+pnextensions_pnutils_PnUtils_strategy = st.builds(
+    pnextensions_pnutils_PnUtils,
 )
-pnextensions::pnutils::ToolInfoUtils_strategy = st.builds(
-    pnextensions::pnutils::ToolInfoUtils,
+pnextensions_pnutils_ToolInfoUtils_strategy = st.builds(
+    pnextensions_pnutils_ToolInfoUtils,
 )
-pnextensions::pnutils::DataTypeUtils_strategy = st.builds(
-    pnextensions::pnutils::DataTypeUtils,
+pnextensions_pnutils_DataTypeUtils_strategy = st.builds(
+    pnextensions_pnutils_DataTypeUtils,
 )
 
-@given(instance=pnextensions::pnutils::PnUtils_strategy)
+@given(instance=pnextensions_pnutils_PnUtils_strategy)
 @settings(max_examples=50)
-def test_pnextensions::pnutils::pnutils_instantiation(instance):
-    assert isinstance(instance, pnextensions::pnutils::PnUtils)
+def test_pnextensions_pnutils_pnutils_instantiation(instance):
+    assert isinstance(instance, pnextensions_pnutils_PnUtils)
 
 import warnings
 import copy
@@ -142,9 +142,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::PnUtils_strategy)
+@given(instance=pnextensions_pnutils_PnUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::pnutils_layout_changes_state(instance):
+def test_pnextensions_pnutils_pnutils_layout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -158,19 +158,19 @@ def test_pnextensions::pnutils::pnutils_layout_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'layout' in pnextensions::pnutils::PnUtils is empty"
+        assert has_statements, f"Function 'layout' in pnextensions_pnutils_PnUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'layout' in pnextensions::pnutils::PnUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'layout' in pnextensions_pnutils_PnUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'layout' in pnextensions::pnutils::PnUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'layout' in pnextensions_pnutils_PnUtils is not implemented or raised an error")
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=50)
-def test_pnextensions::pnutils::toolinfoutils_instantiation(instance):
-    assert isinstance(instance, pnextensions::pnutils::ToolInfoUtils)
+def test_pnextensions_pnutils_toolinfoutils_instantiation(instance):
+    assert isinstance(instance, pnextensions_pnutils_ToolInfoUtils)
 
 import warnings
 import copy
@@ -178,9 +178,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_settransitionservertype_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_settransitionservertype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -196,14 +196,14 @@ def test_pnextensions::pnutils::toolinfoutils_settransitionservertype_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setTransitionServerType' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'setTransitionServerType' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setTransitionServerType' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'setTransitionServerType' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setTransitionServerType' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'setTransitionServerType' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -211,31 +211,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_deletetoolinfoentrybygrammaruri_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_istransitionservertype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.deleteToolInfoEntryByGrammarUri(
+        instance.isTransitionServerType(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.deleteToolInfoEntryByGrammarUri).strip()
+        source = inspect.getsource(instance.isTransitionServerType).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'deleteToolInfoEntryByGrammarUri' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'isTransitionServerType' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'deleteToolInfoEntryByGrammarUri' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'isTransitionServerType' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'deleteToolInfoEntryByGrammarUri' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'isTransitionServerType' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -243,32 +243,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_settransitionkind_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_iseobjectvalidpnobject_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.setTransitionKind(
-            "test", 
-            "test", 
+        instance.isEObjectValidPnObject(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setTransitionKind).strip()
+        source = inspect.getsource(instance.isEObjectValidPnObject).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setTransitionKind' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'isEObjectValidPnObject' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setTransitionKind' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'isEObjectValidPnObject' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setTransitionKind' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEObjectValidPnObject' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -276,9 +274,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_iseobjectvalidtransition_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_iseobjectvalidtransition_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -292,14 +290,14 @@ def test_pnextensions::pnutils::toolinfoutils_iseobjectvalidtransition_changes_s
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEObjectValidTransition' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'isEObjectValidTransition' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEObjectValidTransition' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'isEObjectValidTransition' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEObjectValidTransition' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEObjectValidTransition' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -307,9 +305,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_istransitionkind_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_istransitionkind_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -324,14 +322,14 @@ def test_pnextensions::pnutils::toolinfoutils_istransitionkind_changes_state(ins
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isTransitionKind' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'isTransitionKind' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isTransitionKind' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'isTransitionKind' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isTransitionKind' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'isTransitionKind' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -339,9 +337,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_settoolinfoentrybygrammaruri_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_settoolinfoentrybygrammaruri_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -357,14 +355,14 @@ def test_pnextensions::pnutils::toolinfoutils_settoolinfoentrybygrammaruri_chang
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setToolInfoEntryByGrammarUri' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'setToolInfoEntryByGrammarUri' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setToolInfoEntryByGrammarUri' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'setToolInfoEntryByGrammarUri' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setToolInfoEntryByGrammarUri' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'setToolInfoEntryByGrammarUri' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -372,31 +370,32 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_istransitionservertype_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_settransitionkind_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isTransitionServerType(
+        instance.setTransitionKind(
+            "test", 
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isTransitionServerType).strip()
+        source = inspect.getsource(instance.setTransitionKind).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isTransitionServerType' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'setTransitionKind' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isTransitionServerType' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'setTransitionKind' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isTransitionServerType' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'setTransitionKind' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -404,35 +403,36 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::ToolInfoUtils_strategy)
+@given(instance=pnextensions_pnutils_ToolInfoUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::toolinfoutils_iseobjectvalidpnobject_changes_state(instance):
+def test_pnextensions_pnutils_toolinfoutils_deletetoolinfoentrybygrammaruri_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isEObjectValidPnObject(
+        instance.deleteToolInfoEntryByGrammarUri(
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isEObjectValidPnObject).strip()
+        source = inspect.getsource(instance.deleteToolInfoEntryByGrammarUri).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEObjectValidPnObject' in pnextensions::pnutils::ToolInfoUtils is empty"
+        assert has_statements, f"Function 'deleteToolInfoEntryByGrammarUri' in pnextensions_pnutils_ToolInfoUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEObjectValidPnObject' in pnextensions::pnutils::ToolInfoUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'deleteToolInfoEntryByGrammarUri' in pnextensions_pnutils_ToolInfoUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEObjectValidPnObject' in pnextensions::pnutils::ToolInfoUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'deleteToolInfoEntryByGrammarUri' in pnextensions_pnutils_ToolInfoUtils is not implemented or raised an error")
 
-@given(instance=pnextensions::pnutils::DataTypeUtils_strategy)
+@given(instance=pnextensions_pnutils_DataTypeUtils_strategy)
 @settings(max_examples=50)
-def test_pnextensions::pnutils::datatypeutils_instantiation(instance):
-    assert isinstance(instance, pnextensions::pnutils::DataTypeUtils)
+def test_pnextensions_pnutils_datatypeutils_instantiation(instance):
+    assert isinstance(instance, pnextensions_pnutils_DataTypeUtils)
 
 import warnings
 import copy
@@ -440,9 +440,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::DataTypeUtils_strategy)
+@given(instance=pnextensions_pnutils_DataTypeUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::datatypeutils_createuri_changes_state(instance):
+def test_pnextensions_pnutils_datatypeutils_createuri_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -456,14 +456,14 @@ def test_pnextensions::pnutils::datatypeutils_createuri_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createURI' in pnextensions::pnutils::DataTypeUtils is empty"
+        assert has_statements, f"Function 'createURI' in pnextensions_pnutils_DataTypeUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createURI' in pnextensions::pnutils::DataTypeUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'createURI' in pnextensions_pnutils_DataTypeUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createURI' in pnextensions::pnutils::DataTypeUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'createURI' in pnextensions_pnutils_DataTypeUtils is not implemented or raised an error")
 
 import warnings
 import copy
@@ -471,9 +471,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pnextensions::pnutils::DataTypeUtils_strategy)
+@given(instance=pnextensions_pnutils_DataTypeUtils_strategy)
 @settings(max_examples=30)
-def test_pnextensions::pnutils::datatypeutils_createlongstring_changes_state(instance):
+def test_pnextensions_pnutils_datatypeutils_createlongstring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -487,11 +487,11 @@ def test_pnextensions::pnutils::datatypeutils_createlongstring_changes_state(ins
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createLongString' in pnextensions::pnutils::DataTypeUtils is empty"
+        assert has_statements, f"Function 'createLongString' in pnextensions_pnutils_DataTypeUtils is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createLongString' in pnextensions::pnutils::DataTypeUtils did not change state; check implementation")
+            warnings.warn(f"Operation 'createLongString' in pnextensions_pnutils_DataTypeUtils did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createLongString' in pnextensions::pnutils::DataTypeUtils is not implemented or raised an error")
+        warnings.warn(f"Operation 'createLongString' in pnextensions_pnutils_DataTypeUtils is not implemented or raised an error")

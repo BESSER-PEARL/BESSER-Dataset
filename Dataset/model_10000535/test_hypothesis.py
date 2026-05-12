@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     JFrame,
@@ -49,13 +49,13 @@ from python_code import (
     JTextArea,
     Font,
     JTextField,
-    ArrayList_Integer_,
-    ProcessState,
-    Memory__,
-    ArrayList_Interrupter_,
-    ArrayList_ProcessData_,
     Page__,
     ArrayList_Instruction_,
+    ArrayList_ProcessData_,
+    ProcessState,
+    Memory__,
+    ArrayList_Integer_,
+    ArrayList_Interrupter_,
 )
 
 # =============================================================================
@@ -89,18 +89,9 @@ def test_programfiledata_constructor_exists():
 def test_programfiledata_constructor_args():
     sig = inspect.signature(ProgramFileData.__init__)
     params = list(sig.parameters.keys())
-    assert "memory" in params, "Missing parameter 'memory'"
     assert "instructions" in params, "Missing parameter 'instructions'"
+    assert "memory" in params, "Missing parameter 'memory'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_programfiledata_has_memory():
-    assert hasattr(ProgramFileData, "memory")
-    descriptor = None
-    for klass in ProgramFileData.__mro__:
-        if "memory" in klass.__dict__:
-            descriptor = klass.__dict__["memory"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_programfiledata_has_instructions():
     assert hasattr(ProgramFileData, "instructions")
@@ -108,6 +99,15 @@ def test_programfiledata_has_instructions():
     for klass in ProgramFileData.__mro__:
         if "instructions" in klass.__dict__:
             descriptor = klass.__dict__["instructions"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_programfiledata_has_memory():
+    assert hasattr(ProgramFileData, "memory")
+    descriptor = None
+    for klass in ProgramFileData.__mro__:
+        if "memory" in klass.__dict__:
+            descriptor = klass.__dict__["memory"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,9 +134,9 @@ def test_processdata_constructor_args():
     sig = inspect.signature(ProcessData.__init__)
     params = list(sig.parameters.keys())
     assert "memory" in params, "Missing parameter 'memory'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "startTime" in params, "Missing parameter 'startTime'"
     assert "instructions" in params, "Missing parameter 'instructions'"
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_processdata_has_memory():
     assert hasattr(ProcessData, "memory")
@@ -144,15 +144,6 @@ def test_processdata_has_memory():
     for klass in ProcessData.__mro__:
         if "memory" in klass.__dict__:
             descriptor = klass.__dict__["memory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_processdata_has_name():
-    assert hasattr(ProcessData, "name")
-    descriptor = None
-    for klass in ProcessData.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -174,6 +165,15 @@ def test_processdata_has_instructions():
             break
     assert isinstance(descriptor, property)
 
+def test_processdata_has_name():
+    assert hasattr(ProcessData, "name")
+    descriptor = None
+    for klass in ProcessData.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_process_is_not_abstract():
@@ -187,10 +187,19 @@ def test_process_constructor_exists():
 def test_process_constructor_args():
     sig = inspect.signature(Process.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "processState" in params, "Missing parameter 'processState'"
     assert "memoryUseage" in params, "Missing parameter 'memoryUseage'"
     assert "registers" in params, "Missing parameter 'registers'"
-    assert "name" in params, "Missing parameter 'name'"
+
+def test_process_has_name():
+    assert hasattr(Process, "name")
+    descriptor = None
+    for klass in Process.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_process_has_processState():
     assert hasattr(Process, "processState")
@@ -216,15 +225,6 @@ def test_process_has_registers():
     for klass in Process.__mro__:
         if "registers" in klass.__dict__:
             descriptor = klass.__dict__["registers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_process_has_name():
-    assert hasattr(Process, "name")
-    descriptor = None
-    for klass in Process.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -255,18 +255,9 @@ def test_page_constructor_exists():
 def test_page_constructor_args():
     sig = inspect.signature(Page.__init__)
     params = list(sig.parameters.keys())
-    assert "free" in params, "Missing parameter 'free'"
     assert "owner" in params, "Missing parameter 'owner'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_page_has_free():
-    assert hasattr(Page, "free")
-    descriptor = None
-    for klass in Page.__mro__:
-        if "free" in klass.__dict__:
-            descriptor = klass.__dict__["free"]
-            break
-    assert isinstance(descriptor, property)
+    assert "free" in params, "Missing parameter 'free'"
 
 def test_page_has_owner():
     assert hasattr(Page, "owner")
@@ -283,6 +274,15 @@ def test_page_has_attribute():
     for klass in Page.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_page_has_free():
+    assert hasattr(Page, "free")
+    descriptor = None
+    for klass in Page.__mro__:
+        if "free" in klass.__dict__:
+            descriptor = klass.__dict__["free"]
             break
     assert isinstance(descriptor, property)
 
@@ -327,33 +327,15 @@ def test_prompt_constructor_exists():
 def test_prompt_constructor_args():
     sig = inspect.signature(Prompt.__init__)
     params = list(sig.parameters.keys())
-    assert "frameFont" in params, "Missing parameter 'frameFont'"
-    assert "frame" in params, "Missing parameter 'frame'"
     assert "MAX_COMMAND_LENGTH" in params, "Missing parameter 'MAX_COMMAND_LENGTH'"
     assert "FONT_SIZE" in params, "Missing parameter 'FONT_SIZE'"
     assert "commandLine" in params, "Missing parameter 'commandLine'"
-    assert "output" in params, "Missing parameter 'output'"
-    assert "OUTPUT_WIDTH" in params, "Missing parameter 'OUTPUT_WIDTH'"
-    assert "OUTPUT_HEIGHT" in params, "Missing parameter 'OUTPUT_HEIGHT'"
+    assert "frameFont" in params, "Missing parameter 'frameFont'"
+    assert "frame" in params, "Missing parameter 'frame'"
     assert "queuePosition" in params, "Missing parameter 'queuePosition'"
-
-def test_prompt_has_frameFont():
-    assert hasattr(Prompt, "frameFont")
-    descriptor = None
-    for klass in Prompt.__mro__:
-        if "frameFont" in klass.__dict__:
-            descriptor = klass.__dict__["frameFont"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prompt_has_frame():
-    assert hasattr(Prompt, "frame")
-    descriptor = None
-    for klass in Prompt.__mro__:
-        if "frame" in klass.__dict__:
-            descriptor = klass.__dict__["frame"]
-            break
-    assert isinstance(descriptor, property)
+    assert "OUTPUT_WIDTH" in params, "Missing parameter 'OUTPUT_WIDTH'"
+    assert "output" in params, "Missing parameter 'output'"
+    assert "OUTPUT_HEIGHT" in params, "Missing parameter 'OUTPUT_HEIGHT'"
 
 def test_prompt_has_MAX_COMMAND_LENGTH():
     assert hasattr(Prompt, "MAX_COMMAND_LENGTH")
@@ -382,12 +364,30 @@ def test_prompt_has_commandLine():
             break
     assert isinstance(descriptor, property)
 
-def test_prompt_has_output():
-    assert hasattr(Prompt, "output")
+def test_prompt_has_frameFont():
+    assert hasattr(Prompt, "frameFont")
     descriptor = None
     for klass in Prompt.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
+        if "frameFont" in klass.__dict__:
+            descriptor = klass.__dict__["frameFont"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prompt_has_frame():
+    assert hasattr(Prompt, "frame")
+    descriptor = None
+    for klass in Prompt.__mro__:
+        if "frame" in klass.__dict__:
+            descriptor = klass.__dict__["frame"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prompt_has_queuePosition():
+    assert hasattr(Prompt, "queuePosition")
+    descriptor = None
+    for klass in Prompt.__mro__:
+        if "queuePosition" in klass.__dict__:
+            descriptor = klass.__dict__["queuePosition"]
             break
     assert isinstance(descriptor, property)
 
@@ -400,21 +400,21 @@ def test_prompt_has_OUTPUT_WIDTH():
             break
     assert isinstance(descriptor, property)
 
+def test_prompt_has_output():
+    assert hasattr(Prompt, "output")
+    descriptor = None
+    for klass in Prompt.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_prompt_has_OUTPUT_HEIGHT():
     assert hasattr(Prompt, "OUTPUT_HEIGHT")
     descriptor = None
     for klass in Prompt.__mro__:
         if "OUTPUT_HEIGHT" in klass.__dict__:
             descriptor = klass.__dict__["OUTPUT_HEIGHT"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prompt_has_queuePosition():
-    assert hasattr(Prompt, "queuePosition")
-    descriptor = None
-    for klass in Prompt.__mro__:
-        if "queuePosition" in klass.__dict__:
-            descriptor = klass.__dict__["queuePosition"]
             break
     assert isinstance(descriptor, property)
 
@@ -480,9 +480,9 @@ def test_scheduler_constructor_args():
     sig = inspect.signature(Scheduler.__init__)
     params = list(sig.parameters.keys())
     assert "newQueue" in params, "Missing parameter 'newQueue'"
+    assert "readyQueue" in params, "Missing parameter 'readyQueue'"
     assert "ioQueue" in params, "Missing parameter 'ioQueue'"
     assert "identifier" in params, "Missing parameter 'identifier'"
-    assert "readyQueue" in params, "Missing parameter 'readyQueue'"
 
 def test_scheduler_has_newQueue():
     assert hasattr(Scheduler, "newQueue")
@@ -490,6 +490,15 @@ def test_scheduler_has_newQueue():
     for klass in Scheduler.__mro__:
         if "newQueue" in klass.__dict__:
             descriptor = klass.__dict__["newQueue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scheduler_has_readyQueue():
+    assert hasattr(Scheduler, "readyQueue")
+    descriptor = None
+    for klass in Scheduler.__mro__:
+        if "readyQueue" in klass.__dict__:
+            descriptor = klass.__dict__["readyQueue"]
             break
     assert isinstance(descriptor, property)
 
@@ -511,15 +520,6 @@ def test_scheduler_has_identifier():
             break
     assert isinstance(descriptor, property)
 
-def test_scheduler_has_readyQueue():
-    assert hasattr(Scheduler, "readyQueue")
-    descriptor = None
-    for klass in Scheduler.__mro__:
-        if "readyQueue" in klass.__dict__:
-            descriptor = klass.__dict__["readyQueue"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_memory_is_not_abstract():
@@ -533,17 +533,8 @@ def test_memory_constructor_exists():
 def test_memory_constructor_args():
     sig = inspect.signature(Memory.__init__)
     params = list(sig.parameters.keys())
-    assert "memory" in params, "Missing parameter 'memory'"
     assert "table" in params, "Missing parameter 'table'"
-
-def test_memory_has_memory():
-    assert hasattr(Memory, "memory")
-    descriptor = None
-    for klass in Memory.__mro__:
-        if "memory" in klass.__dict__:
-            descriptor = klass.__dict__["memory"]
-            break
-    assert isinstance(descriptor, property)
+    assert "memory" in params, "Missing parameter 'memory'"
 
 def test_memory_has_table():
     assert hasattr(Memory, "table")
@@ -551,6 +542,15 @@ def test_memory_has_table():
     for klass in Memory.__mro__:
         if "table" in klass.__dict__:
             descriptor = klass.__dict__["table"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_memory_has_memory():
+    assert hasattr(Memory, "memory")
+    descriptor = None
+    for klass in Memory.__mro__:
+        if "memory" in klass.__dict__:
+            descriptor = klass.__dict__["memory"]
             break
     assert isinstance(descriptor, property)
 
@@ -639,79 +639,25 @@ def test_operating_system_constructor_exists():
 def test_operating_system_constructor_args():
     sig = inspect.signature(Operating_System.__init__)
     params = list(sig.parameters.keys())
-    assert "INSTRUCTION_REGISTER" in params, "Missing parameter 'INSTRUCTION_REGISTER'"
-    assert "hardDrive" in params, "Missing parameter 'hardDrive'"
-    assert "QUANTUM" in params, "Missing parameter 'QUANTUM'"
-    assert "PROCESS_ID_REGISTER" in params, "Missing parameter 'PROCESS_ID_REGISTER'"
-    assert "MEMORY_SIZE" in params, "Missing parameter 'MEMORY_SIZE'"
-    assert "NUMBER_OF_REGISTERS" in params, "Missing parameter 'NUMBER_OF_REGISTERS'"
     assert "memory" in params, "Missing parameter 'memory'"
-    assert "taskManager" in params, "Missing parameter 'taskManager'"
-    assert "PROC_DATA_POINTER" in params, "Missing parameter 'PROC_DATA_POINTER'"
-    assert "dispatcher" in params, "Missing parameter 'dispatcher'"
-    assert "cpu" in params, "Missing parameter 'cpu'"
-    assert "PROC_BASE_POINTER" in params, "Missing parameter 'PROC_BASE_POINTER'"
-    assert "device" in params, "Missing parameter 'device'"
-    assert "clock" in params, "Missing parameter 'clock'"
-    assert "PAGE_SIZE" in params, "Missing parameter 'PAGE_SIZE'"
+    assert "hardDrive" in params, "Missing parameter 'hardDrive'"
     assert "prompt" in params, "Missing parameter 'prompt'"
     assert "scheduler" in params, "Missing parameter 'scheduler'"
-    assert "PROC_BASE_REGISTER" in params, "Missing parameter 'PROC_BASE_REGISTER'"
+    assert "PROC_DATA_POINTER" in params, "Missing parameter 'PROC_DATA_POINTER'"
+    assert "clock" in params, "Missing parameter 'clock'"
+    assert "NUMBER_OF_REGISTERS" in params, "Missing parameter 'NUMBER_OF_REGISTERS'"
+    assert "INSTRUCTION_REGISTER" in params, "Missing parameter 'INSTRUCTION_REGISTER'"
+    assert "PROC_BASE_POINTER" in params, "Missing parameter 'PROC_BASE_POINTER'"
     assert "PROC_LIMIT_REGISTER" in params, "Missing parameter 'PROC_LIMIT_REGISTER'"
-
-def test_operating_system_has_INSTRUCTION_REGISTER():
-    assert hasattr(Operating_System, "INSTRUCTION_REGISTER")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "INSTRUCTION_REGISTER" in klass.__dict__:
-            descriptor = klass.__dict__["INSTRUCTION_REGISTER"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_hardDrive():
-    assert hasattr(Operating_System, "hardDrive")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "hardDrive" in klass.__dict__:
-            descriptor = klass.__dict__["hardDrive"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_QUANTUM():
-    assert hasattr(Operating_System, "QUANTUM")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "QUANTUM" in klass.__dict__:
-            descriptor = klass.__dict__["QUANTUM"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_PROCESS_ID_REGISTER():
-    assert hasattr(Operating_System, "PROCESS_ID_REGISTER")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "PROCESS_ID_REGISTER" in klass.__dict__:
-            descriptor = klass.__dict__["PROCESS_ID_REGISTER"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_MEMORY_SIZE():
-    assert hasattr(Operating_System, "MEMORY_SIZE")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "MEMORY_SIZE" in klass.__dict__:
-            descriptor = klass.__dict__["MEMORY_SIZE"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_NUMBER_OF_REGISTERS():
-    assert hasattr(Operating_System, "NUMBER_OF_REGISTERS")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "NUMBER_OF_REGISTERS" in klass.__dict__:
-            descriptor = klass.__dict__["NUMBER_OF_REGISTERS"]
-            break
-    assert isinstance(descriptor, property)
+    assert "PROC_BASE_REGISTER" in params, "Missing parameter 'PROC_BASE_REGISTER'"
+    assert "device" in params, "Missing parameter 'device'"
+    assert "taskManager" in params, "Missing parameter 'taskManager'"
+    assert "dispatcher" in params, "Missing parameter 'dispatcher'"
+    assert "cpu" in params, "Missing parameter 'cpu'"
+    assert "QUANTUM" in params, "Missing parameter 'QUANTUM'"
+    assert "PROCESS_ID_REGISTER" in params, "Missing parameter 'PROCESS_ID_REGISTER'"
+    assert "PAGE_SIZE" in params, "Missing parameter 'PAGE_SIZE'"
+    assert "MEMORY_SIZE" in params, "Missing parameter 'MEMORY_SIZE'"
 
 def test_operating_system_has_memory():
     assert hasattr(Operating_System, "memory")
@@ -722,75 +668,12 @@ def test_operating_system_has_memory():
             break
     assert isinstance(descriptor, property)
 
-def test_operating_system_has_taskManager():
-    assert hasattr(Operating_System, "taskManager")
+def test_operating_system_has_hardDrive():
+    assert hasattr(Operating_System, "hardDrive")
     descriptor = None
     for klass in Operating_System.__mro__:
-        if "taskManager" in klass.__dict__:
-            descriptor = klass.__dict__["taskManager"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_PROC_DATA_POINTER():
-    assert hasattr(Operating_System, "PROC_DATA_POINTER")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "PROC_DATA_POINTER" in klass.__dict__:
-            descriptor = klass.__dict__["PROC_DATA_POINTER"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_dispatcher():
-    assert hasattr(Operating_System, "dispatcher")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "dispatcher" in klass.__dict__:
-            descriptor = klass.__dict__["dispatcher"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_cpu():
-    assert hasattr(Operating_System, "cpu")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "cpu" in klass.__dict__:
-            descriptor = klass.__dict__["cpu"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_PROC_BASE_POINTER():
-    assert hasattr(Operating_System, "PROC_BASE_POINTER")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "PROC_BASE_POINTER" in klass.__dict__:
-            descriptor = klass.__dict__["PROC_BASE_POINTER"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_device():
-    assert hasattr(Operating_System, "device")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "device" in klass.__dict__:
-            descriptor = klass.__dict__["device"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_clock():
-    assert hasattr(Operating_System, "clock")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "clock" in klass.__dict__:
-            descriptor = klass.__dict__["clock"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operating_system_has_PAGE_SIZE():
-    assert hasattr(Operating_System, "PAGE_SIZE")
-    descriptor = None
-    for klass in Operating_System.__mro__:
-        if "PAGE_SIZE" in klass.__dict__:
-            descriptor = klass.__dict__["PAGE_SIZE"]
+        if "hardDrive" in klass.__dict__:
+            descriptor = klass.__dict__["hardDrive"]
             break
     assert isinstance(descriptor, property)
 
@@ -812,12 +695,48 @@ def test_operating_system_has_scheduler():
             break
     assert isinstance(descriptor, property)
 
-def test_operating_system_has_PROC_BASE_REGISTER():
-    assert hasattr(Operating_System, "PROC_BASE_REGISTER")
+def test_operating_system_has_PROC_DATA_POINTER():
+    assert hasattr(Operating_System, "PROC_DATA_POINTER")
     descriptor = None
     for klass in Operating_System.__mro__:
-        if "PROC_BASE_REGISTER" in klass.__dict__:
-            descriptor = klass.__dict__["PROC_BASE_REGISTER"]
+        if "PROC_DATA_POINTER" in klass.__dict__:
+            descriptor = klass.__dict__["PROC_DATA_POINTER"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_clock():
+    assert hasattr(Operating_System, "clock")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "clock" in klass.__dict__:
+            descriptor = klass.__dict__["clock"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_NUMBER_OF_REGISTERS():
+    assert hasattr(Operating_System, "NUMBER_OF_REGISTERS")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "NUMBER_OF_REGISTERS" in klass.__dict__:
+            descriptor = klass.__dict__["NUMBER_OF_REGISTERS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_INSTRUCTION_REGISTER():
+    assert hasattr(Operating_System, "INSTRUCTION_REGISTER")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "INSTRUCTION_REGISTER" in klass.__dict__:
+            descriptor = klass.__dict__["INSTRUCTION_REGISTER"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_PROC_BASE_POINTER():
+    assert hasattr(Operating_System, "PROC_BASE_POINTER")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "PROC_BASE_POINTER" in klass.__dict__:
+            descriptor = klass.__dict__["PROC_BASE_POINTER"]
             break
     assert isinstance(descriptor, property)
 
@@ -827,6 +746,87 @@ def test_operating_system_has_PROC_LIMIT_REGISTER():
     for klass in Operating_System.__mro__:
         if "PROC_LIMIT_REGISTER" in klass.__dict__:
             descriptor = klass.__dict__["PROC_LIMIT_REGISTER"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_PROC_BASE_REGISTER():
+    assert hasattr(Operating_System, "PROC_BASE_REGISTER")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "PROC_BASE_REGISTER" in klass.__dict__:
+            descriptor = klass.__dict__["PROC_BASE_REGISTER"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_device():
+    assert hasattr(Operating_System, "device")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "device" in klass.__dict__:
+            descriptor = klass.__dict__["device"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_taskManager():
+    assert hasattr(Operating_System, "taskManager")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "taskManager" in klass.__dict__:
+            descriptor = klass.__dict__["taskManager"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_dispatcher():
+    assert hasattr(Operating_System, "dispatcher")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "dispatcher" in klass.__dict__:
+            descriptor = klass.__dict__["dispatcher"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_cpu():
+    assert hasattr(Operating_System, "cpu")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "cpu" in klass.__dict__:
+            descriptor = klass.__dict__["cpu"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_QUANTUM():
+    assert hasattr(Operating_System, "QUANTUM")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "QUANTUM" in klass.__dict__:
+            descriptor = klass.__dict__["QUANTUM"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_PROCESS_ID_REGISTER():
+    assert hasattr(Operating_System, "PROCESS_ID_REGISTER")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "PROCESS_ID_REGISTER" in klass.__dict__:
+            descriptor = klass.__dict__["PROCESS_ID_REGISTER"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_PAGE_SIZE():
+    assert hasattr(Operating_System, "PAGE_SIZE")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "PAGE_SIZE" in klass.__dict__:
+            descriptor = klass.__dict__["PAGE_SIZE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operating_system_has_MEMORY_SIZE():
+    assert hasattr(Operating_System, "MEMORY_SIZE")
+    descriptor = None
+    for klass in Operating_System.__mro__:
+        if "MEMORY_SIZE" in klass.__dict__:
+            descriptor = klass.__dict__["MEMORY_SIZE"]
             break
     assert isinstance(descriptor, property)
 
@@ -843,18 +843,18 @@ def test_task_manager_constructor_exists():
 def test_task_manager_constructor_args():
     sig = inspect.signature(Task_Manager.__init__)
     params = list(sig.parameters.keys())
-    assert "numberOfProcesses" in params, "Missing parameter 'numberOfProcesses'"
+    assert "amountofUsedMemory" in params, "Missing parameter 'amountofUsedMemory'"
     assert "amountofFreeMemory" in params, "Missing parameter 'amountofFreeMemory'"
     assert "scrollPane" in params, "Missing parameter 'scrollPane'"
-    assert "amountofUsedMemory" in params, "Missing parameter 'amountofUsedMemory'"
+    assert "numberOfProcesses" in params, "Missing parameter 'numberOfProcesses'"
     assert "contactTable" in params, "Missing parameter 'contactTable'"
 
-def test_task_manager_has_numberOfProcesses():
-    assert hasattr(Task_Manager, "numberOfProcesses")
+def test_task_manager_has_amountofUsedMemory():
+    assert hasattr(Task_Manager, "amountofUsedMemory")
     descriptor = None
     for klass in Task_Manager.__mro__:
-        if "numberOfProcesses" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfProcesses"]
+        if "amountofUsedMemory" in klass.__dict__:
+            descriptor = klass.__dict__["amountofUsedMemory"]
             break
     assert isinstance(descriptor, property)
 
@@ -876,12 +876,12 @@ def test_task_manager_has_scrollPane():
             break
     assert isinstance(descriptor, property)
 
-def test_task_manager_has_amountofUsedMemory():
-    assert hasattr(Task_Manager, "amountofUsedMemory")
+def test_task_manager_has_numberOfProcesses():
+    assert hasattr(Task_Manager, "numberOfProcesses")
     descriptor = None
     for klass in Task_Manager.__mro__:
-        if "amountofUsedMemory" in klass.__dict__:
-            descriptor = klass.__dict__["amountofUsedMemory"]
+        if "numberOfProcesses" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfProcesses"]
             break
     assert isinstance(descriptor, property)
 
@@ -921,18 +921,9 @@ def test_processtablemodel_constructor_exists():
 def test_processtablemodel_constructor_args():
     sig = inspect.signature(ProcessTableModel.__init__)
     params = list(sig.parameters.keys())
-    assert "processList" in params, "Missing parameter 'processList'"
     assert "numberProcesses" in params, "Missing parameter 'numberProcesses'"
     assert "columnNames" in params, "Missing parameter 'columnNames'"
-
-def test_processtablemodel_has_processList():
-    assert hasattr(ProcessTableModel, "processList")
-    descriptor = None
-    for klass in ProcessTableModel.__mro__:
-        if "processList" in klass.__dict__:
-            descriptor = klass.__dict__["processList"]
-            break
-    assert isinstance(descriptor, property)
+    assert "processList" in params, "Missing parameter 'processList'"
 
 def test_processtablemodel_has_numberProcesses():
     assert hasattr(ProcessTableModel, "numberProcesses")
@@ -949,6 +940,15 @@ def test_processtablemodel_has_columnNames():
     for klass in ProcessTableModel.__mro__:
         if "columnNames" in klass.__dict__:
             descriptor = klass.__dict__["columnNames"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_processtablemodel_has_processList():
+    assert hasattr(ProcessTableModel, "processList")
+    descriptor = None
+    for klass in ProcessTableModel.__mro__:
+        if "processList" in klass.__dict__:
+            descriptor = klass.__dict__["processList"]
             break
     assert isinstance(descriptor, property)
 
@@ -1219,18 +1219,9 @@ def test_request_constructor_exists():
 def test_request_constructor_args():
     sig = inspect.signature(Request.__init__)
     params = list(sig.parameters.keys())
-    assert "processID" in params, "Missing parameter 'processID'"
     assert "startAddress" in params, "Missing parameter 'startAddress'"
     assert "endAddress" in params, "Missing parameter 'endAddress'"
-
-def test_request_has_processID():
-    assert hasattr(Request, "processID")
-    descriptor = None
-    for klass in Request.__mro__:
-        if "processID" in klass.__dict__:
-            descriptor = klass.__dict__["processID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "processID" in params, "Missing parameter 'processID'"
 
 def test_request_has_startAddress():
     assert hasattr(Request, "startAddress")
@@ -1247,6 +1238,15 @@ def test_request_has_endAddress():
     for klass in Request.__mro__:
         if "endAddress" in klass.__dict__:
             descriptor = klass.__dict__["endAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_request_has_processID():
+    assert hasattr(Request, "processID")
+    descriptor = None
+    for klass in Request.__mro__:
+        if "processID" in klass.__dict__:
+            descriptor = klass.__dict__["processID"]
             break
     assert isinstance(descriptor, property)
 
@@ -1334,18 +1334,44 @@ def test_jtextfield_constructor_args():
     sig = inspect.signature(JTextField.__init__)
     params = list(sig.parameters.keys())
 
-def test_arraylist_integer__exists():
+def test_page___exists():
     # Check that the Enumeration exists
-    assert ArrayList_Integer_ is not None
+    assert Page__ is not None
 
-def test_arraylist_integer__has_all_literals():
+def test_page___has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArrayList_Integer_]
+    enum_literals = [lit.name for lit in Page__]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArrayList_Integer_"
+        assert lit_name in enum_literals, f"Literal '' missing in Page__"
+
+def test_arraylist_instruction__exists():
+    # Check that the Enumeration exists
+    assert ArrayList_Instruction_ is not None
+
+def test_arraylist_instruction__has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ArrayList_Instruction_]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ArrayList_Instruction_"
+
+def test_arraylist_processdata__exists():
+    # Check that the Enumeration exists
+    assert ArrayList_ProcessData_ is not None
+
+def test_arraylist_processdata__has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ArrayList_ProcessData_]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ArrayList_ProcessData_"
 
 def test_processstate_exists():
     # Check that the Enumeration exists
@@ -1373,6 +1399,19 @@ def test_memory___has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Memory__"
 
+def test_arraylist_integer__exists():
+    # Check that the Enumeration exists
+    assert ArrayList_Integer_ is not None
+
+def test_arraylist_integer__has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ArrayList_Integer_]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ArrayList_Integer_"
+
 def test_arraylist_interrupter__exists():
     # Check that the Enumeration exists
     assert ArrayList_Interrupter_ is not None
@@ -1385,45 +1424,6 @@ def test_arraylist_interrupter__has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ArrayList_Interrupter_"
-
-def test_arraylist_processdata__exists():
-    # Check that the Enumeration exists
-    assert ArrayList_ProcessData_ is not None
-
-def test_arraylist_processdata__has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArrayList_ProcessData_]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArrayList_ProcessData_"
-
-def test_page___exists():
-    # Check that the Enumeration exists
-    assert Page__ is not None
-
-def test_page___has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Page__]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Page__"
-
-def test_arraylist_instruction__exists():
-    # Check that the Enumeration exists
-    assert ArrayList_Instruction_ is not None
-
-def test_arraylist_instruction__has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArrayList_Instruction_]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArrayList_Instruction_"
 
 
 # =============================================================================
@@ -1442,10 +1442,10 @@ JFrame_strategy = st.builds(
 )
 ProgramFileData_strategy = st.builds(
     ProgramFileData,
-    memory=
-        st.integers(),
     instructions=
         st.none(),
+    memory=
+        st.integers(),
     name=
         safe_text
 )
@@ -1453,22 +1453,22 @@ ProcessData_strategy = st.builds(
     ProcessData,
     memory=
         st.integers(),
-    name=
-        safe_text,
     startTime=
         safe_text,
     instructions=
-        st.none()
+        st.none(),
+    name=
+        safe_text
 )
 Process_strategy = st.builds(
     Process,
+    name=
+        safe_text,
     processState=
         st.none(),
     memoryUseage=
         st.integers(),
     registers=
-        safe_text,
-    name=
         safe_text
 )
 Object_strategy = st.builds(
@@ -1476,12 +1476,12 @@ Object_strategy = st.builds(
 )
 Page_strategy = st.builds(
     Page,
-    free=
-        st.booleans(),
     owner=
         st.none(),
     attribute=
-        safe_text
+        safe_text,
+    free=
+        st.booleans()
 )
 Interrupter_Interface_strategy = st.builds(
     Interrupter_Interface,
@@ -1491,23 +1491,23 @@ Class_strategy = st.builds(
 )
 Prompt_strategy = st.builds(
     Prompt,
-    frameFont=
-        st.none(),
-    frame=
-        st.none(),
     MAX_COMMAND_LENGTH=
         st.integers(),
     FONT_SIZE=
         st.integers(),
     commandLine=
         st.none(),
-    output=
+    frameFont=
         st.none(),
+    frame=
+        st.none(),
+    queuePosition=
+        st.integers(),
     OUTPUT_WIDTH=
         st.integers(),
+    output=
+        st.none(),
     OUTPUT_HEIGHT=
-        st.integers(),
-    queuePosition=
         st.integers()
 )
 Hard_Drive_strategy = st.builds(
@@ -1524,18 +1524,18 @@ Scheduler_strategy = st.builds(
     Scheduler,
     newQueue=
         st.none(),
+    readyQueue=
+        st.none(),
     ioQueue=
         st.none(),
     identifier=
-        st.integers(),
-    readyQueue=
-        st.none()
+        st.integers()
 )
 Memory_strategy = st.builds(
     Memory,
-    memory=
-        st.none(),
     table=
+        st.none(),
+    memory=
         st.none()
 )
 Dispatcher_strategy = st.builds(
@@ -1555,54 +1555,54 @@ Clock_strategy = st.builds(
 )
 Operating_System_strategy = st.builds(
     Operating_System,
+    memory=
+        st.none(),
+    hardDrive=
+        st.none(),
+    prompt=
+        st.none(),
+    scheduler=
+        st.none(),
+    PROC_DATA_POINTER=
+        st.integers(),
+    clock=
+        st.none(),
+    NUMBER_OF_REGISTERS=
+        st.integers(),
     INSTRUCTION_REGISTER=
         st.integers(),
-    hardDrive=
+    PROC_BASE_POINTER=
+        st.integers(),
+    PROC_LIMIT_REGISTER=
+        st.integers(),
+    PROC_BASE_REGISTER=
+        st.integers(),
+    device=
+        st.none(),
+    taskManager=
+        st.none(),
+    dispatcher=
+        st.none(),
+    cpu=
         st.none(),
     QUANTUM=
         st.integers(),
     PROCESS_ID_REGISTER=
         st.integers(),
-    MEMORY_SIZE=
-        st.integers(),
-    NUMBER_OF_REGISTERS=
-        st.integers(),
-    memory=
-        st.none(),
-    taskManager=
-        st.none(),
-    PROC_DATA_POINTER=
-        st.integers(),
-    dispatcher=
-        st.none(),
-    cpu=
-        st.none(),
-    PROC_BASE_POINTER=
-        st.integers(),
-    device=
-        st.none(),
-    clock=
-        st.none(),
     PAGE_SIZE=
         st.integers(),
-    prompt=
-        st.none(),
-    scheduler=
-        st.none(),
-    PROC_BASE_REGISTER=
-        st.integers(),
-    PROC_LIMIT_REGISTER=
+    MEMORY_SIZE=
         st.integers()
 )
 Task_Manager_strategy = st.builds(
     Task_Manager,
-    numberOfProcesses=
+    amountofUsedMemory=
         st.none(),
     amountofFreeMemory=
         st.none(),
     scrollPane=
         st.none(),
-    amountofUsedMemory=
+    numberOfProcesses=
         st.none(),
     contactTable=
         st.none()
@@ -1612,11 +1612,11 @@ AbstractTableModel_strategy = st.builds(
 )
 ProcessTableModel_strategy = st.builds(
     ProcessTableModel,
-    processList=
-        safe_text,
     numberProcesses=
         st.integers(),
     columnNames=
+        safe_text,
+    processList=
         safe_text
 )
 Main_strategy = st.builds(
@@ -1675,11 +1675,11 @@ JobFileData_strategy = st.builds(
 )
 Request_strategy = st.builds(
     Request,
-    processID=
-        st.integers(),
     startAddress=
         st.integers(),
     endAddress=
+        st.integers(),
+    processID=
         st.integers()
 )
 JLabel_strategy = st.builds(
@@ -1711,20 +1711,6 @@ def test_jframe_instantiation(instance):
 def test_programfiledata_instantiation(instance):
     assert isinstance(instance, ProgramFileData)
 
-@given(instance=ProgramFileData_strategy)
-def test_programfiledata_memory_type(instance):
-    assert isinstance(instance.memory, int)
-
-
-@given(instance=ProgramFileData_strategy)
-def test_programfiledata_memory_setter(instance):
-    original = instance.memory
-    instance.memory = original
-    assert instance.memory == original
-
-@given(instance=ProgramFileData_strategy)
-def test_programfiledata_instructions_type(instance):
-    assert isinstance(instance.instructions, arraylist_instruction_)
 
 
 @given(instance=ProgramFileData_strategy)
@@ -1733,9 +1719,14 @@ def test_programfiledata_instructions_setter(instance):
     instance.instructions = original
     assert instance.instructions == original
 
+
+
 @given(instance=ProgramFileData_strategy)
-def test_programfiledata_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_programfiledata_memory_setter(instance):
+    original = instance.memory
+    instance.memory = original
+    assert instance.memory == original
+
 
 
 @given(instance=ProgramFileData_strategy)
@@ -1749,9 +1740,6 @@ def test_programfiledata_name_setter(instance):
 def test_processdata_instantiation(instance):
     assert isinstance(instance, ProcessData)
 
-@given(instance=ProcessData_strategy)
-def test_processdata_memory_type(instance):
-    assert isinstance(instance.memory, int)
 
 
 @given(instance=ProcessData_strategy)
@@ -1760,20 +1748,6 @@ def test_processdata_memory_setter(instance):
     instance.memory = original
     assert instance.memory == original
 
-@given(instance=ProcessData_strategy)
-def test_processdata_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ProcessData_strategy)
-def test_processdata_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ProcessData_strategy)
-def test_processdata_startTime_type(instance):
-    assert isinstance(instance.startTime, str)
 
 
 @given(instance=ProcessData_strategy)
@@ -1782,9 +1756,6 @@ def test_processdata_startTime_setter(instance):
     instance.startTime = original
     assert instance.startTime == original
 
-@given(instance=ProcessData_strategy)
-def test_processdata_instructions_type(instance):
-    assert isinstance(instance.instructions, arraylist_instruction_)
 
 
 @given(instance=ProcessData_strategy)
@@ -1793,14 +1764,27 @@ def test_processdata_instructions_setter(instance):
     instance.instructions = original
     assert instance.instructions == original
 
+
+
+@given(instance=ProcessData_strategy)
+def test_processdata_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=Process_strategy)
 @settings(max_examples=50)
 def test_process_instantiation(instance):
     assert isinstance(instance, Process)
 
+
+
 @given(instance=Process_strategy)
-def test_process_processState_type(instance):
-    assert isinstance(instance.processState, processstate)
+def test_process_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 
 
 @given(instance=Process_strategy)
@@ -1809,9 +1793,6 @@ def test_process_processState_setter(instance):
     instance.processState = original
     assert instance.processState == original
 
-@given(instance=Process_strategy)
-def test_process_memoryUseage_type(instance):
-    assert isinstance(instance.memoryUseage, int)
 
 
 @given(instance=Process_strategy)
@@ -1820,9 +1801,6 @@ def test_process_memoryUseage_setter(instance):
     instance.memoryUseage = original
     assert instance.memoryUseage == original
 
-@given(instance=Process_strategy)
-def test_process_registers_type(instance):
-    assert isinstance(instance.registers, str)
 
 
 @given(instance=Process_strategy)
@@ -1830,17 +1808,6 @@ def test_process_registers_setter(instance):
     original = instance.registers
     instance.registers = original
     assert instance.registers == original
-
-@given(instance=Process_strategy)
-def test_process_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Process_strategy)
-def test_process_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 @given(instance=Object_strategy)
 @settings(max_examples=50)
@@ -1852,20 +1819,6 @@ def test_object_instantiation(instance):
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=Page_strategy)
-def test_page_free_type(instance):
-    assert isinstance(instance.free, bool)
-
-
-@given(instance=Page_strategy)
-def test_page_free_setter(instance):
-    original = instance.free
-    instance.free = original
-    assert instance.free == original
-
-@given(instance=Page_strategy)
-def test_page_owner_type(instance):
-    assert isinstance(instance.owner, process)
 
 
 @given(instance=Page_strategy)
@@ -1874,9 +1827,6 @@ def test_page_owner_setter(instance):
     instance.owner = original
     assert instance.owner == original
 
-@given(instance=Page_strategy)
-def test_page_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Page_strategy)
@@ -1884,6 +1834,14 @@ def test_page_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Page_strategy)
+def test_page_free_setter(instance):
+    original = instance.free
+    instance.free = original
+    assert instance.free == original
 
 @given(instance=Interrupter_Interface_strategy)
 @settings(max_examples=50)
@@ -1900,31 +1858,6 @@ def test_class_instantiation(instance):
 def test_prompt_instantiation(instance):
     assert isinstance(instance, Prompt)
 
-@given(instance=Prompt_strategy)
-def test_prompt_frameFont_type(instance):
-    assert isinstance(instance.frameFont, font)
-
-
-@given(instance=Prompt_strategy)
-def test_prompt_frameFont_setter(instance):
-    original = instance.frameFont
-    instance.frameFont = original
-    assert instance.frameFont == original
-
-@given(instance=Prompt_strategy)
-def test_prompt_frame_type(instance):
-    assert isinstance(instance.frame, jframe)
-
-
-@given(instance=Prompt_strategy)
-def test_prompt_frame_setter(instance):
-    original = instance.frame
-    instance.frame = original
-    assert instance.frame == original
-
-@given(instance=Prompt_strategy)
-def test_prompt_MAX_COMMAND_LENGTH_type(instance):
-    assert isinstance(instance.MAX_COMMAND_LENGTH, int)
 
 
 @given(instance=Prompt_strategy)
@@ -1933,9 +1866,6 @@ def test_prompt_MAX_COMMAND_LENGTH_setter(instance):
     instance.MAX_COMMAND_LENGTH = original
     assert instance.MAX_COMMAND_LENGTH == original
 
-@given(instance=Prompt_strategy)
-def test_prompt_FONT_SIZE_type(instance):
-    assert isinstance(instance.FONT_SIZE, int)
 
 
 @given(instance=Prompt_strategy)
@@ -1944,9 +1874,6 @@ def test_prompt_FONT_SIZE_setter(instance):
     instance.FONT_SIZE = original
     assert instance.FONT_SIZE == original
 
-@given(instance=Prompt_strategy)
-def test_prompt_commandLine_type(instance):
-    assert isinstance(instance.commandLine, jtextfield)
 
 
 @given(instance=Prompt_strategy)
@@ -1955,42 +1882,22 @@ def test_prompt_commandLine_setter(instance):
     instance.commandLine = original
     assert instance.commandLine == original
 
-@given(instance=Prompt_strategy)
-def test_prompt_output_type(instance):
-    assert isinstance(instance.output, jtextarea)
 
 
 @given(instance=Prompt_strategy)
-def test_prompt_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
+def test_prompt_frameFont_setter(instance):
+    original = instance.frameFont
+    instance.frameFont = original
+    assert instance.frameFont == original
 
-@given(instance=Prompt_strategy)
-def test_prompt_OUTPUT_WIDTH_type(instance):
-    assert isinstance(instance.OUTPUT_WIDTH, int)
 
 
 @given(instance=Prompt_strategy)
-def test_prompt_OUTPUT_WIDTH_setter(instance):
-    original = instance.OUTPUT_WIDTH
-    instance.OUTPUT_WIDTH = original
-    assert instance.OUTPUT_WIDTH == original
+def test_prompt_frame_setter(instance):
+    original = instance.frame
+    instance.frame = original
+    assert instance.frame == original
 
-@given(instance=Prompt_strategy)
-def test_prompt_OUTPUT_HEIGHT_type(instance):
-    assert isinstance(instance.OUTPUT_HEIGHT, int)
-
-
-@given(instance=Prompt_strategy)
-def test_prompt_OUTPUT_HEIGHT_setter(instance):
-    original = instance.OUTPUT_HEIGHT
-    instance.OUTPUT_HEIGHT = original
-    assert instance.OUTPUT_HEIGHT == original
-
-@given(instance=Prompt_strategy)
-def test_prompt_queuePosition_type(instance):
-    assert isinstance(instance.queuePosition, int)
 
 
 @given(instance=Prompt_strategy)
@@ -1999,14 +1906,35 @@ def test_prompt_queuePosition_setter(instance):
     instance.queuePosition = original
     assert instance.queuePosition == original
 
+
+
+@given(instance=Prompt_strategy)
+def test_prompt_OUTPUT_WIDTH_setter(instance):
+    original = instance.OUTPUT_WIDTH
+    instance.OUTPUT_WIDTH = original
+    assert instance.OUTPUT_WIDTH == original
+
+
+
+@given(instance=Prompt_strategy)
+def test_prompt_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
+
+
+
+@given(instance=Prompt_strategy)
+def test_prompt_OUTPUT_HEIGHT_setter(instance):
+    original = instance.OUTPUT_HEIGHT
+    instance.OUTPUT_HEIGHT = original
+    assert instance.OUTPUT_HEIGHT == original
+
 @given(instance=Hard_Drive_strategy)
 @settings(max_examples=50)
 def test_hard_drive_instantiation(instance):
     assert isinstance(instance, Hard_Drive)
 
-@given(instance=Hard_Drive_strategy)
-def test_hard_drive_memory_type(instance):
-    assert isinstance(instance.memory, str)
 
 
 @given(instance=Hard_Drive_strategy)
@@ -2020,9 +1948,6 @@ def test_hard_drive_memory_setter(instance):
 def test_io_device_instantiation(instance):
     assert isinstance(instance, IO_Device)
 
-@given(instance=IO_Device_strategy)
-def test_io_device_counter_type(instance):
-    assert isinstance(instance.counter, int)
 
 
 @given(instance=IO_Device_strategy)
@@ -2036,9 +1961,6 @@ def test_io_device_counter_setter(instance):
 def test_scheduler_instantiation(instance):
     assert isinstance(instance, Scheduler)
 
-@given(instance=Scheduler_strategy)
-def test_scheduler_newQueue_type(instance):
-    assert isinstance(instance.newQueue, processdata)
 
 
 @given(instance=Scheduler_strategy)
@@ -2047,31 +1969,6 @@ def test_scheduler_newQueue_setter(instance):
     instance.newQueue = original
     assert instance.newQueue == original
 
-@given(instance=Scheduler_strategy)
-def test_scheduler_ioQueue_type(instance):
-    assert isinstance(instance.ioQueue, process)
-
-
-@given(instance=Scheduler_strategy)
-def test_scheduler_ioQueue_setter(instance):
-    original = instance.ioQueue
-    instance.ioQueue = original
-    assert instance.ioQueue == original
-
-@given(instance=Scheduler_strategy)
-def test_scheduler_identifier_type(instance):
-    assert isinstance(instance.identifier, int)
-
-
-@given(instance=Scheduler_strategy)
-def test_scheduler_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
-
-@given(instance=Scheduler_strategy)
-def test_scheduler_readyQueue_type(instance):
-    assert isinstance(instance.readyQueue, process)
 
 
 @given(instance=Scheduler_strategy)
@@ -2080,25 +1977,27 @@ def test_scheduler_readyQueue_setter(instance):
     instance.readyQueue = original
     assert instance.readyQueue == original
 
+
+
+@given(instance=Scheduler_strategy)
+def test_scheduler_ioQueue_setter(instance):
+    original = instance.ioQueue
+    instance.ioQueue = original
+    assert instance.ioQueue == original
+
+
+
+@given(instance=Scheduler_strategy)
+def test_scheduler_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
 @given(instance=Memory_strategy)
 @settings(max_examples=50)
 def test_memory_instantiation(instance):
     assert isinstance(instance, Memory)
 
-@given(instance=Memory_strategy)
-def test_memory_memory_type(instance):
-    assert isinstance(instance.memory, memory__)
-
-
-@given(instance=Memory_strategy)
-def test_memory_memory_setter(instance):
-    original = instance.memory
-    instance.memory = original
-    assert instance.memory == original
-
-@given(instance=Memory_strategy)
-def test_memory_table_type(instance):
-    assert isinstance(instance.table, page__)
 
 
 @given(instance=Memory_strategy)
@@ -2106,6 +2005,14 @@ def test_memory_table_setter(instance):
     original = instance.table
     instance.table = original
     assert instance.table == original
+
+
+
+@given(instance=Memory_strategy)
+def test_memory_memory_setter(instance):
+    original = instance.memory
+    instance.memory = original
+    assert instance.memory == original
 
 @given(instance=Dispatcher_strategy)
 @settings(max_examples=50)
@@ -2117,9 +2024,6 @@ def test_dispatcher_instantiation(instance):
 def test_cpu_instantiation(instance):
     assert isinstance(instance, CPU)
 
-@given(instance=CPU_strategy)
-def test_cpu_registers_type(instance):
-    assert isinstance(instance.registers, str)
 
 
 @given(instance=CPU_strategy)
@@ -2128,9 +2032,6 @@ def test_cpu_registers_setter(instance):
     instance.registers = original
     assert instance.registers == original
 
-@given(instance=CPU_strategy)
-def test_cpu_interruptQueue_type(instance):
-    assert isinstance(instance.interruptQueue, arraylist_interrupter_)
 
 
 @given(instance=CPU_strategy)
@@ -2144,9 +2045,6 @@ def test_cpu_interruptQueue_setter(instance):
 def test_clock_instantiation(instance):
     assert isinstance(instance, Clock)
 
-@given(instance=Clock_strategy)
-def test_clock_clockCycle_type(instance):
-    assert isinstance(instance.clockCycle, int)
 
 
 @given(instance=Clock_strategy)
@@ -2160,75 +2058,6 @@ def test_clock_clockCycle_setter(instance):
 def test_operating_system_instantiation(instance):
     assert isinstance(instance, Operating_System)
 
-@given(instance=Operating_System_strategy)
-def test_operating_system_INSTRUCTION_REGISTER_type(instance):
-    assert isinstance(instance.INSTRUCTION_REGISTER, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_INSTRUCTION_REGISTER_setter(instance):
-    original = instance.INSTRUCTION_REGISTER
-    instance.INSTRUCTION_REGISTER = original
-    assert instance.INSTRUCTION_REGISTER == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_hardDrive_type(instance):
-    assert isinstance(instance.hardDrive, hard_drive)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_hardDrive_setter(instance):
-    original = instance.hardDrive
-    instance.hardDrive = original
-    assert instance.hardDrive == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_QUANTUM_type(instance):
-    assert isinstance(instance.QUANTUM, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_QUANTUM_setter(instance):
-    original = instance.QUANTUM
-    instance.QUANTUM = original
-    assert instance.QUANTUM == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROCESS_ID_REGISTER_type(instance):
-    assert isinstance(instance.PROCESS_ID_REGISTER, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROCESS_ID_REGISTER_setter(instance):
-    original = instance.PROCESS_ID_REGISTER
-    instance.PROCESS_ID_REGISTER = original
-    assert instance.PROCESS_ID_REGISTER == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_MEMORY_SIZE_type(instance):
-    assert isinstance(instance.MEMORY_SIZE, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_MEMORY_SIZE_setter(instance):
-    original = instance.MEMORY_SIZE
-    instance.MEMORY_SIZE = original
-    assert instance.MEMORY_SIZE == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_NUMBER_OF_REGISTERS_type(instance):
-    assert isinstance(instance.NUMBER_OF_REGISTERS, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_NUMBER_OF_REGISTERS_setter(instance):
-    original = instance.NUMBER_OF_REGISTERS
-    instance.NUMBER_OF_REGISTERS = original
-    assert instance.NUMBER_OF_REGISTERS == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_memory_type(instance):
-    assert isinstance(instance.memory, memory)
 
 
 @given(instance=Operating_System_strategy)
@@ -2237,97 +2066,14 @@ def test_operating_system_memory_setter(instance):
     instance.memory = original
     assert instance.memory == original
 
-@given(instance=Operating_System_strategy)
-def test_operating_system_taskManager_type(instance):
-    assert isinstance(instance.taskManager, task_manager)
 
 
 @given(instance=Operating_System_strategy)
-def test_operating_system_taskManager_setter(instance):
-    original = instance.taskManager
-    instance.taskManager = original
-    assert instance.taskManager == original
+def test_operating_system_hardDrive_setter(instance):
+    original = instance.hardDrive
+    instance.hardDrive = original
+    assert instance.hardDrive == original
 
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROC_DATA_POINTER_type(instance):
-    assert isinstance(instance.PROC_DATA_POINTER, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROC_DATA_POINTER_setter(instance):
-    original = instance.PROC_DATA_POINTER
-    instance.PROC_DATA_POINTER = original
-    assert instance.PROC_DATA_POINTER == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_dispatcher_type(instance):
-    assert isinstance(instance.dispatcher, dispatcher)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_dispatcher_setter(instance):
-    original = instance.dispatcher
-    instance.dispatcher = original
-    assert instance.dispatcher == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_cpu_type(instance):
-    assert isinstance(instance.cpu, cpu)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_cpu_setter(instance):
-    original = instance.cpu
-    instance.cpu = original
-    assert instance.cpu == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROC_BASE_POINTER_type(instance):
-    assert isinstance(instance.PROC_BASE_POINTER, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROC_BASE_POINTER_setter(instance):
-    original = instance.PROC_BASE_POINTER
-    instance.PROC_BASE_POINTER = original
-    assert instance.PROC_BASE_POINTER == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_device_type(instance):
-    assert isinstance(instance.device, io_device)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_device_setter(instance):
-    original = instance.device
-    instance.device = original
-    assert instance.device == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_clock_type(instance):
-    assert isinstance(instance.clock, clock)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_clock_setter(instance):
-    original = instance.clock
-    instance.clock = original
-    assert instance.clock == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PAGE_SIZE_type(instance):
-    assert isinstance(instance.PAGE_SIZE, int)
-
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_PAGE_SIZE_setter(instance):
-    original = instance.PAGE_SIZE
-    instance.PAGE_SIZE = original
-    assert instance.PAGE_SIZE == original
-
-@given(instance=Operating_System_strategy)
-def test_operating_system_prompt_type(instance):
-    assert isinstance(instance.prompt, prompt)
 
 
 @given(instance=Operating_System_strategy)
@@ -2336,9 +2082,6 @@ def test_operating_system_prompt_setter(instance):
     instance.prompt = original
     assert instance.prompt == original
 
-@given(instance=Operating_System_strategy)
-def test_operating_system_scheduler_type(instance):
-    assert isinstance(instance.scheduler, scheduler)
 
 
 @given(instance=Operating_System_strategy)
@@ -2347,20 +2090,46 @@ def test_operating_system_scheduler_setter(instance):
     instance.scheduler = original
     assert instance.scheduler == original
 
-@given(instance=Operating_System_strategy)
-def test_operating_system_PROC_BASE_REGISTER_type(instance):
-    assert isinstance(instance.PROC_BASE_REGISTER, int)
 
 
 @given(instance=Operating_System_strategy)
-def test_operating_system_PROC_BASE_REGISTER_setter(instance):
-    original = instance.PROC_BASE_REGISTER
-    instance.PROC_BASE_REGISTER = original
-    assert instance.PROC_BASE_REGISTER == original
+def test_operating_system_PROC_DATA_POINTER_setter(instance):
+    original = instance.PROC_DATA_POINTER
+    instance.PROC_DATA_POINTER = original
+    assert instance.PROC_DATA_POINTER == original
+
+
 
 @given(instance=Operating_System_strategy)
-def test_operating_system_PROC_LIMIT_REGISTER_type(instance):
-    assert isinstance(instance.PROC_LIMIT_REGISTER, int)
+def test_operating_system_clock_setter(instance):
+    original = instance.clock
+    instance.clock = original
+    assert instance.clock == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_NUMBER_OF_REGISTERS_setter(instance):
+    original = instance.NUMBER_OF_REGISTERS
+    instance.NUMBER_OF_REGISTERS = original
+    assert instance.NUMBER_OF_REGISTERS == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_INSTRUCTION_REGISTER_setter(instance):
+    original = instance.INSTRUCTION_REGISTER
+    instance.INSTRUCTION_REGISTER = original
+    assert instance.INSTRUCTION_REGISTER == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_PROC_BASE_POINTER_setter(instance):
+    original = instance.PROC_BASE_POINTER
+    instance.PROC_BASE_POINTER = original
+    assert instance.PROC_BASE_POINTER == original
+
 
 
 @given(instance=Operating_System_strategy)
@@ -2369,47 +2138,83 @@ def test_operating_system_PROC_LIMIT_REGISTER_setter(instance):
     instance.PROC_LIMIT_REGISTER = original
     assert instance.PROC_LIMIT_REGISTER == original
 
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_PROC_BASE_REGISTER_setter(instance):
+    original = instance.PROC_BASE_REGISTER
+    instance.PROC_BASE_REGISTER = original
+    assert instance.PROC_BASE_REGISTER == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_device_setter(instance):
+    original = instance.device
+    instance.device = original
+    assert instance.device == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_taskManager_setter(instance):
+    original = instance.taskManager
+    instance.taskManager = original
+    assert instance.taskManager == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_dispatcher_setter(instance):
+    original = instance.dispatcher
+    instance.dispatcher = original
+    assert instance.dispatcher == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_cpu_setter(instance):
+    original = instance.cpu
+    instance.cpu = original
+    assert instance.cpu == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_QUANTUM_setter(instance):
+    original = instance.QUANTUM
+    instance.QUANTUM = original
+    assert instance.QUANTUM == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_PROCESS_ID_REGISTER_setter(instance):
+    original = instance.PROCESS_ID_REGISTER
+    instance.PROCESS_ID_REGISTER = original
+    assert instance.PROCESS_ID_REGISTER == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_PAGE_SIZE_setter(instance):
+    original = instance.PAGE_SIZE
+    instance.PAGE_SIZE = original
+    assert instance.PAGE_SIZE == original
+
+
+
+@given(instance=Operating_System_strategy)
+def test_operating_system_MEMORY_SIZE_setter(instance):
+    original = instance.MEMORY_SIZE
+    instance.MEMORY_SIZE = original
+    assert instance.MEMORY_SIZE == original
+
 @given(instance=Task_Manager_strategy)
 @settings(max_examples=50)
 def test_task_manager_instantiation(instance):
     assert isinstance(instance, Task_Manager)
 
-@given(instance=Task_Manager_strategy)
-def test_task_manager_numberOfProcesses_type(instance):
-    assert isinstance(instance.numberOfProcesses, jlabel)
-
-
-@given(instance=Task_Manager_strategy)
-def test_task_manager_numberOfProcesses_setter(instance):
-    original = instance.numberOfProcesses
-    instance.numberOfProcesses = original
-    assert instance.numberOfProcesses == original
-
-@given(instance=Task_Manager_strategy)
-def test_task_manager_amountofFreeMemory_type(instance):
-    assert isinstance(instance.amountofFreeMemory, jlabel)
-
-
-@given(instance=Task_Manager_strategy)
-def test_task_manager_amountofFreeMemory_setter(instance):
-    original = instance.amountofFreeMemory
-    instance.amountofFreeMemory = original
-    assert instance.amountofFreeMemory == original
-
-@given(instance=Task_Manager_strategy)
-def test_task_manager_scrollPane_type(instance):
-    assert isinstance(instance.scrollPane, jscrollpane)
-
-
-@given(instance=Task_Manager_strategy)
-def test_task_manager_scrollPane_setter(instance):
-    original = instance.scrollPane
-    instance.scrollPane = original
-    assert instance.scrollPane == original
-
-@given(instance=Task_Manager_strategy)
-def test_task_manager_amountofUsedMemory_type(instance):
-    assert isinstance(instance.amountofUsedMemory, jlabel)
 
 
 @given(instance=Task_Manager_strategy)
@@ -2418,9 +2223,30 @@ def test_task_manager_amountofUsedMemory_setter(instance):
     instance.amountofUsedMemory = original
     assert instance.amountofUsedMemory == original
 
+
+
 @given(instance=Task_Manager_strategy)
-def test_task_manager_contactTable_type(instance):
-    assert isinstance(instance.contactTable, jtable)
+def test_task_manager_amountofFreeMemory_setter(instance):
+    original = instance.amountofFreeMemory
+    instance.amountofFreeMemory = original
+    assert instance.amountofFreeMemory == original
+
+
+
+@given(instance=Task_Manager_strategy)
+def test_task_manager_scrollPane_setter(instance):
+    original = instance.scrollPane
+    instance.scrollPane = original
+    assert instance.scrollPane == original
+
+
+
+@given(instance=Task_Manager_strategy)
+def test_task_manager_numberOfProcesses_setter(instance):
+    original = instance.numberOfProcesses
+    instance.numberOfProcesses = original
+    assert instance.numberOfProcesses == original
+
 
 
 @given(instance=Task_Manager_strategy)
@@ -2439,20 +2265,6 @@ def test_abstracttablemodel_instantiation(instance):
 def test_processtablemodel_instantiation(instance):
     assert isinstance(instance, ProcessTableModel)
 
-@given(instance=ProcessTableModel_strategy)
-def test_processtablemodel_processList_type(instance):
-    assert isinstance(instance.processList, str)
-
-
-@given(instance=ProcessTableModel_strategy)
-def test_processtablemodel_processList_setter(instance):
-    original = instance.processList
-    instance.processList = original
-    assert instance.processList == original
-
-@given(instance=ProcessTableModel_strategy)
-def test_processtablemodel_numberProcesses_type(instance):
-    assert isinstance(instance.numberProcesses, int)
 
 
 @given(instance=ProcessTableModel_strategy)
@@ -2461,9 +2273,6 @@ def test_processtablemodel_numberProcesses_setter(instance):
     instance.numberProcesses = original
     assert instance.numberProcesses == original
 
-@given(instance=ProcessTableModel_strategy)
-def test_processtablemodel_columnNames_type(instance):
-    assert isinstance(instance.columnNames, str)
 
 
 @given(instance=ProcessTableModel_strategy)
@@ -2471,6 +2280,14 @@ def test_processtablemodel_columnNames_setter(instance):
     original = instance.columnNames
     instance.columnNames = original
     assert instance.columnNames == original
+
+
+
+@given(instance=ProcessTableModel_strategy)
+def test_processtablemodel_processList_setter(instance):
+    original = instance.processList
+    instance.processList = original
+    assert instance.processList == original
 
 @given(instance=Main_strategy)
 @settings(max_examples=50)
@@ -2537,9 +2354,6 @@ def test_instruction_io_instantiation(instance):
 def test_instruction_calculate_instantiation(instance):
     assert isinstance(instance, Instruction_Calculate)
 
-@given(instance=Instruction_Calculate_strategy)
-def test_instruction_calculate_time_type(instance):
-    assert isinstance(instance.time, int)
 
 
 @given(instance=Instruction_Calculate_strategy)
@@ -2563,9 +2377,6 @@ def test_arraylist_programfiledata__instantiation(instance):
 def test_jobfiledata_instantiation(instance):
     assert isinstance(instance, JobFileData)
 
-@given(instance=JobFileData_strategy)
-def test_jobfiledata_programs_type(instance):
-    assert isinstance(instance.programs, arraylist_programfiledata_)
 
 
 @given(instance=JobFileData_strategy)
@@ -2574,9 +2385,6 @@ def test_jobfiledata_programs_setter(instance):
     instance.programs = original
     assert instance.programs == original
 
-@given(instance=JobFileData_strategy)
-def test_jobfiledata_startTimes_type(instance):
-    assert isinstance(instance.startTimes, arraylist_integer_)
 
 
 @given(instance=JobFileData_strategy)
@@ -2590,20 +2398,6 @@ def test_jobfiledata_startTimes_setter(instance):
 def test_request_instantiation(instance):
     assert isinstance(instance, Request)
 
-@given(instance=Request_strategy)
-def test_request_processID_type(instance):
-    assert isinstance(instance.processID, int)
-
-
-@given(instance=Request_strategy)
-def test_request_processID_setter(instance):
-    original = instance.processID
-    instance.processID = original
-    assert instance.processID == original
-
-@given(instance=Request_strategy)
-def test_request_startAddress_type(instance):
-    assert isinstance(instance.startAddress, int)
 
 
 @given(instance=Request_strategy)
@@ -2612,9 +2406,6 @@ def test_request_startAddress_setter(instance):
     instance.startAddress = original
     assert instance.startAddress == original
 
-@given(instance=Request_strategy)
-def test_request_endAddress_type(instance):
-    assert isinstance(instance.endAddress, int)
 
 
 @given(instance=Request_strategy)
@@ -2622,6 +2413,14 @@ def test_request_endAddress_setter(instance):
     original = instance.endAddress
     instance.endAddress = original
     assert instance.endAddress == original
+
+
+
+@given(instance=Request_strategy)
+def test_request_processID_setter(instance):
+    original = instance.processID
+    instance.processID = original
+    assert instance.processID == original
 
 @given(instance=JLabel_strategy)
 @settings(max_examples=50)

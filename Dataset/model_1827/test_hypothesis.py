@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    DictionaryLanguage::Dictionary,
-    DictionaryLanguage::Entry,
-    DictionaryLanguage::Shelf,
-    DictionaryLanguage::Library,
-    DictionaryLanguage::Author,
+from python_code import (
+    DictionaryLanguage_Dictionary,
+    DictionaryLanguage_Entry,
+    DictionaryLanguage_Shelf,
+    DictionaryLanguage_Library,
+    DictionaryLanguage_Author,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_dictionarylanguage::dictionary_is_not_abstract():
-    assert not inspect.isabstract(DictionaryLanguage::Dictionary)
+def test_dictionarylanguage_dictionary_is_not_abstract():
+    assert not inspect.isabstract(DictionaryLanguage_Dictionary)
 
 
-def test_dictionarylanguage::dictionary_constructor_exists():
-    assert callable(DictionaryLanguage::Dictionary.__init__)
+def test_dictionarylanguage_dictionary_constructor_exists():
+    assert callable(DictionaryLanguage_Dictionary.__init__)
 
 
-def test_dictionarylanguage::dictionary_constructor_args():
-    sig = inspect.signature(DictionaryLanguage::Dictionary.__init__)
+def test_dictionarylanguage_dictionary_constructor_args():
+    sig = inspect.signature(DictionaryLanguage_Dictionary.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_dictionarylanguage::dictionary_has_title():
-    assert hasattr(DictionaryLanguage::Dictionary, "title")
+def test_dictionarylanguage_dictionary_has_title():
+    assert hasattr(DictionaryLanguage_Dictionary, "title")
     descriptor = None
-    for klass in DictionaryLanguage::Dictionary.__mro__:
+    for klass in DictionaryLanguage_Dictionary.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -43,33 +43,33 @@ def test_dictionarylanguage::dictionary_has_title():
 
 
 
-def test_dictionarylanguage::entry_is_not_abstract():
-    assert not inspect.isabstract(DictionaryLanguage::Entry)
+def test_dictionarylanguage_entry_is_not_abstract():
+    assert not inspect.isabstract(DictionaryLanguage_Entry)
 
 
-def test_dictionarylanguage::entry_constructor_exists():
-    assert callable(DictionaryLanguage::Entry.__init__)
+def test_dictionarylanguage_entry_constructor_exists():
+    assert callable(DictionaryLanguage_Entry.__init__)
 
 
-def test_dictionarylanguage::entry_constructor_args():
-    sig = inspect.signature(DictionaryLanguage::Entry.__init__)
+def test_dictionarylanguage_entry_constructor_args():
+    sig = inspect.signature(DictionaryLanguage_Entry.__init__)
     params = list(sig.parameters.keys())
     assert "level" in params, "Missing parameter 'level'"
     assert "content" in params, "Missing parameter 'content'"
 
-def test_dictionarylanguage::entry_has_level():
-    assert hasattr(DictionaryLanguage::Entry, "level")
+def test_dictionarylanguage_entry_has_level():
+    assert hasattr(DictionaryLanguage_Entry, "level")
     descriptor = None
-    for klass in DictionaryLanguage::Entry.__mro__:
+    for klass in DictionaryLanguage_Entry.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
     assert isinstance(descriptor, property)
 
-def test_dictionarylanguage::entry_has_content():
-    assert hasattr(DictionaryLanguage::Entry, "content")
+def test_dictionarylanguage_entry_has_content():
+    assert hasattr(DictionaryLanguage_Entry, "content")
     descriptor = None
-    for klass in DictionaryLanguage::Entry.__mro__:
+    for klass in DictionaryLanguage_Entry.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -77,23 +77,23 @@ def test_dictionarylanguage::entry_has_content():
 
 
 
-def test_dictionarylanguage::shelf_is_not_abstract():
-    assert not inspect.isabstract(DictionaryLanguage::Shelf)
+def test_dictionarylanguage_shelf_is_not_abstract():
+    assert not inspect.isabstract(DictionaryLanguage_Shelf)
 
 
-def test_dictionarylanguage::shelf_constructor_exists():
-    assert callable(DictionaryLanguage::Shelf.__init__)
+def test_dictionarylanguage_shelf_constructor_exists():
+    assert callable(DictionaryLanguage_Shelf.__init__)
 
 
-def test_dictionarylanguage::shelf_constructor_args():
-    sig = inspect.signature(DictionaryLanguage::Shelf.__init__)
+def test_dictionarylanguage_shelf_constructor_args():
+    sig = inspect.signature(DictionaryLanguage_Shelf.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_dictionarylanguage::shelf_has_description():
-    assert hasattr(DictionaryLanguage::Shelf, "description")
+def test_dictionarylanguage_shelf_has_description():
+    assert hasattr(DictionaryLanguage_Shelf, "description")
     descriptor = None
-    for klass in DictionaryLanguage::Shelf.__mro__:
+    for klass in DictionaryLanguage_Shelf.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -101,23 +101,23 @@ def test_dictionarylanguage::shelf_has_description():
 
 
 
-def test_dictionarylanguage::library_is_not_abstract():
-    assert not inspect.isabstract(DictionaryLanguage::Library)
+def test_dictionarylanguage_library_is_not_abstract():
+    assert not inspect.isabstract(DictionaryLanguage_Library)
 
 
-def test_dictionarylanguage::library_constructor_exists():
-    assert callable(DictionaryLanguage::Library.__init__)
+def test_dictionarylanguage_library_constructor_exists():
+    assert callable(DictionaryLanguage_Library.__init__)
 
 
-def test_dictionarylanguage::library_constructor_args():
-    sig = inspect.signature(DictionaryLanguage::Library.__init__)
+def test_dictionarylanguage_library_constructor_args():
+    sig = inspect.signature(DictionaryLanguage_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dictionarylanguage::library_has_name():
-    assert hasattr(DictionaryLanguage::Library, "name")
+def test_dictionarylanguage_library_has_name():
+    assert hasattr(DictionaryLanguage_Library, "name")
     descriptor = None
-    for klass in DictionaryLanguage::Library.__mro__:
+    for klass in DictionaryLanguage_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,23 +125,23 @@ def test_dictionarylanguage::library_has_name():
 
 
 
-def test_dictionarylanguage::author_is_not_abstract():
-    assert not inspect.isabstract(DictionaryLanguage::Author)
+def test_dictionarylanguage_author_is_not_abstract():
+    assert not inspect.isabstract(DictionaryLanguage_Author)
 
 
-def test_dictionarylanguage::author_constructor_exists():
-    assert callable(DictionaryLanguage::Author.__init__)
+def test_dictionarylanguage_author_constructor_exists():
+    assert callable(DictionaryLanguage_Author.__init__)
 
 
-def test_dictionarylanguage::author_constructor_args():
-    sig = inspect.signature(DictionaryLanguage::Author.__init__)
+def test_dictionarylanguage_author_constructor_args():
+    sig = inspect.signature(DictionaryLanguage_Author.__init__)
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
 
-def test_dictionarylanguage::author_has_email():
-    assert hasattr(DictionaryLanguage::Author, "email")
+def test_dictionarylanguage_author_has_email():
+    assert hasattr(DictionaryLanguage_Author, "email")
     descriptor = None
-    for klass in DictionaryLanguage::Author.__mro__:
+    for klass in DictionaryLanguage_Author.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
@@ -159,121 +159,103 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DictionaryLanguage::Dictionary_strategy = st.builds(
-    DictionaryLanguage::Dictionary,
+DictionaryLanguage_Dictionary_strategy = st.builds(
+    DictionaryLanguage_Dictionary,
     title=
         safe_text
 )
-DictionaryLanguage::Entry_strategy = st.builds(
-    DictionaryLanguage::Entry,
+DictionaryLanguage_Entry_strategy = st.builds(
+    DictionaryLanguage_Entry,
     level=
         safe_text,
     content=
         safe_text
 )
-DictionaryLanguage::Shelf_strategy = st.builds(
-    DictionaryLanguage::Shelf,
+DictionaryLanguage_Shelf_strategy = st.builds(
+    DictionaryLanguage_Shelf,
     description=
         safe_text
 )
-DictionaryLanguage::Library_strategy = st.builds(
-    DictionaryLanguage::Library,
+DictionaryLanguage_Library_strategy = st.builds(
+    DictionaryLanguage_Library,
     name=
         safe_text
 )
-DictionaryLanguage::Author_strategy = st.builds(
-    DictionaryLanguage::Author,
+DictionaryLanguage_Author_strategy = st.builds(
+    DictionaryLanguage_Author,
     email=
         safe_text
 )
 
-@given(instance=DictionaryLanguage::Dictionary_strategy)
+@given(instance=DictionaryLanguage_Dictionary_strategy)
 @settings(max_examples=50)
-def test_dictionarylanguage::dictionary_instantiation(instance):
-    assert isinstance(instance, DictionaryLanguage::Dictionary)
-
-@given(instance=DictionaryLanguage::Dictionary_strategy)
-def test_dictionarylanguage::dictionary_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_dictionarylanguage_dictionary_instantiation(instance):
+    assert isinstance(instance, DictionaryLanguage_Dictionary)
 
 
-@given(instance=DictionaryLanguage::Dictionary_strategy)
-def test_dictionarylanguage::dictionary_title_setter(instance):
+
+@given(instance=DictionaryLanguage_Dictionary_strategy)
+def test_dictionarylanguage_dictionary_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=DictionaryLanguage::Entry_strategy)
+@given(instance=DictionaryLanguage_Entry_strategy)
 @settings(max_examples=50)
-def test_dictionarylanguage::entry_instantiation(instance):
-    assert isinstance(instance, DictionaryLanguage::Entry)
-
-@given(instance=DictionaryLanguage::Entry_strategy)
-def test_dictionarylanguage::entry_level_type(instance):
-    assert isinstance(instance.level, str)
+def test_dictionarylanguage_entry_instantiation(instance):
+    assert isinstance(instance, DictionaryLanguage_Entry)
 
 
-@given(instance=DictionaryLanguage::Entry_strategy)
-def test_dictionarylanguage::entry_level_setter(instance):
+
+@given(instance=DictionaryLanguage_Entry_strategy)
+def test_dictionarylanguage_entry_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=DictionaryLanguage::Entry_strategy)
-def test_dictionarylanguage::entry_content_type(instance):
-    assert isinstance(instance.content, str)
 
 
-@given(instance=DictionaryLanguage::Entry_strategy)
-def test_dictionarylanguage::entry_content_setter(instance):
+@given(instance=DictionaryLanguage_Entry_strategy)
+def test_dictionarylanguage_entry_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=DictionaryLanguage::Shelf_strategy)
+@given(instance=DictionaryLanguage_Shelf_strategy)
 @settings(max_examples=50)
-def test_dictionarylanguage::shelf_instantiation(instance):
-    assert isinstance(instance, DictionaryLanguage::Shelf)
-
-@given(instance=DictionaryLanguage::Shelf_strategy)
-def test_dictionarylanguage::shelf_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_dictionarylanguage_shelf_instantiation(instance):
+    assert isinstance(instance, DictionaryLanguage_Shelf)
 
 
-@given(instance=DictionaryLanguage::Shelf_strategy)
-def test_dictionarylanguage::shelf_description_setter(instance):
+
+@given(instance=DictionaryLanguage_Shelf_strategy)
+def test_dictionarylanguage_shelf_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=DictionaryLanguage::Library_strategy)
+@given(instance=DictionaryLanguage_Library_strategy)
 @settings(max_examples=50)
-def test_dictionarylanguage::library_instantiation(instance):
-    assert isinstance(instance, DictionaryLanguage::Library)
-
-@given(instance=DictionaryLanguage::Library_strategy)
-def test_dictionarylanguage::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dictionarylanguage_library_instantiation(instance):
+    assert isinstance(instance, DictionaryLanguage_Library)
 
 
-@given(instance=DictionaryLanguage::Library_strategy)
-def test_dictionarylanguage::library_name_setter(instance):
+
+@given(instance=DictionaryLanguage_Library_strategy)
+def test_dictionarylanguage_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=DictionaryLanguage::Author_strategy)
+@given(instance=DictionaryLanguage_Author_strategy)
 @settings(max_examples=50)
-def test_dictionarylanguage::author_instantiation(instance):
-    assert isinstance(instance, DictionaryLanguage::Author)
-
-@given(instance=DictionaryLanguage::Author_strategy)
-def test_dictionarylanguage::author_email_type(instance):
-    assert isinstance(instance.email, str)
+def test_dictionarylanguage_author_instantiation(instance):
+    assert isinstance(instance, DictionaryLanguage_Author)
 
 
-@given(instance=DictionaryLanguage::Author_strategy)
-def test_dictionarylanguage::author_email_setter(instance):
+
+@given(instance=DictionaryLanguage_Author_strategy)
+def test_dictionarylanguage_author_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original

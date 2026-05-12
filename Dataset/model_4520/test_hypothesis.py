@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    logo::Parameter,
+from python_code import (
+    logo_Parameter,
     Instruction,
-    logo::ProcCall,
-    logo::ProcDeclaration,
-    logo::Instruction,
-    logo::LogoProgram,
-    logo::Right,
-    logo::Left,
-    logo::Forward,
+    logo_ProcCall,
+    logo_ProcDeclaration,
+    logo_Instruction,
+    logo_LogoProgram,
+    logo_Right,
+    logo_Left,
+    logo_Forward,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_logo::parameter_is_not_abstract():
-    assert not inspect.isabstract(logo::Parameter)
+def test_logo_parameter_is_not_abstract():
+    assert not inspect.isabstract(logo_Parameter)
 
 
-def test_logo::parameter_constructor_exists():
-    assert callable(logo::Parameter.__init__)
+def test_logo_parameter_constructor_exists():
+    assert callable(logo_Parameter.__init__)
 
 
-def test_logo::parameter_constructor_args():
-    sig = inspect.signature(logo::Parameter.__init__)
+def test_logo_parameter_constructor_args():
+    sig = inspect.signature(logo_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logo::parameter_has_name():
-    assert hasattr(logo::Parameter, "name")
+def test_logo_parameter_has_name():
+    assert hasattr(logo_Parameter, "name")
     descriptor = None
-    for klass in logo::Parameter.__mro__:
+    for klass in logo_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -61,23 +61,23 @@ def test_instruction_constructor_args():
 
 
 
-def test_logo::proccall_is_not_abstract():
-    assert not inspect.isabstract(logo::ProcCall)
+def test_logo_proccall_is_not_abstract():
+    assert not inspect.isabstract(logo_ProcCall)
 
 
-def test_logo::proccall_constructor_exists():
-    assert callable(logo::ProcCall.__init__)
+def test_logo_proccall_constructor_exists():
+    assert callable(logo_ProcCall.__init__)
 
 
-def test_logo::proccall_constructor_args():
-    sig = inspect.signature(logo::ProcCall.__init__)
+def test_logo_proccall_constructor_args():
+    sig = inspect.signature(logo_ProcCall.__init__)
     params = list(sig.parameters.keys())
     assert "actualArgs" in params, "Missing parameter 'actualArgs'"
 
-def test_logo::proccall_has_actualArgs():
-    assert hasattr(logo::ProcCall, "actualArgs")
+def test_logo_proccall_has_actualArgs():
+    assert hasattr(logo_ProcCall, "actualArgs")
     descriptor = None
-    for klass in logo::ProcCall.__mro__:
+    for klass in logo_ProcCall.__mro__:
         if "actualArgs" in klass.__dict__:
             descriptor = klass.__dict__["actualArgs"]
             break
@@ -85,23 +85,23 @@ def test_logo::proccall_has_actualArgs():
 
 
 
-def test_logo::procdeclaration_is_not_abstract():
-    assert not inspect.isabstract(logo::ProcDeclaration)
+def test_logo_procdeclaration_is_not_abstract():
+    assert not inspect.isabstract(logo_ProcDeclaration)
 
 
-def test_logo::procdeclaration_constructor_exists():
-    assert callable(logo::ProcDeclaration.__init__)
+def test_logo_procdeclaration_constructor_exists():
+    assert callable(logo_ProcDeclaration.__init__)
 
 
-def test_logo::procdeclaration_constructor_args():
-    sig = inspect.signature(logo::ProcDeclaration.__init__)
+def test_logo_procdeclaration_constructor_args():
+    sig = inspect.signature(logo_ProcDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logo::procdeclaration_has_name():
-    assert hasattr(logo::ProcDeclaration, "name")
+def test_logo_procdeclaration_has_name():
+    assert hasattr(logo_ProcDeclaration, "name")
     descriptor = None
-    for klass in logo::ProcDeclaration.__mro__:
+    for klass in logo_ProcDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -109,51 +109,51 @@ def test_logo::procdeclaration_has_name():
 
 
 
-def test_logo::instruction_is_not_abstract():
-    assert not inspect.isabstract(logo::Instruction)
+def test_logo_instruction_is_not_abstract():
+    assert not inspect.isabstract(logo_Instruction)
 
 
-def test_logo::instruction_constructor_exists():
-    assert callable(logo::Instruction.__init__)
+def test_logo_instruction_constructor_exists():
+    assert callable(logo_Instruction.__init__)
 
 
-def test_logo::instruction_constructor_args():
-    sig = inspect.signature(logo::Instruction.__init__)
+def test_logo_instruction_constructor_args():
+    sig = inspect.signature(logo_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::logoprogram_is_not_abstract():
-    assert not inspect.isabstract(logo::LogoProgram)
+def test_logo_logoprogram_is_not_abstract():
+    assert not inspect.isabstract(logo_LogoProgram)
 
 
-def test_logo::logoprogram_constructor_exists():
-    assert callable(logo::LogoProgram.__init__)
+def test_logo_logoprogram_constructor_exists():
+    assert callable(logo_LogoProgram.__init__)
 
 
-def test_logo::logoprogram_constructor_args():
-    sig = inspect.signature(logo::LogoProgram.__init__)
+def test_logo_logoprogram_constructor_args():
+    sig = inspect.signature(logo_LogoProgram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::right_is_not_abstract():
-    assert not inspect.isabstract(logo::Right)
+def test_logo_right_is_not_abstract():
+    assert not inspect.isabstract(logo_Right)
 
 
-def test_logo::right_constructor_exists():
-    assert callable(logo::Right.__init__)
+def test_logo_right_constructor_exists():
+    assert callable(logo_Right.__init__)
 
 
-def test_logo::right_constructor_args():
-    sig = inspect.signature(logo::Right.__init__)
+def test_logo_right_constructor_args():
+    sig = inspect.signature(logo_Right.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_logo::right_has_angle():
-    assert hasattr(logo::Right, "angle")
+def test_logo_right_has_angle():
+    assert hasattr(logo_Right, "angle")
     descriptor = None
-    for klass in logo::Right.__mro__:
+    for klass in logo_Right.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -161,23 +161,23 @@ def test_logo::right_has_angle():
 
 
 
-def test_logo::left_is_not_abstract():
-    assert not inspect.isabstract(logo::Left)
+def test_logo_left_is_not_abstract():
+    assert not inspect.isabstract(logo_Left)
 
 
-def test_logo::left_constructor_exists():
-    assert callable(logo::Left.__init__)
+def test_logo_left_constructor_exists():
+    assert callable(logo_Left.__init__)
 
 
-def test_logo::left_constructor_args():
-    sig = inspect.signature(logo::Left.__init__)
+def test_logo_left_constructor_args():
+    sig = inspect.signature(logo_Left.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_logo::left_has_angle():
-    assert hasattr(logo::Left, "angle")
+def test_logo_left_has_angle():
+    assert hasattr(logo_Left, "angle")
     descriptor = None
-    for klass in logo::Left.__mro__:
+    for klass in logo_Left.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -185,23 +185,23 @@ def test_logo::left_has_angle():
 
 
 
-def test_logo::forward_is_not_abstract():
-    assert not inspect.isabstract(logo::Forward)
+def test_logo_forward_is_not_abstract():
+    assert not inspect.isabstract(logo_Forward)
 
 
-def test_logo::forward_constructor_exists():
-    assert callable(logo::Forward.__init__)
+def test_logo_forward_constructor_exists():
+    assert callable(logo_Forward.__init__)
 
 
-def test_logo::forward_constructor_args():
-    sig = inspect.signature(logo::Forward.__init__)
+def test_logo_forward_constructor_args():
+    sig = inspect.signature(logo_Forward.__init__)
     params = list(sig.parameters.keys())
     assert "steps" in params, "Missing parameter 'steps'"
 
-def test_logo::forward_has_steps():
-    assert hasattr(logo::Forward, "steps")
+def test_logo_forward_has_steps():
+    assert hasattr(logo_Forward, "steps")
     descriptor = None
-    for klass in logo::Forward.__mro__:
+    for klass in logo_Forward.__mro__:
         if "steps" in klass.__dict__:
             descriptor = klass.__dict__["steps"]
             break
@@ -219,58 +219,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-logo::Parameter_strategy = st.builds(
-    logo::Parameter,
+logo_Parameter_strategy = st.builds(
+    logo_Parameter,
     name=
         safe_text
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-logo::ProcCall_strategy = st.builds(
-    logo::ProcCall,
+logo_ProcCall_strategy = st.builds(
+    logo_ProcCall,
     actualArgs=
         st.integers()
 )
-logo::ProcDeclaration_strategy = st.builds(
-    logo::ProcDeclaration,
+logo_ProcDeclaration_strategy = st.builds(
+    logo_ProcDeclaration,
     name=
         safe_text
 )
-logo::Instruction_strategy = st.builds(
-    logo::Instruction,
+logo_Instruction_strategy = st.builds(
+    logo_Instruction,
 )
-logo::LogoProgram_strategy = st.builds(
-    logo::LogoProgram,
+logo_LogoProgram_strategy = st.builds(
+    logo_LogoProgram,
 )
-logo::Right_strategy = st.builds(
-    logo::Right,
+logo_Right_strategy = st.builds(
+    logo_Right,
     angle=
         st.integers()
 )
-logo::Left_strategy = st.builds(
-    logo::Left,
+logo_Left_strategy = st.builds(
+    logo_Left,
     angle=
         st.integers()
 )
-logo::Forward_strategy = st.builds(
-    logo::Forward,
+logo_Forward_strategy = st.builds(
+    logo_Forward,
     steps=
         st.integers()
 )
 
-@given(instance=logo::Parameter_strategy)
+@given(instance=logo_Parameter_strategy)
 @settings(max_examples=50)
-def test_logo::parameter_instantiation(instance):
-    assert isinstance(instance, logo::Parameter)
-
-@given(instance=logo::Parameter_strategy)
-def test_logo::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logo_parameter_instantiation(instance):
+    assert isinstance(instance, logo_Parameter)
 
 
-@given(instance=logo::Parameter_strategy)
-def test_logo::parameter_name_setter(instance):
+
+@given(instance=logo_Parameter_strategy)
+def test_logo_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -280,92 +277,77 @@ def test_logo::parameter_name_setter(instance):
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=logo::ProcCall_strategy)
+@given(instance=logo_ProcCall_strategy)
 @settings(max_examples=50)
-def test_logo::proccall_instantiation(instance):
-    assert isinstance(instance, logo::ProcCall)
-
-@given(instance=logo::ProcCall_strategy)
-def test_logo::proccall_actualArgs_type(instance):
-    assert isinstance(instance.actualArgs, int)
+def test_logo_proccall_instantiation(instance):
+    assert isinstance(instance, logo_ProcCall)
 
 
-@given(instance=logo::ProcCall_strategy)
-def test_logo::proccall_actualArgs_setter(instance):
+
+@given(instance=logo_ProcCall_strategy)
+def test_logo_proccall_actualArgs_setter(instance):
     original = instance.actualArgs
     instance.actualArgs = original
     assert instance.actualArgs == original
 
-@given(instance=logo::ProcDeclaration_strategy)
+@given(instance=logo_ProcDeclaration_strategy)
 @settings(max_examples=50)
-def test_logo::procdeclaration_instantiation(instance):
-    assert isinstance(instance, logo::ProcDeclaration)
-
-@given(instance=logo::ProcDeclaration_strategy)
-def test_logo::procdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logo_procdeclaration_instantiation(instance):
+    assert isinstance(instance, logo_ProcDeclaration)
 
 
-@given(instance=logo::ProcDeclaration_strategy)
-def test_logo::procdeclaration_name_setter(instance):
+
+@given(instance=logo_ProcDeclaration_strategy)
+def test_logo_procdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=logo::Instruction_strategy)
+@given(instance=logo_Instruction_strategy)
 @settings(max_examples=50)
-def test_logo::instruction_instantiation(instance):
-    assert isinstance(instance, logo::Instruction)
+def test_logo_instruction_instantiation(instance):
+    assert isinstance(instance, logo_Instruction)
 
-@given(instance=logo::LogoProgram_strategy)
+@given(instance=logo_LogoProgram_strategy)
 @settings(max_examples=50)
-def test_logo::logoprogram_instantiation(instance):
-    assert isinstance(instance, logo::LogoProgram)
+def test_logo_logoprogram_instantiation(instance):
+    assert isinstance(instance, logo_LogoProgram)
 
-@given(instance=logo::Right_strategy)
+@given(instance=logo_Right_strategy)
 @settings(max_examples=50)
-def test_logo::right_instantiation(instance):
-    assert isinstance(instance, logo::Right)
-
-@given(instance=logo::Right_strategy)
-def test_logo::right_angle_type(instance):
-    assert isinstance(instance.angle, int)
+def test_logo_right_instantiation(instance):
+    assert isinstance(instance, logo_Right)
 
 
-@given(instance=logo::Right_strategy)
-def test_logo::right_angle_setter(instance):
+
+@given(instance=logo_Right_strategy)
+def test_logo_right_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=logo::Left_strategy)
+@given(instance=logo_Left_strategy)
 @settings(max_examples=50)
-def test_logo::left_instantiation(instance):
-    assert isinstance(instance, logo::Left)
-
-@given(instance=logo::Left_strategy)
-def test_logo::left_angle_type(instance):
-    assert isinstance(instance.angle, int)
+def test_logo_left_instantiation(instance):
+    assert isinstance(instance, logo_Left)
 
 
-@given(instance=logo::Left_strategy)
-def test_logo::left_angle_setter(instance):
+
+@given(instance=logo_Left_strategy)
+def test_logo_left_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=logo::Forward_strategy)
+@given(instance=logo_Forward_strategy)
 @settings(max_examples=50)
-def test_logo::forward_instantiation(instance):
-    assert isinstance(instance, logo::Forward)
-
-@given(instance=logo::Forward_strategy)
-def test_logo::forward_steps_type(instance):
-    assert isinstance(instance.steps, int)
+def test_logo_forward_instantiation(instance):
+    assert isinstance(instance, logo_Forward)
 
 
-@given(instance=logo::Forward_strategy)
-def test_logo::forward_steps_setter(instance):
+
+@given(instance=logo_Forward_strategy)
+def test_logo_forward_steps_setter(instance):
     original = instance.steps
     instance.steps = original
     assert instance.steps == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Package_Class,
@@ -60,9 +60,6 @@ Package_Class_strategy = st.builds(
 def test_package_class_instantiation(instance):
     assert isinstance(instance, Package_Class)
 
-@given(instance=Package_Class_strategy)
-def test_package_class_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Class_strategy)

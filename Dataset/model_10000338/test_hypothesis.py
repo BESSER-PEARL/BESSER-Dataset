@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Color_external,
@@ -215,51 +215,42 @@ def test_candycrushpackage_board_constructor_exists():
 def test_candycrushpackage_board_constructor_args():
     sig = inspect.signature(candyCrushPackage_Board.__init__)
     params = list(sig.parameters.keys())
-    assert "selfCrushTimer" in params, "Missing parameter 'selfCrushTimer'"
-    assert "delay" in params, "Missing parameter 'delay'"
+    assert "selfCrushCandy" in params, "Missing parameter 'selfCrushCandy'"
     assert "movesPerGame" in params, "Missing parameter 'movesPerGame'"
-    assert "candyWidth" in params, "Missing parameter 'candyWidth'"
-    assert "BOARD_HEIGHT" in params, "Missing parameter 'BOARD_HEIGHT'"
-    assert "swapTimer" in params, "Missing parameter 'swapTimer'"
-    assert "moveDistance" in params, "Missing parameter 'moveDistance'"
-    assert "SIZE" in params, "Missing parameter 'SIZE'"
-    assert "firstPressedCandy" in params, "Missing parameter 'firstPressedCandy'"
+    assert "HORIZONTAL_GAP" in params, "Missing parameter 'HORIZONTAL_GAP'"
+    assert "crushTimerCount" in params, "Missing parameter 'crushTimerCount'"
+    assert "delay" in params, "Missing parameter 'delay'"
     assert "gameScore" in params, "Missing parameter 'gameScore'"
     assert "movesLeft" in params, "Missing parameter 'movesLeft'"
-    assert "baseScorePerCandy" in params, "Missing parameter 'baseScorePerCandy'"
-    assert "BOARD_WIDTH" in params, "Missing parameter 'BOARD_WIDTH'"
-    assert "isFirstPressed" in params, "Missing parameter 'isFirstPressed'"
-    assert "selfCrushCandy" in params, "Missing parameter 'selfCrushCandy'"
-    assert "cascadeTimer" in params, "Missing parameter 'cascadeTimer'"
-    assert "swapDirection" in params, "Missing parameter 'swapDirection'"
-    assert "crushTimerCount" in params, "Missing parameter 'crushTimerCount'"
-    assert "VERTICAL_GAP" in params, "Missing parameter 'VERTICAL_GAP'"
-    assert "candyHeight" in params, "Missing parameter 'candyHeight'"
-    assert "secondPressedCandy" in params, "Missing parameter 'secondPressedCandy'"
-    assert "dropTimer" in params, "Missing parameter 'dropTimer'"
-    assert "dropTimerCount" in params, "Missing parameter 'dropTimerCount'"
-    assert "HORIZONTAL_GAP" in params, "Missing parameter 'HORIZONTAL_GAP'"
-    assert "scorePerCandy" in params, "Missing parameter 'scorePerCandy'"
-    assert "crushTimer" in params, "Missing parameter 'crushTimer'"
     assert "isSwapBack" in params, "Missing parameter 'isSwapBack'"
-    assert "selfCrushTimerCount" in params, "Missing parameter 'selfCrushTimerCount'"
+    assert "baseScorePerCandy" in params, "Missing parameter 'baseScorePerCandy'"
+    assert "crushTimer" in params, "Missing parameter 'crushTimer'"
+    assert "BOARD_WIDTH" in params, "Missing parameter 'BOARD_WIDTH'"
+    assert "BOARD_HEIGHT" in params, "Missing parameter 'BOARD_HEIGHT'"
+    assert "isFirstPressed" in params, "Missing parameter 'isFirstPressed'"
+    assert "dropTimerCount" in params, "Missing parameter 'dropTimerCount'"
+    assert "candyHeight" in params, "Missing parameter 'candyHeight'"
+    assert "moveDistance" in params, "Missing parameter 'moveDistance'"
     assert "swapTimerCount" in params, "Missing parameter 'swapTimerCount'"
+    assert "dropTimer" in params, "Missing parameter 'dropTimer'"
+    assert "scorePerCandy" in params, "Missing parameter 'scorePerCandy'"
+    assert "selfCrushTimer" in params, "Missing parameter 'selfCrushTimer'"
+    assert "swapTimer" in params, "Missing parameter 'swapTimer'"
+    assert "swapDirection" in params, "Missing parameter 'swapDirection'"
+    assert "candyWidth" in params, "Missing parameter 'candyWidth'"
+    assert "cascadeTimer" in params, "Missing parameter 'cascadeTimer'"
+    assert "VERTICAL_GAP" in params, "Missing parameter 'VERTICAL_GAP'"
+    assert "selfCrushTimerCount" in params, "Missing parameter 'selfCrushTimerCount'"
+    assert "secondPressedCandy" in params, "Missing parameter 'secondPressedCandy'"
+    assert "SIZE" in params, "Missing parameter 'SIZE'"
+    assert "firstPressedCandy" in params, "Missing parameter 'firstPressedCandy'"
 
-def test_candycrushpackage_board_has_selfCrushTimer():
-    assert hasattr(candyCrushPackage_Board, "selfCrushTimer")
+def test_candycrushpackage_board_has_selfCrushCandy():
+    assert hasattr(candyCrushPackage_Board, "selfCrushCandy")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
-        if "selfCrushTimer" in klass.__dict__:
-            descriptor = klass.__dict__["selfCrushTimer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_delay():
-    assert hasattr(candyCrushPackage_Board, "delay")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "delay" in klass.__dict__:
-            descriptor = klass.__dict__["delay"]
+        if "selfCrushCandy" in klass.__dict__:
+            descriptor = klass.__dict__["selfCrushCandy"]
             break
     assert isinstance(descriptor, property)
 
@@ -272,57 +263,30 @@ def test_candycrushpackage_board_has_movesPerGame():
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_board_has_candyWidth():
-    assert hasattr(candyCrushPackage_Board, "candyWidth")
+def test_candycrushpackage_board_has_HORIZONTAL_GAP():
+    assert hasattr(candyCrushPackage_Board, "HORIZONTAL_GAP")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
-        if "candyWidth" in klass.__dict__:
-            descriptor = klass.__dict__["candyWidth"]
+        if "HORIZONTAL_GAP" in klass.__dict__:
+            descriptor = klass.__dict__["HORIZONTAL_GAP"]
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_board_has_BOARD_HEIGHT():
-    assert hasattr(candyCrushPackage_Board, "BOARD_HEIGHT")
+def test_candycrushpackage_board_has_crushTimerCount():
+    assert hasattr(candyCrushPackage_Board, "crushTimerCount")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
-        if "BOARD_HEIGHT" in klass.__dict__:
-            descriptor = klass.__dict__["BOARD_HEIGHT"]
+        if "crushTimerCount" in klass.__dict__:
+            descriptor = klass.__dict__["crushTimerCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_board_has_swapTimer():
-    assert hasattr(candyCrushPackage_Board, "swapTimer")
+def test_candycrushpackage_board_has_delay():
+    assert hasattr(candyCrushPackage_Board, "delay")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
-        if "swapTimer" in klass.__dict__:
-            descriptor = klass.__dict__["swapTimer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_moveDistance():
-    assert hasattr(candyCrushPackage_Board, "moveDistance")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "moveDistance" in klass.__dict__:
-            descriptor = klass.__dict__["moveDistance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_SIZE():
-    assert hasattr(candyCrushPackage_Board, "SIZE")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "SIZE" in klass.__dict__:
-            descriptor = klass.__dict__["SIZE"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_firstPressedCandy():
-    assert hasattr(candyCrushPackage_Board, "firstPressedCandy")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "firstPressedCandy" in klass.__dict__:
-            descriptor = klass.__dict__["firstPressedCandy"]
+        if "delay" in klass.__dict__:
+            descriptor = klass.__dict__["delay"]
             break
     assert isinstance(descriptor, property)
 
@@ -344,129 +308,21 @@ def test_candycrushpackage_board_has_movesLeft():
             break
     assert isinstance(descriptor, property)
 
+def test_candycrushpackage_board_has_isSwapBack():
+    assert hasattr(candyCrushPackage_Board, "isSwapBack")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "isSwapBack" in klass.__dict__:
+            descriptor = klass.__dict__["isSwapBack"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_candycrushpackage_board_has_baseScorePerCandy():
     assert hasattr(candyCrushPackage_Board, "baseScorePerCandy")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
         if "baseScorePerCandy" in klass.__dict__:
             descriptor = klass.__dict__["baseScorePerCandy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_BOARD_WIDTH():
-    assert hasattr(candyCrushPackage_Board, "BOARD_WIDTH")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "BOARD_WIDTH" in klass.__dict__:
-            descriptor = klass.__dict__["BOARD_WIDTH"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_isFirstPressed():
-    assert hasattr(candyCrushPackage_Board, "isFirstPressed")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "isFirstPressed" in klass.__dict__:
-            descriptor = klass.__dict__["isFirstPressed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_selfCrushCandy():
-    assert hasattr(candyCrushPackage_Board, "selfCrushCandy")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "selfCrushCandy" in klass.__dict__:
-            descriptor = klass.__dict__["selfCrushCandy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_cascadeTimer():
-    assert hasattr(candyCrushPackage_Board, "cascadeTimer")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "cascadeTimer" in klass.__dict__:
-            descriptor = klass.__dict__["cascadeTimer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_swapDirection():
-    assert hasattr(candyCrushPackage_Board, "swapDirection")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "swapDirection" in klass.__dict__:
-            descriptor = klass.__dict__["swapDirection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_crushTimerCount():
-    assert hasattr(candyCrushPackage_Board, "crushTimerCount")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "crushTimerCount" in klass.__dict__:
-            descriptor = klass.__dict__["crushTimerCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_VERTICAL_GAP():
-    assert hasattr(candyCrushPackage_Board, "VERTICAL_GAP")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "VERTICAL_GAP" in klass.__dict__:
-            descriptor = klass.__dict__["VERTICAL_GAP"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_candyHeight():
-    assert hasattr(candyCrushPackage_Board, "candyHeight")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "candyHeight" in klass.__dict__:
-            descriptor = klass.__dict__["candyHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_secondPressedCandy():
-    assert hasattr(candyCrushPackage_Board, "secondPressedCandy")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "secondPressedCandy" in klass.__dict__:
-            descriptor = klass.__dict__["secondPressedCandy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_dropTimer():
-    assert hasattr(candyCrushPackage_Board, "dropTimer")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "dropTimer" in klass.__dict__:
-            descriptor = klass.__dict__["dropTimer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_dropTimerCount():
-    assert hasattr(candyCrushPackage_Board, "dropTimerCount")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "dropTimerCount" in klass.__dict__:
-            descriptor = klass.__dict__["dropTimerCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_HORIZONTAL_GAP():
-    assert hasattr(candyCrushPackage_Board, "HORIZONTAL_GAP")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "HORIZONTAL_GAP" in klass.__dict__:
-            descriptor = klass.__dict__["HORIZONTAL_GAP"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_board_has_scorePerCandy():
-    assert hasattr(candyCrushPackage_Board, "scorePerCandy")
-    descriptor = None
-    for klass in candyCrushPackage_Board.__mro__:
-        if "scorePerCandy" in klass.__dict__:
-            descriptor = klass.__dict__["scorePerCandy"]
             break
     assert isinstance(descriptor, property)
 
@@ -479,12 +335,138 @@ def test_candycrushpackage_board_has_crushTimer():
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_board_has_isSwapBack():
-    assert hasattr(candyCrushPackage_Board, "isSwapBack")
+def test_candycrushpackage_board_has_BOARD_WIDTH():
+    assert hasattr(candyCrushPackage_Board, "BOARD_WIDTH")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
-        if "isSwapBack" in klass.__dict__:
-            descriptor = klass.__dict__["isSwapBack"]
+        if "BOARD_WIDTH" in klass.__dict__:
+            descriptor = klass.__dict__["BOARD_WIDTH"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_BOARD_HEIGHT():
+    assert hasattr(candyCrushPackage_Board, "BOARD_HEIGHT")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "BOARD_HEIGHT" in klass.__dict__:
+            descriptor = klass.__dict__["BOARD_HEIGHT"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_isFirstPressed():
+    assert hasattr(candyCrushPackage_Board, "isFirstPressed")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "isFirstPressed" in klass.__dict__:
+            descriptor = klass.__dict__["isFirstPressed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_dropTimerCount():
+    assert hasattr(candyCrushPackage_Board, "dropTimerCount")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "dropTimerCount" in klass.__dict__:
+            descriptor = klass.__dict__["dropTimerCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_candyHeight():
+    assert hasattr(candyCrushPackage_Board, "candyHeight")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "candyHeight" in klass.__dict__:
+            descriptor = klass.__dict__["candyHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_moveDistance():
+    assert hasattr(candyCrushPackage_Board, "moveDistance")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "moveDistance" in klass.__dict__:
+            descriptor = klass.__dict__["moveDistance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_swapTimerCount():
+    assert hasattr(candyCrushPackage_Board, "swapTimerCount")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "swapTimerCount" in klass.__dict__:
+            descriptor = klass.__dict__["swapTimerCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_dropTimer():
+    assert hasattr(candyCrushPackage_Board, "dropTimer")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "dropTimer" in klass.__dict__:
+            descriptor = klass.__dict__["dropTimer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_scorePerCandy():
+    assert hasattr(candyCrushPackage_Board, "scorePerCandy")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "scorePerCandy" in klass.__dict__:
+            descriptor = klass.__dict__["scorePerCandy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_selfCrushTimer():
+    assert hasattr(candyCrushPackage_Board, "selfCrushTimer")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "selfCrushTimer" in klass.__dict__:
+            descriptor = klass.__dict__["selfCrushTimer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_swapTimer():
+    assert hasattr(candyCrushPackage_Board, "swapTimer")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "swapTimer" in klass.__dict__:
+            descriptor = klass.__dict__["swapTimer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_swapDirection():
+    assert hasattr(candyCrushPackage_Board, "swapDirection")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "swapDirection" in klass.__dict__:
+            descriptor = klass.__dict__["swapDirection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_candyWidth():
+    assert hasattr(candyCrushPackage_Board, "candyWidth")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "candyWidth" in klass.__dict__:
+            descriptor = klass.__dict__["candyWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_cascadeTimer():
+    assert hasattr(candyCrushPackage_Board, "cascadeTimer")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "cascadeTimer" in klass.__dict__:
+            descriptor = klass.__dict__["cascadeTimer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_VERTICAL_GAP():
+    assert hasattr(candyCrushPackage_Board, "VERTICAL_GAP")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "VERTICAL_GAP" in klass.__dict__:
+            descriptor = klass.__dict__["VERTICAL_GAP"]
             break
     assert isinstance(descriptor, property)
 
@@ -497,12 +479,30 @@ def test_candycrushpackage_board_has_selfCrushTimerCount():
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_board_has_swapTimerCount():
-    assert hasattr(candyCrushPackage_Board, "swapTimerCount")
+def test_candycrushpackage_board_has_secondPressedCandy():
+    assert hasattr(candyCrushPackage_Board, "secondPressedCandy")
     descriptor = None
     for klass in candyCrushPackage_Board.__mro__:
-        if "swapTimerCount" in klass.__dict__:
-            descriptor = klass.__dict__["swapTimerCount"]
+        if "secondPressedCandy" in klass.__dict__:
+            descriptor = klass.__dict__["secondPressedCandy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_SIZE():
+    assert hasattr(candyCrushPackage_Board, "SIZE")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "SIZE" in klass.__dict__:
+            descriptor = klass.__dict__["SIZE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_board_has_firstPressedCandy():
+    assert hasattr(candyCrushPackage_Board, "firstPressedCandy")
+    descriptor = None
+    for klass in candyCrushPackage_Board.__mro__:
+        if "firstPressedCandy" in klass.__dict__:
+            descriptor = klass.__dict__["firstPressedCandy"]
             break
     assert isinstance(descriptor, property)
 
@@ -519,17 +519,17 @@ def test_candycrushpackage_menu_constructor_exists():
 def test_candycrushpackage_menu_constructor_args():
     sig = inspect.signature(candyCrushPackage_Menu.__init__)
     params = list(sig.parameters.keys())
-    assert "buttonBGColor" in params, "Missing parameter 'buttonBGColor'"
-    assert "highScoreLabel" in params, "Missing parameter 'highScoreLabel'"
-    assert "menuBGColor" in params, "Missing parameter 'menuBGColor'"
     assert "movesLabel" in params, "Missing parameter 'movesLabel'"
+    assert "highScoreLabel" in params, "Missing parameter 'highScoreLabel'"
+    assert "buttonBGColor" in params, "Missing parameter 'buttonBGColor'"
+    assert "menuBGColor" in params, "Missing parameter 'menuBGColor'"
 
-def test_candycrushpackage_menu_has_buttonBGColor():
-    assert hasattr(candyCrushPackage_Menu, "buttonBGColor")
+def test_candycrushpackage_menu_has_movesLabel():
+    assert hasattr(candyCrushPackage_Menu, "movesLabel")
     descriptor = None
     for klass in candyCrushPackage_Menu.__mro__:
-        if "buttonBGColor" in klass.__dict__:
-            descriptor = klass.__dict__["buttonBGColor"]
+        if "movesLabel" in klass.__dict__:
+            descriptor = klass.__dict__["movesLabel"]
             break
     assert isinstance(descriptor, property)
 
@@ -542,21 +542,21 @@ def test_candycrushpackage_menu_has_highScoreLabel():
             break
     assert isinstance(descriptor, property)
 
+def test_candycrushpackage_menu_has_buttonBGColor():
+    assert hasattr(candyCrushPackage_Menu, "buttonBGColor")
+    descriptor = None
+    for klass in candyCrushPackage_Menu.__mro__:
+        if "buttonBGColor" in klass.__dict__:
+            descriptor = klass.__dict__["buttonBGColor"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_candycrushpackage_menu_has_menuBGColor():
     assert hasattr(candyCrushPackage_Menu, "menuBGColor")
     descriptor = None
     for klass in candyCrushPackage_Menu.__mro__:
         if "menuBGColor" in klass.__dict__:
             descriptor = klass.__dict__["menuBGColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_menu_has_movesLabel():
-    assert hasattr(candyCrushPackage_Menu, "movesLabel")
-    descriptor = None
-    for klass in candyCrushPackage_Menu.__mro__:
-        if "movesLabel" in klass.__dict__:
-            descriptor = klass.__dict__["movesLabel"]
             break
     assert isinstance(descriptor, property)
 
@@ -573,20 +573,20 @@ def test_candycrushpackage_game_constructor_exists():
 def test_candycrushpackage_game_constructor_args():
     sig = inspect.signature(candyCrushPackage_Game.__init__)
     params = list(sig.parameters.keys())
-    assert "SOUNDS_PATH" in params, "Missing parameter 'SOUNDS_PATH'"
+    assert "WINDOW_HEIGHT" in params, "Missing parameter 'WINDOW_HEIGHT'"
     assert "SEP" in params, "Missing parameter 'SEP'"
+    assert "score" in params, "Missing parameter 'score'"
     assert "playerName" in params, "Missing parameter 'playerName'"
     assert "WINDOW_WIDTH" in params, "Missing parameter 'WINDOW_WIDTH'"
     assert "IMAGES_PATH" in params, "Missing parameter 'IMAGES_PATH'"
-    assert "score" in params, "Missing parameter 'score'"
-    assert "WINDOW_HEIGHT" in params, "Missing parameter 'WINDOW_HEIGHT'"
+    assert "SOUNDS_PATH" in params, "Missing parameter 'SOUNDS_PATH'"
 
-def test_candycrushpackage_game_has_SOUNDS_PATH():
-    assert hasattr(candyCrushPackage_Game, "SOUNDS_PATH")
+def test_candycrushpackage_game_has_WINDOW_HEIGHT():
+    assert hasattr(candyCrushPackage_Game, "WINDOW_HEIGHT")
     descriptor = None
     for klass in candyCrushPackage_Game.__mro__:
-        if "SOUNDS_PATH" in klass.__dict__:
-            descriptor = klass.__dict__["SOUNDS_PATH"]
+        if "WINDOW_HEIGHT" in klass.__dict__:
+            descriptor = klass.__dict__["WINDOW_HEIGHT"]
             break
     assert isinstance(descriptor, property)
 
@@ -596,6 +596,15 @@ def test_candycrushpackage_game_has_SEP():
     for klass in candyCrushPackage_Game.__mro__:
         if "SEP" in klass.__dict__:
             descriptor = klass.__dict__["SEP"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_game_has_score():
+    assert hasattr(candyCrushPackage_Game, "score")
+    descriptor = None
+    for klass in candyCrushPackage_Game.__mro__:
+        if "score" in klass.__dict__:
+            descriptor = klass.__dict__["score"]
             break
     assert isinstance(descriptor, property)
 
@@ -626,21 +635,12 @@ def test_candycrushpackage_game_has_IMAGES_PATH():
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_game_has_score():
-    assert hasattr(candyCrushPackage_Game, "score")
+def test_candycrushpackage_game_has_SOUNDS_PATH():
+    assert hasattr(candyCrushPackage_Game, "SOUNDS_PATH")
     descriptor = None
     for klass in candyCrushPackage_Game.__mro__:
-        if "score" in klass.__dict__:
-            descriptor = klass.__dict__["score"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_candycrushpackage_game_has_WINDOW_HEIGHT():
-    assert hasattr(candyCrushPackage_Game, "WINDOW_HEIGHT")
-    descriptor = None
-    for klass in candyCrushPackage_Game.__mro__:
-        if "WINDOW_HEIGHT" in klass.__dict__:
-            descriptor = klass.__dict__["WINDOW_HEIGHT"]
+        if "SOUNDS_PATH" in klass.__dict__:
+            descriptor = klass.__dict__["SOUNDS_PATH"]
             break
     assert isinstance(descriptor, property)
 
@@ -657,17 +657,8 @@ def test_candycrushpackage_regularcandy_constructor_exists():
 def test_candycrushpackage_regularcandy_constructor_args():
     sig = inspect.signature(candyCrushPackage_RegularCandy.__init__)
     params = list(sig.parameters.keys())
-    assert "selfCrushRange" in params, "Missing parameter 'selfCrushRange'"
     assert "selfCrush" in params, "Missing parameter 'selfCrush'"
-
-def test_candycrushpackage_regularcandy_has_selfCrushRange():
-    assert hasattr(candyCrushPackage_RegularCandy, "selfCrushRange")
-    descriptor = None
-    for klass in candyCrushPackage_RegularCandy.__mro__:
-        if "selfCrushRange" in klass.__dict__:
-            descriptor = klass.__dict__["selfCrushRange"]
-            break
-    assert isinstance(descriptor, property)
+    assert "selfCrushRange" in params, "Missing parameter 'selfCrushRange'"
 
 def test_candycrushpackage_regularcandy_has_selfCrush():
     assert hasattr(candyCrushPackage_RegularCandy, "selfCrush")
@@ -675,6 +666,15 @@ def test_candycrushpackage_regularcandy_has_selfCrush():
     for klass in candyCrushPackage_RegularCandy.__mro__:
         if "selfCrush" in klass.__dict__:
             descriptor = klass.__dict__["selfCrush"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_candycrushpackage_regularcandy_has_selfCrushRange():
+    assert hasattr(candyCrushPackage_RegularCandy, "selfCrushRange")
+    descriptor = None
+    for klass in candyCrushPackage_RegularCandy.__mro__:
+        if "selfCrushRange" in klass.__dict__:
+            descriptor = klass.__dict__["selfCrushRange"]
             break
     assert isinstance(descriptor, property)
 
@@ -719,16 +719,16 @@ def test_candycrushpackage_candy_constructor_exists():
 def test_candycrushpackage_candy_constructor_args():
     sig = inspect.signature(candyCrushPackage_Candy.__init__)
     params = list(sig.parameters.keys())
-    assert "row" in params, "Missing parameter 'row'"
-    assert "color" in params, "Missing parameter 'color'"
     assert "col" in params, "Missing parameter 'col'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "row" in params, "Missing parameter 'row'"
 
-def test_candycrushpackage_candy_has_row():
-    assert hasattr(candyCrushPackage_Candy, "row")
+def test_candycrushpackage_candy_has_col():
+    assert hasattr(candyCrushPackage_Candy, "col")
     descriptor = None
     for klass in candyCrushPackage_Candy.__mro__:
-        if "row" in klass.__dict__:
-            descriptor = klass.__dict__["row"]
+        if "col" in klass.__dict__:
+            descriptor = klass.__dict__["col"]
             break
     assert isinstance(descriptor, property)
 
@@ -741,12 +741,12 @@ def test_candycrushpackage_candy_has_color():
             break
     assert isinstance(descriptor, property)
 
-def test_candycrushpackage_candy_has_col():
-    assert hasattr(candyCrushPackage_Candy, "col")
+def test_candycrushpackage_candy_has_row():
+    assert hasattr(candyCrushPackage_Candy, "row")
     descriptor = None
     for klass in candyCrushPackage_Candy.__mro__:
-        if "col" in klass.__dict__:
-            descriptor = klass.__dict__["col"]
+        if "row" in klass.__dict__:
+            descriptor = klass.__dict__["row"]
             break
     assert isinstance(descriptor, property)
 
@@ -841,99 +841,99 @@ candyCrushPackage_StrippedCandy_strategy = st.builds(
 )
 candyCrushPackage_Board_strategy = st.builds(
     candyCrushPackage_Board,
-    selfCrushTimer=
-        safe_text,
-    delay=
-        st.integers(),
+    selfCrushCandy=
+        st.none(),
     movesPerGame=
         st.integers(),
-    candyWidth=
+    HORIZONTAL_GAP=
         st.integers(),
-    BOARD_HEIGHT=
+    crushTimerCount=
         st.integers(),
-    swapTimer=
-        safe_text,
-    moveDistance=
+    delay=
         st.integers(),
-    SIZE=
-        st.integers(),
-    firstPressedCandy=
-        st.none(),
     gameScore=
         st.integers(),
     movesLeft=
         st.integers(),
+    isSwapBack=
+        st.booleans(),
     baseScorePerCandy=
         st.integers(),
+    crushTimer=
+        safe_text,
     BOARD_WIDTH=
+        st.integers(),
+    BOARD_HEIGHT=
         st.integers(),
     isFirstPressed=
         st.booleans(),
-    selfCrushCandy=
-        st.none(),
-    cascadeTimer=
-        safe_text,
-    swapDirection=
-        st.none(),
-    crushTimerCount=
-        st.integers(),
-    VERTICAL_GAP=
+    dropTimerCount=
         st.integers(),
     candyHeight=
         st.integers(),
-    secondPressedCandy=
-        st.none(),
-    dropTimer=
-        safe_text,
-    dropTimerCount=
-        st.integers(),
-    HORIZONTAL_GAP=
-        st.integers(),
-    scorePerCandy=
-        safe_text,
-    crushTimer=
-        safe_text,
-    isSwapBack=
-        st.booleans(),
-    selfCrushTimerCount=
+    moveDistance=
         st.integers(),
     swapTimerCount=
-        st.integers()
+        st.integers(),
+    dropTimer=
+        safe_text,
+    scorePerCandy=
+        safe_text,
+    selfCrushTimer=
+        safe_text,
+    swapTimer=
+        safe_text,
+    swapDirection=
+        st.none(),
+    candyWidth=
+        st.integers(),
+    cascadeTimer=
+        safe_text,
+    VERTICAL_GAP=
+        st.integers(),
+    selfCrushTimerCount=
+        st.integers(),
+    secondPressedCandy=
+        st.none(),
+    SIZE=
+        st.integers(),
+    firstPressedCandy=
+        st.none()
 )
 candyCrushPackage_Menu_strategy = st.builds(
     candyCrushPackage_Menu,
-    buttonBGColor=
+    movesLabel=
         safe_text,
     highScoreLabel=
         safe_text,
-    menuBGColor=
+    buttonBGColor=
         safe_text,
-    movesLabel=
+    menuBGColor=
         safe_text
 )
 candyCrushPackage_Game_strategy = st.builds(
     candyCrushPackage_Game,
-    SOUNDS_PATH=
-        safe_text,
+    WINDOW_HEIGHT=
+        st.integers(),
     SEP=
         safe_text,
+    score=
+        st.integers(),
     playerName=
         safe_text,
     WINDOW_WIDTH=
         st.integers(),
     IMAGES_PATH=
         safe_text,
-    score=
-        st.integers(),
-    WINDOW_HEIGHT=
-        st.integers()
+    SOUNDS_PATH=
+        safe_text
 )
 candyCrushPackage_RegularCandy_strategy = st.builds(
     candyCrushPackage_RegularCandy,
-    selfCrushRange=
-        st.integers(),
     selfCrush=
-        st.booleans()
+        st.booleans(),
+    selfCrushRange=
+        st.integers()
 )
 candyCrushPackage_Visited_Interface_strategy = st.builds(
     candyCrushPackage_Visited_Interface,
@@ -943,11 +943,11 @@ candyCrushPackage_Visitor_Interface_strategy = st.builds(
 )
 candyCrushPackage_Candy_strategy = st.builds(
     candyCrushPackage_Candy,
-    row=
+    col=
         st.integers(),
     color=
         st.integers(),
-    col=
+    row=
         st.integers()
 )
 JButton_external_strategy = st.builds(
@@ -982,9 +982,6 @@ def test_candycrushpackage_jframe_instantiation(instance):
 def test_candycrushpackage_candybutton_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_CandyButton)
 
-@given(instance=candyCrushPackage_CandyButton_strategy)
-def test_candycrushpackage_candybutton_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
 @given(instance=candyCrushPackage_CandyButton_strategy)
@@ -993,9 +990,6 @@ def test_candycrushpackage_candybutton_y_setter(instance):
     instance.y = original
     assert instance.y == original
 
-@given(instance=candyCrushPackage_CandyButton_strategy)
-def test_candycrushpackage_candybutton_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=candyCrushPackage_CandyButton_strategy)
@@ -1004,9 +998,6 @@ def test_candycrushpackage_candybutton_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
-@given(instance=candyCrushPackage_CandyButton_strategy)
-def test_candycrushpackage_candybutton_image_type(instance):
-    assert isinstance(instance.image, str)
 
 
 @given(instance=candyCrushPackage_CandyButton_strategy)
@@ -1015,9 +1006,6 @@ def test_candycrushpackage_candybutton_image_setter(instance):
     instance.image = original
     assert instance.image == original
 
-@given(instance=candyCrushPackage_CandyButton_strategy)
-def test_candycrushpackage_candybutton_button_type(instance):
-    assert isinstance(instance.button, str)
 
 
 @given(instance=candyCrushPackage_CandyButton_strategy)
@@ -1036,9 +1024,6 @@ def test_candycrushpackage_colorbombcandy_instantiation(instance):
 def test_candycrushpackage_wrappedcandy_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_WrappedCandy)
 
-@given(instance=candyCrushPackage_WrappedCandy_strategy)
-def test_candycrushpackage_wrappedcandy_selfCrushRange_type(instance):
-    assert isinstance(instance.selfCrushRange, int)
 
 
 @given(instance=candyCrushPackage_WrappedCandy_strategy)
@@ -1052,9 +1037,6 @@ def test_candycrushpackage_wrappedcandy_selfCrushRange_setter(instance):
 def test_candycrushpackage_strippedcandy_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_StrippedCandy)
 
-@given(instance=candyCrushPackage_StrippedCandy_strategy)
-def test_candycrushpackage_strippedcandy_isHorizontal_type(instance):
-    assert isinstance(instance.isHorizontal, bool)
 
 
 @given(instance=candyCrushPackage_StrippedCandy_strategy)
@@ -1068,163 +1050,6 @@ def test_candycrushpackage_strippedcandy_isHorizontal_setter(instance):
 def test_candycrushpackage_board_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_Board)
 
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_selfCrushTimer_type(instance):
-    assert isinstance(instance.selfCrushTimer, str)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_selfCrushTimer_setter(instance):
-    original = instance.selfCrushTimer
-    instance.selfCrushTimer = original
-    assert instance.selfCrushTimer == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_delay_type(instance):
-    assert isinstance(instance.delay, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_delay_setter(instance):
-    original = instance.delay
-    instance.delay = original
-    assert instance.delay == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_movesPerGame_type(instance):
-    assert isinstance(instance.movesPerGame, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_movesPerGame_setter(instance):
-    original = instance.movesPerGame
-    instance.movesPerGame = original
-    assert instance.movesPerGame == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_candyWidth_type(instance):
-    assert isinstance(instance.candyWidth, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_candyWidth_setter(instance):
-    original = instance.candyWidth
-    instance.candyWidth = original
-    assert instance.candyWidth == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_BOARD_HEIGHT_type(instance):
-    assert isinstance(instance.BOARD_HEIGHT, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_BOARD_HEIGHT_setter(instance):
-    original = instance.BOARD_HEIGHT
-    instance.BOARD_HEIGHT = original
-    assert instance.BOARD_HEIGHT == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_swapTimer_type(instance):
-    assert isinstance(instance.swapTimer, str)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_swapTimer_setter(instance):
-    original = instance.swapTimer
-    instance.swapTimer = original
-    assert instance.swapTimer == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_moveDistance_type(instance):
-    assert isinstance(instance.moveDistance, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_moveDistance_setter(instance):
-    original = instance.moveDistance
-    instance.moveDistance = original
-    assert instance.moveDistance == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_SIZE_type(instance):
-    assert isinstance(instance.SIZE, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_SIZE_setter(instance):
-    original = instance.SIZE
-    instance.SIZE = original
-    assert instance.SIZE == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_firstPressedCandy_type(instance):
-    assert isinstance(instance.firstPressedCandy, candycrushpackage_candy)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_firstPressedCandy_setter(instance):
-    original = instance.firstPressedCandy
-    instance.firstPressedCandy = original
-    assert instance.firstPressedCandy == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_gameScore_type(instance):
-    assert isinstance(instance.gameScore, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_gameScore_setter(instance):
-    original = instance.gameScore
-    instance.gameScore = original
-    assert instance.gameScore == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_movesLeft_type(instance):
-    assert isinstance(instance.movesLeft, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_movesLeft_setter(instance):
-    original = instance.movesLeft
-    instance.movesLeft = original
-    assert instance.movesLeft == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_baseScorePerCandy_type(instance):
-    assert isinstance(instance.baseScorePerCandy, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_baseScorePerCandy_setter(instance):
-    original = instance.baseScorePerCandy
-    instance.baseScorePerCandy = original
-    assert instance.baseScorePerCandy == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_BOARD_WIDTH_type(instance):
-    assert isinstance(instance.BOARD_WIDTH, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_BOARD_WIDTH_setter(instance):
-    original = instance.BOARD_WIDTH
-    instance.BOARD_WIDTH = original
-    assert instance.BOARD_WIDTH == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_isFirstPressed_type(instance):
-    assert isinstance(instance.isFirstPressed, bool)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_isFirstPressed_setter(instance):
-    original = instance.isFirstPressed
-    instance.isFirstPressed = original
-    assert instance.isFirstPressed == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_selfCrushCandy_type(instance):
-    assert isinstance(instance.selfCrushCandy, candycrushpackage_candy)
 
 
 @given(instance=candyCrushPackage_Board_strategy)
@@ -1233,97 +1058,14 @@ def test_candycrushpackage_board_selfCrushCandy_setter(instance):
     instance.selfCrushCandy = original
     assert instance.selfCrushCandy == original
 
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_cascadeTimer_type(instance):
-    assert isinstance(instance.cascadeTimer, str)
 
 
 @given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_cascadeTimer_setter(instance):
-    original = instance.cascadeTimer
-    instance.cascadeTimer = original
-    assert instance.cascadeTimer == original
+def test_candycrushpackage_board_movesPerGame_setter(instance):
+    original = instance.movesPerGame
+    instance.movesPerGame = original
+    assert instance.movesPerGame == original
 
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_swapDirection_type(instance):
-    assert isinstance(instance.swapDirection, candycrushpackage_swapdirection)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_swapDirection_setter(instance):
-    original = instance.swapDirection
-    instance.swapDirection = original
-    assert instance.swapDirection == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_crushTimerCount_type(instance):
-    assert isinstance(instance.crushTimerCount, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_crushTimerCount_setter(instance):
-    original = instance.crushTimerCount
-    instance.crushTimerCount = original
-    assert instance.crushTimerCount == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_VERTICAL_GAP_type(instance):
-    assert isinstance(instance.VERTICAL_GAP, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_VERTICAL_GAP_setter(instance):
-    original = instance.VERTICAL_GAP
-    instance.VERTICAL_GAP = original
-    assert instance.VERTICAL_GAP == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_candyHeight_type(instance):
-    assert isinstance(instance.candyHeight, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_candyHeight_setter(instance):
-    original = instance.candyHeight
-    instance.candyHeight = original
-    assert instance.candyHeight == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_secondPressedCandy_type(instance):
-    assert isinstance(instance.secondPressedCandy, candycrushpackage_candy)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_secondPressedCandy_setter(instance):
-    original = instance.secondPressedCandy
-    instance.secondPressedCandy = original
-    assert instance.secondPressedCandy == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_dropTimer_type(instance):
-    assert isinstance(instance.dropTimer, str)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_dropTimer_setter(instance):
-    original = instance.dropTimer
-    instance.dropTimer = original
-    assert instance.dropTimer == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_dropTimerCount_type(instance):
-    assert isinstance(instance.dropTimerCount, int)
-
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_dropTimerCount_setter(instance):
-    original = instance.dropTimerCount
-    instance.dropTimerCount = original
-    assert instance.dropTimerCount == original
-
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_HORIZONTAL_GAP_type(instance):
-    assert isinstance(instance.HORIZONTAL_GAP, int)
 
 
 @given(instance=candyCrushPackage_Board_strategy)
@@ -1332,31 +1074,38 @@ def test_candycrushpackage_board_HORIZONTAL_GAP_setter(instance):
     instance.HORIZONTAL_GAP = original
     assert instance.HORIZONTAL_GAP == original
 
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_scorePerCandy_type(instance):
-    assert isinstance(instance.scorePerCandy, str)
 
 
 @given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_scorePerCandy_setter(instance):
-    original = instance.scorePerCandy
-    instance.scorePerCandy = original
-    assert instance.scorePerCandy == original
+def test_candycrushpackage_board_crushTimerCount_setter(instance):
+    original = instance.crushTimerCount
+    instance.crushTimerCount = original
+    assert instance.crushTimerCount == original
 
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_crushTimer_type(instance):
-    assert isinstance(instance.crushTimer, str)
 
 
 @given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_crushTimer_setter(instance):
-    original = instance.crushTimer
-    instance.crushTimer = original
-    assert instance.crushTimer == original
+def test_candycrushpackage_board_delay_setter(instance):
+    original = instance.delay
+    instance.delay = original
+    assert instance.delay == original
+
+
 
 @given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_isSwapBack_type(instance):
-    assert isinstance(instance.isSwapBack, bool)
+def test_candycrushpackage_board_gameScore_setter(instance):
+    original = instance.gameScore
+    instance.gameScore = original
+    assert instance.gameScore == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_movesLeft_setter(instance):
+    original = instance.movesLeft
+    instance.movesLeft = original
+    assert instance.movesLeft == original
+
 
 
 @given(instance=candyCrushPackage_Board_strategy)
@@ -1365,20 +1114,70 @@ def test_candycrushpackage_board_isSwapBack_setter(instance):
     instance.isSwapBack = original
     assert instance.isSwapBack == original
 
-@given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_selfCrushTimerCount_type(instance):
-    assert isinstance(instance.selfCrushTimerCount, int)
 
 
 @given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_selfCrushTimerCount_setter(instance):
-    original = instance.selfCrushTimerCount
-    instance.selfCrushTimerCount = original
-    assert instance.selfCrushTimerCount == original
+def test_candycrushpackage_board_baseScorePerCandy_setter(instance):
+    original = instance.baseScorePerCandy
+    instance.baseScorePerCandy = original
+    assert instance.baseScorePerCandy == original
+
+
 
 @given(instance=candyCrushPackage_Board_strategy)
-def test_candycrushpackage_board_swapTimerCount_type(instance):
-    assert isinstance(instance.swapTimerCount, int)
+def test_candycrushpackage_board_crushTimer_setter(instance):
+    original = instance.crushTimer
+    instance.crushTimer = original
+    assert instance.crushTimer == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_BOARD_WIDTH_setter(instance):
+    original = instance.BOARD_WIDTH
+    instance.BOARD_WIDTH = original
+    assert instance.BOARD_WIDTH == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_BOARD_HEIGHT_setter(instance):
+    original = instance.BOARD_HEIGHT
+    instance.BOARD_HEIGHT = original
+    assert instance.BOARD_HEIGHT == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_isFirstPressed_setter(instance):
+    original = instance.isFirstPressed
+    instance.isFirstPressed = original
+    assert instance.isFirstPressed == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_dropTimerCount_setter(instance):
+    original = instance.dropTimerCount
+    instance.dropTimerCount = original
+    assert instance.dropTimerCount == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_candyHeight_setter(instance):
+    original = instance.candyHeight
+    instance.candyHeight = original
+    assert instance.candyHeight == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_moveDistance_setter(instance):
+    original = instance.moveDistance
+    instance.moveDistance = original
+    assert instance.moveDistance == original
+
 
 
 @given(instance=candyCrushPackage_Board_strategy)
@@ -1387,47 +1186,107 @@ def test_candycrushpackage_board_swapTimerCount_setter(instance):
     instance.swapTimerCount = original
     assert instance.swapTimerCount == original
 
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_dropTimer_setter(instance):
+    original = instance.dropTimer
+    instance.dropTimer = original
+    assert instance.dropTimer == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_scorePerCandy_setter(instance):
+    original = instance.scorePerCandy
+    instance.scorePerCandy = original
+    assert instance.scorePerCandy == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_selfCrushTimer_setter(instance):
+    original = instance.selfCrushTimer
+    instance.selfCrushTimer = original
+    assert instance.selfCrushTimer == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_swapTimer_setter(instance):
+    original = instance.swapTimer
+    instance.swapTimer = original
+    assert instance.swapTimer == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_swapDirection_setter(instance):
+    original = instance.swapDirection
+    instance.swapDirection = original
+    assert instance.swapDirection == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_candyWidth_setter(instance):
+    original = instance.candyWidth
+    instance.candyWidth = original
+    assert instance.candyWidth == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_cascadeTimer_setter(instance):
+    original = instance.cascadeTimer
+    instance.cascadeTimer = original
+    assert instance.cascadeTimer == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_VERTICAL_GAP_setter(instance):
+    original = instance.VERTICAL_GAP
+    instance.VERTICAL_GAP = original
+    assert instance.VERTICAL_GAP == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_selfCrushTimerCount_setter(instance):
+    original = instance.selfCrushTimerCount
+    instance.selfCrushTimerCount = original
+    assert instance.selfCrushTimerCount == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_secondPressedCandy_setter(instance):
+    original = instance.secondPressedCandy
+    instance.secondPressedCandy = original
+    assert instance.secondPressedCandy == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_SIZE_setter(instance):
+    original = instance.SIZE
+    instance.SIZE = original
+    assert instance.SIZE == original
+
+
+
+@given(instance=candyCrushPackage_Board_strategy)
+def test_candycrushpackage_board_firstPressedCandy_setter(instance):
+    original = instance.firstPressedCandy
+    instance.firstPressedCandy = original
+    assert instance.firstPressedCandy == original
+
 @given(instance=candyCrushPackage_Menu_strategy)
 @settings(max_examples=50)
 def test_candycrushpackage_menu_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_Menu)
 
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_buttonBGColor_type(instance):
-    assert isinstance(instance.buttonBGColor, str)
-
-
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_buttonBGColor_setter(instance):
-    original = instance.buttonBGColor
-    instance.buttonBGColor = original
-    assert instance.buttonBGColor == original
-
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_highScoreLabel_type(instance):
-    assert isinstance(instance.highScoreLabel, str)
-
-
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_highScoreLabel_setter(instance):
-    original = instance.highScoreLabel
-    instance.highScoreLabel = original
-    assert instance.highScoreLabel == original
-
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_menuBGColor_type(instance):
-    assert isinstance(instance.menuBGColor, str)
-
-
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_menuBGColor_setter(instance):
-    original = instance.menuBGColor
-    instance.menuBGColor = original
-    assert instance.menuBGColor == original
-
-@given(instance=candyCrushPackage_Menu_strategy)
-def test_candycrushpackage_menu_movesLabel_type(instance):
-    assert isinstance(instance.movesLabel, str)
 
 
 @given(instance=candyCrushPackage_Menu_strategy)
@@ -1436,80 +1295,35 @@ def test_candycrushpackage_menu_movesLabel_setter(instance):
     instance.movesLabel = original
     assert instance.movesLabel == original
 
+
+
+@given(instance=candyCrushPackage_Menu_strategy)
+def test_candycrushpackage_menu_highScoreLabel_setter(instance):
+    original = instance.highScoreLabel
+    instance.highScoreLabel = original
+    assert instance.highScoreLabel == original
+
+
+
+@given(instance=candyCrushPackage_Menu_strategy)
+def test_candycrushpackage_menu_buttonBGColor_setter(instance):
+    original = instance.buttonBGColor
+    instance.buttonBGColor = original
+    assert instance.buttonBGColor == original
+
+
+
+@given(instance=candyCrushPackage_Menu_strategy)
+def test_candycrushpackage_menu_menuBGColor_setter(instance):
+    original = instance.menuBGColor
+    instance.menuBGColor = original
+    assert instance.menuBGColor == original
+
 @given(instance=candyCrushPackage_Game_strategy)
 @settings(max_examples=50)
 def test_candycrushpackage_game_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_Game)
 
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_SOUNDS_PATH_type(instance):
-    assert isinstance(instance.SOUNDS_PATH, str)
-
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_SOUNDS_PATH_setter(instance):
-    original = instance.SOUNDS_PATH
-    instance.SOUNDS_PATH = original
-    assert instance.SOUNDS_PATH == original
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_SEP_type(instance):
-    assert isinstance(instance.SEP, str)
-
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_SEP_setter(instance):
-    original = instance.SEP
-    instance.SEP = original
-    assert instance.SEP == original
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_playerName_type(instance):
-    assert isinstance(instance.playerName, str)
-
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_playerName_setter(instance):
-    original = instance.playerName
-    instance.playerName = original
-    assert instance.playerName == original
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_WINDOW_WIDTH_type(instance):
-    assert isinstance(instance.WINDOW_WIDTH, int)
-
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_WINDOW_WIDTH_setter(instance):
-    original = instance.WINDOW_WIDTH
-    instance.WINDOW_WIDTH = original
-    assert instance.WINDOW_WIDTH == original
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_IMAGES_PATH_type(instance):
-    assert isinstance(instance.IMAGES_PATH, str)
-
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_IMAGES_PATH_setter(instance):
-    original = instance.IMAGES_PATH
-    instance.IMAGES_PATH = original
-    assert instance.IMAGES_PATH == original
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_score_type(instance):
-    assert isinstance(instance.score, int)
-
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_score_setter(instance):
-    original = instance.score
-    instance.score = original
-    assert instance.score == original
-
-@given(instance=candyCrushPackage_Game_strategy)
-def test_candycrushpackage_game_WINDOW_HEIGHT_type(instance):
-    assert isinstance(instance.WINDOW_HEIGHT, int)
 
 
 @given(instance=candyCrushPackage_Game_strategy)
@@ -1518,25 +1332,59 @@ def test_candycrushpackage_game_WINDOW_HEIGHT_setter(instance):
     instance.WINDOW_HEIGHT = original
     assert instance.WINDOW_HEIGHT == original
 
+
+
+@given(instance=candyCrushPackage_Game_strategy)
+def test_candycrushpackage_game_SEP_setter(instance):
+    original = instance.SEP
+    instance.SEP = original
+    assert instance.SEP == original
+
+
+
+@given(instance=candyCrushPackage_Game_strategy)
+def test_candycrushpackage_game_score_setter(instance):
+    original = instance.score
+    instance.score = original
+    assert instance.score == original
+
+
+
+@given(instance=candyCrushPackage_Game_strategy)
+def test_candycrushpackage_game_playerName_setter(instance):
+    original = instance.playerName
+    instance.playerName = original
+    assert instance.playerName == original
+
+
+
+@given(instance=candyCrushPackage_Game_strategy)
+def test_candycrushpackage_game_WINDOW_WIDTH_setter(instance):
+    original = instance.WINDOW_WIDTH
+    instance.WINDOW_WIDTH = original
+    assert instance.WINDOW_WIDTH == original
+
+
+
+@given(instance=candyCrushPackage_Game_strategy)
+def test_candycrushpackage_game_IMAGES_PATH_setter(instance):
+    original = instance.IMAGES_PATH
+    instance.IMAGES_PATH = original
+    assert instance.IMAGES_PATH == original
+
+
+
+@given(instance=candyCrushPackage_Game_strategy)
+def test_candycrushpackage_game_SOUNDS_PATH_setter(instance):
+    original = instance.SOUNDS_PATH
+    instance.SOUNDS_PATH = original
+    assert instance.SOUNDS_PATH == original
+
 @given(instance=candyCrushPackage_RegularCandy_strategy)
 @settings(max_examples=50)
 def test_candycrushpackage_regularcandy_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_RegularCandy)
 
-@given(instance=candyCrushPackage_RegularCandy_strategy)
-def test_candycrushpackage_regularcandy_selfCrushRange_type(instance):
-    assert isinstance(instance.selfCrushRange, int)
-
-
-@given(instance=candyCrushPackage_RegularCandy_strategy)
-def test_candycrushpackage_regularcandy_selfCrushRange_setter(instance):
-    original = instance.selfCrushRange
-    instance.selfCrushRange = original
-    assert instance.selfCrushRange == original
-
-@given(instance=candyCrushPackage_RegularCandy_strategy)
-def test_candycrushpackage_regularcandy_selfCrush_type(instance):
-    assert isinstance(instance.selfCrush, bool)
 
 
 @given(instance=candyCrushPackage_RegularCandy_strategy)
@@ -1544,6 +1392,14 @@ def test_candycrushpackage_regularcandy_selfCrush_setter(instance):
     original = instance.selfCrush
     instance.selfCrush = original
     assert instance.selfCrush == original
+
+
+
+@given(instance=candyCrushPackage_RegularCandy_strategy)
+def test_candycrushpackage_regularcandy_selfCrushRange_setter(instance):
+    original = instance.selfCrushRange
+    instance.selfCrushRange = original
+    assert instance.selfCrushRange == original
 
 @given(instance=candyCrushPackage_Visited_Interface_strategy)
 @settings(max_examples=50)
@@ -1560,20 +1416,14 @@ def test_candycrushpackage_visitor_interface_instantiation(instance):
 def test_candycrushpackage_candy_instantiation(instance):
     assert isinstance(instance, candyCrushPackage_Candy)
 
-@given(instance=candyCrushPackage_Candy_strategy)
-def test_candycrushpackage_candy_row_type(instance):
-    assert isinstance(instance.row, int)
 
 
 @given(instance=candyCrushPackage_Candy_strategy)
-def test_candycrushpackage_candy_row_setter(instance):
-    original = instance.row
-    instance.row = original
-    assert instance.row == original
+def test_candycrushpackage_candy_col_setter(instance):
+    original = instance.col
+    instance.col = original
+    assert instance.col == original
 
-@given(instance=candyCrushPackage_Candy_strategy)
-def test_candycrushpackage_candy_color_type(instance):
-    assert isinstance(instance.color, int)
 
 
 @given(instance=candyCrushPackage_Candy_strategy)
@@ -1582,16 +1432,13 @@ def test_candycrushpackage_candy_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
-@given(instance=candyCrushPackage_Candy_strategy)
-def test_candycrushpackage_candy_col_type(instance):
-    assert isinstance(instance.col, int)
 
 
 @given(instance=candyCrushPackage_Candy_strategy)
-def test_candycrushpackage_candy_col_setter(instance):
-    original = instance.col
-    instance.col = original
-    assert instance.col == original
+def test_candycrushpackage_candy_row_setter(instance):
+    original = instance.row
+    instance.row = original
+    assert instance.row == original
 
 @given(instance=JButton_external_strategy)
 @settings(max_examples=50)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     A,
-    model::B,
-    model::A,
+    model_B,
+    model_A,
 )
 
 # =============================================================================
@@ -31,30 +31,30 @@ def test_a_constructor_args():
 
 
 
-def test_model::b_is_not_abstract():
-    assert not inspect.isabstract(model::B)
+def test_model_b_is_not_abstract():
+    assert not inspect.isabstract(model_B)
 
 
-def test_model::b_constructor_exists():
-    assert callable(model::B.__init__)
+def test_model_b_constructor_exists():
+    assert callable(model_B.__init__)
 
 
-def test_model::b_constructor_args():
-    sig = inspect.signature(model::B.__init__)
+def test_model_b_constructor_args():
+    sig = inspect.signature(model_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::a_is_not_abstract():
-    assert not inspect.isabstract(model::A)
+def test_model_a_is_not_abstract():
+    assert not inspect.isabstract(model_A)
 
 
-def test_model::a_constructor_exists():
-    assert callable(model::A.__init__)
+def test_model_a_constructor_exists():
+    assert callable(model_A.__init__)
 
 
-def test_model::a_constructor_args():
-    sig = inspect.signature(model::A.__init__)
+def test_model_a_constructor_args():
+    sig = inspect.signature(model_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -72,11 +72,11 @@ safe_text = st.text(
 A_strategy = st.builds(
     A,
 )
-model::B_strategy = st.builds(
-    model::B,
+model_B_strategy = st.builds(
+    model_B,
 )
-model::A_strategy = st.builds(
-    model::A,
+model_A_strategy = st.builds(
+    model_A,
 )
 
 @given(instance=A_strategy)
@@ -84,12 +84,12 @@ model::A_strategy = st.builds(
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=model::B_strategy)
+@given(instance=model_B_strategy)
 @settings(max_examples=50)
-def test_model::b_instantiation(instance):
-    assert isinstance(instance, model::B)
+def test_model_b_instantiation(instance):
+    assert isinstance(instance, model_B)
 
-@given(instance=model::A_strategy)
+@given(instance=model_A_strategy)
 @settings(max_examples=50)
-def test_model::a_instantiation(instance):
-    assert isinstance(instance, model::A)
+def test_model_a_instantiation(instance):
+    assert isinstance(instance, model_A)

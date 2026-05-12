@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     EStructuralFeatureTreeElement,
-    internal::treeproxy::EReferenceTreeElement,
-    treeproxy::internal::EObject,
+    internal_treeproxy_EReferenceTreeElement,
+    treeproxy_internal_EObject,
     TreeElement,
-    internal::treeproxy::EObjectTreeElement,
-    internal::treeproxy::TreeElement,
+    internal_treeproxy_EObjectTreeElement,
+    internal_treeproxy_TreeElement,
     EObjectTreeElement,
-    internal::treeproxy::EStructuralFeatureTreeElement,
-    treeproxy::internal::EAttribute,
-    internal::treeproxy::EAttributeTreeElement,
-    treeproxy::internal::EReference,
+    internal_treeproxy_EStructuralFeatureTreeElement,
+    treeproxy_internal_EAttribute,
+    internal_treeproxy_EAttributeTreeElement,
+    treeproxy_internal_EReference,
 )
 
 # =============================================================================
@@ -39,30 +39,30 @@ def test_estructuralfeaturetreeelement_constructor_args():
 
 
 
-def test_internal::treeproxy::ereferencetreeelement_is_not_abstract():
-    assert not inspect.isabstract(internal::treeproxy::EReferenceTreeElement)
+def test_internal_treeproxy_ereferencetreeelement_is_not_abstract():
+    assert not inspect.isabstract(internal_treeproxy_EReferenceTreeElement)
 
 
-def test_internal::treeproxy::ereferencetreeelement_constructor_exists():
-    assert callable(internal::treeproxy::EReferenceTreeElement.__init__)
+def test_internal_treeproxy_ereferencetreeelement_constructor_exists():
+    assert callable(internal_treeproxy_EReferenceTreeElement.__init__)
 
 
-def test_internal::treeproxy::ereferencetreeelement_constructor_args():
-    sig = inspect.signature(internal::treeproxy::EReferenceTreeElement.__init__)
+def test_internal_treeproxy_ereferencetreeelement_constructor_args():
+    sig = inspect.signature(internal_treeproxy_EReferenceTreeElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_treeproxy::internal::eobject_is_not_abstract():
-    assert not inspect.isabstract(treeproxy::internal::EObject)
+def test_treeproxy_internal_eobject_is_not_abstract():
+    assert not inspect.isabstract(treeproxy_internal_EObject)
 
 
-def test_treeproxy::internal::eobject_constructor_exists():
-    assert callable(treeproxy::internal::EObject.__init__)
+def test_treeproxy_internal_eobject_constructor_exists():
+    assert callable(treeproxy_internal_EObject.__init__)
 
 
-def test_treeproxy::internal::eobject_constructor_args():
-    sig = inspect.signature(treeproxy::internal::EObject.__init__)
+def test_treeproxy_internal_eobject_constructor_args():
+    sig = inspect.signature(treeproxy_internal_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,30 +81,30 @@ def test_treeelement_constructor_args():
 
 
 
-def test_internal::treeproxy::eobjecttreeelement_is_not_abstract():
-    assert not inspect.isabstract(internal::treeproxy::EObjectTreeElement)
+def test_internal_treeproxy_eobjecttreeelement_is_not_abstract():
+    assert not inspect.isabstract(internal_treeproxy_EObjectTreeElement)
 
 
-def test_internal::treeproxy::eobjecttreeelement_constructor_exists():
-    assert callable(internal::treeproxy::EObjectTreeElement.__init__)
+def test_internal_treeproxy_eobjecttreeelement_constructor_exists():
+    assert callable(internal_treeproxy_EObjectTreeElement.__init__)
 
 
-def test_internal::treeproxy::eobjecttreeelement_constructor_args():
-    sig = inspect.signature(internal::treeproxy::EObjectTreeElement.__init__)
+def test_internal_treeproxy_eobjecttreeelement_constructor_args():
+    sig = inspect.signature(internal_treeproxy_EObjectTreeElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internal::treeproxy::treeelement_is_not_abstract():
-    assert not inspect.isabstract(internal::treeproxy::TreeElement)
+def test_internal_treeproxy_treeelement_is_not_abstract():
+    assert not inspect.isabstract(internal_treeproxy_TreeElement)
 
 
-def test_internal::treeproxy::treeelement_constructor_exists():
-    assert callable(internal::treeproxy::TreeElement.__init__)
+def test_internal_treeproxy_treeelement_constructor_exists():
+    assert callable(internal_treeproxy_TreeElement.__init__)
 
 
-def test_internal::treeproxy::treeelement_constructor_args():
-    sig = inspect.signature(internal::treeproxy::TreeElement.__init__)
+def test_internal_treeproxy_treeelement_constructor_args():
+    sig = inspect.signature(internal_treeproxy_TreeElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,58 +123,58 @@ def test_eobjecttreeelement_constructor_args():
 
 
 
-def test_internal::treeproxy::estructuralfeaturetreeelement_is_not_abstract():
-    assert not inspect.isabstract(internal::treeproxy::EStructuralFeatureTreeElement)
+def test_internal_treeproxy_estructuralfeaturetreeelement_is_not_abstract():
+    assert not inspect.isabstract(internal_treeproxy_EStructuralFeatureTreeElement)
 
 
-def test_internal::treeproxy::estructuralfeaturetreeelement_constructor_exists():
-    assert callable(internal::treeproxy::EStructuralFeatureTreeElement.__init__)
+def test_internal_treeproxy_estructuralfeaturetreeelement_constructor_exists():
+    assert callable(internal_treeproxy_EStructuralFeatureTreeElement.__init__)
 
 
-def test_internal::treeproxy::estructuralfeaturetreeelement_constructor_args():
-    sig = inspect.signature(internal::treeproxy::EStructuralFeatureTreeElement.__init__)
+def test_internal_treeproxy_estructuralfeaturetreeelement_constructor_args():
+    sig = inspect.signature(internal_treeproxy_EStructuralFeatureTreeElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_treeproxy::internal::eattribute_is_not_abstract():
-    assert not inspect.isabstract(treeproxy::internal::EAttribute)
+def test_treeproxy_internal_eattribute_is_not_abstract():
+    assert not inspect.isabstract(treeproxy_internal_EAttribute)
 
 
-def test_treeproxy::internal::eattribute_constructor_exists():
-    assert callable(treeproxy::internal::EAttribute.__init__)
+def test_treeproxy_internal_eattribute_constructor_exists():
+    assert callable(treeproxy_internal_EAttribute.__init__)
 
 
-def test_treeproxy::internal::eattribute_constructor_args():
-    sig = inspect.signature(treeproxy::internal::EAttribute.__init__)
+def test_treeproxy_internal_eattribute_constructor_args():
+    sig = inspect.signature(treeproxy_internal_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internal::treeproxy::eattributetreeelement_is_not_abstract():
-    assert not inspect.isabstract(internal::treeproxy::EAttributeTreeElement)
+def test_internal_treeproxy_eattributetreeelement_is_not_abstract():
+    assert not inspect.isabstract(internal_treeproxy_EAttributeTreeElement)
 
 
-def test_internal::treeproxy::eattributetreeelement_constructor_exists():
-    assert callable(internal::treeproxy::EAttributeTreeElement.__init__)
+def test_internal_treeproxy_eattributetreeelement_constructor_exists():
+    assert callable(internal_treeproxy_EAttributeTreeElement.__init__)
 
 
-def test_internal::treeproxy::eattributetreeelement_constructor_args():
-    sig = inspect.signature(internal::treeproxy::EAttributeTreeElement.__init__)
+def test_internal_treeproxy_eattributetreeelement_constructor_args():
+    sig = inspect.signature(internal_treeproxy_EAttributeTreeElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_treeproxy::internal::ereference_is_not_abstract():
-    assert not inspect.isabstract(treeproxy::internal::EReference)
+def test_treeproxy_internal_ereference_is_not_abstract():
+    assert not inspect.isabstract(treeproxy_internal_EReference)
 
 
-def test_treeproxy::internal::ereference_constructor_exists():
-    assert callable(treeproxy::internal::EReference.__init__)
+def test_treeproxy_internal_ereference_constructor_exists():
+    assert callable(treeproxy_internal_EReference.__init__)
 
 
-def test_treeproxy::internal::ereference_constructor_args():
-    sig = inspect.signature(treeproxy::internal::EReference.__init__)
+def test_treeproxy_internal_ereference_constructor_args():
+    sig = inspect.signature(treeproxy_internal_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,35 +192,35 @@ safe_text = st.text(
 EStructuralFeatureTreeElement_strategy = st.builds(
     EStructuralFeatureTreeElement,
 )
-internal::treeproxy::EReferenceTreeElement_strategy = st.builds(
-    internal::treeproxy::EReferenceTreeElement,
+internal_treeproxy_EReferenceTreeElement_strategy = st.builds(
+    internal_treeproxy_EReferenceTreeElement,
 )
-treeproxy::internal::EObject_strategy = st.builds(
-    treeproxy::internal::EObject,
+treeproxy_internal_EObject_strategy = st.builds(
+    treeproxy_internal_EObject,
 )
 TreeElement_strategy = st.builds(
     TreeElement,
 )
-internal::treeproxy::EObjectTreeElement_strategy = st.builds(
-    internal::treeproxy::EObjectTreeElement,
+internal_treeproxy_EObjectTreeElement_strategy = st.builds(
+    internal_treeproxy_EObjectTreeElement,
 )
-internal::treeproxy::TreeElement_strategy = st.builds(
-    internal::treeproxy::TreeElement,
+internal_treeproxy_TreeElement_strategy = st.builds(
+    internal_treeproxy_TreeElement,
 )
 EObjectTreeElement_strategy = st.builds(
     EObjectTreeElement,
 )
-internal::treeproxy::EStructuralFeatureTreeElement_strategy = st.builds(
-    internal::treeproxy::EStructuralFeatureTreeElement,
+internal_treeproxy_EStructuralFeatureTreeElement_strategy = st.builds(
+    internal_treeproxy_EStructuralFeatureTreeElement,
 )
-treeproxy::internal::EAttribute_strategy = st.builds(
-    treeproxy::internal::EAttribute,
+treeproxy_internal_EAttribute_strategy = st.builds(
+    treeproxy_internal_EAttribute,
 )
-internal::treeproxy::EAttributeTreeElement_strategy = st.builds(
-    internal::treeproxy::EAttributeTreeElement,
+internal_treeproxy_EAttributeTreeElement_strategy = st.builds(
+    internal_treeproxy_EAttributeTreeElement,
 )
-treeproxy::internal::EReference_strategy = st.builds(
-    treeproxy::internal::EReference,
+treeproxy_internal_EReference_strategy = st.builds(
+    treeproxy_internal_EReference,
 )
 
 @given(instance=EStructuralFeatureTreeElement_strategy)
@@ -228,52 +228,52 @@ treeproxy::internal::EReference_strategy = st.builds(
 def test_estructuralfeaturetreeelement_instantiation(instance):
     assert isinstance(instance, EStructuralFeatureTreeElement)
 
-@given(instance=internal::treeproxy::EReferenceTreeElement_strategy)
+@given(instance=internal_treeproxy_EReferenceTreeElement_strategy)
 @settings(max_examples=50)
-def test_internal::treeproxy::ereferencetreeelement_instantiation(instance):
-    assert isinstance(instance, internal::treeproxy::EReferenceTreeElement)
+def test_internal_treeproxy_ereferencetreeelement_instantiation(instance):
+    assert isinstance(instance, internal_treeproxy_EReferenceTreeElement)
 
-@given(instance=treeproxy::internal::EObject_strategy)
+@given(instance=treeproxy_internal_EObject_strategy)
 @settings(max_examples=50)
-def test_treeproxy::internal::eobject_instantiation(instance):
-    assert isinstance(instance, treeproxy::internal::EObject)
+def test_treeproxy_internal_eobject_instantiation(instance):
+    assert isinstance(instance, treeproxy_internal_EObject)
 
 @given(instance=TreeElement_strategy)
 @settings(max_examples=50)
 def test_treeelement_instantiation(instance):
     assert isinstance(instance, TreeElement)
 
-@given(instance=internal::treeproxy::EObjectTreeElement_strategy)
+@given(instance=internal_treeproxy_EObjectTreeElement_strategy)
 @settings(max_examples=50)
-def test_internal::treeproxy::eobjecttreeelement_instantiation(instance):
-    assert isinstance(instance, internal::treeproxy::EObjectTreeElement)
+def test_internal_treeproxy_eobjecttreeelement_instantiation(instance):
+    assert isinstance(instance, internal_treeproxy_EObjectTreeElement)
 
-@given(instance=internal::treeproxy::TreeElement_strategy)
+@given(instance=internal_treeproxy_TreeElement_strategy)
 @settings(max_examples=50)
-def test_internal::treeproxy::treeelement_instantiation(instance):
-    assert isinstance(instance, internal::treeproxy::TreeElement)
+def test_internal_treeproxy_treeelement_instantiation(instance):
+    assert isinstance(instance, internal_treeproxy_TreeElement)
 
 @given(instance=EObjectTreeElement_strategy)
 @settings(max_examples=50)
 def test_eobjecttreeelement_instantiation(instance):
     assert isinstance(instance, EObjectTreeElement)
 
-@given(instance=internal::treeproxy::EStructuralFeatureTreeElement_strategy)
+@given(instance=internal_treeproxy_EStructuralFeatureTreeElement_strategy)
 @settings(max_examples=50)
-def test_internal::treeproxy::estructuralfeaturetreeelement_instantiation(instance):
-    assert isinstance(instance, internal::treeproxy::EStructuralFeatureTreeElement)
+def test_internal_treeproxy_estructuralfeaturetreeelement_instantiation(instance):
+    assert isinstance(instance, internal_treeproxy_EStructuralFeatureTreeElement)
 
-@given(instance=treeproxy::internal::EAttribute_strategy)
+@given(instance=treeproxy_internal_EAttribute_strategy)
 @settings(max_examples=50)
-def test_treeproxy::internal::eattribute_instantiation(instance):
-    assert isinstance(instance, treeproxy::internal::EAttribute)
+def test_treeproxy_internal_eattribute_instantiation(instance):
+    assert isinstance(instance, treeproxy_internal_EAttribute)
 
-@given(instance=internal::treeproxy::EAttributeTreeElement_strategy)
+@given(instance=internal_treeproxy_EAttributeTreeElement_strategy)
 @settings(max_examples=50)
-def test_internal::treeproxy::eattributetreeelement_instantiation(instance):
-    assert isinstance(instance, internal::treeproxy::EAttributeTreeElement)
+def test_internal_treeproxy_eattributetreeelement_instantiation(instance):
+    assert isinstance(instance, internal_treeproxy_EAttributeTreeElement)
 
-@given(instance=treeproxy::internal::EReference_strategy)
+@given(instance=treeproxy_internal_EReference_strategy)
 @settings(max_examples=50)
-def test_treeproxy::internal::ereference_instantiation(instance):
-    assert isinstance(instance, treeproxy::internal::EReference)
+def test_treeproxy_internal_ereference_instantiation(instance):
+    assert isinstance(instance, treeproxy_internal_EReference)

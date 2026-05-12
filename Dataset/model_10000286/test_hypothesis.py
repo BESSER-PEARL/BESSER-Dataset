@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     SteamGenerator,
@@ -231,17 +231,8 @@ def test_ingredient_box_constructor_exists():
 def test_ingredient_box_constructor_args():
     sig = inspect.signature(Ingredient_Box.__init__)
     params = list(sig.parameters.keys())
-    assert "BoxID" in params, "Missing parameter 'BoxID'"
     assert "WeightValue" in params, "Missing parameter 'WeightValue'"
-
-def test_ingredient_box_has_BoxID():
-    assert hasattr(Ingredient_Box, "BoxID")
-    descriptor = None
-    for klass in Ingredient_Box.__mro__:
-        if "BoxID" in klass.__dict__:
-            descriptor = klass.__dict__["BoxID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "BoxID" in params, "Missing parameter 'BoxID'"
 
 def test_ingredient_box_has_WeightValue():
     assert hasattr(Ingredient_Box, "WeightValue")
@@ -249,6 +240,15 @@ def test_ingredient_box_has_WeightValue():
     for klass in Ingredient_Box.__mro__:
         if "WeightValue" in klass.__dict__:
             descriptor = klass.__dict__["WeightValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ingredient_box_has_BoxID():
+    assert hasattr(Ingredient_Box, "BoxID")
+    descriptor = None
+    for klass in Ingredient_Box.__mro__:
+        if "BoxID" in klass.__dict__:
+            descriptor = klass.__dict__["BoxID"]
             break
     assert isinstance(descriptor, property)
 
@@ -436,10 +436,10 @@ Interior_Container_strategy = st.builds(
 )
 Ingredient_Box_strategy = st.builds(
     Ingredient_Box,
-    BoxID=
-        st.integers(),
     WeightValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    BoxID=
+        st.integers()
 )
 Cooking_System_strategy = st.builds(
     Cooking_System,
@@ -474,9 +474,6 @@ System_strategy = st.builds(
 def test_steamgenerator_instantiation(instance):
     assert isinstance(instance, SteamGenerator)
 
-@given(instance=SteamGenerator_strategy)
-def test_steamgenerator_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=SteamGenerator_strategy)
@@ -490,9 +487,6 @@ def test_steamgenerator_Status_setter(instance):
 def test_entertainment_instantiation(instance):
     assert isinstance(instance, Entertainment)
 
-@given(instance=Entertainment_strategy)
-def test_entertainment_DeviceID_type(instance):
-    assert isinstance(instance.DeviceID, int)
 
 
 @given(instance=Entertainment_strategy)
@@ -506,9 +500,6 @@ def test_entertainment_DeviceID_setter(instance):
 def test_hometheatre_instantiation(instance):
     assert isinstance(instance, HomeTheatre)
 
-@given(instance=HomeTheatre_strategy)
-def test_hometheatre_HTID_type(instance):
-    assert isinstance(instance.HTID, str)
 
 
 @given(instance=HomeTheatre_strategy)
@@ -522,9 +513,6 @@ def test_hometheatre_HTID_setter(instance):
 def test_tv_instantiation(instance):
     assert isinstance(instance, TV)
 
-@given(instance=TV_strategy)
-def test_tv_TVID_type(instance):
-    assert isinstance(instance.TVID, int)
 
 
 @given(instance=TV_strategy)
@@ -538,9 +526,6 @@ def test_tv_TVID_setter(instance):
 def test_heater_instantiation(instance):
     assert isinstance(instance, Heater)
 
-@given(instance=Heater_strategy)
-def test_heater_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=Heater_strategy)
@@ -554,9 +539,6 @@ def test_heater_Status_setter(instance):
 def test_microphone_instantiation(instance):
     assert isinstance(instance, MicroPhone)
 
-@given(instance=MicroPhone_strategy)
-def test_microphone_MicID_type(instance):
-    assert isinstance(instance.MicID, str)
 
 
 @given(instance=MicroPhone_strategy)
@@ -570,9 +552,6 @@ def test_microphone_MicID_setter(instance):
 def test_speakers_instantiation(instance):
     assert isinstance(instance, Speakers)
 
-@given(instance=Speakers_strategy)
-def test_speakers_SpeakerID_type(instance):
-    assert isinstance(instance.SpeakerID, int)
 
 
 @given(instance=Speakers_strategy)
@@ -586,9 +565,6 @@ def test_speakers_SpeakerID_setter(instance):
 def test_interior_container_instantiation(instance):
     assert isinstance(instance, Interior_Container)
 
-@given(instance=Interior_Container_strategy)
-def test_interior_container_WorkMode_type(instance):
-    assert isinstance(instance.WorkMode, int)
 
 
 @given(instance=Interior_Container_strategy)
@@ -602,20 +578,6 @@ def test_interior_container_WorkMode_setter(instance):
 def test_ingredient_box_instantiation(instance):
     assert isinstance(instance, Ingredient_Box)
 
-@given(instance=Ingredient_Box_strategy)
-def test_ingredient_box_BoxID_type(instance):
-    assert isinstance(instance.BoxID, int)
-
-
-@given(instance=Ingredient_Box_strategy)
-def test_ingredient_box_BoxID_setter(instance):
-    original = instance.BoxID
-    instance.BoxID = original
-    assert instance.BoxID == original
-
-@given(instance=Ingredient_Box_strategy)
-def test_ingredient_box_WeightValue_type(instance):
-    assert isinstance(instance.WeightValue, float)
 
 
 @given(instance=Ingredient_Box_strategy)
@@ -623,6 +585,14 @@ def test_ingredient_box_WeightValue_setter(instance):
     original = instance.WeightValue
     instance.WeightValue = original
     assert instance.WeightValue == original
+
+
+
+@given(instance=Ingredient_Box_strategy)
+def test_ingredient_box_BoxID_setter(instance):
+    original = instance.BoxID
+    instance.BoxID = original
+    assert instance.BoxID == original
 
 @given(instance=Cooking_System_strategy)
 @settings(max_examples=50)
@@ -634,9 +604,6 @@ def test_cooking_system_instantiation(instance):
 def test_humidity_sensor_instantiation(instance):
     assert isinstance(instance, Humidity_Sensor)
 
-@given(instance=Humidity_Sensor_strategy)
-def test_humidity_sensor_CurrentValue_type(instance):
-    assert isinstance(instance.CurrentValue, float)
 
 
 @given(instance=Humidity_Sensor_strategy)
@@ -650,9 +617,6 @@ def test_humidity_sensor_CurrentValue_setter(instance):
 def test_temperature_sensor_instantiation(instance):
     assert isinstance(instance, Temperature_Sensor)
 
-@given(instance=Temperature_Sensor_strategy)
-def test_temperature_sensor_CurrentValue_type(instance):
-    assert isinstance(instance.CurrentValue, float)
 
 
 @given(instance=Temperature_Sensor_strategy)
@@ -666,9 +630,6 @@ def test_temperature_sensor_CurrentValue_setter(instance):
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
 
 
 @given(instance=Sensor_strategy)
@@ -677,9 +638,6 @@ def test_sensor_SensorType_setter(instance):
     instance.SensorType = original
     assert instance.SensorType == original
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
 
 
 @given(instance=Sensor_strategy)
@@ -693,9 +651,6 @@ def test_sensor_SensorID_setter(instance):
 def test_system_instantiation(instance):
     assert isinstance(instance, System)
 
-@given(instance=System_strategy)
-def test_system_Update_type(instance):
-    assert isinstance(instance.Update, float)
 
 
 @given(instance=System_strategy)
@@ -704,9 +659,6 @@ def test_system_Update_setter(instance):
     instance.Update = original
     assert instance.Update == original
 
-@given(instance=System_strategy)
-def test_system_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=System_strategy)

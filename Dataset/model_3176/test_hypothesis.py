@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SJExpression,
-    smallJava::SJMemberSelection,
-    smallJava::SJStringConstant,
-    smallJava::SJNull,
-    smallJava::SJNew,
-    smallJava::SJBoolConstant,
-    smallJava::SJThis,
-    smallJava::SJIntConstant,
-    smallJava::SJSymbolRef,
-    smallJava::SJAssignment,
+    smallJava_SJStringConstant,
+    smallJava_SJIntConstant,
+    smallJava_SJNew,
+    smallJava_SJBoolConstant,
+    smallJava_SJNull,
+    smallJava_SJMemberSelection,
+    smallJava_SJSymbolRef,
+    smallJava_SJThis,
+    smallJava_SJAssignment,
     SJStatement,
-    smallJava::SJIfStatement,
-    smallJava::SJReturn,
-    smallJava::SJExpression,
-    smallJava::SJNamedElement,
+    smallJava_SJIfStatement,
+    smallJava_SJReturn,
+    smallJava_SJExpression,
+    smallJava_SJNamedElement,
     SJMember,
-    smallJava::SJMethod,
-    smallJava::SJField,
+    smallJava_SJMethod,
+    smallJava_SJField,
     SJNamedElement,
-    smallJava::SJSymbol,
-    smallJava::SJMember,
-    smallJava::SJClass,
-    smallJava::SJStatement,
+    smallJava_SJMember,
+    smallJava_SJSymbol,
+    smallJava_SJClass,
+    smallJava_SJStatement,
     SJSymbol,
-    smallJava::SJVariableDeclaration,
-    smallJava::SJBlock,
-    smallJava::SJParameter,
-    smallJava::SJProgram,
+    smallJava_SJVariableDeclaration,
+    smallJava_SJBlock,
+    smallJava_SJParameter,
+    smallJava_SJProgram,
 )
 
 # =============================================================================
@@ -56,23 +56,123 @@ def test_sjexpression_constructor_args():
 
 
 
-def test_smalljava::sjmemberselection_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJMemberSelection)
+def test_smalljava_sjstringconstant_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJStringConstant)
 
 
-def test_smalljava::sjmemberselection_constructor_exists():
-    assert callable(smallJava::SJMemberSelection.__init__)
+def test_smalljava_sjstringconstant_constructor_exists():
+    assert callable(smallJava_SJStringConstant.__init__)
 
 
-def test_smalljava::sjmemberselection_constructor_args():
-    sig = inspect.signature(smallJava::SJMemberSelection.__init__)
+def test_smalljava_sjstringconstant_constructor_args():
+    sig = inspect.signature(smallJava_SJStringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smalljava_sjstringconstant_has_value():
+    assert hasattr(smallJava_SJStringConstant, "value")
+    descriptor = None
+    for klass in smallJava_SJStringConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smalljava_sjintconstant_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJIntConstant)
+
+
+def test_smalljava_sjintconstant_constructor_exists():
+    assert callable(smallJava_SJIntConstant.__init__)
+
+
+def test_smalljava_sjintconstant_constructor_args():
+    sig = inspect.signature(smallJava_SJIntConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smalljava_sjintconstant_has_value():
+    assert hasattr(smallJava_SJIntConstant, "value")
+    descriptor = None
+    for klass in smallJava_SJIntConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smalljava_sjnew_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJNew)
+
+
+def test_smalljava_sjnew_constructor_exists():
+    assert callable(smallJava_SJNew.__init__)
+
+
+def test_smalljava_sjnew_constructor_args():
+    sig = inspect.signature(smallJava_SJNew.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smalljava_sjboolconstant_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJBoolConstant)
+
+
+def test_smalljava_sjboolconstant_constructor_exists():
+    assert callable(smallJava_SJBoolConstant.__init__)
+
+
+def test_smalljava_sjboolconstant_constructor_args():
+    sig = inspect.signature(smallJava_SJBoolConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_smalljava_sjboolconstant_has_value():
+    assert hasattr(smallJava_SJBoolConstant, "value")
+    descriptor = None
+    for klass in smallJava_SJBoolConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_smalljava_sjnull_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJNull)
+
+
+def test_smalljava_sjnull_constructor_exists():
+    assert callable(smallJava_SJNull.__init__)
+
+
+def test_smalljava_sjnull_constructor_args():
+    sig = inspect.signature(smallJava_SJNull.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smalljava_sjmemberselection_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJMemberSelection)
+
+
+def test_smalljava_sjmemberselection_constructor_exists():
+    assert callable(smallJava_SJMemberSelection.__init__)
+
+
+def test_smalljava_sjmemberselection_constructor_args():
+    sig = inspect.signature(smallJava_SJMemberSelection.__init__)
     params = list(sig.parameters.keys())
     assert "methodinvocation" in params, "Missing parameter 'methodinvocation'"
 
-def test_smalljava::sjmemberselection_has_methodinvocation():
-    assert hasattr(smallJava::SJMemberSelection, "methodinvocation")
+def test_smalljava_sjmemberselection_has_methodinvocation():
+    assert hasattr(smallJava_SJMemberSelection, "methodinvocation")
     descriptor = None
-    for klass in smallJava::SJMemberSelection.__mro__:
+    for klass in smallJava_SJMemberSelection.__mro__:
         if "methodinvocation" in klass.__dict__:
             descriptor = klass.__dict__["methodinvocation"]
             break
@@ -80,144 +180,44 @@ def test_smalljava::sjmemberselection_has_methodinvocation():
 
 
 
-def test_smalljava::sjstringconstant_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJStringConstant)
+def test_smalljava_sjsymbolref_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJSymbolRef)
 
 
-def test_smalljava::sjstringconstant_constructor_exists():
-    assert callable(smallJava::SJStringConstant.__init__)
+def test_smalljava_sjsymbolref_constructor_exists():
+    assert callable(smallJava_SJSymbolRef.__init__)
 
 
-def test_smalljava::sjstringconstant_constructor_args():
-    sig = inspect.signature(smallJava::SJStringConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smalljava::sjstringconstant_has_value():
-    assert hasattr(smallJava::SJStringConstant, "value")
-    descriptor = None
-    for klass in smallJava::SJStringConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smalljava::sjnull_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJNull)
-
-
-def test_smalljava::sjnull_constructor_exists():
-    assert callable(smallJava::SJNull.__init__)
-
-
-def test_smalljava::sjnull_constructor_args():
-    sig = inspect.signature(smallJava::SJNull.__init__)
+def test_smalljava_sjsymbolref_constructor_args():
+    sig = inspect.signature(smallJava_SJSymbolRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjnew_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJNew)
+def test_smalljava_sjthis_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJThis)
 
 
-def test_smalljava::sjnew_constructor_exists():
-    assert callable(smallJava::SJNew.__init__)
+def test_smalljava_sjthis_constructor_exists():
+    assert callable(smallJava_SJThis.__init__)
 
 
-def test_smalljava::sjnew_constructor_args():
-    sig = inspect.signature(smallJava::SJNew.__init__)
+def test_smalljava_sjthis_constructor_args():
+    sig = inspect.signature(smallJava_SJThis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjboolconstant_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJBoolConstant)
+def test_smalljava_sjassignment_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJAssignment)
 
 
-def test_smalljava::sjboolconstant_constructor_exists():
-    assert callable(smallJava::SJBoolConstant.__init__)
+def test_smalljava_sjassignment_constructor_exists():
+    assert callable(smallJava_SJAssignment.__init__)
 
 
-def test_smalljava::sjboolconstant_constructor_args():
-    sig = inspect.signature(smallJava::SJBoolConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smalljava::sjboolconstant_has_value():
-    assert hasattr(smallJava::SJBoolConstant, "value")
-    descriptor = None
-    for klass in smallJava::SJBoolConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smalljava::sjthis_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJThis)
-
-
-def test_smalljava::sjthis_constructor_exists():
-    assert callable(smallJava::SJThis.__init__)
-
-
-def test_smalljava::sjthis_constructor_args():
-    sig = inspect.signature(smallJava::SJThis.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalljava::sjintconstant_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJIntConstant)
-
-
-def test_smalljava::sjintconstant_constructor_exists():
-    assert callable(smallJava::SJIntConstant.__init__)
-
-
-def test_smalljava::sjintconstant_constructor_args():
-    sig = inspect.signature(smallJava::SJIntConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_smalljava::sjintconstant_has_value():
-    assert hasattr(smallJava::SJIntConstant, "value")
-    descriptor = None
-    for klass in smallJava::SJIntConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_smalljava::sjsymbolref_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJSymbolRef)
-
-
-def test_smalljava::sjsymbolref_constructor_exists():
-    assert callable(smallJava::SJSymbolRef.__init__)
-
-
-def test_smalljava::sjsymbolref_constructor_args():
-    sig = inspect.signature(smallJava::SJSymbolRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalljava::sjassignment_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJAssignment)
-
-
-def test_smalljava::sjassignment_constructor_exists():
-    assert callable(smallJava::SJAssignment.__init__)
-
-
-def test_smalljava::sjassignment_constructor_args():
-    sig = inspect.signature(smallJava::SJAssignment.__init__)
+def test_smalljava_sjassignment_constructor_args():
+    sig = inspect.signature(smallJava_SJAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -236,65 +236,65 @@ def test_sjstatement_constructor_args():
 
 
 
-def test_smalljava::sjifstatement_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJIfStatement)
+def test_smalljava_sjifstatement_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJIfStatement)
 
 
-def test_smalljava::sjifstatement_constructor_exists():
-    assert callable(smallJava::SJIfStatement.__init__)
+def test_smalljava_sjifstatement_constructor_exists():
+    assert callable(smallJava_SJIfStatement.__init__)
 
 
-def test_smalljava::sjifstatement_constructor_args():
-    sig = inspect.signature(smallJava::SJIfStatement.__init__)
+def test_smalljava_sjifstatement_constructor_args():
+    sig = inspect.signature(smallJava_SJIfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjreturn_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJReturn)
+def test_smalljava_sjreturn_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJReturn)
 
 
-def test_smalljava::sjreturn_constructor_exists():
-    assert callable(smallJava::SJReturn.__init__)
+def test_smalljava_sjreturn_constructor_exists():
+    assert callable(smallJava_SJReturn.__init__)
 
 
-def test_smalljava::sjreturn_constructor_args():
-    sig = inspect.signature(smallJava::SJReturn.__init__)
+def test_smalljava_sjreturn_constructor_args():
+    sig = inspect.signature(smallJava_SJReturn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjexpression_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJExpression)
+def test_smalljava_sjexpression_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJExpression)
 
 
-def test_smalljava::sjexpression_constructor_exists():
-    assert callable(smallJava::SJExpression.__init__)
+def test_smalljava_sjexpression_constructor_exists():
+    assert callable(smallJava_SJExpression.__init__)
 
 
-def test_smalljava::sjexpression_constructor_args():
-    sig = inspect.signature(smallJava::SJExpression.__init__)
+def test_smalljava_sjexpression_constructor_args():
+    sig = inspect.signature(smallJava_SJExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjnamedelement_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJNamedElement)
+def test_smalljava_sjnamedelement_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJNamedElement)
 
 
-def test_smalljava::sjnamedelement_constructor_exists():
-    assert callable(smallJava::SJNamedElement.__init__)
+def test_smalljava_sjnamedelement_constructor_exists():
+    assert callable(smallJava_SJNamedElement.__init__)
 
 
-def test_smalljava::sjnamedelement_constructor_args():
-    sig = inspect.signature(smallJava::SJNamedElement.__init__)
+def test_smalljava_sjnamedelement_constructor_args():
+    sig = inspect.signature(smallJava_SJNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_smalljava::sjnamedelement_has_name():
-    assert hasattr(smallJava::SJNamedElement, "name")
+def test_smalljava_sjnamedelement_has_name():
+    assert hasattr(smallJava_SJNamedElement, "name")
     descriptor = None
-    for klass in smallJava::SJNamedElement.__mro__:
+    for klass in smallJava_SJNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -316,30 +316,30 @@ def test_sjmember_constructor_args():
 
 
 
-def test_smalljava::sjmethod_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJMethod)
+def test_smalljava_sjmethod_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJMethod)
 
 
-def test_smalljava::sjmethod_constructor_exists():
-    assert callable(smallJava::SJMethod.__init__)
+def test_smalljava_sjmethod_constructor_exists():
+    assert callable(smallJava_SJMethod.__init__)
 
 
-def test_smalljava::sjmethod_constructor_args():
-    sig = inspect.signature(smallJava::SJMethod.__init__)
+def test_smalljava_sjmethod_constructor_args():
+    sig = inspect.signature(smallJava_SJMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjfield_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJField)
+def test_smalljava_sjfield_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJField)
 
 
-def test_smalljava::sjfield_constructor_exists():
-    assert callable(smallJava::SJField.__init__)
+def test_smalljava_sjfield_constructor_exists():
+    assert callable(smallJava_SJField.__init__)
 
 
-def test_smalljava::sjfield_constructor_args():
-    sig = inspect.signature(smallJava::SJField.__init__)
+def test_smalljava_sjfield_constructor_args():
+    sig = inspect.signature(smallJava_SJField.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -358,58 +358,58 @@ def test_sjnamedelement_constructor_args():
 
 
 
-def test_smalljava::sjsymbol_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJSymbol)
+def test_smalljava_sjmember_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJMember)
 
 
-def test_smalljava::sjsymbol_constructor_exists():
-    assert callable(smallJava::SJSymbol.__init__)
+def test_smalljava_sjmember_constructor_exists():
+    assert callable(smallJava_SJMember.__init__)
 
 
-def test_smalljava::sjsymbol_constructor_args():
-    sig = inspect.signature(smallJava::SJSymbol.__init__)
+def test_smalljava_sjmember_constructor_args():
+    sig = inspect.signature(smallJava_SJMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjmember_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJMember)
+def test_smalljava_sjsymbol_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJSymbol)
 
 
-def test_smalljava::sjmember_constructor_exists():
-    assert callable(smallJava::SJMember.__init__)
+def test_smalljava_sjsymbol_constructor_exists():
+    assert callable(smallJava_SJSymbol.__init__)
 
 
-def test_smalljava::sjmember_constructor_args():
-    sig = inspect.signature(smallJava::SJMember.__init__)
+def test_smalljava_sjsymbol_constructor_args():
+    sig = inspect.signature(smallJava_SJSymbol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjclass_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJClass)
+def test_smalljava_sjclass_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJClass)
 
 
-def test_smalljava::sjclass_constructor_exists():
-    assert callable(smallJava::SJClass.__init__)
+def test_smalljava_sjclass_constructor_exists():
+    assert callable(smallJava_SJClass.__init__)
 
 
-def test_smalljava::sjclass_constructor_args():
-    sig = inspect.signature(smallJava::SJClass.__init__)
+def test_smalljava_sjclass_constructor_args():
+    sig = inspect.signature(smallJava_SJClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjstatement_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJStatement)
+def test_smalljava_sjstatement_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJStatement)
 
 
-def test_smalljava::sjstatement_constructor_exists():
-    assert callable(smallJava::SJStatement.__init__)
+def test_smalljava_sjstatement_constructor_exists():
+    assert callable(smallJava_SJStatement.__init__)
 
 
-def test_smalljava::sjstatement_constructor_args():
-    sig = inspect.signature(smallJava::SJStatement.__init__)
+def test_smalljava_sjstatement_constructor_args():
+    sig = inspect.signature(smallJava_SJStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -428,58 +428,58 @@ def test_sjsymbol_constructor_args():
 
 
 
-def test_smalljava::sjvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJVariableDeclaration)
+def test_smalljava_sjvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJVariableDeclaration)
 
 
-def test_smalljava::sjvariabledeclaration_constructor_exists():
-    assert callable(smallJava::SJVariableDeclaration.__init__)
+def test_smalljava_sjvariabledeclaration_constructor_exists():
+    assert callable(smallJava_SJVariableDeclaration.__init__)
 
 
-def test_smalljava::sjvariabledeclaration_constructor_args():
-    sig = inspect.signature(smallJava::SJVariableDeclaration.__init__)
+def test_smalljava_sjvariabledeclaration_constructor_args():
+    sig = inspect.signature(smallJava_SJVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjblock_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJBlock)
+def test_smalljava_sjblock_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJBlock)
 
 
-def test_smalljava::sjblock_constructor_exists():
-    assert callable(smallJava::SJBlock.__init__)
+def test_smalljava_sjblock_constructor_exists():
+    assert callable(smallJava_SJBlock.__init__)
 
 
-def test_smalljava::sjblock_constructor_args():
-    sig = inspect.signature(smallJava::SJBlock.__init__)
+def test_smalljava_sjblock_constructor_args():
+    sig = inspect.signature(smallJava_SJBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjparameter_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJParameter)
+def test_smalljava_sjparameter_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJParameter)
 
 
-def test_smalljava::sjparameter_constructor_exists():
-    assert callable(smallJava::SJParameter.__init__)
+def test_smalljava_sjparameter_constructor_exists():
+    assert callable(smallJava_SJParameter.__init__)
 
 
-def test_smalljava::sjparameter_constructor_args():
-    sig = inspect.signature(smallJava::SJParameter.__init__)
+def test_smalljava_sjparameter_constructor_args():
+    sig = inspect.signature(smallJava_SJParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalljava::sjprogram_is_not_abstract():
-    assert not inspect.isabstract(smallJava::SJProgram)
+def test_smalljava_sjprogram_is_not_abstract():
+    assert not inspect.isabstract(smallJava_SJProgram)
 
 
-def test_smalljava::sjprogram_constructor_exists():
-    assert callable(smallJava::SJProgram.__init__)
+def test_smalljava_sjprogram_constructor_exists():
+    assert callable(smallJava_SJProgram.__init__)
 
 
-def test_smalljava::sjprogram_constructor_args():
-    sig = inspect.signature(smallJava::SJProgram.__init__)
+def test_smalljava_sjprogram_constructor_args():
+    sig = inspect.signature(smallJava_SJProgram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -497,96 +497,96 @@ safe_text = st.text(
 SJExpression_strategy = st.builds(
     SJExpression,
 )
-smallJava::SJMemberSelection_strategy = st.builds(
-    smallJava::SJMemberSelection,
-    methodinvocation=
-        st.booleans()
-)
-smallJava::SJStringConstant_strategy = st.builds(
-    smallJava::SJStringConstant,
+smallJava_SJStringConstant_strategy = st.builds(
+    smallJava_SJStringConstant,
     value=
         safe_text
 )
-smallJava::SJNull_strategy = st.builds(
-    smallJava::SJNull,
-)
-smallJava::SJNew_strategy = st.builds(
-    smallJava::SJNew,
-)
-smallJava::SJBoolConstant_strategy = st.builds(
-    smallJava::SJBoolConstant,
-    value=
-        safe_text
-)
-smallJava::SJThis_strategy = st.builds(
-    smallJava::SJThis,
-)
-smallJava::SJIntConstant_strategy = st.builds(
-    smallJava::SJIntConstant,
+smallJava_SJIntConstant_strategy = st.builds(
+    smallJava_SJIntConstant,
     value=
         st.integers()
 )
-smallJava::SJSymbolRef_strategy = st.builds(
-    smallJava::SJSymbolRef,
+smallJava_SJNew_strategy = st.builds(
+    smallJava_SJNew,
 )
-smallJava::SJAssignment_strategy = st.builds(
-    smallJava::SJAssignment,
+smallJava_SJBoolConstant_strategy = st.builds(
+    smallJava_SJBoolConstant,
+    value=
+        safe_text
+)
+smallJava_SJNull_strategy = st.builds(
+    smallJava_SJNull,
+)
+smallJava_SJMemberSelection_strategy = st.builds(
+    smallJava_SJMemberSelection,
+    methodinvocation=
+        st.booleans()
+)
+smallJava_SJSymbolRef_strategy = st.builds(
+    smallJava_SJSymbolRef,
+)
+smallJava_SJThis_strategy = st.builds(
+    smallJava_SJThis,
+)
+smallJava_SJAssignment_strategy = st.builds(
+    smallJava_SJAssignment,
 )
 SJStatement_strategy = st.builds(
     SJStatement,
 )
-smallJava::SJIfStatement_strategy = st.builds(
-    smallJava::SJIfStatement,
+smallJava_SJIfStatement_strategy = st.builds(
+    smallJava_SJIfStatement,
 )
-smallJava::SJReturn_strategy = st.builds(
-    smallJava::SJReturn,
+smallJava_SJReturn_strategy = st.builds(
+    smallJava_SJReturn,
 )
-smallJava::SJExpression_strategy = st.builds(
-    smallJava::SJExpression,
+smallJava_SJExpression_strategy = st.builds(
+    smallJava_SJExpression,
 )
-smallJava::SJNamedElement_strategy = st.builds(
-    smallJava::SJNamedElement,
+smallJava_SJNamedElement_strategy = st.builds(
+    smallJava_SJNamedElement,
     name=
         safe_text
 )
 SJMember_strategy = st.builds(
     SJMember,
 )
-smallJava::SJMethod_strategy = st.builds(
-    smallJava::SJMethod,
+smallJava_SJMethod_strategy = st.builds(
+    smallJava_SJMethod,
 )
-smallJava::SJField_strategy = st.builds(
-    smallJava::SJField,
+smallJava_SJField_strategy = st.builds(
+    smallJava_SJField,
 )
 SJNamedElement_strategy = st.builds(
     SJNamedElement,
 )
-smallJava::SJSymbol_strategy = st.builds(
-    smallJava::SJSymbol,
+smallJava_SJMember_strategy = st.builds(
+    smallJava_SJMember,
 )
-smallJava::SJMember_strategy = st.builds(
-    smallJava::SJMember,
+smallJava_SJSymbol_strategy = st.builds(
+    smallJava_SJSymbol,
 )
-smallJava::SJClass_strategy = st.builds(
-    smallJava::SJClass,
+smallJava_SJClass_strategy = st.builds(
+    smallJava_SJClass,
 )
-smallJava::SJStatement_strategy = st.builds(
-    smallJava::SJStatement,
+smallJava_SJStatement_strategy = st.builds(
+    smallJava_SJStatement,
 )
 SJSymbol_strategy = st.builds(
     SJSymbol,
 )
-smallJava::SJVariableDeclaration_strategy = st.builds(
-    smallJava::SJVariableDeclaration,
+smallJava_SJVariableDeclaration_strategy = st.builds(
+    smallJava_SJVariableDeclaration,
 )
-smallJava::SJBlock_strategy = st.builds(
-    smallJava::SJBlock,
+smallJava_SJBlock_strategy = st.builds(
+    smallJava_SJBlock,
 )
-smallJava::SJParameter_strategy = st.builds(
-    smallJava::SJParameter,
+smallJava_SJParameter_strategy = st.builds(
+    smallJava_SJParameter,
 )
-smallJava::SJProgram_strategy = st.builds(
-    smallJava::SJProgram,
+smallJava_SJProgram_strategy = st.builds(
+    smallJava_SJProgram,
 )
 
 @given(instance=SJExpression_strategy)
@@ -594,127 +594,112 @@ smallJava::SJProgram_strategy = st.builds(
 def test_sjexpression_instantiation(instance):
     assert isinstance(instance, SJExpression)
 
-@given(instance=smallJava::SJMemberSelection_strategy)
+@given(instance=smallJava_SJStringConstant_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjmemberselection_instantiation(instance):
-    assert isinstance(instance, smallJava::SJMemberSelection)
-
-@given(instance=smallJava::SJMemberSelection_strategy)
-def test_smalljava::sjmemberselection_methodinvocation_type(instance):
-    assert isinstance(instance.methodinvocation, bool)
+def test_smalljava_sjstringconstant_instantiation(instance):
+    assert isinstance(instance, smallJava_SJStringConstant)
 
 
-@given(instance=smallJava::SJMemberSelection_strategy)
-def test_smalljava::sjmemberselection_methodinvocation_setter(instance):
+
+@given(instance=smallJava_SJStringConstant_strategy)
+def test_smalljava_sjstringconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smallJava_SJIntConstant_strategy)
+@settings(max_examples=50)
+def test_smalljava_sjintconstant_instantiation(instance):
+    assert isinstance(instance, smallJava_SJIntConstant)
+
+
+
+@given(instance=smallJava_SJIntConstant_strategy)
+def test_smalljava_sjintconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smallJava_SJNew_strategy)
+@settings(max_examples=50)
+def test_smalljava_sjnew_instantiation(instance):
+    assert isinstance(instance, smallJava_SJNew)
+
+@given(instance=smallJava_SJBoolConstant_strategy)
+@settings(max_examples=50)
+def test_smalljava_sjboolconstant_instantiation(instance):
+    assert isinstance(instance, smallJava_SJBoolConstant)
+
+
+
+@given(instance=smallJava_SJBoolConstant_strategy)
+def test_smalljava_sjboolconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=smallJava_SJNull_strategy)
+@settings(max_examples=50)
+def test_smalljava_sjnull_instantiation(instance):
+    assert isinstance(instance, smallJava_SJNull)
+
+@given(instance=smallJava_SJMemberSelection_strategy)
+@settings(max_examples=50)
+def test_smalljava_sjmemberselection_instantiation(instance):
+    assert isinstance(instance, smallJava_SJMemberSelection)
+
+
+
+@given(instance=smallJava_SJMemberSelection_strategy)
+def test_smalljava_sjmemberselection_methodinvocation_setter(instance):
     original = instance.methodinvocation
     instance.methodinvocation = original
     assert instance.methodinvocation == original
 
-@given(instance=smallJava::SJStringConstant_strategy)
+@given(instance=smallJava_SJSymbolRef_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjstringconstant_instantiation(instance):
-    assert isinstance(instance, smallJava::SJStringConstant)
+def test_smalljava_sjsymbolref_instantiation(instance):
+    assert isinstance(instance, smallJava_SJSymbolRef)
 
-@given(instance=smallJava::SJStringConstant_strategy)
-def test_smalljava::sjstringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smallJava::SJStringConstant_strategy)
-def test_smalljava::sjstringconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smallJava::SJNull_strategy)
+@given(instance=smallJava_SJThis_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjnull_instantiation(instance):
-    assert isinstance(instance, smallJava::SJNull)
+def test_smalljava_sjthis_instantiation(instance):
+    assert isinstance(instance, smallJava_SJThis)
 
-@given(instance=smallJava::SJNew_strategy)
+@given(instance=smallJava_SJAssignment_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjnew_instantiation(instance):
-    assert isinstance(instance, smallJava::SJNew)
-
-@given(instance=smallJava::SJBoolConstant_strategy)
-@settings(max_examples=50)
-def test_smalljava::sjboolconstant_instantiation(instance):
-    assert isinstance(instance, smallJava::SJBoolConstant)
-
-@given(instance=smallJava::SJBoolConstant_strategy)
-def test_smalljava::sjboolconstant_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=smallJava::SJBoolConstant_strategy)
-def test_smalljava::sjboolconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smallJava::SJThis_strategy)
-@settings(max_examples=50)
-def test_smalljava::sjthis_instantiation(instance):
-    assert isinstance(instance, smallJava::SJThis)
-
-@given(instance=smallJava::SJIntConstant_strategy)
-@settings(max_examples=50)
-def test_smalljava::sjintconstant_instantiation(instance):
-    assert isinstance(instance, smallJava::SJIntConstant)
-
-@given(instance=smallJava::SJIntConstant_strategy)
-def test_smalljava::sjintconstant_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=smallJava::SJIntConstant_strategy)
-def test_smalljava::sjintconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=smallJava::SJSymbolRef_strategy)
-@settings(max_examples=50)
-def test_smalljava::sjsymbolref_instantiation(instance):
-    assert isinstance(instance, smallJava::SJSymbolRef)
-
-@given(instance=smallJava::SJAssignment_strategy)
-@settings(max_examples=50)
-def test_smalljava::sjassignment_instantiation(instance):
-    assert isinstance(instance, smallJava::SJAssignment)
+def test_smalljava_sjassignment_instantiation(instance):
+    assert isinstance(instance, smallJava_SJAssignment)
 
 @given(instance=SJStatement_strategy)
 @settings(max_examples=50)
 def test_sjstatement_instantiation(instance):
     assert isinstance(instance, SJStatement)
 
-@given(instance=smallJava::SJIfStatement_strategy)
+@given(instance=smallJava_SJIfStatement_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjifstatement_instantiation(instance):
-    assert isinstance(instance, smallJava::SJIfStatement)
+def test_smalljava_sjifstatement_instantiation(instance):
+    assert isinstance(instance, smallJava_SJIfStatement)
 
-@given(instance=smallJava::SJReturn_strategy)
+@given(instance=smallJava_SJReturn_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjreturn_instantiation(instance):
-    assert isinstance(instance, smallJava::SJReturn)
+def test_smalljava_sjreturn_instantiation(instance):
+    assert isinstance(instance, smallJava_SJReturn)
 
-@given(instance=smallJava::SJExpression_strategy)
+@given(instance=smallJava_SJExpression_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjexpression_instantiation(instance):
-    assert isinstance(instance, smallJava::SJExpression)
+def test_smalljava_sjexpression_instantiation(instance):
+    assert isinstance(instance, smallJava_SJExpression)
 
-@given(instance=smallJava::SJNamedElement_strategy)
+@given(instance=smallJava_SJNamedElement_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjnamedelement_instantiation(instance):
-    assert isinstance(instance, smallJava::SJNamedElement)
-
-@given(instance=smallJava::SJNamedElement_strategy)
-def test_smalljava::sjnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_smalljava_sjnamedelement_instantiation(instance):
+    assert isinstance(instance, smallJava_SJNamedElement)
 
 
-@given(instance=smallJava::SJNamedElement_strategy)
-def test_smalljava::sjnamedelement_name_setter(instance):
+
+@given(instance=smallJava_SJNamedElement_strategy)
+def test_smalljava_sjnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -724,62 +709,62 @@ def test_smalljava::sjnamedelement_name_setter(instance):
 def test_sjmember_instantiation(instance):
     assert isinstance(instance, SJMember)
 
-@given(instance=smallJava::SJMethod_strategy)
+@given(instance=smallJava_SJMethod_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjmethod_instantiation(instance):
-    assert isinstance(instance, smallJava::SJMethod)
+def test_smalljava_sjmethod_instantiation(instance):
+    assert isinstance(instance, smallJava_SJMethod)
 
-@given(instance=smallJava::SJField_strategy)
+@given(instance=smallJava_SJField_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjfield_instantiation(instance):
-    assert isinstance(instance, smallJava::SJField)
+def test_smalljava_sjfield_instantiation(instance):
+    assert isinstance(instance, smallJava_SJField)
 
 @given(instance=SJNamedElement_strategy)
 @settings(max_examples=50)
 def test_sjnamedelement_instantiation(instance):
     assert isinstance(instance, SJNamedElement)
 
-@given(instance=smallJava::SJSymbol_strategy)
+@given(instance=smallJava_SJMember_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjsymbol_instantiation(instance):
-    assert isinstance(instance, smallJava::SJSymbol)
+def test_smalljava_sjmember_instantiation(instance):
+    assert isinstance(instance, smallJava_SJMember)
 
-@given(instance=smallJava::SJMember_strategy)
+@given(instance=smallJava_SJSymbol_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjmember_instantiation(instance):
-    assert isinstance(instance, smallJava::SJMember)
+def test_smalljava_sjsymbol_instantiation(instance):
+    assert isinstance(instance, smallJava_SJSymbol)
 
-@given(instance=smallJava::SJClass_strategy)
+@given(instance=smallJava_SJClass_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjclass_instantiation(instance):
-    assert isinstance(instance, smallJava::SJClass)
+def test_smalljava_sjclass_instantiation(instance):
+    assert isinstance(instance, smallJava_SJClass)
 
-@given(instance=smallJava::SJStatement_strategy)
+@given(instance=smallJava_SJStatement_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjstatement_instantiation(instance):
-    assert isinstance(instance, smallJava::SJStatement)
+def test_smalljava_sjstatement_instantiation(instance):
+    assert isinstance(instance, smallJava_SJStatement)
 
 @given(instance=SJSymbol_strategy)
 @settings(max_examples=50)
 def test_sjsymbol_instantiation(instance):
     assert isinstance(instance, SJSymbol)
 
-@given(instance=smallJava::SJVariableDeclaration_strategy)
+@given(instance=smallJava_SJVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, smallJava::SJVariableDeclaration)
+def test_smalljava_sjvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, smallJava_SJVariableDeclaration)
 
-@given(instance=smallJava::SJBlock_strategy)
+@given(instance=smallJava_SJBlock_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjblock_instantiation(instance):
-    assert isinstance(instance, smallJava::SJBlock)
+def test_smalljava_sjblock_instantiation(instance):
+    assert isinstance(instance, smallJava_SJBlock)
 
-@given(instance=smallJava::SJParameter_strategy)
+@given(instance=smallJava_SJParameter_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjparameter_instantiation(instance):
-    assert isinstance(instance, smallJava::SJParameter)
+def test_smalljava_sjparameter_instantiation(instance):
+    assert isinstance(instance, smallJava_SJParameter)
 
-@given(instance=smallJava::SJProgram_strategy)
+@given(instance=smallJava_SJProgram_strategy)
 @settings(max_examples=50)
-def test_smalljava::sjprogram_instantiation(instance):
-    assert isinstance(instance, smallJava::SJProgram)
+def test_smalljava_sjprogram_instantiation(instance):
+    assert isinstance(instance, smallJava_SJProgram)

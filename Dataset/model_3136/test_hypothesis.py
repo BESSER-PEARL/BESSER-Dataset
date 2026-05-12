@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Dependency,
-    ClassDiagram::Realization,
-    ClassDiagram::Property,
+    ClassDiagram_Realization,
+    ClassDiagram_Property,
     Classifier,
-    ClassDiagram::Class,
-    ClassDiagram::Interface,
-    ClassDiagram::DataType,
-    ClassDiagram::Classifier,
+    ClassDiagram_Class,
+    ClassDiagram_Interface,
+    ClassDiagram_DataType,
+    ClassDiagram_Classifier,
     Relationship,
-    ClassDiagram::Generalization,
-    ClassDiagram::Dependency,
-    ClassDiagram::Association,
-    ClassDiagram::Relationship,
+    ClassDiagram_Generalization,
+    ClassDiagram_Dependency,
+    ClassDiagram_Association,
+    ClassDiagram_Relationship,
     AggregationKind,
 )
 
@@ -42,69 +42,69 @@ def test_dependency_constructor_args():
 
 
 
-def test_classdiagram::realization_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Realization)
+def test_classdiagram_realization_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Realization)
 
 
-def test_classdiagram::realization_constructor_exists():
-    assert callable(ClassDiagram::Realization.__init__)
+def test_classdiagram_realization_constructor_exists():
+    assert callable(ClassDiagram_Realization.__init__)
 
 
-def test_classdiagram::realization_constructor_args():
-    sig = inspect.signature(ClassDiagram::Realization.__init__)
+def test_classdiagram_realization_constructor_args():
+    sig = inspect.signature(ClassDiagram_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::property_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Property)
+def test_classdiagram_property_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Property)
 
 
-def test_classdiagram::property_constructor_exists():
-    assert callable(ClassDiagram::Property.__init__)
+def test_classdiagram_property_constructor_exists():
+    assert callable(ClassDiagram_Property.__init__)
 
 
-def test_classdiagram::property_constructor_args():
-    sig = inspect.signature(ClassDiagram::Property.__init__)
+def test_classdiagram_property_constructor_args():
+    sig = inspect.signature(ClassDiagram_Property.__init__)
     params = list(sig.parameters.keys())
+    assert "aggregation" in params, "Missing parameter 'aggregation'"
     assert "upper" in params, "Missing parameter 'upper'"
     assert "name" in params, "Missing parameter 'name'"
     assert "lower" in params, "Missing parameter 'lower'"
-    assert "aggregation" in params, "Missing parameter 'aggregation'"
 
-def test_classdiagram::property_has_upper():
-    assert hasattr(ClassDiagram::Property, "upper")
+def test_classdiagram_property_has_aggregation():
+    assert hasattr(ClassDiagram_Property, "aggregation")
     descriptor = None
-    for klass in ClassDiagram::Property.__mro__:
+    for klass in ClassDiagram_Property.__mro__:
+        if "aggregation" in klass.__dict__:
+            descriptor = klass.__dict__["aggregation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classdiagram_property_has_upper():
+    assert hasattr(ClassDiagram_Property, "upper")
+    descriptor = None
+    for klass in ClassDiagram_Property.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::property_has_name():
-    assert hasattr(ClassDiagram::Property, "name")
+def test_classdiagram_property_has_name():
+    assert hasattr(ClassDiagram_Property, "name")
     descriptor = None
-    for klass in ClassDiagram::Property.__mro__:
+    for klass in ClassDiagram_Property.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_classdiagram::property_has_lower():
-    assert hasattr(ClassDiagram::Property, "lower")
+def test_classdiagram_property_has_lower():
+    assert hasattr(ClassDiagram_Property, "lower")
     descriptor = None
-    for klass in ClassDiagram::Property.__mro__:
+    for klass in ClassDiagram_Property.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classdiagram::property_has_aggregation():
-    assert hasattr(ClassDiagram::Property, "aggregation")
-    descriptor = None
-    for klass in ClassDiagram::Property.__mro__:
-        if "aggregation" in klass.__dict__:
-            descriptor = klass.__dict__["aggregation"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,65 +124,65 @@ def test_classifier_constructor_args():
 
 
 
-def test_classdiagram::class_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Class)
+def test_classdiagram_class_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Class)
 
 
-def test_classdiagram::class_constructor_exists():
-    assert callable(ClassDiagram::Class.__init__)
+def test_classdiagram_class_constructor_exists():
+    assert callable(ClassDiagram_Class.__init__)
 
 
-def test_classdiagram::class_constructor_args():
-    sig = inspect.signature(ClassDiagram::Class.__init__)
+def test_classdiagram_class_constructor_args():
+    sig = inspect.signature(ClassDiagram_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::interface_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Interface)
+def test_classdiagram_interface_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Interface)
 
 
-def test_classdiagram::interface_constructor_exists():
-    assert callable(ClassDiagram::Interface.__init__)
+def test_classdiagram_interface_constructor_exists():
+    assert callable(ClassDiagram_Interface.__init__)
 
 
-def test_classdiagram::interface_constructor_args():
-    sig = inspect.signature(ClassDiagram::Interface.__init__)
+def test_classdiagram_interface_constructor_args():
+    sig = inspect.signature(ClassDiagram_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::datatype_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::DataType)
+def test_classdiagram_datatype_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_DataType)
 
 
-def test_classdiagram::datatype_constructor_exists():
-    assert callable(ClassDiagram::DataType.__init__)
+def test_classdiagram_datatype_constructor_exists():
+    assert callable(ClassDiagram_DataType.__init__)
 
 
-def test_classdiagram::datatype_constructor_args():
-    sig = inspect.signature(ClassDiagram::DataType.__init__)
+def test_classdiagram_datatype_constructor_args():
+    sig = inspect.signature(ClassDiagram_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::classifier_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Classifier)
+def test_classdiagram_classifier_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Classifier)
 
 
-def test_classdiagram::classifier_constructor_exists():
-    assert callable(ClassDiagram::Classifier.__init__)
+def test_classdiagram_classifier_constructor_exists():
+    assert callable(ClassDiagram_Classifier.__init__)
 
 
-def test_classdiagram::classifier_constructor_args():
-    sig = inspect.signature(ClassDiagram::Classifier.__init__)
+def test_classdiagram_classifier_constructor_args():
+    sig = inspect.signature(ClassDiagram_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::classifier_has_name():
-    assert hasattr(ClassDiagram::Classifier, "name")
+def test_classdiagram_classifier_has_name():
+    assert hasattr(ClassDiagram_Classifier, "name")
     descriptor = None
-    for klass in ClassDiagram::Classifier.__mro__:
+    for klass in ClassDiagram_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -204,51 +204,51 @@ def test_relationship_constructor_args():
 
 
 
-def test_classdiagram::generalization_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Generalization)
+def test_classdiagram_generalization_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Generalization)
 
 
-def test_classdiagram::generalization_constructor_exists():
-    assert callable(ClassDiagram::Generalization.__init__)
+def test_classdiagram_generalization_constructor_exists():
+    assert callable(ClassDiagram_Generalization.__init__)
 
 
-def test_classdiagram::generalization_constructor_args():
-    sig = inspect.signature(ClassDiagram::Generalization.__init__)
+def test_classdiagram_generalization_constructor_args():
+    sig = inspect.signature(ClassDiagram_Generalization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::dependency_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Dependency)
+def test_classdiagram_dependency_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Dependency)
 
 
-def test_classdiagram::dependency_constructor_exists():
-    assert callable(ClassDiagram::Dependency.__init__)
+def test_classdiagram_dependency_constructor_exists():
+    assert callable(ClassDiagram_Dependency.__init__)
 
 
-def test_classdiagram::dependency_constructor_args():
-    sig = inspect.signature(ClassDiagram::Dependency.__init__)
+def test_classdiagram_dependency_constructor_args():
+    sig = inspect.signature(ClassDiagram_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::association_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Association)
+def test_classdiagram_association_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Association)
 
 
-def test_classdiagram::association_constructor_exists():
-    assert callable(ClassDiagram::Association.__init__)
+def test_classdiagram_association_constructor_exists():
+    assert callable(ClassDiagram_Association.__init__)
 
 
-def test_classdiagram::association_constructor_args():
-    sig = inspect.signature(ClassDiagram::Association.__init__)
+def test_classdiagram_association_constructor_args():
+    sig = inspect.signature(ClassDiagram_Association.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::association_has_name():
-    assert hasattr(ClassDiagram::Association, "name")
+def test_classdiagram_association_has_name():
+    assert hasattr(ClassDiagram_Association, "name")
     descriptor = None
-    for klass in ClassDiagram::Association.__mro__:
+    for klass in ClassDiagram_Association.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -256,16 +256,16 @@ def test_classdiagram::association_has_name():
 
 
 
-def test_classdiagram::relationship_is_not_abstract():
-    assert not inspect.isabstract(ClassDiagram::Relationship)
+def test_classdiagram_relationship_is_not_abstract():
+    assert not inspect.isabstract(ClassDiagram_Relationship)
 
 
-def test_classdiagram::relationship_constructor_exists():
-    assert callable(ClassDiagram::Relationship.__init__)
+def test_classdiagram_relationship_constructor_exists():
+    assert callable(ClassDiagram_Relationship.__init__)
 
 
-def test_classdiagram::relationship_constructor_args():
-    sig = inspect.signature(ClassDiagram::Relationship.__init__)
+def test_classdiagram_relationship_constructor_args():
+    sig = inspect.signature(ClassDiagram_Relationship.__init__)
     params = list(sig.parameters.keys())
 
 def test_aggregationkind_exists():
@@ -276,9 +276,9 @@ def test_aggregationkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AggregationKind]
     expected_literals = [
-        "composite",
         "none",
         "shared",
+        "composite",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -299,53 +299,53 @@ safe_text = st.text(
 Dependency_strategy = st.builds(
     Dependency,
 )
-ClassDiagram::Realization_strategy = st.builds(
-    ClassDiagram::Realization,
+ClassDiagram_Realization_strategy = st.builds(
+    ClassDiagram_Realization,
 )
-ClassDiagram::Property_strategy = st.builds(
-    ClassDiagram::Property,
+ClassDiagram_Property_strategy = st.builds(
+    ClassDiagram_Property,
+    aggregation=
+        safe_text,
     upper=
         safe_text,
     name=
         safe_text,
     lower=
-        st.integers(),
-    aggregation=
-        safe_text
+        st.integers()
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-ClassDiagram::Class_strategy = st.builds(
-    ClassDiagram::Class,
+ClassDiagram_Class_strategy = st.builds(
+    ClassDiagram_Class,
 )
-ClassDiagram::Interface_strategy = st.builds(
-    ClassDiagram::Interface,
+ClassDiagram_Interface_strategy = st.builds(
+    ClassDiagram_Interface,
 )
-ClassDiagram::DataType_strategy = st.builds(
-    ClassDiagram::DataType,
+ClassDiagram_DataType_strategy = st.builds(
+    ClassDiagram_DataType,
 )
-ClassDiagram::Classifier_strategy = st.builds(
-    ClassDiagram::Classifier,
+ClassDiagram_Classifier_strategy = st.builds(
+    ClassDiagram_Classifier,
     name=
         safe_text
 )
 Relationship_strategy = st.builds(
     Relationship,
 )
-ClassDiagram::Generalization_strategy = st.builds(
-    ClassDiagram::Generalization,
+ClassDiagram_Generalization_strategy = st.builds(
+    ClassDiagram_Generalization,
 )
-ClassDiagram::Dependency_strategy = st.builds(
-    ClassDiagram::Dependency,
+ClassDiagram_Dependency_strategy = st.builds(
+    ClassDiagram_Dependency,
 )
-ClassDiagram::Association_strategy = st.builds(
-    ClassDiagram::Association,
+ClassDiagram_Association_strategy = st.builds(
+    ClassDiagram_Association,
     name=
         safe_text
 )
-ClassDiagram::Relationship_strategy = st.builds(
-    ClassDiagram::Relationship,
+ClassDiagram_Relationship_strategy = st.builds(
+    ClassDiagram_Relationship,
 )
 
 @given(instance=Dependency_strategy)
@@ -353,92 +353,77 @@ ClassDiagram::Relationship_strategy = st.builds(
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=ClassDiagram::Realization_strategy)
+@given(instance=ClassDiagram_Realization_strategy)
 @settings(max_examples=50)
-def test_classdiagram::realization_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Realization)
+def test_classdiagram_realization_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Realization)
 
-@given(instance=ClassDiagram::Property_strategy)
+@given(instance=ClassDiagram_Property_strategy)
 @settings(max_examples=50)
-def test_classdiagram::property_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Property)
-
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_upper_type(instance):
-    assert isinstance(instance.upper, str)
+def test_classdiagram_property_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Property)
 
 
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_upper_setter(instance):
+
+@given(instance=ClassDiagram_Property_strategy)
+def test_classdiagram_property_aggregation_setter(instance):
+    original = instance.aggregation
+    instance.aggregation = original
+    assert instance.aggregation == original
+
+
+
+@given(instance=ClassDiagram_Property_strategy)
+def test_classdiagram_property_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_name_setter(instance):
+@given(instance=ClassDiagram_Property_strategy)
+def test_classdiagram_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_lower_type(instance):
-    assert isinstance(instance.lower, int)
 
 
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_lower_setter(instance):
+@given(instance=ClassDiagram_Property_strategy)
+def test_classdiagram_property_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
-
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_aggregation_type(instance):
-    assert isinstance(instance.aggregation, str)
-
-
-@given(instance=ClassDiagram::Property_strategy)
-def test_classdiagram::property_aggregation_setter(instance):
-    original = instance.aggregation
-    instance.aggregation = original
-    assert instance.aggregation == original
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=ClassDiagram::Class_strategy)
+@given(instance=ClassDiagram_Class_strategy)
 @settings(max_examples=50)
-def test_classdiagram::class_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Class)
+def test_classdiagram_class_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Class)
 
-@given(instance=ClassDiagram::Interface_strategy)
+@given(instance=ClassDiagram_Interface_strategy)
 @settings(max_examples=50)
-def test_classdiagram::interface_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Interface)
+def test_classdiagram_interface_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Interface)
 
-@given(instance=ClassDiagram::DataType_strategy)
+@given(instance=ClassDiagram_DataType_strategy)
 @settings(max_examples=50)
-def test_classdiagram::datatype_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::DataType)
+def test_classdiagram_datatype_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_DataType)
 
-@given(instance=ClassDiagram::Classifier_strategy)
+@given(instance=ClassDiagram_Classifier_strategy)
 @settings(max_examples=50)
-def test_classdiagram::classifier_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Classifier)
-
-@given(instance=ClassDiagram::Classifier_strategy)
-def test_classdiagram::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_classifier_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Classifier)
 
 
-@given(instance=ClassDiagram::Classifier_strategy)
-def test_classdiagram::classifier_name_setter(instance):
+
+@given(instance=ClassDiagram_Classifier_strategy)
+def test_classdiagram_classifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -448,33 +433,30 @@ def test_classdiagram::classifier_name_setter(instance):
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=ClassDiagram::Generalization_strategy)
+@given(instance=ClassDiagram_Generalization_strategy)
 @settings(max_examples=50)
-def test_classdiagram::generalization_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Generalization)
+def test_classdiagram_generalization_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Generalization)
 
-@given(instance=ClassDiagram::Dependency_strategy)
+@given(instance=ClassDiagram_Dependency_strategy)
 @settings(max_examples=50)
-def test_classdiagram::dependency_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Dependency)
+def test_classdiagram_dependency_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Dependency)
 
-@given(instance=ClassDiagram::Association_strategy)
+@given(instance=ClassDiagram_Association_strategy)
 @settings(max_examples=50)
-def test_classdiagram::association_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Association)
-
-@given(instance=ClassDiagram::Association_strategy)
-def test_classdiagram::association_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_association_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Association)
 
 
-@given(instance=ClassDiagram::Association_strategy)
-def test_classdiagram::association_name_setter(instance):
+
+@given(instance=ClassDiagram_Association_strategy)
+def test_classdiagram_association_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassDiagram::Relationship_strategy)
+@given(instance=ClassDiagram_Relationship_strategy)
 @settings(max_examples=50)
-def test_classdiagram::relationship_instantiation(instance):
-    assert isinstance(instance, ClassDiagram::Relationship)
+def test_classdiagram_relationship_instantiation(instance):
+    assert isinstance(instance, ClassDiagram_Relationship)

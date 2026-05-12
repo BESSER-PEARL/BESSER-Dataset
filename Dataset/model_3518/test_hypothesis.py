@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test1::ConceptA,
+from python_code import (
+    test1_ConceptA,
 )
 
 # =============================================================================
@@ -15,33 +15,33 @@ from classes import (
 
 
 
-def test_test1::concepta_is_not_abstract():
-    assert not inspect.isabstract(test1::ConceptA)
+def test_test1_concepta_is_not_abstract():
+    assert not inspect.isabstract(test1_ConceptA)
 
 
-def test_test1::concepta_constructor_exists():
-    assert callable(test1::ConceptA.__init__)
+def test_test1_concepta_constructor_exists():
+    assert callable(test1_ConceptA.__init__)
 
 
-def test_test1::concepta_constructor_args():
-    sig = inspect.signature(test1::ConceptA.__init__)
+def test_test1_concepta_constructor_args():
+    sig = inspect.signature(test1_ConceptA.__init__)
     params = list(sig.parameters.keys())
     assert "b" in params, "Missing parameter 'b'"
     assert "bs" in params, "Missing parameter 'bs'"
 
-def test_test1::concepta_has_b():
-    assert hasattr(test1::ConceptA, "b")
+def test_test1_concepta_has_b():
+    assert hasattr(test1_ConceptA, "b")
     descriptor = None
-    for klass in test1::ConceptA.__mro__:
+    for klass in test1_ConceptA.__mro__:
         if "b" in klass.__dict__:
             descriptor = klass.__dict__["b"]
             break
     assert isinstance(descriptor, property)
 
-def test_test1::concepta_has_bs():
-    assert hasattr(test1::ConceptA, "bs")
+def test_test1_concepta_has_bs():
+    assert hasattr(test1_ConceptA, "bs")
     descriptor = None
-    for klass in test1::ConceptA.__mro__:
+    for klass in test1_ConceptA.__mro__:
         if "bs" in klass.__dict__:
             descriptor = klass.__dict__["bs"]
             break
@@ -59,37 +59,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test1::ConceptA_strategy = st.builds(
-    test1::ConceptA,
+test1_ConceptA_strategy = st.builds(
+    test1_ConceptA,
     b=
         safe_text,
     bs=
         safe_text
 )
 
-@given(instance=test1::ConceptA_strategy)
+@given(instance=test1_ConceptA_strategy)
 @settings(max_examples=50)
-def test_test1::concepta_instantiation(instance):
-    assert isinstance(instance, test1::ConceptA)
-
-@given(instance=test1::ConceptA_strategy)
-def test_test1::concepta_b_type(instance):
-    assert isinstance(instance.b, str)
+def test_test1_concepta_instantiation(instance):
+    assert isinstance(instance, test1_ConceptA)
 
 
-@given(instance=test1::ConceptA_strategy)
-def test_test1::concepta_b_setter(instance):
+
+@given(instance=test1_ConceptA_strategy)
+def test_test1_concepta_b_setter(instance):
     original = instance.b
     instance.b = original
     assert instance.b == original
 
-@given(instance=test1::ConceptA_strategy)
-def test_test1::concepta_bs_type(instance):
-    assert isinstance(instance.bs, str)
 
 
-@given(instance=test1::ConceptA_strategy)
-def test_test1::concepta_bs_setter(instance):
+@given(instance=test1_ConceptA_strategy)
+def test_test1_concepta_bs_setter(instance):
     original = instance.bs
     instance.bs = original
     assert instance.bs == original

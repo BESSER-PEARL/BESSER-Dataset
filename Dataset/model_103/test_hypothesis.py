@@ -3,181 +3,247 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    MemberValuePair,
+    VariableDeclaration,
+    DOM_SingleVariableDeclaration,
+    DOM_VariableDeclarationFragment,
     CatchClause,
     Statement,
-    DOM::EmptyStatement,
-    DOM::SynchronizedStatement,
-    DOM::Block,
-    DOM::SwitchCase,
-    DOM::TryStatement,
-    DOM::ThrowStatement,
-    DOM::WhileStatement,
-    DOM::SuperConstructorInvocation,
-    DOM::ConstructorInvocation,
-    DOM::ReturnStatement,
-    DOM::TypeDeclarationStatement,
-    DOM::SwitchStatement,
-    DOM::ExpressionStatement,
-    DOM::BreakStatement,
-    DOM::LabeledStatement,
-    DOM::EnhancedForStatement,
-    DOM::ContinueStatement,
-    DOM::DoStatement,
-    DOM::IfStatement,
-    DOM::VariableDeclarationStatement,
-    DOM::ForStatement,
-    DOM::AssertStatement,
-    TagElement,
-    ArrayType,
-    ArrayInitializer,
-    TypeParameter,
-    VariableDeclarationFragment,
-    EnumConstantDeclaration,
-    AnonymousClassDeclaration,
-    Annotation,
+    DOM_IfStatement,
+    DOM_DoStatement,
+    DOM_ExpressionStatement,
+    DOM_SuperConstructorInvocation,
+    DOM_EnhancedForStatement,
+    DOM_VariableDeclarationStatement,
+    DOM_SwitchStatement,
+    DOM_SynchronizedStatement,
+    DOM_SwitchCase,
+    DOM_ForStatement,
+    DOM_TryStatement,
+    DOM_BreakStatement,
+    DOM_Block,
+    DOM_ConstructorInvocation,
+    DOM_ReturnStatement,
+    DOM_WhileStatement,
+    DOM_ContinueStatement,
+    DOM_EmptyStatement,
+    DOM_ThrowStatement,
+    DOM_TypeDeclarationStatement,
+    DOM_LabeledStatement,
+    DOM_AssertStatement,
     Expression,
-    DOM::InfixExpression,
-    DOM::SuperFieldAccess,
-    DOM::ArrayAccess,
-    DOM::Name,
-    DOM::ThisExpression,
-    DOM::FieldAccess,
-    DOM::ArrayInitializer,
-    DOM::SuperMethodInvocation,
-    DOM::MethodInvocation,
-    DOM::PostfixExpression,
-    DOM::VariableDeclarationExpression,
-    DOM::ClassInstanceCreation,
-    DOM::InstanceofExpression,
-    DOM::NullLiteral,
-    DOM::ConditionalExpression,
-    DOM::Assignment,
-    DOM::TypeLiteral,
-    DOM::CastExpression,
-    DOM::StringLiteral,
-    DOM::BooleanLiteral,
-    DOM::ArrayCreation,
-    DOM::NumberLiteral,
-    DOM::CharacterLiteral,
-    DOM::PrefixExpression,
-    DOM::ParenthesizedExpression,
+    DOM_Name,
+    DOM_ThisExpression,
+    DOM_NumberLiteral,
+    DOM_TypeLiteral,
+    DOM_SuperFieldAccess,
+    DOM_VariableDeclarationExpression,
+    DOM_PrefixExpression,
+    DOM_ParenthesizedExpression,
+    DOM_InstanceofExpression,
+    DOM_SuperMethodInvocation,
+    DOM_NullLiteral,
+    DOM_StringLiteral,
+    DOM_MethodInvocation,
+    DOM_PostfixExpression,
+    DOM_InfixExpression,
     SimpleName,
     Name,
-    DOM::QualifiedName,
+    DOM_QualifiedName,
+    DOM_SimpleName,
     AbstractTypeDeclaration,
-    DOM::AnnotationTypeDeclaration,
-    DOM::EnumDeclaration,
-    DOM::TypeDeclaration,
     ImportDeclaration,
     PackageDeclaration,
-    DOM::ExtendedModifier,
+    DOM_ExtendedModifier,
     Type,
-    DOM::ParameterizedType,
-    DOM::QualifiedType,
-    DOM::PrimitiveType,
-    DOM::ArrayType,
+    DOM_ArrayType,
+    DOM_ParameterizedType,
+    DOM_SimpleType,
+    DOM_PrimitiveType,
+    DOM_QualifiedType,
+    DOM_WildcardType,
     MethodRefParameter,
     BodyDeclaration,
-    DOM::Initializer,
-    DOM::AnnotationTypeMemberDeclaration,
-    DOM::MethodDeclaration,
-    DOM::FieldDeclaration,
-    DOM::AbstractTypeDeclaration,
-    DOM::EnumConstantDeclaration,
-    DOM::ASTNode,
+    DOM_ASTNode,
     ASTNode,
-    DOM::VariableDeclaration,
-    DOM::Statement,
-    DOM::MemberValuePair,
-    DOM::MemberRef,
-    DOM::BodyDeclaration,
-    DOM::AnonymousClassDeclaration,
-    DOM::Type,
-    DOM::TagElement,
-    DOM::MethodRef,
-    DOM::TextElement,
-    DOM::PackageDeclaration,
-    DOM::TypeParameter,
-    DOM::Expression,
-    DOM::ImportDeclaration,
-    DOM::MethodRefParameter,
-    DOM::AST,
+    DOM_MethodRef,
+    DOM_MemberRef,
+    DOM_AnonymousClassDeclaration,
+    DOM_MemberValuePair,
+    DOM_MethodRefParameter,
+    DOM_TextElement,
+    DOM_ImportDeclaration,
+    DOM_BodyDeclaration,
+    DOM_Expression,
+    DOM_AST,
     Comment,
-    DOM::LineComment,
-    DOM::BlockComment,
-    DOM::Javadoc,
-    DOM::CompilationUnit,
-    DOM::Comment,
+    DOM_CompilationUnit,
+    DOM_Comment,
     SingleVariableDeclaration,
     Block,
-    DOM::CatchClause,
+    DOM_CatchClause,
     Javadoc,
     ExtendedModifier,
-    DOM::Annotation,
-    DOM::Modifier,
+    DOM_Modifier,
     ITypeParameter,
-    Core::Parameter,
+    Core_Parameter,
     Parameter,
-    Core::ISourceRange,
+    Core_ISourceRange,
     ISourceRange,
-    Core::ISourceReference,
+    Core_ISourceReference,
     CompilationUnit,
     IMethod,
     IField,
     IInitializer,
     IMember,
-    Core::IField,
-    Core::IMethod,
-    Core::IInitializer,
-    Core::IType,
+    Core_IMethod,
+    Core_IField,
+    Core_IInitializer,
+    Core_IType,
     IPackageFragment,
     IJavaElement,
     IPackageFragmentRoot,
-    Core::SourcePackageFragmentRoot,
-    Core::BinaryPackageFragmentRoot,
+    Core_SourcePackageFragmentRoot,
+    Core_BinaryPackageFragmentRoot,
     IJavaProject,
     PhysicalElement,
-    Core::IPackageFragmentRoot,
-    Core::IJavaProject,
-    Core::IPackageFragment,
-    Core::IJavaModel,
-    Core::PhysicalElement,
+    Core_IPackageFragmentRoot,
+    Core_IPackageFragment,
+    Core_IJavaProject,
+    Core_IJavaModel,
+    Core_PhysicalElement,
     IImportDeclaration,
     IType,
     ITypeRoot,
-    Core::IClassFile,
-    Core::ICompilationUnit,
+    Core_IClassFile,
+    Core_ICompilationUnit,
     ISourceReference,
-    Core::IMember,
-    Core::ITypeParameter,
-    Core::IImportDeclaration,
-    Core::ITypeRoot,
+    Core_ITypeParameter,
+    Core_IImportDeclaration,
+    Core_IMember,
+    Core_ITypeRoot,
     ICompilationUnit,
     IClassFile,
-    Core::IJavaElement,
-    DOM::SingleMemberAnnotation,
-    MemberValuePair,
-    DOM::NormalAnnotation,
-    DOM::MarkerAnnotation,
-    DOM::SimpleName,
-    VariableDeclaration,
-    DOM::VariableDeclarationFragment,
-    DOM::SingleVariableDeclaration,
-    DOM::WildcardType,
-    DOM::SimpleType,
+    Core_IJavaElement,
+    DOM_FieldAccess,
+    DOM_ClassInstanceCreation,
+    DOM_CharacterLiteral,
+    DOM_CastExpression,
+    DOM_BooleanLiteral,
+    DOM_ConditionalExpression,
+    DOM_ArrayCreation,
+    DOM_ArrayAccess,
+    DOM_Annotation,
+    DOM_LineComment,
+    TagElement,
+    DOM_Javadoc,
+    DOM_BlockComment,
+    DOM_Assignment,
+    DOM_ArrayInitializer,
+    ArrayType,
+    ArrayInitializer,
+    TypeParameter,
+    DOM_MethodDeclaration,
+    DOM_Initializer,
+    VariableDeclarationFragment,
+    DOM_TypeDeclaration,
+    EnumConstantDeclaration,
+    DOM_EnumDeclaration,
+    DOM_AnnotationTypeDeclaration,
+    DOM_AnnotationTypeMemberDeclaration,
+    DOM_AbstractTypeDeclaration,
+    DOM_FieldDeclaration,
+    AnonymousClassDeclaration,
+    DOM_EnumConstantDeclaration,
+    DOM_TagElement,
+    DOM_Statement,
+    Annotation,
+    DOM_MarkerAnnotation,
+    DOM_NormalAnnotation,
+    DOM_SingleMemberAnnotation,
+    DOM_PackageDeclaration,
+    DOM_VariableDeclaration,
+    DOM_TypeParameter,
+    DOM_Type,
+    Modifiers,
+    InfixExpressionOperatorKind,
     PostfixExpressionOperatorKind,
     AssignmentOperatorKind,
-    Modifiers,
     PrefixExpressionOperatorKind,
-    InfixExpressionOperatorKind,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_membervaluepair_is_not_abstract():
+    assert not inspect.isabstract(MemberValuePair)
+
+
+def test_membervaluepair_constructor_exists():
+    assert callable(MemberValuePair.__init__)
+
+
+def test_membervaluepair_constructor_args():
+    sig = inspect.signature(MemberValuePair.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(VariableDeclaration)
+
+
+def test_variabledeclaration_constructor_exists():
+    assert callable(VariableDeclaration.__init__)
+
+
+def test_variabledeclaration_constructor_args():
+    sig = inspect.signature(VariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_singlevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_SingleVariableDeclaration)
+
+
+def test_dom_singlevariabledeclaration_constructor_exists():
+    assert callable(DOM_SingleVariableDeclaration.__init__)
+
+
+def test_dom_singlevariabledeclaration_constructor_args():
+    sig = inspect.signature(DOM_SingleVariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "varargs" in params, "Missing parameter 'varargs'"
+
+def test_dom_singlevariabledeclaration_has_varargs():
+    assert hasattr(DOM_SingleVariableDeclaration, "varargs")
+    descriptor = None
+    for klass in DOM_SingleVariableDeclaration.__mro__:
+        if "varargs" in klass.__dict__:
+            descriptor = klass.__dict__["varargs"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_variabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(DOM_VariableDeclarationFragment)
+
+
+def test_dom_variabledeclarationfragment_constructor_exists():
+    assert callable(DOM_VariableDeclarationFragment.__init__)
+
+
+def test_dom_variabledeclarationfragment_constructor_args():
+    sig = inspect.signature(DOM_VariableDeclarationFragment.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -209,65 +275,135 @@ def test_statement_constructor_args():
 
 
 
-def test_dom::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::EmptyStatement)
+def test_dom_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_IfStatement)
 
 
-def test_dom::emptystatement_constructor_exists():
-    assert callable(DOM::EmptyStatement.__init__)
+def test_dom_ifstatement_constructor_exists():
+    assert callable(DOM_IfStatement.__init__)
 
 
-def test_dom::emptystatement_constructor_args():
-    sig = inspect.signature(DOM::EmptyStatement.__init__)
+def test_dom_ifstatement_constructor_args():
+    sig = inspect.signature(DOM_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::synchronizedstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::SynchronizedStatement)
+def test_dom_dostatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_DoStatement)
 
 
-def test_dom::synchronizedstatement_constructor_exists():
-    assert callable(DOM::SynchronizedStatement.__init__)
+def test_dom_dostatement_constructor_exists():
+    assert callable(DOM_DoStatement.__init__)
 
 
-def test_dom::synchronizedstatement_constructor_args():
-    sig = inspect.signature(DOM::SynchronizedStatement.__init__)
+def test_dom_dostatement_constructor_args():
+    sig = inspect.signature(DOM_DoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::block_is_not_abstract():
-    assert not inspect.isabstract(DOM::Block)
+def test_dom_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_ExpressionStatement)
 
 
-def test_dom::block_constructor_exists():
-    assert callable(DOM::Block.__init__)
+def test_dom_expressionstatement_constructor_exists():
+    assert callable(DOM_ExpressionStatement.__init__)
 
 
-def test_dom::block_constructor_args():
-    sig = inspect.signature(DOM::Block.__init__)
+def test_dom_expressionstatement_constructor_args():
+    sig = inspect.signature(DOM_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::switchcase_is_not_abstract():
-    assert not inspect.isabstract(DOM::SwitchCase)
+def test_dom_superconstructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(DOM_SuperConstructorInvocation)
 
 
-def test_dom::switchcase_constructor_exists():
-    assert callable(DOM::SwitchCase.__init__)
+def test_dom_superconstructorinvocation_constructor_exists():
+    assert callable(DOM_SuperConstructorInvocation.__init__)
 
 
-def test_dom::switchcase_constructor_args():
-    sig = inspect.signature(DOM::SwitchCase.__init__)
+def test_dom_superconstructorinvocation_constructor_args():
+    sig = inspect.signature(DOM_SuperConstructorInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_enhancedforstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_EnhancedForStatement)
+
+
+def test_dom_enhancedforstatement_constructor_exists():
+    assert callable(DOM_EnhancedForStatement.__init__)
+
+
+def test_dom_enhancedforstatement_constructor_args():
+    sig = inspect.signature(DOM_EnhancedForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_variabledeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_VariableDeclarationStatement)
+
+
+def test_dom_variabledeclarationstatement_constructor_exists():
+    assert callable(DOM_VariableDeclarationStatement.__init__)
+
+
+def test_dom_variabledeclarationstatement_constructor_args():
+    sig = inspect.signature(DOM_VariableDeclarationStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_SwitchStatement)
+
+
+def test_dom_switchstatement_constructor_exists():
+    assert callable(DOM_SwitchStatement.__init__)
+
+
+def test_dom_switchstatement_constructor_args():
+    sig = inspect.signature(DOM_SwitchStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_synchronizedstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_SynchronizedStatement)
+
+
+def test_dom_synchronizedstatement_constructor_exists():
+    assert callable(DOM_SynchronizedStatement.__init__)
+
+
+def test_dom_synchronizedstatement_constructor_args():
+    sig = inspect.signature(DOM_SynchronizedStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_switchcase_is_not_abstract():
+    assert not inspect.isabstract(DOM_SwitchCase)
+
+
+def test_dom_switchcase_constructor_exists():
+    assert callable(DOM_SwitchCase.__init__)
+
+
+def test_dom_switchcase_constructor_args():
+    sig = inspect.signature(DOM_SwitchCase.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_dom::switchcase_has_default():
-    assert hasattr(DOM::SwitchCase, "default")
+def test_dom_switchcase_has_default():
+    assert hasattr(DOM_SwitchCase, "default")
     descriptor = None
-    for klass in DOM::SwitchCase.__mro__:
+    for klass in DOM_SwitchCase.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -275,366 +411,184 @@ def test_dom::switchcase_has_default():
 
 
 
-def test_dom::trystatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::TryStatement)
+def test_dom_forstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_ForStatement)
 
 
-def test_dom::trystatement_constructor_exists():
-    assert callable(DOM::TryStatement.__init__)
+def test_dom_forstatement_constructor_exists():
+    assert callable(DOM_ForStatement.__init__)
 
 
-def test_dom::trystatement_constructor_args():
-    sig = inspect.signature(DOM::TryStatement.__init__)
+def test_dom_forstatement_constructor_args():
+    sig = inspect.signature(DOM_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::ThrowStatement)
+def test_dom_trystatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_TryStatement)
 
 
-def test_dom::throwstatement_constructor_exists():
-    assert callable(DOM::ThrowStatement.__init__)
+def test_dom_trystatement_constructor_exists():
+    assert callable(DOM_TryStatement.__init__)
 
 
-def test_dom::throwstatement_constructor_args():
-    sig = inspect.signature(DOM::ThrowStatement.__init__)
+def test_dom_trystatement_constructor_args():
+    sig = inspect.signature(DOM_TryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::WhileStatement)
+def test_dom_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_BreakStatement)
 
 
-def test_dom::whilestatement_constructor_exists():
-    assert callable(DOM::WhileStatement.__init__)
+def test_dom_breakstatement_constructor_exists():
+    assert callable(DOM_BreakStatement.__init__)
 
 
-def test_dom::whilestatement_constructor_args():
-    sig = inspect.signature(DOM::WhileStatement.__init__)
+def test_dom_breakstatement_constructor_args():
+    sig = inspect.signature(DOM_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::superconstructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(DOM::SuperConstructorInvocation)
+def test_dom_block_is_not_abstract():
+    assert not inspect.isabstract(DOM_Block)
 
 
-def test_dom::superconstructorinvocation_constructor_exists():
-    assert callable(DOM::SuperConstructorInvocation.__init__)
+def test_dom_block_constructor_exists():
+    assert callable(DOM_Block.__init__)
 
 
-def test_dom::superconstructorinvocation_constructor_args():
-    sig = inspect.signature(DOM::SuperConstructorInvocation.__init__)
+def test_dom_block_constructor_args():
+    sig = inspect.signature(DOM_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::constructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(DOM::ConstructorInvocation)
+def test_dom_constructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(DOM_ConstructorInvocation)
 
 
-def test_dom::constructorinvocation_constructor_exists():
-    assert callable(DOM::ConstructorInvocation.__init__)
+def test_dom_constructorinvocation_constructor_exists():
+    assert callable(DOM_ConstructorInvocation.__init__)
 
 
-def test_dom::constructorinvocation_constructor_args():
-    sig = inspect.signature(DOM::ConstructorInvocation.__init__)
+def test_dom_constructorinvocation_constructor_args():
+    sig = inspect.signature(DOM_ConstructorInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::ReturnStatement)
+def test_dom_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_ReturnStatement)
 
 
-def test_dom::returnstatement_constructor_exists():
-    assert callable(DOM::ReturnStatement.__init__)
+def test_dom_returnstatement_constructor_exists():
+    assert callable(DOM_ReturnStatement.__init__)
 
 
-def test_dom::returnstatement_constructor_args():
-    sig = inspect.signature(DOM::ReturnStatement.__init__)
+def test_dom_returnstatement_constructor_args():
+    sig = inspect.signature(DOM_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::typedeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::TypeDeclarationStatement)
+def test_dom_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_WhileStatement)
 
 
-def test_dom::typedeclarationstatement_constructor_exists():
-    assert callable(DOM::TypeDeclarationStatement.__init__)
+def test_dom_whilestatement_constructor_exists():
+    assert callable(DOM_WhileStatement.__init__)
 
 
-def test_dom::typedeclarationstatement_constructor_args():
-    sig = inspect.signature(DOM::TypeDeclarationStatement.__init__)
+def test_dom_whilestatement_constructor_args():
+    sig = inspect.signature(DOM_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::SwitchStatement)
+def test_dom_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_ContinueStatement)
 
 
-def test_dom::switchstatement_constructor_exists():
-    assert callable(DOM::SwitchStatement.__init__)
+def test_dom_continuestatement_constructor_exists():
+    assert callable(DOM_ContinueStatement.__init__)
 
 
-def test_dom::switchstatement_constructor_args():
-    sig = inspect.signature(DOM::SwitchStatement.__init__)
+def test_dom_continuestatement_constructor_args():
+    sig = inspect.signature(DOM_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::ExpressionStatement)
+def test_dom_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_EmptyStatement)
 
 
-def test_dom::expressionstatement_constructor_exists():
-    assert callable(DOM::ExpressionStatement.__init__)
+def test_dom_emptystatement_constructor_exists():
+    assert callable(DOM_EmptyStatement.__init__)
 
 
-def test_dom::expressionstatement_constructor_args():
-    sig = inspect.signature(DOM::ExpressionStatement.__init__)
+def test_dom_emptystatement_constructor_args():
+    sig = inspect.signature(DOM_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::BreakStatement)
+def test_dom_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_ThrowStatement)
 
 
-def test_dom::breakstatement_constructor_exists():
-    assert callable(DOM::BreakStatement.__init__)
+def test_dom_throwstatement_constructor_exists():
+    assert callable(DOM_ThrowStatement.__init__)
 
 
-def test_dom::breakstatement_constructor_args():
-    sig = inspect.signature(DOM::BreakStatement.__init__)
+def test_dom_throwstatement_constructor_args():
+    sig = inspect.signature(DOM_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::LabeledStatement)
+def test_dom_typedeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_TypeDeclarationStatement)
 
 
-def test_dom::labeledstatement_constructor_exists():
-    assert callable(DOM::LabeledStatement.__init__)
+def test_dom_typedeclarationstatement_constructor_exists():
+    assert callable(DOM_TypeDeclarationStatement.__init__)
 
 
-def test_dom::labeledstatement_constructor_args():
-    sig = inspect.signature(DOM::LabeledStatement.__init__)
+def test_dom_typedeclarationstatement_constructor_args():
+    sig = inspect.signature(DOM_TypeDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::enhancedforstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::EnhancedForStatement)
+def test_dom_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_LabeledStatement)
 
 
-def test_dom::enhancedforstatement_constructor_exists():
-    assert callable(DOM::EnhancedForStatement.__init__)
+def test_dom_labeledstatement_constructor_exists():
+    assert callable(DOM_LabeledStatement.__init__)
 
 
-def test_dom::enhancedforstatement_constructor_args():
-    sig = inspect.signature(DOM::EnhancedForStatement.__init__)
+def test_dom_labeledstatement_constructor_args():
+    sig = inspect.signature(DOM_LabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::ContinueStatement)
+def test_dom_assertstatement_is_not_abstract():
+    assert not inspect.isabstract(DOM_AssertStatement)
 
 
-def test_dom::continuestatement_constructor_exists():
-    assert callable(DOM::ContinueStatement.__init__)
+def test_dom_assertstatement_constructor_exists():
+    assert callable(DOM_AssertStatement.__init__)
 
 
-def test_dom::continuestatement_constructor_args():
-    sig = inspect.signature(DOM::ContinueStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::dostatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::DoStatement)
-
-
-def test_dom::dostatement_constructor_exists():
-    assert callable(DOM::DoStatement.__init__)
-
-
-def test_dom::dostatement_constructor_args():
-    sig = inspect.signature(DOM::DoStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::IfStatement)
-
-
-def test_dom::ifstatement_constructor_exists():
-    assert callable(DOM::IfStatement.__init__)
-
-
-def test_dom::ifstatement_constructor_args():
-    sig = inspect.signature(DOM::IfStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::variabledeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::VariableDeclarationStatement)
-
-
-def test_dom::variabledeclarationstatement_constructor_exists():
-    assert callable(DOM::VariableDeclarationStatement.__init__)
-
-
-def test_dom::variabledeclarationstatement_constructor_args():
-    sig = inspect.signature(DOM::VariableDeclarationStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::forstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::ForStatement)
-
-
-def test_dom::forstatement_constructor_exists():
-    assert callable(DOM::ForStatement.__init__)
-
-
-def test_dom::forstatement_constructor_args():
-    sig = inspect.signature(DOM::ForStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::assertstatement_is_not_abstract():
-    assert not inspect.isabstract(DOM::AssertStatement)
-
-
-def test_dom::assertstatement_constructor_exists():
-    assert callable(DOM::AssertStatement.__init__)
-
-
-def test_dom::assertstatement_constructor_args():
-    sig = inspect.signature(DOM::AssertStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tagelement_is_not_abstract():
-    assert not inspect.isabstract(TagElement)
-
-
-def test_tagelement_constructor_exists():
-    assert callable(TagElement.__init__)
-
-
-def test_tagelement_constructor_args():
-    sig = inspect.signature(TagElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arraytype_is_not_abstract():
-    assert not inspect.isabstract(ArrayType)
-
-
-def test_arraytype_constructor_exists():
-    assert callable(ArrayType.__init__)
-
-
-def test_arraytype_constructor_args():
-    sig = inspect.signature(ArrayType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(ArrayInitializer)
-
-
-def test_arrayinitializer_constructor_exists():
-    assert callable(ArrayInitializer.__init__)
-
-
-def test_arrayinitializer_constructor_args():
-    sig = inspect.signature(ArrayInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_typeparameter_is_not_abstract():
-    assert not inspect.isabstract(TypeParameter)
-
-
-def test_typeparameter_constructor_exists():
-    assert callable(TypeParameter.__init__)
-
-
-def test_typeparameter_constructor_args():
-    sig = inspect.signature(TypeParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_variabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(VariableDeclarationFragment)
-
-
-def test_variabledeclarationfragment_constructor_exists():
-    assert callable(VariableDeclarationFragment.__init__)
-
-
-def test_variabledeclarationfragment_constructor_args():
-    sig = inspect.signature(VariableDeclarationFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_enumconstantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(EnumConstantDeclaration)
-
-
-def test_enumconstantdeclaration_constructor_exists():
-    assert callable(EnumConstantDeclaration.__init__)
-
-
-def test_enumconstantdeclaration_constructor_args():
-    sig = inspect.signature(EnumConstantDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_anonymousclassdeclaration_is_not_abstract():
-    assert not inspect.isabstract(AnonymousClassDeclaration)
-
-
-def test_anonymousclassdeclaration_constructor_exists():
-    assert callable(AnonymousClassDeclaration.__init__)
-
-
-def test_anonymousclassdeclaration_constructor_args():
-    sig = inspect.signature(AnonymousClassDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotation_is_not_abstract():
-    assert not inspect.isabstract(Annotation)
-
-
-def test_annotation_constructor_exists():
-    assert callable(Annotation.__init__)
-
-
-def test_annotation_constructor_args():
-    sig = inspect.signature(Annotation.__init__)
+def test_dom_assertstatement_constructor_args():
+    sig = inspect.signature(DOM_AssertStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -653,75 +607,23 @@ def test_expression_constructor_args():
 
 
 
-def test_dom::infixexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::InfixExpression)
+def test_dom_name_is_not_abstract():
+    assert not inspect.isabstract(DOM_Name)
 
 
-def test_dom::infixexpression_constructor_exists():
-    assert callable(DOM::InfixExpression.__init__)
+def test_dom_name_constructor_exists():
+    assert callable(DOM_Name.__init__)
 
 
-def test_dom::infixexpression_constructor_args():
-    sig = inspect.signature(DOM::InfixExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_dom::infixexpression_has_operator():
-    assert hasattr(DOM::InfixExpression, "operator")
-    descriptor = None
-    for klass in DOM::InfixExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::superfieldaccess_is_not_abstract():
-    assert not inspect.isabstract(DOM::SuperFieldAccess)
-
-
-def test_dom::superfieldaccess_constructor_exists():
-    assert callable(DOM::SuperFieldAccess.__init__)
-
-
-def test_dom::superfieldaccess_constructor_args():
-    sig = inspect.signature(DOM::SuperFieldAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::arrayaccess_is_not_abstract():
-    assert not inspect.isabstract(DOM::ArrayAccess)
-
-
-def test_dom::arrayaccess_constructor_exists():
-    assert callable(DOM::ArrayAccess.__init__)
-
-
-def test_dom::arrayaccess_constructor_args():
-    sig = inspect.signature(DOM::ArrayAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::name_is_not_abstract():
-    assert not inspect.isabstract(DOM::Name)
-
-
-def test_dom::name_constructor_exists():
-    assert callable(DOM::Name.__init__)
-
-
-def test_dom::name_constructor_args():
-    sig = inspect.signature(DOM::Name.__init__)
+def test_dom_name_constructor_args():
+    sig = inspect.signature(DOM_Name.__init__)
     params = list(sig.parameters.keys())
     assert "fullyQualifiedName" in params, "Missing parameter 'fullyQualifiedName'"
 
-def test_dom::name_has_fullyQualifiedName():
-    assert hasattr(DOM::Name, "fullyQualifiedName")
+def test_dom_name_has_fullyQualifiedName():
+    assert hasattr(DOM_Name, "fullyQualifiedName")
     descriptor = None
-    for klass in DOM::Name.__mro__:
+    for klass in DOM_Name.__mro__:
         if "fullyQualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["fullyQualifiedName"]
             break
@@ -729,311 +631,37 @@ def test_dom::name_has_fullyQualifiedName():
 
 
 
-def test_dom::thisexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::ThisExpression)
+def test_dom_thisexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_ThisExpression)
 
 
-def test_dom::thisexpression_constructor_exists():
-    assert callable(DOM::ThisExpression.__init__)
+def test_dom_thisexpression_constructor_exists():
+    assert callable(DOM_ThisExpression.__init__)
 
 
-def test_dom::thisexpression_constructor_args():
-    sig = inspect.signature(DOM::ThisExpression.__init__)
+def test_dom_thisexpression_constructor_args():
+    sig = inspect.signature(DOM_ThisExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::fieldaccess_is_not_abstract():
-    assert not inspect.isabstract(DOM::FieldAccess)
+def test_dom_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(DOM_NumberLiteral)
 
 
-def test_dom::fieldaccess_constructor_exists():
-    assert callable(DOM::FieldAccess.__init__)
+def test_dom_numberliteral_constructor_exists():
+    assert callable(DOM_NumberLiteral.__init__)
 
 
-def test_dom::fieldaccess_constructor_args():
-    sig = inspect.signature(DOM::FieldAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(DOM::ArrayInitializer)
-
-
-def test_dom::arrayinitializer_constructor_exists():
-    assert callable(DOM::ArrayInitializer.__init__)
-
-
-def test_dom::arrayinitializer_constructor_args():
-    sig = inspect.signature(DOM::ArrayInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::supermethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(DOM::SuperMethodInvocation)
-
-
-def test_dom::supermethodinvocation_constructor_exists():
-    assert callable(DOM::SuperMethodInvocation.__init__)
-
-
-def test_dom::supermethodinvocation_constructor_args():
-    sig = inspect.signature(DOM::SuperMethodInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(DOM::MethodInvocation)
-
-
-def test_dom::methodinvocation_constructor_exists():
-    assert callable(DOM::MethodInvocation.__init__)
-
-
-def test_dom::methodinvocation_constructor_args():
-    sig = inspect.signature(DOM::MethodInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::postfixexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::PostfixExpression)
-
-
-def test_dom::postfixexpression_constructor_exists():
-    assert callable(DOM::PostfixExpression.__init__)
-
-
-def test_dom::postfixexpression_constructor_args():
-    sig = inspect.signature(DOM::PostfixExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_dom::postfixexpression_has_operator():
-    assert hasattr(DOM::PostfixExpression, "operator")
-    descriptor = None
-    for klass in DOM::PostfixExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::variabledeclarationexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::VariableDeclarationExpression)
-
-
-def test_dom::variabledeclarationexpression_constructor_exists():
-    assert callable(DOM::VariableDeclarationExpression.__init__)
-
-
-def test_dom::variabledeclarationexpression_constructor_args():
-    sig = inspect.signature(DOM::VariableDeclarationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::classinstancecreation_is_not_abstract():
-    assert not inspect.isabstract(DOM::ClassInstanceCreation)
-
-
-def test_dom::classinstancecreation_constructor_exists():
-    assert callable(DOM::ClassInstanceCreation.__init__)
-
-
-def test_dom::classinstancecreation_constructor_args():
-    sig = inspect.signature(DOM::ClassInstanceCreation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::InstanceofExpression)
-
-
-def test_dom::instanceofexpression_constructor_exists():
-    assert callable(DOM::InstanceofExpression.__init__)
-
-
-def test_dom::instanceofexpression_constructor_args():
-    sig = inspect.signature(DOM::InstanceofExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(DOM::NullLiteral)
-
-
-def test_dom::nullliteral_constructor_exists():
-    assert callable(DOM::NullLiteral.__init__)
-
-
-def test_dom::nullliteral_constructor_args():
-    sig = inspect.signature(DOM::NullLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::ConditionalExpression)
-
-
-def test_dom::conditionalexpression_constructor_exists():
-    assert callable(DOM::ConditionalExpression.__init__)
-
-
-def test_dom::conditionalexpression_constructor_args():
-    sig = inspect.signature(DOM::ConditionalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::assignment_is_not_abstract():
-    assert not inspect.isabstract(DOM::Assignment)
-
-
-def test_dom::assignment_constructor_exists():
-    assert callable(DOM::Assignment.__init__)
-
-
-def test_dom::assignment_constructor_args():
-    sig = inspect.signature(DOM::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_dom::assignment_has_operator():
-    assert hasattr(DOM::Assignment, "operator")
-    descriptor = None
-    for klass in DOM::Assignment.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::typeliteral_is_not_abstract():
-    assert not inspect.isabstract(DOM::TypeLiteral)
-
-
-def test_dom::typeliteral_constructor_exists():
-    assert callable(DOM::TypeLiteral.__init__)
-
-
-def test_dom::typeliteral_constructor_args():
-    sig = inspect.signature(DOM::TypeLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::castexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::CastExpression)
-
-
-def test_dom::castexpression_constructor_exists():
-    assert callable(DOM::CastExpression.__init__)
-
-
-def test_dom::castexpression_constructor_args():
-    sig = inspect.signature(DOM::CastExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(DOM::StringLiteral)
-
-
-def test_dom::stringliteral_constructor_exists():
-    assert callable(DOM::StringLiteral.__init__)
-
-
-def test_dom::stringliteral_constructor_args():
-    sig = inspect.signature(DOM::StringLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "escapedValue" in params, "Missing parameter 'escapedValue'"
-    assert "literalValue" in params, "Missing parameter 'literalValue'"
-
-def test_dom::stringliteral_has_escapedValue():
-    assert hasattr(DOM::StringLiteral, "escapedValue")
-    descriptor = None
-    for klass in DOM::StringLiteral.__mro__:
-        if "escapedValue" in klass.__dict__:
-            descriptor = klass.__dict__["escapedValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::stringliteral_has_literalValue():
-    assert hasattr(DOM::StringLiteral, "literalValue")
-    descriptor = None
-    for klass in DOM::StringLiteral.__mro__:
-        if "literalValue" in klass.__dict__:
-            descriptor = klass.__dict__["literalValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(DOM::BooleanLiteral)
-
-
-def test_dom::booleanliteral_constructor_exists():
-    assert callable(DOM::BooleanLiteral.__init__)
-
-
-def test_dom::booleanliteral_constructor_args():
-    sig = inspect.signature(DOM::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "booleanValue" in params, "Missing parameter 'booleanValue'"
-
-def test_dom::booleanliteral_has_booleanValue():
-    assert hasattr(DOM::BooleanLiteral, "booleanValue")
-    descriptor = None
-    for klass in DOM::BooleanLiteral.__mro__:
-        if "booleanValue" in klass.__dict__:
-            descriptor = klass.__dict__["booleanValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::arraycreation_is_not_abstract():
-    assert not inspect.isabstract(DOM::ArrayCreation)
-
-
-def test_dom::arraycreation_constructor_exists():
-    assert callable(DOM::ArrayCreation.__init__)
-
-
-def test_dom::arraycreation_constructor_args():
-    sig = inspect.signature(DOM::ArrayCreation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(DOM::NumberLiteral)
-
-
-def test_dom::numberliteral_constructor_exists():
-    assert callable(DOM::NumberLiteral.__init__)
-
-
-def test_dom::numberliteral_constructor_args():
-    sig = inspect.signature(DOM::NumberLiteral.__init__)
+def test_dom_numberliteral_constructor_args():
+    sig = inspect.signature(DOM_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "token" in params, "Missing parameter 'token'"
 
-def test_dom::numberliteral_has_token():
-    assert hasattr(DOM::NumberLiteral, "token")
+def test_dom_numberliteral_has_token():
+    assert hasattr(DOM_NumberLiteral, "token")
     descriptor = None
-    for klass in DOM::NumberLiteral.__mro__:
+    for klass in DOM_NumberLiteral.__mro__:
         if "token" in klass.__dict__:
             descriptor = klass.__dict__["token"]
             break
@@ -1041,57 +669,65 @@ def test_dom::numberliteral_has_token():
 
 
 
-def test_dom::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(DOM::CharacterLiteral)
+def test_dom_typeliteral_is_not_abstract():
+    assert not inspect.isabstract(DOM_TypeLiteral)
 
 
-def test_dom::characterliteral_constructor_exists():
-    assert callable(DOM::CharacterLiteral.__init__)
+def test_dom_typeliteral_constructor_exists():
+    assert callable(DOM_TypeLiteral.__init__)
 
 
-def test_dom::characterliteral_constructor_args():
-    sig = inspect.signature(DOM::CharacterLiteral.__init__)
+def test_dom_typeliteral_constructor_args():
+    sig = inspect.signature(DOM_TypeLiteral.__init__)
     params = list(sig.parameters.keys())
-    assert "escapedValue" in params, "Missing parameter 'escapedValue'"
-    assert "charValue" in params, "Missing parameter 'charValue'"
-
-def test_dom::characterliteral_has_escapedValue():
-    assert hasattr(DOM::CharacterLiteral, "escapedValue")
-    descriptor = None
-    for klass in DOM::CharacterLiteral.__mro__:
-        if "escapedValue" in klass.__dict__:
-            descriptor = klass.__dict__["escapedValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::characterliteral_has_charValue():
-    assert hasattr(DOM::CharacterLiteral, "charValue")
-    descriptor = None
-    for klass in DOM::CharacterLiteral.__mro__:
-        if "charValue" in klass.__dict__:
-            descriptor = klass.__dict__["charValue"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_dom::prefixexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::PrefixExpression)
+def test_dom_superfieldaccess_is_not_abstract():
+    assert not inspect.isabstract(DOM_SuperFieldAccess)
 
 
-def test_dom::prefixexpression_constructor_exists():
-    assert callable(DOM::PrefixExpression.__init__)
+def test_dom_superfieldaccess_constructor_exists():
+    assert callable(DOM_SuperFieldAccess.__init__)
 
 
-def test_dom::prefixexpression_constructor_args():
-    sig = inspect.signature(DOM::PrefixExpression.__init__)
+def test_dom_superfieldaccess_constructor_args():
+    sig = inspect.signature(DOM_SuperFieldAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_variabledeclarationexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_VariableDeclarationExpression)
+
+
+def test_dom_variabledeclarationexpression_constructor_exists():
+    assert callable(DOM_VariableDeclarationExpression.__init__)
+
+
+def test_dom_variabledeclarationexpression_constructor_args():
+    sig = inspect.signature(DOM_VariableDeclarationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_prefixexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_PrefixExpression)
+
+
+def test_dom_prefixexpression_constructor_exists():
+    assert callable(DOM_PrefixExpression.__init__)
+
+
+def test_dom_prefixexpression_constructor_args():
+    sig = inspect.signature(DOM_PrefixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_dom::prefixexpression_has_operator():
-    assert hasattr(DOM::PrefixExpression, "operator")
+def test_dom_prefixexpression_has_operator():
+    assert hasattr(DOM_PrefixExpression, "operator")
     descriptor = None
-    for klass in DOM::PrefixExpression.__mro__:
+    for klass in DOM_PrefixExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1099,17 +735,155 @@ def test_dom::prefixexpression_has_operator():
 
 
 
-def test_dom::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(DOM::ParenthesizedExpression)
+def test_dom_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_ParenthesizedExpression)
 
 
-def test_dom::parenthesizedexpression_constructor_exists():
-    assert callable(DOM::ParenthesizedExpression.__init__)
+def test_dom_parenthesizedexpression_constructor_exists():
+    assert callable(DOM_ParenthesizedExpression.__init__)
 
 
-def test_dom::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(DOM::ParenthesizedExpression.__init__)
+def test_dom_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(DOM_ParenthesizedExpression.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_dom_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_InstanceofExpression)
+
+
+def test_dom_instanceofexpression_constructor_exists():
+    assert callable(DOM_InstanceofExpression.__init__)
+
+
+def test_dom_instanceofexpression_constructor_args():
+    sig = inspect.signature(DOM_InstanceofExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_supermethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(DOM_SuperMethodInvocation)
+
+
+def test_dom_supermethodinvocation_constructor_exists():
+    assert callable(DOM_SuperMethodInvocation.__init__)
+
+
+def test_dom_supermethodinvocation_constructor_args():
+    sig = inspect.signature(DOM_SuperMethodInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(DOM_NullLiteral)
+
+
+def test_dom_nullliteral_constructor_exists():
+    assert callable(DOM_NullLiteral.__init__)
+
+
+def test_dom_nullliteral_constructor_args():
+    sig = inspect.signature(DOM_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(DOM_StringLiteral)
+
+
+def test_dom_stringliteral_constructor_exists():
+    assert callable(DOM_StringLiteral.__init__)
+
+
+def test_dom_stringliteral_constructor_args():
+    sig = inspect.signature(DOM_StringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "literalValue" in params, "Missing parameter 'literalValue'"
+    assert "escapedValue" in params, "Missing parameter 'escapedValue'"
+
+def test_dom_stringliteral_has_literalValue():
+    assert hasattr(DOM_StringLiteral, "literalValue")
+    descriptor = None
+    for klass in DOM_StringLiteral.__mro__:
+        if "literalValue" in klass.__dict__:
+            descriptor = klass.__dict__["literalValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_stringliteral_has_escapedValue():
+    assert hasattr(DOM_StringLiteral, "escapedValue")
+    descriptor = None
+    for klass in DOM_StringLiteral.__mro__:
+        if "escapedValue" in klass.__dict__:
+            descriptor = klass.__dict__["escapedValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(DOM_MethodInvocation)
+
+
+def test_dom_methodinvocation_constructor_exists():
+    assert callable(DOM_MethodInvocation.__init__)
+
+
+def test_dom_methodinvocation_constructor_args():
+    sig = inspect.signature(DOM_MethodInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_postfixexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_PostfixExpression)
+
+
+def test_dom_postfixexpression_constructor_exists():
+    assert callable(DOM_PostfixExpression.__init__)
+
+
+def test_dom_postfixexpression_constructor_args():
+    sig = inspect.signature(DOM_PostfixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_dom_postfixexpression_has_operator():
+    assert hasattr(DOM_PostfixExpression, "operator")
+    descriptor = None
+    for klass in DOM_PostfixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_infixexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_InfixExpression)
+
+
+def test_dom_infixexpression_constructor_exists():
+    assert callable(DOM_InfixExpression.__init__)
+
+
+def test_dom_infixexpression_constructor_args():
+    sig = inspect.signature(DOM_InfixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_dom_infixexpression_has_operator():
+    assert hasattr(DOM_InfixExpression, "operator")
+    descriptor = None
+    for klass in DOM_InfixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1141,17 +915,51 @@ def test_name_constructor_args():
 
 
 
-def test_dom::qualifiedname_is_not_abstract():
-    assert not inspect.isabstract(DOM::QualifiedName)
+def test_dom_qualifiedname_is_not_abstract():
+    assert not inspect.isabstract(DOM_QualifiedName)
 
 
-def test_dom::qualifiedname_constructor_exists():
-    assert callable(DOM::QualifiedName.__init__)
+def test_dom_qualifiedname_constructor_exists():
+    assert callable(DOM_QualifiedName.__init__)
 
 
-def test_dom::qualifiedname_constructor_args():
-    sig = inspect.signature(DOM::QualifiedName.__init__)
+def test_dom_qualifiedname_constructor_args():
+    sig = inspect.signature(DOM_QualifiedName.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_dom_simplename_is_not_abstract():
+    assert not inspect.isabstract(DOM_SimpleName)
+
+
+def test_dom_simplename_constructor_exists():
+    assert callable(DOM_SimpleName.__init__)
+
+
+def test_dom_simplename_constructor_args():
+    sig = inspect.signature(DOM_SimpleName.__init__)
+    params = list(sig.parameters.keys())
+    assert "declaration" in params, "Missing parameter 'declaration'"
+    assert "identifier" in params, "Missing parameter 'identifier'"
+
+def test_dom_simplename_has_declaration():
+    assert hasattr(DOM_SimpleName, "declaration")
+    descriptor = None
+    for klass in DOM_SimpleName.__mro__:
+        if "declaration" in klass.__dict__:
+            descriptor = klass.__dict__["declaration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_simplename_has_identifier():
+    assert hasattr(DOM_SimpleName, "identifier")
+    descriptor = None
+    for klass in DOM_SimpleName.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1166,58 +974,6 @@ def test_abstracttypedeclaration_constructor_exists():
 def test_abstracttypedeclaration_constructor_args():
     sig = inspect.signature(AbstractTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_dom::annotationtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::AnnotationTypeDeclaration)
-
-
-def test_dom::annotationtypedeclaration_constructor_exists():
-    assert callable(DOM::AnnotationTypeDeclaration.__init__)
-
-
-def test_dom::annotationtypedeclaration_constructor_args():
-    sig = inspect.signature(DOM::AnnotationTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::enumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::EnumDeclaration)
-
-
-def test_dom::enumdeclaration_constructor_exists():
-    assert callable(DOM::EnumDeclaration.__init__)
-
-
-def test_dom::enumdeclaration_constructor_args():
-    sig = inspect.signature(DOM::EnumDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::TypeDeclaration)
-
-
-def test_dom::typedeclaration_constructor_exists():
-    assert callable(DOM::TypeDeclaration.__init__)
-
-
-def test_dom::typedeclaration_constructor_args():
-    sig = inspect.signature(DOM::TypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "interface" in params, "Missing parameter 'interface'"
-
-def test_dom::typedeclaration_has_interface():
-    assert hasattr(DOM::TypeDeclaration, "interface")
-    descriptor = None
-    for klass in DOM::TypeDeclaration.__mro__:
-        if "interface" in klass.__dict__:
-            descriptor = klass.__dict__["interface"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1249,16 +1005,16 @@ def test_packagedeclaration_constructor_args():
 
 
 
-def test_dom::extendedmodifier_is_not_abstract():
-    assert not inspect.isabstract(DOM::ExtendedModifier)
+def test_dom_extendedmodifier_is_not_abstract():
+    assert not inspect.isabstract(DOM_ExtendedModifier)
 
 
-def test_dom::extendedmodifier_constructor_exists():
-    assert callable(DOM::ExtendedModifier.__init__)
+def test_dom_extendedmodifier_constructor_exists():
+    assert callable(DOM_ExtendedModifier.__init__)
 
 
-def test_dom::extendedmodifier_constructor_args():
-    sig = inspect.signature(DOM::ExtendedModifier.__init__)
+def test_dom_extendedmodifier_constructor_args():
+    sig = inspect.signature(DOM_ExtendedModifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1277,51 +1033,75 @@ def test_type_constructor_args():
 
 
 
-def test_dom::parameterizedtype_is_not_abstract():
-    assert not inspect.isabstract(DOM::ParameterizedType)
+def test_dom_arraytype_is_not_abstract():
+    assert not inspect.isabstract(DOM_ArrayType)
 
 
-def test_dom::parameterizedtype_constructor_exists():
-    assert callable(DOM::ParameterizedType.__init__)
+def test_dom_arraytype_constructor_exists():
+    assert callable(DOM_ArrayType.__init__)
 
 
-def test_dom::parameterizedtype_constructor_args():
-    sig = inspect.signature(DOM::ParameterizedType.__init__)
+def test_dom_arraytype_constructor_args():
+    sig = inspect.signature(DOM_ArrayType.__init__)
+    params = list(sig.parameters.keys())
+    assert "dimensions" in params, "Missing parameter 'dimensions'"
+
+def test_dom_arraytype_has_dimensions():
+    assert hasattr(DOM_ArrayType, "dimensions")
+    descriptor = None
+    for klass in DOM_ArrayType.__mro__:
+        if "dimensions" in klass.__dict__:
+            descriptor = klass.__dict__["dimensions"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_parameterizedtype_is_not_abstract():
+    assert not inspect.isabstract(DOM_ParameterizedType)
+
+
+def test_dom_parameterizedtype_constructor_exists():
+    assert callable(DOM_ParameterizedType.__init__)
+
+
+def test_dom_parameterizedtype_constructor_args():
+    sig = inspect.signature(DOM_ParameterizedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::qualifiedtype_is_not_abstract():
-    assert not inspect.isabstract(DOM::QualifiedType)
+def test_dom_simpletype_is_not_abstract():
+    assert not inspect.isabstract(DOM_SimpleType)
 
 
-def test_dom::qualifiedtype_constructor_exists():
-    assert callable(DOM::QualifiedType.__init__)
+def test_dom_simpletype_constructor_exists():
+    assert callable(DOM_SimpleType.__init__)
 
 
-def test_dom::qualifiedtype_constructor_args():
-    sig = inspect.signature(DOM::QualifiedType.__init__)
+def test_dom_simpletype_constructor_args():
+    sig = inspect.signature(DOM_SimpleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(DOM::PrimitiveType)
+def test_dom_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(DOM_PrimitiveType)
 
 
-def test_dom::primitivetype_constructor_exists():
-    assert callable(DOM::PrimitiveType.__init__)
+def test_dom_primitivetype_constructor_exists():
+    assert callable(DOM_PrimitiveType.__init__)
 
 
-def test_dom::primitivetype_constructor_args():
-    sig = inspect.signature(DOM::PrimitiveType.__init__)
+def test_dom_primitivetype_constructor_args():
+    sig = inspect.signature(DOM_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
 
-def test_dom::primitivetype_has_code():
-    assert hasattr(DOM::PrimitiveType, "code")
+def test_dom_primitivetype_has_code():
+    assert hasattr(DOM_PrimitiveType, "code")
     descriptor = None
-    for klass in DOM::PrimitiveType.__mro__:
+    for klass in DOM_PrimitiveType.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
@@ -1329,25 +1109,39 @@ def test_dom::primitivetype_has_code():
 
 
 
-def test_dom::arraytype_is_not_abstract():
-    assert not inspect.isabstract(DOM::ArrayType)
+def test_dom_qualifiedtype_is_not_abstract():
+    assert not inspect.isabstract(DOM_QualifiedType)
 
 
-def test_dom::arraytype_constructor_exists():
-    assert callable(DOM::ArrayType.__init__)
+def test_dom_qualifiedtype_constructor_exists():
+    assert callable(DOM_QualifiedType.__init__)
 
 
-def test_dom::arraytype_constructor_args():
-    sig = inspect.signature(DOM::ArrayType.__init__)
+def test_dom_qualifiedtype_constructor_args():
+    sig = inspect.signature(DOM_QualifiedType.__init__)
     params = list(sig.parameters.keys())
-    assert "dimensions" in params, "Missing parameter 'dimensions'"
 
-def test_dom::arraytype_has_dimensions():
-    assert hasattr(DOM::ArrayType, "dimensions")
+
+
+def test_dom_wildcardtype_is_not_abstract():
+    assert not inspect.isabstract(DOM_WildcardType)
+
+
+def test_dom_wildcardtype_constructor_exists():
+    assert callable(DOM_WildcardType.__init__)
+
+
+def test_dom_wildcardtype_constructor_args():
+    sig = inspect.signature(DOM_WildcardType.__init__)
+    params = list(sig.parameters.keys())
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+
+def test_dom_wildcardtype_has_upperBound():
+    assert hasattr(DOM_WildcardType, "upperBound")
     descriptor = None
-    for klass in DOM::ArrayType.__mro__:
-        if "dimensions" in klass.__dict__:
-            descriptor = klass.__dict__["dimensions"]
+    for klass in DOM_WildcardType.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
@@ -1381,160 +1175,16 @@ def test_bodydeclaration_constructor_args():
 
 
 
-def test_dom::initializer_is_not_abstract():
-    assert not inspect.isabstract(DOM::Initializer)
+def test_dom_astnode_is_not_abstract():
+    assert not inspect.isabstract(DOM_ASTNode)
 
 
-def test_dom::initializer_constructor_exists():
-    assert callable(DOM::Initializer.__init__)
+def test_dom_astnode_constructor_exists():
+    assert callable(DOM_ASTNode.__init__)
 
 
-def test_dom::initializer_constructor_args():
-    sig = inspect.signature(DOM::Initializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::annotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::AnnotationTypeMemberDeclaration)
-
-
-def test_dom::annotationtypememberdeclaration_constructor_exists():
-    assert callable(DOM::AnnotationTypeMemberDeclaration.__init__)
-
-
-def test_dom::annotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(DOM::AnnotationTypeMemberDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::methoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::MethodDeclaration)
-
-
-def test_dom::methoddeclaration_constructor_exists():
-    assert callable(DOM::MethodDeclaration.__init__)
-
-
-def test_dom::methoddeclaration_constructor_args():
-    sig = inspect.signature(DOM::MethodDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "varargs" in params, "Missing parameter 'varargs'"
-    assert "extraDimensions" in params, "Missing parameter 'extraDimensions'"
-    assert "constructor" in params, "Missing parameter 'constructor'"
-
-def test_dom::methoddeclaration_has_varargs():
-    assert hasattr(DOM::MethodDeclaration, "varargs")
-    descriptor = None
-    for klass in DOM::MethodDeclaration.__mro__:
-        if "varargs" in klass.__dict__:
-            descriptor = klass.__dict__["varargs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::methoddeclaration_has_extraDimensions():
-    assert hasattr(DOM::MethodDeclaration, "extraDimensions")
-    descriptor = None
-    for klass in DOM::MethodDeclaration.__mro__:
-        if "extraDimensions" in klass.__dict__:
-            descriptor = klass.__dict__["extraDimensions"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::methoddeclaration_has_constructor():
-    assert hasattr(DOM::MethodDeclaration, "constructor")
-    descriptor = None
-    for klass in DOM::MethodDeclaration.__mro__:
-        if "constructor" in klass.__dict__:
-            descriptor = klass.__dict__["constructor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::fielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::FieldDeclaration)
-
-
-def test_dom::fielddeclaration_constructor_exists():
-    assert callable(DOM::FieldDeclaration.__init__)
-
-
-def test_dom::fielddeclaration_constructor_args():
-    sig = inspect.signature(DOM::FieldDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::abstracttypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::AbstractTypeDeclaration)
-
-
-def test_dom::abstracttypedeclaration_constructor_exists():
-    assert callable(DOM::AbstractTypeDeclaration.__init__)
-
-
-def test_dom::abstracttypedeclaration_constructor_args():
-    sig = inspect.signature(DOM::AbstractTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "memberTypeDeclaration" in params, "Missing parameter 'memberTypeDeclaration'"
-    assert "localTypeDeclaration" in params, "Missing parameter 'localTypeDeclaration'"
-    assert "packageMemberTypeDeclaration" in params, "Missing parameter 'packageMemberTypeDeclaration'"
-
-def test_dom::abstracttypedeclaration_has_memberTypeDeclaration():
-    assert hasattr(DOM::AbstractTypeDeclaration, "memberTypeDeclaration")
-    descriptor = None
-    for klass in DOM::AbstractTypeDeclaration.__mro__:
-        if "memberTypeDeclaration" in klass.__dict__:
-            descriptor = klass.__dict__["memberTypeDeclaration"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::abstracttypedeclaration_has_localTypeDeclaration():
-    assert hasattr(DOM::AbstractTypeDeclaration, "localTypeDeclaration")
-    descriptor = None
-    for klass in DOM::AbstractTypeDeclaration.__mro__:
-        if "localTypeDeclaration" in klass.__dict__:
-            descriptor = klass.__dict__["localTypeDeclaration"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::abstracttypedeclaration_has_packageMemberTypeDeclaration():
-    assert hasattr(DOM::AbstractTypeDeclaration, "packageMemberTypeDeclaration")
-    descriptor = None
-    for klass in DOM::AbstractTypeDeclaration.__mro__:
-        if "packageMemberTypeDeclaration" in klass.__dict__:
-            descriptor = klass.__dict__["packageMemberTypeDeclaration"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::enumconstantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::EnumConstantDeclaration)
-
-
-def test_dom::enumconstantdeclaration_constructor_exists():
-    assert callable(DOM::EnumConstantDeclaration.__init__)
-
-
-def test_dom::enumconstantdeclaration_constructor_args():
-    sig = inspect.signature(DOM::EnumConstantDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::astnode_is_not_abstract():
-    assert not inspect.isabstract(DOM::ASTNode)
-
-
-def test_dom::astnode_constructor_exists():
-    assert callable(DOM::ASTNode.__init__)
-
-
-def test_dom::astnode_constructor_args():
-    sig = inspect.signature(DOM::ASTNode.__init__)
+def test_dom_astnode_constructor_args():
+    sig = inspect.signature(DOM_ASTNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1553,299 +1203,79 @@ def test_astnode_constructor_args():
 
 
 
-def test_dom::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::VariableDeclaration)
+def test_dom_methodref_is_not_abstract():
+    assert not inspect.isabstract(DOM_MethodRef)
 
 
-def test_dom::variabledeclaration_constructor_exists():
-    assert callable(DOM::VariableDeclaration.__init__)
+def test_dom_methodref_constructor_exists():
+    assert callable(DOM_MethodRef.__init__)
 
 
-def test_dom::variabledeclaration_constructor_args():
-    sig = inspect.signature(DOM::VariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "extraDimensions" in params, "Missing parameter 'extraDimensions'"
-
-def test_dom::variabledeclaration_has_extraDimensions():
-    assert hasattr(DOM::VariableDeclaration, "extraDimensions")
-    descriptor = None
-    for klass in DOM::VariableDeclaration.__mro__:
-        if "extraDimensions" in klass.__dict__:
-            descriptor = klass.__dict__["extraDimensions"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::statement_is_not_abstract():
-    assert not inspect.isabstract(DOM::Statement)
-
-
-def test_dom::statement_constructor_exists():
-    assert callable(DOM::Statement.__init__)
-
-
-def test_dom::statement_constructor_args():
-    sig = inspect.signature(DOM::Statement.__init__)
+def test_dom_methodref_constructor_args():
+    sig = inspect.signature(DOM_MethodRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::membervaluepair_is_not_abstract():
-    assert not inspect.isabstract(DOM::MemberValuePair)
+def test_dom_memberref_is_not_abstract():
+    assert not inspect.isabstract(DOM_MemberRef)
 
 
-def test_dom::membervaluepair_constructor_exists():
-    assert callable(DOM::MemberValuePair.__init__)
+def test_dom_memberref_constructor_exists():
+    assert callable(DOM_MemberRef.__init__)
 
 
-def test_dom::membervaluepair_constructor_args():
-    sig = inspect.signature(DOM::MemberValuePair.__init__)
+def test_dom_memberref_constructor_args():
+    sig = inspect.signature(DOM_MemberRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::memberref_is_not_abstract():
-    assert not inspect.isabstract(DOM::MemberRef)
+def test_dom_anonymousclassdeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_AnonymousClassDeclaration)
 
 
-def test_dom::memberref_constructor_exists():
-    assert callable(DOM::MemberRef.__init__)
+def test_dom_anonymousclassdeclaration_constructor_exists():
+    assert callable(DOM_AnonymousClassDeclaration.__init__)
 
 
-def test_dom::memberref_constructor_args():
-    sig = inspect.signature(DOM::MemberRef.__init__)
+def test_dom_anonymousclassdeclaration_constructor_args():
+    sig = inspect.signature(DOM_AnonymousClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::bodydeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::BodyDeclaration)
+def test_dom_membervaluepair_is_not_abstract():
+    assert not inspect.isabstract(DOM_MemberValuePair)
 
 
-def test_dom::bodydeclaration_constructor_exists():
-    assert callable(DOM::BodyDeclaration.__init__)
+def test_dom_membervaluepair_constructor_exists():
+    assert callable(DOM_MemberValuePair.__init__)
 
 
-def test_dom::bodydeclaration_constructor_args():
-    sig = inspect.signature(DOM::BodyDeclaration.__init__)
+def test_dom_membervaluepair_constructor_args():
+    sig = inspect.signature(DOM_MemberValuePair.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::anonymousclassdeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::AnonymousClassDeclaration)
+def test_dom_methodrefparameter_is_not_abstract():
+    assert not inspect.isabstract(DOM_MethodRefParameter)
 
 
-def test_dom::anonymousclassdeclaration_constructor_exists():
-    assert callable(DOM::AnonymousClassDeclaration.__init__)
+def test_dom_methodrefparameter_constructor_exists():
+    assert callable(DOM_MethodRefParameter.__init__)
 
 
-def test_dom::anonymousclassdeclaration_constructor_args():
-    sig = inspect.signature(DOM::AnonymousClassDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::type_is_not_abstract():
-    assert not inspect.isabstract(DOM::Type)
-
-
-def test_dom::type_constructor_exists():
-    assert callable(DOM::Type.__init__)
-
-
-def test_dom::type_constructor_args():
-    sig = inspect.signature(DOM::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::tagelement_is_not_abstract():
-    assert not inspect.isabstract(DOM::TagElement)
-
-
-def test_dom::tagelement_constructor_exists():
-    assert callable(DOM::TagElement.__init__)
-
-
-def test_dom::tagelement_constructor_args():
-    sig = inspect.signature(DOM::TagElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "nested" in params, "Missing parameter 'nested'"
-    assert "tagName" in params, "Missing parameter 'tagName'"
-
-def test_dom::tagelement_has_nested():
-    assert hasattr(DOM::TagElement, "nested")
-    descriptor = None
-    for klass in DOM::TagElement.__mro__:
-        if "nested" in klass.__dict__:
-            descriptor = klass.__dict__["nested"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::tagelement_has_tagName():
-    assert hasattr(DOM::TagElement, "tagName")
-    descriptor = None
-    for klass in DOM::TagElement.__mro__:
-        if "tagName" in klass.__dict__:
-            descriptor = klass.__dict__["tagName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::methodref_is_not_abstract():
-    assert not inspect.isabstract(DOM::MethodRef)
-
-
-def test_dom::methodref_constructor_exists():
-    assert callable(DOM::MethodRef.__init__)
-
-
-def test_dom::methodref_constructor_args():
-    sig = inspect.signature(DOM::MethodRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::textelement_is_not_abstract():
-    assert not inspect.isabstract(DOM::TextElement)
-
-
-def test_dom::textelement_constructor_exists():
-    assert callable(DOM::TextElement.__init__)
-
-
-def test_dom::textelement_constructor_args():
-    sig = inspect.signature(DOM::TextElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_dom::textelement_has_text():
-    assert hasattr(DOM::TextElement, "text")
-    descriptor = None
-    for klass in DOM::TextElement.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::PackageDeclaration)
-
-
-def test_dom::packagedeclaration_constructor_exists():
-    assert callable(DOM::PackageDeclaration.__init__)
-
-
-def test_dom::packagedeclaration_constructor_args():
-    sig = inspect.signature(DOM::PackageDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(DOM::TypeParameter)
-
-
-def test_dom::typeparameter_constructor_exists():
-    assert callable(DOM::TypeParameter.__init__)
-
-
-def test_dom::typeparameter_constructor_args():
-    sig = inspect.signature(DOM::TypeParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::expression_is_not_abstract():
-    assert not inspect.isabstract(DOM::Expression)
-
-
-def test_dom::expression_constructor_exists():
-    assert callable(DOM::Expression.__init__)
-
-
-def test_dom::expression_constructor_args():
-    sig = inspect.signature(DOM::Expression.__init__)
-    params = list(sig.parameters.keys())
-    assert "resolveBoxing" in params, "Missing parameter 'resolveBoxing'"
-    assert "resolveUnboxing" in params, "Missing parameter 'resolveUnboxing'"
-
-def test_dom::expression_has_resolveBoxing():
-    assert hasattr(DOM::Expression, "resolveBoxing")
-    descriptor = None
-    for klass in DOM::Expression.__mro__:
-        if "resolveBoxing" in klass.__dict__:
-            descriptor = klass.__dict__["resolveBoxing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::expression_has_resolveUnboxing():
-    assert hasattr(DOM::Expression, "resolveUnboxing")
-    descriptor = None
-    for klass in DOM::Expression.__mro__:
-        if "resolveUnboxing" in klass.__dict__:
-            descriptor = klass.__dict__["resolveUnboxing"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::ImportDeclaration)
-
-
-def test_dom::importdeclaration_constructor_exists():
-    assert callable(DOM::ImportDeclaration.__init__)
-
-
-def test_dom::importdeclaration_constructor_args():
-    sig = inspect.signature(DOM::ImportDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "onDemand" in params, "Missing parameter 'onDemand'"
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_dom::importdeclaration_has_onDemand():
-    assert hasattr(DOM::ImportDeclaration, "onDemand")
-    descriptor = None
-    for klass in DOM::ImportDeclaration.__mro__:
-        if "onDemand" in klass.__dict__:
-            descriptor = klass.__dict__["onDemand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::importdeclaration_has_static():
-    assert hasattr(DOM::ImportDeclaration, "static")
-    descriptor = None
-    for klass in DOM::ImportDeclaration.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dom::methodrefparameter_is_not_abstract():
-    assert not inspect.isabstract(DOM::MethodRefParameter)
-
-
-def test_dom::methodrefparameter_constructor_exists():
-    assert callable(DOM::MethodRefParameter.__init__)
-
-
-def test_dom::methodrefparameter_constructor_args():
-    sig = inspect.signature(DOM::MethodRefParameter.__init__)
+def test_dom_methodrefparameter_constructor_args():
+    sig = inspect.signature(DOM_MethodRefParameter.__init__)
     params = list(sig.parameters.keys())
     assert "varargs" in params, "Missing parameter 'varargs'"
 
-def test_dom::methodrefparameter_has_varargs():
-    assert hasattr(DOM::MethodRefParameter, "varargs")
+def test_dom_methodrefparameter_has_varargs():
+    assert hasattr(DOM_MethodRefParameter, "varargs")
     descriptor = None
-    for klass in DOM::MethodRefParameter.__mro__:
+    for klass in DOM_MethodRefParameter.__mro__:
         if "varargs" in klass.__dict__:
             descriptor = klass.__dict__["varargs"]
             break
@@ -1853,16 +1283,122 @@ def test_dom::methodrefparameter_has_varargs():
 
 
 
-def test_dom::ast_is_not_abstract():
-    assert not inspect.isabstract(DOM::AST)
+def test_dom_textelement_is_not_abstract():
+    assert not inspect.isabstract(DOM_TextElement)
 
 
-def test_dom::ast_constructor_exists():
-    assert callable(DOM::AST.__init__)
+def test_dom_textelement_constructor_exists():
+    assert callable(DOM_TextElement.__init__)
 
 
-def test_dom::ast_constructor_args():
-    sig = inspect.signature(DOM::AST.__init__)
+def test_dom_textelement_constructor_args():
+    sig = inspect.signature(DOM_TextElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_dom_textelement_has_text():
+    assert hasattr(DOM_TextElement, "text")
+    descriptor = None
+    for klass in DOM_TextElement.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_ImportDeclaration)
+
+
+def test_dom_importdeclaration_constructor_exists():
+    assert callable(DOM_ImportDeclaration.__init__)
+
+
+def test_dom_importdeclaration_constructor_args():
+    sig = inspect.signature(DOM_ImportDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "onDemand" in params, "Missing parameter 'onDemand'"
+    assert "static" in params, "Missing parameter 'static'"
+
+def test_dom_importdeclaration_has_onDemand():
+    assert hasattr(DOM_ImportDeclaration, "onDemand")
+    descriptor = None
+    for klass in DOM_ImportDeclaration.__mro__:
+        if "onDemand" in klass.__dict__:
+            descriptor = klass.__dict__["onDemand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_importdeclaration_has_static():
+    assert hasattr(DOM_ImportDeclaration, "static")
+    descriptor = None
+    for klass in DOM_ImportDeclaration.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_bodydeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_BodyDeclaration)
+
+
+def test_dom_bodydeclaration_constructor_exists():
+    assert callable(DOM_BodyDeclaration.__init__)
+
+
+def test_dom_bodydeclaration_constructor_args():
+    sig = inspect.signature(DOM_BodyDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_expression_is_not_abstract():
+    assert not inspect.isabstract(DOM_Expression)
+
+
+def test_dom_expression_constructor_exists():
+    assert callable(DOM_Expression.__init__)
+
+
+def test_dom_expression_constructor_args():
+    sig = inspect.signature(DOM_Expression.__init__)
+    params = list(sig.parameters.keys())
+    assert "resolveBoxing" in params, "Missing parameter 'resolveBoxing'"
+    assert "resolveUnboxing" in params, "Missing parameter 'resolveUnboxing'"
+
+def test_dom_expression_has_resolveBoxing():
+    assert hasattr(DOM_Expression, "resolveBoxing")
+    descriptor = None
+    for klass in DOM_Expression.__mro__:
+        if "resolveBoxing" in klass.__dict__:
+            descriptor = klass.__dict__["resolveBoxing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_expression_has_resolveUnboxing():
+    assert hasattr(DOM_Expression, "resolveUnboxing")
+    descriptor = None
+    for klass in DOM_Expression.__mro__:
+        if "resolveUnboxing" in klass.__dict__:
+            descriptor = klass.__dict__["resolveUnboxing"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_ast_is_not_abstract():
+    assert not inspect.isabstract(DOM_AST)
+
+
+def test_dom_ast_constructor_exists():
+    assert callable(DOM_AST.__init__)
+
+
+def test_dom_ast_constructor_args():
+    sig = inspect.signature(DOM_AST.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1881,72 +1417,30 @@ def test_comment_constructor_args():
 
 
 
-def test_dom::linecomment_is_not_abstract():
-    assert not inspect.isabstract(DOM::LineComment)
+def test_dom_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(DOM_CompilationUnit)
 
 
-def test_dom::linecomment_constructor_exists():
-    assert callable(DOM::LineComment.__init__)
+def test_dom_compilationunit_constructor_exists():
+    assert callable(DOM_CompilationUnit.__init__)
 
 
-def test_dom::linecomment_constructor_args():
-    sig = inspect.signature(DOM::LineComment.__init__)
+def test_dom_compilationunit_constructor_args():
+    sig = inspect.signature(DOM_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::blockcomment_is_not_abstract():
-    assert not inspect.isabstract(DOM::BlockComment)
+def test_dom_comment_is_not_abstract():
+    assert not inspect.isabstract(DOM_Comment)
 
 
-def test_dom::blockcomment_constructor_exists():
-    assert callable(DOM::BlockComment.__init__)
+def test_dom_comment_constructor_exists():
+    assert callable(DOM_Comment.__init__)
 
 
-def test_dom::blockcomment_constructor_args():
-    sig = inspect.signature(DOM::BlockComment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::javadoc_is_not_abstract():
-    assert not inspect.isabstract(DOM::Javadoc)
-
-
-def test_dom::javadoc_constructor_exists():
-    assert callable(DOM::Javadoc.__init__)
-
-
-def test_dom::javadoc_constructor_args():
-    sig = inspect.signature(DOM::Javadoc.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(DOM::CompilationUnit)
-
-
-def test_dom::compilationunit_constructor_exists():
-    assert callable(DOM::CompilationUnit.__init__)
-
-
-def test_dom::compilationunit_constructor_args():
-    sig = inspect.signature(DOM::CompilationUnit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::comment_is_not_abstract():
-    assert not inspect.isabstract(DOM::Comment)
-
-
-def test_dom::comment_constructor_exists():
-    assert callable(DOM::Comment.__init__)
-
-
-def test_dom::comment_constructor_args():
-    sig = inspect.signature(DOM::Comment.__init__)
+def test_dom_comment_constructor_args():
+    sig = inspect.signature(DOM_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1979,16 +1473,16 @@ def test_block_constructor_args():
 
 
 
-def test_dom::catchclause_is_not_abstract():
-    assert not inspect.isabstract(DOM::CatchClause)
+def test_dom_catchclause_is_not_abstract():
+    assert not inspect.isabstract(DOM_CatchClause)
 
 
-def test_dom::catchclause_constructor_exists():
-    assert callable(DOM::CatchClause.__init__)
+def test_dom_catchclause_constructor_exists():
+    assert callable(DOM_CatchClause.__init__)
 
 
-def test_dom::catchclause_constructor_args():
-    sig = inspect.signature(DOM::CatchClause.__init__)
+def test_dom_catchclause_constructor_args():
+    sig = inspect.signature(DOM_CatchClause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2021,149 +1515,135 @@ def test_extendedmodifier_constructor_args():
 
 
 
-def test_dom::annotation_is_not_abstract():
-    assert not inspect.isabstract(DOM::Annotation)
+def test_dom_modifier_is_not_abstract():
+    assert not inspect.isabstract(DOM_Modifier)
 
 
-def test_dom::annotation_constructor_exists():
-    assert callable(DOM::Annotation.__init__)
+def test_dom_modifier_constructor_exists():
+    assert callable(DOM_Modifier.__init__)
 
 
-def test_dom::annotation_constructor_args():
-    sig = inspect.signature(DOM::Annotation.__init__)
+def test_dom_modifier_constructor_args():
+    sig = inspect.signature(DOM_Modifier.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_dom::modifier_is_not_abstract():
-    assert not inspect.isabstract(DOM::Modifier)
-
-
-def test_dom::modifier_constructor_exists():
-    assert callable(DOM::Modifier.__init__)
-
-
-def test_dom::modifier_constructor_args():
-    sig = inspect.signature(DOM::Modifier.__init__)
-    params = list(sig.parameters.keys())
-    assert "volatile" in params, "Missing parameter 'volatile'"
     assert "abstract" in params, "Missing parameter 'abstract'"
     assert "static" in params, "Missing parameter 'static'"
-    assert "none" in params, "Missing parameter 'none'"
-    assert "native" in params, "Missing parameter 'native'"
-    assert "strictfp" in params, "Missing parameter 'strictfp'"
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "private" in params, "Missing parameter 'private'"
-    assert "public" in params, "Missing parameter 'public'"
     assert "final" in params, "Missing parameter 'final'"
+    assert "native" in params, "Missing parameter 'native'"
+    assert "private" in params, "Missing parameter 'private'"
+    assert "none" in params, "Missing parameter 'none'"
     assert "transient" in params, "Missing parameter 'transient'"
+    assert "public" in params, "Missing parameter 'public'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
+    assert "strictfp" in params, "Missing parameter 'strictfp'"
     assert "protected" in params, "Missing parameter 'protected'"
+    assert "volatile" in params, "Missing parameter 'volatile'"
 
-def test_dom::modifier_has_volatile():
-    assert hasattr(DOM::Modifier, "volatile")
+def test_dom_modifier_has_abstract():
+    assert hasattr(DOM_Modifier, "abstract")
     descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "volatile" in klass.__dict__:
-            descriptor = klass.__dict__["volatile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_abstract():
-    assert hasattr(DOM::Modifier, "abstract")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
+    for klass in DOM_Modifier.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::modifier_has_static():
-    assert hasattr(DOM::Modifier, "static")
+def test_dom_modifier_has_static():
+    assert hasattr(DOM_Modifier, "static")
     descriptor = None
-    for klass in DOM::Modifier.__mro__:
+    for klass in DOM_Modifier.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::modifier_has_none():
-    assert hasattr(DOM::Modifier, "none")
+def test_dom_modifier_has_final():
+    assert hasattr(DOM_Modifier, "final")
     descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "none" in klass.__dict__:
-            descriptor = klass.__dict__["none"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_native():
-    assert hasattr(DOM::Modifier, "native")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "native" in klass.__dict__:
-            descriptor = klass.__dict__["native"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_strictfp():
-    assert hasattr(DOM::Modifier, "strictfp")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "strictfp" in klass.__dict__:
-            descriptor = klass.__dict__["strictfp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_synchronized():
-    assert hasattr(DOM::Modifier, "synchronized")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_private():
-    assert hasattr(DOM::Modifier, "private")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "private" in klass.__dict__:
-            descriptor = klass.__dict__["private"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_public():
-    assert hasattr(DOM::Modifier, "public")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
-        if "public" in klass.__dict__:
-            descriptor = klass.__dict__["public"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dom::modifier_has_final():
-    assert hasattr(DOM::Modifier, "final")
-    descriptor = None
-    for klass in DOM::Modifier.__mro__:
+    for klass in DOM_Modifier.__mro__:
         if "final" in klass.__dict__:
             descriptor = klass.__dict__["final"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::modifier_has_transient():
-    assert hasattr(DOM::Modifier, "transient")
+def test_dom_modifier_has_native():
+    assert hasattr(DOM_Modifier, "native")
     descriptor = None
-    for klass in DOM::Modifier.__mro__:
+    for klass in DOM_Modifier.__mro__:
+        if "native" in klass.__dict__:
+            descriptor = klass.__dict__["native"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_private():
+    assert hasattr(DOM_Modifier, "private")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
+        if "private" in klass.__dict__:
+            descriptor = klass.__dict__["private"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_none():
+    assert hasattr(DOM_Modifier, "none")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
+        if "none" in klass.__dict__:
+            descriptor = klass.__dict__["none"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_transient():
+    assert hasattr(DOM_Modifier, "transient")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
         if "transient" in klass.__dict__:
             descriptor = klass.__dict__["transient"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::modifier_has_protected():
-    assert hasattr(DOM::Modifier, "protected")
+def test_dom_modifier_has_public():
+    assert hasattr(DOM_Modifier, "public")
     descriptor = None
-    for klass in DOM::Modifier.__mro__:
+    for klass in DOM_Modifier.__mro__:
+        if "public" in klass.__dict__:
+            descriptor = klass.__dict__["public"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_synchronized():
+    assert hasattr(DOM_Modifier, "synchronized")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_strictfp():
+    assert hasattr(DOM_Modifier, "strictfp")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
+        if "strictfp" in klass.__dict__:
+            descriptor = klass.__dict__["strictfp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_protected():
+    assert hasattr(DOM_Modifier, "protected")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
         if "protected" in klass.__dict__:
             descriptor = klass.__dict__["protected"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_modifier_has_volatile():
+    assert hasattr(DOM_Modifier, "volatile")
+    descriptor = None
+    for klass in DOM_Modifier.__mro__:
+        if "volatile" in klass.__dict__:
+            descriptor = klass.__dict__["volatile"]
             break
     assert isinstance(descriptor, property)
 
@@ -2183,33 +1663,33 @@ def test_itypeparameter_constructor_args():
 
 
 
-def test_core::parameter_is_not_abstract():
-    assert not inspect.isabstract(Core::Parameter)
+def test_core_parameter_is_not_abstract():
+    assert not inspect.isabstract(Core_Parameter)
 
 
-def test_core::parameter_constructor_exists():
-    assert callable(Core::Parameter.__init__)
+def test_core_parameter_constructor_exists():
+    assert callable(Core_Parameter.__init__)
 
 
-def test_core::parameter_constructor_args():
-    sig = inspect.signature(Core::Parameter.__init__)
+def test_core_parameter_constructor_args():
+    sig = inspect.signature(Core_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_core::parameter_has_type():
-    assert hasattr(Core::Parameter, "type")
+def test_core_parameter_has_type():
+    assert hasattr(Core_Parameter, "type")
     descriptor = None
-    for klass in Core::Parameter.__mro__:
+    for klass in Core_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_core::parameter_has_name():
-    assert hasattr(Core::Parameter, "name")
+def test_core_parameter_has_name():
+    assert hasattr(Core_Parameter, "name")
     descriptor = None
-    for klass in Core::Parameter.__mro__:
+    for klass in Core_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2231,33 +1711,33 @@ def test_parameter_constructor_args():
 
 
 
-def test_core::isourcerange_is_not_abstract():
-    assert not inspect.isabstract(Core::ISourceRange)
+def test_core_isourcerange_is_not_abstract():
+    assert not inspect.isabstract(Core_ISourceRange)
 
 
-def test_core::isourcerange_constructor_exists():
-    assert callable(Core::ISourceRange.__init__)
+def test_core_isourcerange_constructor_exists():
+    assert callable(Core_ISourceRange.__init__)
 
 
-def test_core::isourcerange_constructor_args():
-    sig = inspect.signature(Core::ISourceRange.__init__)
+def test_core_isourcerange_constructor_args():
+    sig = inspect.signature(Core_ISourceRange.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
     assert "offset" in params, "Missing parameter 'offset'"
 
-def test_core::isourcerange_has_length():
-    assert hasattr(Core::ISourceRange, "length")
+def test_core_isourcerange_has_length():
+    assert hasattr(Core_ISourceRange, "length")
     descriptor = None
-    for klass in Core::ISourceRange.__mro__:
+    for klass in Core_ISourceRange.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
     assert isinstance(descriptor, property)
 
-def test_core::isourcerange_has_offset():
-    assert hasattr(Core::ISourceRange, "offset")
+def test_core_isourcerange_has_offset():
+    assert hasattr(Core_ISourceRange, "offset")
     descriptor = None
-    for klass in Core::ISourceRange.__mro__:
+    for klass in Core_ISourceRange.__mro__:
         if "offset" in klass.__dict__:
             descriptor = klass.__dict__["offset"]
             break
@@ -2279,23 +1759,23 @@ def test_isourcerange_constructor_args():
 
 
 
-def test_core::isourcereference_is_not_abstract():
-    assert not inspect.isabstract(Core::ISourceReference)
+def test_core_isourcereference_is_not_abstract():
+    assert not inspect.isabstract(Core_ISourceReference)
 
 
-def test_core::isourcereference_constructor_exists():
-    assert callable(Core::ISourceReference.__init__)
+def test_core_isourcereference_constructor_exists():
+    assert callable(Core_ISourceReference.__init__)
 
 
-def test_core::isourcereference_constructor_args():
-    sig = inspect.signature(Core::ISourceReference.__init__)
+def test_core_isourcereference_constructor_args():
+    sig = inspect.signature(Core_ISourceReference.__init__)
     params = list(sig.parameters.keys())
     assert "source" in params, "Missing parameter 'source'"
 
-def test_core::isourcereference_has_source():
-    assert hasattr(Core::ISourceReference, "source")
+def test_core_isourcereference_has_source():
+    assert hasattr(Core_ISourceReference, "source")
     descriptor = None
-    for klass in Core::ISourceReference.__mro__:
+    for klass in Core_ISourceReference.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
@@ -2373,117 +1853,53 @@ def test_imember_constructor_args():
 
 
 
-def test_core::ifield_is_not_abstract():
-    assert not inspect.isabstract(Core::IField)
+def test_core_imethod_is_not_abstract():
+    assert not inspect.isabstract(Core_IMethod)
 
 
-def test_core::ifield_constructor_exists():
-    assert callable(Core::IField.__init__)
+def test_core_imethod_constructor_exists():
+    assert callable(Core_IMethod.__init__)
 
 
-def test_core::ifield_constructor_args():
-    sig = inspect.signature(Core::IField.__init__)
+def test_core_imethod_constructor_args():
+    sig = inspect.signature(Core_IMethod.__init__)
     params = list(sig.parameters.keys())
-    assert "isVolatile" in params, "Missing parameter 'isVolatile'"
-    assert "isTransient" in params, "Missing parameter 'isTransient'"
-    assert "constant" in params, "Missing parameter 'constant'"
-    assert "isEnumConstant" in params, "Missing parameter 'isEnumConstant'"
-    assert "typeSignature" in params, "Missing parameter 'typeSignature'"
-
-def test_core::ifield_has_isVolatile():
-    assert hasattr(Core::IField, "isVolatile")
-    descriptor = None
-    for klass in Core::IField.__mro__:
-        if "isVolatile" in klass.__dict__:
-            descriptor = klass.__dict__["isVolatile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::ifield_has_isTransient():
-    assert hasattr(Core::IField, "isTransient")
-    descriptor = None
-    for klass in Core::IField.__mro__:
-        if "isTransient" in klass.__dict__:
-            descriptor = klass.__dict__["isTransient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::ifield_has_constant():
-    assert hasattr(Core::IField, "constant")
-    descriptor = None
-    for klass in Core::IField.__mro__:
-        if "constant" in klass.__dict__:
-            descriptor = klass.__dict__["constant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::ifield_has_isEnumConstant():
-    assert hasattr(Core::IField, "isEnumConstant")
-    descriptor = None
-    for klass in Core::IField.__mro__:
-        if "isEnumConstant" in klass.__dict__:
-            descriptor = klass.__dict__["isEnumConstant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::ifield_has_typeSignature():
-    assert hasattr(Core::IField, "typeSignature")
-    descriptor = None
-    for klass in Core::IField.__mro__:
-        if "typeSignature" in klass.__dict__:
-            descriptor = klass.__dict__["typeSignature"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_core::imethod_is_not_abstract():
-    assert not inspect.isabstract(Core::IMethod)
-
-
-def test_core::imethod_constructor_exists():
-    assert callable(Core::IMethod.__init__)
-
-
-def test_core::imethod_constructor_args():
-    sig = inspect.signature(Core::IMethod.__init__)
-    params = list(sig.parameters.keys())
+    assert "exceptionTypes" in params, "Missing parameter 'exceptionTypes'"
     assert "returnType" in params, "Missing parameter 'returnType'"
     assert "isConstructor" in params, "Missing parameter 'isConstructor'"
-    assert "exceptionTypes" in params, "Missing parameter 'exceptionTypes'"
     assert "isMainMethod" in params, "Missing parameter 'isMainMethod'"
 
-def test_core::imethod_has_returnType():
-    assert hasattr(Core::IMethod, "returnType")
+def test_core_imethod_has_exceptionTypes():
+    assert hasattr(Core_IMethod, "exceptionTypes")
     descriptor = None
-    for klass in Core::IMethod.__mro__:
-        if "returnType" in klass.__dict__:
-            descriptor = klass.__dict__["returnType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::imethod_has_isConstructor():
-    assert hasattr(Core::IMethod, "isConstructor")
-    descriptor = None
-    for klass in Core::IMethod.__mro__:
-        if "isConstructor" in klass.__dict__:
-            descriptor = klass.__dict__["isConstructor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::imethod_has_exceptionTypes():
-    assert hasattr(Core::IMethod, "exceptionTypes")
-    descriptor = None
-    for klass in Core::IMethod.__mro__:
+    for klass in Core_IMethod.__mro__:
         if "exceptionTypes" in klass.__dict__:
             descriptor = klass.__dict__["exceptionTypes"]
             break
     assert isinstance(descriptor, property)
 
-def test_core::imethod_has_isMainMethod():
-    assert hasattr(Core::IMethod, "isMainMethod")
+def test_core_imethod_has_returnType():
+    assert hasattr(Core_IMethod, "returnType")
     descriptor = None
-    for klass in Core::IMethod.__mro__:
+    for klass in Core_IMethod.__mro__:
+        if "returnType" in klass.__dict__:
+            descriptor = klass.__dict__["returnType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_core_imethod_has_isConstructor():
+    assert hasattr(Core_IMethod, "isConstructor")
+    descriptor = None
+    for klass in Core_IMethod.__mro__:
+        if "isConstructor" in klass.__dict__:
+            descriptor = klass.__dict__["isConstructor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_core_imethod_has_isMainMethod():
+    assert hasattr(Core_IMethod, "isMainMethod")
+    descriptor = None
+    for klass in Core_IMethod.__mro__:
         if "isMainMethod" in klass.__dict__:
             descriptor = klass.__dict__["isMainMethod"]
             break
@@ -2491,49 +1907,113 @@ def test_core::imethod_has_isMainMethod():
 
 
 
-def test_core::iinitializer_is_not_abstract():
-    assert not inspect.isabstract(Core::IInitializer)
+def test_core_ifield_is_not_abstract():
+    assert not inspect.isabstract(Core_IField)
 
 
-def test_core::iinitializer_constructor_exists():
-    assert callable(Core::IInitializer.__init__)
+def test_core_ifield_constructor_exists():
+    assert callable(Core_IField.__init__)
 
 
-def test_core::iinitializer_constructor_args():
-    sig = inspect.signature(Core::IInitializer.__init__)
+def test_core_ifield_constructor_args():
+    sig = inspect.signature(Core_IField.__init__)
     params = list(sig.parameters.keys())
+    assert "constant" in params, "Missing parameter 'constant'"
+    assert "isVolatile" in params, "Missing parameter 'isVolatile'"
+    assert "typeSignature" in params, "Missing parameter 'typeSignature'"
+    assert "isTransient" in params, "Missing parameter 'isTransient'"
+    assert "isEnumConstant" in params, "Missing parameter 'isEnumConstant'"
 
-
-
-def test_core::itype_is_not_abstract():
-    assert not inspect.isabstract(Core::IType)
-
-
-def test_core::itype_constructor_exists():
-    assert callable(Core::IType.__init__)
-
-
-def test_core::itype_constructor_args():
-    sig = inspect.signature(Core::IType.__init__)
-    params = list(sig.parameters.keys())
-    assert "fullyQualifiedParametrizedName" in params, "Missing parameter 'fullyQualifiedParametrizedName'"
-    assert "fullyQualifiedName" in params, "Missing parameter 'fullyQualifiedName'"
-
-def test_core::itype_has_fullyQualifiedParametrizedName():
-    assert hasattr(Core::IType, "fullyQualifiedParametrizedName")
+def test_core_ifield_has_constant():
+    assert hasattr(Core_IField, "constant")
     descriptor = None
-    for klass in Core::IType.__mro__:
-        if "fullyQualifiedParametrizedName" in klass.__dict__:
-            descriptor = klass.__dict__["fullyQualifiedParametrizedName"]
+    for klass in Core_IField.__mro__:
+        if "constant" in klass.__dict__:
+            descriptor = klass.__dict__["constant"]
             break
     assert isinstance(descriptor, property)
 
-def test_core::itype_has_fullyQualifiedName():
-    assert hasattr(Core::IType, "fullyQualifiedName")
+def test_core_ifield_has_isVolatile():
+    assert hasattr(Core_IField, "isVolatile")
     descriptor = None
-    for klass in Core::IType.__mro__:
+    for klass in Core_IField.__mro__:
+        if "isVolatile" in klass.__dict__:
+            descriptor = klass.__dict__["isVolatile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_core_ifield_has_typeSignature():
+    assert hasattr(Core_IField, "typeSignature")
+    descriptor = None
+    for klass in Core_IField.__mro__:
+        if "typeSignature" in klass.__dict__:
+            descriptor = klass.__dict__["typeSignature"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_core_ifield_has_isTransient():
+    assert hasattr(Core_IField, "isTransient")
+    descriptor = None
+    for klass in Core_IField.__mro__:
+        if "isTransient" in klass.__dict__:
+            descriptor = klass.__dict__["isTransient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_core_ifield_has_isEnumConstant():
+    assert hasattr(Core_IField, "isEnumConstant")
+    descriptor = None
+    for klass in Core_IField.__mro__:
+        if "isEnumConstant" in klass.__dict__:
+            descriptor = klass.__dict__["isEnumConstant"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_core_iinitializer_is_not_abstract():
+    assert not inspect.isabstract(Core_IInitializer)
+
+
+def test_core_iinitializer_constructor_exists():
+    assert callable(Core_IInitializer.__init__)
+
+
+def test_core_iinitializer_constructor_args():
+    sig = inspect.signature(Core_IInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_core_itype_is_not_abstract():
+    assert not inspect.isabstract(Core_IType)
+
+
+def test_core_itype_constructor_exists():
+    assert callable(Core_IType.__init__)
+
+
+def test_core_itype_constructor_args():
+    sig = inspect.signature(Core_IType.__init__)
+    params = list(sig.parameters.keys())
+    assert "fullyQualifiedName" in params, "Missing parameter 'fullyQualifiedName'"
+    assert "fullyQualifiedParametrizedName" in params, "Missing parameter 'fullyQualifiedParametrizedName'"
+
+def test_core_itype_has_fullyQualifiedName():
+    assert hasattr(Core_IType, "fullyQualifiedName")
+    descriptor = None
+    for klass in Core_IType.__mro__:
         if "fullyQualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["fullyQualifiedName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_core_itype_has_fullyQualifiedParametrizedName():
+    assert hasattr(Core_IType, "fullyQualifiedParametrizedName")
+    descriptor = None
+    for klass in Core_IType.__mro__:
+        if "fullyQualifiedParametrizedName" in klass.__dict__:
+            descriptor = klass.__dict__["fullyQualifiedParametrizedName"]
             break
     assert isinstance(descriptor, property)
 
@@ -2581,30 +2061,30 @@ def test_ipackagefragmentroot_constructor_args():
 
 
 
-def test_core::sourcepackagefragmentroot_is_not_abstract():
-    assert not inspect.isabstract(Core::SourcePackageFragmentRoot)
+def test_core_sourcepackagefragmentroot_is_not_abstract():
+    assert not inspect.isabstract(Core_SourcePackageFragmentRoot)
 
 
-def test_core::sourcepackagefragmentroot_constructor_exists():
-    assert callable(Core::SourcePackageFragmentRoot.__init__)
+def test_core_sourcepackagefragmentroot_constructor_exists():
+    assert callable(Core_SourcePackageFragmentRoot.__init__)
 
 
-def test_core::sourcepackagefragmentroot_constructor_args():
-    sig = inspect.signature(Core::SourcePackageFragmentRoot.__init__)
+def test_core_sourcepackagefragmentroot_constructor_args():
+    sig = inspect.signature(Core_SourcePackageFragmentRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::binarypackagefragmentroot_is_not_abstract():
-    assert not inspect.isabstract(Core::BinaryPackageFragmentRoot)
+def test_core_binarypackagefragmentroot_is_not_abstract():
+    assert not inspect.isabstract(Core_BinaryPackageFragmentRoot)
 
 
-def test_core::binarypackagefragmentroot_constructor_exists():
-    assert callable(Core::BinaryPackageFragmentRoot.__init__)
+def test_core_binarypackagefragmentroot_constructor_exists():
+    assert callable(Core_BinaryPackageFragmentRoot.__init__)
 
 
-def test_core::binarypackagefragmentroot_constructor_args():
-    sig = inspect.signature(Core::BinaryPackageFragmentRoot.__init__)
+def test_core_binarypackagefragmentroot_constructor_args():
+    sig = inspect.signature(Core_BinaryPackageFragmentRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2637,51 +2117,37 @@ def test_physicalelement_constructor_args():
 
 
 
-def test_core::ipackagefragmentroot_is_not_abstract():
-    assert not inspect.isabstract(Core::IPackageFragmentRoot)
+def test_core_ipackagefragmentroot_is_not_abstract():
+    assert not inspect.isabstract(Core_IPackageFragmentRoot)
 
 
-def test_core::ipackagefragmentroot_constructor_exists():
-    assert callable(Core::IPackageFragmentRoot.__init__)
+def test_core_ipackagefragmentroot_constructor_exists():
+    assert callable(Core_IPackageFragmentRoot.__init__)
 
 
-def test_core::ipackagefragmentroot_constructor_args():
-    sig = inspect.signature(Core::IPackageFragmentRoot.__init__)
+def test_core_ipackagefragmentroot_constructor_args():
+    sig = inspect.signature(Core_IPackageFragmentRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::ijavaproject_is_not_abstract():
-    assert not inspect.isabstract(Core::IJavaProject)
+def test_core_ipackagefragment_is_not_abstract():
+    assert not inspect.isabstract(Core_IPackageFragment)
 
 
-def test_core::ijavaproject_constructor_exists():
-    assert callable(Core::IJavaProject.__init__)
+def test_core_ipackagefragment_constructor_exists():
+    assert callable(Core_IPackageFragment.__init__)
 
 
-def test_core::ijavaproject_constructor_args():
-    sig = inspect.signature(Core::IJavaProject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_core::ipackagefragment_is_not_abstract():
-    assert not inspect.isabstract(Core::IPackageFragment)
-
-
-def test_core::ipackagefragment_constructor_exists():
-    assert callable(Core::IPackageFragment.__init__)
-
-
-def test_core::ipackagefragment_constructor_args():
-    sig = inspect.signature(Core::IPackageFragment.__init__)
+def test_core_ipackagefragment_constructor_args():
+    sig = inspect.signature(Core_IPackageFragment.__init__)
     params = list(sig.parameters.keys())
     assert "isDefaultPackage" in params, "Missing parameter 'isDefaultPackage'"
 
-def test_core::ipackagefragment_has_isDefaultPackage():
-    assert hasattr(Core::IPackageFragment, "isDefaultPackage")
+def test_core_ipackagefragment_has_isDefaultPackage():
+    assert hasattr(Core_IPackageFragment, "isDefaultPackage")
     descriptor = None
-    for klass in Core::IPackageFragment.__mro__:
+    for klass in Core_IPackageFragment.__mro__:
         if "isDefaultPackage" in klass.__dict__:
             descriptor = klass.__dict__["isDefaultPackage"]
             break
@@ -2689,47 +2155,61 @@ def test_core::ipackagefragment_has_isDefaultPackage():
 
 
 
-def test_core::ijavamodel_is_not_abstract():
-    assert not inspect.isabstract(Core::IJavaModel)
+def test_core_ijavaproject_is_not_abstract():
+    assert not inspect.isabstract(Core_IJavaProject)
 
 
-def test_core::ijavamodel_constructor_exists():
-    assert callable(Core::IJavaModel.__init__)
+def test_core_ijavaproject_constructor_exists():
+    assert callable(Core_IJavaProject.__init__)
 
 
-def test_core::ijavamodel_constructor_args():
-    sig = inspect.signature(Core::IJavaModel.__init__)
+def test_core_ijavaproject_constructor_args():
+    sig = inspect.signature(Core_IJavaProject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::physicalelement_is_not_abstract():
-    assert not inspect.isabstract(Core::PhysicalElement)
+def test_core_ijavamodel_is_not_abstract():
+    assert not inspect.isabstract(Core_IJavaModel)
 
 
-def test_core::physicalelement_constructor_exists():
-    assert callable(Core::PhysicalElement.__init__)
+def test_core_ijavamodel_constructor_exists():
+    assert callable(Core_IJavaModel.__init__)
 
 
-def test_core::physicalelement_constructor_args():
-    sig = inspect.signature(Core::PhysicalElement.__init__)
+def test_core_ijavamodel_constructor_args():
+    sig = inspect.signature(Core_IJavaModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_core_physicalelement_is_not_abstract():
+    assert not inspect.isabstract(Core_PhysicalElement)
+
+
+def test_core_physicalelement_constructor_exists():
+    assert callable(Core_PhysicalElement.__init__)
+
+
+def test_core_physicalelement_constructor_args():
+    sig = inspect.signature(Core_PhysicalElement.__init__)
     params = list(sig.parameters.keys())
     assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
     assert "path" in params, "Missing parameter 'path'"
 
-def test_core::physicalelement_has_isReadOnly():
-    assert hasattr(Core::PhysicalElement, "isReadOnly")
+def test_core_physicalelement_has_isReadOnly():
+    assert hasattr(Core_PhysicalElement, "isReadOnly")
     descriptor = None
-    for klass in Core::PhysicalElement.__mro__:
+    for klass in Core_PhysicalElement.__mro__:
         if "isReadOnly" in klass.__dict__:
             descriptor = klass.__dict__["isReadOnly"]
             break
     assert isinstance(descriptor, property)
 
-def test_core::physicalelement_has_path():
-    assert hasattr(Core::PhysicalElement, "path")
+def test_core_physicalelement_has_path():
+    assert hasattr(Core_PhysicalElement, "path")
     descriptor = None
-    for klass in Core::PhysicalElement.__mro__:
+    for klass in Core_PhysicalElement.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
@@ -2779,33 +2259,33 @@ def test_ityperoot_constructor_args():
 
 
 
-def test_core::iclassfile_is_not_abstract():
-    assert not inspect.isabstract(Core::IClassFile)
+def test_core_iclassfile_is_not_abstract():
+    assert not inspect.isabstract(Core_IClassFile)
 
 
-def test_core::iclassfile_constructor_exists():
-    assert callable(Core::IClassFile.__init__)
+def test_core_iclassfile_constructor_exists():
+    assert callable(Core_IClassFile.__init__)
 
 
-def test_core::iclassfile_constructor_args():
-    sig = inspect.signature(Core::IClassFile.__init__)
+def test_core_iclassfile_constructor_args():
+    sig = inspect.signature(Core_IClassFile.__init__)
     params = list(sig.parameters.keys())
     assert "isClass" in params, "Missing parameter 'isClass'"
     assert "isInterface" in params, "Missing parameter 'isInterface'"
 
-def test_core::iclassfile_has_isClass():
-    assert hasattr(Core::IClassFile, "isClass")
+def test_core_iclassfile_has_isClass():
+    assert hasattr(Core_IClassFile, "isClass")
     descriptor = None
-    for klass in Core::IClassFile.__mro__:
+    for klass in Core_IClassFile.__mro__:
         if "isClass" in klass.__dict__:
             descriptor = klass.__dict__["isClass"]
             break
     assert isinstance(descriptor, property)
 
-def test_core::iclassfile_has_isInterface():
-    assert hasattr(Core::IClassFile, "isInterface")
+def test_core_iclassfile_has_isInterface():
+    assert hasattr(Core_IClassFile, "isInterface")
     descriptor = None
-    for klass in Core::IClassFile.__mro__:
+    for klass in Core_IClassFile.__mro__:
         if "isInterface" in klass.__dict__:
             descriptor = klass.__dict__["isInterface"]
             break
@@ -2813,16 +2293,16 @@ def test_core::iclassfile_has_isInterface():
 
 
 
-def test_core::icompilationunit_is_not_abstract():
-    assert not inspect.isabstract(Core::ICompilationUnit)
+def test_core_icompilationunit_is_not_abstract():
+    assert not inspect.isabstract(Core_ICompilationUnit)
 
 
-def test_core::icompilationunit_constructor_exists():
-    assert callable(Core::ICompilationUnit.__init__)
+def test_core_icompilationunit_constructor_exists():
+    assert callable(Core_ICompilationUnit.__init__)
 
 
-def test_core::icompilationunit_constructor_args():
-    sig = inspect.signature(Core::ICompilationUnit.__init__)
+def test_core_icompilationunit_constructor_args():
+    sig = inspect.signature(Core_ICompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2841,37 +2321,23 @@ def test_isourcereference_constructor_args():
 
 
 
-def test_core::imember_is_not_abstract():
-    assert not inspect.isabstract(Core::IMember)
+def test_core_itypeparameter_is_not_abstract():
+    assert not inspect.isabstract(Core_ITypeParameter)
 
 
-def test_core::imember_constructor_exists():
-    assert callable(Core::IMember.__init__)
+def test_core_itypeparameter_constructor_exists():
+    assert callable(Core_ITypeParameter.__init__)
 
 
-def test_core::imember_constructor_args():
-    sig = inspect.signature(Core::IMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_core::itypeparameter_is_not_abstract():
-    assert not inspect.isabstract(Core::ITypeParameter)
-
-
-def test_core::itypeparameter_constructor_exists():
-    assert callable(Core::ITypeParameter.__init__)
-
-
-def test_core::itypeparameter_constructor_args():
-    sig = inspect.signature(Core::ITypeParameter.__init__)
+def test_core_itypeparameter_constructor_args():
+    sig = inspect.signature(Core_ITypeParameter.__init__)
     params = list(sig.parameters.keys())
     assert "bounds" in params, "Missing parameter 'bounds'"
 
-def test_core::itypeparameter_has_bounds():
-    assert hasattr(Core::ITypeParameter, "bounds")
+def test_core_itypeparameter_has_bounds():
+    assert hasattr(Core_ITypeParameter, "bounds")
     descriptor = None
-    for klass in Core::ITypeParameter.__mro__:
+    for klass in Core_ITypeParameter.__mro__:
         if "bounds" in klass.__dict__:
             descriptor = klass.__dict__["bounds"]
             break
@@ -2879,50 +2345,64 @@ def test_core::itypeparameter_has_bounds():
 
 
 
-def test_core::iimportdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Core::IImportDeclaration)
+def test_core_iimportdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Core_IImportDeclaration)
 
 
-def test_core::iimportdeclaration_constructor_exists():
-    assert callable(Core::IImportDeclaration.__init__)
+def test_core_iimportdeclaration_constructor_exists():
+    assert callable(Core_IImportDeclaration.__init__)
 
 
-def test_core::iimportdeclaration_constructor_args():
-    sig = inspect.signature(Core::IImportDeclaration.__init__)
+def test_core_iimportdeclaration_constructor_args():
+    sig = inspect.signature(Core_IImportDeclaration.__init__)
     params = list(sig.parameters.keys())
-    assert "isOnDemand" in params, "Missing parameter 'isOnDemand'"
     assert "isStatic" in params, "Missing parameter 'isStatic'"
+    assert "isOnDemand" in params, "Missing parameter 'isOnDemand'"
 
-def test_core::iimportdeclaration_has_isOnDemand():
-    assert hasattr(Core::IImportDeclaration, "isOnDemand")
+def test_core_iimportdeclaration_has_isStatic():
+    assert hasattr(Core_IImportDeclaration, "isStatic")
     descriptor = None
-    for klass in Core::IImportDeclaration.__mro__:
-        if "isOnDemand" in klass.__dict__:
-            descriptor = klass.__dict__["isOnDemand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_core::iimportdeclaration_has_isStatic():
-    assert hasattr(Core::IImportDeclaration, "isStatic")
-    descriptor = None
-    for klass in Core::IImportDeclaration.__mro__:
+    for klass in Core_IImportDeclaration.__mro__:
         if "isStatic" in klass.__dict__:
             descriptor = klass.__dict__["isStatic"]
             break
     assert isinstance(descriptor, property)
 
+def test_core_iimportdeclaration_has_isOnDemand():
+    assert hasattr(Core_IImportDeclaration, "isOnDemand")
+    descriptor = None
+    for klass in Core_IImportDeclaration.__mro__:
+        if "isOnDemand" in klass.__dict__:
+            descriptor = klass.__dict__["isOnDemand"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_core::ityperoot_is_not_abstract():
-    assert not inspect.isabstract(Core::ITypeRoot)
+
+def test_core_imember_is_not_abstract():
+    assert not inspect.isabstract(Core_IMember)
 
 
-def test_core::ityperoot_constructor_exists():
-    assert callable(Core::ITypeRoot.__init__)
+def test_core_imember_constructor_exists():
+    assert callable(Core_IMember.__init__)
 
 
-def test_core::ityperoot_constructor_args():
-    sig = inspect.signature(Core::ITypeRoot.__init__)
+def test_core_imember_constructor_args():
+    sig = inspect.signature(Core_IMember.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_core_ityperoot_is_not_abstract():
+    assert not inspect.isabstract(Core_ITypeRoot)
+
+
+def test_core_ityperoot_constructor_exists():
+    assert callable(Core_ITypeRoot.__init__)
+
+
+def test_core_ityperoot_constructor_args():
+    sig = inspect.signature(Core_ITypeRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2955,23 +2435,23 @@ def test_iclassfile_constructor_args():
 
 
 
-def test_core::ijavaelement_is_not_abstract():
-    assert not inspect.isabstract(Core::IJavaElement)
+def test_core_ijavaelement_is_not_abstract():
+    assert not inspect.isabstract(Core_IJavaElement)
 
 
-def test_core::ijavaelement_constructor_exists():
-    assert callable(Core::IJavaElement.__init__)
+def test_core_ijavaelement_constructor_exists():
+    assert callable(Core_IJavaElement.__init__)
 
 
-def test_core::ijavaelement_constructor_args():
-    sig = inspect.signature(Core::IJavaElement.__init__)
+def test_core_ijavaelement_constructor_args():
+    sig = inspect.signature(Core_IJavaElement.__init__)
     params = list(sig.parameters.keys())
     assert "elementName" in params, "Missing parameter 'elementName'"
 
-def test_core::ijavaelement_has_elementName():
-    assert hasattr(Core::IJavaElement, "elementName")
+def test_core_ijavaelement_has_elementName():
+    assert hasattr(Core_IJavaElement, "elementName")
     descriptor = None
-    for klass in Core::IJavaElement.__mro__:
+    for klass in Core_IJavaElement.__mro__:
         if "elementName" in klass.__dict__:
             descriptor = klass.__dict__["elementName"]
             break
@@ -2979,183 +2459,768 @@ def test_core::ijavaelement_has_elementName():
 
 
 
-def test_dom::singlememberannotation_is_not_abstract():
-    assert not inspect.isabstract(DOM::SingleMemberAnnotation)
+def test_dom_fieldaccess_is_not_abstract():
+    assert not inspect.isabstract(DOM_FieldAccess)
 
 
-def test_dom::singlememberannotation_constructor_exists():
-    assert callable(DOM::SingleMemberAnnotation.__init__)
+def test_dom_fieldaccess_constructor_exists():
+    assert callable(DOM_FieldAccess.__init__)
 
 
-def test_dom::singlememberannotation_constructor_args():
-    sig = inspect.signature(DOM::SingleMemberAnnotation.__init__)
+def test_dom_fieldaccess_constructor_args():
+    sig = inspect.signature(DOM_FieldAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_membervaluepair_is_not_abstract():
-    assert not inspect.isabstract(MemberValuePair)
+def test_dom_classinstancecreation_is_not_abstract():
+    assert not inspect.isabstract(DOM_ClassInstanceCreation)
 
 
-def test_membervaluepair_constructor_exists():
-    assert callable(MemberValuePair.__init__)
+def test_dom_classinstancecreation_constructor_exists():
+    assert callable(DOM_ClassInstanceCreation.__init__)
 
 
-def test_membervaluepair_constructor_args():
-    sig = inspect.signature(MemberValuePair.__init__)
+def test_dom_classinstancecreation_constructor_args():
+    sig = inspect.signature(DOM_ClassInstanceCreation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::normalannotation_is_not_abstract():
-    assert not inspect.isabstract(DOM::NormalAnnotation)
+def test_dom_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(DOM_CharacterLiteral)
 
 
-def test_dom::normalannotation_constructor_exists():
-    assert callable(DOM::NormalAnnotation.__init__)
+def test_dom_characterliteral_constructor_exists():
+    assert callable(DOM_CharacterLiteral.__init__)
 
 
-def test_dom::normalannotation_constructor_args():
-    sig = inspect.signature(DOM::NormalAnnotation.__init__)
+def test_dom_characterliteral_constructor_args():
+    sig = inspect.signature(DOM_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
+    assert "escapedValue" in params, "Missing parameter 'escapedValue'"
+    assert "charValue" in params, "Missing parameter 'charValue'"
 
-
-
-def test_dom::markerannotation_is_not_abstract():
-    assert not inspect.isabstract(DOM::MarkerAnnotation)
-
-
-def test_dom::markerannotation_constructor_exists():
-    assert callable(DOM::MarkerAnnotation.__init__)
-
-
-def test_dom::markerannotation_constructor_args():
-    sig = inspect.signature(DOM::MarkerAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dom::simplename_is_not_abstract():
-    assert not inspect.isabstract(DOM::SimpleName)
-
-
-def test_dom::simplename_constructor_exists():
-    assert callable(DOM::SimpleName.__init__)
-
-
-def test_dom::simplename_constructor_args():
-    sig = inspect.signature(DOM::SimpleName.__init__)
-    params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
-    assert "declaration" in params, "Missing parameter 'declaration'"
-
-def test_dom::simplename_has_identifier():
-    assert hasattr(DOM::SimpleName, "identifier")
+def test_dom_characterliteral_has_escapedValue():
+    assert hasattr(DOM_CharacterLiteral, "escapedValue")
     descriptor = None
-    for klass in DOM::SimpleName.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
+    for klass in DOM_CharacterLiteral.__mro__:
+        if "escapedValue" in klass.__dict__:
+            descriptor = klass.__dict__["escapedValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_dom::simplename_has_declaration():
-    assert hasattr(DOM::SimpleName, "declaration")
+def test_dom_characterliteral_has_charValue():
+    assert hasattr(DOM_CharacterLiteral, "charValue")
     descriptor = None
-    for klass in DOM::SimpleName.__mro__:
-        if "declaration" in klass.__dict__:
-            descriptor = klass.__dict__["declaration"]
+    for klass in DOM_CharacterLiteral.__mro__:
+        if "charValue" in klass.__dict__:
+            descriptor = klass.__dict__["charValue"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(VariableDeclaration)
+def test_dom_castexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_CastExpression)
 
 
-def test_variabledeclaration_constructor_exists():
-    assert callable(VariableDeclaration.__init__)
+def test_dom_castexpression_constructor_exists():
+    assert callable(DOM_CastExpression.__init__)
 
 
-def test_variabledeclaration_constructor_args():
-    sig = inspect.signature(VariableDeclaration.__init__)
+def test_dom_castexpression_constructor_args():
+    sig = inspect.signature(DOM_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::variabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(DOM::VariableDeclarationFragment)
+def test_dom_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(DOM_BooleanLiteral)
 
 
-def test_dom::variabledeclarationfragment_constructor_exists():
-    assert callable(DOM::VariableDeclarationFragment.__init__)
+def test_dom_booleanliteral_constructor_exists():
+    assert callable(DOM_BooleanLiteral.__init__)
 
 
-def test_dom::variabledeclarationfragment_constructor_args():
-    sig = inspect.signature(DOM::VariableDeclarationFragment.__init__)
+def test_dom_booleanliteral_constructor_args():
+    sig = inspect.signature(DOM_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "booleanValue" in params, "Missing parameter 'booleanValue'"
+
+def test_dom_booleanliteral_has_booleanValue():
+    assert hasattr(DOM_BooleanLiteral, "booleanValue")
+    descriptor = None
+    for klass in DOM_BooleanLiteral.__mro__:
+        if "booleanValue" in klass.__dict__:
+            descriptor = klass.__dict__["booleanValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(DOM_ConditionalExpression)
+
+
+def test_dom_conditionalexpression_constructor_exists():
+    assert callable(DOM_ConditionalExpression.__init__)
+
+
+def test_dom_conditionalexpression_constructor_args():
+    sig = inspect.signature(DOM_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dom::singlevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(DOM::SingleVariableDeclaration)
+def test_dom_arraycreation_is_not_abstract():
+    assert not inspect.isabstract(DOM_ArrayCreation)
 
 
-def test_dom::singlevariabledeclaration_constructor_exists():
-    assert callable(DOM::SingleVariableDeclaration.__init__)
+def test_dom_arraycreation_constructor_exists():
+    assert callable(DOM_ArrayCreation.__init__)
 
 
-def test_dom::singlevariabledeclaration_constructor_args():
-    sig = inspect.signature(DOM::SingleVariableDeclaration.__init__)
+def test_dom_arraycreation_constructor_args():
+    sig = inspect.signature(DOM_ArrayCreation.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_dom_arrayaccess_is_not_abstract():
+    assert not inspect.isabstract(DOM_ArrayAccess)
+
+
+def test_dom_arrayaccess_constructor_exists():
+    assert callable(DOM_ArrayAccess.__init__)
+
+
+def test_dom_arrayaccess_constructor_args():
+    sig = inspect.signature(DOM_ArrayAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_annotation_is_not_abstract():
+    assert not inspect.isabstract(DOM_Annotation)
+
+
+def test_dom_annotation_constructor_exists():
+    assert callable(DOM_Annotation.__init__)
+
+
+def test_dom_annotation_constructor_args():
+    sig = inspect.signature(DOM_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_linecomment_is_not_abstract():
+    assert not inspect.isabstract(DOM_LineComment)
+
+
+def test_dom_linecomment_constructor_exists():
+    assert callable(DOM_LineComment.__init__)
+
+
+def test_dom_linecomment_constructor_args():
+    sig = inspect.signature(DOM_LineComment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tagelement_is_not_abstract():
+    assert not inspect.isabstract(TagElement)
+
+
+def test_tagelement_constructor_exists():
+    assert callable(TagElement.__init__)
+
+
+def test_tagelement_constructor_args():
+    sig = inspect.signature(TagElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_javadoc_is_not_abstract():
+    assert not inspect.isabstract(DOM_Javadoc)
+
+
+def test_dom_javadoc_constructor_exists():
+    assert callable(DOM_Javadoc.__init__)
+
+
+def test_dom_javadoc_constructor_args():
+    sig = inspect.signature(DOM_Javadoc.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_blockcomment_is_not_abstract():
+    assert not inspect.isabstract(DOM_BlockComment)
+
+
+def test_dom_blockcomment_constructor_exists():
+    assert callable(DOM_BlockComment.__init__)
+
+
+def test_dom_blockcomment_constructor_args():
+    sig = inspect.signature(DOM_BlockComment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_assignment_is_not_abstract():
+    assert not inspect.isabstract(DOM_Assignment)
+
+
+def test_dom_assignment_constructor_exists():
+    assert callable(DOM_Assignment.__init__)
+
+
+def test_dom_assignment_constructor_args():
+    sig = inspect.signature(DOM_Assignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_dom_assignment_has_operator():
+    assert hasattr(DOM_Assignment, "operator")
+    descriptor = None
+    for klass in DOM_Assignment.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(DOM_ArrayInitializer)
+
+
+def test_dom_arrayinitializer_constructor_exists():
+    assert callable(DOM_ArrayInitializer.__init__)
+
+
+def test_dom_arrayinitializer_constructor_args():
+    sig = inspect.signature(DOM_ArrayInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arraytype_is_not_abstract():
+    assert not inspect.isabstract(ArrayType)
+
+
+def test_arraytype_constructor_exists():
+    assert callable(ArrayType.__init__)
+
+
+def test_arraytype_constructor_args():
+    sig = inspect.signature(ArrayType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(ArrayInitializer)
+
+
+def test_arrayinitializer_constructor_exists():
+    assert callable(ArrayInitializer.__init__)
+
+
+def test_arrayinitializer_constructor_args():
+    sig = inspect.signature(ArrayInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(TypeParameter)
+
+
+def test_typeparameter_constructor_exists():
+    assert callable(TypeParameter.__init__)
+
+
+def test_typeparameter_constructor_args():
+    sig = inspect.signature(TypeParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_methoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_MethodDeclaration)
+
+
+def test_dom_methoddeclaration_constructor_exists():
+    assert callable(DOM_MethodDeclaration.__init__)
+
+
+def test_dom_methoddeclaration_constructor_args():
+    sig = inspect.signature(DOM_MethodDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "extraDimensions" in params, "Missing parameter 'extraDimensions'"
     assert "varargs" in params, "Missing parameter 'varargs'"
+    assert "constructor" in params, "Missing parameter 'constructor'"
 
-def test_dom::singlevariabledeclaration_has_varargs():
-    assert hasattr(DOM::SingleVariableDeclaration, "varargs")
+def test_dom_methoddeclaration_has_extraDimensions():
+    assert hasattr(DOM_MethodDeclaration, "extraDimensions")
     descriptor = None
-    for klass in DOM::SingleVariableDeclaration.__mro__:
+    for klass in DOM_MethodDeclaration.__mro__:
+        if "extraDimensions" in klass.__dict__:
+            descriptor = klass.__dict__["extraDimensions"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_methoddeclaration_has_varargs():
+    assert hasattr(DOM_MethodDeclaration, "varargs")
+    descriptor = None
+    for klass in DOM_MethodDeclaration.__mro__:
         if "varargs" in klass.__dict__:
             descriptor = klass.__dict__["varargs"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dom::wildcardtype_is_not_abstract():
-    assert not inspect.isabstract(DOM::WildcardType)
-
-
-def test_dom::wildcardtype_constructor_exists():
-    assert callable(DOM::WildcardType.__init__)
-
-
-def test_dom::wildcardtype_constructor_args():
-    sig = inspect.signature(DOM::WildcardType.__init__)
-    params = list(sig.parameters.keys())
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-
-def test_dom::wildcardtype_has_upperBound():
-    assert hasattr(DOM::WildcardType, "upperBound")
+def test_dom_methoddeclaration_has_constructor():
+    assert hasattr(DOM_MethodDeclaration, "constructor")
     descriptor = None
-    for klass in DOM::WildcardType.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
+    for klass in DOM_MethodDeclaration.__mro__:
+        if "constructor" in klass.__dict__:
+            descriptor = klass.__dict__["constructor"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_dom::simpletype_is_not_abstract():
-    assert not inspect.isabstract(DOM::SimpleType)
+def test_dom_initializer_is_not_abstract():
+    assert not inspect.isabstract(DOM_Initializer)
 
 
-def test_dom::simpletype_constructor_exists():
-    assert callable(DOM::SimpleType.__init__)
+def test_dom_initializer_constructor_exists():
+    assert callable(DOM_Initializer.__init__)
 
 
-def test_dom::simpletype_constructor_args():
-    sig = inspect.signature(DOM::SimpleType.__init__)
+def test_dom_initializer_constructor_args():
+    sig = inspect.signature(DOM_Initializer.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_variabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(VariableDeclarationFragment)
+
+
+def test_variabledeclarationfragment_constructor_exists():
+    assert callable(VariableDeclarationFragment.__init__)
+
+
+def test_variabledeclarationfragment_constructor_args():
+    sig = inspect.signature(VariableDeclarationFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_TypeDeclaration)
+
+
+def test_dom_typedeclaration_constructor_exists():
+    assert callable(DOM_TypeDeclaration.__init__)
+
+
+def test_dom_typedeclaration_constructor_args():
+    sig = inspect.signature(DOM_TypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "interface" in params, "Missing parameter 'interface'"
+
+def test_dom_typedeclaration_has_interface():
+    assert hasattr(DOM_TypeDeclaration, "interface")
+    descriptor = None
+    for klass in DOM_TypeDeclaration.__mro__:
+        if "interface" in klass.__dict__:
+            descriptor = klass.__dict__["interface"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_enumconstantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(EnumConstantDeclaration)
+
+
+def test_enumconstantdeclaration_constructor_exists():
+    assert callable(EnumConstantDeclaration.__init__)
+
+
+def test_enumconstantdeclaration_constructor_args():
+    sig = inspect.signature(EnumConstantDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_enumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_EnumDeclaration)
+
+
+def test_dom_enumdeclaration_constructor_exists():
+    assert callable(DOM_EnumDeclaration.__init__)
+
+
+def test_dom_enumdeclaration_constructor_args():
+    sig = inspect.signature(DOM_EnumDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_annotationtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_AnnotationTypeDeclaration)
+
+
+def test_dom_annotationtypedeclaration_constructor_exists():
+    assert callable(DOM_AnnotationTypeDeclaration.__init__)
+
+
+def test_dom_annotationtypedeclaration_constructor_args():
+    sig = inspect.signature(DOM_AnnotationTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_annotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_AnnotationTypeMemberDeclaration)
+
+
+def test_dom_annotationtypememberdeclaration_constructor_exists():
+    assert callable(DOM_AnnotationTypeMemberDeclaration.__init__)
+
+
+def test_dom_annotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(DOM_AnnotationTypeMemberDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_abstracttypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_AbstractTypeDeclaration)
+
+
+def test_dom_abstracttypedeclaration_constructor_exists():
+    assert callable(DOM_AbstractTypeDeclaration.__init__)
+
+
+def test_dom_abstracttypedeclaration_constructor_args():
+    sig = inspect.signature(DOM_AbstractTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "packageMemberTypeDeclaration" in params, "Missing parameter 'packageMemberTypeDeclaration'"
+    assert "memberTypeDeclaration" in params, "Missing parameter 'memberTypeDeclaration'"
+    assert "localTypeDeclaration" in params, "Missing parameter 'localTypeDeclaration'"
+
+def test_dom_abstracttypedeclaration_has_packageMemberTypeDeclaration():
+    assert hasattr(DOM_AbstractTypeDeclaration, "packageMemberTypeDeclaration")
+    descriptor = None
+    for klass in DOM_AbstractTypeDeclaration.__mro__:
+        if "packageMemberTypeDeclaration" in klass.__dict__:
+            descriptor = klass.__dict__["packageMemberTypeDeclaration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_abstracttypedeclaration_has_memberTypeDeclaration():
+    assert hasattr(DOM_AbstractTypeDeclaration, "memberTypeDeclaration")
+    descriptor = None
+    for klass in DOM_AbstractTypeDeclaration.__mro__:
+        if "memberTypeDeclaration" in klass.__dict__:
+            descriptor = klass.__dict__["memberTypeDeclaration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_abstracttypedeclaration_has_localTypeDeclaration():
+    assert hasattr(DOM_AbstractTypeDeclaration, "localTypeDeclaration")
+    descriptor = None
+    for klass in DOM_AbstractTypeDeclaration.__mro__:
+        if "localTypeDeclaration" in klass.__dict__:
+            descriptor = klass.__dict__["localTypeDeclaration"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_fielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_FieldDeclaration)
+
+
+def test_dom_fielddeclaration_constructor_exists():
+    assert callable(DOM_FieldDeclaration.__init__)
+
+
+def test_dom_fielddeclaration_constructor_args():
+    sig = inspect.signature(DOM_FieldDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_anonymousclassdeclaration_is_not_abstract():
+    assert not inspect.isabstract(AnonymousClassDeclaration)
+
+
+def test_anonymousclassdeclaration_constructor_exists():
+    assert callable(AnonymousClassDeclaration.__init__)
+
+
+def test_anonymousclassdeclaration_constructor_args():
+    sig = inspect.signature(AnonymousClassDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_enumconstantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_EnumConstantDeclaration)
+
+
+def test_dom_enumconstantdeclaration_constructor_exists():
+    assert callable(DOM_EnumConstantDeclaration.__init__)
+
+
+def test_dom_enumconstantdeclaration_constructor_args():
+    sig = inspect.signature(DOM_EnumConstantDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_tagelement_is_not_abstract():
+    assert not inspect.isabstract(DOM_TagElement)
+
+
+def test_dom_tagelement_constructor_exists():
+    assert callable(DOM_TagElement.__init__)
+
+
+def test_dom_tagelement_constructor_args():
+    sig = inspect.signature(DOM_TagElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "nested" in params, "Missing parameter 'nested'"
+    assert "tagName" in params, "Missing parameter 'tagName'"
+
+def test_dom_tagelement_has_nested():
+    assert hasattr(DOM_TagElement, "nested")
+    descriptor = None
+    for klass in DOM_TagElement.__mro__:
+        if "nested" in klass.__dict__:
+            descriptor = klass.__dict__["nested"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dom_tagelement_has_tagName():
+    assert hasattr(DOM_TagElement, "tagName")
+    descriptor = None
+    for klass in DOM_TagElement.__mro__:
+        if "tagName" in klass.__dict__:
+            descriptor = klass.__dict__["tagName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_statement_is_not_abstract():
+    assert not inspect.isabstract(DOM_Statement)
+
+
+def test_dom_statement_constructor_exists():
+    assert callable(DOM_Statement.__init__)
+
+
+def test_dom_statement_constructor_args():
+    sig = inspect.signature(DOM_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotation_is_not_abstract():
+    assert not inspect.isabstract(Annotation)
+
+
+def test_annotation_constructor_exists():
+    assert callable(Annotation.__init__)
+
+
+def test_annotation_constructor_args():
+    sig = inspect.signature(Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_markerannotation_is_not_abstract():
+    assert not inspect.isabstract(DOM_MarkerAnnotation)
+
+
+def test_dom_markerannotation_constructor_exists():
+    assert callable(DOM_MarkerAnnotation.__init__)
+
+
+def test_dom_markerannotation_constructor_args():
+    sig = inspect.signature(DOM_MarkerAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_normalannotation_is_not_abstract():
+    assert not inspect.isabstract(DOM_NormalAnnotation)
+
+
+def test_dom_normalannotation_constructor_exists():
+    assert callable(DOM_NormalAnnotation.__init__)
+
+
+def test_dom_normalannotation_constructor_args():
+    sig = inspect.signature(DOM_NormalAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_singlememberannotation_is_not_abstract():
+    assert not inspect.isabstract(DOM_SingleMemberAnnotation)
+
+
+def test_dom_singlememberannotation_constructor_exists():
+    assert callable(DOM_SingleMemberAnnotation.__init__)
+
+
+def test_dom_singlememberannotation_constructor_args():
+    sig = inspect.signature(DOM_SingleMemberAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_PackageDeclaration)
+
+
+def test_dom_packagedeclaration_constructor_exists():
+    assert callable(DOM_PackageDeclaration.__init__)
+
+
+def test_dom_packagedeclaration_constructor_args():
+    sig = inspect.signature(DOM_PackageDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(DOM_VariableDeclaration)
+
+
+def test_dom_variabledeclaration_constructor_exists():
+    assert callable(DOM_VariableDeclaration.__init__)
+
+
+def test_dom_variabledeclaration_constructor_args():
+    sig = inspect.signature(DOM_VariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "extraDimensions" in params, "Missing parameter 'extraDimensions'"
+
+def test_dom_variabledeclaration_has_extraDimensions():
+    assert hasattr(DOM_VariableDeclaration, "extraDimensions")
+    descriptor = None
+    for klass in DOM_VariableDeclaration.__mro__:
+        if "extraDimensions" in klass.__dict__:
+            descriptor = klass.__dict__["extraDimensions"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dom_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(DOM_TypeParameter)
+
+
+def test_dom_typeparameter_constructor_exists():
+    assert callable(DOM_TypeParameter.__init__)
+
+
+def test_dom_typeparameter_constructor_args():
+    sig = inspect.signature(DOM_TypeParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dom_type_is_not_abstract():
+    assert not inspect.isabstract(DOM_Type)
+
+
+def test_dom_type_constructor_exists():
+    assert callable(DOM_Type.__init__)
+
+
+def test_dom_type_constructor_args():
+    sig = inspect.signature(DOM_Type.__init__)
+    params = list(sig.parameters.keys())
+
+def test_modifiers_exists():
+    # Check that the Enumeration exists
+    assert Modifiers is not None
+
+def test_modifiers_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Modifiers]
+    expected_literals = [
+        "transient",
+        "deprecated",
+        "static",
+        "final",
+        "default",
+        "super",
+        "synchronized",
+        "varargs",
+        "protected",
+        "enum",
+        "interface",
+        "abstract",
+        "private",
+        "bridge",
+        "annotation",
+        "public",
+        "volatile",
+        "strictfp",
+        "synthetic",
+        "native",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Modifiers"
+
+def test_infixexpressionoperatorkind_exists():
+    # Check that the Enumeration exists
+    assert InfixExpressionOperatorKind is not None
+
+def test_infixexpressionoperatorkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InfixExpressionOperatorKind]
+    expected_literals = [
+        "conditional_or",
+        "less_equals",
+        "remainder",
+        "or_",
+        "times",
+        "minus",
+        "less",
+        "divide",
+        "greater",
+        "conditional_and",
+        "xor",
+        "right_shift_signed",
+        "right_shift_unsigned",
+        "greater_equals",
+        "equals",
+        "and_",
+        "left_shift",
+        "not_equals",
+        "plus",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InfixExpressionOperatorKind"
 
 def test_postfixexpressionoperatorkind_exists():
     # Check that the Enumeration exists
@@ -3165,8 +3230,8 @@ def test_postfixexpressionoperatorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PostfixExpressionOperatorKind]
     expected_literals = [
-        "decrement",
         "increment",
+        "decrement",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -3180,55 +3245,22 @@ def test_assignmentoperatorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AssignmentOperatorKind]
     expected_literals = [
-        "minus_assign",
-        "plus_assign",
-        "remainder_assign",
-        "right_shift_signed_assign",
-        "bit_xor_assign",
-        "left_shift_assign",
         "bit_or_assign",
-        "times_assign",
-        "bit_and_assign",
+        "minus_assign",
         "divide_assign",
-        "assign",
+        "remainder_assign",
         "right_shift_unsigned_assign",
+        "left_shift_assign",
+        "bit_and_assign",
+        "times_assign",
+        "plus_assign",
+        "right_shift_signed_assign",
+        "assign",
+        "bit_xor_assign",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperatorKind"
-
-def test_modifiers_exists():
-    # Check that the Enumeration exists
-    assert Modifiers is not None
-
-def test_modifiers_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Modifiers]
-    expected_literals = [
-        "synthetic",
-        "annotation",
-        "private",
-        "final",
-        "native",
-        "bridge",
-        "default",
-        "strictfp",
-        "enum",
-        "synchronized",
-        "super",
-        "deprecated",
-        "public",
-        "abstract",
-        "volatile",
-        "varargs",
-        "protected",
-        "interface",
-        "transient",
-        "static",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Modifiers"
 
 def test_prefixexpressionoperatorkind_exists():
     # Check that the Enumeration exists
@@ -3238,48 +3270,16 @@ def test_prefixexpressionoperatorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PrefixExpressionOperatorKind]
     expected_literals = [
-        "decrement",
-        "plus",
         "increment",
         "minus",
-        "complement",
         "not_",
+        "complement",
+        "decrement",
+        "plus",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PrefixExpressionOperatorKind"
-
-def test_infixexpressionoperatorkind_exists():
-    # Check that the Enumeration exists
-    assert InfixExpressionOperatorKind is not None
-
-def test_infixexpressionoperatorkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InfixExpressionOperatorKind]
-    expected_literals = [
-        "plus",
-        "or_",
-        "not_equals",
-        "left_shift",
-        "conditional_and",
-        "right_shift_unsigned",
-        "minus",
-        "remainder",
-        "conditional_or",
-        "greater_equals",
-        "less",
-        "right_shift_signed",
-        "times",
-        "xor",
-        "equals",
-        "and_",
-        "divide",
-        "greater",
-        "less_equals",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InfixExpressionOperatorKind"
 
 
 # =============================================================================
@@ -3293,203 +3293,155 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+MemberValuePair_strategy = st.builds(
+    MemberValuePair,
+)
+VariableDeclaration_strategy = st.builds(
+    VariableDeclaration,
+)
+DOM_SingleVariableDeclaration_strategy = st.builds(
+    DOM_SingleVariableDeclaration,
+    varargs=
+        safe_text
+)
+DOM_VariableDeclarationFragment_strategy = st.builds(
+    DOM_VariableDeclarationFragment,
+)
 CatchClause_strategy = st.builds(
     CatchClause,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-DOM::EmptyStatement_strategy = st.builds(
-    DOM::EmptyStatement,
+DOM_IfStatement_strategy = st.builds(
+    DOM_IfStatement,
 )
-DOM::SynchronizedStatement_strategy = st.builds(
-    DOM::SynchronizedStatement,
+DOM_DoStatement_strategy = st.builds(
+    DOM_DoStatement,
 )
-DOM::Block_strategy = st.builds(
-    DOM::Block,
+DOM_ExpressionStatement_strategy = st.builds(
+    DOM_ExpressionStatement,
 )
-DOM::SwitchCase_strategy = st.builds(
-    DOM::SwitchCase,
+DOM_SuperConstructorInvocation_strategy = st.builds(
+    DOM_SuperConstructorInvocation,
+)
+DOM_EnhancedForStatement_strategy = st.builds(
+    DOM_EnhancedForStatement,
+)
+DOM_VariableDeclarationStatement_strategy = st.builds(
+    DOM_VariableDeclarationStatement,
+)
+DOM_SwitchStatement_strategy = st.builds(
+    DOM_SwitchStatement,
+)
+DOM_SynchronizedStatement_strategy = st.builds(
+    DOM_SynchronizedStatement,
+)
+DOM_SwitchCase_strategy = st.builds(
+    DOM_SwitchCase,
     default=
         safe_text
 )
-DOM::TryStatement_strategy = st.builds(
-    DOM::TryStatement,
+DOM_ForStatement_strategy = st.builds(
+    DOM_ForStatement,
 )
-DOM::ThrowStatement_strategy = st.builds(
-    DOM::ThrowStatement,
+DOM_TryStatement_strategy = st.builds(
+    DOM_TryStatement,
 )
-DOM::WhileStatement_strategy = st.builds(
-    DOM::WhileStatement,
+DOM_BreakStatement_strategy = st.builds(
+    DOM_BreakStatement,
 )
-DOM::SuperConstructorInvocation_strategy = st.builds(
-    DOM::SuperConstructorInvocation,
+DOM_Block_strategy = st.builds(
+    DOM_Block,
 )
-DOM::ConstructorInvocation_strategy = st.builds(
-    DOM::ConstructorInvocation,
+DOM_ConstructorInvocation_strategy = st.builds(
+    DOM_ConstructorInvocation,
 )
-DOM::ReturnStatement_strategy = st.builds(
-    DOM::ReturnStatement,
+DOM_ReturnStatement_strategy = st.builds(
+    DOM_ReturnStatement,
 )
-DOM::TypeDeclarationStatement_strategy = st.builds(
-    DOM::TypeDeclarationStatement,
+DOM_WhileStatement_strategy = st.builds(
+    DOM_WhileStatement,
 )
-DOM::SwitchStatement_strategy = st.builds(
-    DOM::SwitchStatement,
+DOM_ContinueStatement_strategy = st.builds(
+    DOM_ContinueStatement,
 )
-DOM::ExpressionStatement_strategy = st.builds(
-    DOM::ExpressionStatement,
+DOM_EmptyStatement_strategy = st.builds(
+    DOM_EmptyStatement,
 )
-DOM::BreakStatement_strategy = st.builds(
-    DOM::BreakStatement,
+DOM_ThrowStatement_strategy = st.builds(
+    DOM_ThrowStatement,
 )
-DOM::LabeledStatement_strategy = st.builds(
-    DOM::LabeledStatement,
+DOM_TypeDeclarationStatement_strategy = st.builds(
+    DOM_TypeDeclarationStatement,
 )
-DOM::EnhancedForStatement_strategy = st.builds(
-    DOM::EnhancedForStatement,
+DOM_LabeledStatement_strategy = st.builds(
+    DOM_LabeledStatement,
 )
-DOM::ContinueStatement_strategy = st.builds(
-    DOM::ContinueStatement,
-)
-DOM::DoStatement_strategy = st.builds(
-    DOM::DoStatement,
-)
-DOM::IfStatement_strategy = st.builds(
-    DOM::IfStatement,
-)
-DOM::VariableDeclarationStatement_strategy = st.builds(
-    DOM::VariableDeclarationStatement,
-)
-DOM::ForStatement_strategy = st.builds(
-    DOM::ForStatement,
-)
-DOM::AssertStatement_strategy = st.builds(
-    DOM::AssertStatement,
-)
-TagElement_strategy = st.builds(
-    TagElement,
-)
-ArrayType_strategy = st.builds(
-    ArrayType,
-)
-ArrayInitializer_strategy = st.builds(
-    ArrayInitializer,
-)
-TypeParameter_strategy = st.builds(
-    TypeParameter,
-)
-VariableDeclarationFragment_strategy = st.builds(
-    VariableDeclarationFragment,
-)
-EnumConstantDeclaration_strategy = st.builds(
-    EnumConstantDeclaration,
-)
-AnonymousClassDeclaration_strategy = st.builds(
-    AnonymousClassDeclaration,
-)
-Annotation_strategy = st.builds(
-    Annotation,
+DOM_AssertStatement_strategy = st.builds(
+    DOM_AssertStatement,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-DOM::InfixExpression_strategy = st.builds(
-    DOM::InfixExpression,
-    operator=
-        safe_text
-)
-DOM::SuperFieldAccess_strategy = st.builds(
-    DOM::SuperFieldAccess,
-)
-DOM::ArrayAccess_strategy = st.builds(
-    DOM::ArrayAccess,
-)
-DOM::Name_strategy = st.builds(
-    DOM::Name,
+DOM_Name_strategy = st.builds(
+    DOM_Name,
     fullyQualifiedName=
         safe_text
 )
-DOM::ThisExpression_strategy = st.builds(
-    DOM::ThisExpression,
+DOM_ThisExpression_strategy = st.builds(
+    DOM_ThisExpression,
 )
-DOM::FieldAccess_strategy = st.builds(
-    DOM::FieldAccess,
-)
-DOM::ArrayInitializer_strategy = st.builds(
-    DOM::ArrayInitializer,
-)
-DOM::SuperMethodInvocation_strategy = st.builds(
-    DOM::SuperMethodInvocation,
-)
-DOM::MethodInvocation_strategy = st.builds(
-    DOM::MethodInvocation,
-)
-DOM::PostfixExpression_strategy = st.builds(
-    DOM::PostfixExpression,
-    operator=
-        safe_text
-)
-DOM::VariableDeclarationExpression_strategy = st.builds(
-    DOM::VariableDeclarationExpression,
-)
-DOM::ClassInstanceCreation_strategy = st.builds(
-    DOM::ClassInstanceCreation,
-)
-DOM::InstanceofExpression_strategy = st.builds(
-    DOM::InstanceofExpression,
-)
-DOM::NullLiteral_strategy = st.builds(
-    DOM::NullLiteral,
-)
-DOM::ConditionalExpression_strategy = st.builds(
-    DOM::ConditionalExpression,
-)
-DOM::Assignment_strategy = st.builds(
-    DOM::Assignment,
-    operator=
-        safe_text
-)
-DOM::TypeLiteral_strategy = st.builds(
-    DOM::TypeLiteral,
-)
-DOM::CastExpression_strategy = st.builds(
-    DOM::CastExpression,
-)
-DOM::StringLiteral_strategy = st.builds(
-    DOM::StringLiteral,
-    escapedValue=
-        safe_text,
-    literalValue=
-        safe_text
-)
-DOM::BooleanLiteral_strategy = st.builds(
-    DOM::BooleanLiteral,
-    booleanValue=
-        safe_text
-)
-DOM::ArrayCreation_strategy = st.builds(
-    DOM::ArrayCreation,
-)
-DOM::NumberLiteral_strategy = st.builds(
-    DOM::NumberLiteral,
+DOM_NumberLiteral_strategy = st.builds(
+    DOM_NumberLiteral,
     token=
         safe_text
 )
-DOM::CharacterLiteral_strategy = st.builds(
-    DOM::CharacterLiteral,
-    escapedValue=
-        safe_text,
-    charValue=
-        safe_text
+DOM_TypeLiteral_strategy = st.builds(
+    DOM_TypeLiteral,
 )
-DOM::PrefixExpression_strategy = st.builds(
-    DOM::PrefixExpression,
+DOM_SuperFieldAccess_strategy = st.builds(
+    DOM_SuperFieldAccess,
+)
+DOM_VariableDeclarationExpression_strategy = st.builds(
+    DOM_VariableDeclarationExpression,
+)
+DOM_PrefixExpression_strategy = st.builds(
+    DOM_PrefixExpression,
     operator=
         safe_text
 )
-DOM::ParenthesizedExpression_strategy = st.builds(
-    DOM::ParenthesizedExpression,
+DOM_ParenthesizedExpression_strategy = st.builds(
+    DOM_ParenthesizedExpression,
+)
+DOM_InstanceofExpression_strategy = st.builds(
+    DOM_InstanceofExpression,
+)
+DOM_SuperMethodInvocation_strategy = st.builds(
+    DOM_SuperMethodInvocation,
+)
+DOM_NullLiteral_strategy = st.builds(
+    DOM_NullLiteral,
+)
+DOM_StringLiteral_strategy = st.builds(
+    DOM_StringLiteral,
+    literalValue=
+        safe_text,
+    escapedValue=
+        safe_text
+)
+DOM_MethodInvocation_strategy = st.builds(
+    DOM_MethodInvocation,
+)
+DOM_PostfixExpression_strategy = st.builds(
+    DOM_PostfixExpression,
+    operator=
+        safe_text
+)
+DOM_InfixExpression_strategy = st.builds(
+    DOM_InfixExpression,
+    operator=
+        safe_text
 )
 SimpleName_strategy = st.builds(
     SimpleName,
@@ -3497,22 +3449,18 @@ SimpleName_strategy = st.builds(
 Name_strategy = st.builds(
     Name,
 )
-DOM::QualifiedName_strategy = st.builds(
-    DOM::QualifiedName,
+DOM_QualifiedName_strategy = st.builds(
+    DOM_QualifiedName,
+)
+DOM_SimpleName_strategy = st.builds(
+    DOM_SimpleName,
+    declaration=
+        safe_text,
+    identifier=
+        safe_text
 )
 AbstractTypeDeclaration_strategy = st.builds(
     AbstractTypeDeclaration,
-)
-DOM::AnnotationTypeDeclaration_strategy = st.builds(
-    DOM::AnnotationTypeDeclaration,
-)
-DOM::EnumDeclaration_strategy = st.builds(
-    DOM::EnumDeclaration,
-)
-DOM::TypeDeclaration_strategy = st.builds(
-    DOM::TypeDeclaration,
-    interface=
-        safe_text
 )
 ImportDeclaration_strategy = st.builds(
     ImportDeclaration,
@@ -3520,26 +3468,34 @@ ImportDeclaration_strategy = st.builds(
 PackageDeclaration_strategy = st.builds(
     PackageDeclaration,
 )
-DOM::ExtendedModifier_strategy = st.builds(
-    DOM::ExtendedModifier,
+DOM_ExtendedModifier_strategy = st.builds(
+    DOM_ExtendedModifier,
 )
 Type_strategy = st.builds(
     Type,
 )
-DOM::ParameterizedType_strategy = st.builds(
-    DOM::ParameterizedType,
+DOM_ArrayType_strategy = st.builds(
+    DOM_ArrayType,
+    dimensions=
+        safe_text
 )
-DOM::QualifiedType_strategy = st.builds(
-    DOM::QualifiedType,
+DOM_ParameterizedType_strategy = st.builds(
+    DOM_ParameterizedType,
 )
-DOM::PrimitiveType_strategy = st.builds(
-    DOM::PrimitiveType,
+DOM_SimpleType_strategy = st.builds(
+    DOM_SimpleType,
+)
+DOM_PrimitiveType_strategy = st.builds(
+    DOM_PrimitiveType,
     code=
         safe_text
 )
-DOM::ArrayType_strategy = st.builds(
-    DOM::ArrayType,
-    dimensions=
+DOM_QualifiedType_strategy = st.builds(
+    DOM_QualifiedType,
+)
+DOM_WildcardType_strategy = st.builds(
+    DOM_WildcardType,
+    upperBound=
         safe_text
 )
 MethodRefParameter_strategy = st.builds(
@@ -3548,125 +3504,62 @@ MethodRefParameter_strategy = st.builds(
 BodyDeclaration_strategy = st.builds(
     BodyDeclaration,
 )
-DOM::Initializer_strategy = st.builds(
-    DOM::Initializer,
-)
-DOM::AnnotationTypeMemberDeclaration_strategy = st.builds(
-    DOM::AnnotationTypeMemberDeclaration,
-)
-DOM::MethodDeclaration_strategy = st.builds(
-    DOM::MethodDeclaration,
-    varargs=
-        safe_text,
-    extraDimensions=
-        safe_text,
-    constructor=
-        safe_text
-)
-DOM::FieldDeclaration_strategy = st.builds(
-    DOM::FieldDeclaration,
-)
-DOM::AbstractTypeDeclaration_strategy = st.builds(
-    DOM::AbstractTypeDeclaration,
-    memberTypeDeclaration=
-        safe_text,
-    localTypeDeclaration=
-        safe_text,
-    packageMemberTypeDeclaration=
-        safe_text
-)
-DOM::EnumConstantDeclaration_strategy = st.builds(
-    DOM::EnumConstantDeclaration,
-)
-DOM::ASTNode_strategy = st.builds(
-    DOM::ASTNode,
+DOM_ASTNode_strategy = st.builds(
+    DOM_ASTNode,
 )
 ASTNode_strategy = st.builds(
     ASTNode,
 )
-DOM::VariableDeclaration_strategy = st.builds(
-    DOM::VariableDeclaration,
-    extraDimensions=
+DOM_MethodRef_strategy = st.builds(
+    DOM_MethodRef,
+)
+DOM_MemberRef_strategy = st.builds(
+    DOM_MemberRef,
+)
+DOM_AnonymousClassDeclaration_strategy = st.builds(
+    DOM_AnonymousClassDeclaration,
+)
+DOM_MemberValuePair_strategy = st.builds(
+    DOM_MemberValuePair,
+)
+DOM_MethodRefParameter_strategy = st.builds(
+    DOM_MethodRefParameter,
+    varargs=
         safe_text
 )
-DOM::Statement_strategy = st.builds(
-    DOM::Statement,
-)
-DOM::MemberValuePair_strategy = st.builds(
-    DOM::MemberValuePair,
-)
-DOM::MemberRef_strategy = st.builds(
-    DOM::MemberRef,
-)
-DOM::BodyDeclaration_strategy = st.builds(
-    DOM::BodyDeclaration,
-)
-DOM::AnonymousClassDeclaration_strategy = st.builds(
-    DOM::AnonymousClassDeclaration,
-)
-DOM::Type_strategy = st.builds(
-    DOM::Type,
-)
-DOM::TagElement_strategy = st.builds(
-    DOM::TagElement,
-    nested=
-        safe_text,
-    tagName=
-        safe_text
-)
-DOM::MethodRef_strategy = st.builds(
-    DOM::MethodRef,
-)
-DOM::TextElement_strategy = st.builds(
-    DOM::TextElement,
+DOM_TextElement_strategy = st.builds(
+    DOM_TextElement,
     text=
         safe_text
 )
-DOM::PackageDeclaration_strategy = st.builds(
-    DOM::PackageDeclaration,
-)
-DOM::TypeParameter_strategy = st.builds(
-    DOM::TypeParameter,
-)
-DOM::Expression_strategy = st.builds(
-    DOM::Expression,
-    resolveBoxing=
-        safe_text,
-    resolveUnboxing=
-        safe_text
-)
-DOM::ImportDeclaration_strategy = st.builds(
-    DOM::ImportDeclaration,
+DOM_ImportDeclaration_strategy = st.builds(
+    DOM_ImportDeclaration,
     onDemand=
         safe_text,
     static=
         safe_text
 )
-DOM::MethodRefParameter_strategy = st.builds(
-    DOM::MethodRefParameter,
-    varargs=
+DOM_BodyDeclaration_strategy = st.builds(
+    DOM_BodyDeclaration,
+)
+DOM_Expression_strategy = st.builds(
+    DOM_Expression,
+    resolveBoxing=
+        safe_text,
+    resolveUnboxing=
         safe_text
 )
-DOM::AST_strategy = st.builds(
-    DOM::AST,
+DOM_AST_strategy = st.builds(
+    DOM_AST,
 )
 Comment_strategy = st.builds(
     Comment,
 )
-DOM::LineComment_strategy = st.builds(
-    DOM::LineComment,
+DOM_CompilationUnit_strategy = st.builds(
+    DOM_CompilationUnit,
 )
-DOM::BlockComment_strategy = st.builds(
-    DOM::BlockComment,
-)
-DOM::Javadoc_strategy = st.builds(
-    DOM::Javadoc,
-)
-DOM::CompilationUnit_strategy = st.builds(
-    DOM::CompilationUnit,
-)
-DOM::Comment_strategy = st.builds(
-    DOM::Comment,
+DOM_Comment_strategy = st.builds(
+    DOM_Comment,
 )
 SingleVariableDeclaration_strategy = st.builds(
     SingleVariableDeclaration,
@@ -3674,8 +3567,8 @@ SingleVariableDeclaration_strategy = st.builds(
 Block_strategy = st.builds(
     Block,
 )
-DOM::CatchClause_strategy = st.builds(
-    DOM::CatchClause,
+DOM_CatchClause_strategy = st.builds(
+    DOM_CatchClause,
 )
 Javadoc_strategy = st.builds(
     Javadoc,
@@ -3683,41 +3576,38 @@ Javadoc_strategy = st.builds(
 ExtendedModifier_strategy = st.builds(
     ExtendedModifier,
 )
-DOM::Annotation_strategy = st.builds(
-    DOM::Annotation,
-)
-DOM::Modifier_strategy = st.builds(
-    DOM::Modifier,
-    volatile=
-        safe_text,
+DOM_Modifier_strategy = st.builds(
+    DOM_Modifier,
     abstract=
         safe_text,
     static=
         safe_text,
-    none=
+    final=
         safe_text,
     native=
         safe_text,
-    strictfp=
-        safe_text,
-    synchronized=
-        safe_text,
     private=
         safe_text,
-    public=
-        safe_text,
-    final=
+    none=
         safe_text,
     transient=
         safe_text,
+    public=
+        safe_text,
+    synchronized=
+        safe_text,
+    strictfp=
+        safe_text,
     protected=
+        safe_text,
+    volatile=
         safe_text
 )
 ITypeParameter_strategy = st.builds(
     ITypeParameter,
 )
-Core::Parameter_strategy = st.builds(
-    Core::Parameter,
+Core_Parameter_strategy = st.builds(
+    Core_Parameter,
     type=
         safe_text,
     name=
@@ -3726,8 +3616,8 @@ Core::Parameter_strategy = st.builds(
 Parameter_strategy = st.builds(
     Parameter,
 )
-Core::ISourceRange_strategy = st.builds(
-    Core::ISourceRange,
+Core_ISourceRange_strategy = st.builds(
+    Core_ISourceRange,
     length=
         safe_text,
     offset=
@@ -3736,8 +3626,8 @@ Core::ISourceRange_strategy = st.builds(
 ISourceRange_strategy = st.builds(
     ISourceRange,
 )
-Core::ISourceReference_strategy = st.builds(
-    Core::ISourceReference,
+Core_ISourceReference_strategy = st.builds(
+    Core_ISourceReference,
     source=
         safe_text
 )
@@ -3756,38 +3646,38 @@ IInitializer_strategy = st.builds(
 IMember_strategy = st.builds(
     IMember,
 )
-Core::IField_strategy = st.builds(
-    Core::IField,
-    isVolatile=
+Core_IMethod_strategy = st.builds(
+    Core_IMethod,
+    exceptionTypes=
         safe_text,
-    isTransient=
-        safe_text,
-    constant=
-        safe_text,
-    isEnumConstant=
-        safe_text,
-    typeSignature=
-        safe_text
-)
-Core::IMethod_strategy = st.builds(
-    Core::IMethod,
     returnType=
         safe_text,
     isConstructor=
         safe_text,
-    exceptionTypes=
-        safe_text,
     isMainMethod=
         safe_text
 )
-Core::IInitializer_strategy = st.builds(
-    Core::IInitializer,
-)
-Core::IType_strategy = st.builds(
-    Core::IType,
-    fullyQualifiedParametrizedName=
+Core_IField_strategy = st.builds(
+    Core_IField,
+    constant=
         safe_text,
+    isVolatile=
+        safe_text,
+    typeSignature=
+        safe_text,
+    isTransient=
+        safe_text,
+    isEnumConstant=
+        safe_text
+)
+Core_IInitializer_strategy = st.builds(
+    Core_IInitializer,
+)
+Core_IType_strategy = st.builds(
+    Core_IType,
     fullyQualifiedName=
+        safe_text,
+    fullyQualifiedParametrizedName=
         safe_text
 )
 IPackageFragment_strategy = st.builds(
@@ -3799,11 +3689,11 @@ IJavaElement_strategy = st.builds(
 IPackageFragmentRoot_strategy = st.builds(
     IPackageFragmentRoot,
 )
-Core::SourcePackageFragmentRoot_strategy = st.builds(
-    Core::SourcePackageFragmentRoot,
+Core_SourcePackageFragmentRoot_strategy = st.builds(
+    Core_SourcePackageFragmentRoot,
 )
-Core::BinaryPackageFragmentRoot_strategy = st.builds(
-    Core::BinaryPackageFragmentRoot,
+Core_BinaryPackageFragmentRoot_strategy = st.builds(
+    Core_BinaryPackageFragmentRoot,
 )
 IJavaProject_strategy = st.builds(
     IJavaProject,
@@ -3811,22 +3701,22 @@ IJavaProject_strategy = st.builds(
 PhysicalElement_strategy = st.builds(
     PhysicalElement,
 )
-Core::IPackageFragmentRoot_strategy = st.builds(
-    Core::IPackageFragmentRoot,
+Core_IPackageFragmentRoot_strategy = st.builds(
+    Core_IPackageFragmentRoot,
 )
-Core::IJavaProject_strategy = st.builds(
-    Core::IJavaProject,
-)
-Core::IPackageFragment_strategy = st.builds(
-    Core::IPackageFragment,
+Core_IPackageFragment_strategy = st.builds(
+    Core_IPackageFragment,
     isDefaultPackage=
         safe_text
 )
-Core::IJavaModel_strategy = st.builds(
-    Core::IJavaModel,
+Core_IJavaProject_strategy = st.builds(
+    Core_IJavaProject,
 )
-Core::PhysicalElement_strategy = st.builds(
-    Core::PhysicalElement,
+Core_IJavaModel_strategy = st.builds(
+    Core_IJavaModel,
+)
+Core_PhysicalElement_strategy = st.builds(
+    Core_PhysicalElement,
     isReadOnly=
         safe_text,
     path=
@@ -3841,36 +3731,36 @@ IType_strategy = st.builds(
 ITypeRoot_strategy = st.builds(
     ITypeRoot,
 )
-Core::IClassFile_strategy = st.builds(
-    Core::IClassFile,
+Core_IClassFile_strategy = st.builds(
+    Core_IClassFile,
     isClass=
         safe_text,
     isInterface=
         safe_text
 )
-Core::ICompilationUnit_strategy = st.builds(
-    Core::ICompilationUnit,
+Core_ICompilationUnit_strategy = st.builds(
+    Core_ICompilationUnit,
 )
 ISourceReference_strategy = st.builds(
     ISourceReference,
 )
-Core::IMember_strategy = st.builds(
-    Core::IMember,
-)
-Core::ITypeParameter_strategy = st.builds(
-    Core::ITypeParameter,
+Core_ITypeParameter_strategy = st.builds(
+    Core_ITypeParameter,
     bounds=
         safe_text
 )
-Core::IImportDeclaration_strategy = st.builds(
-    Core::IImportDeclaration,
-    isOnDemand=
-        safe_text,
+Core_IImportDeclaration_strategy = st.builds(
+    Core_IImportDeclaration,
     isStatic=
+        safe_text,
+    isOnDemand=
         safe_text
 )
-Core::ITypeRoot_strategy = st.builds(
-    Core::ITypeRoot,
+Core_IMember_strategy = st.builds(
+    Core_IMember,
+)
+Core_ITypeRoot_strategy = st.builds(
+    Core_ITypeRoot,
 )
 ICompilationUnit_strategy = st.builds(
     ICompilationUnit,
@@ -3878,49 +3768,187 @@ ICompilationUnit_strategy = st.builds(
 IClassFile_strategy = st.builds(
     IClassFile,
 )
-Core::IJavaElement_strategy = st.builds(
-    Core::IJavaElement,
+Core_IJavaElement_strategy = st.builds(
+    Core_IJavaElement,
     elementName=
         safe_text
 )
-DOM::SingleMemberAnnotation_strategy = st.builds(
-    DOM::SingleMemberAnnotation,
+DOM_FieldAccess_strategy = st.builds(
+    DOM_FieldAccess,
 )
-MemberValuePair_strategy = st.builds(
-    MemberValuePair,
+DOM_ClassInstanceCreation_strategy = st.builds(
+    DOM_ClassInstanceCreation,
 )
-DOM::NormalAnnotation_strategy = st.builds(
-    DOM::NormalAnnotation,
-)
-DOM::MarkerAnnotation_strategy = st.builds(
-    DOM::MarkerAnnotation,
-)
-DOM::SimpleName_strategy = st.builds(
-    DOM::SimpleName,
-    identifier=
+DOM_CharacterLiteral_strategy = st.builds(
+    DOM_CharacterLiteral,
+    escapedValue=
         safe_text,
-    declaration=
+    charValue=
         safe_text
 )
-VariableDeclaration_strategy = st.builds(
-    VariableDeclaration,
+DOM_CastExpression_strategy = st.builds(
+    DOM_CastExpression,
 )
-DOM::VariableDeclarationFragment_strategy = st.builds(
-    DOM::VariableDeclarationFragment,
+DOM_BooleanLiteral_strategy = st.builds(
+    DOM_BooleanLiteral,
+    booleanValue=
+        safe_text
 )
-DOM::SingleVariableDeclaration_strategy = st.builds(
-    DOM::SingleVariableDeclaration,
+DOM_ConditionalExpression_strategy = st.builds(
+    DOM_ConditionalExpression,
+)
+DOM_ArrayCreation_strategy = st.builds(
+    DOM_ArrayCreation,
+)
+DOM_ArrayAccess_strategy = st.builds(
+    DOM_ArrayAccess,
+)
+DOM_Annotation_strategy = st.builds(
+    DOM_Annotation,
+)
+DOM_LineComment_strategy = st.builds(
+    DOM_LineComment,
+)
+TagElement_strategy = st.builds(
+    TagElement,
+)
+DOM_Javadoc_strategy = st.builds(
+    DOM_Javadoc,
+)
+DOM_BlockComment_strategy = st.builds(
+    DOM_BlockComment,
+)
+DOM_Assignment_strategy = st.builds(
+    DOM_Assignment,
+    operator=
+        safe_text
+)
+DOM_ArrayInitializer_strategy = st.builds(
+    DOM_ArrayInitializer,
+)
+ArrayType_strategy = st.builds(
+    ArrayType,
+)
+ArrayInitializer_strategy = st.builds(
+    ArrayInitializer,
+)
+TypeParameter_strategy = st.builds(
+    TypeParameter,
+)
+DOM_MethodDeclaration_strategy = st.builds(
+    DOM_MethodDeclaration,
+    extraDimensions=
+        safe_text,
     varargs=
+        safe_text,
+    constructor=
         safe_text
 )
-DOM::WildcardType_strategy = st.builds(
-    DOM::WildcardType,
-    upperBound=
+DOM_Initializer_strategy = st.builds(
+    DOM_Initializer,
+)
+VariableDeclarationFragment_strategy = st.builds(
+    VariableDeclarationFragment,
+)
+DOM_TypeDeclaration_strategy = st.builds(
+    DOM_TypeDeclaration,
+    interface=
         safe_text
 )
-DOM::SimpleType_strategy = st.builds(
-    DOM::SimpleType,
+EnumConstantDeclaration_strategy = st.builds(
+    EnumConstantDeclaration,
 )
+DOM_EnumDeclaration_strategy = st.builds(
+    DOM_EnumDeclaration,
+)
+DOM_AnnotationTypeDeclaration_strategy = st.builds(
+    DOM_AnnotationTypeDeclaration,
+)
+DOM_AnnotationTypeMemberDeclaration_strategy = st.builds(
+    DOM_AnnotationTypeMemberDeclaration,
+)
+DOM_AbstractTypeDeclaration_strategy = st.builds(
+    DOM_AbstractTypeDeclaration,
+    packageMemberTypeDeclaration=
+        safe_text,
+    memberTypeDeclaration=
+        safe_text,
+    localTypeDeclaration=
+        safe_text
+)
+DOM_FieldDeclaration_strategy = st.builds(
+    DOM_FieldDeclaration,
+)
+AnonymousClassDeclaration_strategy = st.builds(
+    AnonymousClassDeclaration,
+)
+DOM_EnumConstantDeclaration_strategy = st.builds(
+    DOM_EnumConstantDeclaration,
+)
+DOM_TagElement_strategy = st.builds(
+    DOM_TagElement,
+    nested=
+        safe_text,
+    tagName=
+        safe_text
+)
+DOM_Statement_strategy = st.builds(
+    DOM_Statement,
+)
+Annotation_strategy = st.builds(
+    Annotation,
+)
+DOM_MarkerAnnotation_strategy = st.builds(
+    DOM_MarkerAnnotation,
+)
+DOM_NormalAnnotation_strategy = st.builds(
+    DOM_NormalAnnotation,
+)
+DOM_SingleMemberAnnotation_strategy = st.builds(
+    DOM_SingleMemberAnnotation,
+)
+DOM_PackageDeclaration_strategy = st.builds(
+    DOM_PackageDeclaration,
+)
+DOM_VariableDeclaration_strategy = st.builds(
+    DOM_VariableDeclaration,
+    extraDimensions=
+        safe_text
+)
+DOM_TypeParameter_strategy = st.builds(
+    DOM_TypeParameter,
+)
+DOM_Type_strategy = st.builds(
+    DOM_Type,
+)
+
+@given(instance=MemberValuePair_strategy)
+@settings(max_examples=50)
+def test_membervaluepair_instantiation(instance):
+    assert isinstance(instance, MemberValuePair)
+
+@given(instance=VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, VariableDeclaration)
+
+@given(instance=DOM_SingleVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_singlevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_SingleVariableDeclaration)
+
+
+
+@given(instance=DOM_SingleVariableDeclaration_strategy)
+def test_dom_singlevariabledeclaration_varargs_setter(instance):
+    original = instance.varargs
+    instance.varargs = original
+    assert instance.varargs == original
+
+@given(instance=DOM_VariableDeclarationFragment_strategy)
+@settings(max_examples=50)
+def test_dom_variabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, DOM_VariableDeclarationFragment)
 
 @given(instance=CatchClause_strategy)
 @settings(max_examples=50)
@@ -3932,417 +3960,259 @@ def test_catchclause_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=DOM::EmptyStatement_strategy)
+@given(instance=DOM_IfStatement_strategy)
 @settings(max_examples=50)
-def test_dom::emptystatement_instantiation(instance):
-    assert isinstance(instance, DOM::EmptyStatement)
+def test_dom_ifstatement_instantiation(instance):
+    assert isinstance(instance, DOM_IfStatement)
 
-@given(instance=DOM::SynchronizedStatement_strategy)
+@given(instance=DOM_DoStatement_strategy)
 @settings(max_examples=50)
-def test_dom::synchronizedstatement_instantiation(instance):
-    assert isinstance(instance, DOM::SynchronizedStatement)
+def test_dom_dostatement_instantiation(instance):
+    assert isinstance(instance, DOM_DoStatement)
 
-@given(instance=DOM::Block_strategy)
+@given(instance=DOM_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_dom::block_instantiation(instance):
-    assert isinstance(instance, DOM::Block)
+def test_dom_expressionstatement_instantiation(instance):
+    assert isinstance(instance, DOM_ExpressionStatement)
 
-@given(instance=DOM::SwitchCase_strategy)
+@given(instance=DOM_SuperConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_dom::switchcase_instantiation(instance):
-    assert isinstance(instance, DOM::SwitchCase)
+def test_dom_superconstructorinvocation_instantiation(instance):
+    assert isinstance(instance, DOM_SuperConstructorInvocation)
 
-@given(instance=DOM::SwitchCase_strategy)
-def test_dom::switchcase_default_type(instance):
-    assert isinstance(instance.default, str)
+@given(instance=DOM_EnhancedForStatement_strategy)
+@settings(max_examples=50)
+def test_dom_enhancedforstatement_instantiation(instance):
+    assert isinstance(instance, DOM_EnhancedForStatement)
+
+@given(instance=DOM_VariableDeclarationStatement_strategy)
+@settings(max_examples=50)
+def test_dom_variabledeclarationstatement_instantiation(instance):
+    assert isinstance(instance, DOM_VariableDeclarationStatement)
+
+@given(instance=DOM_SwitchStatement_strategy)
+@settings(max_examples=50)
+def test_dom_switchstatement_instantiation(instance):
+    assert isinstance(instance, DOM_SwitchStatement)
+
+@given(instance=DOM_SynchronizedStatement_strategy)
+@settings(max_examples=50)
+def test_dom_synchronizedstatement_instantiation(instance):
+    assert isinstance(instance, DOM_SynchronizedStatement)
+
+@given(instance=DOM_SwitchCase_strategy)
+@settings(max_examples=50)
+def test_dom_switchcase_instantiation(instance):
+    assert isinstance(instance, DOM_SwitchCase)
 
 
-@given(instance=DOM::SwitchCase_strategy)
-def test_dom::switchcase_default_setter(instance):
+
+@given(instance=DOM_SwitchCase_strategy)
+def test_dom_switchcase_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=DOM::TryStatement_strategy)
+@given(instance=DOM_ForStatement_strategy)
 @settings(max_examples=50)
-def test_dom::trystatement_instantiation(instance):
-    assert isinstance(instance, DOM::TryStatement)
+def test_dom_forstatement_instantiation(instance):
+    assert isinstance(instance, DOM_ForStatement)
 
-@given(instance=DOM::ThrowStatement_strategy)
+@given(instance=DOM_TryStatement_strategy)
 @settings(max_examples=50)
-def test_dom::throwstatement_instantiation(instance):
-    assert isinstance(instance, DOM::ThrowStatement)
+def test_dom_trystatement_instantiation(instance):
+    assert isinstance(instance, DOM_TryStatement)
 
-@given(instance=DOM::WhileStatement_strategy)
+@given(instance=DOM_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_dom::whilestatement_instantiation(instance):
-    assert isinstance(instance, DOM::WhileStatement)
+def test_dom_breakstatement_instantiation(instance):
+    assert isinstance(instance, DOM_BreakStatement)
 
-@given(instance=DOM::SuperConstructorInvocation_strategy)
+@given(instance=DOM_Block_strategy)
 @settings(max_examples=50)
-def test_dom::superconstructorinvocation_instantiation(instance):
-    assert isinstance(instance, DOM::SuperConstructorInvocation)
+def test_dom_block_instantiation(instance):
+    assert isinstance(instance, DOM_Block)
 
-@given(instance=DOM::ConstructorInvocation_strategy)
+@given(instance=DOM_ConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_dom::constructorinvocation_instantiation(instance):
-    assert isinstance(instance, DOM::ConstructorInvocation)
+def test_dom_constructorinvocation_instantiation(instance):
+    assert isinstance(instance, DOM_ConstructorInvocation)
 
-@given(instance=DOM::ReturnStatement_strategy)
+@given(instance=DOM_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_dom::returnstatement_instantiation(instance):
-    assert isinstance(instance, DOM::ReturnStatement)
+def test_dom_returnstatement_instantiation(instance):
+    assert isinstance(instance, DOM_ReturnStatement)
 
-@given(instance=DOM::TypeDeclarationStatement_strategy)
+@given(instance=DOM_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_dom::typedeclarationstatement_instantiation(instance):
-    assert isinstance(instance, DOM::TypeDeclarationStatement)
+def test_dom_whilestatement_instantiation(instance):
+    assert isinstance(instance, DOM_WhileStatement)
 
-@given(instance=DOM::SwitchStatement_strategy)
+@given(instance=DOM_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_dom::switchstatement_instantiation(instance):
-    assert isinstance(instance, DOM::SwitchStatement)
+def test_dom_continuestatement_instantiation(instance):
+    assert isinstance(instance, DOM_ContinueStatement)
 
-@given(instance=DOM::ExpressionStatement_strategy)
+@given(instance=DOM_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_dom::expressionstatement_instantiation(instance):
-    assert isinstance(instance, DOM::ExpressionStatement)
+def test_dom_emptystatement_instantiation(instance):
+    assert isinstance(instance, DOM_EmptyStatement)
 
-@given(instance=DOM::BreakStatement_strategy)
+@given(instance=DOM_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_dom::breakstatement_instantiation(instance):
-    assert isinstance(instance, DOM::BreakStatement)
+def test_dom_throwstatement_instantiation(instance):
+    assert isinstance(instance, DOM_ThrowStatement)
 
-@given(instance=DOM::LabeledStatement_strategy)
+@given(instance=DOM_TypeDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_dom::labeledstatement_instantiation(instance):
-    assert isinstance(instance, DOM::LabeledStatement)
+def test_dom_typedeclarationstatement_instantiation(instance):
+    assert isinstance(instance, DOM_TypeDeclarationStatement)
 
-@given(instance=DOM::EnhancedForStatement_strategy)
+@given(instance=DOM_LabeledStatement_strategy)
 @settings(max_examples=50)
-def test_dom::enhancedforstatement_instantiation(instance):
-    assert isinstance(instance, DOM::EnhancedForStatement)
+def test_dom_labeledstatement_instantiation(instance):
+    assert isinstance(instance, DOM_LabeledStatement)
 
-@given(instance=DOM::ContinueStatement_strategy)
+@given(instance=DOM_AssertStatement_strategy)
 @settings(max_examples=50)
-def test_dom::continuestatement_instantiation(instance):
-    assert isinstance(instance, DOM::ContinueStatement)
-
-@given(instance=DOM::DoStatement_strategy)
-@settings(max_examples=50)
-def test_dom::dostatement_instantiation(instance):
-    assert isinstance(instance, DOM::DoStatement)
-
-@given(instance=DOM::IfStatement_strategy)
-@settings(max_examples=50)
-def test_dom::ifstatement_instantiation(instance):
-    assert isinstance(instance, DOM::IfStatement)
-
-@given(instance=DOM::VariableDeclarationStatement_strategy)
-@settings(max_examples=50)
-def test_dom::variabledeclarationstatement_instantiation(instance):
-    assert isinstance(instance, DOM::VariableDeclarationStatement)
-
-@given(instance=DOM::ForStatement_strategy)
-@settings(max_examples=50)
-def test_dom::forstatement_instantiation(instance):
-    assert isinstance(instance, DOM::ForStatement)
-
-@given(instance=DOM::AssertStatement_strategy)
-@settings(max_examples=50)
-def test_dom::assertstatement_instantiation(instance):
-    assert isinstance(instance, DOM::AssertStatement)
-
-@given(instance=TagElement_strategy)
-@settings(max_examples=50)
-def test_tagelement_instantiation(instance):
-    assert isinstance(instance, TagElement)
-
-@given(instance=ArrayType_strategy)
-@settings(max_examples=50)
-def test_arraytype_instantiation(instance):
-    assert isinstance(instance, ArrayType)
-
-@given(instance=ArrayInitializer_strategy)
-@settings(max_examples=50)
-def test_arrayinitializer_instantiation(instance):
-    assert isinstance(instance, ArrayInitializer)
-
-@given(instance=TypeParameter_strategy)
-@settings(max_examples=50)
-def test_typeparameter_instantiation(instance):
-    assert isinstance(instance, TypeParameter)
-
-@given(instance=VariableDeclarationFragment_strategy)
-@settings(max_examples=50)
-def test_variabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, VariableDeclarationFragment)
-
-@given(instance=EnumConstantDeclaration_strategy)
-@settings(max_examples=50)
-def test_enumconstantdeclaration_instantiation(instance):
-    assert isinstance(instance, EnumConstantDeclaration)
-
-@given(instance=AnonymousClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_anonymousclassdeclaration_instantiation(instance):
-    assert isinstance(instance, AnonymousClassDeclaration)
-
-@given(instance=Annotation_strategy)
-@settings(max_examples=50)
-def test_annotation_instantiation(instance):
-    assert isinstance(instance, Annotation)
+def test_dom_assertstatement_instantiation(instance):
+    assert isinstance(instance, DOM_AssertStatement)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=DOM::InfixExpression_strategy)
+@given(instance=DOM_Name_strategy)
 @settings(max_examples=50)
-def test_dom::infixexpression_instantiation(instance):
-    assert isinstance(instance, DOM::InfixExpression)
-
-@given(instance=DOM::InfixExpression_strategy)
-def test_dom::infixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_dom_name_instantiation(instance):
+    assert isinstance(instance, DOM_Name)
 
 
-@given(instance=DOM::InfixExpression_strategy)
-def test_dom::infixexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=DOM::SuperFieldAccess_strategy)
-@settings(max_examples=50)
-def test_dom::superfieldaccess_instantiation(instance):
-    assert isinstance(instance, DOM::SuperFieldAccess)
-
-@given(instance=DOM::ArrayAccess_strategy)
-@settings(max_examples=50)
-def test_dom::arrayaccess_instantiation(instance):
-    assert isinstance(instance, DOM::ArrayAccess)
-
-@given(instance=DOM::Name_strategy)
-@settings(max_examples=50)
-def test_dom::name_instantiation(instance):
-    assert isinstance(instance, DOM::Name)
-
-@given(instance=DOM::Name_strategy)
-def test_dom::name_fullyQualifiedName_type(instance):
-    assert isinstance(instance.fullyQualifiedName, str)
-
-
-@given(instance=DOM::Name_strategy)
-def test_dom::name_fullyQualifiedName_setter(instance):
+@given(instance=DOM_Name_strategy)
+def test_dom_name_fullyQualifiedName_setter(instance):
     original = instance.fullyQualifiedName
     instance.fullyQualifiedName = original
     assert instance.fullyQualifiedName == original
 
-@given(instance=DOM::ThisExpression_strategy)
+@given(instance=DOM_ThisExpression_strategy)
 @settings(max_examples=50)
-def test_dom::thisexpression_instantiation(instance):
-    assert isinstance(instance, DOM::ThisExpression)
+def test_dom_thisexpression_instantiation(instance):
+    assert isinstance(instance, DOM_ThisExpression)
 
-@given(instance=DOM::FieldAccess_strategy)
+@given(instance=DOM_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_dom::fieldaccess_instantiation(instance):
-    assert isinstance(instance, DOM::FieldAccess)
-
-@given(instance=DOM::ArrayInitializer_strategy)
-@settings(max_examples=50)
-def test_dom::arrayinitializer_instantiation(instance):
-    assert isinstance(instance, DOM::ArrayInitializer)
-
-@given(instance=DOM::SuperMethodInvocation_strategy)
-@settings(max_examples=50)
-def test_dom::supermethodinvocation_instantiation(instance):
-    assert isinstance(instance, DOM::SuperMethodInvocation)
-
-@given(instance=DOM::MethodInvocation_strategy)
-@settings(max_examples=50)
-def test_dom::methodinvocation_instantiation(instance):
-    assert isinstance(instance, DOM::MethodInvocation)
-
-@given(instance=DOM::PostfixExpression_strategy)
-@settings(max_examples=50)
-def test_dom::postfixexpression_instantiation(instance):
-    assert isinstance(instance, DOM::PostfixExpression)
-
-@given(instance=DOM::PostfixExpression_strategy)
-def test_dom::postfixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_dom_numberliteral_instantiation(instance):
+    assert isinstance(instance, DOM_NumberLiteral)
 
 
-@given(instance=DOM::PostfixExpression_strategy)
-def test_dom::postfixexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=DOM::VariableDeclarationExpression_strategy)
-@settings(max_examples=50)
-def test_dom::variabledeclarationexpression_instantiation(instance):
-    assert isinstance(instance, DOM::VariableDeclarationExpression)
-
-@given(instance=DOM::ClassInstanceCreation_strategy)
-@settings(max_examples=50)
-def test_dom::classinstancecreation_instantiation(instance):
-    assert isinstance(instance, DOM::ClassInstanceCreation)
-
-@given(instance=DOM::InstanceofExpression_strategy)
-@settings(max_examples=50)
-def test_dom::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, DOM::InstanceofExpression)
-
-@given(instance=DOM::NullLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::nullliteral_instantiation(instance):
-    assert isinstance(instance, DOM::NullLiteral)
-
-@given(instance=DOM::ConditionalExpression_strategy)
-@settings(max_examples=50)
-def test_dom::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, DOM::ConditionalExpression)
-
-@given(instance=DOM::Assignment_strategy)
-@settings(max_examples=50)
-def test_dom::assignment_instantiation(instance):
-    assert isinstance(instance, DOM::Assignment)
-
-@given(instance=DOM::Assignment_strategy)
-def test_dom::assignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=DOM::Assignment_strategy)
-def test_dom::assignment_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=DOM::TypeLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::typeliteral_instantiation(instance):
-    assert isinstance(instance, DOM::TypeLiteral)
-
-@given(instance=DOM::CastExpression_strategy)
-@settings(max_examples=50)
-def test_dom::castexpression_instantiation(instance):
-    assert isinstance(instance, DOM::CastExpression)
-
-@given(instance=DOM::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::stringliteral_instantiation(instance):
-    assert isinstance(instance, DOM::StringLiteral)
-
-@given(instance=DOM::StringLiteral_strategy)
-def test_dom::stringliteral_escapedValue_type(instance):
-    assert isinstance(instance.escapedValue, str)
-
-
-@given(instance=DOM::StringLiteral_strategy)
-def test_dom::stringliteral_escapedValue_setter(instance):
-    original = instance.escapedValue
-    instance.escapedValue = original
-    assert instance.escapedValue == original
-
-@given(instance=DOM::StringLiteral_strategy)
-def test_dom::stringliteral_literalValue_type(instance):
-    assert isinstance(instance.literalValue, str)
-
-
-@given(instance=DOM::StringLiteral_strategy)
-def test_dom::stringliteral_literalValue_setter(instance):
-    original = instance.literalValue
-    instance.literalValue = original
-    assert instance.literalValue == original
-
-@given(instance=DOM::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::booleanliteral_instantiation(instance):
-    assert isinstance(instance, DOM::BooleanLiteral)
-
-@given(instance=DOM::BooleanLiteral_strategy)
-def test_dom::booleanliteral_booleanValue_type(instance):
-    assert isinstance(instance.booleanValue, str)
-
-
-@given(instance=DOM::BooleanLiteral_strategy)
-def test_dom::booleanliteral_booleanValue_setter(instance):
-    original = instance.booleanValue
-    instance.booleanValue = original
-    assert instance.booleanValue == original
-
-@given(instance=DOM::ArrayCreation_strategy)
-@settings(max_examples=50)
-def test_dom::arraycreation_instantiation(instance):
-    assert isinstance(instance, DOM::ArrayCreation)
-
-@given(instance=DOM::NumberLiteral_strategy)
-@settings(max_examples=50)
-def test_dom::numberliteral_instantiation(instance):
-    assert isinstance(instance, DOM::NumberLiteral)
-
-@given(instance=DOM::NumberLiteral_strategy)
-def test_dom::numberliteral_token_type(instance):
-    assert isinstance(instance.token, str)
-
-
-@given(instance=DOM::NumberLiteral_strategy)
-def test_dom::numberliteral_token_setter(instance):
+@given(instance=DOM_NumberLiteral_strategy)
+def test_dom_numberliteral_token_setter(instance):
     original = instance.token
     instance.token = original
     assert instance.token == original
 
-@given(instance=DOM::CharacterLiteral_strategy)
+@given(instance=DOM_TypeLiteral_strategy)
 @settings(max_examples=50)
-def test_dom::characterliteral_instantiation(instance):
-    assert isinstance(instance, DOM::CharacterLiteral)
+def test_dom_typeliteral_instantiation(instance):
+    assert isinstance(instance, DOM_TypeLiteral)
 
-@given(instance=DOM::CharacterLiteral_strategy)
-def test_dom::characterliteral_escapedValue_type(instance):
-    assert isinstance(instance.escapedValue, str)
-
-
-@given(instance=DOM::CharacterLiteral_strategy)
-def test_dom::characterliteral_escapedValue_setter(instance):
-    original = instance.escapedValue
-    instance.escapedValue = original
-    assert instance.escapedValue == original
-
-@given(instance=DOM::CharacterLiteral_strategy)
-def test_dom::characterliteral_charValue_type(instance):
-    assert isinstance(instance.charValue, str)
-
-
-@given(instance=DOM::CharacterLiteral_strategy)
-def test_dom::characterliteral_charValue_setter(instance):
-    original = instance.charValue
-    instance.charValue = original
-    assert instance.charValue == original
-
-@given(instance=DOM::PrefixExpression_strategy)
+@given(instance=DOM_SuperFieldAccess_strategy)
 @settings(max_examples=50)
-def test_dom::prefixexpression_instantiation(instance):
-    assert isinstance(instance, DOM::PrefixExpression)
+def test_dom_superfieldaccess_instantiation(instance):
+    assert isinstance(instance, DOM_SuperFieldAccess)
 
-@given(instance=DOM::PrefixExpression_strategy)
-def test_dom::prefixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=DOM_VariableDeclarationExpression_strategy)
+@settings(max_examples=50)
+def test_dom_variabledeclarationexpression_instantiation(instance):
+    assert isinstance(instance, DOM_VariableDeclarationExpression)
+
+@given(instance=DOM_PrefixExpression_strategy)
+@settings(max_examples=50)
+def test_dom_prefixexpression_instantiation(instance):
+    assert isinstance(instance, DOM_PrefixExpression)
 
 
-@given(instance=DOM::PrefixExpression_strategy)
-def test_dom::prefixexpression_operator_setter(instance):
+
+@given(instance=DOM_PrefixExpression_strategy)
+def test_dom_prefixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=DOM::ParenthesizedExpression_strategy)
+@given(instance=DOM_ParenthesizedExpression_strategy)
 @settings(max_examples=50)
-def test_dom::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, DOM::ParenthesizedExpression)
+def test_dom_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, DOM_ParenthesizedExpression)
+
+@given(instance=DOM_InstanceofExpression_strategy)
+@settings(max_examples=50)
+def test_dom_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, DOM_InstanceofExpression)
+
+@given(instance=DOM_SuperMethodInvocation_strategy)
+@settings(max_examples=50)
+def test_dom_supermethodinvocation_instantiation(instance):
+    assert isinstance(instance, DOM_SuperMethodInvocation)
+
+@given(instance=DOM_NullLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_nullliteral_instantiation(instance):
+    assert isinstance(instance, DOM_NullLiteral)
+
+@given(instance=DOM_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_dom_stringliteral_instantiation(instance):
+    assert isinstance(instance, DOM_StringLiteral)
+
+
+
+@given(instance=DOM_StringLiteral_strategy)
+def test_dom_stringliteral_literalValue_setter(instance):
+    original = instance.literalValue
+    instance.literalValue = original
+    assert instance.literalValue == original
+
+
+
+@given(instance=DOM_StringLiteral_strategy)
+def test_dom_stringliteral_escapedValue_setter(instance):
+    original = instance.escapedValue
+    instance.escapedValue = original
+    assert instance.escapedValue == original
+
+@given(instance=DOM_MethodInvocation_strategy)
+@settings(max_examples=50)
+def test_dom_methodinvocation_instantiation(instance):
+    assert isinstance(instance, DOM_MethodInvocation)
+
+@given(instance=DOM_PostfixExpression_strategy)
+@settings(max_examples=50)
+def test_dom_postfixexpression_instantiation(instance):
+    assert isinstance(instance, DOM_PostfixExpression)
+
+
+
+@given(instance=DOM_PostfixExpression_strategy)
+def test_dom_postfixexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=DOM_InfixExpression_strategy)
+@settings(max_examples=50)
+def test_dom_infixexpression_instantiation(instance):
+    assert isinstance(instance, DOM_InfixExpression)
+
+
+
+@given(instance=DOM_InfixExpression_strategy)
+def test_dom_infixexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
 
 @given(instance=SimpleName_strategy)
 @settings(max_examples=50)
@@ -4354,41 +4224,36 @@ def test_simplename_instantiation(instance):
 def test_name_instantiation(instance):
     assert isinstance(instance, Name)
 
-@given(instance=DOM::QualifiedName_strategy)
+@given(instance=DOM_QualifiedName_strategy)
 @settings(max_examples=50)
-def test_dom::qualifiedname_instantiation(instance):
-    assert isinstance(instance, DOM::QualifiedName)
+def test_dom_qualifiedname_instantiation(instance):
+    assert isinstance(instance, DOM_QualifiedName)
+
+@given(instance=DOM_SimpleName_strategy)
+@settings(max_examples=50)
+def test_dom_simplename_instantiation(instance):
+    assert isinstance(instance, DOM_SimpleName)
+
+
+
+@given(instance=DOM_SimpleName_strategy)
+def test_dom_simplename_declaration_setter(instance):
+    original = instance.declaration
+    instance.declaration = original
+    assert instance.declaration == original
+
+
+
+@given(instance=DOM_SimpleName_strategy)
+def test_dom_simplename_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
 
 @given(instance=AbstractTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstracttypedeclaration_instantiation(instance):
     assert isinstance(instance, AbstractTypeDeclaration)
-
-@given(instance=DOM::AnnotationTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::annotationtypedeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::AnnotationTypeDeclaration)
-
-@given(instance=DOM::EnumDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::enumdeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::EnumDeclaration)
-
-@given(instance=DOM::TypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::typedeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::TypeDeclaration)
-
-@given(instance=DOM::TypeDeclaration_strategy)
-def test_dom::typedeclaration_interface_type(instance):
-    assert isinstance(instance.interface, str)
-
-
-@given(instance=DOM::TypeDeclaration_strategy)
-def test_dom::typedeclaration_interface_setter(instance):
-    original = instance.interface
-    instance.interface = original
-    assert instance.interface == original
 
 @given(instance=ImportDeclaration_strategy)
 @settings(max_examples=50)
@@ -4400,57 +4265,69 @@ def test_importdeclaration_instantiation(instance):
 def test_packagedeclaration_instantiation(instance):
     assert isinstance(instance, PackageDeclaration)
 
-@given(instance=DOM::ExtendedModifier_strategy)
+@given(instance=DOM_ExtendedModifier_strategy)
 @settings(max_examples=50)
-def test_dom::extendedmodifier_instantiation(instance):
-    assert isinstance(instance, DOM::ExtendedModifier)
+def test_dom_extendedmodifier_instantiation(instance):
+    assert isinstance(instance, DOM_ExtendedModifier)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=DOM::ParameterizedType_strategy)
+@given(instance=DOM_ArrayType_strategy)
 @settings(max_examples=50)
-def test_dom::parameterizedtype_instantiation(instance):
-    assert isinstance(instance, DOM::ParameterizedType)
+def test_dom_arraytype_instantiation(instance):
+    assert isinstance(instance, DOM_ArrayType)
 
-@given(instance=DOM::QualifiedType_strategy)
+
+
+@given(instance=DOM_ArrayType_strategy)
+def test_dom_arraytype_dimensions_setter(instance):
+    original = instance.dimensions
+    instance.dimensions = original
+    assert instance.dimensions == original
+
+@given(instance=DOM_ParameterizedType_strategy)
 @settings(max_examples=50)
-def test_dom::qualifiedtype_instantiation(instance):
-    assert isinstance(instance, DOM::QualifiedType)
+def test_dom_parameterizedtype_instantiation(instance):
+    assert isinstance(instance, DOM_ParameterizedType)
 
-@given(instance=DOM::PrimitiveType_strategy)
+@given(instance=DOM_SimpleType_strategy)
 @settings(max_examples=50)
-def test_dom::primitivetype_instantiation(instance):
-    assert isinstance(instance, DOM::PrimitiveType)
+def test_dom_simpletype_instantiation(instance):
+    assert isinstance(instance, DOM_SimpleType)
 
-@given(instance=DOM::PrimitiveType_strategy)
-def test_dom::primitivetype_code_type(instance):
-    assert isinstance(instance.code, str)
+@given(instance=DOM_PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_dom_primitivetype_instantiation(instance):
+    assert isinstance(instance, DOM_PrimitiveType)
 
 
-@given(instance=DOM::PrimitiveType_strategy)
-def test_dom::primitivetype_code_setter(instance):
+
+@given(instance=DOM_PrimitiveType_strategy)
+def test_dom_primitivetype_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=DOM::ArrayType_strategy)
+@given(instance=DOM_QualifiedType_strategy)
 @settings(max_examples=50)
-def test_dom::arraytype_instantiation(instance):
-    assert isinstance(instance, DOM::ArrayType)
+def test_dom_qualifiedtype_instantiation(instance):
+    assert isinstance(instance, DOM_QualifiedType)
 
-@given(instance=DOM::ArrayType_strategy)
-def test_dom::arraytype_dimensions_type(instance):
-    assert isinstance(instance.dimensions, str)
+@given(instance=DOM_WildcardType_strategy)
+@settings(max_examples=50)
+def test_dom_wildcardtype_instantiation(instance):
+    assert isinstance(instance, DOM_WildcardType)
 
 
-@given(instance=DOM::ArrayType_strategy)
-def test_dom::arraytype_dimensions_setter(instance):
-    original = instance.dimensions
-    instance.dimensions = original
-    assert instance.dimensions == original
+
+@given(instance=DOM_WildcardType_strategy)
+def test_dom_wildcardtype_upperBound_setter(instance):
+    original = instance.upperBound
+    instance.upperBound = original
+    assert instance.upperBound == original
 
 @given(instance=MethodRefParameter_strategy)
 @settings(max_examples=50)
@@ -4462,320 +4339,128 @@ def test_methodrefparameter_instantiation(instance):
 def test_bodydeclaration_instantiation(instance):
     assert isinstance(instance, BodyDeclaration)
 
-@given(instance=DOM::Initializer_strategy)
+@given(instance=DOM_ASTNode_strategy)
 @settings(max_examples=50)
-def test_dom::initializer_instantiation(instance):
-    assert isinstance(instance, DOM::Initializer)
-
-@given(instance=DOM::AnnotationTypeMemberDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::annotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::AnnotationTypeMemberDeclaration)
-
-@given(instance=DOM::MethodDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::methoddeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::MethodDeclaration)
-
-@given(instance=DOM::MethodDeclaration_strategy)
-def test_dom::methoddeclaration_varargs_type(instance):
-    assert isinstance(instance.varargs, str)
-
-
-@given(instance=DOM::MethodDeclaration_strategy)
-def test_dom::methoddeclaration_varargs_setter(instance):
-    original = instance.varargs
-    instance.varargs = original
-    assert instance.varargs == original
-
-@given(instance=DOM::MethodDeclaration_strategy)
-def test_dom::methoddeclaration_extraDimensions_type(instance):
-    assert isinstance(instance.extraDimensions, str)
-
-
-@given(instance=DOM::MethodDeclaration_strategy)
-def test_dom::methoddeclaration_extraDimensions_setter(instance):
-    original = instance.extraDimensions
-    instance.extraDimensions = original
-    assert instance.extraDimensions == original
-
-@given(instance=DOM::MethodDeclaration_strategy)
-def test_dom::methoddeclaration_constructor_type(instance):
-    assert isinstance(instance.constructor, str)
-
-
-@given(instance=DOM::MethodDeclaration_strategy)
-def test_dom::methoddeclaration_constructor_setter(instance):
-    original = instance.constructor
-    instance.constructor = original
-    assert instance.constructor == original
-
-@given(instance=DOM::FieldDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::fielddeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::FieldDeclaration)
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::abstracttypedeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::AbstractTypeDeclaration)
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-def test_dom::abstracttypedeclaration_memberTypeDeclaration_type(instance):
-    assert isinstance(instance.memberTypeDeclaration, str)
-
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-def test_dom::abstracttypedeclaration_memberTypeDeclaration_setter(instance):
-    original = instance.memberTypeDeclaration
-    instance.memberTypeDeclaration = original
-    assert instance.memberTypeDeclaration == original
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-def test_dom::abstracttypedeclaration_localTypeDeclaration_type(instance):
-    assert isinstance(instance.localTypeDeclaration, str)
-
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-def test_dom::abstracttypedeclaration_localTypeDeclaration_setter(instance):
-    original = instance.localTypeDeclaration
-    instance.localTypeDeclaration = original
-    assert instance.localTypeDeclaration == original
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-def test_dom::abstracttypedeclaration_packageMemberTypeDeclaration_type(instance):
-    assert isinstance(instance.packageMemberTypeDeclaration, str)
-
-
-@given(instance=DOM::AbstractTypeDeclaration_strategy)
-def test_dom::abstracttypedeclaration_packageMemberTypeDeclaration_setter(instance):
-    original = instance.packageMemberTypeDeclaration
-    instance.packageMemberTypeDeclaration = original
-    assert instance.packageMemberTypeDeclaration == original
-
-@given(instance=DOM::EnumConstantDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::enumconstantdeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::EnumConstantDeclaration)
-
-@given(instance=DOM::ASTNode_strategy)
-@settings(max_examples=50)
-def test_dom::astnode_instantiation(instance):
-    assert isinstance(instance, DOM::ASTNode)
+def test_dom_astnode_instantiation(instance):
+    assert isinstance(instance, DOM_ASTNode)
 
 @given(instance=ASTNode_strategy)
 @settings(max_examples=50)
 def test_astnode_instantiation(instance):
     assert isinstance(instance, ASTNode)
 
-@given(instance=DOM::VariableDeclaration_strategy)
+@given(instance=DOM_MethodRef_strategy)
 @settings(max_examples=50)
-def test_dom::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::VariableDeclaration)
+def test_dom_methodref_instantiation(instance):
+    assert isinstance(instance, DOM_MethodRef)
 
-@given(instance=DOM::VariableDeclaration_strategy)
-def test_dom::variabledeclaration_extraDimensions_type(instance):
-    assert isinstance(instance.extraDimensions, str)
-
-
-@given(instance=DOM::VariableDeclaration_strategy)
-def test_dom::variabledeclaration_extraDimensions_setter(instance):
-    original = instance.extraDimensions
-    instance.extraDimensions = original
-    assert instance.extraDimensions == original
-
-@given(instance=DOM::Statement_strategy)
+@given(instance=DOM_MemberRef_strategy)
 @settings(max_examples=50)
-def test_dom::statement_instantiation(instance):
-    assert isinstance(instance, DOM::Statement)
+def test_dom_memberref_instantiation(instance):
+    assert isinstance(instance, DOM_MemberRef)
 
-@given(instance=DOM::MemberValuePair_strategy)
+@given(instance=DOM_AnonymousClassDeclaration_strategy)
 @settings(max_examples=50)
-def test_dom::membervaluepair_instantiation(instance):
-    assert isinstance(instance, DOM::MemberValuePair)
+def test_dom_anonymousclassdeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_AnonymousClassDeclaration)
 
-@given(instance=DOM::MemberRef_strategy)
+@given(instance=DOM_MemberValuePair_strategy)
 @settings(max_examples=50)
-def test_dom::memberref_instantiation(instance):
-    assert isinstance(instance, DOM::MemberRef)
+def test_dom_membervaluepair_instantiation(instance):
+    assert isinstance(instance, DOM_MemberValuePair)
 
-@given(instance=DOM::BodyDeclaration_strategy)
+@given(instance=DOM_MethodRefParameter_strategy)
 @settings(max_examples=50)
-def test_dom::bodydeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::BodyDeclaration)
-
-@given(instance=DOM::AnonymousClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::anonymousclassdeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::AnonymousClassDeclaration)
-
-@given(instance=DOM::Type_strategy)
-@settings(max_examples=50)
-def test_dom::type_instantiation(instance):
-    assert isinstance(instance, DOM::Type)
-
-@given(instance=DOM::TagElement_strategy)
-@settings(max_examples=50)
-def test_dom::tagelement_instantiation(instance):
-    assert isinstance(instance, DOM::TagElement)
-
-@given(instance=DOM::TagElement_strategy)
-def test_dom::tagelement_nested_type(instance):
-    assert isinstance(instance.nested, str)
+def test_dom_methodrefparameter_instantiation(instance):
+    assert isinstance(instance, DOM_MethodRefParameter)
 
 
-@given(instance=DOM::TagElement_strategy)
-def test_dom::tagelement_nested_setter(instance):
-    original = instance.nested
-    instance.nested = original
-    assert instance.nested == original
 
-@given(instance=DOM::TagElement_strategy)
-def test_dom::tagelement_tagName_type(instance):
-    assert isinstance(instance.tagName, str)
-
-
-@given(instance=DOM::TagElement_strategy)
-def test_dom::tagelement_tagName_setter(instance):
-    original = instance.tagName
-    instance.tagName = original
-    assert instance.tagName == original
-
-@given(instance=DOM::MethodRef_strategy)
-@settings(max_examples=50)
-def test_dom::methodref_instantiation(instance):
-    assert isinstance(instance, DOM::MethodRef)
-
-@given(instance=DOM::TextElement_strategy)
-@settings(max_examples=50)
-def test_dom::textelement_instantiation(instance):
-    assert isinstance(instance, DOM::TextElement)
-
-@given(instance=DOM::TextElement_strategy)
-def test_dom::textelement_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=DOM::TextElement_strategy)
-def test_dom::textelement_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=DOM::PackageDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::PackageDeclaration)
-
-@given(instance=DOM::TypeParameter_strategy)
-@settings(max_examples=50)
-def test_dom::typeparameter_instantiation(instance):
-    assert isinstance(instance, DOM::TypeParameter)
-
-@given(instance=DOM::Expression_strategy)
-@settings(max_examples=50)
-def test_dom::expression_instantiation(instance):
-    assert isinstance(instance, DOM::Expression)
-
-@given(instance=DOM::Expression_strategy)
-def test_dom::expression_resolveBoxing_type(instance):
-    assert isinstance(instance.resolveBoxing, str)
-
-
-@given(instance=DOM::Expression_strategy)
-def test_dom::expression_resolveBoxing_setter(instance):
-    original = instance.resolveBoxing
-    instance.resolveBoxing = original
-    assert instance.resolveBoxing == original
-
-@given(instance=DOM::Expression_strategy)
-def test_dom::expression_resolveUnboxing_type(instance):
-    assert isinstance(instance.resolveUnboxing, str)
-
-
-@given(instance=DOM::Expression_strategy)
-def test_dom::expression_resolveUnboxing_setter(instance):
-    original = instance.resolveUnboxing
-    instance.resolveUnboxing = original
-    assert instance.resolveUnboxing == original
-
-@given(instance=DOM::ImportDeclaration_strategy)
-@settings(max_examples=50)
-def test_dom::importdeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::ImportDeclaration)
-
-@given(instance=DOM::ImportDeclaration_strategy)
-def test_dom::importdeclaration_onDemand_type(instance):
-    assert isinstance(instance.onDemand, str)
-
-
-@given(instance=DOM::ImportDeclaration_strategy)
-def test_dom::importdeclaration_onDemand_setter(instance):
-    original = instance.onDemand
-    instance.onDemand = original
-    assert instance.onDemand == original
-
-@given(instance=DOM::ImportDeclaration_strategy)
-def test_dom::importdeclaration_static_type(instance):
-    assert isinstance(instance.static, str)
-
-
-@given(instance=DOM::ImportDeclaration_strategy)
-def test_dom::importdeclaration_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=DOM::MethodRefParameter_strategy)
-@settings(max_examples=50)
-def test_dom::methodrefparameter_instantiation(instance):
-    assert isinstance(instance, DOM::MethodRefParameter)
-
-@given(instance=DOM::MethodRefParameter_strategy)
-def test_dom::methodrefparameter_varargs_type(instance):
-    assert isinstance(instance.varargs, str)
-
-
-@given(instance=DOM::MethodRefParameter_strategy)
-def test_dom::methodrefparameter_varargs_setter(instance):
+@given(instance=DOM_MethodRefParameter_strategy)
+def test_dom_methodrefparameter_varargs_setter(instance):
     original = instance.varargs
     instance.varargs = original
     assert instance.varargs == original
 
-@given(instance=DOM::AST_strategy)
+@given(instance=DOM_TextElement_strategy)
 @settings(max_examples=50)
-def test_dom::ast_instantiation(instance):
-    assert isinstance(instance, DOM::AST)
+def test_dom_textelement_instantiation(instance):
+    assert isinstance(instance, DOM_TextElement)
+
+
+
+@given(instance=DOM_TextElement_strategy)
+def test_dom_textelement_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=DOM_ImportDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_importdeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_ImportDeclaration)
+
+
+
+@given(instance=DOM_ImportDeclaration_strategy)
+def test_dom_importdeclaration_onDemand_setter(instance):
+    original = instance.onDemand
+    instance.onDemand = original
+    assert instance.onDemand == original
+
+
+
+@given(instance=DOM_ImportDeclaration_strategy)
+def test_dom_importdeclaration_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+@given(instance=DOM_BodyDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_bodydeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_BodyDeclaration)
+
+@given(instance=DOM_Expression_strategy)
+@settings(max_examples=50)
+def test_dom_expression_instantiation(instance):
+    assert isinstance(instance, DOM_Expression)
+
+
+
+@given(instance=DOM_Expression_strategy)
+def test_dom_expression_resolveBoxing_setter(instance):
+    original = instance.resolveBoxing
+    instance.resolveBoxing = original
+    assert instance.resolveBoxing == original
+
+
+
+@given(instance=DOM_Expression_strategy)
+def test_dom_expression_resolveUnboxing_setter(instance):
+    original = instance.resolveUnboxing
+    instance.resolveUnboxing = original
+    assert instance.resolveUnboxing == original
+
+@given(instance=DOM_AST_strategy)
+@settings(max_examples=50)
+def test_dom_ast_instantiation(instance):
+    assert isinstance(instance, DOM_AST)
 
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=DOM::LineComment_strategy)
+@given(instance=DOM_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_dom::linecomment_instantiation(instance):
-    assert isinstance(instance, DOM::LineComment)
+def test_dom_compilationunit_instantiation(instance):
+    assert isinstance(instance, DOM_CompilationUnit)
 
-@given(instance=DOM::BlockComment_strategy)
+@given(instance=DOM_Comment_strategy)
 @settings(max_examples=50)
-def test_dom::blockcomment_instantiation(instance):
-    assert isinstance(instance, DOM::BlockComment)
-
-@given(instance=DOM::Javadoc_strategy)
-@settings(max_examples=50)
-def test_dom::javadoc_instantiation(instance):
-    assert isinstance(instance, DOM::Javadoc)
-
-@given(instance=DOM::CompilationUnit_strategy)
-@settings(max_examples=50)
-def test_dom::compilationunit_instantiation(instance):
-    assert isinstance(instance, DOM::CompilationUnit)
-
-@given(instance=DOM::Comment_strategy)
-@settings(max_examples=50)
-def test_dom::comment_instantiation(instance):
-    assert isinstance(instance, DOM::Comment)
+def test_dom_comment_instantiation(instance):
+    assert isinstance(instance, DOM_Comment)
 
 @given(instance=SingleVariableDeclaration_strategy)
 @settings(max_examples=50)
@@ -4787,10 +4472,10 @@ def test_singlevariabledeclaration_instantiation(instance):
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=DOM::CatchClause_strategy)
+@given(instance=DOM_CatchClause_strategy)
 @settings(max_examples=50)
-def test_dom::catchclause_instantiation(instance):
-    assert isinstance(instance, DOM::CatchClause)
+def test_dom_catchclause_instantiation(instance):
+    assert isinstance(instance, DOM_CatchClause)
 
 @given(instance=Javadoc_strategy)
 @settings(max_examples=50)
@@ -4802,176 +4487,129 @@ def test_javadoc_instantiation(instance):
 def test_extendedmodifier_instantiation(instance):
     assert isinstance(instance, ExtendedModifier)
 
-@given(instance=DOM::Annotation_strategy)
+@given(instance=DOM_Modifier_strategy)
 @settings(max_examples=50)
-def test_dom::annotation_instantiation(instance):
-    assert isinstance(instance, DOM::Annotation)
-
-@given(instance=DOM::Modifier_strategy)
-@settings(max_examples=50)
-def test_dom::modifier_instantiation(instance):
-    assert isinstance(instance, DOM::Modifier)
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_volatile_type(instance):
-    assert isinstance(instance.volatile, str)
+def test_dom_modifier_instantiation(instance):
+    assert isinstance(instance, DOM_Modifier)
 
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_volatile_setter(instance):
-    original = instance.volatile
-    instance.volatile = original
-    assert instance.volatile == original
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_abstract_type(instance):
-    assert isinstance(instance.abstract, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_abstract_setter(instance):
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_static_type(instance):
-    assert isinstance(instance.static, str)
 
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_static_setter(instance):
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_none_type(instance):
-    assert isinstance(instance.none, str)
 
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_none_setter(instance):
-    original = instance.none
-    instance.none = original
-    assert instance.none == original
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_native_type(instance):
-    assert isinstance(instance.native, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_native_setter(instance):
-    original = instance.native
-    instance.native = original
-    assert instance.native == original
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_strictfp_type(instance):
-    assert isinstance(instance.strictfp, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_strictfp_setter(instance):
-    original = instance.strictfp
-    instance.strictfp = original
-    assert instance.strictfp == original
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_synchronized_type(instance):
-    assert isinstance(instance.synchronized, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_synchronized_setter(instance):
-    original = instance.synchronized
-    instance.synchronized = original
-    assert instance.synchronized == original
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_private_type(instance):
-    assert isinstance(instance.private, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_private_setter(instance):
-    original = instance.private
-    instance.private = original
-    assert instance.private == original
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_public_type(instance):
-    assert isinstance(instance.public, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_public_setter(instance):
-    original = instance.public
-    instance.public = original
-    assert instance.public == original
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_final_type(instance):
-    assert isinstance(instance.final, str)
-
-
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_final_setter(instance):
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_final_setter(instance):
     original = instance.final
     instance.final = original
     assert instance.final == original
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_transient_type(instance):
-    assert isinstance(instance.transient, str)
 
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_transient_setter(instance):
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_native_setter(instance):
+    original = instance.native
+    instance.native = original
+    assert instance.native == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_private_setter(instance):
+    original = instance.private
+    instance.private = original
+    assert instance.private == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_none_setter(instance):
+    original = instance.none
+    instance.none = original
+    assert instance.none == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_transient_setter(instance):
     original = instance.transient
     instance.transient = original
     assert instance.transient == original
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_protected_type(instance):
-    assert isinstance(instance.protected, str)
 
 
-@given(instance=DOM::Modifier_strategy)
-def test_dom::modifier_protected_setter(instance):
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_public_setter(instance):
+    original = instance.public
+    instance.public = original
+    assert instance.public == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_synchronized_setter(instance):
+    original = instance.synchronized
+    instance.synchronized = original
+    assert instance.synchronized == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_strictfp_setter(instance):
+    original = instance.strictfp
+    instance.strictfp = original
+    assert instance.strictfp == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_protected_setter(instance):
     original = instance.protected
     instance.protected = original
     assert instance.protected == original
+
+
+
+@given(instance=DOM_Modifier_strategy)
+def test_dom_modifier_volatile_setter(instance):
+    original = instance.volatile
+    instance.volatile = original
+    assert instance.volatile == original
 
 @given(instance=ITypeParameter_strategy)
 @settings(max_examples=50)
 def test_itypeparameter_instantiation(instance):
     assert isinstance(instance, ITypeParameter)
 
-@given(instance=Core::Parameter_strategy)
+@given(instance=Core_Parameter_strategy)
 @settings(max_examples=50)
-def test_core::parameter_instantiation(instance):
-    assert isinstance(instance, Core::Parameter)
-
-@given(instance=Core::Parameter_strategy)
-def test_core::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_core_parameter_instantiation(instance):
+    assert isinstance(instance, Core_Parameter)
 
 
-@given(instance=Core::Parameter_strategy)
-def test_core::parameter_type_setter(instance):
+
+@given(instance=Core_Parameter_strategy)
+def test_core_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Core::Parameter_strategy)
-def test_core::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Core::Parameter_strategy)
-def test_core::parameter_name_setter(instance):
+@given(instance=Core_Parameter_strategy)
+def test_core_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4981,29 +4619,23 @@ def test_core::parameter_name_setter(instance):
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=Core::ISourceRange_strategy)
+@given(instance=Core_ISourceRange_strategy)
 @settings(max_examples=50)
-def test_core::isourcerange_instantiation(instance):
-    assert isinstance(instance, Core::ISourceRange)
-
-@given(instance=Core::ISourceRange_strategy)
-def test_core::isourcerange_length_type(instance):
-    assert isinstance(instance.length, str)
+def test_core_isourcerange_instantiation(instance):
+    assert isinstance(instance, Core_ISourceRange)
 
 
-@given(instance=Core::ISourceRange_strategy)
-def test_core::isourcerange_length_setter(instance):
+
+@given(instance=Core_ISourceRange_strategy)
+def test_core_isourcerange_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=Core::ISourceRange_strategy)
-def test_core::isourcerange_offset_type(instance):
-    assert isinstance(instance.offset, str)
 
 
-@given(instance=Core::ISourceRange_strategy)
-def test_core::isourcerange_offset_setter(instance):
+@given(instance=Core_ISourceRange_strategy)
+def test_core_isourcerange_offset_setter(instance):
     original = instance.offset
     instance.offset = original
     assert instance.offset == original
@@ -5013,18 +4645,15 @@ def test_core::isourcerange_offset_setter(instance):
 def test_isourcerange_instantiation(instance):
     assert isinstance(instance, ISourceRange)
 
-@given(instance=Core::ISourceReference_strategy)
+@given(instance=Core_ISourceReference_strategy)
 @settings(max_examples=50)
-def test_core::isourcereference_instantiation(instance):
-    assert isinstance(instance, Core::ISourceReference)
-
-@given(instance=Core::ISourceReference_strategy)
-def test_core::isourcereference_source_type(instance):
-    assert isinstance(instance.source, str)
+def test_core_isourcereference_instantiation(instance):
+    assert isinstance(instance, Core_ISourceReference)
 
 
-@given(instance=Core::ISourceReference_strategy)
-def test_core::isourcereference_source_setter(instance):
+
+@given(instance=Core_ISourceReference_strategy)
+def test_core_isourcereference_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
@@ -5054,146 +4683,113 @@ def test_iinitializer_instantiation(instance):
 def test_imember_instantiation(instance):
     assert isinstance(instance, IMember)
 
-@given(instance=Core::IField_strategy)
+@given(instance=Core_IMethod_strategy)
 @settings(max_examples=50)
-def test_core::ifield_instantiation(instance):
-    assert isinstance(instance, Core::IField)
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_isVolatile_type(instance):
-    assert isinstance(instance.isVolatile, str)
+def test_core_imethod_instantiation(instance):
+    assert isinstance(instance, Core_IMethod)
 
 
-@given(instance=Core::IField_strategy)
-def test_core::ifield_isVolatile_setter(instance):
-    original = instance.isVolatile
-    instance.isVolatile = original
-    assert instance.isVolatile == original
 
-@given(instance=Core::IField_strategy)
-def test_core::ifield_isTransient_type(instance):
-    assert isinstance(instance.isTransient, str)
-
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_isTransient_setter(instance):
-    original = instance.isTransient
-    instance.isTransient = original
-    assert instance.isTransient == original
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_constant_type(instance):
-    assert isinstance(instance.constant, str)
-
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_constant_setter(instance):
-    original = instance.constant
-    instance.constant = original
-    assert instance.constant == original
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_isEnumConstant_type(instance):
-    assert isinstance(instance.isEnumConstant, str)
-
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_isEnumConstant_setter(instance):
-    original = instance.isEnumConstant
-    instance.isEnumConstant = original
-    assert instance.isEnumConstant == original
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_typeSignature_type(instance):
-    assert isinstance(instance.typeSignature, str)
-
-
-@given(instance=Core::IField_strategy)
-def test_core::ifield_typeSignature_setter(instance):
-    original = instance.typeSignature
-    instance.typeSignature = original
-    assert instance.typeSignature == original
-
-@given(instance=Core::IMethod_strategy)
-@settings(max_examples=50)
-def test_core::imethod_instantiation(instance):
-    assert isinstance(instance, Core::IMethod)
-
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
-
-
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_returnType_setter(instance):
-    original = instance.returnType
-    instance.returnType = original
-    assert instance.returnType == original
-
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_isConstructor_type(instance):
-    assert isinstance(instance.isConstructor, str)
-
-
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_isConstructor_setter(instance):
-    original = instance.isConstructor
-    instance.isConstructor = original
-    assert instance.isConstructor == original
-
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_exceptionTypes_type(instance):
-    assert isinstance(instance.exceptionTypes, str)
-
-
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_exceptionTypes_setter(instance):
+@given(instance=Core_IMethod_strategy)
+def test_core_imethod_exceptionTypes_setter(instance):
     original = instance.exceptionTypes
     instance.exceptionTypes = original
     assert instance.exceptionTypes == original
 
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_isMainMethod_type(instance):
-    assert isinstance(instance.isMainMethod, str)
 
 
-@given(instance=Core::IMethod_strategy)
-def test_core::imethod_isMainMethod_setter(instance):
+@given(instance=Core_IMethod_strategy)
+def test_core_imethod_returnType_setter(instance):
+    original = instance.returnType
+    instance.returnType = original
+    assert instance.returnType == original
+
+
+
+@given(instance=Core_IMethod_strategy)
+def test_core_imethod_isConstructor_setter(instance):
+    original = instance.isConstructor
+    instance.isConstructor = original
+    assert instance.isConstructor == original
+
+
+
+@given(instance=Core_IMethod_strategy)
+def test_core_imethod_isMainMethod_setter(instance):
     original = instance.isMainMethod
     instance.isMainMethod = original
     assert instance.isMainMethod == original
 
-@given(instance=Core::IInitializer_strategy)
+@given(instance=Core_IField_strategy)
 @settings(max_examples=50)
-def test_core::iinitializer_instantiation(instance):
-    assert isinstance(instance, Core::IInitializer)
+def test_core_ifield_instantiation(instance):
+    assert isinstance(instance, Core_IField)
 
-@given(instance=Core::IType_strategy)
+
+
+@given(instance=Core_IField_strategy)
+def test_core_ifield_constant_setter(instance):
+    original = instance.constant
+    instance.constant = original
+    assert instance.constant == original
+
+
+
+@given(instance=Core_IField_strategy)
+def test_core_ifield_isVolatile_setter(instance):
+    original = instance.isVolatile
+    instance.isVolatile = original
+    assert instance.isVolatile == original
+
+
+
+@given(instance=Core_IField_strategy)
+def test_core_ifield_typeSignature_setter(instance):
+    original = instance.typeSignature
+    instance.typeSignature = original
+    assert instance.typeSignature == original
+
+
+
+@given(instance=Core_IField_strategy)
+def test_core_ifield_isTransient_setter(instance):
+    original = instance.isTransient
+    instance.isTransient = original
+    assert instance.isTransient == original
+
+
+
+@given(instance=Core_IField_strategy)
+def test_core_ifield_isEnumConstant_setter(instance):
+    original = instance.isEnumConstant
+    instance.isEnumConstant = original
+    assert instance.isEnumConstant == original
+
+@given(instance=Core_IInitializer_strategy)
 @settings(max_examples=50)
-def test_core::itype_instantiation(instance):
-    assert isinstance(instance, Core::IType)
+def test_core_iinitializer_instantiation(instance):
+    assert isinstance(instance, Core_IInitializer)
 
-@given(instance=Core::IType_strategy)
-def test_core::itype_fullyQualifiedParametrizedName_type(instance):
-    assert isinstance(instance.fullyQualifiedParametrizedName, str)
-
-
-@given(instance=Core::IType_strategy)
-def test_core::itype_fullyQualifiedParametrizedName_setter(instance):
-    original = instance.fullyQualifiedParametrizedName
-    instance.fullyQualifiedParametrizedName = original
-    assert instance.fullyQualifiedParametrizedName == original
-
-@given(instance=Core::IType_strategy)
-def test_core::itype_fullyQualifiedName_type(instance):
-    assert isinstance(instance.fullyQualifiedName, str)
+@given(instance=Core_IType_strategy)
+@settings(max_examples=50)
+def test_core_itype_instantiation(instance):
+    assert isinstance(instance, Core_IType)
 
 
-@given(instance=Core::IType_strategy)
-def test_core::itype_fullyQualifiedName_setter(instance):
+
+@given(instance=Core_IType_strategy)
+def test_core_itype_fullyQualifiedName_setter(instance):
     original = instance.fullyQualifiedName
     instance.fullyQualifiedName = original
     assert instance.fullyQualifiedName == original
+
+
+
+@given(instance=Core_IType_strategy)
+def test_core_itype_fullyQualifiedParametrizedName_setter(instance):
+    original = instance.fullyQualifiedParametrizedName
+    instance.fullyQualifiedParametrizedName = original
+    assert instance.fullyQualifiedParametrizedName == original
 
 @given(instance=IPackageFragment_strategy)
 @settings(max_examples=50)
@@ -5210,15 +4806,15 @@ def test_ijavaelement_instantiation(instance):
 def test_ipackagefragmentroot_instantiation(instance):
     assert isinstance(instance, IPackageFragmentRoot)
 
-@given(instance=Core::SourcePackageFragmentRoot_strategy)
+@given(instance=Core_SourcePackageFragmentRoot_strategy)
 @settings(max_examples=50)
-def test_core::sourcepackagefragmentroot_instantiation(instance):
-    assert isinstance(instance, Core::SourcePackageFragmentRoot)
+def test_core_sourcepackagefragmentroot_instantiation(instance):
+    assert isinstance(instance, Core_SourcePackageFragmentRoot)
 
-@given(instance=Core::BinaryPackageFragmentRoot_strategy)
+@given(instance=Core_BinaryPackageFragmentRoot_strategy)
 @settings(max_examples=50)
-def test_core::binarypackagefragmentroot_instantiation(instance):
-    assert isinstance(instance, Core::BinaryPackageFragmentRoot)
+def test_core_binarypackagefragmentroot_instantiation(instance):
+    assert isinstance(instance, Core_BinaryPackageFragmentRoot)
 
 @given(instance=IJavaProject_strategy)
 @settings(max_examples=50)
@@ -5230,60 +4826,51 @@ def test_ijavaproject_instantiation(instance):
 def test_physicalelement_instantiation(instance):
     assert isinstance(instance, PhysicalElement)
 
-@given(instance=Core::IPackageFragmentRoot_strategy)
+@given(instance=Core_IPackageFragmentRoot_strategy)
 @settings(max_examples=50)
-def test_core::ipackagefragmentroot_instantiation(instance):
-    assert isinstance(instance, Core::IPackageFragmentRoot)
+def test_core_ipackagefragmentroot_instantiation(instance):
+    assert isinstance(instance, Core_IPackageFragmentRoot)
 
-@given(instance=Core::IJavaProject_strategy)
+@given(instance=Core_IPackageFragment_strategy)
 @settings(max_examples=50)
-def test_core::ijavaproject_instantiation(instance):
-    assert isinstance(instance, Core::IJavaProject)
-
-@given(instance=Core::IPackageFragment_strategy)
-@settings(max_examples=50)
-def test_core::ipackagefragment_instantiation(instance):
-    assert isinstance(instance, Core::IPackageFragment)
-
-@given(instance=Core::IPackageFragment_strategy)
-def test_core::ipackagefragment_isDefaultPackage_type(instance):
-    assert isinstance(instance.isDefaultPackage, str)
+def test_core_ipackagefragment_instantiation(instance):
+    assert isinstance(instance, Core_IPackageFragment)
 
 
-@given(instance=Core::IPackageFragment_strategy)
-def test_core::ipackagefragment_isDefaultPackage_setter(instance):
+
+@given(instance=Core_IPackageFragment_strategy)
+def test_core_ipackagefragment_isDefaultPackage_setter(instance):
     original = instance.isDefaultPackage
     instance.isDefaultPackage = original
     assert instance.isDefaultPackage == original
 
-@given(instance=Core::IJavaModel_strategy)
+@given(instance=Core_IJavaProject_strategy)
 @settings(max_examples=50)
-def test_core::ijavamodel_instantiation(instance):
-    assert isinstance(instance, Core::IJavaModel)
+def test_core_ijavaproject_instantiation(instance):
+    assert isinstance(instance, Core_IJavaProject)
 
-@given(instance=Core::PhysicalElement_strategy)
+@given(instance=Core_IJavaModel_strategy)
 @settings(max_examples=50)
-def test_core::physicalelement_instantiation(instance):
-    assert isinstance(instance, Core::PhysicalElement)
+def test_core_ijavamodel_instantiation(instance):
+    assert isinstance(instance, Core_IJavaModel)
 
-@given(instance=Core::PhysicalElement_strategy)
-def test_core::physicalelement_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, str)
+@given(instance=Core_PhysicalElement_strategy)
+@settings(max_examples=50)
+def test_core_physicalelement_instantiation(instance):
+    assert isinstance(instance, Core_PhysicalElement)
 
 
-@given(instance=Core::PhysicalElement_strategy)
-def test_core::physicalelement_isReadOnly_setter(instance):
+
+@given(instance=Core_PhysicalElement_strategy)
+def test_core_physicalelement_isReadOnly_setter(instance):
     original = instance.isReadOnly
     instance.isReadOnly = original
     assert instance.isReadOnly == original
 
-@given(instance=Core::PhysicalElement_strategy)
-def test_core::physicalelement_path_type(instance):
-    assert isinstance(instance.path, str)
 
 
-@given(instance=Core::PhysicalElement_strategy)
-def test_core::physicalelement_path_setter(instance):
+@given(instance=Core_PhysicalElement_strategy)
+def test_core_physicalelement_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
@@ -5303,95 +4890,80 @@ def test_itype_instantiation(instance):
 def test_ityperoot_instantiation(instance):
     assert isinstance(instance, ITypeRoot)
 
-@given(instance=Core::IClassFile_strategy)
+@given(instance=Core_IClassFile_strategy)
 @settings(max_examples=50)
-def test_core::iclassfile_instantiation(instance):
-    assert isinstance(instance, Core::IClassFile)
-
-@given(instance=Core::IClassFile_strategy)
-def test_core::iclassfile_isClass_type(instance):
-    assert isinstance(instance.isClass, str)
+def test_core_iclassfile_instantiation(instance):
+    assert isinstance(instance, Core_IClassFile)
 
 
-@given(instance=Core::IClassFile_strategy)
-def test_core::iclassfile_isClass_setter(instance):
+
+@given(instance=Core_IClassFile_strategy)
+def test_core_iclassfile_isClass_setter(instance):
     original = instance.isClass
     instance.isClass = original
     assert instance.isClass == original
 
-@given(instance=Core::IClassFile_strategy)
-def test_core::iclassfile_isInterface_type(instance):
-    assert isinstance(instance.isInterface, str)
 
 
-@given(instance=Core::IClassFile_strategy)
-def test_core::iclassfile_isInterface_setter(instance):
+@given(instance=Core_IClassFile_strategy)
+def test_core_iclassfile_isInterface_setter(instance):
     original = instance.isInterface
     instance.isInterface = original
     assert instance.isInterface == original
 
-@given(instance=Core::ICompilationUnit_strategy)
+@given(instance=Core_ICompilationUnit_strategy)
 @settings(max_examples=50)
-def test_core::icompilationunit_instantiation(instance):
-    assert isinstance(instance, Core::ICompilationUnit)
+def test_core_icompilationunit_instantiation(instance):
+    assert isinstance(instance, Core_ICompilationUnit)
 
 @given(instance=ISourceReference_strategy)
 @settings(max_examples=50)
 def test_isourcereference_instantiation(instance):
     assert isinstance(instance, ISourceReference)
 
-@given(instance=Core::IMember_strategy)
+@given(instance=Core_ITypeParameter_strategy)
 @settings(max_examples=50)
-def test_core::imember_instantiation(instance):
-    assert isinstance(instance, Core::IMember)
-
-@given(instance=Core::ITypeParameter_strategy)
-@settings(max_examples=50)
-def test_core::itypeparameter_instantiation(instance):
-    assert isinstance(instance, Core::ITypeParameter)
-
-@given(instance=Core::ITypeParameter_strategy)
-def test_core::itypeparameter_bounds_type(instance):
-    assert isinstance(instance.bounds, str)
+def test_core_itypeparameter_instantiation(instance):
+    assert isinstance(instance, Core_ITypeParameter)
 
 
-@given(instance=Core::ITypeParameter_strategy)
-def test_core::itypeparameter_bounds_setter(instance):
+
+@given(instance=Core_ITypeParameter_strategy)
+def test_core_itypeparameter_bounds_setter(instance):
     original = instance.bounds
     instance.bounds = original
     assert instance.bounds == original
 
-@given(instance=Core::IImportDeclaration_strategy)
+@given(instance=Core_IImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_core::iimportdeclaration_instantiation(instance):
-    assert isinstance(instance, Core::IImportDeclaration)
-
-@given(instance=Core::IImportDeclaration_strategy)
-def test_core::iimportdeclaration_isOnDemand_type(instance):
-    assert isinstance(instance.isOnDemand, str)
+def test_core_iimportdeclaration_instantiation(instance):
+    assert isinstance(instance, Core_IImportDeclaration)
 
 
-@given(instance=Core::IImportDeclaration_strategy)
-def test_core::iimportdeclaration_isOnDemand_setter(instance):
-    original = instance.isOnDemand
-    instance.isOnDemand = original
-    assert instance.isOnDemand == original
 
-@given(instance=Core::IImportDeclaration_strategy)
-def test_core::iimportdeclaration_isStatic_type(instance):
-    assert isinstance(instance.isStatic, str)
-
-
-@given(instance=Core::IImportDeclaration_strategy)
-def test_core::iimportdeclaration_isStatic_setter(instance):
+@given(instance=Core_IImportDeclaration_strategy)
+def test_core_iimportdeclaration_isStatic_setter(instance):
     original = instance.isStatic
     instance.isStatic = original
     assert instance.isStatic == original
 
-@given(instance=Core::ITypeRoot_strategy)
+
+
+@given(instance=Core_IImportDeclaration_strategy)
+def test_core_iimportdeclaration_isOnDemand_setter(instance):
+    original = instance.isOnDemand
+    instance.isOnDemand = original
+    assert instance.isOnDemand == original
+
+@given(instance=Core_IMember_strategy)
 @settings(max_examples=50)
-def test_core::ityperoot_instantiation(instance):
-    assert isinstance(instance, Core::ITypeRoot)
+def test_core_imember_instantiation(instance):
+    assert isinstance(instance, Core_IMember)
+
+@given(instance=Core_ITypeRoot_strategy)
+@settings(max_examples=50)
+def test_core_ityperoot_instantiation(instance):
+    assert isinstance(instance, Core_ITypeRoot)
 
 @given(instance=ICompilationUnit_strategy)
 @settings(max_examples=50)
@@ -5403,112 +4975,327 @@ def test_icompilationunit_instantiation(instance):
 def test_iclassfile_instantiation(instance):
     assert isinstance(instance, IClassFile)
 
-@given(instance=Core::IJavaElement_strategy)
+@given(instance=Core_IJavaElement_strategy)
 @settings(max_examples=50)
-def test_core::ijavaelement_instantiation(instance):
-    assert isinstance(instance, Core::IJavaElement)
-
-@given(instance=Core::IJavaElement_strategy)
-def test_core::ijavaelement_elementName_type(instance):
-    assert isinstance(instance.elementName, str)
+def test_core_ijavaelement_instantiation(instance):
+    assert isinstance(instance, Core_IJavaElement)
 
 
-@given(instance=Core::IJavaElement_strategy)
-def test_core::ijavaelement_elementName_setter(instance):
+
+@given(instance=Core_IJavaElement_strategy)
+def test_core_ijavaelement_elementName_setter(instance):
     original = instance.elementName
     instance.elementName = original
     assert instance.elementName == original
 
-@given(instance=DOM::SingleMemberAnnotation_strategy)
+@given(instance=DOM_FieldAccess_strategy)
 @settings(max_examples=50)
-def test_dom::singlememberannotation_instantiation(instance):
-    assert isinstance(instance, DOM::SingleMemberAnnotation)
+def test_dom_fieldaccess_instantiation(instance):
+    assert isinstance(instance, DOM_FieldAccess)
 
-@given(instance=MemberValuePair_strategy)
+@given(instance=DOM_ClassInstanceCreation_strategy)
 @settings(max_examples=50)
-def test_membervaluepair_instantiation(instance):
-    assert isinstance(instance, MemberValuePair)
+def test_dom_classinstancecreation_instantiation(instance):
+    assert isinstance(instance, DOM_ClassInstanceCreation)
 
-@given(instance=DOM::NormalAnnotation_strategy)
+@given(instance=DOM_CharacterLiteral_strategy)
 @settings(max_examples=50)
-def test_dom::normalannotation_instantiation(instance):
-    assert isinstance(instance, DOM::NormalAnnotation)
+def test_dom_characterliteral_instantiation(instance):
+    assert isinstance(instance, DOM_CharacterLiteral)
 
-@given(instance=DOM::MarkerAnnotation_strategy)
+
+
+@given(instance=DOM_CharacterLiteral_strategy)
+def test_dom_characterliteral_escapedValue_setter(instance):
+    original = instance.escapedValue
+    instance.escapedValue = original
+    assert instance.escapedValue == original
+
+
+
+@given(instance=DOM_CharacterLiteral_strategy)
+def test_dom_characterliteral_charValue_setter(instance):
+    original = instance.charValue
+    instance.charValue = original
+    assert instance.charValue == original
+
+@given(instance=DOM_CastExpression_strategy)
 @settings(max_examples=50)
-def test_dom::markerannotation_instantiation(instance):
-    assert isinstance(instance, DOM::MarkerAnnotation)
+def test_dom_castexpression_instantiation(instance):
+    assert isinstance(instance, DOM_CastExpression)
 
-@given(instance=DOM::SimpleName_strategy)
+@given(instance=DOM_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_dom::simplename_instantiation(instance):
-    assert isinstance(instance, DOM::SimpleName)
-
-@given(instance=DOM::SimpleName_strategy)
-def test_dom::simplename_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_dom_booleanliteral_instantiation(instance):
+    assert isinstance(instance, DOM_BooleanLiteral)
 
 
-@given(instance=DOM::SimpleName_strategy)
-def test_dom::simplename_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
 
-@given(instance=DOM::SimpleName_strategy)
-def test_dom::simplename_declaration_type(instance):
-    assert isinstance(instance.declaration, str)
+@given(instance=DOM_BooleanLiteral_strategy)
+def test_dom_booleanliteral_booleanValue_setter(instance):
+    original = instance.booleanValue
+    instance.booleanValue = original
+    assert instance.booleanValue == original
 
-
-@given(instance=DOM::SimpleName_strategy)
-def test_dom::simplename_declaration_setter(instance):
-    original = instance.declaration
-    instance.declaration = original
-    assert instance.declaration == original
-
-@given(instance=VariableDeclaration_strategy)
+@given(instance=DOM_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_variabledeclaration_instantiation(instance):
-    assert isinstance(instance, VariableDeclaration)
+def test_dom_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, DOM_ConditionalExpression)
 
-@given(instance=DOM::VariableDeclarationFragment_strategy)
+@given(instance=DOM_ArrayCreation_strategy)
 @settings(max_examples=50)
-def test_dom::variabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, DOM::VariableDeclarationFragment)
+def test_dom_arraycreation_instantiation(instance):
+    assert isinstance(instance, DOM_ArrayCreation)
 
-@given(instance=DOM::SingleVariableDeclaration_strategy)
+@given(instance=DOM_ArrayAccess_strategy)
 @settings(max_examples=50)
-def test_dom::singlevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, DOM::SingleVariableDeclaration)
+def test_dom_arrayaccess_instantiation(instance):
+    assert isinstance(instance, DOM_ArrayAccess)
 
-@given(instance=DOM::SingleVariableDeclaration_strategy)
-def test_dom::singlevariabledeclaration_varargs_type(instance):
-    assert isinstance(instance.varargs, str)
+@given(instance=DOM_Annotation_strategy)
+@settings(max_examples=50)
+def test_dom_annotation_instantiation(instance):
+    assert isinstance(instance, DOM_Annotation)
+
+@given(instance=DOM_LineComment_strategy)
+@settings(max_examples=50)
+def test_dom_linecomment_instantiation(instance):
+    assert isinstance(instance, DOM_LineComment)
+
+@given(instance=TagElement_strategy)
+@settings(max_examples=50)
+def test_tagelement_instantiation(instance):
+    assert isinstance(instance, TagElement)
+
+@given(instance=DOM_Javadoc_strategy)
+@settings(max_examples=50)
+def test_dom_javadoc_instantiation(instance):
+    assert isinstance(instance, DOM_Javadoc)
+
+@given(instance=DOM_BlockComment_strategy)
+@settings(max_examples=50)
+def test_dom_blockcomment_instantiation(instance):
+    assert isinstance(instance, DOM_BlockComment)
+
+@given(instance=DOM_Assignment_strategy)
+@settings(max_examples=50)
+def test_dom_assignment_instantiation(instance):
+    assert isinstance(instance, DOM_Assignment)
 
 
-@given(instance=DOM::SingleVariableDeclaration_strategy)
-def test_dom::singlevariabledeclaration_varargs_setter(instance):
+
+@given(instance=DOM_Assignment_strategy)
+def test_dom_assignment_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=DOM_ArrayInitializer_strategy)
+@settings(max_examples=50)
+def test_dom_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, DOM_ArrayInitializer)
+
+@given(instance=ArrayType_strategy)
+@settings(max_examples=50)
+def test_arraytype_instantiation(instance):
+    assert isinstance(instance, ArrayType)
+
+@given(instance=ArrayInitializer_strategy)
+@settings(max_examples=50)
+def test_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, ArrayInitializer)
+
+@given(instance=TypeParameter_strategy)
+@settings(max_examples=50)
+def test_typeparameter_instantiation(instance):
+    assert isinstance(instance, TypeParameter)
+
+@given(instance=DOM_MethodDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_methoddeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_MethodDeclaration)
+
+
+
+@given(instance=DOM_MethodDeclaration_strategy)
+def test_dom_methoddeclaration_extraDimensions_setter(instance):
+    original = instance.extraDimensions
+    instance.extraDimensions = original
+    assert instance.extraDimensions == original
+
+
+
+@given(instance=DOM_MethodDeclaration_strategy)
+def test_dom_methoddeclaration_varargs_setter(instance):
     original = instance.varargs
     instance.varargs = original
     assert instance.varargs == original
 
-@given(instance=DOM::WildcardType_strategy)
+
+
+@given(instance=DOM_MethodDeclaration_strategy)
+def test_dom_methoddeclaration_constructor_setter(instance):
+    original = instance.constructor
+    instance.constructor = original
+    assert instance.constructor == original
+
+@given(instance=DOM_Initializer_strategy)
 @settings(max_examples=50)
-def test_dom::wildcardtype_instantiation(instance):
-    assert isinstance(instance, DOM::WildcardType)
+def test_dom_initializer_instantiation(instance):
+    assert isinstance(instance, DOM_Initializer)
 
-@given(instance=DOM::WildcardType_strategy)
-def test_dom::wildcardtype_upperBound_type(instance):
-    assert isinstance(instance.upperBound, str)
-
-
-@given(instance=DOM::WildcardType_strategy)
-def test_dom::wildcardtype_upperBound_setter(instance):
-    original = instance.upperBound
-    instance.upperBound = original
-    assert instance.upperBound == original
-
-@given(instance=DOM::SimpleType_strategy)
+@given(instance=VariableDeclarationFragment_strategy)
 @settings(max_examples=50)
-def test_dom::simpletype_instantiation(instance):
-    assert isinstance(instance, DOM::SimpleType)
+def test_variabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, VariableDeclarationFragment)
+
+@given(instance=DOM_TypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_typedeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_TypeDeclaration)
+
+
+
+@given(instance=DOM_TypeDeclaration_strategy)
+def test_dom_typedeclaration_interface_setter(instance):
+    original = instance.interface
+    instance.interface = original
+    assert instance.interface == original
+
+@given(instance=EnumConstantDeclaration_strategy)
+@settings(max_examples=50)
+def test_enumconstantdeclaration_instantiation(instance):
+    assert isinstance(instance, EnumConstantDeclaration)
+
+@given(instance=DOM_EnumDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_enumdeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_EnumDeclaration)
+
+@given(instance=DOM_AnnotationTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_annotationtypedeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_AnnotationTypeDeclaration)
+
+@given(instance=DOM_AnnotationTypeMemberDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_annotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_AnnotationTypeMemberDeclaration)
+
+@given(instance=DOM_AbstractTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_abstracttypedeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_AbstractTypeDeclaration)
+
+
+
+@given(instance=DOM_AbstractTypeDeclaration_strategy)
+def test_dom_abstracttypedeclaration_packageMemberTypeDeclaration_setter(instance):
+    original = instance.packageMemberTypeDeclaration
+    instance.packageMemberTypeDeclaration = original
+    assert instance.packageMemberTypeDeclaration == original
+
+
+
+@given(instance=DOM_AbstractTypeDeclaration_strategy)
+def test_dom_abstracttypedeclaration_memberTypeDeclaration_setter(instance):
+    original = instance.memberTypeDeclaration
+    instance.memberTypeDeclaration = original
+    assert instance.memberTypeDeclaration == original
+
+
+
+@given(instance=DOM_AbstractTypeDeclaration_strategy)
+def test_dom_abstracttypedeclaration_localTypeDeclaration_setter(instance):
+    original = instance.localTypeDeclaration
+    instance.localTypeDeclaration = original
+    assert instance.localTypeDeclaration == original
+
+@given(instance=DOM_FieldDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_fielddeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_FieldDeclaration)
+
+@given(instance=AnonymousClassDeclaration_strategy)
+@settings(max_examples=50)
+def test_anonymousclassdeclaration_instantiation(instance):
+    assert isinstance(instance, AnonymousClassDeclaration)
+
+@given(instance=DOM_EnumConstantDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_enumconstantdeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_EnumConstantDeclaration)
+
+@given(instance=DOM_TagElement_strategy)
+@settings(max_examples=50)
+def test_dom_tagelement_instantiation(instance):
+    assert isinstance(instance, DOM_TagElement)
+
+
+
+@given(instance=DOM_TagElement_strategy)
+def test_dom_tagelement_nested_setter(instance):
+    original = instance.nested
+    instance.nested = original
+    assert instance.nested == original
+
+
+
+@given(instance=DOM_TagElement_strategy)
+def test_dom_tagelement_tagName_setter(instance):
+    original = instance.tagName
+    instance.tagName = original
+    assert instance.tagName == original
+
+@given(instance=DOM_Statement_strategy)
+@settings(max_examples=50)
+def test_dom_statement_instantiation(instance):
+    assert isinstance(instance, DOM_Statement)
+
+@given(instance=Annotation_strategy)
+@settings(max_examples=50)
+def test_annotation_instantiation(instance):
+    assert isinstance(instance, Annotation)
+
+@given(instance=DOM_MarkerAnnotation_strategy)
+@settings(max_examples=50)
+def test_dom_markerannotation_instantiation(instance):
+    assert isinstance(instance, DOM_MarkerAnnotation)
+
+@given(instance=DOM_NormalAnnotation_strategy)
+@settings(max_examples=50)
+def test_dom_normalannotation_instantiation(instance):
+    assert isinstance(instance, DOM_NormalAnnotation)
+
+@given(instance=DOM_SingleMemberAnnotation_strategy)
+@settings(max_examples=50)
+def test_dom_singlememberannotation_instantiation(instance):
+    assert isinstance(instance, DOM_SingleMemberAnnotation)
+
+@given(instance=DOM_PackageDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_PackageDeclaration)
+
+@given(instance=DOM_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_dom_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, DOM_VariableDeclaration)
+
+
+
+@given(instance=DOM_VariableDeclaration_strategy)
+def test_dom_variabledeclaration_extraDimensions_setter(instance):
+    original = instance.extraDimensions
+    instance.extraDimensions = original
+    assert instance.extraDimensions == original
+
+@given(instance=DOM_TypeParameter_strategy)
+@settings(max_examples=50)
+def test_dom_typeparameter_instantiation(instance):
+    assert isinstance(instance, DOM_TypeParameter)
+
+@given(instance=DOM_Type_strategy)
+@settings(max_examples=50)
+def test_dom_type_instantiation(instance):
+    assert isinstance(instance, DOM_Type)

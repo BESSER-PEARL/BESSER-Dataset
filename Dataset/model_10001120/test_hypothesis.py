@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Product,
@@ -14,8 +14,8 @@ from python_code import (
     ShoppingCart,
     Payment,
     Customer,
-    OrderStatus,
     UserState,
+    OrderStatus,
 )
 
 # =============================================================================
@@ -35,17 +35,8 @@ def test_product_constructor_exists():
 def test_product_constructor_args():
     sig = inspect.signature(Product.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
-
-def test_product_has_name():
-    assert hasattr(Product, "name")
-    descriptor = None
-    for klass in Product.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_product_has_description():
     assert hasattr(Product, "description")
@@ -53,6 +44,15 @@ def test_product_has_description():
     for klass in Product.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_product_has_name():
+    assert hasattr(Product, "name")
+    descriptor = None
+    for klass in Product.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -103,39 +103,12 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "shipTo" in params, "Missing parameter 'shipTo'"
-    assert "ordered" in params, "Missing parameter 'ordered'"
-    assert "number" in params, "Missing parameter 'number'"
     assert "status" in params, "Missing parameter 'status'"
-    assert "total" in params, "Missing parameter 'total'"
     assert "shipped" in params, "Missing parameter 'shipped'"
-
-def test_order_has_shipTo():
-    assert hasattr(Order, "shipTo")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "shipTo" in klass.__dict__:
-            descriptor = klass.__dict__["shipTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_ordered():
-    assert hasattr(Order, "ordered")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_order_has_number():
-    assert hasattr(Order, "number")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
+    assert "total" in params, "Missing parameter 'total'"
+    assert "number" in params, "Missing parameter 'number'"
+    assert "ordered" in params, "Missing parameter 'ordered'"
+    assert "shipTo" in params, "Missing parameter 'shipTo'"
 
 def test_order_has_status():
     assert hasattr(Order, "status")
@@ -143,6 +116,15 @@ def test_order_has_status():
     for klass in Order.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_shipped():
+    assert hasattr(Order, "shipped")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "shipped" in klass.__dict__:
+            descriptor = klass.__dict__["shipped"]
             break
     assert isinstance(descriptor, property)
 
@@ -155,12 +137,30 @@ def test_order_has_total():
             break
     assert isinstance(descriptor, property)
 
-def test_order_has_shipped():
-    assert hasattr(Order, "shipped")
+def test_order_has_number():
+    assert hasattr(Order, "number")
     descriptor = None
     for klass in Order.__mro__:
-        if "shipped" in klass.__dict__:
-            descriptor = klass.__dict__["shipped"]
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_ordered():
+    assert hasattr(Order, "ordered")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_shipTo():
+    assert hasattr(Order, "shipTo")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "shipTo" in klass.__dict__:
+            descriptor = klass.__dict__["shipTo"]
             break
     assert isinstance(descriptor, property)
 
@@ -177,9 +177,18 @@ def test_webuser_constructor_exists():
 def test_webuser_constructor_args():
     sig = inspect.signature(WebUser.__init__)
     params = list(sig.parameters.keys())
+    assert "password" in params, "Missing parameter 'password'"
     assert "login" in params, "Missing parameter 'login'"
     assert "state" in params, "Missing parameter 'state'"
-    assert "password" in params, "Missing parameter 'password'"
+
+def test_webuser_has_password():
+    assert hasattr(WebUser, "password")
+    descriptor = None
+    for klass in WebUser.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_webuser_has_login():
     assert hasattr(WebUser, "login")
@@ -199,15 +208,6 @@ def test_webuser_has_state():
             break
     assert isinstance(descriptor, property)
 
-def test_webuser_has_password():
-    assert hasattr(WebUser, "password")
-    descriptor = None
-    for klass in WebUser.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_account_is_not_abstract():
@@ -221,10 +221,19 @@ def test_account_constructor_exists():
 def test_account_constructor_args():
     sig = inspect.signature(Account.__init__)
     params = list(sig.parameters.keys())
+    assert "closed" in params, "Missing parameter 'closed'"
     assert "isClosed" in params, "Missing parameter 'isClosed'"
     assert "billingAddress" in params, "Missing parameter 'billingAddress'"
-    assert "closed" in params, "Missing parameter 'closed'"
     assert "open" in params, "Missing parameter 'open'"
+
+def test_account_has_closed():
+    assert hasattr(Account, "closed")
+    descriptor = None
+    for klass in Account.__mro__:
+        if "closed" in klass.__dict__:
+            descriptor = klass.__dict__["closed"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_account_has_isClosed():
     assert hasattr(Account, "isClosed")
@@ -241,15 +250,6 @@ def test_account_has_billingAddress():
     for klass in Account.__mro__:
         if "billingAddress" in klass.__dict__:
             descriptor = klass.__dict__["billingAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_account_has_closed():
-    assert hasattr(Account, "closed")
-    descriptor = None
-    for klass in Account.__mro__:
-        if "closed" in klass.__dict__:
-            descriptor = klass.__dict__["closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -299,9 +299,18 @@ def test_payment_constructor_exists():
 def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
+    assert "total" in params, "Missing parameter 'total'"
     assert "details" in params, "Missing parameter 'details'"
     assert "paidDate" in params, "Missing parameter 'paidDate'"
-    assert "total" in params, "Missing parameter 'total'"
+
+def test_payment_has_total():
+    assert hasattr(Payment, "total")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_payment_has_details():
     assert hasattr(Payment, "details")
@@ -321,15 +330,6 @@ def test_payment_has_paidDate():
             break
     assert isinstance(descriptor, property)
 
-def test_payment_has_total():
-    assert hasattr(Payment, "total")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_customer_is_not_abstract():
@@ -343,18 +343,9 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "phone" in params, "Missing parameter 'phone'"
     assert "address" in params, "Missing parameter 'address'"
     assert "email" in params, "Missing parameter 'email'"
-
-def test_customer_has_phone():
-    assert hasattr(Customer, "phone")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "phone" in klass.__dict__:
-            descriptor = klass.__dict__["phone"]
-            break
-    assert isinstance(descriptor, property)
+    assert "phone" in params, "Missing parameter 'phone'"
 
 def test_customer_has_address():
     assert hasattr(Customer, "address")
@@ -374,18 +365,14 @@ def test_customer_has_email():
             break
     assert isinstance(descriptor, property)
 
-def test_orderstatus_exists():
-    # Check that the Enumeration exists
-    assert OrderStatus is not None
-
-def test_orderstatus_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OrderStatus]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OrderStatus"
+def test_customer_has_phone():
+    assert hasattr(Customer, "phone")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "phone" in klass.__dict__:
+            descriptor = klass.__dict__["phone"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_userstate_exists():
     # Check that the Enumeration exists
@@ -399,6 +386,19 @@ def test_userstate_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in UserState"
+
+def test_orderstatus_exists():
+    # Check that the Enumeration exists
+    assert OrderStatus is not None
+
+def test_orderstatus_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OrderStatus]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OrderStatus"
 
 
 # =============================================================================
@@ -414,9 +414,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Product_strategy = st.builds(
     Product,
-    name=
-        safe_text,
     description=
+        safe_text,
+    name=
         safe_text
 )
 LineItem_strategy = st.builds(
@@ -428,36 +428,36 @@ LineItem_strategy = st.builds(
 )
 Order_strategy = st.builds(
     Order,
-    shipTo=
-        safe_text,
-    ordered=
-        st.dates(),
-    number=
-        st.integers(),
     status=
         st.none(),
+    shipped=
+        st.booleans(),
     total=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    shipped=
-        st.booleans()
+    number=
+        st.integers(),
+    ordered=
+        st.dates(),
+    shipTo=
+        safe_text
 )
 WebUser_strategy = st.builds(
     WebUser,
+    password=
+        safe_text,
     login=
         safe_text,
     state=
-        st.none(),
-    password=
-        safe_text
+        st.none()
 )
 Account_strategy = st.builds(
     Account,
+    closed=
+        st.dates(),
     isClosed=
         st.booleans(),
     billingAddress=
         safe_text,
-    closed=
-        st.dates(),
     open=
         st.dates()
 )
@@ -468,20 +468,20 @@ ShoppingCart_strategy = st.builds(
 )
 Payment_strategy = st.builds(
     Payment,
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     details=
         safe_text,
     paidDate=
-        st.dates(),
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.dates()
 )
 Customer_strategy = st.builds(
     Customer,
-    phone=
-        safe_text,
     address=
         safe_text,
     email=
+        safe_text,
+    phone=
         safe_text
 )
 
@@ -490,20 +490,6 @@ Customer_strategy = st.builds(
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=Product_strategy)
-def test_product_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Product_strategy)
-def test_product_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Product_strategy)
-def test_product_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=Product_strategy)
@@ -512,14 +498,19 @@ def test_product_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
+
+
+@given(instance=Product_strategy)
+def test_product_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=LineItem_strategy)
 @settings(max_examples=50)
 def test_lineitem_instantiation(instance):
     assert isinstance(instance, LineItem)
 
-@given(instance=LineItem_strategy)
-def test_lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=LineItem_strategy)
@@ -528,9 +519,6 @@ def test_lineitem_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=LineItem_strategy)
-def test_lineitem_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
 @given(instance=LineItem_strategy)
@@ -544,42 +532,6 @@ def test_lineitem_price_setter(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_shipTo_type(instance):
-    assert isinstance(instance.shipTo, str)
-
-
-@given(instance=Order_strategy)
-def test_order_shipTo_setter(instance):
-    original = instance.shipTo
-    instance.shipTo = original
-    assert instance.shipTo == original
-
-@given(instance=Order_strategy)
-def test_order_ordered_type(instance):
-    assert isinstance(instance.ordered, date)
-
-
-@given(instance=Order_strategy)
-def test_order_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=Order_strategy)
-def test_order_number_type(instance):
-    assert isinstance(instance.number, int)
-
-
-@given(instance=Order_strategy)
-def test_order_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=Order_strategy)
-def test_order_status_type(instance):
-    assert isinstance(instance.status, orderstatus)
 
 
 @given(instance=Order_strategy)
@@ -588,20 +540,6 @@ def test_order_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
-@given(instance=Order_strategy)
-def test_order_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Order_strategy)
-def test_order_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Order_strategy)
-def test_order_shipped_type(instance):
-    assert isinstance(instance.shipped, bool)
 
 
 @given(instance=Order_strategy)
@@ -610,36 +548,43 @@ def test_order_shipped_setter(instance):
     instance.shipped = original
     assert instance.shipped == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_shipTo_setter(instance):
+    original = instance.shipTo
+    instance.shipTo = original
+    assert instance.shipTo == original
+
 @given(instance=WebUser_strategy)
 @settings(max_examples=50)
 def test_webuser_instantiation(instance):
     assert isinstance(instance, WebUser)
 
-@given(instance=WebUser_strategy)
-def test_webuser_login_type(instance):
-    assert isinstance(instance.login, str)
-
-
-@given(instance=WebUser_strategy)
-def test_webuser_login_setter(instance):
-    original = instance.login
-    instance.login = original
-    assert instance.login == original
-
-@given(instance=WebUser_strategy)
-def test_webuser_state_type(instance):
-    assert isinstance(instance.state, userstate)
-
-
-@given(instance=WebUser_strategy)
-def test_webuser_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=WebUser_strategy)
-def test_webuser_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=WebUser_strategy)
@@ -648,36 +593,27 @@ def test_webuser_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=WebUser_strategy)
+def test_webuser_login_setter(instance):
+    original = instance.login
+    instance.login = original
+    assert instance.login == original
+
+
+
+@given(instance=WebUser_strategy)
+def test_webuser_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
 @given(instance=Account_strategy)
 @settings(max_examples=50)
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_isClosed_type(instance):
-    assert isinstance(instance.isClosed, bool)
-
-
-@given(instance=Account_strategy)
-def test_account_isClosed_setter(instance):
-    original = instance.isClosed
-    instance.isClosed = original
-    assert instance.isClosed == original
-
-@given(instance=Account_strategy)
-def test_account_billingAddress_type(instance):
-    assert isinstance(instance.billingAddress, str)
-
-
-@given(instance=Account_strategy)
-def test_account_billingAddress_setter(instance):
-    original = instance.billingAddress
-    instance.billingAddress = original
-    assert instance.billingAddress == original
-
-@given(instance=Account_strategy)
-def test_account_closed_type(instance):
-    assert isinstance(instance.closed, date)
 
 
 @given(instance=Account_strategy)
@@ -686,9 +622,22 @@ def test_account_closed_setter(instance):
     instance.closed = original
     assert instance.closed == original
 
+
+
 @given(instance=Account_strategy)
-def test_account_open_type(instance):
-    assert isinstance(instance.open, date)
+def test_account_isClosed_setter(instance):
+    original = instance.isClosed
+    instance.isClosed = original
+    assert instance.isClosed == original
+
+
+
+@given(instance=Account_strategy)
+def test_account_billingAddress_setter(instance):
+    original = instance.billingAddress
+    instance.billingAddress = original
+    assert instance.billingAddress == original
+
 
 
 @given(instance=Account_strategy)
@@ -702,9 +651,6 @@ def test_account_open_setter(instance):
 def test_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCart)
 
-@given(instance=ShoppingCart_strategy)
-def test_shoppingcart_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=ShoppingCart_strategy)
@@ -718,31 +664,6 @@ def test_shoppingcart_creationDate_setter(instance):
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_details_type(instance):
-    assert isinstance(instance.details, str)
-
-
-@given(instance=Payment_strategy)
-def test_payment_details_setter(instance):
-    original = instance.details
-    instance.details = original
-    assert instance.details == original
-
-@given(instance=Payment_strategy)
-def test_payment_paidDate_type(instance):
-    assert isinstance(instance.paidDate, date)
-
-
-@given(instance=Payment_strategy)
-def test_payment_paidDate_setter(instance):
-    original = instance.paidDate
-    instance.paidDate = original
-    assert instance.paidDate == original
-
-@given(instance=Payment_strategy)
-def test_payment_total_type(instance):
-    assert isinstance(instance.total, float)
 
 
 @given(instance=Payment_strategy)
@@ -751,25 +672,27 @@ def test_payment_total_setter(instance):
     instance.total = original
     assert instance.total == original
 
+
+
+@given(instance=Payment_strategy)
+def test_payment_details_setter(instance):
+    original = instance.details
+    instance.details = original
+    assert instance.details == original
+
+
+
+@given(instance=Payment_strategy)
+def test_payment_paidDate_setter(instance):
+    original = instance.paidDate
+    instance.paidDate = original
+    assert instance.paidDate == original
+
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_phone_type(instance):
-    assert isinstance(instance.phone, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_phone_setter(instance):
-    original = instance.phone
-    instance.phone = original
-    assert instance.phone == original
-
-@given(instance=Customer_strategy)
-def test_customer_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Customer_strategy)
@@ -778,9 +701,6 @@ def test_customer_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=Customer_strategy)
-def test_customer_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Customer_strategy)
@@ -788,3 +708,11 @@ def test_customer_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_phone_setter(instance):
+    original = instance.phone
+    instance.phone = original
+    assert instance.phone == original

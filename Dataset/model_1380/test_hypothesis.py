@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Set,
-    statemachine::Transition,
-    statemachine::StateMachine,
-    statemachine::State,
+from python_code import (
+    statemachine_Set,
+    statemachine_Transition,
+    statemachine_StateMachine,
+    statemachine_State,
 )
 
 # =============================================================================
@@ -18,37 +18,37 @@ from classes import (
 
 
 
-def test_statemachine::set_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Set)
+def test_statemachine_set_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Set)
 
 
-def test_statemachine::set_constructor_exists():
-    assert callable(statemachine::Set.__init__)
+def test_statemachine_set_constructor_exists():
+    assert callable(statemachine_Set.__init__)
 
 
-def test_statemachine::set_constructor_args():
-    sig = inspect.signature(statemachine::Set.__init__)
+def test_statemachine_set_constructor_args():
+    sig = inspect.signature(statemachine_Set.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_statemachine::transition_has_label():
-    assert hasattr(statemachine::Transition, "label")
+def test_statemachine_transition_has_label():
+    assert hasattr(statemachine_Transition, "label")
     descriptor = None
-    for klass in statemachine::Transition.__mro__:
+    for klass in statemachine_Transition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -56,49 +56,49 @@ def test_statemachine::transition_has_label():
 
 
 
-def test_statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachine::StateMachine)
+def test_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachine_StateMachine)
 
 
-def test_statemachine::statemachine_constructor_exists():
-    assert callable(statemachine::StateMachine.__init__)
+def test_statemachine_statemachine_constructor_exists():
+    assert callable(statemachine_StateMachine.__init__)
 
 
-def test_statemachine::statemachine_constructor_args():
-    sig = inspect.signature(statemachine::StateMachine.__init__)
+def test_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(statemachine_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
-    assert "initial" in params, "Missing parameter 'initial'"
     assert "terminal" in params, "Missing parameter 'terminal'"
+    assert "initial" in params, "Missing parameter 'initial'"
 
-def test_statemachine::state_has_initial():
-    assert hasattr(statemachine::State, "initial")
+def test_statemachine_state_has_terminal():
+    assert hasattr(statemachine_State, "terminal")
     descriptor = None
-    for klass in statemachine::State.__mro__:
-        if "initial" in klass.__dict__:
-            descriptor = klass.__dict__["initial"]
+    for klass in statemachine_State.__mro__:
+        if "terminal" in klass.__dict__:
+            descriptor = klass.__dict__["terminal"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachine::state_has_terminal():
-    assert hasattr(statemachine::State, "terminal")
+def test_statemachine_state_has_initial():
+    assert hasattr(statemachine_State, "initial")
     descriptor = None
-    for klass in statemachine::State.__mro__:
-        if "terminal" in klass.__dict__:
-            descriptor = klass.__dict__["terminal"]
+    for klass in statemachine_State.__mro__:
+        if "initial" in klass.__dict__:
+            descriptor = klass.__dict__["initial"]
             break
     assert isinstance(descriptor, property)
 
@@ -114,50 +114,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Set_strategy = st.builds(
-    statemachine::Set,
+statemachine_Set_strategy = st.builds(
+    statemachine_Set,
 )
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
     label=
         safe_text
 )
-statemachine::StateMachine_strategy = st.builds(
-    statemachine::StateMachine,
+statemachine_StateMachine_strategy = st.builds(
+    statemachine_StateMachine,
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
-    initial=
-        st.booleans(),
+statemachine_State_strategy = st.builds(
+    statemachine_State,
     terminal=
+        st.booleans(),
+    initial=
         st.booleans()
 )
 
-@given(instance=statemachine::Set_strategy)
+@given(instance=statemachine_Set_strategy)
 @settings(max_examples=50)
-def test_statemachine::set_instantiation(instance):
-    assert isinstance(instance, statemachine::Set)
+def test_statemachine_set_instantiation(instance):
+    assert isinstance(instance, statemachine_Set)
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
 
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_label_setter(instance):
+
+@given(instance=statemachine_Transition_strategy)
+def test_statemachine_transition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachine::StateMachine)
+def test_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachine_StateMachine)
 
 import warnings
 import copy
@@ -165,69 +162,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=30)
-def test_statemachine::statemachine_addtransition_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addTransition(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addTransition).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTransition' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTransition' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTransition' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_terminals_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.terminals()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.terminals).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'terminals' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'terminals' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'terminals' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_delta_changes_state(instance):
+def test_statemachine_statemachine_delta_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -241,14 +178,14 @@ def test_statemachine::statemachine_delta_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'delta' in statemachine::StateMachine is empty"
+        assert has_statements, f"Function 'delta' in statemachine_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'delta' in statemachine::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'delta' in statemachine_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'delta' in statemachine::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'delta' in statemachine_StateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -256,30 +193,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=30)
-def test_statemachine::statemachine_accessiblestates_changes_state(instance):
+def test_statemachine_statemachine_accessibleandcoaccessiblestates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.accessibleStates(
-            "test"
-        )
+        instance.accessibleAndCoAccessibleStates()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.accessibleStates).strip()
+        source = inspect.getsource(instance.accessibleAndCoAccessibleStates).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'accessibleStates' in statemachine::StateMachine is empty"
+        assert has_statements, f"Function 'accessibleAndCoAccessibleStates' in statemachine_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'accessibleStates' in statemachine::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'accessibleAndCoAccessibleStates' in statemachine_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'accessibleStates' in statemachine::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'accessibleAndCoAccessibleStates' in statemachine_StateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -287,101 +222,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=30)
-def test_statemachine::statemachine_accept_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.accept(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.accept).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'accept' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'accept' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'accept' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_coaccessiblestates_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.coAccessibleStates()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.coAccessibleStates).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'coAccessibleStates' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'coAccessibleStates' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'coAccessibleStates' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_addstate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addState(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addState).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addState' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addState' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addState' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_deltaminusone_changes_state(instance):
+def test_statemachine_statemachine_deltaminusone_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -396,14 +239,14 @@ def test_statemachine::statemachine_deltaminusone_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'deltaMinusOne' in statemachine::StateMachine is empty"
+        assert has_statements, f"Function 'deltaMinusOne' in statemachine_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'deltaMinusOne' in statemachine::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'deltaMinusOne' in statemachine_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'deltaMinusOne' in statemachine::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'deltaMinusOne' in statemachine_StateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -411,9 +254,99 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=30)
-def test_statemachine::statemachine_initials_changes_state(instance):
+def test_statemachine_statemachine_terminals_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.terminals()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.terminals).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'terminals' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'terminals' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'terminals' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_coaccessiblestates_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.coAccessibleStates()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.coAccessibleStates).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'coAccessibleStates' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'coAccessibleStates' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'coAccessibleStates' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_addstate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addState(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addState).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addState' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addState' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addState' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_initials_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -425,14 +358,14 @@ def test_statemachine::statemachine_initials_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initials' in statemachine::StateMachine is empty"
+        assert has_statements, f"Function 'initials' in statemachine_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initials' in statemachine::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'initials' in statemachine_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initials' in statemachine::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'initials' in statemachine_StateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -440,102 +373,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=30)
-def test_statemachine::statemachine_deltafrom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.deltaFrom(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.deltaFrom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'deltaFrom' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'deltaFrom' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'deltaFrom' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_alphabet_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.alphabet()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.alphabet).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'alphabet' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'alphabet' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'alphabet' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_steps_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.steps(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.steps).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'steps' in statemachine::StateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'steps' in statemachine::StateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'steps' in statemachine::StateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statemachine::StateMachine_strategy)
-@settings(max_examples=30)
-def test_statemachine::statemachine_step_changes_state(instance):
+def test_statemachine_statemachine_step_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -550,14 +390,14 @@ def test_statemachine::statemachine_step_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'step' in statemachine::StateMachine is empty"
+        assert has_statements, f"Function 'step' in statemachine_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'step' in statemachine::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'step' in statemachine_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'step' in statemachine::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'step' in statemachine_StateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -565,52 +405,203 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::StateMachine_strategy)
+@given(instance=statemachine_StateMachine_strategy)
 @settings(max_examples=30)
-def test_statemachine::statemachine_accessibleandcoaccessiblestates_changes_state(instance):
+def test_statemachine_statemachine_deltafrom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.accessibleAndCoAccessibleStates()
+        instance.deltaFrom(
+            "test", 
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.accessibleAndCoAccessibleStates).strip()
+        source = inspect.getsource(instance.deltaFrom).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'accessibleAndCoAccessibleStates' in statemachine::StateMachine is empty"
+        assert has_statements, f"Function 'deltaFrom' in statemachine_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'accessibleAndCoAccessibleStates' in statemachine::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'deltaFrom' in statemachine_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'accessibleAndCoAccessibleStates' in statemachine::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'deltaFrom' in statemachine_StateMachine is not implemented or raised an error")
 
-@given(instance=statemachine::State_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_steps_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.steps(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.steps).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'steps' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'steps' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'steps' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_accessiblestates_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.accessibleStates(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.accessibleStates).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'accessibleStates' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'accessibleStates' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'accessibleStates' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_addtransition_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addTransition(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addTransition).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addTransition' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addTransition' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addTransition' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_alphabet_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.alphabet()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.alphabet).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'alphabet' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'alphabet' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'alphabet' in statemachine_StateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statemachine_StateMachine_strategy)
+@settings(max_examples=30)
+def test_statemachine_statemachine_accept_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.accept(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.accept).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'accept' in statemachine_StateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'accept' in statemachine_StateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'accept' in statemachine_StateMachine is not implemented or raised an error")
+
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_initial_type(instance):
-    assert isinstance(instance.initial, bool)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_initial_setter(instance):
-    original = instance.initial
-    instance.initial = original
-    assert instance.initial == original
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_terminal_type(instance):
-    assert isinstance(instance.terminal, bool)
-
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_terminal_setter(instance):
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_terminal_setter(instance):
     original = instance.terminal
     instance.terminal = original
     assert instance.terminal == original
+
+
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_initial_setter(instance):
+    original = instance.initial
+    instance.initial = original
+    assert instance.initial == original

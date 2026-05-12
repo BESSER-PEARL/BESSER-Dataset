@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    chartDsl::Task,
-    chartDsl::Project,
-    chartDsl::Employee,
-    chartDsl::Company,
+from python_code import (
+    chartDsl_Task,
+    chartDsl_Project,
+    chartDsl_Employee,
+    chartDsl_Company,
     ProjectType,
 )
 
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_chartdsl::task_is_not_abstract():
-    assert not inspect.isabstract(chartDsl::Task)
+def test_chartdsl_task_is_not_abstract():
+    assert not inspect.isabstract(chartDsl_Task)
 
 
-def test_chartdsl::task_constructor_exists():
-    assert callable(chartDsl::Task.__init__)
+def test_chartdsl_task_constructor_exists():
+    assert callable(chartDsl_Task.__init__)
 
 
-def test_chartdsl::task_constructor_args():
-    sig = inspect.signature(chartDsl::Task.__init__)
+def test_chartdsl_task_constructor_args():
+    sig = inspect.signature(chartDsl_Task.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_chartdsl::task_has_name():
-    assert hasattr(chartDsl::Task, "name")
+def test_chartdsl_task_has_name():
+    assert hasattr(chartDsl_Task, "name")
     descriptor = None
-    for klass in chartDsl::Task.__mro__:
+    for klass in chartDsl_Task.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,33 +43,33 @@ def test_chartdsl::task_has_name():
 
 
 
-def test_chartdsl::project_is_not_abstract():
-    assert not inspect.isabstract(chartDsl::Project)
+def test_chartdsl_project_is_not_abstract():
+    assert not inspect.isabstract(chartDsl_Project)
 
 
-def test_chartdsl::project_constructor_exists():
-    assert callable(chartDsl::Project.__init__)
+def test_chartdsl_project_constructor_exists():
+    assert callable(chartDsl_Project.__init__)
 
 
-def test_chartdsl::project_constructor_args():
-    sig = inspect.signature(chartDsl::Project.__init__)
+def test_chartdsl_project_constructor_args():
+    sig = inspect.signature(chartDsl_Project.__init__)
     params = list(sig.parameters.keys())
     assert "projectType" in params, "Missing parameter 'projectType'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_chartdsl::project_has_projectType():
-    assert hasattr(chartDsl::Project, "projectType")
+def test_chartdsl_project_has_projectType():
+    assert hasattr(chartDsl_Project, "projectType")
     descriptor = None
-    for klass in chartDsl::Project.__mro__:
+    for klass in chartDsl_Project.__mro__:
         if "projectType" in klass.__dict__:
             descriptor = klass.__dict__["projectType"]
             break
     assert isinstance(descriptor, property)
 
-def test_chartdsl::project_has_name():
-    assert hasattr(chartDsl::Project, "name")
+def test_chartdsl_project_has_name():
+    assert hasattr(chartDsl_Project, "name")
     descriptor = None
-    for klass in chartDsl::Project.__mro__:
+    for klass in chartDsl_Project.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -77,23 +77,23 @@ def test_chartdsl::project_has_name():
 
 
 
-def test_chartdsl::employee_is_not_abstract():
-    assert not inspect.isabstract(chartDsl::Employee)
+def test_chartdsl_employee_is_not_abstract():
+    assert not inspect.isabstract(chartDsl_Employee)
 
 
-def test_chartdsl::employee_constructor_exists():
-    assert callable(chartDsl::Employee.__init__)
+def test_chartdsl_employee_constructor_exists():
+    assert callable(chartDsl_Employee.__init__)
 
 
-def test_chartdsl::employee_constructor_args():
-    sig = inspect.signature(chartDsl::Employee.__init__)
+def test_chartdsl_employee_constructor_args():
+    sig = inspect.signature(chartDsl_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_chartdsl::employee_has_name():
-    assert hasattr(chartDsl::Employee, "name")
+def test_chartdsl_employee_has_name():
+    assert hasattr(chartDsl_Employee, "name")
     descriptor = None
-    for klass in chartDsl::Employee.__mro__:
+    for klass in chartDsl_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -101,23 +101,23 @@ def test_chartdsl::employee_has_name():
 
 
 
-def test_chartdsl::company_is_not_abstract():
-    assert not inspect.isabstract(chartDsl::Company)
+def test_chartdsl_company_is_not_abstract():
+    assert not inspect.isabstract(chartDsl_Company)
 
 
-def test_chartdsl::company_constructor_exists():
-    assert callable(chartDsl::Company.__init__)
+def test_chartdsl_company_constructor_exists():
+    assert callable(chartDsl_Company.__init__)
 
 
-def test_chartdsl::company_constructor_args():
-    sig = inspect.signature(chartDsl::Company.__init__)
+def test_chartdsl_company_constructor_args():
+    sig = inspect.signature(chartDsl_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_chartdsl::company_has_name():
-    assert hasattr(chartDsl::Company, "name")
+def test_chartdsl_company_has_name():
+    assert hasattr(chartDsl_Company, "name")
     descriptor = None
-    for klass in chartDsl::Company.__mro__:
+    for klass in chartDsl_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -131,8 +131,8 @@ def test_projecttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ProjectType]
     expected_literals = [
-        "Development",
         "Regie",
+        "Development",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -150,100 +150,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-chartDsl::Task_strategy = st.builds(
-    chartDsl::Task,
+chartDsl_Task_strategy = st.builds(
+    chartDsl_Task,
     name=
         safe_text
 )
-chartDsl::Project_strategy = st.builds(
-    chartDsl::Project,
+chartDsl_Project_strategy = st.builds(
+    chartDsl_Project,
     projectType=
         safe_text,
     name=
         safe_text
 )
-chartDsl::Employee_strategy = st.builds(
-    chartDsl::Employee,
+chartDsl_Employee_strategy = st.builds(
+    chartDsl_Employee,
     name=
         safe_text
 )
-chartDsl::Company_strategy = st.builds(
-    chartDsl::Company,
+chartDsl_Company_strategy = st.builds(
+    chartDsl_Company,
     name=
         safe_text
 )
 
-@given(instance=chartDsl::Task_strategy)
+@given(instance=chartDsl_Task_strategy)
 @settings(max_examples=50)
-def test_chartdsl::task_instantiation(instance):
-    assert isinstance(instance, chartDsl::Task)
-
-@given(instance=chartDsl::Task_strategy)
-def test_chartdsl::task_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_chartdsl_task_instantiation(instance):
+    assert isinstance(instance, chartDsl_Task)
 
 
-@given(instance=chartDsl::Task_strategy)
-def test_chartdsl::task_name_setter(instance):
+
+@given(instance=chartDsl_Task_strategy)
+def test_chartdsl_task_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=chartDsl::Project_strategy)
+@given(instance=chartDsl_Project_strategy)
 @settings(max_examples=50)
-def test_chartdsl::project_instantiation(instance):
-    assert isinstance(instance, chartDsl::Project)
-
-@given(instance=chartDsl::Project_strategy)
-def test_chartdsl::project_projectType_type(instance):
-    assert isinstance(instance.projectType, str)
+def test_chartdsl_project_instantiation(instance):
+    assert isinstance(instance, chartDsl_Project)
 
 
-@given(instance=chartDsl::Project_strategy)
-def test_chartdsl::project_projectType_setter(instance):
+
+@given(instance=chartDsl_Project_strategy)
+def test_chartdsl_project_projectType_setter(instance):
     original = instance.projectType
     instance.projectType = original
     assert instance.projectType == original
 
-@given(instance=chartDsl::Project_strategy)
-def test_chartdsl::project_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=chartDsl::Project_strategy)
-def test_chartdsl::project_name_setter(instance):
+@given(instance=chartDsl_Project_strategy)
+def test_chartdsl_project_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=chartDsl::Employee_strategy)
+@given(instance=chartDsl_Employee_strategy)
 @settings(max_examples=50)
-def test_chartdsl::employee_instantiation(instance):
-    assert isinstance(instance, chartDsl::Employee)
-
-@given(instance=chartDsl::Employee_strategy)
-def test_chartdsl::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_chartdsl_employee_instantiation(instance):
+    assert isinstance(instance, chartDsl_Employee)
 
 
-@given(instance=chartDsl::Employee_strategy)
-def test_chartdsl::employee_name_setter(instance):
+
+@given(instance=chartDsl_Employee_strategy)
+def test_chartdsl_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=chartDsl::Company_strategy)
+@given(instance=chartDsl_Company_strategy)
 @settings(max_examples=50)
-def test_chartdsl::company_instantiation(instance):
-    assert isinstance(instance, chartDsl::Company)
-
-@given(instance=chartDsl::Company_strategy)
-def test_chartdsl::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_chartdsl_company_instantiation(instance):
+    assert isinstance(instance, chartDsl_Company)
 
 
-@given(instance=chartDsl::Company_strategy)
-def test_chartdsl::company_name_setter(instance):
+
+@given(instance=chartDsl_Company_strategy)
+def test_chartdsl_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

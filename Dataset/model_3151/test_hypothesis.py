@@ -3,109 +3,109 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BuiltinDefinition,
-    ast::BuiltinVariable,
-    ast::BuiltinFunction,
-    ast::Statement,
+    ast_BuiltinVariable,
+    ast_BuiltinFunction,
+    ast_Statement,
     Statement,
-    ast::BreakStatement,
-    ast::ForStatement,
-    ast::DoWhileStatement,
-    ast::ReturnStatement,
-    ast::Assignment,
-    ast::ContinueStatement,
-    ast::Compound,
-    ast::WhileStatement,
-    ast::IfStatement,
-    ast::VariableDeclaration,
+    ast_ReturnStatement,
+    ast_ForStatement,
+    ast_DoWhileStatement,
+    ast_Assignment,
+    ast_BreakStatement,
+    ast_ContinueStatement,
+    ast_Compound,
+    ast_WhileStatement,
+    ast_IfStatement,
+    ast_VariableDeclaration,
     StepExpression,
-    ast::AdditiveStepExpression,
-    ast::RangeStepExpression,
-    ast::StepExpression,
+    ast_AdditiveStepExpression,
+    ast_RangeStepExpression,
+    ast_StepExpression,
     FeatureCall,
-    ast::VariableAccess,
-    ast::FunctionCall,
+    ast_VariableAccess,
+    ast_FunctionCall,
     PrimitiveStepExpression,
-    ast::StepN,
-    ast::StepLiteral,
-    ast::PrimitiveStepExpression,
-    ast::NegateStepExpression,
-    ast::Unit,
-    ast::ExpressionList,
-    ast::ArrayConstructionIterationClause,
-    ast::ArraySubscript,
-    ast::SwitchCase,
+    ast_StepN,
+    ast_StepLiteral,
+    ast_PrimitiveStepExpression,
+    ast_NegateStepExpression,
+    ast_Unit,
+    ast_ExpressionList,
+    ast_ArrayConstructionIterationClause,
+    ast_ArraySubscript,
+    ast_SwitchCase,
     ParameterDeclaration,
-    ast::LetExpressionVariableDeclaration,
+    ast_LetExpressionVariableDeclaration,
     Expression,
-    ast::TypeTestExpression,
-    ast::DerivativeOperator,
-    ast::PowerExpression,
-    ast::MultiplicativeExpression,
-    ast::ParenthesizedExpression,
-    ast::LogicalAndExpression,
-    ast::ArrayConcatenationOperator,
-    ast::LogicalOrExpression,
-    ast::AlgorithmExpression,
-    ast::RelationalExpression,
-    ast::EqualityExpression,
-    ast::ImpliesExpression,
-    ast::PostfixExpression,
-    ast::MemberVariableAccess,
-    ast::ArrayElementAccess,
-    ast::UnitConstructionOperator,
-    ast::EndExpression,
-    ast::FeatureCall,
-    ast::UnaryExpression,
-    ast::ArrayConstructionOperator,
-    ast::SwitchExpression,
-    ast::AdditiveExpression,
-    ast::IterationCall,
-    ast::IfExpression,
-    ast::RangeExpression,
-    ast::LetExpression,
-    ast::DataType,
-    ast::Equation,
-    ast::Assertion,
-    ast::Check,
-    ast::OutputParameterDeclaration,
-    ast::InputParameterDeclaration,
-    ast::TemplateParameterDeclaration,
+    ast_IterationCall,
+    ast_AdditiveExpression,
+    ast_PowerExpression,
+    ast_PostfixExpression,
+    ast_ParenthesizedExpression,
+    ast_SwitchExpression,
+    ast_ArrayConstructionOperator,
+    ast_TypeTestExpression,
+    ast_EqualityExpression,
+    ast_RangeExpression,
+    ast_ArrayConcatenationOperator,
+    ast_DerivativeOperator,
+    ast_LogicalAndExpression,
+    ast_UnitConstructionOperator,
+    ast_ImpliesExpression,
+    ast_AlgorithmExpression,
+    ast_RelationalExpression,
+    ast_UnaryExpression,
+    ast_IfExpression,
+    ast_MemberVariableAccess,
+    ast_MultiplicativeExpression,
+    ast_ArrayElementAccess,
+    ast_EndExpression,
+    ast_LogicalOrExpression,
+    ast_FeatureCall,
+    ast_LetExpression,
+    ast_DataType,
+    ast_Equation,
+    ast_Assertion,
+    ast_Check,
+    ast_OutputParameterDeclaration,
+    ast_InputParameterDeclaration,
+    ast_TemplateParameterDeclaration,
     CallableElement,
-    ast::IterationVariable,
-    ast::FunctionObjectDeclaration,
-    ast::LetExpressionVariableDeclarationPart,
-    ast::StateVariableDeclaration,
-    ast::IterationAccumulator,
-    ast::ParameterDeclaration,
-    ast::CallableElement,
-    ast::Expression,
-    ast::PrimitiveType,
-    ast::EnumerationLiteralDeclaration,
+    ast_IterationAccumulator,
+    ast_LetExpressionVariableDeclarationPart,
+    ast_StateVariableDeclaration,
+    ast_FunctionObjectDeclaration,
+    ast_IterationVariable,
+    ast_ParameterDeclaration,
+    ast_CallableElement,
+    ast_Expression,
+    ast_PrimitiveType,
+    ast_EnumerationLiteralDeclaration,
     DataTypeDefinition,
-    ast::TypeAliasDefinition,
-    ast::EnumerationDefinition,
+    ast_TypeAliasDefinition,
+    ast_EnumerationDefinition,
     Definition,
-    ast::FunctionDefinition,
-    ast::BuiltinDefinition,
-    ast::DataTypeDefinition,
-    ast::DataTypeSpecifier,
-    ast::RecordFieldDeclaration,
-    ast::RecordDefinition,
-    ast::Definition,
-    ast::Module,
-    PowerOperator,
-    EqualityOperator,
+    ast_BuiltinDefinition,
+    ast_FunctionDefinition,
+    ast_DataTypeDefinition,
+    ast_DataTypeSpecifier,
+    ast_RecordFieldDeclaration,
+    ast_RecordDefinition,
+    ast_Definition,
+    ast_Module,
     MultiplicativeOperator,
-    FunctionKind,
+    EqualityOperator,
+    PowerOperator,
     AdditiveOperator,
-    RelationalOperator,
-    UnaryOperator,
-    AssertionStatusKind,
+    FunctionKind,
     PostfixOperator,
+    RelationalOperator,
+    AssertionStatusKind,
+    UnaryOperator,
 )
 
 # =============================================================================
@@ -128,44 +128,44 @@ def test_builtindefinition_constructor_args():
 
 
 
-def test_ast::builtinvariable_is_not_abstract():
-    assert not inspect.isabstract(ast::BuiltinVariable)
+def test_ast_builtinvariable_is_not_abstract():
+    assert not inspect.isabstract(ast_BuiltinVariable)
 
 
-def test_ast::builtinvariable_constructor_exists():
-    assert callable(ast::BuiltinVariable.__init__)
+def test_ast_builtinvariable_constructor_exists():
+    assert callable(ast_BuiltinVariable.__init__)
 
 
-def test_ast::builtinvariable_constructor_args():
-    sig = inspect.signature(ast::BuiltinVariable.__init__)
+def test_ast_builtinvariable_constructor_args():
+    sig = inspect.signature(ast_BuiltinVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::builtinfunction_is_not_abstract():
-    assert not inspect.isabstract(ast::BuiltinFunction)
+def test_ast_builtinfunction_is_not_abstract():
+    assert not inspect.isabstract(ast_BuiltinFunction)
 
 
-def test_ast::builtinfunction_constructor_exists():
-    assert callable(ast::BuiltinFunction.__init__)
+def test_ast_builtinfunction_constructor_exists():
+    assert callable(ast_BuiltinFunction.__init__)
 
 
-def test_ast::builtinfunction_constructor_args():
-    sig = inspect.signature(ast::BuiltinFunction.__init__)
+def test_ast_builtinfunction_constructor_args():
+    sig = inspect.signature(ast_BuiltinFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::statement_is_not_abstract():
-    assert not inspect.isabstract(ast::Statement)
+def test_ast_statement_is_not_abstract():
+    assert not inspect.isabstract(ast_Statement)
 
 
-def test_ast::statement_constructor_exists():
-    assert callable(ast::Statement.__init__)
+def test_ast_statement_constructor_exists():
+    assert callable(ast_Statement.__init__)
 
 
-def test_ast::statement_constructor_args():
-    sig = inspect.signature(ast::Statement.__init__)
+def test_ast_statement_constructor_args():
+    sig = inspect.signature(ast_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -184,149 +184,149 @@ def test_statement_constructor_args():
 
 
 
-def test_ast::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(ast::BreakStatement)
+def test_ast_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(ast_ReturnStatement)
 
 
-def test_ast::breakstatement_constructor_exists():
-    assert callable(ast::BreakStatement.__init__)
+def test_ast_returnstatement_constructor_exists():
+    assert callable(ast_ReturnStatement.__init__)
 
 
-def test_ast::breakstatement_constructor_args():
-    sig = inspect.signature(ast::BreakStatement.__init__)
+def test_ast_returnstatement_constructor_args():
+    sig = inspect.signature(ast_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::forstatement_is_not_abstract():
-    assert not inspect.isabstract(ast::ForStatement)
+def test_ast_forstatement_is_not_abstract():
+    assert not inspect.isabstract(ast_ForStatement)
 
 
-def test_ast::forstatement_constructor_exists():
-    assert callable(ast::ForStatement.__init__)
+def test_ast_forstatement_constructor_exists():
+    assert callable(ast_ForStatement.__init__)
 
 
-def test_ast::forstatement_constructor_args():
-    sig = inspect.signature(ast::ForStatement.__init__)
+def test_ast_forstatement_constructor_args():
+    sig = inspect.signature(ast_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::dowhilestatement_is_not_abstract():
-    assert not inspect.isabstract(ast::DoWhileStatement)
+def test_ast_dowhilestatement_is_not_abstract():
+    assert not inspect.isabstract(ast_DoWhileStatement)
 
 
-def test_ast::dowhilestatement_constructor_exists():
-    assert callable(ast::DoWhileStatement.__init__)
+def test_ast_dowhilestatement_constructor_exists():
+    assert callable(ast_DoWhileStatement.__init__)
 
 
-def test_ast::dowhilestatement_constructor_args():
-    sig = inspect.signature(ast::DoWhileStatement.__init__)
+def test_ast_dowhilestatement_constructor_args():
+    sig = inspect.signature(ast_DoWhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(ast::ReturnStatement)
+def test_ast_assignment_is_not_abstract():
+    assert not inspect.isabstract(ast_Assignment)
 
 
-def test_ast::returnstatement_constructor_exists():
-    assert callable(ast::ReturnStatement.__init__)
+def test_ast_assignment_constructor_exists():
+    assert callable(ast_Assignment.__init__)
 
 
-def test_ast::returnstatement_constructor_args():
-    sig = inspect.signature(ast::ReturnStatement.__init__)
+def test_ast_assignment_constructor_args():
+    sig = inspect.signature(ast_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::assignment_is_not_abstract():
-    assert not inspect.isabstract(ast::Assignment)
+def test_ast_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(ast_BreakStatement)
 
 
-def test_ast::assignment_constructor_exists():
-    assert callable(ast::Assignment.__init__)
+def test_ast_breakstatement_constructor_exists():
+    assert callable(ast_BreakStatement.__init__)
 
 
-def test_ast::assignment_constructor_args():
-    sig = inspect.signature(ast::Assignment.__init__)
+def test_ast_breakstatement_constructor_args():
+    sig = inspect.signature(ast_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(ast::ContinueStatement)
+def test_ast_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(ast_ContinueStatement)
 
 
-def test_ast::continuestatement_constructor_exists():
-    assert callable(ast::ContinueStatement.__init__)
+def test_ast_continuestatement_constructor_exists():
+    assert callable(ast_ContinueStatement.__init__)
 
 
-def test_ast::continuestatement_constructor_args():
-    sig = inspect.signature(ast::ContinueStatement.__init__)
+def test_ast_continuestatement_constructor_args():
+    sig = inspect.signature(ast_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::compound_is_not_abstract():
-    assert not inspect.isabstract(ast::Compound)
+def test_ast_compound_is_not_abstract():
+    assert not inspect.isabstract(ast_Compound)
 
 
-def test_ast::compound_constructor_exists():
-    assert callable(ast::Compound.__init__)
+def test_ast_compound_constructor_exists():
+    assert callable(ast_Compound.__init__)
 
 
-def test_ast::compound_constructor_args():
-    sig = inspect.signature(ast::Compound.__init__)
+def test_ast_compound_constructor_args():
+    sig = inspect.signature(ast_Compound.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(ast::WhileStatement)
+def test_ast_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(ast_WhileStatement)
 
 
-def test_ast::whilestatement_constructor_exists():
-    assert callable(ast::WhileStatement.__init__)
+def test_ast_whilestatement_constructor_exists():
+    assert callable(ast_WhileStatement.__init__)
 
 
-def test_ast::whilestatement_constructor_args():
-    sig = inspect.signature(ast::WhileStatement.__init__)
+def test_ast_whilestatement_constructor_args():
+    sig = inspect.signature(ast_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(ast::IfStatement)
+def test_ast_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(ast_IfStatement)
 
 
-def test_ast::ifstatement_constructor_exists():
-    assert callable(ast::IfStatement.__init__)
+def test_ast_ifstatement_constructor_exists():
+    assert callable(ast_IfStatement.__init__)
 
 
-def test_ast::ifstatement_constructor_args():
-    sig = inspect.signature(ast::IfStatement.__init__)
+def test_ast_ifstatement_constructor_args():
+    sig = inspect.signature(ast_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::VariableDeclaration)
+def test_ast_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_VariableDeclaration)
 
 
-def test_ast::variabledeclaration_constructor_exists():
-    assert callable(ast::VariableDeclaration.__init__)
+def test_ast_variabledeclaration_constructor_exists():
+    assert callable(ast_VariableDeclaration.__init__)
 
 
-def test_ast::variabledeclaration_constructor_args():
-    sig = inspect.signature(ast::VariableDeclaration.__init__)
+def test_ast_variabledeclaration_constructor_args():
+    sig = inspect.signature(ast_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::variabledeclaration_has_name():
-    assert hasattr(ast::VariableDeclaration, "name")
+def test_ast_variabledeclaration_has_name():
+    assert hasattr(ast_VariableDeclaration, "name")
     descriptor = None
-    for klass in ast::VariableDeclaration.__mro__:
+    for klass in ast_VariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -348,23 +348,23 @@ def test_stepexpression_constructor_args():
 
 
 
-def test_ast::additivestepexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::AdditiveStepExpression)
+def test_ast_additivestepexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_AdditiveStepExpression)
 
 
-def test_ast::additivestepexpression_constructor_exists():
-    assert callable(ast::AdditiveStepExpression.__init__)
+def test_ast_additivestepexpression_constructor_exists():
+    assert callable(ast_AdditiveStepExpression.__init__)
 
 
-def test_ast::additivestepexpression_constructor_args():
-    sig = inspect.signature(ast::AdditiveStepExpression.__init__)
+def test_ast_additivestepexpression_constructor_args():
+    sig = inspect.signature(ast_AdditiveStepExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ast::additivestepexpression_has_operator():
-    assert hasattr(ast::AdditiveStepExpression, "operator")
+def test_ast_additivestepexpression_has_operator():
+    assert hasattr(ast_AdditiveStepExpression, "operator")
     descriptor = None
-    for klass in ast::AdditiveStepExpression.__mro__:
+    for klass in ast_AdditiveStepExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -372,30 +372,30 @@ def test_ast::additivestepexpression_has_operator():
 
 
 
-def test_ast::rangestepexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::RangeStepExpression)
+def test_ast_rangestepexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_RangeStepExpression)
 
 
-def test_ast::rangestepexpression_constructor_exists():
-    assert callable(ast::RangeStepExpression.__init__)
+def test_ast_rangestepexpression_constructor_exists():
+    assert callable(ast_RangeStepExpression.__init__)
 
 
-def test_ast::rangestepexpression_constructor_args():
-    sig = inspect.signature(ast::RangeStepExpression.__init__)
+def test_ast_rangestepexpression_constructor_args():
+    sig = inspect.signature(ast_RangeStepExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::stepexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::StepExpression)
+def test_ast_stepexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_StepExpression)
 
 
-def test_ast::stepexpression_constructor_exists():
-    assert callable(ast::StepExpression.__init__)
+def test_ast_stepexpression_constructor_exists():
+    assert callable(ast_StepExpression.__init__)
 
 
-def test_ast::stepexpression_constructor_args():
-    sig = inspect.signature(ast::StepExpression.__init__)
+def test_ast_stepexpression_constructor_args():
+    sig = inspect.signature(ast_StepExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -414,30 +414,30 @@ def test_featurecall_constructor_args():
 
 
 
-def test_ast::variableaccess_is_not_abstract():
-    assert not inspect.isabstract(ast::VariableAccess)
+def test_ast_variableaccess_is_not_abstract():
+    assert not inspect.isabstract(ast_VariableAccess)
 
 
-def test_ast::variableaccess_constructor_exists():
-    assert callable(ast::VariableAccess.__init__)
+def test_ast_variableaccess_constructor_exists():
+    assert callable(ast_VariableAccess.__init__)
 
 
-def test_ast::variableaccess_constructor_args():
-    sig = inspect.signature(ast::VariableAccess.__init__)
+def test_ast_variableaccess_constructor_args():
+    sig = inspect.signature(ast_VariableAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::functioncall_is_not_abstract():
-    assert not inspect.isabstract(ast::FunctionCall)
+def test_ast_functioncall_is_not_abstract():
+    assert not inspect.isabstract(ast_FunctionCall)
 
 
-def test_ast::functioncall_constructor_exists():
-    assert callable(ast::FunctionCall.__init__)
+def test_ast_functioncall_constructor_exists():
+    assert callable(ast_FunctionCall.__init__)
 
 
-def test_ast::functioncall_constructor_args():
-    sig = inspect.signature(ast::FunctionCall.__init__)
+def test_ast_functioncall_constructor_args():
+    sig = inspect.signature(ast_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -456,37 +456,37 @@ def test_primitivestepexpression_constructor_args():
 
 
 
-def test_ast::stepn_is_not_abstract():
-    assert not inspect.isabstract(ast::StepN)
+def test_ast_stepn_is_not_abstract():
+    assert not inspect.isabstract(ast_StepN)
 
 
-def test_ast::stepn_constructor_exists():
-    assert callable(ast::StepN.__init__)
+def test_ast_stepn_constructor_exists():
+    assert callable(ast_StepN.__init__)
 
 
-def test_ast::stepn_constructor_args():
-    sig = inspect.signature(ast::StepN.__init__)
+def test_ast_stepn_constructor_args():
+    sig = inspect.signature(ast_StepN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::stepliteral_is_not_abstract():
-    assert not inspect.isabstract(ast::StepLiteral)
+def test_ast_stepliteral_is_not_abstract():
+    assert not inspect.isabstract(ast_StepLiteral)
 
 
-def test_ast::stepliteral_constructor_exists():
-    assert callable(ast::StepLiteral.__init__)
+def test_ast_stepliteral_constructor_exists():
+    assert callable(ast_StepLiteral.__init__)
 
 
-def test_ast::stepliteral_constructor_args():
-    sig = inspect.signature(ast::StepLiteral.__init__)
+def test_ast_stepliteral_constructor_args():
+    sig = inspect.signature(ast_StepLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ast::stepliteral_has_value():
-    assert hasattr(ast::StepLiteral, "value")
+def test_ast_stepliteral_has_value():
+    assert hasattr(ast_StepLiteral, "value")
     descriptor = None
-    for klass in ast::StepLiteral.__mro__:
+    for klass in ast_StepLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -494,79 +494,79 @@ def test_ast::stepliteral_has_value():
 
 
 
-def test_ast::primitivestepexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::PrimitiveStepExpression)
+def test_ast_primitivestepexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_PrimitiveStepExpression)
 
 
-def test_ast::primitivestepexpression_constructor_exists():
-    assert callable(ast::PrimitiveStepExpression.__init__)
+def test_ast_primitivestepexpression_constructor_exists():
+    assert callable(ast_PrimitiveStepExpression.__init__)
 
 
-def test_ast::primitivestepexpression_constructor_args():
-    sig = inspect.signature(ast::PrimitiveStepExpression.__init__)
+def test_ast_primitivestepexpression_constructor_args():
+    sig = inspect.signature(ast_PrimitiveStepExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::negatestepexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::NegateStepExpression)
+def test_ast_negatestepexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_NegateStepExpression)
 
 
-def test_ast::negatestepexpression_constructor_exists():
-    assert callable(ast::NegateStepExpression.__init__)
+def test_ast_negatestepexpression_constructor_exists():
+    assert callable(ast_NegateStepExpression.__init__)
 
 
-def test_ast::negatestepexpression_constructor_args():
-    sig = inspect.signature(ast::NegateStepExpression.__init__)
+def test_ast_negatestepexpression_constructor_args():
+    sig = inspect.signature(ast_NegateStepExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::unit_is_not_abstract():
-    assert not inspect.isabstract(ast::Unit)
+def test_ast_unit_is_not_abstract():
+    assert not inspect.isabstract(ast_Unit)
 
 
-def test_ast::unit_constructor_exists():
-    assert callable(ast::Unit.__init__)
+def test_ast_unit_constructor_exists():
+    assert callable(ast_Unit.__init__)
 
 
-def test_ast::unit_constructor_args():
-    sig = inspect.signature(ast::Unit.__init__)
+def test_ast_unit_constructor_args():
+    sig = inspect.signature(ast_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::expressionlist_is_not_abstract():
-    assert not inspect.isabstract(ast::ExpressionList)
+def test_ast_expressionlist_is_not_abstract():
+    assert not inspect.isabstract(ast_ExpressionList)
 
 
-def test_ast::expressionlist_constructor_exists():
-    assert callable(ast::ExpressionList.__init__)
+def test_ast_expressionlist_constructor_exists():
+    assert callable(ast_ExpressionList.__init__)
 
 
-def test_ast::expressionlist_constructor_args():
-    sig = inspect.signature(ast::ExpressionList.__init__)
+def test_ast_expressionlist_constructor_args():
+    sig = inspect.signature(ast_ExpressionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::arrayconstructioniterationclause_is_not_abstract():
-    assert not inspect.isabstract(ast::ArrayConstructionIterationClause)
+def test_ast_arrayconstructioniterationclause_is_not_abstract():
+    assert not inspect.isabstract(ast_ArrayConstructionIterationClause)
 
 
-def test_ast::arrayconstructioniterationclause_constructor_exists():
-    assert callable(ast::ArrayConstructionIterationClause.__init__)
+def test_ast_arrayconstructioniterationclause_constructor_exists():
+    assert callable(ast_ArrayConstructionIterationClause.__init__)
 
 
-def test_ast::arrayconstructioniterationclause_constructor_args():
-    sig = inspect.signature(ast::ArrayConstructionIterationClause.__init__)
+def test_ast_arrayconstructioniterationclause_constructor_args():
+    sig = inspect.signature(ast_ArrayConstructionIterationClause.__init__)
     params = list(sig.parameters.keys())
     assert "variableName" in params, "Missing parameter 'variableName'"
 
-def test_ast::arrayconstructioniterationclause_has_variableName():
-    assert hasattr(ast::ArrayConstructionIterationClause, "variableName")
+def test_ast_arrayconstructioniterationclause_has_variableName():
+    assert hasattr(ast_ArrayConstructionIterationClause, "variableName")
     descriptor = None
-    for klass in ast::ArrayConstructionIterationClause.__mro__:
+    for klass in ast_ArrayConstructionIterationClause.__mro__:
         if "variableName" in klass.__dict__:
             descriptor = klass.__dict__["variableName"]
             break
@@ -574,23 +574,23 @@ def test_ast::arrayconstructioniterationclause_has_variableName():
 
 
 
-def test_ast::arraysubscript_is_not_abstract():
-    assert not inspect.isabstract(ast::ArraySubscript)
+def test_ast_arraysubscript_is_not_abstract():
+    assert not inspect.isabstract(ast_ArraySubscript)
 
 
-def test_ast::arraysubscript_constructor_exists():
-    assert callable(ast::ArraySubscript.__init__)
+def test_ast_arraysubscript_constructor_exists():
+    assert callable(ast_ArraySubscript.__init__)
 
 
-def test_ast::arraysubscript_constructor_args():
-    sig = inspect.signature(ast::ArraySubscript.__init__)
+def test_ast_arraysubscript_constructor_args():
+    sig = inspect.signature(ast_ArraySubscript.__init__)
     params = list(sig.parameters.keys())
     assert "slice" in params, "Missing parameter 'slice'"
 
-def test_ast::arraysubscript_has_slice():
-    assert hasattr(ast::ArraySubscript, "slice")
+def test_ast_arraysubscript_has_slice():
+    assert hasattr(ast_ArraySubscript, "slice")
     descriptor = None
-    for klass in ast::ArraySubscript.__mro__:
+    for klass in ast_ArraySubscript.__mro__:
         if "slice" in klass.__dict__:
             descriptor = klass.__dict__["slice"]
             break
@@ -598,16 +598,16 @@ def test_ast::arraysubscript_has_slice():
 
 
 
-def test_ast::switchcase_is_not_abstract():
-    assert not inspect.isabstract(ast::SwitchCase)
+def test_ast_switchcase_is_not_abstract():
+    assert not inspect.isabstract(ast_SwitchCase)
 
 
-def test_ast::switchcase_constructor_exists():
-    assert callable(ast::SwitchCase.__init__)
+def test_ast_switchcase_constructor_exists():
+    assert callable(ast_SwitchCase.__init__)
 
 
-def test_ast::switchcase_constructor_args():
-    sig = inspect.signature(ast::SwitchCase.__init__)
+def test_ast_switchcase_constructor_args():
+    sig = inspect.signature(ast_SwitchCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -626,16 +626,16 @@ def test_parameterdeclaration_constructor_args():
 
 
 
-def test_ast::letexpressionvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::LetExpressionVariableDeclaration)
+def test_ast_letexpressionvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_LetExpressionVariableDeclaration)
 
 
-def test_ast::letexpressionvariabledeclaration_constructor_exists():
-    assert callable(ast::LetExpressionVariableDeclaration.__init__)
+def test_ast_letexpressionvariabledeclaration_constructor_exists():
+    assert callable(ast_LetExpressionVariableDeclaration.__init__)
 
 
-def test_ast::letexpressionvariabledeclaration_constructor_args():
-    sig = inspect.signature(ast::LetExpressionVariableDeclaration.__init__)
+def test_ast_letexpressionvariabledeclaration_constructor_args():
+    sig = inspect.signature(ast_LetExpressionVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -654,411 +654,23 @@ def test_expression_constructor_args():
 
 
 
-def test_ast::typetestexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::TypeTestExpression)
+def test_ast_iterationcall_is_not_abstract():
+    assert not inspect.isabstract(ast_IterationCall)
 
 
-def test_ast::typetestexpression_constructor_exists():
-    assert callable(ast::TypeTestExpression.__init__)
+def test_ast_iterationcall_constructor_exists():
+    assert callable(ast_IterationCall.__init__)
 
 
-def test_ast::typetestexpression_constructor_args():
-    sig = inspect.signature(ast::TypeTestExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::derivativeoperator_is_not_abstract():
-    assert not inspect.isabstract(ast::DerivativeOperator)
-
-
-def test_ast::derivativeoperator_constructor_exists():
-    assert callable(ast::DerivativeOperator.__init__)
-
-
-def test_ast::derivativeoperator_constructor_args():
-    sig = inspect.signature(ast::DerivativeOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::powerexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::PowerExpression)
-
-
-def test_ast::powerexpression_constructor_exists():
-    assert callable(ast::PowerExpression.__init__)
-
-
-def test_ast::powerexpression_constructor_args():
-    sig = inspect.signature(ast::PowerExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::powerexpression_has_operator():
-    assert hasattr(ast::PowerExpression, "operator")
-    descriptor = None
-    for klass in ast::PowerExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::MultiplicativeExpression)
-
-
-def test_ast::multiplicativeexpression_constructor_exists():
-    assert callable(ast::MultiplicativeExpression.__init__)
-
-
-def test_ast::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(ast::MultiplicativeExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::multiplicativeexpression_has_operator():
-    assert hasattr(ast::MultiplicativeExpression, "operator")
-    descriptor = None
-    for klass in ast::MultiplicativeExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::ParenthesizedExpression)
-
-
-def test_ast::parenthesizedexpression_constructor_exists():
-    assert callable(ast::ParenthesizedExpression.__init__)
-
-
-def test_ast::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(ast::ParenthesizedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::logicalandexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::LogicalAndExpression)
-
-
-def test_ast::logicalandexpression_constructor_exists():
-    assert callable(ast::LogicalAndExpression.__init__)
-
-
-def test_ast::logicalandexpression_constructor_args():
-    sig = inspect.signature(ast::LogicalAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::arrayconcatenationoperator_is_not_abstract():
-    assert not inspect.isabstract(ast::ArrayConcatenationOperator)
-
-
-def test_ast::arrayconcatenationoperator_constructor_exists():
-    assert callable(ast::ArrayConcatenationOperator.__init__)
-
-
-def test_ast::arrayconcatenationoperator_constructor_args():
-    sig = inspect.signature(ast::ArrayConcatenationOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::logicalorexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::LogicalOrExpression)
-
-
-def test_ast::logicalorexpression_constructor_exists():
-    assert callable(ast::LogicalOrExpression.__init__)
-
-
-def test_ast::logicalorexpression_constructor_args():
-    sig = inspect.signature(ast::LogicalOrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::algorithmexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::AlgorithmExpression)
-
-
-def test_ast::algorithmexpression_constructor_exists():
-    assert callable(ast::AlgorithmExpression.__init__)
-
-
-def test_ast::algorithmexpression_constructor_args():
-    sig = inspect.signature(ast::AlgorithmExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::RelationalExpression)
-
-
-def test_ast::relationalexpression_constructor_exists():
-    assert callable(ast::RelationalExpression.__init__)
-
-
-def test_ast::relationalexpression_constructor_args():
-    sig = inspect.signature(ast::RelationalExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::relationalexpression_has_operator():
-    assert hasattr(ast::RelationalExpression, "operator")
-    descriptor = None
-    for klass in ast::RelationalExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::EqualityExpression)
-
-
-def test_ast::equalityexpression_constructor_exists():
-    assert callable(ast::EqualityExpression.__init__)
-
-
-def test_ast::equalityexpression_constructor_args():
-    sig = inspect.signature(ast::EqualityExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::equalityexpression_has_operator():
-    assert hasattr(ast::EqualityExpression, "operator")
-    descriptor = None
-    for klass in ast::EqualityExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::impliesexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::ImpliesExpression)
-
-
-def test_ast::impliesexpression_constructor_exists():
-    assert callable(ast::ImpliesExpression.__init__)
-
-
-def test_ast::impliesexpression_constructor_args():
-    sig = inspect.signature(ast::ImpliesExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::postfixexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::PostfixExpression)
-
-
-def test_ast::postfixexpression_constructor_exists():
-    assert callable(ast::PostfixExpression.__init__)
-
-
-def test_ast::postfixexpression_constructor_args():
-    sig = inspect.signature(ast::PostfixExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::postfixexpression_has_operator():
-    assert hasattr(ast::PostfixExpression, "operator")
-    descriptor = None
-    for klass in ast::PostfixExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::membervariableaccess_is_not_abstract():
-    assert not inspect.isabstract(ast::MemberVariableAccess)
-
-
-def test_ast::membervariableaccess_constructor_exists():
-    assert callable(ast::MemberVariableAccess.__init__)
-
-
-def test_ast::membervariableaccess_constructor_args():
-    sig = inspect.signature(ast::MemberVariableAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::arrayelementaccess_is_not_abstract():
-    assert not inspect.isabstract(ast::ArrayElementAccess)
-
-
-def test_ast::arrayelementaccess_constructor_exists():
-    assert callable(ast::ArrayElementAccess.__init__)
-
-
-def test_ast::arrayelementaccess_constructor_args():
-    sig = inspect.signature(ast::ArrayElementAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::unitconstructionoperator_is_not_abstract():
-    assert not inspect.isabstract(ast::UnitConstructionOperator)
-
-
-def test_ast::unitconstructionoperator_constructor_exists():
-    assert callable(ast::UnitConstructionOperator.__init__)
-
-
-def test_ast::unitconstructionoperator_constructor_args():
-    sig = inspect.signature(ast::UnitConstructionOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::endexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::EndExpression)
-
-
-def test_ast::endexpression_constructor_exists():
-    assert callable(ast::EndExpression.__init__)
-
-
-def test_ast::endexpression_constructor_args():
-    sig = inspect.signature(ast::EndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::featurecall_is_not_abstract():
-    assert not inspect.isabstract(ast::FeatureCall)
-
-
-def test_ast::featurecall_constructor_exists():
-    assert callable(ast::FeatureCall.__init__)
-
-
-def test_ast::featurecall_constructor_args():
-    sig = inspect.signature(ast::FeatureCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::UnaryExpression)
-
-
-def test_ast::unaryexpression_constructor_exists():
-    assert callable(ast::UnaryExpression.__init__)
-
-
-def test_ast::unaryexpression_constructor_args():
-    sig = inspect.signature(ast::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::unaryexpression_has_operator():
-    assert hasattr(ast::UnaryExpression, "operator")
-    descriptor = None
-    for klass in ast::UnaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::arrayconstructionoperator_is_not_abstract():
-    assert not inspect.isabstract(ast::ArrayConstructionOperator)
-
-
-def test_ast::arrayconstructionoperator_constructor_exists():
-    assert callable(ast::ArrayConstructionOperator.__init__)
-
-
-def test_ast::arrayconstructionoperator_constructor_args():
-    sig = inspect.signature(ast::ArrayConstructionOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::switchexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::SwitchExpression)
-
-
-def test_ast::switchexpression_constructor_exists():
-    assert callable(ast::SwitchExpression.__init__)
-
-
-def test_ast::switchexpression_constructor_args():
-    sig = inspect.signature(ast::SwitchExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_ast::switchexpression_has_static():
-    assert hasattr(ast::SwitchExpression, "static")
-    descriptor = None
-    for klass in ast::SwitchExpression.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::AdditiveExpression)
-
-
-def test_ast::additiveexpression_constructor_exists():
-    assert callable(ast::AdditiveExpression.__init__)
-
-
-def test_ast::additiveexpression_constructor_args():
-    sig = inspect.signature(ast::AdditiveExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ast::additiveexpression_has_operator():
-    assert hasattr(ast::AdditiveExpression, "operator")
-    descriptor = None
-    for klass in ast::AdditiveExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ast::iterationcall_is_not_abstract():
-    assert not inspect.isabstract(ast::IterationCall)
-
-
-def test_ast::iterationcall_constructor_exists():
-    assert callable(ast::IterationCall.__init__)
-
-
-def test_ast::iterationcall_constructor_args():
-    sig = inspect.signature(ast::IterationCall.__init__)
+def test_ast_iterationcall_constructor_args():
+    sig = inspect.signature(ast_IterationCall.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_ast::iterationcall_has_identifier():
-    assert hasattr(ast::IterationCall, "identifier")
+def test_ast_iterationcall_has_identifier():
+    assert hasattr(ast_IterationCall, "identifier")
     descriptor = None
-    for klass in ast::IterationCall.__mro__:
+    for klass in ast_IterationCall.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -1066,23 +678,109 @@ def test_ast::iterationcall_has_identifier():
 
 
 
-def test_ast::ifexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::IfExpression)
+def test_ast_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_AdditiveExpression)
 
 
-def test_ast::ifexpression_constructor_exists():
-    assert callable(ast::IfExpression.__init__)
+def test_ast_additiveexpression_constructor_exists():
+    assert callable(ast_AdditiveExpression.__init__)
 
 
-def test_ast::ifexpression_constructor_args():
-    sig = inspect.signature(ast::IfExpression.__init__)
+def test_ast_additiveexpression_constructor_args():
+    sig = inspect.signature(ast_AdditiveExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_additiveexpression_has_operator():
+    assert hasattr(ast_AdditiveExpression, "operator")
+    descriptor = None
+    for klass in ast_AdditiveExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_powerexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_PowerExpression)
+
+
+def test_ast_powerexpression_constructor_exists():
+    assert callable(ast_PowerExpression.__init__)
+
+
+def test_ast_powerexpression_constructor_args():
+    sig = inspect.signature(ast_PowerExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_powerexpression_has_operator():
+    assert hasattr(ast_PowerExpression, "operator")
+    descriptor = None
+    for klass in ast_PowerExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_postfixexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_PostfixExpression)
+
+
+def test_ast_postfixexpression_constructor_exists():
+    assert callable(ast_PostfixExpression.__init__)
+
+
+def test_ast_postfixexpression_constructor_args():
+    sig = inspect.signature(ast_PostfixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_postfixexpression_has_operator():
+    assert hasattr(ast_PostfixExpression, "operator")
+    descriptor = None
+    for klass in ast_PostfixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_ParenthesizedExpression)
+
+
+def test_ast_parenthesizedexpression_constructor_exists():
+    assert callable(ast_ParenthesizedExpression.__init__)
+
+
+def test_ast_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(ast_ParenthesizedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_switchexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_SwitchExpression)
+
+
+def test_ast_switchexpression_constructor_exists():
+    assert callable(ast_SwitchExpression.__init__)
+
+
+def test_ast_switchexpression_constructor_args():
+    sig = inspect.signature(ast_SwitchExpression.__init__)
     params = list(sig.parameters.keys())
     assert "static" in params, "Missing parameter 'static'"
 
-def test_ast::ifexpression_has_static():
-    assert hasattr(ast::IfExpression, "static")
+def test_ast_switchexpression_has_static():
+    assert hasattr(ast_SwitchExpression, "static")
     descriptor = None
-    for klass in ast::IfExpression.__mro__:
+    for klass in ast_SwitchExpression.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
@@ -1090,65 +788,367 @@ def test_ast::ifexpression_has_static():
 
 
 
-def test_ast::rangeexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::RangeExpression)
+def test_ast_arrayconstructionoperator_is_not_abstract():
+    assert not inspect.isabstract(ast_ArrayConstructionOperator)
 
 
-def test_ast::rangeexpression_constructor_exists():
-    assert callable(ast::RangeExpression.__init__)
+def test_ast_arrayconstructionoperator_constructor_exists():
+    assert callable(ast_ArrayConstructionOperator.__init__)
 
 
-def test_ast::rangeexpression_constructor_args():
-    sig = inspect.signature(ast::RangeExpression.__init__)
+def test_ast_arrayconstructionoperator_constructor_args():
+    sig = inspect.signature(ast_ArrayConstructionOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::letexpression_is_not_abstract():
-    assert not inspect.isabstract(ast::LetExpression)
+def test_ast_typetestexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_TypeTestExpression)
 
 
-def test_ast::letexpression_constructor_exists():
-    assert callable(ast::LetExpression.__init__)
+def test_ast_typetestexpression_constructor_exists():
+    assert callable(ast_TypeTestExpression.__init__)
 
 
-def test_ast::letexpression_constructor_args():
-    sig = inspect.signature(ast::LetExpression.__init__)
+def test_ast_typetestexpression_constructor_args():
+    sig = inspect.signature(ast_TypeTestExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::datatype_is_not_abstract():
-    assert not inspect.isabstract(ast::DataType)
+def test_ast_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_EqualityExpression)
 
 
-def test_ast::datatype_constructor_exists():
-    assert callable(ast::DataType.__init__)
+def test_ast_equalityexpression_constructor_exists():
+    assert callable(ast_EqualityExpression.__init__)
 
 
-def test_ast::datatype_constructor_args():
-    sig = inspect.signature(ast::DataType.__init__)
+def test_ast_equalityexpression_constructor_args():
+    sig = inspect.signature(ast_EqualityExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_equalityexpression_has_operator():
+    assert hasattr(ast_EqualityExpression, "operator")
+    descriptor = None
+    for klass in ast_EqualityExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_rangeexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_RangeExpression)
+
+
+def test_ast_rangeexpression_constructor_exists():
+    assert callable(ast_RangeExpression.__init__)
+
+
+def test_ast_rangeexpression_constructor_args():
+    sig = inspect.signature(ast_RangeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::equation_is_not_abstract():
-    assert not inspect.isabstract(ast::Equation)
+def test_ast_arrayconcatenationoperator_is_not_abstract():
+    assert not inspect.isabstract(ast_ArrayConcatenationOperator)
 
 
-def test_ast::equation_constructor_exists():
-    assert callable(ast::Equation.__init__)
+def test_ast_arrayconcatenationoperator_constructor_exists():
+    assert callable(ast_ArrayConcatenationOperator.__init__)
 
 
-def test_ast::equation_constructor_args():
-    sig = inspect.signature(ast::Equation.__init__)
+def test_ast_arrayconcatenationoperator_constructor_args():
+    sig = inspect.signature(ast_ArrayConcatenationOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_derivativeoperator_is_not_abstract():
+    assert not inspect.isabstract(ast_DerivativeOperator)
+
+
+def test_ast_derivativeoperator_constructor_exists():
+    assert callable(ast_DerivativeOperator.__init__)
+
+
+def test_ast_derivativeoperator_constructor_args():
+    sig = inspect.signature(ast_DerivativeOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_logicalandexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_LogicalAndExpression)
+
+
+def test_ast_logicalandexpression_constructor_exists():
+    assert callable(ast_LogicalAndExpression.__init__)
+
+
+def test_ast_logicalandexpression_constructor_args():
+    sig = inspect.signature(ast_LogicalAndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_unitconstructionoperator_is_not_abstract():
+    assert not inspect.isabstract(ast_UnitConstructionOperator)
+
+
+def test_ast_unitconstructionoperator_constructor_exists():
+    assert callable(ast_UnitConstructionOperator.__init__)
+
+
+def test_ast_unitconstructionoperator_constructor_args():
+    sig = inspect.signature(ast_UnitConstructionOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_impliesexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_ImpliesExpression)
+
+
+def test_ast_impliesexpression_constructor_exists():
+    assert callable(ast_ImpliesExpression.__init__)
+
+
+def test_ast_impliesexpression_constructor_args():
+    sig = inspect.signature(ast_ImpliesExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_algorithmexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_AlgorithmExpression)
+
+
+def test_ast_algorithmexpression_constructor_exists():
+    assert callable(ast_AlgorithmExpression.__init__)
+
+
+def test_ast_algorithmexpression_constructor_args():
+    sig = inspect.signature(ast_AlgorithmExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_RelationalExpression)
+
+
+def test_ast_relationalexpression_constructor_exists():
+    assert callable(ast_RelationalExpression.__init__)
+
+
+def test_ast_relationalexpression_constructor_args():
+    sig = inspect.signature(ast_RelationalExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_relationalexpression_has_operator():
+    assert hasattr(ast_RelationalExpression, "operator")
+    descriptor = None
+    for klass in ast_RelationalExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_UnaryExpression)
+
+
+def test_ast_unaryexpression_constructor_exists():
+    assert callable(ast_UnaryExpression.__init__)
+
+
+def test_ast_unaryexpression_constructor_args():
+    sig = inspect.signature(ast_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_unaryexpression_has_operator():
+    assert hasattr(ast_UnaryExpression, "operator")
+    descriptor = None
+    for klass in ast_UnaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_ifexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_IfExpression)
+
+
+def test_ast_ifexpression_constructor_exists():
+    assert callable(ast_IfExpression.__init__)
+
+
+def test_ast_ifexpression_constructor_args():
+    sig = inspect.signature(ast_IfExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "static" in params, "Missing parameter 'static'"
+
+def test_ast_ifexpression_has_static():
+    assert hasattr(ast_IfExpression, "static")
+    descriptor = None
+    for klass in ast_IfExpression.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_membervariableaccess_is_not_abstract():
+    assert not inspect.isabstract(ast_MemberVariableAccess)
+
+
+def test_ast_membervariableaccess_constructor_exists():
+    assert callable(ast_MemberVariableAccess.__init__)
+
+
+def test_ast_membervariableaccess_constructor_args():
+    sig = inspect.signature(ast_MemberVariableAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_MultiplicativeExpression)
+
+
+def test_ast_multiplicativeexpression_constructor_exists():
+    assert callable(ast_MultiplicativeExpression.__init__)
+
+
+def test_ast_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(ast_MultiplicativeExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ast_multiplicativeexpression_has_operator():
+    assert hasattr(ast_MultiplicativeExpression, "operator")
+    descriptor = None
+    for klass in ast_MultiplicativeExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ast_arrayelementaccess_is_not_abstract():
+    assert not inspect.isabstract(ast_ArrayElementAccess)
+
+
+def test_ast_arrayelementaccess_constructor_exists():
+    assert callable(ast_ArrayElementAccess.__init__)
+
+
+def test_ast_arrayelementaccess_constructor_args():
+    sig = inspect.signature(ast_ArrayElementAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_endexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_EndExpression)
+
+
+def test_ast_endexpression_constructor_exists():
+    assert callable(ast_EndExpression.__init__)
+
+
+def test_ast_endexpression_constructor_args():
+    sig = inspect.signature(ast_EndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_logicalorexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_LogicalOrExpression)
+
+
+def test_ast_logicalorexpression_constructor_exists():
+    assert callable(ast_LogicalOrExpression.__init__)
+
+
+def test_ast_logicalorexpression_constructor_args():
+    sig = inspect.signature(ast_LogicalOrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_featurecall_is_not_abstract():
+    assert not inspect.isabstract(ast_FeatureCall)
+
+
+def test_ast_featurecall_constructor_exists():
+    assert callable(ast_FeatureCall.__init__)
+
+
+def test_ast_featurecall_constructor_args():
+    sig = inspect.signature(ast_FeatureCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_letexpression_is_not_abstract():
+    assert not inspect.isabstract(ast_LetExpression)
+
+
+def test_ast_letexpression_constructor_exists():
+    assert callable(ast_LetExpression.__init__)
+
+
+def test_ast_letexpression_constructor_args():
+    sig = inspect.signature(ast_LetExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_datatype_is_not_abstract():
+    assert not inspect.isabstract(ast_DataType)
+
+
+def test_ast_datatype_constructor_exists():
+    assert callable(ast_DataType.__init__)
+
+
+def test_ast_datatype_constructor_args():
+    sig = inspect.signature(ast_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_equation_is_not_abstract():
+    assert not inspect.isabstract(ast_Equation)
+
+
+def test_ast_equation_constructor_exists():
+    assert callable(ast_Equation.__init__)
+
+
+def test_ast_equation_constructor_args():
+    sig = inspect.signature(ast_Equation.__init__)
     params = list(sig.parameters.keys())
     assert "initial" in params, "Missing parameter 'initial'"
 
-def test_ast::equation_has_initial():
-    assert hasattr(ast::Equation, "initial")
+def test_ast_equation_has_initial():
+    assert hasattr(ast_Equation, "initial")
     descriptor = None
-    for klass in ast::Equation.__mro__:
+    for klass in ast_Equation.__mro__:
         if "initial" in klass.__dict__:
             descriptor = klass.__dict__["initial"]
             break
@@ -1156,92 +1156,92 @@ def test_ast::equation_has_initial():
 
 
 
-def test_ast::assertion_is_not_abstract():
-    assert not inspect.isabstract(ast::Assertion)
+def test_ast_assertion_is_not_abstract():
+    assert not inspect.isabstract(ast_Assertion)
 
 
-def test_ast::assertion_constructor_exists():
-    assert callable(ast::Assertion.__init__)
+def test_ast_assertion_constructor_exists():
+    assert callable(ast_Assertion.__init__)
 
 
-def test_ast::assertion_constructor_args():
-    sig = inspect.signature(ast::Assertion.__init__)
+def test_ast_assertion_constructor_args():
+    sig = inspect.signature(ast_Assertion.__init__)
     params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
     assert "statusKind" in params, "Missing parameter 'statusKind'"
+    assert "static" in params, "Missing parameter 'static'"
 
-def test_ast::assertion_has_static():
-    assert hasattr(ast::Assertion, "static")
+def test_ast_assertion_has_statusKind():
+    assert hasattr(ast_Assertion, "statusKind")
     descriptor = None
-    for klass in ast::Assertion.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ast::assertion_has_statusKind():
-    assert hasattr(ast::Assertion, "statusKind")
-    descriptor = None
-    for klass in ast::Assertion.__mro__:
+    for klass in ast_Assertion.__mro__:
         if "statusKind" in klass.__dict__:
             descriptor = klass.__dict__["statusKind"]
             break
     assert isinstance(descriptor, property)
 
+def test_ast_assertion_has_static():
+    assert hasattr(ast_Assertion, "static")
+    descriptor = None
+    for klass in ast_Assertion.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ast::check_is_not_abstract():
-    assert not inspect.isabstract(ast::Check)
+
+def test_ast_check_is_not_abstract():
+    assert not inspect.isabstract(ast_Check)
 
 
-def test_ast::check_constructor_exists():
-    assert callable(ast::Check.__init__)
+def test_ast_check_constructor_exists():
+    assert callable(ast_Check.__init__)
 
 
-def test_ast::check_constructor_args():
-    sig = inspect.signature(ast::Check.__init__)
+def test_ast_check_constructor_args():
+    sig = inspect.signature(ast_Check.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::outputparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::OutputParameterDeclaration)
+def test_ast_outputparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_OutputParameterDeclaration)
 
 
-def test_ast::outputparameterdeclaration_constructor_exists():
-    assert callable(ast::OutputParameterDeclaration.__init__)
+def test_ast_outputparameterdeclaration_constructor_exists():
+    assert callable(ast_OutputParameterDeclaration.__init__)
 
 
-def test_ast::outputparameterdeclaration_constructor_args():
-    sig = inspect.signature(ast::OutputParameterDeclaration.__init__)
+def test_ast_outputparameterdeclaration_constructor_args():
+    sig = inspect.signature(ast_OutputParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::inputparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::InputParameterDeclaration)
+def test_ast_inputparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_InputParameterDeclaration)
 
 
-def test_ast::inputparameterdeclaration_constructor_exists():
-    assert callable(ast::InputParameterDeclaration.__init__)
+def test_ast_inputparameterdeclaration_constructor_exists():
+    assert callable(ast_InputParameterDeclaration.__init__)
 
 
-def test_ast::inputparameterdeclaration_constructor_args():
-    sig = inspect.signature(ast::InputParameterDeclaration.__init__)
+def test_ast_inputparameterdeclaration_constructor_args():
+    sig = inspect.signature(ast_InputParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::templateparameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::TemplateParameterDeclaration)
+def test_ast_templateparameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_TemplateParameterDeclaration)
 
 
-def test_ast::templateparameterdeclaration_constructor_exists():
-    assert callable(ast::TemplateParameterDeclaration.__init__)
+def test_ast_templateparameterdeclaration_constructor_exists():
+    assert callable(ast_TemplateParameterDeclaration.__init__)
 
 
-def test_ast::templateparameterdeclaration_constructor_args():
-    sig = inspect.signature(ast::TemplateParameterDeclaration.__init__)
+def test_ast_templateparameterdeclaration_constructor_args():
+    sig = inspect.signature(ast_TemplateParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1260,23 +1260,23 @@ def test_callableelement_constructor_args():
 
 
 
-def test_ast::iterationvariable_is_not_abstract():
-    assert not inspect.isabstract(ast::IterationVariable)
+def test_ast_iterationaccumulator_is_not_abstract():
+    assert not inspect.isabstract(ast_IterationAccumulator)
 
 
-def test_ast::iterationvariable_constructor_exists():
-    assert callable(ast::IterationVariable.__init__)
+def test_ast_iterationaccumulator_constructor_exists():
+    assert callable(ast_IterationAccumulator.__init__)
 
 
-def test_ast::iterationvariable_constructor_args():
-    sig = inspect.signature(ast::IterationVariable.__init__)
+def test_ast_iterationaccumulator_constructor_args():
+    sig = inspect.signature(ast_IterationAccumulator.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::iterationvariable_has_name():
-    assert hasattr(ast::IterationVariable, "name")
+def test_ast_iterationaccumulator_has_name():
+    assert hasattr(ast_IterationAccumulator, "name")
     descriptor = None
-    for klass in ast::IterationVariable.__mro__:
+    for klass in ast_IterationAccumulator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1284,23 +1284,23 @@ def test_ast::iterationvariable_has_name():
 
 
 
-def test_ast::functionobjectdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::FunctionObjectDeclaration)
+def test_ast_letexpressionvariabledeclarationpart_is_not_abstract():
+    assert not inspect.isabstract(ast_LetExpressionVariableDeclarationPart)
 
 
-def test_ast::functionobjectdeclaration_constructor_exists():
-    assert callable(ast::FunctionObjectDeclaration.__init__)
+def test_ast_letexpressionvariabledeclarationpart_constructor_exists():
+    assert callable(ast_LetExpressionVariableDeclarationPart.__init__)
 
 
-def test_ast::functionobjectdeclaration_constructor_args():
-    sig = inspect.signature(ast::FunctionObjectDeclaration.__init__)
+def test_ast_letexpressionvariabledeclarationpart_constructor_args():
+    sig = inspect.signature(ast_LetExpressionVariableDeclarationPart.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::functionobjectdeclaration_has_name():
-    assert hasattr(ast::FunctionObjectDeclaration, "name")
+def test_ast_letexpressionvariabledeclarationpart_has_name():
+    assert hasattr(ast_LetExpressionVariableDeclarationPart, "name")
     descriptor = None
-    for klass in ast::FunctionObjectDeclaration.__mro__:
+    for klass in ast_LetExpressionVariableDeclarationPart.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1308,23 +1308,23 @@ def test_ast::functionobjectdeclaration_has_name():
 
 
 
-def test_ast::letexpressionvariabledeclarationpart_is_not_abstract():
-    assert not inspect.isabstract(ast::LetExpressionVariableDeclarationPart)
+def test_ast_statevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_StateVariableDeclaration)
 
 
-def test_ast::letexpressionvariabledeclarationpart_constructor_exists():
-    assert callable(ast::LetExpressionVariableDeclarationPart.__init__)
+def test_ast_statevariabledeclaration_constructor_exists():
+    assert callable(ast_StateVariableDeclaration.__init__)
 
 
-def test_ast::letexpressionvariabledeclarationpart_constructor_args():
-    sig = inspect.signature(ast::LetExpressionVariableDeclarationPart.__init__)
+def test_ast_statevariabledeclaration_constructor_args():
+    sig = inspect.signature(ast_StateVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::letexpressionvariabledeclarationpart_has_name():
-    assert hasattr(ast::LetExpressionVariableDeclarationPart, "name")
+def test_ast_statevariabledeclaration_has_name():
+    assert hasattr(ast_StateVariableDeclaration, "name")
     descriptor = None
-    for klass in ast::LetExpressionVariableDeclarationPart.__mro__:
+    for klass in ast_StateVariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1332,23 +1332,23 @@ def test_ast::letexpressionvariabledeclarationpart_has_name():
 
 
 
-def test_ast::statevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::StateVariableDeclaration)
+def test_ast_functionobjectdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_FunctionObjectDeclaration)
 
 
-def test_ast::statevariabledeclaration_constructor_exists():
-    assert callable(ast::StateVariableDeclaration.__init__)
+def test_ast_functionobjectdeclaration_constructor_exists():
+    assert callable(ast_FunctionObjectDeclaration.__init__)
 
 
-def test_ast::statevariabledeclaration_constructor_args():
-    sig = inspect.signature(ast::StateVariableDeclaration.__init__)
+def test_ast_functionobjectdeclaration_constructor_args():
+    sig = inspect.signature(ast_FunctionObjectDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::statevariabledeclaration_has_name():
-    assert hasattr(ast::StateVariableDeclaration, "name")
+def test_ast_functionobjectdeclaration_has_name():
+    assert hasattr(ast_FunctionObjectDeclaration, "name")
     descriptor = None
-    for klass in ast::StateVariableDeclaration.__mro__:
+    for klass in ast_FunctionObjectDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1356,23 +1356,23 @@ def test_ast::statevariabledeclaration_has_name():
 
 
 
-def test_ast::iterationaccumulator_is_not_abstract():
-    assert not inspect.isabstract(ast::IterationAccumulator)
+def test_ast_iterationvariable_is_not_abstract():
+    assert not inspect.isabstract(ast_IterationVariable)
 
 
-def test_ast::iterationaccumulator_constructor_exists():
-    assert callable(ast::IterationAccumulator.__init__)
+def test_ast_iterationvariable_constructor_exists():
+    assert callable(ast_IterationVariable.__init__)
 
 
-def test_ast::iterationaccumulator_constructor_args():
-    sig = inspect.signature(ast::IterationAccumulator.__init__)
+def test_ast_iterationvariable_constructor_args():
+    sig = inspect.signature(ast_IterationVariable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::iterationaccumulator_has_name():
-    assert hasattr(ast::IterationAccumulator, "name")
+def test_ast_iterationvariable_has_name():
+    assert hasattr(ast_IterationVariable, "name")
     descriptor = None
-    for klass in ast::IterationAccumulator.__mro__:
+    for klass in ast_IterationVariable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1380,23 +1380,23 @@ def test_ast::iterationaccumulator_has_name():
 
 
 
-def test_ast::parameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::ParameterDeclaration)
+def test_ast_parameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_ParameterDeclaration)
 
 
-def test_ast::parameterdeclaration_constructor_exists():
-    assert callable(ast::ParameterDeclaration.__init__)
+def test_ast_parameterdeclaration_constructor_exists():
+    assert callable(ast_ParameterDeclaration.__init__)
 
 
-def test_ast::parameterdeclaration_constructor_args():
-    sig = inspect.signature(ast::ParameterDeclaration.__init__)
+def test_ast_parameterdeclaration_constructor_args():
+    sig = inspect.signature(ast_ParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::parameterdeclaration_has_name():
-    assert hasattr(ast::ParameterDeclaration, "name")
+def test_ast_parameterdeclaration_has_name():
+    assert hasattr(ast_ParameterDeclaration, "name")
     descriptor = None
-    for klass in ast::ParameterDeclaration.__mro__:
+    for klass in ast_ParameterDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1404,65 +1404,65 @@ def test_ast::parameterdeclaration_has_name():
 
 
 
-def test_ast::callableelement_is_not_abstract():
-    assert not inspect.isabstract(ast::CallableElement)
+def test_ast_callableelement_is_not_abstract():
+    assert not inspect.isabstract(ast_CallableElement)
 
 
-def test_ast::callableelement_constructor_exists():
-    assert callable(ast::CallableElement.__init__)
+def test_ast_callableelement_constructor_exists():
+    assert callable(ast_CallableElement.__init__)
 
 
-def test_ast::callableelement_constructor_args():
-    sig = inspect.signature(ast::CallableElement.__init__)
+def test_ast_callableelement_constructor_args():
+    sig = inspect.signature(ast_CallableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::expression_is_not_abstract():
-    assert not inspect.isabstract(ast::Expression)
+def test_ast_expression_is_not_abstract():
+    assert not inspect.isabstract(ast_Expression)
 
 
-def test_ast::expression_constructor_exists():
-    assert callable(ast::Expression.__init__)
+def test_ast_expression_constructor_exists():
+    assert callable(ast_Expression.__init__)
 
 
-def test_ast::expression_constructor_args():
-    sig = inspect.signature(ast::Expression.__init__)
+def test_ast_expression_constructor_args():
+    sig = inspect.signature(ast_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ast::PrimitiveType)
+def test_ast_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ast_PrimitiveType)
 
 
-def test_ast::primitivetype_constructor_exists():
-    assert callable(ast::PrimitiveType.__init__)
+def test_ast_primitivetype_constructor_exists():
+    assert callable(ast_PrimitiveType.__init__)
 
 
-def test_ast::primitivetype_constructor_args():
-    sig = inspect.signature(ast::PrimitiveType.__init__)
+def test_ast_primitivetype_constructor_args():
+    sig = inspect.signature(ast_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::enumerationliteraldeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::EnumerationLiteralDeclaration)
+def test_ast_enumerationliteraldeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_EnumerationLiteralDeclaration)
 
 
-def test_ast::enumerationliteraldeclaration_constructor_exists():
-    assert callable(ast::EnumerationLiteralDeclaration.__init__)
+def test_ast_enumerationliteraldeclaration_constructor_exists():
+    assert callable(ast_EnumerationLiteralDeclaration.__init__)
 
 
-def test_ast::enumerationliteraldeclaration_constructor_args():
-    sig = inspect.signature(ast::EnumerationLiteralDeclaration.__init__)
+def test_ast_enumerationliteraldeclaration_constructor_args():
+    sig = inspect.signature(ast_EnumerationLiteralDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::enumerationliteraldeclaration_has_name():
-    assert hasattr(ast::EnumerationLiteralDeclaration, "name")
+def test_ast_enumerationliteraldeclaration_has_name():
+    assert hasattr(ast_EnumerationLiteralDeclaration, "name")
     descriptor = None
-    for klass in ast::EnumerationLiteralDeclaration.__mro__:
+    for klass in ast_EnumerationLiteralDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1484,30 +1484,30 @@ def test_datatypedefinition_constructor_args():
 
 
 
-def test_ast::typealiasdefinition_is_not_abstract():
-    assert not inspect.isabstract(ast::TypeAliasDefinition)
+def test_ast_typealiasdefinition_is_not_abstract():
+    assert not inspect.isabstract(ast_TypeAliasDefinition)
 
 
-def test_ast::typealiasdefinition_constructor_exists():
-    assert callable(ast::TypeAliasDefinition.__init__)
+def test_ast_typealiasdefinition_constructor_exists():
+    assert callable(ast_TypeAliasDefinition.__init__)
 
 
-def test_ast::typealiasdefinition_constructor_args():
-    sig = inspect.signature(ast::TypeAliasDefinition.__init__)
+def test_ast_typealiasdefinition_constructor_args():
+    sig = inspect.signature(ast_TypeAliasDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::enumerationdefinition_is_not_abstract():
-    assert not inspect.isabstract(ast::EnumerationDefinition)
+def test_ast_enumerationdefinition_is_not_abstract():
+    assert not inspect.isabstract(ast_EnumerationDefinition)
 
 
-def test_ast::enumerationdefinition_constructor_exists():
-    assert callable(ast::EnumerationDefinition.__init__)
+def test_ast_enumerationdefinition_constructor_exists():
+    assert callable(ast_EnumerationDefinition.__init__)
 
 
-def test_ast::enumerationdefinition_constructor_args():
-    sig = inspect.signature(ast::EnumerationDefinition.__init__)
+def test_ast_enumerationdefinition_constructor_args():
+    sig = inspect.signature(ast_EnumerationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1526,23 +1526,37 @@ def test_definition_constructor_args():
 
 
 
-def test_ast::functiondefinition_is_not_abstract():
-    assert not inspect.isabstract(ast::FunctionDefinition)
+def test_ast_builtindefinition_is_not_abstract():
+    assert not inspect.isabstract(ast_BuiltinDefinition)
 
 
-def test_ast::functiondefinition_constructor_exists():
-    assert callable(ast::FunctionDefinition.__init__)
+def test_ast_builtindefinition_constructor_exists():
+    assert callable(ast_BuiltinDefinition.__init__)
 
 
-def test_ast::functiondefinition_constructor_args():
-    sig = inspect.signature(ast::FunctionDefinition.__init__)
+def test_ast_builtindefinition_constructor_args():
+    sig = inspect.signature(ast_BuiltinDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ast_functiondefinition_is_not_abstract():
+    assert not inspect.isabstract(ast_FunctionDefinition)
+
+
+def test_ast_functiondefinition_constructor_exists():
+    assert callable(ast_FunctionDefinition.__init__)
+
+
+def test_ast_functiondefinition_constructor_args():
+    sig = inspect.signature(ast_FunctionDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_ast::functiondefinition_has_kind():
-    assert hasattr(ast::FunctionDefinition, "kind")
+def test_ast_functiondefinition_has_kind():
+    assert hasattr(ast_FunctionDefinition, "kind")
     descriptor = None
-    for klass in ast::FunctionDefinition.__mro__:
+    for klass in ast_FunctionDefinition.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1550,65 +1564,51 @@ def test_ast::functiondefinition_has_kind():
 
 
 
-def test_ast::builtindefinition_is_not_abstract():
-    assert not inspect.isabstract(ast::BuiltinDefinition)
+def test_ast_datatypedefinition_is_not_abstract():
+    assert not inspect.isabstract(ast_DataTypeDefinition)
 
 
-def test_ast::builtindefinition_constructor_exists():
-    assert callable(ast::BuiltinDefinition.__init__)
+def test_ast_datatypedefinition_constructor_exists():
+    assert callable(ast_DataTypeDefinition.__init__)
 
 
-def test_ast::builtindefinition_constructor_args():
-    sig = inspect.signature(ast::BuiltinDefinition.__init__)
+def test_ast_datatypedefinition_constructor_args():
+    sig = inspect.signature(ast_DataTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::datatypedefinition_is_not_abstract():
-    assert not inspect.isabstract(ast::DataTypeDefinition)
+def test_ast_datatypespecifier_is_not_abstract():
+    assert not inspect.isabstract(ast_DataTypeSpecifier)
 
 
-def test_ast::datatypedefinition_constructor_exists():
-    assert callable(ast::DataTypeDefinition.__init__)
+def test_ast_datatypespecifier_constructor_exists():
+    assert callable(ast_DataTypeSpecifier.__init__)
 
 
-def test_ast::datatypedefinition_constructor_args():
-    sig = inspect.signature(ast::DataTypeDefinition.__init__)
+def test_ast_datatypespecifier_constructor_args():
+    sig = inspect.signature(ast_DataTypeSpecifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::datatypespecifier_is_not_abstract():
-    assert not inspect.isabstract(ast::DataTypeSpecifier)
+def test_ast_recordfielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(ast_RecordFieldDeclaration)
 
 
-def test_ast::datatypespecifier_constructor_exists():
-    assert callable(ast::DataTypeSpecifier.__init__)
+def test_ast_recordfielddeclaration_constructor_exists():
+    assert callable(ast_RecordFieldDeclaration.__init__)
 
 
-def test_ast::datatypespecifier_constructor_args():
-    sig = inspect.signature(ast::DataTypeSpecifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ast::recordfielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(ast::RecordFieldDeclaration)
-
-
-def test_ast::recordfielddeclaration_constructor_exists():
-    assert callable(ast::RecordFieldDeclaration.__init__)
-
-
-def test_ast::recordfielddeclaration_constructor_args():
-    sig = inspect.signature(ast::RecordFieldDeclaration.__init__)
+def test_ast_recordfielddeclaration_constructor_args():
+    sig = inspect.signature(ast_RecordFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::recordfielddeclaration_has_name():
-    assert hasattr(ast::RecordFieldDeclaration, "name")
+def test_ast_recordfielddeclaration_has_name():
+    assert hasattr(ast_RecordFieldDeclaration, "name")
     descriptor = None
-    for klass in ast::RecordFieldDeclaration.__mro__:
+    for klass in ast_RecordFieldDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1616,37 +1616,37 @@ def test_ast::recordfielddeclaration_has_name():
 
 
 
-def test_ast::recorddefinition_is_not_abstract():
-    assert not inspect.isabstract(ast::RecordDefinition)
+def test_ast_recorddefinition_is_not_abstract():
+    assert not inspect.isabstract(ast_RecordDefinition)
 
 
-def test_ast::recorddefinition_constructor_exists():
-    assert callable(ast::RecordDefinition.__init__)
+def test_ast_recorddefinition_constructor_exists():
+    assert callable(ast_RecordDefinition.__init__)
 
 
-def test_ast::recorddefinition_constructor_args():
-    sig = inspect.signature(ast::RecordDefinition.__init__)
+def test_ast_recorddefinition_constructor_args():
+    sig = inspect.signature(ast_RecordDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ast::definition_is_not_abstract():
-    assert not inspect.isabstract(ast::Definition)
+def test_ast_definition_is_not_abstract():
+    assert not inspect.isabstract(ast_Definition)
 
 
-def test_ast::definition_constructor_exists():
-    assert callable(ast::Definition.__init__)
+def test_ast_definition_constructor_exists():
+    assert callable(ast_Definition.__init__)
 
 
-def test_ast::definition_constructor_args():
-    sig = inspect.signature(ast::Definition.__init__)
+def test_ast_definition_constructor_args():
+    sig = inspect.signature(ast_Definition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ast::definition_has_name():
-    assert hasattr(ast::Definition, "name")
+def test_ast_definition_has_name():
+    assert hasattr(ast_Definition, "name")
     descriptor = None
-    for klass in ast::Definition.__mro__:
+    for klass in ast_Definition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1654,32 +1654,34 @@ def test_ast::definition_has_name():
 
 
 
-def test_ast::module_is_not_abstract():
-    assert not inspect.isabstract(ast::Module)
+def test_ast_module_is_not_abstract():
+    assert not inspect.isabstract(ast_Module)
 
 
-def test_ast::module_constructor_exists():
-    assert callable(ast::Module.__init__)
+def test_ast_module_constructor_exists():
+    assert callable(ast_Module.__init__)
 
 
-def test_ast::module_constructor_args():
-    sig = inspect.signature(ast::Module.__init__)
+def test_ast_module_constructor_args():
+    sig = inspect.signature(ast_Module.__init__)
     params = list(sig.parameters.keys())
 
-def test_poweroperator_exists():
+def test_multiplicativeoperator_exists():
     # Check that the Enumeration exists
-    assert PowerOperator is not None
+    assert MultiplicativeOperator is not None
 
-def test_poweroperator_has_all_literals():
+def test_multiplicativeoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PowerOperator]
+    enum_literals = [lit.name for lit in MultiplicativeOperator]
     expected_literals = [
-        "Power",
-        "ElementWisePower",
+        "ElementWiseMultiply",
+        "Multiply",
+        "Divide",
+        "ElementWiseDivide",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PowerOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in MultiplicativeOperator"
 
 def test_equalityoperator_exists():
     # Check that the Enumeration exists
@@ -1696,38 +1698,20 @@ def test_equalityoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EqualityOperator"
 
-def test_multiplicativeoperator_exists():
+def test_poweroperator_exists():
     # Check that the Enumeration exists
-    assert MultiplicativeOperator is not None
+    assert PowerOperator is not None
 
-def test_multiplicativeoperator_has_all_literals():
+def test_poweroperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MultiplicativeOperator]
+    enum_literals = [lit.name for lit in PowerOperator]
     expected_literals = [
-        "Multiply",
-        "Divide",
-        "ElementWiseMultiply",
-        "ElementWiseDivide",
+        "ElementWisePower",
+        "Power",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MultiplicativeOperator"
-
-def test_functionkind_exists():
-    # Check that the Enumeration exists
-    assert FunctionKind is not None
-
-def test_functionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FunctionKind]
-    expected_literals = [
-        "Stateless",
-        "Continuous",
-        "Stateful",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FunctionKind"
+        assert lit_name in enum_literals, f"Literal '' missing in PowerOperator"
 
 def test_additiveoperator_exists():
     # Check that the Enumeration exists
@@ -1737,12 +1721,42 @@ def test_additiveoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AdditiveOperator]
     expected_literals = [
-        "Add",
         "Subtract",
+        "Add",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AdditiveOperator"
+
+def test_functionkind_exists():
+    # Check that the Enumeration exists
+    assert FunctionKind is not None
+
+def test_functionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FunctionKind]
+    expected_literals = [
+        "Continuous",
+        "Stateful",
+        "Stateless",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FunctionKind"
+
+def test_postfixoperator_exists():
+    # Check that the Enumeration exists
+    assert PostfixOperator is not None
+
+def test_postfixoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PostfixOperator]
+    expected_literals = [
+        "Transpose",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PostfixOperator"
 
 def test_relationaloperator_exists():
     # Check that the Enumeration exists
@@ -1752,14 +1766,31 @@ def test_relationaloperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in RelationalOperator]
     expected_literals = [
-        "LessThanOrEqualTo",
-        "GreaterThanOrEqualTo",
         "GreaterThan",
         "LessThan",
+        "LessThanOrEqualTo",
+        "GreaterThanOrEqualTo",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+
+def test_assertionstatuskind_exists():
+    # Check that the Enumeration exists
+    assert AssertionStatusKind is not None
+
+def test_assertionstatuskind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssertionStatusKind]
+    expected_literals = [
+        "Error",
+        "Info",
+        "Fatal",
+        "Warning",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssertionStatusKind"
 
 def test_unaryoperator_exists():
     # Check that the Enumeration exists
@@ -1776,37 +1807,6 @@ def test_unaryoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
 
-def test_assertionstatuskind_exists():
-    # Check that the Enumeration exists
-    assert AssertionStatusKind is not None
-
-def test_assertionstatuskind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssertionStatusKind]
-    expected_literals = [
-        "Warning",
-        "Fatal",
-        "Error",
-        "Info",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssertionStatusKind"
-
-def test_postfixoperator_exists():
-    # Check that the Enumeration exists
-    assert PostfixOperator is not None
-
-def test_postfixoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PostfixOperator]
-    expected_literals = [
-        "Transpose",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PostfixOperator"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1822,331 +1822,331 @@ safe_text = st.text(
 BuiltinDefinition_strategy = st.builds(
     BuiltinDefinition,
 )
-ast::BuiltinVariable_strategy = st.builds(
-    ast::BuiltinVariable,
+ast_BuiltinVariable_strategy = st.builds(
+    ast_BuiltinVariable,
 )
-ast::BuiltinFunction_strategy = st.builds(
-    ast::BuiltinFunction,
+ast_BuiltinFunction_strategy = st.builds(
+    ast_BuiltinFunction,
 )
-ast::Statement_strategy = st.builds(
-    ast::Statement,
+ast_Statement_strategy = st.builds(
+    ast_Statement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-ast::BreakStatement_strategy = st.builds(
-    ast::BreakStatement,
+ast_ReturnStatement_strategy = st.builds(
+    ast_ReturnStatement,
 )
-ast::ForStatement_strategy = st.builds(
-    ast::ForStatement,
+ast_ForStatement_strategy = st.builds(
+    ast_ForStatement,
 )
-ast::DoWhileStatement_strategy = st.builds(
-    ast::DoWhileStatement,
+ast_DoWhileStatement_strategy = st.builds(
+    ast_DoWhileStatement,
 )
-ast::ReturnStatement_strategy = st.builds(
-    ast::ReturnStatement,
+ast_Assignment_strategy = st.builds(
+    ast_Assignment,
 )
-ast::Assignment_strategy = st.builds(
-    ast::Assignment,
+ast_BreakStatement_strategy = st.builds(
+    ast_BreakStatement,
 )
-ast::ContinueStatement_strategy = st.builds(
-    ast::ContinueStatement,
+ast_ContinueStatement_strategy = st.builds(
+    ast_ContinueStatement,
 )
-ast::Compound_strategy = st.builds(
-    ast::Compound,
+ast_Compound_strategy = st.builds(
+    ast_Compound,
 )
-ast::WhileStatement_strategy = st.builds(
-    ast::WhileStatement,
+ast_WhileStatement_strategy = st.builds(
+    ast_WhileStatement,
 )
-ast::IfStatement_strategy = st.builds(
-    ast::IfStatement,
+ast_IfStatement_strategy = st.builds(
+    ast_IfStatement,
 )
-ast::VariableDeclaration_strategy = st.builds(
-    ast::VariableDeclaration,
+ast_VariableDeclaration_strategy = st.builds(
+    ast_VariableDeclaration,
     name=
         safe_text
 )
 StepExpression_strategy = st.builds(
     StepExpression,
 )
-ast::AdditiveStepExpression_strategy = st.builds(
-    ast::AdditiveStepExpression,
+ast_AdditiveStepExpression_strategy = st.builds(
+    ast_AdditiveStepExpression,
     operator=
         safe_text
 )
-ast::RangeStepExpression_strategy = st.builds(
-    ast::RangeStepExpression,
+ast_RangeStepExpression_strategy = st.builds(
+    ast_RangeStepExpression,
 )
-ast::StepExpression_strategy = st.builds(
-    ast::StepExpression,
+ast_StepExpression_strategy = st.builds(
+    ast_StepExpression,
 )
 FeatureCall_strategy = st.builds(
     FeatureCall,
 )
-ast::VariableAccess_strategy = st.builds(
-    ast::VariableAccess,
+ast_VariableAccess_strategy = st.builds(
+    ast_VariableAccess,
 )
-ast::FunctionCall_strategy = st.builds(
-    ast::FunctionCall,
+ast_FunctionCall_strategy = st.builds(
+    ast_FunctionCall,
 )
 PrimitiveStepExpression_strategy = st.builds(
     PrimitiveStepExpression,
 )
-ast::StepN_strategy = st.builds(
-    ast::StepN,
+ast_StepN_strategy = st.builds(
+    ast_StepN,
 )
-ast::StepLiteral_strategy = st.builds(
-    ast::StepLiteral,
+ast_StepLiteral_strategy = st.builds(
+    ast_StepLiteral,
     value=
         st.integers()
 )
-ast::PrimitiveStepExpression_strategy = st.builds(
-    ast::PrimitiveStepExpression,
+ast_PrimitiveStepExpression_strategy = st.builds(
+    ast_PrimitiveStepExpression,
 )
-ast::NegateStepExpression_strategy = st.builds(
-    ast::NegateStepExpression,
+ast_NegateStepExpression_strategy = st.builds(
+    ast_NegateStepExpression,
 )
-ast::Unit_strategy = st.builds(
-    ast::Unit,
+ast_Unit_strategy = st.builds(
+    ast_Unit,
 )
-ast::ExpressionList_strategy = st.builds(
-    ast::ExpressionList,
+ast_ExpressionList_strategy = st.builds(
+    ast_ExpressionList,
 )
-ast::ArrayConstructionIterationClause_strategy = st.builds(
-    ast::ArrayConstructionIterationClause,
+ast_ArrayConstructionIterationClause_strategy = st.builds(
+    ast_ArrayConstructionIterationClause,
     variableName=
         safe_text
 )
-ast::ArraySubscript_strategy = st.builds(
-    ast::ArraySubscript,
+ast_ArraySubscript_strategy = st.builds(
+    ast_ArraySubscript,
     slice=
         st.booleans()
 )
-ast::SwitchCase_strategy = st.builds(
-    ast::SwitchCase,
+ast_SwitchCase_strategy = st.builds(
+    ast_SwitchCase,
 )
 ParameterDeclaration_strategy = st.builds(
     ParameterDeclaration,
 )
-ast::LetExpressionVariableDeclaration_strategy = st.builds(
-    ast::LetExpressionVariableDeclaration,
+ast_LetExpressionVariableDeclaration_strategy = st.builds(
+    ast_LetExpressionVariableDeclaration,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-ast::TypeTestExpression_strategy = st.builds(
-    ast::TypeTestExpression,
-)
-ast::DerivativeOperator_strategy = st.builds(
-    ast::DerivativeOperator,
-)
-ast::PowerExpression_strategy = st.builds(
-    ast::PowerExpression,
-    operator=
-        safe_text
-)
-ast::MultiplicativeExpression_strategy = st.builds(
-    ast::MultiplicativeExpression,
-    operator=
-        safe_text
-)
-ast::ParenthesizedExpression_strategy = st.builds(
-    ast::ParenthesizedExpression,
-)
-ast::LogicalAndExpression_strategy = st.builds(
-    ast::LogicalAndExpression,
-)
-ast::ArrayConcatenationOperator_strategy = st.builds(
-    ast::ArrayConcatenationOperator,
-)
-ast::LogicalOrExpression_strategy = st.builds(
-    ast::LogicalOrExpression,
-)
-ast::AlgorithmExpression_strategy = st.builds(
-    ast::AlgorithmExpression,
-)
-ast::RelationalExpression_strategy = st.builds(
-    ast::RelationalExpression,
-    operator=
-        safe_text
-)
-ast::EqualityExpression_strategy = st.builds(
-    ast::EqualityExpression,
-    operator=
-        safe_text
-)
-ast::ImpliesExpression_strategy = st.builds(
-    ast::ImpliesExpression,
-)
-ast::PostfixExpression_strategy = st.builds(
-    ast::PostfixExpression,
-    operator=
-        safe_text
-)
-ast::MemberVariableAccess_strategy = st.builds(
-    ast::MemberVariableAccess,
-)
-ast::ArrayElementAccess_strategy = st.builds(
-    ast::ArrayElementAccess,
-)
-ast::UnitConstructionOperator_strategy = st.builds(
-    ast::UnitConstructionOperator,
-)
-ast::EndExpression_strategy = st.builds(
-    ast::EndExpression,
-)
-ast::FeatureCall_strategy = st.builds(
-    ast::FeatureCall,
-)
-ast::UnaryExpression_strategy = st.builds(
-    ast::UnaryExpression,
-    operator=
-        safe_text
-)
-ast::ArrayConstructionOperator_strategy = st.builds(
-    ast::ArrayConstructionOperator,
-)
-ast::SwitchExpression_strategy = st.builds(
-    ast::SwitchExpression,
-    static=
-        st.booleans()
-)
-ast::AdditiveExpression_strategy = st.builds(
-    ast::AdditiveExpression,
-    operator=
-        safe_text
-)
-ast::IterationCall_strategy = st.builds(
-    ast::IterationCall,
+ast_IterationCall_strategy = st.builds(
+    ast_IterationCall,
     identifier=
         safe_text
 )
-ast::IfExpression_strategy = st.builds(
-    ast::IfExpression,
+ast_AdditiveExpression_strategy = st.builds(
+    ast_AdditiveExpression,
+    operator=
+        safe_text
+)
+ast_PowerExpression_strategy = st.builds(
+    ast_PowerExpression,
+    operator=
+        safe_text
+)
+ast_PostfixExpression_strategy = st.builds(
+    ast_PostfixExpression,
+    operator=
+        safe_text
+)
+ast_ParenthesizedExpression_strategy = st.builds(
+    ast_ParenthesizedExpression,
+)
+ast_SwitchExpression_strategy = st.builds(
+    ast_SwitchExpression,
     static=
         st.booleans()
 )
-ast::RangeExpression_strategy = st.builds(
-    ast::RangeExpression,
+ast_ArrayConstructionOperator_strategy = st.builds(
+    ast_ArrayConstructionOperator,
 )
-ast::LetExpression_strategy = st.builds(
-    ast::LetExpression,
+ast_TypeTestExpression_strategy = st.builds(
+    ast_TypeTestExpression,
 )
-ast::DataType_strategy = st.builds(
-    ast::DataType,
+ast_EqualityExpression_strategy = st.builds(
+    ast_EqualityExpression,
+    operator=
+        safe_text
 )
-ast::Equation_strategy = st.builds(
-    ast::Equation,
+ast_RangeExpression_strategy = st.builds(
+    ast_RangeExpression,
+)
+ast_ArrayConcatenationOperator_strategy = st.builds(
+    ast_ArrayConcatenationOperator,
+)
+ast_DerivativeOperator_strategy = st.builds(
+    ast_DerivativeOperator,
+)
+ast_LogicalAndExpression_strategy = st.builds(
+    ast_LogicalAndExpression,
+)
+ast_UnitConstructionOperator_strategy = st.builds(
+    ast_UnitConstructionOperator,
+)
+ast_ImpliesExpression_strategy = st.builds(
+    ast_ImpliesExpression,
+)
+ast_AlgorithmExpression_strategy = st.builds(
+    ast_AlgorithmExpression,
+)
+ast_RelationalExpression_strategy = st.builds(
+    ast_RelationalExpression,
+    operator=
+        safe_text
+)
+ast_UnaryExpression_strategy = st.builds(
+    ast_UnaryExpression,
+    operator=
+        safe_text
+)
+ast_IfExpression_strategy = st.builds(
+    ast_IfExpression,
+    static=
+        st.booleans()
+)
+ast_MemberVariableAccess_strategy = st.builds(
+    ast_MemberVariableAccess,
+)
+ast_MultiplicativeExpression_strategy = st.builds(
+    ast_MultiplicativeExpression,
+    operator=
+        safe_text
+)
+ast_ArrayElementAccess_strategy = st.builds(
+    ast_ArrayElementAccess,
+)
+ast_EndExpression_strategy = st.builds(
+    ast_EndExpression,
+)
+ast_LogicalOrExpression_strategy = st.builds(
+    ast_LogicalOrExpression,
+)
+ast_FeatureCall_strategy = st.builds(
+    ast_FeatureCall,
+)
+ast_LetExpression_strategy = st.builds(
+    ast_LetExpression,
+)
+ast_DataType_strategy = st.builds(
+    ast_DataType,
+)
+ast_Equation_strategy = st.builds(
+    ast_Equation,
     initial=
         st.booleans()
 )
-ast::Assertion_strategy = st.builds(
-    ast::Assertion,
-    static=
-        st.booleans(),
+ast_Assertion_strategy = st.builds(
+    ast_Assertion,
     statusKind=
-        safe_text
+        safe_text,
+    static=
+        st.booleans()
 )
-ast::Check_strategy = st.builds(
-    ast::Check,
+ast_Check_strategy = st.builds(
+    ast_Check,
 )
-ast::OutputParameterDeclaration_strategy = st.builds(
-    ast::OutputParameterDeclaration,
+ast_OutputParameterDeclaration_strategy = st.builds(
+    ast_OutputParameterDeclaration,
 )
-ast::InputParameterDeclaration_strategy = st.builds(
-    ast::InputParameterDeclaration,
+ast_InputParameterDeclaration_strategy = st.builds(
+    ast_InputParameterDeclaration,
 )
-ast::TemplateParameterDeclaration_strategy = st.builds(
-    ast::TemplateParameterDeclaration,
+ast_TemplateParameterDeclaration_strategy = st.builds(
+    ast_TemplateParameterDeclaration,
 )
 CallableElement_strategy = st.builds(
     CallableElement,
 )
-ast::IterationVariable_strategy = st.builds(
-    ast::IterationVariable,
+ast_IterationAccumulator_strategy = st.builds(
+    ast_IterationAccumulator,
     name=
         safe_text
 )
-ast::FunctionObjectDeclaration_strategy = st.builds(
-    ast::FunctionObjectDeclaration,
+ast_LetExpressionVariableDeclarationPart_strategy = st.builds(
+    ast_LetExpressionVariableDeclarationPart,
     name=
         safe_text
 )
-ast::LetExpressionVariableDeclarationPart_strategy = st.builds(
-    ast::LetExpressionVariableDeclarationPart,
+ast_StateVariableDeclaration_strategy = st.builds(
+    ast_StateVariableDeclaration,
     name=
         safe_text
 )
-ast::StateVariableDeclaration_strategy = st.builds(
-    ast::StateVariableDeclaration,
+ast_FunctionObjectDeclaration_strategy = st.builds(
+    ast_FunctionObjectDeclaration,
     name=
         safe_text
 )
-ast::IterationAccumulator_strategy = st.builds(
-    ast::IterationAccumulator,
+ast_IterationVariable_strategy = st.builds(
+    ast_IterationVariable,
     name=
         safe_text
 )
-ast::ParameterDeclaration_strategy = st.builds(
-    ast::ParameterDeclaration,
+ast_ParameterDeclaration_strategy = st.builds(
+    ast_ParameterDeclaration,
     name=
         safe_text
 )
-ast::CallableElement_strategy = st.builds(
-    ast::CallableElement,
+ast_CallableElement_strategy = st.builds(
+    ast_CallableElement,
 )
-ast::Expression_strategy = st.builds(
-    ast::Expression,
+ast_Expression_strategy = st.builds(
+    ast_Expression,
 )
-ast::PrimitiveType_strategy = st.builds(
-    ast::PrimitiveType,
+ast_PrimitiveType_strategy = st.builds(
+    ast_PrimitiveType,
 )
-ast::EnumerationLiteralDeclaration_strategy = st.builds(
-    ast::EnumerationLiteralDeclaration,
+ast_EnumerationLiteralDeclaration_strategy = st.builds(
+    ast_EnumerationLiteralDeclaration,
     name=
         safe_text
 )
 DataTypeDefinition_strategy = st.builds(
     DataTypeDefinition,
 )
-ast::TypeAliasDefinition_strategy = st.builds(
-    ast::TypeAliasDefinition,
+ast_TypeAliasDefinition_strategy = st.builds(
+    ast_TypeAliasDefinition,
 )
-ast::EnumerationDefinition_strategy = st.builds(
-    ast::EnumerationDefinition,
+ast_EnumerationDefinition_strategy = st.builds(
+    ast_EnumerationDefinition,
 )
 Definition_strategy = st.builds(
     Definition,
 )
-ast::FunctionDefinition_strategy = st.builds(
-    ast::FunctionDefinition,
+ast_BuiltinDefinition_strategy = st.builds(
+    ast_BuiltinDefinition,
+)
+ast_FunctionDefinition_strategy = st.builds(
+    ast_FunctionDefinition,
     kind=
         safe_text
 )
-ast::BuiltinDefinition_strategy = st.builds(
-    ast::BuiltinDefinition,
+ast_DataTypeDefinition_strategy = st.builds(
+    ast_DataTypeDefinition,
 )
-ast::DataTypeDefinition_strategy = st.builds(
-    ast::DataTypeDefinition,
+ast_DataTypeSpecifier_strategy = st.builds(
+    ast_DataTypeSpecifier,
 )
-ast::DataTypeSpecifier_strategy = st.builds(
-    ast::DataTypeSpecifier,
-)
-ast::RecordFieldDeclaration_strategy = st.builds(
-    ast::RecordFieldDeclaration,
+ast_RecordFieldDeclaration_strategy = st.builds(
+    ast_RecordFieldDeclaration,
     name=
         safe_text
 )
-ast::RecordDefinition_strategy = st.builds(
-    ast::RecordDefinition,
+ast_RecordDefinition_strategy = st.builds(
+    ast_RecordDefinition,
 )
-ast::Definition_strategy = st.builds(
-    ast::Definition,
+ast_Definition_strategy = st.builds(
+    ast_Definition,
     name=
         safe_text
 )
-ast::Module_strategy = st.builds(
-    ast::Module,
+ast_Module_strategy = st.builds(
+    ast_Module,
 )
 
 @given(instance=BuiltinDefinition_strategy)
@@ -2154,83 +2154,80 @@ ast::Module_strategy = st.builds(
 def test_builtindefinition_instantiation(instance):
     assert isinstance(instance, BuiltinDefinition)
 
-@given(instance=ast::BuiltinVariable_strategy)
+@given(instance=ast_BuiltinVariable_strategy)
 @settings(max_examples=50)
-def test_ast::builtinvariable_instantiation(instance):
-    assert isinstance(instance, ast::BuiltinVariable)
+def test_ast_builtinvariable_instantiation(instance):
+    assert isinstance(instance, ast_BuiltinVariable)
 
-@given(instance=ast::BuiltinFunction_strategy)
+@given(instance=ast_BuiltinFunction_strategy)
 @settings(max_examples=50)
-def test_ast::builtinfunction_instantiation(instance):
-    assert isinstance(instance, ast::BuiltinFunction)
+def test_ast_builtinfunction_instantiation(instance):
+    assert isinstance(instance, ast_BuiltinFunction)
 
-@given(instance=ast::Statement_strategy)
+@given(instance=ast_Statement_strategy)
 @settings(max_examples=50)
-def test_ast::statement_instantiation(instance):
-    assert isinstance(instance, ast::Statement)
+def test_ast_statement_instantiation(instance):
+    assert isinstance(instance, ast_Statement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=ast::BreakStatement_strategy)
+@given(instance=ast_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_ast::breakstatement_instantiation(instance):
-    assert isinstance(instance, ast::BreakStatement)
+def test_ast_returnstatement_instantiation(instance):
+    assert isinstance(instance, ast_ReturnStatement)
 
-@given(instance=ast::ForStatement_strategy)
+@given(instance=ast_ForStatement_strategy)
 @settings(max_examples=50)
-def test_ast::forstatement_instantiation(instance):
-    assert isinstance(instance, ast::ForStatement)
+def test_ast_forstatement_instantiation(instance):
+    assert isinstance(instance, ast_ForStatement)
 
-@given(instance=ast::DoWhileStatement_strategy)
+@given(instance=ast_DoWhileStatement_strategy)
 @settings(max_examples=50)
-def test_ast::dowhilestatement_instantiation(instance):
-    assert isinstance(instance, ast::DoWhileStatement)
+def test_ast_dowhilestatement_instantiation(instance):
+    assert isinstance(instance, ast_DoWhileStatement)
 
-@given(instance=ast::ReturnStatement_strategy)
+@given(instance=ast_Assignment_strategy)
 @settings(max_examples=50)
-def test_ast::returnstatement_instantiation(instance):
-    assert isinstance(instance, ast::ReturnStatement)
+def test_ast_assignment_instantiation(instance):
+    assert isinstance(instance, ast_Assignment)
 
-@given(instance=ast::Assignment_strategy)
+@given(instance=ast_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_ast::assignment_instantiation(instance):
-    assert isinstance(instance, ast::Assignment)
+def test_ast_breakstatement_instantiation(instance):
+    assert isinstance(instance, ast_BreakStatement)
 
-@given(instance=ast::ContinueStatement_strategy)
+@given(instance=ast_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_ast::continuestatement_instantiation(instance):
-    assert isinstance(instance, ast::ContinueStatement)
+def test_ast_continuestatement_instantiation(instance):
+    assert isinstance(instance, ast_ContinueStatement)
 
-@given(instance=ast::Compound_strategy)
+@given(instance=ast_Compound_strategy)
 @settings(max_examples=50)
-def test_ast::compound_instantiation(instance):
-    assert isinstance(instance, ast::Compound)
+def test_ast_compound_instantiation(instance):
+    assert isinstance(instance, ast_Compound)
 
-@given(instance=ast::WhileStatement_strategy)
+@given(instance=ast_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_ast::whilestatement_instantiation(instance):
-    assert isinstance(instance, ast::WhileStatement)
+def test_ast_whilestatement_instantiation(instance):
+    assert isinstance(instance, ast_WhileStatement)
 
-@given(instance=ast::IfStatement_strategy)
+@given(instance=ast_IfStatement_strategy)
 @settings(max_examples=50)
-def test_ast::ifstatement_instantiation(instance):
-    assert isinstance(instance, ast::IfStatement)
+def test_ast_ifstatement_instantiation(instance):
+    assert isinstance(instance, ast_IfStatement)
 
-@given(instance=ast::VariableDeclaration_strategy)
+@given(instance=ast_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, ast::VariableDeclaration)
-
-@given(instance=ast::VariableDeclaration_strategy)
-def test_ast::variabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, ast_VariableDeclaration)
 
 
-@given(instance=ast::VariableDeclaration_strategy)
-def test_ast::variabledeclaration_name_setter(instance):
+
+@given(instance=ast_VariableDeclaration_strategy)
+def test_ast_variabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2240,41 +2237,38 @@ def test_ast::variabledeclaration_name_setter(instance):
 def test_stepexpression_instantiation(instance):
     assert isinstance(instance, StepExpression)
 
-@given(instance=ast::AdditiveStepExpression_strategy)
+@given(instance=ast_AdditiveStepExpression_strategy)
 @settings(max_examples=50)
-def test_ast::additivestepexpression_instantiation(instance):
-    assert isinstance(instance, ast::AdditiveStepExpression)
-
-@given(instance=ast::AdditiveStepExpression_strategy)
-def test_ast::additivestepexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ast_additivestepexpression_instantiation(instance):
+    assert isinstance(instance, ast_AdditiveStepExpression)
 
 
-@given(instance=ast::AdditiveStepExpression_strategy)
-def test_ast::additivestepexpression_operator_setter(instance):
+
+@given(instance=ast_AdditiveStepExpression_strategy)
+def test_ast_additivestepexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=ast::RangeStepExpression_strategy)
+@given(instance=ast_RangeStepExpression_strategy)
 @settings(max_examples=50)
-def test_ast::rangestepexpression_instantiation(instance):
-    assert isinstance(instance, ast::RangeStepExpression)
+def test_ast_rangestepexpression_instantiation(instance):
+    assert isinstance(instance, ast_RangeStepExpression)
 
-@given(instance=ast::StepExpression_strategy)
+@given(instance=ast_StepExpression_strategy)
 @settings(max_examples=50)
-def test_ast::stepexpression_instantiation(instance):
-    assert isinstance(instance, ast::StepExpression)
+def test_ast_stepexpression_instantiation(instance):
+    assert isinstance(instance, ast_StepExpression)
 
 @given(instance=FeatureCall_strategy)
 @settings(max_examples=50)
 def test_featurecall_instantiation(instance):
     assert isinstance(instance, FeatureCall)
 
-@given(instance=ast::VariableAccess_strategy)
+@given(instance=ast_VariableAccess_strategy)
 @settings(max_examples=50)
-def test_ast::variableaccess_instantiation(instance):
-    assert isinstance(instance, ast::VariableAccess)
+def test_ast_variableaccess_instantiation(instance):
+    assert isinstance(instance, ast_VariableAccess)
 
 import warnings
 import copy
@@ -2282,9 +2276,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ast::VariableAccess_strategy)
+@given(instance=ast_VariableAccess_strategy)
 @settings(max_examples=30)
-def test_ast::variableaccess_isinitial_changes_state(instance):
+def test_ast_variableaccess_isinitial_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2296,554 +2290,485 @@ def test_ast::variableaccess_isinitial_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInitial' in ast::VariableAccess is empty"
+        assert has_statements, f"Function 'isInitial' in ast_VariableAccess is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInitial' in ast::VariableAccess did not change state; check implementation")
+            warnings.warn(f"Operation 'isInitial' in ast_VariableAccess did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInitial' in ast::VariableAccess is not implemented or raised an error")
+        warnings.warn(f"Operation 'isInitial' in ast_VariableAccess is not implemented or raised an error")
 
-@given(instance=ast::FunctionCall_strategy)
+@given(instance=ast_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_ast::functioncall_instantiation(instance):
-    assert isinstance(instance, ast::FunctionCall)
+def test_ast_functioncall_instantiation(instance):
+    assert isinstance(instance, ast_FunctionCall)
 
 @given(instance=PrimitiveStepExpression_strategy)
 @settings(max_examples=50)
 def test_primitivestepexpression_instantiation(instance):
     assert isinstance(instance, PrimitiveStepExpression)
 
-@given(instance=ast::StepN_strategy)
+@given(instance=ast_StepN_strategy)
 @settings(max_examples=50)
-def test_ast::stepn_instantiation(instance):
-    assert isinstance(instance, ast::StepN)
+def test_ast_stepn_instantiation(instance):
+    assert isinstance(instance, ast_StepN)
 
-@given(instance=ast::StepLiteral_strategy)
+@given(instance=ast_StepLiteral_strategy)
 @settings(max_examples=50)
-def test_ast::stepliteral_instantiation(instance):
-    assert isinstance(instance, ast::StepLiteral)
-
-@given(instance=ast::StepLiteral_strategy)
-def test_ast::stepliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_ast_stepliteral_instantiation(instance):
+    assert isinstance(instance, ast_StepLiteral)
 
 
-@given(instance=ast::StepLiteral_strategy)
-def test_ast::stepliteral_value_setter(instance):
+
+@given(instance=ast_StepLiteral_strategy)
+def test_ast_stepliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ast::PrimitiveStepExpression_strategy)
+@given(instance=ast_PrimitiveStepExpression_strategy)
 @settings(max_examples=50)
-def test_ast::primitivestepexpression_instantiation(instance):
-    assert isinstance(instance, ast::PrimitiveStepExpression)
+def test_ast_primitivestepexpression_instantiation(instance):
+    assert isinstance(instance, ast_PrimitiveStepExpression)
 
-@given(instance=ast::NegateStepExpression_strategy)
+@given(instance=ast_NegateStepExpression_strategy)
 @settings(max_examples=50)
-def test_ast::negatestepexpression_instantiation(instance):
-    assert isinstance(instance, ast::NegateStepExpression)
+def test_ast_negatestepexpression_instantiation(instance):
+    assert isinstance(instance, ast_NegateStepExpression)
 
-@given(instance=ast::Unit_strategy)
+@given(instance=ast_Unit_strategy)
 @settings(max_examples=50)
-def test_ast::unit_instantiation(instance):
-    assert isinstance(instance, ast::Unit)
+def test_ast_unit_instantiation(instance):
+    assert isinstance(instance, ast_Unit)
 
-@given(instance=ast::ExpressionList_strategy)
+@given(instance=ast_ExpressionList_strategy)
 @settings(max_examples=50)
-def test_ast::expressionlist_instantiation(instance):
-    assert isinstance(instance, ast::ExpressionList)
+def test_ast_expressionlist_instantiation(instance):
+    assert isinstance(instance, ast_ExpressionList)
 
-@given(instance=ast::ArrayConstructionIterationClause_strategy)
+@given(instance=ast_ArrayConstructionIterationClause_strategy)
 @settings(max_examples=50)
-def test_ast::arrayconstructioniterationclause_instantiation(instance):
-    assert isinstance(instance, ast::ArrayConstructionIterationClause)
-
-@given(instance=ast::ArrayConstructionIterationClause_strategy)
-def test_ast::arrayconstructioniterationclause_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
+def test_ast_arrayconstructioniterationclause_instantiation(instance):
+    assert isinstance(instance, ast_ArrayConstructionIterationClause)
 
 
-@given(instance=ast::ArrayConstructionIterationClause_strategy)
-def test_ast::arrayconstructioniterationclause_variableName_setter(instance):
+
+@given(instance=ast_ArrayConstructionIterationClause_strategy)
+def test_ast_arrayconstructioniterationclause_variableName_setter(instance):
     original = instance.variableName
     instance.variableName = original
     assert instance.variableName == original
 
-@given(instance=ast::ArraySubscript_strategy)
+@given(instance=ast_ArraySubscript_strategy)
 @settings(max_examples=50)
-def test_ast::arraysubscript_instantiation(instance):
-    assert isinstance(instance, ast::ArraySubscript)
-
-@given(instance=ast::ArraySubscript_strategy)
-def test_ast::arraysubscript_slice_type(instance):
-    assert isinstance(instance.slice, bool)
+def test_ast_arraysubscript_instantiation(instance):
+    assert isinstance(instance, ast_ArraySubscript)
 
 
-@given(instance=ast::ArraySubscript_strategy)
-def test_ast::arraysubscript_slice_setter(instance):
+
+@given(instance=ast_ArraySubscript_strategy)
+def test_ast_arraysubscript_slice_setter(instance):
     original = instance.slice
     instance.slice = original
     assert instance.slice == original
 
-@given(instance=ast::SwitchCase_strategy)
+@given(instance=ast_SwitchCase_strategy)
 @settings(max_examples=50)
-def test_ast::switchcase_instantiation(instance):
-    assert isinstance(instance, ast::SwitchCase)
+def test_ast_switchcase_instantiation(instance):
+    assert isinstance(instance, ast_SwitchCase)
 
 @given(instance=ParameterDeclaration_strategy)
 @settings(max_examples=50)
 def test_parameterdeclaration_instantiation(instance):
     assert isinstance(instance, ParameterDeclaration)
 
-@given(instance=ast::LetExpressionVariableDeclaration_strategy)
+@given(instance=ast_LetExpressionVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::letexpressionvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, ast::LetExpressionVariableDeclaration)
+def test_ast_letexpressionvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, ast_LetExpressionVariableDeclaration)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=ast::TypeTestExpression_strategy)
+@given(instance=ast_IterationCall_strategy)
 @settings(max_examples=50)
-def test_ast::typetestexpression_instantiation(instance):
-    assert isinstance(instance, ast::TypeTestExpression)
-
-@given(instance=ast::DerivativeOperator_strategy)
-@settings(max_examples=50)
-def test_ast::derivativeoperator_instantiation(instance):
-    assert isinstance(instance, ast::DerivativeOperator)
-
-@given(instance=ast::PowerExpression_strategy)
-@settings(max_examples=50)
-def test_ast::powerexpression_instantiation(instance):
-    assert isinstance(instance, ast::PowerExpression)
-
-@given(instance=ast::PowerExpression_strategy)
-def test_ast::powerexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ast_iterationcall_instantiation(instance):
+    assert isinstance(instance, ast_IterationCall)
 
 
-@given(instance=ast::PowerExpression_strategy)
-def test_ast::powerexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=ast::MultiplicativeExpression_strategy)
-@settings(max_examples=50)
-def test_ast::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, ast::MultiplicativeExpression)
-
-@given(instance=ast::MultiplicativeExpression_strategy)
-def test_ast::multiplicativeexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ast::MultiplicativeExpression_strategy)
-def test_ast::multiplicativeexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ast::ParenthesizedExpression_strategy)
-@settings(max_examples=50)
-def test_ast::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, ast::ParenthesizedExpression)
-
-@given(instance=ast::LogicalAndExpression_strategy)
-@settings(max_examples=50)
-def test_ast::logicalandexpression_instantiation(instance):
-    assert isinstance(instance, ast::LogicalAndExpression)
-
-@given(instance=ast::ArrayConcatenationOperator_strategy)
-@settings(max_examples=50)
-def test_ast::arrayconcatenationoperator_instantiation(instance):
-    assert isinstance(instance, ast::ArrayConcatenationOperator)
-
-@given(instance=ast::LogicalOrExpression_strategy)
-@settings(max_examples=50)
-def test_ast::logicalorexpression_instantiation(instance):
-    assert isinstance(instance, ast::LogicalOrExpression)
-
-@given(instance=ast::AlgorithmExpression_strategy)
-@settings(max_examples=50)
-def test_ast::algorithmexpression_instantiation(instance):
-    assert isinstance(instance, ast::AlgorithmExpression)
-
-@given(instance=ast::RelationalExpression_strategy)
-@settings(max_examples=50)
-def test_ast::relationalexpression_instantiation(instance):
-    assert isinstance(instance, ast::RelationalExpression)
-
-@given(instance=ast::RelationalExpression_strategy)
-def test_ast::relationalexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ast::RelationalExpression_strategy)
-def test_ast::relationalexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ast::EqualityExpression_strategy)
-@settings(max_examples=50)
-def test_ast::equalityexpression_instantiation(instance):
-    assert isinstance(instance, ast::EqualityExpression)
-
-@given(instance=ast::EqualityExpression_strategy)
-def test_ast::equalityexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ast::EqualityExpression_strategy)
-def test_ast::equalityexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ast::ImpliesExpression_strategy)
-@settings(max_examples=50)
-def test_ast::impliesexpression_instantiation(instance):
-    assert isinstance(instance, ast::ImpliesExpression)
-
-@given(instance=ast::PostfixExpression_strategy)
-@settings(max_examples=50)
-def test_ast::postfixexpression_instantiation(instance):
-    assert isinstance(instance, ast::PostfixExpression)
-
-@given(instance=ast::PostfixExpression_strategy)
-def test_ast::postfixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ast::PostfixExpression_strategy)
-def test_ast::postfixexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ast::MemberVariableAccess_strategy)
-@settings(max_examples=50)
-def test_ast::membervariableaccess_instantiation(instance):
-    assert isinstance(instance, ast::MemberVariableAccess)
-
-@given(instance=ast::ArrayElementAccess_strategy)
-@settings(max_examples=50)
-def test_ast::arrayelementaccess_instantiation(instance):
-    assert isinstance(instance, ast::ArrayElementAccess)
-
-@given(instance=ast::UnitConstructionOperator_strategy)
-@settings(max_examples=50)
-def test_ast::unitconstructionoperator_instantiation(instance):
-    assert isinstance(instance, ast::UnitConstructionOperator)
-
-@given(instance=ast::EndExpression_strategy)
-@settings(max_examples=50)
-def test_ast::endexpression_instantiation(instance):
-    assert isinstance(instance, ast::EndExpression)
-
-@given(instance=ast::FeatureCall_strategy)
-@settings(max_examples=50)
-def test_ast::featurecall_instantiation(instance):
-    assert isinstance(instance, ast::FeatureCall)
-
-@given(instance=ast::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_ast::unaryexpression_instantiation(instance):
-    assert isinstance(instance, ast::UnaryExpression)
-
-@given(instance=ast::UnaryExpression_strategy)
-def test_ast::unaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ast::UnaryExpression_strategy)
-def test_ast::unaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ast::ArrayConstructionOperator_strategy)
-@settings(max_examples=50)
-def test_ast::arrayconstructionoperator_instantiation(instance):
-    assert isinstance(instance, ast::ArrayConstructionOperator)
-
-@given(instance=ast::SwitchExpression_strategy)
-@settings(max_examples=50)
-def test_ast::switchexpression_instantiation(instance):
-    assert isinstance(instance, ast::SwitchExpression)
-
-@given(instance=ast::SwitchExpression_strategy)
-def test_ast::switchexpression_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=ast::SwitchExpression_strategy)
-def test_ast::switchexpression_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=ast::AdditiveExpression_strategy)
-@settings(max_examples=50)
-def test_ast::additiveexpression_instantiation(instance):
-    assert isinstance(instance, ast::AdditiveExpression)
-
-@given(instance=ast::AdditiveExpression_strategy)
-def test_ast::additiveexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ast::AdditiveExpression_strategy)
-def test_ast::additiveexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ast::IterationCall_strategy)
-@settings(max_examples=50)
-def test_ast::iterationcall_instantiation(instance):
-    assert isinstance(instance, ast::IterationCall)
-
-@given(instance=ast::IterationCall_strategy)
-def test_ast::iterationcall_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=ast::IterationCall_strategy)
-def test_ast::iterationcall_identifier_setter(instance):
+@given(instance=ast_IterationCall_strategy)
+def test_ast_iterationcall_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=ast::IfExpression_strategy)
+@given(instance=ast_AdditiveExpression_strategy)
 @settings(max_examples=50)
-def test_ast::ifexpression_instantiation(instance):
-    assert isinstance(instance, ast::IfExpression)
-
-@given(instance=ast::IfExpression_strategy)
-def test_ast::ifexpression_static_type(instance):
-    assert isinstance(instance.static, bool)
+def test_ast_additiveexpression_instantiation(instance):
+    assert isinstance(instance, ast_AdditiveExpression)
 
 
-@given(instance=ast::IfExpression_strategy)
-def test_ast::ifexpression_static_setter(instance):
+
+@given(instance=ast_AdditiveExpression_strategy)
+def test_ast_additiveexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_PowerExpression_strategy)
+@settings(max_examples=50)
+def test_ast_powerexpression_instantiation(instance):
+    assert isinstance(instance, ast_PowerExpression)
+
+
+
+@given(instance=ast_PowerExpression_strategy)
+def test_ast_powerexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_PostfixExpression_strategy)
+@settings(max_examples=50)
+def test_ast_postfixexpression_instantiation(instance):
+    assert isinstance(instance, ast_PostfixExpression)
+
+
+
+@given(instance=ast_PostfixExpression_strategy)
+def test_ast_postfixexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_ParenthesizedExpression_strategy)
+@settings(max_examples=50)
+def test_ast_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, ast_ParenthesizedExpression)
+
+@given(instance=ast_SwitchExpression_strategy)
+@settings(max_examples=50)
+def test_ast_switchexpression_instantiation(instance):
+    assert isinstance(instance, ast_SwitchExpression)
+
+
+
+@given(instance=ast_SwitchExpression_strategy)
+def test_ast_switchexpression_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=ast::RangeExpression_strategy)
+@given(instance=ast_ArrayConstructionOperator_strategy)
 @settings(max_examples=50)
-def test_ast::rangeexpression_instantiation(instance):
-    assert isinstance(instance, ast::RangeExpression)
+def test_ast_arrayconstructionoperator_instantiation(instance):
+    assert isinstance(instance, ast_ArrayConstructionOperator)
 
-@given(instance=ast::LetExpression_strategy)
+@given(instance=ast_TypeTestExpression_strategy)
 @settings(max_examples=50)
-def test_ast::letexpression_instantiation(instance):
-    assert isinstance(instance, ast::LetExpression)
+def test_ast_typetestexpression_instantiation(instance):
+    assert isinstance(instance, ast_TypeTestExpression)
 
-@given(instance=ast::DataType_strategy)
+@given(instance=ast_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_ast::datatype_instantiation(instance):
-    assert isinstance(instance, ast::DataType)
+def test_ast_equalityexpression_instantiation(instance):
+    assert isinstance(instance, ast_EqualityExpression)
 
-@given(instance=ast::Equation_strategy)
+
+
+@given(instance=ast_EqualityExpression_strategy)
+def test_ast_equalityexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_RangeExpression_strategy)
 @settings(max_examples=50)
-def test_ast::equation_instantiation(instance):
-    assert isinstance(instance, ast::Equation)
+def test_ast_rangeexpression_instantiation(instance):
+    assert isinstance(instance, ast_RangeExpression)
 
-@given(instance=ast::Equation_strategy)
-def test_ast::equation_initial_type(instance):
-    assert isinstance(instance.initial, bool)
+@given(instance=ast_ArrayConcatenationOperator_strategy)
+@settings(max_examples=50)
+def test_ast_arrayconcatenationoperator_instantiation(instance):
+    assert isinstance(instance, ast_ArrayConcatenationOperator)
+
+@given(instance=ast_DerivativeOperator_strategy)
+@settings(max_examples=50)
+def test_ast_derivativeoperator_instantiation(instance):
+    assert isinstance(instance, ast_DerivativeOperator)
+
+@given(instance=ast_LogicalAndExpression_strategy)
+@settings(max_examples=50)
+def test_ast_logicalandexpression_instantiation(instance):
+    assert isinstance(instance, ast_LogicalAndExpression)
+
+@given(instance=ast_UnitConstructionOperator_strategy)
+@settings(max_examples=50)
+def test_ast_unitconstructionoperator_instantiation(instance):
+    assert isinstance(instance, ast_UnitConstructionOperator)
+
+@given(instance=ast_ImpliesExpression_strategy)
+@settings(max_examples=50)
+def test_ast_impliesexpression_instantiation(instance):
+    assert isinstance(instance, ast_ImpliesExpression)
+
+@given(instance=ast_AlgorithmExpression_strategy)
+@settings(max_examples=50)
+def test_ast_algorithmexpression_instantiation(instance):
+    assert isinstance(instance, ast_AlgorithmExpression)
+
+@given(instance=ast_RelationalExpression_strategy)
+@settings(max_examples=50)
+def test_ast_relationalexpression_instantiation(instance):
+    assert isinstance(instance, ast_RelationalExpression)
 
 
-@given(instance=ast::Equation_strategy)
-def test_ast::equation_initial_setter(instance):
+
+@given(instance=ast_RelationalExpression_strategy)
+def test_ast_relationalexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_ast_unaryexpression_instantiation(instance):
+    assert isinstance(instance, ast_UnaryExpression)
+
+
+
+@given(instance=ast_UnaryExpression_strategy)
+def test_ast_unaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_IfExpression_strategy)
+@settings(max_examples=50)
+def test_ast_ifexpression_instantiation(instance):
+    assert isinstance(instance, ast_IfExpression)
+
+
+
+@given(instance=ast_IfExpression_strategy)
+def test_ast_ifexpression_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+@given(instance=ast_MemberVariableAccess_strategy)
+@settings(max_examples=50)
+def test_ast_membervariableaccess_instantiation(instance):
+    assert isinstance(instance, ast_MemberVariableAccess)
+
+@given(instance=ast_MultiplicativeExpression_strategy)
+@settings(max_examples=50)
+def test_ast_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, ast_MultiplicativeExpression)
+
+
+
+@given(instance=ast_MultiplicativeExpression_strategy)
+def test_ast_multiplicativeexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ast_ArrayElementAccess_strategy)
+@settings(max_examples=50)
+def test_ast_arrayelementaccess_instantiation(instance):
+    assert isinstance(instance, ast_ArrayElementAccess)
+
+@given(instance=ast_EndExpression_strategy)
+@settings(max_examples=50)
+def test_ast_endexpression_instantiation(instance):
+    assert isinstance(instance, ast_EndExpression)
+
+@given(instance=ast_LogicalOrExpression_strategy)
+@settings(max_examples=50)
+def test_ast_logicalorexpression_instantiation(instance):
+    assert isinstance(instance, ast_LogicalOrExpression)
+
+@given(instance=ast_FeatureCall_strategy)
+@settings(max_examples=50)
+def test_ast_featurecall_instantiation(instance):
+    assert isinstance(instance, ast_FeatureCall)
+
+@given(instance=ast_LetExpression_strategy)
+@settings(max_examples=50)
+def test_ast_letexpression_instantiation(instance):
+    assert isinstance(instance, ast_LetExpression)
+
+@given(instance=ast_DataType_strategy)
+@settings(max_examples=50)
+def test_ast_datatype_instantiation(instance):
+    assert isinstance(instance, ast_DataType)
+
+@given(instance=ast_Equation_strategy)
+@settings(max_examples=50)
+def test_ast_equation_instantiation(instance):
+    assert isinstance(instance, ast_Equation)
+
+
+
+@given(instance=ast_Equation_strategy)
+def test_ast_equation_initial_setter(instance):
     original = instance.initial
     instance.initial = original
     assert instance.initial == original
 
-@given(instance=ast::Assertion_strategy)
+@given(instance=ast_Assertion_strategy)
 @settings(max_examples=50)
-def test_ast::assertion_instantiation(instance):
-    assert isinstance(instance, ast::Assertion)
-
-@given(instance=ast::Assertion_strategy)
-def test_ast::assertion_static_type(instance):
-    assert isinstance(instance.static, bool)
+def test_ast_assertion_instantiation(instance):
+    assert isinstance(instance, ast_Assertion)
 
 
-@given(instance=ast::Assertion_strategy)
-def test_ast::assertion_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
 
-@given(instance=ast::Assertion_strategy)
-def test_ast::assertion_statusKind_type(instance):
-    assert isinstance(instance.statusKind, str)
-
-
-@given(instance=ast::Assertion_strategy)
-def test_ast::assertion_statusKind_setter(instance):
+@given(instance=ast_Assertion_strategy)
+def test_ast_assertion_statusKind_setter(instance):
     original = instance.statusKind
     instance.statusKind = original
     assert instance.statusKind == original
 
-@given(instance=ast::Check_strategy)
-@settings(max_examples=50)
-def test_ast::check_instantiation(instance):
-    assert isinstance(instance, ast::Check)
 
-@given(instance=ast::OutputParameterDeclaration_strategy)
-@settings(max_examples=50)
-def test_ast::outputparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, ast::OutputParameterDeclaration)
 
-@given(instance=ast::InputParameterDeclaration_strategy)
-@settings(max_examples=50)
-def test_ast::inputparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, ast::InputParameterDeclaration)
+@given(instance=ast_Assertion_strategy)
+def test_ast_assertion_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
 
-@given(instance=ast::TemplateParameterDeclaration_strategy)
+@given(instance=ast_Check_strategy)
 @settings(max_examples=50)
-def test_ast::templateparameterdeclaration_instantiation(instance):
-    assert isinstance(instance, ast::TemplateParameterDeclaration)
+def test_ast_check_instantiation(instance):
+    assert isinstance(instance, ast_Check)
+
+@given(instance=ast_OutputParameterDeclaration_strategy)
+@settings(max_examples=50)
+def test_ast_outputparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, ast_OutputParameterDeclaration)
+
+@given(instance=ast_InputParameterDeclaration_strategy)
+@settings(max_examples=50)
+def test_ast_inputparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, ast_InputParameterDeclaration)
+
+@given(instance=ast_TemplateParameterDeclaration_strategy)
+@settings(max_examples=50)
+def test_ast_templateparameterdeclaration_instantiation(instance):
+    assert isinstance(instance, ast_TemplateParameterDeclaration)
 
 @given(instance=CallableElement_strategy)
 @settings(max_examples=50)
 def test_callableelement_instantiation(instance):
     assert isinstance(instance, CallableElement)
 
-@given(instance=ast::IterationVariable_strategy)
+@given(instance=ast_IterationAccumulator_strategy)
 @settings(max_examples=50)
-def test_ast::iterationvariable_instantiation(instance):
-    assert isinstance(instance, ast::IterationVariable)
-
-@given(instance=ast::IterationVariable_strategy)
-def test_ast::iterationvariable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_iterationaccumulator_instantiation(instance):
+    assert isinstance(instance, ast_IterationAccumulator)
 
 
-@given(instance=ast::IterationVariable_strategy)
-def test_ast::iterationvariable_name_setter(instance):
+
+@given(instance=ast_IterationAccumulator_strategy)
+def test_ast_iterationaccumulator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::FunctionObjectDeclaration_strategy)
+@given(instance=ast_LetExpressionVariableDeclarationPart_strategy)
 @settings(max_examples=50)
-def test_ast::functionobjectdeclaration_instantiation(instance):
-    assert isinstance(instance, ast::FunctionObjectDeclaration)
-
-@given(instance=ast::FunctionObjectDeclaration_strategy)
-def test_ast::functionobjectdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_letexpressionvariabledeclarationpart_instantiation(instance):
+    assert isinstance(instance, ast_LetExpressionVariableDeclarationPart)
 
 
-@given(instance=ast::FunctionObjectDeclaration_strategy)
-def test_ast::functionobjectdeclaration_name_setter(instance):
+
+@given(instance=ast_LetExpressionVariableDeclarationPart_strategy)
+def test_ast_letexpressionvariabledeclarationpart_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::LetExpressionVariableDeclarationPart_strategy)
+@given(instance=ast_StateVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::letexpressionvariabledeclarationpart_instantiation(instance):
-    assert isinstance(instance, ast::LetExpressionVariableDeclarationPart)
-
-@given(instance=ast::LetExpressionVariableDeclarationPart_strategy)
-def test_ast::letexpressionvariabledeclarationpart_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_statevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, ast_StateVariableDeclaration)
 
 
-@given(instance=ast::LetExpressionVariableDeclarationPart_strategy)
-def test_ast::letexpressionvariabledeclarationpart_name_setter(instance):
+
+@given(instance=ast_StateVariableDeclaration_strategy)
+def test_ast_statevariabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::StateVariableDeclaration_strategy)
+@given(instance=ast_FunctionObjectDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::statevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, ast::StateVariableDeclaration)
-
-@given(instance=ast::StateVariableDeclaration_strategy)
-def test_ast::statevariabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_functionobjectdeclaration_instantiation(instance):
+    assert isinstance(instance, ast_FunctionObjectDeclaration)
 
 
-@given(instance=ast::StateVariableDeclaration_strategy)
-def test_ast::statevariabledeclaration_name_setter(instance):
+
+@given(instance=ast_FunctionObjectDeclaration_strategy)
+def test_ast_functionobjectdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::IterationAccumulator_strategy)
+@given(instance=ast_IterationVariable_strategy)
 @settings(max_examples=50)
-def test_ast::iterationaccumulator_instantiation(instance):
-    assert isinstance(instance, ast::IterationAccumulator)
-
-@given(instance=ast::IterationAccumulator_strategy)
-def test_ast::iterationaccumulator_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_iterationvariable_instantiation(instance):
+    assert isinstance(instance, ast_IterationVariable)
 
 
-@given(instance=ast::IterationAccumulator_strategy)
-def test_ast::iterationaccumulator_name_setter(instance):
+
+@given(instance=ast_IterationVariable_strategy)
+def test_ast_iterationvariable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::ParameterDeclaration_strategy)
+@given(instance=ast_ParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::parameterdeclaration_instantiation(instance):
-    assert isinstance(instance, ast::ParameterDeclaration)
-
-@given(instance=ast::ParameterDeclaration_strategy)
-def test_ast::parameterdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_parameterdeclaration_instantiation(instance):
+    assert isinstance(instance, ast_ParameterDeclaration)
 
 
-@given(instance=ast::ParameterDeclaration_strategy)
-def test_ast::parameterdeclaration_name_setter(instance):
+
+@given(instance=ast_ParameterDeclaration_strategy)
+def test_ast_parameterdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::CallableElement_strategy)
+@given(instance=ast_CallableElement_strategy)
 @settings(max_examples=50)
-def test_ast::callableelement_instantiation(instance):
-    assert isinstance(instance, ast::CallableElement)
+def test_ast_callableelement_instantiation(instance):
+    assert isinstance(instance, ast_CallableElement)
 
-@given(instance=ast::Expression_strategy)
+@given(instance=ast_Expression_strategy)
 @settings(max_examples=50)
-def test_ast::expression_instantiation(instance):
-    assert isinstance(instance, ast::Expression)
+def test_ast_expression_instantiation(instance):
+    assert isinstance(instance, ast_Expression)
 
-@given(instance=ast::PrimitiveType_strategy)
+@given(instance=ast_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ast::primitivetype_instantiation(instance):
-    assert isinstance(instance, ast::PrimitiveType)
+def test_ast_primitivetype_instantiation(instance):
+    assert isinstance(instance, ast_PrimitiveType)
 
-@given(instance=ast::EnumerationLiteralDeclaration_strategy)
+@given(instance=ast_EnumerationLiteralDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::enumerationliteraldeclaration_instantiation(instance):
-    assert isinstance(instance, ast::EnumerationLiteralDeclaration)
-
-@given(instance=ast::EnumerationLiteralDeclaration_strategy)
-def test_ast::enumerationliteraldeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_enumerationliteraldeclaration_instantiation(instance):
+    assert isinstance(instance, ast_EnumerationLiteralDeclaration)
 
 
-@given(instance=ast::EnumerationLiteralDeclaration_strategy)
-def test_ast::enumerationliteraldeclaration_name_setter(instance):
+
+@given(instance=ast_EnumerationLiteralDeclaration_strategy)
+def test_ast_enumerationliteraldeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2853,90 +2778,81 @@ def test_ast::enumerationliteraldeclaration_name_setter(instance):
 def test_datatypedefinition_instantiation(instance):
     assert isinstance(instance, DataTypeDefinition)
 
-@given(instance=ast::TypeAliasDefinition_strategy)
+@given(instance=ast_TypeAliasDefinition_strategy)
 @settings(max_examples=50)
-def test_ast::typealiasdefinition_instantiation(instance):
-    assert isinstance(instance, ast::TypeAliasDefinition)
+def test_ast_typealiasdefinition_instantiation(instance):
+    assert isinstance(instance, ast_TypeAliasDefinition)
 
-@given(instance=ast::EnumerationDefinition_strategy)
+@given(instance=ast_EnumerationDefinition_strategy)
 @settings(max_examples=50)
-def test_ast::enumerationdefinition_instantiation(instance):
-    assert isinstance(instance, ast::EnumerationDefinition)
+def test_ast_enumerationdefinition_instantiation(instance):
+    assert isinstance(instance, ast_EnumerationDefinition)
 
 @given(instance=Definition_strategy)
 @settings(max_examples=50)
 def test_definition_instantiation(instance):
     assert isinstance(instance, Definition)
 
-@given(instance=ast::FunctionDefinition_strategy)
+@given(instance=ast_BuiltinDefinition_strategy)
 @settings(max_examples=50)
-def test_ast::functiondefinition_instantiation(instance):
-    assert isinstance(instance, ast::FunctionDefinition)
+def test_ast_builtindefinition_instantiation(instance):
+    assert isinstance(instance, ast_BuiltinDefinition)
 
-@given(instance=ast::FunctionDefinition_strategy)
-def test_ast::functiondefinition_kind_type(instance):
-    assert isinstance(instance.kind, str)
+@given(instance=ast_FunctionDefinition_strategy)
+@settings(max_examples=50)
+def test_ast_functiondefinition_instantiation(instance):
+    assert isinstance(instance, ast_FunctionDefinition)
 
 
-@given(instance=ast::FunctionDefinition_strategy)
-def test_ast::functiondefinition_kind_setter(instance):
+
+@given(instance=ast_FunctionDefinition_strategy)
+def test_ast_functiondefinition_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=ast::BuiltinDefinition_strategy)
+@given(instance=ast_DataTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_ast::builtindefinition_instantiation(instance):
-    assert isinstance(instance, ast::BuiltinDefinition)
+def test_ast_datatypedefinition_instantiation(instance):
+    assert isinstance(instance, ast_DataTypeDefinition)
 
-@given(instance=ast::DataTypeDefinition_strategy)
+@given(instance=ast_DataTypeSpecifier_strategy)
 @settings(max_examples=50)
-def test_ast::datatypedefinition_instantiation(instance):
-    assert isinstance(instance, ast::DataTypeDefinition)
+def test_ast_datatypespecifier_instantiation(instance):
+    assert isinstance(instance, ast_DataTypeSpecifier)
 
-@given(instance=ast::DataTypeSpecifier_strategy)
+@given(instance=ast_RecordFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_ast::datatypespecifier_instantiation(instance):
-    assert isinstance(instance, ast::DataTypeSpecifier)
-
-@given(instance=ast::RecordFieldDeclaration_strategy)
-@settings(max_examples=50)
-def test_ast::recordfielddeclaration_instantiation(instance):
-    assert isinstance(instance, ast::RecordFieldDeclaration)
-
-@given(instance=ast::RecordFieldDeclaration_strategy)
-def test_ast::recordfielddeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_recordfielddeclaration_instantiation(instance):
+    assert isinstance(instance, ast_RecordFieldDeclaration)
 
 
-@given(instance=ast::RecordFieldDeclaration_strategy)
-def test_ast::recordfielddeclaration_name_setter(instance):
+
+@given(instance=ast_RecordFieldDeclaration_strategy)
+def test_ast_recordfielddeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::RecordDefinition_strategy)
+@given(instance=ast_RecordDefinition_strategy)
 @settings(max_examples=50)
-def test_ast::recorddefinition_instantiation(instance):
-    assert isinstance(instance, ast::RecordDefinition)
+def test_ast_recorddefinition_instantiation(instance):
+    assert isinstance(instance, ast_RecordDefinition)
 
-@given(instance=ast::Definition_strategy)
+@given(instance=ast_Definition_strategy)
 @settings(max_examples=50)
-def test_ast::definition_instantiation(instance):
-    assert isinstance(instance, ast::Definition)
-
-@given(instance=ast::Definition_strategy)
-def test_ast::definition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ast_definition_instantiation(instance):
+    assert isinstance(instance, ast_Definition)
 
 
-@given(instance=ast::Definition_strategy)
-def test_ast::definition_name_setter(instance):
+
+@given(instance=ast_Definition_strategy)
+def test_ast_definition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ast::Module_strategy)
+@given(instance=ast_Module_strategy)
 @settings(max_examples=50)
-def test_ast::module_instantiation(instance):
-    assert isinstance(instance, ast::Module)
+def test_ast_module_instantiation(instance):
+    assert isinstance(instance, ast_Module)

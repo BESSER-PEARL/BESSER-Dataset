@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Evento,
@@ -38,8 +38,8 @@ def test_evento_constructor_args():
     sig = inspect.signature(Evento.__init__)
     params = list(sig.parameters.keys())
     assert "Cod_jugador" in params, "Missing parameter 'Cod_jugador'"
-    assert "Cod_partido" in params, "Missing parameter 'Cod_partido'"
     assert "Cod_TipodeEvento" in params, "Missing parameter 'Cod_TipodeEvento'"
+    assert "Cod_partido" in params, "Missing parameter 'Cod_partido'"
 
 def test_evento_has_Cod_jugador():
     assert hasattr(Evento, "Cod_jugador")
@@ -50,21 +50,21 @@ def test_evento_has_Cod_jugador():
             break
     assert isinstance(descriptor, property)
 
-def test_evento_has_Cod_partido():
-    assert hasattr(Evento, "Cod_partido")
-    descriptor = None
-    for klass in Evento.__mro__:
-        if "Cod_partido" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_partido"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_evento_has_Cod_TipodeEvento():
     assert hasattr(Evento, "Cod_TipodeEvento")
     descriptor = None
     for klass in Evento.__mro__:
         if "Cod_TipodeEvento" in klass.__dict__:
             descriptor = klass.__dict__["Cod_TipodeEvento"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_evento_has_Cod_partido():
+    assert hasattr(Evento, "Cod_partido")
+    descriptor = None
+    for klass in Evento.__mro__:
+        if "Cod_partido" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_partido"]
             break
     assert isinstance(descriptor, property)
 
@@ -81,42 +81,15 @@ def test_partido_constructor_exists():
 def test_partido_constructor_args():
     sig = inspect.signature(Partido.__init__)
     params = list(sig.parameters.keys())
-    assert "Visita" in params, "Missing parameter 'Visita'"
-    assert "Fecha" in params, "Missing parameter 'Fecha'"
-    assert "Ganador" in params, "Missing parameter 'Ganador'"
     assert "Hora" in params, "Missing parameter 'Hora'"
-    assert "GolLocal" in params, "Missing parameter 'GolLocal'"
     assert "GolVisita" in params, "Missing parameter 'GolVisita'"
+    assert "GolLocal" in params, "Missing parameter 'GolLocal'"
+    assert "Ganador" in params, "Missing parameter 'Ganador'"
+    assert "Visita" in params, "Missing parameter 'Visita'"
+    assert "Cod_liga" in params, "Missing parameter 'Cod_liga'"
+    assert "Fecha" in params, "Missing parameter 'Fecha'"
     assert "Local" in params, "Missing parameter 'Local'"
     assert "Cod_partido" in params, "Missing parameter 'Cod_partido'"
-    assert "Cod_liga" in params, "Missing parameter 'Cod_liga'"
-
-def test_partido_has_Visita():
-    assert hasattr(Partido, "Visita")
-    descriptor = None
-    for klass in Partido.__mro__:
-        if "Visita" in klass.__dict__:
-            descriptor = klass.__dict__["Visita"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_partido_has_Fecha():
-    assert hasattr(Partido, "Fecha")
-    descriptor = None
-    for klass in Partido.__mro__:
-        if "Fecha" in klass.__dict__:
-            descriptor = klass.__dict__["Fecha"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_partido_has_Ganador():
-    assert hasattr(Partido, "Ganador")
-    descriptor = None
-    for klass in Partido.__mro__:
-        if "Ganador" in klass.__dict__:
-            descriptor = klass.__dict__["Ganador"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_partido_has_Hora():
     assert hasattr(Partido, "Hora")
@@ -124,6 +97,15 @@ def test_partido_has_Hora():
     for klass in Partido.__mro__:
         if "Hora" in klass.__dict__:
             descriptor = klass.__dict__["Hora"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_partido_has_GolVisita():
+    assert hasattr(Partido, "GolVisita")
+    descriptor = None
+    for klass in Partido.__mro__:
+        if "GolVisita" in klass.__dict__:
+            descriptor = klass.__dict__["GolVisita"]
             break
     assert isinstance(descriptor, property)
 
@@ -136,12 +118,39 @@ def test_partido_has_GolLocal():
             break
     assert isinstance(descriptor, property)
 
-def test_partido_has_GolVisita():
-    assert hasattr(Partido, "GolVisita")
+def test_partido_has_Ganador():
+    assert hasattr(Partido, "Ganador")
     descriptor = None
     for klass in Partido.__mro__:
-        if "GolVisita" in klass.__dict__:
-            descriptor = klass.__dict__["GolVisita"]
+        if "Ganador" in klass.__dict__:
+            descriptor = klass.__dict__["Ganador"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_partido_has_Visita():
+    assert hasattr(Partido, "Visita")
+    descriptor = None
+    for klass in Partido.__mro__:
+        if "Visita" in klass.__dict__:
+            descriptor = klass.__dict__["Visita"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_partido_has_Cod_liga():
+    assert hasattr(Partido, "Cod_liga")
+    descriptor = None
+    for klass in Partido.__mro__:
+        if "Cod_liga" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_liga"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_partido_has_Fecha():
+    assert hasattr(Partido, "Fecha")
+    descriptor = None
+    for klass in Partido.__mro__:
+        if "Fecha" in klass.__dict__:
+            descriptor = klass.__dict__["Fecha"]
             break
     assert isinstance(descriptor, property)
 
@@ -163,15 +172,6 @@ def test_partido_has_Cod_partido():
             break
     assert isinstance(descriptor, property)
 
-def test_partido_has_Cod_liga():
-    assert hasattr(Partido, "Cod_liga")
-    descriptor = None
-    for klass in Partido.__mro__:
-        if "Cod_liga" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_liga"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_arbitro_is_not_abstract():
@@ -186,8 +186,8 @@ def test_arbitro_constructor_args():
     sig = inspect.signature(Arbitro.__init__)
     params = list(sig.parameters.keys())
     assert "Partidos" in params, "Missing parameter 'Partidos'"
-    assert "Cod_persona" in params, "Missing parameter 'Cod_persona'"
     assert "Cod_Arbitro" in params, "Missing parameter 'Cod_Arbitro'"
+    assert "Cod_persona" in params, "Missing parameter 'Cod_persona'"
 
 def test_arbitro_has_Partidos():
     assert hasattr(Arbitro, "Partidos")
@@ -198,21 +198,21 @@ def test_arbitro_has_Partidos():
             break
     assert isinstance(descriptor, property)
 
-def test_arbitro_has_Cod_persona():
-    assert hasattr(Arbitro, "Cod_persona")
-    descriptor = None
-    for klass in Arbitro.__mro__:
-        if "Cod_persona" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_persona"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_arbitro_has_Cod_Arbitro():
     assert hasattr(Arbitro, "Cod_Arbitro")
     descriptor = None
     for klass in Arbitro.__mro__:
         if "Cod_Arbitro" in klass.__dict__:
             descriptor = klass.__dict__["Cod_Arbitro"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_arbitro_has_Cod_persona():
+    assert hasattr(Arbitro, "Cod_persona")
+    descriptor = None
+    for klass in Arbitro.__mro__:
+        if "Cod_persona" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_persona"]
             break
     assert isinstance(descriptor, property)
 
@@ -229,9 +229,18 @@ def test_entrenador_constructor_exists():
 def test_entrenador_constructor_args():
     sig = inspect.signature(Entrenador.__init__)
     params = list(sig.parameters.keys())
+    assert "Cod_persona" in params, "Missing parameter 'Cod_persona'"
     assert "Titulos" in params, "Missing parameter 'Titulos'"
     assert "Cod_Entrenador" in params, "Missing parameter 'Cod_Entrenador'"
-    assert "Cod_persona" in params, "Missing parameter 'Cod_persona'"
+
+def test_entrenador_has_Cod_persona():
+    assert hasattr(Entrenador, "Cod_persona")
+    descriptor = None
+    for klass in Entrenador.__mro__:
+        if "Cod_persona" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_persona"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_entrenador_has_Titulos():
     assert hasattr(Entrenador, "Titulos")
@@ -251,15 +260,6 @@ def test_entrenador_has_Cod_Entrenador():
             break
     assert isinstance(descriptor, property)
 
-def test_entrenador_has_Cod_persona():
-    assert hasattr(Entrenador, "Cod_persona")
-    descriptor = None
-    for klass in Entrenador.__mro__:
-        if "Cod_persona" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_persona"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_jugador_is_not_abstract():
@@ -273,21 +273,21 @@ def test_jugador_constructor_exists():
 def test_jugador_constructor_args():
     sig = inspect.signature(Jugador.__init__)
     params = list(sig.parameters.keys())
-    assert "Dorsal" in params, "Missing parameter 'Dorsal'"
-    assert "Titulos" in params, "Missing parameter 'Titulos'"
-    assert "Peso" in params, "Missing parameter 'Peso'"
     assert "Cod_persona" in params, "Missing parameter 'Cod_persona'"
-    assert "Cod_jugador" in params, "Missing parameter 'Cod_jugador'"
+    assert "Titulos" in params, "Missing parameter 'Titulos'"
     assert "Posicion" in params, "Missing parameter 'Posicion'"
-    assert "Altura" in params, "Missing parameter 'Altura'"
     assert "Cod_equipo" in params, "Missing parameter 'Cod_equipo'"
+    assert "Dorsal" in params, "Missing parameter 'Dorsal'"
+    assert "Cod_jugador" in params, "Missing parameter 'Cod_jugador'"
+    assert "Peso" in params, "Missing parameter 'Peso'"
+    assert "Altura" in params, "Missing parameter 'Altura'"
 
-def test_jugador_has_Dorsal():
-    assert hasattr(Jugador, "Dorsal")
+def test_jugador_has_Cod_persona():
+    assert hasattr(Jugador, "Cod_persona")
     descriptor = None
     for klass in Jugador.__mro__:
-        if "Dorsal" in klass.__dict__:
-            descriptor = klass.__dict__["Dorsal"]
+        if "Cod_persona" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_persona"]
             break
     assert isinstance(descriptor, property)
 
@@ -300,21 +300,30 @@ def test_jugador_has_Titulos():
             break
     assert isinstance(descriptor, property)
 
-def test_jugador_has_Peso():
-    assert hasattr(Jugador, "Peso")
+def test_jugador_has_Posicion():
+    assert hasattr(Jugador, "Posicion")
     descriptor = None
     for klass in Jugador.__mro__:
-        if "Peso" in klass.__dict__:
-            descriptor = klass.__dict__["Peso"]
+        if "Posicion" in klass.__dict__:
+            descriptor = klass.__dict__["Posicion"]
             break
     assert isinstance(descriptor, property)
 
-def test_jugador_has_Cod_persona():
-    assert hasattr(Jugador, "Cod_persona")
+def test_jugador_has_Cod_equipo():
+    assert hasattr(Jugador, "Cod_equipo")
     descriptor = None
     for klass in Jugador.__mro__:
-        if "Cod_persona" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_persona"]
+        if "Cod_equipo" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_equipo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jugador_has_Dorsal():
+    assert hasattr(Jugador, "Dorsal")
+    descriptor = None
+    for klass in Jugador.__mro__:
+        if "Dorsal" in klass.__dict__:
+            descriptor = klass.__dict__["Dorsal"]
             break
     assert isinstance(descriptor, property)
 
@@ -327,12 +336,12 @@ def test_jugador_has_Cod_jugador():
             break
     assert isinstance(descriptor, property)
 
-def test_jugador_has_Posicion():
-    assert hasattr(Jugador, "Posicion")
+def test_jugador_has_Peso():
+    assert hasattr(Jugador, "Peso")
     descriptor = None
     for klass in Jugador.__mro__:
-        if "Posicion" in klass.__dict__:
-            descriptor = klass.__dict__["Posicion"]
+        if "Peso" in klass.__dict__:
+            descriptor = klass.__dict__["Peso"]
             break
     assert isinstance(descriptor, property)
 
@@ -342,15 +351,6 @@ def test_jugador_has_Altura():
     for klass in Jugador.__mro__:
         if "Altura" in klass.__dict__:
             descriptor = klass.__dict__["Altura"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jugador_has_Cod_equipo():
-    assert hasattr(Jugador, "Cod_equipo")
-    descriptor = None
-    for klass in Jugador.__mro__:
-        if "Cod_equipo" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_equipo"]
             break
     assert isinstance(descriptor, property)
 
@@ -367,39 +367,12 @@ def test_equipo_constructor_exists():
 def test_equipo_constructor_args():
     sig = inspect.signature(Equipo.__init__)
     params = list(sig.parameters.keys())
-    assert "Cod_equipo" in params, "Missing parameter 'Cod_equipo'"
-    assert "Nombre" in params, "Missing parameter 'Nombre'"
-    assert "F_fundacion" in params, "Missing parameter 'F_fundacion'"
     assert "Cod_Entrenador" in params, "Missing parameter 'Cod_Entrenador'"
     assert "Titulos" in params, "Missing parameter 'Titulos'"
+    assert "Nombre" in params, "Missing parameter 'Nombre'"
     assert "Ciudad" in params, "Missing parameter 'Ciudad'"
-
-def test_equipo_has_Cod_equipo():
-    assert hasattr(Equipo, "Cod_equipo")
-    descriptor = None
-    for klass in Equipo.__mro__:
-        if "Cod_equipo" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_equipo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_equipo_has_Nombre():
-    assert hasattr(Equipo, "Nombre")
-    descriptor = None
-    for klass in Equipo.__mro__:
-        if "Nombre" in klass.__dict__:
-            descriptor = klass.__dict__["Nombre"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_equipo_has_F_fundacion():
-    assert hasattr(Equipo, "F_fundacion")
-    descriptor = None
-    for klass in Equipo.__mro__:
-        if "F_fundacion" in klass.__dict__:
-            descriptor = klass.__dict__["F_fundacion"]
-            break
-    assert isinstance(descriptor, property)
+    assert "F_fundacion" in params, "Missing parameter 'F_fundacion'"
+    assert "Cod_equipo" in params, "Missing parameter 'Cod_equipo'"
 
 def test_equipo_has_Cod_Entrenador():
     assert hasattr(Equipo, "Cod_Entrenador")
@@ -419,12 +392,39 @@ def test_equipo_has_Titulos():
             break
     assert isinstance(descriptor, property)
 
+def test_equipo_has_Nombre():
+    assert hasattr(Equipo, "Nombre")
+    descriptor = None
+    for klass in Equipo.__mro__:
+        if "Nombre" in klass.__dict__:
+            descriptor = klass.__dict__["Nombre"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_equipo_has_Ciudad():
     assert hasattr(Equipo, "Ciudad")
     descriptor = None
     for klass in Equipo.__mro__:
         if "Ciudad" in klass.__dict__:
             descriptor = klass.__dict__["Ciudad"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_equipo_has_F_fundacion():
+    assert hasattr(Equipo, "F_fundacion")
+    descriptor = None
+    for klass in Equipo.__mro__:
+        if "F_fundacion" in klass.__dict__:
+            descriptor = klass.__dict__["F_fundacion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_equipo_has_Cod_equipo():
+    assert hasattr(Equipo, "Cod_equipo")
+    descriptor = None
+    for klass in Equipo.__mro__:
+        if "Cod_equipo" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_equipo"]
             break
     assert isinstance(descriptor, property)
 
@@ -441,40 +441,13 @@ def test_estadio_constructor_exists():
 def test_estadio_constructor_args():
     sig = inspect.signature(Estadio.__init__)
     params = list(sig.parameters.keys())
-    assert "Ubicacion1" in params, "Missing parameter 'Ubicacion1'"
-    assert "Cod_equipo" in params, "Missing parameter 'Cod_equipo'"
-    assert "Nombre" in params, "Missing parameter 'Nombre'"
     assert "Ubicacion" in params, "Missing parameter 'Ubicacion'"
     assert "Terreno" in params, "Missing parameter 'Terreno'"
+    assert "Cod_equipo" in params, "Missing parameter 'Cod_equipo'"
     assert "Capacidad" in params, "Missing parameter 'Capacidad'"
+    assert "Ubicacion1" in params, "Missing parameter 'Ubicacion1'"
     assert "Cod_Estadio" in params, "Missing parameter 'Cod_Estadio'"
-
-def test_estadio_has_Ubicacion1():
-    assert hasattr(Estadio, "Ubicacion1")
-    descriptor = None
-    for klass in Estadio.__mro__:
-        if "Ubicacion1" in klass.__dict__:
-            descriptor = klass.__dict__["Ubicacion1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_estadio_has_Cod_equipo():
-    assert hasattr(Estadio, "Cod_equipo")
-    descriptor = None
-    for klass in Estadio.__mro__:
-        if "Cod_equipo" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_equipo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_estadio_has_Nombre():
-    assert hasattr(Estadio, "Nombre")
-    descriptor = None
-    for klass in Estadio.__mro__:
-        if "Nombre" in klass.__dict__:
-            descriptor = klass.__dict__["Nombre"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Nombre" in params, "Missing parameter 'Nombre'"
 
 def test_estadio_has_Ubicacion():
     assert hasattr(Estadio, "Ubicacion")
@@ -494,6 +467,15 @@ def test_estadio_has_Terreno():
             break
     assert isinstance(descriptor, property)
 
+def test_estadio_has_Cod_equipo():
+    assert hasattr(Estadio, "Cod_equipo")
+    descriptor = None
+    for klass in Estadio.__mro__:
+        if "Cod_equipo" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_equipo"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_estadio_has_Capacidad():
     assert hasattr(Estadio, "Capacidad")
     descriptor = None
@@ -503,12 +485,30 @@ def test_estadio_has_Capacidad():
             break
     assert isinstance(descriptor, property)
 
+def test_estadio_has_Ubicacion1():
+    assert hasattr(Estadio, "Ubicacion1")
+    descriptor = None
+    for klass in Estadio.__mro__:
+        if "Ubicacion1" in klass.__dict__:
+            descriptor = klass.__dict__["Ubicacion1"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_estadio_has_Cod_Estadio():
     assert hasattr(Estadio, "Cod_Estadio")
     descriptor = None
     for klass in Estadio.__mro__:
         if "Cod_Estadio" in klass.__dict__:
             descriptor = klass.__dict__["Cod_Estadio"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_estadio_has_Nombre():
+    assert hasattr(Estadio, "Nombre")
+    descriptor = None
+    for klass in Estadio.__mro__:
+        if "Nombre" in klass.__dict__:
+            descriptor = klass.__dict__["Nombre"]
             break
     assert isinstance(descriptor, property)
 
@@ -525,21 +525,12 @@ def test_persona_constructor_exists():
 def test_persona_constructor_args():
     sig = inspect.signature(Persona.__init__)
     params = list(sig.parameters.keys())
-    assert "NombreCorto" in params, "Missing parameter 'NombreCorto'"
     assert "Nombre" in params, "Missing parameter 'Nombre'"
-    assert "Apellido" in params, "Missing parameter 'Apellido'"
     assert "Cod_persona" in params, "Missing parameter 'Cod_persona'"
-    assert "FechaNacimiento" in params, "Missing parameter 'FechaNacimiento'"
     assert "Nacionalidad" in params, "Missing parameter 'Nacionalidad'"
-
-def test_persona_has_NombreCorto():
-    assert hasattr(Persona, "NombreCorto")
-    descriptor = None
-    for klass in Persona.__mro__:
-        if "NombreCorto" in klass.__dict__:
-            descriptor = klass.__dict__["NombreCorto"]
-            break
-    assert isinstance(descriptor, property)
+    assert "NombreCorto" in params, "Missing parameter 'NombreCorto'"
+    assert "Apellido" in params, "Missing parameter 'Apellido'"
+    assert "FechaNacimiento" in params, "Missing parameter 'FechaNacimiento'"
 
 def test_persona_has_Nombre():
     assert hasattr(Persona, "Nombre")
@@ -547,15 +538,6 @@ def test_persona_has_Nombre():
     for klass in Persona.__mro__:
         if "Nombre" in klass.__dict__:
             descriptor = klass.__dict__["Nombre"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_persona_has_Apellido():
-    assert hasattr(Persona, "Apellido")
-    descriptor = None
-    for klass in Persona.__mro__:
-        if "Apellido" in klass.__dict__:
-            descriptor = klass.__dict__["Apellido"]
             break
     assert isinstance(descriptor, property)
 
@@ -568,21 +550,39 @@ def test_persona_has_Cod_persona():
             break
     assert isinstance(descriptor, property)
 
-def test_persona_has_FechaNacimiento():
-    assert hasattr(Persona, "FechaNacimiento")
-    descriptor = None
-    for klass in Persona.__mro__:
-        if "FechaNacimiento" in klass.__dict__:
-            descriptor = klass.__dict__["FechaNacimiento"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_persona_has_Nacionalidad():
     assert hasattr(Persona, "Nacionalidad")
     descriptor = None
     for klass in Persona.__mro__:
         if "Nacionalidad" in klass.__dict__:
             descriptor = klass.__dict__["Nacionalidad"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_persona_has_NombreCorto():
+    assert hasattr(Persona, "NombreCorto")
+    descriptor = None
+    for klass in Persona.__mro__:
+        if "NombreCorto" in klass.__dict__:
+            descriptor = klass.__dict__["NombreCorto"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_persona_has_Apellido():
+    assert hasattr(Persona, "Apellido")
+    descriptor = None
+    for klass in Persona.__mro__:
+        if "Apellido" in klass.__dict__:
+            descriptor = klass.__dict__["Apellido"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_persona_has_FechaNacimiento():
+    assert hasattr(Persona, "FechaNacimiento")
+    descriptor = None
+    for klass in Persona.__mro__:
+        if "FechaNacimiento" in klass.__dict__:
+            descriptor = klass.__dict__["FechaNacimiento"]
             break
     assert isinstance(descriptor, property)
 
@@ -599,25 +599,16 @@ def test_clasificacion_constructor_exists():
 def test_clasificacion_constructor_args():
     sig = inspect.signature(Clasificacion.__init__)
     params = list(sig.parameters.keys())
-    assert "GC" in params, "Missing parameter 'GC'"
     assert "JG" in params, "Missing parameter 'JG'"
-    assert "JE" in params, "Missing parameter 'JE'"
+    assert "GC" in params, "Missing parameter 'GC'"
     assert "GF" in params, "Missing parameter 'GF'"
-    assert "JJ" in params, "Missing parameter 'JJ'"
-    assert "Posicion" in params, "Missing parameter 'Posicion'"
-    assert "JP" in params, "Missing parameter 'JP'"
     assert "DG" in params, "Missing parameter 'DG'"
     assert "Cod_Equipo" in params, "Missing parameter 'Cod_Equipo'"
     assert "Puntos" in params, "Missing parameter 'Puntos'"
-
-def test_clasificacion_has_GC():
-    assert hasattr(Clasificacion, "GC")
-    descriptor = None
-    for klass in Clasificacion.__mro__:
-        if "GC" in klass.__dict__:
-            descriptor = klass.__dict__["GC"]
-            break
-    assert isinstance(descriptor, property)
+    assert "JE" in params, "Missing parameter 'JE'"
+    assert "JJ" in params, "Missing parameter 'JJ'"
+    assert "Posicion" in params, "Missing parameter 'Posicion'"
+    assert "JP" in params, "Missing parameter 'JP'"
 
 def test_clasificacion_has_JG():
     assert hasattr(Clasificacion, "JG")
@@ -628,12 +619,12 @@ def test_clasificacion_has_JG():
             break
     assert isinstance(descriptor, property)
 
-def test_clasificacion_has_JE():
-    assert hasattr(Clasificacion, "JE")
+def test_clasificacion_has_GC():
+    assert hasattr(Clasificacion, "GC")
     descriptor = None
     for klass in Clasificacion.__mro__:
-        if "JE" in klass.__dict__:
-            descriptor = klass.__dict__["JE"]
+        if "GC" in klass.__dict__:
+            descriptor = klass.__dict__["GC"]
             break
     assert isinstance(descriptor, property)
 
@@ -643,33 +634,6 @@ def test_clasificacion_has_GF():
     for klass in Clasificacion.__mro__:
         if "GF" in klass.__dict__:
             descriptor = klass.__dict__["GF"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_clasificacion_has_JJ():
-    assert hasattr(Clasificacion, "JJ")
-    descriptor = None
-    for klass in Clasificacion.__mro__:
-        if "JJ" in klass.__dict__:
-            descriptor = klass.__dict__["JJ"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_clasificacion_has_Posicion():
-    assert hasattr(Clasificacion, "Posicion")
-    descriptor = None
-    for klass in Clasificacion.__mro__:
-        if "Posicion" in klass.__dict__:
-            descriptor = klass.__dict__["Posicion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_clasificacion_has_JP():
-    assert hasattr(Clasificacion, "JP")
-    descriptor = None
-    for klass in Clasificacion.__mro__:
-        if "JP" in klass.__dict__:
-            descriptor = klass.__dict__["JP"]
             break
     assert isinstance(descriptor, property)
 
@@ -700,6 +664,42 @@ def test_clasificacion_has_Puntos():
             break
     assert isinstance(descriptor, property)
 
+def test_clasificacion_has_JE():
+    assert hasattr(Clasificacion, "JE")
+    descriptor = None
+    for klass in Clasificacion.__mro__:
+        if "JE" in klass.__dict__:
+            descriptor = klass.__dict__["JE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_clasificacion_has_JJ():
+    assert hasattr(Clasificacion, "JJ")
+    descriptor = None
+    for klass in Clasificacion.__mro__:
+        if "JJ" in klass.__dict__:
+            descriptor = klass.__dict__["JJ"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_clasificacion_has_Posicion():
+    assert hasattr(Clasificacion, "Posicion")
+    descriptor = None
+    for klass in Clasificacion.__mro__:
+        if "Posicion" in klass.__dict__:
+            descriptor = klass.__dict__["Posicion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_clasificacion_has_JP():
+    assert hasattr(Clasificacion, "JP")
+    descriptor = None
+    for klass in Clasificacion.__mro__:
+        if "JP" in klass.__dict__:
+            descriptor = klass.__dict__["JP"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_liga_is_not_abstract():
@@ -713,28 +713,19 @@ def test_liga_constructor_exists():
 def test_liga_constructor_args():
     sig = inspect.signature(Liga.__init__)
     params = list(sig.parameters.keys())
-    assert "Num_equipos" in params, "Missing parameter 'Num_equipos'"
-    assert "Cod_liga" in params, "Missing parameter 'Cod_liga'"
-    assert "Nombre" in params, "Missing parameter 'Nombre'"
-    assert "Inferior" in params, "Missing parameter 'Inferior'"
     assert "Cod_Clasificacion" in params, "Missing parameter 'Cod_Clasificacion'"
+    assert "Nombre" in params, "Missing parameter 'Nombre'"
+    assert "Cod_liga" in params, "Missing parameter 'Cod_liga'"
     assert "Superior" in params, "Missing parameter 'Superior'"
+    assert "Inferior" in params, "Missing parameter 'Inferior'"
+    assert "Num_equipos" in params, "Missing parameter 'Num_equipos'"
 
-def test_liga_has_Num_equipos():
-    assert hasattr(Liga, "Num_equipos")
+def test_liga_has_Cod_Clasificacion():
+    assert hasattr(Liga, "Cod_Clasificacion")
     descriptor = None
     for klass in Liga.__mro__:
-        if "Num_equipos" in klass.__dict__:
-            descriptor = klass.__dict__["Num_equipos"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_liga_has_Cod_liga():
-    assert hasattr(Liga, "Cod_liga")
-    descriptor = None
-    for klass in Liga.__mro__:
-        if "Cod_liga" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_liga"]
+        if "Cod_Clasificacion" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_Clasificacion"]
             break
     assert isinstance(descriptor, property)
 
@@ -747,21 +738,12 @@ def test_liga_has_Nombre():
             break
     assert isinstance(descriptor, property)
 
-def test_liga_has_Inferior():
-    assert hasattr(Liga, "Inferior")
+def test_liga_has_Cod_liga():
+    assert hasattr(Liga, "Cod_liga")
     descriptor = None
     for klass in Liga.__mro__:
-        if "Inferior" in klass.__dict__:
-            descriptor = klass.__dict__["Inferior"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_liga_has_Cod_Clasificacion():
-    assert hasattr(Liga, "Cod_Clasificacion")
-    descriptor = None
-    for klass in Liga.__mro__:
-        if "Cod_Clasificacion" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_Clasificacion"]
+        if "Cod_liga" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_liga"]
             break
     assert isinstance(descriptor, property)
 
@@ -771,6 +753,24 @@ def test_liga_has_Superior():
     for klass in Liga.__mro__:
         if "Superior" in klass.__dict__:
             descriptor = klass.__dict__["Superior"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_liga_has_Inferior():
+    assert hasattr(Liga, "Inferior")
+    descriptor = None
+    for klass in Liga.__mro__:
+        if "Inferior" in klass.__dict__:
+            descriptor = klass.__dict__["Inferior"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_liga_has_Num_equipos():
+    assert hasattr(Liga, "Num_equipos")
+    descriptor = None
+    for klass in Liga.__mro__:
+        if "Num_equipos" in klass.__dict__:
+            descriptor = klass.__dict__["Num_equipos"]
             break
     assert isinstance(descriptor, property)
 
@@ -787,17 +787,17 @@ def test_lesion_constructor_exists():
 def test_lesion_constructor_args():
     sig = inspect.signature(Lesion.__init__)
     params = list(sig.parameters.keys())
-    assert "FechaLesion" in params, "Missing parameter 'FechaLesion'"
+    assert "Cod_jugador" in params, "Missing parameter 'Cod_jugador'"
     assert "Condicion" in params, "Missing parameter 'Condicion'"
     assert "TiempoLesion" in params, "Missing parameter 'TiempoLesion'"
-    assert "Cod_jugador" in params, "Missing parameter 'Cod_jugador'"
+    assert "FechaLesion" in params, "Missing parameter 'FechaLesion'"
 
-def test_lesion_has_FechaLesion():
-    assert hasattr(Lesion, "FechaLesion")
+def test_lesion_has_Cod_jugador():
+    assert hasattr(Lesion, "Cod_jugador")
     descriptor = None
     for klass in Lesion.__mro__:
-        if "FechaLesion" in klass.__dict__:
-            descriptor = klass.__dict__["FechaLesion"]
+        if "Cod_jugador" in klass.__dict__:
+            descriptor = klass.__dict__["Cod_jugador"]
             break
     assert isinstance(descriptor, property)
 
@@ -819,12 +819,12 @@ def test_lesion_has_TiempoLesion():
             break
     assert isinstance(descriptor, property)
 
-def test_lesion_has_Cod_jugador():
-    assert hasattr(Lesion, "Cod_jugador")
+def test_lesion_has_FechaLesion():
+    assert hasattr(Lesion, "FechaLesion")
     descriptor = None
     for klass in Lesion.__mro__:
-        if "Cod_jugador" in klass.__dict__:
-            descriptor = klass.__dict__["Cod_jugador"]
+        if "FechaLesion" in klass.__dict__:
+            descriptor = klass.__dict__["FechaLesion"]
             break
     assert isinstance(descriptor, property)
 
@@ -878,163 +878,163 @@ Evento_strategy = st.builds(
     Evento,
     Cod_jugador=
         safe_text,
-    Cod_partido=
-        safe_text,
     Cod_TipodeEvento=
+        safe_text,
+    Cod_partido=
         safe_text
 )
 Partido_strategy = st.builds(
     Partido,
-    Visita=
-        safe_text,
-    Fecha=
-        safe_text,
-    Ganador=
-        safe_text,
     Hora=
+        safe_text,
+    GolVisita=
         safe_text,
     GolLocal=
         safe_text,
-    GolVisita=
+    Ganador=
+        safe_text,
+    Visita=
+        safe_text,
+    Cod_liga=
+        safe_text,
+    Fecha=
         safe_text,
     Local=
         safe_text,
     Cod_partido=
-        safe_text,
-    Cod_liga=
         safe_text
 )
 Arbitro_strategy = st.builds(
     Arbitro,
     Partidos=
         safe_text,
-    Cod_persona=
-        safe_text,
     Cod_Arbitro=
+        safe_text,
+    Cod_persona=
         safe_text
 )
 Entrenador_strategy = st.builds(
     Entrenador,
+    Cod_persona=
+        safe_text,
     Titulos=
         safe_text,
     Cod_Entrenador=
-        safe_text,
-    Cod_persona=
         safe_text
 )
 Jugador_strategy = st.builds(
     Jugador,
-    Dorsal=
+    Cod_persona=
         safe_text,
     Titulos=
         safe_text,
-    Peso=
+    Posicion=
         safe_text,
-    Cod_persona=
+    Cod_equipo=
+        safe_text,
+    Dorsal=
         safe_text,
     Cod_jugador=
         safe_text,
-    Posicion=
+    Peso=
         safe_text,
     Altura=
-        safe_text,
-    Cod_equipo=
         safe_text
 )
 Equipo_strategy = st.builds(
     Equipo,
-    Cod_equipo=
-        safe_text,
-    Nombre=
-        safe_text,
-    F_fundacion=
-        safe_text,
     Cod_Entrenador=
         safe_text,
     Titulos=
         safe_text,
+    Nombre=
+        safe_text,
     Ciudad=
+        safe_text,
+    F_fundacion=
+        safe_text,
+    Cod_equipo=
         safe_text
 )
 Estadio_strategy = st.builds(
     Estadio,
-    Ubicacion1=
-        safe_text,
-    Cod_equipo=
-        safe_text,
-    Nombre=
-        safe_text,
     Ubicacion=
         safe_text,
     Terreno=
         safe_text,
+    Cod_equipo=
+        safe_text,
     Capacidad=
         safe_text,
+    Ubicacion1=
+        safe_text,
     Cod_Estadio=
+        safe_text,
+    Nombre=
         safe_text
 )
 Persona_strategy = st.builds(
     Persona,
-    NombreCorto=
-        safe_text,
     Nombre=
-        safe_text,
-    Apellido=
         safe_text,
     Cod_persona=
         safe_text,
-    FechaNacimiento=
-        safe_text,
     Nacionalidad=
+        safe_text,
+    NombreCorto=
+        safe_text,
+    Apellido=
+        safe_text,
+    FechaNacimiento=
         safe_text
 )
 Clasificacion_strategy = st.builds(
     Clasificacion,
-    GC=
-        safe_text,
     JG=
         safe_text,
-    JE=
+    GC=
         safe_text,
     GF=
-        safe_text,
-    JJ=
-        safe_text,
-    Posicion=
-        safe_text,
-    JP=
         safe_text,
     DG=
         safe_text,
     Cod_Equipo=
         safe_text,
     Puntos=
+        safe_text,
+    JE=
+        safe_text,
+    JJ=
+        safe_text,
+    Posicion=
+        safe_text,
+    JP=
         safe_text
 )
 Liga_strategy = st.builds(
     Liga,
-    Num_equipos=
-        safe_text,
-    Cod_liga=
+    Cod_Clasificacion=
         safe_text,
     Nombre=
         safe_text,
-    Inferior=
-        safe_text,
-    Cod_Clasificacion=
+    Cod_liga=
         safe_text,
     Superior=
+        safe_text,
+    Inferior=
+        safe_text,
+    Num_equipos=
         safe_text
 )
 Lesion_strategy = st.builds(
     Lesion,
-    FechaLesion=
+    Cod_jugador=
         safe_text,
     Condicion=
         safe_text,
     TiempoLesion=
         safe_text,
-    Cod_jugador=
+    FechaLesion=
         safe_text
 )
 TipoDeEvento_strategy = st.builds(
@@ -1050,9 +1050,6 @@ TipoDeEvento_strategy = st.builds(
 def test_evento_instantiation(instance):
     assert isinstance(instance, Evento)
 
-@given(instance=Evento_strategy)
-def test_evento_Cod_jugador_type(instance):
-    assert isinstance(instance.Cod_jugador, str)
 
 
 @given(instance=Evento_strategy)
@@ -1061,20 +1058,6 @@ def test_evento_Cod_jugador_setter(instance):
     instance.Cod_jugador = original
     assert instance.Cod_jugador == original
 
-@given(instance=Evento_strategy)
-def test_evento_Cod_partido_type(instance):
-    assert isinstance(instance.Cod_partido, str)
-
-
-@given(instance=Evento_strategy)
-def test_evento_Cod_partido_setter(instance):
-    original = instance.Cod_partido
-    instance.Cod_partido = original
-    assert instance.Cod_partido == original
-
-@given(instance=Evento_strategy)
-def test_evento_Cod_TipodeEvento_type(instance):
-    assert isinstance(instance.Cod_TipodeEvento, str)
 
 
 @given(instance=Evento_strategy)
@@ -1083,47 +1066,19 @@ def test_evento_Cod_TipodeEvento_setter(instance):
     instance.Cod_TipodeEvento = original
     assert instance.Cod_TipodeEvento == original
 
+
+
+@given(instance=Evento_strategy)
+def test_evento_Cod_partido_setter(instance):
+    original = instance.Cod_partido
+    instance.Cod_partido = original
+    assert instance.Cod_partido == original
+
 @given(instance=Partido_strategy)
 @settings(max_examples=50)
 def test_partido_instantiation(instance):
     assert isinstance(instance, Partido)
 
-@given(instance=Partido_strategy)
-def test_partido_Visita_type(instance):
-    assert isinstance(instance.Visita, str)
-
-
-@given(instance=Partido_strategy)
-def test_partido_Visita_setter(instance):
-    original = instance.Visita
-    instance.Visita = original
-    assert instance.Visita == original
-
-@given(instance=Partido_strategy)
-def test_partido_Fecha_type(instance):
-    assert isinstance(instance.Fecha, str)
-
-
-@given(instance=Partido_strategy)
-def test_partido_Fecha_setter(instance):
-    original = instance.Fecha
-    instance.Fecha = original
-    assert instance.Fecha == original
-
-@given(instance=Partido_strategy)
-def test_partido_Ganador_type(instance):
-    assert isinstance(instance.Ganador, str)
-
-
-@given(instance=Partido_strategy)
-def test_partido_Ganador_setter(instance):
-    original = instance.Ganador
-    instance.Ganador = original
-    assert instance.Ganador == original
-
-@given(instance=Partido_strategy)
-def test_partido_Hora_type(instance):
-    assert isinstance(instance.Hora, str)
 
 
 @given(instance=Partido_strategy)
@@ -1132,20 +1087,6 @@ def test_partido_Hora_setter(instance):
     instance.Hora = original
     assert instance.Hora == original
 
-@given(instance=Partido_strategy)
-def test_partido_GolLocal_type(instance):
-    assert isinstance(instance.GolLocal, str)
-
-
-@given(instance=Partido_strategy)
-def test_partido_GolLocal_setter(instance):
-    original = instance.GolLocal
-    instance.GolLocal = original
-    assert instance.GolLocal == original
-
-@given(instance=Partido_strategy)
-def test_partido_GolVisita_type(instance):
-    assert isinstance(instance.GolVisita, str)
 
 
 @given(instance=Partido_strategy)
@@ -1154,31 +1095,30 @@ def test_partido_GolVisita_setter(instance):
     instance.GolVisita = original
     assert instance.GolVisita == original
 
-@given(instance=Partido_strategy)
-def test_partido_Local_type(instance):
-    assert isinstance(instance.Local, str)
 
 
 @given(instance=Partido_strategy)
-def test_partido_Local_setter(instance):
-    original = instance.Local
-    instance.Local = original
-    assert instance.Local == original
+def test_partido_GolLocal_setter(instance):
+    original = instance.GolLocal
+    instance.GolLocal = original
+    assert instance.GolLocal == original
 
-@given(instance=Partido_strategy)
-def test_partido_Cod_partido_type(instance):
-    assert isinstance(instance.Cod_partido, str)
 
 
 @given(instance=Partido_strategy)
-def test_partido_Cod_partido_setter(instance):
-    original = instance.Cod_partido
-    instance.Cod_partido = original
-    assert instance.Cod_partido == original
+def test_partido_Ganador_setter(instance):
+    original = instance.Ganador
+    instance.Ganador = original
+    assert instance.Ganador == original
+
+
 
 @given(instance=Partido_strategy)
-def test_partido_Cod_liga_type(instance):
-    assert isinstance(instance.Cod_liga, str)
+def test_partido_Visita_setter(instance):
+    original = instance.Visita
+    instance.Visita = original
+    assert instance.Visita == original
+
 
 
 @given(instance=Partido_strategy)
@@ -1187,14 +1127,35 @@ def test_partido_Cod_liga_setter(instance):
     instance.Cod_liga = original
     assert instance.Cod_liga == original
 
+
+
+@given(instance=Partido_strategy)
+def test_partido_Fecha_setter(instance):
+    original = instance.Fecha
+    instance.Fecha = original
+    assert instance.Fecha == original
+
+
+
+@given(instance=Partido_strategy)
+def test_partido_Local_setter(instance):
+    original = instance.Local
+    instance.Local = original
+    assert instance.Local == original
+
+
+
+@given(instance=Partido_strategy)
+def test_partido_Cod_partido_setter(instance):
+    original = instance.Cod_partido
+    instance.Cod_partido = original
+    assert instance.Cod_partido == original
+
 @given(instance=Arbitro_strategy)
 @settings(max_examples=50)
 def test_arbitro_instantiation(instance):
     assert isinstance(instance, Arbitro)
 
-@given(instance=Arbitro_strategy)
-def test_arbitro_Partidos_type(instance):
-    assert isinstance(instance.Partidos, str)
 
 
 @given(instance=Arbitro_strategy)
@@ -1203,20 +1164,6 @@ def test_arbitro_Partidos_setter(instance):
     instance.Partidos = original
     assert instance.Partidos == original
 
-@given(instance=Arbitro_strategy)
-def test_arbitro_Cod_persona_type(instance):
-    assert isinstance(instance.Cod_persona, str)
-
-
-@given(instance=Arbitro_strategy)
-def test_arbitro_Cod_persona_setter(instance):
-    original = instance.Cod_persona
-    instance.Cod_persona = original
-    assert instance.Cod_persona == original
-
-@given(instance=Arbitro_strategy)
-def test_arbitro_Cod_Arbitro_type(instance):
-    assert isinstance(instance.Cod_Arbitro, str)
 
 
 @given(instance=Arbitro_strategy)
@@ -1225,36 +1172,19 @@ def test_arbitro_Cod_Arbitro_setter(instance):
     instance.Cod_Arbitro = original
     assert instance.Cod_Arbitro == original
 
+
+
+@given(instance=Arbitro_strategy)
+def test_arbitro_Cod_persona_setter(instance):
+    original = instance.Cod_persona
+    instance.Cod_persona = original
+    assert instance.Cod_persona == original
+
 @given(instance=Entrenador_strategy)
 @settings(max_examples=50)
 def test_entrenador_instantiation(instance):
     assert isinstance(instance, Entrenador)
 
-@given(instance=Entrenador_strategy)
-def test_entrenador_Titulos_type(instance):
-    assert isinstance(instance.Titulos, str)
-
-
-@given(instance=Entrenador_strategy)
-def test_entrenador_Titulos_setter(instance):
-    original = instance.Titulos
-    instance.Titulos = original
-    assert instance.Titulos == original
-
-@given(instance=Entrenador_strategy)
-def test_entrenador_Cod_Entrenador_type(instance):
-    assert isinstance(instance.Cod_Entrenador, str)
-
-
-@given(instance=Entrenador_strategy)
-def test_entrenador_Cod_Entrenador_setter(instance):
-    original = instance.Cod_Entrenador
-    instance.Cod_Entrenador = original
-    assert instance.Cod_Entrenador == original
-
-@given(instance=Entrenador_strategy)
-def test_entrenador_Cod_persona_type(instance):
-    assert isinstance(instance.Cod_persona, str)
 
 
 @given(instance=Entrenador_strategy)
@@ -1263,47 +1193,27 @@ def test_entrenador_Cod_persona_setter(instance):
     instance.Cod_persona = original
     assert instance.Cod_persona == original
 
+
+
+@given(instance=Entrenador_strategy)
+def test_entrenador_Titulos_setter(instance):
+    original = instance.Titulos
+    instance.Titulos = original
+    assert instance.Titulos == original
+
+
+
+@given(instance=Entrenador_strategy)
+def test_entrenador_Cod_Entrenador_setter(instance):
+    original = instance.Cod_Entrenador
+    instance.Cod_Entrenador = original
+    assert instance.Cod_Entrenador == original
+
 @given(instance=Jugador_strategy)
 @settings(max_examples=50)
 def test_jugador_instantiation(instance):
     assert isinstance(instance, Jugador)
 
-@given(instance=Jugador_strategy)
-def test_jugador_Dorsal_type(instance):
-    assert isinstance(instance.Dorsal, str)
-
-
-@given(instance=Jugador_strategy)
-def test_jugador_Dorsal_setter(instance):
-    original = instance.Dorsal
-    instance.Dorsal = original
-    assert instance.Dorsal == original
-
-@given(instance=Jugador_strategy)
-def test_jugador_Titulos_type(instance):
-    assert isinstance(instance.Titulos, str)
-
-
-@given(instance=Jugador_strategy)
-def test_jugador_Titulos_setter(instance):
-    original = instance.Titulos
-    instance.Titulos = original
-    assert instance.Titulos == original
-
-@given(instance=Jugador_strategy)
-def test_jugador_Peso_type(instance):
-    assert isinstance(instance.Peso, str)
-
-
-@given(instance=Jugador_strategy)
-def test_jugador_Peso_setter(instance):
-    original = instance.Peso
-    instance.Peso = original
-    assert instance.Peso == original
-
-@given(instance=Jugador_strategy)
-def test_jugador_Cod_persona_type(instance):
-    assert isinstance(instance.Cod_persona, str)
 
 
 @given(instance=Jugador_strategy)
@@ -1312,20 +1222,14 @@ def test_jugador_Cod_persona_setter(instance):
     instance.Cod_persona = original
     assert instance.Cod_persona == original
 
-@given(instance=Jugador_strategy)
-def test_jugador_Cod_jugador_type(instance):
-    assert isinstance(instance.Cod_jugador, str)
 
 
 @given(instance=Jugador_strategy)
-def test_jugador_Cod_jugador_setter(instance):
-    original = instance.Cod_jugador
-    instance.Cod_jugador = original
-    assert instance.Cod_jugador == original
+def test_jugador_Titulos_setter(instance):
+    original = instance.Titulos
+    instance.Titulos = original
+    assert instance.Titulos == original
 
-@given(instance=Jugador_strategy)
-def test_jugador_Posicion_type(instance):
-    assert isinstance(instance.Posicion, str)
 
 
 @given(instance=Jugador_strategy)
@@ -1334,20 +1238,6 @@ def test_jugador_Posicion_setter(instance):
     instance.Posicion = original
     assert instance.Posicion == original
 
-@given(instance=Jugador_strategy)
-def test_jugador_Altura_type(instance):
-    assert isinstance(instance.Altura, str)
-
-
-@given(instance=Jugador_strategy)
-def test_jugador_Altura_setter(instance):
-    original = instance.Altura
-    instance.Altura = original
-    assert instance.Altura == original
-
-@given(instance=Jugador_strategy)
-def test_jugador_Cod_equipo_type(instance):
-    assert isinstance(instance.Cod_equipo, str)
 
 
 @given(instance=Jugador_strategy)
@@ -1356,47 +1246,43 @@ def test_jugador_Cod_equipo_setter(instance):
     instance.Cod_equipo = original
     assert instance.Cod_equipo == original
 
+
+
+@given(instance=Jugador_strategy)
+def test_jugador_Dorsal_setter(instance):
+    original = instance.Dorsal
+    instance.Dorsal = original
+    assert instance.Dorsal == original
+
+
+
+@given(instance=Jugador_strategy)
+def test_jugador_Cod_jugador_setter(instance):
+    original = instance.Cod_jugador
+    instance.Cod_jugador = original
+    assert instance.Cod_jugador == original
+
+
+
+@given(instance=Jugador_strategy)
+def test_jugador_Peso_setter(instance):
+    original = instance.Peso
+    instance.Peso = original
+    assert instance.Peso == original
+
+
+
+@given(instance=Jugador_strategy)
+def test_jugador_Altura_setter(instance):
+    original = instance.Altura
+    instance.Altura = original
+    assert instance.Altura == original
+
 @given(instance=Equipo_strategy)
 @settings(max_examples=50)
 def test_equipo_instantiation(instance):
     assert isinstance(instance, Equipo)
 
-@given(instance=Equipo_strategy)
-def test_equipo_Cod_equipo_type(instance):
-    assert isinstance(instance.Cod_equipo, str)
-
-
-@given(instance=Equipo_strategy)
-def test_equipo_Cod_equipo_setter(instance):
-    original = instance.Cod_equipo
-    instance.Cod_equipo = original
-    assert instance.Cod_equipo == original
-
-@given(instance=Equipo_strategy)
-def test_equipo_Nombre_type(instance):
-    assert isinstance(instance.Nombre, str)
-
-
-@given(instance=Equipo_strategy)
-def test_equipo_Nombre_setter(instance):
-    original = instance.Nombre
-    instance.Nombre = original
-    assert instance.Nombre == original
-
-@given(instance=Equipo_strategy)
-def test_equipo_F_fundacion_type(instance):
-    assert isinstance(instance.F_fundacion, str)
-
-
-@given(instance=Equipo_strategy)
-def test_equipo_F_fundacion_setter(instance):
-    original = instance.F_fundacion
-    instance.F_fundacion = original
-    assert instance.F_fundacion == original
-
-@given(instance=Equipo_strategy)
-def test_equipo_Cod_Entrenador_type(instance):
-    assert isinstance(instance.Cod_Entrenador, str)
 
 
 @given(instance=Equipo_strategy)
@@ -1405,9 +1291,6 @@ def test_equipo_Cod_Entrenador_setter(instance):
     instance.Cod_Entrenador = original
     assert instance.Cod_Entrenador == original
 
-@given(instance=Equipo_strategy)
-def test_equipo_Titulos_type(instance):
-    assert isinstance(instance.Titulos, str)
 
 
 @given(instance=Equipo_strategy)
@@ -1416,9 +1299,14 @@ def test_equipo_Titulos_setter(instance):
     instance.Titulos = original
     assert instance.Titulos == original
 
+
+
 @given(instance=Equipo_strategy)
-def test_equipo_Ciudad_type(instance):
-    assert isinstance(instance.Ciudad, str)
+def test_equipo_Nombre_setter(instance):
+    original = instance.Nombre
+    instance.Nombre = original
+    assert instance.Nombre == original
+
 
 
 @given(instance=Equipo_strategy)
@@ -1427,47 +1315,27 @@ def test_equipo_Ciudad_setter(instance):
     instance.Ciudad = original
     assert instance.Ciudad == original
 
-@given(instance=Estadio_strategy)
-@settings(max_examples=50)
-def test_estadio_instantiation(instance):
-    assert isinstance(instance, Estadio)
-
-@given(instance=Estadio_strategy)
-def test_estadio_Ubicacion1_type(instance):
-    assert isinstance(instance.Ubicacion1, str)
 
 
-@given(instance=Estadio_strategy)
-def test_estadio_Ubicacion1_setter(instance):
-    original = instance.Ubicacion1
-    instance.Ubicacion1 = original
-    assert instance.Ubicacion1 == original
-
-@given(instance=Estadio_strategy)
-def test_estadio_Cod_equipo_type(instance):
-    assert isinstance(instance.Cod_equipo, str)
+@given(instance=Equipo_strategy)
+def test_equipo_F_fundacion_setter(instance):
+    original = instance.F_fundacion
+    instance.F_fundacion = original
+    assert instance.F_fundacion == original
 
 
-@given(instance=Estadio_strategy)
-def test_estadio_Cod_equipo_setter(instance):
+
+@given(instance=Equipo_strategy)
+def test_equipo_Cod_equipo_setter(instance):
     original = instance.Cod_equipo
     instance.Cod_equipo = original
     assert instance.Cod_equipo == original
 
 @given(instance=Estadio_strategy)
-def test_estadio_Nombre_type(instance):
-    assert isinstance(instance.Nombre, str)
+@settings(max_examples=50)
+def test_estadio_instantiation(instance):
+    assert isinstance(instance, Estadio)
 
-
-@given(instance=Estadio_strategy)
-def test_estadio_Nombre_setter(instance):
-    original = instance.Nombre
-    instance.Nombre = original
-    assert instance.Nombre == original
-
-@given(instance=Estadio_strategy)
-def test_estadio_Ubicacion_type(instance):
-    assert isinstance(instance.Ubicacion, str)
 
 
 @given(instance=Estadio_strategy)
@@ -1476,9 +1344,6 @@ def test_estadio_Ubicacion_setter(instance):
     instance.Ubicacion = original
     assert instance.Ubicacion == original
 
-@given(instance=Estadio_strategy)
-def test_estadio_Terreno_type(instance):
-    assert isinstance(instance.Terreno, str)
 
 
 @given(instance=Estadio_strategy)
@@ -1487,9 +1352,14 @@ def test_estadio_Terreno_setter(instance):
     instance.Terreno = original
     assert instance.Terreno == original
 
+
+
 @given(instance=Estadio_strategy)
-def test_estadio_Capacidad_type(instance):
-    assert isinstance(instance.Capacidad, str)
+def test_estadio_Cod_equipo_setter(instance):
+    original = instance.Cod_equipo
+    instance.Cod_equipo = original
+    assert instance.Cod_equipo == original
+
 
 
 @given(instance=Estadio_strategy)
@@ -1498,9 +1368,14 @@ def test_estadio_Capacidad_setter(instance):
     instance.Capacidad = original
     assert instance.Capacidad == original
 
+
+
 @given(instance=Estadio_strategy)
-def test_estadio_Cod_Estadio_type(instance):
-    assert isinstance(instance.Cod_Estadio, str)
+def test_estadio_Ubicacion1_setter(instance):
+    original = instance.Ubicacion1
+    instance.Ubicacion1 = original
+    assert instance.Ubicacion1 == original
+
 
 
 @given(instance=Estadio_strategy)
@@ -1509,25 +1384,19 @@ def test_estadio_Cod_Estadio_setter(instance):
     instance.Cod_Estadio = original
     assert instance.Cod_Estadio == original
 
+
+
+@given(instance=Estadio_strategy)
+def test_estadio_Nombre_setter(instance):
+    original = instance.Nombre
+    instance.Nombre = original
+    assert instance.Nombre == original
+
 @given(instance=Persona_strategy)
 @settings(max_examples=50)
 def test_persona_instantiation(instance):
     assert isinstance(instance, Persona)
 
-@given(instance=Persona_strategy)
-def test_persona_NombreCorto_type(instance):
-    assert isinstance(instance.NombreCorto, str)
-
-
-@given(instance=Persona_strategy)
-def test_persona_NombreCorto_setter(instance):
-    original = instance.NombreCorto
-    instance.NombreCorto = original
-    assert instance.NombreCorto == original
-
-@given(instance=Persona_strategy)
-def test_persona_Nombre_type(instance):
-    assert isinstance(instance.Nombre, str)
 
 
 @given(instance=Persona_strategy)
@@ -1536,20 +1405,6 @@ def test_persona_Nombre_setter(instance):
     instance.Nombre = original
     assert instance.Nombre == original
 
-@given(instance=Persona_strategy)
-def test_persona_Apellido_type(instance):
-    assert isinstance(instance.Apellido, str)
-
-
-@given(instance=Persona_strategy)
-def test_persona_Apellido_setter(instance):
-    original = instance.Apellido
-    instance.Apellido = original
-    assert instance.Apellido == original
-
-@given(instance=Persona_strategy)
-def test_persona_Cod_persona_type(instance):
-    assert isinstance(instance.Cod_persona, str)
 
 
 @given(instance=Persona_strategy)
@@ -1558,20 +1413,6 @@ def test_persona_Cod_persona_setter(instance):
     instance.Cod_persona = original
     assert instance.Cod_persona == original
 
-@given(instance=Persona_strategy)
-def test_persona_FechaNacimiento_type(instance):
-    assert isinstance(instance.FechaNacimiento, str)
-
-
-@given(instance=Persona_strategy)
-def test_persona_FechaNacimiento_setter(instance):
-    original = instance.FechaNacimiento
-    instance.FechaNacimiento = original
-    assert instance.FechaNacimiento == original
-
-@given(instance=Persona_strategy)
-def test_persona_Nacionalidad_type(instance):
-    assert isinstance(instance.Nacionalidad, str)
 
 
 @given(instance=Persona_strategy)
@@ -1580,25 +1421,35 @@ def test_persona_Nacionalidad_setter(instance):
     instance.Nacionalidad = original
     assert instance.Nacionalidad == original
 
+
+
+@given(instance=Persona_strategy)
+def test_persona_NombreCorto_setter(instance):
+    original = instance.NombreCorto
+    instance.NombreCorto = original
+    assert instance.NombreCorto == original
+
+
+
+@given(instance=Persona_strategy)
+def test_persona_Apellido_setter(instance):
+    original = instance.Apellido
+    instance.Apellido = original
+    assert instance.Apellido == original
+
+
+
+@given(instance=Persona_strategy)
+def test_persona_FechaNacimiento_setter(instance):
+    original = instance.FechaNacimiento
+    instance.FechaNacimiento = original
+    assert instance.FechaNacimiento == original
+
 @given(instance=Clasificacion_strategy)
 @settings(max_examples=50)
 def test_clasificacion_instantiation(instance):
     assert isinstance(instance, Clasificacion)
 
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_GC_type(instance):
-    assert isinstance(instance.GC, str)
-
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_GC_setter(instance):
-    original = instance.GC
-    instance.GC = original
-    assert instance.GC == original
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_JG_type(instance):
-    assert isinstance(instance.JG, str)
 
 
 @given(instance=Clasificacion_strategy)
@@ -1607,20 +1458,14 @@ def test_clasificacion_JG_setter(instance):
     instance.JG = original
     assert instance.JG == original
 
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_JE_type(instance):
-    assert isinstance(instance.JE, str)
 
 
 @given(instance=Clasificacion_strategy)
-def test_clasificacion_JE_setter(instance):
-    original = instance.JE
-    instance.JE = original
-    assert instance.JE == original
+def test_clasificacion_GC_setter(instance):
+    original = instance.GC
+    instance.GC = original
+    assert instance.GC == original
 
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_GF_type(instance):
-    assert isinstance(instance.GF, str)
 
 
 @given(instance=Clasificacion_strategy)
@@ -1629,42 +1474,6 @@ def test_clasificacion_GF_setter(instance):
     instance.GF = original
     assert instance.GF == original
 
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_JJ_type(instance):
-    assert isinstance(instance.JJ, str)
-
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_JJ_setter(instance):
-    original = instance.JJ
-    instance.JJ = original
-    assert instance.JJ == original
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_Posicion_type(instance):
-    assert isinstance(instance.Posicion, str)
-
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_Posicion_setter(instance):
-    original = instance.Posicion
-    instance.Posicion = original
-    assert instance.Posicion == original
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_JP_type(instance):
-    assert isinstance(instance.JP, str)
-
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_JP_setter(instance):
-    original = instance.JP
-    instance.JP = original
-    assert instance.JP == original
-
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_DG_type(instance):
-    assert isinstance(instance.DG, str)
 
 
 @given(instance=Clasificacion_strategy)
@@ -1673,9 +1482,6 @@ def test_clasificacion_DG_setter(instance):
     instance.DG = original
     assert instance.DG == original
 
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_Cod_Equipo_type(instance):
-    assert isinstance(instance.Cod_Equipo, str)
 
 
 @given(instance=Clasificacion_strategy)
@@ -1684,9 +1490,6 @@ def test_clasificacion_Cod_Equipo_setter(instance):
     instance.Cod_Equipo = original
     assert instance.Cod_Equipo == original
 
-@given(instance=Clasificacion_strategy)
-def test_clasificacion_Puntos_type(instance):
-    assert isinstance(instance.Puntos, str)
 
 
 @given(instance=Clasificacion_strategy)
@@ -1695,58 +1498,43 @@ def test_clasificacion_Puntos_setter(instance):
     instance.Puntos = original
     assert instance.Puntos == original
 
+
+
+@given(instance=Clasificacion_strategy)
+def test_clasificacion_JE_setter(instance):
+    original = instance.JE
+    instance.JE = original
+    assert instance.JE == original
+
+
+
+@given(instance=Clasificacion_strategy)
+def test_clasificacion_JJ_setter(instance):
+    original = instance.JJ
+    instance.JJ = original
+    assert instance.JJ == original
+
+
+
+@given(instance=Clasificacion_strategy)
+def test_clasificacion_Posicion_setter(instance):
+    original = instance.Posicion
+    instance.Posicion = original
+    assert instance.Posicion == original
+
+
+
+@given(instance=Clasificacion_strategy)
+def test_clasificacion_JP_setter(instance):
+    original = instance.JP
+    instance.JP = original
+    assert instance.JP == original
+
 @given(instance=Liga_strategy)
 @settings(max_examples=50)
 def test_liga_instantiation(instance):
     assert isinstance(instance, Liga)
 
-@given(instance=Liga_strategy)
-def test_liga_Num_equipos_type(instance):
-    assert isinstance(instance.Num_equipos, str)
-
-
-@given(instance=Liga_strategy)
-def test_liga_Num_equipos_setter(instance):
-    original = instance.Num_equipos
-    instance.Num_equipos = original
-    assert instance.Num_equipos == original
-
-@given(instance=Liga_strategy)
-def test_liga_Cod_liga_type(instance):
-    assert isinstance(instance.Cod_liga, str)
-
-
-@given(instance=Liga_strategy)
-def test_liga_Cod_liga_setter(instance):
-    original = instance.Cod_liga
-    instance.Cod_liga = original
-    assert instance.Cod_liga == original
-
-@given(instance=Liga_strategy)
-def test_liga_Nombre_type(instance):
-    assert isinstance(instance.Nombre, str)
-
-
-@given(instance=Liga_strategy)
-def test_liga_Nombre_setter(instance):
-    original = instance.Nombre
-    instance.Nombre = original
-    assert instance.Nombre == original
-
-@given(instance=Liga_strategy)
-def test_liga_Inferior_type(instance):
-    assert isinstance(instance.Inferior, str)
-
-
-@given(instance=Liga_strategy)
-def test_liga_Inferior_setter(instance):
-    original = instance.Inferior
-    instance.Inferior = original
-    assert instance.Inferior == original
-
-@given(instance=Liga_strategy)
-def test_liga_Cod_Clasificacion_type(instance):
-    assert isinstance(instance.Cod_Clasificacion, str)
 
 
 @given(instance=Liga_strategy)
@@ -1755,9 +1543,22 @@ def test_liga_Cod_Clasificacion_setter(instance):
     instance.Cod_Clasificacion = original
     assert instance.Cod_Clasificacion == original
 
+
+
 @given(instance=Liga_strategy)
-def test_liga_Superior_type(instance):
-    assert isinstance(instance.Superior, str)
+def test_liga_Nombre_setter(instance):
+    original = instance.Nombre
+    instance.Nombre = original
+    assert instance.Nombre == original
+
+
+
+@given(instance=Liga_strategy)
+def test_liga_Cod_liga_setter(instance):
+    original = instance.Cod_liga
+    instance.Cod_liga = original
+    assert instance.Cod_liga == original
+
 
 
 @given(instance=Liga_strategy)
@@ -1766,47 +1567,27 @@ def test_liga_Superior_setter(instance):
     instance.Superior = original
     assert instance.Superior == original
 
+
+
+@given(instance=Liga_strategy)
+def test_liga_Inferior_setter(instance):
+    original = instance.Inferior
+    instance.Inferior = original
+    assert instance.Inferior == original
+
+
+
+@given(instance=Liga_strategy)
+def test_liga_Num_equipos_setter(instance):
+    original = instance.Num_equipos
+    instance.Num_equipos = original
+    assert instance.Num_equipos == original
+
 @given(instance=Lesion_strategy)
 @settings(max_examples=50)
 def test_lesion_instantiation(instance):
     assert isinstance(instance, Lesion)
 
-@given(instance=Lesion_strategy)
-def test_lesion_FechaLesion_type(instance):
-    assert isinstance(instance.FechaLesion, str)
-
-
-@given(instance=Lesion_strategy)
-def test_lesion_FechaLesion_setter(instance):
-    original = instance.FechaLesion
-    instance.FechaLesion = original
-    assert instance.FechaLesion == original
-
-@given(instance=Lesion_strategy)
-def test_lesion_Condicion_type(instance):
-    assert isinstance(instance.Condicion, str)
-
-
-@given(instance=Lesion_strategy)
-def test_lesion_Condicion_setter(instance):
-    original = instance.Condicion
-    instance.Condicion = original
-    assert instance.Condicion == original
-
-@given(instance=Lesion_strategy)
-def test_lesion_TiempoLesion_type(instance):
-    assert isinstance(instance.TiempoLesion, str)
-
-
-@given(instance=Lesion_strategy)
-def test_lesion_TiempoLesion_setter(instance):
-    original = instance.TiempoLesion
-    instance.TiempoLesion = original
-    assert instance.TiempoLesion == original
-
-@given(instance=Lesion_strategy)
-def test_lesion_Cod_jugador_type(instance):
-    assert isinstance(instance.Cod_jugador, str)
 
 
 @given(instance=Lesion_strategy)
@@ -1815,14 +1596,35 @@ def test_lesion_Cod_jugador_setter(instance):
     instance.Cod_jugador = original
     assert instance.Cod_jugador == original
 
+
+
+@given(instance=Lesion_strategy)
+def test_lesion_Condicion_setter(instance):
+    original = instance.Condicion
+    instance.Condicion = original
+    assert instance.Condicion == original
+
+
+
+@given(instance=Lesion_strategy)
+def test_lesion_TiempoLesion_setter(instance):
+    original = instance.TiempoLesion
+    instance.TiempoLesion = original
+    assert instance.TiempoLesion == original
+
+
+
+@given(instance=Lesion_strategy)
+def test_lesion_FechaLesion_setter(instance):
+    original = instance.FechaLesion
+    instance.FechaLesion = original
+    assert instance.FechaLesion == original
+
 @given(instance=TipoDeEvento_strategy)
 @settings(max_examples=50)
 def test_tipodeevento_instantiation(instance):
     assert isinstance(instance, TipoDeEvento)
 
-@given(instance=TipoDeEvento_strategy)
-def test_tipodeevento_Evento_type(instance):
-    assert isinstance(instance.Evento, str)
 
 
 @given(instance=TipoDeEvento_strategy)
@@ -1831,9 +1633,6 @@ def test_tipodeevento_Evento_setter(instance):
     instance.Evento = original
     assert instance.Evento == original
 
-@given(instance=TipoDeEvento_strategy)
-def test_tipodeevento_Cod_TipodeEvento_type(instance):
-    assert isinstance(instance.Cod_TipodeEvento, str)
 
 
 @given(instance=TipoDeEvento_strategy)

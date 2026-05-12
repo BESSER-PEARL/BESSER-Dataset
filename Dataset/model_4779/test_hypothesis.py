@@ -3,45 +3,45 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    types::AnnotatableElement,
-    types::MetaComposite,
-    types::EObject,
+from python_code import (
+    types_AnnotatableElement,
+    types_MetaComposite,
+    types_EObject,
     TypeSpecifier,
-    types::ArrayTypeSpecifier,
-    types::Annotation,
-    types::Domain,
+    types_ArrayTypeSpecifier,
+    types_Annotation,
+    types_Domain,
     ComplexType,
-    types::EnumerationType,
+    types_EnumerationType,
     Type,
-    types::TypeParameter,
-    types::AnnotationType,
-    types::PrimitiveType,
+    types_AnnotationType,
+    types_TypeParameter,
+    types_PrimitiveType,
     GenericElement,
-    types::ComplexType,
+    types_ComplexType,
     TypedDeclaration,
-    types::Event,
-    types::TypeAlias,
-    types::Enumerator,
-    types::Operation,
+    types_TypeAlias,
+    types_Event,
+    types_Enumerator,
+    types_Operation,
     MetaComposite,
     AnnotatableElement,
     NamedElement,
-    types::GenericElement,
-    types::TypeSpecifier,
-    types::TypedElement,
+    types_GenericElement,
+    types_TypeSpecifier,
+    types_TypedElement,
     TypedElement,
-    types::Expression,
-    types::Property,
-    types::Parameter,
-    types::Declaration,
+    types_Expression,
+    types_Property,
+    types_Parameter,
+    types_Declaration,
     DomainElement,
     Declaration,
-    types::Type,
-    types::Package,
-    types::TypedDeclaration,
+    types_Package,
+    types_Type,
+    types_TypedDeclaration,
     Direction,
 )
 
@@ -51,44 +51,44 @@ from classes import (
 
 
 
-def test_types::annotatableelement_is_not_abstract():
-    assert not inspect.isabstract(types::AnnotatableElement)
+def test_types_annotatableelement_is_not_abstract():
+    assert not inspect.isabstract(types_AnnotatableElement)
 
 
-def test_types::annotatableelement_constructor_exists():
-    assert callable(types::AnnotatableElement.__init__)
+def test_types_annotatableelement_constructor_exists():
+    assert callable(types_AnnotatableElement.__init__)
 
 
-def test_types::annotatableelement_constructor_args():
-    sig = inspect.signature(types::AnnotatableElement.__init__)
+def test_types_annotatableelement_constructor_args():
+    sig = inspect.signature(types_AnnotatableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::metacomposite_is_not_abstract():
-    assert not inspect.isabstract(types::MetaComposite)
+def test_types_metacomposite_is_not_abstract():
+    assert not inspect.isabstract(types_MetaComposite)
 
 
-def test_types::metacomposite_constructor_exists():
-    assert callable(types::MetaComposite.__init__)
+def test_types_metacomposite_constructor_exists():
+    assert callable(types_MetaComposite.__init__)
 
 
-def test_types::metacomposite_constructor_args():
-    sig = inspect.signature(types::MetaComposite.__init__)
+def test_types_metacomposite_constructor_args():
+    sig = inspect.signature(types_MetaComposite.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::eobject_is_not_abstract():
-    assert not inspect.isabstract(types::EObject)
+def test_types_eobject_is_not_abstract():
+    assert not inspect.isabstract(types_EObject)
 
 
-def test_types::eobject_constructor_exists():
-    assert callable(types::EObject.__init__)
+def test_types_eobject_constructor_exists():
+    assert callable(types_EObject.__init__)
 
 
-def test_types::eobject_constructor_args():
-    sig = inspect.signature(types::EObject.__init__)
+def test_types_eobject_constructor_args():
+    sig = inspect.signature(types_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -107,23 +107,23 @@ def test_typespecifier_constructor_args():
 
 
 
-def test_types::arraytypespecifier_is_not_abstract():
-    assert not inspect.isabstract(types::ArrayTypeSpecifier)
+def test_types_arraytypespecifier_is_not_abstract():
+    assert not inspect.isabstract(types_ArrayTypeSpecifier)
 
 
-def test_types::arraytypespecifier_constructor_exists():
-    assert callable(types::ArrayTypeSpecifier.__init__)
+def test_types_arraytypespecifier_constructor_exists():
+    assert callable(types_ArrayTypeSpecifier.__init__)
 
 
-def test_types::arraytypespecifier_constructor_args():
-    sig = inspect.signature(types::ArrayTypeSpecifier.__init__)
+def test_types_arraytypespecifier_constructor_args():
+    sig = inspect.signature(types_ArrayTypeSpecifier.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_types::arraytypespecifier_has_size():
-    assert hasattr(types::ArrayTypeSpecifier, "size")
+def test_types_arraytypespecifier_has_size():
+    assert hasattr(types_ArrayTypeSpecifier, "size")
     descriptor = None
-    for klass in types::ArrayTypeSpecifier.__mro__:
+    for klass in types_ArrayTypeSpecifier.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -131,37 +131,37 @@ def test_types::arraytypespecifier_has_size():
 
 
 
-def test_types::annotation_is_not_abstract():
-    assert not inspect.isabstract(types::Annotation)
+def test_types_annotation_is_not_abstract():
+    assert not inspect.isabstract(types_Annotation)
 
 
-def test_types::annotation_constructor_exists():
-    assert callable(types::Annotation.__init__)
+def test_types_annotation_constructor_exists():
+    assert callable(types_Annotation.__init__)
 
 
-def test_types::annotation_constructor_args():
-    sig = inspect.signature(types::Annotation.__init__)
+def test_types_annotation_constructor_args():
+    sig = inspect.signature(types_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::domain_is_not_abstract():
-    assert not inspect.isabstract(types::Domain)
+def test_types_domain_is_not_abstract():
+    assert not inspect.isabstract(types_Domain)
 
 
-def test_types::domain_constructor_exists():
-    assert callable(types::Domain.__init__)
+def test_types_domain_constructor_exists():
+    assert callable(types_Domain.__init__)
 
 
-def test_types::domain_constructor_args():
-    sig = inspect.signature(types::Domain.__init__)
+def test_types_domain_constructor_args():
+    sig = inspect.signature(types_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "domainID" in params, "Missing parameter 'domainID'"
 
-def test_types::domain_has_domainID():
-    assert hasattr(types::Domain, "domainID")
+def test_types_domain_has_domainID():
+    assert hasattr(types_Domain, "domainID")
     descriptor = None
-    for klass in types::Domain.__mro__:
+    for klass in types_Domain.__mro__:
         if "domainID" in klass.__dict__:
             descriptor = klass.__dict__["domainID"]
             break
@@ -183,16 +183,16 @@ def test_complextype_constructor_args():
 
 
 
-def test_types::enumerationtype_is_not_abstract():
-    assert not inspect.isabstract(types::EnumerationType)
+def test_types_enumerationtype_is_not_abstract():
+    assert not inspect.isabstract(types_EnumerationType)
 
 
-def test_types::enumerationtype_constructor_exists():
-    assert callable(types::EnumerationType.__init__)
+def test_types_enumerationtype_constructor_exists():
+    assert callable(types_EnumerationType.__init__)
 
 
-def test_types::enumerationtype_constructor_args():
-    sig = inspect.signature(types::EnumerationType.__init__)
+def test_types_enumerationtype_constructor_args():
+    sig = inspect.signature(types_EnumerationType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,44 +211,44 @@ def test_type_constructor_args():
 
 
 
-def test_types::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(types::TypeParameter)
+def test_types_annotationtype_is_not_abstract():
+    assert not inspect.isabstract(types_AnnotationType)
 
 
-def test_types::typeparameter_constructor_exists():
-    assert callable(types::TypeParameter.__init__)
+def test_types_annotationtype_constructor_exists():
+    assert callable(types_AnnotationType.__init__)
 
 
-def test_types::typeparameter_constructor_args():
-    sig = inspect.signature(types::TypeParameter.__init__)
+def test_types_annotationtype_constructor_args():
+    sig = inspect.signature(types_AnnotationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::annotationtype_is_not_abstract():
-    assert not inspect.isabstract(types::AnnotationType)
+def test_types_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(types_TypeParameter)
 
 
-def test_types::annotationtype_constructor_exists():
-    assert callable(types::AnnotationType.__init__)
+def test_types_typeparameter_constructor_exists():
+    assert callable(types_TypeParameter.__init__)
 
 
-def test_types::annotationtype_constructor_args():
-    sig = inspect.signature(types::AnnotationType.__init__)
+def test_types_typeparameter_constructor_args():
+    sig = inspect.signature(types_TypeParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(types::PrimitiveType)
+def test_types_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(types_PrimitiveType)
 
 
-def test_types::primitivetype_constructor_exists():
-    assert callable(types::PrimitiveType.__init__)
+def test_types_primitivetype_constructor_exists():
+    assert callable(types_PrimitiveType.__init__)
 
 
-def test_types::primitivetype_constructor_args():
-    sig = inspect.signature(types::PrimitiveType.__init__)
+def test_types_primitivetype_constructor_args():
+    sig = inspect.signature(types_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -267,16 +267,16 @@ def test_genericelement_constructor_args():
 
 
 
-def test_types::complextype_is_not_abstract():
-    assert not inspect.isabstract(types::ComplexType)
+def test_types_complextype_is_not_abstract():
+    assert not inspect.isabstract(types_ComplexType)
 
 
-def test_types::complextype_constructor_exists():
-    assert callable(types::ComplexType.__init__)
+def test_types_complextype_constructor_exists():
+    assert callable(types_ComplexType.__init__)
 
 
-def test_types::complextype_constructor_args():
-    sig = inspect.signature(types::ComplexType.__init__)
+def test_types_complextype_constructor_args():
+    sig = inspect.signature(types_ComplexType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -295,23 +295,37 @@ def test_typeddeclaration_constructor_args():
 
 
 
-def test_types::event_is_not_abstract():
-    assert not inspect.isabstract(types::Event)
+def test_types_typealias_is_not_abstract():
+    assert not inspect.isabstract(types_TypeAlias)
 
 
-def test_types::event_constructor_exists():
-    assert callable(types::Event.__init__)
+def test_types_typealias_constructor_exists():
+    assert callable(types_TypeAlias.__init__)
 
 
-def test_types::event_constructor_args():
-    sig = inspect.signature(types::Event.__init__)
+def test_types_typealias_constructor_args():
+    sig = inspect.signature(types_TypeAlias.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_event_is_not_abstract():
+    assert not inspect.isabstract(types_Event)
+
+
+def test_types_event_constructor_exists():
+    assert callable(types_Event.__init__)
+
+
+def test_types_event_constructor_args():
+    sig = inspect.signature(types_Event.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_types::event_has_direction():
-    assert hasattr(types::Event, "direction")
+def test_types_event_has_direction():
+    assert hasattr(types_Event, "direction")
     descriptor = None
-    for klass in types::Event.__mro__:
+    for klass in types_Event.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -319,37 +333,23 @@ def test_types::event_has_direction():
 
 
 
-def test_types::typealias_is_not_abstract():
-    assert not inspect.isabstract(types::TypeAlias)
+def test_types_enumerator_is_not_abstract():
+    assert not inspect.isabstract(types_Enumerator)
 
 
-def test_types::typealias_constructor_exists():
-    assert callable(types::TypeAlias.__init__)
+def test_types_enumerator_constructor_exists():
+    assert callable(types_Enumerator.__init__)
 
 
-def test_types::typealias_constructor_args():
-    sig = inspect.signature(types::TypeAlias.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::enumerator_is_not_abstract():
-    assert not inspect.isabstract(types::Enumerator)
-
-
-def test_types::enumerator_constructor_exists():
-    assert callable(types::Enumerator.__init__)
-
-
-def test_types::enumerator_constructor_args():
-    sig = inspect.signature(types::Enumerator.__init__)
+def test_types_enumerator_constructor_args():
+    sig = inspect.signature(types_Enumerator.__init__)
     params = list(sig.parameters.keys())
     assert "literalValue" in params, "Missing parameter 'literalValue'"
 
-def test_types::enumerator_has_literalValue():
-    assert hasattr(types::Enumerator, "literalValue")
+def test_types_enumerator_has_literalValue():
+    assert hasattr(types_Enumerator, "literalValue")
     descriptor = None
-    for klass in types::Enumerator.__mro__:
+    for klass in types_Enumerator.__mro__:
         if "literalValue" in klass.__dict__:
             descriptor = klass.__dict__["literalValue"]
             break
@@ -357,23 +357,23 @@ def test_types::enumerator_has_literalValue():
 
 
 
-def test_types::operation_is_not_abstract():
-    assert not inspect.isabstract(types::Operation)
+def test_types_operation_is_not_abstract():
+    assert not inspect.isabstract(types_Operation)
 
 
-def test_types::operation_constructor_exists():
-    assert callable(types::Operation.__init__)
+def test_types_operation_constructor_exists():
+    assert callable(types_Operation.__init__)
 
 
-def test_types::operation_constructor_args():
-    sig = inspect.signature(types::Operation.__init__)
+def test_types_operation_constructor_args():
+    sig = inspect.signature(types_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "variadic" in params, "Missing parameter 'variadic'"
 
-def test_types::operation_has_variadic():
-    assert hasattr(types::Operation, "variadic")
+def test_types_operation_has_variadic():
+    assert hasattr(types_Operation, "variadic")
     descriptor = None
-    for klass in types::Operation.__mro__:
+    for klass in types_Operation.__mro__:
         if "variadic" in klass.__dict__:
             descriptor = klass.__dict__["variadic"]
             break
@@ -423,44 +423,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_types::genericelement_is_not_abstract():
-    assert not inspect.isabstract(types::GenericElement)
+def test_types_genericelement_is_not_abstract():
+    assert not inspect.isabstract(types_GenericElement)
 
 
-def test_types::genericelement_constructor_exists():
-    assert callable(types::GenericElement.__init__)
+def test_types_genericelement_constructor_exists():
+    assert callable(types_GenericElement.__init__)
 
 
-def test_types::genericelement_constructor_args():
-    sig = inspect.signature(types::GenericElement.__init__)
+def test_types_genericelement_constructor_args():
+    sig = inspect.signature(types_GenericElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::typespecifier_is_not_abstract():
-    assert not inspect.isabstract(types::TypeSpecifier)
+def test_types_typespecifier_is_not_abstract():
+    assert not inspect.isabstract(types_TypeSpecifier)
 
 
-def test_types::typespecifier_constructor_exists():
-    assert callable(types::TypeSpecifier.__init__)
+def test_types_typespecifier_constructor_exists():
+    assert callable(types_TypeSpecifier.__init__)
 
 
-def test_types::typespecifier_constructor_args():
-    sig = inspect.signature(types::TypeSpecifier.__init__)
+def test_types_typespecifier_constructor_args():
+    sig = inspect.signature(types_TypeSpecifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::typedelement_is_not_abstract():
-    assert not inspect.isabstract(types::TypedElement)
+def test_types_typedelement_is_not_abstract():
+    assert not inspect.isabstract(types_TypedElement)
 
 
-def test_types::typedelement_constructor_exists():
-    assert callable(types::TypedElement.__init__)
+def test_types_typedelement_constructor_exists():
+    assert callable(types_TypedElement.__init__)
 
 
-def test_types::typedelement_constructor_args():
-    sig = inspect.signature(types::TypedElement.__init__)
+def test_types_typedelement_constructor_args():
+    sig = inspect.signature(types_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -479,81 +479,81 @@ def test_typedelement_constructor_args():
 
 
 
-def test_types::expression_is_not_abstract():
-    assert not inspect.isabstract(types::Expression)
+def test_types_expression_is_not_abstract():
+    assert not inspect.isabstract(types_Expression)
 
 
-def test_types::expression_constructor_exists():
-    assert callable(types::Expression.__init__)
+def test_types_expression_constructor_exists():
+    assert callable(types_Expression.__init__)
 
 
-def test_types::expression_constructor_args():
-    sig = inspect.signature(types::Expression.__init__)
+def test_types_expression_constructor_args():
+    sig = inspect.signature(types_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::property_is_not_abstract():
-    assert not inspect.isabstract(types::Property)
+def test_types_property_is_not_abstract():
+    assert not inspect.isabstract(types_Property)
 
 
-def test_types::property_constructor_exists():
-    assert callable(types::Property.__init__)
+def test_types_property_constructor_exists():
+    assert callable(types_Property.__init__)
 
 
-def test_types::property_constructor_args():
-    sig = inspect.signature(types::Property.__init__)
+def test_types_property_constructor_args():
+    sig = inspect.signature(types_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "readonly" in params, "Missing parameter 'readonly'"
     assert "const" in params, "Missing parameter 'const'"
+    assert "readonly" in params, "Missing parameter 'readonly'"
 
-def test_types::property_has_readonly():
-    assert hasattr(types::Property, "readonly")
+def test_types_property_has_const():
+    assert hasattr(types_Property, "const")
     descriptor = None
-    for klass in types::Property.__mro__:
-        if "readonly" in klass.__dict__:
-            descriptor = klass.__dict__["readonly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_types::property_has_const():
-    assert hasattr(types::Property, "const")
-    descriptor = None
-    for klass in types::Property.__mro__:
+    for klass in types_Property.__mro__:
         if "const" in klass.__dict__:
             descriptor = klass.__dict__["const"]
             break
     assert isinstance(descriptor, property)
 
+def test_types_property_has_readonly():
+    assert hasattr(types_Property, "readonly")
+    descriptor = None
+    for klass in types_Property.__mro__:
+        if "readonly" in klass.__dict__:
+            descriptor = klass.__dict__["readonly"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_types::parameter_is_not_abstract():
-    assert not inspect.isabstract(types::Parameter)
+
+def test_types_parameter_is_not_abstract():
+    assert not inspect.isabstract(types_Parameter)
 
 
-def test_types::parameter_constructor_exists():
-    assert callable(types::Parameter.__init__)
+def test_types_parameter_constructor_exists():
+    assert callable(types_Parameter.__init__)
 
 
-def test_types::parameter_constructor_args():
-    sig = inspect.signature(types::Parameter.__init__)
+def test_types_parameter_constructor_args():
+    sig = inspect.signature(types_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "varArgs" in params, "Missing parameter 'varArgs'"
     assert "optional" in params, "Missing parameter 'optional'"
 
-def test_types::parameter_has_varArgs():
-    assert hasattr(types::Parameter, "varArgs")
+def test_types_parameter_has_varArgs():
+    assert hasattr(types_Parameter, "varArgs")
     descriptor = None
-    for klass in types::Parameter.__mro__:
+    for klass in types_Parameter.__mro__:
         if "varArgs" in klass.__dict__:
             descriptor = klass.__dict__["varArgs"]
             break
     assert isinstance(descriptor, property)
 
-def test_types::parameter_has_optional():
-    assert hasattr(types::Parameter, "optional")
+def test_types_parameter_has_optional():
+    assert hasattr(types_Parameter, "optional")
     descriptor = None
-    for klass in types::Parameter.__mro__:
+    for klass in types_Parameter.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
@@ -561,35 +561,35 @@ def test_types::parameter_has_optional():
 
 
 
-def test_types::declaration_is_not_abstract():
-    assert not inspect.isabstract(types::Declaration)
+def test_types_declaration_is_not_abstract():
+    assert not inspect.isabstract(types_Declaration)
 
 
-def test_types::declaration_constructor_exists():
-    assert callable(types::Declaration.__init__)
+def test_types_declaration_constructor_exists():
+    assert callable(types_Declaration.__init__)
 
 
-def test_types::declaration_constructor_args():
-    sig = inspect.signature(types::Declaration.__init__)
+def test_types_declaration_constructor_args():
+    sig = inspect.signature(types_Declaration.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "static" in params, "Missing parameter 'static'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_types::declaration_has_id():
-    assert hasattr(types::Declaration, "id")
+def test_types_declaration_has_static():
+    assert hasattr(types_Declaration, "static")
     descriptor = None
-    for klass in types::Declaration.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in types_Declaration.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
-def test_types::declaration_has_static():
-    assert hasattr(types::Declaration, "static")
+def test_types_declaration_has_id():
+    assert hasattr(types_Declaration, "id")
     descriptor = None
-    for klass in types::Declaration.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
+    for klass in types_Declaration.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -623,33 +623,47 @@ def test_declaration_constructor_args():
 
 
 
-def test_types::type_is_not_abstract():
-    assert not inspect.isabstract(types::Type)
+def test_types_package_is_not_abstract():
+    assert not inspect.isabstract(types_Package)
 
 
-def test_types::type_constructor_exists():
-    assert callable(types::Type.__init__)
+def test_types_package_constructor_exists():
+    assert callable(types_Package.__init__)
 
 
-def test_types::type_constructor_args():
-    sig = inspect.signature(types::Type.__init__)
+def test_types_package_constructor_args():
+    sig = inspect.signature(types_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_type_is_not_abstract():
+    assert not inspect.isabstract(types_Type)
+
+
+def test_types_type_constructor_exists():
+    assert callable(types_Type.__init__)
+
+
+def test_types_type_constructor_args():
+    sig = inspect.signature(types_Type.__init__)
     params = list(sig.parameters.keys())
     assert "visible" in params, "Missing parameter 'visible'"
     assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_types::type_has_visible():
-    assert hasattr(types::Type, "visible")
+def test_types_type_has_visible():
+    assert hasattr(types_Type, "visible")
     descriptor = None
-    for klass in types::Type.__mro__:
+    for klass in types_Type.__mro__:
         if "visible" in klass.__dict__:
             descriptor = klass.__dict__["visible"]
             break
     assert isinstance(descriptor, property)
 
-def test_types::type_has_abstract():
-    assert hasattr(types::Type, "abstract")
+def test_types_type_has_abstract():
+    assert hasattr(types_Type, "abstract")
     descriptor = None
-    for klass in types::Type.__mro__:
+    for klass in types_Type.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -657,30 +671,16 @@ def test_types::type_has_abstract():
 
 
 
-def test_types::package_is_not_abstract():
-    assert not inspect.isabstract(types::Package)
+def test_types_typeddeclaration_is_not_abstract():
+    assert not inspect.isabstract(types_TypedDeclaration)
 
 
-def test_types::package_constructor_exists():
-    assert callable(types::Package.__init__)
+def test_types_typeddeclaration_constructor_exists():
+    assert callable(types_TypedDeclaration.__init__)
 
 
-def test_types::package_constructor_args():
-    sig = inspect.signature(types::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::typeddeclaration_is_not_abstract():
-    assert not inspect.isabstract(types::TypedDeclaration)
-
-
-def test_types::typeddeclaration_constructor_exists():
-    assert callable(types::TypedDeclaration.__init__)
-
-
-def test_types::typeddeclaration_constructor_args():
-    sig = inspect.signature(types::TypedDeclaration.__init__)
+def test_types_typeddeclaration_constructor_args():
+    sig = inspect.signature(types_TypedDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 def test_direction_exists():
@@ -711,73 +711,73 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-types::AnnotatableElement_strategy = st.builds(
-    types::AnnotatableElement,
+types_AnnotatableElement_strategy = st.builds(
+    types_AnnotatableElement,
 )
-types::MetaComposite_strategy = st.builds(
-    types::MetaComposite,
+types_MetaComposite_strategy = st.builds(
+    types_MetaComposite,
 )
-types::EObject_strategy = st.builds(
-    types::EObject,
+types_EObject_strategy = st.builds(
+    types_EObject,
 )
 TypeSpecifier_strategy = st.builds(
     TypeSpecifier,
 )
-types::ArrayTypeSpecifier_strategy = st.builds(
-    types::ArrayTypeSpecifier,
+types_ArrayTypeSpecifier_strategy = st.builds(
+    types_ArrayTypeSpecifier,
     size=
         st.integers()
 )
-types::Annotation_strategy = st.builds(
-    types::Annotation,
+types_Annotation_strategy = st.builds(
+    types_Annotation,
 )
-types::Domain_strategy = st.builds(
-    types::Domain,
+types_Domain_strategy = st.builds(
+    types_Domain,
     domainID=
         safe_text
 )
 ComplexType_strategy = st.builds(
     ComplexType,
 )
-types::EnumerationType_strategy = st.builds(
-    types::EnumerationType,
+types_EnumerationType_strategy = st.builds(
+    types_EnumerationType,
 )
 Type_strategy = st.builds(
     Type,
 )
-types::TypeParameter_strategy = st.builds(
-    types::TypeParameter,
+types_AnnotationType_strategy = st.builds(
+    types_AnnotationType,
 )
-types::AnnotationType_strategy = st.builds(
-    types::AnnotationType,
+types_TypeParameter_strategy = st.builds(
+    types_TypeParameter,
 )
-types::PrimitiveType_strategy = st.builds(
-    types::PrimitiveType,
+types_PrimitiveType_strategy = st.builds(
+    types_PrimitiveType,
 )
 GenericElement_strategy = st.builds(
     GenericElement,
 )
-types::ComplexType_strategy = st.builds(
-    types::ComplexType,
+types_ComplexType_strategy = st.builds(
+    types_ComplexType,
 )
 TypedDeclaration_strategy = st.builds(
     TypedDeclaration,
 )
-types::Event_strategy = st.builds(
-    types::Event,
+types_TypeAlias_strategy = st.builds(
+    types_TypeAlias,
+)
+types_Event_strategy = st.builds(
+    types_Event,
     direction=
         safe_text
 )
-types::TypeAlias_strategy = st.builds(
-    types::TypeAlias,
-)
-types::Enumerator_strategy = st.builds(
-    types::Enumerator,
+types_Enumerator_strategy = st.builds(
+    types_Enumerator,
     literalValue=
         st.integers()
 )
-types::Operation_strategy = st.builds(
-    types::Operation,
+types_Operation_strategy = st.builds(
+    types_Operation,
     variadic=
         st.booleans()
 )
@@ -790,41 +790,41 @@ AnnotatableElement_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-types::GenericElement_strategy = st.builds(
-    types::GenericElement,
+types_GenericElement_strategy = st.builds(
+    types_GenericElement,
 )
-types::TypeSpecifier_strategy = st.builds(
-    types::TypeSpecifier,
+types_TypeSpecifier_strategy = st.builds(
+    types_TypeSpecifier,
 )
-types::TypedElement_strategy = st.builds(
-    types::TypedElement,
+types_TypedElement_strategy = st.builds(
+    types_TypedElement,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-types::Expression_strategy = st.builds(
-    types::Expression,
+types_Expression_strategy = st.builds(
+    types_Expression,
 )
-types::Property_strategy = st.builds(
-    types::Property,
-    readonly=
-        st.booleans(),
+types_Property_strategy = st.builds(
+    types_Property,
     const=
+        st.booleans(),
+    readonly=
         st.booleans()
 )
-types::Parameter_strategy = st.builds(
-    types::Parameter,
+types_Parameter_strategy = st.builds(
+    types_Parameter,
     varArgs=
         st.booleans(),
     optional=
         st.booleans()
 )
-types::Declaration_strategy = st.builds(
-    types::Declaration,
-    id=
-        safe_text,
+types_Declaration_strategy = st.builds(
+    types_Declaration,
     static=
-        st.booleans()
+        st.booleans(),
+    id=
+        safe_text
 )
 DomainElement_strategy = st.builds(
     DomainElement,
@@ -832,73 +832,67 @@ DomainElement_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-types::Type_strategy = st.builds(
-    types::Type,
+types_Package_strategy = st.builds(
+    types_Package,
+)
+types_Type_strategy = st.builds(
+    types_Type,
     visible=
         st.booleans(),
     abstract=
         st.booleans()
 )
-types::Package_strategy = st.builds(
-    types::Package,
-)
-types::TypedDeclaration_strategy = st.builds(
-    types::TypedDeclaration,
+types_TypedDeclaration_strategy = st.builds(
+    types_TypedDeclaration,
 )
 
-@given(instance=types::AnnotatableElement_strategy)
+@given(instance=types_AnnotatableElement_strategy)
 @settings(max_examples=50)
-def test_types::annotatableelement_instantiation(instance):
-    assert isinstance(instance, types::AnnotatableElement)
+def test_types_annotatableelement_instantiation(instance):
+    assert isinstance(instance, types_AnnotatableElement)
 
-@given(instance=types::MetaComposite_strategy)
+@given(instance=types_MetaComposite_strategy)
 @settings(max_examples=50)
-def test_types::metacomposite_instantiation(instance):
-    assert isinstance(instance, types::MetaComposite)
+def test_types_metacomposite_instantiation(instance):
+    assert isinstance(instance, types_MetaComposite)
 
-@given(instance=types::EObject_strategy)
+@given(instance=types_EObject_strategy)
 @settings(max_examples=50)
-def test_types::eobject_instantiation(instance):
-    assert isinstance(instance, types::EObject)
+def test_types_eobject_instantiation(instance):
+    assert isinstance(instance, types_EObject)
 
 @given(instance=TypeSpecifier_strategy)
 @settings(max_examples=50)
 def test_typespecifier_instantiation(instance):
     assert isinstance(instance, TypeSpecifier)
 
-@given(instance=types::ArrayTypeSpecifier_strategy)
+@given(instance=types_ArrayTypeSpecifier_strategy)
 @settings(max_examples=50)
-def test_types::arraytypespecifier_instantiation(instance):
-    assert isinstance(instance, types::ArrayTypeSpecifier)
-
-@given(instance=types::ArrayTypeSpecifier_strategy)
-def test_types::arraytypespecifier_size_type(instance):
-    assert isinstance(instance.size, int)
+def test_types_arraytypespecifier_instantiation(instance):
+    assert isinstance(instance, types_ArrayTypeSpecifier)
 
 
-@given(instance=types::ArrayTypeSpecifier_strategy)
-def test_types::arraytypespecifier_size_setter(instance):
+
+@given(instance=types_ArrayTypeSpecifier_strategy)
+def test_types_arraytypespecifier_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=types::Annotation_strategy)
+@given(instance=types_Annotation_strategy)
 @settings(max_examples=50)
-def test_types::annotation_instantiation(instance):
-    assert isinstance(instance, types::Annotation)
+def test_types_annotation_instantiation(instance):
+    assert isinstance(instance, types_Annotation)
 
-@given(instance=types::Domain_strategy)
+@given(instance=types_Domain_strategy)
 @settings(max_examples=50)
-def test_types::domain_instantiation(instance):
-    assert isinstance(instance, types::Domain)
-
-@given(instance=types::Domain_strategy)
-def test_types::domain_domainID_type(instance):
-    assert isinstance(instance.domainID, str)
+def test_types_domain_instantiation(instance):
+    assert isinstance(instance, types_Domain)
 
 
-@given(instance=types::Domain_strategy)
-def test_types::domain_domainID_setter(instance):
+
+@given(instance=types_Domain_strategy)
+def test_types_domain_domainID_setter(instance):
     original = instance.domainID
     instance.domainID = original
     assert instance.domainID == original
@@ -908,95 +902,86 @@ def test_types::domain_domainID_setter(instance):
 def test_complextype_instantiation(instance):
     assert isinstance(instance, ComplexType)
 
-@given(instance=types::EnumerationType_strategy)
+@given(instance=types_EnumerationType_strategy)
 @settings(max_examples=50)
-def test_types::enumerationtype_instantiation(instance):
-    assert isinstance(instance, types::EnumerationType)
+def test_types_enumerationtype_instantiation(instance):
+    assert isinstance(instance, types_EnumerationType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=types::TypeParameter_strategy)
+@given(instance=types_AnnotationType_strategy)
 @settings(max_examples=50)
-def test_types::typeparameter_instantiation(instance):
-    assert isinstance(instance, types::TypeParameter)
+def test_types_annotationtype_instantiation(instance):
+    assert isinstance(instance, types_AnnotationType)
 
-@given(instance=types::AnnotationType_strategy)
+@given(instance=types_TypeParameter_strategy)
 @settings(max_examples=50)
-def test_types::annotationtype_instantiation(instance):
-    assert isinstance(instance, types::AnnotationType)
+def test_types_typeparameter_instantiation(instance):
+    assert isinstance(instance, types_TypeParameter)
 
-@given(instance=types::PrimitiveType_strategy)
+@given(instance=types_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_types::primitivetype_instantiation(instance):
-    assert isinstance(instance, types::PrimitiveType)
+def test_types_primitivetype_instantiation(instance):
+    assert isinstance(instance, types_PrimitiveType)
 
 @given(instance=GenericElement_strategy)
 @settings(max_examples=50)
 def test_genericelement_instantiation(instance):
     assert isinstance(instance, GenericElement)
 
-@given(instance=types::ComplexType_strategy)
+@given(instance=types_ComplexType_strategy)
 @settings(max_examples=50)
-def test_types::complextype_instantiation(instance):
-    assert isinstance(instance, types::ComplexType)
+def test_types_complextype_instantiation(instance):
+    assert isinstance(instance, types_ComplexType)
 
 @given(instance=TypedDeclaration_strategy)
 @settings(max_examples=50)
 def test_typeddeclaration_instantiation(instance):
     assert isinstance(instance, TypedDeclaration)
 
-@given(instance=types::Event_strategy)
+@given(instance=types_TypeAlias_strategy)
 @settings(max_examples=50)
-def test_types::event_instantiation(instance):
-    assert isinstance(instance, types::Event)
+def test_types_typealias_instantiation(instance):
+    assert isinstance(instance, types_TypeAlias)
 
-@given(instance=types::Event_strategy)
-def test_types::event_direction_type(instance):
-    assert isinstance(instance.direction, str)
+@given(instance=types_Event_strategy)
+@settings(max_examples=50)
+def test_types_event_instantiation(instance):
+    assert isinstance(instance, types_Event)
 
 
-@given(instance=types::Event_strategy)
-def test_types::event_direction_setter(instance):
+
+@given(instance=types_Event_strategy)
+def test_types_event_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=types::TypeAlias_strategy)
+@given(instance=types_Enumerator_strategy)
 @settings(max_examples=50)
-def test_types::typealias_instantiation(instance):
-    assert isinstance(instance, types::TypeAlias)
-
-@given(instance=types::Enumerator_strategy)
-@settings(max_examples=50)
-def test_types::enumerator_instantiation(instance):
-    assert isinstance(instance, types::Enumerator)
-
-@given(instance=types::Enumerator_strategy)
-def test_types::enumerator_literalValue_type(instance):
-    assert isinstance(instance.literalValue, int)
+def test_types_enumerator_instantiation(instance):
+    assert isinstance(instance, types_Enumerator)
 
 
-@given(instance=types::Enumerator_strategy)
-def test_types::enumerator_literalValue_setter(instance):
+
+@given(instance=types_Enumerator_strategy)
+def test_types_enumerator_literalValue_setter(instance):
     original = instance.literalValue
     instance.literalValue = original
     assert instance.literalValue == original
 
-@given(instance=types::Operation_strategy)
+@given(instance=types_Operation_strategy)
 @settings(max_examples=50)
-def test_types::operation_instantiation(instance):
-    assert isinstance(instance, types::Operation)
-
-@given(instance=types::Operation_strategy)
-def test_types::operation_variadic_type(instance):
-    assert isinstance(instance.variadic, bool)
+def test_types_operation_instantiation(instance):
+    assert isinstance(instance, types_Operation)
 
 
-@given(instance=types::Operation_strategy)
-def test_types::operation_variadic_setter(instance):
+
+@given(instance=types_Operation_strategy)
+def test_types_operation_variadic_setter(instance):
     original = instance.variadic
     instance.variadic = original
     assert instance.variadic == original
@@ -1016,111 +1001,93 @@ def test_annotatableelement_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=types::GenericElement_strategy)
+@given(instance=types_GenericElement_strategy)
 @settings(max_examples=50)
-def test_types::genericelement_instantiation(instance):
-    assert isinstance(instance, types::GenericElement)
+def test_types_genericelement_instantiation(instance):
+    assert isinstance(instance, types_GenericElement)
 
-@given(instance=types::TypeSpecifier_strategy)
+@given(instance=types_TypeSpecifier_strategy)
 @settings(max_examples=50)
-def test_types::typespecifier_instantiation(instance):
-    assert isinstance(instance, types::TypeSpecifier)
+def test_types_typespecifier_instantiation(instance):
+    assert isinstance(instance, types_TypeSpecifier)
 
-@given(instance=types::TypedElement_strategy)
+@given(instance=types_TypedElement_strategy)
 @settings(max_examples=50)
-def test_types::typedelement_instantiation(instance):
-    assert isinstance(instance, types::TypedElement)
+def test_types_typedelement_instantiation(instance):
+    assert isinstance(instance, types_TypedElement)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=types::Expression_strategy)
+@given(instance=types_Expression_strategy)
 @settings(max_examples=50)
-def test_types::expression_instantiation(instance):
-    assert isinstance(instance, types::Expression)
+def test_types_expression_instantiation(instance):
+    assert isinstance(instance, types_Expression)
 
-@given(instance=types::Property_strategy)
+@given(instance=types_Property_strategy)
 @settings(max_examples=50)
-def test_types::property_instantiation(instance):
-    assert isinstance(instance, types::Property)
-
-@given(instance=types::Property_strategy)
-def test_types::property_readonly_type(instance):
-    assert isinstance(instance.readonly, bool)
+def test_types_property_instantiation(instance):
+    assert isinstance(instance, types_Property)
 
 
-@given(instance=types::Property_strategy)
-def test_types::property_readonly_setter(instance):
-    original = instance.readonly
-    instance.readonly = original
-    assert instance.readonly == original
 
-@given(instance=types::Property_strategy)
-def test_types::property_const_type(instance):
-    assert isinstance(instance.const, bool)
-
-
-@given(instance=types::Property_strategy)
-def test_types::property_const_setter(instance):
+@given(instance=types_Property_strategy)
+def test_types_property_const_setter(instance):
     original = instance.const
     instance.const = original
     assert instance.const == original
 
-@given(instance=types::Parameter_strategy)
+
+
+@given(instance=types_Property_strategy)
+def test_types_property_readonly_setter(instance):
+    original = instance.readonly
+    instance.readonly = original
+    assert instance.readonly == original
+
+@given(instance=types_Parameter_strategy)
 @settings(max_examples=50)
-def test_types::parameter_instantiation(instance):
-    assert isinstance(instance, types::Parameter)
-
-@given(instance=types::Parameter_strategy)
-def test_types::parameter_varArgs_type(instance):
-    assert isinstance(instance.varArgs, bool)
+def test_types_parameter_instantiation(instance):
+    assert isinstance(instance, types_Parameter)
 
 
-@given(instance=types::Parameter_strategy)
-def test_types::parameter_varArgs_setter(instance):
+
+@given(instance=types_Parameter_strategy)
+def test_types_parameter_varArgs_setter(instance):
     original = instance.varArgs
     instance.varArgs = original
     assert instance.varArgs == original
 
-@given(instance=types::Parameter_strategy)
-def test_types::parameter_optional_type(instance):
-    assert isinstance(instance.optional, bool)
 
 
-@given(instance=types::Parameter_strategy)
-def test_types::parameter_optional_setter(instance):
+@given(instance=types_Parameter_strategy)
+def test_types_parameter_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=types::Declaration_strategy)
+@given(instance=types_Declaration_strategy)
 @settings(max_examples=50)
-def test_types::declaration_instantiation(instance):
-    assert isinstance(instance, types::Declaration)
-
-@given(instance=types::Declaration_strategy)
-def test_types::declaration_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_types_declaration_instantiation(instance):
+    assert isinstance(instance, types_Declaration)
 
 
-@given(instance=types::Declaration_strategy)
-def test_types::declaration_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=types::Declaration_strategy)
-def test_types::declaration_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=types::Declaration_strategy)
-def test_types::declaration_static_setter(instance):
+@given(instance=types_Declaration_strategy)
+def test_types_declaration_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
+
+
+
+@given(instance=types_Declaration_strategy)
+def test_types_declaration_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 @given(instance=DomainElement_strategy)
 @settings(max_examples=50)
@@ -1132,39 +1099,33 @@ def test_domainelement_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=types::Type_strategy)
+@given(instance=types_Package_strategy)
 @settings(max_examples=50)
-def test_types::type_instantiation(instance):
-    assert isinstance(instance, types::Type)
+def test_types_package_instantiation(instance):
+    assert isinstance(instance, types_Package)
 
-@given(instance=types::Type_strategy)
-def test_types::type_visible_type(instance):
-    assert isinstance(instance.visible, bool)
+@given(instance=types_Type_strategy)
+@settings(max_examples=50)
+def test_types_type_instantiation(instance):
+    assert isinstance(instance, types_Type)
 
 
-@given(instance=types::Type_strategy)
-def test_types::type_visible_setter(instance):
+
+@given(instance=types_Type_strategy)
+def test_types_type_visible_setter(instance):
     original = instance.visible
     instance.visible = original
     assert instance.visible == original
 
-@given(instance=types::Type_strategy)
-def test_types::type_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
 
 
-@given(instance=types::Type_strategy)
-def test_types::type_abstract_setter(instance):
+@given(instance=types_Type_strategy)
+def test_types_type_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=types::Package_strategy)
+@given(instance=types_TypedDeclaration_strategy)
 @settings(max_examples=50)
-def test_types::package_instantiation(instance):
-    assert isinstance(instance, types::Package)
-
-@given(instance=types::TypedDeclaration_strategy)
-@settings(max_examples=50)
-def test_types::typeddeclaration_instantiation(instance):
-    assert isinstance(instance, types::TypedDeclaration)
+def test_types_typeddeclaration_instantiation(instance):
+    assert isinstance(instance, types_TypedDeclaration)

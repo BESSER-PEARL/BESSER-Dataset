@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    adlrecur::Binding,
+from python_code import (
+    adlrecur_Binding,
     Component,
-    adlrecur::Base,
+    adlrecur_Base,
     Interface,
-    adlrecur::Component,
-    adlrecur::Interface,
-    adlrecur::Provided,
-    adlrecur::Required,
+    adlrecur_Component,
+    adlrecur_Interface,
+    adlrecur_Provided,
+    adlrecur_Required,
 )
 
 # =============================================================================
@@ -22,16 +22,16 @@ from classes import (
 
 
 
-def test_adlrecur::binding_is_not_abstract():
-    assert not inspect.isabstract(adlrecur::Binding)
+def test_adlrecur_binding_is_not_abstract():
+    assert not inspect.isabstract(adlrecur_Binding)
 
 
-def test_adlrecur::binding_constructor_exists():
-    assert callable(adlrecur::Binding.__init__)
+def test_adlrecur_binding_constructor_exists():
+    assert callable(adlrecur_Binding.__init__)
 
 
-def test_adlrecur::binding_constructor_args():
-    sig = inspect.signature(adlrecur::Binding.__init__)
+def test_adlrecur_binding_constructor_args():
+    sig = inspect.signature(adlrecur_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -50,16 +50,16 @@ def test_component_constructor_args():
 
 
 
-def test_adlrecur::base_is_not_abstract():
-    assert not inspect.isabstract(adlrecur::Base)
+def test_adlrecur_base_is_not_abstract():
+    assert not inspect.isabstract(adlrecur_Base)
 
 
-def test_adlrecur::base_constructor_exists():
-    assert callable(adlrecur::Base.__init__)
+def test_adlrecur_base_constructor_exists():
+    assert callable(adlrecur_Base.__init__)
 
 
-def test_adlrecur::base_constructor_args():
-    sig = inspect.signature(adlrecur::Base.__init__)
+def test_adlrecur_base_constructor_args():
+    sig = inspect.signature(adlrecur_Base.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -78,23 +78,23 @@ def test_interface_constructor_args():
 
 
 
-def test_adlrecur::component_is_not_abstract():
-    assert not inspect.isabstract(adlrecur::Component)
+def test_adlrecur_component_is_not_abstract():
+    assert not inspect.isabstract(adlrecur_Component)
 
 
-def test_adlrecur::component_constructor_exists():
-    assert callable(adlrecur::Component.__init__)
+def test_adlrecur_component_constructor_exists():
+    assert callable(adlrecur_Component.__init__)
 
 
-def test_adlrecur::component_constructor_args():
-    sig = inspect.signature(adlrecur::Component.__init__)
+def test_adlrecur_component_constructor_args():
+    sig = inspect.signature(adlrecur_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adlrecur::component_has_name():
-    assert hasattr(adlrecur::Component, "name")
+def test_adlrecur_component_has_name():
+    assert hasattr(adlrecur_Component, "name")
     descriptor = None
-    for klass in adlrecur::Component.__mro__:
+    for klass in adlrecur_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -102,64 +102,64 @@ def test_adlrecur::component_has_name():
 
 
 
-def test_adlrecur::interface_is_not_abstract():
-    assert not inspect.isabstract(adlrecur::Interface)
+def test_adlrecur_interface_is_not_abstract():
+    assert not inspect.isabstract(adlrecur_Interface)
 
 
-def test_adlrecur::interface_constructor_exists():
-    assert callable(adlrecur::Interface.__init__)
+def test_adlrecur_interface_constructor_exists():
+    assert callable(adlrecur_Interface.__init__)
 
 
-def test_adlrecur::interface_constructor_args():
-    sig = inspect.signature(adlrecur::Interface.__init__)
+def test_adlrecur_interface_constructor_args():
+    sig = inspect.signature(adlrecur_Interface.__init__)
     params = list(sig.parameters.keys())
-    assert "signature" in params, "Missing parameter 'signature'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "signature" in params, "Missing parameter 'signature'"
 
-def test_adlrecur::interface_has_signature():
-    assert hasattr(adlrecur::Interface, "signature")
+def test_adlrecur_interface_has_name():
+    assert hasattr(adlrecur_Interface, "name")
     descriptor = None
-    for klass in adlrecur::Interface.__mro__:
+    for klass in adlrecur_Interface.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_adlrecur_interface_has_signature():
+    assert hasattr(adlrecur_Interface, "signature")
+    descriptor = None
+    for klass in adlrecur_Interface.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
     assert isinstance(descriptor, property)
 
-def test_adlrecur::interface_has_name():
-    assert hasattr(adlrecur::Interface, "name")
-    descriptor = None
-    for klass in adlrecur::Interface.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_adlrecur::provided_is_not_abstract():
-    assert not inspect.isabstract(adlrecur::Provided)
-
-
-def test_adlrecur::provided_constructor_exists():
-    assert callable(adlrecur::Provided.__init__)
+def test_adlrecur_provided_is_not_abstract():
+    assert not inspect.isabstract(adlrecur_Provided)
 
 
-def test_adlrecur::provided_constructor_args():
-    sig = inspect.signature(adlrecur::Provided.__init__)
+def test_adlrecur_provided_constructor_exists():
+    assert callable(adlrecur_Provided.__init__)
+
+
+def test_adlrecur_provided_constructor_args():
+    sig = inspect.signature(adlrecur_Provided.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adlrecur::required_is_not_abstract():
-    assert not inspect.isabstract(adlrecur::Required)
+def test_adlrecur_required_is_not_abstract():
+    assert not inspect.isabstract(adlrecur_Required)
 
 
-def test_adlrecur::required_constructor_exists():
-    assert callable(adlrecur::Required.__init__)
+def test_adlrecur_required_constructor_exists():
+    assert callable(adlrecur_Required.__init__)
 
 
-def test_adlrecur::required_constructor_args():
-    sig = inspect.signature(adlrecur::Required.__init__)
+def test_adlrecur_required_constructor_args():
+    sig = inspect.signature(adlrecur_Required.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,106 +174,97 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-adlrecur::Binding_strategy = st.builds(
-    adlrecur::Binding,
+adlrecur_Binding_strategy = st.builds(
+    adlrecur_Binding,
 )
 Component_strategy = st.builds(
     Component,
 )
-adlrecur::Base_strategy = st.builds(
-    adlrecur::Base,
+adlrecur_Base_strategy = st.builds(
+    adlrecur_Base,
 )
 Interface_strategy = st.builds(
     Interface,
 )
-adlrecur::Component_strategy = st.builds(
-    adlrecur::Component,
+adlrecur_Component_strategy = st.builds(
+    adlrecur_Component,
     name=
         safe_text
 )
-adlrecur::Interface_strategy = st.builds(
-    adlrecur::Interface,
-    signature=
+adlrecur_Interface_strategy = st.builds(
+    adlrecur_Interface,
+    name=
         safe_text,
-    name=
+    signature=
         safe_text
 )
-adlrecur::Provided_strategy = st.builds(
-    adlrecur::Provided,
+adlrecur_Provided_strategy = st.builds(
+    adlrecur_Provided,
 )
-adlrecur::Required_strategy = st.builds(
-    adlrecur::Required,
+adlrecur_Required_strategy = st.builds(
+    adlrecur_Required,
 )
 
-@given(instance=adlrecur::Binding_strategy)
+@given(instance=adlrecur_Binding_strategy)
 @settings(max_examples=50)
-def test_adlrecur::binding_instantiation(instance):
-    assert isinstance(instance, adlrecur::Binding)
+def test_adlrecur_binding_instantiation(instance):
+    assert isinstance(instance, adlrecur_Binding)
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=adlrecur::Base_strategy)
+@given(instance=adlrecur_Base_strategy)
 @settings(max_examples=50)
-def test_adlrecur::base_instantiation(instance):
-    assert isinstance(instance, adlrecur::Base)
+def test_adlrecur_base_instantiation(instance):
+    assert isinstance(instance, adlrecur_Base)
 
 @given(instance=Interface_strategy)
 @settings(max_examples=50)
 def test_interface_instantiation(instance):
     assert isinstance(instance, Interface)
 
-@given(instance=adlrecur::Component_strategy)
+@given(instance=adlrecur_Component_strategy)
 @settings(max_examples=50)
-def test_adlrecur::component_instantiation(instance):
-    assert isinstance(instance, adlrecur::Component)
-
-@given(instance=adlrecur::Component_strategy)
-def test_adlrecur::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adlrecur_component_instantiation(instance):
+    assert isinstance(instance, adlrecur_Component)
 
 
-@given(instance=adlrecur::Component_strategy)
-def test_adlrecur::component_name_setter(instance):
+
+@given(instance=adlrecur_Component_strategy)
+def test_adlrecur_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adlrecur::Interface_strategy)
+@given(instance=adlrecur_Interface_strategy)
 @settings(max_examples=50)
-def test_adlrecur::interface_instantiation(instance):
-    assert isinstance(instance, adlrecur::Interface)
-
-@given(instance=adlrecur::Interface_strategy)
-def test_adlrecur::interface_signature_type(instance):
-    assert isinstance(instance.signature, str)
+def test_adlrecur_interface_instantiation(instance):
+    assert isinstance(instance, adlrecur_Interface)
 
 
-@given(instance=adlrecur::Interface_strategy)
-def test_adlrecur::interface_signature_setter(instance):
+
+@given(instance=adlrecur_Interface_strategy)
+def test_adlrecur_interface_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=adlrecur_Interface_strategy)
+def test_adlrecur_interface_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=adlrecur::Interface_strategy)
-def test_adlrecur::interface_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=adlrecur::Interface_strategy)
-def test_adlrecur::interface_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=adlrecur::Provided_strategy)
+@given(instance=adlrecur_Provided_strategy)
 @settings(max_examples=50)
-def test_adlrecur::provided_instantiation(instance):
-    assert isinstance(instance, adlrecur::Provided)
+def test_adlrecur_provided_instantiation(instance):
+    assert isinstance(instance, adlrecur_Provided)
 
-@given(instance=adlrecur::Required_strategy)
+@given(instance=adlrecur_Required_strategy)
 @settings(max_examples=50)
-def test_adlrecur::required_instantiation(instance):
-    assert isinstance(instance, adlrecur::Required)
+def test_adlrecur_required_instantiation(instance):
+    assert isinstance(instance, adlrecur_Required)

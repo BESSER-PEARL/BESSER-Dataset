@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Instruction,
-    kmLogo::ASM::Primitive,
-    kmLogo::ASM::Instruction,
-    kmLogo::ASM::LogoProgram,
+from python_code import (
+    kmLogo_ASM_LogoProgram,
     UnaryExpression,
-    kmLogo::ASM::Tan,
-    kmLogo::ASM::Sin,
-    kmLogo::ASM::Cos,
+    kmLogo_ASM_Sin,
+    kmLogo_ASM_Tan,
+    kmLogo_ASM_Cos,
     ControlStructure,
-    kmLogo::ASM::If,
-    kmLogo::ASM::Block,
+    kmLogo_ASM_If,
     ProcCall,
     Parameter,
     BinaryExp,
-    kmLogo::ASM::Greater,
-    kmLogo::ASM::Div,
-    kmLogo::ASM::Mult,
-    kmLogo::ASM::Lower,
-    kmLogo::ASM::Equals,
-    kmLogo::ASM::Minus,
-    kmLogo::ASM::Plus,
-    kmLogo::ASM::Parameter,
-    kmLogo::ASM::While,
-    kmLogo::ASM::Repeat,
-    kmLogo::ASM::ControlStructure,
+    kmLogo_ASM_Div,
+    kmLogo_ASM_Lower,
+    kmLogo_ASM_Equals,
+    kmLogo_ASM_Mult,
+    kmLogo_ASM_Minus,
+    kmLogo_ASM_Greater,
+    kmLogo_ASM_Plus,
+    kmLogo_ASM_Parameter,
+    kmLogo_ASM_While,
+    kmLogo_ASM_Repeat,
     Block,
-    kmLogo::ASM::ProcDeclaration,
     ProcDeclaration,
-    kmLogo::ASM::Expression,
     Expression,
-    kmLogo::ASM::UnaryExpression,
-    kmLogo::ASM::ParameterCall,
-    kmLogo::ASM::Constant,
-    kmLogo::ASM::BinaryExp,
-    kmLogo::ASM::ProcCall,
+    kmLogo_ASM_BinaryExp,
+    kmLogo_ASM_UnaryExpression,
+    kmLogo_ASM_ProcCall,
+    kmLogo_ASM_ParameterCall,
+    kmLogo_ASM_Constant,
     Primitive,
-    kmLogo::ASM::Right,
-    kmLogo::ASM::Forward,
-    kmLogo::ASM::PenUp,
-    kmLogo::ASM::Clear,
-    kmLogo::ASM::Left,
-    kmLogo::ASM::PenDown,
-    kmLogo::ASM::Back,
+    kmLogo_ASM_PenUp,
+    kmLogo_ASM_Left,
+    kmLogo_ASM_Forward,
+    kmLogo_ASM_Clear,
+    kmLogo_ASM_Right,
+    kmLogo_ASM_PenDown,
+    kmLogo_ASM_Back,
+    Instruction,
+    kmLogo_ASM_Block,
+    kmLogo_ASM_ProcDeclaration,
+    kmLogo_ASM_Expression,
+    kmLogo_ASM_ControlStructure,
+    kmLogo_ASM_Primitive,
+    kmLogo_ASM_Instruction,
 )
 
 # =============================================================================
@@ -57,58 +57,16 @@ from classes import (
 
 
 
-def test_instruction_is_not_abstract():
-    assert not inspect.isabstract(Instruction)
+def test_kmlogo_asm_logoprogram_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_LogoProgram)
 
 
-def test_instruction_constructor_exists():
-    assert callable(Instruction.__init__)
+def test_kmlogo_asm_logoprogram_constructor_exists():
+    assert callable(kmLogo_ASM_LogoProgram.__init__)
 
 
-def test_instruction_constructor_args():
-    sig = inspect.signature(Instruction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::primitive_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Primitive)
-
-
-def test_kmlogo::asm::primitive_constructor_exists():
-    assert callable(kmLogo::ASM::Primitive.__init__)
-
-
-def test_kmlogo::asm::primitive_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Primitive.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::instruction_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Instruction)
-
-
-def test_kmlogo::asm::instruction_constructor_exists():
-    assert callable(kmLogo::ASM::Instruction.__init__)
-
-
-def test_kmlogo::asm::instruction_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Instruction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::logoprogram_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::LogoProgram)
-
-
-def test_kmlogo::asm::logoprogram_constructor_exists():
-    assert callable(kmLogo::ASM::LogoProgram.__init__)
-
-
-def test_kmlogo::asm::logoprogram_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::LogoProgram.__init__)
+def test_kmlogo_asm_logoprogram_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_LogoProgram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,44 +85,44 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_kmlogo::asm::tan_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Tan)
+def test_kmlogo_asm_sin_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Sin)
 
 
-def test_kmlogo::asm::tan_constructor_exists():
-    assert callable(kmLogo::ASM::Tan.__init__)
+def test_kmlogo_asm_sin_constructor_exists():
+    assert callable(kmLogo_ASM_Sin.__init__)
 
 
-def test_kmlogo::asm::tan_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Tan.__init__)
+def test_kmlogo_asm_sin_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Sin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::sin_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Sin)
+def test_kmlogo_asm_tan_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Tan)
 
 
-def test_kmlogo::asm::sin_constructor_exists():
-    assert callable(kmLogo::ASM::Sin.__init__)
+def test_kmlogo_asm_tan_constructor_exists():
+    assert callable(kmLogo_ASM_Tan.__init__)
 
 
-def test_kmlogo::asm::sin_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Sin.__init__)
+def test_kmlogo_asm_tan_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Tan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::cos_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Cos)
+def test_kmlogo_asm_cos_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Cos)
 
 
-def test_kmlogo::asm::cos_constructor_exists():
-    assert callable(kmLogo::ASM::Cos.__init__)
+def test_kmlogo_asm_cos_constructor_exists():
+    assert callable(kmLogo_ASM_Cos.__init__)
 
 
-def test_kmlogo::asm::cos_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Cos.__init__)
+def test_kmlogo_asm_cos_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Cos.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -183,30 +141,16 @@ def test_controlstructure_constructor_args():
 
 
 
-def test_kmlogo::asm::if_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::If)
+def test_kmlogo_asm_if_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_If)
 
 
-def test_kmlogo::asm::if_constructor_exists():
-    assert callable(kmLogo::ASM::If.__init__)
+def test_kmlogo_asm_if_constructor_exists():
+    assert callable(kmLogo_ASM_If.__init__)
 
 
-def test_kmlogo::asm::if_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::If.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::block_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Block)
-
-
-def test_kmlogo::asm::block_constructor_exists():
-    assert callable(kmLogo::ASM::Block.__init__)
-
-
-def test_kmlogo::asm::block_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Block.__init__)
+def test_kmlogo_asm_if_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_If.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -253,121 +197,121 @@ def test_binaryexp_constructor_args():
 
 
 
-def test_kmlogo::asm::greater_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Greater)
+def test_kmlogo_asm_div_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Div)
 
 
-def test_kmlogo::asm::greater_constructor_exists():
-    assert callable(kmLogo::ASM::Greater.__init__)
+def test_kmlogo_asm_div_constructor_exists():
+    assert callable(kmLogo_ASM_Div.__init__)
 
 
-def test_kmlogo::asm::greater_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Greater.__init__)
+def test_kmlogo_asm_div_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::div_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Div)
+def test_kmlogo_asm_lower_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Lower)
 
 
-def test_kmlogo::asm::div_constructor_exists():
-    assert callable(kmLogo::ASM::Div.__init__)
+def test_kmlogo_asm_lower_constructor_exists():
+    assert callable(kmLogo_ASM_Lower.__init__)
 
 
-def test_kmlogo::asm::div_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Div.__init__)
+def test_kmlogo_asm_lower_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Lower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::mult_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Mult)
+def test_kmlogo_asm_equals_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Equals)
 
 
-def test_kmlogo::asm::mult_constructor_exists():
-    assert callable(kmLogo::ASM::Mult.__init__)
+def test_kmlogo_asm_equals_constructor_exists():
+    assert callable(kmLogo_ASM_Equals.__init__)
 
 
-def test_kmlogo::asm::mult_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Mult.__init__)
+def test_kmlogo_asm_equals_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Equals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::lower_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Lower)
+def test_kmlogo_asm_mult_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Mult)
 
 
-def test_kmlogo::asm::lower_constructor_exists():
-    assert callable(kmLogo::ASM::Lower.__init__)
+def test_kmlogo_asm_mult_constructor_exists():
+    assert callable(kmLogo_ASM_Mult.__init__)
 
 
-def test_kmlogo::asm::lower_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Lower.__init__)
+def test_kmlogo_asm_mult_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::equals_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Equals)
+def test_kmlogo_asm_minus_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Minus)
 
 
-def test_kmlogo::asm::equals_constructor_exists():
-    assert callable(kmLogo::ASM::Equals.__init__)
+def test_kmlogo_asm_minus_constructor_exists():
+    assert callable(kmLogo_ASM_Minus.__init__)
 
 
-def test_kmlogo::asm::equals_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Equals.__init__)
+def test_kmlogo_asm_minus_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::minus_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Minus)
+def test_kmlogo_asm_greater_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Greater)
 
 
-def test_kmlogo::asm::minus_constructor_exists():
-    assert callable(kmLogo::ASM::Minus.__init__)
+def test_kmlogo_asm_greater_constructor_exists():
+    assert callable(kmLogo_ASM_Greater.__init__)
 
 
-def test_kmlogo::asm::minus_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Minus.__init__)
+def test_kmlogo_asm_greater_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::plus_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Plus)
+def test_kmlogo_asm_plus_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Plus)
 
 
-def test_kmlogo::asm::plus_constructor_exists():
-    assert callable(kmLogo::ASM::Plus.__init__)
+def test_kmlogo_asm_plus_constructor_exists():
+    assert callable(kmLogo_ASM_Plus.__init__)
 
 
-def test_kmlogo::asm::plus_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Plus.__init__)
+def test_kmlogo_asm_plus_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::parameter_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Parameter)
+def test_kmlogo_asm_parameter_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Parameter)
 
 
-def test_kmlogo::asm::parameter_constructor_exists():
-    assert callable(kmLogo::ASM::Parameter.__init__)
+def test_kmlogo_asm_parameter_constructor_exists():
+    assert callable(kmLogo_ASM_Parameter.__init__)
 
 
-def test_kmlogo::asm::parameter_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Parameter.__init__)
+def test_kmlogo_asm_parameter_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_kmlogo::asm::parameter_has_name():
-    assert hasattr(kmLogo::ASM::Parameter, "name")
+def test_kmlogo_asm_parameter_has_name():
+    assert hasattr(kmLogo_ASM_Parameter, "name")
     descriptor = None
-    for klass in kmLogo::ASM::Parameter.__mro__:
+    for klass in kmLogo_ASM_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -375,44 +319,30 @@ def test_kmlogo::asm::parameter_has_name():
 
 
 
-def test_kmlogo::asm::while_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::While)
+def test_kmlogo_asm_while_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_While)
 
 
-def test_kmlogo::asm::while_constructor_exists():
-    assert callable(kmLogo::ASM::While.__init__)
+def test_kmlogo_asm_while_constructor_exists():
+    assert callable(kmLogo_ASM_While.__init__)
 
 
-def test_kmlogo::asm::while_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::While.__init__)
+def test_kmlogo_asm_while_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::repeat_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Repeat)
+def test_kmlogo_asm_repeat_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Repeat)
 
 
-def test_kmlogo::asm::repeat_constructor_exists():
-    assert callable(kmLogo::ASM::Repeat.__init__)
+def test_kmlogo_asm_repeat_constructor_exists():
+    assert callable(kmLogo_ASM_Repeat.__init__)
 
 
-def test_kmlogo::asm::repeat_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Repeat.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::controlstructure_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::ControlStructure)
-
-
-def test_kmlogo::asm::controlstructure_constructor_exists():
-    assert callable(kmLogo::ASM::ControlStructure.__init__)
-
-
-def test_kmlogo::asm::controlstructure_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::ControlStructure.__init__)
+def test_kmlogo_asm_repeat_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Repeat.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -431,30 +361,6 @@ def test_block_constructor_args():
 
 
 
-def test_kmlogo::asm::procdeclaration_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::ProcDeclaration)
-
-
-def test_kmlogo::asm::procdeclaration_constructor_exists():
-    assert callable(kmLogo::ASM::ProcDeclaration.__init__)
-
-
-def test_kmlogo::asm::procdeclaration_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::ProcDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_kmlogo::asm::procdeclaration_has_name():
-    assert hasattr(kmLogo::ASM::ProcDeclaration, "name")
-    descriptor = None
-    for klass in kmLogo::ASM::ProcDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
 def test_procdeclaration_is_not_abstract():
     assert not inspect.isabstract(ProcDeclaration)
 
@@ -465,20 +371,6 @@ def test_procdeclaration_constructor_exists():
 
 def test_procdeclaration_constructor_args():
     sig = inspect.signature(ProcDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::expression_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Expression)
-
-
-def test_kmlogo::asm::expression_constructor_exists():
-    assert callable(kmLogo::ASM::Expression.__init__)
-
-
-def test_kmlogo::asm::expression_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -497,83 +389,83 @@ def test_expression_constructor_args():
 
 
 
-def test_kmlogo::asm::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::UnaryExpression)
+def test_kmlogo_asm_binaryexp_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_BinaryExp)
 
 
-def test_kmlogo::asm::unaryexpression_constructor_exists():
-    assert callable(kmLogo::ASM::UnaryExpression.__init__)
+def test_kmlogo_asm_binaryexp_constructor_exists():
+    assert callable(kmLogo_ASM_BinaryExp.__init__)
 
 
-def test_kmlogo::asm::unaryexpression_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::UnaryExpression.__init__)
+def test_kmlogo_asm_binaryexp_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_BinaryExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::parametercall_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::ParameterCall)
+def test_kmlogo_asm_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_UnaryExpression)
 
 
-def test_kmlogo::asm::parametercall_constructor_exists():
-    assert callable(kmLogo::ASM::ParameterCall.__init__)
+def test_kmlogo_asm_unaryexpression_constructor_exists():
+    assert callable(kmLogo_ASM_UnaryExpression.__init__)
 
 
-def test_kmlogo::asm::parametercall_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::ParameterCall.__init__)
+def test_kmlogo_asm_unaryexpression_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::constant_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Constant)
+def test_kmlogo_asm_proccall_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_ProcCall)
 
 
-def test_kmlogo::asm::constant_constructor_exists():
-    assert callable(kmLogo::ASM::Constant.__init__)
+def test_kmlogo_asm_proccall_constructor_exists():
+    assert callable(kmLogo_ASM_ProcCall.__init__)
 
 
-def test_kmlogo::asm::constant_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Constant.__init__)
+def test_kmlogo_asm_proccall_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_ProcCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_parametercall_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_ParameterCall)
+
+
+def test_kmlogo_asm_parametercall_constructor_exists():
+    assert callable(kmLogo_ASM_ParameterCall.__init__)
+
+
+def test_kmlogo_asm_parametercall_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_ParameterCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_constant_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Constant)
+
+
+def test_kmlogo_asm_constant_constructor_exists():
+    assert callable(kmLogo_ASM_Constant.__init__)
+
+
+def test_kmlogo_asm_constant_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Constant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_kmlogo::asm::constant_has_value():
-    assert hasattr(kmLogo::ASM::Constant, "value")
+def test_kmlogo_asm_constant_has_value():
+    assert hasattr(kmLogo_ASM_Constant, "value")
     descriptor = None
-    for klass in kmLogo::ASM::Constant.__mro__:
+    for klass in kmLogo_ASM_Constant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_kmlogo::asm::binaryexp_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::BinaryExp)
-
-
-def test_kmlogo::asm::binaryexp_constructor_exists():
-    assert callable(kmLogo::ASM::BinaryExp.__init__)
-
-
-def test_kmlogo::asm::binaryexp_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::BinaryExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kmlogo::asm::proccall_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::ProcCall)
-
-
-def test_kmlogo::asm::proccall_constructor_exists():
-    assert callable(kmLogo::ASM::ProcCall.__init__)
-
-
-def test_kmlogo::asm::proccall_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::ProcCall.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -591,100 +483,208 @@ def test_primitive_constructor_args():
 
 
 
-def test_kmlogo::asm::right_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Right)
+def test_kmlogo_asm_penup_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_PenUp)
 
 
-def test_kmlogo::asm::right_constructor_exists():
-    assert callable(kmLogo::ASM::Right.__init__)
+def test_kmlogo_asm_penup_constructor_exists():
+    assert callable(kmLogo_ASM_PenUp.__init__)
 
 
-def test_kmlogo::asm::right_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Right.__init__)
+def test_kmlogo_asm_penup_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_PenUp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::forward_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Forward)
+def test_kmlogo_asm_left_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Left)
 
 
-def test_kmlogo::asm::forward_constructor_exists():
-    assert callable(kmLogo::ASM::Forward.__init__)
+def test_kmlogo_asm_left_constructor_exists():
+    assert callable(kmLogo_ASM_Left.__init__)
 
 
-def test_kmlogo::asm::forward_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Forward.__init__)
+def test_kmlogo_asm_left_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Left.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::penup_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::PenUp)
+def test_kmlogo_asm_forward_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Forward)
 
 
-def test_kmlogo::asm::penup_constructor_exists():
-    assert callable(kmLogo::ASM::PenUp.__init__)
+def test_kmlogo_asm_forward_constructor_exists():
+    assert callable(kmLogo_ASM_Forward.__init__)
 
 
-def test_kmlogo::asm::penup_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::PenUp.__init__)
+def test_kmlogo_asm_forward_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Forward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::clear_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Clear)
+def test_kmlogo_asm_clear_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Clear)
 
 
-def test_kmlogo::asm::clear_constructor_exists():
-    assert callable(kmLogo::ASM::Clear.__init__)
+def test_kmlogo_asm_clear_constructor_exists():
+    assert callable(kmLogo_ASM_Clear.__init__)
 
 
-def test_kmlogo::asm::clear_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Clear.__init__)
+def test_kmlogo_asm_clear_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Clear.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::left_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Left)
+def test_kmlogo_asm_right_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Right)
 
 
-def test_kmlogo::asm::left_constructor_exists():
-    assert callable(kmLogo::ASM::Left.__init__)
+def test_kmlogo_asm_right_constructor_exists():
+    assert callable(kmLogo_ASM_Right.__init__)
 
 
-def test_kmlogo::asm::left_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Left.__init__)
+def test_kmlogo_asm_right_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Right.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::pendown_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::PenDown)
+def test_kmlogo_asm_pendown_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_PenDown)
 
 
-def test_kmlogo::asm::pendown_constructor_exists():
-    assert callable(kmLogo::ASM::PenDown.__init__)
+def test_kmlogo_asm_pendown_constructor_exists():
+    assert callable(kmLogo_ASM_PenDown.__init__)
 
 
-def test_kmlogo::asm::pendown_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::PenDown.__init__)
+def test_kmlogo_asm_pendown_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_PenDown.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kmlogo::asm::back_is_not_abstract():
-    assert not inspect.isabstract(kmLogo::ASM::Back)
+def test_kmlogo_asm_back_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Back)
 
 
-def test_kmlogo::asm::back_constructor_exists():
-    assert callable(kmLogo::ASM::Back.__init__)
+def test_kmlogo_asm_back_constructor_exists():
+    assert callable(kmLogo_ASM_Back.__init__)
 
 
-def test_kmlogo::asm::back_constructor_args():
-    sig = inspect.signature(kmLogo::ASM::Back.__init__)
+def test_kmlogo_asm_back_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Back.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_instruction_is_not_abstract():
+    assert not inspect.isabstract(Instruction)
+
+
+def test_instruction_constructor_exists():
+    assert callable(Instruction.__init__)
+
+
+def test_instruction_constructor_args():
+    sig = inspect.signature(Instruction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_block_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Block)
+
+
+def test_kmlogo_asm_block_constructor_exists():
+    assert callable(kmLogo_ASM_Block.__init__)
+
+
+def test_kmlogo_asm_block_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_procdeclaration_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_ProcDeclaration)
+
+
+def test_kmlogo_asm_procdeclaration_constructor_exists():
+    assert callable(kmLogo_ASM_ProcDeclaration.__init__)
+
+
+def test_kmlogo_asm_procdeclaration_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_ProcDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_kmlogo_asm_procdeclaration_has_name():
+    assert hasattr(kmLogo_ASM_ProcDeclaration, "name")
+    descriptor = None
+    for klass in kmLogo_ASM_ProcDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_kmlogo_asm_expression_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Expression)
+
+
+def test_kmlogo_asm_expression_constructor_exists():
+    assert callable(kmLogo_ASM_Expression.__init__)
+
+
+def test_kmlogo_asm_expression_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_controlstructure_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_ControlStructure)
+
+
+def test_kmlogo_asm_controlstructure_constructor_exists():
+    assert callable(kmLogo_ASM_ControlStructure.__init__)
+
+
+def test_kmlogo_asm_controlstructure_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_ControlStructure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_primitive_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Primitive)
+
+
+def test_kmlogo_asm_primitive_constructor_exists():
+    assert callable(kmLogo_ASM_Primitive.__init__)
+
+
+def test_kmlogo_asm_primitive_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Primitive.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_kmlogo_asm_instruction_is_not_abstract():
+    assert not inspect.isabstract(kmLogo_ASM_Instruction)
+
+
+def test_kmlogo_asm_instruction_constructor_exists():
+    assert callable(kmLogo_ASM_Instruction.__init__)
+
+
+def test_kmlogo_asm_instruction_constructor_args():
+    sig = inspect.signature(kmLogo_ASM_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -699,38 +699,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Instruction_strategy = st.builds(
-    Instruction,
-)
-kmLogo::ASM::Primitive_strategy = st.builds(
-    kmLogo::ASM::Primitive,
-)
-kmLogo::ASM::Instruction_strategy = st.builds(
-    kmLogo::ASM::Instruction,
-)
-kmLogo::ASM::LogoProgram_strategy = st.builds(
-    kmLogo::ASM::LogoProgram,
+kmLogo_ASM_LogoProgram_strategy = st.builds(
+    kmLogo_ASM_LogoProgram,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-kmLogo::ASM::Tan_strategy = st.builds(
-    kmLogo::ASM::Tan,
+kmLogo_ASM_Sin_strategy = st.builds(
+    kmLogo_ASM_Sin,
 )
-kmLogo::ASM::Sin_strategy = st.builds(
-    kmLogo::ASM::Sin,
+kmLogo_ASM_Tan_strategy = st.builds(
+    kmLogo_ASM_Tan,
 )
-kmLogo::ASM::Cos_strategy = st.builds(
-    kmLogo::ASM::Cos,
+kmLogo_ASM_Cos_strategy = st.builds(
+    kmLogo_ASM_Cos,
 )
 ControlStructure_strategy = st.builds(
     ControlStructure,
 )
-kmLogo::ASM::If_strategy = st.builds(
-    kmLogo::ASM::If,
-)
-kmLogo::ASM::Block_strategy = st.builds(
-    kmLogo::ASM::Block,
+kmLogo_ASM_If_strategy = st.builds(
+    kmLogo_ASM_If,
 )
 ProcCall_strategy = st.builds(
     ProcCall,
@@ -741,154 +729,146 @@ Parameter_strategy = st.builds(
 BinaryExp_strategy = st.builds(
     BinaryExp,
 )
-kmLogo::ASM::Greater_strategy = st.builds(
-    kmLogo::ASM::Greater,
+kmLogo_ASM_Div_strategy = st.builds(
+    kmLogo_ASM_Div,
 )
-kmLogo::ASM::Div_strategy = st.builds(
-    kmLogo::ASM::Div,
+kmLogo_ASM_Lower_strategy = st.builds(
+    kmLogo_ASM_Lower,
 )
-kmLogo::ASM::Mult_strategy = st.builds(
-    kmLogo::ASM::Mult,
+kmLogo_ASM_Equals_strategy = st.builds(
+    kmLogo_ASM_Equals,
 )
-kmLogo::ASM::Lower_strategy = st.builds(
-    kmLogo::ASM::Lower,
+kmLogo_ASM_Mult_strategy = st.builds(
+    kmLogo_ASM_Mult,
 )
-kmLogo::ASM::Equals_strategy = st.builds(
-    kmLogo::ASM::Equals,
+kmLogo_ASM_Minus_strategy = st.builds(
+    kmLogo_ASM_Minus,
 )
-kmLogo::ASM::Minus_strategy = st.builds(
-    kmLogo::ASM::Minus,
+kmLogo_ASM_Greater_strategy = st.builds(
+    kmLogo_ASM_Greater,
 )
-kmLogo::ASM::Plus_strategy = st.builds(
-    kmLogo::ASM::Plus,
+kmLogo_ASM_Plus_strategy = st.builds(
+    kmLogo_ASM_Plus,
 )
-kmLogo::ASM::Parameter_strategy = st.builds(
-    kmLogo::ASM::Parameter,
+kmLogo_ASM_Parameter_strategy = st.builds(
+    kmLogo_ASM_Parameter,
     name=
         safe_text
 )
-kmLogo::ASM::While_strategy = st.builds(
-    kmLogo::ASM::While,
+kmLogo_ASM_While_strategy = st.builds(
+    kmLogo_ASM_While,
 )
-kmLogo::ASM::Repeat_strategy = st.builds(
-    kmLogo::ASM::Repeat,
-)
-kmLogo::ASM::ControlStructure_strategy = st.builds(
-    kmLogo::ASM::ControlStructure,
+kmLogo_ASM_Repeat_strategy = st.builds(
+    kmLogo_ASM_Repeat,
 )
 Block_strategy = st.builds(
     Block,
 )
-kmLogo::ASM::ProcDeclaration_strategy = st.builds(
-    kmLogo::ASM::ProcDeclaration,
-    name=
-        safe_text
-)
 ProcDeclaration_strategy = st.builds(
     ProcDeclaration,
-)
-kmLogo::ASM::Expression_strategy = st.builds(
-    kmLogo::ASM::Expression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-kmLogo::ASM::UnaryExpression_strategy = st.builds(
-    kmLogo::ASM::UnaryExpression,
+kmLogo_ASM_BinaryExp_strategy = st.builds(
+    kmLogo_ASM_BinaryExp,
 )
-kmLogo::ASM::ParameterCall_strategy = st.builds(
-    kmLogo::ASM::ParameterCall,
+kmLogo_ASM_UnaryExpression_strategy = st.builds(
+    kmLogo_ASM_UnaryExpression,
 )
-kmLogo::ASM::Constant_strategy = st.builds(
-    kmLogo::ASM::Constant,
+kmLogo_ASM_ProcCall_strategy = st.builds(
+    kmLogo_ASM_ProcCall,
+)
+kmLogo_ASM_ParameterCall_strategy = st.builds(
+    kmLogo_ASM_ParameterCall,
+)
+kmLogo_ASM_Constant_strategy = st.builds(
+    kmLogo_ASM_Constant,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-kmLogo::ASM::BinaryExp_strategy = st.builds(
-    kmLogo::ASM::BinaryExp,
-)
-kmLogo::ASM::ProcCall_strategy = st.builds(
-    kmLogo::ASM::ProcCall,
 )
 Primitive_strategy = st.builds(
     Primitive,
 )
-kmLogo::ASM::Right_strategy = st.builds(
-    kmLogo::ASM::Right,
+kmLogo_ASM_PenUp_strategy = st.builds(
+    kmLogo_ASM_PenUp,
 )
-kmLogo::ASM::Forward_strategy = st.builds(
-    kmLogo::ASM::Forward,
+kmLogo_ASM_Left_strategy = st.builds(
+    kmLogo_ASM_Left,
 )
-kmLogo::ASM::PenUp_strategy = st.builds(
-    kmLogo::ASM::PenUp,
+kmLogo_ASM_Forward_strategy = st.builds(
+    kmLogo_ASM_Forward,
 )
-kmLogo::ASM::Clear_strategy = st.builds(
-    kmLogo::ASM::Clear,
+kmLogo_ASM_Clear_strategy = st.builds(
+    kmLogo_ASM_Clear,
 )
-kmLogo::ASM::Left_strategy = st.builds(
-    kmLogo::ASM::Left,
+kmLogo_ASM_Right_strategy = st.builds(
+    kmLogo_ASM_Right,
 )
-kmLogo::ASM::PenDown_strategy = st.builds(
-    kmLogo::ASM::PenDown,
+kmLogo_ASM_PenDown_strategy = st.builds(
+    kmLogo_ASM_PenDown,
 )
-kmLogo::ASM::Back_strategy = st.builds(
-    kmLogo::ASM::Back,
+kmLogo_ASM_Back_strategy = st.builds(
+    kmLogo_ASM_Back,
+)
+Instruction_strategy = st.builds(
+    Instruction,
+)
+kmLogo_ASM_Block_strategy = st.builds(
+    kmLogo_ASM_Block,
+)
+kmLogo_ASM_ProcDeclaration_strategy = st.builds(
+    kmLogo_ASM_ProcDeclaration,
+    name=
+        safe_text
+)
+kmLogo_ASM_Expression_strategy = st.builds(
+    kmLogo_ASM_Expression,
+)
+kmLogo_ASM_ControlStructure_strategy = st.builds(
+    kmLogo_ASM_ControlStructure,
+)
+kmLogo_ASM_Primitive_strategy = st.builds(
+    kmLogo_ASM_Primitive,
+)
+kmLogo_ASM_Instruction_strategy = st.builds(
+    kmLogo_ASM_Instruction,
 )
 
-@given(instance=Instruction_strategy)
+@given(instance=kmLogo_ASM_LogoProgram_strategy)
 @settings(max_examples=50)
-def test_instruction_instantiation(instance):
-    assert isinstance(instance, Instruction)
-
-@given(instance=kmLogo::ASM::Primitive_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::primitive_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Primitive)
-
-@given(instance=kmLogo::ASM::Instruction_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::instruction_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Instruction)
-
-@given(instance=kmLogo::ASM::LogoProgram_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::logoprogram_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::LogoProgram)
+def test_kmlogo_asm_logoprogram_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_LogoProgram)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=kmLogo::ASM::Tan_strategy)
+@given(instance=kmLogo_ASM_Sin_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::tan_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Tan)
+def test_kmlogo_asm_sin_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Sin)
 
-@given(instance=kmLogo::ASM::Sin_strategy)
+@given(instance=kmLogo_ASM_Tan_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::sin_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Sin)
+def test_kmlogo_asm_tan_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Tan)
 
-@given(instance=kmLogo::ASM::Cos_strategy)
+@given(instance=kmLogo_ASM_Cos_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::cos_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Cos)
+def test_kmlogo_asm_cos_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Cos)
 
 @given(instance=ControlStructure_strategy)
 @settings(max_examples=50)
 def test_controlstructure_instantiation(instance):
     assert isinstance(instance, ControlStructure)
 
-@given(instance=kmLogo::ASM::If_strategy)
+@given(instance=kmLogo_ASM_If_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::if_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::If)
-
-@given(instance=kmLogo::ASM::Block_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::block_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Block)
+def test_kmlogo_asm_if_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_If)
 
 @given(instance=ProcCall_strategy)
 @settings(max_examples=50)
@@ -905,180 +885,191 @@ def test_parameter_instantiation(instance):
 def test_binaryexp_instantiation(instance):
     assert isinstance(instance, BinaryExp)
 
-@given(instance=kmLogo::ASM::Greater_strategy)
+@given(instance=kmLogo_ASM_Div_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::greater_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Greater)
+def test_kmlogo_asm_div_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Div)
 
-@given(instance=kmLogo::ASM::Div_strategy)
+@given(instance=kmLogo_ASM_Lower_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::div_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Div)
+def test_kmlogo_asm_lower_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Lower)
 
-@given(instance=kmLogo::ASM::Mult_strategy)
+@given(instance=kmLogo_ASM_Equals_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::mult_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Mult)
+def test_kmlogo_asm_equals_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Equals)
 
-@given(instance=kmLogo::ASM::Lower_strategy)
+@given(instance=kmLogo_ASM_Mult_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::lower_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Lower)
+def test_kmlogo_asm_mult_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Mult)
 
-@given(instance=kmLogo::ASM::Equals_strategy)
+@given(instance=kmLogo_ASM_Minus_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::equals_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Equals)
+def test_kmlogo_asm_minus_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Minus)
 
-@given(instance=kmLogo::ASM::Minus_strategy)
+@given(instance=kmLogo_ASM_Greater_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::minus_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Minus)
+def test_kmlogo_asm_greater_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Greater)
 
-@given(instance=kmLogo::ASM::Plus_strategy)
+@given(instance=kmLogo_ASM_Plus_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::plus_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Plus)
+def test_kmlogo_asm_plus_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Plus)
 
-@given(instance=kmLogo::ASM::Parameter_strategy)
+@given(instance=kmLogo_ASM_Parameter_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::parameter_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Parameter)
-
-@given(instance=kmLogo::ASM::Parameter_strategy)
-def test_kmlogo::asm::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_kmlogo_asm_parameter_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Parameter)
 
 
-@given(instance=kmLogo::ASM::Parameter_strategy)
-def test_kmlogo::asm::parameter_name_setter(instance):
+
+@given(instance=kmLogo_ASM_Parameter_strategy)
+def test_kmlogo_asm_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=kmLogo::ASM::While_strategy)
+@given(instance=kmLogo_ASM_While_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::while_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::While)
+def test_kmlogo_asm_while_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_While)
 
-@given(instance=kmLogo::ASM::Repeat_strategy)
+@given(instance=kmLogo_ASM_Repeat_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::repeat_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Repeat)
-
-@given(instance=kmLogo::ASM::ControlStructure_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::controlstructure_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::ControlStructure)
+def test_kmlogo_asm_repeat_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Repeat)
 
 @given(instance=Block_strategy)
 @settings(max_examples=50)
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=kmLogo::ASM::ProcDeclaration_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::procdeclaration_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::ProcDeclaration)
-
-@given(instance=kmLogo::ASM::ProcDeclaration_strategy)
-def test_kmlogo::asm::procdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=kmLogo::ASM::ProcDeclaration_strategy)
-def test_kmlogo::asm::procdeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
 @given(instance=ProcDeclaration_strategy)
 @settings(max_examples=50)
 def test_procdeclaration_instantiation(instance):
     assert isinstance(instance, ProcDeclaration)
-
-@given(instance=kmLogo::ASM::Expression_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::expression_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Expression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=kmLogo::ASM::UnaryExpression_strategy)
+@given(instance=kmLogo_ASM_BinaryExp_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::unaryexpression_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::UnaryExpression)
+def test_kmlogo_asm_binaryexp_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_BinaryExp)
 
-@given(instance=kmLogo::ASM::ParameterCall_strategy)
+@given(instance=kmLogo_ASM_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::parametercall_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::ParameterCall)
+def test_kmlogo_asm_unaryexpression_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_UnaryExpression)
 
-@given(instance=kmLogo::ASM::Constant_strategy)
+@given(instance=kmLogo_ASM_ProcCall_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::constant_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Constant)
+def test_kmlogo_asm_proccall_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_ProcCall)
 
-@given(instance=kmLogo::ASM::Constant_strategy)
-def test_kmlogo::asm::constant_value_type(instance):
-    assert isinstance(instance.value, float)
+@given(instance=kmLogo_ASM_ParameterCall_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_parametercall_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_ParameterCall)
+
+@given(instance=kmLogo_ASM_Constant_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_constant_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Constant)
 
 
-@given(instance=kmLogo::ASM::Constant_strategy)
-def test_kmlogo::asm::constant_value_setter(instance):
+
+@given(instance=kmLogo_ASM_Constant_strategy)
+def test_kmlogo_asm_constant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=kmLogo::ASM::BinaryExp_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::binaryexp_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::BinaryExp)
-
-@given(instance=kmLogo::ASM::ProcCall_strategy)
-@settings(max_examples=50)
-def test_kmlogo::asm::proccall_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::ProcCall)
 
 @given(instance=Primitive_strategy)
 @settings(max_examples=50)
 def test_primitive_instantiation(instance):
     assert isinstance(instance, Primitive)
 
-@given(instance=kmLogo::ASM::Right_strategy)
+@given(instance=kmLogo_ASM_PenUp_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::right_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Right)
+def test_kmlogo_asm_penup_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_PenUp)
 
-@given(instance=kmLogo::ASM::Forward_strategy)
+@given(instance=kmLogo_ASM_Left_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::forward_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Forward)
+def test_kmlogo_asm_left_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Left)
 
-@given(instance=kmLogo::ASM::PenUp_strategy)
+@given(instance=kmLogo_ASM_Forward_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::penup_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::PenUp)
+def test_kmlogo_asm_forward_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Forward)
 
-@given(instance=kmLogo::ASM::Clear_strategy)
+@given(instance=kmLogo_ASM_Clear_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::clear_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Clear)
+def test_kmlogo_asm_clear_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Clear)
 
-@given(instance=kmLogo::ASM::Left_strategy)
+@given(instance=kmLogo_ASM_Right_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::left_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Left)
+def test_kmlogo_asm_right_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Right)
 
-@given(instance=kmLogo::ASM::PenDown_strategy)
+@given(instance=kmLogo_ASM_PenDown_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::pendown_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::PenDown)
+def test_kmlogo_asm_pendown_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_PenDown)
 
-@given(instance=kmLogo::ASM::Back_strategy)
+@given(instance=kmLogo_ASM_Back_strategy)
 @settings(max_examples=50)
-def test_kmlogo::asm::back_instantiation(instance):
-    assert isinstance(instance, kmLogo::ASM::Back)
+def test_kmlogo_asm_back_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Back)
+
+@given(instance=Instruction_strategy)
+@settings(max_examples=50)
+def test_instruction_instantiation(instance):
+    assert isinstance(instance, Instruction)
+
+@given(instance=kmLogo_ASM_Block_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_block_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Block)
+
+@given(instance=kmLogo_ASM_ProcDeclaration_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_procdeclaration_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_ProcDeclaration)
+
+
+
+@given(instance=kmLogo_ASM_ProcDeclaration_strategy)
+def test_kmlogo_asm_procdeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=kmLogo_ASM_Expression_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_expression_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Expression)
+
+@given(instance=kmLogo_ASM_ControlStructure_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_controlstructure_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_ControlStructure)
+
+@given(instance=kmLogo_ASM_Primitive_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_primitive_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Primitive)
+
+@given(instance=kmLogo_ASM_Instruction_strategy)
+@settings(max_examples=50)
+def test_kmlogo_asm_instruction_instantiation(instance):
+    assert isinstance(instance, kmLogo_ASM_Instruction)

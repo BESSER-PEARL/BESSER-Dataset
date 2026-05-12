@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statespace::EObject,
-    statespace::Storage,
-    statespace::EClass,
-    statespace::EAttribute,
-    statespace::EObjectIntegerMapEntry,
-    statespace::EStringToStringMapEntry,
-    statespace::EqualityHelper,
-    statespace::Model,
-    statespace::Rule,
+from python_code import (
+    statespace_EObject,
+    statespace_Storage,
+    statespace_EClass,
+    statespace_EAttribute,
+    statespace_EObjectIntegerMapEntry,
+    statespace_EStringToStringMapEntry,
+    statespace_EqualityHelper,
+    statespace_Model,
+    statespace_Rule,
     Storage,
-    statespace::State,
-    statespace::Transition,
-    statespace::StateSpace,
+    statespace_State,
+    statespace_Transition,
+    statespace_StateSpace,
 )
 
 # =============================================================================
@@ -27,37 +27,37 @@ from classes import (
 
 
 
-def test_statespace::eobject_is_not_abstract():
-    assert not inspect.isabstract(statespace::EObject)
+def test_statespace_eobject_is_not_abstract():
+    assert not inspect.isabstract(statespace_EObject)
 
 
-def test_statespace::eobject_constructor_exists():
-    assert callable(statespace::EObject.__init__)
+def test_statespace_eobject_constructor_exists():
+    assert callable(statespace_EObject.__init__)
 
 
-def test_statespace::eobject_constructor_args():
-    sig = inspect.signature(statespace::EObject.__init__)
+def test_statespace_eobject_constructor_args():
+    sig = inspect.signature(statespace_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statespace::storage_is_not_abstract():
-    assert not inspect.isabstract(statespace::Storage)
+def test_statespace_storage_is_not_abstract():
+    assert not inspect.isabstract(statespace_Storage)
 
 
-def test_statespace::storage_constructor_exists():
-    assert callable(statespace::Storage.__init__)
+def test_statespace_storage_constructor_exists():
+    assert callable(statespace_Storage.__init__)
 
 
-def test_statespace::storage_constructor_args():
-    sig = inspect.signature(statespace::Storage.__init__)
+def test_statespace_storage_constructor_args():
+    sig = inspect.signature(statespace_Storage.__init__)
     params = list(sig.parameters.keys())
     assert "data" in params, "Missing parameter 'data'"
 
-def test_statespace::storage_has_data():
-    assert hasattr(statespace::Storage, "data")
+def test_statespace_storage_has_data():
+    assert hasattr(statespace_Storage, "data")
     descriptor = None
-    for klass in statespace::Storage.__mro__:
+    for klass in statespace_Storage.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -65,51 +65,51 @@ def test_statespace::storage_has_data():
 
 
 
-def test_statespace::eclass_is_not_abstract():
-    assert not inspect.isabstract(statespace::EClass)
+def test_statespace_eclass_is_not_abstract():
+    assert not inspect.isabstract(statespace_EClass)
 
 
-def test_statespace::eclass_constructor_exists():
-    assert callable(statespace::EClass.__init__)
+def test_statespace_eclass_constructor_exists():
+    assert callable(statespace_EClass.__init__)
 
 
-def test_statespace::eclass_constructor_args():
-    sig = inspect.signature(statespace::EClass.__init__)
+def test_statespace_eclass_constructor_args():
+    sig = inspect.signature(statespace_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statespace::eattribute_is_not_abstract():
-    assert not inspect.isabstract(statespace::EAttribute)
+def test_statespace_eattribute_is_not_abstract():
+    assert not inspect.isabstract(statespace_EAttribute)
 
 
-def test_statespace::eattribute_constructor_exists():
-    assert callable(statespace::EAttribute.__init__)
+def test_statespace_eattribute_constructor_exists():
+    assert callable(statespace_EAttribute.__init__)
 
 
-def test_statespace::eattribute_constructor_args():
-    sig = inspect.signature(statespace::EAttribute.__init__)
+def test_statespace_eattribute_constructor_args():
+    sig = inspect.signature(statespace_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statespace::eobjectintegermapentry_is_not_abstract():
-    assert not inspect.isabstract(statespace::EObjectIntegerMapEntry)
+def test_statespace_eobjectintegermapentry_is_not_abstract():
+    assert not inspect.isabstract(statespace_EObjectIntegerMapEntry)
 
 
-def test_statespace::eobjectintegermapentry_constructor_exists():
-    assert callable(statespace::EObjectIntegerMapEntry.__init__)
+def test_statespace_eobjectintegermapentry_constructor_exists():
+    assert callable(statespace_EObjectIntegerMapEntry.__init__)
 
 
-def test_statespace::eobjectintegermapentry_constructor_args():
-    sig = inspect.signature(statespace::EObjectIntegerMapEntry.__init__)
+def test_statespace_eobjectintegermapentry_constructor_args():
+    sig = inspect.signature(statespace_EObjectIntegerMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statespace::eobjectintegermapentry_has_value():
-    assert hasattr(statespace::EObjectIntegerMapEntry, "value")
+def test_statespace_eobjectintegermapentry_has_value():
+    assert hasattr(statespace_EObjectIntegerMapEntry, "value")
     descriptor = None
-    for klass in statespace::EObjectIntegerMapEntry.__mro__:
+    for klass in statespace_EObjectIntegerMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -117,37 +117,37 @@ def test_statespace::eobjectintegermapentry_has_value():
 
 
 
-def test_statespace::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(statespace::EStringToStringMapEntry)
+def test_statespace_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(statespace_EStringToStringMapEntry)
 
 
-def test_statespace::estringtostringmapentry_constructor_exists():
-    assert callable(statespace::EStringToStringMapEntry.__init__)
+def test_statespace_estringtostringmapentry_constructor_exists():
+    assert callable(statespace_EStringToStringMapEntry.__init__)
 
 
-def test_statespace::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(statespace::EStringToStringMapEntry.__init__)
+def test_statespace_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(statespace_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statespace::equalityhelper_is_not_abstract():
-    assert not inspect.isabstract(statespace::EqualityHelper)
+def test_statespace_equalityhelper_is_not_abstract():
+    assert not inspect.isabstract(statespace_EqualityHelper)
 
 
-def test_statespace::equalityhelper_constructor_exists():
-    assert callable(statespace::EqualityHelper.__init__)
+def test_statespace_equalityhelper_constructor_exists():
+    assert callable(statespace_EqualityHelper.__init__)
 
 
-def test_statespace::equalityhelper_constructor_args():
-    sig = inspect.signature(statespace::EqualityHelper.__init__)
+def test_statespace_equalityhelper_constructor_args():
+    sig = inspect.signature(statespace_EqualityHelper.__init__)
     params = list(sig.parameters.keys())
     assert "checkLinkOrder" in params, "Missing parameter 'checkLinkOrder'"
 
-def test_statespace::equalityhelper_has_checkLinkOrder():
-    assert hasattr(statespace::EqualityHelper, "checkLinkOrder")
+def test_statespace_equalityhelper_has_checkLinkOrder():
+    assert hasattr(statespace_EqualityHelper, "checkLinkOrder")
     descriptor = None
-    for klass in statespace::EqualityHelper.__mro__:
+    for klass in statespace_EqualityHelper.__mro__:
         if "checkLinkOrder" in klass.__dict__:
             descriptor = klass.__dict__["checkLinkOrder"]
             break
@@ -155,70 +155,70 @@ def test_statespace::equalityhelper_has_checkLinkOrder():
 
 
 
-def test_statespace::model_is_not_abstract():
-    assert not inspect.isabstract(statespace::Model)
+def test_statespace_model_is_not_abstract():
+    assert not inspect.isabstract(statespace_Model)
 
 
-def test_statespace::model_constructor_exists():
-    assert callable(statespace::Model.__init__)
+def test_statespace_model_constructor_exists():
+    assert callable(statespace_Model.__init__)
 
 
-def test_statespace::model_constructor_args():
-    sig = inspect.signature(statespace::Model.__init__)
+def test_statespace_model_constructor_args():
+    sig = inspect.signature(statespace_Model.__init__)
     params = list(sig.parameters.keys())
-    assert "objectKeys" in params, "Missing parameter 'objectKeys'"
     assert "resource" in params, "Missing parameter 'resource'"
-    assert "objectCount" in params, "Missing parameter 'objectCount'"
     assert "eGraph" in params, "Missing parameter 'eGraph'"
+    assert "objectCount" in params, "Missing parameter 'objectCount'"
+    assert "objectKeys" in params, "Missing parameter 'objectKeys'"
 
-def test_statespace::model_has_objectKeys():
-    assert hasattr(statespace::Model, "objectKeys")
+def test_statespace_model_has_resource():
+    assert hasattr(statespace_Model, "resource")
     descriptor = None
-    for klass in statespace::Model.__mro__:
-        if "objectKeys" in klass.__dict__:
-            descriptor = klass.__dict__["objectKeys"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::model_has_resource():
-    assert hasattr(statespace::Model, "resource")
-    descriptor = None
-    for klass in statespace::Model.__mro__:
+    for klass in statespace_Model.__mro__:
         if "resource" in klass.__dict__:
             descriptor = klass.__dict__["resource"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::model_has_objectCount():
-    assert hasattr(statespace::Model, "objectCount")
+def test_statespace_model_has_eGraph():
+    assert hasattr(statespace_Model, "eGraph")
     descriptor = None
-    for klass in statespace::Model.__mro__:
-        if "objectCount" in klass.__dict__:
-            descriptor = klass.__dict__["objectCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::model_has_eGraph():
-    assert hasattr(statespace::Model, "eGraph")
-    descriptor = None
-    for klass in statespace::Model.__mro__:
+    for klass in statespace_Model.__mro__:
         if "eGraph" in klass.__dict__:
             descriptor = klass.__dict__["eGraph"]
             break
     assert isinstance(descriptor, property)
 
+def test_statespace_model_has_objectCount():
+    assert hasattr(statespace_Model, "objectCount")
+    descriptor = None
+    for klass in statespace_Model.__mro__:
+        if "objectCount" in klass.__dict__:
+            descriptor = klass.__dict__["objectCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_model_has_objectKeys():
+    assert hasattr(statespace_Model, "objectKeys")
+    descriptor = None
+    for klass in statespace_Model.__mro__:
+        if "objectKeys" in klass.__dict__:
+            descriptor = klass.__dict__["objectKeys"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_statespace::rule_is_not_abstract():
-    assert not inspect.isabstract(statespace::Rule)
+
+def test_statespace_rule_is_not_abstract():
+    assert not inspect.isabstract(statespace_Rule)
 
 
-def test_statespace::rule_constructor_exists():
-    assert callable(statespace::Rule.__init__)
+def test_statespace_rule_constructor_exists():
+    assert callable(statespace_Rule.__init__)
 
 
-def test_statespace::rule_constructor_args():
-    sig = inspect.signature(statespace::Rule.__init__)
+def test_statespace_rule_constructor_args():
+    sig = inspect.signature(statespace_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -237,251 +237,251 @@ def test_storage_constructor_args():
 
 
 
-def test_statespace::state_is_not_abstract():
-    assert not inspect.isabstract(statespace::State)
+def test_statespace_state_is_not_abstract():
+    assert not inspect.isabstract(statespace_State)
 
 
-def test_statespace::state_constructor_exists():
-    assert callable(statespace::State.__init__)
+def test_statespace_state_constructor_exists():
+    assert callable(statespace_State.__init__)
 
 
-def test_statespace::state_constructor_args():
-    sig = inspect.signature(statespace::State.__init__)
+def test_statespace_state_constructor_args():
+    sig = inspect.signature(statespace_State.__init__)
     params = list(sig.parameters.keys())
     assert "open" in params, "Missing parameter 'open'"
-    assert "objectKeys" in params, "Missing parameter 'objectKeys'"
-    assert "hashCode" in params, "Missing parameter 'hashCode'"
-    assert "objectCount" in params, "Missing parameter 'objectCount'"
-    assert "goal" in params, "Missing parameter 'goal'"
-    assert "pruned" in params, "Missing parameter 'pruned'"
     assert "index" in params, "Missing parameter 'index'"
-    assert "derivedFrom" in params, "Missing parameter 'derivedFrom'"
+    assert "goal" in params, "Missing parameter 'goal'"
+    assert "objectKeys" in params, "Missing parameter 'objectKeys'"
     assert "location" in params, "Missing parameter 'location'"
+    assert "pruned" in params, "Missing parameter 'pruned'"
+    assert "derivedFrom" in params, "Missing parameter 'derivedFrom'"
+    assert "objectCount" in params, "Missing parameter 'objectCount'"
+    assert "hashCode" in params, "Missing parameter 'hashCode'"
 
-def test_statespace::state_has_open():
-    assert hasattr(statespace::State, "open")
+def test_statespace_state_has_open():
+    assert hasattr(statespace_State, "open")
     descriptor = None
-    for klass in statespace::State.__mro__:
+    for klass in statespace_State.__mro__:
         if "open" in klass.__dict__:
             descriptor = klass.__dict__["open"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::state_has_objectKeys():
-    assert hasattr(statespace::State, "objectKeys")
+def test_statespace_state_has_index():
+    assert hasattr(statespace_State, "index")
     descriptor = None
-    for klass in statespace::State.__mro__:
-        if "objectKeys" in klass.__dict__:
-            descriptor = klass.__dict__["objectKeys"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::state_has_hashCode():
-    assert hasattr(statespace::State, "hashCode")
-    descriptor = None
-    for klass in statespace::State.__mro__:
-        if "hashCode" in klass.__dict__:
-            descriptor = klass.__dict__["hashCode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::state_has_objectCount():
-    assert hasattr(statespace::State, "objectCount")
-    descriptor = None
-    for klass in statespace::State.__mro__:
-        if "objectCount" in klass.__dict__:
-            descriptor = klass.__dict__["objectCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::state_has_goal():
-    assert hasattr(statespace::State, "goal")
-    descriptor = None
-    for klass in statespace::State.__mro__:
-        if "goal" in klass.__dict__:
-            descriptor = klass.__dict__["goal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::state_has_pruned():
-    assert hasattr(statespace::State, "pruned")
-    descriptor = None
-    for klass in statespace::State.__mro__:
-        if "pruned" in klass.__dict__:
-            descriptor = klass.__dict__["pruned"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::state_has_index():
-    assert hasattr(statespace::State, "index")
-    descriptor = None
-    for klass in statespace::State.__mro__:
+    for klass in statespace_State.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::state_has_derivedFrom():
-    assert hasattr(statespace::State, "derivedFrom")
+def test_statespace_state_has_goal():
+    assert hasattr(statespace_State, "goal")
     descriptor = None
-    for klass in statespace::State.__mro__:
-        if "derivedFrom" in klass.__dict__:
-            descriptor = klass.__dict__["derivedFrom"]
+    for klass in statespace_State.__mro__:
+        if "goal" in klass.__dict__:
+            descriptor = klass.__dict__["goal"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::state_has_location():
-    assert hasattr(statespace::State, "location")
+def test_statespace_state_has_objectKeys():
+    assert hasattr(statespace_State, "objectKeys")
     descriptor = None
-    for klass in statespace::State.__mro__:
+    for klass in statespace_State.__mro__:
+        if "objectKeys" in klass.__dict__:
+            descriptor = klass.__dict__["objectKeys"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_state_has_location():
+    assert hasattr(statespace_State, "location")
+    descriptor = None
+    for klass in statespace_State.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
+def test_statespace_state_has_pruned():
+    assert hasattr(statespace_State, "pruned")
+    descriptor = None
+    for klass in statespace_State.__mro__:
+        if "pruned" in klass.__dict__:
+            descriptor = klass.__dict__["pruned"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_state_has_derivedFrom():
+    assert hasattr(statespace_State, "derivedFrom")
+    descriptor = None
+    for klass in statespace_State.__mro__:
+        if "derivedFrom" in klass.__dict__:
+            descriptor = klass.__dict__["derivedFrom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_state_has_objectCount():
+    assert hasattr(statespace_State, "objectCount")
+    descriptor = None
+    for klass in statespace_State.__mro__:
+        if "objectCount" in klass.__dict__:
+            descriptor = klass.__dict__["objectCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_state_has_hashCode():
+    assert hasattr(statespace_State, "hashCode")
+    descriptor = None
+    for klass in statespace_State.__mro__:
+        if "hashCode" in klass.__dict__:
+            descriptor = klass.__dict__["hashCode"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_statespace::transition_is_not_abstract():
-    assert not inspect.isabstract(statespace::Transition)
+
+def test_statespace_transition_is_not_abstract():
+    assert not inspect.isabstract(statespace_Transition)
 
 
-def test_statespace::transition_constructor_exists():
-    assert callable(statespace::Transition.__init__)
+def test_statespace_transition_constructor_exists():
+    assert callable(statespace_Transition.__init__)
 
 
-def test_statespace::transition_constructor_args():
-    sig = inspect.signature(statespace::Transition.__init__)
+def test_statespace_transition_constructor_args():
+    sig = inspect.signature(statespace_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "parameterKeys" in params, "Missing parameter 'parameterKeys'"
-    assert "match" in params, "Missing parameter 'match'"
     assert "parameterCount" in params, "Missing parameter 'parameterCount'"
+    assert "match" in params, "Missing parameter 'match'"
 
-def test_statespace::transition_has_parameterKeys():
-    assert hasattr(statespace::Transition, "parameterKeys")
+def test_statespace_transition_has_parameterKeys():
+    assert hasattr(statespace_Transition, "parameterKeys")
     descriptor = None
-    for klass in statespace::Transition.__mro__:
+    for klass in statespace_Transition.__mro__:
         if "parameterKeys" in klass.__dict__:
             descriptor = klass.__dict__["parameterKeys"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::transition_has_match():
-    assert hasattr(statespace::Transition, "match")
+def test_statespace_transition_has_parameterCount():
+    assert hasattr(statespace_Transition, "parameterCount")
     descriptor = None
-    for klass in statespace::Transition.__mro__:
-        if "match" in klass.__dict__:
-            descriptor = klass.__dict__["match"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::transition_has_parameterCount():
-    assert hasattr(statespace::Transition, "parameterCount")
-    descriptor = None
-    for klass in statespace::Transition.__mro__:
+    for klass in statespace_Transition.__mro__:
         if "parameterCount" in klass.__dict__:
             descriptor = klass.__dict__["parameterCount"]
             break
     assert isinstance(descriptor, property)
 
+def test_statespace_transition_has_match():
+    assert hasattr(statespace_Transition, "match")
+    descriptor = None
+    for klass in statespace_Transition.__mro__:
+        if "match" in klass.__dict__:
+            descriptor = klass.__dict__["match"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_statespace::statespace_is_not_abstract():
-    assert not inspect.isabstract(statespace::StateSpace)
+
+def test_statespace_statespace_is_not_abstract():
+    assert not inspect.isabstract(statespace_StateSpace)
 
 
-def test_statespace::statespace_constructor_exists():
-    assert callable(statespace::StateSpace.__init__)
+def test_statespace_statespace_constructor_exists():
+    assert callable(statespace_StateSpace.__init__)
 
 
-def test_statespace::statespace_constructor_args():
-    sig = inspect.signature(statespace::StateSpace.__init__)
+def test_statespace_statespace_constructor_args():
+    sig = inspect.signature(statespace_StateSpace.__init__)
     params = list(sig.parameters.keys())
-    assert "layoutHideIndizes" in params, "Missing parameter 'layoutHideIndizes'"
-    assert "stateCount" in params, "Missing parameter 'stateCount'"
-    assert "transitionCount" in params, "Missing parameter 'transitionCount'"
-    assert "layoutStateRepulsion" in params, "Missing parameter 'layoutStateRepulsion'"
-    assert "maxStateDistance" in params, "Missing parameter 'maxStateDistance'"
-    assert "allParameterKeys" in params, "Missing parameter 'allParameterKeys'"
     assert "layoutHideLabels" in params, "Missing parameter 'layoutHideLabels'"
     assert "layoutZoomLevel" in params, "Missing parameter 'layoutZoomLevel'"
+    assert "stateCount" in params, "Missing parameter 'stateCount'"
+    assert "maxStateDistance" in params, "Missing parameter 'maxStateDistance'"
+    assert "allParameterKeys" in params, "Missing parameter 'allParameterKeys'"
+    assert "transitionCount" in params, "Missing parameter 'transitionCount'"
+    assert "layoutStateRepulsion" in params, "Missing parameter 'layoutStateRepulsion'"
+    assert "layoutHideIndizes" in params, "Missing parameter 'layoutHideIndizes'"
     assert "layoutTransitionAttraction" in params, "Missing parameter 'layoutTransitionAttraction'"
 
-def test_statespace::statespace_has_layoutHideIndizes():
-    assert hasattr(statespace::StateSpace, "layoutHideIndizes")
+def test_statespace_statespace_has_layoutHideLabels():
+    assert hasattr(statespace_StateSpace, "layoutHideLabels")
     descriptor = None
-    for klass in statespace::StateSpace.__mro__:
-        if "layoutHideIndizes" in klass.__dict__:
-            descriptor = klass.__dict__["layoutHideIndizes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::statespace_has_stateCount():
-    assert hasattr(statespace::StateSpace, "stateCount")
-    descriptor = None
-    for klass in statespace::StateSpace.__mro__:
-        if "stateCount" in klass.__dict__:
-            descriptor = klass.__dict__["stateCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::statespace_has_transitionCount():
-    assert hasattr(statespace::StateSpace, "transitionCount")
-    descriptor = None
-    for klass in statespace::StateSpace.__mro__:
-        if "transitionCount" in klass.__dict__:
-            descriptor = klass.__dict__["transitionCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::statespace_has_layoutStateRepulsion():
-    assert hasattr(statespace::StateSpace, "layoutStateRepulsion")
-    descriptor = None
-    for klass in statespace::StateSpace.__mro__:
-        if "layoutStateRepulsion" in klass.__dict__:
-            descriptor = klass.__dict__["layoutStateRepulsion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::statespace_has_maxStateDistance():
-    assert hasattr(statespace::StateSpace, "maxStateDistance")
-    descriptor = None
-    for klass in statespace::StateSpace.__mro__:
-        if "maxStateDistance" in klass.__dict__:
-            descriptor = klass.__dict__["maxStateDistance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::statespace_has_allParameterKeys():
-    assert hasattr(statespace::StateSpace, "allParameterKeys")
-    descriptor = None
-    for klass in statespace::StateSpace.__mro__:
-        if "allParameterKeys" in klass.__dict__:
-            descriptor = klass.__dict__["allParameterKeys"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statespace::statespace_has_layoutHideLabels():
-    assert hasattr(statespace::StateSpace, "layoutHideLabels")
-    descriptor = None
-    for klass in statespace::StateSpace.__mro__:
+    for klass in statespace_StateSpace.__mro__:
         if "layoutHideLabels" in klass.__dict__:
             descriptor = klass.__dict__["layoutHideLabels"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::statespace_has_layoutZoomLevel():
-    assert hasattr(statespace::StateSpace, "layoutZoomLevel")
+def test_statespace_statespace_has_layoutZoomLevel():
+    assert hasattr(statespace_StateSpace, "layoutZoomLevel")
     descriptor = None
-    for klass in statespace::StateSpace.__mro__:
+    for klass in statespace_StateSpace.__mro__:
         if "layoutZoomLevel" in klass.__dict__:
             descriptor = klass.__dict__["layoutZoomLevel"]
             break
     assert isinstance(descriptor, property)
 
-def test_statespace::statespace_has_layoutTransitionAttraction():
-    assert hasattr(statespace::StateSpace, "layoutTransitionAttraction")
+def test_statespace_statespace_has_stateCount():
+    assert hasattr(statespace_StateSpace, "stateCount")
     descriptor = None
-    for klass in statespace::StateSpace.__mro__:
+    for klass in statespace_StateSpace.__mro__:
+        if "stateCount" in klass.__dict__:
+            descriptor = klass.__dict__["stateCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_statespace_has_maxStateDistance():
+    assert hasattr(statespace_StateSpace, "maxStateDistance")
+    descriptor = None
+    for klass in statespace_StateSpace.__mro__:
+        if "maxStateDistance" in klass.__dict__:
+            descriptor = klass.__dict__["maxStateDistance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_statespace_has_allParameterKeys():
+    assert hasattr(statespace_StateSpace, "allParameterKeys")
+    descriptor = None
+    for klass in statespace_StateSpace.__mro__:
+        if "allParameterKeys" in klass.__dict__:
+            descriptor = klass.__dict__["allParameterKeys"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_statespace_has_transitionCount():
+    assert hasattr(statespace_StateSpace, "transitionCount")
+    descriptor = None
+    for klass in statespace_StateSpace.__mro__:
+        if "transitionCount" in klass.__dict__:
+            descriptor = klass.__dict__["transitionCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_statespace_has_layoutStateRepulsion():
+    assert hasattr(statespace_StateSpace, "layoutStateRepulsion")
+    descriptor = None
+    for klass in statespace_StateSpace.__mro__:
+        if "layoutStateRepulsion" in klass.__dict__:
+            descriptor = klass.__dict__["layoutStateRepulsion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_statespace_has_layoutHideIndizes():
+    assert hasattr(statespace_StateSpace, "layoutHideIndizes")
+    descriptor = None
+    for klass in statespace_StateSpace.__mro__:
+        if "layoutHideIndizes" in klass.__dict__:
+            descriptor = klass.__dict__["layoutHideIndizes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statespace_statespace_has_layoutTransitionAttraction():
+    assert hasattr(statespace_StateSpace, "layoutTransitionAttraction")
+    descriptor = None
+    for klass in statespace_StateSpace.__mro__:
         if "layoutTransitionAttraction" in klass.__dict__:
             descriptor = klass.__dict__["layoutTransitionAttraction"]
             break
@@ -499,119 +499,116 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statespace::EObject_strategy = st.builds(
-    statespace::EObject,
+statespace_EObject_strategy = st.builds(
+    statespace_EObject,
 )
-statespace::Storage_strategy = st.builds(
-    statespace::Storage,
+statespace_Storage_strategy = st.builds(
+    statespace_Storage,
     data=
         safe_text
 )
-statespace::EClass_strategy = st.builds(
-    statespace::EClass,
+statespace_EClass_strategy = st.builds(
+    statespace_EClass,
 )
-statespace::EAttribute_strategy = st.builds(
-    statespace::EAttribute,
+statespace_EAttribute_strategy = st.builds(
+    statespace_EAttribute,
 )
-statespace::EObjectIntegerMapEntry_strategy = st.builds(
-    statespace::EObjectIntegerMapEntry,
+statespace_EObjectIntegerMapEntry_strategy = st.builds(
+    statespace_EObjectIntegerMapEntry,
     value=
         safe_text
 )
-statespace::EStringToStringMapEntry_strategy = st.builds(
-    statespace::EStringToStringMapEntry,
+statespace_EStringToStringMapEntry_strategy = st.builds(
+    statespace_EStringToStringMapEntry,
 )
-statespace::EqualityHelper_strategy = st.builds(
-    statespace::EqualityHelper,
+statespace_EqualityHelper_strategy = st.builds(
+    statespace_EqualityHelper,
     checkLinkOrder=
         st.booleans()
 )
-statespace::Model_strategy = st.builds(
-    statespace::Model,
-    objectKeys=
-        safe_text,
+statespace_Model_strategy = st.builds(
+    statespace_Model,
     resource=
+        safe_text,
+    eGraph=
         safe_text,
     objectCount=
         st.integers(),
-    eGraph=
+    objectKeys=
         safe_text
 )
-statespace::Rule_strategy = st.builds(
-    statespace::Rule,
+statespace_Rule_strategy = st.builds(
+    statespace_Rule,
 )
 Storage_strategy = st.builds(
     Storage,
 )
-statespace::State_strategy = st.builds(
-    statespace::State,
+statespace_State_strategy = st.builds(
+    statespace_State,
     open=
-        st.booleans(),
-    objectKeys=
-        safe_text,
-    hashCode=
-        st.integers(),
-    objectCount=
-        st.integers(),
-    goal=
-        st.booleans(),
-    pruned=
         st.booleans(),
     index=
         st.integers(),
+    goal=
+        st.booleans(),
+    objectKeys=
+        safe_text,
+    location=
+        safe_text,
+    pruned=
+        st.booleans(),
     derivedFrom=
         st.integers(),
-    location=
-        safe_text
-)
-statespace::Transition_strategy = st.builds(
-    statespace::Transition,
-    parameterKeys=
-        safe_text,
-    match=
+    objectCount=
         st.integers(),
-    parameterCount=
+    hashCode=
         st.integers()
 )
-statespace::StateSpace_strategy = st.builds(
-    statespace::StateSpace,
-    layoutHideIndizes=
+statespace_Transition_strategy = st.builds(
+    statespace_Transition,
+    parameterKeys=
+        safe_text,
+    parameterCount=
+        st.integers(),
+    match=
+        st.integers()
+)
+statespace_StateSpace_strategy = st.builds(
+    statespace_StateSpace,
+    layoutHideLabels=
         st.booleans(),
+    layoutZoomLevel=
+        st.integers(),
     stateCount=
-        st.integers(),
-    transitionCount=
-        st.integers(),
-    layoutStateRepulsion=
         st.integers(),
     maxStateDistance=
         st.integers(),
     allParameterKeys=
         safe_text,
-    layoutHideLabels=
-        st.booleans(),
-    layoutZoomLevel=
+    transitionCount=
         st.integers(),
+    layoutStateRepulsion=
+        st.integers(),
+    layoutHideIndizes=
+        st.booleans(),
     layoutTransitionAttraction=
         st.integers()
 )
 
-@given(instance=statespace::EObject_strategy)
+@given(instance=statespace_EObject_strategy)
 @settings(max_examples=50)
-def test_statespace::eobject_instantiation(instance):
-    assert isinstance(instance, statespace::EObject)
+def test_statespace_eobject_instantiation(instance):
+    assert isinstance(instance, statespace_EObject)
 
-@given(instance=statespace::Storage_strategy)
+@given(instance=statespace_Storage_strategy)
 @settings(max_examples=50)
-def test_statespace::storage_instantiation(instance):
-    assert isinstance(instance, statespace::Storage)
-
-@given(instance=statespace::Storage_strategy)
-def test_statespace::storage_data_type(instance):
-    assert isinstance(instance.data, str)
+def test_statespace_storage_instantiation(instance):
+    assert isinstance(instance, statespace_Storage)
 
 
-@given(instance=statespace::Storage_strategy)
-def test_statespace::storage_data_setter(instance):
+
+@given(instance=statespace_Storage_strategy)
+def test_statespace_storage_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
@@ -622,9 +619,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::Storage_strategy)
+@given(instance=statespace_Storage_strategy)
 @settings(max_examples=30)
-def test_statespace::storage_setdata_changes_state(instance):
+def test_statespace_storage_setdata_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -640,58 +637,52 @@ def test_statespace::storage_setdata_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setData' in statespace::Storage is empty"
+        assert has_statements, f"Function 'setData' in statespace_Storage is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setData' in statespace::Storage did not change state; check implementation")
+            warnings.warn(f"Operation 'setData' in statespace_Storage did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setData' in statespace::Storage is not implemented or raised an error")
+        warnings.warn(f"Operation 'setData' in statespace_Storage is not implemented or raised an error")
 
-@given(instance=statespace::EClass_strategy)
+@given(instance=statespace_EClass_strategy)
 @settings(max_examples=50)
-def test_statespace::eclass_instantiation(instance):
-    assert isinstance(instance, statespace::EClass)
+def test_statespace_eclass_instantiation(instance):
+    assert isinstance(instance, statespace_EClass)
 
-@given(instance=statespace::EAttribute_strategy)
+@given(instance=statespace_EAttribute_strategy)
 @settings(max_examples=50)
-def test_statespace::eattribute_instantiation(instance):
-    assert isinstance(instance, statespace::EAttribute)
+def test_statespace_eattribute_instantiation(instance):
+    assert isinstance(instance, statespace_EAttribute)
 
-@given(instance=statespace::EObjectIntegerMapEntry_strategy)
+@given(instance=statespace_EObjectIntegerMapEntry_strategy)
 @settings(max_examples=50)
-def test_statespace::eobjectintegermapentry_instantiation(instance):
-    assert isinstance(instance, statespace::EObjectIntegerMapEntry)
-
-@given(instance=statespace::EObjectIntegerMapEntry_strategy)
-def test_statespace::eobjectintegermapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_statespace_eobjectintegermapentry_instantiation(instance):
+    assert isinstance(instance, statespace_EObjectIntegerMapEntry)
 
 
-@given(instance=statespace::EObjectIntegerMapEntry_strategy)
-def test_statespace::eobjectintegermapentry_value_setter(instance):
+
+@given(instance=statespace_EObjectIntegerMapEntry_strategy)
+def test_statespace_eobjectintegermapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=statespace::EStringToStringMapEntry_strategy)
+@given(instance=statespace_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_statespace::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, statespace::EStringToStringMapEntry)
+def test_statespace_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, statespace_EStringToStringMapEntry)
 
-@given(instance=statespace::EqualityHelper_strategy)
+@given(instance=statespace_EqualityHelper_strategy)
 @settings(max_examples=50)
-def test_statespace::equalityhelper_instantiation(instance):
-    assert isinstance(instance, statespace::EqualityHelper)
-
-@given(instance=statespace::EqualityHelper_strategy)
-def test_statespace::equalityhelper_checkLinkOrder_type(instance):
-    assert isinstance(instance.checkLinkOrder, bool)
+def test_statespace_equalityhelper_instantiation(instance):
+    assert isinstance(instance, statespace_EqualityHelper)
 
 
-@given(instance=statespace::EqualityHelper_strategy)
-def test_statespace::equalityhelper_checkLinkOrder_setter(instance):
+
+@given(instance=statespace_EqualityHelper_strategy)
+def test_statespace_equalityhelper_checkLinkOrder_setter(instance):
     original = instance.checkLinkOrder
     instance.checkLinkOrder = original
     assert instance.checkLinkOrder == original
@@ -702,9 +693,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::EqualityHelper_strategy)
+@given(instance=statespace_EqualityHelper_strategy)
 @settings(max_examples=30)
-def test_statespace::equalityhelper_hashcode_changes_state(instance):
+def test_statespace_equalityhelper_setstatespace_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setStateSpace(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setStateSpace).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setStateSpace' in statespace_EqualityHelper is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setStateSpace' in statespace_EqualityHelper did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setStateSpace' in statespace_EqualityHelper is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statespace_EqualityHelper_strategy)
+@settings(max_examples=30)
+def test_statespace_equalityhelper_hashcode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -718,14 +740,14 @@ def test_statespace::equalityhelper_hashcode_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hashCode' in statespace::EqualityHelper is empty"
+        assert has_statements, f"Function 'hashCode' in statespace_EqualityHelper is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hashCode' in statespace::EqualityHelper did not change state; check implementation")
+            warnings.warn(f"Operation 'hashCode' in statespace_EqualityHelper did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hashCode' in statespace::EqualityHelper is not implemented or raised an error")
+        warnings.warn(f"Operation 'hashCode' in statespace_EqualityHelper is not implemented or raised an error")
 
 import warnings
 import copy
@@ -733,9 +755,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::EqualityHelper_strategy)
+@given(instance=statespace_EqualityHelper_strategy)
 @settings(max_examples=30)
-def test_statespace::equalityhelper_equals_changes_state(instance):
+def test_statespace_equalityhelper_equals_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -750,123 +772,51 @@ def test_statespace::equalityhelper_equals_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equals' in statespace::EqualityHelper is empty"
+        assert has_statements, f"Function 'equals' in statespace_EqualityHelper is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equals' in statespace::EqualityHelper did not change state; check implementation")
+            warnings.warn(f"Operation 'equals' in statespace_EqualityHelper did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equals' in statespace::EqualityHelper is not implemented or raised an error")
+        warnings.warn(f"Operation 'equals' in statespace_EqualityHelper is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=statespace::EqualityHelper_strategy)
-@settings(max_examples=30)
-def test_statespace::equalityhelper_setstatespace_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setStateSpace(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setStateSpace).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setStateSpace' in statespace::EqualityHelper is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setStateSpace' in statespace::EqualityHelper did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setStateSpace' in statespace::EqualityHelper is not implemented or raised an error")
-
-@given(instance=statespace::Model_strategy)
+@given(instance=statespace_Model_strategy)
 @settings(max_examples=50)
-def test_statespace::model_instantiation(instance):
-    assert isinstance(instance, statespace::Model)
-
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_objectKeys_type(instance):
-    assert isinstance(instance.objectKeys, str)
+def test_statespace_model_instantiation(instance):
+    assert isinstance(instance, statespace_Model)
 
 
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_objectKeys_setter(instance):
-    original = instance.objectKeys
-    instance.objectKeys = original
-    assert instance.objectKeys == original
 
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_resource_type(instance):
-    assert isinstance(instance.resource, str)
-
-
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_resource_setter(instance):
+@given(instance=statespace_Model_strategy)
+def test_statespace_model_resource_setter(instance):
     original = instance.resource
     instance.resource = original
     assert instance.resource == original
 
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_objectCount_type(instance):
-    assert isinstance(instance.objectCount, int)
 
 
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_objectCount_setter(instance):
-    original = instance.objectCount
-    instance.objectCount = original
-    assert instance.objectCount == original
-
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_eGraph_type(instance):
-    assert isinstance(instance.eGraph, str)
-
-
-@given(instance=statespace::Model_strategy)
-def test_statespace::model_eGraph_setter(instance):
+@given(instance=statespace_Model_strategy)
+def test_statespace_model_eGraph_setter(instance):
     original = instance.eGraph
     instance.eGraph = original
     assert instance.eGraph == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=statespace::Model_strategy)
-@settings(max_examples=30)
-def test_statespace::model_collectmissingrootobjects_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.collectMissingRootObjects()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.collectMissingRootObjects).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'collectMissingRootObjects' in statespace::Model is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'collectMissingRootObjects' in statespace::Model did not change state; check implementation")
+@given(instance=statespace_Model_strategy)
+def test_statespace_model_objectCount_setter(instance):
+    original = instance.objectCount
+    instance.objectCount = original
+    assert instance.objectCount == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'collectMissingRootObjects' in statespace::Model is not implemented or raised an error")
+
+
+@given(instance=statespace_Model_strategy)
+def test_statespace_model_objectKeys_setter(instance):
+    original = instance.objectKeys
+    instance.objectKeys = original
+    assert instance.objectKeys == original
 
 import warnings
 import copy
@@ -874,9 +824,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::Model_strategy)
+@given(instance=statespace_Model_strategy)
 @settings(max_examples=30)
-def test_statespace::model_updateobjectkeys_changes_state(instance):
+def test_statespace_model_updateobjectkeys_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -890,128 +840,14 @@ def test_statespace::model_updateobjectkeys_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateObjectKeys' in statespace::Model is empty"
+        assert has_statements, f"Function 'updateObjectKeys' in statespace_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateObjectKeys' in statespace::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'updateObjectKeys' in statespace_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateObjectKeys' in statespace::Model is not implemented or raised an error")
-
-@given(instance=statespace::Rule_strategy)
-@settings(max_examples=50)
-def test_statespace::rule_instantiation(instance):
-    assert isinstance(instance, statespace::Rule)
-
-@given(instance=Storage_strategy)
-@settings(max_examples=50)
-def test_storage_instantiation(instance):
-    assert isinstance(instance, Storage)
-
-@given(instance=statespace::State_strategy)
-@settings(max_examples=50)
-def test_statespace::state_instantiation(instance):
-    assert isinstance(instance, statespace::State)
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_open_type(instance):
-    assert isinstance(instance.open, bool)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_open_setter(instance):
-    original = instance.open
-    instance.open = original
-    assert instance.open == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_objectKeys_type(instance):
-    assert isinstance(instance.objectKeys, str)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_objectKeys_setter(instance):
-    original = instance.objectKeys
-    instance.objectKeys = original
-    assert instance.objectKeys == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_hashCode_type(instance):
-    assert isinstance(instance.hashCode, int)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_hashCode_setter(instance):
-    original = instance.hashCode
-    instance.hashCode = original
-    assert instance.hashCode == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_objectCount_type(instance):
-    assert isinstance(instance.objectCount, int)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_objectCount_setter(instance):
-    original = instance.objectCount
-    instance.objectCount = original
-    assert instance.objectCount == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_goal_type(instance):
-    assert isinstance(instance.goal, bool)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_goal_setter(instance):
-    original = instance.goal
-    instance.goal = original
-    assert instance.goal == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_pruned_type(instance):
-    assert isinstance(instance.pruned, bool)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_pruned_setter(instance):
-    original = instance.pruned
-    instance.pruned = original
-    assert instance.pruned == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_index_type(instance):
-    assert isinstance(instance.index, int)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_index_setter(instance):
-    original = instance.index
-    instance.index = original
-    assert instance.index == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_derivedFrom_type(instance):
-    assert isinstance(instance.derivedFrom, int)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_derivedFrom_setter(instance):
-    original = instance.derivedFrom
-    instance.derivedFrom = original
-    assert instance.derivedFrom == original
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=statespace::State_strategy)
-def test_statespace::state_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
+        warnings.warn(f"Operation 'updateObjectKeys' in statespace_Model is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1019,9 +855,125 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::State_strategy)
+@given(instance=statespace_Model_strategy)
 @settings(max_examples=30)
-def test_statespace::state_isinitial_changes_state(instance):
+def test_statespace_model_collectmissingrootobjects_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.collectMissingRootObjects()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.collectMissingRootObjects).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'collectMissingRootObjects' in statespace_Model is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'collectMissingRootObjects' in statespace_Model did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'collectMissingRootObjects' in statespace_Model is not implemented or raised an error")
+
+@given(instance=statespace_Rule_strategy)
+@settings(max_examples=50)
+def test_statespace_rule_instantiation(instance):
+    assert isinstance(instance, statespace_Rule)
+
+@given(instance=Storage_strategy)
+@settings(max_examples=50)
+def test_storage_instantiation(instance):
+    assert isinstance(instance, Storage)
+
+@given(instance=statespace_State_strategy)
+@settings(max_examples=50)
+def test_statespace_state_instantiation(instance):
+    assert isinstance(instance, statespace_State)
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_open_setter(instance):
+    original = instance.open
+    instance.open = original
+    assert instance.open == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_index_setter(instance):
+    original = instance.index
+    instance.index = original
+    assert instance.index == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_goal_setter(instance):
+    original = instance.goal
+    instance.goal = original
+    assert instance.goal == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_objectKeys_setter(instance):
+    original = instance.objectKeys
+    instance.objectKeys = original
+    assert instance.objectKeys == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_pruned_setter(instance):
+    original = instance.pruned
+    instance.pruned = original
+    assert instance.pruned == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_derivedFrom_setter(instance):
+    original = instance.derivedFrom
+    instance.derivedFrom = original
+    assert instance.derivedFrom == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_objectCount_setter(instance):
+    original = instance.objectCount
+    instance.objectCount = original
+    assert instance.objectCount == original
+
+
+
+@given(instance=statespace_State_strategy)
+def test_statespace_state_hashCode_setter(instance):
+    original = instance.hashCode
+    instance.hashCode = original
+    assert instance.hashCode == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=statespace_State_strategy)
+@settings(max_examples=30)
+def test_statespace_state_isinitial_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1033,153 +985,117 @@ def test_statespace::state_isinitial_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInitial' in statespace::State is empty"
+        assert has_statements, f"Function 'isInitial' in statespace_State is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInitial' in statespace::State did not change state; check implementation")
+            warnings.warn(f"Operation 'isInitial' in statespace_State did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInitial' in statespace::State is not implemented or raised an error")
+        warnings.warn(f"Operation 'isInitial' in statespace_State is not implemented or raised an error")
 
-@given(instance=statespace::Transition_strategy)
+@given(instance=statespace_Transition_strategy)
 @settings(max_examples=50)
-def test_statespace::transition_instantiation(instance):
-    assert isinstance(instance, statespace::Transition)
-
-@given(instance=statespace::Transition_strategy)
-def test_statespace::transition_parameterKeys_type(instance):
-    assert isinstance(instance.parameterKeys, str)
+def test_statespace_transition_instantiation(instance):
+    assert isinstance(instance, statespace_Transition)
 
 
-@given(instance=statespace::Transition_strategy)
-def test_statespace::transition_parameterKeys_setter(instance):
+
+@given(instance=statespace_Transition_strategy)
+def test_statespace_transition_parameterKeys_setter(instance):
     original = instance.parameterKeys
     instance.parameterKeys = original
     assert instance.parameterKeys == original
 
-@given(instance=statespace::Transition_strategy)
-def test_statespace::transition_match_type(instance):
-    assert isinstance(instance.match, int)
 
 
-@given(instance=statespace::Transition_strategy)
-def test_statespace::transition_match_setter(instance):
-    original = instance.match
-    instance.match = original
-    assert instance.match == original
-
-@given(instance=statespace::Transition_strategy)
-def test_statespace::transition_parameterCount_type(instance):
-    assert isinstance(instance.parameterCount, int)
-
-
-@given(instance=statespace::Transition_strategy)
-def test_statespace::transition_parameterCount_setter(instance):
+@given(instance=statespace_Transition_strategy)
+def test_statespace_transition_parameterCount_setter(instance):
     original = instance.parameterCount
     instance.parameterCount = original
     assert instance.parameterCount == original
 
-@given(instance=statespace::StateSpace_strategy)
+
+
+@given(instance=statespace_Transition_strategy)
+def test_statespace_transition_match_setter(instance):
+    original = instance.match
+    instance.match = original
+    assert instance.match == original
+
+@given(instance=statespace_StateSpace_strategy)
 @settings(max_examples=50)
-def test_statespace::statespace_instantiation(instance):
-    assert isinstance(instance, statespace::StateSpace)
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutHideIndizes_type(instance):
-    assert isinstance(instance.layoutHideIndizes, bool)
+def test_statespace_statespace_instantiation(instance):
+    assert isinstance(instance, statespace_StateSpace)
 
 
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutHideIndizes_setter(instance):
-    original = instance.layoutHideIndizes
-    instance.layoutHideIndizes = original
-    assert instance.layoutHideIndizes == original
 
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_stateCount_type(instance):
-    assert isinstance(instance.stateCount, int)
-
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_stateCount_setter(instance):
-    original = instance.stateCount
-    instance.stateCount = original
-    assert instance.stateCount == original
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_transitionCount_type(instance):
-    assert isinstance(instance.transitionCount, int)
-
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_transitionCount_setter(instance):
-    original = instance.transitionCount
-    instance.transitionCount = original
-    assert instance.transitionCount == original
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutStateRepulsion_type(instance):
-    assert isinstance(instance.layoutStateRepulsion, int)
-
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutStateRepulsion_setter(instance):
-    original = instance.layoutStateRepulsion
-    instance.layoutStateRepulsion = original
-    assert instance.layoutStateRepulsion == original
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_maxStateDistance_type(instance):
-    assert isinstance(instance.maxStateDistance, int)
-
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_maxStateDistance_setter(instance):
-    original = instance.maxStateDistance
-    instance.maxStateDistance = original
-    assert instance.maxStateDistance == original
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_allParameterKeys_type(instance):
-    assert isinstance(instance.allParameterKeys, str)
-
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_allParameterKeys_setter(instance):
-    original = instance.allParameterKeys
-    instance.allParameterKeys = original
-    assert instance.allParameterKeys == original
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutHideLabels_type(instance):
-    assert isinstance(instance.layoutHideLabels, bool)
-
-
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutHideLabels_setter(instance):
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_layoutHideLabels_setter(instance):
     original = instance.layoutHideLabels
     instance.layoutHideLabels = original
     assert instance.layoutHideLabels == original
 
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutZoomLevel_type(instance):
-    assert isinstance(instance.layoutZoomLevel, int)
 
 
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutZoomLevel_setter(instance):
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_layoutZoomLevel_setter(instance):
     original = instance.layoutZoomLevel
     instance.layoutZoomLevel = original
     assert instance.layoutZoomLevel == original
 
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutTransitionAttraction_type(instance):
-    assert isinstance(instance.layoutTransitionAttraction, int)
 
 
-@given(instance=statespace::StateSpace_strategy)
-def test_statespace::statespace_layoutTransitionAttraction_setter(instance):
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_stateCount_setter(instance):
+    original = instance.stateCount
+    instance.stateCount = original
+    assert instance.stateCount == original
+
+
+
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_maxStateDistance_setter(instance):
+    original = instance.maxStateDistance
+    instance.maxStateDistance = original
+    assert instance.maxStateDistance == original
+
+
+
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_allParameterKeys_setter(instance):
+    original = instance.allParameterKeys
+    instance.allParameterKeys = original
+    assert instance.allParameterKeys == original
+
+
+
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_transitionCount_setter(instance):
+    original = instance.transitionCount
+    instance.transitionCount = original
+    assert instance.transitionCount == original
+
+
+
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_layoutStateRepulsion_setter(instance):
+    original = instance.layoutStateRepulsion
+    instance.layoutStateRepulsion = original
+    assert instance.layoutStateRepulsion == original
+
+
+
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_layoutHideIndizes_setter(instance):
+    original = instance.layoutHideIndizes
+    instance.layoutHideIndizes = original
+    assert instance.layoutHideIndizes == original
+
+
+
+@given(instance=statespace_StateSpace_strategy)
+def test_statespace_statespace_layoutTransitionAttraction_setter(instance):
     original = instance.layoutTransitionAttraction
     instance.layoutTransitionAttraction = original
     assert instance.layoutTransitionAttraction == original
@@ -1190,9 +1106,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::StateSpace_strategy)
+@given(instance=statespace_StateSpace_strategy)
 @settings(max_examples=30)
-def test_statespace::statespace_updateequalityhelper_changes_state(instance):
+def test_statespace_statespace_updateequalityhelper_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1204,14 +1120,14 @@ def test_statespace::statespace_updateequalityhelper_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateEqualityHelper' in statespace::StateSpace is empty"
+        assert has_statements, f"Function 'updateEqualityHelper' in statespace_StateSpace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateEqualityHelper' in statespace::StateSpace did not change state; check implementation")
+            warnings.warn(f"Operation 'updateEqualityHelper' in statespace_StateSpace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateEqualityHelper' in statespace::StateSpace is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateEqualityHelper' in statespace_StateSpace is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1219,9 +1135,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::StateSpace_strategy)
+@given(instance=statespace_StateSpace_strategy)
 @settings(max_examples=30)
-def test_statespace::statespace_removestate_changes_state(instance):
+def test_statespace_statespace_removestate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1235,14 +1151,14 @@ def test_statespace::statespace_removestate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeState' in statespace::StateSpace is empty"
+        assert has_statements, f"Function 'removeState' in statespace_StateSpace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeState' in statespace::StateSpace did not change state; check implementation")
+            warnings.warn(f"Operation 'removeState' in statespace_StateSpace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeState' in statespace::StateSpace is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeState' in statespace_StateSpace is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1250,9 +1166,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statespace::StateSpace_strategy)
+@given(instance=statespace_StateSpace_strategy)
 @settings(max_examples=30)
-def test_statespace::statespace_inctransitioncount_changes_state(instance):
+def test_statespace_statespace_inctransitioncount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1264,11 +1180,11 @@ def test_statespace::statespace_inctransitioncount_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'incTransitionCount' in statespace::StateSpace is empty"
+        assert has_statements, f"Function 'incTransitionCount' in statespace_StateSpace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'incTransitionCount' in statespace::StateSpace did not change state; check implementation")
+            warnings.warn(f"Operation 'incTransitionCount' in statespace_StateSpace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'incTransitionCount' in statespace::StateSpace is not implemented or raised an error")
+        warnings.warn(f"Operation 'incTransitionCount' in statespace_StateSpace is not implemented or raised an error")

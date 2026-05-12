@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    genericTest::OtherType,
-    genericTest::D,
-    genericTest::C,
-    genericTest::B,
-    genericTest::SomeType,
-    genericTest::A,
+from python_code import (
+    genericTest_OtherType,
+    genericTest_D,
+    genericTest_C,
+    genericTest_B,
+    genericTest_SomeType,
+    genericTest_A,
 )
 
 # =============================================================================
@@ -20,86 +20,86 @@ from classes import (
 
 
 
-def test_generictest::othertype_is_not_abstract():
-    assert not inspect.isabstract(genericTest::OtherType)
+def test_generictest_othertype_is_not_abstract():
+    assert not inspect.isabstract(genericTest_OtherType)
 
 
-def test_generictest::othertype_constructor_exists():
-    assert callable(genericTest::OtherType.__init__)
+def test_generictest_othertype_constructor_exists():
+    assert callable(genericTest_OtherType.__init__)
 
 
-def test_generictest::othertype_constructor_args():
-    sig = inspect.signature(genericTest::OtherType.__init__)
+def test_generictest_othertype_constructor_args():
+    sig = inspect.signature(genericTest_OtherType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generictest::d_is_not_abstract():
-    assert not inspect.isabstract(genericTest::D)
+def test_generictest_d_is_not_abstract():
+    assert not inspect.isabstract(genericTest_D)
 
 
-def test_generictest::d_constructor_exists():
-    assert callable(genericTest::D.__init__)
+def test_generictest_d_constructor_exists():
+    assert callable(genericTest_D.__init__)
 
 
-def test_generictest::d_constructor_args():
-    sig = inspect.signature(genericTest::D.__init__)
+def test_generictest_d_constructor_args():
+    sig = inspect.signature(genericTest_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generictest::c_is_not_abstract():
-    assert not inspect.isabstract(genericTest::C)
+def test_generictest_c_is_not_abstract():
+    assert not inspect.isabstract(genericTest_C)
 
 
-def test_generictest::c_constructor_exists():
-    assert callable(genericTest::C.__init__)
+def test_generictest_c_constructor_exists():
+    assert callable(genericTest_C.__init__)
 
 
-def test_generictest::c_constructor_args():
-    sig = inspect.signature(genericTest::C.__init__)
+def test_generictest_c_constructor_args():
+    sig = inspect.signature(genericTest_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generictest::b_is_not_abstract():
-    assert not inspect.isabstract(genericTest::B)
+def test_generictest_b_is_not_abstract():
+    assert not inspect.isabstract(genericTest_B)
 
 
-def test_generictest::b_constructor_exists():
-    assert callable(genericTest::B.__init__)
+def test_generictest_b_constructor_exists():
+    assert callable(genericTest_B.__init__)
 
 
-def test_generictest::b_constructor_args():
-    sig = inspect.signature(genericTest::B.__init__)
+def test_generictest_b_constructor_args():
+    sig = inspect.signature(genericTest_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generictest::sometype_is_not_abstract():
-    assert not inspect.isabstract(genericTest::SomeType)
+def test_generictest_sometype_is_not_abstract():
+    assert not inspect.isabstract(genericTest_SomeType)
 
 
-def test_generictest::sometype_constructor_exists():
-    assert callable(genericTest::SomeType.__init__)
+def test_generictest_sometype_constructor_exists():
+    assert callable(genericTest_SomeType.__init__)
 
 
-def test_generictest::sometype_constructor_args():
-    sig = inspect.signature(genericTest::SomeType.__init__)
+def test_generictest_sometype_constructor_args():
+    sig = inspect.signature(genericTest_SomeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generictest::a_is_not_abstract():
-    assert not inspect.isabstract(genericTest::A)
+def test_generictest_a_is_not_abstract():
+    assert not inspect.isabstract(genericTest_A)
 
 
-def test_generictest::a_constructor_exists():
-    assert callable(genericTest::A.__init__)
+def test_generictest_a_constructor_exists():
+    assert callable(genericTest_A.__init__)
 
 
-def test_generictest::a_constructor_args():
-    sig = inspect.signature(genericTest::A.__init__)
+def test_generictest_a_constructor_args():
+    sig = inspect.signature(genericTest_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,51 +114,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-genericTest::OtherType_strategy = st.builds(
-    genericTest::OtherType,
+genericTest_OtherType_strategy = st.builds(
+    genericTest_OtherType,
 )
-genericTest::D_strategy = st.builds(
-    genericTest::D,
+genericTest_D_strategy = st.builds(
+    genericTest_D,
 )
-genericTest::C_strategy = st.builds(
-    genericTest::C,
+genericTest_C_strategy = st.builds(
+    genericTest_C,
 )
-genericTest::B_strategy = st.builds(
-    genericTest::B,
+genericTest_B_strategy = st.builds(
+    genericTest_B,
 )
-genericTest::SomeType_strategy = st.builds(
-    genericTest::SomeType,
+genericTest_SomeType_strategy = st.builds(
+    genericTest_SomeType,
 )
-genericTest::A_strategy = st.builds(
-    genericTest::A,
+genericTest_A_strategy = st.builds(
+    genericTest_A,
 )
 
-@given(instance=genericTest::OtherType_strategy)
+@given(instance=genericTest_OtherType_strategy)
 @settings(max_examples=50)
-def test_generictest::othertype_instantiation(instance):
-    assert isinstance(instance, genericTest::OtherType)
+def test_generictest_othertype_instantiation(instance):
+    assert isinstance(instance, genericTest_OtherType)
 
-@given(instance=genericTest::D_strategy)
+@given(instance=genericTest_D_strategy)
 @settings(max_examples=50)
-def test_generictest::d_instantiation(instance):
-    assert isinstance(instance, genericTest::D)
+def test_generictest_d_instantiation(instance):
+    assert isinstance(instance, genericTest_D)
 
-@given(instance=genericTest::C_strategy)
+@given(instance=genericTest_C_strategy)
 @settings(max_examples=50)
-def test_generictest::c_instantiation(instance):
-    assert isinstance(instance, genericTest::C)
+def test_generictest_c_instantiation(instance):
+    assert isinstance(instance, genericTest_C)
 
-@given(instance=genericTest::B_strategy)
+@given(instance=genericTest_B_strategy)
 @settings(max_examples=50)
-def test_generictest::b_instantiation(instance):
-    assert isinstance(instance, genericTest::B)
+def test_generictest_b_instantiation(instance):
+    assert isinstance(instance, genericTest_B)
 
-@given(instance=genericTest::SomeType_strategy)
+@given(instance=genericTest_SomeType_strategy)
 @settings(max_examples=50)
-def test_generictest::sometype_instantiation(instance):
-    assert isinstance(instance, genericTest::SomeType)
+def test_generictest_sometype_instantiation(instance):
+    assert isinstance(instance, genericTest_SomeType)
 
-@given(instance=genericTest::A_strategy)
+@given(instance=genericTest_A_strategy)
 @settings(max_examples=50)
-def test_generictest::a_instantiation(instance):
-    assert isinstance(instance, genericTest::A)
+def test_generictest_a_instantiation(instance):
+    assert isinstance(instance, genericTest_A)

@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Transition,
-    dtmc::InvokedTransition,
-    dtmc::StandardTransition,
-    dtmc::CallTransition,
-    dtmc::SynchronizedTransition,
-    dtmc::Transition,
-    dtmc::Node,
-    dtmc::Module,
-    dtmc::Dtmc,
+    dtmc_StandardTransition,
+    dtmc_InvokedTransition,
+    dtmc_CallTransition,
+    dtmc_SynchronizedTransition,
+    dtmc_Transition,
+    dtmc_Node,
+    dtmc_Module,
+    dtmc_Dtmc,
 )
 
 # =============================================================================
@@ -37,79 +37,79 @@ def test_transition_constructor_args():
 
 
 
-def test_dtmc::invokedtransition_is_not_abstract():
-    assert not inspect.isabstract(dtmc::InvokedTransition)
+def test_dtmc_standardtransition_is_not_abstract():
+    assert not inspect.isabstract(dtmc_StandardTransition)
 
 
-def test_dtmc::invokedtransition_constructor_exists():
-    assert callable(dtmc::InvokedTransition.__init__)
+def test_dtmc_standardtransition_constructor_exists():
+    assert callable(dtmc_StandardTransition.__init__)
 
 
-def test_dtmc::invokedtransition_constructor_args():
-    sig = inspect.signature(dtmc::InvokedTransition.__init__)
+def test_dtmc_standardtransition_constructor_args():
+    sig = inspect.signature(dtmc_StandardTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dtmc::standardtransition_is_not_abstract():
-    assert not inspect.isabstract(dtmc::StandardTransition)
+def test_dtmc_invokedtransition_is_not_abstract():
+    assert not inspect.isabstract(dtmc_InvokedTransition)
 
 
-def test_dtmc::standardtransition_constructor_exists():
-    assert callable(dtmc::StandardTransition.__init__)
+def test_dtmc_invokedtransition_constructor_exists():
+    assert callable(dtmc_InvokedTransition.__init__)
 
 
-def test_dtmc::standardtransition_constructor_args():
-    sig = inspect.signature(dtmc::StandardTransition.__init__)
+def test_dtmc_invokedtransition_constructor_args():
+    sig = inspect.signature(dtmc_InvokedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dtmc::calltransition_is_not_abstract():
-    assert not inspect.isabstract(dtmc::CallTransition)
+def test_dtmc_calltransition_is_not_abstract():
+    assert not inspect.isabstract(dtmc_CallTransition)
 
 
-def test_dtmc::calltransition_constructor_exists():
-    assert callable(dtmc::CallTransition.__init__)
+def test_dtmc_calltransition_constructor_exists():
+    assert callable(dtmc_CallTransition.__init__)
 
 
-def test_dtmc::calltransition_constructor_args():
-    sig = inspect.signature(dtmc::CallTransition.__init__)
+def test_dtmc_calltransition_constructor_args():
+    sig = inspect.signature(dtmc_CallTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dtmc::synchronizedtransition_is_not_abstract():
-    assert not inspect.isabstract(dtmc::SynchronizedTransition)
+def test_dtmc_synchronizedtransition_is_not_abstract():
+    assert not inspect.isabstract(dtmc_SynchronizedTransition)
 
 
-def test_dtmc::synchronizedtransition_constructor_exists():
-    assert callable(dtmc::SynchronizedTransition.__init__)
+def test_dtmc_synchronizedtransition_constructor_exists():
+    assert callable(dtmc_SynchronizedTransition.__init__)
 
 
-def test_dtmc::synchronizedtransition_constructor_args():
-    sig = inspect.signature(dtmc::SynchronizedTransition.__init__)
+def test_dtmc_synchronizedtransition_constructor_args():
+    sig = inspect.signature(dtmc_SynchronizedTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dtmc::transition_is_not_abstract():
-    assert not inspect.isabstract(dtmc::Transition)
+def test_dtmc_transition_is_not_abstract():
+    assert not inspect.isabstract(dtmc_Transition)
 
 
-def test_dtmc::transition_constructor_exists():
-    assert callable(dtmc::Transition.__init__)
+def test_dtmc_transition_constructor_exists():
+    assert callable(dtmc_Transition.__init__)
 
 
-def test_dtmc::transition_constructor_args():
-    sig = inspect.signature(dtmc::Transition.__init__)
+def test_dtmc_transition_constructor_args():
+    sig = inspect.signature(dtmc_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "probability" in params, "Missing parameter 'probability'"
 
-def test_dtmc::transition_has_probability():
-    assert hasattr(dtmc::Transition, "probability")
+def test_dtmc_transition_has_probability():
+    assert hasattr(dtmc_Transition, "probability")
     descriptor = None
-    for klass in dtmc::Transition.__mro__:
+    for klass in dtmc_Transition.__mro__:
         if "probability" in klass.__dict__:
             descriptor = klass.__dict__["probability"]
             break
@@ -117,43 +117,43 @@ def test_dtmc::transition_has_probability():
 
 
 
-def test_dtmc::node_is_not_abstract():
-    assert not inspect.isabstract(dtmc::Node)
+def test_dtmc_node_is_not_abstract():
+    assert not inspect.isabstract(dtmc_Node)
 
 
-def test_dtmc::node_constructor_exists():
-    assert callable(dtmc::Node.__init__)
+def test_dtmc_node_constructor_exists():
+    assert callable(dtmc_Node.__init__)
 
 
-def test_dtmc::node_constructor_args():
-    sig = inspect.signature(dtmc::Node.__init__)
+def test_dtmc_node_constructor_args():
+    sig = inspect.signature(dtmc_Node.__init__)
     params = list(sig.parameters.keys())
     assert "isFail" in params, "Missing parameter 'isFail'"
     assert "isEnd" in params, "Missing parameter 'isEnd'"
     assert "isStart" in params, "Missing parameter 'isStart'"
 
-def test_dtmc::node_has_isFail():
-    assert hasattr(dtmc::Node, "isFail")
+def test_dtmc_node_has_isFail():
+    assert hasattr(dtmc_Node, "isFail")
     descriptor = None
-    for klass in dtmc::Node.__mro__:
+    for klass in dtmc_Node.__mro__:
         if "isFail" in klass.__dict__:
             descriptor = klass.__dict__["isFail"]
             break
     assert isinstance(descriptor, property)
 
-def test_dtmc::node_has_isEnd():
-    assert hasattr(dtmc::Node, "isEnd")
+def test_dtmc_node_has_isEnd():
+    assert hasattr(dtmc_Node, "isEnd")
     descriptor = None
-    for klass in dtmc::Node.__mro__:
+    for klass in dtmc_Node.__mro__:
         if "isEnd" in klass.__dict__:
             descriptor = klass.__dict__["isEnd"]
             break
     assert isinstance(descriptor, property)
 
-def test_dtmc::node_has_isStart():
-    assert hasattr(dtmc::Node, "isStart")
+def test_dtmc_node_has_isStart():
+    assert hasattr(dtmc_Node, "isStart")
     descriptor = None
-    for klass in dtmc::Node.__mro__:
+    for klass in dtmc_Node.__mro__:
         if "isStart" in klass.__dict__:
             descriptor = klass.__dict__["isStart"]
             break
@@ -161,23 +161,23 @@ def test_dtmc::node_has_isStart():
 
 
 
-def test_dtmc::module_is_not_abstract():
-    assert not inspect.isabstract(dtmc::Module)
+def test_dtmc_module_is_not_abstract():
+    assert not inspect.isabstract(dtmc_Module)
 
 
-def test_dtmc::module_constructor_exists():
-    assert callable(dtmc::Module.__init__)
+def test_dtmc_module_constructor_exists():
+    assert callable(dtmc_Module.__init__)
 
 
-def test_dtmc::module_constructor_args():
-    sig = inspect.signature(dtmc::Module.__init__)
+def test_dtmc_module_constructor_args():
+    sig = inspect.signature(dtmc_Module.__init__)
     params = list(sig.parameters.keys())
     assert "isAutonomous" in params, "Missing parameter 'isAutonomous'"
 
-def test_dtmc::module_has_isAutonomous():
-    assert hasattr(dtmc::Module, "isAutonomous")
+def test_dtmc_module_has_isAutonomous():
+    assert hasattr(dtmc_Module, "isAutonomous")
     descriptor = None
-    for klass in dtmc::Module.__mro__:
+    for klass in dtmc_Module.__mro__:
         if "isAutonomous" in klass.__dict__:
             descriptor = klass.__dict__["isAutonomous"]
             break
@@ -185,16 +185,16 @@ def test_dtmc::module_has_isAutonomous():
 
 
 
-def test_dtmc::dtmc_is_not_abstract():
-    assert not inspect.isabstract(dtmc::Dtmc)
+def test_dtmc_dtmc_is_not_abstract():
+    assert not inspect.isabstract(dtmc_Dtmc)
 
 
-def test_dtmc::dtmc_constructor_exists():
-    assert callable(dtmc::Dtmc.__init__)
+def test_dtmc_dtmc_constructor_exists():
+    assert callable(dtmc_Dtmc.__init__)
 
 
-def test_dtmc::dtmc_constructor_args():
-    sig = inspect.signature(dtmc::Dtmc.__init__)
+def test_dtmc_dtmc_constructor_args():
+    sig = inspect.signature(dtmc_Dtmc.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,25 +212,25 @@ safe_text = st.text(
 Transition_strategy = st.builds(
     Transition,
 )
-dtmc::InvokedTransition_strategy = st.builds(
-    dtmc::InvokedTransition,
+dtmc_StandardTransition_strategy = st.builds(
+    dtmc_StandardTransition,
 )
-dtmc::StandardTransition_strategy = st.builds(
-    dtmc::StandardTransition,
+dtmc_InvokedTransition_strategy = st.builds(
+    dtmc_InvokedTransition,
 )
-dtmc::CallTransition_strategy = st.builds(
-    dtmc::CallTransition,
+dtmc_CallTransition_strategy = st.builds(
+    dtmc_CallTransition,
 )
-dtmc::SynchronizedTransition_strategy = st.builds(
-    dtmc::SynchronizedTransition,
+dtmc_SynchronizedTransition_strategy = st.builds(
+    dtmc_SynchronizedTransition,
 )
-dtmc::Transition_strategy = st.builds(
-    dtmc::Transition,
+dtmc_Transition_strategy = st.builds(
+    dtmc_Transition,
     probability=
         safe_text
 )
-dtmc::Node_strategy = st.builds(
-    dtmc::Node,
+dtmc_Node_strategy = st.builds(
+    dtmc_Node,
     isFail=
         st.booleans(),
     isEnd=
@@ -238,13 +238,13 @@ dtmc::Node_strategy = st.builds(
     isStart=
         st.booleans()
 )
-dtmc::Module_strategy = st.builds(
-    dtmc::Module,
+dtmc_Module_strategy = st.builds(
+    dtmc_Module,
     isAutonomous=
         st.booleans()
 )
-dtmc::Dtmc_strategy = st.builds(
-    dtmc::Dtmc,
+dtmc_Dtmc_strategy = st.builds(
+    dtmc_Dtmc,
 )
 
 @given(instance=Transition_strategy)
@@ -252,97 +252,82 @@ dtmc::Dtmc_strategy = st.builds(
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=dtmc::InvokedTransition_strategy)
+@given(instance=dtmc_StandardTransition_strategy)
 @settings(max_examples=50)
-def test_dtmc::invokedtransition_instantiation(instance):
-    assert isinstance(instance, dtmc::InvokedTransition)
+def test_dtmc_standardtransition_instantiation(instance):
+    assert isinstance(instance, dtmc_StandardTransition)
 
-@given(instance=dtmc::StandardTransition_strategy)
+@given(instance=dtmc_InvokedTransition_strategy)
 @settings(max_examples=50)
-def test_dtmc::standardtransition_instantiation(instance):
-    assert isinstance(instance, dtmc::StandardTransition)
+def test_dtmc_invokedtransition_instantiation(instance):
+    assert isinstance(instance, dtmc_InvokedTransition)
 
-@given(instance=dtmc::CallTransition_strategy)
+@given(instance=dtmc_CallTransition_strategy)
 @settings(max_examples=50)
-def test_dtmc::calltransition_instantiation(instance):
-    assert isinstance(instance, dtmc::CallTransition)
+def test_dtmc_calltransition_instantiation(instance):
+    assert isinstance(instance, dtmc_CallTransition)
 
-@given(instance=dtmc::SynchronizedTransition_strategy)
+@given(instance=dtmc_SynchronizedTransition_strategy)
 @settings(max_examples=50)
-def test_dtmc::synchronizedtransition_instantiation(instance):
-    assert isinstance(instance, dtmc::SynchronizedTransition)
+def test_dtmc_synchronizedtransition_instantiation(instance):
+    assert isinstance(instance, dtmc_SynchronizedTransition)
 
-@given(instance=dtmc::Transition_strategy)
+@given(instance=dtmc_Transition_strategy)
 @settings(max_examples=50)
-def test_dtmc::transition_instantiation(instance):
-    assert isinstance(instance, dtmc::Transition)
-
-@given(instance=dtmc::Transition_strategy)
-def test_dtmc::transition_probability_type(instance):
-    assert isinstance(instance.probability, str)
+def test_dtmc_transition_instantiation(instance):
+    assert isinstance(instance, dtmc_Transition)
 
 
-@given(instance=dtmc::Transition_strategy)
-def test_dtmc::transition_probability_setter(instance):
+
+@given(instance=dtmc_Transition_strategy)
+def test_dtmc_transition_probability_setter(instance):
     original = instance.probability
     instance.probability = original
     assert instance.probability == original
 
-@given(instance=dtmc::Node_strategy)
+@given(instance=dtmc_Node_strategy)
 @settings(max_examples=50)
-def test_dtmc::node_instantiation(instance):
-    assert isinstance(instance, dtmc::Node)
-
-@given(instance=dtmc::Node_strategy)
-def test_dtmc::node_isFail_type(instance):
-    assert isinstance(instance.isFail, bool)
+def test_dtmc_node_instantiation(instance):
+    assert isinstance(instance, dtmc_Node)
 
 
-@given(instance=dtmc::Node_strategy)
-def test_dtmc::node_isFail_setter(instance):
+
+@given(instance=dtmc_Node_strategy)
+def test_dtmc_node_isFail_setter(instance):
     original = instance.isFail
     instance.isFail = original
     assert instance.isFail == original
 
-@given(instance=dtmc::Node_strategy)
-def test_dtmc::node_isEnd_type(instance):
-    assert isinstance(instance.isEnd, bool)
 
 
-@given(instance=dtmc::Node_strategy)
-def test_dtmc::node_isEnd_setter(instance):
+@given(instance=dtmc_Node_strategy)
+def test_dtmc_node_isEnd_setter(instance):
     original = instance.isEnd
     instance.isEnd = original
     assert instance.isEnd == original
 
-@given(instance=dtmc::Node_strategy)
-def test_dtmc::node_isStart_type(instance):
-    assert isinstance(instance.isStart, bool)
 
 
-@given(instance=dtmc::Node_strategy)
-def test_dtmc::node_isStart_setter(instance):
+@given(instance=dtmc_Node_strategy)
+def test_dtmc_node_isStart_setter(instance):
     original = instance.isStart
     instance.isStart = original
     assert instance.isStart == original
 
-@given(instance=dtmc::Module_strategy)
+@given(instance=dtmc_Module_strategy)
 @settings(max_examples=50)
-def test_dtmc::module_instantiation(instance):
-    assert isinstance(instance, dtmc::Module)
-
-@given(instance=dtmc::Module_strategy)
-def test_dtmc::module_isAutonomous_type(instance):
-    assert isinstance(instance.isAutonomous, bool)
+def test_dtmc_module_instantiation(instance):
+    assert isinstance(instance, dtmc_Module)
 
 
-@given(instance=dtmc::Module_strategy)
-def test_dtmc::module_isAutonomous_setter(instance):
+
+@given(instance=dtmc_Module_strategy)
+def test_dtmc_module_isAutonomous_setter(instance):
     original = instance.isAutonomous
     instance.isAutonomous = original
     assert instance.isAutonomous == original
 
-@given(instance=dtmc::Dtmc_strategy)
+@given(instance=dtmc_Dtmc_strategy)
 @settings(max_examples=50)
-def test_dtmc::dtmc_instantiation(instance):
-    assert isinstance(instance, dtmc::Dtmc)
+def test_dtmc_dtmc_instantiation(instance):
+    assert isinstance(instance, dtmc_Dtmc)

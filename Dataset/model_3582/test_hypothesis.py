@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    typeA::RootA,
-    typeA::ElementA,
+from python_code import (
+    typeA_RootA,
+    typeA_ElementA,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_typea::roota_is_not_abstract():
-    assert not inspect.isabstract(typeA::RootA)
+def test_typea_roota_is_not_abstract():
+    assert not inspect.isabstract(typeA_RootA)
 
 
-def test_typea::roota_constructor_exists():
-    assert callable(typeA::RootA.__init__)
+def test_typea_roota_constructor_exists():
+    assert callable(typeA_RootA.__init__)
 
 
-def test_typea::roota_constructor_args():
-    sig = inspect.signature(typeA::RootA.__init__)
+def test_typea_roota_constructor_args():
+    sig = inspect.signature(typeA_RootA.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typea::roota_has_name():
-    assert hasattr(typeA::RootA, "name")
+def test_typea_roota_has_name():
+    assert hasattr(typeA_RootA, "name")
     descriptor = None
-    for klass in typeA::RootA.__mro__:
+    for klass in typeA_RootA.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_typea::roota_has_name():
 
 
 
-def test_typea::elementa_is_not_abstract():
-    assert not inspect.isabstract(typeA::ElementA)
+def test_typea_elementa_is_not_abstract():
+    assert not inspect.isabstract(typeA_ElementA)
 
 
-def test_typea::elementa_constructor_exists():
-    assert callable(typeA::ElementA.__init__)
+def test_typea_elementa_constructor_exists():
+    assert callable(typeA_ElementA.__init__)
 
 
-def test_typea::elementa_constructor_args():
-    sig = inspect.signature(typeA::ElementA.__init__)
+def test_typea_elementa_constructor_args():
+    sig = inspect.signature(typeA_ElementA.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typea::elementa_has_name():
-    assert hasattr(typeA::ElementA, "name")
+def test_typea_elementa_has_name():
+    assert hasattr(typeA_ElementA, "name")
     descriptor = None
-    for klass in typeA::ElementA.__mro__:
+    for klass in typeA_ElementA.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-typeA::RootA_strategy = st.builds(
-    typeA::RootA,
+typeA_RootA_strategy = st.builds(
+    typeA_RootA,
     name=
         safe_text
 )
-typeA::ElementA_strategy = st.builds(
-    typeA::ElementA,
+typeA_ElementA_strategy = st.builds(
+    typeA_ElementA,
     name=
         safe_text
 )
 
-@given(instance=typeA::RootA_strategy)
+@given(instance=typeA_RootA_strategy)
 @settings(max_examples=50)
-def test_typea::roota_instantiation(instance):
-    assert isinstance(instance, typeA::RootA)
-
-@given(instance=typeA::RootA_strategy)
-def test_typea::roota_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typea_roota_instantiation(instance):
+    assert isinstance(instance, typeA_RootA)
 
 
-@given(instance=typeA::RootA_strategy)
-def test_typea::roota_name_setter(instance):
+
+@given(instance=typeA_RootA_strategy)
+def test_typea_roota_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=typeA::ElementA_strategy)
+@given(instance=typeA_ElementA_strategy)
 @settings(max_examples=50)
-def test_typea::elementa_instantiation(instance):
-    assert isinstance(instance, typeA::ElementA)
-
-@given(instance=typeA::ElementA_strategy)
-def test_typea::elementa_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typea_elementa_instantiation(instance):
+    assert isinstance(instance, typeA_ElementA)
 
 
-@given(instance=typeA::ElementA_strategy)
-def test_typea::elementa_name_setter(instance):
+
+@given(instance=typeA_ElementA_strategy)
+def test_typea_elementa_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

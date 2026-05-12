@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sample::C,
+from python_code import (
+    sample_C,
     A,
-    sample::B,
-    sample::A,
+    sample_B,
+    sample_A,
 )
 
 # =============================================================================
@@ -18,16 +18,16 @@ from classes import (
 
 
 
-def test_sample::c_is_not_abstract():
-    assert not inspect.isabstract(sample::C)
+def test_sample_c_is_not_abstract():
+    assert not inspect.isabstract(sample_C)
 
 
-def test_sample::c_constructor_exists():
-    assert callable(sample::C.__init__)
+def test_sample_c_constructor_exists():
+    assert callable(sample_C.__init__)
 
 
-def test_sample::c_constructor_args():
-    sig = inspect.signature(sample::C.__init__)
+def test_sample_c_constructor_args():
+    sig = inspect.signature(sample_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -46,23 +46,23 @@ def test_a_constructor_args():
 
 
 
-def test_sample::b_is_not_abstract():
-    assert not inspect.isabstract(sample::B)
+def test_sample_b_is_not_abstract():
+    assert not inspect.isabstract(sample_B)
 
 
-def test_sample::b_constructor_exists():
-    assert callable(sample::B.__init__)
+def test_sample_b_constructor_exists():
+    assert callable(sample_B.__init__)
 
 
-def test_sample::b_constructor_args():
-    sig = inspect.signature(sample::B.__init__)
+def test_sample_b_constructor_args():
+    sig = inspect.signature(sample_B.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_sample::b_has_label():
-    assert hasattr(sample::B, "label")
+def test_sample_b_has_label():
+    assert hasattr(sample_B, "label")
     descriptor = None
-    for klass in sample::B.__mro__:
+    for klass in sample_B.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -70,45 +70,45 @@ def test_sample::b_has_label():
 
 
 
-def test_sample::a_is_not_abstract():
-    assert not inspect.isabstract(sample::A)
+def test_sample_a_is_not_abstract():
+    assert not inspect.isabstract(sample_A)
 
 
-def test_sample::a_constructor_exists():
-    assert callable(sample::A.__init__)
+def test_sample_a_constructor_exists():
+    assert callable(sample_A.__init__)
 
 
-def test_sample::a_constructor_args():
-    sig = inspect.signature(sample::A.__init__)
+def test_sample_a_constructor_args():
+    sig = inspect.signature(sample_A.__init__)
     params = list(sig.parameters.keys())
-    assert "quantity" in params, "Missing parameter 'quantity'"
     assert "valid" in params, "Missing parameter 'valid'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "quantity" in params, "Missing parameter 'quantity'"
 
-def test_sample::a_has_quantity():
-    assert hasattr(sample::A, "quantity")
+def test_sample_a_has_valid():
+    assert hasattr(sample_A, "valid")
     descriptor = None
-    for klass in sample::A.__mro__:
-        if "quantity" in klass.__dict__:
-            descriptor = klass.__dict__["quantity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sample::a_has_valid():
-    assert hasattr(sample::A, "valid")
-    descriptor = None
-    for klass in sample::A.__mro__:
+    for klass in sample_A.__mro__:
         if "valid" in klass.__dict__:
             descriptor = klass.__dict__["valid"]
             break
     assert isinstance(descriptor, property)
 
-def test_sample::a_has_name():
-    assert hasattr(sample::A, "name")
+def test_sample_a_has_name():
+    assert hasattr(sample_A, "name")
     descriptor = None
-    for klass in sample::A.__mro__:
+    for klass in sample_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sample_a_has_quantity():
+    assert hasattr(sample_A, "quantity")
+    descriptor = None
+    for klass in sample_A.__mro__:
+        if "quantity" in klass.__dict__:
+            descriptor = klass.__dict__["quantity"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sample::C_strategy = st.builds(
-    sample::C,
+sample_C_strategy = st.builds(
+    sample_C,
 )
 A_strategy = st.builds(
     A,
 )
-sample::B_strategy = st.builds(
-    sample::B,
+sample_B_strategy = st.builds(
+    sample_B,
     label=
         safe_text
 )
-sample::A_strategy = st.builds(
-    sample::A,
-    quantity=
-        st.integers(),
+sample_A_strategy = st.builds(
+    sample_A,
     valid=
         st.booleans(),
     name=
-        safe_text
+        safe_text,
+    quantity=
+        st.integers()
 )
 
-@given(instance=sample::C_strategy)
+@given(instance=sample_C_strategy)
 @settings(max_examples=50)
-def test_sample::c_instantiation(instance):
-    assert isinstance(instance, sample::C)
+def test_sample_c_instantiation(instance):
+    assert isinstance(instance, sample_C)
 
 @given(instance=A_strategy)
 @settings(max_examples=50)
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=sample::B_strategy)
+@given(instance=sample_B_strategy)
 @settings(max_examples=50)
-def test_sample::b_instantiation(instance):
-    assert isinstance(instance, sample::B)
-
-@given(instance=sample::B_strategy)
-def test_sample::b_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_sample_b_instantiation(instance):
+    assert isinstance(instance, sample_B)
 
 
-@given(instance=sample::B_strategy)
-def test_sample::b_label_setter(instance):
+
+@given(instance=sample_B_strategy)
+def test_sample_b_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=sample::A_strategy)
+@given(instance=sample_A_strategy)
 @settings(max_examples=50)
-def test_sample::a_instantiation(instance):
-    assert isinstance(instance, sample::A)
-
-@given(instance=sample::A_strategy)
-def test_sample::a_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
+def test_sample_a_instantiation(instance):
+    assert isinstance(instance, sample_A)
 
 
-@given(instance=sample::A_strategy)
-def test_sample::a_quantity_setter(instance):
-    original = instance.quantity
-    instance.quantity = original
-    assert instance.quantity == original
 
-@given(instance=sample::A_strategy)
-def test_sample::a_valid_type(instance):
-    assert isinstance(instance.valid, bool)
-
-
-@given(instance=sample::A_strategy)
-def test_sample::a_valid_setter(instance):
+@given(instance=sample_A_strategy)
+def test_sample_a_valid_setter(instance):
     original = instance.valid
     instance.valid = original
     assert instance.valid == original
 
-@given(instance=sample::A_strategy)
-def test_sample::a_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sample::A_strategy)
-def test_sample::a_name_setter(instance):
+@given(instance=sample_A_strategy)
+def test_sample_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=sample_A_strategy)
+def test_sample_a_quantity_setter(instance):
+    original = instance.quantity
+    instance.quantity = original
+    assert instance.quantity == original

@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     L1,
-    k5::L3,
-    k5::L2,
+    k5_L3,
+    k5_L2,
     P,
-    k5::Q,
+    k5_Q,
     N,
     A,
-    k5::J,
+    k5_J,
     M,
-    k5::N,
-    k5::L1,
-    k5::G,
+    k5_N,
+    k5_L1,
+    k5_G,
     G,
-    k5::M,
-    k5::I,
+    k5_M,
+    k5_I,
     J,
-    k5::K,
+    k5_K,
     B,
-    k5::A,
-    k5::W,
-    k5::Y,
-    k5::Z,
-    k5::P,
-    k5::C,
-    k5::X,
+    k5_A,
+    k5_W,
+    k5_Y,
+    k5_Z,
+    k5_P,
+    k5_C,
+    k5_X,
     C,
-    k5::B,
+    k5_B,
 )
 
 # =============================================================================
@@ -55,49 +55,49 @@ def test_l1_constructor_args():
 
 
 
-def test_k5::l3_is_not_abstract():
-    assert not inspect.isabstract(k5::L3)
+def test_k5_l3_is_not_abstract():
+    assert not inspect.isabstract(k5_L3)
 
 
-def test_k5::l3_constructor_exists():
-    assert callable(k5::L3.__init__)
+def test_k5_l3_constructor_exists():
+    assert callable(k5_L3.__init__)
 
 
-def test_k5::l3_constructor_args():
-    sig = inspect.signature(k5::L3.__init__)
+def test_k5_l3_constructor_args():
+    sig = inspect.signature(k5_L3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_k5::l2_is_not_abstract():
-    assert not inspect.isabstract(k5::L2)
+def test_k5_l2_is_not_abstract():
+    assert not inspect.isabstract(k5_L2)
 
 
-def test_k5::l2_constructor_exists():
-    assert callable(k5::L2.__init__)
+def test_k5_l2_constructor_exists():
+    assert callable(k5_L2.__init__)
 
 
-def test_k5::l2_constructor_args():
-    sig = inspect.signature(k5::L2.__init__)
+def test_k5_l2_constructor_args():
+    sig = inspect.signature(k5_L2.__init__)
     params = list(sig.parameters.keys())
-    assert "l1" in params, "Missing parameter 'l1'"
     assert "l2" in params, "Missing parameter 'l2'"
+    assert "l1" in params, "Missing parameter 'l1'"
 
-def test_k5::l2_has_l1():
-    assert hasattr(k5::L2, "l1")
+def test_k5_l2_has_l2():
+    assert hasattr(k5_L2, "l2")
     descriptor = None
-    for klass in k5::L2.__mro__:
-        if "l1" in klass.__dict__:
-            descriptor = klass.__dict__["l1"]
+    for klass in k5_L2.__mro__:
+        if "l2" in klass.__dict__:
+            descriptor = klass.__dict__["l2"]
             break
     assert isinstance(descriptor, property)
 
-def test_k5::l2_has_l2():
-    assert hasattr(k5::L2, "l2")
+def test_k5_l2_has_l1():
+    assert hasattr(k5_L2, "l1")
     descriptor = None
-    for klass in k5::L2.__mro__:
-        if "l2" in klass.__dict__:
-            descriptor = klass.__dict__["l2"]
+    for klass in k5_L2.__mro__:
+        if "l1" in klass.__dict__:
+            descriptor = klass.__dict__["l1"]
             break
     assert isinstance(descriptor, property)
 
@@ -117,16 +117,16 @@ def test_p_constructor_args():
 
 
 
-def test_k5::q_is_not_abstract():
-    assert not inspect.isabstract(k5::Q)
+def test_k5_q_is_not_abstract():
+    assert not inspect.isabstract(k5_Q)
 
 
-def test_k5::q_constructor_exists():
-    assert callable(k5::Q.__init__)
+def test_k5_q_constructor_exists():
+    assert callable(k5_Q.__init__)
 
 
-def test_k5::q_constructor_args():
-    sig = inspect.signature(k5::Q.__init__)
+def test_k5_q_constructor_args():
+    sig = inspect.signature(k5_Q.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,16 +159,16 @@ def test_a_constructor_args():
 
 
 
-def test_k5::j_is_not_abstract():
-    assert not inspect.isabstract(k5::J)
+def test_k5_j_is_not_abstract():
+    assert not inspect.isabstract(k5_J)
 
 
-def test_k5::j_constructor_exists():
-    assert callable(k5::J.__init__)
+def test_k5_j_constructor_exists():
+    assert callable(k5_J.__init__)
 
 
-def test_k5::j_constructor_args():
-    sig = inspect.signature(k5::J.__init__)
+def test_k5_j_constructor_args():
+    sig = inspect.signature(k5_J.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,47 +187,47 @@ def test_m_constructor_args():
 
 
 
-def test_k5::n_is_not_abstract():
-    assert not inspect.isabstract(k5::N)
+def test_k5_n_is_not_abstract():
+    assert not inspect.isabstract(k5_N)
 
 
-def test_k5::n_constructor_exists():
-    assert callable(k5::N.__init__)
+def test_k5_n_constructor_exists():
+    assert callable(k5_N.__init__)
 
 
-def test_k5::n_constructor_args():
-    sig = inspect.signature(k5::N.__init__)
+def test_k5_n_constructor_args():
+    sig = inspect.signature(k5_N.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_k5::l1_is_not_abstract():
-    assert not inspect.isabstract(k5::L1)
+def test_k5_l1_is_not_abstract():
+    assert not inspect.isabstract(k5_L1)
 
 
-def test_k5::l1_constructor_exists():
-    assert callable(k5::L1.__init__)
+def test_k5_l1_constructor_exists():
+    assert callable(k5_L1.__init__)
 
 
-def test_k5::l1_constructor_args():
-    sig = inspect.signature(k5::L1.__init__)
+def test_k5_l1_constructor_args():
+    sig = inspect.signature(k5_L1.__init__)
     params = list(sig.parameters.keys())
     assert "id1" in params, "Missing parameter 'id1'"
     assert "id2" in params, "Missing parameter 'id2'"
 
-def test_k5::l1_has_id1():
-    assert hasattr(k5::L1, "id1")
+def test_k5_l1_has_id1():
+    assert hasattr(k5_L1, "id1")
     descriptor = None
-    for klass in k5::L1.__mro__:
+    for klass in k5_L1.__mro__:
         if "id1" in klass.__dict__:
             descriptor = klass.__dict__["id1"]
             break
     assert isinstance(descriptor, property)
 
-def test_k5::l1_has_id2():
-    assert hasattr(k5::L1, "id2")
+def test_k5_l1_has_id2():
+    assert hasattr(k5_L1, "id2")
     descriptor = None
-    for klass in k5::L1.__mro__:
+    for klass in k5_L1.__mro__:
         if "id2" in klass.__dict__:
             descriptor = klass.__dict__["id2"]
             break
@@ -235,23 +235,23 @@ def test_k5::l1_has_id2():
 
 
 
-def test_k5::g_is_not_abstract():
-    assert not inspect.isabstract(k5::G)
+def test_k5_g_is_not_abstract():
+    assert not inspect.isabstract(k5_G)
 
 
-def test_k5::g_constructor_exists():
-    assert callable(k5::G.__init__)
+def test_k5_g_constructor_exists():
+    assert callable(k5_G.__init__)
 
 
-def test_k5::g_constructor_args():
-    sig = inspect.signature(k5::G.__init__)
+def test_k5_g_constructor_args():
+    sig = inspect.signature(k5_G.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_k5::g_has_name():
-    assert hasattr(k5::G, "name")
+def test_k5_g_has_name():
+    assert hasattr(k5_G, "name")
     descriptor = None
-    for klass in k5::G.__mro__:
+    for klass in k5_G.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -273,30 +273,30 @@ def test_g_constructor_args():
 
 
 
-def test_k5::m_is_not_abstract():
-    assert not inspect.isabstract(k5::M)
+def test_k5_m_is_not_abstract():
+    assert not inspect.isabstract(k5_M)
 
 
-def test_k5::m_constructor_exists():
-    assert callable(k5::M.__init__)
+def test_k5_m_constructor_exists():
+    assert callable(k5_M.__init__)
 
 
-def test_k5::m_constructor_args():
-    sig = inspect.signature(k5::M.__init__)
+def test_k5_m_constructor_args():
+    sig = inspect.signature(k5_M.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_k5::i_is_not_abstract():
-    assert not inspect.isabstract(k5::I)
+def test_k5_i_is_not_abstract():
+    assert not inspect.isabstract(k5_I)
 
 
-def test_k5::i_constructor_exists():
-    assert callable(k5::I.__init__)
+def test_k5_i_constructor_exists():
+    assert callable(k5_I.__init__)
 
 
-def test_k5::i_constructor_args():
-    sig = inspect.signature(k5::I.__init__)
+def test_k5_i_constructor_args():
+    sig = inspect.signature(k5_I.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -315,23 +315,23 @@ def test_j_constructor_args():
 
 
 
-def test_k5::k_is_not_abstract():
-    assert not inspect.isabstract(k5::K)
+def test_k5_k_is_not_abstract():
+    assert not inspect.isabstract(k5_K)
 
 
-def test_k5::k_constructor_exists():
-    assert callable(k5::K.__init__)
+def test_k5_k_constructor_exists():
+    assert callable(k5_K.__init__)
 
 
-def test_k5::k_constructor_args():
-    sig = inspect.signature(k5::K.__init__)
+def test_k5_k_constructor_args():
+    sig = inspect.signature(k5_K.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_k5::k_has_title():
-    assert hasattr(k5::K, "title")
+def test_k5_k_has_title():
+    assert hasattr(k5_K, "title")
     descriptor = None
-    for klass in k5::K.__mro__:
+    for klass in k5_K.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -353,37 +353,37 @@ def test_b_constructor_args():
 
 
 
-def test_k5::a_is_not_abstract():
-    assert not inspect.isabstract(k5::A)
+def test_k5_a_is_not_abstract():
+    assert not inspect.isabstract(k5_A)
 
 
-def test_k5::a_constructor_exists():
-    assert callable(k5::A.__init__)
+def test_k5_a_constructor_exists():
+    assert callable(k5_A.__init__)
 
 
-def test_k5::a_constructor_args():
-    sig = inspect.signature(k5::A.__init__)
+def test_k5_a_constructor_args():
+    sig = inspect.signature(k5_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_k5::w_is_not_abstract():
-    assert not inspect.isabstract(k5::W)
+def test_k5_w_is_not_abstract():
+    assert not inspect.isabstract(k5_W)
 
 
-def test_k5::w_constructor_exists():
-    assert callable(k5::W.__init__)
+def test_k5_w_constructor_exists():
+    assert callable(k5_W.__init__)
 
 
-def test_k5::w_constructor_args():
-    sig = inspect.signature(k5::W.__init__)
+def test_k5_w_constructor_args():
+    sig = inspect.signature(k5_W.__init__)
     params = list(sig.parameters.keys())
     assert "w" in params, "Missing parameter 'w'"
 
-def test_k5::w_has_w():
-    assert hasattr(k5::W, "w")
+def test_k5_w_has_w():
+    assert hasattr(k5_W, "w")
     descriptor = None
-    for klass in k5::W.__mro__:
+    for klass in k5_W.__mro__:
         if "w" in klass.__dict__:
             descriptor = klass.__dict__["w"]
             break
@@ -391,23 +391,23 @@ def test_k5::w_has_w():
 
 
 
-def test_k5::y_is_not_abstract():
-    assert not inspect.isabstract(k5::Y)
+def test_k5_y_is_not_abstract():
+    assert not inspect.isabstract(k5_Y)
 
 
-def test_k5::y_constructor_exists():
-    assert callable(k5::Y.__init__)
+def test_k5_y_constructor_exists():
+    assert callable(k5_Y.__init__)
 
 
-def test_k5::y_constructor_args():
-    sig = inspect.signature(k5::Y.__init__)
+def test_k5_y_constructor_args():
+    sig = inspect.signature(k5_Y.__init__)
     params = list(sig.parameters.keys())
     assert "y" in params, "Missing parameter 'y'"
 
-def test_k5::y_has_y():
-    assert hasattr(k5::Y, "y")
+def test_k5_y_has_y():
+    assert hasattr(k5_Y, "y")
     descriptor = None
-    for klass in k5::Y.__mro__:
+    for klass in k5_Y.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
@@ -415,88 +415,88 @@ def test_k5::y_has_y():
 
 
 
-def test_k5::z_is_not_abstract():
-    assert not inspect.isabstract(k5::Z)
+def test_k5_z_is_not_abstract():
+    assert not inspect.isabstract(k5_Z)
 
 
-def test_k5::z_constructor_exists():
-    assert callable(k5::Z.__init__)
+def test_k5_z_constructor_exists():
+    assert callable(k5_Z.__init__)
 
 
-def test_k5::z_constructor_args():
-    sig = inspect.signature(k5::Z.__init__)
+def test_k5_z_constructor_args():
+    sig = inspect.signature(k5_Z.__init__)
     params = list(sig.parameters.keys())
-    assert "z2" in params, "Missing parameter 'z2'"
     assert "z3" in params, "Missing parameter 'z3'"
     assert "z1" in params, "Missing parameter 'z1'"
+    assert "z2" in params, "Missing parameter 'z2'"
 
-def test_k5::z_has_z2():
-    assert hasattr(k5::Z, "z2")
+def test_k5_z_has_z3():
+    assert hasattr(k5_Z, "z3")
     descriptor = None
-    for klass in k5::Z.__mro__:
-        if "z2" in klass.__dict__:
-            descriptor = klass.__dict__["z2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_k5::z_has_z3():
-    assert hasattr(k5::Z, "z3")
-    descriptor = None
-    for klass in k5::Z.__mro__:
+    for klass in k5_Z.__mro__:
         if "z3" in klass.__dict__:
             descriptor = klass.__dict__["z3"]
             break
     assert isinstance(descriptor, property)
 
-def test_k5::z_has_z1():
-    assert hasattr(k5::Z, "z1")
+def test_k5_z_has_z1():
+    assert hasattr(k5_Z, "z1")
     descriptor = None
-    for klass in k5::Z.__mro__:
+    for klass in k5_Z.__mro__:
         if "z1" in klass.__dict__:
             descriptor = klass.__dict__["z1"]
             break
     assert isinstance(descriptor, property)
 
+def test_k5_z_has_z2():
+    assert hasattr(k5_Z, "z2")
+    descriptor = None
+    for klass in k5_Z.__mro__:
+        if "z2" in klass.__dict__:
+            descriptor = klass.__dict__["z2"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_k5::p_is_not_abstract():
-    assert not inspect.isabstract(k5::P)
+
+def test_k5_p_is_not_abstract():
+    assert not inspect.isabstract(k5_P)
 
 
-def test_k5::p_constructor_exists():
-    assert callable(k5::P.__init__)
+def test_k5_p_constructor_exists():
+    assert callable(k5_P.__init__)
 
 
-def test_k5::p_constructor_args():
-    sig = inspect.signature(k5::P.__init__)
+def test_k5_p_constructor_args():
+    sig = inspect.signature(k5_P.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_k5::c_is_not_abstract():
-    assert not inspect.isabstract(k5::C)
+def test_k5_c_is_not_abstract():
+    assert not inspect.isabstract(k5_C)
 
 
-def test_k5::c_constructor_exists():
-    assert callable(k5::C.__init__)
+def test_k5_c_constructor_exists():
+    assert callable(k5_C.__init__)
 
 
-def test_k5::c_constructor_args():
-    sig = inspect.signature(k5::C.__init__)
+def test_k5_c_constructor_args():
+    sig = inspect.signature(k5_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_k5::x_is_not_abstract():
-    assert not inspect.isabstract(k5::X)
+def test_k5_x_is_not_abstract():
+    assert not inspect.isabstract(k5_X)
 
 
-def test_k5::x_constructor_exists():
-    assert callable(k5::X.__init__)
+def test_k5_x_constructor_exists():
+    assert callable(k5_X.__init__)
 
 
-def test_k5::x_constructor_args():
-    sig = inspect.signature(k5::X.__init__)
+def test_k5_x_constructor_args():
+    sig = inspect.signature(k5_X.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -515,16 +515,16 @@ def test_c_constructor_args():
 
 
 
-def test_k5::b_is_not_abstract():
-    assert not inspect.isabstract(k5::B)
+def test_k5_b_is_not_abstract():
+    assert not inspect.isabstract(k5_B)
 
 
-def test_k5::b_constructor_exists():
-    assert callable(k5::B.__init__)
+def test_k5_b_constructor_exists():
+    assert callable(k5_B.__init__)
 
 
-def test_k5::b_constructor_args():
-    sig = inspect.signature(k5::B.__init__)
+def test_k5_b_constructor_args():
+    sig = inspect.signature(k5_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -542,21 +542,21 @@ safe_text = st.text(
 L1_strategy = st.builds(
     L1,
 )
-k5::L3_strategy = st.builds(
-    k5::L3,
+k5_L3_strategy = st.builds(
+    k5_L3,
 )
-k5::L2_strategy = st.builds(
-    k5::L2,
-    l1=
-        st.integers(),
+k5_L2_strategy = st.builds(
+    k5_L2,
     l2=
+        st.integers(),
+    l1=
         st.integers()
 )
 P_strategy = st.builds(
     P,
 )
-k5::Q_strategy = st.builds(
-    k5::Q,
+k5_Q_strategy = st.builds(
+    k5_Q,
 )
 N_strategy = st.builds(
     N,
@@ -564,83 +564,83 @@ N_strategy = st.builds(
 A_strategy = st.builds(
     A,
 )
-k5::J_strategy = st.builds(
-    k5::J,
+k5_J_strategy = st.builds(
+    k5_J,
 )
 M_strategy = st.builds(
     M,
 )
-k5::N_strategy = st.builds(
-    k5::N,
+k5_N_strategy = st.builds(
+    k5_N,
 )
-k5::L1_strategy = st.builds(
-    k5::L1,
+k5_L1_strategy = st.builds(
+    k5_L1,
     id1=
         safe_text,
     id2=
         st.integers()
 )
-k5::G_strategy = st.builds(
-    k5::G,
+k5_G_strategy = st.builds(
+    k5_G,
     name=
         safe_text
 )
 G_strategy = st.builds(
     G,
 )
-k5::M_strategy = st.builds(
-    k5::M,
+k5_M_strategy = st.builds(
+    k5_M,
 )
-k5::I_strategy = st.builds(
-    k5::I,
+k5_I_strategy = st.builds(
+    k5_I,
 )
 J_strategy = st.builds(
     J,
 )
-k5::K_strategy = st.builds(
-    k5::K,
+k5_K_strategy = st.builds(
+    k5_K,
     title=
         safe_text
 )
 B_strategy = st.builds(
     B,
 )
-k5::A_strategy = st.builds(
-    k5::A,
+k5_A_strategy = st.builds(
+    k5_A,
 )
-k5::W_strategy = st.builds(
-    k5::W,
+k5_W_strategy = st.builds(
+    k5_W,
     w=
         safe_text
 )
-k5::Y_strategy = st.builds(
-    k5::Y,
+k5_Y_strategy = st.builds(
+    k5_Y,
     y=
         st.integers()
 )
-k5::Z_strategy = st.builds(
-    k5::Z,
-    z2=
-        safe_text,
+k5_Z_strategy = st.builds(
+    k5_Z,
     z3=
         safe_text,
     z1=
+        safe_text,
+    z2=
         safe_text
 )
-k5::P_strategy = st.builds(
-    k5::P,
+k5_P_strategy = st.builds(
+    k5_P,
 )
-k5::C_strategy = st.builds(
-    k5::C,
+k5_C_strategy = st.builds(
+    k5_C,
 )
-k5::X_strategy = st.builds(
-    k5::X,
+k5_X_strategy = st.builds(
+    k5_X,
 )
 C_strategy = st.builds(
     C,
 )
-k5::B_strategy = st.builds(
-    k5::B,
+k5_B_strategy = st.builds(
+    k5_B,
 )
 
 @given(instance=L1_strategy)
@@ -648,47 +648,41 @@ k5::B_strategy = st.builds(
 def test_l1_instantiation(instance):
     assert isinstance(instance, L1)
 
-@given(instance=k5::L3_strategy)
+@given(instance=k5_L3_strategy)
 @settings(max_examples=50)
-def test_k5::l3_instantiation(instance):
-    assert isinstance(instance, k5::L3)
+def test_k5_l3_instantiation(instance):
+    assert isinstance(instance, k5_L3)
 
-@given(instance=k5::L2_strategy)
+@given(instance=k5_L2_strategy)
 @settings(max_examples=50)
-def test_k5::l2_instantiation(instance):
-    assert isinstance(instance, k5::L2)
-
-@given(instance=k5::L2_strategy)
-def test_k5::l2_l1_type(instance):
-    assert isinstance(instance.l1, int)
+def test_k5_l2_instantiation(instance):
+    assert isinstance(instance, k5_L2)
 
 
-@given(instance=k5::L2_strategy)
-def test_k5::l2_l1_setter(instance):
-    original = instance.l1
-    instance.l1 = original
-    assert instance.l1 == original
 
-@given(instance=k5::L2_strategy)
-def test_k5::l2_l2_type(instance):
-    assert isinstance(instance.l2, int)
-
-
-@given(instance=k5::L2_strategy)
-def test_k5::l2_l2_setter(instance):
+@given(instance=k5_L2_strategy)
+def test_k5_l2_l2_setter(instance):
     original = instance.l2
     instance.l2 = original
     assert instance.l2 == original
+
+
+
+@given(instance=k5_L2_strategy)
+def test_k5_l2_l1_setter(instance):
+    original = instance.l1
+    instance.l1 = original
+    assert instance.l1 == original
 
 @given(instance=P_strategy)
 @settings(max_examples=50)
 def test_p_instantiation(instance):
     assert isinstance(instance, P)
 
-@given(instance=k5::Q_strategy)
+@given(instance=k5_Q_strategy)
 @settings(max_examples=50)
-def test_k5::q_instantiation(instance):
-    assert isinstance(instance, k5::Q)
+def test_k5_q_instantiation(instance):
+    assert isinstance(instance, k5_Q)
 
 @given(instance=N_strategy)
 @settings(max_examples=50)
@@ -700,60 +694,51 @@ def test_n_instantiation(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=k5::J_strategy)
+@given(instance=k5_J_strategy)
 @settings(max_examples=50)
-def test_k5::j_instantiation(instance):
-    assert isinstance(instance, k5::J)
+def test_k5_j_instantiation(instance):
+    assert isinstance(instance, k5_J)
 
 @given(instance=M_strategy)
 @settings(max_examples=50)
 def test_m_instantiation(instance):
     assert isinstance(instance, M)
 
-@given(instance=k5::N_strategy)
+@given(instance=k5_N_strategy)
 @settings(max_examples=50)
-def test_k5::n_instantiation(instance):
-    assert isinstance(instance, k5::N)
+def test_k5_n_instantiation(instance):
+    assert isinstance(instance, k5_N)
 
-@given(instance=k5::L1_strategy)
+@given(instance=k5_L1_strategy)
 @settings(max_examples=50)
-def test_k5::l1_instantiation(instance):
-    assert isinstance(instance, k5::L1)
-
-@given(instance=k5::L1_strategy)
-def test_k5::l1_id1_type(instance):
-    assert isinstance(instance.id1, str)
+def test_k5_l1_instantiation(instance):
+    assert isinstance(instance, k5_L1)
 
 
-@given(instance=k5::L1_strategy)
-def test_k5::l1_id1_setter(instance):
+
+@given(instance=k5_L1_strategy)
+def test_k5_l1_id1_setter(instance):
     original = instance.id1
     instance.id1 = original
     assert instance.id1 == original
 
-@given(instance=k5::L1_strategy)
-def test_k5::l1_id2_type(instance):
-    assert isinstance(instance.id2, int)
 
 
-@given(instance=k5::L1_strategy)
-def test_k5::l1_id2_setter(instance):
+@given(instance=k5_L1_strategy)
+def test_k5_l1_id2_setter(instance):
     original = instance.id2
     instance.id2 = original
     assert instance.id2 == original
 
-@given(instance=k5::G_strategy)
+@given(instance=k5_G_strategy)
 @settings(max_examples=50)
-def test_k5::g_instantiation(instance):
-    assert isinstance(instance, k5::G)
-
-@given(instance=k5::G_strategy)
-def test_k5::g_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_k5_g_instantiation(instance):
+    assert isinstance(instance, k5_G)
 
 
-@given(instance=k5::G_strategy)
-def test_k5::g_name_setter(instance):
+
+@given(instance=k5_G_strategy)
+def test_k5_g_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -763,33 +748,30 @@ def test_k5::g_name_setter(instance):
 def test_g_instantiation(instance):
     assert isinstance(instance, G)
 
-@given(instance=k5::M_strategy)
+@given(instance=k5_M_strategy)
 @settings(max_examples=50)
-def test_k5::m_instantiation(instance):
-    assert isinstance(instance, k5::M)
+def test_k5_m_instantiation(instance):
+    assert isinstance(instance, k5_M)
 
-@given(instance=k5::I_strategy)
+@given(instance=k5_I_strategy)
 @settings(max_examples=50)
-def test_k5::i_instantiation(instance):
-    assert isinstance(instance, k5::I)
+def test_k5_i_instantiation(instance):
+    assert isinstance(instance, k5_I)
 
 @given(instance=J_strategy)
 @settings(max_examples=50)
 def test_j_instantiation(instance):
     assert isinstance(instance, J)
 
-@given(instance=k5::K_strategy)
+@given(instance=k5_K_strategy)
 @settings(max_examples=50)
-def test_k5::k_instantiation(instance):
-    assert isinstance(instance, k5::K)
-
-@given(instance=k5::K_strategy)
-def test_k5::k_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_k5_k_instantiation(instance):
+    assert isinstance(instance, k5_K)
 
 
-@given(instance=k5::K_strategy)
-def test_k5::k_title_setter(instance):
+
+@given(instance=k5_K_strategy)
+def test_k5_k_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
@@ -799,102 +781,87 @@ def test_k5::k_title_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=k5::A_strategy)
+@given(instance=k5_A_strategy)
 @settings(max_examples=50)
-def test_k5::a_instantiation(instance):
-    assert isinstance(instance, k5::A)
+def test_k5_a_instantiation(instance):
+    assert isinstance(instance, k5_A)
 
-@given(instance=k5::W_strategy)
+@given(instance=k5_W_strategy)
 @settings(max_examples=50)
-def test_k5::w_instantiation(instance):
-    assert isinstance(instance, k5::W)
-
-@given(instance=k5::W_strategy)
-def test_k5::w_w_type(instance):
-    assert isinstance(instance.w, str)
+def test_k5_w_instantiation(instance):
+    assert isinstance(instance, k5_W)
 
 
-@given(instance=k5::W_strategy)
-def test_k5::w_w_setter(instance):
+
+@given(instance=k5_W_strategy)
+def test_k5_w_w_setter(instance):
     original = instance.w
     instance.w = original
     assert instance.w == original
 
-@given(instance=k5::Y_strategy)
+@given(instance=k5_Y_strategy)
 @settings(max_examples=50)
-def test_k5::y_instantiation(instance):
-    assert isinstance(instance, k5::Y)
-
-@given(instance=k5::Y_strategy)
-def test_k5::y_y_type(instance):
-    assert isinstance(instance.y, int)
+def test_k5_y_instantiation(instance):
+    assert isinstance(instance, k5_Y)
 
 
-@given(instance=k5::Y_strategy)
-def test_k5::y_y_setter(instance):
+
+@given(instance=k5_Y_strategy)
+def test_k5_y_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=k5::Z_strategy)
+@given(instance=k5_Z_strategy)
 @settings(max_examples=50)
-def test_k5::z_instantiation(instance):
-    assert isinstance(instance, k5::Z)
-
-@given(instance=k5::Z_strategy)
-def test_k5::z_z2_type(instance):
-    assert isinstance(instance.z2, str)
+def test_k5_z_instantiation(instance):
+    assert isinstance(instance, k5_Z)
 
 
-@given(instance=k5::Z_strategy)
-def test_k5::z_z2_setter(instance):
-    original = instance.z2
-    instance.z2 = original
-    assert instance.z2 == original
 
-@given(instance=k5::Z_strategy)
-def test_k5::z_z3_type(instance):
-    assert isinstance(instance.z3, str)
-
-
-@given(instance=k5::Z_strategy)
-def test_k5::z_z3_setter(instance):
+@given(instance=k5_Z_strategy)
+def test_k5_z_z3_setter(instance):
     original = instance.z3
     instance.z3 = original
     assert instance.z3 == original
 
-@given(instance=k5::Z_strategy)
-def test_k5::z_z1_type(instance):
-    assert isinstance(instance.z1, str)
 
 
-@given(instance=k5::Z_strategy)
-def test_k5::z_z1_setter(instance):
+@given(instance=k5_Z_strategy)
+def test_k5_z_z1_setter(instance):
     original = instance.z1
     instance.z1 = original
     assert instance.z1 == original
 
-@given(instance=k5::P_strategy)
-@settings(max_examples=50)
-def test_k5::p_instantiation(instance):
-    assert isinstance(instance, k5::P)
 
-@given(instance=k5::C_strategy)
-@settings(max_examples=50)
-def test_k5::c_instantiation(instance):
-    assert isinstance(instance, k5::C)
 
-@given(instance=k5::X_strategy)
+@given(instance=k5_Z_strategy)
+def test_k5_z_z2_setter(instance):
+    original = instance.z2
+    instance.z2 = original
+    assert instance.z2 == original
+
+@given(instance=k5_P_strategy)
 @settings(max_examples=50)
-def test_k5::x_instantiation(instance):
-    assert isinstance(instance, k5::X)
+def test_k5_p_instantiation(instance):
+    assert isinstance(instance, k5_P)
+
+@given(instance=k5_C_strategy)
+@settings(max_examples=50)
+def test_k5_c_instantiation(instance):
+    assert isinstance(instance, k5_C)
+
+@given(instance=k5_X_strategy)
+@settings(max_examples=50)
+def test_k5_x_instantiation(instance):
+    assert isinstance(instance, k5_X)
 
 @given(instance=C_strategy)
 @settings(max_examples=50)
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=k5::B_strategy)
+@given(instance=k5_B_strategy)
 @settings(max_examples=50)
-def test_k5::b_instantiation(instance):
-    assert isinstance(instance, k5::B)
+def test_k5_b_instantiation(instance):
+    assert isinstance(instance, k5_B)

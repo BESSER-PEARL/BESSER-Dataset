@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::Transition,
-    trace::TimedZone,
-    trace::Automaton,
-    trace::EventPattern,
-    trace::TimedZoneTrace,
-    trace::Trace,
-    trace::TraceModel,
+from python_code import (
+    trace_Transition,
+    trace_TimedZone,
+    trace_Automaton,
+    trace_EventPattern,
+    trace_TimedZoneTrace,
+    trace_Trace,
+    trace_TraceModel,
 )
 
 # =============================================================================
@@ -21,100 +21,100 @@ from classes import (
 
 
 
-def test_trace::transition_is_not_abstract():
-    assert not inspect.isabstract(trace::Transition)
+def test_trace_transition_is_not_abstract():
+    assert not inspect.isabstract(trace_Transition)
 
 
-def test_trace::transition_constructor_exists():
-    assert callable(trace::Transition.__init__)
+def test_trace_transition_constructor_exists():
+    assert callable(trace_Transition.__init__)
 
 
-def test_trace::transition_constructor_args():
-    sig = inspect.signature(trace::Transition.__init__)
+def test_trace_transition_constructor_args():
+    sig = inspect.signature(trace_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::timedzone_is_not_abstract():
-    assert not inspect.isabstract(trace::TimedZone)
+def test_trace_timedzone_is_not_abstract():
+    assert not inspect.isabstract(trace_TimedZone)
 
 
-def test_trace::timedzone_constructor_exists():
-    assert callable(trace::TimedZone.__init__)
+def test_trace_timedzone_constructor_exists():
+    assert callable(trace_TimedZone.__init__)
 
 
-def test_trace::timedzone_constructor_args():
-    sig = inspect.signature(trace::TimedZone.__init__)
+def test_trace_timedzone_constructor_args():
+    sig = inspect.signature(trace_TimedZone.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::automaton_is_not_abstract():
-    assert not inspect.isabstract(trace::Automaton)
+def test_trace_automaton_is_not_abstract():
+    assert not inspect.isabstract(trace_Automaton)
 
 
-def test_trace::automaton_constructor_exists():
-    assert callable(trace::Automaton.__init__)
+def test_trace_automaton_constructor_exists():
+    assert callable(trace_Automaton.__init__)
 
 
-def test_trace::automaton_constructor_args():
-    sig = inspect.signature(trace::Automaton.__init__)
+def test_trace_automaton_constructor_args():
+    sig = inspect.signature(trace_Automaton.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::eventpattern_is_not_abstract():
-    assert not inspect.isabstract(trace::EventPattern)
+def test_trace_eventpattern_is_not_abstract():
+    assert not inspect.isabstract(trace_EventPattern)
 
 
-def test_trace::eventpattern_constructor_exists():
-    assert callable(trace::EventPattern.__init__)
+def test_trace_eventpattern_constructor_exists():
+    assert callable(trace_EventPattern.__init__)
 
 
-def test_trace::eventpattern_constructor_args():
-    sig = inspect.signature(trace::EventPattern.__init__)
+def test_trace_eventpattern_constructor_args():
+    sig = inspect.signature(trace_EventPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::timedzonetrace_is_not_abstract():
-    assert not inspect.isabstract(trace::TimedZoneTrace)
+def test_trace_timedzonetrace_is_not_abstract():
+    assert not inspect.isabstract(trace_TimedZoneTrace)
 
 
-def test_trace::timedzonetrace_constructor_exists():
-    assert callable(trace::TimedZoneTrace.__init__)
+def test_trace_timedzonetrace_constructor_exists():
+    assert callable(trace_TimedZoneTrace.__init__)
 
 
-def test_trace::timedzonetrace_constructor_args():
-    sig = inspect.signature(trace::TimedZoneTrace.__init__)
+def test_trace_timedzonetrace_constructor_args():
+    sig = inspect.signature(trace_TimedZoneTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::tracemodel_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceModel)
+def test_trace_tracemodel_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceModel)
 
 
-def test_trace::tracemodel_constructor_exists():
-    assert callable(trace::TraceModel.__init__)
+def test_trace_tracemodel_constructor_exists():
+    assert callable(trace_TraceModel.__init__)
 
 
-def test_trace::tracemodel_constructor_args():
-    sig = inspect.signature(trace::TraceModel.__init__)
+def test_trace_tracemodel_constructor_args():
+    sig = inspect.signature(trace_TraceModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,59 +129,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::Transition_strategy = st.builds(
-    trace::Transition,
+trace_Transition_strategy = st.builds(
+    trace_Transition,
 )
-trace::TimedZone_strategy = st.builds(
-    trace::TimedZone,
+trace_TimedZone_strategy = st.builds(
+    trace_TimedZone,
 )
-trace::Automaton_strategy = st.builds(
-    trace::Automaton,
+trace_Automaton_strategy = st.builds(
+    trace_Automaton,
 )
-trace::EventPattern_strategy = st.builds(
-    trace::EventPattern,
+trace_EventPattern_strategy = st.builds(
+    trace_EventPattern,
 )
-trace::TimedZoneTrace_strategy = st.builds(
-    trace::TimedZoneTrace,
+trace_TimedZoneTrace_strategy = st.builds(
+    trace_TimedZoneTrace,
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
-trace::TraceModel_strategy = st.builds(
-    trace::TraceModel,
+trace_TraceModel_strategy = st.builds(
+    trace_TraceModel,
 )
 
-@given(instance=trace::Transition_strategy)
+@given(instance=trace_Transition_strategy)
 @settings(max_examples=50)
-def test_trace::transition_instantiation(instance):
-    assert isinstance(instance, trace::Transition)
+def test_trace_transition_instantiation(instance):
+    assert isinstance(instance, trace_Transition)
 
-@given(instance=trace::TimedZone_strategy)
+@given(instance=trace_TimedZone_strategy)
 @settings(max_examples=50)
-def test_trace::timedzone_instantiation(instance):
-    assert isinstance(instance, trace::TimedZone)
+def test_trace_timedzone_instantiation(instance):
+    assert isinstance(instance, trace_TimedZone)
 
-@given(instance=trace::Automaton_strategy)
+@given(instance=trace_Automaton_strategy)
 @settings(max_examples=50)
-def test_trace::automaton_instantiation(instance):
-    assert isinstance(instance, trace::Automaton)
+def test_trace_automaton_instantiation(instance):
+    assert isinstance(instance, trace_Automaton)
 
-@given(instance=trace::EventPattern_strategy)
+@given(instance=trace_EventPattern_strategy)
 @settings(max_examples=50)
-def test_trace::eventpattern_instantiation(instance):
-    assert isinstance(instance, trace::EventPattern)
+def test_trace_eventpattern_instantiation(instance):
+    assert isinstance(instance, trace_EventPattern)
 
-@given(instance=trace::TimedZoneTrace_strategy)
+@given(instance=trace_TimedZoneTrace_strategy)
 @settings(max_examples=50)
-def test_trace::timedzonetrace_instantiation(instance):
-    assert isinstance(instance, trace::TimedZoneTrace)
+def test_trace_timedzonetrace_instantiation(instance):
+    assert isinstance(instance, trace_TimedZoneTrace)
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)
 
-@given(instance=trace::TraceModel_strategy)
+@given(instance=trace_TraceModel_strategy)
 @settings(max_examples=50)
-def test_trace::tracemodel_instantiation(instance):
-    assert isinstance(instance, trace::TraceModel)
+def test_trace_tracemodel_instantiation(instance):
+    assert isinstance(instance, trace_TraceModel)

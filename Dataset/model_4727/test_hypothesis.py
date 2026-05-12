@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TermReference,
-    mprologTermReference::VariableReference,
-    mprologTermReference::FunctorReference,
-    mprologTermReference::Operator,
+    mprologTermReference_VariableReference,
+    mprologTermReference_FunctorReference,
+    mprologTermReference_Operator,
     Term,
-    mprologTermReference::Parenthesis,
-    mprologTermReference::List,
-    mprologTermReference::QuotedAtom,
-    mprologTermReference::TermReference,
-    mprologTermReference::InfixExpression,
-    mprologTermReference::Variable,
-    mprologTermReference::Term,
-    mprologTermReference::Functor,
-    mprologTermReference::Body,
-    mprologTermReference::Head,
-    mprologTermReference::Clause,
-    mprologTermReference::Model,
+    mprologTermReference_QuotedAtom,
+    mprologTermReference_InfixExpression,
+    mprologTermReference_TermReference,
+    mprologTermReference_Parenthesis,
+    mprologTermReference_List,
+    mprologTermReference_Variable,
+    mprologTermReference_Term,
+    mprologTermReference_Functor,
+    mprologTermReference_Body,
+    mprologTermReference_Head,
+    mprologTermReference_Clause,
+    mprologTermReference_Model,
 )
 
 # =============================================================================
@@ -45,51 +45,51 @@ def test_termreference_constructor_args():
 
 
 
-def test_mprologtermreference::variablereference_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::VariableReference)
+def test_mprologtermreference_variablereference_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_VariableReference)
 
 
-def test_mprologtermreference::variablereference_constructor_exists():
-    assert callable(mprologTermReference::VariableReference.__init__)
+def test_mprologtermreference_variablereference_constructor_exists():
+    assert callable(mprologTermReference_VariableReference.__init__)
 
 
-def test_mprologtermreference::variablereference_constructor_args():
-    sig = inspect.signature(mprologTermReference::VariableReference.__init__)
+def test_mprologtermreference_variablereference_constructor_args():
+    sig = inspect.signature(mprologTermReference_VariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::functorreference_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::FunctorReference)
+def test_mprologtermreference_functorreference_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_FunctorReference)
 
 
-def test_mprologtermreference::functorreference_constructor_exists():
-    assert callable(mprologTermReference::FunctorReference.__init__)
+def test_mprologtermreference_functorreference_constructor_exists():
+    assert callable(mprologTermReference_FunctorReference.__init__)
 
 
-def test_mprologtermreference::functorreference_constructor_args():
-    sig = inspect.signature(mprologTermReference::FunctorReference.__init__)
+def test_mprologtermreference_functorreference_constructor_args():
+    sig = inspect.signature(mprologTermReference_FunctorReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::operator_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Operator)
+def test_mprologtermreference_operator_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Operator)
 
 
-def test_mprologtermreference::operator_constructor_exists():
-    assert callable(mprologTermReference::Operator.__init__)
+def test_mprologtermreference_operator_constructor_exists():
+    assert callable(mprologTermReference_Operator.__init__)
 
 
-def test_mprologtermreference::operator_constructor_args():
-    sig = inspect.signature(mprologTermReference::Operator.__init__)
+def test_mprologtermreference_operator_constructor_args():
+    sig = inspect.signature(mprologTermReference_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_mprologtermreference::operator_has_symbol():
-    assert hasattr(mprologTermReference::Operator, "symbol")
+def test_mprologtermreference_operator_has_symbol():
+    assert hasattr(mprologTermReference_Operator, "symbol")
     descriptor = None
-    for klass in mprologTermReference::Operator.__mro__:
+    for klass in mprologTermReference_Operator.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -111,51 +111,23 @@ def test_term_constructor_args():
 
 
 
-def test_mprologtermreference::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Parenthesis)
+def test_mprologtermreference_quotedatom_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_QuotedAtom)
 
 
-def test_mprologtermreference::parenthesis_constructor_exists():
-    assert callable(mprologTermReference::Parenthesis.__init__)
+def test_mprologtermreference_quotedatom_constructor_exists():
+    assert callable(mprologTermReference_QuotedAtom.__init__)
 
 
-def test_mprologtermreference::parenthesis_constructor_args():
-    sig = inspect.signature(mprologTermReference::Parenthesis.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mprologtermreference::list_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::List)
-
-
-def test_mprologtermreference::list_constructor_exists():
-    assert callable(mprologTermReference::List.__init__)
-
-
-def test_mprologtermreference::list_constructor_args():
-    sig = inspect.signature(mprologTermReference::List.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mprologtermreference::quotedatom_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::QuotedAtom)
-
-
-def test_mprologtermreference::quotedatom_constructor_exists():
-    assert callable(mprologTermReference::QuotedAtom.__init__)
-
-
-def test_mprologtermreference::quotedatom_constructor_args():
-    sig = inspect.signature(mprologTermReference::QuotedAtom.__init__)
+def test_mprologtermreference_quotedatom_constructor_args():
+    sig = inspect.signature(mprologTermReference_QuotedAtom.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_mprologtermreference::quotedatom_has_text():
-    assert hasattr(mprologTermReference::QuotedAtom, "text")
+def test_mprologtermreference_quotedatom_has_text():
+    assert hasattr(mprologTermReference_QuotedAtom, "text")
     descriptor = None
-    for klass in mprologTermReference::QuotedAtom.__mro__:
+    for klass in mprologTermReference_QuotedAtom.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -163,51 +135,79 @@ def test_mprologtermreference::quotedatom_has_text():
 
 
 
-def test_mprologtermreference::termreference_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::TermReference)
+def test_mprologtermreference_infixexpression_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_InfixExpression)
 
 
-def test_mprologtermreference::termreference_constructor_exists():
-    assert callable(mprologTermReference::TermReference.__init__)
+def test_mprologtermreference_infixexpression_constructor_exists():
+    assert callable(mprologTermReference_InfixExpression.__init__)
 
 
-def test_mprologtermreference::termreference_constructor_args():
-    sig = inspect.signature(mprologTermReference::TermReference.__init__)
+def test_mprologtermreference_infixexpression_constructor_args():
+    sig = inspect.signature(mprologTermReference_InfixExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::infixexpression_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::InfixExpression)
+def test_mprologtermreference_termreference_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_TermReference)
 
 
-def test_mprologtermreference::infixexpression_constructor_exists():
-    assert callable(mprologTermReference::InfixExpression.__init__)
+def test_mprologtermreference_termreference_constructor_exists():
+    assert callable(mprologTermReference_TermReference.__init__)
 
 
-def test_mprologtermreference::infixexpression_constructor_args():
-    sig = inspect.signature(mprologTermReference::InfixExpression.__init__)
+def test_mprologtermreference_termreference_constructor_args():
+    sig = inspect.signature(mprologTermReference_TermReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::variable_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Variable)
+def test_mprologtermreference_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Parenthesis)
 
 
-def test_mprologtermreference::variable_constructor_exists():
-    assert callable(mprologTermReference::Variable.__init__)
+def test_mprologtermreference_parenthesis_constructor_exists():
+    assert callable(mprologTermReference_Parenthesis.__init__)
 
 
-def test_mprologtermreference::variable_constructor_args():
-    sig = inspect.signature(mprologTermReference::Variable.__init__)
+def test_mprologtermreference_parenthesis_constructor_args():
+    sig = inspect.signature(mprologTermReference_Parenthesis.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mprologtermreference_list_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_List)
+
+
+def test_mprologtermreference_list_constructor_exists():
+    assert callable(mprologTermReference_List.__init__)
+
+
+def test_mprologtermreference_list_constructor_args():
+    sig = inspect.signature(mprologTermReference_List.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mprologtermreference_variable_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Variable)
+
+
+def test_mprologtermreference_variable_constructor_exists():
+    assert callable(mprologTermReference_Variable.__init__)
+
+
+def test_mprologtermreference_variable_constructor_args():
+    sig = inspect.signature(mprologTermReference_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mprologtermreference::variable_has_name():
-    assert hasattr(mprologTermReference::Variable, "name")
+def test_mprologtermreference_variable_has_name():
+    assert hasattr(mprologTermReference_Variable, "name")
     descriptor = None
-    for klass in mprologTermReference::Variable.__mro__:
+    for klass in mprologTermReference_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -215,37 +215,37 @@ def test_mprologtermreference::variable_has_name():
 
 
 
-def test_mprologtermreference::term_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Term)
+def test_mprologtermreference_term_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Term)
 
 
-def test_mprologtermreference::term_constructor_exists():
-    assert callable(mprologTermReference::Term.__init__)
+def test_mprologtermreference_term_constructor_exists():
+    assert callable(mprologTermReference_Term.__init__)
 
 
-def test_mprologtermreference::term_constructor_args():
-    sig = inspect.signature(mprologTermReference::Term.__init__)
+def test_mprologtermreference_term_constructor_args():
+    sig = inspect.signature(mprologTermReference_Term.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::functor_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Functor)
+def test_mprologtermreference_functor_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Functor)
 
 
-def test_mprologtermreference::functor_constructor_exists():
-    assert callable(mprologTermReference::Functor.__init__)
+def test_mprologtermreference_functor_constructor_exists():
+    assert callable(mprologTermReference_Functor.__init__)
 
 
-def test_mprologtermreference::functor_constructor_args():
-    sig = inspect.signature(mprologTermReference::Functor.__init__)
+def test_mprologtermreference_functor_constructor_args():
+    sig = inspect.signature(mprologTermReference_Functor.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_mprologtermreference::functor_has_text():
-    assert hasattr(mprologTermReference::Functor, "text")
+def test_mprologtermreference_functor_has_text():
+    assert hasattr(mprologTermReference_Functor, "text")
     descriptor = None
-    for klass in mprologTermReference::Functor.__mro__:
+    for klass in mprologTermReference_Functor.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -253,65 +253,65 @@ def test_mprologtermreference::functor_has_text():
 
 
 
-def test_mprologtermreference::body_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Body)
+def test_mprologtermreference_body_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Body)
 
 
-def test_mprologtermreference::body_constructor_exists():
-    assert callable(mprologTermReference::Body.__init__)
+def test_mprologtermreference_body_constructor_exists():
+    assert callable(mprologTermReference_Body.__init__)
 
 
-def test_mprologtermreference::body_constructor_args():
-    sig = inspect.signature(mprologTermReference::Body.__init__)
+def test_mprologtermreference_body_constructor_args():
+    sig = inspect.signature(mprologTermReference_Body.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::head_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Head)
+def test_mprologtermreference_head_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Head)
 
 
-def test_mprologtermreference::head_constructor_exists():
-    assert callable(mprologTermReference::Head.__init__)
+def test_mprologtermreference_head_constructor_exists():
+    assert callable(mprologTermReference_Head.__init__)
 
 
-def test_mprologtermreference::head_constructor_args():
-    sig = inspect.signature(mprologTermReference::Head.__init__)
+def test_mprologtermreference_head_constructor_args():
+    sig = inspect.signature(mprologTermReference_Head.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::clause_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Clause)
+def test_mprologtermreference_clause_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Clause)
 
 
-def test_mprologtermreference::clause_constructor_exists():
-    assert callable(mprologTermReference::Clause.__init__)
+def test_mprologtermreference_clause_constructor_exists():
+    assert callable(mprologTermReference_Clause.__init__)
 
 
-def test_mprologtermreference::clause_constructor_args():
-    sig = inspect.signature(mprologTermReference::Clause.__init__)
+def test_mprologtermreference_clause_constructor_args():
+    sig = inspect.signature(mprologTermReference_Clause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mprologtermreference::model_is_not_abstract():
-    assert not inspect.isabstract(mprologTermReference::Model)
+def test_mprologtermreference_model_is_not_abstract():
+    assert not inspect.isabstract(mprologTermReference_Model)
 
 
-def test_mprologtermreference::model_constructor_exists():
-    assert callable(mprologTermReference::Model.__init__)
+def test_mprologtermreference_model_constructor_exists():
+    assert callable(mprologTermReference_Model.__init__)
 
 
-def test_mprologtermreference::model_constructor_args():
-    sig = inspect.signature(mprologTermReference::Model.__init__)
+def test_mprologtermreference_model_constructor_args():
+    sig = inspect.signature(mprologTermReference_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mprologtermreference::model_has_name():
-    assert hasattr(mprologTermReference::Model, "name")
+def test_mprologtermreference_model_has_name():
+    assert hasattr(mprologTermReference_Model, "name")
     descriptor = None
-    for klass in mprologTermReference::Model.__mro__:
+    for klass in mprologTermReference_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -332,61 +332,61 @@ safe_text = st.text(
 TermReference_strategy = st.builds(
     TermReference,
 )
-mprologTermReference::VariableReference_strategy = st.builds(
-    mprologTermReference::VariableReference,
+mprologTermReference_VariableReference_strategy = st.builds(
+    mprologTermReference_VariableReference,
 )
-mprologTermReference::FunctorReference_strategy = st.builds(
-    mprologTermReference::FunctorReference,
+mprologTermReference_FunctorReference_strategy = st.builds(
+    mprologTermReference_FunctorReference,
 )
-mprologTermReference::Operator_strategy = st.builds(
-    mprologTermReference::Operator,
+mprologTermReference_Operator_strategy = st.builds(
+    mprologTermReference_Operator,
     symbol=
         safe_text
 )
 Term_strategy = st.builds(
     Term,
 )
-mprologTermReference::Parenthesis_strategy = st.builds(
-    mprologTermReference::Parenthesis,
-)
-mprologTermReference::List_strategy = st.builds(
-    mprologTermReference::List,
-)
-mprologTermReference::QuotedAtom_strategy = st.builds(
-    mprologTermReference::QuotedAtom,
+mprologTermReference_QuotedAtom_strategy = st.builds(
+    mprologTermReference_QuotedAtom,
     text=
         safe_text
 )
-mprologTermReference::TermReference_strategy = st.builds(
-    mprologTermReference::TermReference,
+mprologTermReference_InfixExpression_strategy = st.builds(
+    mprologTermReference_InfixExpression,
 )
-mprologTermReference::InfixExpression_strategy = st.builds(
-    mprologTermReference::InfixExpression,
+mprologTermReference_TermReference_strategy = st.builds(
+    mprologTermReference_TermReference,
 )
-mprologTermReference::Variable_strategy = st.builds(
-    mprologTermReference::Variable,
+mprologTermReference_Parenthesis_strategy = st.builds(
+    mprologTermReference_Parenthesis,
+)
+mprologTermReference_List_strategy = st.builds(
+    mprologTermReference_List,
+)
+mprologTermReference_Variable_strategy = st.builds(
+    mprologTermReference_Variable,
     name=
         safe_text
 )
-mprologTermReference::Term_strategy = st.builds(
-    mprologTermReference::Term,
+mprologTermReference_Term_strategy = st.builds(
+    mprologTermReference_Term,
 )
-mprologTermReference::Functor_strategy = st.builds(
-    mprologTermReference::Functor,
+mprologTermReference_Functor_strategy = st.builds(
+    mprologTermReference_Functor,
     text=
         safe_text
 )
-mprologTermReference::Body_strategy = st.builds(
-    mprologTermReference::Body,
+mprologTermReference_Body_strategy = st.builds(
+    mprologTermReference_Body,
 )
-mprologTermReference::Head_strategy = st.builds(
-    mprologTermReference::Head,
+mprologTermReference_Head_strategy = st.builds(
+    mprologTermReference_Head,
 )
-mprologTermReference::Clause_strategy = st.builds(
-    mprologTermReference::Clause,
+mprologTermReference_Clause_strategy = st.builds(
+    mprologTermReference_Clause,
 )
-mprologTermReference::Model_strategy = st.builds(
-    mprologTermReference::Model,
+mprologTermReference_Model_strategy = st.builds(
+    mprologTermReference_Model,
     name=
         safe_text
 )
@@ -396,28 +396,25 @@ mprologTermReference::Model_strategy = st.builds(
 def test_termreference_instantiation(instance):
     assert isinstance(instance, TermReference)
 
-@given(instance=mprologTermReference::VariableReference_strategy)
+@given(instance=mprologTermReference_VariableReference_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::variablereference_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::VariableReference)
+def test_mprologtermreference_variablereference_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_VariableReference)
 
-@given(instance=mprologTermReference::FunctorReference_strategy)
+@given(instance=mprologTermReference_FunctorReference_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::functorreference_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::FunctorReference)
+def test_mprologtermreference_functorreference_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_FunctorReference)
 
-@given(instance=mprologTermReference::Operator_strategy)
+@given(instance=mprologTermReference_Operator_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::operator_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Operator)
-
-@given(instance=mprologTermReference::Operator_strategy)
-def test_mprologtermreference::operator_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_mprologtermreference_operator_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Operator)
 
 
-@given(instance=mprologTermReference::Operator_strategy)
-def test_mprologtermreference::operator_symbol_setter(instance):
+
+@given(instance=mprologTermReference_Operator_strategy)
+def test_mprologtermreference_operator_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
@@ -427,106 +424,94 @@ def test_mprologtermreference::operator_symbol_setter(instance):
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=mprologTermReference::Parenthesis_strategy)
+@given(instance=mprologTermReference_QuotedAtom_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::parenthesis_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Parenthesis)
-
-@given(instance=mprologTermReference::List_strategy)
-@settings(max_examples=50)
-def test_mprologtermreference::list_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::List)
-
-@given(instance=mprologTermReference::QuotedAtom_strategy)
-@settings(max_examples=50)
-def test_mprologtermreference::quotedatom_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::QuotedAtom)
-
-@given(instance=mprologTermReference::QuotedAtom_strategy)
-def test_mprologtermreference::quotedatom_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_mprologtermreference_quotedatom_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_QuotedAtom)
 
 
-@given(instance=mprologTermReference::QuotedAtom_strategy)
-def test_mprologtermreference::quotedatom_text_setter(instance):
+
+@given(instance=mprologTermReference_QuotedAtom_strategy)
+def test_mprologtermreference_quotedatom_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=mprologTermReference::TermReference_strategy)
+@given(instance=mprologTermReference_InfixExpression_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::termreference_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::TermReference)
+def test_mprologtermreference_infixexpression_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_InfixExpression)
 
-@given(instance=mprologTermReference::InfixExpression_strategy)
+@given(instance=mprologTermReference_TermReference_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::infixexpression_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::InfixExpression)
+def test_mprologtermreference_termreference_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_TermReference)
 
-@given(instance=mprologTermReference::Variable_strategy)
+@given(instance=mprologTermReference_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::variable_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Variable)
+def test_mprologtermreference_parenthesis_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Parenthesis)
 
-@given(instance=mprologTermReference::Variable_strategy)
-def test_mprologtermreference::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=mprologTermReference_List_strategy)
+@settings(max_examples=50)
+def test_mprologtermreference_list_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_List)
+
+@given(instance=mprologTermReference_Variable_strategy)
+@settings(max_examples=50)
+def test_mprologtermreference_variable_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Variable)
 
 
-@given(instance=mprologTermReference::Variable_strategy)
-def test_mprologtermreference::variable_name_setter(instance):
+
+@given(instance=mprologTermReference_Variable_strategy)
+def test_mprologtermreference_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mprologTermReference::Term_strategy)
+@given(instance=mprologTermReference_Term_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::term_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Term)
+def test_mprologtermreference_term_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Term)
 
-@given(instance=mprologTermReference::Functor_strategy)
+@given(instance=mprologTermReference_Functor_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::functor_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Functor)
-
-@given(instance=mprologTermReference::Functor_strategy)
-def test_mprologtermreference::functor_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_mprologtermreference_functor_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Functor)
 
 
-@given(instance=mprologTermReference::Functor_strategy)
-def test_mprologtermreference::functor_text_setter(instance):
+
+@given(instance=mprologTermReference_Functor_strategy)
+def test_mprologtermreference_functor_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=mprologTermReference::Body_strategy)
+@given(instance=mprologTermReference_Body_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::body_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Body)
+def test_mprologtermreference_body_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Body)
 
-@given(instance=mprologTermReference::Head_strategy)
+@given(instance=mprologTermReference_Head_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::head_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Head)
+def test_mprologtermreference_head_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Head)
 
-@given(instance=mprologTermReference::Clause_strategy)
+@given(instance=mprologTermReference_Clause_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::clause_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Clause)
+def test_mprologtermreference_clause_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Clause)
 
-@given(instance=mprologTermReference::Model_strategy)
+@given(instance=mprologTermReference_Model_strategy)
 @settings(max_examples=50)
-def test_mprologtermreference::model_instantiation(instance):
-    assert isinstance(instance, mprologTermReference::Model)
-
-@given(instance=mprologTermReference::Model_strategy)
-def test_mprologtermreference::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mprologtermreference_model_instantiation(instance):
+    assert isinstance(instance, mprologTermReference_Model)
 
 
-@given(instance=mprologTermReference::Model_strategy)
-def test_mprologtermreference::model_name_setter(instance):
+
+@given(instance=mprologTermReference_Model_strategy)
+def test_mprologtermreference_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

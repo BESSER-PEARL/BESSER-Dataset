@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Score,
@@ -15,8 +15,8 @@ from python_code import (
     Group,
     Deck,
     TankProperties,
-    Theme,
     CarProperties,
+    Theme,
 )
 
 # =============================================================================
@@ -50,17 +50,8 @@ def test_theme1_constructor_exists():
 def test_theme1_constructor_args():
     sig = inspect.signature(Theme1.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "year" in params, "Missing parameter 'year'"
-
-def test_theme1_has_name():
-    assert hasattr(Theme1, "name")
-    descriptor = None
-    for klass in Theme1.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_theme1_has_year():
     assert hasattr(Theme1, "year")
@@ -68,6 +59,15 @@ def test_theme1_has_year():
     for klass in Theme1.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_theme1_has_name():
+    assert hasattr(Theme1, "name")
+    descriptor = None
+    for klass in Theme1.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -84,17 +84,8 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "theme" in params, "Missing parameter 'theme'"
-
-def test_card_has_ID():
-    assert hasattr(Card, "ID")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ID" in params, "Missing parameter 'ID'"
 
 def test_card_has_theme():
     assert hasattr(Card, "theme")
@@ -102,6 +93,15 @@ def test_card_has_theme():
     for klass in Card.__mro__:
         if "theme" in klass.__dict__:
             descriptor = klass.__dict__["theme"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_ID():
+    assert hasattr(Card, "ID")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -180,17 +180,8 @@ def test_group_constructor_exists():
 def test_group_constructor_args():
     sig = inspect.signature(Group.__init__)
     params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_group_has_ID():
-    assert hasattr(Group, "ID")
-    descriptor = None
-    for klass in Group.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ID" in params, "Missing parameter 'ID'"
 
 def test_group_has_name():
     assert hasattr(Group, "name")
@@ -198,6 +189,15 @@ def test_group_has_name():
     for klass in Group.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_group_has_ID():
+    assert hasattr(Group, "ID")
+    descriptor = None
+    for klass in Group.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -228,19 +228,6 @@ def test_tankproperties_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TankProperties"
 
-def test_theme_exists():
-    # Check that the Enumeration exists
-    assert Theme is not None
-
-def test_theme_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Theme]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Theme"
-
 def test_carproperties_exists():
     # Check that the Enumeration exists
     assert CarProperties is not None
@@ -253,6 +240,19 @@ def test_carproperties_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CarProperties"
+
+def test_theme_exists():
+    # Check that the Enumeration exists
+    assert Theme is not None
+
+def test_theme_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Theme]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Theme"
 
 
 # =============================================================================
@@ -271,17 +271,17 @@ Score_strategy = st.builds(
 )
 Theme1_strategy = st.builds(
     Theme1,
-    name=
-        safe_text,
     year=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 Card_strategy = st.builds(
     Card,
-    ID=
-        safe_text,
     theme=
-        st.none()
+        st.none(),
+    ID=
+        safe_text
 )
 Player_strategy = st.builds(
     Player,
@@ -298,10 +298,10 @@ Avatar_strategy = st.builds(
 )
 Group_strategy = st.builds(
     Group,
-    ID=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    ID=
+        st.integers()
 )
 Deck_strategy = st.builds(
     Deck,
@@ -317,20 +317,6 @@ def test_score_instantiation(instance):
 def test_theme1_instantiation(instance):
     assert isinstance(instance, Theme1)
 
-@given(instance=Theme1_strategy)
-def test_theme1_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Theme1_strategy)
-def test_theme1_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Theme1_strategy)
-def test_theme1_year_type(instance):
-    assert isinstance(instance.year, int)
 
 
 @given(instance=Theme1_strategy)
@@ -339,25 +325,19 @@ def test_theme1_year_setter(instance):
     instance.year = original
     assert instance.year == original
 
+
+
+@given(instance=Theme1_strategy)
+def test_theme1_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=Card_strategy)
 @settings(max_examples=50)
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_ID_type(instance):
-    assert isinstance(instance.ID, str)
-
-
-@given(instance=Card_strategy)
-def test_card_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
-@given(instance=Card_strategy)
-def test_card_theme_type(instance):
-    assert isinstance(instance.theme, theme)
 
 
 @given(instance=Card_strategy)
@@ -366,14 +346,19 @@ def test_card_theme_setter(instance):
     instance.theme = original
     assert instance.theme == original
 
+
+
+@given(instance=Card_strategy)
+def test_card_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
 @given(instance=Player_strategy)
 @settings(max_examples=50)
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -387,9 +372,6 @@ def test_player_name_setter(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Game_strategy)
@@ -408,20 +390,6 @@ def test_avatar_instantiation(instance):
 def test_group_instantiation(instance):
     assert isinstance(instance, Group)
 
-@given(instance=Group_strategy)
-def test_group_ID_type(instance):
-    assert isinstance(instance.ID, int)
-
-
-@given(instance=Group_strategy)
-def test_group_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
-@given(instance=Group_strategy)
-def test_group_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Group_strategy)
@@ -429,6 +397,14 @@ def test_group_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Group_strategy)
+def test_group_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
 
 @given(instance=Deck_strategy)
 @settings(max_examples=50)

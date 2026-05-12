@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Constraint,
-    UML2::IntervalConstraint,
-    UML2::InteractionConstraint,
-    UML2::Operation,
-    UML2::Constraint,
+    UML2_IntervalConstraint,
+    UML2_InteractionConstraint,
+    UML2_Operation,
+    UML2_Constraint,
     IntervalConstraint,
-    UML2::TimeConstraint,
-    UML2::DurationConstraint,
+    UML2_TimeConstraint,
+    UML2_DurationConstraint,
 )
 
 # =============================================================================
@@ -36,51 +36,51 @@ def test_constraint_constructor_args():
 
 
 
-def test_uml2::intervalconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::IntervalConstraint)
+def test_uml2_intervalconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_IntervalConstraint)
 
 
-def test_uml2::intervalconstraint_constructor_exists():
-    assert callable(UML2::IntervalConstraint.__init__)
+def test_uml2_intervalconstraint_constructor_exists():
+    assert callable(UML2_IntervalConstraint.__init__)
 
 
-def test_uml2::intervalconstraint_constructor_args():
-    sig = inspect.signature(UML2::IntervalConstraint.__init__)
+def test_uml2_intervalconstraint_constructor_args():
+    sig = inspect.signature(UML2_IntervalConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::interactionconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::InteractionConstraint)
+def test_uml2_interactionconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_InteractionConstraint)
 
 
-def test_uml2::interactionconstraint_constructor_exists():
-    assert callable(UML2::InteractionConstraint.__init__)
+def test_uml2_interactionconstraint_constructor_exists():
+    assert callable(UML2_InteractionConstraint.__init__)
 
 
-def test_uml2::interactionconstraint_constructor_args():
-    sig = inspect.signature(UML2::InteractionConstraint.__init__)
+def test_uml2_interactionconstraint_constructor_args():
+    sig = inspect.signature(UML2_InteractionConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::operation_is_not_abstract():
-    assert not inspect.isabstract(UML2::Operation)
+def test_uml2_operation_is_not_abstract():
+    assert not inspect.isabstract(UML2_Operation)
 
 
-def test_uml2::operation_constructor_exists():
-    assert callable(UML2::Operation.__init__)
+def test_uml2_operation_constructor_exists():
+    assert callable(UML2_Operation.__init__)
 
 
-def test_uml2::operation_constructor_args():
-    sig = inspect.signature(UML2::Operation.__init__)
+def test_uml2_operation_constructor_args():
+    sig = inspect.signature(UML2_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "isQuery" in params, "Missing parameter 'isQuery'"
 
-def test_uml2::operation_has_isQuery():
-    assert hasattr(UML2::Operation, "isQuery")
+def test_uml2_operation_has_isQuery():
+    assert hasattr(UML2_Operation, "isQuery")
     descriptor = None
-    for klass in UML2::Operation.__mro__:
+    for klass in UML2_Operation.__mro__:
         if "isQuery" in klass.__dict__:
             descriptor = klass.__dict__["isQuery"]
             break
@@ -88,16 +88,16 @@ def test_uml2::operation_has_isQuery():
 
 
 
-def test_uml2::constraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::Constraint)
+def test_uml2_constraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_Constraint)
 
 
-def test_uml2::constraint_constructor_exists():
-    assert callable(UML2::Constraint.__init__)
+def test_uml2_constraint_constructor_exists():
+    assert callable(UML2_Constraint.__init__)
 
 
-def test_uml2::constraint_constructor_args():
-    sig = inspect.signature(UML2::Constraint.__init__)
+def test_uml2_constraint_constructor_args():
+    sig = inspect.signature(UML2_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -116,30 +116,30 @@ def test_intervalconstraint_constructor_args():
 
 
 
-def test_uml2::timeconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::TimeConstraint)
+def test_uml2_timeconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_TimeConstraint)
 
 
-def test_uml2::timeconstraint_constructor_exists():
-    assert callable(UML2::TimeConstraint.__init__)
+def test_uml2_timeconstraint_constructor_exists():
+    assert callable(UML2_TimeConstraint.__init__)
 
 
-def test_uml2::timeconstraint_constructor_args():
-    sig = inspect.signature(UML2::TimeConstraint.__init__)
+def test_uml2_timeconstraint_constructor_args():
+    sig = inspect.signature(UML2_TimeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::durationconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::DurationConstraint)
+def test_uml2_durationconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_DurationConstraint)
 
 
-def test_uml2::durationconstraint_constructor_exists():
-    assert callable(UML2::DurationConstraint.__init__)
+def test_uml2_durationconstraint_constructor_exists():
+    assert callable(UML2_DurationConstraint.__init__)
 
 
-def test_uml2::durationconstraint_constructor_args():
-    sig = inspect.signature(UML2::DurationConstraint.__init__)
+def test_uml2_durationconstraint_constructor_args():
+    sig = inspect.signature(UML2_DurationConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,28 +157,28 @@ safe_text = st.text(
 Constraint_strategy = st.builds(
     Constraint,
 )
-UML2::IntervalConstraint_strategy = st.builds(
-    UML2::IntervalConstraint,
+UML2_IntervalConstraint_strategy = st.builds(
+    UML2_IntervalConstraint,
 )
-UML2::InteractionConstraint_strategy = st.builds(
-    UML2::InteractionConstraint,
+UML2_InteractionConstraint_strategy = st.builds(
+    UML2_InteractionConstraint,
 )
-UML2::Operation_strategy = st.builds(
-    UML2::Operation,
+UML2_Operation_strategy = st.builds(
+    UML2_Operation,
     isQuery=
         st.booleans()
 )
-UML2::Constraint_strategy = st.builds(
-    UML2::Constraint,
+UML2_Constraint_strategy = st.builds(
+    UML2_Constraint,
 )
 IntervalConstraint_strategy = st.builds(
     IntervalConstraint,
 )
-UML2::TimeConstraint_strategy = st.builds(
-    UML2::TimeConstraint,
+UML2_TimeConstraint_strategy = st.builds(
+    UML2_TimeConstraint,
 )
-UML2::DurationConstraint_strategy = st.builds(
-    UML2::DurationConstraint,
+UML2_DurationConstraint_strategy = st.builds(
+    UML2_DurationConstraint,
 )
 
 @given(instance=Constraint_strategy)
@@ -186,48 +186,45 @@ UML2::DurationConstraint_strategy = st.builds(
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=UML2::IntervalConstraint_strategy)
+@given(instance=UML2_IntervalConstraint_strategy)
 @settings(max_examples=50)
-def test_uml2::intervalconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::IntervalConstraint)
+def test_uml2_intervalconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_IntervalConstraint)
 
-@given(instance=UML2::InteractionConstraint_strategy)
+@given(instance=UML2_InteractionConstraint_strategy)
 @settings(max_examples=50)
-def test_uml2::interactionconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::InteractionConstraint)
+def test_uml2_interactionconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_InteractionConstraint)
 
-@given(instance=UML2::Operation_strategy)
+@given(instance=UML2_Operation_strategy)
 @settings(max_examples=50)
-def test_uml2::operation_instantiation(instance):
-    assert isinstance(instance, UML2::Operation)
-
-@given(instance=UML2::Operation_strategy)
-def test_uml2::operation_isQuery_type(instance):
-    assert isinstance(instance.isQuery, bool)
+def test_uml2_operation_instantiation(instance):
+    assert isinstance(instance, UML2_Operation)
 
 
-@given(instance=UML2::Operation_strategy)
-def test_uml2::operation_isQuery_setter(instance):
+
+@given(instance=UML2_Operation_strategy)
+def test_uml2_operation_isQuery_setter(instance):
     original = instance.isQuery
     instance.isQuery = original
     assert instance.isQuery == original
 
-@given(instance=UML2::Constraint_strategy)
+@given(instance=UML2_Constraint_strategy)
 @settings(max_examples=50)
-def test_uml2::constraint_instantiation(instance):
-    assert isinstance(instance, UML2::Constraint)
+def test_uml2_constraint_instantiation(instance):
+    assert isinstance(instance, UML2_Constraint)
 
 @given(instance=IntervalConstraint_strategy)
 @settings(max_examples=50)
 def test_intervalconstraint_instantiation(instance):
     assert isinstance(instance, IntervalConstraint)
 
-@given(instance=UML2::TimeConstraint_strategy)
+@given(instance=UML2_TimeConstraint_strategy)
 @settings(max_examples=50)
-def test_uml2::timeconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::TimeConstraint)
+def test_uml2_timeconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_TimeConstraint)
 
-@given(instance=UML2::DurationConstraint_strategy)
+@given(instance=UML2_DurationConstraint_strategy)
 @settings(max_examples=50)
-def test_uml2::durationconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::DurationConstraint)
+def test_uml2_durationconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_DurationConstraint)

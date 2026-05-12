@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    companies::Visitable,
-    companies::CSTrace,
+from python_code import (
+    companies_Visitable,
+    companies_CSTrace,
     CSTrace,
-    companies::department::manager,
-    companies::department,
-    companies::company,
-    companies::employee,
-    companies::department::employees,
+    companies_department,
+    companies_company,
+    companies_employee,
+    companies_department_employees,
+    companies_department_manager,
 )
 
 # =============================================================================
@@ -22,30 +22,30 @@ from classes import (
 
 
 
-def test_companies::visitable_is_not_abstract():
-    assert not inspect.isabstract(companies::Visitable)
+def test_companies_visitable_is_not_abstract():
+    assert not inspect.isabstract(companies_Visitable)
 
 
-def test_companies::visitable_constructor_exists():
-    assert callable(companies::Visitable.__init__)
+def test_companies_visitable_constructor_exists():
+    assert callable(companies_Visitable.__init__)
 
 
-def test_companies::visitable_constructor_args():
-    sig = inspect.signature(companies::Visitable.__init__)
+def test_companies_visitable_constructor_args():
+    sig = inspect.signature(companies_Visitable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_companies::cstrace_is_not_abstract():
-    assert not inspect.isabstract(companies::CSTrace)
+def test_companies_cstrace_is_not_abstract():
+    assert not inspect.isabstract(companies_CSTrace)
 
 
-def test_companies::cstrace_constructor_exists():
-    assert callable(companies::CSTrace.__init__)
+def test_companies_cstrace_constructor_exists():
+    assert callable(companies_CSTrace.__init__)
 
 
-def test_companies::cstrace_constructor_args():
-    sig = inspect.signature(companies::CSTrace.__init__)
+def test_companies_cstrace_constructor_args():
+    sig = inspect.signature(companies_CSTrace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,37 +64,23 @@ def test_cstrace_constructor_args():
 
 
 
-def test_companies::department::manager_is_not_abstract():
-    assert not inspect.isabstract(companies::department::manager)
+def test_companies_department_is_not_abstract():
+    assert not inspect.isabstract(companies_department)
 
 
-def test_companies::department::manager_constructor_exists():
-    assert callable(companies::department::manager.__init__)
+def test_companies_department_constructor_exists():
+    assert callable(companies_department.__init__)
 
 
-def test_companies::department::manager_constructor_args():
-    sig = inspect.signature(companies::department::manager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_companies::department_is_not_abstract():
-    assert not inspect.isabstract(companies::department)
-
-
-def test_companies::department_constructor_exists():
-    assert callable(companies::department.__init__)
-
-
-def test_companies::department_constructor_args():
-    sig = inspect.signature(companies::department.__init__)
+def test_companies_department_constructor_args():
+    sig = inspect.signature(companies_department.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companies::department_has_name():
-    assert hasattr(companies::department, "name")
+def test_companies_department_has_name():
+    assert hasattr(companies_department, "name")
     descriptor = None
-    for klass in companies::department.__mro__:
+    for klass in companies_department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -102,23 +88,23 @@ def test_companies::department_has_name():
 
 
 
-def test_companies::company_is_not_abstract():
-    assert not inspect.isabstract(companies::company)
+def test_companies_company_is_not_abstract():
+    assert not inspect.isabstract(companies_company)
 
 
-def test_companies::company_constructor_exists():
-    assert callable(companies::company.__init__)
+def test_companies_company_constructor_exists():
+    assert callable(companies_company.__init__)
 
 
-def test_companies::company_constructor_args():
-    sig = inspect.signature(companies::company.__init__)
+def test_companies_company_constructor_args():
+    sig = inspect.signature(companies_company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companies::company_has_name():
-    assert hasattr(companies::company, "name")
+def test_companies_company_has_name():
+    assert hasattr(companies_company, "name")
     descriptor = None
-    for klass in companies::company.__mro__:
+    for klass in companies_company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -126,70 +112,84 @@ def test_companies::company_has_name():
 
 
 
-def test_companies::employee_is_not_abstract():
-    assert not inspect.isabstract(companies::employee)
+def test_companies_employee_is_not_abstract():
+    assert not inspect.isabstract(companies_employee)
 
 
-def test_companies::employee_constructor_exists():
-    assert callable(companies::employee.__init__)
+def test_companies_employee_constructor_exists():
+    assert callable(companies_employee.__init__)
 
 
-def test_companies::employee_constructor_args():
-    sig = inspect.signature(companies::employee.__init__)
+def test_companies_employee_constructor_args():
+    sig = inspect.signature(companies_employee.__init__)
     params = list(sig.parameters.keys())
-    assert "salary" in params, "Missing parameter 'salary'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "address" in params, "Missing parameter 'address'"
     assert "mentor" in params, "Missing parameter 'mentor'"
+    assert "salary" in params, "Missing parameter 'salary'"
+    assert "address" in params, "Missing parameter 'address'"
 
-def test_companies::employee_has_salary():
-    assert hasattr(companies::employee, "salary")
+def test_companies_employee_has_name():
+    assert hasattr(companies_employee, "name")
     descriptor = None
-    for klass in companies::employee.__mro__:
-        if "salary" in klass.__dict__:
-            descriptor = klass.__dict__["salary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companies::employee_has_name():
-    assert hasattr(companies::employee, "name")
-    descriptor = None
-    for klass in companies::employee.__mro__:
+    for klass in companies_employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_companies::employee_has_address():
-    assert hasattr(companies::employee, "address")
+def test_companies_employee_has_mentor():
+    assert hasattr(companies_employee, "mentor")
     descriptor = None
-    for klass in companies::employee.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_companies::employee_has_mentor():
-    assert hasattr(companies::employee, "mentor")
-    descriptor = None
-    for klass in companies::employee.__mro__:
+    for klass in companies_employee.__mro__:
         if "mentor" in klass.__dict__:
             descriptor = klass.__dict__["mentor"]
             break
     assert isinstance(descriptor, property)
 
+def test_companies_employee_has_salary():
+    assert hasattr(companies_employee, "salary")
+    descriptor = None
+    for klass in companies_employee.__mro__:
+        if "salary" in klass.__dict__:
+            descriptor = klass.__dict__["salary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_companies_employee_has_address():
+    assert hasattr(companies_employee, "address")
+    descriptor = None
+    for klass in companies_employee.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_companies::department::employees_is_not_abstract():
-    assert not inspect.isabstract(companies::department::employees)
+
+def test_companies_department_employees_is_not_abstract():
+    assert not inspect.isabstract(companies_department_employees)
 
 
-def test_companies::department::employees_constructor_exists():
-    assert callable(companies::department::employees.__init__)
+def test_companies_department_employees_constructor_exists():
+    assert callable(companies_department_employees.__init__)
 
 
-def test_companies::department::employees_constructor_args():
-    sig = inspect.signature(companies::department::employees.__init__)
+def test_companies_department_employees_constructor_args():
+    sig = inspect.signature(companies_department_employees.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_companies_department_manager_is_not_abstract():
+    assert not inspect.isabstract(companies_department_manager)
+
+
+def test_companies_department_manager_constructor_exists():
+    assert callable(companies_department_manager.__init__)
+
+
+def test_companies_department_manager_constructor_args():
+    sig = inspect.signature(companies_department_manager.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -204,145 +204,127 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-companies::Visitable_strategy = st.builds(
-    companies::Visitable,
+companies_Visitable_strategy = st.builds(
+    companies_Visitable,
 )
-companies::CSTrace_strategy = st.builds(
-    companies::CSTrace,
+companies_CSTrace_strategy = st.builds(
+    companies_CSTrace,
 )
 CSTrace_strategy = st.builds(
     CSTrace,
 )
-companies::department::manager_strategy = st.builds(
-    companies::department::manager,
-)
-companies::department_strategy = st.builds(
-    companies::department,
+companies_department_strategy = st.builds(
+    companies_department,
     name=
         safe_text
 )
-companies::company_strategy = st.builds(
-    companies::company,
+companies_company_strategy = st.builds(
+    companies_company,
     name=
         safe_text
 )
-companies::employee_strategy = st.builds(
-    companies::employee,
-    salary=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+companies_employee_strategy = st.builds(
+    companies_employee,
     name=
-        safe_text,
-    address=
         safe_text,
     mentor=
+        safe_text,
+    salary=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    address=
         safe_text
 )
-companies::department::employees_strategy = st.builds(
-    companies::department::employees,
+companies_department_employees_strategy = st.builds(
+    companies_department_employees,
+)
+companies_department_manager_strategy = st.builds(
+    companies_department_manager,
 )
 
-@given(instance=companies::Visitable_strategy)
+@given(instance=companies_Visitable_strategy)
 @settings(max_examples=50)
-def test_companies::visitable_instantiation(instance):
-    assert isinstance(instance, companies::Visitable)
+def test_companies_visitable_instantiation(instance):
+    assert isinstance(instance, companies_Visitable)
 
-@given(instance=companies::CSTrace_strategy)
+@given(instance=companies_CSTrace_strategy)
 @settings(max_examples=50)
-def test_companies::cstrace_instantiation(instance):
-    assert isinstance(instance, companies::CSTrace)
+def test_companies_cstrace_instantiation(instance):
+    assert isinstance(instance, companies_CSTrace)
 
 @given(instance=CSTrace_strategy)
 @settings(max_examples=50)
 def test_cstrace_instantiation(instance):
     assert isinstance(instance, CSTrace)
 
-@given(instance=companies::department::manager_strategy)
+@given(instance=companies_department_strategy)
 @settings(max_examples=50)
-def test_companies::department::manager_instantiation(instance):
-    assert isinstance(instance, companies::department::manager)
-
-@given(instance=companies::department_strategy)
-@settings(max_examples=50)
-def test_companies::department_instantiation(instance):
-    assert isinstance(instance, companies::department)
-
-@given(instance=companies::department_strategy)
-def test_companies::department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companies_department_instantiation(instance):
+    assert isinstance(instance, companies_department)
 
 
-@given(instance=companies::department_strategy)
-def test_companies::department_name_setter(instance):
+
+@given(instance=companies_department_strategy)
+def test_companies_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=companies::company_strategy)
+@given(instance=companies_company_strategy)
 @settings(max_examples=50)
-def test_companies::company_instantiation(instance):
-    assert isinstance(instance, companies::company)
-
-@given(instance=companies::company_strategy)
-def test_companies::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companies_company_instantiation(instance):
+    assert isinstance(instance, companies_company)
 
 
-@given(instance=companies::company_strategy)
-def test_companies::company_name_setter(instance):
+
+@given(instance=companies_company_strategy)
+def test_companies_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=companies::employee_strategy)
+@given(instance=companies_employee_strategy)
 @settings(max_examples=50)
-def test_companies::employee_instantiation(instance):
-    assert isinstance(instance, companies::employee)
-
-@given(instance=companies::employee_strategy)
-def test_companies::employee_salary_type(instance):
-    assert isinstance(instance.salary, float)
+def test_companies_employee_instantiation(instance):
+    assert isinstance(instance, companies_employee)
 
 
-@given(instance=companies::employee_strategy)
-def test_companies::employee_salary_setter(instance):
-    original = instance.salary
-    instance.salary = original
-    assert instance.salary == original
 
-@given(instance=companies::employee_strategy)
-def test_companies::employee_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=companies::employee_strategy)
-def test_companies::employee_name_setter(instance):
+@given(instance=companies_employee_strategy)
+def test_companies_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=companies::employee_strategy)
-def test_companies::employee_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=companies::employee_strategy)
-def test_companies::employee_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=companies::employee_strategy)
-def test_companies::employee_mentor_type(instance):
-    assert isinstance(instance.mentor, str)
-
-
-@given(instance=companies::employee_strategy)
-def test_companies::employee_mentor_setter(instance):
+@given(instance=companies_employee_strategy)
+def test_companies_employee_mentor_setter(instance):
     original = instance.mentor
     instance.mentor = original
     assert instance.mentor == original
 
-@given(instance=companies::department::employees_strategy)
+
+
+@given(instance=companies_employee_strategy)
+def test_companies_employee_salary_setter(instance):
+    original = instance.salary
+    instance.salary = original
+    assert instance.salary == original
+
+
+
+@given(instance=companies_employee_strategy)
+def test_companies_employee_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+@given(instance=companies_department_employees_strategy)
 @settings(max_examples=50)
-def test_companies::department::employees_instantiation(instance):
-    assert isinstance(instance, companies::department::employees)
+def test_companies_department_employees_instantiation(instance):
+    assert isinstance(instance, companies_department_employees)
+
+@given(instance=companies_department_manager_strategy)
+@settings(max_examples=50)
+def test_companies_department_manager_instantiation(instance):
+    assert isinstance(instance, companies_department_manager)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Management_Director,
@@ -24,8 +24,8 @@ from python_code import (
     Management_ManagerTest,
     Management_DirectorTest,
     Management_Manager,
-    Size,
     CardType,
+    Size,
 )
 
 # =============================================================================
@@ -69,17 +69,8 @@ def test_giftcard_constructor_exists():
 def test_giftcard_constructor_args():
     sig = inspect.signature(GiftCard.__init__)
     params = list(sig.parameters.keys())
-    assert "cardType" in params, "Missing parameter 'cardType'"
     assert "isPresent" in params, "Missing parameter 'isPresent'"
-
-def test_giftcard_has_cardType():
-    assert hasattr(GiftCard, "cardType")
-    descriptor = None
-    for klass in GiftCard.__mro__:
-        if "cardType" in klass.__dict__:
-            descriptor = klass.__dict__["cardType"]
-            break
-    assert isinstance(descriptor, property)
+    assert "cardType" in params, "Missing parameter 'cardType'"
 
 def test_giftcard_has_isPresent():
     assert hasattr(GiftCard, "isPresent")
@@ -87,6 +78,15 @@ def test_giftcard_has_isPresent():
     for klass in GiftCard.__mro__:
         if "isPresent" in klass.__dict__:
             descriptor = klass.__dict__["isPresent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_giftcard_has_cardType():
+    assert hasattr(GiftCard, "cardType")
+    descriptor = None
+    for klass in GiftCard.__mro__:
+        if "cardType" in klass.__dict__:
+            descriptor = klass.__dict__["cardType"]
             break
     assert isinstance(descriptor, property)
 
@@ -103,18 +103,9 @@ def test_ticket_constructor_exists():
 def test_ticket_constructor_args():
     sig = inspect.signature(Ticket.__init__)
     params = list(sig.parameters.keys())
-    assert "isLastMinute" in params, "Missing parameter 'isLastMinute'"
     assert "eventCountry" in params, "Missing parameter 'eventCountry'"
+    assert "isLastMinute" in params, "Missing parameter 'isLastMinute'"
     assert "eventCity" in params, "Missing parameter 'eventCity'"
-
-def test_ticket_has_isLastMinute():
-    assert hasattr(Ticket, "isLastMinute")
-    descriptor = None
-    for klass in Ticket.__mro__:
-        if "isLastMinute" in klass.__dict__:
-            descriptor = klass.__dict__["isLastMinute"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_ticket_has_eventCountry():
     assert hasattr(Ticket, "eventCountry")
@@ -122,6 +113,15 @@ def test_ticket_has_eventCountry():
     for klass in Ticket.__mro__:
         if "eventCountry" in klass.__dict__:
             descriptor = klass.__dict__["eventCountry"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ticket_has_isLastMinute():
+    assert hasattr(Ticket, "isLastMinute")
+    descriptor = None
+    for klass in Ticket.__mro__:
+        if "isLastMinute" in klass.__dict__:
+            descriptor = klass.__dict__["isLastMinute"]
             break
     assert isinstance(descriptor, property)
 
@@ -148,8 +148,8 @@ def test_fashion_constructor_args():
     sig = inspect.signature(Fashion.__init__)
     params = list(sig.parameters.keys())
     assert "increaseBy" in params, "Missing parameter 'increaseBy'"
-    assert "category" in params, "Missing parameter 'category'"
     assert "size" in params, "Missing parameter 'size'"
+    assert "category" in params, "Missing parameter 'category'"
 
 def test_fashion_has_increaseBy():
     assert hasattr(Fashion, "increaseBy")
@@ -160,21 +160,21 @@ def test_fashion_has_increaseBy():
             break
     assert isinstance(descriptor, property)
 
-def test_fashion_has_category():
-    assert hasattr(Fashion, "category")
-    descriptor = None
-    for klass in Fashion.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_fashion_has_size():
     assert hasattr(Fashion, "size")
     descriptor = None
     for klass in Fashion.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fashion_has_category():
+    assert hasattr(Fashion, "category")
+    descriptor = None
+    for klass in Fashion.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,16 +253,16 @@ def test_transportationproduct_constructor_exists():
 def test_transportationproduct_constructor_args():
     sig = inspect.signature(TransportationProduct.__init__)
     params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-    assert "source" in params, "Missing parameter 'source'"
     assert "destination" in params, "Missing parameter 'destination'"
+    assert "source" in params, "Missing parameter 'source'"
+    assert "distance" in params, "Missing parameter 'distance'"
 
-def test_transportationproduct_has_distance():
-    assert hasattr(TransportationProduct, "distance")
+def test_transportationproduct_has_destination():
+    assert hasattr(TransportationProduct, "destination")
     descriptor = None
     for klass in TransportationProduct.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
+        if "destination" in klass.__dict__:
+            descriptor = klass.__dict__["destination"]
             break
     assert isinstance(descriptor, property)
 
@@ -275,12 +275,12 @@ def test_transportationproduct_has_source():
             break
     assert isinstance(descriptor, property)
 
-def test_transportationproduct_has_destination():
-    assert hasattr(TransportationProduct, "destination")
+def test_transportationproduct_has_distance():
+    assert hasattr(TransportationProduct, "distance")
     descriptor = None
     for klass in TransportationProduct.__mro__:
-        if "destination" in klass.__dict__:
-            descriptor = klass.__dict__["destination"]
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
             break
     assert isinstance(descriptor, property)
 
@@ -297,19 +297,10 @@ def test_product_constructor_exists():
 def test_product_constructor_args():
     sig = inspect.signature(Product.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
     assert "title" in params, "Missing parameter 'title'"
     assert "creationDate" in params, "Missing parameter 'creationDate'"
     assert "supportDiscount" in params, "Missing parameter 'supportDiscount'"
-
-def test_product_has_price():
-    assert hasattr(Product, "price")
-    descriptor = None
-    for klass in Product.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "price" in params, "Missing parameter 'price'"
 
 def test_product_has_title():
     assert hasattr(Product, "title")
@@ -335,6 +326,15 @@ def test_product_has_supportDiscount():
     for klass in Product.__mro__:
         if "supportDiscount" in klass.__dict__:
             descriptor = klass.__dict__["supportDiscount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_product_has_price():
+    assert hasattr(Product, "price")
+    descriptor = None
+    for klass in Product.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -421,9 +421,18 @@ def test_staff_employee_constructor_exists():
 def test_staff_employee_constructor_args():
     sig = inspect.signature(Staff_Employee.__init__)
     params = list(sig.parameters.keys())
+    assert "nationalInsurance" in params, "Missing parameter 'nationalInsurance'"
     assert "name" in params, "Missing parameter 'name'"
     assert "salary" in params, "Missing parameter 'salary'"
-    assert "nationalInsurance" in params, "Missing parameter 'nationalInsurance'"
+
+def test_staff_employee_has_nationalInsurance():
+    assert hasattr(Staff_Employee, "nationalInsurance")
+    descriptor = None
+    for klass in Staff_Employee.__mro__:
+        if "nationalInsurance" in klass.__dict__:
+            descriptor = klass.__dict__["nationalInsurance"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_staff_employee_has_name():
     assert hasattr(Staff_Employee, "name")
@@ -440,15 +449,6 @@ def test_staff_employee_has_salary():
     for klass in Staff_Employee.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_staff_employee_has_nationalInsurance():
-    assert hasattr(Staff_Employee, "nationalInsurance")
-    descriptor = None
-    for klass in Staff_Employee.__mro__:
-        if "nationalInsurance" in klass.__dict__:
-            descriptor = klass.__dict__["nationalInsurance"]
             break
     assert isinstance(descriptor, property)
 
@@ -504,19 +504,6 @@ def test_management_manager_has_deptName():
             break
     assert isinstance(descriptor, property)
 
-def test_size_exists():
-    # Check that the Enumeration exists
-    assert Size is not None
-
-def test_size_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Size]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Size"
-
 def test_cardtype_exists():
     # Check that the Enumeration exists
     assert CardType is not None
@@ -529,6 +516,19 @@ def test_cardtype_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CardType"
+
+def test_size_exists():
+    # Check that the Enumeration exists
+    assert Size is not None
+
+def test_size_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Size]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Size"
 
 
 # =============================================================================
@@ -549,17 +549,17 @@ Management_Director_strategy = st.builds(
 )
 GiftCard_strategy = st.builds(
     GiftCard,
-    cardType=
-        st.none(),
     isPresent=
-        st.booleans()
+        st.booleans(),
+    cardType=
+        st.none()
 )
 Ticket_strategy = st.builds(
     Ticket,
-    isLastMinute=
-        st.booleans(),
     eventCountry=
         safe_text,
+    isLastMinute=
+        st.booleans(),
     eventCity=
         safe_text
 )
@@ -567,10 +567,10 @@ Fashion_strategy = st.builds(
     Fashion,
     increaseBy=
         st.integers(),
-    category=
-        safe_text,
     size=
-        st.none()
+        st.none(),
+    category=
+        safe_text
 )
 Taxi_strategy = st.builds(
     Taxi,
@@ -587,23 +587,23 @@ Flight_strategy = st.builds(
 )
 TransportationProduct_strategy = st.builds(
     TransportationProduct,
-    distance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    destination=
+        safe_text,
     source=
         safe_text,
-    destination=
-        safe_text
+    distance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Product_strategy = st.builds(
     Product,
-    price=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     title=
         safe_text,
     creationDate=
         st.dates(),
     supportDiscount=
-        st.booleans()
+        st.booleans(),
+    price=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Class_strategy = st.builds(
     Class,
@@ -622,12 +622,12 @@ techStaff_DatabaseAdmin_strategy = st.builds(
 )
 Staff_Employee_strategy = st.builds(
     Staff_Employee,
+    nationalInsurance=
+        safe_text,
     name=
         safe_text,
     salary=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    nationalInsurance=
-        safe_text
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Management_ManagerTest_strategy = st.builds(
     Management_ManagerTest,
@@ -646,9 +646,6 @@ Management_Manager_strategy = st.builds(
 def test_management_director_instantiation(instance):
     assert isinstance(instance, Management_Director)
 
-@given(instance=Management_Director_strategy)
-def test_management_director_budget_type(instance):
-    assert isinstance(instance.budget, float)
 
 
 @given(instance=Management_Director_strategy)
@@ -662,20 +659,6 @@ def test_management_director_budget_setter(instance):
 def test_giftcard_instantiation(instance):
     assert isinstance(instance, GiftCard)
 
-@given(instance=GiftCard_strategy)
-def test_giftcard_cardType_type(instance):
-    assert isinstance(instance.cardType, cardtype)
-
-
-@given(instance=GiftCard_strategy)
-def test_giftcard_cardType_setter(instance):
-    original = instance.cardType
-    instance.cardType = original
-    assert instance.cardType == original
-
-@given(instance=GiftCard_strategy)
-def test_giftcard_isPresent_type(instance):
-    assert isinstance(instance.isPresent, bool)
 
 
 @given(instance=GiftCard_strategy)
@@ -684,25 +667,19 @@ def test_giftcard_isPresent_setter(instance):
     instance.isPresent = original
     assert instance.isPresent == original
 
+
+
+@given(instance=GiftCard_strategy)
+def test_giftcard_cardType_setter(instance):
+    original = instance.cardType
+    instance.cardType = original
+    assert instance.cardType == original
+
 @given(instance=Ticket_strategy)
 @settings(max_examples=50)
 def test_ticket_instantiation(instance):
     assert isinstance(instance, Ticket)
 
-@given(instance=Ticket_strategy)
-def test_ticket_isLastMinute_type(instance):
-    assert isinstance(instance.isLastMinute, bool)
-
-
-@given(instance=Ticket_strategy)
-def test_ticket_isLastMinute_setter(instance):
-    original = instance.isLastMinute
-    instance.isLastMinute = original
-    assert instance.isLastMinute == original
-
-@given(instance=Ticket_strategy)
-def test_ticket_eventCountry_type(instance):
-    assert isinstance(instance.eventCountry, str)
 
 
 @given(instance=Ticket_strategy)
@@ -711,9 +688,14 @@ def test_ticket_eventCountry_setter(instance):
     instance.eventCountry = original
     assert instance.eventCountry == original
 
+
+
 @given(instance=Ticket_strategy)
-def test_ticket_eventCity_type(instance):
-    assert isinstance(instance.eventCity, str)
+def test_ticket_isLastMinute_setter(instance):
+    original = instance.isLastMinute
+    instance.isLastMinute = original
+    assert instance.isLastMinute == original
+
 
 
 @given(instance=Ticket_strategy)
@@ -727,9 +709,6 @@ def test_ticket_eventCity_setter(instance):
 def test_fashion_instantiation(instance):
     assert isinstance(instance, Fashion)
 
-@given(instance=Fashion_strategy)
-def test_fashion_increaseBy_type(instance):
-    assert isinstance(instance.increaseBy, int)
 
 
 @given(instance=Fashion_strategy)
@@ -738,20 +717,6 @@ def test_fashion_increaseBy_setter(instance):
     instance.increaseBy = original
     assert instance.increaseBy == original
 
-@given(instance=Fashion_strategy)
-def test_fashion_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=Fashion_strategy)
-def test_fashion_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=Fashion_strategy)
-def test_fashion_size_type(instance):
-    assert isinstance(instance.size, size)
 
 
 @given(instance=Fashion_strategy)
@@ -760,14 +725,19 @@ def test_fashion_size_setter(instance):
     instance.size = original
     assert instance.size == original
 
+
+
+@given(instance=Fashion_strategy)
+def test_fashion_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
 @given(instance=Taxi_strategy)
 @settings(max_examples=50)
 def test_taxi_instantiation(instance):
     assert isinstance(instance, Taxi)
 
-@given(instance=Taxi_strategy)
-def test_taxi_isVip_type(instance):
-    assert isinstance(instance.isVip, bool)
 
 
 @given(instance=Taxi_strategy)
@@ -786,9 +756,6 @@ def test_travel_instantiation(instance):
 def test_flight_instantiation(instance):
     assert isinstance(instance, Flight)
 
-@given(instance=Flight_strategy)
-def test_flight_hasConnection_type(instance):
-    assert isinstance(instance.hasConnection, bool)
 
 
 @given(instance=Flight_strategy)
@@ -802,31 +769,6 @@ def test_flight_hasConnection_setter(instance):
 def test_transportationproduct_instantiation(instance):
     assert isinstance(instance, TransportationProduct)
 
-@given(instance=TransportationProduct_strategy)
-def test_transportationproduct_distance_type(instance):
-    assert isinstance(instance.distance, float)
-
-
-@given(instance=TransportationProduct_strategy)
-def test_transportationproduct_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
-
-@given(instance=TransportationProduct_strategy)
-def test_transportationproduct_source_type(instance):
-    assert isinstance(instance.source, str)
-
-
-@given(instance=TransportationProduct_strategy)
-def test_transportationproduct_source_setter(instance):
-    original = instance.source
-    instance.source = original
-    assert instance.source == original
-
-@given(instance=TransportationProduct_strategy)
-def test_transportationproduct_destination_type(instance):
-    assert isinstance(instance.destination, str)
 
 
 @given(instance=TransportationProduct_strategy)
@@ -835,25 +777,27 @@ def test_transportationproduct_destination_setter(instance):
     instance.destination = original
     assert instance.destination == original
 
+
+
+@given(instance=TransportationProduct_strategy)
+def test_transportationproduct_source_setter(instance):
+    original = instance.source
+    instance.source = original
+    assert instance.source == original
+
+
+
+@given(instance=TransportationProduct_strategy)
+def test_transportationproduct_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
 @given(instance=Product_strategy)
 @settings(max_examples=50)
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=Product_strategy)
-def test_product_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=Product_strategy)
-def test_product_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Product_strategy)
-def test_product_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Product_strategy)
@@ -862,9 +806,6 @@ def test_product_title_setter(instance):
     instance.title = original
     assert instance.title == original
 
-@given(instance=Product_strategy)
-def test_product_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=Product_strategy)
@@ -873,9 +814,6 @@ def test_product_creationDate_setter(instance):
     instance.creationDate = original
     assert instance.creationDate == original
 
-@given(instance=Product_strategy)
-def test_product_supportDiscount_type(instance):
-    assert isinstance(instance.supportDiscount, bool)
 
 
 @given(instance=Product_strategy)
@@ -883,6 +821,14 @@ def test_product_supportDiscount_setter(instance):
     original = instance.supportDiscount
     instance.supportDiscount = original
     assert instance.supportDiscount == original
+
+
+
+@given(instance=Product_strategy)
+def test_product_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
@@ -914,9 +860,14 @@ def test_techstaff_databaseadmin_instantiation(instance):
 def test_staff_employee_instantiation(instance):
     assert isinstance(instance, Staff_Employee)
 
+
+
 @given(instance=Staff_Employee_strategy)
-def test_staff_employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_staff_employee_nationalInsurance_setter(instance):
+    original = instance.nationalInsurance
+    instance.nationalInsurance = original
+    assert instance.nationalInsurance == original
+
 
 
 @given(instance=Staff_Employee_strategy)
@@ -925,9 +876,6 @@ def test_staff_employee_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_salary_type(instance):
-    assert isinstance(instance.salary, float)
 
 
 @given(instance=Staff_Employee_strategy)
@@ -935,17 +883,6 @@ def test_staff_employee_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
-
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_nationalInsurance_type(instance):
-    assert isinstance(instance.nationalInsurance, str)
-
-
-@given(instance=Staff_Employee_strategy)
-def test_staff_employee_nationalInsurance_setter(instance):
-    original = instance.nationalInsurance
-    instance.nationalInsurance = original
-    assert instance.nationalInsurance == original
 
 @given(instance=Management_ManagerTest_strategy)
 @settings(max_examples=50)
@@ -962,9 +899,6 @@ def test_management_directortest_instantiation(instance):
 def test_management_manager_instantiation(instance):
     assert isinstance(instance, Management_Manager)
 
-@given(instance=Management_Manager_strategy)
-def test_management_manager_deptName_type(instance):
-    assert isinstance(instance.deptName, str)
 
 
 @given(instance=Management_Manager_strategy)

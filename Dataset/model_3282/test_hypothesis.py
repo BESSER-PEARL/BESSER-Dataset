@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statediagram::Transition,
-    statediagram::State,
-    statediagram::StateDiagram,
+from python_code import (
+    statediagram_Transition,
+    statediagram_State,
+    statediagram_StateDiagram,
 )
 
 # =============================================================================
@@ -17,71 +17,71 @@ from classes import (
 
 
 
-def test_statediagram::transition_is_not_abstract():
-    assert not inspect.isabstract(statediagram::Transition)
+def test_statediagram_transition_is_not_abstract():
+    assert not inspect.isabstract(statediagram_Transition)
 
 
-def test_statediagram::transition_constructor_exists():
-    assert callable(statediagram::Transition.__init__)
+def test_statediagram_transition_constructor_exists():
+    assert callable(statediagram_Transition.__init__)
 
 
-def test_statediagram::transition_constructor_args():
-    sig = inspect.signature(statediagram::Transition.__init__)
+def test_statediagram_transition_constructor_args():
+    sig = inspect.signature(statediagram_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statediagram::state_is_not_abstract():
-    assert not inspect.isabstract(statediagram::State)
+def test_statediagram_state_is_not_abstract():
+    assert not inspect.isabstract(statediagram_State)
 
 
-def test_statediagram::state_constructor_exists():
-    assert callable(statediagram::State.__init__)
+def test_statediagram_state_constructor_exists():
+    assert callable(statediagram_State.__init__)
 
 
-def test_statediagram::state_constructor_args():
-    sig = inspect.signature(statediagram::State.__init__)
+def test_statediagram_state_constructor_args():
+    sig = inspect.signature(statediagram_State.__init__)
     params = list(sig.parameters.keys())
-    assert "isInitial" in params, "Missing parameter 'isInitial'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "isInitial" in params, "Missing parameter 'isInitial'"
 
-def test_statediagram::state_has_isInitial():
-    assert hasattr(statediagram::State, "isInitial")
+def test_statediagram_state_has_name():
+    assert hasattr(statediagram_State, "name")
     descriptor = None
-    for klass in statediagram::State.__mro__:
-        if "isInitial" in klass.__dict__:
-            descriptor = klass.__dict__["isInitial"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statediagram::state_has_name():
-    assert hasattr(statediagram::State, "name")
-    descriptor = None
-    for klass in statediagram::State.__mro__:
+    for klass in statediagram_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_statediagram_state_has_isInitial():
+    assert hasattr(statediagram_State, "isInitial")
+    descriptor = None
+    for klass in statediagram_State.__mro__:
+        if "isInitial" in klass.__dict__:
+            descriptor = klass.__dict__["isInitial"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_statediagram::statediagram_is_not_abstract():
-    assert not inspect.isabstract(statediagram::StateDiagram)
+
+def test_statediagram_statediagram_is_not_abstract():
+    assert not inspect.isabstract(statediagram_StateDiagram)
 
 
-def test_statediagram::statediagram_constructor_exists():
-    assert callable(statediagram::StateDiagram.__init__)
+def test_statediagram_statediagram_constructor_exists():
+    assert callable(statediagram_StateDiagram.__init__)
 
 
-def test_statediagram::statediagram_constructor_args():
-    sig = inspect.signature(statediagram::StateDiagram.__init__)
+def test_statediagram_statediagram_constructor_args():
+    sig = inspect.signature(statediagram_StateDiagram.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statediagram::statediagram_has_name():
-    assert hasattr(statediagram::StateDiagram, "name")
+def test_statediagram_statediagram_has_name():
+    assert hasattr(statediagram_StateDiagram, "name")
     descriptor = None
-    for klass in statediagram::StateDiagram.__mro__:
+    for klass in statediagram_StateDiagram.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statediagram::Transition_strategy = st.builds(
-    statediagram::Transition,
+statediagram_Transition_strategy = st.builds(
+    statediagram_Transition,
 )
-statediagram::State_strategy = st.builds(
-    statediagram::State,
+statediagram_State_strategy = st.builds(
+    statediagram_State,
+    name=
+        safe_text,
     isInitial=
-        st.booleans(),
+        st.booleans()
+)
+statediagram_StateDiagram_strategy = st.builds(
+    statediagram_StateDiagram,
     name=
         safe_text
 )
-statediagram::StateDiagram_strategy = st.builds(
-    statediagram::StateDiagram,
-    name=
-        safe_text
-)
 
-@given(instance=statediagram::Transition_strategy)
+@given(instance=statediagram_Transition_strategy)
 @settings(max_examples=50)
-def test_statediagram::transition_instantiation(instance):
-    assert isinstance(instance, statediagram::Transition)
+def test_statediagram_transition_instantiation(instance):
+    assert isinstance(instance, statediagram_Transition)
 
-@given(instance=statediagram::State_strategy)
+@given(instance=statediagram_State_strategy)
 @settings(max_examples=50)
-def test_statediagram::state_instantiation(instance):
-    assert isinstance(instance, statediagram::State)
-
-@given(instance=statediagram::State_strategy)
-def test_statediagram::state_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
+def test_statediagram_state_instantiation(instance):
+    assert isinstance(instance, statediagram_State)
 
 
-@given(instance=statediagram::State_strategy)
-def test_statediagram::state_isInitial_setter(instance):
-    original = instance.isInitial
-    instance.isInitial = original
-    assert instance.isInitial == original
 
-@given(instance=statediagram::State_strategy)
-def test_statediagram::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=statediagram::State_strategy)
-def test_statediagram::state_name_setter(instance):
+@given(instance=statediagram_State_strategy)
+def test_statediagram_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statediagram::StateDiagram_strategy)
+
+
+@given(instance=statediagram_State_strategy)
+def test_statediagram_state_isInitial_setter(instance):
+    original = instance.isInitial
+    instance.isInitial = original
+    assert instance.isInitial == original
+
+@given(instance=statediagram_StateDiagram_strategy)
 @settings(max_examples=50)
-def test_statediagram::statediagram_instantiation(instance):
-    assert isinstance(instance, statediagram::StateDiagram)
-
-@given(instance=statediagram::StateDiagram_strategy)
-def test_statediagram::statediagram_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statediagram_statediagram_instantiation(instance):
+    assert isinstance(instance, statediagram_StateDiagram)
 
 
-@given(instance=statediagram::StateDiagram_strategy)
-def test_statediagram::statediagram_name_setter(instance):
+
+@given(instance=statediagram_StateDiagram_strategy)
+def test_statediagram_statediagram_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

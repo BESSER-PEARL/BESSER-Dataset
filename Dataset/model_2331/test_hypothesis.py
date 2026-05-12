@@ -3,77 +3,77 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     WriteVariableAction,
-    ActionsProv::RemoveVariableValueAction,
-    ActionsProv::AddVariableValueAction,
+    ActionsProv_RemoveVariableValueAction,
+    ActionsProv_AddVariableValueAction,
     VariableAction,
-    ActionsProv::ClearVariableAction,
-    ActionsProv::WriteVariableAction,
-    ActionsProv::ReadVariableAction,
+    ActionsProv_ClearVariableAction,
+    ActionsProv_WriteVariableAction,
+    ActionsProv_ReadVariableAction,
     CreateLinkAction,
-    ActionsProv::CreateLinkObjectAction,
-    ActionsProv::ReadlsClassifiedObjectAction,
+    ActionsProv_CreateLinkObjectAction,
+    ActionsProv_ReadlsClassifiedObjectAction,
     AcceptEventAction,
-    ActionsProv::AcceptCallAction,
-    ActionsProv::QualifierValue,
+    ActionsProv_AcceptCallAction,
+    ActionsProv_QualifierValue,
     LinkEndData,
-    ActionsProv::LinkEndDestructionData,
-    ActionsProv::LinkEndCreationData,
+    ActionsProv_LinkEndDestructionData,
+    ActionsProv_LinkEndCreationData,
     WriteLinkAction,
-    ActionsProv::DestroyLinkAction,
-    ActionsProv::CreateLinkAction,
+    ActionsProv_DestroyLinkAction,
+    ActionsProv_CreateLinkAction,
     LinkAction,
-    ActionsProv::WriteLinkAction,
-    ActionsProv::ReadLinkAction,
-    ActionsProv::LinkEndData,
+    ActionsProv_ReadLinkAction,
+    ActionsProv_WriteLinkAction,
+    ActionsProv_LinkEndData,
     WriteStructuralFeatureAction,
-    ActionsProv::AddStructuralFeatureValueAction,
-    ActionsProv::RemoveStructuralFeatureValueAction,
+    ActionsProv_AddStructuralFeatureValueAction,
+    ActionsProv_RemoveStructuralFeatureValueAction,
     StructuralFeatureAction,
-    ActionsProv::WriteStructuralFeatureAction,
-    ActionsProv::ClearStructuralFeatureAction,
-    ActionsProv::ReadStructuralFeatureAction,
-    ActionsProv::CallOperationAction,
+    ActionsProv_WriteStructuralFeatureAction,
+    ActionsProv_ClearStructuralFeatureAction,
+    ActionsProv_ReadStructuralFeatureAction,
+    ActionsProv_CallOperationAction,
     CallAction,
-    ActionsProv::StartObjectBehaviorAction,
-    ActionsProv::CallBehaviorAction,
-    ActionsProv::Action,
+    ActionsProv_StartObjectBehaviorAction,
+    ActionsProv_CallBehaviorAction,
+    ActionsProv_Action,
     InvocationAction,
-    ActionsProv::BroadcastSignalAction,
-    ActionsProv::SendSignalAction,
-    ActionsProv::SendObjectAction,
-    ActionsProv::CallAction,
+    ActionsProv_BroadcastSignalAction,
+    ActionsProv_SendObjectAction,
+    ActionsProv_SendSignalAction,
+    ActionsProv_CallAction,
     InputPin,
-    ActionsProv::ActionInputPin,
-    ActionsProv::ValuePin,
-    ActionsProv::Pin,
+    ActionsProv_ActionInputPin,
+    ActionsProv_ValuePin,
+    ActionsProv_Pin,
     Pin,
-    ActionsProv::InputPin,
+    ActionsProv_InputPin,
     Action,
-    ActionsProv::StartClassifierBehaviorAction,
-    ActionsProv::LinkAction,
-    ActionsProv::UnmarshallAction,
-    ActionsProv::ReadLinkObjectEndAction,
-    ActionsProv::AcceptEventAction,
-    ActionsProv::VariableAction,
-    ActionsProv::CreateObjectAction,
-    ActionsProv::RaiseExceptionAction,
-    ActionsProv::ReduceAction,
-    ActionsProv::ReadLinkObjectEndQualifierAction,
-    ActionsProv::StructuralFeatureAction,
-    ActionsProv::ReplyAction,
-    ActionsProv::InvocationAction,
-    ActionsProv::ReadExtendAction,
-    ActionsProv::TestIdentityAction,
-    ActionsProv::DestroyObjectAction,
-    ActionsProv::ReadSelfAction,
-    ActionsProv::ValueSpecificationAction,
-    ActionsProv::ReclassifyObjectAction,
-    ActionsProv::OpaqueAction,
-    ActionsProv::OutputPin,
+    ActionsProv_ReclassifyObjectAction,
+    ActionsProv_ValueSpecificationAction,
+    ActionsProv_VariableAction,
+    ActionsProv_LinkAction,
+    ActionsProv_AcceptEventAction,
+    ActionsProv_InvocationAction,
+    ActionsProv_ReadLinkObjectEndQualifierAction,
+    ActionsProv_StructuralFeatureAction,
+    ActionsProv_RaiseExceptionAction,
+    ActionsProv_CreateObjectAction,
+    ActionsProv_ReadExtendAction,
+    ActionsProv_ReplyAction,
+    ActionsProv_UnmarshallAction,
+    ActionsProv_StartClassifierBehaviorAction,
+    ActionsProv_TestIdentityAction,
+    ActionsProv_ReadLinkObjectEndAction,
+    ActionsProv_ReadSelfAction,
+    ActionsProv_ReduceAction,
+    ActionsProv_DestroyObjectAction,
+    ActionsProv_OpaqueAction,
+    ActionsProv_OutputPin,
 )
 
 # =============================================================================
@@ -96,30 +96,30 @@ def test_writevariableaction_constructor_args():
 
 
 
-def test_actionsprov::removevariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::RemoveVariableValueAction)
+def test_actionsprov_removevariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_RemoveVariableValueAction)
 
 
-def test_actionsprov::removevariablevalueaction_constructor_exists():
-    assert callable(ActionsProv::RemoveVariableValueAction.__init__)
+def test_actionsprov_removevariablevalueaction_constructor_exists():
+    assert callable(ActionsProv_RemoveVariableValueAction.__init__)
 
 
-def test_actionsprov::removevariablevalueaction_constructor_args():
-    sig = inspect.signature(ActionsProv::RemoveVariableValueAction.__init__)
+def test_actionsprov_removevariablevalueaction_constructor_args():
+    sig = inspect.signature(ActionsProv_RemoveVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::addvariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::AddVariableValueAction)
+def test_actionsprov_addvariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_AddVariableValueAction)
 
 
-def test_actionsprov::addvariablevalueaction_constructor_exists():
-    assert callable(ActionsProv::AddVariableValueAction.__init__)
+def test_actionsprov_addvariablevalueaction_constructor_exists():
+    assert callable(ActionsProv_AddVariableValueAction.__init__)
 
 
-def test_actionsprov::addvariablevalueaction_constructor_args():
-    sig = inspect.signature(ActionsProv::AddVariableValueAction.__init__)
+def test_actionsprov_addvariablevalueaction_constructor_args():
+    sig = inspect.signature(ActionsProv_AddVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -138,44 +138,44 @@ def test_variableaction_constructor_args():
 
 
 
-def test_actionsprov::clearvariableaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ClearVariableAction)
+def test_actionsprov_clearvariableaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ClearVariableAction)
 
 
-def test_actionsprov::clearvariableaction_constructor_exists():
-    assert callable(ActionsProv::ClearVariableAction.__init__)
+def test_actionsprov_clearvariableaction_constructor_exists():
+    assert callable(ActionsProv_ClearVariableAction.__init__)
 
 
-def test_actionsprov::clearvariableaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ClearVariableAction.__init__)
+def test_actionsprov_clearvariableaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ClearVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::writevariableaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::WriteVariableAction)
+def test_actionsprov_writevariableaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_WriteVariableAction)
 
 
-def test_actionsprov::writevariableaction_constructor_exists():
-    assert callable(ActionsProv::WriteVariableAction.__init__)
+def test_actionsprov_writevariableaction_constructor_exists():
+    assert callable(ActionsProv_WriteVariableAction.__init__)
 
 
-def test_actionsprov::writevariableaction_constructor_args():
-    sig = inspect.signature(ActionsProv::WriteVariableAction.__init__)
+def test_actionsprov_writevariableaction_constructor_args():
+    sig = inspect.signature(ActionsProv_WriteVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::readvariableaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadVariableAction)
+def test_actionsprov_readvariableaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadVariableAction)
 
 
-def test_actionsprov::readvariableaction_constructor_exists():
-    assert callable(ActionsProv::ReadVariableAction.__init__)
+def test_actionsprov_readvariableaction_constructor_exists():
+    assert callable(ActionsProv_ReadVariableAction.__init__)
 
 
-def test_actionsprov::readvariableaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadVariableAction.__init__)
+def test_actionsprov_readvariableaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,30 +194,30 @@ def test_createlinkaction_constructor_args():
 
 
 
-def test_actionsprov::createlinkobjectaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::CreateLinkObjectAction)
+def test_actionsprov_createlinkobjectaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_CreateLinkObjectAction)
 
 
-def test_actionsprov::createlinkobjectaction_constructor_exists():
-    assert callable(ActionsProv::CreateLinkObjectAction.__init__)
+def test_actionsprov_createlinkobjectaction_constructor_exists():
+    assert callable(ActionsProv_CreateLinkObjectAction.__init__)
 
 
-def test_actionsprov::createlinkobjectaction_constructor_args():
-    sig = inspect.signature(ActionsProv::CreateLinkObjectAction.__init__)
+def test_actionsprov_createlinkobjectaction_constructor_args():
+    sig = inspect.signature(ActionsProv_CreateLinkObjectAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::readlsclassifiedobjectaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadlsClassifiedObjectAction)
+def test_actionsprov_readlsclassifiedobjectaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadlsClassifiedObjectAction)
 
 
-def test_actionsprov::readlsclassifiedobjectaction_constructor_exists():
-    assert callable(ActionsProv::ReadlsClassifiedObjectAction.__init__)
+def test_actionsprov_readlsclassifiedobjectaction_constructor_exists():
+    assert callable(ActionsProv_ReadlsClassifiedObjectAction.__init__)
 
 
-def test_actionsprov::readlsclassifiedobjectaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadlsClassifiedObjectAction.__init__)
+def test_actionsprov_readlsclassifiedobjectaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadlsClassifiedObjectAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -236,30 +236,30 @@ def test_accepteventaction_constructor_args():
 
 
 
-def test_actionsprov::acceptcallaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::AcceptCallAction)
+def test_actionsprov_acceptcallaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_AcceptCallAction)
 
 
-def test_actionsprov::acceptcallaction_constructor_exists():
-    assert callable(ActionsProv::AcceptCallAction.__init__)
+def test_actionsprov_acceptcallaction_constructor_exists():
+    assert callable(ActionsProv_AcceptCallAction.__init__)
 
 
-def test_actionsprov::acceptcallaction_constructor_args():
-    sig = inspect.signature(ActionsProv::AcceptCallAction.__init__)
+def test_actionsprov_acceptcallaction_constructor_args():
+    sig = inspect.signature(ActionsProv_AcceptCallAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::qualifiervalue_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::QualifierValue)
+def test_actionsprov_qualifiervalue_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_QualifierValue)
 
 
-def test_actionsprov::qualifiervalue_constructor_exists():
-    assert callable(ActionsProv::QualifierValue.__init__)
+def test_actionsprov_qualifiervalue_constructor_exists():
+    assert callable(ActionsProv_QualifierValue.__init__)
 
 
-def test_actionsprov::qualifiervalue_constructor_args():
-    sig = inspect.signature(ActionsProv::QualifierValue.__init__)
+def test_actionsprov_qualifiervalue_constructor_args():
+    sig = inspect.signature(ActionsProv_QualifierValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -278,23 +278,23 @@ def test_linkenddata_constructor_args():
 
 
 
-def test_actionsprov::linkenddestructiondata_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::LinkEndDestructionData)
+def test_actionsprov_linkenddestructiondata_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_LinkEndDestructionData)
 
 
-def test_actionsprov::linkenddestructiondata_constructor_exists():
-    assert callable(ActionsProv::LinkEndDestructionData.__init__)
+def test_actionsprov_linkenddestructiondata_constructor_exists():
+    assert callable(ActionsProv_LinkEndDestructionData.__init__)
 
 
-def test_actionsprov::linkenddestructiondata_constructor_args():
-    sig = inspect.signature(ActionsProv::LinkEndDestructionData.__init__)
+def test_actionsprov_linkenddestructiondata_constructor_args():
+    sig = inspect.signature(ActionsProv_LinkEndDestructionData.__init__)
     params = list(sig.parameters.keys())
     assert "isDestroyDuplicates" in params, "Missing parameter 'isDestroyDuplicates'"
 
-def test_actionsprov::linkenddestructiondata_has_isDestroyDuplicates():
-    assert hasattr(ActionsProv::LinkEndDestructionData, "isDestroyDuplicates")
+def test_actionsprov_linkenddestructiondata_has_isDestroyDuplicates():
+    assert hasattr(ActionsProv_LinkEndDestructionData, "isDestroyDuplicates")
     descriptor = None
-    for klass in ActionsProv::LinkEndDestructionData.__mro__:
+    for klass in ActionsProv_LinkEndDestructionData.__mro__:
         if "isDestroyDuplicates" in klass.__dict__:
             descriptor = klass.__dict__["isDestroyDuplicates"]
             break
@@ -302,23 +302,23 @@ def test_actionsprov::linkenddestructiondata_has_isDestroyDuplicates():
 
 
 
-def test_actionsprov::linkendcreationdata_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::LinkEndCreationData)
+def test_actionsprov_linkendcreationdata_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_LinkEndCreationData)
 
 
-def test_actionsprov::linkendcreationdata_constructor_exists():
-    assert callable(ActionsProv::LinkEndCreationData.__init__)
+def test_actionsprov_linkendcreationdata_constructor_exists():
+    assert callable(ActionsProv_LinkEndCreationData.__init__)
 
 
-def test_actionsprov::linkendcreationdata_constructor_args():
-    sig = inspect.signature(ActionsProv::LinkEndCreationData.__init__)
+def test_actionsprov_linkendcreationdata_constructor_args():
+    sig = inspect.signature(ActionsProv_LinkEndCreationData.__init__)
     params = list(sig.parameters.keys())
     assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
 
-def test_actionsprov::linkendcreationdata_has_isReplaceAll():
-    assert hasattr(ActionsProv::LinkEndCreationData, "isReplaceAll")
+def test_actionsprov_linkendcreationdata_has_isReplaceAll():
+    assert hasattr(ActionsProv_LinkEndCreationData, "isReplaceAll")
     descriptor = None
-    for klass in ActionsProv::LinkEndCreationData.__mro__:
+    for klass in ActionsProv_LinkEndCreationData.__mro__:
         if "isReplaceAll" in klass.__dict__:
             descriptor = klass.__dict__["isReplaceAll"]
             break
@@ -340,30 +340,30 @@ def test_writelinkaction_constructor_args():
 
 
 
-def test_actionsprov::destroylinkaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::DestroyLinkAction)
+def test_actionsprov_destroylinkaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_DestroyLinkAction)
 
 
-def test_actionsprov::destroylinkaction_constructor_exists():
-    assert callable(ActionsProv::DestroyLinkAction.__init__)
+def test_actionsprov_destroylinkaction_constructor_exists():
+    assert callable(ActionsProv_DestroyLinkAction.__init__)
 
 
-def test_actionsprov::destroylinkaction_constructor_args():
-    sig = inspect.signature(ActionsProv::DestroyLinkAction.__init__)
+def test_actionsprov_destroylinkaction_constructor_args():
+    sig = inspect.signature(ActionsProv_DestroyLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::createlinkaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::CreateLinkAction)
+def test_actionsprov_createlinkaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_CreateLinkAction)
 
 
-def test_actionsprov::createlinkaction_constructor_exists():
-    assert callable(ActionsProv::CreateLinkAction.__init__)
+def test_actionsprov_createlinkaction_constructor_exists():
+    assert callable(ActionsProv_CreateLinkAction.__init__)
 
 
-def test_actionsprov::createlinkaction_constructor_args():
-    sig = inspect.signature(ActionsProv::CreateLinkAction.__init__)
+def test_actionsprov_createlinkaction_constructor_args():
+    sig = inspect.signature(ActionsProv_CreateLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -382,44 +382,44 @@ def test_linkaction_constructor_args():
 
 
 
-def test_actionsprov::writelinkaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::WriteLinkAction)
+def test_actionsprov_readlinkaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadLinkAction)
 
 
-def test_actionsprov::writelinkaction_constructor_exists():
-    assert callable(ActionsProv::WriteLinkAction.__init__)
+def test_actionsprov_readlinkaction_constructor_exists():
+    assert callable(ActionsProv_ReadLinkAction.__init__)
 
 
-def test_actionsprov::writelinkaction_constructor_args():
-    sig = inspect.signature(ActionsProv::WriteLinkAction.__init__)
+def test_actionsprov_readlinkaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::readlinkaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadLinkAction)
+def test_actionsprov_writelinkaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_WriteLinkAction)
 
 
-def test_actionsprov::readlinkaction_constructor_exists():
-    assert callable(ActionsProv::ReadLinkAction.__init__)
+def test_actionsprov_writelinkaction_constructor_exists():
+    assert callable(ActionsProv_WriteLinkAction.__init__)
 
 
-def test_actionsprov::readlinkaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadLinkAction.__init__)
+def test_actionsprov_writelinkaction_constructor_args():
+    sig = inspect.signature(ActionsProv_WriteLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::linkenddata_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::LinkEndData)
+def test_actionsprov_linkenddata_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_LinkEndData)
 
 
-def test_actionsprov::linkenddata_constructor_exists():
-    assert callable(ActionsProv::LinkEndData.__init__)
+def test_actionsprov_linkenddata_constructor_exists():
+    assert callable(ActionsProv_LinkEndData.__init__)
 
 
-def test_actionsprov::linkenddata_constructor_args():
-    sig = inspect.signature(ActionsProv::LinkEndData.__init__)
+def test_actionsprov_linkenddata_constructor_args():
+    sig = inspect.signature(ActionsProv_LinkEndData.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -438,30 +438,30 @@ def test_writestructuralfeatureaction_constructor_args():
 
 
 
-def test_actionsprov::addstructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::AddStructuralFeatureValueAction)
+def test_actionsprov_addstructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_AddStructuralFeatureValueAction)
 
 
-def test_actionsprov::addstructuralfeaturevalueaction_constructor_exists():
-    assert callable(ActionsProv::AddStructuralFeatureValueAction.__init__)
+def test_actionsprov_addstructuralfeaturevalueaction_constructor_exists():
+    assert callable(ActionsProv_AddStructuralFeatureValueAction.__init__)
 
 
-def test_actionsprov::addstructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(ActionsProv::AddStructuralFeatureValueAction.__init__)
+def test_actionsprov_addstructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(ActionsProv_AddStructuralFeatureValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::removestructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::RemoveStructuralFeatureValueAction)
+def test_actionsprov_removestructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_RemoveStructuralFeatureValueAction)
 
 
-def test_actionsprov::removestructuralfeaturevalueaction_constructor_exists():
-    assert callable(ActionsProv::RemoveStructuralFeatureValueAction.__init__)
+def test_actionsprov_removestructuralfeaturevalueaction_constructor_exists():
+    assert callable(ActionsProv_RemoveStructuralFeatureValueAction.__init__)
 
 
-def test_actionsprov::removestructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(ActionsProv::RemoveStructuralFeatureValueAction.__init__)
+def test_actionsprov_removestructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(ActionsProv_RemoveStructuralFeatureValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -480,58 +480,58 @@ def test_structuralfeatureaction_constructor_args():
 
 
 
-def test_actionsprov::writestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::WriteStructuralFeatureAction)
+def test_actionsprov_writestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_WriteStructuralFeatureAction)
 
 
-def test_actionsprov::writestructuralfeatureaction_constructor_exists():
-    assert callable(ActionsProv::WriteStructuralFeatureAction.__init__)
+def test_actionsprov_writestructuralfeatureaction_constructor_exists():
+    assert callable(ActionsProv_WriteStructuralFeatureAction.__init__)
 
 
-def test_actionsprov::writestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(ActionsProv::WriteStructuralFeatureAction.__init__)
+def test_actionsprov_writestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(ActionsProv_WriteStructuralFeatureAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::clearstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ClearStructuralFeatureAction)
+def test_actionsprov_clearstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ClearStructuralFeatureAction)
 
 
-def test_actionsprov::clearstructuralfeatureaction_constructor_exists():
-    assert callable(ActionsProv::ClearStructuralFeatureAction.__init__)
+def test_actionsprov_clearstructuralfeatureaction_constructor_exists():
+    assert callable(ActionsProv_ClearStructuralFeatureAction.__init__)
 
 
-def test_actionsprov::clearstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ClearStructuralFeatureAction.__init__)
+def test_actionsprov_clearstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ClearStructuralFeatureAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::readstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadStructuralFeatureAction)
+def test_actionsprov_readstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadStructuralFeatureAction)
 
 
-def test_actionsprov::readstructuralfeatureaction_constructor_exists():
-    assert callable(ActionsProv::ReadStructuralFeatureAction.__init__)
+def test_actionsprov_readstructuralfeatureaction_constructor_exists():
+    assert callable(ActionsProv_ReadStructuralFeatureAction.__init__)
 
 
-def test_actionsprov::readstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadStructuralFeatureAction.__init__)
+def test_actionsprov_readstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadStructuralFeatureAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::CallOperationAction)
+def test_actionsprov_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_CallOperationAction)
 
 
-def test_actionsprov::calloperationaction_constructor_exists():
-    assert callable(ActionsProv::CallOperationAction.__init__)
+def test_actionsprov_calloperationaction_constructor_exists():
+    assert callable(ActionsProv_CallOperationAction.__init__)
 
 
-def test_actionsprov::calloperationaction_constructor_args():
-    sig = inspect.signature(ActionsProv::CallOperationAction.__init__)
+def test_actionsprov_calloperationaction_constructor_args():
+    sig = inspect.signature(ActionsProv_CallOperationAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -550,44 +550,44 @@ def test_callaction_constructor_args():
 
 
 
-def test_actionsprov::startobjectbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::StartObjectBehaviorAction)
+def test_actionsprov_startobjectbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_StartObjectBehaviorAction)
 
 
-def test_actionsprov::startobjectbehavioraction_constructor_exists():
-    assert callable(ActionsProv::StartObjectBehaviorAction.__init__)
+def test_actionsprov_startobjectbehavioraction_constructor_exists():
+    assert callable(ActionsProv_StartObjectBehaviorAction.__init__)
 
 
-def test_actionsprov::startobjectbehavioraction_constructor_args():
-    sig = inspect.signature(ActionsProv::StartObjectBehaviorAction.__init__)
+def test_actionsprov_startobjectbehavioraction_constructor_args():
+    sig = inspect.signature(ActionsProv_StartObjectBehaviorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::callbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::CallBehaviorAction)
+def test_actionsprov_callbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_CallBehaviorAction)
 
 
-def test_actionsprov::callbehavioraction_constructor_exists():
-    assert callable(ActionsProv::CallBehaviorAction.__init__)
+def test_actionsprov_callbehavioraction_constructor_exists():
+    assert callable(ActionsProv_CallBehaviorAction.__init__)
 
 
-def test_actionsprov::callbehavioraction_constructor_args():
-    sig = inspect.signature(ActionsProv::CallBehaviorAction.__init__)
+def test_actionsprov_callbehavioraction_constructor_args():
+    sig = inspect.signature(ActionsProv_CallBehaviorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::action_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::Action)
+def test_actionsprov_action_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_Action)
 
 
-def test_actionsprov::action_constructor_exists():
-    assert callable(ActionsProv::Action.__init__)
+def test_actionsprov_action_constructor_exists():
+    assert callable(ActionsProv_Action.__init__)
 
 
-def test_actionsprov::action_constructor_args():
-    sig = inspect.signature(ActionsProv::Action.__init__)
+def test_actionsprov_action_constructor_args():
+    sig = inspect.signature(ActionsProv_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -606,65 +606,65 @@ def test_invocationaction_constructor_args():
 
 
 
-def test_actionsprov::broadcastsignalaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::BroadcastSignalAction)
+def test_actionsprov_broadcastsignalaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_BroadcastSignalAction)
 
 
-def test_actionsprov::broadcastsignalaction_constructor_exists():
-    assert callable(ActionsProv::BroadcastSignalAction.__init__)
+def test_actionsprov_broadcastsignalaction_constructor_exists():
+    assert callable(ActionsProv_BroadcastSignalAction.__init__)
 
 
-def test_actionsprov::broadcastsignalaction_constructor_args():
-    sig = inspect.signature(ActionsProv::BroadcastSignalAction.__init__)
+def test_actionsprov_broadcastsignalaction_constructor_args():
+    sig = inspect.signature(ActionsProv_BroadcastSignalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::sendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::SendSignalAction)
+def test_actionsprov_sendobjectaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_SendObjectAction)
 
 
-def test_actionsprov::sendsignalaction_constructor_exists():
-    assert callable(ActionsProv::SendSignalAction.__init__)
+def test_actionsprov_sendobjectaction_constructor_exists():
+    assert callable(ActionsProv_SendObjectAction.__init__)
 
 
-def test_actionsprov::sendsignalaction_constructor_args():
-    sig = inspect.signature(ActionsProv::SendSignalAction.__init__)
+def test_actionsprov_sendobjectaction_constructor_args():
+    sig = inspect.signature(ActionsProv_SendObjectAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::sendobjectaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::SendObjectAction)
+def test_actionsprov_sendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_SendSignalAction)
 
 
-def test_actionsprov::sendobjectaction_constructor_exists():
-    assert callable(ActionsProv::SendObjectAction.__init__)
+def test_actionsprov_sendsignalaction_constructor_exists():
+    assert callable(ActionsProv_SendSignalAction.__init__)
 
 
-def test_actionsprov::sendobjectaction_constructor_args():
-    sig = inspect.signature(ActionsProv::SendObjectAction.__init__)
+def test_actionsprov_sendsignalaction_constructor_args():
+    sig = inspect.signature(ActionsProv_SendSignalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::callaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::CallAction)
+def test_actionsprov_callaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_CallAction)
 
 
-def test_actionsprov::callaction_constructor_exists():
-    assert callable(ActionsProv::CallAction.__init__)
+def test_actionsprov_callaction_constructor_exists():
+    assert callable(ActionsProv_CallAction.__init__)
 
 
-def test_actionsprov::callaction_constructor_args():
-    sig = inspect.signature(ActionsProv::CallAction.__init__)
+def test_actionsprov_callaction_constructor_args():
+    sig = inspect.signature(ActionsProv_CallAction.__init__)
     params = list(sig.parameters.keys())
     assert "isSynchronous" in params, "Missing parameter 'isSynchronous'"
 
-def test_actionsprov::callaction_has_isSynchronous():
-    assert hasattr(ActionsProv::CallAction, "isSynchronous")
+def test_actionsprov_callaction_has_isSynchronous():
+    assert hasattr(ActionsProv_CallAction, "isSynchronous")
     descriptor = None
-    for klass in ActionsProv::CallAction.__mro__:
+    for klass in ActionsProv_CallAction.__mro__:
         if "isSynchronous" in klass.__dict__:
             descriptor = klass.__dict__["isSynchronous"]
             break
@@ -686,44 +686,44 @@ def test_inputpin_constructor_args():
 
 
 
-def test_actionsprov::actioninputpin_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ActionInputPin)
+def test_actionsprov_actioninputpin_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ActionInputPin)
 
 
-def test_actionsprov::actioninputpin_constructor_exists():
-    assert callable(ActionsProv::ActionInputPin.__init__)
+def test_actionsprov_actioninputpin_constructor_exists():
+    assert callable(ActionsProv_ActionInputPin.__init__)
 
 
-def test_actionsprov::actioninputpin_constructor_args():
-    sig = inspect.signature(ActionsProv::ActionInputPin.__init__)
+def test_actionsprov_actioninputpin_constructor_args():
+    sig = inspect.signature(ActionsProv_ActionInputPin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::valuepin_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ValuePin)
+def test_actionsprov_valuepin_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ValuePin)
 
 
-def test_actionsprov::valuepin_constructor_exists():
-    assert callable(ActionsProv::ValuePin.__init__)
+def test_actionsprov_valuepin_constructor_exists():
+    assert callable(ActionsProv_ValuePin.__init__)
 
 
-def test_actionsprov::valuepin_constructor_args():
-    sig = inspect.signature(ActionsProv::ValuePin.__init__)
+def test_actionsprov_valuepin_constructor_args():
+    sig = inspect.signature(ActionsProv_ValuePin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_actionsprov::pin_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::Pin)
+def test_actionsprov_pin_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_Pin)
 
 
-def test_actionsprov::pin_constructor_exists():
-    assert callable(ActionsProv::Pin.__init__)
+def test_actionsprov_pin_constructor_exists():
+    assert callable(ActionsProv_Pin.__init__)
 
 
-def test_actionsprov::pin_constructor_args():
-    sig = inspect.signature(ActionsProv::Pin.__init__)
+def test_actionsprov_pin_constructor_args():
+    sig = inspect.signature(ActionsProv_Pin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -742,16 +742,16 @@ def test_pin_constructor_args():
 
 
 
-def test_actionsprov::inputpin_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::InputPin)
+def test_actionsprov_inputpin_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_InputPin)
 
 
-def test_actionsprov::inputpin_constructor_exists():
-    assert callable(ActionsProv::InputPin.__init__)
+def test_actionsprov_inputpin_constructor_exists():
+    assert callable(ActionsProv_InputPin.__init__)
 
 
-def test_actionsprov::inputpin_constructor_args():
-    sig = inspect.signature(ActionsProv::InputPin.__init__)
+def test_actionsprov_inputpin_constructor_args():
+    sig = inspect.signature(ActionsProv_InputPin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -770,295 +770,23 @@ def test_action_constructor_args():
 
 
 
-def test_actionsprov::startclassifierbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::StartClassifierBehaviorAction)
+def test_actionsprov_reclassifyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReclassifyObjectAction)
 
 
-def test_actionsprov::startclassifierbehavioraction_constructor_exists():
-    assert callable(ActionsProv::StartClassifierBehaviorAction.__init__)
+def test_actionsprov_reclassifyobjectaction_constructor_exists():
+    assert callable(ActionsProv_ReclassifyObjectAction.__init__)
 
 
-def test_actionsprov::startclassifierbehavioraction_constructor_args():
-    sig = inspect.signature(ActionsProv::StartClassifierBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::linkaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::LinkAction)
-
-
-def test_actionsprov::linkaction_constructor_exists():
-    assert callable(ActionsProv::LinkAction.__init__)
-
-
-def test_actionsprov::linkaction_constructor_args():
-    sig = inspect.signature(ActionsProv::LinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::unmarshallaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::UnmarshallAction)
-
-
-def test_actionsprov::unmarshallaction_constructor_exists():
-    assert callable(ActionsProv::UnmarshallAction.__init__)
-
-
-def test_actionsprov::unmarshallaction_constructor_args():
-    sig = inspect.signature(ActionsProv::UnmarshallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::readlinkobjectendaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadLinkObjectEndAction)
-
-
-def test_actionsprov::readlinkobjectendaction_constructor_exists():
-    assert callable(ActionsProv::ReadLinkObjectEndAction.__init__)
-
-
-def test_actionsprov::readlinkobjectendaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadLinkObjectEndAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::accepteventaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::AcceptEventAction)
-
-
-def test_actionsprov::accepteventaction_constructor_exists():
-    assert callable(ActionsProv::AcceptEventAction.__init__)
-
-
-def test_actionsprov::accepteventaction_constructor_args():
-    sig = inspect.signature(ActionsProv::AcceptEventAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "isUnmarshall" in params, "Missing parameter 'isUnmarshall'"
-
-def test_actionsprov::accepteventaction_has_isUnmarshall():
-    assert hasattr(ActionsProv::AcceptEventAction, "isUnmarshall")
-    descriptor = None
-    for klass in ActionsProv::AcceptEventAction.__mro__:
-        if "isUnmarshall" in klass.__dict__:
-            descriptor = klass.__dict__["isUnmarshall"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_actionsprov::variableaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::VariableAction)
-
-
-def test_actionsprov::variableaction_constructor_exists():
-    assert callable(ActionsProv::VariableAction.__init__)
-
-
-def test_actionsprov::variableaction_constructor_args():
-    sig = inspect.signature(ActionsProv::VariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::createobjectaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::CreateObjectAction)
-
-
-def test_actionsprov::createobjectaction_constructor_exists():
-    assert callable(ActionsProv::CreateObjectAction.__init__)
-
-
-def test_actionsprov::createobjectaction_constructor_args():
-    sig = inspect.signature(ActionsProv::CreateObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::raiseexceptionaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::RaiseExceptionAction)
-
-
-def test_actionsprov::raiseexceptionaction_constructor_exists():
-    assert callable(ActionsProv::RaiseExceptionAction.__init__)
-
-
-def test_actionsprov::raiseexceptionaction_constructor_args():
-    sig = inspect.signature(ActionsProv::RaiseExceptionAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::reduceaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReduceAction)
-
-
-def test_actionsprov::reduceaction_constructor_exists():
-    assert callable(ActionsProv::ReduceAction.__init__)
-
-
-def test_actionsprov::reduceaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReduceAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
-
-def test_actionsprov::reduceaction_has_isOrdered():
-    assert hasattr(ActionsProv::ReduceAction, "isOrdered")
-    descriptor = None
-    for klass in ActionsProv::ReduceAction.__mro__:
-        if "isOrdered" in klass.__dict__:
-            descriptor = klass.__dict__["isOrdered"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_actionsprov::readlinkobjectendqualifieraction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadLinkObjectEndQualifierAction)
-
-
-def test_actionsprov::readlinkobjectendqualifieraction_constructor_exists():
-    assert callable(ActionsProv::ReadLinkObjectEndQualifierAction.__init__)
-
-
-def test_actionsprov::readlinkobjectendqualifieraction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadLinkObjectEndQualifierAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::structuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::StructuralFeatureAction)
-
-
-def test_actionsprov::structuralfeatureaction_constructor_exists():
-    assert callable(ActionsProv::StructuralFeatureAction.__init__)
-
-
-def test_actionsprov::structuralfeatureaction_constructor_args():
-    sig = inspect.signature(ActionsProv::StructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::replyaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReplyAction)
-
-
-def test_actionsprov::replyaction_constructor_exists():
-    assert callable(ActionsProv::ReplyAction.__init__)
-
-
-def test_actionsprov::replyaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReplyAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::invocationaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::InvocationAction)
-
-
-def test_actionsprov::invocationaction_constructor_exists():
-    assert callable(ActionsProv::InvocationAction.__init__)
-
-
-def test_actionsprov::invocationaction_constructor_args():
-    sig = inspect.signature(ActionsProv::InvocationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::readextendaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadExtendAction)
-
-
-def test_actionsprov::readextendaction_constructor_exists():
-    assert callable(ActionsProv::ReadExtendAction.__init__)
-
-
-def test_actionsprov::readextendaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadExtendAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::testidentityaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::TestIdentityAction)
-
-
-def test_actionsprov::testidentityaction_constructor_exists():
-    assert callable(ActionsProv::TestIdentityAction.__init__)
-
-
-def test_actionsprov::testidentityaction_constructor_args():
-    sig = inspect.signature(ActionsProv::TestIdentityAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::destroyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::DestroyObjectAction)
-
-
-def test_actionsprov::destroyobjectaction_constructor_exists():
-    assert callable(ActionsProv::DestroyObjectAction.__init__)
-
-
-def test_actionsprov::destroyobjectaction_constructor_args():
-    sig = inspect.signature(ActionsProv::DestroyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::readselfaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReadSelfAction)
-
-
-def test_actionsprov::readselfaction_constructor_exists():
-    assert callable(ActionsProv::ReadSelfAction.__init__)
-
-
-def test_actionsprov::readselfaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReadSelfAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::valuespecificationaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ValueSpecificationAction)
-
-
-def test_actionsprov::valuespecificationaction_constructor_exists():
-    assert callable(ActionsProv::ValueSpecificationAction.__init__)
-
-
-def test_actionsprov::valuespecificationaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ValueSpecificationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionsprov::reclassifyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::ReclassifyObjectAction)
-
-
-def test_actionsprov::reclassifyobjectaction_constructor_exists():
-    assert callable(ActionsProv::ReclassifyObjectAction.__init__)
-
-
-def test_actionsprov::reclassifyobjectaction_constructor_args():
-    sig = inspect.signature(ActionsProv::ReclassifyObjectAction.__init__)
+def test_actionsprov_reclassifyobjectaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReclassifyObjectAction.__init__)
     params = list(sig.parameters.keys())
     assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
 
-def test_actionsprov::reclassifyobjectaction_has_isReplaceAll():
-    assert hasattr(ActionsProv::ReclassifyObjectAction, "isReplaceAll")
+def test_actionsprov_reclassifyobjectaction_has_isReplaceAll():
+    assert hasattr(ActionsProv_ReclassifyObjectAction, "isReplaceAll")
     descriptor = None
-    for klass in ActionsProv::ReclassifyObjectAction.__mro__:
+    for klass in ActionsProv_ReclassifyObjectAction.__mro__:
         if "isReplaceAll" in klass.__dict__:
             descriptor = klass.__dict__["isReplaceAll"]
             break
@@ -1066,33 +794,305 @@ def test_actionsprov::reclassifyobjectaction_has_isReplaceAll():
 
 
 
-def test_actionsprov::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::OpaqueAction)
+def test_actionsprov_valuespecificationaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ValueSpecificationAction)
 
 
-def test_actionsprov::opaqueaction_constructor_exists():
-    assert callable(ActionsProv::OpaqueAction.__init__)
+def test_actionsprov_valuespecificationaction_constructor_exists():
+    assert callable(ActionsProv_ValueSpecificationAction.__init__)
 
 
-def test_actionsprov::opaqueaction_constructor_args():
-    sig = inspect.signature(ActionsProv::OpaqueAction.__init__)
+def test_actionsprov_valuespecificationaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ValueSpecificationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_variableaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_VariableAction)
+
+
+def test_actionsprov_variableaction_constructor_exists():
+    assert callable(ActionsProv_VariableAction.__init__)
+
+
+def test_actionsprov_variableaction_constructor_args():
+    sig = inspect.signature(ActionsProv_VariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_linkaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_LinkAction)
+
+
+def test_actionsprov_linkaction_constructor_exists():
+    assert callable(ActionsProv_LinkAction.__init__)
+
+
+def test_actionsprov_linkaction_constructor_args():
+    sig = inspect.signature(ActionsProv_LinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_accepteventaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_AcceptEventAction)
+
+
+def test_actionsprov_accepteventaction_constructor_exists():
+    assert callable(ActionsProv_AcceptEventAction.__init__)
+
+
+def test_actionsprov_accepteventaction_constructor_args():
+    sig = inspect.signature(ActionsProv_AcceptEventAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isUnmarshall" in params, "Missing parameter 'isUnmarshall'"
+
+def test_actionsprov_accepteventaction_has_isUnmarshall():
+    assert hasattr(ActionsProv_AcceptEventAction, "isUnmarshall")
+    descriptor = None
+    for klass in ActionsProv_AcceptEventAction.__mro__:
+        if "isUnmarshall" in klass.__dict__:
+            descriptor = klass.__dict__["isUnmarshall"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_actionsprov_invocationaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_InvocationAction)
+
+
+def test_actionsprov_invocationaction_constructor_exists():
+    assert callable(ActionsProv_InvocationAction.__init__)
+
+
+def test_actionsprov_invocationaction_constructor_args():
+    sig = inspect.signature(ActionsProv_InvocationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_readlinkobjectendqualifieraction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadLinkObjectEndQualifierAction)
+
+
+def test_actionsprov_readlinkobjectendqualifieraction_constructor_exists():
+    assert callable(ActionsProv_ReadLinkObjectEndQualifierAction.__init__)
+
+
+def test_actionsprov_readlinkobjectendqualifieraction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadLinkObjectEndQualifierAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_structuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_StructuralFeatureAction)
+
+
+def test_actionsprov_structuralfeatureaction_constructor_exists():
+    assert callable(ActionsProv_StructuralFeatureAction.__init__)
+
+
+def test_actionsprov_structuralfeatureaction_constructor_args():
+    sig = inspect.signature(ActionsProv_StructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_raiseexceptionaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_RaiseExceptionAction)
+
+
+def test_actionsprov_raiseexceptionaction_constructor_exists():
+    assert callable(ActionsProv_RaiseExceptionAction.__init__)
+
+
+def test_actionsprov_raiseexceptionaction_constructor_args():
+    sig = inspect.signature(ActionsProv_RaiseExceptionAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_createobjectaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_CreateObjectAction)
+
+
+def test_actionsprov_createobjectaction_constructor_exists():
+    assert callable(ActionsProv_CreateObjectAction.__init__)
+
+
+def test_actionsprov_createobjectaction_constructor_args():
+    sig = inspect.signature(ActionsProv_CreateObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_readextendaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadExtendAction)
+
+
+def test_actionsprov_readextendaction_constructor_exists():
+    assert callable(ActionsProv_ReadExtendAction.__init__)
+
+
+def test_actionsprov_readextendaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadExtendAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_replyaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReplyAction)
+
+
+def test_actionsprov_replyaction_constructor_exists():
+    assert callable(ActionsProv_ReplyAction.__init__)
+
+
+def test_actionsprov_replyaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReplyAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_unmarshallaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_UnmarshallAction)
+
+
+def test_actionsprov_unmarshallaction_constructor_exists():
+    assert callable(ActionsProv_UnmarshallAction.__init__)
+
+
+def test_actionsprov_unmarshallaction_constructor_args():
+    sig = inspect.signature(ActionsProv_UnmarshallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_startclassifierbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_StartClassifierBehaviorAction)
+
+
+def test_actionsprov_startclassifierbehavioraction_constructor_exists():
+    assert callable(ActionsProv_StartClassifierBehaviorAction.__init__)
+
+
+def test_actionsprov_startclassifierbehavioraction_constructor_args():
+    sig = inspect.signature(ActionsProv_StartClassifierBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_testidentityaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_TestIdentityAction)
+
+
+def test_actionsprov_testidentityaction_constructor_exists():
+    assert callable(ActionsProv_TestIdentityAction.__init__)
+
+
+def test_actionsprov_testidentityaction_constructor_args():
+    sig = inspect.signature(ActionsProv_TestIdentityAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_readlinkobjectendaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadLinkObjectEndAction)
+
+
+def test_actionsprov_readlinkobjectendaction_constructor_exists():
+    assert callable(ActionsProv_ReadLinkObjectEndAction.__init__)
+
+
+def test_actionsprov_readlinkobjectendaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadLinkObjectEndAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_readselfaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReadSelfAction)
+
+
+def test_actionsprov_readselfaction_constructor_exists():
+    assert callable(ActionsProv_ReadSelfAction.__init__)
+
+
+def test_actionsprov_readselfaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReadSelfAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_reduceaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_ReduceAction)
+
+
+def test_actionsprov_reduceaction_constructor_exists():
+    assert callable(ActionsProv_ReduceAction.__init__)
+
+
+def test_actionsprov_reduceaction_constructor_args():
+    sig = inspect.signature(ActionsProv_ReduceAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
+
+def test_actionsprov_reduceaction_has_isOrdered():
+    assert hasattr(ActionsProv_ReduceAction, "isOrdered")
+    descriptor = None
+    for klass in ActionsProv_ReduceAction.__mro__:
+        if "isOrdered" in klass.__dict__:
+            descriptor = klass.__dict__["isOrdered"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_actionsprov_destroyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_DestroyObjectAction)
+
+
+def test_actionsprov_destroyobjectaction_constructor_exists():
+    assert callable(ActionsProv_DestroyObjectAction.__init__)
+
+
+def test_actionsprov_destroyobjectaction_constructor_args():
+    sig = inspect.signature(ActionsProv_DestroyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionsprov_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_OpaqueAction)
+
+
+def test_actionsprov_opaqueaction_constructor_exists():
+    assert callable(ActionsProv_OpaqueAction.__init__)
+
+
+def test_actionsprov_opaqueaction_constructor_args():
+    sig = inspect.signature(ActionsProv_OpaqueAction.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "body" in params, "Missing parameter 'body'"
 
-def test_actionsprov::opaqueaction_has_language():
-    assert hasattr(ActionsProv::OpaqueAction, "language")
+def test_actionsprov_opaqueaction_has_language():
+    assert hasattr(ActionsProv_OpaqueAction, "language")
     descriptor = None
-    for klass in ActionsProv::OpaqueAction.__mro__:
+    for klass in ActionsProv_OpaqueAction.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_actionsprov::opaqueaction_has_body():
-    assert hasattr(ActionsProv::OpaqueAction, "body")
+def test_actionsprov_opaqueaction_has_body():
+    assert hasattr(ActionsProv_OpaqueAction, "body")
     descriptor = None
-    for klass in ActionsProv::OpaqueAction.__mro__:
+    for klass in ActionsProv_OpaqueAction.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -1100,16 +1100,16 @@ def test_actionsprov::opaqueaction_has_body():
 
 
 
-def test_actionsprov::outputpin_is_not_abstract():
-    assert not inspect.isabstract(ActionsProv::OutputPin)
+def test_actionsprov_outputpin_is_not_abstract():
+    assert not inspect.isabstract(ActionsProv_OutputPin)
 
 
-def test_actionsprov::outputpin_constructor_exists():
-    assert callable(ActionsProv::OutputPin.__init__)
+def test_actionsprov_outputpin_constructor_exists():
+    assert callable(ActionsProv_OutputPin.__init__)
 
 
-def test_actionsprov::outputpin_constructor_args():
-    sig = inspect.signature(ActionsProv::OutputPin.__init__)
+def test_actionsprov_outputpin_constructor_args():
+    sig = inspect.signature(ActionsProv_OutputPin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1127,222 +1127,222 @@ safe_text = st.text(
 WriteVariableAction_strategy = st.builds(
     WriteVariableAction,
 )
-ActionsProv::RemoveVariableValueAction_strategy = st.builds(
-    ActionsProv::RemoveVariableValueAction,
+ActionsProv_RemoveVariableValueAction_strategy = st.builds(
+    ActionsProv_RemoveVariableValueAction,
 )
-ActionsProv::AddVariableValueAction_strategy = st.builds(
-    ActionsProv::AddVariableValueAction,
+ActionsProv_AddVariableValueAction_strategy = st.builds(
+    ActionsProv_AddVariableValueAction,
 )
 VariableAction_strategy = st.builds(
     VariableAction,
 )
-ActionsProv::ClearVariableAction_strategy = st.builds(
-    ActionsProv::ClearVariableAction,
+ActionsProv_ClearVariableAction_strategy = st.builds(
+    ActionsProv_ClearVariableAction,
 )
-ActionsProv::WriteVariableAction_strategy = st.builds(
-    ActionsProv::WriteVariableAction,
+ActionsProv_WriteVariableAction_strategy = st.builds(
+    ActionsProv_WriteVariableAction,
 )
-ActionsProv::ReadVariableAction_strategy = st.builds(
-    ActionsProv::ReadVariableAction,
+ActionsProv_ReadVariableAction_strategy = st.builds(
+    ActionsProv_ReadVariableAction,
 )
 CreateLinkAction_strategy = st.builds(
     CreateLinkAction,
 )
-ActionsProv::CreateLinkObjectAction_strategy = st.builds(
-    ActionsProv::CreateLinkObjectAction,
+ActionsProv_CreateLinkObjectAction_strategy = st.builds(
+    ActionsProv_CreateLinkObjectAction,
 )
-ActionsProv::ReadlsClassifiedObjectAction_strategy = st.builds(
-    ActionsProv::ReadlsClassifiedObjectAction,
+ActionsProv_ReadlsClassifiedObjectAction_strategy = st.builds(
+    ActionsProv_ReadlsClassifiedObjectAction,
 )
 AcceptEventAction_strategy = st.builds(
     AcceptEventAction,
 )
-ActionsProv::AcceptCallAction_strategy = st.builds(
-    ActionsProv::AcceptCallAction,
+ActionsProv_AcceptCallAction_strategy = st.builds(
+    ActionsProv_AcceptCallAction,
 )
-ActionsProv::QualifierValue_strategy = st.builds(
-    ActionsProv::QualifierValue,
+ActionsProv_QualifierValue_strategy = st.builds(
+    ActionsProv_QualifierValue,
 )
 LinkEndData_strategy = st.builds(
     LinkEndData,
 )
-ActionsProv::LinkEndDestructionData_strategy = st.builds(
-    ActionsProv::LinkEndDestructionData,
+ActionsProv_LinkEndDestructionData_strategy = st.builds(
+    ActionsProv_LinkEndDestructionData,
     isDestroyDuplicates=
         st.booleans()
 )
-ActionsProv::LinkEndCreationData_strategy = st.builds(
-    ActionsProv::LinkEndCreationData,
+ActionsProv_LinkEndCreationData_strategy = st.builds(
+    ActionsProv_LinkEndCreationData,
     isReplaceAll=
         st.booleans()
 )
 WriteLinkAction_strategy = st.builds(
     WriteLinkAction,
 )
-ActionsProv::DestroyLinkAction_strategy = st.builds(
-    ActionsProv::DestroyLinkAction,
+ActionsProv_DestroyLinkAction_strategy = st.builds(
+    ActionsProv_DestroyLinkAction,
 )
-ActionsProv::CreateLinkAction_strategy = st.builds(
-    ActionsProv::CreateLinkAction,
+ActionsProv_CreateLinkAction_strategy = st.builds(
+    ActionsProv_CreateLinkAction,
 )
 LinkAction_strategy = st.builds(
     LinkAction,
 )
-ActionsProv::WriteLinkAction_strategy = st.builds(
-    ActionsProv::WriteLinkAction,
+ActionsProv_ReadLinkAction_strategy = st.builds(
+    ActionsProv_ReadLinkAction,
 )
-ActionsProv::ReadLinkAction_strategy = st.builds(
-    ActionsProv::ReadLinkAction,
+ActionsProv_WriteLinkAction_strategy = st.builds(
+    ActionsProv_WriteLinkAction,
 )
-ActionsProv::LinkEndData_strategy = st.builds(
-    ActionsProv::LinkEndData,
+ActionsProv_LinkEndData_strategy = st.builds(
+    ActionsProv_LinkEndData,
 )
 WriteStructuralFeatureAction_strategy = st.builds(
     WriteStructuralFeatureAction,
 )
-ActionsProv::AddStructuralFeatureValueAction_strategy = st.builds(
-    ActionsProv::AddStructuralFeatureValueAction,
+ActionsProv_AddStructuralFeatureValueAction_strategy = st.builds(
+    ActionsProv_AddStructuralFeatureValueAction,
 )
-ActionsProv::RemoveStructuralFeatureValueAction_strategy = st.builds(
-    ActionsProv::RemoveStructuralFeatureValueAction,
+ActionsProv_RemoveStructuralFeatureValueAction_strategy = st.builds(
+    ActionsProv_RemoveStructuralFeatureValueAction,
 )
 StructuralFeatureAction_strategy = st.builds(
     StructuralFeatureAction,
 )
-ActionsProv::WriteStructuralFeatureAction_strategy = st.builds(
-    ActionsProv::WriteStructuralFeatureAction,
+ActionsProv_WriteStructuralFeatureAction_strategy = st.builds(
+    ActionsProv_WriteStructuralFeatureAction,
 )
-ActionsProv::ClearStructuralFeatureAction_strategy = st.builds(
-    ActionsProv::ClearStructuralFeatureAction,
+ActionsProv_ClearStructuralFeatureAction_strategy = st.builds(
+    ActionsProv_ClearStructuralFeatureAction,
 )
-ActionsProv::ReadStructuralFeatureAction_strategy = st.builds(
-    ActionsProv::ReadStructuralFeatureAction,
+ActionsProv_ReadStructuralFeatureAction_strategy = st.builds(
+    ActionsProv_ReadStructuralFeatureAction,
 )
-ActionsProv::CallOperationAction_strategy = st.builds(
-    ActionsProv::CallOperationAction,
+ActionsProv_CallOperationAction_strategy = st.builds(
+    ActionsProv_CallOperationAction,
 )
 CallAction_strategy = st.builds(
     CallAction,
 )
-ActionsProv::StartObjectBehaviorAction_strategy = st.builds(
-    ActionsProv::StartObjectBehaviorAction,
+ActionsProv_StartObjectBehaviorAction_strategy = st.builds(
+    ActionsProv_StartObjectBehaviorAction,
 )
-ActionsProv::CallBehaviorAction_strategy = st.builds(
-    ActionsProv::CallBehaviorAction,
+ActionsProv_CallBehaviorAction_strategy = st.builds(
+    ActionsProv_CallBehaviorAction,
 )
-ActionsProv::Action_strategy = st.builds(
-    ActionsProv::Action,
+ActionsProv_Action_strategy = st.builds(
+    ActionsProv_Action,
 )
 InvocationAction_strategy = st.builds(
     InvocationAction,
 )
-ActionsProv::BroadcastSignalAction_strategy = st.builds(
-    ActionsProv::BroadcastSignalAction,
+ActionsProv_BroadcastSignalAction_strategy = st.builds(
+    ActionsProv_BroadcastSignalAction,
 )
-ActionsProv::SendSignalAction_strategy = st.builds(
-    ActionsProv::SendSignalAction,
+ActionsProv_SendObjectAction_strategy = st.builds(
+    ActionsProv_SendObjectAction,
 )
-ActionsProv::SendObjectAction_strategy = st.builds(
-    ActionsProv::SendObjectAction,
+ActionsProv_SendSignalAction_strategy = st.builds(
+    ActionsProv_SendSignalAction,
 )
-ActionsProv::CallAction_strategy = st.builds(
-    ActionsProv::CallAction,
+ActionsProv_CallAction_strategy = st.builds(
+    ActionsProv_CallAction,
     isSynchronous=
         st.booleans()
 )
 InputPin_strategy = st.builds(
     InputPin,
 )
-ActionsProv::ActionInputPin_strategy = st.builds(
-    ActionsProv::ActionInputPin,
+ActionsProv_ActionInputPin_strategy = st.builds(
+    ActionsProv_ActionInputPin,
 )
-ActionsProv::ValuePin_strategy = st.builds(
-    ActionsProv::ValuePin,
+ActionsProv_ValuePin_strategy = st.builds(
+    ActionsProv_ValuePin,
 )
-ActionsProv::Pin_strategy = st.builds(
-    ActionsProv::Pin,
+ActionsProv_Pin_strategy = st.builds(
+    ActionsProv_Pin,
 )
 Pin_strategy = st.builds(
     Pin,
 )
-ActionsProv::InputPin_strategy = st.builds(
-    ActionsProv::InputPin,
+ActionsProv_InputPin_strategy = st.builds(
+    ActionsProv_InputPin,
 )
 Action_strategy = st.builds(
     Action,
 )
-ActionsProv::StartClassifierBehaviorAction_strategy = st.builds(
-    ActionsProv::StartClassifierBehaviorAction,
-)
-ActionsProv::LinkAction_strategy = st.builds(
-    ActionsProv::LinkAction,
-)
-ActionsProv::UnmarshallAction_strategy = st.builds(
-    ActionsProv::UnmarshallAction,
-)
-ActionsProv::ReadLinkObjectEndAction_strategy = st.builds(
-    ActionsProv::ReadLinkObjectEndAction,
-)
-ActionsProv::AcceptEventAction_strategy = st.builds(
-    ActionsProv::AcceptEventAction,
-    isUnmarshall=
-        st.booleans()
-)
-ActionsProv::VariableAction_strategy = st.builds(
-    ActionsProv::VariableAction,
-)
-ActionsProv::CreateObjectAction_strategy = st.builds(
-    ActionsProv::CreateObjectAction,
-)
-ActionsProv::RaiseExceptionAction_strategy = st.builds(
-    ActionsProv::RaiseExceptionAction,
-)
-ActionsProv::ReduceAction_strategy = st.builds(
-    ActionsProv::ReduceAction,
-    isOrdered=
-        st.booleans()
-)
-ActionsProv::ReadLinkObjectEndQualifierAction_strategy = st.builds(
-    ActionsProv::ReadLinkObjectEndQualifierAction,
-)
-ActionsProv::StructuralFeatureAction_strategy = st.builds(
-    ActionsProv::StructuralFeatureAction,
-)
-ActionsProv::ReplyAction_strategy = st.builds(
-    ActionsProv::ReplyAction,
-)
-ActionsProv::InvocationAction_strategy = st.builds(
-    ActionsProv::InvocationAction,
-)
-ActionsProv::ReadExtendAction_strategy = st.builds(
-    ActionsProv::ReadExtendAction,
-)
-ActionsProv::TestIdentityAction_strategy = st.builds(
-    ActionsProv::TestIdentityAction,
-)
-ActionsProv::DestroyObjectAction_strategy = st.builds(
-    ActionsProv::DestroyObjectAction,
-)
-ActionsProv::ReadSelfAction_strategy = st.builds(
-    ActionsProv::ReadSelfAction,
-)
-ActionsProv::ValueSpecificationAction_strategy = st.builds(
-    ActionsProv::ValueSpecificationAction,
-)
-ActionsProv::ReclassifyObjectAction_strategy = st.builds(
-    ActionsProv::ReclassifyObjectAction,
+ActionsProv_ReclassifyObjectAction_strategy = st.builds(
+    ActionsProv_ReclassifyObjectAction,
     isReplaceAll=
         st.booleans()
 )
-ActionsProv::OpaqueAction_strategy = st.builds(
-    ActionsProv::OpaqueAction,
+ActionsProv_ValueSpecificationAction_strategy = st.builds(
+    ActionsProv_ValueSpecificationAction,
+)
+ActionsProv_VariableAction_strategy = st.builds(
+    ActionsProv_VariableAction,
+)
+ActionsProv_LinkAction_strategy = st.builds(
+    ActionsProv_LinkAction,
+)
+ActionsProv_AcceptEventAction_strategy = st.builds(
+    ActionsProv_AcceptEventAction,
+    isUnmarshall=
+        st.booleans()
+)
+ActionsProv_InvocationAction_strategy = st.builds(
+    ActionsProv_InvocationAction,
+)
+ActionsProv_ReadLinkObjectEndQualifierAction_strategy = st.builds(
+    ActionsProv_ReadLinkObjectEndQualifierAction,
+)
+ActionsProv_StructuralFeatureAction_strategy = st.builds(
+    ActionsProv_StructuralFeatureAction,
+)
+ActionsProv_RaiseExceptionAction_strategy = st.builds(
+    ActionsProv_RaiseExceptionAction,
+)
+ActionsProv_CreateObjectAction_strategy = st.builds(
+    ActionsProv_CreateObjectAction,
+)
+ActionsProv_ReadExtendAction_strategy = st.builds(
+    ActionsProv_ReadExtendAction,
+)
+ActionsProv_ReplyAction_strategy = st.builds(
+    ActionsProv_ReplyAction,
+)
+ActionsProv_UnmarshallAction_strategy = st.builds(
+    ActionsProv_UnmarshallAction,
+)
+ActionsProv_StartClassifierBehaviorAction_strategy = st.builds(
+    ActionsProv_StartClassifierBehaviorAction,
+)
+ActionsProv_TestIdentityAction_strategy = st.builds(
+    ActionsProv_TestIdentityAction,
+)
+ActionsProv_ReadLinkObjectEndAction_strategy = st.builds(
+    ActionsProv_ReadLinkObjectEndAction,
+)
+ActionsProv_ReadSelfAction_strategy = st.builds(
+    ActionsProv_ReadSelfAction,
+)
+ActionsProv_ReduceAction_strategy = st.builds(
+    ActionsProv_ReduceAction,
+    isOrdered=
+        st.booleans()
+)
+ActionsProv_DestroyObjectAction_strategy = st.builds(
+    ActionsProv_DestroyObjectAction,
+)
+ActionsProv_OpaqueAction_strategy = st.builds(
+    ActionsProv_OpaqueAction,
     language=
         safe_text,
     body=
         safe_text
 )
-ActionsProv::OutputPin_strategy = st.builds(
-    ActionsProv::OutputPin,
+ActionsProv_OutputPin_strategy = st.builds(
+    ActionsProv_OutputPin,
 )
 
 @given(instance=WriteVariableAction_strategy)
@@ -1350,99 +1350,93 @@ ActionsProv::OutputPin_strategy = st.builds(
 def test_writevariableaction_instantiation(instance):
     assert isinstance(instance, WriteVariableAction)
 
-@given(instance=ActionsProv::RemoveVariableValueAction_strategy)
+@given(instance=ActionsProv_RemoveVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::removevariablevalueaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::RemoveVariableValueAction)
+def test_actionsprov_removevariablevalueaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_RemoveVariableValueAction)
 
-@given(instance=ActionsProv::AddVariableValueAction_strategy)
+@given(instance=ActionsProv_AddVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::addvariablevalueaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::AddVariableValueAction)
+def test_actionsprov_addvariablevalueaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_AddVariableValueAction)
 
 @given(instance=VariableAction_strategy)
 @settings(max_examples=50)
 def test_variableaction_instantiation(instance):
     assert isinstance(instance, VariableAction)
 
-@given(instance=ActionsProv::ClearVariableAction_strategy)
+@given(instance=ActionsProv_ClearVariableAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::clearvariableaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ClearVariableAction)
+def test_actionsprov_clearvariableaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ClearVariableAction)
 
-@given(instance=ActionsProv::WriteVariableAction_strategy)
+@given(instance=ActionsProv_WriteVariableAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::writevariableaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::WriteVariableAction)
+def test_actionsprov_writevariableaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_WriteVariableAction)
 
-@given(instance=ActionsProv::ReadVariableAction_strategy)
+@given(instance=ActionsProv_ReadVariableAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::readvariableaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadVariableAction)
+def test_actionsprov_readvariableaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadVariableAction)
 
 @given(instance=CreateLinkAction_strategy)
 @settings(max_examples=50)
 def test_createlinkaction_instantiation(instance):
     assert isinstance(instance, CreateLinkAction)
 
-@given(instance=ActionsProv::CreateLinkObjectAction_strategy)
+@given(instance=ActionsProv_CreateLinkObjectAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::createlinkobjectaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::CreateLinkObjectAction)
+def test_actionsprov_createlinkobjectaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_CreateLinkObjectAction)
 
-@given(instance=ActionsProv::ReadlsClassifiedObjectAction_strategy)
+@given(instance=ActionsProv_ReadlsClassifiedObjectAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::readlsclassifiedobjectaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadlsClassifiedObjectAction)
+def test_actionsprov_readlsclassifiedobjectaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadlsClassifiedObjectAction)
 
 @given(instance=AcceptEventAction_strategy)
 @settings(max_examples=50)
 def test_accepteventaction_instantiation(instance):
     assert isinstance(instance, AcceptEventAction)
 
-@given(instance=ActionsProv::AcceptCallAction_strategy)
+@given(instance=ActionsProv_AcceptCallAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::acceptcallaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::AcceptCallAction)
+def test_actionsprov_acceptcallaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_AcceptCallAction)
 
-@given(instance=ActionsProv::QualifierValue_strategy)
+@given(instance=ActionsProv_QualifierValue_strategy)
 @settings(max_examples=50)
-def test_actionsprov::qualifiervalue_instantiation(instance):
-    assert isinstance(instance, ActionsProv::QualifierValue)
+def test_actionsprov_qualifiervalue_instantiation(instance):
+    assert isinstance(instance, ActionsProv_QualifierValue)
 
 @given(instance=LinkEndData_strategy)
 @settings(max_examples=50)
 def test_linkenddata_instantiation(instance):
     assert isinstance(instance, LinkEndData)
 
-@given(instance=ActionsProv::LinkEndDestructionData_strategy)
+@given(instance=ActionsProv_LinkEndDestructionData_strategy)
 @settings(max_examples=50)
-def test_actionsprov::linkenddestructiondata_instantiation(instance):
-    assert isinstance(instance, ActionsProv::LinkEndDestructionData)
-
-@given(instance=ActionsProv::LinkEndDestructionData_strategy)
-def test_actionsprov::linkenddestructiondata_isDestroyDuplicates_type(instance):
-    assert isinstance(instance.isDestroyDuplicates, bool)
+def test_actionsprov_linkenddestructiondata_instantiation(instance):
+    assert isinstance(instance, ActionsProv_LinkEndDestructionData)
 
 
-@given(instance=ActionsProv::LinkEndDestructionData_strategy)
-def test_actionsprov::linkenddestructiondata_isDestroyDuplicates_setter(instance):
+
+@given(instance=ActionsProv_LinkEndDestructionData_strategy)
+def test_actionsprov_linkenddestructiondata_isDestroyDuplicates_setter(instance):
     original = instance.isDestroyDuplicates
     instance.isDestroyDuplicates = original
     assert instance.isDestroyDuplicates == original
 
-@given(instance=ActionsProv::LinkEndCreationData_strategy)
+@given(instance=ActionsProv_LinkEndCreationData_strategy)
 @settings(max_examples=50)
-def test_actionsprov::linkendcreationdata_instantiation(instance):
-    assert isinstance(instance, ActionsProv::LinkEndCreationData)
-
-@given(instance=ActionsProv::LinkEndCreationData_strategy)
-def test_actionsprov::linkendcreationdata_isReplaceAll_type(instance):
-    assert isinstance(instance.isReplaceAll, bool)
+def test_actionsprov_linkendcreationdata_instantiation(instance):
+    assert isinstance(instance, ActionsProv_LinkEndCreationData)
 
 
-@given(instance=ActionsProv::LinkEndCreationData_strategy)
-def test_actionsprov::linkendcreationdata_isReplaceAll_setter(instance):
+
+@given(instance=ActionsProv_LinkEndCreationData_strategy)
+def test_actionsprov_linkendcreationdata_isReplaceAll_setter(instance):
     original = instance.isReplaceAll
     instance.isReplaceAll = original
     assert instance.isReplaceAll == original
@@ -1452,128 +1446,125 @@ def test_actionsprov::linkendcreationdata_isReplaceAll_setter(instance):
 def test_writelinkaction_instantiation(instance):
     assert isinstance(instance, WriteLinkAction)
 
-@given(instance=ActionsProv::DestroyLinkAction_strategy)
+@given(instance=ActionsProv_DestroyLinkAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::destroylinkaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::DestroyLinkAction)
+def test_actionsprov_destroylinkaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_DestroyLinkAction)
 
-@given(instance=ActionsProv::CreateLinkAction_strategy)
+@given(instance=ActionsProv_CreateLinkAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::createlinkaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::CreateLinkAction)
+def test_actionsprov_createlinkaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_CreateLinkAction)
 
 @given(instance=LinkAction_strategy)
 @settings(max_examples=50)
 def test_linkaction_instantiation(instance):
     assert isinstance(instance, LinkAction)
 
-@given(instance=ActionsProv::WriteLinkAction_strategy)
+@given(instance=ActionsProv_ReadLinkAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::writelinkaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::WriteLinkAction)
+def test_actionsprov_readlinkaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadLinkAction)
 
-@given(instance=ActionsProv::ReadLinkAction_strategy)
+@given(instance=ActionsProv_WriteLinkAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::readlinkaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadLinkAction)
+def test_actionsprov_writelinkaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_WriteLinkAction)
 
-@given(instance=ActionsProv::LinkEndData_strategy)
+@given(instance=ActionsProv_LinkEndData_strategy)
 @settings(max_examples=50)
-def test_actionsprov::linkenddata_instantiation(instance):
-    assert isinstance(instance, ActionsProv::LinkEndData)
+def test_actionsprov_linkenddata_instantiation(instance):
+    assert isinstance(instance, ActionsProv_LinkEndData)
 
 @given(instance=WriteStructuralFeatureAction_strategy)
 @settings(max_examples=50)
 def test_writestructuralfeatureaction_instantiation(instance):
     assert isinstance(instance, WriteStructuralFeatureAction)
 
-@given(instance=ActionsProv::AddStructuralFeatureValueAction_strategy)
+@given(instance=ActionsProv_AddStructuralFeatureValueAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::addstructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::AddStructuralFeatureValueAction)
+def test_actionsprov_addstructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_AddStructuralFeatureValueAction)
 
-@given(instance=ActionsProv::RemoveStructuralFeatureValueAction_strategy)
+@given(instance=ActionsProv_RemoveStructuralFeatureValueAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::removestructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::RemoveStructuralFeatureValueAction)
+def test_actionsprov_removestructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_RemoveStructuralFeatureValueAction)
 
 @given(instance=StructuralFeatureAction_strategy)
 @settings(max_examples=50)
 def test_structuralfeatureaction_instantiation(instance):
     assert isinstance(instance, StructuralFeatureAction)
 
-@given(instance=ActionsProv::WriteStructuralFeatureAction_strategy)
+@given(instance=ActionsProv_WriteStructuralFeatureAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::writestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::WriteStructuralFeatureAction)
+def test_actionsprov_writestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_WriteStructuralFeatureAction)
 
-@given(instance=ActionsProv::ClearStructuralFeatureAction_strategy)
+@given(instance=ActionsProv_ClearStructuralFeatureAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::clearstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ClearStructuralFeatureAction)
+def test_actionsprov_clearstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ClearStructuralFeatureAction)
 
-@given(instance=ActionsProv::ReadStructuralFeatureAction_strategy)
+@given(instance=ActionsProv_ReadStructuralFeatureAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::readstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadStructuralFeatureAction)
+def test_actionsprov_readstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadStructuralFeatureAction)
 
-@given(instance=ActionsProv::CallOperationAction_strategy)
+@given(instance=ActionsProv_CallOperationAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::calloperationaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::CallOperationAction)
+def test_actionsprov_calloperationaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_CallOperationAction)
 
 @given(instance=CallAction_strategy)
 @settings(max_examples=50)
 def test_callaction_instantiation(instance):
     assert isinstance(instance, CallAction)
 
-@given(instance=ActionsProv::StartObjectBehaviorAction_strategy)
+@given(instance=ActionsProv_StartObjectBehaviorAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::startobjectbehavioraction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::StartObjectBehaviorAction)
+def test_actionsprov_startobjectbehavioraction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_StartObjectBehaviorAction)
 
-@given(instance=ActionsProv::CallBehaviorAction_strategy)
+@given(instance=ActionsProv_CallBehaviorAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::callbehavioraction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::CallBehaviorAction)
+def test_actionsprov_callbehavioraction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_CallBehaviorAction)
 
-@given(instance=ActionsProv::Action_strategy)
+@given(instance=ActionsProv_Action_strategy)
 @settings(max_examples=50)
-def test_actionsprov::action_instantiation(instance):
-    assert isinstance(instance, ActionsProv::Action)
+def test_actionsprov_action_instantiation(instance):
+    assert isinstance(instance, ActionsProv_Action)
 
 @given(instance=InvocationAction_strategy)
 @settings(max_examples=50)
 def test_invocationaction_instantiation(instance):
     assert isinstance(instance, InvocationAction)
 
-@given(instance=ActionsProv::BroadcastSignalAction_strategy)
+@given(instance=ActionsProv_BroadcastSignalAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::broadcastsignalaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::BroadcastSignalAction)
+def test_actionsprov_broadcastsignalaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_BroadcastSignalAction)
 
-@given(instance=ActionsProv::SendSignalAction_strategy)
+@given(instance=ActionsProv_SendObjectAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::sendsignalaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::SendSignalAction)
+def test_actionsprov_sendobjectaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_SendObjectAction)
 
-@given(instance=ActionsProv::SendObjectAction_strategy)
+@given(instance=ActionsProv_SendSignalAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::sendobjectaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::SendObjectAction)
+def test_actionsprov_sendsignalaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_SendSignalAction)
 
-@given(instance=ActionsProv::CallAction_strategy)
+@given(instance=ActionsProv_CallAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::callaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::CallAction)
-
-@given(instance=ActionsProv::CallAction_strategy)
-def test_actionsprov::callaction_isSynchronous_type(instance):
-    assert isinstance(instance.isSynchronous, bool)
+def test_actionsprov_callaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_CallAction)
 
 
-@given(instance=ActionsProv::CallAction_strategy)
-def test_actionsprov::callaction_isSynchronous_setter(instance):
+
+@given(instance=ActionsProv_CallAction_strategy)
+def test_actionsprov_callaction_isSynchronous_setter(instance):
     original = instance.isSynchronous
     instance.isSynchronous = original
     assert instance.isSynchronous == original
@@ -1583,192 +1574,177 @@ def test_actionsprov::callaction_isSynchronous_setter(instance):
 def test_inputpin_instantiation(instance):
     assert isinstance(instance, InputPin)
 
-@given(instance=ActionsProv::ActionInputPin_strategy)
+@given(instance=ActionsProv_ActionInputPin_strategy)
 @settings(max_examples=50)
-def test_actionsprov::actioninputpin_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ActionInputPin)
+def test_actionsprov_actioninputpin_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ActionInputPin)
 
-@given(instance=ActionsProv::ValuePin_strategy)
+@given(instance=ActionsProv_ValuePin_strategy)
 @settings(max_examples=50)
-def test_actionsprov::valuepin_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ValuePin)
+def test_actionsprov_valuepin_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ValuePin)
 
-@given(instance=ActionsProv::Pin_strategy)
+@given(instance=ActionsProv_Pin_strategy)
 @settings(max_examples=50)
-def test_actionsprov::pin_instantiation(instance):
-    assert isinstance(instance, ActionsProv::Pin)
+def test_actionsprov_pin_instantiation(instance):
+    assert isinstance(instance, ActionsProv_Pin)
 
 @given(instance=Pin_strategy)
 @settings(max_examples=50)
 def test_pin_instantiation(instance):
     assert isinstance(instance, Pin)
 
-@given(instance=ActionsProv::InputPin_strategy)
+@given(instance=ActionsProv_InputPin_strategy)
 @settings(max_examples=50)
-def test_actionsprov::inputpin_instantiation(instance):
-    assert isinstance(instance, ActionsProv::InputPin)
+def test_actionsprov_inputpin_instantiation(instance):
+    assert isinstance(instance, ActionsProv_InputPin)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=ActionsProv::StartClassifierBehaviorAction_strategy)
+@given(instance=ActionsProv_ReclassifyObjectAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::startclassifierbehavioraction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::StartClassifierBehaviorAction)
-
-@given(instance=ActionsProv::LinkAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::linkaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::LinkAction)
-
-@given(instance=ActionsProv::UnmarshallAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::unmarshallaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::UnmarshallAction)
-
-@given(instance=ActionsProv::ReadLinkObjectEndAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::readlinkobjectendaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadLinkObjectEndAction)
-
-@given(instance=ActionsProv::AcceptEventAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::accepteventaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::AcceptEventAction)
-
-@given(instance=ActionsProv::AcceptEventAction_strategy)
-def test_actionsprov::accepteventaction_isUnmarshall_type(instance):
-    assert isinstance(instance.isUnmarshall, bool)
+def test_actionsprov_reclassifyobjectaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReclassifyObjectAction)
 
 
-@given(instance=ActionsProv::AcceptEventAction_strategy)
-def test_actionsprov::accepteventaction_isUnmarshall_setter(instance):
-    original = instance.isUnmarshall
-    instance.isUnmarshall = original
-    assert instance.isUnmarshall == original
 
-@given(instance=ActionsProv::VariableAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::variableaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::VariableAction)
-
-@given(instance=ActionsProv::CreateObjectAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::createobjectaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::CreateObjectAction)
-
-@given(instance=ActionsProv::RaiseExceptionAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::raiseexceptionaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::RaiseExceptionAction)
-
-@given(instance=ActionsProv::ReduceAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::reduceaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReduceAction)
-
-@given(instance=ActionsProv::ReduceAction_strategy)
-def test_actionsprov::reduceaction_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, bool)
-
-
-@given(instance=ActionsProv::ReduceAction_strategy)
-def test_actionsprov::reduceaction_isOrdered_setter(instance):
-    original = instance.isOrdered
-    instance.isOrdered = original
-    assert instance.isOrdered == original
-
-@given(instance=ActionsProv::ReadLinkObjectEndQualifierAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::readlinkobjectendqualifieraction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadLinkObjectEndQualifierAction)
-
-@given(instance=ActionsProv::StructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::structuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::StructuralFeatureAction)
-
-@given(instance=ActionsProv::ReplyAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::replyaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReplyAction)
-
-@given(instance=ActionsProv::InvocationAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::invocationaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::InvocationAction)
-
-@given(instance=ActionsProv::ReadExtendAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::readextendaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadExtendAction)
-
-@given(instance=ActionsProv::TestIdentityAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::testidentityaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::TestIdentityAction)
-
-@given(instance=ActionsProv::DestroyObjectAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::destroyobjectaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::DestroyObjectAction)
-
-@given(instance=ActionsProv::ReadSelfAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::readselfaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReadSelfAction)
-
-@given(instance=ActionsProv::ValueSpecificationAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::valuespecificationaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ValueSpecificationAction)
-
-@given(instance=ActionsProv::ReclassifyObjectAction_strategy)
-@settings(max_examples=50)
-def test_actionsprov::reclassifyobjectaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::ReclassifyObjectAction)
-
-@given(instance=ActionsProv::ReclassifyObjectAction_strategy)
-def test_actionsprov::reclassifyobjectaction_isReplaceAll_type(instance):
-    assert isinstance(instance.isReplaceAll, bool)
-
-
-@given(instance=ActionsProv::ReclassifyObjectAction_strategy)
-def test_actionsprov::reclassifyobjectaction_isReplaceAll_setter(instance):
+@given(instance=ActionsProv_ReclassifyObjectAction_strategy)
+def test_actionsprov_reclassifyobjectaction_isReplaceAll_setter(instance):
     original = instance.isReplaceAll
     instance.isReplaceAll = original
     assert instance.isReplaceAll == original
 
-@given(instance=ActionsProv::OpaqueAction_strategy)
+@given(instance=ActionsProv_ValueSpecificationAction_strategy)
 @settings(max_examples=50)
-def test_actionsprov::opaqueaction_instantiation(instance):
-    assert isinstance(instance, ActionsProv::OpaqueAction)
+def test_actionsprov_valuespecificationaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ValueSpecificationAction)
 
-@given(instance=ActionsProv::OpaqueAction_strategy)
-def test_actionsprov::opaqueaction_language_type(instance):
-    assert isinstance(instance.language, str)
+@given(instance=ActionsProv_VariableAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_variableaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_VariableAction)
+
+@given(instance=ActionsProv_LinkAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_linkaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_LinkAction)
+
+@given(instance=ActionsProv_AcceptEventAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_accepteventaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_AcceptEventAction)
 
 
-@given(instance=ActionsProv::OpaqueAction_strategy)
-def test_actionsprov::opaqueaction_language_setter(instance):
+
+@given(instance=ActionsProv_AcceptEventAction_strategy)
+def test_actionsprov_accepteventaction_isUnmarshall_setter(instance):
+    original = instance.isUnmarshall
+    instance.isUnmarshall = original
+    assert instance.isUnmarshall == original
+
+@given(instance=ActionsProv_InvocationAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_invocationaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_InvocationAction)
+
+@given(instance=ActionsProv_ReadLinkObjectEndQualifierAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_readlinkobjectendqualifieraction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadLinkObjectEndQualifierAction)
+
+@given(instance=ActionsProv_StructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_structuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_StructuralFeatureAction)
+
+@given(instance=ActionsProv_RaiseExceptionAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_raiseexceptionaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_RaiseExceptionAction)
+
+@given(instance=ActionsProv_CreateObjectAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_createobjectaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_CreateObjectAction)
+
+@given(instance=ActionsProv_ReadExtendAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_readextendaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadExtendAction)
+
+@given(instance=ActionsProv_ReplyAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_replyaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReplyAction)
+
+@given(instance=ActionsProv_UnmarshallAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_unmarshallaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_UnmarshallAction)
+
+@given(instance=ActionsProv_StartClassifierBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_startclassifierbehavioraction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_StartClassifierBehaviorAction)
+
+@given(instance=ActionsProv_TestIdentityAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_testidentityaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_TestIdentityAction)
+
+@given(instance=ActionsProv_ReadLinkObjectEndAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_readlinkobjectendaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadLinkObjectEndAction)
+
+@given(instance=ActionsProv_ReadSelfAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_readselfaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReadSelfAction)
+
+@given(instance=ActionsProv_ReduceAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_reduceaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_ReduceAction)
+
+
+
+@given(instance=ActionsProv_ReduceAction_strategy)
+def test_actionsprov_reduceaction_isOrdered_setter(instance):
+    original = instance.isOrdered
+    instance.isOrdered = original
+    assert instance.isOrdered == original
+
+@given(instance=ActionsProv_DestroyObjectAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_destroyobjectaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_DestroyObjectAction)
+
+@given(instance=ActionsProv_OpaqueAction_strategy)
+@settings(max_examples=50)
+def test_actionsprov_opaqueaction_instantiation(instance):
+    assert isinstance(instance, ActionsProv_OpaqueAction)
+
+
+
+@given(instance=ActionsProv_OpaqueAction_strategy)
+def test_actionsprov_opaqueaction_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=ActionsProv::OpaqueAction_strategy)
-def test_actionsprov::opaqueaction_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
-@given(instance=ActionsProv::OpaqueAction_strategy)
-def test_actionsprov::opaqueaction_body_setter(instance):
+@given(instance=ActionsProv_OpaqueAction_strategy)
+def test_actionsprov_opaqueaction_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=ActionsProv::OutputPin_strategy)
+@given(instance=ActionsProv_OutputPin_strategy)
 @settings(max_examples=50)
-def test_actionsprov::outputpin_instantiation(instance):
-    assert isinstance(instance, ActionsProv::OutputPin)
+def test_actionsprov_outputpin_instantiation(instance):
+    assert isinstance(instance, ActionsProv_OutputPin)

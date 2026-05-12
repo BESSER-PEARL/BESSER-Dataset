@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    FiniteStateMachines::Transition,
-    FiniteStateMachines::State,
-    FiniteStateMachines::FiniteStateMachine,
+from python_code import (
+    FiniteStateMachines_Transition,
+    FiniteStateMachines_State,
+    FiniteStateMachines_FiniteStateMachine,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_finitestatemachines::transition_is_not_abstract():
-    assert not inspect.isabstract(FiniteStateMachines::Transition)
+def test_finitestatemachines_transition_is_not_abstract():
+    assert not inspect.isabstract(FiniteStateMachines_Transition)
 
 
-def test_finitestatemachines::transition_constructor_exists():
-    assert callable(FiniteStateMachines::Transition.__init__)
+def test_finitestatemachines_transition_constructor_exists():
+    assert callable(FiniteStateMachines_Transition.__init__)
 
 
-def test_finitestatemachines::transition_constructor_args():
-    sig = inspect.signature(FiniteStateMachines::Transition.__init__)
+def test_finitestatemachines_transition_constructor_args():
+    sig = inspect.signature(FiniteStateMachines_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "input" in params, "Missing parameter 'input'"
 
-def test_finitestatemachines::transition_has_input():
-    assert hasattr(FiniteStateMachines::Transition, "input")
+def test_finitestatemachines_transition_has_input():
+    assert hasattr(FiniteStateMachines_Transition, "input")
     descriptor = None
-    for klass in FiniteStateMachines::Transition.__mro__:
+    for klass in FiniteStateMachines_Transition.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
@@ -41,43 +41,43 @@ def test_finitestatemachines::transition_has_input():
 
 
 
-def test_finitestatemachines::state_is_not_abstract():
-    assert not inspect.isabstract(FiniteStateMachines::State)
+def test_finitestatemachines_state_is_not_abstract():
+    assert not inspect.isabstract(FiniteStateMachines_State)
 
 
-def test_finitestatemachines::state_constructor_exists():
-    assert callable(FiniteStateMachines::State.__init__)
+def test_finitestatemachines_state_constructor_exists():
+    assert callable(FiniteStateMachines_State.__init__)
 
 
-def test_finitestatemachines::state_constructor_args():
-    sig = inspect.signature(FiniteStateMachines::State.__init__)
+def test_finitestatemachines_state_constructor_args():
+    sig = inspect.signature(FiniteStateMachines_State.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "isEndState" in params, "Missing parameter 'isEndState'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "isStartState" in params, "Missing parameter 'isStartState'"
 
-def test_finitestatemachines::state_has_name():
-    assert hasattr(FiniteStateMachines::State, "name")
+def test_finitestatemachines_state_has_isEndState():
+    assert hasattr(FiniteStateMachines_State, "isEndState")
     descriptor = None
-    for klass in FiniteStateMachines::State.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_finitestatemachines::state_has_isEndState():
-    assert hasattr(FiniteStateMachines::State, "isEndState")
-    descriptor = None
-    for klass in FiniteStateMachines::State.__mro__:
+    for klass in FiniteStateMachines_State.__mro__:
         if "isEndState" in klass.__dict__:
             descriptor = klass.__dict__["isEndState"]
             break
     assert isinstance(descriptor, property)
 
-def test_finitestatemachines::state_has_isStartState():
-    assert hasattr(FiniteStateMachines::State, "isStartState")
+def test_finitestatemachines_state_has_name():
+    assert hasattr(FiniteStateMachines_State, "name")
     descriptor = None
-    for klass in FiniteStateMachines::State.__mro__:
+    for klass in FiniteStateMachines_State.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_finitestatemachines_state_has_isStartState():
+    assert hasattr(FiniteStateMachines_State, "isStartState")
+    descriptor = None
+    for klass in FiniteStateMachines_State.__mro__:
         if "isStartState" in klass.__dict__:
             descriptor = klass.__dict__["isStartState"]
             break
@@ -85,23 +85,23 @@ def test_finitestatemachines::state_has_isStartState():
 
 
 
-def test_finitestatemachines::finitestatemachine_is_not_abstract():
-    assert not inspect.isabstract(FiniteStateMachines::FiniteStateMachine)
+def test_finitestatemachines_finitestatemachine_is_not_abstract():
+    assert not inspect.isabstract(FiniteStateMachines_FiniteStateMachine)
 
 
-def test_finitestatemachines::finitestatemachine_constructor_exists():
-    assert callable(FiniteStateMachines::FiniteStateMachine.__init__)
+def test_finitestatemachines_finitestatemachine_constructor_exists():
+    assert callable(FiniteStateMachines_FiniteStateMachine.__init__)
 
 
-def test_finitestatemachines::finitestatemachine_constructor_args():
-    sig = inspect.signature(FiniteStateMachines::FiniteStateMachine.__init__)
+def test_finitestatemachines_finitestatemachine_constructor_args():
+    sig = inspect.signature(FiniteStateMachines_FiniteStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_finitestatemachines::finitestatemachine_has_id():
-    assert hasattr(FiniteStateMachines::FiniteStateMachine, "id")
+def test_finitestatemachines_finitestatemachine_has_id():
+    assert hasattr(FiniteStateMachines_FiniteStateMachine, "id")
     descriptor = None
-    for klass in FiniteStateMachines::FiniteStateMachine.__mro__:
+    for klass in FiniteStateMachines_FiniteStateMachine.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -119,92 +119,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-FiniteStateMachines::Transition_strategy = st.builds(
-    FiniteStateMachines::Transition,
+FiniteStateMachines_Transition_strategy = st.builds(
+    FiniteStateMachines_Transition,
     input=
         safe_text
 )
-FiniteStateMachines::State_strategy = st.builds(
-    FiniteStateMachines::State,
-    name=
-        safe_text,
+FiniteStateMachines_State_strategy = st.builds(
+    FiniteStateMachines_State,
     isEndState=
         st.booleans(),
+    name=
+        safe_text,
     isStartState=
         st.booleans()
 )
-FiniteStateMachines::FiniteStateMachine_strategy = st.builds(
-    FiniteStateMachines::FiniteStateMachine,
+FiniteStateMachines_FiniteStateMachine_strategy = st.builds(
+    FiniteStateMachines_FiniteStateMachine,
     id=
         safe_text
 )
 
-@given(instance=FiniteStateMachines::Transition_strategy)
+@given(instance=FiniteStateMachines_Transition_strategy)
 @settings(max_examples=50)
-def test_finitestatemachines::transition_instantiation(instance):
-    assert isinstance(instance, FiniteStateMachines::Transition)
-
-@given(instance=FiniteStateMachines::Transition_strategy)
-def test_finitestatemachines::transition_input_type(instance):
-    assert isinstance(instance.input, str)
+def test_finitestatemachines_transition_instantiation(instance):
+    assert isinstance(instance, FiniteStateMachines_Transition)
 
 
-@given(instance=FiniteStateMachines::Transition_strategy)
-def test_finitestatemachines::transition_input_setter(instance):
+
+@given(instance=FiniteStateMachines_Transition_strategy)
+def test_finitestatemachines_transition_input_setter(instance):
     original = instance.input
     instance.input = original
     assert instance.input == original
 
-@given(instance=FiniteStateMachines::State_strategy)
+@given(instance=FiniteStateMachines_State_strategy)
 @settings(max_examples=50)
-def test_finitestatemachines::state_instantiation(instance):
-    assert isinstance(instance, FiniteStateMachines::State)
-
-@given(instance=FiniteStateMachines::State_strategy)
-def test_finitestatemachines::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_finitestatemachines_state_instantiation(instance):
+    assert isinstance(instance, FiniteStateMachines_State)
 
 
-@given(instance=FiniteStateMachines::State_strategy)
-def test_finitestatemachines::state_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=FiniteStateMachines::State_strategy)
-def test_finitestatemachines::state_isEndState_type(instance):
-    assert isinstance(instance.isEndState, bool)
-
-
-@given(instance=FiniteStateMachines::State_strategy)
-def test_finitestatemachines::state_isEndState_setter(instance):
+@given(instance=FiniteStateMachines_State_strategy)
+def test_finitestatemachines_state_isEndState_setter(instance):
     original = instance.isEndState
     instance.isEndState = original
     assert instance.isEndState == original
 
-@given(instance=FiniteStateMachines::State_strategy)
-def test_finitestatemachines::state_isStartState_type(instance):
-    assert isinstance(instance.isStartState, bool)
 
 
-@given(instance=FiniteStateMachines::State_strategy)
-def test_finitestatemachines::state_isStartState_setter(instance):
+@given(instance=FiniteStateMachines_State_strategy)
+def test_finitestatemachines_state_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=FiniteStateMachines_State_strategy)
+def test_finitestatemachines_state_isStartState_setter(instance):
     original = instance.isStartState
     instance.isStartState = original
     assert instance.isStartState == original
 
-@given(instance=FiniteStateMachines::FiniteStateMachine_strategy)
+@given(instance=FiniteStateMachines_FiniteStateMachine_strategy)
 @settings(max_examples=50)
-def test_finitestatemachines::finitestatemachine_instantiation(instance):
-    assert isinstance(instance, FiniteStateMachines::FiniteStateMachine)
-
-@given(instance=FiniteStateMachines::FiniteStateMachine_strategy)
-def test_finitestatemachines::finitestatemachine_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_finitestatemachines_finitestatemachine_instantiation(instance):
+    assert isinstance(instance, FiniteStateMachines_FiniteStateMachine)
 
 
-@given(instance=FiniteStateMachines::FiniteStateMachine_strategy)
-def test_finitestatemachines::finitestatemachine_id_setter(instance):
+
+@given(instance=FiniteStateMachines_FiniteStateMachine_strategy)
+def test_finitestatemachines_finitestatemachine_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

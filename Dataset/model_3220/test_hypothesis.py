@@ -3,44 +3,44 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Value,
-    mil::ConstantInteger,
+    mil_ConstantInteger,
     ArithmeticInstruction,
-    mil::DivInstruction,
-    mil::MulInstruction,
-    mil::SubInstruction,
-    mil::AddInstruction,
+    mil_MulInstruction,
+    mil_SubInstruction,
+    mil_DivInstruction,
+    mil_AddInstruction,
     OutputInstruction,
-    mil::PrintInstruction,
-    mil::YieldInstruciton,
+    mil_PrintInstruction,
+    mil_YieldInstruciton,
     CompareInstruction,
-    mil::GreaterThanEqualInstruction,
-    mil::LessThanInstruction,
-    mil::LessThanEqualInstruction,
-    mil::NotEqualInstruction,
-    mil::GreaterThanInstruction,
-    mil::EqualInstruction,
+    mil_LessThanEqualInstruction,
+    mil_GreaterThanEqualInstruction,
+    mil_LessThanInstruction,
+    mil_NotEqualInstruction,
+    mil_EqualInstruction,
     JumpInstruction,
-    mil::ConditionalJumpInstruction,
-    mil::UnconditionalJumpInstruction,
-    mil::RegisterReference,
-    mil::Value,
+    mil_ConditionalJumpInstruction,
+    mil_UnconditionalJumpInstruction,
+    mil_RegisterReference,
+    mil_Value,
     Instruction,
-    mil::CallInstruction,
-    mil::StoreInstruction,
-    mil::OutputInstruction,
-    mil::LoadInstruction,
-    mil::CompareInstruction,
-    mil::ReturnInstruction,
-    mil::ArithmeticInstruction,
-    mil::JumpInstruction,
-    mil::NegateInstruction,
-    mil::LabelInstruction,
-    mil::Instruction,
-    mil::MILModel,
+    mil_NegateInstruction,
+    mil_StoreInstruction,
+    mil_CompareInstruction,
+    mil_LoadInstruction,
+    mil_ReturnInstruction,
+    mil_ArithmeticInstruction,
+    mil_CallInstruction,
+    mil_JumpInstruction,
+    mil_OutputInstruction,
+    mil_LabelInstruction,
+    mil_Instruction,
+    mil_MILModel,
+    mil_GreaterThanInstruction,
 )
 
 # =============================================================================
@@ -63,23 +63,23 @@ def test_value_constructor_args():
 
 
 
-def test_mil::constantinteger_is_not_abstract():
-    assert not inspect.isabstract(mil::ConstantInteger)
+def test_mil_constantinteger_is_not_abstract():
+    assert not inspect.isabstract(mil_ConstantInteger)
 
 
-def test_mil::constantinteger_constructor_exists():
-    assert callable(mil::ConstantInteger.__init__)
+def test_mil_constantinteger_constructor_exists():
+    assert callable(mil_ConstantInteger.__init__)
 
 
-def test_mil::constantinteger_constructor_args():
-    sig = inspect.signature(mil::ConstantInteger.__init__)
+def test_mil_constantinteger_constructor_args():
+    sig = inspect.signature(mil_ConstantInteger.__init__)
     params = list(sig.parameters.keys())
     assert "rawValue" in params, "Missing parameter 'rawValue'"
 
-def test_mil::constantinteger_has_rawValue():
-    assert hasattr(mil::ConstantInteger, "rawValue")
+def test_mil_constantinteger_has_rawValue():
+    assert hasattr(mil_ConstantInteger, "rawValue")
     descriptor = None
-    for klass in mil::ConstantInteger.__mro__:
+    for klass in mil_ConstantInteger.__mro__:
         if "rawValue" in klass.__dict__:
             descriptor = klass.__dict__["rawValue"]
             break
@@ -101,58 +101,58 @@ def test_arithmeticinstruction_constructor_args():
 
 
 
-def test_mil::divinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::DivInstruction)
+def test_mil_mulinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_MulInstruction)
 
 
-def test_mil::divinstruction_constructor_exists():
-    assert callable(mil::DivInstruction.__init__)
+def test_mil_mulinstruction_constructor_exists():
+    assert callable(mil_MulInstruction.__init__)
 
 
-def test_mil::divinstruction_constructor_args():
-    sig = inspect.signature(mil::DivInstruction.__init__)
+def test_mil_mulinstruction_constructor_args():
+    sig = inspect.signature(mil_MulInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::mulinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::MulInstruction)
+def test_mil_subinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_SubInstruction)
 
 
-def test_mil::mulinstruction_constructor_exists():
-    assert callable(mil::MulInstruction.__init__)
+def test_mil_subinstruction_constructor_exists():
+    assert callable(mil_SubInstruction.__init__)
 
 
-def test_mil::mulinstruction_constructor_args():
-    sig = inspect.signature(mil::MulInstruction.__init__)
+def test_mil_subinstruction_constructor_args():
+    sig = inspect.signature(mil_SubInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::subinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::SubInstruction)
+def test_mil_divinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_DivInstruction)
 
 
-def test_mil::subinstruction_constructor_exists():
-    assert callable(mil::SubInstruction.__init__)
+def test_mil_divinstruction_constructor_exists():
+    assert callable(mil_DivInstruction.__init__)
 
 
-def test_mil::subinstruction_constructor_args():
-    sig = inspect.signature(mil::SubInstruction.__init__)
+def test_mil_divinstruction_constructor_args():
+    sig = inspect.signature(mil_DivInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::addinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::AddInstruction)
+def test_mil_addinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_AddInstruction)
 
 
-def test_mil::addinstruction_constructor_exists():
-    assert callable(mil::AddInstruction.__init__)
+def test_mil_addinstruction_constructor_exists():
+    assert callable(mil_AddInstruction.__init__)
 
 
-def test_mil::addinstruction_constructor_args():
-    sig = inspect.signature(mil::AddInstruction.__init__)
+def test_mil_addinstruction_constructor_args():
+    sig = inspect.signature(mil_AddInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -171,23 +171,23 @@ def test_outputinstruction_constructor_args():
 
 
 
-def test_mil::printinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::PrintInstruction)
+def test_mil_printinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_PrintInstruction)
 
 
-def test_mil::printinstruction_constructor_exists():
-    assert callable(mil::PrintInstruction.__init__)
+def test_mil_printinstruction_constructor_exists():
+    assert callable(mil_PrintInstruction.__init__)
 
 
-def test_mil::printinstruction_constructor_args():
-    sig = inspect.signature(mil::PrintInstruction.__init__)
+def test_mil_printinstruction_constructor_args():
+    sig = inspect.signature(mil_PrintInstruction.__init__)
     params = list(sig.parameters.keys())
     assert "output" in params, "Missing parameter 'output'"
 
-def test_mil::printinstruction_has_output():
-    assert hasattr(mil::PrintInstruction, "output")
+def test_mil_printinstruction_has_output():
+    assert hasattr(mil_PrintInstruction, "output")
     descriptor = None
-    for klass in mil::PrintInstruction.__mro__:
+    for klass in mil_PrintInstruction.__mro__:
         if "output" in klass.__dict__:
             descriptor = klass.__dict__["output"]
             break
@@ -195,16 +195,16 @@ def test_mil::printinstruction_has_output():
 
 
 
-def test_mil::yieldinstruciton_is_not_abstract():
-    assert not inspect.isabstract(mil::YieldInstruciton)
+def test_mil_yieldinstruciton_is_not_abstract():
+    assert not inspect.isabstract(mil_YieldInstruciton)
 
 
-def test_mil::yieldinstruciton_constructor_exists():
-    assert callable(mil::YieldInstruciton.__init__)
+def test_mil_yieldinstruciton_constructor_exists():
+    assert callable(mil_YieldInstruciton.__init__)
 
 
-def test_mil::yieldinstruciton_constructor_args():
-    sig = inspect.signature(mil::YieldInstruciton.__init__)
+def test_mil_yieldinstruciton_constructor_args():
+    sig = inspect.signature(mil_YieldInstruciton.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -223,86 +223,72 @@ def test_compareinstruction_constructor_args():
 
 
 
-def test_mil::greaterthanequalinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::GreaterThanEqualInstruction)
+def test_mil_lessthanequalinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_LessThanEqualInstruction)
 
 
-def test_mil::greaterthanequalinstruction_constructor_exists():
-    assert callable(mil::GreaterThanEqualInstruction.__init__)
+def test_mil_lessthanequalinstruction_constructor_exists():
+    assert callable(mil_LessThanEqualInstruction.__init__)
 
 
-def test_mil::greaterthanequalinstruction_constructor_args():
-    sig = inspect.signature(mil::GreaterThanEqualInstruction.__init__)
+def test_mil_lessthanequalinstruction_constructor_args():
+    sig = inspect.signature(mil_LessThanEqualInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::lessthaninstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::LessThanInstruction)
+def test_mil_greaterthanequalinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_GreaterThanEqualInstruction)
 
 
-def test_mil::lessthaninstruction_constructor_exists():
-    assert callable(mil::LessThanInstruction.__init__)
+def test_mil_greaterthanequalinstruction_constructor_exists():
+    assert callable(mil_GreaterThanEqualInstruction.__init__)
 
 
-def test_mil::lessthaninstruction_constructor_args():
-    sig = inspect.signature(mil::LessThanInstruction.__init__)
+def test_mil_greaterthanequalinstruction_constructor_args():
+    sig = inspect.signature(mil_GreaterThanEqualInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::lessthanequalinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::LessThanEqualInstruction)
+def test_mil_lessthaninstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_LessThanInstruction)
 
 
-def test_mil::lessthanequalinstruction_constructor_exists():
-    assert callable(mil::LessThanEqualInstruction.__init__)
+def test_mil_lessthaninstruction_constructor_exists():
+    assert callable(mil_LessThanInstruction.__init__)
 
 
-def test_mil::lessthanequalinstruction_constructor_args():
-    sig = inspect.signature(mil::LessThanEqualInstruction.__init__)
+def test_mil_lessthaninstruction_constructor_args():
+    sig = inspect.signature(mil_LessThanInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::notequalinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::NotEqualInstruction)
+def test_mil_notequalinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_NotEqualInstruction)
 
 
-def test_mil::notequalinstruction_constructor_exists():
-    assert callable(mil::NotEqualInstruction.__init__)
+def test_mil_notequalinstruction_constructor_exists():
+    assert callable(mil_NotEqualInstruction.__init__)
 
 
-def test_mil::notequalinstruction_constructor_args():
-    sig = inspect.signature(mil::NotEqualInstruction.__init__)
+def test_mil_notequalinstruction_constructor_args():
+    sig = inspect.signature(mil_NotEqualInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::greaterthaninstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::GreaterThanInstruction)
+def test_mil_equalinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_EqualInstruction)
 
 
-def test_mil::greaterthaninstruction_constructor_exists():
-    assert callable(mil::GreaterThanInstruction.__init__)
+def test_mil_equalinstruction_constructor_exists():
+    assert callable(mil_EqualInstruction.__init__)
 
 
-def test_mil::greaterthaninstruction_constructor_args():
-    sig = inspect.signature(mil::GreaterThanInstruction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mil::equalinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::EqualInstruction)
-
-
-def test_mil::equalinstruction_constructor_exists():
-    assert callable(mil::EqualInstruction.__init__)
-
-
-def test_mil::equalinstruction_constructor_args():
-    sig = inspect.signature(mil::EqualInstruction.__init__)
+def test_mil_equalinstruction_constructor_args():
+    sig = inspect.signature(mil_EqualInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -321,51 +307,51 @@ def test_jumpinstruction_constructor_args():
 
 
 
-def test_mil::conditionaljumpinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::ConditionalJumpInstruction)
+def test_mil_conditionaljumpinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_ConditionalJumpInstruction)
 
 
-def test_mil::conditionaljumpinstruction_constructor_exists():
-    assert callable(mil::ConditionalJumpInstruction.__init__)
+def test_mil_conditionaljumpinstruction_constructor_exists():
+    assert callable(mil_ConditionalJumpInstruction.__init__)
 
 
-def test_mil::conditionaljumpinstruction_constructor_args():
-    sig = inspect.signature(mil::ConditionalJumpInstruction.__init__)
+def test_mil_conditionaljumpinstruction_constructor_args():
+    sig = inspect.signature(mil_ConditionalJumpInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::unconditionaljumpinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::UnconditionalJumpInstruction)
+def test_mil_unconditionaljumpinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_UnconditionalJumpInstruction)
 
 
-def test_mil::unconditionaljumpinstruction_constructor_exists():
-    assert callable(mil::UnconditionalJumpInstruction.__init__)
+def test_mil_unconditionaljumpinstruction_constructor_exists():
+    assert callable(mil_UnconditionalJumpInstruction.__init__)
 
 
-def test_mil::unconditionaljumpinstruction_constructor_args():
-    sig = inspect.signature(mil::UnconditionalJumpInstruction.__init__)
+def test_mil_unconditionaljumpinstruction_constructor_args():
+    sig = inspect.signature(mil_UnconditionalJumpInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::registerreference_is_not_abstract():
-    assert not inspect.isabstract(mil::RegisterReference)
+def test_mil_registerreference_is_not_abstract():
+    assert not inspect.isabstract(mil_RegisterReference)
 
 
-def test_mil::registerreference_constructor_exists():
-    assert callable(mil::RegisterReference.__init__)
+def test_mil_registerreference_constructor_exists():
+    assert callable(mil_RegisterReference.__init__)
 
 
-def test_mil::registerreference_constructor_args():
-    sig = inspect.signature(mil::RegisterReference.__init__)
+def test_mil_registerreference_constructor_args():
+    sig = inspect.signature(mil_RegisterReference.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_mil::registerreference_has_address():
-    assert hasattr(mil::RegisterReference, "address")
+def test_mil_registerreference_has_address():
+    assert hasattr(mil_RegisterReference, "address")
     descriptor = None
-    for klass in mil::RegisterReference.__mro__:
+    for klass in mil_RegisterReference.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -373,16 +359,16 @@ def test_mil::registerreference_has_address():
 
 
 
-def test_mil::value_is_not_abstract():
-    assert not inspect.isabstract(mil::Value)
+def test_mil_value_is_not_abstract():
+    assert not inspect.isabstract(mil_Value)
 
 
-def test_mil::value_constructor_exists():
-    assert callable(mil::Value.__init__)
+def test_mil_value_constructor_exists():
+    assert callable(mil_Value.__init__)
 
 
-def test_mil::value_constructor_args():
-    sig = inspect.signature(mil::Value.__init__)
+def test_mil_value_constructor_args():
+    sig = inspect.signature(mil_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -401,149 +387,149 @@ def test_instruction_constructor_args():
 
 
 
-def test_mil::callinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::CallInstruction)
+def test_mil_negateinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_NegateInstruction)
 
 
-def test_mil::callinstruction_constructor_exists():
-    assert callable(mil::CallInstruction.__init__)
+def test_mil_negateinstruction_constructor_exists():
+    assert callable(mil_NegateInstruction.__init__)
 
 
-def test_mil::callinstruction_constructor_args():
-    sig = inspect.signature(mil::CallInstruction.__init__)
+def test_mil_negateinstruction_constructor_args():
+    sig = inspect.signature(mil_NegateInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::storeinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::StoreInstruction)
+def test_mil_storeinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_StoreInstruction)
 
 
-def test_mil::storeinstruction_constructor_exists():
-    assert callable(mil::StoreInstruction.__init__)
+def test_mil_storeinstruction_constructor_exists():
+    assert callable(mil_StoreInstruction.__init__)
 
 
-def test_mil::storeinstruction_constructor_args():
-    sig = inspect.signature(mil::StoreInstruction.__init__)
+def test_mil_storeinstruction_constructor_args():
+    sig = inspect.signature(mil_StoreInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::outputinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::OutputInstruction)
+def test_mil_compareinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_CompareInstruction)
 
 
-def test_mil::outputinstruction_constructor_exists():
-    assert callable(mil::OutputInstruction.__init__)
+def test_mil_compareinstruction_constructor_exists():
+    assert callable(mil_CompareInstruction.__init__)
 
 
-def test_mil::outputinstruction_constructor_args():
-    sig = inspect.signature(mil::OutputInstruction.__init__)
+def test_mil_compareinstruction_constructor_args():
+    sig = inspect.signature(mil_CompareInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::loadinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::LoadInstruction)
+def test_mil_loadinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_LoadInstruction)
 
 
-def test_mil::loadinstruction_constructor_exists():
-    assert callable(mil::LoadInstruction.__init__)
+def test_mil_loadinstruction_constructor_exists():
+    assert callable(mil_LoadInstruction.__init__)
 
 
-def test_mil::loadinstruction_constructor_args():
-    sig = inspect.signature(mil::LoadInstruction.__init__)
+def test_mil_loadinstruction_constructor_args():
+    sig = inspect.signature(mil_LoadInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::compareinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::CompareInstruction)
+def test_mil_returninstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_ReturnInstruction)
 
 
-def test_mil::compareinstruction_constructor_exists():
-    assert callable(mil::CompareInstruction.__init__)
+def test_mil_returninstruction_constructor_exists():
+    assert callable(mil_ReturnInstruction.__init__)
 
 
-def test_mil::compareinstruction_constructor_args():
-    sig = inspect.signature(mil::CompareInstruction.__init__)
+def test_mil_returninstruction_constructor_args():
+    sig = inspect.signature(mil_ReturnInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::returninstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::ReturnInstruction)
+def test_mil_arithmeticinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_ArithmeticInstruction)
 
 
-def test_mil::returninstruction_constructor_exists():
-    assert callable(mil::ReturnInstruction.__init__)
+def test_mil_arithmeticinstruction_constructor_exists():
+    assert callable(mil_ArithmeticInstruction.__init__)
 
 
-def test_mil::returninstruction_constructor_args():
-    sig = inspect.signature(mil::ReturnInstruction.__init__)
+def test_mil_arithmeticinstruction_constructor_args():
+    sig = inspect.signature(mil_ArithmeticInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::arithmeticinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::ArithmeticInstruction)
+def test_mil_callinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_CallInstruction)
 
 
-def test_mil::arithmeticinstruction_constructor_exists():
-    assert callable(mil::ArithmeticInstruction.__init__)
+def test_mil_callinstruction_constructor_exists():
+    assert callable(mil_CallInstruction.__init__)
 
 
-def test_mil::arithmeticinstruction_constructor_args():
-    sig = inspect.signature(mil::ArithmeticInstruction.__init__)
+def test_mil_callinstruction_constructor_args():
+    sig = inspect.signature(mil_CallInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::jumpinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::JumpInstruction)
+def test_mil_jumpinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_JumpInstruction)
 
 
-def test_mil::jumpinstruction_constructor_exists():
-    assert callable(mil::JumpInstruction.__init__)
+def test_mil_jumpinstruction_constructor_exists():
+    assert callable(mil_JumpInstruction.__init__)
 
 
-def test_mil::jumpinstruction_constructor_args():
-    sig = inspect.signature(mil::JumpInstruction.__init__)
+def test_mil_jumpinstruction_constructor_args():
+    sig = inspect.signature(mil_JumpInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::negateinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::NegateInstruction)
+def test_mil_outputinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_OutputInstruction)
 
 
-def test_mil::negateinstruction_constructor_exists():
-    assert callable(mil::NegateInstruction.__init__)
+def test_mil_outputinstruction_constructor_exists():
+    assert callable(mil_OutputInstruction.__init__)
 
 
-def test_mil::negateinstruction_constructor_args():
-    sig = inspect.signature(mil::NegateInstruction.__init__)
+def test_mil_outputinstruction_constructor_args():
+    sig = inspect.signature(mil_OutputInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::labelinstruction_is_not_abstract():
-    assert not inspect.isabstract(mil::LabelInstruction)
+def test_mil_labelinstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_LabelInstruction)
 
 
-def test_mil::labelinstruction_constructor_exists():
-    assert callable(mil::LabelInstruction.__init__)
+def test_mil_labelinstruction_constructor_exists():
+    assert callable(mil_LabelInstruction.__init__)
 
 
-def test_mil::labelinstruction_constructor_args():
-    sig = inspect.signature(mil::LabelInstruction.__init__)
+def test_mil_labelinstruction_constructor_args():
+    sig = inspect.signature(mil_LabelInstruction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mil::labelinstruction_has_name():
-    assert hasattr(mil::LabelInstruction, "name")
+def test_mil_labelinstruction_has_name():
+    assert hasattr(mil_LabelInstruction, "name")
     descriptor = None
-    for klass in mil::LabelInstruction.__mro__:
+    for klass in mil_LabelInstruction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -551,30 +537,44 @@ def test_mil::labelinstruction_has_name():
 
 
 
-def test_mil::instruction_is_not_abstract():
-    assert not inspect.isabstract(mil::Instruction)
+def test_mil_instruction_is_not_abstract():
+    assert not inspect.isabstract(mil_Instruction)
 
 
-def test_mil::instruction_constructor_exists():
-    assert callable(mil::Instruction.__init__)
+def test_mil_instruction_constructor_exists():
+    assert callable(mil_Instruction.__init__)
 
 
-def test_mil::instruction_constructor_args():
-    sig = inspect.signature(mil::Instruction.__init__)
+def test_mil_instruction_constructor_args():
+    sig = inspect.signature(mil_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mil::milmodel_is_not_abstract():
-    assert not inspect.isabstract(mil::MILModel)
+def test_mil_milmodel_is_not_abstract():
+    assert not inspect.isabstract(mil_MILModel)
 
 
-def test_mil::milmodel_constructor_exists():
-    assert callable(mil::MILModel.__init__)
+def test_mil_milmodel_constructor_exists():
+    assert callable(mil_MILModel.__init__)
 
 
-def test_mil::milmodel_constructor_args():
-    sig = inspect.signature(mil::MILModel.__init__)
+def test_mil_milmodel_constructor_args():
+    sig = inspect.signature(mil_MILModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mil_greaterthaninstruction_is_not_abstract():
+    assert not inspect.isabstract(mil_GreaterThanInstruction)
+
+
+def test_mil_greaterthaninstruction_constructor_exists():
+    assert callable(mil_GreaterThanInstruction.__init__)
+
+
+def test_mil_greaterthaninstruction_constructor_args():
+    sig = inspect.signature(mil_GreaterThanInstruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -592,115 +592,115 @@ safe_text = st.text(
 Value_strategy = st.builds(
     Value,
 )
-mil::ConstantInteger_strategy = st.builds(
-    mil::ConstantInteger,
+mil_ConstantInteger_strategy = st.builds(
+    mil_ConstantInteger,
     rawValue=
         st.integers()
 )
 ArithmeticInstruction_strategy = st.builds(
     ArithmeticInstruction,
 )
-mil::DivInstruction_strategy = st.builds(
-    mil::DivInstruction,
+mil_MulInstruction_strategy = st.builds(
+    mil_MulInstruction,
 )
-mil::MulInstruction_strategy = st.builds(
-    mil::MulInstruction,
+mil_SubInstruction_strategy = st.builds(
+    mil_SubInstruction,
 )
-mil::SubInstruction_strategy = st.builds(
-    mil::SubInstruction,
+mil_DivInstruction_strategy = st.builds(
+    mil_DivInstruction,
 )
-mil::AddInstruction_strategy = st.builds(
-    mil::AddInstruction,
+mil_AddInstruction_strategy = st.builds(
+    mil_AddInstruction,
 )
 OutputInstruction_strategy = st.builds(
     OutputInstruction,
 )
-mil::PrintInstruction_strategy = st.builds(
-    mil::PrintInstruction,
+mil_PrintInstruction_strategy = st.builds(
+    mil_PrintInstruction,
     output=
         safe_text
 )
-mil::YieldInstruciton_strategy = st.builds(
-    mil::YieldInstruciton,
+mil_YieldInstruciton_strategy = st.builds(
+    mil_YieldInstruciton,
 )
 CompareInstruction_strategy = st.builds(
     CompareInstruction,
 )
-mil::GreaterThanEqualInstruction_strategy = st.builds(
-    mil::GreaterThanEqualInstruction,
+mil_LessThanEqualInstruction_strategy = st.builds(
+    mil_LessThanEqualInstruction,
 )
-mil::LessThanInstruction_strategy = st.builds(
-    mil::LessThanInstruction,
+mil_GreaterThanEqualInstruction_strategy = st.builds(
+    mil_GreaterThanEqualInstruction,
 )
-mil::LessThanEqualInstruction_strategy = st.builds(
-    mil::LessThanEqualInstruction,
+mil_LessThanInstruction_strategy = st.builds(
+    mil_LessThanInstruction,
 )
-mil::NotEqualInstruction_strategy = st.builds(
-    mil::NotEqualInstruction,
+mil_NotEqualInstruction_strategy = st.builds(
+    mil_NotEqualInstruction,
 )
-mil::GreaterThanInstruction_strategy = st.builds(
-    mil::GreaterThanInstruction,
-)
-mil::EqualInstruction_strategy = st.builds(
-    mil::EqualInstruction,
+mil_EqualInstruction_strategy = st.builds(
+    mil_EqualInstruction,
 )
 JumpInstruction_strategy = st.builds(
     JumpInstruction,
 )
-mil::ConditionalJumpInstruction_strategy = st.builds(
-    mil::ConditionalJumpInstruction,
+mil_ConditionalJumpInstruction_strategy = st.builds(
+    mil_ConditionalJumpInstruction,
 )
-mil::UnconditionalJumpInstruction_strategy = st.builds(
-    mil::UnconditionalJumpInstruction,
+mil_UnconditionalJumpInstruction_strategy = st.builds(
+    mil_UnconditionalJumpInstruction,
 )
-mil::RegisterReference_strategy = st.builds(
-    mil::RegisterReference,
+mil_RegisterReference_strategy = st.builds(
+    mil_RegisterReference,
     address=
         safe_text
 )
-mil::Value_strategy = st.builds(
-    mil::Value,
+mil_Value_strategy = st.builds(
+    mil_Value,
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-mil::CallInstruction_strategy = st.builds(
-    mil::CallInstruction,
+mil_NegateInstruction_strategy = st.builds(
+    mil_NegateInstruction,
 )
-mil::StoreInstruction_strategy = st.builds(
-    mil::StoreInstruction,
+mil_StoreInstruction_strategy = st.builds(
+    mil_StoreInstruction,
 )
-mil::OutputInstruction_strategy = st.builds(
-    mil::OutputInstruction,
+mil_CompareInstruction_strategy = st.builds(
+    mil_CompareInstruction,
 )
-mil::LoadInstruction_strategy = st.builds(
-    mil::LoadInstruction,
+mil_LoadInstruction_strategy = st.builds(
+    mil_LoadInstruction,
 )
-mil::CompareInstruction_strategy = st.builds(
-    mil::CompareInstruction,
+mil_ReturnInstruction_strategy = st.builds(
+    mil_ReturnInstruction,
 )
-mil::ReturnInstruction_strategy = st.builds(
-    mil::ReturnInstruction,
+mil_ArithmeticInstruction_strategy = st.builds(
+    mil_ArithmeticInstruction,
 )
-mil::ArithmeticInstruction_strategy = st.builds(
-    mil::ArithmeticInstruction,
+mil_CallInstruction_strategy = st.builds(
+    mil_CallInstruction,
 )
-mil::JumpInstruction_strategy = st.builds(
-    mil::JumpInstruction,
+mil_JumpInstruction_strategy = st.builds(
+    mil_JumpInstruction,
 )
-mil::NegateInstruction_strategy = st.builds(
-    mil::NegateInstruction,
+mil_OutputInstruction_strategy = st.builds(
+    mil_OutputInstruction,
 )
-mil::LabelInstruction_strategy = st.builds(
-    mil::LabelInstruction,
+mil_LabelInstruction_strategy = st.builds(
+    mil_LabelInstruction,
     name=
         safe_text
 )
-mil::Instruction_strategy = st.builds(
-    mil::Instruction,
+mil_Instruction_strategy = st.builds(
+    mil_Instruction,
 )
-mil::MILModel_strategy = st.builds(
-    mil::MILModel,
+mil_MILModel_strategy = st.builds(
+    mil_MILModel,
+)
+mil_GreaterThanInstruction_strategy = st.builds(
+    mil_GreaterThanInstruction,
 )
 
 @given(instance=Value_strategy)
@@ -708,18 +708,15 @@ mil::MILModel_strategy = st.builds(
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=mil::ConstantInteger_strategy)
+@given(instance=mil_ConstantInteger_strategy)
 @settings(max_examples=50)
-def test_mil::constantinteger_instantiation(instance):
-    assert isinstance(instance, mil::ConstantInteger)
-
-@given(instance=mil::ConstantInteger_strategy)
-def test_mil::constantinteger_rawValue_type(instance):
-    assert isinstance(instance.rawValue, int)
+def test_mil_constantinteger_instantiation(instance):
+    assert isinstance(instance, mil_ConstantInteger)
 
 
-@given(instance=mil::ConstantInteger_strategy)
-def test_mil::constantinteger_rawValue_setter(instance):
+
+@given(instance=mil_ConstantInteger_strategy)
+def test_mil_constantinteger_rawValue_setter(instance):
     original = instance.rawValue
     instance.rawValue = original
     assert instance.rawValue == original
@@ -729,195 +726,186 @@ def test_mil::constantinteger_rawValue_setter(instance):
 def test_arithmeticinstruction_instantiation(instance):
     assert isinstance(instance, ArithmeticInstruction)
 
-@given(instance=mil::DivInstruction_strategy)
+@given(instance=mil_MulInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::divinstruction_instantiation(instance):
-    assert isinstance(instance, mil::DivInstruction)
+def test_mil_mulinstruction_instantiation(instance):
+    assert isinstance(instance, mil_MulInstruction)
 
-@given(instance=mil::MulInstruction_strategy)
+@given(instance=mil_SubInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::mulinstruction_instantiation(instance):
-    assert isinstance(instance, mil::MulInstruction)
+def test_mil_subinstruction_instantiation(instance):
+    assert isinstance(instance, mil_SubInstruction)
 
-@given(instance=mil::SubInstruction_strategy)
+@given(instance=mil_DivInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::subinstruction_instantiation(instance):
-    assert isinstance(instance, mil::SubInstruction)
+def test_mil_divinstruction_instantiation(instance):
+    assert isinstance(instance, mil_DivInstruction)
 
-@given(instance=mil::AddInstruction_strategy)
+@given(instance=mil_AddInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::addinstruction_instantiation(instance):
-    assert isinstance(instance, mil::AddInstruction)
+def test_mil_addinstruction_instantiation(instance):
+    assert isinstance(instance, mil_AddInstruction)
 
 @given(instance=OutputInstruction_strategy)
 @settings(max_examples=50)
 def test_outputinstruction_instantiation(instance):
     assert isinstance(instance, OutputInstruction)
 
-@given(instance=mil::PrintInstruction_strategy)
+@given(instance=mil_PrintInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::printinstruction_instantiation(instance):
-    assert isinstance(instance, mil::PrintInstruction)
-
-@given(instance=mil::PrintInstruction_strategy)
-def test_mil::printinstruction_output_type(instance):
-    assert isinstance(instance.output, str)
+def test_mil_printinstruction_instantiation(instance):
+    assert isinstance(instance, mil_PrintInstruction)
 
 
-@given(instance=mil::PrintInstruction_strategy)
-def test_mil::printinstruction_output_setter(instance):
+
+@given(instance=mil_PrintInstruction_strategy)
+def test_mil_printinstruction_output_setter(instance):
     original = instance.output
     instance.output = original
     assert instance.output == original
 
-@given(instance=mil::YieldInstruciton_strategy)
+@given(instance=mil_YieldInstruciton_strategy)
 @settings(max_examples=50)
-def test_mil::yieldinstruciton_instantiation(instance):
-    assert isinstance(instance, mil::YieldInstruciton)
+def test_mil_yieldinstruciton_instantiation(instance):
+    assert isinstance(instance, mil_YieldInstruciton)
 
 @given(instance=CompareInstruction_strategy)
 @settings(max_examples=50)
 def test_compareinstruction_instantiation(instance):
     assert isinstance(instance, CompareInstruction)
 
-@given(instance=mil::GreaterThanEqualInstruction_strategy)
+@given(instance=mil_LessThanEqualInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::greaterthanequalinstruction_instantiation(instance):
-    assert isinstance(instance, mil::GreaterThanEqualInstruction)
+def test_mil_lessthanequalinstruction_instantiation(instance):
+    assert isinstance(instance, mil_LessThanEqualInstruction)
 
-@given(instance=mil::LessThanInstruction_strategy)
+@given(instance=mil_GreaterThanEqualInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::lessthaninstruction_instantiation(instance):
-    assert isinstance(instance, mil::LessThanInstruction)
+def test_mil_greaterthanequalinstruction_instantiation(instance):
+    assert isinstance(instance, mil_GreaterThanEqualInstruction)
 
-@given(instance=mil::LessThanEqualInstruction_strategy)
+@given(instance=mil_LessThanInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::lessthanequalinstruction_instantiation(instance):
-    assert isinstance(instance, mil::LessThanEqualInstruction)
+def test_mil_lessthaninstruction_instantiation(instance):
+    assert isinstance(instance, mil_LessThanInstruction)
 
-@given(instance=mil::NotEqualInstruction_strategy)
+@given(instance=mil_NotEqualInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::notequalinstruction_instantiation(instance):
-    assert isinstance(instance, mil::NotEqualInstruction)
+def test_mil_notequalinstruction_instantiation(instance):
+    assert isinstance(instance, mil_NotEqualInstruction)
 
-@given(instance=mil::GreaterThanInstruction_strategy)
+@given(instance=mil_EqualInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::greaterthaninstruction_instantiation(instance):
-    assert isinstance(instance, mil::GreaterThanInstruction)
-
-@given(instance=mil::EqualInstruction_strategy)
-@settings(max_examples=50)
-def test_mil::equalinstruction_instantiation(instance):
-    assert isinstance(instance, mil::EqualInstruction)
+def test_mil_equalinstruction_instantiation(instance):
+    assert isinstance(instance, mil_EqualInstruction)
 
 @given(instance=JumpInstruction_strategy)
 @settings(max_examples=50)
 def test_jumpinstruction_instantiation(instance):
     assert isinstance(instance, JumpInstruction)
 
-@given(instance=mil::ConditionalJumpInstruction_strategy)
+@given(instance=mil_ConditionalJumpInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::conditionaljumpinstruction_instantiation(instance):
-    assert isinstance(instance, mil::ConditionalJumpInstruction)
+def test_mil_conditionaljumpinstruction_instantiation(instance):
+    assert isinstance(instance, mil_ConditionalJumpInstruction)
 
-@given(instance=mil::UnconditionalJumpInstruction_strategy)
+@given(instance=mil_UnconditionalJumpInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::unconditionaljumpinstruction_instantiation(instance):
-    assert isinstance(instance, mil::UnconditionalJumpInstruction)
+def test_mil_unconditionaljumpinstruction_instantiation(instance):
+    assert isinstance(instance, mil_UnconditionalJumpInstruction)
 
-@given(instance=mil::RegisterReference_strategy)
+@given(instance=mil_RegisterReference_strategy)
 @settings(max_examples=50)
-def test_mil::registerreference_instantiation(instance):
-    assert isinstance(instance, mil::RegisterReference)
-
-@given(instance=mil::RegisterReference_strategy)
-def test_mil::registerreference_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_mil_registerreference_instantiation(instance):
+    assert isinstance(instance, mil_RegisterReference)
 
 
-@given(instance=mil::RegisterReference_strategy)
-def test_mil::registerreference_address_setter(instance):
+
+@given(instance=mil_RegisterReference_strategy)
+def test_mil_registerreference_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=mil::Value_strategy)
+@given(instance=mil_Value_strategy)
 @settings(max_examples=50)
-def test_mil::value_instantiation(instance):
-    assert isinstance(instance, mil::Value)
+def test_mil_value_instantiation(instance):
+    assert isinstance(instance, mil_Value)
 
 @given(instance=Instruction_strategy)
 @settings(max_examples=50)
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=mil::CallInstruction_strategy)
+@given(instance=mil_NegateInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::callinstruction_instantiation(instance):
-    assert isinstance(instance, mil::CallInstruction)
+def test_mil_negateinstruction_instantiation(instance):
+    assert isinstance(instance, mil_NegateInstruction)
 
-@given(instance=mil::StoreInstruction_strategy)
+@given(instance=mil_StoreInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::storeinstruction_instantiation(instance):
-    assert isinstance(instance, mil::StoreInstruction)
+def test_mil_storeinstruction_instantiation(instance):
+    assert isinstance(instance, mil_StoreInstruction)
 
-@given(instance=mil::OutputInstruction_strategy)
+@given(instance=mil_CompareInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::outputinstruction_instantiation(instance):
-    assert isinstance(instance, mil::OutputInstruction)
+def test_mil_compareinstruction_instantiation(instance):
+    assert isinstance(instance, mil_CompareInstruction)
 
-@given(instance=mil::LoadInstruction_strategy)
+@given(instance=mil_LoadInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::loadinstruction_instantiation(instance):
-    assert isinstance(instance, mil::LoadInstruction)
+def test_mil_loadinstruction_instantiation(instance):
+    assert isinstance(instance, mil_LoadInstruction)
 
-@given(instance=mil::CompareInstruction_strategy)
+@given(instance=mil_ReturnInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::compareinstruction_instantiation(instance):
-    assert isinstance(instance, mil::CompareInstruction)
+def test_mil_returninstruction_instantiation(instance):
+    assert isinstance(instance, mil_ReturnInstruction)
 
-@given(instance=mil::ReturnInstruction_strategy)
+@given(instance=mil_ArithmeticInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::returninstruction_instantiation(instance):
-    assert isinstance(instance, mil::ReturnInstruction)
+def test_mil_arithmeticinstruction_instantiation(instance):
+    assert isinstance(instance, mil_ArithmeticInstruction)
 
-@given(instance=mil::ArithmeticInstruction_strategy)
+@given(instance=mil_CallInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::arithmeticinstruction_instantiation(instance):
-    assert isinstance(instance, mil::ArithmeticInstruction)
+def test_mil_callinstruction_instantiation(instance):
+    assert isinstance(instance, mil_CallInstruction)
 
-@given(instance=mil::JumpInstruction_strategy)
+@given(instance=mil_JumpInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::jumpinstruction_instantiation(instance):
-    assert isinstance(instance, mil::JumpInstruction)
+def test_mil_jumpinstruction_instantiation(instance):
+    assert isinstance(instance, mil_JumpInstruction)
 
-@given(instance=mil::NegateInstruction_strategy)
+@given(instance=mil_OutputInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::negateinstruction_instantiation(instance):
-    assert isinstance(instance, mil::NegateInstruction)
+def test_mil_outputinstruction_instantiation(instance):
+    assert isinstance(instance, mil_OutputInstruction)
 
-@given(instance=mil::LabelInstruction_strategy)
+@given(instance=mil_LabelInstruction_strategy)
 @settings(max_examples=50)
-def test_mil::labelinstruction_instantiation(instance):
-    assert isinstance(instance, mil::LabelInstruction)
-
-@given(instance=mil::LabelInstruction_strategy)
-def test_mil::labelinstruction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mil_labelinstruction_instantiation(instance):
+    assert isinstance(instance, mil_LabelInstruction)
 
 
-@given(instance=mil::LabelInstruction_strategy)
-def test_mil::labelinstruction_name_setter(instance):
+
+@given(instance=mil_LabelInstruction_strategy)
+def test_mil_labelinstruction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mil::Instruction_strategy)
+@given(instance=mil_Instruction_strategy)
 @settings(max_examples=50)
-def test_mil::instruction_instantiation(instance):
-    assert isinstance(instance, mil::Instruction)
+def test_mil_instruction_instantiation(instance):
+    assert isinstance(instance, mil_Instruction)
 
-@given(instance=mil::MILModel_strategy)
+@given(instance=mil_MILModel_strategy)
 @settings(max_examples=50)
-def test_mil::milmodel_instantiation(instance):
-    assert isinstance(instance, mil::MILModel)
+def test_mil_milmodel_instantiation(instance):
+    assert isinstance(instance, mil_MILModel)
+
+@given(instance=mil_GreaterThanInstruction_strategy)
+@settings(max_examples=50)
+def test_mil_greaterthaninstruction_instantiation(instance):
+    assert isinstance(instance, mil_GreaterThanInstruction)

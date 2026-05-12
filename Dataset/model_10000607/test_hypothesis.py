@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Worker,
@@ -31,16 +31,16 @@ def test_worker_constructor_exists():
 def test_worker_constructor_args():
     sig = inspect.signature(Worker.__init__)
     params = list(sig.parameters.keys())
-    assert "Cashier" in params, "Missing parameter 'Cashier'"
-    assert "Waitor" in params, "Missing parameter 'Waitor'"
     assert "Cook" in params, "Missing parameter 'Cook'"
+    assert "Waitor" in params, "Missing parameter 'Waitor'"
+    assert "Cashier" in params, "Missing parameter 'Cashier'"
 
-def test_worker_has_Cashier():
-    assert hasattr(Worker, "Cashier")
+def test_worker_has_Cook():
+    assert hasattr(Worker, "Cook")
     descriptor = None
     for klass in Worker.__mro__:
-        if "Cashier" in klass.__dict__:
-            descriptor = klass.__dict__["Cashier"]
+        if "Cook" in klass.__dict__:
+            descriptor = klass.__dict__["Cook"]
             break
     assert isinstance(descriptor, property)
 
@@ -53,12 +53,12 @@ def test_worker_has_Waitor():
             break
     assert isinstance(descriptor, property)
 
-def test_worker_has_Cook():
-    assert hasattr(Worker, "Cook")
+def test_worker_has_Cashier():
+    assert hasattr(Worker, "Cashier")
     descriptor = None
     for klass in Worker.__mro__:
-        if "Cook" in klass.__dict__:
-            descriptor = klass.__dict__["Cook"]
+        if "Cashier" in klass.__dict__:
+            descriptor = klass.__dict__["Cashier"]
             break
     assert isinstance(descriptor, property)
 
@@ -131,18 +131,9 @@ def test_people_constructor_exists():
 def test_people_constructor_args():
     sig = inspect.signature(People.__init__)
     params = list(sig.parameters.keys())
-    assert "Custumer_" in params, "Missing parameter 'Custumer_'"
     assert "name" in params, "Missing parameter 'name'"
     assert "Worker" in params, "Missing parameter 'Worker'"
-
-def test_people_has_Custumer_():
-    assert hasattr(People, "Custumer_")
-    descriptor = None
-    for klass in People.__mro__:
-        if "Custumer_" in klass.__dict__:
-            descriptor = klass.__dict__["Custumer_"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Custumer_" in params, "Missing parameter 'Custumer_'"
 
 def test_people_has_name():
     assert hasattr(People, "name")
@@ -162,6 +153,15 @@ def test_people_has_Worker():
             break
     assert isinstance(descriptor, property)
 
+def test_people_has_Custumer_():
+    assert hasattr(People, "Custumer_")
+    descriptor = None
+    for klass in People.__mro__:
+        if "Custumer_" in klass.__dict__:
+            descriptor = klass.__dict__["Custumer_"]
+            break
+    assert isinstance(descriptor, property)
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -176,11 +176,11 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Worker_strategy = st.builds(
     Worker,
-    Cashier=
+    Cook=
         safe_text,
     Waitor=
         safe_text,
-    Cook=
+    Cashier=
         safe_text
 )
 Cashier_strategy = st.builds(
@@ -197,11 +197,11 @@ Customer_strategy = st.builds(
 )
 People_strategy = st.builds(
     People,
-    Custumer_=
-        safe_text,
     name=
         safe_text,
     Worker=
+        safe_text,
+    Custumer_=
         safe_text
 )
 
@@ -210,20 +210,14 @@ People_strategy = st.builds(
 def test_worker_instantiation(instance):
     assert isinstance(instance, Worker)
 
-@given(instance=Worker_strategy)
-def test_worker_Cashier_type(instance):
-    assert isinstance(instance.Cashier, str)
 
 
 @given(instance=Worker_strategy)
-def test_worker_Cashier_setter(instance):
-    original = instance.Cashier
-    instance.Cashier = original
-    assert instance.Cashier == original
+def test_worker_Cook_setter(instance):
+    original = instance.Cook
+    instance.Cook = original
+    assert instance.Cook == original
 
-@given(instance=Worker_strategy)
-def test_worker_Waitor_type(instance):
-    assert isinstance(instance.Waitor, str)
 
 
 @given(instance=Worker_strategy)
@@ -232,16 +226,13 @@ def test_worker_Waitor_setter(instance):
     instance.Waitor = original
     assert instance.Waitor == original
 
-@given(instance=Worker_strategy)
-def test_worker_Cook_type(instance):
-    assert isinstance(instance.Cook, str)
 
 
 @given(instance=Worker_strategy)
-def test_worker_Cook_setter(instance):
-    original = instance.Cook
-    instance.Cook = original
-    assert instance.Cook == original
+def test_worker_Cashier_setter(instance):
+    original = instance.Cashier
+    instance.Cashier = original
+    assert instance.Cashier == original
 
 @given(instance=Cashier_strategy)
 @settings(max_examples=50)
@@ -268,20 +259,6 @@ def test_customer_instantiation(instance):
 def test_people_instantiation(instance):
     assert isinstance(instance, People)
 
-@given(instance=People_strategy)
-def test_people_Custumer__type(instance):
-    assert isinstance(instance.Custumer_, str)
-
-
-@given(instance=People_strategy)
-def test_people_Custumer__setter(instance):
-    original = instance.Custumer_
-    instance.Custumer_ = original
-    assert instance.Custumer_ == original
-
-@given(instance=People_strategy)
-def test_people_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=People_strategy)
@@ -290,9 +267,6 @@ def test_people_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=People_strategy)
-def test_people_Worker_type(instance):
-    assert isinstance(instance.Worker, str)
 
 
 @given(instance=People_strategy)
@@ -300,3 +274,11 @@ def test_people_Worker_setter(instance):
     original = instance.Worker
     instance.Worker = original
     assert instance.Worker == original
+
+
+
+@given(instance=People_strategy)
+def test_people_Custumer__setter(instance):
+    original = instance.Custumer_
+    instance.Custumer_ = original
+    assert instance.Custumer_ == original

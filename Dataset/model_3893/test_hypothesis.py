@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Port,
-    workflow::InputPort,
-    workflow::OutputPort,
-    workflow::WorkflowElement,
+    workflow_InputPort,
+    workflow_OutputPort,
+    workflow_WorkflowElement,
     CompoundTask,
-    workflow::LoopTask,
+    workflow_LoopTask,
     WorkflowNode,
-    workflow::ConditionalTask,
-    workflow::TransformationTask,
-    workflow::Task,
-    workflow::CompoundTask,
+    workflow_TransformationTask,
+    workflow_Task,
+    workflow_ConditionalTask,
+    workflow_CompoundTask,
     OutputPort,
-    workflow::ConditionalOutputPort,
-    workflow::Fault,
+    workflow_ConditionalOutputPort,
+    workflow_Fault,
     WorkflowElement,
-    workflow::Edge,
-    workflow::Comment,
-    workflow::WorkflowNode,
-    workflow::Port,
-    workflow::Workflow,
+    workflow_Port,
+    workflow_Comment,
+    workflow_Edge,
+    workflow_WorkflowNode,
+    workflow_Workflow,
 )
 
 # =============================================================================
@@ -48,111 +48,111 @@ def test_port_constructor_args():
 
 
 
-def test_workflow::inputport_is_not_abstract():
-    assert not inspect.isabstract(workflow::InputPort)
+def test_workflow_inputport_is_not_abstract():
+    assert not inspect.isabstract(workflow_InputPort)
 
 
-def test_workflow::inputport_constructor_exists():
-    assert callable(workflow::InputPort.__init__)
+def test_workflow_inputport_constructor_exists():
+    assert callable(workflow_InputPort.__init__)
 
 
-def test_workflow::inputport_constructor_args():
-    sig = inspect.signature(workflow::InputPort.__init__)
+def test_workflow_inputport_constructor_args():
+    sig = inspect.signature(workflow_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::outputport_is_not_abstract():
-    assert not inspect.isabstract(workflow::OutputPort)
+def test_workflow_outputport_is_not_abstract():
+    assert not inspect.isabstract(workflow_OutputPort)
 
 
-def test_workflow::outputport_constructor_exists():
-    assert callable(workflow::OutputPort.__init__)
+def test_workflow_outputport_constructor_exists():
+    assert callable(workflow_OutputPort.__init__)
 
 
-def test_workflow::outputport_constructor_args():
-    sig = inspect.signature(workflow::OutputPort.__init__)
+def test_workflow_outputport_constructor_args():
+    sig = inspect.signature(workflow_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::workflowelement_is_not_abstract():
-    assert not inspect.isabstract(workflow::WorkflowElement)
+def test_workflow_workflowelement_is_not_abstract():
+    assert not inspect.isabstract(workflow_WorkflowElement)
 
 
-def test_workflow::workflowelement_constructor_exists():
-    assert callable(workflow::WorkflowElement.__init__)
+def test_workflow_workflowelement_constructor_exists():
+    assert callable(workflow_WorkflowElement.__init__)
 
 
-def test_workflow::workflowelement_constructor_args():
-    sig = inspect.signature(workflow::WorkflowElement.__init__)
+def test_workflow_workflowelement_constructor_args():
+    sig = inspect.signature(workflow_WorkflowElement.__init__)
     params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "x" in params, "Missing parameter 'x'"
     assert "workFlowElementId" in params, "Missing parameter 'workFlowElementId'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
 
-def test_workflow::workflowelement_has_height():
-    assert hasattr(workflow::WorkflowElement, "height")
+def test_workflow_workflowelement_has_comment():
+    assert hasattr(workflow_WorkflowElement, "comment")
     descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::workflowelement_has_width():
-    assert hasattr(workflow::WorkflowElement, "width")
-    descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::workflowelement_has_workFlowElementId():
-    assert hasattr(workflow::WorkflowElement, "workFlowElementId")
-    descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
-        if "workFlowElementId" in klass.__dict__:
-            descriptor = klass.__dict__["workFlowElementId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::workflowelement_has_name():
-    assert hasattr(workflow::WorkflowElement, "name")
-    descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::workflowelement_has_comment():
-    assert hasattr(workflow::WorkflowElement, "comment")
-    descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
+    for klass in workflow_WorkflowElement.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_workflow::workflowelement_has_x():
-    assert hasattr(workflow::WorkflowElement, "x")
+def test_workflow_workflowelement_has_width():
+    assert hasattr(workflow_WorkflowElement, "width")
     descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
+    for klass in workflow_WorkflowElement.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_workflowelement_has_height():
+    assert hasattr(workflow_WorkflowElement, "height")
+    descriptor = None
+    for klass in workflow_WorkflowElement.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_workflowelement_has_x():
+    assert hasattr(workflow_WorkflowElement, "x")
+    descriptor = None
+    for klass in workflow_WorkflowElement.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_workflow::workflowelement_has_y():
-    assert hasattr(workflow::WorkflowElement, "y")
+def test_workflow_workflowelement_has_workFlowElementId():
+    assert hasattr(workflow_WorkflowElement, "workFlowElementId")
     descriptor = None
-    for klass in workflow::WorkflowElement.__mro__:
+    for klass in workflow_WorkflowElement.__mro__:
+        if "workFlowElementId" in klass.__dict__:
+            descriptor = klass.__dict__["workFlowElementId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_workflowelement_has_name():
+    assert hasattr(workflow_WorkflowElement, "name")
+    descriptor = None
+    for klass in workflow_WorkflowElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_workflow_workflowelement_has_y():
+    assert hasattr(workflow_WorkflowElement, "y")
+    descriptor = None
+    for klass in workflow_WorkflowElement.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
@@ -174,23 +174,23 @@ def test_compoundtask_constructor_args():
 
 
 
-def test_workflow::looptask_is_not_abstract():
-    assert not inspect.isabstract(workflow::LoopTask)
+def test_workflow_looptask_is_not_abstract():
+    assert not inspect.isabstract(workflow_LoopTask)
 
 
-def test_workflow::looptask_constructor_exists():
-    assert callable(workflow::LoopTask.__init__)
+def test_workflow_looptask_constructor_exists():
+    assert callable(workflow_LoopTask.__init__)
 
 
-def test_workflow::looptask_constructor_args():
-    sig = inspect.signature(workflow::LoopTask.__init__)
+def test_workflow_looptask_constructor_args():
+    sig = inspect.signature(workflow_LoopTask.__init__)
     params = list(sig.parameters.keys())
     assert "whileCondition" in params, "Missing parameter 'whileCondition'"
 
-def test_workflow::looptask_has_whileCondition():
-    assert hasattr(workflow::LoopTask, "whileCondition")
+def test_workflow_looptask_has_whileCondition():
+    assert hasattr(workflow_LoopTask, "whileCondition")
     descriptor = None
-    for klass in workflow::LoopTask.__mro__:
+    for klass in workflow_LoopTask.__mro__:
         if "whileCondition" in klass.__dict__:
             descriptor = klass.__dict__["whileCondition"]
             break
@@ -212,37 +212,23 @@ def test_workflownode_constructor_args():
 
 
 
-def test_workflow::conditionaltask_is_not_abstract():
-    assert not inspect.isabstract(workflow::ConditionalTask)
+def test_workflow_transformationtask_is_not_abstract():
+    assert not inspect.isabstract(workflow_TransformationTask)
 
 
-def test_workflow::conditionaltask_constructor_exists():
-    assert callable(workflow::ConditionalTask.__init__)
+def test_workflow_transformationtask_constructor_exists():
+    assert callable(workflow_TransformationTask.__init__)
 
 
-def test_workflow::conditionaltask_constructor_args():
-    sig = inspect.signature(workflow::ConditionalTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::transformationtask_is_not_abstract():
-    assert not inspect.isabstract(workflow::TransformationTask)
-
-
-def test_workflow::transformationtask_constructor_exists():
-    assert callable(workflow::TransformationTask.__init__)
-
-
-def test_workflow::transformationtask_constructor_args():
-    sig = inspect.signature(workflow::TransformationTask.__init__)
+def test_workflow_transformationtask_constructor_args():
+    sig = inspect.signature(workflow_TransformationTask.__init__)
     params = list(sig.parameters.keys())
     assert "transformExpression" in params, "Missing parameter 'transformExpression'"
 
-def test_workflow::transformationtask_has_transformExpression():
-    assert hasattr(workflow::TransformationTask, "transformExpression")
+def test_workflow_transformationtask_has_transformExpression():
+    assert hasattr(workflow_TransformationTask, "transformExpression")
     descriptor = None
-    for klass in workflow::TransformationTask.__mro__:
+    for klass in workflow_TransformationTask.__mro__:
         if "transformExpression" in klass.__dict__:
             descriptor = klass.__dict__["transformExpression"]
             break
@@ -250,30 +236,44 @@ def test_workflow::transformationtask_has_transformExpression():
 
 
 
-def test_workflow::task_is_not_abstract():
-    assert not inspect.isabstract(workflow::Task)
+def test_workflow_task_is_not_abstract():
+    assert not inspect.isabstract(workflow_Task)
 
 
-def test_workflow::task_constructor_exists():
-    assert callable(workflow::Task.__init__)
+def test_workflow_task_constructor_exists():
+    assert callable(workflow_Task.__init__)
 
 
-def test_workflow::task_constructor_args():
-    sig = inspect.signature(workflow::Task.__init__)
+def test_workflow_task_constructor_args():
+    sig = inspect.signature(workflow_Task.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::compoundtask_is_not_abstract():
-    assert not inspect.isabstract(workflow::CompoundTask)
+def test_workflow_conditionaltask_is_not_abstract():
+    assert not inspect.isabstract(workflow_ConditionalTask)
 
 
-def test_workflow::compoundtask_constructor_exists():
-    assert callable(workflow::CompoundTask.__init__)
+def test_workflow_conditionaltask_constructor_exists():
+    assert callable(workflow_ConditionalTask.__init__)
 
 
-def test_workflow::compoundtask_constructor_args():
-    sig = inspect.signature(workflow::CompoundTask.__init__)
+def test_workflow_conditionaltask_constructor_args():
+    sig = inspect.signature(workflow_ConditionalTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_compoundtask_is_not_abstract():
+    assert not inspect.isabstract(workflow_CompoundTask)
+
+
+def test_workflow_compoundtask_constructor_exists():
+    assert callable(workflow_CompoundTask.__init__)
+
+
+def test_workflow_compoundtask_constructor_args():
+    sig = inspect.signature(workflow_CompoundTask.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,23 +292,23 @@ def test_outputport_constructor_args():
 
 
 
-def test_workflow::conditionaloutputport_is_not_abstract():
-    assert not inspect.isabstract(workflow::ConditionalOutputPort)
+def test_workflow_conditionaloutputport_is_not_abstract():
+    assert not inspect.isabstract(workflow_ConditionalOutputPort)
 
 
-def test_workflow::conditionaloutputport_constructor_exists():
-    assert callable(workflow::ConditionalOutputPort.__init__)
+def test_workflow_conditionaloutputport_constructor_exists():
+    assert callable(workflow_ConditionalOutputPort.__init__)
 
 
-def test_workflow::conditionaloutputport_constructor_args():
-    sig = inspect.signature(workflow::ConditionalOutputPort.__init__)
+def test_workflow_conditionaloutputport_constructor_args():
+    sig = inspect.signature(workflow_ConditionalOutputPort.__init__)
     params = list(sig.parameters.keys())
     assert "condition" in params, "Missing parameter 'condition'"
 
-def test_workflow::conditionaloutputport_has_condition():
-    assert hasattr(workflow::ConditionalOutputPort, "condition")
+def test_workflow_conditionaloutputport_has_condition():
+    assert hasattr(workflow_ConditionalOutputPort, "condition")
     descriptor = None
-    for klass in workflow::ConditionalOutputPort.__mro__:
+    for klass in workflow_ConditionalOutputPort.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
@@ -316,16 +316,16 @@ def test_workflow::conditionaloutputport_has_condition():
 
 
 
-def test_workflow::fault_is_not_abstract():
-    assert not inspect.isabstract(workflow::Fault)
+def test_workflow_fault_is_not_abstract():
+    assert not inspect.isabstract(workflow_Fault)
 
 
-def test_workflow::fault_constructor_exists():
-    assert callable(workflow::Fault.__init__)
+def test_workflow_fault_constructor_exists():
+    assert callable(workflow_Fault.__init__)
 
 
-def test_workflow::fault_constructor_args():
-    sig = inspect.signature(workflow::Fault.__init__)
+def test_workflow_fault_constructor_args():
+    sig = inspect.signature(workflow_Fault.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -344,92 +344,92 @@ def test_workflowelement_constructor_args():
 
 
 
-def test_workflow::edge_is_not_abstract():
-    assert not inspect.isabstract(workflow::Edge)
+def test_workflow_port_is_not_abstract():
+    assert not inspect.isabstract(workflow_Port)
 
 
-def test_workflow::edge_constructor_exists():
-    assert callable(workflow::Edge.__init__)
+def test_workflow_port_constructor_exists():
+    assert callable(workflow_Port.__init__)
 
 
-def test_workflow::edge_constructor_args():
-    sig = inspect.signature(workflow::Edge.__init__)
+def test_workflow_port_constructor_args():
+    sig = inspect.signature(workflow_Port.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::comment_is_not_abstract():
-    assert not inspect.isabstract(workflow::Comment)
+def test_workflow_comment_is_not_abstract():
+    assert not inspect.isabstract(workflow_Comment)
 
 
-def test_workflow::comment_constructor_exists():
-    assert callable(workflow::Comment.__init__)
+def test_workflow_comment_constructor_exists():
+    assert callable(workflow_Comment.__init__)
 
 
-def test_workflow::comment_constructor_args():
-    sig = inspect.signature(workflow::Comment.__init__)
+def test_workflow_comment_constructor_args():
+    sig = inspect.signature(workflow_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::workflownode_is_not_abstract():
-    assert not inspect.isabstract(workflow::WorkflowNode)
+def test_workflow_edge_is_not_abstract():
+    assert not inspect.isabstract(workflow_Edge)
 
 
-def test_workflow::workflownode_constructor_exists():
-    assert callable(workflow::WorkflowNode.__init__)
+def test_workflow_edge_constructor_exists():
+    assert callable(workflow_Edge.__init__)
 
 
-def test_workflow::workflownode_constructor_args():
-    sig = inspect.signature(workflow::WorkflowNode.__init__)
+def test_workflow_edge_constructor_args():
+    sig = inspect.signature(workflow_Edge.__init__)
     params = list(sig.parameters.keys())
-    assert "isStart" in params, "Missing parameter 'isStart'"
+
+
+
+def test_workflow_workflownode_is_not_abstract():
+    assert not inspect.isabstract(workflow_WorkflowNode)
+
+
+def test_workflow_workflownode_constructor_exists():
+    assert callable(workflow_WorkflowNode.__init__)
+
+
+def test_workflow_workflownode_constructor_args():
+    sig = inspect.signature(workflow_WorkflowNode.__init__)
+    params = list(sig.parameters.keys())
     assert "isFinish" in params, "Missing parameter 'isFinish'"
+    assert "isStart" in params, "Missing parameter 'isStart'"
 
-def test_workflow::workflownode_has_isStart():
-    assert hasattr(workflow::WorkflowNode, "isStart")
+def test_workflow_workflownode_has_isFinish():
+    assert hasattr(workflow_WorkflowNode, "isFinish")
     descriptor = None
-    for klass in workflow::WorkflowNode.__mro__:
-        if "isStart" in klass.__dict__:
-            descriptor = klass.__dict__["isStart"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_workflow::workflownode_has_isFinish():
-    assert hasattr(workflow::WorkflowNode, "isFinish")
-    descriptor = None
-    for klass in workflow::WorkflowNode.__mro__:
+    for klass in workflow_WorkflowNode.__mro__:
         if "isFinish" in klass.__dict__:
             descriptor = klass.__dict__["isFinish"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_workflow::port_is_not_abstract():
-    assert not inspect.isabstract(workflow::Port)
-
-
-def test_workflow::port_constructor_exists():
-    assert callable(workflow::Port.__init__)
-
-
-def test_workflow::port_constructor_args():
-    sig = inspect.signature(workflow::Port.__init__)
-    params = list(sig.parameters.keys())
+def test_workflow_workflownode_has_isStart():
+    assert hasattr(workflow_WorkflowNode, "isStart")
+    descriptor = None
+    for klass in workflow_WorkflowNode.__mro__:
+        if "isStart" in klass.__dict__:
+            descriptor = klass.__dict__["isStart"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_workflow::workflow_is_not_abstract():
-    assert not inspect.isabstract(workflow::Workflow)
+def test_workflow_workflow_is_not_abstract():
+    assert not inspect.isabstract(workflow_Workflow)
 
 
-def test_workflow::workflow_constructor_exists():
-    assert callable(workflow::Workflow.__init__)
+def test_workflow_workflow_constructor_exists():
+    assert callable(workflow_Workflow.__init__)
 
 
-def test_workflow::workflow_constructor_args():
-    sig = inspect.signature(workflow::Workflow.__init__)
+def test_workflow_workflow_constructor_args():
+    sig = inspect.signature(workflow_Workflow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -447,86 +447,86 @@ safe_text = st.text(
 Port_strategy = st.builds(
     Port,
 )
-workflow::InputPort_strategy = st.builds(
-    workflow::InputPort,
+workflow_InputPort_strategy = st.builds(
+    workflow_InputPort,
 )
-workflow::OutputPort_strategy = st.builds(
-    workflow::OutputPort,
+workflow_OutputPort_strategy = st.builds(
+    workflow_OutputPort,
 )
-workflow::WorkflowElement_strategy = st.builds(
-    workflow::WorkflowElement,
+workflow_WorkflowElement_strategy = st.builds(
+    workflow_WorkflowElement,
+    comment=
+        safe_text,
+    width=
+        st.integers(),
     height=
         st.integers(),
-    width=
+    x=
         st.integers(),
     workFlowElementId=
         safe_text,
     name=
         safe_text,
-    comment=
-        safe_text,
-    x=
-        st.integers(),
     y=
         st.integers()
 )
 CompoundTask_strategy = st.builds(
     CompoundTask,
 )
-workflow::LoopTask_strategy = st.builds(
-    workflow::LoopTask,
+workflow_LoopTask_strategy = st.builds(
+    workflow_LoopTask,
     whileCondition=
         safe_text
 )
 WorkflowNode_strategy = st.builds(
     WorkflowNode,
 )
-workflow::ConditionalTask_strategy = st.builds(
-    workflow::ConditionalTask,
-)
-workflow::TransformationTask_strategy = st.builds(
-    workflow::TransformationTask,
+workflow_TransformationTask_strategy = st.builds(
+    workflow_TransformationTask,
     transformExpression=
         safe_text
 )
-workflow::Task_strategy = st.builds(
-    workflow::Task,
+workflow_Task_strategy = st.builds(
+    workflow_Task,
 )
-workflow::CompoundTask_strategy = st.builds(
-    workflow::CompoundTask,
+workflow_ConditionalTask_strategy = st.builds(
+    workflow_ConditionalTask,
+)
+workflow_CompoundTask_strategy = st.builds(
+    workflow_CompoundTask,
 )
 OutputPort_strategy = st.builds(
     OutputPort,
 )
-workflow::ConditionalOutputPort_strategy = st.builds(
-    workflow::ConditionalOutputPort,
+workflow_ConditionalOutputPort_strategy = st.builds(
+    workflow_ConditionalOutputPort,
     condition=
         safe_text
 )
-workflow::Fault_strategy = st.builds(
-    workflow::Fault,
+workflow_Fault_strategy = st.builds(
+    workflow_Fault,
 )
 WorkflowElement_strategy = st.builds(
     WorkflowElement,
 )
-workflow::Edge_strategy = st.builds(
-    workflow::Edge,
+workflow_Port_strategy = st.builds(
+    workflow_Port,
 )
-workflow::Comment_strategy = st.builds(
-    workflow::Comment,
+workflow_Comment_strategy = st.builds(
+    workflow_Comment,
 )
-workflow::WorkflowNode_strategy = st.builds(
-    workflow::WorkflowNode,
-    isStart=
-        st.booleans(),
+workflow_Edge_strategy = st.builds(
+    workflow_Edge,
+)
+workflow_WorkflowNode_strategy = st.builds(
+    workflow_WorkflowNode,
     isFinish=
+        st.booleans(),
+    isStart=
         st.booleans()
 )
-workflow::Port_strategy = st.builds(
-    workflow::Port,
-)
-workflow::Workflow_strategy = st.builds(
-    workflow::Workflow,
+workflow_Workflow_strategy = st.builds(
+    workflow_Workflow,
 )
 
 @given(instance=Port_strategy)
@@ -534,94 +534,73 @@ workflow::Workflow_strategy = st.builds(
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=workflow::InputPort_strategy)
+@given(instance=workflow_InputPort_strategy)
 @settings(max_examples=50)
-def test_workflow::inputport_instantiation(instance):
-    assert isinstance(instance, workflow::InputPort)
+def test_workflow_inputport_instantiation(instance):
+    assert isinstance(instance, workflow_InputPort)
 
-@given(instance=workflow::OutputPort_strategy)
+@given(instance=workflow_OutputPort_strategy)
 @settings(max_examples=50)
-def test_workflow::outputport_instantiation(instance):
-    assert isinstance(instance, workflow::OutputPort)
+def test_workflow_outputport_instantiation(instance):
+    assert isinstance(instance, workflow_OutputPort)
 
-@given(instance=workflow::WorkflowElement_strategy)
+@given(instance=workflow_WorkflowElement_strategy)
 @settings(max_examples=50)
-def test_workflow::workflowelement_instantiation(instance):
-    assert isinstance(instance, workflow::WorkflowElement)
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_height_type(instance):
-    assert isinstance(instance.height, int)
+def test_workflow_workflowelement_instantiation(instance):
+    assert isinstance(instance, workflow_WorkflowElement)
 
 
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
 
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_workFlowElementId_type(instance):
-    assert isinstance(instance.workFlowElementId, str)
-
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_workFlowElementId_setter(instance):
-    original = instance.workFlowElementId
-    instance.workFlowElementId = original
-    assert instance.workFlowElementId == original
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_comment_setter(instance):
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_x_setter(instance):
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
-@given(instance=workflow::WorkflowElement_strategy)
-def test_workflow::workflowelement_y_setter(instance):
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_workFlowElementId_setter(instance):
+    original = instance.workFlowElementId
+    instance.workFlowElementId = original
+    assert instance.workFlowElementId == original
+
+
+
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=workflow_WorkflowElement_strategy)
+def test_workflow_workflowelement_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
@@ -631,18 +610,15 @@ def test_workflow::workflowelement_y_setter(instance):
 def test_compoundtask_instantiation(instance):
     assert isinstance(instance, CompoundTask)
 
-@given(instance=workflow::LoopTask_strategy)
+@given(instance=workflow_LoopTask_strategy)
 @settings(max_examples=50)
-def test_workflow::looptask_instantiation(instance):
-    assert isinstance(instance, workflow::LoopTask)
-
-@given(instance=workflow::LoopTask_strategy)
-def test_workflow::looptask_whileCondition_type(instance):
-    assert isinstance(instance.whileCondition, str)
+def test_workflow_looptask_instantiation(instance):
+    assert isinstance(instance, workflow_LoopTask)
 
 
-@given(instance=workflow::LoopTask_strategy)
-def test_workflow::looptask_whileCondition_setter(instance):
+
+@given(instance=workflow_LoopTask_strategy)
+def test_workflow_looptask_whileCondition_setter(instance):
     original = instance.whileCondition
     instance.whileCondition = original
     assert instance.whileCondition == original
@@ -652,111 +628,99 @@ def test_workflow::looptask_whileCondition_setter(instance):
 def test_workflownode_instantiation(instance):
     assert isinstance(instance, WorkflowNode)
 
-@given(instance=workflow::ConditionalTask_strategy)
+@given(instance=workflow_TransformationTask_strategy)
 @settings(max_examples=50)
-def test_workflow::conditionaltask_instantiation(instance):
-    assert isinstance(instance, workflow::ConditionalTask)
-
-@given(instance=workflow::TransformationTask_strategy)
-@settings(max_examples=50)
-def test_workflow::transformationtask_instantiation(instance):
-    assert isinstance(instance, workflow::TransformationTask)
-
-@given(instance=workflow::TransformationTask_strategy)
-def test_workflow::transformationtask_transformExpression_type(instance):
-    assert isinstance(instance.transformExpression, str)
+def test_workflow_transformationtask_instantiation(instance):
+    assert isinstance(instance, workflow_TransformationTask)
 
 
-@given(instance=workflow::TransformationTask_strategy)
-def test_workflow::transformationtask_transformExpression_setter(instance):
+
+@given(instance=workflow_TransformationTask_strategy)
+def test_workflow_transformationtask_transformExpression_setter(instance):
     original = instance.transformExpression
     instance.transformExpression = original
     assert instance.transformExpression == original
 
-@given(instance=workflow::Task_strategy)
+@given(instance=workflow_Task_strategy)
 @settings(max_examples=50)
-def test_workflow::task_instantiation(instance):
-    assert isinstance(instance, workflow::Task)
+def test_workflow_task_instantiation(instance):
+    assert isinstance(instance, workflow_Task)
 
-@given(instance=workflow::CompoundTask_strategy)
+@given(instance=workflow_ConditionalTask_strategy)
 @settings(max_examples=50)
-def test_workflow::compoundtask_instantiation(instance):
-    assert isinstance(instance, workflow::CompoundTask)
+def test_workflow_conditionaltask_instantiation(instance):
+    assert isinstance(instance, workflow_ConditionalTask)
+
+@given(instance=workflow_CompoundTask_strategy)
+@settings(max_examples=50)
+def test_workflow_compoundtask_instantiation(instance):
+    assert isinstance(instance, workflow_CompoundTask)
 
 @given(instance=OutputPort_strategy)
 @settings(max_examples=50)
 def test_outputport_instantiation(instance):
     assert isinstance(instance, OutputPort)
 
-@given(instance=workflow::ConditionalOutputPort_strategy)
+@given(instance=workflow_ConditionalOutputPort_strategy)
 @settings(max_examples=50)
-def test_workflow::conditionaloutputport_instantiation(instance):
-    assert isinstance(instance, workflow::ConditionalOutputPort)
-
-@given(instance=workflow::ConditionalOutputPort_strategy)
-def test_workflow::conditionaloutputport_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_workflow_conditionaloutputport_instantiation(instance):
+    assert isinstance(instance, workflow_ConditionalOutputPort)
 
 
-@given(instance=workflow::ConditionalOutputPort_strategy)
-def test_workflow::conditionaloutputport_condition_setter(instance):
+
+@given(instance=workflow_ConditionalOutputPort_strategy)
+def test_workflow_conditionaloutputport_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=workflow::Fault_strategy)
+@given(instance=workflow_Fault_strategy)
 @settings(max_examples=50)
-def test_workflow::fault_instantiation(instance):
-    assert isinstance(instance, workflow::Fault)
+def test_workflow_fault_instantiation(instance):
+    assert isinstance(instance, workflow_Fault)
 
 @given(instance=WorkflowElement_strategy)
 @settings(max_examples=50)
 def test_workflowelement_instantiation(instance):
     assert isinstance(instance, WorkflowElement)
 
-@given(instance=workflow::Edge_strategy)
+@given(instance=workflow_Port_strategy)
 @settings(max_examples=50)
-def test_workflow::edge_instantiation(instance):
-    assert isinstance(instance, workflow::Edge)
+def test_workflow_port_instantiation(instance):
+    assert isinstance(instance, workflow_Port)
 
-@given(instance=workflow::Comment_strategy)
+@given(instance=workflow_Comment_strategy)
 @settings(max_examples=50)
-def test_workflow::comment_instantiation(instance):
-    assert isinstance(instance, workflow::Comment)
+def test_workflow_comment_instantiation(instance):
+    assert isinstance(instance, workflow_Comment)
 
-@given(instance=workflow::WorkflowNode_strategy)
+@given(instance=workflow_Edge_strategy)
 @settings(max_examples=50)
-def test_workflow::workflownode_instantiation(instance):
-    assert isinstance(instance, workflow::WorkflowNode)
+def test_workflow_edge_instantiation(instance):
+    assert isinstance(instance, workflow_Edge)
 
-@given(instance=workflow::WorkflowNode_strategy)
-def test_workflow::workflownode_isStart_type(instance):
-    assert isinstance(instance.isStart, bool)
-
-
-@given(instance=workflow::WorkflowNode_strategy)
-def test_workflow::workflownode_isStart_setter(instance):
-    original = instance.isStart
-    instance.isStart = original
-    assert instance.isStart == original
-
-@given(instance=workflow::WorkflowNode_strategy)
-def test_workflow::workflownode_isFinish_type(instance):
-    assert isinstance(instance.isFinish, bool)
+@given(instance=workflow_WorkflowNode_strategy)
+@settings(max_examples=50)
+def test_workflow_workflownode_instantiation(instance):
+    assert isinstance(instance, workflow_WorkflowNode)
 
 
-@given(instance=workflow::WorkflowNode_strategy)
-def test_workflow::workflownode_isFinish_setter(instance):
+
+@given(instance=workflow_WorkflowNode_strategy)
+def test_workflow_workflownode_isFinish_setter(instance):
     original = instance.isFinish
     instance.isFinish = original
     assert instance.isFinish == original
 
-@given(instance=workflow::Port_strategy)
-@settings(max_examples=50)
-def test_workflow::port_instantiation(instance):
-    assert isinstance(instance, workflow::Port)
 
-@given(instance=workflow::Workflow_strategy)
+
+@given(instance=workflow_WorkflowNode_strategy)
+def test_workflow_workflownode_isStart_setter(instance):
+    original = instance.isStart
+    instance.isStart = original
+    assert instance.isStart == original
+
+@given(instance=workflow_Workflow_strategy)
 @settings(max_examples=50)
-def test_workflow::workflow_instantiation(instance):
-    assert isinstance(instance, workflow::Workflow)
+def test_workflow_workflow_instantiation(instance):
+    assert isinstance(instance, workflow_Workflow)

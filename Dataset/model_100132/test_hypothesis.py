@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dbrouting::ResultSet,
+from python_code import (
+    dbrouting_ResultSet,
     ElementVisitor,
-    dbrouting::Executor,
-    dbrouting::ResultSetRowSelector,
-    dbrouting::DBRoutingDocumentRoot,
-    dbrouting::EStringToStringMapEntry,
+    dbrouting_Executor,
+    dbrouting_ResultSetRowSelector,
+    dbrouting_DBRoutingDocumentRoot,
+    dbrouting_EStringToStringMapEntry,
     ResultSetScopeType,
 )
 
@@ -21,45 +21,45 @@ from classes import (
 
 
 
-def test_dbrouting::resultset_is_not_abstract():
-    assert not inspect.isabstract(dbrouting::ResultSet)
+def test_dbrouting_resultset_is_not_abstract():
+    assert not inspect.isabstract(dbrouting_ResultSet)
 
 
-def test_dbrouting::resultset_constructor_exists():
-    assert callable(dbrouting::ResultSet.__init__)
+def test_dbrouting_resultset_constructor_exists():
+    assert callable(dbrouting_ResultSet.__init__)
 
 
-def test_dbrouting::resultset_constructor_args():
-    sig = inspect.signature(dbrouting::ResultSet.__init__)
+def test_dbrouting_resultset_constructor_args():
+    sig = inspect.signature(dbrouting_ResultSet.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "scope" in params, "Missing parameter 'scope'"
     assert "timeToLive" in params, "Missing parameter 'timeToLive'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_dbrouting::resultset_has_scope():
-    assert hasattr(dbrouting::ResultSet, "scope")
+def test_dbrouting_resultset_has_name():
+    assert hasattr(dbrouting_ResultSet, "name")
     descriptor = None
-    for klass in dbrouting::ResultSet.__mro__:
+    for klass in dbrouting_ResultSet.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbrouting_resultset_has_scope():
+    assert hasattr(dbrouting_ResultSet, "scope")
+    descriptor = None
+    for klass in dbrouting_ResultSet.__mro__:
         if "scope" in klass.__dict__:
             descriptor = klass.__dict__["scope"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbrouting::resultset_has_timeToLive():
-    assert hasattr(dbrouting::ResultSet, "timeToLive")
+def test_dbrouting_resultset_has_timeToLive():
+    assert hasattr(dbrouting_ResultSet, "timeToLive")
     descriptor = None
-    for klass in dbrouting::ResultSet.__mro__:
+    for klass in dbrouting_ResultSet.__mro__:
         if "timeToLive" in klass.__dict__:
             descriptor = klass.__dict__["timeToLive"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbrouting::resultset_has_name():
-    assert hasattr(dbrouting::ResultSet, "name")
-    descriptor = None
-    for klass in dbrouting::ResultSet.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -79,161 +79,161 @@ def test_elementvisitor_constructor_args():
 
 
 
-def test_dbrouting::executor_is_not_abstract():
-    assert not inspect.isabstract(dbrouting::Executor)
+def test_dbrouting_executor_is_not_abstract():
+    assert not inspect.isabstract(dbrouting_Executor)
 
 
-def test_dbrouting::executor_constructor_exists():
-    assert callable(dbrouting::Executor.__init__)
+def test_dbrouting_executor_constructor_exists():
+    assert callable(dbrouting_Executor.__init__)
 
 
-def test_dbrouting::executor_constructor_args():
-    sig = inspect.signature(dbrouting::Executor.__init__)
+def test_dbrouting_executor_constructor_args():
+    sig = inspect.signature(dbrouting_Executor.__init__)
     params = list(sig.parameters.keys())
     assert "executeOnElement" in params, "Missing parameter 'executeOnElement'"
     assert "statement" in params, "Missing parameter 'statement'"
-    assert "executeBefore" in params, "Missing parameter 'executeBefore'"
     assert "datasource" in params, "Missing parameter 'datasource'"
     assert "executeOnElementNS" in params, "Missing parameter 'executeOnElementNS'"
+    assert "executeBefore" in params, "Missing parameter 'executeBefore'"
 
-def test_dbrouting::executor_has_executeOnElement():
-    assert hasattr(dbrouting::Executor, "executeOnElement")
+def test_dbrouting_executor_has_executeOnElement():
+    assert hasattr(dbrouting_Executor, "executeOnElement")
     descriptor = None
-    for klass in dbrouting::Executor.__mro__:
+    for klass in dbrouting_Executor.__mro__:
         if "executeOnElement" in klass.__dict__:
             descriptor = klass.__dict__["executeOnElement"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbrouting::executor_has_statement():
-    assert hasattr(dbrouting::Executor, "statement")
+def test_dbrouting_executor_has_statement():
+    assert hasattr(dbrouting_Executor, "statement")
     descriptor = None
-    for klass in dbrouting::Executor.__mro__:
+    for klass in dbrouting_Executor.__mro__:
         if "statement" in klass.__dict__:
             descriptor = klass.__dict__["statement"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbrouting::executor_has_executeBefore():
-    assert hasattr(dbrouting::Executor, "executeBefore")
+def test_dbrouting_executor_has_datasource():
+    assert hasattr(dbrouting_Executor, "datasource")
     descriptor = None
-    for klass in dbrouting::Executor.__mro__:
-        if "executeBefore" in klass.__dict__:
-            descriptor = klass.__dict__["executeBefore"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbrouting::executor_has_datasource():
-    assert hasattr(dbrouting::Executor, "datasource")
-    descriptor = None
-    for klass in dbrouting::Executor.__mro__:
+    for klass in dbrouting_Executor.__mro__:
         if "datasource" in klass.__dict__:
             descriptor = klass.__dict__["datasource"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbrouting::executor_has_executeOnElementNS():
-    assert hasattr(dbrouting::Executor, "executeOnElementNS")
+def test_dbrouting_executor_has_executeOnElementNS():
+    assert hasattr(dbrouting_Executor, "executeOnElementNS")
     descriptor = None
-    for klass in dbrouting::Executor.__mro__:
+    for klass in dbrouting_Executor.__mro__:
         if "executeOnElementNS" in klass.__dict__:
             descriptor = klass.__dict__["executeOnElementNS"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dbrouting::resultsetrowselector_is_not_abstract():
-    assert not inspect.isabstract(dbrouting::ResultSetRowSelector)
-
-
-def test_dbrouting::resultsetrowselector_constructor_exists():
-    assert callable(dbrouting::ResultSetRowSelector.__init__)
-
-
-def test_dbrouting::resultsetrowselector_constructor_args():
-    sig = inspect.signature(dbrouting::ResultSetRowSelector.__init__)
-    params = list(sig.parameters.keys())
-    assert "executeBefore" in params, "Missing parameter 'executeBefore'"
-    assert "beanId" in params, "Missing parameter 'beanId'"
-    assert "resultSetName" in params, "Missing parameter 'resultSetName'"
-    assert "where" in params, "Missing parameter 'where'"
-    assert "selectRowOnElement" in params, "Missing parameter 'selectRowOnElement'"
-    assert "failedSelectError" in params, "Missing parameter 'failedSelectError'"
-
-def test_dbrouting::resultsetrowselector_has_executeBefore():
-    assert hasattr(dbrouting::ResultSetRowSelector, "executeBefore")
+def test_dbrouting_executor_has_executeBefore():
+    assert hasattr(dbrouting_Executor, "executeBefore")
     descriptor = None
-    for klass in dbrouting::ResultSetRowSelector.__mro__:
+    for klass in dbrouting_Executor.__mro__:
         if "executeBefore" in klass.__dict__:
             descriptor = klass.__dict__["executeBefore"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbrouting::resultsetrowselector_has_beanId():
-    assert hasattr(dbrouting::ResultSetRowSelector, "beanId")
-    descriptor = None
-    for klass in dbrouting::ResultSetRowSelector.__mro__:
-        if "beanId" in klass.__dict__:
-            descriptor = klass.__dict__["beanId"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_dbrouting::resultsetrowselector_has_resultSetName():
-    assert hasattr(dbrouting::ResultSetRowSelector, "resultSetName")
-    descriptor = None
-    for klass in dbrouting::ResultSetRowSelector.__mro__:
-        if "resultSetName" in klass.__dict__:
-            descriptor = klass.__dict__["resultSetName"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_dbrouting::resultsetrowselector_has_where():
-    assert hasattr(dbrouting::ResultSetRowSelector, "where")
+def test_dbrouting_resultsetrowselector_is_not_abstract():
+    assert not inspect.isabstract(dbrouting_ResultSetRowSelector)
+
+
+def test_dbrouting_resultsetrowselector_constructor_exists():
+    assert callable(dbrouting_ResultSetRowSelector.__init__)
+
+
+def test_dbrouting_resultsetrowselector_constructor_args():
+    sig = inspect.signature(dbrouting_ResultSetRowSelector.__init__)
+    params = list(sig.parameters.keys())
+    assert "where" in params, "Missing parameter 'where'"
+    assert "failedSelectError" in params, "Missing parameter 'failedSelectError'"
+    assert "resultSetName" in params, "Missing parameter 'resultSetName'"
+    assert "selectRowOnElement" in params, "Missing parameter 'selectRowOnElement'"
+    assert "executeBefore" in params, "Missing parameter 'executeBefore'"
+    assert "beanId" in params, "Missing parameter 'beanId'"
+
+def test_dbrouting_resultsetrowselector_has_where():
+    assert hasattr(dbrouting_ResultSetRowSelector, "where")
     descriptor = None
-    for klass in dbrouting::ResultSetRowSelector.__mro__:
+    for klass in dbrouting_ResultSetRowSelector.__mro__:
         if "where" in klass.__dict__:
             descriptor = klass.__dict__["where"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbrouting::resultsetrowselector_has_selectRowOnElement():
-    assert hasattr(dbrouting::ResultSetRowSelector, "selectRowOnElement")
+def test_dbrouting_resultsetrowselector_has_failedSelectError():
+    assert hasattr(dbrouting_ResultSetRowSelector, "failedSelectError")
     descriptor = None
-    for klass in dbrouting::ResultSetRowSelector.__mro__:
-        if "selectRowOnElement" in klass.__dict__:
-            descriptor = klass.__dict__["selectRowOnElement"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbrouting::resultsetrowselector_has_failedSelectError():
-    assert hasattr(dbrouting::ResultSetRowSelector, "failedSelectError")
-    descriptor = None
-    for klass in dbrouting::ResultSetRowSelector.__mro__:
+    for klass in dbrouting_ResultSetRowSelector.__mro__:
         if "failedSelectError" in klass.__dict__:
             descriptor = klass.__dict__["failedSelectError"]
             break
     assert isinstance(descriptor, property)
 
+def test_dbrouting_resultsetrowselector_has_resultSetName():
+    assert hasattr(dbrouting_ResultSetRowSelector, "resultSetName")
+    descriptor = None
+    for klass in dbrouting_ResultSetRowSelector.__mro__:
+        if "resultSetName" in klass.__dict__:
+            descriptor = klass.__dict__["resultSetName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbrouting_resultsetrowselector_has_selectRowOnElement():
+    assert hasattr(dbrouting_ResultSetRowSelector, "selectRowOnElement")
+    descriptor = None
+    for klass in dbrouting_ResultSetRowSelector.__mro__:
+        if "selectRowOnElement" in klass.__dict__:
+            descriptor = klass.__dict__["selectRowOnElement"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbrouting_resultsetrowselector_has_executeBefore():
+    assert hasattr(dbrouting_ResultSetRowSelector, "executeBefore")
+    descriptor = None
+    for klass in dbrouting_ResultSetRowSelector.__mro__:
+        if "executeBefore" in klass.__dict__:
+            descriptor = klass.__dict__["executeBefore"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbrouting_resultsetrowselector_has_beanId():
+    assert hasattr(dbrouting_ResultSetRowSelector, "beanId")
+    descriptor = None
+    for klass in dbrouting_ResultSetRowSelector.__mro__:
+        if "beanId" in klass.__dict__:
+            descriptor = klass.__dict__["beanId"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dbrouting::dbroutingdocumentroot_is_not_abstract():
-    assert not inspect.isabstract(dbrouting::DBRoutingDocumentRoot)
+
+def test_dbrouting_dbroutingdocumentroot_is_not_abstract():
+    assert not inspect.isabstract(dbrouting_DBRoutingDocumentRoot)
 
 
-def test_dbrouting::dbroutingdocumentroot_constructor_exists():
-    assert callable(dbrouting::DBRoutingDocumentRoot.__init__)
+def test_dbrouting_dbroutingdocumentroot_constructor_exists():
+    assert callable(dbrouting_DBRoutingDocumentRoot.__init__)
 
 
-def test_dbrouting::dbroutingdocumentroot_constructor_args():
-    sig = inspect.signature(dbrouting::DBRoutingDocumentRoot.__init__)
+def test_dbrouting_dbroutingdocumentroot_constructor_args():
+    sig = inspect.signature(dbrouting_DBRoutingDocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_dbrouting::dbroutingdocumentroot_has_mixed():
-    assert hasattr(dbrouting::DBRoutingDocumentRoot, "mixed")
+def test_dbrouting_dbroutingdocumentroot_has_mixed():
+    assert hasattr(dbrouting_DBRoutingDocumentRoot, "mixed")
     descriptor = None
-    for klass in dbrouting::DBRoutingDocumentRoot.__mro__:
+    for klass in dbrouting_DBRoutingDocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -241,16 +241,16 @@ def test_dbrouting::dbroutingdocumentroot_has_mixed():
 
 
 
-def test_dbrouting::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(dbrouting::EStringToStringMapEntry)
+def test_dbrouting_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(dbrouting_EStringToStringMapEntry)
 
 
-def test_dbrouting::estringtostringmapentry_constructor_exists():
-    assert callable(dbrouting::EStringToStringMapEntry.__init__)
+def test_dbrouting_estringtostringmapentry_constructor_exists():
+    assert callable(dbrouting_EStringToStringMapEntry.__init__)
 
 
-def test_dbrouting::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(dbrouting::EStringToStringMapEntry.__init__)
+def test_dbrouting_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(dbrouting_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 def test_resultsetscopetype_exists():
@@ -280,246 +280,201 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dbrouting::ResultSet_strategy = st.builds(
-    dbrouting::ResultSet,
+dbrouting_ResultSet_strategy = st.builds(
+    dbrouting_ResultSet,
+    name=
+        safe_text,
     scope=
         safe_text,
     timeToLive=
-        safe_text,
-    name=
         safe_text
 )
 ElementVisitor_strategy = st.builds(
     ElementVisitor,
 )
-dbrouting::Executor_strategy = st.builds(
-    dbrouting::Executor,
+dbrouting_Executor_strategy = st.builds(
+    dbrouting_Executor,
     executeOnElement=
         safe_text,
     statement=
         safe_text,
-    executeBefore=
-        safe_text,
     datasource=
         safe_text,
     executeOnElementNS=
+        safe_text,
+    executeBefore=
         safe_text
 )
-dbrouting::ResultSetRowSelector_strategy = st.builds(
-    dbrouting::ResultSetRowSelector,
-    executeBefore=
+dbrouting_ResultSetRowSelector_strategy = st.builds(
+    dbrouting_ResultSetRowSelector,
+    where=
         safe_text,
-    beanId=
+    failedSelectError=
         safe_text,
     resultSetName=
         safe_text,
-    where=
-        safe_text,
     selectRowOnElement=
         safe_text,
-    failedSelectError=
+    executeBefore=
+        safe_text,
+    beanId=
         safe_text
 )
-dbrouting::DBRoutingDocumentRoot_strategy = st.builds(
-    dbrouting::DBRoutingDocumentRoot,
+dbrouting_DBRoutingDocumentRoot_strategy = st.builds(
+    dbrouting_DBRoutingDocumentRoot,
     mixed=
         safe_text
 )
-dbrouting::EStringToStringMapEntry_strategy = st.builds(
-    dbrouting::EStringToStringMapEntry,
+dbrouting_EStringToStringMapEntry_strategy = st.builds(
+    dbrouting_EStringToStringMapEntry,
 )
 
-@given(instance=dbrouting::ResultSet_strategy)
+@given(instance=dbrouting_ResultSet_strategy)
 @settings(max_examples=50)
-def test_dbrouting::resultset_instantiation(instance):
-    assert isinstance(instance, dbrouting::ResultSet)
-
-@given(instance=dbrouting::ResultSet_strategy)
-def test_dbrouting::resultset_scope_type(instance):
-    assert isinstance(instance.scope, str)
+def test_dbrouting_resultset_instantiation(instance):
+    assert isinstance(instance, dbrouting_ResultSet)
 
 
-@given(instance=dbrouting::ResultSet_strategy)
-def test_dbrouting::resultset_scope_setter(instance):
+
+@given(instance=dbrouting_ResultSet_strategy)
+def test_dbrouting_resultset_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=dbrouting_ResultSet_strategy)
+def test_dbrouting_resultset_scope_setter(instance):
     original = instance.scope
     instance.scope = original
     assert instance.scope == original
 
-@given(instance=dbrouting::ResultSet_strategy)
-def test_dbrouting::resultset_timeToLive_type(instance):
-    assert isinstance(instance.timeToLive, str)
 
 
-@given(instance=dbrouting::ResultSet_strategy)
-def test_dbrouting::resultset_timeToLive_setter(instance):
+@given(instance=dbrouting_ResultSet_strategy)
+def test_dbrouting_resultset_timeToLive_setter(instance):
     original = instance.timeToLive
     instance.timeToLive = original
     assert instance.timeToLive == original
-
-@given(instance=dbrouting::ResultSet_strategy)
-def test_dbrouting::resultset_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=dbrouting::ResultSet_strategy)
-def test_dbrouting::resultset_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 @given(instance=ElementVisitor_strategy)
 @settings(max_examples=50)
 def test_elementvisitor_instantiation(instance):
     assert isinstance(instance, ElementVisitor)
 
-@given(instance=dbrouting::Executor_strategy)
+@given(instance=dbrouting_Executor_strategy)
 @settings(max_examples=50)
-def test_dbrouting::executor_instantiation(instance):
-    assert isinstance(instance, dbrouting::Executor)
-
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_executeOnElement_type(instance):
-    assert isinstance(instance.executeOnElement, str)
+def test_dbrouting_executor_instantiation(instance):
+    assert isinstance(instance, dbrouting_Executor)
 
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_executeOnElement_setter(instance):
+
+@given(instance=dbrouting_Executor_strategy)
+def test_dbrouting_executor_executeOnElement_setter(instance):
     original = instance.executeOnElement
     instance.executeOnElement = original
     assert instance.executeOnElement == original
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_statement_type(instance):
-    assert isinstance(instance.statement, str)
 
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_statement_setter(instance):
+@given(instance=dbrouting_Executor_strategy)
+def test_dbrouting_executor_statement_setter(instance):
     original = instance.statement
     instance.statement = original
     assert instance.statement == original
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_executeBefore_type(instance):
-    assert isinstance(instance.executeBefore, str)
 
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_executeBefore_setter(instance):
-    original = instance.executeBefore
-    instance.executeBefore = original
-    assert instance.executeBefore == original
-
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_datasource_type(instance):
-    assert isinstance(instance.datasource, str)
-
-
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_datasource_setter(instance):
+@given(instance=dbrouting_Executor_strategy)
+def test_dbrouting_executor_datasource_setter(instance):
     original = instance.datasource
     instance.datasource = original
     assert instance.datasource == original
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_executeOnElementNS_type(instance):
-    assert isinstance(instance.executeOnElementNS, str)
 
 
-@given(instance=dbrouting::Executor_strategy)
-def test_dbrouting::executor_executeOnElementNS_setter(instance):
+@given(instance=dbrouting_Executor_strategy)
+def test_dbrouting_executor_executeOnElementNS_setter(instance):
     original = instance.executeOnElementNS
     instance.executeOnElementNS = original
     assert instance.executeOnElementNS == original
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-@settings(max_examples=50)
-def test_dbrouting::resultsetrowselector_instantiation(instance):
-    assert isinstance(instance, dbrouting::ResultSetRowSelector)
-
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_executeBefore_type(instance):
-    assert isinstance(instance.executeBefore, str)
 
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_executeBefore_setter(instance):
+@given(instance=dbrouting_Executor_strategy)
+def test_dbrouting_executor_executeBefore_setter(instance):
     original = instance.executeBefore
     instance.executeBefore = original
     assert instance.executeBefore == original
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_beanId_type(instance):
-    assert isinstance(instance.beanId, str)
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+@settings(max_examples=50)
+def test_dbrouting_resultsetrowselector_instantiation(instance):
+    assert isinstance(instance, dbrouting_ResultSetRowSelector)
 
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_beanId_setter(instance):
-    original = instance.beanId
-    instance.beanId = original
-    assert instance.beanId == original
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_resultSetName_type(instance):
-    assert isinstance(instance.resultSetName, str)
-
-
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_resultSetName_setter(instance):
-    original = instance.resultSetName
-    instance.resultSetName = original
-    assert instance.resultSetName == original
-
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_where_type(instance):
-    assert isinstance(instance.where, str)
-
-
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_where_setter(instance):
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+def test_dbrouting_resultsetrowselector_where_setter(instance):
     original = instance.where
     instance.where = original
     assert instance.where == original
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_selectRowOnElement_type(instance):
-    assert isinstance(instance.selectRowOnElement, str)
 
 
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_selectRowOnElement_setter(instance):
-    original = instance.selectRowOnElement
-    instance.selectRowOnElement = original
-    assert instance.selectRowOnElement == original
-
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_failedSelectError_type(instance):
-    assert isinstance(instance.failedSelectError, str)
-
-
-@given(instance=dbrouting::ResultSetRowSelector_strategy)
-def test_dbrouting::resultsetrowselector_failedSelectError_setter(instance):
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+def test_dbrouting_resultsetrowselector_failedSelectError_setter(instance):
     original = instance.failedSelectError
     instance.failedSelectError = original
     assert instance.failedSelectError == original
 
-@given(instance=dbrouting::DBRoutingDocumentRoot_strategy)
+
+
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+def test_dbrouting_resultsetrowselector_resultSetName_setter(instance):
+    original = instance.resultSetName
+    instance.resultSetName = original
+    assert instance.resultSetName == original
+
+
+
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+def test_dbrouting_resultsetrowselector_selectRowOnElement_setter(instance):
+    original = instance.selectRowOnElement
+    instance.selectRowOnElement = original
+    assert instance.selectRowOnElement == original
+
+
+
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+def test_dbrouting_resultsetrowselector_executeBefore_setter(instance):
+    original = instance.executeBefore
+    instance.executeBefore = original
+    assert instance.executeBefore == original
+
+
+
+@given(instance=dbrouting_ResultSetRowSelector_strategy)
+def test_dbrouting_resultsetrowselector_beanId_setter(instance):
+    original = instance.beanId
+    instance.beanId = original
+    assert instance.beanId == original
+
+@given(instance=dbrouting_DBRoutingDocumentRoot_strategy)
 @settings(max_examples=50)
-def test_dbrouting::dbroutingdocumentroot_instantiation(instance):
-    assert isinstance(instance, dbrouting::DBRoutingDocumentRoot)
-
-@given(instance=dbrouting::DBRoutingDocumentRoot_strategy)
-def test_dbrouting::dbroutingdocumentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_dbrouting_dbroutingdocumentroot_instantiation(instance):
+    assert isinstance(instance, dbrouting_DBRoutingDocumentRoot)
 
 
-@given(instance=dbrouting::DBRoutingDocumentRoot_strategy)
-def test_dbrouting::dbroutingdocumentroot_mixed_setter(instance):
+
+@given(instance=dbrouting_DBRoutingDocumentRoot_strategy)
+def test_dbrouting_dbroutingdocumentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=dbrouting::EStringToStringMapEntry_strategy)
+@given(instance=dbrouting_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_dbrouting::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, dbrouting::EStringToStringMapEntry)
+def test_dbrouting_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, dbrouting_EStringToStringMapEntry)

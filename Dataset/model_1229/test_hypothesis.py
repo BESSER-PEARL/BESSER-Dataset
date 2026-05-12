@@ -3,67 +3,53 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    DirectionCS,
+from python_code import (
     QueryCS,
     TransformationCS,
     RealizeableVariableCS,
-    qvtcore::cst::UnrealizedVariableCS,
-    qvtcore::cst::RealizedVariableCS,
+    qvtcore_cst_RealizedVariableCS,
     ParamDeclarationCS,
-    cst::IHasName,
-    cst::CSTNode,
-    qvtcore::cst::TransformationCS,
-    qvtcore::cst::QueryCS,
+    cst_IHasName,
+    cst_CSTNode,
+    qvtcore_cst_QueryCS,
     UnrealizedVariableCS,
     DomainCS,
     MappingCS,
     OperationCallExpCS,
     CSTNode,
-    qvtcore::cst::ParamDeclarationCS,
-    qvtcore::cst::TopLevelCS,
-    qvtcore::cst::EnforcementOperationCS,
+    qvtcore_cst_ParamDeclarationCS,
+    qvtcore_cst_TopLevelCS,
+    qvtcore_cst_EnforcementOperationCS,
     AreaCS,
-    qvtcore::cst::DomainCS,
+    qvtcore_cst_DomainCS,
     IdentifierCS,
     PathNameCS,
     RealizedVariableCS,
     EnforcementOperationCS,
     PatternCS,
-    qvtcore::cst::GuardPatternCS,
-    qvtcore::cst::BottomPatternCS,
+    qvtcore_cst_GuardPatternCS,
+    qvtcore_cst_BottomPatternCS,
     OCLExpressionCS,
-    qvtcore::cst::AssignmentCS,
+    qvtcore_cst_AssignmentCS,
     BottomPatternCS,
     GuardPatternCS,
     IdentifiedCS,
-    qvtcore::cst::RealizeableVariableCS,
-    qvtcore::cst::DirectionCS,
-    qvtcore::cst::MappingCS,
-    qvtcore::cst::PatternCS,
+    qvtcore_cst_DirectionCS,
+    qvtcore_cst_MappingCS,
+    qvtcore_cst_RealizeableVariableCS,
+    qvtcore_cst_PatternCS,
     TypeCS,
-    qvtcore::cst::AreaCS,
+    qvtcore_cst_AreaCS,
+    qvtcore_cst_UnrealizedVariableCS,
+    DirectionCS,
+    qvtcore_cst_TransformationCS,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_directioncs_is_not_abstract():
-    assert not inspect.isabstract(DirectionCS)
-
-
-def test_directioncs_constructor_exists():
-    assert callable(DirectionCS.__init__)
-
-
-def test_directioncs_constructor_args():
-    sig = inspect.signature(DirectionCS.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -109,30 +95,16 @@ def test_realizeablevariablecs_constructor_args():
 
 
 
-def test_qvtcore::cst::unrealizedvariablecs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::UnrealizedVariableCS)
+def test_qvtcore_cst_realizedvariablecs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_RealizedVariableCS)
 
 
-def test_qvtcore::cst::unrealizedvariablecs_constructor_exists():
-    assert callable(qvtcore::cst::UnrealizedVariableCS.__init__)
+def test_qvtcore_cst_realizedvariablecs_constructor_exists():
+    assert callable(qvtcore_cst_RealizedVariableCS.__init__)
 
 
-def test_qvtcore::cst::unrealizedvariablecs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::UnrealizedVariableCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtcore::cst::realizedvariablecs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::RealizedVariableCS)
-
-
-def test_qvtcore::cst::realizedvariablecs_constructor_exists():
-    assert callable(qvtcore::cst::RealizedVariableCS.__init__)
-
-
-def test_qvtcore::cst::realizedvariablecs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::RealizedVariableCS.__init__)
+def test_qvtcore_cst_realizedvariablecs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_RealizedVariableCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -151,58 +123,44 @@ def test_paramdeclarationcs_constructor_args():
 
 
 
-def test_cst::ihasname_is_not_abstract():
-    assert not inspect.isabstract(cst::IHasName)
+def test_cst_ihasname_is_not_abstract():
+    assert not inspect.isabstract(cst_IHasName)
 
 
-def test_cst::ihasname_constructor_exists():
-    assert callable(cst::IHasName.__init__)
+def test_cst_ihasname_constructor_exists():
+    assert callable(cst_IHasName.__init__)
 
 
-def test_cst::ihasname_constructor_args():
-    sig = inspect.signature(cst::IHasName.__init__)
+def test_cst_ihasname_constructor_args():
+    sig = inspect.signature(cst_IHasName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cst::cstnode_is_not_abstract():
-    assert not inspect.isabstract(cst::CSTNode)
+def test_cst_cstnode_is_not_abstract():
+    assert not inspect.isabstract(cst_CSTNode)
 
 
-def test_cst::cstnode_constructor_exists():
-    assert callable(cst::CSTNode.__init__)
+def test_cst_cstnode_constructor_exists():
+    assert callable(cst_CSTNode.__init__)
 
 
-def test_cst::cstnode_constructor_args():
-    sig = inspect.signature(cst::CSTNode.__init__)
+def test_cst_cstnode_constructor_args():
+    sig = inspect.signature(cst_CSTNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::transformationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::TransformationCS)
+def test_qvtcore_cst_querycs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_QueryCS)
 
 
-def test_qvtcore::cst::transformationcs_constructor_exists():
-    assert callable(qvtcore::cst::TransformationCS.__init__)
+def test_qvtcore_cst_querycs_constructor_exists():
+    assert callable(qvtcore_cst_QueryCS.__init__)
 
 
-def test_qvtcore::cst::transformationcs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::TransformationCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtcore::cst::querycs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::QueryCS)
-
-
-def test_qvtcore::cst::querycs_constructor_exists():
-    assert callable(qvtcore::cst::QueryCS.__init__)
-
-
-def test_qvtcore::cst::querycs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::QueryCS.__init__)
+def test_qvtcore_cst_querycs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_QueryCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -277,51 +235,51 @@ def test_cstnode_constructor_args():
 
 
 
-def test_qvtcore::cst::paramdeclarationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::ParamDeclarationCS)
+def test_qvtcore_cst_paramdeclarationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_ParamDeclarationCS)
 
 
-def test_qvtcore::cst::paramdeclarationcs_constructor_exists():
-    assert callable(qvtcore::cst::ParamDeclarationCS.__init__)
+def test_qvtcore_cst_paramdeclarationcs_constructor_exists():
+    assert callable(qvtcore_cst_ParamDeclarationCS.__init__)
 
 
-def test_qvtcore::cst::paramdeclarationcs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::ParamDeclarationCS.__init__)
+def test_qvtcore_cst_paramdeclarationcs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_ParamDeclarationCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::toplevelcs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::TopLevelCS)
+def test_qvtcore_cst_toplevelcs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_TopLevelCS)
 
 
-def test_qvtcore::cst::toplevelcs_constructor_exists():
-    assert callable(qvtcore::cst::TopLevelCS.__init__)
+def test_qvtcore_cst_toplevelcs_constructor_exists():
+    assert callable(qvtcore_cst_TopLevelCS.__init__)
 
 
-def test_qvtcore::cst::toplevelcs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::TopLevelCS.__init__)
+def test_qvtcore_cst_toplevelcs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_TopLevelCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::enforcementoperationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::EnforcementOperationCS)
+def test_qvtcore_cst_enforcementoperationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_EnforcementOperationCS)
 
 
-def test_qvtcore::cst::enforcementoperationcs_constructor_exists():
-    assert callable(qvtcore::cst::EnforcementOperationCS.__init__)
+def test_qvtcore_cst_enforcementoperationcs_constructor_exists():
+    assert callable(qvtcore_cst_EnforcementOperationCS.__init__)
 
 
-def test_qvtcore::cst::enforcementoperationcs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::EnforcementOperationCS.__init__)
+def test_qvtcore_cst_enforcementoperationcs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_EnforcementOperationCS.__init__)
     params = list(sig.parameters.keys())
     assert "deletion" in params, "Missing parameter 'deletion'"
 
-def test_qvtcore::cst::enforcementoperationcs_has_deletion():
-    assert hasattr(qvtcore::cst::EnforcementOperationCS, "deletion")
+def test_qvtcore_cst_enforcementoperationcs_has_deletion():
+    assert hasattr(qvtcore_cst_EnforcementOperationCS, "deletion")
     descriptor = None
-    for klass in qvtcore::cst::EnforcementOperationCS.__mro__:
+    for klass in qvtcore_cst_EnforcementOperationCS.__mro__:
         if "deletion" in klass.__dict__:
             descriptor = klass.__dict__["deletion"]
             break
@@ -343,35 +301,35 @@ def test_areacs_constructor_args():
 
 
 
-def test_qvtcore::cst::domaincs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::DomainCS)
+def test_qvtcore_cst_domaincs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_DomainCS)
 
 
-def test_qvtcore::cst::domaincs_constructor_exists():
-    assert callable(qvtcore::cst::DomainCS.__init__)
+def test_qvtcore_cst_domaincs_constructor_exists():
+    assert callable(qvtcore_cst_DomainCS.__init__)
 
 
-def test_qvtcore::cst::domaincs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::DomainCS.__init__)
+def test_qvtcore_cst_domaincs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_DomainCS.__init__)
     params = list(sig.parameters.keys())
-    assert "enforce" in params, "Missing parameter 'enforce'"
     assert "check" in params, "Missing parameter 'check'"
+    assert "enforce" in params, "Missing parameter 'enforce'"
 
-def test_qvtcore::cst::domaincs_has_enforce():
-    assert hasattr(qvtcore::cst::DomainCS, "enforce")
+def test_qvtcore_cst_domaincs_has_check():
+    assert hasattr(qvtcore_cst_DomainCS, "check")
     descriptor = None
-    for klass in qvtcore::cst::DomainCS.__mro__:
-        if "enforce" in klass.__dict__:
-            descriptor = klass.__dict__["enforce"]
+    for klass in qvtcore_cst_DomainCS.__mro__:
+        if "check" in klass.__dict__:
+            descriptor = klass.__dict__["check"]
             break
     assert isinstance(descriptor, property)
 
-def test_qvtcore::cst::domaincs_has_check():
-    assert hasattr(qvtcore::cst::DomainCS, "check")
+def test_qvtcore_cst_domaincs_has_enforce():
+    assert hasattr(qvtcore_cst_DomainCS, "enforce")
     descriptor = None
-    for klass in qvtcore::cst::DomainCS.__mro__:
-        if "check" in klass.__dict__:
-            descriptor = klass.__dict__["check"]
+    for klass in qvtcore_cst_DomainCS.__mro__:
+        if "enforce" in klass.__dict__:
+            descriptor = klass.__dict__["enforce"]
             break
     assert isinstance(descriptor, property)
 
@@ -447,30 +405,30 @@ def test_patterncs_constructor_args():
 
 
 
-def test_qvtcore::cst::guardpatterncs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::GuardPatternCS)
+def test_qvtcore_cst_guardpatterncs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_GuardPatternCS)
 
 
-def test_qvtcore::cst::guardpatterncs_constructor_exists():
-    assert callable(qvtcore::cst::GuardPatternCS.__init__)
+def test_qvtcore_cst_guardpatterncs_constructor_exists():
+    assert callable(qvtcore_cst_GuardPatternCS.__init__)
 
 
-def test_qvtcore::cst::guardpatterncs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::GuardPatternCS.__init__)
+def test_qvtcore_cst_guardpatterncs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_GuardPatternCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::bottompatterncs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::BottomPatternCS)
+def test_qvtcore_cst_bottompatterncs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_BottomPatternCS)
 
 
-def test_qvtcore::cst::bottompatterncs_constructor_exists():
-    assert callable(qvtcore::cst::BottomPatternCS.__init__)
+def test_qvtcore_cst_bottompatterncs_constructor_exists():
+    assert callable(qvtcore_cst_BottomPatternCS.__init__)
 
 
-def test_qvtcore::cst::bottompatterncs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::BottomPatternCS.__init__)
+def test_qvtcore_cst_bottompatterncs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_BottomPatternCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -489,23 +447,23 @@ def test_oclexpressioncs_constructor_args():
 
 
 
-def test_qvtcore::cst::assignmentcs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::AssignmentCS)
+def test_qvtcore_cst_assignmentcs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_AssignmentCS)
 
 
-def test_qvtcore::cst::assignmentcs_constructor_exists():
-    assert callable(qvtcore::cst::AssignmentCS.__init__)
+def test_qvtcore_cst_assignmentcs_constructor_exists():
+    assert callable(qvtcore_cst_AssignmentCS.__init__)
 
 
-def test_qvtcore::cst::assignmentcs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::AssignmentCS.__init__)
+def test_qvtcore_cst_assignmentcs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_AssignmentCS.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_qvtcore::cst::assignmentcs_has_default():
-    assert hasattr(qvtcore::cst::AssignmentCS, "default")
+def test_qvtcore_cst_assignmentcs_has_default():
+    assert hasattr(qvtcore_cst_AssignmentCS, "default")
     descriptor = None
-    for klass in qvtcore::cst::AssignmentCS.__mro__:
+    for klass in qvtcore_cst_AssignmentCS.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -555,58 +513,58 @@ def test_identifiedcs_constructor_args():
 
 
 
-def test_qvtcore::cst::realizeablevariablecs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::RealizeableVariableCS)
+def test_qvtcore_cst_directioncs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_DirectionCS)
 
 
-def test_qvtcore::cst::realizeablevariablecs_constructor_exists():
-    assert callable(qvtcore::cst::RealizeableVariableCS.__init__)
+def test_qvtcore_cst_directioncs_constructor_exists():
+    assert callable(qvtcore_cst_DirectionCS.__init__)
 
 
-def test_qvtcore::cst::realizeablevariablecs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::RealizeableVariableCS.__init__)
+def test_qvtcore_cst_directioncs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_DirectionCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::directioncs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::DirectionCS)
+def test_qvtcore_cst_mappingcs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_MappingCS)
 
 
-def test_qvtcore::cst::directioncs_constructor_exists():
-    assert callable(qvtcore::cst::DirectionCS.__init__)
+def test_qvtcore_cst_mappingcs_constructor_exists():
+    assert callable(qvtcore_cst_MappingCS.__init__)
 
 
-def test_qvtcore::cst::directioncs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::DirectionCS.__init__)
+def test_qvtcore_cst_mappingcs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_MappingCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::mappingcs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::MappingCS)
+def test_qvtcore_cst_realizeablevariablecs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_RealizeableVariableCS)
 
 
-def test_qvtcore::cst::mappingcs_constructor_exists():
-    assert callable(qvtcore::cst::MappingCS.__init__)
+def test_qvtcore_cst_realizeablevariablecs_constructor_exists():
+    assert callable(qvtcore_cst_RealizeableVariableCS.__init__)
 
 
-def test_qvtcore::cst::mappingcs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::MappingCS.__init__)
+def test_qvtcore_cst_realizeablevariablecs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_RealizeableVariableCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::cst::patterncs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::PatternCS)
+def test_qvtcore_cst_patterncs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_PatternCS)
 
 
-def test_qvtcore::cst::patterncs_constructor_exists():
-    assert callable(qvtcore::cst::PatternCS.__init__)
+def test_qvtcore_cst_patterncs_constructor_exists():
+    assert callable(qvtcore_cst_PatternCS.__init__)
 
 
-def test_qvtcore::cst::patterncs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::PatternCS.__init__)
+def test_qvtcore_cst_patterncs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_PatternCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -625,16 +583,58 @@ def test_typecs_constructor_args():
 
 
 
-def test_qvtcore::cst::areacs_is_not_abstract():
-    assert not inspect.isabstract(qvtcore::cst::AreaCS)
+def test_qvtcore_cst_areacs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_AreaCS)
 
 
-def test_qvtcore::cst::areacs_constructor_exists():
-    assert callable(qvtcore::cst::AreaCS.__init__)
+def test_qvtcore_cst_areacs_constructor_exists():
+    assert callable(qvtcore_cst_AreaCS.__init__)
 
 
-def test_qvtcore::cst::areacs_constructor_args():
-    sig = inspect.signature(qvtcore::cst::AreaCS.__init__)
+def test_qvtcore_cst_areacs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_AreaCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtcore_cst_unrealizedvariablecs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_UnrealizedVariableCS)
+
+
+def test_qvtcore_cst_unrealizedvariablecs_constructor_exists():
+    assert callable(qvtcore_cst_UnrealizedVariableCS.__init__)
+
+
+def test_qvtcore_cst_unrealizedvariablecs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_UnrealizedVariableCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_directioncs_is_not_abstract():
+    assert not inspect.isabstract(DirectionCS)
+
+
+def test_directioncs_constructor_exists():
+    assert callable(DirectionCS.__init__)
+
+
+def test_directioncs_constructor_args():
+    sig = inspect.signature(DirectionCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtcore_cst_transformationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtcore_cst_TransformationCS)
+
+
+def test_qvtcore_cst_transformationcs_constructor_exists():
+    assert callable(qvtcore_cst_TransformationCS.__init__)
+
+
+def test_qvtcore_cst_transformationcs_constructor_args():
+    sig = inspect.signature(qvtcore_cst_TransformationCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -649,9 +649,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DirectionCS_strategy = st.builds(
-    DirectionCS,
-)
 QueryCS_strategy = st.builds(
     QueryCS,
 )
@@ -661,26 +658,20 @@ TransformationCS_strategy = st.builds(
 RealizeableVariableCS_strategy = st.builds(
     RealizeableVariableCS,
 )
-qvtcore::cst::UnrealizedVariableCS_strategy = st.builds(
-    qvtcore::cst::UnrealizedVariableCS,
-)
-qvtcore::cst::RealizedVariableCS_strategy = st.builds(
-    qvtcore::cst::RealizedVariableCS,
+qvtcore_cst_RealizedVariableCS_strategy = st.builds(
+    qvtcore_cst_RealizedVariableCS,
 )
 ParamDeclarationCS_strategy = st.builds(
     ParamDeclarationCS,
 )
-cst::IHasName_strategy = st.builds(
-    cst::IHasName,
+cst_IHasName_strategy = st.builds(
+    cst_IHasName,
 )
-cst::CSTNode_strategy = st.builds(
-    cst::CSTNode,
+cst_CSTNode_strategy = st.builds(
+    cst_CSTNode,
 )
-qvtcore::cst::TransformationCS_strategy = st.builds(
-    qvtcore::cst::TransformationCS,
-)
-qvtcore::cst::QueryCS_strategy = st.builds(
-    qvtcore::cst::QueryCS,
+qvtcore_cst_QueryCS_strategy = st.builds(
+    qvtcore_cst_QueryCS,
 )
 UnrealizedVariableCS_strategy = st.builds(
     UnrealizedVariableCS,
@@ -697,25 +688,25 @@ OperationCallExpCS_strategy = st.builds(
 CSTNode_strategy = st.builds(
     CSTNode,
 )
-qvtcore::cst::ParamDeclarationCS_strategy = st.builds(
-    qvtcore::cst::ParamDeclarationCS,
+qvtcore_cst_ParamDeclarationCS_strategy = st.builds(
+    qvtcore_cst_ParamDeclarationCS,
 )
-qvtcore::cst::TopLevelCS_strategy = st.builds(
-    qvtcore::cst::TopLevelCS,
+qvtcore_cst_TopLevelCS_strategy = st.builds(
+    qvtcore_cst_TopLevelCS,
 )
-qvtcore::cst::EnforcementOperationCS_strategy = st.builds(
-    qvtcore::cst::EnforcementOperationCS,
+qvtcore_cst_EnforcementOperationCS_strategy = st.builds(
+    qvtcore_cst_EnforcementOperationCS,
     deletion=
         st.booleans()
 )
 AreaCS_strategy = st.builds(
     AreaCS,
 )
-qvtcore::cst::DomainCS_strategy = st.builds(
-    qvtcore::cst::DomainCS,
-    enforce=
-        st.booleans(),
+qvtcore_cst_DomainCS_strategy = st.builds(
+    qvtcore_cst_DomainCS,
     check=
+        st.booleans(),
+    enforce=
         st.booleans()
 )
 IdentifierCS_strategy = st.builds(
@@ -733,17 +724,17 @@ EnforcementOperationCS_strategy = st.builds(
 PatternCS_strategy = st.builds(
     PatternCS,
 )
-qvtcore::cst::GuardPatternCS_strategy = st.builds(
-    qvtcore::cst::GuardPatternCS,
+qvtcore_cst_GuardPatternCS_strategy = st.builds(
+    qvtcore_cst_GuardPatternCS,
 )
-qvtcore::cst::BottomPatternCS_strategy = st.builds(
-    qvtcore::cst::BottomPatternCS,
+qvtcore_cst_BottomPatternCS_strategy = st.builds(
+    qvtcore_cst_BottomPatternCS,
 )
 OCLExpressionCS_strategy = st.builds(
     OCLExpressionCS,
 )
-qvtcore::cst::AssignmentCS_strategy = st.builds(
-    qvtcore::cst::AssignmentCS,
+qvtcore_cst_AssignmentCS_strategy = st.builds(
+    qvtcore_cst_AssignmentCS,
     default=
         st.booleans()
 )
@@ -756,29 +747,33 @@ GuardPatternCS_strategy = st.builds(
 IdentifiedCS_strategy = st.builds(
     IdentifiedCS,
 )
-qvtcore::cst::RealizeableVariableCS_strategy = st.builds(
-    qvtcore::cst::RealizeableVariableCS,
+qvtcore_cst_DirectionCS_strategy = st.builds(
+    qvtcore_cst_DirectionCS,
 )
-qvtcore::cst::DirectionCS_strategy = st.builds(
-    qvtcore::cst::DirectionCS,
+qvtcore_cst_MappingCS_strategy = st.builds(
+    qvtcore_cst_MappingCS,
 )
-qvtcore::cst::MappingCS_strategy = st.builds(
-    qvtcore::cst::MappingCS,
+qvtcore_cst_RealizeableVariableCS_strategy = st.builds(
+    qvtcore_cst_RealizeableVariableCS,
 )
-qvtcore::cst::PatternCS_strategy = st.builds(
-    qvtcore::cst::PatternCS,
+qvtcore_cst_PatternCS_strategy = st.builds(
+    qvtcore_cst_PatternCS,
 )
 TypeCS_strategy = st.builds(
     TypeCS,
 )
-qvtcore::cst::AreaCS_strategy = st.builds(
-    qvtcore::cst::AreaCS,
+qvtcore_cst_AreaCS_strategy = st.builds(
+    qvtcore_cst_AreaCS,
 )
-
-@given(instance=DirectionCS_strategy)
-@settings(max_examples=50)
-def test_directioncs_instantiation(instance):
-    assert isinstance(instance, DirectionCS)
+qvtcore_cst_UnrealizedVariableCS_strategy = st.builds(
+    qvtcore_cst_UnrealizedVariableCS,
+)
+DirectionCS_strategy = st.builds(
+    DirectionCS,
+)
+qvtcore_cst_TransformationCS_strategy = st.builds(
+    qvtcore_cst_TransformationCS,
+)
 
 @given(instance=QueryCS_strategy)
 @settings(max_examples=50)
@@ -795,40 +790,30 @@ def test_transformationcs_instantiation(instance):
 def test_realizeablevariablecs_instantiation(instance):
     assert isinstance(instance, RealizeableVariableCS)
 
-@given(instance=qvtcore::cst::UnrealizedVariableCS_strategy)
+@given(instance=qvtcore_cst_RealizedVariableCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::unrealizedvariablecs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::UnrealizedVariableCS)
-
-@given(instance=qvtcore::cst::RealizedVariableCS_strategy)
-@settings(max_examples=50)
-def test_qvtcore::cst::realizedvariablecs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::RealizedVariableCS)
+def test_qvtcore_cst_realizedvariablecs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_RealizedVariableCS)
 
 @given(instance=ParamDeclarationCS_strategy)
 @settings(max_examples=50)
 def test_paramdeclarationcs_instantiation(instance):
     assert isinstance(instance, ParamDeclarationCS)
 
-@given(instance=cst::IHasName_strategy)
+@given(instance=cst_IHasName_strategy)
 @settings(max_examples=50)
-def test_cst::ihasname_instantiation(instance):
-    assert isinstance(instance, cst::IHasName)
+def test_cst_ihasname_instantiation(instance):
+    assert isinstance(instance, cst_IHasName)
 
-@given(instance=cst::CSTNode_strategy)
+@given(instance=cst_CSTNode_strategy)
 @settings(max_examples=50)
-def test_cst::cstnode_instantiation(instance):
-    assert isinstance(instance, cst::CSTNode)
+def test_cst_cstnode_instantiation(instance):
+    assert isinstance(instance, cst_CSTNode)
 
-@given(instance=qvtcore::cst::TransformationCS_strategy)
+@given(instance=qvtcore_cst_QueryCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::transformationcs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::TransformationCS)
-
-@given(instance=qvtcore::cst::QueryCS_strategy)
-@settings(max_examples=50)
-def test_qvtcore::cst::querycs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::QueryCS)
+def test_qvtcore_cst_querycs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_QueryCS)
 
 @given(instance=UnrealizedVariableCS_strategy)
 @settings(max_examples=50)
@@ -855,28 +840,25 @@ def test_operationcallexpcs_instantiation(instance):
 def test_cstnode_instantiation(instance):
     assert isinstance(instance, CSTNode)
 
-@given(instance=qvtcore::cst::ParamDeclarationCS_strategy)
+@given(instance=qvtcore_cst_ParamDeclarationCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::paramdeclarationcs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::ParamDeclarationCS)
+def test_qvtcore_cst_paramdeclarationcs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_ParamDeclarationCS)
 
-@given(instance=qvtcore::cst::TopLevelCS_strategy)
+@given(instance=qvtcore_cst_TopLevelCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::toplevelcs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::TopLevelCS)
+def test_qvtcore_cst_toplevelcs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_TopLevelCS)
 
-@given(instance=qvtcore::cst::EnforcementOperationCS_strategy)
+@given(instance=qvtcore_cst_EnforcementOperationCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::enforcementoperationcs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::EnforcementOperationCS)
-
-@given(instance=qvtcore::cst::EnforcementOperationCS_strategy)
-def test_qvtcore::cst::enforcementoperationcs_deletion_type(instance):
-    assert isinstance(instance.deletion, bool)
+def test_qvtcore_cst_enforcementoperationcs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_EnforcementOperationCS)
 
 
-@given(instance=qvtcore::cst::EnforcementOperationCS_strategy)
-def test_qvtcore::cst::enforcementoperationcs_deletion_setter(instance):
+
+@given(instance=qvtcore_cst_EnforcementOperationCS_strategy)
+def test_qvtcore_cst_enforcementoperationcs_deletion_setter(instance):
     original = instance.deletion
     instance.deletion = original
     assert instance.deletion == original
@@ -886,32 +868,26 @@ def test_qvtcore::cst::enforcementoperationcs_deletion_setter(instance):
 def test_areacs_instantiation(instance):
     assert isinstance(instance, AreaCS)
 
-@given(instance=qvtcore::cst::DomainCS_strategy)
+@given(instance=qvtcore_cst_DomainCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::domaincs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::DomainCS)
-
-@given(instance=qvtcore::cst::DomainCS_strategy)
-def test_qvtcore::cst::domaincs_enforce_type(instance):
-    assert isinstance(instance.enforce, bool)
+def test_qvtcore_cst_domaincs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_DomainCS)
 
 
-@given(instance=qvtcore::cst::DomainCS_strategy)
-def test_qvtcore::cst::domaincs_enforce_setter(instance):
-    original = instance.enforce
-    instance.enforce = original
-    assert instance.enforce == original
 
-@given(instance=qvtcore::cst::DomainCS_strategy)
-def test_qvtcore::cst::domaincs_check_type(instance):
-    assert isinstance(instance.check, bool)
-
-
-@given(instance=qvtcore::cst::DomainCS_strategy)
-def test_qvtcore::cst::domaincs_check_setter(instance):
+@given(instance=qvtcore_cst_DomainCS_strategy)
+def test_qvtcore_cst_domaincs_check_setter(instance):
     original = instance.check
     instance.check = original
     assert instance.check == original
+
+
+
+@given(instance=qvtcore_cst_DomainCS_strategy)
+def test_qvtcore_cst_domaincs_enforce_setter(instance):
+    original = instance.enforce
+    instance.enforce = original
+    assert instance.enforce == original
 
 @given(instance=IdentifierCS_strategy)
 @settings(max_examples=50)
@@ -938,33 +914,30 @@ def test_enforcementoperationcs_instantiation(instance):
 def test_patterncs_instantiation(instance):
     assert isinstance(instance, PatternCS)
 
-@given(instance=qvtcore::cst::GuardPatternCS_strategy)
+@given(instance=qvtcore_cst_GuardPatternCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::guardpatterncs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::GuardPatternCS)
+def test_qvtcore_cst_guardpatterncs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_GuardPatternCS)
 
-@given(instance=qvtcore::cst::BottomPatternCS_strategy)
+@given(instance=qvtcore_cst_BottomPatternCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::bottompatterncs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::BottomPatternCS)
+def test_qvtcore_cst_bottompatterncs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_BottomPatternCS)
 
 @given(instance=OCLExpressionCS_strategy)
 @settings(max_examples=50)
 def test_oclexpressioncs_instantiation(instance):
     assert isinstance(instance, OCLExpressionCS)
 
-@given(instance=qvtcore::cst::AssignmentCS_strategy)
+@given(instance=qvtcore_cst_AssignmentCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::assignmentcs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::AssignmentCS)
-
-@given(instance=qvtcore::cst::AssignmentCS_strategy)
-def test_qvtcore::cst::assignmentcs_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_qvtcore_cst_assignmentcs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_AssignmentCS)
 
 
-@given(instance=qvtcore::cst::AssignmentCS_strategy)
-def test_qvtcore::cst::assignmentcs_default_setter(instance):
+
+@given(instance=qvtcore_cst_AssignmentCS_strategy)
+def test_qvtcore_cst_assignmentcs_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
@@ -984,32 +957,47 @@ def test_guardpatterncs_instantiation(instance):
 def test_identifiedcs_instantiation(instance):
     assert isinstance(instance, IdentifiedCS)
 
-@given(instance=qvtcore::cst::RealizeableVariableCS_strategy)
+@given(instance=qvtcore_cst_DirectionCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::realizeablevariablecs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::RealizeableVariableCS)
+def test_qvtcore_cst_directioncs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_DirectionCS)
 
-@given(instance=qvtcore::cst::DirectionCS_strategy)
+@given(instance=qvtcore_cst_MappingCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::directioncs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::DirectionCS)
+def test_qvtcore_cst_mappingcs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_MappingCS)
 
-@given(instance=qvtcore::cst::MappingCS_strategy)
+@given(instance=qvtcore_cst_RealizeableVariableCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::mappingcs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::MappingCS)
+def test_qvtcore_cst_realizeablevariablecs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_RealizeableVariableCS)
 
-@given(instance=qvtcore::cst::PatternCS_strategy)
+@given(instance=qvtcore_cst_PatternCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::patterncs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::PatternCS)
+def test_qvtcore_cst_patterncs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_PatternCS)
 
 @given(instance=TypeCS_strategy)
 @settings(max_examples=50)
 def test_typecs_instantiation(instance):
     assert isinstance(instance, TypeCS)
 
-@given(instance=qvtcore::cst::AreaCS_strategy)
+@given(instance=qvtcore_cst_AreaCS_strategy)
 @settings(max_examples=50)
-def test_qvtcore::cst::areacs_instantiation(instance):
-    assert isinstance(instance, qvtcore::cst::AreaCS)
+def test_qvtcore_cst_areacs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_AreaCS)
+
+@given(instance=qvtcore_cst_UnrealizedVariableCS_strategy)
+@settings(max_examples=50)
+def test_qvtcore_cst_unrealizedvariablecs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_UnrealizedVariableCS)
+
+@given(instance=DirectionCS_strategy)
+@settings(max_examples=50)
+def test_directioncs_instantiation(instance):
+    assert isinstance(instance, DirectionCS)
+
+@given(instance=qvtcore_cst_TransformationCS_strategy)
+@settings(max_examples=50)
+def test_qvtcore_cst_transformationcs_instantiation(instance):
+    assert isinstance(instance, qvtcore_cst_TransformationCS)

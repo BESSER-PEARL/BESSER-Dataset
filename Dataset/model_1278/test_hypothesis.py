@@ -3,65 +3,65 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    essentialoclcs::Type,
+from python_code import (
+    essentialoclcs_Type,
     BinaryOperatorCS,
-    essentialoclcs::NavigationOperatorCS,
-    essentialoclcs::PathNameCS,
+    essentialoclcs_NavigationOperatorCS,
+    essentialoclcs_PathNameCS,
     AbstractNameExpCS,
-    essentialoclcs::NamedExpCS,
-    essentialoclcs::NameExpCS,
+    essentialoclcs_NamedExpCS,
+    essentialoclcs_NameExpCS,
     VariableCS,
-    essentialoclcs::TupleLiteralPartCS,
+    essentialoclcs_TupleLiteralPartCS,
     SpecificationCS,
-    essentialoclcs::ExpSpecificationCS,
+    essentialoclcs_ExpSpecificationCS,
     RootCS,
     NamedElementCS,
-    essentialoclcs::VariableCS,
-    essentialoclcs::ContextCS,
-    essentialoclcs::Property,
+    essentialoclcs_VariableCS,
+    essentialoclcs_ContextCS,
+    essentialoclcs_Property,
     NamedExpCS,
-    essentialoclcs::InvocationExpCS,
-    essentialoclcs::IndexExpCS,
-    essentialoclcs::ConstructorExpCS,
-    essentialoclcs::TypedRefCS,
+    essentialoclcs_InvocationExpCS,
+    essentialoclcs_IndexExpCS,
+    essentialoclcs_ConstructorExpCS,
+    essentialoclcs_TypedRefCS,
     Nameable,
     TypedRefCS,
-    essentialoclcs::TypeNameExpCS,
+    essentialoclcs_TypeNameExpCS,
     ModelElementCS,
-    essentialoclcs::ConstructorPartCS,
-    essentialoclcs::NavigatingArgCS,
-    essentialoclcs::CollectionLiteralPartCS,
-    essentialoclcs::CollectionTypeCS,
+    essentialoclcs_NavigatingArgCS,
+    essentialoclcs_ConstructorPartCS,
+    essentialoclcs_CollectionLiteralPartCS,
+    essentialoclcs_CollectionTypeCS,
     LiteralExpCS,
-    essentialoclcs::PrimitiveLiteralExpCS,
-    essentialoclcs::TypeLiteralExpCS,
-    essentialoclcs::TupleLiteralExpCS,
-    essentialoclcs::CollectionLiteralExpCS,
+    essentialoclcs_TupleLiteralExpCS,
+    essentialoclcs_TypeLiteralExpCS,
+    essentialoclcs_PrimitiveLiteralExpCS,
+    essentialoclcs_CollectionLiteralExpCS,
     PrimitiveLiteralExpCS,
-    essentialoclcs::InvalidLiteralExpCS,
-    essentialoclcs::UnlimitedNaturalLiteralExpCS,
-    essentialoclcs::StringLiteralExpCS,
-    essentialoclcs::NumberLiteralExpCS,
-    essentialoclcs::NullLiteralExpCS,
-    essentialoclcs::BooleanLiteralExpCS,
-    essentialoclcs::ExpCS,
+    essentialoclcs_NullLiteralExpCS,
+    essentialoclcs_UnlimitedNaturalLiteralExpCS,
+    essentialoclcs_NumberLiteralExpCS,
+    essentialoclcs_InvalidLiteralExpCS,
+    essentialoclcs_StringLiteralExpCS,
+    essentialoclcs_BooleanLiteralExpCS,
+    essentialoclcs_ExpCS,
     OperatorCS,
-    essentialoclcs::UnaryOperatorCS,
-    essentialoclcs::BinaryOperatorCS,
+    essentialoclcs_UnaryOperatorCS,
+    essentialoclcs_BinaryOperatorCS,
     ExpCS,
-    essentialoclcs::OperatorCS,
-    essentialoclcs::IfExpCS,
-    essentialoclcs::LetVariableCS,
-    essentialoclcs::LiteralExpCS,
-    essentialoclcs::InfixExpCS,
-    essentialoclcs::LetExpCS,
-    essentialoclcs::PrefixExpCS,
-    essentialoclcs::NestedExpCS,
-    essentialoclcs::SelfExpCS,
-    essentialoclcs::AbstractNameExpCS,
+    essentialoclcs_SelfExpCS,
+    essentialoclcs_LetExpCS,
+    essentialoclcs_LetVariableCS,
+    essentialoclcs_NestedExpCS,
+    essentialoclcs_PrefixExpCS,
+    essentialoclcs_LiteralExpCS,
+    essentialoclcs_IfExpCS,
+    essentialoclcs_InfixExpCS,
+    essentialoclcs_OperatorCS,
+    essentialoclcs_AbstractNameExpCS,
     NavigationRole,
 )
 
@@ -71,16 +71,16 @@ from classes import (
 
 
 
-def test_essentialoclcs::type_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::Type)
+def test_essentialoclcs_type_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_Type)
 
 
-def test_essentialoclcs::type_constructor_exists():
-    assert callable(essentialoclcs::Type.__init__)
+def test_essentialoclcs_type_constructor_exists():
+    assert callable(essentialoclcs_Type.__init__)
 
 
-def test_essentialoclcs::type_constructor_args():
-    sig = inspect.signature(essentialoclcs::Type.__init__)
+def test_essentialoclcs_type_constructor_args():
+    sig = inspect.signature(essentialoclcs_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,30 +99,30 @@ def test_binaryoperatorcs_constructor_args():
 
 
 
-def test_essentialoclcs::navigationoperatorcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NavigationOperatorCS)
+def test_essentialoclcs_navigationoperatorcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NavigationOperatorCS)
 
 
-def test_essentialoclcs::navigationoperatorcs_constructor_exists():
-    assert callable(essentialoclcs::NavigationOperatorCS.__init__)
+def test_essentialoclcs_navigationoperatorcs_constructor_exists():
+    assert callable(essentialoclcs_NavigationOperatorCS.__init__)
 
 
-def test_essentialoclcs::navigationoperatorcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NavigationOperatorCS.__init__)
+def test_essentialoclcs_navigationoperatorcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NavigationOperatorCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::PathNameCS)
+def test_essentialoclcs_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_PathNameCS)
 
 
-def test_essentialoclcs::pathnamecs_constructor_exists():
-    assert callable(essentialoclcs::PathNameCS.__init__)
+def test_essentialoclcs_pathnamecs_constructor_exists():
+    assert callable(essentialoclcs_PathNameCS.__init__)
 
 
-def test_essentialoclcs::pathnamecs_constructor_args():
-    sig = inspect.signature(essentialoclcs::PathNameCS.__init__)
+def test_essentialoclcs_pathnamecs_constructor_args():
+    sig = inspect.signature(essentialoclcs_PathNameCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -141,37 +141,37 @@ def test_abstractnameexpcs_constructor_args():
 
 
 
-def test_essentialoclcs::namedexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NamedExpCS)
+def test_essentialoclcs_namedexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NamedExpCS)
 
 
-def test_essentialoclcs::namedexpcs_constructor_exists():
-    assert callable(essentialoclcs::NamedExpCS.__init__)
+def test_essentialoclcs_namedexpcs_constructor_exists():
+    assert callable(essentialoclcs_NamedExpCS.__init__)
 
 
-def test_essentialoclcs::namedexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NamedExpCS.__init__)
+def test_essentialoclcs_namedexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NamedExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::nameexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NameExpCS)
+def test_essentialoclcs_nameexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NameExpCS)
 
 
-def test_essentialoclcs::nameexpcs_constructor_exists():
-    assert callable(essentialoclcs::NameExpCS.__init__)
+def test_essentialoclcs_nameexpcs_constructor_exists():
+    assert callable(essentialoclcs_NameExpCS.__init__)
 
 
-def test_essentialoclcs::nameexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NameExpCS.__init__)
+def test_essentialoclcs_nameexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NameExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "atPre" in params, "Missing parameter 'atPre'"
 
-def test_essentialoclcs::nameexpcs_has_atPre():
-    assert hasattr(essentialoclcs::NameExpCS, "atPre")
+def test_essentialoclcs_nameexpcs_has_atPre():
+    assert hasattr(essentialoclcs_NameExpCS, "atPre")
     descriptor = None
-    for klass in essentialoclcs::NameExpCS.__mro__:
+    for klass in essentialoclcs_NameExpCS.__mro__:
         if "atPre" in klass.__dict__:
             descriptor = klass.__dict__["atPre"]
             break
@@ -193,16 +193,16 @@ def test_variablecs_constructor_args():
 
 
 
-def test_essentialoclcs::tupleliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::TupleLiteralPartCS)
+def test_essentialoclcs_tupleliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_TupleLiteralPartCS)
 
 
-def test_essentialoclcs::tupleliteralpartcs_constructor_exists():
-    assert callable(essentialoclcs::TupleLiteralPartCS.__init__)
+def test_essentialoclcs_tupleliteralpartcs_constructor_exists():
+    assert callable(essentialoclcs_TupleLiteralPartCS.__init__)
 
 
-def test_essentialoclcs::tupleliteralpartcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::TupleLiteralPartCS.__init__)
+def test_essentialoclcs_tupleliteralpartcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_TupleLiteralPartCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -221,16 +221,16 @@ def test_specificationcs_constructor_args():
 
 
 
-def test_essentialoclcs::expspecificationcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::ExpSpecificationCS)
+def test_essentialoclcs_expspecificationcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_ExpSpecificationCS)
 
 
-def test_essentialoclcs::expspecificationcs_constructor_exists():
-    assert callable(essentialoclcs::ExpSpecificationCS.__init__)
+def test_essentialoclcs_expspecificationcs_constructor_exists():
+    assert callable(essentialoclcs_ExpSpecificationCS.__init__)
 
 
-def test_essentialoclcs::expspecificationcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::ExpSpecificationCS.__init__)
+def test_essentialoclcs_expspecificationcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_ExpSpecificationCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -263,44 +263,44 @@ def test_namedelementcs_constructor_args():
 
 
 
-def test_essentialoclcs::variablecs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::VariableCS)
+def test_essentialoclcs_variablecs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_VariableCS)
 
 
-def test_essentialoclcs::variablecs_constructor_exists():
-    assert callable(essentialoclcs::VariableCS.__init__)
+def test_essentialoclcs_variablecs_constructor_exists():
+    assert callable(essentialoclcs_VariableCS.__init__)
 
 
-def test_essentialoclcs::variablecs_constructor_args():
-    sig = inspect.signature(essentialoclcs::VariableCS.__init__)
+def test_essentialoclcs_variablecs_constructor_args():
+    sig = inspect.signature(essentialoclcs_VariableCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::contextcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::ContextCS)
+def test_essentialoclcs_contextcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_ContextCS)
 
 
-def test_essentialoclcs::contextcs_constructor_exists():
-    assert callable(essentialoclcs::ContextCS.__init__)
+def test_essentialoclcs_contextcs_constructor_exists():
+    assert callable(essentialoclcs_ContextCS.__init__)
 
 
-def test_essentialoclcs::contextcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::ContextCS.__init__)
+def test_essentialoclcs_contextcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_ContextCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::property_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::Property)
+def test_essentialoclcs_property_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_Property)
 
 
-def test_essentialoclcs::property_constructor_exists():
-    assert callable(essentialoclcs::Property.__init__)
+def test_essentialoclcs_property_constructor_exists():
+    assert callable(essentialoclcs_Property.__init__)
 
 
-def test_essentialoclcs::property_constructor_args():
-    sig = inspect.signature(essentialoclcs::Property.__init__)
+def test_essentialoclcs_property_constructor_args():
+    sig = inspect.signature(essentialoclcs_Property.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -319,37 +319,37 @@ def test_namedexpcs_constructor_args():
 
 
 
-def test_essentialoclcs::invocationexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::InvocationExpCS)
+def test_essentialoclcs_invocationexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_InvocationExpCS)
 
 
-def test_essentialoclcs::invocationexpcs_constructor_exists():
-    assert callable(essentialoclcs::InvocationExpCS.__init__)
+def test_essentialoclcs_invocationexpcs_constructor_exists():
+    assert callable(essentialoclcs_InvocationExpCS.__init__)
 
 
-def test_essentialoclcs::invocationexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::InvocationExpCS.__init__)
+def test_essentialoclcs_invocationexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_InvocationExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::indexexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::IndexExpCS)
+def test_essentialoclcs_indexexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_IndexExpCS)
 
 
-def test_essentialoclcs::indexexpcs_constructor_exists():
-    assert callable(essentialoclcs::IndexExpCS.__init__)
+def test_essentialoclcs_indexexpcs_constructor_exists():
+    assert callable(essentialoclcs_IndexExpCS.__init__)
 
 
-def test_essentialoclcs::indexexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::IndexExpCS.__init__)
+def test_essentialoclcs_indexexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_IndexExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "atPre" in params, "Missing parameter 'atPre'"
 
-def test_essentialoclcs::indexexpcs_has_atPre():
-    assert hasattr(essentialoclcs::IndexExpCS, "atPre")
+def test_essentialoclcs_indexexpcs_has_atPre():
+    assert hasattr(essentialoclcs_IndexExpCS, "atPre")
     descriptor = None
-    for klass in essentialoclcs::IndexExpCS.__mro__:
+    for klass in essentialoclcs_IndexExpCS.__mro__:
         if "atPre" in klass.__dict__:
             descriptor = klass.__dict__["atPre"]
             break
@@ -357,23 +357,23 @@ def test_essentialoclcs::indexexpcs_has_atPre():
 
 
 
-def test_essentialoclcs::constructorexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::ConstructorExpCS)
+def test_essentialoclcs_constructorexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_ConstructorExpCS)
 
 
-def test_essentialoclcs::constructorexpcs_constructor_exists():
-    assert callable(essentialoclcs::ConstructorExpCS.__init__)
+def test_essentialoclcs_constructorexpcs_constructor_exists():
+    assert callable(essentialoclcs_ConstructorExpCS.__init__)
 
 
-def test_essentialoclcs::constructorexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::ConstructorExpCS.__init__)
+def test_essentialoclcs_constructorexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_ConstructorExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_essentialoclcs::constructorexpcs_has_value():
-    assert hasattr(essentialoclcs::ConstructorExpCS, "value")
+def test_essentialoclcs_constructorexpcs_has_value():
+    assert hasattr(essentialoclcs_ConstructorExpCS, "value")
     descriptor = None
-    for klass in essentialoclcs::ConstructorExpCS.__mro__:
+    for klass in essentialoclcs_ConstructorExpCS.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -381,16 +381,16 @@ def test_essentialoclcs::constructorexpcs_has_value():
 
 
 
-def test_essentialoclcs::typedrefcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::TypedRefCS)
+def test_essentialoclcs_typedrefcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_TypedRefCS)
 
 
-def test_essentialoclcs::typedrefcs_constructor_exists():
-    assert callable(essentialoclcs::TypedRefCS.__init__)
+def test_essentialoclcs_typedrefcs_constructor_exists():
+    assert callable(essentialoclcs_TypedRefCS.__init__)
 
 
-def test_essentialoclcs::typedrefcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::TypedRefCS.__init__)
+def test_essentialoclcs_typedrefcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_TypedRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -423,16 +423,16 @@ def test_typedrefcs_constructor_args():
 
 
 
-def test_essentialoclcs::typenameexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::TypeNameExpCS)
+def test_essentialoclcs_typenameexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_TypeNameExpCS)
 
 
-def test_essentialoclcs::typenameexpcs_constructor_exists():
-    assert callable(essentialoclcs::TypeNameExpCS.__init__)
+def test_essentialoclcs_typenameexpcs_constructor_exists():
+    assert callable(essentialoclcs_TypeNameExpCS.__init__)
 
 
-def test_essentialoclcs::typenameexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::TypeNameExpCS.__init__)
+def test_essentialoclcs_typenameexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_TypeNameExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -451,85 +451,85 @@ def test_modelelementcs_constructor_args():
 
 
 
-def test_essentialoclcs::constructorpartcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::ConstructorPartCS)
+def test_essentialoclcs_navigatingargcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NavigatingArgCS)
 
 
-def test_essentialoclcs::constructorpartcs_constructor_exists():
-    assert callable(essentialoclcs::ConstructorPartCS.__init__)
+def test_essentialoclcs_navigatingargcs_constructor_exists():
+    assert callable(essentialoclcs_NavigatingArgCS.__init__)
 
 
-def test_essentialoclcs::constructorpartcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::ConstructorPartCS.__init__)
+def test_essentialoclcs_navigatingargcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NavigatingArgCS.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::navigatingargcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NavigatingArgCS)
-
-
-def test_essentialoclcs::navigatingargcs_constructor_exists():
-    assert callable(essentialoclcs::NavigatingArgCS.__init__)
-
-
-def test_essentialoclcs::navigatingargcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NavigatingArgCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "role" in params, "Missing parameter 'role'"
     assert "prefix" in params, "Missing parameter 'prefix'"
+    assert "role" in params, "Missing parameter 'role'"
 
-def test_essentialoclcs::navigatingargcs_has_role():
-    assert hasattr(essentialoclcs::NavigatingArgCS, "role")
+def test_essentialoclcs_navigatingargcs_has_prefix():
+    assert hasattr(essentialoclcs_NavigatingArgCS, "prefix")
     descriptor = None
-    for klass in essentialoclcs::NavigatingArgCS.__mro__:
-        if "role" in klass.__dict__:
-            descriptor = klass.__dict__["role"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_essentialoclcs::navigatingargcs_has_prefix():
-    assert hasattr(essentialoclcs::NavigatingArgCS, "prefix")
-    descriptor = None
-    for klass in essentialoclcs::NavigatingArgCS.__mro__:
+    for klass in essentialoclcs_NavigatingArgCS.__mro__:
         if "prefix" in klass.__dict__:
             descriptor = klass.__dict__["prefix"]
             break
     assert isinstance(descriptor, property)
 
+def test_essentialoclcs_navigatingargcs_has_role():
+    assert hasattr(essentialoclcs_NavigatingArgCS, "role")
+    descriptor = None
+    for klass in essentialoclcs_NavigatingArgCS.__mro__:
+        if "role" in klass.__dict__:
+            descriptor = klass.__dict__["role"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_essentialoclcs::collectionliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::CollectionLiteralPartCS)
+
+def test_essentialoclcs_constructorpartcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_ConstructorPartCS)
 
 
-def test_essentialoclcs::collectionliteralpartcs_constructor_exists():
-    assert callable(essentialoclcs::CollectionLiteralPartCS.__init__)
+def test_essentialoclcs_constructorpartcs_constructor_exists():
+    assert callable(essentialoclcs_ConstructorPartCS.__init__)
 
 
-def test_essentialoclcs::collectionliteralpartcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::CollectionLiteralPartCS.__init__)
+def test_essentialoclcs_constructorpartcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_ConstructorPartCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::collectiontypecs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::CollectionTypeCS)
+def test_essentialoclcs_collectionliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_CollectionLiteralPartCS)
 
 
-def test_essentialoclcs::collectiontypecs_constructor_exists():
-    assert callable(essentialoclcs::CollectionTypeCS.__init__)
+def test_essentialoclcs_collectionliteralpartcs_constructor_exists():
+    assert callable(essentialoclcs_CollectionLiteralPartCS.__init__)
 
 
-def test_essentialoclcs::collectiontypecs_constructor_args():
-    sig = inspect.signature(essentialoclcs::CollectionTypeCS.__init__)
+def test_essentialoclcs_collectionliteralpartcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_CollectionLiteralPartCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_collectiontypecs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_CollectionTypeCS)
+
+
+def test_essentialoclcs_collectiontypecs_constructor_exists():
+    assert callable(essentialoclcs_CollectionTypeCS.__init__)
+
+
+def test_essentialoclcs_collectiontypecs_constructor_args():
+    sig = inspect.signature(essentialoclcs_CollectionTypeCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_essentialoclcs::collectiontypecs_has_name():
-    assert hasattr(essentialoclcs::CollectionTypeCS, "name")
+def test_essentialoclcs_collectiontypecs_has_name():
+    assert hasattr(essentialoclcs_CollectionTypeCS, "name")
     descriptor = None
-    for klass in essentialoclcs::CollectionTypeCS.__mro__:
+    for klass in essentialoclcs_CollectionTypeCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -551,58 +551,58 @@ def test_literalexpcs_constructor_args():
 
 
 
-def test_essentialoclcs::primitiveliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::PrimitiveLiteralExpCS)
+def test_essentialoclcs_tupleliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_TupleLiteralExpCS)
 
 
-def test_essentialoclcs::primitiveliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::PrimitiveLiteralExpCS.__init__)
+def test_essentialoclcs_tupleliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_TupleLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::primitiveliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::PrimitiveLiteralExpCS.__init__)
+def test_essentialoclcs_tupleliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_TupleLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::typeliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::TypeLiteralExpCS)
+def test_essentialoclcs_typeliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_TypeLiteralExpCS)
 
 
-def test_essentialoclcs::typeliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::TypeLiteralExpCS.__init__)
+def test_essentialoclcs_typeliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_TypeLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::typeliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::TypeLiteralExpCS.__init__)
+def test_essentialoclcs_typeliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_TypeLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::tupleliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::TupleLiteralExpCS)
+def test_essentialoclcs_primitiveliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_PrimitiveLiteralExpCS)
 
 
-def test_essentialoclcs::tupleliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::TupleLiteralExpCS.__init__)
+def test_essentialoclcs_primitiveliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_PrimitiveLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::tupleliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::TupleLiteralExpCS.__init__)
+def test_essentialoclcs_primitiveliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_PrimitiveLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::collectionliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::CollectionLiteralExpCS)
+def test_essentialoclcs_collectionliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_CollectionLiteralExpCS)
 
 
-def test_essentialoclcs::collectionliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::CollectionLiteralExpCS.__init__)
+def test_essentialoclcs_collectionliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_CollectionLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::collectionliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::CollectionLiteralExpCS.__init__)
+def test_essentialoclcs_collectionliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_CollectionLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -621,51 +621,51 @@ def test_primitiveliteralexpcs_constructor_args():
 
 
 
-def test_essentialoclcs::invalidliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::InvalidLiteralExpCS)
+def test_essentialoclcs_nullliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NullLiteralExpCS)
 
 
-def test_essentialoclcs::invalidliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::InvalidLiteralExpCS.__init__)
+def test_essentialoclcs_nullliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_NullLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::invalidliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::InvalidLiteralExpCS.__init__)
+def test_essentialoclcs_nullliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NullLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::unlimitednaturalliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::UnlimitedNaturalLiteralExpCS)
+def test_essentialoclcs_unlimitednaturalliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_UnlimitedNaturalLiteralExpCS)
 
 
-def test_essentialoclcs::unlimitednaturalliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::UnlimitedNaturalLiteralExpCS.__init__)
+def test_essentialoclcs_unlimitednaturalliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_UnlimitedNaturalLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::unlimitednaturalliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::UnlimitedNaturalLiteralExpCS.__init__)
+def test_essentialoclcs_unlimitednaturalliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_UnlimitedNaturalLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::stringliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::StringLiteralExpCS)
+def test_essentialoclcs_numberliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NumberLiteralExpCS)
 
 
-def test_essentialoclcs::stringliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::StringLiteralExpCS.__init__)
+def test_essentialoclcs_numberliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_NumberLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::stringliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::StringLiteralExpCS.__init__)
+def test_essentialoclcs_numberliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NumberLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_essentialoclcs::stringliteralexpcs_has_name():
-    assert hasattr(essentialoclcs::StringLiteralExpCS, "name")
+def test_essentialoclcs_numberliteralexpcs_has_name():
+    assert hasattr(essentialoclcs_NumberLiteralExpCS, "name")
     descriptor = None
-    for klass in essentialoclcs::StringLiteralExpCS.__mro__:
+    for klass in essentialoclcs_NumberLiteralExpCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -673,23 +673,37 @@ def test_essentialoclcs::stringliteralexpcs_has_name():
 
 
 
-def test_essentialoclcs::numberliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NumberLiteralExpCS)
+def test_essentialoclcs_invalidliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_InvalidLiteralExpCS)
 
 
-def test_essentialoclcs::numberliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::NumberLiteralExpCS.__init__)
+def test_essentialoclcs_invalidliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_InvalidLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::numberliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NumberLiteralExpCS.__init__)
+def test_essentialoclcs_invalidliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_InvalidLiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_stringliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_StringLiteralExpCS)
+
+
+def test_essentialoclcs_stringliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_StringLiteralExpCS.__init__)
+
+
+def test_essentialoclcs_stringliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_StringLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_essentialoclcs::numberliteralexpcs_has_name():
-    assert hasattr(essentialoclcs::NumberLiteralExpCS, "name")
+def test_essentialoclcs_stringliteralexpcs_has_name():
+    assert hasattr(essentialoclcs_StringLiteralExpCS, "name")
     descriptor = None
-    for klass in essentialoclcs::NumberLiteralExpCS.__mro__:
+    for klass in essentialoclcs_StringLiteralExpCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -697,37 +711,23 @@ def test_essentialoclcs::numberliteralexpcs_has_name():
 
 
 
-def test_essentialoclcs::nullliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NullLiteralExpCS)
+def test_essentialoclcs_booleanliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_BooleanLiteralExpCS)
 
 
-def test_essentialoclcs::nullliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::NullLiteralExpCS.__init__)
+def test_essentialoclcs_booleanliteralexpcs_constructor_exists():
+    assert callable(essentialoclcs_BooleanLiteralExpCS.__init__)
 
 
-def test_essentialoclcs::nullliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NullLiteralExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::booleanliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::BooleanLiteralExpCS)
-
-
-def test_essentialoclcs::booleanliteralexpcs_constructor_exists():
-    assert callable(essentialoclcs::BooleanLiteralExpCS.__init__)
-
-
-def test_essentialoclcs::booleanliteralexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::BooleanLiteralExpCS.__init__)
+def test_essentialoclcs_booleanliteralexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_BooleanLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_essentialoclcs::booleanliteralexpcs_has_name():
-    assert hasattr(essentialoclcs::BooleanLiteralExpCS, "name")
+def test_essentialoclcs_booleanliteralexpcs_has_name():
+    assert hasattr(essentialoclcs_BooleanLiteralExpCS, "name")
     descriptor = None
-    for klass in essentialoclcs::BooleanLiteralExpCS.__mro__:
+    for klass in essentialoclcs_BooleanLiteralExpCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -735,16 +735,16 @@ def test_essentialoclcs::booleanliteralexpcs_has_name():
 
 
 
-def test_essentialoclcs::expcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::ExpCS)
+def test_essentialoclcs_expcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_ExpCS)
 
 
-def test_essentialoclcs::expcs_constructor_exists():
-    assert callable(essentialoclcs::ExpCS.__init__)
+def test_essentialoclcs_expcs_constructor_exists():
+    assert callable(essentialoclcs_ExpCS.__init__)
 
 
-def test_essentialoclcs::expcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::ExpCS.__init__)
+def test_essentialoclcs_expcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_ExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -763,30 +763,30 @@ def test_operatorcs_constructor_args():
 
 
 
-def test_essentialoclcs::unaryoperatorcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::UnaryOperatorCS)
+def test_essentialoclcs_unaryoperatorcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_UnaryOperatorCS)
 
 
-def test_essentialoclcs::unaryoperatorcs_constructor_exists():
-    assert callable(essentialoclcs::UnaryOperatorCS.__init__)
+def test_essentialoclcs_unaryoperatorcs_constructor_exists():
+    assert callable(essentialoclcs_UnaryOperatorCS.__init__)
 
 
-def test_essentialoclcs::unaryoperatorcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::UnaryOperatorCS.__init__)
+def test_essentialoclcs_unaryoperatorcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_UnaryOperatorCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialoclcs::binaryoperatorcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::BinaryOperatorCS)
+def test_essentialoclcs_binaryoperatorcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_BinaryOperatorCS)
 
 
-def test_essentialoclcs::binaryoperatorcs_constructor_exists():
-    assert callable(essentialoclcs::BinaryOperatorCS.__init__)
+def test_essentialoclcs_binaryoperatorcs_constructor_exists():
+    assert callable(essentialoclcs_BinaryOperatorCS.__init__)
 
 
-def test_essentialoclcs::binaryoperatorcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::BinaryOperatorCS.__init__)
+def test_essentialoclcs_binaryoperatorcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_BinaryOperatorCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -805,135 +805,23 @@ def test_expcs_constructor_args():
 
 
 
-def test_essentialoclcs::operatorcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::OperatorCS)
+def test_essentialoclcs_selfexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_SelfExpCS)
 
 
-def test_essentialoclcs::operatorcs_constructor_exists():
-    assert callable(essentialoclcs::OperatorCS.__init__)
+def test_essentialoclcs_selfexpcs_constructor_exists():
+    assert callable(essentialoclcs_SelfExpCS.__init__)
 
 
-def test_essentialoclcs::operatorcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::OperatorCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::ifexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::IfExpCS)
-
-
-def test_essentialoclcs::ifexpcs_constructor_exists():
-    assert callable(essentialoclcs::IfExpCS.__init__)
-
-
-def test_essentialoclcs::ifexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::IfExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::letvariablecs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::LetVariableCS)
-
-
-def test_essentialoclcs::letvariablecs_constructor_exists():
-    assert callable(essentialoclcs::LetVariableCS.__init__)
-
-
-def test_essentialoclcs::letvariablecs_constructor_args():
-    sig = inspect.signature(essentialoclcs::LetVariableCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::literalexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::LiteralExpCS)
-
-
-def test_essentialoclcs::literalexpcs_constructor_exists():
-    assert callable(essentialoclcs::LiteralExpCS.__init__)
-
-
-def test_essentialoclcs::literalexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::LiteralExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::infixexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::InfixExpCS)
-
-
-def test_essentialoclcs::infixexpcs_constructor_exists():
-    assert callable(essentialoclcs::InfixExpCS.__init__)
-
-
-def test_essentialoclcs::infixexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::InfixExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::letexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::LetExpCS)
-
-
-def test_essentialoclcs::letexpcs_constructor_exists():
-    assert callable(essentialoclcs::LetExpCS.__init__)
-
-
-def test_essentialoclcs::letexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::LetExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::prefixexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::PrefixExpCS)
-
-
-def test_essentialoclcs::prefixexpcs_constructor_exists():
-    assert callable(essentialoclcs::PrefixExpCS.__init__)
-
-
-def test_essentialoclcs::prefixexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::PrefixExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::nestedexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::NestedExpCS)
-
-
-def test_essentialoclcs::nestedexpcs_constructor_exists():
-    assert callable(essentialoclcs::NestedExpCS.__init__)
-
-
-def test_essentialoclcs::nestedexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::NestedExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialoclcs::selfexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::SelfExpCS)
-
-
-def test_essentialoclcs::selfexpcs_constructor_exists():
-    assert callable(essentialoclcs::SelfExpCS.__init__)
-
-
-def test_essentialoclcs::selfexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::SelfExpCS.__init__)
+def test_essentialoclcs_selfexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_SelfExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_essentialoclcs::selfexpcs_has_name():
-    assert hasattr(essentialoclcs::SelfExpCS, "name")
+def test_essentialoclcs_selfexpcs_has_name():
+    assert hasattr(essentialoclcs_SelfExpCS, "name")
     descriptor = None
-    for klass in essentialoclcs::SelfExpCS.__mro__:
+    for klass in essentialoclcs_SelfExpCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -941,16 +829,128 @@ def test_essentialoclcs::selfexpcs_has_name():
 
 
 
-def test_essentialoclcs::abstractnameexpcs_is_not_abstract():
-    assert not inspect.isabstract(essentialoclcs::AbstractNameExpCS)
+def test_essentialoclcs_letexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_LetExpCS)
 
 
-def test_essentialoclcs::abstractnameexpcs_constructor_exists():
-    assert callable(essentialoclcs::AbstractNameExpCS.__init__)
+def test_essentialoclcs_letexpcs_constructor_exists():
+    assert callable(essentialoclcs_LetExpCS.__init__)
 
 
-def test_essentialoclcs::abstractnameexpcs_constructor_args():
-    sig = inspect.signature(essentialoclcs::AbstractNameExpCS.__init__)
+def test_essentialoclcs_letexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_LetExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_letvariablecs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_LetVariableCS)
+
+
+def test_essentialoclcs_letvariablecs_constructor_exists():
+    assert callable(essentialoclcs_LetVariableCS.__init__)
+
+
+def test_essentialoclcs_letvariablecs_constructor_args():
+    sig = inspect.signature(essentialoclcs_LetVariableCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_nestedexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_NestedExpCS)
+
+
+def test_essentialoclcs_nestedexpcs_constructor_exists():
+    assert callable(essentialoclcs_NestedExpCS.__init__)
+
+
+def test_essentialoclcs_nestedexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_NestedExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_prefixexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_PrefixExpCS)
+
+
+def test_essentialoclcs_prefixexpcs_constructor_exists():
+    assert callable(essentialoclcs_PrefixExpCS.__init__)
+
+
+def test_essentialoclcs_prefixexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_PrefixExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_literalexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_LiteralExpCS)
+
+
+def test_essentialoclcs_literalexpcs_constructor_exists():
+    assert callable(essentialoclcs_LiteralExpCS.__init__)
+
+
+def test_essentialoclcs_literalexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_LiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_ifexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_IfExpCS)
+
+
+def test_essentialoclcs_ifexpcs_constructor_exists():
+    assert callable(essentialoclcs_IfExpCS.__init__)
+
+
+def test_essentialoclcs_ifexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_IfExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_infixexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_InfixExpCS)
+
+
+def test_essentialoclcs_infixexpcs_constructor_exists():
+    assert callable(essentialoclcs_InfixExpCS.__init__)
+
+
+def test_essentialoclcs_infixexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_InfixExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_operatorcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_OperatorCS)
+
+
+def test_essentialoclcs_operatorcs_constructor_exists():
+    assert callable(essentialoclcs_OperatorCS.__init__)
+
+
+def test_essentialoclcs_operatorcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_OperatorCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialoclcs_abstractnameexpcs_is_not_abstract():
+    assert not inspect.isabstract(essentialoclcs_AbstractNameExpCS)
+
+
+def test_essentialoclcs_abstractnameexpcs_constructor_exists():
+    assert callable(essentialoclcs_AbstractNameExpCS.__init__)
+
+
+def test_essentialoclcs_abstractnameexpcs_constructor_args():
+    sig = inspect.signature(essentialoclcs_AbstractNameExpCS.__init__)
     params = list(sig.parameters.keys())
 
 def test_navigationrole_exists():
@@ -961,9 +961,9 @@ def test_navigationrole_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in NavigationRole]
     expected_literals = [
-        "ITERATOR",
         "ACCUMULATOR",
         "EXPRESSION",
+        "ITERATOR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -981,40 +981,40 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-essentialoclcs::Type_strategy = st.builds(
-    essentialoclcs::Type,
+essentialoclcs_Type_strategy = st.builds(
+    essentialoclcs_Type,
 )
 BinaryOperatorCS_strategy = st.builds(
     BinaryOperatorCS,
 )
-essentialoclcs::NavigationOperatorCS_strategy = st.builds(
-    essentialoclcs::NavigationOperatorCS,
+essentialoclcs_NavigationOperatorCS_strategy = st.builds(
+    essentialoclcs_NavigationOperatorCS,
 )
-essentialoclcs::PathNameCS_strategy = st.builds(
-    essentialoclcs::PathNameCS,
+essentialoclcs_PathNameCS_strategy = st.builds(
+    essentialoclcs_PathNameCS,
 )
 AbstractNameExpCS_strategy = st.builds(
     AbstractNameExpCS,
 )
-essentialoclcs::NamedExpCS_strategy = st.builds(
-    essentialoclcs::NamedExpCS,
+essentialoclcs_NamedExpCS_strategy = st.builds(
+    essentialoclcs_NamedExpCS,
 )
-essentialoclcs::NameExpCS_strategy = st.builds(
-    essentialoclcs::NameExpCS,
+essentialoclcs_NameExpCS_strategy = st.builds(
+    essentialoclcs_NameExpCS,
     atPre=
         st.booleans()
 )
 VariableCS_strategy = st.builds(
     VariableCS,
 )
-essentialoclcs::TupleLiteralPartCS_strategy = st.builds(
-    essentialoclcs::TupleLiteralPartCS,
+essentialoclcs_TupleLiteralPartCS_strategy = st.builds(
+    essentialoclcs_TupleLiteralPartCS,
 )
 SpecificationCS_strategy = st.builds(
     SpecificationCS,
 )
-essentialoclcs::ExpSpecificationCS_strategy = st.builds(
-    essentialoclcs::ExpSpecificationCS,
+essentialoclcs_ExpSpecificationCS_strategy = st.builds(
+    essentialoclcs_ExpSpecificationCS,
 )
 RootCS_strategy = st.builds(
     RootCS,
@@ -1022,33 +1022,33 @@ RootCS_strategy = st.builds(
 NamedElementCS_strategy = st.builds(
     NamedElementCS,
 )
-essentialoclcs::VariableCS_strategy = st.builds(
-    essentialoclcs::VariableCS,
+essentialoclcs_VariableCS_strategy = st.builds(
+    essentialoclcs_VariableCS,
 )
-essentialoclcs::ContextCS_strategy = st.builds(
-    essentialoclcs::ContextCS,
+essentialoclcs_ContextCS_strategy = st.builds(
+    essentialoclcs_ContextCS,
 )
-essentialoclcs::Property_strategy = st.builds(
-    essentialoclcs::Property,
+essentialoclcs_Property_strategy = st.builds(
+    essentialoclcs_Property,
 )
 NamedExpCS_strategy = st.builds(
     NamedExpCS,
 )
-essentialoclcs::InvocationExpCS_strategy = st.builds(
-    essentialoclcs::InvocationExpCS,
+essentialoclcs_InvocationExpCS_strategy = st.builds(
+    essentialoclcs_InvocationExpCS,
 )
-essentialoclcs::IndexExpCS_strategy = st.builds(
-    essentialoclcs::IndexExpCS,
+essentialoclcs_IndexExpCS_strategy = st.builds(
+    essentialoclcs_IndexExpCS,
     atPre=
         st.booleans()
 )
-essentialoclcs::ConstructorExpCS_strategy = st.builds(
-    essentialoclcs::ConstructorExpCS,
+essentialoclcs_ConstructorExpCS_strategy = st.builds(
+    essentialoclcs_ConstructorExpCS,
     value=
         safe_text
 )
-essentialoclcs::TypedRefCS_strategy = st.builds(
-    essentialoclcs::TypedRefCS,
+essentialoclcs_TypedRefCS_strategy = st.builds(
+    essentialoclcs_TypedRefCS,
 )
 Nameable_strategy = st.builds(
     Nameable,
@@ -1056,162 +1056,159 @@ Nameable_strategy = st.builds(
 TypedRefCS_strategy = st.builds(
     TypedRefCS,
 )
-essentialoclcs::TypeNameExpCS_strategy = st.builds(
-    essentialoclcs::TypeNameExpCS,
+essentialoclcs_TypeNameExpCS_strategy = st.builds(
+    essentialoclcs_TypeNameExpCS,
 )
 ModelElementCS_strategy = st.builds(
     ModelElementCS,
 )
-essentialoclcs::ConstructorPartCS_strategy = st.builds(
-    essentialoclcs::ConstructorPartCS,
-)
-essentialoclcs::NavigatingArgCS_strategy = st.builds(
-    essentialoclcs::NavigatingArgCS,
-    role=
-        safe_text,
+essentialoclcs_NavigatingArgCS_strategy = st.builds(
+    essentialoclcs_NavigatingArgCS,
     prefix=
+        safe_text,
+    role=
         safe_text
 )
-essentialoclcs::CollectionLiteralPartCS_strategy = st.builds(
-    essentialoclcs::CollectionLiteralPartCS,
+essentialoclcs_ConstructorPartCS_strategy = st.builds(
+    essentialoclcs_ConstructorPartCS,
 )
-essentialoclcs::CollectionTypeCS_strategy = st.builds(
-    essentialoclcs::CollectionTypeCS,
+essentialoclcs_CollectionLiteralPartCS_strategy = st.builds(
+    essentialoclcs_CollectionLiteralPartCS,
+)
+essentialoclcs_CollectionTypeCS_strategy = st.builds(
+    essentialoclcs_CollectionTypeCS,
     name=
         safe_text
 )
 LiteralExpCS_strategy = st.builds(
     LiteralExpCS,
 )
-essentialoclcs::PrimitiveLiteralExpCS_strategy = st.builds(
-    essentialoclcs::PrimitiveLiteralExpCS,
+essentialoclcs_TupleLiteralExpCS_strategy = st.builds(
+    essentialoclcs_TupleLiteralExpCS,
 )
-essentialoclcs::TypeLiteralExpCS_strategy = st.builds(
-    essentialoclcs::TypeLiteralExpCS,
+essentialoclcs_TypeLiteralExpCS_strategy = st.builds(
+    essentialoclcs_TypeLiteralExpCS,
 )
-essentialoclcs::TupleLiteralExpCS_strategy = st.builds(
-    essentialoclcs::TupleLiteralExpCS,
+essentialoclcs_PrimitiveLiteralExpCS_strategy = st.builds(
+    essentialoclcs_PrimitiveLiteralExpCS,
 )
-essentialoclcs::CollectionLiteralExpCS_strategy = st.builds(
-    essentialoclcs::CollectionLiteralExpCS,
+essentialoclcs_CollectionLiteralExpCS_strategy = st.builds(
+    essentialoclcs_CollectionLiteralExpCS,
 )
 PrimitiveLiteralExpCS_strategy = st.builds(
     PrimitiveLiteralExpCS,
 )
-essentialoclcs::InvalidLiteralExpCS_strategy = st.builds(
-    essentialoclcs::InvalidLiteralExpCS,
+essentialoclcs_NullLiteralExpCS_strategy = st.builds(
+    essentialoclcs_NullLiteralExpCS,
 )
-essentialoclcs::UnlimitedNaturalLiteralExpCS_strategy = st.builds(
-    essentialoclcs::UnlimitedNaturalLiteralExpCS,
+essentialoclcs_UnlimitedNaturalLiteralExpCS_strategy = st.builds(
+    essentialoclcs_UnlimitedNaturalLiteralExpCS,
 )
-essentialoclcs::StringLiteralExpCS_strategy = st.builds(
-    essentialoclcs::StringLiteralExpCS,
+essentialoclcs_NumberLiteralExpCS_strategy = st.builds(
+    essentialoclcs_NumberLiteralExpCS,
     name=
         safe_text
 )
-essentialoclcs::NumberLiteralExpCS_strategy = st.builds(
-    essentialoclcs::NumberLiteralExpCS,
+essentialoclcs_InvalidLiteralExpCS_strategy = st.builds(
+    essentialoclcs_InvalidLiteralExpCS,
+)
+essentialoclcs_StringLiteralExpCS_strategy = st.builds(
+    essentialoclcs_StringLiteralExpCS,
     name=
         safe_text
 )
-essentialoclcs::NullLiteralExpCS_strategy = st.builds(
-    essentialoclcs::NullLiteralExpCS,
-)
-essentialoclcs::BooleanLiteralExpCS_strategy = st.builds(
-    essentialoclcs::BooleanLiteralExpCS,
+essentialoclcs_BooleanLiteralExpCS_strategy = st.builds(
+    essentialoclcs_BooleanLiteralExpCS,
     name=
         safe_text
 )
-essentialoclcs::ExpCS_strategy = st.builds(
-    essentialoclcs::ExpCS,
+essentialoclcs_ExpCS_strategy = st.builds(
+    essentialoclcs_ExpCS,
 )
 OperatorCS_strategy = st.builds(
     OperatorCS,
 )
-essentialoclcs::UnaryOperatorCS_strategy = st.builds(
-    essentialoclcs::UnaryOperatorCS,
+essentialoclcs_UnaryOperatorCS_strategy = st.builds(
+    essentialoclcs_UnaryOperatorCS,
 )
-essentialoclcs::BinaryOperatorCS_strategy = st.builds(
-    essentialoclcs::BinaryOperatorCS,
+essentialoclcs_BinaryOperatorCS_strategy = st.builds(
+    essentialoclcs_BinaryOperatorCS,
 )
 ExpCS_strategy = st.builds(
     ExpCS,
 )
-essentialoclcs::OperatorCS_strategy = st.builds(
-    essentialoclcs::OperatorCS,
-)
-essentialoclcs::IfExpCS_strategy = st.builds(
-    essentialoclcs::IfExpCS,
-)
-essentialoclcs::LetVariableCS_strategy = st.builds(
-    essentialoclcs::LetVariableCS,
-)
-essentialoclcs::LiteralExpCS_strategy = st.builds(
-    essentialoclcs::LiteralExpCS,
-)
-essentialoclcs::InfixExpCS_strategy = st.builds(
-    essentialoclcs::InfixExpCS,
-)
-essentialoclcs::LetExpCS_strategy = st.builds(
-    essentialoclcs::LetExpCS,
-)
-essentialoclcs::PrefixExpCS_strategy = st.builds(
-    essentialoclcs::PrefixExpCS,
-)
-essentialoclcs::NestedExpCS_strategy = st.builds(
-    essentialoclcs::NestedExpCS,
-)
-essentialoclcs::SelfExpCS_strategy = st.builds(
-    essentialoclcs::SelfExpCS,
+essentialoclcs_SelfExpCS_strategy = st.builds(
+    essentialoclcs_SelfExpCS,
     name=
         safe_text
 )
-essentialoclcs::AbstractNameExpCS_strategy = st.builds(
-    essentialoclcs::AbstractNameExpCS,
+essentialoclcs_LetExpCS_strategy = st.builds(
+    essentialoclcs_LetExpCS,
+)
+essentialoclcs_LetVariableCS_strategy = st.builds(
+    essentialoclcs_LetVariableCS,
+)
+essentialoclcs_NestedExpCS_strategy = st.builds(
+    essentialoclcs_NestedExpCS,
+)
+essentialoclcs_PrefixExpCS_strategy = st.builds(
+    essentialoclcs_PrefixExpCS,
+)
+essentialoclcs_LiteralExpCS_strategy = st.builds(
+    essentialoclcs_LiteralExpCS,
+)
+essentialoclcs_IfExpCS_strategy = st.builds(
+    essentialoclcs_IfExpCS,
+)
+essentialoclcs_InfixExpCS_strategy = st.builds(
+    essentialoclcs_InfixExpCS,
+)
+essentialoclcs_OperatorCS_strategy = st.builds(
+    essentialoclcs_OperatorCS,
+)
+essentialoclcs_AbstractNameExpCS_strategy = st.builds(
+    essentialoclcs_AbstractNameExpCS,
 )
 
-@given(instance=essentialoclcs::Type_strategy)
+@given(instance=essentialoclcs_Type_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::type_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::Type)
+def test_essentialoclcs_type_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_Type)
 
 @given(instance=BinaryOperatorCS_strategy)
 @settings(max_examples=50)
 def test_binaryoperatorcs_instantiation(instance):
     assert isinstance(instance, BinaryOperatorCS)
 
-@given(instance=essentialoclcs::NavigationOperatorCS_strategy)
+@given(instance=essentialoclcs_NavigationOperatorCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::navigationoperatorcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NavigationOperatorCS)
+def test_essentialoclcs_navigationoperatorcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NavigationOperatorCS)
 
-@given(instance=essentialoclcs::PathNameCS_strategy)
+@given(instance=essentialoclcs_PathNameCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::pathnamecs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::PathNameCS)
+def test_essentialoclcs_pathnamecs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_PathNameCS)
 
 @given(instance=AbstractNameExpCS_strategy)
 @settings(max_examples=50)
 def test_abstractnameexpcs_instantiation(instance):
     assert isinstance(instance, AbstractNameExpCS)
 
-@given(instance=essentialoclcs::NamedExpCS_strategy)
+@given(instance=essentialoclcs_NamedExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::namedexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NamedExpCS)
+def test_essentialoclcs_namedexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NamedExpCS)
 
-@given(instance=essentialoclcs::NameExpCS_strategy)
+@given(instance=essentialoclcs_NameExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::nameexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NameExpCS)
-
-@given(instance=essentialoclcs::NameExpCS_strategy)
-def test_essentialoclcs::nameexpcs_atPre_type(instance):
-    assert isinstance(instance.atPre, bool)
+def test_essentialoclcs_nameexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NameExpCS)
 
 
-@given(instance=essentialoclcs::NameExpCS_strategy)
-def test_essentialoclcs::nameexpcs_atPre_setter(instance):
+
+@given(instance=essentialoclcs_NameExpCS_strategy)
+def test_essentialoclcs_nameexpcs_atPre_setter(instance):
     original = instance.atPre
     instance.atPre = original
     assert instance.atPre == original
@@ -1221,20 +1218,20 @@ def test_essentialoclcs::nameexpcs_atPre_setter(instance):
 def test_variablecs_instantiation(instance):
     assert isinstance(instance, VariableCS)
 
-@given(instance=essentialoclcs::TupleLiteralPartCS_strategy)
+@given(instance=essentialoclcs_TupleLiteralPartCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::tupleliteralpartcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::TupleLiteralPartCS)
+def test_essentialoclcs_tupleliteralpartcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_TupleLiteralPartCS)
 
 @given(instance=SpecificationCS_strategy)
 @settings(max_examples=50)
 def test_specificationcs_instantiation(instance):
     assert isinstance(instance, SpecificationCS)
 
-@given(instance=essentialoclcs::ExpSpecificationCS_strategy)
+@given(instance=essentialoclcs_ExpSpecificationCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::expspecificationcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::ExpSpecificationCS)
+def test_essentialoclcs_expspecificationcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_ExpSpecificationCS)
 
 @given(instance=RootCS_strategy)
 @settings(max_examples=50)
@@ -1246,67 +1243,61 @@ def test_rootcs_instantiation(instance):
 def test_namedelementcs_instantiation(instance):
     assert isinstance(instance, NamedElementCS)
 
-@given(instance=essentialoclcs::VariableCS_strategy)
+@given(instance=essentialoclcs_VariableCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::variablecs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::VariableCS)
+def test_essentialoclcs_variablecs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_VariableCS)
 
-@given(instance=essentialoclcs::ContextCS_strategy)
+@given(instance=essentialoclcs_ContextCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::contextcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::ContextCS)
+def test_essentialoclcs_contextcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_ContextCS)
 
-@given(instance=essentialoclcs::Property_strategy)
+@given(instance=essentialoclcs_Property_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::property_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::Property)
+def test_essentialoclcs_property_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_Property)
 
 @given(instance=NamedExpCS_strategy)
 @settings(max_examples=50)
 def test_namedexpcs_instantiation(instance):
     assert isinstance(instance, NamedExpCS)
 
-@given(instance=essentialoclcs::InvocationExpCS_strategy)
+@given(instance=essentialoclcs_InvocationExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::invocationexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::InvocationExpCS)
+def test_essentialoclcs_invocationexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_InvocationExpCS)
 
-@given(instance=essentialoclcs::IndexExpCS_strategy)
+@given(instance=essentialoclcs_IndexExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::indexexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::IndexExpCS)
-
-@given(instance=essentialoclcs::IndexExpCS_strategy)
-def test_essentialoclcs::indexexpcs_atPre_type(instance):
-    assert isinstance(instance.atPre, bool)
+def test_essentialoclcs_indexexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_IndexExpCS)
 
 
-@given(instance=essentialoclcs::IndexExpCS_strategy)
-def test_essentialoclcs::indexexpcs_atPre_setter(instance):
+
+@given(instance=essentialoclcs_IndexExpCS_strategy)
+def test_essentialoclcs_indexexpcs_atPre_setter(instance):
     original = instance.atPre
     instance.atPre = original
     assert instance.atPre == original
 
-@given(instance=essentialoclcs::ConstructorExpCS_strategy)
+@given(instance=essentialoclcs_ConstructorExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::constructorexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::ConstructorExpCS)
-
-@given(instance=essentialoclcs::ConstructorExpCS_strategy)
-def test_essentialoclcs::constructorexpcs_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_essentialoclcs_constructorexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_ConstructorExpCS)
 
 
-@given(instance=essentialoclcs::ConstructorExpCS_strategy)
-def test_essentialoclcs::constructorexpcs_value_setter(instance):
+
+@given(instance=essentialoclcs_ConstructorExpCS_strategy)
+def test_essentialoclcs_constructorexpcs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=essentialoclcs::TypedRefCS_strategy)
+@given(instance=essentialoclcs_TypedRefCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::typedrefcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::TypedRefCS)
+def test_essentialoclcs_typedrefcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_TypedRefCS)
 
 @given(instance=Nameable_strategy)
 @settings(max_examples=50)
@@ -1318,65 +1309,56 @@ def test_nameable_instantiation(instance):
 def test_typedrefcs_instantiation(instance):
     assert isinstance(instance, TypedRefCS)
 
-@given(instance=essentialoclcs::TypeNameExpCS_strategy)
+@given(instance=essentialoclcs_TypeNameExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::typenameexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::TypeNameExpCS)
+def test_essentialoclcs_typenameexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_TypeNameExpCS)
 
 @given(instance=ModelElementCS_strategy)
 @settings(max_examples=50)
 def test_modelelementcs_instantiation(instance):
     assert isinstance(instance, ModelElementCS)
 
-@given(instance=essentialoclcs::ConstructorPartCS_strategy)
+@given(instance=essentialoclcs_NavigatingArgCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::constructorpartcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::ConstructorPartCS)
-
-@given(instance=essentialoclcs::NavigatingArgCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::navigatingargcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NavigatingArgCS)
-
-@given(instance=essentialoclcs::NavigatingArgCS_strategy)
-def test_essentialoclcs::navigatingargcs_role_type(instance):
-    assert isinstance(instance.role, str)
+def test_essentialoclcs_navigatingargcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NavigatingArgCS)
 
 
-@given(instance=essentialoclcs::NavigatingArgCS_strategy)
-def test_essentialoclcs::navigatingargcs_role_setter(instance):
-    original = instance.role
-    instance.role = original
-    assert instance.role == original
 
-@given(instance=essentialoclcs::NavigatingArgCS_strategy)
-def test_essentialoclcs::navigatingargcs_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=essentialoclcs::NavigatingArgCS_strategy)
-def test_essentialoclcs::navigatingargcs_prefix_setter(instance):
+@given(instance=essentialoclcs_NavigatingArgCS_strategy)
+def test_essentialoclcs_navigatingargcs_prefix_setter(instance):
     original = instance.prefix
     instance.prefix = original
     assert instance.prefix == original
 
-@given(instance=essentialoclcs::CollectionLiteralPartCS_strategy)
+
+
+@given(instance=essentialoclcs_NavigatingArgCS_strategy)
+def test_essentialoclcs_navigatingargcs_role_setter(instance):
+    original = instance.role
+    instance.role = original
+    assert instance.role == original
+
+@given(instance=essentialoclcs_ConstructorPartCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::collectionliteralpartcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::CollectionLiteralPartCS)
+def test_essentialoclcs_constructorpartcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_ConstructorPartCS)
 
-@given(instance=essentialoclcs::CollectionTypeCS_strategy)
+@given(instance=essentialoclcs_CollectionLiteralPartCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::collectiontypecs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::CollectionTypeCS)
+def test_essentialoclcs_collectionliteralpartcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_CollectionLiteralPartCS)
 
-@given(instance=essentialoclcs::CollectionTypeCS_strategy)
-def test_essentialoclcs::collectiontypecs_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=essentialoclcs_CollectionTypeCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_collectiontypecs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_CollectionTypeCS)
 
 
-@given(instance=essentialoclcs::CollectionTypeCS_strategy)
-def test_essentialoclcs::collectiontypecs_name_setter(instance):
+
+@given(instance=essentialoclcs_CollectionTypeCS_strategy)
+def test_essentialoclcs_collectiontypecs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1386,176 +1368,164 @@ def test_essentialoclcs::collectiontypecs_name_setter(instance):
 def test_literalexpcs_instantiation(instance):
     assert isinstance(instance, LiteralExpCS)
 
-@given(instance=essentialoclcs::PrimitiveLiteralExpCS_strategy)
+@given(instance=essentialoclcs_TupleLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::primitiveliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::PrimitiveLiteralExpCS)
+def test_essentialoclcs_tupleliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_TupleLiteralExpCS)
 
-@given(instance=essentialoclcs::TypeLiteralExpCS_strategy)
+@given(instance=essentialoclcs_TypeLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::typeliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::TypeLiteralExpCS)
+def test_essentialoclcs_typeliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_TypeLiteralExpCS)
 
-@given(instance=essentialoclcs::TupleLiteralExpCS_strategy)
+@given(instance=essentialoclcs_PrimitiveLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::tupleliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::TupleLiteralExpCS)
+def test_essentialoclcs_primitiveliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_PrimitiveLiteralExpCS)
 
-@given(instance=essentialoclcs::CollectionLiteralExpCS_strategy)
+@given(instance=essentialoclcs_CollectionLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::collectionliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::CollectionLiteralExpCS)
+def test_essentialoclcs_collectionliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_CollectionLiteralExpCS)
 
 @given(instance=PrimitiveLiteralExpCS_strategy)
 @settings(max_examples=50)
 def test_primitiveliteralexpcs_instantiation(instance):
     assert isinstance(instance, PrimitiveLiteralExpCS)
 
-@given(instance=essentialoclcs::InvalidLiteralExpCS_strategy)
+@given(instance=essentialoclcs_NullLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::invalidliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::InvalidLiteralExpCS)
+def test_essentialoclcs_nullliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NullLiteralExpCS)
 
-@given(instance=essentialoclcs::UnlimitedNaturalLiteralExpCS_strategy)
+@given(instance=essentialoclcs_UnlimitedNaturalLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::unlimitednaturalliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::UnlimitedNaturalLiteralExpCS)
+def test_essentialoclcs_unlimitednaturalliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_UnlimitedNaturalLiteralExpCS)
 
-@given(instance=essentialoclcs::StringLiteralExpCS_strategy)
+@given(instance=essentialoclcs_NumberLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::stringliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::StringLiteralExpCS)
-
-@given(instance=essentialoclcs::StringLiteralExpCS_strategy)
-def test_essentialoclcs::stringliteralexpcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_essentialoclcs_numberliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NumberLiteralExpCS)
 
 
-@given(instance=essentialoclcs::StringLiteralExpCS_strategy)
-def test_essentialoclcs::stringliteralexpcs_name_setter(instance):
+
+@given(instance=essentialoclcs_NumberLiteralExpCS_strategy)
+def test_essentialoclcs_numberliteralexpcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=essentialoclcs::NumberLiteralExpCS_strategy)
+@given(instance=essentialoclcs_InvalidLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::numberliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NumberLiteralExpCS)
+def test_essentialoclcs_invalidliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_InvalidLiteralExpCS)
 
-@given(instance=essentialoclcs::NumberLiteralExpCS_strategy)
-def test_essentialoclcs::numberliteralexpcs_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=essentialoclcs_StringLiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_stringliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_StringLiteralExpCS)
 
 
-@given(instance=essentialoclcs::NumberLiteralExpCS_strategy)
-def test_essentialoclcs::numberliteralexpcs_name_setter(instance):
+
+@given(instance=essentialoclcs_StringLiteralExpCS_strategy)
+def test_essentialoclcs_stringliteralexpcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=essentialoclcs::NullLiteralExpCS_strategy)
+@given(instance=essentialoclcs_BooleanLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::nullliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NullLiteralExpCS)
-
-@given(instance=essentialoclcs::BooleanLiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::booleanliteralexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::BooleanLiteralExpCS)
-
-@given(instance=essentialoclcs::BooleanLiteralExpCS_strategy)
-def test_essentialoclcs::booleanliteralexpcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_essentialoclcs_booleanliteralexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_BooleanLiteralExpCS)
 
 
-@given(instance=essentialoclcs::BooleanLiteralExpCS_strategy)
-def test_essentialoclcs::booleanliteralexpcs_name_setter(instance):
+
+@given(instance=essentialoclcs_BooleanLiteralExpCS_strategy)
+def test_essentialoclcs_booleanliteralexpcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=essentialoclcs::ExpCS_strategy)
+@given(instance=essentialoclcs_ExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::expcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::ExpCS)
+def test_essentialoclcs_expcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_ExpCS)
 
 @given(instance=OperatorCS_strategy)
 @settings(max_examples=50)
 def test_operatorcs_instantiation(instance):
     assert isinstance(instance, OperatorCS)
 
-@given(instance=essentialoclcs::UnaryOperatorCS_strategy)
+@given(instance=essentialoclcs_UnaryOperatorCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::unaryoperatorcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::UnaryOperatorCS)
+def test_essentialoclcs_unaryoperatorcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_UnaryOperatorCS)
 
-@given(instance=essentialoclcs::BinaryOperatorCS_strategy)
+@given(instance=essentialoclcs_BinaryOperatorCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::binaryoperatorcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::BinaryOperatorCS)
+def test_essentialoclcs_binaryoperatorcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_BinaryOperatorCS)
 
 @given(instance=ExpCS_strategy)
 @settings(max_examples=50)
 def test_expcs_instantiation(instance):
     assert isinstance(instance, ExpCS)
 
-@given(instance=essentialoclcs::OperatorCS_strategy)
+@given(instance=essentialoclcs_SelfExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::operatorcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::OperatorCS)
-
-@given(instance=essentialoclcs::IfExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::ifexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::IfExpCS)
-
-@given(instance=essentialoclcs::LetVariableCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::letvariablecs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::LetVariableCS)
-
-@given(instance=essentialoclcs::LiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::literalexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::LiteralExpCS)
-
-@given(instance=essentialoclcs::InfixExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::infixexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::InfixExpCS)
-
-@given(instance=essentialoclcs::LetExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::letexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::LetExpCS)
-
-@given(instance=essentialoclcs::PrefixExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::prefixexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::PrefixExpCS)
-
-@given(instance=essentialoclcs::NestedExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::nestedexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::NestedExpCS)
-
-@given(instance=essentialoclcs::SelfExpCS_strategy)
-@settings(max_examples=50)
-def test_essentialoclcs::selfexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::SelfExpCS)
-
-@given(instance=essentialoclcs::SelfExpCS_strategy)
-def test_essentialoclcs::selfexpcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_essentialoclcs_selfexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_SelfExpCS)
 
 
-@given(instance=essentialoclcs::SelfExpCS_strategy)
-def test_essentialoclcs::selfexpcs_name_setter(instance):
+
+@given(instance=essentialoclcs_SelfExpCS_strategy)
+def test_essentialoclcs_selfexpcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=essentialoclcs::AbstractNameExpCS_strategy)
+@given(instance=essentialoclcs_LetExpCS_strategy)
 @settings(max_examples=50)
-def test_essentialoclcs::abstractnameexpcs_instantiation(instance):
-    assert isinstance(instance, essentialoclcs::AbstractNameExpCS)
+def test_essentialoclcs_letexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_LetExpCS)
+
+@given(instance=essentialoclcs_LetVariableCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_letvariablecs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_LetVariableCS)
+
+@given(instance=essentialoclcs_NestedExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_nestedexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_NestedExpCS)
+
+@given(instance=essentialoclcs_PrefixExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_prefixexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_PrefixExpCS)
+
+@given(instance=essentialoclcs_LiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_literalexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_LiteralExpCS)
+
+@given(instance=essentialoclcs_IfExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_ifexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_IfExpCS)
+
+@given(instance=essentialoclcs_InfixExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_infixexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_InfixExpCS)
+
+@given(instance=essentialoclcs_OperatorCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_operatorcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_OperatorCS)
+
+@given(instance=essentialoclcs_AbstractNameExpCS_strategy)
+@settings(max_examples=50)
+def test_essentialoclcs_abstractnameexpcs_instantiation(instance):
+    assert isinstance(instance, essentialoclcs_AbstractNameExpCS)

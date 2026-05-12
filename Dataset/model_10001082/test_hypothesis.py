@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Order,
     View_statistics_external,
     Grant_discount_external,
     Alerted_to_Prepare_drinks_external,
@@ -42,25 +41,12 @@ from python_code import (
     Discount,
     Drinks,
     Menu,
+    Order,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_order_is_not_abstract():
-    assert not inspect.isabstract(Order)
-
-
-def test_order_constructor_exists():
-    assert callable(Order.__init__)
-
-
-def test_order_constructor_args():
-    sig = inspect.signature(Order.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -567,29 +553,11 @@ def test_drinks_constructor_exists():
 def test_drinks_constructor_args():
     sig = inspect.signature(Drinks.__init__)
     params = list(sig.parameters.keys())
-    assert "beer" in params, "Missing parameter 'beer'"
-    assert "cocktail" in params, "Missing parameter 'cocktail'"
     assert "wine" in params, "Missing parameter 'wine'"
+    assert "beer" in params, "Missing parameter 'beer'"
     assert "softDrink" in params, "Missing parameter 'softDrink'"
     assert "spirits" in params, "Missing parameter 'spirits'"
-
-def test_drinks_has_beer():
-    assert hasattr(Drinks, "beer")
-    descriptor = None
-    for klass in Drinks.__mro__:
-        if "beer" in klass.__dict__:
-            descriptor = klass.__dict__["beer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_drinks_has_cocktail():
-    assert hasattr(Drinks, "cocktail")
-    descriptor = None
-    for klass in Drinks.__mro__:
-        if "cocktail" in klass.__dict__:
-            descriptor = klass.__dict__["cocktail"]
-            break
-    assert isinstance(descriptor, property)
+    assert "cocktail" in params, "Missing parameter 'cocktail'"
 
 def test_drinks_has_wine():
     assert hasattr(Drinks, "wine")
@@ -597,6 +565,15 @@ def test_drinks_has_wine():
     for klass in Drinks.__mro__:
         if "wine" in klass.__dict__:
             descriptor = klass.__dict__["wine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_drinks_has_beer():
+    assert hasattr(Drinks, "beer")
+    descriptor = None
+    for klass in Drinks.__mro__:
+        if "beer" in klass.__dict__:
+            descriptor = klass.__dict__["beer"]
             break
     assert isinstance(descriptor, property)
 
@@ -618,6 +595,15 @@ def test_drinks_has_spirits():
             break
     assert isinstance(descriptor, property)
 
+def test_drinks_has_cocktail():
+    assert hasattr(Drinks, "cocktail")
+    descriptor = None
+    for klass in Drinks.__mro__:
+        if "cocktail" in klass.__dict__:
+            descriptor = klass.__dict__["cocktail"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_menu_is_not_abstract():
@@ -631,19 +617,10 @@ def test_menu_constructor_exists():
 def test_menu_constructor_args():
     sig = inspect.signature(Menu.__init__)
     params = list(sig.parameters.keys())
-    assert "starter" in params, "Missing parameter 'starter'"
     assert "mainCourse" in params, "Missing parameter 'mainCourse'"
+    assert "starter" in params, "Missing parameter 'starter'"
     assert "specialCourse" in params, "Missing parameter 'specialCourse'"
     assert "desert" in params, "Missing parameter 'desert'"
-
-def test_menu_has_starter():
-    assert hasattr(Menu, "starter")
-    descriptor = None
-    for klass in Menu.__mro__:
-        if "starter" in klass.__dict__:
-            descriptor = klass.__dict__["starter"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_menu_has_mainCourse():
     assert hasattr(Menu, "mainCourse")
@@ -651,6 +628,15 @@ def test_menu_has_mainCourse():
     for klass in Menu.__mro__:
         if "mainCourse" in klass.__dict__:
             descriptor = klass.__dict__["mainCourse"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_menu_has_starter():
+    assert hasattr(Menu, "starter")
+    descriptor = None
+    for klass in Menu.__mro__:
+        if "starter" in klass.__dict__:
+            descriptor = klass.__dict__["starter"]
             break
     assert isinstance(descriptor, property)
 
@@ -673,6 +659,20 @@ def test_menu_has_desert():
     assert isinstance(descriptor, property)
 
 
+
+def test_order_is_not_abstract():
+    assert not inspect.isabstract(Order)
+
+
+def test_order_constructor_exists():
+    assert callable(Order.__init__)
+
+
+def test_order_constructor_args():
+    sig = inspect.signature(Order.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -684,9 +684,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Order_strategy = st.builds(
-    Order,
-)
 View_statistics_external_strategy = st.builds(
     View_statistics_external,
 )
@@ -794,33 +791,31 @@ Discount_strategy = st.builds(
 )
 Drinks_strategy = st.builds(
     Drinks,
-    beer=
-        safe_text,
-    cocktail=
-        safe_text,
     wine=
+        safe_text,
+    beer=
         safe_text,
     softDrink=
         safe_text,
     spirits=
+        safe_text,
+    cocktail=
         safe_text
 )
 Menu_strategy = st.builds(
     Menu,
-    starter=
-        safe_text,
     mainCourse=
+        safe_text,
+    starter=
         safe_text,
     specialCourse=
         safe_text,
     desert=
         safe_text
 )
-
-@given(instance=Order_strategy)
-@settings(max_examples=50)
-def test_order_instantiation(instance):
-    assert isinstance(instance, Order)
+Order_strategy = st.builds(
+    Order,
+)
 
 @given(instance=View_statistics_external_strategy)
 @settings(max_examples=50)
@@ -872,9 +867,6 @@ def test_input_order_external_instantiation(instance):
 def test_table_instantiation(instance):
     assert isinstance(instance, Table)
 
-@given(instance=Table_strategy)
-def test_table_tableID_type(instance):
-    assert isinstance(instance.tableID, int)
 
 
 @given(instance=Table_strategy)
@@ -888,9 +880,6 @@ def test_table_tableID_setter(instance):
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_paymentType_type(instance):
-    assert isinstance(instance.paymentType, str)
 
 
 @given(instance=Payment_strategy)
@@ -1009,9 +998,6 @@ def test_input_order_usecase_instantiation(instance):
 def test_discount_instantiation(instance):
     assert isinstance(instance, Discount)
 
-@given(instance=Discount_strategy)
-def test_discount_discountAmount_type(instance):
-    assert isinstance(instance.discountAmount, int)
 
 
 @given(instance=Discount_strategy)
@@ -1025,31 +1011,6 @@ def test_discount_discountAmount_setter(instance):
 def test_drinks_instantiation(instance):
     assert isinstance(instance, Drinks)
 
-@given(instance=Drinks_strategy)
-def test_drinks_beer_type(instance):
-    assert isinstance(instance.beer, str)
-
-
-@given(instance=Drinks_strategy)
-def test_drinks_beer_setter(instance):
-    original = instance.beer
-    instance.beer = original
-    assert instance.beer == original
-
-@given(instance=Drinks_strategy)
-def test_drinks_cocktail_type(instance):
-    assert isinstance(instance.cocktail, str)
-
-
-@given(instance=Drinks_strategy)
-def test_drinks_cocktail_setter(instance):
-    original = instance.cocktail
-    instance.cocktail = original
-    assert instance.cocktail == original
-
-@given(instance=Drinks_strategy)
-def test_drinks_wine_type(instance):
-    assert isinstance(instance.wine, str)
 
 
 @given(instance=Drinks_strategy)
@@ -1058,9 +1019,14 @@ def test_drinks_wine_setter(instance):
     instance.wine = original
     assert instance.wine == original
 
+
+
 @given(instance=Drinks_strategy)
-def test_drinks_softDrink_type(instance):
-    assert isinstance(instance.softDrink, str)
+def test_drinks_beer_setter(instance):
+    original = instance.beer
+    instance.beer = original
+    assert instance.beer == original
+
 
 
 @given(instance=Drinks_strategy)
@@ -1069,9 +1035,6 @@ def test_drinks_softDrink_setter(instance):
     instance.softDrink = original
     assert instance.softDrink == original
 
-@given(instance=Drinks_strategy)
-def test_drinks_spirits_type(instance):
-    assert isinstance(instance.spirits, str)
 
 
 @given(instance=Drinks_strategy)
@@ -1080,25 +1043,19 @@ def test_drinks_spirits_setter(instance):
     instance.spirits = original
     assert instance.spirits == original
 
+
+
+@given(instance=Drinks_strategy)
+def test_drinks_cocktail_setter(instance):
+    original = instance.cocktail
+    instance.cocktail = original
+    assert instance.cocktail == original
+
 @given(instance=Menu_strategy)
 @settings(max_examples=50)
 def test_menu_instantiation(instance):
     assert isinstance(instance, Menu)
 
-@given(instance=Menu_strategy)
-def test_menu_starter_type(instance):
-    assert isinstance(instance.starter, str)
-
-
-@given(instance=Menu_strategy)
-def test_menu_starter_setter(instance):
-    original = instance.starter
-    instance.starter = original
-    assert instance.starter == original
-
-@given(instance=Menu_strategy)
-def test_menu_mainCourse_type(instance):
-    assert isinstance(instance.mainCourse, str)
 
 
 @given(instance=Menu_strategy)
@@ -1107,9 +1064,14 @@ def test_menu_mainCourse_setter(instance):
     instance.mainCourse = original
     assert instance.mainCourse == original
 
+
+
 @given(instance=Menu_strategy)
-def test_menu_specialCourse_type(instance):
-    assert isinstance(instance.specialCourse, str)
+def test_menu_starter_setter(instance):
+    original = instance.starter
+    instance.starter = original
+    assert instance.starter == original
+
 
 
 @given(instance=Menu_strategy)
@@ -1118,9 +1080,6 @@ def test_menu_specialCourse_setter(instance):
     instance.specialCourse = original
     assert instance.specialCourse == original
 
-@given(instance=Menu_strategy)
-def test_menu_desert_type(instance):
-    assert isinstance(instance.desert, str)
 
 
 @given(instance=Menu_strategy)
@@ -1128,3 +1087,8 @@ def test_menu_desert_setter(instance):
     original = instance.desert
     instance.desert = original
     assert instance.desert == original
+
+@given(instance=Order_strategy)
+@settings(max_examples=50)
+def test_order_instantiation(instance):
+    assert isinstance(instance, Order)

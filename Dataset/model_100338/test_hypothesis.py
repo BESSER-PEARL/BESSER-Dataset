@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    YasperEPNML114::TransitionSpecific,
-    YasperEPNML114::Transformation,
-    YasperEPNML114::Roles,
-    YasperEPNML114::Role,
-    YasperEPNML114::ReferencePlaceSpecific,
-    YasperEPNML114::ProcessingTime,
+from python_code import (
+    YasperEPNML114_TransitionSpecific,
+    YasperEPNML114_Transformation,
+    YasperEPNML114_Roles,
+    YasperEPNML114_Role,
+    YasperEPNML114_ReferencePlaceSpecific,
+    YasperEPNML114_ProcessingTime,
     Place,
-    YasperEPNML114::PlaceType,
-    YasperEPNML114::Place,
-    YasperEPNML114::TransitionType,
-    YasperEPNML114::ReferencePlace,
-    YasperEPNML114::NodeGraphics,
-    YasperEPNML114::Page,
-    YasperEPNML114::Transition,
-    YasperEPNML114::Net,
-    YasperEPNML114::PlaceType1,
-    YasperEPNML114::NetGraphics,
-    YasperEPNML114::InitialMarking,
-    YasperEPNML114::DocumentRoot,
-    YasperEPNML114::Cost,
-    YasperEPNML114::Pnml,
-    YasperEPNML114::EStringToStringMapEntry,
-    YasperEPNML114::ConnectionWeight,
-    YasperEPNML114::ConnectionWeights,
-    YasperEPNML114::Stat,
-    YasperEPNML114::PnmlAnnotation,
-    YasperEPNML114::Inscription,
-    YasperEPNML114::EdgeGraphics,
-    YasperEPNML114::ToolspecificType,
-    YasperEPNML114::TwoDimVector,
-    YasperEPNML114::AnnotationGraphics,
-    YasperEPNML114::ArcType,
-    YasperEPNML114::Arc,
+    YasperEPNML114_PlaceType,
+    YasperEPNML114_Place,
+    YasperEPNML114_TransitionType,
+    YasperEPNML114_ReferencePlace,
+    YasperEPNML114_NodeGraphics,
+    YasperEPNML114_Page,
+    YasperEPNML114_Transition,
+    YasperEPNML114_Net,
+    YasperEPNML114_PlaceType1,
+    YasperEPNML114_NetGraphics,
+    YasperEPNML114_InitialMarking,
+    YasperEPNML114_DocumentRoot,
+    YasperEPNML114_Cost,
+    YasperEPNML114_Pnml,
+    YasperEPNML114_EStringToStringMapEntry,
+    YasperEPNML114_ConnectionWeight,
+    YasperEPNML114_ConnectionWeights,
+    YasperEPNML114_Stat,
+    YasperEPNML114_PnmlAnnotation,
+    YasperEPNML114_Inscription,
+    YasperEPNML114_EdgeGraphics,
+    YasperEPNML114_ToolspecificType,
+    YasperEPNML114_TwoDimVector,
+    YasperEPNML114_AnnotationGraphics,
+    YasperEPNML114_ArcType,
+    YasperEPNML114_Arc,
+    Version,
+    Tool,
     TextType2,
     TextType1,
-    Tool,
     TextTypeMember0,
-    Version,
 )
 
 # =============================================================================
@@ -52,67 +52,67 @@ from classes import (
 
 
 
-def test_yasperepnml114::transitionspecific_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::TransitionSpecific)
+def test_yasperepnml114_transitionspecific_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_TransitionSpecific)
 
 
-def test_yasperepnml114::transitionspecific_constructor_exists():
-    assert callable(YasperEPNML114::TransitionSpecific.__init__)
+def test_yasperepnml114_transitionspecific_constructor_exists():
+    assert callable(YasperEPNML114_TransitionSpecific.__init__)
 
 
-def test_yasperepnml114::transitionspecific_constructor_args():
-    sig = inspect.signature(YasperEPNML114::TransitionSpecific.__init__)
+def test_yasperepnml114_transitionspecific_constructor_args():
+    sig = inspect.signature(YasperEPNML114_TransitionSpecific.__init__)
     params = list(sig.parameters.keys())
-    assert "tokenCaseSensitive" in params, "Missing parameter 'tokenCaseSensitive'"
     assert "version" in params, "Missing parameter 'version'"
     assert "tool" in params, "Missing parameter 'tool'"
+    assert "tokenCaseSensitive" in params, "Missing parameter 'tokenCaseSensitive'"
 
-def test_yasperepnml114::transitionspecific_has_tokenCaseSensitive():
-    assert hasattr(YasperEPNML114::TransitionSpecific, "tokenCaseSensitive")
+def test_yasperepnml114_transitionspecific_has_version():
+    assert hasattr(YasperEPNML114_TransitionSpecific, "version")
     descriptor = None
-    for klass in YasperEPNML114::TransitionSpecific.__mro__:
+    for klass in YasperEPNML114_TransitionSpecific.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_transitionspecific_has_tool():
+    assert hasattr(YasperEPNML114_TransitionSpecific, "tool")
+    descriptor = None
+    for klass in YasperEPNML114_TransitionSpecific.__mro__:
+        if "tool" in klass.__dict__:
+            descriptor = klass.__dict__["tool"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_transitionspecific_has_tokenCaseSensitive():
+    assert hasattr(YasperEPNML114_TransitionSpecific, "tokenCaseSensitive")
+    descriptor = None
+    for klass in YasperEPNML114_TransitionSpecific.__mro__:
         if "tokenCaseSensitive" in klass.__dict__:
             descriptor = klass.__dict__["tokenCaseSensitive"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::transitionspecific_has_version():
-    assert hasattr(YasperEPNML114::TransitionSpecific, "version")
-    descriptor = None
-    for klass in YasperEPNML114::TransitionSpecific.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::transitionspecific_has_tool():
-    assert hasattr(YasperEPNML114::TransitionSpecific, "tool")
-    descriptor = None
-    for klass in YasperEPNML114::TransitionSpecific.__mro__:
-        if "tool" in klass.__dict__:
-            descriptor = klass.__dict__["tool"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_yasperepnml114::transformation_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Transformation)
-
-
-def test_yasperepnml114::transformation_constructor_exists():
-    assert callable(YasperEPNML114::Transformation.__init__)
+def test_yasperepnml114_transformation_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Transformation)
 
 
-def test_yasperepnml114::transformation_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Transformation.__init__)
+def test_yasperepnml114_transformation_constructor_exists():
+    assert callable(YasperEPNML114_Transformation.__init__)
+
+
+def test_yasperepnml114_transformation_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Transformation.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::transformation_has_text():
-    assert hasattr(YasperEPNML114::Transformation, "text")
+def test_yasperepnml114_transformation_has_text():
+    assert hasattr(YasperEPNML114_Transformation, "text")
     descriptor = None
-    for klass in YasperEPNML114::Transformation.__mro__:
+    for klass in YasperEPNML114_Transformation.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -120,37 +120,37 @@ def test_yasperepnml114::transformation_has_text():
 
 
 
-def test_yasperepnml114::roles_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Roles)
+def test_yasperepnml114_roles_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Roles)
 
 
-def test_yasperepnml114::roles_constructor_exists():
-    assert callable(YasperEPNML114::Roles.__init__)
+def test_yasperepnml114_roles_constructor_exists():
+    assert callable(YasperEPNML114_Roles.__init__)
 
 
-def test_yasperepnml114::roles_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Roles.__init__)
+def test_yasperepnml114_roles_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Roles.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::role_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Role)
+def test_yasperepnml114_role_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Role)
 
 
-def test_yasperepnml114::role_constructor_exists():
-    assert callable(YasperEPNML114::Role.__init__)
+def test_yasperepnml114_role_constructor_exists():
+    assert callable(YasperEPNML114_Role.__init__)
 
 
-def test_yasperepnml114::role_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Role.__init__)
+def test_yasperepnml114_role_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Role.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::role_has_text():
-    assert hasattr(YasperEPNML114::Role, "text")
+def test_yasperepnml114_role_has_text():
+    assert hasattr(YasperEPNML114_Role, "text")
     descriptor = None
-    for klass in YasperEPNML114::Role.__mro__:
+    for klass in YasperEPNML114_Role.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -158,50 +158,50 @@ def test_yasperepnml114::role_has_text():
 
 
 
-def test_yasperepnml114::referenceplacespecific_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ReferencePlaceSpecific)
+def test_yasperepnml114_referenceplacespecific_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ReferencePlaceSpecific)
 
 
-def test_yasperepnml114::referenceplacespecific_constructor_exists():
-    assert callable(YasperEPNML114::ReferencePlaceSpecific.__init__)
+def test_yasperepnml114_referenceplacespecific_constructor_exists():
+    assert callable(YasperEPNML114_ReferencePlaceSpecific.__init__)
 
 
-def test_yasperepnml114::referenceplacespecific_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ReferencePlaceSpecific.__init__)
+def test_yasperepnml114_referenceplacespecific_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ReferencePlaceSpecific.__init__)
     params = list(sig.parameters.keys())
-    assert "tool" in params, "Missing parameter 'tool'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "tool" in params, "Missing parameter 'tool'"
 
-def test_yasperepnml114::referenceplacespecific_has_tool():
-    assert hasattr(YasperEPNML114::ReferencePlaceSpecific, "tool")
+def test_yasperepnml114_referenceplacespecific_has_version():
+    assert hasattr(YasperEPNML114_ReferencePlaceSpecific, "version")
     descriptor = None
-    for klass in YasperEPNML114::ReferencePlaceSpecific.__mro__:
-        if "tool" in klass.__dict__:
-            descriptor = klass.__dict__["tool"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::referenceplacespecific_has_version():
-    assert hasattr(YasperEPNML114::ReferencePlaceSpecific, "version")
-    descriptor = None
-    for klass in YasperEPNML114::ReferencePlaceSpecific.__mro__:
+    for klass in YasperEPNML114_ReferencePlaceSpecific.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
+def test_yasperepnml114_referenceplacespecific_has_tool():
+    assert hasattr(YasperEPNML114_ReferencePlaceSpecific, "tool")
+    descriptor = None
+    for klass in YasperEPNML114_ReferencePlaceSpecific.__mro__:
+        if "tool" in klass.__dict__:
+            descriptor = klass.__dict__["tool"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_yasperepnml114::processingtime_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ProcessingTime)
+
+def test_yasperepnml114_processingtime_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ProcessingTime)
 
 
-def test_yasperepnml114::processingtime_constructor_exists():
-    assert callable(YasperEPNML114::ProcessingTime.__init__)
+def test_yasperepnml114_processingtime_constructor_exists():
+    assert callable(YasperEPNML114_ProcessingTime.__init__)
 
 
-def test_yasperepnml114::processingtime_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ProcessingTime.__init__)
+def test_yasperepnml114_processingtime_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ProcessingTime.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -220,23 +220,23 @@ def test_place_constructor_args():
 
 
 
-def test_yasperepnml114::placetype_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::PlaceType)
+def test_yasperepnml114_placetype_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_PlaceType)
 
 
-def test_yasperepnml114::placetype_constructor_exists():
-    assert callable(YasperEPNML114::PlaceType.__init__)
+def test_yasperepnml114_placetype_constructor_exists():
+    assert callable(YasperEPNML114_PlaceType.__init__)
 
 
-def test_yasperepnml114::placetype_constructor_args():
-    sig = inspect.signature(YasperEPNML114::PlaceType.__init__)
+def test_yasperepnml114_placetype_constructor_args():
+    sig = inspect.signature(YasperEPNML114_PlaceType.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::placetype_has_text():
-    assert hasattr(YasperEPNML114::PlaceType, "text")
+def test_yasperepnml114_placetype_has_text():
+    assert hasattr(YasperEPNML114_PlaceType, "text")
     descriptor = None
-    for klass in YasperEPNML114::PlaceType.__mro__:
+    for klass in YasperEPNML114_PlaceType.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -244,33 +244,33 @@ def test_yasperepnml114::placetype_has_text():
 
 
 
-def test_yasperepnml114::place_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Place)
+def test_yasperepnml114_place_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Place)
 
 
-def test_yasperepnml114::place_constructor_exists():
-    assert callable(YasperEPNML114::Place.__init__)
+def test_yasperepnml114_place_constructor_exists():
+    assert callable(YasperEPNML114_Place.__init__)
 
 
-def test_yasperepnml114::place_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Place.__init__)
+def test_yasperepnml114_place_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Place.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "group" in params, "Missing parameter 'group'"
 
-def test_yasperepnml114::place_has_id():
-    assert hasattr(YasperEPNML114::Place, "id")
+def test_yasperepnml114_place_has_id():
+    assert hasattr(YasperEPNML114_Place, "id")
     descriptor = None
-    for klass in YasperEPNML114::Place.__mro__:
+    for klass in YasperEPNML114_Place.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::place_has_group():
-    assert hasattr(YasperEPNML114::Place, "group")
+def test_yasperepnml114_place_has_group():
+    assert hasattr(YasperEPNML114_Place, "group")
     descriptor = None
-    for klass in YasperEPNML114::Place.__mro__:
+    for klass in YasperEPNML114_Place.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -278,23 +278,23 @@ def test_yasperepnml114::place_has_group():
 
 
 
-def test_yasperepnml114::transitiontype_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::TransitionType)
+def test_yasperepnml114_transitiontype_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_TransitionType)
 
 
-def test_yasperepnml114::transitiontype_constructor_exists():
-    assert callable(YasperEPNML114::TransitionType.__init__)
+def test_yasperepnml114_transitiontype_constructor_exists():
+    assert callable(YasperEPNML114_TransitionType.__init__)
 
 
-def test_yasperepnml114::transitiontype_constructor_args():
-    sig = inspect.signature(YasperEPNML114::TransitionType.__init__)
+def test_yasperepnml114_transitiontype_constructor_args():
+    sig = inspect.signature(YasperEPNML114_TransitionType.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::transitiontype_has_text():
-    assert hasattr(YasperEPNML114::TransitionType, "text")
+def test_yasperepnml114_transitiontype_has_text():
+    assert hasattr(YasperEPNML114_TransitionType, "text")
     descriptor = None
-    for klass in YasperEPNML114::TransitionType.__mro__:
+    for klass in YasperEPNML114_TransitionType.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -302,101 +302,67 @@ def test_yasperepnml114::transitiontype_has_text():
 
 
 
-def test_yasperepnml114::referenceplace_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ReferencePlace)
+def test_yasperepnml114_referenceplace_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ReferencePlace)
 
 
-def test_yasperepnml114::referenceplace_constructor_exists():
-    assert callable(YasperEPNML114::ReferencePlace.__init__)
+def test_yasperepnml114_referenceplace_constructor_exists():
+    assert callable(YasperEPNML114_ReferencePlace.__init__)
 
 
-def test_yasperepnml114::referenceplace_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ReferencePlace.__init__)
+def test_yasperepnml114_referenceplace_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ReferencePlace.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "group" in params, "Missing parameter 'group'"
     assert "ref" in params, "Missing parameter 'ref'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_yasperepnml114::referenceplace_has_id():
-    assert hasattr(YasperEPNML114::ReferencePlace, "id")
+def test_yasperepnml114_referenceplace_has_group():
+    assert hasattr(YasperEPNML114_ReferencePlace, "group")
     descriptor = None
-    for klass in YasperEPNML114::ReferencePlace.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::referenceplace_has_group():
-    assert hasattr(YasperEPNML114::ReferencePlace, "group")
-    descriptor = None
-    for klass in YasperEPNML114::ReferencePlace.__mro__:
+    for klass in YasperEPNML114_ReferencePlace.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::referenceplace_has_ref():
-    assert hasattr(YasperEPNML114::ReferencePlace, "ref")
+def test_yasperepnml114_referenceplace_has_ref():
+    assert hasattr(YasperEPNML114_ReferencePlace, "ref")
     descriptor = None
-    for klass in YasperEPNML114::ReferencePlace.__mro__:
+    for klass in YasperEPNML114_ReferencePlace.__mro__:
         if "ref" in klass.__dict__:
             descriptor = klass.__dict__["ref"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_yasperepnml114::nodegraphics_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::NodeGraphics)
-
-
-def test_yasperepnml114::nodegraphics_constructor_exists():
-    assert callable(YasperEPNML114::NodeGraphics.__init__)
-
-
-def test_yasperepnml114::nodegraphics_constructor_args():
-    sig = inspect.signature(YasperEPNML114::NodeGraphics.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_yasperepnml114::nodegraphics_has_group():
-    assert hasattr(YasperEPNML114::NodeGraphics, "group")
+def test_yasperepnml114_referenceplace_has_id():
+    assert hasattr(YasperEPNML114_ReferencePlace, "id")
     descriptor = None
-    for klass in YasperEPNML114::NodeGraphics.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_yasperepnml114::page_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Page)
-
-
-def test_yasperepnml114::page_constructor_exists():
-    assert callable(YasperEPNML114::Page.__init__)
-
-
-def test_yasperepnml114::page_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Page.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_yasperepnml114::page_has_id():
-    assert hasattr(YasperEPNML114::Page, "id")
-    descriptor = None
-    for klass in YasperEPNML114::Page.__mro__:
+    for klass in YasperEPNML114_ReferencePlace.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::page_has_group():
-    assert hasattr(YasperEPNML114::Page, "group")
+
+
+def test_yasperepnml114_nodegraphics_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_NodeGraphics)
+
+
+def test_yasperepnml114_nodegraphics_constructor_exists():
+    assert callable(YasperEPNML114_NodeGraphics.__init__)
+
+
+def test_yasperepnml114_nodegraphics_constructor_args():
+    sig = inspect.signature(YasperEPNML114_NodeGraphics.__init__)
+    params = list(sig.parameters.keys())
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_yasperepnml114_nodegraphics_has_group():
+    assert hasattr(YasperEPNML114_NodeGraphics, "group")
     descriptor = None
-    for klass in YasperEPNML114::Page.__mro__:
+    for klass in YasperEPNML114_NodeGraphics.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -404,33 +370,67 @@ def test_yasperepnml114::page_has_group():
 
 
 
-def test_yasperepnml114::transition_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Transition)
+def test_yasperepnml114_page_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Page)
 
 
-def test_yasperepnml114::transition_constructor_exists():
-    assert callable(YasperEPNML114::Transition.__init__)
+def test_yasperepnml114_page_constructor_exists():
+    assert callable(YasperEPNML114_Page.__init__)
 
 
-def test_yasperepnml114::transition_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Transition.__init__)
+def test_yasperepnml114_page_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Page.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "group" in params, "Missing parameter 'group'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_yasperepnml114::transition_has_id():
-    assert hasattr(YasperEPNML114::Transition, "id")
+def test_yasperepnml114_page_has_group():
+    assert hasattr(YasperEPNML114_Page, "group")
     descriptor = None
-    for klass in YasperEPNML114::Transition.__mro__:
+    for klass in YasperEPNML114_Page.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_page_has_id():
+    assert hasattr(YasperEPNML114_Page, "id")
+    descriptor = None
+    for klass in YasperEPNML114_Page.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::transition_has_group():
-    assert hasattr(YasperEPNML114::Transition, "group")
+
+
+def test_yasperepnml114_transition_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Transition)
+
+
+def test_yasperepnml114_transition_constructor_exists():
+    assert callable(YasperEPNML114_Transition.__init__)
+
+
+def test_yasperepnml114_transition_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Transition.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_yasperepnml114_transition_has_id():
+    assert hasattr(YasperEPNML114_Transition, "id")
     descriptor = None
-    for klass in YasperEPNML114::Transition.__mro__:
+    for klass in YasperEPNML114_Transition.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_transition_has_group():
+    assert hasattr(YasperEPNML114_Transition, "group")
+    descriptor = None
+    for klass in YasperEPNML114_Transition.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -438,43 +438,43 @@ def test_yasperepnml114::transition_has_group():
 
 
 
-def test_yasperepnml114::net_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Net)
+def test_yasperepnml114_net_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Net)
 
 
-def test_yasperepnml114::net_constructor_exists():
-    assert callable(YasperEPNML114::Net.__init__)
+def test_yasperepnml114_net_constructor_exists():
+    assert callable(YasperEPNML114_Net.__init__)
 
 
-def test_yasperepnml114::net_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Net.__init__)
+def test_yasperepnml114_net_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Net.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "group" in params, "Missing parameter 'group'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_yasperepnml114::net_has_id():
-    assert hasattr(YasperEPNML114::Net, "id")
+def test_yasperepnml114_net_has_group():
+    assert hasattr(YasperEPNML114_Net, "group")
     descriptor = None
-    for klass in YasperEPNML114::Net.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::net_has_group():
-    assert hasattr(YasperEPNML114::Net, "group")
-    descriptor = None
-    for klass in YasperEPNML114::Net.__mro__:
+    for klass in YasperEPNML114_Net.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::net_has_type():
-    assert hasattr(YasperEPNML114::Net, "type")
+def test_yasperepnml114_net_has_id():
+    assert hasattr(YasperEPNML114_Net, "id")
     descriptor = None
-    for klass in YasperEPNML114::Net.__mro__:
+    for klass in YasperEPNML114_Net.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_net_has_type():
+    assert hasattr(YasperEPNML114_Net, "type")
+    descriptor = None
+    for klass in YasperEPNML114_Net.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -482,37 +482,37 @@ def test_yasperepnml114::net_has_type():
 
 
 
-def test_yasperepnml114::placetype1_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::PlaceType1)
+def test_yasperepnml114_placetype1_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_PlaceType1)
 
 
-def test_yasperepnml114::placetype1_constructor_exists():
-    assert callable(YasperEPNML114::PlaceType1.__init__)
+def test_yasperepnml114_placetype1_constructor_exists():
+    assert callable(YasperEPNML114_PlaceType1.__init__)
 
 
-def test_yasperepnml114::placetype1_constructor_args():
-    sig = inspect.signature(YasperEPNML114::PlaceType1.__init__)
+def test_yasperepnml114_placetype1_constructor_args():
+    sig = inspect.signature(YasperEPNML114_PlaceType1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::netgraphics_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::NetGraphics)
+def test_yasperepnml114_netgraphics_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_NetGraphics)
 
 
-def test_yasperepnml114::netgraphics_constructor_exists():
-    assert callable(YasperEPNML114::NetGraphics.__init__)
+def test_yasperepnml114_netgraphics_constructor_exists():
+    assert callable(YasperEPNML114_NetGraphics.__init__)
 
 
-def test_yasperepnml114::netgraphics_constructor_args():
-    sig = inspect.signature(YasperEPNML114::NetGraphics.__init__)
+def test_yasperepnml114_netgraphics_constructor_args():
+    sig = inspect.signature(YasperEPNML114_NetGraphics.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
 
-def test_yasperepnml114::netgraphics_has_group():
-    assert hasattr(YasperEPNML114::NetGraphics, "group")
+def test_yasperepnml114_netgraphics_has_group():
+    assert hasattr(YasperEPNML114_NetGraphics, "group")
     descriptor = None
-    for klass in YasperEPNML114::NetGraphics.__mro__:
+    for klass in YasperEPNML114_NetGraphics.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -520,23 +520,23 @@ def test_yasperepnml114::netgraphics_has_group():
 
 
 
-def test_yasperepnml114::initialmarking_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::InitialMarking)
+def test_yasperepnml114_initialmarking_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_InitialMarking)
 
 
-def test_yasperepnml114::initialmarking_constructor_exists():
-    assert callable(YasperEPNML114::InitialMarking.__init__)
+def test_yasperepnml114_initialmarking_constructor_exists():
+    assert callable(YasperEPNML114_InitialMarking.__init__)
 
 
-def test_yasperepnml114::initialmarking_constructor_args():
-    sig = inspect.signature(YasperEPNML114::InitialMarking.__init__)
+def test_yasperepnml114_initialmarking_constructor_args():
+    sig = inspect.signature(YasperEPNML114_InitialMarking.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::initialmarking_has_text():
-    assert hasattr(YasperEPNML114::InitialMarking, "text")
+def test_yasperepnml114_initialmarking_has_text():
+    assert hasattr(YasperEPNML114_InitialMarking, "text")
     descriptor = None
-    for klass in YasperEPNML114::InitialMarking.__mro__:
+    for klass in YasperEPNML114_InitialMarking.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -544,23 +544,23 @@ def test_yasperepnml114::initialmarking_has_text():
 
 
 
-def test_yasperepnml114::documentroot_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::DocumentRoot)
+def test_yasperepnml114_documentroot_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_DocumentRoot)
 
 
-def test_yasperepnml114::documentroot_constructor_exists():
-    assert callable(YasperEPNML114::DocumentRoot.__init__)
+def test_yasperepnml114_documentroot_constructor_exists():
+    assert callable(YasperEPNML114_DocumentRoot.__init__)
 
 
-def test_yasperepnml114::documentroot_constructor_args():
-    sig = inspect.signature(YasperEPNML114::DocumentRoot.__init__)
+def test_yasperepnml114_documentroot_constructor_args():
+    sig = inspect.signature(YasperEPNML114_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_yasperepnml114::documentroot_has_mixed():
-    assert hasattr(YasperEPNML114::DocumentRoot, "mixed")
+def test_yasperepnml114_documentroot_has_mixed():
+    assert hasattr(YasperEPNML114_DocumentRoot, "mixed")
     descriptor = None
-    for klass in YasperEPNML114::DocumentRoot.__mro__:
+    for klass in YasperEPNML114_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -568,37 +568,37 @@ def test_yasperepnml114::documentroot_has_mixed():
 
 
 
-def test_yasperepnml114::cost_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Cost)
+def test_yasperepnml114_cost_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Cost)
 
 
-def test_yasperepnml114::cost_constructor_exists():
-    assert callable(YasperEPNML114::Cost.__init__)
+def test_yasperepnml114_cost_constructor_exists():
+    assert callable(YasperEPNML114_Cost.__init__)
 
 
-def test_yasperepnml114::cost_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Cost.__init__)
+def test_yasperepnml114_cost_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Cost.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::pnml_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Pnml)
+def test_yasperepnml114_pnml_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Pnml)
 
 
-def test_yasperepnml114::pnml_constructor_exists():
-    assert callable(YasperEPNML114::Pnml.__init__)
+def test_yasperepnml114_pnml_constructor_exists():
+    assert callable(YasperEPNML114_Pnml.__init__)
 
 
-def test_yasperepnml114::pnml_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Pnml.__init__)
+def test_yasperepnml114_pnml_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Pnml.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
 
-def test_yasperepnml114::pnml_has_group():
-    assert hasattr(YasperEPNML114::Pnml, "group")
+def test_yasperepnml114_pnml_has_group():
+    assert hasattr(YasperEPNML114_Pnml, "group")
     descriptor = None
-    for klass in YasperEPNML114::Pnml.__mro__:
+    for klass in YasperEPNML114_Pnml.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -606,37 +606,37 @@ def test_yasperepnml114::pnml_has_group():
 
 
 
-def test_yasperepnml114::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::EStringToStringMapEntry)
+def test_yasperepnml114_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_EStringToStringMapEntry)
 
 
-def test_yasperepnml114::estringtostringmapentry_constructor_exists():
-    assert callable(YasperEPNML114::EStringToStringMapEntry.__init__)
+def test_yasperepnml114_estringtostringmapentry_constructor_exists():
+    assert callable(YasperEPNML114_EStringToStringMapEntry.__init__)
 
 
-def test_yasperepnml114::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(YasperEPNML114::EStringToStringMapEntry.__init__)
+def test_yasperepnml114_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(YasperEPNML114_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::connectionweight_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ConnectionWeight)
+def test_yasperepnml114_connectionweight_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ConnectionWeight)
 
 
-def test_yasperepnml114::connectionweight_constructor_exists():
-    assert callable(YasperEPNML114::ConnectionWeight.__init__)
+def test_yasperepnml114_connectionweight_constructor_exists():
+    assert callable(YasperEPNML114_ConnectionWeight.__init__)
 
 
-def test_yasperepnml114::connectionweight_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ConnectionWeight.__init__)
+def test_yasperepnml114_connectionweight_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ConnectionWeight.__init__)
     params = list(sig.parameters.keys())
     assert "connection" in params, "Missing parameter 'connection'"
 
-def test_yasperepnml114::connectionweight_has_connection():
-    assert hasattr(YasperEPNML114::ConnectionWeight, "connection")
+def test_yasperepnml114_connectionweight_has_connection():
+    assert hasattr(YasperEPNML114_ConnectionWeight, "connection")
     descriptor = None
-    for klass in YasperEPNML114::ConnectionWeight.__mro__:
+    for klass in YasperEPNML114_ConnectionWeight.__mro__:
         if "connection" in klass.__dict__:
             descriptor = klass.__dict__["connection"]
             break
@@ -644,37 +644,37 @@ def test_yasperepnml114::connectionweight_has_connection():
 
 
 
-def test_yasperepnml114::connectionweights_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ConnectionWeights)
+def test_yasperepnml114_connectionweights_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ConnectionWeights)
 
 
-def test_yasperepnml114::connectionweights_constructor_exists():
-    assert callable(YasperEPNML114::ConnectionWeights.__init__)
+def test_yasperepnml114_connectionweights_constructor_exists():
+    assert callable(YasperEPNML114_ConnectionWeights.__init__)
 
 
-def test_yasperepnml114::connectionweights_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ConnectionWeights.__init__)
+def test_yasperepnml114_connectionweights_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ConnectionWeights.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::stat_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Stat)
+def test_yasperepnml114_stat_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Stat)
 
 
-def test_yasperepnml114::stat_constructor_exists():
-    assert callable(YasperEPNML114::Stat.__init__)
+def test_yasperepnml114_stat_constructor_exists():
+    assert callable(YasperEPNML114_Stat.__init__)
 
 
-def test_yasperepnml114::stat_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Stat.__init__)
+def test_yasperepnml114_stat_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Stat.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::stat_has_text():
-    assert hasattr(YasperEPNML114::Stat, "text")
+def test_yasperepnml114_stat_has_text():
+    assert hasattr(YasperEPNML114_Stat, "text")
     descriptor = None
-    for klass in YasperEPNML114::Stat.__mro__:
+    for klass in YasperEPNML114_Stat.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -682,23 +682,23 @@ def test_yasperepnml114::stat_has_text():
 
 
 
-def test_yasperepnml114::pnmlannotation_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::PnmlAnnotation)
+def test_yasperepnml114_pnmlannotation_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_PnmlAnnotation)
 
 
-def test_yasperepnml114::pnmlannotation_constructor_exists():
-    assert callable(YasperEPNML114::PnmlAnnotation.__init__)
+def test_yasperepnml114_pnmlannotation_constructor_exists():
+    assert callable(YasperEPNML114_PnmlAnnotation.__init__)
 
 
-def test_yasperepnml114::pnmlannotation_constructor_args():
-    sig = inspect.signature(YasperEPNML114::PnmlAnnotation.__init__)
+def test_yasperepnml114_pnmlannotation_constructor_args():
+    sig = inspect.signature(YasperEPNML114_PnmlAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::pnmlannotation_has_text():
-    assert hasattr(YasperEPNML114::PnmlAnnotation, "text")
+def test_yasperepnml114_pnmlannotation_has_text():
+    assert hasattr(YasperEPNML114_PnmlAnnotation, "text")
     descriptor = None
-    for klass in YasperEPNML114::PnmlAnnotation.__mro__:
+    for klass in YasperEPNML114_PnmlAnnotation.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -706,23 +706,23 @@ def test_yasperepnml114::pnmlannotation_has_text():
 
 
 
-def test_yasperepnml114::inscription_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Inscription)
+def test_yasperepnml114_inscription_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Inscription)
 
 
-def test_yasperepnml114::inscription_constructor_exists():
-    assert callable(YasperEPNML114::Inscription.__init__)
+def test_yasperepnml114_inscription_constructor_exists():
+    assert callable(YasperEPNML114_Inscription.__init__)
 
 
-def test_yasperepnml114::inscription_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Inscription.__init__)
+def test_yasperepnml114_inscription_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Inscription.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::inscription_has_text():
-    assert hasattr(YasperEPNML114::Inscription, "text")
+def test_yasperepnml114_inscription_has_text():
+    assert hasattr(YasperEPNML114_Inscription, "text")
     descriptor = None
-    for klass in YasperEPNML114::Inscription.__mro__:
+    for klass in YasperEPNML114_Inscription.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -730,77 +730,77 @@ def test_yasperepnml114::inscription_has_text():
 
 
 
-def test_yasperepnml114::edgegraphics_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::EdgeGraphics)
+def test_yasperepnml114_edgegraphics_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_EdgeGraphics)
 
 
-def test_yasperepnml114::edgegraphics_constructor_exists():
-    assert callable(YasperEPNML114::EdgeGraphics.__init__)
+def test_yasperepnml114_edgegraphics_constructor_exists():
+    assert callable(YasperEPNML114_EdgeGraphics.__init__)
 
 
-def test_yasperepnml114::edgegraphics_constructor_args():
-    sig = inspect.signature(YasperEPNML114::EdgeGraphics.__init__)
+def test_yasperepnml114_edgegraphics_constructor_args():
+    sig = inspect.signature(YasperEPNML114_EdgeGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::toolspecifictype_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ToolspecificType)
+def test_yasperepnml114_toolspecifictype_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ToolspecificType)
 
 
-def test_yasperepnml114::toolspecifictype_constructor_exists():
-    assert callable(YasperEPNML114::ToolspecificType.__init__)
+def test_yasperepnml114_toolspecifictype_constructor_exists():
+    assert callable(YasperEPNML114_ToolspecificType.__init__)
 
 
-def test_yasperepnml114::toolspecifictype_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ToolspecificType.__init__)
+def test_yasperepnml114_toolspecifictype_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ToolspecificType.__init__)
     params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "version" in params, "Missing parameter 'version'"
-    assert "any" in params, "Missing parameter 'any'"
     assert "tool" in params, "Missing parameter 'tool'"
+    assert "version" in params, "Missing parameter 'version'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "any" in params, "Missing parameter 'any'"
     assert "group" in params, "Missing parameter 'group'"
 
-def test_yasperepnml114::toolspecifictype_has_mixed():
-    assert hasattr(YasperEPNML114::ToolspecificType, "mixed")
+def test_yasperepnml114_toolspecifictype_has_tool():
+    assert hasattr(YasperEPNML114_ToolspecificType, "tool")
     descriptor = None
-    for klass in YasperEPNML114::ToolspecificType.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::toolspecifictype_has_version():
-    assert hasattr(YasperEPNML114::ToolspecificType, "version")
-    descriptor = None
-    for klass in YasperEPNML114::ToolspecificType.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::toolspecifictype_has_any():
-    assert hasattr(YasperEPNML114::ToolspecificType, "any")
-    descriptor = None
-    for klass in YasperEPNML114::ToolspecificType.__mro__:
-        if "any" in klass.__dict__:
-            descriptor = klass.__dict__["any"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::toolspecifictype_has_tool():
-    assert hasattr(YasperEPNML114::ToolspecificType, "tool")
-    descriptor = None
-    for klass in YasperEPNML114::ToolspecificType.__mro__:
+    for klass in YasperEPNML114_ToolspecificType.__mro__:
         if "tool" in klass.__dict__:
             descriptor = klass.__dict__["tool"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::toolspecifictype_has_group():
-    assert hasattr(YasperEPNML114::ToolspecificType, "group")
+def test_yasperepnml114_toolspecifictype_has_version():
+    assert hasattr(YasperEPNML114_ToolspecificType, "version")
     descriptor = None
-    for klass in YasperEPNML114::ToolspecificType.__mro__:
+    for klass in YasperEPNML114_ToolspecificType.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_toolspecifictype_has_mixed():
+    assert hasattr(YasperEPNML114_ToolspecificType, "mixed")
+    descriptor = None
+    for klass in YasperEPNML114_ToolspecificType.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_toolspecifictype_has_any():
+    assert hasattr(YasperEPNML114_ToolspecificType, "any")
+    descriptor = None
+    for klass in YasperEPNML114_ToolspecificType.__mro__:
+        if "any" in klass.__dict__:
+            descriptor = klass.__dict__["any"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yasperepnml114_toolspecifictype_has_group():
+    assert hasattr(YasperEPNML114_ToolspecificType, "group")
+    descriptor = None
+    for klass in YasperEPNML114_ToolspecificType.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -808,71 +808,71 @@ def test_yasperepnml114::toolspecifictype_has_group():
 
 
 
-def test_yasperepnml114::twodimvector_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::TwoDimVector)
+def test_yasperepnml114_twodimvector_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_TwoDimVector)
 
 
-def test_yasperepnml114::twodimvector_constructor_exists():
-    assert callable(YasperEPNML114::TwoDimVector.__init__)
+def test_yasperepnml114_twodimvector_constructor_exists():
+    assert callable(YasperEPNML114_TwoDimVector.__init__)
 
 
-def test_yasperepnml114::twodimvector_constructor_args():
-    sig = inspect.signature(YasperEPNML114::TwoDimVector.__init__)
+def test_yasperepnml114_twodimvector_constructor_args():
+    sig = inspect.signature(YasperEPNML114_TwoDimVector.__init__)
     params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
 
-def test_yasperepnml114::twodimvector_has_x():
-    assert hasattr(YasperEPNML114::TwoDimVector, "x")
+def test_yasperepnml114_twodimvector_has_y():
+    assert hasattr(YasperEPNML114_TwoDimVector, "y")
     descriptor = None
-    for klass in YasperEPNML114::TwoDimVector.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yasperepnml114::twodimvector_has_y():
-    assert hasattr(YasperEPNML114::TwoDimVector, "y")
-    descriptor = None
-    for klass in YasperEPNML114::TwoDimVector.__mro__:
+    for klass in YasperEPNML114_TwoDimVector.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
+def test_yasperepnml114_twodimvector_has_x():
+    assert hasattr(YasperEPNML114_TwoDimVector, "x")
+    descriptor = None
+    for klass in YasperEPNML114_TwoDimVector.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_yasperepnml114::annotationgraphics_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::AnnotationGraphics)
+
+def test_yasperepnml114_annotationgraphics_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_AnnotationGraphics)
 
 
-def test_yasperepnml114::annotationgraphics_constructor_exists():
-    assert callable(YasperEPNML114::AnnotationGraphics.__init__)
+def test_yasperepnml114_annotationgraphics_constructor_exists():
+    assert callable(YasperEPNML114_AnnotationGraphics.__init__)
 
 
-def test_yasperepnml114::annotationgraphics_constructor_args():
-    sig = inspect.signature(YasperEPNML114::AnnotationGraphics.__init__)
+def test_yasperepnml114_annotationgraphics_constructor_args():
+    sig = inspect.signature(YasperEPNML114_AnnotationGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yasperepnml114::arctype_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::ArcType)
+def test_yasperepnml114_arctype_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_ArcType)
 
 
-def test_yasperepnml114::arctype_constructor_exists():
-    assert callable(YasperEPNML114::ArcType.__init__)
+def test_yasperepnml114_arctype_constructor_exists():
+    assert callable(YasperEPNML114_ArcType.__init__)
 
 
-def test_yasperepnml114::arctype_constructor_args():
-    sig = inspect.signature(YasperEPNML114::ArcType.__init__)
+def test_yasperepnml114_arctype_constructor_args():
+    sig = inspect.signature(YasperEPNML114_ArcType.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yasperepnml114::arctype_has_text():
-    assert hasattr(YasperEPNML114::ArcType, "text")
+def test_yasperepnml114_arctype_has_text():
+    assert hasattr(YasperEPNML114_ArcType, "text")
     descriptor = None
-    for klass in YasperEPNML114::ArcType.__mro__:
+    for klass in YasperEPNML114_ArcType.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -880,57 +880,85 @@ def test_yasperepnml114::arctype_has_text():
 
 
 
-def test_yasperepnml114::arc_is_not_abstract():
-    assert not inspect.isabstract(YasperEPNML114::Arc)
+def test_yasperepnml114_arc_is_not_abstract():
+    assert not inspect.isabstract(YasperEPNML114_Arc)
 
 
-def test_yasperepnml114::arc_constructor_exists():
-    assert callable(YasperEPNML114::Arc.__init__)
+def test_yasperepnml114_arc_constructor_exists():
+    assert callable(YasperEPNML114_Arc.__init__)
 
 
-def test_yasperepnml114::arc_constructor_args():
-    sig = inspect.signature(YasperEPNML114::Arc.__init__)
+def test_yasperepnml114_arc_constructor_args():
+    sig = inspect.signature(YasperEPNML114_Arc.__init__)
     params = list(sig.parameters.keys())
     assert "source" in params, "Missing parameter 'source'"
-    assert "group" in params, "Missing parameter 'group'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "target" in params, "Missing parameter 'target'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "group" in params, "Missing parameter 'group'"
 
-def test_yasperepnml114::arc_has_source():
-    assert hasattr(YasperEPNML114::Arc, "source")
+def test_yasperepnml114_arc_has_source():
+    assert hasattr(YasperEPNML114_Arc, "source")
     descriptor = None
-    for klass in YasperEPNML114::Arc.__mro__:
+    for klass in YasperEPNML114_Arc.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::arc_has_group():
-    assert hasattr(YasperEPNML114::Arc, "group")
+def test_yasperepnml114_arc_has_target():
+    assert hasattr(YasperEPNML114_Arc, "target")
     descriptor = None
-    for klass in YasperEPNML114::Arc.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
+    for klass in YasperEPNML114_Arc.__mro__:
+        if "target" in klass.__dict__:
+            descriptor = klass.__dict__["target"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::arc_has_id():
-    assert hasattr(YasperEPNML114::Arc, "id")
+def test_yasperepnml114_arc_has_id():
+    assert hasattr(YasperEPNML114_Arc, "id")
     descriptor = None
-    for klass in YasperEPNML114::Arc.__mro__:
+    for klass in YasperEPNML114_Arc.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_yasperepnml114::arc_has_target():
-    assert hasattr(YasperEPNML114::Arc, "target")
+def test_yasperepnml114_arc_has_group():
+    assert hasattr(YasperEPNML114_Arc, "group")
     descriptor = None
-    for klass in YasperEPNML114::Arc.__mro__:
-        if "target" in klass.__dict__:
-            descriptor = klass.__dict__["target"]
+    for klass in YasperEPNML114_Arc.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
+
+def test_version_exists():
+    # Check that the Enumeration exists
+    assert Version is not None
+
+def test_version_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Version]
+    expected_literals = [
+        "_1",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Version"
+
+def test_tool_exists():
+    # Check that the Enumeration exists
+    assert Tool is not None
+
+def test_tool_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Tool]
+    expected_literals = [
+        "Yasper",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Tool"
 
 def test_texttype2_exists():
     # Check that the Enumeration exists
@@ -955,26 +983,12 @@ def test_texttype1_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TextType1]
     expected_literals = [
-        "XOR",
         "AND",
+        "XOR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TextType1"
-
-def test_tool_exists():
-    # Check that the Enumeration exists
-    assert Tool is not None
-
-def test_tool_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Tool]
-    expected_literals = [
-        "Yasper",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Tool"
 
 def test_texttypemember0_exists():
     # Check that the Enumeration exists
@@ -984,29 +998,15 @@ def test_texttypemember0_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TextTypeMember0]
     expected_literals = [
-        "inflow",
-        "inhibitor",
         "reset",
+        "inhibitor",
+        "inflow",
         "outflow",
         "biflow",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TextTypeMember0"
-
-def test_version_exists():
-    # Check that the Enumeration exists
-    assert Version is not None
-
-def test_version_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Version]
-    expected_literals = [
-        "_1",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Version"
 
 
 # =============================================================================
@@ -1020,813 +1020,687 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-YasperEPNML114::TransitionSpecific_strategy = st.builds(
-    YasperEPNML114::TransitionSpecific,
+YasperEPNML114_TransitionSpecific_strategy = st.builds(
+    YasperEPNML114_TransitionSpecific,
+    version=
+        safe_text,
+    tool=
+        safe_text,
     tokenCaseSensitive=
-        safe_text,
+        safe_text
+)
+YasperEPNML114_Transformation_strategy = st.builds(
+    YasperEPNML114_Transformation,
+    text=
+        safe_text
+)
+YasperEPNML114_Roles_strategy = st.builds(
+    YasperEPNML114_Roles,
+)
+YasperEPNML114_Role_strategy = st.builds(
+    YasperEPNML114_Role,
+    text=
+        safe_text
+)
+YasperEPNML114_ReferencePlaceSpecific_strategy = st.builds(
+    YasperEPNML114_ReferencePlaceSpecific,
     version=
         safe_text,
     tool=
         safe_text
 )
-YasperEPNML114::Transformation_strategy = st.builds(
-    YasperEPNML114::Transformation,
-    text=
-        safe_text
-)
-YasperEPNML114::Roles_strategy = st.builds(
-    YasperEPNML114::Roles,
-)
-YasperEPNML114::Role_strategy = st.builds(
-    YasperEPNML114::Role,
-    text=
-        safe_text
-)
-YasperEPNML114::ReferencePlaceSpecific_strategy = st.builds(
-    YasperEPNML114::ReferencePlaceSpecific,
-    tool=
-        safe_text,
-    version=
-        safe_text
-)
-YasperEPNML114::ProcessingTime_strategy = st.builds(
-    YasperEPNML114::ProcessingTime,
+YasperEPNML114_ProcessingTime_strategy = st.builds(
+    YasperEPNML114_ProcessingTime,
 )
 Place_strategy = st.builds(
     Place,
 )
-YasperEPNML114::PlaceType_strategy = st.builds(
-    YasperEPNML114::PlaceType,
+YasperEPNML114_PlaceType_strategy = st.builds(
+    YasperEPNML114_PlaceType,
     text=
         safe_text
 )
-YasperEPNML114::Place_strategy = st.builds(
-    YasperEPNML114::Place,
+YasperEPNML114_Place_strategy = st.builds(
+    YasperEPNML114_Place,
     id=
         safe_text,
     group=
         safe_text
 )
-YasperEPNML114::TransitionType_strategy = st.builds(
-    YasperEPNML114::TransitionType,
+YasperEPNML114_TransitionType_strategy = st.builds(
+    YasperEPNML114_TransitionType,
     text=
         safe_text
 )
-YasperEPNML114::ReferencePlace_strategy = st.builds(
-    YasperEPNML114::ReferencePlace,
-    id=
-        safe_text,
+YasperEPNML114_ReferencePlace_strategy = st.builds(
+    YasperEPNML114_ReferencePlace,
     group=
         safe_text,
     ref=
+        safe_text,
+    id=
         safe_text
 )
-YasperEPNML114::NodeGraphics_strategy = st.builds(
-    YasperEPNML114::NodeGraphics,
+YasperEPNML114_NodeGraphics_strategy = st.builds(
+    YasperEPNML114_NodeGraphics,
     group=
         safe_text
 )
-YasperEPNML114::Page_strategy = st.builds(
-    YasperEPNML114::Page,
+YasperEPNML114_Page_strategy = st.builds(
+    YasperEPNML114_Page,
+    group=
+        safe_text,
+    id=
+        safe_text
+)
+YasperEPNML114_Transition_strategy = st.builds(
+    YasperEPNML114_Transition,
     id=
         safe_text,
     group=
         safe_text
 )
-YasperEPNML114::Transition_strategy = st.builds(
-    YasperEPNML114::Transition,
-    id=
-        safe_text,
+YasperEPNML114_Net_strategy = st.builds(
+    YasperEPNML114_Net,
     group=
-        safe_text
-)
-YasperEPNML114::Net_strategy = st.builds(
-    YasperEPNML114::Net,
-    id=
         safe_text,
-    group=
+    id=
         safe_text,
     type=
         safe_text
 )
-YasperEPNML114::PlaceType1_strategy = st.builds(
-    YasperEPNML114::PlaceType1,
+YasperEPNML114_PlaceType1_strategy = st.builds(
+    YasperEPNML114_PlaceType1,
 )
-YasperEPNML114::NetGraphics_strategy = st.builds(
-    YasperEPNML114::NetGraphics,
+YasperEPNML114_NetGraphics_strategy = st.builds(
+    YasperEPNML114_NetGraphics,
     group=
         safe_text
 )
-YasperEPNML114::InitialMarking_strategy = st.builds(
-    YasperEPNML114::InitialMarking,
+YasperEPNML114_InitialMarking_strategy = st.builds(
+    YasperEPNML114_InitialMarking,
     text=
         safe_text
 )
-YasperEPNML114::DocumentRoot_strategy = st.builds(
-    YasperEPNML114::DocumentRoot,
+YasperEPNML114_DocumentRoot_strategy = st.builds(
+    YasperEPNML114_DocumentRoot,
     mixed=
         safe_text
 )
-YasperEPNML114::Cost_strategy = st.builds(
-    YasperEPNML114::Cost,
+YasperEPNML114_Cost_strategy = st.builds(
+    YasperEPNML114_Cost,
 )
-YasperEPNML114::Pnml_strategy = st.builds(
-    YasperEPNML114::Pnml,
+YasperEPNML114_Pnml_strategy = st.builds(
+    YasperEPNML114_Pnml,
     group=
         safe_text
 )
-YasperEPNML114::EStringToStringMapEntry_strategy = st.builds(
-    YasperEPNML114::EStringToStringMapEntry,
+YasperEPNML114_EStringToStringMapEntry_strategy = st.builds(
+    YasperEPNML114_EStringToStringMapEntry,
 )
-YasperEPNML114::ConnectionWeight_strategy = st.builds(
-    YasperEPNML114::ConnectionWeight,
+YasperEPNML114_ConnectionWeight_strategy = st.builds(
+    YasperEPNML114_ConnectionWeight,
     connection=
         safe_text
 )
-YasperEPNML114::ConnectionWeights_strategy = st.builds(
-    YasperEPNML114::ConnectionWeights,
+YasperEPNML114_ConnectionWeights_strategy = st.builds(
+    YasperEPNML114_ConnectionWeights,
 )
-YasperEPNML114::Stat_strategy = st.builds(
-    YasperEPNML114::Stat,
+YasperEPNML114_Stat_strategy = st.builds(
+    YasperEPNML114_Stat,
     text=
         safe_text
 )
-YasperEPNML114::PnmlAnnotation_strategy = st.builds(
-    YasperEPNML114::PnmlAnnotation,
+YasperEPNML114_PnmlAnnotation_strategy = st.builds(
+    YasperEPNML114_PnmlAnnotation,
     text=
         safe_text
 )
-YasperEPNML114::Inscription_strategy = st.builds(
-    YasperEPNML114::Inscription,
+YasperEPNML114_Inscription_strategy = st.builds(
+    YasperEPNML114_Inscription,
     text=
         safe_text
 )
-YasperEPNML114::EdgeGraphics_strategy = st.builds(
-    YasperEPNML114::EdgeGraphics,
+YasperEPNML114_EdgeGraphics_strategy = st.builds(
+    YasperEPNML114_EdgeGraphics,
 )
-YasperEPNML114::ToolspecificType_strategy = st.builds(
-    YasperEPNML114::ToolspecificType,
-    mixed=
+YasperEPNML114_ToolspecificType_strategy = st.builds(
+    YasperEPNML114_ToolspecificType,
+    tool=
         safe_text,
     version=
         safe_text,
-    any=
+    mixed=
         safe_text,
-    tool=
+    any=
         safe_text,
     group=
         safe_text
 )
-YasperEPNML114::TwoDimVector_strategy = st.builds(
-    YasperEPNML114::TwoDimVector,
-    x=
-        safe_text,
+YasperEPNML114_TwoDimVector_strategy = st.builds(
+    YasperEPNML114_TwoDimVector,
     y=
+        safe_text,
+    x=
         safe_text
 )
-YasperEPNML114::AnnotationGraphics_strategy = st.builds(
-    YasperEPNML114::AnnotationGraphics,
+YasperEPNML114_AnnotationGraphics_strategy = st.builds(
+    YasperEPNML114_AnnotationGraphics,
 )
-YasperEPNML114::ArcType_strategy = st.builds(
-    YasperEPNML114::ArcType,
+YasperEPNML114_ArcType_strategy = st.builds(
+    YasperEPNML114_ArcType,
     text=
         safe_text
 )
-YasperEPNML114::Arc_strategy = st.builds(
-    YasperEPNML114::Arc,
+YasperEPNML114_Arc_strategy = st.builds(
+    YasperEPNML114_Arc,
     source=
         safe_text,
-    group=
+    target=
         safe_text,
     id=
         safe_text,
-    target=
+    group=
         safe_text
 )
 
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
+@given(instance=YasperEPNML114_TransitionSpecific_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::transitionspecific_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::TransitionSpecific)
-
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
-def test_yasperepnml114::transitionspecific_tokenCaseSensitive_type(instance):
-    assert isinstance(instance.tokenCaseSensitive, str)
+def test_yasperepnml114_transitionspecific_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_TransitionSpecific)
 
 
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
-def test_yasperepnml114::transitionspecific_tokenCaseSensitive_setter(instance):
+
+@given(instance=YasperEPNML114_TransitionSpecific_strategy)
+def test_yasperepnml114_transitionspecific_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=YasperEPNML114_TransitionSpecific_strategy)
+def test_yasperepnml114_transitionspecific_tool_setter(instance):
+    original = instance.tool
+    instance.tool = original
+    assert instance.tool == original
+
+
+
+@given(instance=YasperEPNML114_TransitionSpecific_strategy)
+def test_yasperepnml114_transitionspecific_tokenCaseSensitive_setter(instance):
     original = instance.tokenCaseSensitive
     instance.tokenCaseSensitive = original
     assert instance.tokenCaseSensitive == original
 
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
-def test_yasperepnml114::transitionspecific_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
-def test_yasperepnml114::transitionspecific_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
-def test_yasperepnml114::transitionspecific_tool_type(instance):
-    assert isinstance(instance.tool, str)
-
-
-@given(instance=YasperEPNML114::TransitionSpecific_strategy)
-def test_yasperepnml114::transitionspecific_tool_setter(instance):
-    original = instance.tool
-    instance.tool = original
-    assert instance.tool == original
-
-@given(instance=YasperEPNML114::Transformation_strategy)
+@given(instance=YasperEPNML114_Transformation_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::transformation_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Transformation)
-
-@given(instance=YasperEPNML114::Transformation_strategy)
-def test_yasperepnml114::transformation_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_transformation_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Transformation)
 
 
-@given(instance=YasperEPNML114::Transformation_strategy)
-def test_yasperepnml114::transformation_text_setter(instance):
+
+@given(instance=YasperEPNML114_Transformation_strategy)
+def test_yasperepnml114_transformation_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::Roles_strategy)
+@given(instance=YasperEPNML114_Roles_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::roles_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Roles)
+def test_yasperepnml114_roles_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Roles)
 
-@given(instance=YasperEPNML114::Role_strategy)
+@given(instance=YasperEPNML114_Role_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::role_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Role)
-
-@given(instance=YasperEPNML114::Role_strategy)
-def test_yasperepnml114::role_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_role_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Role)
 
 
-@given(instance=YasperEPNML114::Role_strategy)
-def test_yasperepnml114::role_text_setter(instance):
+
+@given(instance=YasperEPNML114_Role_strategy)
+def test_yasperepnml114_role_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::ReferencePlaceSpecific_strategy)
+@given(instance=YasperEPNML114_ReferencePlaceSpecific_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::referenceplacespecific_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ReferencePlaceSpecific)
-
-@given(instance=YasperEPNML114::ReferencePlaceSpecific_strategy)
-def test_yasperepnml114::referenceplacespecific_tool_type(instance):
-    assert isinstance(instance.tool, str)
+def test_yasperepnml114_referenceplacespecific_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ReferencePlaceSpecific)
 
 
-@given(instance=YasperEPNML114::ReferencePlaceSpecific_strategy)
-def test_yasperepnml114::referenceplacespecific_tool_setter(instance):
-    original = instance.tool
-    instance.tool = original
-    assert instance.tool == original
 
-@given(instance=YasperEPNML114::ReferencePlaceSpecific_strategy)
-def test_yasperepnml114::referenceplacespecific_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=YasperEPNML114::ReferencePlaceSpecific_strategy)
-def test_yasperepnml114::referenceplacespecific_version_setter(instance):
+@given(instance=YasperEPNML114_ReferencePlaceSpecific_strategy)
+def test_yasperepnml114_referenceplacespecific_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=YasperEPNML114::ProcessingTime_strategy)
+
+
+@given(instance=YasperEPNML114_ReferencePlaceSpecific_strategy)
+def test_yasperepnml114_referenceplacespecific_tool_setter(instance):
+    original = instance.tool
+    instance.tool = original
+    assert instance.tool == original
+
+@given(instance=YasperEPNML114_ProcessingTime_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::processingtime_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ProcessingTime)
+def test_yasperepnml114_processingtime_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ProcessingTime)
 
 @given(instance=Place_strategy)
 @settings(max_examples=50)
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=YasperEPNML114::PlaceType_strategy)
+@given(instance=YasperEPNML114_PlaceType_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::placetype_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::PlaceType)
-
-@given(instance=YasperEPNML114::PlaceType_strategy)
-def test_yasperepnml114::placetype_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_placetype_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_PlaceType)
 
 
-@given(instance=YasperEPNML114::PlaceType_strategy)
-def test_yasperepnml114::placetype_text_setter(instance):
+
+@given(instance=YasperEPNML114_PlaceType_strategy)
+def test_yasperepnml114_placetype_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::Place_strategy)
+@given(instance=YasperEPNML114_Place_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::place_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Place)
-
-@given(instance=YasperEPNML114::Place_strategy)
-def test_yasperepnml114::place_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yasperepnml114_place_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Place)
 
 
-@given(instance=YasperEPNML114::Place_strategy)
-def test_yasperepnml114::place_id_setter(instance):
+
+@given(instance=YasperEPNML114_Place_strategy)
+def test_yasperepnml114_place_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=YasperEPNML114::Place_strategy)
-def test_yasperepnml114::place_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=YasperEPNML114::Place_strategy)
-def test_yasperepnml114::place_group_setter(instance):
+@given(instance=YasperEPNML114_Place_strategy)
+def test_yasperepnml114_place_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::TransitionType_strategy)
+@given(instance=YasperEPNML114_TransitionType_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::transitiontype_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::TransitionType)
-
-@given(instance=YasperEPNML114::TransitionType_strategy)
-def test_yasperepnml114::transitiontype_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_transitiontype_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_TransitionType)
 
 
-@given(instance=YasperEPNML114::TransitionType_strategy)
-def test_yasperepnml114::transitiontype_text_setter(instance):
+
+@given(instance=YasperEPNML114_TransitionType_strategy)
+def test_yasperepnml114_transitiontype_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
+@given(instance=YasperEPNML114_ReferencePlace_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::referenceplace_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ReferencePlace)
-
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
-def test_yasperepnml114::referenceplace_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yasperepnml114_referenceplace_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ReferencePlace)
 
 
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
-def test_yasperepnml114::referenceplace_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
-def test_yasperepnml114::referenceplace_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
-def test_yasperepnml114::referenceplace_group_setter(instance):
+@given(instance=YasperEPNML114_ReferencePlace_strategy)
+def test_yasperepnml114_referenceplace_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
-def test_yasperepnml114::referenceplace_ref_type(instance):
-    assert isinstance(instance.ref, str)
 
 
-@given(instance=YasperEPNML114::ReferencePlace_strategy)
-def test_yasperepnml114::referenceplace_ref_setter(instance):
+@given(instance=YasperEPNML114_ReferencePlace_strategy)
+def test_yasperepnml114_referenceplace_ref_setter(instance):
     original = instance.ref
     instance.ref = original
     assert instance.ref == original
 
-@given(instance=YasperEPNML114::NodeGraphics_strategy)
-@settings(max_examples=50)
-def test_yasperepnml114::nodegraphics_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::NodeGraphics)
-
-@given(instance=YasperEPNML114::NodeGraphics_strategy)
-def test_yasperepnml114::nodegraphics_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=YasperEPNML114::NodeGraphics_strategy)
-def test_yasperepnml114::nodegraphics_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=YasperEPNML114::Page_strategy)
-@settings(max_examples=50)
-def test_yasperepnml114::page_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Page)
-
-@given(instance=YasperEPNML114::Page_strategy)
-def test_yasperepnml114::page_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=YasperEPNML114::Page_strategy)
-def test_yasperepnml114::page_id_setter(instance):
+@given(instance=YasperEPNML114_ReferencePlace_strategy)
+def test_yasperepnml114_referenceplace_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=YasperEPNML114::Page_strategy)
-def test_yasperepnml114::page_group_type(instance):
-    assert isinstance(instance.group, str)
+@given(instance=YasperEPNML114_NodeGraphics_strategy)
+@settings(max_examples=50)
+def test_yasperepnml114_nodegraphics_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_NodeGraphics)
 
 
-@given(instance=YasperEPNML114::Page_strategy)
-def test_yasperepnml114::page_group_setter(instance):
+
+@given(instance=YasperEPNML114_NodeGraphics_strategy)
+def test_yasperepnml114_nodegraphics_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::Transition_strategy)
+@given(instance=YasperEPNML114_Page_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::transition_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Transition)
-
-@given(instance=YasperEPNML114::Transition_strategy)
-def test_yasperepnml114::transition_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yasperepnml114_page_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Page)
 
 
-@given(instance=YasperEPNML114::Transition_strategy)
-def test_yasperepnml114::transition_id_setter(instance):
+
+@given(instance=YasperEPNML114_Page_strategy)
+def test_yasperepnml114_page_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+
+
+@given(instance=YasperEPNML114_Page_strategy)
+def test_yasperepnml114_page_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=YasperEPNML114::Transition_strategy)
-def test_yasperepnml114::transition_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=YasperEPNML114::Transition_strategy)
-def test_yasperepnml114::transition_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=YasperEPNML114::Net_strategy)
+@given(instance=YasperEPNML114_Transition_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::net_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Net)
-
-@given(instance=YasperEPNML114::Net_strategy)
-def test_yasperepnml114::net_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_yasperepnml114_transition_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Transition)
 
 
-@given(instance=YasperEPNML114::Net_strategy)
-def test_yasperepnml114::net_id_setter(instance):
+
+@given(instance=YasperEPNML114_Transition_strategy)
+def test_yasperepnml114_transition_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=YasperEPNML114::Net_strategy)
-def test_yasperepnml114::net_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=YasperEPNML114::Net_strategy)
-def test_yasperepnml114::net_group_setter(instance):
+@given(instance=YasperEPNML114_Transition_strategy)
+def test_yasperepnml114_transition_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::Net_strategy)
-def test_yasperepnml114::net_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=YasperEPNML114_Net_strategy)
+@settings(max_examples=50)
+def test_yasperepnml114_net_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Net)
 
 
-@given(instance=YasperEPNML114::Net_strategy)
-def test_yasperepnml114::net_type_setter(instance):
+
+@given(instance=YasperEPNML114_Net_strategy)
+def test_yasperepnml114_net_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+
+
+@given(instance=YasperEPNML114_Net_strategy)
+def test_yasperepnml114_net_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=YasperEPNML114_Net_strategy)
+def test_yasperepnml114_net_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=YasperEPNML114::PlaceType1_strategy)
+@given(instance=YasperEPNML114_PlaceType1_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::placetype1_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::PlaceType1)
+def test_yasperepnml114_placetype1_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_PlaceType1)
 
-@given(instance=YasperEPNML114::NetGraphics_strategy)
+@given(instance=YasperEPNML114_NetGraphics_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::netgraphics_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::NetGraphics)
-
-@given(instance=YasperEPNML114::NetGraphics_strategy)
-def test_yasperepnml114::netgraphics_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_yasperepnml114_netgraphics_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_NetGraphics)
 
 
-@given(instance=YasperEPNML114::NetGraphics_strategy)
-def test_yasperepnml114::netgraphics_group_setter(instance):
+
+@given(instance=YasperEPNML114_NetGraphics_strategy)
+def test_yasperepnml114_netgraphics_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::InitialMarking_strategy)
+@given(instance=YasperEPNML114_InitialMarking_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::initialmarking_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::InitialMarking)
-
-@given(instance=YasperEPNML114::InitialMarking_strategy)
-def test_yasperepnml114::initialmarking_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_initialmarking_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_InitialMarking)
 
 
-@given(instance=YasperEPNML114::InitialMarking_strategy)
-def test_yasperepnml114::initialmarking_text_setter(instance):
+
+@given(instance=YasperEPNML114_InitialMarking_strategy)
+def test_yasperepnml114_initialmarking_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::DocumentRoot_strategy)
+@given(instance=YasperEPNML114_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::documentroot_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::DocumentRoot)
-
-@given(instance=YasperEPNML114::DocumentRoot_strategy)
-def test_yasperepnml114::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_yasperepnml114_documentroot_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_DocumentRoot)
 
 
-@given(instance=YasperEPNML114::DocumentRoot_strategy)
-def test_yasperepnml114::documentroot_mixed_setter(instance):
+
+@given(instance=YasperEPNML114_DocumentRoot_strategy)
+def test_yasperepnml114_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=YasperEPNML114::Cost_strategy)
+@given(instance=YasperEPNML114_Cost_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::cost_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Cost)
+def test_yasperepnml114_cost_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Cost)
 
-@given(instance=YasperEPNML114::Pnml_strategy)
+@given(instance=YasperEPNML114_Pnml_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::pnml_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Pnml)
-
-@given(instance=YasperEPNML114::Pnml_strategy)
-def test_yasperepnml114::pnml_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_yasperepnml114_pnml_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Pnml)
 
 
-@given(instance=YasperEPNML114::Pnml_strategy)
-def test_yasperepnml114::pnml_group_setter(instance):
+
+@given(instance=YasperEPNML114_Pnml_strategy)
+def test_yasperepnml114_pnml_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::EStringToStringMapEntry_strategy)
+@given(instance=YasperEPNML114_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::EStringToStringMapEntry)
+def test_yasperepnml114_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_EStringToStringMapEntry)
 
-@given(instance=YasperEPNML114::ConnectionWeight_strategy)
+@given(instance=YasperEPNML114_ConnectionWeight_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::connectionweight_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ConnectionWeight)
-
-@given(instance=YasperEPNML114::ConnectionWeight_strategy)
-def test_yasperepnml114::connectionweight_connection_type(instance):
-    assert isinstance(instance.connection, str)
+def test_yasperepnml114_connectionweight_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ConnectionWeight)
 
 
-@given(instance=YasperEPNML114::ConnectionWeight_strategy)
-def test_yasperepnml114::connectionweight_connection_setter(instance):
+
+@given(instance=YasperEPNML114_ConnectionWeight_strategy)
+def test_yasperepnml114_connectionweight_connection_setter(instance):
     original = instance.connection
     instance.connection = original
     assert instance.connection == original
 
-@given(instance=YasperEPNML114::ConnectionWeights_strategy)
+@given(instance=YasperEPNML114_ConnectionWeights_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::connectionweights_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ConnectionWeights)
+def test_yasperepnml114_connectionweights_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ConnectionWeights)
 
-@given(instance=YasperEPNML114::Stat_strategy)
+@given(instance=YasperEPNML114_Stat_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::stat_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Stat)
-
-@given(instance=YasperEPNML114::Stat_strategy)
-def test_yasperepnml114::stat_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_stat_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Stat)
 
 
-@given(instance=YasperEPNML114::Stat_strategy)
-def test_yasperepnml114::stat_text_setter(instance):
+
+@given(instance=YasperEPNML114_Stat_strategy)
+def test_yasperepnml114_stat_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::PnmlAnnotation_strategy)
+@given(instance=YasperEPNML114_PnmlAnnotation_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::pnmlannotation_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::PnmlAnnotation)
-
-@given(instance=YasperEPNML114::PnmlAnnotation_strategy)
-def test_yasperepnml114::pnmlannotation_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_pnmlannotation_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_PnmlAnnotation)
 
 
-@given(instance=YasperEPNML114::PnmlAnnotation_strategy)
-def test_yasperepnml114::pnmlannotation_text_setter(instance):
+
+@given(instance=YasperEPNML114_PnmlAnnotation_strategy)
+def test_yasperepnml114_pnmlannotation_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::Inscription_strategy)
+@given(instance=YasperEPNML114_Inscription_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::inscription_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Inscription)
-
-@given(instance=YasperEPNML114::Inscription_strategy)
-def test_yasperepnml114::inscription_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_inscription_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Inscription)
 
 
-@given(instance=YasperEPNML114::Inscription_strategy)
-def test_yasperepnml114::inscription_text_setter(instance):
+
+@given(instance=YasperEPNML114_Inscription_strategy)
+def test_yasperepnml114_inscription_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::EdgeGraphics_strategy)
+@given(instance=YasperEPNML114_EdgeGraphics_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::edgegraphics_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::EdgeGraphics)
+def test_yasperepnml114_edgegraphics_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_EdgeGraphics)
 
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
+@given(instance=YasperEPNML114_ToolspecificType_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::toolspecifictype_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ToolspecificType)
-
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_yasperepnml114_toolspecifictype_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ToolspecificType)
 
 
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
 
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_any_type(instance):
-    assert isinstance(instance.any, str)
-
-
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_any_setter(instance):
-    original = instance.any
-    instance.any = original
-    assert instance.any == original
-
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_tool_type(instance):
-    assert isinstance(instance.tool, str)
-
-
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_tool_setter(instance):
+@given(instance=YasperEPNML114_ToolspecificType_strategy)
+def test_yasperepnml114_toolspecifictype_tool_setter(instance):
     original = instance.tool
     instance.tool = original
     assert instance.tool == original
 
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=YasperEPNML114::ToolspecificType_strategy)
-def test_yasperepnml114::toolspecifictype_group_setter(instance):
+@given(instance=YasperEPNML114_ToolspecificType_strategy)
+def test_yasperepnml114_toolspecifictype_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=YasperEPNML114_ToolspecificType_strategy)
+def test_yasperepnml114_toolspecifictype_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=YasperEPNML114_ToolspecificType_strategy)
+def test_yasperepnml114_toolspecifictype_any_setter(instance):
+    original = instance.any
+    instance.any = original
+    assert instance.any == original
+
+
+
+@given(instance=YasperEPNML114_ToolspecificType_strategy)
+def test_yasperepnml114_toolspecifictype_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=YasperEPNML114::TwoDimVector_strategy)
+@given(instance=YasperEPNML114_TwoDimVector_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::twodimvector_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::TwoDimVector)
-
-@given(instance=YasperEPNML114::TwoDimVector_strategy)
-def test_yasperepnml114::twodimvector_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_yasperepnml114_twodimvector_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_TwoDimVector)
 
 
-@given(instance=YasperEPNML114::TwoDimVector_strategy)
-def test_yasperepnml114::twodimvector_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
-@given(instance=YasperEPNML114::TwoDimVector_strategy)
-def test_yasperepnml114::twodimvector_y_type(instance):
-    assert isinstance(instance.y, str)
-
-
-@given(instance=YasperEPNML114::TwoDimVector_strategy)
-def test_yasperepnml114::twodimvector_y_setter(instance):
+@given(instance=YasperEPNML114_TwoDimVector_strategy)
+def test_yasperepnml114_twodimvector_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=YasperEPNML114::AnnotationGraphics_strategy)
+
+
+@given(instance=YasperEPNML114_TwoDimVector_strategy)
+def test_yasperepnml114_twodimvector_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=YasperEPNML114_AnnotationGraphics_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::annotationgraphics_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::AnnotationGraphics)
+def test_yasperepnml114_annotationgraphics_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_AnnotationGraphics)
 
-@given(instance=YasperEPNML114::ArcType_strategy)
+@given(instance=YasperEPNML114_ArcType_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::arctype_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::ArcType)
-
-@given(instance=YasperEPNML114::ArcType_strategy)
-def test_yasperepnml114::arctype_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yasperepnml114_arctype_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_ArcType)
 
 
-@given(instance=YasperEPNML114::ArcType_strategy)
-def test_yasperepnml114::arctype_text_setter(instance):
+
+@given(instance=YasperEPNML114_ArcType_strategy)
+def test_yasperepnml114_arctype_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=YasperEPNML114::Arc_strategy)
+@given(instance=YasperEPNML114_Arc_strategy)
 @settings(max_examples=50)
-def test_yasperepnml114::arc_instantiation(instance):
-    assert isinstance(instance, YasperEPNML114::Arc)
-
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_source_type(instance):
-    assert isinstance(instance.source, str)
+def test_yasperepnml114_arc_instantiation(instance):
+    assert isinstance(instance, YasperEPNML114_Arc)
 
 
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_source_setter(instance):
+
+@given(instance=YasperEPNML114_Arc_strategy)
+def test_yasperepnml114_arc_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=YasperEPNML114_Arc_strategy)
+def test_yasperepnml114_arc_target_setter(instance):
+    original = instance.target
+    instance.target = original
+    assert instance.target == original
 
 
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_id_setter(instance):
+
+@given(instance=YasperEPNML114_Arc_strategy)
+def test_yasperepnml114_arc_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_target_type(instance):
-    assert isinstance(instance.target, str)
 
 
-@given(instance=YasperEPNML114::Arc_strategy)
-def test_yasperepnml114::arc_target_setter(instance):
-    original = instance.target
-    instance.target = original
-    assert instance.target == original
+@given(instance=YasperEPNML114_Arc_strategy)
+def test_yasperepnml114_arc_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original

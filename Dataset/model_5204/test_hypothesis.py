@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    custostorage::FAbstract,
-    custostorage::EAbstract,
-    custostorage::DAbstract,
-    custostorage::CAbstract,
-    custostorage::BAbstract,
-    custostorage::AAbstract,
-    custostorage::F,
-    custostorage::E,
-    custostorage::D,
-    custostorage::C,
-    custostorage::B,
-    custostorage::A,
+from python_code import (
+    custostorage_FAbstract,
+    custostorage_EAbstract,
+    custostorage_DAbstract,
+    custostorage_CAbstract,
+    custostorage_BAbstract,
+    custostorage_AAbstract,
+    custostorage_F,
+    custostorage_E,
+    custostorage_D,
+    custostorage_C,
+    custostorage_B,
+    custostorage_A,
 )
 
 # =============================================================================
@@ -26,170 +26,170 @@ from classes import (
 
 
 
-def test_custostorage::fabstract_is_not_abstract():
-    assert not inspect.isabstract(custostorage::FAbstract)
+def test_custostorage_fabstract_is_not_abstract():
+    assert not inspect.isabstract(custostorage_FAbstract)
 
 
-def test_custostorage::fabstract_constructor_exists():
-    assert callable(custostorage::FAbstract.__init__)
+def test_custostorage_fabstract_constructor_exists():
+    assert callable(custostorage_FAbstract.__init__)
 
 
-def test_custostorage::fabstract_constructor_args():
-    sig = inspect.signature(custostorage::FAbstract.__init__)
+def test_custostorage_fabstract_constructor_args():
+    sig = inspect.signature(custostorage_FAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::eabstract_is_not_abstract():
-    assert not inspect.isabstract(custostorage::EAbstract)
+def test_custostorage_eabstract_is_not_abstract():
+    assert not inspect.isabstract(custostorage_EAbstract)
 
 
-def test_custostorage::eabstract_constructor_exists():
-    assert callable(custostorage::EAbstract.__init__)
+def test_custostorage_eabstract_constructor_exists():
+    assert callable(custostorage_EAbstract.__init__)
 
 
-def test_custostorage::eabstract_constructor_args():
-    sig = inspect.signature(custostorage::EAbstract.__init__)
+def test_custostorage_eabstract_constructor_args():
+    sig = inspect.signature(custostorage_EAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::dabstract_is_not_abstract():
-    assert not inspect.isabstract(custostorage::DAbstract)
+def test_custostorage_dabstract_is_not_abstract():
+    assert not inspect.isabstract(custostorage_DAbstract)
 
 
-def test_custostorage::dabstract_constructor_exists():
-    assert callable(custostorage::DAbstract.__init__)
+def test_custostorage_dabstract_constructor_exists():
+    assert callable(custostorage_DAbstract.__init__)
 
 
-def test_custostorage::dabstract_constructor_args():
-    sig = inspect.signature(custostorage::DAbstract.__init__)
+def test_custostorage_dabstract_constructor_args():
+    sig = inspect.signature(custostorage_DAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::cabstract_is_not_abstract():
-    assert not inspect.isabstract(custostorage::CAbstract)
+def test_custostorage_cabstract_is_not_abstract():
+    assert not inspect.isabstract(custostorage_CAbstract)
 
 
-def test_custostorage::cabstract_constructor_exists():
-    assert callable(custostorage::CAbstract.__init__)
+def test_custostorage_cabstract_constructor_exists():
+    assert callable(custostorage_CAbstract.__init__)
 
 
-def test_custostorage::cabstract_constructor_args():
-    sig = inspect.signature(custostorage::CAbstract.__init__)
+def test_custostorage_cabstract_constructor_args():
+    sig = inspect.signature(custostorage_CAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::babstract_is_not_abstract():
-    assert not inspect.isabstract(custostorage::BAbstract)
+def test_custostorage_babstract_is_not_abstract():
+    assert not inspect.isabstract(custostorage_BAbstract)
 
 
-def test_custostorage::babstract_constructor_exists():
-    assert callable(custostorage::BAbstract.__init__)
+def test_custostorage_babstract_constructor_exists():
+    assert callable(custostorage_BAbstract.__init__)
 
 
-def test_custostorage::babstract_constructor_args():
-    sig = inspect.signature(custostorage::BAbstract.__init__)
+def test_custostorage_babstract_constructor_args():
+    sig = inspect.signature(custostorage_BAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::aabstract_is_not_abstract():
-    assert not inspect.isabstract(custostorage::AAbstract)
+def test_custostorage_aabstract_is_not_abstract():
+    assert not inspect.isabstract(custostorage_AAbstract)
 
 
-def test_custostorage::aabstract_constructor_exists():
-    assert callable(custostorage::AAbstract.__init__)
+def test_custostorage_aabstract_constructor_exists():
+    assert callable(custostorage_AAbstract.__init__)
 
 
-def test_custostorage::aabstract_constructor_args():
-    sig = inspect.signature(custostorage::AAbstract.__init__)
+def test_custostorage_aabstract_constructor_args():
+    sig = inspect.signature(custostorage_AAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::f_is_not_abstract():
-    assert not inspect.isabstract(custostorage::F)
+def test_custostorage_f_is_not_abstract():
+    assert not inspect.isabstract(custostorage_F)
 
 
-def test_custostorage::f_constructor_exists():
-    assert callable(custostorage::F.__init__)
+def test_custostorage_f_constructor_exists():
+    assert callable(custostorage_F.__init__)
 
 
-def test_custostorage::f_constructor_args():
-    sig = inspect.signature(custostorage::F.__init__)
+def test_custostorage_f_constructor_args():
+    sig = inspect.signature(custostorage_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::e_is_not_abstract():
-    assert not inspect.isabstract(custostorage::E)
+def test_custostorage_e_is_not_abstract():
+    assert not inspect.isabstract(custostorage_E)
 
 
-def test_custostorage::e_constructor_exists():
-    assert callable(custostorage::E.__init__)
+def test_custostorage_e_constructor_exists():
+    assert callable(custostorage_E.__init__)
 
 
-def test_custostorage::e_constructor_args():
-    sig = inspect.signature(custostorage::E.__init__)
+def test_custostorage_e_constructor_args():
+    sig = inspect.signature(custostorage_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::d_is_not_abstract():
-    assert not inspect.isabstract(custostorage::D)
+def test_custostorage_d_is_not_abstract():
+    assert not inspect.isabstract(custostorage_D)
 
 
-def test_custostorage::d_constructor_exists():
-    assert callable(custostorage::D.__init__)
+def test_custostorage_d_constructor_exists():
+    assert callable(custostorage_D.__init__)
 
 
-def test_custostorage::d_constructor_args():
-    sig = inspect.signature(custostorage::D.__init__)
+def test_custostorage_d_constructor_args():
+    sig = inspect.signature(custostorage_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::c_is_not_abstract():
-    assert not inspect.isabstract(custostorage::C)
+def test_custostorage_c_is_not_abstract():
+    assert not inspect.isabstract(custostorage_C)
 
 
-def test_custostorage::c_constructor_exists():
-    assert callable(custostorage::C.__init__)
+def test_custostorage_c_constructor_exists():
+    assert callable(custostorage_C.__init__)
 
 
-def test_custostorage::c_constructor_args():
-    sig = inspect.signature(custostorage::C.__init__)
+def test_custostorage_c_constructor_args():
+    sig = inspect.signature(custostorage_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::b_is_not_abstract():
-    assert not inspect.isabstract(custostorage::B)
+def test_custostorage_b_is_not_abstract():
+    assert not inspect.isabstract(custostorage_B)
 
 
-def test_custostorage::b_constructor_exists():
-    assert callable(custostorage::B.__init__)
+def test_custostorage_b_constructor_exists():
+    assert callable(custostorage_B.__init__)
 
 
-def test_custostorage::b_constructor_args():
-    sig = inspect.signature(custostorage::B.__init__)
+def test_custostorage_b_constructor_args():
+    sig = inspect.signature(custostorage_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_custostorage::a_is_not_abstract():
-    assert not inspect.isabstract(custostorage::A)
+def test_custostorage_a_is_not_abstract():
+    assert not inspect.isabstract(custostorage_A)
 
 
-def test_custostorage::a_constructor_exists():
-    assert callable(custostorage::A.__init__)
+def test_custostorage_a_constructor_exists():
+    assert callable(custostorage_A.__init__)
 
 
-def test_custostorage::a_constructor_args():
-    sig = inspect.signature(custostorage::A.__init__)
+def test_custostorage_a_constructor_args():
+    sig = inspect.signature(custostorage_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -204,99 +204,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-custostorage::FAbstract_strategy = st.builds(
-    custostorage::FAbstract,
+custostorage_FAbstract_strategy = st.builds(
+    custostorage_FAbstract,
 )
-custostorage::EAbstract_strategy = st.builds(
-    custostorage::EAbstract,
+custostorage_EAbstract_strategy = st.builds(
+    custostorage_EAbstract,
 )
-custostorage::DAbstract_strategy = st.builds(
-    custostorage::DAbstract,
+custostorage_DAbstract_strategy = st.builds(
+    custostorage_DAbstract,
 )
-custostorage::CAbstract_strategy = st.builds(
-    custostorage::CAbstract,
+custostorage_CAbstract_strategy = st.builds(
+    custostorage_CAbstract,
 )
-custostorage::BAbstract_strategy = st.builds(
-    custostorage::BAbstract,
+custostorage_BAbstract_strategy = st.builds(
+    custostorage_BAbstract,
 )
-custostorage::AAbstract_strategy = st.builds(
-    custostorage::AAbstract,
+custostorage_AAbstract_strategy = st.builds(
+    custostorage_AAbstract,
 )
-custostorage::F_strategy = st.builds(
-    custostorage::F,
+custostorage_F_strategy = st.builds(
+    custostorage_F,
 )
-custostorage::E_strategy = st.builds(
-    custostorage::E,
+custostorage_E_strategy = st.builds(
+    custostorage_E,
 )
-custostorage::D_strategy = st.builds(
-    custostorage::D,
+custostorage_D_strategy = st.builds(
+    custostorage_D,
 )
-custostorage::C_strategy = st.builds(
-    custostorage::C,
+custostorage_C_strategy = st.builds(
+    custostorage_C,
 )
-custostorage::B_strategy = st.builds(
-    custostorage::B,
+custostorage_B_strategy = st.builds(
+    custostorage_B,
 )
-custostorage::A_strategy = st.builds(
-    custostorage::A,
+custostorage_A_strategy = st.builds(
+    custostorage_A,
 )
 
-@given(instance=custostorage::FAbstract_strategy)
+@given(instance=custostorage_FAbstract_strategy)
 @settings(max_examples=50)
-def test_custostorage::fabstract_instantiation(instance):
-    assert isinstance(instance, custostorage::FAbstract)
+def test_custostorage_fabstract_instantiation(instance):
+    assert isinstance(instance, custostorage_FAbstract)
 
-@given(instance=custostorage::EAbstract_strategy)
+@given(instance=custostorage_EAbstract_strategy)
 @settings(max_examples=50)
-def test_custostorage::eabstract_instantiation(instance):
-    assert isinstance(instance, custostorage::EAbstract)
+def test_custostorage_eabstract_instantiation(instance):
+    assert isinstance(instance, custostorage_EAbstract)
 
-@given(instance=custostorage::DAbstract_strategy)
+@given(instance=custostorage_DAbstract_strategy)
 @settings(max_examples=50)
-def test_custostorage::dabstract_instantiation(instance):
-    assert isinstance(instance, custostorage::DAbstract)
+def test_custostorage_dabstract_instantiation(instance):
+    assert isinstance(instance, custostorage_DAbstract)
 
-@given(instance=custostorage::CAbstract_strategy)
+@given(instance=custostorage_CAbstract_strategy)
 @settings(max_examples=50)
-def test_custostorage::cabstract_instantiation(instance):
-    assert isinstance(instance, custostorage::CAbstract)
+def test_custostorage_cabstract_instantiation(instance):
+    assert isinstance(instance, custostorage_CAbstract)
 
-@given(instance=custostorage::BAbstract_strategy)
+@given(instance=custostorage_BAbstract_strategy)
 @settings(max_examples=50)
-def test_custostorage::babstract_instantiation(instance):
-    assert isinstance(instance, custostorage::BAbstract)
+def test_custostorage_babstract_instantiation(instance):
+    assert isinstance(instance, custostorage_BAbstract)
 
-@given(instance=custostorage::AAbstract_strategy)
+@given(instance=custostorage_AAbstract_strategy)
 @settings(max_examples=50)
-def test_custostorage::aabstract_instantiation(instance):
-    assert isinstance(instance, custostorage::AAbstract)
+def test_custostorage_aabstract_instantiation(instance):
+    assert isinstance(instance, custostorage_AAbstract)
 
-@given(instance=custostorage::F_strategy)
+@given(instance=custostorage_F_strategy)
 @settings(max_examples=50)
-def test_custostorage::f_instantiation(instance):
-    assert isinstance(instance, custostorage::F)
+def test_custostorage_f_instantiation(instance):
+    assert isinstance(instance, custostorage_F)
 
-@given(instance=custostorage::E_strategy)
+@given(instance=custostorage_E_strategy)
 @settings(max_examples=50)
-def test_custostorage::e_instantiation(instance):
-    assert isinstance(instance, custostorage::E)
+def test_custostorage_e_instantiation(instance):
+    assert isinstance(instance, custostorage_E)
 
-@given(instance=custostorage::D_strategy)
+@given(instance=custostorage_D_strategy)
 @settings(max_examples=50)
-def test_custostorage::d_instantiation(instance):
-    assert isinstance(instance, custostorage::D)
+def test_custostorage_d_instantiation(instance):
+    assert isinstance(instance, custostorage_D)
 
-@given(instance=custostorage::C_strategy)
+@given(instance=custostorage_C_strategy)
 @settings(max_examples=50)
-def test_custostorage::c_instantiation(instance):
-    assert isinstance(instance, custostorage::C)
+def test_custostorage_c_instantiation(instance):
+    assert isinstance(instance, custostorage_C)
 
-@given(instance=custostorage::B_strategy)
+@given(instance=custostorage_B_strategy)
 @settings(max_examples=50)
-def test_custostorage::b_instantiation(instance):
-    assert isinstance(instance, custostorage::B)
+def test_custostorage_b_instantiation(instance):
+    assert isinstance(instance, custostorage_B)
 
-@given(instance=custostorage::A_strategy)
+@given(instance=custostorage_A_strategy)
 @settings(max_examples=50)
-def test_custostorage::a_instantiation(instance):
-    assert isinstance(instance, custostorage::A)
+def test_custostorage_a_instantiation(instance):
+    assert isinstance(instance, custostorage_A)

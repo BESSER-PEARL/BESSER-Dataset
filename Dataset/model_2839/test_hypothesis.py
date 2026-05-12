@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TestPackage::SubPackage::SubTestInterface,
-    TestPackage::SubPackage::SubTestClass,
-    TestPackage::UberClass,
-    TestPackage::SuperClass,
+from python_code import (
+    TestPackage_SubPackage_SubTestInterface,
+    TestPackage_SubPackage_SubTestClass,
+    TestPackage_UberClass,
+    TestPackage_SuperClass,
     UberClass,
     SuperClass,
-    TestPackage::TestInterface,
-    TestPackage::TestClass,
+    TestPackage_TestInterface,
+    TestPackage_TestClass,
     SubTestEnum,
     TestEnum,
 )
@@ -24,58 +24,58 @@ from classes import (
 
 
 
-def test_testpackage::subpackage::subtestinterface_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SubPackage::SubTestInterface)
+def test_testpackage_subpackage_subtestinterface_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SubPackage_SubTestInterface)
 
 
-def test_testpackage::subpackage::subtestinterface_constructor_exists():
-    assert callable(TestPackage::SubPackage::SubTestInterface.__init__)
+def test_testpackage_subpackage_subtestinterface_constructor_exists():
+    assert callable(TestPackage_SubPackage_SubTestInterface.__init__)
 
 
-def test_testpackage::subpackage::subtestinterface_constructor_args():
-    sig = inspect.signature(TestPackage::SubPackage::SubTestInterface.__init__)
+def test_testpackage_subpackage_subtestinterface_constructor_args():
+    sig = inspect.signature(TestPackage_SubPackage_SubTestInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::subpackage::subtestclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SubPackage::SubTestClass)
+def test_testpackage_subpackage_subtestclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SubPackage_SubTestClass)
 
 
-def test_testpackage::subpackage::subtestclass_constructor_exists():
-    assert callable(TestPackage::SubPackage::SubTestClass.__init__)
+def test_testpackage_subpackage_subtestclass_constructor_exists():
+    assert callable(TestPackage_SubPackage_SubTestClass.__init__)
 
 
-def test_testpackage::subpackage::subtestclass_constructor_args():
-    sig = inspect.signature(TestPackage::SubPackage::SubTestClass.__init__)
+def test_testpackage_subpackage_subtestclass_constructor_args():
+    sig = inspect.signature(TestPackage_SubPackage_SubTestClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::uberclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::UberClass)
+def test_testpackage_uberclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_UberClass)
 
 
-def test_testpackage::uberclass_constructor_exists():
-    assert callable(TestPackage::UberClass.__init__)
+def test_testpackage_uberclass_constructor_exists():
+    assert callable(TestPackage_UberClass.__init__)
 
 
-def test_testpackage::uberclass_constructor_args():
-    sig = inspect.signature(TestPackage::UberClass.__init__)
+def test_testpackage_uberclass_constructor_args():
+    sig = inspect.signature(TestPackage_UberClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::superclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::SuperClass)
+def test_testpackage_superclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_SuperClass)
 
 
-def test_testpackage::superclass_constructor_exists():
-    assert callable(TestPackage::SuperClass.__init__)
+def test_testpackage_superclass_constructor_exists():
+    assert callable(TestPackage_SuperClass.__init__)
 
 
-def test_testpackage::superclass_constructor_args():
-    sig = inspect.signature(TestPackage::SuperClass.__init__)
+def test_testpackage_superclass_constructor_args():
+    sig = inspect.signature(TestPackage_SuperClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,30 +108,30 @@ def test_superclass_constructor_args():
 
 
 
-def test_testpackage::testinterface_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestInterface)
+def test_testpackage_testinterface_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestInterface)
 
 
-def test_testpackage::testinterface_constructor_exists():
-    assert callable(TestPackage::TestInterface.__init__)
+def test_testpackage_testinterface_constructor_exists():
+    assert callable(TestPackage_TestInterface.__init__)
 
 
-def test_testpackage::testinterface_constructor_args():
-    sig = inspect.signature(TestPackage::TestInterface.__init__)
+def test_testpackage_testinterface_constructor_args():
+    sig = inspect.signature(TestPackage_TestInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::testclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestClass)
+def test_testpackage_testclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestClass)
 
 
-def test_testpackage::testclass_constructor_exists():
-    assert callable(TestPackage::TestClass.__init__)
+def test_testpackage_testclass_constructor_exists():
+    assert callable(TestPackage_TestClass.__init__)
 
 
-def test_testpackage::testclass_constructor_args():
-    sig = inspect.signature(TestPackage::TestClass.__init__)
+def test_testpackage_testclass_constructor_args():
+    sig = inspect.signature(TestPackage_TestClass.__init__)
     params = list(sig.parameters.keys())
 
 def test_subtestenum_exists():
@@ -172,17 +172,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TestPackage::SubPackage::SubTestInterface_strategy = st.builds(
-    TestPackage::SubPackage::SubTestInterface,
+TestPackage_SubPackage_SubTestInterface_strategy = st.builds(
+    TestPackage_SubPackage_SubTestInterface,
 )
-TestPackage::SubPackage::SubTestClass_strategy = st.builds(
-    TestPackage::SubPackage::SubTestClass,
+TestPackage_SubPackage_SubTestClass_strategy = st.builds(
+    TestPackage_SubPackage_SubTestClass,
 )
-TestPackage::UberClass_strategy = st.builds(
-    TestPackage::UberClass,
+TestPackage_UberClass_strategy = st.builds(
+    TestPackage_UberClass,
 )
-TestPackage::SuperClass_strategy = st.builds(
-    TestPackage::SuperClass,
+TestPackage_SuperClass_strategy = st.builds(
+    TestPackage_SuperClass,
 )
 UberClass_strategy = st.builds(
     UberClass,
@@ -190,32 +190,32 @@ UberClass_strategy = st.builds(
 SuperClass_strategy = st.builds(
     SuperClass,
 )
-TestPackage::TestInterface_strategy = st.builds(
-    TestPackage::TestInterface,
+TestPackage_TestInterface_strategy = st.builds(
+    TestPackage_TestInterface,
 )
-TestPackage::TestClass_strategy = st.builds(
-    TestPackage::TestClass,
+TestPackage_TestClass_strategy = st.builds(
+    TestPackage_TestClass,
 )
 
-@given(instance=TestPackage::SubPackage::SubTestInterface_strategy)
+@given(instance=TestPackage_SubPackage_SubTestInterface_strategy)
 @settings(max_examples=50)
-def test_testpackage::subpackage::subtestinterface_instantiation(instance):
-    assert isinstance(instance, TestPackage::SubPackage::SubTestInterface)
+def test_testpackage_subpackage_subtestinterface_instantiation(instance):
+    assert isinstance(instance, TestPackage_SubPackage_SubTestInterface)
 
-@given(instance=TestPackage::SubPackage::SubTestClass_strategy)
+@given(instance=TestPackage_SubPackage_SubTestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::subpackage::subtestclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::SubPackage::SubTestClass)
+def test_testpackage_subpackage_subtestclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_SubPackage_SubTestClass)
 
-@given(instance=TestPackage::UberClass_strategy)
+@given(instance=TestPackage_UberClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::uberclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::UberClass)
+def test_testpackage_uberclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_UberClass)
 
-@given(instance=TestPackage::SuperClass_strategy)
+@given(instance=TestPackage_SuperClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::superclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::SuperClass)
+def test_testpackage_superclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_SuperClass)
 
 @given(instance=UberClass_strategy)
 @settings(max_examples=50)
@@ -227,15 +227,15 @@ def test_uberclass_instantiation(instance):
 def test_superclass_instantiation(instance):
     assert isinstance(instance, SuperClass)
 
-@given(instance=TestPackage::TestInterface_strategy)
+@given(instance=TestPackage_TestInterface_strategy)
 @settings(max_examples=50)
-def test_testpackage::testinterface_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestInterface)
+def test_testpackage_testinterface_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestInterface)
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::testclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestClass)
+def test_testpackage_testclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestClass)
 
 import warnings
 import copy
@@ -243,157 +243,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass_testop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.testOp(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp' in TestPackage::TestClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp' in TestPackage::TestClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp' in TestPackage::TestClass is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=TestPackage::TestClass_strategy)
-@settings(max_examples=30)
-def test_testpackage::testclass_testop3_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.testOp3()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp3).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp3' in TestPackage::TestClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp3' in TestPackage::TestClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp3' in TestPackage::TestClass is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=TestPackage::TestClass_strategy)
-@settings(max_examples=30)
-def test_testpackage::testclass_testop8_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.testOp8()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp8).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp8' in TestPackage::TestClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp8' in TestPackage::TestClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp8' in TestPackage::TestClass is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=TestPackage::TestClass_strategy)
-@settings(max_examples=30)
-def test_testpackage::testclass_testop2_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.testOp2()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp2).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp2' in TestPackage::TestClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp2' in TestPackage::TestClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp2' in TestPackage::TestClass is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=TestPackage::TestClass_strategy)
-@settings(max_examples=30)
-def test_testpackage::testclass_testop6_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.testOp6()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp6).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp6' in TestPackage::TestClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp6' in TestPackage::TestClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp6' in TestPackage::TestClass is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=TestPackage::TestClass_strategy)
-@settings(max_examples=30)
-def test_testpackage::testclass_testvoidop_changes_state(instance):
+def test_testpackage_testclass_testvoidop_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -405,14 +257,14 @@ def test_testpackage::testclass_testvoidop_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testVoidOp' in TestPackage::TestClass is empty"
+        assert has_statements, f"Function 'testVoidOp' in TestPackage_TestClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testVoidOp' in TestPackage::TestClass did not change state; check implementation")
+            warnings.warn(f"Operation 'testVoidOp' in TestPackage_TestClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testVoidOp' in TestPackage::TestClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'testVoidOp' in TestPackage_TestClass is not implemented or raised an error")
 
 import warnings
 import copy
@@ -420,28 +272,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass_testop5_changes_state(instance):
+def test_testpackage_testclass_testop2_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.testOp5()
+        instance.testOp2()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp5).strip()
+        source = inspect.getsource(instance.testOp2).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp5' in TestPackage::TestClass is empty"
+        assert has_statements, f"Function 'testOp2' in TestPackage_TestClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp5' in TestPackage::TestClass did not change state; check implementation")
+            warnings.warn(f"Operation 'testOp2' in TestPackage_TestClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp5' in TestPackage::TestClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'testOp2' in TestPackage_TestClass is not implemented or raised an error")
 
 import warnings
 import copy
@@ -449,38 +301,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass_testop1_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.testOp1()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.testOp1).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp1' in TestPackage::TestClass is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp1' in TestPackage::TestClass did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp1' in TestPackage::TestClass is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=TestPackage::TestClass_strategy)
-@settings(max_examples=30)
-def test_testpackage::testclass_testop9_changes_state(instance):
+def test_testpackage_testclass_testop9_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -495,14 +318,14 @@ def test_testpackage::testclass_testop9_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp9' in TestPackage::TestClass is empty"
+        assert has_statements, f"Function 'testOp9' in TestPackage_TestClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp9' in TestPackage::TestClass did not change state; check implementation")
+            warnings.warn(f"Operation 'testOp9' in TestPackage_TestClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp9' in TestPackage::TestClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'testOp9' in TestPackage_TestClass is not implemented or raised an error")
 
 import warnings
 import copy
@@ -510,9 +333,128 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass_testop4_changes_state(instance):
+def test_testpackage_testclass_testop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.testOp(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.testOp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'testOp' in TestPackage_TestClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'testOp' in TestPackage_TestClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'testOp' in TestPackage_TestClass is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=TestPackage_TestClass_strategy)
+@settings(max_examples=30)
+def test_testpackage_testclass_testop3_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.testOp3()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.testOp3).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'testOp3' in TestPackage_TestClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'testOp3' in TestPackage_TestClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'testOp3' in TestPackage_TestClass is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=TestPackage_TestClass_strategy)
+@settings(max_examples=30)
+def test_testpackage_testclass_testop5_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.testOp5()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.testOp5).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'testOp5' in TestPackage_TestClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'testOp5' in TestPackage_TestClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'testOp5' in TestPackage_TestClass is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=TestPackage_TestClass_strategy)
+@settings(max_examples=30)
+def test_testpackage_testclass_testop6_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.testOp6()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.testOp6).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'testOp6' in TestPackage_TestClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'testOp6' in TestPackage_TestClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'testOp6' in TestPackage_TestClass is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=TestPackage_TestClass_strategy)
+@settings(max_examples=30)
+def test_testpackage_testclass_testop4_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -524,14 +466,14 @@ def test_testpackage::testclass_testop4_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp4' in TestPackage::TestClass is empty"
+        assert has_statements, f"Function 'testOp4' in TestPackage_TestClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp4' in TestPackage::TestClass did not change state; check implementation")
+            warnings.warn(f"Operation 'testOp4' in TestPackage_TestClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp4' in TestPackage::TestClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'testOp4' in TestPackage_TestClass is not implemented or raised an error")
 
 import warnings
 import copy
@@ -539,9 +481,67 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass_strategy)
+@given(instance=TestPackage_TestClass_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass_testop7_changes_state(instance):
+def test_testpackage_testclass_testop1_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.testOp1()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.testOp1).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'testOp1' in TestPackage_TestClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'testOp1' in TestPackage_TestClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'testOp1' in TestPackage_TestClass is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=TestPackage_TestClass_strategy)
+@settings(max_examples=30)
+def test_testpackage_testclass_testop8_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.testOp8()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.testOp8).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'testOp8' in TestPackage_TestClass is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'testOp8' in TestPackage_TestClass did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'testOp8' in TestPackage_TestClass is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=TestPackage_TestClass_strategy)
+@settings(max_examples=30)
+def test_testpackage_testclass_testop7_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -553,11 +553,11 @@ def test_testpackage::testclass_testop7_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOp7' in TestPackage::TestClass is empty"
+        assert has_statements, f"Function 'testOp7' in TestPackage_TestClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOp7' in TestPackage::TestClass did not change state; check implementation")
+            warnings.warn(f"Operation 'testOp7' in TestPackage_TestClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOp7' in TestPackage::TestClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'testOp7' in TestPackage_TestClass is not implemented or raised an error")

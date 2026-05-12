@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    grammarSql::Reference,
-    grammarSql::ForeignKey,
-    grammarSql::PrimaryKey,
-    grammarSql::Column,
-    grammarSql::EObject,
-    grammarSql::Table,
-    grammarSql::Model,
+from python_code import (
+    grammarSql_Reference,
+    grammarSql_ForeignKey,
+    grammarSql_PrimaryKey,
+    grammarSql_Column,
+    grammarSql_EObject,
+    grammarSql_Table,
+    grammarSql_Model,
 )
 
 # =============================================================================
@@ -21,123 +21,123 @@ from classes import (
 
 
 
-def test_grammarsql::reference_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::Reference)
+def test_grammarsql_reference_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_Reference)
 
 
-def test_grammarsql::reference_constructor_exists():
-    assert callable(grammarSql::Reference.__init__)
+def test_grammarsql_reference_constructor_exists():
+    assert callable(grammarSql_Reference.__init__)
 
 
-def test_grammarsql::reference_constructor_args():
-    sig = inspect.signature(grammarSql::Reference.__init__)
+def test_grammarsql_reference_constructor_args():
+    sig = inspect.signature(grammarSql_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammarsql::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::ForeignKey)
+def test_grammarsql_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_ForeignKey)
 
 
-def test_grammarsql::foreignkey_constructor_exists():
-    assert callable(grammarSql::ForeignKey.__init__)
+def test_grammarsql_foreignkey_constructor_exists():
+    assert callable(grammarSql_ForeignKey.__init__)
 
 
-def test_grammarsql::foreignkey_constructor_args():
-    sig = inspect.signature(grammarSql::ForeignKey.__init__)
+def test_grammarsql_foreignkey_constructor_args():
+    sig = inspect.signature(grammarSql_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammarsql::primarykey_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::PrimaryKey)
+def test_grammarsql_primarykey_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_PrimaryKey)
 
 
-def test_grammarsql::primarykey_constructor_exists():
-    assert callable(grammarSql::PrimaryKey.__init__)
+def test_grammarsql_primarykey_constructor_exists():
+    assert callable(grammarSql_PrimaryKey.__init__)
 
 
-def test_grammarsql::primarykey_constructor_args():
-    sig = inspect.signature(grammarSql::PrimaryKey.__init__)
+def test_grammarsql_primarykey_constructor_args():
+    sig = inspect.signature(grammarSql_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammarsql::column_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::Column)
+def test_grammarsql_column_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_Column)
 
 
-def test_grammarsql::column_constructor_exists():
-    assert callable(grammarSql::Column.__init__)
+def test_grammarsql_column_constructor_exists():
+    assert callable(grammarSql_Column.__init__)
 
 
-def test_grammarsql::column_constructor_args():
-    sig = inspect.signature(grammarSql::Column.__init__)
+def test_grammarsql_column_constructor_args():
+    sig = inspect.signature(grammarSql_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "isNotNull" in params, "Missing parameter 'isNotNull'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_grammarsql::column_has_type():
-    assert hasattr(grammarSql::Column, "type")
+def test_grammarsql_column_has_isNotNull():
+    assert hasattr(grammarSql_Column, "isNotNull")
     descriptor = None
-    for klass in grammarSql::Column.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_grammarsql::column_has_isNotNull():
-    assert hasattr(grammarSql::Column, "isNotNull")
-    descriptor = None
-    for klass in grammarSql::Column.__mro__:
+    for klass in grammarSql_Column.__mro__:
         if "isNotNull" in klass.__dict__:
             descriptor = klass.__dict__["isNotNull"]
             break
     assert isinstance(descriptor, property)
 
-def test_grammarsql::column_has_name():
-    assert hasattr(grammarSql::Column, "name")
+def test_grammarsql_column_has_name():
+    assert hasattr(grammarSql_Column, "name")
     descriptor = None
-    for klass in grammarSql::Column.__mro__:
+    for klass in grammarSql_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_grammarsql_column_has_type():
+    assert hasattr(grammarSql_Column, "type")
+    descriptor = None
+    for klass in grammarSql_Column.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_grammarsql::eobject_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::EObject)
+
+def test_grammarsql_eobject_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_EObject)
 
 
-def test_grammarsql::eobject_constructor_exists():
-    assert callable(grammarSql::EObject.__init__)
+def test_grammarsql_eobject_constructor_exists():
+    assert callable(grammarSql_EObject.__init__)
 
 
-def test_grammarsql::eobject_constructor_args():
-    sig = inspect.signature(grammarSql::EObject.__init__)
+def test_grammarsql_eobject_constructor_args():
+    sig = inspect.signature(grammarSql_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammarsql::table_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::Table)
+def test_grammarsql_table_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_Table)
 
 
-def test_grammarsql::table_constructor_exists():
-    assert callable(grammarSql::Table.__init__)
+def test_grammarsql_table_constructor_exists():
+    assert callable(grammarSql_Table.__init__)
 
 
-def test_grammarsql::table_constructor_args():
-    sig = inspect.signature(grammarSql::Table.__init__)
+def test_grammarsql_table_constructor_args():
+    sig = inspect.signature(grammarSql_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_grammarsql::table_has_name():
-    assert hasattr(grammarSql::Table, "name")
+def test_grammarsql_table_has_name():
+    assert hasattr(grammarSql_Table, "name")
     descriptor = None
-    for klass in grammarSql::Table.__mro__:
+    for klass in grammarSql_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -145,16 +145,16 @@ def test_grammarsql::table_has_name():
 
 
 
-def test_grammarsql::model_is_not_abstract():
-    assert not inspect.isabstract(grammarSql::Model)
+def test_grammarsql_model_is_not_abstract():
+    assert not inspect.isabstract(grammarSql_Model)
 
 
-def test_grammarsql::model_constructor_exists():
-    assert callable(grammarSql::Model.__init__)
+def test_grammarsql_model_constructor_exists():
+    assert callable(grammarSql_Model.__init__)
 
 
-def test_grammarsql::model_constructor_args():
-    sig = inspect.signature(grammarSql::Model.__init__)
+def test_grammarsql_model_constructor_args():
+    sig = inspect.signature(grammarSql_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,111 +169,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-grammarSql::Reference_strategy = st.builds(
-    grammarSql::Reference,
+grammarSql_Reference_strategy = st.builds(
+    grammarSql_Reference,
 )
-grammarSql::ForeignKey_strategy = st.builds(
-    grammarSql::ForeignKey,
+grammarSql_ForeignKey_strategy = st.builds(
+    grammarSql_ForeignKey,
 )
-grammarSql::PrimaryKey_strategy = st.builds(
-    grammarSql::PrimaryKey,
+grammarSql_PrimaryKey_strategy = st.builds(
+    grammarSql_PrimaryKey,
 )
-grammarSql::Column_strategy = st.builds(
-    grammarSql::Column,
-    type=
-        safe_text,
+grammarSql_Column_strategy = st.builds(
+    grammarSql_Column,
     isNotNull=
         st.booleans(),
     name=
+        safe_text,
+    type=
         safe_text
 )
-grammarSql::EObject_strategy = st.builds(
-    grammarSql::EObject,
+grammarSql_EObject_strategy = st.builds(
+    grammarSql_EObject,
 )
-grammarSql::Table_strategy = st.builds(
-    grammarSql::Table,
+grammarSql_Table_strategy = st.builds(
+    grammarSql_Table,
     name=
         safe_text
 )
-grammarSql::Model_strategy = st.builds(
-    grammarSql::Model,
+grammarSql_Model_strategy = st.builds(
+    grammarSql_Model,
 )
 
-@given(instance=grammarSql::Reference_strategy)
+@given(instance=grammarSql_Reference_strategy)
 @settings(max_examples=50)
-def test_grammarsql::reference_instantiation(instance):
-    assert isinstance(instance, grammarSql::Reference)
+def test_grammarsql_reference_instantiation(instance):
+    assert isinstance(instance, grammarSql_Reference)
 
-@given(instance=grammarSql::ForeignKey_strategy)
+@given(instance=grammarSql_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_grammarsql::foreignkey_instantiation(instance):
-    assert isinstance(instance, grammarSql::ForeignKey)
+def test_grammarsql_foreignkey_instantiation(instance):
+    assert isinstance(instance, grammarSql_ForeignKey)
 
-@given(instance=grammarSql::PrimaryKey_strategy)
+@given(instance=grammarSql_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_grammarsql::primarykey_instantiation(instance):
-    assert isinstance(instance, grammarSql::PrimaryKey)
+def test_grammarsql_primarykey_instantiation(instance):
+    assert isinstance(instance, grammarSql_PrimaryKey)
 
-@given(instance=grammarSql::Column_strategy)
+@given(instance=grammarSql_Column_strategy)
 @settings(max_examples=50)
-def test_grammarsql::column_instantiation(instance):
-    assert isinstance(instance, grammarSql::Column)
-
-@given(instance=grammarSql::Column_strategy)
-def test_grammarsql::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_grammarsql_column_instantiation(instance):
+    assert isinstance(instance, grammarSql_Column)
 
 
-@given(instance=grammarSql::Column_strategy)
-def test_grammarsql::column_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=grammarSql::Column_strategy)
-def test_grammarsql::column_isNotNull_type(instance):
-    assert isinstance(instance.isNotNull, bool)
-
-
-@given(instance=grammarSql::Column_strategy)
-def test_grammarsql::column_isNotNull_setter(instance):
+@given(instance=grammarSql_Column_strategy)
+def test_grammarsql_column_isNotNull_setter(instance):
     original = instance.isNotNull
     instance.isNotNull = original
     assert instance.isNotNull == original
 
-@given(instance=grammarSql::Column_strategy)
-def test_grammarsql::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=grammarSql::Column_strategy)
-def test_grammarsql::column_name_setter(instance):
+@given(instance=grammarSql_Column_strategy)
+def test_grammarsql_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=grammarSql::EObject_strategy)
+
+
+@given(instance=grammarSql_Column_strategy)
+def test_grammarsql_column_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=grammarSql_EObject_strategy)
 @settings(max_examples=50)
-def test_grammarsql::eobject_instantiation(instance):
-    assert isinstance(instance, grammarSql::EObject)
+def test_grammarsql_eobject_instantiation(instance):
+    assert isinstance(instance, grammarSql_EObject)
 
-@given(instance=grammarSql::Table_strategy)
+@given(instance=grammarSql_Table_strategy)
 @settings(max_examples=50)
-def test_grammarsql::table_instantiation(instance):
-    assert isinstance(instance, grammarSql::Table)
-
-@given(instance=grammarSql::Table_strategy)
-def test_grammarsql::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_grammarsql_table_instantiation(instance):
+    assert isinstance(instance, grammarSql_Table)
 
 
-@given(instance=grammarSql::Table_strategy)
-def test_grammarsql::table_name_setter(instance):
+
+@given(instance=grammarSql_Table_strategy)
+def test_grammarsql_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=grammarSql::Model_strategy)
+@given(instance=grammarSql_Model_strategy)
 @settings(max_examples=50)
-def test_grammarsql::model_instantiation(instance):
-    assert isinstance(instance, grammarSql::Model)
+def test_grammarsql_model_instantiation(instance):
+    assert isinstance(instance, grammarSql_Model)

@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    StateMachineHyperedges::Event,
-    StateMachineHyperedges::Transition,
-    StateMachineHyperedges::StateVertex,
-    StateMachineHyperedges::StateMachine,
+from python_code import (
+    StateMachineHyperedges_Event,
+    StateMachineHyperedges_Transition,
+    StateMachineHyperedges_StateVertex,
+    StateMachineHyperedges_StateMachine,
     StateVertex,
-    StateMachineHyperedges::FinalState,
-    StateMachineHyperedges::SimpleState,
-    StateMachineHyperedges::InitialState,
+    StateMachineHyperedges_SimpleState,
+    StateMachineHyperedges_FinalState,
+    StateMachineHyperedges_InitialState,
 )
 
 # =============================================================================
@@ -22,37 +22,37 @@ from classes import (
 
 
 
-def test_statemachinehyperedges::event_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::Event)
+def test_statemachinehyperedges_event_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_Event)
 
 
-def test_statemachinehyperedges::event_constructor_exists():
-    assert callable(StateMachineHyperedges::Event.__init__)
+def test_statemachinehyperedges_event_constructor_exists():
+    assert callable(StateMachineHyperedges_Event.__init__)
 
 
-def test_statemachinehyperedges::event_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::Event.__init__)
+def test_statemachinehyperedges_event_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinehyperedges::transition_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::Transition)
+def test_statemachinehyperedges_transition_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_Transition)
 
 
-def test_statemachinehyperedges::transition_constructor_exists():
-    assert callable(StateMachineHyperedges::Transition.__init__)
+def test_statemachinehyperedges_transition_constructor_exists():
+    assert callable(StateMachineHyperedges_Transition.__init__)
 
 
-def test_statemachinehyperedges::transition_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::Transition.__init__)
+def test_statemachinehyperedges_transition_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinehyperedges::transition_has_name():
-    assert hasattr(StateMachineHyperedges::Transition, "name")
+def test_statemachinehyperedges_transition_has_name():
+    assert hasattr(StateMachineHyperedges_Transition, "name")
     descriptor = None
-    for klass in StateMachineHyperedges::Transition.__mro__:
+    for klass in StateMachineHyperedges_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,23 +60,23 @@ def test_statemachinehyperedges::transition_has_name():
 
 
 
-def test_statemachinehyperedges::statevertex_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::StateVertex)
+def test_statemachinehyperedges_statevertex_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_StateVertex)
 
 
-def test_statemachinehyperedges::statevertex_constructor_exists():
-    assert callable(StateMachineHyperedges::StateVertex.__init__)
+def test_statemachinehyperedges_statevertex_constructor_exists():
+    assert callable(StateMachineHyperedges_StateVertex.__init__)
 
 
-def test_statemachinehyperedges::statevertex_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::StateVertex.__init__)
+def test_statemachinehyperedges_statevertex_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_StateVertex.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachinehyperedges::statevertex_has_name():
-    assert hasattr(StateMachineHyperedges::StateVertex, "name")
+def test_statemachinehyperedges_statevertex_has_name():
+    assert hasattr(StateMachineHyperedges_StateVertex, "name")
     descriptor = None
-    for klass in StateMachineHyperedges::StateVertex.__mro__:
+    for klass in StateMachineHyperedges_StateVertex.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -84,16 +84,16 @@ def test_statemachinehyperedges::statevertex_has_name():
 
 
 
-def test_statemachinehyperedges::statemachine_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::StateMachine)
+def test_statemachinehyperedges_statemachine_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_StateMachine)
 
 
-def test_statemachinehyperedges::statemachine_constructor_exists():
-    assert callable(StateMachineHyperedges::StateMachine.__init__)
+def test_statemachinehyperedges_statemachine_constructor_exists():
+    assert callable(StateMachineHyperedges_StateMachine.__init__)
 
 
-def test_statemachinehyperedges::statemachine_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::StateMachine.__init__)
+def test_statemachinehyperedges_statemachine_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,44 +112,44 @@ def test_statevertex_constructor_args():
 
 
 
-def test_statemachinehyperedges::finalstate_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::FinalState)
+def test_statemachinehyperedges_simplestate_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_SimpleState)
 
 
-def test_statemachinehyperedges::finalstate_constructor_exists():
-    assert callable(StateMachineHyperedges::FinalState.__init__)
+def test_statemachinehyperedges_simplestate_constructor_exists():
+    assert callable(StateMachineHyperedges_SimpleState.__init__)
 
 
-def test_statemachinehyperedges::finalstate_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::FinalState.__init__)
+def test_statemachinehyperedges_simplestate_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinehyperedges::simplestate_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::SimpleState)
+def test_statemachinehyperedges_finalstate_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_FinalState)
 
 
-def test_statemachinehyperedges::simplestate_constructor_exists():
-    assert callable(StateMachineHyperedges::SimpleState.__init__)
+def test_statemachinehyperedges_finalstate_constructor_exists():
+    assert callable(StateMachineHyperedges_FinalState.__init__)
 
 
-def test_statemachinehyperedges::simplestate_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::SimpleState.__init__)
+def test_statemachinehyperedges_finalstate_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachinehyperedges::initialstate_is_not_abstract():
-    assert not inspect.isabstract(StateMachineHyperedges::InitialState)
+def test_statemachinehyperedges_initialstate_is_not_abstract():
+    assert not inspect.isabstract(StateMachineHyperedges_InitialState)
 
 
-def test_statemachinehyperedges::initialstate_constructor_exists():
-    assert callable(StateMachineHyperedges::InitialState.__init__)
+def test_statemachinehyperedges_initialstate_constructor_exists():
+    assert callable(StateMachineHyperedges_InitialState.__init__)
 
 
-def test_statemachinehyperedges::initialstate_constructor_args():
-    sig = inspect.signature(StateMachineHyperedges::InitialState.__init__)
+def test_statemachinehyperedges_initialstate_constructor_args():
+    sig = inspect.signature(StateMachineHyperedges_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,93 +164,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-StateMachineHyperedges::Event_strategy = st.builds(
-    StateMachineHyperedges::Event,
+StateMachineHyperedges_Event_strategy = st.builds(
+    StateMachineHyperedges_Event,
 )
-StateMachineHyperedges::Transition_strategy = st.builds(
-    StateMachineHyperedges::Transition,
+StateMachineHyperedges_Transition_strategy = st.builds(
+    StateMachineHyperedges_Transition,
     name=
         safe_text
 )
-StateMachineHyperedges::StateVertex_strategy = st.builds(
-    StateMachineHyperedges::StateVertex,
+StateMachineHyperedges_StateVertex_strategy = st.builds(
+    StateMachineHyperedges_StateVertex,
     name=
         safe_text
 )
-StateMachineHyperedges::StateMachine_strategy = st.builds(
-    StateMachineHyperedges::StateMachine,
+StateMachineHyperedges_StateMachine_strategy = st.builds(
+    StateMachineHyperedges_StateMachine,
 )
 StateVertex_strategy = st.builds(
     StateVertex,
 )
-StateMachineHyperedges::FinalState_strategy = st.builds(
-    StateMachineHyperedges::FinalState,
+StateMachineHyperedges_SimpleState_strategy = st.builds(
+    StateMachineHyperedges_SimpleState,
 )
-StateMachineHyperedges::SimpleState_strategy = st.builds(
-    StateMachineHyperedges::SimpleState,
+StateMachineHyperedges_FinalState_strategy = st.builds(
+    StateMachineHyperedges_FinalState,
 )
-StateMachineHyperedges::InitialState_strategy = st.builds(
-    StateMachineHyperedges::InitialState,
+StateMachineHyperedges_InitialState_strategy = st.builds(
+    StateMachineHyperedges_InitialState,
 )
 
-@given(instance=StateMachineHyperedges::Event_strategy)
+@given(instance=StateMachineHyperedges_Event_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::event_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::Event)
+def test_statemachinehyperedges_event_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_Event)
 
-@given(instance=StateMachineHyperedges::Transition_strategy)
+@given(instance=StateMachineHyperedges_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::transition_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::Transition)
-
-@given(instance=StateMachineHyperedges::Transition_strategy)
-def test_statemachinehyperedges::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinehyperedges_transition_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_Transition)
 
 
-@given(instance=StateMachineHyperedges::Transition_strategy)
-def test_statemachinehyperedges::transition_name_setter(instance):
+
+@given(instance=StateMachineHyperedges_Transition_strategy)
+def test_statemachinehyperedges_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=StateMachineHyperedges::StateVertex_strategy)
+@given(instance=StateMachineHyperedges_StateVertex_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::statevertex_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::StateVertex)
-
-@given(instance=StateMachineHyperedges::StateVertex_strategy)
-def test_statemachinehyperedges::statevertex_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachinehyperedges_statevertex_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_StateVertex)
 
 
-@given(instance=StateMachineHyperedges::StateVertex_strategy)
-def test_statemachinehyperedges::statevertex_name_setter(instance):
+
+@given(instance=StateMachineHyperedges_StateVertex_strategy)
+def test_statemachinehyperedges_statevertex_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=StateMachineHyperedges::StateMachine_strategy)
+@given(instance=StateMachineHyperedges_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::statemachine_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::StateMachine)
+def test_statemachinehyperedges_statemachine_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_StateMachine)
 
 @given(instance=StateVertex_strategy)
 @settings(max_examples=50)
 def test_statevertex_instantiation(instance):
     assert isinstance(instance, StateVertex)
 
-@given(instance=StateMachineHyperedges::FinalState_strategy)
+@given(instance=StateMachineHyperedges_SimpleState_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::finalstate_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::FinalState)
+def test_statemachinehyperedges_simplestate_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_SimpleState)
 
-@given(instance=StateMachineHyperedges::SimpleState_strategy)
+@given(instance=StateMachineHyperedges_FinalState_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::simplestate_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::SimpleState)
+def test_statemachinehyperedges_finalstate_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_FinalState)
 
-@given(instance=StateMachineHyperedges::InitialState_strategy)
+@given(instance=StateMachineHyperedges_InitialState_strategy)
 @settings(max_examples=50)
-def test_statemachinehyperedges::initialstate_instantiation(instance):
-    assert isinstance(instance, StateMachineHyperedges::InitialState)
+def test_statemachinehyperedges_initialstate_instantiation(instance):
+    assert isinstance(instance, StateMachineHyperedges_InitialState)

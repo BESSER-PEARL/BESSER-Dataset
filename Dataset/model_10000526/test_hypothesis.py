@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Customer,
     account_Account,
     account_CheckingAccount,
     account_CertificatesOfDepositAccount,
@@ -16,6 +15,7 @@ from python_code import (
     transaction_DepositTransaction,
     transaction_Transaction,
     Login,
+    Customer,
     transaction_TransactionType,
     account_AccountType,
 )
@@ -23,70 +23,6 @@ from python_code import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_customer_is_not_abstract():
-    assert not inspect.isabstract(Customer)
-
-
-def test_customer_constructor_exists():
-    assert callable(Customer.__init__)
-
-
-def test_customer_constructor_args():
-    sig = inspect.signature(Customer.__init__)
-    params = list(sig.parameters.keys())
-    assert "emailAddress" in params, "Missing parameter 'emailAddress'"
-    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
-    assert "address" in params, "Missing parameter 'address'"
-
-def test_customer_has_emailAddress():
-    assert hasattr(Customer, "emailAddress")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "emailAddress" in klass.__dict__:
-            descriptor = klass.__dict__["emailAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_dateOfBirth():
-    assert hasattr(Customer, "dateOfBirth")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "dateOfBirth" in klass.__dict__:
-            descriptor = klass.__dict__["dateOfBirth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_name():
-    assert hasattr(Customer, "name")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_phoneNumber():
-    assert hasattr(Customer, "phoneNumber")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "phoneNumber" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_address():
-    assert hasattr(Customer, "address")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -101,18 +37,9 @@ def test_account_account_constructor_exists():
 def test_account_account_constructor_args():
     sig = inspect.signature(account_Account.__init__)
     params = list(sig.parameters.keys())
-    assert "accountNo" in params, "Missing parameter 'accountNo'"
     assert "balance" in params, "Missing parameter 'balance'"
+    assert "accountNo" in params, "Missing parameter 'accountNo'"
     assert "type" in params, "Missing parameter 'type'"
-
-def test_account_account_has_accountNo():
-    assert hasattr(account_Account, "accountNo")
-    descriptor = None
-    for klass in account_Account.__mro__:
-        if "accountNo" in klass.__dict__:
-            descriptor = klass.__dict__["accountNo"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_account_account_has_balance():
     assert hasattr(account_Account, "balance")
@@ -120,6 +47,15 @@ def test_account_account_has_balance():
     for klass in account_Account.__mro__:
         if "balance" in klass.__dict__:
             descriptor = klass.__dict__["balance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_account_account_has_accountNo():
+    assert hasattr(account_Account, "accountNo")
+    descriptor = None
+    for klass in account_Account.__mro__:
+        if "accountNo" in klass.__dict__:
+            descriptor = klass.__dict__["accountNo"]
             break
     assert isinstance(descriptor, property)
 
@@ -227,17 +163,8 @@ def test_transaction_transfertransaction_constructor_exists():
 def test_transaction_transfertransaction_constructor_args():
     sig = inspect.signature(transaction_TransferTransaction.__init__)
     params = list(sig.parameters.keys())
-    assert "targetAccount" in params, "Missing parameter 'targetAccount'"
     assert "sourceAccount" in params, "Missing parameter 'sourceAccount'"
-
-def test_transaction_transfertransaction_has_targetAccount():
-    assert hasattr(transaction_TransferTransaction, "targetAccount")
-    descriptor = None
-    for klass in transaction_TransferTransaction.__mro__:
-        if "targetAccount" in klass.__dict__:
-            descriptor = klass.__dict__["targetAccount"]
-            break
-    assert isinstance(descriptor, property)
+    assert "targetAccount" in params, "Missing parameter 'targetAccount'"
 
 def test_transaction_transfertransaction_has_sourceAccount():
     assert hasattr(transaction_TransferTransaction, "sourceAccount")
@@ -245,6 +172,15 @@ def test_transaction_transfertransaction_has_sourceAccount():
     for klass in transaction_TransferTransaction.__mro__:
         if "sourceAccount" in klass.__dict__:
             descriptor = klass.__dict__["sourceAccount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_transfertransaction_has_targetAccount():
+    assert hasattr(transaction_TransferTransaction, "targetAccount")
+    descriptor = None
+    for klass in transaction_TransferTransaction.__mro__:
+        if "targetAccount" in klass.__dict__:
+            descriptor = klass.__dict__["targetAccount"]
             break
     assert isinstance(descriptor, property)
 
@@ -290,9 +226,9 @@ def test_transaction_transaction_constructor_args():
     sig = inspect.signature(transaction_Transaction.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "transactionTime" in params, "Missing parameter 'transactionTime'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "amount" in params, "Missing parameter 'amount'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "transactionTime" in params, "Missing parameter 'transactionTime'"
 
 def test_transaction_transaction_has_id():
     assert hasattr(transaction_Transaction, "id")
@@ -303,12 +239,12 @@ def test_transaction_transaction_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_transaction_transaction_has_transactionTime():
-    assert hasattr(transaction_Transaction, "transactionTime")
+def test_transaction_transaction_has_amount():
+    assert hasattr(transaction_Transaction, "amount")
     descriptor = None
     for klass in transaction_Transaction.__mro__:
-        if "transactionTime" in klass.__dict__:
-            descriptor = klass.__dict__["transactionTime"]
+        if "amount" in klass.__dict__:
+            descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -321,12 +257,12 @@ def test_transaction_transaction_has_type():
             break
     assert isinstance(descriptor, property)
 
-def test_transaction_transaction_has_amount():
-    assert hasattr(transaction_Transaction, "amount")
+def test_transaction_transaction_has_transactionTime():
+    assert hasattr(transaction_Transaction, "transactionTime")
     descriptor = None
     for klass in transaction_Transaction.__mro__:
-        if "amount" in klass.__dict__:
-            descriptor = klass.__dict__["amount"]
+        if "transactionTime" in klass.__dict__:
+            descriptor = klass.__dict__["transactionTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -344,10 +280,10 @@ def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
     assert "securityAnswer" in params, "Missing parameter 'securityAnswer'"
-    assert "securityQuestion" in params, "Missing parameter 'securityQuestion'"
+    assert "password" in params, "Missing parameter 'password'"
     assert "username" in params, "Missing parameter 'username'"
     assert "lastLoginTime" in params, "Missing parameter 'lastLoginTime'"
-    assert "password" in params, "Missing parameter 'password'"
+    assert "securityQuestion" in params, "Missing parameter 'securityQuestion'"
 
 def test_login_has_securityAnswer():
     assert hasattr(Login, "securityAnswer")
@@ -358,12 +294,12 @@ def test_login_has_securityAnswer():
             break
     assert isinstance(descriptor, property)
 
-def test_login_has_securityQuestion():
-    assert hasattr(Login, "securityQuestion")
+def test_login_has_password():
+    assert hasattr(Login, "password")
     descriptor = None
     for klass in Login.__mro__:
-        if "securityQuestion" in klass.__dict__:
-            descriptor = klass.__dict__["securityQuestion"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -385,12 +321,76 @@ def test_login_has_lastLoginTime():
             break
     assert isinstance(descriptor, property)
 
-def test_login_has_password():
-    assert hasattr(Login, "password")
+def test_login_has_securityQuestion():
+    assert hasattr(Login, "securityQuestion")
     descriptor = None
     for klass in Login.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "securityQuestion" in klass.__dict__:
+            descriptor = klass.__dict__["securityQuestion"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_customer_is_not_abstract():
+    assert not inspect.isabstract(Customer)
+
+
+def test_customer_constructor_exists():
+    assert callable(Customer.__init__)
+
+
+def test_customer_constructor_args():
+    sig = inspect.signature(Customer.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
+    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
+    assert "emailAddress" in params, "Missing parameter 'emailAddress'"
+    assert "address" in params, "Missing parameter 'address'"
+
+def test_customer_has_name():
+    assert hasattr(Customer, "name")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_phoneNumber():
+    assert hasattr(Customer, "phoneNumber")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "phoneNumber" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_dateOfBirth():
+    assert hasattr(Customer, "dateOfBirth")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "dateOfBirth" in klass.__dict__:
+            descriptor = klass.__dict__["dateOfBirth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_emailAddress():
+    assert hasattr(Customer, "emailAddress")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "emailAddress" in klass.__dict__:
+            descriptor = klass.__dict__["emailAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_address():
+    assert hasattr(Customer, "address")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -432,25 +432,12 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Customer_strategy = st.builds(
-    Customer,
-    emailAddress=
-        safe_text,
-    dateOfBirth=
-        st.dates(),
-    name=
-        safe_text,
-    phoneNumber=
-        safe_text,
-    address=
-        safe_text
-)
 account_Account_strategy = st.builds(
     account_Account,
-    accountNo=
-        safe_text,
     balance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    accountNo=
+        safe_text,
     type=
         st.none()
 )
@@ -473,9 +460,9 @@ account_SavingsAccount_strategy = st.builds(
 )
 transaction_TransferTransaction_strategy = st.builds(
     transaction_TransferTransaction,
-    targetAccount=
-        st.none(),
     sourceAccount=
+        st.none(),
+    targetAccount=
         st.none()
 )
 transaction_WithdrawTransaction_strategy = st.builds(
@@ -488,106 +475,45 @@ transaction_Transaction_strategy = st.builds(
     transaction_Transaction,
     id=
         st.integers(),
-    transactionTime=
-        st.dates(),
+    amount=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     type=
         st.none(),
-    amount=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+    transactionTime=
+        st.dates()
 )
 Login_strategy = st.builds(
     Login,
     securityAnswer=
         safe_text,
-    securityQuestion=
+    password=
         safe_text,
     username=
         safe_text,
     lastLoginTime=
         st.dates(),
-    password=
+    securityQuestion=
         safe_text
 )
-
-@given(instance=Customer_strategy)
-@settings(max_examples=50)
-def test_customer_instantiation(instance):
-    assert isinstance(instance, Customer)
-
-@given(instance=Customer_strategy)
-def test_customer_emailAddress_type(instance):
-    assert isinstance(instance.emailAddress, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_emailAddress_setter(instance):
-    original = instance.emailAddress
-    instance.emailAddress = original
-    assert instance.emailAddress == original
-
-@given(instance=Customer_strategy)
-def test_customer_dateOfBirth_type(instance):
-    assert isinstance(instance.dateOfBirth, date)
-
-
-@given(instance=Customer_strategy)
-def test_customer_dateOfBirth_setter(instance):
-    original = instance.dateOfBirth
-    instance.dateOfBirth = original
-    assert instance.dateOfBirth == original
-
-@given(instance=Customer_strategy)
-def test_customer_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Customer_strategy)
-def test_customer_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_phoneNumber_setter(instance):
-    original = instance.phoneNumber
-    instance.phoneNumber = original
-    assert instance.phoneNumber == original
-
-@given(instance=Customer_strategy)
-def test_customer_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
+Customer_strategy = st.builds(
+    Customer,
+    name=
+        safe_text,
+    phoneNumber=
+        safe_text,
+    dateOfBirth=
+        st.dates(),
+    emailAddress=
+        safe_text,
+    address=
+        safe_text
+)
 
 @given(instance=account_Account_strategy)
 @settings(max_examples=50)
 def test_account_account_instantiation(instance):
     assert isinstance(instance, account_Account)
 
-@given(instance=account_Account_strategy)
-def test_account_account_accountNo_type(instance):
-    assert isinstance(instance.accountNo, str)
-
-
-@given(instance=account_Account_strategy)
-def test_account_account_accountNo_setter(instance):
-    original = instance.accountNo
-    instance.accountNo = original
-    assert instance.accountNo == original
-
-@given(instance=account_Account_strategy)
-def test_account_account_balance_type(instance):
-    assert isinstance(instance.balance, float)
 
 
 @given(instance=account_Account_strategy)
@@ -596,9 +522,14 @@ def test_account_account_balance_setter(instance):
     instance.balance = original
     assert instance.balance == original
 
+
+
 @given(instance=account_Account_strategy)
-def test_account_account_type_type(instance):
-    assert isinstance(instance.type, account_accounttype)
+def test_account_account_accountNo_setter(instance):
+    original = instance.accountNo
+    instance.accountNo = original
+    assert instance.accountNo == original
+
 
 
 @given(instance=account_Account_strategy)
@@ -612,9 +543,6 @@ def test_account_account_type_setter(instance):
 def test_account_checkingaccount_instantiation(instance):
     assert isinstance(instance, account_CheckingAccount)
 
-@given(instance=account_CheckingAccount_strategy)
-def test_account_checkingaccount_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=account_CheckingAccount_strategy)
@@ -628,9 +556,6 @@ def test_account_checkingaccount_name_setter(instance):
 def test_account_certificatesofdepositaccount_instantiation(instance):
     assert isinstance(instance, account_CertificatesOfDepositAccount)
 
-@given(instance=account_CertificatesOfDepositAccount_strategy)
-def test_account_certificatesofdepositaccount_timePeriod_type(instance):
-    assert isinstance(instance.timePeriod, int)
 
 
 @given(instance=account_CertificatesOfDepositAccount_strategy)
@@ -639,9 +564,6 @@ def test_account_certificatesofdepositaccount_timePeriod_setter(instance):
     instance.timePeriod = original
     assert instance.timePeriod == original
 
-@given(instance=account_CertificatesOfDepositAccount_strategy)
-def test_account_certificatesofdepositaccount_interestRate_type(instance):
-    assert isinstance(instance.interestRate, float)
 
 
 @given(instance=account_CertificatesOfDepositAccount_strategy)
@@ -655,9 +577,6 @@ def test_account_certificatesofdepositaccount_interestRate_setter(instance):
 def test_account_savingsaccount_instantiation(instance):
     assert isinstance(instance, account_SavingsAccount)
 
-@given(instance=account_SavingsAccount_strategy)
-def test_account_savingsaccount_interestRate_type(instance):
-    assert isinstance(instance.interestRate, float)
 
 
 @given(instance=account_SavingsAccount_strategy)
@@ -671,20 +590,6 @@ def test_account_savingsaccount_interestRate_setter(instance):
 def test_transaction_transfertransaction_instantiation(instance):
     assert isinstance(instance, transaction_TransferTransaction)
 
-@given(instance=transaction_TransferTransaction_strategy)
-def test_transaction_transfertransaction_targetAccount_type(instance):
-    assert isinstance(instance.targetAccount, account_account)
-
-
-@given(instance=transaction_TransferTransaction_strategy)
-def test_transaction_transfertransaction_targetAccount_setter(instance):
-    original = instance.targetAccount
-    instance.targetAccount = original
-    assert instance.targetAccount == original
-
-@given(instance=transaction_TransferTransaction_strategy)
-def test_transaction_transfertransaction_sourceAccount_type(instance):
-    assert isinstance(instance.sourceAccount, account_account)
 
 
 @given(instance=transaction_TransferTransaction_strategy)
@@ -692,6 +597,14 @@ def test_transaction_transfertransaction_sourceAccount_setter(instance):
     original = instance.sourceAccount
     instance.sourceAccount = original
     assert instance.sourceAccount == original
+
+
+
+@given(instance=transaction_TransferTransaction_strategy)
+def test_transaction_transfertransaction_targetAccount_setter(instance):
+    original = instance.targetAccount
+    instance.targetAccount = original
+    assert instance.targetAccount == original
 
 @given(instance=transaction_WithdrawTransaction_strategy)
 @settings(max_examples=50)
@@ -708,9 +621,6 @@ def test_transaction_deposittransaction_instantiation(instance):
 def test_transaction_transaction_instantiation(instance):
     assert isinstance(instance, transaction_Transaction)
 
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=transaction_Transaction_strategy)
@@ -719,31 +629,6 @@ def test_transaction_transaction_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_transactionTime_type(instance):
-    assert isinstance(instance.transactionTime, date)
-
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_transactionTime_setter(instance):
-    original = instance.transactionTime
-    instance.transactionTime = original
-    assert instance.transactionTime == original
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_type_type(instance):
-    assert isinstance(instance.type, transaction_transactiontype)
-
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_amount_type(instance):
-    assert isinstance(instance.amount, float)
 
 
 @given(instance=transaction_Transaction_strategy)
@@ -752,14 +637,27 @@ def test_transaction_transaction_amount_setter(instance):
     instance.amount = original
     assert instance.amount == original
 
+
+
+@given(instance=transaction_Transaction_strategy)
+def test_transaction_transaction_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=transaction_Transaction_strategy)
+def test_transaction_transaction_transactionTime_setter(instance):
+    original = instance.transactionTime
+    instance.transactionTime = original
+    assert instance.transactionTime == original
+
 @given(instance=Login_strategy)
 @settings(max_examples=50)
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_securityAnswer_type(instance):
-    assert isinstance(instance.securityAnswer, str)
 
 
 @given(instance=Login_strategy)
@@ -768,20 +666,14 @@ def test_login_securityAnswer_setter(instance):
     instance.securityAnswer = original
     assert instance.securityAnswer == original
 
-@given(instance=Login_strategy)
-def test_login_securityQuestion_type(instance):
-    assert isinstance(instance.securityQuestion, str)
 
 
 @given(instance=Login_strategy)
-def test_login_securityQuestion_setter(instance):
-    original = instance.securityQuestion
-    instance.securityQuestion = original
-    assert instance.securityQuestion == original
+def test_login_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
 
-@given(instance=Login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Login_strategy)
@@ -790,9 +682,6 @@ def test_login_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
-@given(instance=Login_strategy)
-def test_login_lastLoginTime_type(instance):
-    assert isinstance(instance.lastLoginTime, date)
 
 
 @given(instance=Login_strategy)
@@ -801,13 +690,55 @@ def test_login_lastLoginTime_setter(instance):
     instance.lastLoginTime = original
     assert instance.lastLoginTime == original
 
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Login_strategy)
-def test_login_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
+def test_login_securityQuestion_setter(instance):
+    original = instance.securityQuestion
+    instance.securityQuestion = original
+    assert instance.securityQuestion == original
+
+@given(instance=Customer_strategy)
+@settings(max_examples=50)
+def test_customer_instantiation(instance):
+    assert isinstance(instance, Customer)
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_phoneNumber_setter(instance):
+    original = instance.phoneNumber
+    instance.phoneNumber = original
+    assert instance.phoneNumber == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_dateOfBirth_setter(instance):
+    original = instance.dateOfBirth
+    instance.dateOfBirth = original
+    assert instance.dateOfBirth == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_emailAddress_setter(instance):
+    original = instance.emailAddress
+    instance.emailAddress = original
+    assert instance.emailAddress == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original

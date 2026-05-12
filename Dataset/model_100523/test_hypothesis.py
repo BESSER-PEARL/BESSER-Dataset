@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DirectedRelationship,
     BehavioredClassifier,
-    umluseCases::Actor,
+    umluseCases_Actor,
     Classifier,
-    umluseCases::BehavioredClassifier,
-    umluseCases::UseCase,
+    umluseCases_BehavioredClassifier,
+    umluseCases_UseCase,
     TemplateableElement,
     Type,
     RedefinableElement,
-    umluseCases::ExtensionPoint,
+    umluseCases_ExtensionPoint,
     Namespace,
-    umluseCases::Classifier,
+    umluseCases_Classifier,
     PackageableElement,
-    umluseCases::Type,
+    umluseCases_Type,
     Relationship,
-    umluseCases::DirectedRelationship,
+    umluseCases_DirectedRelationship,
     Element,
-    umluseCases::ParameterableElement,
-    umluseCases::TemplateableElement,
-    umluseCases::Relationship,
-    umluseCases::NamedElement,
+    umluseCases_TemplateableElement,
+    umluseCases_ParameterableElement,
+    umluseCases_Relationship,
+    umluseCases_NamedElement,
     ParameterableElement,
     NamedElement,
-    umluseCases::Extend,
-    umluseCases::RedefinableElement,
-    umluseCases::Include,
-    umluseCases::Namespace,
-    umluseCases::PackageableElement,
+    umluseCases_Extend,
+    umluseCases_Include,
+    umluseCases_RedefinableElement,
+    umluseCases_Namespace,
+    umluseCases_PackageableElement,
     EModelElement,
-    umluseCases::Element,
-    ParameterDirectionKind,
-    PseudostateKind,
-    InteractionOperatorKind,
+    umluseCases_Element,
     CallConcurrencyKind,
-    ParameterEffectKind,
-    VisibilityKind,
+    ObjectNodeOrderingKind,
     TransitionKind,
     MessageSort,
-    ObjectNodeOrderingKind,
+    ParameterDirectionKind,
     MessageKind,
+    ParameterEffectKind,
+    ExpansionKind,
+    VisibilityKind,
+    PseudostateKind,
+    InteractionOperatorKind,
     AggregationKind,
     ConnectorKind,
-    ExpansionKind,
 )
 
 # =============================================================================
@@ -85,16 +85,16 @@ def test_behavioredclassifier_constructor_args():
 
 
 
-def test_umlusecases::actor_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Actor)
+def test_umlusecases_actor_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Actor)
 
 
-def test_umlusecases::actor_constructor_exists():
-    assert callable(umluseCases::Actor.__init__)
+def test_umlusecases_actor_constructor_exists():
+    assert callable(umluseCases_Actor.__init__)
 
 
-def test_umlusecases::actor_constructor_args():
-    sig = inspect.signature(umluseCases::Actor.__init__)
+def test_umlusecases_actor_constructor_args():
+    sig = inspect.signature(umluseCases_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -113,30 +113,30 @@ def test_classifier_constructor_args():
 
 
 
-def test_umlusecases::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::BehavioredClassifier)
+def test_umlusecases_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_BehavioredClassifier)
 
 
-def test_umlusecases::behavioredclassifier_constructor_exists():
-    assert callable(umluseCases::BehavioredClassifier.__init__)
+def test_umlusecases_behavioredclassifier_constructor_exists():
+    assert callable(umluseCases_BehavioredClassifier.__init__)
 
 
-def test_umlusecases::behavioredclassifier_constructor_args():
-    sig = inspect.signature(umluseCases::BehavioredClassifier.__init__)
+def test_umlusecases_behavioredclassifier_constructor_args():
+    sig = inspect.signature(umluseCases_BehavioredClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlusecases::usecase_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::UseCase)
+def test_umlusecases_usecase_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_UseCase)
 
 
-def test_umlusecases::usecase_constructor_exists():
-    assert callable(umluseCases::UseCase.__init__)
+def test_umlusecases_usecase_constructor_exists():
+    assert callable(umluseCases_UseCase.__init__)
 
 
-def test_umlusecases::usecase_constructor_args():
-    sig = inspect.signature(umluseCases::UseCase.__init__)
+def test_umlusecases_usecase_constructor_args():
+    sig = inspect.signature(umluseCases_UseCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -183,16 +183,16 @@ def test_redefinableelement_constructor_args():
 
 
 
-def test_umlusecases::extensionpoint_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::ExtensionPoint)
+def test_umlusecases_extensionpoint_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_ExtensionPoint)
 
 
-def test_umlusecases::extensionpoint_constructor_exists():
-    assert callable(umluseCases::ExtensionPoint.__init__)
+def test_umlusecases_extensionpoint_constructor_exists():
+    assert callable(umluseCases_ExtensionPoint.__init__)
 
 
-def test_umlusecases::extensionpoint_constructor_args():
-    sig = inspect.signature(umluseCases::ExtensionPoint.__init__)
+def test_umlusecases_extensionpoint_constructor_args():
+    sig = inspect.signature(umluseCases_ExtensionPoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,23 +211,23 @@ def test_namespace_constructor_args():
 
 
 
-def test_umlusecases::classifier_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Classifier)
+def test_umlusecases_classifier_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Classifier)
 
 
-def test_umlusecases::classifier_constructor_exists():
-    assert callable(umluseCases::Classifier.__init__)
+def test_umlusecases_classifier_constructor_exists():
+    assert callable(umluseCases_Classifier.__init__)
 
 
-def test_umlusecases::classifier_constructor_args():
-    sig = inspect.signature(umluseCases::Classifier.__init__)
+def test_umlusecases_classifier_constructor_args():
+    sig = inspect.signature(umluseCases_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_umlusecases::classifier_has_isAbstract():
-    assert hasattr(umluseCases::Classifier, "isAbstract")
+def test_umlusecases_classifier_has_isAbstract():
+    assert hasattr(umluseCases_Classifier, "isAbstract")
     descriptor = None
-    for klass in umluseCases::Classifier.__mro__:
+    for klass in umluseCases_Classifier.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -249,16 +249,16 @@ def test_packageableelement_constructor_args():
 
 
 
-def test_umlusecases::type_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Type)
+def test_umlusecases_type_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Type)
 
 
-def test_umlusecases::type_constructor_exists():
-    assert callable(umluseCases::Type.__init__)
+def test_umlusecases_type_constructor_exists():
+    assert callable(umluseCases_Type.__init__)
 
 
-def test_umlusecases::type_constructor_args():
-    sig = inspect.signature(umluseCases::Type.__init__)
+def test_umlusecases_type_constructor_args():
+    sig = inspect.signature(umluseCases_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -277,16 +277,16 @@ def test_relationship_constructor_args():
 
 
 
-def test_umlusecases::directedrelationship_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::DirectedRelationship)
+def test_umlusecases_directedrelationship_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_DirectedRelationship)
 
 
-def test_umlusecases::directedrelationship_constructor_exists():
-    assert callable(umluseCases::DirectedRelationship.__init__)
+def test_umlusecases_directedrelationship_constructor_exists():
+    assert callable(umluseCases_DirectedRelationship.__init__)
 
 
-def test_umlusecases::directedrelationship_constructor_args():
-    sig = inspect.signature(umluseCases::DirectedRelationship.__init__)
+def test_umlusecases_directedrelationship_constructor_args():
+    sig = inspect.signature(umluseCases_DirectedRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -305,87 +305,87 @@ def test_element_constructor_args():
 
 
 
-def test_umlusecases::parameterableelement_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::ParameterableElement)
+def test_umlusecases_templateableelement_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_TemplateableElement)
 
 
-def test_umlusecases::parameterableelement_constructor_exists():
-    assert callable(umluseCases::ParameterableElement.__init__)
+def test_umlusecases_templateableelement_constructor_exists():
+    assert callable(umluseCases_TemplateableElement.__init__)
 
 
-def test_umlusecases::parameterableelement_constructor_args():
-    sig = inspect.signature(umluseCases::ParameterableElement.__init__)
+def test_umlusecases_templateableelement_constructor_args():
+    sig = inspect.signature(umluseCases_TemplateableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlusecases::templateableelement_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::TemplateableElement)
+def test_umlusecases_parameterableelement_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_ParameterableElement)
 
 
-def test_umlusecases::templateableelement_constructor_exists():
-    assert callable(umluseCases::TemplateableElement.__init__)
+def test_umlusecases_parameterableelement_constructor_exists():
+    assert callable(umluseCases_ParameterableElement.__init__)
 
 
-def test_umlusecases::templateableelement_constructor_args():
-    sig = inspect.signature(umluseCases::TemplateableElement.__init__)
+def test_umlusecases_parameterableelement_constructor_args():
+    sig = inspect.signature(umluseCases_ParameterableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlusecases::relationship_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Relationship)
+def test_umlusecases_relationship_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Relationship)
 
 
-def test_umlusecases::relationship_constructor_exists():
-    assert callable(umluseCases::Relationship.__init__)
+def test_umlusecases_relationship_constructor_exists():
+    assert callable(umluseCases_Relationship.__init__)
 
 
-def test_umlusecases::relationship_constructor_args():
-    sig = inspect.signature(umluseCases::Relationship.__init__)
+def test_umlusecases_relationship_constructor_args():
+    sig = inspect.signature(umluseCases_Relationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlusecases::namedelement_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::NamedElement)
+def test_umlusecases_namedelement_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_NamedElement)
 
 
-def test_umlusecases::namedelement_constructor_exists():
-    assert callable(umluseCases::NamedElement.__init__)
+def test_umlusecases_namedelement_constructor_exists():
+    assert callable(umluseCases_NamedElement.__init__)
 
 
-def test_umlusecases::namedelement_constructor_args():
-    sig = inspect.signature(umluseCases::NamedElement.__init__)
+def test_umlusecases_namedelement_constructor_args():
+    sig = inspect.signature(umluseCases_NamedElement.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
     assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_umlusecases::namedelement_has_qualifiedName():
-    assert hasattr(umluseCases::NamedElement, "qualifiedName")
+def test_umlusecases_namedelement_has_name():
+    assert hasattr(umluseCases_NamedElement, "name")
     descriptor = None
-    for klass in umluseCases::NamedElement.__mro__:
+    for klass in umluseCases_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_umlusecases_namedelement_has_qualifiedName():
+    assert hasattr(umluseCases_NamedElement, "qualifiedName")
+    descriptor = None
+    for klass in umluseCases_NamedElement.__mro__:
         if "qualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["qualifiedName"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlusecases::namedelement_has_visibility():
-    assert hasattr(umluseCases::NamedElement, "visibility")
+def test_umlusecases_namedelement_has_visibility():
+    assert hasattr(umluseCases_NamedElement, "visibility")
     descriptor = None
-    for klass in umluseCases::NamedElement.__mro__:
+    for klass in umluseCases_NamedElement.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlusecases::namedelement_has_name():
-    assert hasattr(umluseCases::NamedElement, "name")
-    descriptor = None
-    for klass in umluseCases::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -419,37 +419,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_umlusecases::extend_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Extend)
+def test_umlusecases_extend_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Extend)
 
 
-def test_umlusecases::extend_constructor_exists():
-    assert callable(umluseCases::Extend.__init__)
+def test_umlusecases_extend_constructor_exists():
+    assert callable(umluseCases_Extend.__init__)
 
 
-def test_umlusecases::extend_constructor_args():
-    sig = inspect.signature(umluseCases::Extend.__init__)
+def test_umlusecases_extend_constructor_args():
+    sig = inspect.signature(umluseCases_Extend.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlusecases::redefinableelement_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::RedefinableElement)
+def test_umlusecases_include_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Include)
 
 
-def test_umlusecases::redefinableelement_constructor_exists():
-    assert callable(umluseCases::RedefinableElement.__init__)
+def test_umlusecases_include_constructor_exists():
+    assert callable(umluseCases_Include.__init__)
 
 
-def test_umlusecases::redefinableelement_constructor_args():
-    sig = inspect.signature(umluseCases::RedefinableElement.__init__)
+def test_umlusecases_include_constructor_args():
+    sig = inspect.signature(umluseCases_Include.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlusecases_redefinableelement_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_RedefinableElement)
+
+
+def test_umlusecases_redefinableelement_constructor_exists():
+    assert callable(umluseCases_RedefinableElement.__init__)
+
+
+def test_umlusecases_redefinableelement_constructor_args():
+    sig = inspect.signature(umluseCases_RedefinableElement.__init__)
     params = list(sig.parameters.keys())
     assert "isLeaf" in params, "Missing parameter 'isLeaf'"
 
-def test_umlusecases::redefinableelement_has_isLeaf():
-    assert hasattr(umluseCases::RedefinableElement, "isLeaf")
+def test_umlusecases_redefinableelement_has_isLeaf():
+    assert hasattr(umluseCases_RedefinableElement, "isLeaf")
     descriptor = None
-    for klass in umluseCases::RedefinableElement.__mro__:
+    for klass in umluseCases_RedefinableElement.__mro__:
         if "isLeaf" in klass.__dict__:
             descriptor = klass.__dict__["isLeaf"]
             break
@@ -457,44 +471,30 @@ def test_umlusecases::redefinableelement_has_isLeaf():
 
 
 
-def test_umlusecases::include_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Include)
+def test_umlusecases_namespace_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Namespace)
 
 
-def test_umlusecases::include_constructor_exists():
-    assert callable(umluseCases::Include.__init__)
+def test_umlusecases_namespace_constructor_exists():
+    assert callable(umluseCases_Namespace.__init__)
 
 
-def test_umlusecases::include_constructor_args():
-    sig = inspect.signature(umluseCases::Include.__init__)
+def test_umlusecases_namespace_constructor_args():
+    sig = inspect.signature(umluseCases_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlusecases::namespace_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Namespace)
+def test_umlusecases_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_PackageableElement)
 
 
-def test_umlusecases::namespace_constructor_exists():
-    assert callable(umluseCases::Namespace.__init__)
+def test_umlusecases_packageableelement_constructor_exists():
+    assert callable(umluseCases_PackageableElement.__init__)
 
 
-def test_umlusecases::namespace_constructor_args():
-    sig = inspect.signature(umluseCases::Namespace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlusecases::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::PackageableElement)
-
-
-def test_umlusecases::packageableelement_constructor_exists():
-    assert callable(umluseCases::PackageableElement.__init__)
-
-
-def test_umlusecases::packageableelement_constructor_args():
-    sig = inspect.signature(umluseCases::PackageableElement.__init__)
+def test_umlusecases_packageableelement_constructor_args():
+    sig = inspect.signature(umluseCases_PackageableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -513,82 +513,17 @@ def test_emodelelement_constructor_args():
 
 
 
-def test_umlusecases::element_is_not_abstract():
-    assert not inspect.isabstract(umluseCases::Element)
+def test_umlusecases_element_is_not_abstract():
+    assert not inspect.isabstract(umluseCases_Element)
 
 
-def test_umlusecases::element_constructor_exists():
-    assert callable(umluseCases::Element.__init__)
+def test_umlusecases_element_constructor_exists():
+    assert callable(umluseCases_Element.__init__)
 
 
-def test_umlusecases::element_constructor_args():
-    sig = inspect.signature(umluseCases::Element.__init__)
+def test_umlusecases_element_constructor_args():
+    sig = inspect.signature(umluseCases_Element.__init__)
     params = list(sig.parameters.keys())
-
-def test_parameterdirectionkind_exists():
-    # Check that the Enumeration exists
-    assert ParameterDirectionKind is not None
-
-def test_parameterdirectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterDirectionKind]
-    expected_literals = [
-        "out",
-        "inout",
-        "in_",
-        "return_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
-
-def test_pseudostatekind_exists():
-    # Check that the Enumeration exists
-    assert PseudostateKind is not None
-
-def test_pseudostatekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PseudostateKind]
-    expected_literals = [
-        "choice",
-        "join",
-        "shallowHistory",
-        "terminate",
-        "deepHistory",
-        "fork",
-        "entryPoint",
-        "junction",
-        "exitPoint",
-        "initial",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
-
-def test_interactionoperatorkind_exists():
-    # Check that the Enumeration exists
-    assert InteractionOperatorKind is not None
-
-def test_interactionoperatorkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InteractionOperatorKind]
-    expected_literals = [
-        "ignore",
-        "seq",
-        "neg",
-        "critical",
-        "assert_",
-        "loop",
-        "break_",
-        "alt",
-        "consider",
-        "par",
-        "strict",
-        "opt",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InteractionOperatorKind"
 
 def test_callconcurrencykind_exists():
     # Check that the Enumeration exists
@@ -599,46 +534,29 @@ def test_callconcurrencykind_has_all_literals():
     enum_literals = [lit.name for lit in CallConcurrencyKind]
     expected_literals = [
         "sequential",
-        "guarded",
         "concurrent",
+        "guarded",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CallConcurrencyKind"
 
-def test_parametereffectkind_exists():
+def test_objectnodeorderingkind_exists():
     # Check that the Enumeration exists
-    assert ParameterEffectKind is not None
+    assert ObjectNodeOrderingKind is not None
 
-def test_parametereffectkind_has_all_literals():
+def test_objectnodeorderingkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterEffectKind]
+    enum_literals = [lit.name for lit in ObjectNodeOrderingKind]
     expected_literals = [
-        "read",
-        "update",
-        "create",
-        "delete",
+        "LIFO",
+        "unordered",
+        "ordered",
+        "FIFO",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterEffectKind"
-
-def test_visibilitykind_exists():
-    # Check that the Enumeration exists
-    assert VisibilityKind is not None
-
-def test_visibilitykind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VisibilityKind]
-    expected_literals = [
-        "package",
-        "private",
-        "public",
-        "protected",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ObjectNodeOrderingKind"
 
 def test_transitionkind_exists():
     # Check that the Enumeration exists
@@ -664,33 +582,33 @@ def test_messagesort_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MessageSort]
     expected_literals = [
-        "createMessage",
         "synchCall",
-        "asynchSignal",
-        "asynchCall",
         "deleteMessage",
         "reply",
+        "asynchCall",
+        "asynchSignal",
+        "createMessage",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MessageSort"
 
-def test_objectnodeorderingkind_exists():
+def test_parameterdirectionkind_exists():
     # Check that the Enumeration exists
-    assert ObjectNodeOrderingKind is not None
+    assert ParameterDirectionKind is not None
 
-def test_objectnodeorderingkind_has_all_literals():
+def test_parameterdirectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ObjectNodeOrderingKind]
+    enum_literals = [lit.name for lit in ParameterDirectionKind]
     expected_literals = [
-        "FIFO",
-        "LIFO",
-        "ordered",
-        "unordered",
+        "out",
+        "inout",
+        "return_",
+        "in_",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ObjectNodeOrderingKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
 
 def test_messagekind_exists():
     # Check that the Enumeration exists
@@ -700,14 +618,112 @@ def test_messagekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MessageKind]
     expected_literals = [
-        "unknown",
         "found",
-        "complete",
+        "unknown",
         "lost",
+        "complete",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MessageKind"
+
+def test_parametereffectkind_exists():
+    # Check that the Enumeration exists
+    assert ParameterEffectKind is not None
+
+def test_parametereffectkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ParameterEffectKind]
+    expected_literals = [
+        "read",
+        "create",
+        "delete",
+        "update",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterEffectKind"
+
+def test_expansionkind_exists():
+    # Check that the Enumeration exists
+    assert ExpansionKind is not None
+
+def test_expansionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ExpansionKind]
+    expected_literals = [
+        "parallel",
+        "iterative",
+        "stream",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ExpansionKind"
+
+def test_visibilitykind_exists():
+    # Check that the Enumeration exists
+    assert VisibilityKind is not None
+
+def test_visibilitykind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in VisibilityKind]
+    expected_literals = [
+        "protected",
+        "package",
+        "public",
+        "private",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
+
+def test_pseudostatekind_exists():
+    # Check that the Enumeration exists
+    assert PseudostateKind is not None
+
+def test_pseudostatekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PseudostateKind]
+    expected_literals = [
+        "entryPoint",
+        "terminate",
+        "initial",
+        "fork",
+        "join",
+        "junction",
+        "shallowHistory",
+        "choice",
+        "deepHistory",
+        "exitPoint",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
+
+def test_interactionoperatorkind_exists():
+    # Check that the Enumeration exists
+    assert InteractionOperatorKind is not None
+
+def test_interactionoperatorkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InteractionOperatorKind]
+    expected_literals = [
+        "loop",
+        "opt",
+        "seq",
+        "critical",
+        "consider",
+        "alt",
+        "par",
+        "neg",
+        "ignore",
+        "assert_",
+        "break_",
+        "strict",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InteractionOperatorKind"
 
 def test_aggregationkind_exists():
     # Check that the Enumeration exists
@@ -733,28 +749,12 @@ def test_connectorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ConnectorKind]
     expected_literals = [
-        "assembly",
         "delegation",
+        "assembly",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ConnectorKind"
-
-def test_expansionkind_exists():
-    # Check that the Enumeration exists
-    assert ExpansionKind is not None
-
-def test_expansionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExpansionKind]
-    expected_literals = [
-        "iterative",
-        "stream",
-        "parallel",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExpansionKind"
 
 
 # =============================================================================
@@ -774,17 +774,17 @@ DirectedRelationship_strategy = st.builds(
 BehavioredClassifier_strategy = st.builds(
     BehavioredClassifier,
 )
-umluseCases::Actor_strategy = st.builds(
-    umluseCases::Actor,
+umluseCases_Actor_strategy = st.builds(
+    umluseCases_Actor,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-umluseCases::BehavioredClassifier_strategy = st.builds(
-    umluseCases::BehavioredClassifier,
+umluseCases_BehavioredClassifier_strategy = st.builds(
+    umluseCases_BehavioredClassifier,
 )
-umluseCases::UseCase_strategy = st.builds(
-    umluseCases::UseCase,
+umluseCases_UseCase_strategy = st.builds(
+    umluseCases_UseCase,
 )
 TemplateableElement_strategy = st.builds(
     TemplateableElement,
@@ -795,48 +795,48 @@ Type_strategy = st.builds(
 RedefinableElement_strategy = st.builds(
     RedefinableElement,
 )
-umluseCases::ExtensionPoint_strategy = st.builds(
-    umluseCases::ExtensionPoint,
+umluseCases_ExtensionPoint_strategy = st.builds(
+    umluseCases_ExtensionPoint,
 )
 Namespace_strategy = st.builds(
     Namespace,
 )
-umluseCases::Classifier_strategy = st.builds(
-    umluseCases::Classifier,
+umluseCases_Classifier_strategy = st.builds(
+    umluseCases_Classifier,
     isAbstract=
         safe_text
 )
 PackageableElement_strategy = st.builds(
     PackageableElement,
 )
-umluseCases::Type_strategy = st.builds(
-    umluseCases::Type,
+umluseCases_Type_strategy = st.builds(
+    umluseCases_Type,
 )
 Relationship_strategy = st.builds(
     Relationship,
 )
-umluseCases::DirectedRelationship_strategy = st.builds(
-    umluseCases::DirectedRelationship,
+umluseCases_DirectedRelationship_strategy = st.builds(
+    umluseCases_DirectedRelationship,
 )
 Element_strategy = st.builds(
     Element,
 )
-umluseCases::ParameterableElement_strategy = st.builds(
-    umluseCases::ParameterableElement,
+umluseCases_TemplateableElement_strategy = st.builds(
+    umluseCases_TemplateableElement,
 )
-umluseCases::TemplateableElement_strategy = st.builds(
-    umluseCases::TemplateableElement,
+umluseCases_ParameterableElement_strategy = st.builds(
+    umluseCases_ParameterableElement,
 )
-umluseCases::Relationship_strategy = st.builds(
-    umluseCases::Relationship,
+umluseCases_Relationship_strategy = st.builds(
+    umluseCases_Relationship,
 )
-umluseCases::NamedElement_strategy = st.builds(
-    umluseCases::NamedElement,
+umluseCases_NamedElement_strategy = st.builds(
+    umluseCases_NamedElement,
+    name=
+        safe_text,
     qualifiedName=
         safe_text,
     visibility=
-        safe_text,
-    name=
         safe_text
 )
 ParameterableElement_strategy = st.builds(
@@ -845,28 +845,28 @@ ParameterableElement_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-umluseCases::Extend_strategy = st.builds(
-    umluseCases::Extend,
+umluseCases_Extend_strategy = st.builds(
+    umluseCases_Extend,
 )
-umluseCases::RedefinableElement_strategy = st.builds(
-    umluseCases::RedefinableElement,
+umluseCases_Include_strategy = st.builds(
+    umluseCases_Include,
+)
+umluseCases_RedefinableElement_strategy = st.builds(
+    umluseCases_RedefinableElement,
     isLeaf=
         safe_text
 )
-umluseCases::Include_strategy = st.builds(
-    umluseCases::Include,
+umluseCases_Namespace_strategy = st.builds(
+    umluseCases_Namespace,
 )
-umluseCases::Namespace_strategy = st.builds(
-    umluseCases::Namespace,
-)
-umluseCases::PackageableElement_strategy = st.builds(
-    umluseCases::PackageableElement,
+umluseCases_PackageableElement_strategy = st.builds(
+    umluseCases_PackageableElement,
 )
 EModelElement_strategy = st.builds(
     EModelElement,
 )
-umluseCases::Element_strategy = st.builds(
-    umluseCases::Element,
+umluseCases_Element_strategy = st.builds(
+    umluseCases_Element,
 )
 
 @given(instance=DirectedRelationship_strategy)
@@ -879,10 +879,10 @@ def test_directedrelationship_instantiation(instance):
 def test_behavioredclassifier_instantiation(instance):
     assert isinstance(instance, BehavioredClassifier)
 
-@given(instance=umluseCases::Actor_strategy)
+@given(instance=umluseCases_Actor_strategy)
 @settings(max_examples=50)
-def test_umlusecases::actor_instantiation(instance):
-    assert isinstance(instance, umluseCases::Actor)
+def test_umlusecases_actor_instantiation(instance):
+    assert isinstance(instance, umluseCases_Actor)
 
 import warnings
 import copy
@@ -890,9 +890,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::Actor_strategy)
+@given(instance=umluseCases_Actor_strategy)
 @settings(max_examples=30)
-def test_umlusecases::actor_associations_changes_state(instance):
+def test_umlusecases_actor_associations_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -907,14 +907,14 @@ def test_umlusecases::actor_associations_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'associations' in umluseCases::Actor is empty"
+        assert has_statements, f"Function 'associations' in umluseCases_Actor is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'associations' in umluseCases::Actor did not change state; check implementation")
+            warnings.warn(f"Operation 'associations' in umluseCases_Actor did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'associations' in umluseCases::Actor is not implemented or raised an error")
+        warnings.warn(f"Operation 'associations' in umluseCases_Actor is not implemented or raised an error")
 
 import warnings
 import copy
@@ -922,9 +922,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::Actor_strategy)
+@given(instance=umluseCases_Actor_strategy)
 @settings(max_examples=30)
-def test_umlusecases::actor_must_have_name_changes_state(instance):
+def test_umlusecases_actor_must_have_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -939,29 +939,29 @@ def test_umlusecases::actor_must_have_name_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'must_have_name' in umluseCases::Actor is empty"
+        assert has_statements, f"Function 'must_have_name' in umluseCases_Actor is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'must_have_name' in umluseCases::Actor did not change state; check implementation")
+            warnings.warn(f"Operation 'must_have_name' in umluseCases_Actor did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'must_have_name' in umluseCases::Actor is not implemented or raised an error")
+        warnings.warn(f"Operation 'must_have_name' in umluseCases_Actor is not implemented or raised an error")
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=umluseCases::BehavioredClassifier_strategy)
+@given(instance=umluseCases_BehavioredClassifier_strategy)
 @settings(max_examples=50)
-def test_umlusecases::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, umluseCases::BehavioredClassifier)
+def test_umlusecases_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, umluseCases_BehavioredClassifier)
 
-@given(instance=umluseCases::UseCase_strategy)
+@given(instance=umluseCases_UseCase_strategy)
 @settings(max_examples=50)
-def test_umlusecases::usecase_instantiation(instance):
-    assert isinstance(instance, umluseCases::UseCase)
+def test_umlusecases_usecase_instantiation(instance):
+    assert isinstance(instance, umluseCases_UseCase)
 
 import warnings
 import copy
@@ -969,41 +969,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::UseCase_strategy)
+@given(instance=umluseCases_UseCase_strategy)
 @settings(max_examples=30)
-def test_umlusecases::usecase_binary_associations_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.binary_associations(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.binary_associations).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'binary_associations' in umluseCases::UseCase is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'binary_associations' in umluseCases::UseCase did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'binary_associations' in umluseCases::UseCase is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=umluseCases::UseCase_strategy)
-@settings(max_examples=30)
-def test_umlusecases::usecase_must_have_name_changes_state(instance):
+def test_umlusecases_usecase_must_have_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1018,14 +986,14 @@ def test_umlusecases::usecase_must_have_name_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'must_have_name' in umluseCases::UseCase is empty"
+        assert has_statements, f"Function 'must_have_name' in umluseCases_UseCase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'must_have_name' in umluseCases::UseCase did not change state; check implementation")
+            warnings.warn(f"Operation 'must_have_name' in umluseCases_UseCase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'must_have_name' in umluseCases::UseCase is not implemented or raised an error")
+        warnings.warn(f"Operation 'must_have_name' in umluseCases_UseCase is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1033,9 +1001,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::UseCase_strategy)
+@given(instance=umluseCases_UseCase_strategy)
 @settings(max_examples=30)
-def test_umlusecases::usecase_no_association_to_use_case_changes_state(instance):
+def test_umlusecases_usecase_no_association_to_use_case_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1050,14 +1018,14 @@ def test_umlusecases::usecase_no_association_to_use_case_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'no_association_to_use_case' in umluseCases::UseCase is empty"
+        assert has_statements, f"Function 'no_association_to_use_case' in umluseCases_UseCase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'no_association_to_use_case' in umluseCases::UseCase did not change state; check implementation")
+            warnings.warn(f"Operation 'no_association_to_use_case' in umluseCases_UseCase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'no_association_to_use_case' in umluseCases::UseCase is not implemented or raised an error")
+        warnings.warn(f"Operation 'no_association_to_use_case' in umluseCases_UseCase is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1065,9 +1033,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::UseCase_strategy)
+@given(instance=umluseCases_UseCase_strategy)
 @settings(max_examples=30)
-def test_umlusecases::usecase_cannot_include_self_changes_state(instance):
+def test_umlusecases_usecase_binary_associations_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.binary_associations(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.binary_associations).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'binary_associations' in umluseCases_UseCase is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'binary_associations' in umluseCases_UseCase did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'binary_associations' in umluseCases_UseCase is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=umluseCases_UseCase_strategy)
+@settings(max_examples=30)
+def test_umlusecases_usecase_cannot_include_self_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1082,14 +1082,14 @@ def test_umlusecases::usecase_cannot_include_self_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cannot_include_self' in umluseCases::UseCase is empty"
+        assert has_statements, f"Function 'cannot_include_self' in umluseCases_UseCase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cannot_include_self' in umluseCases::UseCase did not change state; check implementation")
+            warnings.warn(f"Operation 'cannot_include_self' in umluseCases_UseCase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cannot_include_self' in umluseCases::UseCase is not implemented or raised an error")
+        warnings.warn(f"Operation 'cannot_include_self' in umluseCases_UseCase is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1097,9 +1097,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::UseCase_strategy)
+@given(instance=umluseCases_UseCase_strategy)
 @settings(max_examples=30)
-def test_umlusecases::usecase_allincludedusecases_changes_state(instance):
+def test_umlusecases_usecase_allincludedusecases_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1111,14 +1111,14 @@ def test_umlusecases::usecase_allincludedusecases_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allIncludedUseCases' in umluseCases::UseCase is empty"
+        assert has_statements, f"Function 'allIncludedUseCases' in umluseCases_UseCase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allIncludedUseCases' in umluseCases::UseCase did not change state; check implementation")
+            warnings.warn(f"Operation 'allIncludedUseCases' in umluseCases_UseCase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allIncludedUseCases' in umluseCases::UseCase is not implemented or raised an error")
+        warnings.warn(f"Operation 'allIncludedUseCases' in umluseCases_UseCase is not implemented or raised an error")
 
 @given(instance=TemplateableElement_strategy)
 @settings(max_examples=50)
@@ -1135,10 +1135,10 @@ def test_type_instantiation(instance):
 def test_redefinableelement_instantiation(instance):
     assert isinstance(instance, RedefinableElement)
 
-@given(instance=umluseCases::ExtensionPoint_strategy)
+@given(instance=umluseCases_ExtensionPoint_strategy)
 @settings(max_examples=50)
-def test_umlusecases::extensionpoint_instantiation(instance):
-    assert isinstance(instance, umluseCases::ExtensionPoint)
+def test_umlusecases_extensionpoint_instantiation(instance):
+    assert isinstance(instance, umluseCases_ExtensionPoint)
 
 import warnings
 import copy
@@ -1146,9 +1146,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::ExtensionPoint_strategy)
+@given(instance=umluseCases_ExtensionPoint_strategy)
 @settings(max_examples=30)
-def test_umlusecases::extensionpoint_must_have_name_changes_state(instance):
+def test_umlusecases_extensionpoint_must_have_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1163,32 +1163,29 @@ def test_umlusecases::extensionpoint_must_have_name_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'must_have_name' in umluseCases::ExtensionPoint is empty"
+        assert has_statements, f"Function 'must_have_name' in umluseCases_ExtensionPoint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'must_have_name' in umluseCases::ExtensionPoint did not change state; check implementation")
+            warnings.warn(f"Operation 'must_have_name' in umluseCases_ExtensionPoint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'must_have_name' in umluseCases::ExtensionPoint is not implemented or raised an error")
+        warnings.warn(f"Operation 'must_have_name' in umluseCases_ExtensionPoint is not implemented or raised an error")
 
 @given(instance=Namespace_strategy)
 @settings(max_examples=50)
 def test_namespace_instantiation(instance):
     assert isinstance(instance, Namespace)
 
-@given(instance=umluseCases::Classifier_strategy)
+@given(instance=umluseCases_Classifier_strategy)
 @settings(max_examples=50)
-def test_umlusecases::classifier_instantiation(instance):
-    assert isinstance(instance, umluseCases::Classifier)
-
-@given(instance=umluseCases::Classifier_strategy)
-def test_umlusecases::classifier_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_umlusecases_classifier_instantiation(instance):
+    assert isinstance(instance, umluseCases_Classifier)
 
 
-@given(instance=umluseCases::Classifier_strategy)
-def test_umlusecases::classifier_isAbstract_setter(instance):
+
+@given(instance=umluseCases_Classifier_strategy)
+def test_umlusecases_classifier_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -1198,78 +1195,69 @@ def test_umlusecases::classifier_isAbstract_setter(instance):
 def test_packageableelement_instantiation(instance):
     assert isinstance(instance, PackageableElement)
 
-@given(instance=umluseCases::Type_strategy)
+@given(instance=umluseCases_Type_strategy)
 @settings(max_examples=50)
-def test_umlusecases::type_instantiation(instance):
-    assert isinstance(instance, umluseCases::Type)
+def test_umlusecases_type_instantiation(instance):
+    assert isinstance(instance, umluseCases_Type)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=umluseCases::DirectedRelationship_strategy)
+@given(instance=umluseCases_DirectedRelationship_strategy)
 @settings(max_examples=50)
-def test_umlusecases::directedrelationship_instantiation(instance):
-    assert isinstance(instance, umluseCases::DirectedRelationship)
+def test_umlusecases_directedrelationship_instantiation(instance):
+    assert isinstance(instance, umluseCases_DirectedRelationship)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=umluseCases::ParameterableElement_strategy)
+@given(instance=umluseCases_TemplateableElement_strategy)
 @settings(max_examples=50)
-def test_umlusecases::parameterableelement_instantiation(instance):
-    assert isinstance(instance, umluseCases::ParameterableElement)
+def test_umlusecases_templateableelement_instantiation(instance):
+    assert isinstance(instance, umluseCases_TemplateableElement)
 
-@given(instance=umluseCases::TemplateableElement_strategy)
+@given(instance=umluseCases_ParameterableElement_strategy)
 @settings(max_examples=50)
-def test_umlusecases::templateableelement_instantiation(instance):
-    assert isinstance(instance, umluseCases::TemplateableElement)
+def test_umlusecases_parameterableelement_instantiation(instance):
+    assert isinstance(instance, umluseCases_ParameterableElement)
 
-@given(instance=umluseCases::Relationship_strategy)
+@given(instance=umluseCases_Relationship_strategy)
 @settings(max_examples=50)
-def test_umlusecases::relationship_instantiation(instance):
-    assert isinstance(instance, umluseCases::Relationship)
+def test_umlusecases_relationship_instantiation(instance):
+    assert isinstance(instance, umluseCases_Relationship)
 
-@given(instance=umluseCases::NamedElement_strategy)
+@given(instance=umluseCases_NamedElement_strategy)
 @settings(max_examples=50)
-def test_umlusecases::namedelement_instantiation(instance):
-    assert isinstance(instance, umluseCases::NamedElement)
-
-@given(instance=umluseCases::NamedElement_strategy)
-def test_umlusecases::namedelement_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+def test_umlusecases_namedelement_instantiation(instance):
+    assert isinstance(instance, umluseCases_NamedElement)
 
 
-@given(instance=umluseCases::NamedElement_strategy)
-def test_umlusecases::namedelement_qualifiedName_setter(instance):
+
+@given(instance=umluseCases_NamedElement_strategy)
+def test_umlusecases_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=umluseCases_NamedElement_strategy)
+def test_umlusecases_namedelement_qualifiedName_setter(instance):
     original = instance.qualifiedName
     instance.qualifiedName = original
     assert instance.qualifiedName == original
 
-@given(instance=umluseCases::NamedElement_strategy)
-def test_umlusecases::namedelement_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
 
 
-@given(instance=umluseCases::NamedElement_strategy)
-def test_umlusecases::namedelement_visibility_setter(instance):
+@given(instance=umluseCases_NamedElement_strategy)
+def test_umlusecases_namedelement_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
-
-@given(instance=umluseCases::NamedElement_strategy)
-def test_umlusecases::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=umluseCases::NamedElement_strategy)
-def test_umlusecases::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 @given(instance=ParameterableElement_strategy)
 @settings(max_examples=50)
@@ -1281,10 +1269,10 @@ def test_parameterableelement_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=umluseCases::Extend_strategy)
+@given(instance=umluseCases_Extend_strategy)
 @settings(max_examples=50)
-def test_umlusecases::extend_instantiation(instance):
-    assert isinstance(instance, umluseCases::Extend)
+def test_umlusecases_extend_instantiation(instance):
+    assert isinstance(instance, umluseCases_Extend)
 
 import warnings
 import copy
@@ -1292,9 +1280,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=umluseCases::Extend_strategy)
+@given(instance=umluseCases_Extend_strategy)
 @settings(max_examples=30)
-def test_umlusecases::extend_extension_points_changes_state(instance):
+def test_umlusecases_extend_extension_points_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1309,52 +1297,49 @@ def test_umlusecases::extend_extension_points_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'extension_points' in umluseCases::Extend is empty"
+        assert has_statements, f"Function 'extension_points' in umluseCases_Extend is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'extension_points' in umluseCases::Extend did not change state; check implementation")
+            warnings.warn(f"Operation 'extension_points' in umluseCases_Extend did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'extension_points' in umluseCases::Extend is not implemented or raised an error")
+        warnings.warn(f"Operation 'extension_points' in umluseCases_Extend is not implemented or raised an error")
 
-@given(instance=umluseCases::RedefinableElement_strategy)
+@given(instance=umluseCases_Include_strategy)
 @settings(max_examples=50)
-def test_umlusecases::redefinableelement_instantiation(instance):
-    assert isinstance(instance, umluseCases::RedefinableElement)
+def test_umlusecases_include_instantiation(instance):
+    assert isinstance(instance, umluseCases_Include)
 
-@given(instance=umluseCases::RedefinableElement_strategy)
-def test_umlusecases::redefinableelement_isLeaf_type(instance):
-    assert isinstance(instance.isLeaf, str)
+@given(instance=umluseCases_RedefinableElement_strategy)
+@settings(max_examples=50)
+def test_umlusecases_redefinableelement_instantiation(instance):
+    assert isinstance(instance, umluseCases_RedefinableElement)
 
 
-@given(instance=umluseCases::RedefinableElement_strategy)
-def test_umlusecases::redefinableelement_isLeaf_setter(instance):
+
+@given(instance=umluseCases_RedefinableElement_strategy)
+def test_umlusecases_redefinableelement_isLeaf_setter(instance):
     original = instance.isLeaf
     instance.isLeaf = original
     assert instance.isLeaf == original
 
-@given(instance=umluseCases::Include_strategy)
+@given(instance=umluseCases_Namespace_strategy)
 @settings(max_examples=50)
-def test_umlusecases::include_instantiation(instance):
-    assert isinstance(instance, umluseCases::Include)
+def test_umlusecases_namespace_instantiation(instance):
+    assert isinstance(instance, umluseCases_Namespace)
 
-@given(instance=umluseCases::Namespace_strategy)
+@given(instance=umluseCases_PackageableElement_strategy)
 @settings(max_examples=50)
-def test_umlusecases::namespace_instantiation(instance):
-    assert isinstance(instance, umluseCases::Namespace)
-
-@given(instance=umluseCases::PackageableElement_strategy)
-@settings(max_examples=50)
-def test_umlusecases::packageableelement_instantiation(instance):
-    assert isinstance(instance, umluseCases::PackageableElement)
+def test_umlusecases_packageableelement_instantiation(instance):
+    assert isinstance(instance, umluseCases_PackageableElement)
 
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=umluseCases::Element_strategy)
+@given(instance=umluseCases_Element_strategy)
 @settings(max_examples=50)
-def test_umlusecases::element_instantiation(instance):
-    assert isinstance(instance, umluseCases::Element)
+def test_umlusecases_element_instantiation(instance):
+    assert isinstance(instance, umluseCases_Element)

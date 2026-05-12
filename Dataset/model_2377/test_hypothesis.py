@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    umltordbms::Column,
-    umltordbms::ToColumn,
-    umltordbms::PrimitiveDataType,
-    umltordbms::Schema,
-    umltordbms::Package,
-    umltordbms::Attribute,
-    umltordbms::FromAttributeOwner,
-    umltordbms::Class,
-    umltordbms::PackageToSchema,
+from python_code import (
+    umltordbms_Column,
+    umltordbms_ToColumn,
+    umltordbms_PrimitiveDataType,
+    umltordbms_Schema,
+    umltordbms_Package,
+    umltordbms_Attribute,
+    umltordbms_FromAttributeOwner,
+    umltordbms_Class,
+    umltordbms_PackageToSchema,
     FromAttributeOwner,
-    umltordbms::ForeignKey,
-    umltordbms::Association,
-    umltordbms::PrimitiveToName,
+    umltordbms_ForeignKey,
+    umltordbms_Association,
+    umltordbms_PrimitiveToName,
     ToColumn,
-    umltordbms::AssociationToForeignKey,
-    umltordbms::ClassToTable,
+    umltordbms_AssociationToForeignKey,
+    umltordbms_ClassToTable,
     FromAttribute,
-    umltordbms::NonLeafAttribute,
-    umltordbms::AttributeToColumn,
-    umltordbms::FromAttribute,
-    umltordbms::Key,
-    umltordbms::Table,
+    umltordbms_NonLeafAttribute,
+    umltordbms_AttributeToColumn,
+    umltordbms_FromAttribute,
+    umltordbms_Key,
+    umltordbms_Table,
 )
 
 # =============================================================================
@@ -36,135 +36,135 @@ from classes import (
 
 
 
-def test_umltordbms::column_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Column)
+def test_umltordbms_column_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Column)
 
 
-def test_umltordbms::column_constructor_exists():
-    assert callable(umltordbms::Column.__init__)
+def test_umltordbms_column_constructor_exists():
+    assert callable(umltordbms_Column.__init__)
 
 
-def test_umltordbms::column_constructor_args():
-    sig = inspect.signature(umltordbms::Column.__init__)
+def test_umltordbms_column_constructor_args():
+    sig = inspect.signature(umltordbms_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::tocolumn_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::ToColumn)
+def test_umltordbms_tocolumn_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_ToColumn)
 
 
-def test_umltordbms::tocolumn_constructor_exists():
-    assert callable(umltordbms::ToColumn.__init__)
+def test_umltordbms_tocolumn_constructor_exists():
+    assert callable(umltordbms_ToColumn.__init__)
 
 
-def test_umltordbms::tocolumn_constructor_args():
-    sig = inspect.signature(umltordbms::ToColumn.__init__)
+def test_umltordbms_tocolumn_constructor_args():
+    sig = inspect.signature(umltordbms_ToColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::PrimitiveDataType)
+def test_umltordbms_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_PrimitiveDataType)
 
 
-def test_umltordbms::primitivedatatype_constructor_exists():
-    assert callable(umltordbms::PrimitiveDataType.__init__)
+def test_umltordbms_primitivedatatype_constructor_exists():
+    assert callable(umltordbms_PrimitiveDataType.__init__)
 
 
-def test_umltordbms::primitivedatatype_constructor_args():
-    sig = inspect.signature(umltordbms::PrimitiveDataType.__init__)
+def test_umltordbms_primitivedatatype_constructor_args():
+    sig = inspect.signature(umltordbms_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::schema_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Schema)
+def test_umltordbms_schema_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Schema)
 
 
-def test_umltordbms::schema_constructor_exists():
-    assert callable(umltordbms::Schema.__init__)
+def test_umltordbms_schema_constructor_exists():
+    assert callable(umltordbms_Schema.__init__)
 
 
-def test_umltordbms::schema_constructor_args():
-    sig = inspect.signature(umltordbms::Schema.__init__)
+def test_umltordbms_schema_constructor_args():
+    sig = inspect.signature(umltordbms_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::package_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Package)
+def test_umltordbms_package_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Package)
 
 
-def test_umltordbms::package_constructor_exists():
-    assert callable(umltordbms::Package.__init__)
+def test_umltordbms_package_constructor_exists():
+    assert callable(umltordbms_Package.__init__)
 
 
-def test_umltordbms::package_constructor_args():
-    sig = inspect.signature(umltordbms::Package.__init__)
+def test_umltordbms_package_constructor_args():
+    sig = inspect.signature(umltordbms_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::attribute_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Attribute)
+def test_umltordbms_attribute_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Attribute)
 
 
-def test_umltordbms::attribute_constructor_exists():
-    assert callable(umltordbms::Attribute.__init__)
+def test_umltordbms_attribute_constructor_exists():
+    assert callable(umltordbms_Attribute.__init__)
 
 
-def test_umltordbms::attribute_constructor_args():
-    sig = inspect.signature(umltordbms::Attribute.__init__)
+def test_umltordbms_attribute_constructor_args():
+    sig = inspect.signature(umltordbms_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::fromattributeowner_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::FromAttributeOwner)
+def test_umltordbms_fromattributeowner_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_FromAttributeOwner)
 
 
-def test_umltordbms::fromattributeowner_constructor_exists():
-    assert callable(umltordbms::FromAttributeOwner.__init__)
+def test_umltordbms_fromattributeowner_constructor_exists():
+    assert callable(umltordbms_FromAttributeOwner.__init__)
 
 
-def test_umltordbms::fromattributeowner_constructor_args():
-    sig = inspect.signature(umltordbms::FromAttributeOwner.__init__)
+def test_umltordbms_fromattributeowner_constructor_args():
+    sig = inspect.signature(umltordbms_FromAttributeOwner.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::class_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Class)
+def test_umltordbms_class_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Class)
 
 
-def test_umltordbms::class_constructor_exists():
-    assert callable(umltordbms::Class.__init__)
+def test_umltordbms_class_constructor_exists():
+    assert callable(umltordbms_Class.__init__)
 
 
-def test_umltordbms::class_constructor_args():
-    sig = inspect.signature(umltordbms::Class.__init__)
+def test_umltordbms_class_constructor_args():
+    sig = inspect.signature(umltordbms_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::packagetoschema_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::PackageToSchema)
+def test_umltordbms_packagetoschema_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_PackageToSchema)
 
 
-def test_umltordbms::packagetoschema_constructor_exists():
-    assert callable(umltordbms::PackageToSchema.__init__)
+def test_umltordbms_packagetoschema_constructor_exists():
+    assert callable(umltordbms_PackageToSchema.__init__)
 
 
-def test_umltordbms::packagetoschema_constructor_args():
-    sig = inspect.signature(umltordbms::PackageToSchema.__init__)
+def test_umltordbms_packagetoschema_constructor_args():
+    sig = inspect.signature(umltordbms_PackageToSchema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umltordbms::packagetoschema_has_name():
-    assert hasattr(umltordbms::PackageToSchema, "name")
+def test_umltordbms_packagetoschema_has_name():
+    assert hasattr(umltordbms_PackageToSchema, "name")
     descriptor = None
-    for klass in umltordbms::PackageToSchema.__mro__:
+    for klass in umltordbms_PackageToSchema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,63 +186,63 @@ def test_fromattributeowner_constructor_args():
 
 
 
-def test_umltordbms::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::ForeignKey)
+def test_umltordbms_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_ForeignKey)
 
 
-def test_umltordbms::foreignkey_constructor_exists():
-    assert callable(umltordbms::ForeignKey.__init__)
+def test_umltordbms_foreignkey_constructor_exists():
+    assert callable(umltordbms_ForeignKey.__init__)
 
 
-def test_umltordbms::foreignkey_constructor_args():
-    sig = inspect.signature(umltordbms::ForeignKey.__init__)
+def test_umltordbms_foreignkey_constructor_args():
+    sig = inspect.signature(umltordbms_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::association_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Association)
+def test_umltordbms_association_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Association)
 
 
-def test_umltordbms::association_constructor_exists():
-    assert callable(umltordbms::Association.__init__)
+def test_umltordbms_association_constructor_exists():
+    assert callable(umltordbms_Association.__init__)
 
 
-def test_umltordbms::association_constructor_args():
-    sig = inspect.signature(umltordbms::Association.__init__)
+def test_umltordbms_association_constructor_args():
+    sig = inspect.signature(umltordbms_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::primitivetoname_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::PrimitiveToName)
+def test_umltordbms_primitivetoname_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_PrimitiveToName)
 
 
-def test_umltordbms::primitivetoname_constructor_exists():
-    assert callable(umltordbms::PrimitiveToName.__init__)
+def test_umltordbms_primitivetoname_constructor_exists():
+    assert callable(umltordbms_PrimitiveToName.__init__)
 
 
-def test_umltordbms::primitivetoname_constructor_args():
-    sig = inspect.signature(umltordbms::PrimitiveToName.__init__)
+def test_umltordbms_primitivetoname_constructor_args():
+    sig = inspect.signature(umltordbms_PrimitiveToName.__init__)
     params = list(sig.parameters.keys())
-    assert "typeName" in params, "Missing parameter 'typeName'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "typeName" in params, "Missing parameter 'typeName'"
 
-def test_umltordbms::primitivetoname_has_typeName():
-    assert hasattr(umltordbms::PrimitiveToName, "typeName")
+def test_umltordbms_primitivetoname_has_name():
+    assert hasattr(umltordbms_PrimitiveToName, "name")
     descriptor = None
-    for klass in umltordbms::PrimitiveToName.__mro__:
-        if "typeName" in klass.__dict__:
-            descriptor = klass.__dict__["typeName"]
+    for klass in umltordbms_PrimitiveToName.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_umltordbms::primitivetoname_has_name():
-    assert hasattr(umltordbms::PrimitiveToName, "name")
+def test_umltordbms_primitivetoname_has_typeName():
+    assert hasattr(umltordbms_PrimitiveToName, "typeName")
     descriptor = None
-    for klass in umltordbms::PrimitiveToName.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in umltordbms_PrimitiveToName.__mro__:
+        if "typeName" in klass.__dict__:
+            descriptor = klass.__dict__["typeName"]
             break
     assert isinstance(descriptor, property)
 
@@ -262,23 +262,23 @@ def test_tocolumn_constructor_args():
 
 
 
-def test_umltordbms::associationtoforeignkey_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::AssociationToForeignKey)
+def test_umltordbms_associationtoforeignkey_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_AssociationToForeignKey)
 
 
-def test_umltordbms::associationtoforeignkey_constructor_exists():
-    assert callable(umltordbms::AssociationToForeignKey.__init__)
+def test_umltordbms_associationtoforeignkey_constructor_exists():
+    assert callable(umltordbms_AssociationToForeignKey.__init__)
 
 
-def test_umltordbms::associationtoforeignkey_constructor_args():
-    sig = inspect.signature(umltordbms::AssociationToForeignKey.__init__)
+def test_umltordbms_associationtoforeignkey_constructor_args():
+    sig = inspect.signature(umltordbms_AssociationToForeignKey.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umltordbms::associationtoforeignkey_has_name():
-    assert hasattr(umltordbms::AssociationToForeignKey, "name")
+def test_umltordbms_associationtoforeignkey_has_name():
+    assert hasattr(umltordbms_AssociationToForeignKey, "name")
     descriptor = None
-    for klass in umltordbms::AssociationToForeignKey.__mro__:
+    for klass in umltordbms_AssociationToForeignKey.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -286,23 +286,23 @@ def test_umltordbms::associationtoforeignkey_has_name():
 
 
 
-def test_umltordbms::classtotable_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::ClassToTable)
+def test_umltordbms_classtotable_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_ClassToTable)
 
 
-def test_umltordbms::classtotable_constructor_exists():
-    assert callable(umltordbms::ClassToTable.__init__)
+def test_umltordbms_classtotable_constructor_exists():
+    assert callable(umltordbms_ClassToTable.__init__)
 
 
-def test_umltordbms::classtotable_constructor_args():
-    sig = inspect.signature(umltordbms::ClassToTable.__init__)
+def test_umltordbms_classtotable_constructor_args():
+    sig = inspect.signature(umltordbms_ClassToTable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umltordbms::classtotable_has_name():
-    assert hasattr(umltordbms::ClassToTable, "name")
+def test_umltordbms_classtotable_has_name():
+    assert hasattr(umltordbms_ClassToTable, "name")
     descriptor = None
-    for klass in umltordbms::ClassToTable.__mro__:
+    for klass in umltordbms_ClassToTable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -324,92 +324,92 @@ def test_fromattribute_constructor_args():
 
 
 
-def test_umltordbms::nonleafattribute_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::NonLeafAttribute)
+def test_umltordbms_nonleafattribute_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_NonLeafAttribute)
 
 
-def test_umltordbms::nonleafattribute_constructor_exists():
-    assert callable(umltordbms::NonLeafAttribute.__init__)
+def test_umltordbms_nonleafattribute_constructor_exists():
+    assert callable(umltordbms_NonLeafAttribute.__init__)
 
 
-def test_umltordbms::nonleafattribute_constructor_args():
-    sig = inspect.signature(umltordbms::NonLeafAttribute.__init__)
+def test_umltordbms_nonleafattribute_constructor_args():
+    sig = inspect.signature(umltordbms_NonLeafAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::attributetocolumn_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::AttributeToColumn)
+def test_umltordbms_attributetocolumn_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_AttributeToColumn)
 
 
-def test_umltordbms::attributetocolumn_constructor_exists():
-    assert callable(umltordbms::AttributeToColumn.__init__)
+def test_umltordbms_attributetocolumn_constructor_exists():
+    assert callable(umltordbms_AttributeToColumn.__init__)
 
 
-def test_umltordbms::attributetocolumn_constructor_args():
-    sig = inspect.signature(umltordbms::AttributeToColumn.__init__)
+def test_umltordbms_attributetocolumn_constructor_args():
+    sig = inspect.signature(umltordbms_AttributeToColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::fromattribute_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::FromAttribute)
+def test_umltordbms_fromattribute_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_FromAttribute)
 
 
-def test_umltordbms::fromattribute_constructor_exists():
-    assert callable(umltordbms::FromAttribute.__init__)
+def test_umltordbms_fromattribute_constructor_exists():
+    assert callable(umltordbms_FromAttribute.__init__)
 
 
-def test_umltordbms::fromattribute_constructor_args():
-    sig = inspect.signature(umltordbms::FromAttribute.__init__)
+def test_umltordbms_fromattribute_constructor_args():
+    sig = inspect.signature(umltordbms_FromAttribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "kind" in params, "Missing parameter 'kind'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_umltordbms::fromattribute_has_name():
-    assert hasattr(umltordbms::FromAttribute, "name")
+def test_umltordbms_fromattribute_has_kind():
+    assert hasattr(umltordbms_FromAttribute, "kind")
     descriptor = None
-    for klass in umltordbms::FromAttribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umltordbms::fromattribute_has_kind():
-    assert hasattr(umltordbms::FromAttribute, "kind")
-    descriptor = None
-    for klass in umltordbms::FromAttribute.__mro__:
+    for klass in umltordbms_FromAttribute.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
+def test_umltordbms_fromattribute_has_name():
+    assert hasattr(umltordbms_FromAttribute, "name")
+    descriptor = None
+    for klass in umltordbms_FromAttribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_umltordbms::key_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Key)
+
+def test_umltordbms_key_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Key)
 
 
-def test_umltordbms::key_constructor_exists():
-    assert callable(umltordbms::Key.__init__)
+def test_umltordbms_key_constructor_exists():
+    assert callable(umltordbms_Key.__init__)
 
 
-def test_umltordbms::key_constructor_args():
-    sig = inspect.signature(umltordbms::Key.__init__)
+def test_umltordbms_key_constructor_args():
+    sig = inspect.signature(umltordbms_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umltordbms::table_is_not_abstract():
-    assert not inspect.isabstract(umltordbms::Table)
+def test_umltordbms_table_is_not_abstract():
+    assert not inspect.isabstract(umltordbms_Table)
 
 
-def test_umltordbms::table_constructor_exists():
-    assert callable(umltordbms::Table.__init__)
+def test_umltordbms_table_constructor_exists():
+    assert callable(umltordbms_Table.__init__)
 
 
-def test_umltordbms::table_constructor_args():
-    sig = inspect.signature(umltordbms::Table.__init__)
+def test_umltordbms_table_constructor_args():
+    sig = inspect.signature(umltordbms_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -424,139 +424,136 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-umltordbms::Column_strategy = st.builds(
-    umltordbms::Column,
+umltordbms_Column_strategy = st.builds(
+    umltordbms_Column,
 )
-umltordbms::ToColumn_strategy = st.builds(
-    umltordbms::ToColumn,
+umltordbms_ToColumn_strategy = st.builds(
+    umltordbms_ToColumn,
 )
-umltordbms::PrimitiveDataType_strategy = st.builds(
-    umltordbms::PrimitiveDataType,
+umltordbms_PrimitiveDataType_strategy = st.builds(
+    umltordbms_PrimitiveDataType,
 )
-umltordbms::Schema_strategy = st.builds(
-    umltordbms::Schema,
+umltordbms_Schema_strategy = st.builds(
+    umltordbms_Schema,
 )
-umltordbms::Package_strategy = st.builds(
-    umltordbms::Package,
+umltordbms_Package_strategy = st.builds(
+    umltordbms_Package,
 )
-umltordbms::Attribute_strategy = st.builds(
-    umltordbms::Attribute,
+umltordbms_Attribute_strategy = st.builds(
+    umltordbms_Attribute,
 )
-umltordbms::FromAttributeOwner_strategy = st.builds(
-    umltordbms::FromAttributeOwner,
+umltordbms_FromAttributeOwner_strategy = st.builds(
+    umltordbms_FromAttributeOwner,
 )
-umltordbms::Class_strategy = st.builds(
-    umltordbms::Class,
+umltordbms_Class_strategy = st.builds(
+    umltordbms_Class,
 )
-umltordbms::PackageToSchema_strategy = st.builds(
-    umltordbms::PackageToSchema,
+umltordbms_PackageToSchema_strategy = st.builds(
+    umltordbms_PackageToSchema,
     name=
         safe_text
 )
 FromAttributeOwner_strategy = st.builds(
     FromAttributeOwner,
 )
-umltordbms::ForeignKey_strategy = st.builds(
-    umltordbms::ForeignKey,
+umltordbms_ForeignKey_strategy = st.builds(
+    umltordbms_ForeignKey,
 )
-umltordbms::Association_strategy = st.builds(
-    umltordbms::Association,
+umltordbms_Association_strategy = st.builds(
+    umltordbms_Association,
 )
-umltordbms::PrimitiveToName_strategy = st.builds(
-    umltordbms::PrimitiveToName,
-    typeName=
-        safe_text,
+umltordbms_PrimitiveToName_strategy = st.builds(
+    umltordbms_PrimitiveToName,
     name=
+        safe_text,
+    typeName=
         safe_text
 )
 ToColumn_strategy = st.builds(
     ToColumn,
 )
-umltordbms::AssociationToForeignKey_strategy = st.builds(
-    umltordbms::AssociationToForeignKey,
+umltordbms_AssociationToForeignKey_strategy = st.builds(
+    umltordbms_AssociationToForeignKey,
     name=
         safe_text
 )
-umltordbms::ClassToTable_strategy = st.builds(
-    umltordbms::ClassToTable,
+umltordbms_ClassToTable_strategy = st.builds(
+    umltordbms_ClassToTable,
     name=
         safe_text
 )
 FromAttribute_strategy = st.builds(
     FromAttribute,
 )
-umltordbms::NonLeafAttribute_strategy = st.builds(
-    umltordbms::NonLeafAttribute,
+umltordbms_NonLeafAttribute_strategy = st.builds(
+    umltordbms_NonLeafAttribute,
 )
-umltordbms::AttributeToColumn_strategy = st.builds(
-    umltordbms::AttributeToColumn,
+umltordbms_AttributeToColumn_strategy = st.builds(
+    umltordbms_AttributeToColumn,
 )
-umltordbms::FromAttribute_strategy = st.builds(
-    umltordbms::FromAttribute,
-    name=
-        safe_text,
+umltordbms_FromAttribute_strategy = st.builds(
+    umltordbms_FromAttribute,
     kind=
+        safe_text,
+    name=
         safe_text
 )
-umltordbms::Key_strategy = st.builds(
-    umltordbms::Key,
+umltordbms_Key_strategy = st.builds(
+    umltordbms_Key,
 )
-umltordbms::Table_strategy = st.builds(
-    umltordbms::Table,
+umltordbms_Table_strategy = st.builds(
+    umltordbms_Table,
 )
 
-@given(instance=umltordbms::Column_strategy)
+@given(instance=umltordbms_Column_strategy)
 @settings(max_examples=50)
-def test_umltordbms::column_instantiation(instance):
-    assert isinstance(instance, umltordbms::Column)
+def test_umltordbms_column_instantiation(instance):
+    assert isinstance(instance, umltordbms_Column)
 
-@given(instance=umltordbms::ToColumn_strategy)
+@given(instance=umltordbms_ToColumn_strategy)
 @settings(max_examples=50)
-def test_umltordbms::tocolumn_instantiation(instance):
-    assert isinstance(instance, umltordbms::ToColumn)
+def test_umltordbms_tocolumn_instantiation(instance):
+    assert isinstance(instance, umltordbms_ToColumn)
 
-@given(instance=umltordbms::PrimitiveDataType_strategy)
+@given(instance=umltordbms_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_umltordbms::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, umltordbms::PrimitiveDataType)
+def test_umltordbms_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, umltordbms_PrimitiveDataType)
 
-@given(instance=umltordbms::Schema_strategy)
+@given(instance=umltordbms_Schema_strategy)
 @settings(max_examples=50)
-def test_umltordbms::schema_instantiation(instance):
-    assert isinstance(instance, umltordbms::Schema)
+def test_umltordbms_schema_instantiation(instance):
+    assert isinstance(instance, umltordbms_Schema)
 
-@given(instance=umltordbms::Package_strategy)
+@given(instance=umltordbms_Package_strategy)
 @settings(max_examples=50)
-def test_umltordbms::package_instantiation(instance):
-    assert isinstance(instance, umltordbms::Package)
+def test_umltordbms_package_instantiation(instance):
+    assert isinstance(instance, umltordbms_Package)
 
-@given(instance=umltordbms::Attribute_strategy)
+@given(instance=umltordbms_Attribute_strategy)
 @settings(max_examples=50)
-def test_umltordbms::attribute_instantiation(instance):
-    assert isinstance(instance, umltordbms::Attribute)
+def test_umltordbms_attribute_instantiation(instance):
+    assert isinstance(instance, umltordbms_Attribute)
 
-@given(instance=umltordbms::FromAttributeOwner_strategy)
+@given(instance=umltordbms_FromAttributeOwner_strategy)
 @settings(max_examples=50)
-def test_umltordbms::fromattributeowner_instantiation(instance):
-    assert isinstance(instance, umltordbms::FromAttributeOwner)
+def test_umltordbms_fromattributeowner_instantiation(instance):
+    assert isinstance(instance, umltordbms_FromAttributeOwner)
 
-@given(instance=umltordbms::Class_strategy)
+@given(instance=umltordbms_Class_strategy)
 @settings(max_examples=50)
-def test_umltordbms::class_instantiation(instance):
-    assert isinstance(instance, umltordbms::Class)
+def test_umltordbms_class_instantiation(instance):
+    assert isinstance(instance, umltordbms_Class)
 
-@given(instance=umltordbms::PackageToSchema_strategy)
+@given(instance=umltordbms_PackageToSchema_strategy)
 @settings(max_examples=50)
-def test_umltordbms::packagetoschema_instantiation(instance):
-    assert isinstance(instance, umltordbms::PackageToSchema)
-
-@given(instance=umltordbms::PackageToSchema_strategy)
-def test_umltordbms::packagetoschema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umltordbms_packagetoschema_instantiation(instance):
+    assert isinstance(instance, umltordbms_PackageToSchema)
 
 
-@given(instance=umltordbms::PackageToSchema_strategy)
-def test_umltordbms::packagetoschema_name_setter(instance):
+
+@given(instance=umltordbms_PackageToSchema_strategy)
+def test_umltordbms_packagetoschema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -566,76 +563,64 @@ def test_umltordbms::packagetoschema_name_setter(instance):
 def test_fromattributeowner_instantiation(instance):
     assert isinstance(instance, FromAttributeOwner)
 
-@given(instance=umltordbms::ForeignKey_strategy)
+@given(instance=umltordbms_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_umltordbms::foreignkey_instantiation(instance):
-    assert isinstance(instance, umltordbms::ForeignKey)
+def test_umltordbms_foreignkey_instantiation(instance):
+    assert isinstance(instance, umltordbms_ForeignKey)
 
-@given(instance=umltordbms::Association_strategy)
+@given(instance=umltordbms_Association_strategy)
 @settings(max_examples=50)
-def test_umltordbms::association_instantiation(instance):
-    assert isinstance(instance, umltordbms::Association)
+def test_umltordbms_association_instantiation(instance):
+    assert isinstance(instance, umltordbms_Association)
 
-@given(instance=umltordbms::PrimitiveToName_strategy)
+@given(instance=umltordbms_PrimitiveToName_strategy)
 @settings(max_examples=50)
-def test_umltordbms::primitivetoname_instantiation(instance):
-    assert isinstance(instance, umltordbms::PrimitiveToName)
-
-@given(instance=umltordbms::PrimitiveToName_strategy)
-def test_umltordbms::primitivetoname_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
+def test_umltordbms_primitivetoname_instantiation(instance):
+    assert isinstance(instance, umltordbms_PrimitiveToName)
 
 
-@given(instance=umltordbms::PrimitiveToName_strategy)
-def test_umltordbms::primitivetoname_typeName_setter(instance):
-    original = instance.typeName
-    instance.typeName = original
-    assert instance.typeName == original
 
-@given(instance=umltordbms::PrimitiveToName_strategy)
-def test_umltordbms::primitivetoname_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=umltordbms::PrimitiveToName_strategy)
-def test_umltordbms::primitivetoname_name_setter(instance):
+@given(instance=umltordbms_PrimitiveToName_strategy)
+def test_umltordbms_primitivetoname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=umltordbms_PrimitiveToName_strategy)
+def test_umltordbms_primitivetoname_typeName_setter(instance):
+    original = instance.typeName
+    instance.typeName = original
+    assert instance.typeName == original
 
 @given(instance=ToColumn_strategy)
 @settings(max_examples=50)
 def test_tocolumn_instantiation(instance):
     assert isinstance(instance, ToColumn)
 
-@given(instance=umltordbms::AssociationToForeignKey_strategy)
+@given(instance=umltordbms_AssociationToForeignKey_strategy)
 @settings(max_examples=50)
-def test_umltordbms::associationtoforeignkey_instantiation(instance):
-    assert isinstance(instance, umltordbms::AssociationToForeignKey)
-
-@given(instance=umltordbms::AssociationToForeignKey_strategy)
-def test_umltordbms::associationtoforeignkey_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umltordbms_associationtoforeignkey_instantiation(instance):
+    assert isinstance(instance, umltordbms_AssociationToForeignKey)
 
 
-@given(instance=umltordbms::AssociationToForeignKey_strategy)
-def test_umltordbms::associationtoforeignkey_name_setter(instance):
+
+@given(instance=umltordbms_AssociationToForeignKey_strategy)
+def test_umltordbms_associationtoforeignkey_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umltordbms::ClassToTable_strategy)
+@given(instance=umltordbms_ClassToTable_strategy)
 @settings(max_examples=50)
-def test_umltordbms::classtotable_instantiation(instance):
-    assert isinstance(instance, umltordbms::ClassToTable)
-
-@given(instance=umltordbms::ClassToTable_strategy)
-def test_umltordbms::classtotable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umltordbms_classtotable_instantiation(instance):
+    assert isinstance(instance, umltordbms_ClassToTable)
 
 
-@given(instance=umltordbms::ClassToTable_strategy)
-def test_umltordbms::classtotable_name_setter(instance):
+
+@given(instance=umltordbms_ClassToTable_strategy)
+def test_umltordbms_classtotable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -645,49 +630,43 @@ def test_umltordbms::classtotable_name_setter(instance):
 def test_fromattribute_instantiation(instance):
     assert isinstance(instance, FromAttribute)
 
-@given(instance=umltordbms::NonLeafAttribute_strategy)
+@given(instance=umltordbms_NonLeafAttribute_strategy)
 @settings(max_examples=50)
-def test_umltordbms::nonleafattribute_instantiation(instance):
-    assert isinstance(instance, umltordbms::NonLeafAttribute)
+def test_umltordbms_nonleafattribute_instantiation(instance):
+    assert isinstance(instance, umltordbms_NonLeafAttribute)
 
-@given(instance=umltordbms::AttributeToColumn_strategy)
+@given(instance=umltordbms_AttributeToColumn_strategy)
 @settings(max_examples=50)
-def test_umltordbms::attributetocolumn_instantiation(instance):
-    assert isinstance(instance, umltordbms::AttributeToColumn)
+def test_umltordbms_attributetocolumn_instantiation(instance):
+    assert isinstance(instance, umltordbms_AttributeToColumn)
 
-@given(instance=umltordbms::FromAttribute_strategy)
+@given(instance=umltordbms_FromAttribute_strategy)
 @settings(max_examples=50)
-def test_umltordbms::fromattribute_instantiation(instance):
-    assert isinstance(instance, umltordbms::FromAttribute)
-
-@given(instance=umltordbms::FromAttribute_strategy)
-def test_umltordbms::fromattribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umltordbms_fromattribute_instantiation(instance):
+    assert isinstance(instance, umltordbms_FromAttribute)
 
 
-@given(instance=umltordbms::FromAttribute_strategy)
-def test_umltordbms::fromattribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=umltordbms::FromAttribute_strategy)
-def test_umltordbms::fromattribute_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=umltordbms::FromAttribute_strategy)
-def test_umltordbms::fromattribute_kind_setter(instance):
+@given(instance=umltordbms_FromAttribute_strategy)
+def test_umltordbms_fromattribute_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=umltordbms::Key_strategy)
-@settings(max_examples=50)
-def test_umltordbms::key_instantiation(instance):
-    assert isinstance(instance, umltordbms::Key)
 
-@given(instance=umltordbms::Table_strategy)
+
+@given(instance=umltordbms_FromAttribute_strategy)
+def test_umltordbms_fromattribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=umltordbms_Key_strategy)
 @settings(max_examples=50)
-def test_umltordbms::table_instantiation(instance):
-    assert isinstance(instance, umltordbms::Table)
+def test_umltordbms_key_instantiation(instance):
+    assert isinstance(instance, umltordbms_Key)
+
+@given(instance=umltordbms_Table_strategy)
+@settings(max_examples=50)
+def test_umltordbms_table_instantiation(instance):
+    assert isinstance(instance, umltordbms_Table)

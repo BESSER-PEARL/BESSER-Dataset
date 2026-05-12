@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ClassM::Classifier,
-    ClassM::Model,
-    ClassM::Attribute,
+from python_code import (
+    ClassM_Classifier,
+    ClassM_Model,
+    ClassM_Attribute,
     Classifier,
-    ClassM::PrimitiveType,
-    ClassM::Class,
+    ClassM_PrimitiveType,
+    ClassM_Class,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_classm::classifier_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Classifier)
+def test_classm_classifier_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Classifier)
 
 
-def test_classm::classifier_constructor_exists():
-    assert callable(ClassM::Classifier.__init__)
+def test_classm_classifier_constructor_exists():
+    assert callable(ClassM_Classifier.__init__)
 
 
-def test_classm::classifier_constructor_args():
-    sig = inspect.signature(ClassM::Classifier.__init__)
+def test_classm_classifier_constructor_args():
+    sig = inspect.signature(ClassM_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classm::classifier_has_name():
-    assert hasattr(ClassM::Classifier, "name")
+def test_classm_classifier_has_name():
+    assert hasattr(ClassM_Classifier, "name")
     descriptor = None
-    for klass in ClassM::Classifier.__mro__:
+    for klass in ClassM_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,49 +44,49 @@ def test_classm::classifier_has_name():
 
 
 
-def test_classm::model_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Model)
+def test_classm_model_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Model)
 
 
-def test_classm::model_constructor_exists():
-    assert callable(ClassM::Model.__init__)
+def test_classm_model_constructor_exists():
+    assert callable(ClassM_Model.__init__)
 
 
-def test_classm::model_constructor_args():
-    sig = inspect.signature(ClassM::Model.__init__)
+def test_classm_model_constructor_args():
+    sig = inspect.signature(ClassM_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classm::attribute_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Attribute)
+def test_classm_attribute_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Attribute)
 
 
-def test_classm::attribute_constructor_exists():
-    assert callable(ClassM::Attribute.__init__)
+def test_classm_attribute_constructor_exists():
+    assert callable(ClassM_Attribute.__init__)
 
 
-def test_classm::attribute_constructor_args():
-    sig = inspect.signature(ClassM::Attribute.__init__)
+def test_classm_attribute_constructor_args():
+    sig = inspect.signature(ClassM_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "is_primary" in params, "Missing parameter 'is_primary'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "is_primary" in params, "Missing parameter 'is_primary'"
 
-def test_classm::attribute_has_is_primary():
-    assert hasattr(ClassM::Attribute, "is_primary")
+def test_classm_attribute_has_name():
+    assert hasattr(ClassM_Attribute, "name")
     descriptor = None
-    for klass in ClassM::Attribute.__mro__:
+    for klass in ClassM_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classm_attribute_has_is_primary():
+    assert hasattr(ClassM_Attribute, "is_primary")
+    descriptor = None
+    for klass in ClassM_Attribute.__mro__:
         if "is_primary" in klass.__dict__:
             descriptor = klass.__dict__["is_primary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classm::attribute_has_name():
-    assert hasattr(ClassM::Attribute, "name")
-    descriptor = None
-    for klass in ClassM::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -106,30 +106,30 @@ def test_classifier_constructor_args():
 
 
 
-def test_classm::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ClassM::PrimitiveType)
+def test_classm_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ClassM_PrimitiveType)
 
 
-def test_classm::primitivetype_constructor_exists():
-    assert callable(ClassM::PrimitiveType.__init__)
+def test_classm_primitivetype_constructor_exists():
+    assert callable(ClassM_PrimitiveType.__init__)
 
 
-def test_classm::primitivetype_constructor_args():
-    sig = inspect.signature(ClassM::PrimitiveType.__init__)
+def test_classm_primitivetype_constructor_args():
+    sig = inspect.signature(ClassM_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classm::class_is_not_abstract():
-    assert not inspect.isabstract(ClassM::Class)
+def test_classm_class_is_not_abstract():
+    assert not inspect.isabstract(ClassM_Class)
 
 
-def test_classm::class_constructor_exists():
-    assert callable(ClassM::Class.__init__)
+def test_classm_class_constructor_exists():
+    assert callable(ClassM_Class.__init__)
 
 
-def test_classm::class_constructor_args():
-    sig = inspect.signature(ClassM::Class.__init__)
+def test_classm_class_constructor_args():
+    sig = inspect.signature(ClassM_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,90 +144,81 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ClassM::Classifier_strategy = st.builds(
-    ClassM::Classifier,
+ClassM_Classifier_strategy = st.builds(
+    ClassM_Classifier,
     name=
         safe_text
 )
-ClassM::Model_strategy = st.builds(
-    ClassM::Model,
+ClassM_Model_strategy = st.builds(
+    ClassM_Model,
 )
-ClassM::Attribute_strategy = st.builds(
-    ClassM::Attribute,
+ClassM_Attribute_strategy = st.builds(
+    ClassM_Attribute,
+    name=
+        safe_text,
     is_primary=
-        st.booleans(),
-    name=
-        safe_text
+        st.booleans()
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-ClassM::PrimitiveType_strategy = st.builds(
-    ClassM::PrimitiveType,
+ClassM_PrimitiveType_strategy = st.builds(
+    ClassM_PrimitiveType,
 )
-ClassM::Class_strategy = st.builds(
-    ClassM::Class,
+ClassM_Class_strategy = st.builds(
+    ClassM_Class,
 )
 
-@given(instance=ClassM::Classifier_strategy)
+@given(instance=ClassM_Classifier_strategy)
 @settings(max_examples=50)
-def test_classm::classifier_instantiation(instance):
-    assert isinstance(instance, ClassM::Classifier)
-
-@given(instance=ClassM::Classifier_strategy)
-def test_classm::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classm_classifier_instantiation(instance):
+    assert isinstance(instance, ClassM_Classifier)
 
 
-@given(instance=ClassM::Classifier_strategy)
-def test_classm::classifier_name_setter(instance):
+
+@given(instance=ClassM_Classifier_strategy)
+def test_classm_classifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ClassM::Model_strategy)
+@given(instance=ClassM_Model_strategy)
 @settings(max_examples=50)
-def test_classm::model_instantiation(instance):
-    assert isinstance(instance, ClassM::Model)
+def test_classm_model_instantiation(instance):
+    assert isinstance(instance, ClassM_Model)
 
-@given(instance=ClassM::Attribute_strategy)
+@given(instance=ClassM_Attribute_strategy)
 @settings(max_examples=50)
-def test_classm::attribute_instantiation(instance):
-    assert isinstance(instance, ClassM::Attribute)
-
-@given(instance=ClassM::Attribute_strategy)
-def test_classm::attribute_is_primary_type(instance):
-    assert isinstance(instance.is_primary, bool)
+def test_classm_attribute_instantiation(instance):
+    assert isinstance(instance, ClassM_Attribute)
 
 
-@given(instance=ClassM::Attribute_strategy)
-def test_classm::attribute_is_primary_setter(instance):
+
+@given(instance=ClassM_Attribute_strategy)
+def test_classm_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ClassM_Attribute_strategy)
+def test_classm_attribute_is_primary_setter(instance):
     original = instance.is_primary
     instance.is_primary = original
     assert instance.is_primary == original
-
-@given(instance=ClassM::Attribute_strategy)
-def test_classm::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ClassM::Attribute_strategy)
-def test_classm::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=ClassM::PrimitiveType_strategy)
+@given(instance=ClassM_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_classm::primitivetype_instantiation(instance):
-    assert isinstance(instance, ClassM::PrimitiveType)
+def test_classm_primitivetype_instantiation(instance):
+    assert isinstance(instance, ClassM_PrimitiveType)
 
-@given(instance=ClassM::Class_strategy)
+@given(instance=ClassM_Class_strategy)
 @settings(max_examples=50)
-def test_classm::class_instantiation(instance):
-    assert isinstance(instance, ClassM::Class)
+def test_classm_class_instantiation(instance):
+    assert isinstance(instance, ClassM_Class)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    xyz::Y,
-    xyz::X,
-    xyz::Z,
+from python_code import (
+    xyz_Y,
+    xyz_X,
+    xyz_Z,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_xyz::y_is_not_abstract():
-    assert not inspect.isabstract(xyz::Y)
+def test_xyz_y_is_not_abstract():
+    assert not inspect.isabstract(xyz_Y)
 
 
-def test_xyz::y_constructor_exists():
-    assert callable(xyz::Y.__init__)
+def test_xyz_y_constructor_exists():
+    assert callable(xyz_Y.__init__)
 
 
-def test_xyz::y_constructor_args():
-    sig = inspect.signature(xyz::Y.__init__)
+def test_xyz_y_constructor_args():
+    sig = inspect.signature(xyz_Y.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xyz::x_is_not_abstract():
-    assert not inspect.isabstract(xyz::X)
+def test_xyz_x_is_not_abstract():
+    assert not inspect.isabstract(xyz_X)
 
 
-def test_xyz::x_constructor_exists():
-    assert callable(xyz::X.__init__)
+def test_xyz_x_constructor_exists():
+    assert callable(xyz_X.__init__)
 
 
-def test_xyz::x_constructor_args():
-    sig = inspect.signature(xyz::X.__init__)
+def test_xyz_x_constructor_args():
+    sig = inspect.signature(xyz_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xyz::z_is_not_abstract():
-    assert not inspect.isabstract(xyz::Z)
+def test_xyz_z_is_not_abstract():
+    assert not inspect.isabstract(xyz_Z)
 
 
-def test_xyz::z_constructor_exists():
-    assert callable(xyz::Z.__init__)
+def test_xyz_z_constructor_exists():
+    assert callable(xyz_Z.__init__)
 
 
-def test_xyz::z_constructor_args():
-    sig = inspect.signature(xyz::Z.__init__)
+def test_xyz_z_constructor_args():
+    sig = inspect.signature(xyz_Z.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-xyz::Y_strategy = st.builds(
-    xyz::Y,
+xyz_Y_strategy = st.builds(
+    xyz_Y,
 )
-xyz::X_strategy = st.builds(
-    xyz::X,
+xyz_X_strategy = st.builds(
+    xyz_X,
 )
-xyz::Z_strategy = st.builds(
-    xyz::Z,
+xyz_Z_strategy = st.builds(
+    xyz_Z,
 )
 
-@given(instance=xyz::Y_strategy)
+@given(instance=xyz_Y_strategy)
 @settings(max_examples=50)
-def test_xyz::y_instantiation(instance):
-    assert isinstance(instance, xyz::Y)
+def test_xyz_y_instantiation(instance):
+    assert isinstance(instance, xyz_Y)
 
-@given(instance=xyz::X_strategy)
+@given(instance=xyz_X_strategy)
 @settings(max_examples=50)
-def test_xyz::x_instantiation(instance):
-    assert isinstance(instance, xyz::X)
+def test_xyz_x_instantiation(instance):
+    assert isinstance(instance, xyz_X)
 
-@given(instance=xyz::Z_strategy)
+@given(instance=xyz_Z_strategy)
 @settings(max_examples=50)
-def test_xyz::z_instantiation(instance):
-    assert isinstance(instance, xyz::Z)
+def test_xyz_z_instantiation(instance):
+    assert isinstance(instance, xyz_Z)

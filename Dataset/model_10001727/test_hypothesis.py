@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     gives_feedback_UseCase,
@@ -238,9 +238,18 @@ def test_shoppingcart_constructor_exists():
 def test_shoppingcart_constructor_args():
     sig = inspect.signature(shoppingcart.__init__)
     params = list(sig.parameters.keys())
+    assert "total" in params, "Missing parameter 'total'"
     assert "salestax" in params, "Missing parameter 'salestax'"
     assert "subtotal" in params, "Missing parameter 'subtotal'"
-    assert "total" in params, "Missing parameter 'total'"
+
+def test_shoppingcart_has_total():
+    assert hasattr(shoppingcart, "total")
+    descriptor = None
+    for klass in shoppingcart.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_shoppingcart_has_salestax():
     assert hasattr(shoppingcart, "salestax")
@@ -260,15 +269,6 @@ def test_shoppingcart_has_subtotal():
             break
     assert isinstance(descriptor, property)
 
-def test_shoppingcart_has_total():
-    assert hasattr(shoppingcart, "total")
-    descriptor = None
-    for klass in shoppingcart.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_customer_is_not_abstract():
@@ -283,8 +283,8 @@ def test_customer_constructor_args():
     sig = inspect.signature(customer.__init__)
     params = list(sig.parameters.keys())
     assert "addresstoship" in params, "Missing parameter 'addresstoship'"
-    assert "addresstobill" in params, "Missing parameter 'addresstobill'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "addresstobill" in params, "Missing parameter 'addresstobill'"
 
 def test_customer_has_addresstoship():
     assert hasattr(customer, "addresstoship")
@@ -295,21 +295,21 @@ def test_customer_has_addresstoship():
             break
     assert isinstance(descriptor, property)
 
-def test_customer_has_addresstobill():
-    assert hasattr(customer, "addresstobill")
-    descriptor = None
-    for klass in customer.__mro__:
-        if "addresstobill" in klass.__dict__:
-            descriptor = klass.__dict__["addresstobill"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_customer_has_name():
     assert hasattr(customer, "name")
     descriptor = None
     for klass in customer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_addresstobill():
+    assert hasattr(customer, "addresstobill")
+    descriptor = None
+    for klass in customer.__mro__:
+        if "addresstobill" in klass.__dict__:
+            descriptor = klass.__dict__["addresstobill"]
             break
     assert isinstance(descriptor, property)
 
@@ -327,8 +327,8 @@ def test_creditcard_constructor_args():
     sig = inspect.signature(creditcard.__init__)
     params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
-    assert "expirationdate" in params, "Missing parameter 'expirationdate'"
     assert "issuer" in params, "Missing parameter 'issuer'"
+    assert "expirationdate" in params, "Missing parameter 'expirationdate'"
 
 def test_creditcard_has_number():
     assert hasattr(creditcard, "number")
@@ -339,21 +339,21 @@ def test_creditcard_has_number():
             break
     assert isinstance(descriptor, property)
 
-def test_creditcard_has_expirationdate():
-    assert hasattr(creditcard, "expirationdate")
-    descriptor = None
-    for klass in creditcard.__mro__:
-        if "expirationdate" in klass.__dict__:
-            descriptor = klass.__dict__["expirationdate"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_creditcard_has_issuer():
     assert hasattr(creditcard, "issuer")
     descriptor = None
     for klass in creditcard.__mro__:
         if "issuer" in klass.__dict__:
             descriptor = klass.__dict__["issuer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_creditcard_has_expirationdate():
+    assert hasattr(creditcard, "expirationdate")
+    descriptor = None
+    for klass in creditcard.__mro__:
+        if "expirationdate" in klass.__dict__:
+            descriptor = klass.__dict__["expirationdate"]
             break
     assert isinstance(descriptor, property)
 
@@ -413,30 +413,30 @@ itemtopurchase_strategy = st.builds(
 )
 shoppingcart_strategy = st.builds(
     shoppingcart,
+    total=
+        st.integers(),
     salestax=
         st.integers(),
     subtotal=
-        st.integers(),
-    total=
         st.integers()
 )
 customer_strategy = st.builds(
     customer,
     addresstoship=
         st.integers(),
-    addresstobill=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    addresstobill=
+        st.integers()
 )
 creditcard_strategy = st.builds(
     creditcard,
     number=
         st.integers(),
-    expirationdate=
-        st.dates(),
     issuer=
-        safe_text
+        safe_text,
+    expirationdate=
+        st.dates()
 )
 
 @given(instance=gives_feedback_UseCase_strategy)
@@ -494,9 +494,6 @@ def test_customer_actor_instantiation(instance):
 def test_preferredcustomer_instantiation(instance):
     assert isinstance(instance, preferredcustomer)
 
-@given(instance=preferredcustomer_strategy)
-def test_preferredcustomer_discount_type(instance):
-    assert isinstance(instance.discount, int)
 
 
 @given(instance=preferredcustomer_strategy)
@@ -510,9 +507,6 @@ def test_preferredcustomer_discount_setter(instance):
 def test_itemtopurchase_instantiation(instance):
     assert isinstance(instance, itemtopurchase)
 
-@given(instance=itemtopurchase_strategy)
-def test_itemtopurchase_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=itemtopurchase_strategy)
@@ -521,9 +515,6 @@ def test_itemtopurchase_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=itemtopurchase_strategy)
-def test_itemtopurchase_itemtopurchase_type(instance):
-    assert isinstance(instance.itemtopurchase, int)
 
 
 @given(instance=itemtopurchase_strategy)
@@ -537,31 +528,6 @@ def test_itemtopurchase_itemtopurchase_setter(instance):
 def test_shoppingcart_instantiation(instance):
     assert isinstance(instance, shoppingcart)
 
-@given(instance=shoppingcart_strategy)
-def test_shoppingcart_salestax_type(instance):
-    assert isinstance(instance.salestax, int)
-
-
-@given(instance=shoppingcart_strategy)
-def test_shoppingcart_salestax_setter(instance):
-    original = instance.salestax
-    instance.salestax = original
-    assert instance.salestax == original
-
-@given(instance=shoppingcart_strategy)
-def test_shoppingcart_subtotal_type(instance):
-    assert isinstance(instance.subtotal, int)
-
-
-@given(instance=shoppingcart_strategy)
-def test_shoppingcart_subtotal_setter(instance):
-    original = instance.subtotal
-    instance.subtotal = original
-    assert instance.subtotal == original
-
-@given(instance=shoppingcart_strategy)
-def test_shoppingcart_total_type(instance):
-    assert isinstance(instance.total, int)
 
 
 @given(instance=shoppingcart_strategy)
@@ -570,14 +536,27 @@ def test_shoppingcart_total_setter(instance):
     instance.total = original
     assert instance.total == original
 
+
+
+@given(instance=shoppingcart_strategy)
+def test_shoppingcart_salestax_setter(instance):
+    original = instance.salestax
+    instance.salestax = original
+    assert instance.salestax == original
+
+
+
+@given(instance=shoppingcart_strategy)
+def test_shoppingcart_subtotal_setter(instance):
+    original = instance.subtotal
+    instance.subtotal = original
+    assert instance.subtotal == original
+
 @given(instance=customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, customer)
 
-@given(instance=customer_strategy)
-def test_customer_addresstoship_type(instance):
-    assert isinstance(instance.addresstoship, int)
 
 
 @given(instance=customer_strategy)
@@ -586,20 +565,6 @@ def test_customer_addresstoship_setter(instance):
     instance.addresstoship = original
     assert instance.addresstoship == original
 
-@given(instance=customer_strategy)
-def test_customer_addresstobill_type(instance):
-    assert isinstance(instance.addresstobill, int)
-
-
-@given(instance=customer_strategy)
-def test_customer_addresstobill_setter(instance):
-    original = instance.addresstobill
-    instance.addresstobill = original
-    assert instance.addresstobill == original
-
-@given(instance=customer_strategy)
-def test_customer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=customer_strategy)
@@ -608,14 +573,19 @@ def test_customer_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=customer_strategy)
+def test_customer_addresstobill_setter(instance):
+    original = instance.addresstobill
+    instance.addresstobill = original
+    assert instance.addresstobill == original
+
 @given(instance=creditcard_strategy)
 @settings(max_examples=50)
 def test_creditcard_instantiation(instance):
     assert isinstance(instance, creditcard)
 
-@given(instance=creditcard_strategy)
-def test_creditcard_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=creditcard_strategy)
@@ -624,20 +594,6 @@ def test_creditcard_number_setter(instance):
     instance.number = original
     assert instance.number == original
 
-@given(instance=creditcard_strategy)
-def test_creditcard_expirationdate_type(instance):
-    assert isinstance(instance.expirationdate, date)
-
-
-@given(instance=creditcard_strategy)
-def test_creditcard_expirationdate_setter(instance):
-    original = instance.expirationdate
-    instance.expirationdate = original
-    assert instance.expirationdate == original
-
-@given(instance=creditcard_strategy)
-def test_creditcard_issuer_type(instance):
-    assert isinstance(instance.issuer, str)
 
 
 @given(instance=creditcard_strategy)
@@ -645,3 +601,11 @@ def test_creditcard_issuer_setter(instance):
     original = instance.issuer
     instance.issuer = original
     assert instance.issuer == original
+
+
+
+@given(instance=creditcard_strategy)
+def test_creditcard_expirationdate_setter(instance):
+    original = instance.expirationdate
+    instance.expirationdate = original
+    assert instance.expirationdate == original

@@ -3,117 +3,117 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Meta_Reviewer,
-    SubjectArea,
-    Cocus::Activity,
-    Cocus::Description,
+from python_code import (
+    Cocus_Activity,
+    Cocus_Description,
     URL,
-    Cocus::Event::URL,
-    Cocus::Event::Setup,
-    Help::Request,
-    Cocus::Assistance,
-    Cocus::Feature::Request,
-    Cocus::Misc,
-    Review::Form,
-    Cocus::Review::Form::Setup,
-    Cocus::Preview,
+    Cocus_Event_URL,
+    Cocus_Event_Setup,
+    Help_Request,
+    Cocus_Feature_Request,
+    Cocus_Assistance,
+    Cocus_Misc,
+    Review_Form,
+    Cocus_Review_Form_Setup,
+    Cocus_Preview,
     Email,
-    Cocus::Group::Email,
-    Cocus::Rejection::Email,
-    Cocus::Approval::Email,
-    Cocus::Notification::Email,
-    Cocus::URL,
+    Cocus_Approval_Email,
+    Cocus_Group_Email,
+    Cocus_Rejection_Email,
+    Cocus_Notification_Email,
+    Cocus_URL,
     Account,
     Activity,
-    Cocus::Event::Creation,
-    Cocus::Request,
-    Cocus::Registration,
-    Cocus::Event::Approval,
-    Cocus::Inforamtion,
-    Cocus::Account,
-    Event::Setup,
-    Cocus::Event::Tracks,
-    Cocus::Paper::Typologies,
-    Cocus::Review::Form,
-    Cocus::Email::Template,
-    Cocus::Submission::Template,
-    Cocus::Research::Topic,
-    Approval::Email,
+    Cocus_Event_Creation,
+    Cocus_Event_Approval,
+    Cocus_Registration,
+    Cocus_Request,
+    Cocus_Inforamtion,
+    Cocus_Account,
+    Event_Setup,
+    Cocus_Submission_Template,
+    Cocus_Paper_Typologies,
+    Cocus_Email_Template,
+    Cocus_Research_Topic,
+    Cocus_Event_Tracks,
+    Cocus_Review_Form,
+    Approval_Email,
     Inforamtion,
     Request,
-    Cocus::Help::Request,
+    Cocus_Help_Request,
     Role,
-    Cocus::Committe::Role,
-    Cocus::Head::Role,
-    Cocus::Admin::Role,
-    Cocus::Reviewer::Role,
-    Cocus::Author::Role,
-    Event::Tracks,
-    Cocus::SubjectArea,
+    Cocus_Admin_Role,
+    Cocus_Reviewer_Role,
+    Cocus_Author_Role,
+    Cocus_Committe_Role,
+    Cocus_Head_Role,
+    Event_Tracks,
+    Meta_Reviewer,
+    SubjectArea,
+    Cocus_SubjectArea,
     Author,
-    Cocus::Corresponding::Author,
-    Cocus::Co_author,
-    Cocus::AuthorNotReviewer,
+    Cocus_Co_author,
+    Cocus_Corresponding_Author,
+    Cocus_AuthorNotReviewer,
     ProgramCommittee,
     Co_author,
     Document,
-    Cocus::Submission,
-    Cocus::Email,
-    Cocus::Paper,
-    Cocus::Template,
-    Cocus::Review,
+    Cocus_Email,
+    Cocus_Paper,
+    Cocus_Submission,
+    Cocus_Template,
+    Cocus_Review,
     Decision,
-    Cocus::Rejection,
-    Cocus::Acceptance,
+    Cocus_Rejection,
+    Cocus_Acceptance,
     Event,
-    Cocus::Symposium,
-    Cocus::Workshop,
+    Cocus_Symposium,
+    Cocus_Workshop,
     Thing,
-    Cocus::Person,
-    Cocus::Event,
-    Cocus::Detail,
-    Cocus::Role,
-    Cocus::Document,
-    Cocus::Conference,
+    Cocus_Detail,
+    Cocus_Role,
+    Cocus_Person,
+    Cocus_Event,
+    Cocus_Document,
+    Cocus_Conference,
     Conference,
     Person,
-    Cocus::User,
-    Cocus::ExternalReviewer,
-    Cocus::ConferenceMember,
+    Cocus_ExternalReviewer,
+    Cocus_User,
+    Cocus_ConferenceMember,
     Chairman,
     Administrator,
     User,
-    Cocus::Administrator,
-    Cocus::Committee,
+    Cocus_Committee,
+    Cocus_Administrator,
     ConferenceMember,
-    Cocus::ProgramCommitteeMember,
-    Cocus::AssociatedChair,
-    Cocus::ConferenceChair,
-    Cocus::Author,
-    Cocus::Chairman,
-    Cocus::Reviewer,
+    Cocus_Author,
+    Cocus_Chairman,
+    Cocus_AssociatedChair,
+    Cocus_ConferenceChair,
+    Cocus_ProgramCommitteeMember,
+    Cocus_Reviewer,
     Reviewer,
-    Cocus::Meta_Reviewer,
-    Cocus::Thing,
-    Cocus::Bid,
+    Cocus_Meta_Reviewer,
+    Cocus_Thing,
+    Cocus_Bid,
     ProgramCommitteeMember,
-    Cocus::ProgramCommitteeChair,
-    Cocus::ProgramCommittee,
-    Cocus::Preference,
-    Cocus::Decision,
+    Cocus_ProgramCommitteeChair,
+    Cocus_ProgramCommittee,
+    Cocus_Preference,
+    Cocus_Decision,
     ExternalReviewer,
     Review,
-    Cocus::Meta-Review,
+    Cocus_Meta-Review,
     Paper,
-    Cocus::Short::Paper,
-    Cocus::Full::Paper,
-    Cocus::PaperFullVersion,
-    Cocus::Abstract,
-    Cocus::PaperAbstract,
-    Cocus::Invited::Paper,
+    Cocus_Abstract,
+    Cocus_PaperAbstract,
+    Cocus_Short_Paper,
+    Cocus_Full_Paper,
+    Cocus_Invited_Paper,
+    Cocus_PaperFullVersion,
     Bid,
 )
 
@@ -123,58 +123,30 @@ from classes import (
 
 
 
-def test_meta_reviewer_is_not_abstract():
-    assert not inspect.isabstract(Meta_Reviewer)
+def test_cocus_activity_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Activity)
 
 
-def test_meta_reviewer_constructor_exists():
-    assert callable(Meta_Reviewer.__init__)
+def test_cocus_activity_constructor_exists():
+    assert callable(Cocus_Activity.__init__)
 
 
-def test_meta_reviewer_constructor_args():
-    sig = inspect.signature(Meta_Reviewer.__init__)
+def test_cocus_activity_constructor_args():
+    sig = inspect.signature(Cocus_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subjectarea_is_not_abstract():
-    assert not inspect.isabstract(SubjectArea)
+def test_cocus_description_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Description)
 
 
-def test_subjectarea_constructor_exists():
-    assert callable(SubjectArea.__init__)
+def test_cocus_description_constructor_exists():
+    assert callable(Cocus_Description.__init__)
 
 
-def test_subjectarea_constructor_args():
-    sig = inspect.signature(SubjectArea.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::activity_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Activity)
-
-
-def test_cocus::activity_constructor_exists():
-    assert callable(Cocus::Activity.__init__)
-
-
-def test_cocus::activity_constructor_args():
-    sig = inspect.signature(Cocus::Activity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::description_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Description)
-
-
-def test_cocus::description_constructor_exists():
-    assert callable(Cocus::Description.__init__)
-
-
-def test_cocus::description_constructor_args():
-    sig = inspect.signature(Cocus::Description.__init__)
+def test_cocus_description_constructor_args():
+    sig = inspect.signature(Cocus_Description.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -193,128 +165,128 @@ def test_url_constructor_args():
 
 
 
-def test_cocus::event::url_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Event::URL)
+def test_cocus_event_url_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Event_URL)
 
 
-def test_cocus::event::url_constructor_exists():
-    assert callable(Cocus::Event::URL.__init__)
+def test_cocus_event_url_constructor_exists():
+    assert callable(Cocus_Event_URL.__init__)
 
 
-def test_cocus::event::url_constructor_args():
-    sig = inspect.signature(Cocus::Event::URL.__init__)
+def test_cocus_event_url_constructor_args():
+    sig = inspect.signature(Cocus_Event_URL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::event::setup_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Event::Setup)
+def test_cocus_event_setup_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Event_Setup)
 
 
-def test_cocus::event::setup_constructor_exists():
-    assert callable(Cocus::Event::Setup.__init__)
+def test_cocus_event_setup_constructor_exists():
+    assert callable(Cocus_Event_Setup.__init__)
 
 
-def test_cocus::event::setup_constructor_args():
-    sig = inspect.signature(Cocus::Event::Setup.__init__)
+def test_cocus_event_setup_constructor_args():
+    sig = inspect.signature(Cocus_Event_Setup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_help::request_is_not_abstract():
-    assert not inspect.isabstract(Help::Request)
+def test_help_request_is_not_abstract():
+    assert not inspect.isabstract(Help_Request)
 
 
-def test_help::request_constructor_exists():
-    assert callable(Help::Request.__init__)
+def test_help_request_constructor_exists():
+    assert callable(Help_Request.__init__)
 
 
-def test_help::request_constructor_args():
-    sig = inspect.signature(Help::Request.__init__)
+def test_help_request_constructor_args():
+    sig = inspect.signature(Help_Request.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::assistance_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Assistance)
+def test_cocus_feature_request_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Feature_Request)
 
 
-def test_cocus::assistance_constructor_exists():
-    assert callable(Cocus::Assistance.__init__)
+def test_cocus_feature_request_constructor_exists():
+    assert callable(Cocus_Feature_Request.__init__)
 
 
-def test_cocus::assistance_constructor_args():
-    sig = inspect.signature(Cocus::Assistance.__init__)
+def test_cocus_feature_request_constructor_args():
+    sig = inspect.signature(Cocus_Feature_Request.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::feature::request_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Feature::Request)
+def test_cocus_assistance_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Assistance)
 
 
-def test_cocus::feature::request_constructor_exists():
-    assert callable(Cocus::Feature::Request.__init__)
+def test_cocus_assistance_constructor_exists():
+    assert callable(Cocus_Assistance.__init__)
 
 
-def test_cocus::feature::request_constructor_args():
-    sig = inspect.signature(Cocus::Feature::Request.__init__)
+def test_cocus_assistance_constructor_args():
+    sig = inspect.signature(Cocus_Assistance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::misc_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Misc)
+def test_cocus_misc_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Misc)
 
 
-def test_cocus::misc_constructor_exists():
-    assert callable(Cocus::Misc.__init__)
+def test_cocus_misc_constructor_exists():
+    assert callable(Cocus_Misc.__init__)
 
 
-def test_cocus::misc_constructor_args():
-    sig = inspect.signature(Cocus::Misc.__init__)
+def test_cocus_misc_constructor_args():
+    sig = inspect.signature(Cocus_Misc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_review::form_is_not_abstract():
-    assert not inspect.isabstract(Review::Form)
+def test_review_form_is_not_abstract():
+    assert not inspect.isabstract(Review_Form)
 
 
-def test_review::form_constructor_exists():
-    assert callable(Review::Form.__init__)
+def test_review_form_constructor_exists():
+    assert callable(Review_Form.__init__)
 
 
-def test_review::form_constructor_args():
-    sig = inspect.signature(Review::Form.__init__)
+def test_review_form_constructor_args():
+    sig = inspect.signature(Review_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::review::form::setup_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Review::Form::Setup)
+def test_cocus_review_form_setup_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Review_Form_Setup)
 
 
-def test_cocus::review::form::setup_constructor_exists():
-    assert callable(Cocus::Review::Form::Setup.__init__)
+def test_cocus_review_form_setup_constructor_exists():
+    assert callable(Cocus_Review_Form_Setup.__init__)
 
 
-def test_cocus::review::form::setup_constructor_args():
-    sig = inspect.signature(Cocus::Review::Form::Setup.__init__)
+def test_cocus_review_form_setup_constructor_args():
+    sig = inspect.signature(Cocus_Review_Form_Setup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::preview_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Preview)
+def test_cocus_preview_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Preview)
 
 
-def test_cocus::preview_constructor_exists():
-    assert callable(Cocus::Preview.__init__)
+def test_cocus_preview_constructor_exists():
+    assert callable(Cocus_Preview.__init__)
 
 
-def test_cocus::preview_constructor_args():
-    sig = inspect.signature(Cocus::Preview.__init__)
+def test_cocus_preview_constructor_args():
+    sig = inspect.signature(Cocus_Preview.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -333,72 +305,72 @@ def test_email_constructor_args():
 
 
 
-def test_cocus::group::email_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Group::Email)
+def test_cocus_approval_email_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Approval_Email)
 
 
-def test_cocus::group::email_constructor_exists():
-    assert callable(Cocus::Group::Email.__init__)
+def test_cocus_approval_email_constructor_exists():
+    assert callable(Cocus_Approval_Email.__init__)
 
 
-def test_cocus::group::email_constructor_args():
-    sig = inspect.signature(Cocus::Group::Email.__init__)
+def test_cocus_approval_email_constructor_args():
+    sig = inspect.signature(Cocus_Approval_Email.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::rejection::email_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Rejection::Email)
+def test_cocus_group_email_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Group_Email)
 
 
-def test_cocus::rejection::email_constructor_exists():
-    assert callable(Cocus::Rejection::Email.__init__)
+def test_cocus_group_email_constructor_exists():
+    assert callable(Cocus_Group_Email.__init__)
 
 
-def test_cocus::rejection::email_constructor_args():
-    sig = inspect.signature(Cocus::Rejection::Email.__init__)
+def test_cocus_group_email_constructor_args():
+    sig = inspect.signature(Cocus_Group_Email.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::approval::email_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Approval::Email)
+def test_cocus_rejection_email_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Rejection_Email)
 
 
-def test_cocus::approval::email_constructor_exists():
-    assert callable(Cocus::Approval::Email.__init__)
+def test_cocus_rejection_email_constructor_exists():
+    assert callable(Cocus_Rejection_Email.__init__)
 
 
-def test_cocus::approval::email_constructor_args():
-    sig = inspect.signature(Cocus::Approval::Email.__init__)
+def test_cocus_rejection_email_constructor_args():
+    sig = inspect.signature(Cocus_Rejection_Email.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::notification::email_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Notification::Email)
+def test_cocus_notification_email_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Notification_Email)
 
 
-def test_cocus::notification::email_constructor_exists():
-    assert callable(Cocus::Notification::Email.__init__)
+def test_cocus_notification_email_constructor_exists():
+    assert callable(Cocus_Notification_Email.__init__)
 
 
-def test_cocus::notification::email_constructor_args():
-    sig = inspect.signature(Cocus::Notification::Email.__init__)
+def test_cocus_notification_email_constructor_args():
+    sig = inspect.signature(Cocus_Notification_Email.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::url_is_not_abstract():
-    assert not inspect.isabstract(Cocus::URL)
+def test_cocus_url_is_not_abstract():
+    assert not inspect.isabstract(Cocus_URL)
 
 
-def test_cocus::url_constructor_exists():
-    assert callable(Cocus::URL.__init__)
+def test_cocus_url_constructor_exists():
+    assert callable(Cocus_URL.__init__)
 
 
-def test_cocus::url_constructor_args():
-    sig = inspect.signature(Cocus::URL.__init__)
+def test_cocus_url_constructor_args():
+    sig = inspect.signature(Cocus_URL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -431,198 +403,198 @@ def test_activity_constructor_args():
 
 
 
-def test_cocus::event::creation_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Event::Creation)
+def test_cocus_event_creation_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Event_Creation)
 
 
-def test_cocus::event::creation_constructor_exists():
-    assert callable(Cocus::Event::Creation.__init__)
+def test_cocus_event_creation_constructor_exists():
+    assert callable(Cocus_Event_Creation.__init__)
 
 
-def test_cocus::event::creation_constructor_args():
-    sig = inspect.signature(Cocus::Event::Creation.__init__)
+def test_cocus_event_creation_constructor_args():
+    sig = inspect.signature(Cocus_Event_Creation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::request_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Request)
+def test_cocus_event_approval_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Event_Approval)
 
 
-def test_cocus::request_constructor_exists():
-    assert callable(Cocus::Request.__init__)
+def test_cocus_event_approval_constructor_exists():
+    assert callable(Cocus_Event_Approval.__init__)
 
 
-def test_cocus::request_constructor_args():
-    sig = inspect.signature(Cocus::Request.__init__)
+def test_cocus_event_approval_constructor_args():
+    sig = inspect.signature(Cocus_Event_Approval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::registration_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Registration)
+def test_cocus_registration_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Registration)
 
 
-def test_cocus::registration_constructor_exists():
-    assert callable(Cocus::Registration.__init__)
+def test_cocus_registration_constructor_exists():
+    assert callable(Cocus_Registration.__init__)
 
 
-def test_cocus::registration_constructor_args():
-    sig = inspect.signature(Cocus::Registration.__init__)
+def test_cocus_registration_constructor_args():
+    sig = inspect.signature(Cocus_Registration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::event::approval_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Event::Approval)
+def test_cocus_request_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Request)
 
 
-def test_cocus::event::approval_constructor_exists():
-    assert callable(Cocus::Event::Approval.__init__)
+def test_cocus_request_constructor_exists():
+    assert callable(Cocus_Request.__init__)
 
 
-def test_cocus::event::approval_constructor_args():
-    sig = inspect.signature(Cocus::Event::Approval.__init__)
+def test_cocus_request_constructor_args():
+    sig = inspect.signature(Cocus_Request.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::inforamtion_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Inforamtion)
+def test_cocus_inforamtion_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Inforamtion)
 
 
-def test_cocus::inforamtion_constructor_exists():
-    assert callable(Cocus::Inforamtion.__init__)
+def test_cocus_inforamtion_constructor_exists():
+    assert callable(Cocus_Inforamtion.__init__)
 
 
-def test_cocus::inforamtion_constructor_args():
-    sig = inspect.signature(Cocus::Inforamtion.__init__)
+def test_cocus_inforamtion_constructor_args():
+    sig = inspect.signature(Cocus_Inforamtion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::account_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Account)
+def test_cocus_account_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Account)
 
 
-def test_cocus::account_constructor_exists():
-    assert callable(Cocus::Account.__init__)
+def test_cocus_account_constructor_exists():
+    assert callable(Cocus_Account.__init__)
 
 
-def test_cocus::account_constructor_args():
-    sig = inspect.signature(Cocus::Account.__init__)
+def test_cocus_account_constructor_args():
+    sig = inspect.signature(Cocus_Account.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_event::setup_is_not_abstract():
-    assert not inspect.isabstract(Event::Setup)
+def test_event_setup_is_not_abstract():
+    assert not inspect.isabstract(Event_Setup)
 
 
-def test_event::setup_constructor_exists():
-    assert callable(Event::Setup.__init__)
+def test_event_setup_constructor_exists():
+    assert callable(Event_Setup.__init__)
 
 
-def test_event::setup_constructor_args():
-    sig = inspect.signature(Event::Setup.__init__)
+def test_event_setup_constructor_args():
+    sig = inspect.signature(Event_Setup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::event::tracks_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Event::Tracks)
+def test_cocus_submission_template_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Submission_Template)
 
 
-def test_cocus::event::tracks_constructor_exists():
-    assert callable(Cocus::Event::Tracks.__init__)
+def test_cocus_submission_template_constructor_exists():
+    assert callable(Cocus_Submission_Template.__init__)
 
 
-def test_cocus::event::tracks_constructor_args():
-    sig = inspect.signature(Cocus::Event::Tracks.__init__)
+def test_cocus_submission_template_constructor_args():
+    sig = inspect.signature(Cocus_Submission_Template.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::paper::typologies_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Paper::Typologies)
+def test_cocus_paper_typologies_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Paper_Typologies)
 
 
-def test_cocus::paper::typologies_constructor_exists():
-    assert callable(Cocus::Paper::Typologies.__init__)
+def test_cocus_paper_typologies_constructor_exists():
+    assert callable(Cocus_Paper_Typologies.__init__)
 
 
-def test_cocus::paper::typologies_constructor_args():
-    sig = inspect.signature(Cocus::Paper::Typologies.__init__)
+def test_cocus_paper_typologies_constructor_args():
+    sig = inspect.signature(Cocus_Paper_Typologies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::review::form_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Review::Form)
+def test_cocus_email_template_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Email_Template)
 
 
-def test_cocus::review::form_constructor_exists():
-    assert callable(Cocus::Review::Form.__init__)
+def test_cocus_email_template_constructor_exists():
+    assert callable(Cocus_Email_Template.__init__)
 
 
-def test_cocus::review::form_constructor_args():
-    sig = inspect.signature(Cocus::Review::Form.__init__)
+def test_cocus_email_template_constructor_args():
+    sig = inspect.signature(Cocus_Email_Template.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::email::template_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Email::Template)
+def test_cocus_research_topic_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Research_Topic)
 
 
-def test_cocus::email::template_constructor_exists():
-    assert callable(Cocus::Email::Template.__init__)
+def test_cocus_research_topic_constructor_exists():
+    assert callable(Cocus_Research_Topic.__init__)
 
 
-def test_cocus::email::template_constructor_args():
-    sig = inspect.signature(Cocus::Email::Template.__init__)
+def test_cocus_research_topic_constructor_args():
+    sig = inspect.signature(Cocus_Research_Topic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::submission::template_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Submission::Template)
+def test_cocus_event_tracks_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Event_Tracks)
 
 
-def test_cocus::submission::template_constructor_exists():
-    assert callable(Cocus::Submission::Template.__init__)
+def test_cocus_event_tracks_constructor_exists():
+    assert callable(Cocus_Event_Tracks.__init__)
 
 
-def test_cocus::submission::template_constructor_args():
-    sig = inspect.signature(Cocus::Submission::Template.__init__)
+def test_cocus_event_tracks_constructor_args():
+    sig = inspect.signature(Cocus_Event_Tracks.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::research::topic_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Research::Topic)
+def test_cocus_review_form_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Review_Form)
 
 
-def test_cocus::research::topic_constructor_exists():
-    assert callable(Cocus::Research::Topic.__init__)
+def test_cocus_review_form_constructor_exists():
+    assert callable(Cocus_Review_Form.__init__)
 
 
-def test_cocus::research::topic_constructor_args():
-    sig = inspect.signature(Cocus::Research::Topic.__init__)
+def test_cocus_review_form_constructor_args():
+    sig = inspect.signature(Cocus_Review_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_approval::email_is_not_abstract():
-    assert not inspect.isabstract(Approval::Email)
+def test_approval_email_is_not_abstract():
+    assert not inspect.isabstract(Approval_Email)
 
 
-def test_approval::email_constructor_exists():
-    assert callable(Approval::Email.__init__)
+def test_approval_email_constructor_exists():
+    assert callable(Approval_Email.__init__)
 
 
-def test_approval::email_constructor_args():
-    sig = inspect.signature(Approval::Email.__init__)
+def test_approval_email_constructor_args():
+    sig = inspect.signature(Approval_Email.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -655,16 +627,16 @@ def test_request_constructor_args():
 
 
 
-def test_cocus::help::request_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Help::Request)
+def test_cocus_help_request_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Help_Request)
 
 
-def test_cocus::help::request_constructor_exists():
-    assert callable(Cocus::Help::Request.__init__)
+def test_cocus_help_request_constructor_exists():
+    assert callable(Cocus_Help_Request.__init__)
 
 
-def test_cocus::help::request_constructor_args():
-    sig = inspect.signature(Cocus::Help::Request.__init__)
+def test_cocus_help_request_constructor_args():
+    sig = inspect.signature(Cocus_Help_Request.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -683,100 +655,128 @@ def test_role_constructor_args():
 
 
 
-def test_cocus::committe::role_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Committe::Role)
+def test_cocus_admin_role_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Admin_Role)
 
 
-def test_cocus::committe::role_constructor_exists():
-    assert callable(Cocus::Committe::Role.__init__)
+def test_cocus_admin_role_constructor_exists():
+    assert callable(Cocus_Admin_Role.__init__)
 
 
-def test_cocus::committe::role_constructor_args():
-    sig = inspect.signature(Cocus::Committe::Role.__init__)
+def test_cocus_admin_role_constructor_args():
+    sig = inspect.signature(Cocus_Admin_Role.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::head::role_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Head::Role)
+def test_cocus_reviewer_role_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Reviewer_Role)
 
 
-def test_cocus::head::role_constructor_exists():
-    assert callable(Cocus::Head::Role.__init__)
+def test_cocus_reviewer_role_constructor_exists():
+    assert callable(Cocus_Reviewer_Role.__init__)
 
 
-def test_cocus::head::role_constructor_args():
-    sig = inspect.signature(Cocus::Head::Role.__init__)
+def test_cocus_reviewer_role_constructor_args():
+    sig = inspect.signature(Cocus_Reviewer_Role.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::admin::role_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Admin::Role)
+def test_cocus_author_role_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Author_Role)
 
 
-def test_cocus::admin::role_constructor_exists():
-    assert callable(Cocus::Admin::Role.__init__)
+def test_cocus_author_role_constructor_exists():
+    assert callable(Cocus_Author_Role.__init__)
 
 
-def test_cocus::admin::role_constructor_args():
-    sig = inspect.signature(Cocus::Admin::Role.__init__)
+def test_cocus_author_role_constructor_args():
+    sig = inspect.signature(Cocus_Author_Role.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::reviewer::role_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Reviewer::Role)
+def test_cocus_committe_role_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Committe_Role)
 
 
-def test_cocus::reviewer::role_constructor_exists():
-    assert callable(Cocus::Reviewer::Role.__init__)
+def test_cocus_committe_role_constructor_exists():
+    assert callable(Cocus_Committe_Role.__init__)
 
 
-def test_cocus::reviewer::role_constructor_args():
-    sig = inspect.signature(Cocus::Reviewer::Role.__init__)
+def test_cocus_committe_role_constructor_args():
+    sig = inspect.signature(Cocus_Committe_Role.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::author::role_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Author::Role)
+def test_cocus_head_role_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Head_Role)
 
 
-def test_cocus::author::role_constructor_exists():
-    assert callable(Cocus::Author::Role.__init__)
+def test_cocus_head_role_constructor_exists():
+    assert callable(Cocus_Head_Role.__init__)
 
 
-def test_cocus::author::role_constructor_args():
-    sig = inspect.signature(Cocus::Author::Role.__init__)
+def test_cocus_head_role_constructor_args():
+    sig = inspect.signature(Cocus_Head_Role.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_event::tracks_is_not_abstract():
-    assert not inspect.isabstract(Event::Tracks)
+def test_event_tracks_is_not_abstract():
+    assert not inspect.isabstract(Event_Tracks)
 
 
-def test_event::tracks_constructor_exists():
-    assert callable(Event::Tracks.__init__)
+def test_event_tracks_constructor_exists():
+    assert callable(Event_Tracks.__init__)
 
 
-def test_event::tracks_constructor_args():
-    sig = inspect.signature(Event::Tracks.__init__)
+def test_event_tracks_constructor_args():
+    sig = inspect.signature(Event_Tracks.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::subjectarea_is_not_abstract():
-    assert not inspect.isabstract(Cocus::SubjectArea)
+def test_meta_reviewer_is_not_abstract():
+    assert not inspect.isabstract(Meta_Reviewer)
 
 
-def test_cocus::subjectarea_constructor_exists():
-    assert callable(Cocus::SubjectArea.__init__)
+def test_meta_reviewer_constructor_exists():
+    assert callable(Meta_Reviewer.__init__)
 
 
-def test_cocus::subjectarea_constructor_args():
-    sig = inspect.signature(Cocus::SubjectArea.__init__)
+def test_meta_reviewer_constructor_args():
+    sig = inspect.signature(Meta_Reviewer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subjectarea_is_not_abstract():
+    assert not inspect.isabstract(SubjectArea)
+
+
+def test_subjectarea_constructor_exists():
+    assert callable(SubjectArea.__init__)
+
+
+def test_subjectarea_constructor_args():
+    sig = inspect.signature(SubjectArea.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_subjectarea_is_not_abstract():
+    assert not inspect.isabstract(Cocus_SubjectArea)
+
+
+def test_cocus_subjectarea_constructor_exists():
+    assert callable(Cocus_SubjectArea.__init__)
+
+
+def test_cocus_subjectarea_constructor_args():
+    sig = inspect.signature(Cocus_SubjectArea.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -795,44 +795,44 @@ def test_author_constructor_args():
 
 
 
-def test_cocus::corresponding::author_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Corresponding::Author)
+def test_cocus_co_author_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Co_author)
 
 
-def test_cocus::corresponding::author_constructor_exists():
-    assert callable(Cocus::Corresponding::Author.__init__)
+def test_cocus_co_author_constructor_exists():
+    assert callable(Cocus_Co_author.__init__)
 
 
-def test_cocus::corresponding::author_constructor_args():
-    sig = inspect.signature(Cocus::Corresponding::Author.__init__)
+def test_cocus_co_author_constructor_args():
+    sig = inspect.signature(Cocus_Co_author.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::co_author_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Co_author)
+def test_cocus_corresponding_author_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Corresponding_Author)
 
 
-def test_cocus::co_author_constructor_exists():
-    assert callable(Cocus::Co_author.__init__)
+def test_cocus_corresponding_author_constructor_exists():
+    assert callable(Cocus_Corresponding_Author.__init__)
 
 
-def test_cocus::co_author_constructor_args():
-    sig = inspect.signature(Cocus::Co_author.__init__)
+def test_cocus_corresponding_author_constructor_args():
+    sig = inspect.signature(Cocus_Corresponding_Author.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::authornotreviewer_is_not_abstract():
-    assert not inspect.isabstract(Cocus::AuthorNotReviewer)
+def test_cocus_authornotreviewer_is_not_abstract():
+    assert not inspect.isabstract(Cocus_AuthorNotReviewer)
 
 
-def test_cocus::authornotreviewer_constructor_exists():
-    assert callable(Cocus::AuthorNotReviewer.__init__)
+def test_cocus_authornotreviewer_constructor_exists():
+    assert callable(Cocus_AuthorNotReviewer.__init__)
 
 
-def test_cocus::authornotreviewer_constructor_args():
-    sig = inspect.signature(Cocus::AuthorNotReviewer.__init__)
+def test_cocus_authornotreviewer_constructor_args():
+    sig = inspect.signature(Cocus_AuthorNotReviewer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -879,61 +879,47 @@ def test_document_constructor_args():
 
 
 
-def test_cocus::submission_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Submission)
+def test_cocus_email_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Email)
 
 
-def test_cocus::submission_constructor_exists():
-    assert callable(Cocus::Submission.__init__)
+def test_cocus_email_constructor_exists():
+    assert callable(Cocus_Email.__init__)
 
 
-def test_cocus::submission_constructor_args():
-    sig = inspect.signature(Cocus::Submission.__init__)
+def test_cocus_email_constructor_args():
+    sig = inspect.signature(Cocus_Email.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::email_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Email)
+def test_cocus_paper_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Paper)
 
 
-def test_cocus::email_constructor_exists():
-    assert callable(Cocus::Email.__init__)
+def test_cocus_paper_constructor_exists():
+    assert callable(Cocus_Paper.__init__)
 
 
-def test_cocus::email_constructor_args():
-    sig = inspect.signature(Cocus::Email.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::paper_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Paper)
-
-
-def test_cocus::paper_constructor_exists():
-    assert callable(Cocus::Paper.__init__)
-
-
-def test_cocus::paper_constructor_args():
-    sig = inspect.signature(Cocus::Paper.__init__)
+def test_cocus_paper_constructor_args():
+    sig = inspect.signature(Cocus_Paper.__init__)
     params = list(sig.parameters.keys())
     assert "paperID" in params, "Missing parameter 'paperID'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_cocus::paper_has_paperID():
-    assert hasattr(Cocus::Paper, "paperID")
+def test_cocus_paper_has_paperID():
+    assert hasattr(Cocus_Paper, "paperID")
     descriptor = None
-    for klass in Cocus::Paper.__mro__:
+    for klass in Cocus_Paper.__mro__:
         if "paperID" in klass.__dict__:
             descriptor = klass.__dict__["paperID"]
             break
     assert isinstance(descriptor, property)
 
-def test_cocus::paper_has_title():
-    assert hasattr(Cocus::Paper, "title")
+def test_cocus_paper_has_title():
+    assert hasattr(Cocus_Paper, "title")
     descriptor = None
-    for klass in Cocus::Paper.__mro__:
+    for klass in Cocus_Paper.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -941,30 +927,44 @@ def test_cocus::paper_has_title():
 
 
 
-def test_cocus::template_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Template)
+def test_cocus_submission_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Submission)
 
 
-def test_cocus::template_constructor_exists():
-    assert callable(Cocus::Template.__init__)
+def test_cocus_submission_constructor_exists():
+    assert callable(Cocus_Submission.__init__)
 
 
-def test_cocus::template_constructor_args():
-    sig = inspect.signature(Cocus::Template.__init__)
+def test_cocus_submission_constructor_args():
+    sig = inspect.signature(Cocus_Submission.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::review_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Review)
+def test_cocus_template_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Template)
 
 
-def test_cocus::review_constructor_exists():
-    assert callable(Cocus::Review.__init__)
+def test_cocus_template_constructor_exists():
+    assert callable(Cocus_Template.__init__)
 
 
-def test_cocus::review_constructor_args():
-    sig = inspect.signature(Cocus::Review.__init__)
+def test_cocus_template_constructor_args():
+    sig = inspect.signature(Cocus_Template.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_review_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Review)
+
+
+def test_cocus_review_constructor_exists():
+    assert callable(Cocus_Review.__init__)
+
+
+def test_cocus_review_constructor_args():
+    sig = inspect.signature(Cocus_Review.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -983,30 +983,30 @@ def test_decision_constructor_args():
 
 
 
-def test_cocus::rejection_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Rejection)
+def test_cocus_rejection_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Rejection)
 
 
-def test_cocus::rejection_constructor_exists():
-    assert callable(Cocus::Rejection.__init__)
+def test_cocus_rejection_constructor_exists():
+    assert callable(Cocus_Rejection.__init__)
 
 
-def test_cocus::rejection_constructor_args():
-    sig = inspect.signature(Cocus::Rejection.__init__)
+def test_cocus_rejection_constructor_args():
+    sig = inspect.signature(Cocus_Rejection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::acceptance_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Acceptance)
+def test_cocus_acceptance_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Acceptance)
 
 
-def test_cocus::acceptance_constructor_exists():
-    assert callable(Cocus::Acceptance.__init__)
+def test_cocus_acceptance_constructor_exists():
+    assert callable(Cocus_Acceptance.__init__)
 
 
-def test_cocus::acceptance_constructor_args():
-    sig = inspect.signature(Cocus::Acceptance.__init__)
+def test_cocus_acceptance_constructor_args():
+    sig = inspect.signature(Cocus_Acceptance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1025,30 +1025,30 @@ def test_event_constructor_args():
 
 
 
-def test_cocus::symposium_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Symposium)
+def test_cocus_symposium_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Symposium)
 
 
-def test_cocus::symposium_constructor_exists():
-    assert callable(Cocus::Symposium.__init__)
+def test_cocus_symposium_constructor_exists():
+    assert callable(Cocus_Symposium.__init__)
 
 
-def test_cocus::symposium_constructor_args():
-    sig = inspect.signature(Cocus::Symposium.__init__)
+def test_cocus_symposium_constructor_args():
+    sig = inspect.signature(Cocus_Symposium.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::workshop_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Workshop)
+def test_cocus_workshop_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Workshop)
 
 
-def test_cocus::workshop_constructor_exists():
-    assert callable(Cocus::Workshop.__init__)
+def test_cocus_workshop_constructor_exists():
+    assert callable(Cocus_Workshop.__init__)
 
 
-def test_cocus::workshop_constructor_args():
-    sig = inspect.signature(Cocus::Workshop.__init__)
+def test_cocus_workshop_constructor_args():
+    sig = inspect.signature(Cocus_Workshop.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1067,23 +1067,51 @@ def test_thing_constructor_args():
 
 
 
-def test_cocus::person_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Person)
+def test_cocus_detail_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Detail)
 
 
-def test_cocus::person_constructor_exists():
-    assert callable(Cocus::Person.__init__)
+def test_cocus_detail_constructor_exists():
+    assert callable(Cocus_Detail.__init__)
 
 
-def test_cocus::person_constructor_args():
-    sig = inspect.signature(Cocus::Person.__init__)
+def test_cocus_detail_constructor_args():
+    sig = inspect.signature(Cocus_Detail.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_role_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Role)
+
+
+def test_cocus_role_constructor_exists():
+    assert callable(Cocus_Role.__init__)
+
+
+def test_cocus_role_constructor_args():
+    sig = inspect.signature(Cocus_Role.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_person_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Person)
+
+
+def test_cocus_person_constructor_exists():
+    assert callable(Cocus_Person.__init__)
+
+
+def test_cocus_person_constructor_args():
+    sig = inspect.signature(Cocus_Person.__init__)
     params = list(sig.parameters.keys())
     assert "email" in params, "Missing parameter 'email'"
 
-def test_cocus::person_has_email():
-    assert hasattr(Cocus::Person, "email")
+def test_cocus_person_has_email():
+    assert hasattr(Cocus_Person, "email")
     descriptor = None
-    for klass in Cocus::Person.__mro__:
+    for klass in Cocus_Person.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
             break
@@ -1091,121 +1119,93 @@ def test_cocus::person_has_email():
 
 
 
-def test_cocus::event_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Event)
+def test_cocus_event_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Event)
 
 
-def test_cocus::event_constructor_exists():
-    assert callable(Cocus::Event.__init__)
+def test_cocus_event_constructor_exists():
+    assert callable(Cocus_Event.__init__)
 
 
-def test_cocus::event_constructor_args():
-    sig = inspect.signature(Cocus::Event.__init__)
+def test_cocus_event_constructor_args():
+    sig = inspect.signature(Cocus_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::detail_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Detail)
+def test_cocus_document_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Document)
 
 
-def test_cocus::detail_constructor_exists():
-    assert callable(Cocus::Detail.__init__)
+def test_cocus_document_constructor_exists():
+    assert callable(Cocus_Document.__init__)
 
 
-def test_cocus::detail_constructor_args():
-    sig = inspect.signature(Cocus::Detail.__init__)
+def test_cocus_document_constructor_args():
+    sig = inspect.signature(Cocus_Document.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::role_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Role)
+def test_cocus_conference_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Conference)
 
 
-def test_cocus::role_constructor_exists():
-    assert callable(Cocus::Role.__init__)
+def test_cocus_conference_constructor_exists():
+    assert callable(Cocus_Conference.__init__)
 
 
-def test_cocus::role_constructor_args():
-    sig = inspect.signature(Cocus::Role.__init__)
+def test_cocus_conference_constructor_args():
+    sig = inspect.signature(Cocus_Conference.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_cocus::document_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Document)
-
-
-def test_cocus::document_constructor_exists():
-    assert callable(Cocus::Document.__init__)
-
-
-def test_cocus::document_constructor_args():
-    sig = inspect.signature(Cocus::Document.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::conference_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Conference)
-
-
-def test_cocus::conference_constructor_exists():
-    assert callable(Cocus::Conference.__init__)
-
-
-def test_cocus::conference_constructor_args():
-    sig = inspect.signature(Cocus::Conference.__init__)
-    params = list(sig.parameters.keys())
+    assert "acceptsHardcopySubmissions" in params, "Missing parameter 'acceptsHardcopySubmissions'"
+    assert "logoURL" in params, "Missing parameter 'logoURL'"
     assert "reviewsPerPaper" in params, "Missing parameter 'reviewsPerPaper'"
     assert "siteURL" in params, "Missing parameter 'siteURL'"
-    assert "logoURL" in params, "Missing parameter 'logoURL'"
     assert "date" in params, "Missing parameter 'date'"
-    assert "acceptsHardcopySubmissions" in params, "Missing parameter 'acceptsHardcopySubmissions'"
 
-def test_cocus::conference_has_reviewsPerPaper():
-    assert hasattr(Cocus::Conference, "reviewsPerPaper")
+def test_cocus_conference_has_acceptsHardcopySubmissions():
+    assert hasattr(Cocus_Conference, "acceptsHardcopySubmissions")
     descriptor = None
-    for klass in Cocus::Conference.__mro__:
-        if "reviewsPerPaper" in klass.__dict__:
-            descriptor = klass.__dict__["reviewsPerPaper"]
+    for klass in Cocus_Conference.__mro__:
+        if "acceptsHardcopySubmissions" in klass.__dict__:
+            descriptor = klass.__dict__["acceptsHardcopySubmissions"]
             break
     assert isinstance(descriptor, property)
 
-def test_cocus::conference_has_siteURL():
-    assert hasattr(Cocus::Conference, "siteURL")
+def test_cocus_conference_has_logoURL():
+    assert hasattr(Cocus_Conference, "logoURL")
     descriptor = None
-    for klass in Cocus::Conference.__mro__:
-        if "siteURL" in klass.__dict__:
-            descriptor = klass.__dict__["siteURL"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cocus::conference_has_logoURL():
-    assert hasattr(Cocus::Conference, "logoURL")
-    descriptor = None
-    for klass in Cocus::Conference.__mro__:
+    for klass in Cocus_Conference.__mro__:
         if "logoURL" in klass.__dict__:
             descriptor = klass.__dict__["logoURL"]
             break
     assert isinstance(descriptor, property)
 
-def test_cocus::conference_has_date():
-    assert hasattr(Cocus::Conference, "date")
+def test_cocus_conference_has_reviewsPerPaper():
+    assert hasattr(Cocus_Conference, "reviewsPerPaper")
     descriptor = None
-    for klass in Cocus::Conference.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
+    for klass in Cocus_Conference.__mro__:
+        if "reviewsPerPaper" in klass.__dict__:
+            descriptor = klass.__dict__["reviewsPerPaper"]
             break
     assert isinstance(descriptor, property)
 
-def test_cocus::conference_has_acceptsHardcopySubmissions():
-    assert hasattr(Cocus::Conference, "acceptsHardcopySubmissions")
+def test_cocus_conference_has_siteURL():
+    assert hasattr(Cocus_Conference, "siteURL")
     descriptor = None
-    for klass in Cocus::Conference.__mro__:
-        if "acceptsHardcopySubmissions" in klass.__dict__:
-            descriptor = klass.__dict__["acceptsHardcopySubmissions"]
+    for klass in Cocus_Conference.__mro__:
+        if "siteURL" in klass.__dict__:
+            descriptor = klass.__dict__["siteURL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cocus_conference_has_date():
+    assert hasattr(Cocus_Conference, "date")
+    descriptor = None
+    for klass in Cocus_Conference.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -1239,44 +1239,44 @@ def test_person_constructor_args():
 
 
 
-def test_cocus::user_is_not_abstract():
-    assert not inspect.isabstract(Cocus::User)
+def test_cocus_externalreviewer_is_not_abstract():
+    assert not inspect.isabstract(Cocus_ExternalReviewer)
 
 
-def test_cocus::user_constructor_exists():
-    assert callable(Cocus::User.__init__)
+def test_cocus_externalreviewer_constructor_exists():
+    assert callable(Cocus_ExternalReviewer.__init__)
 
 
-def test_cocus::user_constructor_args():
-    sig = inspect.signature(Cocus::User.__init__)
+def test_cocus_externalreviewer_constructor_args():
+    sig = inspect.signature(Cocus_ExternalReviewer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::externalreviewer_is_not_abstract():
-    assert not inspect.isabstract(Cocus::ExternalReviewer)
+def test_cocus_user_is_not_abstract():
+    assert not inspect.isabstract(Cocus_User)
 
 
-def test_cocus::externalreviewer_constructor_exists():
-    assert callable(Cocus::ExternalReviewer.__init__)
+def test_cocus_user_constructor_exists():
+    assert callable(Cocus_User.__init__)
 
 
-def test_cocus::externalreviewer_constructor_args():
-    sig = inspect.signature(Cocus::ExternalReviewer.__init__)
+def test_cocus_user_constructor_args():
+    sig = inspect.signature(Cocus_User.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::conferencemember_is_not_abstract():
-    assert not inspect.isabstract(Cocus::ConferenceMember)
+def test_cocus_conferencemember_is_not_abstract():
+    assert not inspect.isabstract(Cocus_ConferenceMember)
 
 
-def test_cocus::conferencemember_constructor_exists():
-    assert callable(Cocus::ConferenceMember.__init__)
+def test_cocus_conferencemember_constructor_exists():
+    assert callable(Cocus_ConferenceMember.__init__)
 
 
-def test_cocus::conferencemember_constructor_args():
-    sig = inspect.signature(Cocus::ConferenceMember.__init__)
+def test_cocus_conferencemember_constructor_args():
+    sig = inspect.signature(Cocus_ConferenceMember.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1323,30 +1323,30 @@ def test_user_constructor_args():
 
 
 
-def test_cocus::administrator_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Administrator)
+def test_cocus_committee_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Committee)
 
 
-def test_cocus::administrator_constructor_exists():
-    assert callable(Cocus::Administrator.__init__)
+def test_cocus_committee_constructor_exists():
+    assert callable(Cocus_Committee.__init__)
 
 
-def test_cocus::administrator_constructor_args():
-    sig = inspect.signature(Cocus::Administrator.__init__)
+def test_cocus_committee_constructor_args():
+    sig = inspect.signature(Cocus_Committee.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::committee_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Committee)
+def test_cocus_administrator_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Administrator)
 
 
-def test_cocus::committee_constructor_exists():
-    assert callable(Cocus::Committee.__init__)
+def test_cocus_administrator_constructor_exists():
+    assert callable(Cocus_Administrator.__init__)
 
 
-def test_cocus::committee_constructor_args():
-    sig = inspect.signature(Cocus::Committee.__init__)
+def test_cocus_administrator_constructor_args():
+    sig = inspect.signature(Cocus_Administrator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1365,23 +1365,79 @@ def test_conferencemember_constructor_args():
 
 
 
-def test_cocus::programcommitteemember_is_not_abstract():
-    assert not inspect.isabstract(Cocus::ProgramCommitteeMember)
+def test_cocus_author_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Author)
 
 
-def test_cocus::programcommitteemember_constructor_exists():
-    assert callable(Cocus::ProgramCommitteeMember.__init__)
+def test_cocus_author_constructor_exists():
+    assert callable(Cocus_Author.__init__)
 
 
-def test_cocus::programcommitteemember_constructor_args():
-    sig = inspect.signature(Cocus::ProgramCommitteeMember.__init__)
+def test_cocus_author_constructor_args():
+    sig = inspect.signature(Cocus_Author.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_chairman_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Chairman)
+
+
+def test_cocus_chairman_constructor_exists():
+    assert callable(Cocus_Chairman.__init__)
+
+
+def test_cocus_chairman_constructor_args():
+    sig = inspect.signature(Cocus_Chairman.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_associatedchair_is_not_abstract():
+    assert not inspect.isabstract(Cocus_AssociatedChair)
+
+
+def test_cocus_associatedchair_constructor_exists():
+    assert callable(Cocus_AssociatedChair.__init__)
+
+
+def test_cocus_associatedchair_constructor_args():
+    sig = inspect.signature(Cocus_AssociatedChair.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_conferencechair_is_not_abstract():
+    assert not inspect.isabstract(Cocus_ConferenceChair)
+
+
+def test_cocus_conferencechair_constructor_exists():
+    assert callable(Cocus_ConferenceChair.__init__)
+
+
+def test_cocus_conferencechair_constructor_args():
+    sig = inspect.signature(Cocus_ConferenceChair.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cocus_programcommitteemember_is_not_abstract():
+    assert not inspect.isabstract(Cocus_ProgramCommitteeMember)
+
+
+def test_cocus_programcommitteemember_constructor_exists():
+    assert callable(Cocus_ProgramCommitteeMember.__init__)
+
+
+def test_cocus_programcommitteemember_constructor_args():
+    sig = inspect.signature(Cocus_ProgramCommitteeMember.__init__)
     params = list(sig.parameters.keys())
     assert "maxPapers" in params, "Missing parameter 'maxPapers'"
 
-def test_cocus::programcommitteemember_has_maxPapers():
-    assert hasattr(Cocus::ProgramCommitteeMember, "maxPapers")
+def test_cocus_programcommitteemember_has_maxPapers():
+    assert hasattr(Cocus_ProgramCommitteeMember, "maxPapers")
     descriptor = None
-    for klass in Cocus::ProgramCommitteeMember.__mro__:
+    for klass in Cocus_ProgramCommitteeMember.__mro__:
         if "maxPapers" in klass.__dict__:
             descriptor = klass.__dict__["maxPapers"]
             break
@@ -1389,72 +1445,16 @@ def test_cocus::programcommitteemember_has_maxPapers():
 
 
 
-def test_cocus::associatedchair_is_not_abstract():
-    assert not inspect.isabstract(Cocus::AssociatedChair)
+def test_cocus_reviewer_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Reviewer)
 
 
-def test_cocus::associatedchair_constructor_exists():
-    assert callable(Cocus::AssociatedChair.__init__)
+def test_cocus_reviewer_constructor_exists():
+    assert callable(Cocus_Reviewer.__init__)
 
 
-def test_cocus::associatedchair_constructor_args():
-    sig = inspect.signature(Cocus::AssociatedChair.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::conferencechair_is_not_abstract():
-    assert not inspect.isabstract(Cocus::ConferenceChair)
-
-
-def test_cocus::conferencechair_constructor_exists():
-    assert callable(Cocus::ConferenceChair.__init__)
-
-
-def test_cocus::conferencechair_constructor_args():
-    sig = inspect.signature(Cocus::ConferenceChair.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::author_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Author)
-
-
-def test_cocus::author_constructor_exists():
-    assert callable(Cocus::Author.__init__)
-
-
-def test_cocus::author_constructor_args():
-    sig = inspect.signature(Cocus::Author.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::chairman_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Chairman)
-
-
-def test_cocus::chairman_constructor_exists():
-    assert callable(Cocus::Chairman.__init__)
-
-
-def test_cocus::chairman_constructor_args():
-    sig = inspect.signature(Cocus::Chairman.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cocus::reviewer_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Reviewer)
-
-
-def test_cocus::reviewer_constructor_exists():
-    assert callable(Cocus::Reviewer.__init__)
-
-
-def test_cocus::reviewer_constructor_args():
-    sig = inspect.signature(Cocus::Reviewer.__init__)
+def test_cocus_reviewer_constructor_args():
+    sig = inspect.signature(Cocus_Reviewer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1473,44 +1473,44 @@ def test_reviewer_constructor_args():
 
 
 
-def test_cocus::meta_reviewer_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Meta_Reviewer)
+def test_cocus_meta_reviewer_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Meta_Reviewer)
 
 
-def test_cocus::meta_reviewer_constructor_exists():
-    assert callable(Cocus::Meta_Reviewer.__init__)
+def test_cocus_meta_reviewer_constructor_exists():
+    assert callable(Cocus_Meta_Reviewer.__init__)
 
 
-def test_cocus::meta_reviewer_constructor_args():
-    sig = inspect.signature(Cocus::Meta_Reviewer.__init__)
+def test_cocus_meta_reviewer_constructor_args():
+    sig = inspect.signature(Cocus_Meta_Reviewer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::thing_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Thing)
+def test_cocus_thing_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Thing)
 
 
-def test_cocus::thing_constructor_exists():
-    assert callable(Cocus::Thing.__init__)
+def test_cocus_thing_constructor_exists():
+    assert callable(Cocus_Thing.__init__)
 
 
-def test_cocus::thing_constructor_args():
-    sig = inspect.signature(Cocus::Thing.__init__)
+def test_cocus_thing_constructor_args():
+    sig = inspect.signature(Cocus_Thing.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::bid_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Bid)
+def test_cocus_bid_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Bid)
 
 
-def test_cocus::bid_constructor_exists():
-    assert callable(Cocus::Bid.__init__)
+def test_cocus_bid_constructor_exists():
+    assert callable(Cocus_Bid.__init__)
 
 
-def test_cocus::bid_constructor_args():
-    sig = inspect.signature(Cocus::Bid.__init__)
+def test_cocus_bid_constructor_args():
+    sig = inspect.signature(Cocus_Bid.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1529,58 +1529,58 @@ def test_programcommitteemember_constructor_args():
 
 
 
-def test_cocus::programcommitteechair_is_not_abstract():
-    assert not inspect.isabstract(Cocus::ProgramCommitteeChair)
+def test_cocus_programcommitteechair_is_not_abstract():
+    assert not inspect.isabstract(Cocus_ProgramCommitteeChair)
 
 
-def test_cocus::programcommitteechair_constructor_exists():
-    assert callable(Cocus::ProgramCommitteeChair.__init__)
+def test_cocus_programcommitteechair_constructor_exists():
+    assert callable(Cocus_ProgramCommitteeChair.__init__)
 
 
-def test_cocus::programcommitteechair_constructor_args():
-    sig = inspect.signature(Cocus::ProgramCommitteeChair.__init__)
+def test_cocus_programcommitteechair_constructor_args():
+    sig = inspect.signature(Cocus_ProgramCommitteeChair.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::programcommittee_is_not_abstract():
-    assert not inspect.isabstract(Cocus::ProgramCommittee)
+def test_cocus_programcommittee_is_not_abstract():
+    assert not inspect.isabstract(Cocus_ProgramCommittee)
 
 
-def test_cocus::programcommittee_constructor_exists():
-    assert callable(Cocus::ProgramCommittee.__init__)
+def test_cocus_programcommittee_constructor_exists():
+    assert callable(Cocus_ProgramCommittee.__init__)
 
 
-def test_cocus::programcommittee_constructor_args():
-    sig = inspect.signature(Cocus::ProgramCommittee.__init__)
+def test_cocus_programcommittee_constructor_args():
+    sig = inspect.signature(Cocus_ProgramCommittee.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::preference_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Preference)
+def test_cocus_preference_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Preference)
 
 
-def test_cocus::preference_constructor_exists():
-    assert callable(Cocus::Preference.__init__)
+def test_cocus_preference_constructor_exists():
+    assert callable(Cocus_Preference.__init__)
 
 
-def test_cocus::preference_constructor_args():
-    sig = inspect.signature(Cocus::Preference.__init__)
+def test_cocus_preference_constructor_args():
+    sig = inspect.signature(Cocus_Preference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::decision_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Decision)
+def test_cocus_decision_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Decision)
 
 
-def test_cocus::decision_constructor_exists():
-    assert callable(Cocus::Decision.__init__)
+def test_cocus_decision_constructor_exists():
+    assert callable(Cocus_Decision.__init__)
 
 
-def test_cocus::decision_constructor_args():
-    sig = inspect.signature(Cocus::Decision.__init__)
+def test_cocus_decision_constructor_args():
+    sig = inspect.signature(Cocus_Decision.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1613,16 +1613,16 @@ def test_review_constructor_args():
 
 
 
-def test_cocus::meta-review_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Meta-Review)
+def test_cocus_meta-review_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Meta-Review)
 
 
-def test_cocus::meta-review_constructor_exists():
-    assert callable(Cocus::Meta-Review.__init__)
+def test_cocus_meta-review_constructor_exists():
+    assert callable(Cocus_Meta-Review.__init__)
 
 
-def test_cocus::meta-review_constructor_args():
-    sig = inspect.signature(Cocus::Meta-Review.__init__)
+def test_cocus_meta-review_constructor_args():
+    sig = inspect.signature(Cocus_Meta-Review.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1641,86 +1641,86 @@ def test_paper_constructor_args():
 
 
 
-def test_cocus::short::paper_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Short::Paper)
+def test_cocus_abstract_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Abstract)
 
 
-def test_cocus::short::paper_constructor_exists():
-    assert callable(Cocus::Short::Paper.__init__)
+def test_cocus_abstract_constructor_exists():
+    assert callable(Cocus_Abstract.__init__)
 
 
-def test_cocus::short::paper_constructor_args():
-    sig = inspect.signature(Cocus::Short::Paper.__init__)
+def test_cocus_abstract_constructor_args():
+    sig = inspect.signature(Cocus_Abstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::full::paper_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Full::Paper)
+def test_cocus_paperabstract_is_not_abstract():
+    assert not inspect.isabstract(Cocus_PaperAbstract)
 
 
-def test_cocus::full::paper_constructor_exists():
-    assert callable(Cocus::Full::Paper.__init__)
+def test_cocus_paperabstract_constructor_exists():
+    assert callable(Cocus_PaperAbstract.__init__)
 
 
-def test_cocus::full::paper_constructor_args():
-    sig = inspect.signature(Cocus::Full::Paper.__init__)
+def test_cocus_paperabstract_constructor_args():
+    sig = inspect.signature(Cocus_PaperAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::paperfullversion_is_not_abstract():
-    assert not inspect.isabstract(Cocus::PaperFullVersion)
+def test_cocus_short_paper_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Short_Paper)
 
 
-def test_cocus::paperfullversion_constructor_exists():
-    assert callable(Cocus::PaperFullVersion.__init__)
+def test_cocus_short_paper_constructor_exists():
+    assert callable(Cocus_Short_Paper.__init__)
 
 
-def test_cocus::paperfullversion_constructor_args():
-    sig = inspect.signature(Cocus::PaperFullVersion.__init__)
+def test_cocus_short_paper_constructor_args():
+    sig = inspect.signature(Cocus_Short_Paper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::abstract_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Abstract)
+def test_cocus_full_paper_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Full_Paper)
 
 
-def test_cocus::abstract_constructor_exists():
-    assert callable(Cocus::Abstract.__init__)
+def test_cocus_full_paper_constructor_exists():
+    assert callable(Cocus_Full_Paper.__init__)
 
 
-def test_cocus::abstract_constructor_args():
-    sig = inspect.signature(Cocus::Abstract.__init__)
+def test_cocus_full_paper_constructor_args():
+    sig = inspect.signature(Cocus_Full_Paper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::paperabstract_is_not_abstract():
-    assert not inspect.isabstract(Cocus::PaperAbstract)
+def test_cocus_invited_paper_is_not_abstract():
+    assert not inspect.isabstract(Cocus_Invited_Paper)
 
 
-def test_cocus::paperabstract_constructor_exists():
-    assert callable(Cocus::PaperAbstract.__init__)
+def test_cocus_invited_paper_constructor_exists():
+    assert callable(Cocus_Invited_Paper.__init__)
 
 
-def test_cocus::paperabstract_constructor_args():
-    sig = inspect.signature(Cocus::PaperAbstract.__init__)
+def test_cocus_invited_paper_constructor_args():
+    sig = inspect.signature(Cocus_Invited_Paper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cocus::invited::paper_is_not_abstract():
-    assert not inspect.isabstract(Cocus::Invited::Paper)
+def test_cocus_paperfullversion_is_not_abstract():
+    assert not inspect.isabstract(Cocus_PaperFullVersion)
 
 
-def test_cocus::invited::paper_constructor_exists():
-    assert callable(Cocus::Invited::Paper.__init__)
+def test_cocus_paperfullversion_constructor_exists():
+    assert callable(Cocus_PaperFullVersion.__init__)
 
 
-def test_cocus::invited::paper_constructor_args():
-    sig = inspect.signature(Cocus::Invited::Paper.__init__)
+def test_cocus_paperfullversion_constructor_args():
+    sig = inspect.signature(Cocus_PaperFullVersion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1749,65 +1749,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Meta_Reviewer_strategy = st.builds(
-    Meta_Reviewer,
+Cocus_Activity_strategy = st.builds(
+    Cocus_Activity,
 )
-SubjectArea_strategy = st.builds(
-    SubjectArea,
-)
-Cocus::Activity_strategy = st.builds(
-    Cocus::Activity,
-)
-Cocus::Description_strategy = st.builds(
-    Cocus::Description,
+Cocus_Description_strategy = st.builds(
+    Cocus_Description,
 )
 URL_strategy = st.builds(
     URL,
 )
-Cocus::Event::URL_strategy = st.builds(
-    Cocus::Event::URL,
+Cocus_Event_URL_strategy = st.builds(
+    Cocus_Event_URL,
 )
-Cocus::Event::Setup_strategy = st.builds(
-    Cocus::Event::Setup,
+Cocus_Event_Setup_strategy = st.builds(
+    Cocus_Event_Setup,
 )
-Help::Request_strategy = st.builds(
-    Help::Request,
+Help_Request_strategy = st.builds(
+    Help_Request,
 )
-Cocus::Assistance_strategy = st.builds(
-    Cocus::Assistance,
+Cocus_Feature_Request_strategy = st.builds(
+    Cocus_Feature_Request,
 )
-Cocus::Feature::Request_strategy = st.builds(
-    Cocus::Feature::Request,
+Cocus_Assistance_strategy = st.builds(
+    Cocus_Assistance,
 )
-Cocus::Misc_strategy = st.builds(
-    Cocus::Misc,
+Cocus_Misc_strategy = st.builds(
+    Cocus_Misc,
 )
-Review::Form_strategy = st.builds(
-    Review::Form,
+Review_Form_strategy = st.builds(
+    Review_Form,
 )
-Cocus::Review::Form::Setup_strategy = st.builds(
-    Cocus::Review::Form::Setup,
+Cocus_Review_Form_Setup_strategy = st.builds(
+    Cocus_Review_Form_Setup,
 )
-Cocus::Preview_strategy = st.builds(
-    Cocus::Preview,
+Cocus_Preview_strategy = st.builds(
+    Cocus_Preview,
 )
 Email_strategy = st.builds(
     Email,
 )
-Cocus::Group::Email_strategy = st.builds(
-    Cocus::Group::Email,
+Cocus_Approval_Email_strategy = st.builds(
+    Cocus_Approval_Email,
 )
-Cocus::Rejection::Email_strategy = st.builds(
-    Cocus::Rejection::Email,
+Cocus_Group_Email_strategy = st.builds(
+    Cocus_Group_Email,
 )
-Cocus::Approval::Email_strategy = st.builds(
-    Cocus::Approval::Email,
+Cocus_Rejection_Email_strategy = st.builds(
+    Cocus_Rejection_Email,
 )
-Cocus::Notification::Email_strategy = st.builds(
-    Cocus::Notification::Email,
+Cocus_Notification_Email_strategy = st.builds(
+    Cocus_Notification_Email,
 )
-Cocus::URL_strategy = st.builds(
-    Cocus::URL,
+Cocus_URL_strategy = st.builds(
+    Cocus_URL,
 )
 Account_strategy = st.builds(
     Account,
@@ -1815,47 +1809,47 @@ Account_strategy = st.builds(
 Activity_strategy = st.builds(
     Activity,
 )
-Cocus::Event::Creation_strategy = st.builds(
-    Cocus::Event::Creation,
+Cocus_Event_Creation_strategy = st.builds(
+    Cocus_Event_Creation,
 )
-Cocus::Request_strategy = st.builds(
-    Cocus::Request,
+Cocus_Event_Approval_strategy = st.builds(
+    Cocus_Event_Approval,
 )
-Cocus::Registration_strategy = st.builds(
-    Cocus::Registration,
+Cocus_Registration_strategy = st.builds(
+    Cocus_Registration,
 )
-Cocus::Event::Approval_strategy = st.builds(
-    Cocus::Event::Approval,
+Cocus_Request_strategy = st.builds(
+    Cocus_Request,
 )
-Cocus::Inforamtion_strategy = st.builds(
-    Cocus::Inforamtion,
+Cocus_Inforamtion_strategy = st.builds(
+    Cocus_Inforamtion,
 )
-Cocus::Account_strategy = st.builds(
-    Cocus::Account,
+Cocus_Account_strategy = st.builds(
+    Cocus_Account,
 )
-Event::Setup_strategy = st.builds(
-    Event::Setup,
+Event_Setup_strategy = st.builds(
+    Event_Setup,
 )
-Cocus::Event::Tracks_strategy = st.builds(
-    Cocus::Event::Tracks,
+Cocus_Submission_Template_strategy = st.builds(
+    Cocus_Submission_Template,
 )
-Cocus::Paper::Typologies_strategy = st.builds(
-    Cocus::Paper::Typologies,
+Cocus_Paper_Typologies_strategy = st.builds(
+    Cocus_Paper_Typologies,
 )
-Cocus::Review::Form_strategy = st.builds(
-    Cocus::Review::Form,
+Cocus_Email_Template_strategy = st.builds(
+    Cocus_Email_Template,
 )
-Cocus::Email::Template_strategy = st.builds(
-    Cocus::Email::Template,
+Cocus_Research_Topic_strategy = st.builds(
+    Cocus_Research_Topic,
 )
-Cocus::Submission::Template_strategy = st.builds(
-    Cocus::Submission::Template,
+Cocus_Event_Tracks_strategy = st.builds(
+    Cocus_Event_Tracks,
 )
-Cocus::Research::Topic_strategy = st.builds(
-    Cocus::Research::Topic,
+Cocus_Review_Form_strategy = st.builds(
+    Cocus_Review_Form,
 )
-Approval::Email_strategy = st.builds(
-    Approval::Email,
+Approval_Email_strategy = st.builds(
+    Approval_Email,
 )
 Inforamtion_strategy = st.builds(
     Inforamtion,
@@ -1863,44 +1857,50 @@ Inforamtion_strategy = st.builds(
 Request_strategy = st.builds(
     Request,
 )
-Cocus::Help::Request_strategy = st.builds(
-    Cocus::Help::Request,
+Cocus_Help_Request_strategy = st.builds(
+    Cocus_Help_Request,
 )
 Role_strategy = st.builds(
     Role,
 )
-Cocus::Committe::Role_strategy = st.builds(
-    Cocus::Committe::Role,
+Cocus_Admin_Role_strategy = st.builds(
+    Cocus_Admin_Role,
 )
-Cocus::Head::Role_strategy = st.builds(
-    Cocus::Head::Role,
+Cocus_Reviewer_Role_strategy = st.builds(
+    Cocus_Reviewer_Role,
 )
-Cocus::Admin::Role_strategy = st.builds(
-    Cocus::Admin::Role,
+Cocus_Author_Role_strategy = st.builds(
+    Cocus_Author_Role,
 )
-Cocus::Reviewer::Role_strategy = st.builds(
-    Cocus::Reviewer::Role,
+Cocus_Committe_Role_strategy = st.builds(
+    Cocus_Committe_Role,
 )
-Cocus::Author::Role_strategy = st.builds(
-    Cocus::Author::Role,
+Cocus_Head_Role_strategy = st.builds(
+    Cocus_Head_Role,
 )
-Event::Tracks_strategy = st.builds(
-    Event::Tracks,
+Event_Tracks_strategy = st.builds(
+    Event_Tracks,
 )
-Cocus::SubjectArea_strategy = st.builds(
-    Cocus::SubjectArea,
+Meta_Reviewer_strategy = st.builds(
+    Meta_Reviewer,
+)
+SubjectArea_strategy = st.builds(
+    SubjectArea,
+)
+Cocus_SubjectArea_strategy = st.builds(
+    Cocus_SubjectArea,
 )
 Author_strategy = st.builds(
     Author,
 )
-Cocus::Corresponding::Author_strategy = st.builds(
-    Cocus::Corresponding::Author,
+Cocus_Co_author_strategy = st.builds(
+    Cocus_Co_author,
 )
-Cocus::Co_author_strategy = st.builds(
-    Cocus::Co_author,
+Cocus_Corresponding_Author_strategy = st.builds(
+    Cocus_Corresponding_Author,
 )
-Cocus::AuthorNotReviewer_strategy = st.builds(
-    Cocus::AuthorNotReviewer,
+Cocus_AuthorNotReviewer_strategy = st.builds(
+    Cocus_AuthorNotReviewer,
 )
 ProgramCommittee_strategy = st.builds(
     ProgramCommittee,
@@ -1911,74 +1911,74 @@ Co_author_strategy = st.builds(
 Document_strategy = st.builds(
     Document,
 )
-Cocus::Submission_strategy = st.builds(
-    Cocus::Submission,
+Cocus_Email_strategy = st.builds(
+    Cocus_Email,
 )
-Cocus::Email_strategy = st.builds(
-    Cocus::Email,
-)
-Cocus::Paper_strategy = st.builds(
-    Cocus::Paper,
+Cocus_Paper_strategy = st.builds(
+    Cocus_Paper,
     paperID=
         safe_text,
     title=
         safe_text
 )
-Cocus::Template_strategy = st.builds(
-    Cocus::Template,
+Cocus_Submission_strategy = st.builds(
+    Cocus_Submission,
 )
-Cocus::Review_strategy = st.builds(
-    Cocus::Review,
+Cocus_Template_strategy = st.builds(
+    Cocus_Template,
+)
+Cocus_Review_strategy = st.builds(
+    Cocus_Review,
 )
 Decision_strategy = st.builds(
     Decision,
 )
-Cocus::Rejection_strategy = st.builds(
-    Cocus::Rejection,
+Cocus_Rejection_strategy = st.builds(
+    Cocus_Rejection,
 )
-Cocus::Acceptance_strategy = st.builds(
-    Cocus::Acceptance,
+Cocus_Acceptance_strategy = st.builds(
+    Cocus_Acceptance,
 )
 Event_strategy = st.builds(
     Event,
 )
-Cocus::Symposium_strategy = st.builds(
-    Cocus::Symposium,
+Cocus_Symposium_strategy = st.builds(
+    Cocus_Symposium,
 )
-Cocus::Workshop_strategy = st.builds(
-    Cocus::Workshop,
+Cocus_Workshop_strategy = st.builds(
+    Cocus_Workshop,
 )
 Thing_strategy = st.builds(
     Thing,
 )
-Cocus::Person_strategy = st.builds(
-    Cocus::Person,
+Cocus_Detail_strategy = st.builds(
+    Cocus_Detail,
+)
+Cocus_Role_strategy = st.builds(
+    Cocus_Role,
+)
+Cocus_Person_strategy = st.builds(
+    Cocus_Person,
     email=
         safe_text
 )
-Cocus::Event_strategy = st.builds(
-    Cocus::Event,
+Cocus_Event_strategy = st.builds(
+    Cocus_Event,
 )
-Cocus::Detail_strategy = st.builds(
-    Cocus::Detail,
+Cocus_Document_strategy = st.builds(
+    Cocus_Document,
 )
-Cocus::Role_strategy = st.builds(
-    Cocus::Role,
-)
-Cocus::Document_strategy = st.builds(
-    Cocus::Document,
-)
-Cocus::Conference_strategy = st.builds(
-    Cocus::Conference,
+Cocus_Conference_strategy = st.builds(
+    Cocus_Conference,
+    acceptsHardcopySubmissions=
+        safe_text,
+    logoURL=
+        safe_text,
     reviewsPerPaper=
         safe_text,
     siteURL=
         safe_text,
-    logoURL=
-        safe_text,
     date=
-        safe_text,
-    acceptsHardcopySubmissions=
         safe_text
 )
 Conference_strategy = st.builds(
@@ -1987,14 +1987,14 @@ Conference_strategy = st.builds(
 Person_strategy = st.builds(
     Person,
 )
-Cocus::User_strategy = st.builds(
-    Cocus::User,
+Cocus_ExternalReviewer_strategy = st.builds(
+    Cocus_ExternalReviewer,
 )
-Cocus::ExternalReviewer_strategy = st.builds(
-    Cocus::ExternalReviewer,
+Cocus_User_strategy = st.builds(
+    Cocus_User,
 )
-Cocus::ConferenceMember_strategy = st.builds(
-    Cocus::ConferenceMember,
+Cocus_ConferenceMember_strategy = st.builds(
+    Cocus_ConferenceMember,
 )
 Chairman_strategy = st.builds(
     Chairman,
@@ -2005,61 +2005,61 @@ Administrator_strategy = st.builds(
 User_strategy = st.builds(
     User,
 )
-Cocus::Administrator_strategy = st.builds(
-    Cocus::Administrator,
+Cocus_Committee_strategy = st.builds(
+    Cocus_Committee,
 )
-Cocus::Committee_strategy = st.builds(
-    Cocus::Committee,
+Cocus_Administrator_strategy = st.builds(
+    Cocus_Administrator,
 )
 ConferenceMember_strategy = st.builds(
     ConferenceMember,
 )
-Cocus::ProgramCommitteeMember_strategy = st.builds(
-    Cocus::ProgramCommitteeMember,
+Cocus_Author_strategy = st.builds(
+    Cocus_Author,
+)
+Cocus_Chairman_strategy = st.builds(
+    Cocus_Chairman,
+)
+Cocus_AssociatedChair_strategy = st.builds(
+    Cocus_AssociatedChair,
+)
+Cocus_ConferenceChair_strategy = st.builds(
+    Cocus_ConferenceChair,
+)
+Cocus_ProgramCommitteeMember_strategy = st.builds(
+    Cocus_ProgramCommitteeMember,
     maxPapers=
         safe_text
 )
-Cocus::AssociatedChair_strategy = st.builds(
-    Cocus::AssociatedChair,
-)
-Cocus::ConferenceChair_strategy = st.builds(
-    Cocus::ConferenceChair,
-)
-Cocus::Author_strategy = st.builds(
-    Cocus::Author,
-)
-Cocus::Chairman_strategy = st.builds(
-    Cocus::Chairman,
-)
-Cocus::Reviewer_strategy = st.builds(
-    Cocus::Reviewer,
+Cocus_Reviewer_strategy = st.builds(
+    Cocus_Reviewer,
 )
 Reviewer_strategy = st.builds(
     Reviewer,
 )
-Cocus::Meta_Reviewer_strategy = st.builds(
-    Cocus::Meta_Reviewer,
+Cocus_Meta_Reviewer_strategy = st.builds(
+    Cocus_Meta_Reviewer,
 )
-Cocus::Thing_strategy = st.builds(
-    Cocus::Thing,
+Cocus_Thing_strategy = st.builds(
+    Cocus_Thing,
 )
-Cocus::Bid_strategy = st.builds(
-    Cocus::Bid,
+Cocus_Bid_strategy = st.builds(
+    Cocus_Bid,
 )
 ProgramCommitteeMember_strategy = st.builds(
     ProgramCommitteeMember,
 )
-Cocus::ProgramCommitteeChair_strategy = st.builds(
-    Cocus::ProgramCommitteeChair,
+Cocus_ProgramCommitteeChair_strategy = st.builds(
+    Cocus_ProgramCommitteeChair,
 )
-Cocus::ProgramCommittee_strategy = st.builds(
-    Cocus::ProgramCommittee,
+Cocus_ProgramCommittee_strategy = st.builds(
+    Cocus_ProgramCommittee,
 )
-Cocus::Preference_strategy = st.builds(
-    Cocus::Preference,
+Cocus_Preference_strategy = st.builds(
+    Cocus_Preference,
 )
-Cocus::Decision_strategy = st.builds(
-    Cocus::Decision,
+Cocus_Decision_strategy = st.builds(
+    Cocus_Decision,
 )
 ExternalReviewer_strategy = st.builds(
     ExternalReviewer,
@@ -2067,133 +2067,123 @@ ExternalReviewer_strategy = st.builds(
 Review_strategy = st.builds(
     Review,
 )
-Cocus::Meta-Review_strategy = st.builds(
-    Cocus::Meta-Review,
+Cocus_Meta-Review_strategy = st.builds(
+    Cocus_Meta-Review,
 )
 Paper_strategy = st.builds(
     Paper,
 )
-Cocus::Short::Paper_strategy = st.builds(
-    Cocus::Short::Paper,
+Cocus_Abstract_strategy = st.builds(
+    Cocus_Abstract,
 )
-Cocus::Full::Paper_strategy = st.builds(
-    Cocus::Full::Paper,
+Cocus_PaperAbstract_strategy = st.builds(
+    Cocus_PaperAbstract,
 )
-Cocus::PaperFullVersion_strategy = st.builds(
-    Cocus::PaperFullVersion,
+Cocus_Short_Paper_strategy = st.builds(
+    Cocus_Short_Paper,
 )
-Cocus::Abstract_strategy = st.builds(
-    Cocus::Abstract,
+Cocus_Full_Paper_strategy = st.builds(
+    Cocus_Full_Paper,
 )
-Cocus::PaperAbstract_strategy = st.builds(
-    Cocus::PaperAbstract,
+Cocus_Invited_Paper_strategy = st.builds(
+    Cocus_Invited_Paper,
 )
-Cocus::Invited::Paper_strategy = st.builds(
-    Cocus::Invited::Paper,
+Cocus_PaperFullVersion_strategy = st.builds(
+    Cocus_PaperFullVersion,
 )
 Bid_strategy = st.builds(
     Bid,
 )
 
-@given(instance=Meta_Reviewer_strategy)
+@given(instance=Cocus_Activity_strategy)
 @settings(max_examples=50)
-def test_meta_reviewer_instantiation(instance):
-    assert isinstance(instance, Meta_Reviewer)
+def test_cocus_activity_instantiation(instance):
+    assert isinstance(instance, Cocus_Activity)
 
-@given(instance=SubjectArea_strategy)
+@given(instance=Cocus_Description_strategy)
 @settings(max_examples=50)
-def test_subjectarea_instantiation(instance):
-    assert isinstance(instance, SubjectArea)
-
-@given(instance=Cocus::Activity_strategy)
-@settings(max_examples=50)
-def test_cocus::activity_instantiation(instance):
-    assert isinstance(instance, Cocus::Activity)
-
-@given(instance=Cocus::Description_strategy)
-@settings(max_examples=50)
-def test_cocus::description_instantiation(instance):
-    assert isinstance(instance, Cocus::Description)
+def test_cocus_description_instantiation(instance):
+    assert isinstance(instance, Cocus_Description)
 
 @given(instance=URL_strategy)
 @settings(max_examples=50)
 def test_url_instantiation(instance):
     assert isinstance(instance, URL)
 
-@given(instance=Cocus::Event::URL_strategy)
+@given(instance=Cocus_Event_URL_strategy)
 @settings(max_examples=50)
-def test_cocus::event::url_instantiation(instance):
-    assert isinstance(instance, Cocus::Event::URL)
+def test_cocus_event_url_instantiation(instance):
+    assert isinstance(instance, Cocus_Event_URL)
 
-@given(instance=Cocus::Event::Setup_strategy)
+@given(instance=Cocus_Event_Setup_strategy)
 @settings(max_examples=50)
-def test_cocus::event::setup_instantiation(instance):
-    assert isinstance(instance, Cocus::Event::Setup)
+def test_cocus_event_setup_instantiation(instance):
+    assert isinstance(instance, Cocus_Event_Setup)
 
-@given(instance=Help::Request_strategy)
+@given(instance=Help_Request_strategy)
 @settings(max_examples=50)
-def test_help::request_instantiation(instance):
-    assert isinstance(instance, Help::Request)
+def test_help_request_instantiation(instance):
+    assert isinstance(instance, Help_Request)
 
-@given(instance=Cocus::Assistance_strategy)
+@given(instance=Cocus_Feature_Request_strategy)
 @settings(max_examples=50)
-def test_cocus::assistance_instantiation(instance):
-    assert isinstance(instance, Cocus::Assistance)
+def test_cocus_feature_request_instantiation(instance):
+    assert isinstance(instance, Cocus_Feature_Request)
 
-@given(instance=Cocus::Feature::Request_strategy)
+@given(instance=Cocus_Assistance_strategy)
 @settings(max_examples=50)
-def test_cocus::feature::request_instantiation(instance):
-    assert isinstance(instance, Cocus::Feature::Request)
+def test_cocus_assistance_instantiation(instance):
+    assert isinstance(instance, Cocus_Assistance)
 
-@given(instance=Cocus::Misc_strategy)
+@given(instance=Cocus_Misc_strategy)
 @settings(max_examples=50)
-def test_cocus::misc_instantiation(instance):
-    assert isinstance(instance, Cocus::Misc)
+def test_cocus_misc_instantiation(instance):
+    assert isinstance(instance, Cocus_Misc)
 
-@given(instance=Review::Form_strategy)
+@given(instance=Review_Form_strategy)
 @settings(max_examples=50)
-def test_review::form_instantiation(instance):
-    assert isinstance(instance, Review::Form)
+def test_review_form_instantiation(instance):
+    assert isinstance(instance, Review_Form)
 
-@given(instance=Cocus::Review::Form::Setup_strategy)
+@given(instance=Cocus_Review_Form_Setup_strategy)
 @settings(max_examples=50)
-def test_cocus::review::form::setup_instantiation(instance):
-    assert isinstance(instance, Cocus::Review::Form::Setup)
+def test_cocus_review_form_setup_instantiation(instance):
+    assert isinstance(instance, Cocus_Review_Form_Setup)
 
-@given(instance=Cocus::Preview_strategy)
+@given(instance=Cocus_Preview_strategy)
 @settings(max_examples=50)
-def test_cocus::preview_instantiation(instance):
-    assert isinstance(instance, Cocus::Preview)
+def test_cocus_preview_instantiation(instance):
+    assert isinstance(instance, Cocus_Preview)
 
 @given(instance=Email_strategy)
 @settings(max_examples=50)
 def test_email_instantiation(instance):
     assert isinstance(instance, Email)
 
-@given(instance=Cocus::Group::Email_strategy)
+@given(instance=Cocus_Approval_Email_strategy)
 @settings(max_examples=50)
-def test_cocus::group::email_instantiation(instance):
-    assert isinstance(instance, Cocus::Group::Email)
+def test_cocus_approval_email_instantiation(instance):
+    assert isinstance(instance, Cocus_Approval_Email)
 
-@given(instance=Cocus::Rejection::Email_strategy)
+@given(instance=Cocus_Group_Email_strategy)
 @settings(max_examples=50)
-def test_cocus::rejection::email_instantiation(instance):
-    assert isinstance(instance, Cocus::Rejection::Email)
+def test_cocus_group_email_instantiation(instance):
+    assert isinstance(instance, Cocus_Group_Email)
 
-@given(instance=Cocus::Approval::Email_strategy)
+@given(instance=Cocus_Rejection_Email_strategy)
 @settings(max_examples=50)
-def test_cocus::approval::email_instantiation(instance):
-    assert isinstance(instance, Cocus::Approval::Email)
+def test_cocus_rejection_email_instantiation(instance):
+    assert isinstance(instance, Cocus_Rejection_Email)
 
-@given(instance=Cocus::Notification::Email_strategy)
+@given(instance=Cocus_Notification_Email_strategy)
 @settings(max_examples=50)
-def test_cocus::notification::email_instantiation(instance):
-    assert isinstance(instance, Cocus::Notification::Email)
+def test_cocus_notification_email_instantiation(instance):
+    assert isinstance(instance, Cocus_Notification_Email)
 
-@given(instance=Cocus::URL_strategy)
+@given(instance=Cocus_URL_strategy)
 @settings(max_examples=50)
-def test_cocus::url_instantiation(instance):
-    assert isinstance(instance, Cocus::URL)
+def test_cocus_url_instantiation(instance):
+    assert isinstance(instance, Cocus_URL)
 
 @given(instance=Account_strategy)
 @settings(max_examples=50)
@@ -2205,75 +2195,75 @@ def test_account_instantiation(instance):
 def test_activity_instantiation(instance):
     assert isinstance(instance, Activity)
 
-@given(instance=Cocus::Event::Creation_strategy)
+@given(instance=Cocus_Event_Creation_strategy)
 @settings(max_examples=50)
-def test_cocus::event::creation_instantiation(instance):
-    assert isinstance(instance, Cocus::Event::Creation)
+def test_cocus_event_creation_instantiation(instance):
+    assert isinstance(instance, Cocus_Event_Creation)
 
-@given(instance=Cocus::Request_strategy)
+@given(instance=Cocus_Event_Approval_strategy)
 @settings(max_examples=50)
-def test_cocus::request_instantiation(instance):
-    assert isinstance(instance, Cocus::Request)
+def test_cocus_event_approval_instantiation(instance):
+    assert isinstance(instance, Cocus_Event_Approval)
 
-@given(instance=Cocus::Registration_strategy)
+@given(instance=Cocus_Registration_strategy)
 @settings(max_examples=50)
-def test_cocus::registration_instantiation(instance):
-    assert isinstance(instance, Cocus::Registration)
+def test_cocus_registration_instantiation(instance):
+    assert isinstance(instance, Cocus_Registration)
 
-@given(instance=Cocus::Event::Approval_strategy)
+@given(instance=Cocus_Request_strategy)
 @settings(max_examples=50)
-def test_cocus::event::approval_instantiation(instance):
-    assert isinstance(instance, Cocus::Event::Approval)
+def test_cocus_request_instantiation(instance):
+    assert isinstance(instance, Cocus_Request)
 
-@given(instance=Cocus::Inforamtion_strategy)
+@given(instance=Cocus_Inforamtion_strategy)
 @settings(max_examples=50)
-def test_cocus::inforamtion_instantiation(instance):
-    assert isinstance(instance, Cocus::Inforamtion)
+def test_cocus_inforamtion_instantiation(instance):
+    assert isinstance(instance, Cocus_Inforamtion)
 
-@given(instance=Cocus::Account_strategy)
+@given(instance=Cocus_Account_strategy)
 @settings(max_examples=50)
-def test_cocus::account_instantiation(instance):
-    assert isinstance(instance, Cocus::Account)
+def test_cocus_account_instantiation(instance):
+    assert isinstance(instance, Cocus_Account)
 
-@given(instance=Event::Setup_strategy)
+@given(instance=Event_Setup_strategy)
 @settings(max_examples=50)
-def test_event::setup_instantiation(instance):
-    assert isinstance(instance, Event::Setup)
+def test_event_setup_instantiation(instance):
+    assert isinstance(instance, Event_Setup)
 
-@given(instance=Cocus::Event::Tracks_strategy)
+@given(instance=Cocus_Submission_Template_strategy)
 @settings(max_examples=50)
-def test_cocus::event::tracks_instantiation(instance):
-    assert isinstance(instance, Cocus::Event::Tracks)
+def test_cocus_submission_template_instantiation(instance):
+    assert isinstance(instance, Cocus_Submission_Template)
 
-@given(instance=Cocus::Paper::Typologies_strategy)
+@given(instance=Cocus_Paper_Typologies_strategy)
 @settings(max_examples=50)
-def test_cocus::paper::typologies_instantiation(instance):
-    assert isinstance(instance, Cocus::Paper::Typologies)
+def test_cocus_paper_typologies_instantiation(instance):
+    assert isinstance(instance, Cocus_Paper_Typologies)
 
-@given(instance=Cocus::Review::Form_strategy)
+@given(instance=Cocus_Email_Template_strategy)
 @settings(max_examples=50)
-def test_cocus::review::form_instantiation(instance):
-    assert isinstance(instance, Cocus::Review::Form)
+def test_cocus_email_template_instantiation(instance):
+    assert isinstance(instance, Cocus_Email_Template)
 
-@given(instance=Cocus::Email::Template_strategy)
+@given(instance=Cocus_Research_Topic_strategy)
 @settings(max_examples=50)
-def test_cocus::email::template_instantiation(instance):
-    assert isinstance(instance, Cocus::Email::Template)
+def test_cocus_research_topic_instantiation(instance):
+    assert isinstance(instance, Cocus_Research_Topic)
 
-@given(instance=Cocus::Submission::Template_strategy)
+@given(instance=Cocus_Event_Tracks_strategy)
 @settings(max_examples=50)
-def test_cocus::submission::template_instantiation(instance):
-    assert isinstance(instance, Cocus::Submission::Template)
+def test_cocus_event_tracks_instantiation(instance):
+    assert isinstance(instance, Cocus_Event_Tracks)
 
-@given(instance=Cocus::Research::Topic_strategy)
+@given(instance=Cocus_Review_Form_strategy)
 @settings(max_examples=50)
-def test_cocus::research::topic_instantiation(instance):
-    assert isinstance(instance, Cocus::Research::Topic)
+def test_cocus_review_form_instantiation(instance):
+    assert isinstance(instance, Cocus_Review_Form)
 
-@given(instance=Approval::Email_strategy)
+@given(instance=Approval_Email_strategy)
 @settings(max_examples=50)
-def test_approval::email_instantiation(instance):
-    assert isinstance(instance, Approval::Email)
+def test_approval_email_instantiation(instance):
+    assert isinstance(instance, Approval_Email)
 
 @given(instance=Inforamtion_strategy)
 @settings(max_examples=50)
@@ -2285,70 +2275,80 @@ def test_inforamtion_instantiation(instance):
 def test_request_instantiation(instance):
     assert isinstance(instance, Request)
 
-@given(instance=Cocus::Help::Request_strategy)
+@given(instance=Cocus_Help_Request_strategy)
 @settings(max_examples=50)
-def test_cocus::help::request_instantiation(instance):
-    assert isinstance(instance, Cocus::Help::Request)
+def test_cocus_help_request_instantiation(instance):
+    assert isinstance(instance, Cocus_Help_Request)
 
 @given(instance=Role_strategy)
 @settings(max_examples=50)
 def test_role_instantiation(instance):
     assert isinstance(instance, Role)
 
-@given(instance=Cocus::Committe::Role_strategy)
+@given(instance=Cocus_Admin_Role_strategy)
 @settings(max_examples=50)
-def test_cocus::committe::role_instantiation(instance):
-    assert isinstance(instance, Cocus::Committe::Role)
+def test_cocus_admin_role_instantiation(instance):
+    assert isinstance(instance, Cocus_Admin_Role)
 
-@given(instance=Cocus::Head::Role_strategy)
+@given(instance=Cocus_Reviewer_Role_strategy)
 @settings(max_examples=50)
-def test_cocus::head::role_instantiation(instance):
-    assert isinstance(instance, Cocus::Head::Role)
+def test_cocus_reviewer_role_instantiation(instance):
+    assert isinstance(instance, Cocus_Reviewer_Role)
 
-@given(instance=Cocus::Admin::Role_strategy)
+@given(instance=Cocus_Author_Role_strategy)
 @settings(max_examples=50)
-def test_cocus::admin::role_instantiation(instance):
-    assert isinstance(instance, Cocus::Admin::Role)
+def test_cocus_author_role_instantiation(instance):
+    assert isinstance(instance, Cocus_Author_Role)
 
-@given(instance=Cocus::Reviewer::Role_strategy)
+@given(instance=Cocus_Committe_Role_strategy)
 @settings(max_examples=50)
-def test_cocus::reviewer::role_instantiation(instance):
-    assert isinstance(instance, Cocus::Reviewer::Role)
+def test_cocus_committe_role_instantiation(instance):
+    assert isinstance(instance, Cocus_Committe_Role)
 
-@given(instance=Cocus::Author::Role_strategy)
+@given(instance=Cocus_Head_Role_strategy)
 @settings(max_examples=50)
-def test_cocus::author::role_instantiation(instance):
-    assert isinstance(instance, Cocus::Author::Role)
+def test_cocus_head_role_instantiation(instance):
+    assert isinstance(instance, Cocus_Head_Role)
 
-@given(instance=Event::Tracks_strategy)
+@given(instance=Event_Tracks_strategy)
 @settings(max_examples=50)
-def test_event::tracks_instantiation(instance):
-    assert isinstance(instance, Event::Tracks)
+def test_event_tracks_instantiation(instance):
+    assert isinstance(instance, Event_Tracks)
 
-@given(instance=Cocus::SubjectArea_strategy)
+@given(instance=Meta_Reviewer_strategy)
 @settings(max_examples=50)
-def test_cocus::subjectarea_instantiation(instance):
-    assert isinstance(instance, Cocus::SubjectArea)
+def test_meta_reviewer_instantiation(instance):
+    assert isinstance(instance, Meta_Reviewer)
+
+@given(instance=SubjectArea_strategy)
+@settings(max_examples=50)
+def test_subjectarea_instantiation(instance):
+    assert isinstance(instance, SubjectArea)
+
+@given(instance=Cocus_SubjectArea_strategy)
+@settings(max_examples=50)
+def test_cocus_subjectarea_instantiation(instance):
+    assert isinstance(instance, Cocus_SubjectArea)
 
 @given(instance=Author_strategy)
 @settings(max_examples=50)
 def test_author_instantiation(instance):
     assert isinstance(instance, Author)
 
-@given(instance=Cocus::Corresponding::Author_strategy)
+@given(instance=Cocus_Co_author_strategy)
 @settings(max_examples=50)
-def test_cocus::corresponding::author_instantiation(instance):
-    assert isinstance(instance, Cocus::Corresponding::Author)
+def test_cocus_co_author_instantiation(instance):
+    assert isinstance(instance, Cocus_Co_author)
 
-@given(instance=Cocus::Co_author_strategy)
+@given(instance=Cocus_Corresponding_Author_strategy)
 @settings(max_examples=50)
-def test_cocus::co_author_instantiation(instance):
-    assert isinstance(instance, Cocus::Co_author)
+def test_cocus_corresponding_author_instantiation(instance):
+    assert isinstance(instance, Cocus_Corresponding_Author)
 
-@given(instance=Cocus::AuthorNotReviewer_strategy)
+@given(instance=Cocus_AuthorNotReviewer_strategy)
 @settings(max_examples=50)
-def test_cocus::authornotreviewer_instantiation(instance):
-    assert isinstance(instance, Cocus::AuthorNotReviewer)
+def test_cocus_authornotreviewer_instantiation(instance):
+    assert isinstance(instance, Cocus_AuthorNotReviewer)
 
 @given(instance=ProgramCommittee_strategy)
 @settings(max_examples=50)
@@ -2365,183 +2365,159 @@ def test_co_author_instantiation(instance):
 def test_document_instantiation(instance):
     assert isinstance(instance, Document)
 
-@given(instance=Cocus::Submission_strategy)
+@given(instance=Cocus_Email_strategy)
 @settings(max_examples=50)
-def test_cocus::submission_instantiation(instance):
-    assert isinstance(instance, Cocus::Submission)
+def test_cocus_email_instantiation(instance):
+    assert isinstance(instance, Cocus_Email)
 
-@given(instance=Cocus::Email_strategy)
+@given(instance=Cocus_Paper_strategy)
 @settings(max_examples=50)
-def test_cocus::email_instantiation(instance):
-    assert isinstance(instance, Cocus::Email)
-
-@given(instance=Cocus::Paper_strategy)
-@settings(max_examples=50)
-def test_cocus::paper_instantiation(instance):
-    assert isinstance(instance, Cocus::Paper)
-
-@given(instance=Cocus::Paper_strategy)
-def test_cocus::paper_paperID_type(instance):
-    assert isinstance(instance.paperID, str)
+def test_cocus_paper_instantiation(instance):
+    assert isinstance(instance, Cocus_Paper)
 
 
-@given(instance=Cocus::Paper_strategy)
-def test_cocus::paper_paperID_setter(instance):
+
+@given(instance=Cocus_Paper_strategy)
+def test_cocus_paper_paperID_setter(instance):
     original = instance.paperID
     instance.paperID = original
     assert instance.paperID == original
 
-@given(instance=Cocus::Paper_strategy)
-def test_cocus::paper_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=Cocus::Paper_strategy)
-def test_cocus::paper_title_setter(instance):
+@given(instance=Cocus_Paper_strategy)
+def test_cocus_paper_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=Cocus::Template_strategy)
+@given(instance=Cocus_Submission_strategy)
 @settings(max_examples=50)
-def test_cocus::template_instantiation(instance):
-    assert isinstance(instance, Cocus::Template)
+def test_cocus_submission_instantiation(instance):
+    assert isinstance(instance, Cocus_Submission)
 
-@given(instance=Cocus::Review_strategy)
+@given(instance=Cocus_Template_strategy)
 @settings(max_examples=50)
-def test_cocus::review_instantiation(instance):
-    assert isinstance(instance, Cocus::Review)
+def test_cocus_template_instantiation(instance):
+    assert isinstance(instance, Cocus_Template)
+
+@given(instance=Cocus_Review_strategy)
+@settings(max_examples=50)
+def test_cocus_review_instantiation(instance):
+    assert isinstance(instance, Cocus_Review)
 
 @given(instance=Decision_strategy)
 @settings(max_examples=50)
 def test_decision_instantiation(instance):
     assert isinstance(instance, Decision)
 
-@given(instance=Cocus::Rejection_strategy)
+@given(instance=Cocus_Rejection_strategy)
 @settings(max_examples=50)
-def test_cocus::rejection_instantiation(instance):
-    assert isinstance(instance, Cocus::Rejection)
+def test_cocus_rejection_instantiation(instance):
+    assert isinstance(instance, Cocus_Rejection)
 
-@given(instance=Cocus::Acceptance_strategy)
+@given(instance=Cocus_Acceptance_strategy)
 @settings(max_examples=50)
-def test_cocus::acceptance_instantiation(instance):
-    assert isinstance(instance, Cocus::Acceptance)
+def test_cocus_acceptance_instantiation(instance):
+    assert isinstance(instance, Cocus_Acceptance)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=Cocus::Symposium_strategy)
+@given(instance=Cocus_Symposium_strategy)
 @settings(max_examples=50)
-def test_cocus::symposium_instantiation(instance):
-    assert isinstance(instance, Cocus::Symposium)
+def test_cocus_symposium_instantiation(instance):
+    assert isinstance(instance, Cocus_Symposium)
 
-@given(instance=Cocus::Workshop_strategy)
+@given(instance=Cocus_Workshop_strategy)
 @settings(max_examples=50)
-def test_cocus::workshop_instantiation(instance):
-    assert isinstance(instance, Cocus::Workshop)
+def test_cocus_workshop_instantiation(instance):
+    assert isinstance(instance, Cocus_Workshop)
 
 @given(instance=Thing_strategy)
 @settings(max_examples=50)
 def test_thing_instantiation(instance):
     assert isinstance(instance, Thing)
 
-@given(instance=Cocus::Person_strategy)
+@given(instance=Cocus_Detail_strategy)
 @settings(max_examples=50)
-def test_cocus::person_instantiation(instance):
-    assert isinstance(instance, Cocus::Person)
+def test_cocus_detail_instantiation(instance):
+    assert isinstance(instance, Cocus_Detail)
 
-@given(instance=Cocus::Person_strategy)
-def test_cocus::person_email_type(instance):
-    assert isinstance(instance.email, str)
+@given(instance=Cocus_Role_strategy)
+@settings(max_examples=50)
+def test_cocus_role_instantiation(instance):
+    assert isinstance(instance, Cocus_Role)
+
+@given(instance=Cocus_Person_strategy)
+@settings(max_examples=50)
+def test_cocus_person_instantiation(instance):
+    assert isinstance(instance, Cocus_Person)
 
 
-@given(instance=Cocus::Person_strategy)
-def test_cocus::person_email_setter(instance):
+
+@given(instance=Cocus_Person_strategy)
+def test_cocus_person_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
 
-@given(instance=Cocus::Event_strategy)
+@given(instance=Cocus_Event_strategy)
 @settings(max_examples=50)
-def test_cocus::event_instantiation(instance):
-    assert isinstance(instance, Cocus::Event)
+def test_cocus_event_instantiation(instance):
+    assert isinstance(instance, Cocus_Event)
 
-@given(instance=Cocus::Detail_strategy)
+@given(instance=Cocus_Document_strategy)
 @settings(max_examples=50)
-def test_cocus::detail_instantiation(instance):
-    assert isinstance(instance, Cocus::Detail)
+def test_cocus_document_instantiation(instance):
+    assert isinstance(instance, Cocus_Document)
 
-@given(instance=Cocus::Role_strategy)
+@given(instance=Cocus_Conference_strategy)
 @settings(max_examples=50)
-def test_cocus::role_instantiation(instance):
-    assert isinstance(instance, Cocus::Role)
-
-@given(instance=Cocus::Document_strategy)
-@settings(max_examples=50)
-def test_cocus::document_instantiation(instance):
-    assert isinstance(instance, Cocus::Document)
-
-@given(instance=Cocus::Conference_strategy)
-@settings(max_examples=50)
-def test_cocus::conference_instantiation(instance):
-    assert isinstance(instance, Cocus::Conference)
-
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_reviewsPerPaper_type(instance):
-    assert isinstance(instance.reviewsPerPaper, str)
+def test_cocus_conference_instantiation(instance):
+    assert isinstance(instance, Cocus_Conference)
 
 
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_reviewsPerPaper_setter(instance):
-    original = instance.reviewsPerPaper
-    instance.reviewsPerPaper = original
-    assert instance.reviewsPerPaper == original
 
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_siteURL_type(instance):
-    assert isinstance(instance.siteURL, str)
+@given(instance=Cocus_Conference_strategy)
+def test_cocus_conference_acceptsHardcopySubmissions_setter(instance):
+    original = instance.acceptsHardcopySubmissions
+    instance.acceptsHardcopySubmissions = original
+    assert instance.acceptsHardcopySubmissions == original
 
 
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_siteURL_setter(instance):
-    original = instance.siteURL
-    instance.siteURL = original
-    assert instance.siteURL == original
 
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_logoURL_type(instance):
-    assert isinstance(instance.logoURL, str)
-
-
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_logoURL_setter(instance):
+@given(instance=Cocus_Conference_strategy)
+def test_cocus_conference_logoURL_setter(instance):
     original = instance.logoURL
     instance.logoURL = original
     assert instance.logoURL == original
 
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_date_type(instance):
-    assert isinstance(instance.date, str)
 
 
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_date_setter(instance):
+@given(instance=Cocus_Conference_strategy)
+def test_cocus_conference_reviewsPerPaper_setter(instance):
+    original = instance.reviewsPerPaper
+    instance.reviewsPerPaper = original
+    assert instance.reviewsPerPaper == original
+
+
+
+@given(instance=Cocus_Conference_strategy)
+def test_cocus_conference_siteURL_setter(instance):
+    original = instance.siteURL
+    instance.siteURL = original
+    assert instance.siteURL == original
+
+
+
+@given(instance=Cocus_Conference_strategy)
+def test_cocus_conference_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
-
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_acceptsHardcopySubmissions_type(instance):
-    assert isinstance(instance.acceptsHardcopySubmissions, str)
-
-
-@given(instance=Cocus::Conference_strategy)
-def test_cocus::conference_acceptsHardcopySubmissions_setter(instance):
-    original = instance.acceptsHardcopySubmissions
-    instance.acceptsHardcopySubmissions = original
-    assert instance.acceptsHardcopySubmissions == original
 
 @given(instance=Conference_strategy)
 @settings(max_examples=50)
@@ -2553,20 +2529,20 @@ def test_conference_instantiation(instance):
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Cocus::User_strategy)
+@given(instance=Cocus_ExternalReviewer_strategy)
 @settings(max_examples=50)
-def test_cocus::user_instantiation(instance):
-    assert isinstance(instance, Cocus::User)
+def test_cocus_externalreviewer_instantiation(instance):
+    assert isinstance(instance, Cocus_ExternalReviewer)
 
-@given(instance=Cocus::ExternalReviewer_strategy)
+@given(instance=Cocus_User_strategy)
 @settings(max_examples=50)
-def test_cocus::externalreviewer_instantiation(instance):
-    assert isinstance(instance, Cocus::ExternalReviewer)
+def test_cocus_user_instantiation(instance):
+    assert isinstance(instance, Cocus_User)
 
-@given(instance=Cocus::ConferenceMember_strategy)
+@given(instance=Cocus_ConferenceMember_strategy)
 @settings(max_examples=50)
-def test_cocus::conferencemember_instantiation(instance):
-    assert isinstance(instance, Cocus::ConferenceMember)
+def test_cocus_conferencemember_instantiation(instance):
+    assert isinstance(instance, Cocus_ConferenceMember)
 
 @given(instance=Chairman_strategy)
 @settings(max_examples=50)
@@ -2583,106 +2559,103 @@ def test_administrator_instantiation(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=Cocus::Administrator_strategy)
+@given(instance=Cocus_Committee_strategy)
 @settings(max_examples=50)
-def test_cocus::administrator_instantiation(instance):
-    assert isinstance(instance, Cocus::Administrator)
+def test_cocus_committee_instantiation(instance):
+    assert isinstance(instance, Cocus_Committee)
 
-@given(instance=Cocus::Committee_strategy)
+@given(instance=Cocus_Administrator_strategy)
 @settings(max_examples=50)
-def test_cocus::committee_instantiation(instance):
-    assert isinstance(instance, Cocus::Committee)
+def test_cocus_administrator_instantiation(instance):
+    assert isinstance(instance, Cocus_Administrator)
 
 @given(instance=ConferenceMember_strategy)
 @settings(max_examples=50)
 def test_conferencemember_instantiation(instance):
     assert isinstance(instance, ConferenceMember)
 
-@given(instance=Cocus::ProgramCommitteeMember_strategy)
+@given(instance=Cocus_Author_strategy)
 @settings(max_examples=50)
-def test_cocus::programcommitteemember_instantiation(instance):
-    assert isinstance(instance, Cocus::ProgramCommitteeMember)
+def test_cocus_author_instantiation(instance):
+    assert isinstance(instance, Cocus_Author)
 
-@given(instance=Cocus::ProgramCommitteeMember_strategy)
-def test_cocus::programcommitteemember_maxPapers_type(instance):
-    assert isinstance(instance.maxPapers, str)
+@given(instance=Cocus_Chairman_strategy)
+@settings(max_examples=50)
+def test_cocus_chairman_instantiation(instance):
+    assert isinstance(instance, Cocus_Chairman)
+
+@given(instance=Cocus_AssociatedChair_strategy)
+@settings(max_examples=50)
+def test_cocus_associatedchair_instantiation(instance):
+    assert isinstance(instance, Cocus_AssociatedChair)
+
+@given(instance=Cocus_ConferenceChair_strategy)
+@settings(max_examples=50)
+def test_cocus_conferencechair_instantiation(instance):
+    assert isinstance(instance, Cocus_ConferenceChair)
+
+@given(instance=Cocus_ProgramCommitteeMember_strategy)
+@settings(max_examples=50)
+def test_cocus_programcommitteemember_instantiation(instance):
+    assert isinstance(instance, Cocus_ProgramCommitteeMember)
 
 
-@given(instance=Cocus::ProgramCommitteeMember_strategy)
-def test_cocus::programcommitteemember_maxPapers_setter(instance):
+
+@given(instance=Cocus_ProgramCommitteeMember_strategy)
+def test_cocus_programcommitteemember_maxPapers_setter(instance):
     original = instance.maxPapers
     instance.maxPapers = original
     assert instance.maxPapers == original
 
-@given(instance=Cocus::AssociatedChair_strategy)
+@given(instance=Cocus_Reviewer_strategy)
 @settings(max_examples=50)
-def test_cocus::associatedchair_instantiation(instance):
-    assert isinstance(instance, Cocus::AssociatedChair)
-
-@given(instance=Cocus::ConferenceChair_strategy)
-@settings(max_examples=50)
-def test_cocus::conferencechair_instantiation(instance):
-    assert isinstance(instance, Cocus::ConferenceChair)
-
-@given(instance=Cocus::Author_strategy)
-@settings(max_examples=50)
-def test_cocus::author_instantiation(instance):
-    assert isinstance(instance, Cocus::Author)
-
-@given(instance=Cocus::Chairman_strategy)
-@settings(max_examples=50)
-def test_cocus::chairman_instantiation(instance):
-    assert isinstance(instance, Cocus::Chairman)
-
-@given(instance=Cocus::Reviewer_strategy)
-@settings(max_examples=50)
-def test_cocus::reviewer_instantiation(instance):
-    assert isinstance(instance, Cocus::Reviewer)
+def test_cocus_reviewer_instantiation(instance):
+    assert isinstance(instance, Cocus_Reviewer)
 
 @given(instance=Reviewer_strategy)
 @settings(max_examples=50)
 def test_reviewer_instantiation(instance):
     assert isinstance(instance, Reviewer)
 
-@given(instance=Cocus::Meta_Reviewer_strategy)
+@given(instance=Cocus_Meta_Reviewer_strategy)
 @settings(max_examples=50)
-def test_cocus::meta_reviewer_instantiation(instance):
-    assert isinstance(instance, Cocus::Meta_Reviewer)
+def test_cocus_meta_reviewer_instantiation(instance):
+    assert isinstance(instance, Cocus_Meta_Reviewer)
 
-@given(instance=Cocus::Thing_strategy)
+@given(instance=Cocus_Thing_strategy)
 @settings(max_examples=50)
-def test_cocus::thing_instantiation(instance):
-    assert isinstance(instance, Cocus::Thing)
+def test_cocus_thing_instantiation(instance):
+    assert isinstance(instance, Cocus_Thing)
 
-@given(instance=Cocus::Bid_strategy)
+@given(instance=Cocus_Bid_strategy)
 @settings(max_examples=50)
-def test_cocus::bid_instantiation(instance):
-    assert isinstance(instance, Cocus::Bid)
+def test_cocus_bid_instantiation(instance):
+    assert isinstance(instance, Cocus_Bid)
 
 @given(instance=ProgramCommitteeMember_strategy)
 @settings(max_examples=50)
 def test_programcommitteemember_instantiation(instance):
     assert isinstance(instance, ProgramCommitteeMember)
 
-@given(instance=Cocus::ProgramCommitteeChair_strategy)
+@given(instance=Cocus_ProgramCommitteeChair_strategy)
 @settings(max_examples=50)
-def test_cocus::programcommitteechair_instantiation(instance):
-    assert isinstance(instance, Cocus::ProgramCommitteeChair)
+def test_cocus_programcommitteechair_instantiation(instance):
+    assert isinstance(instance, Cocus_ProgramCommitteeChair)
 
-@given(instance=Cocus::ProgramCommittee_strategy)
+@given(instance=Cocus_ProgramCommittee_strategy)
 @settings(max_examples=50)
-def test_cocus::programcommittee_instantiation(instance):
-    assert isinstance(instance, Cocus::ProgramCommittee)
+def test_cocus_programcommittee_instantiation(instance):
+    assert isinstance(instance, Cocus_ProgramCommittee)
 
-@given(instance=Cocus::Preference_strategy)
+@given(instance=Cocus_Preference_strategy)
 @settings(max_examples=50)
-def test_cocus::preference_instantiation(instance):
-    assert isinstance(instance, Cocus::Preference)
+def test_cocus_preference_instantiation(instance):
+    assert isinstance(instance, Cocus_Preference)
 
-@given(instance=Cocus::Decision_strategy)
+@given(instance=Cocus_Decision_strategy)
 @settings(max_examples=50)
-def test_cocus::decision_instantiation(instance):
-    assert isinstance(instance, Cocus::Decision)
+def test_cocus_decision_instantiation(instance):
+    assert isinstance(instance, Cocus_Decision)
 
 @given(instance=ExternalReviewer_strategy)
 @settings(max_examples=50)
@@ -2694,45 +2667,45 @@ def test_externalreviewer_instantiation(instance):
 def test_review_instantiation(instance):
     assert isinstance(instance, Review)
 
-@given(instance=Cocus::Meta-Review_strategy)
+@given(instance=Cocus_Meta-Review_strategy)
 @settings(max_examples=50)
-def test_cocus::meta-review_instantiation(instance):
-    assert isinstance(instance, Cocus::Meta-Review)
+def test_cocus_meta-review_instantiation(instance):
+    assert isinstance(instance, Cocus_Meta-Review)
 
 @given(instance=Paper_strategy)
 @settings(max_examples=50)
 def test_paper_instantiation(instance):
     assert isinstance(instance, Paper)
 
-@given(instance=Cocus::Short::Paper_strategy)
+@given(instance=Cocus_Abstract_strategy)
 @settings(max_examples=50)
-def test_cocus::short::paper_instantiation(instance):
-    assert isinstance(instance, Cocus::Short::Paper)
+def test_cocus_abstract_instantiation(instance):
+    assert isinstance(instance, Cocus_Abstract)
 
-@given(instance=Cocus::Full::Paper_strategy)
+@given(instance=Cocus_PaperAbstract_strategy)
 @settings(max_examples=50)
-def test_cocus::full::paper_instantiation(instance):
-    assert isinstance(instance, Cocus::Full::Paper)
+def test_cocus_paperabstract_instantiation(instance):
+    assert isinstance(instance, Cocus_PaperAbstract)
 
-@given(instance=Cocus::PaperFullVersion_strategy)
+@given(instance=Cocus_Short_Paper_strategy)
 @settings(max_examples=50)
-def test_cocus::paperfullversion_instantiation(instance):
-    assert isinstance(instance, Cocus::PaperFullVersion)
+def test_cocus_short_paper_instantiation(instance):
+    assert isinstance(instance, Cocus_Short_Paper)
 
-@given(instance=Cocus::Abstract_strategy)
+@given(instance=Cocus_Full_Paper_strategy)
 @settings(max_examples=50)
-def test_cocus::abstract_instantiation(instance):
-    assert isinstance(instance, Cocus::Abstract)
+def test_cocus_full_paper_instantiation(instance):
+    assert isinstance(instance, Cocus_Full_Paper)
 
-@given(instance=Cocus::PaperAbstract_strategy)
+@given(instance=Cocus_Invited_Paper_strategy)
 @settings(max_examples=50)
-def test_cocus::paperabstract_instantiation(instance):
-    assert isinstance(instance, Cocus::PaperAbstract)
+def test_cocus_invited_paper_instantiation(instance):
+    assert isinstance(instance, Cocus_Invited_Paper)
 
-@given(instance=Cocus::Invited::Paper_strategy)
+@given(instance=Cocus_PaperFullVersion_strategy)
 @settings(max_examples=50)
-def test_cocus::invited::paper_instantiation(instance):
-    assert isinstance(instance, Cocus::Invited::Paper)
+def test_cocus_paperfullversion_instantiation(instance):
+    assert isinstance(instance, Cocus_PaperFullVersion)
 
 @given(instance=Bid_strategy)
 @settings(max_examples=50)

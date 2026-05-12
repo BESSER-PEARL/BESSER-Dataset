@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Controller,
-    webapp::ServiceController,
-    webapp::PageController,
-    webapp::RouterBinding,
+    webapp_ServiceController,
+    webapp_PageController,
+    webapp_RouterBinding,
     Data,
-    webapp::Model,
-    webapp::Router,
-    webapp::Collection,
+    webapp_Model,
+    webapp_Router,
+    webapp_Collection,
     NamedElement,
-    webapp::Template,
-    webapp::Controller,
-    webapp::Attribute,
-    webapp::View,
-    webapp::WebApp,
-    webapp::NamedElement,
-    webapp::Data,
+    webapp_Attribute,
+    webapp_View,
+    webapp_Controller,
+    webapp_Template,
+    webapp_WebApp,
+    webapp_NamedElement,
+    webapp_Data,
     DataType,
 )
 
@@ -45,23 +45,23 @@ def test_controller_constructor_args():
 
 
 
-def test_webapp::servicecontroller_is_not_abstract():
-    assert not inspect.isabstract(webapp::ServiceController)
+def test_webapp_servicecontroller_is_not_abstract():
+    assert not inspect.isabstract(webapp_ServiceController)
 
 
-def test_webapp::servicecontroller_constructor_exists():
-    assert callable(webapp::ServiceController.__init__)
+def test_webapp_servicecontroller_constructor_exists():
+    assert callable(webapp_ServiceController.__init__)
 
 
-def test_webapp::servicecontroller_constructor_args():
-    sig = inspect.signature(webapp::ServiceController.__init__)
+def test_webapp_servicecontroller_constructor_args():
+    sig = inspect.signature(webapp_ServiceController.__init__)
     params = list(sig.parameters.keys())
     assert "endpoint" in params, "Missing parameter 'endpoint'"
 
-def test_webapp::servicecontroller_has_endpoint():
-    assert hasattr(webapp::ServiceController, "endpoint")
+def test_webapp_servicecontroller_has_endpoint():
+    assert hasattr(webapp_ServiceController, "endpoint")
     descriptor = None
-    for klass in webapp::ServiceController.__mro__:
+    for klass in webapp_ServiceController.__mro__:
         if "endpoint" in klass.__dict__:
             descriptor = klass.__dict__["endpoint"]
             break
@@ -69,37 +69,37 @@ def test_webapp::servicecontroller_has_endpoint():
 
 
 
-def test_webapp::pagecontroller_is_not_abstract():
-    assert not inspect.isabstract(webapp::PageController)
+def test_webapp_pagecontroller_is_not_abstract():
+    assert not inspect.isabstract(webapp_PageController)
 
 
-def test_webapp::pagecontroller_constructor_exists():
-    assert callable(webapp::PageController.__init__)
+def test_webapp_pagecontroller_constructor_exists():
+    assert callable(webapp_PageController.__init__)
 
 
-def test_webapp::pagecontroller_constructor_args():
-    sig = inspect.signature(webapp::PageController.__init__)
+def test_webapp_pagecontroller_constructor_args():
+    sig = inspect.signature(webapp_PageController.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::routerbinding_is_not_abstract():
-    assert not inspect.isabstract(webapp::RouterBinding)
+def test_webapp_routerbinding_is_not_abstract():
+    assert not inspect.isabstract(webapp_RouterBinding)
 
 
-def test_webapp::routerbinding_constructor_exists():
-    assert callable(webapp::RouterBinding.__init__)
+def test_webapp_routerbinding_constructor_exists():
+    assert callable(webapp_RouterBinding.__init__)
 
 
-def test_webapp::routerbinding_constructor_args():
-    sig = inspect.signature(webapp::RouterBinding.__init__)
+def test_webapp_routerbinding_constructor_args():
+    sig = inspect.signature(webapp_RouterBinding.__init__)
     params = list(sig.parameters.keys())
     assert "url" in params, "Missing parameter 'url'"
 
-def test_webapp::routerbinding_has_url():
-    assert hasattr(webapp::RouterBinding, "url")
+def test_webapp_routerbinding_has_url():
+    assert hasattr(webapp_RouterBinding, "url")
     descriptor = None
-    for klass in webapp::RouterBinding.__mro__:
+    for klass in webapp_RouterBinding.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -121,44 +121,44 @@ def test_data_constructor_args():
 
 
 
-def test_webapp::model_is_not_abstract():
-    assert not inspect.isabstract(webapp::Model)
+def test_webapp_model_is_not_abstract():
+    assert not inspect.isabstract(webapp_Model)
 
 
-def test_webapp::model_constructor_exists():
-    assert callable(webapp::Model.__init__)
+def test_webapp_model_constructor_exists():
+    assert callable(webapp_Model.__init__)
 
 
-def test_webapp::model_constructor_args():
-    sig = inspect.signature(webapp::Model.__init__)
+def test_webapp_model_constructor_args():
+    sig = inspect.signature(webapp_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::router_is_not_abstract():
-    assert not inspect.isabstract(webapp::Router)
+def test_webapp_router_is_not_abstract():
+    assert not inspect.isabstract(webapp_Router)
 
 
-def test_webapp::router_constructor_exists():
-    assert callable(webapp::Router.__init__)
+def test_webapp_router_constructor_exists():
+    assert callable(webapp_Router.__init__)
 
 
-def test_webapp::router_constructor_args():
-    sig = inspect.signature(webapp::Router.__init__)
+def test_webapp_router_constructor_args():
+    sig = inspect.signature(webapp_Router.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::collection_is_not_abstract():
-    assert not inspect.isabstract(webapp::Collection)
+def test_webapp_collection_is_not_abstract():
+    assert not inspect.isabstract(webapp_Collection)
 
 
-def test_webapp::collection_constructor_exists():
-    assert callable(webapp::Collection.__init__)
+def test_webapp_collection_constructor_exists():
+    assert callable(webapp_Collection.__init__)
 
 
-def test_webapp::collection_constructor_args():
-    sig = inspect.signature(webapp::Collection.__init__)
+def test_webapp_collection_constructor_args():
+    sig = inspect.signature(webapp_Collection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,33 +177,95 @@ def test_namedelement_constructor_args():
 
 
 
-def test_webapp::template_is_not_abstract():
-    assert not inspect.isabstract(webapp::Template)
+def test_webapp_attribute_is_not_abstract():
+    assert not inspect.isabstract(webapp_Attribute)
 
 
-def test_webapp::template_constructor_exists():
-    assert callable(webapp::Template.__init__)
+def test_webapp_attribute_constructor_exists():
+    assert callable(webapp_Attribute.__init__)
 
 
-def test_webapp::template_constructor_args():
-    sig = inspect.signature(webapp::Template.__init__)
+def test_webapp_attribute_constructor_args():
+    sig = inspect.signature(webapp_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "baseType" in params, "Missing parameter 'baseType'"
+    assert "customType" in params, "Missing parameter 'customType'"
+
+def test_webapp_attribute_has_baseType():
+    assert hasattr(webapp_Attribute, "baseType")
+    descriptor = None
+    for klass in webapp_Attribute.__mro__:
+        if "baseType" in klass.__dict__:
+            descriptor = klass.__dict__["baseType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_attribute_has_customType():
+    assert hasattr(webapp_Attribute, "customType")
+    descriptor = None
+    for klass in webapp_Attribute.__mro__:
+        if "customType" in klass.__dict__:
+            descriptor = klass.__dict__["customType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_webapp_view_is_not_abstract():
+    assert not inspect.isabstract(webapp_View)
+
+
+def test_webapp_view_constructor_exists():
+    assert callable(webapp_View.__init__)
+
+
+def test_webapp_view_constructor_args():
+    sig = inspect.signature(webapp_View.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webapp_controller_is_not_abstract():
+    assert not inspect.isabstract(webapp_Controller)
+
+
+def test_webapp_controller_constructor_exists():
+    assert callable(webapp_Controller.__init__)
+
+
+def test_webapp_controller_constructor_args():
+    sig = inspect.signature(webapp_Controller.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webapp_template_is_not_abstract():
+    assert not inspect.isabstract(webapp_Template)
+
+
+def test_webapp_template_constructor_exists():
+    assert callable(webapp_Template.__init__)
+
+
+def test_webapp_template_constructor_args():
+    sig = inspect.signature(webapp_Template.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
     assert "structure" in params, "Missing parameter 'structure'"
 
-def test_webapp::template_has_style():
-    assert hasattr(webapp::Template, "style")
+def test_webapp_template_has_style():
+    assert hasattr(webapp_Template, "style")
     descriptor = None
-    for klass in webapp::Template.__mro__:
+    for klass in webapp_Template.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::template_has_structure():
-    assert hasattr(webapp::Template, "structure")
+def test_webapp_template_has_structure():
+    assert hasattr(webapp_Template, "structure")
     descriptor = None
-    for klass in webapp::Template.__mro__:
+    for klass in webapp_Template.__mro__:
         if "structure" in klass.__dict__:
             descriptor = klass.__dict__["structure"]
             break
@@ -211,99 +273,37 @@ def test_webapp::template_has_structure():
 
 
 
-def test_webapp::controller_is_not_abstract():
-    assert not inspect.isabstract(webapp::Controller)
+def test_webapp_webapp_is_not_abstract():
+    assert not inspect.isabstract(webapp_WebApp)
 
 
-def test_webapp::controller_constructor_exists():
-    assert callable(webapp::Controller.__init__)
+def test_webapp_webapp_constructor_exists():
+    assert callable(webapp_WebApp.__init__)
 
 
-def test_webapp::controller_constructor_args():
-    sig = inspect.signature(webapp::Controller.__init__)
+def test_webapp_webapp_constructor_args():
+    sig = inspect.signature(webapp_WebApp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::attribute_is_not_abstract():
-    assert not inspect.isabstract(webapp::Attribute)
+def test_webapp_namedelement_is_not_abstract():
+    assert not inspect.isabstract(webapp_NamedElement)
 
 
-def test_webapp::attribute_constructor_exists():
-    assert callable(webapp::Attribute.__init__)
+def test_webapp_namedelement_constructor_exists():
+    assert callable(webapp_NamedElement.__init__)
 
 
-def test_webapp::attribute_constructor_args():
-    sig = inspect.signature(webapp::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "customType" in params, "Missing parameter 'customType'"
-    assert "baseType" in params, "Missing parameter 'baseType'"
-
-def test_webapp::attribute_has_customType():
-    assert hasattr(webapp::Attribute, "customType")
-    descriptor = None
-    for klass in webapp::Attribute.__mro__:
-        if "customType" in klass.__dict__:
-            descriptor = klass.__dict__["customType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::attribute_has_baseType():
-    assert hasattr(webapp::Attribute, "baseType")
-    descriptor = None
-    for klass in webapp::Attribute.__mro__:
-        if "baseType" in klass.__dict__:
-            descriptor = klass.__dict__["baseType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_webapp::view_is_not_abstract():
-    assert not inspect.isabstract(webapp::View)
-
-
-def test_webapp::view_constructor_exists():
-    assert callable(webapp::View.__init__)
-
-
-def test_webapp::view_constructor_args():
-    sig = inspect.signature(webapp::View.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_webapp::webapp_is_not_abstract():
-    assert not inspect.isabstract(webapp::WebApp)
-
-
-def test_webapp::webapp_constructor_exists():
-    assert callable(webapp::WebApp.__init__)
-
-
-def test_webapp::webapp_constructor_args():
-    sig = inspect.signature(webapp::WebApp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_webapp::namedelement_is_not_abstract():
-    assert not inspect.isabstract(webapp::NamedElement)
-
-
-def test_webapp::namedelement_constructor_exists():
-    assert callable(webapp::NamedElement.__init__)
-
-
-def test_webapp::namedelement_constructor_args():
-    sig = inspect.signature(webapp::NamedElement.__init__)
+def test_webapp_namedelement_constructor_args():
+    sig = inspect.signature(webapp_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::namedelement_has_name():
-    assert hasattr(webapp::NamedElement, "name")
+def test_webapp_namedelement_has_name():
+    assert hasattr(webapp_NamedElement, "name")
     descriptor = None
-    for klass in webapp::NamedElement.__mro__:
+    for klass in webapp_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -311,23 +311,23 @@ def test_webapp::namedelement_has_name():
 
 
 
-def test_webapp::data_is_not_abstract():
-    assert not inspect.isabstract(webapp::Data)
+def test_webapp_data_is_not_abstract():
+    assert not inspect.isabstract(webapp_Data)
 
 
-def test_webapp::data_constructor_exists():
-    assert callable(webapp::Data.__init__)
+def test_webapp_data_constructor_exists():
+    assert callable(webapp_Data.__init__)
 
 
-def test_webapp::data_constructor_args():
-    sig = inspect.signature(webapp::Data.__init__)
+def test_webapp_data_constructor_args():
+    sig = inspect.signature(webapp_Data.__init__)
     params = list(sig.parameters.keys())
     assert "endpoint" in params, "Missing parameter 'endpoint'"
 
-def test_webapp::data_has_endpoint():
-    assert hasattr(webapp::Data, "endpoint")
+def test_webapp_data_has_endpoint():
+    assert hasattr(webapp_Data, "endpoint")
     descriptor = None
-    for klass in webapp::Data.__mro__:
+    for klass in webapp_Data.__mro__:
         if "endpoint" in klass.__dict__:
             descriptor = klass.__dict__["endpoint"]
             break
@@ -342,12 +342,12 @@ def test_datatype_has_all_literals():
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
         "array",
-        "any",
-        "date",
-        "number",
-        "string",
-        "object",
         "boolean",
+        "object",
+        "string",
+        "any",
+        "number",
+        "date",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -368,64 +368,64 @@ safe_text = st.text(
 Controller_strategy = st.builds(
     Controller,
 )
-webapp::ServiceController_strategy = st.builds(
-    webapp::ServiceController,
+webapp_ServiceController_strategy = st.builds(
+    webapp_ServiceController,
     endpoint=
         safe_text
 )
-webapp::PageController_strategy = st.builds(
-    webapp::PageController,
+webapp_PageController_strategy = st.builds(
+    webapp_PageController,
 )
-webapp::RouterBinding_strategy = st.builds(
-    webapp::RouterBinding,
+webapp_RouterBinding_strategy = st.builds(
+    webapp_RouterBinding,
     url=
         safe_text
 )
 Data_strategy = st.builds(
     Data,
 )
-webapp::Model_strategy = st.builds(
-    webapp::Model,
+webapp_Model_strategy = st.builds(
+    webapp_Model,
 )
-webapp::Router_strategy = st.builds(
-    webapp::Router,
+webapp_Router_strategy = st.builds(
+    webapp_Router,
 )
-webapp::Collection_strategy = st.builds(
-    webapp::Collection,
+webapp_Collection_strategy = st.builds(
+    webapp_Collection,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-webapp::Template_strategy = st.builds(
-    webapp::Template,
+webapp_Attribute_strategy = st.builds(
+    webapp_Attribute,
+    baseType=
+        safe_text,
+    customType=
+        safe_text
+)
+webapp_View_strategy = st.builds(
+    webapp_View,
+)
+webapp_Controller_strategy = st.builds(
+    webapp_Controller,
+)
+webapp_Template_strategy = st.builds(
+    webapp_Template,
     style=
         safe_text,
     structure=
         safe_text
 )
-webapp::Controller_strategy = st.builds(
-    webapp::Controller,
+webapp_WebApp_strategy = st.builds(
+    webapp_WebApp,
 )
-webapp::Attribute_strategy = st.builds(
-    webapp::Attribute,
-    customType=
-        safe_text,
-    baseType=
-        safe_text
-)
-webapp::View_strategy = st.builds(
-    webapp::View,
-)
-webapp::WebApp_strategy = st.builds(
-    webapp::WebApp,
-)
-webapp::NamedElement_strategy = st.builds(
-    webapp::NamedElement,
+webapp_NamedElement_strategy = st.builds(
+    webapp_NamedElement,
     name=
         safe_text
 )
-webapp::Data_strategy = st.builds(
-    webapp::Data,
+webapp_Data_strategy = st.builds(
+    webapp_Data,
     endpoint=
         safe_text
 )
@@ -435,39 +435,33 @@ webapp::Data_strategy = st.builds(
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=webapp::ServiceController_strategy)
+@given(instance=webapp_ServiceController_strategy)
 @settings(max_examples=50)
-def test_webapp::servicecontroller_instantiation(instance):
-    assert isinstance(instance, webapp::ServiceController)
-
-@given(instance=webapp::ServiceController_strategy)
-def test_webapp::servicecontroller_endpoint_type(instance):
-    assert isinstance(instance.endpoint, str)
+def test_webapp_servicecontroller_instantiation(instance):
+    assert isinstance(instance, webapp_ServiceController)
 
 
-@given(instance=webapp::ServiceController_strategy)
-def test_webapp::servicecontroller_endpoint_setter(instance):
+
+@given(instance=webapp_ServiceController_strategy)
+def test_webapp_servicecontroller_endpoint_setter(instance):
     original = instance.endpoint
     instance.endpoint = original
     assert instance.endpoint == original
 
-@given(instance=webapp::PageController_strategy)
+@given(instance=webapp_PageController_strategy)
 @settings(max_examples=50)
-def test_webapp::pagecontroller_instantiation(instance):
-    assert isinstance(instance, webapp::PageController)
+def test_webapp_pagecontroller_instantiation(instance):
+    assert isinstance(instance, webapp_PageController)
 
-@given(instance=webapp::RouterBinding_strategy)
+@given(instance=webapp_RouterBinding_strategy)
 @settings(max_examples=50)
-def test_webapp::routerbinding_instantiation(instance):
-    assert isinstance(instance, webapp::RouterBinding)
-
-@given(instance=webapp::RouterBinding_strategy)
-def test_webapp::routerbinding_url_type(instance):
-    assert isinstance(instance.url, str)
+def test_webapp_routerbinding_instantiation(instance):
+    assert isinstance(instance, webapp_RouterBinding)
 
 
-@given(instance=webapp::RouterBinding_strategy)
-def test_webapp::routerbinding_url_setter(instance):
+
+@given(instance=webapp_RouterBinding_strategy)
+def test_webapp_routerbinding_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
@@ -477,123 +471,105 @@ def test_webapp::routerbinding_url_setter(instance):
 def test_data_instantiation(instance):
     assert isinstance(instance, Data)
 
-@given(instance=webapp::Model_strategy)
+@given(instance=webapp_Model_strategy)
 @settings(max_examples=50)
-def test_webapp::model_instantiation(instance):
-    assert isinstance(instance, webapp::Model)
+def test_webapp_model_instantiation(instance):
+    assert isinstance(instance, webapp_Model)
 
-@given(instance=webapp::Router_strategy)
+@given(instance=webapp_Router_strategy)
 @settings(max_examples=50)
-def test_webapp::router_instantiation(instance):
-    assert isinstance(instance, webapp::Router)
+def test_webapp_router_instantiation(instance):
+    assert isinstance(instance, webapp_Router)
 
-@given(instance=webapp::Collection_strategy)
+@given(instance=webapp_Collection_strategy)
 @settings(max_examples=50)
-def test_webapp::collection_instantiation(instance):
-    assert isinstance(instance, webapp::Collection)
+def test_webapp_collection_instantiation(instance):
+    assert isinstance(instance, webapp_Collection)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=webapp::Template_strategy)
+@given(instance=webapp_Attribute_strategy)
 @settings(max_examples=50)
-def test_webapp::template_instantiation(instance):
-    assert isinstance(instance, webapp::Template)
-
-@given(instance=webapp::Template_strategy)
-def test_webapp::template_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_webapp_attribute_instantiation(instance):
+    assert isinstance(instance, webapp_Attribute)
 
 
-@given(instance=webapp::Template_strategy)
-def test_webapp::template_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
 
-@given(instance=webapp::Template_strategy)
-def test_webapp::template_structure_type(instance):
-    assert isinstance(instance.structure, str)
-
-
-@given(instance=webapp::Template_strategy)
-def test_webapp::template_structure_setter(instance):
-    original = instance.structure
-    instance.structure = original
-    assert instance.structure == original
-
-@given(instance=webapp::Controller_strategy)
-@settings(max_examples=50)
-def test_webapp::controller_instantiation(instance):
-    assert isinstance(instance, webapp::Controller)
-
-@given(instance=webapp::Attribute_strategy)
-@settings(max_examples=50)
-def test_webapp::attribute_instantiation(instance):
-    assert isinstance(instance, webapp::Attribute)
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_customType_type(instance):
-    assert isinstance(instance.customType, str)
-
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_customType_setter(instance):
-    original = instance.customType
-    instance.customType = original
-    assert instance.customType == original
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_baseType_type(instance):
-    assert isinstance(instance.baseType, str)
-
-
-@given(instance=webapp::Attribute_strategy)
-def test_webapp::attribute_baseType_setter(instance):
+@given(instance=webapp_Attribute_strategy)
+def test_webapp_attribute_baseType_setter(instance):
     original = instance.baseType
     instance.baseType = original
     assert instance.baseType == original
 
-@given(instance=webapp::View_strategy)
+
+
+@given(instance=webapp_Attribute_strategy)
+def test_webapp_attribute_customType_setter(instance):
+    original = instance.customType
+    instance.customType = original
+    assert instance.customType == original
+
+@given(instance=webapp_View_strategy)
 @settings(max_examples=50)
-def test_webapp::view_instantiation(instance):
-    assert isinstance(instance, webapp::View)
+def test_webapp_view_instantiation(instance):
+    assert isinstance(instance, webapp_View)
 
-@given(instance=webapp::WebApp_strategy)
+@given(instance=webapp_Controller_strategy)
 @settings(max_examples=50)
-def test_webapp::webapp_instantiation(instance):
-    assert isinstance(instance, webapp::WebApp)
+def test_webapp_controller_instantiation(instance):
+    assert isinstance(instance, webapp_Controller)
 
-@given(instance=webapp::NamedElement_strategy)
+@given(instance=webapp_Template_strategy)
 @settings(max_examples=50)
-def test_webapp::namedelement_instantiation(instance):
-    assert isinstance(instance, webapp::NamedElement)
-
-@given(instance=webapp::NamedElement_strategy)
-def test_webapp::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_template_instantiation(instance):
+    assert isinstance(instance, webapp_Template)
 
 
-@given(instance=webapp::NamedElement_strategy)
-def test_webapp::namedelement_name_setter(instance):
+
+@given(instance=webapp_Template_strategy)
+def test_webapp_template_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=webapp_Template_strategy)
+def test_webapp_template_structure_setter(instance):
+    original = instance.structure
+    instance.structure = original
+    assert instance.structure == original
+
+@given(instance=webapp_WebApp_strategy)
+@settings(max_examples=50)
+def test_webapp_webapp_instantiation(instance):
+    assert isinstance(instance, webapp_WebApp)
+
+@given(instance=webapp_NamedElement_strategy)
+@settings(max_examples=50)
+def test_webapp_namedelement_instantiation(instance):
+    assert isinstance(instance, webapp_NamedElement)
+
+
+
+@given(instance=webapp_NamedElement_strategy)
+def test_webapp_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webapp::Data_strategy)
+@given(instance=webapp_Data_strategy)
 @settings(max_examples=50)
-def test_webapp::data_instantiation(instance):
-    assert isinstance(instance, webapp::Data)
-
-@given(instance=webapp::Data_strategy)
-def test_webapp::data_endpoint_type(instance):
-    assert isinstance(instance.endpoint, str)
+def test_webapp_data_instantiation(instance):
+    assert isinstance(instance, webapp_Data)
 
 
-@given(instance=webapp::Data_strategy)
-def test_webapp::data_endpoint_setter(instance):
+
+@given(instance=webapp_Data_strategy)
+def test_webapp_data_endpoint_setter(instance):
     original = instance.endpoint
     instance.endpoint = original
     assert instance.endpoint == original

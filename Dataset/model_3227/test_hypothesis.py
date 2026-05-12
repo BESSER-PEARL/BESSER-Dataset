@@ -3,79 +3,79 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pascal::caseListElement,
+from python_code import (
+    pascal_caseListElement,
     parameterList,
-    pascal::actualParameter,
-    pascal::functionDesignator,
-    pascal::caseStatement,
-    pascal::statements,
-    pascal::conditionalStatement,
-    pascal::term,
-    pascal::simpleExpression,
-    pascal::variable,
-    pascal::assignmentStatement,
-    pascal::gotoStatement,
-    pascal::parameterList,
-    pascal::structuredStatement,
-    pascal::simpleStatement,
-    pascal::unsignedConstant,
-    pascal::factor,
-    pascal::signedFactor,
-    pascal::functionDeclaration,
-    pascal::procedureDeclaration,
-    pascal::procedureOrFunctionDeclaration,
-    pascal::expression,
-    pascal::variableDeclaration,
-    pascal::constList,
-    pascal::unlabelledStatement,
-    pascal::statement,
-    pascal::recordSection,
-    pascal::variantPart,
-    pascal::fixedPart,
-    pascal::recordType,
-    pascal::unpackedStructuredType,
-    pascal::variant,
-    pascal::tag,
-    pascal::parameterGroup,
-    pascal::formalParameterSection,
-    pascal::stringtype,
-    pascal::subrangeType,
-    pascal::scalarType,
-    pascal::pointerType,
-    pascal::structuredType,
-    pascal::simpleType,
-    pascal::typeDefinition,
-    pascal::fieldList,
-    pascal::constantChr,
-    pascal::typeIdentifier,
-    pascal::formalParameterList,
-    pascal::procedureType,
-    pascal::functionType,
-    pascal::type,
-    pascal::unsignedInteger,
+    pascal_actualParameter,
+    pascal_functionDesignator,
+    pascal_caseStatement,
+    pascal_statements,
+    pascal_conditionalStatement,
+    pascal_term,
+    pascal_simpleExpression,
+    pascal_variable,
+    pascal_assignmentStatement,
+    pascal_gotoStatement,
+    pascal_parameterList,
+    pascal_structuredStatement,
+    pascal_simpleStatement,
+    pascal_unsignedConstant,
+    pascal_factor,
+    pascal_signedFactor,
+    pascal_functionDeclaration,
+    pascal_procedureDeclaration,
+    pascal_procedureOrFunctionDeclaration,
+    pascal_expression,
+    pascal_variableDeclaration,
+    pascal_constList,
+    pascal_unlabelledStatement,
+    pascal_statement,
+    pascal_recordSection,
+    pascal_variantPart,
+    pascal_fixedPart,
+    pascal_recordType,
+    pascal_unpackedStructuredType,
+    pascal_variant,
+    pascal_tag,
+    pascal_parameterGroup,
+    pascal_formalParameterSection,
+    pascal_stringtype,
+    pascal_subrangeType,
+    pascal_scalarType,
+    pascal_pointerType,
+    pascal_structuredType,
+    pascal_simpleType,
+    pascal_typeDefinition,
+    pascal_fieldList,
+    pascal_constantChr,
+    pascal_typeIdentifier,
+    pascal_formalParameterList,
+    pascal_procedureType,
+    pascal_functionType,
+    pascal_type,
+    pascal_unsignedInteger,
     statement,
-    label::declaration::part,
-    pascal::label,
-    pascal::compoundStatement,
-    pascal::usesUnitsPart,
-    pascal::procedureAndFunctionDeclarationPart,
-    pascal::variableDeclarationPart,
-    pascal::typeDefinitionPart,
-    pascal::constantDefinitionPart,
-    pascal::label::declaration::part,
-    pascal::unsignedNumber,
+    label_declaration_part,
+    pascal_label,
+    pascal_compoundStatement,
+    pascal_usesUnitsPart,
+    pascal_procedureAndFunctionDeclarationPart,
+    pascal_variableDeclarationPart,
+    pascal_typeDefinitionPart,
+    pascal_constantDefinitionPart,
+    pascal_label_declaration_part,
+    pascal_unsignedNumber,
     variant,
-    pascal::constant,
-    pascal::constantDefinition,
-    pascal::pascal,
-    pascal::identifierList,
-    pascal::identifier,
-    pascal::block,
-    pascal::programHeading,
-    pascal::program,
+    pascal_constant,
+    pascal_constantDefinition,
+    pascal_pascal,
+    pascal_identifierList,
+    pascal_identifier,
+    pascal_block,
+    pascal_programHeading,
+    pascal_program,
 )
 
 # =============================================================================
@@ -84,16 +84,16 @@ from classes import (
 
 
 
-def test_pascal::caselistelement_is_not_abstract():
-    assert not inspect.isabstract(pascal::caseListElement)
+def test_pascal_caselistelement_is_not_abstract():
+    assert not inspect.isabstract(pascal_caseListElement)
 
 
-def test_pascal::caselistelement_constructor_exists():
-    assert callable(pascal::caseListElement.__init__)
+def test_pascal_caselistelement_constructor_exists():
+    assert callable(pascal_caseListElement.__init__)
 
 
-def test_pascal::caselistelement_constructor_args():
-    sig = inspect.signature(pascal::caseListElement.__init__)
+def test_pascal_caselistelement_constructor_args():
+    sig = inspect.signature(pascal_caseListElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,93 +112,93 @@ def test_parameterlist_constructor_args():
 
 
 
-def test_pascal::actualparameter_is_not_abstract():
-    assert not inspect.isabstract(pascal::actualParameter)
+def test_pascal_actualparameter_is_not_abstract():
+    assert not inspect.isabstract(pascal_actualParameter)
 
 
-def test_pascal::actualparameter_constructor_exists():
-    assert callable(pascal::actualParameter.__init__)
+def test_pascal_actualparameter_constructor_exists():
+    assert callable(pascal_actualParameter.__init__)
 
 
-def test_pascal::actualparameter_constructor_args():
-    sig = inspect.signature(pascal::actualParameter.__init__)
+def test_pascal_actualparameter_constructor_args():
+    sig = inspect.signature(pascal_actualParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::functiondesignator_is_not_abstract():
-    assert not inspect.isabstract(pascal::functionDesignator)
+def test_pascal_functiondesignator_is_not_abstract():
+    assert not inspect.isabstract(pascal_functionDesignator)
 
 
-def test_pascal::functiondesignator_constructor_exists():
-    assert callable(pascal::functionDesignator.__init__)
+def test_pascal_functiondesignator_constructor_exists():
+    assert callable(pascal_functionDesignator.__init__)
 
 
-def test_pascal::functiondesignator_constructor_args():
-    sig = inspect.signature(pascal::functionDesignator.__init__)
+def test_pascal_functiondesignator_constructor_args():
+    sig = inspect.signature(pascal_functionDesignator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::casestatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::caseStatement)
+def test_pascal_casestatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_caseStatement)
 
 
-def test_pascal::casestatement_constructor_exists():
-    assert callable(pascal::caseStatement.__init__)
+def test_pascal_casestatement_constructor_exists():
+    assert callable(pascal_caseStatement.__init__)
 
 
-def test_pascal::casestatement_constructor_args():
-    sig = inspect.signature(pascal::caseStatement.__init__)
+def test_pascal_casestatement_constructor_args():
+    sig = inspect.signature(pascal_caseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::statements_is_not_abstract():
-    assert not inspect.isabstract(pascal::statements)
+def test_pascal_statements_is_not_abstract():
+    assert not inspect.isabstract(pascal_statements)
 
 
-def test_pascal::statements_constructor_exists():
-    assert callable(pascal::statements.__init__)
+def test_pascal_statements_constructor_exists():
+    assert callable(pascal_statements.__init__)
 
 
-def test_pascal::statements_constructor_args():
-    sig = inspect.signature(pascal::statements.__init__)
+def test_pascal_statements_constructor_args():
+    sig = inspect.signature(pascal_statements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::conditionalstatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::conditionalStatement)
+def test_pascal_conditionalstatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_conditionalStatement)
 
 
-def test_pascal::conditionalstatement_constructor_exists():
-    assert callable(pascal::conditionalStatement.__init__)
+def test_pascal_conditionalstatement_constructor_exists():
+    assert callable(pascal_conditionalStatement.__init__)
 
 
-def test_pascal::conditionalstatement_constructor_args():
-    sig = inspect.signature(pascal::conditionalStatement.__init__)
+def test_pascal_conditionalstatement_constructor_args():
+    sig = inspect.signature(pascal_conditionalStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::term_is_not_abstract():
-    assert not inspect.isabstract(pascal::term)
+def test_pascal_term_is_not_abstract():
+    assert not inspect.isabstract(pascal_term)
 
 
-def test_pascal::term_constructor_exists():
-    assert callable(pascal::term.__init__)
+def test_pascal_term_constructor_exists():
+    assert callable(pascal_term.__init__)
 
 
-def test_pascal::term_constructor_args():
-    sig = inspect.signature(pascal::term.__init__)
+def test_pascal_term_constructor_args():
+    sig = inspect.signature(pascal_term.__init__)
     params = list(sig.parameters.keys())
     assert "multiplicativeoperator" in params, "Missing parameter 'multiplicativeoperator'"
 
-def test_pascal::term_has_multiplicativeoperator():
-    assert hasattr(pascal::term, "multiplicativeoperator")
+def test_pascal_term_has_multiplicativeoperator():
+    assert hasattr(pascal_term, "multiplicativeoperator")
     descriptor = None
-    for klass in pascal::term.__mro__:
+    for klass in pascal_term.__mro__:
         if "multiplicativeoperator" in klass.__dict__:
             descriptor = klass.__dict__["multiplicativeoperator"]
             break
@@ -206,23 +206,23 @@ def test_pascal::term_has_multiplicativeoperator():
 
 
 
-def test_pascal::simpleexpression_is_not_abstract():
-    assert not inspect.isabstract(pascal::simpleExpression)
+def test_pascal_simpleexpression_is_not_abstract():
+    assert not inspect.isabstract(pascal_simpleExpression)
 
 
-def test_pascal::simpleexpression_constructor_exists():
-    assert callable(pascal::simpleExpression.__init__)
+def test_pascal_simpleexpression_constructor_exists():
+    assert callable(pascal_simpleExpression.__init__)
 
 
-def test_pascal::simpleexpression_constructor_args():
-    sig = inspect.signature(pascal::simpleExpression.__init__)
+def test_pascal_simpleexpression_constructor_args():
+    sig = inspect.signature(pascal_simpleExpression.__init__)
     params = list(sig.parameters.keys())
     assert "additiveoperator" in params, "Missing parameter 'additiveoperator'"
 
-def test_pascal::simpleexpression_has_additiveoperator():
-    assert hasattr(pascal::simpleExpression, "additiveoperator")
+def test_pascal_simpleexpression_has_additiveoperator():
+    assert hasattr(pascal_simpleExpression, "additiveoperator")
     descriptor = None
-    for klass in pascal::simpleExpression.__mro__:
+    for klass in pascal_simpleExpression.__mro__:
         if "additiveoperator" in klass.__dict__:
             descriptor = klass.__dict__["additiveoperator"]
             break
@@ -230,107 +230,107 @@ def test_pascal::simpleexpression_has_additiveoperator():
 
 
 
-def test_pascal::variable_is_not_abstract():
-    assert not inspect.isabstract(pascal::variable)
+def test_pascal_variable_is_not_abstract():
+    assert not inspect.isabstract(pascal_variable)
 
 
-def test_pascal::variable_constructor_exists():
-    assert callable(pascal::variable.__init__)
+def test_pascal_variable_constructor_exists():
+    assert callable(pascal_variable.__init__)
 
 
-def test_pascal::variable_constructor_args():
-    sig = inspect.signature(pascal::variable.__init__)
+def test_pascal_variable_constructor_args():
+    sig = inspect.signature(pascal_variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::assignmentStatement)
+def test_pascal_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_assignmentStatement)
 
 
-def test_pascal::assignmentstatement_constructor_exists():
-    assert callable(pascal::assignmentStatement.__init__)
+def test_pascal_assignmentstatement_constructor_exists():
+    assert callable(pascal_assignmentStatement.__init__)
 
 
-def test_pascal::assignmentstatement_constructor_args():
-    sig = inspect.signature(pascal::assignmentStatement.__init__)
+def test_pascal_assignmentstatement_constructor_args():
+    sig = inspect.signature(pascal_assignmentStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::gotostatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::gotoStatement)
+def test_pascal_gotostatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_gotoStatement)
 
 
-def test_pascal::gotostatement_constructor_exists():
-    assert callable(pascal::gotoStatement.__init__)
+def test_pascal_gotostatement_constructor_exists():
+    assert callable(pascal_gotoStatement.__init__)
 
 
-def test_pascal::gotostatement_constructor_args():
-    sig = inspect.signature(pascal::gotoStatement.__init__)
+def test_pascal_gotostatement_constructor_args():
+    sig = inspect.signature(pascal_gotoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::parameterlist_is_not_abstract():
-    assert not inspect.isabstract(pascal::parameterList)
+def test_pascal_parameterlist_is_not_abstract():
+    assert not inspect.isabstract(pascal_parameterList)
 
 
-def test_pascal::parameterlist_constructor_exists():
-    assert callable(pascal::parameterList.__init__)
+def test_pascal_parameterlist_constructor_exists():
+    assert callable(pascal_parameterList.__init__)
 
 
-def test_pascal::parameterlist_constructor_args():
-    sig = inspect.signature(pascal::parameterList.__init__)
+def test_pascal_parameterlist_constructor_args():
+    sig = inspect.signature(pascal_parameterList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::structuredstatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::structuredStatement)
+def test_pascal_structuredstatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_structuredStatement)
 
 
-def test_pascal::structuredstatement_constructor_exists():
-    assert callable(pascal::structuredStatement.__init__)
+def test_pascal_structuredstatement_constructor_exists():
+    assert callable(pascal_structuredStatement.__init__)
 
 
-def test_pascal::structuredstatement_constructor_args():
-    sig = inspect.signature(pascal::structuredStatement.__init__)
+def test_pascal_structuredstatement_constructor_args():
+    sig = inspect.signature(pascal_structuredStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::simplestatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::simpleStatement)
+def test_pascal_simplestatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_simpleStatement)
 
 
-def test_pascal::simplestatement_constructor_exists():
-    assert callable(pascal::simpleStatement.__init__)
+def test_pascal_simplestatement_constructor_exists():
+    assert callable(pascal_simpleStatement.__init__)
 
 
-def test_pascal::simplestatement_constructor_args():
-    sig = inspect.signature(pascal::simpleStatement.__init__)
+def test_pascal_simplestatement_constructor_args():
+    sig = inspect.signature(pascal_simpleStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::unsignedconstant_is_not_abstract():
-    assert not inspect.isabstract(pascal::unsignedConstant)
+def test_pascal_unsignedconstant_is_not_abstract():
+    assert not inspect.isabstract(pascal_unsignedConstant)
 
 
-def test_pascal::unsignedconstant_constructor_exists():
-    assert callable(pascal::unsignedConstant.__init__)
+def test_pascal_unsignedconstant_constructor_exists():
+    assert callable(pascal_unsignedConstant.__init__)
 
 
-def test_pascal::unsignedconstant_constructor_args():
-    sig = inspect.signature(pascal::unsignedConstant.__init__)
+def test_pascal_unsignedconstant_constructor_args():
+    sig = inspect.signature(pascal_unsignedConstant.__init__)
     params = list(sig.parameters.keys())
     assert "string_literal" in params, "Missing parameter 'string_literal'"
 
-def test_pascal::unsignedconstant_has_string_literal():
-    assert hasattr(pascal::unsignedConstant, "string_literal")
+def test_pascal_unsignedconstant_has_string_literal():
+    assert hasattr(pascal_unsignedConstant, "string_literal")
     descriptor = None
-    for klass in pascal::unsignedConstant.__mro__:
+    for klass in pascal_unsignedConstant.__mro__:
         if "string_literal" in klass.__dict__:
             descriptor = klass.__dict__["string_literal"]
             break
@@ -338,23 +338,23 @@ def test_pascal::unsignedconstant_has_string_literal():
 
 
 
-def test_pascal::factor_is_not_abstract():
-    assert not inspect.isabstract(pascal::factor)
+def test_pascal_factor_is_not_abstract():
+    assert not inspect.isabstract(pascal_factor)
 
 
-def test_pascal::factor_constructor_exists():
-    assert callable(pascal::factor.__init__)
+def test_pascal_factor_constructor_exists():
+    assert callable(pascal_factor.__init__)
 
 
-def test_pascal::factor_constructor_args():
-    sig = inspect.signature(pascal::factor.__init__)
+def test_pascal_factor_constructor_args():
+    sig = inspect.signature(pascal_factor.__init__)
     params = list(sig.parameters.keys())
     assert "bool" in params, "Missing parameter 'bool'"
 
-def test_pascal::factor_has_bool():
-    assert hasattr(pascal::factor, "bool")
+def test_pascal_factor_has_bool():
+    assert hasattr(pascal_factor, "bool")
     descriptor = None
-    for klass in pascal::factor.__mro__:
+    for klass in pascal_factor.__mro__:
         if "bool" in klass.__dict__:
             descriptor = klass.__dict__["bool"]
             break
@@ -362,79 +362,79 @@ def test_pascal::factor_has_bool():
 
 
 
-def test_pascal::signedfactor_is_not_abstract():
-    assert not inspect.isabstract(pascal::signedFactor)
+def test_pascal_signedfactor_is_not_abstract():
+    assert not inspect.isabstract(pascal_signedFactor)
 
 
-def test_pascal::signedfactor_constructor_exists():
-    assert callable(pascal::signedFactor.__init__)
+def test_pascal_signedfactor_constructor_exists():
+    assert callable(pascal_signedFactor.__init__)
 
 
-def test_pascal::signedfactor_constructor_args():
-    sig = inspect.signature(pascal::signedFactor.__init__)
+def test_pascal_signedfactor_constructor_args():
+    sig = inspect.signature(pascal_signedFactor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(pascal::functionDeclaration)
+def test_pascal_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(pascal_functionDeclaration)
 
 
-def test_pascal::functiondeclaration_constructor_exists():
-    assert callable(pascal::functionDeclaration.__init__)
+def test_pascal_functiondeclaration_constructor_exists():
+    assert callable(pascal_functionDeclaration.__init__)
 
 
-def test_pascal::functiondeclaration_constructor_args():
-    sig = inspect.signature(pascal::functionDeclaration.__init__)
+def test_pascal_functiondeclaration_constructor_args():
+    sig = inspect.signature(pascal_functionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::proceduredeclaration_is_not_abstract():
-    assert not inspect.isabstract(pascal::procedureDeclaration)
+def test_pascal_proceduredeclaration_is_not_abstract():
+    assert not inspect.isabstract(pascal_procedureDeclaration)
 
 
-def test_pascal::proceduredeclaration_constructor_exists():
-    assert callable(pascal::procedureDeclaration.__init__)
+def test_pascal_proceduredeclaration_constructor_exists():
+    assert callable(pascal_procedureDeclaration.__init__)
 
 
-def test_pascal::proceduredeclaration_constructor_args():
-    sig = inspect.signature(pascal::procedureDeclaration.__init__)
+def test_pascal_proceduredeclaration_constructor_args():
+    sig = inspect.signature(pascal_procedureDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::procedureorfunctiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(pascal::procedureOrFunctionDeclaration)
+def test_pascal_procedureorfunctiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(pascal_procedureOrFunctionDeclaration)
 
 
-def test_pascal::procedureorfunctiondeclaration_constructor_exists():
-    assert callable(pascal::procedureOrFunctionDeclaration.__init__)
+def test_pascal_procedureorfunctiondeclaration_constructor_exists():
+    assert callable(pascal_procedureOrFunctionDeclaration.__init__)
 
 
-def test_pascal::procedureorfunctiondeclaration_constructor_args():
-    sig = inspect.signature(pascal::procedureOrFunctionDeclaration.__init__)
+def test_pascal_procedureorfunctiondeclaration_constructor_args():
+    sig = inspect.signature(pascal_procedureOrFunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::expression_is_not_abstract():
-    assert not inspect.isabstract(pascal::expression)
+def test_pascal_expression_is_not_abstract():
+    assert not inspect.isabstract(pascal_expression)
 
 
-def test_pascal::expression_constructor_exists():
-    assert callable(pascal::expression.__init__)
+def test_pascal_expression_constructor_exists():
+    assert callable(pascal_expression.__init__)
 
 
-def test_pascal::expression_constructor_args():
-    sig = inspect.signature(pascal::expression.__init__)
+def test_pascal_expression_constructor_args():
+    sig = inspect.signature(pascal_expression.__init__)
     params = list(sig.parameters.keys())
     assert "relationaloperator" in params, "Missing parameter 'relationaloperator'"
 
-def test_pascal::expression_has_relationaloperator():
-    assert hasattr(pascal::expression, "relationaloperator")
+def test_pascal_expression_has_relationaloperator():
+    assert hasattr(pascal_expression, "relationaloperator")
     descriptor = None
-    for klass in pascal::expression.__mro__:
+    for klass in pascal_expression.__mro__:
         if "relationaloperator" in klass.__dict__:
             descriptor = klass.__dict__["relationaloperator"]
             break
@@ -442,451 +442,451 @@ def test_pascal::expression_has_relationaloperator():
 
 
 
-def test_pascal::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(pascal::variableDeclaration)
+def test_pascal_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(pascal_variableDeclaration)
 
 
-def test_pascal::variabledeclaration_constructor_exists():
-    assert callable(pascal::variableDeclaration.__init__)
+def test_pascal_variabledeclaration_constructor_exists():
+    assert callable(pascal_variableDeclaration.__init__)
 
 
-def test_pascal::variabledeclaration_constructor_args():
-    sig = inspect.signature(pascal::variableDeclaration.__init__)
+def test_pascal_variabledeclaration_constructor_args():
+    sig = inspect.signature(pascal_variableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::constlist_is_not_abstract():
-    assert not inspect.isabstract(pascal::constList)
+def test_pascal_constlist_is_not_abstract():
+    assert not inspect.isabstract(pascal_constList)
 
 
-def test_pascal::constlist_constructor_exists():
-    assert callable(pascal::constList.__init__)
+def test_pascal_constlist_constructor_exists():
+    assert callable(pascal_constList.__init__)
 
 
-def test_pascal::constlist_constructor_args():
-    sig = inspect.signature(pascal::constList.__init__)
+def test_pascal_constlist_constructor_args():
+    sig = inspect.signature(pascal_constList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::unlabelledstatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::unlabelledStatement)
+def test_pascal_unlabelledstatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_unlabelledStatement)
 
 
-def test_pascal::unlabelledstatement_constructor_exists():
-    assert callable(pascal::unlabelledStatement.__init__)
+def test_pascal_unlabelledstatement_constructor_exists():
+    assert callable(pascal_unlabelledStatement.__init__)
 
 
-def test_pascal::unlabelledstatement_constructor_args():
-    sig = inspect.signature(pascal::unlabelledStatement.__init__)
+def test_pascal_unlabelledstatement_constructor_args():
+    sig = inspect.signature(pascal_unlabelledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::statement_is_not_abstract():
-    assert not inspect.isabstract(pascal::statement)
+def test_pascal_statement_is_not_abstract():
+    assert not inspect.isabstract(pascal_statement)
 
 
-def test_pascal::statement_constructor_exists():
-    assert callable(pascal::statement.__init__)
+def test_pascal_statement_constructor_exists():
+    assert callable(pascal_statement.__init__)
 
 
-def test_pascal::statement_constructor_args():
-    sig = inspect.signature(pascal::statement.__init__)
+def test_pascal_statement_constructor_args():
+    sig = inspect.signature(pascal_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::recordsection_is_not_abstract():
-    assert not inspect.isabstract(pascal::recordSection)
+def test_pascal_recordsection_is_not_abstract():
+    assert not inspect.isabstract(pascal_recordSection)
 
 
-def test_pascal::recordsection_constructor_exists():
-    assert callable(pascal::recordSection.__init__)
+def test_pascal_recordsection_constructor_exists():
+    assert callable(pascal_recordSection.__init__)
 
 
-def test_pascal::recordsection_constructor_args():
-    sig = inspect.signature(pascal::recordSection.__init__)
+def test_pascal_recordsection_constructor_args():
+    sig = inspect.signature(pascal_recordSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::variantpart_is_not_abstract():
-    assert not inspect.isabstract(pascal::variantPart)
+def test_pascal_variantpart_is_not_abstract():
+    assert not inspect.isabstract(pascal_variantPart)
 
 
-def test_pascal::variantpart_constructor_exists():
-    assert callable(pascal::variantPart.__init__)
+def test_pascal_variantpart_constructor_exists():
+    assert callable(pascal_variantPart.__init__)
 
 
-def test_pascal::variantpart_constructor_args():
-    sig = inspect.signature(pascal::variantPart.__init__)
+def test_pascal_variantpart_constructor_args():
+    sig = inspect.signature(pascal_variantPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::fixedpart_is_not_abstract():
-    assert not inspect.isabstract(pascal::fixedPart)
+def test_pascal_fixedpart_is_not_abstract():
+    assert not inspect.isabstract(pascal_fixedPart)
 
 
-def test_pascal::fixedpart_constructor_exists():
-    assert callable(pascal::fixedPart.__init__)
+def test_pascal_fixedpart_constructor_exists():
+    assert callable(pascal_fixedPart.__init__)
 
 
-def test_pascal::fixedpart_constructor_args():
-    sig = inspect.signature(pascal::fixedPart.__init__)
+def test_pascal_fixedpart_constructor_args():
+    sig = inspect.signature(pascal_fixedPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::recordtype_is_not_abstract():
-    assert not inspect.isabstract(pascal::recordType)
+def test_pascal_recordtype_is_not_abstract():
+    assert not inspect.isabstract(pascal_recordType)
 
 
-def test_pascal::recordtype_constructor_exists():
-    assert callable(pascal::recordType.__init__)
+def test_pascal_recordtype_constructor_exists():
+    assert callable(pascal_recordType.__init__)
 
 
-def test_pascal::recordtype_constructor_args():
-    sig = inspect.signature(pascal::recordType.__init__)
+def test_pascal_recordtype_constructor_args():
+    sig = inspect.signature(pascal_recordType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::unpackedstructuredtype_is_not_abstract():
-    assert not inspect.isabstract(pascal::unpackedStructuredType)
+def test_pascal_unpackedstructuredtype_is_not_abstract():
+    assert not inspect.isabstract(pascal_unpackedStructuredType)
 
 
-def test_pascal::unpackedstructuredtype_constructor_exists():
-    assert callable(pascal::unpackedStructuredType.__init__)
+def test_pascal_unpackedstructuredtype_constructor_exists():
+    assert callable(pascal_unpackedStructuredType.__init__)
 
 
-def test_pascal::unpackedstructuredtype_constructor_args():
-    sig = inspect.signature(pascal::unpackedStructuredType.__init__)
+def test_pascal_unpackedstructuredtype_constructor_args():
+    sig = inspect.signature(pascal_unpackedStructuredType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::variant_is_not_abstract():
-    assert not inspect.isabstract(pascal::variant)
+def test_pascal_variant_is_not_abstract():
+    assert not inspect.isabstract(pascal_variant)
 
 
-def test_pascal::variant_constructor_exists():
-    assert callable(pascal::variant.__init__)
+def test_pascal_variant_constructor_exists():
+    assert callable(pascal_variant.__init__)
 
 
-def test_pascal::variant_constructor_args():
-    sig = inspect.signature(pascal::variant.__init__)
+def test_pascal_variant_constructor_args():
+    sig = inspect.signature(pascal_variant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::tag_is_not_abstract():
-    assert not inspect.isabstract(pascal::tag)
+def test_pascal_tag_is_not_abstract():
+    assert not inspect.isabstract(pascal_tag)
 
 
-def test_pascal::tag_constructor_exists():
-    assert callable(pascal::tag.__init__)
+def test_pascal_tag_constructor_exists():
+    assert callable(pascal_tag.__init__)
 
 
-def test_pascal::tag_constructor_args():
-    sig = inspect.signature(pascal::tag.__init__)
+def test_pascal_tag_constructor_args():
+    sig = inspect.signature(pascal_tag.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::parametergroup_is_not_abstract():
-    assert not inspect.isabstract(pascal::parameterGroup)
+def test_pascal_parametergroup_is_not_abstract():
+    assert not inspect.isabstract(pascal_parameterGroup)
 
 
-def test_pascal::parametergroup_constructor_exists():
-    assert callable(pascal::parameterGroup.__init__)
+def test_pascal_parametergroup_constructor_exists():
+    assert callable(pascal_parameterGroup.__init__)
 
 
-def test_pascal::parametergroup_constructor_args():
-    sig = inspect.signature(pascal::parameterGroup.__init__)
+def test_pascal_parametergroup_constructor_args():
+    sig = inspect.signature(pascal_parameterGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::formalparametersection_is_not_abstract():
-    assert not inspect.isabstract(pascal::formalParameterSection)
+def test_pascal_formalparametersection_is_not_abstract():
+    assert not inspect.isabstract(pascal_formalParameterSection)
 
 
-def test_pascal::formalparametersection_constructor_exists():
-    assert callable(pascal::formalParameterSection.__init__)
+def test_pascal_formalparametersection_constructor_exists():
+    assert callable(pascal_formalParameterSection.__init__)
 
 
-def test_pascal::formalparametersection_constructor_args():
-    sig = inspect.signature(pascal::formalParameterSection.__init__)
+def test_pascal_formalparametersection_constructor_args():
+    sig = inspect.signature(pascal_formalParameterSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::stringtype_is_not_abstract():
-    assert not inspect.isabstract(pascal::stringtype)
+def test_pascal_stringtype_is_not_abstract():
+    assert not inspect.isabstract(pascal_stringtype)
 
 
-def test_pascal::stringtype_constructor_exists():
-    assert callable(pascal::stringtype.__init__)
+def test_pascal_stringtype_constructor_exists():
+    assert callable(pascal_stringtype.__init__)
 
 
-def test_pascal::stringtype_constructor_args():
-    sig = inspect.signature(pascal::stringtype.__init__)
+def test_pascal_stringtype_constructor_args():
+    sig = inspect.signature(pascal_stringtype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::subrangetype_is_not_abstract():
-    assert not inspect.isabstract(pascal::subrangeType)
+def test_pascal_subrangetype_is_not_abstract():
+    assert not inspect.isabstract(pascal_subrangeType)
 
 
-def test_pascal::subrangetype_constructor_exists():
-    assert callable(pascal::subrangeType.__init__)
+def test_pascal_subrangetype_constructor_exists():
+    assert callable(pascal_subrangeType.__init__)
 
 
-def test_pascal::subrangetype_constructor_args():
-    sig = inspect.signature(pascal::subrangeType.__init__)
+def test_pascal_subrangetype_constructor_args():
+    sig = inspect.signature(pascal_subrangeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::scalartype_is_not_abstract():
-    assert not inspect.isabstract(pascal::scalarType)
+def test_pascal_scalartype_is_not_abstract():
+    assert not inspect.isabstract(pascal_scalarType)
 
 
-def test_pascal::scalartype_constructor_exists():
-    assert callable(pascal::scalarType.__init__)
+def test_pascal_scalartype_constructor_exists():
+    assert callable(pascal_scalarType.__init__)
 
 
-def test_pascal::scalartype_constructor_args():
-    sig = inspect.signature(pascal::scalarType.__init__)
+def test_pascal_scalartype_constructor_args():
+    sig = inspect.signature(pascal_scalarType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::pointertype_is_not_abstract():
-    assert not inspect.isabstract(pascal::pointerType)
+def test_pascal_pointertype_is_not_abstract():
+    assert not inspect.isabstract(pascal_pointerType)
 
 
-def test_pascal::pointertype_constructor_exists():
-    assert callable(pascal::pointerType.__init__)
+def test_pascal_pointertype_constructor_exists():
+    assert callable(pascal_pointerType.__init__)
 
 
-def test_pascal::pointertype_constructor_args():
-    sig = inspect.signature(pascal::pointerType.__init__)
+def test_pascal_pointertype_constructor_args():
+    sig = inspect.signature(pascal_pointerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::structuredtype_is_not_abstract():
-    assert not inspect.isabstract(pascal::structuredType)
+def test_pascal_structuredtype_is_not_abstract():
+    assert not inspect.isabstract(pascal_structuredType)
 
 
-def test_pascal::structuredtype_constructor_exists():
-    assert callable(pascal::structuredType.__init__)
+def test_pascal_structuredtype_constructor_exists():
+    assert callable(pascal_structuredType.__init__)
 
 
-def test_pascal::structuredtype_constructor_args():
-    sig = inspect.signature(pascal::structuredType.__init__)
+def test_pascal_structuredtype_constructor_args():
+    sig = inspect.signature(pascal_structuredType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::simpletype_is_not_abstract():
-    assert not inspect.isabstract(pascal::simpleType)
+def test_pascal_simpletype_is_not_abstract():
+    assert not inspect.isabstract(pascal_simpleType)
 
 
-def test_pascal::simpletype_constructor_exists():
-    assert callable(pascal::simpleType.__init__)
+def test_pascal_simpletype_constructor_exists():
+    assert callable(pascal_simpleType.__init__)
 
 
-def test_pascal::simpletype_constructor_args():
-    sig = inspect.signature(pascal::simpleType.__init__)
+def test_pascal_simpletype_constructor_args():
+    sig = inspect.signature(pascal_simpleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(pascal::typeDefinition)
+def test_pascal_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(pascal_typeDefinition)
 
 
-def test_pascal::typedefinition_constructor_exists():
-    assert callable(pascal::typeDefinition.__init__)
+def test_pascal_typedefinition_constructor_exists():
+    assert callable(pascal_typeDefinition.__init__)
 
 
-def test_pascal::typedefinition_constructor_args():
-    sig = inspect.signature(pascal::typeDefinition.__init__)
+def test_pascal_typedefinition_constructor_args():
+    sig = inspect.signature(pascal_typeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::fieldlist_is_not_abstract():
-    assert not inspect.isabstract(pascal::fieldList)
+def test_pascal_fieldlist_is_not_abstract():
+    assert not inspect.isabstract(pascal_fieldList)
 
 
-def test_pascal::fieldlist_constructor_exists():
-    assert callable(pascal::fieldList.__init__)
+def test_pascal_fieldlist_constructor_exists():
+    assert callable(pascal_fieldList.__init__)
 
 
-def test_pascal::fieldlist_constructor_args():
-    sig = inspect.signature(pascal::fieldList.__init__)
+def test_pascal_fieldlist_constructor_args():
+    sig = inspect.signature(pascal_fieldList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::constantchr_is_not_abstract():
-    assert not inspect.isabstract(pascal::constantChr)
+def test_pascal_constantchr_is_not_abstract():
+    assert not inspect.isabstract(pascal_constantChr)
 
 
-def test_pascal::constantchr_constructor_exists():
-    assert callable(pascal::constantChr.__init__)
+def test_pascal_constantchr_constructor_exists():
+    assert callable(pascal_constantChr.__init__)
 
 
-def test_pascal::constantchr_constructor_args():
-    sig = inspect.signature(pascal::constantChr.__init__)
+def test_pascal_constantchr_constructor_args():
+    sig = inspect.signature(pascal_constantChr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::typeidentifier_is_not_abstract():
-    assert not inspect.isabstract(pascal::typeIdentifier)
+def test_pascal_typeidentifier_is_not_abstract():
+    assert not inspect.isabstract(pascal_typeIdentifier)
 
 
-def test_pascal::typeidentifier_constructor_exists():
-    assert callable(pascal::typeIdentifier.__init__)
+def test_pascal_typeidentifier_constructor_exists():
+    assert callable(pascal_typeIdentifier.__init__)
 
 
-def test_pascal::typeidentifier_constructor_args():
-    sig = inspect.signature(pascal::typeIdentifier.__init__)
+def test_pascal_typeidentifier_constructor_args():
+    sig = inspect.signature(pascal_typeIdentifier.__init__)
     params = list(sig.parameters.keys())
-    assert "integer" in params, "Missing parameter 'integer'"
     assert "char" in params, "Missing parameter 'char'"
+    assert "integer" in params, "Missing parameter 'integer'"
+    assert "real" in params, "Missing parameter 'real'"
     assert "boolean" in params, "Missing parameter 'boolean'"
     assert "string" in params, "Missing parameter 'string'"
-    assert "real" in params, "Missing parameter 'real'"
 
-def test_pascal::typeidentifier_has_integer():
-    assert hasattr(pascal::typeIdentifier, "integer")
+def test_pascal_typeidentifier_has_char():
+    assert hasattr(pascal_typeIdentifier, "char")
     descriptor = None
-    for klass in pascal::typeIdentifier.__mro__:
-        if "integer" in klass.__dict__:
-            descriptor = klass.__dict__["integer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pascal::typeidentifier_has_char():
-    assert hasattr(pascal::typeIdentifier, "char")
-    descriptor = None
-    for klass in pascal::typeIdentifier.__mro__:
+    for klass in pascal_typeIdentifier.__mro__:
         if "char" in klass.__dict__:
             descriptor = klass.__dict__["char"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::typeidentifier_has_boolean():
-    assert hasattr(pascal::typeIdentifier, "boolean")
+def test_pascal_typeidentifier_has_integer():
+    assert hasattr(pascal_typeIdentifier, "integer")
     descriptor = None
-    for klass in pascal::typeIdentifier.__mro__:
-        if "boolean" in klass.__dict__:
-            descriptor = klass.__dict__["boolean"]
+    for klass in pascal_typeIdentifier.__mro__:
+        if "integer" in klass.__dict__:
+            descriptor = klass.__dict__["integer"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::typeidentifier_has_string():
-    assert hasattr(pascal::typeIdentifier, "string")
+def test_pascal_typeidentifier_has_real():
+    assert hasattr(pascal_typeIdentifier, "real")
     descriptor = None
-    for klass in pascal::typeIdentifier.__mro__:
-        if "string" in klass.__dict__:
-            descriptor = klass.__dict__["string"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pascal::typeidentifier_has_real():
-    assert hasattr(pascal::typeIdentifier, "real")
-    descriptor = None
-    for klass in pascal::typeIdentifier.__mro__:
+    for klass in pascal_typeIdentifier.__mro__:
         if "real" in klass.__dict__:
             descriptor = klass.__dict__["real"]
             break
     assert isinstance(descriptor, property)
 
+def test_pascal_typeidentifier_has_boolean():
+    assert hasattr(pascal_typeIdentifier, "boolean")
+    descriptor = None
+    for klass in pascal_typeIdentifier.__mro__:
+        if "boolean" in klass.__dict__:
+            descriptor = klass.__dict__["boolean"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pascal_typeidentifier_has_string():
+    assert hasattr(pascal_typeIdentifier, "string")
+    descriptor = None
+    for klass in pascal_typeIdentifier.__mro__:
+        if "string" in klass.__dict__:
+            descriptor = klass.__dict__["string"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_pascal::formalparameterlist_is_not_abstract():
-    assert not inspect.isabstract(pascal::formalParameterList)
+
+def test_pascal_formalparameterlist_is_not_abstract():
+    assert not inspect.isabstract(pascal_formalParameterList)
 
 
-def test_pascal::formalparameterlist_constructor_exists():
-    assert callable(pascal::formalParameterList.__init__)
+def test_pascal_formalparameterlist_constructor_exists():
+    assert callable(pascal_formalParameterList.__init__)
 
 
-def test_pascal::formalparameterlist_constructor_args():
-    sig = inspect.signature(pascal::formalParameterList.__init__)
+def test_pascal_formalparameterlist_constructor_args():
+    sig = inspect.signature(pascal_formalParameterList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::proceduretype_is_not_abstract():
-    assert not inspect.isabstract(pascal::procedureType)
+def test_pascal_proceduretype_is_not_abstract():
+    assert not inspect.isabstract(pascal_procedureType)
 
 
-def test_pascal::proceduretype_constructor_exists():
-    assert callable(pascal::procedureType.__init__)
+def test_pascal_proceduretype_constructor_exists():
+    assert callable(pascal_procedureType.__init__)
 
 
-def test_pascal::proceduretype_constructor_args():
-    sig = inspect.signature(pascal::procedureType.__init__)
+def test_pascal_proceduretype_constructor_args():
+    sig = inspect.signature(pascal_procedureType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::functiontype_is_not_abstract():
-    assert not inspect.isabstract(pascal::functionType)
+def test_pascal_functiontype_is_not_abstract():
+    assert not inspect.isabstract(pascal_functionType)
 
 
-def test_pascal::functiontype_constructor_exists():
-    assert callable(pascal::functionType.__init__)
+def test_pascal_functiontype_constructor_exists():
+    assert callable(pascal_functionType.__init__)
 
 
-def test_pascal::functiontype_constructor_args():
-    sig = inspect.signature(pascal::functionType.__init__)
+def test_pascal_functiontype_constructor_args():
+    sig = inspect.signature(pascal_functionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::type_is_not_abstract():
-    assert not inspect.isabstract(pascal::type)
+def test_pascal_type_is_not_abstract():
+    assert not inspect.isabstract(pascal_type)
 
 
-def test_pascal::type_constructor_exists():
-    assert callable(pascal::type.__init__)
+def test_pascal_type_constructor_exists():
+    assert callable(pascal_type.__init__)
 
 
-def test_pascal::type_constructor_args():
-    sig = inspect.signature(pascal::type.__init__)
+def test_pascal_type_constructor_args():
+    sig = inspect.signature(pascal_type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::unsignedinteger_is_not_abstract():
-    assert not inspect.isabstract(pascal::unsignedInteger)
+def test_pascal_unsignedinteger_is_not_abstract():
+    assert not inspect.isabstract(pascal_unsignedInteger)
 
 
-def test_pascal::unsignedinteger_constructor_exists():
-    assert callable(pascal::unsignedInteger.__init__)
+def test_pascal_unsignedinteger_constructor_exists():
+    assert callable(pascal_unsignedInteger.__init__)
 
 
-def test_pascal::unsignedinteger_constructor_args():
-    sig = inspect.signature(pascal::unsignedInteger.__init__)
+def test_pascal_unsignedinteger_constructor_args():
+    sig = inspect.signature(pascal_unsignedInteger.__init__)
     params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
 
-def test_pascal::unsignedinteger_has_number():
-    assert hasattr(pascal::unsignedInteger, "number")
+def test_pascal_unsignedinteger_has_number():
+    assert hasattr(pascal_unsignedInteger, "number")
     descriptor = None
-    for klass in pascal::unsignedInteger.__mro__:
+    for klass in pascal_unsignedInteger.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
@@ -908,149 +908,149 @@ def test_statement_constructor_args():
 
 
 
-def test_label::declaration::part_is_not_abstract():
-    assert not inspect.isabstract(label::declaration::part)
+def test_label_declaration_part_is_not_abstract():
+    assert not inspect.isabstract(label_declaration_part)
 
 
-def test_label::declaration::part_constructor_exists():
-    assert callable(label::declaration::part.__init__)
+def test_label_declaration_part_constructor_exists():
+    assert callable(label_declaration_part.__init__)
 
 
-def test_label::declaration::part_constructor_args():
-    sig = inspect.signature(label::declaration::part.__init__)
+def test_label_declaration_part_constructor_args():
+    sig = inspect.signature(label_declaration_part.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::label_is_not_abstract():
-    assert not inspect.isabstract(pascal::label)
+def test_pascal_label_is_not_abstract():
+    assert not inspect.isabstract(pascal_label)
 
 
-def test_pascal::label_constructor_exists():
-    assert callable(pascal::label.__init__)
+def test_pascal_label_constructor_exists():
+    assert callable(pascal_label.__init__)
 
 
-def test_pascal::label_constructor_args():
-    sig = inspect.signature(pascal::label.__init__)
+def test_pascal_label_constructor_args():
+    sig = inspect.signature(pascal_label.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::compoundstatement_is_not_abstract():
-    assert not inspect.isabstract(pascal::compoundStatement)
+def test_pascal_compoundstatement_is_not_abstract():
+    assert not inspect.isabstract(pascal_compoundStatement)
 
 
-def test_pascal::compoundstatement_constructor_exists():
-    assert callable(pascal::compoundStatement.__init__)
+def test_pascal_compoundstatement_constructor_exists():
+    assert callable(pascal_compoundStatement.__init__)
 
 
-def test_pascal::compoundstatement_constructor_args():
-    sig = inspect.signature(pascal::compoundStatement.__init__)
+def test_pascal_compoundstatement_constructor_args():
+    sig = inspect.signature(pascal_compoundStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::usesunitspart_is_not_abstract():
-    assert not inspect.isabstract(pascal::usesUnitsPart)
+def test_pascal_usesunitspart_is_not_abstract():
+    assert not inspect.isabstract(pascal_usesUnitsPart)
 
 
-def test_pascal::usesunitspart_constructor_exists():
-    assert callable(pascal::usesUnitsPart.__init__)
+def test_pascal_usesunitspart_constructor_exists():
+    assert callable(pascal_usesUnitsPart.__init__)
 
 
-def test_pascal::usesunitspart_constructor_args():
-    sig = inspect.signature(pascal::usesUnitsPart.__init__)
+def test_pascal_usesunitspart_constructor_args():
+    sig = inspect.signature(pascal_usesUnitsPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::procedureandfunctiondeclarationpart_is_not_abstract():
-    assert not inspect.isabstract(pascal::procedureAndFunctionDeclarationPart)
+def test_pascal_procedureandfunctiondeclarationpart_is_not_abstract():
+    assert not inspect.isabstract(pascal_procedureAndFunctionDeclarationPart)
 
 
-def test_pascal::procedureandfunctiondeclarationpart_constructor_exists():
-    assert callable(pascal::procedureAndFunctionDeclarationPart.__init__)
+def test_pascal_procedureandfunctiondeclarationpart_constructor_exists():
+    assert callable(pascal_procedureAndFunctionDeclarationPart.__init__)
 
 
-def test_pascal::procedureandfunctiondeclarationpart_constructor_args():
-    sig = inspect.signature(pascal::procedureAndFunctionDeclarationPart.__init__)
+def test_pascal_procedureandfunctiondeclarationpart_constructor_args():
+    sig = inspect.signature(pascal_procedureAndFunctionDeclarationPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::variabledeclarationpart_is_not_abstract():
-    assert not inspect.isabstract(pascal::variableDeclarationPart)
+def test_pascal_variabledeclarationpart_is_not_abstract():
+    assert not inspect.isabstract(pascal_variableDeclarationPart)
 
 
-def test_pascal::variabledeclarationpart_constructor_exists():
-    assert callable(pascal::variableDeclarationPart.__init__)
+def test_pascal_variabledeclarationpart_constructor_exists():
+    assert callable(pascal_variableDeclarationPart.__init__)
 
 
-def test_pascal::variabledeclarationpart_constructor_args():
-    sig = inspect.signature(pascal::variableDeclarationPart.__init__)
+def test_pascal_variabledeclarationpart_constructor_args():
+    sig = inspect.signature(pascal_variableDeclarationPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::typedefinitionpart_is_not_abstract():
-    assert not inspect.isabstract(pascal::typeDefinitionPart)
+def test_pascal_typedefinitionpart_is_not_abstract():
+    assert not inspect.isabstract(pascal_typeDefinitionPart)
 
 
-def test_pascal::typedefinitionpart_constructor_exists():
-    assert callable(pascal::typeDefinitionPart.__init__)
+def test_pascal_typedefinitionpart_constructor_exists():
+    assert callable(pascal_typeDefinitionPart.__init__)
 
 
-def test_pascal::typedefinitionpart_constructor_args():
-    sig = inspect.signature(pascal::typeDefinitionPart.__init__)
+def test_pascal_typedefinitionpart_constructor_args():
+    sig = inspect.signature(pascal_typeDefinitionPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::constantdefinitionpart_is_not_abstract():
-    assert not inspect.isabstract(pascal::constantDefinitionPart)
+def test_pascal_constantdefinitionpart_is_not_abstract():
+    assert not inspect.isabstract(pascal_constantDefinitionPart)
 
 
-def test_pascal::constantdefinitionpart_constructor_exists():
-    assert callable(pascal::constantDefinitionPart.__init__)
+def test_pascal_constantdefinitionpart_constructor_exists():
+    assert callable(pascal_constantDefinitionPart.__init__)
 
 
-def test_pascal::constantdefinitionpart_constructor_args():
-    sig = inspect.signature(pascal::constantDefinitionPart.__init__)
+def test_pascal_constantdefinitionpart_constructor_args():
+    sig = inspect.signature(pascal_constantDefinitionPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::label::declaration::part_is_not_abstract():
-    assert not inspect.isabstract(pascal::label::declaration::part)
+def test_pascal_label_declaration_part_is_not_abstract():
+    assert not inspect.isabstract(pascal_label_declaration_part)
 
 
-def test_pascal::label::declaration::part_constructor_exists():
-    assert callable(pascal::label::declaration::part.__init__)
+def test_pascal_label_declaration_part_constructor_exists():
+    assert callable(pascal_label_declaration_part.__init__)
 
 
-def test_pascal::label::declaration::part_constructor_args():
-    sig = inspect.signature(pascal::label::declaration::part.__init__)
+def test_pascal_label_declaration_part_constructor_args():
+    sig = inspect.signature(pascal_label_declaration_part.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::unsignednumber_is_not_abstract():
-    assert not inspect.isabstract(pascal::unsignedNumber)
+def test_pascal_unsignednumber_is_not_abstract():
+    assert not inspect.isabstract(pascal_unsignedNumber)
 
 
-def test_pascal::unsignednumber_constructor_exists():
-    assert callable(pascal::unsignedNumber.__init__)
+def test_pascal_unsignednumber_constructor_exists():
+    assert callable(pascal_unsignedNumber.__init__)
 
 
-def test_pascal::unsignednumber_constructor_args():
-    sig = inspect.signature(pascal::unsignedNumber.__init__)
+def test_pascal_unsignednumber_constructor_args():
+    sig = inspect.signature(pascal_unsignedNumber.__init__)
     params = list(sig.parameters.keys())
     assert "unsignedReal" in params, "Missing parameter 'unsignedReal'"
 
-def test_pascal::unsignednumber_has_unsignedReal():
-    assert hasattr(pascal::unsignedNumber, "unsignedReal")
+def test_pascal_unsignednumber_has_unsignedReal():
+    assert hasattr(pascal_unsignedNumber, "unsignedReal")
     descriptor = None
-    for klass in pascal::unsignedNumber.__mro__:
+    for klass in pascal_unsignedNumber.__mro__:
         if "unsignedReal" in klass.__dict__:
             descriptor = klass.__dict__["unsignedReal"]
             break
@@ -1072,43 +1072,43 @@ def test_variant_constructor_args():
 
 
 
-def test_pascal::constant_is_not_abstract():
-    assert not inspect.isabstract(pascal::constant)
+def test_pascal_constant_is_not_abstract():
+    assert not inspect.isabstract(pascal_constant)
 
 
-def test_pascal::constant_constructor_exists():
-    assert callable(pascal::constant.__init__)
+def test_pascal_constant_constructor_exists():
+    assert callable(pascal_constant.__init__)
 
 
-def test_pascal::constant_constructor_args():
-    sig = inspect.signature(pascal::constant.__init__)
+def test_pascal_constant_constructor_args():
+    sig = inspect.signature(pascal_constant.__init__)
     params = list(sig.parameters.keys())
     assert "sign" in params, "Missing parameter 'sign'"
     assert "string" in params, "Missing parameter 'string'"
     assert "bool" in params, "Missing parameter 'bool'"
 
-def test_pascal::constant_has_sign():
-    assert hasattr(pascal::constant, "sign")
+def test_pascal_constant_has_sign():
+    assert hasattr(pascal_constant, "sign")
     descriptor = None
-    for klass in pascal::constant.__mro__:
+    for klass in pascal_constant.__mro__:
         if "sign" in klass.__dict__:
             descriptor = klass.__dict__["sign"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::constant_has_string():
-    assert hasattr(pascal::constant, "string")
+def test_pascal_constant_has_string():
+    assert hasattr(pascal_constant, "string")
     descriptor = None
-    for klass in pascal::constant.__mro__:
+    for klass in pascal_constant.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
     assert isinstance(descriptor, property)
 
-def test_pascal::constant_has_bool():
-    assert hasattr(pascal::constant, "bool")
+def test_pascal_constant_has_bool():
+    assert hasattr(pascal_constant, "bool")
     descriptor = None
-    for klass in pascal::constant.__mro__:
+    for klass in pascal_constant.__mro__:
         if "bool" in klass.__dict__:
             descriptor = klass.__dict__["bool"]
             break
@@ -1116,65 +1116,65 @@ def test_pascal::constant_has_bool():
 
 
 
-def test_pascal::constantdefinition_is_not_abstract():
-    assert not inspect.isabstract(pascal::constantDefinition)
+def test_pascal_constantdefinition_is_not_abstract():
+    assert not inspect.isabstract(pascal_constantDefinition)
 
 
-def test_pascal::constantdefinition_constructor_exists():
-    assert callable(pascal::constantDefinition.__init__)
+def test_pascal_constantdefinition_constructor_exists():
+    assert callable(pascal_constantDefinition.__init__)
 
 
-def test_pascal::constantdefinition_constructor_args():
-    sig = inspect.signature(pascal::constantDefinition.__init__)
+def test_pascal_constantdefinition_constructor_args():
+    sig = inspect.signature(pascal_constantDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::pascal_is_not_abstract():
-    assert not inspect.isabstract(pascal::pascal)
+def test_pascal_pascal_is_not_abstract():
+    assert not inspect.isabstract(pascal_pascal)
 
 
-def test_pascal::pascal_constructor_exists():
-    assert callable(pascal::pascal.__init__)
+def test_pascal_pascal_constructor_exists():
+    assert callable(pascal_pascal.__init__)
 
 
-def test_pascal::pascal_constructor_args():
-    sig = inspect.signature(pascal::pascal.__init__)
+def test_pascal_pascal_constructor_args():
+    sig = inspect.signature(pascal_pascal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::identifierlist_is_not_abstract():
-    assert not inspect.isabstract(pascal::identifierList)
+def test_pascal_identifierlist_is_not_abstract():
+    assert not inspect.isabstract(pascal_identifierList)
 
 
-def test_pascal::identifierlist_constructor_exists():
-    assert callable(pascal::identifierList.__init__)
+def test_pascal_identifierlist_constructor_exists():
+    assert callable(pascal_identifierList.__init__)
 
 
-def test_pascal::identifierlist_constructor_args():
-    sig = inspect.signature(pascal::identifierList.__init__)
+def test_pascal_identifierlist_constructor_args():
+    sig = inspect.signature(pascal_identifierList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::identifier_is_not_abstract():
-    assert not inspect.isabstract(pascal::identifier)
+def test_pascal_identifier_is_not_abstract():
+    assert not inspect.isabstract(pascal_identifier)
 
 
-def test_pascal::identifier_constructor_exists():
-    assert callable(pascal::identifier.__init__)
+def test_pascal_identifier_constructor_exists():
+    assert callable(pascal_identifier.__init__)
 
 
-def test_pascal::identifier_constructor_args():
-    sig = inspect.signature(pascal::identifier.__init__)
+def test_pascal_identifier_constructor_args():
+    sig = inspect.signature(pascal_identifier.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_pascal::identifier_has_identifier():
-    assert hasattr(pascal::identifier, "identifier")
+def test_pascal_identifier_has_identifier():
+    assert hasattr(pascal_identifier, "identifier")
     descriptor = None
-    for klass in pascal::identifier.__mro__:
+    for klass in pascal_identifier.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -1182,44 +1182,44 @@ def test_pascal::identifier_has_identifier():
 
 
 
-def test_pascal::block_is_not_abstract():
-    assert not inspect.isabstract(pascal::block)
+def test_pascal_block_is_not_abstract():
+    assert not inspect.isabstract(pascal_block)
 
 
-def test_pascal::block_constructor_exists():
-    assert callable(pascal::block.__init__)
+def test_pascal_block_constructor_exists():
+    assert callable(pascal_block.__init__)
 
 
-def test_pascal::block_constructor_args():
-    sig = inspect.signature(pascal::block.__init__)
+def test_pascal_block_constructor_args():
+    sig = inspect.signature(pascal_block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::programheading_is_not_abstract():
-    assert not inspect.isabstract(pascal::programHeading)
+def test_pascal_programheading_is_not_abstract():
+    assert not inspect.isabstract(pascal_programHeading)
 
 
-def test_pascal::programheading_constructor_exists():
-    assert callable(pascal::programHeading.__init__)
+def test_pascal_programheading_constructor_exists():
+    assert callable(pascal_programHeading.__init__)
 
 
-def test_pascal::programheading_constructor_args():
-    sig = inspect.signature(pascal::programHeading.__init__)
+def test_pascal_programheading_constructor_args():
+    sig = inspect.signature(pascal_programHeading.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pascal::program_is_not_abstract():
-    assert not inspect.isabstract(pascal::program)
+def test_pascal_program_is_not_abstract():
+    assert not inspect.isabstract(pascal_program)
 
 
-def test_pascal::program_constructor_exists():
-    assert callable(pascal::program.__init__)
+def test_pascal_program_constructor_exists():
+    assert callable(pascal_program.__init__)
 
 
-def test_pascal::program_constructor_args():
-    sig = inspect.signature(pascal::program.__init__)
+def test_pascal_program_constructor_args():
+    sig = inspect.signature(pascal_program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1234,218 +1234,218 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pascal::caseListElement_strategy = st.builds(
-    pascal::caseListElement,
+pascal_caseListElement_strategy = st.builds(
+    pascal_caseListElement,
 )
 parameterList_strategy = st.builds(
     parameterList,
 )
-pascal::actualParameter_strategy = st.builds(
-    pascal::actualParameter,
+pascal_actualParameter_strategy = st.builds(
+    pascal_actualParameter,
 )
-pascal::functionDesignator_strategy = st.builds(
-    pascal::functionDesignator,
+pascal_functionDesignator_strategy = st.builds(
+    pascal_functionDesignator,
 )
-pascal::caseStatement_strategy = st.builds(
-    pascal::caseStatement,
+pascal_caseStatement_strategy = st.builds(
+    pascal_caseStatement,
 )
-pascal::statements_strategy = st.builds(
-    pascal::statements,
+pascal_statements_strategy = st.builds(
+    pascal_statements,
 )
-pascal::conditionalStatement_strategy = st.builds(
-    pascal::conditionalStatement,
+pascal_conditionalStatement_strategy = st.builds(
+    pascal_conditionalStatement,
 )
-pascal::term_strategy = st.builds(
-    pascal::term,
+pascal_term_strategy = st.builds(
+    pascal_term,
     multiplicativeoperator=
         safe_text
 )
-pascal::simpleExpression_strategy = st.builds(
-    pascal::simpleExpression,
+pascal_simpleExpression_strategy = st.builds(
+    pascal_simpleExpression,
     additiveoperator=
         safe_text
 )
-pascal::variable_strategy = st.builds(
-    pascal::variable,
+pascal_variable_strategy = st.builds(
+    pascal_variable,
 )
-pascal::assignmentStatement_strategy = st.builds(
-    pascal::assignmentStatement,
+pascal_assignmentStatement_strategy = st.builds(
+    pascal_assignmentStatement,
 )
-pascal::gotoStatement_strategy = st.builds(
-    pascal::gotoStatement,
+pascal_gotoStatement_strategy = st.builds(
+    pascal_gotoStatement,
 )
-pascal::parameterList_strategy = st.builds(
-    pascal::parameterList,
+pascal_parameterList_strategy = st.builds(
+    pascal_parameterList,
 )
-pascal::structuredStatement_strategy = st.builds(
-    pascal::structuredStatement,
+pascal_structuredStatement_strategy = st.builds(
+    pascal_structuredStatement,
 )
-pascal::simpleStatement_strategy = st.builds(
-    pascal::simpleStatement,
+pascal_simpleStatement_strategy = st.builds(
+    pascal_simpleStatement,
 )
-pascal::unsignedConstant_strategy = st.builds(
-    pascal::unsignedConstant,
+pascal_unsignedConstant_strategy = st.builds(
+    pascal_unsignedConstant,
     string_literal=
         safe_text
 )
-pascal::factor_strategy = st.builds(
-    pascal::factor,
+pascal_factor_strategy = st.builds(
+    pascal_factor,
     bool=
         safe_text
 )
-pascal::signedFactor_strategy = st.builds(
-    pascal::signedFactor,
+pascal_signedFactor_strategy = st.builds(
+    pascal_signedFactor,
 )
-pascal::functionDeclaration_strategy = st.builds(
-    pascal::functionDeclaration,
+pascal_functionDeclaration_strategy = st.builds(
+    pascal_functionDeclaration,
 )
-pascal::procedureDeclaration_strategy = st.builds(
-    pascal::procedureDeclaration,
+pascal_procedureDeclaration_strategy = st.builds(
+    pascal_procedureDeclaration,
 )
-pascal::procedureOrFunctionDeclaration_strategy = st.builds(
-    pascal::procedureOrFunctionDeclaration,
+pascal_procedureOrFunctionDeclaration_strategy = st.builds(
+    pascal_procedureOrFunctionDeclaration,
 )
-pascal::expression_strategy = st.builds(
-    pascal::expression,
+pascal_expression_strategy = st.builds(
+    pascal_expression,
     relationaloperator=
         safe_text
 )
-pascal::variableDeclaration_strategy = st.builds(
-    pascal::variableDeclaration,
+pascal_variableDeclaration_strategy = st.builds(
+    pascal_variableDeclaration,
 )
-pascal::constList_strategy = st.builds(
-    pascal::constList,
+pascal_constList_strategy = st.builds(
+    pascal_constList,
 )
-pascal::unlabelledStatement_strategy = st.builds(
-    pascal::unlabelledStatement,
+pascal_unlabelledStatement_strategy = st.builds(
+    pascal_unlabelledStatement,
 )
-pascal::statement_strategy = st.builds(
-    pascal::statement,
+pascal_statement_strategy = st.builds(
+    pascal_statement,
 )
-pascal::recordSection_strategy = st.builds(
-    pascal::recordSection,
+pascal_recordSection_strategy = st.builds(
+    pascal_recordSection,
 )
-pascal::variantPart_strategy = st.builds(
-    pascal::variantPart,
+pascal_variantPart_strategy = st.builds(
+    pascal_variantPart,
 )
-pascal::fixedPart_strategy = st.builds(
-    pascal::fixedPart,
+pascal_fixedPart_strategy = st.builds(
+    pascal_fixedPart,
 )
-pascal::recordType_strategy = st.builds(
-    pascal::recordType,
+pascal_recordType_strategy = st.builds(
+    pascal_recordType,
 )
-pascal::unpackedStructuredType_strategy = st.builds(
-    pascal::unpackedStructuredType,
+pascal_unpackedStructuredType_strategy = st.builds(
+    pascal_unpackedStructuredType,
 )
-pascal::variant_strategy = st.builds(
-    pascal::variant,
+pascal_variant_strategy = st.builds(
+    pascal_variant,
 )
-pascal::tag_strategy = st.builds(
-    pascal::tag,
+pascal_tag_strategy = st.builds(
+    pascal_tag,
 )
-pascal::parameterGroup_strategy = st.builds(
-    pascal::parameterGroup,
+pascal_parameterGroup_strategy = st.builds(
+    pascal_parameterGroup,
 )
-pascal::formalParameterSection_strategy = st.builds(
-    pascal::formalParameterSection,
+pascal_formalParameterSection_strategy = st.builds(
+    pascal_formalParameterSection,
 )
-pascal::stringtype_strategy = st.builds(
-    pascal::stringtype,
+pascal_stringtype_strategy = st.builds(
+    pascal_stringtype,
 )
-pascal::subrangeType_strategy = st.builds(
-    pascal::subrangeType,
+pascal_subrangeType_strategy = st.builds(
+    pascal_subrangeType,
 )
-pascal::scalarType_strategy = st.builds(
-    pascal::scalarType,
+pascal_scalarType_strategy = st.builds(
+    pascal_scalarType,
 )
-pascal::pointerType_strategy = st.builds(
-    pascal::pointerType,
+pascal_pointerType_strategy = st.builds(
+    pascal_pointerType,
 )
-pascal::structuredType_strategy = st.builds(
-    pascal::structuredType,
+pascal_structuredType_strategy = st.builds(
+    pascal_structuredType,
 )
-pascal::simpleType_strategy = st.builds(
-    pascal::simpleType,
+pascal_simpleType_strategy = st.builds(
+    pascal_simpleType,
 )
-pascal::typeDefinition_strategy = st.builds(
-    pascal::typeDefinition,
+pascal_typeDefinition_strategy = st.builds(
+    pascal_typeDefinition,
 )
-pascal::fieldList_strategy = st.builds(
-    pascal::fieldList,
+pascal_fieldList_strategy = st.builds(
+    pascal_fieldList,
 )
-pascal::constantChr_strategy = st.builds(
-    pascal::constantChr,
+pascal_constantChr_strategy = st.builds(
+    pascal_constantChr,
 )
-pascal::typeIdentifier_strategy = st.builds(
-    pascal::typeIdentifier,
+pascal_typeIdentifier_strategy = st.builds(
+    pascal_typeIdentifier,
+    char=
+        safe_text,
     integer=
         safe_text,
-    char=
+    real=
         safe_text,
     boolean=
         safe_text,
     string=
-        safe_text,
-    real=
         safe_text
 )
-pascal::formalParameterList_strategy = st.builds(
-    pascal::formalParameterList,
+pascal_formalParameterList_strategy = st.builds(
+    pascal_formalParameterList,
 )
-pascal::procedureType_strategy = st.builds(
-    pascal::procedureType,
+pascal_procedureType_strategy = st.builds(
+    pascal_procedureType,
 )
-pascal::functionType_strategy = st.builds(
-    pascal::functionType,
+pascal_functionType_strategy = st.builds(
+    pascal_functionType,
 )
-pascal::type_strategy = st.builds(
-    pascal::type,
+pascal_type_strategy = st.builds(
+    pascal_type,
 )
-pascal::unsignedInteger_strategy = st.builds(
-    pascal::unsignedInteger,
+pascal_unsignedInteger_strategy = st.builds(
+    pascal_unsignedInteger,
     number=
         safe_text
 )
 statement_strategy = st.builds(
     statement,
 )
-label::declaration::part_strategy = st.builds(
-    label::declaration::part,
+label_declaration_part_strategy = st.builds(
+    label_declaration_part,
 )
-pascal::label_strategy = st.builds(
-    pascal::label,
+pascal_label_strategy = st.builds(
+    pascal_label,
 )
-pascal::compoundStatement_strategy = st.builds(
-    pascal::compoundStatement,
+pascal_compoundStatement_strategy = st.builds(
+    pascal_compoundStatement,
 )
-pascal::usesUnitsPart_strategy = st.builds(
-    pascal::usesUnitsPart,
+pascal_usesUnitsPart_strategy = st.builds(
+    pascal_usesUnitsPart,
 )
-pascal::procedureAndFunctionDeclarationPart_strategy = st.builds(
-    pascal::procedureAndFunctionDeclarationPart,
+pascal_procedureAndFunctionDeclarationPart_strategy = st.builds(
+    pascal_procedureAndFunctionDeclarationPart,
 )
-pascal::variableDeclarationPart_strategy = st.builds(
-    pascal::variableDeclarationPart,
+pascal_variableDeclarationPart_strategy = st.builds(
+    pascal_variableDeclarationPart,
 )
-pascal::typeDefinitionPart_strategy = st.builds(
-    pascal::typeDefinitionPart,
+pascal_typeDefinitionPart_strategy = st.builds(
+    pascal_typeDefinitionPart,
 )
-pascal::constantDefinitionPart_strategy = st.builds(
-    pascal::constantDefinitionPart,
+pascal_constantDefinitionPart_strategy = st.builds(
+    pascal_constantDefinitionPart,
 )
-pascal::label::declaration::part_strategy = st.builds(
-    pascal::label::declaration::part,
+pascal_label_declaration_part_strategy = st.builds(
+    pascal_label_declaration_part,
 )
-pascal::unsignedNumber_strategy = st.builds(
-    pascal::unsignedNumber,
+pascal_unsignedNumber_strategy = st.builds(
+    pascal_unsignedNumber,
     unsignedReal=
         safe_text
 )
 variant_strategy = st.builds(
     variant,
 )
-pascal::constant_strategy = st.builds(
-    pascal::constant,
+pascal_constant_strategy = st.builds(
+    pascal_constant,
     sign=
         safe_text,
     string=
@@ -1453,397 +1453,364 @@ pascal::constant_strategy = st.builds(
     bool=
         safe_text
 )
-pascal::constantDefinition_strategy = st.builds(
-    pascal::constantDefinition,
+pascal_constantDefinition_strategy = st.builds(
+    pascal_constantDefinition,
 )
-pascal::pascal_strategy = st.builds(
-    pascal::pascal,
+pascal_pascal_strategy = st.builds(
+    pascal_pascal,
 )
-pascal::identifierList_strategy = st.builds(
-    pascal::identifierList,
+pascal_identifierList_strategy = st.builds(
+    pascal_identifierList,
 )
-pascal::identifier_strategy = st.builds(
-    pascal::identifier,
+pascal_identifier_strategy = st.builds(
+    pascal_identifier,
     identifier=
         safe_text
 )
-pascal::block_strategy = st.builds(
-    pascal::block,
+pascal_block_strategy = st.builds(
+    pascal_block,
 )
-pascal::programHeading_strategy = st.builds(
-    pascal::programHeading,
+pascal_programHeading_strategy = st.builds(
+    pascal_programHeading,
 )
-pascal::program_strategy = st.builds(
-    pascal::program,
+pascal_program_strategy = st.builds(
+    pascal_program,
 )
 
-@given(instance=pascal::caseListElement_strategy)
+@given(instance=pascal_caseListElement_strategy)
 @settings(max_examples=50)
-def test_pascal::caselistelement_instantiation(instance):
-    assert isinstance(instance, pascal::caseListElement)
+def test_pascal_caselistelement_instantiation(instance):
+    assert isinstance(instance, pascal_caseListElement)
 
 @given(instance=parameterList_strategy)
 @settings(max_examples=50)
 def test_parameterlist_instantiation(instance):
     assert isinstance(instance, parameterList)
 
-@given(instance=pascal::actualParameter_strategy)
+@given(instance=pascal_actualParameter_strategy)
 @settings(max_examples=50)
-def test_pascal::actualparameter_instantiation(instance):
-    assert isinstance(instance, pascal::actualParameter)
+def test_pascal_actualparameter_instantiation(instance):
+    assert isinstance(instance, pascal_actualParameter)
 
-@given(instance=pascal::functionDesignator_strategy)
+@given(instance=pascal_functionDesignator_strategy)
 @settings(max_examples=50)
-def test_pascal::functiondesignator_instantiation(instance):
-    assert isinstance(instance, pascal::functionDesignator)
+def test_pascal_functiondesignator_instantiation(instance):
+    assert isinstance(instance, pascal_functionDesignator)
 
-@given(instance=pascal::caseStatement_strategy)
+@given(instance=pascal_caseStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::casestatement_instantiation(instance):
-    assert isinstance(instance, pascal::caseStatement)
+def test_pascal_casestatement_instantiation(instance):
+    assert isinstance(instance, pascal_caseStatement)
 
-@given(instance=pascal::statements_strategy)
+@given(instance=pascal_statements_strategy)
 @settings(max_examples=50)
-def test_pascal::statements_instantiation(instance):
-    assert isinstance(instance, pascal::statements)
+def test_pascal_statements_instantiation(instance):
+    assert isinstance(instance, pascal_statements)
 
-@given(instance=pascal::conditionalStatement_strategy)
+@given(instance=pascal_conditionalStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::conditionalstatement_instantiation(instance):
-    assert isinstance(instance, pascal::conditionalStatement)
+def test_pascal_conditionalstatement_instantiation(instance):
+    assert isinstance(instance, pascal_conditionalStatement)
 
-@given(instance=pascal::term_strategy)
+@given(instance=pascal_term_strategy)
 @settings(max_examples=50)
-def test_pascal::term_instantiation(instance):
-    assert isinstance(instance, pascal::term)
-
-@given(instance=pascal::term_strategy)
-def test_pascal::term_multiplicativeoperator_type(instance):
-    assert isinstance(instance.multiplicativeoperator, str)
+def test_pascal_term_instantiation(instance):
+    assert isinstance(instance, pascal_term)
 
 
-@given(instance=pascal::term_strategy)
-def test_pascal::term_multiplicativeoperator_setter(instance):
+
+@given(instance=pascal_term_strategy)
+def test_pascal_term_multiplicativeoperator_setter(instance):
     original = instance.multiplicativeoperator
     instance.multiplicativeoperator = original
     assert instance.multiplicativeoperator == original
 
-@given(instance=pascal::simpleExpression_strategy)
+@given(instance=pascal_simpleExpression_strategy)
 @settings(max_examples=50)
-def test_pascal::simpleexpression_instantiation(instance):
-    assert isinstance(instance, pascal::simpleExpression)
-
-@given(instance=pascal::simpleExpression_strategy)
-def test_pascal::simpleexpression_additiveoperator_type(instance):
-    assert isinstance(instance.additiveoperator, str)
+def test_pascal_simpleexpression_instantiation(instance):
+    assert isinstance(instance, pascal_simpleExpression)
 
 
-@given(instance=pascal::simpleExpression_strategy)
-def test_pascal::simpleexpression_additiveoperator_setter(instance):
+
+@given(instance=pascal_simpleExpression_strategy)
+def test_pascal_simpleexpression_additiveoperator_setter(instance):
     original = instance.additiveoperator
     instance.additiveoperator = original
     assert instance.additiveoperator == original
 
-@given(instance=pascal::variable_strategy)
+@given(instance=pascal_variable_strategy)
 @settings(max_examples=50)
-def test_pascal::variable_instantiation(instance):
-    assert isinstance(instance, pascal::variable)
+def test_pascal_variable_instantiation(instance):
+    assert isinstance(instance, pascal_variable)
 
-@given(instance=pascal::assignmentStatement_strategy)
+@given(instance=pascal_assignmentStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, pascal::assignmentStatement)
+def test_pascal_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, pascal_assignmentStatement)
 
-@given(instance=pascal::gotoStatement_strategy)
+@given(instance=pascal_gotoStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::gotostatement_instantiation(instance):
-    assert isinstance(instance, pascal::gotoStatement)
+def test_pascal_gotostatement_instantiation(instance):
+    assert isinstance(instance, pascal_gotoStatement)
 
-@given(instance=pascal::parameterList_strategy)
+@given(instance=pascal_parameterList_strategy)
 @settings(max_examples=50)
-def test_pascal::parameterlist_instantiation(instance):
-    assert isinstance(instance, pascal::parameterList)
+def test_pascal_parameterlist_instantiation(instance):
+    assert isinstance(instance, pascal_parameterList)
 
-@given(instance=pascal::structuredStatement_strategy)
+@given(instance=pascal_structuredStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::structuredstatement_instantiation(instance):
-    assert isinstance(instance, pascal::structuredStatement)
+def test_pascal_structuredstatement_instantiation(instance):
+    assert isinstance(instance, pascal_structuredStatement)
 
-@given(instance=pascal::simpleStatement_strategy)
+@given(instance=pascal_simpleStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::simplestatement_instantiation(instance):
-    assert isinstance(instance, pascal::simpleStatement)
+def test_pascal_simplestatement_instantiation(instance):
+    assert isinstance(instance, pascal_simpleStatement)
 
-@given(instance=pascal::unsignedConstant_strategy)
+@given(instance=pascal_unsignedConstant_strategy)
 @settings(max_examples=50)
-def test_pascal::unsignedconstant_instantiation(instance):
-    assert isinstance(instance, pascal::unsignedConstant)
-
-@given(instance=pascal::unsignedConstant_strategy)
-def test_pascal::unsignedconstant_string_literal_type(instance):
-    assert isinstance(instance.string_literal, str)
+def test_pascal_unsignedconstant_instantiation(instance):
+    assert isinstance(instance, pascal_unsignedConstant)
 
 
-@given(instance=pascal::unsignedConstant_strategy)
-def test_pascal::unsignedconstant_string_literal_setter(instance):
+
+@given(instance=pascal_unsignedConstant_strategy)
+def test_pascal_unsignedconstant_string_literal_setter(instance):
     original = instance.string_literal
     instance.string_literal = original
     assert instance.string_literal == original
 
-@given(instance=pascal::factor_strategy)
+@given(instance=pascal_factor_strategy)
 @settings(max_examples=50)
-def test_pascal::factor_instantiation(instance):
-    assert isinstance(instance, pascal::factor)
-
-@given(instance=pascal::factor_strategy)
-def test_pascal::factor_bool_type(instance):
-    assert isinstance(instance.bool, str)
+def test_pascal_factor_instantiation(instance):
+    assert isinstance(instance, pascal_factor)
 
 
-@given(instance=pascal::factor_strategy)
-def test_pascal::factor_bool_setter(instance):
+
+@given(instance=pascal_factor_strategy)
+def test_pascal_factor_bool_setter(instance):
     original = instance.bool
     instance.bool = original
     assert instance.bool == original
 
-@given(instance=pascal::signedFactor_strategy)
+@given(instance=pascal_signedFactor_strategy)
 @settings(max_examples=50)
-def test_pascal::signedfactor_instantiation(instance):
-    assert isinstance(instance, pascal::signedFactor)
+def test_pascal_signedfactor_instantiation(instance):
+    assert isinstance(instance, pascal_signedFactor)
 
-@given(instance=pascal::functionDeclaration_strategy)
+@given(instance=pascal_functionDeclaration_strategy)
 @settings(max_examples=50)
-def test_pascal::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, pascal::functionDeclaration)
+def test_pascal_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, pascal_functionDeclaration)
 
-@given(instance=pascal::procedureDeclaration_strategy)
+@given(instance=pascal_procedureDeclaration_strategy)
 @settings(max_examples=50)
-def test_pascal::proceduredeclaration_instantiation(instance):
-    assert isinstance(instance, pascal::procedureDeclaration)
+def test_pascal_proceduredeclaration_instantiation(instance):
+    assert isinstance(instance, pascal_procedureDeclaration)
 
-@given(instance=pascal::procedureOrFunctionDeclaration_strategy)
+@given(instance=pascal_procedureOrFunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_pascal::procedureorfunctiondeclaration_instantiation(instance):
-    assert isinstance(instance, pascal::procedureOrFunctionDeclaration)
+def test_pascal_procedureorfunctiondeclaration_instantiation(instance):
+    assert isinstance(instance, pascal_procedureOrFunctionDeclaration)
 
-@given(instance=pascal::expression_strategy)
+@given(instance=pascal_expression_strategy)
 @settings(max_examples=50)
-def test_pascal::expression_instantiation(instance):
-    assert isinstance(instance, pascal::expression)
-
-@given(instance=pascal::expression_strategy)
-def test_pascal::expression_relationaloperator_type(instance):
-    assert isinstance(instance.relationaloperator, str)
+def test_pascal_expression_instantiation(instance):
+    assert isinstance(instance, pascal_expression)
 
 
-@given(instance=pascal::expression_strategy)
-def test_pascal::expression_relationaloperator_setter(instance):
+
+@given(instance=pascal_expression_strategy)
+def test_pascal_expression_relationaloperator_setter(instance):
     original = instance.relationaloperator
     instance.relationaloperator = original
     assert instance.relationaloperator == original
 
-@given(instance=pascal::variableDeclaration_strategy)
+@given(instance=pascal_variableDeclaration_strategy)
 @settings(max_examples=50)
-def test_pascal::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, pascal::variableDeclaration)
+def test_pascal_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, pascal_variableDeclaration)
 
-@given(instance=pascal::constList_strategy)
+@given(instance=pascal_constList_strategy)
 @settings(max_examples=50)
-def test_pascal::constlist_instantiation(instance):
-    assert isinstance(instance, pascal::constList)
+def test_pascal_constlist_instantiation(instance):
+    assert isinstance(instance, pascal_constList)
 
-@given(instance=pascal::unlabelledStatement_strategy)
+@given(instance=pascal_unlabelledStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::unlabelledstatement_instantiation(instance):
-    assert isinstance(instance, pascal::unlabelledStatement)
+def test_pascal_unlabelledstatement_instantiation(instance):
+    assert isinstance(instance, pascal_unlabelledStatement)
 
-@given(instance=pascal::statement_strategy)
+@given(instance=pascal_statement_strategy)
 @settings(max_examples=50)
-def test_pascal::statement_instantiation(instance):
-    assert isinstance(instance, pascal::statement)
+def test_pascal_statement_instantiation(instance):
+    assert isinstance(instance, pascal_statement)
 
-@given(instance=pascal::recordSection_strategy)
+@given(instance=pascal_recordSection_strategy)
 @settings(max_examples=50)
-def test_pascal::recordsection_instantiation(instance):
-    assert isinstance(instance, pascal::recordSection)
+def test_pascal_recordsection_instantiation(instance):
+    assert isinstance(instance, pascal_recordSection)
 
-@given(instance=pascal::variantPart_strategy)
+@given(instance=pascal_variantPart_strategy)
 @settings(max_examples=50)
-def test_pascal::variantpart_instantiation(instance):
-    assert isinstance(instance, pascal::variantPart)
+def test_pascal_variantpart_instantiation(instance):
+    assert isinstance(instance, pascal_variantPart)
 
-@given(instance=pascal::fixedPart_strategy)
+@given(instance=pascal_fixedPart_strategy)
 @settings(max_examples=50)
-def test_pascal::fixedpart_instantiation(instance):
-    assert isinstance(instance, pascal::fixedPart)
+def test_pascal_fixedpart_instantiation(instance):
+    assert isinstance(instance, pascal_fixedPart)
 
-@given(instance=pascal::recordType_strategy)
+@given(instance=pascal_recordType_strategy)
 @settings(max_examples=50)
-def test_pascal::recordtype_instantiation(instance):
-    assert isinstance(instance, pascal::recordType)
+def test_pascal_recordtype_instantiation(instance):
+    assert isinstance(instance, pascal_recordType)
 
-@given(instance=pascal::unpackedStructuredType_strategy)
+@given(instance=pascal_unpackedStructuredType_strategy)
 @settings(max_examples=50)
-def test_pascal::unpackedstructuredtype_instantiation(instance):
-    assert isinstance(instance, pascal::unpackedStructuredType)
+def test_pascal_unpackedstructuredtype_instantiation(instance):
+    assert isinstance(instance, pascal_unpackedStructuredType)
 
-@given(instance=pascal::variant_strategy)
+@given(instance=pascal_variant_strategy)
 @settings(max_examples=50)
-def test_pascal::variant_instantiation(instance):
-    assert isinstance(instance, pascal::variant)
+def test_pascal_variant_instantiation(instance):
+    assert isinstance(instance, pascal_variant)
 
-@given(instance=pascal::tag_strategy)
+@given(instance=pascal_tag_strategy)
 @settings(max_examples=50)
-def test_pascal::tag_instantiation(instance):
-    assert isinstance(instance, pascal::tag)
+def test_pascal_tag_instantiation(instance):
+    assert isinstance(instance, pascal_tag)
 
-@given(instance=pascal::parameterGroup_strategy)
+@given(instance=pascal_parameterGroup_strategy)
 @settings(max_examples=50)
-def test_pascal::parametergroup_instantiation(instance):
-    assert isinstance(instance, pascal::parameterGroup)
+def test_pascal_parametergroup_instantiation(instance):
+    assert isinstance(instance, pascal_parameterGroup)
 
-@given(instance=pascal::formalParameterSection_strategy)
+@given(instance=pascal_formalParameterSection_strategy)
 @settings(max_examples=50)
-def test_pascal::formalparametersection_instantiation(instance):
-    assert isinstance(instance, pascal::formalParameterSection)
+def test_pascal_formalparametersection_instantiation(instance):
+    assert isinstance(instance, pascal_formalParameterSection)
 
-@given(instance=pascal::stringtype_strategy)
+@given(instance=pascal_stringtype_strategy)
 @settings(max_examples=50)
-def test_pascal::stringtype_instantiation(instance):
-    assert isinstance(instance, pascal::stringtype)
+def test_pascal_stringtype_instantiation(instance):
+    assert isinstance(instance, pascal_stringtype)
 
-@given(instance=pascal::subrangeType_strategy)
+@given(instance=pascal_subrangeType_strategy)
 @settings(max_examples=50)
-def test_pascal::subrangetype_instantiation(instance):
-    assert isinstance(instance, pascal::subrangeType)
+def test_pascal_subrangetype_instantiation(instance):
+    assert isinstance(instance, pascal_subrangeType)
 
-@given(instance=pascal::scalarType_strategy)
+@given(instance=pascal_scalarType_strategy)
 @settings(max_examples=50)
-def test_pascal::scalartype_instantiation(instance):
-    assert isinstance(instance, pascal::scalarType)
+def test_pascal_scalartype_instantiation(instance):
+    assert isinstance(instance, pascal_scalarType)
 
-@given(instance=pascal::pointerType_strategy)
+@given(instance=pascal_pointerType_strategy)
 @settings(max_examples=50)
-def test_pascal::pointertype_instantiation(instance):
-    assert isinstance(instance, pascal::pointerType)
+def test_pascal_pointertype_instantiation(instance):
+    assert isinstance(instance, pascal_pointerType)
 
-@given(instance=pascal::structuredType_strategy)
+@given(instance=pascal_structuredType_strategy)
 @settings(max_examples=50)
-def test_pascal::structuredtype_instantiation(instance):
-    assert isinstance(instance, pascal::structuredType)
+def test_pascal_structuredtype_instantiation(instance):
+    assert isinstance(instance, pascal_structuredType)
 
-@given(instance=pascal::simpleType_strategy)
+@given(instance=pascal_simpleType_strategy)
 @settings(max_examples=50)
-def test_pascal::simpletype_instantiation(instance):
-    assert isinstance(instance, pascal::simpleType)
+def test_pascal_simpletype_instantiation(instance):
+    assert isinstance(instance, pascal_simpleType)
 
-@given(instance=pascal::typeDefinition_strategy)
+@given(instance=pascal_typeDefinition_strategy)
 @settings(max_examples=50)
-def test_pascal::typedefinition_instantiation(instance):
-    assert isinstance(instance, pascal::typeDefinition)
+def test_pascal_typedefinition_instantiation(instance):
+    assert isinstance(instance, pascal_typeDefinition)
 
-@given(instance=pascal::fieldList_strategy)
+@given(instance=pascal_fieldList_strategy)
 @settings(max_examples=50)
-def test_pascal::fieldlist_instantiation(instance):
-    assert isinstance(instance, pascal::fieldList)
+def test_pascal_fieldlist_instantiation(instance):
+    assert isinstance(instance, pascal_fieldList)
 
-@given(instance=pascal::constantChr_strategy)
+@given(instance=pascal_constantChr_strategy)
 @settings(max_examples=50)
-def test_pascal::constantchr_instantiation(instance):
-    assert isinstance(instance, pascal::constantChr)
+def test_pascal_constantchr_instantiation(instance):
+    assert isinstance(instance, pascal_constantChr)
 
-@given(instance=pascal::typeIdentifier_strategy)
+@given(instance=pascal_typeIdentifier_strategy)
 @settings(max_examples=50)
-def test_pascal::typeidentifier_instantiation(instance):
-    assert isinstance(instance, pascal::typeIdentifier)
-
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_integer_type(instance):
-    assert isinstance(instance.integer, str)
+def test_pascal_typeidentifier_instantiation(instance):
+    assert isinstance(instance, pascal_typeIdentifier)
 
 
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_integer_setter(instance):
-    original = instance.integer
-    instance.integer = original
-    assert instance.integer == original
 
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_char_setter(instance):
+@given(instance=pascal_typeIdentifier_strategy)
+def test_pascal_typeidentifier_char_setter(instance):
     original = instance.char
     instance.char = original
     assert instance.char == original
 
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_boolean_type(instance):
-    assert isinstance(instance.boolean, str)
 
 
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_boolean_setter(instance):
-    original = instance.boolean
-    instance.boolean = original
-    assert instance.boolean == original
-
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_string_type(instance):
-    assert isinstance(instance.string, str)
+@given(instance=pascal_typeIdentifier_strategy)
+def test_pascal_typeidentifier_integer_setter(instance):
+    original = instance.integer
+    instance.integer = original
+    assert instance.integer == original
 
 
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_string_setter(instance):
-    original = instance.string
-    instance.string = original
-    assert instance.string == original
 
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_real_type(instance):
-    assert isinstance(instance.real, str)
-
-
-@given(instance=pascal::typeIdentifier_strategy)
-def test_pascal::typeidentifier_real_setter(instance):
+@given(instance=pascal_typeIdentifier_strategy)
+def test_pascal_typeidentifier_real_setter(instance):
     original = instance.real
     instance.real = original
     assert instance.real == original
 
-@given(instance=pascal::formalParameterList_strategy)
+
+
+@given(instance=pascal_typeIdentifier_strategy)
+def test_pascal_typeidentifier_boolean_setter(instance):
+    original = instance.boolean
+    instance.boolean = original
+    assert instance.boolean == original
+
+
+
+@given(instance=pascal_typeIdentifier_strategy)
+def test_pascal_typeidentifier_string_setter(instance):
+    original = instance.string
+    instance.string = original
+    assert instance.string == original
+
+@given(instance=pascal_formalParameterList_strategy)
 @settings(max_examples=50)
-def test_pascal::formalparameterlist_instantiation(instance):
-    assert isinstance(instance, pascal::formalParameterList)
+def test_pascal_formalparameterlist_instantiation(instance):
+    assert isinstance(instance, pascal_formalParameterList)
 
-@given(instance=pascal::procedureType_strategy)
+@given(instance=pascal_procedureType_strategy)
 @settings(max_examples=50)
-def test_pascal::proceduretype_instantiation(instance):
-    assert isinstance(instance, pascal::procedureType)
+def test_pascal_proceduretype_instantiation(instance):
+    assert isinstance(instance, pascal_procedureType)
 
-@given(instance=pascal::functionType_strategy)
+@given(instance=pascal_functionType_strategy)
 @settings(max_examples=50)
-def test_pascal::functiontype_instantiation(instance):
-    assert isinstance(instance, pascal::functionType)
+def test_pascal_functiontype_instantiation(instance):
+    assert isinstance(instance, pascal_functionType)
 
-@given(instance=pascal::type_strategy)
+@given(instance=pascal_type_strategy)
 @settings(max_examples=50)
-def test_pascal::type_instantiation(instance):
-    assert isinstance(instance, pascal::type)
+def test_pascal_type_instantiation(instance):
+    assert isinstance(instance, pascal_type)
 
-@given(instance=pascal::unsignedInteger_strategy)
+@given(instance=pascal_unsignedInteger_strategy)
 @settings(max_examples=50)
-def test_pascal::unsignedinteger_instantiation(instance):
-    assert isinstance(instance, pascal::unsignedInteger)
-
-@given(instance=pascal::unsignedInteger_strategy)
-def test_pascal::unsignedinteger_number_type(instance):
-    assert isinstance(instance.number, str)
+def test_pascal_unsignedinteger_instantiation(instance):
+    assert isinstance(instance, pascal_unsignedInteger)
 
 
-@given(instance=pascal::unsignedInteger_strategy)
-def test_pascal::unsignedinteger_number_setter(instance):
+
+@given(instance=pascal_unsignedInteger_strategy)
+def test_pascal_unsignedinteger_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
@@ -1853,63 +1820,60 @@ def test_pascal::unsignedinteger_number_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, statement)
 
-@given(instance=label::declaration::part_strategy)
+@given(instance=label_declaration_part_strategy)
 @settings(max_examples=50)
-def test_label::declaration::part_instantiation(instance):
-    assert isinstance(instance, label::declaration::part)
+def test_label_declaration_part_instantiation(instance):
+    assert isinstance(instance, label_declaration_part)
 
-@given(instance=pascal::label_strategy)
+@given(instance=pascal_label_strategy)
 @settings(max_examples=50)
-def test_pascal::label_instantiation(instance):
-    assert isinstance(instance, pascal::label)
+def test_pascal_label_instantiation(instance):
+    assert isinstance(instance, pascal_label)
 
-@given(instance=pascal::compoundStatement_strategy)
+@given(instance=pascal_compoundStatement_strategy)
 @settings(max_examples=50)
-def test_pascal::compoundstatement_instantiation(instance):
-    assert isinstance(instance, pascal::compoundStatement)
+def test_pascal_compoundstatement_instantiation(instance):
+    assert isinstance(instance, pascal_compoundStatement)
 
-@given(instance=pascal::usesUnitsPart_strategy)
+@given(instance=pascal_usesUnitsPart_strategy)
 @settings(max_examples=50)
-def test_pascal::usesunitspart_instantiation(instance):
-    assert isinstance(instance, pascal::usesUnitsPart)
+def test_pascal_usesunitspart_instantiation(instance):
+    assert isinstance(instance, pascal_usesUnitsPart)
 
-@given(instance=pascal::procedureAndFunctionDeclarationPart_strategy)
+@given(instance=pascal_procedureAndFunctionDeclarationPart_strategy)
 @settings(max_examples=50)
-def test_pascal::procedureandfunctiondeclarationpart_instantiation(instance):
-    assert isinstance(instance, pascal::procedureAndFunctionDeclarationPart)
+def test_pascal_procedureandfunctiondeclarationpart_instantiation(instance):
+    assert isinstance(instance, pascal_procedureAndFunctionDeclarationPart)
 
-@given(instance=pascal::variableDeclarationPart_strategy)
+@given(instance=pascal_variableDeclarationPart_strategy)
 @settings(max_examples=50)
-def test_pascal::variabledeclarationpart_instantiation(instance):
-    assert isinstance(instance, pascal::variableDeclarationPart)
+def test_pascal_variabledeclarationpart_instantiation(instance):
+    assert isinstance(instance, pascal_variableDeclarationPart)
 
-@given(instance=pascal::typeDefinitionPart_strategy)
+@given(instance=pascal_typeDefinitionPart_strategy)
 @settings(max_examples=50)
-def test_pascal::typedefinitionpart_instantiation(instance):
-    assert isinstance(instance, pascal::typeDefinitionPart)
+def test_pascal_typedefinitionpart_instantiation(instance):
+    assert isinstance(instance, pascal_typeDefinitionPart)
 
-@given(instance=pascal::constantDefinitionPart_strategy)
+@given(instance=pascal_constantDefinitionPart_strategy)
 @settings(max_examples=50)
-def test_pascal::constantdefinitionpart_instantiation(instance):
-    assert isinstance(instance, pascal::constantDefinitionPart)
+def test_pascal_constantdefinitionpart_instantiation(instance):
+    assert isinstance(instance, pascal_constantDefinitionPart)
 
-@given(instance=pascal::label::declaration::part_strategy)
+@given(instance=pascal_label_declaration_part_strategy)
 @settings(max_examples=50)
-def test_pascal::label::declaration::part_instantiation(instance):
-    assert isinstance(instance, pascal::label::declaration::part)
+def test_pascal_label_declaration_part_instantiation(instance):
+    assert isinstance(instance, pascal_label_declaration_part)
 
-@given(instance=pascal::unsignedNumber_strategy)
+@given(instance=pascal_unsignedNumber_strategy)
 @settings(max_examples=50)
-def test_pascal::unsignednumber_instantiation(instance):
-    assert isinstance(instance, pascal::unsignedNumber)
-
-@given(instance=pascal::unsignedNumber_strategy)
-def test_pascal::unsignednumber_unsignedReal_type(instance):
-    assert isinstance(instance.unsignedReal, str)
+def test_pascal_unsignednumber_instantiation(instance):
+    assert isinstance(instance, pascal_unsignedNumber)
 
 
-@given(instance=pascal::unsignedNumber_strategy)
-def test_pascal::unsignednumber_unsignedReal_setter(instance):
+
+@given(instance=pascal_unsignedNumber_strategy)
+def test_pascal_unsignednumber_unsignedReal_setter(instance):
     original = instance.unsignedReal
     instance.unsignedReal = original
     assert instance.unsignedReal == original
@@ -1919,86 +1883,74 @@ def test_pascal::unsignednumber_unsignedReal_setter(instance):
 def test_variant_instantiation(instance):
     assert isinstance(instance, variant)
 
-@given(instance=pascal::constant_strategy)
+@given(instance=pascal_constant_strategy)
 @settings(max_examples=50)
-def test_pascal::constant_instantiation(instance):
-    assert isinstance(instance, pascal::constant)
-
-@given(instance=pascal::constant_strategy)
-def test_pascal::constant_sign_type(instance):
-    assert isinstance(instance.sign, str)
+def test_pascal_constant_instantiation(instance):
+    assert isinstance(instance, pascal_constant)
 
 
-@given(instance=pascal::constant_strategy)
-def test_pascal::constant_sign_setter(instance):
+
+@given(instance=pascal_constant_strategy)
+def test_pascal_constant_sign_setter(instance):
     original = instance.sign
     instance.sign = original
     assert instance.sign == original
 
-@given(instance=pascal::constant_strategy)
-def test_pascal::constant_string_type(instance):
-    assert isinstance(instance.string, str)
 
 
-@given(instance=pascal::constant_strategy)
-def test_pascal::constant_string_setter(instance):
+@given(instance=pascal_constant_strategy)
+def test_pascal_constant_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=pascal::constant_strategy)
-def test_pascal::constant_bool_type(instance):
-    assert isinstance(instance.bool, str)
 
 
-@given(instance=pascal::constant_strategy)
-def test_pascal::constant_bool_setter(instance):
+@given(instance=pascal_constant_strategy)
+def test_pascal_constant_bool_setter(instance):
     original = instance.bool
     instance.bool = original
     assert instance.bool == original
 
-@given(instance=pascal::constantDefinition_strategy)
+@given(instance=pascal_constantDefinition_strategy)
 @settings(max_examples=50)
-def test_pascal::constantdefinition_instantiation(instance):
-    assert isinstance(instance, pascal::constantDefinition)
+def test_pascal_constantdefinition_instantiation(instance):
+    assert isinstance(instance, pascal_constantDefinition)
 
-@given(instance=pascal::pascal_strategy)
+@given(instance=pascal_pascal_strategy)
 @settings(max_examples=50)
-def test_pascal::pascal_instantiation(instance):
-    assert isinstance(instance, pascal::pascal)
+def test_pascal_pascal_instantiation(instance):
+    assert isinstance(instance, pascal_pascal)
 
-@given(instance=pascal::identifierList_strategy)
+@given(instance=pascal_identifierList_strategy)
 @settings(max_examples=50)
-def test_pascal::identifierlist_instantiation(instance):
-    assert isinstance(instance, pascal::identifierList)
+def test_pascal_identifierlist_instantiation(instance):
+    assert isinstance(instance, pascal_identifierList)
 
-@given(instance=pascal::identifier_strategy)
+@given(instance=pascal_identifier_strategy)
 @settings(max_examples=50)
-def test_pascal::identifier_instantiation(instance):
-    assert isinstance(instance, pascal::identifier)
-
-@given(instance=pascal::identifier_strategy)
-def test_pascal::identifier_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_pascal_identifier_instantiation(instance):
+    assert isinstance(instance, pascal_identifier)
 
 
-@given(instance=pascal::identifier_strategy)
-def test_pascal::identifier_identifier_setter(instance):
+
+@given(instance=pascal_identifier_strategy)
+def test_pascal_identifier_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=pascal::block_strategy)
+@given(instance=pascal_block_strategy)
 @settings(max_examples=50)
-def test_pascal::block_instantiation(instance):
-    assert isinstance(instance, pascal::block)
+def test_pascal_block_instantiation(instance):
+    assert isinstance(instance, pascal_block)
 
-@given(instance=pascal::programHeading_strategy)
+@given(instance=pascal_programHeading_strategy)
 @settings(max_examples=50)
-def test_pascal::programheading_instantiation(instance):
-    assert isinstance(instance, pascal::programHeading)
+def test_pascal_programheading_instantiation(instance):
+    assert isinstance(instance, pascal_programHeading)
 
-@given(instance=pascal::program_strategy)
+@given(instance=pascal_program_strategy)
 @settings(max_examples=50)
-def test_pascal::program_instantiation(instance):
-    assert isinstance(instance, pascal::program)
+def test_pascal_program_instantiation(instance):
+    assert isinstance(instance, pascal_program)

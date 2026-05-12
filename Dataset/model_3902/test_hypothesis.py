@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    soaml::Categorization,
+from python_code import (
+    soaml_Categorization,
     FreeFormValue,
-    soaml::CategoryValue,
-    soaml::FreeFormValue,
-    soaml::FreeFormDescriptor,
-    soaml::Package,
+    soaml_CategoryValue,
+    soaml_FreeFormValue,
+    soaml_FreeFormDescriptor,
+    soaml_Package,
     NodeDescriptor,
-    soaml::Category,
-    soaml::Catalog,
-    soaml::Artifact,
-    soaml::NodeDescriptor,
-    soaml::Dependency,
-    soaml::Expose,
-    soaml::Signal,
-    soaml::DataType,
-    soaml::MessageType,
-    soaml::Attachment,
-    soaml::Property,
-    soaml::Connector,
-    soaml::ServiceChannel,
-    soaml::Service,
-    soaml::Request,
-    soaml::Port,
+    soaml_Category,
+    soaml_Catalog,
+    soaml_Artifact,
+    soaml_NodeDescriptor,
+    soaml_Dependency,
+    soaml_Expose,
+    soaml_Signal,
+    soaml_DataType,
+    soaml_MessageType,
+    soaml_Attachment,
+    soaml_Property,
+    soaml_Connector,
+    soaml_ServiceChannel,
+    soaml_Service,
+    soaml_Request,
+    soaml_Port,
     Participant,
-    soaml::Agent,
-    soaml::Participant,
-    soaml::Capability,
-    soaml::Comment,
-    soaml::ValueSpecification,
-    soaml::Milestone,
-    soaml::Provider,
-    soaml::Class,
-    soaml::Interface,
-    soaml::Consumer,
-    soaml::CollaborationUse,
+    soaml_Agent,
+    soaml_Participant,
+    soaml_Capability,
+    soaml_Comment,
+    soaml_ValueSpecification,
+    soaml_Milestone,
+    soaml_Provider,
+    soaml_Class,
+    soaml_Interface,
+    soaml_Consumer,
+    soaml_CollaborationUse,
     Collaboration,
-    soaml::ServiceContract,
-    soaml::ServiceArchitecture,
-    soaml::Collaboration,
-    soaml::ServiceInterface,
-    soaml::Realization,
-    soaml::MotivationRealization,
+    soaml_ServiceContract,
+    soaml_ServiceArchitecture,
+    soaml_Collaboration,
+    soaml_ServiceInterface,
+    soaml_Realization,
+    soaml_MotivationRealization,
 )
 
 # =============================================================================
@@ -56,16 +56,16 @@ from classes import (
 
 
 
-def test_soaml::categorization_is_not_abstract():
-    assert not inspect.isabstract(soaml::Categorization)
+def test_soaml_categorization_is_not_abstract():
+    assert not inspect.isabstract(soaml_Categorization)
 
 
-def test_soaml::categorization_constructor_exists():
-    assert callable(soaml::Categorization.__init__)
+def test_soaml_categorization_constructor_exists():
+    assert callable(soaml_Categorization.__init__)
 
 
-def test_soaml::categorization_constructor_args():
-    sig = inspect.signature(soaml::Categorization.__init__)
+def test_soaml_categorization_constructor_args():
+    sig = inspect.signature(soaml_Categorization.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,58 +84,58 @@ def test_freeformvalue_constructor_args():
 
 
 
-def test_soaml::categoryvalue_is_not_abstract():
-    assert not inspect.isabstract(soaml::CategoryValue)
+def test_soaml_categoryvalue_is_not_abstract():
+    assert not inspect.isabstract(soaml_CategoryValue)
 
 
-def test_soaml::categoryvalue_constructor_exists():
-    assert callable(soaml::CategoryValue.__init__)
+def test_soaml_categoryvalue_constructor_exists():
+    assert callable(soaml_CategoryValue.__init__)
 
 
-def test_soaml::categoryvalue_constructor_args():
-    sig = inspect.signature(soaml::CategoryValue.__init__)
+def test_soaml_categoryvalue_constructor_args():
+    sig = inspect.signature(soaml_CategoryValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::freeformvalue_is_not_abstract():
-    assert not inspect.isabstract(soaml::FreeFormValue)
+def test_soaml_freeformvalue_is_not_abstract():
+    assert not inspect.isabstract(soaml_FreeFormValue)
 
 
-def test_soaml::freeformvalue_constructor_exists():
-    assert callable(soaml::FreeFormValue.__init__)
+def test_soaml_freeformvalue_constructor_exists():
+    assert callable(soaml_FreeFormValue.__init__)
 
 
-def test_soaml::freeformvalue_constructor_args():
-    sig = inspect.signature(soaml::FreeFormValue.__init__)
+def test_soaml_freeformvalue_constructor_args():
+    sig = inspect.signature(soaml_FreeFormValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::freeformdescriptor_is_not_abstract():
-    assert not inspect.isabstract(soaml::FreeFormDescriptor)
+def test_soaml_freeformdescriptor_is_not_abstract():
+    assert not inspect.isabstract(soaml_FreeFormDescriptor)
 
 
-def test_soaml::freeformdescriptor_constructor_exists():
-    assert callable(soaml::FreeFormDescriptor.__init__)
+def test_soaml_freeformdescriptor_constructor_exists():
+    assert callable(soaml_FreeFormDescriptor.__init__)
 
 
-def test_soaml::freeformdescriptor_constructor_args():
-    sig = inspect.signature(soaml::FreeFormDescriptor.__init__)
+def test_soaml_freeformdescriptor_constructor_args():
+    sig = inspect.signature(soaml_FreeFormDescriptor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::package_is_not_abstract():
-    assert not inspect.isabstract(soaml::Package)
+def test_soaml_package_is_not_abstract():
+    assert not inspect.isabstract(soaml_Package)
 
 
-def test_soaml::package_constructor_exists():
-    assert callable(soaml::Package.__init__)
+def test_soaml_package_constructor_exists():
+    assert callable(soaml_Package.__init__)
 
 
-def test_soaml::package_constructor_args():
-    sig = inspect.signature(soaml::Package.__init__)
+def test_soaml_package_constructor_args():
+    sig = inspect.signature(soaml_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,135 +154,135 @@ def test_nodedescriptor_constructor_args():
 
 
 
-def test_soaml::category_is_not_abstract():
-    assert not inspect.isabstract(soaml::Category)
+def test_soaml_category_is_not_abstract():
+    assert not inspect.isabstract(soaml_Category)
 
 
-def test_soaml::category_constructor_exists():
-    assert callable(soaml::Category.__init__)
+def test_soaml_category_constructor_exists():
+    assert callable(soaml_Category.__init__)
 
 
-def test_soaml::category_constructor_args():
-    sig = inspect.signature(soaml::Category.__init__)
+def test_soaml_category_constructor_args():
+    sig = inspect.signature(soaml_Category.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::catalog_is_not_abstract():
-    assert not inspect.isabstract(soaml::Catalog)
+def test_soaml_catalog_is_not_abstract():
+    assert not inspect.isabstract(soaml_Catalog)
 
 
-def test_soaml::catalog_constructor_exists():
-    assert callable(soaml::Catalog.__init__)
+def test_soaml_catalog_constructor_exists():
+    assert callable(soaml_Catalog.__init__)
 
 
-def test_soaml::catalog_constructor_args():
-    sig = inspect.signature(soaml::Catalog.__init__)
+def test_soaml_catalog_constructor_args():
+    sig = inspect.signature(soaml_Catalog.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::artifact_is_not_abstract():
-    assert not inspect.isabstract(soaml::Artifact)
+def test_soaml_artifact_is_not_abstract():
+    assert not inspect.isabstract(soaml_Artifact)
 
 
-def test_soaml::artifact_constructor_exists():
-    assert callable(soaml::Artifact.__init__)
+def test_soaml_artifact_constructor_exists():
+    assert callable(soaml_Artifact.__init__)
 
 
-def test_soaml::artifact_constructor_args():
-    sig = inspect.signature(soaml::Artifact.__init__)
+def test_soaml_artifact_constructor_args():
+    sig = inspect.signature(soaml_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::nodedescriptor_is_not_abstract():
-    assert not inspect.isabstract(soaml::NodeDescriptor)
+def test_soaml_nodedescriptor_is_not_abstract():
+    assert not inspect.isabstract(soaml_NodeDescriptor)
 
 
-def test_soaml::nodedescriptor_constructor_exists():
-    assert callable(soaml::NodeDescriptor.__init__)
+def test_soaml_nodedescriptor_constructor_exists():
+    assert callable(soaml_NodeDescriptor.__init__)
 
 
-def test_soaml::nodedescriptor_constructor_args():
-    sig = inspect.signature(soaml::NodeDescriptor.__init__)
+def test_soaml_nodedescriptor_constructor_args():
+    sig = inspect.signature(soaml_NodeDescriptor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::dependency_is_not_abstract():
-    assert not inspect.isabstract(soaml::Dependency)
+def test_soaml_dependency_is_not_abstract():
+    assert not inspect.isabstract(soaml_Dependency)
 
 
-def test_soaml::dependency_constructor_exists():
-    assert callable(soaml::Dependency.__init__)
+def test_soaml_dependency_constructor_exists():
+    assert callable(soaml_Dependency.__init__)
 
 
-def test_soaml::dependency_constructor_args():
-    sig = inspect.signature(soaml::Dependency.__init__)
+def test_soaml_dependency_constructor_args():
+    sig = inspect.signature(soaml_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::expose_is_not_abstract():
-    assert not inspect.isabstract(soaml::Expose)
+def test_soaml_expose_is_not_abstract():
+    assert not inspect.isabstract(soaml_Expose)
 
 
-def test_soaml::expose_constructor_exists():
-    assert callable(soaml::Expose.__init__)
+def test_soaml_expose_constructor_exists():
+    assert callable(soaml_Expose.__init__)
 
 
-def test_soaml::expose_constructor_args():
-    sig = inspect.signature(soaml::Expose.__init__)
+def test_soaml_expose_constructor_args():
+    sig = inspect.signature(soaml_Expose.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::signal_is_not_abstract():
-    assert not inspect.isabstract(soaml::Signal)
+def test_soaml_signal_is_not_abstract():
+    assert not inspect.isabstract(soaml_Signal)
 
 
-def test_soaml::signal_constructor_exists():
-    assert callable(soaml::Signal.__init__)
+def test_soaml_signal_constructor_exists():
+    assert callable(soaml_Signal.__init__)
 
 
-def test_soaml::signal_constructor_args():
-    sig = inspect.signature(soaml::Signal.__init__)
+def test_soaml_signal_constructor_args():
+    sig = inspect.signature(soaml_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::datatype_is_not_abstract():
-    assert not inspect.isabstract(soaml::DataType)
+def test_soaml_datatype_is_not_abstract():
+    assert not inspect.isabstract(soaml_DataType)
 
 
-def test_soaml::datatype_constructor_exists():
-    assert callable(soaml::DataType.__init__)
+def test_soaml_datatype_constructor_exists():
+    assert callable(soaml_DataType.__init__)
 
 
-def test_soaml::datatype_constructor_args():
-    sig = inspect.signature(soaml::DataType.__init__)
+def test_soaml_datatype_constructor_args():
+    sig = inspect.signature(soaml_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::messagetype_is_not_abstract():
-    assert not inspect.isabstract(soaml::MessageType)
+def test_soaml_messagetype_is_not_abstract():
+    assert not inspect.isabstract(soaml_MessageType)
 
 
-def test_soaml::messagetype_constructor_exists():
-    assert callable(soaml::MessageType.__init__)
+def test_soaml_messagetype_constructor_exists():
+    assert callable(soaml_MessageType.__init__)
 
 
-def test_soaml::messagetype_constructor_args():
-    sig = inspect.signature(soaml::MessageType.__init__)
+def test_soaml_messagetype_constructor_args():
+    sig = inspect.signature(soaml_MessageType.__init__)
     params = list(sig.parameters.keys())
     assert "encoding" in params, "Missing parameter 'encoding'"
 
-def test_soaml::messagetype_has_encoding():
-    assert hasattr(soaml::MessageType, "encoding")
+def test_soaml_messagetype_has_encoding():
+    assert hasattr(soaml_MessageType, "encoding")
     descriptor = None
-    for klass in soaml::MessageType.__mro__:
+    for klass in soaml_MessageType.__mro__:
         if "encoding" in klass.__dict__:
             descriptor = klass.__dict__["encoding"]
             break
@@ -290,57 +290,57 @@ def test_soaml::messagetype_has_encoding():
 
 
 
-def test_soaml::attachment_is_not_abstract():
-    assert not inspect.isabstract(soaml::Attachment)
+def test_soaml_attachment_is_not_abstract():
+    assert not inspect.isabstract(soaml_Attachment)
 
 
-def test_soaml::attachment_constructor_exists():
-    assert callable(soaml::Attachment.__init__)
+def test_soaml_attachment_constructor_exists():
+    assert callable(soaml_Attachment.__init__)
 
 
-def test_soaml::attachment_constructor_args():
-    sig = inspect.signature(soaml::Attachment.__init__)
+def test_soaml_attachment_constructor_args():
+    sig = inspect.signature(soaml_Attachment.__init__)
     params = list(sig.parameters.keys())
-    assert "mimeType" in params, "Missing parameter 'mimeType'"
     assert "encoding" in params, "Missing parameter 'encoding'"
+    assert "mimeType" in params, "Missing parameter 'mimeType'"
 
-def test_soaml::attachment_has_mimeType():
-    assert hasattr(soaml::Attachment, "mimeType")
+def test_soaml_attachment_has_encoding():
+    assert hasattr(soaml_Attachment, "encoding")
     descriptor = None
-    for klass in soaml::Attachment.__mro__:
+    for klass in soaml_Attachment.__mro__:
+        if "encoding" in klass.__dict__:
+            descriptor = klass.__dict__["encoding"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_soaml_attachment_has_mimeType():
+    assert hasattr(soaml_Attachment, "mimeType")
+    descriptor = None
+    for klass in soaml_Attachment.__mro__:
         if "mimeType" in klass.__dict__:
             descriptor = klass.__dict__["mimeType"]
             break
     assert isinstance(descriptor, property)
 
-def test_soaml::attachment_has_encoding():
-    assert hasattr(soaml::Attachment, "encoding")
-    descriptor = None
-    for klass in soaml::Attachment.__mro__:
-        if "encoding" in klass.__dict__:
-            descriptor = klass.__dict__["encoding"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_soaml::property_is_not_abstract():
-    assert not inspect.isabstract(soaml::Property)
-
-
-def test_soaml::property_constructor_exists():
-    assert callable(soaml::Property.__init__)
+def test_soaml_property_is_not_abstract():
+    assert not inspect.isabstract(soaml_Property)
 
 
-def test_soaml::property_constructor_args():
-    sig = inspect.signature(soaml::Property.__init__)
+def test_soaml_property_constructor_exists():
+    assert callable(soaml_Property.__init__)
+
+
+def test_soaml_property_constructor_args():
+    sig = inspect.signature(soaml_Property.__init__)
     params = list(sig.parameters.keys())
     assert "isID" in params, "Missing parameter 'isID'"
 
-def test_soaml::property_has_isID():
-    assert hasattr(soaml::Property, "isID")
+def test_soaml_property_has_isID():
+    assert hasattr(soaml_Property, "isID")
     descriptor = None
-    for klass in soaml::Property.__mro__:
+    for klass in soaml_Property.__mro__:
         if "isID" in klass.__dict__:
             descriptor = klass.__dict__["isID"]
             break
@@ -348,79 +348,79 @@ def test_soaml::property_has_isID():
 
 
 
-def test_soaml::connector_is_not_abstract():
-    assert not inspect.isabstract(soaml::Connector)
+def test_soaml_connector_is_not_abstract():
+    assert not inspect.isabstract(soaml_Connector)
 
 
-def test_soaml::connector_constructor_exists():
-    assert callable(soaml::Connector.__init__)
+def test_soaml_connector_constructor_exists():
+    assert callable(soaml_Connector.__init__)
 
 
-def test_soaml::connector_constructor_args():
-    sig = inspect.signature(soaml::Connector.__init__)
+def test_soaml_connector_constructor_args():
+    sig = inspect.signature(soaml_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::servicechannel_is_not_abstract():
-    assert not inspect.isabstract(soaml::ServiceChannel)
+def test_soaml_servicechannel_is_not_abstract():
+    assert not inspect.isabstract(soaml_ServiceChannel)
 
 
-def test_soaml::servicechannel_constructor_exists():
-    assert callable(soaml::ServiceChannel.__init__)
+def test_soaml_servicechannel_constructor_exists():
+    assert callable(soaml_ServiceChannel.__init__)
 
 
-def test_soaml::servicechannel_constructor_args():
-    sig = inspect.signature(soaml::ServiceChannel.__init__)
+def test_soaml_servicechannel_constructor_args():
+    sig = inspect.signature(soaml_ServiceChannel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::service_is_not_abstract():
-    assert not inspect.isabstract(soaml::Service)
+def test_soaml_service_is_not_abstract():
+    assert not inspect.isabstract(soaml_Service)
 
 
-def test_soaml::service_constructor_exists():
-    assert callable(soaml::Service.__init__)
+def test_soaml_service_constructor_exists():
+    assert callable(soaml_Service.__init__)
 
 
-def test_soaml::service_constructor_args():
-    sig = inspect.signature(soaml::Service.__init__)
+def test_soaml_service_constructor_args():
+    sig = inspect.signature(soaml_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::request_is_not_abstract():
-    assert not inspect.isabstract(soaml::Request)
+def test_soaml_request_is_not_abstract():
+    assert not inspect.isabstract(soaml_Request)
 
 
-def test_soaml::request_constructor_exists():
-    assert callable(soaml::Request.__init__)
+def test_soaml_request_constructor_exists():
+    assert callable(soaml_Request.__init__)
 
 
-def test_soaml::request_constructor_args():
-    sig = inspect.signature(soaml::Request.__init__)
+def test_soaml_request_constructor_args():
+    sig = inspect.signature(soaml_Request.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::port_is_not_abstract():
-    assert not inspect.isabstract(soaml::Port)
+def test_soaml_port_is_not_abstract():
+    assert not inspect.isabstract(soaml_Port)
 
 
-def test_soaml::port_constructor_exists():
-    assert callable(soaml::Port.__init__)
+def test_soaml_port_constructor_exists():
+    assert callable(soaml_Port.__init__)
 
 
-def test_soaml::port_constructor_args():
-    sig = inspect.signature(soaml::Port.__init__)
+def test_soaml_port_constructor_args():
+    sig = inspect.signature(soaml_Port.__init__)
     params = list(sig.parameters.keys())
     assert "connectorRequired" in params, "Missing parameter 'connectorRequired'"
 
-def test_soaml::port_has_connectorRequired():
-    assert hasattr(soaml::Port, "connectorRequired")
+def test_soaml_port_has_connectorRequired():
+    assert hasattr(soaml_Port, "connectorRequired")
     descriptor = None
-    for klass in soaml::Port.__mro__:
+    for klass in soaml_Port.__mro__:
         if "connectorRequired" in klass.__dict__:
             descriptor = klass.__dict__["connectorRequired"]
             break
@@ -442,93 +442,93 @@ def test_participant_constructor_args():
 
 
 
-def test_soaml::agent_is_not_abstract():
-    assert not inspect.isabstract(soaml::Agent)
+def test_soaml_agent_is_not_abstract():
+    assert not inspect.isabstract(soaml_Agent)
 
 
-def test_soaml::agent_constructor_exists():
-    assert callable(soaml::Agent.__init__)
+def test_soaml_agent_constructor_exists():
+    assert callable(soaml_Agent.__init__)
 
 
-def test_soaml::agent_constructor_args():
-    sig = inspect.signature(soaml::Agent.__init__)
+def test_soaml_agent_constructor_args():
+    sig = inspect.signature(soaml_Agent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::participant_is_not_abstract():
-    assert not inspect.isabstract(soaml::Participant)
+def test_soaml_participant_is_not_abstract():
+    assert not inspect.isabstract(soaml_Participant)
 
 
-def test_soaml::participant_constructor_exists():
-    assert callable(soaml::Participant.__init__)
+def test_soaml_participant_constructor_exists():
+    assert callable(soaml_Participant.__init__)
 
 
-def test_soaml::participant_constructor_args():
-    sig = inspect.signature(soaml::Participant.__init__)
+def test_soaml_participant_constructor_args():
+    sig = inspect.signature(soaml_Participant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::capability_is_not_abstract():
-    assert not inspect.isabstract(soaml::Capability)
+def test_soaml_capability_is_not_abstract():
+    assert not inspect.isabstract(soaml_Capability)
 
 
-def test_soaml::capability_constructor_exists():
-    assert callable(soaml::Capability.__init__)
+def test_soaml_capability_constructor_exists():
+    assert callable(soaml_Capability.__init__)
 
 
-def test_soaml::capability_constructor_args():
-    sig = inspect.signature(soaml::Capability.__init__)
+def test_soaml_capability_constructor_args():
+    sig = inspect.signature(soaml_Capability.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::comment_is_not_abstract():
-    assert not inspect.isabstract(soaml::Comment)
+def test_soaml_comment_is_not_abstract():
+    assert not inspect.isabstract(soaml_Comment)
 
 
-def test_soaml::comment_constructor_exists():
-    assert callable(soaml::Comment.__init__)
+def test_soaml_comment_constructor_exists():
+    assert callable(soaml_Comment.__init__)
 
 
-def test_soaml::comment_constructor_args():
-    sig = inspect.signature(soaml::Comment.__init__)
+def test_soaml_comment_constructor_args():
+    sig = inspect.signature(soaml_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(soaml::ValueSpecification)
+def test_soaml_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(soaml_ValueSpecification)
 
 
-def test_soaml::valuespecification_constructor_exists():
-    assert callable(soaml::ValueSpecification.__init__)
+def test_soaml_valuespecification_constructor_exists():
+    assert callable(soaml_ValueSpecification.__init__)
 
 
-def test_soaml::valuespecification_constructor_args():
-    sig = inspect.signature(soaml::ValueSpecification.__init__)
+def test_soaml_valuespecification_constructor_args():
+    sig = inspect.signature(soaml_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::milestone_is_not_abstract():
-    assert not inspect.isabstract(soaml::Milestone)
+def test_soaml_milestone_is_not_abstract():
+    assert not inspect.isabstract(soaml_Milestone)
 
 
-def test_soaml::milestone_constructor_exists():
-    assert callable(soaml::Milestone.__init__)
+def test_soaml_milestone_constructor_exists():
+    assert callable(soaml_Milestone.__init__)
 
 
-def test_soaml::milestone_constructor_args():
-    sig = inspect.signature(soaml::Milestone.__init__)
+def test_soaml_milestone_constructor_args():
+    sig = inspect.signature(soaml_Milestone.__init__)
     params = list(sig.parameters.keys())
     assert "progress" in params, "Missing parameter 'progress'"
 
-def test_soaml::milestone_has_progress():
-    assert hasattr(soaml::Milestone, "progress")
+def test_soaml_milestone_has_progress():
+    assert hasattr(soaml_Milestone, "progress")
     descriptor = None
-    for klass in soaml::Milestone.__mro__:
+    for klass in soaml_Milestone.__mro__:
         if "progress" in klass.__dict__:
             descriptor = klass.__dict__["progress"]
             break
@@ -536,79 +536,79 @@ def test_soaml::milestone_has_progress():
 
 
 
-def test_soaml::provider_is_not_abstract():
-    assert not inspect.isabstract(soaml::Provider)
+def test_soaml_provider_is_not_abstract():
+    assert not inspect.isabstract(soaml_Provider)
 
 
-def test_soaml::provider_constructor_exists():
-    assert callable(soaml::Provider.__init__)
+def test_soaml_provider_constructor_exists():
+    assert callable(soaml_Provider.__init__)
 
 
-def test_soaml::provider_constructor_args():
-    sig = inspect.signature(soaml::Provider.__init__)
+def test_soaml_provider_constructor_args():
+    sig = inspect.signature(soaml_Provider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::class_is_not_abstract():
-    assert not inspect.isabstract(soaml::Class)
+def test_soaml_class_is_not_abstract():
+    assert not inspect.isabstract(soaml_Class)
 
 
-def test_soaml::class_constructor_exists():
-    assert callable(soaml::Class.__init__)
+def test_soaml_class_constructor_exists():
+    assert callable(soaml_Class.__init__)
 
 
-def test_soaml::class_constructor_args():
-    sig = inspect.signature(soaml::Class.__init__)
+def test_soaml_class_constructor_args():
+    sig = inspect.signature(soaml_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::interface_is_not_abstract():
-    assert not inspect.isabstract(soaml::Interface)
+def test_soaml_interface_is_not_abstract():
+    assert not inspect.isabstract(soaml_Interface)
 
 
-def test_soaml::interface_constructor_exists():
-    assert callable(soaml::Interface.__init__)
+def test_soaml_interface_constructor_exists():
+    assert callable(soaml_Interface.__init__)
 
 
-def test_soaml::interface_constructor_args():
-    sig = inspect.signature(soaml::Interface.__init__)
+def test_soaml_interface_constructor_args():
+    sig = inspect.signature(soaml_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::consumer_is_not_abstract():
-    assert not inspect.isabstract(soaml::Consumer)
+def test_soaml_consumer_is_not_abstract():
+    assert not inspect.isabstract(soaml_Consumer)
 
 
-def test_soaml::consumer_constructor_exists():
-    assert callable(soaml::Consumer.__init__)
+def test_soaml_consumer_constructor_exists():
+    assert callable(soaml_Consumer.__init__)
 
 
-def test_soaml::consumer_constructor_args():
-    sig = inspect.signature(soaml::Consumer.__init__)
+def test_soaml_consumer_constructor_args():
+    sig = inspect.signature(soaml_Consumer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::collaborationuse_is_not_abstract():
-    assert not inspect.isabstract(soaml::CollaborationUse)
+def test_soaml_collaborationuse_is_not_abstract():
+    assert not inspect.isabstract(soaml_CollaborationUse)
 
 
-def test_soaml::collaborationuse_constructor_exists():
-    assert callable(soaml::CollaborationUse.__init__)
+def test_soaml_collaborationuse_constructor_exists():
+    assert callable(soaml_CollaborationUse.__init__)
 
 
-def test_soaml::collaborationuse_constructor_args():
-    sig = inspect.signature(soaml::CollaborationUse.__init__)
+def test_soaml_collaborationuse_constructor_args():
+    sig = inspect.signature(soaml_CollaborationUse.__init__)
     params = list(sig.parameters.keys())
     assert "isStrict" in params, "Missing parameter 'isStrict'"
 
-def test_soaml::collaborationuse_has_isStrict():
-    assert hasattr(soaml::CollaborationUse, "isStrict")
+def test_soaml_collaborationuse_has_isStrict():
+    assert hasattr(soaml_CollaborationUse, "isStrict")
     descriptor = None
-    for klass in soaml::CollaborationUse.__mro__:
+    for klass in soaml_CollaborationUse.__mro__:
         if "isStrict" in klass.__dict__:
             descriptor = klass.__dict__["isStrict"]
             break
@@ -630,51 +630,51 @@ def test_collaboration_constructor_args():
 
 
 
-def test_soaml::servicecontract_is_not_abstract():
-    assert not inspect.isabstract(soaml::ServiceContract)
+def test_soaml_servicecontract_is_not_abstract():
+    assert not inspect.isabstract(soaml_ServiceContract)
 
 
-def test_soaml::servicecontract_constructor_exists():
-    assert callable(soaml::ServiceContract.__init__)
+def test_soaml_servicecontract_constructor_exists():
+    assert callable(soaml_ServiceContract.__init__)
 
 
-def test_soaml::servicecontract_constructor_args():
-    sig = inspect.signature(soaml::ServiceContract.__init__)
+def test_soaml_servicecontract_constructor_args():
+    sig = inspect.signature(soaml_ServiceContract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::servicearchitecture_is_not_abstract():
-    assert not inspect.isabstract(soaml::ServiceArchitecture)
+def test_soaml_servicearchitecture_is_not_abstract():
+    assert not inspect.isabstract(soaml_ServiceArchitecture)
 
 
-def test_soaml::servicearchitecture_constructor_exists():
-    assert callable(soaml::ServiceArchitecture.__init__)
+def test_soaml_servicearchitecture_constructor_exists():
+    assert callable(soaml_ServiceArchitecture.__init__)
 
 
-def test_soaml::servicearchitecture_constructor_args():
-    sig = inspect.signature(soaml::ServiceArchitecture.__init__)
+def test_soaml_servicearchitecture_constructor_args():
+    sig = inspect.signature(soaml_ServiceArchitecture.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::collaboration_is_not_abstract():
-    assert not inspect.isabstract(soaml::Collaboration)
+def test_soaml_collaboration_is_not_abstract():
+    assert not inspect.isabstract(soaml_Collaboration)
 
 
-def test_soaml::collaboration_constructor_exists():
-    assert callable(soaml::Collaboration.__init__)
+def test_soaml_collaboration_constructor_exists():
+    assert callable(soaml_Collaboration.__init__)
 
 
-def test_soaml::collaboration_constructor_args():
-    sig = inspect.signature(soaml::Collaboration.__init__)
+def test_soaml_collaboration_constructor_args():
+    sig = inspect.signature(soaml_Collaboration.__init__)
     params = list(sig.parameters.keys())
     assert "isStrict" in params, "Missing parameter 'isStrict'"
 
-def test_soaml::collaboration_has_isStrict():
-    assert hasattr(soaml::Collaboration, "isStrict")
+def test_soaml_collaboration_has_isStrict():
+    assert hasattr(soaml_Collaboration, "isStrict")
     descriptor = None
-    for klass in soaml::Collaboration.__mro__:
+    for klass in soaml_Collaboration.__mro__:
         if "isStrict" in klass.__dict__:
             descriptor = klass.__dict__["isStrict"]
             break
@@ -682,44 +682,44 @@ def test_soaml::collaboration_has_isStrict():
 
 
 
-def test_soaml::serviceinterface_is_not_abstract():
-    assert not inspect.isabstract(soaml::ServiceInterface)
+def test_soaml_serviceinterface_is_not_abstract():
+    assert not inspect.isabstract(soaml_ServiceInterface)
 
 
-def test_soaml::serviceinterface_constructor_exists():
-    assert callable(soaml::ServiceInterface.__init__)
+def test_soaml_serviceinterface_constructor_exists():
+    assert callable(soaml_ServiceInterface.__init__)
 
 
-def test_soaml::serviceinterface_constructor_args():
-    sig = inspect.signature(soaml::ServiceInterface.__init__)
+def test_soaml_serviceinterface_constructor_args():
+    sig = inspect.signature(soaml_ServiceInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::realization_is_not_abstract():
-    assert not inspect.isabstract(soaml::Realization)
+def test_soaml_realization_is_not_abstract():
+    assert not inspect.isabstract(soaml_Realization)
 
 
-def test_soaml::realization_constructor_exists():
-    assert callable(soaml::Realization.__init__)
+def test_soaml_realization_constructor_exists():
+    assert callable(soaml_Realization.__init__)
 
 
-def test_soaml::realization_constructor_args():
-    sig = inspect.signature(soaml::Realization.__init__)
+def test_soaml_realization_constructor_args():
+    sig = inspect.signature(soaml_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soaml::motivationrealization_is_not_abstract():
-    assert not inspect.isabstract(soaml::MotivationRealization)
+def test_soaml_motivationrealization_is_not_abstract():
+    assert not inspect.isabstract(soaml_MotivationRealization)
 
 
-def test_soaml::motivationrealization_constructor_exists():
-    assert callable(soaml::MotivationRealization.__init__)
+def test_soaml_motivationrealization_constructor_exists():
+    assert callable(soaml_MotivationRealization.__init__)
 
 
-def test_soaml::motivationrealization_constructor_args():
-    sig = inspect.signature(soaml::MotivationRealization.__init__)
+def test_soaml_motivationrealization_constructor_args():
+    sig = inspect.signature(soaml_MotivationRealization.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -734,315 +734,300 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-soaml::Categorization_strategy = st.builds(
-    soaml::Categorization,
+soaml_Categorization_strategy = st.builds(
+    soaml_Categorization,
 )
 FreeFormValue_strategy = st.builds(
     FreeFormValue,
 )
-soaml::CategoryValue_strategy = st.builds(
-    soaml::CategoryValue,
+soaml_CategoryValue_strategy = st.builds(
+    soaml_CategoryValue,
 )
-soaml::FreeFormValue_strategy = st.builds(
-    soaml::FreeFormValue,
+soaml_FreeFormValue_strategy = st.builds(
+    soaml_FreeFormValue,
 )
-soaml::FreeFormDescriptor_strategy = st.builds(
-    soaml::FreeFormDescriptor,
+soaml_FreeFormDescriptor_strategy = st.builds(
+    soaml_FreeFormDescriptor,
 )
-soaml::Package_strategy = st.builds(
-    soaml::Package,
+soaml_Package_strategy = st.builds(
+    soaml_Package,
 )
 NodeDescriptor_strategy = st.builds(
     NodeDescriptor,
 )
-soaml::Category_strategy = st.builds(
-    soaml::Category,
+soaml_Category_strategy = st.builds(
+    soaml_Category,
 )
-soaml::Catalog_strategy = st.builds(
-    soaml::Catalog,
+soaml_Catalog_strategy = st.builds(
+    soaml_Catalog,
 )
-soaml::Artifact_strategy = st.builds(
-    soaml::Artifact,
+soaml_Artifact_strategy = st.builds(
+    soaml_Artifact,
 )
-soaml::NodeDescriptor_strategy = st.builds(
-    soaml::NodeDescriptor,
+soaml_NodeDescriptor_strategy = st.builds(
+    soaml_NodeDescriptor,
 )
-soaml::Dependency_strategy = st.builds(
-    soaml::Dependency,
+soaml_Dependency_strategy = st.builds(
+    soaml_Dependency,
 )
-soaml::Expose_strategy = st.builds(
-    soaml::Expose,
+soaml_Expose_strategy = st.builds(
+    soaml_Expose,
 )
-soaml::Signal_strategy = st.builds(
-    soaml::Signal,
+soaml_Signal_strategy = st.builds(
+    soaml_Signal,
 )
-soaml::DataType_strategy = st.builds(
-    soaml::DataType,
+soaml_DataType_strategy = st.builds(
+    soaml_DataType,
 )
-soaml::MessageType_strategy = st.builds(
-    soaml::MessageType,
+soaml_MessageType_strategy = st.builds(
+    soaml_MessageType,
     encoding=
         safe_text
 )
-soaml::Attachment_strategy = st.builds(
-    soaml::Attachment,
-    mimeType=
+soaml_Attachment_strategy = st.builds(
+    soaml_Attachment,
+    encoding=
         safe_text,
-    encoding=
+    mimeType=
         safe_text
 )
-soaml::Property_strategy = st.builds(
-    soaml::Property,
+soaml_Property_strategy = st.builds(
+    soaml_Property,
     isID=
         safe_text
 )
-soaml::Connector_strategy = st.builds(
-    soaml::Connector,
+soaml_Connector_strategy = st.builds(
+    soaml_Connector,
 )
-soaml::ServiceChannel_strategy = st.builds(
-    soaml::ServiceChannel,
+soaml_ServiceChannel_strategy = st.builds(
+    soaml_ServiceChannel,
 )
-soaml::Service_strategy = st.builds(
-    soaml::Service,
+soaml_Service_strategy = st.builds(
+    soaml_Service,
 )
-soaml::Request_strategy = st.builds(
-    soaml::Request,
+soaml_Request_strategy = st.builds(
+    soaml_Request,
 )
-soaml::Port_strategy = st.builds(
-    soaml::Port,
+soaml_Port_strategy = st.builds(
+    soaml_Port,
     connectorRequired=
         safe_text
 )
 Participant_strategy = st.builds(
     Participant,
 )
-soaml::Agent_strategy = st.builds(
-    soaml::Agent,
+soaml_Agent_strategy = st.builds(
+    soaml_Agent,
 )
-soaml::Participant_strategy = st.builds(
-    soaml::Participant,
+soaml_Participant_strategy = st.builds(
+    soaml_Participant,
 )
-soaml::Capability_strategy = st.builds(
-    soaml::Capability,
+soaml_Capability_strategy = st.builds(
+    soaml_Capability,
 )
-soaml::Comment_strategy = st.builds(
-    soaml::Comment,
+soaml_Comment_strategy = st.builds(
+    soaml_Comment,
 )
-soaml::ValueSpecification_strategy = st.builds(
-    soaml::ValueSpecification,
+soaml_ValueSpecification_strategy = st.builds(
+    soaml_ValueSpecification,
 )
-soaml::Milestone_strategy = st.builds(
-    soaml::Milestone,
+soaml_Milestone_strategy = st.builds(
+    soaml_Milestone,
     progress=
         safe_text
 )
-soaml::Provider_strategy = st.builds(
-    soaml::Provider,
+soaml_Provider_strategy = st.builds(
+    soaml_Provider,
 )
-soaml::Class_strategy = st.builds(
-    soaml::Class,
+soaml_Class_strategy = st.builds(
+    soaml_Class,
 )
-soaml::Interface_strategy = st.builds(
-    soaml::Interface,
+soaml_Interface_strategy = st.builds(
+    soaml_Interface,
 )
-soaml::Consumer_strategy = st.builds(
-    soaml::Consumer,
+soaml_Consumer_strategy = st.builds(
+    soaml_Consumer,
 )
-soaml::CollaborationUse_strategy = st.builds(
-    soaml::CollaborationUse,
+soaml_CollaborationUse_strategy = st.builds(
+    soaml_CollaborationUse,
     isStrict=
         safe_text
 )
 Collaboration_strategy = st.builds(
     Collaboration,
 )
-soaml::ServiceContract_strategy = st.builds(
-    soaml::ServiceContract,
+soaml_ServiceContract_strategy = st.builds(
+    soaml_ServiceContract,
 )
-soaml::ServiceArchitecture_strategy = st.builds(
-    soaml::ServiceArchitecture,
+soaml_ServiceArchitecture_strategy = st.builds(
+    soaml_ServiceArchitecture,
 )
-soaml::Collaboration_strategy = st.builds(
-    soaml::Collaboration,
+soaml_Collaboration_strategy = st.builds(
+    soaml_Collaboration,
     isStrict=
         safe_text
 )
-soaml::ServiceInterface_strategy = st.builds(
-    soaml::ServiceInterface,
+soaml_ServiceInterface_strategy = st.builds(
+    soaml_ServiceInterface,
 )
-soaml::Realization_strategy = st.builds(
-    soaml::Realization,
+soaml_Realization_strategy = st.builds(
+    soaml_Realization,
 )
-soaml::MotivationRealization_strategy = st.builds(
-    soaml::MotivationRealization,
+soaml_MotivationRealization_strategy = st.builds(
+    soaml_MotivationRealization,
 )
 
-@given(instance=soaml::Categorization_strategy)
+@given(instance=soaml_Categorization_strategy)
 @settings(max_examples=50)
-def test_soaml::categorization_instantiation(instance):
-    assert isinstance(instance, soaml::Categorization)
+def test_soaml_categorization_instantiation(instance):
+    assert isinstance(instance, soaml_Categorization)
 
 @given(instance=FreeFormValue_strategy)
 @settings(max_examples=50)
 def test_freeformvalue_instantiation(instance):
     assert isinstance(instance, FreeFormValue)
 
-@given(instance=soaml::CategoryValue_strategy)
+@given(instance=soaml_CategoryValue_strategy)
 @settings(max_examples=50)
-def test_soaml::categoryvalue_instantiation(instance):
-    assert isinstance(instance, soaml::CategoryValue)
+def test_soaml_categoryvalue_instantiation(instance):
+    assert isinstance(instance, soaml_CategoryValue)
 
-@given(instance=soaml::FreeFormValue_strategy)
+@given(instance=soaml_FreeFormValue_strategy)
 @settings(max_examples=50)
-def test_soaml::freeformvalue_instantiation(instance):
-    assert isinstance(instance, soaml::FreeFormValue)
+def test_soaml_freeformvalue_instantiation(instance):
+    assert isinstance(instance, soaml_FreeFormValue)
 
-@given(instance=soaml::FreeFormDescriptor_strategy)
+@given(instance=soaml_FreeFormDescriptor_strategy)
 @settings(max_examples=50)
-def test_soaml::freeformdescriptor_instantiation(instance):
-    assert isinstance(instance, soaml::FreeFormDescriptor)
+def test_soaml_freeformdescriptor_instantiation(instance):
+    assert isinstance(instance, soaml_FreeFormDescriptor)
 
-@given(instance=soaml::Package_strategy)
+@given(instance=soaml_Package_strategy)
 @settings(max_examples=50)
-def test_soaml::package_instantiation(instance):
-    assert isinstance(instance, soaml::Package)
+def test_soaml_package_instantiation(instance):
+    assert isinstance(instance, soaml_Package)
 
 @given(instance=NodeDescriptor_strategy)
 @settings(max_examples=50)
 def test_nodedescriptor_instantiation(instance):
     assert isinstance(instance, NodeDescriptor)
 
-@given(instance=soaml::Category_strategy)
+@given(instance=soaml_Category_strategy)
 @settings(max_examples=50)
-def test_soaml::category_instantiation(instance):
-    assert isinstance(instance, soaml::Category)
+def test_soaml_category_instantiation(instance):
+    assert isinstance(instance, soaml_Category)
 
-@given(instance=soaml::Catalog_strategy)
+@given(instance=soaml_Catalog_strategy)
 @settings(max_examples=50)
-def test_soaml::catalog_instantiation(instance):
-    assert isinstance(instance, soaml::Catalog)
+def test_soaml_catalog_instantiation(instance):
+    assert isinstance(instance, soaml_Catalog)
 
-@given(instance=soaml::Artifact_strategy)
+@given(instance=soaml_Artifact_strategy)
 @settings(max_examples=50)
-def test_soaml::artifact_instantiation(instance):
-    assert isinstance(instance, soaml::Artifact)
+def test_soaml_artifact_instantiation(instance):
+    assert isinstance(instance, soaml_Artifact)
 
-@given(instance=soaml::NodeDescriptor_strategy)
+@given(instance=soaml_NodeDescriptor_strategy)
 @settings(max_examples=50)
-def test_soaml::nodedescriptor_instantiation(instance):
-    assert isinstance(instance, soaml::NodeDescriptor)
+def test_soaml_nodedescriptor_instantiation(instance):
+    assert isinstance(instance, soaml_NodeDescriptor)
 
-@given(instance=soaml::Dependency_strategy)
+@given(instance=soaml_Dependency_strategy)
 @settings(max_examples=50)
-def test_soaml::dependency_instantiation(instance):
-    assert isinstance(instance, soaml::Dependency)
+def test_soaml_dependency_instantiation(instance):
+    assert isinstance(instance, soaml_Dependency)
 
-@given(instance=soaml::Expose_strategy)
+@given(instance=soaml_Expose_strategy)
 @settings(max_examples=50)
-def test_soaml::expose_instantiation(instance):
-    assert isinstance(instance, soaml::Expose)
+def test_soaml_expose_instantiation(instance):
+    assert isinstance(instance, soaml_Expose)
 
-@given(instance=soaml::Signal_strategy)
+@given(instance=soaml_Signal_strategy)
 @settings(max_examples=50)
-def test_soaml::signal_instantiation(instance):
-    assert isinstance(instance, soaml::Signal)
+def test_soaml_signal_instantiation(instance):
+    assert isinstance(instance, soaml_Signal)
 
-@given(instance=soaml::DataType_strategy)
+@given(instance=soaml_DataType_strategy)
 @settings(max_examples=50)
-def test_soaml::datatype_instantiation(instance):
-    assert isinstance(instance, soaml::DataType)
+def test_soaml_datatype_instantiation(instance):
+    assert isinstance(instance, soaml_DataType)
 
-@given(instance=soaml::MessageType_strategy)
+@given(instance=soaml_MessageType_strategy)
 @settings(max_examples=50)
-def test_soaml::messagetype_instantiation(instance):
-    assert isinstance(instance, soaml::MessageType)
-
-@given(instance=soaml::MessageType_strategy)
-def test_soaml::messagetype_encoding_type(instance):
-    assert isinstance(instance.encoding, str)
+def test_soaml_messagetype_instantiation(instance):
+    assert isinstance(instance, soaml_MessageType)
 
 
-@given(instance=soaml::MessageType_strategy)
-def test_soaml::messagetype_encoding_setter(instance):
+
+@given(instance=soaml_MessageType_strategy)
+def test_soaml_messagetype_encoding_setter(instance):
     original = instance.encoding
     instance.encoding = original
     assert instance.encoding == original
 
-@given(instance=soaml::Attachment_strategy)
+@given(instance=soaml_Attachment_strategy)
 @settings(max_examples=50)
-def test_soaml::attachment_instantiation(instance):
-    assert isinstance(instance, soaml::Attachment)
-
-@given(instance=soaml::Attachment_strategy)
-def test_soaml::attachment_mimeType_type(instance):
-    assert isinstance(instance.mimeType, str)
+def test_soaml_attachment_instantiation(instance):
+    assert isinstance(instance, soaml_Attachment)
 
 
-@given(instance=soaml::Attachment_strategy)
-def test_soaml::attachment_mimeType_setter(instance):
+
+@given(instance=soaml_Attachment_strategy)
+def test_soaml_attachment_encoding_setter(instance):
+    original = instance.encoding
+    instance.encoding = original
+    assert instance.encoding == original
+
+
+
+@given(instance=soaml_Attachment_strategy)
+def test_soaml_attachment_mimeType_setter(instance):
     original = instance.mimeType
     instance.mimeType = original
     assert instance.mimeType == original
 
-@given(instance=soaml::Attachment_strategy)
-def test_soaml::attachment_encoding_type(instance):
-    assert isinstance(instance.encoding, str)
-
-
-@given(instance=soaml::Attachment_strategy)
-def test_soaml::attachment_encoding_setter(instance):
-    original = instance.encoding
-    instance.encoding = original
-    assert instance.encoding == original
-
-@given(instance=soaml::Property_strategy)
+@given(instance=soaml_Property_strategy)
 @settings(max_examples=50)
-def test_soaml::property_instantiation(instance):
-    assert isinstance(instance, soaml::Property)
-
-@given(instance=soaml::Property_strategy)
-def test_soaml::property_isID_type(instance):
-    assert isinstance(instance.isID, str)
+def test_soaml_property_instantiation(instance):
+    assert isinstance(instance, soaml_Property)
 
 
-@given(instance=soaml::Property_strategy)
-def test_soaml::property_isID_setter(instance):
+
+@given(instance=soaml_Property_strategy)
+def test_soaml_property_isID_setter(instance):
     original = instance.isID
     instance.isID = original
     assert instance.isID == original
 
-@given(instance=soaml::Connector_strategy)
+@given(instance=soaml_Connector_strategy)
 @settings(max_examples=50)
-def test_soaml::connector_instantiation(instance):
-    assert isinstance(instance, soaml::Connector)
+def test_soaml_connector_instantiation(instance):
+    assert isinstance(instance, soaml_Connector)
 
-@given(instance=soaml::ServiceChannel_strategy)
+@given(instance=soaml_ServiceChannel_strategy)
 @settings(max_examples=50)
-def test_soaml::servicechannel_instantiation(instance):
-    assert isinstance(instance, soaml::ServiceChannel)
+def test_soaml_servicechannel_instantiation(instance):
+    assert isinstance(instance, soaml_ServiceChannel)
 
-@given(instance=soaml::Service_strategy)
+@given(instance=soaml_Service_strategy)
 @settings(max_examples=50)
-def test_soaml::service_instantiation(instance):
-    assert isinstance(instance, soaml::Service)
+def test_soaml_service_instantiation(instance):
+    assert isinstance(instance, soaml_Service)
 
-@given(instance=soaml::Request_strategy)
+@given(instance=soaml_Request_strategy)
 @settings(max_examples=50)
-def test_soaml::request_instantiation(instance):
-    assert isinstance(instance, soaml::Request)
+def test_soaml_request_instantiation(instance):
+    assert isinstance(instance, soaml_Request)
 
-@given(instance=soaml::Port_strategy)
+@given(instance=soaml_Port_strategy)
 @settings(max_examples=50)
-def test_soaml::port_instantiation(instance):
-    assert isinstance(instance, soaml::Port)
-
-@given(instance=soaml::Port_strategy)
-def test_soaml::port_connectorRequired_type(instance):
-    assert isinstance(instance.connectorRequired, str)
+def test_soaml_port_instantiation(instance):
+    assert isinstance(instance, soaml_Port)
 
 
-@given(instance=soaml::Port_strategy)
-def test_soaml::port_connectorRequired_setter(instance):
+
+@given(instance=soaml_Port_strategy)
+def test_soaml_port_connectorRequired_setter(instance):
     original = instance.connectorRequired
     instance.connectorRequired = original
     assert instance.connectorRequired == original
@@ -1052,79 +1037,73 @@ def test_soaml::port_connectorRequired_setter(instance):
 def test_participant_instantiation(instance):
     assert isinstance(instance, Participant)
 
-@given(instance=soaml::Agent_strategy)
+@given(instance=soaml_Agent_strategy)
 @settings(max_examples=50)
-def test_soaml::agent_instantiation(instance):
-    assert isinstance(instance, soaml::Agent)
+def test_soaml_agent_instantiation(instance):
+    assert isinstance(instance, soaml_Agent)
 
-@given(instance=soaml::Participant_strategy)
+@given(instance=soaml_Participant_strategy)
 @settings(max_examples=50)
-def test_soaml::participant_instantiation(instance):
-    assert isinstance(instance, soaml::Participant)
+def test_soaml_participant_instantiation(instance):
+    assert isinstance(instance, soaml_Participant)
 
-@given(instance=soaml::Capability_strategy)
+@given(instance=soaml_Capability_strategy)
 @settings(max_examples=50)
-def test_soaml::capability_instantiation(instance):
-    assert isinstance(instance, soaml::Capability)
+def test_soaml_capability_instantiation(instance):
+    assert isinstance(instance, soaml_Capability)
 
-@given(instance=soaml::Comment_strategy)
+@given(instance=soaml_Comment_strategy)
 @settings(max_examples=50)
-def test_soaml::comment_instantiation(instance):
-    assert isinstance(instance, soaml::Comment)
+def test_soaml_comment_instantiation(instance):
+    assert isinstance(instance, soaml_Comment)
 
-@given(instance=soaml::ValueSpecification_strategy)
+@given(instance=soaml_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_soaml::valuespecification_instantiation(instance):
-    assert isinstance(instance, soaml::ValueSpecification)
+def test_soaml_valuespecification_instantiation(instance):
+    assert isinstance(instance, soaml_ValueSpecification)
 
-@given(instance=soaml::Milestone_strategy)
+@given(instance=soaml_Milestone_strategy)
 @settings(max_examples=50)
-def test_soaml::milestone_instantiation(instance):
-    assert isinstance(instance, soaml::Milestone)
-
-@given(instance=soaml::Milestone_strategy)
-def test_soaml::milestone_progress_type(instance):
-    assert isinstance(instance.progress, str)
+def test_soaml_milestone_instantiation(instance):
+    assert isinstance(instance, soaml_Milestone)
 
 
-@given(instance=soaml::Milestone_strategy)
-def test_soaml::milestone_progress_setter(instance):
+
+@given(instance=soaml_Milestone_strategy)
+def test_soaml_milestone_progress_setter(instance):
     original = instance.progress
     instance.progress = original
     assert instance.progress == original
 
-@given(instance=soaml::Provider_strategy)
+@given(instance=soaml_Provider_strategy)
 @settings(max_examples=50)
-def test_soaml::provider_instantiation(instance):
-    assert isinstance(instance, soaml::Provider)
+def test_soaml_provider_instantiation(instance):
+    assert isinstance(instance, soaml_Provider)
 
-@given(instance=soaml::Class_strategy)
+@given(instance=soaml_Class_strategy)
 @settings(max_examples=50)
-def test_soaml::class_instantiation(instance):
-    assert isinstance(instance, soaml::Class)
+def test_soaml_class_instantiation(instance):
+    assert isinstance(instance, soaml_Class)
 
-@given(instance=soaml::Interface_strategy)
+@given(instance=soaml_Interface_strategy)
 @settings(max_examples=50)
-def test_soaml::interface_instantiation(instance):
-    assert isinstance(instance, soaml::Interface)
+def test_soaml_interface_instantiation(instance):
+    assert isinstance(instance, soaml_Interface)
 
-@given(instance=soaml::Consumer_strategy)
+@given(instance=soaml_Consumer_strategy)
 @settings(max_examples=50)
-def test_soaml::consumer_instantiation(instance):
-    assert isinstance(instance, soaml::Consumer)
+def test_soaml_consumer_instantiation(instance):
+    assert isinstance(instance, soaml_Consumer)
 
-@given(instance=soaml::CollaborationUse_strategy)
+@given(instance=soaml_CollaborationUse_strategy)
 @settings(max_examples=50)
-def test_soaml::collaborationuse_instantiation(instance):
-    assert isinstance(instance, soaml::CollaborationUse)
-
-@given(instance=soaml::CollaborationUse_strategy)
-def test_soaml::collaborationuse_isStrict_type(instance):
-    assert isinstance(instance.isStrict, str)
+def test_soaml_collaborationuse_instantiation(instance):
+    assert isinstance(instance, soaml_CollaborationUse)
 
 
-@given(instance=soaml::CollaborationUse_strategy)
-def test_soaml::collaborationuse_isStrict_setter(instance):
+
+@given(instance=soaml_CollaborationUse_strategy)
+def test_soaml_collaborationuse_isStrict_setter(instance):
     original = instance.isStrict
     instance.isStrict = original
     assert instance.isStrict == original
@@ -1134,43 +1113,40 @@ def test_soaml::collaborationuse_isStrict_setter(instance):
 def test_collaboration_instantiation(instance):
     assert isinstance(instance, Collaboration)
 
-@given(instance=soaml::ServiceContract_strategy)
+@given(instance=soaml_ServiceContract_strategy)
 @settings(max_examples=50)
-def test_soaml::servicecontract_instantiation(instance):
-    assert isinstance(instance, soaml::ServiceContract)
+def test_soaml_servicecontract_instantiation(instance):
+    assert isinstance(instance, soaml_ServiceContract)
 
-@given(instance=soaml::ServiceArchitecture_strategy)
+@given(instance=soaml_ServiceArchitecture_strategy)
 @settings(max_examples=50)
-def test_soaml::servicearchitecture_instantiation(instance):
-    assert isinstance(instance, soaml::ServiceArchitecture)
+def test_soaml_servicearchitecture_instantiation(instance):
+    assert isinstance(instance, soaml_ServiceArchitecture)
 
-@given(instance=soaml::Collaboration_strategy)
+@given(instance=soaml_Collaboration_strategy)
 @settings(max_examples=50)
-def test_soaml::collaboration_instantiation(instance):
-    assert isinstance(instance, soaml::Collaboration)
-
-@given(instance=soaml::Collaboration_strategy)
-def test_soaml::collaboration_isStrict_type(instance):
-    assert isinstance(instance.isStrict, str)
+def test_soaml_collaboration_instantiation(instance):
+    assert isinstance(instance, soaml_Collaboration)
 
 
-@given(instance=soaml::Collaboration_strategy)
-def test_soaml::collaboration_isStrict_setter(instance):
+
+@given(instance=soaml_Collaboration_strategy)
+def test_soaml_collaboration_isStrict_setter(instance):
     original = instance.isStrict
     instance.isStrict = original
     assert instance.isStrict == original
 
-@given(instance=soaml::ServiceInterface_strategy)
+@given(instance=soaml_ServiceInterface_strategy)
 @settings(max_examples=50)
-def test_soaml::serviceinterface_instantiation(instance):
-    assert isinstance(instance, soaml::ServiceInterface)
+def test_soaml_serviceinterface_instantiation(instance):
+    assert isinstance(instance, soaml_ServiceInterface)
 
-@given(instance=soaml::Realization_strategy)
+@given(instance=soaml_Realization_strategy)
 @settings(max_examples=50)
-def test_soaml::realization_instantiation(instance):
-    assert isinstance(instance, soaml::Realization)
+def test_soaml_realization_instantiation(instance):
+    assert isinstance(instance, soaml_Realization)
 
-@given(instance=soaml::MotivationRealization_strategy)
+@given(instance=soaml_MotivationRealization_strategy)
 @settings(max_examples=50)
-def test_soaml::motivationrealization_instantiation(instance):
-    assert isinstance(instance, soaml::MotivationRealization)
+def test_soaml_motivationrealization_instantiation(instance):
+    assert isinstance(instance, soaml_MotivationRealization)

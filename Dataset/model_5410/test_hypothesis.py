@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Gate,
-    fault::tree::PriorAND,
-    fault::tree::AND,
-    fault::tree::Inhibit,
-    fault::tree::XOR,
-    fault::tree::OR,
+    fault_tree_XOR,
+    fault_tree_PriorAND,
+    fault_tree_AND,
+    fault_tree_Inhibit,
+    fault_tree_OR,
     Event,
-    fault::tree::UndevelopedEvent,
-    fault::tree::IntermediateEvent,
-    fault::tree::BasicEvent,
-    fault::tree::Hazard,
+    fault_tree_UndevelopedEvent,
+    fault_tree_IntermediateEvent,
+    fault_tree_BasicEvent,
+    fault_tree_Hazard,
     IDBase,
-    fault::tree::ErrorInstance,
-    fault::tree::FaultTree,
-    fault::tree::ErrorType,
-    fault::tree::FailureInstance,
-    fault::tree::FailureType,
-    fault::tree::Event,
-    fault::tree::Gate,
+    fault_tree_ErrorType,
+    fault_tree_FaultTree,
+    fault_tree_ErrorInstance,
+    fault_tree_FailureType,
+    fault_tree_Event,
+    fault_tree_FailureInstance,
+    fault_tree_Gate,
 )
 
 # =============================================================================
@@ -47,72 +47,72 @@ def test_gate_constructor_args():
 
 
 
-def test_fault::tree::priorand_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::PriorAND)
+def test_fault_tree_xor_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_XOR)
 
 
-def test_fault::tree::priorand_constructor_exists():
-    assert callable(fault::tree::PriorAND.__init__)
+def test_fault_tree_xor_constructor_exists():
+    assert callable(fault_tree_XOR.__init__)
 
 
-def test_fault::tree::priorand_constructor_args():
-    sig = inspect.signature(fault::tree::PriorAND.__init__)
+def test_fault_tree_xor_constructor_args():
+    sig = inspect.signature(fault_tree_XOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::and_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::AND)
+def test_fault_tree_priorand_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_PriorAND)
 
 
-def test_fault::tree::and_constructor_exists():
-    assert callable(fault::tree::AND.__init__)
+def test_fault_tree_priorand_constructor_exists():
+    assert callable(fault_tree_PriorAND.__init__)
 
 
-def test_fault::tree::and_constructor_args():
-    sig = inspect.signature(fault::tree::AND.__init__)
+def test_fault_tree_priorand_constructor_args():
+    sig = inspect.signature(fault_tree_PriorAND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::inhibit_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::Inhibit)
+def test_fault_tree_and_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_AND)
 
 
-def test_fault::tree::inhibit_constructor_exists():
-    assert callable(fault::tree::Inhibit.__init__)
+def test_fault_tree_and_constructor_exists():
+    assert callable(fault_tree_AND.__init__)
 
 
-def test_fault::tree::inhibit_constructor_args():
-    sig = inspect.signature(fault::tree::Inhibit.__init__)
+def test_fault_tree_and_constructor_args():
+    sig = inspect.signature(fault_tree_AND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::xor_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::XOR)
+def test_fault_tree_inhibit_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_Inhibit)
 
 
-def test_fault::tree::xor_constructor_exists():
-    assert callable(fault::tree::XOR.__init__)
+def test_fault_tree_inhibit_constructor_exists():
+    assert callable(fault_tree_Inhibit.__init__)
 
 
-def test_fault::tree::xor_constructor_args():
-    sig = inspect.signature(fault::tree::XOR.__init__)
+def test_fault_tree_inhibit_constructor_args():
+    sig = inspect.signature(fault_tree_Inhibit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::or_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::OR)
+def test_fault_tree_or_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_OR)
 
 
-def test_fault::tree::or_constructor_exists():
-    assert callable(fault::tree::OR.__init__)
+def test_fault_tree_or_constructor_exists():
+    assert callable(fault_tree_OR.__init__)
 
 
-def test_fault::tree::or_constructor_args():
-    sig = inspect.signature(fault::tree::OR.__init__)
+def test_fault_tree_or_constructor_args():
+    sig = inspect.signature(fault_tree_OR.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -131,51 +131,51 @@ def test_event_constructor_args():
 
 
 
-def test_fault::tree::undevelopedevent_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::UndevelopedEvent)
+def test_fault_tree_undevelopedevent_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_UndevelopedEvent)
 
 
-def test_fault::tree::undevelopedevent_constructor_exists():
-    assert callable(fault::tree::UndevelopedEvent.__init__)
+def test_fault_tree_undevelopedevent_constructor_exists():
+    assert callable(fault_tree_UndevelopedEvent.__init__)
 
 
-def test_fault::tree::undevelopedevent_constructor_args():
-    sig = inspect.signature(fault::tree::UndevelopedEvent.__init__)
+def test_fault_tree_undevelopedevent_constructor_args():
+    sig = inspect.signature(fault_tree_UndevelopedEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::intermediateevent_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::IntermediateEvent)
+def test_fault_tree_intermediateevent_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_IntermediateEvent)
 
 
-def test_fault::tree::intermediateevent_constructor_exists():
-    assert callable(fault::tree::IntermediateEvent.__init__)
+def test_fault_tree_intermediateevent_constructor_exists():
+    assert callable(fault_tree_IntermediateEvent.__init__)
 
 
-def test_fault::tree::intermediateevent_constructor_args():
-    sig = inspect.signature(fault::tree::IntermediateEvent.__init__)
+def test_fault_tree_intermediateevent_constructor_args():
+    sig = inspect.signature(fault_tree_IntermediateEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::basicevent_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::BasicEvent)
+def test_fault_tree_basicevent_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_BasicEvent)
 
 
-def test_fault::tree::basicevent_constructor_exists():
-    assert callable(fault::tree::BasicEvent.__init__)
+def test_fault_tree_basicevent_constructor_exists():
+    assert callable(fault_tree_BasicEvent.__init__)
 
 
-def test_fault::tree::basicevent_constructor_args():
-    sig = inspect.signature(fault::tree::BasicEvent.__init__)
+def test_fault_tree_basicevent_constructor_args():
+    sig = inspect.signature(fault_tree_BasicEvent.__init__)
     params = list(sig.parameters.keys())
     assert "probability" in params, "Missing parameter 'probability'"
 
-def test_fault::tree::basicevent_has_probability():
-    assert hasattr(fault::tree::BasicEvent, "probability")
+def test_fault_tree_basicevent_has_probability():
+    assert hasattr(fault_tree_BasicEvent, "probability")
     descriptor = None
-    for klass in fault::tree::BasicEvent.__mro__:
+    for klass in fault_tree_BasicEvent.__mro__:
         if "probability" in klass.__dict__:
             descriptor = klass.__dict__["probability"]
             break
@@ -183,16 +183,16 @@ def test_fault::tree::basicevent_has_probability():
 
 
 
-def test_fault::tree::hazard_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::Hazard)
+def test_fault_tree_hazard_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_Hazard)
 
 
-def test_fault::tree::hazard_constructor_exists():
-    assert callable(fault::tree::Hazard.__init__)
+def test_fault_tree_hazard_constructor_exists():
+    assert callable(fault_tree_Hazard.__init__)
 
 
-def test_fault::tree::hazard_constructor_args():
-    sig = inspect.signature(fault::tree::Hazard.__init__)
+def test_fault_tree_hazard_constructor_args():
+    sig = inspect.signature(fault_tree_Hazard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,23 +211,23 @@ def test_idbase_constructor_args():
 
 
 
-def test_fault::tree::errorinstance_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::ErrorInstance)
+def test_fault_tree_errortype_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_ErrorType)
 
 
-def test_fault::tree::errorinstance_constructor_exists():
-    assert callable(fault::tree::ErrorInstance.__init__)
+def test_fault_tree_errortype_constructor_exists():
+    assert callable(fault_tree_ErrorType.__init__)
 
 
-def test_fault::tree::errorinstance_constructor_args():
-    sig = inspect.signature(fault::tree::ErrorInstance.__init__)
+def test_fault_tree_errortype_constructor_args():
+    sig = inspect.signature(fault_tree_ErrorType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fault::tree::errorinstance_has_name():
-    assert hasattr(fault::tree::ErrorInstance, "name")
+def test_fault_tree_errortype_has_name():
+    assert hasattr(fault_tree_ErrorType, "name")
     descriptor = None
-    for klass in fault::tree::ErrorInstance.__mro__:
+    for klass in fault_tree_ErrorType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -235,37 +235,37 @@ def test_fault::tree::errorinstance_has_name():
 
 
 
-def test_fault::tree::faulttree_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::FaultTree)
+def test_fault_tree_faulttree_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_FaultTree)
 
 
-def test_fault::tree::faulttree_constructor_exists():
-    assert callable(fault::tree::FaultTree.__init__)
+def test_fault_tree_faulttree_constructor_exists():
+    assert callable(fault_tree_FaultTree.__init__)
 
 
-def test_fault::tree::faulttree_constructor_args():
-    sig = inspect.signature(fault::tree::FaultTree.__init__)
+def test_fault_tree_faulttree_constructor_args():
+    sig = inspect.signature(fault_tree_FaultTree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fault::tree::errortype_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::ErrorType)
+def test_fault_tree_errorinstance_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_ErrorInstance)
 
 
-def test_fault::tree::errortype_constructor_exists():
-    assert callable(fault::tree::ErrorType.__init__)
+def test_fault_tree_errorinstance_constructor_exists():
+    assert callable(fault_tree_ErrorInstance.__init__)
 
 
-def test_fault::tree::errortype_constructor_args():
-    sig = inspect.signature(fault::tree::ErrorType.__init__)
+def test_fault_tree_errorinstance_constructor_args():
+    sig = inspect.signature(fault_tree_ErrorInstance.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fault::tree::errortype_has_name():
-    assert hasattr(fault::tree::ErrorType, "name")
+def test_fault_tree_errorinstance_has_name():
+    assert hasattr(fault_tree_ErrorInstance, "name")
     descriptor = None
-    for klass in fault::tree::ErrorType.__mro__:
+    for klass in fault_tree_ErrorInstance.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -273,23 +273,23 @@ def test_fault::tree::errortype_has_name():
 
 
 
-def test_fault::tree::failureinstance_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::FailureInstance)
+def test_fault_tree_failuretype_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_FailureType)
 
 
-def test_fault::tree::failureinstance_constructor_exists():
-    assert callable(fault::tree::FailureInstance.__init__)
+def test_fault_tree_failuretype_constructor_exists():
+    assert callable(fault_tree_FailureType.__init__)
 
 
-def test_fault::tree::failureinstance_constructor_args():
-    sig = inspect.signature(fault::tree::FailureInstance.__init__)
+def test_fault_tree_failuretype_constructor_args():
+    sig = inspect.signature(fault_tree_FailureType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fault::tree::failureinstance_has_name():
-    assert hasattr(fault::tree::FailureInstance, "name")
+def test_fault_tree_failuretype_has_name():
+    assert hasattr(fault_tree_FailureType, "name")
     descriptor = None
-    for klass in fault::tree::FailureInstance.__mro__:
+    for klass in fault_tree_FailureType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -297,74 +297,74 @@ def test_fault::tree::failureinstance_has_name():
 
 
 
-def test_fault::tree::failuretype_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::FailureType)
+def test_fault_tree_event_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_Event)
 
 
-def test_fault::tree::failuretype_constructor_exists():
-    assert callable(fault::tree::FailureType.__init__)
+def test_fault_tree_event_constructor_exists():
+    assert callable(fault_tree_Event.__init__)
 
 
-def test_fault::tree::failuretype_constructor_args():
-    sig = inspect.signature(fault::tree::FailureType.__init__)
+def test_fault_tree_event_constructor_args():
+    sig = inspect.signature(fault_tree_Event.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_fault::tree::failuretype_has_name():
-    assert hasattr(fault::tree::FailureType, "name")
-    descriptor = None
-    for klass in fault::tree::FailureType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_fault::tree::event_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::Event)
-
-
-def test_fault::tree::event_constructor_exists():
-    assert callable(fault::tree::Event.__init__)
-
-
-def test_fault::tree::event_constructor_args():
-    sig = inspect.signature(fault::tree::Event.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_fault::tree::event_has_name():
-    assert hasattr(fault::tree::Event, "name")
+def test_fault_tree_event_has_description():
+    assert hasattr(fault_tree_Event, "description")
     descriptor = None
-    for klass in fault::tree::Event.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fault::tree::event_has_description():
-    assert hasattr(fault::tree::Event, "description")
-    descriptor = None
-    for klass in fault::tree::Event.__mro__:
+    for klass in fault_tree_Event.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
+def test_fault_tree_event_has_name():
+    assert hasattr(fault_tree_Event, "name")
+    descriptor = None
+    for klass in fault_tree_Event.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fault::tree::gate_is_not_abstract():
-    assert not inspect.isabstract(fault::tree::Gate)
+
+def test_fault_tree_failureinstance_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_FailureInstance)
 
 
-def test_fault::tree::gate_constructor_exists():
-    assert callable(fault::tree::Gate.__init__)
+def test_fault_tree_failureinstance_constructor_exists():
+    assert callable(fault_tree_FailureInstance.__init__)
 
 
-def test_fault::tree::gate_constructor_args():
-    sig = inspect.signature(fault::tree::Gate.__init__)
+def test_fault_tree_failureinstance_constructor_args():
+    sig = inspect.signature(fault_tree_FailureInstance.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_fault_tree_failureinstance_has_name():
+    assert hasattr(fault_tree_FailureInstance, "name")
+    descriptor = None
+    for klass in fault_tree_FailureInstance.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fault_tree_gate_is_not_abstract():
+    assert not inspect.isabstract(fault_tree_Gate)
+
+
+def test_fault_tree_gate_constructor_exists():
+    assert callable(fault_tree_Gate.__init__)
+
+
+def test_fault_tree_gate_constructor_args():
+    sig = inspect.signature(fault_tree_Gate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -382,73 +382,73 @@ safe_text = st.text(
 Gate_strategy = st.builds(
     Gate,
 )
-fault::tree::PriorAND_strategy = st.builds(
-    fault::tree::PriorAND,
+fault_tree_XOR_strategy = st.builds(
+    fault_tree_XOR,
 )
-fault::tree::AND_strategy = st.builds(
-    fault::tree::AND,
+fault_tree_PriorAND_strategy = st.builds(
+    fault_tree_PriorAND,
 )
-fault::tree::Inhibit_strategy = st.builds(
-    fault::tree::Inhibit,
+fault_tree_AND_strategy = st.builds(
+    fault_tree_AND,
 )
-fault::tree::XOR_strategy = st.builds(
-    fault::tree::XOR,
+fault_tree_Inhibit_strategy = st.builds(
+    fault_tree_Inhibit,
 )
-fault::tree::OR_strategy = st.builds(
-    fault::tree::OR,
+fault_tree_OR_strategy = st.builds(
+    fault_tree_OR,
 )
 Event_strategy = st.builds(
     Event,
 )
-fault::tree::UndevelopedEvent_strategy = st.builds(
-    fault::tree::UndevelopedEvent,
+fault_tree_UndevelopedEvent_strategy = st.builds(
+    fault_tree_UndevelopedEvent,
 )
-fault::tree::IntermediateEvent_strategy = st.builds(
-    fault::tree::IntermediateEvent,
+fault_tree_IntermediateEvent_strategy = st.builds(
+    fault_tree_IntermediateEvent,
 )
-fault::tree::BasicEvent_strategy = st.builds(
-    fault::tree::BasicEvent,
+fault_tree_BasicEvent_strategy = st.builds(
+    fault_tree_BasicEvent,
     probability=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-fault::tree::Hazard_strategy = st.builds(
-    fault::tree::Hazard,
+fault_tree_Hazard_strategy = st.builds(
+    fault_tree_Hazard,
 )
 IDBase_strategy = st.builds(
     IDBase,
 )
-fault::tree::ErrorInstance_strategy = st.builds(
-    fault::tree::ErrorInstance,
+fault_tree_ErrorType_strategy = st.builds(
+    fault_tree_ErrorType,
     name=
         safe_text
 )
-fault::tree::FaultTree_strategy = st.builds(
-    fault::tree::FaultTree,
+fault_tree_FaultTree_strategy = st.builds(
+    fault_tree_FaultTree,
 )
-fault::tree::ErrorType_strategy = st.builds(
-    fault::tree::ErrorType,
+fault_tree_ErrorInstance_strategy = st.builds(
+    fault_tree_ErrorInstance,
     name=
         safe_text
 )
-fault::tree::FailureInstance_strategy = st.builds(
-    fault::tree::FailureInstance,
+fault_tree_FailureType_strategy = st.builds(
+    fault_tree_FailureType,
     name=
         safe_text
 )
-fault::tree::FailureType_strategy = st.builds(
-    fault::tree::FailureType,
-    name=
-        safe_text
-)
-fault::tree::Event_strategy = st.builds(
-    fault::tree::Event,
-    name=
-        safe_text,
+fault_tree_Event_strategy = st.builds(
+    fault_tree_Event,
     description=
+        safe_text,
+    name=
         safe_text
 )
-fault::tree::Gate_strategy = st.builds(
-    fault::tree::Gate,
+fault_tree_FailureInstance_strategy = st.builds(
+    fault_tree_FailureInstance,
+    name=
+        safe_text
+)
+fault_tree_Gate_strategy = st.builds(
+    fault_tree_Gate,
 )
 
 @given(instance=Gate_strategy)
@@ -456,169 +456,148 @@ fault::tree::Gate_strategy = st.builds(
 def test_gate_instantiation(instance):
     assert isinstance(instance, Gate)
 
-@given(instance=fault::tree::PriorAND_strategy)
+@given(instance=fault_tree_XOR_strategy)
 @settings(max_examples=50)
-def test_fault::tree::priorand_instantiation(instance):
-    assert isinstance(instance, fault::tree::PriorAND)
+def test_fault_tree_xor_instantiation(instance):
+    assert isinstance(instance, fault_tree_XOR)
 
-@given(instance=fault::tree::AND_strategy)
+@given(instance=fault_tree_PriorAND_strategy)
 @settings(max_examples=50)
-def test_fault::tree::and_instantiation(instance):
-    assert isinstance(instance, fault::tree::AND)
+def test_fault_tree_priorand_instantiation(instance):
+    assert isinstance(instance, fault_tree_PriorAND)
 
-@given(instance=fault::tree::Inhibit_strategy)
+@given(instance=fault_tree_AND_strategy)
 @settings(max_examples=50)
-def test_fault::tree::inhibit_instantiation(instance):
-    assert isinstance(instance, fault::tree::Inhibit)
+def test_fault_tree_and_instantiation(instance):
+    assert isinstance(instance, fault_tree_AND)
 
-@given(instance=fault::tree::XOR_strategy)
+@given(instance=fault_tree_Inhibit_strategy)
 @settings(max_examples=50)
-def test_fault::tree::xor_instantiation(instance):
-    assert isinstance(instance, fault::tree::XOR)
+def test_fault_tree_inhibit_instantiation(instance):
+    assert isinstance(instance, fault_tree_Inhibit)
 
-@given(instance=fault::tree::OR_strategy)
+@given(instance=fault_tree_OR_strategy)
 @settings(max_examples=50)
-def test_fault::tree::or_instantiation(instance):
-    assert isinstance(instance, fault::tree::OR)
+def test_fault_tree_or_instantiation(instance):
+    assert isinstance(instance, fault_tree_OR)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=fault::tree::UndevelopedEvent_strategy)
+@given(instance=fault_tree_UndevelopedEvent_strategy)
 @settings(max_examples=50)
-def test_fault::tree::undevelopedevent_instantiation(instance):
-    assert isinstance(instance, fault::tree::UndevelopedEvent)
+def test_fault_tree_undevelopedevent_instantiation(instance):
+    assert isinstance(instance, fault_tree_UndevelopedEvent)
 
-@given(instance=fault::tree::IntermediateEvent_strategy)
+@given(instance=fault_tree_IntermediateEvent_strategy)
 @settings(max_examples=50)
-def test_fault::tree::intermediateevent_instantiation(instance):
-    assert isinstance(instance, fault::tree::IntermediateEvent)
+def test_fault_tree_intermediateevent_instantiation(instance):
+    assert isinstance(instance, fault_tree_IntermediateEvent)
 
-@given(instance=fault::tree::BasicEvent_strategy)
+@given(instance=fault_tree_BasicEvent_strategy)
 @settings(max_examples=50)
-def test_fault::tree::basicevent_instantiation(instance):
-    assert isinstance(instance, fault::tree::BasicEvent)
-
-@given(instance=fault::tree::BasicEvent_strategy)
-def test_fault::tree::basicevent_probability_type(instance):
-    assert isinstance(instance.probability, float)
+def test_fault_tree_basicevent_instantiation(instance):
+    assert isinstance(instance, fault_tree_BasicEvent)
 
 
-@given(instance=fault::tree::BasicEvent_strategy)
-def test_fault::tree::basicevent_probability_setter(instance):
+
+@given(instance=fault_tree_BasicEvent_strategy)
+def test_fault_tree_basicevent_probability_setter(instance):
     original = instance.probability
     instance.probability = original
     assert instance.probability == original
 
-@given(instance=fault::tree::Hazard_strategy)
+@given(instance=fault_tree_Hazard_strategy)
 @settings(max_examples=50)
-def test_fault::tree::hazard_instantiation(instance):
-    assert isinstance(instance, fault::tree::Hazard)
+def test_fault_tree_hazard_instantiation(instance):
+    assert isinstance(instance, fault_tree_Hazard)
 
 @given(instance=IDBase_strategy)
 @settings(max_examples=50)
 def test_idbase_instantiation(instance):
     assert isinstance(instance, IDBase)
 
-@given(instance=fault::tree::ErrorInstance_strategy)
+@given(instance=fault_tree_ErrorType_strategy)
 @settings(max_examples=50)
-def test_fault::tree::errorinstance_instantiation(instance):
-    assert isinstance(instance, fault::tree::ErrorInstance)
-
-@given(instance=fault::tree::ErrorInstance_strategy)
-def test_fault::tree::errorinstance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fault_tree_errortype_instantiation(instance):
+    assert isinstance(instance, fault_tree_ErrorType)
 
 
-@given(instance=fault::tree::ErrorInstance_strategy)
-def test_fault::tree::errorinstance_name_setter(instance):
+
+@given(instance=fault_tree_ErrorType_strategy)
+def test_fault_tree_errortype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fault::tree::FaultTree_strategy)
+@given(instance=fault_tree_FaultTree_strategy)
 @settings(max_examples=50)
-def test_fault::tree::faulttree_instantiation(instance):
-    assert isinstance(instance, fault::tree::FaultTree)
+def test_fault_tree_faulttree_instantiation(instance):
+    assert isinstance(instance, fault_tree_FaultTree)
 
-@given(instance=fault::tree::ErrorType_strategy)
+@given(instance=fault_tree_ErrorInstance_strategy)
 @settings(max_examples=50)
-def test_fault::tree::errortype_instantiation(instance):
-    assert isinstance(instance, fault::tree::ErrorType)
-
-@given(instance=fault::tree::ErrorType_strategy)
-def test_fault::tree::errortype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fault_tree_errorinstance_instantiation(instance):
+    assert isinstance(instance, fault_tree_ErrorInstance)
 
 
-@given(instance=fault::tree::ErrorType_strategy)
-def test_fault::tree::errortype_name_setter(instance):
+
+@given(instance=fault_tree_ErrorInstance_strategy)
+def test_fault_tree_errorinstance_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fault::tree::FailureInstance_strategy)
+@given(instance=fault_tree_FailureType_strategy)
 @settings(max_examples=50)
-def test_fault::tree::failureinstance_instantiation(instance):
-    assert isinstance(instance, fault::tree::FailureInstance)
-
-@given(instance=fault::tree::FailureInstance_strategy)
-def test_fault::tree::failureinstance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fault_tree_failuretype_instantiation(instance):
+    assert isinstance(instance, fault_tree_FailureType)
 
 
-@given(instance=fault::tree::FailureInstance_strategy)
-def test_fault::tree::failureinstance_name_setter(instance):
+
+@given(instance=fault_tree_FailureType_strategy)
+def test_fault_tree_failuretype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fault::tree::FailureType_strategy)
+@given(instance=fault_tree_Event_strategy)
 @settings(max_examples=50)
-def test_fault::tree::failuretype_instantiation(instance):
-    assert isinstance(instance, fault::tree::FailureType)
-
-@given(instance=fault::tree::FailureType_strategy)
-def test_fault::tree::failuretype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fault_tree_event_instantiation(instance):
+    assert isinstance(instance, fault_tree_Event)
 
 
-@given(instance=fault::tree::FailureType_strategy)
-def test_fault::tree::failuretype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=fault::tree::Event_strategy)
-@settings(max_examples=50)
-def test_fault::tree::event_instantiation(instance):
-    assert isinstance(instance, fault::tree::Event)
-
-@given(instance=fault::tree::Event_strategy)
-def test_fault::tree::event_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=fault::tree::Event_strategy)
-def test_fault::tree::event_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=fault::tree::Event_strategy)
-def test_fault::tree::event_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=fault::tree::Event_strategy)
-def test_fault::tree::event_description_setter(instance):
+@given(instance=fault_tree_Event_strategy)
+def test_fault_tree_event_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=fault::tree::Gate_strategy)
+
+
+@given(instance=fault_tree_Event_strategy)
+def test_fault_tree_event_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=fault_tree_FailureInstance_strategy)
 @settings(max_examples=50)
-def test_fault::tree::gate_instantiation(instance):
-    assert isinstance(instance, fault::tree::Gate)
+def test_fault_tree_failureinstance_instantiation(instance):
+    assert isinstance(instance, fault_tree_FailureInstance)
+
+
+
+@given(instance=fault_tree_FailureInstance_strategy)
+def test_fault_tree_failureinstance_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=fault_tree_Gate_strategy)
+@settings(max_examples=50)
+def test_fault_tree_gate_instantiation(instance):
+    assert isinstance(instance, fault_tree_Gate)

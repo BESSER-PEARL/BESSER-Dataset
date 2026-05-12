@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    requirements::editor::DocumentRoot,
+from python_code import (
+    requirements_editor_DocumentRoot,
     Argument,
-    requirements::editor::NOTOperator,
-    requirements::editor::RequirementArgument,
-    requirements::editor::BinaryOperatorArgument,
-    requirements::editor::Argument,
+    requirements_editor_RequirementArgument,
+    requirements_editor_NOTOperator,
+    requirements_editor_BinaryOperatorArgument,
+    requirements_editor_Argument,
     SimpleDependency,
-    requirements::editor::ICost,
-    requirements::editor::CValue,
-    requirements::editor::Refines,
+    requirements_editor_CValue,
+    requirements_editor_ICost,
+    requirements_editor_Refines,
     Dependency,
-    requirements::editor::Requires,
-    requirements::editor::SimpleDependency,
+    requirements_editor_Requires,
+    requirements_editor_SimpleDependency,
     Requirement,
-    requirements::editor::FunctionalRequirement,
-    requirements::editor::QualityRequirement,
+    requirements_editor_FunctionalRequirement,
+    requirements_editor_QualityRequirement,
     Description,
-    requirements::editor::TextualDescription,
-    requirements::editor::Category,
-    requirements::editor::Dependency,
-    requirements::editor::Person,
-    requirements::editor::Description,
-    requirements::editor::Requirement,
+    requirements_editor_TextualDescription,
+    requirements_editor_Category,
+    requirements_editor_Dependency,
+    requirements_editor_Person,
+    requirements_editor_Description,
+    requirements_editor_Requirement,
     BinaryOperator,
 )
 
@@ -38,23 +38,23 @@ from classes import (
 
 
 
-def test_requirements::editor::documentroot_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::DocumentRoot)
+def test_requirements_editor_documentroot_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_DocumentRoot)
 
 
-def test_requirements::editor::documentroot_constructor_exists():
-    assert callable(requirements::editor::DocumentRoot.__init__)
+def test_requirements_editor_documentroot_constructor_exists():
+    assert callable(requirements_editor_DocumentRoot.__init__)
 
 
-def test_requirements::editor::documentroot_constructor_args():
-    sig = inspect.signature(requirements::editor::DocumentRoot.__init__)
+def test_requirements_editor_documentroot_constructor_args():
+    sig = inspect.signature(requirements_editor_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_requirements::editor::documentroot_has_name():
-    assert hasattr(requirements::editor::DocumentRoot, "name")
+def test_requirements_editor_documentroot_has_name():
+    assert hasattr(requirements_editor_DocumentRoot, "name")
     descriptor = None
-    for klass in requirements::editor::DocumentRoot.__mro__:
+    for klass in requirements_editor_DocumentRoot.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -76,51 +76,51 @@ def test_argument_constructor_args():
 
 
 
-def test_requirements::editor::notoperator_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::NOTOperator)
+def test_requirements_editor_requirementargument_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_RequirementArgument)
 
 
-def test_requirements::editor::notoperator_constructor_exists():
-    assert callable(requirements::editor::NOTOperator.__init__)
+def test_requirements_editor_requirementargument_constructor_exists():
+    assert callable(requirements_editor_RequirementArgument.__init__)
 
 
-def test_requirements::editor::notoperator_constructor_args():
-    sig = inspect.signature(requirements::editor::NOTOperator.__init__)
+def test_requirements_editor_requirementargument_constructor_args():
+    sig = inspect.signature(requirements_editor_RequirementArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::requirementargument_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::RequirementArgument)
+def test_requirements_editor_notoperator_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_NOTOperator)
 
 
-def test_requirements::editor::requirementargument_constructor_exists():
-    assert callable(requirements::editor::RequirementArgument.__init__)
+def test_requirements_editor_notoperator_constructor_exists():
+    assert callable(requirements_editor_NOTOperator.__init__)
 
 
-def test_requirements::editor::requirementargument_constructor_args():
-    sig = inspect.signature(requirements::editor::RequirementArgument.__init__)
+def test_requirements_editor_notoperator_constructor_args():
+    sig = inspect.signature(requirements_editor_NOTOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::binaryoperatorargument_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::BinaryOperatorArgument)
+def test_requirements_editor_binaryoperatorargument_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_BinaryOperatorArgument)
 
 
-def test_requirements::editor::binaryoperatorargument_constructor_exists():
-    assert callable(requirements::editor::BinaryOperatorArgument.__init__)
+def test_requirements_editor_binaryoperatorargument_constructor_exists():
+    assert callable(requirements_editor_BinaryOperatorArgument.__init__)
 
 
-def test_requirements::editor::binaryoperatorargument_constructor_args():
-    sig = inspect.signature(requirements::editor::BinaryOperatorArgument.__init__)
+def test_requirements_editor_binaryoperatorargument_constructor_args():
+    sig = inspect.signature(requirements_editor_BinaryOperatorArgument.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_requirements::editor::binaryoperatorargument_has_operator():
-    assert hasattr(requirements::editor::BinaryOperatorArgument, "operator")
+def test_requirements_editor_binaryoperatorargument_has_operator():
+    assert hasattr(requirements_editor_BinaryOperatorArgument, "operator")
     descriptor = None
-    for klass in requirements::editor::BinaryOperatorArgument.__mro__:
+    for klass in requirements_editor_BinaryOperatorArgument.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -128,16 +128,16 @@ def test_requirements::editor::binaryoperatorargument_has_operator():
 
 
 
-def test_requirements::editor::argument_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Argument)
+def test_requirements_editor_argument_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Argument)
 
 
-def test_requirements::editor::argument_constructor_exists():
-    assert callable(requirements::editor::Argument.__init__)
+def test_requirements_editor_argument_constructor_exists():
+    assert callable(requirements_editor_Argument.__init__)
 
 
-def test_requirements::editor::argument_constructor_args():
-    sig = inspect.signature(requirements::editor::Argument.__init__)
+def test_requirements_editor_argument_constructor_args():
+    sig = inspect.signature(requirements_editor_Argument.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -156,44 +156,44 @@ def test_simpledependency_constructor_args():
 
 
 
-def test_requirements::editor::icost_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::ICost)
+def test_requirements_editor_cvalue_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_CValue)
 
 
-def test_requirements::editor::icost_constructor_exists():
-    assert callable(requirements::editor::ICost.__init__)
+def test_requirements_editor_cvalue_constructor_exists():
+    assert callable(requirements_editor_CValue.__init__)
 
 
-def test_requirements::editor::icost_constructor_args():
-    sig = inspect.signature(requirements::editor::ICost.__init__)
+def test_requirements_editor_cvalue_constructor_args():
+    sig = inspect.signature(requirements_editor_CValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::cvalue_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::CValue)
+def test_requirements_editor_icost_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_ICost)
 
 
-def test_requirements::editor::cvalue_constructor_exists():
-    assert callable(requirements::editor::CValue.__init__)
+def test_requirements_editor_icost_constructor_exists():
+    assert callable(requirements_editor_ICost.__init__)
 
 
-def test_requirements::editor::cvalue_constructor_args():
-    sig = inspect.signature(requirements::editor::CValue.__init__)
+def test_requirements_editor_icost_constructor_args():
+    sig = inspect.signature(requirements_editor_ICost.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::refines_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Refines)
+def test_requirements_editor_refines_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Refines)
 
 
-def test_requirements::editor::refines_constructor_exists():
-    assert callable(requirements::editor::Refines.__init__)
+def test_requirements_editor_refines_constructor_exists():
+    assert callable(requirements_editor_Refines.__init__)
 
 
-def test_requirements::editor::refines_constructor_args():
-    sig = inspect.signature(requirements::editor::Refines.__init__)
+def test_requirements_editor_refines_constructor_args():
+    sig = inspect.signature(requirements_editor_Refines.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,37 +212,37 @@ def test_dependency_constructor_args():
 
 
 
-def test_requirements::editor::requires_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Requires)
+def test_requirements_editor_requires_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Requires)
 
 
-def test_requirements::editor::requires_constructor_exists():
-    assert callable(requirements::editor::Requires.__init__)
+def test_requirements_editor_requires_constructor_exists():
+    assert callable(requirements_editor_Requires.__init__)
 
 
-def test_requirements::editor::requires_constructor_args():
-    sig = inspect.signature(requirements::editor::Requires.__init__)
+def test_requirements_editor_requires_constructor_args():
+    sig = inspect.signature(requirements_editor_Requires.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::simpledependency_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::SimpleDependency)
+def test_requirements_editor_simpledependency_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_SimpleDependency)
 
 
-def test_requirements::editor::simpledependency_constructor_exists():
-    assert callable(requirements::editor::SimpleDependency.__init__)
+def test_requirements_editor_simpledependency_constructor_exists():
+    assert callable(requirements_editor_SimpleDependency.__init__)
 
 
-def test_requirements::editor::simpledependency_constructor_args():
-    sig = inspect.signature(requirements::editor::SimpleDependency.__init__)
+def test_requirements_editor_simpledependency_constructor_args():
+    sig = inspect.signature(requirements_editor_SimpleDependency.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_requirements::editor::simpledependency_has_comment():
-    assert hasattr(requirements::editor::SimpleDependency, "comment")
+def test_requirements_editor_simpledependency_has_comment():
+    assert hasattr(requirements_editor_SimpleDependency, "comment")
     descriptor = None
-    for klass in requirements::editor::SimpleDependency.__mro__:
+    for klass in requirements_editor_SimpleDependency.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -264,30 +264,30 @@ def test_requirement_constructor_args():
 
 
 
-def test_requirements::editor::functionalrequirement_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::FunctionalRequirement)
+def test_requirements_editor_functionalrequirement_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_FunctionalRequirement)
 
 
-def test_requirements::editor::functionalrequirement_constructor_exists():
-    assert callable(requirements::editor::FunctionalRequirement.__init__)
+def test_requirements_editor_functionalrequirement_constructor_exists():
+    assert callable(requirements_editor_FunctionalRequirement.__init__)
 
 
-def test_requirements::editor::functionalrequirement_constructor_args():
-    sig = inspect.signature(requirements::editor::FunctionalRequirement.__init__)
+def test_requirements_editor_functionalrequirement_constructor_args():
+    sig = inspect.signature(requirements_editor_FunctionalRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::qualityrequirement_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::QualityRequirement)
+def test_requirements_editor_qualityrequirement_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_QualityRequirement)
 
 
-def test_requirements::editor::qualityrequirement_constructor_exists():
-    assert callable(requirements::editor::QualityRequirement.__init__)
+def test_requirements_editor_qualityrequirement_constructor_exists():
+    assert callable(requirements_editor_QualityRequirement.__init__)
 
 
-def test_requirements::editor::qualityrequirement_constructor_args():
-    sig = inspect.signature(requirements::editor::QualityRequirement.__init__)
+def test_requirements_editor_qualityrequirement_constructor_args():
+    sig = inspect.signature(requirements_editor_QualityRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -306,23 +306,23 @@ def test_description_constructor_args():
 
 
 
-def test_requirements::editor::textualdescription_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::TextualDescription)
+def test_requirements_editor_textualdescription_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_TextualDescription)
 
 
-def test_requirements::editor::textualdescription_constructor_exists():
-    assert callable(requirements::editor::TextualDescription.__init__)
+def test_requirements_editor_textualdescription_constructor_exists():
+    assert callable(requirements_editor_TextualDescription.__init__)
 
 
-def test_requirements::editor::textualdescription_constructor_args():
-    sig = inspect.signature(requirements::editor::TextualDescription.__init__)
+def test_requirements_editor_textualdescription_constructor_args():
+    sig = inspect.signature(requirements_editor_TextualDescription.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_requirements::editor::textualdescription_has_description():
-    assert hasattr(requirements::editor::TextualDescription, "description")
+def test_requirements_editor_textualdescription_has_description():
+    assert hasattr(requirements_editor_TextualDescription, "description")
     descriptor = None
-    for klass in requirements::editor::TextualDescription.__mro__:
+    for klass in requirements_editor_TextualDescription.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -330,23 +330,23 @@ def test_requirements::editor::textualdescription_has_description():
 
 
 
-def test_requirements::editor::category_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Category)
+def test_requirements_editor_category_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Category)
 
 
-def test_requirements::editor::category_constructor_exists():
-    assert callable(requirements::editor::Category.__init__)
+def test_requirements_editor_category_constructor_exists():
+    assert callable(requirements_editor_Category.__init__)
 
 
-def test_requirements::editor::category_constructor_args():
-    sig = inspect.signature(requirements::editor::Category.__init__)
+def test_requirements_editor_category_constructor_args():
+    sig = inspect.signature(requirements_editor_Category.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_requirements::editor::category_has_name():
-    assert hasattr(requirements::editor::Category, "name")
+def test_requirements_editor_category_has_name():
+    assert hasattr(requirements_editor_Category, "name")
     descriptor = None
-    for klass in requirements::editor::Category.__mro__:
+    for klass in requirements_editor_Category.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -354,37 +354,37 @@ def test_requirements::editor::category_has_name():
 
 
 
-def test_requirements::editor::dependency_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Dependency)
+def test_requirements_editor_dependency_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Dependency)
 
 
-def test_requirements::editor::dependency_constructor_exists():
-    assert callable(requirements::editor::Dependency.__init__)
+def test_requirements_editor_dependency_constructor_exists():
+    assert callable(requirements_editor_Dependency.__init__)
 
 
-def test_requirements::editor::dependency_constructor_args():
-    sig = inspect.signature(requirements::editor::Dependency.__init__)
+def test_requirements_editor_dependency_constructor_args():
+    sig = inspect.signature(requirements_editor_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::person_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Person)
+def test_requirements_editor_person_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Person)
 
 
-def test_requirements::editor::person_constructor_exists():
-    assert callable(requirements::editor::Person.__init__)
+def test_requirements_editor_person_constructor_exists():
+    assert callable(requirements_editor_Person.__init__)
 
 
-def test_requirements::editor::person_constructor_args():
-    sig = inspect.signature(requirements::editor::Person.__init__)
+def test_requirements_editor_person_constructor_args():
+    sig = inspect.signature(requirements_editor_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_requirements::editor::person_has_name():
-    assert hasattr(requirements::editor::Person, "name")
+def test_requirements_editor_person_has_name():
+    assert hasattr(requirements_editor_Person, "name")
     descriptor = None
-    for klass in requirements::editor::Person.__mro__:
+    for klass in requirements_editor_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -392,69 +392,69 @@ def test_requirements::editor::person_has_name():
 
 
 
-def test_requirements::editor::description_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Description)
+def test_requirements_editor_description_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Description)
 
 
-def test_requirements::editor::description_constructor_exists():
-    assert callable(requirements::editor::Description.__init__)
+def test_requirements_editor_description_constructor_exists():
+    assert callable(requirements_editor_Description.__init__)
 
 
-def test_requirements::editor::description_constructor_args():
-    sig = inspect.signature(requirements::editor::Description.__init__)
+def test_requirements_editor_description_constructor_args():
+    sig = inspect.signature(requirements_editor_Description.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_requirements::editor::requirement_is_not_abstract():
-    assert not inspect.isabstract(requirements::editor::Requirement)
+def test_requirements_editor_requirement_is_not_abstract():
+    assert not inspect.isabstract(requirements_editor_Requirement)
 
 
-def test_requirements::editor::requirement_constructor_exists():
-    assert callable(requirements::editor::Requirement.__init__)
+def test_requirements_editor_requirement_constructor_exists():
+    assert callable(requirements_editor_Requirement.__init__)
 
 
-def test_requirements::editor::requirement_constructor_args():
-    sig = inspect.signature(requirements::editor::Requirement.__init__)
+def test_requirements_editor_requirement_constructor_args():
+    sig = inspect.signature(requirements_editor_Requirement.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "priority" in params, "Missing parameter 'priority'"
-    assert "isMandatory" in params, "Missing parameter 'isMandatory'"
     assert "identifier" in params, "Missing parameter 'identifier'"
-    assert "name" in params, "Missing parameter 'name'"
+    assert "isMandatory" in params, "Missing parameter 'isMandatory'"
 
-def test_requirements::editor::requirement_has_priority():
-    assert hasattr(requirements::editor::Requirement, "priority")
+def test_requirements_editor_requirement_has_name():
+    assert hasattr(requirements_editor_Requirement, "name")
     descriptor = None
-    for klass in requirements::editor::Requirement.__mro__:
+    for klass in requirements_editor_Requirement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_requirements_editor_requirement_has_priority():
+    assert hasattr(requirements_editor_Requirement, "priority")
+    descriptor = None
+    for klass in requirements_editor_Requirement.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirements::editor::requirement_has_isMandatory():
-    assert hasattr(requirements::editor::Requirement, "isMandatory")
+def test_requirements_editor_requirement_has_identifier():
+    assert hasattr(requirements_editor_Requirement, "identifier")
     descriptor = None
-    for klass in requirements::editor::Requirement.__mro__:
-        if "isMandatory" in klass.__dict__:
-            descriptor = klass.__dict__["isMandatory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_requirements::editor::requirement_has_identifier():
-    assert hasattr(requirements::editor::Requirement, "identifier")
-    descriptor = None
-    for klass in requirements::editor::Requirement.__mro__:
+    for klass in requirements_editor_Requirement.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_requirements::editor::requirement_has_name():
-    assert hasattr(requirements::editor::Requirement, "name")
+def test_requirements_editor_requirement_has_isMandatory():
+    assert hasattr(requirements_editor_Requirement, "isMandatory")
     descriptor = None
-    for klass in requirements::editor::Requirement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in requirements_editor_Requirement.__mro__:
+        if "isMandatory" in klass.__dict__:
+            descriptor = klass.__dict__["isMandatory"]
             break
     assert isinstance(descriptor, property)
 
@@ -466,8 +466,8 @@ def test_binaryoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BinaryOperator]
     expected_literals = [
-        "AND",
         "OR",
+        "AND",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -485,108 +485,105 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-requirements::editor::DocumentRoot_strategy = st.builds(
-    requirements::editor::DocumentRoot,
+requirements_editor_DocumentRoot_strategy = st.builds(
+    requirements_editor_DocumentRoot,
     name=
         safe_text
 )
 Argument_strategy = st.builds(
     Argument,
 )
-requirements::editor::NOTOperator_strategy = st.builds(
-    requirements::editor::NOTOperator,
+requirements_editor_RequirementArgument_strategy = st.builds(
+    requirements_editor_RequirementArgument,
 )
-requirements::editor::RequirementArgument_strategy = st.builds(
-    requirements::editor::RequirementArgument,
+requirements_editor_NOTOperator_strategy = st.builds(
+    requirements_editor_NOTOperator,
 )
-requirements::editor::BinaryOperatorArgument_strategy = st.builds(
-    requirements::editor::BinaryOperatorArgument,
+requirements_editor_BinaryOperatorArgument_strategy = st.builds(
+    requirements_editor_BinaryOperatorArgument,
     operator=
         safe_text
 )
-requirements::editor::Argument_strategy = st.builds(
-    requirements::editor::Argument,
+requirements_editor_Argument_strategy = st.builds(
+    requirements_editor_Argument,
 )
 SimpleDependency_strategy = st.builds(
     SimpleDependency,
 )
-requirements::editor::ICost_strategy = st.builds(
-    requirements::editor::ICost,
+requirements_editor_CValue_strategy = st.builds(
+    requirements_editor_CValue,
 )
-requirements::editor::CValue_strategy = st.builds(
-    requirements::editor::CValue,
+requirements_editor_ICost_strategy = st.builds(
+    requirements_editor_ICost,
 )
-requirements::editor::Refines_strategy = st.builds(
-    requirements::editor::Refines,
+requirements_editor_Refines_strategy = st.builds(
+    requirements_editor_Refines,
 )
 Dependency_strategy = st.builds(
     Dependency,
 )
-requirements::editor::Requires_strategy = st.builds(
-    requirements::editor::Requires,
+requirements_editor_Requires_strategy = st.builds(
+    requirements_editor_Requires,
 )
-requirements::editor::SimpleDependency_strategy = st.builds(
-    requirements::editor::SimpleDependency,
+requirements_editor_SimpleDependency_strategy = st.builds(
+    requirements_editor_SimpleDependency,
     comment=
         safe_text
 )
 Requirement_strategy = st.builds(
     Requirement,
 )
-requirements::editor::FunctionalRequirement_strategy = st.builds(
-    requirements::editor::FunctionalRequirement,
+requirements_editor_FunctionalRequirement_strategy = st.builds(
+    requirements_editor_FunctionalRequirement,
 )
-requirements::editor::QualityRequirement_strategy = st.builds(
-    requirements::editor::QualityRequirement,
+requirements_editor_QualityRequirement_strategy = st.builds(
+    requirements_editor_QualityRequirement,
 )
 Description_strategy = st.builds(
     Description,
 )
-requirements::editor::TextualDescription_strategy = st.builds(
-    requirements::editor::TextualDescription,
+requirements_editor_TextualDescription_strategy = st.builds(
+    requirements_editor_TextualDescription,
     description=
         safe_text
 )
-requirements::editor::Category_strategy = st.builds(
-    requirements::editor::Category,
+requirements_editor_Category_strategy = st.builds(
+    requirements_editor_Category,
     name=
         safe_text
 )
-requirements::editor::Dependency_strategy = st.builds(
-    requirements::editor::Dependency,
+requirements_editor_Dependency_strategy = st.builds(
+    requirements_editor_Dependency,
 )
-requirements::editor::Person_strategy = st.builds(
-    requirements::editor::Person,
+requirements_editor_Person_strategy = st.builds(
+    requirements_editor_Person,
     name=
         safe_text
 )
-requirements::editor::Description_strategy = st.builds(
-    requirements::editor::Description,
+requirements_editor_Description_strategy = st.builds(
+    requirements_editor_Description,
 )
-requirements::editor::Requirement_strategy = st.builds(
-    requirements::editor::Requirement,
+requirements_editor_Requirement_strategy = st.builds(
+    requirements_editor_Requirement,
+    name=
+        safe_text,
     priority=
         st.integers(),
-    isMandatory=
-        st.booleans(),
     identifier=
         safe_text,
-    name=
-        safe_text
+    isMandatory=
+        st.booleans()
 )
 
-@given(instance=requirements::editor::DocumentRoot_strategy)
+@given(instance=requirements_editor_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::documentroot_instantiation(instance):
-    assert isinstance(instance, requirements::editor::DocumentRoot)
-
-@given(instance=requirements::editor::DocumentRoot_strategy)
-def test_requirements::editor::documentroot_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_requirements_editor_documentroot_instantiation(instance):
+    assert isinstance(instance, requirements_editor_DocumentRoot)
 
 
-@given(instance=requirements::editor::DocumentRoot_strategy)
-def test_requirements::editor::documentroot_name_setter(instance):
+
+@given(instance=requirements_editor_DocumentRoot_strategy)
+def test_requirements_editor_documentroot_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -596,79 +593,73 @@ def test_requirements::editor::documentroot_name_setter(instance):
 def test_argument_instantiation(instance):
     assert isinstance(instance, Argument)
 
-@given(instance=requirements::editor::NOTOperator_strategy)
+@given(instance=requirements_editor_RequirementArgument_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::notoperator_instantiation(instance):
-    assert isinstance(instance, requirements::editor::NOTOperator)
+def test_requirements_editor_requirementargument_instantiation(instance):
+    assert isinstance(instance, requirements_editor_RequirementArgument)
 
-@given(instance=requirements::editor::RequirementArgument_strategy)
+@given(instance=requirements_editor_NOTOperator_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::requirementargument_instantiation(instance):
-    assert isinstance(instance, requirements::editor::RequirementArgument)
+def test_requirements_editor_notoperator_instantiation(instance):
+    assert isinstance(instance, requirements_editor_NOTOperator)
 
-@given(instance=requirements::editor::BinaryOperatorArgument_strategy)
+@given(instance=requirements_editor_BinaryOperatorArgument_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::binaryoperatorargument_instantiation(instance):
-    assert isinstance(instance, requirements::editor::BinaryOperatorArgument)
-
-@given(instance=requirements::editor::BinaryOperatorArgument_strategy)
-def test_requirements::editor::binaryoperatorargument_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_requirements_editor_binaryoperatorargument_instantiation(instance):
+    assert isinstance(instance, requirements_editor_BinaryOperatorArgument)
 
 
-@given(instance=requirements::editor::BinaryOperatorArgument_strategy)
-def test_requirements::editor::binaryoperatorargument_operator_setter(instance):
+
+@given(instance=requirements_editor_BinaryOperatorArgument_strategy)
+def test_requirements_editor_binaryoperatorargument_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=requirements::editor::Argument_strategy)
+@given(instance=requirements_editor_Argument_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::argument_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Argument)
+def test_requirements_editor_argument_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Argument)
 
 @given(instance=SimpleDependency_strategy)
 @settings(max_examples=50)
 def test_simpledependency_instantiation(instance):
     assert isinstance(instance, SimpleDependency)
 
-@given(instance=requirements::editor::ICost_strategy)
+@given(instance=requirements_editor_CValue_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::icost_instantiation(instance):
-    assert isinstance(instance, requirements::editor::ICost)
+def test_requirements_editor_cvalue_instantiation(instance):
+    assert isinstance(instance, requirements_editor_CValue)
 
-@given(instance=requirements::editor::CValue_strategy)
+@given(instance=requirements_editor_ICost_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::cvalue_instantiation(instance):
-    assert isinstance(instance, requirements::editor::CValue)
+def test_requirements_editor_icost_instantiation(instance):
+    assert isinstance(instance, requirements_editor_ICost)
 
-@given(instance=requirements::editor::Refines_strategy)
+@given(instance=requirements_editor_Refines_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::refines_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Refines)
+def test_requirements_editor_refines_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Refines)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=requirements::editor::Requires_strategy)
+@given(instance=requirements_editor_Requires_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::requires_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Requires)
+def test_requirements_editor_requires_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Requires)
 
-@given(instance=requirements::editor::SimpleDependency_strategy)
+@given(instance=requirements_editor_SimpleDependency_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::simpledependency_instantiation(instance):
-    assert isinstance(instance, requirements::editor::SimpleDependency)
-
-@given(instance=requirements::editor::SimpleDependency_strategy)
-def test_requirements::editor::simpledependency_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_requirements_editor_simpledependency_instantiation(instance):
+    assert isinstance(instance, requirements_editor_SimpleDependency)
 
 
-@given(instance=requirements::editor::SimpleDependency_strategy)
-def test_requirements::editor::simpledependency_comment_setter(instance):
+
+@given(instance=requirements_editor_SimpleDependency_strategy)
+def test_requirements_editor_simpledependency_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
@@ -678,127 +669,106 @@ def test_requirements::editor::simpledependency_comment_setter(instance):
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=requirements::editor::FunctionalRequirement_strategy)
+@given(instance=requirements_editor_FunctionalRequirement_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::functionalrequirement_instantiation(instance):
-    assert isinstance(instance, requirements::editor::FunctionalRequirement)
+def test_requirements_editor_functionalrequirement_instantiation(instance):
+    assert isinstance(instance, requirements_editor_FunctionalRequirement)
 
-@given(instance=requirements::editor::QualityRequirement_strategy)
+@given(instance=requirements_editor_QualityRequirement_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::qualityrequirement_instantiation(instance):
-    assert isinstance(instance, requirements::editor::QualityRequirement)
+def test_requirements_editor_qualityrequirement_instantiation(instance):
+    assert isinstance(instance, requirements_editor_QualityRequirement)
 
 @given(instance=Description_strategy)
 @settings(max_examples=50)
 def test_description_instantiation(instance):
     assert isinstance(instance, Description)
 
-@given(instance=requirements::editor::TextualDescription_strategy)
+@given(instance=requirements_editor_TextualDescription_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::textualdescription_instantiation(instance):
-    assert isinstance(instance, requirements::editor::TextualDescription)
-
-@given(instance=requirements::editor::TextualDescription_strategy)
-def test_requirements::editor::textualdescription_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_requirements_editor_textualdescription_instantiation(instance):
+    assert isinstance(instance, requirements_editor_TextualDescription)
 
 
-@given(instance=requirements::editor::TextualDescription_strategy)
-def test_requirements::editor::textualdescription_description_setter(instance):
+
+@given(instance=requirements_editor_TextualDescription_strategy)
+def test_requirements_editor_textualdescription_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=requirements::editor::Category_strategy)
+@given(instance=requirements_editor_Category_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::category_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Category)
-
-@given(instance=requirements::editor::Category_strategy)
-def test_requirements::editor::category_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_requirements_editor_category_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Category)
 
 
-@given(instance=requirements::editor::Category_strategy)
-def test_requirements::editor::category_name_setter(instance):
+
+@given(instance=requirements_editor_Category_strategy)
+def test_requirements_editor_category_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=requirements::editor::Dependency_strategy)
+@given(instance=requirements_editor_Dependency_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::dependency_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Dependency)
+def test_requirements_editor_dependency_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Dependency)
 
-@given(instance=requirements::editor::Person_strategy)
+@given(instance=requirements_editor_Person_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::person_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Person)
-
-@given(instance=requirements::editor::Person_strategy)
-def test_requirements::editor::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_requirements_editor_person_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Person)
 
 
-@given(instance=requirements::editor::Person_strategy)
-def test_requirements::editor::person_name_setter(instance):
+
+@given(instance=requirements_editor_Person_strategy)
+def test_requirements_editor_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=requirements::editor::Description_strategy)
+@given(instance=requirements_editor_Description_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::description_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Description)
+def test_requirements_editor_description_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Description)
 
-@given(instance=requirements::editor::Requirement_strategy)
+@given(instance=requirements_editor_Requirement_strategy)
 @settings(max_examples=50)
-def test_requirements::editor::requirement_instantiation(instance):
-    assert isinstance(instance, requirements::editor::Requirement)
-
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_priority_type(instance):
-    assert isinstance(instance.priority, int)
+def test_requirements_editor_requirement_instantiation(instance):
+    assert isinstance(instance, requirements_editor_Requirement)
 
 
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_priority_setter(instance):
+
+@given(instance=requirements_editor_Requirement_strategy)
+def test_requirements_editor_requirement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=requirements_editor_Requirement_strategy)
+def test_requirements_editor_requirement_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_isMandatory_type(instance):
-    assert isinstance(instance.isMandatory, bool)
 
 
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_isMandatory_setter(instance):
-    original = instance.isMandatory
-    instance.isMandatory = original
-    assert instance.isMandatory == original
-
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
-
-
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_identifier_setter(instance):
+@given(instance=requirements_editor_Requirement_strategy)
+def test_requirements_editor_requirement_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=requirements::editor::Requirement_strategy)
-def test_requirements::editor::requirement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=requirements_editor_Requirement_strategy)
+def test_requirements_editor_requirement_isMandatory_setter(instance):
+    original = instance.isMandatory
+    instance.isMandatory = original
+    assert instance.isMandatory == original
 
 import warnings
 import copy
@@ -806,9 +776,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=requirements::editor::Requirement_strategy)
+@given(instance=requirements_editor_Requirement_strategy)
 @settings(max_examples=30)
-def test_requirements::editor::requirement_findleafnodes_changes_state(instance):
+def test_requirements_editor_requirement_findleafnodes_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -822,11 +792,11 @@ def test_requirements::editor::requirement_findleafnodes_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findLeafNodes' in requirements::editor::Requirement is empty"
+        assert has_statements, f"Function 'findLeafNodes' in requirements_editor_Requirement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findLeafNodes' in requirements::editor::Requirement did not change state; check implementation")
+            warnings.warn(f"Operation 'findLeafNodes' in requirements_editor_Requirement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findLeafNodes' in requirements::editor::Requirement is not implemented or raised an error")
+        warnings.warn(f"Operation 'findLeafNodes' in requirements_editor_Requirement is not implemented or raised an error")

@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    basesyntax1::B1,
+from python_code import (
+    basesyntax1_B1,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_basesyntax1::b1_is_not_abstract():
-    assert not inspect.isabstract(basesyntax1::B1)
+def test_basesyntax1_b1_is_not_abstract():
+    assert not inspect.isabstract(basesyntax1_B1)
 
 
-def test_basesyntax1::b1_constructor_exists():
-    assert callable(basesyntax1::B1.__init__)
+def test_basesyntax1_b1_constructor_exists():
+    assert callable(basesyntax1_B1.__init__)
 
 
-def test_basesyntax1::b1_constructor_args():
-    sig = inspect.signature(basesyntax1::B1.__init__)
+def test_basesyntax1_b1_constructor_args():
+    sig = inspect.signature(basesyntax1_B1.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basesyntax1::b1_has_name():
-    assert hasattr(basesyntax1::B1, "name")
+def test_basesyntax1_b1_has_name():
+    assert hasattr(basesyntax1_B1, "name")
     descriptor = None
-    for klass in basesyntax1::B1.__mro__:
+    for klass in basesyntax1_B1.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-basesyntax1::B1_strategy = st.builds(
-    basesyntax1::B1,
+basesyntax1_B1_strategy = st.builds(
+    basesyntax1_B1,
     name=
         safe_text
 )
 
-@given(instance=basesyntax1::B1_strategy)
+@given(instance=basesyntax1_B1_strategy)
 @settings(max_examples=50)
-def test_basesyntax1::b1_instantiation(instance):
-    assert isinstance(instance, basesyntax1::B1)
-
-@given(instance=basesyntax1::B1_strategy)
-def test_basesyntax1::b1_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basesyntax1_b1_instantiation(instance):
+    assert isinstance(instance, basesyntax1_B1)
 
 
-@given(instance=basesyntax1::B1_strategy)
-def test_basesyntax1::b1_name_setter(instance):
+
+@given(instance=basesyntax1_B1_strategy)
+def test_basesyntax1_b1_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

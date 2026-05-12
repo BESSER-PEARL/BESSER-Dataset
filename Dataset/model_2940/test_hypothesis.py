@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    ER::EntityType,
-    ER::ERModel,
-    ER::NamedElement,
+    ER_EntityType,
+    ER_ERModel,
+    ER_NamedElement,
     Reference,
-    ER::StrongReference,
-    ER::WeakReference,
+    ER_StrongReference,
+    ER_WeakReference,
     Feature,
-    ER::Reference,
-    ER::Attribute,
-    ER::Feature,
+    ER_Reference,
+    ER_Attribute,
+    ER_Feature,
 )
 
 # =============================================================================
@@ -39,51 +39,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_er::entitytype_is_not_abstract():
-    assert not inspect.isabstract(ER::EntityType)
+def test_er_entitytype_is_not_abstract():
+    assert not inspect.isabstract(ER_EntityType)
 
 
-def test_er::entitytype_constructor_exists():
-    assert callable(ER::EntityType.__init__)
+def test_er_entitytype_constructor_exists():
+    assert callable(ER_EntityType.__init__)
 
 
-def test_er::entitytype_constructor_args():
-    sig = inspect.signature(ER::EntityType.__init__)
+def test_er_entitytype_constructor_args():
+    sig = inspect.signature(ER_EntityType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_er::ermodel_is_not_abstract():
-    assert not inspect.isabstract(ER::ERModel)
+def test_er_ermodel_is_not_abstract():
+    assert not inspect.isabstract(ER_ERModel)
 
 
-def test_er::ermodel_constructor_exists():
-    assert callable(ER::ERModel.__init__)
+def test_er_ermodel_constructor_exists():
+    assert callable(ER_ERModel.__init__)
 
 
-def test_er::ermodel_constructor_args():
-    sig = inspect.signature(ER::ERModel.__init__)
+def test_er_ermodel_constructor_args():
+    sig = inspect.signature(ER_ERModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_er::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ER::NamedElement)
+def test_er_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ER_NamedElement)
 
 
-def test_er::namedelement_constructor_exists():
-    assert callable(ER::NamedElement.__init__)
+def test_er_namedelement_constructor_exists():
+    assert callable(ER_NamedElement.__init__)
 
 
-def test_er::namedelement_constructor_args():
-    sig = inspect.signature(ER::NamedElement.__init__)
+def test_er_namedelement_constructor_args():
+    sig = inspect.signature(ER_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::namedelement_has_name():
-    assert hasattr(ER::NamedElement, "name")
+def test_er_namedelement_has_name():
+    assert hasattr(ER_NamedElement, "name")
     descriptor = None
-    for klass in ER::NamedElement.__mro__:
+    for klass in ER_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -105,30 +105,30 @@ def test_reference_constructor_args():
 
 
 
-def test_er::strongreference_is_not_abstract():
-    assert not inspect.isabstract(ER::StrongReference)
+def test_er_strongreference_is_not_abstract():
+    assert not inspect.isabstract(ER_StrongReference)
 
 
-def test_er::strongreference_constructor_exists():
-    assert callable(ER::StrongReference.__init__)
+def test_er_strongreference_constructor_exists():
+    assert callable(ER_StrongReference.__init__)
 
 
-def test_er::strongreference_constructor_args():
-    sig = inspect.signature(ER::StrongReference.__init__)
+def test_er_strongreference_constructor_args():
+    sig = inspect.signature(ER_StrongReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_er::weakreference_is_not_abstract():
-    assert not inspect.isabstract(ER::WeakReference)
+def test_er_weakreference_is_not_abstract():
+    assert not inspect.isabstract(ER_WeakReference)
 
 
-def test_er::weakreference_constructor_exists():
-    assert callable(ER::WeakReference.__init__)
+def test_er_weakreference_constructor_exists():
+    assert callable(ER_WeakReference.__init__)
 
 
-def test_er::weakreference_constructor_args():
-    sig = inspect.signature(ER::WeakReference.__init__)
+def test_er_weakreference_constructor_args():
+    sig = inspect.signature(ER_WeakReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,37 +147,37 @@ def test_feature_constructor_args():
 
 
 
-def test_er::reference_is_not_abstract():
-    assert not inspect.isabstract(ER::Reference)
+def test_er_reference_is_not_abstract():
+    assert not inspect.isabstract(ER_Reference)
 
 
-def test_er::reference_constructor_exists():
-    assert callable(ER::Reference.__init__)
+def test_er_reference_constructor_exists():
+    assert callable(ER_Reference.__init__)
 
 
-def test_er::reference_constructor_args():
-    sig = inspect.signature(ER::Reference.__init__)
+def test_er_reference_constructor_args():
+    sig = inspect.signature(ER_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_er::attribute_is_not_abstract():
-    assert not inspect.isabstract(ER::Attribute)
+def test_er_attribute_is_not_abstract():
+    assert not inspect.isabstract(ER_Attribute)
 
 
-def test_er::attribute_constructor_exists():
-    assert callable(ER::Attribute.__init__)
+def test_er_attribute_constructor_exists():
+    assert callable(ER_Attribute.__init__)
 
 
-def test_er::attribute_constructor_args():
-    sig = inspect.signature(ER::Attribute.__init__)
+def test_er_attribute_constructor_args():
+    sig = inspect.signature(ER_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_er::attribute_has_type():
-    assert hasattr(ER::Attribute, "type")
+def test_er_attribute_has_type():
+    assert hasattr(ER_Attribute, "type")
     descriptor = None
-    for klass in ER::Attribute.__mro__:
+    for klass in ER_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -185,16 +185,16 @@ def test_er::attribute_has_type():
 
 
 
-def test_er::feature_is_not_abstract():
-    assert not inspect.isabstract(ER::Feature)
+def test_er_feature_is_not_abstract():
+    assert not inspect.isabstract(ER_Feature)
 
 
-def test_er::feature_constructor_exists():
-    assert callable(ER::Feature.__init__)
+def test_er_feature_constructor_exists():
+    assert callable(ER_Feature.__init__)
 
 
-def test_er::feature_constructor_args():
-    sig = inspect.signature(ER::Feature.__init__)
+def test_er_feature_constructor_args():
+    sig = inspect.signature(ER_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -212,39 +212,39 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ER::EntityType_strategy = st.builds(
-    ER::EntityType,
+ER_EntityType_strategy = st.builds(
+    ER_EntityType,
 )
-ER::ERModel_strategy = st.builds(
-    ER::ERModel,
+ER_ERModel_strategy = st.builds(
+    ER_ERModel,
 )
-ER::NamedElement_strategy = st.builds(
-    ER::NamedElement,
+ER_NamedElement_strategy = st.builds(
+    ER_NamedElement,
     name=
         safe_text
 )
 Reference_strategy = st.builds(
     Reference,
 )
-ER::StrongReference_strategy = st.builds(
-    ER::StrongReference,
+ER_StrongReference_strategy = st.builds(
+    ER_StrongReference,
 )
-ER::WeakReference_strategy = st.builds(
-    ER::WeakReference,
+ER_WeakReference_strategy = st.builds(
+    ER_WeakReference,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-ER::Reference_strategy = st.builds(
-    ER::Reference,
+ER_Reference_strategy = st.builds(
+    ER_Reference,
 )
-ER::Attribute_strategy = st.builds(
-    ER::Attribute,
+ER_Attribute_strategy = st.builds(
+    ER_Attribute,
     type=
         safe_text
 )
-ER::Feature_strategy = st.builds(
-    ER::Feature,
+ER_Feature_strategy = st.builds(
+    ER_Feature,
 )
 
 @given(instance=NamedElement_strategy)
@@ -252,28 +252,25 @@ ER::Feature_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ER::EntityType_strategy)
+@given(instance=ER_EntityType_strategy)
 @settings(max_examples=50)
-def test_er::entitytype_instantiation(instance):
-    assert isinstance(instance, ER::EntityType)
+def test_er_entitytype_instantiation(instance):
+    assert isinstance(instance, ER_EntityType)
 
-@given(instance=ER::ERModel_strategy)
+@given(instance=ER_ERModel_strategy)
 @settings(max_examples=50)
-def test_er::ermodel_instantiation(instance):
-    assert isinstance(instance, ER::ERModel)
+def test_er_ermodel_instantiation(instance):
+    assert isinstance(instance, ER_ERModel)
 
-@given(instance=ER::NamedElement_strategy)
+@given(instance=ER_NamedElement_strategy)
 @settings(max_examples=50)
-def test_er::namedelement_instantiation(instance):
-    assert isinstance(instance, ER::NamedElement)
-
-@given(instance=ER::NamedElement_strategy)
-def test_er::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_namedelement_instantiation(instance):
+    assert isinstance(instance, ER_NamedElement)
 
 
-@given(instance=ER::NamedElement_strategy)
-def test_er::namedelement_name_setter(instance):
+
+@given(instance=ER_NamedElement_strategy)
+def test_er_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -283,43 +280,40 @@ def test_er::namedelement_name_setter(instance):
 def test_reference_instantiation(instance):
     assert isinstance(instance, Reference)
 
-@given(instance=ER::StrongReference_strategy)
+@given(instance=ER_StrongReference_strategy)
 @settings(max_examples=50)
-def test_er::strongreference_instantiation(instance):
-    assert isinstance(instance, ER::StrongReference)
+def test_er_strongreference_instantiation(instance):
+    assert isinstance(instance, ER_StrongReference)
 
-@given(instance=ER::WeakReference_strategy)
+@given(instance=ER_WeakReference_strategy)
 @settings(max_examples=50)
-def test_er::weakreference_instantiation(instance):
-    assert isinstance(instance, ER::WeakReference)
+def test_er_weakreference_instantiation(instance):
+    assert isinstance(instance, ER_WeakReference)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=ER::Reference_strategy)
+@given(instance=ER_Reference_strategy)
 @settings(max_examples=50)
-def test_er::reference_instantiation(instance):
-    assert isinstance(instance, ER::Reference)
+def test_er_reference_instantiation(instance):
+    assert isinstance(instance, ER_Reference)
 
-@given(instance=ER::Attribute_strategy)
+@given(instance=ER_Attribute_strategy)
 @settings(max_examples=50)
-def test_er::attribute_instantiation(instance):
-    assert isinstance(instance, ER::Attribute)
-
-@given(instance=ER::Attribute_strategy)
-def test_er::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_er_attribute_instantiation(instance):
+    assert isinstance(instance, ER_Attribute)
 
 
-@given(instance=ER::Attribute_strategy)
-def test_er::attribute_type_setter(instance):
+
+@given(instance=ER_Attribute_strategy)
+def test_er_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ER::Feature_strategy)
+@given(instance=ER_Feature_strategy)
 @settings(max_examples=50)
-def test_er::feature_instantiation(instance):
-    assert isinstance(instance, ER::Feature)
+def test_er_feature_instantiation(instance):
+    assert isinstance(instance, ER_Feature)

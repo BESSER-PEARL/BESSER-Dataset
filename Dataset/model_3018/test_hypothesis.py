@@ -3,140 +3,140 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    vcml::Statement,
-    CharacteristicReference::C,
-    vcml::ShortVarReference,
-    vcml::ObjectCharacteristicReference,
+from python_code import (
+    SimpleStatement,
+    vcml_Assignment,
+    Statement,
+    vcml_SimpleStatement,
+    vcml_CompoundStatement,
+    vcml_Statement,
+    CharacteristicReference_C,
+    vcml_ShortVarReference,
+    vcml_ObjectCharacteristicReference,
     Literal,
-    vcml::EObject,
+    vcml_CharacteristicReference_P,
+    vcml_EObject,
     Condition,
     ConstraintRestriction,
-    vcml::ConstraintRestrictionFalse,
-    vcml::SubpartOfCondition,
-    vcml::NegatedConstraintRestrictionLHS,
-    vcml::PartOfCondition,
-    vcml::PartialKey,
-    vcml::FunctionOrTable,
-    vcml::Expression,
+    vcml_SubpartOfCondition,
+    vcml_ConstraintRestrictionFalse,
+    vcml_NegatedConstraintRestrictionLHS,
+    vcml_PartOfCondition,
+    vcml_PartialKey,
+    vcml_FunctionOrTable,
+    vcml_Expression,
     ConstraintObject,
-    vcml::ConstraintClass,
-    vcml::ShortVarDefinition,
-    vcml::CharacteristicReference::C,
-    vcml::ConstraintRestriction,
-    vcml::ConstraintObject,
-    vcml::FormattedDocumentationBlock,
-    vcml::MultipleLanguageDocumentation::LanguageBlock,
+    vcml_ConstraintClass,
+    vcml_ShortVarDefinition,
+    vcml_CharacteristicReference_C,
+    vcml_ConstraintRestriction,
+    vcml_ConstraintObject,
+    vcml_FormattedDocumentationBlock,
+    vcml_MultipleLanguageDocumentation_LanguageBlock,
     Documentation,
-    vcml::MultipleLanguageDocumentation,
-    vcml::SimpleDocumentation,
-    vcml::ObjectType,
-    vcml::ConstraintMaterial,
-    vcml::MultiLanguageDescription,
+    vcml_MultipleLanguageDocumentation,
+    vcml_SimpleDocumentation,
+    vcml_ObjectType,
+    vcml_ConstraintMaterial,
+    vcml_MultiLanguageDescription,
     Description,
-    vcml::MultiLanguageDescriptions,
-    vcml::SimpleDescription,
-    vcml::Row,
-    vcml::VariantTableArgument,
-    vcml::VariantFunctionArgument,
-    vcml::ValueAssignment,
-    vcml::Classification,
-    vcml::CharacteristicGroup,
-    vcml::ConstraintSource,
-    vcml::Condition,
-    vcml::ConditionSource,
-    vcml::ProcedureSource,
+    vcml_MultiLanguageDescriptions,
+    vcml_SimpleDescription,
+    vcml_Row,
+    vcml_VariantTableArgument,
+    vcml_VariantFunctionArgument,
+    vcml_ValueAssignment,
+    vcml_Classification,
+    vcml_CharacteristicGroup,
+    vcml_ConstraintSource,
+    vcml_Condition,
+    vcml_ConditionSource,
+    vcml_ProcedureSource,
     Dependency,
-    vcml::Dependency,
-    vcml::NumberListEntry,
-    vcml::DateCharacteristicValue,
-    vcml::CharacteristicValue,
-    vcml::NumericCharacteristicValue,
-    vcml::CharacteristicOrValueDependencies,
-    vcml::CharacteristicType,
-    vcml::Documentation,
+    vcml_Dependency,
+    vcml_NumberListEntry,
+    vcml_DateCharacteristicValue,
+    vcml_CharacteristicValue,
+    vcml_NumericCharacteristicValue,
+    vcml_CharacteristicOrValueDependencies,
+    vcml_CharacteristicType,
+    vcml_Documentation,
     BOMItem,
-    vcml::BOMItem::Class,
-    vcml::BOMItem::Material,
-    vcml::ConfigurationProfileEntry,
-    vcml::BOMItem,
+    vcml_BOMItem_Class,
+    vcml_BOMItem_Material,
+    vcml_ConfigurationProfileEntry,
+    vcml_BOMItem,
     VCObject,
-    vcml::Precondition,
-    vcml::Procedure,
-    vcml::Constraint,
-    vcml::ConfigurationProfile,
-    vcml::VariantTableContent,
-    vcml::Class,
-    vcml::VariantTable,
-    vcml::InterfaceDesign,
-    vcml::VariantFunction,
-    vcml::Material,
-    vcml::Characteristic,
-    vcml::DependencyNet,
-    vcml::SelectionCondition,
-    vcml::BillOfMaterial,
-    vcml::Description,
+    vcml_VariantTable,
+    vcml_Constraint,
+    vcml_VariantTableContent,
+    vcml_Procedure,
+    vcml_InterfaceDesign,
+    vcml_DependencyNet,
+    vcml_Material,
+    vcml_VariantFunction,
+    vcml_SelectionCondition,
+    vcml_Class,
+    vcml_Precondition,
+    vcml_Characteristic,
+    vcml_ConfigurationProfile,
+    vcml_BillOfMaterial,
+    vcml_Description,
     CharacteristicType,
-    vcml::SymbolicType,
-    vcml::DateType,
-    vcml::NumericType,
-    vcml::VCObject,
-    vcml::Option,
-    vcml::Import,
-    vcml::VcmlModel,
-    vcml::BinaryCondition,
-    vcml::ConditionalConstraintRestriction,
+    vcml_SymbolicType,
+    vcml_DateType,
+    vcml_NumericType,
+    vcml_VCObject,
+    vcml_Option,
+    vcml_Import,
+    vcml_VcmlModel,
+    vcml_BinaryCondition,
+    vcml_ConditionalStatement,
+    vcml_ConditionalConstraintRestriction,
     List,
-    vcml::SymbolList,
-    vcml::NumberList,
-    vcml::InCondition::P,
-    vcml::List,
-    vcml::InCondition::C,
-    vcml::IsSpecified::P,
-    vcml::IsSpecified::C,
-    vcml::Comparison,
-    vcml::UnaryCondition,
-    vcml::SymbolicLiteral,
+    vcml_SymbolList,
+    vcml_NumberList,
+    vcml_InCondition_P,
+    vcml_List,
+    vcml_InCondition_C,
+    vcml_IsSpecified_P,
+    vcml_IsSpecified_C,
+    vcml_Comparison,
+    vcml_UnaryCondition,
+    vcml_SymbolicLiteral,
     NumberListEntry,
-    vcml::NumericInterval,
-    vcml::NumericLiteral,
-    vcml::MDataCharacteristic::P,
-    vcml::MDataCharacteristic::C,
+    vcml_NumericInterval,
+    vcml_NumericLiteral,
+    vcml_MDataCharacteristic_P,
+    vcml_MDataCharacteristic_C,
     Expression,
-    vcml::CountParts,
-    vcml::SumParts,
-    vcml::FunctionCall,
-    vcml::Literal,
-    vcml::BinaryExpression,
-    vcml::UnaryExpression,
-    vcml::TypeOf,
+    vcml_Literal,
+    vcml_FunctionCall,
+    vcml_SumParts,
+    vcml_BinaryExpression,
+    vcml_CountParts,
+    vcml_UnaryExpression,
+    vcml_TypeOf,
+    vcml_SetPricingFactor,
+    vcml_IsInvisible,
     SetOrDelDefault,
-    vcml::DelDefault,
-    vcml::SetDefault,
+    vcml_DelDefault,
+    vcml_SetDefault,
+    vcml_SetOrDelDefault,
     FunctionOrTable,
-    vcml::CharacteristicReference::P,
-    SimpleStatement,
-    vcml::IsInvisible,
-    vcml::Table,
-    vcml::Function,
-    vcml::SetPricingFactor,
-    vcml::SetOrDelDefault,
-    vcml::PFunction,
-    vcml::Assignment,
-    Statement,
-    vcml::SimpleStatement,
-    vcml::ConditionalStatement,
-    vcml::CompoundStatement,
+    vcml_PFunction,
+    vcml_Table,
+    vcml_Function,
     Status,
-    ProcedureLocation,
-    Fixing,
-    UnaryExpressionOperator,
-    OptionType,
-    ComparisonOperator,
     FunctionName,
+    Fixing,
     Language,
+    ComparisonOperator,
+    OptionType,
+    ProcedureLocation,
+    UnaryExpressionOperator,
 )
 
 # =============================================================================
@@ -145,58 +145,128 @@ from classes import (
 
 
 
-def test_vcml::statement_is_not_abstract():
-    assert not inspect.isabstract(vcml::Statement)
+def test_simplestatement_is_not_abstract():
+    assert not inspect.isabstract(SimpleStatement)
 
 
-def test_vcml::statement_constructor_exists():
-    assert callable(vcml::Statement.__init__)
+def test_simplestatement_constructor_exists():
+    assert callable(SimpleStatement.__init__)
 
 
-def test_vcml::statement_constructor_args():
-    sig = inspect.signature(vcml::Statement.__init__)
+def test_simplestatement_constructor_args():
+    sig = inspect.signature(SimpleStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_characteristicreference::c_is_not_abstract():
-    assert not inspect.isabstract(CharacteristicReference::C)
+def test_vcml_assignment_is_not_abstract():
+    assert not inspect.isabstract(vcml_Assignment)
 
 
-def test_characteristicreference::c_constructor_exists():
-    assert callable(CharacteristicReference::C.__init__)
+def test_vcml_assignment_constructor_exists():
+    assert callable(vcml_Assignment.__init__)
 
 
-def test_characteristicreference::c_constructor_args():
-    sig = inspect.signature(CharacteristicReference::C.__init__)
+def test_vcml_assignment_constructor_args():
+    sig = inspect.signature(vcml_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::shortvarreference_is_not_abstract():
-    assert not inspect.isabstract(vcml::ShortVarReference)
+def test_statement_is_not_abstract():
+    assert not inspect.isabstract(Statement)
 
 
-def test_vcml::shortvarreference_constructor_exists():
-    assert callable(vcml::ShortVarReference.__init__)
+def test_statement_constructor_exists():
+    assert callable(Statement.__init__)
 
 
-def test_vcml::shortvarreference_constructor_args():
-    sig = inspect.signature(vcml::ShortVarReference.__init__)
+def test_statement_constructor_args():
+    sig = inspect.signature(Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::objectcharacteristicreference_is_not_abstract():
-    assert not inspect.isabstract(vcml::ObjectCharacteristicReference)
+def test_vcml_simplestatement_is_not_abstract():
+    assert not inspect.isabstract(vcml_SimpleStatement)
 
 
-def test_vcml::objectcharacteristicreference_constructor_exists():
-    assert callable(vcml::ObjectCharacteristicReference.__init__)
+def test_vcml_simplestatement_constructor_exists():
+    assert callable(vcml_SimpleStatement.__init__)
 
 
-def test_vcml::objectcharacteristicreference_constructor_args():
-    sig = inspect.signature(vcml::ObjectCharacteristicReference.__init__)
+def test_vcml_simplestatement_constructor_args():
+    sig = inspect.signature(vcml_SimpleStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_compoundstatement_is_not_abstract():
+    assert not inspect.isabstract(vcml_CompoundStatement)
+
+
+def test_vcml_compoundstatement_constructor_exists():
+    assert callable(vcml_CompoundStatement.__init__)
+
+
+def test_vcml_compoundstatement_constructor_args():
+    sig = inspect.signature(vcml_CompoundStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_statement_is_not_abstract():
+    assert not inspect.isabstract(vcml_Statement)
+
+
+def test_vcml_statement_constructor_exists():
+    assert callable(vcml_Statement.__init__)
+
+
+def test_vcml_statement_constructor_args():
+    sig = inspect.signature(vcml_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_characteristicreference_c_is_not_abstract():
+    assert not inspect.isabstract(CharacteristicReference_C)
+
+
+def test_characteristicreference_c_constructor_exists():
+    assert callable(CharacteristicReference_C.__init__)
+
+
+def test_characteristicreference_c_constructor_args():
+    sig = inspect.signature(CharacteristicReference_C.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_shortvarreference_is_not_abstract():
+    assert not inspect.isabstract(vcml_ShortVarReference)
+
+
+def test_vcml_shortvarreference_constructor_exists():
+    assert callable(vcml_ShortVarReference.__init__)
+
+
+def test_vcml_shortvarreference_constructor_args():
+    sig = inspect.signature(vcml_ShortVarReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_objectcharacteristicreference_is_not_abstract():
+    assert not inspect.isabstract(vcml_ObjectCharacteristicReference)
+
+
+def test_vcml_objectcharacteristicreference_constructor_exists():
+    assert callable(vcml_ObjectCharacteristicReference.__init__)
+
+
+def test_vcml_objectcharacteristicreference_constructor_args():
+    sig = inspect.signature(vcml_ObjectCharacteristicReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -215,16 +285,40 @@ def test_literal_constructor_args():
 
 
 
-def test_vcml::eobject_is_not_abstract():
-    assert not inspect.isabstract(vcml::EObject)
+def test_vcml_characteristicreference_p_is_not_abstract():
+    assert not inspect.isabstract(vcml_CharacteristicReference_P)
 
 
-def test_vcml::eobject_constructor_exists():
-    assert callable(vcml::EObject.__init__)
+def test_vcml_characteristicreference_p_constructor_exists():
+    assert callable(vcml_CharacteristicReference_P.__init__)
 
 
-def test_vcml::eobject_constructor_args():
-    sig = inspect.signature(vcml::EObject.__init__)
+def test_vcml_characteristicreference_p_constructor_args():
+    sig = inspect.signature(vcml_CharacteristicReference_P.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_vcml_characteristicreference_p_has_location():
+    assert hasattr(vcml_CharacteristicReference_P, "location")
+    descriptor = None
+    for klass in vcml_CharacteristicReference_P.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_eobject_is_not_abstract():
+    assert not inspect.isabstract(vcml_EObject)
+
+
+def test_vcml_eobject_constructor_exists():
+    assert callable(vcml_EObject.__init__)
+
+
+def test_vcml_eobject_constructor_args():
+    sig = inspect.signature(vcml_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,79 +351,79 @@ def test_constraintrestriction_constructor_args():
 
 
 
-def test_vcml::constraintrestrictionfalse_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConstraintRestrictionFalse)
+def test_vcml_subpartofcondition_is_not_abstract():
+    assert not inspect.isabstract(vcml_SubpartOfCondition)
 
 
-def test_vcml::constraintrestrictionfalse_constructor_exists():
-    assert callable(vcml::ConstraintRestrictionFalse.__init__)
+def test_vcml_subpartofcondition_constructor_exists():
+    assert callable(vcml_SubpartOfCondition.__init__)
 
 
-def test_vcml::constraintrestrictionfalse_constructor_args():
-    sig = inspect.signature(vcml::ConstraintRestrictionFalse.__init__)
+def test_vcml_subpartofcondition_constructor_args():
+    sig = inspect.signature(vcml_SubpartOfCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::subpartofcondition_is_not_abstract():
-    assert not inspect.isabstract(vcml::SubpartOfCondition)
+def test_vcml_constraintrestrictionfalse_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConstraintRestrictionFalse)
 
 
-def test_vcml::subpartofcondition_constructor_exists():
-    assert callable(vcml::SubpartOfCondition.__init__)
+def test_vcml_constraintrestrictionfalse_constructor_exists():
+    assert callable(vcml_ConstraintRestrictionFalse.__init__)
 
 
-def test_vcml::subpartofcondition_constructor_args():
-    sig = inspect.signature(vcml::SubpartOfCondition.__init__)
+def test_vcml_constraintrestrictionfalse_constructor_args():
+    sig = inspect.signature(vcml_ConstraintRestrictionFalse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::negatedconstraintrestrictionlhs_is_not_abstract():
-    assert not inspect.isabstract(vcml::NegatedConstraintRestrictionLHS)
+def test_vcml_negatedconstraintrestrictionlhs_is_not_abstract():
+    assert not inspect.isabstract(vcml_NegatedConstraintRestrictionLHS)
 
 
-def test_vcml::negatedconstraintrestrictionlhs_constructor_exists():
-    assert callable(vcml::NegatedConstraintRestrictionLHS.__init__)
+def test_vcml_negatedconstraintrestrictionlhs_constructor_exists():
+    assert callable(vcml_NegatedConstraintRestrictionLHS.__init__)
 
 
-def test_vcml::negatedconstraintrestrictionlhs_constructor_args():
-    sig = inspect.signature(vcml::NegatedConstraintRestrictionLHS.__init__)
+def test_vcml_negatedconstraintrestrictionlhs_constructor_args():
+    sig = inspect.signature(vcml_NegatedConstraintRestrictionLHS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::partofcondition_is_not_abstract():
-    assert not inspect.isabstract(vcml::PartOfCondition)
+def test_vcml_partofcondition_is_not_abstract():
+    assert not inspect.isabstract(vcml_PartOfCondition)
 
 
-def test_vcml::partofcondition_constructor_exists():
-    assert callable(vcml::PartOfCondition.__init__)
+def test_vcml_partofcondition_constructor_exists():
+    assert callable(vcml_PartOfCondition.__init__)
 
 
-def test_vcml::partofcondition_constructor_args():
-    sig = inspect.signature(vcml::PartOfCondition.__init__)
+def test_vcml_partofcondition_constructor_args():
+    sig = inspect.signature(vcml_PartOfCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::partialkey_is_not_abstract():
-    assert not inspect.isabstract(vcml::PartialKey)
+def test_vcml_partialkey_is_not_abstract():
+    assert not inspect.isabstract(vcml_PartialKey)
 
 
-def test_vcml::partialkey_constructor_exists():
-    assert callable(vcml::PartialKey.__init__)
+def test_vcml_partialkey_constructor_exists():
+    assert callable(vcml_PartialKey.__init__)
 
 
-def test_vcml::partialkey_constructor_args():
-    sig = inspect.signature(vcml::PartialKey.__init__)
+def test_vcml_partialkey_constructor_args():
+    sig = inspect.signature(vcml_PartialKey.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_vcml::partialkey_has_key():
-    assert hasattr(vcml::PartialKey, "key")
+def test_vcml_partialkey_has_key():
+    assert hasattr(vcml_PartialKey, "key")
     descriptor = None
-    for klass in vcml::PartialKey.__mro__:
+    for klass in vcml_PartialKey.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -337,30 +431,30 @@ def test_vcml::partialkey_has_key():
 
 
 
-def test_vcml::functionortable_is_not_abstract():
-    assert not inspect.isabstract(vcml::FunctionOrTable)
+def test_vcml_functionortable_is_not_abstract():
+    assert not inspect.isabstract(vcml_FunctionOrTable)
 
 
-def test_vcml::functionortable_constructor_exists():
-    assert callable(vcml::FunctionOrTable.__init__)
+def test_vcml_functionortable_constructor_exists():
+    assert callable(vcml_FunctionOrTable.__init__)
 
 
-def test_vcml::functionortable_constructor_args():
-    sig = inspect.signature(vcml::FunctionOrTable.__init__)
+def test_vcml_functionortable_constructor_args():
+    sig = inspect.signature(vcml_FunctionOrTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::expression_is_not_abstract():
-    assert not inspect.isabstract(vcml::Expression)
+def test_vcml_expression_is_not_abstract():
+    assert not inspect.isabstract(vcml_Expression)
 
 
-def test_vcml::expression_constructor_exists():
-    assert callable(vcml::Expression.__init__)
+def test_vcml_expression_constructor_exists():
+    assert callable(vcml_Expression.__init__)
 
 
-def test_vcml::expression_constructor_args():
-    sig = inspect.signature(vcml::Expression.__init__)
+def test_vcml_expression_constructor_args():
+    sig = inspect.signature(vcml_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -379,37 +473,37 @@ def test_constraintobject_constructor_args():
 
 
 
-def test_vcml::constraintclass_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConstraintClass)
+def test_vcml_constraintclass_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConstraintClass)
 
 
-def test_vcml::constraintclass_constructor_exists():
-    assert callable(vcml::ConstraintClass.__init__)
+def test_vcml_constraintclass_constructor_exists():
+    assert callable(vcml_ConstraintClass.__init__)
 
 
-def test_vcml::constraintclass_constructor_args():
-    sig = inspect.signature(vcml::ConstraintClass.__init__)
+def test_vcml_constraintclass_constructor_args():
+    sig = inspect.signature(vcml_ConstraintClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::shortvardefinition_is_not_abstract():
-    assert not inspect.isabstract(vcml::ShortVarDefinition)
+def test_vcml_shortvardefinition_is_not_abstract():
+    assert not inspect.isabstract(vcml_ShortVarDefinition)
 
 
-def test_vcml::shortvardefinition_constructor_exists():
-    assert callable(vcml::ShortVarDefinition.__init__)
+def test_vcml_shortvardefinition_constructor_exists():
+    assert callable(vcml_ShortVarDefinition.__init__)
 
 
-def test_vcml::shortvardefinition_constructor_args():
-    sig = inspect.signature(vcml::ShortVarDefinition.__init__)
+def test_vcml_shortvardefinition_constructor_args():
+    sig = inspect.signature(vcml_ShortVarDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vcml::shortvardefinition_has_name():
-    assert hasattr(vcml::ShortVarDefinition, "name")
+def test_vcml_shortvardefinition_has_name():
+    assert hasattr(vcml_ShortVarDefinition, "name")
     descriptor = None
-    for klass in vcml::ShortVarDefinition.__mro__:
+    for klass in vcml_ShortVarDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -417,51 +511,51 @@ def test_vcml::shortvardefinition_has_name():
 
 
 
-def test_vcml::characteristicreference::c_is_not_abstract():
-    assert not inspect.isabstract(vcml::CharacteristicReference::C)
+def test_vcml_characteristicreference_c_is_not_abstract():
+    assert not inspect.isabstract(vcml_CharacteristicReference_C)
 
 
-def test_vcml::characteristicreference::c_constructor_exists():
-    assert callable(vcml::CharacteristicReference::C.__init__)
+def test_vcml_characteristicreference_c_constructor_exists():
+    assert callable(vcml_CharacteristicReference_C.__init__)
 
 
-def test_vcml::characteristicreference::c_constructor_args():
-    sig = inspect.signature(vcml::CharacteristicReference::C.__init__)
+def test_vcml_characteristicreference_c_constructor_args():
+    sig = inspect.signature(vcml_CharacteristicReference_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::constraintrestriction_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConstraintRestriction)
+def test_vcml_constraintrestriction_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConstraintRestriction)
 
 
-def test_vcml::constraintrestriction_constructor_exists():
-    assert callable(vcml::ConstraintRestriction.__init__)
+def test_vcml_constraintrestriction_constructor_exists():
+    assert callable(vcml_ConstraintRestriction.__init__)
 
 
-def test_vcml::constraintrestriction_constructor_args():
-    sig = inspect.signature(vcml::ConstraintRestriction.__init__)
+def test_vcml_constraintrestriction_constructor_args():
+    sig = inspect.signature(vcml_ConstraintRestriction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::constraintobject_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConstraintObject)
+def test_vcml_constraintobject_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConstraintObject)
 
 
-def test_vcml::constraintobject_constructor_exists():
-    assert callable(vcml::ConstraintObject.__init__)
+def test_vcml_constraintobject_constructor_exists():
+    assert callable(vcml_ConstraintObject.__init__)
 
 
-def test_vcml::constraintobject_constructor_args():
-    sig = inspect.signature(vcml::ConstraintObject.__init__)
+def test_vcml_constraintobject_constructor_args():
+    sig = inspect.signature(vcml_ConstraintObject.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vcml::constraintobject_has_name():
-    assert hasattr(vcml::ConstraintObject, "name")
+def test_vcml_constraintobject_has_name():
+    assert hasattr(vcml_ConstraintObject, "name")
     descriptor = None
-    for klass in vcml::ConstraintObject.__mro__:
+    for klass in vcml_ConstraintObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -469,33 +563,33 @@ def test_vcml::constraintobject_has_name():
 
 
 
-def test_vcml::formatteddocumentationblock_is_not_abstract():
-    assert not inspect.isabstract(vcml::FormattedDocumentationBlock)
+def test_vcml_formatteddocumentationblock_is_not_abstract():
+    assert not inspect.isabstract(vcml_FormattedDocumentationBlock)
 
 
-def test_vcml::formatteddocumentationblock_constructor_exists():
-    assert callable(vcml::FormattedDocumentationBlock.__init__)
+def test_vcml_formatteddocumentationblock_constructor_exists():
+    assert callable(vcml_FormattedDocumentationBlock.__init__)
 
 
-def test_vcml::formatteddocumentationblock_constructor_args():
-    sig = inspect.signature(vcml::FormattedDocumentationBlock.__init__)
+def test_vcml_formatteddocumentationblock_constructor_args():
+    sig = inspect.signature(vcml_FormattedDocumentationBlock.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "format" in params, "Missing parameter 'format'"
 
-def test_vcml::formatteddocumentationblock_has_value():
-    assert hasattr(vcml::FormattedDocumentationBlock, "value")
+def test_vcml_formatteddocumentationblock_has_value():
+    assert hasattr(vcml_FormattedDocumentationBlock, "value")
     descriptor = None
-    for klass in vcml::FormattedDocumentationBlock.__mro__:
+    for klass in vcml_FormattedDocumentationBlock.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::formatteddocumentationblock_has_format():
-    assert hasattr(vcml::FormattedDocumentationBlock, "format")
+def test_vcml_formatteddocumentationblock_has_format():
+    assert hasattr(vcml_FormattedDocumentationBlock, "format")
     descriptor = None
-    for klass in vcml::FormattedDocumentationBlock.__mro__:
+    for klass in vcml_FormattedDocumentationBlock.__mro__:
         if "format" in klass.__dict__:
             descriptor = klass.__dict__["format"]
             break
@@ -503,23 +597,23 @@ def test_vcml::formatteddocumentationblock_has_format():
 
 
 
-def test_vcml::multiplelanguagedocumentation::languageblock_is_not_abstract():
-    assert not inspect.isabstract(vcml::MultipleLanguageDocumentation::LanguageBlock)
+def test_vcml_multiplelanguagedocumentation_languageblock_is_not_abstract():
+    assert not inspect.isabstract(vcml_MultipleLanguageDocumentation_LanguageBlock)
 
 
-def test_vcml::multiplelanguagedocumentation::languageblock_constructor_exists():
-    assert callable(vcml::MultipleLanguageDocumentation::LanguageBlock.__init__)
+def test_vcml_multiplelanguagedocumentation_languageblock_constructor_exists():
+    assert callable(vcml_MultipleLanguageDocumentation_LanguageBlock.__init__)
 
 
-def test_vcml::multiplelanguagedocumentation::languageblock_constructor_args():
-    sig = inspect.signature(vcml::MultipleLanguageDocumentation::LanguageBlock.__init__)
+def test_vcml_multiplelanguagedocumentation_languageblock_constructor_args():
+    sig = inspect.signature(vcml_MultipleLanguageDocumentation_LanguageBlock.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
 
-def test_vcml::multiplelanguagedocumentation::languageblock_has_language():
-    assert hasattr(vcml::MultipleLanguageDocumentation::LanguageBlock, "language")
+def test_vcml_multiplelanguagedocumentation_languageblock_has_language():
+    assert hasattr(vcml_MultipleLanguageDocumentation_LanguageBlock, "language")
     descriptor = None
-    for klass in vcml::MultipleLanguageDocumentation::LanguageBlock.__mro__:
+    for klass in vcml_MultipleLanguageDocumentation_LanguageBlock.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
@@ -541,37 +635,37 @@ def test_documentation_constructor_args():
 
 
 
-def test_vcml::multiplelanguagedocumentation_is_not_abstract():
-    assert not inspect.isabstract(vcml::MultipleLanguageDocumentation)
+def test_vcml_multiplelanguagedocumentation_is_not_abstract():
+    assert not inspect.isabstract(vcml_MultipleLanguageDocumentation)
 
 
-def test_vcml::multiplelanguagedocumentation_constructor_exists():
-    assert callable(vcml::MultipleLanguageDocumentation.__init__)
+def test_vcml_multiplelanguagedocumentation_constructor_exists():
+    assert callable(vcml_MultipleLanguageDocumentation.__init__)
 
 
-def test_vcml::multiplelanguagedocumentation_constructor_args():
-    sig = inspect.signature(vcml::MultipleLanguageDocumentation.__init__)
+def test_vcml_multiplelanguagedocumentation_constructor_args():
+    sig = inspect.signature(vcml_MultipleLanguageDocumentation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::simpledocumentation_is_not_abstract():
-    assert not inspect.isabstract(vcml::SimpleDocumentation)
+def test_vcml_simpledocumentation_is_not_abstract():
+    assert not inspect.isabstract(vcml_SimpleDocumentation)
 
 
-def test_vcml::simpledocumentation_constructor_exists():
-    assert callable(vcml::SimpleDocumentation.__init__)
+def test_vcml_simpledocumentation_constructor_exists():
+    assert callable(vcml_SimpleDocumentation.__init__)
 
 
-def test_vcml::simpledocumentation_constructor_args():
-    sig = inspect.signature(vcml::SimpleDocumentation.__init__)
+def test_vcml_simpledocumentation_constructor_args():
+    sig = inspect.signature(vcml_SimpleDocumentation.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vcml::simpledocumentation_has_value():
-    assert hasattr(vcml::SimpleDocumentation, "value")
+def test_vcml_simpledocumentation_has_value():
+    assert hasattr(vcml_SimpleDocumentation, "value")
     descriptor = None
-    for klass in vcml::SimpleDocumentation.__mro__:
+    for klass in vcml_SimpleDocumentation.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -579,81 +673,81 @@ def test_vcml::simpledocumentation_has_value():
 
 
 
-def test_vcml::objecttype_is_not_abstract():
-    assert not inspect.isabstract(vcml::ObjectType)
+def test_vcml_objecttype_is_not_abstract():
+    assert not inspect.isabstract(vcml_ObjectType)
 
 
-def test_vcml::objecttype_constructor_exists():
-    assert callable(vcml::ObjectType.__init__)
+def test_vcml_objecttype_constructor_exists():
+    assert callable(vcml_ObjectType.__init__)
 
 
-def test_vcml::objecttype_constructor_args():
-    sig = inspect.signature(vcml::ObjectType.__init__)
+def test_vcml_objecttype_constructor_args():
+    sig = inspect.signature(vcml_ObjectType.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "classType" in params, "Missing parameter 'classType'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_vcml::objecttype_has_type():
-    assert hasattr(vcml::ObjectType, "type")
+def test_vcml_objecttype_has_classType():
+    assert hasattr(vcml_ObjectType, "classType")
     descriptor = None
-    for klass in vcml::ObjectType.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::objecttype_has_classType():
-    assert hasattr(vcml::ObjectType, "classType")
-    descriptor = None
-    for klass in vcml::ObjectType.__mro__:
+    for klass in vcml_ObjectType.__mro__:
         if "classType" in klass.__dict__:
             descriptor = klass.__dict__["classType"]
             break
     assert isinstance(descriptor, property)
 
+def test_vcml_objecttype_has_type():
+    assert hasattr(vcml_ObjectType, "type")
+    descriptor = None
+    for klass in vcml_ObjectType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_vcml::constraintmaterial_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConstraintMaterial)
+
+def test_vcml_constraintmaterial_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConstraintMaterial)
 
 
-def test_vcml::constraintmaterial_constructor_exists():
-    assert callable(vcml::ConstraintMaterial.__init__)
+def test_vcml_constraintmaterial_constructor_exists():
+    assert callable(vcml_ConstraintMaterial.__init__)
 
 
-def test_vcml::constraintmaterial_constructor_args():
-    sig = inspect.signature(vcml::ConstraintMaterial.__init__)
+def test_vcml_constraintmaterial_constructor_args():
+    sig = inspect.signature(vcml_ConstraintMaterial.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::multilanguagedescription_is_not_abstract():
-    assert not inspect.isabstract(vcml::MultiLanguageDescription)
+def test_vcml_multilanguagedescription_is_not_abstract():
+    assert not inspect.isabstract(vcml_MultiLanguageDescription)
 
 
-def test_vcml::multilanguagedescription_constructor_exists():
-    assert callable(vcml::MultiLanguageDescription.__init__)
+def test_vcml_multilanguagedescription_constructor_exists():
+    assert callable(vcml_MultiLanguageDescription.__init__)
 
 
-def test_vcml::multilanguagedescription_constructor_args():
-    sig = inspect.signature(vcml::MultiLanguageDescription.__init__)
+def test_vcml_multilanguagedescription_constructor_args():
+    sig = inspect.signature(vcml_MultiLanguageDescription.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "language" in params, "Missing parameter 'language'"
 
-def test_vcml::multilanguagedescription_has_value():
-    assert hasattr(vcml::MultiLanguageDescription, "value")
+def test_vcml_multilanguagedescription_has_value():
+    assert hasattr(vcml_MultiLanguageDescription, "value")
     descriptor = None
-    for klass in vcml::MultiLanguageDescription.__mro__:
+    for klass in vcml_MultiLanguageDescription.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::multilanguagedescription_has_language():
-    assert hasattr(vcml::MultiLanguageDescription, "language")
+def test_vcml_multilanguagedescription_has_language():
+    assert hasattr(vcml_MultiLanguageDescription, "language")
     descriptor = None
-    for klass in vcml::MultiLanguageDescription.__mro__:
+    for klass in vcml_MultiLanguageDescription.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
@@ -675,37 +769,37 @@ def test_description_constructor_args():
 
 
 
-def test_vcml::multilanguagedescriptions_is_not_abstract():
-    assert not inspect.isabstract(vcml::MultiLanguageDescriptions)
+def test_vcml_multilanguagedescriptions_is_not_abstract():
+    assert not inspect.isabstract(vcml_MultiLanguageDescriptions)
 
 
-def test_vcml::multilanguagedescriptions_constructor_exists():
-    assert callable(vcml::MultiLanguageDescriptions.__init__)
+def test_vcml_multilanguagedescriptions_constructor_exists():
+    assert callable(vcml_MultiLanguageDescriptions.__init__)
 
 
-def test_vcml::multilanguagedescriptions_constructor_args():
-    sig = inspect.signature(vcml::MultiLanguageDescriptions.__init__)
+def test_vcml_multilanguagedescriptions_constructor_args():
+    sig = inspect.signature(vcml_MultiLanguageDescriptions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::simpledescription_is_not_abstract():
-    assert not inspect.isabstract(vcml::SimpleDescription)
+def test_vcml_simpledescription_is_not_abstract():
+    assert not inspect.isabstract(vcml_SimpleDescription)
 
 
-def test_vcml::simpledescription_constructor_exists():
-    assert callable(vcml::SimpleDescription.__init__)
+def test_vcml_simpledescription_constructor_exists():
+    assert callable(vcml_SimpleDescription.__init__)
 
 
-def test_vcml::simpledescription_constructor_args():
-    sig = inspect.signature(vcml::SimpleDescription.__init__)
+def test_vcml_simpledescription_constructor_args():
+    sig = inspect.signature(vcml_SimpleDescription.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vcml::simpledescription_has_value():
-    assert hasattr(vcml::SimpleDescription, "value")
+def test_vcml_simpledescription_has_value():
+    assert hasattr(vcml_SimpleDescription, "value")
     descriptor = None
-    for klass in vcml::SimpleDescription.__mro__:
+    for klass in vcml_SimpleDescription.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -713,37 +807,37 @@ def test_vcml::simpledescription_has_value():
 
 
 
-def test_vcml::row_is_not_abstract():
-    assert not inspect.isabstract(vcml::Row)
+def test_vcml_row_is_not_abstract():
+    assert not inspect.isabstract(vcml_Row)
 
 
-def test_vcml::row_constructor_exists():
-    assert callable(vcml::Row.__init__)
+def test_vcml_row_constructor_exists():
+    assert callable(vcml_Row.__init__)
 
 
-def test_vcml::row_constructor_args():
-    sig = inspect.signature(vcml::Row.__init__)
+def test_vcml_row_constructor_args():
+    sig = inspect.signature(vcml_Row.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::varianttableargument_is_not_abstract():
-    assert not inspect.isabstract(vcml::VariantTableArgument)
+def test_vcml_varianttableargument_is_not_abstract():
+    assert not inspect.isabstract(vcml_VariantTableArgument)
 
 
-def test_vcml::varianttableargument_constructor_exists():
-    assert callable(vcml::VariantTableArgument.__init__)
+def test_vcml_varianttableargument_constructor_exists():
+    assert callable(vcml_VariantTableArgument.__init__)
 
 
-def test_vcml::varianttableargument_constructor_args():
-    sig = inspect.signature(vcml::VariantTableArgument.__init__)
+def test_vcml_varianttableargument_constructor_args():
+    sig = inspect.signature(vcml_VariantTableArgument.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_vcml::varianttableargument_has_key():
-    assert hasattr(vcml::VariantTableArgument, "key")
+def test_vcml_varianttableargument_has_key():
+    assert hasattr(vcml_VariantTableArgument, "key")
     descriptor = None
-    for klass in vcml::VariantTableArgument.__mro__:
+    for klass in vcml_VariantTableArgument.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -751,23 +845,23 @@ def test_vcml::varianttableargument_has_key():
 
 
 
-def test_vcml::variantfunctionargument_is_not_abstract():
-    assert not inspect.isabstract(vcml::VariantFunctionArgument)
+def test_vcml_variantfunctionargument_is_not_abstract():
+    assert not inspect.isabstract(vcml_VariantFunctionArgument)
 
 
-def test_vcml::variantfunctionargument_constructor_exists():
-    assert callable(vcml::VariantFunctionArgument.__init__)
+def test_vcml_variantfunctionargument_constructor_exists():
+    assert callable(vcml_VariantFunctionArgument.__init__)
 
 
-def test_vcml::variantfunctionargument_constructor_args():
-    sig = inspect.signature(vcml::VariantFunctionArgument.__init__)
+def test_vcml_variantfunctionargument_constructor_args():
+    sig = inspect.signature(vcml_VariantFunctionArgument.__init__)
     params = list(sig.parameters.keys())
     assert "in_" in params, "Missing parameter 'in_'"
 
-def test_vcml::variantfunctionargument_has_in_():
-    assert hasattr(vcml::VariantFunctionArgument, "in_")
+def test_vcml_variantfunctionargument_has_in_():
+    assert hasattr(vcml_VariantFunctionArgument, "in_")
     descriptor = None
-    for klass in vcml::VariantFunctionArgument.__mro__:
+    for klass in vcml_VariantFunctionArgument.__mro__:
         if "in_" in klass.__dict__:
             descriptor = klass.__dict__["in_"]
             break
@@ -775,51 +869,51 @@ def test_vcml::variantfunctionargument_has_in_():
 
 
 
-def test_vcml::valueassignment_is_not_abstract():
-    assert not inspect.isabstract(vcml::ValueAssignment)
+def test_vcml_valueassignment_is_not_abstract():
+    assert not inspect.isabstract(vcml_ValueAssignment)
 
 
-def test_vcml::valueassignment_constructor_exists():
-    assert callable(vcml::ValueAssignment.__init__)
+def test_vcml_valueassignment_constructor_exists():
+    assert callable(vcml_ValueAssignment.__init__)
 
 
-def test_vcml::valueassignment_constructor_args():
-    sig = inspect.signature(vcml::ValueAssignment.__init__)
+def test_vcml_valueassignment_constructor_args():
+    sig = inspect.signature(vcml_ValueAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::classification_is_not_abstract():
-    assert not inspect.isabstract(vcml::Classification)
+def test_vcml_classification_is_not_abstract():
+    assert not inspect.isabstract(vcml_Classification)
 
 
-def test_vcml::classification_constructor_exists():
-    assert callable(vcml::Classification.__init__)
+def test_vcml_classification_constructor_exists():
+    assert callable(vcml_Classification.__init__)
 
 
-def test_vcml::classification_constructor_args():
-    sig = inspect.signature(vcml::Classification.__init__)
+def test_vcml_classification_constructor_args():
+    sig = inspect.signature(vcml_Classification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::characteristicgroup_is_not_abstract():
-    assert not inspect.isabstract(vcml::CharacteristicGroup)
+def test_vcml_characteristicgroup_is_not_abstract():
+    assert not inspect.isabstract(vcml_CharacteristicGroup)
 
 
-def test_vcml::characteristicgroup_constructor_exists():
-    assert callable(vcml::CharacteristicGroup.__init__)
+def test_vcml_characteristicgroup_constructor_exists():
+    assert callable(vcml_CharacteristicGroup.__init__)
 
 
-def test_vcml::characteristicgroup_constructor_args():
-    sig = inspect.signature(vcml::CharacteristicGroup.__init__)
+def test_vcml_characteristicgroup_constructor_args():
+    sig = inspect.signature(vcml_CharacteristicGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vcml::characteristicgroup_has_name():
-    assert hasattr(vcml::CharacteristicGroup, "name")
+def test_vcml_characteristicgroup_has_name():
+    assert hasattr(vcml_CharacteristicGroup, "name")
     descriptor = None
-    for klass in vcml::CharacteristicGroup.__mro__:
+    for klass in vcml_CharacteristicGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -827,58 +921,58 @@ def test_vcml::characteristicgroup_has_name():
 
 
 
-def test_vcml::constraintsource_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConstraintSource)
+def test_vcml_constraintsource_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConstraintSource)
 
 
-def test_vcml::constraintsource_constructor_exists():
-    assert callable(vcml::ConstraintSource.__init__)
+def test_vcml_constraintsource_constructor_exists():
+    assert callable(vcml_ConstraintSource.__init__)
 
 
-def test_vcml::constraintsource_constructor_args():
-    sig = inspect.signature(vcml::ConstraintSource.__init__)
+def test_vcml_constraintsource_constructor_args():
+    sig = inspect.signature(vcml_ConstraintSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::condition_is_not_abstract():
-    assert not inspect.isabstract(vcml::Condition)
+def test_vcml_condition_is_not_abstract():
+    assert not inspect.isabstract(vcml_Condition)
 
 
-def test_vcml::condition_constructor_exists():
-    assert callable(vcml::Condition.__init__)
+def test_vcml_condition_constructor_exists():
+    assert callable(vcml_Condition.__init__)
 
 
-def test_vcml::condition_constructor_args():
-    sig = inspect.signature(vcml::Condition.__init__)
+def test_vcml_condition_constructor_args():
+    sig = inspect.signature(vcml_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::conditionsource_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConditionSource)
+def test_vcml_conditionsource_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConditionSource)
 
 
-def test_vcml::conditionsource_constructor_exists():
-    assert callable(vcml::ConditionSource.__init__)
+def test_vcml_conditionsource_constructor_exists():
+    assert callable(vcml_ConditionSource.__init__)
 
 
-def test_vcml::conditionsource_constructor_args():
-    sig = inspect.signature(vcml::ConditionSource.__init__)
+def test_vcml_conditionsource_constructor_args():
+    sig = inspect.signature(vcml_ConditionSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::proceduresource_is_not_abstract():
-    assert not inspect.isabstract(vcml::ProcedureSource)
+def test_vcml_proceduresource_is_not_abstract():
+    assert not inspect.isabstract(vcml_ProcedureSource)
 
 
-def test_vcml::proceduresource_constructor_exists():
-    assert callable(vcml::ProcedureSource.__init__)
+def test_vcml_proceduresource_constructor_exists():
+    assert callable(vcml_ProcedureSource.__init__)
 
 
-def test_vcml::proceduresource_constructor_args():
-    sig = inspect.signature(vcml::ProcedureSource.__init__)
+def test_vcml_proceduresource_constructor_args():
+    sig = inspect.signature(vcml_ProcedureSource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -897,105 +991,105 @@ def test_dependency_constructor_args():
 
 
 
-def test_vcml::dependency_is_not_abstract():
-    assert not inspect.isabstract(vcml::Dependency)
+def test_vcml_dependency_is_not_abstract():
+    assert not inspect.isabstract(vcml_Dependency)
 
 
-def test_vcml::dependency_constructor_exists():
-    assert callable(vcml::Dependency.__init__)
+def test_vcml_dependency_constructor_exists():
+    assert callable(vcml_Dependency.__init__)
 
 
-def test_vcml::dependency_constructor_args():
-    sig = inspect.signature(vcml::Dependency.__init__)
+def test_vcml_dependency_constructor_args():
+    sig = inspect.signature(vcml_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::numberlistentry_is_not_abstract():
-    assert not inspect.isabstract(vcml::NumberListEntry)
+def test_vcml_numberlistentry_is_not_abstract():
+    assert not inspect.isabstract(vcml_NumberListEntry)
 
 
-def test_vcml::numberlistentry_constructor_exists():
-    assert callable(vcml::NumberListEntry.__init__)
+def test_vcml_numberlistentry_constructor_exists():
+    assert callable(vcml_NumberListEntry.__init__)
 
 
-def test_vcml::numberlistentry_constructor_args():
-    sig = inspect.signature(vcml::NumberListEntry.__init__)
+def test_vcml_numberlistentry_constructor_args():
+    sig = inspect.signature(vcml_NumberListEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::datecharacteristicvalue_is_not_abstract():
-    assert not inspect.isabstract(vcml::DateCharacteristicValue)
+def test_vcml_datecharacteristicvalue_is_not_abstract():
+    assert not inspect.isabstract(vcml_DateCharacteristicValue)
 
 
-def test_vcml::datecharacteristicvalue_constructor_exists():
-    assert callable(vcml::DateCharacteristicValue.__init__)
+def test_vcml_datecharacteristicvalue_constructor_exists():
+    assert callable(vcml_DateCharacteristicValue.__init__)
 
 
-def test_vcml::datecharacteristicvalue_constructor_args():
-    sig = inspect.signature(vcml::DateCharacteristicValue.__init__)
+def test_vcml_datecharacteristicvalue_constructor_args():
+    sig = inspect.signature(vcml_DateCharacteristicValue.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
-    assert "from_" in params, "Missing parameter 'from_'"
     assert "to" in params, "Missing parameter 'to'"
+    assert "from_" in params, "Missing parameter 'from_'"
 
-def test_vcml::datecharacteristicvalue_has_default():
-    assert hasattr(vcml::DateCharacteristicValue, "default")
+def test_vcml_datecharacteristicvalue_has_default():
+    assert hasattr(vcml_DateCharacteristicValue, "default")
     descriptor = None
-    for klass in vcml::DateCharacteristicValue.__mro__:
+    for klass in vcml_DateCharacteristicValue.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::datecharacteristicvalue_has_from_():
-    assert hasattr(vcml::DateCharacteristicValue, "from_")
+def test_vcml_datecharacteristicvalue_has_to():
+    assert hasattr(vcml_DateCharacteristicValue, "to")
     descriptor = None
-    for klass in vcml::DateCharacteristicValue.__mro__:
-        if "from_" in klass.__dict__:
-            descriptor = klass.__dict__["from_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::datecharacteristicvalue_has_to():
-    assert hasattr(vcml::DateCharacteristicValue, "to")
-    descriptor = None
-    for klass in vcml::DateCharacteristicValue.__mro__:
+    for klass in vcml_DateCharacteristicValue.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
     assert isinstance(descriptor, property)
 
+def test_vcml_datecharacteristicvalue_has_from_():
+    assert hasattr(vcml_DateCharacteristicValue, "from_")
+    descriptor = None
+    for klass in vcml_DateCharacteristicValue.__mro__:
+        if "from_" in klass.__dict__:
+            descriptor = klass.__dict__["from_"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_vcml::characteristicvalue_is_not_abstract():
-    assert not inspect.isabstract(vcml::CharacteristicValue)
+
+def test_vcml_characteristicvalue_is_not_abstract():
+    assert not inspect.isabstract(vcml_CharacteristicValue)
 
 
-def test_vcml::characteristicvalue_constructor_exists():
-    assert callable(vcml::CharacteristicValue.__init__)
+def test_vcml_characteristicvalue_constructor_exists():
+    assert callable(vcml_CharacteristicValue.__init__)
 
 
-def test_vcml::characteristicvalue_constructor_args():
-    sig = inspect.signature(vcml::CharacteristicValue.__init__)
+def test_vcml_characteristicvalue_constructor_args():
+    sig = inspect.signature(vcml_CharacteristicValue.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vcml::characteristicvalue_has_default():
-    assert hasattr(vcml::CharacteristicValue, "default")
+def test_vcml_characteristicvalue_has_default():
+    assert hasattr(vcml_CharacteristicValue, "default")
     descriptor = None
-    for klass in vcml::CharacteristicValue.__mro__:
+    for klass in vcml_CharacteristicValue.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::characteristicvalue_has_name():
-    assert hasattr(vcml::CharacteristicValue, "name")
+def test_vcml_characteristicvalue_has_name():
+    assert hasattr(vcml_CharacteristicValue, "name")
     descriptor = None
-    for klass in vcml::CharacteristicValue.__mro__:
+    for klass in vcml_CharacteristicValue.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1003,23 +1097,23 @@ def test_vcml::characteristicvalue_has_name():
 
 
 
-def test_vcml::numericcharacteristicvalue_is_not_abstract():
-    assert not inspect.isabstract(vcml::NumericCharacteristicValue)
+def test_vcml_numericcharacteristicvalue_is_not_abstract():
+    assert not inspect.isabstract(vcml_NumericCharacteristicValue)
 
 
-def test_vcml::numericcharacteristicvalue_constructor_exists():
-    assert callable(vcml::NumericCharacteristicValue.__init__)
+def test_vcml_numericcharacteristicvalue_constructor_exists():
+    assert callable(vcml_NumericCharacteristicValue.__init__)
 
 
-def test_vcml::numericcharacteristicvalue_constructor_args():
-    sig = inspect.signature(vcml::NumericCharacteristicValue.__init__)
+def test_vcml_numericcharacteristicvalue_constructor_args():
+    sig = inspect.signature(vcml_NumericCharacteristicValue.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_vcml::numericcharacteristicvalue_has_default():
-    assert hasattr(vcml::NumericCharacteristicValue, "default")
+def test_vcml_numericcharacteristicvalue_has_default():
+    assert hasattr(vcml_NumericCharacteristicValue, "default")
     descriptor = None
-    for klass in vcml::NumericCharacteristicValue.__mro__:
+    for klass in vcml_NumericCharacteristicValue.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -1027,37 +1121,37 @@ def test_vcml::numericcharacteristicvalue_has_default():
 
 
 
-def test_vcml::characteristicorvaluedependencies_is_not_abstract():
-    assert not inspect.isabstract(vcml::CharacteristicOrValueDependencies)
+def test_vcml_characteristicorvaluedependencies_is_not_abstract():
+    assert not inspect.isabstract(vcml_CharacteristicOrValueDependencies)
 
 
-def test_vcml::characteristicorvaluedependencies_constructor_exists():
-    assert callable(vcml::CharacteristicOrValueDependencies.__init__)
+def test_vcml_characteristicorvaluedependencies_constructor_exists():
+    assert callable(vcml_CharacteristicOrValueDependencies.__init__)
 
 
-def test_vcml::characteristicorvaluedependencies_constructor_args():
-    sig = inspect.signature(vcml::CharacteristicOrValueDependencies.__init__)
+def test_vcml_characteristicorvaluedependencies_constructor_args():
+    sig = inspect.signature(vcml_CharacteristicOrValueDependencies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::characteristictype_is_not_abstract():
-    assert not inspect.isabstract(vcml::CharacteristicType)
+def test_vcml_characteristictype_is_not_abstract():
+    assert not inspect.isabstract(vcml_CharacteristicType)
 
 
-def test_vcml::characteristictype_constructor_exists():
-    assert callable(vcml::CharacteristicType.__init__)
+def test_vcml_characteristictype_constructor_exists():
+    assert callable(vcml_CharacteristicType.__init__)
 
 
-def test_vcml::characteristictype_constructor_args():
-    sig = inspect.signature(vcml::CharacteristicType.__init__)
+def test_vcml_characteristictype_constructor_args():
+    sig = inspect.signature(vcml_CharacteristicType.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfChars" in params, "Missing parameter 'numberOfChars'"
 
-def test_vcml::characteristictype_has_numberOfChars():
-    assert hasattr(vcml::CharacteristicType, "numberOfChars")
+def test_vcml_characteristictype_has_numberOfChars():
+    assert hasattr(vcml_CharacteristicType, "numberOfChars")
     descriptor = None
-    for klass in vcml::CharacteristicType.__mro__:
+    for klass in vcml_CharacteristicType.__mro__:
         if "numberOfChars" in klass.__dict__:
             descriptor = klass.__dict__["numberOfChars"]
             break
@@ -1065,16 +1159,16 @@ def test_vcml::characteristictype_has_numberOfChars():
 
 
 
-def test_vcml::documentation_is_not_abstract():
-    assert not inspect.isabstract(vcml::Documentation)
+def test_vcml_documentation_is_not_abstract():
+    assert not inspect.isabstract(vcml_Documentation)
 
 
-def test_vcml::documentation_constructor_exists():
-    assert callable(vcml::Documentation.__init__)
+def test_vcml_documentation_constructor_exists():
+    assert callable(vcml_Documentation.__init__)
 
 
-def test_vcml::documentation_constructor_args():
-    sig = inspect.signature(vcml::Documentation.__init__)
+def test_vcml_documentation_constructor_args():
+    sig = inspect.signature(vcml_Documentation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1093,51 +1187,51 @@ def test_bomitem_constructor_args():
 
 
 
-def test_vcml::bomitem::class_is_not_abstract():
-    assert not inspect.isabstract(vcml::BOMItem::Class)
+def test_vcml_bomitem_class_is_not_abstract():
+    assert not inspect.isabstract(vcml_BOMItem_Class)
 
 
-def test_vcml::bomitem::class_constructor_exists():
-    assert callable(vcml::BOMItem::Class.__init__)
+def test_vcml_bomitem_class_constructor_exists():
+    assert callable(vcml_BOMItem_Class.__init__)
 
 
-def test_vcml::bomitem::class_constructor_args():
-    sig = inspect.signature(vcml::BOMItem::Class.__init__)
+def test_vcml_bomitem_class_constructor_args():
+    sig = inspect.signature(vcml_BOMItem_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::bomitem::material_is_not_abstract():
-    assert not inspect.isabstract(vcml::BOMItem::Material)
+def test_vcml_bomitem_material_is_not_abstract():
+    assert not inspect.isabstract(vcml_BOMItem_Material)
 
 
-def test_vcml::bomitem::material_constructor_exists():
-    assert callable(vcml::BOMItem::Material.__init__)
+def test_vcml_bomitem_material_constructor_exists():
+    assert callable(vcml_BOMItem_Material.__init__)
 
 
-def test_vcml::bomitem::material_constructor_args():
-    sig = inspect.signature(vcml::BOMItem::Material.__init__)
+def test_vcml_bomitem_material_constructor_args():
+    sig = inspect.signature(vcml_BOMItem_Material.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::configurationprofileentry_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConfigurationProfileEntry)
+def test_vcml_configurationprofileentry_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConfigurationProfileEntry)
 
 
-def test_vcml::configurationprofileentry_constructor_exists():
-    assert callable(vcml::ConfigurationProfileEntry.__init__)
+def test_vcml_configurationprofileentry_constructor_exists():
+    assert callable(vcml_ConfigurationProfileEntry.__init__)
 
 
-def test_vcml::configurationprofileentry_constructor_args():
-    sig = inspect.signature(vcml::ConfigurationProfileEntry.__init__)
+def test_vcml_configurationprofileentry_constructor_args():
+    sig = inspect.signature(vcml_ConfigurationProfileEntry.__init__)
     params = list(sig.parameters.keys())
     assert "sequence" in params, "Missing parameter 'sequence'"
 
-def test_vcml::configurationprofileentry_has_sequence():
-    assert hasattr(vcml::ConfigurationProfileEntry, "sequence")
+def test_vcml_configurationprofileentry_has_sequence():
+    assert hasattr(vcml_ConfigurationProfileEntry, "sequence")
     descriptor = None
-    for klass in vcml::ConfigurationProfileEntry.__mro__:
+    for klass in vcml_ConfigurationProfileEntry.__mro__:
         if "sequence" in klass.__dict__:
             descriptor = klass.__dict__["sequence"]
             break
@@ -1145,23 +1239,23 @@ def test_vcml::configurationprofileentry_has_sequence():
 
 
 
-def test_vcml::bomitem_is_not_abstract():
-    assert not inspect.isabstract(vcml::BOMItem)
+def test_vcml_bomitem_is_not_abstract():
+    assert not inspect.isabstract(vcml_BOMItem)
 
 
-def test_vcml::bomitem_constructor_exists():
-    assert callable(vcml::BOMItem.__init__)
+def test_vcml_bomitem_constructor_exists():
+    assert callable(vcml_BOMItem.__init__)
 
 
-def test_vcml::bomitem_constructor_args():
-    sig = inspect.signature(vcml::BOMItem.__init__)
+def test_vcml_bomitem_constructor_args():
+    sig = inspect.signature(vcml_BOMItem.__init__)
     params = list(sig.parameters.keys())
     assert "itemnumber" in params, "Missing parameter 'itemnumber'"
 
-def test_vcml::bomitem_has_itemnumber():
-    assert hasattr(vcml::BOMItem, "itemnumber")
+def test_vcml_bomitem_has_itemnumber():
+    assert hasattr(vcml_BOMItem, "itemnumber")
     descriptor = None
-    for klass in vcml::BOMItem.__mro__:
+    for klass in vcml_BOMItem.__mro__:
         if "itemnumber" in klass.__dict__:
             descriptor = klass.__dict__["itemnumber"]
             break
@@ -1183,67 +1277,33 @@ def test_vcobject_constructor_args():
 
 
 
-def test_vcml::precondition_is_not_abstract():
-    assert not inspect.isabstract(vcml::Precondition)
+def test_vcml_varianttable_is_not_abstract():
+    assert not inspect.isabstract(vcml_VariantTable)
 
 
-def test_vcml::precondition_constructor_exists():
-    assert callable(vcml::Precondition.__init__)
+def test_vcml_varianttable_constructor_exists():
+    assert callable(vcml_VariantTable.__init__)
 
 
-def test_vcml::precondition_constructor_args():
-    sig = inspect.signature(vcml::Precondition.__init__)
+def test_vcml_varianttable_constructor_args():
+    sig = inspect.signature(vcml_VariantTable.__init__)
     params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "group" in params, "Missing parameter 'group'"
 
-def test_vcml::precondition_has_group():
-    assert hasattr(vcml::Precondition, "group")
+def test_vcml_varianttable_has_status():
+    assert hasattr(vcml_VariantTable, "status")
     descriptor = None
-    for klass in vcml::Precondition.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::precondition_has_status():
-    assert hasattr(vcml::Precondition, "status")
-    descriptor = None
-    for klass in vcml::Precondition.__mro__:
+    for klass in vcml_VariantTable.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_vcml::procedure_is_not_abstract():
-    assert not inspect.isabstract(vcml::Procedure)
-
-
-def test_vcml::procedure_constructor_exists():
-    assert callable(vcml::Procedure.__init__)
-
-
-def test_vcml::procedure_constructor_args():
-    sig = inspect.signature(vcml::Procedure.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_vcml::procedure_has_status():
-    assert hasattr(vcml::Procedure, "status")
+def test_vcml_varianttable_has_group():
+    assert hasattr(vcml_VariantTable, "group")
     descriptor = None
-    for klass in vcml::Procedure.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::procedure_has_group():
-    assert hasattr(vcml::Procedure, "group")
-    descriptor = None
-    for klass in vcml::Procedure.__mro__:
+    for klass in vcml_VariantTable.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -1251,33 +1311,81 @@ def test_vcml::procedure_has_group():
 
 
 
-def test_vcml::constraint_is_not_abstract():
-    assert not inspect.isabstract(vcml::Constraint)
+def test_vcml_constraint_is_not_abstract():
+    assert not inspect.isabstract(vcml_Constraint)
 
 
-def test_vcml::constraint_constructor_exists():
-    assert callable(vcml::Constraint.__init__)
+def test_vcml_constraint_constructor_exists():
+    assert callable(vcml_Constraint.__init__)
 
 
-def test_vcml::constraint_constructor_args():
-    sig = inspect.signature(vcml::Constraint.__init__)
+def test_vcml_constraint_constructor_args():
+    sig = inspect.signature(vcml_Constraint.__init__)
     params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
     assert "group" in params, "Missing parameter 'group'"
+    assert "status" in params, "Missing parameter 'status'"
 
-def test_vcml::constraint_has_status():
-    assert hasattr(vcml::Constraint, "status")
+def test_vcml_constraint_has_group():
+    assert hasattr(vcml_Constraint, "group")
     descriptor = None
-    for klass in vcml::Constraint.__mro__:
+    for klass in vcml_Constraint.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_constraint_has_status():
+    assert hasattr(vcml_Constraint, "status")
+    descriptor = None
+    for klass in vcml_Constraint.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::constraint_has_group():
-    assert hasattr(vcml::Constraint, "group")
+
+
+def test_vcml_varianttablecontent_is_not_abstract():
+    assert not inspect.isabstract(vcml_VariantTableContent)
+
+
+def test_vcml_varianttablecontent_constructor_exists():
+    assert callable(vcml_VariantTableContent.__init__)
+
+
+def test_vcml_varianttablecontent_constructor_args():
+    sig = inspect.signature(vcml_VariantTableContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_procedure_is_not_abstract():
+    assert not inspect.isabstract(vcml_Procedure)
+
+
+def test_vcml_procedure_constructor_exists():
+    assert callable(vcml_Procedure.__init__)
+
+
+def test_vcml_procedure_constructor_args():
+    sig = inspect.signature(vcml_Procedure.__init__)
+    params = list(sig.parameters.keys())
+    assert "status" in params, "Missing parameter 'status'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_vcml_procedure_has_status():
+    assert hasattr(vcml_Procedure, "status")
     descriptor = None
-    for klass in vcml::Constraint.__mro__:
+    for klass in vcml_Procedure.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_procedure_has_group():
+    assert hasattr(vcml_Procedure, "group")
+    descriptor = None
+    for klass in vcml_Procedure.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -1285,125 +1393,47 @@ def test_vcml::constraint_has_group():
 
 
 
-def test_vcml::configurationprofile_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConfigurationProfile)
+def test_vcml_interfacedesign_is_not_abstract():
+    assert not inspect.isabstract(vcml_InterfaceDesign)
 
 
-def test_vcml::configurationprofile_constructor_exists():
-    assert callable(vcml::ConfigurationProfile.__init__)
+def test_vcml_interfacedesign_constructor_exists():
+    assert callable(vcml_InterfaceDesign.__init__)
 
 
-def test_vcml::configurationprofile_constructor_args():
-    sig = inspect.signature(vcml::ConfigurationProfile.__init__)
-    params = list(sig.parameters.keys())
-    assert "fixing" in params, "Missing parameter 'fixing'"
-    assert "status" in params, "Missing parameter 'status'"
-    assert "bomapplication" in params, "Missing parameter 'bomapplication'"
-
-def test_vcml::configurationprofile_has_fixing():
-    assert hasattr(vcml::ConfigurationProfile, "fixing")
-    descriptor = None
-    for klass in vcml::ConfigurationProfile.__mro__:
-        if "fixing" in klass.__dict__:
-            descriptor = klass.__dict__["fixing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::configurationprofile_has_status():
-    assert hasattr(vcml::ConfigurationProfile, "status")
-    descriptor = None
-    for klass in vcml::ConfigurationProfile.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::configurationprofile_has_bomapplication():
-    assert hasattr(vcml::ConfigurationProfile, "bomapplication")
-    descriptor = None
-    for klass in vcml::ConfigurationProfile.__mro__:
-        if "bomapplication" in klass.__dict__:
-            descriptor = klass.__dict__["bomapplication"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::varianttablecontent_is_not_abstract():
-    assert not inspect.isabstract(vcml::VariantTableContent)
-
-
-def test_vcml::varianttablecontent_constructor_exists():
-    assert callable(vcml::VariantTableContent.__init__)
-
-
-def test_vcml::varianttablecontent_constructor_args():
-    sig = inspect.signature(vcml::VariantTableContent.__init__)
+def test_vcml_interfacedesign_constructor_args():
+    sig = inspect.signature(vcml_InterfaceDesign.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::class_is_not_abstract():
-    assert not inspect.isabstract(vcml::Class)
+def test_vcml_dependencynet_is_not_abstract():
+    assert not inspect.isabstract(vcml_DependencyNet)
 
 
-def test_vcml::class_constructor_exists():
-    assert callable(vcml::Class.__init__)
+def test_vcml_dependencynet_constructor_exists():
+    assert callable(vcml_DependencyNet.__init__)
 
 
-def test_vcml::class_constructor_args():
-    sig = inspect.signature(vcml::Class.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-    assert "status" in params, "Missing parameter 'status'"
-
-def test_vcml::class_has_group():
-    assert hasattr(vcml::Class, "group")
-    descriptor = None
-    for klass in vcml::Class.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::class_has_status():
-    assert hasattr(vcml::Class, "status")
-    descriptor = None
-    for klass in vcml::Class.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::varianttable_is_not_abstract():
-    assert not inspect.isabstract(vcml::VariantTable)
-
-
-def test_vcml::varianttable_constructor_exists():
-    assert callable(vcml::VariantTable.__init__)
-
-
-def test_vcml::varianttable_constructor_args():
-    sig = inspect.signature(vcml::VariantTable.__init__)
+def test_vcml_dependencynet_constructor_args():
+    sig = inspect.signature(vcml_DependencyNet.__init__)
     params = list(sig.parameters.keys())
     assert "status" in params, "Missing parameter 'status'"
     assert "group" in params, "Missing parameter 'group'"
 
-def test_vcml::varianttable_has_status():
-    assert hasattr(vcml::VariantTable, "status")
+def test_vcml_dependencynet_has_status():
+    assert hasattr(vcml_DependencyNet, "status")
     descriptor = None
-    for klass in vcml::VariantTable.__mro__:
+    for klass in vcml_DependencyNet.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::varianttable_has_group():
-    assert hasattr(vcml::VariantTable, "group")
+def test_vcml_dependencynet_has_group():
+    assert hasattr(vcml_DependencyNet, "group")
     descriptor = None
-    for klass in vcml::VariantTable.__mro__:
+    for klass in vcml_DependencyNet.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -1411,71 +1441,23 @@ def test_vcml::varianttable_has_group():
 
 
 
-def test_vcml::interfacedesign_is_not_abstract():
-    assert not inspect.isabstract(vcml::InterfaceDesign)
+def test_vcml_material_is_not_abstract():
+    assert not inspect.isabstract(vcml_Material)
 
 
-def test_vcml::interfacedesign_constructor_exists():
-    assert callable(vcml::InterfaceDesign.__init__)
+def test_vcml_material_constructor_exists():
+    assert callable(vcml_Material.__init__)
 
 
-def test_vcml::interfacedesign_constructor_args():
-    sig = inspect.signature(vcml::InterfaceDesign.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::variantfunction_is_not_abstract():
-    assert not inspect.isabstract(vcml::VariantFunction)
-
-
-def test_vcml::variantfunction_constructor_exists():
-    assert callable(vcml::VariantFunction.__init__)
-
-
-def test_vcml::variantfunction_constructor_args():
-    sig = inspect.signature(vcml::VariantFunction.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_vcml::variantfunction_has_status():
-    assert hasattr(vcml::VariantFunction, "status")
-    descriptor = None
-    for klass in vcml::VariantFunction.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::variantfunction_has_group():
-    assert hasattr(vcml::VariantFunction, "group")
-    descriptor = None
-    for klass in vcml::VariantFunction.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::material_is_not_abstract():
-    assert not inspect.isabstract(vcml::Material)
-
-
-def test_vcml::material_constructor_exists():
-    assert callable(vcml::Material.__init__)
-
-
-def test_vcml::material_constructor_args():
-    sig = inspect.signature(vcml::Material.__init__)
+def test_vcml_material_constructor_args():
+    sig = inspect.signature(vcml_Material.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_vcml::material_has_type():
-    assert hasattr(vcml::Material, "type")
+def test_vcml_material_has_type():
+    assert hasattr(vcml_Material, "type")
     descriptor = None
-    for klass in vcml::Material.__mro__:
+    for klass in vcml_Material.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1483,191 +1465,259 @@ def test_vcml::material_has_type():
 
 
 
-def test_vcml::characteristic_is_not_abstract():
-    assert not inspect.isabstract(vcml::Characteristic)
+def test_vcml_variantfunction_is_not_abstract():
+    assert not inspect.isabstract(vcml_VariantFunction)
 
 
-def test_vcml::characteristic_constructor_exists():
-    assert callable(vcml::Characteristic.__init__)
+def test_vcml_variantfunction_constructor_exists():
+    assert callable(vcml_VariantFunction.__init__)
 
 
-def test_vcml::characteristic_constructor_args():
-    sig = inspect.signature(vcml::Characteristic.__init__)
+def test_vcml_variantfunction_constructor_args():
+    sig = inspect.signature(vcml_VariantFunction.__init__)
     params = list(sig.parameters.keys())
-    assert "displayAllowedValues" in params, "Missing parameter 'displayAllowedValues'"
-    assert "field" in params, "Missing parameter 'field'"
-    assert "table" in params, "Missing parameter 'table'"
-    assert "additionalValues" in params, "Missing parameter 'additionalValues'"
-    assert "noDisplay" in params, "Missing parameter 'noDisplay'"
-    assert "multiValue" in params, "Missing parameter 'multiValue'"
     assert "group" in params, "Missing parameter 'group'"
     assert "status" in params, "Missing parameter 'status'"
+
+def test_vcml_variantfunction_has_group():
+    assert hasattr(vcml_VariantFunction, "group")
+    descriptor = None
+    for klass in vcml_VariantFunction.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_variantfunction_has_status():
+    assert hasattr(vcml_VariantFunction, "status")
+    descriptor = None
+    for klass in vcml_VariantFunction.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_selectioncondition_is_not_abstract():
+    assert not inspect.isabstract(vcml_SelectionCondition)
+
+
+def test_vcml_selectioncondition_constructor_exists():
+    assert callable(vcml_SelectionCondition.__init__)
+
+
+def test_vcml_selectioncondition_constructor_args():
+    sig = inspect.signature(vcml_SelectionCondition.__init__)
+    params = list(sig.parameters.keys())
+    assert "group" in params, "Missing parameter 'group'"
+    assert "status" in params, "Missing parameter 'status'"
+
+def test_vcml_selectioncondition_has_group():
+    assert hasattr(vcml_SelectionCondition, "group")
+    descriptor = None
+    for klass in vcml_SelectionCondition.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_selectioncondition_has_status():
+    assert hasattr(vcml_SelectionCondition, "status")
+    descriptor = None
+    for klass in vcml_SelectionCondition.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_class_is_not_abstract():
+    assert not inspect.isabstract(vcml_Class)
+
+
+def test_vcml_class_constructor_exists():
+    assert callable(vcml_Class.__init__)
+
+
+def test_vcml_class_constructor_args():
+    sig = inspect.signature(vcml_Class.__init__)
+    params = list(sig.parameters.keys())
+    assert "status" in params, "Missing parameter 'status'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_vcml_class_has_status():
+    assert hasattr(vcml_Class, "status")
+    descriptor = None
+    for klass in vcml_Class.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_class_has_group():
+    assert hasattr(vcml_Class, "group")
+    descriptor = None
+    for klass in vcml_Class.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_precondition_is_not_abstract():
+    assert not inspect.isabstract(vcml_Precondition)
+
+
+def test_vcml_precondition_constructor_exists():
+    assert callable(vcml_Precondition.__init__)
+
+
+def test_vcml_precondition_constructor_args():
+    sig = inspect.signature(vcml_Precondition.__init__)
+    params = list(sig.parameters.keys())
+    assert "group" in params, "Missing parameter 'group'"
+    assert "status" in params, "Missing parameter 'status'"
+
+def test_vcml_precondition_has_group():
+    assert hasattr(vcml_Precondition, "group")
+    descriptor = None
+    for klass in vcml_Precondition.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_precondition_has_status():
+    assert hasattr(vcml_Precondition, "status")
+    descriptor = None
+    for klass in vcml_Precondition.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_characteristic_is_not_abstract():
+    assert not inspect.isabstract(vcml_Characteristic)
+
+
+def test_vcml_characteristic_constructor_exists():
+    assert callable(vcml_Characteristic.__init__)
+
+
+def test_vcml_characteristic_constructor_args():
+    sig = inspect.signature(vcml_Characteristic.__init__)
+    params = list(sig.parameters.keys())
+    assert "table" in params, "Missing parameter 'table'"
+    assert "additionalValues" in params, "Missing parameter 'additionalValues'"
+    assert "status" in params, "Missing parameter 'status'"
     assert "required" in params, "Missing parameter 'required'"
+    assert "displayAllowedValues" in params, "Missing parameter 'displayAllowedValues'"
+    assert "multiValue" in params, "Missing parameter 'multiValue'"
+    assert "noDisplay" in params, "Missing parameter 'noDisplay'"
     assert "notReadyForInput" in params, "Missing parameter 'notReadyForInput'"
+    assert "field" in params, "Missing parameter 'field'"
     assert "restrictable" in params, "Missing parameter 'restrictable'"
+    assert "group" in params, "Missing parameter 'group'"
 
-def test_vcml::characteristic_has_displayAllowedValues():
-    assert hasattr(vcml::Characteristic, "displayAllowedValues")
+def test_vcml_characteristic_has_table():
+    assert hasattr(vcml_Characteristic, "table")
     descriptor = None
-    for klass in vcml::Characteristic.__mro__:
-        if "displayAllowedValues" in klass.__dict__:
-            descriptor = klass.__dict__["displayAllowedValues"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::characteristic_has_field():
-    assert hasattr(vcml::Characteristic, "field")
-    descriptor = None
-    for klass in vcml::Characteristic.__mro__:
-        if "field" in klass.__dict__:
-            descriptor = klass.__dict__["field"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::characteristic_has_table():
-    assert hasattr(vcml::Characteristic, "table")
-    descriptor = None
-    for klass in vcml::Characteristic.__mro__:
+    for klass in vcml_Characteristic.__mro__:
         if "table" in klass.__dict__:
             descriptor = klass.__dict__["table"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::characteristic_has_additionalValues():
-    assert hasattr(vcml::Characteristic, "additionalValues")
+def test_vcml_characteristic_has_additionalValues():
+    assert hasattr(vcml_Characteristic, "additionalValues")
     descriptor = None
-    for klass in vcml::Characteristic.__mro__:
+    for klass in vcml_Characteristic.__mro__:
         if "additionalValues" in klass.__dict__:
             descriptor = klass.__dict__["additionalValues"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::characteristic_has_noDisplay():
-    assert hasattr(vcml::Characteristic, "noDisplay")
+def test_vcml_characteristic_has_status():
+    assert hasattr(vcml_Characteristic, "status")
     descriptor = None
-    for klass in vcml::Characteristic.__mro__:
-        if "noDisplay" in klass.__dict__:
-            descriptor = klass.__dict__["noDisplay"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::characteristic_has_multiValue():
-    assert hasattr(vcml::Characteristic, "multiValue")
-    descriptor = None
-    for klass in vcml::Characteristic.__mro__:
-        if "multiValue" in klass.__dict__:
-            descriptor = klass.__dict__["multiValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::characteristic_has_group():
-    assert hasattr(vcml::Characteristic, "group")
-    descriptor = None
-    for klass in vcml::Characteristic.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::characteristic_has_status():
-    assert hasattr(vcml::Characteristic, "status")
-    descriptor = None
-    for klass in vcml::Characteristic.__mro__:
+    for klass in vcml_Characteristic.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::characteristic_has_required():
-    assert hasattr(vcml::Characteristic, "required")
+def test_vcml_characteristic_has_required():
+    assert hasattr(vcml_Characteristic, "required")
     descriptor = None
-    for klass in vcml::Characteristic.__mro__:
+    for klass in vcml_Characteristic.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::characteristic_has_notReadyForInput():
-    assert hasattr(vcml::Characteristic, "notReadyForInput")
+def test_vcml_characteristic_has_displayAllowedValues():
+    assert hasattr(vcml_Characteristic, "displayAllowedValues")
     descriptor = None
-    for klass in vcml::Characteristic.__mro__:
+    for klass in vcml_Characteristic.__mro__:
+        if "displayAllowedValues" in klass.__dict__:
+            descriptor = klass.__dict__["displayAllowedValues"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_characteristic_has_multiValue():
+    assert hasattr(vcml_Characteristic, "multiValue")
+    descriptor = None
+    for klass in vcml_Characteristic.__mro__:
+        if "multiValue" in klass.__dict__:
+            descriptor = klass.__dict__["multiValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_characteristic_has_noDisplay():
+    assert hasattr(vcml_Characteristic, "noDisplay")
+    descriptor = None
+    for klass in vcml_Characteristic.__mro__:
+        if "noDisplay" in klass.__dict__:
+            descriptor = klass.__dict__["noDisplay"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_characteristic_has_notReadyForInput():
+    assert hasattr(vcml_Characteristic, "notReadyForInput")
+    descriptor = None
+    for klass in vcml_Characteristic.__mro__:
         if "notReadyForInput" in klass.__dict__:
             descriptor = klass.__dict__["notReadyForInput"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::characteristic_has_restrictable():
-    assert hasattr(vcml::Characteristic, "restrictable")
+def test_vcml_characteristic_has_field():
+    assert hasattr(vcml_Characteristic, "field")
     descriptor = None
-    for klass in vcml::Characteristic.__mro__:
+    for klass in vcml_Characteristic.__mro__:
+        if "field" in klass.__dict__:
+            descriptor = klass.__dict__["field"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_characteristic_has_restrictable():
+    assert hasattr(vcml_Characteristic, "restrictable")
+    descriptor = None
+    for klass in vcml_Characteristic.__mro__:
         if "restrictable" in klass.__dict__:
             descriptor = klass.__dict__["restrictable"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_vcml::dependencynet_is_not_abstract():
-    assert not inspect.isabstract(vcml::DependencyNet)
-
-
-def test_vcml::dependencynet_constructor_exists():
-    assert callable(vcml::DependencyNet.__init__)
-
-
-def test_vcml::dependencynet_constructor_args():
-    sig = inspect.signature(vcml::DependencyNet.__init__)
-    params = list(sig.parameters.keys())
-    assert "group" in params, "Missing parameter 'group'"
-    assert "status" in params, "Missing parameter 'status'"
-
-def test_vcml::dependencynet_has_group():
-    assert hasattr(vcml::DependencyNet, "group")
+def test_vcml_characteristic_has_group():
+    assert hasattr(vcml_Characteristic, "group")
     descriptor = None
-    for klass in vcml::DependencyNet.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::dependencynet_has_status():
-    assert hasattr(vcml::DependencyNet, "status")
-    descriptor = None
-    for klass in vcml::DependencyNet.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::selectioncondition_is_not_abstract():
-    assert not inspect.isabstract(vcml::SelectionCondition)
-
-
-def test_vcml::selectioncondition_constructor_exists():
-    assert callable(vcml::SelectionCondition.__init__)
-
-
-def test_vcml::selectioncondition_constructor_args():
-    sig = inspect.signature(vcml::SelectionCondition.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_vcml::selectioncondition_has_status():
-    assert hasattr(vcml::SelectionCondition, "status")
-    descriptor = None
-    for klass in vcml::SelectionCondition.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::selectioncondition_has_group():
-    assert hasattr(vcml::SelectionCondition, "group")
-    descriptor = None
-    for klass in vcml::SelectionCondition.__mro__:
+    for klass in vcml_Characteristic.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -1675,30 +1725,74 @@ def test_vcml::selectioncondition_has_group():
 
 
 
-def test_vcml::billofmaterial_is_not_abstract():
-    assert not inspect.isabstract(vcml::BillOfMaterial)
+def test_vcml_configurationprofile_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConfigurationProfile)
 
 
-def test_vcml::billofmaterial_constructor_exists():
-    assert callable(vcml::BillOfMaterial.__init__)
+def test_vcml_configurationprofile_constructor_exists():
+    assert callable(vcml_ConfigurationProfile.__init__)
 
 
-def test_vcml::billofmaterial_constructor_args():
-    sig = inspect.signature(vcml::BillOfMaterial.__init__)
+def test_vcml_configurationprofile_constructor_args():
+    sig = inspect.signature(vcml_ConfigurationProfile.__init__)
+    params = list(sig.parameters.keys())
+    assert "bomapplication" in params, "Missing parameter 'bomapplication'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "fixing" in params, "Missing parameter 'fixing'"
+
+def test_vcml_configurationprofile_has_bomapplication():
+    assert hasattr(vcml_ConfigurationProfile, "bomapplication")
+    descriptor = None
+    for klass in vcml_ConfigurationProfile.__mro__:
+        if "bomapplication" in klass.__dict__:
+            descriptor = klass.__dict__["bomapplication"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_configurationprofile_has_status():
+    assert hasattr(vcml_ConfigurationProfile, "status")
+    descriptor = None
+    for klass in vcml_ConfigurationProfile.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_configurationprofile_has_fixing():
+    assert hasattr(vcml_ConfigurationProfile, "fixing")
+    descriptor = None
+    for klass in vcml_ConfigurationProfile.__mro__:
+        if "fixing" in klass.__dict__:
+            descriptor = klass.__dict__["fixing"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_billofmaterial_is_not_abstract():
+    assert not inspect.isabstract(vcml_BillOfMaterial)
+
+
+def test_vcml_billofmaterial_constructor_exists():
+    assert callable(vcml_BillOfMaterial.__init__)
+
+
+def test_vcml_billofmaterial_constructor_args():
+    sig = inspect.signature(vcml_BillOfMaterial.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::description_is_not_abstract():
-    assert not inspect.isabstract(vcml::Description)
+def test_vcml_description_is_not_abstract():
+    assert not inspect.isabstract(vcml_Description)
 
 
-def test_vcml::description_constructor_exists():
-    assert callable(vcml::Description.__init__)
+def test_vcml_description_constructor_exists():
+    assert callable(vcml_Description.__init__)
 
 
-def test_vcml::description_constructor_args():
-    sig = inspect.signature(vcml::Description.__init__)
+def test_vcml_description_constructor_args():
+    sig = inspect.signature(vcml_Description.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1717,23 +1811,23 @@ def test_characteristictype_constructor_args():
 
 
 
-def test_vcml::symbolictype_is_not_abstract():
-    assert not inspect.isabstract(vcml::SymbolicType)
+def test_vcml_symbolictype_is_not_abstract():
+    assert not inspect.isabstract(vcml_SymbolicType)
 
 
-def test_vcml::symbolictype_constructor_exists():
-    assert callable(vcml::SymbolicType.__init__)
+def test_vcml_symbolictype_constructor_exists():
+    assert callable(vcml_SymbolicType.__init__)
 
 
-def test_vcml::symbolictype_constructor_args():
-    sig = inspect.signature(vcml::SymbolicType.__init__)
+def test_vcml_symbolictype_constructor_args():
+    sig = inspect.signature(vcml_SymbolicType.__init__)
     params = list(sig.parameters.keys())
     assert "caseSensitive" in params, "Missing parameter 'caseSensitive'"
 
-def test_vcml::symbolictype_has_caseSensitive():
-    assert hasattr(vcml::SymbolicType, "caseSensitive")
+def test_vcml_symbolictype_has_caseSensitive():
+    assert hasattr(vcml_SymbolicType, "caseSensitive")
     descriptor = None
-    for klass in vcml::SymbolicType.__mro__:
+    for klass in vcml_SymbolicType.__mro__:
         if "caseSensitive" in klass.__dict__:
             descriptor = klass.__dict__["caseSensitive"]
             break
@@ -1741,23 +1835,23 @@ def test_vcml::symbolictype_has_caseSensitive():
 
 
 
-def test_vcml::datetype_is_not_abstract():
-    assert not inspect.isabstract(vcml::DateType)
+def test_vcml_datetype_is_not_abstract():
+    assert not inspect.isabstract(vcml_DateType)
 
 
-def test_vcml::datetype_constructor_exists():
-    assert callable(vcml::DateType.__init__)
+def test_vcml_datetype_constructor_exists():
+    assert callable(vcml_DateType.__init__)
 
 
-def test_vcml::datetype_constructor_args():
-    sig = inspect.signature(vcml::DateType.__init__)
+def test_vcml_datetype_constructor_args():
+    sig = inspect.signature(vcml_DateType.__init__)
     params = list(sig.parameters.keys())
     assert "intervalValuesAllowed" in params, "Missing parameter 'intervalValuesAllowed'"
 
-def test_vcml::datetype_has_intervalValuesAllowed():
-    assert hasattr(vcml::DateType, "intervalValuesAllowed")
+def test_vcml_datetype_has_intervalValuesAllowed():
+    assert hasattr(vcml_DateType, "intervalValuesAllowed")
     descriptor = None
-    for klass in vcml::DateType.__mro__:
+    for klass in vcml_DateType.__mro__:
         if "intervalValuesAllowed" in klass.__dict__:
             descriptor = klass.__dict__["intervalValuesAllowed"]
             break
@@ -1765,77 +1859,77 @@ def test_vcml::datetype_has_intervalValuesAllowed():
 
 
 
-def test_vcml::numerictype_is_not_abstract():
-    assert not inspect.isabstract(vcml::NumericType)
+def test_vcml_numerictype_is_not_abstract():
+    assert not inspect.isabstract(vcml_NumericType)
 
 
-def test_vcml::numerictype_constructor_exists():
-    assert callable(vcml::NumericType.__init__)
+def test_vcml_numerictype_constructor_exists():
+    assert callable(vcml_NumericType.__init__)
 
 
-def test_vcml::numerictype_constructor_args():
-    sig = inspect.signature(vcml::NumericType.__init__)
+def test_vcml_numerictype_constructor_args():
+    sig = inspect.signature(vcml_NumericType.__init__)
     params = list(sig.parameters.keys())
-    assert "decimalPlaces" in params, "Missing parameter 'decimalPlaces'"
-    assert "intervalValuesAllowed" in params, "Missing parameter 'intervalValuesAllowed'"
-    assert "unit" in params, "Missing parameter 'unit'"
     assert "negativeValuesAllowed" in params, "Missing parameter 'negativeValuesAllowed'"
+    assert "intervalValuesAllowed" in params, "Missing parameter 'intervalValuesAllowed'"
+    assert "decimalPlaces" in params, "Missing parameter 'decimalPlaces'"
+    assert "unit" in params, "Missing parameter 'unit'"
 
-def test_vcml::numerictype_has_decimalPlaces():
-    assert hasattr(vcml::NumericType, "decimalPlaces")
+def test_vcml_numerictype_has_negativeValuesAllowed():
+    assert hasattr(vcml_NumericType, "negativeValuesAllowed")
     descriptor = None
-    for klass in vcml::NumericType.__mro__:
-        if "decimalPlaces" in klass.__dict__:
-            descriptor = klass.__dict__["decimalPlaces"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::numerictype_has_intervalValuesAllowed():
-    assert hasattr(vcml::NumericType, "intervalValuesAllowed")
-    descriptor = None
-    for klass in vcml::NumericType.__mro__:
-        if "intervalValuesAllowed" in klass.__dict__:
-            descriptor = klass.__dict__["intervalValuesAllowed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::numerictype_has_unit():
-    assert hasattr(vcml::NumericType, "unit")
-    descriptor = None
-    for klass in vcml::NumericType.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::numerictype_has_negativeValuesAllowed():
-    assert hasattr(vcml::NumericType, "negativeValuesAllowed")
-    descriptor = None
-    for klass in vcml::NumericType.__mro__:
+    for klass in vcml_NumericType.__mro__:
         if "negativeValuesAllowed" in klass.__dict__:
             descriptor = klass.__dict__["negativeValuesAllowed"]
             break
     assert isinstance(descriptor, property)
 
+def test_vcml_numerictype_has_intervalValuesAllowed():
+    assert hasattr(vcml_NumericType, "intervalValuesAllowed")
+    descriptor = None
+    for klass in vcml_NumericType.__mro__:
+        if "intervalValuesAllowed" in klass.__dict__:
+            descriptor = klass.__dict__["intervalValuesAllowed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_numerictype_has_decimalPlaces():
+    assert hasattr(vcml_NumericType, "decimalPlaces")
+    descriptor = None
+    for klass in vcml_NumericType.__mro__:
+        if "decimalPlaces" in klass.__dict__:
+            descriptor = klass.__dict__["decimalPlaces"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_numerictype_has_unit():
+    assert hasattr(vcml_NumericType, "unit")
+    descriptor = None
+    for klass in vcml_NumericType.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_vcml::vcobject_is_not_abstract():
-    assert not inspect.isabstract(vcml::VCObject)
+
+def test_vcml_vcobject_is_not_abstract():
+    assert not inspect.isabstract(vcml_VCObject)
 
 
-def test_vcml::vcobject_constructor_exists():
-    assert callable(vcml::VCObject.__init__)
+def test_vcml_vcobject_constructor_exists():
+    assert callable(vcml_VCObject.__init__)
 
 
-def test_vcml::vcobject_constructor_args():
-    sig = inspect.signature(vcml::VCObject.__init__)
+def test_vcml_vcobject_constructor_args():
+    sig = inspect.signature(vcml_VCObject.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vcml::vcobject_has_name():
-    assert hasattr(vcml::VCObject, "name")
+def test_vcml_vcobject_has_name():
+    assert hasattr(vcml_VCObject, "name")
     descriptor = None
-    for klass in vcml::VCObject.__mro__:
+    for klass in vcml_VCObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1843,33 +1937,33 @@ def test_vcml::vcobject_has_name():
 
 
 
-def test_vcml::option_is_not_abstract():
-    assert not inspect.isabstract(vcml::Option)
+def test_vcml_option_is_not_abstract():
+    assert not inspect.isabstract(vcml_Option)
 
 
-def test_vcml::option_constructor_exists():
-    assert callable(vcml::Option.__init__)
+def test_vcml_option_constructor_exists():
+    assert callable(vcml_Option.__init__)
 
 
-def test_vcml::option_constructor_args():
-    sig = inspect.signature(vcml::Option.__init__)
+def test_vcml_option_constructor_args():
+    sig = inspect.signature(vcml_Option.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vcml::option_has_value():
-    assert hasattr(vcml::Option, "value")
+def test_vcml_option_has_value():
+    assert hasattr(vcml_Option, "value")
     descriptor = None
-    for klass in vcml::Option.__mro__:
+    for klass in vcml_Option.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_vcml::option_has_name():
-    assert hasattr(vcml::Option, "name")
+def test_vcml_option_has_name():
+    assert hasattr(vcml_Option, "name")
     descriptor = None
-    for klass in vcml::Option.__mro__:
+    for klass in vcml_Option.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1877,23 +1971,23 @@ def test_vcml::option_has_name():
 
 
 
-def test_vcml::import_is_not_abstract():
-    assert not inspect.isabstract(vcml::Import)
+def test_vcml_import_is_not_abstract():
+    assert not inspect.isabstract(vcml_Import)
 
 
-def test_vcml::import_constructor_exists():
-    assert callable(vcml::Import.__init__)
+def test_vcml_import_constructor_exists():
+    assert callable(vcml_Import.__init__)
 
 
-def test_vcml::import_constructor_args():
-    sig = inspect.signature(vcml::Import.__init__)
+def test_vcml_import_constructor_args():
+    sig = inspect.signature(vcml_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_vcml::import_has_importURI():
-    assert hasattr(vcml::Import, "importURI")
+def test_vcml_import_has_importURI():
+    assert hasattr(vcml_Import, "importURI")
     descriptor = None
-    for klass in vcml::Import.__mro__:
+    for klass in vcml_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -1901,37 +1995,37 @@ def test_vcml::import_has_importURI():
 
 
 
-def test_vcml::vcmlmodel_is_not_abstract():
-    assert not inspect.isabstract(vcml::VcmlModel)
+def test_vcml_vcmlmodel_is_not_abstract():
+    assert not inspect.isabstract(vcml_VcmlModel)
 
 
-def test_vcml::vcmlmodel_constructor_exists():
-    assert callable(vcml::VcmlModel.__init__)
+def test_vcml_vcmlmodel_constructor_exists():
+    assert callable(vcml_VcmlModel.__init__)
 
 
-def test_vcml::vcmlmodel_constructor_args():
-    sig = inspect.signature(vcml::VcmlModel.__init__)
+def test_vcml_vcmlmodel_constructor_args():
+    sig = inspect.signature(vcml_VcmlModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::binarycondition_is_not_abstract():
-    assert not inspect.isabstract(vcml::BinaryCondition)
+def test_vcml_binarycondition_is_not_abstract():
+    assert not inspect.isabstract(vcml_BinaryCondition)
 
 
-def test_vcml::binarycondition_constructor_exists():
-    assert callable(vcml::BinaryCondition.__init__)
+def test_vcml_binarycondition_constructor_exists():
+    assert callable(vcml_BinaryCondition.__init__)
 
 
-def test_vcml::binarycondition_constructor_args():
-    sig = inspect.signature(vcml::BinaryCondition.__init__)
+def test_vcml_binarycondition_constructor_args():
+    sig = inspect.signature(vcml_BinaryCondition.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_vcml::binarycondition_has_operator():
-    assert hasattr(vcml::BinaryCondition, "operator")
+def test_vcml_binarycondition_has_operator():
+    assert hasattr(vcml_BinaryCondition, "operator")
     descriptor = None
-    for klass in vcml::BinaryCondition.__mro__:
+    for klass in vcml_BinaryCondition.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1939,16 +2033,30 @@ def test_vcml::binarycondition_has_operator():
 
 
 
-def test_vcml::conditionalconstraintrestriction_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConditionalConstraintRestriction)
+def test_vcml_conditionalstatement_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConditionalStatement)
 
 
-def test_vcml::conditionalconstraintrestriction_constructor_exists():
-    assert callable(vcml::ConditionalConstraintRestriction.__init__)
+def test_vcml_conditionalstatement_constructor_exists():
+    assert callable(vcml_ConditionalStatement.__init__)
 
 
-def test_vcml::conditionalconstraintrestriction_constructor_args():
-    sig = inspect.signature(vcml::ConditionalConstraintRestriction.__init__)
+def test_vcml_conditionalstatement_constructor_args():
+    sig = inspect.signature(vcml_ConditionalStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_conditionalconstraintrestriction_is_not_abstract():
+    assert not inspect.isabstract(vcml_ConditionalConstraintRestriction)
+
+
+def test_vcml_conditionalconstraintrestriction_constructor_exists():
+    assert callable(vcml_ConditionalConstraintRestriction.__init__)
+
+
+def test_vcml_conditionalconstraintrestriction_constructor_args():
+    sig = inspect.signature(vcml_ConditionalConstraintRestriction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1967,121 +2075,121 @@ def test_list_constructor_args():
 
 
 
-def test_vcml::symbollist_is_not_abstract():
-    assert not inspect.isabstract(vcml::SymbolList)
+def test_vcml_symbollist_is_not_abstract():
+    assert not inspect.isabstract(vcml_SymbolList)
 
 
-def test_vcml::symbollist_constructor_exists():
-    assert callable(vcml::SymbolList.__init__)
+def test_vcml_symbollist_constructor_exists():
+    assert callable(vcml_SymbolList.__init__)
 
 
-def test_vcml::symbollist_constructor_args():
-    sig = inspect.signature(vcml::SymbolList.__init__)
+def test_vcml_symbollist_constructor_args():
+    sig = inspect.signature(vcml_SymbolList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::numberlist_is_not_abstract():
-    assert not inspect.isabstract(vcml::NumberList)
+def test_vcml_numberlist_is_not_abstract():
+    assert not inspect.isabstract(vcml_NumberList)
 
 
-def test_vcml::numberlist_constructor_exists():
-    assert callable(vcml::NumberList.__init__)
+def test_vcml_numberlist_constructor_exists():
+    assert callable(vcml_NumberList.__init__)
 
 
-def test_vcml::numberlist_constructor_args():
-    sig = inspect.signature(vcml::NumberList.__init__)
+def test_vcml_numberlist_constructor_args():
+    sig = inspect.signature(vcml_NumberList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::incondition::p_is_not_abstract():
-    assert not inspect.isabstract(vcml::InCondition::P)
+def test_vcml_incondition_p_is_not_abstract():
+    assert not inspect.isabstract(vcml_InCondition_P)
 
 
-def test_vcml::incondition::p_constructor_exists():
-    assert callable(vcml::InCondition::P.__init__)
+def test_vcml_incondition_p_constructor_exists():
+    assert callable(vcml_InCondition_P.__init__)
 
 
-def test_vcml::incondition::p_constructor_args():
-    sig = inspect.signature(vcml::InCondition::P.__init__)
+def test_vcml_incondition_p_constructor_args():
+    sig = inspect.signature(vcml_InCondition_P.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::list_is_not_abstract():
-    assert not inspect.isabstract(vcml::List)
+def test_vcml_list_is_not_abstract():
+    assert not inspect.isabstract(vcml_List)
 
 
-def test_vcml::list_constructor_exists():
-    assert callable(vcml::List.__init__)
+def test_vcml_list_constructor_exists():
+    assert callable(vcml_List.__init__)
 
 
-def test_vcml::list_constructor_args():
-    sig = inspect.signature(vcml::List.__init__)
+def test_vcml_list_constructor_args():
+    sig = inspect.signature(vcml_List.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::incondition::c_is_not_abstract():
-    assert not inspect.isabstract(vcml::InCondition::C)
+def test_vcml_incondition_c_is_not_abstract():
+    assert not inspect.isabstract(vcml_InCondition_C)
 
 
-def test_vcml::incondition::c_constructor_exists():
-    assert callable(vcml::InCondition::C.__init__)
+def test_vcml_incondition_c_constructor_exists():
+    assert callable(vcml_InCondition_C.__init__)
 
 
-def test_vcml::incondition::c_constructor_args():
-    sig = inspect.signature(vcml::InCondition::C.__init__)
+def test_vcml_incondition_c_constructor_args():
+    sig = inspect.signature(vcml_InCondition_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::isspecified::p_is_not_abstract():
-    assert not inspect.isabstract(vcml::IsSpecified::P)
+def test_vcml_isspecified_p_is_not_abstract():
+    assert not inspect.isabstract(vcml_IsSpecified_P)
 
 
-def test_vcml::isspecified::p_constructor_exists():
-    assert callable(vcml::IsSpecified::P.__init__)
+def test_vcml_isspecified_p_constructor_exists():
+    assert callable(vcml_IsSpecified_P.__init__)
 
 
-def test_vcml::isspecified::p_constructor_args():
-    sig = inspect.signature(vcml::IsSpecified::P.__init__)
+def test_vcml_isspecified_p_constructor_args():
+    sig = inspect.signature(vcml_IsSpecified_P.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::isspecified::c_is_not_abstract():
-    assert not inspect.isabstract(vcml::IsSpecified::C)
+def test_vcml_isspecified_c_is_not_abstract():
+    assert not inspect.isabstract(vcml_IsSpecified_C)
 
 
-def test_vcml::isspecified::c_constructor_exists():
-    assert callable(vcml::IsSpecified::C.__init__)
+def test_vcml_isspecified_c_constructor_exists():
+    assert callable(vcml_IsSpecified_C.__init__)
 
 
-def test_vcml::isspecified::c_constructor_args():
-    sig = inspect.signature(vcml::IsSpecified::C.__init__)
+def test_vcml_isspecified_c_constructor_args():
+    sig = inspect.signature(vcml_IsSpecified_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::comparison_is_not_abstract():
-    assert not inspect.isabstract(vcml::Comparison)
+def test_vcml_comparison_is_not_abstract():
+    assert not inspect.isabstract(vcml_Comparison)
 
 
-def test_vcml::comparison_constructor_exists():
-    assert callable(vcml::Comparison.__init__)
+def test_vcml_comparison_constructor_exists():
+    assert callable(vcml_Comparison.__init__)
 
 
-def test_vcml::comparison_constructor_args():
-    sig = inspect.signature(vcml::Comparison.__init__)
+def test_vcml_comparison_constructor_args():
+    sig = inspect.signature(vcml_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_vcml::comparison_has_operator():
-    assert hasattr(vcml::Comparison, "operator")
+def test_vcml_comparison_has_operator():
+    assert hasattr(vcml_Comparison, "operator")
     descriptor = None
-    for klass in vcml::Comparison.__mro__:
+    for klass in vcml_Comparison.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -2089,37 +2197,37 @@ def test_vcml::comparison_has_operator():
 
 
 
-def test_vcml::unarycondition_is_not_abstract():
-    assert not inspect.isabstract(vcml::UnaryCondition)
+def test_vcml_unarycondition_is_not_abstract():
+    assert not inspect.isabstract(vcml_UnaryCondition)
 
 
-def test_vcml::unarycondition_constructor_exists():
-    assert callable(vcml::UnaryCondition.__init__)
+def test_vcml_unarycondition_constructor_exists():
+    assert callable(vcml_UnaryCondition.__init__)
 
 
-def test_vcml::unarycondition_constructor_args():
-    sig = inspect.signature(vcml::UnaryCondition.__init__)
+def test_vcml_unarycondition_constructor_args():
+    sig = inspect.signature(vcml_UnaryCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::symbolicliteral_is_not_abstract():
-    assert not inspect.isabstract(vcml::SymbolicLiteral)
+def test_vcml_symbolicliteral_is_not_abstract():
+    assert not inspect.isabstract(vcml_SymbolicLiteral)
 
 
-def test_vcml::symbolicliteral_constructor_exists():
-    assert callable(vcml::SymbolicLiteral.__init__)
+def test_vcml_symbolicliteral_constructor_exists():
+    assert callable(vcml_SymbolicLiteral.__init__)
 
 
-def test_vcml::symbolicliteral_constructor_args():
-    sig = inspect.signature(vcml::SymbolicLiteral.__init__)
+def test_vcml_symbolicliteral_constructor_args():
+    sig = inspect.signature(vcml_SymbolicLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vcml::symbolicliteral_has_value():
-    assert hasattr(vcml::SymbolicLiteral, "value")
+def test_vcml_symbolicliteral_has_value():
+    assert hasattr(vcml_SymbolicLiteral, "value")
     descriptor = None
-    for klass in vcml::SymbolicLiteral.__mro__:
+    for klass in vcml_SymbolicLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2141,77 +2249,77 @@ def test_numberlistentry_constructor_args():
 
 
 
-def test_vcml::numericinterval_is_not_abstract():
-    assert not inspect.isabstract(vcml::NumericInterval)
+def test_vcml_numericinterval_is_not_abstract():
+    assert not inspect.isabstract(vcml_NumericInterval)
 
 
-def test_vcml::numericinterval_constructor_exists():
-    assert callable(vcml::NumericInterval.__init__)
+def test_vcml_numericinterval_constructor_exists():
+    assert callable(vcml_NumericInterval.__init__)
 
 
-def test_vcml::numericinterval_constructor_args():
-    sig = inspect.signature(vcml::NumericInterval.__init__)
+def test_vcml_numericinterval_constructor_args():
+    sig = inspect.signature(vcml_NumericInterval.__init__)
     params = list(sig.parameters.keys())
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
     assert "lowerBoundOp" in params, "Missing parameter 'lowerBoundOp'"
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
     assert "upperBoundOp" in params, "Missing parameter 'upperBoundOp'"
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
 
-def test_vcml::numericinterval_has_lowerBoundOp():
-    assert hasattr(vcml::NumericInterval, "lowerBoundOp")
+def test_vcml_numericinterval_has_upperBound():
+    assert hasattr(vcml_NumericInterval, "upperBound")
     descriptor = None
-    for klass in vcml::NumericInterval.__mro__:
-        if "lowerBoundOp" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBoundOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::numericinterval_has_lowerBound():
-    assert hasattr(vcml::NumericInterval, "lowerBound")
-    descriptor = None
-    for klass in vcml::NumericInterval.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::numericinterval_has_upperBoundOp():
-    assert hasattr(vcml::NumericInterval, "upperBoundOp")
-    descriptor = None
-    for klass in vcml::NumericInterval.__mro__:
-        if "upperBoundOp" in klass.__dict__:
-            descriptor = klass.__dict__["upperBoundOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vcml::numericinterval_has_upperBound():
-    assert hasattr(vcml::NumericInterval, "upperBound")
-    descriptor = None
-    for klass in vcml::NumericInterval.__mro__:
+    for klass in vcml_NumericInterval.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
+def test_vcml_numericinterval_has_lowerBoundOp():
+    assert hasattr(vcml_NumericInterval, "lowerBoundOp")
+    descriptor = None
+    for klass in vcml_NumericInterval.__mro__:
+        if "lowerBoundOp" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBoundOp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_numericinterval_has_lowerBound():
+    assert hasattr(vcml_NumericInterval, "lowerBound")
+    descriptor = None
+    for klass in vcml_NumericInterval.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vcml_numericinterval_has_upperBoundOp():
+    assert hasattr(vcml_NumericInterval, "upperBoundOp")
+    descriptor = None
+    for klass in vcml_NumericInterval.__mro__:
+        if "upperBoundOp" in klass.__dict__:
+            descriptor = klass.__dict__["upperBoundOp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_vcml::numericliteral_is_not_abstract():
-    assert not inspect.isabstract(vcml::NumericLiteral)
+
+def test_vcml_numericliteral_is_not_abstract():
+    assert not inspect.isabstract(vcml_NumericLiteral)
 
 
-def test_vcml::numericliteral_constructor_exists():
-    assert callable(vcml::NumericLiteral.__init__)
+def test_vcml_numericliteral_constructor_exists():
+    assert callable(vcml_NumericLiteral.__init__)
 
 
-def test_vcml::numericliteral_constructor_args():
-    sig = inspect.signature(vcml::NumericLiteral.__init__)
+def test_vcml_numericliteral_constructor_args():
+    sig = inspect.signature(vcml_NumericLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vcml::numericliteral_has_value():
-    assert hasattr(vcml::NumericLiteral, "value")
+def test_vcml_numericliteral_has_value():
+    assert hasattr(vcml_NumericLiteral, "value")
     descriptor = None
-    for klass in vcml::NumericLiteral.__mro__:
+    for klass in vcml_NumericLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2219,30 +2327,30 @@ def test_vcml::numericliteral_has_value():
 
 
 
-def test_vcml::mdatacharacteristic::p_is_not_abstract():
-    assert not inspect.isabstract(vcml::MDataCharacteristic::P)
+def test_vcml_mdatacharacteristic_p_is_not_abstract():
+    assert not inspect.isabstract(vcml_MDataCharacteristic_P)
 
 
-def test_vcml::mdatacharacteristic::p_constructor_exists():
-    assert callable(vcml::MDataCharacteristic::P.__init__)
+def test_vcml_mdatacharacteristic_p_constructor_exists():
+    assert callable(vcml_MDataCharacteristic_P.__init__)
 
 
-def test_vcml::mdatacharacteristic::p_constructor_args():
-    sig = inspect.signature(vcml::MDataCharacteristic::P.__init__)
+def test_vcml_mdatacharacteristic_p_constructor_args():
+    sig = inspect.signature(vcml_MDataCharacteristic_P.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::mdatacharacteristic::c_is_not_abstract():
-    assert not inspect.isabstract(vcml::MDataCharacteristic::C)
+def test_vcml_mdatacharacteristic_c_is_not_abstract():
+    assert not inspect.isabstract(vcml_MDataCharacteristic_C)
 
 
-def test_vcml::mdatacharacteristic::c_constructor_exists():
-    assert callable(vcml::MDataCharacteristic::C.__init__)
+def test_vcml_mdatacharacteristic_c_constructor_exists():
+    assert callable(vcml_MDataCharacteristic_C.__init__)
 
 
-def test_vcml::mdatacharacteristic::c_constructor_args():
-    sig = inspect.signature(vcml::MDataCharacteristic::C.__init__)
+def test_vcml_mdatacharacteristic_c_constructor_args():
+    sig = inspect.signature(vcml_MDataCharacteristic_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2261,71 +2369,37 @@ def test_expression_constructor_args():
 
 
 
-def test_vcml::countparts_is_not_abstract():
-    assert not inspect.isabstract(vcml::CountParts)
+def test_vcml_literal_is_not_abstract():
+    assert not inspect.isabstract(vcml_Literal)
 
 
-def test_vcml::countparts_constructor_exists():
-    assert callable(vcml::CountParts.__init__)
+def test_vcml_literal_constructor_exists():
+    assert callable(vcml_Literal.__init__)
 
 
-def test_vcml::countparts_constructor_args():
-    sig = inspect.signature(vcml::CountParts.__init__)
+def test_vcml_literal_constructor_args():
+    sig = inspect.signature(vcml_Literal.__init__)
     params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-
-def test_vcml::countparts_has_location():
-    assert hasattr(vcml::CountParts, "location")
-    descriptor = None
-    for klass in vcml::CountParts.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_vcml::sumparts_is_not_abstract():
-    assert not inspect.isabstract(vcml::SumParts)
+def test_vcml_functioncall_is_not_abstract():
+    assert not inspect.isabstract(vcml_FunctionCall)
 
 
-def test_vcml::sumparts_constructor_exists():
-    assert callable(vcml::SumParts.__init__)
+def test_vcml_functioncall_constructor_exists():
+    assert callable(vcml_FunctionCall.__init__)
 
 
-def test_vcml::sumparts_constructor_args():
-    sig = inspect.signature(vcml::SumParts.__init__)
-    params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-
-def test_vcml::sumparts_has_location():
-    assert hasattr(vcml::SumParts, "location")
-    descriptor = None
-    for klass in vcml::SumParts.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::functioncall_is_not_abstract():
-    assert not inspect.isabstract(vcml::FunctionCall)
-
-
-def test_vcml::functioncall_constructor_exists():
-    assert callable(vcml::FunctionCall.__init__)
-
-
-def test_vcml::functioncall_constructor_args():
-    sig = inspect.signature(vcml::FunctionCall.__init__)
+def test_vcml_functioncall_constructor_args():
+    sig = inspect.signature(vcml_FunctionCall.__init__)
     params = list(sig.parameters.keys())
     assert "function" in params, "Missing parameter 'function'"
 
-def test_vcml::functioncall_has_function():
-    assert hasattr(vcml::FunctionCall, "function")
+def test_vcml_functioncall_has_function():
+    assert hasattr(vcml_FunctionCall, "function")
     descriptor = None
-    for klass in vcml::FunctionCall.__mro__:
+    for klass in vcml_FunctionCall.__mro__:
         if "function" in klass.__dict__:
             descriptor = klass.__dict__["function"]
             break
@@ -2333,89 +2407,161 @@ def test_vcml::functioncall_has_function():
 
 
 
-def test_vcml::literal_is_not_abstract():
-    assert not inspect.isabstract(vcml::Literal)
+def test_vcml_sumparts_is_not_abstract():
+    assert not inspect.isabstract(vcml_SumParts)
 
 
-def test_vcml::literal_constructor_exists():
-    assert callable(vcml::Literal.__init__)
+def test_vcml_sumparts_constructor_exists():
+    assert callable(vcml_SumParts.__init__)
 
 
-def test_vcml::literal_constructor_args():
-    sig = inspect.signature(vcml::Literal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(vcml::BinaryExpression)
-
-
-def test_vcml::binaryexpression_constructor_exists():
-    assert callable(vcml::BinaryExpression.__init__)
-
-
-def test_vcml::binaryexpression_constructor_args():
-    sig = inspect.signature(vcml::BinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_vcml::binaryexpression_has_operator():
-    assert hasattr(vcml::BinaryExpression, "operator")
-    descriptor = None
-    for klass in vcml::BinaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(vcml::UnaryExpression)
-
-
-def test_vcml::unaryexpression_constructor_exists():
-    assert callable(vcml::UnaryExpression.__init__)
-
-
-def test_vcml::unaryexpression_constructor_args():
-    sig = inspect.signature(vcml::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_vcml::unaryexpression_has_operator():
-    assert hasattr(vcml::UnaryExpression, "operator")
-    descriptor = None
-    for klass in vcml::UnaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::typeof_is_not_abstract():
-    assert not inspect.isabstract(vcml::TypeOf)
-
-
-def test_vcml::typeof_constructor_exists():
-    assert callable(vcml::TypeOf.__init__)
-
-
-def test_vcml::typeof_constructor_args():
-    sig = inspect.signature(vcml::TypeOf.__init__)
+def test_vcml_sumparts_constructor_args():
+    sig = inspect.signature(vcml_SumParts.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_vcml::typeof_has_location():
-    assert hasattr(vcml::TypeOf, "location")
+def test_vcml_sumparts_has_location():
+    assert hasattr(vcml_SumParts, "location")
     descriptor = None
-    for klass in vcml::TypeOf.__mro__:
+    for klass in vcml_SumParts.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_vcml_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(vcml_BinaryExpression)
+
+
+def test_vcml_binaryexpression_constructor_exists():
+    assert callable(vcml_BinaryExpression.__init__)
+
+
+def test_vcml_binaryexpression_constructor_args():
+    sig = inspect.signature(vcml_BinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_vcml_binaryexpression_has_operator():
+    assert hasattr(vcml_BinaryExpression, "operator")
+    descriptor = None
+    for klass in vcml_BinaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_countparts_is_not_abstract():
+    assert not inspect.isabstract(vcml_CountParts)
+
+
+def test_vcml_countparts_constructor_exists():
+    assert callable(vcml_CountParts.__init__)
+
+
+def test_vcml_countparts_constructor_args():
+    sig = inspect.signature(vcml_CountParts.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_vcml_countparts_has_location():
+    assert hasattr(vcml_CountParts, "location")
+    descriptor = None
+    for klass in vcml_CountParts.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(vcml_UnaryExpression)
+
+
+def test_vcml_unaryexpression_constructor_exists():
+    assert callable(vcml_UnaryExpression.__init__)
+
+
+def test_vcml_unaryexpression_constructor_args():
+    sig = inspect.signature(vcml_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_vcml_unaryexpression_has_operator():
+    assert hasattr(vcml_UnaryExpression, "operator")
+    descriptor = None
+    for klass in vcml_UnaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_typeof_is_not_abstract():
+    assert not inspect.isabstract(vcml_TypeOf)
+
+
+def test_vcml_typeof_constructor_exists():
+    assert callable(vcml_TypeOf.__init__)
+
+
+def test_vcml_typeof_constructor_args():
+    sig = inspect.signature(vcml_TypeOf.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_vcml_typeof_has_location():
+    assert hasattr(vcml_TypeOf, "location")
+    descriptor = None
+    for klass in vcml_TypeOf.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_setpricingfactor_is_not_abstract():
+    assert not inspect.isabstract(vcml_SetPricingFactor)
+
+
+def test_vcml_setpricingfactor_constructor_exists():
+    assert callable(vcml_SetPricingFactor.__init__)
+
+
+def test_vcml_setpricingfactor_constructor_args():
+    sig = inspect.signature(vcml_SetPricingFactor.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_vcml_setpricingfactor_has_location():
+    assert hasattr(vcml_SetPricingFactor, "location")
+    descriptor = None
+    for klass in vcml_SetPricingFactor.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vcml_isinvisible_is_not_abstract():
+    assert not inspect.isabstract(vcml_IsInvisible)
+
+
+def test_vcml_isinvisible_constructor_exists():
+    assert callable(vcml_IsInvisible.__init__)
+
+
+def test_vcml_isinvisible_constructor_args():
+    sig = inspect.signature(vcml_IsInvisible.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -2433,30 +2579,44 @@ def test_setordeldefault_constructor_args():
 
 
 
-def test_vcml::deldefault_is_not_abstract():
-    assert not inspect.isabstract(vcml::DelDefault)
+def test_vcml_deldefault_is_not_abstract():
+    assert not inspect.isabstract(vcml_DelDefault)
 
 
-def test_vcml::deldefault_constructor_exists():
-    assert callable(vcml::DelDefault.__init__)
+def test_vcml_deldefault_constructor_exists():
+    assert callable(vcml_DelDefault.__init__)
 
 
-def test_vcml::deldefault_constructor_args():
-    sig = inspect.signature(vcml::DelDefault.__init__)
+def test_vcml_deldefault_constructor_args():
+    sig = inspect.signature(vcml_DelDefault.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::setdefault_is_not_abstract():
-    assert not inspect.isabstract(vcml::SetDefault)
+def test_vcml_setdefault_is_not_abstract():
+    assert not inspect.isabstract(vcml_SetDefault)
 
 
-def test_vcml::setdefault_constructor_exists():
-    assert callable(vcml::SetDefault.__init__)
+def test_vcml_setdefault_constructor_exists():
+    assert callable(vcml_SetDefault.__init__)
 
 
-def test_vcml::setdefault_constructor_args():
-    sig = inspect.signature(vcml::SetDefault.__init__)
+def test_vcml_setdefault_constructor_args():
+    sig = inspect.signature(vcml_SetDefault.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vcml_setordeldefault_is_not_abstract():
+    assert not inspect.isabstract(vcml_SetOrDelDefault)
+
+
+def test_vcml_setordeldefault_constructor_exists():
+    assert callable(vcml_SetOrDelDefault.__init__)
+
+
+def test_vcml_setordeldefault_constructor_args():
+    sig = inspect.signature(vcml_SetOrDelDefault.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2475,204 +2635,44 @@ def test_functionortable_constructor_args():
 
 
 
-def test_vcml::characteristicreference::p_is_not_abstract():
-    assert not inspect.isabstract(vcml::CharacteristicReference::P)
+def test_vcml_pfunction_is_not_abstract():
+    assert not inspect.isabstract(vcml_PFunction)
 
 
-def test_vcml::characteristicreference::p_constructor_exists():
-    assert callable(vcml::CharacteristicReference::P.__init__)
+def test_vcml_pfunction_constructor_exists():
+    assert callable(vcml_PFunction.__init__)
 
 
-def test_vcml::characteristicreference::p_constructor_args():
-    sig = inspect.signature(vcml::CharacteristicReference::P.__init__)
-    params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-
-def test_vcml::characteristicreference::p_has_location():
-    assert hasattr(vcml::CharacteristicReference::P, "location")
-    descriptor = None
-    for klass in vcml::CharacteristicReference::P.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simplestatement_is_not_abstract():
-    assert not inspect.isabstract(SimpleStatement)
-
-
-def test_simplestatement_constructor_exists():
-    assert callable(SimpleStatement.__init__)
-
-
-def test_simplestatement_constructor_args():
-    sig = inspect.signature(SimpleStatement.__init__)
+def test_vcml_pfunction_constructor_args():
+    sig = inspect.signature(vcml_PFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::isinvisible_is_not_abstract():
-    assert not inspect.isabstract(vcml::IsInvisible)
+def test_vcml_table_is_not_abstract():
+    assert not inspect.isabstract(vcml_Table)
 
 
-def test_vcml::isinvisible_constructor_exists():
-    assert callable(vcml::IsInvisible.__init__)
+def test_vcml_table_constructor_exists():
+    assert callable(vcml_Table.__init__)
 
 
-def test_vcml::isinvisible_constructor_args():
-    sig = inspect.signature(vcml::IsInvisible.__init__)
+def test_vcml_table_constructor_args():
+    sig = inspect.signature(vcml_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vcml::table_is_not_abstract():
-    assert not inspect.isabstract(vcml::Table)
+def test_vcml_function_is_not_abstract():
+    assert not inspect.isabstract(vcml_Function)
 
 
-def test_vcml::table_constructor_exists():
-    assert callable(vcml::Table.__init__)
+def test_vcml_function_constructor_exists():
+    assert callable(vcml_Function.__init__)
 
 
-def test_vcml::table_constructor_args():
-    sig = inspect.signature(vcml::Table.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::function_is_not_abstract():
-    assert not inspect.isabstract(vcml::Function)
-
-
-def test_vcml::function_constructor_exists():
-    assert callable(vcml::Function.__init__)
-
-
-def test_vcml::function_constructor_args():
-    sig = inspect.signature(vcml::Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::setpricingfactor_is_not_abstract():
-    assert not inspect.isabstract(vcml::SetPricingFactor)
-
-
-def test_vcml::setpricingfactor_constructor_exists():
-    assert callable(vcml::SetPricingFactor.__init__)
-
-
-def test_vcml::setpricingfactor_constructor_args():
-    sig = inspect.signature(vcml::SetPricingFactor.__init__)
-    params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-
-def test_vcml::setpricingfactor_has_location():
-    assert hasattr(vcml::SetPricingFactor, "location")
-    descriptor = None
-    for klass in vcml::SetPricingFactor.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vcml::setordeldefault_is_not_abstract():
-    assert not inspect.isabstract(vcml::SetOrDelDefault)
-
-
-def test_vcml::setordeldefault_constructor_exists():
-    assert callable(vcml::SetOrDelDefault.__init__)
-
-
-def test_vcml::setordeldefault_constructor_args():
-    sig = inspect.signature(vcml::SetOrDelDefault.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::pfunction_is_not_abstract():
-    assert not inspect.isabstract(vcml::PFunction)
-
-
-def test_vcml::pfunction_constructor_exists():
-    assert callable(vcml::PFunction.__init__)
-
-
-def test_vcml::pfunction_constructor_args():
-    sig = inspect.signature(vcml::PFunction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::assignment_is_not_abstract():
-    assert not inspect.isabstract(vcml::Assignment)
-
-
-def test_vcml::assignment_constructor_exists():
-    assert callable(vcml::Assignment.__init__)
-
-
-def test_vcml::assignment_constructor_args():
-    sig = inspect.signature(vcml::Assignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statement_is_not_abstract():
-    assert not inspect.isabstract(Statement)
-
-
-def test_statement_constructor_exists():
-    assert callable(Statement.__init__)
-
-
-def test_statement_constructor_args():
-    sig = inspect.signature(Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::simplestatement_is_not_abstract():
-    assert not inspect.isabstract(vcml::SimpleStatement)
-
-
-def test_vcml::simplestatement_constructor_exists():
-    assert callable(vcml::SimpleStatement.__init__)
-
-
-def test_vcml::simplestatement_constructor_args():
-    sig = inspect.signature(vcml::SimpleStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::conditionalstatement_is_not_abstract():
-    assert not inspect.isabstract(vcml::ConditionalStatement)
-
-
-def test_vcml::conditionalstatement_constructor_exists():
-    assert callable(vcml::ConditionalStatement.__init__)
-
-
-def test_vcml::conditionalstatement_constructor_args():
-    sig = inspect.signature(vcml::ConditionalStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vcml::compoundstatement_is_not_abstract():
-    assert not inspect.isabstract(vcml::CompoundStatement)
-
-
-def test_vcml::compoundstatement_constructor_exists():
-    assert callable(vcml::CompoundStatement.__init__)
-
-
-def test_vcml::compoundstatement_constructor_args():
-    sig = inspect.signature(vcml::CompoundStatement.__init__)
+def test_vcml_function_constructor_args():
+    sig = inspect.signature(vcml_Function.__init__)
     params = list(sig.parameters.keys())
 
 def test_status_exists():
@@ -2683,98 +2683,13 @@ def test_status_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Status]
     expected_literals = [
-        "InPreparation",
         "Released",
         "Locked",
+        "InPreparation",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Status"
-
-def test_procedurelocation_exists():
-    # Check that the Enumeration exists
-    assert ProcedureLocation is not None
-
-def test_procedurelocation_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ProcedureLocation]
-    expected_literals = [
-        "SELF",
-        "ROOT",
-        "PARENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ProcedureLocation"
-
-def test_fixing_exists():
-    # Check that the Enumeration exists
-    assert Fixing is not None
-
-def test_fixing_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Fixing]
-    expected_literals = [
-        "Entry",
-        "TopDown",
-        "None_",
-        "BottomUp",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Fixing"
-
-def test_unaryexpressionoperator_exists():
-    # Check that the Enumeration exists
-    assert UnaryExpressionOperator is not None
-
-def test_unaryexpressionoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryExpressionOperator]
-    expected_literals = [
-        "MINUS",
-        "LC",
-        "PLUS",
-        "UC",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryExpressionOperator"
-
-def test_optiontype_exists():
-    # Check that the Enumeration exists
-    assert OptionType is not None
-
-def test_optiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OptionType]
-    expected_literals = [
-        "KeyDate",
-        "ECM",
-        "UPS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OptionType"
-
-def test_comparisonoperator_exists():
-    # Check that the Enumeration exists
-    assert ComparisonOperator is not None
-
-def test_comparisonoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComparisonOperator]
-    expected_literals = [
-        "NE",
-        "EQ",
-        "LT",
-        "GT",
-        "GE",
-        "LE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperator"
 
 def test_functionname_exists():
     # Check that the Enumeration exists
@@ -2784,26 +2699,43 @@ def test_functionname_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FunctionName]
     expected_literals = [
-        "ARCSIN",
-        "FRAC",
-        "LOG10",
-        "CEIL",
-        "ARCTAN",
-        "TAN",
-        "ABS",
-        "TRUNK",
         "SIN",
         "ARCCOS",
+        "LOG10",
+        "LN",
+        "TAN",
+        "COS",
+        "TRUNK",
+        "SIGN",
+        "ABS",
         "FLOOR",
         "EXP",
+        "FRAC",
+        "CEIL",
         "SQRT",
-        "COS",
-        "SIGN",
-        "LN",
+        "ARCTAN",
+        "ARCSIN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FunctionName"
+
+def test_fixing_exists():
+    # Check that the Enumeration exists
+    assert Fixing is not None
+
+def test_fixing_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Fixing]
+    expected_literals = [
+        "TopDown",
+        "BottomUp",
+        "None_",
+        "Entry",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Fixing"
 
 def test_language_exists():
     # Check that the Enumeration exists
@@ -2813,51 +2745,119 @@ def test_language_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Language]
     expected_literals = [
-        "SH",
         "HR",
-        "ZF",
-        "ID",
-        "AF",
-        "LT",
-        "FR",
-        "UK",
-        "SV",
-        "FI",
-        "PL",
-        "TH",
-        "EL",
-        "NO",
-        "JA",
-        "BG",
-        "MS",
-        "RU",
-        "ET",
-        "NL",
-        "RO",
-        "SL",
-        "HU",
-        "EN",
-        "PT",
-        "IT",
-        "DA",
-        "CA",
-        "KO",
-        "AR",
-        "ZH",
-        "LV",
-        "Z1",
-        "IS",
         "CS",
-        "TR",
-        "SR",
-        "ES",
+        "AR",
+        "TH",
+        "RU",
+        "MS",
+        "ZH",
+        "ZF",
+        "NO",
         "SK",
+        "EN",
+        "ET",
+        "SR",
+        "AF",
+        "NL",
         "HE",
+        "Z1",
+        "FI",
+        "DA",
+        "LV",
+        "SL",
+        "ID",
+        "SV",
+        "JA",
+        "ES",
+        "UK",
+        "CA",
+        "IT",
         "DE",
+        "KO",
+        "RO",
+        "BG",
+        "FR",
+        "PT",
+        "IS",
+        "EL",
+        "PL",
+        "SH",
+        "HU",
+        "LT",
+        "TR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Language"
+
+def test_comparisonoperator_exists():
+    # Check that the Enumeration exists
+    assert ComparisonOperator is not None
+
+def test_comparisonoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ComparisonOperator]
+    expected_literals = [
+        "GE",
+        "LT",
+        "GT",
+        "NE",
+        "EQ",
+        "LE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperator"
+
+def test_optiontype_exists():
+    # Check that the Enumeration exists
+    assert OptionType is not None
+
+def test_optiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OptionType]
+    expected_literals = [
+        "ECM",
+        "KeyDate",
+        "UPS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OptionType"
+
+def test_procedurelocation_exists():
+    # Check that the Enumeration exists
+    assert ProcedureLocation is not None
+
+def test_procedurelocation_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ProcedureLocation]
+    expected_literals = [
+        "ROOT",
+        "SELF",
+        "PARENT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ProcedureLocation"
+
+def test_unaryexpressionoperator_exists():
+    # Check that the Enumeration exists
+    assert UnaryExpressionOperator is not None
+
+def test_unaryexpressionoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryExpressionOperator]
+    expected_literals = [
+        "UC",
+        "PLUS",
+        "LC",
+        "MINUS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryExpressionOperator"
 
 
 # =============================================================================
@@ -2871,23 +2871,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-vcml::Statement_strategy = st.builds(
-    vcml::Statement,
+SimpleStatement_strategy = st.builds(
+    SimpleStatement,
 )
-CharacteristicReference::C_strategy = st.builds(
-    CharacteristicReference::C,
+vcml_Assignment_strategy = st.builds(
+    vcml_Assignment,
 )
-vcml::ShortVarReference_strategy = st.builds(
-    vcml::ShortVarReference,
+Statement_strategy = st.builds(
+    Statement,
 )
-vcml::ObjectCharacteristicReference_strategy = st.builds(
-    vcml::ObjectCharacteristicReference,
+vcml_SimpleStatement_strategy = st.builds(
+    vcml_SimpleStatement,
+)
+vcml_CompoundStatement_strategy = st.builds(
+    vcml_CompoundStatement,
+)
+vcml_Statement_strategy = st.builds(
+    vcml_Statement,
+)
+CharacteristicReference_C_strategy = st.builds(
+    CharacteristicReference_C,
+)
+vcml_ShortVarReference_strategy = st.builds(
+    vcml_ShortVarReference,
+)
+vcml_ObjectCharacteristicReference_strategy = st.builds(
+    vcml_ObjectCharacteristicReference,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-vcml::EObject_strategy = st.builds(
-    vcml::EObject,
+vcml_CharacteristicReference_P_strategy = st.builds(
+    vcml_CharacteristicReference_P,
+    location=
+        safe_text
+)
+vcml_EObject_strategy = st.builds(
+    vcml_EObject,
 )
 Condition_strategy = st.builds(
     Condition,
@@ -2895,86 +2915,86 @@ Condition_strategy = st.builds(
 ConstraintRestriction_strategy = st.builds(
     ConstraintRestriction,
 )
-vcml::ConstraintRestrictionFalse_strategy = st.builds(
-    vcml::ConstraintRestrictionFalse,
+vcml_SubpartOfCondition_strategy = st.builds(
+    vcml_SubpartOfCondition,
 )
-vcml::SubpartOfCondition_strategy = st.builds(
-    vcml::SubpartOfCondition,
+vcml_ConstraintRestrictionFalse_strategy = st.builds(
+    vcml_ConstraintRestrictionFalse,
 )
-vcml::NegatedConstraintRestrictionLHS_strategy = st.builds(
-    vcml::NegatedConstraintRestrictionLHS,
+vcml_NegatedConstraintRestrictionLHS_strategy = st.builds(
+    vcml_NegatedConstraintRestrictionLHS,
 )
-vcml::PartOfCondition_strategy = st.builds(
-    vcml::PartOfCondition,
+vcml_PartOfCondition_strategy = st.builds(
+    vcml_PartOfCondition,
 )
-vcml::PartialKey_strategy = st.builds(
-    vcml::PartialKey,
+vcml_PartialKey_strategy = st.builds(
+    vcml_PartialKey,
     key=
         safe_text
 )
-vcml::FunctionOrTable_strategy = st.builds(
-    vcml::FunctionOrTable,
+vcml_FunctionOrTable_strategy = st.builds(
+    vcml_FunctionOrTable,
 )
-vcml::Expression_strategy = st.builds(
-    vcml::Expression,
+vcml_Expression_strategy = st.builds(
+    vcml_Expression,
 )
 ConstraintObject_strategy = st.builds(
     ConstraintObject,
 )
-vcml::ConstraintClass_strategy = st.builds(
-    vcml::ConstraintClass,
+vcml_ConstraintClass_strategy = st.builds(
+    vcml_ConstraintClass,
 )
-vcml::ShortVarDefinition_strategy = st.builds(
-    vcml::ShortVarDefinition,
+vcml_ShortVarDefinition_strategy = st.builds(
+    vcml_ShortVarDefinition,
     name=
         safe_text
 )
-vcml::CharacteristicReference::C_strategy = st.builds(
-    vcml::CharacteristicReference::C,
+vcml_CharacteristicReference_C_strategy = st.builds(
+    vcml_CharacteristicReference_C,
 )
-vcml::ConstraintRestriction_strategy = st.builds(
-    vcml::ConstraintRestriction,
+vcml_ConstraintRestriction_strategy = st.builds(
+    vcml_ConstraintRestriction,
 )
-vcml::ConstraintObject_strategy = st.builds(
-    vcml::ConstraintObject,
+vcml_ConstraintObject_strategy = st.builds(
+    vcml_ConstraintObject,
     name=
         safe_text
 )
-vcml::FormattedDocumentationBlock_strategy = st.builds(
-    vcml::FormattedDocumentationBlock,
+vcml_FormattedDocumentationBlock_strategy = st.builds(
+    vcml_FormattedDocumentationBlock,
     value=
         safe_text,
     format=
         safe_text
 )
-vcml::MultipleLanguageDocumentation::LanguageBlock_strategy = st.builds(
-    vcml::MultipleLanguageDocumentation::LanguageBlock,
+vcml_MultipleLanguageDocumentation_LanguageBlock_strategy = st.builds(
+    vcml_MultipleLanguageDocumentation_LanguageBlock,
     language=
         safe_text
 )
 Documentation_strategy = st.builds(
     Documentation,
 )
-vcml::MultipleLanguageDocumentation_strategy = st.builds(
-    vcml::MultipleLanguageDocumentation,
+vcml_MultipleLanguageDocumentation_strategy = st.builds(
+    vcml_MultipleLanguageDocumentation,
 )
-vcml::SimpleDocumentation_strategy = st.builds(
-    vcml::SimpleDocumentation,
+vcml_SimpleDocumentation_strategy = st.builds(
+    vcml_SimpleDocumentation,
     value=
         safe_text
 )
-vcml::ObjectType_strategy = st.builds(
-    vcml::ObjectType,
-    type=
-        safe_text,
+vcml_ObjectType_strategy = st.builds(
+    vcml_ObjectType,
     classType=
-        st.integers()
+        st.integers(),
+    type=
+        safe_text
 )
-vcml::ConstraintMaterial_strategy = st.builds(
-    vcml::ConstraintMaterial,
+vcml_ConstraintMaterial_strategy = st.builds(
+    vcml_ConstraintMaterial,
 )
-vcml::MultiLanguageDescription_strategy = st.builds(
-    vcml::MultiLanguageDescription,
+vcml_MultiLanguageDescription_strategy = st.builds(
+    vcml_MultiLanguageDescription,
     value=
         safe_text,
     language=
@@ -2983,455 +3003,473 @@ vcml::MultiLanguageDescription_strategy = st.builds(
 Description_strategy = st.builds(
     Description,
 )
-vcml::MultiLanguageDescriptions_strategy = st.builds(
-    vcml::MultiLanguageDescriptions,
+vcml_MultiLanguageDescriptions_strategy = st.builds(
+    vcml_MultiLanguageDescriptions,
 )
-vcml::SimpleDescription_strategy = st.builds(
-    vcml::SimpleDescription,
+vcml_SimpleDescription_strategy = st.builds(
+    vcml_SimpleDescription,
     value=
         safe_text
 )
-vcml::Row_strategy = st.builds(
-    vcml::Row,
+vcml_Row_strategy = st.builds(
+    vcml_Row,
 )
-vcml::VariantTableArgument_strategy = st.builds(
-    vcml::VariantTableArgument,
+vcml_VariantTableArgument_strategy = st.builds(
+    vcml_VariantTableArgument,
     key=
         st.booleans()
 )
-vcml::VariantFunctionArgument_strategy = st.builds(
-    vcml::VariantFunctionArgument,
+vcml_VariantFunctionArgument_strategy = st.builds(
+    vcml_VariantFunctionArgument,
     in_=
         st.booleans()
 )
-vcml::ValueAssignment_strategy = st.builds(
-    vcml::ValueAssignment,
+vcml_ValueAssignment_strategy = st.builds(
+    vcml_ValueAssignment,
 )
-vcml::Classification_strategy = st.builds(
-    vcml::Classification,
+vcml_Classification_strategy = st.builds(
+    vcml_Classification,
 )
-vcml::CharacteristicGroup_strategy = st.builds(
-    vcml::CharacteristicGroup,
+vcml_CharacteristicGroup_strategy = st.builds(
+    vcml_CharacteristicGroup,
     name=
         safe_text
 )
-vcml::ConstraintSource_strategy = st.builds(
-    vcml::ConstraintSource,
+vcml_ConstraintSource_strategy = st.builds(
+    vcml_ConstraintSource,
 )
-vcml::Condition_strategy = st.builds(
-    vcml::Condition,
+vcml_Condition_strategy = st.builds(
+    vcml_Condition,
 )
-vcml::ConditionSource_strategy = st.builds(
-    vcml::ConditionSource,
+vcml_ConditionSource_strategy = st.builds(
+    vcml_ConditionSource,
 )
-vcml::ProcedureSource_strategy = st.builds(
-    vcml::ProcedureSource,
+vcml_ProcedureSource_strategy = st.builds(
+    vcml_ProcedureSource,
 )
 Dependency_strategy = st.builds(
     Dependency,
 )
-vcml::Dependency_strategy = st.builds(
-    vcml::Dependency,
+vcml_Dependency_strategy = st.builds(
+    vcml_Dependency,
 )
-vcml::NumberListEntry_strategy = st.builds(
-    vcml::NumberListEntry,
+vcml_NumberListEntry_strategy = st.builds(
+    vcml_NumberListEntry,
 )
-vcml::DateCharacteristicValue_strategy = st.builds(
-    vcml::DateCharacteristicValue,
+vcml_DateCharacteristicValue_strategy = st.builds(
+    vcml_DateCharacteristicValue,
     default=
         st.booleans(),
-    from_=
-        safe_text,
     to=
+        safe_text,
+    from_=
         safe_text
 )
-vcml::CharacteristicValue_strategy = st.builds(
-    vcml::CharacteristicValue,
+vcml_CharacteristicValue_strategy = st.builds(
+    vcml_CharacteristicValue,
     default=
         st.booleans(),
     name=
         safe_text
 )
-vcml::NumericCharacteristicValue_strategy = st.builds(
-    vcml::NumericCharacteristicValue,
+vcml_NumericCharacteristicValue_strategy = st.builds(
+    vcml_NumericCharacteristicValue,
     default=
         st.booleans()
 )
-vcml::CharacteristicOrValueDependencies_strategy = st.builds(
-    vcml::CharacteristicOrValueDependencies,
+vcml_CharacteristicOrValueDependencies_strategy = st.builds(
+    vcml_CharacteristicOrValueDependencies,
 )
-vcml::CharacteristicType_strategy = st.builds(
-    vcml::CharacteristicType,
+vcml_CharacteristicType_strategy = st.builds(
+    vcml_CharacteristicType,
     numberOfChars=
         st.integers()
 )
-vcml::Documentation_strategy = st.builds(
-    vcml::Documentation,
+vcml_Documentation_strategy = st.builds(
+    vcml_Documentation,
 )
 BOMItem_strategy = st.builds(
     BOMItem,
 )
-vcml::BOMItem::Class_strategy = st.builds(
-    vcml::BOMItem::Class,
+vcml_BOMItem_Class_strategy = st.builds(
+    vcml_BOMItem_Class,
 )
-vcml::BOMItem::Material_strategy = st.builds(
-    vcml::BOMItem::Material,
+vcml_BOMItem_Material_strategy = st.builds(
+    vcml_BOMItem_Material,
 )
-vcml::ConfigurationProfileEntry_strategy = st.builds(
-    vcml::ConfigurationProfileEntry,
+vcml_ConfigurationProfileEntry_strategy = st.builds(
+    vcml_ConfigurationProfileEntry,
     sequence=
         st.integers()
 )
-vcml::BOMItem_strategy = st.builds(
-    vcml::BOMItem,
+vcml_BOMItem_strategy = st.builds(
+    vcml_BOMItem,
     itemnumber=
         st.integers()
 )
 VCObject_strategy = st.builds(
     VCObject,
 )
-vcml::Precondition_strategy = st.builds(
-    vcml::Precondition,
-    group=
-        safe_text,
-    status=
-        safe_text
-)
-vcml::Procedure_strategy = st.builds(
-    vcml::Procedure,
+vcml_VariantTable_strategy = st.builds(
+    vcml_VariantTable,
     status=
         safe_text,
     group=
         safe_text
 )
-vcml::Constraint_strategy = st.builds(
-    vcml::Constraint,
-    status=
-        safe_text,
-    group=
-        safe_text
-)
-vcml::ConfigurationProfile_strategy = st.builds(
-    vcml::ConfigurationProfile,
-    fixing=
-        safe_text,
-    status=
-        safe_text,
-    bomapplication=
-        safe_text
-)
-vcml::VariantTableContent_strategy = st.builds(
-    vcml::VariantTableContent,
-)
-vcml::Class_strategy = st.builds(
-    vcml::Class,
+vcml_Constraint_strategy = st.builds(
+    vcml_Constraint,
     group=
         safe_text,
     status=
         safe_text
 )
-vcml::VariantTable_strategy = st.builds(
-    vcml::VariantTable,
+vcml_VariantTableContent_strategy = st.builds(
+    vcml_VariantTableContent,
+)
+vcml_Procedure_strategy = st.builds(
+    vcml_Procedure,
     status=
         safe_text,
     group=
         safe_text
 )
-vcml::InterfaceDesign_strategy = st.builds(
-    vcml::InterfaceDesign,
+vcml_InterfaceDesign_strategy = st.builds(
+    vcml_InterfaceDesign,
 )
-vcml::VariantFunction_strategy = st.builds(
-    vcml::VariantFunction,
+vcml_DependencyNet_strategy = st.builds(
+    vcml_DependencyNet,
     status=
         safe_text,
     group=
         safe_text
 )
-vcml::Material_strategy = st.builds(
-    vcml::Material,
+vcml_Material_strategy = st.builds(
+    vcml_Material,
     type=
         safe_text
 )
-vcml::Characteristic_strategy = st.builds(
-    vcml::Characteristic,
-    displayAllowedValues=
-        st.booleans(),
-    field=
+vcml_VariantFunction_strategy = st.builds(
+    vcml_VariantFunction,
+    group=
         safe_text,
+    status=
+        safe_text
+)
+vcml_SelectionCondition_strategy = st.builds(
+    vcml_SelectionCondition,
+    group=
+        safe_text,
+    status=
+        safe_text
+)
+vcml_Class_strategy = st.builds(
+    vcml_Class,
+    status=
+        safe_text,
+    group=
+        safe_text
+)
+vcml_Precondition_strategy = st.builds(
+    vcml_Precondition,
+    group=
+        safe_text,
+    status=
+        safe_text
+)
+vcml_Characteristic_strategy = st.builds(
+    vcml_Characteristic,
     table=
         safe_text,
     additionalValues=
         st.booleans(),
-    noDisplay=
-        st.booleans(),
-    multiValue=
-        st.booleans(),
-    group=
-        safe_text,
     status=
         safe_text,
     required=
         st.booleans(),
+    displayAllowedValues=
+        st.booleans(),
+    multiValue=
+        st.booleans(),
+    noDisplay=
+        st.booleans(),
     notReadyForInput=
         st.booleans(),
+    field=
+        safe_text,
     restrictable=
-        st.booleans()
-)
-vcml::DependencyNet_strategy = st.builds(
-    vcml::DependencyNet,
-    group=
-        safe_text,
-    status=
-        safe_text
-)
-vcml::SelectionCondition_strategy = st.builds(
-    vcml::SelectionCondition,
-    status=
-        safe_text,
+        st.booleans(),
     group=
         safe_text
 )
-vcml::BillOfMaterial_strategy = st.builds(
-    vcml::BillOfMaterial,
+vcml_ConfigurationProfile_strategy = st.builds(
+    vcml_ConfigurationProfile,
+    bomapplication=
+        safe_text,
+    status=
+        safe_text,
+    fixing=
+        safe_text
 )
-vcml::Description_strategy = st.builds(
-    vcml::Description,
+vcml_BillOfMaterial_strategy = st.builds(
+    vcml_BillOfMaterial,
+)
+vcml_Description_strategy = st.builds(
+    vcml_Description,
 )
 CharacteristicType_strategy = st.builds(
     CharacteristicType,
 )
-vcml::SymbolicType_strategy = st.builds(
-    vcml::SymbolicType,
+vcml_SymbolicType_strategy = st.builds(
+    vcml_SymbolicType,
     caseSensitive=
         st.booleans()
 )
-vcml::DateType_strategy = st.builds(
-    vcml::DateType,
+vcml_DateType_strategy = st.builds(
+    vcml_DateType,
     intervalValuesAllowed=
         st.booleans()
 )
-vcml::NumericType_strategy = st.builds(
-    vcml::NumericType,
-    decimalPlaces=
-        st.integers(),
+vcml_NumericType_strategy = st.builds(
+    vcml_NumericType,
+    negativeValuesAllowed=
+        st.booleans(),
     intervalValuesAllowed=
         st.booleans(),
+    decimalPlaces=
+        st.integers(),
     unit=
-        safe_text,
-    negativeValuesAllowed=
-        st.booleans()
+        safe_text
 )
-vcml::VCObject_strategy = st.builds(
-    vcml::VCObject,
+vcml_VCObject_strategy = st.builds(
+    vcml_VCObject,
     name=
         safe_text
 )
-vcml::Option_strategy = st.builds(
-    vcml::Option,
+vcml_Option_strategy = st.builds(
+    vcml_Option,
     value=
         safe_text,
     name=
         safe_text
 )
-vcml::Import_strategy = st.builds(
-    vcml::Import,
+vcml_Import_strategy = st.builds(
+    vcml_Import,
     importURI=
         safe_text
 )
-vcml::VcmlModel_strategy = st.builds(
-    vcml::VcmlModel,
+vcml_VcmlModel_strategy = st.builds(
+    vcml_VcmlModel,
 )
-vcml::BinaryCondition_strategy = st.builds(
-    vcml::BinaryCondition,
+vcml_BinaryCondition_strategy = st.builds(
+    vcml_BinaryCondition,
     operator=
         safe_text
 )
-vcml::ConditionalConstraintRestriction_strategy = st.builds(
-    vcml::ConditionalConstraintRestriction,
+vcml_ConditionalStatement_strategy = st.builds(
+    vcml_ConditionalStatement,
+)
+vcml_ConditionalConstraintRestriction_strategy = st.builds(
+    vcml_ConditionalConstraintRestriction,
 )
 List_strategy = st.builds(
     List,
 )
-vcml::SymbolList_strategy = st.builds(
-    vcml::SymbolList,
+vcml_SymbolList_strategy = st.builds(
+    vcml_SymbolList,
 )
-vcml::NumberList_strategy = st.builds(
-    vcml::NumberList,
+vcml_NumberList_strategy = st.builds(
+    vcml_NumberList,
 )
-vcml::InCondition::P_strategy = st.builds(
-    vcml::InCondition::P,
+vcml_InCondition_P_strategy = st.builds(
+    vcml_InCondition_P,
 )
-vcml::List_strategy = st.builds(
-    vcml::List,
+vcml_List_strategy = st.builds(
+    vcml_List,
 )
-vcml::InCondition::C_strategy = st.builds(
-    vcml::InCondition::C,
+vcml_InCondition_C_strategy = st.builds(
+    vcml_InCondition_C,
 )
-vcml::IsSpecified::P_strategy = st.builds(
-    vcml::IsSpecified::P,
+vcml_IsSpecified_P_strategy = st.builds(
+    vcml_IsSpecified_P,
 )
-vcml::IsSpecified::C_strategy = st.builds(
-    vcml::IsSpecified::C,
+vcml_IsSpecified_C_strategy = st.builds(
+    vcml_IsSpecified_C,
 )
-vcml::Comparison_strategy = st.builds(
-    vcml::Comparison,
+vcml_Comparison_strategy = st.builds(
+    vcml_Comparison,
     operator=
         safe_text
 )
-vcml::UnaryCondition_strategy = st.builds(
-    vcml::UnaryCondition,
+vcml_UnaryCondition_strategy = st.builds(
+    vcml_UnaryCondition,
 )
-vcml::SymbolicLiteral_strategy = st.builds(
-    vcml::SymbolicLiteral,
+vcml_SymbolicLiteral_strategy = st.builds(
+    vcml_SymbolicLiteral,
     value=
         safe_text
 )
 NumberListEntry_strategy = st.builds(
     NumberListEntry,
 )
-vcml::NumericInterval_strategy = st.builds(
-    vcml::NumericInterval,
+vcml_NumericInterval_strategy = st.builds(
+    vcml_NumericInterval,
+    upperBound=
+        safe_text,
     lowerBoundOp=
         safe_text,
     lowerBound=
         safe_text,
     upperBoundOp=
-        safe_text,
-    upperBound=
         safe_text
 )
-vcml::NumericLiteral_strategy = st.builds(
-    vcml::NumericLiteral,
+vcml_NumericLiteral_strategy = st.builds(
+    vcml_NumericLiteral,
     value=
         safe_text
 )
-vcml::MDataCharacteristic::P_strategy = st.builds(
-    vcml::MDataCharacteristic::P,
+vcml_MDataCharacteristic_P_strategy = st.builds(
+    vcml_MDataCharacteristic_P,
 )
-vcml::MDataCharacteristic::C_strategy = st.builds(
-    vcml::MDataCharacteristic::C,
+vcml_MDataCharacteristic_C_strategy = st.builds(
+    vcml_MDataCharacteristic_C,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-vcml::CountParts_strategy = st.builds(
-    vcml::CountParts,
-    location=
-        safe_text
+vcml_Literal_strategy = st.builds(
+    vcml_Literal,
 )
-vcml::SumParts_strategy = st.builds(
-    vcml::SumParts,
-    location=
-        safe_text
-)
-vcml::FunctionCall_strategy = st.builds(
-    vcml::FunctionCall,
+vcml_FunctionCall_strategy = st.builds(
+    vcml_FunctionCall,
     function=
         safe_text
 )
-vcml::Literal_strategy = st.builds(
-    vcml::Literal,
-)
-vcml::BinaryExpression_strategy = st.builds(
-    vcml::BinaryExpression,
-    operator=
-        safe_text
-)
-vcml::UnaryExpression_strategy = st.builds(
-    vcml::UnaryExpression,
-    operator=
-        safe_text
-)
-vcml::TypeOf_strategy = st.builds(
-    vcml::TypeOf,
+vcml_SumParts_strategy = st.builds(
+    vcml_SumParts,
     location=
         safe_text
+)
+vcml_BinaryExpression_strategy = st.builds(
+    vcml_BinaryExpression,
+    operator=
+        safe_text
+)
+vcml_CountParts_strategy = st.builds(
+    vcml_CountParts,
+    location=
+        safe_text
+)
+vcml_UnaryExpression_strategy = st.builds(
+    vcml_UnaryExpression,
+    operator=
+        safe_text
+)
+vcml_TypeOf_strategy = st.builds(
+    vcml_TypeOf,
+    location=
+        safe_text
+)
+vcml_SetPricingFactor_strategy = st.builds(
+    vcml_SetPricingFactor,
+    location=
+        safe_text
+)
+vcml_IsInvisible_strategy = st.builds(
+    vcml_IsInvisible,
 )
 SetOrDelDefault_strategy = st.builds(
     SetOrDelDefault,
 )
-vcml::DelDefault_strategy = st.builds(
-    vcml::DelDefault,
+vcml_DelDefault_strategy = st.builds(
+    vcml_DelDefault,
 )
-vcml::SetDefault_strategy = st.builds(
-    vcml::SetDefault,
+vcml_SetDefault_strategy = st.builds(
+    vcml_SetDefault,
+)
+vcml_SetOrDelDefault_strategy = st.builds(
+    vcml_SetOrDelDefault,
 )
 FunctionOrTable_strategy = st.builds(
     FunctionOrTable,
 )
-vcml::CharacteristicReference::P_strategy = st.builds(
-    vcml::CharacteristicReference::P,
-    location=
-        safe_text
+vcml_PFunction_strategy = st.builds(
+    vcml_PFunction,
 )
-SimpleStatement_strategy = st.builds(
-    SimpleStatement,
+vcml_Table_strategy = st.builds(
+    vcml_Table,
 )
-vcml::IsInvisible_strategy = st.builds(
-    vcml::IsInvisible,
-)
-vcml::Table_strategy = st.builds(
-    vcml::Table,
-)
-vcml::Function_strategy = st.builds(
-    vcml::Function,
-)
-vcml::SetPricingFactor_strategy = st.builds(
-    vcml::SetPricingFactor,
-    location=
-        safe_text
-)
-vcml::SetOrDelDefault_strategy = st.builds(
-    vcml::SetOrDelDefault,
-)
-vcml::PFunction_strategy = st.builds(
-    vcml::PFunction,
-)
-vcml::Assignment_strategy = st.builds(
-    vcml::Assignment,
-)
-Statement_strategy = st.builds(
-    Statement,
-)
-vcml::SimpleStatement_strategy = st.builds(
-    vcml::SimpleStatement,
-)
-vcml::ConditionalStatement_strategy = st.builds(
-    vcml::ConditionalStatement,
-)
-vcml::CompoundStatement_strategy = st.builds(
-    vcml::CompoundStatement,
+vcml_Function_strategy = st.builds(
+    vcml_Function,
 )
 
-@given(instance=vcml::Statement_strategy)
+@given(instance=SimpleStatement_strategy)
 @settings(max_examples=50)
-def test_vcml::statement_instantiation(instance):
-    assert isinstance(instance, vcml::Statement)
+def test_simplestatement_instantiation(instance):
+    assert isinstance(instance, SimpleStatement)
 
-@given(instance=CharacteristicReference::C_strategy)
+@given(instance=vcml_Assignment_strategy)
 @settings(max_examples=50)
-def test_characteristicreference::c_instantiation(instance):
-    assert isinstance(instance, CharacteristicReference::C)
+def test_vcml_assignment_instantiation(instance):
+    assert isinstance(instance, vcml_Assignment)
 
-@given(instance=vcml::ShortVarReference_strategy)
+@given(instance=Statement_strategy)
 @settings(max_examples=50)
-def test_vcml::shortvarreference_instantiation(instance):
-    assert isinstance(instance, vcml::ShortVarReference)
+def test_statement_instantiation(instance):
+    assert isinstance(instance, Statement)
 
-@given(instance=vcml::ObjectCharacteristicReference_strategy)
+@given(instance=vcml_SimpleStatement_strategy)
 @settings(max_examples=50)
-def test_vcml::objectcharacteristicreference_instantiation(instance):
-    assert isinstance(instance, vcml::ObjectCharacteristicReference)
+def test_vcml_simplestatement_instantiation(instance):
+    assert isinstance(instance, vcml_SimpleStatement)
+
+@given(instance=vcml_CompoundStatement_strategy)
+@settings(max_examples=50)
+def test_vcml_compoundstatement_instantiation(instance):
+    assert isinstance(instance, vcml_CompoundStatement)
+
+@given(instance=vcml_Statement_strategy)
+@settings(max_examples=50)
+def test_vcml_statement_instantiation(instance):
+    assert isinstance(instance, vcml_Statement)
+
+@given(instance=CharacteristicReference_C_strategy)
+@settings(max_examples=50)
+def test_characteristicreference_c_instantiation(instance):
+    assert isinstance(instance, CharacteristicReference_C)
+
+@given(instance=vcml_ShortVarReference_strategy)
+@settings(max_examples=50)
+def test_vcml_shortvarreference_instantiation(instance):
+    assert isinstance(instance, vcml_ShortVarReference)
+
+@given(instance=vcml_ObjectCharacteristicReference_strategy)
+@settings(max_examples=50)
+def test_vcml_objectcharacteristicreference_instantiation(instance):
+    assert isinstance(instance, vcml_ObjectCharacteristicReference)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=vcml::EObject_strategy)
+@given(instance=vcml_CharacteristicReference_P_strategy)
 @settings(max_examples=50)
-def test_vcml::eobject_instantiation(instance):
-    assert isinstance(instance, vcml::EObject)
+def test_vcml_characteristicreference_p_instantiation(instance):
+    assert isinstance(instance, vcml_CharacteristicReference_P)
+
+
+
+@given(instance=vcml_CharacteristicReference_P_strategy)
+def test_vcml_characteristicreference_p_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+@given(instance=vcml_EObject_strategy)
+@settings(max_examples=50)
+def test_vcml_eobject_instantiation(instance):
+    assert isinstance(instance, vcml_EObject)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
@@ -3443,143 +3481,125 @@ def test_condition_instantiation(instance):
 def test_constraintrestriction_instantiation(instance):
     assert isinstance(instance, ConstraintRestriction)
 
-@given(instance=vcml::ConstraintRestrictionFalse_strategy)
+@given(instance=vcml_SubpartOfCondition_strategy)
 @settings(max_examples=50)
-def test_vcml::constraintrestrictionfalse_instantiation(instance):
-    assert isinstance(instance, vcml::ConstraintRestrictionFalse)
+def test_vcml_subpartofcondition_instantiation(instance):
+    assert isinstance(instance, vcml_SubpartOfCondition)
 
-@given(instance=vcml::SubpartOfCondition_strategy)
+@given(instance=vcml_ConstraintRestrictionFalse_strategy)
 @settings(max_examples=50)
-def test_vcml::subpartofcondition_instantiation(instance):
-    assert isinstance(instance, vcml::SubpartOfCondition)
+def test_vcml_constraintrestrictionfalse_instantiation(instance):
+    assert isinstance(instance, vcml_ConstraintRestrictionFalse)
 
-@given(instance=vcml::NegatedConstraintRestrictionLHS_strategy)
+@given(instance=vcml_NegatedConstraintRestrictionLHS_strategy)
 @settings(max_examples=50)
-def test_vcml::negatedconstraintrestrictionlhs_instantiation(instance):
-    assert isinstance(instance, vcml::NegatedConstraintRestrictionLHS)
+def test_vcml_negatedconstraintrestrictionlhs_instantiation(instance):
+    assert isinstance(instance, vcml_NegatedConstraintRestrictionLHS)
 
-@given(instance=vcml::PartOfCondition_strategy)
+@given(instance=vcml_PartOfCondition_strategy)
 @settings(max_examples=50)
-def test_vcml::partofcondition_instantiation(instance):
-    assert isinstance(instance, vcml::PartOfCondition)
+def test_vcml_partofcondition_instantiation(instance):
+    assert isinstance(instance, vcml_PartOfCondition)
 
-@given(instance=vcml::PartialKey_strategy)
+@given(instance=vcml_PartialKey_strategy)
 @settings(max_examples=50)
-def test_vcml::partialkey_instantiation(instance):
-    assert isinstance(instance, vcml::PartialKey)
-
-@given(instance=vcml::PartialKey_strategy)
-def test_vcml::partialkey_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_vcml_partialkey_instantiation(instance):
+    assert isinstance(instance, vcml_PartialKey)
 
 
-@given(instance=vcml::PartialKey_strategy)
-def test_vcml::partialkey_key_setter(instance):
+
+@given(instance=vcml_PartialKey_strategy)
+def test_vcml_partialkey_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=vcml::FunctionOrTable_strategy)
+@given(instance=vcml_FunctionOrTable_strategy)
 @settings(max_examples=50)
-def test_vcml::functionortable_instantiation(instance):
-    assert isinstance(instance, vcml::FunctionOrTable)
+def test_vcml_functionortable_instantiation(instance):
+    assert isinstance(instance, vcml_FunctionOrTable)
 
-@given(instance=vcml::Expression_strategy)
+@given(instance=vcml_Expression_strategy)
 @settings(max_examples=50)
-def test_vcml::expression_instantiation(instance):
-    assert isinstance(instance, vcml::Expression)
+def test_vcml_expression_instantiation(instance):
+    assert isinstance(instance, vcml_Expression)
 
 @given(instance=ConstraintObject_strategy)
 @settings(max_examples=50)
 def test_constraintobject_instantiation(instance):
     assert isinstance(instance, ConstraintObject)
 
-@given(instance=vcml::ConstraintClass_strategy)
+@given(instance=vcml_ConstraintClass_strategy)
 @settings(max_examples=50)
-def test_vcml::constraintclass_instantiation(instance):
-    assert isinstance(instance, vcml::ConstraintClass)
+def test_vcml_constraintclass_instantiation(instance):
+    assert isinstance(instance, vcml_ConstraintClass)
 
-@given(instance=vcml::ShortVarDefinition_strategy)
+@given(instance=vcml_ShortVarDefinition_strategy)
 @settings(max_examples=50)
-def test_vcml::shortvardefinition_instantiation(instance):
-    assert isinstance(instance, vcml::ShortVarDefinition)
-
-@given(instance=vcml::ShortVarDefinition_strategy)
-def test_vcml::shortvardefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vcml_shortvardefinition_instantiation(instance):
+    assert isinstance(instance, vcml_ShortVarDefinition)
 
 
-@given(instance=vcml::ShortVarDefinition_strategy)
-def test_vcml::shortvardefinition_name_setter(instance):
+
+@given(instance=vcml_ShortVarDefinition_strategy)
+def test_vcml_shortvardefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vcml::CharacteristicReference::C_strategy)
+@given(instance=vcml_CharacteristicReference_C_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristicreference::c_instantiation(instance):
-    assert isinstance(instance, vcml::CharacteristicReference::C)
+def test_vcml_characteristicreference_c_instantiation(instance):
+    assert isinstance(instance, vcml_CharacteristicReference_C)
 
-@given(instance=vcml::ConstraintRestriction_strategy)
+@given(instance=vcml_ConstraintRestriction_strategy)
 @settings(max_examples=50)
-def test_vcml::constraintrestriction_instantiation(instance):
-    assert isinstance(instance, vcml::ConstraintRestriction)
+def test_vcml_constraintrestriction_instantiation(instance):
+    assert isinstance(instance, vcml_ConstraintRestriction)
 
-@given(instance=vcml::ConstraintObject_strategy)
+@given(instance=vcml_ConstraintObject_strategy)
 @settings(max_examples=50)
-def test_vcml::constraintobject_instantiation(instance):
-    assert isinstance(instance, vcml::ConstraintObject)
-
-@given(instance=vcml::ConstraintObject_strategy)
-def test_vcml::constraintobject_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vcml_constraintobject_instantiation(instance):
+    assert isinstance(instance, vcml_ConstraintObject)
 
 
-@given(instance=vcml::ConstraintObject_strategy)
-def test_vcml::constraintobject_name_setter(instance):
+
+@given(instance=vcml_ConstraintObject_strategy)
+def test_vcml_constraintobject_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vcml::FormattedDocumentationBlock_strategy)
+@given(instance=vcml_FormattedDocumentationBlock_strategy)
 @settings(max_examples=50)
-def test_vcml::formatteddocumentationblock_instantiation(instance):
-    assert isinstance(instance, vcml::FormattedDocumentationBlock)
-
-@given(instance=vcml::FormattedDocumentationBlock_strategy)
-def test_vcml::formatteddocumentationblock_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_formatteddocumentationblock_instantiation(instance):
+    assert isinstance(instance, vcml_FormattedDocumentationBlock)
 
 
-@given(instance=vcml::FormattedDocumentationBlock_strategy)
-def test_vcml::formatteddocumentationblock_value_setter(instance):
+
+@given(instance=vcml_FormattedDocumentationBlock_strategy)
+def test_vcml_formatteddocumentationblock_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vcml::FormattedDocumentationBlock_strategy)
-def test_vcml::formatteddocumentationblock_format_type(instance):
-    assert isinstance(instance.format, str)
 
 
-@given(instance=vcml::FormattedDocumentationBlock_strategy)
-def test_vcml::formatteddocumentationblock_format_setter(instance):
+@given(instance=vcml_FormattedDocumentationBlock_strategy)
+def test_vcml_formatteddocumentationblock_format_setter(instance):
     original = instance.format
     instance.format = original
     assert instance.format == original
 
-@given(instance=vcml::MultipleLanguageDocumentation::LanguageBlock_strategy)
+@given(instance=vcml_MultipleLanguageDocumentation_LanguageBlock_strategy)
 @settings(max_examples=50)
-def test_vcml::multiplelanguagedocumentation::languageblock_instantiation(instance):
-    assert isinstance(instance, vcml::MultipleLanguageDocumentation::LanguageBlock)
-
-@given(instance=vcml::MultipleLanguageDocumentation::LanguageBlock_strategy)
-def test_vcml::multiplelanguagedocumentation::languageblock_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_vcml_multiplelanguagedocumentation_languageblock_instantiation(instance):
+    assert isinstance(instance, vcml_MultipleLanguageDocumentation_LanguageBlock)
 
 
-@given(instance=vcml::MultipleLanguageDocumentation::LanguageBlock_strategy)
-def test_vcml::multiplelanguagedocumentation::languageblock_language_setter(instance):
+
+@given(instance=vcml_MultipleLanguageDocumentation_LanguageBlock_strategy)
+def test_vcml_multiplelanguagedocumentation_languageblock_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
@@ -3589,82 +3609,67 @@ def test_vcml::multiplelanguagedocumentation::languageblock_language_setter(inst
 def test_documentation_instantiation(instance):
     assert isinstance(instance, Documentation)
 
-@given(instance=vcml::MultipleLanguageDocumentation_strategy)
+@given(instance=vcml_MultipleLanguageDocumentation_strategy)
 @settings(max_examples=50)
-def test_vcml::multiplelanguagedocumentation_instantiation(instance):
-    assert isinstance(instance, vcml::MultipleLanguageDocumentation)
+def test_vcml_multiplelanguagedocumentation_instantiation(instance):
+    assert isinstance(instance, vcml_MultipleLanguageDocumentation)
 
-@given(instance=vcml::SimpleDocumentation_strategy)
+@given(instance=vcml_SimpleDocumentation_strategy)
 @settings(max_examples=50)
-def test_vcml::simpledocumentation_instantiation(instance):
-    assert isinstance(instance, vcml::SimpleDocumentation)
-
-@given(instance=vcml::SimpleDocumentation_strategy)
-def test_vcml::simpledocumentation_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_simpledocumentation_instantiation(instance):
+    assert isinstance(instance, vcml_SimpleDocumentation)
 
 
-@given(instance=vcml::SimpleDocumentation_strategy)
-def test_vcml::simpledocumentation_value_setter(instance):
+
+@given(instance=vcml_SimpleDocumentation_strategy)
+def test_vcml_simpledocumentation_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vcml::ObjectType_strategy)
+@given(instance=vcml_ObjectType_strategy)
 @settings(max_examples=50)
-def test_vcml::objecttype_instantiation(instance):
-    assert isinstance(instance, vcml::ObjectType)
-
-@given(instance=vcml::ObjectType_strategy)
-def test_vcml::objecttype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_vcml_objecttype_instantiation(instance):
+    assert isinstance(instance, vcml_ObjectType)
 
 
-@given(instance=vcml::ObjectType_strategy)
-def test_vcml::objecttype_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=vcml::ObjectType_strategy)
-def test_vcml::objecttype_classType_type(instance):
-    assert isinstance(instance.classType, int)
-
-
-@given(instance=vcml::ObjectType_strategy)
-def test_vcml::objecttype_classType_setter(instance):
+@given(instance=vcml_ObjectType_strategy)
+def test_vcml_objecttype_classType_setter(instance):
     original = instance.classType
     instance.classType = original
     assert instance.classType == original
 
-@given(instance=vcml::ConstraintMaterial_strategy)
+
+
+@given(instance=vcml_ObjectType_strategy)
+def test_vcml_objecttype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=vcml_ConstraintMaterial_strategy)
 @settings(max_examples=50)
-def test_vcml::constraintmaterial_instantiation(instance):
-    assert isinstance(instance, vcml::ConstraintMaterial)
+def test_vcml_constraintmaterial_instantiation(instance):
+    assert isinstance(instance, vcml_ConstraintMaterial)
 
-@given(instance=vcml::MultiLanguageDescription_strategy)
+@given(instance=vcml_MultiLanguageDescription_strategy)
 @settings(max_examples=50)
-def test_vcml::multilanguagedescription_instantiation(instance):
-    assert isinstance(instance, vcml::MultiLanguageDescription)
-
-@given(instance=vcml::MultiLanguageDescription_strategy)
-def test_vcml::multilanguagedescription_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_multilanguagedescription_instantiation(instance):
+    assert isinstance(instance, vcml_MultiLanguageDescription)
 
 
-@given(instance=vcml::MultiLanguageDescription_strategy)
-def test_vcml::multilanguagedescription_value_setter(instance):
+
+@given(instance=vcml_MultiLanguageDescription_strategy)
+def test_vcml_multilanguagedescription_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vcml::MultiLanguageDescription_strategy)
-def test_vcml::multilanguagedescription_language_type(instance):
-    assert isinstance(instance.language, str)
 
 
-@given(instance=vcml::MultiLanguageDescription_strategy)
-def test_vcml::multilanguagedescription_language_setter(instance):
+@given(instance=vcml_MultiLanguageDescription_strategy)
+def test_vcml_multilanguagedescription_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
@@ -3674,275 +3679,236 @@ def test_vcml::multilanguagedescription_language_setter(instance):
 def test_description_instantiation(instance):
     assert isinstance(instance, Description)
 
-@given(instance=vcml::MultiLanguageDescriptions_strategy)
+@given(instance=vcml_MultiLanguageDescriptions_strategy)
 @settings(max_examples=50)
-def test_vcml::multilanguagedescriptions_instantiation(instance):
-    assert isinstance(instance, vcml::MultiLanguageDescriptions)
+def test_vcml_multilanguagedescriptions_instantiation(instance):
+    assert isinstance(instance, vcml_MultiLanguageDescriptions)
 
-@given(instance=vcml::SimpleDescription_strategy)
+@given(instance=vcml_SimpleDescription_strategy)
 @settings(max_examples=50)
-def test_vcml::simpledescription_instantiation(instance):
-    assert isinstance(instance, vcml::SimpleDescription)
-
-@given(instance=vcml::SimpleDescription_strategy)
-def test_vcml::simpledescription_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_simpledescription_instantiation(instance):
+    assert isinstance(instance, vcml_SimpleDescription)
 
 
-@given(instance=vcml::SimpleDescription_strategy)
-def test_vcml::simpledescription_value_setter(instance):
+
+@given(instance=vcml_SimpleDescription_strategy)
+def test_vcml_simpledescription_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vcml::Row_strategy)
+@given(instance=vcml_Row_strategy)
 @settings(max_examples=50)
-def test_vcml::row_instantiation(instance):
-    assert isinstance(instance, vcml::Row)
+def test_vcml_row_instantiation(instance):
+    assert isinstance(instance, vcml_Row)
 
-@given(instance=vcml::VariantTableArgument_strategy)
+@given(instance=vcml_VariantTableArgument_strategy)
 @settings(max_examples=50)
-def test_vcml::varianttableargument_instantiation(instance):
-    assert isinstance(instance, vcml::VariantTableArgument)
-
-@given(instance=vcml::VariantTableArgument_strategy)
-def test_vcml::varianttableargument_key_type(instance):
-    assert isinstance(instance.key, bool)
+def test_vcml_varianttableargument_instantiation(instance):
+    assert isinstance(instance, vcml_VariantTableArgument)
 
 
-@given(instance=vcml::VariantTableArgument_strategy)
-def test_vcml::varianttableargument_key_setter(instance):
+
+@given(instance=vcml_VariantTableArgument_strategy)
+def test_vcml_varianttableargument_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=vcml::VariantFunctionArgument_strategy)
+@given(instance=vcml_VariantFunctionArgument_strategy)
 @settings(max_examples=50)
-def test_vcml::variantfunctionargument_instantiation(instance):
-    assert isinstance(instance, vcml::VariantFunctionArgument)
-
-@given(instance=vcml::VariantFunctionArgument_strategy)
-def test_vcml::variantfunctionargument_in__type(instance):
-    assert isinstance(instance.in_, bool)
+def test_vcml_variantfunctionargument_instantiation(instance):
+    assert isinstance(instance, vcml_VariantFunctionArgument)
 
 
-@given(instance=vcml::VariantFunctionArgument_strategy)
-def test_vcml::variantfunctionargument_in__setter(instance):
+
+@given(instance=vcml_VariantFunctionArgument_strategy)
+def test_vcml_variantfunctionargument_in__setter(instance):
     original = instance.in_
     instance.in_ = original
     assert instance.in_ == original
 
-@given(instance=vcml::ValueAssignment_strategy)
+@given(instance=vcml_ValueAssignment_strategy)
 @settings(max_examples=50)
-def test_vcml::valueassignment_instantiation(instance):
-    assert isinstance(instance, vcml::ValueAssignment)
+def test_vcml_valueassignment_instantiation(instance):
+    assert isinstance(instance, vcml_ValueAssignment)
 
-@given(instance=vcml::Classification_strategy)
+@given(instance=vcml_Classification_strategy)
 @settings(max_examples=50)
-def test_vcml::classification_instantiation(instance):
-    assert isinstance(instance, vcml::Classification)
+def test_vcml_classification_instantiation(instance):
+    assert isinstance(instance, vcml_Classification)
 
-@given(instance=vcml::CharacteristicGroup_strategy)
+@given(instance=vcml_CharacteristicGroup_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristicgroup_instantiation(instance):
-    assert isinstance(instance, vcml::CharacteristicGroup)
-
-@given(instance=vcml::CharacteristicGroup_strategy)
-def test_vcml::characteristicgroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vcml_characteristicgroup_instantiation(instance):
+    assert isinstance(instance, vcml_CharacteristicGroup)
 
 
-@given(instance=vcml::CharacteristicGroup_strategy)
-def test_vcml::characteristicgroup_name_setter(instance):
+
+@given(instance=vcml_CharacteristicGroup_strategy)
+def test_vcml_characteristicgroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vcml::ConstraintSource_strategy)
+@given(instance=vcml_ConstraintSource_strategy)
 @settings(max_examples=50)
-def test_vcml::constraintsource_instantiation(instance):
-    assert isinstance(instance, vcml::ConstraintSource)
+def test_vcml_constraintsource_instantiation(instance):
+    assert isinstance(instance, vcml_ConstraintSource)
 
-@given(instance=vcml::Condition_strategy)
+@given(instance=vcml_Condition_strategy)
 @settings(max_examples=50)
-def test_vcml::condition_instantiation(instance):
-    assert isinstance(instance, vcml::Condition)
+def test_vcml_condition_instantiation(instance):
+    assert isinstance(instance, vcml_Condition)
 
-@given(instance=vcml::ConditionSource_strategy)
+@given(instance=vcml_ConditionSource_strategy)
 @settings(max_examples=50)
-def test_vcml::conditionsource_instantiation(instance):
-    assert isinstance(instance, vcml::ConditionSource)
+def test_vcml_conditionsource_instantiation(instance):
+    assert isinstance(instance, vcml_ConditionSource)
 
-@given(instance=vcml::ProcedureSource_strategy)
+@given(instance=vcml_ProcedureSource_strategy)
 @settings(max_examples=50)
-def test_vcml::proceduresource_instantiation(instance):
-    assert isinstance(instance, vcml::ProcedureSource)
+def test_vcml_proceduresource_instantiation(instance):
+    assert isinstance(instance, vcml_ProcedureSource)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=vcml::Dependency_strategy)
+@given(instance=vcml_Dependency_strategy)
 @settings(max_examples=50)
-def test_vcml::dependency_instantiation(instance):
-    assert isinstance(instance, vcml::Dependency)
+def test_vcml_dependency_instantiation(instance):
+    assert isinstance(instance, vcml_Dependency)
 
-@given(instance=vcml::NumberListEntry_strategy)
+@given(instance=vcml_NumberListEntry_strategy)
 @settings(max_examples=50)
-def test_vcml::numberlistentry_instantiation(instance):
-    assert isinstance(instance, vcml::NumberListEntry)
+def test_vcml_numberlistentry_instantiation(instance):
+    assert isinstance(instance, vcml_NumberListEntry)
 
-@given(instance=vcml::DateCharacteristicValue_strategy)
+@given(instance=vcml_DateCharacteristicValue_strategy)
 @settings(max_examples=50)
-def test_vcml::datecharacteristicvalue_instantiation(instance):
-    assert isinstance(instance, vcml::DateCharacteristicValue)
-
-@given(instance=vcml::DateCharacteristicValue_strategy)
-def test_vcml::datecharacteristicvalue_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_vcml_datecharacteristicvalue_instantiation(instance):
+    assert isinstance(instance, vcml_DateCharacteristicValue)
 
 
-@given(instance=vcml::DateCharacteristicValue_strategy)
-def test_vcml::datecharacteristicvalue_default_setter(instance):
+
+@given(instance=vcml_DateCharacteristicValue_strategy)
+def test_vcml_datecharacteristicvalue_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=vcml::DateCharacteristicValue_strategy)
-def test_vcml::datecharacteristicvalue_from__type(instance):
-    assert isinstance(instance.from_, str)
 
 
-@given(instance=vcml::DateCharacteristicValue_strategy)
-def test_vcml::datecharacteristicvalue_from__setter(instance):
-    original = instance.from_
-    instance.from_ = original
-    assert instance.from_ == original
-
-@given(instance=vcml::DateCharacteristicValue_strategy)
-def test_vcml::datecharacteristicvalue_to_type(instance):
-    assert isinstance(instance.to, str)
-
-
-@given(instance=vcml::DateCharacteristicValue_strategy)
-def test_vcml::datecharacteristicvalue_to_setter(instance):
+@given(instance=vcml_DateCharacteristicValue_strategy)
+def test_vcml_datecharacteristicvalue_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=vcml::CharacteristicValue_strategy)
+
+
+@given(instance=vcml_DateCharacteristicValue_strategy)
+def test_vcml_datecharacteristicvalue_from__setter(instance):
+    original = instance.from_
+    instance.from_ = original
+    assert instance.from_ == original
+
+@given(instance=vcml_CharacteristicValue_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristicvalue_instantiation(instance):
-    assert isinstance(instance, vcml::CharacteristicValue)
-
-@given(instance=vcml::CharacteristicValue_strategy)
-def test_vcml::characteristicvalue_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_vcml_characteristicvalue_instantiation(instance):
+    assert isinstance(instance, vcml_CharacteristicValue)
 
 
-@given(instance=vcml::CharacteristicValue_strategy)
-def test_vcml::characteristicvalue_default_setter(instance):
+
+@given(instance=vcml_CharacteristicValue_strategy)
+def test_vcml_characteristicvalue_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=vcml::CharacteristicValue_strategy)
-def test_vcml::characteristicvalue_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=vcml::CharacteristicValue_strategy)
-def test_vcml::characteristicvalue_name_setter(instance):
+@given(instance=vcml_CharacteristicValue_strategy)
+def test_vcml_characteristicvalue_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vcml::NumericCharacteristicValue_strategy)
+@given(instance=vcml_NumericCharacteristicValue_strategy)
 @settings(max_examples=50)
-def test_vcml::numericcharacteristicvalue_instantiation(instance):
-    assert isinstance(instance, vcml::NumericCharacteristicValue)
-
-@given(instance=vcml::NumericCharacteristicValue_strategy)
-def test_vcml::numericcharacteristicvalue_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_vcml_numericcharacteristicvalue_instantiation(instance):
+    assert isinstance(instance, vcml_NumericCharacteristicValue)
 
 
-@given(instance=vcml::NumericCharacteristicValue_strategy)
-def test_vcml::numericcharacteristicvalue_default_setter(instance):
+
+@given(instance=vcml_NumericCharacteristicValue_strategy)
+def test_vcml_numericcharacteristicvalue_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=vcml::CharacteristicOrValueDependencies_strategy)
+@given(instance=vcml_CharacteristicOrValueDependencies_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristicorvaluedependencies_instantiation(instance):
-    assert isinstance(instance, vcml::CharacteristicOrValueDependencies)
+def test_vcml_characteristicorvaluedependencies_instantiation(instance):
+    assert isinstance(instance, vcml_CharacteristicOrValueDependencies)
 
-@given(instance=vcml::CharacteristicType_strategy)
+@given(instance=vcml_CharacteristicType_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristictype_instantiation(instance):
-    assert isinstance(instance, vcml::CharacteristicType)
-
-@given(instance=vcml::CharacteristicType_strategy)
-def test_vcml::characteristictype_numberOfChars_type(instance):
-    assert isinstance(instance.numberOfChars, int)
+def test_vcml_characteristictype_instantiation(instance):
+    assert isinstance(instance, vcml_CharacteristicType)
 
 
-@given(instance=vcml::CharacteristicType_strategy)
-def test_vcml::characteristictype_numberOfChars_setter(instance):
+
+@given(instance=vcml_CharacteristicType_strategy)
+def test_vcml_characteristictype_numberOfChars_setter(instance):
     original = instance.numberOfChars
     instance.numberOfChars = original
     assert instance.numberOfChars == original
 
-@given(instance=vcml::Documentation_strategy)
+@given(instance=vcml_Documentation_strategy)
 @settings(max_examples=50)
-def test_vcml::documentation_instantiation(instance):
-    assert isinstance(instance, vcml::Documentation)
+def test_vcml_documentation_instantiation(instance):
+    assert isinstance(instance, vcml_Documentation)
 
 @given(instance=BOMItem_strategy)
 @settings(max_examples=50)
 def test_bomitem_instantiation(instance):
     assert isinstance(instance, BOMItem)
 
-@given(instance=vcml::BOMItem::Class_strategy)
+@given(instance=vcml_BOMItem_Class_strategy)
 @settings(max_examples=50)
-def test_vcml::bomitem::class_instantiation(instance):
-    assert isinstance(instance, vcml::BOMItem::Class)
+def test_vcml_bomitem_class_instantiation(instance):
+    assert isinstance(instance, vcml_BOMItem_Class)
 
-@given(instance=vcml::BOMItem::Material_strategy)
+@given(instance=vcml_BOMItem_Material_strategy)
 @settings(max_examples=50)
-def test_vcml::bomitem::material_instantiation(instance):
-    assert isinstance(instance, vcml::BOMItem::Material)
+def test_vcml_bomitem_material_instantiation(instance):
+    assert isinstance(instance, vcml_BOMItem_Material)
 
-@given(instance=vcml::ConfigurationProfileEntry_strategy)
+@given(instance=vcml_ConfigurationProfileEntry_strategy)
 @settings(max_examples=50)
-def test_vcml::configurationprofileentry_instantiation(instance):
-    assert isinstance(instance, vcml::ConfigurationProfileEntry)
-
-@given(instance=vcml::ConfigurationProfileEntry_strategy)
-def test_vcml::configurationprofileentry_sequence_type(instance):
-    assert isinstance(instance.sequence, int)
+def test_vcml_configurationprofileentry_instantiation(instance):
+    assert isinstance(instance, vcml_ConfigurationProfileEntry)
 
 
-@given(instance=vcml::ConfigurationProfileEntry_strategy)
-def test_vcml::configurationprofileentry_sequence_setter(instance):
+
+@given(instance=vcml_ConfigurationProfileEntry_strategy)
+def test_vcml_configurationprofileentry_sequence_setter(instance):
     original = instance.sequence
     instance.sequence = original
     assert instance.sequence == original
 
-@given(instance=vcml::BOMItem_strategy)
+@given(instance=vcml_BOMItem_strategy)
 @settings(max_examples=50)
-def test_vcml::bomitem_instantiation(instance):
-    assert isinstance(instance, vcml::BOMItem)
-
-@given(instance=vcml::BOMItem_strategy)
-def test_vcml::bomitem_itemnumber_type(instance):
-    assert isinstance(instance.itemnumber, int)
+def test_vcml_bomitem_instantiation(instance):
+    assert isinstance(instance, vcml_BOMItem)
 
 
-@given(instance=vcml::BOMItem_strategy)
-def test_vcml::bomitem_itemnumber_setter(instance):
+
+@given(instance=vcml_BOMItem_strategy)
+def test_vcml_bomitem_itemnumber_setter(instance):
     original = instance.itemnumber
     instance.itemnumber = original
     assert instance.itemnumber == original
@@ -3952,666 +3918,539 @@ def test_vcml::bomitem_itemnumber_setter(instance):
 def test_vcobject_instantiation(instance):
     assert isinstance(instance, VCObject)
 
-@given(instance=vcml::Precondition_strategy)
+@given(instance=vcml_VariantTable_strategy)
 @settings(max_examples=50)
-def test_vcml::precondition_instantiation(instance):
-    assert isinstance(instance, vcml::Precondition)
-
-@given(instance=vcml::Precondition_strategy)
-def test_vcml::precondition_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_vcml_varianttable_instantiation(instance):
+    assert isinstance(instance, vcml_VariantTable)
 
 
-@given(instance=vcml::Precondition_strategy)
-def test_vcml::precondition_group_setter(instance):
+
+@given(instance=vcml_VariantTable_strategy)
+def test_vcml_varianttable_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=vcml_VariantTable_strategy)
+def test_vcml_varianttable_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=vcml::Precondition_strategy)
-def test_vcml::precondition_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=vcml::Precondition_strategy)
-def test_vcml::precondition_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=vcml::Procedure_strategy)
+@given(instance=vcml_Constraint_strategy)
 @settings(max_examples=50)
-def test_vcml::procedure_instantiation(instance):
-    assert isinstance(instance, vcml::Procedure)
-
-@given(instance=vcml::Procedure_strategy)
-def test_vcml::procedure_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_vcml_constraint_instantiation(instance):
+    assert isinstance(instance, vcml_Constraint)
 
 
-@given(instance=vcml::Procedure_strategy)
-def test_vcml::procedure_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
 
-@given(instance=vcml::Procedure_strategy)
-def test_vcml::procedure_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=vcml::Procedure_strategy)
-def test_vcml::procedure_group_setter(instance):
+@given(instance=vcml_Constraint_strategy)
+def test_vcml_constraint_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=vcml::Constraint_strategy)
-@settings(max_examples=50)
-def test_vcml::constraint_instantiation(instance):
-    assert isinstance(instance, vcml::Constraint)
-
-@given(instance=vcml::Constraint_strategy)
-def test_vcml::constraint_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
-@given(instance=vcml::Constraint_strategy)
-def test_vcml::constraint_status_setter(instance):
+@given(instance=vcml_Constraint_strategy)
+def test_vcml_constraint_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=vcml::Constraint_strategy)
-def test_vcml::constraint_group_type(instance):
-    assert isinstance(instance.group, str)
+@given(instance=vcml_VariantTableContent_strategy)
+@settings(max_examples=50)
+def test_vcml_varianttablecontent_instantiation(instance):
+    assert isinstance(instance, vcml_VariantTableContent)
+
+@given(instance=vcml_Procedure_strategy)
+@settings(max_examples=50)
+def test_vcml_procedure_instantiation(instance):
+    assert isinstance(instance, vcml_Procedure)
 
 
-@given(instance=vcml::Constraint_strategy)
-def test_vcml::constraint_group_setter(instance):
+
+@given(instance=vcml_Procedure_strategy)
+def test_vcml_procedure_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=vcml_Procedure_strategy)
+def test_vcml_procedure_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=vcml::ConfigurationProfile_strategy)
+@given(instance=vcml_InterfaceDesign_strategy)
 @settings(max_examples=50)
-def test_vcml::configurationprofile_instantiation(instance):
-    assert isinstance(instance, vcml::ConfigurationProfile)
+def test_vcml_interfacedesign_instantiation(instance):
+    assert isinstance(instance, vcml_InterfaceDesign)
 
-@given(instance=vcml::ConfigurationProfile_strategy)
-def test_vcml::configurationprofile_fixing_type(instance):
-    assert isinstance(instance.fixing, str)
-
-
-@given(instance=vcml::ConfigurationProfile_strategy)
-def test_vcml::configurationprofile_fixing_setter(instance):
-    original = instance.fixing
-    instance.fixing = original
-    assert instance.fixing == original
-
-@given(instance=vcml::ConfigurationProfile_strategy)
-def test_vcml::configurationprofile_status_type(instance):
-    assert isinstance(instance.status, str)
+@given(instance=vcml_DependencyNet_strategy)
+@settings(max_examples=50)
+def test_vcml_dependencynet_instantiation(instance):
+    assert isinstance(instance, vcml_DependencyNet)
 
 
-@given(instance=vcml::ConfigurationProfile_strategy)
-def test_vcml::configurationprofile_status_setter(instance):
+
+@given(instance=vcml_DependencyNet_strategy)
+def test_vcml_dependencynet_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=vcml::ConfigurationProfile_strategy)
-def test_vcml::configurationprofile_bomapplication_type(instance):
-    assert isinstance(instance.bomapplication, str)
 
 
-@given(instance=vcml::ConfigurationProfile_strategy)
-def test_vcml::configurationprofile_bomapplication_setter(instance):
-    original = instance.bomapplication
-    instance.bomapplication = original
-    assert instance.bomapplication == original
-
-@given(instance=vcml::VariantTableContent_strategy)
-@settings(max_examples=50)
-def test_vcml::varianttablecontent_instantiation(instance):
-    assert isinstance(instance, vcml::VariantTableContent)
-
-@given(instance=vcml::Class_strategy)
-@settings(max_examples=50)
-def test_vcml::class_instantiation(instance):
-    assert isinstance(instance, vcml::Class)
-
-@given(instance=vcml::Class_strategy)
-def test_vcml::class_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=vcml::Class_strategy)
-def test_vcml::class_group_setter(instance):
+@given(instance=vcml_DependencyNet_strategy)
+def test_vcml_dependencynet_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=vcml::Class_strategy)
-def test_vcml::class_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=vcml::Class_strategy)
-def test_vcml::class_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=vcml::VariantTable_strategy)
+@given(instance=vcml_Material_strategy)
 @settings(max_examples=50)
-def test_vcml::varianttable_instantiation(instance):
-    assert isinstance(instance, vcml::VariantTable)
-
-@given(instance=vcml::VariantTable_strategy)
-def test_vcml::varianttable_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_vcml_material_instantiation(instance):
+    assert isinstance(instance, vcml_Material)
 
 
-@given(instance=vcml::VariantTable_strategy)
-def test_vcml::varianttable_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
 
-@given(instance=vcml::VariantTable_strategy)
-def test_vcml::varianttable_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=vcml::VariantTable_strategy)
-def test_vcml::varianttable_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=vcml::InterfaceDesign_strategy)
-@settings(max_examples=50)
-def test_vcml::interfacedesign_instantiation(instance):
-    assert isinstance(instance, vcml::InterfaceDesign)
-
-@given(instance=vcml::VariantFunction_strategy)
-@settings(max_examples=50)
-def test_vcml::variantfunction_instantiation(instance):
-    assert isinstance(instance, vcml::VariantFunction)
-
-@given(instance=vcml::VariantFunction_strategy)
-def test_vcml::variantfunction_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=vcml::VariantFunction_strategy)
-def test_vcml::variantfunction_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=vcml::VariantFunction_strategy)
-def test_vcml::variantfunction_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=vcml::VariantFunction_strategy)
-def test_vcml::variantfunction_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=vcml::Material_strategy)
-@settings(max_examples=50)
-def test_vcml::material_instantiation(instance):
-    assert isinstance(instance, vcml::Material)
-
-@given(instance=vcml::Material_strategy)
-def test_vcml::material_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=vcml::Material_strategy)
-def test_vcml::material_type_setter(instance):
+@given(instance=vcml_Material_strategy)
+def test_vcml_material_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=vcml::Characteristic_strategy)
+@given(instance=vcml_VariantFunction_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristic_instantiation(instance):
-    assert isinstance(instance, vcml::Characteristic)
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_displayAllowedValues_type(instance):
-    assert isinstance(instance.displayAllowedValues, bool)
+def test_vcml_variantfunction_instantiation(instance):
+    assert isinstance(instance, vcml_VariantFunction)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_displayAllowedValues_setter(instance):
-    original = instance.displayAllowedValues
-    instance.displayAllowedValues = original
-    assert instance.displayAllowedValues == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_field_type(instance):
-    assert isinstance(instance.field, str)
+@given(instance=vcml_VariantFunction_strategy)
+def test_vcml_variantfunction_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_field_setter(instance):
-    original = instance.field
-    instance.field = original
-    assert instance.field == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_table_type(instance):
-    assert isinstance(instance.table, str)
+@given(instance=vcml_VariantFunction_strategy)
+def test_vcml_variantfunction_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+@given(instance=vcml_SelectionCondition_strategy)
+@settings(max_examples=50)
+def test_vcml_selectioncondition_instantiation(instance):
+    assert isinstance(instance, vcml_SelectionCondition)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_table_setter(instance):
+
+@given(instance=vcml_SelectionCondition_strategy)
+def test_vcml_selectioncondition_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+
+
+@given(instance=vcml_SelectionCondition_strategy)
+def test_vcml_selectioncondition_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+@given(instance=vcml_Class_strategy)
+@settings(max_examples=50)
+def test_vcml_class_instantiation(instance):
+    assert isinstance(instance, vcml_Class)
+
+
+
+@given(instance=vcml_Class_strategy)
+def test_vcml_class_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=vcml_Class_strategy)
+def test_vcml_class_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=vcml_Precondition_strategy)
+@settings(max_examples=50)
+def test_vcml_precondition_instantiation(instance):
+    assert isinstance(instance, vcml_Precondition)
+
+
+
+@given(instance=vcml_Precondition_strategy)
+def test_vcml_precondition_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+
+
+@given(instance=vcml_Precondition_strategy)
+def test_vcml_precondition_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+@given(instance=vcml_Characteristic_strategy)
+@settings(max_examples=50)
+def test_vcml_characteristic_instantiation(instance):
+    assert isinstance(instance, vcml_Characteristic)
+
+
+
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_table_setter(instance):
     original = instance.table
     instance.table = original
     assert instance.table == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_additionalValues_type(instance):
-    assert isinstance(instance.additionalValues, bool)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_additionalValues_setter(instance):
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_additionalValues_setter(instance):
     original = instance.additionalValues
     instance.additionalValues = original
     assert instance.additionalValues == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_noDisplay_type(instance):
-    assert isinstance(instance.noDisplay, bool)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_noDisplay_setter(instance):
-    original = instance.noDisplay
-    instance.noDisplay = original
-    assert instance.noDisplay == original
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_multiValue_type(instance):
-    assert isinstance(instance.multiValue, bool)
-
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_multiValue_setter(instance):
-    original = instance.multiValue
-    instance.multiValue = original
-    assert instance.multiValue == original
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_status_setter(instance):
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_required_type(instance):
-    assert isinstance(instance.required, bool)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_required_setter(instance):
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_notReadyForInput_type(instance):
-    assert isinstance(instance.notReadyForInput, bool)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_notReadyForInput_setter(instance):
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_displayAllowedValues_setter(instance):
+    original = instance.displayAllowedValues
+    instance.displayAllowedValues = original
+    assert instance.displayAllowedValues == original
+
+
+
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_multiValue_setter(instance):
+    original = instance.multiValue
+    instance.multiValue = original
+    assert instance.multiValue == original
+
+
+
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_noDisplay_setter(instance):
+    original = instance.noDisplay
+    instance.noDisplay = original
+    assert instance.noDisplay == original
+
+
+
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_notReadyForInput_setter(instance):
     original = instance.notReadyForInput
     instance.notReadyForInput = original
     assert instance.notReadyForInput == original
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_restrictable_type(instance):
-    assert isinstance(instance.restrictable, bool)
 
 
-@given(instance=vcml::Characteristic_strategy)
-def test_vcml::characteristic_restrictable_setter(instance):
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_field_setter(instance):
+    original = instance.field
+    instance.field = original
+    assert instance.field == original
+
+
+
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_restrictable_setter(instance):
     original = instance.restrictable
     instance.restrictable = original
     assert instance.restrictable == original
 
-@given(instance=vcml::DependencyNet_strategy)
-@settings(max_examples=50)
-def test_vcml::dependencynet_instantiation(instance):
-    assert isinstance(instance, vcml::DependencyNet)
-
-@given(instance=vcml::DependencyNet_strategy)
-def test_vcml::dependencynet_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=vcml::DependencyNet_strategy)
-def test_vcml::dependencynet_group_setter(instance):
+@given(instance=vcml_Characteristic_strategy)
+def test_vcml_characteristic_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=vcml::DependencyNet_strategy)
-def test_vcml::dependencynet_status_type(instance):
-    assert isinstance(instance.status, str)
+@given(instance=vcml_ConfigurationProfile_strategy)
+@settings(max_examples=50)
+def test_vcml_configurationprofile_instantiation(instance):
+    assert isinstance(instance, vcml_ConfigurationProfile)
 
 
-@given(instance=vcml::DependencyNet_strategy)
-def test_vcml::dependencynet_status_setter(instance):
+
+@given(instance=vcml_ConfigurationProfile_strategy)
+def test_vcml_configurationprofile_bomapplication_setter(instance):
+    original = instance.bomapplication
+    instance.bomapplication = original
+    assert instance.bomapplication == original
+
+
+
+@given(instance=vcml_ConfigurationProfile_strategy)
+def test_vcml_configurationprofile_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=vcml::SelectionCondition_strategy)
+
+
+@given(instance=vcml_ConfigurationProfile_strategy)
+def test_vcml_configurationprofile_fixing_setter(instance):
+    original = instance.fixing
+    instance.fixing = original
+    assert instance.fixing == original
+
+@given(instance=vcml_BillOfMaterial_strategy)
 @settings(max_examples=50)
-def test_vcml::selectioncondition_instantiation(instance):
-    assert isinstance(instance, vcml::SelectionCondition)
+def test_vcml_billofmaterial_instantiation(instance):
+    assert isinstance(instance, vcml_BillOfMaterial)
 
-@given(instance=vcml::SelectionCondition_strategy)
-def test_vcml::selectioncondition_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=vcml::SelectionCondition_strategy)
-def test_vcml::selectioncondition_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=vcml::SelectionCondition_strategy)
-def test_vcml::selectioncondition_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=vcml::SelectionCondition_strategy)
-def test_vcml::selectioncondition_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=vcml::BillOfMaterial_strategy)
+@given(instance=vcml_Description_strategy)
 @settings(max_examples=50)
-def test_vcml::billofmaterial_instantiation(instance):
-    assert isinstance(instance, vcml::BillOfMaterial)
-
-@given(instance=vcml::Description_strategy)
-@settings(max_examples=50)
-def test_vcml::description_instantiation(instance):
-    assert isinstance(instance, vcml::Description)
+def test_vcml_description_instantiation(instance):
+    assert isinstance(instance, vcml_Description)
 
 @given(instance=CharacteristicType_strategy)
 @settings(max_examples=50)
 def test_characteristictype_instantiation(instance):
     assert isinstance(instance, CharacteristicType)
 
-@given(instance=vcml::SymbolicType_strategy)
+@given(instance=vcml_SymbolicType_strategy)
 @settings(max_examples=50)
-def test_vcml::symbolictype_instantiation(instance):
-    assert isinstance(instance, vcml::SymbolicType)
-
-@given(instance=vcml::SymbolicType_strategy)
-def test_vcml::symbolictype_caseSensitive_type(instance):
-    assert isinstance(instance.caseSensitive, bool)
+def test_vcml_symbolictype_instantiation(instance):
+    assert isinstance(instance, vcml_SymbolicType)
 
 
-@given(instance=vcml::SymbolicType_strategy)
-def test_vcml::symbolictype_caseSensitive_setter(instance):
+
+@given(instance=vcml_SymbolicType_strategy)
+def test_vcml_symbolictype_caseSensitive_setter(instance):
     original = instance.caseSensitive
     instance.caseSensitive = original
     assert instance.caseSensitive == original
 
-@given(instance=vcml::DateType_strategy)
+@given(instance=vcml_DateType_strategy)
 @settings(max_examples=50)
-def test_vcml::datetype_instantiation(instance):
-    assert isinstance(instance, vcml::DateType)
-
-@given(instance=vcml::DateType_strategy)
-def test_vcml::datetype_intervalValuesAllowed_type(instance):
-    assert isinstance(instance.intervalValuesAllowed, bool)
+def test_vcml_datetype_instantiation(instance):
+    assert isinstance(instance, vcml_DateType)
 
 
-@given(instance=vcml::DateType_strategy)
-def test_vcml::datetype_intervalValuesAllowed_setter(instance):
+
+@given(instance=vcml_DateType_strategy)
+def test_vcml_datetype_intervalValuesAllowed_setter(instance):
     original = instance.intervalValuesAllowed
     instance.intervalValuesAllowed = original
     assert instance.intervalValuesAllowed == original
 
-@given(instance=vcml::NumericType_strategy)
+@given(instance=vcml_NumericType_strategy)
 @settings(max_examples=50)
-def test_vcml::numerictype_instantiation(instance):
-    assert isinstance(instance, vcml::NumericType)
-
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_decimalPlaces_type(instance):
-    assert isinstance(instance.decimalPlaces, int)
+def test_vcml_numerictype_instantiation(instance):
+    assert isinstance(instance, vcml_NumericType)
 
 
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_decimalPlaces_setter(instance):
-    original = instance.decimalPlaces
-    instance.decimalPlaces = original
-    assert instance.decimalPlaces == original
 
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_intervalValuesAllowed_type(instance):
-    assert isinstance(instance.intervalValuesAllowed, bool)
-
-
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_intervalValuesAllowed_setter(instance):
-    original = instance.intervalValuesAllowed
-    instance.intervalValuesAllowed = original
-    assert instance.intervalValuesAllowed == original
-
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_unit_setter(instance):
-    original = instance.unit
-    instance.unit = original
-    assert instance.unit == original
-
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_negativeValuesAllowed_type(instance):
-    assert isinstance(instance.negativeValuesAllowed, bool)
-
-
-@given(instance=vcml::NumericType_strategy)
-def test_vcml::numerictype_negativeValuesAllowed_setter(instance):
+@given(instance=vcml_NumericType_strategy)
+def test_vcml_numerictype_negativeValuesAllowed_setter(instance):
     original = instance.negativeValuesAllowed
     instance.negativeValuesAllowed = original
     assert instance.negativeValuesAllowed == original
 
-@given(instance=vcml::VCObject_strategy)
+
+
+@given(instance=vcml_NumericType_strategy)
+def test_vcml_numerictype_intervalValuesAllowed_setter(instance):
+    original = instance.intervalValuesAllowed
+    instance.intervalValuesAllowed = original
+    assert instance.intervalValuesAllowed == original
+
+
+
+@given(instance=vcml_NumericType_strategy)
+def test_vcml_numerictype_decimalPlaces_setter(instance):
+    original = instance.decimalPlaces
+    instance.decimalPlaces = original
+    assert instance.decimalPlaces == original
+
+
+
+@given(instance=vcml_NumericType_strategy)
+def test_vcml_numerictype_unit_setter(instance):
+    original = instance.unit
+    instance.unit = original
+    assert instance.unit == original
+
+@given(instance=vcml_VCObject_strategy)
 @settings(max_examples=50)
-def test_vcml::vcobject_instantiation(instance):
-    assert isinstance(instance, vcml::VCObject)
-
-@given(instance=vcml::VCObject_strategy)
-def test_vcml::vcobject_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vcml_vcobject_instantiation(instance):
+    assert isinstance(instance, vcml_VCObject)
 
 
-@given(instance=vcml::VCObject_strategy)
-def test_vcml::vcobject_name_setter(instance):
+
+@given(instance=vcml_VCObject_strategy)
+def test_vcml_vcobject_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vcml::Option_strategy)
+@given(instance=vcml_Option_strategy)
 @settings(max_examples=50)
-def test_vcml::option_instantiation(instance):
-    assert isinstance(instance, vcml::Option)
-
-@given(instance=vcml::Option_strategy)
-def test_vcml::option_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_option_instantiation(instance):
+    assert isinstance(instance, vcml_Option)
 
 
-@given(instance=vcml::Option_strategy)
-def test_vcml::option_value_setter(instance):
+
+@given(instance=vcml_Option_strategy)
+def test_vcml_option_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vcml::Option_strategy)
-def test_vcml::option_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=vcml::Option_strategy)
-def test_vcml::option_name_setter(instance):
+@given(instance=vcml_Option_strategy)
+def test_vcml_option_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vcml::Import_strategy)
+@given(instance=vcml_Import_strategy)
 @settings(max_examples=50)
-def test_vcml::import_instantiation(instance):
-    assert isinstance(instance, vcml::Import)
-
-@given(instance=vcml::Import_strategy)
-def test_vcml::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_vcml_import_instantiation(instance):
+    assert isinstance(instance, vcml_Import)
 
 
-@given(instance=vcml::Import_strategy)
-def test_vcml::import_importURI_setter(instance):
+
+@given(instance=vcml_Import_strategy)
+def test_vcml_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=vcml::VcmlModel_strategy)
+@given(instance=vcml_VcmlModel_strategy)
 @settings(max_examples=50)
-def test_vcml::vcmlmodel_instantiation(instance):
-    assert isinstance(instance, vcml::VcmlModel)
+def test_vcml_vcmlmodel_instantiation(instance):
+    assert isinstance(instance, vcml_VcmlModel)
 
-@given(instance=vcml::BinaryCondition_strategy)
+@given(instance=vcml_BinaryCondition_strategy)
 @settings(max_examples=50)
-def test_vcml::binarycondition_instantiation(instance):
-    assert isinstance(instance, vcml::BinaryCondition)
-
-@given(instance=vcml::BinaryCondition_strategy)
-def test_vcml::binarycondition_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_vcml_binarycondition_instantiation(instance):
+    assert isinstance(instance, vcml_BinaryCondition)
 
 
-@given(instance=vcml::BinaryCondition_strategy)
-def test_vcml::binarycondition_operator_setter(instance):
+
+@given(instance=vcml_BinaryCondition_strategy)
+def test_vcml_binarycondition_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=vcml::ConditionalConstraintRestriction_strategy)
+@given(instance=vcml_ConditionalStatement_strategy)
 @settings(max_examples=50)
-def test_vcml::conditionalconstraintrestriction_instantiation(instance):
-    assert isinstance(instance, vcml::ConditionalConstraintRestriction)
+def test_vcml_conditionalstatement_instantiation(instance):
+    assert isinstance(instance, vcml_ConditionalStatement)
+
+@given(instance=vcml_ConditionalConstraintRestriction_strategy)
+@settings(max_examples=50)
+def test_vcml_conditionalconstraintrestriction_instantiation(instance):
+    assert isinstance(instance, vcml_ConditionalConstraintRestriction)
 
 @given(instance=List_strategy)
 @settings(max_examples=50)
 def test_list_instantiation(instance):
     assert isinstance(instance, List)
 
-@given(instance=vcml::SymbolList_strategy)
+@given(instance=vcml_SymbolList_strategy)
 @settings(max_examples=50)
-def test_vcml::symbollist_instantiation(instance):
-    assert isinstance(instance, vcml::SymbolList)
+def test_vcml_symbollist_instantiation(instance):
+    assert isinstance(instance, vcml_SymbolList)
 
-@given(instance=vcml::NumberList_strategy)
+@given(instance=vcml_NumberList_strategy)
 @settings(max_examples=50)
-def test_vcml::numberlist_instantiation(instance):
-    assert isinstance(instance, vcml::NumberList)
+def test_vcml_numberlist_instantiation(instance):
+    assert isinstance(instance, vcml_NumberList)
 
-@given(instance=vcml::InCondition::P_strategy)
+@given(instance=vcml_InCondition_P_strategy)
 @settings(max_examples=50)
-def test_vcml::incondition::p_instantiation(instance):
-    assert isinstance(instance, vcml::InCondition::P)
+def test_vcml_incondition_p_instantiation(instance):
+    assert isinstance(instance, vcml_InCondition_P)
 
-@given(instance=vcml::List_strategy)
+@given(instance=vcml_List_strategy)
 @settings(max_examples=50)
-def test_vcml::list_instantiation(instance):
-    assert isinstance(instance, vcml::List)
+def test_vcml_list_instantiation(instance):
+    assert isinstance(instance, vcml_List)
 
-@given(instance=vcml::InCondition::C_strategy)
+@given(instance=vcml_InCondition_C_strategy)
 @settings(max_examples=50)
-def test_vcml::incondition::c_instantiation(instance):
-    assert isinstance(instance, vcml::InCondition::C)
+def test_vcml_incondition_c_instantiation(instance):
+    assert isinstance(instance, vcml_InCondition_C)
 
-@given(instance=vcml::IsSpecified::P_strategy)
+@given(instance=vcml_IsSpecified_P_strategy)
 @settings(max_examples=50)
-def test_vcml::isspecified::p_instantiation(instance):
-    assert isinstance(instance, vcml::IsSpecified::P)
+def test_vcml_isspecified_p_instantiation(instance):
+    assert isinstance(instance, vcml_IsSpecified_P)
 
-@given(instance=vcml::IsSpecified::C_strategy)
+@given(instance=vcml_IsSpecified_C_strategy)
 @settings(max_examples=50)
-def test_vcml::isspecified::c_instantiation(instance):
-    assert isinstance(instance, vcml::IsSpecified::C)
+def test_vcml_isspecified_c_instantiation(instance):
+    assert isinstance(instance, vcml_IsSpecified_C)
 
-@given(instance=vcml::Comparison_strategy)
+@given(instance=vcml_Comparison_strategy)
 @settings(max_examples=50)
-def test_vcml::comparison_instantiation(instance):
-    assert isinstance(instance, vcml::Comparison)
-
-@given(instance=vcml::Comparison_strategy)
-def test_vcml::comparison_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_vcml_comparison_instantiation(instance):
+    assert isinstance(instance, vcml_Comparison)
 
 
-@given(instance=vcml::Comparison_strategy)
-def test_vcml::comparison_operator_setter(instance):
+
+@given(instance=vcml_Comparison_strategy)
+def test_vcml_comparison_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=vcml::UnaryCondition_strategy)
+@given(instance=vcml_UnaryCondition_strategy)
 @settings(max_examples=50)
-def test_vcml::unarycondition_instantiation(instance):
-    assert isinstance(instance, vcml::UnaryCondition)
+def test_vcml_unarycondition_instantiation(instance):
+    assert isinstance(instance, vcml_UnaryCondition)
 
-@given(instance=vcml::SymbolicLiteral_strategy)
+@given(instance=vcml_SymbolicLiteral_strategy)
 @settings(max_examples=50)
-def test_vcml::symbolicliteral_instantiation(instance):
-    assert isinstance(instance, vcml::SymbolicLiteral)
-
-@given(instance=vcml::SymbolicLiteral_strategy)
-def test_vcml::symbolicliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_symbolicliteral_instantiation(instance):
+    assert isinstance(instance, vcml_SymbolicLiteral)
 
 
-@given(instance=vcml::SymbolicLiteral_strategy)
-def test_vcml::symbolicliteral_value_setter(instance):
+
+@given(instance=vcml_SymbolicLiteral_strategy)
+def test_vcml_symbolicliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -4621,290 +4460,208 @@ def test_vcml::symbolicliteral_value_setter(instance):
 def test_numberlistentry_instantiation(instance):
     assert isinstance(instance, NumberListEntry)
 
-@given(instance=vcml::NumericInterval_strategy)
+@given(instance=vcml_NumericInterval_strategy)
 @settings(max_examples=50)
-def test_vcml::numericinterval_instantiation(instance):
-    assert isinstance(instance, vcml::NumericInterval)
-
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_lowerBoundOp_type(instance):
-    assert isinstance(instance.lowerBoundOp, str)
+def test_vcml_numericinterval_instantiation(instance):
+    assert isinstance(instance, vcml_NumericInterval)
 
 
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_lowerBoundOp_setter(instance):
-    original = instance.lowerBoundOp
-    instance.lowerBoundOp = original
-    assert instance.lowerBoundOp == original
 
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, str)
-
-
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_upperBoundOp_type(instance):
-    assert isinstance(instance.upperBoundOp, str)
-
-
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_upperBoundOp_setter(instance):
-    original = instance.upperBoundOp
-    instance.upperBoundOp = original
-    assert instance.upperBoundOp == original
-
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_upperBound_type(instance):
-    assert isinstance(instance.upperBound, str)
-
-
-@given(instance=vcml::NumericInterval_strategy)
-def test_vcml::numericinterval_upperBound_setter(instance):
+@given(instance=vcml_NumericInterval_strategy)
+def test_vcml_numericinterval_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=vcml::NumericLiteral_strategy)
+
+
+@given(instance=vcml_NumericInterval_strategy)
+def test_vcml_numericinterval_lowerBoundOp_setter(instance):
+    original = instance.lowerBoundOp
+    instance.lowerBoundOp = original
+    assert instance.lowerBoundOp == original
+
+
+
+@given(instance=vcml_NumericInterval_strategy)
+def test_vcml_numericinterval_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+
+
+@given(instance=vcml_NumericInterval_strategy)
+def test_vcml_numericinterval_upperBoundOp_setter(instance):
+    original = instance.upperBoundOp
+    instance.upperBoundOp = original
+    assert instance.upperBoundOp == original
+
+@given(instance=vcml_NumericLiteral_strategy)
 @settings(max_examples=50)
-def test_vcml::numericliteral_instantiation(instance):
-    assert isinstance(instance, vcml::NumericLiteral)
-
-@given(instance=vcml::NumericLiteral_strategy)
-def test_vcml::numericliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vcml_numericliteral_instantiation(instance):
+    assert isinstance(instance, vcml_NumericLiteral)
 
 
-@given(instance=vcml::NumericLiteral_strategy)
-def test_vcml::numericliteral_value_setter(instance):
+
+@given(instance=vcml_NumericLiteral_strategy)
+def test_vcml_numericliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vcml::MDataCharacteristic::P_strategy)
+@given(instance=vcml_MDataCharacteristic_P_strategy)
 @settings(max_examples=50)
-def test_vcml::mdatacharacteristic::p_instantiation(instance):
-    assert isinstance(instance, vcml::MDataCharacteristic::P)
+def test_vcml_mdatacharacteristic_p_instantiation(instance):
+    assert isinstance(instance, vcml_MDataCharacteristic_P)
 
-@given(instance=vcml::MDataCharacteristic::C_strategy)
+@given(instance=vcml_MDataCharacteristic_C_strategy)
 @settings(max_examples=50)
-def test_vcml::mdatacharacteristic::c_instantiation(instance):
-    assert isinstance(instance, vcml::MDataCharacteristic::C)
+def test_vcml_mdatacharacteristic_c_instantiation(instance):
+    assert isinstance(instance, vcml_MDataCharacteristic_C)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=vcml::CountParts_strategy)
+@given(instance=vcml_Literal_strategy)
 @settings(max_examples=50)
-def test_vcml::countparts_instantiation(instance):
-    assert isinstance(instance, vcml::CountParts)
+def test_vcml_literal_instantiation(instance):
+    assert isinstance(instance, vcml_Literal)
 
-@given(instance=vcml::CountParts_strategy)
-def test_vcml::countparts_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=vcml::CountParts_strategy)
-def test_vcml::countparts_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=vcml::SumParts_strategy)
+@given(instance=vcml_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_vcml::sumparts_instantiation(instance):
-    assert isinstance(instance, vcml::SumParts)
-
-@given(instance=vcml::SumParts_strategy)
-def test_vcml::sumparts_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_vcml_functioncall_instantiation(instance):
+    assert isinstance(instance, vcml_FunctionCall)
 
 
-@given(instance=vcml::SumParts_strategy)
-def test_vcml::sumparts_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
 
-@given(instance=vcml::FunctionCall_strategy)
-@settings(max_examples=50)
-def test_vcml::functioncall_instantiation(instance):
-    assert isinstance(instance, vcml::FunctionCall)
-
-@given(instance=vcml::FunctionCall_strategy)
-def test_vcml::functioncall_function_type(instance):
-    assert isinstance(instance.function, str)
-
-
-@given(instance=vcml::FunctionCall_strategy)
-def test_vcml::functioncall_function_setter(instance):
+@given(instance=vcml_FunctionCall_strategy)
+def test_vcml_functioncall_function_setter(instance):
     original = instance.function
     instance.function = original
     assert instance.function == original
 
-@given(instance=vcml::Literal_strategy)
+@given(instance=vcml_SumParts_strategy)
 @settings(max_examples=50)
-def test_vcml::literal_instantiation(instance):
-    assert isinstance(instance, vcml::Literal)
-
-@given(instance=vcml::BinaryExpression_strategy)
-@settings(max_examples=50)
-def test_vcml::binaryexpression_instantiation(instance):
-    assert isinstance(instance, vcml::BinaryExpression)
-
-@given(instance=vcml::BinaryExpression_strategy)
-def test_vcml::binaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_vcml_sumparts_instantiation(instance):
+    assert isinstance(instance, vcml_SumParts)
 
 
-@given(instance=vcml::BinaryExpression_strategy)
-def test_vcml::binaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=vcml::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_vcml::unaryexpression_instantiation(instance):
-    assert isinstance(instance, vcml::UnaryExpression)
-
-@given(instance=vcml::UnaryExpression_strategy)
-def test_vcml::unaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=vcml::UnaryExpression_strategy)
-def test_vcml::unaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=vcml::TypeOf_strategy)
-@settings(max_examples=50)
-def test_vcml::typeof_instantiation(instance):
-    assert isinstance(instance, vcml::TypeOf)
-
-@given(instance=vcml::TypeOf_strategy)
-def test_vcml::typeof_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=vcml::TypeOf_strategy)
-def test_vcml::typeof_location_setter(instance):
+@given(instance=vcml_SumParts_strategy)
+def test_vcml_sumparts_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
+
+@given(instance=vcml_BinaryExpression_strategy)
+@settings(max_examples=50)
+def test_vcml_binaryexpression_instantiation(instance):
+    assert isinstance(instance, vcml_BinaryExpression)
+
+
+
+@given(instance=vcml_BinaryExpression_strategy)
+def test_vcml_binaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=vcml_CountParts_strategy)
+@settings(max_examples=50)
+def test_vcml_countparts_instantiation(instance):
+    assert isinstance(instance, vcml_CountParts)
+
+
+
+@given(instance=vcml_CountParts_strategy)
+def test_vcml_countparts_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+@given(instance=vcml_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_vcml_unaryexpression_instantiation(instance):
+    assert isinstance(instance, vcml_UnaryExpression)
+
+
+
+@given(instance=vcml_UnaryExpression_strategy)
+def test_vcml_unaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=vcml_TypeOf_strategy)
+@settings(max_examples=50)
+def test_vcml_typeof_instantiation(instance):
+    assert isinstance(instance, vcml_TypeOf)
+
+
+
+@given(instance=vcml_TypeOf_strategy)
+def test_vcml_typeof_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+@given(instance=vcml_SetPricingFactor_strategy)
+@settings(max_examples=50)
+def test_vcml_setpricingfactor_instantiation(instance):
+    assert isinstance(instance, vcml_SetPricingFactor)
+
+
+
+@given(instance=vcml_SetPricingFactor_strategy)
+def test_vcml_setpricingfactor_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+@given(instance=vcml_IsInvisible_strategy)
+@settings(max_examples=50)
+def test_vcml_isinvisible_instantiation(instance):
+    assert isinstance(instance, vcml_IsInvisible)
 
 @given(instance=SetOrDelDefault_strategy)
 @settings(max_examples=50)
 def test_setordeldefault_instantiation(instance):
     assert isinstance(instance, SetOrDelDefault)
 
-@given(instance=vcml::DelDefault_strategy)
+@given(instance=vcml_DelDefault_strategy)
 @settings(max_examples=50)
-def test_vcml::deldefault_instantiation(instance):
-    assert isinstance(instance, vcml::DelDefault)
+def test_vcml_deldefault_instantiation(instance):
+    assert isinstance(instance, vcml_DelDefault)
 
-@given(instance=vcml::SetDefault_strategy)
+@given(instance=vcml_SetDefault_strategy)
 @settings(max_examples=50)
-def test_vcml::setdefault_instantiation(instance):
-    assert isinstance(instance, vcml::SetDefault)
+def test_vcml_setdefault_instantiation(instance):
+    assert isinstance(instance, vcml_SetDefault)
+
+@given(instance=vcml_SetOrDelDefault_strategy)
+@settings(max_examples=50)
+def test_vcml_setordeldefault_instantiation(instance):
+    assert isinstance(instance, vcml_SetOrDelDefault)
 
 @given(instance=FunctionOrTable_strategy)
 @settings(max_examples=50)
 def test_functionortable_instantiation(instance):
     assert isinstance(instance, FunctionOrTable)
 
-@given(instance=vcml::CharacteristicReference::P_strategy)
+@given(instance=vcml_PFunction_strategy)
 @settings(max_examples=50)
-def test_vcml::characteristicreference::p_instantiation(instance):
-    assert isinstance(instance, vcml::CharacteristicReference::P)
+def test_vcml_pfunction_instantiation(instance):
+    assert isinstance(instance, vcml_PFunction)
 
-@given(instance=vcml::CharacteristicReference::P_strategy)
-def test_vcml::characteristicreference::p_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=vcml::CharacteristicReference::P_strategy)
-def test_vcml::characteristicreference::p_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=SimpleStatement_strategy)
+@given(instance=vcml_Table_strategy)
 @settings(max_examples=50)
-def test_simplestatement_instantiation(instance):
-    assert isinstance(instance, SimpleStatement)
+def test_vcml_table_instantiation(instance):
+    assert isinstance(instance, vcml_Table)
 
-@given(instance=vcml::IsInvisible_strategy)
+@given(instance=vcml_Function_strategy)
 @settings(max_examples=50)
-def test_vcml::isinvisible_instantiation(instance):
-    assert isinstance(instance, vcml::IsInvisible)
-
-@given(instance=vcml::Table_strategy)
-@settings(max_examples=50)
-def test_vcml::table_instantiation(instance):
-    assert isinstance(instance, vcml::Table)
-
-@given(instance=vcml::Function_strategy)
-@settings(max_examples=50)
-def test_vcml::function_instantiation(instance):
-    assert isinstance(instance, vcml::Function)
-
-@given(instance=vcml::SetPricingFactor_strategy)
-@settings(max_examples=50)
-def test_vcml::setpricingfactor_instantiation(instance):
-    assert isinstance(instance, vcml::SetPricingFactor)
-
-@given(instance=vcml::SetPricingFactor_strategy)
-def test_vcml::setpricingfactor_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=vcml::SetPricingFactor_strategy)
-def test_vcml::setpricingfactor_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=vcml::SetOrDelDefault_strategy)
-@settings(max_examples=50)
-def test_vcml::setordeldefault_instantiation(instance):
-    assert isinstance(instance, vcml::SetOrDelDefault)
-
-@given(instance=vcml::PFunction_strategy)
-@settings(max_examples=50)
-def test_vcml::pfunction_instantiation(instance):
-    assert isinstance(instance, vcml::PFunction)
-
-@given(instance=vcml::Assignment_strategy)
-@settings(max_examples=50)
-def test_vcml::assignment_instantiation(instance):
-    assert isinstance(instance, vcml::Assignment)
-
-@given(instance=Statement_strategy)
-@settings(max_examples=50)
-def test_statement_instantiation(instance):
-    assert isinstance(instance, Statement)
-
-@given(instance=vcml::SimpleStatement_strategy)
-@settings(max_examples=50)
-def test_vcml::simplestatement_instantiation(instance):
-    assert isinstance(instance, vcml::SimpleStatement)
-
-@given(instance=vcml::ConditionalStatement_strategy)
-@settings(max_examples=50)
-def test_vcml::conditionalstatement_instantiation(instance):
-    assert isinstance(instance, vcml::ConditionalStatement)
-
-@given(instance=vcml::CompoundStatement_strategy)
-@settings(max_examples=50)
-def test_vcml::compoundstatement_instantiation(instance):
-    assert isinstance(instance, vcml::CompoundStatement)
+def test_vcml_function_instantiation(instance):
+    assert isinstance(instance, vcml_Function)

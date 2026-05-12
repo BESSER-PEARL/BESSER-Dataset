@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mDSL::Greeting,
-    mDSL::Model,
+from python_code import (
+    mDSL_Greeting,
+    mDSL_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_mdsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(mDSL::Greeting)
+def test_mdsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(mDSL_Greeting)
 
 
-def test_mdsl::greeting_constructor_exists():
-    assert callable(mDSL::Greeting.__init__)
+def test_mdsl_greeting_constructor_exists():
+    assert callable(mDSL_Greeting.__init__)
 
 
-def test_mdsl::greeting_constructor_args():
-    sig = inspect.signature(mDSL::Greeting.__init__)
+def test_mdsl_greeting_constructor_args():
+    sig = inspect.signature(mDSL_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mdsl::greeting_has_name():
-    assert hasattr(mDSL::Greeting, "name")
+def test_mdsl_greeting_has_name():
+    assert hasattr(mDSL_Greeting, "name")
     descriptor = None
-    for klass in mDSL::Greeting.__mro__:
+    for klass in mDSL_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_mdsl::greeting_has_name():
 
 
 
-def test_mdsl::model_is_not_abstract():
-    assert not inspect.isabstract(mDSL::Model)
+def test_mdsl_model_is_not_abstract():
+    assert not inspect.isabstract(mDSL_Model)
 
 
-def test_mdsl::model_constructor_exists():
-    assert callable(mDSL::Model.__init__)
+def test_mdsl_model_constructor_exists():
+    assert callable(mDSL_Model.__init__)
 
 
-def test_mdsl::model_constructor_args():
-    sig = inspect.signature(mDSL::Model.__init__)
+def test_mdsl_model_constructor_args():
+    sig = inspect.signature(mDSL_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mDSL::Greeting_strategy = st.builds(
-    mDSL::Greeting,
+mDSL_Greeting_strategy = st.builds(
+    mDSL_Greeting,
     name=
         safe_text
 )
-mDSL::Model_strategy = st.builds(
-    mDSL::Model,
+mDSL_Model_strategy = st.builds(
+    mDSL_Model,
 )
 
-@given(instance=mDSL::Greeting_strategy)
+@given(instance=mDSL_Greeting_strategy)
 @settings(max_examples=50)
-def test_mdsl::greeting_instantiation(instance):
-    assert isinstance(instance, mDSL::Greeting)
-
-@given(instance=mDSL::Greeting_strategy)
-def test_mdsl::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mdsl_greeting_instantiation(instance):
+    assert isinstance(instance, mDSL_Greeting)
 
 
-@given(instance=mDSL::Greeting_strategy)
-def test_mdsl::greeting_name_setter(instance):
+
+@given(instance=mDSL_Greeting_strategy)
+def test_mdsl_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mDSL::Model_strategy)
+@given(instance=mDSL_Model_strategy)
 @settings(max_examples=50)
-def test_mdsl::model_instantiation(instance):
-    assert isinstance(instance, mDSL::Model)
+def test_mdsl_model_instantiation(instance):
+    assert isinstance(instance, mDSL_Model)

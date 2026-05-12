@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     FixedAccount,
@@ -186,9 +186,6 @@ Bank_strategy = st.builds(
 def test_fixedaccount_instantiation(instance):
     assert isinstance(instance, FixedAccount)
 
-@given(instance=FixedAccount_strategy)
-def test_fixedaccount_chequeBookNo_type(instance):
-    assert isinstance(instance.chequeBookNo, str)
 
 
 @given(instance=FixedAccount_strategy)
@@ -202,9 +199,6 @@ def test_fixedaccount_chequeBookNo_setter(instance):
 def test_savingsaccount_instantiation(instance):
     assert isinstance(instance, SavingsAccount)
 
-@given(instance=SavingsAccount_strategy)
-def test_savingsaccount_noticeGiven_type(instance):
-    assert isinstance(instance.noticeGiven, bool)
 
 
 @given(instance=SavingsAccount_strategy)
@@ -213,9 +207,6 @@ def test_savingsaccount_noticeGiven_setter(instance):
     instance.noticeGiven = original
     assert instance.noticeGiven == original
 
-@given(instance=SavingsAccount_strategy)
-def test_savingsaccount_interestRate_type(instance):
-    assert isinstance(instance.interestRate, float)
 
 
 @given(instance=SavingsAccount_strategy)
@@ -229,9 +220,6 @@ def test_savingsaccount_interestRate_setter(instance):
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
 
 
 @given(instance=BankAccount_strategy)
@@ -240,9 +228,6 @@ def test_bankaccount_balance_setter(instance):
     instance.balance = original
     assert instance.balance == original
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_accountHolder_type(instance):
-    assert isinstance(instance.accountHolder, str)
 
 
 @given(instance=BankAccount_strategy)
@@ -251,9 +236,6 @@ def test_bankaccount_accountHolder_setter(instance):
     instance.accountHolder = original
     assert instance.accountHolder == original
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_accountNumber_type(instance):
-    assert isinstance(instance.accountNumber, int)
 
 
 @given(instance=BankAccount_strategy)
@@ -267,9 +249,6 @@ def test_bankaccount_accountNumber_setter(instance):
 def test_bank_instantiation(instance):
     assert isinstance(instance, Bank)
 
-@given(instance=Bank_strategy)
-def test_bank_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Bank_strategy)

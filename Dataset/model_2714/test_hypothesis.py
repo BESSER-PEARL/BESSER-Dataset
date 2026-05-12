@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    x::B,
-    x::C,
-    x::A,
+from python_code import (
+    x_B,
+    x_C,
+    x_A,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_x::b_is_not_abstract():
-    assert not inspect.isabstract(x::B)
+def test_x_b_is_not_abstract():
+    assert not inspect.isabstract(x_B)
 
 
-def test_x::b_constructor_exists():
-    assert callable(x::B.__init__)
+def test_x_b_constructor_exists():
+    assert callable(x_B.__init__)
 
 
-def test_x::b_constructor_args():
-    sig = inspect.signature(x::B.__init__)
+def test_x_b_constructor_args():
+    sig = inspect.signature(x_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_x::c_is_not_abstract():
-    assert not inspect.isabstract(x::C)
+def test_x_c_is_not_abstract():
+    assert not inspect.isabstract(x_C)
 
 
-def test_x::c_constructor_exists():
-    assert callable(x::C.__init__)
+def test_x_c_constructor_exists():
+    assert callable(x_C.__init__)
 
 
-def test_x::c_constructor_args():
-    sig = inspect.signature(x::C.__init__)
+def test_x_c_constructor_args():
+    sig = inspect.signature(x_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_x::a_is_not_abstract():
-    assert not inspect.isabstract(x::A)
+def test_x_a_is_not_abstract():
+    assert not inspect.isabstract(x_A)
 
 
-def test_x::a_constructor_exists():
-    assert callable(x::A.__init__)
+def test_x_a_constructor_exists():
+    assert callable(x_A.__init__)
 
 
-def test_x::a_constructor_args():
-    sig = inspect.signature(x::A.__init__)
+def test_x_a_constructor_args():
+    sig = inspect.signature(x_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-x::B_strategy = st.builds(
-    x::B,
+x_B_strategy = st.builds(
+    x_B,
 )
-x::C_strategy = st.builds(
-    x::C,
+x_C_strategy = st.builds(
+    x_C,
 )
-x::A_strategy = st.builds(
-    x::A,
+x_A_strategy = st.builds(
+    x_A,
 )
 
-@given(instance=x::B_strategy)
+@given(instance=x_B_strategy)
 @settings(max_examples=50)
-def test_x::b_instantiation(instance):
-    assert isinstance(instance, x::B)
+def test_x_b_instantiation(instance):
+    assert isinstance(instance, x_B)
 
-@given(instance=x::C_strategy)
+@given(instance=x_C_strategy)
 @settings(max_examples=50)
-def test_x::c_instantiation(instance):
-    assert isinstance(instance, x::C)
+def test_x_c_instantiation(instance):
+    assert isinstance(instance, x_C)
 
-@given(instance=x::A_strategy)
+@given(instance=x_A_strategy)
 @settings(max_examples=50)
-def test_x::a_instantiation(instance):
-    assert isinstance(instance, x::A)
+def test_x_a_instantiation(instance):
+    assert isinstance(instance, x_A)

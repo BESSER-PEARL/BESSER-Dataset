@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleUml::NamedElement,
+from python_code import (
+    SimpleUml_NamedElement,
     NamedElement,
-    SimpleUml::Property,
-    SimpleUml::Package,
-    SimpleUml::Class,
+    SimpleUml_Package,
+    SimpleUml_Property,
+    SimpleUml_Class,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_simpleuml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(SimpleUml::NamedElement)
+def test_simpleuml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(SimpleUml_NamedElement)
 
 
-def test_simpleuml::namedelement_constructor_exists():
-    assert callable(SimpleUml::NamedElement.__init__)
+def test_simpleuml_namedelement_constructor_exists():
+    assert callable(SimpleUml_NamedElement.__init__)
 
 
-def test_simpleuml::namedelement_constructor_args():
-    sig = inspect.signature(SimpleUml::NamedElement.__init__)
+def test_simpleuml_namedelement_constructor_args():
+    sig = inspect.signature(SimpleUml_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleuml::namedelement_has_name():
-    assert hasattr(SimpleUml::NamedElement, "name")
+def test_simpleuml_namedelement_has_name():
+    assert hasattr(SimpleUml_NamedElement, "name")
     descriptor = None
-    for klass in SimpleUml::NamedElement.__mro__:
+    for klass in SimpleUml_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,33 +57,47 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simpleuml::property_is_not_abstract():
-    assert not inspect.isabstract(SimpleUml::Property)
+def test_simpleuml_package_is_not_abstract():
+    assert not inspect.isabstract(SimpleUml_Package)
 
 
-def test_simpleuml::property_constructor_exists():
-    assert callable(SimpleUml::Property.__init__)
+def test_simpleuml_package_constructor_exists():
+    assert callable(SimpleUml_Package.__init__)
 
 
-def test_simpleuml::property_constructor_args():
-    sig = inspect.signature(SimpleUml::Property.__init__)
+def test_simpleuml_package_constructor_args():
+    sig = inspect.signature(SimpleUml_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleuml_property_is_not_abstract():
+    assert not inspect.isabstract(SimpleUml_Property)
+
+
+def test_simpleuml_property_constructor_exists():
+    assert callable(SimpleUml_Property.__init__)
+
+
+def test_simpleuml_property_constructor_args():
+    sig = inspect.signature(SimpleUml_Property.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
     assert "isContainment" in params, "Missing parameter 'isContainment'"
 
-def test_simpleuml::property_has_primitiveType():
-    assert hasattr(SimpleUml::Property, "primitiveType")
+def test_simpleuml_property_has_primitiveType():
+    assert hasattr(SimpleUml_Property, "primitiveType")
     descriptor = None
-    for klass in SimpleUml::Property.__mro__:
+    for klass in SimpleUml_Property.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleuml::property_has_isContainment():
-    assert hasattr(SimpleUml::Property, "isContainment")
+def test_simpleuml_property_has_isContainment():
+    assert hasattr(SimpleUml_Property, "isContainment")
     descriptor = None
-    for klass in SimpleUml::Property.__mro__:
+    for klass in SimpleUml_Property.__mro__:
         if "isContainment" in klass.__dict__:
             descriptor = klass.__dict__["isContainment"]
             break
@@ -91,30 +105,16 @@ def test_simpleuml::property_has_isContainment():
 
 
 
-def test_simpleuml::package_is_not_abstract():
-    assert not inspect.isabstract(SimpleUml::Package)
+def test_simpleuml_class_is_not_abstract():
+    assert not inspect.isabstract(SimpleUml_Class)
 
 
-def test_simpleuml::package_constructor_exists():
-    assert callable(SimpleUml::Package.__init__)
+def test_simpleuml_class_constructor_exists():
+    assert callable(SimpleUml_Class.__init__)
 
 
-def test_simpleuml::package_constructor_args():
-    sig = inspect.signature(SimpleUml::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleuml::class_is_not_abstract():
-    assert not inspect.isabstract(SimpleUml::Class)
-
-
-def test_simpleuml::class_constructor_exists():
-    assert callable(SimpleUml::Class.__init__)
-
-
-def test_simpleuml::class_constructor_args():
-    sig = inspect.signature(SimpleUml::Class.__init__)
+def test_simpleuml_class_constructor_args():
+    sig = inspect.signature(SimpleUml_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,40 +129,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleUml::NamedElement_strategy = st.builds(
-    SimpleUml::NamedElement,
+SimpleUml_NamedElement_strategy = st.builds(
+    SimpleUml_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-SimpleUml::Property_strategy = st.builds(
-    SimpleUml::Property,
+SimpleUml_Package_strategy = st.builds(
+    SimpleUml_Package,
+)
+SimpleUml_Property_strategy = st.builds(
+    SimpleUml_Property,
     primitiveType=
         safe_text,
     isContainment=
         st.booleans()
 )
-SimpleUml::Package_strategy = st.builds(
-    SimpleUml::Package,
-)
-SimpleUml::Class_strategy = st.builds(
-    SimpleUml::Class,
+SimpleUml_Class_strategy = st.builds(
+    SimpleUml_Class,
 )
 
-@given(instance=SimpleUml::NamedElement_strategy)
+@given(instance=SimpleUml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simpleuml::namedelement_instantiation(instance):
-    assert isinstance(instance, SimpleUml::NamedElement)
-
-@given(instance=SimpleUml::NamedElement_strategy)
-def test_simpleuml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleuml_namedelement_instantiation(instance):
+    assert isinstance(instance, SimpleUml_NamedElement)
 
 
-@given(instance=SimpleUml::NamedElement_strategy)
-def test_simpleuml::namedelement_name_setter(instance):
+
+@given(instance=SimpleUml_NamedElement_strategy)
+def test_simpleuml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -172,39 +169,33 @@ def test_simpleuml::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=SimpleUml::Property_strategy)
+@given(instance=SimpleUml_Package_strategy)
 @settings(max_examples=50)
-def test_simpleuml::property_instantiation(instance):
-    assert isinstance(instance, SimpleUml::Property)
+def test_simpleuml_package_instantiation(instance):
+    assert isinstance(instance, SimpleUml_Package)
 
-@given(instance=SimpleUml::Property_strategy)
-def test_simpleuml::property_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
+@given(instance=SimpleUml_Property_strategy)
+@settings(max_examples=50)
+def test_simpleuml_property_instantiation(instance):
+    assert isinstance(instance, SimpleUml_Property)
 
 
-@given(instance=SimpleUml::Property_strategy)
-def test_simpleuml::property_primitiveType_setter(instance):
+
+@given(instance=SimpleUml_Property_strategy)
+def test_simpleuml_property_primitiveType_setter(instance):
     original = instance.primitiveType
     instance.primitiveType = original
     assert instance.primitiveType == original
 
-@given(instance=SimpleUml::Property_strategy)
-def test_simpleuml::property_isContainment_type(instance):
-    assert isinstance(instance.isContainment, bool)
 
 
-@given(instance=SimpleUml::Property_strategy)
-def test_simpleuml::property_isContainment_setter(instance):
+@given(instance=SimpleUml_Property_strategy)
+def test_simpleuml_property_isContainment_setter(instance):
     original = instance.isContainment
     instance.isContainment = original
     assert instance.isContainment == original
 
-@given(instance=SimpleUml::Package_strategy)
+@given(instance=SimpleUml_Class_strategy)
 @settings(max_examples=50)
-def test_simpleuml::package_instantiation(instance):
-    assert isinstance(instance, SimpleUml::Package)
-
-@given(instance=SimpleUml::Class_strategy)
-@settings(max_examples=50)
-def test_simpleuml::class_instantiation(instance):
-    assert isinstance(instance, SimpleUml::Class)
+def test_simpleuml_class_instantiation(instance):
+    assert isinstance(instance, SimpleUml_Class)

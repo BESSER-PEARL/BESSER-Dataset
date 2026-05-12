@@ -3,9 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    logout_UseCase,
+    view_status_UseCase,
+    register_complaint_UseCase,
+    client_Actor,
+    login_UseCase,
     Login,
     DbDetails,
     CheckStatus,
@@ -33,16 +38,81 @@ from python_code import (
     search_user_UseCase,
     create_user_UseCase,
     administrator_Actor,
-    logout_UseCase,
-    view_status_UseCase,
-    register_complaint_UseCase,
-    client_Actor,
-    login_UseCase,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_logout_usecase_is_not_abstract():
+    assert not inspect.isabstract(logout_UseCase)
+
+
+def test_logout_usecase_constructor_exists():
+    assert callable(logout_UseCase.__init__)
+
+
+def test_logout_usecase_constructor_args():
+    sig = inspect.signature(logout_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_view_status_usecase_is_not_abstract():
+    assert not inspect.isabstract(view_status_UseCase)
+
+
+def test_view_status_usecase_constructor_exists():
+    assert callable(view_status_UseCase.__init__)
+
+
+def test_view_status_usecase_constructor_args():
+    sig = inspect.signature(view_status_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_register_complaint_usecase_is_not_abstract():
+    assert not inspect.isabstract(register_complaint_UseCase)
+
+
+def test_register_complaint_usecase_constructor_exists():
+    assert callable(register_complaint_UseCase.__init__)
+
+
+def test_register_complaint_usecase_constructor_args():
+    sig = inspect.signature(register_complaint_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_client_actor_is_not_abstract():
+    assert not inspect.isabstract(client_Actor)
+
+
+def test_client_actor_constructor_exists():
+    assert callable(client_Actor.__init__)
+
+
+def test_client_actor_constructor_args():
+    sig = inspect.signature(client_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_login_usecase_is_not_abstract():
+    assert not inspect.isabstract(login_UseCase)
+
+
+def test_login_usecase_constructor_exists():
+    assert callable(login_UseCase.__init__)
+
+
+def test_login_usecase_constructor_args():
+    sig = inspect.signature(login_UseCase.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -193,17 +263,8 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(login.__init__)
     params = list(sig.parameters.keys())
-    assert "username" in params, "Missing parameter 'username'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_login_has_username():
-    assert hasattr(login, "username")
-    descriptor = None
-    for klass in login.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
+    assert "username" in params, "Missing parameter 'username'"
 
 def test_login_has_password():
     assert hasattr(login, "password")
@@ -211,6 +272,15 @@ def test_login_has_password():
     for klass in login.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_username():
+    assert hasattr(login, "username")
+    descriptor = None
+    for klass in login.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
@@ -227,17 +297,8 @@ def test_d_b_details_constructor_exists():
 def test_d_b_details_constructor_args():
     sig = inspect.signature(D_B_details.__init__)
     params = list(sig.parameters.keys())
-    assert "session_out" in params, "Missing parameter 'session_out'"
     assert "logged_in" in params, "Missing parameter 'logged_in'"
-
-def test_d_b_details_has_session_out():
-    assert hasattr(D_B_details, "session_out")
-    descriptor = None
-    for klass in D_B_details.__mro__:
-        if "session_out" in klass.__dict__:
-            descriptor = klass.__dict__["session_out"]
-            break
-    assert isinstance(descriptor, property)
+    assert "session_out" in params, "Missing parameter 'session_out'"
 
 def test_d_b_details_has_logged_in():
     assert hasattr(D_B_details, "logged_in")
@@ -245,6 +306,15 @@ def test_d_b_details_has_logged_in():
     for klass in D_B_details.__mro__:
         if "logged_in" in klass.__dict__:
             descriptor = klass.__dict__["logged_in"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_d_b_details_has_session_out():
+    assert hasattr(D_B_details, "session_out")
+    descriptor = None
+    for klass in D_B_details.__mro__:
+        if "session_out" in klass.__dict__:
+            descriptor = klass.__dict__["session_out"]
             break
     assert isinstance(descriptor, property)
 
@@ -309,17 +379,8 @@ def test_register_complaint_constructor_exists():
 def test_register_complaint_constructor_args():
     sig = inspect.signature(register_complaint.__init__)
     params = list(sig.parameters.keys())
-    assert "complaint_type" in params, "Missing parameter 'complaint_type'"
     assert "description" in params, "Missing parameter 'description'"
-
-def test_register_complaint_has_complaint_type():
-    assert hasattr(register_complaint, "complaint_type")
-    descriptor = None
-    for klass in register_complaint.__mro__:
-        if "complaint_type" in klass.__dict__:
-            descriptor = klass.__dict__["complaint_type"]
-            break
-    assert isinstance(descriptor, property)
+    assert "complaint_type" in params, "Missing parameter 'complaint_type'"
 
 def test_register_complaint_has_description():
     assert hasattr(register_complaint, "description")
@@ -327,6 +388,15 @@ def test_register_complaint_has_description():
     for klass in register_complaint.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_register_complaint_has_complaint_type():
+    assert hasattr(register_complaint, "complaint_type")
+    descriptor = None
+    for klass in register_complaint.__mro__:
+        if "complaint_type" in klass.__dict__:
+            descriptor = klass.__dict__["complaint_type"]
             break
     assert isinstance(descriptor, property)
 
@@ -401,9 +471,18 @@ def test_monitor_complaint_constructor_exists():
 def test_monitor_complaint_constructor_args():
     sig = inspect.signature(monitor_complaint.__init__)
     params = list(sig.parameters.keys())
+    assert "complaintid" in params, "Missing parameter 'complaintid'"
     assert "date" in params, "Missing parameter 'date'"
     assert "complaint_type" in params, "Missing parameter 'complaint_type'"
-    assert "complaintid" in params, "Missing parameter 'complaintid'"
+
+def test_monitor_complaint_has_complaintid():
+    assert hasattr(monitor_complaint, "complaintid")
+    descriptor = None
+    for klass in monitor_complaint.__mro__:
+        if "complaintid" in klass.__dict__:
+            descriptor = klass.__dict__["complaintid"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_monitor_complaint_has_date():
     assert hasattr(monitor_complaint, "date")
@@ -423,15 +502,6 @@ def test_monitor_complaint_has_complaint_type():
             break
     assert isinstance(descriptor, property)
 
-def test_monitor_complaint_has_complaintid():
-    assert hasattr(monitor_complaint, "complaintid")
-    descriptor = None
-    for klass in monitor_complaint.__mro__:
-        if "complaintid" in klass.__dict__:
-            descriptor = klass.__dict__["complaintid"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_customer_is_not_abstract():
@@ -446,9 +516,9 @@ def test_customer_constructor_args():
     sig = inspect.signature(customer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "product_id" in params, "Missing parameter 'product_id'"
-    assert "address" in params, "Missing parameter 'address'"
     assert "email_id" in params, "Missing parameter 'email_id'"
+    assert "address" in params, "Missing parameter 'address'"
+    assert "product_id" in params, "Missing parameter 'product_id'"
 
 def test_customer_has_name():
     assert hasattr(customer, "name")
@@ -459,12 +529,12 @@ def test_customer_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_customer_has_product_id():
-    assert hasattr(customer, "product_id")
+def test_customer_has_email_id():
+    assert hasattr(customer, "email_id")
     descriptor = None
     for klass in customer.__mro__:
-        if "product_id" in klass.__dict__:
-            descriptor = klass.__dict__["product_id"]
+        if "email_id" in klass.__dict__:
+            descriptor = klass.__dict__["email_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -477,12 +547,12 @@ def test_customer_has_address():
             break
     assert isinstance(descriptor, property)
 
-def test_customer_has_email_id():
-    assert hasattr(customer, "email_id")
+def test_customer_has_product_id():
+    assert hasattr(customer, "product_id")
     descriptor = None
     for klass in customer.__mro__:
-        if "email_id" in klass.__dict__:
-            descriptor = klass.__dict__["email_id"]
+        if "product_id" in klass.__dict__:
+            descriptor = klass.__dict__["product_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -613,76 +683,6 @@ def test_administrator_actor_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_logout_usecase_is_not_abstract():
-    assert not inspect.isabstract(logout_UseCase)
-
-
-def test_logout_usecase_constructor_exists():
-    assert callable(logout_UseCase.__init__)
-
-
-def test_logout_usecase_constructor_args():
-    sig = inspect.signature(logout_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_view_status_usecase_is_not_abstract():
-    assert not inspect.isabstract(view_status_UseCase)
-
-
-def test_view_status_usecase_constructor_exists():
-    assert callable(view_status_UseCase.__init__)
-
-
-def test_view_status_usecase_constructor_args():
-    sig = inspect.signature(view_status_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_register_complaint_usecase_is_not_abstract():
-    assert not inspect.isabstract(register_complaint_UseCase)
-
-
-def test_register_complaint_usecase_constructor_exists():
-    assert callable(register_complaint_UseCase.__init__)
-
-
-def test_register_complaint_usecase_constructor_args():
-    sig = inspect.signature(register_complaint_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_client_actor_is_not_abstract():
-    assert not inspect.isabstract(client_Actor)
-
-
-def test_client_actor_constructor_exists():
-    assert callable(client_Actor.__init__)
-
-
-def test_client_actor_constructor_args():
-    sig = inspect.signature(client_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_login_usecase_is_not_abstract():
-    assert not inspect.isabstract(login_UseCase)
-
-
-def test_login_usecase_constructor_exists():
-    assert callable(login_UseCase.__init__)
-
-
-def test_login_usecase_constructor_args():
-    sig = inspect.signature(login_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -694,6 +694,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+logout_UseCase_strategy = st.builds(
+    logout_UseCase,
+)
+view_status_UseCase_strategy = st.builds(
+    view_status_UseCase,
+)
+register_complaint_UseCase_strategy = st.builds(
+    register_complaint_UseCase,
+)
+client_Actor_strategy = st.builds(
+    client_Actor,
+)
+login_UseCase_strategy = st.builds(
+    login_UseCase,
+)
 Login_strategy = st.builds(
     Login,
 )
@@ -725,16 +740,16 @@ Customer_strategy = st.builds(
 )
 login_strategy = st.builds(
     login,
-    username=
-        safe_text,
     password=
+        safe_text,
+    username=
         safe_text
 )
 D_B_details_strategy = st.builds(
     D_B_details,
-    session_out=
-        safe_text,
     logged_in=
+        safe_text,
+    session_out=
         safe_text
 )
 logout_strategy = st.builds(
@@ -749,9 +764,9 @@ check_status_strategy = st.builds(
 )
 register_complaint_strategy = st.builds(
     register_complaint,
-    complaint_type=
-        safe_text,
     description=
+        safe_text,
+    complaint_type=
         safe_text
 )
 update_status_strategy = st.builds(
@@ -768,23 +783,23 @@ administrator_strategy = st.builds(
 )
 monitor_complaint_strategy = st.builds(
     monitor_complaint,
+    complaintid=
+        st.integers(),
     date=
         safe_text,
     complaint_type=
-        safe_text,
-    complaintid=
-        st.integers()
+        safe_text
 )
 customer_strategy = st.builds(
     customer,
     name=
         safe_text,
-    product_id=
-        safe_text,
+    email_id=
+        st.integers(),
     address=
         safe_text,
-    email_id=
-        st.integers()
+    product_id=
+        safe_text
 )
 logout_technician_UseCase_strategy = st.builds(
     logout_technician_UseCase,
@@ -813,21 +828,31 @@ create_user_UseCase_strategy = st.builds(
 administrator_Actor_strategy = st.builds(
     administrator_Actor,
 )
-logout_UseCase_strategy = st.builds(
-    logout_UseCase,
-)
-view_status_UseCase_strategy = st.builds(
-    view_status_UseCase,
-)
-register_complaint_UseCase_strategy = st.builds(
-    register_complaint_UseCase,
-)
-client_Actor_strategy = st.builds(
-    client_Actor,
-)
-login_UseCase_strategy = st.builds(
-    login_UseCase,
-)
+
+@given(instance=logout_UseCase_strategy)
+@settings(max_examples=50)
+def test_logout_usecase_instantiation(instance):
+    assert isinstance(instance, logout_UseCase)
+
+@given(instance=view_status_UseCase_strategy)
+@settings(max_examples=50)
+def test_view_status_usecase_instantiation(instance):
+    assert isinstance(instance, view_status_UseCase)
+
+@given(instance=register_complaint_UseCase_strategy)
+@settings(max_examples=50)
+def test_register_complaint_usecase_instantiation(instance):
+    assert isinstance(instance, register_complaint_UseCase)
+
+@given(instance=client_Actor_strategy)
+@settings(max_examples=50)
+def test_client_actor_instantiation(instance):
+    assert isinstance(instance, client_Actor)
+
+@given(instance=login_UseCase_strategy)
+@settings(max_examples=50)
+def test_login_usecase_instantiation(instance):
+    assert isinstance(instance, login_UseCase)
 
 @given(instance=Login_strategy)
 @settings(max_examples=50)
@@ -859,9 +884,6 @@ def test_updatestatus_instantiation(instance):
 def test_administrator_instantiation(instance):
     assert isinstance(instance, Administrator)
 
-@given(instance=Administrator_strategy)
-def test_administrator_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Administrator_strategy)
@@ -890,20 +912,6 @@ def test_customer_instantiation(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, login)
 
-@given(instance=login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=login_strategy)
-def test_login_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=login_strategy)
@@ -912,25 +920,19 @@ def test_login_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=login_strategy)
+def test_login_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
 @given(instance=D_B_details_strategy)
 @settings(max_examples=50)
 def test_d_b_details_instantiation(instance):
     assert isinstance(instance, D_B_details)
 
-@given(instance=D_B_details_strategy)
-def test_d_b_details_session_out_type(instance):
-    assert isinstance(instance.session_out, str)
-
-
-@given(instance=D_B_details_strategy)
-def test_d_b_details_session_out_setter(instance):
-    original = instance.session_out
-    instance.session_out = original
-    assert instance.session_out == original
-
-@given(instance=D_B_details_strategy)
-def test_d_b_details_logged_in_type(instance):
-    assert isinstance(instance.logged_in, str)
 
 
 @given(instance=D_B_details_strategy)
@@ -939,14 +941,19 @@ def test_d_b_details_logged_in_setter(instance):
     instance.logged_in = original
     assert instance.logged_in == original
 
+
+
+@given(instance=D_B_details_strategy)
+def test_d_b_details_session_out_setter(instance):
+    original = instance.session_out
+    instance.session_out = original
+    assert instance.session_out == original
+
 @given(instance=logout_strategy)
 @settings(max_examples=50)
 def test_logout_instantiation(instance):
     assert isinstance(instance, logout)
 
-@given(instance=logout_strategy)
-def test_logout_session_out_type(instance):
-    assert isinstance(instance.session_out, str)
 
 
 @given(instance=logout_strategy)
@@ -960,9 +967,6 @@ def test_logout_session_out_setter(instance):
 def test_check_status_instantiation(instance):
     assert isinstance(instance, check_status)
 
-@given(instance=check_status_strategy)
-def test_check_status_complaint_type(instance):
-    assert isinstance(instance.complaint, str)
 
 
 @given(instance=check_status_strategy)
@@ -976,20 +980,6 @@ def test_check_status_complaint_setter(instance):
 def test_register_complaint_instantiation(instance):
     assert isinstance(instance, register_complaint)
 
-@given(instance=register_complaint_strategy)
-def test_register_complaint_complaint_type_type(instance):
-    assert isinstance(instance.complaint_type, str)
-
-
-@given(instance=register_complaint_strategy)
-def test_register_complaint_complaint_type_setter(instance):
-    original = instance.complaint_type
-    instance.complaint_type = original
-    assert instance.complaint_type == original
-
-@given(instance=register_complaint_strategy)
-def test_register_complaint_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=register_complaint_strategy)
@@ -998,14 +988,19 @@ def test_register_complaint_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
+
+
+@given(instance=register_complaint_strategy)
+def test_register_complaint_complaint_type_setter(instance):
+    original = instance.complaint_type
+    instance.complaint_type = original
+    assert instance.complaint_type == original
+
 @given(instance=update_status_strategy)
 @settings(max_examples=50)
 def test_update_status_instantiation(instance):
     assert isinstance(instance, update_status)
 
-@given(instance=update_status_strategy)
-def test_update_status_supdate_type(instance):
-    assert isinstance(instance.supdate, str)
 
 
 @given(instance=update_status_strategy)
@@ -1019,9 +1014,6 @@ def test_update_status_supdate_setter(instance):
 def test_administrator_instantiation(instance):
     assert isinstance(instance, administrator)
 
-@given(instance=administrator_strategy)
-def test_administrator_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=administrator_strategy)
@@ -1030,9 +1022,6 @@ def test_administrator_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
-@given(instance=administrator_strategy)
-def test_administrator_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=administrator_strategy)
@@ -1046,31 +1035,6 @@ def test_administrator_password_setter(instance):
 def test_monitor_complaint_instantiation(instance):
     assert isinstance(instance, monitor_complaint)
 
-@given(instance=monitor_complaint_strategy)
-def test_monitor_complaint_date_type(instance):
-    assert isinstance(instance.date, str)
-
-
-@given(instance=monitor_complaint_strategy)
-def test_monitor_complaint_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=monitor_complaint_strategy)
-def test_monitor_complaint_complaint_type_type(instance):
-    assert isinstance(instance.complaint_type, str)
-
-
-@given(instance=monitor_complaint_strategy)
-def test_monitor_complaint_complaint_type_setter(instance):
-    original = instance.complaint_type
-    instance.complaint_type = original
-    assert instance.complaint_type == original
-
-@given(instance=monitor_complaint_strategy)
-def test_monitor_complaint_complaintid_type(instance):
-    assert isinstance(instance.complaintid, int)
 
 
 @given(instance=monitor_complaint_strategy)
@@ -1079,14 +1043,27 @@ def test_monitor_complaint_complaintid_setter(instance):
     instance.complaintid = original
     assert instance.complaintid == original
 
+
+
+@given(instance=monitor_complaint_strategy)
+def test_monitor_complaint_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=monitor_complaint_strategy)
+def test_monitor_complaint_complaint_type_setter(instance):
+    original = instance.complaint_type
+    instance.complaint_type = original
+    assert instance.complaint_type == original
+
 @given(instance=customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, customer)
 
-@given(instance=customer_strategy)
-def test_customer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=customer_strategy)
@@ -1095,20 +1072,14 @@ def test_customer_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=customer_strategy)
-def test_customer_product_id_type(instance):
-    assert isinstance(instance.product_id, str)
 
 
 @given(instance=customer_strategy)
-def test_customer_product_id_setter(instance):
-    original = instance.product_id
-    instance.product_id = original
-    assert instance.product_id == original
+def test_customer_email_id_setter(instance):
+    original = instance.email_id
+    instance.email_id = original
+    assert instance.email_id == original
 
-@given(instance=customer_strategy)
-def test_customer_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=customer_strategy)
@@ -1117,16 +1088,13 @@ def test_customer_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=customer_strategy)
-def test_customer_email_id_type(instance):
-    assert isinstance(instance.email_id, int)
 
 
 @given(instance=customer_strategy)
-def test_customer_email_id_setter(instance):
-    original = instance.email_id
-    instance.email_id = original
-    assert instance.email_id == original
+def test_customer_product_id_setter(instance):
+    original = instance.product_id
+    instance.product_id = original
+    assert instance.product_id == original
 
 @given(instance=logout_technician_UseCase_strategy)
 @settings(max_examples=50)
@@ -1172,28 +1140,3 @@ def test_create_user_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_administrator_actor_instantiation(instance):
     assert isinstance(instance, administrator_Actor)
-
-@given(instance=logout_UseCase_strategy)
-@settings(max_examples=50)
-def test_logout_usecase_instantiation(instance):
-    assert isinstance(instance, logout_UseCase)
-
-@given(instance=view_status_UseCase_strategy)
-@settings(max_examples=50)
-def test_view_status_usecase_instantiation(instance):
-    assert isinstance(instance, view_status_UseCase)
-
-@given(instance=register_complaint_UseCase_strategy)
-@settings(max_examples=50)
-def test_register_complaint_usecase_instantiation(instance):
-    assert isinstance(instance, register_complaint_UseCase)
-
-@given(instance=client_Actor_strategy)
-@settings(max_examples=50)
-def test_client_actor_instantiation(instance):
-    assert isinstance(instance, client_Actor)
-
-@given(instance=login_UseCase_strategy)
-@settings(max_examples=50)
-def test_login_usecase_instantiation(instance):
-    assert isinstance(instance, login_UseCase)

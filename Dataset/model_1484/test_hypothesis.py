@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::GraphIntf,
-    graph::Graph,
+from python_code import (
+    graph_GraphIntf,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_graph::graphintf_is_not_abstract():
-    assert not inspect.isabstract(graph::GraphIntf)
+def test_graph_graphintf_is_not_abstract():
+    assert not inspect.isabstract(graph_GraphIntf)
 
 
-def test_graph::graphintf_constructor_exists():
-    assert callable(graph::GraphIntf.__init__)
+def test_graph_graphintf_constructor_exists():
+    assert callable(graph_GraphIntf.__init__)
 
 
-def test_graph::graphintf_constructor_args():
-    sig = inspect.signature(graph::GraphIntf.__init__)
+def test_graph_graphintf_constructor_args():
+    sig = inspect.signature(graph_GraphIntf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::GraphIntf_strategy = st.builds(
-    graph::GraphIntf,
+graph_GraphIntf_strategy = st.builds(
+    graph_GraphIntf,
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
 )
 
-@given(instance=graph::GraphIntf_strategy)
+@given(instance=graph_GraphIntf_strategy)
 @settings(max_examples=50)
-def test_graph::graphintf_instantiation(instance):
-    assert isinstance(instance, graph::GraphIntf)
+def test_graph_graphintf_instantiation(instance):
+    assert isinstance(instance, graph_GraphIntf)
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)

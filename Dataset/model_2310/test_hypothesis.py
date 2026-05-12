@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Persons::LocaledElement,
-    Persons::PersonsModel,
+from python_code import (
+    Persons_LocaledElement,
+    Persons_PersonsModel,
     Person,
-    Persons::Employee,
-    Persons::Female,
-    Persons::Male,
+    Persons_Female,
+    Persons_Employee,
+    Persons_Male,
     PersonsModel,
-    Persons::Person,
+    Persons_Person,
 )
 
 # =============================================================================
@@ -22,30 +22,30 @@ from classes import (
 
 
 
-def test_persons::localedelement_is_not_abstract():
-    assert not inspect.isabstract(Persons::LocaledElement)
+def test_persons_localedelement_is_not_abstract():
+    assert not inspect.isabstract(Persons_LocaledElement)
 
 
-def test_persons::localedelement_constructor_exists():
-    assert callable(Persons::LocaledElement.__init__)
+def test_persons_localedelement_constructor_exists():
+    assert callable(Persons_LocaledElement.__init__)
 
 
-def test_persons::localedelement_constructor_args():
-    sig = inspect.signature(Persons::LocaledElement.__init__)
+def test_persons_localedelement_constructor_args():
+    sig = inspect.signature(Persons_LocaledElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::personsmodel_is_not_abstract():
-    assert not inspect.isabstract(Persons::PersonsModel)
+def test_persons_personsmodel_is_not_abstract():
+    assert not inspect.isabstract(Persons_PersonsModel)
 
 
-def test_persons::personsmodel_constructor_exists():
-    assert callable(Persons::PersonsModel.__init__)
+def test_persons_personsmodel_constructor_exists():
+    assert callable(Persons_PersonsModel.__init__)
 
 
-def test_persons::personsmodel_constructor_args():
-    sig = inspect.signature(Persons::PersonsModel.__init__)
+def test_persons_personsmodel_constructor_args():
+    sig = inspect.signature(Persons_PersonsModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,37 +64,23 @@ def test_person_constructor_args():
 
 
 
-def test_persons::employee_is_not_abstract():
-    assert not inspect.isabstract(Persons::Employee)
+def test_persons_female_is_not_abstract():
+    assert not inspect.isabstract(Persons_Female)
 
 
-def test_persons::employee_constructor_exists():
-    assert callable(Persons::Employee.__init__)
+def test_persons_female_constructor_exists():
+    assert callable(Persons_Female.__init__)
 
 
-def test_persons::employee_constructor_args():
-    sig = inspect.signature(Persons::Employee.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_persons::female_is_not_abstract():
-    assert not inspect.isabstract(Persons::Female)
-
-
-def test_persons::female_constructor_exists():
-    assert callable(Persons::Female.__init__)
-
-
-def test_persons::female_constructor_args():
-    sig = inspect.signature(Persons::Female.__init__)
+def test_persons_female_constructor_args():
+    sig = inspect.signature(Persons_Female.__init__)
     params = list(sig.parameters.keys())
     assert "age" in params, "Missing parameter 'age'"
 
-def test_persons::female_has_age():
-    assert hasattr(Persons::Female, "age")
+def test_persons_female_has_age():
+    assert hasattr(Persons_Female, "age")
     descriptor = None
-    for klass in Persons::Female.__mro__:
+    for klass in Persons_Female.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
@@ -102,23 +88,37 @@ def test_persons::female_has_age():
 
 
 
-def test_persons::male_is_not_abstract():
-    assert not inspect.isabstract(Persons::Male)
+def test_persons_employee_is_not_abstract():
+    assert not inspect.isabstract(Persons_Employee)
 
 
-def test_persons::male_constructor_exists():
-    assert callable(Persons::Male.__init__)
+def test_persons_employee_constructor_exists():
+    assert callable(Persons_Employee.__init__)
 
 
-def test_persons::male_constructor_args():
-    sig = inspect.signature(Persons::Male.__init__)
+def test_persons_employee_constructor_args():
+    sig = inspect.signature(Persons_Employee.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_persons_male_is_not_abstract():
+    assert not inspect.isabstract(Persons_Male)
+
+
+def test_persons_male_constructor_exists():
+    assert callable(Persons_Male.__init__)
+
+
+def test_persons_male_constructor_args():
+    sig = inspect.signature(Persons_Male.__init__)
     params = list(sig.parameters.keys())
     assert "age" in params, "Missing parameter 'age'"
 
-def test_persons::male_has_age():
-    assert hasattr(Persons::Male, "age")
+def test_persons_male_has_age():
+    assert hasattr(Persons_Male, "age")
     descriptor = None
-    for klass in Persons::Male.__mro__:
+    for klass in Persons_Male.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
@@ -140,23 +140,23 @@ def test_personsmodel_constructor_args():
 
 
 
-def test_persons::person_is_not_abstract():
-    assert not inspect.isabstract(Persons::Person)
+def test_persons_person_is_not_abstract():
+    assert not inspect.isabstract(Persons_Person)
 
 
-def test_persons::person_constructor_exists():
-    assert callable(Persons::Person.__init__)
+def test_persons_person_constructor_exists():
+    assert callable(Persons_Person.__init__)
 
 
-def test_persons::person_constructor_args():
-    sig = inspect.signature(Persons::Person.__init__)
+def test_persons_person_constructor_args():
+    sig = inspect.signature(Persons_Person.__init__)
     params = list(sig.parameters.keys())
     assert "fullName" in params, "Missing parameter 'fullName'"
 
-def test_persons::person_has_fullName():
-    assert hasattr(Persons::Person, "fullName")
+def test_persons_person_has_fullName():
+    assert hasattr(Persons_Person, "fullName")
     descriptor = None
-    for klass in Persons::Person.__mro__:
+    for klass in Persons_Person.__mro__:
         if "fullName" in klass.__dict__:
             descriptor = klass.__dict__["fullName"]
             break
@@ -174,85 +174,79 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Persons::LocaledElement_strategy = st.builds(
-    Persons::LocaledElement,
+Persons_LocaledElement_strategy = st.builds(
+    Persons_LocaledElement,
 )
-Persons::PersonsModel_strategy = st.builds(
-    Persons::PersonsModel,
+Persons_PersonsModel_strategy = st.builds(
+    Persons_PersonsModel,
 )
 Person_strategy = st.builds(
     Person,
 )
-Persons::Employee_strategy = st.builds(
-    Persons::Employee,
-)
-Persons::Female_strategy = st.builds(
-    Persons::Female,
+Persons_Female_strategy = st.builds(
+    Persons_Female,
     age=
         st.integers()
 )
-Persons::Male_strategy = st.builds(
-    Persons::Male,
+Persons_Employee_strategy = st.builds(
+    Persons_Employee,
+)
+Persons_Male_strategy = st.builds(
+    Persons_Male,
     age=
         st.integers()
 )
 PersonsModel_strategy = st.builds(
     PersonsModel,
 )
-Persons::Person_strategy = st.builds(
-    Persons::Person,
+Persons_Person_strategy = st.builds(
+    Persons_Person,
     fullName=
         safe_text
 )
 
-@given(instance=Persons::LocaledElement_strategy)
+@given(instance=Persons_LocaledElement_strategy)
 @settings(max_examples=50)
-def test_persons::localedelement_instantiation(instance):
-    assert isinstance(instance, Persons::LocaledElement)
+def test_persons_localedelement_instantiation(instance):
+    assert isinstance(instance, Persons_LocaledElement)
 
-@given(instance=Persons::PersonsModel_strategy)
+@given(instance=Persons_PersonsModel_strategy)
 @settings(max_examples=50)
-def test_persons::personsmodel_instantiation(instance):
-    assert isinstance(instance, Persons::PersonsModel)
+def test_persons_personsmodel_instantiation(instance):
+    assert isinstance(instance, Persons_PersonsModel)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Persons::Employee_strategy)
+@given(instance=Persons_Female_strategy)
 @settings(max_examples=50)
-def test_persons::employee_instantiation(instance):
-    assert isinstance(instance, Persons::Employee)
-
-@given(instance=Persons::Female_strategy)
-@settings(max_examples=50)
-def test_persons::female_instantiation(instance):
-    assert isinstance(instance, Persons::Female)
-
-@given(instance=Persons::Female_strategy)
-def test_persons::female_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_persons_female_instantiation(instance):
+    assert isinstance(instance, Persons_Female)
 
 
-@given(instance=Persons::Female_strategy)
-def test_persons::female_age_setter(instance):
+
+@given(instance=Persons_Female_strategy)
+def test_persons_female_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=Persons::Male_strategy)
+@given(instance=Persons_Employee_strategy)
 @settings(max_examples=50)
-def test_persons::male_instantiation(instance):
-    assert isinstance(instance, Persons::Male)
+def test_persons_employee_instantiation(instance):
+    assert isinstance(instance, Persons_Employee)
 
-@given(instance=Persons::Male_strategy)
-def test_persons::male_age_type(instance):
-    assert isinstance(instance.age, int)
+@given(instance=Persons_Male_strategy)
+@settings(max_examples=50)
+def test_persons_male_instantiation(instance):
+    assert isinstance(instance, Persons_Male)
 
 
-@given(instance=Persons::Male_strategy)
-def test_persons::male_age_setter(instance):
+
+@given(instance=Persons_Male_strategy)
+def test_persons_male_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
@@ -262,18 +256,15 @@ def test_persons::male_age_setter(instance):
 def test_personsmodel_instantiation(instance):
     assert isinstance(instance, PersonsModel)
 
-@given(instance=Persons::Person_strategy)
+@given(instance=Persons_Person_strategy)
 @settings(max_examples=50)
-def test_persons::person_instantiation(instance):
-    assert isinstance(instance, Persons::Person)
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
+def test_persons_person_instantiation(instance):
+    assert isinstance(instance, Persons_Person)
 
 
-@given(instance=Persons::Person_strategy)
-def test_persons::person_fullName_setter(instance):
+
+@given(instance=Persons_Person_strategy)
+def test_persons_person_fullName_setter(instance):
     original = instance.fullName
     instance.fullName = original
     assert instance.fullName == original

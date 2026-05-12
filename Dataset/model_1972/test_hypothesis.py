@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    traces::TraceRepository,
-    traces::EObject,
-    traces::Trace,
+from python_code import (
+    traces_TraceRepository,
+    traces_EObject,
+    traces_Trace,
 )
 
 # =============================================================================
@@ -17,51 +17,51 @@ from classes import (
 
 
 
-def test_traces::tracerepository_is_not_abstract():
-    assert not inspect.isabstract(traces::TraceRepository)
+def test_traces_tracerepository_is_not_abstract():
+    assert not inspect.isabstract(traces_TraceRepository)
 
 
-def test_traces::tracerepository_constructor_exists():
-    assert callable(traces::TraceRepository.__init__)
+def test_traces_tracerepository_constructor_exists():
+    assert callable(traces_TraceRepository.__init__)
 
 
-def test_traces::tracerepository_constructor_args():
-    sig = inspect.signature(traces::TraceRepository.__init__)
+def test_traces_tracerepository_constructor_args():
+    sig = inspect.signature(traces_TraceRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traces::eobject_is_not_abstract():
-    assert not inspect.isabstract(traces::EObject)
+def test_traces_eobject_is_not_abstract():
+    assert not inspect.isabstract(traces_EObject)
 
 
-def test_traces::eobject_constructor_exists():
-    assert callable(traces::EObject.__init__)
+def test_traces_eobject_constructor_exists():
+    assert callable(traces_EObject.__init__)
 
 
-def test_traces::eobject_constructor_args():
-    sig = inspect.signature(traces::EObject.__init__)
+def test_traces_eobject_constructor_args():
+    sig = inspect.signature(traces_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traces::trace_is_not_abstract():
-    assert not inspect.isabstract(traces::Trace)
+def test_traces_trace_is_not_abstract():
+    assert not inspect.isabstract(traces_Trace)
 
 
-def test_traces::trace_constructor_exists():
-    assert callable(traces::Trace.__init__)
+def test_traces_trace_constructor_exists():
+    assert callable(traces_Trace.__init__)
 
 
-def test_traces::trace_constructor_args():
-    sig = inspect.signature(traces::Trace.__init__)
+def test_traces_trace_constructor_args():
+    sig = inspect.signature(traces_Trace.__init__)
     params = list(sig.parameters.keys())
     assert "Role" in params, "Missing parameter 'Role'"
 
-def test_traces::trace_has_Role():
-    assert hasattr(traces::Trace, "Role")
+def test_traces_trace_has_Role():
+    assert hasattr(traces_Trace, "Role")
     descriptor = None
-    for klass in traces::Trace.__mro__:
+    for klass in traces_Trace.__mro__:
         if "Role" in klass.__dict__:
             descriptor = klass.__dict__["Role"]
             break
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-traces::TraceRepository_strategy = st.builds(
-    traces::TraceRepository,
+traces_TraceRepository_strategy = st.builds(
+    traces_TraceRepository,
 )
-traces::EObject_strategy = st.builds(
-    traces::EObject,
+traces_EObject_strategy = st.builds(
+    traces_EObject,
 )
-traces::Trace_strategy = st.builds(
-    traces::Trace,
+traces_Trace_strategy = st.builds(
+    traces_Trace,
     Role=
         safe_text
 )
 
-@given(instance=traces::TraceRepository_strategy)
+@given(instance=traces_TraceRepository_strategy)
 @settings(max_examples=50)
-def test_traces::tracerepository_instantiation(instance):
-    assert isinstance(instance, traces::TraceRepository)
+def test_traces_tracerepository_instantiation(instance):
+    assert isinstance(instance, traces_TraceRepository)
 
-@given(instance=traces::EObject_strategy)
+@given(instance=traces_EObject_strategy)
 @settings(max_examples=50)
-def test_traces::eobject_instantiation(instance):
-    assert isinstance(instance, traces::EObject)
+def test_traces_eobject_instantiation(instance):
+    assert isinstance(instance, traces_EObject)
 
-@given(instance=traces::Trace_strategy)
+@given(instance=traces_Trace_strategy)
 @settings(max_examples=50)
-def test_traces::trace_instantiation(instance):
-    assert isinstance(instance, traces::Trace)
-
-@given(instance=traces::Trace_strategy)
-def test_traces::trace_Role_type(instance):
-    assert isinstance(instance.Role, str)
+def test_traces_trace_instantiation(instance):
+    assert isinstance(instance, traces_Trace)
 
 
-@given(instance=traces::Trace_strategy)
-def test_traces::trace_Role_setter(instance):
+
+@given(instance=traces_Trace_strategy)
+def test_traces_trace_Role_setter(instance):
     original = instance.Role
     instance.Role = original
     assert instance.Role == original

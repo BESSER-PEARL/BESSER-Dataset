@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    viewers::TableViewerInput,
-    viewers::ListViewerElement,
-    viewers::ListViewerInput,
-    viewers::ViewerInputs,
-    viewers::TreeViewerElement,
-    viewers::TreeViewerInput,
-    viewers::TableViewerElement,
+from python_code import (
+    viewers_ViewerInputs,
+    viewers_TreeViewerElement,
+    viewers_TreeViewerInput,
+    viewers_TableViewerElement,
+    viewers_TableViewerInput,
+    viewers_ListViewerElement,
+    viewers_ListViewerInput,
 )
 
 # =============================================================================
@@ -21,37 +21,37 @@ from classes import (
 
 
 
-def test_viewers::tableviewerinput_is_not_abstract():
-    assert not inspect.isabstract(viewers::TableViewerInput)
+def test_viewers_viewerinputs_is_not_abstract():
+    assert not inspect.isabstract(viewers_ViewerInputs)
 
 
-def test_viewers::tableviewerinput_constructor_exists():
-    assert callable(viewers::TableViewerInput.__init__)
+def test_viewers_viewerinputs_constructor_exists():
+    assert callable(viewers_ViewerInputs.__init__)
 
 
-def test_viewers::tableviewerinput_constructor_args():
-    sig = inspect.signature(viewers::TableViewerInput.__init__)
+def test_viewers_viewerinputs_constructor_args():
+    sig = inspect.signature(viewers_ViewerInputs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viewers::listviewerelement_is_not_abstract():
-    assert not inspect.isabstract(viewers::ListViewerElement)
+def test_viewers_treeviewerelement_is_not_abstract():
+    assert not inspect.isabstract(viewers_TreeViewerElement)
 
 
-def test_viewers::listviewerelement_constructor_exists():
-    assert callable(viewers::ListViewerElement.__init__)
+def test_viewers_treeviewerelement_constructor_exists():
+    assert callable(viewers_TreeViewerElement.__init__)
 
 
-def test_viewers::listviewerelement_constructor_args():
-    sig = inspect.signature(viewers::ListViewerElement.__init__)
+def test_viewers_treeviewerelement_constructor_args():
+    sig = inspect.signature(viewers_TreeViewerElement.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_viewers::listviewerelement_has_label():
-    assert hasattr(viewers::ListViewerElement, "label")
+def test_viewers_treeviewerelement_has_label():
+    assert hasattr(viewers_TreeViewerElement, "label")
     descriptor = None
-    for klass in viewers::ListViewerElement.__mro__:
+    for klass in viewers_TreeViewerElement.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -59,103 +59,103 @@ def test_viewers::listviewerelement_has_label():
 
 
 
-def test_viewers::listviewerinput_is_not_abstract():
-    assert not inspect.isabstract(viewers::ListViewerInput)
+def test_viewers_treeviewerinput_is_not_abstract():
+    assert not inspect.isabstract(viewers_TreeViewerInput)
 
 
-def test_viewers::listviewerinput_constructor_exists():
-    assert callable(viewers::ListViewerInput.__init__)
+def test_viewers_treeviewerinput_constructor_exists():
+    assert callable(viewers_TreeViewerInput.__init__)
 
 
-def test_viewers::listviewerinput_constructor_args():
-    sig = inspect.signature(viewers::ListViewerInput.__init__)
+def test_viewers_treeviewerinput_constructor_args():
+    sig = inspect.signature(viewers_TreeViewerInput.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viewers::viewerinputs_is_not_abstract():
-    assert not inspect.isabstract(viewers::ViewerInputs)
+def test_viewers_tableviewerelement_is_not_abstract():
+    assert not inspect.isabstract(viewers_TableViewerElement)
 
 
-def test_viewers::viewerinputs_constructor_exists():
-    assert callable(viewers::ViewerInputs.__init__)
+def test_viewers_tableviewerelement_constructor_exists():
+    assert callable(viewers_TableViewerElement.__init__)
 
 
-def test_viewers::viewerinputs_constructor_args():
-    sig = inspect.signature(viewers::ViewerInputs.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_viewers::treeviewerelement_is_not_abstract():
-    assert not inspect.isabstract(viewers::TreeViewerElement)
-
-
-def test_viewers::treeviewerelement_constructor_exists():
-    assert callable(viewers::TreeViewerElement.__init__)
-
-
-def test_viewers::treeviewerelement_constructor_args():
-    sig = inspect.signature(viewers::TreeViewerElement.__init__)
+def test_viewers_tableviewerelement_constructor_args():
+    sig = inspect.signature(viewers_TableViewerElement.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
-
-def test_viewers::treeviewerelement_has_label():
-    assert hasattr(viewers::TreeViewerElement, "label")
-    descriptor = None
-    for klass in viewers::TreeViewerElement.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_viewers::treeviewerinput_is_not_abstract():
-    assert not inspect.isabstract(viewers::TreeViewerInput)
-
-
-def test_viewers::treeviewerinput_constructor_exists():
-    assert callable(viewers::TreeViewerInput.__init__)
-
-
-def test_viewers::treeviewerinput_constructor_args():
-    sig = inspect.signature(viewers::TreeViewerInput.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_viewers::tableviewerelement_is_not_abstract():
-    assert not inspect.isabstract(viewers::TableViewerElement)
-
-
-def test_viewers::tableviewerelement_constructor_exists():
-    assert callable(viewers::TableViewerElement.__init__)
-
-
-def test_viewers::tableviewerelement_constructor_args():
-    sig = inspect.signature(viewers::TableViewerElement.__init__)
-    params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "label" in params, "Missing parameter 'label'"
 
-def test_viewers::tableviewerelement_has_name():
-    assert hasattr(viewers::TableViewerElement, "name")
+def test_viewers_tableviewerelement_has_label():
+    assert hasattr(viewers_TableViewerElement, "label")
     descriptor = None
-    for klass in viewers::TableViewerElement.__mro__:
+    for klass in viewers_TableViewerElement.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_viewers_tableviewerelement_has_name():
+    assert hasattr(viewers_TableViewerElement, "name")
+    descriptor = None
+    for klass in viewers_TableViewerElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_viewers::tableviewerelement_has_label():
-    assert hasattr(viewers::TableViewerElement, "label")
+
+
+def test_viewers_tableviewerinput_is_not_abstract():
+    assert not inspect.isabstract(viewers_TableViewerInput)
+
+
+def test_viewers_tableviewerinput_constructor_exists():
+    assert callable(viewers_TableViewerInput.__init__)
+
+
+def test_viewers_tableviewerinput_constructor_args():
+    sig = inspect.signature(viewers_TableViewerInput.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_viewers_listviewerelement_is_not_abstract():
+    assert not inspect.isabstract(viewers_ListViewerElement)
+
+
+def test_viewers_listviewerelement_constructor_exists():
+    assert callable(viewers_ListViewerElement.__init__)
+
+
+def test_viewers_listviewerelement_constructor_args():
+    sig = inspect.signature(viewers_ListViewerElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+
+def test_viewers_listviewerelement_has_label():
+    assert hasattr(viewers_ListViewerElement, "label")
     descriptor = None
-    for klass in viewers::TableViewerElement.__mro__:
+    for klass in viewers_ListViewerElement.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_viewers_listviewerinput_is_not_abstract():
+    assert not inspect.isabstract(viewers_ListViewerInput)
+
+
+def test_viewers_listviewerinput_constructor_exists():
+    assert callable(viewers_ListViewerInput.__init__)
+
+
+def test_viewers_listviewerinput_constructor_args():
+    sig = inspect.signature(viewers_ListViewerInput.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -169,111 +169,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-viewers::TableViewerInput_strategy = st.builds(
-    viewers::TableViewerInput,
+viewers_ViewerInputs_strategy = st.builds(
+    viewers_ViewerInputs,
 )
-viewers::ListViewerElement_strategy = st.builds(
-    viewers::ListViewerElement,
+viewers_TreeViewerElement_strategy = st.builds(
+    viewers_TreeViewerElement,
     label=
         safe_text
 )
-viewers::ListViewerInput_strategy = st.builds(
-    viewers::ListViewerInput,
+viewers_TreeViewerInput_strategy = st.builds(
+    viewers_TreeViewerInput,
 )
-viewers::ViewerInputs_strategy = st.builds(
-    viewers::ViewerInputs,
-)
-viewers::TreeViewerElement_strategy = st.builds(
-    viewers::TreeViewerElement,
+viewers_TableViewerElement_strategy = st.builds(
+    viewers_TableViewerElement,
     label=
-        safe_text
-)
-viewers::TreeViewerInput_strategy = st.builds(
-    viewers::TreeViewerInput,
-)
-viewers::TableViewerElement_strategy = st.builds(
-    viewers::TableViewerElement,
-    name=
         safe_text,
+    name=
+        safe_text
+)
+viewers_TableViewerInput_strategy = st.builds(
+    viewers_TableViewerInput,
+)
+viewers_ListViewerElement_strategy = st.builds(
+    viewers_ListViewerElement,
     label=
         safe_text
 )
+viewers_ListViewerInput_strategy = st.builds(
+    viewers_ListViewerInput,
+)
 
-@given(instance=viewers::TableViewerInput_strategy)
+@given(instance=viewers_ViewerInputs_strategy)
 @settings(max_examples=50)
-def test_viewers::tableviewerinput_instantiation(instance):
-    assert isinstance(instance, viewers::TableViewerInput)
+def test_viewers_viewerinputs_instantiation(instance):
+    assert isinstance(instance, viewers_ViewerInputs)
 
-@given(instance=viewers::ListViewerElement_strategy)
+@given(instance=viewers_TreeViewerElement_strategy)
 @settings(max_examples=50)
-def test_viewers::listviewerelement_instantiation(instance):
-    assert isinstance(instance, viewers::ListViewerElement)
-
-@given(instance=viewers::ListViewerElement_strategy)
-def test_viewers::listviewerelement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_viewers_treeviewerelement_instantiation(instance):
+    assert isinstance(instance, viewers_TreeViewerElement)
 
 
-@given(instance=viewers::ListViewerElement_strategy)
-def test_viewers::listviewerelement_label_setter(instance):
+
+@given(instance=viewers_TreeViewerElement_strategy)
+def test_viewers_treeviewerelement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=viewers::ListViewerInput_strategy)
+@given(instance=viewers_TreeViewerInput_strategy)
 @settings(max_examples=50)
-def test_viewers::listviewerinput_instantiation(instance):
-    assert isinstance(instance, viewers::ListViewerInput)
+def test_viewers_treeviewerinput_instantiation(instance):
+    assert isinstance(instance, viewers_TreeViewerInput)
 
-@given(instance=viewers::ViewerInputs_strategy)
+@given(instance=viewers_TableViewerElement_strategy)
 @settings(max_examples=50)
-def test_viewers::viewerinputs_instantiation(instance):
-    assert isinstance(instance, viewers::ViewerInputs)
-
-@given(instance=viewers::TreeViewerElement_strategy)
-@settings(max_examples=50)
-def test_viewers::treeviewerelement_instantiation(instance):
-    assert isinstance(instance, viewers::TreeViewerElement)
-
-@given(instance=viewers::TreeViewerElement_strategy)
-def test_viewers::treeviewerelement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_viewers_tableviewerelement_instantiation(instance):
+    assert isinstance(instance, viewers_TableViewerElement)
 
 
-@given(instance=viewers::TreeViewerElement_strategy)
-def test_viewers::treeviewerelement_label_setter(instance):
+
+@given(instance=viewers_TableViewerElement_strategy)
+def test_viewers_tableviewerelement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=viewers::TreeViewerInput_strategy)
-@settings(max_examples=50)
-def test_viewers::treeviewerinput_instantiation(instance):
-    assert isinstance(instance, viewers::TreeViewerInput)
-
-@given(instance=viewers::TableViewerElement_strategy)
-@settings(max_examples=50)
-def test_viewers::tableviewerelement_instantiation(instance):
-    assert isinstance(instance, viewers::TableViewerElement)
-
-@given(instance=viewers::TableViewerElement_strategy)
-def test_viewers::tableviewerelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=viewers::TableViewerElement_strategy)
-def test_viewers::tableviewerelement_name_setter(instance):
+@given(instance=viewers_TableViewerElement_strategy)
+def test_viewers_tableviewerelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=viewers::TableViewerElement_strategy)
-def test_viewers::tableviewerelement_label_type(instance):
-    assert isinstance(instance.label, str)
+@given(instance=viewers_TableViewerInput_strategy)
+@settings(max_examples=50)
+def test_viewers_tableviewerinput_instantiation(instance):
+    assert isinstance(instance, viewers_TableViewerInput)
+
+@given(instance=viewers_ListViewerElement_strategy)
+@settings(max_examples=50)
+def test_viewers_listviewerelement_instantiation(instance):
+    assert isinstance(instance, viewers_ListViewerElement)
 
 
-@given(instance=viewers::TableViewerElement_strategy)
-def test_viewers::tableviewerelement_label_setter(instance):
+
+@given(instance=viewers_ListViewerElement_strategy)
+def test_viewers_listviewerelement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
+
+@given(instance=viewers_ListViewerInput_strategy)
+@settings(max_examples=50)
+def test_viewers_listviewerinput_instantiation(instance):
+    assert isinstance(instance, viewers_ListViewerInput)

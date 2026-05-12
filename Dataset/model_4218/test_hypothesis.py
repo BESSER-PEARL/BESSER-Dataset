@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    talltree::TallNode,
+from python_code import (
+    talltree_TallNode,
 )
 
 # =============================================================================
@@ -15,35 +15,35 @@ from classes import (
 
 
 
-def test_talltree::tallnode_is_not_abstract():
-    assert not inspect.isabstract(talltree::TallNode)
+def test_talltree_tallnode_is_not_abstract():
+    assert not inspect.isabstract(talltree_TallNode)
 
 
-def test_talltree::tallnode_constructor_exists():
-    assert callable(talltree::TallNode.__init__)
+def test_talltree_tallnode_constructor_exists():
+    assert callable(talltree_TallNode.__init__)
 
 
-def test_talltree::tallnode_constructor_args():
-    sig = inspect.signature(talltree::TallNode.__init__)
+def test_talltree_tallnode_constructor_args():
+    sig = inspect.signature(talltree_TallNode.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_talltree::tallnode_has_name():
-    assert hasattr(talltree::TallNode, "name")
+def test_talltree_tallnode_has_height():
+    assert hasattr(talltree_TallNode, "height")
     descriptor = None
-    for klass in talltree::TallNode.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in talltree_TallNode.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-def test_talltree::tallnode_has_height():
-    assert hasattr(talltree::TallNode, "height")
+def test_talltree_tallnode_has_name():
+    assert hasattr(talltree_TallNode, "name")
     descriptor = None
-    for klass in talltree::TallNode.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
+    for klass in talltree_TallNode.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -59,37 +59,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-talltree::TallNode_strategy = st.builds(
-    talltree::TallNode,
-    name=
-        safe_text,
+talltree_TallNode_strategy = st.builds(
+    talltree_TallNode,
     height=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 
-@given(instance=talltree::TallNode_strategy)
+@given(instance=talltree_TallNode_strategy)
 @settings(max_examples=50)
-def test_talltree::tallnode_instantiation(instance):
-    assert isinstance(instance, talltree::TallNode)
-
-@given(instance=talltree::TallNode_strategy)
-def test_talltree::tallnode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_talltree_tallnode_instantiation(instance):
+    assert isinstance(instance, talltree_TallNode)
 
 
-@given(instance=talltree::TallNode_strategy)
-def test_talltree::tallnode_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=talltree::TallNode_strategy)
-def test_talltree::tallnode_height_type(instance):
-    assert isinstance(instance.height, int)
-
-
-@given(instance=talltree::TallNode_strategy)
-def test_talltree::tallnode_height_setter(instance):
+@given(instance=talltree_TallNode_strategy)
+def test_talltree_tallnode_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
+
+
+
+@given(instance=talltree_TallNode_strategy)
+def test_talltree_tallnode_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

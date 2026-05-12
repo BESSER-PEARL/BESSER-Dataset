@@ -3,110 +3,58 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TypedElement,
-    Wires::Transformation,
-    Wires::Model,
+from python_code import (
     Query,
-    Wires::GenericQuery,
+    Wires_GenericQuery,
     AtomicModelTransformation,
-    Wires::GenericTransformation,
-    Wires::IdentityTransformation,
+    Wires_GenericTransformation,
+    Wires_IdentityTransformation,
     ActualParameter,
-    Wires::TypeParameter,
+    Wires_TypeParameter,
     FormalParameter,
-    Wires::WiresElement,
-    Wires::WiresSpecification,
+    Wires_WiresElement,
+    Wires_WiresSpecification,
     WiresSpecification,
-    Wires::BasicData,
     DataType,
-    Wires::BasicDataType,
-    Wires::ModelType,
+    Wires_BasicDataType,
+    Wires_ModelType,
     TransformationType,
-    Wires::AtomicModelTransfomationType,
-    Wires::CompositeTransformationType,
-    Wires::QueryType,
-    Wires::InputFormalParameter,
-    Wires::LibraryRef,
-    Wires::OutputFormalParameter,
+    Wires_AtomicModelTransfomationType,
+    Wires_CompositeTransformationType,
+    Wires_QueryType,
+    Wires_InputFormalParameter,
+    Wires_LibraryRef,
+    Wires_OutputFormalParameter,
     WiresElement,
-    Wires::DataFlow,
-    Wires::Library,
-    Wires::ConnectableElement,
-    Wires::ActualParameter,
+    Wires_ConnectableElement,
+    Wires_Library,
+    Wires_DataFlow,
     Type,
-    Wires::TransformationType,
-    Wires::FormalParameter,
-    Wires::DataType,
+    Wires_TransformationType,
+    Wires_FormalParameter,
+    Wires_DataType,
     ConnectableElement,
-    Wires::Type,
-    Wires::TypedElement,
+    Wires_Type,
+    Wires_TypedElement,
     Transformation,
-    Wires::CompositeTransformation,
-    Wires::AtomicModelTransformation,
-    Wires::Query,
-    Wires::DecisionNode,
-    Wires::OutputActualParameter,
-    Wires::InputActualParameter,
+    Wires_AtomicModelTransformation,
+    Wires_CompositeTransformation,
+    Wires_Query,
+    Wires_DecisionNode,
+    Wires_OutputActualParameter,
+    Wires_InputActualParameter,
+    TypedElement,
+    Wires_ActualParameter,
+    Wires_BasicData,
+    Wires_Model,
+    Wires_Transformation,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_typedelement_is_not_abstract():
-    assert not inspect.isabstract(TypedElement)
-
-
-def test_typedelement_constructor_exists():
-    assert callable(TypedElement.__init__)
-
-
-def test_typedelement_constructor_args():
-    sig = inspect.signature(TypedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wires::transformation_is_not_abstract():
-    assert not inspect.isabstract(Wires::Transformation)
-
-
-def test_wires::transformation_constructor_exists():
-    assert callable(Wires::Transformation.__init__)
-
-
-def test_wires::transformation_constructor_args():
-    sig = inspect.signature(Wires::Transformation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wires::model_is_not_abstract():
-    assert not inspect.isabstract(Wires::Model)
-
-
-def test_wires::model_constructor_exists():
-    assert callable(Wires::Model.__init__)
-
-
-def test_wires::model_constructor_args():
-    sig = inspect.signature(Wires::Model.__init__)
-    params = list(sig.parameters.keys())
-    assert "path" in params, "Missing parameter 'path'"
-
-def test_wires::model_has_path():
-    assert hasattr(Wires::Model, "path")
-    descriptor = None
-    for klass in Wires::Model.__mro__:
-        if "path" in klass.__dict__:
-            descriptor = klass.__dict__["path"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -124,16 +72,16 @@ def test_query_constructor_args():
 
 
 
-def test_wires::genericquery_is_not_abstract():
-    assert not inspect.isabstract(Wires::GenericQuery)
+def test_wires_genericquery_is_not_abstract():
+    assert not inspect.isabstract(Wires_GenericQuery)
 
 
-def test_wires::genericquery_constructor_exists():
-    assert callable(Wires::GenericQuery.__init__)
+def test_wires_genericquery_constructor_exists():
+    assert callable(Wires_GenericQuery.__init__)
 
 
-def test_wires::genericquery_constructor_args():
-    sig = inspect.signature(Wires::GenericQuery.__init__)
+def test_wires_genericquery_constructor_args():
+    sig = inspect.signature(Wires_GenericQuery.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -152,30 +100,30 @@ def test_atomicmodeltransformation_constructor_args():
 
 
 
-def test_wires::generictransformation_is_not_abstract():
-    assert not inspect.isabstract(Wires::GenericTransformation)
+def test_wires_generictransformation_is_not_abstract():
+    assert not inspect.isabstract(Wires_GenericTransformation)
 
 
-def test_wires::generictransformation_constructor_exists():
-    assert callable(Wires::GenericTransformation.__init__)
+def test_wires_generictransformation_constructor_exists():
+    assert callable(Wires_GenericTransformation.__init__)
 
 
-def test_wires::generictransformation_constructor_args():
-    sig = inspect.signature(Wires::GenericTransformation.__init__)
+def test_wires_generictransformation_constructor_args():
+    sig = inspect.signature(Wires_GenericTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::identitytransformation_is_not_abstract():
-    assert not inspect.isabstract(Wires::IdentityTransformation)
+def test_wires_identitytransformation_is_not_abstract():
+    assert not inspect.isabstract(Wires_IdentityTransformation)
 
 
-def test_wires::identitytransformation_constructor_exists():
-    assert callable(Wires::IdentityTransformation.__init__)
+def test_wires_identitytransformation_constructor_exists():
+    assert callable(Wires_IdentityTransformation.__init__)
 
 
-def test_wires::identitytransformation_constructor_args():
-    sig = inspect.signature(Wires::IdentityTransformation.__init__)
+def test_wires_identitytransformation_constructor_args():
+    sig = inspect.signature(Wires_IdentityTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,16 +142,16 @@ def test_actualparameter_constructor_args():
 
 
 
-def test_wires::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::TypeParameter)
+def test_wires_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_TypeParameter)
 
 
-def test_wires::typeparameter_constructor_exists():
-    assert callable(Wires::TypeParameter.__init__)
+def test_wires_typeparameter_constructor_exists():
+    assert callable(Wires_TypeParameter.__init__)
 
 
-def test_wires::typeparameter_constructor_args():
-    sig = inspect.signature(Wires::TypeParameter.__init__)
+def test_wires_typeparameter_constructor_args():
+    sig = inspect.signature(Wires_TypeParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -222,30 +170,30 @@ def test_formalparameter_constructor_args():
 
 
 
-def test_wires::wireselement_is_not_abstract():
-    assert not inspect.isabstract(Wires::WiresElement)
+def test_wires_wireselement_is_not_abstract():
+    assert not inspect.isabstract(Wires_WiresElement)
 
 
-def test_wires::wireselement_constructor_exists():
-    assert callable(Wires::WiresElement.__init__)
+def test_wires_wireselement_constructor_exists():
+    assert callable(Wires_WiresElement.__init__)
 
 
-def test_wires::wireselement_constructor_args():
-    sig = inspect.signature(Wires::WiresElement.__init__)
+def test_wires_wireselement_constructor_args():
+    sig = inspect.signature(Wires_WiresElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::wiresspecification_is_not_abstract():
-    assert not inspect.isabstract(Wires::WiresSpecification)
+def test_wires_wiresspecification_is_not_abstract():
+    assert not inspect.isabstract(Wires_WiresSpecification)
 
 
-def test_wires::wiresspecification_constructor_exists():
-    assert callable(Wires::WiresSpecification.__init__)
+def test_wires_wiresspecification_constructor_exists():
+    assert callable(Wires_WiresSpecification.__init__)
 
 
-def test_wires::wiresspecification_constructor_args():
-    sig = inspect.signature(Wires::WiresSpecification.__init__)
+def test_wires_wiresspecification_constructor_args():
+    sig = inspect.signature(Wires_WiresSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -264,30 +212,6 @@ def test_wiresspecification_constructor_args():
 
 
 
-def test_wires::basicdata_is_not_abstract():
-    assert not inspect.isabstract(Wires::BasicData)
-
-
-def test_wires::basicdata_constructor_exists():
-    assert callable(Wires::BasicData.__init__)
-
-
-def test_wires::basicdata_constructor_args():
-    sig = inspect.signature(Wires::BasicData.__init__)
-    params = list(sig.parameters.keys())
-    assert "path" in params, "Missing parameter 'path'"
-
-def test_wires::basicdata_has_path():
-    assert hasattr(Wires::BasicData, "path")
-    descriptor = None
-    for klass in Wires::BasicData.__mro__:
-        if "path" in klass.__dict__:
-            descriptor = klass.__dict__["path"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
 def test_datatype_is_not_abstract():
     assert not inspect.isabstract(DataType)
 
@@ -302,37 +226,37 @@ def test_datatype_constructor_args():
 
 
 
-def test_wires::basicdatatype_is_not_abstract():
-    assert not inspect.isabstract(Wires::BasicDataType)
+def test_wires_basicdatatype_is_not_abstract():
+    assert not inspect.isabstract(Wires_BasicDataType)
 
 
-def test_wires::basicdatatype_constructor_exists():
-    assert callable(Wires::BasicDataType.__init__)
+def test_wires_basicdatatype_constructor_exists():
+    assert callable(Wires_BasicDataType.__init__)
 
 
-def test_wires::basicdatatype_constructor_args():
-    sig = inspect.signature(Wires::BasicDataType.__init__)
+def test_wires_basicdatatype_constructor_args():
+    sig = inspect.signature(Wires_BasicDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::modeltype_is_not_abstract():
-    assert not inspect.isabstract(Wires::ModelType)
+def test_wires_modeltype_is_not_abstract():
+    assert not inspect.isabstract(Wires_ModelType)
 
 
-def test_wires::modeltype_constructor_exists():
-    assert callable(Wires::ModelType.__init__)
+def test_wires_modeltype_constructor_exists():
+    assert callable(Wires_ModelType.__init__)
 
 
-def test_wires::modeltype_constructor_args():
-    sig = inspect.signature(Wires::ModelType.__init__)
+def test_wires_modeltype_constructor_args():
+    sig = inspect.signature(Wires_ModelType.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_wires::modeltype_has_uri():
-    assert hasattr(Wires::ModelType, "uri")
+def test_wires_modeltype_has_uri():
+    assert hasattr(Wires_ModelType, "uri")
     descriptor = None
-    for klass in Wires::ModelType.__mro__:
+    for klass in Wires_ModelType.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -354,79 +278,79 @@ def test_transformationtype_constructor_args():
 
 
 
-def test_wires::atomicmodeltransfomationtype_is_not_abstract():
-    assert not inspect.isabstract(Wires::AtomicModelTransfomationType)
+def test_wires_atomicmodeltransfomationtype_is_not_abstract():
+    assert not inspect.isabstract(Wires_AtomicModelTransfomationType)
 
 
-def test_wires::atomicmodeltransfomationtype_constructor_exists():
-    assert callable(Wires::AtomicModelTransfomationType.__init__)
+def test_wires_atomicmodeltransfomationtype_constructor_exists():
+    assert callable(Wires_AtomicModelTransfomationType.__init__)
 
 
-def test_wires::atomicmodeltransfomationtype_constructor_args():
-    sig = inspect.signature(Wires::AtomicModelTransfomationType.__init__)
+def test_wires_atomicmodeltransfomationtype_constructor_args():
+    sig = inspect.signature(Wires_AtomicModelTransfomationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::compositetransformationtype_is_not_abstract():
-    assert not inspect.isabstract(Wires::CompositeTransformationType)
+def test_wires_compositetransformationtype_is_not_abstract():
+    assert not inspect.isabstract(Wires_CompositeTransformationType)
 
 
-def test_wires::compositetransformationtype_constructor_exists():
-    assert callable(Wires::CompositeTransformationType.__init__)
+def test_wires_compositetransformationtype_constructor_exists():
+    assert callable(Wires_CompositeTransformationType.__init__)
 
 
-def test_wires::compositetransformationtype_constructor_args():
-    sig = inspect.signature(Wires::CompositeTransformationType.__init__)
+def test_wires_compositetransformationtype_constructor_args():
+    sig = inspect.signature(Wires_CompositeTransformationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::querytype_is_not_abstract():
-    assert not inspect.isabstract(Wires::QueryType)
+def test_wires_querytype_is_not_abstract():
+    assert not inspect.isabstract(Wires_QueryType)
 
 
-def test_wires::querytype_constructor_exists():
-    assert callable(Wires::QueryType.__init__)
+def test_wires_querytype_constructor_exists():
+    assert callable(Wires_QueryType.__init__)
 
 
-def test_wires::querytype_constructor_args():
-    sig = inspect.signature(Wires::QueryType.__init__)
+def test_wires_querytype_constructor_args():
+    sig = inspect.signature(Wires_QueryType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::inputformalparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::InputFormalParameter)
+def test_wires_inputformalparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_InputFormalParameter)
 
 
-def test_wires::inputformalparameter_constructor_exists():
-    assert callable(Wires::InputFormalParameter.__init__)
+def test_wires_inputformalparameter_constructor_exists():
+    assert callable(Wires_InputFormalParameter.__init__)
 
 
-def test_wires::inputformalparameter_constructor_args():
-    sig = inspect.signature(Wires::InputFormalParameter.__init__)
+def test_wires_inputformalparameter_constructor_args():
+    sig = inspect.signature(Wires_InputFormalParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::libraryref_is_not_abstract():
-    assert not inspect.isabstract(Wires::LibraryRef)
+def test_wires_libraryref_is_not_abstract():
+    assert not inspect.isabstract(Wires_LibraryRef)
 
 
-def test_wires::libraryref_constructor_exists():
-    assert callable(Wires::LibraryRef.__init__)
+def test_wires_libraryref_constructor_exists():
+    assert callable(Wires_LibraryRef.__init__)
 
 
-def test_wires::libraryref_constructor_args():
-    sig = inspect.signature(Wires::LibraryRef.__init__)
+def test_wires_libraryref_constructor_args():
+    sig = inspect.signature(Wires_LibraryRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wires::libraryref_has_name():
-    assert hasattr(Wires::LibraryRef, "name")
+def test_wires_libraryref_has_name():
+    assert hasattr(Wires_LibraryRef, "name")
     descriptor = None
-    for klass in Wires::LibraryRef.__mro__:
+    for klass in Wires_LibraryRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -434,16 +358,16 @@ def test_wires::libraryref_has_name():
 
 
 
-def test_wires::outputformalparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::OutputFormalParameter)
+def test_wires_outputformalparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_OutputFormalParameter)
 
 
-def test_wires::outputformalparameter_constructor_exists():
-    assert callable(Wires::OutputFormalParameter.__init__)
+def test_wires_outputformalparameter_constructor_exists():
+    assert callable(Wires_OutputFormalParameter.__init__)
 
 
-def test_wires::outputformalparameter_constructor_args():
-    sig = inspect.signature(Wires::OutputFormalParameter.__init__)
+def test_wires_outputformalparameter_constructor_args():
+    sig = inspect.signature(Wires_OutputFormalParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -462,71 +386,57 @@ def test_wireselement_constructor_args():
 
 
 
-def test_wires::dataflow_is_not_abstract():
-    assert not inspect.isabstract(Wires::DataFlow)
+def test_wires_connectableelement_is_not_abstract():
+    assert not inspect.isabstract(Wires_ConnectableElement)
 
 
-def test_wires::dataflow_constructor_exists():
-    assert callable(Wires::DataFlow.__init__)
+def test_wires_connectableelement_constructor_exists():
+    assert callable(Wires_ConnectableElement.__init__)
 
 
-def test_wires::dataflow_constructor_args():
-    sig = inspect.signature(Wires::DataFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wires::library_is_not_abstract():
-    assert not inspect.isabstract(Wires::Library)
-
-
-def test_wires::library_constructor_exists():
-    assert callable(Wires::Library.__init__)
-
-
-def test_wires::library_constructor_args():
-    sig = inspect.signature(Wires::Library.__init__)
+def test_wires_connectableelement_constructor_args():
+    sig = inspect.signature(Wires_ConnectableElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "path" in params, "Missing parameter 'path'"
 
-def test_wires::library_has_name():
-    assert hasattr(Wires::Library, "name")
+def test_wires_connectableelement_has_name():
+    assert hasattr(Wires_ConnectableElement, "name")
     descriptor = None
-    for klass in Wires::Library.__mro__:
+    for klass in Wires_ConnectableElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_wires::library_has_path():
-    assert hasattr(Wires::Library, "path")
+
+
+def test_wires_library_is_not_abstract():
+    assert not inspect.isabstract(Wires_Library)
+
+
+def test_wires_library_constructor_exists():
+    assert callable(Wires_Library.__init__)
+
+
+def test_wires_library_constructor_args():
+    sig = inspect.signature(Wires_Library.__init__)
+    params = list(sig.parameters.keys())
+    assert "path" in params, "Missing parameter 'path'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_wires_library_has_path():
+    assert hasattr(Wires_Library, "path")
     descriptor = None
-    for klass in Wires::Library.__mro__:
+    for klass in Wires_Library.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_wires::connectableelement_is_not_abstract():
-    assert not inspect.isabstract(Wires::ConnectableElement)
-
-
-def test_wires::connectableelement_constructor_exists():
-    assert callable(Wires::ConnectableElement.__init__)
-
-
-def test_wires::connectableelement_constructor_args():
-    sig = inspect.signature(Wires::ConnectableElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_wires::connectableelement_has_name():
-    assert hasattr(Wires::ConnectableElement, "name")
+def test_wires_library_has_name():
+    assert hasattr(Wires_Library, "name")
     descriptor = None
-    for klass in Wires::ConnectableElement.__mro__:
+    for klass in Wires_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -534,16 +444,16 @@ def test_wires::connectableelement_has_name():
 
 
 
-def test_wires::actualparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::ActualParameter)
+def test_wires_dataflow_is_not_abstract():
+    assert not inspect.isabstract(Wires_DataFlow)
 
 
-def test_wires::actualparameter_constructor_exists():
-    assert callable(Wires::ActualParameter.__init__)
+def test_wires_dataflow_constructor_exists():
+    assert callable(Wires_DataFlow.__init__)
 
 
-def test_wires::actualparameter_constructor_args():
-    sig = inspect.signature(Wires::ActualParameter.__init__)
+def test_wires_dataflow_constructor_args():
+    sig = inspect.signature(Wires_DataFlow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -562,37 +472,37 @@ def test_type_constructor_args():
 
 
 
-def test_wires::transformationtype_is_not_abstract():
-    assert not inspect.isabstract(Wires::TransformationType)
+def test_wires_transformationtype_is_not_abstract():
+    assert not inspect.isabstract(Wires_TransformationType)
 
 
-def test_wires::transformationtype_constructor_exists():
-    assert callable(Wires::TransformationType.__init__)
+def test_wires_transformationtype_constructor_exists():
+    assert callable(Wires_TransformationType.__init__)
 
 
-def test_wires::transformationtype_constructor_args():
-    sig = inspect.signature(Wires::TransformationType.__init__)
+def test_wires_transformationtype_constructor_args():
+    sig = inspect.signature(Wires_TransformationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::formalparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::FormalParameter)
+def test_wires_formalparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_FormalParameter)
 
 
-def test_wires::formalparameter_constructor_exists():
-    assert callable(Wires::FormalParameter.__init__)
+def test_wires_formalparameter_constructor_exists():
+    assert callable(Wires_FormalParameter.__init__)
 
 
-def test_wires::formalparameter_constructor_args():
-    sig = inspect.signature(Wires::FormalParameter.__init__)
+def test_wires_formalparameter_constructor_args():
+    sig = inspect.signature(Wires_FormalParameter.__init__)
     params = list(sig.parameters.keys())
     assert "typeName" in params, "Missing parameter 'typeName'"
 
-def test_wires::formalparameter_has_typeName():
-    assert hasattr(Wires::FormalParameter, "typeName")
+def test_wires_formalparameter_has_typeName():
+    assert hasattr(Wires_FormalParameter, "typeName")
     descriptor = None
-    for klass in Wires::FormalParameter.__mro__:
+    for klass in Wires_FormalParameter.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
@@ -600,16 +510,16 @@ def test_wires::formalparameter_has_typeName():
 
 
 
-def test_wires::datatype_is_not_abstract():
-    assert not inspect.isabstract(Wires::DataType)
+def test_wires_datatype_is_not_abstract():
+    assert not inspect.isabstract(Wires_DataType)
 
 
-def test_wires::datatype_constructor_exists():
-    assert callable(Wires::DataType.__init__)
+def test_wires_datatype_constructor_exists():
+    assert callable(Wires_DataType.__init__)
 
 
-def test_wires::datatype_constructor_args():
-    sig = inspect.signature(Wires::DataType.__init__)
+def test_wires_datatype_constructor_args():
+    sig = inspect.signature(Wires_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -628,23 +538,23 @@ def test_connectableelement_constructor_args():
 
 
 
-def test_wires::type_is_not_abstract():
-    assert not inspect.isabstract(Wires::Type)
+def test_wires_type_is_not_abstract():
+    assert not inspect.isabstract(Wires_Type)
 
 
-def test_wires::type_constructor_exists():
-    assert callable(Wires::Type.__init__)
+def test_wires_type_constructor_exists():
+    assert callable(Wires_Type.__init__)
 
 
-def test_wires::type_constructor_args():
-    sig = inspect.signature(Wires::Type.__init__)
+def test_wires_type_constructor_args():
+    sig = inspect.signature(Wires_Type.__init__)
     params = list(sig.parameters.keys())
     assert "path" in params, "Missing parameter 'path'"
 
-def test_wires::type_has_path():
-    assert hasattr(Wires::Type, "path")
+def test_wires_type_has_path():
+    assert hasattr(Wires_Type, "path")
     descriptor = None
-    for klass in Wires::Type.__mro__:
+    for klass in Wires_Type.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
@@ -652,16 +562,16 @@ def test_wires::type_has_path():
 
 
 
-def test_wires::typedelement_is_not_abstract():
-    assert not inspect.isabstract(Wires::TypedElement)
+def test_wires_typedelement_is_not_abstract():
+    assert not inspect.isabstract(Wires_TypedElement)
 
 
-def test_wires::typedelement_constructor_exists():
-    assert callable(Wires::TypedElement.__init__)
+def test_wires_typedelement_constructor_exists():
+    assert callable(Wires_TypedElement.__init__)
 
 
-def test_wires::typedelement_constructor_args():
-    sig = inspect.signature(Wires::TypedElement.__init__)
+def test_wires_typedelement_constructor_args():
+    sig = inspect.signature(Wires_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -680,65 +590,65 @@ def test_transformation_constructor_args():
 
 
 
-def test_wires::compositetransformation_is_not_abstract():
-    assert not inspect.isabstract(Wires::CompositeTransformation)
+def test_wires_atomicmodeltransformation_is_not_abstract():
+    assert not inspect.isabstract(Wires_AtomicModelTransformation)
 
 
-def test_wires::compositetransformation_constructor_exists():
-    assert callable(Wires::CompositeTransformation.__init__)
+def test_wires_atomicmodeltransformation_constructor_exists():
+    assert callable(Wires_AtomicModelTransformation.__init__)
 
 
-def test_wires::compositetransformation_constructor_args():
-    sig = inspect.signature(Wires::CompositeTransformation.__init__)
+def test_wires_atomicmodeltransformation_constructor_args():
+    sig = inspect.signature(Wires_AtomicModelTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::atomicmodeltransformation_is_not_abstract():
-    assert not inspect.isabstract(Wires::AtomicModelTransformation)
+def test_wires_compositetransformation_is_not_abstract():
+    assert not inspect.isabstract(Wires_CompositeTransformation)
 
 
-def test_wires::atomicmodeltransformation_constructor_exists():
-    assert callable(Wires::AtomicModelTransformation.__init__)
+def test_wires_compositetransformation_constructor_exists():
+    assert callable(Wires_CompositeTransformation.__init__)
 
 
-def test_wires::atomicmodeltransformation_constructor_args():
-    sig = inspect.signature(Wires::AtomicModelTransformation.__init__)
+def test_wires_compositetransformation_constructor_args():
+    sig = inspect.signature(Wires_CompositeTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::query_is_not_abstract():
-    assert not inspect.isabstract(Wires::Query)
+def test_wires_query_is_not_abstract():
+    assert not inspect.isabstract(Wires_Query)
 
 
-def test_wires::query_constructor_exists():
-    assert callable(Wires::Query.__init__)
+def test_wires_query_constructor_exists():
+    assert callable(Wires_Query.__init__)
 
 
-def test_wires::query_constructor_args():
-    sig = inspect.signature(Wires::Query.__init__)
+def test_wires_query_constructor_args():
+    sig = inspect.signature(Wires_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(Wires::DecisionNode)
+def test_wires_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(Wires_DecisionNode)
 
 
-def test_wires::decisionnode_constructor_exists():
-    assert callable(Wires::DecisionNode.__init__)
+def test_wires_decisionnode_constructor_exists():
+    assert callable(Wires_DecisionNode.__init__)
 
 
-def test_wires::decisionnode_constructor_args():
-    sig = inspect.signature(Wires::DecisionNode.__init__)
+def test_wires_decisionnode_constructor_args():
+    sig = inspect.signature(Wires_DecisionNode.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_wires::decisionnode_has_expression():
-    assert hasattr(Wires::DecisionNode, "expression")
+def test_wires_decisionnode_has_expression():
+    assert hasattr(Wires_DecisionNode, "expression")
     descriptor = None
-    for klass in Wires::DecisionNode.__mro__:
+    for klass in Wires_DecisionNode.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -746,30 +656,120 @@ def test_wires::decisionnode_has_expression():
 
 
 
-def test_wires::outputactualparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::OutputActualParameter)
+def test_wires_outputactualparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_OutputActualParameter)
 
 
-def test_wires::outputactualparameter_constructor_exists():
-    assert callable(Wires::OutputActualParameter.__init__)
+def test_wires_outputactualparameter_constructor_exists():
+    assert callable(Wires_OutputActualParameter.__init__)
 
 
-def test_wires::outputactualparameter_constructor_args():
-    sig = inspect.signature(Wires::OutputActualParameter.__init__)
+def test_wires_outputactualparameter_constructor_args():
+    sig = inspect.signature(Wires_OutputActualParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wires::inputactualparameter_is_not_abstract():
-    assert not inspect.isabstract(Wires::InputActualParameter)
+def test_wires_inputactualparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_InputActualParameter)
 
 
-def test_wires::inputactualparameter_constructor_exists():
-    assert callable(Wires::InputActualParameter.__init__)
+def test_wires_inputactualparameter_constructor_exists():
+    assert callable(Wires_InputActualParameter.__init__)
 
 
-def test_wires::inputactualparameter_constructor_args():
-    sig = inspect.signature(Wires::InputActualParameter.__init__)
+def test_wires_inputactualparameter_constructor_args():
+    sig = inspect.signature(Wires_InputActualParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_typedelement_is_not_abstract():
+    assert not inspect.isabstract(TypedElement)
+
+
+def test_typedelement_constructor_exists():
+    assert callable(TypedElement.__init__)
+
+
+def test_typedelement_constructor_args():
+    sig = inspect.signature(TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wires_actualparameter_is_not_abstract():
+    assert not inspect.isabstract(Wires_ActualParameter)
+
+
+def test_wires_actualparameter_constructor_exists():
+    assert callable(Wires_ActualParameter.__init__)
+
+
+def test_wires_actualparameter_constructor_args():
+    sig = inspect.signature(Wires_ActualParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wires_basicdata_is_not_abstract():
+    assert not inspect.isabstract(Wires_BasicData)
+
+
+def test_wires_basicdata_constructor_exists():
+    assert callable(Wires_BasicData.__init__)
+
+
+def test_wires_basicdata_constructor_args():
+    sig = inspect.signature(Wires_BasicData.__init__)
+    params = list(sig.parameters.keys())
+    assert "path" in params, "Missing parameter 'path'"
+
+def test_wires_basicdata_has_path():
+    assert hasattr(Wires_BasicData, "path")
+    descriptor = None
+    for klass in Wires_BasicData.__mro__:
+        if "path" in klass.__dict__:
+            descriptor = klass.__dict__["path"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_wires_model_is_not_abstract():
+    assert not inspect.isabstract(Wires_Model)
+
+
+def test_wires_model_constructor_exists():
+    assert callable(Wires_Model.__init__)
+
+
+def test_wires_model_constructor_args():
+    sig = inspect.signature(Wires_Model.__init__)
+    params = list(sig.parameters.keys())
+    assert "path" in params, "Missing parameter 'path'"
+
+def test_wires_model_has_path():
+    assert hasattr(Wires_Model, "path")
+    descriptor = None
+    for klass in Wires_Model.__mro__:
+        if "path" in klass.__dict__:
+            descriptor = klass.__dict__["path"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_wires_transformation_is_not_abstract():
+    assert not inspect.isabstract(Wires_Transformation)
+
+
+def test_wires_transformation_constructor_exists():
+    assert callable(Wires_Transformation.__init__)
+
+
+def test_wires_transformation_constructor_args():
+    sig = inspect.signature(Wires_Transformation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -784,278 +784,233 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TypedElement_strategy = st.builds(
-    TypedElement,
-)
-Wires::Transformation_strategy = st.builds(
-    Wires::Transformation,
-)
-Wires::Model_strategy = st.builds(
-    Wires::Model,
-    path=
-        safe_text
-)
 Query_strategy = st.builds(
     Query,
 )
-Wires::GenericQuery_strategy = st.builds(
-    Wires::GenericQuery,
+Wires_GenericQuery_strategy = st.builds(
+    Wires_GenericQuery,
 )
 AtomicModelTransformation_strategy = st.builds(
     AtomicModelTransformation,
 )
-Wires::GenericTransformation_strategy = st.builds(
-    Wires::GenericTransformation,
+Wires_GenericTransformation_strategy = st.builds(
+    Wires_GenericTransformation,
 )
-Wires::IdentityTransformation_strategy = st.builds(
-    Wires::IdentityTransformation,
+Wires_IdentityTransformation_strategy = st.builds(
+    Wires_IdentityTransformation,
 )
 ActualParameter_strategy = st.builds(
     ActualParameter,
 )
-Wires::TypeParameter_strategy = st.builds(
-    Wires::TypeParameter,
+Wires_TypeParameter_strategy = st.builds(
+    Wires_TypeParameter,
 )
 FormalParameter_strategy = st.builds(
     FormalParameter,
 )
-Wires::WiresElement_strategy = st.builds(
-    Wires::WiresElement,
+Wires_WiresElement_strategy = st.builds(
+    Wires_WiresElement,
 )
-Wires::WiresSpecification_strategy = st.builds(
-    Wires::WiresSpecification,
+Wires_WiresSpecification_strategy = st.builds(
+    Wires_WiresSpecification,
 )
 WiresSpecification_strategy = st.builds(
     WiresSpecification,
 )
-Wires::BasicData_strategy = st.builds(
-    Wires::BasicData,
-    path=
-        safe_text
-)
 DataType_strategy = st.builds(
     DataType,
 )
-Wires::BasicDataType_strategy = st.builds(
-    Wires::BasicDataType,
+Wires_BasicDataType_strategy = st.builds(
+    Wires_BasicDataType,
 )
-Wires::ModelType_strategy = st.builds(
-    Wires::ModelType,
+Wires_ModelType_strategy = st.builds(
+    Wires_ModelType,
     uri=
         safe_text
 )
 TransformationType_strategy = st.builds(
     TransformationType,
 )
-Wires::AtomicModelTransfomationType_strategy = st.builds(
-    Wires::AtomicModelTransfomationType,
+Wires_AtomicModelTransfomationType_strategy = st.builds(
+    Wires_AtomicModelTransfomationType,
 )
-Wires::CompositeTransformationType_strategy = st.builds(
-    Wires::CompositeTransformationType,
+Wires_CompositeTransformationType_strategy = st.builds(
+    Wires_CompositeTransformationType,
 )
-Wires::QueryType_strategy = st.builds(
-    Wires::QueryType,
+Wires_QueryType_strategy = st.builds(
+    Wires_QueryType,
 )
-Wires::InputFormalParameter_strategy = st.builds(
-    Wires::InputFormalParameter,
+Wires_InputFormalParameter_strategy = st.builds(
+    Wires_InputFormalParameter,
 )
-Wires::LibraryRef_strategy = st.builds(
-    Wires::LibraryRef,
+Wires_LibraryRef_strategy = st.builds(
+    Wires_LibraryRef,
     name=
         safe_text
 )
-Wires::OutputFormalParameter_strategy = st.builds(
-    Wires::OutputFormalParameter,
+Wires_OutputFormalParameter_strategy = st.builds(
+    Wires_OutputFormalParameter,
 )
 WiresElement_strategy = st.builds(
     WiresElement,
 )
-Wires::DataFlow_strategy = st.builds(
-    Wires::DataFlow,
-)
-Wires::Library_strategy = st.builds(
-    Wires::Library,
+Wires_ConnectableElement_strategy = st.builds(
+    Wires_ConnectableElement,
     name=
-        safe_text,
+        safe_text
+)
+Wires_Library_strategy = st.builds(
+    Wires_Library,
     path=
-        safe_text
-)
-Wires::ConnectableElement_strategy = st.builds(
-    Wires::ConnectableElement,
+        safe_text,
     name=
         safe_text
 )
-Wires::ActualParameter_strategy = st.builds(
-    Wires::ActualParameter,
+Wires_DataFlow_strategy = st.builds(
+    Wires_DataFlow,
 )
 Type_strategy = st.builds(
     Type,
 )
-Wires::TransformationType_strategy = st.builds(
-    Wires::TransformationType,
+Wires_TransformationType_strategy = st.builds(
+    Wires_TransformationType,
 )
-Wires::FormalParameter_strategy = st.builds(
-    Wires::FormalParameter,
+Wires_FormalParameter_strategy = st.builds(
+    Wires_FormalParameter,
     typeName=
         safe_text
 )
-Wires::DataType_strategy = st.builds(
-    Wires::DataType,
+Wires_DataType_strategy = st.builds(
+    Wires_DataType,
 )
 ConnectableElement_strategy = st.builds(
     ConnectableElement,
 )
-Wires::Type_strategy = st.builds(
-    Wires::Type,
+Wires_Type_strategy = st.builds(
+    Wires_Type,
     path=
         safe_text
 )
-Wires::TypedElement_strategy = st.builds(
-    Wires::TypedElement,
+Wires_TypedElement_strategy = st.builds(
+    Wires_TypedElement,
 )
 Transformation_strategy = st.builds(
     Transformation,
 )
-Wires::CompositeTransformation_strategy = st.builds(
-    Wires::CompositeTransformation,
+Wires_AtomicModelTransformation_strategy = st.builds(
+    Wires_AtomicModelTransformation,
 )
-Wires::AtomicModelTransformation_strategy = st.builds(
-    Wires::AtomicModelTransformation,
+Wires_CompositeTransformation_strategy = st.builds(
+    Wires_CompositeTransformation,
 )
-Wires::Query_strategy = st.builds(
-    Wires::Query,
+Wires_Query_strategy = st.builds(
+    Wires_Query,
 )
-Wires::DecisionNode_strategy = st.builds(
-    Wires::DecisionNode,
+Wires_DecisionNode_strategy = st.builds(
+    Wires_DecisionNode,
     expression=
         safe_text
 )
-Wires::OutputActualParameter_strategy = st.builds(
-    Wires::OutputActualParameter,
+Wires_OutputActualParameter_strategy = st.builds(
+    Wires_OutputActualParameter,
 )
-Wires::InputActualParameter_strategy = st.builds(
-    Wires::InputActualParameter,
+Wires_InputActualParameter_strategy = st.builds(
+    Wires_InputActualParameter,
 )
-
-@given(instance=TypedElement_strategy)
-@settings(max_examples=50)
-def test_typedelement_instantiation(instance):
-    assert isinstance(instance, TypedElement)
-
-@given(instance=Wires::Transformation_strategy)
-@settings(max_examples=50)
-def test_wires::transformation_instantiation(instance):
-    assert isinstance(instance, Wires::Transformation)
-
-@given(instance=Wires::Model_strategy)
-@settings(max_examples=50)
-def test_wires::model_instantiation(instance):
-    assert isinstance(instance, Wires::Model)
-
-@given(instance=Wires::Model_strategy)
-def test_wires::model_path_type(instance):
-    assert isinstance(instance.path, str)
-
-
-@given(instance=Wires::Model_strategy)
-def test_wires::model_path_setter(instance):
-    original = instance.path
-    instance.path = original
-    assert instance.path == original
+TypedElement_strategy = st.builds(
+    TypedElement,
+)
+Wires_ActualParameter_strategy = st.builds(
+    Wires_ActualParameter,
+)
+Wires_BasicData_strategy = st.builds(
+    Wires_BasicData,
+    path=
+        safe_text
+)
+Wires_Model_strategy = st.builds(
+    Wires_Model,
+    path=
+        safe_text
+)
+Wires_Transformation_strategy = st.builds(
+    Wires_Transformation,
+)
 
 @given(instance=Query_strategy)
 @settings(max_examples=50)
 def test_query_instantiation(instance):
     assert isinstance(instance, Query)
 
-@given(instance=Wires::GenericQuery_strategy)
+@given(instance=Wires_GenericQuery_strategy)
 @settings(max_examples=50)
-def test_wires::genericquery_instantiation(instance):
-    assert isinstance(instance, Wires::GenericQuery)
+def test_wires_genericquery_instantiation(instance):
+    assert isinstance(instance, Wires_GenericQuery)
 
 @given(instance=AtomicModelTransformation_strategy)
 @settings(max_examples=50)
 def test_atomicmodeltransformation_instantiation(instance):
     assert isinstance(instance, AtomicModelTransformation)
 
-@given(instance=Wires::GenericTransformation_strategy)
+@given(instance=Wires_GenericTransformation_strategy)
 @settings(max_examples=50)
-def test_wires::generictransformation_instantiation(instance):
-    assert isinstance(instance, Wires::GenericTransformation)
+def test_wires_generictransformation_instantiation(instance):
+    assert isinstance(instance, Wires_GenericTransformation)
 
-@given(instance=Wires::IdentityTransformation_strategy)
+@given(instance=Wires_IdentityTransformation_strategy)
 @settings(max_examples=50)
-def test_wires::identitytransformation_instantiation(instance):
-    assert isinstance(instance, Wires::IdentityTransformation)
+def test_wires_identitytransformation_instantiation(instance):
+    assert isinstance(instance, Wires_IdentityTransformation)
 
 @given(instance=ActualParameter_strategy)
 @settings(max_examples=50)
 def test_actualparameter_instantiation(instance):
     assert isinstance(instance, ActualParameter)
 
-@given(instance=Wires::TypeParameter_strategy)
+@given(instance=Wires_TypeParameter_strategy)
 @settings(max_examples=50)
-def test_wires::typeparameter_instantiation(instance):
-    assert isinstance(instance, Wires::TypeParameter)
+def test_wires_typeparameter_instantiation(instance):
+    assert isinstance(instance, Wires_TypeParameter)
 
 @given(instance=FormalParameter_strategy)
 @settings(max_examples=50)
 def test_formalparameter_instantiation(instance):
     assert isinstance(instance, FormalParameter)
 
-@given(instance=Wires::WiresElement_strategy)
+@given(instance=Wires_WiresElement_strategy)
 @settings(max_examples=50)
-def test_wires::wireselement_instantiation(instance):
-    assert isinstance(instance, Wires::WiresElement)
+def test_wires_wireselement_instantiation(instance):
+    assert isinstance(instance, Wires_WiresElement)
 
-@given(instance=Wires::WiresSpecification_strategy)
+@given(instance=Wires_WiresSpecification_strategy)
 @settings(max_examples=50)
-def test_wires::wiresspecification_instantiation(instance):
-    assert isinstance(instance, Wires::WiresSpecification)
+def test_wires_wiresspecification_instantiation(instance):
+    assert isinstance(instance, Wires_WiresSpecification)
 
 @given(instance=WiresSpecification_strategy)
 @settings(max_examples=50)
 def test_wiresspecification_instantiation(instance):
     assert isinstance(instance, WiresSpecification)
 
-@given(instance=Wires::BasicData_strategy)
-@settings(max_examples=50)
-def test_wires::basicdata_instantiation(instance):
-    assert isinstance(instance, Wires::BasicData)
-
-@given(instance=Wires::BasicData_strategy)
-def test_wires::basicdata_path_type(instance):
-    assert isinstance(instance.path, str)
-
-
-@given(instance=Wires::BasicData_strategy)
-def test_wires::basicdata_path_setter(instance):
-    original = instance.path
-    instance.path = original
-    assert instance.path == original
-
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=Wires::BasicDataType_strategy)
+@given(instance=Wires_BasicDataType_strategy)
 @settings(max_examples=50)
-def test_wires::basicdatatype_instantiation(instance):
-    assert isinstance(instance, Wires::BasicDataType)
+def test_wires_basicdatatype_instantiation(instance):
+    assert isinstance(instance, Wires_BasicDataType)
 
-@given(instance=Wires::ModelType_strategy)
+@given(instance=Wires_ModelType_strategy)
 @settings(max_examples=50)
-def test_wires::modeltype_instantiation(instance):
-    assert isinstance(instance, Wires::ModelType)
-
-@given(instance=Wires::ModelType_strategy)
-def test_wires::modeltype_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_wires_modeltype_instantiation(instance):
+    assert isinstance(instance, Wires_ModelType)
 
 
-@given(instance=Wires::ModelType_strategy)
-def test_wires::modeltype_uri_setter(instance):
+
+@given(instance=Wires_ModelType_strategy)
+def test_wires_modeltype_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
@@ -1065,204 +1020,219 @@ def test_wires::modeltype_uri_setter(instance):
 def test_transformationtype_instantiation(instance):
     assert isinstance(instance, TransformationType)
 
-@given(instance=Wires::AtomicModelTransfomationType_strategy)
+@given(instance=Wires_AtomicModelTransfomationType_strategy)
 @settings(max_examples=50)
-def test_wires::atomicmodeltransfomationtype_instantiation(instance):
-    assert isinstance(instance, Wires::AtomicModelTransfomationType)
+def test_wires_atomicmodeltransfomationtype_instantiation(instance):
+    assert isinstance(instance, Wires_AtomicModelTransfomationType)
 
-@given(instance=Wires::CompositeTransformationType_strategy)
+@given(instance=Wires_CompositeTransformationType_strategy)
 @settings(max_examples=50)
-def test_wires::compositetransformationtype_instantiation(instance):
-    assert isinstance(instance, Wires::CompositeTransformationType)
+def test_wires_compositetransformationtype_instantiation(instance):
+    assert isinstance(instance, Wires_CompositeTransformationType)
 
-@given(instance=Wires::QueryType_strategy)
+@given(instance=Wires_QueryType_strategy)
 @settings(max_examples=50)
-def test_wires::querytype_instantiation(instance):
-    assert isinstance(instance, Wires::QueryType)
+def test_wires_querytype_instantiation(instance):
+    assert isinstance(instance, Wires_QueryType)
 
-@given(instance=Wires::InputFormalParameter_strategy)
+@given(instance=Wires_InputFormalParameter_strategy)
 @settings(max_examples=50)
-def test_wires::inputformalparameter_instantiation(instance):
-    assert isinstance(instance, Wires::InputFormalParameter)
+def test_wires_inputformalparameter_instantiation(instance):
+    assert isinstance(instance, Wires_InputFormalParameter)
 
-@given(instance=Wires::LibraryRef_strategy)
+@given(instance=Wires_LibraryRef_strategy)
 @settings(max_examples=50)
-def test_wires::libraryref_instantiation(instance):
-    assert isinstance(instance, Wires::LibraryRef)
-
-@given(instance=Wires::LibraryRef_strategy)
-def test_wires::libraryref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wires_libraryref_instantiation(instance):
+    assert isinstance(instance, Wires_LibraryRef)
 
 
-@given(instance=Wires::LibraryRef_strategy)
-def test_wires::libraryref_name_setter(instance):
+
+@given(instance=Wires_LibraryRef_strategy)
+def test_wires_libraryref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Wires::OutputFormalParameter_strategy)
+@given(instance=Wires_OutputFormalParameter_strategy)
 @settings(max_examples=50)
-def test_wires::outputformalparameter_instantiation(instance):
-    assert isinstance(instance, Wires::OutputFormalParameter)
+def test_wires_outputformalparameter_instantiation(instance):
+    assert isinstance(instance, Wires_OutputFormalParameter)
 
 @given(instance=WiresElement_strategy)
 @settings(max_examples=50)
 def test_wireselement_instantiation(instance):
     assert isinstance(instance, WiresElement)
 
-@given(instance=Wires::DataFlow_strategy)
+@given(instance=Wires_ConnectableElement_strategy)
 @settings(max_examples=50)
-def test_wires::dataflow_instantiation(instance):
-    assert isinstance(instance, Wires::DataFlow)
-
-@given(instance=Wires::Library_strategy)
-@settings(max_examples=50)
-def test_wires::library_instantiation(instance):
-    assert isinstance(instance, Wires::Library)
-
-@given(instance=Wires::Library_strategy)
-def test_wires::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wires_connectableelement_instantiation(instance):
+    assert isinstance(instance, Wires_ConnectableElement)
 
 
-@given(instance=Wires::Library_strategy)
-def test_wires::library_name_setter(instance):
+
+@given(instance=Wires_ConnectableElement_strategy)
+def test_wires_connectableelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Wires::Library_strategy)
-def test_wires::library_path_type(instance):
-    assert isinstance(instance.path, str)
+@given(instance=Wires_Library_strategy)
+@settings(max_examples=50)
+def test_wires_library_instantiation(instance):
+    assert isinstance(instance, Wires_Library)
 
 
-@given(instance=Wires::Library_strategy)
-def test_wires::library_path_setter(instance):
+
+@given(instance=Wires_Library_strategy)
+def test_wires_library_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=Wires::ConnectableElement_strategy)
-@settings(max_examples=50)
-def test_wires::connectableelement_instantiation(instance):
-    assert isinstance(instance, Wires::ConnectableElement)
-
-@given(instance=Wires::ConnectableElement_strategy)
-def test_wires::connectableelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Wires::ConnectableElement_strategy)
-def test_wires::connectableelement_name_setter(instance):
+@given(instance=Wires_Library_strategy)
+def test_wires_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Wires::ActualParameter_strategy)
+@given(instance=Wires_DataFlow_strategy)
 @settings(max_examples=50)
-def test_wires::actualparameter_instantiation(instance):
-    assert isinstance(instance, Wires::ActualParameter)
+def test_wires_dataflow_instantiation(instance):
+    assert isinstance(instance, Wires_DataFlow)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=Wires::TransformationType_strategy)
+@given(instance=Wires_TransformationType_strategy)
 @settings(max_examples=50)
-def test_wires::transformationtype_instantiation(instance):
-    assert isinstance(instance, Wires::TransformationType)
+def test_wires_transformationtype_instantiation(instance):
+    assert isinstance(instance, Wires_TransformationType)
 
-@given(instance=Wires::FormalParameter_strategy)
+@given(instance=Wires_FormalParameter_strategy)
 @settings(max_examples=50)
-def test_wires::formalparameter_instantiation(instance):
-    assert isinstance(instance, Wires::FormalParameter)
-
-@given(instance=Wires::FormalParameter_strategy)
-def test_wires::formalparameter_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
+def test_wires_formalparameter_instantiation(instance):
+    assert isinstance(instance, Wires_FormalParameter)
 
 
-@given(instance=Wires::FormalParameter_strategy)
-def test_wires::formalparameter_typeName_setter(instance):
+
+@given(instance=Wires_FormalParameter_strategy)
+def test_wires_formalparameter_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=Wires::DataType_strategy)
+@given(instance=Wires_DataType_strategy)
 @settings(max_examples=50)
-def test_wires::datatype_instantiation(instance):
-    assert isinstance(instance, Wires::DataType)
+def test_wires_datatype_instantiation(instance):
+    assert isinstance(instance, Wires_DataType)
 
 @given(instance=ConnectableElement_strategy)
 @settings(max_examples=50)
 def test_connectableelement_instantiation(instance):
     assert isinstance(instance, ConnectableElement)
 
-@given(instance=Wires::Type_strategy)
+@given(instance=Wires_Type_strategy)
 @settings(max_examples=50)
-def test_wires::type_instantiation(instance):
-    assert isinstance(instance, Wires::Type)
-
-@given(instance=Wires::Type_strategy)
-def test_wires::type_path_type(instance):
-    assert isinstance(instance.path, str)
+def test_wires_type_instantiation(instance):
+    assert isinstance(instance, Wires_Type)
 
 
-@given(instance=Wires::Type_strategy)
-def test_wires::type_path_setter(instance):
+
+@given(instance=Wires_Type_strategy)
+def test_wires_type_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=Wires::TypedElement_strategy)
+@given(instance=Wires_TypedElement_strategy)
 @settings(max_examples=50)
-def test_wires::typedelement_instantiation(instance):
-    assert isinstance(instance, Wires::TypedElement)
+def test_wires_typedelement_instantiation(instance):
+    assert isinstance(instance, Wires_TypedElement)
 
 @given(instance=Transformation_strategy)
 @settings(max_examples=50)
 def test_transformation_instantiation(instance):
     assert isinstance(instance, Transformation)
 
-@given(instance=Wires::CompositeTransformation_strategy)
+@given(instance=Wires_AtomicModelTransformation_strategy)
 @settings(max_examples=50)
-def test_wires::compositetransformation_instantiation(instance):
-    assert isinstance(instance, Wires::CompositeTransformation)
+def test_wires_atomicmodeltransformation_instantiation(instance):
+    assert isinstance(instance, Wires_AtomicModelTransformation)
 
-@given(instance=Wires::AtomicModelTransformation_strategy)
+@given(instance=Wires_CompositeTransformation_strategy)
 @settings(max_examples=50)
-def test_wires::atomicmodeltransformation_instantiation(instance):
-    assert isinstance(instance, Wires::AtomicModelTransformation)
+def test_wires_compositetransformation_instantiation(instance):
+    assert isinstance(instance, Wires_CompositeTransformation)
 
-@given(instance=Wires::Query_strategy)
+@given(instance=Wires_Query_strategy)
 @settings(max_examples=50)
-def test_wires::query_instantiation(instance):
-    assert isinstance(instance, Wires::Query)
+def test_wires_query_instantiation(instance):
+    assert isinstance(instance, Wires_Query)
 
-@given(instance=Wires::DecisionNode_strategy)
+@given(instance=Wires_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_wires::decisionnode_instantiation(instance):
-    assert isinstance(instance, Wires::DecisionNode)
-
-@given(instance=Wires::DecisionNode_strategy)
-def test_wires::decisionnode_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_wires_decisionnode_instantiation(instance):
+    assert isinstance(instance, Wires_DecisionNode)
 
 
-@given(instance=Wires::DecisionNode_strategy)
-def test_wires::decisionnode_expression_setter(instance):
+
+@given(instance=Wires_DecisionNode_strategy)
+def test_wires_decisionnode_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=Wires::OutputActualParameter_strategy)
+@given(instance=Wires_OutputActualParameter_strategy)
 @settings(max_examples=50)
-def test_wires::outputactualparameter_instantiation(instance):
-    assert isinstance(instance, Wires::OutputActualParameter)
+def test_wires_outputactualparameter_instantiation(instance):
+    assert isinstance(instance, Wires_OutputActualParameter)
 
-@given(instance=Wires::InputActualParameter_strategy)
+@given(instance=Wires_InputActualParameter_strategy)
 @settings(max_examples=50)
-def test_wires::inputactualparameter_instantiation(instance):
-    assert isinstance(instance, Wires::InputActualParameter)
+def test_wires_inputactualparameter_instantiation(instance):
+    assert isinstance(instance, Wires_InputActualParameter)
+
+@given(instance=TypedElement_strategy)
+@settings(max_examples=50)
+def test_typedelement_instantiation(instance):
+    assert isinstance(instance, TypedElement)
+
+@given(instance=Wires_ActualParameter_strategy)
+@settings(max_examples=50)
+def test_wires_actualparameter_instantiation(instance):
+    assert isinstance(instance, Wires_ActualParameter)
+
+@given(instance=Wires_BasicData_strategy)
+@settings(max_examples=50)
+def test_wires_basicdata_instantiation(instance):
+    assert isinstance(instance, Wires_BasicData)
+
+
+
+@given(instance=Wires_BasicData_strategy)
+def test_wires_basicdata_path_setter(instance):
+    original = instance.path
+    instance.path = original
+    assert instance.path == original
+
+@given(instance=Wires_Model_strategy)
+@settings(max_examples=50)
+def test_wires_model_instantiation(instance):
+    assert isinstance(instance, Wires_Model)
+
+
+
+@given(instance=Wires_Model_strategy)
+def test_wires_model_path_setter(instance):
+    original = instance.path
+    instance.path = original
+    assert instance.path == original
+
+@given(instance=Wires_Transformation_strategy)
+@settings(max_examples=50)
+def test_wires_transformation_instantiation(instance):
+    assert isinstance(instance, Wires_Transformation)

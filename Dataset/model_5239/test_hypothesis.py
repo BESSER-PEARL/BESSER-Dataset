@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    introduction::con,
-    introduction::Y,
-    introduction::X,
-    introduction::A,
+from python_code import (
+    introduction_con,
+    introduction_Y,
+    introduction_X,
+    introduction_A,
     A,
-    introduction::B,
+    introduction_B,
 )
 
 # =============================================================================
@@ -20,47 +20,71 @@ from classes import (
 
 
 
-def test_introduction::con_is_not_abstract():
-    assert not inspect.isabstract(introduction::con)
+def test_introduction_con_is_not_abstract():
+    assert not inspect.isabstract(introduction_con)
 
 
-def test_introduction::con_constructor_exists():
-    assert callable(introduction::con.__init__)
+def test_introduction_con_constructor_exists():
+    assert callable(introduction_con.__init__)
 
 
-def test_introduction::con_constructor_args():
-    sig = inspect.signature(introduction::con.__init__)
+def test_introduction_con_constructor_args():
+    sig = inspect.signature(introduction_con.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_introduction::y_is_not_abstract():
-    assert not inspect.isabstract(introduction::Y)
+def test_introduction_y_is_not_abstract():
+    assert not inspect.isabstract(introduction_Y)
 
 
-def test_introduction::y_constructor_exists():
-    assert callable(introduction::Y.__init__)
+def test_introduction_y_constructor_exists():
+    assert callable(introduction_Y.__init__)
 
 
-def test_introduction::y_constructor_args():
-    sig = inspect.signature(introduction::Y.__init__)
+def test_introduction_y_constructor_args():
+    sig = inspect.signature(introduction_Y.__init__)
     params = list(sig.parameters.keys())
-    assert "test" in params, "Missing parameter 'test'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "test" in params, "Missing parameter 'test'"
 
-def test_introduction::y_has_test():
-    assert hasattr(introduction::Y, "test")
+def test_introduction_y_has_id():
+    assert hasattr(introduction_Y, "id")
     descriptor = None
-    for klass in introduction::Y.__mro__:
+    for klass in introduction_Y.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_introduction_y_has_test():
+    assert hasattr(introduction_Y, "test")
+    descriptor = None
+    for klass in introduction_Y.__mro__:
         if "test" in klass.__dict__:
             descriptor = klass.__dict__["test"]
             break
     assert isinstance(descriptor, property)
 
-def test_introduction::y_has_id():
-    assert hasattr(introduction::Y, "id")
+
+
+def test_introduction_x_is_not_abstract():
+    assert not inspect.isabstract(introduction_X)
+
+
+def test_introduction_x_constructor_exists():
+    assert callable(introduction_X.__init__)
+
+
+def test_introduction_x_constructor_args():
+    sig = inspect.signature(introduction_X.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_introduction_x_has_id():
+    assert hasattr(introduction_X, "id")
     descriptor = None
-    for klass in introduction::Y.__mro__:
+    for klass in introduction_X.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -68,47 +92,23 @@ def test_introduction::y_has_id():
 
 
 
-def test_introduction::x_is_not_abstract():
-    assert not inspect.isabstract(introduction::X)
+def test_introduction_a_is_not_abstract():
+    assert not inspect.isabstract(introduction_A)
 
 
-def test_introduction::x_constructor_exists():
-    assert callable(introduction::X.__init__)
+def test_introduction_a_constructor_exists():
+    assert callable(introduction_A.__init__)
 
 
-def test_introduction::x_constructor_args():
-    sig = inspect.signature(introduction::X.__init__)
+def test_introduction_a_constructor_args():
+    sig = inspect.signature(introduction_A.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_introduction::x_has_id():
-    assert hasattr(introduction::X, "id")
+def test_introduction_a_has_id():
+    assert hasattr(introduction_A, "id")
     descriptor = None
-    for klass in introduction::X.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_introduction::a_is_not_abstract():
-    assert not inspect.isabstract(introduction::A)
-
-
-def test_introduction::a_constructor_exists():
-    assert callable(introduction::A.__init__)
-
-
-def test_introduction::a_constructor_args():
-    sig = inspect.signature(introduction::A.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_introduction::a_has_id():
-    assert hasattr(introduction::A, "id")
-    descriptor = None
-    for klass in introduction::A.__mro__:
+    for klass in introduction_A.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -130,16 +130,16 @@ def test_a_constructor_args():
 
 
 
-def test_introduction::b_is_not_abstract():
-    assert not inspect.isabstract(introduction::B)
+def test_introduction_b_is_not_abstract():
+    assert not inspect.isabstract(introduction_B)
 
 
-def test_introduction::b_constructor_exists():
-    assert callable(introduction::B.__init__)
+def test_introduction_b_constructor_exists():
+    assert callable(introduction_B.__init__)
 
 
-def test_introduction::b_constructor_args():
-    sig = inspect.signature(introduction::B.__init__)
+def test_introduction_b_constructor_args():
+    sig = inspect.signature(introduction_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,93 +154,81 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-introduction::con_strategy = st.builds(
-    introduction::con,
+introduction_con_strategy = st.builds(
+    introduction_con,
 )
-introduction::Y_strategy = st.builds(
-    introduction::Y,
+introduction_Y_strategy = st.builds(
+    introduction_Y,
+    id=
+        safe_text,
     test=
-        st.integers(),
+        st.integers()
+)
+introduction_X_strategy = st.builds(
+    introduction_X,
     id=
         safe_text
 )
-introduction::X_strategy = st.builds(
-    introduction::X,
-    id=
-        safe_text
-)
-introduction::A_strategy = st.builds(
-    introduction::A,
+introduction_A_strategy = st.builds(
+    introduction_A,
     id=
         safe_text
 )
 A_strategy = st.builds(
     A,
 )
-introduction::B_strategy = st.builds(
-    introduction::B,
+introduction_B_strategy = st.builds(
+    introduction_B,
 )
 
-@given(instance=introduction::con_strategy)
+@given(instance=introduction_con_strategy)
 @settings(max_examples=50)
-def test_introduction::con_instantiation(instance):
-    assert isinstance(instance, introduction::con)
+def test_introduction_con_instantiation(instance):
+    assert isinstance(instance, introduction_con)
 
-@given(instance=introduction::Y_strategy)
+@given(instance=introduction_Y_strategy)
 @settings(max_examples=50)
-def test_introduction::y_instantiation(instance):
-    assert isinstance(instance, introduction::Y)
-
-@given(instance=introduction::Y_strategy)
-def test_introduction::y_test_type(instance):
-    assert isinstance(instance.test, int)
+def test_introduction_y_instantiation(instance):
+    assert isinstance(instance, introduction_Y)
 
 
-@given(instance=introduction::Y_strategy)
-def test_introduction::y_test_setter(instance):
+
+@given(instance=introduction_Y_strategy)
+def test_introduction_y_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=introduction_Y_strategy)
+def test_introduction_y_test_setter(instance):
     original = instance.test
     instance.test = original
     assert instance.test == original
 
-@given(instance=introduction::Y_strategy)
-def test_introduction::y_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=introduction_X_strategy)
+@settings(max_examples=50)
+def test_introduction_x_instantiation(instance):
+    assert isinstance(instance, introduction_X)
 
 
-@given(instance=introduction::Y_strategy)
-def test_introduction::y_id_setter(instance):
+
+@given(instance=introduction_X_strategy)
+def test_introduction_x_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=introduction::X_strategy)
+@given(instance=introduction_A_strategy)
 @settings(max_examples=50)
-def test_introduction::x_instantiation(instance):
-    assert isinstance(instance, introduction::X)
-
-@given(instance=introduction::X_strategy)
-def test_introduction::x_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_introduction_a_instantiation(instance):
+    assert isinstance(instance, introduction_A)
 
 
-@given(instance=introduction::X_strategy)
-def test_introduction::x_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=introduction::A_strategy)
-@settings(max_examples=50)
-def test_introduction::a_instantiation(instance):
-    assert isinstance(instance, introduction::A)
-
-@given(instance=introduction::A_strategy)
-def test_introduction::a_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=introduction::A_strategy)
-def test_introduction::a_id_setter(instance):
+@given(instance=introduction_A_strategy)
+def test_introduction_a_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -250,7 +238,7 @@ def test_introduction::a_id_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=introduction::B_strategy)
+@given(instance=introduction_B_strategy)
 @settings(max_examples=50)
-def test_introduction::b_instantiation(instance):
-    assert isinstance(instance, introduction::B)
+def test_introduction_b_instantiation(instance):
+    assert isinstance(instance, introduction_B)

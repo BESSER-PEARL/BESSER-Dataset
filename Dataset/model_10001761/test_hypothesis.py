@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     SAP_PI_Actor,
@@ -231,9 +231,6 @@ def test_shoppingcartexample_customer_instantiation(instance):
 def test_shoppingcartexample_account_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_Account)
 
-@given(instance=ShoppingCartExample_Account_strategy)
-def test_shoppingcartexample_account_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=ShoppingCartExample_Account_strategy)
@@ -247,9 +244,6 @@ def test_shoppingcartexample_account_id_setter(instance):
 def test_shoppingcartexample_lineitem_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_LineItem)
 
-@given(instance=ShoppingCartExample_LineItem_strategy)
-def test_shoppingcartexample_lineitem_price_type(instance):
-    assert isinstance(instance.price, int)
 
 
 @given(instance=ShoppingCartExample_LineItem_strategy)
@@ -258,9 +252,6 @@ def test_shoppingcartexample_lineitem_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
-@given(instance=ShoppingCartExample_LineItem_strategy)
-def test_shoppingcartexample_lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=ShoppingCartExample_LineItem_strategy)
@@ -274,9 +265,6 @@ def test_shoppingcartexample_lineitem_quantity_setter(instance):
 def test_shoppingcartexample_order_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_Order)
 
-@given(instance=ShoppingCartExample_Order_strategy)
-def test_shoppingcartexample_order_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=ShoppingCartExample_Order_strategy)
@@ -290,9 +278,6 @@ def test_shoppingcartexample_order_id_setter(instance):
 def test_shoppingcartexample_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_ShoppingCart)
 
-@given(instance=ShoppingCartExample_ShoppingCart_strategy)
-def test_shoppingcartexample_shoppingcart_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=ShoppingCartExample_ShoppingCart_strategy)

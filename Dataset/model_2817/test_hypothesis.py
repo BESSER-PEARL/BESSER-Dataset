@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Border,
-    draw2d::LabeledBorder,
+    draw2d_LabeledBorder,
     ConnectionAnchor,
-    draw2d::XYAnchor,
-    draw2d::ConnectionAnchor,
-    draw2d::FlowBorder,
+    draw2d_XYAnchor,
+    draw2d_ConnectionAnchor,
+    draw2d_FlowBorder,
     ColoredLabeledBorder,
-    draw2d::TitleBarBorder,
-    draw2d::GroupBoxBorder,
+    draw2d_TitleBarBorder,
+    draw2d_GroupBoxBorder,
     LabeledBorder,
-    draw2d::ColoredLabeledBorder,
-    draw2d::FrameBorder,
+    draw2d_ColoredLabeledBorder,
+    draw2d_FrameBorder,
     Polyline,
-    draw2d::Polygon,
+    draw2d_Polygon,
     PointListShape,
-    draw2d::PolylineShape,
-    draw2d::PolygonShape,
-    draw2d::Polyline,
+    draw2d_PolygonShape,
+    draw2d_PolylineShape,
+    draw2d_Polyline,
     Shape,
-    draw2d::RoundedRectangle,
-    draw2d::PointListShape,
-    draw2d::Triangle,
-    draw2d::Ellipse,
-    draw2d::RectangleFigure,
-    draw2d::Figure,
+    draw2d_Ellipse,
+    draw2d_RoundedRectangle,
+    draw2d_Triangle,
+    draw2d_PointListShape,
+    draw2d_RectangleFigure,
+    draw2d_Figure,
     Canvas,
-    draw2d::Draw2DCanvas,
+    draw2d_Draw2DCanvas,
     Figure,
-    draw2d::BlockFlow,
-    draw2d::Shape,
-    draw2d::ImageFigure,
-    draw2d::Label,
-    draw2d::Border,
-    draw2d::Font,
-    draw2d::Color,
+    draw2d_ImageFigure,
+    draw2d_Shape,
+    draw2d_BlockFlow,
+    draw2d_Label,
+    draw2d_Border,
+    draw2d_Font,
+    draw2d_Color,
+    Direction,
     Alignment,
     Orientation,
-    Direction,
 )
 
 # =============================================================================
@@ -66,23 +66,23 @@ def test_border_constructor_args():
 
 
 
-def test_draw2d::labeledborder_is_not_abstract():
-    assert not inspect.isabstract(draw2d::LabeledBorder)
+def test_draw2d_labeledborder_is_not_abstract():
+    assert not inspect.isabstract(draw2d_LabeledBorder)
 
 
-def test_draw2d::labeledborder_constructor_exists():
-    assert callable(draw2d::LabeledBorder.__init__)
+def test_draw2d_labeledborder_constructor_exists():
+    assert callable(draw2d_LabeledBorder.__init__)
 
 
-def test_draw2d::labeledborder_constructor_args():
-    sig = inspect.signature(draw2d::LabeledBorder.__init__)
+def test_draw2d_labeledborder_constructor_args():
+    sig = inspect.signature(draw2d_LabeledBorder.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_draw2d::labeledborder_has_label():
-    assert hasattr(draw2d::LabeledBorder, "label")
+def test_draw2d_labeledborder_has_label():
+    assert hasattr(draw2d_LabeledBorder, "label")
     descriptor = None
-    for klass in draw2d::LabeledBorder.__mro__:
+    for klass in draw2d_LabeledBorder.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -104,23 +104,23 @@ def test_connectionanchor_constructor_args():
 
 
 
-def test_draw2d::xyanchor_is_not_abstract():
-    assert not inspect.isabstract(draw2d::XYAnchor)
+def test_draw2d_xyanchor_is_not_abstract():
+    assert not inspect.isabstract(draw2d_XYAnchor)
 
 
-def test_draw2d::xyanchor_constructor_exists():
-    assert callable(draw2d::XYAnchor.__init__)
+def test_draw2d_xyanchor_constructor_exists():
+    assert callable(draw2d_XYAnchor.__init__)
 
 
-def test_draw2d::xyanchor_constructor_args():
-    sig = inspect.signature(draw2d::XYAnchor.__init__)
+def test_draw2d_xyanchor_constructor_args():
+    sig = inspect.signature(draw2d_XYAnchor.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_draw2d::xyanchor_has_location():
-    assert hasattr(draw2d::XYAnchor, "location")
+def test_draw2d_xyanchor_has_location():
+    assert hasattr(draw2d_XYAnchor, "location")
     descriptor = None
-    for klass in draw2d::XYAnchor.__mro__:
+    for klass in draw2d_XYAnchor.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -128,69 +128,69 @@ def test_draw2d::xyanchor_has_location():
 
 
 
-def test_draw2d::connectionanchor_is_not_abstract():
-    assert not inspect.isabstract(draw2d::ConnectionAnchor)
+def test_draw2d_connectionanchor_is_not_abstract():
+    assert not inspect.isabstract(draw2d_ConnectionAnchor)
 
 
-def test_draw2d::connectionanchor_constructor_exists():
-    assert callable(draw2d::ConnectionAnchor.__init__)
+def test_draw2d_connectionanchor_constructor_exists():
+    assert callable(draw2d_ConnectionAnchor.__init__)
 
 
-def test_draw2d::connectionanchor_constructor_args():
-    sig = inspect.signature(draw2d::ConnectionAnchor.__init__)
+def test_draw2d_connectionanchor_constructor_args():
+    sig = inspect.signature(draw2d_ConnectionAnchor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_draw2d::flowborder_is_not_abstract():
-    assert not inspect.isabstract(draw2d::FlowBorder)
+def test_draw2d_flowborder_is_not_abstract():
+    assert not inspect.isabstract(draw2d_FlowBorder)
 
 
-def test_draw2d::flowborder_constructor_exists():
-    assert callable(draw2d::FlowBorder.__init__)
+def test_draw2d_flowborder_constructor_exists():
+    assert callable(draw2d_FlowBorder.__init__)
 
 
-def test_draw2d::flowborder_constructor_args():
-    sig = inspect.signature(draw2d::FlowBorder.__init__)
+def test_draw2d_flowborder_constructor_args():
+    sig = inspect.signature(draw2d_FlowBorder.__init__)
     params = list(sig.parameters.keys())
     assert "bottomMargin" in params, "Missing parameter 'bottomMargin'"
+    assert "rightMargin" in params, "Missing parameter 'rightMargin'"
     assert "leftMargin" in params, "Missing parameter 'leftMargin'"
     assert "topMargin" in params, "Missing parameter 'topMargin'"
-    assert "rightMargin" in params, "Missing parameter 'rightMargin'"
 
-def test_draw2d::flowborder_has_bottomMargin():
-    assert hasattr(draw2d::FlowBorder, "bottomMargin")
+def test_draw2d_flowborder_has_bottomMargin():
+    assert hasattr(draw2d_FlowBorder, "bottomMargin")
     descriptor = None
-    for klass in draw2d::FlowBorder.__mro__:
+    for klass in draw2d_FlowBorder.__mro__:
         if "bottomMargin" in klass.__dict__:
             descriptor = klass.__dict__["bottomMargin"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::flowborder_has_leftMargin():
-    assert hasattr(draw2d::FlowBorder, "leftMargin")
+def test_draw2d_flowborder_has_rightMargin():
+    assert hasattr(draw2d_FlowBorder, "rightMargin")
     descriptor = None
-    for klass in draw2d::FlowBorder.__mro__:
+    for klass in draw2d_FlowBorder.__mro__:
+        if "rightMargin" in klass.__dict__:
+            descriptor = klass.__dict__["rightMargin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_flowborder_has_leftMargin():
+    assert hasattr(draw2d_FlowBorder, "leftMargin")
+    descriptor = None
+    for klass in draw2d_FlowBorder.__mro__:
         if "leftMargin" in klass.__dict__:
             descriptor = klass.__dict__["leftMargin"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::flowborder_has_topMargin():
-    assert hasattr(draw2d::FlowBorder, "topMargin")
+def test_draw2d_flowborder_has_topMargin():
+    assert hasattr(draw2d_FlowBorder, "topMargin")
     descriptor = None
-    for klass in draw2d::FlowBorder.__mro__:
+    for klass in draw2d_FlowBorder.__mro__:
         if "topMargin" in klass.__dict__:
             descriptor = klass.__dict__["topMargin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::flowborder_has_rightMargin():
-    assert hasattr(draw2d::FlowBorder, "rightMargin")
-    descriptor = None
-    for klass in draw2d::FlowBorder.__mro__:
-        if "rightMargin" in klass.__dict__:
-            descriptor = klass.__dict__["rightMargin"]
             break
     assert isinstance(descriptor, property)
 
@@ -210,30 +210,30 @@ def test_coloredlabeledborder_constructor_args():
 
 
 
-def test_draw2d::titlebarborder_is_not_abstract():
-    assert not inspect.isabstract(draw2d::TitleBarBorder)
+def test_draw2d_titlebarborder_is_not_abstract():
+    assert not inspect.isabstract(draw2d_TitleBarBorder)
 
 
-def test_draw2d::titlebarborder_constructor_exists():
-    assert callable(draw2d::TitleBarBorder.__init__)
+def test_draw2d_titlebarborder_constructor_exists():
+    assert callable(draw2d_TitleBarBorder.__init__)
 
 
-def test_draw2d::titlebarborder_constructor_args():
-    sig = inspect.signature(draw2d::TitleBarBorder.__init__)
+def test_draw2d_titlebarborder_constructor_args():
+    sig = inspect.signature(draw2d_TitleBarBorder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_draw2d::groupboxborder_is_not_abstract():
-    assert not inspect.isabstract(draw2d::GroupBoxBorder)
+def test_draw2d_groupboxborder_is_not_abstract():
+    assert not inspect.isabstract(draw2d_GroupBoxBorder)
 
 
-def test_draw2d::groupboxborder_constructor_exists():
-    assert callable(draw2d::GroupBoxBorder.__init__)
+def test_draw2d_groupboxborder_constructor_exists():
+    assert callable(draw2d_GroupBoxBorder.__init__)
 
 
-def test_draw2d::groupboxborder_constructor_args():
-    sig = inspect.signature(draw2d::GroupBoxBorder.__init__)
+def test_draw2d_groupboxborder_constructor_args():
+    sig = inspect.signature(draw2d_GroupBoxBorder.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,30 +252,30 @@ def test_labeledborder_constructor_args():
 
 
 
-def test_draw2d::coloredlabeledborder_is_not_abstract():
-    assert not inspect.isabstract(draw2d::ColoredLabeledBorder)
+def test_draw2d_coloredlabeledborder_is_not_abstract():
+    assert not inspect.isabstract(draw2d_ColoredLabeledBorder)
 
 
-def test_draw2d::coloredlabeledborder_constructor_exists():
-    assert callable(draw2d::ColoredLabeledBorder.__init__)
+def test_draw2d_coloredlabeledborder_constructor_exists():
+    assert callable(draw2d_ColoredLabeledBorder.__init__)
 
 
-def test_draw2d::coloredlabeledborder_constructor_args():
-    sig = inspect.signature(draw2d::ColoredLabeledBorder.__init__)
+def test_draw2d_coloredlabeledborder_constructor_args():
+    sig = inspect.signature(draw2d_ColoredLabeledBorder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_draw2d::frameborder_is_not_abstract():
-    assert not inspect.isabstract(draw2d::FrameBorder)
+def test_draw2d_frameborder_is_not_abstract():
+    assert not inspect.isabstract(draw2d_FrameBorder)
 
 
-def test_draw2d::frameborder_constructor_exists():
-    assert callable(draw2d::FrameBorder.__init__)
+def test_draw2d_frameborder_constructor_exists():
+    assert callable(draw2d_FrameBorder.__init__)
 
 
-def test_draw2d::frameborder_constructor_args():
-    sig = inspect.signature(draw2d::FrameBorder.__init__)
+def test_draw2d_frameborder_constructor_args():
+    sig = inspect.signature(draw2d_FrameBorder.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -294,16 +294,16 @@ def test_polyline_constructor_args():
 
 
 
-def test_draw2d::polygon_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Polygon)
+def test_draw2d_polygon_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Polygon)
 
 
-def test_draw2d::polygon_constructor_exists():
-    assert callable(draw2d::Polygon.__init__)
+def test_draw2d_polygon_constructor_exists():
+    assert callable(draw2d_Polygon.__init__)
 
 
-def test_draw2d::polygon_constructor_args():
-    sig = inspect.signature(draw2d::Polygon.__init__)
+def test_draw2d_polygon_constructor_args():
+    sig = inspect.signature(draw2d_Polygon.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -322,23 +322,37 @@ def test_pointlistshape_constructor_args():
 
 
 
-def test_draw2d::polylineshape_is_not_abstract():
-    assert not inspect.isabstract(draw2d::PolylineShape)
+def test_draw2d_polygonshape_is_not_abstract():
+    assert not inspect.isabstract(draw2d_PolygonShape)
 
 
-def test_draw2d::polylineshape_constructor_exists():
-    assert callable(draw2d::PolylineShape.__init__)
+def test_draw2d_polygonshape_constructor_exists():
+    assert callable(draw2d_PolygonShape.__init__)
 
 
-def test_draw2d::polylineshape_constructor_args():
-    sig = inspect.signature(draw2d::PolylineShape.__init__)
+def test_draw2d_polygonshape_constructor_args():
+    sig = inspect.signature(draw2d_PolygonShape.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_draw2d_polylineshape_is_not_abstract():
+    assert not inspect.isabstract(draw2d_PolylineShape)
+
+
+def test_draw2d_polylineshape_constructor_exists():
+    assert callable(draw2d_PolylineShape.__init__)
+
+
+def test_draw2d_polylineshape_constructor_args():
+    sig = inspect.signature(draw2d_PolylineShape.__init__)
     params = list(sig.parameters.keys())
     assert "tolerance" in params, "Missing parameter 'tolerance'"
 
-def test_draw2d::polylineshape_has_tolerance():
-    assert hasattr(draw2d::PolylineShape, "tolerance")
+def test_draw2d_polylineshape_has_tolerance():
+    assert hasattr(draw2d_PolylineShape, "tolerance")
     descriptor = None
-    for klass in draw2d::PolylineShape.__mro__:
+    for klass in draw2d_PolylineShape.__mro__:
         if "tolerance" in klass.__dict__:
             descriptor = klass.__dict__["tolerance"]
             break
@@ -346,37 +360,23 @@ def test_draw2d::polylineshape_has_tolerance():
 
 
 
-def test_draw2d::polygonshape_is_not_abstract():
-    assert not inspect.isabstract(draw2d::PolygonShape)
+def test_draw2d_polyline_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Polyline)
 
 
-def test_draw2d::polygonshape_constructor_exists():
-    assert callable(draw2d::PolygonShape.__init__)
+def test_draw2d_polyline_constructor_exists():
+    assert callable(draw2d_Polyline.__init__)
 
 
-def test_draw2d::polygonshape_constructor_args():
-    sig = inspect.signature(draw2d::PolygonShape.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_draw2d::polyline_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Polyline)
-
-
-def test_draw2d::polyline_constructor_exists():
-    assert callable(draw2d::Polyline.__init__)
-
-
-def test_draw2d::polyline_constructor_args():
-    sig = inspect.signature(draw2d::Polyline.__init__)
+def test_draw2d_polyline_constructor_args():
+    sig = inspect.signature(draw2d_Polyline.__init__)
     params = list(sig.parameters.keys())
     assert "tolerance" in params, "Missing parameter 'tolerance'"
 
-def test_draw2d::polyline_has_tolerance():
-    assert hasattr(draw2d::Polyline, "tolerance")
+def test_draw2d_polyline_has_tolerance():
+    assert hasattr(draw2d_Polyline, "tolerance")
     descriptor = None
-    for klass in draw2d::Polyline.__mro__:
+    for klass in draw2d_Polyline.__mro__:
         if "tolerance" in klass.__dict__:
             descriptor = klass.__dict__["tolerance"]
             break
@@ -398,23 +398,37 @@ def test_shape_constructor_args():
 
 
 
-def test_draw2d::roundedrectangle_is_not_abstract():
-    assert not inspect.isabstract(draw2d::RoundedRectangle)
+def test_draw2d_ellipse_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Ellipse)
 
 
-def test_draw2d::roundedrectangle_constructor_exists():
-    assert callable(draw2d::RoundedRectangle.__init__)
+def test_draw2d_ellipse_constructor_exists():
+    assert callable(draw2d_Ellipse.__init__)
 
 
-def test_draw2d::roundedrectangle_constructor_args():
-    sig = inspect.signature(draw2d::RoundedRectangle.__init__)
+def test_draw2d_ellipse_constructor_args():
+    sig = inspect.signature(draw2d_Ellipse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_draw2d_roundedrectangle_is_not_abstract():
+    assert not inspect.isabstract(draw2d_RoundedRectangle)
+
+
+def test_draw2d_roundedrectangle_constructor_exists():
+    assert callable(draw2d_RoundedRectangle.__init__)
+
+
+def test_draw2d_roundedrectangle_constructor_args():
+    sig = inspect.signature(draw2d_RoundedRectangle.__init__)
     params = list(sig.parameters.keys())
     assert "cornerDimensions" in params, "Missing parameter 'cornerDimensions'"
 
-def test_draw2d::roundedrectangle_has_cornerDimensions():
-    assert hasattr(draw2d::RoundedRectangle, "cornerDimensions")
+def test_draw2d_roundedrectangle_has_cornerDimensions():
+    assert hasattr(draw2d_RoundedRectangle, "cornerDimensions")
     descriptor = None
-    for klass in draw2d::RoundedRectangle.__mro__:
+    for klass in draw2d_RoundedRectangle.__mro__:
         if "cornerDimensions" in klass.__dict__:
             descriptor = klass.__dict__["cornerDimensions"]
             break
@@ -422,57 +436,33 @@ def test_draw2d::roundedrectangle_has_cornerDimensions():
 
 
 
-def test_draw2d::pointlistshape_is_not_abstract():
-    assert not inspect.isabstract(draw2d::PointListShape)
+def test_draw2d_triangle_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Triangle)
 
 
-def test_draw2d::pointlistshape_constructor_exists():
-    assert callable(draw2d::PointListShape.__init__)
+def test_draw2d_triangle_constructor_exists():
+    assert callable(draw2d_Triangle.__init__)
 
 
-def test_draw2d::pointlistshape_constructor_args():
-    sig = inspect.signature(draw2d::PointListShape.__init__)
-    params = list(sig.parameters.keys())
-    assert "pointList" in params, "Missing parameter 'pointList'"
-
-def test_draw2d::pointlistshape_has_pointList():
-    assert hasattr(draw2d::PointListShape, "pointList")
-    descriptor = None
-    for klass in draw2d::PointListShape.__mro__:
-        if "pointList" in klass.__dict__:
-            descriptor = klass.__dict__["pointList"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_draw2d::triangle_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Triangle)
-
-
-def test_draw2d::triangle_constructor_exists():
-    assert callable(draw2d::Triangle.__init__)
-
-
-def test_draw2d::triangle_constructor_args():
-    sig = inspect.signature(draw2d::Triangle.__init__)
+def test_draw2d_triangle_constructor_args():
+    sig = inspect.signature(draw2d_Triangle.__init__)
     params = list(sig.parameters.keys())
     assert "orientation" in params, "Missing parameter 'orientation'"
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_draw2d::triangle_has_orientation():
-    assert hasattr(draw2d::Triangle, "orientation")
+def test_draw2d_triangle_has_orientation():
+    assert hasattr(draw2d_Triangle, "orientation")
     descriptor = None
-    for klass in draw2d::Triangle.__mro__:
+    for klass in draw2d_Triangle.__mro__:
         if "orientation" in klass.__dict__:
             descriptor = klass.__dict__["orientation"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::triangle_has_direction():
-    assert hasattr(draw2d::Triangle, "direction")
+def test_draw2d_triangle_has_direction():
+    assert hasattr(draw2d_Triangle, "direction")
     descriptor = None
-    for klass in draw2d::Triangle.__mro__:
+    for klass in draw2d_Triangle.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -480,123 +470,133 @@ def test_draw2d::triangle_has_direction():
 
 
 
-def test_draw2d::ellipse_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Ellipse)
+def test_draw2d_pointlistshape_is_not_abstract():
+    assert not inspect.isabstract(draw2d_PointListShape)
 
 
-def test_draw2d::ellipse_constructor_exists():
-    assert callable(draw2d::Ellipse.__init__)
+def test_draw2d_pointlistshape_constructor_exists():
+    assert callable(draw2d_PointListShape.__init__)
 
 
-def test_draw2d::ellipse_constructor_args():
-    sig = inspect.signature(draw2d::Ellipse.__init__)
+def test_draw2d_pointlistshape_constructor_args():
+    sig = inspect.signature(draw2d_PointListShape.__init__)
+    params = list(sig.parameters.keys())
+    assert "pointList" in params, "Missing parameter 'pointList'"
+
+def test_draw2d_pointlistshape_has_pointList():
+    assert hasattr(draw2d_PointListShape, "pointList")
+    descriptor = None
+    for klass in draw2d_PointListShape.__mro__:
+        if "pointList" in klass.__dict__:
+            descriptor = klass.__dict__["pointList"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_draw2d_rectanglefigure_is_not_abstract():
+    assert not inspect.isabstract(draw2d_RectangleFigure)
+
+
+def test_draw2d_rectanglefigure_constructor_exists():
+    assert callable(draw2d_RectangleFigure.__init__)
+
+
+def test_draw2d_rectanglefigure_constructor_args():
+    sig = inspect.signature(draw2d_RectangleFigure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_draw2d::rectanglefigure_is_not_abstract():
-    assert not inspect.isabstract(draw2d::RectangleFigure)
+def test_draw2d_figure_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Figure)
 
 
-def test_draw2d::rectanglefigure_constructor_exists():
-    assert callable(draw2d::RectangleFigure.__init__)
+def test_draw2d_figure_constructor_exists():
+    assert callable(draw2d_Figure.__init__)
 
 
-def test_draw2d::rectanglefigure_constructor_args():
-    sig = inspect.signature(draw2d::RectangleFigure.__init__)
+def test_draw2d_figure_constructor_args():
+    sig = inspect.signature(draw2d_Figure.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_draw2d::figure_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Figure)
-
-
-def test_draw2d::figure_constructor_exists():
-    assert callable(draw2d::Figure.__init__)
-
-
-def test_draw2d::figure_constructor_args():
-    sig = inspect.signature(draw2d::Figure.__init__)
-    params = list(sig.parameters.keys())
-    assert "minimumSize" in params, "Missing parameter 'minimumSize'"
-    assert "bounds" in params, "Missing parameter 'bounds'"
-    assert "opaque" in params, "Missing parameter 'opaque'"
-    assert "preferredSize" in params, "Missing parameter 'preferredSize'"
-    assert "visible" in params, "Missing parameter 'visible'"
     assert "focusTraversable" in params, "Missing parameter 'focusTraversable'"
+    assert "minimumSize" in params, "Missing parameter 'minimumSize'"
     assert "maximumSize" in params, "Missing parameter 'maximumSize'"
+    assert "preferredSize" in params, "Missing parameter 'preferredSize'"
+    assert "bounds" in params, "Missing parameter 'bounds'"
     assert "enabled" in params, "Missing parameter 'enabled'"
+    assert "visible" in params, "Missing parameter 'visible'"
+    assert "opaque" in params, "Missing parameter 'opaque'"
 
-def test_draw2d::figure_has_minimumSize():
-    assert hasattr(draw2d::Figure, "minimumSize")
+def test_draw2d_figure_has_focusTraversable():
+    assert hasattr(draw2d_Figure, "focusTraversable")
     descriptor = None
-    for klass in draw2d::Figure.__mro__:
-        if "minimumSize" in klass.__dict__:
-            descriptor = klass.__dict__["minimumSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::figure_has_bounds():
-    assert hasattr(draw2d::Figure, "bounds")
-    descriptor = None
-    for klass in draw2d::Figure.__mro__:
-        if "bounds" in klass.__dict__:
-            descriptor = klass.__dict__["bounds"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::figure_has_opaque():
-    assert hasattr(draw2d::Figure, "opaque")
-    descriptor = None
-    for klass in draw2d::Figure.__mro__:
-        if "opaque" in klass.__dict__:
-            descriptor = klass.__dict__["opaque"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::figure_has_preferredSize():
-    assert hasattr(draw2d::Figure, "preferredSize")
-    descriptor = None
-    for klass in draw2d::Figure.__mro__:
-        if "preferredSize" in klass.__dict__:
-            descriptor = klass.__dict__["preferredSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::figure_has_visible():
-    assert hasattr(draw2d::Figure, "visible")
-    descriptor = None
-    for klass in draw2d::Figure.__mro__:
-        if "visible" in klass.__dict__:
-            descriptor = klass.__dict__["visible"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::figure_has_focusTraversable():
-    assert hasattr(draw2d::Figure, "focusTraversable")
-    descriptor = None
-    for klass in draw2d::Figure.__mro__:
+    for klass in draw2d_Figure.__mro__:
         if "focusTraversable" in klass.__dict__:
             descriptor = klass.__dict__["focusTraversable"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::figure_has_maximumSize():
-    assert hasattr(draw2d::Figure, "maximumSize")
+def test_draw2d_figure_has_minimumSize():
+    assert hasattr(draw2d_Figure, "minimumSize")
     descriptor = None
-    for klass in draw2d::Figure.__mro__:
+    for klass in draw2d_Figure.__mro__:
+        if "minimumSize" in klass.__dict__:
+            descriptor = klass.__dict__["minimumSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_figure_has_maximumSize():
+    assert hasattr(draw2d_Figure, "maximumSize")
+    descriptor = None
+    for klass in draw2d_Figure.__mro__:
         if "maximumSize" in klass.__dict__:
             descriptor = klass.__dict__["maximumSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::figure_has_enabled():
-    assert hasattr(draw2d::Figure, "enabled")
+def test_draw2d_figure_has_preferredSize():
+    assert hasattr(draw2d_Figure, "preferredSize")
     descriptor = None
-    for klass in draw2d::Figure.__mro__:
+    for klass in draw2d_Figure.__mro__:
+        if "preferredSize" in klass.__dict__:
+            descriptor = klass.__dict__["preferredSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_figure_has_bounds():
+    assert hasattr(draw2d_Figure, "bounds")
+    descriptor = None
+    for klass in draw2d_Figure.__mro__:
+        if "bounds" in klass.__dict__:
+            descriptor = klass.__dict__["bounds"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_figure_has_enabled():
+    assert hasattr(draw2d_Figure, "enabled")
+    descriptor = None
+    for klass in draw2d_Figure.__mro__:
         if "enabled" in klass.__dict__:
             descriptor = klass.__dict__["enabled"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_figure_has_visible():
+    assert hasattr(draw2d_Figure, "visible")
+    descriptor = None
+    for klass in draw2d_Figure.__mro__:
+        if "visible" in klass.__dict__:
+            descriptor = klass.__dict__["visible"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_figure_has_opaque():
+    assert hasattr(draw2d_Figure, "opaque")
+    descriptor = None
+    for klass in draw2d_Figure.__mro__:
+        if "opaque" in klass.__dict__:
+            descriptor = klass.__dict__["opaque"]
             break
     assert isinstance(descriptor, property)
 
@@ -616,16 +616,16 @@ def test_canvas_constructor_args():
 
 
 
-def test_draw2d::draw2dcanvas_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Draw2DCanvas)
+def test_draw2d_draw2dcanvas_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Draw2DCanvas)
 
 
-def test_draw2d::draw2dcanvas_constructor_exists():
-    assert callable(draw2d::Draw2DCanvas.__init__)
+def test_draw2d_draw2dcanvas_constructor_exists():
+    assert callable(draw2d_Draw2DCanvas.__init__)
 
 
-def test_draw2d::draw2dcanvas_constructor_args():
-    sig = inspect.signature(draw2d::Draw2DCanvas.__init__)
+def test_draw2d_draw2dcanvas_constructor_args():
+    sig = inspect.signature(draw2d_Draw2DCanvas.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -644,191 +644,23 @@ def test_figure_constructor_args():
 
 
 
-def test_draw2d::blockflow_is_not_abstract():
-    assert not inspect.isabstract(draw2d::BlockFlow)
+def test_draw2d_imagefigure_is_not_abstract():
+    assert not inspect.isabstract(draw2d_ImageFigure)
 
 
-def test_draw2d::blockflow_constructor_exists():
-    assert callable(draw2d::BlockFlow.__init__)
+def test_draw2d_imagefigure_constructor_exists():
+    assert callable(draw2d_ImageFigure.__init__)
 
 
-def test_draw2d::blockflow_constructor_args():
-    sig = inspect.signature(draw2d::BlockFlow.__init__)
-    params = list(sig.parameters.keys())
-    assert "orientation" in params, "Missing parameter 'orientation'"
-
-def test_draw2d::blockflow_has_orientation():
-    assert hasattr(draw2d::BlockFlow, "orientation")
-    descriptor = None
-    for klass in draw2d::BlockFlow.__mro__:
-        if "orientation" in klass.__dict__:
-            descriptor = klass.__dict__["orientation"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_draw2d::shape_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Shape)
-
-
-def test_draw2d::shape_constructor_exists():
-    assert callable(draw2d::Shape.__init__)
-
-
-def test_draw2d::shape_constructor_args():
-    sig = inspect.signature(draw2d::Shape.__init__)
-    params = list(sig.parameters.keys())
-    assert "fillXOR" in params, "Missing parameter 'fillXOR'"
-    assert "lineJoin" in params, "Missing parameter 'lineJoin'"
-    assert "lineDash" in params, "Missing parameter 'lineDash'"
-    assert "lineDashOffset" in params, "Missing parameter 'lineDashOffset'"
-    assert "lineWidthFloat" in params, "Missing parameter 'lineWidthFloat'"
-    assert "outlineXOR" in params, "Missing parameter 'outlineXOR'"
-    assert "antialias" in params, "Missing parameter 'antialias'"
-    assert "lineCap" in params, "Missing parameter 'lineCap'"
-    assert "lineMiterLimit" in params, "Missing parameter 'lineMiterLimit'"
-    assert "fill" in params, "Missing parameter 'fill'"
-    assert "outline" in params, "Missing parameter 'outline'"
-    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
-    assert "alpha" in params, "Missing parameter 'alpha'"
-
-def test_draw2d::shape_has_fillXOR():
-    assert hasattr(draw2d::Shape, "fillXOR")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "fillXOR" in klass.__dict__:
-            descriptor = klass.__dict__["fillXOR"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineJoin():
-    assert hasattr(draw2d::Shape, "lineJoin")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineJoin" in klass.__dict__:
-            descriptor = klass.__dict__["lineJoin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineDash():
-    assert hasattr(draw2d::Shape, "lineDash")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineDash" in klass.__dict__:
-            descriptor = klass.__dict__["lineDash"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineDashOffset():
-    assert hasattr(draw2d::Shape, "lineDashOffset")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineDashOffset" in klass.__dict__:
-            descriptor = klass.__dict__["lineDashOffset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineWidthFloat():
-    assert hasattr(draw2d::Shape, "lineWidthFloat")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineWidthFloat" in klass.__dict__:
-            descriptor = klass.__dict__["lineWidthFloat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_outlineXOR():
-    assert hasattr(draw2d::Shape, "outlineXOR")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "outlineXOR" in klass.__dict__:
-            descriptor = klass.__dict__["outlineXOR"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_antialias():
-    assert hasattr(draw2d::Shape, "antialias")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "antialias" in klass.__dict__:
-            descriptor = klass.__dict__["antialias"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineCap():
-    assert hasattr(draw2d::Shape, "lineCap")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineCap" in klass.__dict__:
-            descriptor = klass.__dict__["lineCap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineMiterLimit():
-    assert hasattr(draw2d::Shape, "lineMiterLimit")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineMiterLimit" in klass.__dict__:
-            descriptor = klass.__dict__["lineMiterLimit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_fill():
-    assert hasattr(draw2d::Shape, "fill")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "fill" in klass.__dict__:
-            descriptor = klass.__dict__["fill"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_outline():
-    assert hasattr(draw2d::Shape, "outline")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "outline" in klass.__dict__:
-            descriptor = klass.__dict__["outline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_lineStyle():
-    assert hasattr(draw2d::Shape, "lineStyle")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "lineStyle" in klass.__dict__:
-            descriptor = klass.__dict__["lineStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::shape_has_alpha():
-    assert hasattr(draw2d::Shape, "alpha")
-    descriptor = None
-    for klass in draw2d::Shape.__mro__:
-        if "alpha" in klass.__dict__:
-            descriptor = klass.__dict__["alpha"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_draw2d::imagefigure_is_not_abstract():
-    assert not inspect.isabstract(draw2d::ImageFigure)
-
-
-def test_draw2d::imagefigure_constructor_exists():
-    assert callable(draw2d::ImageFigure.__init__)
-
-
-def test_draw2d::imagefigure_constructor_args():
-    sig = inspect.signature(draw2d::ImageFigure.__init__)
+def test_draw2d_imagefigure_constructor_args():
+    sig = inspect.signature(draw2d_ImageFigure.__init__)
     params = list(sig.parameters.keys())
     assert "image" in params, "Missing parameter 'image'"
 
-def test_draw2d::imagefigure_has_image():
-    assert hasattr(draw2d::ImageFigure, "image")
+def test_draw2d_imagefigure_has_image():
+    assert hasattr(draw2d_ImageFigure, "image")
     descriptor = None
-    for klass in draw2d::ImageFigure.__mro__:
+    for klass in draw2d_ImageFigure.__mro__:
         if "image" in klass.__dict__:
             descriptor = klass.__dict__["image"]
             break
@@ -836,97 +668,265 @@ def test_draw2d::imagefigure_has_image():
 
 
 
-def test_draw2d::label_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Label)
+def test_draw2d_shape_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Shape)
 
 
-def test_draw2d::label_constructor_exists():
-    assert callable(draw2d::Label.__init__)
+def test_draw2d_shape_constructor_exists():
+    assert callable(draw2d_Shape.__init__)
 
 
-def test_draw2d::label_constructor_args():
-    sig = inspect.signature(draw2d::Label.__init__)
+def test_draw2d_shape_constructor_args():
+    sig = inspect.signature(draw2d_Shape.__init__)
+    params = list(sig.parameters.keys())
+    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
+    assert "fill" in params, "Missing parameter 'fill'"
+    assert "lineWidthFloat" in params, "Missing parameter 'lineWidthFloat'"
+    assert "lineMiterLimit" in params, "Missing parameter 'lineMiterLimit'"
+    assert "lineDash" in params, "Missing parameter 'lineDash'"
+    assert "lineJoin" in params, "Missing parameter 'lineJoin'"
+    assert "lineCap" in params, "Missing parameter 'lineCap'"
+    assert "outlineXOR" in params, "Missing parameter 'outlineXOR'"
+    assert "lineDashOffset" in params, "Missing parameter 'lineDashOffset'"
+    assert "antialias" in params, "Missing parameter 'antialias'"
+    assert "alpha" in params, "Missing parameter 'alpha'"
+    assert "fillXOR" in params, "Missing parameter 'fillXOR'"
+    assert "outline" in params, "Missing parameter 'outline'"
+
+def test_draw2d_shape_has_lineStyle():
+    assert hasattr(draw2d_Shape, "lineStyle")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineStyle" in klass.__dict__:
+            descriptor = klass.__dict__["lineStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_fill():
+    assert hasattr(draw2d_Shape, "fill")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "fill" in klass.__dict__:
+            descriptor = klass.__dict__["fill"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_lineWidthFloat():
+    assert hasattr(draw2d_Shape, "lineWidthFloat")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineWidthFloat" in klass.__dict__:
+            descriptor = klass.__dict__["lineWidthFloat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_lineMiterLimit():
+    assert hasattr(draw2d_Shape, "lineMiterLimit")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineMiterLimit" in klass.__dict__:
+            descriptor = klass.__dict__["lineMiterLimit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_lineDash():
+    assert hasattr(draw2d_Shape, "lineDash")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineDash" in klass.__dict__:
+            descriptor = klass.__dict__["lineDash"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_lineJoin():
+    assert hasattr(draw2d_Shape, "lineJoin")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineJoin" in klass.__dict__:
+            descriptor = klass.__dict__["lineJoin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_lineCap():
+    assert hasattr(draw2d_Shape, "lineCap")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineCap" in klass.__dict__:
+            descriptor = klass.__dict__["lineCap"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_outlineXOR():
+    assert hasattr(draw2d_Shape, "outlineXOR")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "outlineXOR" in klass.__dict__:
+            descriptor = klass.__dict__["outlineXOR"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_lineDashOffset():
+    assert hasattr(draw2d_Shape, "lineDashOffset")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "lineDashOffset" in klass.__dict__:
+            descriptor = klass.__dict__["lineDashOffset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_antialias():
+    assert hasattr(draw2d_Shape, "antialias")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "antialias" in klass.__dict__:
+            descriptor = klass.__dict__["antialias"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_alpha():
+    assert hasattr(draw2d_Shape, "alpha")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "alpha" in klass.__dict__:
+            descriptor = klass.__dict__["alpha"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_fillXOR():
+    assert hasattr(draw2d_Shape, "fillXOR")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "fillXOR" in klass.__dict__:
+            descriptor = klass.__dict__["fillXOR"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_shape_has_outline():
+    assert hasattr(draw2d_Shape, "outline")
+    descriptor = None
+    for klass in draw2d_Shape.__mro__:
+        if "outline" in klass.__dict__:
+            descriptor = klass.__dict__["outline"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_draw2d_blockflow_is_not_abstract():
+    assert not inspect.isabstract(draw2d_BlockFlow)
+
+
+def test_draw2d_blockflow_constructor_exists():
+    assert callable(draw2d_BlockFlow.__init__)
+
+
+def test_draw2d_blockflow_constructor_args():
+    sig = inspect.signature(draw2d_BlockFlow.__init__)
+    params = list(sig.parameters.keys())
+    assert "orientation" in params, "Missing parameter 'orientation'"
+
+def test_draw2d_blockflow_has_orientation():
+    assert hasattr(draw2d_BlockFlow, "orientation")
+    descriptor = None
+    for klass in draw2d_BlockFlow.__mro__:
+        if "orientation" in klass.__dict__:
+            descriptor = klass.__dict__["orientation"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_draw2d_label_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Label)
+
+
+def test_draw2d_label_constructor_exists():
+    assert callable(draw2d_Label.__init__)
+
+
+def test_draw2d_label_constructor_args():
+    sig = inspect.signature(draw2d_Label.__init__)
     params = list(sig.parameters.keys())
     assert "iconAlignment" in params, "Missing parameter 'iconAlignment'"
-    assert "text" in params, "Missing parameter 'text'"
     assert "iconTextGap" in params, "Missing parameter 'iconTextGap'"
-    assert "icon" in params, "Missing parameter 'icon'"
     assert "textPlacement" in params, "Missing parameter 'textPlacement'"
     assert "textAlignment" in params, "Missing parameter 'textAlignment'"
+    assert "icon" in params, "Missing parameter 'icon'"
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_draw2d::label_has_iconAlignment():
-    assert hasattr(draw2d::Label, "iconAlignment")
+def test_draw2d_label_has_iconAlignment():
+    assert hasattr(draw2d_Label, "iconAlignment")
     descriptor = None
-    for klass in draw2d::Label.__mro__:
+    for klass in draw2d_Label.__mro__:
         if "iconAlignment" in klass.__dict__:
             descriptor = klass.__dict__["iconAlignment"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::label_has_text():
-    assert hasattr(draw2d::Label, "text")
+def test_draw2d_label_has_iconTextGap():
+    assert hasattr(draw2d_Label, "iconTextGap")
     descriptor = None
-    for klass in draw2d::Label.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::label_has_iconTextGap():
-    assert hasattr(draw2d::Label, "iconTextGap")
-    descriptor = None
-    for klass in draw2d::Label.__mro__:
+    for klass in draw2d_Label.__mro__:
         if "iconTextGap" in klass.__dict__:
             descriptor = klass.__dict__["iconTextGap"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::label_has_icon():
-    assert hasattr(draw2d::Label, "icon")
+def test_draw2d_label_has_textPlacement():
+    assert hasattr(draw2d_Label, "textPlacement")
     descriptor = None
-    for klass in draw2d::Label.__mro__:
-        if "icon" in klass.__dict__:
-            descriptor = klass.__dict__["icon"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_draw2d::label_has_textPlacement():
-    assert hasattr(draw2d::Label, "textPlacement")
-    descriptor = None
-    for klass in draw2d::Label.__mro__:
+    for klass in draw2d_Label.__mro__:
         if "textPlacement" in klass.__dict__:
             descriptor = klass.__dict__["textPlacement"]
             break
     assert isinstance(descriptor, property)
 
-def test_draw2d::label_has_textAlignment():
-    assert hasattr(draw2d::Label, "textAlignment")
+def test_draw2d_label_has_textAlignment():
+    assert hasattr(draw2d_Label, "textAlignment")
     descriptor = None
-    for klass in draw2d::Label.__mro__:
+    for klass in draw2d_Label.__mro__:
         if "textAlignment" in klass.__dict__:
             descriptor = klass.__dict__["textAlignment"]
             break
     assert isinstance(descriptor, property)
 
+def test_draw2d_label_has_icon():
+    assert hasattr(draw2d_Label, "icon")
+    descriptor = None
+    for klass in draw2d_Label.__mro__:
+        if "icon" in klass.__dict__:
+            descriptor = klass.__dict__["icon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_draw2d_label_has_text():
+    assert hasattr(draw2d_Label, "text")
+    descriptor = None
+    for klass in draw2d_Label.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_draw2d::border_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Border)
+
+def test_draw2d_border_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Border)
 
 
-def test_draw2d::border_constructor_exists():
-    assert callable(draw2d::Border.__init__)
+def test_draw2d_border_constructor_exists():
+    assert callable(draw2d_Border.__init__)
 
 
-def test_draw2d::border_constructor_args():
-    sig = inspect.signature(draw2d::Border.__init__)
+def test_draw2d_border_constructor_args():
+    sig = inspect.signature(draw2d_Border.__init__)
     params = list(sig.parameters.keys())
     assert "opaque" in params, "Missing parameter 'opaque'"
 
-def test_draw2d::border_has_opaque():
-    assert hasattr(draw2d::Border, "opaque")
+def test_draw2d_border_has_opaque():
+    assert hasattr(draw2d_Border, "opaque")
     descriptor = None
-    for klass in draw2d::Border.__mro__:
+    for klass in draw2d_Border.__mro__:
         if "opaque" in klass.__dict__:
             descriptor = klass.__dict__["opaque"]
             break
@@ -934,31 +934,48 @@ def test_draw2d::border_has_opaque():
 
 
 
-def test_draw2d::font_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Font)
+def test_draw2d_font_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Font)
 
 
-def test_draw2d::font_constructor_exists():
-    assert callable(draw2d::Font.__init__)
+def test_draw2d_font_constructor_exists():
+    assert callable(draw2d_Font.__init__)
 
 
-def test_draw2d::font_constructor_args():
-    sig = inspect.signature(draw2d::Font.__init__)
+def test_draw2d_font_constructor_args():
+    sig = inspect.signature(draw2d_Font.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_draw2d::color_is_not_abstract():
-    assert not inspect.isabstract(draw2d::Color)
+def test_draw2d_color_is_not_abstract():
+    assert not inspect.isabstract(draw2d_Color)
 
 
-def test_draw2d::color_constructor_exists():
-    assert callable(draw2d::Color.__init__)
+def test_draw2d_color_constructor_exists():
+    assert callable(draw2d_Color.__init__)
 
 
-def test_draw2d::color_constructor_args():
-    sig = inspect.signature(draw2d::Color.__init__)
+def test_draw2d_color_constructor_args():
+    sig = inspect.signature(draw2d_Color.__init__)
     params = list(sig.parameters.keys())
+
+def test_direction_exists():
+    # Check that the Enumeration exists
+    assert Direction is not None
+
+def test_direction_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Direction]
+    expected_literals = [
+        "EAST",
+        "NORTH",
+        "SOUTH",
+        "WEST",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Direction"
 
 def test_alignment_exists():
     # Check that the Enumeration exists
@@ -969,11 +986,11 @@ def test_alignment_has_all_literals():
     enum_literals = [lit.name for lit in Alignment]
     expected_literals = [
         "TOP",
-        "CENTER",
         "MIDDLE",
-        "LEFT",
+        "CENTER",
         "RIGHT",
         "BOTTOM",
+        "LEFT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -994,23 +1011,6 @@ def test_orientation_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Orientation"
 
-def test_direction_exists():
-    # Check that the Enumeration exists
-    assert Direction is not None
-
-def test_direction_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Direction]
-    expected_literals = [
-        "WEST",
-        "SOUTH",
-        "EAST",
-        "NORTH",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Direction"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1026,191 +1026,191 @@ safe_text = st.text(
 Border_strategy = st.builds(
     Border,
 )
-draw2d::LabeledBorder_strategy = st.builds(
-    draw2d::LabeledBorder,
+draw2d_LabeledBorder_strategy = st.builds(
+    draw2d_LabeledBorder,
     label=
         safe_text
 )
 ConnectionAnchor_strategy = st.builds(
     ConnectionAnchor,
 )
-draw2d::XYAnchor_strategy = st.builds(
-    draw2d::XYAnchor,
+draw2d_XYAnchor_strategy = st.builds(
+    draw2d_XYAnchor,
     location=
         safe_text
 )
-draw2d::ConnectionAnchor_strategy = st.builds(
-    draw2d::ConnectionAnchor,
+draw2d_ConnectionAnchor_strategy = st.builds(
+    draw2d_ConnectionAnchor,
 )
-draw2d::FlowBorder_strategy = st.builds(
-    draw2d::FlowBorder,
+draw2d_FlowBorder_strategy = st.builds(
+    draw2d_FlowBorder,
     bottomMargin=
+        st.integers(),
+    rightMargin=
         st.integers(),
     leftMargin=
         st.integers(),
     topMargin=
-        st.integers(),
-    rightMargin=
         st.integers()
 )
 ColoredLabeledBorder_strategy = st.builds(
     ColoredLabeledBorder,
 )
-draw2d::TitleBarBorder_strategy = st.builds(
-    draw2d::TitleBarBorder,
+draw2d_TitleBarBorder_strategy = st.builds(
+    draw2d_TitleBarBorder,
 )
-draw2d::GroupBoxBorder_strategy = st.builds(
-    draw2d::GroupBoxBorder,
+draw2d_GroupBoxBorder_strategy = st.builds(
+    draw2d_GroupBoxBorder,
 )
 LabeledBorder_strategy = st.builds(
     LabeledBorder,
 )
-draw2d::ColoredLabeledBorder_strategy = st.builds(
-    draw2d::ColoredLabeledBorder,
+draw2d_ColoredLabeledBorder_strategy = st.builds(
+    draw2d_ColoredLabeledBorder,
 )
-draw2d::FrameBorder_strategy = st.builds(
-    draw2d::FrameBorder,
+draw2d_FrameBorder_strategy = st.builds(
+    draw2d_FrameBorder,
 )
 Polyline_strategy = st.builds(
     Polyline,
 )
-draw2d::Polygon_strategy = st.builds(
-    draw2d::Polygon,
+draw2d_Polygon_strategy = st.builds(
+    draw2d_Polygon,
 )
 PointListShape_strategy = st.builds(
     PointListShape,
 )
-draw2d::PolylineShape_strategy = st.builds(
-    draw2d::PolylineShape,
+draw2d_PolygonShape_strategy = st.builds(
+    draw2d_PolygonShape,
+)
+draw2d_PolylineShape_strategy = st.builds(
+    draw2d_PolylineShape,
     tolerance=
         st.integers()
 )
-draw2d::PolygonShape_strategy = st.builds(
-    draw2d::PolygonShape,
-)
-draw2d::Polyline_strategy = st.builds(
-    draw2d::Polyline,
+draw2d_Polyline_strategy = st.builds(
+    draw2d_Polyline,
     tolerance=
         st.integers()
 )
 Shape_strategy = st.builds(
     Shape,
 )
-draw2d::RoundedRectangle_strategy = st.builds(
-    draw2d::RoundedRectangle,
+draw2d_Ellipse_strategy = st.builds(
+    draw2d_Ellipse,
+)
+draw2d_RoundedRectangle_strategy = st.builds(
+    draw2d_RoundedRectangle,
     cornerDimensions=
         safe_text
 )
-draw2d::PointListShape_strategy = st.builds(
-    draw2d::PointListShape,
-    pointList=
-        st.integers()
-)
-draw2d::Triangle_strategy = st.builds(
-    draw2d::Triangle,
+draw2d_Triangle_strategy = st.builds(
+    draw2d_Triangle,
     orientation=
         safe_text,
     direction=
         safe_text
 )
-draw2d::Ellipse_strategy = st.builds(
-    draw2d::Ellipse,
+draw2d_PointListShape_strategy = st.builds(
+    draw2d_PointListShape,
+    pointList=
+        st.integers()
 )
-draw2d::RectangleFigure_strategy = st.builds(
-    draw2d::RectangleFigure,
+draw2d_RectangleFigure_strategy = st.builds(
+    draw2d_RectangleFigure,
 )
-draw2d::Figure_strategy = st.builds(
-    draw2d::Figure,
+draw2d_Figure_strategy = st.builds(
+    draw2d_Figure,
+    focusTraversable=
+        st.booleans(),
     minimumSize=
+        safe_text,
+    maximumSize=
+        safe_text,
+    preferredSize=
         safe_text,
     bounds=
         safe_text,
-    opaque=
+    enabled=
         st.booleans(),
-    preferredSize=
-        safe_text,
     visible=
         st.booleans(),
-    focusTraversable=
-        st.booleans(),
-    maximumSize=
-        safe_text,
-    enabled=
+    opaque=
         st.booleans()
 )
 Canvas_strategy = st.builds(
     Canvas,
 )
-draw2d::Draw2DCanvas_strategy = st.builds(
-    draw2d::Draw2DCanvas,
+draw2d_Draw2DCanvas_strategy = st.builds(
+    draw2d_Draw2DCanvas,
 )
 Figure_strategy = st.builds(
     Figure,
 )
-draw2d::BlockFlow_strategy = st.builds(
-    draw2d::BlockFlow,
-    orientation=
-        safe_text
-)
-draw2d::Shape_strategy = st.builds(
-    draw2d::Shape,
-    fillXOR=
-        st.booleans(),
-    lineJoin=
-        safe_text,
-    lineDash=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    lineDashOffset=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    lineWidthFloat=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    outlineXOR=
-        st.booleans(),
-    antialias=
-        safe_text,
-    lineCap=
-        safe_text,
-    lineMiterLimit=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    fill=
-        st.booleans(),
-    outline=
-        st.booleans(),
-    lineStyle=
-        safe_text,
-    alpha=
-        safe_text
-)
-draw2d::ImageFigure_strategy = st.builds(
-    draw2d::ImageFigure,
+draw2d_ImageFigure_strategy = st.builds(
+    draw2d_ImageFigure,
     image=
         safe_text
 )
-draw2d::Label_strategy = st.builds(
-    draw2d::Label,
-    iconAlignment=
+draw2d_Shape_strategy = st.builds(
+    draw2d_Shape,
+    lineStyle=
         safe_text,
-    text=
+    fill=
+        st.booleans(),
+    lineWidthFloat=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    lineMiterLimit=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    lineDash=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    lineJoin=
+        safe_text,
+    lineCap=
+        safe_text,
+    outlineXOR=
+        st.booleans(),
+    lineDashOffset=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    antialias=
+        safe_text,
+    alpha=
+        safe_text,
+    fillXOR=
+        st.booleans(),
+    outline=
+        st.booleans()
+)
+draw2d_BlockFlow_strategy = st.builds(
+    draw2d_BlockFlow,
+    orientation=
+        safe_text
+)
+draw2d_Label_strategy = st.builds(
+    draw2d_Label,
+    iconAlignment=
         safe_text,
     iconTextGap=
         st.integers(),
-    icon=
-        safe_text,
     textPlacement=
         safe_text,
     textAlignment=
+        safe_text,
+    icon=
+        safe_text,
+    text=
         safe_text
 )
-draw2d::Border_strategy = st.builds(
-    draw2d::Border,
+draw2d_Border_strategy = st.builds(
+    draw2d_Border,
     opaque=
         st.booleans()
 )
-draw2d::Font_strategy = st.builds(
-    draw2d::Font,
+draw2d_Font_strategy = st.builds(
+    draw2d_Font,
 )
-draw2d::Color_strategy = st.builds(
-    draw2d::Color,
+draw2d_Color_strategy = st.builds(
+    draw2d_Color,
 )
 
 @given(instance=Border_strategy)
@@ -1218,18 +1218,15 @@ draw2d::Color_strategy = st.builds(
 def test_border_instantiation(instance):
     assert isinstance(instance, Border)
 
-@given(instance=draw2d::LabeledBorder_strategy)
+@given(instance=draw2d_LabeledBorder_strategy)
 @settings(max_examples=50)
-def test_draw2d::labeledborder_instantiation(instance):
-    assert isinstance(instance, draw2d::LabeledBorder)
-
-@given(instance=draw2d::LabeledBorder_strategy)
-def test_draw2d::labeledborder_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_draw2d_labeledborder_instantiation(instance):
+    assert isinstance(instance, draw2d_LabeledBorder)
 
 
-@given(instance=draw2d::LabeledBorder_strategy)
-def test_draw2d::labeledborder_label_setter(instance):
+
+@given(instance=draw2d_LabeledBorder_strategy)
+def test_draw2d_labeledborder_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -1239,154 +1236,133 @@ def test_draw2d::labeledborder_label_setter(instance):
 def test_connectionanchor_instantiation(instance):
     assert isinstance(instance, ConnectionAnchor)
 
-@given(instance=draw2d::XYAnchor_strategy)
+@given(instance=draw2d_XYAnchor_strategy)
 @settings(max_examples=50)
-def test_draw2d::xyanchor_instantiation(instance):
-    assert isinstance(instance, draw2d::XYAnchor)
-
-@given(instance=draw2d::XYAnchor_strategy)
-def test_draw2d::xyanchor_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_draw2d_xyanchor_instantiation(instance):
+    assert isinstance(instance, draw2d_XYAnchor)
 
 
-@given(instance=draw2d::XYAnchor_strategy)
-def test_draw2d::xyanchor_location_setter(instance):
+
+@given(instance=draw2d_XYAnchor_strategy)
+def test_draw2d_xyanchor_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=draw2d::ConnectionAnchor_strategy)
+@given(instance=draw2d_ConnectionAnchor_strategy)
 @settings(max_examples=50)
-def test_draw2d::connectionanchor_instantiation(instance):
-    assert isinstance(instance, draw2d::ConnectionAnchor)
+def test_draw2d_connectionanchor_instantiation(instance):
+    assert isinstance(instance, draw2d_ConnectionAnchor)
 
-@given(instance=draw2d::FlowBorder_strategy)
+@given(instance=draw2d_FlowBorder_strategy)
 @settings(max_examples=50)
-def test_draw2d::flowborder_instantiation(instance):
-    assert isinstance(instance, draw2d::FlowBorder)
-
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_bottomMargin_type(instance):
-    assert isinstance(instance.bottomMargin, int)
+def test_draw2d_flowborder_instantiation(instance):
+    assert isinstance(instance, draw2d_FlowBorder)
 
 
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_bottomMargin_setter(instance):
+
+@given(instance=draw2d_FlowBorder_strategy)
+def test_draw2d_flowborder_bottomMargin_setter(instance):
     original = instance.bottomMargin
     instance.bottomMargin = original
     assert instance.bottomMargin == original
 
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_leftMargin_type(instance):
-    assert isinstance(instance.leftMargin, int)
 
 
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_leftMargin_setter(instance):
+@given(instance=draw2d_FlowBorder_strategy)
+def test_draw2d_flowborder_rightMargin_setter(instance):
+    original = instance.rightMargin
+    instance.rightMargin = original
+    assert instance.rightMargin == original
+
+
+
+@given(instance=draw2d_FlowBorder_strategy)
+def test_draw2d_flowborder_leftMargin_setter(instance):
     original = instance.leftMargin
     instance.leftMargin = original
     assert instance.leftMargin == original
 
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_topMargin_type(instance):
-    assert isinstance(instance.topMargin, int)
 
 
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_topMargin_setter(instance):
+@given(instance=draw2d_FlowBorder_strategy)
+def test_draw2d_flowborder_topMargin_setter(instance):
     original = instance.topMargin
     instance.topMargin = original
     assert instance.topMargin == original
-
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_rightMargin_type(instance):
-    assert isinstance(instance.rightMargin, int)
-
-
-@given(instance=draw2d::FlowBorder_strategy)
-def test_draw2d::flowborder_rightMargin_setter(instance):
-    original = instance.rightMargin
-    instance.rightMargin = original
-    assert instance.rightMargin == original
 
 @given(instance=ColoredLabeledBorder_strategy)
 @settings(max_examples=50)
 def test_coloredlabeledborder_instantiation(instance):
     assert isinstance(instance, ColoredLabeledBorder)
 
-@given(instance=draw2d::TitleBarBorder_strategy)
+@given(instance=draw2d_TitleBarBorder_strategy)
 @settings(max_examples=50)
-def test_draw2d::titlebarborder_instantiation(instance):
-    assert isinstance(instance, draw2d::TitleBarBorder)
+def test_draw2d_titlebarborder_instantiation(instance):
+    assert isinstance(instance, draw2d_TitleBarBorder)
 
-@given(instance=draw2d::GroupBoxBorder_strategy)
+@given(instance=draw2d_GroupBoxBorder_strategy)
 @settings(max_examples=50)
-def test_draw2d::groupboxborder_instantiation(instance):
-    assert isinstance(instance, draw2d::GroupBoxBorder)
+def test_draw2d_groupboxborder_instantiation(instance):
+    assert isinstance(instance, draw2d_GroupBoxBorder)
 
 @given(instance=LabeledBorder_strategy)
 @settings(max_examples=50)
 def test_labeledborder_instantiation(instance):
     assert isinstance(instance, LabeledBorder)
 
-@given(instance=draw2d::ColoredLabeledBorder_strategy)
+@given(instance=draw2d_ColoredLabeledBorder_strategy)
 @settings(max_examples=50)
-def test_draw2d::coloredlabeledborder_instantiation(instance):
-    assert isinstance(instance, draw2d::ColoredLabeledBorder)
+def test_draw2d_coloredlabeledborder_instantiation(instance):
+    assert isinstance(instance, draw2d_ColoredLabeledBorder)
 
-@given(instance=draw2d::FrameBorder_strategy)
+@given(instance=draw2d_FrameBorder_strategy)
 @settings(max_examples=50)
-def test_draw2d::frameborder_instantiation(instance):
-    assert isinstance(instance, draw2d::FrameBorder)
+def test_draw2d_frameborder_instantiation(instance):
+    assert isinstance(instance, draw2d_FrameBorder)
 
 @given(instance=Polyline_strategy)
 @settings(max_examples=50)
 def test_polyline_instantiation(instance):
     assert isinstance(instance, Polyline)
 
-@given(instance=draw2d::Polygon_strategy)
+@given(instance=draw2d_Polygon_strategy)
 @settings(max_examples=50)
-def test_draw2d::polygon_instantiation(instance):
-    assert isinstance(instance, draw2d::Polygon)
+def test_draw2d_polygon_instantiation(instance):
+    assert isinstance(instance, draw2d_Polygon)
 
 @given(instance=PointListShape_strategy)
 @settings(max_examples=50)
 def test_pointlistshape_instantiation(instance):
     assert isinstance(instance, PointListShape)
 
-@given(instance=draw2d::PolylineShape_strategy)
+@given(instance=draw2d_PolygonShape_strategy)
 @settings(max_examples=50)
-def test_draw2d::polylineshape_instantiation(instance):
-    assert isinstance(instance, draw2d::PolylineShape)
+def test_draw2d_polygonshape_instantiation(instance):
+    assert isinstance(instance, draw2d_PolygonShape)
 
-@given(instance=draw2d::PolylineShape_strategy)
-def test_draw2d::polylineshape_tolerance_type(instance):
-    assert isinstance(instance.tolerance, int)
+@given(instance=draw2d_PolylineShape_strategy)
+@settings(max_examples=50)
+def test_draw2d_polylineshape_instantiation(instance):
+    assert isinstance(instance, draw2d_PolylineShape)
 
 
-@given(instance=draw2d::PolylineShape_strategy)
-def test_draw2d::polylineshape_tolerance_setter(instance):
+
+@given(instance=draw2d_PolylineShape_strategy)
+def test_draw2d_polylineshape_tolerance_setter(instance):
     original = instance.tolerance
     instance.tolerance = original
     assert instance.tolerance == original
 
-@given(instance=draw2d::PolygonShape_strategy)
+@given(instance=draw2d_Polyline_strategy)
 @settings(max_examples=50)
-def test_draw2d::polygonshape_instantiation(instance):
-    assert isinstance(instance, draw2d::PolygonShape)
-
-@given(instance=draw2d::Polyline_strategy)
-@settings(max_examples=50)
-def test_draw2d::polyline_instantiation(instance):
-    assert isinstance(instance, draw2d::Polyline)
-
-@given(instance=draw2d::Polyline_strategy)
-def test_draw2d::polyline_tolerance_type(instance):
-    assert isinstance(instance.tolerance, int)
+def test_draw2d_polyline_instantiation(instance):
+    assert isinstance(instance, draw2d_Polyline)
 
 
-@given(instance=draw2d::Polyline_strategy)
-def test_draw2d::polyline_tolerance_setter(instance):
+
+@given(instance=draw2d_Polyline_strategy)
+def test_draw2d_polyline_tolerance_setter(instance):
     original = instance.tolerance
     instance.tolerance = original
     assert instance.tolerance == original
@@ -1396,456 +1372,354 @@ def test_draw2d::polyline_tolerance_setter(instance):
 def test_shape_instantiation(instance):
     assert isinstance(instance, Shape)
 
-@given(instance=draw2d::RoundedRectangle_strategy)
+@given(instance=draw2d_Ellipse_strategy)
 @settings(max_examples=50)
-def test_draw2d::roundedrectangle_instantiation(instance):
-    assert isinstance(instance, draw2d::RoundedRectangle)
+def test_draw2d_ellipse_instantiation(instance):
+    assert isinstance(instance, draw2d_Ellipse)
 
-@given(instance=draw2d::RoundedRectangle_strategy)
-def test_draw2d::roundedrectangle_cornerDimensions_type(instance):
-    assert isinstance(instance.cornerDimensions, str)
+@given(instance=draw2d_RoundedRectangle_strategy)
+@settings(max_examples=50)
+def test_draw2d_roundedrectangle_instantiation(instance):
+    assert isinstance(instance, draw2d_RoundedRectangle)
 
 
-@given(instance=draw2d::RoundedRectangle_strategy)
-def test_draw2d::roundedrectangle_cornerDimensions_setter(instance):
+
+@given(instance=draw2d_RoundedRectangle_strategy)
+def test_draw2d_roundedrectangle_cornerDimensions_setter(instance):
     original = instance.cornerDimensions
     instance.cornerDimensions = original
     assert instance.cornerDimensions == original
 
-@given(instance=draw2d::PointListShape_strategy)
+@given(instance=draw2d_Triangle_strategy)
 @settings(max_examples=50)
-def test_draw2d::pointlistshape_instantiation(instance):
-    assert isinstance(instance, draw2d::PointListShape)
-
-@given(instance=draw2d::PointListShape_strategy)
-def test_draw2d::pointlistshape_pointList_type(instance):
-    assert isinstance(instance.pointList, int)
+def test_draw2d_triangle_instantiation(instance):
+    assert isinstance(instance, draw2d_Triangle)
 
 
-@given(instance=draw2d::PointListShape_strategy)
-def test_draw2d::pointlistshape_pointList_setter(instance):
-    original = instance.pointList
-    instance.pointList = original
-    assert instance.pointList == original
 
-@given(instance=draw2d::Triangle_strategy)
-@settings(max_examples=50)
-def test_draw2d::triangle_instantiation(instance):
-    assert isinstance(instance, draw2d::Triangle)
-
-@given(instance=draw2d::Triangle_strategy)
-def test_draw2d::triangle_orientation_type(instance):
-    assert isinstance(instance.orientation, str)
-
-
-@given(instance=draw2d::Triangle_strategy)
-def test_draw2d::triangle_orientation_setter(instance):
+@given(instance=draw2d_Triangle_strategy)
+def test_draw2d_triangle_orientation_setter(instance):
     original = instance.orientation
     instance.orientation = original
     assert instance.orientation == original
 
-@given(instance=draw2d::Triangle_strategy)
-def test_draw2d::triangle_direction_type(instance):
-    assert isinstance(instance.direction, str)
 
 
-@given(instance=draw2d::Triangle_strategy)
-def test_draw2d::triangle_direction_setter(instance):
+@given(instance=draw2d_Triangle_strategy)
+def test_draw2d_triangle_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=draw2d::Ellipse_strategy)
+@given(instance=draw2d_PointListShape_strategy)
 @settings(max_examples=50)
-def test_draw2d::ellipse_instantiation(instance):
-    assert isinstance(instance, draw2d::Ellipse)
+def test_draw2d_pointlistshape_instantiation(instance):
+    assert isinstance(instance, draw2d_PointListShape)
 
-@given(instance=draw2d::RectangleFigure_strategy)
+
+
+@given(instance=draw2d_PointListShape_strategy)
+def test_draw2d_pointlistshape_pointList_setter(instance):
+    original = instance.pointList
+    instance.pointList = original
+    assert instance.pointList == original
+
+@given(instance=draw2d_RectangleFigure_strategy)
 @settings(max_examples=50)
-def test_draw2d::rectanglefigure_instantiation(instance):
-    assert isinstance(instance, draw2d::RectangleFigure)
+def test_draw2d_rectanglefigure_instantiation(instance):
+    assert isinstance(instance, draw2d_RectangleFigure)
 
-@given(instance=draw2d::Figure_strategy)
+@given(instance=draw2d_Figure_strategy)
 @settings(max_examples=50)
-def test_draw2d::figure_instantiation(instance):
-    assert isinstance(instance, draw2d::Figure)
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_minimumSize_type(instance):
-    assert isinstance(instance.minimumSize, str)
+def test_draw2d_figure_instantiation(instance):
+    assert isinstance(instance, draw2d_Figure)
 
 
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_minimumSize_setter(instance):
-    original = instance.minimumSize
-    instance.minimumSize = original
-    assert instance.minimumSize == original
 
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_bounds_type(instance):
-    assert isinstance(instance.bounds, str)
-
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_bounds_setter(instance):
-    original = instance.bounds
-    instance.bounds = original
-    assert instance.bounds == original
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_opaque_type(instance):
-    assert isinstance(instance.opaque, bool)
-
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_opaque_setter(instance):
-    original = instance.opaque
-    instance.opaque = original
-    assert instance.opaque == original
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_preferredSize_type(instance):
-    assert isinstance(instance.preferredSize, str)
-
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_preferredSize_setter(instance):
-    original = instance.preferredSize
-    instance.preferredSize = original
-    assert instance.preferredSize == original
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_visible_type(instance):
-    assert isinstance(instance.visible, bool)
-
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_visible_setter(instance):
-    original = instance.visible
-    instance.visible = original
-    assert instance.visible == original
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_focusTraversable_type(instance):
-    assert isinstance(instance.focusTraversable, bool)
-
-
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_focusTraversable_setter(instance):
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_focusTraversable_setter(instance):
     original = instance.focusTraversable
     instance.focusTraversable = original
     assert instance.focusTraversable == original
 
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_maximumSize_type(instance):
-    assert isinstance(instance.maximumSize, str)
 
 
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_maximumSize_setter(instance):
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_minimumSize_setter(instance):
+    original = instance.minimumSize
+    instance.minimumSize = original
+    assert instance.minimumSize == original
+
+
+
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_maximumSize_setter(instance):
     original = instance.maximumSize
     instance.maximumSize = original
     assert instance.maximumSize == original
 
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
 
 
-@given(instance=draw2d::Figure_strategy)
-def test_draw2d::figure_enabled_setter(instance):
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_preferredSize_setter(instance):
+    original = instance.preferredSize
+    instance.preferredSize = original
+    assert instance.preferredSize == original
+
+
+
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_bounds_setter(instance):
+    original = instance.bounds
+    instance.bounds = original
+    assert instance.bounds == original
+
+
+
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_enabled_setter(instance):
     original = instance.enabled
     instance.enabled = original
     assert instance.enabled == original
+
+
+
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_visible_setter(instance):
+    original = instance.visible
+    instance.visible = original
+    assert instance.visible == original
+
+
+
+@given(instance=draw2d_Figure_strategy)
+def test_draw2d_figure_opaque_setter(instance):
+    original = instance.opaque
+    instance.opaque = original
+    assert instance.opaque == original
 
 @given(instance=Canvas_strategy)
 @settings(max_examples=50)
 def test_canvas_instantiation(instance):
     assert isinstance(instance, Canvas)
 
-@given(instance=draw2d::Draw2DCanvas_strategy)
+@given(instance=draw2d_Draw2DCanvas_strategy)
 @settings(max_examples=50)
-def test_draw2d::draw2dcanvas_instantiation(instance):
-    assert isinstance(instance, draw2d::Draw2DCanvas)
+def test_draw2d_draw2dcanvas_instantiation(instance):
+    assert isinstance(instance, draw2d_Draw2DCanvas)
 
 @given(instance=Figure_strategy)
 @settings(max_examples=50)
 def test_figure_instantiation(instance):
     assert isinstance(instance, Figure)
 
-@given(instance=draw2d::BlockFlow_strategy)
+@given(instance=draw2d_ImageFigure_strategy)
 @settings(max_examples=50)
-def test_draw2d::blockflow_instantiation(instance):
-    assert isinstance(instance, draw2d::BlockFlow)
-
-@given(instance=draw2d::BlockFlow_strategy)
-def test_draw2d::blockflow_orientation_type(instance):
-    assert isinstance(instance.orientation, str)
+def test_draw2d_imagefigure_instantiation(instance):
+    assert isinstance(instance, draw2d_ImageFigure)
 
 
-@given(instance=draw2d::BlockFlow_strategy)
-def test_draw2d::blockflow_orientation_setter(instance):
-    original = instance.orientation
-    instance.orientation = original
-    assert instance.orientation == original
 
-@given(instance=draw2d::Shape_strategy)
-@settings(max_examples=50)
-def test_draw2d::shape_instantiation(instance):
-    assert isinstance(instance, draw2d::Shape)
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_fillXOR_type(instance):
-    assert isinstance(instance.fillXOR, bool)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_fillXOR_setter(instance):
-    original = instance.fillXOR
-    instance.fillXOR = original
-    assert instance.fillXOR == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineJoin_type(instance):
-    assert isinstance(instance.lineJoin, str)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineJoin_setter(instance):
-    original = instance.lineJoin
-    instance.lineJoin = original
-    assert instance.lineJoin == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineDash_type(instance):
-    assert isinstance(instance.lineDash, float)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineDash_setter(instance):
-    original = instance.lineDash
-    instance.lineDash = original
-    assert instance.lineDash == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineDashOffset_type(instance):
-    assert isinstance(instance.lineDashOffset, float)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineDashOffset_setter(instance):
-    original = instance.lineDashOffset
-    instance.lineDashOffset = original
-    assert instance.lineDashOffset == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineWidthFloat_type(instance):
-    assert isinstance(instance.lineWidthFloat, float)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineWidthFloat_setter(instance):
-    original = instance.lineWidthFloat
-    instance.lineWidthFloat = original
-    assert instance.lineWidthFloat == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_outlineXOR_type(instance):
-    assert isinstance(instance.outlineXOR, bool)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_outlineXOR_setter(instance):
-    original = instance.outlineXOR
-    instance.outlineXOR = original
-    assert instance.outlineXOR == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_antialias_type(instance):
-    assert isinstance(instance.antialias, str)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_antialias_setter(instance):
-    original = instance.antialias
-    instance.antialias = original
-    assert instance.antialias == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineCap_type(instance):
-    assert isinstance(instance.lineCap, str)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineCap_setter(instance):
-    original = instance.lineCap
-    instance.lineCap = original
-    assert instance.lineCap == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineMiterLimit_type(instance):
-    assert isinstance(instance.lineMiterLimit, float)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineMiterLimit_setter(instance):
-    original = instance.lineMiterLimit
-    instance.lineMiterLimit = original
-    assert instance.lineMiterLimit == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_fill_type(instance):
-    assert isinstance(instance.fill, bool)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_fill_setter(instance):
-    original = instance.fill
-    instance.fill = original
-    assert instance.fill == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_outline_type(instance):
-    assert isinstance(instance.outline, bool)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_outline_setter(instance):
-    original = instance.outline
-    instance.outline = original
-    assert instance.outline == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineStyle_type(instance):
-    assert isinstance(instance.lineStyle, str)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_lineStyle_setter(instance):
-    original = instance.lineStyle
-    instance.lineStyle = original
-    assert instance.lineStyle == original
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_alpha_type(instance):
-    assert isinstance(instance.alpha, str)
-
-
-@given(instance=draw2d::Shape_strategy)
-def test_draw2d::shape_alpha_setter(instance):
-    original = instance.alpha
-    instance.alpha = original
-    assert instance.alpha == original
-
-@given(instance=draw2d::ImageFigure_strategy)
-@settings(max_examples=50)
-def test_draw2d::imagefigure_instantiation(instance):
-    assert isinstance(instance, draw2d::ImageFigure)
-
-@given(instance=draw2d::ImageFigure_strategy)
-def test_draw2d::imagefigure_image_type(instance):
-    assert isinstance(instance.image, str)
-
-
-@given(instance=draw2d::ImageFigure_strategy)
-def test_draw2d::imagefigure_image_setter(instance):
+@given(instance=draw2d_ImageFigure_strategy)
+def test_draw2d_imagefigure_image_setter(instance):
     original = instance.image
     instance.image = original
     assert instance.image == original
 
-@given(instance=draw2d::Label_strategy)
+@given(instance=draw2d_Shape_strategy)
 @settings(max_examples=50)
-def test_draw2d::label_instantiation(instance):
-    assert isinstance(instance, draw2d::Label)
-
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_iconAlignment_type(instance):
-    assert isinstance(instance.iconAlignment, str)
+def test_draw2d_shape_instantiation(instance):
+    assert isinstance(instance, draw2d_Shape)
 
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_iconAlignment_setter(instance):
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineStyle_setter(instance):
+    original = instance.lineStyle
+    instance.lineStyle = original
+    assert instance.lineStyle == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_fill_setter(instance):
+    original = instance.fill
+    instance.fill = original
+    assert instance.fill == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineWidthFloat_setter(instance):
+    original = instance.lineWidthFloat
+    instance.lineWidthFloat = original
+    assert instance.lineWidthFloat == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineMiterLimit_setter(instance):
+    original = instance.lineMiterLimit
+    instance.lineMiterLimit = original
+    assert instance.lineMiterLimit == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineDash_setter(instance):
+    original = instance.lineDash
+    instance.lineDash = original
+    assert instance.lineDash == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineJoin_setter(instance):
+    original = instance.lineJoin
+    instance.lineJoin = original
+    assert instance.lineJoin == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineCap_setter(instance):
+    original = instance.lineCap
+    instance.lineCap = original
+    assert instance.lineCap == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_outlineXOR_setter(instance):
+    original = instance.outlineXOR
+    instance.outlineXOR = original
+    assert instance.outlineXOR == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_lineDashOffset_setter(instance):
+    original = instance.lineDashOffset
+    instance.lineDashOffset = original
+    assert instance.lineDashOffset == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_antialias_setter(instance):
+    original = instance.antialias
+    instance.antialias = original
+    assert instance.antialias == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_alpha_setter(instance):
+    original = instance.alpha
+    instance.alpha = original
+    assert instance.alpha == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_fillXOR_setter(instance):
+    original = instance.fillXOR
+    instance.fillXOR = original
+    assert instance.fillXOR == original
+
+
+
+@given(instance=draw2d_Shape_strategy)
+def test_draw2d_shape_outline_setter(instance):
+    original = instance.outline
+    instance.outline = original
+    assert instance.outline == original
+
+@given(instance=draw2d_BlockFlow_strategy)
+@settings(max_examples=50)
+def test_draw2d_blockflow_instantiation(instance):
+    assert isinstance(instance, draw2d_BlockFlow)
+
+
+
+@given(instance=draw2d_BlockFlow_strategy)
+def test_draw2d_blockflow_orientation_setter(instance):
+    original = instance.orientation
+    instance.orientation = original
+    assert instance.orientation == original
+
+@given(instance=draw2d_Label_strategy)
+@settings(max_examples=50)
+def test_draw2d_label_instantiation(instance):
+    assert isinstance(instance, draw2d_Label)
+
+
+
+@given(instance=draw2d_Label_strategy)
+def test_draw2d_label_iconAlignment_setter(instance):
     original = instance.iconAlignment
     instance.iconAlignment = original
     assert instance.iconAlignment == original
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_iconTextGap_type(instance):
-    assert isinstance(instance.iconTextGap, int)
-
-
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_iconTextGap_setter(instance):
+@given(instance=draw2d_Label_strategy)
+def test_draw2d_label_iconTextGap_setter(instance):
     original = instance.iconTextGap
     instance.iconTextGap = original
     assert instance.iconTextGap == original
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_icon_type(instance):
-    assert isinstance(instance.icon, str)
 
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_icon_setter(instance):
-    original = instance.icon
-    instance.icon = original
-    assert instance.icon == original
-
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_textPlacement_type(instance):
-    assert isinstance(instance.textPlacement, str)
-
-
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_textPlacement_setter(instance):
+@given(instance=draw2d_Label_strategy)
+def test_draw2d_label_textPlacement_setter(instance):
     original = instance.textPlacement
     instance.textPlacement = original
     assert instance.textPlacement == original
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_textAlignment_type(instance):
-    assert isinstance(instance.textAlignment, str)
 
 
-@given(instance=draw2d::Label_strategy)
-def test_draw2d::label_textAlignment_setter(instance):
+@given(instance=draw2d_Label_strategy)
+def test_draw2d_label_textAlignment_setter(instance):
     original = instance.textAlignment
     instance.textAlignment = original
     assert instance.textAlignment == original
 
-@given(instance=draw2d::Border_strategy)
+
+
+@given(instance=draw2d_Label_strategy)
+def test_draw2d_label_icon_setter(instance):
+    original = instance.icon
+    instance.icon = original
+    assert instance.icon == original
+
+
+
+@given(instance=draw2d_Label_strategy)
+def test_draw2d_label_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=draw2d_Border_strategy)
 @settings(max_examples=50)
-def test_draw2d::border_instantiation(instance):
-    assert isinstance(instance, draw2d::Border)
-
-@given(instance=draw2d::Border_strategy)
-def test_draw2d::border_opaque_type(instance):
-    assert isinstance(instance.opaque, bool)
+def test_draw2d_border_instantiation(instance):
+    assert isinstance(instance, draw2d_Border)
 
 
-@given(instance=draw2d::Border_strategy)
-def test_draw2d::border_opaque_setter(instance):
+
+@given(instance=draw2d_Border_strategy)
+def test_draw2d_border_opaque_setter(instance):
     original = instance.opaque
     instance.opaque = original
     assert instance.opaque == original
 
-@given(instance=draw2d::Font_strategy)
+@given(instance=draw2d_Font_strategy)
 @settings(max_examples=50)
-def test_draw2d::font_instantiation(instance):
-    assert isinstance(instance, draw2d::Font)
+def test_draw2d_font_instantiation(instance):
+    assert isinstance(instance, draw2d_Font)
 
-@given(instance=draw2d::Color_strategy)
+@given(instance=draw2d_Color_strategy)
 @settings(max_examples=50)
-def test_draw2d::color_instantiation(instance):
-    assert isinstance(instance, draw2d::Color)
+def test_draw2d_color_instantiation(instance):
+    assert isinstance(instance, draw2d_Color)

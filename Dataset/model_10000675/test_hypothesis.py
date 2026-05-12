@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     T1,
@@ -232,9 +232,6 @@ def test_t_instantiation(instance):
 def test_hola_instantiation(instance):
     assert isinstance(instance, Hola)
 
-@given(instance=Hola_strategy)
-def test_hola_hppal_type(instance):
-    assert isinstance(instance.hppal, str)
 
 
 @given(instance=Hola_strategy)

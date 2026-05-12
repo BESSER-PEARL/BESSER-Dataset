@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Person,
-    ExtendedFamilies::Female,
-    ExtendedFamilies::Male,
-    ExtendedFamilies::Person,
-    ExtendedFamilies::Family,
+    ExtendedFamilies_Female,
+    ExtendedFamilies_Male,
+    ExtendedFamilies_Person,
+    ExtendedFamilies_Family,
 )
 
 # =============================================================================
@@ -33,51 +33,51 @@ def test_person_constructor_args():
 
 
 
-def test_extendedfamilies::female_is_not_abstract():
-    assert not inspect.isabstract(ExtendedFamilies::Female)
+def test_extendedfamilies_female_is_not_abstract():
+    assert not inspect.isabstract(ExtendedFamilies_Female)
 
 
-def test_extendedfamilies::female_constructor_exists():
-    assert callable(ExtendedFamilies::Female.__init__)
+def test_extendedfamilies_female_constructor_exists():
+    assert callable(ExtendedFamilies_Female.__init__)
 
 
-def test_extendedfamilies::female_constructor_args():
-    sig = inspect.signature(ExtendedFamilies::Female.__init__)
+def test_extendedfamilies_female_constructor_args():
+    sig = inspect.signature(ExtendedFamilies_Female.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extendedfamilies::male_is_not_abstract():
-    assert not inspect.isabstract(ExtendedFamilies::Male)
+def test_extendedfamilies_male_is_not_abstract():
+    assert not inspect.isabstract(ExtendedFamilies_Male)
 
 
-def test_extendedfamilies::male_constructor_exists():
-    assert callable(ExtendedFamilies::Male.__init__)
+def test_extendedfamilies_male_constructor_exists():
+    assert callable(ExtendedFamilies_Male.__init__)
 
 
-def test_extendedfamilies::male_constructor_args():
-    sig = inspect.signature(ExtendedFamilies::Male.__init__)
+def test_extendedfamilies_male_constructor_args():
+    sig = inspect.signature(ExtendedFamilies_Male.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extendedfamilies::person_is_not_abstract():
-    assert not inspect.isabstract(ExtendedFamilies::Person)
+def test_extendedfamilies_person_is_not_abstract():
+    assert not inspect.isabstract(ExtendedFamilies_Person)
 
 
-def test_extendedfamilies::person_constructor_exists():
-    assert callable(ExtendedFamilies::Person.__init__)
+def test_extendedfamilies_person_constructor_exists():
+    assert callable(ExtendedFamilies_Person.__init__)
 
 
-def test_extendedfamilies::person_constructor_args():
-    sig = inspect.signature(ExtendedFamilies::Person.__init__)
+def test_extendedfamilies_person_constructor_args():
+    sig = inspect.signature(ExtendedFamilies_Person.__init__)
     params = list(sig.parameters.keys())
     assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_extendedfamilies::person_has_firstName():
-    assert hasattr(ExtendedFamilies::Person, "firstName")
+def test_extendedfamilies_person_has_firstName():
+    assert hasattr(ExtendedFamilies_Person, "firstName")
     descriptor = None
-    for klass in ExtendedFamilies::Person.__mro__:
+    for klass in ExtendedFamilies_Person.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
@@ -85,45 +85,45 @@ def test_extendedfamilies::person_has_firstName():
 
 
 
-def test_extendedfamilies::family_is_not_abstract():
-    assert not inspect.isabstract(ExtendedFamilies::Family)
+def test_extendedfamilies_family_is_not_abstract():
+    assert not inspect.isabstract(ExtendedFamilies_Family)
 
 
-def test_extendedfamilies::family_constructor_exists():
-    assert callable(ExtendedFamilies::Family.__init__)
+def test_extendedfamilies_family_constructor_exists():
+    assert callable(ExtendedFamilies_Family.__init__)
 
 
-def test_extendedfamilies::family_constructor_args():
-    sig = inspect.signature(ExtendedFamilies::Family.__init__)
+def test_extendedfamilies_family_constructor_args():
+    sig = inspect.signature(ExtendedFamilies_Family.__init__)
     params = list(sig.parameters.keys())
+    assert "noOfChildren" in params, "Missing parameter 'noOfChildren'"
     assert "lastName" in params, "Missing parameter 'lastName'"
     assert "singleParent" in params, "Missing parameter 'singleParent'"
-    assert "noOfChildren" in params, "Missing parameter 'noOfChildren'"
 
-def test_extendedfamilies::family_has_lastName():
-    assert hasattr(ExtendedFamilies::Family, "lastName")
+def test_extendedfamilies_family_has_noOfChildren():
+    assert hasattr(ExtendedFamilies_Family, "noOfChildren")
     descriptor = None
-    for klass in ExtendedFamilies::Family.__mro__:
+    for klass in ExtendedFamilies_Family.__mro__:
+        if "noOfChildren" in klass.__dict__:
+            descriptor = klass.__dict__["noOfChildren"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_extendedfamilies_family_has_lastName():
+    assert hasattr(ExtendedFamilies_Family, "lastName")
+    descriptor = None
+    for klass in ExtendedFamilies_Family.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_extendedfamilies::family_has_singleParent():
-    assert hasattr(ExtendedFamilies::Family, "singleParent")
+def test_extendedfamilies_family_has_singleParent():
+    assert hasattr(ExtendedFamilies_Family, "singleParent")
     descriptor = None
-    for klass in ExtendedFamilies::Family.__mro__:
+    for klass in ExtendedFamilies_Family.__mro__:
         if "singleParent" in klass.__dict__:
             descriptor = klass.__dict__["singleParent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extendedfamilies::family_has_noOfChildren():
-    assert hasattr(ExtendedFamilies::Family, "noOfChildren")
-    descriptor = None
-    for klass in ExtendedFamilies::Family.__mro__:
-        if "noOfChildren" in klass.__dict__:
-            descriptor = klass.__dict__["noOfChildren"]
             break
     assert isinstance(descriptor, property)
 
@@ -142,25 +142,25 @@ safe_text = st.text(
 Person_strategy = st.builds(
     Person,
 )
-ExtendedFamilies::Female_strategy = st.builds(
-    ExtendedFamilies::Female,
+ExtendedFamilies_Female_strategy = st.builds(
+    ExtendedFamilies_Female,
 )
-ExtendedFamilies::Male_strategy = st.builds(
-    ExtendedFamilies::Male,
+ExtendedFamilies_Male_strategy = st.builds(
+    ExtendedFamilies_Male,
 )
-ExtendedFamilies::Person_strategy = st.builds(
-    ExtendedFamilies::Person,
+ExtendedFamilies_Person_strategy = st.builds(
+    ExtendedFamilies_Person,
     firstName=
         safe_text
 )
-ExtendedFamilies::Family_strategy = st.builds(
-    ExtendedFamilies::Family,
+ExtendedFamilies_Family_strategy = st.builds(
+    ExtendedFamilies_Family,
+    noOfChildren=
+        st.integers(),
     lastName=
         safe_text,
     singleParent=
-        st.booleans(),
-    noOfChildren=
-        st.integers()
+        st.booleans()
 )
 
 @given(instance=Person_strategy)
@@ -168,66 +168,54 @@ ExtendedFamilies::Family_strategy = st.builds(
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=ExtendedFamilies::Female_strategy)
+@given(instance=ExtendedFamilies_Female_strategy)
 @settings(max_examples=50)
-def test_extendedfamilies::female_instantiation(instance):
-    assert isinstance(instance, ExtendedFamilies::Female)
+def test_extendedfamilies_female_instantiation(instance):
+    assert isinstance(instance, ExtendedFamilies_Female)
 
-@given(instance=ExtendedFamilies::Male_strategy)
+@given(instance=ExtendedFamilies_Male_strategy)
 @settings(max_examples=50)
-def test_extendedfamilies::male_instantiation(instance):
-    assert isinstance(instance, ExtendedFamilies::Male)
+def test_extendedfamilies_male_instantiation(instance):
+    assert isinstance(instance, ExtendedFamilies_Male)
 
-@given(instance=ExtendedFamilies::Person_strategy)
+@given(instance=ExtendedFamilies_Person_strategy)
 @settings(max_examples=50)
-def test_extendedfamilies::person_instantiation(instance):
-    assert isinstance(instance, ExtendedFamilies::Person)
-
-@given(instance=ExtendedFamilies::Person_strategy)
-def test_extendedfamilies::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_extendedfamilies_person_instantiation(instance):
+    assert isinstance(instance, ExtendedFamilies_Person)
 
 
-@given(instance=ExtendedFamilies::Person_strategy)
-def test_extendedfamilies::person_firstName_setter(instance):
+
+@given(instance=ExtendedFamilies_Person_strategy)
+def test_extendedfamilies_person_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=ExtendedFamilies::Family_strategy)
+@given(instance=ExtendedFamilies_Family_strategy)
 @settings(max_examples=50)
-def test_extendedfamilies::family_instantiation(instance):
-    assert isinstance(instance, ExtendedFamilies::Family)
-
-@given(instance=ExtendedFamilies::Family_strategy)
-def test_extendedfamilies::family_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_extendedfamilies_family_instantiation(instance):
+    assert isinstance(instance, ExtendedFamilies_Family)
 
 
-@given(instance=ExtendedFamilies::Family_strategy)
-def test_extendedfamilies::family_lastName_setter(instance):
+
+@given(instance=ExtendedFamilies_Family_strategy)
+def test_extendedfamilies_family_noOfChildren_setter(instance):
+    original = instance.noOfChildren
+    instance.noOfChildren = original
+    assert instance.noOfChildren == original
+
+
+
+@given(instance=ExtendedFamilies_Family_strategy)
+def test_extendedfamilies_family_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=ExtendedFamilies::Family_strategy)
-def test_extendedfamilies::family_singleParent_type(instance):
-    assert isinstance(instance.singleParent, bool)
 
 
-@given(instance=ExtendedFamilies::Family_strategy)
-def test_extendedfamilies::family_singleParent_setter(instance):
+@given(instance=ExtendedFamilies_Family_strategy)
+def test_extendedfamilies_family_singleParent_setter(instance):
     original = instance.singleParent
     instance.singleParent = original
     assert instance.singleParent == original
-
-@given(instance=ExtendedFamilies::Family_strategy)
-def test_extendedfamilies::family_noOfChildren_type(instance):
-    assert isinstance(instance.noOfChildren, int)
-
-
-@given(instance=ExtendedFamilies::Family_strategy)
-def test_extendedfamilies::family_noOfChildren_setter(instance):
-    original = instance.noOfChildren
-    instance.noOfChildren = original
-    assert instance.noOfChildren == original

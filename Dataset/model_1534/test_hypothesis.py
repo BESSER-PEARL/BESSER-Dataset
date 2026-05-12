@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    research101::Labelled,
-    research101::Counted,
-    research101::Named,
+from python_code import (
+    research101_Labelled,
+    research101_Counted,
+    research101_Named,
     Labelled,
     Counted,
-    research101::PaperKeyword,
-    research101::Progress,
-    research101::Researcher,
-    research101::Phase,
+    research101_PaperKeyword,
+    research101_Progress,
+    research101_Researcher,
+    research101_Phase,
     Named,
-    research101::Paragraph,
-    research101::PublicationStructure,
-    research101::KnowledgeManager,
-    research101::Keyword,
-    research101::PublicationSystem,
-    research101::ReviewNote,
-    research101::PublicationProcess,
-    research101::Collaboration,
-    research101::Position,
-    research101::Skill,
-    research101::Paper,
-    research101::Review,
-    research101::Write,
+    research101_PublicationStructure,
+    research101_Paragraph,
+    research101_KnowledgeManager,
+    research101_Keyword,
+    research101_ReviewNote,
+    research101_PublicationSystem,
+    research101_PublicationProcess,
+    research101_Collaboration,
+    research101_Position,
+    research101_Skill,
+    research101_Paper,
+    research101_Review,
+    research101_Write,
 )
 
 # =============================================================================
@@ -37,23 +37,23 @@ from classes import (
 
 
 
-def test_research101::labelled_is_not_abstract():
-    assert not inspect.isabstract(research101::Labelled)
+def test_research101_labelled_is_not_abstract():
+    assert not inspect.isabstract(research101_Labelled)
 
 
-def test_research101::labelled_constructor_exists():
-    assert callable(research101::Labelled.__init__)
+def test_research101_labelled_constructor_exists():
+    assert callable(research101_Labelled.__init__)
 
 
-def test_research101::labelled_constructor_args():
-    sig = inspect.signature(research101::Labelled.__init__)
+def test_research101_labelled_constructor_args():
+    sig = inspect.signature(research101_Labelled.__init__)
     params = list(sig.parameters.keys())
     assert "lname" in params, "Missing parameter 'lname'"
 
-def test_research101::labelled_has_lname():
-    assert hasattr(research101::Labelled, "lname")
+def test_research101_labelled_has_lname():
+    assert hasattr(research101_Labelled, "lname")
     descriptor = None
-    for klass in research101::Labelled.__mro__:
+    for klass in research101_Labelled.__mro__:
         if "lname" in klass.__dict__:
             descriptor = klass.__dict__["lname"]
             break
@@ -61,23 +61,23 @@ def test_research101::labelled_has_lname():
 
 
 
-def test_research101::counted_is_not_abstract():
-    assert not inspect.isabstract(research101::Counted)
+def test_research101_counted_is_not_abstract():
+    assert not inspect.isabstract(research101_Counted)
 
 
-def test_research101::counted_constructor_exists():
-    assert callable(research101::Counted.__init__)
+def test_research101_counted_constructor_exists():
+    assert callable(research101_Counted.__init__)
 
 
-def test_research101::counted_constructor_args():
-    sig = inspect.signature(research101::Counted.__init__)
+def test_research101_counted_constructor_args():
+    sig = inspect.signature(research101_Counted.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_research101::counted_has_id():
-    assert hasattr(research101::Counted, "id")
+def test_research101_counted_has_id():
+    assert hasattr(research101_Counted, "id")
     descriptor = None
-    for klass in research101::Counted.__mro__:
+    for klass in research101_Counted.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -85,23 +85,23 @@ def test_research101::counted_has_id():
 
 
 
-def test_research101::named_is_not_abstract():
-    assert not inspect.isabstract(research101::Named)
+def test_research101_named_is_not_abstract():
+    assert not inspect.isabstract(research101_Named)
 
 
-def test_research101::named_constructor_exists():
-    assert callable(research101::Named.__init__)
+def test_research101_named_constructor_exists():
+    assert callable(research101_Named.__init__)
 
 
-def test_research101::named_constructor_args():
-    sig = inspect.signature(research101::Named.__init__)
+def test_research101_named_constructor_args():
+    sig = inspect.signature(research101_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_research101::named_has_name():
-    assert hasattr(research101::Named, "name")
+def test_research101_named_has_name():
+    assert hasattr(research101_Named, "name")
     descriptor = None
-    for klass in research101::Named.__mro__:
+    for klass in research101_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -137,23 +137,23 @@ def test_counted_constructor_args():
 
 
 
-def test_research101::paperkeyword_is_not_abstract():
-    assert not inspect.isabstract(research101::PaperKeyword)
+def test_research101_paperkeyword_is_not_abstract():
+    assert not inspect.isabstract(research101_PaperKeyword)
 
 
-def test_research101::paperkeyword_constructor_exists():
-    assert callable(research101::PaperKeyword.__init__)
+def test_research101_paperkeyword_constructor_exists():
+    assert callable(research101_PaperKeyword.__init__)
 
 
-def test_research101::paperkeyword_constructor_args():
-    sig = inspect.signature(research101::PaperKeyword.__init__)
+def test_research101_paperkeyword_constructor_args():
+    sig = inspect.signature(research101_PaperKeyword.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_research101::paperkeyword_has_weight():
-    assert hasattr(research101::PaperKeyword, "weight")
+def test_research101_paperkeyword_has_weight():
+    assert hasattr(research101_PaperKeyword, "weight")
     descriptor = None
-    for klass in research101::PaperKeyword.__mro__:
+    for klass in research101_PaperKeyword.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -161,23 +161,23 @@ def test_research101::paperkeyword_has_weight():
 
 
 
-def test_research101::progress_is_not_abstract():
-    assert not inspect.isabstract(research101::Progress)
+def test_research101_progress_is_not_abstract():
+    assert not inspect.isabstract(research101_Progress)
 
 
-def test_research101::progress_constructor_exists():
-    assert callable(research101::Progress.__init__)
+def test_research101_progress_constructor_exists():
+    assert callable(research101_Progress.__init__)
 
 
-def test_research101::progress_constructor_args():
-    sig = inspect.signature(research101::Progress.__init__)
+def test_research101_progress_constructor_args():
+    sig = inspect.signature(research101_Progress.__init__)
     params = list(sig.parameters.keys())
     assert "percent" in params, "Missing parameter 'percent'"
 
-def test_research101::progress_has_percent():
-    assert hasattr(research101::Progress, "percent")
+def test_research101_progress_has_percent():
+    assert hasattr(research101_Progress, "percent")
     descriptor = None
-    for klass in research101::Progress.__mro__:
+    for klass in research101_Progress.__mro__:
         if "percent" in klass.__dict__:
             descriptor = klass.__dict__["percent"]
             break
@@ -185,33 +185,33 @@ def test_research101::progress_has_percent():
 
 
 
-def test_research101::researcher_is_not_abstract():
-    assert not inspect.isabstract(research101::Researcher)
+def test_research101_researcher_is_not_abstract():
+    assert not inspect.isabstract(research101_Researcher)
 
 
-def test_research101::researcher_constructor_exists():
-    assert callable(research101::Researcher.__init__)
+def test_research101_researcher_constructor_exists():
+    assert callable(research101_Researcher.__init__)
 
 
-def test_research101::researcher_constructor_args():
-    sig = inspect.signature(research101::Researcher.__init__)
+def test_research101_researcher_constructor_args():
+    sig = inspect.signature(research101_Researcher.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "forName" in params, "Missing parameter 'forName'"
 
-def test_research101::researcher_has_name():
-    assert hasattr(research101::Researcher, "name")
+def test_research101_researcher_has_name():
+    assert hasattr(research101_Researcher, "name")
     descriptor = None
-    for klass in research101::Researcher.__mro__:
+    for klass in research101_Researcher.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_research101::researcher_has_forName():
-    assert hasattr(research101::Researcher, "forName")
+def test_research101_researcher_has_forName():
+    assert hasattr(research101_Researcher, "forName")
     descriptor = None
-    for klass in research101::Researcher.__mro__:
+    for klass in research101_Researcher.__mro__:
         if "forName" in klass.__dict__:
             descriptor = klass.__dict__["forName"]
             break
@@ -219,23 +219,23 @@ def test_research101::researcher_has_forName():
 
 
 
-def test_research101::phase_is_not_abstract():
-    assert not inspect.isabstract(research101::Phase)
+def test_research101_phase_is_not_abstract():
+    assert not inspect.isabstract(research101_Phase)
 
 
-def test_research101::phase_constructor_exists():
-    assert callable(research101::Phase.__init__)
+def test_research101_phase_constructor_exists():
+    assert callable(research101_Phase.__init__)
 
 
-def test_research101::phase_constructor_args():
-    sig = inspect.signature(research101::Phase.__init__)
+def test_research101_phase_constructor_args():
+    sig = inspect.signature(research101_Phase.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_research101::phase_has_name():
-    assert hasattr(research101::Phase, "name")
+def test_research101_phase_has_name():
+    assert hasattr(research101_Phase, "name")
     descriptor = None
-    for klass in research101::Phase.__mro__:
+    for klass in research101_Phase.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -257,23 +257,37 @@ def test_named_constructor_args():
 
 
 
-def test_research101::paragraph_is_not_abstract():
-    assert not inspect.isabstract(research101::Paragraph)
+def test_research101_publicationstructure_is_not_abstract():
+    assert not inspect.isabstract(research101_PublicationStructure)
 
 
-def test_research101::paragraph_constructor_exists():
-    assert callable(research101::Paragraph.__init__)
+def test_research101_publicationstructure_constructor_exists():
+    assert callable(research101_PublicationStructure.__init__)
 
 
-def test_research101::paragraph_constructor_args():
-    sig = inspect.signature(research101::Paragraph.__init__)
+def test_research101_publicationstructure_constructor_args():
+    sig = inspect.signature(research101_PublicationStructure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_research101_paragraph_is_not_abstract():
+    assert not inspect.isabstract(research101_Paragraph)
+
+
+def test_research101_paragraph_constructor_exists():
+    assert callable(research101_Paragraph.__init__)
+
+
+def test_research101_paragraph_constructor_args():
+    sig = inspect.signature(research101_Paragraph.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_research101::paragraph_has_content():
-    assert hasattr(research101::Paragraph, "content")
+def test_research101_paragraph_has_content():
+    assert hasattr(research101_Paragraph, "content")
     descriptor = None
-    for klass in research101::Paragraph.__mro__:
+    for klass in research101_Paragraph.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -281,51 +295,37 @@ def test_research101::paragraph_has_content():
 
 
 
-def test_research101::publicationstructure_is_not_abstract():
-    assert not inspect.isabstract(research101::PublicationStructure)
+def test_research101_knowledgemanager_is_not_abstract():
+    assert not inspect.isabstract(research101_KnowledgeManager)
 
 
-def test_research101::publicationstructure_constructor_exists():
-    assert callable(research101::PublicationStructure.__init__)
+def test_research101_knowledgemanager_constructor_exists():
+    assert callable(research101_KnowledgeManager.__init__)
 
 
-def test_research101::publicationstructure_constructor_args():
-    sig = inspect.signature(research101::PublicationStructure.__init__)
+def test_research101_knowledgemanager_constructor_args():
+    sig = inspect.signature(research101_KnowledgeManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_research101::knowledgemanager_is_not_abstract():
-    assert not inspect.isabstract(research101::KnowledgeManager)
+def test_research101_keyword_is_not_abstract():
+    assert not inspect.isabstract(research101_Keyword)
 
 
-def test_research101::knowledgemanager_constructor_exists():
-    assert callable(research101::KnowledgeManager.__init__)
+def test_research101_keyword_constructor_exists():
+    assert callable(research101_Keyword.__init__)
 
 
-def test_research101::knowledgemanager_constructor_args():
-    sig = inspect.signature(research101::KnowledgeManager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_research101::keyword_is_not_abstract():
-    assert not inspect.isabstract(research101::Keyword)
-
-
-def test_research101::keyword_constructor_exists():
-    assert callable(research101::Keyword.__init__)
-
-
-def test_research101::keyword_constructor_args():
-    sig = inspect.signature(research101::Keyword.__init__)
+def test_research101_keyword_constructor_args():
+    sig = inspect.signature(research101_Keyword.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_research101::keyword_has_description():
-    assert hasattr(research101::Keyword, "description")
+def test_research101_keyword_has_description():
+    assert hasattr(research101_Keyword, "description")
     descriptor = None
-    for klass in research101::Keyword.__mro__:
+    for klass in research101_Keyword.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -333,37 +333,23 @@ def test_research101::keyword_has_description():
 
 
 
-def test_research101::publicationsystem_is_not_abstract():
-    assert not inspect.isabstract(research101::PublicationSystem)
+def test_research101_reviewnote_is_not_abstract():
+    assert not inspect.isabstract(research101_ReviewNote)
 
 
-def test_research101::publicationsystem_constructor_exists():
-    assert callable(research101::PublicationSystem.__init__)
+def test_research101_reviewnote_constructor_exists():
+    assert callable(research101_ReviewNote.__init__)
 
 
-def test_research101::publicationsystem_constructor_args():
-    sig = inspect.signature(research101::PublicationSystem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_research101::reviewnote_is_not_abstract():
-    assert not inspect.isabstract(research101::ReviewNote)
-
-
-def test_research101::reviewnote_constructor_exists():
-    assert callable(research101::ReviewNote.__init__)
-
-
-def test_research101::reviewnote_constructor_args():
-    sig = inspect.signature(research101::ReviewNote.__init__)
+def test_research101_reviewnote_constructor_args():
+    sig = inspect.signature(research101_ReviewNote.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_research101::reviewnote_has_content():
-    assert hasattr(research101::ReviewNote, "content")
+def test_research101_reviewnote_has_content():
+    assert hasattr(research101_ReviewNote, "content")
     descriptor = None
-    for klass in research101::ReviewNote.__mro__:
+    for klass in research101_ReviewNote.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -371,33 +357,47 @@ def test_research101::reviewnote_has_content():
 
 
 
-def test_research101::publicationprocess_is_not_abstract():
-    assert not inspect.isabstract(research101::PublicationProcess)
+def test_research101_publicationsystem_is_not_abstract():
+    assert not inspect.isabstract(research101_PublicationSystem)
 
 
-def test_research101::publicationprocess_constructor_exists():
-    assert callable(research101::PublicationProcess.__init__)
+def test_research101_publicationsystem_constructor_exists():
+    assert callable(research101_PublicationSystem.__init__)
 
 
-def test_research101::publicationprocess_constructor_args():
-    sig = inspect.signature(research101::PublicationProcess.__init__)
+def test_research101_publicationsystem_constructor_args():
+    sig = inspect.signature(research101_PublicationSystem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_research101_publicationprocess_is_not_abstract():
+    assert not inspect.isabstract(research101_PublicationProcess)
+
+
+def test_research101_publicationprocess_constructor_exists():
+    assert callable(research101_PublicationProcess.__init__)
+
+
+def test_research101_publicationprocess_constructor_args():
+    sig = inspect.signature(research101_PublicationProcess.__init__)
     params = list(sig.parameters.keys())
     assert "minTime" in params, "Missing parameter 'minTime'"
     assert "maxTime" in params, "Missing parameter 'maxTime'"
 
-def test_research101::publicationprocess_has_minTime():
-    assert hasattr(research101::PublicationProcess, "minTime")
+def test_research101_publicationprocess_has_minTime():
+    assert hasattr(research101_PublicationProcess, "minTime")
     descriptor = None
-    for klass in research101::PublicationProcess.__mro__:
+    for klass in research101_PublicationProcess.__mro__:
         if "minTime" in klass.__dict__:
             descriptor = klass.__dict__["minTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_research101::publicationprocess_has_maxTime():
-    assert hasattr(research101::PublicationProcess, "maxTime")
+def test_research101_publicationprocess_has_maxTime():
+    assert hasattr(research101_PublicationProcess, "maxTime")
     descriptor = None
-    for klass in research101::PublicationProcess.__mro__:
+    for klass in research101_PublicationProcess.__mro__:
         if "maxTime" in klass.__dict__:
             descriptor = klass.__dict__["maxTime"]
             break
@@ -405,23 +405,23 @@ def test_research101::publicationprocess_has_maxTime():
 
 
 
-def test_research101::collaboration_is_not_abstract():
-    assert not inspect.isabstract(research101::Collaboration)
+def test_research101_collaboration_is_not_abstract():
+    assert not inspect.isabstract(research101_Collaboration)
 
 
-def test_research101::collaboration_constructor_exists():
-    assert callable(research101::Collaboration.__init__)
+def test_research101_collaboration_constructor_exists():
+    assert callable(research101_Collaboration.__init__)
 
 
-def test_research101::collaboration_constructor_args():
-    sig = inspect.signature(research101::Collaboration.__init__)
+def test_research101_collaboration_constructor_args():
+    sig = inspect.signature(research101_Collaboration.__init__)
     params = list(sig.parameters.keys())
     assert "ratio" in params, "Missing parameter 'ratio'"
 
-def test_research101::collaboration_has_ratio():
-    assert hasattr(research101::Collaboration, "ratio")
+def test_research101_collaboration_has_ratio():
+    assert hasattr(research101_Collaboration, "ratio")
     descriptor = None
-    for klass in research101::Collaboration.__mro__:
+    for klass in research101_Collaboration.__mro__:
         if "ratio" in klass.__dict__:
             descriptor = klass.__dict__["ratio"]
             break
@@ -429,23 +429,23 @@ def test_research101::collaboration_has_ratio():
 
 
 
-def test_research101::position_is_not_abstract():
-    assert not inspect.isabstract(research101::Position)
+def test_research101_position_is_not_abstract():
+    assert not inspect.isabstract(research101_Position)
 
 
-def test_research101::position_constructor_exists():
-    assert callable(research101::Position.__init__)
+def test_research101_position_constructor_exists():
+    assert callable(research101_Position.__init__)
 
 
-def test_research101::position_constructor_args():
-    sig = inspect.signature(research101::Position.__init__)
+def test_research101_position_constructor_args():
+    sig = inspect.signature(research101_Position.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_research101::position_has_description():
-    assert hasattr(research101::Position, "description")
+def test_research101_position_has_description():
+    assert hasattr(research101_Position, "description")
     descriptor = None
-    for klass in research101::Position.__mro__:
+    for klass in research101_Position.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -453,23 +453,23 @@ def test_research101::position_has_description():
 
 
 
-def test_research101::skill_is_not_abstract():
-    assert not inspect.isabstract(research101::Skill)
+def test_research101_skill_is_not_abstract():
+    assert not inspect.isabstract(research101_Skill)
 
 
-def test_research101::skill_constructor_exists():
-    assert callable(research101::Skill.__init__)
+def test_research101_skill_constructor_exists():
+    assert callable(research101_Skill.__init__)
 
 
-def test_research101::skill_constructor_args():
-    sig = inspect.signature(research101::Skill.__init__)
+def test_research101_skill_constructor_args():
+    sig = inspect.signature(research101_Skill.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_research101::skill_has_description():
-    assert hasattr(research101::Skill, "description")
+def test_research101_skill_has_description():
+    assert hasattr(research101_Skill, "description")
     descriptor = None
-    for klass in research101::Skill.__mro__:
+    for klass in research101_Skill.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -477,37 +477,37 @@ def test_research101::skill_has_description():
 
 
 
-def test_research101::paper_is_not_abstract():
-    assert not inspect.isabstract(research101::Paper)
+def test_research101_paper_is_not_abstract():
+    assert not inspect.isabstract(research101_Paper)
 
 
-def test_research101::paper_constructor_exists():
-    assert callable(research101::Paper.__init__)
+def test_research101_paper_constructor_exists():
+    assert callable(research101_Paper.__init__)
 
 
-def test_research101::paper_constructor_args():
-    sig = inspect.signature(research101::Paper.__init__)
+def test_research101_paper_constructor_args():
+    sig = inspect.signature(research101_Paper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_research101::review_is_not_abstract():
-    assert not inspect.isabstract(research101::Review)
+def test_research101_review_is_not_abstract():
+    assert not inspect.isabstract(research101_Review)
 
 
-def test_research101::review_constructor_exists():
-    assert callable(research101::Review.__init__)
+def test_research101_review_constructor_exists():
+    assert callable(research101_Review.__init__)
 
 
-def test_research101::review_constructor_args():
-    sig = inspect.signature(research101::Review.__init__)
+def test_research101_review_constructor_args():
+    sig = inspect.signature(research101_Review.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
 
-def test_research101::review_has_date():
-    assert hasattr(research101::Review, "date")
+def test_research101_review_has_date():
+    assert hasattr(research101_Review, "date")
     descriptor = None
-    for klass in research101::Review.__mro__:
+    for klass in research101_Review.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -515,23 +515,23 @@ def test_research101::review_has_date():
 
 
 
-def test_research101::write_is_not_abstract():
-    assert not inspect.isabstract(research101::Write)
+def test_research101_write_is_not_abstract():
+    assert not inspect.isabstract(research101_Write)
 
 
-def test_research101::write_constructor_exists():
-    assert callable(research101::Write.__init__)
+def test_research101_write_constructor_exists():
+    assert callable(research101_Write.__init__)
 
 
-def test_research101::write_constructor_args():
-    sig = inspect.signature(research101::Write.__init__)
+def test_research101_write_constructor_args():
+    sig = inspect.signature(research101_Write.__init__)
     params = list(sig.parameters.keys())
     assert "timeSpent" in params, "Missing parameter 'timeSpent'"
 
-def test_research101::write_has_timeSpent():
-    assert hasattr(research101::Write, "timeSpent")
+def test_research101_write_has_timeSpent():
+    assert hasattr(research101_Write, "timeSpent")
     descriptor = None
-    for klass in research101::Write.__mro__:
+    for klass in research101_Write.__mro__:
         if "timeSpent" in klass.__dict__:
             descriptor = klass.__dict__["timeSpent"]
             break
@@ -549,18 +549,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-research101::Labelled_strategy = st.builds(
-    research101::Labelled,
+research101_Labelled_strategy = st.builds(
+    research101_Labelled,
     lname=
         safe_text
 )
-research101::Counted_strategy = st.builds(
-    research101::Counted,
+research101_Counted_strategy = st.builds(
+    research101_Counted,
     id=
         st.integers()
 )
-research101::Named_strategy = st.builds(
-    research101::Named,
+research101_Named_strategy = st.builds(
+    research101_Named,
     name=
         safe_text
 )
@@ -570,135 +570,126 @@ Labelled_strategy = st.builds(
 Counted_strategy = st.builds(
     Counted,
 )
-research101::PaperKeyword_strategy = st.builds(
-    research101::PaperKeyword,
+research101_PaperKeyword_strategy = st.builds(
+    research101_PaperKeyword,
     weight=
         st.integers()
 )
-research101::Progress_strategy = st.builds(
-    research101::Progress,
+research101_Progress_strategy = st.builds(
+    research101_Progress,
     percent=
         st.integers()
 )
-research101::Researcher_strategy = st.builds(
-    research101::Researcher,
+research101_Researcher_strategy = st.builds(
+    research101_Researcher,
     name=
         safe_text,
     forName=
         safe_text
 )
-research101::Phase_strategy = st.builds(
-    research101::Phase,
+research101_Phase_strategy = st.builds(
+    research101_Phase,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-research101::Paragraph_strategy = st.builds(
-    research101::Paragraph,
+research101_PublicationStructure_strategy = st.builds(
+    research101_PublicationStructure,
+)
+research101_Paragraph_strategy = st.builds(
+    research101_Paragraph,
     content=
         safe_text
 )
-research101::PublicationStructure_strategy = st.builds(
-    research101::PublicationStructure,
+research101_KnowledgeManager_strategy = st.builds(
+    research101_KnowledgeManager,
 )
-research101::KnowledgeManager_strategy = st.builds(
-    research101::KnowledgeManager,
-)
-research101::Keyword_strategy = st.builds(
-    research101::Keyword,
+research101_Keyword_strategy = st.builds(
+    research101_Keyword,
     description=
         safe_text
 )
-research101::PublicationSystem_strategy = st.builds(
-    research101::PublicationSystem,
-)
-research101::ReviewNote_strategy = st.builds(
-    research101::ReviewNote,
+research101_ReviewNote_strategy = st.builds(
+    research101_ReviewNote,
     content=
         safe_text
 )
-research101::PublicationProcess_strategy = st.builds(
-    research101::PublicationProcess,
+research101_PublicationSystem_strategy = st.builds(
+    research101_PublicationSystem,
+)
+research101_PublicationProcess_strategy = st.builds(
+    research101_PublicationProcess,
     minTime=
         st.integers(),
     maxTime=
         st.integers()
 )
-research101::Collaboration_strategy = st.builds(
-    research101::Collaboration,
+research101_Collaboration_strategy = st.builds(
+    research101_Collaboration,
     ratio=
         st.integers()
 )
-research101::Position_strategy = st.builds(
-    research101::Position,
+research101_Position_strategy = st.builds(
+    research101_Position,
     description=
         safe_text
 )
-research101::Skill_strategy = st.builds(
-    research101::Skill,
+research101_Skill_strategy = st.builds(
+    research101_Skill,
     description=
         safe_text
 )
-research101::Paper_strategy = st.builds(
-    research101::Paper,
+research101_Paper_strategy = st.builds(
+    research101_Paper,
 )
-research101::Review_strategy = st.builds(
-    research101::Review,
+research101_Review_strategy = st.builds(
+    research101_Review,
     date=
         st.dates()
 )
-research101::Write_strategy = st.builds(
-    research101::Write,
+research101_Write_strategy = st.builds(
+    research101_Write,
     timeSpent=
         st.integers()
 )
 
-@given(instance=research101::Labelled_strategy)
+@given(instance=research101_Labelled_strategy)
 @settings(max_examples=50)
-def test_research101::labelled_instantiation(instance):
-    assert isinstance(instance, research101::Labelled)
-
-@given(instance=research101::Labelled_strategy)
-def test_research101::labelled_lname_type(instance):
-    assert isinstance(instance.lname, str)
+def test_research101_labelled_instantiation(instance):
+    assert isinstance(instance, research101_Labelled)
 
 
-@given(instance=research101::Labelled_strategy)
-def test_research101::labelled_lname_setter(instance):
+
+@given(instance=research101_Labelled_strategy)
+def test_research101_labelled_lname_setter(instance):
     original = instance.lname
     instance.lname = original
     assert instance.lname == original
 
-@given(instance=research101::Counted_strategy)
+@given(instance=research101_Counted_strategy)
 @settings(max_examples=50)
-def test_research101::counted_instantiation(instance):
-    assert isinstance(instance, research101::Counted)
-
-@given(instance=research101::Counted_strategy)
-def test_research101::counted_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_research101_counted_instantiation(instance):
+    assert isinstance(instance, research101_Counted)
 
 
-@given(instance=research101::Counted_strategy)
-def test_research101::counted_id_setter(instance):
+
+@given(instance=research101_Counted_strategy)
+def test_research101_counted_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=research101::Named_strategy)
+@given(instance=research101_Named_strategy)
 @settings(max_examples=50)
-def test_research101::named_instantiation(instance):
-    assert isinstance(instance, research101::Named)
-
-@given(instance=research101::Named_strategy)
-def test_research101::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_research101_named_instantiation(instance):
+    assert isinstance(instance, research101_Named)
 
 
-@given(instance=research101::Named_strategy)
-def test_research101::named_name_setter(instance):
+
+@given(instance=research101_Named_strategy)
+def test_research101_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -713,77 +704,62 @@ def test_labelled_instantiation(instance):
 def test_counted_instantiation(instance):
     assert isinstance(instance, Counted)
 
-@given(instance=research101::PaperKeyword_strategy)
+@given(instance=research101_PaperKeyword_strategy)
 @settings(max_examples=50)
-def test_research101::paperkeyword_instantiation(instance):
-    assert isinstance(instance, research101::PaperKeyword)
-
-@given(instance=research101::PaperKeyword_strategy)
-def test_research101::paperkeyword_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_research101_paperkeyword_instantiation(instance):
+    assert isinstance(instance, research101_PaperKeyword)
 
 
-@given(instance=research101::PaperKeyword_strategy)
-def test_research101::paperkeyword_weight_setter(instance):
+
+@given(instance=research101_PaperKeyword_strategy)
+def test_research101_paperkeyword_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=research101::Progress_strategy)
+@given(instance=research101_Progress_strategy)
 @settings(max_examples=50)
-def test_research101::progress_instantiation(instance):
-    assert isinstance(instance, research101::Progress)
-
-@given(instance=research101::Progress_strategy)
-def test_research101::progress_percent_type(instance):
-    assert isinstance(instance.percent, int)
+def test_research101_progress_instantiation(instance):
+    assert isinstance(instance, research101_Progress)
 
 
-@given(instance=research101::Progress_strategy)
-def test_research101::progress_percent_setter(instance):
+
+@given(instance=research101_Progress_strategy)
+def test_research101_progress_percent_setter(instance):
     original = instance.percent
     instance.percent = original
     assert instance.percent == original
 
-@given(instance=research101::Researcher_strategy)
+@given(instance=research101_Researcher_strategy)
 @settings(max_examples=50)
-def test_research101::researcher_instantiation(instance):
-    assert isinstance(instance, research101::Researcher)
-
-@given(instance=research101::Researcher_strategy)
-def test_research101::researcher_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_research101_researcher_instantiation(instance):
+    assert isinstance(instance, research101_Researcher)
 
 
-@given(instance=research101::Researcher_strategy)
-def test_research101::researcher_name_setter(instance):
+
+@given(instance=research101_Researcher_strategy)
+def test_research101_researcher_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=research101::Researcher_strategy)
-def test_research101::researcher_forName_type(instance):
-    assert isinstance(instance.forName, str)
 
 
-@given(instance=research101::Researcher_strategy)
-def test_research101::researcher_forName_setter(instance):
+@given(instance=research101_Researcher_strategy)
+def test_research101_researcher_forName_setter(instance):
     original = instance.forName
     instance.forName = original
     assert instance.forName == original
 
-@given(instance=research101::Phase_strategy)
+@given(instance=research101_Phase_strategy)
 @settings(max_examples=50)
-def test_research101::phase_instantiation(instance):
-    assert isinstance(instance, research101::Phase)
-
-@given(instance=research101::Phase_strategy)
-def test_research101::phase_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_research101_phase_instantiation(instance):
+    assert isinstance(instance, research101_Phase)
 
 
-@given(instance=research101::Phase_strategy)
-def test_research101::phase_name_setter(instance):
+
+@given(instance=research101_Phase_strategy)
+def test_research101_phase_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -793,177 +769,147 @@ def test_research101::phase_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=research101::Paragraph_strategy)
+@given(instance=research101_PublicationStructure_strategy)
 @settings(max_examples=50)
-def test_research101::paragraph_instantiation(instance):
-    assert isinstance(instance, research101::Paragraph)
+def test_research101_publicationstructure_instantiation(instance):
+    assert isinstance(instance, research101_PublicationStructure)
 
-@given(instance=research101::Paragraph_strategy)
-def test_research101::paragraph_content_type(instance):
-    assert isinstance(instance.content, str)
+@given(instance=research101_Paragraph_strategy)
+@settings(max_examples=50)
+def test_research101_paragraph_instantiation(instance):
+    assert isinstance(instance, research101_Paragraph)
 
 
-@given(instance=research101::Paragraph_strategy)
-def test_research101::paragraph_content_setter(instance):
+
+@given(instance=research101_Paragraph_strategy)
+def test_research101_paragraph_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=research101::PublicationStructure_strategy)
+@given(instance=research101_KnowledgeManager_strategy)
 @settings(max_examples=50)
-def test_research101::publicationstructure_instantiation(instance):
-    assert isinstance(instance, research101::PublicationStructure)
+def test_research101_knowledgemanager_instantiation(instance):
+    assert isinstance(instance, research101_KnowledgeManager)
 
-@given(instance=research101::KnowledgeManager_strategy)
+@given(instance=research101_Keyword_strategy)
 @settings(max_examples=50)
-def test_research101::knowledgemanager_instantiation(instance):
-    assert isinstance(instance, research101::KnowledgeManager)
-
-@given(instance=research101::Keyword_strategy)
-@settings(max_examples=50)
-def test_research101::keyword_instantiation(instance):
-    assert isinstance(instance, research101::Keyword)
-
-@given(instance=research101::Keyword_strategy)
-def test_research101::keyword_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_research101_keyword_instantiation(instance):
+    assert isinstance(instance, research101_Keyword)
 
 
-@given(instance=research101::Keyword_strategy)
-def test_research101::keyword_description_setter(instance):
+
+@given(instance=research101_Keyword_strategy)
+def test_research101_keyword_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=research101::PublicationSystem_strategy)
+@given(instance=research101_ReviewNote_strategy)
 @settings(max_examples=50)
-def test_research101::publicationsystem_instantiation(instance):
-    assert isinstance(instance, research101::PublicationSystem)
-
-@given(instance=research101::ReviewNote_strategy)
-@settings(max_examples=50)
-def test_research101::reviewnote_instantiation(instance):
-    assert isinstance(instance, research101::ReviewNote)
-
-@given(instance=research101::ReviewNote_strategy)
-def test_research101::reviewnote_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_research101_reviewnote_instantiation(instance):
+    assert isinstance(instance, research101_ReviewNote)
 
 
-@given(instance=research101::ReviewNote_strategy)
-def test_research101::reviewnote_content_setter(instance):
+
+@given(instance=research101_ReviewNote_strategy)
+def test_research101_reviewnote_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=research101::PublicationProcess_strategy)
+@given(instance=research101_PublicationSystem_strategy)
 @settings(max_examples=50)
-def test_research101::publicationprocess_instantiation(instance):
-    assert isinstance(instance, research101::PublicationProcess)
+def test_research101_publicationsystem_instantiation(instance):
+    assert isinstance(instance, research101_PublicationSystem)
 
-@given(instance=research101::PublicationProcess_strategy)
-def test_research101::publicationprocess_minTime_type(instance):
-    assert isinstance(instance.minTime, int)
+@given(instance=research101_PublicationProcess_strategy)
+@settings(max_examples=50)
+def test_research101_publicationprocess_instantiation(instance):
+    assert isinstance(instance, research101_PublicationProcess)
 
 
-@given(instance=research101::PublicationProcess_strategy)
-def test_research101::publicationprocess_minTime_setter(instance):
+
+@given(instance=research101_PublicationProcess_strategy)
+def test_research101_publicationprocess_minTime_setter(instance):
     original = instance.minTime
     instance.minTime = original
     assert instance.minTime == original
 
-@given(instance=research101::PublicationProcess_strategy)
-def test_research101::publicationprocess_maxTime_type(instance):
-    assert isinstance(instance.maxTime, int)
 
 
-@given(instance=research101::PublicationProcess_strategy)
-def test_research101::publicationprocess_maxTime_setter(instance):
+@given(instance=research101_PublicationProcess_strategy)
+def test_research101_publicationprocess_maxTime_setter(instance):
     original = instance.maxTime
     instance.maxTime = original
     assert instance.maxTime == original
 
-@given(instance=research101::Collaboration_strategy)
+@given(instance=research101_Collaboration_strategy)
 @settings(max_examples=50)
-def test_research101::collaboration_instantiation(instance):
-    assert isinstance(instance, research101::Collaboration)
-
-@given(instance=research101::Collaboration_strategy)
-def test_research101::collaboration_ratio_type(instance):
-    assert isinstance(instance.ratio, int)
+def test_research101_collaboration_instantiation(instance):
+    assert isinstance(instance, research101_Collaboration)
 
 
-@given(instance=research101::Collaboration_strategy)
-def test_research101::collaboration_ratio_setter(instance):
+
+@given(instance=research101_Collaboration_strategy)
+def test_research101_collaboration_ratio_setter(instance):
     original = instance.ratio
     instance.ratio = original
     assert instance.ratio == original
 
-@given(instance=research101::Position_strategy)
+@given(instance=research101_Position_strategy)
 @settings(max_examples=50)
-def test_research101::position_instantiation(instance):
-    assert isinstance(instance, research101::Position)
-
-@given(instance=research101::Position_strategy)
-def test_research101::position_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_research101_position_instantiation(instance):
+    assert isinstance(instance, research101_Position)
 
 
-@given(instance=research101::Position_strategy)
-def test_research101::position_description_setter(instance):
+
+@given(instance=research101_Position_strategy)
+def test_research101_position_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=research101::Skill_strategy)
+@given(instance=research101_Skill_strategy)
 @settings(max_examples=50)
-def test_research101::skill_instantiation(instance):
-    assert isinstance(instance, research101::Skill)
-
-@given(instance=research101::Skill_strategy)
-def test_research101::skill_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_research101_skill_instantiation(instance):
+    assert isinstance(instance, research101_Skill)
 
 
-@given(instance=research101::Skill_strategy)
-def test_research101::skill_description_setter(instance):
+
+@given(instance=research101_Skill_strategy)
+def test_research101_skill_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=research101::Paper_strategy)
+@given(instance=research101_Paper_strategy)
 @settings(max_examples=50)
-def test_research101::paper_instantiation(instance):
-    assert isinstance(instance, research101::Paper)
+def test_research101_paper_instantiation(instance):
+    assert isinstance(instance, research101_Paper)
 
-@given(instance=research101::Review_strategy)
+@given(instance=research101_Review_strategy)
 @settings(max_examples=50)
-def test_research101::review_instantiation(instance):
-    assert isinstance(instance, research101::Review)
-
-@given(instance=research101::Review_strategy)
-def test_research101::review_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_research101_review_instantiation(instance):
+    assert isinstance(instance, research101_Review)
 
 
-@given(instance=research101::Review_strategy)
-def test_research101::review_date_setter(instance):
+
+@given(instance=research101_Review_strategy)
+def test_research101_review_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=research101::Write_strategy)
+@given(instance=research101_Write_strategy)
 @settings(max_examples=50)
-def test_research101::write_instantiation(instance):
-    assert isinstance(instance, research101::Write)
-
-@given(instance=research101::Write_strategy)
-def test_research101::write_timeSpent_type(instance):
-    assert isinstance(instance.timeSpent, int)
+def test_research101_write_instantiation(instance):
+    assert isinstance(instance, research101_Write)
 
 
-@given(instance=research101::Write_strategy)
-def test_research101::write_timeSpent_setter(instance):
+
+@given(instance=research101_Write_strategy)
+def test_research101_write_timeSpent_setter(instance):
     original = instance.timeSpent
     instance.timeSpent = original
     assert instance.timeSpent == original

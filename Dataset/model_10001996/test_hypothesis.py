@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     C2,
@@ -244,9 +244,6 @@ def test_c1_instantiation(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_attC7_type(instance):
-    assert isinstance(instance.attC7, int)
 
 
 @given(instance=C_strategy)
@@ -255,9 +252,6 @@ def test_c_attC7_setter(instance):
     instance.attC7 = original
     assert instance.attC7 == original
 
-@given(instance=C_strategy)
-def test_c_attc3_type(instance):
-    assert isinstance(instance.attc3, bool)
 
 
 @given(instance=C_strategy)
@@ -271,9 +265,6 @@ def test_c_attc3_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B_strategy)
@@ -287,9 +278,6 @@ def test_b_attB_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A_strategy)
@@ -313,9 +301,6 @@ def test_r_instantiation(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_atty_type(instance):
-    assert isinstance(instance.atty, str)
 
 
 @given(instance=Y_strategy)

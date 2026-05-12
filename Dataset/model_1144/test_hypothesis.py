@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TrgCompositeState,
     TrgTransition,
-    jointPackage::HSM2FSM::TrgStateMachine,
+    jointPackage_HSM2FSM_TrgStateMachine,
     TrgStateMachine,
-    jointPackage::HSM2FSM::TrgRoot,
+    jointPackage_HSM2FSM_TrgRoot,
     SrcCompositeState,
-    jointPackage::HSM2FSM::SrcAbstractState,
-    jointPackage::HSM2FSM::SrcTransition,
+    jointPackage_HSM2FSM_SrcAbstractState,
+    jointPackage_HSM2FSM_SrcTransition,
     SrcAbstractState,
-    jointPackage::HSM2FSM::SrcCompositeState,
-    jointPackage::HSM2FSM::SrcInitialState,
-    jointPackage::HSM2FSM::SrcRegularState,
+    jointPackage_HSM2FSM_SrcInitialState,
+    jointPackage_HSM2FSM_SrcRegularState,
+    jointPackage_HSM2FSM_SrcCompositeState,
     SrcTransition,
-    jointPackage::HSM2FSM::SrcStateMachine,
-    jointPackage::HSM2FSM::TrgAbstractState,
-    jointPackage::HSM2FSM::TrgTransition,
+    jointPackage_HSM2FSM_SrcStateMachine,
+    jointPackage_HSM2FSM_TrgAbstractState,
+    jointPackage_HSM2FSM_TrgTransition,
     TrgAbstractState,
-    jointPackage::HSM2FSM::TrgRegularState,
-    jointPackage::HSM2FSM::TrgCompositeState,
-    jointPackage::HSM2FSM::TrgInitialState,
-    jointPackage::HSM2FSM::JointMM,
+    jointPackage_HSM2FSM_TrgRegularState,
+    jointPackage_HSM2FSM_TrgInitialState,
+    jointPackage_HSM2FSM_TrgCompositeState,
+    jointPackage_HSM2FSM_JointMM,
     SrcStateMachine,
-    jointPackage::HSM2FSM::SrcRoot,
+    jointPackage_HSM2FSM_SrcRoot,
     TrgRoot,
     SrcRoot,
 )
@@ -67,23 +67,23 @@ def test_trgtransition_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::trgstatemachine_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgStateMachine)
+def test_jointpackage_hsm2fsm_trgstatemachine_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgStateMachine)
 
 
-def test_jointpackage::hsm2fsm::trgstatemachine_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgStateMachine.__init__)
+def test_jointpackage_hsm2fsm_trgstatemachine_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgStateMachine.__init__)
 
 
-def test_jointpackage::hsm2fsm::trgstatemachine_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgStateMachine.__init__)
+def test_jointpackage_hsm2fsm_trgstatemachine_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::hsm2fsm::trgstatemachine_has_name():
-    assert hasattr(jointPackage::HSM2FSM::TrgStateMachine, "name")
+def test_jointpackage_hsm2fsm_trgstatemachine_has_name():
+    assert hasattr(jointPackage_HSM2FSM_TrgStateMachine, "name")
     descriptor = None
-    for klass in jointPackage::HSM2FSM::TrgStateMachine.__mro__:
+    for klass in jointPackage_HSM2FSM_TrgStateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -105,16 +105,16 @@ def test_trgstatemachine_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::trgroot_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgRoot)
+def test_jointpackage_hsm2fsm_trgroot_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgRoot)
 
 
-def test_jointpackage::hsm2fsm::trgroot_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgRoot.__init__)
+def test_jointpackage_hsm2fsm_trgroot_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgRoot.__init__)
 
 
-def test_jointpackage::hsm2fsm::trgroot_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgRoot.__init__)
+def test_jointpackage_hsm2fsm_trgroot_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -133,23 +133,23 @@ def test_srccompositestate_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::srcabstractstate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcAbstractState)
+def test_jointpackage_hsm2fsm_srcabstractstate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcAbstractState)
 
 
-def test_jointpackage::hsm2fsm::srcabstractstate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcAbstractState.__init__)
+def test_jointpackage_hsm2fsm_srcabstractstate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcAbstractState.__init__)
 
 
-def test_jointpackage::hsm2fsm::srcabstractstate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcAbstractState.__init__)
+def test_jointpackage_hsm2fsm_srcabstractstate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcAbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::hsm2fsm::srcabstractstate_has_name():
-    assert hasattr(jointPackage::HSM2FSM::SrcAbstractState, "name")
+def test_jointpackage_hsm2fsm_srcabstractstate_has_name():
+    assert hasattr(jointPackage_HSM2FSM_SrcAbstractState, "name")
     descriptor = None
-    for klass in jointPackage::HSM2FSM::SrcAbstractState.__mro__:
+    for klass in jointPackage_HSM2FSM_SrcAbstractState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -157,23 +157,23 @@ def test_jointpackage::hsm2fsm::srcabstractstate_has_name():
 
 
 
-def test_jointpackage::hsm2fsm::srctransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcTransition)
+def test_jointpackage_hsm2fsm_srctransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcTransition)
 
 
-def test_jointpackage::hsm2fsm::srctransition_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcTransition.__init__)
+def test_jointpackage_hsm2fsm_srctransition_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcTransition.__init__)
 
 
-def test_jointpackage::hsm2fsm::srctransition_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcTransition.__init__)
+def test_jointpackage_hsm2fsm_srctransition_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcTransition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_jointpackage::hsm2fsm::srctransition_has_label():
-    assert hasattr(jointPackage::HSM2FSM::SrcTransition, "label")
+def test_jointpackage_hsm2fsm_srctransition_has_label():
+    assert hasattr(jointPackage_HSM2FSM_SrcTransition, "label")
     descriptor = None
-    for klass in jointPackage::HSM2FSM::SrcTransition.__mro__:
+    for klass in jointPackage_HSM2FSM_SrcTransition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -195,44 +195,44 @@ def test_srcabstractstate_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::srccompositestate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcCompositeState)
+def test_jointpackage_hsm2fsm_srcinitialstate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcInitialState)
 
 
-def test_jointpackage::hsm2fsm::srccompositestate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcCompositeState.__init__)
+def test_jointpackage_hsm2fsm_srcinitialstate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcInitialState.__init__)
 
 
-def test_jointpackage::hsm2fsm::srccompositestate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcCompositeState.__init__)
+def test_jointpackage_hsm2fsm_srcinitialstate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcInitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::hsm2fsm::srcinitialstate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcInitialState)
+def test_jointpackage_hsm2fsm_srcregularstate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcRegularState)
 
 
-def test_jointpackage::hsm2fsm::srcinitialstate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcInitialState.__init__)
+def test_jointpackage_hsm2fsm_srcregularstate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcRegularState.__init__)
 
 
-def test_jointpackage::hsm2fsm::srcinitialstate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcInitialState.__init__)
+def test_jointpackage_hsm2fsm_srcregularstate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcRegularState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::hsm2fsm::srcregularstate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcRegularState)
+def test_jointpackage_hsm2fsm_srccompositestate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcCompositeState)
 
 
-def test_jointpackage::hsm2fsm::srcregularstate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcRegularState.__init__)
+def test_jointpackage_hsm2fsm_srccompositestate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcCompositeState.__init__)
 
 
-def test_jointpackage::hsm2fsm::srcregularstate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcRegularState.__init__)
+def test_jointpackage_hsm2fsm_srccompositestate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcCompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -251,23 +251,23 @@ def test_srctransition_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::srcstatemachine_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcStateMachine)
+def test_jointpackage_hsm2fsm_srcstatemachine_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcStateMachine)
 
 
-def test_jointpackage::hsm2fsm::srcstatemachine_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcStateMachine.__init__)
+def test_jointpackage_hsm2fsm_srcstatemachine_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcStateMachine.__init__)
 
 
-def test_jointpackage::hsm2fsm::srcstatemachine_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcStateMachine.__init__)
+def test_jointpackage_hsm2fsm_srcstatemachine_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::hsm2fsm::srcstatemachine_has_name():
-    assert hasattr(jointPackage::HSM2FSM::SrcStateMachine, "name")
+def test_jointpackage_hsm2fsm_srcstatemachine_has_name():
+    assert hasattr(jointPackage_HSM2FSM_SrcStateMachine, "name")
     descriptor = None
-    for klass in jointPackage::HSM2FSM::SrcStateMachine.__mro__:
+    for klass in jointPackage_HSM2FSM_SrcStateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -275,23 +275,23 @@ def test_jointpackage::hsm2fsm::srcstatemachine_has_name():
 
 
 
-def test_jointpackage::hsm2fsm::trgabstractstate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgAbstractState)
+def test_jointpackage_hsm2fsm_trgabstractstate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgAbstractState)
 
 
-def test_jointpackage::hsm2fsm::trgabstractstate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgAbstractState.__init__)
+def test_jointpackage_hsm2fsm_trgabstractstate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgAbstractState.__init__)
 
 
-def test_jointpackage::hsm2fsm::trgabstractstate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgAbstractState.__init__)
+def test_jointpackage_hsm2fsm_trgabstractstate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgAbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::hsm2fsm::trgabstractstate_has_name():
-    assert hasattr(jointPackage::HSM2FSM::TrgAbstractState, "name")
+def test_jointpackage_hsm2fsm_trgabstractstate_has_name():
+    assert hasattr(jointPackage_HSM2FSM_TrgAbstractState, "name")
     descriptor = None
-    for klass in jointPackage::HSM2FSM::TrgAbstractState.__mro__:
+    for klass in jointPackage_HSM2FSM_TrgAbstractState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -299,23 +299,23 @@ def test_jointpackage::hsm2fsm::trgabstractstate_has_name():
 
 
 
-def test_jointpackage::hsm2fsm::trgtransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgTransition)
+def test_jointpackage_hsm2fsm_trgtransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgTransition)
 
 
-def test_jointpackage::hsm2fsm::trgtransition_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgTransition.__init__)
+def test_jointpackage_hsm2fsm_trgtransition_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgTransition.__init__)
 
 
-def test_jointpackage::hsm2fsm::trgtransition_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgTransition.__init__)
+def test_jointpackage_hsm2fsm_trgtransition_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgTransition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_jointpackage::hsm2fsm::trgtransition_has_label():
-    assert hasattr(jointPackage::HSM2FSM::TrgTransition, "label")
+def test_jointpackage_hsm2fsm_trgtransition_has_label():
+    assert hasattr(jointPackage_HSM2FSM_TrgTransition, "label")
     descriptor = None
-    for klass in jointPackage::HSM2FSM::TrgTransition.__mro__:
+    for klass in jointPackage_HSM2FSM_TrgTransition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -337,58 +337,58 @@ def test_trgabstractstate_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::trgregularstate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgRegularState)
+def test_jointpackage_hsm2fsm_trgregularstate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgRegularState)
 
 
-def test_jointpackage::hsm2fsm::trgregularstate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgRegularState.__init__)
+def test_jointpackage_hsm2fsm_trgregularstate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgRegularState.__init__)
 
 
-def test_jointpackage::hsm2fsm::trgregularstate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgRegularState.__init__)
+def test_jointpackage_hsm2fsm_trgregularstate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgRegularState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::hsm2fsm::trgcompositestate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgCompositeState)
+def test_jointpackage_hsm2fsm_trginitialstate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgInitialState)
 
 
-def test_jointpackage::hsm2fsm::trgcompositestate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgCompositeState.__init__)
+def test_jointpackage_hsm2fsm_trginitialstate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgInitialState.__init__)
 
 
-def test_jointpackage::hsm2fsm::trgcompositestate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgCompositeState.__init__)
+def test_jointpackage_hsm2fsm_trginitialstate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgInitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::hsm2fsm::trginitialstate_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::TrgInitialState)
+def test_jointpackage_hsm2fsm_trgcompositestate_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_TrgCompositeState)
 
 
-def test_jointpackage::hsm2fsm::trginitialstate_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::TrgInitialState.__init__)
+def test_jointpackage_hsm2fsm_trgcompositestate_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_TrgCompositeState.__init__)
 
 
-def test_jointpackage::hsm2fsm::trginitialstate_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::TrgInitialState.__init__)
+def test_jointpackage_hsm2fsm_trgcompositestate_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_TrgCompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::hsm2fsm::jointmm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::JointMM)
+def test_jointpackage_hsm2fsm_jointmm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_JointMM)
 
 
-def test_jointpackage::hsm2fsm::jointmm_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::JointMM.__init__)
+def test_jointpackage_hsm2fsm_jointmm_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_JointMM.__init__)
 
 
-def test_jointpackage::hsm2fsm::jointmm_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::JointMM.__init__)
+def test_jointpackage_hsm2fsm_jointmm_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_JointMM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -407,16 +407,16 @@ def test_srcstatemachine_constructor_args():
 
 
 
-def test_jointpackage::hsm2fsm::srcroot_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::HSM2FSM::SrcRoot)
+def test_jointpackage_hsm2fsm_srcroot_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_HSM2FSM_SrcRoot)
 
 
-def test_jointpackage::hsm2fsm::srcroot_constructor_exists():
-    assert callable(jointPackage::HSM2FSM::SrcRoot.__init__)
+def test_jointpackage_hsm2fsm_srcroot_constructor_exists():
+    assert callable(jointPackage_HSM2FSM_SrcRoot.__init__)
 
 
-def test_jointpackage::hsm2fsm::srcroot_constructor_args():
-    sig = inspect.signature(jointPackage::HSM2FSM::SrcRoot.__init__)
+def test_jointpackage_hsm2fsm_srcroot_constructor_args():
+    sig = inspect.signature(jointPackage_HSM2FSM_SrcRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -465,80 +465,80 @@ TrgCompositeState_strategy = st.builds(
 TrgTransition_strategy = st.builds(
     TrgTransition,
 )
-jointPackage::HSM2FSM::TrgStateMachine_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgStateMachine,
+jointPackage_HSM2FSM_TrgStateMachine_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgStateMachine,
     name=
         safe_text
 )
 TrgStateMachine_strategy = st.builds(
     TrgStateMachine,
 )
-jointPackage::HSM2FSM::TrgRoot_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgRoot,
+jointPackage_HSM2FSM_TrgRoot_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgRoot,
 )
 SrcCompositeState_strategy = st.builds(
     SrcCompositeState,
 )
-jointPackage::HSM2FSM::SrcAbstractState_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcAbstractState,
+jointPackage_HSM2FSM_SrcAbstractState_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcAbstractState,
     name=
         safe_text
 )
-jointPackage::HSM2FSM::SrcTransition_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcTransition,
+jointPackage_HSM2FSM_SrcTransition_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcTransition,
     label=
         safe_text
 )
 SrcAbstractState_strategy = st.builds(
     SrcAbstractState,
 )
-jointPackage::HSM2FSM::SrcCompositeState_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcCompositeState,
+jointPackage_HSM2FSM_SrcInitialState_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcInitialState,
 )
-jointPackage::HSM2FSM::SrcInitialState_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcInitialState,
+jointPackage_HSM2FSM_SrcRegularState_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcRegularState,
 )
-jointPackage::HSM2FSM::SrcRegularState_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcRegularState,
+jointPackage_HSM2FSM_SrcCompositeState_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcCompositeState,
 )
 SrcTransition_strategy = st.builds(
     SrcTransition,
 )
-jointPackage::HSM2FSM::SrcStateMachine_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcStateMachine,
+jointPackage_HSM2FSM_SrcStateMachine_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcStateMachine,
     name=
         safe_text
 )
-jointPackage::HSM2FSM::TrgAbstractState_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgAbstractState,
+jointPackage_HSM2FSM_TrgAbstractState_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgAbstractState,
     name=
         safe_text
 )
-jointPackage::HSM2FSM::TrgTransition_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgTransition,
+jointPackage_HSM2FSM_TrgTransition_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgTransition,
     label=
         safe_text
 )
 TrgAbstractState_strategy = st.builds(
     TrgAbstractState,
 )
-jointPackage::HSM2FSM::TrgRegularState_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgRegularState,
+jointPackage_HSM2FSM_TrgRegularState_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgRegularState,
 )
-jointPackage::HSM2FSM::TrgCompositeState_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgCompositeState,
+jointPackage_HSM2FSM_TrgInitialState_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgInitialState,
 )
-jointPackage::HSM2FSM::TrgInitialState_strategy = st.builds(
-    jointPackage::HSM2FSM::TrgInitialState,
+jointPackage_HSM2FSM_TrgCompositeState_strategy = st.builds(
+    jointPackage_HSM2FSM_TrgCompositeState,
 )
-jointPackage::HSM2FSM::JointMM_strategy = st.builds(
-    jointPackage::HSM2FSM::JointMM,
+jointPackage_HSM2FSM_JointMM_strategy = st.builds(
+    jointPackage_HSM2FSM_JointMM,
 )
 SrcStateMachine_strategy = st.builds(
     SrcStateMachine,
 )
-jointPackage::HSM2FSM::SrcRoot_strategy = st.builds(
-    jointPackage::HSM2FSM::SrcRoot,
+jointPackage_HSM2FSM_SrcRoot_strategy = st.builds(
+    jointPackage_HSM2FSM_SrcRoot,
 )
 TrgRoot_strategy = st.builds(
     TrgRoot,
@@ -557,18 +557,15 @@ def test_trgcompositestate_instantiation(instance):
 def test_trgtransition_instantiation(instance):
     assert isinstance(instance, TrgTransition)
 
-@given(instance=jointPackage::HSM2FSM::TrgStateMachine_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgStateMachine_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trgstatemachine_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgStateMachine)
-
-@given(instance=jointPackage::HSM2FSM::TrgStateMachine_strategy)
-def test_jointpackage::hsm2fsm::trgstatemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_hsm2fsm_trgstatemachine_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgStateMachine)
 
 
-@given(instance=jointPackage::HSM2FSM::TrgStateMachine_strategy)
-def test_jointpackage::hsm2fsm::trgstatemachine_name_setter(instance):
+
+@given(instance=jointPackage_HSM2FSM_TrgStateMachine_strategy)
+def test_jointpackage_hsm2fsm_trgstatemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -578,44 +575,38 @@ def test_jointpackage::hsm2fsm::trgstatemachine_name_setter(instance):
 def test_trgstatemachine_instantiation(instance):
     assert isinstance(instance, TrgStateMachine)
 
-@given(instance=jointPackage::HSM2FSM::TrgRoot_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgRoot_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trgroot_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgRoot)
+def test_jointpackage_hsm2fsm_trgroot_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgRoot)
 
 @given(instance=SrcCompositeState_strategy)
 @settings(max_examples=50)
 def test_srccompositestate_instantiation(instance):
     assert isinstance(instance, SrcCompositeState)
 
-@given(instance=jointPackage::HSM2FSM::SrcAbstractState_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcAbstractState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srcabstractstate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcAbstractState)
-
-@given(instance=jointPackage::HSM2FSM::SrcAbstractState_strategy)
-def test_jointpackage::hsm2fsm::srcabstractstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_hsm2fsm_srcabstractstate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcAbstractState)
 
 
-@given(instance=jointPackage::HSM2FSM::SrcAbstractState_strategy)
-def test_jointpackage::hsm2fsm::srcabstractstate_name_setter(instance):
+
+@given(instance=jointPackage_HSM2FSM_SrcAbstractState_strategy)
+def test_jointpackage_hsm2fsm_srcabstractstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::HSM2FSM::SrcTransition_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srctransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcTransition)
-
-@given(instance=jointPackage::HSM2FSM::SrcTransition_strategy)
-def test_jointpackage::hsm2fsm::srctransition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_jointpackage_hsm2fsm_srctransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcTransition)
 
 
-@given(instance=jointPackage::HSM2FSM::SrcTransition_strategy)
-def test_jointpackage::hsm2fsm::srctransition_label_setter(instance):
+
+@given(instance=jointPackage_HSM2FSM_SrcTransition_strategy)
+def test_jointpackage_hsm2fsm_srctransition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -625,70 +616,61 @@ def test_jointpackage::hsm2fsm::srctransition_label_setter(instance):
 def test_srcabstractstate_instantiation(instance):
     assert isinstance(instance, SrcAbstractState)
 
-@given(instance=jointPackage::HSM2FSM::SrcCompositeState_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcInitialState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srccompositestate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcCompositeState)
+def test_jointpackage_hsm2fsm_srcinitialstate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcInitialState)
 
-@given(instance=jointPackage::HSM2FSM::SrcInitialState_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcRegularState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srcinitialstate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcInitialState)
+def test_jointpackage_hsm2fsm_srcregularstate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcRegularState)
 
-@given(instance=jointPackage::HSM2FSM::SrcRegularState_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcCompositeState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srcregularstate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcRegularState)
+def test_jointpackage_hsm2fsm_srccompositestate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcCompositeState)
 
 @given(instance=SrcTransition_strategy)
 @settings(max_examples=50)
 def test_srctransition_instantiation(instance):
     assert isinstance(instance, SrcTransition)
 
-@given(instance=jointPackage::HSM2FSM::SrcStateMachine_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcStateMachine_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srcstatemachine_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcStateMachine)
-
-@given(instance=jointPackage::HSM2FSM::SrcStateMachine_strategy)
-def test_jointpackage::hsm2fsm::srcstatemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_hsm2fsm_srcstatemachine_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcStateMachine)
 
 
-@given(instance=jointPackage::HSM2FSM::SrcStateMachine_strategy)
-def test_jointpackage::hsm2fsm::srcstatemachine_name_setter(instance):
+
+@given(instance=jointPackage_HSM2FSM_SrcStateMachine_strategy)
+def test_jointpackage_hsm2fsm_srcstatemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::HSM2FSM::TrgAbstractState_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgAbstractState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trgabstractstate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgAbstractState)
-
-@given(instance=jointPackage::HSM2FSM::TrgAbstractState_strategy)
-def test_jointpackage::hsm2fsm::trgabstractstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_hsm2fsm_trgabstractstate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgAbstractState)
 
 
-@given(instance=jointPackage::HSM2FSM::TrgAbstractState_strategy)
-def test_jointpackage::hsm2fsm::trgabstractstate_name_setter(instance):
+
+@given(instance=jointPackage_HSM2FSM_TrgAbstractState_strategy)
+def test_jointpackage_hsm2fsm_trgabstractstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::HSM2FSM::TrgTransition_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trgtransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgTransition)
-
-@given(instance=jointPackage::HSM2FSM::TrgTransition_strategy)
-def test_jointpackage::hsm2fsm::trgtransition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_jointpackage_hsm2fsm_trgtransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgTransition)
 
 
-@given(instance=jointPackage::HSM2FSM::TrgTransition_strategy)
-def test_jointpackage::hsm2fsm::trgtransition_label_setter(instance):
+
+@given(instance=jointPackage_HSM2FSM_TrgTransition_strategy)
+def test_jointpackage_hsm2fsm_trgtransition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -698,35 +680,35 @@ def test_jointpackage::hsm2fsm::trgtransition_label_setter(instance):
 def test_trgabstractstate_instantiation(instance):
     assert isinstance(instance, TrgAbstractState)
 
-@given(instance=jointPackage::HSM2FSM::TrgRegularState_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgRegularState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trgregularstate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgRegularState)
+def test_jointpackage_hsm2fsm_trgregularstate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgRegularState)
 
-@given(instance=jointPackage::HSM2FSM::TrgCompositeState_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgInitialState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trgcompositestate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgCompositeState)
+def test_jointpackage_hsm2fsm_trginitialstate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgInitialState)
 
-@given(instance=jointPackage::HSM2FSM::TrgInitialState_strategy)
+@given(instance=jointPackage_HSM2FSM_TrgCompositeState_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::trginitialstate_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::TrgInitialState)
+def test_jointpackage_hsm2fsm_trgcompositestate_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_TrgCompositeState)
 
-@given(instance=jointPackage::HSM2FSM::JointMM_strategy)
+@given(instance=jointPackage_HSM2FSM_JointMM_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::jointmm_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::JointMM)
+def test_jointpackage_hsm2fsm_jointmm_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_JointMM)
 
 @given(instance=SrcStateMachine_strategy)
 @settings(max_examples=50)
 def test_srcstatemachine_instantiation(instance):
     assert isinstance(instance, SrcStateMachine)
 
-@given(instance=jointPackage::HSM2FSM::SrcRoot_strategy)
+@given(instance=jointPackage_HSM2FSM_SrcRoot_strategy)
 @settings(max_examples=50)
-def test_jointpackage::hsm2fsm::srcroot_instantiation(instance):
-    assert isinstance(instance, jointPackage::HSM2FSM::SrcRoot)
+def test_jointpackage_hsm2fsm_srcroot_instantiation(instance):
+    assert isinstance(instance, jointPackage_HSM2FSM_SrcRoot)
 
 @given(instance=TrgRoot_strategy)
 @settings(max_examples=50)

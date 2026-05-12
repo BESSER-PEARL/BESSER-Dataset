@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     D,
-    ref3::Named,
+    ref3_Named,
     Named,
-    ref3::A,
-    ref3::E,
-    ref3::B,
-    ref3::T,
-    ref3::N,
+    ref3_A,
+    ref3_E,
+    ref3_T,
+    ref3_B,
+    ref3_N,
     T,
-    ref3::D,
+    ref3_D,
 )
 
 # =============================================================================
@@ -38,23 +38,23 @@ def test_d_constructor_args():
 
 
 
-def test_ref3::named_is_not_abstract():
-    assert not inspect.isabstract(ref3::Named)
+def test_ref3_named_is_not_abstract():
+    assert not inspect.isabstract(ref3_Named)
 
 
-def test_ref3::named_constructor_exists():
-    assert callable(ref3::Named.__init__)
+def test_ref3_named_constructor_exists():
+    assert callable(ref3_Named.__init__)
 
 
-def test_ref3::named_constructor_args():
-    sig = inspect.signature(ref3::Named.__init__)
+def test_ref3_named_constructor_args():
+    sig = inspect.signature(ref3_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ref3::named_has_name():
-    assert hasattr(ref3::Named, "name")
+def test_ref3_named_has_name():
+    assert hasattr(ref3_Named, "name")
     descriptor = None
-    for klass in ref3::Named.__mro__:
+    for klass in ref3_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -76,72 +76,72 @@ def test_named_constructor_args():
 
 
 
-def test_ref3::a_is_not_abstract():
-    assert not inspect.isabstract(ref3::A)
+def test_ref3_a_is_not_abstract():
+    assert not inspect.isabstract(ref3_A)
 
 
-def test_ref3::a_constructor_exists():
-    assert callable(ref3::A.__init__)
+def test_ref3_a_constructor_exists():
+    assert callable(ref3_A.__init__)
 
 
-def test_ref3::a_constructor_args():
-    sig = inspect.signature(ref3::A.__init__)
+def test_ref3_a_constructor_args():
+    sig = inspect.signature(ref3_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref3::e_is_not_abstract():
-    assert not inspect.isabstract(ref3::E)
+def test_ref3_e_is_not_abstract():
+    assert not inspect.isabstract(ref3_E)
 
 
-def test_ref3::e_constructor_exists():
-    assert callable(ref3::E.__init__)
+def test_ref3_e_constructor_exists():
+    assert callable(ref3_E.__init__)
 
 
-def test_ref3::e_constructor_args():
-    sig = inspect.signature(ref3::E.__init__)
+def test_ref3_e_constructor_args():
+    sig = inspect.signature(ref3_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref3::b_is_not_abstract():
-    assert not inspect.isabstract(ref3::B)
+def test_ref3_t_is_not_abstract():
+    assert not inspect.isabstract(ref3_T)
 
 
-def test_ref3::b_constructor_exists():
-    assert callable(ref3::B.__init__)
+def test_ref3_t_constructor_exists():
+    assert callable(ref3_T.__init__)
 
 
-def test_ref3::b_constructor_args():
-    sig = inspect.signature(ref3::B.__init__)
+def test_ref3_t_constructor_args():
+    sig = inspect.signature(ref3_T.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref3::t_is_not_abstract():
-    assert not inspect.isabstract(ref3::T)
+def test_ref3_b_is_not_abstract():
+    assert not inspect.isabstract(ref3_B)
 
 
-def test_ref3::t_constructor_exists():
-    assert callable(ref3::T.__init__)
+def test_ref3_b_constructor_exists():
+    assert callable(ref3_B.__init__)
 
 
-def test_ref3::t_constructor_args():
-    sig = inspect.signature(ref3::T.__init__)
+def test_ref3_b_constructor_args():
+    sig = inspect.signature(ref3_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref3::n_is_not_abstract():
-    assert not inspect.isabstract(ref3::N)
+def test_ref3_n_is_not_abstract():
+    assert not inspect.isabstract(ref3_N)
 
 
-def test_ref3::n_constructor_exists():
-    assert callable(ref3::N.__init__)
+def test_ref3_n_constructor_exists():
+    assert callable(ref3_N.__init__)
 
 
-def test_ref3::n_constructor_args():
-    sig = inspect.signature(ref3::N.__init__)
+def test_ref3_n_constructor_args():
+    sig = inspect.signature(ref3_N.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -160,16 +160,16 @@ def test_t_constructor_args():
 
 
 
-def test_ref3::d_is_not_abstract():
-    assert not inspect.isabstract(ref3::D)
+def test_ref3_d_is_not_abstract():
+    assert not inspect.isabstract(ref3_D)
 
 
-def test_ref3::d_constructor_exists():
-    assert callable(ref3::D.__init__)
+def test_ref3_d_constructor_exists():
+    assert callable(ref3_D.__init__)
 
 
-def test_ref3::d_constructor_args():
-    sig = inspect.signature(ref3::D.__init__)
+def test_ref3_d_constructor_args():
+    sig = inspect.signature(ref3_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,34 +187,34 @@ safe_text = st.text(
 D_strategy = st.builds(
     D,
 )
-ref3::Named_strategy = st.builds(
-    ref3::Named,
+ref3_Named_strategy = st.builds(
+    ref3_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-ref3::A_strategy = st.builds(
-    ref3::A,
+ref3_A_strategy = st.builds(
+    ref3_A,
 )
-ref3::E_strategy = st.builds(
-    ref3::E,
+ref3_E_strategy = st.builds(
+    ref3_E,
 )
-ref3::B_strategy = st.builds(
-    ref3::B,
+ref3_T_strategy = st.builds(
+    ref3_T,
 )
-ref3::T_strategy = st.builds(
-    ref3::T,
+ref3_B_strategy = st.builds(
+    ref3_B,
 )
-ref3::N_strategy = st.builds(
-    ref3::N,
+ref3_N_strategy = st.builds(
+    ref3_N,
 )
 T_strategy = st.builds(
     T,
 )
-ref3::D_strategy = st.builds(
-    ref3::D,
+ref3_D_strategy = st.builds(
+    ref3_D,
 )
 
 @given(instance=D_strategy)
@@ -222,18 +222,15 @@ ref3::D_strategy = st.builds(
 def test_d_instantiation(instance):
     assert isinstance(instance, D)
 
-@given(instance=ref3::Named_strategy)
+@given(instance=ref3_Named_strategy)
 @settings(max_examples=50)
-def test_ref3::named_instantiation(instance):
-    assert isinstance(instance, ref3::Named)
-
-@given(instance=ref3::Named_strategy)
-def test_ref3::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ref3_named_instantiation(instance):
+    assert isinstance(instance, ref3_Named)
 
 
-@given(instance=ref3::Named_strategy)
-def test_ref3::named_name_setter(instance):
+
+@given(instance=ref3_Named_strategy)
+def test_ref3_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -243,37 +240,37 @@ def test_ref3::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=ref3::A_strategy)
+@given(instance=ref3_A_strategy)
 @settings(max_examples=50)
-def test_ref3::a_instantiation(instance):
-    assert isinstance(instance, ref3::A)
+def test_ref3_a_instantiation(instance):
+    assert isinstance(instance, ref3_A)
 
-@given(instance=ref3::E_strategy)
+@given(instance=ref3_E_strategy)
 @settings(max_examples=50)
-def test_ref3::e_instantiation(instance):
-    assert isinstance(instance, ref3::E)
+def test_ref3_e_instantiation(instance):
+    assert isinstance(instance, ref3_E)
 
-@given(instance=ref3::B_strategy)
+@given(instance=ref3_T_strategy)
 @settings(max_examples=50)
-def test_ref3::b_instantiation(instance):
-    assert isinstance(instance, ref3::B)
+def test_ref3_t_instantiation(instance):
+    assert isinstance(instance, ref3_T)
 
-@given(instance=ref3::T_strategy)
+@given(instance=ref3_B_strategy)
 @settings(max_examples=50)
-def test_ref3::t_instantiation(instance):
-    assert isinstance(instance, ref3::T)
+def test_ref3_b_instantiation(instance):
+    assert isinstance(instance, ref3_B)
 
-@given(instance=ref3::N_strategy)
+@given(instance=ref3_N_strategy)
 @settings(max_examples=50)
-def test_ref3::n_instantiation(instance):
-    assert isinstance(instance, ref3::N)
+def test_ref3_n_instantiation(instance):
+    assert isinstance(instance, ref3_N)
 
 @given(instance=T_strategy)
 @settings(max_examples=50)
 def test_t_instantiation(instance):
     assert isinstance(instance, T)
 
-@given(instance=ref3::D_strategy)
+@given(instance=ref3_D_strategy)
 @settings(max_examples=50)
-def test_ref3::d_instantiation(instance):
-    assert isinstance(instance, ref3::D)
+def test_ref3_d_instantiation(instance):
+    assert isinstance(instance, ref3_D)

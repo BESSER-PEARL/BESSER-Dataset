@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cde::Department,
-    cde::Company,
-    cde::Employee,
+from python_code import (
+    cde_Department,
+    cde_Company,
+    cde_Employee,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_cde::department_is_not_abstract():
-    assert not inspect.isabstract(cde::Department)
+def test_cde_department_is_not_abstract():
+    assert not inspect.isabstract(cde_Department)
 
 
-def test_cde::department_constructor_exists():
-    assert callable(cde::Department.__init__)
+def test_cde_department_constructor_exists():
+    assert callable(cde_Department.__init__)
 
 
-def test_cde::department_constructor_args():
-    sig = inspect.signature(cde::Department.__init__)
+def test_cde_department_constructor_args():
+    sig = inspect.signature(cde_Department.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cde::department_has_name():
-    assert hasattr(cde::Department, "name")
+def test_cde_department_has_name():
+    assert hasattr(cde_Department, "name")
     descriptor = None
-    for klass in cde::Department.__mro__:
+    for klass in cde_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_cde::department_has_name():
 
 
 
-def test_cde::company_is_not_abstract():
-    assert not inspect.isabstract(cde::Company)
+def test_cde_company_is_not_abstract():
+    assert not inspect.isabstract(cde_Company)
 
 
-def test_cde::company_constructor_exists():
-    assert callable(cde::Company.__init__)
+def test_cde_company_constructor_exists():
+    assert callable(cde_Company.__init__)
 
 
-def test_cde::company_constructor_args():
-    sig = inspect.signature(cde::Company.__init__)
+def test_cde_company_constructor_args():
+    sig = inspect.signature(cde_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cde::company_has_name():
-    assert hasattr(cde::Company, "name")
+def test_cde_company_has_name():
+    assert hasattr(cde_Company, "name")
     descriptor = None
-    for klass in cde::Company.__mro__:
+    for klass in cde_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,35 +65,35 @@ def test_cde::company_has_name():
 
 
 
-def test_cde::employee_is_not_abstract():
-    assert not inspect.isabstract(cde::Employee)
+def test_cde_employee_is_not_abstract():
+    assert not inspect.isabstract(cde_Employee)
 
 
-def test_cde::employee_constructor_exists():
-    assert callable(cde::Employee.__init__)
+def test_cde_employee_constructor_exists():
+    assert callable(cde_Employee.__init__)
 
 
-def test_cde::employee_constructor_args():
-    sig = inspect.signature(cde::Employee.__init__)
+def test_cde_employee_constructor_args():
+    sig = inspect.signature(cde_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "address" in params, "Missing parameter 'address'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_cde::employee_has_name():
-    assert hasattr(cde::Employee, "name")
+def test_cde_employee_has_address():
+    assert hasattr(cde_Employee, "address")
     descriptor = None
-    for klass in cde::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cde::employee_has_address():
-    assert hasattr(cde::Employee, "address")
-    descriptor = None
-    for klass in cde::Employee.__mro__:
+    for klass in cde_Employee.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cde_employee_has_name():
+    assert hasattr(cde_Employee, "name")
+    descriptor = None
+    for klass in cde_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,79 +109,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cde::Department_strategy = st.builds(
-    cde::Department,
+cde_Department_strategy = st.builds(
+    cde_Department,
     name=
         safe_text
 )
-cde::Company_strategy = st.builds(
-    cde::Company,
+cde_Company_strategy = st.builds(
+    cde_Company,
     name=
         safe_text
 )
-cde::Employee_strategy = st.builds(
-    cde::Employee,
-    name=
-        safe_text,
+cde_Employee_strategy = st.builds(
+    cde_Employee,
     address=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=cde::Department_strategy)
+@given(instance=cde_Department_strategy)
 @settings(max_examples=50)
-def test_cde::department_instantiation(instance):
-    assert isinstance(instance, cde::Department)
-
-@given(instance=cde::Department_strategy)
-def test_cde::department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cde_department_instantiation(instance):
+    assert isinstance(instance, cde_Department)
 
 
-@given(instance=cde::Department_strategy)
-def test_cde::department_name_setter(instance):
+
+@given(instance=cde_Department_strategy)
+def test_cde_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cde::Company_strategy)
+@given(instance=cde_Company_strategy)
 @settings(max_examples=50)
-def test_cde::company_instantiation(instance):
-    assert isinstance(instance, cde::Company)
-
-@given(instance=cde::Company_strategy)
-def test_cde::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cde_company_instantiation(instance):
+    assert isinstance(instance, cde_Company)
 
 
-@given(instance=cde::Company_strategy)
-def test_cde::company_name_setter(instance):
+
+@given(instance=cde_Company_strategy)
+def test_cde_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cde::Employee_strategy)
+@given(instance=cde_Employee_strategy)
 @settings(max_examples=50)
-def test_cde::employee_instantiation(instance):
-    assert isinstance(instance, cde::Employee)
-
-@given(instance=cde::Employee_strategy)
-def test_cde::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cde_employee_instantiation(instance):
+    assert isinstance(instance, cde_Employee)
 
 
-@given(instance=cde::Employee_strategy)
-def test_cde::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=cde::Employee_strategy)
-def test_cde::employee_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=cde::Employee_strategy)
-def test_cde::employee_address_setter(instance):
+@given(instance=cde_Employee_strategy)
+def test_cde_employee_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
+
+
+
+@given(instance=cde_Employee_strategy)
+def test_cde_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

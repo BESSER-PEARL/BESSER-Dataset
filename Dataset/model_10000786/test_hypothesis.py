@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ClassV,
@@ -299,19 +299,10 @@ def test_department_constructor_exists():
 def test_department_constructor_args():
     sig = inspect.signature(Department.__init__)
     params = list(sig.parameters.keys())
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
     assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
-
-def test_department_has_privateAttribute():
-    assert hasattr(Department, "privateAttribute")
-    descriptor = None
-    for klass in Department.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_department_has_publicAttribute():
     assert hasattr(Department, "publicAttribute")
@@ -319,6 +310,15 @@ def test_department_has_publicAttribute():
     for klass in Department.__mro__:
         if "publicAttribute" in klass.__dict__:
             descriptor = klass.__dict__["publicAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_department_has_privateAttribute():
+    assert hasattr(Department, "privateAttribute")
+    descriptor = None
+    for klass in Department.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -367,19 +367,10 @@ def test_student_constructor_exists():
 def test_student_constructor_args():
     sig = inspect.signature(Student.__init__)
     params = list(sig.parameters.keys())
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
     assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
-
-def test_student_has_protectedAttribute():
-    assert hasattr(Student, "protectedAttribute")
-    descriptor = None
-    for klass in Student.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
 
 def test_student_has_publicAttribute():
     assert hasattr(Student, "publicAttribute")
@@ -408,6 +399,15 @@ def test_student_has_privateAttribute():
             break
     assert isinstance(descriptor, property)
 
+def test_student_has_protectedAttribute():
+    assert hasattr(Student, "protectedAttribute")
+    descriptor = None
+    for klass in Student.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_bankaccount_is_not_abstract():
@@ -421,17 +421,8 @@ def test_bankaccount_constructor_exists():
 def test_bankaccount_constructor_args():
     sig = inspect.signature(BankAccount.__init__)
     params = list(sig.parameters.keys())
-    assert "ownerName" in params, "Missing parameter 'ownerName'"
     assert "balance" in params, "Missing parameter 'balance'"
-
-def test_bankaccount_has_ownerName():
-    assert hasattr(BankAccount, "ownerName")
-    descriptor = None
-    for klass in BankAccount.__mro__:
-        if "ownerName" in klass.__dict__:
-            descriptor = klass.__dict__["ownerName"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ownerName" in params, "Missing parameter 'ownerName'"
 
 def test_bankaccount_has_balance():
     assert hasattr(BankAccount, "balance")
@@ -439,6 +430,15 @@ def test_bankaccount_has_balance():
     for klass in BankAccount.__mro__:
         if "balance" in klass.__dict__:
             descriptor = klass.__dict__["balance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bankaccount_has_ownerName():
+    assert hasattr(BankAccount, "ownerName")
+    descriptor = None
+    for klass in BankAccount.__mro__:
+        if "ownerName" in klass.__dict__:
+            descriptor = klass.__dict__["ownerName"]
             break
     assert isinstance(descriptor, property)
 
@@ -510,10 +510,10 @@ ClassD_strategy = st.builds(
 )
 Department_strategy = st.builds(
     Department,
-    privateAttribute=
-        st.integers(),
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    privateAttribute=
+        st.integers(),
     protectedAttribute=
         safe_text,
     packageAttribute=
@@ -524,21 +524,21 @@ Courses_strategy = st.builds(
 )
 Student_strategy = st.builds(
     Student,
-    protectedAttribute=
-        safe_text,
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     packageAttribute=
         safe_text,
     privateAttribute=
-        st.integers()
+        st.integers(),
+    protectedAttribute=
+        safe_text
 )
 BankAccount_strategy = st.builds(
     BankAccount,
-    ownerName=
-        safe_text,
     balance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    ownerName=
+        safe_text
 )
 
 @given(instance=ClassV_strategy)
@@ -636,20 +636,6 @@ def test_classd_instantiation(instance):
 def test_department_instantiation(instance):
     assert isinstance(instance, Department)
 
-@given(instance=Department_strategy)
-def test_department_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
-
-
-@given(instance=Department_strategy)
-def test_department_privateAttribute_setter(instance):
-    original = instance.privateAttribute
-    instance.privateAttribute = original
-    assert instance.privateAttribute == original
-
-@given(instance=Department_strategy)
-def test_department_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
 
 
 @given(instance=Department_strategy)
@@ -658,9 +644,14 @@ def test_department_publicAttribute_setter(instance):
     instance.publicAttribute = original
     assert instance.publicAttribute == original
 
+
+
 @given(instance=Department_strategy)
-def test_department_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
+def test_department_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
+
 
 
 @given(instance=Department_strategy)
@@ -669,9 +660,6 @@ def test_department_protectedAttribute_setter(instance):
     instance.protectedAttribute = original
     assert instance.protectedAttribute == original
 
-@given(instance=Department_strategy)
-def test_department_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=Department_strategy)
@@ -690,20 +678,6 @@ def test_courses_instantiation(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=Student_strategy)
-def test_student_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
-
-@given(instance=Student_strategy)
-def test_student_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
 
 
 @given(instance=Student_strategy)
@@ -712,9 +686,6 @@ def test_student_publicAttribute_setter(instance):
     instance.publicAttribute = original
     assert instance.publicAttribute == original
 
-@given(instance=Student_strategy)
-def test_student_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=Student_strategy)
@@ -723,9 +694,6 @@ def test_student_packageAttribute_setter(instance):
     instance.packageAttribute = original
     assert instance.packageAttribute == original
 
-@given(instance=Student_strategy)
-def test_student_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=Student_strategy)
@@ -734,25 +702,19 @@ def test_student_privateAttribute_setter(instance):
     instance.privateAttribute = original
     assert instance.privateAttribute == original
 
+
+
+@given(instance=Student_strategy)
+def test_student_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
 @given(instance=BankAccount_strategy)
 @settings(max_examples=50)
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_setter(instance):
-    original = instance.ownerName
-    instance.ownerName = original
-    assert instance.ownerName == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
 
 
 @given(instance=BankAccount_strategy)
@@ -760,3 +722,11 @@ def test_bankaccount_balance_setter(instance):
     original = instance.balance
     instance.balance = original
     assert instance.balance == original
+
+
+
+@given(instance=BankAccount_strategy)
+def test_bankaccount_ownerName_setter(instance):
+    original = instance.ownerName
+    instance.ownerName = original
+    assert instance.ownerName == original

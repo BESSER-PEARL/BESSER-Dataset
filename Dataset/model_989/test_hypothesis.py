@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Mark,
-    graph::Edge,
-    graph::Node,
-    graph::Graph,
+from python_code import (
+    graph_Mark,
+    graph_Edge,
+    graph_Node,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_graph::mark_is_not_abstract():
-    assert not inspect.isabstract(graph::Mark)
+def test_graph_mark_is_not_abstract():
+    assert not inspect.isabstract(graph_Mark)
 
 
-def test_graph::mark_constructor_exists():
-    assert callable(graph::Mark.__init__)
+def test_graph_mark_constructor_exists():
+    assert callable(graph_Mark.__init__)
 
 
-def test_graph::mark_constructor_args():
-    sig = inspect.signature(graph::Mark.__init__)
+def test_graph_mark_constructor_args():
+    sig = inspect.signature(graph_Mark.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_graph::mark_has_time():
-    assert hasattr(graph::Mark, "time")
+def test_graph_mark_has_time():
+    assert hasattr(graph_Mark, "time")
     descriptor = None
-    for klass in graph::Mark.__mro__:
+    for klass in graph_Mark.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -42,23 +42,23 @@ def test_graph::mark_has_time():
 
 
 
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(graph::Edge)
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(graph_Edge)
 
 
-def test_graph::edge_constructor_exists():
-    assert callable(graph::Edge.__init__)
+def test_graph_edge_constructor_exists():
+    assert callable(graph_Edge.__init__)
 
 
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(graph::Edge.__init__)
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(graph_Edge.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::edge_has_name():
-    assert hasattr(graph::Edge, "name")
+def test_graph_edge_has_name():
+    assert hasattr(graph_Edge, "name")
     descriptor = None
-    for klass in graph::Edge.__mro__:
+    for klass in graph_Edge.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_graph::edge_has_name():
 
 
 
-def test_graph::node_is_not_abstract():
-    assert not inspect.isabstract(graph::Node)
+def test_graph_node_is_not_abstract():
+    assert not inspect.isabstract(graph_Node)
 
 
-def test_graph::node_constructor_exists():
-    assert callable(graph::Node.__init__)
+def test_graph_node_constructor_exists():
+    assert callable(graph_Node.__init__)
 
 
-def test_graph::node_constructor_args():
-    sig = inspect.signature(graph::Node.__init__)
+def test_graph_node_constructor_args():
+    sig = inspect.signature(graph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::node_has_name():
-    assert hasattr(graph::Node, "name")
+def test_graph_node_has_name():
+    assert hasattr(graph_Node, "name")
     descriptor = None
-    for klass in graph::Node.__mro__:
+    for klass in graph_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,23 +90,23 @@ def test_graph::node_has_name():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::graph_has_name():
-    assert hasattr(graph::Graph, "name")
+def test_graph_graph_has_name():
+    assert hasattr(graph_Graph, "name")
     descriptor = None
-    for klass in graph::Graph.__mro__:
+    for klass in graph_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Mark_strategy = st.builds(
-    graph::Mark,
+graph_Mark_strategy = st.builds(
+    graph_Mark,
     time=
         safe_text
 )
-graph::Edge_strategy = st.builds(
-    graph::Edge,
+graph_Edge_strategy = st.builds(
+    graph_Edge,
     name=
         safe_text
 )
-graph::Node_strategy = st.builds(
-    graph::Node,
+graph_Node_strategy = st.builds(
+    graph_Node,
     name=
         safe_text
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
     name=
         safe_text
 )
 
-@given(instance=graph::Mark_strategy)
+@given(instance=graph_Mark_strategy)
 @settings(max_examples=50)
-def test_graph::mark_instantiation(instance):
-    assert isinstance(instance, graph::Mark)
-
-@given(instance=graph::Mark_strategy)
-def test_graph::mark_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_graph_mark_instantiation(instance):
+    assert isinstance(instance, graph_Mark)
 
 
-@given(instance=graph::Mark_strategy)
-def test_graph::mark_time_setter(instance):
+
+@given(instance=graph_Mark_strategy)
+def test_graph_mark_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=graph::Edge_strategy)
+@given(instance=graph_Edge_strategy)
 @settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, graph::Edge)
-
-@given(instance=graph::Edge_strategy)
-def test_graph::edge_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, graph_Edge)
 
 
-@given(instance=graph::Edge_strategy)
-def test_graph::edge_name_setter(instance):
+
+@given(instance=graph_Edge_strategy)
+def test_graph_edge_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graph::Node_strategy)
+@given(instance=graph_Node_strategy)
 @settings(max_examples=50)
-def test_graph::node_instantiation(instance):
-    assert isinstance(instance, graph::Node)
-
-@given(instance=graph::Node_strategy)
-def test_graph::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_node_instantiation(instance):
+    assert isinstance(instance, graph_Node)
 
 
-@given(instance=graph::Node_strategy)
-def test_graph::node_name_setter(instance):
+
+@given(instance=graph_Node_strategy)
+def test_graph_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
-
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)
 
 
-@given(instance=graph::Graph_strategy)
-def test_graph::graph_name_setter(instance):
+
+@given(instance=graph_Graph_strategy)
+def test_graph_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

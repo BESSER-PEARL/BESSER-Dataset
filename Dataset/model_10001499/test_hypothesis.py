@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Parking_Record,
@@ -37,50 +37,23 @@ def test_parking_record_constructor_exists():
 def test_parking_record_constructor_args():
     sig = inspect.signature(Parking_Record.__init__)
     params = list(sig.parameters.keys())
-    assert "vehicleColor" in params, "Missing parameter 'vehicleColor'"
-    assert "vehicleModel" in params, "Missing parameter 'vehicleModel'"
-    assert "releaseTime" in params, "Missing parameter 'releaseTime'"
-    assert "hourlyRate" in params, "Missing parameter 'hourlyRate'"
-    assert "vehicleLicensePlate" in params, "Missing parameter 'vehicleLicensePlate'"
-    assert "parkTime" in params, "Missing parameter 'parkTime'"
-    assert "ownerName" in params, "Missing parameter 'ownerName'"
-    assert "ownerPhone" in params, "Missing parameter 'ownerPhone'"
     assert "spot" in params, "Missing parameter 'spot'"
+    assert "vehicleLicensePlate" in params, "Missing parameter 'vehicleLicensePlate'"
+    assert "ownerPhone" in params, "Missing parameter 'ownerPhone'"
+    assert "parkTime" in params, "Missing parameter 'parkTime'"
     assert "totalCost" in params, "Missing parameter 'totalCost'"
+    assert "releaseTime" in params, "Missing parameter 'releaseTime'"
+    assert "ownerName" in params, "Missing parameter 'ownerName'"
+    assert "vehicleModel" in params, "Missing parameter 'vehicleModel'"
+    assert "hourlyRate" in params, "Missing parameter 'hourlyRate'"
+    assert "vehicleColor" in params, "Missing parameter 'vehicleColor'"
 
-def test_parking_record_has_vehicleColor():
-    assert hasattr(Parking_Record, "vehicleColor")
+def test_parking_record_has_spot():
+    assert hasattr(Parking_Record, "spot")
     descriptor = None
     for klass in Parking_Record.__mro__:
-        if "vehicleColor" in klass.__dict__:
-            descriptor = klass.__dict__["vehicleColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_parking_record_has_vehicleModel():
-    assert hasattr(Parking_Record, "vehicleModel")
-    descriptor = None
-    for klass in Parking_Record.__mro__:
-        if "vehicleModel" in klass.__dict__:
-            descriptor = klass.__dict__["vehicleModel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_parking_record_has_releaseTime():
-    assert hasattr(Parking_Record, "releaseTime")
-    descriptor = None
-    for klass in Parking_Record.__mro__:
-        if "releaseTime" in klass.__dict__:
-            descriptor = klass.__dict__["releaseTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_parking_record_has_hourlyRate():
-    assert hasattr(Parking_Record, "hourlyRate")
-    descriptor = None
-    for klass in Parking_Record.__mro__:
-        if "hourlyRate" in klass.__dict__:
-            descriptor = klass.__dict__["hourlyRate"]
+        if "spot" in klass.__dict__:
+            descriptor = klass.__dict__["spot"]
             break
     assert isinstance(descriptor, property)
 
@@ -93,12 +66,39 @@ def test_parking_record_has_vehicleLicensePlate():
             break
     assert isinstance(descriptor, property)
 
+def test_parking_record_has_ownerPhone():
+    assert hasattr(Parking_Record, "ownerPhone")
+    descriptor = None
+    for klass in Parking_Record.__mro__:
+        if "ownerPhone" in klass.__dict__:
+            descriptor = klass.__dict__["ownerPhone"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_parking_record_has_parkTime():
     assert hasattr(Parking_Record, "parkTime")
     descriptor = None
     for klass in Parking_Record.__mro__:
         if "parkTime" in klass.__dict__:
             descriptor = klass.__dict__["parkTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_parking_record_has_totalCost():
+    assert hasattr(Parking_Record, "totalCost")
+    descriptor = None
+    for klass in Parking_Record.__mro__:
+        if "totalCost" in klass.__dict__:
+            descriptor = klass.__dict__["totalCost"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_parking_record_has_releaseTime():
+    assert hasattr(Parking_Record, "releaseTime")
+    descriptor = None
+    for klass in Parking_Record.__mro__:
+        if "releaseTime" in klass.__dict__:
+            descriptor = klass.__dict__["releaseTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -111,30 +111,30 @@ def test_parking_record_has_ownerName():
             break
     assert isinstance(descriptor, property)
 
-def test_parking_record_has_ownerPhone():
-    assert hasattr(Parking_Record, "ownerPhone")
+def test_parking_record_has_vehicleModel():
+    assert hasattr(Parking_Record, "vehicleModel")
     descriptor = None
     for klass in Parking_Record.__mro__:
-        if "ownerPhone" in klass.__dict__:
-            descriptor = klass.__dict__["ownerPhone"]
+        if "vehicleModel" in klass.__dict__:
+            descriptor = klass.__dict__["vehicleModel"]
             break
     assert isinstance(descriptor, property)
 
-def test_parking_record_has_spot():
-    assert hasattr(Parking_Record, "spot")
+def test_parking_record_has_hourlyRate():
+    assert hasattr(Parking_Record, "hourlyRate")
     descriptor = None
     for klass in Parking_Record.__mro__:
-        if "spot" in klass.__dict__:
-            descriptor = klass.__dict__["spot"]
+        if "hourlyRate" in klass.__dict__:
+            descriptor = klass.__dict__["hourlyRate"]
             break
     assert isinstance(descriptor, property)
 
-def test_parking_record_has_totalCost():
-    assert hasattr(Parking_Record, "totalCost")
+def test_parking_record_has_vehicleColor():
+    assert hasattr(Parking_Record, "vehicleColor")
     descriptor = None
     for klass in Parking_Record.__mro__:
-        if "totalCost" in klass.__dict__:
-            descriptor = klass.__dict__["totalCost"]
+        if "vehicleColor" in klass.__dict__:
+            descriptor = klass.__dict__["vehicleColor"]
             break
     assert isinstance(descriptor, property)
 
@@ -151,21 +151,21 @@ def test_spot_constructor_exists():
 def test_spot_constructor_args():
     sig = inspect.signature(Spot.__init__)
     params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
-    assert "section" in params, "Missing parameter 'section'"
     assert "status" in params, "Missing parameter 'status'"
-    assert "spotType" in params, "Missing parameter 'spotType'"
-    assert "isDisabledSpot" in params, "Missing parameter 'isDisabledSpot'"
-    assert "covered" in params, "Missing parameter 'covered'"
-    assert "spotNumber" in params, "Missing parameter 'spotNumber'"
+    assert "section" in params, "Missing parameter 'section'"
     assert "isValet" in params, "Missing parameter 'isValet'"
+    assert "spotNumber" in params, "Missing parameter 'spotNumber'"
+    assert "spotType" in params, "Missing parameter 'spotType'"
+    assert "covered" in params, "Missing parameter 'covered'"
+    assert "isDisabledSpot" in params, "Missing parameter 'isDisabledSpot'"
+    assert "level" in params, "Missing parameter 'level'"
 
-def test_spot_has_level():
-    assert hasattr(Spot, "level")
+def test_spot_has_status():
+    assert hasattr(Spot, "status")
     descriptor = None
     for klass in Spot.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -178,39 +178,12 @@ def test_spot_has_section():
             break
     assert isinstance(descriptor, property)
 
-def test_spot_has_status():
-    assert hasattr(Spot, "status")
+def test_spot_has_isValet():
+    assert hasattr(Spot, "isValet")
     descriptor = None
     for klass in Spot.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spot_has_spotType():
-    assert hasattr(Spot, "spotType")
-    descriptor = None
-    for klass in Spot.__mro__:
-        if "spotType" in klass.__dict__:
-            descriptor = klass.__dict__["spotType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spot_has_isDisabledSpot():
-    assert hasattr(Spot, "isDisabledSpot")
-    descriptor = None
-    for klass in Spot.__mro__:
-        if "isDisabledSpot" in klass.__dict__:
-            descriptor = klass.__dict__["isDisabledSpot"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spot_has_covered():
-    assert hasattr(Spot, "covered")
-    descriptor = None
-    for klass in Spot.__mro__:
-        if "covered" in klass.__dict__:
-            descriptor = klass.__dict__["covered"]
+        if "isValet" in klass.__dict__:
+            descriptor = klass.__dict__["isValet"]
             break
     assert isinstance(descriptor, property)
 
@@ -223,12 +196,39 @@ def test_spot_has_spotNumber():
             break
     assert isinstance(descriptor, property)
 
-def test_spot_has_isValet():
-    assert hasattr(Spot, "isValet")
+def test_spot_has_spotType():
+    assert hasattr(Spot, "spotType")
     descriptor = None
     for klass in Spot.__mro__:
-        if "isValet" in klass.__dict__:
-            descriptor = klass.__dict__["isValet"]
+        if "spotType" in klass.__dict__:
+            descriptor = klass.__dict__["spotType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spot_has_covered():
+    assert hasattr(Spot, "covered")
+    descriptor = None
+    for klass in Spot.__mro__:
+        if "covered" in klass.__dict__:
+            descriptor = klass.__dict__["covered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spot_has_isDisabledSpot():
+    assert hasattr(Spot, "isDisabledSpot")
+    descriptor = None
+    for klass in Spot.__mro__:
+        if "isDisabledSpot" in klass.__dict__:
+            descriptor = klass.__dict__["isDisabledSpot"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spot_has_level():
+    assert hasattr(Spot, "level")
+    descriptor = None
+    for klass in Spot.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
             break
     assert isinstance(descriptor, property)
 
@@ -245,17 +245,8 @@ def test_parkinglot_constructor_exists():
 def test_parkinglot_constructor_args():
     sig = inspect.signature(ParkingLot.__init__)
     params = list(sig.parameters.keys())
-    assert "hourlyPrice" in params, "Missing parameter 'hourlyPrice'"
     assert "maxSize" in params, "Missing parameter 'maxSize'"
-
-def test_parkinglot_has_hourlyPrice():
-    assert hasattr(ParkingLot, "hourlyPrice")
-    descriptor = None
-    for klass in ParkingLot.__mro__:
-        if "hourlyPrice" in klass.__dict__:
-            descriptor = klass.__dict__["hourlyPrice"]
-            break
-    assert isinstance(descriptor, property)
+    assert "hourlyPrice" in params, "Missing parameter 'hourlyPrice'"
 
 def test_parkinglot_has_maxSize():
     assert hasattr(ParkingLot, "maxSize")
@@ -263,6 +254,15 @@ def test_parkinglot_has_maxSize():
     for klass in ParkingLot.__mro__:
         if "maxSize" in klass.__dict__:
             descriptor = klass.__dict__["maxSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_parkinglot_has_hourlyPrice():
+    assert hasattr(ParkingLot, "hourlyPrice")
+    descriptor = None
+    for klass in ParkingLot.__mro__:
+        if "hourlyPrice" in klass.__dict__:
+            descriptor = klass.__dict__["hourlyPrice"]
             break
     assert isinstance(descriptor, property)
 
@@ -335,18 +335,9 @@ def test_abstractvehicle_constructor_exists():
 def test_abstractvehicle_constructor_args():
     sig = inspect.signature(AbstractVehicle.__init__)
     params = list(sig.parameters.keys())
-    assert "restrictions" in params, "Missing parameter 'restrictions'"
     assert "type" in params, "Missing parameter 'type'"
     assert "licensePlate" in params, "Missing parameter 'licensePlate'"
-
-def test_abstractvehicle_has_restrictions():
-    assert hasattr(AbstractVehicle, "restrictions")
-    descriptor = None
-    for klass in AbstractVehicle.__mro__:
-        if "restrictions" in klass.__dict__:
-            descriptor = klass.__dict__["restrictions"]
-            break
-    assert isinstance(descriptor, property)
+    assert "restrictions" in params, "Missing parameter 'restrictions'"
 
 def test_abstractvehicle_has_type():
     assert hasattr(AbstractVehicle, "type")
@@ -366,6 +357,15 @@ def test_abstractvehicle_has_licensePlate():
             break
     assert isinstance(descriptor, property)
 
+def test_abstractvehicle_has_restrictions():
+    assert hasattr(AbstractVehicle, "restrictions")
+    descriptor = None
+    for klass in AbstractVehicle.__mro__:
+        if "restrictions" in klass.__dict__:
+            descriptor = klass.__dict__["restrictions"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_spotrestriction_is_not_abstract():
@@ -379,17 +379,8 @@ def test_spotrestriction_constructor_exists():
 def test_spotrestriction_constructor_args():
     sig = inspect.signature(spotRestriction.__init__)
     params = list(sig.parameters.keys())
-    assert "spotType" in params, "Missing parameter 'spotType'"
     assert "size" in params, "Missing parameter 'size'"
-
-def test_spotrestriction_has_spotType():
-    assert hasattr(spotRestriction, "spotType")
-    descriptor = None
-    for klass in spotRestriction.__mro__:
-        if "spotType" in klass.__dict__:
-            descriptor = klass.__dict__["spotType"]
-            break
-    assert isinstance(descriptor, property)
+    assert "spotType" in params, "Missing parameter 'spotType'"
 
 def test_spotrestriction_has_size():
     assert hasattr(spotRestriction, "size")
@@ -397,6 +388,15 @@ def test_spotrestriction_has_size():
     for klass in spotRestriction.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spotrestriction_has_spotType():
+    assert hasattr(spotRestriction, "spotType")
+    descriptor = None
+    for klass in spotRestriction.__mro__:
+        if "spotType" in klass.__dict__:
+            descriptor = klass.__dict__["spotType"]
             break
     assert isinstance(descriptor, property)
 
@@ -453,51 +453,51 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Parking_Record_strategy = st.builds(
     Parking_Record,
-    vehicleColor=
-        safe_text,
-    vehicleModel=
-        safe_text,
-    releaseTime=
-        safe_text,
-    hourlyRate=
-        st.integers(),
+    spot=
+        st.none(),
     vehicleLicensePlate=
-        safe_text,
-    parkTime=
-        safe_text,
-    ownerName=
         safe_text,
     ownerPhone=
         safe_text,
-    spot=
-        st.none(),
+    parkTime=
+        safe_text,
     totalCost=
-        st.integers()
+        st.integers(),
+    releaseTime=
+        safe_text,
+    ownerName=
+        safe_text,
+    vehicleModel=
+        safe_text,
+    hourlyRate=
+        st.integers(),
+    vehicleColor=
+        safe_text
 )
 Spot_strategy = st.builds(
     Spot,
-    level=
-        st.integers(),
-    section=
-        safe_text,
     status=
         st.none(),
-    spotType=
-        st.none(),
-    isDisabledSpot=
-        st.booleans(),
-    covered=
+    section=
+        safe_text,
+    isValet=
         st.booleans(),
     spotNumber=
         st.integers(),
-    isValet=
-        st.booleans()
+    spotType=
+        st.none(),
+    covered=
+        st.booleans(),
+    isDisabledSpot=
+        st.booleans(),
+    level=
+        st.integers()
 )
 ParkingLot_strategy = st.builds(
     ParkingLot,
-    hourlyPrice=
-        st.integers(),
     maxSize=
+        st.integers(),
+    hourlyPrice=
         st.integers()
 )
 VehicleInterface_Interface_strategy = st.builds(
@@ -514,19 +514,19 @@ Bus_strategy = st.builds(
 )
 AbstractVehicle_strategy = st.builds(
     AbstractVehicle,
-    restrictions=
-        st.none(),
     type=
         safe_text,
     licensePlate=
-        safe_text
+        safe_text,
+    restrictions=
+        st.none()
 )
 spotRestriction_strategy = st.builds(
     spotRestriction,
-    spotType=
-        st.none(),
     size=
-        st.integers()
+        st.integers(),
+    spotType=
+        st.none()
 )
 
 @given(instance=Parking_Record_strategy)
@@ -534,97 +534,6 @@ spotRestriction_strategy = st.builds(
 def test_parking_record_instantiation(instance):
     assert isinstance(instance, Parking_Record)
 
-@given(instance=Parking_Record_strategy)
-def test_parking_record_vehicleColor_type(instance):
-    assert isinstance(instance.vehicleColor, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_vehicleColor_setter(instance):
-    original = instance.vehicleColor
-    instance.vehicleColor = original
-    assert instance.vehicleColor == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_vehicleModel_type(instance):
-    assert isinstance(instance.vehicleModel, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_vehicleModel_setter(instance):
-    original = instance.vehicleModel
-    instance.vehicleModel = original
-    assert instance.vehicleModel == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_releaseTime_type(instance):
-    assert isinstance(instance.releaseTime, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_releaseTime_setter(instance):
-    original = instance.releaseTime
-    instance.releaseTime = original
-    assert instance.releaseTime == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_hourlyRate_type(instance):
-    assert isinstance(instance.hourlyRate, int)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_hourlyRate_setter(instance):
-    original = instance.hourlyRate
-    instance.hourlyRate = original
-    assert instance.hourlyRate == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_vehicleLicensePlate_type(instance):
-    assert isinstance(instance.vehicleLicensePlate, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_vehicleLicensePlate_setter(instance):
-    original = instance.vehicleLicensePlate
-    instance.vehicleLicensePlate = original
-    assert instance.vehicleLicensePlate == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_parkTime_type(instance):
-    assert isinstance(instance.parkTime, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_parkTime_setter(instance):
-    original = instance.parkTime
-    instance.parkTime = original
-    assert instance.parkTime == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_ownerName_setter(instance):
-    original = instance.ownerName
-    instance.ownerName = original
-    assert instance.ownerName == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_ownerPhone_type(instance):
-    assert isinstance(instance.ownerPhone, str)
-
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_ownerPhone_setter(instance):
-    original = instance.ownerPhone
-    instance.ownerPhone = original
-    assert instance.ownerPhone == original
-
-@given(instance=Parking_Record_strategy)
-def test_parking_record_spot_type(instance):
-    assert isinstance(instance.spot, spot)
 
 
 @given(instance=Parking_Record_strategy)
@@ -633,9 +542,30 @@ def test_parking_record_spot_setter(instance):
     instance.spot = original
     assert instance.spot == original
 
+
+
 @given(instance=Parking_Record_strategy)
-def test_parking_record_totalCost_type(instance):
-    assert isinstance(instance.totalCost, int)
+def test_parking_record_vehicleLicensePlate_setter(instance):
+    original = instance.vehicleLicensePlate
+    instance.vehicleLicensePlate = original
+    assert instance.vehicleLicensePlate == original
+
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_ownerPhone_setter(instance):
+    original = instance.ownerPhone
+    instance.ownerPhone = original
+    assert instance.ownerPhone == original
+
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_parkTime_setter(instance):
+    original = instance.parkTime
+    instance.parkTime = original
+    assert instance.parkTime == original
+
 
 
 @given(instance=Parking_Record_strategy)
@@ -644,36 +574,51 @@ def test_parking_record_totalCost_setter(instance):
     instance.totalCost = original
     assert instance.totalCost == original
 
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_releaseTime_setter(instance):
+    original = instance.releaseTime
+    instance.releaseTime = original
+    assert instance.releaseTime == original
+
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_ownerName_setter(instance):
+    original = instance.ownerName
+    instance.ownerName = original
+    assert instance.ownerName == original
+
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_vehicleModel_setter(instance):
+    original = instance.vehicleModel
+    instance.vehicleModel = original
+    assert instance.vehicleModel == original
+
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_hourlyRate_setter(instance):
+    original = instance.hourlyRate
+    instance.hourlyRate = original
+    assert instance.hourlyRate == original
+
+
+
+@given(instance=Parking_Record_strategy)
+def test_parking_record_vehicleColor_setter(instance):
+    original = instance.vehicleColor
+    instance.vehicleColor = original
+    assert instance.vehicleColor == original
+
 @given(instance=Spot_strategy)
 @settings(max_examples=50)
 def test_spot_instantiation(instance):
     assert isinstance(instance, Spot)
 
-@given(instance=Spot_strategy)
-def test_spot_level_type(instance):
-    assert isinstance(instance.level, int)
-
-
-@given(instance=Spot_strategy)
-def test_spot_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=Spot_strategy)
-def test_spot_section_type(instance):
-    assert isinstance(instance.section, str)
-
-
-@given(instance=Spot_strategy)
-def test_spot_section_setter(instance):
-    original = instance.section
-    instance.section = original
-    assert instance.section == original
-
-@given(instance=Spot_strategy)
-def test_spot_status_type(instance):
-    assert isinstance(instance.status, spotstatus)
 
 
 @given(instance=Spot_strategy)
@@ -682,53 +627,14 @@ def test_spot_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
-@given(instance=Spot_strategy)
-def test_spot_spotType_type(instance):
-    assert isinstance(instance.spotType, spottype)
 
 
 @given(instance=Spot_strategy)
-def test_spot_spotType_setter(instance):
-    original = instance.spotType
-    instance.spotType = original
-    assert instance.spotType == original
+def test_spot_section_setter(instance):
+    original = instance.section
+    instance.section = original
+    assert instance.section == original
 
-@given(instance=Spot_strategy)
-def test_spot_isDisabledSpot_type(instance):
-    assert isinstance(instance.isDisabledSpot, bool)
-
-
-@given(instance=Spot_strategy)
-def test_spot_isDisabledSpot_setter(instance):
-    original = instance.isDisabledSpot
-    instance.isDisabledSpot = original
-    assert instance.isDisabledSpot == original
-
-@given(instance=Spot_strategy)
-def test_spot_covered_type(instance):
-    assert isinstance(instance.covered, bool)
-
-
-@given(instance=Spot_strategy)
-def test_spot_covered_setter(instance):
-    original = instance.covered
-    instance.covered = original
-    assert instance.covered == original
-
-@given(instance=Spot_strategy)
-def test_spot_spotNumber_type(instance):
-    assert isinstance(instance.spotNumber, int)
-
-
-@given(instance=Spot_strategy)
-def test_spot_spotNumber_setter(instance):
-    original = instance.spotNumber
-    instance.spotNumber = original
-    assert instance.spotNumber == original
-
-@given(instance=Spot_strategy)
-def test_spot_isValet_type(instance):
-    assert isinstance(instance.isValet, bool)
 
 
 @given(instance=Spot_strategy)
@@ -737,25 +643,51 @@ def test_spot_isValet_setter(instance):
     instance.isValet = original
     assert instance.isValet == original
 
+
+
+@given(instance=Spot_strategy)
+def test_spot_spotNumber_setter(instance):
+    original = instance.spotNumber
+    instance.spotNumber = original
+    assert instance.spotNumber == original
+
+
+
+@given(instance=Spot_strategy)
+def test_spot_spotType_setter(instance):
+    original = instance.spotType
+    instance.spotType = original
+    assert instance.spotType == original
+
+
+
+@given(instance=Spot_strategy)
+def test_spot_covered_setter(instance):
+    original = instance.covered
+    instance.covered = original
+    assert instance.covered == original
+
+
+
+@given(instance=Spot_strategy)
+def test_spot_isDisabledSpot_setter(instance):
+    original = instance.isDisabledSpot
+    instance.isDisabledSpot = original
+    assert instance.isDisabledSpot == original
+
+
+
+@given(instance=Spot_strategy)
+def test_spot_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
 @given(instance=ParkingLot_strategy)
 @settings(max_examples=50)
 def test_parkinglot_instantiation(instance):
     assert isinstance(instance, ParkingLot)
 
-@given(instance=ParkingLot_strategy)
-def test_parkinglot_hourlyPrice_type(instance):
-    assert isinstance(instance.hourlyPrice, int)
-
-
-@given(instance=ParkingLot_strategy)
-def test_parkinglot_hourlyPrice_setter(instance):
-    original = instance.hourlyPrice
-    instance.hourlyPrice = original
-    assert instance.hourlyPrice == original
-
-@given(instance=ParkingLot_strategy)
-def test_parkinglot_maxSize_type(instance):
-    assert isinstance(instance.maxSize, int)
 
 
 @given(instance=ParkingLot_strategy)
@@ -763,6 +695,14 @@ def test_parkinglot_maxSize_setter(instance):
     original = instance.maxSize
     instance.maxSize = original
     assert instance.maxSize == original
+
+
+
+@given(instance=ParkingLot_strategy)
+def test_parkinglot_hourlyPrice_setter(instance):
+    original = instance.hourlyPrice
+    instance.hourlyPrice = original
+    assert instance.hourlyPrice == original
 
 @given(instance=VehicleInterface_Interface_strategy)
 @settings(max_examples=50)
@@ -789,20 +729,6 @@ def test_bus_instantiation(instance):
 def test_abstractvehicle_instantiation(instance):
     assert isinstance(instance, AbstractVehicle)
 
-@given(instance=AbstractVehicle_strategy)
-def test_abstractvehicle_restrictions_type(instance):
-    assert isinstance(instance.restrictions, spotrestriction)
-
-
-@given(instance=AbstractVehicle_strategy)
-def test_abstractvehicle_restrictions_setter(instance):
-    original = instance.restrictions
-    instance.restrictions = original
-    assert instance.restrictions == original
-
-@given(instance=AbstractVehicle_strategy)
-def test_abstractvehicle_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=AbstractVehicle_strategy)
@@ -811,9 +737,6 @@ def test_abstractvehicle_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=AbstractVehicle_strategy)
-def test_abstractvehicle_licensePlate_type(instance):
-    assert isinstance(instance.licensePlate, str)
 
 
 @given(instance=AbstractVehicle_strategy)
@@ -822,25 +745,19 @@ def test_abstractvehicle_licensePlate_setter(instance):
     instance.licensePlate = original
     assert instance.licensePlate == original
 
+
+
+@given(instance=AbstractVehicle_strategy)
+def test_abstractvehicle_restrictions_setter(instance):
+    original = instance.restrictions
+    instance.restrictions = original
+    assert instance.restrictions == original
+
 @given(instance=spotRestriction_strategy)
 @settings(max_examples=50)
 def test_spotrestriction_instantiation(instance):
     assert isinstance(instance, spotRestriction)
 
-@given(instance=spotRestriction_strategy)
-def test_spotrestriction_spotType_type(instance):
-    assert isinstance(instance.spotType, spottype)
-
-
-@given(instance=spotRestriction_strategy)
-def test_spotrestriction_spotType_setter(instance):
-    original = instance.spotType
-    instance.spotType = original
-    assert instance.spotType == original
-
-@given(instance=spotRestriction_strategy)
-def test_spotrestriction_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
 @given(instance=spotRestriction_strategy)
@@ -848,3 +765,11 @@ def test_spotrestriction_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
+
+
+
+@given(instance=spotRestriction_strategy)
+def test_spotrestriction_spotType_setter(instance):
+    original = instance.spotType
+    instance.spotType = original
+    assert instance.spotType == original

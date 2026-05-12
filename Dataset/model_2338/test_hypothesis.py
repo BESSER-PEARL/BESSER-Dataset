@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PersonsOne::Person,
-    PersonsOne::Group,
+from python_code import (
+    PersonsOne_Person,
+    PersonsOne_Group,
     Person,
-    PersonsOne::Student,
+    PersonsOne_Student,
 )
 
 # =============================================================================
@@ -18,57 +18,57 @@ from classes import (
 
 
 
-def test_personsone::person_is_not_abstract():
-    assert not inspect.isabstract(PersonsOne::Person)
+def test_personsone_person_is_not_abstract():
+    assert not inspect.isabstract(PersonsOne_Person)
 
 
-def test_personsone::person_constructor_exists():
-    assert callable(PersonsOne::Person.__init__)
+def test_personsone_person_constructor_exists():
+    assert callable(PersonsOne_Person.__init__)
 
 
-def test_personsone::person_constructor_args():
-    sig = inspect.signature(PersonsOne::Person.__init__)
+def test_personsone_person_constructor_args():
+    sig = inspect.signature(PersonsOne_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "age" in params, "Missing parameter 'age'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "age" in params, "Missing parameter 'age'"
 
-def test_personsone::person_has_age():
-    assert hasattr(PersonsOne::Person, "age")
+def test_personsone_person_has_name():
+    assert hasattr(PersonsOne_Person, "name")
     descriptor = None
-    for klass in PersonsOne::Person.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_personsone::person_has_name():
-    assert hasattr(PersonsOne::Person, "name")
-    descriptor = None
-    for klass in PersonsOne::Person.__mro__:
+    for klass in PersonsOne_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_personsone_person_has_age():
+    assert hasattr(PersonsOne_Person, "age")
+    descriptor = None
+    for klass in PersonsOne_Person.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_personsone::group_is_not_abstract():
-    assert not inspect.isabstract(PersonsOne::Group)
+
+def test_personsone_group_is_not_abstract():
+    assert not inspect.isabstract(PersonsOne_Group)
 
 
-def test_personsone::group_constructor_exists():
-    assert callable(PersonsOne::Group.__init__)
+def test_personsone_group_constructor_exists():
+    assert callable(PersonsOne_Group.__init__)
 
 
-def test_personsone::group_constructor_args():
-    sig = inspect.signature(PersonsOne::Group.__init__)
+def test_personsone_group_constructor_args():
+    sig = inspect.signature(PersonsOne_Group.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_personsone::group_has_name():
-    assert hasattr(PersonsOne::Group, "name")
+def test_personsone_group_has_name():
+    assert hasattr(PersonsOne_Group, "name")
     descriptor = None
-    for klass in PersonsOne::Group.__mro__:
+    for klass in PersonsOne_Group.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,23 +90,23 @@ def test_person_constructor_args():
 
 
 
-def test_personsone::student_is_not_abstract():
-    assert not inspect.isabstract(PersonsOne::Student)
+def test_personsone_student_is_not_abstract():
+    assert not inspect.isabstract(PersonsOne_Student)
 
 
-def test_personsone::student_constructor_exists():
-    assert callable(PersonsOne::Student.__init__)
+def test_personsone_student_constructor_exists():
+    assert callable(PersonsOne_Student.__init__)
 
 
-def test_personsone::student_constructor_args():
-    sig = inspect.signature(PersonsOne::Student.__init__)
+def test_personsone_student_constructor_args():
+    sig = inspect.signature(PersonsOne_Student.__init__)
     params = list(sig.parameters.keys())
     assert "grade" in params, "Missing parameter 'grade'"
 
-def test_personsone::student_has_grade():
-    assert hasattr(PersonsOne::Student, "grade")
+def test_personsone_student_has_grade():
+    assert hasattr(PersonsOne_Student, "grade")
     descriptor = None
-    for klass in PersonsOne::Student.__mro__:
+    for klass in PersonsOne_Student.__mro__:
         if "grade" in klass.__dict__:
             descriptor = klass.__dict__["grade"]
             break
@@ -124,66 +124,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PersonsOne::Person_strategy = st.builds(
-    PersonsOne::Person,
-    age=
-        st.integers(),
+PersonsOne_Person_strategy = st.builds(
+    PersonsOne_Person,
     name=
-        safe_text
+        safe_text,
+    age=
+        st.integers()
 )
-PersonsOne::Group_strategy = st.builds(
-    PersonsOne::Group,
+PersonsOne_Group_strategy = st.builds(
+    PersonsOne_Group,
     name=
         safe_text
 )
 Person_strategy = st.builds(
     Person,
 )
-PersonsOne::Student_strategy = st.builds(
-    PersonsOne::Student,
+PersonsOne_Student_strategy = st.builds(
+    PersonsOne_Student,
     grade=
         safe_text
 )
 
-@given(instance=PersonsOne::Person_strategy)
+@given(instance=PersonsOne_Person_strategy)
 @settings(max_examples=50)
-def test_personsone::person_instantiation(instance):
-    assert isinstance(instance, PersonsOne::Person)
-
-@given(instance=PersonsOne::Person_strategy)
-def test_personsone::person_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_personsone_person_instantiation(instance):
+    assert isinstance(instance, PersonsOne_Person)
 
 
-@given(instance=PersonsOne::Person_strategy)
-def test_personsone::person_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
 
-@given(instance=PersonsOne::Person_strategy)
-def test_personsone::person_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=PersonsOne::Person_strategy)
-def test_personsone::person_name_setter(instance):
+@given(instance=PersonsOne_Person_strategy)
+def test_personsone_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PersonsOne::Group_strategy)
+
+
+@given(instance=PersonsOne_Person_strategy)
+def test_personsone_person_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original
+
+@given(instance=PersonsOne_Group_strategy)
 @settings(max_examples=50)
-def test_personsone::group_instantiation(instance):
-    assert isinstance(instance, PersonsOne::Group)
-
-@given(instance=PersonsOne::Group_strategy)
-def test_personsone::group_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_personsone_group_instantiation(instance):
+    assert isinstance(instance, PersonsOne_Group)
 
 
-@given(instance=PersonsOne::Group_strategy)
-def test_personsone::group_name_setter(instance):
+
+@given(instance=PersonsOne_Group_strategy)
+def test_personsone_group_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -193,18 +184,15 @@ def test_personsone::group_name_setter(instance):
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=PersonsOne::Student_strategy)
+@given(instance=PersonsOne_Student_strategy)
 @settings(max_examples=50)
-def test_personsone::student_instantiation(instance):
-    assert isinstance(instance, PersonsOne::Student)
-
-@given(instance=PersonsOne::Student_strategy)
-def test_personsone::student_grade_type(instance):
-    assert isinstance(instance.grade, str)
+def test_personsone_student_instantiation(instance):
+    assert isinstance(instance, PersonsOne_Student)
 
 
-@given(instance=PersonsOne::Student_strategy)
-def test_personsone::student_grade_setter(instance):
+
+@given(instance=PersonsOne_Student_strategy)
+def test_personsone_student_grade_setter(instance):
     original = instance.grade
     instance.grade = original
     assert instance.grade == original

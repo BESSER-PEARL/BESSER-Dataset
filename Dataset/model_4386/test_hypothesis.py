@@ -3,44 +3,44 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IntBinaryOperation,
-    gx10::Time,
-    gx10::Plus,
+    gx10_Time,
+    gx10_Plus,
     ControlStructure,
-    gx10::While,
-    gx10::If,
-    gx10::MethodCallParameter,
+    gx10_While,
+    gx10_If,
+    gx10_MethodCallParameter,
     Expression,
-    gx10::BoolVar,
-    gx10::IntExpression,
+    gx10_BoolVar,
+    gx10_IntExpression,
     IntExpression,
-    gx10::IntVarAccess,
-    gx10::IntBinaryOperation,
-    gx10::IntConst,
+    gx10_IntVarAccess,
+    gx10_IntBinaryOperation,
+    gx10_IntConst,
     BoolExpression,
-    gx10::True,
-    gx10::False,
-    gx10::And,
-    gx10::BoolVarAccess,
-    gx10::Not,
-    gx10::Equal,
-    gx10::Method,
-    gx10::Program,
-    gx10::BoolExpression,
-    gx10::Statement,
+    gx10_False,
+    gx10_True,
+    gx10_And,
+    gx10_Equal,
+    gx10_BoolVarAccess,
+    gx10_Not,
+    gx10_Method,
+    gx10_Program,
+    gx10_BoolExpression,
+    gx10_Statement,
     Statement,
-    gx10::Async,
-    gx10::Print,
-    gx10::Finish,
-    gx10::Expression,
-    gx10::IntVar,
-    gx10::ControlStructure,
-    gx10::Referentiable,
-    gx10::MethodCall,
-    gx10::Block,
+    gx10_Finish,
+    gx10_Async,
+    gx10_Expression,
+    gx10_Print,
+    gx10_IntVar,
+    gx10_ControlStructure,
+    gx10_Referentiable,
+    gx10_MethodCall,
+    gx10_Block,
 )
 
 # =============================================================================
@@ -63,30 +63,30 @@ def test_intbinaryoperation_constructor_args():
 
 
 
-def test_gx10::time_is_not_abstract():
-    assert not inspect.isabstract(gx10::Time)
+def test_gx10_time_is_not_abstract():
+    assert not inspect.isabstract(gx10_Time)
 
 
-def test_gx10::time_constructor_exists():
-    assert callable(gx10::Time.__init__)
+def test_gx10_time_constructor_exists():
+    assert callable(gx10_Time.__init__)
 
 
-def test_gx10::time_constructor_args():
-    sig = inspect.signature(gx10::Time.__init__)
+def test_gx10_time_constructor_args():
+    sig = inspect.signature(gx10_Time.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::plus_is_not_abstract():
-    assert not inspect.isabstract(gx10::Plus)
+def test_gx10_plus_is_not_abstract():
+    assert not inspect.isabstract(gx10_Plus)
 
 
-def test_gx10::plus_constructor_exists():
-    assert callable(gx10::Plus.__init__)
+def test_gx10_plus_constructor_exists():
+    assert callable(gx10_Plus.__init__)
 
 
-def test_gx10::plus_constructor_args():
-    sig = inspect.signature(gx10::Plus.__init__)
+def test_gx10_plus_constructor_args():
+    sig = inspect.signature(gx10_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,51 +105,51 @@ def test_controlstructure_constructor_args():
 
 
 
-def test_gx10::while_is_not_abstract():
-    assert not inspect.isabstract(gx10::While)
+def test_gx10_while_is_not_abstract():
+    assert not inspect.isabstract(gx10_While)
 
 
-def test_gx10::while_constructor_exists():
-    assert callable(gx10::While.__init__)
+def test_gx10_while_constructor_exists():
+    assert callable(gx10_While.__init__)
 
 
-def test_gx10::while_constructor_args():
-    sig = inspect.signature(gx10::While.__init__)
+def test_gx10_while_constructor_args():
+    sig = inspect.signature(gx10_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::if_is_not_abstract():
-    assert not inspect.isabstract(gx10::If)
+def test_gx10_if_is_not_abstract():
+    assert not inspect.isabstract(gx10_If)
 
 
-def test_gx10::if_constructor_exists():
-    assert callable(gx10::If.__init__)
+def test_gx10_if_constructor_exists():
+    assert callable(gx10_If.__init__)
 
 
-def test_gx10::if_constructor_args():
-    sig = inspect.signature(gx10::If.__init__)
+def test_gx10_if_constructor_args():
+    sig = inspect.signature(gx10_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::methodcallparameter_is_not_abstract():
-    assert not inspect.isabstract(gx10::MethodCallParameter)
+def test_gx10_methodcallparameter_is_not_abstract():
+    assert not inspect.isabstract(gx10_MethodCallParameter)
 
 
-def test_gx10::methodcallparameter_constructor_exists():
-    assert callable(gx10::MethodCallParameter.__init__)
+def test_gx10_methodcallparameter_constructor_exists():
+    assert callable(gx10_MethodCallParameter.__init__)
 
 
-def test_gx10::methodcallparameter_constructor_args():
-    sig = inspect.signature(gx10::MethodCallParameter.__init__)
+def test_gx10_methodcallparameter_constructor_args():
+    sig = inspect.signature(gx10_MethodCallParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gx10::methodcallparameter_has_name():
-    assert hasattr(gx10::MethodCallParameter, "name")
+def test_gx10_methodcallparameter_has_name():
+    assert hasattr(gx10_MethodCallParameter, "name")
     descriptor = None
-    for klass in gx10::MethodCallParameter.__mro__:
+    for klass in gx10_MethodCallParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -171,30 +171,30 @@ def test_expression_constructor_args():
 
 
 
-def test_gx10::boolvar_is_not_abstract():
-    assert not inspect.isabstract(gx10::BoolVar)
+def test_gx10_boolvar_is_not_abstract():
+    assert not inspect.isabstract(gx10_BoolVar)
 
 
-def test_gx10::boolvar_constructor_exists():
-    assert callable(gx10::BoolVar.__init__)
+def test_gx10_boolvar_constructor_exists():
+    assert callable(gx10_BoolVar.__init__)
 
 
-def test_gx10::boolvar_constructor_args():
-    sig = inspect.signature(gx10::BoolVar.__init__)
+def test_gx10_boolvar_constructor_args():
+    sig = inspect.signature(gx10_BoolVar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::intexpression_is_not_abstract():
-    assert not inspect.isabstract(gx10::IntExpression)
+def test_gx10_intexpression_is_not_abstract():
+    assert not inspect.isabstract(gx10_IntExpression)
 
 
-def test_gx10::intexpression_constructor_exists():
-    assert callable(gx10::IntExpression.__init__)
+def test_gx10_intexpression_constructor_exists():
+    assert callable(gx10_IntExpression.__init__)
 
 
-def test_gx10::intexpression_constructor_args():
-    sig = inspect.signature(gx10::IntExpression.__init__)
+def test_gx10_intexpression_constructor_args():
+    sig = inspect.signature(gx10_IntExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -213,51 +213,51 @@ def test_intexpression_constructor_args():
 
 
 
-def test_gx10::intvaraccess_is_not_abstract():
-    assert not inspect.isabstract(gx10::IntVarAccess)
+def test_gx10_intvaraccess_is_not_abstract():
+    assert not inspect.isabstract(gx10_IntVarAccess)
 
 
-def test_gx10::intvaraccess_constructor_exists():
-    assert callable(gx10::IntVarAccess.__init__)
+def test_gx10_intvaraccess_constructor_exists():
+    assert callable(gx10_IntVarAccess.__init__)
 
 
-def test_gx10::intvaraccess_constructor_args():
-    sig = inspect.signature(gx10::IntVarAccess.__init__)
+def test_gx10_intvaraccess_constructor_args():
+    sig = inspect.signature(gx10_IntVarAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::intbinaryoperation_is_not_abstract():
-    assert not inspect.isabstract(gx10::IntBinaryOperation)
+def test_gx10_intbinaryoperation_is_not_abstract():
+    assert not inspect.isabstract(gx10_IntBinaryOperation)
 
 
-def test_gx10::intbinaryoperation_constructor_exists():
-    assert callable(gx10::IntBinaryOperation.__init__)
+def test_gx10_intbinaryoperation_constructor_exists():
+    assert callable(gx10_IntBinaryOperation.__init__)
 
 
-def test_gx10::intbinaryoperation_constructor_args():
-    sig = inspect.signature(gx10::IntBinaryOperation.__init__)
+def test_gx10_intbinaryoperation_constructor_args():
+    sig = inspect.signature(gx10_IntBinaryOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::intconst_is_not_abstract():
-    assert not inspect.isabstract(gx10::IntConst)
+def test_gx10_intconst_is_not_abstract():
+    assert not inspect.isabstract(gx10_IntConst)
 
 
-def test_gx10::intconst_constructor_exists():
-    assert callable(gx10::IntConst.__init__)
+def test_gx10_intconst_constructor_exists():
+    assert callable(gx10_IntConst.__init__)
 
 
-def test_gx10::intconst_constructor_args():
-    sig = inspect.signature(gx10::IntConst.__init__)
+def test_gx10_intconst_constructor_args():
+    sig = inspect.signature(gx10_IntConst.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_gx10::intconst_has_value():
-    assert hasattr(gx10::IntConst, "value")
+def test_gx10_intconst_has_value():
+    assert hasattr(gx10_IntConst, "value")
     descriptor = None
-    for klass in gx10::IntConst.__mro__:
+    for klass in gx10_IntConst.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -279,107 +279,107 @@ def test_boolexpression_constructor_args():
 
 
 
-def test_gx10::true_is_not_abstract():
-    assert not inspect.isabstract(gx10::True)
+def test_gx10_false_is_not_abstract():
+    assert not inspect.isabstract(gx10_False)
 
 
-def test_gx10::true_constructor_exists():
-    assert callable(gx10::True.__init__)
+def test_gx10_false_constructor_exists():
+    assert callable(gx10_False.__init__)
 
 
-def test_gx10::true_constructor_args():
-    sig = inspect.signature(gx10::True.__init__)
+def test_gx10_false_constructor_args():
+    sig = inspect.signature(gx10_False.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::false_is_not_abstract():
-    assert not inspect.isabstract(gx10::False)
+def test_gx10_true_is_not_abstract():
+    assert not inspect.isabstract(gx10_True)
 
 
-def test_gx10::false_constructor_exists():
-    assert callable(gx10::False.__init__)
+def test_gx10_true_constructor_exists():
+    assert callable(gx10_True.__init__)
 
 
-def test_gx10::false_constructor_args():
-    sig = inspect.signature(gx10::False.__init__)
+def test_gx10_true_constructor_args():
+    sig = inspect.signature(gx10_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::and_is_not_abstract():
-    assert not inspect.isabstract(gx10::And)
+def test_gx10_and_is_not_abstract():
+    assert not inspect.isabstract(gx10_And)
 
 
-def test_gx10::and_constructor_exists():
-    assert callable(gx10::And.__init__)
+def test_gx10_and_constructor_exists():
+    assert callable(gx10_And.__init__)
 
 
-def test_gx10::and_constructor_args():
-    sig = inspect.signature(gx10::And.__init__)
+def test_gx10_and_constructor_args():
+    sig = inspect.signature(gx10_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::boolvaraccess_is_not_abstract():
-    assert not inspect.isabstract(gx10::BoolVarAccess)
+def test_gx10_equal_is_not_abstract():
+    assert not inspect.isabstract(gx10_Equal)
 
 
-def test_gx10::boolvaraccess_constructor_exists():
-    assert callable(gx10::BoolVarAccess.__init__)
+def test_gx10_equal_constructor_exists():
+    assert callable(gx10_Equal.__init__)
 
 
-def test_gx10::boolvaraccess_constructor_args():
-    sig = inspect.signature(gx10::BoolVarAccess.__init__)
+def test_gx10_equal_constructor_args():
+    sig = inspect.signature(gx10_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::not_is_not_abstract():
-    assert not inspect.isabstract(gx10::Not)
+def test_gx10_boolvaraccess_is_not_abstract():
+    assert not inspect.isabstract(gx10_BoolVarAccess)
 
 
-def test_gx10::not_constructor_exists():
-    assert callable(gx10::Not.__init__)
+def test_gx10_boolvaraccess_constructor_exists():
+    assert callable(gx10_BoolVarAccess.__init__)
 
 
-def test_gx10::not_constructor_args():
-    sig = inspect.signature(gx10::Not.__init__)
+def test_gx10_boolvaraccess_constructor_args():
+    sig = inspect.signature(gx10_BoolVarAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::equal_is_not_abstract():
-    assert not inspect.isabstract(gx10::Equal)
+def test_gx10_not_is_not_abstract():
+    assert not inspect.isabstract(gx10_Not)
 
 
-def test_gx10::equal_constructor_exists():
-    assert callable(gx10::Equal.__init__)
+def test_gx10_not_constructor_exists():
+    assert callable(gx10_Not.__init__)
 
 
-def test_gx10::equal_constructor_args():
-    sig = inspect.signature(gx10::Equal.__init__)
+def test_gx10_not_constructor_args():
+    sig = inspect.signature(gx10_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::method_is_not_abstract():
-    assert not inspect.isabstract(gx10::Method)
+def test_gx10_method_is_not_abstract():
+    assert not inspect.isabstract(gx10_Method)
 
 
-def test_gx10::method_constructor_exists():
-    assert callable(gx10::Method.__init__)
+def test_gx10_method_constructor_exists():
+    assert callable(gx10_Method.__init__)
 
 
-def test_gx10::method_constructor_args():
-    sig = inspect.signature(gx10::Method.__init__)
+def test_gx10_method_constructor_args():
+    sig = inspect.signature(gx10_Method.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gx10::method_has_name():
-    assert hasattr(gx10::Method, "name")
+def test_gx10_method_has_name():
+    assert hasattr(gx10_Method, "name")
     descriptor = None
-    for klass in gx10::Method.__mro__:
+    for klass in gx10_Method.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -387,44 +387,44 @@ def test_gx10::method_has_name():
 
 
 
-def test_gx10::program_is_not_abstract():
-    assert not inspect.isabstract(gx10::Program)
+def test_gx10_program_is_not_abstract():
+    assert not inspect.isabstract(gx10_Program)
 
 
-def test_gx10::program_constructor_exists():
-    assert callable(gx10::Program.__init__)
+def test_gx10_program_constructor_exists():
+    assert callable(gx10_Program.__init__)
 
 
-def test_gx10::program_constructor_args():
-    sig = inspect.signature(gx10::Program.__init__)
+def test_gx10_program_constructor_args():
+    sig = inspect.signature(gx10_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::boolexpression_is_not_abstract():
-    assert not inspect.isabstract(gx10::BoolExpression)
+def test_gx10_boolexpression_is_not_abstract():
+    assert not inspect.isabstract(gx10_BoolExpression)
 
 
-def test_gx10::boolexpression_constructor_exists():
-    assert callable(gx10::BoolExpression.__init__)
+def test_gx10_boolexpression_constructor_exists():
+    assert callable(gx10_BoolExpression.__init__)
 
 
-def test_gx10::boolexpression_constructor_args():
-    sig = inspect.signature(gx10::BoolExpression.__init__)
+def test_gx10_boolexpression_constructor_args():
+    sig = inspect.signature(gx10_BoolExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::statement_is_not_abstract():
-    assert not inspect.isabstract(gx10::Statement)
+def test_gx10_statement_is_not_abstract():
+    assert not inspect.isabstract(gx10_Statement)
 
 
-def test_gx10::statement_constructor_exists():
-    assert callable(gx10::Statement.__init__)
+def test_gx10_statement_constructor_exists():
+    assert callable(gx10_Statement.__init__)
 
 
-def test_gx10::statement_constructor_args():
-    sig = inspect.signature(gx10::Statement.__init__)
+def test_gx10_statement_constructor_args():
+    sig = inspect.signature(gx10_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -443,107 +443,107 @@ def test_statement_constructor_args():
 
 
 
-def test_gx10::async_is_not_abstract():
-    assert not inspect.isabstract(gx10::Async)
+def test_gx10_finish_is_not_abstract():
+    assert not inspect.isabstract(gx10_Finish)
 
 
-def test_gx10::async_constructor_exists():
-    assert callable(gx10::Async.__init__)
+def test_gx10_finish_constructor_exists():
+    assert callable(gx10_Finish.__init__)
 
 
-def test_gx10::async_constructor_args():
-    sig = inspect.signature(gx10::Async.__init__)
+def test_gx10_finish_constructor_args():
+    sig = inspect.signature(gx10_Finish.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::print_is_not_abstract():
-    assert not inspect.isabstract(gx10::Print)
+def test_gx10_async_is_not_abstract():
+    assert not inspect.isabstract(gx10_Async)
 
 
-def test_gx10::print_constructor_exists():
-    assert callable(gx10::Print.__init__)
+def test_gx10_async_constructor_exists():
+    assert callable(gx10_Async.__init__)
 
 
-def test_gx10::print_constructor_args():
-    sig = inspect.signature(gx10::Print.__init__)
+def test_gx10_async_constructor_args():
+    sig = inspect.signature(gx10_Async.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::finish_is_not_abstract():
-    assert not inspect.isabstract(gx10::Finish)
+def test_gx10_expression_is_not_abstract():
+    assert not inspect.isabstract(gx10_Expression)
 
 
-def test_gx10::finish_constructor_exists():
-    assert callable(gx10::Finish.__init__)
+def test_gx10_expression_constructor_exists():
+    assert callable(gx10_Expression.__init__)
 
 
-def test_gx10::finish_constructor_args():
-    sig = inspect.signature(gx10::Finish.__init__)
+def test_gx10_expression_constructor_args():
+    sig = inspect.signature(gx10_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::expression_is_not_abstract():
-    assert not inspect.isabstract(gx10::Expression)
+def test_gx10_print_is_not_abstract():
+    assert not inspect.isabstract(gx10_Print)
 
 
-def test_gx10::expression_constructor_exists():
-    assert callable(gx10::Expression.__init__)
+def test_gx10_print_constructor_exists():
+    assert callable(gx10_Print.__init__)
 
 
-def test_gx10::expression_constructor_args():
-    sig = inspect.signature(gx10::Expression.__init__)
+def test_gx10_print_constructor_args():
+    sig = inspect.signature(gx10_Print.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::intvar_is_not_abstract():
-    assert not inspect.isabstract(gx10::IntVar)
+def test_gx10_intvar_is_not_abstract():
+    assert not inspect.isabstract(gx10_IntVar)
 
 
-def test_gx10::intvar_constructor_exists():
-    assert callable(gx10::IntVar.__init__)
+def test_gx10_intvar_constructor_exists():
+    assert callable(gx10_IntVar.__init__)
 
 
-def test_gx10::intvar_constructor_args():
-    sig = inspect.signature(gx10::IntVar.__init__)
+def test_gx10_intvar_constructor_args():
+    sig = inspect.signature(gx10_IntVar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::controlstructure_is_not_abstract():
-    assert not inspect.isabstract(gx10::ControlStructure)
+def test_gx10_controlstructure_is_not_abstract():
+    assert not inspect.isabstract(gx10_ControlStructure)
 
 
-def test_gx10::controlstructure_constructor_exists():
-    assert callable(gx10::ControlStructure.__init__)
+def test_gx10_controlstructure_constructor_exists():
+    assert callable(gx10_ControlStructure.__init__)
 
 
-def test_gx10::controlstructure_constructor_args():
-    sig = inspect.signature(gx10::ControlStructure.__init__)
+def test_gx10_controlstructure_constructor_args():
+    sig = inspect.signature(gx10_ControlStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::referentiable_is_not_abstract():
-    assert not inspect.isabstract(gx10::Referentiable)
+def test_gx10_referentiable_is_not_abstract():
+    assert not inspect.isabstract(gx10_Referentiable)
 
 
-def test_gx10::referentiable_constructor_exists():
-    assert callable(gx10::Referentiable.__init__)
+def test_gx10_referentiable_constructor_exists():
+    assert callable(gx10_Referentiable.__init__)
 
 
-def test_gx10::referentiable_constructor_args():
-    sig = inspect.signature(gx10::Referentiable.__init__)
+def test_gx10_referentiable_constructor_args():
+    sig = inspect.signature(gx10_Referentiable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gx10::referentiable_has_name():
-    assert hasattr(gx10::Referentiable, "name")
+def test_gx10_referentiable_has_name():
+    assert hasattr(gx10_Referentiable, "name")
     descriptor = None
-    for klass in gx10::Referentiable.__mro__:
+    for klass in gx10_Referentiable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -551,37 +551,37 @@ def test_gx10::referentiable_has_name():
 
 
 
-def test_gx10::methodcall_is_not_abstract():
-    assert not inspect.isabstract(gx10::MethodCall)
+def test_gx10_methodcall_is_not_abstract():
+    assert not inspect.isabstract(gx10_MethodCall)
 
 
-def test_gx10::methodcall_constructor_exists():
-    assert callable(gx10::MethodCall.__init__)
+def test_gx10_methodcall_constructor_exists():
+    assert callable(gx10_MethodCall.__init__)
 
 
-def test_gx10::methodcall_constructor_args():
-    sig = inspect.signature(gx10::MethodCall.__init__)
+def test_gx10_methodcall_constructor_args():
+    sig = inspect.signature(gx10_MethodCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gx10::block_is_not_abstract():
-    assert not inspect.isabstract(gx10::Block)
+def test_gx10_block_is_not_abstract():
+    assert not inspect.isabstract(gx10_Block)
 
 
-def test_gx10::block_constructor_exists():
-    assert callable(gx10::Block.__init__)
+def test_gx10_block_constructor_exists():
+    assert callable(gx10_Block.__init__)
 
 
-def test_gx10::block_constructor_args():
-    sig = inspect.signature(gx10::Block.__init__)
+def test_gx10_block_constructor_args():
+    sig = inspect.signature(gx10_Block.__init__)
     params = list(sig.parameters.keys())
     assert "context" in params, "Missing parameter 'context'"
 
-def test_gx10::block_has_context():
-    assert hasattr(gx10::Block, "context")
+def test_gx10_block_has_context():
+    assert hasattr(gx10_Block, "context")
     descriptor = None
-    for klass in gx10::Block.__mro__:
+    for klass in gx10_Block.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
@@ -602,115 +602,115 @@ safe_text = st.text(
 IntBinaryOperation_strategy = st.builds(
     IntBinaryOperation,
 )
-gx10::Time_strategy = st.builds(
-    gx10::Time,
+gx10_Time_strategy = st.builds(
+    gx10_Time,
 )
-gx10::Plus_strategy = st.builds(
-    gx10::Plus,
+gx10_Plus_strategy = st.builds(
+    gx10_Plus,
 )
 ControlStructure_strategy = st.builds(
     ControlStructure,
 )
-gx10::While_strategy = st.builds(
-    gx10::While,
+gx10_While_strategy = st.builds(
+    gx10_While,
 )
-gx10::If_strategy = st.builds(
-    gx10::If,
+gx10_If_strategy = st.builds(
+    gx10_If,
 )
-gx10::MethodCallParameter_strategy = st.builds(
-    gx10::MethodCallParameter,
+gx10_MethodCallParameter_strategy = st.builds(
+    gx10_MethodCallParameter,
     name=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-gx10::BoolVar_strategy = st.builds(
-    gx10::BoolVar,
+gx10_BoolVar_strategy = st.builds(
+    gx10_BoolVar,
 )
-gx10::IntExpression_strategy = st.builds(
-    gx10::IntExpression,
+gx10_IntExpression_strategy = st.builds(
+    gx10_IntExpression,
 )
 IntExpression_strategy = st.builds(
     IntExpression,
 )
-gx10::IntVarAccess_strategy = st.builds(
-    gx10::IntVarAccess,
+gx10_IntVarAccess_strategy = st.builds(
+    gx10_IntVarAccess,
 )
-gx10::IntBinaryOperation_strategy = st.builds(
-    gx10::IntBinaryOperation,
+gx10_IntBinaryOperation_strategy = st.builds(
+    gx10_IntBinaryOperation,
 )
-gx10::IntConst_strategy = st.builds(
-    gx10::IntConst,
+gx10_IntConst_strategy = st.builds(
+    gx10_IntConst,
     value=
         st.booleans()
 )
 BoolExpression_strategy = st.builds(
     BoolExpression,
 )
-gx10::True_strategy = st.builds(
-    gx10::True,
+gx10_False_strategy = st.builds(
+    gx10_False,
 )
-gx10::False_strategy = st.builds(
-    gx10::False,
+gx10_True_strategy = st.builds(
+    gx10_True,
 )
-gx10::And_strategy = st.builds(
-    gx10::And,
+gx10_And_strategy = st.builds(
+    gx10_And,
 )
-gx10::BoolVarAccess_strategy = st.builds(
-    gx10::BoolVarAccess,
+gx10_Equal_strategy = st.builds(
+    gx10_Equal,
 )
-gx10::Not_strategy = st.builds(
-    gx10::Not,
+gx10_BoolVarAccess_strategy = st.builds(
+    gx10_BoolVarAccess,
 )
-gx10::Equal_strategy = st.builds(
-    gx10::Equal,
+gx10_Not_strategy = st.builds(
+    gx10_Not,
 )
-gx10::Method_strategy = st.builds(
-    gx10::Method,
+gx10_Method_strategy = st.builds(
+    gx10_Method,
     name=
         safe_text
 )
-gx10::Program_strategy = st.builds(
-    gx10::Program,
+gx10_Program_strategy = st.builds(
+    gx10_Program,
 )
-gx10::BoolExpression_strategy = st.builds(
-    gx10::BoolExpression,
+gx10_BoolExpression_strategy = st.builds(
+    gx10_BoolExpression,
 )
-gx10::Statement_strategy = st.builds(
-    gx10::Statement,
+gx10_Statement_strategy = st.builds(
+    gx10_Statement,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-gx10::Async_strategy = st.builds(
-    gx10::Async,
+gx10_Finish_strategy = st.builds(
+    gx10_Finish,
 )
-gx10::Print_strategy = st.builds(
-    gx10::Print,
+gx10_Async_strategy = st.builds(
+    gx10_Async,
 )
-gx10::Finish_strategy = st.builds(
-    gx10::Finish,
+gx10_Expression_strategy = st.builds(
+    gx10_Expression,
 )
-gx10::Expression_strategy = st.builds(
-    gx10::Expression,
+gx10_Print_strategy = st.builds(
+    gx10_Print,
 )
-gx10::IntVar_strategy = st.builds(
-    gx10::IntVar,
+gx10_IntVar_strategy = st.builds(
+    gx10_IntVar,
 )
-gx10::ControlStructure_strategy = st.builds(
-    gx10::ControlStructure,
+gx10_ControlStructure_strategy = st.builds(
+    gx10_ControlStructure,
 )
-gx10::Referentiable_strategy = st.builds(
-    gx10::Referentiable,
+gx10_Referentiable_strategy = st.builds(
+    gx10_Referentiable,
     name=
         st.integers()
 )
-gx10::MethodCall_strategy = st.builds(
-    gx10::MethodCall,
+gx10_MethodCall_strategy = st.builds(
+    gx10_MethodCall,
 )
-gx10::Block_strategy = st.builds(
-    gx10::Block,
+gx10_Block_strategy = st.builds(
+    gx10_Block,
     context=
         st.integers()
 )
@@ -720,10 +720,10 @@ gx10::Block_strategy = st.builds(
 def test_intbinaryoperation_instantiation(instance):
     assert isinstance(instance, IntBinaryOperation)
 
-@given(instance=gx10::Time_strategy)
+@given(instance=gx10_Time_strategy)
 @settings(max_examples=50)
-def test_gx10::time_instantiation(instance):
-    assert isinstance(instance, gx10::Time)
+def test_gx10_time_instantiation(instance):
+    assert isinstance(instance, gx10_Time)
 
 import warnings
 import copy
@@ -731,9 +731,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::Time_strategy)
+@given(instance=gx10_Time_strategy)
 @settings(max_examples=30)
-def test_gx10::time_evaluate_changes_state(instance):
+def test_gx10_time_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -745,19 +745,19 @@ def test_gx10::time_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in gx10::Time is empty"
+        assert has_statements, f"Function 'evaluate' in gx10_Time is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in gx10::Time did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in gx10_Time did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in gx10::Time is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in gx10_Time is not implemented or raised an error")
 
-@given(instance=gx10::Plus_strategy)
+@given(instance=gx10_Plus_strategy)
 @settings(max_examples=50)
-def test_gx10::plus_instantiation(instance):
-    assert isinstance(instance, gx10::Plus)
+def test_gx10_plus_instantiation(instance):
+    assert isinstance(instance, gx10_Plus)
 
 import warnings
 import copy
@@ -765,9 +765,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::Plus_strategy)
+@given(instance=gx10_Plus_strategy)
 @settings(max_examples=30)
-def test_gx10::plus_evaluate_changes_state(instance):
+def test_gx10_plus_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -779,42 +779,39 @@ def test_gx10::plus_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in gx10::Plus is empty"
+        assert has_statements, f"Function 'evaluate' in gx10_Plus is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in gx10::Plus did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in gx10_Plus did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in gx10::Plus is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in gx10_Plus is not implemented or raised an error")
 
 @given(instance=ControlStructure_strategy)
 @settings(max_examples=50)
 def test_controlstructure_instantiation(instance):
     assert isinstance(instance, ControlStructure)
 
-@given(instance=gx10::While_strategy)
+@given(instance=gx10_While_strategy)
 @settings(max_examples=50)
-def test_gx10::while_instantiation(instance):
-    assert isinstance(instance, gx10::While)
+def test_gx10_while_instantiation(instance):
+    assert isinstance(instance, gx10_While)
 
-@given(instance=gx10::If_strategy)
+@given(instance=gx10_If_strategy)
 @settings(max_examples=50)
-def test_gx10::if_instantiation(instance):
-    assert isinstance(instance, gx10::If)
+def test_gx10_if_instantiation(instance):
+    assert isinstance(instance, gx10_If)
 
-@given(instance=gx10::MethodCallParameter_strategy)
+@given(instance=gx10_MethodCallParameter_strategy)
 @settings(max_examples=50)
-def test_gx10::methodcallparameter_instantiation(instance):
-    assert isinstance(instance, gx10::MethodCallParameter)
-
-@given(instance=gx10::MethodCallParameter_strategy)
-def test_gx10::methodcallparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gx10_methodcallparameter_instantiation(instance):
+    assert isinstance(instance, gx10_MethodCallParameter)
 
 
-@given(instance=gx10::MethodCallParameter_strategy)
-def test_gx10::methodcallparameter_name_setter(instance):
+
+@given(instance=gx10_MethodCallParameter_strategy)
+def test_gx10_methodcallparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -824,10 +821,10 @@ def test_gx10::methodcallparameter_name_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=gx10::BoolVar_strategy)
+@given(instance=gx10_BoolVar_strategy)
 @settings(max_examples=50)
-def test_gx10::boolvar_instantiation(instance):
-    assert isinstance(instance, gx10::BoolVar)
+def test_gx10_boolvar_instantiation(instance):
+    assert isinstance(instance, gx10_BoolVar)
 
 import warnings
 import copy
@@ -835,9 +832,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::BoolVar_strategy)
+@given(instance=gx10_BoolVar_strategy)
 @settings(max_examples=30)
-def test_gx10::boolvar_evaluate_changes_state(instance):
+def test_gx10_boolvar_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -849,34 +846,34 @@ def test_gx10::boolvar_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in gx10::BoolVar is empty"
+        assert has_statements, f"Function 'evaluate' in gx10_BoolVar is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in gx10::BoolVar did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in gx10_BoolVar did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in gx10::BoolVar is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in gx10_BoolVar is not implemented or raised an error")
 
-@given(instance=gx10::IntExpression_strategy)
+@given(instance=gx10_IntExpression_strategy)
 @settings(max_examples=50)
-def test_gx10::intexpression_instantiation(instance):
-    assert isinstance(instance, gx10::IntExpression)
+def test_gx10_intexpression_instantiation(instance):
+    assert isinstance(instance, gx10_IntExpression)
 
 @given(instance=IntExpression_strategy)
 @settings(max_examples=50)
 def test_intexpression_instantiation(instance):
     assert isinstance(instance, IntExpression)
 
-@given(instance=gx10::IntVarAccess_strategy)
+@given(instance=gx10_IntVarAccess_strategy)
 @settings(max_examples=50)
-def test_gx10::intvaraccess_instantiation(instance):
-    assert isinstance(instance, gx10::IntVarAccess)
+def test_gx10_intvaraccess_instantiation(instance):
+    assert isinstance(instance, gx10_IntVarAccess)
 
-@given(instance=gx10::IntBinaryOperation_strategy)
+@given(instance=gx10_IntBinaryOperation_strategy)
 @settings(max_examples=50)
-def test_gx10::intbinaryoperation_instantiation(instance):
-    assert isinstance(instance, gx10::IntBinaryOperation)
+def test_gx10_intbinaryoperation_instantiation(instance):
+    assert isinstance(instance, gx10_IntBinaryOperation)
 
 import warnings
 import copy
@@ -884,9 +881,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::IntBinaryOperation_strategy)
+@given(instance=gx10_IntBinaryOperation_strategy)
 @settings(max_examples=30)
-def test_gx10::intbinaryoperation_evaluate_changes_state(instance):
+def test_gx10_intbinaryoperation_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -898,27 +895,24 @@ def test_gx10::intbinaryoperation_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in gx10::IntBinaryOperation is empty"
+        assert has_statements, f"Function 'evaluate' in gx10_IntBinaryOperation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in gx10::IntBinaryOperation did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in gx10_IntBinaryOperation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in gx10::IntBinaryOperation is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in gx10_IntBinaryOperation is not implemented or raised an error")
 
-@given(instance=gx10::IntConst_strategy)
+@given(instance=gx10_IntConst_strategy)
 @settings(max_examples=50)
-def test_gx10::intconst_instantiation(instance):
-    assert isinstance(instance, gx10::IntConst)
-
-@given(instance=gx10::IntConst_strategy)
-def test_gx10::intconst_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_gx10_intconst_instantiation(instance):
+    assert isinstance(instance, gx10_IntConst)
 
 
-@given(instance=gx10::IntConst_strategy)
-def test_gx10::intconst_value_setter(instance):
+
+@given(instance=gx10_IntConst_strategy)
+def test_gx10_intconst_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -928,35 +922,25 @@ def test_gx10::intconst_value_setter(instance):
 def test_boolexpression_instantiation(instance):
     assert isinstance(instance, BoolExpression)
 
-@given(instance=gx10::True_strategy)
+@given(instance=gx10_False_strategy)
 @settings(max_examples=50)
-def test_gx10::true_instantiation(instance):
-    assert isinstance(instance, gx10::True)
+def test_gx10_false_instantiation(instance):
+    assert isinstance(instance, gx10_False)
 
-@given(instance=gx10::False_strategy)
+@given(instance=gx10_True_strategy)
 @settings(max_examples=50)
-def test_gx10::false_instantiation(instance):
-    assert isinstance(instance, gx10::False)
+def test_gx10_true_instantiation(instance):
+    assert isinstance(instance, gx10_True)
 
-@given(instance=gx10::And_strategy)
+@given(instance=gx10_And_strategy)
 @settings(max_examples=50)
-def test_gx10::and_instantiation(instance):
-    assert isinstance(instance, gx10::And)
+def test_gx10_and_instantiation(instance):
+    assert isinstance(instance, gx10_And)
 
-@given(instance=gx10::BoolVarAccess_strategy)
+@given(instance=gx10_Equal_strategy)
 @settings(max_examples=50)
-def test_gx10::boolvaraccess_instantiation(instance):
-    assert isinstance(instance, gx10::BoolVarAccess)
-
-@given(instance=gx10::Not_strategy)
-@settings(max_examples=50)
-def test_gx10::not_instantiation(instance):
-    assert isinstance(instance, gx10::Not)
-
-@given(instance=gx10::Equal_strategy)
-@settings(max_examples=50)
-def test_gx10::equal_instantiation(instance):
-    assert isinstance(instance, gx10::Equal)
+def test_gx10_equal_instantiation(instance):
+    assert isinstance(instance, gx10_Equal)
 
 import warnings
 import copy
@@ -964,9 +948,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::Equal_strategy)
+@given(instance=gx10_Equal_strategy)
 @settings(max_examples=30)
-def test_gx10::equal_evaluate_changes_state(instance):
+def test_gx10_equal_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -978,60 +962,77 @@ def test_gx10::equal_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in gx10::Equal is empty"
+        assert has_statements, f"Function 'evaluate' in gx10_Equal is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in gx10::Equal did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in gx10_Equal did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in gx10::Equal is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in gx10_Equal is not implemented or raised an error")
 
-@given(instance=gx10::Method_strategy)
+@given(instance=gx10_BoolVarAccess_strategy)
 @settings(max_examples=50)
-def test_gx10::method_instantiation(instance):
-    assert isinstance(instance, gx10::Method)
+def test_gx10_boolvaraccess_instantiation(instance):
+    assert isinstance(instance, gx10_BoolVarAccess)
 
-@given(instance=gx10::Method_strategy)
-def test_gx10::method_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=gx10_Not_strategy)
+@settings(max_examples=50)
+def test_gx10_not_instantiation(instance):
+    assert isinstance(instance, gx10_Not)
+
+@given(instance=gx10_Method_strategy)
+@settings(max_examples=50)
+def test_gx10_method_instantiation(instance):
+    assert isinstance(instance, gx10_Method)
 
 
-@given(instance=gx10::Method_strategy)
-def test_gx10::method_name_setter(instance):
+
+@given(instance=gx10_Method_strategy)
+def test_gx10_method_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gx10::Program_strategy)
+@given(instance=gx10_Program_strategy)
 @settings(max_examples=50)
-def test_gx10::program_instantiation(instance):
-    assert isinstance(instance, gx10::Program)
+def test_gx10_program_instantiation(instance):
+    assert isinstance(instance, gx10_Program)
 
-@given(instance=gx10::BoolExpression_strategy)
+@given(instance=gx10_BoolExpression_strategy)
 @settings(max_examples=50)
-def test_gx10::boolexpression_instantiation(instance):
-    assert isinstance(instance, gx10::BoolExpression)
+def test_gx10_boolexpression_instantiation(instance):
+    assert isinstance(instance, gx10_BoolExpression)
 
-@given(instance=gx10::Statement_strategy)
+@given(instance=gx10_Statement_strategy)
 @settings(max_examples=50)
-def test_gx10::statement_instantiation(instance):
-    assert isinstance(instance, gx10::Statement)
+def test_gx10_statement_instantiation(instance):
+    assert isinstance(instance, gx10_Statement)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=gx10::Async_strategy)
+@given(instance=gx10_Finish_strategy)
 @settings(max_examples=50)
-def test_gx10::async_instantiation(instance):
-    assert isinstance(instance, gx10::Async)
+def test_gx10_finish_instantiation(instance):
+    assert isinstance(instance, gx10_Finish)
 
-@given(instance=gx10::Print_strategy)
+@given(instance=gx10_Async_strategy)
 @settings(max_examples=50)
-def test_gx10::print_instantiation(instance):
-    assert isinstance(instance, gx10::Print)
+def test_gx10_async_instantiation(instance):
+    assert isinstance(instance, gx10_Async)
+
+@given(instance=gx10_Expression_strategy)
+@settings(max_examples=50)
+def test_gx10_expression_instantiation(instance):
+    assert isinstance(instance, gx10_Expression)
+
+@given(instance=gx10_Print_strategy)
+@settings(max_examples=50)
+def test_gx10_print_instantiation(instance):
+    assert isinstance(instance, gx10_Print)
 
 import warnings
 import copy
@@ -1039,9 +1040,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::Print_strategy)
+@given(instance=gx10_Print_strategy)
 @settings(max_examples=30)
-def test_gx10::print_print_changes_state(instance):
+def test_gx10_print_print_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1053,29 +1054,19 @@ def test_gx10::print_print_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in gx10::Print is empty"
+        assert has_statements, f"Function 'print' in gx10_Print is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in gx10::Print did not change state; check implementation")
+            warnings.warn(f"Operation 'print' in gx10_Print did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in gx10::Print is not implemented or raised an error")
+        warnings.warn(f"Operation 'print' in gx10_Print is not implemented or raised an error")
 
-@given(instance=gx10::Finish_strategy)
+@given(instance=gx10_IntVar_strategy)
 @settings(max_examples=50)
-def test_gx10::finish_instantiation(instance):
-    assert isinstance(instance, gx10::Finish)
-
-@given(instance=gx10::Expression_strategy)
-@settings(max_examples=50)
-def test_gx10::expression_instantiation(instance):
-    assert isinstance(instance, gx10::Expression)
-
-@given(instance=gx10::IntVar_strategy)
-@settings(max_examples=50)
-def test_gx10::intvar_instantiation(instance):
-    assert isinstance(instance, gx10::IntVar)
+def test_gx10_intvar_instantiation(instance):
+    assert isinstance(instance, gx10_IntVar)
 
 import warnings
 import copy
@@ -1083,9 +1074,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::IntVar_strategy)
+@given(instance=gx10_IntVar_strategy)
 @settings(max_examples=30)
-def test_gx10::intvar_evaluate_changes_state(instance):
+def test_gx10_intvar_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1097,40 +1088,37 @@ def test_gx10::intvar_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in gx10::IntVar is empty"
+        assert has_statements, f"Function 'evaluate' in gx10_IntVar is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in gx10::IntVar did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in gx10_IntVar did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in gx10::IntVar is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in gx10_IntVar is not implemented or raised an error")
 
-@given(instance=gx10::ControlStructure_strategy)
+@given(instance=gx10_ControlStructure_strategy)
 @settings(max_examples=50)
-def test_gx10::controlstructure_instantiation(instance):
-    assert isinstance(instance, gx10::ControlStructure)
+def test_gx10_controlstructure_instantiation(instance):
+    assert isinstance(instance, gx10_ControlStructure)
 
-@given(instance=gx10::Referentiable_strategy)
+@given(instance=gx10_Referentiable_strategy)
 @settings(max_examples=50)
-def test_gx10::referentiable_instantiation(instance):
-    assert isinstance(instance, gx10::Referentiable)
-
-@given(instance=gx10::Referentiable_strategy)
-def test_gx10::referentiable_name_type(instance):
-    assert isinstance(instance.name, int)
+def test_gx10_referentiable_instantiation(instance):
+    assert isinstance(instance, gx10_Referentiable)
 
 
-@given(instance=gx10::Referentiable_strategy)
-def test_gx10::referentiable_name_setter(instance):
+
+@given(instance=gx10_Referentiable_strategy)
+def test_gx10_referentiable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gx10::MethodCall_strategy)
+@given(instance=gx10_MethodCall_strategy)
 @settings(max_examples=50)
-def test_gx10::methodcall_instantiation(instance):
-    assert isinstance(instance, gx10::MethodCall)
+def test_gx10_methodcall_instantiation(instance):
+    assert isinstance(instance, gx10_MethodCall)
 
 import warnings
 import copy
@@ -1138,9 +1126,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::MethodCall_strategy)
+@given(instance=gx10_MethodCall_strategy)
 @settings(max_examples=30)
-def test_gx10::methodcall_call_changes_state(instance):
+def test_gx10_methodcall_call_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1152,27 +1140,24 @@ def test_gx10::methodcall_call_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'call' in gx10::MethodCall is empty"
+        assert has_statements, f"Function 'call' in gx10_MethodCall is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'call' in gx10::MethodCall did not change state; check implementation")
+            warnings.warn(f"Operation 'call' in gx10_MethodCall did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'call' in gx10::MethodCall is not implemented or raised an error")
+        warnings.warn(f"Operation 'call' in gx10_MethodCall is not implemented or raised an error")
 
-@given(instance=gx10::Block_strategy)
+@given(instance=gx10_Block_strategy)
 @settings(max_examples=50)
-def test_gx10::block_instantiation(instance):
-    assert isinstance(instance, gx10::Block)
-
-@given(instance=gx10::Block_strategy)
-def test_gx10::block_context_type(instance):
-    assert isinstance(instance.context, int)
+def test_gx10_block_instantiation(instance):
+    assert isinstance(instance, gx10_Block)
 
 
-@given(instance=gx10::Block_strategy)
-def test_gx10::block_context_setter(instance):
+
+@given(instance=gx10_Block_strategy)
+def test_gx10_block_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
@@ -1183,9 +1168,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gx10::Block_strategy)
+@given(instance=gx10_Block_strategy)
 @settings(max_examples=30)
-def test_gx10::block_initblock_changes_state(instance):
+def test_gx10_block_initblock_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1197,11 +1182,11 @@ def test_gx10::block_initblock_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initBlock' in gx10::Block is empty"
+        assert has_statements, f"Function 'initBlock' in gx10_Block is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initBlock' in gx10::Block did not change state; check implementation")
+            warnings.warn(f"Operation 'initBlock' in gx10_Block did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initBlock' in gx10::Block is not implemented or raised an error")
+        warnings.warn(f"Operation 'initBlock' in gx10_Block is not implemented or raised an error")

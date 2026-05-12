@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    persons::PersonGroup,
-    persons::Person,
+from python_code import (
+    persons_PersonGroup,
+    persons_Person,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_persons::persongroup_is_not_abstract():
-    assert not inspect.isabstract(persons::PersonGroup)
+def test_persons_persongroup_is_not_abstract():
+    assert not inspect.isabstract(persons_PersonGroup)
 
 
-def test_persons::persongroup_constructor_exists():
-    assert callable(persons::PersonGroup.__init__)
+def test_persons_persongroup_constructor_exists():
+    assert callable(persons_PersonGroup.__init__)
 
 
-def test_persons::persongroup_constructor_args():
-    sig = inspect.signature(persons::PersonGroup.__init__)
+def test_persons_persongroup_constructor_args():
+    sig = inspect.signature(persons_PersonGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::person_is_not_abstract():
-    assert not inspect.isabstract(persons::Person)
+def test_persons_person_is_not_abstract():
+    assert not inspect.isabstract(persons_Person)
 
 
-def test_persons::person_constructor_exists():
-    assert callable(persons::Person.__init__)
+def test_persons_person_constructor_exists():
+    assert callable(persons_Person.__init__)
 
 
-def test_persons::person_constructor_args():
-    sig = inspect.signature(persons::Person.__init__)
+def test_persons_person_constructor_args():
+    sig = inspect.signature(persons_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_persons::person_has_name():
-    assert hasattr(persons::Person, "name")
+def test_persons_person_has_name():
+    assert hasattr(persons_Person, "name")
     descriptor = None
-    for klass in persons::Person.__mro__:
+    for klass in persons_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-persons::PersonGroup_strategy = st.builds(
-    persons::PersonGroup,
+persons_PersonGroup_strategy = st.builds(
+    persons_PersonGroup,
 )
-persons::Person_strategy = st.builds(
-    persons::Person,
+persons_Person_strategy = st.builds(
+    persons_Person,
     name=
         safe_text
 )
 
-@given(instance=persons::PersonGroup_strategy)
+@given(instance=persons_PersonGroup_strategy)
 @settings(max_examples=50)
-def test_persons::persongroup_instantiation(instance):
-    assert isinstance(instance, persons::PersonGroup)
+def test_persons_persongroup_instantiation(instance):
+    assert isinstance(instance, persons_PersonGroup)
 
-@given(instance=persons::Person_strategy)
+@given(instance=persons_Person_strategy)
 @settings(max_examples=50)
-def test_persons::person_instantiation(instance):
-    assert isinstance(instance, persons::Person)
-
-@given(instance=persons::Person_strategy)
-def test_persons::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_persons_person_instantiation(instance):
+    assert isinstance(instance, persons_Person)
 
 
-@given(instance=persons::Person_strategy)
-def test_persons::person_name_setter(instance):
+
+@given(instance=persons_Person_strategy)
+def test_persons_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

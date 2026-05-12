@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    iritpdl::Resource,
-    iritpdl::ResourceConf,
+from python_code import (
+    iritpdl_Resource,
+    iritpdl_ResourceConf,
     ProcessElement,
-    iritpdl::WorkSequence,
-    iritpdl::WorkDefinition,
-    iritpdl::ResourceType,
-    iritpdl::Guidance,
-    iritpdl::ProcessElement,
-    iritpdl::Process,
+    iritpdl_WorkSequence,
+    iritpdl_WorkDefinition,
+    iritpdl_ResourceType,
+    iritpdl_Guidance,
+    iritpdl_ProcessElement,
+    iritpdl_Process,
     WorkSequenceType,
 )
 
@@ -24,23 +24,23 @@ from classes import (
 
 
 
-def test_iritpdl::resource_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::Resource)
+def test_iritpdl_resource_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_Resource)
 
 
-def test_iritpdl::resource_constructor_exists():
-    assert callable(iritpdl::Resource.__init__)
+def test_iritpdl_resource_constructor_exists():
+    assert callable(iritpdl_Resource.__init__)
 
 
-def test_iritpdl::resource_constructor_args():
-    sig = inspect.signature(iritpdl::Resource.__init__)
+def test_iritpdl_resource_constructor_args():
+    sig = inspect.signature(iritpdl_Resource.__init__)
     params = list(sig.parameters.keys())
     assert "occurrences" in params, "Missing parameter 'occurrences'"
 
-def test_iritpdl::resource_has_occurrences():
-    assert hasattr(iritpdl::Resource, "occurrences")
+def test_iritpdl_resource_has_occurrences():
+    assert hasattr(iritpdl_Resource, "occurrences")
     descriptor = None
-    for klass in iritpdl::Resource.__mro__:
+    for klass in iritpdl_Resource.__mro__:
         if "occurrences" in klass.__dict__:
             descriptor = klass.__dict__["occurrences"]
             break
@@ -48,23 +48,23 @@ def test_iritpdl::resource_has_occurrences():
 
 
 
-def test_iritpdl::resourceconf_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::ResourceConf)
+def test_iritpdl_resourceconf_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_ResourceConf)
 
 
-def test_iritpdl::resourceconf_constructor_exists():
-    assert callable(iritpdl::ResourceConf.__init__)
+def test_iritpdl_resourceconf_constructor_exists():
+    assert callable(iritpdl_ResourceConf.__init__)
 
 
-def test_iritpdl::resourceconf_constructor_args():
-    sig = inspect.signature(iritpdl::ResourceConf.__init__)
+def test_iritpdl_resourceconf_constructor_args():
+    sig = inspect.signature(iritpdl_ResourceConf.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iritpdl::resourceconf_has_name():
-    assert hasattr(iritpdl::ResourceConf, "name")
+def test_iritpdl_resourceconf_has_name():
+    assert hasattr(iritpdl_ResourceConf, "name")
     descriptor = None
-    for klass in iritpdl::ResourceConf.__mro__:
+    for klass in iritpdl_ResourceConf.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,23 +86,23 @@ def test_processelement_constructor_args():
 
 
 
-def test_iritpdl::worksequence_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::WorkSequence)
+def test_iritpdl_worksequence_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_WorkSequence)
 
 
-def test_iritpdl::worksequence_constructor_exists():
-    assert callable(iritpdl::WorkSequence.__init__)
+def test_iritpdl_worksequence_constructor_exists():
+    assert callable(iritpdl_WorkSequence.__init__)
 
 
-def test_iritpdl::worksequence_constructor_args():
-    sig = inspect.signature(iritpdl::WorkSequence.__init__)
+def test_iritpdl_worksequence_constructor_args():
+    sig = inspect.signature(iritpdl_WorkSequence.__init__)
     params = list(sig.parameters.keys())
     assert "linkType" in params, "Missing parameter 'linkType'"
 
-def test_iritpdl::worksequence_has_linkType():
-    assert hasattr(iritpdl::WorkSequence, "linkType")
+def test_iritpdl_worksequence_has_linkType():
+    assert hasattr(iritpdl_WorkSequence, "linkType")
     descriptor = None
-    for klass in iritpdl::WorkSequence.__mro__:
+    for klass in iritpdl_WorkSequence.__mro__:
         if "linkType" in klass.__dict__:
             descriptor = klass.__dict__["linkType"]
             break
@@ -110,101 +110,101 @@ def test_iritpdl::worksequence_has_linkType():
 
 
 
-def test_iritpdl::workdefinition_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::WorkDefinition)
+def test_iritpdl_workdefinition_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_WorkDefinition)
 
 
-def test_iritpdl::workdefinition_constructor_exists():
-    assert callable(iritpdl::WorkDefinition.__init__)
+def test_iritpdl_workdefinition_constructor_exists():
+    assert callable(iritpdl_WorkDefinition.__init__)
 
 
-def test_iritpdl::workdefinition_constructor_args():
-    sig = inspect.signature(iritpdl::WorkDefinition.__init__)
+def test_iritpdl_workdefinition_constructor_args():
+    sig = inspect.signature(iritpdl_WorkDefinition.__init__)
     params = list(sig.parameters.keys())
-    assert "maxTime" in params, "Missing parameter 'maxTime'"
     assert "minTime" in params, "Missing parameter 'minTime'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "maxTime" in params, "Missing parameter 'maxTime'"
 
-def test_iritpdl::workdefinition_has_maxTime():
-    assert hasattr(iritpdl::WorkDefinition, "maxTime")
+def test_iritpdl_workdefinition_has_minTime():
+    assert hasattr(iritpdl_WorkDefinition, "minTime")
     descriptor = None
-    for klass in iritpdl::WorkDefinition.__mro__:
-        if "maxTime" in klass.__dict__:
-            descriptor = klass.__dict__["maxTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iritpdl::workdefinition_has_minTime():
-    assert hasattr(iritpdl::WorkDefinition, "minTime")
-    descriptor = None
-    for klass in iritpdl::WorkDefinition.__mro__:
+    for klass in iritpdl_WorkDefinition.__mro__:
         if "minTime" in klass.__dict__:
             descriptor = klass.__dict__["minTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_iritpdl::workdefinition_has_name():
-    assert hasattr(iritpdl::WorkDefinition, "name")
+def test_iritpdl_workdefinition_has_name():
+    assert hasattr(iritpdl_WorkDefinition, "name")
     descriptor = None
-    for klass in iritpdl::WorkDefinition.__mro__:
+    for klass in iritpdl_WorkDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_iritpdl_workdefinition_has_maxTime():
+    assert hasattr(iritpdl_WorkDefinition, "maxTime")
+    descriptor = None
+    for klass in iritpdl_WorkDefinition.__mro__:
+        if "maxTime" in klass.__dict__:
+            descriptor = klass.__dict__["maxTime"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iritpdl::resourcetype_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::ResourceType)
+
+def test_iritpdl_resourcetype_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_ResourceType)
 
 
-def test_iritpdl::resourcetype_constructor_exists():
-    assert callable(iritpdl::ResourceType.__init__)
+def test_iritpdl_resourcetype_constructor_exists():
+    assert callable(iritpdl_ResourceType.__init__)
 
 
-def test_iritpdl::resourcetype_constructor_args():
-    sig = inspect.signature(iritpdl::ResourceType.__init__)
+def test_iritpdl_resourcetype_constructor_args():
+    sig = inspect.signature(iritpdl_ResourceType.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "occurrences" in params, "Missing parameter 'occurrences'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_iritpdl::resourcetype_has_name():
-    assert hasattr(iritpdl::ResourceType, "name")
+def test_iritpdl_resourcetype_has_occurrences():
+    assert hasattr(iritpdl_ResourceType, "occurrences")
     descriptor = None
-    for klass in iritpdl::ResourceType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iritpdl::resourcetype_has_occurrences():
-    assert hasattr(iritpdl::ResourceType, "occurrences")
-    descriptor = None
-    for klass in iritpdl::ResourceType.__mro__:
+    for klass in iritpdl_ResourceType.__mro__:
         if "occurrences" in klass.__dict__:
             descriptor = klass.__dict__["occurrences"]
             break
     assert isinstance(descriptor, property)
 
+def test_iritpdl_resourcetype_has_name():
+    assert hasattr(iritpdl_ResourceType, "name")
+    descriptor = None
+    for klass in iritpdl_ResourceType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iritpdl::guidance_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::Guidance)
+
+def test_iritpdl_guidance_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_Guidance)
 
 
-def test_iritpdl::guidance_constructor_exists():
-    assert callable(iritpdl::Guidance.__init__)
+def test_iritpdl_guidance_constructor_exists():
+    assert callable(iritpdl_Guidance.__init__)
 
 
-def test_iritpdl::guidance_constructor_args():
-    sig = inspect.signature(iritpdl::Guidance.__init__)
+def test_iritpdl_guidance_constructor_args():
+    sig = inspect.signature(iritpdl_Guidance.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_iritpdl::guidance_has_text():
-    assert hasattr(iritpdl::Guidance, "text")
+def test_iritpdl_guidance_has_text():
+    assert hasattr(iritpdl_Guidance, "text")
     descriptor = None
-    for klass in iritpdl::Guidance.__mro__:
+    for klass in iritpdl_Guidance.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -212,59 +212,59 @@ def test_iritpdl::guidance_has_text():
 
 
 
-def test_iritpdl::processelement_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::ProcessElement)
+def test_iritpdl_processelement_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_ProcessElement)
 
 
-def test_iritpdl::processelement_constructor_exists():
-    assert callable(iritpdl::ProcessElement.__init__)
+def test_iritpdl_processelement_constructor_exists():
+    assert callable(iritpdl_ProcessElement.__init__)
 
 
-def test_iritpdl::processelement_constructor_args():
-    sig = inspect.signature(iritpdl::ProcessElement.__init__)
+def test_iritpdl_processelement_constructor_args():
+    sig = inspect.signature(iritpdl_ProcessElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iritpdl::process_is_not_abstract():
-    assert not inspect.isabstract(iritpdl::Process)
+def test_iritpdl_process_is_not_abstract():
+    assert not inspect.isabstract(iritpdl_Process)
 
 
-def test_iritpdl::process_constructor_exists():
-    assert callable(iritpdl::Process.__init__)
+def test_iritpdl_process_constructor_exists():
+    assert callable(iritpdl_Process.__init__)
 
 
-def test_iritpdl::process_constructor_args():
-    sig = inspect.signature(iritpdl::Process.__init__)
+def test_iritpdl_process_constructor_args():
+    sig = inspect.signature(iritpdl_Process.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "minTime" in params, "Missing parameter 'minTime'"
     assert "maxTime" in params, "Missing parameter 'maxTime'"
+    assert "minTime" in params, "Missing parameter 'minTime'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_iritpdl::process_has_name():
-    assert hasattr(iritpdl::Process, "name")
+def test_iritpdl_process_has_maxTime():
+    assert hasattr(iritpdl_Process, "maxTime")
     descriptor = None
-    for klass in iritpdl::Process.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in iritpdl_Process.__mro__:
+        if "maxTime" in klass.__dict__:
+            descriptor = klass.__dict__["maxTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_iritpdl::process_has_minTime():
-    assert hasattr(iritpdl::Process, "minTime")
+def test_iritpdl_process_has_minTime():
+    assert hasattr(iritpdl_Process, "minTime")
     descriptor = None
-    for klass in iritpdl::Process.__mro__:
+    for klass in iritpdl_Process.__mro__:
         if "minTime" in klass.__dict__:
             descriptor = klass.__dict__["minTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_iritpdl::process_has_maxTime():
-    assert hasattr(iritpdl::Process, "maxTime")
+def test_iritpdl_process_has_name():
+    assert hasattr(iritpdl_Process, "name")
     descriptor = None
-    for klass in iritpdl::Process.__mro__:
-        if "maxTime" in klass.__dict__:
-            descriptor = klass.__dict__["maxTime"]
+    for klass in iritpdl_Process.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -276,9 +276,9 @@ def test_worksequencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in WorkSequenceType]
     expected_literals = [
-        "startToStart",
-        "finishToFinish",
         "startToFinish",
+        "finishToFinish",
+        "startToStart",
         "finishToStart",
     ]
     # Check that all expected literals exist
@@ -297,86 +297,80 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-iritpdl::Resource_strategy = st.builds(
-    iritpdl::Resource,
+iritpdl_Resource_strategy = st.builds(
+    iritpdl_Resource,
     occurrences=
         st.integers()
 )
-iritpdl::ResourceConf_strategy = st.builds(
-    iritpdl::ResourceConf,
+iritpdl_ResourceConf_strategy = st.builds(
+    iritpdl_ResourceConf,
     name=
         safe_text
 )
 ProcessElement_strategy = st.builds(
     ProcessElement,
 )
-iritpdl::WorkSequence_strategy = st.builds(
-    iritpdl::WorkSequence,
+iritpdl_WorkSequence_strategy = st.builds(
+    iritpdl_WorkSequence,
     linkType=
         safe_text
 )
-iritpdl::WorkDefinition_strategy = st.builds(
-    iritpdl::WorkDefinition,
-    maxTime=
-        st.integers(),
+iritpdl_WorkDefinition_strategy = st.builds(
+    iritpdl_WorkDefinition,
     minTime=
+        st.integers(),
+    name=
+        safe_text,
+    maxTime=
+        st.integers()
+)
+iritpdl_ResourceType_strategy = st.builds(
+    iritpdl_ResourceType,
+    occurrences=
         st.integers(),
     name=
         safe_text
 )
-iritpdl::ResourceType_strategy = st.builds(
-    iritpdl::ResourceType,
-    name=
-        safe_text,
-    occurrences=
-        st.integers()
-)
-iritpdl::Guidance_strategy = st.builds(
-    iritpdl::Guidance,
+iritpdl_Guidance_strategy = st.builds(
+    iritpdl_Guidance,
     text=
         safe_text
 )
-iritpdl::ProcessElement_strategy = st.builds(
-    iritpdl::ProcessElement,
+iritpdl_ProcessElement_strategy = st.builds(
+    iritpdl_ProcessElement,
 )
-iritpdl::Process_strategy = st.builds(
-    iritpdl::Process,
-    name=
-        safe_text,
+iritpdl_Process_strategy = st.builds(
+    iritpdl_Process,
+    maxTime=
+        st.integers(),
     minTime=
         st.integers(),
-    maxTime=
-        st.integers()
+    name=
+        safe_text
 )
 
-@given(instance=iritpdl::Resource_strategy)
+@given(instance=iritpdl_Resource_strategy)
 @settings(max_examples=50)
-def test_iritpdl::resource_instantiation(instance):
-    assert isinstance(instance, iritpdl::Resource)
-
-@given(instance=iritpdl::Resource_strategy)
-def test_iritpdl::resource_occurrences_type(instance):
-    assert isinstance(instance.occurrences, int)
+def test_iritpdl_resource_instantiation(instance):
+    assert isinstance(instance, iritpdl_Resource)
 
 
-@given(instance=iritpdl::Resource_strategy)
-def test_iritpdl::resource_occurrences_setter(instance):
+
+@given(instance=iritpdl_Resource_strategy)
+def test_iritpdl_resource_occurrences_setter(instance):
     original = instance.occurrences
     instance.occurrences = original
     assert instance.occurrences == original
 
-@given(instance=iritpdl::ResourceConf_strategy)
+@given(instance=iritpdl_ResourceConf_strategy)
 @settings(max_examples=50)
-def test_iritpdl::resourceconf_instantiation(instance):
-    assert isinstance(instance, iritpdl::ResourceConf)
-
-@given(instance=iritpdl::ResourceConf_strategy)
-def test_iritpdl::resourceconf_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iritpdl_resourceconf_instantiation(instance):
+    assert isinstance(instance, iritpdl_ResourceConf)
 
 
-@given(instance=iritpdl::ResourceConf_strategy)
-def test_iritpdl::resourceconf_name_setter(instance):
+
+@given(instance=iritpdl_ResourceConf_strategy)
+def test_iritpdl_resourceconf_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -386,142 +380,112 @@ def test_iritpdl::resourceconf_name_setter(instance):
 def test_processelement_instantiation(instance):
     assert isinstance(instance, ProcessElement)
 
-@given(instance=iritpdl::WorkSequence_strategy)
+@given(instance=iritpdl_WorkSequence_strategy)
 @settings(max_examples=50)
-def test_iritpdl::worksequence_instantiation(instance):
-    assert isinstance(instance, iritpdl::WorkSequence)
-
-@given(instance=iritpdl::WorkSequence_strategy)
-def test_iritpdl::worksequence_linkType_type(instance):
-    assert isinstance(instance.linkType, str)
+def test_iritpdl_worksequence_instantiation(instance):
+    assert isinstance(instance, iritpdl_WorkSequence)
 
 
-@given(instance=iritpdl::WorkSequence_strategy)
-def test_iritpdl::worksequence_linkType_setter(instance):
+
+@given(instance=iritpdl_WorkSequence_strategy)
+def test_iritpdl_worksequence_linkType_setter(instance):
     original = instance.linkType
     instance.linkType = original
     assert instance.linkType == original
 
-@given(instance=iritpdl::WorkDefinition_strategy)
+@given(instance=iritpdl_WorkDefinition_strategy)
 @settings(max_examples=50)
-def test_iritpdl::workdefinition_instantiation(instance):
-    assert isinstance(instance, iritpdl::WorkDefinition)
-
-@given(instance=iritpdl::WorkDefinition_strategy)
-def test_iritpdl::workdefinition_maxTime_type(instance):
-    assert isinstance(instance.maxTime, int)
+def test_iritpdl_workdefinition_instantiation(instance):
+    assert isinstance(instance, iritpdl_WorkDefinition)
 
 
-@given(instance=iritpdl::WorkDefinition_strategy)
-def test_iritpdl::workdefinition_maxTime_setter(instance):
-    original = instance.maxTime
-    instance.maxTime = original
-    assert instance.maxTime == original
 
-@given(instance=iritpdl::WorkDefinition_strategy)
-def test_iritpdl::workdefinition_minTime_type(instance):
-    assert isinstance(instance.minTime, int)
-
-
-@given(instance=iritpdl::WorkDefinition_strategy)
-def test_iritpdl::workdefinition_minTime_setter(instance):
+@given(instance=iritpdl_WorkDefinition_strategy)
+def test_iritpdl_workdefinition_minTime_setter(instance):
     original = instance.minTime
     instance.minTime = original
     assert instance.minTime == original
 
-@given(instance=iritpdl::WorkDefinition_strategy)
-def test_iritpdl::workdefinition_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=iritpdl::WorkDefinition_strategy)
-def test_iritpdl::workdefinition_name_setter(instance):
+@given(instance=iritpdl_WorkDefinition_strategy)
+def test_iritpdl_workdefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iritpdl::ResourceType_strategy)
+
+
+@given(instance=iritpdl_WorkDefinition_strategy)
+def test_iritpdl_workdefinition_maxTime_setter(instance):
+    original = instance.maxTime
+    instance.maxTime = original
+    assert instance.maxTime == original
+
+@given(instance=iritpdl_ResourceType_strategy)
 @settings(max_examples=50)
-def test_iritpdl::resourcetype_instantiation(instance):
-    assert isinstance(instance, iritpdl::ResourceType)
-
-@given(instance=iritpdl::ResourceType_strategy)
-def test_iritpdl::resourcetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iritpdl_resourcetype_instantiation(instance):
+    assert isinstance(instance, iritpdl_ResourceType)
 
 
-@given(instance=iritpdl::ResourceType_strategy)
-def test_iritpdl::resourcetype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=iritpdl::ResourceType_strategy)
-def test_iritpdl::resourcetype_occurrences_type(instance):
-    assert isinstance(instance.occurrences, int)
-
-
-@given(instance=iritpdl::ResourceType_strategy)
-def test_iritpdl::resourcetype_occurrences_setter(instance):
+@given(instance=iritpdl_ResourceType_strategy)
+def test_iritpdl_resourcetype_occurrences_setter(instance):
     original = instance.occurrences
     instance.occurrences = original
     assert instance.occurrences == original
 
-@given(instance=iritpdl::Guidance_strategy)
-@settings(max_examples=50)
-def test_iritpdl::guidance_instantiation(instance):
-    assert isinstance(instance, iritpdl::Guidance)
-
-@given(instance=iritpdl::Guidance_strategy)
-def test_iritpdl::guidance_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=iritpdl::Guidance_strategy)
-def test_iritpdl::guidance_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=iritpdl::ProcessElement_strategy)
-@settings(max_examples=50)
-def test_iritpdl::processelement_instantiation(instance):
-    assert isinstance(instance, iritpdl::ProcessElement)
-
-@given(instance=iritpdl::Process_strategy)
-@settings(max_examples=50)
-def test_iritpdl::process_instantiation(instance):
-    assert isinstance(instance, iritpdl::Process)
-
-@given(instance=iritpdl::Process_strategy)
-def test_iritpdl::process_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=iritpdl::Process_strategy)
-def test_iritpdl::process_name_setter(instance):
+@given(instance=iritpdl_ResourceType_strategy)
+def test_iritpdl_resourcetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iritpdl::Process_strategy)
-def test_iritpdl::process_minTime_type(instance):
-    assert isinstance(instance.minTime, int)
+@given(instance=iritpdl_Guidance_strategy)
+@settings(max_examples=50)
+def test_iritpdl_guidance_instantiation(instance):
+    assert isinstance(instance, iritpdl_Guidance)
 
 
-@given(instance=iritpdl::Process_strategy)
-def test_iritpdl::process_minTime_setter(instance):
+
+@given(instance=iritpdl_Guidance_strategy)
+def test_iritpdl_guidance_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=iritpdl_ProcessElement_strategy)
+@settings(max_examples=50)
+def test_iritpdl_processelement_instantiation(instance):
+    assert isinstance(instance, iritpdl_ProcessElement)
+
+@given(instance=iritpdl_Process_strategy)
+@settings(max_examples=50)
+def test_iritpdl_process_instantiation(instance):
+    assert isinstance(instance, iritpdl_Process)
+
+
+
+@given(instance=iritpdl_Process_strategy)
+def test_iritpdl_process_maxTime_setter(instance):
+    original = instance.maxTime
+    instance.maxTime = original
+    assert instance.maxTime == original
+
+
+
+@given(instance=iritpdl_Process_strategy)
+def test_iritpdl_process_minTime_setter(instance):
     original = instance.minTime
     instance.minTime = original
     assert instance.minTime == original
 
-@given(instance=iritpdl::Process_strategy)
-def test_iritpdl::process_maxTime_type(instance):
-    assert isinstance(instance.maxTime, int)
 
 
-@given(instance=iritpdl::Process_strategy)
-def test_iritpdl::process_maxTime_setter(instance):
-    original = instance.maxTime
-    instance.maxTime = original
-    assert instance.maxTime == original
+@given(instance=iritpdl_Process_strategy)
+def test_iritpdl_process_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

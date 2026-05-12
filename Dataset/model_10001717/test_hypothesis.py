@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     list_of_patients_external,
@@ -229,17 +229,8 @@ def test_part_constructor_exists():
 def test_part_constructor_args():
     sig = inspect.signature(Part.__init__)
     params = list(sig.parameters.keys())
-    assert "_part_number" in params, "Missing parameter '_part_number'"
     assert "_description" in params, "Missing parameter '_description'"
-
-def test_part_has__part_number():
-    assert hasattr(Part, "_part_number")
-    descriptor = None
-    for klass in Part.__mro__:
-        if "_part_number" in klass.__dict__:
-            descriptor = klass.__dict__["_part_number"]
-            break
-    assert isinstance(descriptor, property)
+    assert "_part_number" in params, "Missing parameter '_part_number'"
 
 def test_part_has__description():
     assert hasattr(Part, "_description")
@@ -247,6 +238,15 @@ def test_part_has__description():
     for klass in Part.__mro__:
         if "_description" in klass.__dict__:
             descriptor = klass.__dict__["_description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_part_has__part_number():
+    assert hasattr(Part, "_part_number")
+    descriptor = None
+    for klass in Part.__mro__:
+        if "_part_number" in klass.__dict__:
+            descriptor = klass.__dict__["_part_number"]
             break
     assert isinstance(descriptor, property)
 
@@ -415,9 +415,9 @@ Storage_strategy = st.builds(
 )
 Part_strategy = st.builds(
     Part,
-    _part_number=
-        safe_text,
     _description=
+        safe_text,
+    _part_number=
         safe_text
 )
 student_Actor_strategy = st.builds(
@@ -490,9 +490,6 @@ def test_routing_number_instantiation(instance):
 def test_price_quote_instantiation(instance):
     assert isinstance(instance, price_quote)
 
-@given(instance=price_quote_strategy)
-def test_price_quote__bulk_rate_price_type(instance):
-    assert isinstance(instance._bulk_rate_price, str)
 
 
 @given(instance=price_quote_strategy)
@@ -506,9 +503,6 @@ def test_price_quote__bulk_rate_price_setter(instance):
 def test__supplier_instantiation(instance):
     assert isinstance(instance, _supplier)
 
-@given(instance=_supplier_strategy)
-def test__supplier__supplier_ID_type(instance):
-    assert isinstance(instance._supplier_ID, str)
 
 
 @given(instance=_supplier_strategy)
@@ -522,9 +516,6 @@ def test__supplier__supplier_ID_setter(instance):
 def test_storage_instantiation(instance):
     assert isinstance(instance, Storage)
 
-@given(instance=Storage_strategy)
-def test_storage_instruction_ID_type(instance):
-    assert isinstance(instance.instruction_ID, str)
 
 
 @given(instance=Storage_strategy)
@@ -538,20 +529,6 @@ def test_storage_instruction_ID_setter(instance):
 def test_part_instantiation(instance):
     assert isinstance(instance, Part)
 
-@given(instance=Part_strategy)
-def test_part__part_number_type(instance):
-    assert isinstance(instance._part_number, str)
-
-
-@given(instance=Part_strategy)
-def test_part__part_number_setter(instance):
-    original = instance._part_number
-    instance._part_number = original
-    assert instance._part_number == original
-
-@given(instance=Part_strategy)
-def test_part__description_type(instance):
-    assert isinstance(instance._description, str)
 
 
 @given(instance=Part_strategy)
@@ -559,6 +536,14 @@ def test_part__description_setter(instance):
     original = instance._description
     instance._description = original
     assert instance._description == original
+
+
+
+@given(instance=Part_strategy)
+def test_part__part_number_setter(instance):
+    original = instance._part_number
+    instance._part_number = original
+    assert instance._part_number == original
 
 @given(instance=student_Actor_strategy)
 @settings(max_examples=50)

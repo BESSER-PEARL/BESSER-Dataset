@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dcmddandroid::EVisibility,
+from python_code import (
+    dcmddandroid_EVisibility,
     Association,
-    dcmddandroid::Composition,
-    dcmddandroid::Agregation,
+    dcmddandroid_Composition,
+    dcmddandroid_Agregation,
     ClassElement,
     NamedElement,
-    dcmddandroid::Diagram,
-    dcmddandroid::EnumValue,
-    dcmddandroid::Parameter,
-    dcmddandroid::ModelElement,
+    dcmddandroid_ModelElement,
+    dcmddandroid_Parameter,
+    dcmddandroid_EnumValue,
+    dcmddandroid_Diagram,
     AbstractClass,
-    dcmddandroid::CycleClass,
-    dcmddandroid::Class,
-    dcmddandroid::Method,
-    dcmddandroid::Attribute,
-    dcmddandroid::PersistentClass,
+    dcmddandroid_CycleClass,
+    dcmddandroid_Class,
+    dcmddandroid_Method,
+    dcmddandroid_Attribute,
+    dcmddandroid_PersistentClass,
     EVisibility,
-    dcmddandroid::ClassElement,
+    dcmddandroid_ClassElement,
     ModelElement,
-    dcmddandroid::Enum,
-    dcmddandroid::Interface,
-    dcmddandroid::Association,
-    dcmddandroid::Implements,
-    dcmddandroid::AbstractClass,
-    dcmddandroid::NamedElement,
+    dcmddandroid_Interface,
+    dcmddandroid_Association,
+    dcmddandroid_Implements,
+    dcmddandroid_Enum,
+    dcmddandroid_AbstractClass,
+    dcmddandroid_NamedElement,
     Visibility,
 )
 
@@ -40,23 +40,23 @@ from classes import (
 
 
 
-def test_dcmddandroid::evisibility_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::EVisibility)
+def test_dcmddandroid_evisibility_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_EVisibility)
 
 
-def test_dcmddandroid::evisibility_constructor_exists():
-    assert callable(dcmddandroid::EVisibility.__init__)
+def test_dcmddandroid_evisibility_constructor_exists():
+    assert callable(dcmddandroid_EVisibility.__init__)
 
 
-def test_dcmddandroid::evisibility_constructor_args():
-    sig = inspect.signature(dcmddandroid::EVisibility.__init__)
+def test_dcmddandroid_evisibility_constructor_args():
+    sig = inspect.signature(dcmddandroid_EVisibility.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_dcmddandroid::evisibility_has_visibility():
-    assert hasattr(dcmddandroid::EVisibility, "visibility")
+def test_dcmddandroid_evisibility_has_visibility():
+    assert hasattr(dcmddandroid_EVisibility, "visibility")
     descriptor = None
-    for klass in dcmddandroid::EVisibility.__mro__:
+    for klass in dcmddandroid_EVisibility.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -78,30 +78,30 @@ def test_association_constructor_args():
 
 
 
-def test_dcmddandroid::composition_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Composition)
+def test_dcmddandroid_composition_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Composition)
 
 
-def test_dcmddandroid::composition_constructor_exists():
-    assert callable(dcmddandroid::Composition.__init__)
+def test_dcmddandroid_composition_constructor_exists():
+    assert callable(dcmddandroid_Composition.__init__)
 
 
-def test_dcmddandroid::composition_constructor_args():
-    sig = inspect.signature(dcmddandroid::Composition.__init__)
+def test_dcmddandroid_composition_constructor_args():
+    sig = inspect.signature(dcmddandroid_Composition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcmddandroid::agregation_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Agregation)
+def test_dcmddandroid_agregation_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Agregation)
 
 
-def test_dcmddandroid::agregation_constructor_exists():
-    assert callable(dcmddandroid::Agregation.__init__)
+def test_dcmddandroid_agregation_constructor_exists():
+    assert callable(dcmddandroid_Agregation.__init__)
 
 
-def test_dcmddandroid::agregation_constructor_args():
-    sig = inspect.signature(dcmddandroid::Agregation.__init__)
+def test_dcmddandroid_agregation_constructor_args():
+    sig = inspect.signature(dcmddandroid_Agregation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,61 +134,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_dcmddandroid::diagram_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Diagram)
+def test_dcmddandroid_modelelement_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_ModelElement)
 
 
-def test_dcmddandroid::diagram_constructor_exists():
-    assert callable(dcmddandroid::Diagram.__init__)
+def test_dcmddandroid_modelelement_constructor_exists():
+    assert callable(dcmddandroid_ModelElement.__init__)
 
 
-def test_dcmddandroid::diagram_constructor_args():
-    sig = inspect.signature(dcmddandroid::Diagram.__init__)
+def test_dcmddandroid_modelelement_constructor_args():
+    sig = inspect.signature(dcmddandroid_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcmddandroid::enumvalue_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::EnumValue)
+def test_dcmddandroid_parameter_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Parameter)
 
 
-def test_dcmddandroid::enumvalue_constructor_exists():
-    assert callable(dcmddandroid::EnumValue.__init__)
+def test_dcmddandroid_parameter_constructor_exists():
+    assert callable(dcmddandroid_Parameter.__init__)
 
 
-def test_dcmddandroid::enumvalue_constructor_args():
-    sig = inspect.signature(dcmddandroid::EnumValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "intValue" in params, "Missing parameter 'intValue'"
-
-def test_dcmddandroid::enumvalue_has_intValue():
-    assert hasattr(dcmddandroid::EnumValue, "intValue")
-    descriptor = None
-    for klass in dcmddandroid::EnumValue.__mro__:
-        if "intValue" in klass.__dict__:
-            descriptor = klass.__dict__["intValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dcmddandroid::parameter_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Parameter)
-
-
-def test_dcmddandroid::parameter_constructor_exists():
-    assert callable(dcmddandroid::Parameter.__init__)
-
-
-def test_dcmddandroid::parameter_constructor_args():
-    sig = inspect.signature(dcmddandroid::Parameter.__init__)
+def test_dcmddandroid_parameter_constructor_args():
+    sig = inspect.signature(dcmddandroid_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_dcmddandroid::parameter_has_type():
-    assert hasattr(dcmddandroid::Parameter, "type")
+def test_dcmddandroid_parameter_has_type():
+    assert hasattr(dcmddandroid_Parameter, "type")
     descriptor = None
-    for klass in dcmddandroid::Parameter.__mro__:
+    for klass in dcmddandroid_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -196,16 +172,40 @@ def test_dcmddandroid::parameter_has_type():
 
 
 
-def test_dcmddandroid::modelelement_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::ModelElement)
+def test_dcmddandroid_enumvalue_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_EnumValue)
 
 
-def test_dcmddandroid::modelelement_constructor_exists():
-    assert callable(dcmddandroid::ModelElement.__init__)
+def test_dcmddandroid_enumvalue_constructor_exists():
+    assert callable(dcmddandroid_EnumValue.__init__)
 
 
-def test_dcmddandroid::modelelement_constructor_args():
-    sig = inspect.signature(dcmddandroid::ModelElement.__init__)
+def test_dcmddandroid_enumvalue_constructor_args():
+    sig = inspect.signature(dcmddandroid_EnumValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "intValue" in params, "Missing parameter 'intValue'"
+
+def test_dcmddandroid_enumvalue_has_intValue():
+    assert hasattr(dcmddandroid_EnumValue, "intValue")
+    descriptor = None
+    for klass in dcmddandroid_EnumValue.__mro__:
+        if "intValue" in klass.__dict__:
+            descriptor = klass.__dict__["intValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dcmddandroid_diagram_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Diagram)
+
+
+def test_dcmddandroid_diagram_constructor_exists():
+    assert callable(dcmddandroid_Diagram.__init__)
+
+
+def test_dcmddandroid_diagram_constructor_args():
+    sig = inspect.signature(dcmddandroid_Diagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,61 +224,61 @@ def test_abstractclass_constructor_args():
 
 
 
-def test_dcmddandroid::cycleclass_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::CycleClass)
+def test_dcmddandroid_cycleclass_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_CycleClass)
 
 
-def test_dcmddandroid::cycleclass_constructor_exists():
-    assert callable(dcmddandroid::CycleClass.__init__)
+def test_dcmddandroid_cycleclass_constructor_exists():
+    assert callable(dcmddandroid_CycleClass.__init__)
 
 
-def test_dcmddandroid::cycleclass_constructor_args():
-    sig = inspect.signature(dcmddandroid::CycleClass.__init__)
+def test_dcmddandroid_cycleclass_constructor_args():
+    sig = inspect.signature(dcmddandroid_CycleClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcmddandroid::class_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Class)
+def test_dcmddandroid_class_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Class)
 
 
-def test_dcmddandroid::class_constructor_exists():
-    assert callable(dcmddandroid::Class.__init__)
+def test_dcmddandroid_class_constructor_exists():
+    assert callable(dcmddandroid_Class.__init__)
 
 
-def test_dcmddandroid::class_constructor_args():
-    sig = inspect.signature(dcmddandroid::Class.__init__)
+def test_dcmddandroid_class_constructor_args():
+    sig = inspect.signature(dcmddandroid_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcmddandroid::method_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Method)
+def test_dcmddandroid_method_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Method)
 
 
-def test_dcmddandroid::method_constructor_exists():
-    assert callable(dcmddandroid::Method.__init__)
+def test_dcmddandroid_method_constructor_exists():
+    assert callable(dcmddandroid_Method.__init__)
 
 
-def test_dcmddandroid::method_constructor_args():
-    sig = inspect.signature(dcmddandroid::Method.__init__)
+def test_dcmddandroid_method_constructor_args():
+    sig = inspect.signature(dcmddandroid_Method.__init__)
     params = list(sig.parameters.keys())
     assert "returns" in params, "Missing parameter 'returns'"
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_dcmddandroid::method_has_returns():
-    assert hasattr(dcmddandroid::Method, "returns")
+def test_dcmddandroid_method_has_returns():
+    assert hasattr(dcmddandroid_Method, "returns")
     descriptor = None
-    for klass in dcmddandroid::Method.__mro__:
+    for klass in dcmddandroid_Method.__mro__:
         if "returns" in klass.__dict__:
             descriptor = klass.__dict__["returns"]
             break
     assert isinstance(descriptor, property)
 
-def test_dcmddandroid::method_has_isAbstract():
-    assert hasattr(dcmddandroid::Method, "isAbstract")
+def test_dcmddandroid_method_has_isAbstract():
+    assert hasattr(dcmddandroid_Method, "isAbstract")
     descriptor = None
-    for klass in dcmddandroid::Method.__mro__:
+    for klass in dcmddandroid_Method.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -286,43 +286,43 @@ def test_dcmddandroid::method_has_isAbstract():
 
 
 
-def test_dcmddandroid::attribute_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Attribute)
+def test_dcmddandroid_attribute_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Attribute)
 
 
-def test_dcmddandroid::attribute_constructor_exists():
-    assert callable(dcmddandroid::Attribute.__init__)
+def test_dcmddandroid_attribute_constructor_exists():
+    assert callable(dcmddandroid_Attribute.__init__)
 
 
-def test_dcmddandroid::attribute_constructor_args():
-    sig = inspect.signature(dcmddandroid::Attribute.__init__)
+def test_dcmddandroid_attribute_constructor_args():
+    sig = inspect.signature(dcmddandroid_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
     assert "secured" in params, "Missing parameter 'secured'"
 
-def test_dcmddandroid::attribute_has_defaultValue():
-    assert hasattr(dcmddandroid::Attribute, "defaultValue")
+def test_dcmddandroid_attribute_has_type():
+    assert hasattr(dcmddandroid_Attribute, "type")
     descriptor = None
-    for klass in dcmddandroid::Attribute.__mro__:
-        if "defaultValue" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dcmddandroid::attribute_has_type():
-    assert hasattr(dcmddandroid::Attribute, "type")
-    descriptor = None
-    for klass in dcmddandroid::Attribute.__mro__:
+    for klass in dcmddandroid_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_dcmddandroid::attribute_has_secured():
-    assert hasattr(dcmddandroid::Attribute, "secured")
+def test_dcmddandroid_attribute_has_defaultValue():
+    assert hasattr(dcmddandroid_Attribute, "defaultValue")
     descriptor = None
-    for klass in dcmddandroid::Attribute.__mro__:
+    for klass in dcmddandroid_Attribute.__mro__:
+        if "defaultValue" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dcmddandroid_attribute_has_secured():
+    assert hasattr(dcmddandroid_Attribute, "secured")
+    descriptor = None
+    for klass in dcmddandroid_Attribute.__mro__:
         if "secured" in klass.__dict__:
             descriptor = klass.__dict__["secured"]
             break
@@ -330,16 +330,16 @@ def test_dcmddandroid::attribute_has_secured():
 
 
 
-def test_dcmddandroid::persistentclass_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::PersistentClass)
+def test_dcmddandroid_persistentclass_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_PersistentClass)
 
 
-def test_dcmddandroid::persistentclass_constructor_exists():
-    assert callable(dcmddandroid::PersistentClass.__init__)
+def test_dcmddandroid_persistentclass_constructor_exists():
+    assert callable(dcmddandroid_PersistentClass.__init__)
 
 
-def test_dcmddandroid::persistentclass_constructor_args():
-    sig = inspect.signature(dcmddandroid::PersistentClass.__init__)
+def test_dcmddandroid_persistentclass_constructor_args():
+    sig = inspect.signature(dcmddandroid_PersistentClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -358,35 +358,35 @@ def test_evisibility_constructor_args():
 
 
 
-def test_dcmddandroid::classelement_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::ClassElement)
+def test_dcmddandroid_classelement_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_ClassElement)
 
 
-def test_dcmddandroid::classelement_constructor_exists():
-    assert callable(dcmddandroid::ClassElement.__init__)
+def test_dcmddandroid_classelement_constructor_exists():
+    assert callable(dcmddandroid_ClassElement.__init__)
 
 
-def test_dcmddandroid::classelement_constructor_args():
-    sig = inspect.signature(dcmddandroid::ClassElement.__init__)
+def test_dcmddandroid_classelement_constructor_args():
+    sig = inspect.signature(dcmddandroid_ClassElement.__init__)
     params = list(sig.parameters.keys())
-    assert "final" in params, "Missing parameter 'final'"
     assert "static" in params, "Missing parameter 'static'"
+    assert "final" in params, "Missing parameter 'final'"
 
-def test_dcmddandroid::classelement_has_final():
-    assert hasattr(dcmddandroid::ClassElement, "final")
+def test_dcmddandroid_classelement_has_static():
+    assert hasattr(dcmddandroid_ClassElement, "static")
     descriptor = None
-    for klass in dcmddandroid::ClassElement.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
+    for klass in dcmddandroid_ClassElement.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
-def test_dcmddandroid::classelement_has_static():
-    assert hasattr(dcmddandroid::ClassElement, "static")
+def test_dcmddandroid_classelement_has_final():
+    assert hasattr(dcmddandroid_ClassElement, "final")
     descriptor = None
-    for klass in dcmddandroid::ClassElement.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
+    for klass in dcmddandroid_ClassElement.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
             break
     assert isinstance(descriptor, property)
 
@@ -406,139 +406,139 @@ def test_modelelement_constructor_args():
 
 
 
-def test_dcmddandroid::enum_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Enum)
+def test_dcmddandroid_interface_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Interface)
 
 
-def test_dcmddandroid::enum_constructor_exists():
-    assert callable(dcmddandroid::Enum.__init__)
+def test_dcmddandroid_interface_constructor_exists():
+    assert callable(dcmddandroid_Interface.__init__)
 
 
-def test_dcmddandroid::enum_constructor_args():
-    sig = inspect.signature(dcmddandroid::Enum.__init__)
+def test_dcmddandroid_interface_constructor_args():
+    sig = inspect.signature(dcmddandroid_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcmddandroid::interface_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Interface)
+def test_dcmddandroid_association_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Association)
 
 
-def test_dcmddandroid::interface_constructor_exists():
-    assert callable(dcmddandroid::Interface.__init__)
+def test_dcmddandroid_association_constructor_exists():
+    assert callable(dcmddandroid_Association.__init__)
 
 
-def test_dcmddandroid::interface_constructor_args():
-    sig = inspect.signature(dcmddandroid::Interface.__init__)
+def test_dcmddandroid_association_constructor_args():
+    sig = inspect.signature(dcmddandroid_Association.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_dcmddandroid::association_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Association)
-
-
-def test_dcmddandroid::association_constructor_exists():
-    assert callable(dcmddandroid::Association.__init__)
-
-
-def test_dcmddandroid::association_constructor_args():
-    sig = inspect.signature(dcmddandroid::Association.__init__)
-    params = list(sig.parameters.keys())
-    assert "minMultiplicityTarget" in params, "Missing parameter 'minMultiplicityTarget'"
+    assert "rolSource" in params, "Missing parameter 'rolSource'"
     assert "minMultiplicitySource" in params, "Missing parameter 'minMultiplicitySource'"
+    assert "maxMultiplicityTarget" in params, "Missing parameter 'maxMultiplicityTarget'"
     assert "maxMultiplicitySource" in params, "Missing parameter 'maxMultiplicitySource'"
     assert "rolTarget" in params, "Missing parameter 'rolTarget'"
-    assert "maxMultiplicityTarget" in params, "Missing parameter 'maxMultiplicityTarget'"
-    assert "rolSource" in params, "Missing parameter 'rolSource'"
+    assert "minMultiplicityTarget" in params, "Missing parameter 'minMultiplicityTarget'"
 
-def test_dcmddandroid::association_has_minMultiplicityTarget():
-    assert hasattr(dcmddandroid::Association, "minMultiplicityTarget")
+def test_dcmddandroid_association_has_rolSource():
+    assert hasattr(dcmddandroid_Association, "rolSource")
     descriptor = None
-    for klass in dcmddandroid::Association.__mro__:
-        if "minMultiplicityTarget" in klass.__dict__:
-            descriptor = klass.__dict__["minMultiplicityTarget"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dcmddandroid::association_has_minMultiplicitySource():
-    assert hasattr(dcmddandroid::Association, "minMultiplicitySource")
-    descriptor = None
-    for klass in dcmddandroid::Association.__mro__:
-        if "minMultiplicitySource" in klass.__dict__:
-            descriptor = klass.__dict__["minMultiplicitySource"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dcmddandroid::association_has_maxMultiplicitySource():
-    assert hasattr(dcmddandroid::Association, "maxMultiplicitySource")
-    descriptor = None
-    for klass in dcmddandroid::Association.__mro__:
-        if "maxMultiplicitySource" in klass.__dict__:
-            descriptor = klass.__dict__["maxMultiplicitySource"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dcmddandroid::association_has_rolTarget():
-    assert hasattr(dcmddandroid::Association, "rolTarget")
-    descriptor = None
-    for klass in dcmddandroid::Association.__mro__:
-        if "rolTarget" in klass.__dict__:
-            descriptor = klass.__dict__["rolTarget"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dcmddandroid::association_has_maxMultiplicityTarget():
-    assert hasattr(dcmddandroid::Association, "maxMultiplicityTarget")
-    descriptor = None
-    for klass in dcmddandroid::Association.__mro__:
-        if "maxMultiplicityTarget" in klass.__dict__:
-            descriptor = klass.__dict__["maxMultiplicityTarget"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dcmddandroid::association_has_rolSource():
-    assert hasattr(dcmddandroid::Association, "rolSource")
-    descriptor = None
-    for klass in dcmddandroid::Association.__mro__:
+    for klass in dcmddandroid_Association.__mro__:
         if "rolSource" in klass.__dict__:
             descriptor = klass.__dict__["rolSource"]
             break
     assert isinstance(descriptor, property)
 
+def test_dcmddandroid_association_has_minMultiplicitySource():
+    assert hasattr(dcmddandroid_Association, "minMultiplicitySource")
+    descriptor = None
+    for klass in dcmddandroid_Association.__mro__:
+        if "minMultiplicitySource" in klass.__dict__:
+            descriptor = klass.__dict__["minMultiplicitySource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dcmddandroid_association_has_maxMultiplicityTarget():
+    assert hasattr(dcmddandroid_Association, "maxMultiplicityTarget")
+    descriptor = None
+    for klass in dcmddandroid_Association.__mro__:
+        if "maxMultiplicityTarget" in klass.__dict__:
+            descriptor = klass.__dict__["maxMultiplicityTarget"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dcmddandroid_association_has_maxMultiplicitySource():
+    assert hasattr(dcmddandroid_Association, "maxMultiplicitySource")
+    descriptor = None
+    for klass in dcmddandroid_Association.__mro__:
+        if "maxMultiplicitySource" in klass.__dict__:
+            descriptor = klass.__dict__["maxMultiplicitySource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dcmddandroid_association_has_rolTarget():
+    assert hasattr(dcmddandroid_Association, "rolTarget")
+    descriptor = None
+    for klass in dcmddandroid_Association.__mro__:
+        if "rolTarget" in klass.__dict__:
+            descriptor = klass.__dict__["rolTarget"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dcmddandroid_association_has_minMultiplicityTarget():
+    assert hasattr(dcmddandroid_Association, "minMultiplicityTarget")
+    descriptor = None
+    for klass in dcmddandroid_Association.__mro__:
+        if "minMultiplicityTarget" in klass.__dict__:
+            descriptor = klass.__dict__["minMultiplicityTarget"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dcmddandroid::implements_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::Implements)
+
+def test_dcmddandroid_implements_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Implements)
 
 
-def test_dcmddandroid::implements_constructor_exists():
-    assert callable(dcmddandroid::Implements.__init__)
+def test_dcmddandroid_implements_constructor_exists():
+    assert callable(dcmddandroid_Implements.__init__)
 
 
-def test_dcmddandroid::implements_constructor_args():
-    sig = inspect.signature(dcmddandroid::Implements.__init__)
+def test_dcmddandroid_implements_constructor_args():
+    sig = inspect.signature(dcmddandroid_Implements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dcmddandroid::abstractclass_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::AbstractClass)
+def test_dcmddandroid_enum_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_Enum)
 
 
-def test_dcmddandroid::abstractclass_constructor_exists():
-    assert callable(dcmddandroid::AbstractClass.__init__)
+def test_dcmddandroid_enum_constructor_exists():
+    assert callable(dcmddandroid_Enum.__init__)
 
 
-def test_dcmddandroid::abstractclass_constructor_args():
-    sig = inspect.signature(dcmddandroid::AbstractClass.__init__)
+def test_dcmddandroid_enum_constructor_args():
+    sig = inspect.signature(dcmddandroid_Enum.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dcmddandroid_abstractclass_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_AbstractClass)
+
+
+def test_dcmddandroid_abstractclass_constructor_exists():
+    assert callable(dcmddandroid_AbstractClass.__init__)
+
+
+def test_dcmddandroid_abstractclass_constructor_args():
+    sig = inspect.signature(dcmddandroid_AbstractClass.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_dcmddandroid::abstractclass_has_isAbstract():
-    assert hasattr(dcmddandroid::AbstractClass, "isAbstract")
+def test_dcmddandroid_abstractclass_has_isAbstract():
+    assert hasattr(dcmddandroid_AbstractClass, "isAbstract")
     descriptor = None
-    for klass in dcmddandroid::AbstractClass.__mro__:
+    for klass in dcmddandroid_AbstractClass.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -546,23 +546,23 @@ def test_dcmddandroid::abstractclass_has_isAbstract():
 
 
 
-def test_dcmddandroid::namedelement_is_not_abstract():
-    assert not inspect.isabstract(dcmddandroid::NamedElement)
+def test_dcmddandroid_namedelement_is_not_abstract():
+    assert not inspect.isabstract(dcmddandroid_NamedElement)
 
 
-def test_dcmddandroid::namedelement_constructor_exists():
-    assert callable(dcmddandroid::NamedElement.__init__)
+def test_dcmddandroid_namedelement_constructor_exists():
+    assert callable(dcmddandroid_NamedElement.__init__)
 
 
-def test_dcmddandroid::namedelement_constructor_args():
-    sig = inspect.signature(dcmddandroid::NamedElement.__init__)
+def test_dcmddandroid_namedelement_constructor_args():
+    sig = inspect.signature(dcmddandroid_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dcmddandroid::namedelement_has_name():
-    assert hasattr(dcmddandroid::NamedElement, "name")
+def test_dcmddandroid_namedelement_has_name():
+    assert hasattr(dcmddandroid_NamedElement, "name")
     descriptor = None
-    for klass in dcmddandroid::NamedElement.__mro__:
+    for klass in dcmddandroid_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -577,8 +577,8 @@ def test_visibility_has_all_literals():
     enum_literals = [lit.name for lit in Visibility]
     expected_literals = [
         "protected",
-        "public",
         "private",
+        "public",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -596,19 +596,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dcmddandroid::EVisibility_strategy = st.builds(
-    dcmddandroid::EVisibility,
+dcmddandroid_EVisibility_strategy = st.builds(
+    dcmddandroid_EVisibility,
     visibility=
         safe_text
 )
 Association_strategy = st.builds(
     Association,
 )
-dcmddandroid::Composition_strategy = st.builds(
-    dcmddandroid::Composition,
+dcmddandroid_Composition_strategy = st.builds(
+    dcmddandroid_Composition,
 )
-dcmddandroid::Agregation_strategy = st.builds(
-    dcmddandroid::Agregation,
+dcmddandroid_Agregation_strategy = st.builds(
+    dcmddandroid_Agregation,
 )
 ClassElement_strategy = st.builds(
     ClassElement,
@@ -616,110 +616,107 @@ ClassElement_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-dcmddandroid::Diagram_strategy = st.builds(
-    dcmddandroid::Diagram,
+dcmddandroid_ModelElement_strategy = st.builds(
+    dcmddandroid_ModelElement,
 )
-dcmddandroid::EnumValue_strategy = st.builds(
-    dcmddandroid::EnumValue,
-    intValue=
-        st.integers()
-)
-dcmddandroid::Parameter_strategy = st.builds(
-    dcmddandroid::Parameter,
+dcmddandroid_Parameter_strategy = st.builds(
+    dcmddandroid_Parameter,
     type=
         safe_text
 )
-dcmddandroid::ModelElement_strategy = st.builds(
-    dcmddandroid::ModelElement,
+dcmddandroid_EnumValue_strategy = st.builds(
+    dcmddandroid_EnumValue,
+    intValue=
+        st.integers()
+)
+dcmddandroid_Diagram_strategy = st.builds(
+    dcmddandroid_Diagram,
 )
 AbstractClass_strategy = st.builds(
     AbstractClass,
 )
-dcmddandroid::CycleClass_strategy = st.builds(
-    dcmddandroid::CycleClass,
+dcmddandroid_CycleClass_strategy = st.builds(
+    dcmddandroid_CycleClass,
 )
-dcmddandroid::Class_strategy = st.builds(
-    dcmddandroid::Class,
+dcmddandroid_Class_strategy = st.builds(
+    dcmddandroid_Class,
 )
-dcmddandroid::Method_strategy = st.builds(
-    dcmddandroid::Method,
+dcmddandroid_Method_strategy = st.builds(
+    dcmddandroid_Method,
     returns=
         safe_text,
     isAbstract=
         st.booleans()
 )
-dcmddandroid::Attribute_strategy = st.builds(
-    dcmddandroid::Attribute,
-    defaultValue=
-        safe_text,
+dcmddandroid_Attribute_strategy = st.builds(
+    dcmddandroid_Attribute,
     type=
+        safe_text,
+    defaultValue=
         safe_text,
     secured=
         safe_text
 )
-dcmddandroid::PersistentClass_strategy = st.builds(
-    dcmddandroid::PersistentClass,
+dcmddandroid_PersistentClass_strategy = st.builds(
+    dcmddandroid_PersistentClass,
 )
 EVisibility_strategy = st.builds(
     EVisibility,
 )
-dcmddandroid::ClassElement_strategy = st.builds(
-    dcmddandroid::ClassElement,
-    final=
-        st.booleans(),
+dcmddandroid_ClassElement_strategy = st.builds(
+    dcmddandroid_ClassElement,
     static=
+        st.booleans(),
+    final=
         st.booleans()
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-dcmddandroid::Enum_strategy = st.builds(
-    dcmddandroid::Enum,
+dcmddandroid_Interface_strategy = st.builds(
+    dcmddandroid_Interface,
 )
-dcmddandroid::Interface_strategy = st.builds(
-    dcmddandroid::Interface,
-)
-dcmddandroid::Association_strategy = st.builds(
-    dcmddandroid::Association,
-    minMultiplicityTarget=
-        st.integers(),
+dcmddandroid_Association_strategy = st.builds(
+    dcmddandroid_Association,
+    rolSource=
+        safe_text,
     minMultiplicitySource=
+        st.integers(),
+    maxMultiplicityTarget=
         st.integers(),
     maxMultiplicitySource=
         st.integers(),
     rolTarget=
         safe_text,
-    maxMultiplicityTarget=
-        st.integers(),
-    rolSource=
-        safe_text
+    minMultiplicityTarget=
+        st.integers()
 )
-dcmddandroid::Implements_strategy = st.builds(
-    dcmddandroid::Implements,
+dcmddandroid_Implements_strategy = st.builds(
+    dcmddandroid_Implements,
 )
-dcmddandroid::AbstractClass_strategy = st.builds(
-    dcmddandroid::AbstractClass,
+dcmddandroid_Enum_strategy = st.builds(
+    dcmddandroid_Enum,
+)
+dcmddandroid_AbstractClass_strategy = st.builds(
+    dcmddandroid_AbstractClass,
     isAbstract=
         st.booleans()
 )
-dcmddandroid::NamedElement_strategy = st.builds(
-    dcmddandroid::NamedElement,
+dcmddandroid_NamedElement_strategy = st.builds(
+    dcmddandroid_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=dcmddandroid::EVisibility_strategy)
+@given(instance=dcmddandroid_EVisibility_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::evisibility_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::EVisibility)
-
-@given(instance=dcmddandroid::EVisibility_strategy)
-def test_dcmddandroid::evisibility_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_dcmddandroid_evisibility_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_EVisibility)
 
 
-@given(instance=dcmddandroid::EVisibility_strategy)
-def test_dcmddandroid::evisibility_visibility_setter(instance):
+
+@given(instance=dcmddandroid_EVisibility_strategy)
+def test_dcmddandroid_evisibility_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
@@ -729,15 +726,15 @@ def test_dcmddandroid::evisibility_visibility_setter(instance):
 def test_association_instantiation(instance):
     assert isinstance(instance, Association)
 
-@given(instance=dcmddandroid::Composition_strategy)
+@given(instance=dcmddandroid_Composition_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::composition_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Composition)
+def test_dcmddandroid_composition_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Composition)
 
-@given(instance=dcmddandroid::Agregation_strategy)
+@given(instance=dcmddandroid_Agregation_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::agregation_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Agregation)
+def test_dcmddandroid_agregation_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Agregation)
 
 @given(instance=ClassElement_strategy)
 @settings(max_examples=50)
@@ -749,284 +746,233 @@ def test_classelement_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=dcmddandroid::Diagram_strategy)
+@given(instance=dcmddandroid_ModelElement_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::diagram_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Diagram)
+def test_dcmddandroid_modelelement_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_ModelElement)
 
-@given(instance=dcmddandroid::EnumValue_strategy)
+@given(instance=dcmddandroid_Parameter_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::enumvalue_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::EnumValue)
-
-@given(instance=dcmddandroid::EnumValue_strategy)
-def test_dcmddandroid::enumvalue_intValue_type(instance):
-    assert isinstance(instance.intValue, int)
+def test_dcmddandroid_parameter_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Parameter)
 
 
-@given(instance=dcmddandroid::EnumValue_strategy)
-def test_dcmddandroid::enumvalue_intValue_setter(instance):
-    original = instance.intValue
-    instance.intValue = original
-    assert instance.intValue == original
 
-@given(instance=dcmddandroid::Parameter_strategy)
-@settings(max_examples=50)
-def test_dcmddandroid::parameter_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Parameter)
-
-@given(instance=dcmddandroid::Parameter_strategy)
-def test_dcmddandroid::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=dcmddandroid::Parameter_strategy)
-def test_dcmddandroid::parameter_type_setter(instance):
+@given(instance=dcmddandroid_Parameter_strategy)
+def test_dcmddandroid_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=dcmddandroid::ModelElement_strategy)
+@given(instance=dcmddandroid_EnumValue_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::modelelement_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::ModelElement)
+def test_dcmddandroid_enumvalue_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_EnumValue)
+
+
+
+@given(instance=dcmddandroid_EnumValue_strategy)
+def test_dcmddandroid_enumvalue_intValue_setter(instance):
+    original = instance.intValue
+    instance.intValue = original
+    assert instance.intValue == original
+
+@given(instance=dcmddandroid_Diagram_strategy)
+@settings(max_examples=50)
+def test_dcmddandroid_diagram_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Diagram)
 
 @given(instance=AbstractClass_strategy)
 @settings(max_examples=50)
 def test_abstractclass_instantiation(instance):
     assert isinstance(instance, AbstractClass)
 
-@given(instance=dcmddandroid::CycleClass_strategy)
+@given(instance=dcmddandroid_CycleClass_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::cycleclass_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::CycleClass)
+def test_dcmddandroid_cycleclass_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_CycleClass)
 
-@given(instance=dcmddandroid::Class_strategy)
+@given(instance=dcmddandroid_Class_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::class_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Class)
+def test_dcmddandroid_class_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Class)
 
-@given(instance=dcmddandroid::Method_strategy)
+@given(instance=dcmddandroid_Method_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::method_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Method)
-
-@given(instance=dcmddandroid::Method_strategy)
-def test_dcmddandroid::method_returns_type(instance):
-    assert isinstance(instance.returns, str)
+def test_dcmddandroid_method_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Method)
 
 
-@given(instance=dcmddandroid::Method_strategy)
-def test_dcmddandroid::method_returns_setter(instance):
+
+@given(instance=dcmddandroid_Method_strategy)
+def test_dcmddandroid_method_returns_setter(instance):
     original = instance.returns
     instance.returns = original
     assert instance.returns == original
 
-@given(instance=dcmddandroid::Method_strategy)
-def test_dcmddandroid::method_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
 
 
-@given(instance=dcmddandroid::Method_strategy)
-def test_dcmddandroid::method_isAbstract_setter(instance):
+@given(instance=dcmddandroid_Method_strategy)
+def test_dcmddandroid_method_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=dcmddandroid::Attribute_strategy)
+@given(instance=dcmddandroid_Attribute_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::attribute_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Attribute)
-
-@given(instance=dcmddandroid::Attribute_strategy)
-def test_dcmddandroid::attribute_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
+def test_dcmddandroid_attribute_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Attribute)
 
 
-@given(instance=dcmddandroid::Attribute_strategy)
-def test_dcmddandroid::attribute_defaultValue_setter(instance):
-    original = instance.defaultValue
-    instance.defaultValue = original
-    assert instance.defaultValue == original
 
-@given(instance=dcmddandroid::Attribute_strategy)
-def test_dcmddandroid::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=dcmddandroid::Attribute_strategy)
-def test_dcmddandroid::attribute_type_setter(instance):
+@given(instance=dcmddandroid_Attribute_strategy)
+def test_dcmddandroid_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=dcmddandroid::Attribute_strategy)
-def test_dcmddandroid::attribute_secured_type(instance):
-    assert isinstance(instance.secured, str)
 
 
-@given(instance=dcmddandroid::Attribute_strategy)
-def test_dcmddandroid::attribute_secured_setter(instance):
+@given(instance=dcmddandroid_Attribute_strategy)
+def test_dcmddandroid_attribute_defaultValue_setter(instance):
+    original = instance.defaultValue
+    instance.defaultValue = original
+    assert instance.defaultValue == original
+
+
+
+@given(instance=dcmddandroid_Attribute_strategy)
+def test_dcmddandroid_attribute_secured_setter(instance):
     original = instance.secured
     instance.secured = original
     assert instance.secured == original
 
-@given(instance=dcmddandroid::PersistentClass_strategy)
+@given(instance=dcmddandroid_PersistentClass_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::persistentclass_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::PersistentClass)
+def test_dcmddandroid_persistentclass_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_PersistentClass)
 
 @given(instance=EVisibility_strategy)
 @settings(max_examples=50)
 def test_evisibility_instantiation(instance):
     assert isinstance(instance, EVisibility)
 
-@given(instance=dcmddandroid::ClassElement_strategy)
+@given(instance=dcmddandroid_ClassElement_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::classelement_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::ClassElement)
-
-@given(instance=dcmddandroid::ClassElement_strategy)
-def test_dcmddandroid::classelement_final_type(instance):
-    assert isinstance(instance.final, bool)
+def test_dcmddandroid_classelement_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_ClassElement)
 
 
-@given(instance=dcmddandroid::ClassElement_strategy)
-def test_dcmddandroid::classelement_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
 
-@given(instance=dcmddandroid::ClassElement_strategy)
-def test_dcmddandroid::classelement_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=dcmddandroid::ClassElement_strategy)
-def test_dcmddandroid::classelement_static_setter(instance):
+@given(instance=dcmddandroid_ClassElement_strategy)
+def test_dcmddandroid_classelement_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
+
+
+
+@given(instance=dcmddandroid_ClassElement_strategy)
+def test_dcmddandroid_classelement_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=dcmddandroid::Enum_strategy)
+@given(instance=dcmddandroid_Interface_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::enum_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Enum)
+def test_dcmddandroid_interface_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Interface)
 
-@given(instance=dcmddandroid::Interface_strategy)
+@given(instance=dcmddandroid_Association_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::interface_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Interface)
-
-@given(instance=dcmddandroid::Association_strategy)
-@settings(max_examples=50)
-def test_dcmddandroid::association_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Association)
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_minMultiplicityTarget_type(instance):
-    assert isinstance(instance.minMultiplicityTarget, int)
+def test_dcmddandroid_association_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Association)
 
 
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_minMultiplicityTarget_setter(instance):
-    original = instance.minMultiplicityTarget
-    instance.minMultiplicityTarget = original
-    assert instance.minMultiplicityTarget == original
 
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_minMultiplicitySource_type(instance):
-    assert isinstance(instance.minMultiplicitySource, int)
-
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_minMultiplicitySource_setter(instance):
-    original = instance.minMultiplicitySource
-    instance.minMultiplicitySource = original
-    assert instance.minMultiplicitySource == original
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_maxMultiplicitySource_type(instance):
-    assert isinstance(instance.maxMultiplicitySource, int)
-
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_maxMultiplicitySource_setter(instance):
-    original = instance.maxMultiplicitySource
-    instance.maxMultiplicitySource = original
-    assert instance.maxMultiplicitySource == original
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_rolTarget_type(instance):
-    assert isinstance(instance.rolTarget, str)
-
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_rolTarget_setter(instance):
-    original = instance.rolTarget
-    instance.rolTarget = original
-    assert instance.rolTarget == original
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_maxMultiplicityTarget_type(instance):
-    assert isinstance(instance.maxMultiplicityTarget, int)
-
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_maxMultiplicityTarget_setter(instance):
-    original = instance.maxMultiplicityTarget
-    instance.maxMultiplicityTarget = original
-    assert instance.maxMultiplicityTarget == original
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_rolSource_type(instance):
-    assert isinstance(instance.rolSource, str)
-
-
-@given(instance=dcmddandroid::Association_strategy)
-def test_dcmddandroid::association_rolSource_setter(instance):
+@given(instance=dcmddandroid_Association_strategy)
+def test_dcmddandroid_association_rolSource_setter(instance):
     original = instance.rolSource
     instance.rolSource = original
     assert instance.rolSource == original
 
-@given(instance=dcmddandroid::Implements_strategy)
+
+
+@given(instance=dcmddandroid_Association_strategy)
+def test_dcmddandroid_association_minMultiplicitySource_setter(instance):
+    original = instance.minMultiplicitySource
+    instance.minMultiplicitySource = original
+    assert instance.minMultiplicitySource == original
+
+
+
+@given(instance=dcmddandroid_Association_strategy)
+def test_dcmddandroid_association_maxMultiplicityTarget_setter(instance):
+    original = instance.maxMultiplicityTarget
+    instance.maxMultiplicityTarget = original
+    assert instance.maxMultiplicityTarget == original
+
+
+
+@given(instance=dcmddandroid_Association_strategy)
+def test_dcmddandroid_association_maxMultiplicitySource_setter(instance):
+    original = instance.maxMultiplicitySource
+    instance.maxMultiplicitySource = original
+    assert instance.maxMultiplicitySource == original
+
+
+
+@given(instance=dcmddandroid_Association_strategy)
+def test_dcmddandroid_association_rolTarget_setter(instance):
+    original = instance.rolTarget
+    instance.rolTarget = original
+    assert instance.rolTarget == original
+
+
+
+@given(instance=dcmddandroid_Association_strategy)
+def test_dcmddandroid_association_minMultiplicityTarget_setter(instance):
+    original = instance.minMultiplicityTarget
+    instance.minMultiplicityTarget = original
+    assert instance.minMultiplicityTarget == original
+
+@given(instance=dcmddandroid_Implements_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::implements_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::Implements)
+def test_dcmddandroid_implements_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Implements)
 
-@given(instance=dcmddandroid::AbstractClass_strategy)
+@given(instance=dcmddandroid_Enum_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::abstractclass_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::AbstractClass)
+def test_dcmddandroid_enum_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_Enum)
 
-@given(instance=dcmddandroid::AbstractClass_strategy)
-def test_dcmddandroid::abstractclass_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+@given(instance=dcmddandroid_AbstractClass_strategy)
+@settings(max_examples=50)
+def test_dcmddandroid_abstractclass_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_AbstractClass)
 
 
-@given(instance=dcmddandroid::AbstractClass_strategy)
-def test_dcmddandroid::abstractclass_isAbstract_setter(instance):
+
+@given(instance=dcmddandroid_AbstractClass_strategy)
+def test_dcmddandroid_abstractclass_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=dcmddandroid::NamedElement_strategy)
+@given(instance=dcmddandroid_NamedElement_strategy)
 @settings(max_examples=50)
-def test_dcmddandroid::namedelement_instantiation(instance):
-    assert isinstance(instance, dcmddandroid::NamedElement)
-
-@given(instance=dcmddandroid::NamedElement_strategy)
-def test_dcmddandroid::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dcmddandroid_namedelement_instantiation(instance):
+    assert isinstance(instance, dcmddandroid_NamedElement)
 
 
-@given(instance=dcmddandroid::NamedElement_strategy)
-def test_dcmddandroid::namedelement_name_setter(instance):
+
+@given(instance=dcmddandroid_NamedElement_strategy)
+def test_dcmddandroid_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

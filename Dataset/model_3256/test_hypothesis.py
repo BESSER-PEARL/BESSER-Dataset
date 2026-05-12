@@ -3,189 +3,1451 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    NavigationProperty,
+    frameweb_NavigationCompositionWhole,
+    frameweb_NavigationCompositionPart,
+    Stereotype,
+    frameweb_Tag,
+    frameweb_ResultType,
+    NavigationPackage,
+    frameweb_ControllerPackage,
+    frameweb_ViewPackage,
+    Package,
+    frameweb_ResultSet,
+    frameweb_ApplicationPackage,
+    frameweb_PersistencePackage,
+    frameweb_NavigationPackage,
+    frameweb_DomainPackage,
+    ServiceAssociation,
+    frameweb_ServiceControllerAssociation,
+    frameweb_DAOServiceAssociation,
+    NavigationAttribute,
+    frameweb_UIComponentField,
+    frameweb_IOParameter,
+    InterfaceRealization,
+    frameweb_DAORealization,
+    Class,
+    frameweb_DomainClass,
+    frameweb_FrontControllerClass,
+    frameweb_NavigationClass,
+    frameweb_DAOClass,
+    Generalization_,
+    frameweb_DomainGeneralization,
+    frameweb_ServiceGeneralization,
+    frameweb_ServiceClass,
+    Operation,
+    frameweb_DomainMethod,
+    frameweb_FrontControllerMethod,
+    frameweb_Result,
+    NavigationDependency,
+    frameweb_FrontControllerDependency,
+    frameweb_PageDependency,
+    frameweb_ChainingDependency,
+    frameweb_ResultDependency,
+    Interface,
+    frameweb_ServiceInterface,
+    frameweb_DAOInterface,
+    frameweb_TagLib,
+    NavigationClass,
+    frameweb_UIComponent,
+    frameweb_Template,
+    frameweb_Page,
+    Model,
+    frameweb_FramewebModel,
+    DomainAttribute,
+    frameweb_EmbeddedAttribute,
+    frameweb_LOBAttribute,
+    frameweb_DateTimeAttribute,
+    frameweb_IdAttribute,
+    frameweb_DecimalAttribute,
+    frameweb_VersionAttribute,
+    Property,
+    frameweb_NavigationAttribute,
+    frameweb_NavigationProperty,
+    frameweb_DomainAttribute,
+    Association,
+    frameweb_NavigationAssociation,
+    frameweb_DomainAssociation,
+    FramewebModel,
+    frameweb_ApplicationModel,
+    frameweb_PersistenceModel,
+    frameweb_NavigationModel,
+    frameweb_EntityModel,
+    Profile,
+    frameweb_FrameworkProfile,
+    frameweb_FramewebProject,
     DataType,
     LiteralString,
-    frameweb::VocabularyLiteral,
+    frameweb_VocabularyLiteral,
+    frameweb_Individual,
     VocabularyClassExpression,
+    frameweb_VocabularyClassExpression,
     Individual,
-    frameweb::AnonymousIndividual,
+    frameweb_AnonymousIndividual,
     VocabularyAssociation,
     VocabularyEntity,
-    frameweb::VocabularyDataType,
-    frameweb::DataProperty,
-    frameweb::VocabularyClass,
-    frameweb::NamedIndividual,
-    frameweb::AnnotationProperty,
-    frameweb::ObjectProperty,
-    frameweb::Type,
+    frameweb_VocabularyClass,
+    frameweb_VocabularyDataType,
+    frameweb_NamedIndividual,
+    frameweb_AnnotationProperty,
+    frameweb_DataProperty,
+    frameweb_ObjectProperty,
+    frameweb_VocabularyProperty,
+    frameweb_VocabularyAssociation,
+    frameweb_Type,
     Relationship,
     Classifier,
-    frameweb::VocabularyEntity,
-    frameweb::Association,
-    frameweb::ValueSpecification,
-    frameweb::Class,
-    frameweb::Interface,
-    frameweb::DataType,
+    frameweb_VocabularyEntity,
+    frameweb_Association,
+    frameweb_ValueSpecification,
+    frameweb_Class,
+    frameweb_Interface,
+    frameweb_DataType,
     DeploymentTarget,
+    frameweb_IRI,
     ConnectableElement,
     StructuralFeature,
-    frameweb::Property,
+    frameweb_Property,
+    frameweb_SemanticPackage,
+    frameweb_Annotation,
+    frameweb_Axiom,
+    frameweb_Vocabulary,
+    frameweb_VocabularyModel,
     GeneralizationSet,
-    frameweb::ServiceGeneralizationSet,
-    frameweb::DAOGeneralizationSet,
-    frameweb::NavigationGeneralizationSet,
-    frameweb::DomainGeneralizationSet,
+    frameweb_DAOGeneralizationSet,
+    frameweb_NavigationGeneralizationSet,
+    frameweb_ServiceGeneralizationSet,
+    frameweb_DomainGeneralizationSet,
+    frameweb_AttributeMapping,
+    frameweb_ClassMapping,
+    frameweb_MappingLib,
+    frameweb_DAOGeneralization,
+    frameweb_DomainProperty,
+    frameweb_NavigationGeneralization,
     NavigationConstraint,
+    frameweb_ChainingConstraint,
+    frameweb_MethodCosntraint,
+    frameweb_ResultConstraint,
+    frameweb_PageConstraint,
     Constraint,
-    frameweb::DomainConstraints,
-    frameweb::VocabularyConstraints,
+    frameweb_DomainConstraints,
+    frameweb_NavigationConstraint,
+    frameweb_VocabularyConstraints,
     FrameworkExtension,
-    frameweb::DomainExtension,
-    frameweb::NavigationExtension,
-    FramewebModel,
-    frameweb::ApplicationModel,
-    frameweb::NavigationModel,
-    frameweb::VocabularyModel,
-    frameweb::EntityModel,
-    Profile,
-    frameweb::FramewebProject,
+    frameweb_DomainExtension,
+    frameweb_NavigationExtension,
+    frameweb_SeviceRealization,
+    frameweb_AttributeMappingProperty,
+    frameweb_ClassMappingPropery,
+    frameweb_ResultProperty,
+    frameweb_TagProperty,
+    frameweb_ControllerProperty,
     ExtensionEnd,
-    frameweb::TagExtensionEnd,
-    frameweb::AttributeMappingExtensionEnd,
-    frameweb::ClassMappingExtensionEnd,
-    frameweb::ResultExtensionEnd,
-    frameweb::ControllerExtensionEnd,
+    frameweb_AttributeMappingExtensionEnd,
+    frameweb_TagExtensionEnd,
+    frameweb_ResultExtensionEnd,
+    frameweb_ClassMappingExtensionEnd,
+    frameweb_ControllerExtensionEnd,
     DomainExtension,
-    frameweb::AttributeMappingExtension,
-    frameweb::ClassMappingExtension,
+    frameweb_AttributeMappingExtension,
+    frameweb_ClassMappingExtension,
+    frameweb_ControllerSet,
+    frameweb_Controller,
     ProfileApplication,
-    frameweb::FrameworkApplication,
+    frameweb_FrameworkApplication,
     NavigationExtension,
-    frameweb::ControllerExtension,
-    frameweb::ResultExtension,
-    frameweb::TagExtension,
+    frameweb_ControllerExtension,
+    frameweb_ResultExtension,
+    frameweb_TagExtension,
     Extension,
-    frameweb::FrameworkExtension,
+    frameweb_FrameworkExtension,
+    frameweb_DAOMethod,
     Dependency,
-    frameweb::NavigationDependency,
-    frameweb::NavigationConstraint,
-    NavigationProperty,
-    frameweb::NavigationCompositionWhole,
-    frameweb::NavigationCompositionPart,
-    Stereotype,
-    frameweb::AttributeMapping,
-    frameweb::ClassMapping,
-    frameweb::Controller,
-    frameweb::Tag,
-    frameweb::ResultType,
-    NavigationPackage,
-    frameweb::ControllerPackage,
-    frameweb::ViewPackage,
-    Package,
-    frameweb::ApplicationPackage,
-    frameweb::PersistencePackage,
-    frameweb::SemanticPackage,
-    frameweb::NavigationPackage,
-    frameweb::ControllerSet,
-    frameweb::ResultSet,
-    frameweb::Vocabulary,
-    frameweb::MappingLib,
-    frameweb::DomainPackage,
-    ServiceAssociation,
-    frameweb::ServiceControllerAssociation,
-    frameweb::DAOServiceAssociation,
-    frameweb::ChainingConstraint,
-    frameweb::PageConstraint,
-    frameweb::MethodCosntraint,
-    NavigationAttribute,
-    frameweb::UIComponentField,
-    frameweb::IOParameter,
-    InterfaceRealization,
-    frameweb::SeviceRealization,
-    frameweb::DAORealization,
-    Class,
-    frameweb::FrontControllerClass,
-    frameweb::Annotation,
-    frameweb::Axiom,
-    frameweb::VocabularyClassExpression,
-    frameweb::DomainClass,
-    frameweb::NavigationClass,
-    frameweb::DAOClass,
-    Generalization_,
-    frameweb::DomainGeneralization,
-    frameweb::NavigationGeneralization,
-    frameweb::DAOGeneralization,
-    frameweb::ServiceGeneralization,
-    frameweb::ServiceClass,
-    Operation,
-    frameweb::ServiceMethod,
-    frameweb::DAOMethod,
-    frameweb::DomainMethod,
-    frameweb::ResultConstraint,
-    frameweb::FrontControllerMethod,
-    frameweb::Result,
-    NavigationDependency,
-    frameweb::PageDependency,
-    frameweb::FrontControllerDependency,
-    frameweb::ChainingDependency,
-    frameweb::ResultDependency,
-    Interface,
-    frameweb::ServiceInterface,
-    frameweb::DAOInterface,
-    frameweb::TagLib,
-    NavigationClass,
-    frameweb::UIComponent,
-    frameweb::Template,
-    frameweb::Page,
-    Model,
-    frameweb::FrameworkProfile,
-    frameweb::FramewebModel,
-    DomainAttribute,
-    frameweb::DecimalAttribute,
-    frameweb::EmbeddedAttribute,
-    frameweb::LOBAttribute,
-    frameweb::IdAttribute,
-    frameweb::DateTimeAttribute,
-    frameweb::VersionAttribute,
-    Property,
-    frameweb::ResultProperty,
-    frameweb::DomainProperty,
-    frameweb::VocabularyProperty,
-    frameweb::NavigationProperty,
-    frameweb::NavigationAttribute,
-    frameweb::DAOAttribute,
-    frameweb::TagProperty,
-    frameweb::IRI,
-    frameweb::ControllerProperty,
-    frameweb::AttributeMappingProperty,
-    frameweb::Individual,
-    frameweb::ClassMappingPropery,
-    frameweb::ServiceAttribute,
-    frameweb::DomainAttribute,
-    Association,
-    frameweb::VocabularyAssociation,
-    frameweb::ServiceAssociation,
-    frameweb::NavigationAssociation,
-    frameweb::DomainAssociation,
-    frameweb::PersistenceModel,
-    ConstantNameList,
+    frameweb_NavigationDependency,
+    frameweb_ServiceAssociation,
+    frameweb_ServiceAttribute,
+    frameweb_ServiceMethod,
+    frameweb_DAOAttribute,
     Generation,
-    Cascade,
-    Fetch,
-    Collection,
-    Order,
-    FrameworkKindList,
-    InheritanceMapping,
     FrameworkCategoryList,
+    ConstantNameList,
+    Collection,
     DateTimePrecision,
+    FrameworkKindList,
+    Order,
+    Fetch,
+    InheritanceMapping,
+    Cascade,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_navigationproperty_is_not_abstract():
+    assert not inspect.isabstract(NavigationProperty)
+
+
+def test_navigationproperty_constructor_exists():
+    assert callable(NavigationProperty.__init__)
+
+
+def test_navigationproperty_constructor_args():
+    sig = inspect.signature(NavigationProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationcompositionwhole_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationCompositionWhole)
+
+
+def test_frameweb_navigationcompositionwhole_constructor_exists():
+    assert callable(frameweb_NavigationCompositionWhole.__init__)
+
+
+def test_frameweb_navigationcompositionwhole_constructor_args():
+    sig = inspect.signature(frameweb_NavigationCompositionWhole.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationcompositionpart_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationCompositionPart)
+
+
+def test_frameweb_navigationcompositionpart_constructor_exists():
+    assert callable(frameweb_NavigationCompositionPart.__init__)
+
+
+def test_frameweb_navigationcompositionpart_constructor_args():
+    sig = inspect.signature(frameweb_NavigationCompositionPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stereotype_is_not_abstract():
+    assert not inspect.isabstract(Stereotype)
+
+
+def test_stereotype_constructor_exists():
+    assert callable(Stereotype.__init__)
+
+
+def test_stereotype_constructor_args():
+    sig = inspect.signature(Stereotype.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_tag_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Tag)
+
+
+def test_frameweb_tag_constructor_exists():
+    assert callable(frameweb_Tag.__init__)
+
+
+def test_frameweb_tag_constructor_args():
+    sig = inspect.signature(frameweb_Tag.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_resulttype_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultType)
+
+
+def test_frameweb_resulttype_constructor_exists():
+    assert callable(frameweb_ResultType.__init__)
+
+
+def test_frameweb_resulttype_constructor_args():
+    sig = inspect.signature(frameweb_ResultType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_navigationpackage_is_not_abstract():
+    assert not inspect.isabstract(NavigationPackage)
+
+
+def test_navigationpackage_constructor_exists():
+    assert callable(NavigationPackage.__init__)
+
+
+def test_navigationpackage_constructor_args():
+    sig = inspect.signature(NavigationPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_controllerpackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ControllerPackage)
+
+
+def test_frameweb_controllerpackage_constructor_exists():
+    assert callable(frameweb_ControllerPackage.__init__)
+
+
+def test_frameweb_controllerpackage_constructor_args():
+    sig = inspect.signature(frameweb_ControllerPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_viewpackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ViewPackage)
+
+
+def test_frameweb_viewpackage_constructor_exists():
+    assert callable(frameweb_ViewPackage.__init__)
+
+
+def test_frameweb_viewpackage_constructor_args():
+    sig = inspect.signature(frameweb_ViewPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_package_is_not_abstract():
+    assert not inspect.isabstract(Package)
+
+
+def test_package_constructor_exists():
+    assert callable(Package.__init__)
+
+
+def test_package_constructor_args():
+    sig = inspect.signature(Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_resultset_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultSet)
+
+
+def test_frameweb_resultset_constructor_exists():
+    assert callable(frameweb_ResultSet.__init__)
+
+
+def test_frameweb_resultset_constructor_args():
+    sig = inspect.signature(frameweb_ResultSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_applicationpackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ApplicationPackage)
+
+
+def test_frameweb_applicationpackage_constructor_exists():
+    assert callable(frameweb_ApplicationPackage.__init__)
+
+
+def test_frameweb_applicationpackage_constructor_args():
+    sig = inspect.signature(frameweb_ApplicationPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_persistencepackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_PersistencePackage)
+
+
+def test_frameweb_persistencepackage_constructor_exists():
+    assert callable(frameweb_PersistencePackage.__init__)
+
+
+def test_frameweb_persistencepackage_constructor_args():
+    sig = inspect.signature(frameweb_PersistencePackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationpackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationPackage)
+
+
+def test_frameweb_navigationpackage_constructor_exists():
+    assert callable(frameweb_NavigationPackage.__init__)
+
+
+def test_frameweb_navigationpackage_constructor_args():
+    sig = inspect.signature(frameweb_NavigationPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domainpackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainPackage)
+
+
+def test_frameweb_domainpackage_constructor_exists():
+    assert callable(frameweb_DomainPackage.__init__)
+
+
+def test_frameweb_domainpackage_constructor_args():
+    sig = inspect.signature(frameweb_DomainPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_serviceassociation_is_not_abstract():
+    assert not inspect.isabstract(ServiceAssociation)
+
+
+def test_serviceassociation_constructor_exists():
+    assert callable(ServiceAssociation.__init__)
+
+
+def test_serviceassociation_constructor_args():
+    sig = inspect.signature(ServiceAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_servicecontrollerassociation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceControllerAssociation)
+
+
+def test_frameweb_servicecontrollerassociation_constructor_exists():
+    assert callable(frameweb_ServiceControllerAssociation.__init__)
+
+
+def test_frameweb_servicecontrollerassociation_constructor_args():
+    sig = inspect.signature(frameweb_ServiceControllerAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_daoserviceassociation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOServiceAssociation)
+
+
+def test_frameweb_daoserviceassociation_constructor_exists():
+    assert callable(frameweb_DAOServiceAssociation.__init__)
+
+
+def test_frameweb_daoserviceassociation_constructor_args():
+    sig = inspect.signature(frameweb_DAOServiceAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_navigationattribute_is_not_abstract():
+    assert not inspect.isabstract(NavigationAttribute)
+
+
+def test_navigationattribute_constructor_exists():
+    assert callable(NavigationAttribute.__init__)
+
+
+def test_navigationattribute_constructor_args():
+    sig = inspect.signature(NavigationAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_uicomponentfield_is_not_abstract():
+    assert not inspect.isabstract(frameweb_UIComponentField)
+
+
+def test_frameweb_uicomponentfield_constructor_exists():
+    assert callable(frameweb_UIComponentField.__init__)
+
+
+def test_frameweb_uicomponentfield_constructor_args():
+    sig = inspect.signature(frameweb_UIComponentField.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_ioparameter_is_not_abstract():
+    assert not inspect.isabstract(frameweb_IOParameter)
+
+
+def test_frameweb_ioparameter_constructor_exists():
+    assert callable(frameweb_IOParameter.__init__)
+
+
+def test_frameweb_ioparameter_constructor_args():
+    sig = inspect.signature(frameweb_IOParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interfacerealization_is_not_abstract():
+    assert not inspect.isabstract(InterfaceRealization)
+
+
+def test_interfacerealization_constructor_exists():
+    assert callable(InterfaceRealization.__init__)
+
+
+def test_interfacerealization_constructor_args():
+    sig = inspect.signature(InterfaceRealization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_daorealization_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAORealization)
+
+
+def test_frameweb_daorealization_constructor_exists():
+    assert callable(frameweb_DAORealization.__init__)
+
+
+def test_frameweb_daorealization_constructor_args():
+    sig = inspect.signature(frameweb_DAORealization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_class_is_not_abstract():
+    assert not inspect.isabstract(Class)
+
+
+def test_class_constructor_exists():
+    assert callable(Class.__init__)
+
+
+def test_class_constructor_args():
+    sig = inspect.signature(Class.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domainclass_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainClass)
+
+
+def test_frameweb_domainclass_constructor_exists():
+    assert callable(frameweb_DomainClass.__init__)
+
+
+def test_frameweb_domainclass_constructor_args():
+    sig = inspect.signature(frameweb_DomainClass.__init__)
+    params = list(sig.parameters.keys())
+    assert "table" in params, "Missing parameter 'table'"
+
+def test_frameweb_domainclass_has_table():
+    assert hasattr(frameweb_DomainClass, "table")
+    descriptor = None
+    for klass in frameweb_DomainClass.__mro__:
+        if "table" in klass.__dict__:
+            descriptor = klass.__dict__["table"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_frontcontrollerclass_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FrontControllerClass)
+
+
+def test_frameweb_frontcontrollerclass_constructor_exists():
+    assert callable(frameweb_FrontControllerClass.__init__)
+
+
+def test_frameweb_frontcontrollerclass_constructor_args():
+    sig = inspect.signature(frameweb_FrontControllerClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationclass_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationClass)
+
+
+def test_frameweb_navigationclass_constructor_exists():
+    assert callable(frameweb_NavigationClass.__init__)
+
+
+def test_frameweb_navigationclass_constructor_args():
+    sig = inspect.signature(frameweb_NavigationClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_daoclass_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOClass)
+
+
+def test_frameweb_daoclass_constructor_exists():
+    assert callable(frameweb_DAOClass.__init__)
+
+
+def test_frameweb_daoclass_constructor_args():
+    sig = inspect.signature(frameweb_DAOClass.__init__)
+    params = list(sig.parameters.keys())
+    assert "prefix" in params, "Missing parameter 'prefix'"
+    assert "infix" in params, "Missing parameter 'infix'"
+    assert "sufix" in params, "Missing parameter 'sufix'"
+
+def test_frameweb_daoclass_has_prefix():
+    assert hasattr(frameweb_DAOClass, "prefix")
+    descriptor = None
+    for klass in frameweb_DAOClass.__mro__:
+        if "prefix" in klass.__dict__:
+            descriptor = klass.__dict__["prefix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_daoclass_has_infix():
+    assert hasattr(frameweb_DAOClass, "infix")
+    descriptor = None
+    for klass in frameweb_DAOClass.__mro__:
+        if "infix" in klass.__dict__:
+            descriptor = klass.__dict__["infix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_daoclass_has_sufix():
+    assert hasattr(frameweb_DAOClass, "sufix")
+    descriptor = None
+    for klass in frameweb_DAOClass.__mro__:
+        if "sufix" in klass.__dict__:
+            descriptor = klass.__dict__["sufix"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_generalization__is_not_abstract():
+    assert not inspect.isabstract(Generalization_)
+
+
+def test_generalization__constructor_exists():
+    assert callable(Generalization_.__init__)
+
+
+def test_generalization__constructor_args():
+    sig = inspect.signature(Generalization_.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domaingeneralization_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainGeneralization)
+
+
+def test_frameweb_domaingeneralization_constructor_exists():
+    assert callable(frameweb_DomainGeneralization.__init__)
+
+
+def test_frameweb_domaingeneralization_constructor_args():
+    sig = inspect.signature(frameweb_DomainGeneralization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_servicegeneralization_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceGeneralization)
+
+
+def test_frameweb_servicegeneralization_constructor_exists():
+    assert callable(frameweb_ServiceGeneralization.__init__)
+
+
+def test_frameweb_servicegeneralization_constructor_args():
+    sig = inspect.signature(frameweb_ServiceGeneralization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_serviceclass_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceClass)
+
+
+def test_frameweb_serviceclass_constructor_exists():
+    assert callable(frameweb_ServiceClass.__init__)
+
+
+def test_frameweb_serviceclass_constructor_args():
+    sig = inspect.signature(frameweb_ServiceClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operation_is_not_abstract():
+    assert not inspect.isabstract(Operation)
+
+
+def test_operation_constructor_exists():
+    assert callable(Operation.__init__)
+
+
+def test_operation_constructor_args():
+    sig = inspect.signature(Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domainmethod_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainMethod)
+
+
+def test_frameweb_domainmethod_constructor_exists():
+    assert callable(frameweb_DomainMethod.__init__)
+
+
+def test_frameweb_domainmethod_constructor_args():
+    sig = inspect.signature(frameweb_DomainMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_frontcontrollermethod_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FrontControllerMethod)
+
+
+def test_frameweb_frontcontrollermethod_constructor_exists():
+    assert callable(frameweb_FrontControllerMethod.__init__)
+
+
+def test_frameweb_frontcontrollermethod_constructor_args():
+    sig = inspect.signature(frameweb_FrontControllerMethod.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDefault" in params, "Missing parameter 'isDefault'"
+
+def test_frameweb_frontcontrollermethod_has_isDefault():
+    assert hasattr(frameweb_FrontControllerMethod, "isDefault")
+    descriptor = None
+    for klass in frameweb_FrontControllerMethod.__mro__:
+        if "isDefault" in klass.__dict__:
+            descriptor = klass.__dict__["isDefault"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_result_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Result)
+
+
+def test_frameweb_result_constructor_exists():
+    assert callable(frameweb_Result.__init__)
+
+
+def test_frameweb_result_constructor_args():
+    sig = inspect.signature(frameweb_Result.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_navigationdependency_is_not_abstract():
+    assert not inspect.isabstract(NavigationDependency)
+
+
+def test_navigationdependency_constructor_exists():
+    assert callable(NavigationDependency.__init__)
+
+
+def test_navigationdependency_constructor_args():
+    sig = inspect.signature(NavigationDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_frontcontrollerdependency_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FrontControllerDependency)
+
+
+def test_frameweb_frontcontrollerdependency_constructor_exists():
+    assert callable(frameweb_FrontControllerDependency.__init__)
+
+
+def test_frameweb_frontcontrollerdependency_constructor_args():
+    sig = inspect.signature(frameweb_FrontControllerDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_pagedependency_is_not_abstract():
+    assert not inspect.isabstract(frameweb_PageDependency)
+
+
+def test_frameweb_pagedependency_constructor_exists():
+    assert callable(frameweb_PageDependency.__init__)
+
+
+def test_frameweb_pagedependency_constructor_args():
+    sig = inspect.signature(frameweb_PageDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_chainingdependency_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ChainingDependency)
+
+
+def test_frameweb_chainingdependency_constructor_exists():
+    assert callable(frameweb_ChainingDependency.__init__)
+
+
+def test_frameweb_chainingdependency_constructor_args():
+    sig = inspect.signature(frameweb_ChainingDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_resultdependency_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultDependency)
+
+
+def test_frameweb_resultdependency_constructor_exists():
+    assert callable(frameweb_ResultDependency.__init__)
+
+
+def test_frameweb_resultdependency_constructor_args():
+    sig = inspect.signature(frameweb_ResultDependency.__init__)
+    params = list(sig.parameters.keys())
+    assert "execute" in params, "Missing parameter 'execute'"
+    assert "ajax" in params, "Missing parameter 'ajax'"
+    assert "render" in params, "Missing parameter 'render'"
+
+def test_frameweb_resultdependency_has_execute():
+    assert hasattr(frameweb_ResultDependency, "execute")
+    descriptor = None
+    for klass in frameweb_ResultDependency.__mro__:
+        if "execute" in klass.__dict__:
+            descriptor = klass.__dict__["execute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_resultdependency_has_ajax():
+    assert hasattr(frameweb_ResultDependency, "ajax")
+    descriptor = None
+    for klass in frameweb_ResultDependency.__mro__:
+        if "ajax" in klass.__dict__:
+            descriptor = klass.__dict__["ajax"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_resultdependency_has_render():
+    assert hasattr(frameweb_ResultDependency, "render")
+    descriptor = None
+    for klass in frameweb_ResultDependency.__mro__:
+        if "render" in klass.__dict__:
+            descriptor = klass.__dict__["render"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_interface_is_not_abstract():
+    assert not inspect.isabstract(Interface)
+
+
+def test_interface_constructor_exists():
+    assert callable(Interface.__init__)
+
+
+def test_interface_constructor_args():
+    sig = inspect.signature(Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_serviceinterface_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceInterface)
+
+
+def test_frameweb_serviceinterface_constructor_exists():
+    assert callable(frameweb_ServiceInterface.__init__)
+
+
+def test_frameweb_serviceinterface_constructor_args():
+    sig = inspect.signature(frameweb_ServiceInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_daointerface_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOInterface)
+
+
+def test_frameweb_daointerface_constructor_exists():
+    assert callable(frameweb_DAOInterface.__init__)
+
+
+def test_frameweb_daointerface_constructor_args():
+    sig = inspect.signature(frameweb_DAOInterface.__init__)
+    params = list(sig.parameters.keys())
+    assert "infix" in params, "Missing parameter 'infix'"
+    assert "sufix" in params, "Missing parameter 'sufix'"
+
+def test_frameweb_daointerface_has_infix():
+    assert hasattr(frameweb_DAOInterface, "infix")
+    descriptor = None
+    for klass in frameweb_DAOInterface.__mro__:
+        if "infix" in klass.__dict__:
+            descriptor = klass.__dict__["infix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_daointerface_has_sufix():
+    assert hasattr(frameweb_DAOInterface, "sufix")
+    descriptor = None
+    for klass in frameweb_DAOInterface.__mro__:
+        if "sufix" in klass.__dict__:
+            descriptor = klass.__dict__["sufix"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_taglib_is_not_abstract():
+    assert not inspect.isabstract(frameweb_TagLib)
+
+
+def test_frameweb_taglib_constructor_exists():
+    assert callable(frameweb_TagLib.__init__)
+
+
+def test_frameweb_taglib_constructor_args():
+    sig = inspect.signature(frameweb_TagLib.__init__)
+    params = list(sig.parameters.keys())
+    assert "prefix" in params, "Missing parameter 'prefix'"
+
+def test_frameweb_taglib_has_prefix():
+    assert hasattr(frameweb_TagLib, "prefix")
+    descriptor = None
+    for klass in frameweb_TagLib.__mro__:
+        if "prefix" in klass.__dict__:
+            descriptor = klass.__dict__["prefix"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_navigationclass_is_not_abstract():
+    assert not inspect.isabstract(NavigationClass)
+
+
+def test_navigationclass_constructor_exists():
+    assert callable(NavigationClass.__init__)
+
+
+def test_navigationclass_constructor_args():
+    sig = inspect.signature(NavigationClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_uicomponent_is_not_abstract():
+    assert not inspect.isabstract(frameweb_UIComponent)
+
+
+def test_frameweb_uicomponent_constructor_exists():
+    assert callable(frameweb_UIComponent.__init__)
+
+
+def test_frameweb_uicomponent_constructor_args():
+    sig = inspect.signature(frameweb_UIComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_template_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Template)
+
+
+def test_frameweb_template_constructor_exists():
+    assert callable(frameweb_Template.__init__)
+
+
+def test_frameweb_template_constructor_args():
+    sig = inspect.signature(frameweb_Template.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_page_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Page)
+
+
+def test_frameweb_page_constructor_exists():
+    assert callable(frameweb_Page.__init__)
+
+
+def test_frameweb_page_constructor_args():
+    sig = inspect.signature(frameweb_Page.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_is_not_abstract():
+    assert not inspect.isabstract(Model)
+
+
+def test_model_constructor_exists():
+    assert callable(Model.__init__)
+
+
+def test_model_constructor_args():
+    sig = inspect.signature(Model.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_framewebmodel_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FramewebModel)
+
+
+def test_frameweb_framewebmodel_constructor_exists():
+    assert callable(frameweb_FramewebModel.__init__)
+
+
+def test_frameweb_framewebmodel_constructor_args():
+    sig = inspect.signature(frameweb_FramewebModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_domainattribute_is_not_abstract():
+    assert not inspect.isabstract(DomainAttribute)
+
+
+def test_domainattribute_constructor_exists():
+    assert callable(DomainAttribute.__init__)
+
+
+def test_domainattribute_constructor_args():
+    sig = inspect.signature(DomainAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_embeddedattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_EmbeddedAttribute)
+
+
+def test_frameweb_embeddedattribute_constructor_exists():
+    assert callable(frameweb_EmbeddedAttribute.__init__)
+
+
+def test_frameweb_embeddedattribute_constructor_args():
+    sig = inspect.signature(frameweb_EmbeddedAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_lobattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_LOBAttribute)
+
+
+def test_frameweb_lobattribute_constructor_exists():
+    assert callable(frameweb_LOBAttribute.__init__)
+
+
+def test_frameweb_lobattribute_constructor_args():
+    sig = inspect.signature(frameweb_LOBAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_datetimeattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DateTimeAttribute)
+
+
+def test_frameweb_datetimeattribute_constructor_exists():
+    assert callable(frameweb_DateTimeAttribute.__init__)
+
+
+def test_frameweb_datetimeattribute_constructor_args():
+    sig = inspect.signature(frameweb_DateTimeAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "dateTimePrecision" in params, "Missing parameter 'dateTimePrecision'"
+
+def test_frameweb_datetimeattribute_has_dateTimePrecision():
+    assert hasattr(frameweb_DateTimeAttribute, "dateTimePrecision")
+    descriptor = None
+    for klass in frameweb_DateTimeAttribute.__mro__:
+        if "dateTimePrecision" in klass.__dict__:
+            descriptor = klass.__dict__["dateTimePrecision"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_idattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_IdAttribute)
+
+
+def test_frameweb_idattribute_constructor_exists():
+    assert callable(frameweb_IdAttribute.__init__)
+
+
+def test_frameweb_idattribute_constructor_args():
+    sig = inspect.signature(frameweb_IdAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "generation" in params, "Missing parameter 'generation'"
+
+def test_frameweb_idattribute_has_generation():
+    assert hasattr(frameweb_IdAttribute, "generation")
+    descriptor = None
+    for klass in frameweb_IdAttribute.__mro__:
+        if "generation" in klass.__dict__:
+            descriptor = klass.__dict__["generation"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_decimalattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DecimalAttribute)
+
+
+def test_frameweb_decimalattribute_constructor_exists():
+    assert callable(frameweb_DecimalAttribute.__init__)
+
+
+def test_frameweb_decimalattribute_constructor_args():
+    sig = inspect.signature(frameweb_DecimalAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "decimalScale" in params, "Missing parameter 'decimalScale'"
+    assert "decimalPrecision" in params, "Missing parameter 'decimalPrecision'"
+
+def test_frameweb_decimalattribute_has_decimalScale():
+    assert hasattr(frameweb_DecimalAttribute, "decimalScale")
+    descriptor = None
+    for klass in frameweb_DecimalAttribute.__mro__:
+        if "decimalScale" in klass.__dict__:
+            descriptor = klass.__dict__["decimalScale"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_decimalattribute_has_decimalPrecision():
+    assert hasattr(frameweb_DecimalAttribute, "decimalPrecision")
+    descriptor = None
+    for klass in frameweb_DecimalAttribute.__mro__:
+        if "decimalPrecision" in klass.__dict__:
+            descriptor = klass.__dict__["decimalPrecision"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_versionattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VersionAttribute)
+
+
+def test_frameweb_versionattribute_constructor_exists():
+    assert callable(frameweb_VersionAttribute.__init__)
+
+
+def test_frameweb_versionattribute_constructor_args():
+    sig = inspect.signature(frameweb_VersionAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_property_is_not_abstract():
+    assert not inspect.isabstract(Property)
+
+
+def test_property_constructor_exists():
+    assert callable(Property.__init__)
+
+
+def test_property_constructor_args():
+    sig = inspect.signature(Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationAttribute)
+
+
+def test_frameweb_navigationattribute_constructor_exists():
+    assert callable(frameweb_NavigationAttribute.__init__)
+
+
+def test_frameweb_navigationattribute_constructor_args():
+    sig = inspect.signature(frameweb_NavigationAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationProperty)
+
+
+def test_frameweb_navigationproperty_constructor_exists():
+    assert callable(frameweb_NavigationProperty.__init__)
+
+
+def test_frameweb_navigationproperty_constructor_args():
+    sig = inspect.signature(frameweb_NavigationProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domainattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainAttribute)
+
+
+def test_frameweb_domainattribute_constructor_exists():
+    assert callable(frameweb_DomainAttribute.__init__)
+
+
+def test_frameweb_domainattribute_constructor_args():
+    sig = inspect.signature(frameweb_DomainAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "isNull" in params, "Missing parameter 'isNull'"
+    assert "isPersistent" in params, "Missing parameter 'isPersistent'"
+    assert "size" in params, "Missing parameter 'size'"
+
+def test_frameweb_domainattribute_has_isNull():
+    assert hasattr(frameweb_DomainAttribute, "isNull")
+    descriptor = None
+    for klass in frameweb_DomainAttribute.__mro__:
+        if "isNull" in klass.__dict__:
+            descriptor = klass.__dict__["isNull"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_domainattribute_has_isPersistent():
+    assert hasattr(frameweb_DomainAttribute, "isPersistent")
+    descriptor = None
+    for klass in frameweb_DomainAttribute.__mro__:
+        if "isPersistent" in klass.__dict__:
+            descriptor = klass.__dict__["isPersistent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_domainattribute_has_size():
+    assert hasattr(frameweb_DomainAttribute, "size")
+    descriptor = None
+    for klass in frameweb_DomainAttribute.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_association_is_not_abstract():
+    assert not inspect.isabstract(Association)
+
+
+def test_association_constructor_exists():
+    assert callable(Association.__init__)
+
+
+def test_association_constructor_args():
+    sig = inspect.signature(Association.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationassociation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationAssociation)
+
+
+def test_frameweb_navigationassociation_constructor_exists():
+    assert callable(frameweb_NavigationAssociation.__init__)
+
+
+def test_frameweb_navigationassociation_constructor_args():
+    sig = inspect.signature(frameweb_NavigationAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domainassociation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainAssociation)
+
+
+def test_frameweb_domainassociation_constructor_exists():
+    assert callable(frameweb_DomainAssociation.__init__)
+
+
+def test_frameweb_domainassociation_constructor_args():
+    sig = inspect.signature(frameweb_DomainAssociation.__init__)
+    params = list(sig.parameters.keys())
+    assert "fetch" in params, "Missing parameter 'fetch'"
+    assert "order" in params, "Missing parameter 'order'"
+    assert "cascade" in params, "Missing parameter 'cascade'"
+    assert "collection" in params, "Missing parameter 'collection'"
+
+def test_frameweb_domainassociation_has_fetch():
+    assert hasattr(frameweb_DomainAssociation, "fetch")
+    descriptor = None
+    for klass in frameweb_DomainAssociation.__mro__:
+        if "fetch" in klass.__dict__:
+            descriptor = klass.__dict__["fetch"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_domainassociation_has_order():
+    assert hasattr(frameweb_DomainAssociation, "order")
+    descriptor = None
+    for klass in frameweb_DomainAssociation.__mro__:
+        if "order" in klass.__dict__:
+            descriptor = klass.__dict__["order"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_domainassociation_has_cascade():
+    assert hasattr(frameweb_DomainAssociation, "cascade")
+    descriptor = None
+    for klass in frameweb_DomainAssociation.__mro__:
+        if "cascade" in klass.__dict__:
+            descriptor = klass.__dict__["cascade"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_domainassociation_has_collection():
+    assert hasattr(frameweb_DomainAssociation, "collection")
+    descriptor = None
+    for klass in frameweb_DomainAssociation.__mro__:
+        if "collection" in klass.__dict__:
+            descriptor = klass.__dict__["collection"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_framewebmodel_is_not_abstract():
+    assert not inspect.isabstract(FramewebModel)
+
+
+def test_framewebmodel_constructor_exists():
+    assert callable(FramewebModel.__init__)
+
+
+def test_framewebmodel_constructor_args():
+    sig = inspect.signature(FramewebModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_applicationmodel_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ApplicationModel)
+
+
+def test_frameweb_applicationmodel_constructor_exists():
+    assert callable(frameweb_ApplicationModel.__init__)
+
+
+def test_frameweb_applicationmodel_constructor_args():
+    sig = inspect.signature(frameweb_ApplicationModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_persistencemodel_is_not_abstract():
+    assert not inspect.isabstract(frameweb_PersistenceModel)
+
+
+def test_frameweb_persistencemodel_constructor_exists():
+    assert callable(frameweb_PersistenceModel.__init__)
+
+
+def test_frameweb_persistencemodel_constructor_args():
+    sig = inspect.signature(frameweb_PersistenceModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationmodel_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationModel)
+
+
+def test_frameweb_navigationmodel_constructor_exists():
+    assert callable(frameweb_NavigationModel.__init__)
+
+
+def test_frameweb_navigationmodel_constructor_args():
+    sig = inspect.signature(frameweb_NavigationModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_entitymodel_is_not_abstract():
+    assert not inspect.isabstract(frameweb_EntityModel)
+
+
+def test_frameweb_entitymodel_constructor_exists():
+    assert callable(frameweb_EntityModel.__init__)
+
+
+def test_frameweb_entitymodel_constructor_args():
+    sig = inspect.signature(frameweb_EntityModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_profile_is_not_abstract():
+    assert not inspect.isabstract(Profile)
+
+
+def test_profile_constructor_exists():
+    assert callable(Profile.__init__)
+
+
+def test_profile_constructor_args():
+    sig = inspect.signature(Profile.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_frameworkprofile_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FrameworkProfile)
+
+
+def test_frameweb_frameworkprofile_constructor_exists():
+    assert callable(frameweb_FrameworkProfile.__init__)
+
+
+def test_frameweb_frameworkprofile_constructor_args():
+    sig = inspect.signature(frameweb_FrameworkProfile.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+    assert "category" in params, "Missing parameter 'category'"
+
+def test_frameweb_frameworkprofile_has_kind():
+    assert hasattr(frameweb_FrameworkProfile, "kind")
+    descriptor = None
+    for klass in frameweb_FrameworkProfile.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_frameworkprofile_has_category():
+    assert hasattr(frameweb_FrameworkProfile, "category")
+    descriptor = None
+    for klass in frameweb_FrameworkProfile.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_framewebproject_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FramewebProject)
+
+
+def test_frameweb_framewebproject_constructor_exists():
+    assert callable(frameweb_FramewebProject.__init__)
+
+
+def test_frameweb_framewebproject_constructor_args():
+    sig = inspect.signature(frameweb_FramewebProject.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -217,16 +1479,30 @@ def test_literalstring_constructor_args():
 
 
 
-def test_frameweb::vocabularyliteral_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyLiteral)
+def test_frameweb_vocabularyliteral_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyLiteral)
 
 
-def test_frameweb::vocabularyliteral_constructor_exists():
-    assert callable(frameweb::VocabularyLiteral.__init__)
+def test_frameweb_vocabularyliteral_constructor_exists():
+    assert callable(frameweb_VocabularyLiteral.__init__)
 
 
-def test_frameweb::vocabularyliteral_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyLiteral.__init__)
+def test_frameweb_vocabularyliteral_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_individual_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Individual)
+
+
+def test_frameweb_individual_constructor_exists():
+    assert callable(frameweb_Individual.__init__)
+
+
+def test_frameweb_individual_constructor_args():
+    sig = inspect.signature(frameweb_Individual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -245,6 +1521,20 @@ def test_vocabularyclassexpression_constructor_args():
 
 
 
+def test_frameweb_vocabularyclassexpression_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyClassExpression)
+
+
+def test_frameweb_vocabularyclassexpression_constructor_exists():
+    assert callable(frameweb_VocabularyClassExpression.__init__)
+
+
+def test_frameweb_vocabularyclassexpression_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyClassExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_individual_is_not_abstract():
     assert not inspect.isabstract(Individual)
 
@@ -259,16 +1549,16 @@ def test_individual_constructor_args():
 
 
 
-def test_frameweb::anonymousindividual_is_not_abstract():
-    assert not inspect.isabstract(frameweb::AnonymousIndividual)
+def test_frameweb_anonymousindividual_is_not_abstract():
+    assert not inspect.isabstract(frameweb_AnonymousIndividual)
 
 
-def test_frameweb::anonymousindividual_constructor_exists():
-    assert callable(frameweb::AnonymousIndividual.__init__)
+def test_frameweb_anonymousindividual_constructor_exists():
+    assert callable(frameweb_AnonymousIndividual.__init__)
 
 
-def test_frameweb::anonymousindividual_constructor_args():
-    sig = inspect.signature(frameweb::AnonymousIndividual.__init__)
+def test_frameweb_anonymousindividual_constructor_args():
+    sig = inspect.signature(frameweb_AnonymousIndividual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -301,100 +1591,128 @@ def test_vocabularyentity_constructor_args():
 
 
 
-def test_frameweb::vocabularydatatype_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyDataType)
+def test_frameweb_vocabularyclass_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyClass)
 
 
-def test_frameweb::vocabularydatatype_constructor_exists():
-    assert callable(frameweb::VocabularyDataType.__init__)
+def test_frameweb_vocabularyclass_constructor_exists():
+    assert callable(frameweb_VocabularyClass.__init__)
 
 
-def test_frameweb::vocabularydatatype_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyDataType.__init__)
+def test_frameweb_vocabularyclass_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::dataproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DataProperty)
+def test_frameweb_vocabularydatatype_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyDataType)
 
 
-def test_frameweb::dataproperty_constructor_exists():
-    assert callable(frameweb::DataProperty.__init__)
+def test_frameweb_vocabularydatatype_constructor_exists():
+    assert callable(frameweb_VocabularyDataType.__init__)
 
 
-def test_frameweb::dataproperty_constructor_args():
-    sig = inspect.signature(frameweb::DataProperty.__init__)
+def test_frameweb_vocabularydatatype_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::vocabularyclass_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyClass)
+def test_frameweb_namedindividual_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NamedIndividual)
 
 
-def test_frameweb::vocabularyclass_constructor_exists():
-    assert callable(frameweb::VocabularyClass.__init__)
+def test_frameweb_namedindividual_constructor_exists():
+    assert callable(frameweb_NamedIndividual.__init__)
 
 
-def test_frameweb::vocabularyclass_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyClass.__init__)
+def test_frameweb_namedindividual_constructor_args():
+    sig = inspect.signature(frameweb_NamedIndividual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::namedindividual_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NamedIndividual)
+def test_frameweb_annotationproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_AnnotationProperty)
 
 
-def test_frameweb::namedindividual_constructor_exists():
-    assert callable(frameweb::NamedIndividual.__init__)
+def test_frameweb_annotationproperty_constructor_exists():
+    assert callable(frameweb_AnnotationProperty.__init__)
 
 
-def test_frameweb::namedindividual_constructor_args():
-    sig = inspect.signature(frameweb::NamedIndividual.__init__)
+def test_frameweb_annotationproperty_constructor_args():
+    sig = inspect.signature(frameweb_AnnotationProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::annotationproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::AnnotationProperty)
+def test_frameweb_dataproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DataProperty)
 
 
-def test_frameweb::annotationproperty_constructor_exists():
-    assert callable(frameweb::AnnotationProperty.__init__)
+def test_frameweb_dataproperty_constructor_exists():
+    assert callable(frameweb_DataProperty.__init__)
 
 
-def test_frameweb::annotationproperty_constructor_args():
-    sig = inspect.signature(frameweb::AnnotationProperty.__init__)
+def test_frameweb_dataproperty_constructor_args():
+    sig = inspect.signature(frameweb_DataProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::objectproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ObjectProperty)
+def test_frameweb_objectproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ObjectProperty)
 
 
-def test_frameweb::objectproperty_constructor_exists():
-    assert callable(frameweb::ObjectProperty.__init__)
+def test_frameweb_objectproperty_constructor_exists():
+    assert callable(frameweb_ObjectProperty.__init__)
 
 
-def test_frameweb::objectproperty_constructor_args():
-    sig = inspect.signature(frameweb::ObjectProperty.__init__)
+def test_frameweb_objectproperty_constructor_args():
+    sig = inspect.signature(frameweb_ObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::type_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Type)
+def test_frameweb_vocabularyproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyProperty)
 
 
-def test_frameweb::type_constructor_exists():
-    assert callable(frameweb::Type.__init__)
+def test_frameweb_vocabularyproperty_constructor_exists():
+    assert callable(frameweb_VocabularyProperty.__init__)
 
 
-def test_frameweb::type_constructor_args():
-    sig = inspect.signature(frameweb::Type.__init__)
+def test_frameweb_vocabularyproperty_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_vocabularyassociation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyAssociation)
+
+
+def test_frameweb_vocabularyassociation_constructor_exists():
+    assert callable(frameweb_VocabularyAssociation.__init__)
+
+
+def test_frameweb_vocabularyassociation_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_type_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Type)
+
+
+def test_frameweb_type_constructor_exists():
+    assert callable(frameweb_Type.__init__)
+
+
+def test_frameweb_type_constructor_args():
+    sig = inspect.signature(frameweb_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -427,37 +1745,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_frameweb::vocabularyentity_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyEntity)
+def test_frameweb_vocabularyentity_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyEntity)
 
 
-def test_frameweb::vocabularyentity_constructor_exists():
-    assert callable(frameweb::VocabularyEntity.__init__)
+def test_frameweb_vocabularyentity_constructor_exists():
+    assert callable(frameweb_VocabularyEntity.__init__)
 
 
-def test_frameweb::vocabularyentity_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyEntity.__init__)
+def test_frameweb_vocabularyentity_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::association_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Association)
+def test_frameweb_association_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Association)
 
 
-def test_frameweb::association_constructor_exists():
-    assert callable(frameweb::Association.__init__)
+def test_frameweb_association_constructor_exists():
+    assert callable(frameweb_Association.__init__)
 
 
-def test_frameweb::association_constructor_args():
-    sig = inspect.signature(frameweb::Association.__init__)
+def test_frameweb_association_constructor_args():
+    sig = inspect.signature(frameweb_Association.__init__)
     params = list(sig.parameters.keys())
     assert "isDerived" in params, "Missing parameter 'isDerived'"
 
-def test_frameweb::association_has_isDerived():
-    assert hasattr(frameweb::Association, "isDerived")
+def test_frameweb_association_has_isDerived():
+    assert hasattr(frameweb_Association, "isDerived")
     descriptor = None
-    for klass in frameweb::Association.__mro__:
+    for klass in frameweb_Association.__mro__:
         if "isDerived" in klass.__dict__:
             descriptor = klass.__dict__["isDerived"]
             break
@@ -465,58 +1783,58 @@ def test_frameweb::association_has_isDerived():
 
 
 
-def test_frameweb::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ValueSpecification)
+def test_frameweb_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ValueSpecification)
 
 
-def test_frameweb::valuespecification_constructor_exists():
-    assert callable(frameweb::ValueSpecification.__init__)
+def test_frameweb_valuespecification_constructor_exists():
+    assert callable(frameweb_ValueSpecification.__init__)
 
 
-def test_frameweb::valuespecification_constructor_args():
-    sig = inspect.signature(frameweb::ValueSpecification.__init__)
+def test_frameweb_valuespecification_constructor_args():
+    sig = inspect.signature(frameweb_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::class_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Class)
+def test_frameweb_class_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Class)
 
 
-def test_frameweb::class_constructor_exists():
-    assert callable(frameweb::Class.__init__)
+def test_frameweb_class_constructor_exists():
+    assert callable(frameweb_Class.__init__)
 
 
-def test_frameweb::class_constructor_args():
-    sig = inspect.signature(frameweb::Class.__init__)
+def test_frameweb_class_constructor_args():
+    sig = inspect.signature(frameweb_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::interface_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Interface)
+def test_frameweb_interface_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Interface)
 
 
-def test_frameweb::interface_constructor_exists():
-    assert callable(frameweb::Interface.__init__)
+def test_frameweb_interface_constructor_exists():
+    assert callable(frameweb_Interface.__init__)
 
 
-def test_frameweb::interface_constructor_args():
-    sig = inspect.signature(frameweb::Interface.__init__)
+def test_frameweb_interface_constructor_args():
+    sig = inspect.signature(frameweb_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::datatype_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DataType)
+def test_frameweb_datatype_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DataType)
 
 
-def test_frameweb::datatype_constructor_exists():
-    assert callable(frameweb::DataType.__init__)
+def test_frameweb_datatype_constructor_exists():
+    assert callable(frameweb_DataType.__init__)
 
 
-def test_frameweb::datatype_constructor_args():
-    sig = inspect.signature(frameweb::DataType.__init__)
+def test_frameweb_datatype_constructor_args():
+    sig = inspect.signature(frameweb_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -532,6 +1850,40 @@ def test_deploymenttarget_constructor_exists():
 def test_deploymenttarget_constructor_args():
     sig = inspect.signature(DeploymentTarget.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_iri_is_not_abstract():
+    assert not inspect.isabstract(frameweb_IRI)
+
+
+def test_frameweb_iri_constructor_exists():
+    assert callable(frameweb_IRI.__init__)
+
+
+def test_frameweb_iri_constructor_args():
+    sig = inspect.signature(frameweb_IRI.__init__)
+    params = list(sig.parameters.keys())
+    assert "iri" in params, "Missing parameter 'iri'"
+    assert "iriVersion" in params, "Missing parameter 'iriVersion'"
+
+def test_frameweb_iri_has_iri():
+    assert hasattr(frameweb_IRI, "iri")
+    descriptor = None
+    for klass in frameweb_IRI.__mro__:
+        if "iri" in klass.__dict__:
+            descriptor = klass.__dict__["iri"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_iri_has_iriVersion():
+    assert hasattr(frameweb_IRI, "iriVersion")
+    descriptor = None
+    for klass in frameweb_IRI.__mro__:
+        if "iriVersion" in klass.__dict__:
+            descriptor = klass.__dict__["iriVersion"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -563,77 +1915,157 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_frameweb::property_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Property)
+def test_frameweb_property_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Property)
 
 
-def test_frameweb::property_constructor_exists():
-    assert callable(frameweb::Property.__init__)
+def test_frameweb_property_constructor_exists():
+    assert callable(frameweb_Property.__init__)
 
 
-def test_frameweb::property_constructor_args():
-    sig = inspect.signature(frameweb::Property.__init__)
+def test_frameweb_property_constructor_args():
+    sig = inspect.signature(frameweb_Property.__init__)
     params = list(sig.parameters.keys())
     assert "isID" in params, "Missing parameter 'isID'"
-    assert "default" in params, "Missing parameter 'default'"
     assert "isDerived" in params, "Missing parameter 'isDerived'"
-    assert "aggregation" in params, "Missing parameter 'aggregation'"
     assert "isDerivedUnion" in params, "Missing parameter 'isDerivedUnion'"
     assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "default" in params, "Missing parameter 'default'"
+    assert "aggregation" in params, "Missing parameter 'aggregation'"
 
-def test_frameweb::property_has_isID():
-    assert hasattr(frameweb::Property, "isID")
+def test_frameweb_property_has_isID():
+    assert hasattr(frameweb_Property, "isID")
     descriptor = None
-    for klass in frameweb::Property.__mro__:
+    for klass in frameweb_Property.__mro__:
         if "isID" in klass.__dict__:
             descriptor = klass.__dict__["isID"]
             break
     assert isinstance(descriptor, property)
 
-def test_frameweb::property_has_default():
-    assert hasattr(frameweb::Property, "default")
+def test_frameweb_property_has_isDerived():
+    assert hasattr(frameweb_Property, "isDerived")
     descriptor = None
-    for klass in frameweb::Property.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::property_has_isDerived():
-    assert hasattr(frameweb::Property, "isDerived")
-    descriptor = None
-    for klass in frameweb::Property.__mro__:
+    for klass in frameweb_Property.__mro__:
         if "isDerived" in klass.__dict__:
             descriptor = klass.__dict__["isDerived"]
             break
     assert isinstance(descriptor, property)
 
-def test_frameweb::property_has_aggregation():
-    assert hasattr(frameweb::Property, "aggregation")
+def test_frameweb_property_has_isDerivedUnion():
+    assert hasattr(frameweb_Property, "isDerivedUnion")
     descriptor = None
-    for klass in frameweb::Property.__mro__:
-        if "aggregation" in klass.__dict__:
-            descriptor = klass.__dict__["aggregation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::property_has_isDerivedUnion():
-    assert hasattr(frameweb::Property, "isDerivedUnion")
-    descriptor = None
-    for klass in frameweb::Property.__mro__:
+    for klass in frameweb_Property.__mro__:
         if "isDerivedUnion" in klass.__dict__:
             descriptor = klass.__dict__["isDerivedUnion"]
             break
     assert isinstance(descriptor, property)
 
-def test_frameweb::property_has_isComposite():
-    assert hasattr(frameweb::Property, "isComposite")
+def test_frameweb_property_has_isComposite():
+    assert hasattr(frameweb_Property, "isComposite")
     descriptor = None
-    for klass in frameweb::Property.__mro__:
+    for klass in frameweb_Property.__mro__:
         if "isComposite" in klass.__dict__:
             descriptor = klass.__dict__["isComposite"]
             break
     assert isinstance(descriptor, property)
+
+def test_frameweb_property_has_default():
+    assert hasattr(frameweb_Property, "default")
+    descriptor = None
+    for klass in frameweb_Property.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_frameweb_property_has_aggregation():
+    assert hasattr(frameweb_Property, "aggregation")
+    descriptor = None
+    for klass in frameweb_Property.__mro__:
+        if "aggregation" in klass.__dict__:
+            descriptor = klass.__dict__["aggregation"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_semanticpackage_is_not_abstract():
+    assert not inspect.isabstract(frameweb_SemanticPackage)
+
+
+def test_frameweb_semanticpackage_constructor_exists():
+    assert callable(frameweb_SemanticPackage.__init__)
+
+
+def test_frameweb_semanticpackage_constructor_args():
+    sig = inspect.signature(frameweb_SemanticPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_annotation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Annotation)
+
+
+def test_frameweb_annotation_constructor_exists():
+    assert callable(frameweb_Annotation.__init__)
+
+
+def test_frameweb_annotation_constructor_args():
+    sig = inspect.signature(frameweb_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_axiom_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Axiom)
+
+
+def test_frameweb_axiom_constructor_exists():
+    assert callable(frameweb_Axiom.__init__)
+
+
+def test_frameweb_axiom_constructor_args():
+    sig = inspect.signature(frameweb_Axiom.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_vocabulary_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Vocabulary)
+
+
+def test_frameweb_vocabulary_constructor_exists():
+    assert callable(frameweb_Vocabulary.__init__)
+
+
+def test_frameweb_vocabulary_constructor_args():
+    sig = inspect.signature(frameweb_Vocabulary.__init__)
+    params = list(sig.parameters.keys())
+    assert "vocabularyDocument" in params, "Missing parameter 'vocabularyDocument'"
+
+def test_frameweb_vocabulary_has_vocabularyDocument():
+    assert hasattr(frameweb_Vocabulary, "vocabularyDocument")
+    descriptor = None
+    for klass in frameweb_Vocabulary.__mro__:
+        if "vocabularyDocument" in klass.__dict__:
+            descriptor = klass.__dict__["vocabularyDocument"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_vocabularymodel_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyModel)
+
+
+def test_frameweb_vocabularymodel_constructor_exists():
+    assert callable(frameweb_VocabularyModel.__init__)
+
+
+def test_frameweb_vocabularymodel_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyModel.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -651,69 +2083,153 @@ def test_generalizationset_constructor_args():
 
 
 
-def test_frameweb::servicegeneralizationset_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceGeneralizationSet)
+def test_frameweb_daogeneralizationset_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOGeneralizationSet)
 
 
-def test_frameweb::servicegeneralizationset_constructor_exists():
-    assert callable(frameweb::ServiceGeneralizationSet.__init__)
+def test_frameweb_daogeneralizationset_constructor_exists():
+    assert callable(frameweb_DAOGeneralizationSet.__init__)
 
 
-def test_frameweb::servicegeneralizationset_constructor_args():
-    sig = inspect.signature(frameweb::ServiceGeneralizationSet.__init__)
+def test_frameweb_daogeneralizationset_constructor_args():
+    sig = inspect.signature(frameweb_DAOGeneralizationSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::daogeneralizationset_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOGeneralizationSet)
+def test_frameweb_navigationgeneralizationset_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationGeneralizationSet)
 
 
-def test_frameweb::daogeneralizationset_constructor_exists():
-    assert callable(frameweb::DAOGeneralizationSet.__init__)
+def test_frameweb_navigationgeneralizationset_constructor_exists():
+    assert callable(frameweb_NavigationGeneralizationSet.__init__)
 
 
-def test_frameweb::daogeneralizationset_constructor_args():
-    sig = inspect.signature(frameweb::DAOGeneralizationSet.__init__)
+def test_frameweb_navigationgeneralizationset_constructor_args():
+    sig = inspect.signature(frameweb_NavigationGeneralizationSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::navigationgeneralizationset_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationGeneralizationSet)
+def test_frameweb_servicegeneralizationset_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceGeneralizationSet)
 
 
-def test_frameweb::navigationgeneralizationset_constructor_exists():
-    assert callable(frameweb::NavigationGeneralizationSet.__init__)
+def test_frameweb_servicegeneralizationset_constructor_exists():
+    assert callable(frameweb_ServiceGeneralizationSet.__init__)
 
 
-def test_frameweb::navigationgeneralizationset_constructor_args():
-    sig = inspect.signature(frameweb::NavigationGeneralizationSet.__init__)
+def test_frameweb_servicegeneralizationset_constructor_args():
+    sig = inspect.signature(frameweb_ServiceGeneralizationSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::domaingeneralizationset_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainGeneralizationSet)
+def test_frameweb_domaingeneralizationset_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainGeneralizationSet)
 
 
-def test_frameweb::domaingeneralizationset_constructor_exists():
-    assert callable(frameweb::DomainGeneralizationSet.__init__)
+def test_frameweb_domaingeneralizationset_constructor_exists():
+    assert callable(frameweb_DomainGeneralizationSet.__init__)
 
 
-def test_frameweb::domaingeneralizationset_constructor_args():
-    sig = inspect.signature(frameweb::DomainGeneralizationSet.__init__)
+def test_frameweb_domaingeneralizationset_constructor_args():
+    sig = inspect.signature(frameweb_DomainGeneralizationSet.__init__)
     params = list(sig.parameters.keys())
     assert "mapping" in params, "Missing parameter 'mapping'"
 
-def test_frameweb::domaingeneralizationset_has_mapping():
-    assert hasattr(frameweb::DomainGeneralizationSet, "mapping")
+def test_frameweb_domaingeneralizationset_has_mapping():
+    assert hasattr(frameweb_DomainGeneralizationSet, "mapping")
     descriptor = None
-    for klass in frameweb::DomainGeneralizationSet.__mro__:
+    for klass in frameweb_DomainGeneralizationSet.__mro__:
         if "mapping" in klass.__dict__:
             descriptor = klass.__dict__["mapping"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_frameweb_attributemapping_is_not_abstract():
+    assert not inspect.isabstract(frameweb_AttributeMapping)
+
+
+def test_frameweb_attributemapping_constructor_exists():
+    assert callable(frameweb_AttributeMapping.__init__)
+
+
+def test_frameweb_attributemapping_constructor_args():
+    sig = inspect.signature(frameweb_AttributeMapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_classmapping_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ClassMapping)
+
+
+def test_frameweb_classmapping_constructor_exists():
+    assert callable(frameweb_ClassMapping.__init__)
+
+
+def test_frameweb_classmapping_constructor_args():
+    sig = inspect.signature(frameweb_ClassMapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_mappinglib_is_not_abstract():
+    assert not inspect.isabstract(frameweb_MappingLib)
+
+
+def test_frameweb_mappinglib_constructor_exists():
+    assert callable(frameweb_MappingLib.__init__)
+
+
+def test_frameweb_mappinglib_constructor_args():
+    sig = inspect.signature(frameweb_MappingLib.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_daogeneralization_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOGeneralization)
+
+
+def test_frameweb_daogeneralization_constructor_exists():
+    assert callable(frameweb_DAOGeneralization.__init__)
+
+
+def test_frameweb_daogeneralization_constructor_args():
+    sig = inspect.signature(frameweb_DAOGeneralization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_domainproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainProperty)
+
+
+def test_frameweb_domainproperty_constructor_exists():
+    assert callable(frameweb_DomainProperty.__init__)
+
+
+def test_frameweb_domainproperty_constructor_args():
+    sig = inspect.signature(frameweb_DomainProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_navigationgeneralization_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationGeneralization)
+
+
+def test_frameweb_navigationgeneralization_constructor_exists():
+    assert callable(frameweb_NavigationGeneralization.__init__)
+
+
+def test_frameweb_navigationgeneralization_constructor_args():
+    sig = inspect.signature(frameweb_NavigationGeneralization.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -727,6 +2243,62 @@ def test_navigationconstraint_constructor_exists():
 
 def test_navigationconstraint_constructor_args():
     sig = inspect.signature(NavigationConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_chainingconstraint_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ChainingConstraint)
+
+
+def test_frameweb_chainingconstraint_constructor_exists():
+    assert callable(frameweb_ChainingConstraint.__init__)
+
+
+def test_frameweb_chainingconstraint_constructor_args():
+    sig = inspect.signature(frameweb_ChainingConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_methodcosntraint_is_not_abstract():
+    assert not inspect.isabstract(frameweb_MethodCosntraint)
+
+
+def test_frameweb_methodcosntraint_constructor_exists():
+    assert callable(frameweb_MethodCosntraint.__init__)
+
+
+def test_frameweb_methodcosntraint_constructor_args():
+    sig = inspect.signature(frameweb_MethodCosntraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_resultconstraint_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultConstraint)
+
+
+def test_frameweb_resultconstraint_constructor_exists():
+    assert callable(frameweb_ResultConstraint.__init__)
+
+
+def test_frameweb_resultconstraint_constructor_args():
+    sig = inspect.signature(frameweb_ResultConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_pageconstraint_is_not_abstract():
+    assert not inspect.isabstract(frameweb_PageConstraint)
+
+
+def test_frameweb_pageconstraint_constructor_exists():
+    assert callable(frameweb_PageConstraint.__init__)
+
+
+def test_frameweb_pageconstraint_constructor_args():
+    sig = inspect.signature(frameweb_PageConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -745,30 +2317,44 @@ def test_constraint_constructor_args():
 
 
 
-def test_frameweb::domainconstraints_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainConstraints)
+def test_frameweb_domainconstraints_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainConstraints)
 
 
-def test_frameweb::domainconstraints_constructor_exists():
-    assert callable(frameweb::DomainConstraints.__init__)
+def test_frameweb_domainconstraints_constructor_exists():
+    assert callable(frameweb_DomainConstraints.__init__)
 
 
-def test_frameweb::domainconstraints_constructor_args():
-    sig = inspect.signature(frameweb::DomainConstraints.__init__)
+def test_frameweb_domainconstraints_constructor_args():
+    sig = inspect.signature(frameweb_DomainConstraints.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::vocabularyconstraints_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyConstraints)
+def test_frameweb_navigationconstraint_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationConstraint)
 
 
-def test_frameweb::vocabularyconstraints_constructor_exists():
-    assert callable(frameweb::VocabularyConstraints.__init__)
+def test_frameweb_navigationconstraint_constructor_exists():
+    assert callable(frameweb_NavigationConstraint.__init__)
 
 
-def test_frameweb::vocabularyconstraints_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyConstraints.__init__)
+def test_frameweb_navigationconstraint_constructor_args():
+    sig = inspect.signature(frameweb_NavigationConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_vocabularyconstraints_is_not_abstract():
+    assert not inspect.isabstract(frameweb_VocabularyConstraints)
+
+
+def test_frameweb_vocabularyconstraints_constructor_exists():
+    assert callable(frameweb_VocabularyConstraints.__init__)
+
+
+def test_frameweb_vocabularyconstraints_constructor_args():
+    sig = inspect.signature(frameweb_VocabularyConstraints.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -787,128 +2373,114 @@ def test_frameworkextension_constructor_args():
 
 
 
-def test_frameweb::domainextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainExtension)
+def test_frameweb_domainextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DomainExtension)
 
 
-def test_frameweb::domainextension_constructor_exists():
-    assert callable(frameweb::DomainExtension.__init__)
+def test_frameweb_domainextension_constructor_exists():
+    assert callable(frameweb_DomainExtension.__init__)
 
 
-def test_frameweb::domainextension_constructor_args():
-    sig = inspect.signature(frameweb::DomainExtension.__init__)
+def test_frameweb_domainextension_constructor_args():
+    sig = inspect.signature(frameweb_DomainExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::navigationextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationExtension)
+def test_frameweb_navigationextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationExtension)
 
 
-def test_frameweb::navigationextension_constructor_exists():
-    assert callable(frameweb::NavigationExtension.__init__)
+def test_frameweb_navigationextension_constructor_exists():
+    assert callable(frameweb_NavigationExtension.__init__)
 
 
-def test_frameweb::navigationextension_constructor_args():
-    sig = inspect.signature(frameweb::NavigationExtension.__init__)
+def test_frameweb_navigationextension_constructor_args():
+    sig = inspect.signature(frameweb_NavigationExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_framewebmodel_is_not_abstract():
-    assert not inspect.isabstract(FramewebModel)
+def test_frameweb_sevicerealization_is_not_abstract():
+    assert not inspect.isabstract(frameweb_SeviceRealization)
 
 
-def test_framewebmodel_constructor_exists():
-    assert callable(FramewebModel.__init__)
+def test_frameweb_sevicerealization_constructor_exists():
+    assert callable(frameweb_SeviceRealization.__init__)
 
 
-def test_framewebmodel_constructor_args():
-    sig = inspect.signature(FramewebModel.__init__)
+def test_frameweb_sevicerealization_constructor_args():
+    sig = inspect.signature(frameweb_SeviceRealization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::applicationmodel_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ApplicationModel)
+def test_frameweb_attributemappingproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_AttributeMappingProperty)
 
 
-def test_frameweb::applicationmodel_constructor_exists():
-    assert callable(frameweb::ApplicationModel.__init__)
+def test_frameweb_attributemappingproperty_constructor_exists():
+    assert callable(frameweb_AttributeMappingProperty.__init__)
 
 
-def test_frameweb::applicationmodel_constructor_args():
-    sig = inspect.signature(frameweb::ApplicationModel.__init__)
+def test_frameweb_attributemappingproperty_constructor_args():
+    sig = inspect.signature(frameweb_AttributeMappingProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::navigationmodel_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationModel)
+def test_frameweb_classmappingpropery_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ClassMappingPropery)
 
 
-def test_frameweb::navigationmodel_constructor_exists():
-    assert callable(frameweb::NavigationModel.__init__)
+def test_frameweb_classmappingpropery_constructor_exists():
+    assert callable(frameweb_ClassMappingPropery.__init__)
 
 
-def test_frameweb::navigationmodel_constructor_args():
-    sig = inspect.signature(frameweb::NavigationModel.__init__)
+def test_frameweb_classmappingpropery_constructor_args():
+    sig = inspect.signature(frameweb_ClassMappingPropery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::vocabularymodel_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyModel)
+def test_frameweb_resultproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultProperty)
 
 
-def test_frameweb::vocabularymodel_constructor_exists():
-    assert callable(frameweb::VocabularyModel.__init__)
+def test_frameweb_resultproperty_constructor_exists():
+    assert callable(frameweb_ResultProperty.__init__)
 
 
-def test_frameweb::vocabularymodel_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyModel.__init__)
+def test_frameweb_resultproperty_constructor_args():
+    sig = inspect.signature(frameweb_ResultProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::entitymodel_is_not_abstract():
-    assert not inspect.isabstract(frameweb::EntityModel)
+def test_frameweb_tagproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_TagProperty)
 
 
-def test_frameweb::entitymodel_constructor_exists():
-    assert callable(frameweb::EntityModel.__init__)
+def test_frameweb_tagproperty_constructor_exists():
+    assert callable(frameweb_TagProperty.__init__)
 
 
-def test_frameweb::entitymodel_constructor_args():
-    sig = inspect.signature(frameweb::EntityModel.__init__)
+def test_frameweb_tagproperty_constructor_args():
+    sig = inspect.signature(frameweb_TagProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_profile_is_not_abstract():
-    assert not inspect.isabstract(Profile)
+def test_frameweb_controllerproperty_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ControllerProperty)
 
 
-def test_profile_constructor_exists():
-    assert callable(Profile.__init__)
+def test_frameweb_controllerproperty_constructor_exists():
+    assert callable(frameweb_ControllerProperty.__init__)
 
 
-def test_profile_constructor_args():
-    sig = inspect.signature(Profile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::framewebproject_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FramewebProject)
-
-
-def test_frameweb::framewebproject_constructor_exists():
-    assert callable(frameweb::FramewebProject.__init__)
-
-
-def test_frameweb::framewebproject_constructor_args():
-    sig = inspect.signature(frameweb::FramewebProject.__init__)
+def test_frameweb_controllerproperty_constructor_args():
+    sig = inspect.signature(frameweb_ControllerProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -927,72 +2499,72 @@ def test_extensionend_constructor_args():
 
 
 
-def test_frameweb::tagextensionend_is_not_abstract():
-    assert not inspect.isabstract(frameweb::TagExtensionEnd)
+def test_frameweb_attributemappingextensionend_is_not_abstract():
+    assert not inspect.isabstract(frameweb_AttributeMappingExtensionEnd)
 
 
-def test_frameweb::tagextensionend_constructor_exists():
-    assert callable(frameweb::TagExtensionEnd.__init__)
+def test_frameweb_attributemappingextensionend_constructor_exists():
+    assert callable(frameweb_AttributeMappingExtensionEnd.__init__)
 
 
-def test_frameweb::tagextensionend_constructor_args():
-    sig = inspect.signature(frameweb::TagExtensionEnd.__init__)
+def test_frameweb_attributemappingextensionend_constructor_args():
+    sig = inspect.signature(frameweb_AttributeMappingExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::attributemappingextensionend_is_not_abstract():
-    assert not inspect.isabstract(frameweb::AttributeMappingExtensionEnd)
+def test_frameweb_tagextensionend_is_not_abstract():
+    assert not inspect.isabstract(frameweb_TagExtensionEnd)
 
 
-def test_frameweb::attributemappingextensionend_constructor_exists():
-    assert callable(frameweb::AttributeMappingExtensionEnd.__init__)
+def test_frameweb_tagextensionend_constructor_exists():
+    assert callable(frameweb_TagExtensionEnd.__init__)
 
 
-def test_frameweb::attributemappingextensionend_constructor_args():
-    sig = inspect.signature(frameweb::AttributeMappingExtensionEnd.__init__)
+def test_frameweb_tagextensionend_constructor_args():
+    sig = inspect.signature(frameweb_TagExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::classmappingextensionend_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ClassMappingExtensionEnd)
+def test_frameweb_resultextensionend_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultExtensionEnd)
 
 
-def test_frameweb::classmappingextensionend_constructor_exists():
-    assert callable(frameweb::ClassMappingExtensionEnd.__init__)
+def test_frameweb_resultextensionend_constructor_exists():
+    assert callable(frameweb_ResultExtensionEnd.__init__)
 
 
-def test_frameweb::classmappingextensionend_constructor_args():
-    sig = inspect.signature(frameweb::ClassMappingExtensionEnd.__init__)
+def test_frameweb_resultextensionend_constructor_args():
+    sig = inspect.signature(frameweb_ResultExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::resultextensionend_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultExtensionEnd)
+def test_frameweb_classmappingextensionend_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ClassMappingExtensionEnd)
 
 
-def test_frameweb::resultextensionend_constructor_exists():
-    assert callable(frameweb::ResultExtensionEnd.__init__)
+def test_frameweb_classmappingextensionend_constructor_exists():
+    assert callable(frameweb_ClassMappingExtensionEnd.__init__)
 
 
-def test_frameweb::resultextensionend_constructor_args():
-    sig = inspect.signature(frameweb::ResultExtensionEnd.__init__)
+def test_frameweb_classmappingextensionend_constructor_args():
+    sig = inspect.signature(frameweb_ClassMappingExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::controllerextensionend_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ControllerExtensionEnd)
+def test_frameweb_controllerextensionend_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ControllerExtensionEnd)
 
 
-def test_frameweb::controllerextensionend_constructor_exists():
-    assert callable(frameweb::ControllerExtensionEnd.__init__)
+def test_frameweb_controllerextensionend_constructor_exists():
+    assert callable(frameweb_ControllerExtensionEnd.__init__)
 
 
-def test_frameweb::controllerextensionend_constructor_args():
-    sig = inspect.signature(frameweb::ControllerExtensionEnd.__init__)
+def test_frameweb_controllerextensionend_constructor_args():
+    sig = inspect.signature(frameweb_ControllerExtensionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1011,30 +2583,58 @@ def test_domainextension_constructor_args():
 
 
 
-def test_frameweb::attributemappingextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::AttributeMappingExtension)
+def test_frameweb_attributemappingextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_AttributeMappingExtension)
 
 
-def test_frameweb::attributemappingextension_constructor_exists():
-    assert callable(frameweb::AttributeMappingExtension.__init__)
+def test_frameweb_attributemappingextension_constructor_exists():
+    assert callable(frameweb_AttributeMappingExtension.__init__)
 
 
-def test_frameweb::attributemappingextension_constructor_args():
-    sig = inspect.signature(frameweb::AttributeMappingExtension.__init__)
+def test_frameweb_attributemappingextension_constructor_args():
+    sig = inspect.signature(frameweb_AttributeMappingExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::classmappingextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ClassMappingExtension)
+def test_frameweb_classmappingextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ClassMappingExtension)
 
 
-def test_frameweb::classmappingextension_constructor_exists():
-    assert callable(frameweb::ClassMappingExtension.__init__)
+def test_frameweb_classmappingextension_constructor_exists():
+    assert callable(frameweb_ClassMappingExtension.__init__)
 
 
-def test_frameweb::classmappingextension_constructor_args():
-    sig = inspect.signature(frameweb::ClassMappingExtension.__init__)
+def test_frameweb_classmappingextension_constructor_args():
+    sig = inspect.signature(frameweb_ClassMappingExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_controllerset_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ControllerSet)
+
+
+def test_frameweb_controllerset_constructor_exists():
+    assert callable(frameweb_ControllerSet.__init__)
+
+
+def test_frameweb_controllerset_constructor_args():
+    sig = inspect.signature(frameweb_ControllerSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_controller_is_not_abstract():
+    assert not inspect.isabstract(frameweb_Controller)
+
+
+def test_frameweb_controller_constructor_exists():
+    assert callable(frameweb_Controller.__init__)
+
+
+def test_frameweb_controller_constructor_args():
+    sig = inspect.signature(frameweb_Controller.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1053,16 +2653,16 @@ def test_profileapplication_constructor_args():
 
 
 
-def test_frameweb::frameworkapplication_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FrameworkApplication)
+def test_frameweb_frameworkapplication_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FrameworkApplication)
 
 
-def test_frameweb::frameworkapplication_constructor_exists():
-    assert callable(frameweb::FrameworkApplication.__init__)
+def test_frameweb_frameworkapplication_constructor_exists():
+    assert callable(frameweb_FrameworkApplication.__init__)
 
 
-def test_frameweb::frameworkapplication_constructor_args():
-    sig = inspect.signature(frameweb::FrameworkApplication.__init__)
+def test_frameweb_frameworkapplication_constructor_args():
+    sig = inspect.signature(frameweb_FrameworkApplication.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1081,44 +2681,44 @@ def test_navigationextension_constructor_args():
 
 
 
-def test_frameweb::controllerextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ControllerExtension)
+def test_frameweb_controllerextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ControllerExtension)
 
 
-def test_frameweb::controllerextension_constructor_exists():
-    assert callable(frameweb::ControllerExtension.__init__)
+def test_frameweb_controllerextension_constructor_exists():
+    assert callable(frameweb_ControllerExtension.__init__)
 
 
-def test_frameweb::controllerextension_constructor_args():
-    sig = inspect.signature(frameweb::ControllerExtension.__init__)
+def test_frameweb_controllerextension_constructor_args():
+    sig = inspect.signature(frameweb_ControllerExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::resultextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultExtension)
+def test_frameweb_resultextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ResultExtension)
 
 
-def test_frameweb::resultextension_constructor_exists():
-    assert callable(frameweb::ResultExtension.__init__)
+def test_frameweb_resultextension_constructor_exists():
+    assert callable(frameweb_ResultExtension.__init__)
 
 
-def test_frameweb::resultextension_constructor_args():
-    sig = inspect.signature(frameweb::ResultExtension.__init__)
+def test_frameweb_resultextension_constructor_args():
+    sig = inspect.signature(frameweb_ResultExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::tagextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::TagExtension)
+def test_frameweb_tagextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_TagExtension)
 
 
-def test_frameweb::tagextension_constructor_exists():
-    assert callable(frameweb::TagExtension.__init__)
+def test_frameweb_tagextension_constructor_exists():
+    assert callable(frameweb_TagExtension.__init__)
 
 
-def test_frameweb::tagextension_constructor_args():
-    sig = inspect.signature(frameweb::TagExtension.__init__)
+def test_frameweb_tagextension_constructor_args():
+    sig = inspect.signature(frameweb_TagExtension.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1137,16 +2737,30 @@ def test_extension_constructor_args():
 
 
 
-def test_frameweb::frameworkextension_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FrameworkExtension)
+def test_frameweb_frameworkextension_is_not_abstract():
+    assert not inspect.isabstract(frameweb_FrameworkExtension)
 
 
-def test_frameweb::frameworkextension_constructor_exists():
-    assert callable(frameweb::FrameworkExtension.__init__)
+def test_frameweb_frameworkextension_constructor_exists():
+    assert callable(frameweb_FrameworkExtension.__init__)
 
 
-def test_frameweb::frameworkextension_constructor_args():
-    sig = inspect.signature(frameweb::FrameworkExtension.__init__)
+def test_frameweb_frameworkextension_constructor_args():
+    sig = inspect.signature(frameweb_FrameworkExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_frameweb_daomethod_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOMethod)
+
+
+def test_frameweb_daomethod_constructor_exists():
+    assert callable(frameweb_DAOMethod.__init__)
+
+
+def test_frameweb_daomethod_constructor_args():
+    sig = inspect.signature(frameweb_DAOMethod.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1165,1710 +2779,73 @@ def test_dependency_constructor_args():
 
 
 
-def test_frameweb::navigationdependency_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationDependency)
+def test_frameweb_navigationdependency_is_not_abstract():
+    assert not inspect.isabstract(frameweb_NavigationDependency)
 
 
-def test_frameweb::navigationdependency_constructor_exists():
-    assert callable(frameweb::NavigationDependency.__init__)
+def test_frameweb_navigationdependency_constructor_exists():
+    assert callable(frameweb_NavigationDependency.__init__)
 
 
-def test_frameweb::navigationdependency_constructor_args():
-    sig = inspect.signature(frameweb::NavigationDependency.__init__)
+def test_frameweb_navigationdependency_constructor_args():
+    sig = inspect.signature(frameweb_NavigationDependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::navigationconstraint_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationConstraint)
+def test_frameweb_serviceassociation_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceAssociation)
 
 
-def test_frameweb::navigationconstraint_constructor_exists():
-    assert callable(frameweb::NavigationConstraint.__init__)
+def test_frameweb_serviceassociation_constructor_exists():
+    assert callable(frameweb_ServiceAssociation.__init__)
 
 
-def test_frameweb::navigationconstraint_constructor_args():
-    sig = inspect.signature(frameweb::NavigationConstraint.__init__)
+def test_frameweb_serviceassociation_constructor_args():
+    sig = inspect.signature(frameweb_ServiceAssociation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_navigationproperty_is_not_abstract():
-    assert not inspect.isabstract(NavigationProperty)
+def test_frameweb_serviceattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceAttribute)
 
 
-def test_navigationproperty_constructor_exists():
-    assert callable(NavigationProperty.__init__)
+def test_frameweb_serviceattribute_constructor_exists():
+    assert callable(frameweb_ServiceAttribute.__init__)
 
 
-def test_navigationproperty_constructor_args():
-    sig = inspect.signature(NavigationProperty.__init__)
+def test_frameweb_serviceattribute_constructor_args():
+    sig = inspect.signature(frameweb_ServiceAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::navigationcompositionwhole_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationCompositionWhole)
+def test_frameweb_servicemethod_is_not_abstract():
+    assert not inspect.isabstract(frameweb_ServiceMethod)
 
 
-def test_frameweb::navigationcompositionwhole_constructor_exists():
-    assert callable(frameweb::NavigationCompositionWhole.__init__)
+def test_frameweb_servicemethod_constructor_exists():
+    assert callable(frameweb_ServiceMethod.__init__)
 
 
-def test_frameweb::navigationcompositionwhole_constructor_args():
-    sig = inspect.signature(frameweb::NavigationCompositionWhole.__init__)
+def test_frameweb_servicemethod_constructor_args():
+    sig = inspect.signature(frameweb_ServiceMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_frameweb::navigationcompositionpart_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationCompositionPart)
+def test_frameweb_daoattribute_is_not_abstract():
+    assert not inspect.isabstract(frameweb_DAOAttribute)
 
 
-def test_frameweb::navigationcompositionpart_constructor_exists():
-    assert callable(frameweb::NavigationCompositionPart.__init__)
+def test_frameweb_daoattribute_constructor_exists():
+    assert callable(frameweb_DAOAttribute.__init__)
 
 
-def test_frameweb::navigationcompositionpart_constructor_args():
-    sig = inspect.signature(frameweb::NavigationCompositionPart.__init__)
+def test_frameweb_daoattribute_constructor_args():
+    sig = inspect.signature(frameweb_DAOAttribute.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_stereotype_is_not_abstract():
-    assert not inspect.isabstract(Stereotype)
-
-
-def test_stereotype_constructor_exists():
-    assert callable(Stereotype.__init__)
-
-
-def test_stereotype_constructor_args():
-    sig = inspect.signature(Stereotype.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::attributemapping_is_not_abstract():
-    assert not inspect.isabstract(frameweb::AttributeMapping)
-
-
-def test_frameweb::attributemapping_constructor_exists():
-    assert callable(frameweb::AttributeMapping.__init__)
-
-
-def test_frameweb::attributemapping_constructor_args():
-    sig = inspect.signature(frameweb::AttributeMapping.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::classmapping_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ClassMapping)
-
-
-def test_frameweb::classmapping_constructor_exists():
-    assert callable(frameweb::ClassMapping.__init__)
-
-
-def test_frameweb::classmapping_constructor_args():
-    sig = inspect.signature(frameweb::ClassMapping.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::controller_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Controller)
-
-
-def test_frameweb::controller_constructor_exists():
-    assert callable(frameweb::Controller.__init__)
-
-
-def test_frameweb::controller_constructor_args():
-    sig = inspect.signature(frameweb::Controller.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::tag_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Tag)
-
-
-def test_frameweb::tag_constructor_exists():
-    assert callable(frameweb::Tag.__init__)
-
-
-def test_frameweb::tag_constructor_args():
-    sig = inspect.signature(frameweb::Tag.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::resulttype_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultType)
-
-
-def test_frameweb::resulttype_constructor_exists():
-    assert callable(frameweb::ResultType.__init__)
-
-
-def test_frameweb::resulttype_constructor_args():
-    sig = inspect.signature(frameweb::ResultType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_navigationpackage_is_not_abstract():
-    assert not inspect.isabstract(NavigationPackage)
-
-
-def test_navigationpackage_constructor_exists():
-    assert callable(NavigationPackage.__init__)
-
-
-def test_navigationpackage_constructor_args():
-    sig = inspect.signature(NavigationPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::controllerpackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ControllerPackage)
-
-
-def test_frameweb::controllerpackage_constructor_exists():
-    assert callable(frameweb::ControllerPackage.__init__)
-
-
-def test_frameweb::controllerpackage_constructor_args():
-    sig = inspect.signature(frameweb::ControllerPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::viewpackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ViewPackage)
-
-
-def test_frameweb::viewpackage_constructor_exists():
-    assert callable(frameweb::ViewPackage.__init__)
-
-
-def test_frameweb::viewpackage_constructor_args():
-    sig = inspect.signature(frameweb::ViewPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_package_is_not_abstract():
-    assert not inspect.isabstract(Package)
-
-
-def test_package_constructor_exists():
-    assert callable(Package.__init__)
-
-
-def test_package_constructor_args():
-    sig = inspect.signature(Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::applicationpackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ApplicationPackage)
-
-
-def test_frameweb::applicationpackage_constructor_exists():
-    assert callable(frameweb::ApplicationPackage.__init__)
-
-
-def test_frameweb::applicationpackage_constructor_args():
-    sig = inspect.signature(frameweb::ApplicationPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::persistencepackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::PersistencePackage)
-
-
-def test_frameweb::persistencepackage_constructor_exists():
-    assert callable(frameweb::PersistencePackage.__init__)
-
-
-def test_frameweb::persistencepackage_constructor_args():
-    sig = inspect.signature(frameweb::PersistencePackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::semanticpackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::SemanticPackage)
-
-
-def test_frameweb::semanticpackage_constructor_exists():
-    assert callable(frameweb::SemanticPackage.__init__)
-
-
-def test_frameweb::semanticpackage_constructor_args():
-    sig = inspect.signature(frameweb::SemanticPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::navigationpackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationPackage)
-
-
-def test_frameweb::navigationpackage_constructor_exists():
-    assert callable(frameweb::NavigationPackage.__init__)
-
-
-def test_frameweb::navigationpackage_constructor_args():
-    sig = inspect.signature(frameweb::NavigationPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::controllerset_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ControllerSet)
-
-
-def test_frameweb::controllerset_constructor_exists():
-    assert callable(frameweb::ControllerSet.__init__)
-
-
-def test_frameweb::controllerset_constructor_args():
-    sig = inspect.signature(frameweb::ControllerSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::resultset_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultSet)
-
-
-def test_frameweb::resultset_constructor_exists():
-    assert callable(frameweb::ResultSet.__init__)
-
-
-def test_frameweb::resultset_constructor_args():
-    sig = inspect.signature(frameweb::ResultSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::vocabulary_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Vocabulary)
-
-
-def test_frameweb::vocabulary_constructor_exists():
-    assert callable(frameweb::Vocabulary.__init__)
-
-
-def test_frameweb::vocabulary_constructor_args():
-    sig = inspect.signature(frameweb::Vocabulary.__init__)
-    params = list(sig.parameters.keys())
-    assert "vocabularyDocument" in params, "Missing parameter 'vocabularyDocument'"
-
-def test_frameweb::vocabulary_has_vocabularyDocument():
-    assert hasattr(frameweb::Vocabulary, "vocabularyDocument")
-    descriptor = None
-    for klass in frameweb::Vocabulary.__mro__:
-        if "vocabularyDocument" in klass.__dict__:
-            descriptor = klass.__dict__["vocabularyDocument"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::mappinglib_is_not_abstract():
-    assert not inspect.isabstract(frameweb::MappingLib)
-
-
-def test_frameweb::mappinglib_constructor_exists():
-    assert callable(frameweb::MappingLib.__init__)
-
-
-def test_frameweb::mappinglib_constructor_args():
-    sig = inspect.signature(frameweb::MappingLib.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domainpackage_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainPackage)
-
-
-def test_frameweb::domainpackage_constructor_exists():
-    assert callable(frameweb::DomainPackage.__init__)
-
-
-def test_frameweb::domainpackage_constructor_args():
-    sig = inspect.signature(frameweb::DomainPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_serviceassociation_is_not_abstract():
-    assert not inspect.isabstract(ServiceAssociation)
-
-
-def test_serviceassociation_constructor_exists():
-    assert callable(ServiceAssociation.__init__)
-
-
-def test_serviceassociation_constructor_args():
-    sig = inspect.signature(ServiceAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::servicecontrollerassociation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceControllerAssociation)
-
-
-def test_frameweb::servicecontrollerassociation_constructor_exists():
-    assert callable(frameweb::ServiceControllerAssociation.__init__)
-
-
-def test_frameweb::servicecontrollerassociation_constructor_args():
-    sig = inspect.signature(frameweb::ServiceControllerAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daoserviceassociation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOServiceAssociation)
-
-
-def test_frameweb::daoserviceassociation_constructor_exists():
-    assert callable(frameweb::DAOServiceAssociation.__init__)
-
-
-def test_frameweb::daoserviceassociation_constructor_args():
-    sig = inspect.signature(frameweb::DAOServiceAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::chainingconstraint_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ChainingConstraint)
-
-
-def test_frameweb::chainingconstraint_constructor_exists():
-    assert callable(frameweb::ChainingConstraint.__init__)
-
-
-def test_frameweb::chainingconstraint_constructor_args():
-    sig = inspect.signature(frameweb::ChainingConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::pageconstraint_is_not_abstract():
-    assert not inspect.isabstract(frameweb::PageConstraint)
-
-
-def test_frameweb::pageconstraint_constructor_exists():
-    assert callable(frameweb::PageConstraint.__init__)
-
-
-def test_frameweb::pageconstraint_constructor_args():
-    sig = inspect.signature(frameweb::PageConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::methodcosntraint_is_not_abstract():
-    assert not inspect.isabstract(frameweb::MethodCosntraint)
-
-
-def test_frameweb::methodcosntraint_constructor_exists():
-    assert callable(frameweb::MethodCosntraint.__init__)
-
-
-def test_frameweb::methodcosntraint_constructor_args():
-    sig = inspect.signature(frameweb::MethodCosntraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_navigationattribute_is_not_abstract():
-    assert not inspect.isabstract(NavigationAttribute)
-
-
-def test_navigationattribute_constructor_exists():
-    assert callable(NavigationAttribute.__init__)
-
-
-def test_navigationattribute_constructor_args():
-    sig = inspect.signature(NavigationAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::uicomponentfield_is_not_abstract():
-    assert not inspect.isabstract(frameweb::UIComponentField)
-
-
-def test_frameweb::uicomponentfield_constructor_exists():
-    assert callable(frameweb::UIComponentField.__init__)
-
-
-def test_frameweb::uicomponentfield_constructor_args():
-    sig = inspect.signature(frameweb::UIComponentField.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::ioparameter_is_not_abstract():
-    assert not inspect.isabstract(frameweb::IOParameter)
-
-
-def test_frameweb::ioparameter_constructor_exists():
-    assert callable(frameweb::IOParameter.__init__)
-
-
-def test_frameweb::ioparameter_constructor_args():
-    sig = inspect.signature(frameweb::IOParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interfacerealization_is_not_abstract():
-    assert not inspect.isabstract(InterfaceRealization)
-
-
-def test_interfacerealization_constructor_exists():
-    assert callable(InterfaceRealization.__init__)
-
-
-def test_interfacerealization_constructor_args():
-    sig = inspect.signature(InterfaceRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::sevicerealization_is_not_abstract():
-    assert not inspect.isabstract(frameweb::SeviceRealization)
-
-
-def test_frameweb::sevicerealization_constructor_exists():
-    assert callable(frameweb::SeviceRealization.__init__)
-
-
-def test_frameweb::sevicerealization_constructor_args():
-    sig = inspect.signature(frameweb::SeviceRealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daorealization_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAORealization)
-
-
-def test_frameweb::daorealization_constructor_exists():
-    assert callable(frameweb::DAORealization.__init__)
-
-
-def test_frameweb::daorealization_constructor_args():
-    sig = inspect.signature(frameweb::DAORealization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_class_is_not_abstract():
-    assert not inspect.isabstract(Class)
-
-
-def test_class_constructor_exists():
-    assert callable(Class.__init__)
-
-
-def test_class_constructor_args():
-    sig = inspect.signature(Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::frontcontrollerclass_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FrontControllerClass)
-
-
-def test_frameweb::frontcontrollerclass_constructor_exists():
-    assert callable(frameweb::FrontControllerClass.__init__)
-
-
-def test_frameweb::frontcontrollerclass_constructor_args():
-    sig = inspect.signature(frameweb::FrontControllerClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::annotation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Annotation)
-
-
-def test_frameweb::annotation_constructor_exists():
-    assert callable(frameweb::Annotation.__init__)
-
-
-def test_frameweb::annotation_constructor_args():
-    sig = inspect.signature(frameweb::Annotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::axiom_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Axiom)
-
-
-def test_frameweb::axiom_constructor_exists():
-    assert callable(frameweb::Axiom.__init__)
-
-
-def test_frameweb::axiom_constructor_args():
-    sig = inspect.signature(frameweb::Axiom.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::vocabularyclassexpression_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyClassExpression)
-
-
-def test_frameweb::vocabularyclassexpression_constructor_exists():
-    assert callable(frameweb::VocabularyClassExpression.__init__)
-
-
-def test_frameweb::vocabularyclassexpression_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyClassExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domainclass_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainClass)
-
-
-def test_frameweb::domainclass_constructor_exists():
-    assert callable(frameweb::DomainClass.__init__)
-
-
-def test_frameweb::domainclass_constructor_args():
-    sig = inspect.signature(frameweb::DomainClass.__init__)
-    params = list(sig.parameters.keys())
-    assert "table" in params, "Missing parameter 'table'"
-
-def test_frameweb::domainclass_has_table():
-    assert hasattr(frameweb::DomainClass, "table")
-    descriptor = None
-    for klass in frameweb::DomainClass.__mro__:
-        if "table" in klass.__dict__:
-            descriptor = klass.__dict__["table"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::navigationclass_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationClass)
-
-
-def test_frameweb::navigationclass_constructor_exists():
-    assert callable(frameweb::NavigationClass.__init__)
-
-
-def test_frameweb::navigationclass_constructor_args():
-    sig = inspect.signature(frameweb::NavigationClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daoclass_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOClass)
-
-
-def test_frameweb::daoclass_constructor_exists():
-    assert callable(frameweb::DAOClass.__init__)
-
-
-def test_frameweb::daoclass_constructor_args():
-    sig = inspect.signature(frameweb::DAOClass.__init__)
-    params = list(sig.parameters.keys())
-    assert "prefix" in params, "Missing parameter 'prefix'"
-    assert "infix" in params, "Missing parameter 'infix'"
-    assert "sufix" in params, "Missing parameter 'sufix'"
-
-def test_frameweb::daoclass_has_prefix():
-    assert hasattr(frameweb::DAOClass, "prefix")
-    descriptor = None
-    for klass in frameweb::DAOClass.__mro__:
-        if "prefix" in klass.__dict__:
-            descriptor = klass.__dict__["prefix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::daoclass_has_infix():
-    assert hasattr(frameweb::DAOClass, "infix")
-    descriptor = None
-    for klass in frameweb::DAOClass.__mro__:
-        if "infix" in klass.__dict__:
-            descriptor = klass.__dict__["infix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::daoclass_has_sufix():
-    assert hasattr(frameweb::DAOClass, "sufix")
-    descriptor = None
-    for klass in frameweb::DAOClass.__mro__:
-        if "sufix" in klass.__dict__:
-            descriptor = klass.__dict__["sufix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_generalization__is_not_abstract():
-    assert not inspect.isabstract(Generalization_)
-
-
-def test_generalization__constructor_exists():
-    assert callable(Generalization_.__init__)
-
-
-def test_generalization__constructor_args():
-    sig = inspect.signature(Generalization_.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domaingeneralization_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainGeneralization)
-
-
-def test_frameweb::domaingeneralization_constructor_exists():
-    assert callable(frameweb::DomainGeneralization.__init__)
-
-
-def test_frameweb::domaingeneralization_constructor_args():
-    sig = inspect.signature(frameweb::DomainGeneralization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::navigationgeneralization_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationGeneralization)
-
-
-def test_frameweb::navigationgeneralization_constructor_exists():
-    assert callable(frameweb::NavigationGeneralization.__init__)
-
-
-def test_frameweb::navigationgeneralization_constructor_args():
-    sig = inspect.signature(frameweb::NavigationGeneralization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daogeneralization_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOGeneralization)
-
-
-def test_frameweb::daogeneralization_constructor_exists():
-    assert callable(frameweb::DAOGeneralization.__init__)
-
-
-def test_frameweb::daogeneralization_constructor_args():
-    sig = inspect.signature(frameweb::DAOGeneralization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::servicegeneralization_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceGeneralization)
-
-
-def test_frameweb::servicegeneralization_constructor_exists():
-    assert callable(frameweb::ServiceGeneralization.__init__)
-
-
-def test_frameweb::servicegeneralization_constructor_args():
-    sig = inspect.signature(frameweb::ServiceGeneralization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::serviceclass_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceClass)
-
-
-def test_frameweb::serviceclass_constructor_exists():
-    assert callable(frameweb::ServiceClass.__init__)
-
-
-def test_frameweb::serviceclass_constructor_args():
-    sig = inspect.signature(frameweb::ServiceClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operation_is_not_abstract():
-    assert not inspect.isabstract(Operation)
-
-
-def test_operation_constructor_exists():
-    assert callable(Operation.__init__)
-
-
-def test_operation_constructor_args():
-    sig = inspect.signature(Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::servicemethod_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceMethod)
-
-
-def test_frameweb::servicemethod_constructor_exists():
-    assert callable(frameweb::ServiceMethod.__init__)
-
-
-def test_frameweb::servicemethod_constructor_args():
-    sig = inspect.signature(frameweb::ServiceMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daomethod_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOMethod)
-
-
-def test_frameweb::daomethod_constructor_exists():
-    assert callable(frameweb::DAOMethod.__init__)
-
-
-def test_frameweb::daomethod_constructor_args():
-    sig = inspect.signature(frameweb::DAOMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domainmethod_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainMethod)
-
-
-def test_frameweb::domainmethod_constructor_exists():
-    assert callable(frameweb::DomainMethod.__init__)
-
-
-def test_frameweb::domainmethod_constructor_args():
-    sig = inspect.signature(frameweb::DomainMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::resultconstraint_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultConstraint)
-
-
-def test_frameweb::resultconstraint_constructor_exists():
-    assert callable(frameweb::ResultConstraint.__init__)
-
-
-def test_frameweb::resultconstraint_constructor_args():
-    sig = inspect.signature(frameweb::ResultConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::frontcontrollermethod_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FrontControllerMethod)
-
-
-def test_frameweb::frontcontrollermethod_constructor_exists():
-    assert callable(frameweb::FrontControllerMethod.__init__)
-
-
-def test_frameweb::frontcontrollermethod_constructor_args():
-    sig = inspect.signature(frameweb::FrontControllerMethod.__init__)
-    params = list(sig.parameters.keys())
-    assert "isDefault" in params, "Missing parameter 'isDefault'"
-
-def test_frameweb::frontcontrollermethod_has_isDefault():
-    assert hasattr(frameweb::FrontControllerMethod, "isDefault")
-    descriptor = None
-    for klass in frameweb::FrontControllerMethod.__mro__:
-        if "isDefault" in klass.__dict__:
-            descriptor = klass.__dict__["isDefault"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::result_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Result)
-
-
-def test_frameweb::result_constructor_exists():
-    assert callable(frameweb::Result.__init__)
-
-
-def test_frameweb::result_constructor_args():
-    sig = inspect.signature(frameweb::Result.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_navigationdependency_is_not_abstract():
-    assert not inspect.isabstract(NavigationDependency)
-
-
-def test_navigationdependency_constructor_exists():
-    assert callable(NavigationDependency.__init__)
-
-
-def test_navigationdependency_constructor_args():
-    sig = inspect.signature(NavigationDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::pagedependency_is_not_abstract():
-    assert not inspect.isabstract(frameweb::PageDependency)
-
-
-def test_frameweb::pagedependency_constructor_exists():
-    assert callable(frameweb::PageDependency.__init__)
-
-
-def test_frameweb::pagedependency_constructor_args():
-    sig = inspect.signature(frameweb::PageDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::frontcontrollerdependency_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FrontControllerDependency)
-
-
-def test_frameweb::frontcontrollerdependency_constructor_exists():
-    assert callable(frameweb::FrontControllerDependency.__init__)
-
-
-def test_frameweb::frontcontrollerdependency_constructor_args():
-    sig = inspect.signature(frameweb::FrontControllerDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::chainingdependency_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ChainingDependency)
-
-
-def test_frameweb::chainingdependency_constructor_exists():
-    assert callable(frameweb::ChainingDependency.__init__)
-
-
-def test_frameweb::chainingdependency_constructor_args():
-    sig = inspect.signature(frameweb::ChainingDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::resultdependency_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultDependency)
-
-
-def test_frameweb::resultdependency_constructor_exists():
-    assert callable(frameweb::ResultDependency.__init__)
-
-
-def test_frameweb::resultdependency_constructor_args():
-    sig = inspect.signature(frameweb::ResultDependency.__init__)
-    params = list(sig.parameters.keys())
-    assert "ajax" in params, "Missing parameter 'ajax'"
-    assert "execute" in params, "Missing parameter 'execute'"
-    assert "render" in params, "Missing parameter 'render'"
-
-def test_frameweb::resultdependency_has_ajax():
-    assert hasattr(frameweb::ResultDependency, "ajax")
-    descriptor = None
-    for klass in frameweb::ResultDependency.__mro__:
-        if "ajax" in klass.__dict__:
-            descriptor = klass.__dict__["ajax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::resultdependency_has_execute():
-    assert hasattr(frameweb::ResultDependency, "execute")
-    descriptor = None
-    for klass in frameweb::ResultDependency.__mro__:
-        if "execute" in klass.__dict__:
-            descriptor = klass.__dict__["execute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::resultdependency_has_render():
-    assert hasattr(frameweb::ResultDependency, "render")
-    descriptor = None
-    for klass in frameweb::ResultDependency.__mro__:
-        if "render" in klass.__dict__:
-            descriptor = klass.__dict__["render"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_interface_is_not_abstract():
-    assert not inspect.isabstract(Interface)
-
-
-def test_interface_constructor_exists():
-    assert callable(Interface.__init__)
-
-
-def test_interface_constructor_args():
-    sig = inspect.signature(Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::serviceinterface_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceInterface)
-
-
-def test_frameweb::serviceinterface_constructor_exists():
-    assert callable(frameweb::ServiceInterface.__init__)
-
-
-def test_frameweb::serviceinterface_constructor_args():
-    sig = inspect.signature(frameweb::ServiceInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daointerface_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOInterface)
-
-
-def test_frameweb::daointerface_constructor_exists():
-    assert callable(frameweb::DAOInterface.__init__)
-
-
-def test_frameweb::daointerface_constructor_args():
-    sig = inspect.signature(frameweb::DAOInterface.__init__)
-    params = list(sig.parameters.keys())
-    assert "infix" in params, "Missing parameter 'infix'"
-    assert "sufix" in params, "Missing parameter 'sufix'"
-
-def test_frameweb::daointerface_has_infix():
-    assert hasattr(frameweb::DAOInterface, "infix")
-    descriptor = None
-    for klass in frameweb::DAOInterface.__mro__:
-        if "infix" in klass.__dict__:
-            descriptor = klass.__dict__["infix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::daointerface_has_sufix():
-    assert hasattr(frameweb::DAOInterface, "sufix")
-    descriptor = None
-    for klass in frameweb::DAOInterface.__mro__:
-        if "sufix" in klass.__dict__:
-            descriptor = klass.__dict__["sufix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::taglib_is_not_abstract():
-    assert not inspect.isabstract(frameweb::TagLib)
-
-
-def test_frameweb::taglib_constructor_exists():
-    assert callable(frameweb::TagLib.__init__)
-
-
-def test_frameweb::taglib_constructor_args():
-    sig = inspect.signature(frameweb::TagLib.__init__)
-    params = list(sig.parameters.keys())
-    assert "prefix" in params, "Missing parameter 'prefix'"
-
-def test_frameweb::taglib_has_prefix():
-    assert hasattr(frameweb::TagLib, "prefix")
-    descriptor = None
-    for klass in frameweb::TagLib.__mro__:
-        if "prefix" in klass.__dict__:
-            descriptor = klass.__dict__["prefix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_navigationclass_is_not_abstract():
-    assert not inspect.isabstract(NavigationClass)
-
-
-def test_navigationclass_constructor_exists():
-    assert callable(NavigationClass.__init__)
-
-
-def test_navigationclass_constructor_args():
-    sig = inspect.signature(NavigationClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::uicomponent_is_not_abstract():
-    assert not inspect.isabstract(frameweb::UIComponent)
-
-
-def test_frameweb::uicomponent_constructor_exists():
-    assert callable(frameweb::UIComponent.__init__)
-
-
-def test_frameweb::uicomponent_constructor_args():
-    sig = inspect.signature(frameweb::UIComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::template_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Template)
-
-
-def test_frameweb::template_constructor_exists():
-    assert callable(frameweb::Template.__init__)
-
-
-def test_frameweb::template_constructor_args():
-    sig = inspect.signature(frameweb::Template.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::page_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Page)
-
-
-def test_frameweb::page_constructor_exists():
-    assert callable(frameweb::Page.__init__)
-
-
-def test_frameweb::page_constructor_args():
-    sig = inspect.signature(frameweb::Page.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model_is_not_abstract():
-    assert not inspect.isabstract(Model)
-
-
-def test_model_constructor_exists():
-    assert callable(Model.__init__)
-
-
-def test_model_constructor_args():
-    sig = inspect.signature(Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::frameworkprofile_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FrameworkProfile)
-
-
-def test_frameweb::frameworkprofile_constructor_exists():
-    assert callable(frameweb::FrameworkProfile.__init__)
-
-
-def test_frameweb::frameworkprofile_constructor_args():
-    sig = inspect.signature(frameweb::FrameworkProfile.__init__)
-    params = list(sig.parameters.keys())
-    assert "category" in params, "Missing parameter 'category'"
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_frameweb::frameworkprofile_has_category():
-    assert hasattr(frameweb::FrameworkProfile, "category")
-    descriptor = None
-    for klass in frameweb::FrameworkProfile.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::frameworkprofile_has_kind():
-    assert hasattr(frameweb::FrameworkProfile, "kind")
-    descriptor = None
-    for klass in frameweb::FrameworkProfile.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::framewebmodel_is_not_abstract():
-    assert not inspect.isabstract(frameweb::FramewebModel)
-
-
-def test_frameweb::framewebmodel_constructor_exists():
-    assert callable(frameweb::FramewebModel.__init__)
-
-
-def test_frameweb::framewebmodel_constructor_args():
-    sig = inspect.signature(frameweb::FramewebModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_domainattribute_is_not_abstract():
-    assert not inspect.isabstract(DomainAttribute)
-
-
-def test_domainattribute_constructor_exists():
-    assert callable(DomainAttribute.__init__)
-
-
-def test_domainattribute_constructor_args():
-    sig = inspect.signature(DomainAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::decimalattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DecimalAttribute)
-
-
-def test_frameweb::decimalattribute_constructor_exists():
-    assert callable(frameweb::DecimalAttribute.__init__)
-
-
-def test_frameweb::decimalattribute_constructor_args():
-    sig = inspect.signature(frameweb::DecimalAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "decimalScale" in params, "Missing parameter 'decimalScale'"
-    assert "decimalPrecision" in params, "Missing parameter 'decimalPrecision'"
-
-def test_frameweb::decimalattribute_has_decimalScale():
-    assert hasattr(frameweb::DecimalAttribute, "decimalScale")
-    descriptor = None
-    for klass in frameweb::DecimalAttribute.__mro__:
-        if "decimalScale" in klass.__dict__:
-            descriptor = klass.__dict__["decimalScale"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::decimalattribute_has_decimalPrecision():
-    assert hasattr(frameweb::DecimalAttribute, "decimalPrecision")
-    descriptor = None
-    for klass in frameweb::DecimalAttribute.__mro__:
-        if "decimalPrecision" in klass.__dict__:
-            descriptor = klass.__dict__["decimalPrecision"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::embeddedattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::EmbeddedAttribute)
-
-
-def test_frameweb::embeddedattribute_constructor_exists():
-    assert callable(frameweb::EmbeddedAttribute.__init__)
-
-
-def test_frameweb::embeddedattribute_constructor_args():
-    sig = inspect.signature(frameweb::EmbeddedAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::lobattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::LOBAttribute)
-
-
-def test_frameweb::lobattribute_constructor_exists():
-    assert callable(frameweb::LOBAttribute.__init__)
-
-
-def test_frameweb::lobattribute_constructor_args():
-    sig = inspect.signature(frameweb::LOBAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::idattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::IdAttribute)
-
-
-def test_frameweb::idattribute_constructor_exists():
-    assert callable(frameweb::IdAttribute.__init__)
-
-
-def test_frameweb::idattribute_constructor_args():
-    sig = inspect.signature(frameweb::IdAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "generation" in params, "Missing parameter 'generation'"
-
-def test_frameweb::idattribute_has_generation():
-    assert hasattr(frameweb::IdAttribute, "generation")
-    descriptor = None
-    for klass in frameweb::IdAttribute.__mro__:
-        if "generation" in klass.__dict__:
-            descriptor = klass.__dict__["generation"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::datetimeattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DateTimeAttribute)
-
-
-def test_frameweb::datetimeattribute_constructor_exists():
-    assert callable(frameweb::DateTimeAttribute.__init__)
-
-
-def test_frameweb::datetimeattribute_constructor_args():
-    sig = inspect.signature(frameweb::DateTimeAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "dateTimePrecision" in params, "Missing parameter 'dateTimePrecision'"
-
-def test_frameweb::datetimeattribute_has_dateTimePrecision():
-    assert hasattr(frameweb::DateTimeAttribute, "dateTimePrecision")
-    descriptor = None
-    for klass in frameweb::DateTimeAttribute.__mro__:
-        if "dateTimePrecision" in klass.__dict__:
-            descriptor = klass.__dict__["dateTimePrecision"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::versionattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VersionAttribute)
-
-
-def test_frameweb::versionattribute_constructor_exists():
-    assert callable(frameweb::VersionAttribute.__init__)
-
-
-def test_frameweb::versionattribute_constructor_args():
-    sig = inspect.signature(frameweb::VersionAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_property_is_not_abstract():
-    assert not inspect.isabstract(Property)
-
-
-def test_property_constructor_exists():
-    assert callable(Property.__init__)
-
-
-def test_property_constructor_args():
-    sig = inspect.signature(Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::resultproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ResultProperty)
-
-
-def test_frameweb::resultproperty_constructor_exists():
-    assert callable(frameweb::ResultProperty.__init__)
-
-
-def test_frameweb::resultproperty_constructor_args():
-    sig = inspect.signature(frameweb::ResultProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domainproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainProperty)
-
-
-def test_frameweb::domainproperty_constructor_exists():
-    assert callable(frameweb::DomainProperty.__init__)
-
-
-def test_frameweb::domainproperty_constructor_args():
-    sig = inspect.signature(frameweb::DomainProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::vocabularyproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyProperty)
-
-
-def test_frameweb::vocabularyproperty_constructor_exists():
-    assert callable(frameweb::VocabularyProperty.__init__)
-
-
-def test_frameweb::vocabularyproperty_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::navigationproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationProperty)
-
-
-def test_frameweb::navigationproperty_constructor_exists():
-    assert callable(frameweb::NavigationProperty.__init__)
-
-
-def test_frameweb::navigationproperty_constructor_args():
-    sig = inspect.signature(frameweb::NavigationProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::navigationattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationAttribute)
-
-
-def test_frameweb::navigationattribute_constructor_exists():
-    assert callable(frameweb::NavigationAttribute.__init__)
-
-
-def test_frameweb::navigationattribute_constructor_args():
-    sig = inspect.signature(frameweb::NavigationAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::daoattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DAOAttribute)
-
-
-def test_frameweb::daoattribute_constructor_exists():
-    assert callable(frameweb::DAOAttribute.__init__)
-
-
-def test_frameweb::daoattribute_constructor_args():
-    sig = inspect.signature(frameweb::DAOAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::tagproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::TagProperty)
-
-
-def test_frameweb::tagproperty_constructor_exists():
-    assert callable(frameweb::TagProperty.__init__)
-
-
-def test_frameweb::tagproperty_constructor_args():
-    sig = inspect.signature(frameweb::TagProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::iri_is_not_abstract():
-    assert not inspect.isabstract(frameweb::IRI)
-
-
-def test_frameweb::iri_constructor_exists():
-    assert callable(frameweb::IRI.__init__)
-
-
-def test_frameweb::iri_constructor_args():
-    sig = inspect.signature(frameweb::IRI.__init__)
-    params = list(sig.parameters.keys())
-    assert "iri" in params, "Missing parameter 'iri'"
-    assert "iriVersion" in params, "Missing parameter 'iriVersion'"
-
-def test_frameweb::iri_has_iri():
-    assert hasattr(frameweb::IRI, "iri")
-    descriptor = None
-    for klass in frameweb::IRI.__mro__:
-        if "iri" in klass.__dict__:
-            descriptor = klass.__dict__["iri"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::iri_has_iriVersion():
-    assert hasattr(frameweb::IRI, "iriVersion")
-    descriptor = None
-    for klass in frameweb::IRI.__mro__:
-        if "iriVersion" in klass.__dict__:
-            descriptor = klass.__dict__["iriVersion"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::controllerproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ControllerProperty)
-
-
-def test_frameweb::controllerproperty_constructor_exists():
-    assert callable(frameweb::ControllerProperty.__init__)
-
-
-def test_frameweb::controllerproperty_constructor_args():
-    sig = inspect.signature(frameweb::ControllerProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::attributemappingproperty_is_not_abstract():
-    assert not inspect.isabstract(frameweb::AttributeMappingProperty)
-
-
-def test_frameweb::attributemappingproperty_constructor_exists():
-    assert callable(frameweb::AttributeMappingProperty.__init__)
-
-
-def test_frameweb::attributemappingproperty_constructor_args():
-    sig = inspect.signature(frameweb::AttributeMappingProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::individual_is_not_abstract():
-    assert not inspect.isabstract(frameweb::Individual)
-
-
-def test_frameweb::individual_constructor_exists():
-    assert callable(frameweb::Individual.__init__)
-
-
-def test_frameweb::individual_constructor_args():
-    sig = inspect.signature(frameweb::Individual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::classmappingpropery_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ClassMappingPropery)
-
-
-def test_frameweb::classmappingpropery_constructor_exists():
-    assert callable(frameweb::ClassMappingPropery.__init__)
-
-
-def test_frameweb::classmappingpropery_constructor_args():
-    sig = inspect.signature(frameweb::ClassMappingPropery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::serviceattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceAttribute)
-
-
-def test_frameweb::serviceattribute_constructor_exists():
-    assert callable(frameweb::ServiceAttribute.__init__)
-
-
-def test_frameweb::serviceattribute_constructor_args():
-    sig = inspect.signature(frameweb::ServiceAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domainattribute_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainAttribute)
-
-
-def test_frameweb::domainattribute_constructor_exists():
-    assert callable(frameweb::DomainAttribute.__init__)
-
-
-def test_frameweb::domainattribute_constructor_args():
-    sig = inspect.signature(frameweb::DomainAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-    assert "isPersistent" in params, "Missing parameter 'isPersistent'"
-    assert "isNull" in params, "Missing parameter 'isNull'"
-
-def test_frameweb::domainattribute_has_size():
-    assert hasattr(frameweb::DomainAttribute, "size")
-    descriptor = None
-    for klass in frameweb::DomainAttribute.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::domainattribute_has_isPersistent():
-    assert hasattr(frameweb::DomainAttribute, "isPersistent")
-    descriptor = None
-    for klass in frameweb::DomainAttribute.__mro__:
-        if "isPersistent" in klass.__dict__:
-            descriptor = klass.__dict__["isPersistent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::domainattribute_has_isNull():
-    assert hasattr(frameweb::DomainAttribute, "isNull")
-    descriptor = None
-    for klass in frameweb::DomainAttribute.__mro__:
-        if "isNull" in klass.__dict__:
-            descriptor = klass.__dict__["isNull"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_association_is_not_abstract():
-    assert not inspect.isabstract(Association)
-
-
-def test_association_constructor_exists():
-    assert callable(Association.__init__)
-
-
-def test_association_constructor_args():
-    sig = inspect.signature(Association.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::vocabularyassociation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::VocabularyAssociation)
-
-
-def test_frameweb::vocabularyassociation_constructor_exists():
-    assert callable(frameweb::VocabularyAssociation.__init__)
-
-
-def test_frameweb::vocabularyassociation_constructor_args():
-    sig = inspect.signature(frameweb::VocabularyAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::serviceassociation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::ServiceAssociation)
-
-
-def test_frameweb::serviceassociation_constructor_exists():
-    assert callable(frameweb::ServiceAssociation.__init__)
-
-
-def test_frameweb::serviceassociation_constructor_args():
-    sig = inspect.signature(frameweb::ServiceAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::navigationassociation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::NavigationAssociation)
-
-
-def test_frameweb::navigationassociation_constructor_exists():
-    assert callable(frameweb::NavigationAssociation.__init__)
-
-
-def test_frameweb::navigationassociation_constructor_args():
-    sig = inspect.signature(frameweb::NavigationAssociation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_frameweb::domainassociation_is_not_abstract():
-    assert not inspect.isabstract(frameweb::DomainAssociation)
-
-
-def test_frameweb::domainassociation_constructor_exists():
-    assert callable(frameweb::DomainAssociation.__init__)
-
-
-def test_frameweb::domainassociation_constructor_args():
-    sig = inspect.signature(frameweb::DomainAssociation.__init__)
-    params = list(sig.parameters.keys())
-    assert "order" in params, "Missing parameter 'order'"
-    assert "collection" in params, "Missing parameter 'collection'"
-    assert "fetch" in params, "Missing parameter 'fetch'"
-    assert "cascade" in params, "Missing parameter 'cascade'"
-
-def test_frameweb::domainassociation_has_order():
-    assert hasattr(frameweb::DomainAssociation, "order")
-    descriptor = None
-    for klass in frameweb::DomainAssociation.__mro__:
-        if "order" in klass.__dict__:
-            descriptor = klass.__dict__["order"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::domainassociation_has_collection():
-    assert hasattr(frameweb::DomainAssociation, "collection")
-    descriptor = None
-    for klass in frameweb::DomainAssociation.__mro__:
-        if "collection" in klass.__dict__:
-            descriptor = klass.__dict__["collection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::domainassociation_has_fetch():
-    assert hasattr(frameweb::DomainAssociation, "fetch")
-    descriptor = None
-    for klass in frameweb::DomainAssociation.__mro__:
-        if "fetch" in klass.__dict__:
-            descriptor = klass.__dict__["fetch"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_frameweb::domainassociation_has_cascade():
-    assert hasattr(frameweb::DomainAssociation, "cascade")
-    descriptor = None
-    for klass in frameweb::DomainAssociation.__mro__:
-        if "cascade" in klass.__dict__:
-            descriptor = klass.__dict__["cascade"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_frameweb::persistencemodel_is_not_abstract():
-    assert not inspect.isabstract(frameweb::PersistenceModel)
-
-
-def test_frameweb::persistencemodel_constructor_exists():
-    assert callable(frameweb::PersistenceModel.__init__)
-
-
-def test_frameweb::persistencemodel_constructor_args():
-    sig = inspect.signature(frameweb::PersistenceModel.__init__)
-    params = list(sig.parameters.keys())
-
-def test_constantnamelist_exists():
-    # Check that the Enumeration exists
-    assert ConstantNameList is not None
-
-def test_constantnamelist_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ConstantNameList]
-    expected_literals = [
-        "Controller",
-        "Domain",
-        "interface",
-        "Persistence",
-        "base",
-        "DAO",
-        "Application",
-        "class_",
-        "View",
-        "impl",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ConstantNameList"
 
 def test_generation_exists():
     # Check that the Enumeration exists
@@ -2881,112 +2858,12 @@ def test_generation_has_all_literals():
         "auto",
         "identity",
         "sequence",
-        "none",
         "table",
+        "none",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Generation"
-
-def test_cascade_exists():
-    # Check that the Enumeration exists
-    assert Cascade is not None
-
-def test_cascade_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Cascade]
-    expected_literals = [
-        "refresh",
-        "all",
-        "remove",
-        "persist",
-        "merge",
-        "none",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Cascade"
-
-def test_fetch_exists():
-    # Check that the Enumeration exists
-    assert Fetch is not None
-
-def test_fetch_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Fetch]
-    expected_literals = [
-        "lazy",
-        "eager",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Fetch"
-
-def test_collection_exists():
-    # Check that the Enumeration exists
-    assert Collection is not None
-
-def test_collection_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Collection]
-    expected_literals = [
-        "list",
-        "set",
-        "bag",
-        "map",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Collection"
-
-def test_order_exists():
-    # Check that the Enumeration exists
-    assert Order is not None
-
-def test_order_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Order]
-    expected_literals = [
-        "columnNameDesc",
-        "natural",
-        "columnNameAsc",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Order"
-
-def test_frameworkkindlist_exists():
-    # Check that the Enumeration exists
-    assert FrameworkKindList is not None
-
-def test_frameworkkindlist_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FrameworkKindList]
-    expected_literals = [
-        "Custom",
-        "FrameworkImplementation",
-        "FrameworkSpecification",
-        "StandardSpecification",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FrameworkKindList"
-
-def test_inheritancemapping_exists():
-    # Check that the Enumeration exists
-    assert InheritanceMapping is not None
-
-def test_inheritancemapping_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InheritanceMapping]
-    expected_literals = [
-        "join",
-        "union",
-        "singletable",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InheritanceMapping"
 
 def test_frameworkcategorylist_exists():
     # Check that the Enumeration exists
@@ -3004,6 +2881,46 @@ def test_frameworkcategorylist_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FrameworkCategoryList"
 
+def test_constantnamelist_exists():
+    # Check that the Enumeration exists
+    assert ConstantNameList is not None
+
+def test_constantnamelist_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ConstantNameList]
+    expected_literals = [
+        "Persistence",
+        "Application",
+        "DAO",
+        "interface",
+        "base",
+        "Domain",
+        "impl",
+        "class_",
+        "View",
+        "Controller",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ConstantNameList"
+
+def test_collection_exists():
+    # Check that the Enumeration exists
+    assert Collection is not None
+
+def test_collection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Collection]
+    expected_literals = [
+        "map",
+        "set",
+        "bag",
+        "list",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Collection"
+
 def test_datetimeprecision_exists():
     # Check that the Enumeration exists
     assert DateTimePrecision is not None
@@ -3012,13 +2929,96 @@ def test_datetimeprecision_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DateTimePrecision]
     expected_literals = [
+        "timestamp",
         "date",
         "time",
-        "timestamp",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DateTimePrecision"
+
+def test_frameworkkindlist_exists():
+    # Check that the Enumeration exists
+    assert FrameworkKindList is not None
+
+def test_frameworkkindlist_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FrameworkKindList]
+    expected_literals = [
+        "StandardSpecification",
+        "FrameworkSpecification",
+        "Custom",
+        "FrameworkImplementation",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FrameworkKindList"
+
+def test_order_exists():
+    # Check that the Enumeration exists
+    assert Order is not None
+
+def test_order_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Order]
+    expected_literals = [
+        "natural",
+        "columnNameAsc",
+        "columnNameDesc",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Order"
+
+def test_fetch_exists():
+    # Check that the Enumeration exists
+    assert Fetch is not None
+
+def test_fetch_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Fetch]
+    expected_literals = [
+        "eager",
+        "lazy",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Fetch"
+
+def test_inheritancemapping_exists():
+    # Check that the Enumeration exists
+    assert InheritanceMapping is not None
+
+def test_inheritancemapping_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InheritanceMapping]
+    expected_literals = [
+        "singletable",
+        "join",
+        "union",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InheritanceMapping"
+
+def test_cascade_exists():
+    # Check that the Enumeration exists
+    assert Cascade is not None
+
+def test_cascade_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Cascade]
+    expected_literals = [
+        "merge",
+        "remove",
+        "persist",
+        "all",
+        "none",
+        "refresh",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Cascade"
 
 
 # =============================================================================
@@ -3032,349 +3032,91 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DataType_strategy = st.builds(
-    DataType,
-)
-LiteralString_strategy = st.builds(
-    LiteralString,
-)
-frameweb::VocabularyLiteral_strategy = st.builds(
-    frameweb::VocabularyLiteral,
-)
-VocabularyClassExpression_strategy = st.builds(
-    VocabularyClassExpression,
-)
-Individual_strategy = st.builds(
-    Individual,
-)
-frameweb::AnonymousIndividual_strategy = st.builds(
-    frameweb::AnonymousIndividual,
-)
-VocabularyAssociation_strategy = st.builds(
-    VocabularyAssociation,
-)
-VocabularyEntity_strategy = st.builds(
-    VocabularyEntity,
-)
-frameweb::VocabularyDataType_strategy = st.builds(
-    frameweb::VocabularyDataType,
-)
-frameweb::DataProperty_strategy = st.builds(
-    frameweb::DataProperty,
-)
-frameweb::VocabularyClass_strategy = st.builds(
-    frameweb::VocabularyClass,
-)
-frameweb::NamedIndividual_strategy = st.builds(
-    frameweb::NamedIndividual,
-)
-frameweb::AnnotationProperty_strategy = st.builds(
-    frameweb::AnnotationProperty,
-)
-frameweb::ObjectProperty_strategy = st.builds(
-    frameweb::ObjectProperty,
-)
-frameweb::Type_strategy = st.builds(
-    frameweb::Type,
-)
-Relationship_strategy = st.builds(
-    Relationship,
-)
-Classifier_strategy = st.builds(
-    Classifier,
-)
-frameweb::VocabularyEntity_strategy = st.builds(
-    frameweb::VocabularyEntity,
-)
-frameweb::Association_strategy = st.builds(
-    frameweb::Association,
-    isDerived=
-        safe_text
-)
-frameweb::ValueSpecification_strategy = st.builds(
-    frameweb::ValueSpecification,
-)
-frameweb::Class_strategy = st.builds(
-    frameweb::Class,
-)
-frameweb::Interface_strategy = st.builds(
-    frameweb::Interface,
-)
-frameweb::DataType_strategy = st.builds(
-    frameweb::DataType,
-)
-DeploymentTarget_strategy = st.builds(
-    DeploymentTarget,
-)
-ConnectableElement_strategy = st.builds(
-    ConnectableElement,
-)
-StructuralFeature_strategy = st.builds(
-    StructuralFeature,
-)
-frameweb::Property_strategy = st.builds(
-    frameweb::Property,
-    isID=
-        safe_text,
-    default=
-        safe_text,
-    isDerived=
-        safe_text,
-    aggregation=
-        safe_text,
-    isDerivedUnion=
-        safe_text,
-    isComposite=
-        safe_text
-)
-GeneralizationSet_strategy = st.builds(
-    GeneralizationSet,
-)
-frameweb::ServiceGeneralizationSet_strategy = st.builds(
-    frameweb::ServiceGeneralizationSet,
-)
-frameweb::DAOGeneralizationSet_strategy = st.builds(
-    frameweb::DAOGeneralizationSet,
-)
-frameweb::NavigationGeneralizationSet_strategy = st.builds(
-    frameweb::NavigationGeneralizationSet,
-)
-frameweb::DomainGeneralizationSet_strategy = st.builds(
-    frameweb::DomainGeneralizationSet,
-    mapping=
-        safe_text
-)
-NavigationConstraint_strategy = st.builds(
-    NavigationConstraint,
-)
-Constraint_strategy = st.builds(
-    Constraint,
-)
-frameweb::DomainConstraints_strategy = st.builds(
-    frameweb::DomainConstraints,
-)
-frameweb::VocabularyConstraints_strategy = st.builds(
-    frameweb::VocabularyConstraints,
-)
-FrameworkExtension_strategy = st.builds(
-    FrameworkExtension,
-)
-frameweb::DomainExtension_strategy = st.builds(
-    frameweb::DomainExtension,
-)
-frameweb::NavigationExtension_strategy = st.builds(
-    frameweb::NavigationExtension,
-)
-FramewebModel_strategy = st.builds(
-    FramewebModel,
-)
-frameweb::ApplicationModel_strategy = st.builds(
-    frameweb::ApplicationModel,
-)
-frameweb::NavigationModel_strategy = st.builds(
-    frameweb::NavigationModel,
-)
-frameweb::VocabularyModel_strategy = st.builds(
-    frameweb::VocabularyModel,
-)
-frameweb::EntityModel_strategy = st.builds(
-    frameweb::EntityModel,
-)
-Profile_strategy = st.builds(
-    Profile,
-)
-frameweb::FramewebProject_strategy = st.builds(
-    frameweb::FramewebProject,
-)
-ExtensionEnd_strategy = st.builds(
-    ExtensionEnd,
-)
-frameweb::TagExtensionEnd_strategy = st.builds(
-    frameweb::TagExtensionEnd,
-)
-frameweb::AttributeMappingExtensionEnd_strategy = st.builds(
-    frameweb::AttributeMappingExtensionEnd,
-)
-frameweb::ClassMappingExtensionEnd_strategy = st.builds(
-    frameweb::ClassMappingExtensionEnd,
-)
-frameweb::ResultExtensionEnd_strategy = st.builds(
-    frameweb::ResultExtensionEnd,
-)
-frameweb::ControllerExtensionEnd_strategy = st.builds(
-    frameweb::ControllerExtensionEnd,
-)
-DomainExtension_strategy = st.builds(
-    DomainExtension,
-)
-frameweb::AttributeMappingExtension_strategy = st.builds(
-    frameweb::AttributeMappingExtension,
-)
-frameweb::ClassMappingExtension_strategy = st.builds(
-    frameweb::ClassMappingExtension,
-)
-ProfileApplication_strategy = st.builds(
-    ProfileApplication,
-)
-frameweb::FrameworkApplication_strategy = st.builds(
-    frameweb::FrameworkApplication,
-)
-NavigationExtension_strategy = st.builds(
-    NavigationExtension,
-)
-frameweb::ControllerExtension_strategy = st.builds(
-    frameweb::ControllerExtension,
-)
-frameweb::ResultExtension_strategy = st.builds(
-    frameweb::ResultExtension,
-)
-frameweb::TagExtension_strategy = st.builds(
-    frameweb::TagExtension,
-)
-Extension_strategy = st.builds(
-    Extension,
-)
-frameweb::FrameworkExtension_strategy = st.builds(
-    frameweb::FrameworkExtension,
-)
-Dependency_strategy = st.builds(
-    Dependency,
-)
-frameweb::NavigationDependency_strategy = st.builds(
-    frameweb::NavigationDependency,
-)
-frameweb::NavigationConstraint_strategy = st.builds(
-    frameweb::NavigationConstraint,
-)
 NavigationProperty_strategy = st.builds(
     NavigationProperty,
 )
-frameweb::NavigationCompositionWhole_strategy = st.builds(
-    frameweb::NavigationCompositionWhole,
+frameweb_NavigationCompositionWhole_strategy = st.builds(
+    frameweb_NavigationCompositionWhole,
 )
-frameweb::NavigationCompositionPart_strategy = st.builds(
-    frameweb::NavigationCompositionPart,
+frameweb_NavigationCompositionPart_strategy = st.builds(
+    frameweb_NavigationCompositionPart,
 )
 Stereotype_strategy = st.builds(
     Stereotype,
 )
-frameweb::AttributeMapping_strategy = st.builds(
-    frameweb::AttributeMapping,
+frameweb_Tag_strategy = st.builds(
+    frameweb_Tag,
 )
-frameweb::ClassMapping_strategy = st.builds(
-    frameweb::ClassMapping,
-)
-frameweb::Controller_strategy = st.builds(
-    frameweb::Controller,
-)
-frameweb::Tag_strategy = st.builds(
-    frameweb::Tag,
-)
-frameweb::ResultType_strategy = st.builds(
-    frameweb::ResultType,
+frameweb_ResultType_strategy = st.builds(
+    frameweb_ResultType,
 )
 NavigationPackage_strategy = st.builds(
     NavigationPackage,
 )
-frameweb::ControllerPackage_strategy = st.builds(
-    frameweb::ControllerPackage,
+frameweb_ControllerPackage_strategy = st.builds(
+    frameweb_ControllerPackage,
 )
-frameweb::ViewPackage_strategy = st.builds(
-    frameweb::ViewPackage,
+frameweb_ViewPackage_strategy = st.builds(
+    frameweb_ViewPackage,
 )
 Package_strategy = st.builds(
     Package,
 )
-frameweb::ApplicationPackage_strategy = st.builds(
-    frameweb::ApplicationPackage,
+frameweb_ResultSet_strategy = st.builds(
+    frameweb_ResultSet,
 )
-frameweb::PersistencePackage_strategy = st.builds(
-    frameweb::PersistencePackage,
+frameweb_ApplicationPackage_strategy = st.builds(
+    frameweb_ApplicationPackage,
 )
-frameweb::SemanticPackage_strategy = st.builds(
-    frameweb::SemanticPackage,
+frameweb_PersistencePackage_strategy = st.builds(
+    frameweb_PersistencePackage,
 )
-frameweb::NavigationPackage_strategy = st.builds(
-    frameweb::NavigationPackage,
+frameweb_NavigationPackage_strategy = st.builds(
+    frameweb_NavigationPackage,
 )
-frameweb::ControllerSet_strategy = st.builds(
-    frameweb::ControllerSet,
-)
-frameweb::ResultSet_strategy = st.builds(
-    frameweb::ResultSet,
-)
-frameweb::Vocabulary_strategy = st.builds(
-    frameweb::Vocabulary,
-    vocabularyDocument=
-        safe_text
-)
-frameweb::MappingLib_strategy = st.builds(
-    frameweb::MappingLib,
-)
-frameweb::DomainPackage_strategy = st.builds(
-    frameweb::DomainPackage,
+frameweb_DomainPackage_strategy = st.builds(
+    frameweb_DomainPackage,
 )
 ServiceAssociation_strategy = st.builds(
     ServiceAssociation,
 )
-frameweb::ServiceControllerAssociation_strategy = st.builds(
-    frameweb::ServiceControllerAssociation,
+frameweb_ServiceControllerAssociation_strategy = st.builds(
+    frameweb_ServiceControllerAssociation,
 )
-frameweb::DAOServiceAssociation_strategy = st.builds(
-    frameweb::DAOServiceAssociation,
-)
-frameweb::ChainingConstraint_strategy = st.builds(
-    frameweb::ChainingConstraint,
-)
-frameweb::PageConstraint_strategy = st.builds(
-    frameweb::PageConstraint,
-)
-frameweb::MethodCosntraint_strategy = st.builds(
-    frameweb::MethodCosntraint,
+frameweb_DAOServiceAssociation_strategy = st.builds(
+    frameweb_DAOServiceAssociation,
 )
 NavigationAttribute_strategy = st.builds(
     NavigationAttribute,
 )
-frameweb::UIComponentField_strategy = st.builds(
-    frameweb::UIComponentField,
+frameweb_UIComponentField_strategy = st.builds(
+    frameweb_UIComponentField,
 )
-frameweb::IOParameter_strategy = st.builds(
-    frameweb::IOParameter,
+frameweb_IOParameter_strategy = st.builds(
+    frameweb_IOParameter,
 )
 InterfaceRealization_strategy = st.builds(
     InterfaceRealization,
 )
-frameweb::SeviceRealization_strategy = st.builds(
-    frameweb::SeviceRealization,
-)
-frameweb::DAORealization_strategy = st.builds(
-    frameweb::DAORealization,
+frameweb_DAORealization_strategy = st.builds(
+    frameweb_DAORealization,
 )
 Class_strategy = st.builds(
     Class,
 )
-frameweb::FrontControllerClass_strategy = st.builds(
-    frameweb::FrontControllerClass,
-)
-frameweb::Annotation_strategy = st.builds(
-    frameweb::Annotation,
-)
-frameweb::Axiom_strategy = st.builds(
-    frameweb::Axiom,
-)
-frameweb::VocabularyClassExpression_strategy = st.builds(
-    frameweb::VocabularyClassExpression,
-)
-frameweb::DomainClass_strategy = st.builds(
-    frameweb::DomainClass,
+frameweb_DomainClass_strategy = st.builds(
+    frameweb_DomainClass,
     table=
         safe_text
 )
-frameweb::NavigationClass_strategy = st.builds(
-    frameweb::NavigationClass,
+frameweb_FrontControllerClass_strategy = st.builds(
+    frameweb_FrontControllerClass,
 )
-frameweb::DAOClass_strategy = st.builds(
-    frameweb::DAOClass,
+frameweb_NavigationClass_strategy = st.builds(
+    frameweb_NavigationClass,
+)
+frameweb_DAOClass_strategy = st.builds(
+    frameweb_DAOClass,
     prefix=
         safe_text,
     infix=
@@ -3385,218 +3127,1033 @@ frameweb::DAOClass_strategy = st.builds(
 Generalization__strategy = st.builds(
     Generalization_,
 )
-frameweb::DomainGeneralization_strategy = st.builds(
-    frameweb::DomainGeneralization,
+frameweb_DomainGeneralization_strategy = st.builds(
+    frameweb_DomainGeneralization,
 )
-frameweb::NavigationGeneralization_strategy = st.builds(
-    frameweb::NavigationGeneralization,
+frameweb_ServiceGeneralization_strategy = st.builds(
+    frameweb_ServiceGeneralization,
 )
-frameweb::DAOGeneralization_strategy = st.builds(
-    frameweb::DAOGeneralization,
-)
-frameweb::ServiceGeneralization_strategy = st.builds(
-    frameweb::ServiceGeneralization,
-)
-frameweb::ServiceClass_strategy = st.builds(
-    frameweb::ServiceClass,
+frameweb_ServiceClass_strategy = st.builds(
+    frameweb_ServiceClass,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-frameweb::ServiceMethod_strategy = st.builds(
-    frameweb::ServiceMethod,
+frameweb_DomainMethod_strategy = st.builds(
+    frameweb_DomainMethod,
 )
-frameweb::DAOMethod_strategy = st.builds(
-    frameweb::DAOMethod,
-)
-frameweb::DomainMethod_strategy = st.builds(
-    frameweb::DomainMethod,
-)
-frameweb::ResultConstraint_strategy = st.builds(
-    frameweb::ResultConstraint,
-)
-frameweb::FrontControllerMethod_strategy = st.builds(
-    frameweb::FrontControllerMethod,
+frameweb_FrontControllerMethod_strategy = st.builds(
+    frameweb_FrontControllerMethod,
     isDefault=
         st.booleans()
 )
-frameweb::Result_strategy = st.builds(
-    frameweb::Result,
+frameweb_Result_strategy = st.builds(
+    frameweb_Result,
 )
 NavigationDependency_strategy = st.builds(
     NavigationDependency,
 )
-frameweb::PageDependency_strategy = st.builds(
-    frameweb::PageDependency,
+frameweb_FrontControllerDependency_strategy = st.builds(
+    frameweb_FrontControllerDependency,
 )
-frameweb::FrontControllerDependency_strategy = st.builds(
-    frameweb::FrontControllerDependency,
+frameweb_PageDependency_strategy = st.builds(
+    frameweb_PageDependency,
 )
-frameweb::ChainingDependency_strategy = st.builds(
-    frameweb::ChainingDependency,
+frameweb_ChainingDependency_strategy = st.builds(
+    frameweb_ChainingDependency,
 )
-frameweb::ResultDependency_strategy = st.builds(
-    frameweb::ResultDependency,
-    ajax=
-        st.booleans(),
+frameweb_ResultDependency_strategy = st.builds(
+    frameweb_ResultDependency,
     execute=
         safe_text,
+    ajax=
+        st.booleans(),
     render=
         safe_text
 )
 Interface_strategy = st.builds(
     Interface,
 )
-frameweb::ServiceInterface_strategy = st.builds(
-    frameweb::ServiceInterface,
+frameweb_ServiceInterface_strategy = st.builds(
+    frameweb_ServiceInterface,
 )
-frameweb::DAOInterface_strategy = st.builds(
-    frameweb::DAOInterface,
+frameweb_DAOInterface_strategy = st.builds(
+    frameweb_DAOInterface,
     infix=
         safe_text,
     sufix=
         safe_text
 )
-frameweb::TagLib_strategy = st.builds(
-    frameweb::TagLib,
+frameweb_TagLib_strategy = st.builds(
+    frameweb_TagLib,
     prefix=
         safe_text
 )
 NavigationClass_strategy = st.builds(
     NavigationClass,
 )
-frameweb::UIComponent_strategy = st.builds(
-    frameweb::UIComponent,
+frameweb_UIComponent_strategy = st.builds(
+    frameweb_UIComponent,
 )
-frameweb::Template_strategy = st.builds(
-    frameweb::Template,
+frameweb_Template_strategy = st.builds(
+    frameweb_Template,
 )
-frameweb::Page_strategy = st.builds(
-    frameweb::Page,
+frameweb_Page_strategy = st.builds(
+    frameweb_Page,
 )
 Model_strategy = st.builds(
     Model,
 )
-frameweb::FrameworkProfile_strategy = st.builds(
-    frameweb::FrameworkProfile,
-    category=
-        safe_text,
-    kind=
-        safe_text
-)
-frameweb::FramewebModel_strategy = st.builds(
-    frameweb::FramewebModel,
+frameweb_FramewebModel_strategy = st.builds(
+    frameweb_FramewebModel,
 )
 DomainAttribute_strategy = st.builds(
     DomainAttribute,
 )
-frameweb::DecimalAttribute_strategy = st.builds(
-    frameweb::DecimalAttribute,
+frameweb_EmbeddedAttribute_strategy = st.builds(
+    frameweb_EmbeddedAttribute,
+)
+frameweb_LOBAttribute_strategy = st.builds(
+    frameweb_LOBAttribute,
+)
+frameweb_DateTimeAttribute_strategy = st.builds(
+    frameweb_DateTimeAttribute,
+    dateTimePrecision=
+        safe_text
+)
+frameweb_IdAttribute_strategy = st.builds(
+    frameweb_IdAttribute,
+    generation=
+        safe_text
+)
+frameweb_DecimalAttribute_strategy = st.builds(
+    frameweb_DecimalAttribute,
     decimalScale=
         safe_text,
     decimalPrecision=
         safe_text
 )
-frameweb::EmbeddedAttribute_strategy = st.builds(
-    frameweb::EmbeddedAttribute,
-)
-frameweb::LOBAttribute_strategy = st.builds(
-    frameweb::LOBAttribute,
-)
-frameweb::IdAttribute_strategy = st.builds(
-    frameweb::IdAttribute,
-    generation=
-        safe_text
-)
-frameweb::DateTimeAttribute_strategy = st.builds(
-    frameweb::DateTimeAttribute,
-    dateTimePrecision=
-        safe_text
-)
-frameweb::VersionAttribute_strategy = st.builds(
-    frameweb::VersionAttribute,
+frameweb_VersionAttribute_strategy = st.builds(
+    frameweb_VersionAttribute,
 )
 Property_strategy = st.builds(
     Property,
 )
-frameweb::ResultProperty_strategy = st.builds(
-    frameweb::ResultProperty,
+frameweb_NavigationAttribute_strategy = st.builds(
+    frameweb_NavigationAttribute,
 )
-frameweb::DomainProperty_strategy = st.builds(
-    frameweb::DomainProperty,
+frameweb_NavigationProperty_strategy = st.builds(
+    frameweb_NavigationProperty,
 )
-frameweb::VocabularyProperty_strategy = st.builds(
-    frameweb::VocabularyProperty,
+frameweb_DomainAttribute_strategy = st.builds(
+    frameweb_DomainAttribute,
+    isNull=
+        st.booleans(),
+    isPersistent=
+        st.booleans(),
+    size=
+        safe_text
 )
-frameweb::NavigationProperty_strategy = st.builds(
-    frameweb::NavigationProperty,
+Association_strategy = st.builds(
+    Association,
 )
-frameweb::NavigationAttribute_strategy = st.builds(
-    frameweb::NavigationAttribute,
+frameweb_NavigationAssociation_strategy = st.builds(
+    frameweb_NavigationAssociation,
 )
-frameweb::DAOAttribute_strategy = st.builds(
-    frameweb::DAOAttribute,
+frameweb_DomainAssociation_strategy = st.builds(
+    frameweb_DomainAssociation,
+    fetch=
+        safe_text,
+    order=
+        safe_text,
+    cascade=
+        safe_text,
+    collection=
+        safe_text
 )
-frameweb::TagProperty_strategy = st.builds(
-    frameweb::TagProperty,
+FramewebModel_strategy = st.builds(
+    FramewebModel,
 )
-frameweb::IRI_strategy = st.builds(
-    frameweb::IRI,
+frameweb_ApplicationModel_strategy = st.builds(
+    frameweb_ApplicationModel,
+)
+frameweb_PersistenceModel_strategy = st.builds(
+    frameweb_PersistenceModel,
+)
+frameweb_NavigationModel_strategy = st.builds(
+    frameweb_NavigationModel,
+)
+frameweb_EntityModel_strategy = st.builds(
+    frameweb_EntityModel,
+)
+Profile_strategy = st.builds(
+    Profile,
+)
+frameweb_FrameworkProfile_strategy = st.builds(
+    frameweb_FrameworkProfile,
+    kind=
+        safe_text,
+    category=
+        safe_text
+)
+frameweb_FramewebProject_strategy = st.builds(
+    frameweb_FramewebProject,
+)
+DataType_strategy = st.builds(
+    DataType,
+)
+LiteralString_strategy = st.builds(
+    LiteralString,
+)
+frameweb_VocabularyLiteral_strategy = st.builds(
+    frameweb_VocabularyLiteral,
+)
+frameweb_Individual_strategy = st.builds(
+    frameweb_Individual,
+)
+VocabularyClassExpression_strategy = st.builds(
+    VocabularyClassExpression,
+)
+frameweb_VocabularyClassExpression_strategy = st.builds(
+    frameweb_VocabularyClassExpression,
+)
+Individual_strategy = st.builds(
+    Individual,
+)
+frameweb_AnonymousIndividual_strategy = st.builds(
+    frameweb_AnonymousIndividual,
+)
+VocabularyAssociation_strategy = st.builds(
+    VocabularyAssociation,
+)
+VocabularyEntity_strategy = st.builds(
+    VocabularyEntity,
+)
+frameweb_VocabularyClass_strategy = st.builds(
+    frameweb_VocabularyClass,
+)
+frameweb_VocabularyDataType_strategy = st.builds(
+    frameweb_VocabularyDataType,
+)
+frameweb_NamedIndividual_strategy = st.builds(
+    frameweb_NamedIndividual,
+)
+frameweb_AnnotationProperty_strategy = st.builds(
+    frameweb_AnnotationProperty,
+)
+frameweb_DataProperty_strategy = st.builds(
+    frameweb_DataProperty,
+)
+frameweb_ObjectProperty_strategy = st.builds(
+    frameweb_ObjectProperty,
+)
+frameweb_VocabularyProperty_strategy = st.builds(
+    frameweb_VocabularyProperty,
+)
+frameweb_VocabularyAssociation_strategy = st.builds(
+    frameweb_VocabularyAssociation,
+)
+frameweb_Type_strategy = st.builds(
+    frameweb_Type,
+)
+Relationship_strategy = st.builds(
+    Relationship,
+)
+Classifier_strategy = st.builds(
+    Classifier,
+)
+frameweb_VocabularyEntity_strategy = st.builds(
+    frameweb_VocabularyEntity,
+)
+frameweb_Association_strategy = st.builds(
+    frameweb_Association,
+    isDerived=
+        safe_text
+)
+frameweb_ValueSpecification_strategy = st.builds(
+    frameweb_ValueSpecification,
+)
+frameweb_Class_strategy = st.builds(
+    frameweb_Class,
+)
+frameweb_Interface_strategy = st.builds(
+    frameweb_Interface,
+)
+frameweb_DataType_strategy = st.builds(
+    frameweb_DataType,
+)
+DeploymentTarget_strategy = st.builds(
+    DeploymentTarget,
+)
+frameweb_IRI_strategy = st.builds(
+    frameweb_IRI,
     iri=
         safe_text,
     iriVersion=
         safe_text
 )
-frameweb::ControllerProperty_strategy = st.builds(
-    frameweb::ControllerProperty,
+ConnectableElement_strategy = st.builds(
+    ConnectableElement,
 )
-frameweb::AttributeMappingProperty_strategy = st.builds(
-    frameweb::AttributeMappingProperty,
+StructuralFeature_strategy = st.builds(
+    StructuralFeature,
 )
-frameweb::Individual_strategy = st.builds(
-    frameweb::Individual,
-)
-frameweb::ClassMappingPropery_strategy = st.builds(
-    frameweb::ClassMappingPropery,
-)
-frameweb::ServiceAttribute_strategy = st.builds(
-    frameweb::ServiceAttribute,
-)
-frameweb::DomainAttribute_strategy = st.builds(
-    frameweb::DomainAttribute,
-    size=
+frameweb_Property_strategy = st.builds(
+    frameweb_Property,
+    isID=
         safe_text,
-    isPersistent=
-        st.booleans(),
-    isNull=
-        st.booleans()
-)
-Association_strategy = st.builds(
-    Association,
-)
-frameweb::VocabularyAssociation_strategy = st.builds(
-    frameweb::VocabularyAssociation,
-)
-frameweb::ServiceAssociation_strategy = st.builds(
-    frameweb::ServiceAssociation,
-)
-frameweb::NavigationAssociation_strategy = st.builds(
-    frameweb::NavigationAssociation,
-)
-frameweb::DomainAssociation_strategy = st.builds(
-    frameweb::DomainAssociation,
-    order=
+    isDerived=
         safe_text,
-    collection=
+    isDerivedUnion=
         safe_text,
-    fetch=
+    isComposite=
         safe_text,
-    cascade=
+    default=
+        safe_text,
+    aggregation=
         safe_text
 )
-frameweb::PersistenceModel_strategy = st.builds(
-    frameweb::PersistenceModel,
+frameweb_SemanticPackage_strategy = st.builds(
+    frameweb_SemanticPackage,
 )
+frameweb_Annotation_strategy = st.builds(
+    frameweb_Annotation,
+)
+frameweb_Axiom_strategy = st.builds(
+    frameweb_Axiom,
+)
+frameweb_Vocabulary_strategy = st.builds(
+    frameweb_Vocabulary,
+    vocabularyDocument=
+        safe_text
+)
+frameweb_VocabularyModel_strategy = st.builds(
+    frameweb_VocabularyModel,
+)
+GeneralizationSet_strategy = st.builds(
+    GeneralizationSet,
+)
+frameweb_DAOGeneralizationSet_strategy = st.builds(
+    frameweb_DAOGeneralizationSet,
+)
+frameweb_NavigationGeneralizationSet_strategy = st.builds(
+    frameweb_NavigationGeneralizationSet,
+)
+frameweb_ServiceGeneralizationSet_strategy = st.builds(
+    frameweb_ServiceGeneralizationSet,
+)
+frameweb_DomainGeneralizationSet_strategy = st.builds(
+    frameweb_DomainGeneralizationSet,
+    mapping=
+        safe_text
+)
+frameweb_AttributeMapping_strategy = st.builds(
+    frameweb_AttributeMapping,
+)
+frameweb_ClassMapping_strategy = st.builds(
+    frameweb_ClassMapping,
+)
+frameweb_MappingLib_strategy = st.builds(
+    frameweb_MappingLib,
+)
+frameweb_DAOGeneralization_strategy = st.builds(
+    frameweb_DAOGeneralization,
+)
+frameweb_DomainProperty_strategy = st.builds(
+    frameweb_DomainProperty,
+)
+frameweb_NavigationGeneralization_strategy = st.builds(
+    frameweb_NavigationGeneralization,
+)
+NavigationConstraint_strategy = st.builds(
+    NavigationConstraint,
+)
+frameweb_ChainingConstraint_strategy = st.builds(
+    frameweb_ChainingConstraint,
+)
+frameweb_MethodCosntraint_strategy = st.builds(
+    frameweb_MethodCosntraint,
+)
+frameweb_ResultConstraint_strategy = st.builds(
+    frameweb_ResultConstraint,
+)
+frameweb_PageConstraint_strategy = st.builds(
+    frameweb_PageConstraint,
+)
+Constraint_strategy = st.builds(
+    Constraint,
+)
+frameweb_DomainConstraints_strategy = st.builds(
+    frameweb_DomainConstraints,
+)
+frameweb_NavigationConstraint_strategy = st.builds(
+    frameweb_NavigationConstraint,
+)
+frameweb_VocabularyConstraints_strategy = st.builds(
+    frameweb_VocabularyConstraints,
+)
+FrameworkExtension_strategy = st.builds(
+    FrameworkExtension,
+)
+frameweb_DomainExtension_strategy = st.builds(
+    frameweb_DomainExtension,
+)
+frameweb_NavigationExtension_strategy = st.builds(
+    frameweb_NavigationExtension,
+)
+frameweb_SeviceRealization_strategy = st.builds(
+    frameweb_SeviceRealization,
+)
+frameweb_AttributeMappingProperty_strategy = st.builds(
+    frameweb_AttributeMappingProperty,
+)
+frameweb_ClassMappingPropery_strategy = st.builds(
+    frameweb_ClassMappingPropery,
+)
+frameweb_ResultProperty_strategy = st.builds(
+    frameweb_ResultProperty,
+)
+frameweb_TagProperty_strategy = st.builds(
+    frameweb_TagProperty,
+)
+frameweb_ControllerProperty_strategy = st.builds(
+    frameweb_ControllerProperty,
+)
+ExtensionEnd_strategy = st.builds(
+    ExtensionEnd,
+)
+frameweb_AttributeMappingExtensionEnd_strategy = st.builds(
+    frameweb_AttributeMappingExtensionEnd,
+)
+frameweb_TagExtensionEnd_strategy = st.builds(
+    frameweb_TagExtensionEnd,
+)
+frameweb_ResultExtensionEnd_strategy = st.builds(
+    frameweb_ResultExtensionEnd,
+)
+frameweb_ClassMappingExtensionEnd_strategy = st.builds(
+    frameweb_ClassMappingExtensionEnd,
+)
+frameweb_ControllerExtensionEnd_strategy = st.builds(
+    frameweb_ControllerExtensionEnd,
+)
+DomainExtension_strategy = st.builds(
+    DomainExtension,
+)
+frameweb_AttributeMappingExtension_strategy = st.builds(
+    frameweb_AttributeMappingExtension,
+)
+frameweb_ClassMappingExtension_strategy = st.builds(
+    frameweb_ClassMappingExtension,
+)
+frameweb_ControllerSet_strategy = st.builds(
+    frameweb_ControllerSet,
+)
+frameweb_Controller_strategy = st.builds(
+    frameweb_Controller,
+)
+ProfileApplication_strategy = st.builds(
+    ProfileApplication,
+)
+frameweb_FrameworkApplication_strategy = st.builds(
+    frameweb_FrameworkApplication,
+)
+NavigationExtension_strategy = st.builds(
+    NavigationExtension,
+)
+frameweb_ControllerExtension_strategy = st.builds(
+    frameweb_ControllerExtension,
+)
+frameweb_ResultExtension_strategy = st.builds(
+    frameweb_ResultExtension,
+)
+frameweb_TagExtension_strategy = st.builds(
+    frameweb_TagExtension,
+)
+Extension_strategy = st.builds(
+    Extension,
+)
+frameweb_FrameworkExtension_strategy = st.builds(
+    frameweb_FrameworkExtension,
+)
+frameweb_DAOMethod_strategy = st.builds(
+    frameweb_DAOMethod,
+)
+Dependency_strategy = st.builds(
+    Dependency,
+)
+frameweb_NavigationDependency_strategy = st.builds(
+    frameweb_NavigationDependency,
+)
+frameweb_ServiceAssociation_strategy = st.builds(
+    frameweb_ServiceAssociation,
+)
+frameweb_ServiceAttribute_strategy = st.builds(
+    frameweb_ServiceAttribute,
+)
+frameweb_ServiceMethod_strategy = st.builds(
+    frameweb_ServiceMethod,
+)
+frameweb_DAOAttribute_strategy = st.builds(
+    frameweb_DAOAttribute,
+)
+
+@given(instance=NavigationProperty_strategy)
+@settings(max_examples=50)
+def test_navigationproperty_instantiation(instance):
+    assert isinstance(instance, NavigationProperty)
+
+@given(instance=frameweb_NavigationCompositionWhole_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationcompositionwhole_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationCompositionWhole)
+
+@given(instance=frameweb_NavigationCompositionPart_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationcompositionpart_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationCompositionPart)
+
+@given(instance=Stereotype_strategy)
+@settings(max_examples=50)
+def test_stereotype_instantiation(instance):
+    assert isinstance(instance, Stereotype)
+
+@given(instance=frameweb_Tag_strategy)
+@settings(max_examples=50)
+def test_frameweb_tag_instantiation(instance):
+    assert isinstance(instance, frameweb_Tag)
+
+@given(instance=frameweb_ResultType_strategy)
+@settings(max_examples=50)
+def test_frameweb_resulttype_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultType)
+
+@given(instance=NavigationPackage_strategy)
+@settings(max_examples=50)
+def test_navigationpackage_instantiation(instance):
+    assert isinstance(instance, NavigationPackage)
+
+@given(instance=frameweb_ControllerPackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_controllerpackage_instantiation(instance):
+    assert isinstance(instance, frameweb_ControllerPackage)
+
+@given(instance=frameweb_ViewPackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_viewpackage_instantiation(instance):
+    assert isinstance(instance, frameweb_ViewPackage)
+
+@given(instance=Package_strategy)
+@settings(max_examples=50)
+def test_package_instantiation(instance):
+    assert isinstance(instance, Package)
+
+@given(instance=frameweb_ResultSet_strategy)
+@settings(max_examples=50)
+def test_frameweb_resultset_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultSet)
+
+@given(instance=frameweb_ApplicationPackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_applicationpackage_instantiation(instance):
+    assert isinstance(instance, frameweb_ApplicationPackage)
+
+@given(instance=frameweb_PersistencePackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_persistencepackage_instantiation(instance):
+    assert isinstance(instance, frameweb_PersistencePackage)
+
+@given(instance=frameweb_NavigationPackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationpackage_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationPackage)
+
+@given(instance=frameweb_DomainPackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_domainpackage_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainPackage)
+
+@given(instance=ServiceAssociation_strategy)
+@settings(max_examples=50)
+def test_serviceassociation_instantiation(instance):
+    assert isinstance(instance, ServiceAssociation)
+
+@given(instance=frameweb_ServiceControllerAssociation_strategy)
+@settings(max_examples=50)
+def test_frameweb_servicecontrollerassociation_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceControllerAssociation)
+
+@given(instance=frameweb_DAOServiceAssociation_strategy)
+@settings(max_examples=50)
+def test_frameweb_daoserviceassociation_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOServiceAssociation)
+
+@given(instance=NavigationAttribute_strategy)
+@settings(max_examples=50)
+def test_navigationattribute_instantiation(instance):
+    assert isinstance(instance, NavigationAttribute)
+
+@given(instance=frameweb_UIComponentField_strategy)
+@settings(max_examples=50)
+def test_frameweb_uicomponentfield_instantiation(instance):
+    assert isinstance(instance, frameweb_UIComponentField)
+
+@given(instance=frameweb_IOParameter_strategy)
+@settings(max_examples=50)
+def test_frameweb_ioparameter_instantiation(instance):
+    assert isinstance(instance, frameweb_IOParameter)
+
+@given(instance=InterfaceRealization_strategy)
+@settings(max_examples=50)
+def test_interfacerealization_instantiation(instance):
+    assert isinstance(instance, InterfaceRealization)
+
+@given(instance=frameweb_DAORealization_strategy)
+@settings(max_examples=50)
+def test_frameweb_daorealization_instantiation(instance):
+    assert isinstance(instance, frameweb_DAORealization)
+
+@given(instance=Class_strategy)
+@settings(max_examples=50)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
+
+@given(instance=frameweb_DomainClass_strategy)
+@settings(max_examples=50)
+def test_frameweb_domainclass_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainClass)
+
+
+
+@given(instance=frameweb_DomainClass_strategy)
+def test_frameweb_domainclass_table_setter(instance):
+    original = instance.table
+    instance.table = original
+    assert instance.table == original
+
+@given(instance=frameweb_FrontControllerClass_strategy)
+@settings(max_examples=50)
+def test_frameweb_frontcontrollerclass_instantiation(instance):
+    assert isinstance(instance, frameweb_FrontControllerClass)
+
+@given(instance=frameweb_NavigationClass_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationclass_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationClass)
+
+@given(instance=frameweb_DAOClass_strategy)
+@settings(max_examples=50)
+def test_frameweb_daoclass_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOClass)
+
+
+
+@given(instance=frameweb_DAOClass_strategy)
+def test_frameweb_daoclass_prefix_setter(instance):
+    original = instance.prefix
+    instance.prefix = original
+    assert instance.prefix == original
+
+
+
+@given(instance=frameweb_DAOClass_strategy)
+def test_frameweb_daoclass_infix_setter(instance):
+    original = instance.infix
+    instance.infix = original
+    assert instance.infix == original
+
+
+
+@given(instance=frameweb_DAOClass_strategy)
+def test_frameweb_daoclass_sufix_setter(instance):
+    original = instance.sufix
+    instance.sufix = original
+    assert instance.sufix == original
+
+@given(instance=Generalization__strategy)
+@settings(max_examples=50)
+def test_generalization__instantiation(instance):
+    assert isinstance(instance, Generalization_)
+
+@given(instance=frameweb_DomainGeneralization_strategy)
+@settings(max_examples=50)
+def test_frameweb_domaingeneralization_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainGeneralization)
+
+@given(instance=frameweb_ServiceGeneralization_strategy)
+@settings(max_examples=50)
+def test_frameweb_servicegeneralization_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceGeneralization)
+
+@given(instance=frameweb_ServiceClass_strategy)
+@settings(max_examples=50)
+def test_frameweb_serviceclass_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceClass)
+
+@given(instance=Operation_strategy)
+@settings(max_examples=50)
+def test_operation_instantiation(instance):
+    assert isinstance(instance, Operation)
+
+@given(instance=frameweb_DomainMethod_strategy)
+@settings(max_examples=50)
+def test_frameweb_domainmethod_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainMethod)
+
+@given(instance=frameweb_FrontControllerMethod_strategy)
+@settings(max_examples=50)
+def test_frameweb_frontcontrollermethod_instantiation(instance):
+    assert isinstance(instance, frameweb_FrontControllerMethod)
+
+
+
+@given(instance=frameweb_FrontControllerMethod_strategy)
+def test_frameweb_frontcontrollermethod_isDefault_setter(instance):
+    original = instance.isDefault
+    instance.isDefault = original
+    assert instance.isDefault == original
+
+@given(instance=frameweb_Result_strategy)
+@settings(max_examples=50)
+def test_frameweb_result_instantiation(instance):
+    assert isinstance(instance, frameweb_Result)
+
+@given(instance=NavigationDependency_strategy)
+@settings(max_examples=50)
+def test_navigationdependency_instantiation(instance):
+    assert isinstance(instance, NavigationDependency)
+
+@given(instance=frameweb_FrontControllerDependency_strategy)
+@settings(max_examples=50)
+def test_frameweb_frontcontrollerdependency_instantiation(instance):
+    assert isinstance(instance, frameweb_FrontControllerDependency)
+
+@given(instance=frameweb_PageDependency_strategy)
+@settings(max_examples=50)
+def test_frameweb_pagedependency_instantiation(instance):
+    assert isinstance(instance, frameweb_PageDependency)
+
+@given(instance=frameweb_ChainingDependency_strategy)
+@settings(max_examples=50)
+def test_frameweb_chainingdependency_instantiation(instance):
+    assert isinstance(instance, frameweb_ChainingDependency)
+
+@given(instance=frameweb_ResultDependency_strategy)
+@settings(max_examples=50)
+def test_frameweb_resultdependency_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultDependency)
+
+
+
+@given(instance=frameweb_ResultDependency_strategy)
+def test_frameweb_resultdependency_execute_setter(instance):
+    original = instance.execute
+    instance.execute = original
+    assert instance.execute == original
+
+
+
+@given(instance=frameweb_ResultDependency_strategy)
+def test_frameweb_resultdependency_ajax_setter(instance):
+    original = instance.ajax
+    instance.ajax = original
+    assert instance.ajax == original
+
+
+
+@given(instance=frameweb_ResultDependency_strategy)
+def test_frameweb_resultdependency_render_setter(instance):
+    original = instance.render
+    instance.render = original
+    assert instance.render == original
+
+@given(instance=Interface_strategy)
+@settings(max_examples=50)
+def test_interface_instantiation(instance):
+    assert isinstance(instance, Interface)
+
+@given(instance=frameweb_ServiceInterface_strategy)
+@settings(max_examples=50)
+def test_frameweb_serviceinterface_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceInterface)
+
+@given(instance=frameweb_DAOInterface_strategy)
+@settings(max_examples=50)
+def test_frameweb_daointerface_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOInterface)
+
+
+
+@given(instance=frameweb_DAOInterface_strategy)
+def test_frameweb_daointerface_infix_setter(instance):
+    original = instance.infix
+    instance.infix = original
+    assert instance.infix == original
+
+
+
+@given(instance=frameweb_DAOInterface_strategy)
+def test_frameweb_daointerface_sufix_setter(instance):
+    original = instance.sufix
+    instance.sufix = original
+    assert instance.sufix == original
+
+@given(instance=frameweb_TagLib_strategy)
+@settings(max_examples=50)
+def test_frameweb_taglib_instantiation(instance):
+    assert isinstance(instance, frameweb_TagLib)
+
+
+
+@given(instance=frameweb_TagLib_strategy)
+def test_frameweb_taglib_prefix_setter(instance):
+    original = instance.prefix
+    instance.prefix = original
+    assert instance.prefix == original
+
+@given(instance=NavigationClass_strategy)
+@settings(max_examples=50)
+def test_navigationclass_instantiation(instance):
+    assert isinstance(instance, NavigationClass)
+
+@given(instance=frameweb_UIComponent_strategy)
+@settings(max_examples=50)
+def test_frameweb_uicomponent_instantiation(instance):
+    assert isinstance(instance, frameweb_UIComponent)
+
+@given(instance=frameweb_Template_strategy)
+@settings(max_examples=50)
+def test_frameweb_template_instantiation(instance):
+    assert isinstance(instance, frameweb_Template)
+
+@given(instance=frameweb_Page_strategy)
+@settings(max_examples=50)
+def test_frameweb_page_instantiation(instance):
+    assert isinstance(instance, frameweb_Page)
+
+@given(instance=Model_strategy)
+@settings(max_examples=50)
+def test_model_instantiation(instance):
+    assert isinstance(instance, Model)
+
+@given(instance=frameweb_FramewebModel_strategy)
+@settings(max_examples=50)
+def test_frameweb_framewebmodel_instantiation(instance):
+    assert isinstance(instance, frameweb_FramewebModel)
+
+@given(instance=DomainAttribute_strategy)
+@settings(max_examples=50)
+def test_domainattribute_instantiation(instance):
+    assert isinstance(instance, DomainAttribute)
+
+@given(instance=frameweb_EmbeddedAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_embeddedattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_EmbeddedAttribute)
+
+@given(instance=frameweb_LOBAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_lobattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_LOBAttribute)
+
+@given(instance=frameweb_DateTimeAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_datetimeattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_DateTimeAttribute)
+
+
+
+@given(instance=frameweb_DateTimeAttribute_strategy)
+def test_frameweb_datetimeattribute_dateTimePrecision_setter(instance):
+    original = instance.dateTimePrecision
+    instance.dateTimePrecision = original
+    assert instance.dateTimePrecision == original
+
+@given(instance=frameweb_IdAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_idattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_IdAttribute)
+
+
+
+@given(instance=frameweb_IdAttribute_strategy)
+def test_frameweb_idattribute_generation_setter(instance):
+    original = instance.generation
+    instance.generation = original
+    assert instance.generation == original
+
+@given(instance=frameweb_DecimalAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_decimalattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_DecimalAttribute)
+
+
+
+@given(instance=frameweb_DecimalAttribute_strategy)
+def test_frameweb_decimalattribute_decimalScale_setter(instance):
+    original = instance.decimalScale
+    instance.decimalScale = original
+    assert instance.decimalScale == original
+
+
+
+@given(instance=frameweb_DecimalAttribute_strategy)
+def test_frameweb_decimalattribute_decimalPrecision_setter(instance):
+    original = instance.decimalPrecision
+    instance.decimalPrecision = original
+    assert instance.decimalPrecision == original
+
+@given(instance=frameweb_VersionAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_versionattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_VersionAttribute)
+
+@given(instance=Property_strategy)
+@settings(max_examples=50)
+def test_property_instantiation(instance):
+    assert isinstance(instance, Property)
+
+@given(instance=frameweb_NavigationAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationAttribute)
+
+@given(instance=frameweb_NavigationProperty_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationProperty)
+
+@given(instance=frameweb_DomainAttribute_strategy)
+@settings(max_examples=50)
+def test_frameweb_domainattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainAttribute)
+
+
+
+@given(instance=frameweb_DomainAttribute_strategy)
+def test_frameweb_domainattribute_isNull_setter(instance):
+    original = instance.isNull
+    instance.isNull = original
+    assert instance.isNull == original
+
+
+
+@given(instance=frameweb_DomainAttribute_strategy)
+def test_frameweb_domainattribute_isPersistent_setter(instance):
+    original = instance.isPersistent
+    instance.isPersistent = original
+    assert instance.isPersistent == original
+
+
+
+@given(instance=frameweb_DomainAttribute_strategy)
+def test_frameweb_domainattribute_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=Association_strategy)
+@settings(max_examples=50)
+def test_association_instantiation(instance):
+    assert isinstance(instance, Association)
+
+@given(instance=frameweb_NavigationAssociation_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationassociation_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationAssociation)
+
+@given(instance=frameweb_DomainAssociation_strategy)
+@settings(max_examples=50)
+def test_frameweb_domainassociation_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainAssociation)
+
+
+
+@given(instance=frameweb_DomainAssociation_strategy)
+def test_frameweb_domainassociation_fetch_setter(instance):
+    original = instance.fetch
+    instance.fetch = original
+    assert instance.fetch == original
+
+
+
+@given(instance=frameweb_DomainAssociation_strategy)
+def test_frameweb_domainassociation_order_setter(instance):
+    original = instance.order
+    instance.order = original
+    assert instance.order == original
+
+
+
+@given(instance=frameweb_DomainAssociation_strategy)
+def test_frameweb_domainassociation_cascade_setter(instance):
+    original = instance.cascade
+    instance.cascade = original
+    assert instance.cascade == original
+
+
+
+@given(instance=frameweb_DomainAssociation_strategy)
+def test_frameweb_domainassociation_collection_setter(instance):
+    original = instance.collection
+    instance.collection = original
+    assert instance.collection == original
+
+@given(instance=FramewebModel_strategy)
+@settings(max_examples=50)
+def test_framewebmodel_instantiation(instance):
+    assert isinstance(instance, FramewebModel)
+
+@given(instance=frameweb_ApplicationModel_strategy)
+@settings(max_examples=50)
+def test_frameweb_applicationmodel_instantiation(instance):
+    assert isinstance(instance, frameweb_ApplicationModel)
+
+@given(instance=frameweb_PersistenceModel_strategy)
+@settings(max_examples=50)
+def test_frameweb_persistencemodel_instantiation(instance):
+    assert isinstance(instance, frameweb_PersistenceModel)
+
+@given(instance=frameweb_NavigationModel_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationmodel_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationModel)
+
+@given(instance=frameweb_EntityModel_strategy)
+@settings(max_examples=50)
+def test_frameweb_entitymodel_instantiation(instance):
+    assert isinstance(instance, frameweb_EntityModel)
+
+@given(instance=Profile_strategy)
+@settings(max_examples=50)
+def test_profile_instantiation(instance):
+    assert isinstance(instance, Profile)
+
+@given(instance=frameweb_FrameworkProfile_strategy)
+@settings(max_examples=50)
+def test_frameweb_frameworkprofile_instantiation(instance):
+    assert isinstance(instance, frameweb_FrameworkProfile)
+
+
+
+@given(instance=frameweb_FrameworkProfile_strategy)
+def test_frameweb_frameworkprofile_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+
+
+@given(instance=frameweb_FrameworkProfile_strategy)
+def test_frameweb_frameworkprofile_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+@given(instance=frameweb_FramewebProject_strategy)
+@settings(max_examples=50)
+def test_frameweb_framewebproject_instantiation(instance):
+    assert isinstance(instance, frameweb_FramewebProject)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
@@ -3608,25 +4165,35 @@ def test_datatype_instantiation(instance):
 def test_literalstring_instantiation(instance):
     assert isinstance(instance, LiteralString)
 
-@given(instance=frameweb::VocabularyLiteral_strategy)
+@given(instance=frameweb_VocabularyLiteral_strategy)
 @settings(max_examples=50)
-def test_frameweb::vocabularyliteral_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyLiteral)
+def test_frameweb_vocabularyliteral_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyLiteral)
+
+@given(instance=frameweb_Individual_strategy)
+@settings(max_examples=50)
+def test_frameweb_individual_instantiation(instance):
+    assert isinstance(instance, frameweb_Individual)
 
 @given(instance=VocabularyClassExpression_strategy)
 @settings(max_examples=50)
 def test_vocabularyclassexpression_instantiation(instance):
     assert isinstance(instance, VocabularyClassExpression)
 
+@given(instance=frameweb_VocabularyClassExpression_strategy)
+@settings(max_examples=50)
+def test_frameweb_vocabularyclassexpression_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyClassExpression)
+
 @given(instance=Individual_strategy)
 @settings(max_examples=50)
 def test_individual_instantiation(instance):
     assert isinstance(instance, Individual)
 
-@given(instance=frameweb::AnonymousIndividual_strategy)
+@given(instance=frameweb_AnonymousIndividual_strategy)
 @settings(max_examples=50)
-def test_frameweb::anonymousindividual_instantiation(instance):
-    assert isinstance(instance, frameweb::AnonymousIndividual)
+def test_frameweb_anonymousindividual_instantiation(instance):
+    assert isinstance(instance, frameweb_AnonymousIndividual)
 
 @given(instance=VocabularyAssociation_strategy)
 @settings(max_examples=50)
@@ -3638,40 +4205,50 @@ def test_vocabularyassociation_instantiation(instance):
 def test_vocabularyentity_instantiation(instance):
     assert isinstance(instance, VocabularyEntity)
 
-@given(instance=frameweb::VocabularyDataType_strategy)
+@given(instance=frameweb_VocabularyClass_strategy)
 @settings(max_examples=50)
-def test_frameweb::vocabularydatatype_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyDataType)
+def test_frameweb_vocabularyclass_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyClass)
 
-@given(instance=frameweb::DataProperty_strategy)
+@given(instance=frameweb_VocabularyDataType_strategy)
 @settings(max_examples=50)
-def test_frameweb::dataproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::DataProperty)
+def test_frameweb_vocabularydatatype_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyDataType)
 
-@given(instance=frameweb::VocabularyClass_strategy)
+@given(instance=frameweb_NamedIndividual_strategy)
 @settings(max_examples=50)
-def test_frameweb::vocabularyclass_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyClass)
+def test_frameweb_namedindividual_instantiation(instance):
+    assert isinstance(instance, frameweb_NamedIndividual)
 
-@given(instance=frameweb::NamedIndividual_strategy)
+@given(instance=frameweb_AnnotationProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::namedindividual_instantiation(instance):
-    assert isinstance(instance, frameweb::NamedIndividual)
+def test_frameweb_annotationproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_AnnotationProperty)
 
-@given(instance=frameweb::AnnotationProperty_strategy)
+@given(instance=frameweb_DataProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::annotationproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::AnnotationProperty)
+def test_frameweb_dataproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_DataProperty)
 
-@given(instance=frameweb::ObjectProperty_strategy)
+@given(instance=frameweb_ObjectProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::objectproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::ObjectProperty)
+def test_frameweb_objectproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_ObjectProperty)
 
-@given(instance=frameweb::Type_strategy)
+@given(instance=frameweb_VocabularyProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::type_instantiation(instance):
-    assert isinstance(instance, frameweb::Type)
+def test_frameweb_vocabularyproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyProperty)
+
+@given(instance=frameweb_VocabularyAssociation_strategy)
+@settings(max_examples=50)
+def test_frameweb_vocabularyassociation_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyAssociation)
+
+@given(instance=frameweb_Type_strategy)
+@settings(max_examples=50)
+def test_frameweb_type_instantiation(instance):
+    assert isinstance(instance, frameweb_Type)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
@@ -3683,23 +4260,20 @@ def test_relationship_instantiation(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=frameweb::VocabularyEntity_strategy)
+@given(instance=frameweb_VocabularyEntity_strategy)
 @settings(max_examples=50)
-def test_frameweb::vocabularyentity_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyEntity)
+def test_frameweb_vocabularyentity_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyEntity)
 
-@given(instance=frameweb::Association_strategy)
+@given(instance=frameweb_Association_strategy)
 @settings(max_examples=50)
-def test_frameweb::association_instantiation(instance):
-    assert isinstance(instance, frameweb::Association)
-
-@given(instance=frameweb::Association_strategy)
-def test_frameweb::association_isDerived_type(instance):
-    assert isinstance(instance.isDerived, str)
+def test_frameweb_association_instantiation(instance):
+    assert isinstance(instance, frameweb_Association)
 
 
-@given(instance=frameweb::Association_strategy)
-def test_frameweb::association_isDerived_setter(instance):
+
+@given(instance=frameweb_Association_strategy)
+def test_frameweb_association_isDerived_setter(instance):
     original = instance.isDerived
     instance.isDerived = original
     assert instance.isDerived == original
@@ -3710,9 +4284,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Association_strategy)
+@given(instance=frameweb_Association_strategy)
 @settings(max_examples=30)
-def test_frameweb::association_specialized_end_types_changes_state(instance):
+def test_frameweb_association_specialized_end_types_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3727,14 +4301,14 @@ def test_frameweb::association_specialized_end_types_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'specialized_end_types' in frameweb::Association is empty"
+        assert has_statements, f"Function 'specialized_end_types' in frameweb_Association is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'specialized_end_types' in frameweb::Association did not change state; check implementation")
+            warnings.warn(f"Operation 'specialized_end_types' in frameweb_Association did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'specialized_end_types' in frameweb::Association is not implemented or raised an error")
+        warnings.warn(f"Operation 'specialized_end_types' in frameweb_Association is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3742,70 +4316,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Association_strategy)
+@given(instance=frameweb_Association_strategy)
 @settings(max_examples=30)
-def test_frameweb::association_association_ends_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.association_ends(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.association_ends).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'association_ends' in frameweb::Association is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'association_ends' in frameweb::Association did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'association_ends' in frameweb::Association is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Association_strategy)
-@settings(max_examples=30)
-def test_frameweb::association_isbinary_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isBinary()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isBinary).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isBinary' in frameweb::Association is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isBinary' in frameweb::Association did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isBinary' in frameweb::Association is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Association_strategy)
-@settings(max_examples=30)
-def test_frameweb::association_specialized_end_number_changes_state(instance):
+def test_frameweb_association_specialized_end_number_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3820,14 +4333,14 @@ def test_frameweb::association_specialized_end_number_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'specialized_end_number' in frameweb::Association is empty"
+        assert has_statements, f"Function 'specialized_end_number' in frameweb_Association is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'specialized_end_number' in frameweb::Association did not change state; check implementation")
+            warnings.warn(f"Operation 'specialized_end_number' in frameweb_Association did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'specialized_end_number' in frameweb::Association is not implemented or raised an error")
+        warnings.warn(f"Operation 'specialized_end_number' in frameweb_Association is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3835,41 +4348,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Association_strategy)
+@given(instance=frameweb_Association_strategy)
 @settings(max_examples=30)
-def test_frameweb::association_binary_associations_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.binary_associations(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.binary_associations).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'binary_associations' in frameweb::Association is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'binary_associations' in frameweb::Association did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'binary_associations' in frameweb::Association is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Association_strategy)
-@settings(max_examples=30)
-def test_frameweb::association_ends_must_be_typed_changes_state(instance):
+def test_frameweb_association_ends_must_be_typed_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3884,39 +4365,153 @@ def test_frameweb::association_ends_must_be_typed_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ends_must_be_typed' in frameweb::Association is empty"
+        assert has_statements, f"Function 'ends_must_be_typed' in frameweb_Association is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ends_must_be_typed' in frameweb::Association did not change state; check implementation")
+            warnings.warn(f"Operation 'ends_must_be_typed' in frameweb_Association did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ends_must_be_typed' in frameweb::Association is not implemented or raised an error")
+        warnings.warn(f"Operation 'ends_must_be_typed' in frameweb_Association is not implemented or raised an error")
 
-@given(instance=frameweb::ValueSpecification_strategy)
-@settings(max_examples=50)
-def test_frameweb::valuespecification_instantiation(instance):
-    assert isinstance(instance, frameweb::ValueSpecification)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=frameweb::Class_strategy)
-@settings(max_examples=50)
-def test_frameweb::class_instantiation(instance):
-    assert isinstance(instance, frameweb::Class)
+@given(instance=frameweb_Association_strategy)
+@settings(max_examples=30)
+def test_frameweb_association_association_ends_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.association_ends(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.association_ends).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'association_ends' in frameweb_Association is empty"
 
-@given(instance=frameweb::Interface_strategy)
-@settings(max_examples=50)
-def test_frameweb::interface_instantiation(instance):
-    assert isinstance(instance, frameweb::Interface)
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'association_ends' in frameweb_Association did not change state; check implementation")
 
-@given(instance=frameweb::DataType_strategy)
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'association_ends' in frameweb_Association is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Association_strategy)
+@settings(max_examples=30)
+def test_frameweb_association_binary_associations_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.binary_associations(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.binary_associations).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'binary_associations' in frameweb_Association is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'binary_associations' in frameweb_Association did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'binary_associations' in frameweb_Association is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Association_strategy)
+@settings(max_examples=30)
+def test_frameweb_association_isbinary_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isBinary()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isBinary).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isBinary' in frameweb_Association is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isBinary' in frameweb_Association did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isBinary' in frameweb_Association is not implemented or raised an error")
+
+@given(instance=frameweb_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_frameweb::datatype_instantiation(instance):
-    assert isinstance(instance, frameweb::DataType)
+def test_frameweb_valuespecification_instantiation(instance):
+    assert isinstance(instance, frameweb_ValueSpecification)
+
+@given(instance=frameweb_Class_strategy)
+@settings(max_examples=50)
+def test_frameweb_class_instantiation(instance):
+    assert isinstance(instance, frameweb_Class)
+
+@given(instance=frameweb_Interface_strategy)
+@settings(max_examples=50)
+def test_frameweb_interface_instantiation(instance):
+    assert isinstance(instance, frameweb_Interface)
+
+@given(instance=frameweb_DataType_strategy)
+@settings(max_examples=50)
+def test_frameweb_datatype_instantiation(instance):
+    assert isinstance(instance, frameweb_DataType)
 
 @given(instance=DeploymentTarget_strategy)
 @settings(max_examples=50)
 def test_deploymenttarget_instantiation(instance):
     assert isinstance(instance, DeploymentTarget)
+
+@given(instance=frameweb_IRI_strategy)
+@settings(max_examples=50)
+def test_frameweb_iri_instantiation(instance):
+    assert isinstance(instance, frameweb_IRI)
+
+
+
+@given(instance=frameweb_IRI_strategy)
+def test_frameweb_iri_iri_setter(instance):
+    original = instance.iri
+    instance.iri = original
+    assert instance.iri == original
+
+
+
+@given(instance=frameweb_IRI_strategy)
+def test_frameweb_iri_iriVersion_setter(instance):
+    original = instance.iriVersion
+    instance.iriVersion = original
+    assert instance.iriVersion == original
 
 @given(instance=ConnectableElement_strategy)
 @settings(max_examples=50)
@@ -3928,107 +4523,58 @@ def test_connectableelement_instantiation(instance):
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=50)
-def test_frameweb::property_instantiation(instance):
-    assert isinstance(instance, frameweb::Property)
-
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isID_type(instance):
-    assert isinstance(instance.isID, str)
+def test_frameweb_property_instantiation(instance):
+    assert isinstance(instance, frameweb_Property)
 
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isID_setter(instance):
+
+@given(instance=frameweb_Property_strategy)
+def test_frameweb_property_isID_setter(instance):
     original = instance.isID
     instance.isID = original
     assert instance.isID == original
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_default_type(instance):
-    assert isinstance(instance.default, str)
 
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isDerived_type(instance):
-    assert isinstance(instance.isDerived, str)
-
-
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isDerived_setter(instance):
+@given(instance=frameweb_Property_strategy)
+def test_frameweb_property_isDerived_setter(instance):
     original = instance.isDerived
     instance.isDerived = original
     assert instance.isDerived == original
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_aggregation_type(instance):
-    assert isinstance(instance.aggregation, str)
 
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_aggregation_setter(instance):
-    original = instance.aggregation
-    instance.aggregation = original
-    assert instance.aggregation == original
-
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isDerivedUnion_type(instance):
-    assert isinstance(instance.isDerivedUnion, str)
-
-
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isDerivedUnion_setter(instance):
+@given(instance=frameweb_Property_strategy)
+def test_frameweb_property_isDerivedUnion_setter(instance):
     original = instance.isDerivedUnion
     instance.isDerivedUnion = original
     assert instance.isDerivedUnion == original
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isComposite_type(instance):
-    assert isinstance(instance.isComposite, str)
 
 
-@given(instance=frameweb::Property_strategy)
-def test_frameweb::property_isComposite_setter(instance):
+@given(instance=frameweb_Property_strategy)
+def test_frameweb_property_isComposite_setter(instance):
     original = instance.isComposite
     instance.isComposite = original
     assert instance.isComposite == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setopposite_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setOpposite(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setOpposite).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setOpposite' in frameweb::Property is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setOpposite' in frameweb::Property did not change state; check implementation")
+@given(instance=frameweb_Property_strategy)
+def test_frameweb_property_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setOpposite' in frameweb::Property is not implemented or raised an error")
+
+
+@given(instance=frameweb_Property_strategy)
+def test_frameweb_property_aggregation_setter(instance):
+    original = instance.aggregation
+    instance.aggregation = original
+    assert instance.aggregation == original
 
 import warnings
 import copy
@@ -4036,252 +4582,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_qualified_is_association_end_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.qualified_is_association_end(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.qualified_is_association_end).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'qualified_is_association_end' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'qualified_is_association_end' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'qualified_is_association_end' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_isnavigable_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isNavigable()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isNavigable).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isNavigable' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isNavigable' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isNavigable' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_redefined_property_inherited_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.redefined_property_inherited(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.redefined_property_inherited).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'redefined_property_inherited' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'redefined_property_inherited' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'redefined_property_inherited' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setbooleandefaultvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setBooleanDefaultValue(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setBooleanDefaultValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setBooleanDefaultValue' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setBooleanDefaultValue' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setBooleanDefaultValue' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_subsettingcontext_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.subsettingContext()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.subsettingContext).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'subsettingContext' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'subsettingContext' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'subsettingContext' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_issetdefault_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSetDefault()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSetDefault).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSetDefault' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSetDefault' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSetDefault' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_subsetting_rules_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.subsetting_rules(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.subsetting_rules).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'subsetting_rules' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'subsetting_rules' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'subsetting_rules' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_iscomposite_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isComposite()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isComposite).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isComposite' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isComposite' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isComposite' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_binding_to_attribute_changes_state(instance):
+def test_frameweb_property_binding_to_attribute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4296,14 +4599,14 @@ def test_frameweb::property_binding_to_attribute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'binding_to_attribute' in frameweb::Property is empty"
+        assert has_statements, f"Function 'binding_to_attribute' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'binding_to_attribute' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'binding_to_attribute' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'binding_to_attribute' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'binding_to_attribute' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4311,30 +4614,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_setrealdefaultvalue_changes_state(instance):
+def test_frameweb_property_setnulldefaultvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.setRealDefaultValue(
-            "test"
-        )
+        instance.setNullDefaultValue()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setRealDefaultValue).strip()
+        source = inspect.getsource(instance.setNullDefaultValue).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setRealDefaultValue' in frameweb::Property is empty"
+        assert has_statements, f"Function 'setNullDefaultValue' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setRealDefaultValue' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'setNullDefaultValue' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setRealDefaultValue' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'setNullDefaultValue' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4342,30 +4643,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_setdefault_changes_state(instance):
+def test_frameweb_property_iscomposite_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.setDefault(
-            "test"
-        )
+        instance.isComposite()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setDefault).strip()
+        source = inspect.getsource(instance.isComposite).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDefault' in frameweb::Property is empty"
+        assert has_statements, f"Function 'isComposite' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDefault' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'isComposite' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDefault' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'isComposite' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4373,103 +4672,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_setintegerdefaultvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setIntegerDefaultValue(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setIntegerDefaultValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setIntegerDefaultValue' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setIntegerDefaultValue' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setIntegerDefaultValue' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_derived_union_is_derived_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.derived_union_is_derived(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.derived_union_is_derived).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'derived_union_is_derived' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'derived_union_is_derived' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'derived_union_is_derived' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setiscomposite_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setIsComposite(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setIsComposite).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setIsComposite' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setIsComposite' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setIsComposite' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setisnavigable_changes_state(instance):
+def test_frameweb_property_setisnavigable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4483,14 +4688,14 @@ def test_frameweb::property_setisnavigable_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setIsNavigable' in frameweb::Property is empty"
+        assert has_statements, f"Function 'setIsNavigable' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setIsNavigable' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'setIsNavigable' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setIsNavigable' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'setIsNavigable' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4498,165 +4703,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_subsetting_context_conforms_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.subsetting_context_conforms(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.subsetting_context_conforms).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'subsetting_context_conforms' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'subsetting_context_conforms' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'subsetting_context_conforms' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setnulldefaultvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setNullDefaultValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setNullDefaultValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setNullDefaultValue' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setNullDefaultValue' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setNullDefaultValue' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_subsetted_property_names_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.subsetted_property_names(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.subsetted_property_names).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'subsetted_property_names' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'subsetted_property_names' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'subsetted_property_names' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_derived_union_is_read_only_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.derived_union_is_read_only(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.derived_union_is_read_only).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'derived_union_is_read_only' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'derived_union_is_read_only' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'derived_union_is_read_only' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setstringdefaultvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setStringDefaultValue(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setStringDefaultValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setStringDefaultValue' in frameweb::Property is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setStringDefaultValue' in frameweb::Property did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setStringDefaultValue' in frameweb::Property is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=frameweb::Property_strategy)
-@settings(max_examples=30)
-def test_frameweb::property_setunlimitednaturaldefaultvalue_changes_state(instance):
+def test_frameweb_property_setunlimitednaturaldefaultvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4670,14 +4719,14 @@ def test_frameweb::property_setunlimitednaturaldefaultvalue_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setUnlimitedNaturalDefaultValue' in frameweb::Property is empty"
+        assert has_statements, f"Function 'setUnlimitedNaturalDefaultValue' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setUnlimitedNaturalDefaultValue' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'setUnlimitedNaturalDefaultValue' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setUnlimitedNaturalDefaultValue' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'setUnlimitedNaturalDefaultValue' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4685,9 +4734,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_type_of_opposite_end_changes_state(instance):
+def test_frameweb_property_type_of_opposite_end_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4702,14 +4751,14 @@ def test_frameweb::property_type_of_opposite_end_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'type_of_opposite_end' in frameweb::Property is empty"
+        assert has_statements, f"Function 'type_of_opposite_end' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'type_of_opposite_end' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'type_of_opposite_end' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'type_of_opposite_end' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'type_of_opposite_end' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4717,9 +4766,409 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_multiplicity_of_composite_changes_state(instance):
+def test_frameweb_property_unsetdefault_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unsetDefault()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unsetDefault).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unsetDefault' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unsetDefault' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unsetDefault' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_qualified_is_association_end_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.qualified_is_association_end(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.qualified_is_association_end).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'qualified_is_association_end' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'qualified_is_association_end' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'qualified_is_association_end' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_redefined_property_inherited_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.redefined_property_inherited(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.redefined_property_inherited).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'redefined_property_inherited' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'redefined_property_inherited' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'redefined_property_inherited' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setiscomposite_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setIsComposite(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setIsComposite).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setIsComposite' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setIsComposite' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setIsComposite' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_isnavigable_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isNavigable()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isNavigable).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isNavigable' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isNavigable' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isNavigable' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_derived_union_is_derived_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.derived_union_is_derived(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.derived_union_is_derived).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'derived_union_is_derived' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'derived_union_is_derived' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'derived_union_is_derived' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setdefault_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setDefault(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setDefault).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setDefault' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setDefault' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setDefault' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_subsetting_context_conforms_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.subsetting_context_conforms(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.subsetting_context_conforms).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'subsetting_context_conforms' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'subsetting_context_conforms' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'subsetting_context_conforms' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setrealdefaultvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setRealDefaultValue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setRealDefaultValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setRealDefaultValue' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setRealDefaultValue' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setRealDefaultValue' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_subsetted_property_names_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.subsetted_property_names(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.subsetted_property_names).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'subsetted_property_names' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'subsetted_property_names' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'subsetted_property_names' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_subsettingcontext_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.subsettingContext()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.subsettingContext).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'subsettingContext' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'subsettingContext' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'subsettingContext' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_isattribute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isAttribute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isAttribute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isAttribute' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isAttribute' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isAttribute' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setstringdefaultvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setStringDefaultValue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setStringDefaultValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setStringDefaultValue' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setStringDefaultValue' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setStringDefaultValue' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_multiplicity_of_composite_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4734,14 +5183,14 @@ def test_frameweb::property_multiplicity_of_composite_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'multiplicity_of_composite' in frameweb::Property is empty"
+        assert has_statements, f"Function 'multiplicity_of_composite' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'multiplicity_of_composite' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'multiplicity_of_composite' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'multiplicity_of_composite' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'multiplicity_of_composite' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4749,28 +5198,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_unsetdefault_changes_state(instance):
+def test_frameweb_property_subsetting_rules_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.unsetDefault()
+        instance.subsetting_rules(
+            "test", 
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unsetDefault).strip()
+        source = inspect.getsource(instance.subsetting_rules).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unsetDefault' in frameweb::Property is empty"
+        assert has_statements, f"Function 'subsetting_rules' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unsetDefault' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'subsetting_rules' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unsetDefault' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'subsetting_rules' in frameweb_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4778,1023 +5230,466 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=frameweb::Property_strategy)
+@given(instance=frameweb_Property_strategy)
 @settings(max_examples=30)
-def test_frameweb::property_isattribute_changes_state(instance):
+def test_frameweb_property_issetdefault_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isAttribute()
+        instance.isSetDefault()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isAttribute).strip()
+        source = inspect.getsource(instance.isSetDefault).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isAttribute' in frameweb::Property is empty"
+        assert has_statements, f"Function 'isSetDefault' in frameweb_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isAttribute' in frameweb::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'isSetDefault' in frameweb_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isAttribute' in frameweb::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'isSetDefault' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setopposite_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setOpposite(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setOpposite).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setOpposite' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setOpposite' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setOpposite' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setintegerdefaultvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setIntegerDefaultValue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setIntegerDefaultValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setIntegerDefaultValue' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setIntegerDefaultValue' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setIntegerDefaultValue' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_setbooleandefaultvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setBooleanDefaultValue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setBooleanDefaultValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setBooleanDefaultValue' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setBooleanDefaultValue' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setBooleanDefaultValue' in frameweb_Property is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=frameweb_Property_strategy)
+@settings(max_examples=30)
+def test_frameweb_property_derived_union_is_read_only_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.derived_union_is_read_only(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.derived_union_is_read_only).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'derived_union_is_read_only' in frameweb_Property is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'derived_union_is_read_only' in frameweb_Property did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'derived_union_is_read_only' in frameweb_Property is not implemented or raised an error")
+
+@given(instance=frameweb_SemanticPackage_strategy)
+@settings(max_examples=50)
+def test_frameweb_semanticpackage_instantiation(instance):
+    assert isinstance(instance, frameweb_SemanticPackage)
+
+@given(instance=frameweb_Annotation_strategy)
+@settings(max_examples=50)
+def test_frameweb_annotation_instantiation(instance):
+    assert isinstance(instance, frameweb_Annotation)
+
+@given(instance=frameweb_Axiom_strategy)
+@settings(max_examples=50)
+def test_frameweb_axiom_instantiation(instance):
+    assert isinstance(instance, frameweb_Axiom)
+
+@given(instance=frameweb_Vocabulary_strategy)
+@settings(max_examples=50)
+def test_frameweb_vocabulary_instantiation(instance):
+    assert isinstance(instance, frameweb_Vocabulary)
+
+
+
+@given(instance=frameweb_Vocabulary_strategy)
+def test_frameweb_vocabulary_vocabularyDocument_setter(instance):
+    original = instance.vocabularyDocument
+    instance.vocabularyDocument = original
+    assert instance.vocabularyDocument == original
+
+@given(instance=frameweb_VocabularyModel_strategy)
+@settings(max_examples=50)
+def test_frameweb_vocabularymodel_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyModel)
 
 @given(instance=GeneralizationSet_strategy)
 @settings(max_examples=50)
 def test_generalizationset_instantiation(instance):
     assert isinstance(instance, GeneralizationSet)
 
-@given(instance=frameweb::ServiceGeneralizationSet_strategy)
+@given(instance=frameweb_DAOGeneralizationSet_strategy)
 @settings(max_examples=50)
-def test_frameweb::servicegeneralizationset_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceGeneralizationSet)
+def test_frameweb_daogeneralizationset_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOGeneralizationSet)
 
-@given(instance=frameweb::DAOGeneralizationSet_strategy)
+@given(instance=frameweb_NavigationGeneralizationSet_strategy)
 @settings(max_examples=50)
-def test_frameweb::daogeneralizationset_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOGeneralizationSet)
+def test_frameweb_navigationgeneralizationset_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationGeneralizationSet)
 
-@given(instance=frameweb::NavigationGeneralizationSet_strategy)
+@given(instance=frameweb_ServiceGeneralizationSet_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationgeneralizationset_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationGeneralizationSet)
+def test_frameweb_servicegeneralizationset_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceGeneralizationSet)
 
-@given(instance=frameweb::DomainGeneralizationSet_strategy)
+@given(instance=frameweb_DomainGeneralizationSet_strategy)
 @settings(max_examples=50)
-def test_frameweb::domaingeneralizationset_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainGeneralizationSet)
-
-@given(instance=frameweb::DomainGeneralizationSet_strategy)
-def test_frameweb::domaingeneralizationset_mapping_type(instance):
-    assert isinstance(instance.mapping, str)
+def test_frameweb_domaingeneralizationset_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainGeneralizationSet)
 
 
-@given(instance=frameweb::DomainGeneralizationSet_strategy)
-def test_frameweb::domaingeneralizationset_mapping_setter(instance):
+
+@given(instance=frameweb_DomainGeneralizationSet_strategy)
+def test_frameweb_domaingeneralizationset_mapping_setter(instance):
     original = instance.mapping
     instance.mapping = original
     assert instance.mapping == original
+
+@given(instance=frameweb_AttributeMapping_strategy)
+@settings(max_examples=50)
+def test_frameweb_attributemapping_instantiation(instance):
+    assert isinstance(instance, frameweb_AttributeMapping)
+
+@given(instance=frameweb_ClassMapping_strategy)
+@settings(max_examples=50)
+def test_frameweb_classmapping_instantiation(instance):
+    assert isinstance(instance, frameweb_ClassMapping)
+
+@given(instance=frameweb_MappingLib_strategy)
+@settings(max_examples=50)
+def test_frameweb_mappinglib_instantiation(instance):
+    assert isinstance(instance, frameweb_MappingLib)
+
+@given(instance=frameweb_DAOGeneralization_strategy)
+@settings(max_examples=50)
+def test_frameweb_daogeneralization_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOGeneralization)
+
+@given(instance=frameweb_DomainProperty_strategy)
+@settings(max_examples=50)
+def test_frameweb_domainproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainProperty)
+
+@given(instance=frameweb_NavigationGeneralization_strategy)
+@settings(max_examples=50)
+def test_frameweb_navigationgeneralization_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationGeneralization)
 
 @given(instance=NavigationConstraint_strategy)
 @settings(max_examples=50)
 def test_navigationconstraint_instantiation(instance):
     assert isinstance(instance, NavigationConstraint)
 
+@given(instance=frameweb_ChainingConstraint_strategy)
+@settings(max_examples=50)
+def test_frameweb_chainingconstraint_instantiation(instance):
+    assert isinstance(instance, frameweb_ChainingConstraint)
+
+@given(instance=frameweb_MethodCosntraint_strategy)
+@settings(max_examples=50)
+def test_frameweb_methodcosntraint_instantiation(instance):
+    assert isinstance(instance, frameweb_MethodCosntraint)
+
+@given(instance=frameweb_ResultConstraint_strategy)
+@settings(max_examples=50)
+def test_frameweb_resultconstraint_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultConstraint)
+
+@given(instance=frameweb_PageConstraint_strategy)
+@settings(max_examples=50)
+def test_frameweb_pageconstraint_instantiation(instance):
+    assert isinstance(instance, frameweb_PageConstraint)
+
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=frameweb::DomainConstraints_strategy)
+@given(instance=frameweb_DomainConstraints_strategy)
 @settings(max_examples=50)
-def test_frameweb::domainconstraints_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainConstraints)
+def test_frameweb_domainconstraints_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainConstraints)
 
-@given(instance=frameweb::VocabularyConstraints_strategy)
+@given(instance=frameweb_NavigationConstraint_strategy)
 @settings(max_examples=50)
-def test_frameweb::vocabularyconstraints_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyConstraints)
+def test_frameweb_navigationconstraint_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationConstraint)
+
+@given(instance=frameweb_VocabularyConstraints_strategy)
+@settings(max_examples=50)
+def test_frameweb_vocabularyconstraints_instantiation(instance):
+    assert isinstance(instance, frameweb_VocabularyConstraints)
 
 @given(instance=FrameworkExtension_strategy)
 @settings(max_examples=50)
 def test_frameworkextension_instantiation(instance):
     assert isinstance(instance, FrameworkExtension)
 
-@given(instance=frameweb::DomainExtension_strategy)
+@given(instance=frameweb_DomainExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::domainextension_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainExtension)
+def test_frameweb_domainextension_instantiation(instance):
+    assert isinstance(instance, frameweb_DomainExtension)
 
-@given(instance=frameweb::NavigationExtension_strategy)
+@given(instance=frameweb_NavigationExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationextension_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationExtension)
+def test_frameweb_navigationextension_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationExtension)
 
-@given(instance=FramewebModel_strategy)
+@given(instance=frameweb_SeviceRealization_strategy)
 @settings(max_examples=50)
-def test_framewebmodel_instantiation(instance):
-    assert isinstance(instance, FramewebModel)
+def test_frameweb_sevicerealization_instantiation(instance):
+    assert isinstance(instance, frameweb_SeviceRealization)
 
-@given(instance=frameweb::ApplicationModel_strategy)
+@given(instance=frameweb_AttributeMappingProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::applicationmodel_instantiation(instance):
-    assert isinstance(instance, frameweb::ApplicationModel)
+def test_frameweb_attributemappingproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_AttributeMappingProperty)
 
-@given(instance=frameweb::NavigationModel_strategy)
+@given(instance=frameweb_ClassMappingPropery_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationmodel_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationModel)
+def test_frameweb_classmappingpropery_instantiation(instance):
+    assert isinstance(instance, frameweb_ClassMappingPropery)
 
-@given(instance=frameweb::VocabularyModel_strategy)
+@given(instance=frameweb_ResultProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::vocabularymodel_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyModel)
+def test_frameweb_resultproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultProperty)
 
-@given(instance=frameweb::EntityModel_strategy)
+@given(instance=frameweb_TagProperty_strategy)
 @settings(max_examples=50)
-def test_frameweb::entitymodel_instantiation(instance):
-    assert isinstance(instance, frameweb::EntityModel)
+def test_frameweb_tagproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_TagProperty)
 
-@given(instance=Profile_strategy)
+@given(instance=frameweb_ControllerProperty_strategy)
 @settings(max_examples=50)
-def test_profile_instantiation(instance):
-    assert isinstance(instance, Profile)
-
-@given(instance=frameweb::FramewebProject_strategy)
-@settings(max_examples=50)
-def test_frameweb::framewebproject_instantiation(instance):
-    assert isinstance(instance, frameweb::FramewebProject)
+def test_frameweb_controllerproperty_instantiation(instance):
+    assert isinstance(instance, frameweb_ControllerProperty)
 
 @given(instance=ExtensionEnd_strategy)
 @settings(max_examples=50)
 def test_extensionend_instantiation(instance):
     assert isinstance(instance, ExtensionEnd)
 
-@given(instance=frameweb::TagExtensionEnd_strategy)
+@given(instance=frameweb_AttributeMappingExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_frameweb::tagextensionend_instantiation(instance):
-    assert isinstance(instance, frameweb::TagExtensionEnd)
+def test_frameweb_attributemappingextensionend_instantiation(instance):
+    assert isinstance(instance, frameweb_AttributeMappingExtensionEnd)
 
-@given(instance=frameweb::AttributeMappingExtensionEnd_strategy)
+@given(instance=frameweb_TagExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_frameweb::attributemappingextensionend_instantiation(instance):
-    assert isinstance(instance, frameweb::AttributeMappingExtensionEnd)
+def test_frameweb_tagextensionend_instantiation(instance):
+    assert isinstance(instance, frameweb_TagExtensionEnd)
 
-@given(instance=frameweb::ClassMappingExtensionEnd_strategy)
+@given(instance=frameweb_ResultExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_frameweb::classmappingextensionend_instantiation(instance):
-    assert isinstance(instance, frameweb::ClassMappingExtensionEnd)
+def test_frameweb_resultextensionend_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultExtensionEnd)
 
-@given(instance=frameweb::ResultExtensionEnd_strategy)
+@given(instance=frameweb_ClassMappingExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_frameweb::resultextensionend_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultExtensionEnd)
+def test_frameweb_classmappingextensionend_instantiation(instance):
+    assert isinstance(instance, frameweb_ClassMappingExtensionEnd)
 
-@given(instance=frameweb::ControllerExtensionEnd_strategy)
+@given(instance=frameweb_ControllerExtensionEnd_strategy)
 @settings(max_examples=50)
-def test_frameweb::controllerextensionend_instantiation(instance):
-    assert isinstance(instance, frameweb::ControllerExtensionEnd)
+def test_frameweb_controllerextensionend_instantiation(instance):
+    assert isinstance(instance, frameweb_ControllerExtensionEnd)
 
 @given(instance=DomainExtension_strategy)
 @settings(max_examples=50)
 def test_domainextension_instantiation(instance):
     assert isinstance(instance, DomainExtension)
 
-@given(instance=frameweb::AttributeMappingExtension_strategy)
+@given(instance=frameweb_AttributeMappingExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::attributemappingextension_instantiation(instance):
-    assert isinstance(instance, frameweb::AttributeMappingExtension)
+def test_frameweb_attributemappingextension_instantiation(instance):
+    assert isinstance(instance, frameweb_AttributeMappingExtension)
 
-@given(instance=frameweb::ClassMappingExtension_strategy)
+@given(instance=frameweb_ClassMappingExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::classmappingextension_instantiation(instance):
-    assert isinstance(instance, frameweb::ClassMappingExtension)
+def test_frameweb_classmappingextension_instantiation(instance):
+    assert isinstance(instance, frameweb_ClassMappingExtension)
+
+@given(instance=frameweb_ControllerSet_strategy)
+@settings(max_examples=50)
+def test_frameweb_controllerset_instantiation(instance):
+    assert isinstance(instance, frameweb_ControllerSet)
+
+@given(instance=frameweb_Controller_strategy)
+@settings(max_examples=50)
+def test_frameweb_controller_instantiation(instance):
+    assert isinstance(instance, frameweb_Controller)
 
 @given(instance=ProfileApplication_strategy)
 @settings(max_examples=50)
 def test_profileapplication_instantiation(instance):
     assert isinstance(instance, ProfileApplication)
 
-@given(instance=frameweb::FrameworkApplication_strategy)
+@given(instance=frameweb_FrameworkApplication_strategy)
 @settings(max_examples=50)
-def test_frameweb::frameworkapplication_instantiation(instance):
-    assert isinstance(instance, frameweb::FrameworkApplication)
+def test_frameweb_frameworkapplication_instantiation(instance):
+    assert isinstance(instance, frameweb_FrameworkApplication)
 
 @given(instance=NavigationExtension_strategy)
 @settings(max_examples=50)
 def test_navigationextension_instantiation(instance):
     assert isinstance(instance, NavigationExtension)
 
-@given(instance=frameweb::ControllerExtension_strategy)
+@given(instance=frameweb_ControllerExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::controllerextension_instantiation(instance):
-    assert isinstance(instance, frameweb::ControllerExtension)
+def test_frameweb_controllerextension_instantiation(instance):
+    assert isinstance(instance, frameweb_ControllerExtension)
 
-@given(instance=frameweb::ResultExtension_strategy)
+@given(instance=frameweb_ResultExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::resultextension_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultExtension)
+def test_frameweb_resultextension_instantiation(instance):
+    assert isinstance(instance, frameweb_ResultExtension)
 
-@given(instance=frameweb::TagExtension_strategy)
+@given(instance=frameweb_TagExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::tagextension_instantiation(instance):
-    assert isinstance(instance, frameweb::TagExtension)
+def test_frameweb_tagextension_instantiation(instance):
+    assert isinstance(instance, frameweb_TagExtension)
 
 @given(instance=Extension_strategy)
 @settings(max_examples=50)
 def test_extension_instantiation(instance):
     assert isinstance(instance, Extension)
 
-@given(instance=frameweb::FrameworkExtension_strategy)
+@given(instance=frameweb_FrameworkExtension_strategy)
 @settings(max_examples=50)
-def test_frameweb::frameworkextension_instantiation(instance):
-    assert isinstance(instance, frameweb::FrameworkExtension)
+def test_frameweb_frameworkextension_instantiation(instance):
+    assert isinstance(instance, frameweb_FrameworkExtension)
+
+@given(instance=frameweb_DAOMethod_strategy)
+@settings(max_examples=50)
+def test_frameweb_daomethod_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOMethod)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=frameweb::NavigationDependency_strategy)
+@given(instance=frameweb_NavigationDependency_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationdependency_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationDependency)
+def test_frameweb_navigationdependency_instantiation(instance):
+    assert isinstance(instance, frameweb_NavigationDependency)
 
-@given(instance=frameweb::NavigationConstraint_strategy)
+@given(instance=frameweb_ServiceAssociation_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationconstraint_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationConstraint)
+def test_frameweb_serviceassociation_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceAssociation)
 
-@given(instance=NavigationProperty_strategy)
+@given(instance=frameweb_ServiceAttribute_strategy)
 @settings(max_examples=50)
-def test_navigationproperty_instantiation(instance):
-    assert isinstance(instance, NavigationProperty)
+def test_frameweb_serviceattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceAttribute)
 
-@given(instance=frameweb::NavigationCompositionWhole_strategy)
+@given(instance=frameweb_ServiceMethod_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationcompositionwhole_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationCompositionWhole)
+def test_frameweb_servicemethod_instantiation(instance):
+    assert isinstance(instance, frameweb_ServiceMethod)
 
-@given(instance=frameweb::NavigationCompositionPart_strategy)
+@given(instance=frameweb_DAOAttribute_strategy)
 @settings(max_examples=50)
-def test_frameweb::navigationcompositionpart_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationCompositionPart)
-
-@given(instance=Stereotype_strategy)
-@settings(max_examples=50)
-def test_stereotype_instantiation(instance):
-    assert isinstance(instance, Stereotype)
-
-@given(instance=frameweb::AttributeMapping_strategy)
-@settings(max_examples=50)
-def test_frameweb::attributemapping_instantiation(instance):
-    assert isinstance(instance, frameweb::AttributeMapping)
-
-@given(instance=frameweb::ClassMapping_strategy)
-@settings(max_examples=50)
-def test_frameweb::classmapping_instantiation(instance):
-    assert isinstance(instance, frameweb::ClassMapping)
-
-@given(instance=frameweb::Controller_strategy)
-@settings(max_examples=50)
-def test_frameweb::controller_instantiation(instance):
-    assert isinstance(instance, frameweb::Controller)
-
-@given(instance=frameweb::Tag_strategy)
-@settings(max_examples=50)
-def test_frameweb::tag_instantiation(instance):
-    assert isinstance(instance, frameweb::Tag)
-
-@given(instance=frameweb::ResultType_strategy)
-@settings(max_examples=50)
-def test_frameweb::resulttype_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultType)
-
-@given(instance=NavigationPackage_strategy)
-@settings(max_examples=50)
-def test_navigationpackage_instantiation(instance):
-    assert isinstance(instance, NavigationPackage)
-
-@given(instance=frameweb::ControllerPackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::controllerpackage_instantiation(instance):
-    assert isinstance(instance, frameweb::ControllerPackage)
-
-@given(instance=frameweb::ViewPackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::viewpackage_instantiation(instance):
-    assert isinstance(instance, frameweb::ViewPackage)
-
-@given(instance=Package_strategy)
-@settings(max_examples=50)
-def test_package_instantiation(instance):
-    assert isinstance(instance, Package)
-
-@given(instance=frameweb::ApplicationPackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::applicationpackage_instantiation(instance):
-    assert isinstance(instance, frameweb::ApplicationPackage)
-
-@given(instance=frameweb::PersistencePackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::persistencepackage_instantiation(instance):
-    assert isinstance(instance, frameweb::PersistencePackage)
-
-@given(instance=frameweb::SemanticPackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::semanticpackage_instantiation(instance):
-    assert isinstance(instance, frameweb::SemanticPackage)
-
-@given(instance=frameweb::NavigationPackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::navigationpackage_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationPackage)
-
-@given(instance=frameweb::ControllerSet_strategy)
-@settings(max_examples=50)
-def test_frameweb::controllerset_instantiation(instance):
-    assert isinstance(instance, frameweb::ControllerSet)
-
-@given(instance=frameweb::ResultSet_strategy)
-@settings(max_examples=50)
-def test_frameweb::resultset_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultSet)
-
-@given(instance=frameweb::Vocabulary_strategy)
-@settings(max_examples=50)
-def test_frameweb::vocabulary_instantiation(instance):
-    assert isinstance(instance, frameweb::Vocabulary)
-
-@given(instance=frameweb::Vocabulary_strategy)
-def test_frameweb::vocabulary_vocabularyDocument_type(instance):
-    assert isinstance(instance.vocabularyDocument, str)
-
-
-@given(instance=frameweb::Vocabulary_strategy)
-def test_frameweb::vocabulary_vocabularyDocument_setter(instance):
-    original = instance.vocabularyDocument
-    instance.vocabularyDocument = original
-    assert instance.vocabularyDocument == original
-
-@given(instance=frameweb::MappingLib_strategy)
-@settings(max_examples=50)
-def test_frameweb::mappinglib_instantiation(instance):
-    assert isinstance(instance, frameweb::MappingLib)
-
-@given(instance=frameweb::DomainPackage_strategy)
-@settings(max_examples=50)
-def test_frameweb::domainpackage_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainPackage)
-
-@given(instance=ServiceAssociation_strategy)
-@settings(max_examples=50)
-def test_serviceassociation_instantiation(instance):
-    assert isinstance(instance, ServiceAssociation)
-
-@given(instance=frameweb::ServiceControllerAssociation_strategy)
-@settings(max_examples=50)
-def test_frameweb::servicecontrollerassociation_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceControllerAssociation)
-
-@given(instance=frameweb::DAOServiceAssociation_strategy)
-@settings(max_examples=50)
-def test_frameweb::daoserviceassociation_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOServiceAssociation)
-
-@given(instance=frameweb::ChainingConstraint_strategy)
-@settings(max_examples=50)
-def test_frameweb::chainingconstraint_instantiation(instance):
-    assert isinstance(instance, frameweb::ChainingConstraint)
-
-@given(instance=frameweb::PageConstraint_strategy)
-@settings(max_examples=50)
-def test_frameweb::pageconstraint_instantiation(instance):
-    assert isinstance(instance, frameweb::PageConstraint)
-
-@given(instance=frameweb::MethodCosntraint_strategy)
-@settings(max_examples=50)
-def test_frameweb::methodcosntraint_instantiation(instance):
-    assert isinstance(instance, frameweb::MethodCosntraint)
-
-@given(instance=NavigationAttribute_strategy)
-@settings(max_examples=50)
-def test_navigationattribute_instantiation(instance):
-    assert isinstance(instance, NavigationAttribute)
-
-@given(instance=frameweb::UIComponentField_strategy)
-@settings(max_examples=50)
-def test_frameweb::uicomponentfield_instantiation(instance):
-    assert isinstance(instance, frameweb::UIComponentField)
-
-@given(instance=frameweb::IOParameter_strategy)
-@settings(max_examples=50)
-def test_frameweb::ioparameter_instantiation(instance):
-    assert isinstance(instance, frameweb::IOParameter)
-
-@given(instance=InterfaceRealization_strategy)
-@settings(max_examples=50)
-def test_interfacerealization_instantiation(instance):
-    assert isinstance(instance, InterfaceRealization)
-
-@given(instance=frameweb::SeviceRealization_strategy)
-@settings(max_examples=50)
-def test_frameweb::sevicerealization_instantiation(instance):
-    assert isinstance(instance, frameweb::SeviceRealization)
-
-@given(instance=frameweb::DAORealization_strategy)
-@settings(max_examples=50)
-def test_frameweb::daorealization_instantiation(instance):
-    assert isinstance(instance, frameweb::DAORealization)
-
-@given(instance=Class_strategy)
-@settings(max_examples=50)
-def test_class_instantiation(instance):
-    assert isinstance(instance, Class)
-
-@given(instance=frameweb::FrontControllerClass_strategy)
-@settings(max_examples=50)
-def test_frameweb::frontcontrollerclass_instantiation(instance):
-    assert isinstance(instance, frameweb::FrontControllerClass)
-
-@given(instance=frameweb::Annotation_strategy)
-@settings(max_examples=50)
-def test_frameweb::annotation_instantiation(instance):
-    assert isinstance(instance, frameweb::Annotation)
-
-@given(instance=frameweb::Axiom_strategy)
-@settings(max_examples=50)
-def test_frameweb::axiom_instantiation(instance):
-    assert isinstance(instance, frameweb::Axiom)
-
-@given(instance=frameweb::VocabularyClassExpression_strategy)
-@settings(max_examples=50)
-def test_frameweb::vocabularyclassexpression_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyClassExpression)
-
-@given(instance=frameweb::DomainClass_strategy)
-@settings(max_examples=50)
-def test_frameweb::domainclass_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainClass)
-
-@given(instance=frameweb::DomainClass_strategy)
-def test_frameweb::domainclass_table_type(instance):
-    assert isinstance(instance.table, str)
-
-
-@given(instance=frameweb::DomainClass_strategy)
-def test_frameweb::domainclass_table_setter(instance):
-    original = instance.table
-    instance.table = original
-    assert instance.table == original
-
-@given(instance=frameweb::NavigationClass_strategy)
-@settings(max_examples=50)
-def test_frameweb::navigationclass_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationClass)
-
-@given(instance=frameweb::DAOClass_strategy)
-@settings(max_examples=50)
-def test_frameweb::daoclass_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOClass)
-
-@given(instance=frameweb::DAOClass_strategy)
-def test_frameweb::daoclass_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=frameweb::DAOClass_strategy)
-def test_frameweb::daoclass_prefix_setter(instance):
-    original = instance.prefix
-    instance.prefix = original
-    assert instance.prefix == original
-
-@given(instance=frameweb::DAOClass_strategy)
-def test_frameweb::daoclass_infix_type(instance):
-    assert isinstance(instance.infix, str)
-
-
-@given(instance=frameweb::DAOClass_strategy)
-def test_frameweb::daoclass_infix_setter(instance):
-    original = instance.infix
-    instance.infix = original
-    assert instance.infix == original
-
-@given(instance=frameweb::DAOClass_strategy)
-def test_frameweb::daoclass_sufix_type(instance):
-    assert isinstance(instance.sufix, str)
-
-
-@given(instance=frameweb::DAOClass_strategy)
-def test_frameweb::daoclass_sufix_setter(instance):
-    original = instance.sufix
-    instance.sufix = original
-    assert instance.sufix == original
-
-@given(instance=Generalization__strategy)
-@settings(max_examples=50)
-def test_generalization__instantiation(instance):
-    assert isinstance(instance, Generalization_)
-
-@given(instance=frameweb::DomainGeneralization_strategy)
-@settings(max_examples=50)
-def test_frameweb::domaingeneralization_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainGeneralization)
-
-@given(instance=frameweb::NavigationGeneralization_strategy)
-@settings(max_examples=50)
-def test_frameweb::navigationgeneralization_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationGeneralization)
-
-@given(instance=frameweb::DAOGeneralization_strategy)
-@settings(max_examples=50)
-def test_frameweb::daogeneralization_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOGeneralization)
-
-@given(instance=frameweb::ServiceGeneralization_strategy)
-@settings(max_examples=50)
-def test_frameweb::servicegeneralization_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceGeneralization)
-
-@given(instance=frameweb::ServiceClass_strategy)
-@settings(max_examples=50)
-def test_frameweb::serviceclass_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceClass)
-
-@given(instance=Operation_strategy)
-@settings(max_examples=50)
-def test_operation_instantiation(instance):
-    assert isinstance(instance, Operation)
-
-@given(instance=frameweb::ServiceMethod_strategy)
-@settings(max_examples=50)
-def test_frameweb::servicemethod_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceMethod)
-
-@given(instance=frameweb::DAOMethod_strategy)
-@settings(max_examples=50)
-def test_frameweb::daomethod_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOMethod)
-
-@given(instance=frameweb::DomainMethod_strategy)
-@settings(max_examples=50)
-def test_frameweb::domainmethod_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainMethod)
-
-@given(instance=frameweb::ResultConstraint_strategy)
-@settings(max_examples=50)
-def test_frameweb::resultconstraint_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultConstraint)
-
-@given(instance=frameweb::FrontControllerMethod_strategy)
-@settings(max_examples=50)
-def test_frameweb::frontcontrollermethod_instantiation(instance):
-    assert isinstance(instance, frameweb::FrontControllerMethod)
-
-@given(instance=frameweb::FrontControllerMethod_strategy)
-def test_frameweb::frontcontrollermethod_isDefault_type(instance):
-    assert isinstance(instance.isDefault, bool)
-
-
-@given(instance=frameweb::FrontControllerMethod_strategy)
-def test_frameweb::frontcontrollermethod_isDefault_setter(instance):
-    original = instance.isDefault
-    instance.isDefault = original
-    assert instance.isDefault == original
-
-@given(instance=frameweb::Result_strategy)
-@settings(max_examples=50)
-def test_frameweb::result_instantiation(instance):
-    assert isinstance(instance, frameweb::Result)
-
-@given(instance=NavigationDependency_strategy)
-@settings(max_examples=50)
-def test_navigationdependency_instantiation(instance):
-    assert isinstance(instance, NavigationDependency)
-
-@given(instance=frameweb::PageDependency_strategy)
-@settings(max_examples=50)
-def test_frameweb::pagedependency_instantiation(instance):
-    assert isinstance(instance, frameweb::PageDependency)
-
-@given(instance=frameweb::FrontControllerDependency_strategy)
-@settings(max_examples=50)
-def test_frameweb::frontcontrollerdependency_instantiation(instance):
-    assert isinstance(instance, frameweb::FrontControllerDependency)
-
-@given(instance=frameweb::ChainingDependency_strategy)
-@settings(max_examples=50)
-def test_frameweb::chainingdependency_instantiation(instance):
-    assert isinstance(instance, frameweb::ChainingDependency)
-
-@given(instance=frameweb::ResultDependency_strategy)
-@settings(max_examples=50)
-def test_frameweb::resultdependency_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultDependency)
-
-@given(instance=frameweb::ResultDependency_strategy)
-def test_frameweb::resultdependency_ajax_type(instance):
-    assert isinstance(instance.ajax, bool)
-
-
-@given(instance=frameweb::ResultDependency_strategy)
-def test_frameweb::resultdependency_ajax_setter(instance):
-    original = instance.ajax
-    instance.ajax = original
-    assert instance.ajax == original
-
-@given(instance=frameweb::ResultDependency_strategy)
-def test_frameweb::resultdependency_execute_type(instance):
-    assert isinstance(instance.execute, str)
-
-
-@given(instance=frameweb::ResultDependency_strategy)
-def test_frameweb::resultdependency_execute_setter(instance):
-    original = instance.execute
-    instance.execute = original
-    assert instance.execute == original
-
-@given(instance=frameweb::ResultDependency_strategy)
-def test_frameweb::resultdependency_render_type(instance):
-    assert isinstance(instance.render, str)
-
-
-@given(instance=frameweb::ResultDependency_strategy)
-def test_frameweb::resultdependency_render_setter(instance):
-    original = instance.render
-    instance.render = original
-    assert instance.render == original
-
-@given(instance=Interface_strategy)
-@settings(max_examples=50)
-def test_interface_instantiation(instance):
-    assert isinstance(instance, Interface)
-
-@given(instance=frameweb::ServiceInterface_strategy)
-@settings(max_examples=50)
-def test_frameweb::serviceinterface_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceInterface)
-
-@given(instance=frameweb::DAOInterface_strategy)
-@settings(max_examples=50)
-def test_frameweb::daointerface_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOInterface)
-
-@given(instance=frameweb::DAOInterface_strategy)
-def test_frameweb::daointerface_infix_type(instance):
-    assert isinstance(instance.infix, str)
-
-
-@given(instance=frameweb::DAOInterface_strategy)
-def test_frameweb::daointerface_infix_setter(instance):
-    original = instance.infix
-    instance.infix = original
-    assert instance.infix == original
-
-@given(instance=frameweb::DAOInterface_strategy)
-def test_frameweb::daointerface_sufix_type(instance):
-    assert isinstance(instance.sufix, str)
-
-
-@given(instance=frameweb::DAOInterface_strategy)
-def test_frameweb::daointerface_sufix_setter(instance):
-    original = instance.sufix
-    instance.sufix = original
-    assert instance.sufix == original
-
-@given(instance=frameweb::TagLib_strategy)
-@settings(max_examples=50)
-def test_frameweb::taglib_instantiation(instance):
-    assert isinstance(instance, frameweb::TagLib)
-
-@given(instance=frameweb::TagLib_strategy)
-def test_frameweb::taglib_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=frameweb::TagLib_strategy)
-def test_frameweb::taglib_prefix_setter(instance):
-    original = instance.prefix
-    instance.prefix = original
-    assert instance.prefix == original
-
-@given(instance=NavigationClass_strategy)
-@settings(max_examples=50)
-def test_navigationclass_instantiation(instance):
-    assert isinstance(instance, NavigationClass)
-
-@given(instance=frameweb::UIComponent_strategy)
-@settings(max_examples=50)
-def test_frameweb::uicomponent_instantiation(instance):
-    assert isinstance(instance, frameweb::UIComponent)
-
-@given(instance=frameweb::Template_strategy)
-@settings(max_examples=50)
-def test_frameweb::template_instantiation(instance):
-    assert isinstance(instance, frameweb::Template)
-
-@given(instance=frameweb::Page_strategy)
-@settings(max_examples=50)
-def test_frameweb::page_instantiation(instance):
-    assert isinstance(instance, frameweb::Page)
-
-@given(instance=Model_strategy)
-@settings(max_examples=50)
-def test_model_instantiation(instance):
-    assert isinstance(instance, Model)
-
-@given(instance=frameweb::FrameworkProfile_strategy)
-@settings(max_examples=50)
-def test_frameweb::frameworkprofile_instantiation(instance):
-    assert isinstance(instance, frameweb::FrameworkProfile)
-
-@given(instance=frameweb::FrameworkProfile_strategy)
-def test_frameweb::frameworkprofile_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=frameweb::FrameworkProfile_strategy)
-def test_frameweb::frameworkprofile_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=frameweb::FrameworkProfile_strategy)
-def test_frameweb::frameworkprofile_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=frameweb::FrameworkProfile_strategy)
-def test_frameweb::frameworkprofile_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=frameweb::FramewebModel_strategy)
-@settings(max_examples=50)
-def test_frameweb::framewebmodel_instantiation(instance):
-    assert isinstance(instance, frameweb::FramewebModel)
-
-@given(instance=DomainAttribute_strategy)
-@settings(max_examples=50)
-def test_domainattribute_instantiation(instance):
-    assert isinstance(instance, DomainAttribute)
-
-@given(instance=frameweb::DecimalAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::decimalattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::DecimalAttribute)
-
-@given(instance=frameweb::DecimalAttribute_strategy)
-def test_frameweb::decimalattribute_decimalScale_type(instance):
-    assert isinstance(instance.decimalScale, str)
-
-
-@given(instance=frameweb::DecimalAttribute_strategy)
-def test_frameweb::decimalattribute_decimalScale_setter(instance):
-    original = instance.decimalScale
-    instance.decimalScale = original
-    assert instance.decimalScale == original
-
-@given(instance=frameweb::DecimalAttribute_strategy)
-def test_frameweb::decimalattribute_decimalPrecision_type(instance):
-    assert isinstance(instance.decimalPrecision, str)
-
-
-@given(instance=frameweb::DecimalAttribute_strategy)
-def test_frameweb::decimalattribute_decimalPrecision_setter(instance):
-    original = instance.decimalPrecision
-    instance.decimalPrecision = original
-    assert instance.decimalPrecision == original
-
-@given(instance=frameweb::EmbeddedAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::embeddedattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::EmbeddedAttribute)
-
-@given(instance=frameweb::LOBAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::lobattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::LOBAttribute)
-
-@given(instance=frameweb::IdAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::idattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::IdAttribute)
-
-@given(instance=frameweb::IdAttribute_strategy)
-def test_frameweb::idattribute_generation_type(instance):
-    assert isinstance(instance.generation, str)
-
-
-@given(instance=frameweb::IdAttribute_strategy)
-def test_frameweb::idattribute_generation_setter(instance):
-    original = instance.generation
-    instance.generation = original
-    assert instance.generation == original
-
-@given(instance=frameweb::DateTimeAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::datetimeattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::DateTimeAttribute)
-
-@given(instance=frameweb::DateTimeAttribute_strategy)
-def test_frameweb::datetimeattribute_dateTimePrecision_type(instance):
-    assert isinstance(instance.dateTimePrecision, str)
-
-
-@given(instance=frameweb::DateTimeAttribute_strategy)
-def test_frameweb::datetimeattribute_dateTimePrecision_setter(instance):
-    original = instance.dateTimePrecision
-    instance.dateTimePrecision = original
-    assert instance.dateTimePrecision == original
-
-@given(instance=frameweb::VersionAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::versionattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::VersionAttribute)
-
-@given(instance=Property_strategy)
-@settings(max_examples=50)
-def test_property_instantiation(instance):
-    assert isinstance(instance, Property)
-
-@given(instance=frameweb::ResultProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::resultproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::ResultProperty)
-
-@given(instance=frameweb::DomainProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::domainproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainProperty)
-
-@given(instance=frameweb::VocabularyProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::vocabularyproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyProperty)
-
-@given(instance=frameweb::NavigationProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::navigationproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationProperty)
-
-@given(instance=frameweb::NavigationAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::navigationattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationAttribute)
-
-@given(instance=frameweb::DAOAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::daoattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::DAOAttribute)
-
-@given(instance=frameweb::TagProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::tagproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::TagProperty)
-
-@given(instance=frameweb::IRI_strategy)
-@settings(max_examples=50)
-def test_frameweb::iri_instantiation(instance):
-    assert isinstance(instance, frameweb::IRI)
-
-@given(instance=frameweb::IRI_strategy)
-def test_frameweb::iri_iri_type(instance):
-    assert isinstance(instance.iri, str)
-
-
-@given(instance=frameweb::IRI_strategy)
-def test_frameweb::iri_iri_setter(instance):
-    original = instance.iri
-    instance.iri = original
-    assert instance.iri == original
-
-@given(instance=frameweb::IRI_strategy)
-def test_frameweb::iri_iriVersion_type(instance):
-    assert isinstance(instance.iriVersion, str)
-
-
-@given(instance=frameweb::IRI_strategy)
-def test_frameweb::iri_iriVersion_setter(instance):
-    original = instance.iriVersion
-    instance.iriVersion = original
-    assert instance.iriVersion == original
-
-@given(instance=frameweb::ControllerProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::controllerproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::ControllerProperty)
-
-@given(instance=frameweb::AttributeMappingProperty_strategy)
-@settings(max_examples=50)
-def test_frameweb::attributemappingproperty_instantiation(instance):
-    assert isinstance(instance, frameweb::AttributeMappingProperty)
-
-@given(instance=frameweb::Individual_strategy)
-@settings(max_examples=50)
-def test_frameweb::individual_instantiation(instance):
-    assert isinstance(instance, frameweb::Individual)
-
-@given(instance=frameweb::ClassMappingPropery_strategy)
-@settings(max_examples=50)
-def test_frameweb::classmappingpropery_instantiation(instance):
-    assert isinstance(instance, frameweb::ClassMappingPropery)
-
-@given(instance=frameweb::ServiceAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::serviceattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceAttribute)
-
-@given(instance=frameweb::DomainAttribute_strategy)
-@settings(max_examples=50)
-def test_frameweb::domainattribute_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainAttribute)
-
-@given(instance=frameweb::DomainAttribute_strategy)
-def test_frameweb::domainattribute_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=frameweb::DomainAttribute_strategy)
-def test_frameweb::domainattribute_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=frameweb::DomainAttribute_strategy)
-def test_frameweb::domainattribute_isPersistent_type(instance):
-    assert isinstance(instance.isPersistent, bool)
-
-
-@given(instance=frameweb::DomainAttribute_strategy)
-def test_frameweb::domainattribute_isPersistent_setter(instance):
-    original = instance.isPersistent
-    instance.isPersistent = original
-    assert instance.isPersistent == original
-
-@given(instance=frameweb::DomainAttribute_strategy)
-def test_frameweb::domainattribute_isNull_type(instance):
-    assert isinstance(instance.isNull, bool)
-
-
-@given(instance=frameweb::DomainAttribute_strategy)
-def test_frameweb::domainattribute_isNull_setter(instance):
-    original = instance.isNull
-    instance.isNull = original
-    assert instance.isNull == original
-
-@given(instance=Association_strategy)
-@settings(max_examples=50)
-def test_association_instantiation(instance):
-    assert isinstance(instance, Association)
-
-@given(instance=frameweb::VocabularyAssociation_strategy)
-@settings(max_examples=50)
-def test_frameweb::vocabularyassociation_instantiation(instance):
-    assert isinstance(instance, frameweb::VocabularyAssociation)
-
-@given(instance=frameweb::ServiceAssociation_strategy)
-@settings(max_examples=50)
-def test_frameweb::serviceassociation_instantiation(instance):
-    assert isinstance(instance, frameweb::ServiceAssociation)
-
-@given(instance=frameweb::NavigationAssociation_strategy)
-@settings(max_examples=50)
-def test_frameweb::navigationassociation_instantiation(instance):
-    assert isinstance(instance, frameweb::NavigationAssociation)
-
-@given(instance=frameweb::DomainAssociation_strategy)
-@settings(max_examples=50)
-def test_frameweb::domainassociation_instantiation(instance):
-    assert isinstance(instance, frameweb::DomainAssociation)
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_order_type(instance):
-    assert isinstance(instance.order, str)
-
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_order_setter(instance):
-    original = instance.order
-    instance.order = original
-    assert instance.order == original
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_collection_type(instance):
-    assert isinstance(instance.collection, str)
-
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_collection_setter(instance):
-    original = instance.collection
-    instance.collection = original
-    assert instance.collection == original
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_fetch_type(instance):
-    assert isinstance(instance.fetch, str)
-
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_fetch_setter(instance):
-    original = instance.fetch
-    instance.fetch = original
-    assert instance.fetch == original
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_cascade_type(instance):
-    assert isinstance(instance.cascade, str)
-
-
-@given(instance=frameweb::DomainAssociation_strategy)
-def test_frameweb::domainassociation_cascade_setter(instance):
-    original = instance.cascade
-    instance.cascade = original
-    assert instance.cascade == original
-
-@given(instance=frameweb::PersistenceModel_strategy)
-@settings(max_examples=50)
-def test_frameweb::persistencemodel_instantiation(instance):
-    assert isinstance(instance, frameweb::PersistenceModel)
+def test_frameweb_daoattribute_instantiation(instance):
+    assert isinstance(instance, frameweb_DAOAttribute)

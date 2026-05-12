@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Activities,
-    simplepdl::WorkDefinition,
-    simplepdl::SubWorkDefinition,
+    simplepdl_WorkDefinition,
+    simplepdl_SubWorkDefinition,
     Parameter,
-    simplepdl::ParameterWD,
-    simplepdl::ParameterSWD,
+    simplepdl_ParameterWD,
+    simplepdl_ParameterSWD,
     ProcessElement,
-    simplepdl::Activities,
-    simplepdl::WorkSequence,
-    simplepdl::Parameter,
-    simplepdl::Guidance,
-    simplepdl::Resource,
-    simplepdl::ProcessElement,
-    simplepdl::Process,
+    simplepdl_Activities,
+    simplepdl_WorkSequence,
+    simplepdl_Parameter,
+    simplepdl_Guidance,
+    simplepdl_Resource,
+    simplepdl_ProcessElement,
+    simplepdl_Process,
     WorkSequenceType,
 )
 
@@ -43,30 +43,30 @@ def test_activities_constructor_args():
 
 
 
-def test_simplepdl::workdefinition_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::WorkDefinition)
+def test_simplepdl_workdefinition_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_WorkDefinition)
 
 
-def test_simplepdl::workdefinition_constructor_exists():
-    assert callable(simplepdl::WorkDefinition.__init__)
+def test_simplepdl_workdefinition_constructor_exists():
+    assert callable(simplepdl_WorkDefinition.__init__)
 
 
-def test_simplepdl::workdefinition_constructor_args():
-    sig = inspect.signature(simplepdl::WorkDefinition.__init__)
+def test_simplepdl_workdefinition_constructor_args():
+    sig = inspect.signature(simplepdl_WorkDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplepdl::subworkdefinition_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::SubWorkDefinition)
+def test_simplepdl_subworkdefinition_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_SubWorkDefinition)
 
 
-def test_simplepdl::subworkdefinition_constructor_exists():
-    assert callable(simplepdl::SubWorkDefinition.__init__)
+def test_simplepdl_subworkdefinition_constructor_exists():
+    assert callable(simplepdl_SubWorkDefinition.__init__)
 
 
-def test_simplepdl::subworkdefinition_constructor_args():
-    sig = inspect.signature(simplepdl::SubWorkDefinition.__init__)
+def test_simplepdl_subworkdefinition_constructor_args():
+    sig = inspect.signature(simplepdl_SubWorkDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -85,30 +85,30 @@ def test_parameter_constructor_args():
 
 
 
-def test_simplepdl::parameterwd_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::ParameterWD)
+def test_simplepdl_parameterwd_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_ParameterWD)
 
 
-def test_simplepdl::parameterwd_constructor_exists():
-    assert callable(simplepdl::ParameterWD.__init__)
+def test_simplepdl_parameterwd_constructor_exists():
+    assert callable(simplepdl_ParameterWD.__init__)
 
 
-def test_simplepdl::parameterwd_constructor_args():
-    sig = inspect.signature(simplepdl::ParameterWD.__init__)
+def test_simplepdl_parameterwd_constructor_args():
+    sig = inspect.signature(simplepdl_ParameterWD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplepdl::parameterswd_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::ParameterSWD)
+def test_simplepdl_parameterswd_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_ParameterSWD)
 
 
-def test_simplepdl::parameterswd_constructor_exists():
-    assert callable(simplepdl::ParameterSWD.__init__)
+def test_simplepdl_parameterswd_constructor_exists():
+    assert callable(simplepdl_ParameterSWD.__init__)
 
 
-def test_simplepdl::parameterswd_constructor_args():
-    sig = inspect.signature(simplepdl::ParameterSWD.__init__)
+def test_simplepdl_parameterswd_constructor_args():
+    sig = inspect.signature(simplepdl_ParameterSWD.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,43 +127,43 @@ def test_processelement_constructor_args():
 
 
 
-def test_simplepdl::activities_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::Activities)
+def test_simplepdl_activities_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_Activities)
 
 
-def test_simplepdl::activities_constructor_exists():
-    assert callable(simplepdl::Activities.__init__)
+def test_simplepdl_activities_constructor_exists():
+    assert callable(simplepdl_Activities.__init__)
 
 
-def test_simplepdl::activities_constructor_args():
-    sig = inspect.signature(simplepdl::Activities.__init__)
+def test_simplepdl_activities_constructor_args():
+    sig = inspect.signature(simplepdl_Activities.__init__)
     params = list(sig.parameters.keys())
     assert "max_time" in params, "Missing parameter 'max_time'"
     assert "name" in params, "Missing parameter 'name'"
     assert "min_time" in params, "Missing parameter 'min_time'"
 
-def test_simplepdl::activities_has_max_time():
-    assert hasattr(simplepdl::Activities, "max_time")
+def test_simplepdl_activities_has_max_time():
+    assert hasattr(simplepdl_Activities, "max_time")
     descriptor = None
-    for klass in simplepdl::Activities.__mro__:
+    for klass in simplepdl_Activities.__mro__:
         if "max_time" in klass.__dict__:
             descriptor = klass.__dict__["max_time"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdl::activities_has_name():
-    assert hasattr(simplepdl::Activities, "name")
+def test_simplepdl_activities_has_name():
+    assert hasattr(simplepdl_Activities, "name")
     descriptor = None
-    for klass in simplepdl::Activities.__mro__:
+    for klass in simplepdl_Activities.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdl::activities_has_min_time():
-    assert hasattr(simplepdl::Activities, "min_time")
+def test_simplepdl_activities_has_min_time():
+    assert hasattr(simplepdl_Activities, "min_time")
     descriptor = None
-    for klass in simplepdl::Activities.__mro__:
+    for klass in simplepdl_Activities.__mro__:
         if "min_time" in klass.__dict__:
             descriptor = klass.__dict__["min_time"]
             break
@@ -171,33 +171,33 @@ def test_simplepdl::activities_has_min_time():
 
 
 
-def test_simplepdl::worksequence_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::WorkSequence)
+def test_simplepdl_worksequence_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_WorkSequence)
 
 
-def test_simplepdl::worksequence_constructor_exists():
-    assert callable(simplepdl::WorkSequence.__init__)
+def test_simplepdl_worksequence_constructor_exists():
+    assert callable(simplepdl_WorkSequence.__init__)
 
 
-def test_simplepdl::worksequence_constructor_args():
-    sig = inspect.signature(simplepdl::WorkSequence.__init__)
+def test_simplepdl_worksequence_constructor_args():
+    sig = inspect.signature(simplepdl_WorkSequence.__init__)
     params = list(sig.parameters.keys())
     assert "linkType" in params, "Missing parameter 'linkType'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdl::worksequence_has_linkType():
-    assert hasattr(simplepdl::WorkSequence, "linkType")
+def test_simplepdl_worksequence_has_linkType():
+    assert hasattr(simplepdl_WorkSequence, "linkType")
     descriptor = None
-    for klass in simplepdl::WorkSequence.__mro__:
+    for klass in simplepdl_WorkSequence.__mro__:
         if "linkType" in klass.__dict__:
             descriptor = klass.__dict__["linkType"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdl::worksequence_has_name():
-    assert hasattr(simplepdl::WorkSequence, "name")
+def test_simplepdl_worksequence_has_name():
+    assert hasattr(simplepdl_WorkSequence, "name")
     descriptor = None
-    for klass in simplepdl::WorkSequence.__mro__:
+    for klass in simplepdl_WorkSequence.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -205,33 +205,33 @@ def test_simplepdl::worksequence_has_name():
 
 
 
-def test_simplepdl::parameter_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::Parameter)
+def test_simplepdl_parameter_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_Parameter)
 
 
-def test_simplepdl::parameter_constructor_exists():
-    assert callable(simplepdl::Parameter.__init__)
+def test_simplepdl_parameter_constructor_exists():
+    assert callable(simplepdl_Parameter.__init__)
 
 
-def test_simplepdl::parameter_constructor_args():
-    sig = inspect.signature(simplepdl::Parameter.__init__)
+def test_simplepdl_parameter_constructor_args():
+    sig = inspect.signature(simplepdl_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "nbNeeds" in params, "Missing parameter 'nbNeeds'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdl::parameter_has_nbNeeds():
-    assert hasattr(simplepdl::Parameter, "nbNeeds")
+def test_simplepdl_parameter_has_nbNeeds():
+    assert hasattr(simplepdl_Parameter, "nbNeeds")
     descriptor = None
-    for klass in simplepdl::Parameter.__mro__:
+    for klass in simplepdl_Parameter.__mro__:
         if "nbNeeds" in klass.__dict__:
             descriptor = klass.__dict__["nbNeeds"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdl::parameter_has_name():
-    assert hasattr(simplepdl::Parameter, "name")
+def test_simplepdl_parameter_has_name():
+    assert hasattr(simplepdl_Parameter, "name")
     descriptor = None
-    for klass in simplepdl::Parameter.__mro__:
+    for klass in simplepdl_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -239,23 +239,23 @@ def test_simplepdl::parameter_has_name():
 
 
 
-def test_simplepdl::guidance_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::Guidance)
+def test_simplepdl_guidance_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_Guidance)
 
 
-def test_simplepdl::guidance_constructor_exists():
-    assert callable(simplepdl::Guidance.__init__)
+def test_simplepdl_guidance_constructor_exists():
+    assert callable(simplepdl_Guidance.__init__)
 
 
-def test_simplepdl::guidance_constructor_args():
-    sig = inspect.signature(simplepdl::Guidance.__init__)
+def test_simplepdl_guidance_constructor_args():
+    sig = inspect.signature(simplepdl_Guidance.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_simplepdl::guidance_has_text():
-    assert hasattr(simplepdl::Guidance, "text")
+def test_simplepdl_guidance_has_text():
+    assert hasattr(simplepdl_Guidance, "text")
     descriptor = None
-    for klass in simplepdl::Guidance.__mro__:
+    for klass in simplepdl_Guidance.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -263,91 +263,91 @@ def test_simplepdl::guidance_has_text():
 
 
 
-def test_simplepdl::resource_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::Resource)
+def test_simplepdl_resource_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_Resource)
 
 
-def test_simplepdl::resource_constructor_exists():
-    assert callable(simplepdl::Resource.__init__)
+def test_simplepdl_resource_constructor_exists():
+    assert callable(simplepdl_Resource.__init__)
 
 
-def test_simplepdl::resource_constructor_args():
-    sig = inspect.signature(simplepdl::Resource.__init__)
+def test_simplepdl_resource_constructor_args():
+    sig = inspect.signature(simplepdl_Resource.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "marking" in params, "Missing parameter 'marking'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_simplepdl::resource_has_name():
-    assert hasattr(simplepdl::Resource, "name")
+def test_simplepdl_resource_has_marking():
+    assert hasattr(simplepdl_Resource, "marking")
     descriptor = None
-    for klass in simplepdl::Resource.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplepdl::resource_has_marking():
-    assert hasattr(simplepdl::Resource, "marking")
-    descriptor = None
-    for klass in simplepdl::Resource.__mro__:
+    for klass in simplepdl_Resource.__mro__:
         if "marking" in klass.__dict__:
             descriptor = klass.__dict__["marking"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_simplepdl::processelement_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::ProcessElement)
-
-
-def test_simplepdl::processelement_constructor_exists():
-    assert callable(simplepdl::ProcessElement.__init__)
-
-
-def test_simplepdl::processelement_constructor_args():
-    sig = inspect.signature(simplepdl::ProcessElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simplepdl::process_is_not_abstract():
-    assert not inspect.isabstract(simplepdl::Process)
-
-
-def test_simplepdl::process_constructor_exists():
-    assert callable(simplepdl::Process.__init__)
-
-
-def test_simplepdl::process_constructor_args():
-    sig = inspect.signature(simplepdl::Process.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "max_time" in params, "Missing parameter 'max_time'"
-    assert "min_time" in params, "Missing parameter 'min_time'"
-
-def test_simplepdl::process_has_name():
-    assert hasattr(simplepdl::Process, "name")
+def test_simplepdl_resource_has_name():
+    assert hasattr(simplepdl_Resource, "name")
     descriptor = None
-    for klass in simplepdl::Process.__mro__:
+    for klass in simplepdl_Resource.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdl::process_has_max_time():
-    assert hasattr(simplepdl::Process, "max_time")
+
+
+def test_simplepdl_processelement_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_ProcessElement)
+
+
+def test_simplepdl_processelement_constructor_exists():
+    assert callable(simplepdl_ProcessElement.__init__)
+
+
+def test_simplepdl_processelement_constructor_args():
+    sig = inspect.signature(simplepdl_ProcessElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simplepdl_process_is_not_abstract():
+    assert not inspect.isabstract(simplepdl_Process)
+
+
+def test_simplepdl_process_constructor_exists():
+    assert callable(simplepdl_Process.__init__)
+
+
+def test_simplepdl_process_constructor_args():
+    sig = inspect.signature(simplepdl_Process.__init__)
+    params = list(sig.parameters.keys())
+    assert "max_time" in params, "Missing parameter 'max_time'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "min_time" in params, "Missing parameter 'min_time'"
+
+def test_simplepdl_process_has_max_time():
+    assert hasattr(simplepdl_Process, "max_time")
     descriptor = None
-    for klass in simplepdl::Process.__mro__:
+    for klass in simplepdl_Process.__mro__:
         if "max_time" in klass.__dict__:
             descriptor = klass.__dict__["max_time"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplepdl::process_has_min_time():
-    assert hasattr(simplepdl::Process, "min_time")
+def test_simplepdl_process_has_name():
+    assert hasattr(simplepdl_Process, "name")
     descriptor = None
-    for klass in simplepdl::Process.__mro__:
+    for klass in simplepdl_Process.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplepdl_process_has_min_time():
+    assert hasattr(simplepdl_Process, "min_time")
+    descriptor = None
+    for klass in simplepdl_Process.__mro__:
         if "min_time" in klass.__dict__:
             descriptor = klass.__dict__["min_time"]
             break
@@ -361,10 +361,10 @@ def test_worksequencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in WorkSequenceType]
     expected_literals = [
-        "finishToStart",
-        "startToFinish",
-        "finishToFinish",
         "startToStart",
+        "finishToFinish",
+        "startToFinish",
+        "finishToStart",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -385,26 +385,26 @@ safe_text = st.text(
 Activities_strategy = st.builds(
     Activities,
 )
-simplepdl::WorkDefinition_strategy = st.builds(
-    simplepdl::WorkDefinition,
+simplepdl_WorkDefinition_strategy = st.builds(
+    simplepdl_WorkDefinition,
 )
-simplepdl::SubWorkDefinition_strategy = st.builds(
-    simplepdl::SubWorkDefinition,
+simplepdl_SubWorkDefinition_strategy = st.builds(
+    simplepdl_SubWorkDefinition,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-simplepdl::ParameterWD_strategy = st.builds(
-    simplepdl::ParameterWD,
+simplepdl_ParameterWD_strategy = st.builds(
+    simplepdl_ParameterWD,
 )
-simplepdl::ParameterSWD_strategy = st.builds(
-    simplepdl::ParameterSWD,
+simplepdl_ParameterSWD_strategy = st.builds(
+    simplepdl_ParameterSWD,
 )
 ProcessElement_strategy = st.builds(
     ProcessElement,
 )
-simplepdl::Activities_strategy = st.builds(
-    simplepdl::Activities,
+simplepdl_Activities_strategy = st.builds(
+    simplepdl_Activities,
     max_time=
         st.integers(),
     name=
@@ -412,41 +412,41 @@ simplepdl::Activities_strategy = st.builds(
     min_time=
         st.integers()
 )
-simplepdl::WorkSequence_strategy = st.builds(
-    simplepdl::WorkSequence,
+simplepdl_WorkSequence_strategy = st.builds(
+    simplepdl_WorkSequence,
     linkType=
         safe_text,
     name=
         safe_text
 )
-simplepdl::Parameter_strategy = st.builds(
-    simplepdl::Parameter,
+simplepdl_Parameter_strategy = st.builds(
+    simplepdl_Parameter,
     nbNeeds=
         st.integers(),
     name=
         safe_text
 )
-simplepdl::Guidance_strategy = st.builds(
-    simplepdl::Guidance,
+simplepdl_Guidance_strategy = st.builds(
+    simplepdl_Guidance,
     text=
         safe_text
 )
-simplepdl::Resource_strategy = st.builds(
-    simplepdl::Resource,
-    name=
-        safe_text,
+simplepdl_Resource_strategy = st.builds(
+    simplepdl_Resource,
     marking=
-        st.integers()
-)
-simplepdl::ProcessElement_strategy = st.builds(
-    simplepdl::ProcessElement,
-)
-simplepdl::Process_strategy = st.builds(
-    simplepdl::Process,
+        st.integers(),
     name=
-        safe_text,
+        safe_text
+)
+simplepdl_ProcessElement_strategy = st.builds(
+    simplepdl_ProcessElement,
+)
+simplepdl_Process_strategy = st.builds(
+    simplepdl_Process,
     max_time=
         st.integers(),
+    name=
+        safe_text,
     min_time=
         st.integers()
 )
@@ -456,210 +456,171 @@ simplepdl::Process_strategy = st.builds(
 def test_activities_instantiation(instance):
     assert isinstance(instance, Activities)
 
-@given(instance=simplepdl::WorkDefinition_strategy)
+@given(instance=simplepdl_WorkDefinition_strategy)
 @settings(max_examples=50)
-def test_simplepdl::workdefinition_instantiation(instance):
-    assert isinstance(instance, simplepdl::WorkDefinition)
+def test_simplepdl_workdefinition_instantiation(instance):
+    assert isinstance(instance, simplepdl_WorkDefinition)
 
-@given(instance=simplepdl::SubWorkDefinition_strategy)
+@given(instance=simplepdl_SubWorkDefinition_strategy)
 @settings(max_examples=50)
-def test_simplepdl::subworkdefinition_instantiation(instance):
-    assert isinstance(instance, simplepdl::SubWorkDefinition)
+def test_simplepdl_subworkdefinition_instantiation(instance):
+    assert isinstance(instance, simplepdl_SubWorkDefinition)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=simplepdl::ParameterWD_strategy)
+@given(instance=simplepdl_ParameterWD_strategy)
 @settings(max_examples=50)
-def test_simplepdl::parameterwd_instantiation(instance):
-    assert isinstance(instance, simplepdl::ParameterWD)
+def test_simplepdl_parameterwd_instantiation(instance):
+    assert isinstance(instance, simplepdl_ParameterWD)
 
-@given(instance=simplepdl::ParameterSWD_strategy)
+@given(instance=simplepdl_ParameterSWD_strategy)
 @settings(max_examples=50)
-def test_simplepdl::parameterswd_instantiation(instance):
-    assert isinstance(instance, simplepdl::ParameterSWD)
+def test_simplepdl_parameterswd_instantiation(instance):
+    assert isinstance(instance, simplepdl_ParameterSWD)
 
 @given(instance=ProcessElement_strategy)
 @settings(max_examples=50)
 def test_processelement_instantiation(instance):
     assert isinstance(instance, ProcessElement)
 
-@given(instance=simplepdl::Activities_strategy)
+@given(instance=simplepdl_Activities_strategy)
 @settings(max_examples=50)
-def test_simplepdl::activities_instantiation(instance):
-    assert isinstance(instance, simplepdl::Activities)
-
-@given(instance=simplepdl::Activities_strategy)
-def test_simplepdl::activities_max_time_type(instance):
-    assert isinstance(instance.max_time, int)
+def test_simplepdl_activities_instantiation(instance):
+    assert isinstance(instance, simplepdl_Activities)
 
 
-@given(instance=simplepdl::Activities_strategy)
-def test_simplepdl::activities_max_time_setter(instance):
+
+@given(instance=simplepdl_Activities_strategy)
+def test_simplepdl_activities_max_time_setter(instance):
     original = instance.max_time
     instance.max_time = original
     assert instance.max_time == original
 
-@given(instance=simplepdl::Activities_strategy)
-def test_simplepdl::activities_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=simplepdl::Activities_strategy)
-def test_simplepdl::activities_name_setter(instance):
+@given(instance=simplepdl_Activities_strategy)
+def test_simplepdl_activities_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplepdl::Activities_strategy)
-def test_simplepdl::activities_min_time_type(instance):
-    assert isinstance(instance.min_time, int)
 
 
-@given(instance=simplepdl::Activities_strategy)
-def test_simplepdl::activities_min_time_setter(instance):
+@given(instance=simplepdl_Activities_strategy)
+def test_simplepdl_activities_min_time_setter(instance):
     original = instance.min_time
     instance.min_time = original
     assert instance.min_time == original
 
-@given(instance=simplepdl::WorkSequence_strategy)
+@given(instance=simplepdl_WorkSequence_strategy)
 @settings(max_examples=50)
-def test_simplepdl::worksequence_instantiation(instance):
-    assert isinstance(instance, simplepdl::WorkSequence)
-
-@given(instance=simplepdl::WorkSequence_strategy)
-def test_simplepdl::worksequence_linkType_type(instance):
-    assert isinstance(instance.linkType, str)
+def test_simplepdl_worksequence_instantiation(instance):
+    assert isinstance(instance, simplepdl_WorkSequence)
 
 
-@given(instance=simplepdl::WorkSequence_strategy)
-def test_simplepdl::worksequence_linkType_setter(instance):
+
+@given(instance=simplepdl_WorkSequence_strategy)
+def test_simplepdl_worksequence_linkType_setter(instance):
     original = instance.linkType
     instance.linkType = original
     assert instance.linkType == original
 
-@given(instance=simplepdl::WorkSequence_strategy)
-def test_simplepdl::worksequence_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=simplepdl::WorkSequence_strategy)
-def test_simplepdl::worksequence_name_setter(instance):
+@given(instance=simplepdl_WorkSequence_strategy)
+def test_simplepdl_worksequence_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplepdl::Parameter_strategy)
+@given(instance=simplepdl_Parameter_strategy)
 @settings(max_examples=50)
-def test_simplepdl::parameter_instantiation(instance):
-    assert isinstance(instance, simplepdl::Parameter)
-
-@given(instance=simplepdl::Parameter_strategy)
-def test_simplepdl::parameter_nbNeeds_type(instance):
-    assert isinstance(instance.nbNeeds, int)
+def test_simplepdl_parameter_instantiation(instance):
+    assert isinstance(instance, simplepdl_Parameter)
 
 
-@given(instance=simplepdl::Parameter_strategy)
-def test_simplepdl::parameter_nbNeeds_setter(instance):
+
+@given(instance=simplepdl_Parameter_strategy)
+def test_simplepdl_parameter_nbNeeds_setter(instance):
     original = instance.nbNeeds
     instance.nbNeeds = original
     assert instance.nbNeeds == original
 
-@given(instance=simplepdl::Parameter_strategy)
-def test_simplepdl::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=simplepdl::Parameter_strategy)
-def test_simplepdl::parameter_name_setter(instance):
+@given(instance=simplepdl_Parameter_strategy)
+def test_simplepdl_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplepdl::Guidance_strategy)
+@given(instance=simplepdl_Guidance_strategy)
 @settings(max_examples=50)
-def test_simplepdl::guidance_instantiation(instance):
-    assert isinstance(instance, simplepdl::Guidance)
-
-@given(instance=simplepdl::Guidance_strategy)
-def test_simplepdl::guidance_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_simplepdl_guidance_instantiation(instance):
+    assert isinstance(instance, simplepdl_Guidance)
 
 
-@given(instance=simplepdl::Guidance_strategy)
-def test_simplepdl::guidance_text_setter(instance):
+
+@given(instance=simplepdl_Guidance_strategy)
+def test_simplepdl_guidance_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=simplepdl::Resource_strategy)
+@given(instance=simplepdl_Resource_strategy)
 @settings(max_examples=50)
-def test_simplepdl::resource_instantiation(instance):
-    assert isinstance(instance, simplepdl::Resource)
-
-@given(instance=simplepdl::Resource_strategy)
-def test_simplepdl::resource_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplepdl_resource_instantiation(instance):
+    assert isinstance(instance, simplepdl_Resource)
 
 
-@given(instance=simplepdl::Resource_strategy)
-def test_simplepdl::resource_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=simplepdl::Resource_strategy)
-def test_simplepdl::resource_marking_type(instance):
-    assert isinstance(instance.marking, int)
-
-
-@given(instance=simplepdl::Resource_strategy)
-def test_simplepdl::resource_marking_setter(instance):
+@given(instance=simplepdl_Resource_strategy)
+def test_simplepdl_resource_marking_setter(instance):
     original = instance.marking
     instance.marking = original
     assert instance.marking == original
 
-@given(instance=simplepdl::ProcessElement_strategy)
-@settings(max_examples=50)
-def test_simplepdl::processelement_instantiation(instance):
-    assert isinstance(instance, simplepdl::ProcessElement)
-
-@given(instance=simplepdl::Process_strategy)
-@settings(max_examples=50)
-def test_simplepdl::process_instantiation(instance):
-    assert isinstance(instance, simplepdl::Process)
-
-@given(instance=simplepdl::Process_strategy)
-def test_simplepdl::process_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=simplepdl::Process_strategy)
-def test_simplepdl::process_name_setter(instance):
+@given(instance=simplepdl_Resource_strategy)
+def test_simplepdl_resource_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplepdl::Process_strategy)
-def test_simplepdl::process_max_time_type(instance):
-    assert isinstance(instance.max_time, int)
+@given(instance=simplepdl_ProcessElement_strategy)
+@settings(max_examples=50)
+def test_simplepdl_processelement_instantiation(instance):
+    assert isinstance(instance, simplepdl_ProcessElement)
+
+@given(instance=simplepdl_Process_strategy)
+@settings(max_examples=50)
+def test_simplepdl_process_instantiation(instance):
+    assert isinstance(instance, simplepdl_Process)
 
 
-@given(instance=simplepdl::Process_strategy)
-def test_simplepdl::process_max_time_setter(instance):
+
+@given(instance=simplepdl_Process_strategy)
+def test_simplepdl_process_max_time_setter(instance):
     original = instance.max_time
     instance.max_time = original
     assert instance.max_time == original
 
-@given(instance=simplepdl::Process_strategy)
-def test_simplepdl::process_min_time_type(instance):
-    assert isinstance(instance.min_time, int)
 
 
-@given(instance=simplepdl::Process_strategy)
-def test_simplepdl::process_min_time_setter(instance):
+@given(instance=simplepdl_Process_strategy)
+def test_simplepdl_process_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=simplepdl_Process_strategy)
+def test_simplepdl_process_min_time_setter(instance):
     original = instance.min_time
     instance.min_time = original
     assert instance.min_time == original

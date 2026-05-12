@@ -3,130 +3,130 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BasicSemanticCompartment,
     DrawerStyle,
     DecorationNode,
-    notation::BasicCompartment,
+    notation_BasicCompartment,
     BasicDecorationNode,
-    notation::BasicSemanticCompartment,
-    notation::DecorationNode,
+    notation_BasicSemanticCompartment,
+    notation_DecorationNode,
     DiagramStyle,
-    LayoutConstraint,
-    notation::Location,
-    notation::Size,
-    RoundedCornersStyle,
-    notation::RoutingStyle,
-    Anchor,
-    notation::IdentityAnchor,
-    notation::Style,
-    notation::LayoutConstraint,
-    notation::Anchor,
-    notation::Bendpoints,
-    notation::EObject,
-    Style,
-    notation::SortingStyle,
-    notation::FontStyle,
-    notation::RoundedCornersStyle,
-    notation::LineStyle,
-    notation::LineTypeStyle,
-    notation::TitleStyle,
-    notation::DescriptionStyle,
-    notation::FillStyle,
-    View,
-    notation::Node,
-    notation::Edge,
     Diagram,
-    notation::StandardDiagram,
+    notation_StandardDiagram,
     ConnectorStyle,
     Edge,
-    notation::Connector,
+    notation_Connector,
     FilteringStyle,
     SortingStyle,
     TitleStyle,
-    notation::SemanticListCompartment,
+    notation_SemanticListCompartment,
     CanonicalStyle,
     BasicCompartment,
-    notation::ListCompartment,
-    notation::Compartment,
+    notation_ListCompartment,
+    notation_Compartment,
     ShapeStyle,
     Node,
-    notation::BasicDecorationNode,
-    notation::Shape,
-    notation::ArrowStyle,
-    notation::TextStyle,
-    notation::MultiDiagramLinkStyle,
-    notation::DiagramLinkStyle,
+    notation_BasicDecorationNode,
+    notation_Shape,
     DiagramLinkStyle,
-    notation::HintedDiagramLinkStyle,
-    notation::EDataType,
-    notation::StringObjectConverter,
-    notation::NamedStyle,
+    notation_EDataType,
+    notation_StringObjectConverter,
     DataTypeStyle,
-    notation::ListValueStyle,
-    notation::SingleValueStyle,
+    notation_ListValueStyle,
+    notation_SingleValueStyle,
     NamedStyle,
-    notation::StringValueStyle,
-    notation::DoubleValueStyle,
-    notation::IntListValueStyle,
-    notation::IntValueStyle,
-    notation::ByteArrayValueStyle,
-    notation::EObjectListValueStyle,
-    notation::EObjectValueStyle,
-    notation::StringListValueStyle,
-    notation::BooleanListValueStyle,
-    notation::DoubleListValueStyle,
-    notation::BooleanValueStyle,
-    notation::PropertiesSetStyle,
+    notation_BooleanListValueStyle,
+    notation_EObjectValueStyle,
+    notation_ByteArrayValueStyle,
+    notation_EObjectListValueStyle,
+    notation_StringListValueStyle,
+    notation_BooleanValueStyle,
+    notation_IntListValueStyle,
+    notation_StringValueStyle,
+    notation_DoubleListValueStyle,
+    notation_DoubleValueStyle,
+    notation_IntValueStyle,
+    notation_PropertiesSetStyle,
     StringObjectConverter,
-    notation::DataTypeStyle,
-    notation::PropertyValue,
-    notation::StringToPropertyValueMapEntry,
-    notation::NodeEntry,
+    notation_DataTypeStyle,
+    notation_PropertyValue,
+    notation_StringToPropertyValueMapEntry,
+    notation_NodeEntry,
     ImageStyle,
-    notation::ImageBufferStyle,
-    notation::ImageStyle,
+    notation_ImageBufferStyle,
     GuideStyle,
     PageStyle,
-    notation::FilteringStyle,
-    notation::Image,
+    notation_Image,
     Bendpoints,
-    notation::RelativeBendpoints,
-    notation::Guide,
-    notation::GuideStyle,
-    notation::DrawerStyle,
-    notation::PageStyle,
+    notation_RelativeBendpoints,
+    notation_Guide,
     RoutingStyle,
     LineStyle,
-    notation::ConnectorStyle,
+    notation_ConnectorStyle,
     FillStyle,
     DescriptionStyle,
-    notation::DiagramStyle,
+    notation_DiagramStyle,
     FontStyle,
-    notation::ShapeStyle,
-    notation::CanonicalStyle,
     EModelElement,
-    notation::View,
-    notation::Diagram,
-    notation::Ratio,
     Size,
     Location,
-    notation::Bounds,
-    ArrowType,
-    JumpLinkType,
-    JumpLinkStatus,
+    notation_Bounds,
+    LayoutConstraint,
+    notation_Location,
+    notation_Ratio,
+    notation_Size,
+    RoundedCornersStyle,
+    notation_ShapeStyle,
+    notation_RoutingStyle,
+    Anchor,
+    notation_IdentityAnchor,
+    notation_Style,
+    notation_LayoutConstraint,
+    notation_Anchor,
+    notation_Bendpoints,
+    notation_EObject,
+    Style,
+    notation_FilteringStyle,
+    notation_FontStyle,
+    notation_RoundedCornersStyle,
+    notation_GuideStyle,
+    notation_CanonicalStyle,
+    notation_ImageStyle,
+    notation_LineTypeStyle,
+    notation_MultiDiagramLinkStyle,
+    notation_ArrowStyle,
+    notation_TitleStyle,
+    notation_NamedStyle,
+    notation_LineStyle,
+    notation_DescriptionStyle,
+    notation_HintedDiagramLinkStyle,
+    notation_DiagramLinkStyle,
+    notation_DrawerStyle,
+    notation_TextStyle,
+    notation_PageStyle,
+    notation_SortingStyle,
+    notation_FillStyle,
+    notation_View,
+    View,
+    notation_Node,
+    notation_Diagram,
+    notation_Edge,
     Smoothness,
-    Alignment,
     MeasurementUnit,
-    TextAlignment,
-    Sorting,
-    SortingDirection,
     Routing,
     GradientStyle,
+    ArrowType,
+    Alignment,
+    JumpLinkStatus,
     LineType,
+    SortingDirection,
+    TextAlignment,
     Filtering,
+    JumpLinkType,
+    Sorting,
 )
 
 # =============================================================================
@@ -177,16 +177,16 @@ def test_decorationnode_constructor_args():
 
 
 
-def test_notation::basiccompartment_is_not_abstract():
-    assert not inspect.isabstract(notation::BasicCompartment)
+def test_notation_basiccompartment_is_not_abstract():
+    assert not inspect.isabstract(notation_BasicCompartment)
 
 
-def test_notation::basiccompartment_constructor_exists():
-    assert callable(notation::BasicCompartment.__init__)
+def test_notation_basiccompartment_constructor_exists():
+    assert callable(notation_BasicCompartment.__init__)
 
 
-def test_notation::basiccompartment_constructor_args():
-    sig = inspect.signature(notation::BasicCompartment.__init__)
+def test_notation_basiccompartment_constructor_args():
+    sig = inspect.signature(notation_BasicCompartment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -205,30 +205,30 @@ def test_basicdecorationnode_constructor_args():
 
 
 
-def test_notation::basicsemanticcompartment_is_not_abstract():
-    assert not inspect.isabstract(notation::BasicSemanticCompartment)
+def test_notation_basicsemanticcompartment_is_not_abstract():
+    assert not inspect.isabstract(notation_BasicSemanticCompartment)
 
 
-def test_notation::basicsemanticcompartment_constructor_exists():
-    assert callable(notation::BasicSemanticCompartment.__init__)
+def test_notation_basicsemanticcompartment_constructor_exists():
+    assert callable(notation_BasicSemanticCompartment.__init__)
 
 
-def test_notation::basicsemanticcompartment_constructor_args():
-    sig = inspect.signature(notation::BasicSemanticCompartment.__init__)
+def test_notation_basicsemanticcompartment_constructor_args():
+    sig = inspect.signature(notation_BasicSemanticCompartment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::decorationnode_is_not_abstract():
-    assert not inspect.isabstract(notation::DecorationNode)
+def test_notation_decorationnode_is_not_abstract():
+    assert not inspect.isabstract(notation_DecorationNode)
 
 
-def test_notation::decorationnode_constructor_exists():
-    assert callable(notation::DecorationNode.__init__)
+def test_notation_decorationnode_constructor_exists():
+    assert callable(notation_DecorationNode.__init__)
 
 
-def test_notation::decorationnode_constructor_args():
-    sig = inspect.signature(notation::DecorationNode.__init__)
+def test_notation_decorationnode_constructor_args():
+    sig = inspect.signature(notation_DecorationNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -247,642 +247,6 @@ def test_diagramstyle_constructor_args():
 
 
 
-def test_layoutconstraint_is_not_abstract():
-    assert not inspect.isabstract(LayoutConstraint)
-
-
-def test_layoutconstraint_constructor_exists():
-    assert callable(LayoutConstraint.__init__)
-
-
-def test_layoutconstraint_constructor_args():
-    sig = inspect.signature(LayoutConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::location_is_not_abstract():
-    assert not inspect.isabstract(notation::Location)
-
-
-def test_notation::location_constructor_exists():
-    assert callable(notation::Location.__init__)
-
-
-def test_notation::location_constructor_args():
-    sig = inspect.signature(notation::Location.__init__)
-    params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
-    assert "y" in params, "Missing parameter 'y'"
-
-def test_notation::location_has_x():
-    assert hasattr(notation::Location, "x")
-    descriptor = None
-    for klass in notation::Location.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::location_has_y():
-    assert hasattr(notation::Location, "y")
-    descriptor = None
-    for klass in notation::Location.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::size_is_not_abstract():
-    assert not inspect.isabstract(notation::Size)
-
-
-def test_notation::size_constructor_exists():
-    assert callable(notation::Size.__init__)
-
-
-def test_notation::size_constructor_args():
-    sig = inspect.signature(notation::Size.__init__)
-    params = list(sig.parameters.keys())
-    assert "width" in params, "Missing parameter 'width'"
-    assert "height" in params, "Missing parameter 'height'"
-
-def test_notation::size_has_width():
-    assert hasattr(notation::Size, "width")
-    descriptor = None
-    for klass in notation::Size.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::size_has_height():
-    assert hasattr(notation::Size, "height")
-    descriptor = None
-    for klass in notation::Size.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_roundedcornersstyle_is_not_abstract():
-    assert not inspect.isabstract(RoundedCornersStyle)
-
-
-def test_roundedcornersstyle_constructor_exists():
-    assert callable(RoundedCornersStyle.__init__)
-
-
-def test_roundedcornersstyle_constructor_args():
-    sig = inspect.signature(RoundedCornersStyle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::routingstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::RoutingStyle)
-
-
-def test_notation::routingstyle_constructor_exists():
-    assert callable(notation::RoutingStyle.__init__)
-
-
-def test_notation::routingstyle_constructor_args():
-    sig = inspect.signature(notation::RoutingStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "routing" in params, "Missing parameter 'routing'"
-    assert "jumpLinkType" in params, "Missing parameter 'jumpLinkType'"
-    assert "smoothness" in params, "Missing parameter 'smoothness'"
-    assert "closestDistance" in params, "Missing parameter 'closestDistance'"
-    assert "jumpLinkStatus" in params, "Missing parameter 'jumpLinkStatus'"
-    assert "jumpLinksReverse" in params, "Missing parameter 'jumpLinksReverse'"
-    assert "avoidObstructions" in params, "Missing parameter 'avoidObstructions'"
-
-def test_notation::routingstyle_has_routing():
-    assert hasattr(notation::RoutingStyle, "routing")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "routing" in klass.__dict__:
-            descriptor = klass.__dict__["routing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::routingstyle_has_jumpLinkType():
-    assert hasattr(notation::RoutingStyle, "jumpLinkType")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "jumpLinkType" in klass.__dict__:
-            descriptor = klass.__dict__["jumpLinkType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::routingstyle_has_smoothness():
-    assert hasattr(notation::RoutingStyle, "smoothness")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "smoothness" in klass.__dict__:
-            descriptor = klass.__dict__["smoothness"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::routingstyle_has_closestDistance():
-    assert hasattr(notation::RoutingStyle, "closestDistance")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "closestDistance" in klass.__dict__:
-            descriptor = klass.__dict__["closestDistance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::routingstyle_has_jumpLinkStatus():
-    assert hasattr(notation::RoutingStyle, "jumpLinkStatus")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "jumpLinkStatus" in klass.__dict__:
-            descriptor = klass.__dict__["jumpLinkStatus"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::routingstyle_has_jumpLinksReverse():
-    assert hasattr(notation::RoutingStyle, "jumpLinksReverse")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "jumpLinksReverse" in klass.__dict__:
-            descriptor = klass.__dict__["jumpLinksReverse"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::routingstyle_has_avoidObstructions():
-    assert hasattr(notation::RoutingStyle, "avoidObstructions")
-    descriptor = None
-    for klass in notation::RoutingStyle.__mro__:
-        if "avoidObstructions" in klass.__dict__:
-            descriptor = klass.__dict__["avoidObstructions"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_anchor_is_not_abstract():
-    assert not inspect.isabstract(Anchor)
-
-
-def test_anchor_constructor_exists():
-    assert callable(Anchor.__init__)
-
-
-def test_anchor_constructor_args():
-    sig = inspect.signature(Anchor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::identityanchor_is_not_abstract():
-    assert not inspect.isabstract(notation::IdentityAnchor)
-
-
-def test_notation::identityanchor_constructor_exists():
-    assert callable(notation::IdentityAnchor.__init__)
-
-
-def test_notation::identityanchor_constructor_args():
-    sig = inspect.signature(notation::IdentityAnchor.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_notation::identityanchor_has_id():
-    assert hasattr(notation::IdentityAnchor, "id")
-    descriptor = None
-    for klass in notation::IdentityAnchor.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::style_is_not_abstract():
-    assert not inspect.isabstract(notation::Style)
-
-
-def test_notation::style_constructor_exists():
-    assert callable(notation::Style.__init__)
-
-
-def test_notation::style_constructor_args():
-    sig = inspect.signature(notation::Style.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::layoutconstraint_is_not_abstract():
-    assert not inspect.isabstract(notation::LayoutConstraint)
-
-
-def test_notation::layoutconstraint_constructor_exists():
-    assert callable(notation::LayoutConstraint.__init__)
-
-
-def test_notation::layoutconstraint_constructor_args():
-    sig = inspect.signature(notation::LayoutConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::anchor_is_not_abstract():
-    assert not inspect.isabstract(notation::Anchor)
-
-
-def test_notation::anchor_constructor_exists():
-    assert callable(notation::Anchor.__init__)
-
-
-def test_notation::anchor_constructor_args():
-    sig = inspect.signature(notation::Anchor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::bendpoints_is_not_abstract():
-    assert not inspect.isabstract(notation::Bendpoints)
-
-
-def test_notation::bendpoints_constructor_exists():
-    assert callable(notation::Bendpoints.__init__)
-
-
-def test_notation::bendpoints_constructor_args():
-    sig = inspect.signature(notation::Bendpoints.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::eobject_is_not_abstract():
-    assert not inspect.isabstract(notation::EObject)
-
-
-def test_notation::eobject_constructor_exists():
-    assert callable(notation::EObject.__init__)
-
-
-def test_notation::eobject_constructor_args():
-    sig = inspect.signature(notation::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_style_is_not_abstract():
-    assert not inspect.isabstract(Style)
-
-
-def test_style_constructor_exists():
-    assert callable(Style.__init__)
-
-
-def test_style_constructor_args():
-    sig = inspect.signature(Style.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::sortingstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::SortingStyle)
-
-
-def test_notation::sortingstyle_constructor_exists():
-    assert callable(notation::SortingStyle.__init__)
-
-
-def test_notation::sortingstyle_constructor_args():
-    sig = inspect.signature(notation::SortingStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "sorting" in params, "Missing parameter 'sorting'"
-    assert "sortingKeys" in params, "Missing parameter 'sortingKeys'"
-
-def test_notation::sortingstyle_has_sorting():
-    assert hasattr(notation::SortingStyle, "sorting")
-    descriptor = None
-    for klass in notation::SortingStyle.__mro__:
-        if "sorting" in klass.__dict__:
-            descriptor = klass.__dict__["sorting"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::sortingstyle_has_sortingKeys():
-    assert hasattr(notation::SortingStyle, "sortingKeys")
-    descriptor = None
-    for klass in notation::SortingStyle.__mro__:
-        if "sortingKeys" in klass.__dict__:
-            descriptor = klass.__dict__["sortingKeys"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::fontstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::FontStyle)
-
-
-def test_notation::fontstyle_constructor_exists():
-    assert callable(notation::FontStyle.__init__)
-
-
-def test_notation::fontstyle_constructor_args():
-    sig = inspect.signature(notation::FontStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "underline" in params, "Missing parameter 'underline'"
-    assert "fontHeight" in params, "Missing parameter 'fontHeight'"
-    assert "strikeThrough" in params, "Missing parameter 'strikeThrough'"
-    assert "fontName" in params, "Missing parameter 'fontName'"
-    assert "bold" in params, "Missing parameter 'bold'"
-    assert "fontColor" in params, "Missing parameter 'fontColor'"
-    assert "italic" in params, "Missing parameter 'italic'"
-
-def test_notation::fontstyle_has_underline():
-    assert hasattr(notation::FontStyle, "underline")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "underline" in klass.__dict__:
-            descriptor = klass.__dict__["underline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fontstyle_has_fontHeight():
-    assert hasattr(notation::FontStyle, "fontHeight")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "fontHeight" in klass.__dict__:
-            descriptor = klass.__dict__["fontHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fontstyle_has_strikeThrough():
-    assert hasattr(notation::FontStyle, "strikeThrough")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "strikeThrough" in klass.__dict__:
-            descriptor = klass.__dict__["strikeThrough"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fontstyle_has_fontName():
-    assert hasattr(notation::FontStyle, "fontName")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "fontName" in klass.__dict__:
-            descriptor = klass.__dict__["fontName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fontstyle_has_bold():
-    assert hasattr(notation::FontStyle, "bold")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "bold" in klass.__dict__:
-            descriptor = klass.__dict__["bold"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fontstyle_has_fontColor():
-    assert hasattr(notation::FontStyle, "fontColor")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "fontColor" in klass.__dict__:
-            descriptor = klass.__dict__["fontColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fontstyle_has_italic():
-    assert hasattr(notation::FontStyle, "italic")
-    descriptor = None
-    for klass in notation::FontStyle.__mro__:
-        if "italic" in klass.__dict__:
-            descriptor = klass.__dict__["italic"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::roundedcornersstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::RoundedCornersStyle)
-
-
-def test_notation::roundedcornersstyle_constructor_exists():
-    assert callable(notation::RoundedCornersStyle.__init__)
-
-
-def test_notation::roundedcornersstyle_constructor_args():
-    sig = inspect.signature(notation::RoundedCornersStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "roundedBendpointsRadius" in params, "Missing parameter 'roundedBendpointsRadius'"
-
-def test_notation::roundedcornersstyle_has_roundedBendpointsRadius():
-    assert hasattr(notation::RoundedCornersStyle, "roundedBendpointsRadius")
-    descriptor = None
-    for klass in notation::RoundedCornersStyle.__mro__:
-        if "roundedBendpointsRadius" in klass.__dict__:
-            descriptor = klass.__dict__["roundedBendpointsRadius"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::linestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::LineStyle)
-
-
-def test_notation::linestyle_constructor_exists():
-    assert callable(notation::LineStyle.__init__)
-
-
-def test_notation::linestyle_constructor_args():
-    sig = inspect.signature(notation::LineStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "lineWidth" in params, "Missing parameter 'lineWidth'"
-    assert "lineColor" in params, "Missing parameter 'lineColor'"
-
-def test_notation::linestyle_has_lineWidth():
-    assert hasattr(notation::LineStyle, "lineWidth")
-    descriptor = None
-    for klass in notation::LineStyle.__mro__:
-        if "lineWidth" in klass.__dict__:
-            descriptor = klass.__dict__["lineWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::linestyle_has_lineColor():
-    assert hasattr(notation::LineStyle, "lineColor")
-    descriptor = None
-    for klass in notation::LineStyle.__mro__:
-        if "lineColor" in klass.__dict__:
-            descriptor = klass.__dict__["lineColor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::linetypestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::LineTypeStyle)
-
-
-def test_notation::linetypestyle_constructor_exists():
-    assert callable(notation::LineTypeStyle.__init__)
-
-
-def test_notation::linetypestyle_constructor_args():
-    sig = inspect.signature(notation::LineTypeStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "lineType" in params, "Missing parameter 'lineType'"
-
-def test_notation::linetypestyle_has_lineType():
-    assert hasattr(notation::LineTypeStyle, "lineType")
-    descriptor = None
-    for klass in notation::LineTypeStyle.__mro__:
-        if "lineType" in klass.__dict__:
-            descriptor = klass.__dict__["lineType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::titlestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::TitleStyle)
-
-
-def test_notation::titlestyle_constructor_exists():
-    assert callable(notation::TitleStyle.__init__)
-
-
-def test_notation::titlestyle_constructor_args():
-    sig = inspect.signature(notation::TitleStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "showTitle" in params, "Missing parameter 'showTitle'"
-
-def test_notation::titlestyle_has_showTitle():
-    assert hasattr(notation::TitleStyle, "showTitle")
-    descriptor = None
-    for klass in notation::TitleStyle.__mro__:
-        if "showTitle" in klass.__dict__:
-            descriptor = klass.__dict__["showTitle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::descriptionstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DescriptionStyle)
-
-
-def test_notation::descriptionstyle_constructor_exists():
-    assert callable(notation::DescriptionStyle.__init__)
-
-
-def test_notation::descriptionstyle_constructor_args():
-    sig = inspect.signature(notation::DescriptionStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_notation::descriptionstyle_has_description():
-    assert hasattr(notation::DescriptionStyle, "description")
-    descriptor = None
-    for klass in notation::DescriptionStyle.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::fillstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::FillStyle)
-
-
-def test_notation::fillstyle_constructor_exists():
-    assert callable(notation::FillStyle.__init__)
-
-
-def test_notation::fillstyle_constructor_args():
-    sig = inspect.signature(notation::FillStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "transparency" in params, "Missing parameter 'transparency'"
-    assert "gradient" in params, "Missing parameter 'gradient'"
-    assert "fillColor" in params, "Missing parameter 'fillColor'"
-
-def test_notation::fillstyle_has_transparency():
-    assert hasattr(notation::FillStyle, "transparency")
-    descriptor = None
-    for klass in notation::FillStyle.__mro__:
-        if "transparency" in klass.__dict__:
-            descriptor = klass.__dict__["transparency"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fillstyle_has_gradient():
-    assert hasattr(notation::FillStyle, "gradient")
-    descriptor = None
-    for klass in notation::FillStyle.__mro__:
-        if "gradient" in klass.__dict__:
-            descriptor = klass.__dict__["gradient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::fillstyle_has_fillColor():
-    assert hasattr(notation::FillStyle, "fillColor")
-    descriptor = None
-    for klass in notation::FillStyle.__mro__:
-        if "fillColor" in klass.__dict__:
-            descriptor = klass.__dict__["fillColor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_view_is_not_abstract():
-    assert not inspect.isabstract(View)
-
-
-def test_view_constructor_exists():
-    assert callable(View.__init__)
-
-
-def test_view_constructor_args():
-    sig = inspect.signature(View.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::node_is_not_abstract():
-    assert not inspect.isabstract(notation::Node)
-
-
-def test_notation::node_constructor_exists():
-    assert callable(notation::Node.__init__)
-
-
-def test_notation::node_constructor_args():
-    sig = inspect.signature(notation::Node.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::edge_is_not_abstract():
-    assert not inspect.isabstract(notation::Edge)
-
-
-def test_notation::edge_constructor_exists():
-    assert callable(notation::Edge.__init__)
-
-
-def test_notation::edge_constructor_args():
-    sig = inspect.signature(notation::Edge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_diagram_is_not_abstract():
     assert not inspect.isabstract(Diagram)
 
@@ -897,16 +261,16 @@ def test_diagram_constructor_args():
 
 
 
-def test_notation::standarddiagram_is_not_abstract():
-    assert not inspect.isabstract(notation::StandardDiagram)
+def test_notation_standarddiagram_is_not_abstract():
+    assert not inspect.isabstract(notation_StandardDiagram)
 
 
-def test_notation::standarddiagram_constructor_exists():
-    assert callable(notation::StandardDiagram.__init__)
+def test_notation_standarddiagram_constructor_exists():
+    assert callable(notation_StandardDiagram.__init__)
 
 
-def test_notation::standarddiagram_constructor_args():
-    sig = inspect.signature(notation::StandardDiagram.__init__)
+def test_notation_standarddiagram_constructor_args():
+    sig = inspect.signature(notation_StandardDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -939,16 +303,16 @@ def test_edge_constructor_args():
 
 
 
-def test_notation::connector_is_not_abstract():
-    assert not inspect.isabstract(notation::Connector)
+def test_notation_connector_is_not_abstract():
+    assert not inspect.isabstract(notation_Connector)
 
 
-def test_notation::connector_constructor_exists():
-    assert callable(notation::Connector.__init__)
+def test_notation_connector_constructor_exists():
+    assert callable(notation_Connector.__init__)
 
 
-def test_notation::connector_constructor_args():
-    sig = inspect.signature(notation::Connector.__init__)
+def test_notation_connector_constructor_args():
+    sig = inspect.signature(notation_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -995,16 +359,16 @@ def test_titlestyle_constructor_args():
 
 
 
-def test_notation::semanticlistcompartment_is_not_abstract():
-    assert not inspect.isabstract(notation::SemanticListCompartment)
+def test_notation_semanticlistcompartment_is_not_abstract():
+    assert not inspect.isabstract(notation_SemanticListCompartment)
 
 
-def test_notation::semanticlistcompartment_constructor_exists():
-    assert callable(notation::SemanticListCompartment.__init__)
+def test_notation_semanticlistcompartment_constructor_exists():
+    assert callable(notation_SemanticListCompartment.__init__)
 
 
-def test_notation::semanticlistcompartment_constructor_args():
-    sig = inspect.signature(notation::SemanticListCompartment.__init__)
+def test_notation_semanticlistcompartment_constructor_args():
+    sig = inspect.signature(notation_SemanticListCompartment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1037,30 +401,30 @@ def test_basiccompartment_constructor_args():
 
 
 
-def test_notation::listcompartment_is_not_abstract():
-    assert not inspect.isabstract(notation::ListCompartment)
+def test_notation_listcompartment_is_not_abstract():
+    assert not inspect.isabstract(notation_ListCompartment)
 
 
-def test_notation::listcompartment_constructor_exists():
-    assert callable(notation::ListCompartment.__init__)
+def test_notation_listcompartment_constructor_exists():
+    assert callable(notation_ListCompartment.__init__)
 
 
-def test_notation::listcompartment_constructor_args():
-    sig = inspect.signature(notation::ListCompartment.__init__)
+def test_notation_listcompartment_constructor_args():
+    sig = inspect.signature(notation_ListCompartment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::compartment_is_not_abstract():
-    assert not inspect.isabstract(notation::Compartment)
+def test_notation_compartment_is_not_abstract():
+    assert not inspect.isabstract(notation_Compartment)
 
 
-def test_notation::compartment_constructor_exists():
-    assert callable(notation::Compartment.__init__)
+def test_notation_compartment_constructor_exists():
+    assert callable(notation_Compartment.__init__)
 
 
-def test_notation::compartment_constructor_args():
-    sig = inspect.signature(notation::Compartment.__init__)
+def test_notation_compartment_constructor_args():
+    sig = inspect.signature(notation_Compartment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1093,116 +457,30 @@ def test_node_constructor_args():
 
 
 
-def test_notation::basicdecorationnode_is_not_abstract():
-    assert not inspect.isabstract(notation::BasicDecorationNode)
+def test_notation_basicdecorationnode_is_not_abstract():
+    assert not inspect.isabstract(notation_BasicDecorationNode)
 
 
-def test_notation::basicdecorationnode_constructor_exists():
-    assert callable(notation::BasicDecorationNode.__init__)
+def test_notation_basicdecorationnode_constructor_exists():
+    assert callable(notation_BasicDecorationNode.__init__)
 
 
-def test_notation::basicdecorationnode_constructor_args():
-    sig = inspect.signature(notation::BasicDecorationNode.__init__)
+def test_notation_basicdecorationnode_constructor_args():
+    sig = inspect.signature(notation_BasicDecorationNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::shape_is_not_abstract():
-    assert not inspect.isabstract(notation::Shape)
+def test_notation_shape_is_not_abstract():
+    assert not inspect.isabstract(notation_Shape)
 
 
-def test_notation::shape_constructor_exists():
-    assert callable(notation::Shape.__init__)
+def test_notation_shape_constructor_exists():
+    assert callable(notation_Shape.__init__)
 
 
-def test_notation::shape_constructor_args():
-    sig = inspect.signature(notation::Shape.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::arrowstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ArrowStyle)
-
-
-def test_notation::arrowstyle_constructor_exists():
-    assert callable(notation::ArrowStyle.__init__)
-
-
-def test_notation::arrowstyle_constructor_args():
-    sig = inspect.signature(notation::ArrowStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "arrowTarget" in params, "Missing parameter 'arrowTarget'"
-    assert "arrowSource" in params, "Missing parameter 'arrowSource'"
-
-def test_notation::arrowstyle_has_arrowTarget():
-    assert hasattr(notation::ArrowStyle, "arrowTarget")
-    descriptor = None
-    for klass in notation::ArrowStyle.__mro__:
-        if "arrowTarget" in klass.__dict__:
-            descriptor = klass.__dict__["arrowTarget"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::arrowstyle_has_arrowSource():
-    assert hasattr(notation::ArrowStyle, "arrowSource")
-    descriptor = None
-    for klass in notation::ArrowStyle.__mro__:
-        if "arrowSource" in klass.__dict__:
-            descriptor = klass.__dict__["arrowSource"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::textstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::TextStyle)
-
-
-def test_notation::textstyle_constructor_exists():
-    assert callable(notation::TextStyle.__init__)
-
-
-def test_notation::textstyle_constructor_args():
-    sig = inspect.signature(notation::TextStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "textAlignment" in params, "Missing parameter 'textAlignment'"
-
-def test_notation::textstyle_has_textAlignment():
-    assert hasattr(notation::TextStyle, "textAlignment")
-    descriptor = None
-    for klass in notation::TextStyle.__mro__:
-        if "textAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["textAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::multidiagramlinkstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::MultiDiagramLinkStyle)
-
-
-def test_notation::multidiagramlinkstyle_constructor_exists():
-    assert callable(notation::MultiDiagramLinkStyle.__init__)
-
-
-def test_notation::multidiagramlinkstyle_constructor_args():
-    sig = inspect.signature(notation::MultiDiagramLinkStyle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::diagramlinkstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DiagramLinkStyle)
-
-
-def test_notation::diagramlinkstyle_constructor_exists():
-    assert callable(notation::DiagramLinkStyle.__init__)
-
-
-def test_notation::diagramlinkstyle_constructor_args():
-    sig = inspect.signature(notation::DiagramLinkStyle.__init__)
+def test_notation_shape_constructor_args():
+    sig = inspect.signature(notation_Shape.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1221,79 +499,31 @@ def test_diagramlinkstyle_constructor_args():
 
 
 
-def test_notation::hinteddiagramlinkstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::HintedDiagramLinkStyle)
+def test_notation_edatatype_is_not_abstract():
+    assert not inspect.isabstract(notation_EDataType)
 
 
-def test_notation::hinteddiagramlinkstyle_constructor_exists():
-    assert callable(notation::HintedDiagramLinkStyle.__init__)
+def test_notation_edatatype_constructor_exists():
+    assert callable(notation_EDataType.__init__)
 
 
-def test_notation::hinteddiagramlinkstyle_constructor_args():
-    sig = inspect.signature(notation::HintedDiagramLinkStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "hint" in params, "Missing parameter 'hint'"
-
-def test_notation::hinteddiagramlinkstyle_has_hint():
-    assert hasattr(notation::HintedDiagramLinkStyle, "hint")
-    descriptor = None
-    for klass in notation::HintedDiagramLinkStyle.__mro__:
-        if "hint" in klass.__dict__:
-            descriptor = klass.__dict__["hint"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::edatatype_is_not_abstract():
-    assert not inspect.isabstract(notation::EDataType)
-
-
-def test_notation::edatatype_constructor_exists():
-    assert callable(notation::EDataType.__init__)
-
-
-def test_notation::edatatype_constructor_args():
-    sig = inspect.signature(notation::EDataType.__init__)
+def test_notation_edatatype_constructor_args():
+    sig = inspect.signature(notation_EDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::stringobjectconverter_is_not_abstract():
-    assert not inspect.isabstract(notation::StringObjectConverter)
+def test_notation_stringobjectconverter_is_not_abstract():
+    assert not inspect.isabstract(notation_StringObjectConverter)
 
 
-def test_notation::stringobjectconverter_constructor_exists():
-    assert callable(notation::StringObjectConverter.__init__)
+def test_notation_stringobjectconverter_constructor_exists():
+    assert callable(notation_StringObjectConverter.__init__)
 
 
-def test_notation::stringobjectconverter_constructor_args():
-    sig = inspect.signature(notation::StringObjectConverter.__init__)
+def test_notation_stringobjectconverter_constructor_args():
+    sig = inspect.signature(notation_StringObjectConverter.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_notation::namedstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::NamedStyle)
-
-
-def test_notation::namedstyle_constructor_exists():
-    assert callable(notation::NamedStyle.__init__)
-
-
-def test_notation::namedstyle_constructor_args():
-    sig = inspect.signature(notation::NamedStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_notation::namedstyle_has_name():
-    assert hasattr(notation::NamedStyle, "name")
-    descriptor = None
-    for klass in notation::NamedStyle.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1311,23 +541,23 @@ def test_datatypestyle_constructor_args():
 
 
 
-def test_notation::listvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ListValueStyle)
+def test_notation_listvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ListValueStyle)
 
 
-def test_notation::listvaluestyle_constructor_exists():
-    assert callable(notation::ListValueStyle.__init__)
+def test_notation_listvaluestyle_constructor_exists():
+    assert callable(notation_ListValueStyle.__init__)
 
 
-def test_notation::listvaluestyle_constructor_args():
-    sig = inspect.signature(notation::ListValueStyle.__init__)
+def test_notation_listvaluestyle_constructor_args():
+    sig = inspect.signature(notation_ListValueStyle.__init__)
     params = list(sig.parameters.keys())
     assert "rawValuesList" in params, "Missing parameter 'rawValuesList'"
 
-def test_notation::listvaluestyle_has_rawValuesList():
-    assert hasattr(notation::ListValueStyle, "rawValuesList")
+def test_notation_listvaluestyle_has_rawValuesList():
+    assert hasattr(notation_ListValueStyle, "rawValuesList")
     descriptor = None
-    for klass in notation::ListValueStyle.__mro__:
+    for klass in notation_ListValueStyle.__mro__:
         if "rawValuesList" in klass.__dict__:
             descriptor = klass.__dict__["rawValuesList"]
             break
@@ -1335,23 +565,23 @@ def test_notation::listvaluestyle_has_rawValuesList():
 
 
 
-def test_notation::singlevaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::SingleValueStyle)
+def test_notation_singlevaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_SingleValueStyle)
 
 
-def test_notation::singlevaluestyle_constructor_exists():
-    assert callable(notation::SingleValueStyle.__init__)
+def test_notation_singlevaluestyle_constructor_exists():
+    assert callable(notation_SingleValueStyle.__init__)
 
 
-def test_notation::singlevaluestyle_constructor_args():
-    sig = inspect.signature(notation::SingleValueStyle.__init__)
+def test_notation_singlevaluestyle_constructor_args():
+    sig = inspect.signature(notation_SingleValueStyle.__init__)
     params = list(sig.parameters.keys())
     assert "rawValue" in params, "Missing parameter 'rawValue'"
 
-def test_notation::singlevaluestyle_has_rawValue():
-    assert hasattr(notation::SingleValueStyle, "rawValue")
+def test_notation_singlevaluestyle_has_rawValue():
+    assert hasattr(notation_SingleValueStyle, "rawValue")
     descriptor = None
-    for klass in notation::SingleValueStyle.__mro__:
+    for klass in notation_SingleValueStyle.__mro__:
         if "rawValue" in klass.__dict__:
             descriptor = klass.__dict__["rawValue"]
             break
@@ -1373,195 +603,23 @@ def test_namedstyle_constructor_args():
 
 
 
-def test_notation::stringvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::StringValueStyle)
+def test_notation_booleanlistvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_BooleanListValueStyle)
 
 
-def test_notation::stringvaluestyle_constructor_exists():
-    assert callable(notation::StringValueStyle.__init__)
+def test_notation_booleanlistvaluestyle_constructor_exists():
+    assert callable(notation_BooleanListValueStyle.__init__)
 
 
-def test_notation::stringvaluestyle_constructor_args():
-    sig = inspect.signature(notation::StringValueStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "stringValue" in params, "Missing parameter 'stringValue'"
-
-def test_notation::stringvaluestyle_has_stringValue():
-    assert hasattr(notation::StringValueStyle, "stringValue")
-    descriptor = None
-    for klass in notation::StringValueStyle.__mro__:
-        if "stringValue" in klass.__dict__:
-            descriptor = klass.__dict__["stringValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::doublevaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DoubleValueStyle)
-
-
-def test_notation::doublevaluestyle_constructor_exists():
-    assert callable(notation::DoubleValueStyle.__init__)
-
-
-def test_notation::doublevaluestyle_constructor_args():
-    sig = inspect.signature(notation::DoubleValueStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "doubleValue" in params, "Missing parameter 'doubleValue'"
-
-def test_notation::doublevaluestyle_has_doubleValue():
-    assert hasattr(notation::DoubleValueStyle, "doubleValue")
-    descriptor = None
-    for klass in notation::DoubleValueStyle.__mro__:
-        if "doubleValue" in klass.__dict__:
-            descriptor = klass.__dict__["doubleValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::intlistvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::IntListValueStyle)
-
-
-def test_notation::intlistvaluestyle_constructor_exists():
-    assert callable(notation::IntListValueStyle.__init__)
-
-
-def test_notation::intlistvaluestyle_constructor_args():
-    sig = inspect.signature(notation::IntListValueStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "intListValue" in params, "Missing parameter 'intListValue'"
-
-def test_notation::intlistvaluestyle_has_intListValue():
-    assert hasattr(notation::IntListValueStyle, "intListValue")
-    descriptor = None
-    for klass in notation::IntListValueStyle.__mro__:
-        if "intListValue" in klass.__dict__:
-            descriptor = klass.__dict__["intListValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::intvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::IntValueStyle)
-
-
-def test_notation::intvaluestyle_constructor_exists():
-    assert callable(notation::IntValueStyle.__init__)
-
-
-def test_notation::intvaluestyle_constructor_args():
-    sig = inspect.signature(notation::IntValueStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "intValue" in params, "Missing parameter 'intValue'"
-
-def test_notation::intvaluestyle_has_intValue():
-    assert hasattr(notation::IntValueStyle, "intValue")
-    descriptor = None
-    for klass in notation::IntValueStyle.__mro__:
-        if "intValue" in klass.__dict__:
-            descriptor = klass.__dict__["intValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::bytearrayvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ByteArrayValueStyle)
-
-
-def test_notation::bytearrayvaluestyle_constructor_exists():
-    assert callable(notation::ByteArrayValueStyle.__init__)
-
-
-def test_notation::bytearrayvaluestyle_constructor_args():
-    sig = inspect.signature(notation::ByteArrayValueStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "byteArrayValue" in params, "Missing parameter 'byteArrayValue'"
-
-def test_notation::bytearrayvaluestyle_has_byteArrayValue():
-    assert hasattr(notation::ByteArrayValueStyle, "byteArrayValue")
-    descriptor = None
-    for klass in notation::ByteArrayValueStyle.__mro__:
-        if "byteArrayValue" in klass.__dict__:
-            descriptor = klass.__dict__["byteArrayValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::eobjectlistvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::EObjectListValueStyle)
-
-
-def test_notation::eobjectlistvaluestyle_constructor_exists():
-    assert callable(notation::EObjectListValueStyle.__init__)
-
-
-def test_notation::eobjectlistvaluestyle_constructor_args():
-    sig = inspect.signature(notation::EObjectListValueStyle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::eobjectvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::EObjectValueStyle)
-
-
-def test_notation::eobjectvaluestyle_constructor_exists():
-    assert callable(notation::EObjectValueStyle.__init__)
-
-
-def test_notation::eobjectvaluestyle_constructor_args():
-    sig = inspect.signature(notation::EObjectValueStyle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::stringlistvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::StringListValueStyle)
-
-
-def test_notation::stringlistvaluestyle_constructor_exists():
-    assert callable(notation::StringListValueStyle.__init__)
-
-
-def test_notation::stringlistvaluestyle_constructor_args():
-    sig = inspect.signature(notation::StringListValueStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "stringListValue" in params, "Missing parameter 'stringListValue'"
-
-def test_notation::stringlistvaluestyle_has_stringListValue():
-    assert hasattr(notation::StringListValueStyle, "stringListValue")
-    descriptor = None
-    for klass in notation::StringListValueStyle.__mro__:
-        if "stringListValue" in klass.__dict__:
-            descriptor = klass.__dict__["stringListValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::booleanlistvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::BooleanListValueStyle)
-
-
-def test_notation::booleanlistvaluestyle_constructor_exists():
-    assert callable(notation::BooleanListValueStyle.__init__)
-
-
-def test_notation::booleanlistvaluestyle_constructor_args():
-    sig = inspect.signature(notation::BooleanListValueStyle.__init__)
+def test_notation_booleanlistvaluestyle_constructor_args():
+    sig = inspect.signature(notation_BooleanListValueStyle.__init__)
     params = list(sig.parameters.keys())
     assert "booleanListValue" in params, "Missing parameter 'booleanListValue'"
 
-def test_notation::booleanlistvaluestyle_has_booleanListValue():
-    assert hasattr(notation::BooleanListValueStyle, "booleanListValue")
+def test_notation_booleanlistvaluestyle_has_booleanListValue():
+    assert hasattr(notation_BooleanListValueStyle, "booleanListValue")
     descriptor = None
-    for klass in notation::BooleanListValueStyle.__mro__:
+    for klass in notation_BooleanListValueStyle.__mro__:
         if "booleanListValue" in klass.__dict__:
             descriptor = klass.__dict__["booleanListValue"]
             break
@@ -1569,47 +627,99 @@ def test_notation::booleanlistvaluestyle_has_booleanListValue():
 
 
 
-def test_notation::doublelistvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DoubleListValueStyle)
+def test_notation_eobjectvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_EObjectValueStyle)
 
 
-def test_notation::doublelistvaluestyle_constructor_exists():
-    assert callable(notation::DoubleListValueStyle.__init__)
+def test_notation_eobjectvaluestyle_constructor_exists():
+    assert callable(notation_EObjectValueStyle.__init__)
 
 
-def test_notation::doublelistvaluestyle_constructor_args():
-    sig = inspect.signature(notation::DoubleListValueStyle.__init__)
+def test_notation_eobjectvaluestyle_constructor_args():
+    sig = inspect.signature(notation_EObjectValueStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "doubleListValue" in params, "Missing parameter 'doubleListValue'"
 
-def test_notation::doublelistvaluestyle_has_doubleListValue():
-    assert hasattr(notation::DoubleListValueStyle, "doubleListValue")
+
+
+def test_notation_bytearrayvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ByteArrayValueStyle)
+
+
+def test_notation_bytearrayvaluestyle_constructor_exists():
+    assert callable(notation_ByteArrayValueStyle.__init__)
+
+
+def test_notation_bytearrayvaluestyle_constructor_args():
+    sig = inspect.signature(notation_ByteArrayValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "byteArrayValue" in params, "Missing parameter 'byteArrayValue'"
+
+def test_notation_bytearrayvaluestyle_has_byteArrayValue():
+    assert hasattr(notation_ByteArrayValueStyle, "byteArrayValue")
     descriptor = None
-    for klass in notation::DoubleListValueStyle.__mro__:
-        if "doubleListValue" in klass.__dict__:
-            descriptor = klass.__dict__["doubleListValue"]
+    for klass in notation_ByteArrayValueStyle.__mro__:
+        if "byteArrayValue" in klass.__dict__:
+            descriptor = klass.__dict__["byteArrayValue"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_notation::booleanvaluestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::BooleanValueStyle)
+def test_notation_eobjectlistvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_EObjectListValueStyle)
 
 
-def test_notation::booleanvaluestyle_constructor_exists():
-    assert callable(notation::BooleanValueStyle.__init__)
+def test_notation_eobjectlistvaluestyle_constructor_exists():
+    assert callable(notation_EObjectListValueStyle.__init__)
 
 
-def test_notation::booleanvaluestyle_constructor_args():
-    sig = inspect.signature(notation::BooleanValueStyle.__init__)
+def test_notation_eobjectlistvaluestyle_constructor_args():
+    sig = inspect.signature(notation_EObjectListValueStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_stringlistvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_StringListValueStyle)
+
+
+def test_notation_stringlistvaluestyle_constructor_exists():
+    assert callable(notation_StringListValueStyle.__init__)
+
+
+def test_notation_stringlistvaluestyle_constructor_args():
+    sig = inspect.signature(notation_StringListValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "stringListValue" in params, "Missing parameter 'stringListValue'"
+
+def test_notation_stringlistvaluestyle_has_stringListValue():
+    assert hasattr(notation_StringListValueStyle, "stringListValue")
+    descriptor = None
+    for klass in notation_StringListValueStyle.__mro__:
+        if "stringListValue" in klass.__dict__:
+            descriptor = klass.__dict__["stringListValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_booleanvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_BooleanValueStyle)
+
+
+def test_notation_booleanvaluestyle_constructor_exists():
+    assert callable(notation_BooleanValueStyle.__init__)
+
+
+def test_notation_booleanvaluestyle_constructor_args():
+    sig = inspect.signature(notation_BooleanValueStyle.__init__)
     params = list(sig.parameters.keys())
     assert "booleanValue" in params, "Missing parameter 'booleanValue'"
 
-def test_notation::booleanvaluestyle_has_booleanValue():
-    assert hasattr(notation::BooleanValueStyle, "booleanValue")
+def test_notation_booleanvaluestyle_has_booleanValue():
+    assert hasattr(notation_BooleanValueStyle, "booleanValue")
     descriptor = None
-    for klass in notation::BooleanValueStyle.__mro__:
+    for klass in notation_BooleanValueStyle.__mro__:
         if "booleanValue" in klass.__dict__:
             descriptor = klass.__dict__["booleanValue"]
             break
@@ -1617,16 +727,136 @@ def test_notation::booleanvaluestyle_has_booleanValue():
 
 
 
-def test_notation::propertiessetstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::PropertiesSetStyle)
+def test_notation_intlistvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_IntListValueStyle)
 
 
-def test_notation::propertiessetstyle_constructor_exists():
-    assert callable(notation::PropertiesSetStyle.__init__)
+def test_notation_intlistvaluestyle_constructor_exists():
+    assert callable(notation_IntListValueStyle.__init__)
 
 
-def test_notation::propertiessetstyle_constructor_args():
-    sig = inspect.signature(notation::PropertiesSetStyle.__init__)
+def test_notation_intlistvaluestyle_constructor_args():
+    sig = inspect.signature(notation_IntListValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "intListValue" in params, "Missing parameter 'intListValue'"
+
+def test_notation_intlistvaluestyle_has_intListValue():
+    assert hasattr(notation_IntListValueStyle, "intListValue")
+    descriptor = None
+    for klass in notation_IntListValueStyle.__mro__:
+        if "intListValue" in klass.__dict__:
+            descriptor = klass.__dict__["intListValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_stringvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_StringValueStyle)
+
+
+def test_notation_stringvaluestyle_constructor_exists():
+    assert callable(notation_StringValueStyle.__init__)
+
+
+def test_notation_stringvaluestyle_constructor_args():
+    sig = inspect.signature(notation_StringValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "stringValue" in params, "Missing parameter 'stringValue'"
+
+def test_notation_stringvaluestyle_has_stringValue():
+    assert hasattr(notation_StringValueStyle, "stringValue")
+    descriptor = None
+    for klass in notation_StringValueStyle.__mro__:
+        if "stringValue" in klass.__dict__:
+            descriptor = klass.__dict__["stringValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_doublelistvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DoubleListValueStyle)
+
+
+def test_notation_doublelistvaluestyle_constructor_exists():
+    assert callable(notation_DoubleListValueStyle.__init__)
+
+
+def test_notation_doublelistvaluestyle_constructor_args():
+    sig = inspect.signature(notation_DoubleListValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "doubleListValue" in params, "Missing parameter 'doubleListValue'"
+
+def test_notation_doublelistvaluestyle_has_doubleListValue():
+    assert hasattr(notation_DoubleListValueStyle, "doubleListValue")
+    descriptor = None
+    for klass in notation_DoubleListValueStyle.__mro__:
+        if "doubleListValue" in klass.__dict__:
+            descriptor = klass.__dict__["doubleListValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_doublevaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DoubleValueStyle)
+
+
+def test_notation_doublevaluestyle_constructor_exists():
+    assert callable(notation_DoubleValueStyle.__init__)
+
+
+def test_notation_doublevaluestyle_constructor_args():
+    sig = inspect.signature(notation_DoubleValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "doubleValue" in params, "Missing parameter 'doubleValue'"
+
+def test_notation_doublevaluestyle_has_doubleValue():
+    assert hasattr(notation_DoubleValueStyle, "doubleValue")
+    descriptor = None
+    for klass in notation_DoubleValueStyle.__mro__:
+        if "doubleValue" in klass.__dict__:
+            descriptor = klass.__dict__["doubleValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_intvaluestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_IntValueStyle)
+
+
+def test_notation_intvaluestyle_constructor_exists():
+    assert callable(notation_IntValueStyle.__init__)
+
+
+def test_notation_intvaluestyle_constructor_args():
+    sig = inspect.signature(notation_IntValueStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "intValue" in params, "Missing parameter 'intValue'"
+
+def test_notation_intvaluestyle_has_intValue():
+    assert hasattr(notation_IntValueStyle, "intValue")
+    descriptor = None
+    for klass in notation_IntValueStyle.__mro__:
+        if "intValue" in klass.__dict__:
+            descriptor = klass.__dict__["intValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_propertiessetstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_PropertiesSetStyle)
+
+
+def test_notation_propertiessetstyle_constructor_exists():
+    assert callable(notation_PropertiesSetStyle.__init__)
+
+
+def test_notation_propertiessetstyle_constructor_args():
+    sig = inspect.signature(notation_PropertiesSetStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1645,37 +875,37 @@ def test_stringobjectconverter_constructor_args():
 
 
 
-def test_notation::datatypestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DataTypeStyle)
+def test_notation_datatypestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DataTypeStyle)
 
 
-def test_notation::datatypestyle_constructor_exists():
-    assert callable(notation::DataTypeStyle.__init__)
+def test_notation_datatypestyle_constructor_exists():
+    assert callable(notation_DataTypeStyle.__init__)
 
 
-def test_notation::datatypestyle_constructor_args():
-    sig = inspect.signature(notation::DataTypeStyle.__init__)
+def test_notation_datatypestyle_constructor_args():
+    sig = inspect.signature(notation_DataTypeStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::propertyvalue_is_not_abstract():
-    assert not inspect.isabstract(notation::PropertyValue)
+def test_notation_propertyvalue_is_not_abstract():
+    assert not inspect.isabstract(notation_PropertyValue)
 
 
-def test_notation::propertyvalue_constructor_exists():
-    assert callable(notation::PropertyValue.__init__)
+def test_notation_propertyvalue_constructor_exists():
+    assert callable(notation_PropertyValue.__init__)
 
 
-def test_notation::propertyvalue_constructor_args():
-    sig = inspect.signature(notation::PropertyValue.__init__)
+def test_notation_propertyvalue_constructor_args():
+    sig = inspect.signature(notation_PropertyValue.__init__)
     params = list(sig.parameters.keys())
     assert "rawValue" in params, "Missing parameter 'rawValue'"
 
-def test_notation::propertyvalue_has_rawValue():
-    assert hasattr(notation::PropertyValue, "rawValue")
+def test_notation_propertyvalue_has_rawValue():
+    assert hasattr(notation_PropertyValue, "rawValue")
     descriptor = None
-    for klass in notation::PropertyValue.__mro__:
+    for klass in notation_PropertyValue.__mro__:
         if "rawValue" in klass.__dict__:
             descriptor = klass.__dict__["rawValue"]
             break
@@ -1683,23 +913,23 @@ def test_notation::propertyvalue_has_rawValue():
 
 
 
-def test_notation::stringtopropertyvaluemapentry_is_not_abstract():
-    assert not inspect.isabstract(notation::StringToPropertyValueMapEntry)
+def test_notation_stringtopropertyvaluemapentry_is_not_abstract():
+    assert not inspect.isabstract(notation_StringToPropertyValueMapEntry)
 
 
-def test_notation::stringtopropertyvaluemapentry_constructor_exists():
-    assert callable(notation::StringToPropertyValueMapEntry.__init__)
+def test_notation_stringtopropertyvaluemapentry_constructor_exists():
+    assert callable(notation_StringToPropertyValueMapEntry.__init__)
 
 
-def test_notation::stringtopropertyvaluemapentry_constructor_args():
-    sig = inspect.signature(notation::StringToPropertyValueMapEntry.__init__)
+def test_notation_stringtopropertyvaluemapentry_constructor_args():
+    sig = inspect.signature(notation_StringToPropertyValueMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_notation::stringtopropertyvaluemapentry_has_key():
-    assert hasattr(notation::StringToPropertyValueMapEntry, "key")
+def test_notation_stringtopropertyvaluemapentry_has_key():
+    assert hasattr(notation_StringToPropertyValueMapEntry, "key")
     descriptor = None
-    for klass in notation::StringToPropertyValueMapEntry.__mro__:
+    for klass in notation_StringToPropertyValueMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1707,23 +937,23 @@ def test_notation::stringtopropertyvaluemapentry_has_key():
 
 
 
-def test_notation::nodeentry_is_not_abstract():
-    assert not inspect.isabstract(notation::NodeEntry)
+def test_notation_nodeentry_is_not_abstract():
+    assert not inspect.isabstract(notation_NodeEntry)
 
 
-def test_notation::nodeentry_constructor_exists():
-    assert callable(notation::NodeEntry.__init__)
+def test_notation_nodeentry_constructor_exists():
+    assert callable(notation_NodeEntry.__init__)
 
 
-def test_notation::nodeentry_constructor_args():
-    sig = inspect.signature(notation::NodeEntry.__init__)
+def test_notation_nodeentry_constructor_args():
+    sig = inspect.signature(notation_NodeEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_notation::nodeentry_has_value():
-    assert hasattr(notation::NodeEntry, "value")
+def test_notation_nodeentry_has_value():
+    assert hasattr(notation_NodeEntry, "value")
     descriptor = None
-    for klass in notation::NodeEntry.__mro__:
+    for klass in notation_NodeEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1745,51 +975,17 @@ def test_imagestyle_constructor_args():
 
 
 
-def test_notation::imagebufferstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ImageBufferStyle)
+def test_notation_imagebufferstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ImageBufferStyle)
 
 
-def test_notation::imagebufferstyle_constructor_exists():
-    assert callable(notation::ImageBufferStyle.__init__)
+def test_notation_imagebufferstyle_constructor_exists():
+    assert callable(notation_ImageBufferStyle.__init__)
 
 
-def test_notation::imagebufferstyle_constructor_args():
-    sig = inspect.signature(notation::ImageBufferStyle.__init__)
+def test_notation_imagebufferstyle_constructor_args():
+    sig = inspect.signature(notation_ImageBufferStyle.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_notation::imagestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ImageStyle)
-
-
-def test_notation::imagestyle_constructor_exists():
-    assert callable(notation::ImageStyle.__init__)
-
-
-def test_notation::imagestyle_constructor_args():
-    sig = inspect.signature(notation::ImageStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "maintainAspectRatio" in params, "Missing parameter 'maintainAspectRatio'"
-    assert "antiAlias" in params, "Missing parameter 'antiAlias'"
-
-def test_notation::imagestyle_has_maintainAspectRatio():
-    assert hasattr(notation::ImageStyle, "maintainAspectRatio")
-    descriptor = None
-    for klass in notation::ImageStyle.__mro__:
-        if "maintainAspectRatio" in klass.__dict__:
-            descriptor = klass.__dict__["maintainAspectRatio"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::imagestyle_has_antiAlias():
-    assert hasattr(notation::ImageStyle, "antiAlias")
-    descriptor = None
-    for klass in notation::ImageStyle.__mro__:
-        if "antiAlias" in klass.__dict__:
-            descriptor = klass.__dict__["antiAlias"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1821,57 +1017,23 @@ def test_pagestyle_constructor_args():
 
 
 
-def test_notation::filteringstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::FilteringStyle)
+def test_notation_image_is_not_abstract():
+    assert not inspect.isabstract(notation_Image)
 
 
-def test_notation::filteringstyle_constructor_exists():
-    assert callable(notation::FilteringStyle.__init__)
+def test_notation_image_constructor_exists():
+    assert callable(notation_Image.__init__)
 
 
-def test_notation::filteringstyle_constructor_args():
-    sig = inspect.signature(notation::FilteringStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "filtering" in params, "Missing parameter 'filtering'"
-    assert "filteringKeys" in params, "Missing parameter 'filteringKeys'"
-
-def test_notation::filteringstyle_has_filtering():
-    assert hasattr(notation::FilteringStyle, "filtering")
-    descriptor = None
-    for klass in notation::FilteringStyle.__mro__:
-        if "filtering" in klass.__dict__:
-            descriptor = klass.__dict__["filtering"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::filteringstyle_has_filteringKeys():
-    assert hasattr(notation::FilteringStyle, "filteringKeys")
-    descriptor = None
-    for klass in notation::FilteringStyle.__mro__:
-        if "filteringKeys" in klass.__dict__:
-            descriptor = klass.__dict__["filteringKeys"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::image_is_not_abstract():
-    assert not inspect.isabstract(notation::Image)
-
-
-def test_notation::image_constructor_exists():
-    assert callable(notation::Image.__init__)
-
-
-def test_notation::image_constructor_args():
-    sig = inspect.signature(notation::Image.__init__)
+def test_notation_image_constructor_args():
+    sig = inspect.signature(notation_Image.__init__)
     params = list(sig.parameters.keys())
     assert "data" in params, "Missing parameter 'data'"
 
-def test_notation::image_has_data():
-    assert hasattr(notation::Image, "data")
+def test_notation_image_has_data():
+    assert hasattr(notation_Image, "data")
     descriptor = None
-    for klass in notation::Image.__mro__:
+    for klass in notation_Image.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -1893,23 +1055,23 @@ def test_bendpoints_constructor_args():
 
 
 
-def test_notation::relativebendpoints_is_not_abstract():
-    assert not inspect.isabstract(notation::RelativeBendpoints)
+def test_notation_relativebendpoints_is_not_abstract():
+    assert not inspect.isabstract(notation_RelativeBendpoints)
 
 
-def test_notation::relativebendpoints_constructor_exists():
-    assert callable(notation::RelativeBendpoints.__init__)
+def test_notation_relativebendpoints_constructor_exists():
+    assert callable(notation_RelativeBendpoints.__init__)
 
 
-def test_notation::relativebendpoints_constructor_args():
-    sig = inspect.signature(notation::RelativeBendpoints.__init__)
+def test_notation_relativebendpoints_constructor_args():
+    sig = inspect.signature(notation_RelativeBendpoints.__init__)
     params = list(sig.parameters.keys())
     assert "points" in params, "Missing parameter 'points'"
 
-def test_notation::relativebendpoints_has_points():
-    assert hasattr(notation::RelativeBendpoints, "points")
+def test_notation_relativebendpoints_has_points():
+    assert hasattr(notation_RelativeBendpoints, "points")
     descriptor = None
-    for klass in notation::RelativeBendpoints.__mro__:
+    for klass in notation_RelativeBendpoints.__mro__:
         if "points" in klass.__dict__:
             descriptor = klass.__dict__["points"]
             break
@@ -1917,117 +1079,25 @@ def test_notation::relativebendpoints_has_points():
 
 
 
-def test_notation::guide_is_not_abstract():
-    assert not inspect.isabstract(notation::Guide)
+def test_notation_guide_is_not_abstract():
+    assert not inspect.isabstract(notation_Guide)
 
 
-def test_notation::guide_constructor_exists():
-    assert callable(notation::Guide.__init__)
+def test_notation_guide_constructor_exists():
+    assert callable(notation_Guide.__init__)
 
 
-def test_notation::guide_constructor_args():
-    sig = inspect.signature(notation::Guide.__init__)
+def test_notation_guide_constructor_args():
+    sig = inspect.signature(notation_Guide.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_notation::guide_has_position():
-    assert hasattr(notation::Guide, "position")
+def test_notation_guide_has_position():
+    assert hasattr(notation_Guide, "position")
     descriptor = None
-    for klass in notation::Guide.__mro__:
+    for klass in notation_Guide.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::guidestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::GuideStyle)
-
-
-def test_notation::guidestyle_constructor_exists():
-    assert callable(notation::GuideStyle.__init__)
-
-
-def test_notation::guidestyle_constructor_args():
-    sig = inspect.signature(notation::GuideStyle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::drawerstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DrawerStyle)
-
-
-def test_notation::drawerstyle_constructor_exists():
-    assert callable(notation::DrawerStyle.__init__)
-
-
-def test_notation::drawerstyle_constructor_args():
-    sig = inspect.signature(notation::DrawerStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "collapsed" in params, "Missing parameter 'collapsed'"
-
-def test_notation::drawerstyle_has_collapsed():
-    assert hasattr(notation::DrawerStyle, "collapsed")
-    descriptor = None
-    for klass in notation::DrawerStyle.__mro__:
-        if "collapsed" in klass.__dict__:
-            descriptor = klass.__dict__["collapsed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::pagestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::PageStyle)
-
-
-def test_notation::pagestyle_constructor_exists():
-    assert callable(notation::PageStyle.__init__)
-
-
-def test_notation::pagestyle_constructor_args():
-    sig = inspect.signature(notation::PageStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "pageWidth" in params, "Missing parameter 'pageWidth'"
-    assert "pageY" in params, "Missing parameter 'pageY'"
-    assert "pageHeight" in params, "Missing parameter 'pageHeight'"
-    assert "pageX" in params, "Missing parameter 'pageX'"
-
-def test_notation::pagestyle_has_pageWidth():
-    assert hasattr(notation::PageStyle, "pageWidth")
-    descriptor = None
-    for klass in notation::PageStyle.__mro__:
-        if "pageWidth" in klass.__dict__:
-            descriptor = klass.__dict__["pageWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::pagestyle_has_pageY():
-    assert hasattr(notation::PageStyle, "pageY")
-    descriptor = None
-    for klass in notation::PageStyle.__mro__:
-        if "pageY" in klass.__dict__:
-            descriptor = klass.__dict__["pageY"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::pagestyle_has_pageHeight():
-    assert hasattr(notation::PageStyle, "pageHeight")
-    descriptor = None
-    for klass in notation::PageStyle.__mro__:
-        if "pageHeight" in klass.__dict__:
-            descriptor = klass.__dict__["pageHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::pagestyle_has_pageX():
-    assert hasattr(notation::PageStyle, "pageX")
-    descriptor = None
-    for klass in notation::PageStyle.__mro__:
-        if "pageX" in klass.__dict__:
-            descriptor = klass.__dict__["pageX"]
             break
     assert isinstance(descriptor, property)
 
@@ -2061,16 +1131,16 @@ def test_linestyle_constructor_args():
 
 
 
-def test_notation::connectorstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ConnectorStyle)
+def test_notation_connectorstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ConnectorStyle)
 
 
-def test_notation::connectorstyle_constructor_exists():
-    assert callable(notation::ConnectorStyle.__init__)
+def test_notation_connectorstyle_constructor_exists():
+    assert callable(notation_ConnectorStyle.__init__)
 
 
-def test_notation::connectorstyle_constructor_args():
-    sig = inspect.signature(notation::ConnectorStyle.__init__)
+def test_notation_connectorstyle_constructor_args():
+    sig = inspect.signature(notation_ConnectorStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2103,16 +1173,16 @@ def test_descriptionstyle_constructor_args():
 
 
 
-def test_notation::diagramstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::DiagramStyle)
+def test_notation_diagramstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DiagramStyle)
 
 
-def test_notation::diagramstyle_constructor_exists():
-    assert callable(notation::DiagramStyle.__init__)
+def test_notation_diagramstyle_constructor_exists():
+    assert callable(notation_DiagramStyle.__init__)
 
 
-def test_notation::diagramstyle_constructor_args():
-    sig = inspect.signature(notation::DiagramStyle.__init__)
+def test_notation_diagramstyle_constructor_args():
+    sig = inspect.signature(notation_DiagramStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2131,44 +1201,6 @@ def test_fontstyle_constructor_args():
 
 
 
-def test_notation::shapestyle_is_not_abstract():
-    assert not inspect.isabstract(notation::ShapeStyle)
-
-
-def test_notation::shapestyle_constructor_exists():
-    assert callable(notation::ShapeStyle.__init__)
-
-
-def test_notation::shapestyle_constructor_args():
-    sig = inspect.signature(notation::ShapeStyle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::canonicalstyle_is_not_abstract():
-    assert not inspect.isabstract(notation::CanonicalStyle)
-
-
-def test_notation::canonicalstyle_constructor_exists():
-    assert callable(notation::CanonicalStyle.__init__)
-
-
-def test_notation::canonicalstyle_constructor_args():
-    sig = inspect.signature(notation::CanonicalStyle.__init__)
-    params = list(sig.parameters.keys())
-    assert "canonical" in params, "Missing parameter 'canonical'"
-
-def test_notation::canonicalstyle_has_canonical():
-    assert hasattr(notation::CanonicalStyle, "canonical")
-    descriptor = None
-    for klass in notation::CanonicalStyle.__mro__:
-        if "canonical" in klass.__dict__:
-            descriptor = klass.__dict__["canonical"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
 def test_emodelelement_is_not_abstract():
     assert not inspect.isabstract(EModelElement)
 
@@ -2180,108 +1212,6 @@ def test_emodelelement_constructor_exists():
 def test_emodelelement_constructor_args():
     sig = inspect.signature(EModelElement.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_notation::view_is_not_abstract():
-    assert not inspect.isabstract(notation::View)
-
-
-def test_notation::view_constructor_exists():
-    assert callable(notation::View.__init__)
-
-
-def test_notation::view_constructor_args():
-    sig = inspect.signature(notation::View.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "visible" in params, "Missing parameter 'visible'"
-    assert "mutable" in params, "Missing parameter 'mutable'"
-
-def test_notation::view_has_type():
-    assert hasattr(notation::View, "type")
-    descriptor = None
-    for klass in notation::View.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::view_has_visible():
-    assert hasattr(notation::View, "visible")
-    descriptor = None
-    for klass in notation::View.__mro__:
-        if "visible" in klass.__dict__:
-            descriptor = klass.__dict__["visible"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::view_has_mutable():
-    assert hasattr(notation::View, "mutable")
-    descriptor = None
-    for klass in notation::View.__mro__:
-        if "mutable" in klass.__dict__:
-            descriptor = klass.__dict__["mutable"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::diagram_is_not_abstract():
-    assert not inspect.isabstract(notation::Diagram)
-
-
-def test_notation::diagram_constructor_exists():
-    assert callable(notation::Diagram.__init__)
-
-
-def test_notation::diagram_constructor_args():
-    sig = inspect.signature(notation::Diagram.__init__)
-    params = list(sig.parameters.keys())
-    assert "measurementUnit" in params, "Missing parameter 'measurementUnit'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_notation::diagram_has_measurementUnit():
-    assert hasattr(notation::Diagram, "measurementUnit")
-    descriptor = None
-    for klass in notation::Diagram.__mro__:
-        if "measurementUnit" in klass.__dict__:
-            descriptor = klass.__dict__["measurementUnit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::diagram_has_name():
-    assert hasattr(notation::Diagram, "name")
-    descriptor = None
-    for klass in notation::Diagram.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_notation::ratio_is_not_abstract():
-    assert not inspect.isabstract(notation::Ratio)
-
-
-def test_notation::ratio_constructor_exists():
-    assert callable(notation::Ratio.__init__)
-
-
-def test_notation::ratio_constructor_args():
-    sig = inspect.signature(notation::Ratio.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_notation::ratio_has_value():
-    assert hasattr(notation::Ratio, "value")
-    descriptor = None
-    for klass in notation::Ratio.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -2313,66 +1243,1087 @@ def test_location_constructor_args():
 
 
 
-def test_notation::bounds_is_not_abstract():
-    assert not inspect.isabstract(notation::Bounds)
+def test_notation_bounds_is_not_abstract():
+    assert not inspect.isabstract(notation_Bounds)
 
 
-def test_notation::bounds_constructor_exists():
-    assert callable(notation::Bounds.__init__)
+def test_notation_bounds_constructor_exists():
+    assert callable(notation_Bounds.__init__)
 
 
-def test_notation::bounds_constructor_args():
-    sig = inspect.signature(notation::Bounds.__init__)
+def test_notation_bounds_constructor_args():
+    sig = inspect.signature(notation_Bounds.__init__)
     params = list(sig.parameters.keys())
 
-def test_arrowtype_exists():
-    # Check that the Enumeration exists
-    assert ArrowType is not None
 
-def test_arrowtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArrowType]
-    expected_literals = [
-        "OpenArrow",
-        "SolidArrow",
-        "None_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArrowType"
 
-def test_jumplinktype_exists():
-    # Check that the Enumeration exists
-    assert JumpLinkType is not None
+def test_layoutconstraint_is_not_abstract():
+    assert not inspect.isabstract(LayoutConstraint)
 
-def test_jumplinktype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in JumpLinkType]
-    expected_literals = [
-        "Chamfered",
-        "Square",
-        "Semicircle",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in JumpLinkType"
 
-def test_jumplinkstatus_exists():
-    # Check that the Enumeration exists
-    assert JumpLinkStatus is not None
+def test_layoutconstraint_constructor_exists():
+    assert callable(LayoutConstraint.__init__)
 
-def test_jumplinkstatus_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in JumpLinkStatus]
-    expected_literals = [
-        "Above",
-        "All",
-        "None_",
-        "Below",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in JumpLinkStatus"
+
+def test_layoutconstraint_constructor_args():
+    sig = inspect.signature(LayoutConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_location_is_not_abstract():
+    assert not inspect.isabstract(notation_Location)
+
+
+def test_notation_location_constructor_exists():
+    assert callable(notation_Location.__init__)
+
+
+def test_notation_location_constructor_args():
+    sig = inspect.signature(notation_Location.__init__)
+    params = list(sig.parameters.keys())
+    assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
+
+def test_notation_location_has_y():
+    assert hasattr(notation_Location, "y")
+    descriptor = None
+    for klass in notation_Location.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_location_has_x():
+    assert hasattr(notation_Location, "x")
+    descriptor = None
+    for klass in notation_Location.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_ratio_is_not_abstract():
+    assert not inspect.isabstract(notation_Ratio)
+
+
+def test_notation_ratio_constructor_exists():
+    assert callable(notation_Ratio.__init__)
+
+
+def test_notation_ratio_constructor_args():
+    sig = inspect.signature(notation_Ratio.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_notation_ratio_has_value():
+    assert hasattr(notation_Ratio, "value")
+    descriptor = None
+    for klass in notation_Ratio.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_size_is_not_abstract():
+    assert not inspect.isabstract(notation_Size)
+
+
+def test_notation_size_constructor_exists():
+    assert callable(notation_Size.__init__)
+
+
+def test_notation_size_constructor_args():
+    sig = inspect.signature(notation_Size.__init__)
+    params = list(sig.parameters.keys())
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+
+def test_notation_size_has_width():
+    assert hasattr(notation_Size, "width")
+    descriptor = None
+    for klass in notation_Size.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_size_has_height():
+    assert hasattr(notation_Size, "height")
+    descriptor = None
+    for klass in notation_Size.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_roundedcornersstyle_is_not_abstract():
+    assert not inspect.isabstract(RoundedCornersStyle)
+
+
+def test_roundedcornersstyle_constructor_exists():
+    assert callable(RoundedCornersStyle.__init__)
+
+
+def test_roundedcornersstyle_constructor_args():
+    sig = inspect.signature(RoundedCornersStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_shapestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ShapeStyle)
+
+
+def test_notation_shapestyle_constructor_exists():
+    assert callable(notation_ShapeStyle.__init__)
+
+
+def test_notation_shapestyle_constructor_args():
+    sig = inspect.signature(notation_ShapeStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_routingstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_RoutingStyle)
+
+
+def test_notation_routingstyle_constructor_exists():
+    assert callable(notation_RoutingStyle.__init__)
+
+
+def test_notation_routingstyle_constructor_args():
+    sig = inspect.signature(notation_RoutingStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "avoidObstructions" in params, "Missing parameter 'avoidObstructions'"
+    assert "routing" in params, "Missing parameter 'routing'"
+    assert "jumpLinkType" in params, "Missing parameter 'jumpLinkType'"
+    assert "smoothness" in params, "Missing parameter 'smoothness'"
+    assert "jumpLinkStatus" in params, "Missing parameter 'jumpLinkStatus'"
+    assert "jumpLinksReverse" in params, "Missing parameter 'jumpLinksReverse'"
+    assert "closestDistance" in params, "Missing parameter 'closestDistance'"
+
+def test_notation_routingstyle_has_avoidObstructions():
+    assert hasattr(notation_RoutingStyle, "avoidObstructions")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "avoidObstructions" in klass.__dict__:
+            descriptor = klass.__dict__["avoidObstructions"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_routingstyle_has_routing():
+    assert hasattr(notation_RoutingStyle, "routing")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "routing" in klass.__dict__:
+            descriptor = klass.__dict__["routing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_routingstyle_has_jumpLinkType():
+    assert hasattr(notation_RoutingStyle, "jumpLinkType")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "jumpLinkType" in klass.__dict__:
+            descriptor = klass.__dict__["jumpLinkType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_routingstyle_has_smoothness():
+    assert hasattr(notation_RoutingStyle, "smoothness")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "smoothness" in klass.__dict__:
+            descriptor = klass.__dict__["smoothness"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_routingstyle_has_jumpLinkStatus():
+    assert hasattr(notation_RoutingStyle, "jumpLinkStatus")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "jumpLinkStatus" in klass.__dict__:
+            descriptor = klass.__dict__["jumpLinkStatus"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_routingstyle_has_jumpLinksReverse():
+    assert hasattr(notation_RoutingStyle, "jumpLinksReverse")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "jumpLinksReverse" in klass.__dict__:
+            descriptor = klass.__dict__["jumpLinksReverse"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_routingstyle_has_closestDistance():
+    assert hasattr(notation_RoutingStyle, "closestDistance")
+    descriptor = None
+    for klass in notation_RoutingStyle.__mro__:
+        if "closestDistance" in klass.__dict__:
+            descriptor = klass.__dict__["closestDistance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_anchor_is_not_abstract():
+    assert not inspect.isabstract(Anchor)
+
+
+def test_anchor_constructor_exists():
+    assert callable(Anchor.__init__)
+
+
+def test_anchor_constructor_args():
+    sig = inspect.signature(Anchor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_identityanchor_is_not_abstract():
+    assert not inspect.isabstract(notation_IdentityAnchor)
+
+
+def test_notation_identityanchor_constructor_exists():
+    assert callable(notation_IdentityAnchor.__init__)
+
+
+def test_notation_identityanchor_constructor_args():
+    sig = inspect.signature(notation_IdentityAnchor.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_notation_identityanchor_has_id():
+    assert hasattr(notation_IdentityAnchor, "id")
+    descriptor = None
+    for klass in notation_IdentityAnchor.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_style_is_not_abstract():
+    assert not inspect.isabstract(notation_Style)
+
+
+def test_notation_style_constructor_exists():
+    assert callable(notation_Style.__init__)
+
+
+def test_notation_style_constructor_args():
+    sig = inspect.signature(notation_Style.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_layoutconstraint_is_not_abstract():
+    assert not inspect.isabstract(notation_LayoutConstraint)
+
+
+def test_notation_layoutconstraint_constructor_exists():
+    assert callable(notation_LayoutConstraint.__init__)
+
+
+def test_notation_layoutconstraint_constructor_args():
+    sig = inspect.signature(notation_LayoutConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_anchor_is_not_abstract():
+    assert not inspect.isabstract(notation_Anchor)
+
+
+def test_notation_anchor_constructor_exists():
+    assert callable(notation_Anchor.__init__)
+
+
+def test_notation_anchor_constructor_args():
+    sig = inspect.signature(notation_Anchor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_bendpoints_is_not_abstract():
+    assert not inspect.isabstract(notation_Bendpoints)
+
+
+def test_notation_bendpoints_constructor_exists():
+    assert callable(notation_Bendpoints.__init__)
+
+
+def test_notation_bendpoints_constructor_args():
+    sig = inspect.signature(notation_Bendpoints.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_eobject_is_not_abstract():
+    assert not inspect.isabstract(notation_EObject)
+
+
+def test_notation_eobject_constructor_exists():
+    assert callable(notation_EObject.__init__)
+
+
+def test_notation_eobject_constructor_args():
+    sig = inspect.signature(notation_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_style_is_not_abstract():
+    assert not inspect.isabstract(Style)
+
+
+def test_style_constructor_exists():
+    assert callable(Style.__init__)
+
+
+def test_style_constructor_args():
+    sig = inspect.signature(Style.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_filteringstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_FilteringStyle)
+
+
+def test_notation_filteringstyle_constructor_exists():
+    assert callable(notation_FilteringStyle.__init__)
+
+
+def test_notation_filteringstyle_constructor_args():
+    sig = inspect.signature(notation_FilteringStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "filteringKeys" in params, "Missing parameter 'filteringKeys'"
+    assert "filtering" in params, "Missing parameter 'filtering'"
+
+def test_notation_filteringstyle_has_filteringKeys():
+    assert hasattr(notation_FilteringStyle, "filteringKeys")
+    descriptor = None
+    for klass in notation_FilteringStyle.__mro__:
+        if "filteringKeys" in klass.__dict__:
+            descriptor = klass.__dict__["filteringKeys"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_filteringstyle_has_filtering():
+    assert hasattr(notation_FilteringStyle, "filtering")
+    descriptor = None
+    for klass in notation_FilteringStyle.__mro__:
+        if "filtering" in klass.__dict__:
+            descriptor = klass.__dict__["filtering"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_fontstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_FontStyle)
+
+
+def test_notation_fontstyle_constructor_exists():
+    assert callable(notation_FontStyle.__init__)
+
+
+def test_notation_fontstyle_constructor_args():
+    sig = inspect.signature(notation_FontStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "italic" in params, "Missing parameter 'italic'"
+    assert "bold" in params, "Missing parameter 'bold'"
+    assert "underline" in params, "Missing parameter 'underline'"
+    assert "fontColor" in params, "Missing parameter 'fontColor'"
+    assert "fontHeight" in params, "Missing parameter 'fontHeight'"
+    assert "strikeThrough" in params, "Missing parameter 'strikeThrough'"
+    assert "fontName" in params, "Missing parameter 'fontName'"
+
+def test_notation_fontstyle_has_italic():
+    assert hasattr(notation_FontStyle, "italic")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "italic" in klass.__dict__:
+            descriptor = klass.__dict__["italic"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fontstyle_has_bold():
+    assert hasattr(notation_FontStyle, "bold")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "bold" in klass.__dict__:
+            descriptor = klass.__dict__["bold"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fontstyle_has_underline():
+    assert hasattr(notation_FontStyle, "underline")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "underline" in klass.__dict__:
+            descriptor = klass.__dict__["underline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fontstyle_has_fontColor():
+    assert hasattr(notation_FontStyle, "fontColor")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "fontColor" in klass.__dict__:
+            descriptor = klass.__dict__["fontColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fontstyle_has_fontHeight():
+    assert hasattr(notation_FontStyle, "fontHeight")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "fontHeight" in klass.__dict__:
+            descriptor = klass.__dict__["fontHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fontstyle_has_strikeThrough():
+    assert hasattr(notation_FontStyle, "strikeThrough")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "strikeThrough" in klass.__dict__:
+            descriptor = klass.__dict__["strikeThrough"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fontstyle_has_fontName():
+    assert hasattr(notation_FontStyle, "fontName")
+    descriptor = None
+    for klass in notation_FontStyle.__mro__:
+        if "fontName" in klass.__dict__:
+            descriptor = klass.__dict__["fontName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_roundedcornersstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_RoundedCornersStyle)
+
+
+def test_notation_roundedcornersstyle_constructor_exists():
+    assert callable(notation_RoundedCornersStyle.__init__)
+
+
+def test_notation_roundedcornersstyle_constructor_args():
+    sig = inspect.signature(notation_RoundedCornersStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "roundedBendpointsRadius" in params, "Missing parameter 'roundedBendpointsRadius'"
+
+def test_notation_roundedcornersstyle_has_roundedBendpointsRadius():
+    assert hasattr(notation_RoundedCornersStyle, "roundedBendpointsRadius")
+    descriptor = None
+    for klass in notation_RoundedCornersStyle.__mro__:
+        if "roundedBendpointsRadius" in klass.__dict__:
+            descriptor = klass.__dict__["roundedBendpointsRadius"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_guidestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_GuideStyle)
+
+
+def test_notation_guidestyle_constructor_exists():
+    assert callable(notation_GuideStyle.__init__)
+
+
+def test_notation_guidestyle_constructor_args():
+    sig = inspect.signature(notation_GuideStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_canonicalstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_CanonicalStyle)
+
+
+def test_notation_canonicalstyle_constructor_exists():
+    assert callable(notation_CanonicalStyle.__init__)
+
+
+def test_notation_canonicalstyle_constructor_args():
+    sig = inspect.signature(notation_CanonicalStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "canonical" in params, "Missing parameter 'canonical'"
+
+def test_notation_canonicalstyle_has_canonical():
+    assert hasattr(notation_CanonicalStyle, "canonical")
+    descriptor = None
+    for klass in notation_CanonicalStyle.__mro__:
+        if "canonical" in klass.__dict__:
+            descriptor = klass.__dict__["canonical"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_imagestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ImageStyle)
+
+
+def test_notation_imagestyle_constructor_exists():
+    assert callable(notation_ImageStyle.__init__)
+
+
+def test_notation_imagestyle_constructor_args():
+    sig = inspect.signature(notation_ImageStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "maintainAspectRatio" in params, "Missing parameter 'maintainAspectRatio'"
+    assert "antiAlias" in params, "Missing parameter 'antiAlias'"
+
+def test_notation_imagestyle_has_maintainAspectRatio():
+    assert hasattr(notation_ImageStyle, "maintainAspectRatio")
+    descriptor = None
+    for klass in notation_ImageStyle.__mro__:
+        if "maintainAspectRatio" in klass.__dict__:
+            descriptor = klass.__dict__["maintainAspectRatio"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_imagestyle_has_antiAlias():
+    assert hasattr(notation_ImageStyle, "antiAlias")
+    descriptor = None
+    for klass in notation_ImageStyle.__mro__:
+        if "antiAlias" in klass.__dict__:
+            descriptor = klass.__dict__["antiAlias"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_linetypestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_LineTypeStyle)
+
+
+def test_notation_linetypestyle_constructor_exists():
+    assert callable(notation_LineTypeStyle.__init__)
+
+
+def test_notation_linetypestyle_constructor_args():
+    sig = inspect.signature(notation_LineTypeStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "lineType" in params, "Missing parameter 'lineType'"
+
+def test_notation_linetypestyle_has_lineType():
+    assert hasattr(notation_LineTypeStyle, "lineType")
+    descriptor = None
+    for klass in notation_LineTypeStyle.__mro__:
+        if "lineType" in klass.__dict__:
+            descriptor = klass.__dict__["lineType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_multidiagramlinkstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_MultiDiagramLinkStyle)
+
+
+def test_notation_multidiagramlinkstyle_constructor_exists():
+    assert callable(notation_MultiDiagramLinkStyle.__init__)
+
+
+def test_notation_multidiagramlinkstyle_constructor_args():
+    sig = inspect.signature(notation_MultiDiagramLinkStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_arrowstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_ArrowStyle)
+
+
+def test_notation_arrowstyle_constructor_exists():
+    assert callable(notation_ArrowStyle.__init__)
+
+
+def test_notation_arrowstyle_constructor_args():
+    sig = inspect.signature(notation_ArrowStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "arrowSource" in params, "Missing parameter 'arrowSource'"
+    assert "arrowTarget" in params, "Missing parameter 'arrowTarget'"
+
+def test_notation_arrowstyle_has_arrowSource():
+    assert hasattr(notation_ArrowStyle, "arrowSource")
+    descriptor = None
+    for klass in notation_ArrowStyle.__mro__:
+        if "arrowSource" in klass.__dict__:
+            descriptor = klass.__dict__["arrowSource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_arrowstyle_has_arrowTarget():
+    assert hasattr(notation_ArrowStyle, "arrowTarget")
+    descriptor = None
+    for klass in notation_ArrowStyle.__mro__:
+        if "arrowTarget" in klass.__dict__:
+            descriptor = klass.__dict__["arrowTarget"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_titlestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_TitleStyle)
+
+
+def test_notation_titlestyle_constructor_exists():
+    assert callable(notation_TitleStyle.__init__)
+
+
+def test_notation_titlestyle_constructor_args():
+    sig = inspect.signature(notation_TitleStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "showTitle" in params, "Missing parameter 'showTitle'"
+
+def test_notation_titlestyle_has_showTitle():
+    assert hasattr(notation_TitleStyle, "showTitle")
+    descriptor = None
+    for klass in notation_TitleStyle.__mro__:
+        if "showTitle" in klass.__dict__:
+            descriptor = klass.__dict__["showTitle"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_namedstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_NamedStyle)
+
+
+def test_notation_namedstyle_constructor_exists():
+    assert callable(notation_NamedStyle.__init__)
+
+
+def test_notation_namedstyle_constructor_args():
+    sig = inspect.signature(notation_NamedStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_notation_namedstyle_has_name():
+    assert hasattr(notation_NamedStyle, "name")
+    descriptor = None
+    for klass in notation_NamedStyle.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_linestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_LineStyle)
+
+
+def test_notation_linestyle_constructor_exists():
+    assert callable(notation_LineStyle.__init__)
+
+
+def test_notation_linestyle_constructor_args():
+    sig = inspect.signature(notation_LineStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "lineWidth" in params, "Missing parameter 'lineWidth'"
+    assert "lineColor" in params, "Missing parameter 'lineColor'"
+
+def test_notation_linestyle_has_lineWidth():
+    assert hasattr(notation_LineStyle, "lineWidth")
+    descriptor = None
+    for klass in notation_LineStyle.__mro__:
+        if "lineWidth" in klass.__dict__:
+            descriptor = klass.__dict__["lineWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_linestyle_has_lineColor():
+    assert hasattr(notation_LineStyle, "lineColor")
+    descriptor = None
+    for klass in notation_LineStyle.__mro__:
+        if "lineColor" in klass.__dict__:
+            descriptor = klass.__dict__["lineColor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_descriptionstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DescriptionStyle)
+
+
+def test_notation_descriptionstyle_constructor_exists():
+    assert callable(notation_DescriptionStyle.__init__)
+
+
+def test_notation_descriptionstyle_constructor_args():
+    sig = inspect.signature(notation_DescriptionStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_notation_descriptionstyle_has_description():
+    assert hasattr(notation_DescriptionStyle, "description")
+    descriptor = None
+    for klass in notation_DescriptionStyle.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_hinteddiagramlinkstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_HintedDiagramLinkStyle)
+
+
+def test_notation_hinteddiagramlinkstyle_constructor_exists():
+    assert callable(notation_HintedDiagramLinkStyle.__init__)
+
+
+def test_notation_hinteddiagramlinkstyle_constructor_args():
+    sig = inspect.signature(notation_HintedDiagramLinkStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "hint" in params, "Missing parameter 'hint'"
+
+def test_notation_hinteddiagramlinkstyle_has_hint():
+    assert hasattr(notation_HintedDiagramLinkStyle, "hint")
+    descriptor = None
+    for klass in notation_HintedDiagramLinkStyle.__mro__:
+        if "hint" in klass.__dict__:
+            descriptor = klass.__dict__["hint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_diagramlinkstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DiagramLinkStyle)
+
+
+def test_notation_diagramlinkstyle_constructor_exists():
+    assert callable(notation_DiagramLinkStyle.__init__)
+
+
+def test_notation_diagramlinkstyle_constructor_args():
+    sig = inspect.signature(notation_DiagramLinkStyle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_drawerstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_DrawerStyle)
+
+
+def test_notation_drawerstyle_constructor_exists():
+    assert callable(notation_DrawerStyle.__init__)
+
+
+def test_notation_drawerstyle_constructor_args():
+    sig = inspect.signature(notation_DrawerStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "collapsed" in params, "Missing parameter 'collapsed'"
+
+def test_notation_drawerstyle_has_collapsed():
+    assert hasattr(notation_DrawerStyle, "collapsed")
+    descriptor = None
+    for klass in notation_DrawerStyle.__mro__:
+        if "collapsed" in klass.__dict__:
+            descriptor = klass.__dict__["collapsed"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_textstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_TextStyle)
+
+
+def test_notation_textstyle_constructor_exists():
+    assert callable(notation_TextStyle.__init__)
+
+
+def test_notation_textstyle_constructor_args():
+    sig = inspect.signature(notation_TextStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "textAlignment" in params, "Missing parameter 'textAlignment'"
+
+def test_notation_textstyle_has_textAlignment():
+    assert hasattr(notation_TextStyle, "textAlignment")
+    descriptor = None
+    for klass in notation_TextStyle.__mro__:
+        if "textAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["textAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_pagestyle_is_not_abstract():
+    assert not inspect.isabstract(notation_PageStyle)
+
+
+def test_notation_pagestyle_constructor_exists():
+    assert callable(notation_PageStyle.__init__)
+
+
+def test_notation_pagestyle_constructor_args():
+    sig = inspect.signature(notation_PageStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "pageWidth" in params, "Missing parameter 'pageWidth'"
+    assert "pageY" in params, "Missing parameter 'pageY'"
+    assert "pageX" in params, "Missing parameter 'pageX'"
+    assert "pageHeight" in params, "Missing parameter 'pageHeight'"
+
+def test_notation_pagestyle_has_pageWidth():
+    assert hasattr(notation_PageStyle, "pageWidth")
+    descriptor = None
+    for klass in notation_PageStyle.__mro__:
+        if "pageWidth" in klass.__dict__:
+            descriptor = klass.__dict__["pageWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_pagestyle_has_pageY():
+    assert hasattr(notation_PageStyle, "pageY")
+    descriptor = None
+    for klass in notation_PageStyle.__mro__:
+        if "pageY" in klass.__dict__:
+            descriptor = klass.__dict__["pageY"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_pagestyle_has_pageX():
+    assert hasattr(notation_PageStyle, "pageX")
+    descriptor = None
+    for klass in notation_PageStyle.__mro__:
+        if "pageX" in klass.__dict__:
+            descriptor = klass.__dict__["pageX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_pagestyle_has_pageHeight():
+    assert hasattr(notation_PageStyle, "pageHeight")
+    descriptor = None
+    for klass in notation_PageStyle.__mro__:
+        if "pageHeight" in klass.__dict__:
+            descriptor = klass.__dict__["pageHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_sortingstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_SortingStyle)
+
+
+def test_notation_sortingstyle_constructor_exists():
+    assert callable(notation_SortingStyle.__init__)
+
+
+def test_notation_sortingstyle_constructor_args():
+    sig = inspect.signature(notation_SortingStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "sorting" in params, "Missing parameter 'sorting'"
+    assert "sortingKeys" in params, "Missing parameter 'sortingKeys'"
+
+def test_notation_sortingstyle_has_sorting():
+    assert hasattr(notation_SortingStyle, "sorting")
+    descriptor = None
+    for klass in notation_SortingStyle.__mro__:
+        if "sorting" in klass.__dict__:
+            descriptor = klass.__dict__["sorting"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_sortingstyle_has_sortingKeys():
+    assert hasattr(notation_SortingStyle, "sortingKeys")
+    descriptor = None
+    for klass in notation_SortingStyle.__mro__:
+        if "sortingKeys" in klass.__dict__:
+            descriptor = klass.__dict__["sortingKeys"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_fillstyle_is_not_abstract():
+    assert not inspect.isabstract(notation_FillStyle)
+
+
+def test_notation_fillstyle_constructor_exists():
+    assert callable(notation_FillStyle.__init__)
+
+
+def test_notation_fillstyle_constructor_args():
+    sig = inspect.signature(notation_FillStyle.__init__)
+    params = list(sig.parameters.keys())
+    assert "fillColor" in params, "Missing parameter 'fillColor'"
+    assert "transparency" in params, "Missing parameter 'transparency'"
+    assert "gradient" in params, "Missing parameter 'gradient'"
+
+def test_notation_fillstyle_has_fillColor():
+    assert hasattr(notation_FillStyle, "fillColor")
+    descriptor = None
+    for klass in notation_FillStyle.__mro__:
+        if "fillColor" in klass.__dict__:
+            descriptor = klass.__dict__["fillColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fillstyle_has_transparency():
+    assert hasattr(notation_FillStyle, "transparency")
+    descriptor = None
+    for klass in notation_FillStyle.__mro__:
+        if "transparency" in klass.__dict__:
+            descriptor = klass.__dict__["transparency"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_fillstyle_has_gradient():
+    assert hasattr(notation_FillStyle, "gradient")
+    descriptor = None
+    for klass in notation_FillStyle.__mro__:
+        if "gradient" in klass.__dict__:
+            descriptor = klass.__dict__["gradient"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_view_is_not_abstract():
+    assert not inspect.isabstract(notation_View)
+
+
+def test_notation_view_constructor_exists():
+    assert callable(notation_View.__init__)
+
+
+def test_notation_view_constructor_args():
+    sig = inspect.signature(notation_View.__init__)
+    params = list(sig.parameters.keys())
+    assert "visible" in params, "Missing parameter 'visible'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "mutable" in params, "Missing parameter 'mutable'"
+
+def test_notation_view_has_visible():
+    assert hasattr(notation_View, "visible")
+    descriptor = None
+    for klass in notation_View.__mro__:
+        if "visible" in klass.__dict__:
+            descriptor = klass.__dict__["visible"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_view_has_type():
+    assert hasattr(notation_View, "type")
+    descriptor = None
+    for klass in notation_View.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_view_has_mutable():
+    assert hasattr(notation_View, "mutable")
+    descriptor = None
+    for klass in notation_View.__mro__:
+        if "mutable" in klass.__dict__:
+            descriptor = klass.__dict__["mutable"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_view_is_not_abstract():
+    assert not inspect.isabstract(View)
+
+
+def test_view_constructor_exists():
+    assert callable(View.__init__)
+
+
+def test_view_constructor_args():
+    sig = inspect.signature(View.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_node_is_not_abstract():
+    assert not inspect.isabstract(notation_Node)
+
+
+def test_notation_node_constructor_exists():
+    assert callable(notation_Node.__init__)
+
+
+def test_notation_node_constructor_args():
+    sig = inspect.signature(notation_Node.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_notation_diagram_is_not_abstract():
+    assert not inspect.isabstract(notation_Diagram)
+
+
+def test_notation_diagram_constructor_exists():
+    assert callable(notation_Diagram.__init__)
+
+
+def test_notation_diagram_constructor_args():
+    sig = inspect.signature(notation_Diagram.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "measurementUnit" in params, "Missing parameter 'measurementUnit'"
+
+def test_notation_diagram_has_name():
+    assert hasattr(notation_Diagram, "name")
+    descriptor = None
+    for klass in notation_Diagram.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_diagram_has_measurementUnit():
+    assert hasattr(notation_Diagram, "measurementUnit")
+    descriptor = None
+    for klass in notation_Diagram.__mro__:
+        if "measurementUnit" in klass.__dict__:
+            descriptor = klass.__dict__["measurementUnit"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_notation_edge_is_not_abstract():
+    assert not inspect.isabstract(notation_Edge)
+
+
+def test_notation_edge_constructor_exists():
+    assert callable(notation_Edge.__init__)
+
+
+def test_notation_edge_constructor_args():
+    sig = inspect.signature(notation_Edge.__init__)
+    params = list(sig.parameters.keys())
 
 def test_smoothness_exists():
     # Check that the Enumeration exists
@@ -2382,32 +2333,14 @@ def test_smoothness_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Smoothness]
     expected_literals = [
-        "Less",
-        "More",
         "None_",
+        "More",
+        "Less",
         "Normal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Smoothness"
-
-def test_alignment_exists():
-    # Check that the Enumeration exists
-    assert Alignment is not None
-
-def test_alignment_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Alignment]
-    expected_literals = [
-        "Center",
-        "Bottom",
-        "Right",
-        "Left",
-        "Top",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Alignment"
 
 def test_measurementunit_exists():
     # Check that the Enumeration exists
@@ -2424,6 +2357,122 @@ def test_measurementunit_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MeasurementUnit"
 
+def test_routing_exists():
+    # Check that the Enumeration exists
+    assert Routing is not None
+
+def test_routing_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Routing]
+    expected_literals = [
+        "Rectilinear",
+        "Tree",
+        "Manual",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Routing"
+
+def test_gradientstyle_exists():
+    # Check that the Enumeration exists
+    assert GradientStyle is not None
+
+def test_gradientstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in GradientStyle]
+    expected_literals = [
+        "Horizontal",
+        "Vertical",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in GradientStyle"
+
+def test_arrowtype_exists():
+    # Check that the Enumeration exists
+    assert ArrowType is not None
+
+def test_arrowtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ArrowType]
+    expected_literals = [
+        "None_",
+        "OpenArrow",
+        "SolidArrow",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ArrowType"
+
+def test_alignment_exists():
+    # Check that the Enumeration exists
+    assert Alignment is not None
+
+def test_alignment_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Alignment]
+    expected_literals = [
+        "Center",
+        "Right",
+        "Left",
+        "Bottom",
+        "Top",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Alignment"
+
+def test_jumplinkstatus_exists():
+    # Check that the Enumeration exists
+    assert JumpLinkStatus is not None
+
+def test_jumplinkstatus_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in JumpLinkStatus]
+    expected_literals = [
+        "All",
+        "Above",
+        "None_",
+        "Below",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in JumpLinkStatus"
+
+def test_linetype_exists():
+    # Check that the Enumeration exists
+    assert LineType is not None
+
+def test_linetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LineType]
+    expected_literals = [
+        "Solid",
+        "DashDot",
+        "DashDotDot",
+        "Dot",
+        "Double",
+        "Dash",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LineType"
+
+def test_sortingdirection_exists():
+    # Check that the Enumeration exists
+    assert SortingDirection is not None
+
+def test_sortingdirection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SortingDirection]
+    expected_literals = [
+        "Descending",
+        "Ascending",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SortingDirection"
+
 def test_textalignment_exists():
     # Check that the Enumeration exists
     assert TextAlignment is not None
@@ -2432,13 +2481,45 @@ def test_textalignment_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TextAlignment]
     expected_literals = [
-        "Center",
         "Right",
+        "Center",
         "Left",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TextAlignment"
+
+def test_filtering_exists():
+    # Check that the Enumeration exists
+    assert Filtering is not None
+
+def test_filtering_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Filtering]
+    expected_literals = [
+        "Automatic",
+        "None_",
+        "Manual",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Filtering"
+
+def test_jumplinktype_exists():
+    # Check that the Enumeration exists
+    assert JumpLinkType is not None
+
+def test_jumplinktype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in JumpLinkType]
+    expected_literals = [
+        "Chamfered",
+        "Semicircle",
+        "Square",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in JumpLinkType"
 
 def test_sorting_exists():
     # Check that the Enumeration exists
@@ -2455,87 +2536,6 @@ def test_sorting_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Sorting"
-
-def test_sortingdirection_exists():
-    # Check that the Enumeration exists
-    assert SortingDirection is not None
-
-def test_sortingdirection_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SortingDirection]
-    expected_literals = [
-        "Ascending",
-        "Descending",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SortingDirection"
-
-def test_routing_exists():
-    # Check that the Enumeration exists
-    assert Routing is not None
-
-def test_routing_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Routing]
-    expected_literals = [
-        "Manual",
-        "Tree",
-        "Rectilinear",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Routing"
-
-def test_gradientstyle_exists():
-    # Check that the Enumeration exists
-    assert GradientStyle is not None
-
-def test_gradientstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in GradientStyle]
-    expected_literals = [
-        "Vertical",
-        "Horizontal",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in GradientStyle"
-
-def test_linetype_exists():
-    # Check that the Enumeration exists
-    assert LineType is not None
-
-def test_linetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LineType]
-    expected_literals = [
-        "Dot",
-        "Solid",
-        "DashDot",
-        "Dash",
-        "Double",
-        "DashDotDot",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LineType"
-
-def test_filtering_exists():
-    # Check that the Enumeration exists
-    assert Filtering is not None
-
-def test_filtering_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Filtering]
-    expected_literals = [
-        "Automatic",
-        "Manual",
-        "None_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Filtering"
 
 
 # =============================================================================
@@ -2558,158 +2558,26 @@ DrawerStyle_strategy = st.builds(
 DecorationNode_strategy = st.builds(
     DecorationNode,
 )
-notation::BasicCompartment_strategy = st.builds(
-    notation::BasicCompartment,
+notation_BasicCompartment_strategy = st.builds(
+    notation_BasicCompartment,
 )
 BasicDecorationNode_strategy = st.builds(
     BasicDecorationNode,
 )
-notation::BasicSemanticCompartment_strategy = st.builds(
-    notation::BasicSemanticCompartment,
+notation_BasicSemanticCompartment_strategy = st.builds(
+    notation_BasicSemanticCompartment,
 )
-notation::DecorationNode_strategy = st.builds(
-    notation::DecorationNode,
+notation_DecorationNode_strategy = st.builds(
+    notation_DecorationNode,
 )
 DiagramStyle_strategy = st.builds(
     DiagramStyle,
 )
-LayoutConstraint_strategy = st.builds(
-    LayoutConstraint,
-)
-notation::Location_strategy = st.builds(
-    notation::Location,
-    x=
-        st.integers(),
-    y=
-        st.integers()
-)
-notation::Size_strategy = st.builds(
-    notation::Size,
-    width=
-        st.integers(),
-    height=
-        st.integers()
-)
-RoundedCornersStyle_strategy = st.builds(
-    RoundedCornersStyle,
-)
-notation::RoutingStyle_strategy = st.builds(
-    notation::RoutingStyle,
-    routing=
-        safe_text,
-    jumpLinkType=
-        safe_text,
-    smoothness=
-        safe_text,
-    closestDistance=
-        st.booleans(),
-    jumpLinkStatus=
-        safe_text,
-    jumpLinksReverse=
-        st.booleans(),
-    avoidObstructions=
-        st.booleans()
-)
-Anchor_strategy = st.builds(
-    Anchor,
-)
-notation::IdentityAnchor_strategy = st.builds(
-    notation::IdentityAnchor,
-    id=
-        safe_text
-)
-notation::Style_strategy = st.builds(
-    notation::Style,
-)
-notation::LayoutConstraint_strategy = st.builds(
-    notation::LayoutConstraint,
-)
-notation::Anchor_strategy = st.builds(
-    notation::Anchor,
-)
-notation::Bendpoints_strategy = st.builds(
-    notation::Bendpoints,
-)
-notation::EObject_strategy = st.builds(
-    notation::EObject,
-)
-Style_strategy = st.builds(
-    Style,
-)
-notation::SortingStyle_strategy = st.builds(
-    notation::SortingStyle,
-    sorting=
-        safe_text,
-    sortingKeys=
-        safe_text
-)
-notation::FontStyle_strategy = st.builds(
-    notation::FontStyle,
-    underline=
-        st.booleans(),
-    fontHeight=
-        st.integers(),
-    strikeThrough=
-        st.booleans(),
-    fontName=
-        safe_text,
-    bold=
-        st.booleans(),
-    fontColor=
-        st.integers(),
-    italic=
-        st.booleans()
-)
-notation::RoundedCornersStyle_strategy = st.builds(
-    notation::RoundedCornersStyle,
-    roundedBendpointsRadius=
-        st.integers()
-)
-notation::LineStyle_strategy = st.builds(
-    notation::LineStyle,
-    lineWidth=
-        st.integers(),
-    lineColor=
-        st.integers()
-)
-notation::LineTypeStyle_strategy = st.builds(
-    notation::LineTypeStyle,
-    lineType=
-        safe_text
-)
-notation::TitleStyle_strategy = st.builds(
-    notation::TitleStyle,
-    showTitle=
-        st.booleans()
-)
-notation::DescriptionStyle_strategy = st.builds(
-    notation::DescriptionStyle,
-    description=
-        safe_text
-)
-notation::FillStyle_strategy = st.builds(
-    notation::FillStyle,
-    transparency=
-        st.integers(),
-    gradient=
-        safe_text,
-    fillColor=
-        st.integers()
-)
-View_strategy = st.builds(
-    View,
-)
-notation::Node_strategy = st.builds(
-    notation::Node,
-)
-notation::Edge_strategy = st.builds(
-    notation::Edge,
-)
 Diagram_strategy = st.builds(
     Diagram,
 )
-notation::StandardDiagram_strategy = st.builds(
-    notation::StandardDiagram,
+notation_StandardDiagram_strategy = st.builds(
+    notation_StandardDiagram,
 )
 ConnectorStyle_strategy = st.builds(
     ConnectorStyle,
@@ -2717,8 +2585,8 @@ ConnectorStyle_strategy = st.builds(
 Edge_strategy = st.builds(
     Edge,
 )
-notation::Connector_strategy = st.builds(
-    notation::Connector,
+notation_Connector_strategy = st.builds(
+    notation_Connector,
 )
 FilteringStyle_strategy = st.builds(
     FilteringStyle,
@@ -2729,8 +2597,8 @@ SortingStyle_strategy = st.builds(
 TitleStyle_strategy = st.builds(
     TitleStyle,
 )
-notation::SemanticListCompartment_strategy = st.builds(
-    notation::SemanticListCompartment,
+notation_SemanticListCompartment_strategy = st.builds(
+    notation_SemanticListCompartment,
 )
 CanonicalStyle_strategy = st.builds(
     CanonicalStyle,
@@ -2738,11 +2606,11 @@ CanonicalStyle_strategy = st.builds(
 BasicCompartment_strategy = st.builds(
     BasicCompartment,
 )
-notation::ListCompartment_strategy = st.builds(
-    notation::ListCompartment,
+notation_ListCompartment_strategy = st.builds(
+    notation_ListCompartment,
 )
-notation::Compartment_strategy = st.builds(
-    notation::Compartment,
+notation_Compartment_strategy = st.builds(
+    notation_Compartment,
 )
 ShapeStyle_strategy = st.builds(
     ShapeStyle,
@@ -2750,152 +2618,117 @@ ShapeStyle_strategy = st.builds(
 Node_strategy = st.builds(
     Node,
 )
-notation::BasicDecorationNode_strategy = st.builds(
-    notation::BasicDecorationNode,
+notation_BasicDecorationNode_strategy = st.builds(
+    notation_BasicDecorationNode,
 )
-notation::Shape_strategy = st.builds(
-    notation::Shape,
-)
-notation::ArrowStyle_strategy = st.builds(
-    notation::ArrowStyle,
-    arrowTarget=
-        safe_text,
-    arrowSource=
-        safe_text
-)
-notation::TextStyle_strategy = st.builds(
-    notation::TextStyle,
-    textAlignment=
-        safe_text
-)
-notation::MultiDiagramLinkStyle_strategy = st.builds(
-    notation::MultiDiagramLinkStyle,
-)
-notation::DiagramLinkStyle_strategy = st.builds(
-    notation::DiagramLinkStyle,
+notation_Shape_strategy = st.builds(
+    notation_Shape,
 )
 DiagramLinkStyle_strategy = st.builds(
     DiagramLinkStyle,
 )
-notation::HintedDiagramLinkStyle_strategy = st.builds(
-    notation::HintedDiagramLinkStyle,
-    hint=
-        safe_text
+notation_EDataType_strategy = st.builds(
+    notation_EDataType,
 )
-notation::EDataType_strategy = st.builds(
-    notation::EDataType,
-)
-notation::StringObjectConverter_strategy = st.builds(
-    notation::StringObjectConverter,
-)
-notation::NamedStyle_strategy = st.builds(
-    notation::NamedStyle,
-    name=
-        safe_text
+notation_StringObjectConverter_strategy = st.builds(
+    notation_StringObjectConverter,
 )
 DataTypeStyle_strategy = st.builds(
     DataTypeStyle,
 )
-notation::ListValueStyle_strategy = st.builds(
-    notation::ListValueStyle,
+notation_ListValueStyle_strategy = st.builds(
+    notation_ListValueStyle,
     rawValuesList=
         safe_text
 )
-notation::SingleValueStyle_strategy = st.builds(
-    notation::SingleValueStyle,
+notation_SingleValueStyle_strategy = st.builds(
+    notation_SingleValueStyle,
     rawValue=
         safe_text
 )
 NamedStyle_strategy = st.builds(
     NamedStyle,
 )
-notation::StringValueStyle_strategy = st.builds(
-    notation::StringValueStyle,
-    stringValue=
-        safe_text
-)
-notation::DoubleValueStyle_strategy = st.builds(
-    notation::DoubleValueStyle,
-    doubleValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-notation::IntListValueStyle_strategy = st.builds(
-    notation::IntListValueStyle,
-    intListValue=
-        st.integers()
-)
-notation::IntValueStyle_strategy = st.builds(
-    notation::IntValueStyle,
-    intValue=
-        st.integers()
-)
-notation::ByteArrayValueStyle_strategy = st.builds(
-    notation::ByteArrayValueStyle,
-    byteArrayValue=
-        safe_text
-)
-notation::EObjectListValueStyle_strategy = st.builds(
-    notation::EObjectListValueStyle,
-)
-notation::EObjectValueStyle_strategy = st.builds(
-    notation::EObjectValueStyle,
-)
-notation::StringListValueStyle_strategy = st.builds(
-    notation::StringListValueStyle,
-    stringListValue=
-        safe_text
-)
-notation::BooleanListValueStyle_strategy = st.builds(
-    notation::BooleanListValueStyle,
+notation_BooleanListValueStyle_strategy = st.builds(
+    notation_BooleanListValueStyle,
     booleanListValue=
         safe_text
 )
-notation::DoubleListValueStyle_strategy = st.builds(
-    notation::DoubleListValueStyle,
-    doubleListValue=
+notation_EObjectValueStyle_strategy = st.builds(
+    notation_EObjectValueStyle,
+)
+notation_ByteArrayValueStyle_strategy = st.builds(
+    notation_ByteArrayValueStyle,
+    byteArrayValue=
         safe_text
 )
-notation::BooleanValueStyle_strategy = st.builds(
-    notation::BooleanValueStyle,
+notation_EObjectListValueStyle_strategy = st.builds(
+    notation_EObjectListValueStyle,
+)
+notation_StringListValueStyle_strategy = st.builds(
+    notation_StringListValueStyle,
+    stringListValue=
+        safe_text
+)
+notation_BooleanValueStyle_strategy = st.builds(
+    notation_BooleanValueStyle,
     booleanValue=
         st.booleans()
 )
-notation::PropertiesSetStyle_strategy = st.builds(
-    notation::PropertiesSetStyle,
+notation_IntListValueStyle_strategy = st.builds(
+    notation_IntListValueStyle,
+    intListValue=
+        st.integers()
+)
+notation_StringValueStyle_strategy = st.builds(
+    notation_StringValueStyle,
+    stringValue=
+        safe_text
+)
+notation_DoubleListValueStyle_strategy = st.builds(
+    notation_DoubleListValueStyle,
+    doubleListValue=
+        safe_text
+)
+notation_DoubleValueStyle_strategy = st.builds(
+    notation_DoubleValueStyle,
+    doubleValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+notation_IntValueStyle_strategy = st.builds(
+    notation_IntValueStyle,
+    intValue=
+        st.integers()
+)
+notation_PropertiesSetStyle_strategy = st.builds(
+    notation_PropertiesSetStyle,
 )
 StringObjectConverter_strategy = st.builds(
     StringObjectConverter,
 )
-notation::DataTypeStyle_strategy = st.builds(
-    notation::DataTypeStyle,
+notation_DataTypeStyle_strategy = st.builds(
+    notation_DataTypeStyle,
 )
-notation::PropertyValue_strategy = st.builds(
-    notation::PropertyValue,
+notation_PropertyValue_strategy = st.builds(
+    notation_PropertyValue,
     rawValue=
         safe_text
 )
-notation::StringToPropertyValueMapEntry_strategy = st.builds(
-    notation::StringToPropertyValueMapEntry,
+notation_StringToPropertyValueMapEntry_strategy = st.builds(
+    notation_StringToPropertyValueMapEntry,
     key=
         safe_text
 )
-notation::NodeEntry_strategy = st.builds(
-    notation::NodeEntry,
+notation_NodeEntry_strategy = st.builds(
+    notation_NodeEntry,
     value=
         safe_text
 )
 ImageStyle_strategy = st.builds(
     ImageStyle,
 )
-notation::ImageBufferStyle_strategy = st.builds(
-    notation::ImageBufferStyle,
-)
-notation::ImageStyle_strategy = st.builds(
-    notation::ImageStyle,
-    maintainAspectRatio=
-        safe_text,
-    antiAlias=
-        safe_text
+notation_ImageBufferStyle_strategy = st.builds(
+    notation_ImageBufferStyle,
 )
 GuideStyle_strategy = st.builds(
     GuideStyle,
@@ -2903,48 +2736,22 @@ GuideStyle_strategy = st.builds(
 PageStyle_strategy = st.builds(
     PageStyle,
 )
-notation::FilteringStyle_strategy = st.builds(
-    notation::FilteringStyle,
-    filtering=
-        safe_text,
-    filteringKeys=
-        safe_text
-)
-notation::Image_strategy = st.builds(
-    notation::Image,
+notation_Image_strategy = st.builds(
+    notation_Image,
     data=
         safe_text
 )
 Bendpoints_strategy = st.builds(
     Bendpoints,
 )
-notation::RelativeBendpoints_strategy = st.builds(
-    notation::RelativeBendpoints,
+notation_RelativeBendpoints_strategy = st.builds(
+    notation_RelativeBendpoints,
     points=
         safe_text
 )
-notation::Guide_strategy = st.builds(
-    notation::Guide,
+notation_Guide_strategy = st.builds(
+    notation_Guide,
     position=
-        st.integers()
-)
-notation::GuideStyle_strategy = st.builds(
-    notation::GuideStyle,
-)
-notation::DrawerStyle_strategy = st.builds(
-    notation::DrawerStyle,
-    collapsed=
-        st.booleans()
-)
-notation::PageStyle_strategy = st.builds(
-    notation::PageStyle,
-    pageWidth=
-        st.integers(),
-    pageY=
-        st.integers(),
-    pageHeight=
-        st.integers(),
-    pageX=
         st.integers()
 )
 RoutingStyle_strategy = st.builds(
@@ -2953,8 +2760,8 @@ RoutingStyle_strategy = st.builds(
 LineStyle_strategy = st.builds(
     LineStyle,
 )
-notation::ConnectorStyle_strategy = st.builds(
-    notation::ConnectorStyle,
+notation_ConnectorStyle_strategy = st.builds(
+    notation_ConnectorStyle,
 )
 FillStyle_strategy = st.builds(
     FillStyle,
@@ -2962,43 +2769,14 @@ FillStyle_strategy = st.builds(
 DescriptionStyle_strategy = st.builds(
     DescriptionStyle,
 )
-notation::DiagramStyle_strategy = st.builds(
-    notation::DiagramStyle,
+notation_DiagramStyle_strategy = st.builds(
+    notation_DiagramStyle,
 )
 FontStyle_strategy = st.builds(
     FontStyle,
 )
-notation::ShapeStyle_strategy = st.builds(
-    notation::ShapeStyle,
-)
-notation::CanonicalStyle_strategy = st.builds(
-    notation::CanonicalStyle,
-    canonical=
-        st.booleans()
-)
 EModelElement_strategy = st.builds(
     EModelElement,
-)
-notation::View_strategy = st.builds(
-    notation::View,
-    type=
-        safe_text,
-    visible=
-        st.booleans(),
-    mutable=
-        st.booleans()
-)
-notation::Diagram_strategy = st.builds(
-    notation::Diagram,
-    measurementUnit=
-        safe_text,
-    name=
-        safe_text
-)
-notation::Ratio_strategy = st.builds(
-    notation::Ratio,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Size_strategy = st.builds(
     Size,
@@ -3006,8 +2784,230 @@ Size_strategy = st.builds(
 Location_strategy = st.builds(
     Location,
 )
-notation::Bounds_strategy = st.builds(
-    notation::Bounds,
+notation_Bounds_strategy = st.builds(
+    notation_Bounds,
+)
+LayoutConstraint_strategy = st.builds(
+    LayoutConstraint,
+)
+notation_Location_strategy = st.builds(
+    notation_Location,
+    y=
+        st.integers(),
+    x=
+        st.integers()
+)
+notation_Ratio_strategy = st.builds(
+    notation_Ratio,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+notation_Size_strategy = st.builds(
+    notation_Size,
+    width=
+        st.integers(),
+    height=
+        st.integers()
+)
+RoundedCornersStyle_strategy = st.builds(
+    RoundedCornersStyle,
+)
+notation_ShapeStyle_strategy = st.builds(
+    notation_ShapeStyle,
+)
+notation_RoutingStyle_strategy = st.builds(
+    notation_RoutingStyle,
+    avoidObstructions=
+        st.booleans(),
+    routing=
+        safe_text,
+    jumpLinkType=
+        safe_text,
+    smoothness=
+        safe_text,
+    jumpLinkStatus=
+        safe_text,
+    jumpLinksReverse=
+        st.booleans(),
+    closestDistance=
+        st.booleans()
+)
+Anchor_strategy = st.builds(
+    Anchor,
+)
+notation_IdentityAnchor_strategy = st.builds(
+    notation_IdentityAnchor,
+    id=
+        safe_text
+)
+notation_Style_strategy = st.builds(
+    notation_Style,
+)
+notation_LayoutConstraint_strategy = st.builds(
+    notation_LayoutConstraint,
+)
+notation_Anchor_strategy = st.builds(
+    notation_Anchor,
+)
+notation_Bendpoints_strategy = st.builds(
+    notation_Bendpoints,
+)
+notation_EObject_strategy = st.builds(
+    notation_EObject,
+)
+Style_strategy = st.builds(
+    Style,
+)
+notation_FilteringStyle_strategy = st.builds(
+    notation_FilteringStyle,
+    filteringKeys=
+        safe_text,
+    filtering=
+        safe_text
+)
+notation_FontStyle_strategy = st.builds(
+    notation_FontStyle,
+    italic=
+        st.booleans(),
+    bold=
+        st.booleans(),
+    underline=
+        st.booleans(),
+    fontColor=
+        st.integers(),
+    fontHeight=
+        st.integers(),
+    strikeThrough=
+        st.booleans(),
+    fontName=
+        safe_text
+)
+notation_RoundedCornersStyle_strategy = st.builds(
+    notation_RoundedCornersStyle,
+    roundedBendpointsRadius=
+        st.integers()
+)
+notation_GuideStyle_strategy = st.builds(
+    notation_GuideStyle,
+)
+notation_CanonicalStyle_strategy = st.builds(
+    notation_CanonicalStyle,
+    canonical=
+        st.booleans()
+)
+notation_ImageStyle_strategy = st.builds(
+    notation_ImageStyle,
+    maintainAspectRatio=
+        safe_text,
+    antiAlias=
+        safe_text
+)
+notation_LineTypeStyle_strategy = st.builds(
+    notation_LineTypeStyle,
+    lineType=
+        safe_text
+)
+notation_MultiDiagramLinkStyle_strategy = st.builds(
+    notation_MultiDiagramLinkStyle,
+)
+notation_ArrowStyle_strategy = st.builds(
+    notation_ArrowStyle,
+    arrowSource=
+        safe_text,
+    arrowTarget=
+        safe_text
+)
+notation_TitleStyle_strategy = st.builds(
+    notation_TitleStyle,
+    showTitle=
+        st.booleans()
+)
+notation_NamedStyle_strategy = st.builds(
+    notation_NamedStyle,
+    name=
+        safe_text
+)
+notation_LineStyle_strategy = st.builds(
+    notation_LineStyle,
+    lineWidth=
+        st.integers(),
+    lineColor=
+        st.integers()
+)
+notation_DescriptionStyle_strategy = st.builds(
+    notation_DescriptionStyle,
+    description=
+        safe_text
+)
+notation_HintedDiagramLinkStyle_strategy = st.builds(
+    notation_HintedDiagramLinkStyle,
+    hint=
+        safe_text
+)
+notation_DiagramLinkStyle_strategy = st.builds(
+    notation_DiagramLinkStyle,
+)
+notation_DrawerStyle_strategy = st.builds(
+    notation_DrawerStyle,
+    collapsed=
+        st.booleans()
+)
+notation_TextStyle_strategy = st.builds(
+    notation_TextStyle,
+    textAlignment=
+        safe_text
+)
+notation_PageStyle_strategy = st.builds(
+    notation_PageStyle,
+    pageWidth=
+        st.integers(),
+    pageY=
+        st.integers(),
+    pageX=
+        st.integers(),
+    pageHeight=
+        st.integers()
+)
+notation_SortingStyle_strategy = st.builds(
+    notation_SortingStyle,
+    sorting=
+        safe_text,
+    sortingKeys=
+        safe_text
+)
+notation_FillStyle_strategy = st.builds(
+    notation_FillStyle,
+    fillColor=
+        st.integers(),
+    transparency=
+        st.integers(),
+    gradient=
+        safe_text
+)
+notation_View_strategy = st.builds(
+    notation_View,
+    visible=
+        st.booleans(),
+    type=
+        safe_text,
+    mutable=
+        st.booleans()
+)
+View_strategy = st.builds(
+    View,
+)
+notation_Node_strategy = st.builds(
+    notation_Node,
+)
+notation_Diagram_strategy = st.builds(
+    notation_Diagram,
+    name=
+        safe_text,
+    measurementUnit=
+        safe_text
+)
+notation_Edge_strategy = st.builds(
+    notation_Edge,
 )
 
 @given(instance=BasicSemanticCompartment_strategy)
@@ -3025,583 +3025,40 @@ def test_drawerstyle_instantiation(instance):
 def test_decorationnode_instantiation(instance):
     assert isinstance(instance, DecorationNode)
 
-@given(instance=notation::BasicCompartment_strategy)
+@given(instance=notation_BasicCompartment_strategy)
 @settings(max_examples=50)
-def test_notation::basiccompartment_instantiation(instance):
-    assert isinstance(instance, notation::BasicCompartment)
+def test_notation_basiccompartment_instantiation(instance):
+    assert isinstance(instance, notation_BasicCompartment)
 
 @given(instance=BasicDecorationNode_strategy)
 @settings(max_examples=50)
 def test_basicdecorationnode_instantiation(instance):
     assert isinstance(instance, BasicDecorationNode)
 
-@given(instance=notation::BasicSemanticCompartment_strategy)
+@given(instance=notation_BasicSemanticCompartment_strategy)
 @settings(max_examples=50)
-def test_notation::basicsemanticcompartment_instantiation(instance):
-    assert isinstance(instance, notation::BasicSemanticCompartment)
+def test_notation_basicsemanticcompartment_instantiation(instance):
+    assert isinstance(instance, notation_BasicSemanticCompartment)
 
-@given(instance=notation::DecorationNode_strategy)
+@given(instance=notation_DecorationNode_strategy)
 @settings(max_examples=50)
-def test_notation::decorationnode_instantiation(instance):
-    assert isinstance(instance, notation::DecorationNode)
+def test_notation_decorationnode_instantiation(instance):
+    assert isinstance(instance, notation_DecorationNode)
 
 @given(instance=DiagramStyle_strategy)
 @settings(max_examples=50)
 def test_diagramstyle_instantiation(instance):
     assert isinstance(instance, DiagramStyle)
 
-@given(instance=LayoutConstraint_strategy)
-@settings(max_examples=50)
-def test_layoutconstraint_instantiation(instance):
-    assert isinstance(instance, LayoutConstraint)
-
-@given(instance=notation::Location_strategy)
-@settings(max_examples=50)
-def test_notation::location_instantiation(instance):
-    assert isinstance(instance, notation::Location)
-
-@given(instance=notation::Location_strategy)
-def test_notation::location_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=notation::Location_strategy)
-def test_notation::location_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=notation::Location_strategy)
-def test_notation::location_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=notation::Location_strategy)
-def test_notation::location_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=notation::Size_strategy)
-@settings(max_examples=50)
-def test_notation::size_instantiation(instance):
-    assert isinstance(instance, notation::Size)
-
-@given(instance=notation::Size_strategy)
-def test_notation::size_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=notation::Size_strategy)
-def test_notation::size_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=notation::Size_strategy)
-def test_notation::size_height_type(instance):
-    assert isinstance(instance.height, int)
-
-
-@given(instance=notation::Size_strategy)
-def test_notation::size_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=RoundedCornersStyle_strategy)
-@settings(max_examples=50)
-def test_roundedcornersstyle_instantiation(instance):
-    assert isinstance(instance, RoundedCornersStyle)
-
-@given(instance=notation::RoutingStyle_strategy)
-@settings(max_examples=50)
-def test_notation::routingstyle_instantiation(instance):
-    assert isinstance(instance, notation::RoutingStyle)
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_routing_type(instance):
-    assert isinstance(instance.routing, str)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_routing_setter(instance):
-    original = instance.routing
-    instance.routing = original
-    assert instance.routing == original
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_jumpLinkType_type(instance):
-    assert isinstance(instance.jumpLinkType, str)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_jumpLinkType_setter(instance):
-    original = instance.jumpLinkType
-    instance.jumpLinkType = original
-    assert instance.jumpLinkType == original
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_smoothness_type(instance):
-    assert isinstance(instance.smoothness, str)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_smoothness_setter(instance):
-    original = instance.smoothness
-    instance.smoothness = original
-    assert instance.smoothness == original
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_closestDistance_type(instance):
-    assert isinstance(instance.closestDistance, bool)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_closestDistance_setter(instance):
-    original = instance.closestDistance
-    instance.closestDistance = original
-    assert instance.closestDistance == original
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_jumpLinkStatus_type(instance):
-    assert isinstance(instance.jumpLinkStatus, str)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_jumpLinkStatus_setter(instance):
-    original = instance.jumpLinkStatus
-    instance.jumpLinkStatus = original
-    assert instance.jumpLinkStatus == original
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_jumpLinksReverse_type(instance):
-    assert isinstance(instance.jumpLinksReverse, bool)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_jumpLinksReverse_setter(instance):
-    original = instance.jumpLinksReverse
-    instance.jumpLinksReverse = original
-    assert instance.jumpLinksReverse == original
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_avoidObstructions_type(instance):
-    assert isinstance(instance.avoidObstructions, bool)
-
-
-@given(instance=notation::RoutingStyle_strategy)
-def test_notation::routingstyle_avoidObstructions_setter(instance):
-    original = instance.avoidObstructions
-    instance.avoidObstructions = original
-    assert instance.avoidObstructions == original
-
-@given(instance=Anchor_strategy)
-@settings(max_examples=50)
-def test_anchor_instantiation(instance):
-    assert isinstance(instance, Anchor)
-
-@given(instance=notation::IdentityAnchor_strategy)
-@settings(max_examples=50)
-def test_notation::identityanchor_instantiation(instance):
-    assert isinstance(instance, notation::IdentityAnchor)
-
-@given(instance=notation::IdentityAnchor_strategy)
-def test_notation::identityanchor_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=notation::IdentityAnchor_strategy)
-def test_notation::identityanchor_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=notation::Style_strategy)
-@settings(max_examples=50)
-def test_notation::style_instantiation(instance):
-    assert isinstance(instance, notation::Style)
-
-@given(instance=notation::LayoutConstraint_strategy)
-@settings(max_examples=50)
-def test_notation::layoutconstraint_instantiation(instance):
-    assert isinstance(instance, notation::LayoutConstraint)
-
-@given(instance=notation::Anchor_strategy)
-@settings(max_examples=50)
-def test_notation::anchor_instantiation(instance):
-    assert isinstance(instance, notation::Anchor)
-
-@given(instance=notation::Bendpoints_strategy)
-@settings(max_examples=50)
-def test_notation::bendpoints_instantiation(instance):
-    assert isinstance(instance, notation::Bendpoints)
-
-@given(instance=notation::EObject_strategy)
-@settings(max_examples=50)
-def test_notation::eobject_instantiation(instance):
-    assert isinstance(instance, notation::EObject)
-
-@given(instance=Style_strategy)
-@settings(max_examples=50)
-def test_style_instantiation(instance):
-    assert isinstance(instance, Style)
-
-@given(instance=notation::SortingStyle_strategy)
-@settings(max_examples=50)
-def test_notation::sortingstyle_instantiation(instance):
-    assert isinstance(instance, notation::SortingStyle)
-
-@given(instance=notation::SortingStyle_strategy)
-def test_notation::sortingstyle_sorting_type(instance):
-    assert isinstance(instance.sorting, str)
-
-
-@given(instance=notation::SortingStyle_strategy)
-def test_notation::sortingstyle_sorting_setter(instance):
-    original = instance.sorting
-    instance.sorting = original
-    assert instance.sorting == original
-
-@given(instance=notation::SortingStyle_strategy)
-def test_notation::sortingstyle_sortingKeys_type(instance):
-    assert isinstance(instance.sortingKeys, str)
-
-
-@given(instance=notation::SortingStyle_strategy)
-def test_notation::sortingstyle_sortingKeys_setter(instance):
-    original = instance.sortingKeys
-    instance.sortingKeys = original
-    assert instance.sortingKeys == original
-
-@given(instance=notation::FontStyle_strategy)
-@settings(max_examples=50)
-def test_notation::fontstyle_instantiation(instance):
-    assert isinstance(instance, notation::FontStyle)
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_underline_type(instance):
-    assert isinstance(instance.underline, bool)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_underline_setter(instance):
-    original = instance.underline
-    instance.underline = original
-    assert instance.underline == original
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_fontHeight_type(instance):
-    assert isinstance(instance.fontHeight, int)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_fontHeight_setter(instance):
-    original = instance.fontHeight
-    instance.fontHeight = original
-    assert instance.fontHeight == original
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_strikeThrough_type(instance):
-    assert isinstance(instance.strikeThrough, bool)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_strikeThrough_setter(instance):
-    original = instance.strikeThrough
-    instance.strikeThrough = original
-    assert instance.strikeThrough == original
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_fontName_type(instance):
-    assert isinstance(instance.fontName, str)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_fontName_setter(instance):
-    original = instance.fontName
-    instance.fontName = original
-    assert instance.fontName == original
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_bold_type(instance):
-    assert isinstance(instance.bold, bool)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_bold_setter(instance):
-    original = instance.bold
-    instance.bold = original
-    assert instance.bold == original
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_fontColor_type(instance):
-    assert isinstance(instance.fontColor, int)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_fontColor_setter(instance):
-    original = instance.fontColor
-    instance.fontColor = original
-    assert instance.fontColor == original
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_italic_type(instance):
-    assert isinstance(instance.italic, bool)
-
-
-@given(instance=notation::FontStyle_strategy)
-def test_notation::fontstyle_italic_setter(instance):
-    original = instance.italic
-    instance.italic = original
-    assert instance.italic == original
-
-@given(instance=notation::RoundedCornersStyle_strategy)
-@settings(max_examples=50)
-def test_notation::roundedcornersstyle_instantiation(instance):
-    assert isinstance(instance, notation::RoundedCornersStyle)
-
-@given(instance=notation::RoundedCornersStyle_strategy)
-def test_notation::roundedcornersstyle_roundedBendpointsRadius_type(instance):
-    assert isinstance(instance.roundedBendpointsRadius, int)
-
-
-@given(instance=notation::RoundedCornersStyle_strategy)
-def test_notation::roundedcornersstyle_roundedBendpointsRadius_setter(instance):
-    original = instance.roundedBendpointsRadius
-    instance.roundedBendpointsRadius = original
-    assert instance.roundedBendpointsRadius == original
-
-@given(instance=notation::LineStyle_strategy)
-@settings(max_examples=50)
-def test_notation::linestyle_instantiation(instance):
-    assert isinstance(instance, notation::LineStyle)
-
-@given(instance=notation::LineStyle_strategy)
-def test_notation::linestyle_lineWidth_type(instance):
-    assert isinstance(instance.lineWidth, int)
-
-
-@given(instance=notation::LineStyle_strategy)
-def test_notation::linestyle_lineWidth_setter(instance):
-    original = instance.lineWidth
-    instance.lineWidth = original
-    assert instance.lineWidth == original
-
-@given(instance=notation::LineStyle_strategy)
-def test_notation::linestyle_lineColor_type(instance):
-    assert isinstance(instance.lineColor, int)
-
-
-@given(instance=notation::LineStyle_strategy)
-def test_notation::linestyle_lineColor_setter(instance):
-    original = instance.lineColor
-    instance.lineColor = original
-    assert instance.lineColor == original
-
-@given(instance=notation::LineTypeStyle_strategy)
-@settings(max_examples=50)
-def test_notation::linetypestyle_instantiation(instance):
-    assert isinstance(instance, notation::LineTypeStyle)
-
-@given(instance=notation::LineTypeStyle_strategy)
-def test_notation::linetypestyle_lineType_type(instance):
-    assert isinstance(instance.lineType, str)
-
-
-@given(instance=notation::LineTypeStyle_strategy)
-def test_notation::linetypestyle_lineType_setter(instance):
-    original = instance.lineType
-    instance.lineType = original
-    assert instance.lineType == original
-
-@given(instance=notation::TitleStyle_strategy)
-@settings(max_examples=50)
-def test_notation::titlestyle_instantiation(instance):
-    assert isinstance(instance, notation::TitleStyle)
-
-@given(instance=notation::TitleStyle_strategy)
-def test_notation::titlestyle_showTitle_type(instance):
-    assert isinstance(instance.showTitle, bool)
-
-
-@given(instance=notation::TitleStyle_strategy)
-def test_notation::titlestyle_showTitle_setter(instance):
-    original = instance.showTitle
-    instance.showTitle = original
-    assert instance.showTitle == original
-
-@given(instance=notation::DescriptionStyle_strategy)
-@settings(max_examples=50)
-def test_notation::descriptionstyle_instantiation(instance):
-    assert isinstance(instance, notation::DescriptionStyle)
-
-@given(instance=notation::DescriptionStyle_strategy)
-def test_notation::descriptionstyle_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=notation::DescriptionStyle_strategy)
-def test_notation::descriptionstyle_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=notation::FillStyle_strategy)
-@settings(max_examples=50)
-def test_notation::fillstyle_instantiation(instance):
-    assert isinstance(instance, notation::FillStyle)
-
-@given(instance=notation::FillStyle_strategy)
-def test_notation::fillstyle_transparency_type(instance):
-    assert isinstance(instance.transparency, int)
-
-
-@given(instance=notation::FillStyle_strategy)
-def test_notation::fillstyle_transparency_setter(instance):
-    original = instance.transparency
-    instance.transparency = original
-    assert instance.transparency == original
-
-@given(instance=notation::FillStyle_strategy)
-def test_notation::fillstyle_gradient_type(instance):
-    assert isinstance(instance.gradient, str)
-
-
-@given(instance=notation::FillStyle_strategy)
-def test_notation::fillstyle_gradient_setter(instance):
-    original = instance.gradient
-    instance.gradient = original
-    assert instance.gradient == original
-
-@given(instance=notation::FillStyle_strategy)
-def test_notation::fillstyle_fillColor_type(instance):
-    assert isinstance(instance.fillColor, int)
-
-
-@given(instance=notation::FillStyle_strategy)
-def test_notation::fillstyle_fillColor_setter(instance):
-    original = instance.fillColor
-    instance.fillColor = original
-    assert instance.fillColor == original
-
-@given(instance=View_strategy)
-@settings(max_examples=50)
-def test_view_instantiation(instance):
-    assert isinstance(instance, View)
-
-@given(instance=notation::Node_strategy)
-@settings(max_examples=50)
-def test_notation::node_instantiation(instance):
-    assert isinstance(instance, notation::Node)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::Node_strategy)
-@settings(max_examples=30)
-def test_notation::node_createlayoutconstraint_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createLayoutConstraint(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createLayoutConstraint).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createLayoutConstraint' in notation::Node is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createLayoutConstraint' in notation::Node did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createLayoutConstraint' in notation::Node is not implemented or raised an error")
-
-@given(instance=notation::Edge_strategy)
-@settings(max_examples=50)
-def test_notation::edge_instantiation(instance):
-    assert isinstance(instance, notation::Edge)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::Edge_strategy)
-@settings(max_examples=30)
-def test_notation::edge_createbendpoints_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createBendpoints(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createBendpoints).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createBendpoints' in notation::Edge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createBendpoints' in notation::Edge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createBendpoints' in notation::Edge is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::Edge_strategy)
-@settings(max_examples=30)
-def test_notation::edge_createsourceanchor_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createSourceAnchor(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createSourceAnchor).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createSourceAnchor' in notation::Edge is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createSourceAnchor' in notation::Edge did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createSourceAnchor' in notation::Edge is not implemented or raised an error")
-
 @given(instance=Diagram_strategy)
 @settings(max_examples=50)
 def test_diagram_instantiation(instance):
     assert isinstance(instance, Diagram)
 
-@given(instance=notation::StandardDiagram_strategy)
+@given(instance=notation_StandardDiagram_strategy)
 @settings(max_examples=50)
-def test_notation::standarddiagram_instantiation(instance):
-    assert isinstance(instance, notation::StandardDiagram)
+def test_notation_standarddiagram_instantiation(instance):
+    assert isinstance(instance, notation_StandardDiagram)
 
 @given(instance=ConnectorStyle_strategy)
 @settings(max_examples=50)
@@ -3613,10 +3070,10 @@ def test_connectorstyle_instantiation(instance):
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=notation::Connector_strategy)
+@given(instance=notation_Connector_strategy)
 @settings(max_examples=50)
-def test_notation::connector_instantiation(instance):
-    assert isinstance(instance, notation::Connector)
+def test_notation_connector_instantiation(instance):
+    assert isinstance(instance, notation_Connector)
 
 @given(instance=FilteringStyle_strategy)
 @settings(max_examples=50)
@@ -3633,10 +3090,10 @@ def test_sortingstyle_instantiation(instance):
 def test_titlestyle_instantiation(instance):
     assert isinstance(instance, TitleStyle)
 
-@given(instance=notation::SemanticListCompartment_strategy)
+@given(instance=notation_SemanticListCompartment_strategy)
 @settings(max_examples=50)
-def test_notation::semanticlistcompartment_instantiation(instance):
-    assert isinstance(instance, notation::SemanticListCompartment)
+def test_notation_semanticlistcompartment_instantiation(instance):
+    assert isinstance(instance, notation_SemanticListCompartment)
 
 @given(instance=CanonicalStyle_strategy)
 @settings(max_examples=50)
@@ -3648,15 +3105,15 @@ def test_canonicalstyle_instantiation(instance):
 def test_basiccompartment_instantiation(instance):
     assert isinstance(instance, BasicCompartment)
 
-@given(instance=notation::ListCompartment_strategy)
+@given(instance=notation_ListCompartment_strategy)
 @settings(max_examples=50)
-def test_notation::listcompartment_instantiation(instance):
-    assert isinstance(instance, notation::ListCompartment)
+def test_notation_listcompartment_instantiation(instance):
+    assert isinstance(instance, notation_ListCompartment)
 
-@given(instance=notation::Compartment_strategy)
+@given(instance=notation_Compartment_strategy)
 @settings(max_examples=50)
-def test_notation::compartment_instantiation(instance):
-    assert isinstance(instance, notation::Compartment)
+def test_notation_compartment_instantiation(instance):
+    assert isinstance(instance, notation_Compartment)
 
 @given(instance=ShapeStyle_strategy)
 @settings(max_examples=50)
@@ -3668,149 +3125,58 @@ def test_shapestyle_instantiation(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=notation::BasicDecorationNode_strategy)
+@given(instance=notation_BasicDecorationNode_strategy)
 @settings(max_examples=50)
-def test_notation::basicdecorationnode_instantiation(instance):
-    assert isinstance(instance, notation::BasicDecorationNode)
+def test_notation_basicdecorationnode_instantiation(instance):
+    assert isinstance(instance, notation_BasicDecorationNode)
 
-@given(instance=notation::Shape_strategy)
+@given(instance=notation_Shape_strategy)
 @settings(max_examples=50)
-def test_notation::shape_instantiation(instance):
-    assert isinstance(instance, notation::Shape)
-
-@given(instance=notation::ArrowStyle_strategy)
-@settings(max_examples=50)
-def test_notation::arrowstyle_instantiation(instance):
-    assert isinstance(instance, notation::ArrowStyle)
-
-@given(instance=notation::ArrowStyle_strategy)
-def test_notation::arrowstyle_arrowTarget_type(instance):
-    assert isinstance(instance.arrowTarget, str)
-
-
-@given(instance=notation::ArrowStyle_strategy)
-def test_notation::arrowstyle_arrowTarget_setter(instance):
-    original = instance.arrowTarget
-    instance.arrowTarget = original
-    assert instance.arrowTarget == original
-
-@given(instance=notation::ArrowStyle_strategy)
-def test_notation::arrowstyle_arrowSource_type(instance):
-    assert isinstance(instance.arrowSource, str)
-
-
-@given(instance=notation::ArrowStyle_strategy)
-def test_notation::arrowstyle_arrowSource_setter(instance):
-    original = instance.arrowSource
-    instance.arrowSource = original
-    assert instance.arrowSource == original
-
-@given(instance=notation::TextStyle_strategy)
-@settings(max_examples=50)
-def test_notation::textstyle_instantiation(instance):
-    assert isinstance(instance, notation::TextStyle)
-
-@given(instance=notation::TextStyle_strategy)
-def test_notation::textstyle_textAlignment_type(instance):
-    assert isinstance(instance.textAlignment, str)
-
-
-@given(instance=notation::TextStyle_strategy)
-def test_notation::textstyle_textAlignment_setter(instance):
-    original = instance.textAlignment
-    instance.textAlignment = original
-    assert instance.textAlignment == original
-
-@given(instance=notation::MultiDiagramLinkStyle_strategy)
-@settings(max_examples=50)
-def test_notation::multidiagramlinkstyle_instantiation(instance):
-    assert isinstance(instance, notation::MultiDiagramLinkStyle)
-
-@given(instance=notation::DiagramLinkStyle_strategy)
-@settings(max_examples=50)
-def test_notation::diagramlinkstyle_instantiation(instance):
-    assert isinstance(instance, notation::DiagramLinkStyle)
+def test_notation_shape_instantiation(instance):
+    assert isinstance(instance, notation_Shape)
 
 @given(instance=DiagramLinkStyle_strategy)
 @settings(max_examples=50)
 def test_diagramlinkstyle_instantiation(instance):
     assert isinstance(instance, DiagramLinkStyle)
 
-@given(instance=notation::HintedDiagramLinkStyle_strategy)
+@given(instance=notation_EDataType_strategy)
 @settings(max_examples=50)
-def test_notation::hinteddiagramlinkstyle_instantiation(instance):
-    assert isinstance(instance, notation::HintedDiagramLinkStyle)
+def test_notation_edatatype_instantiation(instance):
+    assert isinstance(instance, notation_EDataType)
 
-@given(instance=notation::HintedDiagramLinkStyle_strategy)
-def test_notation::hinteddiagramlinkstyle_hint_type(instance):
-    assert isinstance(instance.hint, str)
-
-
-@given(instance=notation::HintedDiagramLinkStyle_strategy)
-def test_notation::hinteddiagramlinkstyle_hint_setter(instance):
-    original = instance.hint
-    instance.hint = original
-    assert instance.hint == original
-
-@given(instance=notation::EDataType_strategy)
+@given(instance=notation_StringObjectConverter_strategy)
 @settings(max_examples=50)
-def test_notation::edatatype_instantiation(instance):
-    assert isinstance(instance, notation::EDataType)
-
-@given(instance=notation::StringObjectConverter_strategy)
-@settings(max_examples=50)
-def test_notation::stringobjectconverter_instantiation(instance):
-    assert isinstance(instance, notation::StringObjectConverter)
-
-@given(instance=notation::NamedStyle_strategy)
-@settings(max_examples=50)
-def test_notation::namedstyle_instantiation(instance):
-    assert isinstance(instance, notation::NamedStyle)
-
-@given(instance=notation::NamedStyle_strategy)
-def test_notation::namedstyle_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=notation::NamedStyle_strategy)
-def test_notation::namedstyle_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+def test_notation_stringobjectconverter_instantiation(instance):
+    assert isinstance(instance, notation_StringObjectConverter)
 
 @given(instance=DataTypeStyle_strategy)
 @settings(max_examples=50)
 def test_datatypestyle_instantiation(instance):
     assert isinstance(instance, DataTypeStyle)
 
-@given(instance=notation::ListValueStyle_strategy)
+@given(instance=notation_ListValueStyle_strategy)
 @settings(max_examples=50)
-def test_notation::listvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::ListValueStyle)
-
-@given(instance=notation::ListValueStyle_strategy)
-def test_notation::listvaluestyle_rawValuesList_type(instance):
-    assert isinstance(instance.rawValuesList, str)
+def test_notation_listvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_ListValueStyle)
 
 
-@given(instance=notation::ListValueStyle_strategy)
-def test_notation::listvaluestyle_rawValuesList_setter(instance):
+
+@given(instance=notation_ListValueStyle_strategy)
+def test_notation_listvaluestyle_rawValuesList_setter(instance):
     original = instance.rawValuesList
     instance.rawValuesList = original
     assert instance.rawValuesList == original
 
-@given(instance=notation::SingleValueStyle_strategy)
+@given(instance=notation_SingleValueStyle_strategy)
 @settings(max_examples=50)
-def test_notation::singlevaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::SingleValueStyle)
-
-@given(instance=notation::SingleValueStyle_strategy)
-def test_notation::singlevaluestyle_rawValue_type(instance):
-    assert isinstance(instance.rawValue, str)
+def test_notation_singlevaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_SingleValueStyle)
 
 
-@given(instance=notation::SingleValueStyle_strategy)
-def test_notation::singlevaluestyle_rawValue_setter(instance):
+
+@given(instance=notation_SingleValueStyle_strategy)
+def test_notation_singlevaluestyle_rawValue_setter(instance):
     original = instance.rawValue
     instance.rawValue = original
     assert instance.rawValue == original
@@ -3821,9 +3187,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=notation::SingleValueStyle_strategy)
+@given(instance=notation_SingleValueStyle_strategy)
 @settings(max_examples=30)
-def test_notation::singlevaluestyle_setvalue_changes_state(instance):
+def test_notation_singlevaluestyle_setvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3837,178 +3203,151 @@ def test_notation::singlevaluestyle_setvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setValue' in notation::SingleValueStyle is empty"
+        assert has_statements, f"Function 'setValue' in notation_SingleValueStyle is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setValue' in notation::SingleValueStyle did not change state; check implementation")
+            warnings.warn(f"Operation 'setValue' in notation_SingleValueStyle did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setValue' in notation::SingleValueStyle is not implemented or raised an error")
+        warnings.warn(f"Operation 'setValue' in notation_SingleValueStyle is not implemented or raised an error")
 
 @given(instance=NamedStyle_strategy)
 @settings(max_examples=50)
 def test_namedstyle_instantiation(instance):
     assert isinstance(instance, NamedStyle)
 
-@given(instance=notation::StringValueStyle_strategy)
+@given(instance=notation_BooleanListValueStyle_strategy)
 @settings(max_examples=50)
-def test_notation::stringvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::StringValueStyle)
-
-@given(instance=notation::StringValueStyle_strategy)
-def test_notation::stringvaluestyle_stringValue_type(instance):
-    assert isinstance(instance.stringValue, str)
+def test_notation_booleanlistvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_BooleanListValueStyle)
 
 
-@given(instance=notation::StringValueStyle_strategy)
-def test_notation::stringvaluestyle_stringValue_setter(instance):
-    original = instance.stringValue
-    instance.stringValue = original
-    assert instance.stringValue == original
 
-@given(instance=notation::DoubleValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::doublevaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::DoubleValueStyle)
-
-@given(instance=notation::DoubleValueStyle_strategy)
-def test_notation::doublevaluestyle_doubleValue_type(instance):
-    assert isinstance(instance.doubleValue, float)
-
-
-@given(instance=notation::DoubleValueStyle_strategy)
-def test_notation::doublevaluestyle_doubleValue_setter(instance):
-    original = instance.doubleValue
-    instance.doubleValue = original
-    assert instance.doubleValue == original
-
-@given(instance=notation::IntListValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::intlistvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::IntListValueStyle)
-
-@given(instance=notation::IntListValueStyle_strategy)
-def test_notation::intlistvaluestyle_intListValue_type(instance):
-    assert isinstance(instance.intListValue, int)
-
-
-@given(instance=notation::IntListValueStyle_strategy)
-def test_notation::intlistvaluestyle_intListValue_setter(instance):
-    original = instance.intListValue
-    instance.intListValue = original
-    assert instance.intListValue == original
-
-@given(instance=notation::IntValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::intvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::IntValueStyle)
-
-@given(instance=notation::IntValueStyle_strategy)
-def test_notation::intvaluestyle_intValue_type(instance):
-    assert isinstance(instance.intValue, int)
-
-
-@given(instance=notation::IntValueStyle_strategy)
-def test_notation::intvaluestyle_intValue_setter(instance):
-    original = instance.intValue
-    instance.intValue = original
-    assert instance.intValue == original
-
-@given(instance=notation::ByteArrayValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::bytearrayvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::ByteArrayValueStyle)
-
-@given(instance=notation::ByteArrayValueStyle_strategy)
-def test_notation::bytearrayvaluestyle_byteArrayValue_type(instance):
-    assert isinstance(instance.byteArrayValue, str)
-
-
-@given(instance=notation::ByteArrayValueStyle_strategy)
-def test_notation::bytearrayvaluestyle_byteArrayValue_setter(instance):
-    original = instance.byteArrayValue
-    instance.byteArrayValue = original
-    assert instance.byteArrayValue == original
-
-@given(instance=notation::EObjectListValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::eobjectlistvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::EObjectListValueStyle)
-
-@given(instance=notation::EObjectValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::eobjectvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::EObjectValueStyle)
-
-@given(instance=notation::StringListValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::stringlistvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::StringListValueStyle)
-
-@given(instance=notation::StringListValueStyle_strategy)
-def test_notation::stringlistvaluestyle_stringListValue_type(instance):
-    assert isinstance(instance.stringListValue, str)
-
-
-@given(instance=notation::StringListValueStyle_strategy)
-def test_notation::stringlistvaluestyle_stringListValue_setter(instance):
-    original = instance.stringListValue
-    instance.stringListValue = original
-    assert instance.stringListValue == original
-
-@given(instance=notation::BooleanListValueStyle_strategy)
-@settings(max_examples=50)
-def test_notation::booleanlistvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::BooleanListValueStyle)
-
-@given(instance=notation::BooleanListValueStyle_strategy)
-def test_notation::booleanlistvaluestyle_booleanListValue_type(instance):
-    assert isinstance(instance.booleanListValue, str)
-
-
-@given(instance=notation::BooleanListValueStyle_strategy)
-def test_notation::booleanlistvaluestyle_booleanListValue_setter(instance):
+@given(instance=notation_BooleanListValueStyle_strategy)
+def test_notation_booleanlistvaluestyle_booleanListValue_setter(instance):
     original = instance.booleanListValue
     instance.booleanListValue = original
     assert instance.booleanListValue == original
 
-@given(instance=notation::DoubleListValueStyle_strategy)
+@given(instance=notation_EObjectValueStyle_strategy)
 @settings(max_examples=50)
-def test_notation::doublelistvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::DoubleListValueStyle)
+def test_notation_eobjectvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_EObjectValueStyle)
 
-@given(instance=notation::DoubleListValueStyle_strategy)
-def test_notation::doublelistvaluestyle_doubleListValue_type(instance):
-    assert isinstance(instance.doubleListValue, str)
-
-
-@given(instance=notation::DoubleListValueStyle_strategy)
-def test_notation::doublelistvaluestyle_doubleListValue_setter(instance):
-    original = instance.doubleListValue
-    instance.doubleListValue = original
-    assert instance.doubleListValue == original
-
-@given(instance=notation::BooleanValueStyle_strategy)
+@given(instance=notation_ByteArrayValueStyle_strategy)
 @settings(max_examples=50)
-def test_notation::booleanvaluestyle_instantiation(instance):
-    assert isinstance(instance, notation::BooleanValueStyle)
-
-@given(instance=notation::BooleanValueStyle_strategy)
-def test_notation::booleanvaluestyle_booleanValue_type(instance):
-    assert isinstance(instance.booleanValue, bool)
+def test_notation_bytearrayvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_ByteArrayValueStyle)
 
 
-@given(instance=notation::BooleanValueStyle_strategy)
-def test_notation::booleanvaluestyle_booleanValue_setter(instance):
+
+@given(instance=notation_ByteArrayValueStyle_strategy)
+def test_notation_bytearrayvaluestyle_byteArrayValue_setter(instance):
+    original = instance.byteArrayValue
+    instance.byteArrayValue = original
+    assert instance.byteArrayValue == original
+
+@given(instance=notation_EObjectListValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_eobjectlistvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_EObjectListValueStyle)
+
+@given(instance=notation_StringListValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_stringlistvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_StringListValueStyle)
+
+
+
+@given(instance=notation_StringListValueStyle_strategy)
+def test_notation_stringlistvaluestyle_stringListValue_setter(instance):
+    original = instance.stringListValue
+    instance.stringListValue = original
+    assert instance.stringListValue == original
+
+@given(instance=notation_BooleanValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_booleanvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_BooleanValueStyle)
+
+
+
+@given(instance=notation_BooleanValueStyle_strategy)
+def test_notation_booleanvaluestyle_booleanValue_setter(instance):
     original = instance.booleanValue
     instance.booleanValue = original
     assert instance.booleanValue == original
 
-@given(instance=notation::PropertiesSetStyle_strategy)
+@given(instance=notation_IntListValueStyle_strategy)
 @settings(max_examples=50)
-def test_notation::propertiessetstyle_instantiation(instance):
-    assert isinstance(instance, notation::PropertiesSetStyle)
+def test_notation_intlistvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_IntListValueStyle)
+
+
+
+@given(instance=notation_IntListValueStyle_strategy)
+def test_notation_intlistvaluestyle_intListValue_setter(instance):
+    original = instance.intListValue
+    instance.intListValue = original
+    assert instance.intListValue == original
+
+@given(instance=notation_StringValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_stringvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_StringValueStyle)
+
+
+
+@given(instance=notation_StringValueStyle_strategy)
+def test_notation_stringvaluestyle_stringValue_setter(instance):
+    original = instance.stringValue
+    instance.stringValue = original
+    assert instance.stringValue == original
+
+@given(instance=notation_DoubleListValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_doublelistvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_DoubleListValueStyle)
+
+
+
+@given(instance=notation_DoubleListValueStyle_strategy)
+def test_notation_doublelistvaluestyle_doubleListValue_setter(instance):
+    original = instance.doubleListValue
+    instance.doubleListValue = original
+    assert instance.doubleListValue == original
+
+@given(instance=notation_DoubleValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_doublevaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_DoubleValueStyle)
+
+
+
+@given(instance=notation_DoubleValueStyle_strategy)
+def test_notation_doublevaluestyle_doubleValue_setter(instance):
+    original = instance.doubleValue
+    instance.doubleValue = original
+    assert instance.doubleValue == original
+
+@given(instance=notation_IntValueStyle_strategy)
+@settings(max_examples=50)
+def test_notation_intvaluestyle_instantiation(instance):
+    assert isinstance(instance, notation_IntValueStyle)
+
+
+
+@given(instance=notation_IntValueStyle_strategy)
+def test_notation_intvaluestyle_intValue_setter(instance):
+    original = instance.intValue
+    instance.intValue = original
+    assert instance.intValue == original
+
+@given(instance=notation_PropertiesSetStyle_strategy)
+@settings(max_examples=50)
+def test_notation_propertiessetstyle_instantiation(instance):
+    assert isinstance(instance, notation_PropertiesSetStyle)
 
 import warnings
 import copy
@@ -4016,103 +3355,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=notation::PropertiesSetStyle_strategy)
+@given(instance=notation_PropertiesSetStyle_strategy)
 @settings(max_examples=30)
-def test_notation::propertiessetstyle_removeproperty_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeProperty(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeProperty).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeProperty' in notation::PropertiesSetStyle is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeProperty' in notation::PropertiesSetStyle did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeProperty' in notation::PropertiesSetStyle is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::PropertiesSetStyle_strategy)
-@settings(max_examples=30)
-def test_notation::propertiessetstyle_setproperty_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setProperty(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setProperty).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setProperty' in notation::PropertiesSetStyle is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setProperty' in notation::PropertiesSetStyle did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setProperty' in notation::PropertiesSetStyle is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::PropertiesSetStyle_strategy)
-@settings(max_examples=30)
-def test_notation::propertiessetstyle_hasproperty_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasProperty(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasProperty).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasProperty' in notation::PropertiesSetStyle is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasProperty' in notation::PropertiesSetStyle did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasProperty' in notation::PropertiesSetStyle is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::PropertiesSetStyle_strategy)
-@settings(max_examples=30)
-def test_notation::propertiessetstyle_createproperty_changes_state(instance):
+def test_notation_propertiessetstyle_createproperty_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4127,37 +3372,128 @@ def test_notation::propertiessetstyle_createproperty_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createProperty' in notation::PropertiesSetStyle is empty"
+        assert has_statements, f"Function 'createProperty' in notation_PropertiesSetStyle is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createProperty' in notation::PropertiesSetStyle did not change state; check implementation")
+            warnings.warn(f"Operation 'createProperty' in notation_PropertiesSetStyle did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createProperty' in notation::PropertiesSetStyle is not implemented or raised an error")
+        warnings.warn(f"Operation 'createProperty' in notation_PropertiesSetStyle is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=notation_PropertiesSetStyle_strategy)
+@settings(max_examples=30)
+def test_notation_propertiessetstyle_hasproperty_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hasProperty(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hasProperty).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hasProperty' in notation_PropertiesSetStyle is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hasProperty' in notation_PropertiesSetStyle did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hasProperty' in notation_PropertiesSetStyle is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=notation_PropertiesSetStyle_strategy)
+@settings(max_examples=30)
+def test_notation_propertiessetstyle_removeproperty_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeProperty(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeProperty).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeProperty' in notation_PropertiesSetStyle is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeProperty' in notation_PropertiesSetStyle did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeProperty' in notation_PropertiesSetStyle is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=notation_PropertiesSetStyle_strategy)
+@settings(max_examples=30)
+def test_notation_propertiessetstyle_setproperty_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setProperty(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setProperty).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setProperty' in notation_PropertiesSetStyle is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setProperty' in notation_PropertiesSetStyle did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setProperty' in notation_PropertiesSetStyle is not implemented or raised an error")
 
 @given(instance=StringObjectConverter_strategy)
 @settings(max_examples=50)
 def test_stringobjectconverter_instantiation(instance):
     assert isinstance(instance, StringObjectConverter)
 
-@given(instance=notation::DataTypeStyle_strategy)
+@given(instance=notation_DataTypeStyle_strategy)
 @settings(max_examples=50)
-def test_notation::datatypestyle_instantiation(instance):
-    assert isinstance(instance, notation::DataTypeStyle)
+def test_notation_datatypestyle_instantiation(instance):
+    assert isinstance(instance, notation_DataTypeStyle)
 
-@given(instance=notation::PropertyValue_strategy)
+@given(instance=notation_PropertyValue_strategy)
 @settings(max_examples=50)
-def test_notation::propertyvalue_instantiation(instance):
-    assert isinstance(instance, notation::PropertyValue)
-
-@given(instance=notation::PropertyValue_strategy)
-def test_notation::propertyvalue_rawValue_type(instance):
-    assert isinstance(instance.rawValue, str)
+def test_notation_propertyvalue_instantiation(instance):
+    assert isinstance(instance, notation_PropertyValue)
 
 
-@given(instance=notation::PropertyValue_strategy)
-def test_notation::propertyvalue_rawValue_setter(instance):
+
+@given(instance=notation_PropertyValue_strategy)
+def test_notation_propertyvalue_rawValue_setter(instance):
     original = instance.rawValue
     instance.rawValue = original
     assert instance.rawValue == original
@@ -4168,9 +3504,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=notation::PropertyValue_strategy)
+@given(instance=notation_PropertyValue_strategy)
 @settings(max_examples=30)
-def test_notation::propertyvalue_setvalue_changes_state(instance):
+def test_notation_propertyvalue_setvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4184,43 +3520,37 @@ def test_notation::propertyvalue_setvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setValue' in notation::PropertyValue is empty"
+        assert has_statements, f"Function 'setValue' in notation_PropertyValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setValue' in notation::PropertyValue did not change state; check implementation")
+            warnings.warn(f"Operation 'setValue' in notation_PropertyValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setValue' in notation::PropertyValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'setValue' in notation_PropertyValue is not implemented or raised an error")
 
-@given(instance=notation::StringToPropertyValueMapEntry_strategy)
+@given(instance=notation_StringToPropertyValueMapEntry_strategy)
 @settings(max_examples=50)
-def test_notation::stringtopropertyvaluemapentry_instantiation(instance):
-    assert isinstance(instance, notation::StringToPropertyValueMapEntry)
-
-@given(instance=notation::StringToPropertyValueMapEntry_strategy)
-def test_notation::stringtopropertyvaluemapentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_notation_stringtopropertyvaluemapentry_instantiation(instance):
+    assert isinstance(instance, notation_StringToPropertyValueMapEntry)
 
 
-@given(instance=notation::StringToPropertyValueMapEntry_strategy)
-def test_notation::stringtopropertyvaluemapentry_key_setter(instance):
+
+@given(instance=notation_StringToPropertyValueMapEntry_strategy)
+def test_notation_stringtopropertyvaluemapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=notation::NodeEntry_strategy)
+@given(instance=notation_NodeEntry_strategy)
 @settings(max_examples=50)
-def test_notation::nodeentry_instantiation(instance):
-    assert isinstance(instance, notation::NodeEntry)
-
-@given(instance=notation::NodeEntry_strategy)
-def test_notation::nodeentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_notation_nodeentry_instantiation(instance):
+    assert isinstance(instance, notation_NodeEntry)
 
 
-@given(instance=notation::NodeEntry_strategy)
-def test_notation::nodeentry_value_setter(instance):
+
+@given(instance=notation_NodeEntry_strategy)
+def test_notation_nodeentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -4230,37 +3560,10 @@ def test_notation::nodeentry_value_setter(instance):
 def test_imagestyle_instantiation(instance):
     assert isinstance(instance, ImageStyle)
 
-@given(instance=notation::ImageBufferStyle_strategy)
+@given(instance=notation_ImageBufferStyle_strategy)
 @settings(max_examples=50)
-def test_notation::imagebufferstyle_instantiation(instance):
-    assert isinstance(instance, notation::ImageBufferStyle)
-
-@given(instance=notation::ImageStyle_strategy)
-@settings(max_examples=50)
-def test_notation::imagestyle_instantiation(instance):
-    assert isinstance(instance, notation::ImageStyle)
-
-@given(instance=notation::ImageStyle_strategy)
-def test_notation::imagestyle_maintainAspectRatio_type(instance):
-    assert isinstance(instance.maintainAspectRatio, str)
-
-
-@given(instance=notation::ImageStyle_strategy)
-def test_notation::imagestyle_maintainAspectRatio_setter(instance):
-    original = instance.maintainAspectRatio
-    instance.maintainAspectRatio = original
-    assert instance.maintainAspectRatio == original
-
-@given(instance=notation::ImageStyle_strategy)
-def test_notation::imagestyle_antiAlias_type(instance):
-    assert isinstance(instance.antiAlias, str)
-
-
-@given(instance=notation::ImageStyle_strategy)
-def test_notation::imagestyle_antiAlias_setter(instance):
-    original = instance.antiAlias
-    instance.antiAlias = original
-    assert instance.antiAlias == original
+def test_notation_imagebufferstyle_instantiation(instance):
+    assert isinstance(instance, notation_ImageBufferStyle)
 
 @given(instance=GuideStyle_strategy)
 @settings(max_examples=50)
@@ -4272,45 +3575,15 @@ def test_guidestyle_instantiation(instance):
 def test_pagestyle_instantiation(instance):
     assert isinstance(instance, PageStyle)
 
-@given(instance=notation::FilteringStyle_strategy)
+@given(instance=notation_Image_strategy)
 @settings(max_examples=50)
-def test_notation::filteringstyle_instantiation(instance):
-    assert isinstance(instance, notation::FilteringStyle)
-
-@given(instance=notation::FilteringStyle_strategy)
-def test_notation::filteringstyle_filtering_type(instance):
-    assert isinstance(instance.filtering, str)
+def test_notation_image_instantiation(instance):
+    assert isinstance(instance, notation_Image)
 
 
-@given(instance=notation::FilteringStyle_strategy)
-def test_notation::filteringstyle_filtering_setter(instance):
-    original = instance.filtering
-    instance.filtering = original
-    assert instance.filtering == original
 
-@given(instance=notation::FilteringStyle_strategy)
-def test_notation::filteringstyle_filteringKeys_type(instance):
-    assert isinstance(instance.filteringKeys, str)
-
-
-@given(instance=notation::FilteringStyle_strategy)
-def test_notation::filteringstyle_filteringKeys_setter(instance):
-    original = instance.filteringKeys
-    instance.filteringKeys = original
-    assert instance.filteringKeys == original
-
-@given(instance=notation::Image_strategy)
-@settings(max_examples=50)
-def test_notation::image_instantiation(instance):
-    assert isinstance(instance, notation::Image)
-
-@given(instance=notation::Image_strategy)
-def test_notation::image_data_type(instance):
-    assert isinstance(instance.data, str)
-
-
-@given(instance=notation::Image_strategy)
-def test_notation::image_data_setter(instance):
+@given(instance=notation_Image_strategy)
+def test_notation_image_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
@@ -4320,107 +3593,31 @@ def test_notation::image_data_setter(instance):
 def test_bendpoints_instantiation(instance):
     assert isinstance(instance, Bendpoints)
 
-@given(instance=notation::RelativeBendpoints_strategy)
+@given(instance=notation_RelativeBendpoints_strategy)
 @settings(max_examples=50)
-def test_notation::relativebendpoints_instantiation(instance):
-    assert isinstance(instance, notation::RelativeBendpoints)
-
-@given(instance=notation::RelativeBendpoints_strategy)
-def test_notation::relativebendpoints_points_type(instance):
-    assert isinstance(instance.points, str)
+def test_notation_relativebendpoints_instantiation(instance):
+    assert isinstance(instance, notation_RelativeBendpoints)
 
 
-@given(instance=notation::RelativeBendpoints_strategy)
-def test_notation::relativebendpoints_points_setter(instance):
+
+@given(instance=notation_RelativeBendpoints_strategy)
+def test_notation_relativebendpoints_points_setter(instance):
     original = instance.points
     instance.points = original
     assert instance.points == original
 
-@given(instance=notation::Guide_strategy)
+@given(instance=notation_Guide_strategy)
 @settings(max_examples=50)
-def test_notation::guide_instantiation(instance):
-    assert isinstance(instance, notation::Guide)
-
-@given(instance=notation::Guide_strategy)
-def test_notation::guide_position_type(instance):
-    assert isinstance(instance.position, int)
+def test_notation_guide_instantiation(instance):
+    assert isinstance(instance, notation_Guide)
 
 
-@given(instance=notation::Guide_strategy)
-def test_notation::guide_position_setter(instance):
+
+@given(instance=notation_Guide_strategy)
+def test_notation_guide_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
-
-@given(instance=notation::GuideStyle_strategy)
-@settings(max_examples=50)
-def test_notation::guidestyle_instantiation(instance):
-    assert isinstance(instance, notation::GuideStyle)
-
-@given(instance=notation::DrawerStyle_strategy)
-@settings(max_examples=50)
-def test_notation::drawerstyle_instantiation(instance):
-    assert isinstance(instance, notation::DrawerStyle)
-
-@given(instance=notation::DrawerStyle_strategy)
-def test_notation::drawerstyle_collapsed_type(instance):
-    assert isinstance(instance.collapsed, bool)
-
-
-@given(instance=notation::DrawerStyle_strategy)
-def test_notation::drawerstyle_collapsed_setter(instance):
-    original = instance.collapsed
-    instance.collapsed = original
-    assert instance.collapsed == original
-
-@given(instance=notation::PageStyle_strategy)
-@settings(max_examples=50)
-def test_notation::pagestyle_instantiation(instance):
-    assert isinstance(instance, notation::PageStyle)
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageWidth_type(instance):
-    assert isinstance(instance.pageWidth, int)
-
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageWidth_setter(instance):
-    original = instance.pageWidth
-    instance.pageWidth = original
-    assert instance.pageWidth == original
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageY_type(instance):
-    assert isinstance(instance.pageY, int)
-
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageY_setter(instance):
-    original = instance.pageY
-    instance.pageY = original
-    assert instance.pageY == original
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageHeight_type(instance):
-    assert isinstance(instance.pageHeight, int)
-
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageHeight_setter(instance):
-    original = instance.pageHeight
-    instance.pageHeight = original
-    assert instance.pageHeight == original
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageX_type(instance):
-    assert isinstance(instance.pageX, int)
-
-
-@given(instance=notation::PageStyle_strategy)
-def test_notation::pagestyle_pageX_setter(instance):
-    original = instance.pageX
-    instance.pageX = original
-    assert instance.pageX == original
 
 @given(instance=RoutingStyle_strategy)
 @settings(max_examples=50)
@@ -4432,10 +3629,10 @@ def test_routingstyle_instantiation(instance):
 def test_linestyle_instantiation(instance):
     assert isinstance(instance, LineStyle)
 
-@given(instance=notation::ConnectorStyle_strategy)
+@given(instance=notation_ConnectorStyle_strategy)
 @settings(max_examples=50)
-def test_notation::connectorstyle_instantiation(instance):
-    assert isinstance(instance, notation::ConnectorStyle)
+def test_notation_connectorstyle_instantiation(instance):
+    assert isinstance(instance, notation_ConnectorStyle)
 
 @given(instance=FillStyle_strategy)
 @settings(max_examples=50)
@@ -4447,76 +3644,604 @@ def test_fillstyle_instantiation(instance):
 def test_descriptionstyle_instantiation(instance):
     assert isinstance(instance, DescriptionStyle)
 
-@given(instance=notation::DiagramStyle_strategy)
+@given(instance=notation_DiagramStyle_strategy)
 @settings(max_examples=50)
-def test_notation::diagramstyle_instantiation(instance):
-    assert isinstance(instance, notation::DiagramStyle)
+def test_notation_diagramstyle_instantiation(instance):
+    assert isinstance(instance, notation_DiagramStyle)
 
 @given(instance=FontStyle_strategy)
 @settings(max_examples=50)
 def test_fontstyle_instantiation(instance):
     assert isinstance(instance, FontStyle)
 
-@given(instance=notation::ShapeStyle_strategy)
-@settings(max_examples=50)
-def test_notation::shapestyle_instantiation(instance):
-    assert isinstance(instance, notation::ShapeStyle)
-
-@given(instance=notation::CanonicalStyle_strategy)
-@settings(max_examples=50)
-def test_notation::canonicalstyle_instantiation(instance):
-    assert isinstance(instance, notation::CanonicalStyle)
-
-@given(instance=notation::CanonicalStyle_strategy)
-def test_notation::canonicalstyle_canonical_type(instance):
-    assert isinstance(instance.canonical, bool)
-
-
-@given(instance=notation::CanonicalStyle_strategy)
-def test_notation::canonicalstyle_canonical_setter(instance):
-    original = instance.canonical
-    instance.canonical = original
-    assert instance.canonical == original
-
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=notation::View_strategy)
+@given(instance=Size_strategy)
 @settings(max_examples=50)
-def test_notation::view_instantiation(instance):
-    assert isinstance(instance, notation::View)
+def test_size_instantiation(instance):
+    assert isinstance(instance, Size)
 
-@given(instance=notation::View_strategy)
-def test_notation::view_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=Location_strategy)
+@settings(max_examples=50)
+def test_location_instantiation(instance):
+    assert isinstance(instance, Location)
+
+@given(instance=notation_Bounds_strategy)
+@settings(max_examples=50)
+def test_notation_bounds_instantiation(instance):
+    assert isinstance(instance, notation_Bounds)
+
+@given(instance=LayoutConstraint_strategy)
+@settings(max_examples=50)
+def test_layoutconstraint_instantiation(instance):
+    assert isinstance(instance, LayoutConstraint)
+
+@given(instance=notation_Location_strategy)
+@settings(max_examples=50)
+def test_notation_location_instantiation(instance):
+    assert isinstance(instance, notation_Location)
 
 
-@given(instance=notation::View_strategy)
-def test_notation::view_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=notation::View_strategy)
-def test_notation::view_visible_type(instance):
-    assert isinstance(instance.visible, bool)
+@given(instance=notation_Location_strategy)
+def test_notation_location_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
 
 
-@given(instance=notation::View_strategy)
-def test_notation::view_visible_setter(instance):
+
+@given(instance=notation_Location_strategy)
+def test_notation_location_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=notation_Ratio_strategy)
+@settings(max_examples=50)
+def test_notation_ratio_instantiation(instance):
+    assert isinstance(instance, notation_Ratio)
+
+
+
+@given(instance=notation_Ratio_strategy)
+def test_notation_ratio_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=notation_Size_strategy)
+@settings(max_examples=50)
+def test_notation_size_instantiation(instance):
+    assert isinstance(instance, notation_Size)
+
+
+
+@given(instance=notation_Size_strategy)
+def test_notation_size_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=notation_Size_strategy)
+def test_notation_size_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+@given(instance=RoundedCornersStyle_strategy)
+@settings(max_examples=50)
+def test_roundedcornersstyle_instantiation(instance):
+    assert isinstance(instance, RoundedCornersStyle)
+
+@given(instance=notation_ShapeStyle_strategy)
+@settings(max_examples=50)
+def test_notation_shapestyle_instantiation(instance):
+    assert isinstance(instance, notation_ShapeStyle)
+
+@given(instance=notation_RoutingStyle_strategy)
+@settings(max_examples=50)
+def test_notation_routingstyle_instantiation(instance):
+    assert isinstance(instance, notation_RoutingStyle)
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_avoidObstructions_setter(instance):
+    original = instance.avoidObstructions
+    instance.avoidObstructions = original
+    assert instance.avoidObstructions == original
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_routing_setter(instance):
+    original = instance.routing
+    instance.routing = original
+    assert instance.routing == original
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_jumpLinkType_setter(instance):
+    original = instance.jumpLinkType
+    instance.jumpLinkType = original
+    assert instance.jumpLinkType == original
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_smoothness_setter(instance):
+    original = instance.smoothness
+    instance.smoothness = original
+    assert instance.smoothness == original
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_jumpLinkStatus_setter(instance):
+    original = instance.jumpLinkStatus
+    instance.jumpLinkStatus = original
+    assert instance.jumpLinkStatus == original
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_jumpLinksReverse_setter(instance):
+    original = instance.jumpLinksReverse
+    instance.jumpLinksReverse = original
+    assert instance.jumpLinksReverse == original
+
+
+
+@given(instance=notation_RoutingStyle_strategy)
+def test_notation_routingstyle_closestDistance_setter(instance):
+    original = instance.closestDistance
+    instance.closestDistance = original
+    assert instance.closestDistance == original
+
+@given(instance=Anchor_strategy)
+@settings(max_examples=50)
+def test_anchor_instantiation(instance):
+    assert isinstance(instance, Anchor)
+
+@given(instance=notation_IdentityAnchor_strategy)
+@settings(max_examples=50)
+def test_notation_identityanchor_instantiation(instance):
+    assert isinstance(instance, notation_IdentityAnchor)
+
+
+
+@given(instance=notation_IdentityAnchor_strategy)
+def test_notation_identityanchor_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=notation_Style_strategy)
+@settings(max_examples=50)
+def test_notation_style_instantiation(instance):
+    assert isinstance(instance, notation_Style)
+
+@given(instance=notation_LayoutConstraint_strategy)
+@settings(max_examples=50)
+def test_notation_layoutconstraint_instantiation(instance):
+    assert isinstance(instance, notation_LayoutConstraint)
+
+@given(instance=notation_Anchor_strategy)
+@settings(max_examples=50)
+def test_notation_anchor_instantiation(instance):
+    assert isinstance(instance, notation_Anchor)
+
+@given(instance=notation_Bendpoints_strategy)
+@settings(max_examples=50)
+def test_notation_bendpoints_instantiation(instance):
+    assert isinstance(instance, notation_Bendpoints)
+
+@given(instance=notation_EObject_strategy)
+@settings(max_examples=50)
+def test_notation_eobject_instantiation(instance):
+    assert isinstance(instance, notation_EObject)
+
+@given(instance=Style_strategy)
+@settings(max_examples=50)
+def test_style_instantiation(instance):
+    assert isinstance(instance, Style)
+
+@given(instance=notation_FilteringStyle_strategy)
+@settings(max_examples=50)
+def test_notation_filteringstyle_instantiation(instance):
+    assert isinstance(instance, notation_FilteringStyle)
+
+
+
+@given(instance=notation_FilteringStyle_strategy)
+def test_notation_filteringstyle_filteringKeys_setter(instance):
+    original = instance.filteringKeys
+    instance.filteringKeys = original
+    assert instance.filteringKeys == original
+
+
+
+@given(instance=notation_FilteringStyle_strategy)
+def test_notation_filteringstyle_filtering_setter(instance):
+    original = instance.filtering
+    instance.filtering = original
+    assert instance.filtering == original
+
+@given(instance=notation_FontStyle_strategy)
+@settings(max_examples=50)
+def test_notation_fontstyle_instantiation(instance):
+    assert isinstance(instance, notation_FontStyle)
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_italic_setter(instance):
+    original = instance.italic
+    instance.italic = original
+    assert instance.italic == original
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_bold_setter(instance):
+    original = instance.bold
+    instance.bold = original
+    assert instance.bold == original
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_underline_setter(instance):
+    original = instance.underline
+    instance.underline = original
+    assert instance.underline == original
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_fontColor_setter(instance):
+    original = instance.fontColor
+    instance.fontColor = original
+    assert instance.fontColor == original
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_fontHeight_setter(instance):
+    original = instance.fontHeight
+    instance.fontHeight = original
+    assert instance.fontHeight == original
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_strikeThrough_setter(instance):
+    original = instance.strikeThrough
+    instance.strikeThrough = original
+    assert instance.strikeThrough == original
+
+
+
+@given(instance=notation_FontStyle_strategy)
+def test_notation_fontstyle_fontName_setter(instance):
+    original = instance.fontName
+    instance.fontName = original
+    assert instance.fontName == original
+
+@given(instance=notation_RoundedCornersStyle_strategy)
+@settings(max_examples=50)
+def test_notation_roundedcornersstyle_instantiation(instance):
+    assert isinstance(instance, notation_RoundedCornersStyle)
+
+
+
+@given(instance=notation_RoundedCornersStyle_strategy)
+def test_notation_roundedcornersstyle_roundedBendpointsRadius_setter(instance):
+    original = instance.roundedBendpointsRadius
+    instance.roundedBendpointsRadius = original
+    assert instance.roundedBendpointsRadius == original
+
+@given(instance=notation_GuideStyle_strategy)
+@settings(max_examples=50)
+def test_notation_guidestyle_instantiation(instance):
+    assert isinstance(instance, notation_GuideStyle)
+
+@given(instance=notation_CanonicalStyle_strategy)
+@settings(max_examples=50)
+def test_notation_canonicalstyle_instantiation(instance):
+    assert isinstance(instance, notation_CanonicalStyle)
+
+
+
+@given(instance=notation_CanonicalStyle_strategy)
+def test_notation_canonicalstyle_canonical_setter(instance):
+    original = instance.canonical
+    instance.canonical = original
+    assert instance.canonical == original
+
+@given(instance=notation_ImageStyle_strategy)
+@settings(max_examples=50)
+def test_notation_imagestyle_instantiation(instance):
+    assert isinstance(instance, notation_ImageStyle)
+
+
+
+@given(instance=notation_ImageStyle_strategy)
+def test_notation_imagestyle_maintainAspectRatio_setter(instance):
+    original = instance.maintainAspectRatio
+    instance.maintainAspectRatio = original
+    assert instance.maintainAspectRatio == original
+
+
+
+@given(instance=notation_ImageStyle_strategy)
+def test_notation_imagestyle_antiAlias_setter(instance):
+    original = instance.antiAlias
+    instance.antiAlias = original
+    assert instance.antiAlias == original
+
+@given(instance=notation_LineTypeStyle_strategy)
+@settings(max_examples=50)
+def test_notation_linetypestyle_instantiation(instance):
+    assert isinstance(instance, notation_LineTypeStyle)
+
+
+
+@given(instance=notation_LineTypeStyle_strategy)
+def test_notation_linetypestyle_lineType_setter(instance):
+    original = instance.lineType
+    instance.lineType = original
+    assert instance.lineType == original
+
+@given(instance=notation_MultiDiagramLinkStyle_strategy)
+@settings(max_examples=50)
+def test_notation_multidiagramlinkstyle_instantiation(instance):
+    assert isinstance(instance, notation_MultiDiagramLinkStyle)
+
+@given(instance=notation_ArrowStyle_strategy)
+@settings(max_examples=50)
+def test_notation_arrowstyle_instantiation(instance):
+    assert isinstance(instance, notation_ArrowStyle)
+
+
+
+@given(instance=notation_ArrowStyle_strategy)
+def test_notation_arrowstyle_arrowSource_setter(instance):
+    original = instance.arrowSource
+    instance.arrowSource = original
+    assert instance.arrowSource == original
+
+
+
+@given(instance=notation_ArrowStyle_strategy)
+def test_notation_arrowstyle_arrowTarget_setter(instance):
+    original = instance.arrowTarget
+    instance.arrowTarget = original
+    assert instance.arrowTarget == original
+
+@given(instance=notation_TitleStyle_strategy)
+@settings(max_examples=50)
+def test_notation_titlestyle_instantiation(instance):
+    assert isinstance(instance, notation_TitleStyle)
+
+
+
+@given(instance=notation_TitleStyle_strategy)
+def test_notation_titlestyle_showTitle_setter(instance):
+    original = instance.showTitle
+    instance.showTitle = original
+    assert instance.showTitle == original
+
+@given(instance=notation_NamedStyle_strategy)
+@settings(max_examples=50)
+def test_notation_namedstyle_instantiation(instance):
+    assert isinstance(instance, notation_NamedStyle)
+
+
+
+@given(instance=notation_NamedStyle_strategy)
+def test_notation_namedstyle_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=notation_LineStyle_strategy)
+@settings(max_examples=50)
+def test_notation_linestyle_instantiation(instance):
+    assert isinstance(instance, notation_LineStyle)
+
+
+
+@given(instance=notation_LineStyle_strategy)
+def test_notation_linestyle_lineWidth_setter(instance):
+    original = instance.lineWidth
+    instance.lineWidth = original
+    assert instance.lineWidth == original
+
+
+
+@given(instance=notation_LineStyle_strategy)
+def test_notation_linestyle_lineColor_setter(instance):
+    original = instance.lineColor
+    instance.lineColor = original
+    assert instance.lineColor == original
+
+@given(instance=notation_DescriptionStyle_strategy)
+@settings(max_examples=50)
+def test_notation_descriptionstyle_instantiation(instance):
+    assert isinstance(instance, notation_DescriptionStyle)
+
+
+
+@given(instance=notation_DescriptionStyle_strategy)
+def test_notation_descriptionstyle_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=notation_HintedDiagramLinkStyle_strategy)
+@settings(max_examples=50)
+def test_notation_hinteddiagramlinkstyle_instantiation(instance):
+    assert isinstance(instance, notation_HintedDiagramLinkStyle)
+
+
+
+@given(instance=notation_HintedDiagramLinkStyle_strategy)
+def test_notation_hinteddiagramlinkstyle_hint_setter(instance):
+    original = instance.hint
+    instance.hint = original
+    assert instance.hint == original
+
+@given(instance=notation_DiagramLinkStyle_strategy)
+@settings(max_examples=50)
+def test_notation_diagramlinkstyle_instantiation(instance):
+    assert isinstance(instance, notation_DiagramLinkStyle)
+
+@given(instance=notation_DrawerStyle_strategy)
+@settings(max_examples=50)
+def test_notation_drawerstyle_instantiation(instance):
+    assert isinstance(instance, notation_DrawerStyle)
+
+
+
+@given(instance=notation_DrawerStyle_strategy)
+def test_notation_drawerstyle_collapsed_setter(instance):
+    original = instance.collapsed
+    instance.collapsed = original
+    assert instance.collapsed == original
+
+@given(instance=notation_TextStyle_strategy)
+@settings(max_examples=50)
+def test_notation_textstyle_instantiation(instance):
+    assert isinstance(instance, notation_TextStyle)
+
+
+
+@given(instance=notation_TextStyle_strategy)
+def test_notation_textstyle_textAlignment_setter(instance):
+    original = instance.textAlignment
+    instance.textAlignment = original
+    assert instance.textAlignment == original
+
+@given(instance=notation_PageStyle_strategy)
+@settings(max_examples=50)
+def test_notation_pagestyle_instantiation(instance):
+    assert isinstance(instance, notation_PageStyle)
+
+
+
+@given(instance=notation_PageStyle_strategy)
+def test_notation_pagestyle_pageWidth_setter(instance):
+    original = instance.pageWidth
+    instance.pageWidth = original
+    assert instance.pageWidth == original
+
+
+
+@given(instance=notation_PageStyle_strategy)
+def test_notation_pagestyle_pageY_setter(instance):
+    original = instance.pageY
+    instance.pageY = original
+    assert instance.pageY == original
+
+
+
+@given(instance=notation_PageStyle_strategy)
+def test_notation_pagestyle_pageX_setter(instance):
+    original = instance.pageX
+    instance.pageX = original
+    assert instance.pageX == original
+
+
+
+@given(instance=notation_PageStyle_strategy)
+def test_notation_pagestyle_pageHeight_setter(instance):
+    original = instance.pageHeight
+    instance.pageHeight = original
+    assert instance.pageHeight == original
+
+@given(instance=notation_SortingStyle_strategy)
+@settings(max_examples=50)
+def test_notation_sortingstyle_instantiation(instance):
+    assert isinstance(instance, notation_SortingStyle)
+
+
+
+@given(instance=notation_SortingStyle_strategy)
+def test_notation_sortingstyle_sorting_setter(instance):
+    original = instance.sorting
+    instance.sorting = original
+    assert instance.sorting == original
+
+
+
+@given(instance=notation_SortingStyle_strategy)
+def test_notation_sortingstyle_sortingKeys_setter(instance):
+    original = instance.sortingKeys
+    instance.sortingKeys = original
+    assert instance.sortingKeys == original
+
+@given(instance=notation_FillStyle_strategy)
+@settings(max_examples=50)
+def test_notation_fillstyle_instantiation(instance):
+    assert isinstance(instance, notation_FillStyle)
+
+
+
+@given(instance=notation_FillStyle_strategy)
+def test_notation_fillstyle_fillColor_setter(instance):
+    original = instance.fillColor
+    instance.fillColor = original
+    assert instance.fillColor == original
+
+
+
+@given(instance=notation_FillStyle_strategy)
+def test_notation_fillstyle_transparency_setter(instance):
+    original = instance.transparency
+    instance.transparency = original
+    assert instance.transparency == original
+
+
+
+@given(instance=notation_FillStyle_strategy)
+def test_notation_fillstyle_gradient_setter(instance):
+    original = instance.gradient
+    instance.gradient = original
+    assert instance.gradient == original
+
+@given(instance=notation_View_strategy)
+@settings(max_examples=50)
+def test_notation_view_instantiation(instance):
+    assert isinstance(instance, notation_View)
+
+
+
+@given(instance=notation_View_strategy)
+def test_notation_view_visible_setter(instance):
     original = instance.visible
     instance.visible = original
     assert instance.visible == original
 
-@given(instance=notation::View_strategy)
-def test_notation::view_mutable_type(instance):
-    assert isinstance(instance.mutable, bool)
 
 
-@given(instance=notation::View_strategy)
-def test_notation::view_mutable_setter(instance):
+@given(instance=notation_View_strategy)
+def test_notation_view_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=notation_View_strategy)
+def test_notation_view_mutable_setter(instance):
     original = instance.mutable
     instance.mutable = original
     assert instance.mutable == original
@@ -4527,40 +4252,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=notation::View_strategy)
+@given(instance=notation_View_strategy)
 @settings(max_examples=30)
-def test_notation::view_createchild_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createChild(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createChild).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createChild' in notation::View is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createChild' in notation::View did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createChild' in notation::View is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=notation::View_strategy)
-@settings(max_examples=30)
-def test_notation::view_createstyle_changes_state(instance):
+def test_notation_view_createstyle_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4574,41 +4268,14 @@ def test_notation::view_createstyle_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createStyle' in notation::View is empty"
+        assert has_statements, f"Function 'createStyle' in notation_View is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createStyle' in notation::View did not change state; check implementation")
+            warnings.warn(f"Operation 'createStyle' in notation_View did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createStyle' in notation::View is not implemented or raised an error")
-
-@given(instance=notation::Diagram_strategy)
-@settings(max_examples=50)
-def test_notation::diagram_instantiation(instance):
-    assert isinstance(instance, notation::Diagram)
-
-@given(instance=notation::Diagram_strategy)
-def test_notation::diagram_measurementUnit_type(instance):
-    assert isinstance(instance.measurementUnit, str)
-
-
-@given(instance=notation::Diagram_strategy)
-def test_notation::diagram_measurementUnit_setter(instance):
-    original = instance.measurementUnit
-    instance.measurementUnit = original
-    assert instance.measurementUnit == original
-
-@given(instance=notation::Diagram_strategy)
-def test_notation::diagram_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=notation::Diagram_strategy)
-def test_notation::diagram_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+        warnings.warn(f"Operation 'createStyle' in notation_View is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4616,9 +4283,102 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=notation::Diagram_strategy)
+@given(instance=notation_View_strategy)
 @settings(max_examples=30)
-def test_notation::diagram_createedge_changes_state(instance):
+def test_notation_view_createchild_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createChild(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createChild).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createChild' in notation_View is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createChild' in notation_View did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createChild' in notation_View is not implemented or raised an error")
+
+@given(instance=View_strategy)
+@settings(max_examples=50)
+def test_view_instantiation(instance):
+    assert isinstance(instance, View)
+
+@given(instance=notation_Node_strategy)
+@settings(max_examples=50)
+def test_notation_node_instantiation(instance):
+    assert isinstance(instance, notation_Node)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=notation_Node_strategy)
+@settings(max_examples=30)
+def test_notation_node_createlayoutconstraint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createLayoutConstraint(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createLayoutConstraint).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createLayoutConstraint' in notation_Node is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createLayoutConstraint' in notation_Node did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createLayoutConstraint' in notation_Node is not implemented or raised an error")
+
+@given(instance=notation_Diagram_strategy)
+@settings(max_examples=50)
+def test_notation_diagram_instantiation(instance):
+    assert isinstance(instance, notation_Diagram)
+
+
+
+@given(instance=notation_Diagram_strategy)
+def test_notation_diagram_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=notation_Diagram_strategy)
+def test_notation_diagram_measurementUnit_setter(instance):
+    original = instance.measurementUnit
+    instance.measurementUnit = original
+    assert instance.measurementUnit == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=notation_Diagram_strategy)
+@settings(max_examples=30)
+def test_notation_diagram_createedge_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4632,42 +4392,78 @@ def test_notation::diagram_createedge_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createEdge' in notation::Diagram is empty"
+        assert has_statements, f"Function 'createEdge' in notation_Diagram is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createEdge' in notation::Diagram did not change state; check implementation")
+            warnings.warn(f"Operation 'createEdge' in notation_Diagram did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createEdge' in notation::Diagram is not implemented or raised an error")
+        warnings.warn(f"Operation 'createEdge' in notation_Diagram is not implemented or raised an error")
 
-@given(instance=notation::Ratio_strategy)
+@given(instance=notation_Edge_strategy)
 @settings(max_examples=50)
-def test_notation::ratio_instantiation(instance):
-    assert isinstance(instance, notation::Ratio)
+def test_notation_edge_instantiation(instance):
+    assert isinstance(instance, notation_Edge)
 
-@given(instance=notation::Ratio_strategy)
-def test_notation::ratio_value_type(instance):
-    assert isinstance(instance.value, float)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
+@given(instance=notation_Edge_strategy)
+@settings(max_examples=30)
+def test_notation_edge_createbendpoints_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createBendpoints(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createBendpoints).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createBendpoints' in notation_Edge is empty"
 
-@given(instance=notation::Ratio_strategy)
-def test_notation::ratio_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createBendpoints' in notation_Edge did not change state; check implementation")
 
-@given(instance=Size_strategy)
-@settings(max_examples=50)
-def test_size_instantiation(instance):
-    assert isinstance(instance, Size)
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createBendpoints' in notation_Edge is not implemented or raised an error")
 
-@given(instance=Location_strategy)
-@settings(max_examples=50)
-def test_location_instantiation(instance):
-    assert isinstance(instance, Location)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=notation::Bounds_strategy)
-@settings(max_examples=50)
-def test_notation::bounds_instantiation(instance):
-    assert isinstance(instance, notation::Bounds)
+@given(instance=notation_Edge_strategy)
+@settings(max_examples=30)
+def test_notation_edge_createsourceanchor_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createSourceAnchor(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createSourceAnchor).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createSourceAnchor' in notation_Edge is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createSourceAnchor' in notation_Edge did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createSourceAnchor' in notation_Edge is not implemented or raised an error")

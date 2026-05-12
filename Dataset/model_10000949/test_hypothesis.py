@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Search_pet_accessories_UseCase,
@@ -361,17 +361,8 @@ def test_medeina_constructor_exists():
 def test_medeina_constructor_args():
     sig = inspect.signature(Medeina.__init__)
     params = list(sig.parameters.keys())
-    assert "blackList_User_" in params, "Missing parameter 'blackList_User_'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_medeina_has_blackList_User_():
-    assert hasattr(Medeina, "blackList_User_")
-    descriptor = None
-    for klass in Medeina.__mro__:
-        if "blackList_User_" in klass.__dict__:
-            descriptor = klass.__dict__["blackList_User_"]
-            break
-    assert isinstance(descriptor, property)
+    assert "blackList_User_" in params, "Missing parameter 'blackList_User_'"
 
 def test_medeina_has_attribute():
     assert hasattr(Medeina, "attribute")
@@ -379,6 +370,15 @@ def test_medeina_has_attribute():
     for klass in Medeina.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_medeina_has_blackList_User_():
+    assert hasattr(Medeina, "blackList_User_")
+    descriptor = None
+    for klass in Medeina.__mro__:
+        if "blackList_User_" in klass.__dict__:
+            descriptor = klass.__dict__["blackList_User_"]
             break
     assert isinstance(descriptor, property)
 
@@ -447,17 +447,8 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "lastName" in params, "Missing parameter 'lastName'"
-
-def test_user_has_name():
-    assert hasattr(User, "name")
-    descriptor = None
-    for klass in User.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_user_has_lastName():
     assert hasattr(User, "lastName")
@@ -465,6 +456,15 @@ def test_user_has_lastName():
     for klass in User.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_name():
+    assert hasattr(User, "name")
+    descriptor = None
+    for klass in User.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -481,27 +481,27 @@ def test_pet_constructor_exists():
 def test_pet_constructor_args():
     sig = inspect.signature(Pet.__init__)
     params = list(sig.parameters.keys())
-    assert "state" in params, "Missing parameter 'state'"
-    assert "phone" in params, "Missing parameter 'phone'"
-    assert "place" in params, "Missing parameter 'place'"
-    assert "stray" in params, "Missing parameter 'stray'"
-    assert "color" in params, "Missing parameter 'color'"
-    assert "reward" in params, "Missing parameter 'reward'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "breed" in params, "Missing parameter 'breed'"
-    assert "date" in params, "Missing parameter 'date'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "picture" in params, "Missing parameter 'picture'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "phone" in params, "Missing parameter 'phone'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "reward" in params, "Missing parameter 'reward'"
     assert "chipID" in params, "Missing parameter 'chipID'"
+    assert "stray" in params, "Missing parameter 'stray'"
+    assert "picture" in params, "Missing parameter 'picture'"
+    assert "breed" in params, "Missing parameter 'breed'"
+    assert "state" in params, "Missing parameter 'state'"
     assert "notes" in params, "Missing parameter 'notes'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "date" in params, "Missing parameter 'date'"
+    assert "place" in params, "Missing parameter 'place'"
 
-def test_pet_has_state():
-    assert hasattr(Pet, "state")
+def test_pet_has_email():
+    assert hasattr(Pet, "email")
     descriptor = None
     for klass in Pet.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -514,39 +514,12 @@ def test_pet_has_phone():
             break
     assert isinstance(descriptor, property)
 
-def test_pet_has_place():
-    assert hasattr(Pet, "place")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "place" in klass.__dict__:
-            descriptor = klass.__dict__["place"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pet_has_stray():
-    assert hasattr(Pet, "stray")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "stray" in klass.__dict__:
-            descriptor = klass.__dict__["stray"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_pet_has_color():
     assert hasattr(Pet, "color")
     descriptor = None
     for klass in Pet.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pet_has_reward():
-    assert hasattr(Pet, "reward")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "reward" in klass.__dict__:
-            descriptor = klass.__dict__["reward"]
             break
     assert isinstance(descriptor, property)
 
@@ -559,48 +532,12 @@ def test_pet_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_pet_has_breed():
-    assert hasattr(Pet, "breed")
+def test_pet_has_reward():
+    assert hasattr(Pet, "reward")
     descriptor = None
     for klass in Pet.__mro__:
-        if "breed" in klass.__dict__:
-            descriptor = klass.__dict__["breed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pet_has_date():
-    assert hasattr(Pet, "date")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pet_has_type():
-    assert hasattr(Pet, "type")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pet_has_picture():
-    assert hasattr(Pet, "picture")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "picture" in klass.__dict__:
-            descriptor = klass.__dict__["picture"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pet_has_email():
-    assert hasattr(Pet, "email")
-    descriptor = None
-    for klass in Pet.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
+        if "reward" in klass.__dict__:
+            descriptor = klass.__dict__["reward"]
             break
     assert isinstance(descriptor, property)
 
@@ -613,12 +550,75 @@ def test_pet_has_chipID():
             break
     assert isinstance(descriptor, property)
 
+def test_pet_has_stray():
+    assert hasattr(Pet, "stray")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "stray" in klass.__dict__:
+            descriptor = klass.__dict__["stray"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pet_has_picture():
+    assert hasattr(Pet, "picture")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "picture" in klass.__dict__:
+            descriptor = klass.__dict__["picture"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pet_has_breed():
+    assert hasattr(Pet, "breed")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "breed" in klass.__dict__:
+            descriptor = klass.__dict__["breed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pet_has_state():
+    assert hasattr(Pet, "state")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_pet_has_notes():
     assert hasattr(Pet, "notes")
     descriptor = None
     for klass in Pet.__mro__:
         if "notes" in klass.__dict__:
             descriptor = klass.__dict__["notes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pet_has_type():
+    assert hasattr(Pet, "type")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pet_has_date():
+    assert hasattr(Pet, "date")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pet_has_place():
+    assert hasattr(Pet, "place")
+    descriptor = None
+    for klass in Pet.__mro__:
+        if "place" in klass.__dict__:
+            descriptor = klass.__dict__["place"]
             break
     assert isinstance(descriptor, property)
 
@@ -702,10 +702,10 @@ Logging_into_web_UseCase_strategy = st.builds(
 )
 Medeina_strategy = st.builds(
     Medeina,
-    blackList_User_=
-        st.none(),
     attribute=
-        safe_text
+        safe_text,
+    blackList_User_=
+        st.none()
 )
 Administrator_Actor_strategy = st.builds(
     Administrator_Actor,
@@ -720,40 +720,40 @@ Organization_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    name=
-        safe_text,
     lastName=
+        safe_text,
+    name=
         safe_text
 )
 Pet_strategy = st.builds(
     Pet,
-    state=
+    email=
         safe_text,
     phone=
         safe_text,
-    place=
-        safe_text,
-    stray=
-        st.booleans(),
     color=
+        safe_text,
+    name=
         safe_text,
     reward=
         st.integers(),
-    name=
+    chipID=
+        safe_text,
+    stray=
+        st.booleans(),
+    picture=
         safe_text,
     breed=
         safe_text,
-    date=
-        st.dates(),
-    type=
-        safe_text,
-    picture=
-        safe_text,
-    email=
-        safe_text,
-    chipID=
+    state=
         safe_text,
     notes=
+        safe_text,
+    type=
+        safe_text,
+    date=
+        st.dates(),
+    place=
         safe_text
 )
 
@@ -872,20 +872,6 @@ def test_logging_into_web_usecase_instantiation(instance):
 def test_medeina_instantiation(instance):
     assert isinstance(instance, Medeina)
 
-@given(instance=Medeina_strategy)
-def test_medeina_blackList_User__type(instance):
-    assert isinstance(instance.blackList_User_, user)
-
-
-@given(instance=Medeina_strategy)
-def test_medeina_blackList_User__setter(instance):
-    original = instance.blackList_User_
-    instance.blackList_User_ = original
-    assert instance.blackList_User_ == original
-
-@given(instance=Medeina_strategy)
-def test_medeina_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Medeina_strategy)
@@ -893,6 +879,14 @@ def test_medeina_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Medeina_strategy)
+def test_medeina_blackList_User__setter(instance):
+    original = instance.blackList_User_
+    instance.blackList_User_ = original
+    assert instance.blackList_User_ == original
 
 @given(instance=Administrator_Actor_strategy)
 @settings(max_examples=50)
@@ -909,9 +903,6 @@ def test_user_actor_instantiation(instance):
 def test_organization_instantiation(instance):
     assert isinstance(instance, Organization)
 
-@given(instance=Organization_strategy)
-def test_organization_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Organization_strategy)
@@ -925,20 +916,6 @@ def test_organization_name_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=User_strategy)
-def test_user_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=User_strategy)
-def test_user_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
 
 
 @given(instance=User_strategy)
@@ -947,135 +924,19 @@ def test_user_lastName_setter(instance):
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=Pet_strategy)
-@settings(max_examples=50)
-def test_pet_instantiation(instance):
-    assert isinstance(instance, Pet)
-
-@given(instance=Pet_strategy)
-def test_pet_state_type(instance):
-    assert isinstance(instance.state, str)
 
 
-@given(instance=Pet_strategy)
-def test_pet_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=Pet_strategy)
-def test_pet_phone_type(instance):
-    assert isinstance(instance.phone, str)
-
-
-@given(instance=Pet_strategy)
-def test_pet_phone_setter(instance):
-    original = instance.phone
-    instance.phone = original
-    assert instance.phone == original
-
-@given(instance=Pet_strategy)
-def test_pet_place_type(instance):
-    assert isinstance(instance.place, str)
-
-
-@given(instance=Pet_strategy)
-def test_pet_place_setter(instance):
-    original = instance.place
-    instance.place = original
-    assert instance.place == original
-
-@given(instance=Pet_strategy)
-def test_pet_stray_type(instance):
-    assert isinstance(instance.stray, bool)
-
-
-@given(instance=Pet_strategy)
-def test_pet_stray_setter(instance):
-    original = instance.stray
-    instance.stray = original
-    assert instance.stray == original
-
-@given(instance=Pet_strategy)
-def test_pet_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Pet_strategy)
-def test_pet_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=Pet_strategy)
-def test_pet_reward_type(instance):
-    assert isinstance(instance.reward, int)
-
-
-@given(instance=Pet_strategy)
-def test_pet_reward_setter(instance):
-    original = instance.reward
-    instance.reward = original
-    assert instance.reward == original
-
-@given(instance=Pet_strategy)
-def test_pet_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Pet_strategy)
-def test_pet_name_setter(instance):
+@given(instance=User_strategy)
+def test_user_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
 @given(instance=Pet_strategy)
-def test_pet_breed_type(instance):
-    assert isinstance(instance.breed, str)
+@settings(max_examples=50)
+def test_pet_instantiation(instance):
+    assert isinstance(instance, Pet)
 
-
-@given(instance=Pet_strategy)
-def test_pet_breed_setter(instance):
-    original = instance.breed
-    instance.breed = original
-    assert instance.breed == original
-
-@given(instance=Pet_strategy)
-def test_pet_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=Pet_strategy)
-def test_pet_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Pet_strategy)
-def test_pet_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Pet_strategy)
-def test_pet_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Pet_strategy)
-def test_pet_picture_type(instance):
-    assert isinstance(instance.picture, str)
-
-
-@given(instance=Pet_strategy)
-def test_pet_picture_setter(instance):
-    original = instance.picture
-    instance.picture = original
-    assert instance.picture == original
-
-@given(instance=Pet_strategy)
-def test_pet_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Pet_strategy)
@@ -1084,9 +945,38 @@ def test_pet_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
 @given(instance=Pet_strategy)
-def test_pet_chipID_type(instance):
-    assert isinstance(instance.chipID, str)
+def test_pet_phone_setter(instance):
+    original = instance.phone
+    instance.phone = original
+    assert instance.phone == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_reward_setter(instance):
+    original = instance.reward
+    instance.reward = original
+    assert instance.reward == original
+
 
 
 @given(instance=Pet_strategy)
@@ -1095,9 +985,38 @@ def test_pet_chipID_setter(instance):
     instance.chipID = original
     assert instance.chipID == original
 
+
+
 @given(instance=Pet_strategy)
-def test_pet_notes_type(instance):
-    assert isinstance(instance.notes, str)
+def test_pet_stray_setter(instance):
+    original = instance.stray
+    instance.stray = original
+    assert instance.stray == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_picture_setter(instance):
+    original = instance.picture
+    instance.picture = original
+    assert instance.picture == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_breed_setter(instance):
+    original = instance.breed
+    instance.breed = original
+    assert instance.breed == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
 
 
 @given(instance=Pet_strategy)
@@ -1105,3 +1024,27 @@ def test_pet_notes_setter(instance):
     original = instance.notes
     instance.notes = original
     assert instance.notes == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=Pet_strategy)
+def test_pet_place_setter(instance):
+    original = instance.place
+    instance.place = original
+    assert instance.place == original

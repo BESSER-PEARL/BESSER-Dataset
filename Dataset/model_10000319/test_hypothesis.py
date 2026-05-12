@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     post,
@@ -13,8 +13,8 @@ from python_code import (
     Account,
     AddPost,
     User,
-    UserState,
     post_status,
+    UserState,
 )
 
 # =============================================================================
@@ -34,17 +34,8 @@ def test_post_constructor_exists():
 def test_post_constructor_args():
     sig = inspect.signature(post.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
     assert "ID" in params, "Missing parameter 'ID'"
-
-def test_post_has_description():
-    assert hasattr(post, "description")
-    descriptor = None
-    for klass in post.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
+    assert "description" in params, "Missing parameter 'description'"
 
 def test_post_has_ID():
     assert hasattr(post, "ID")
@@ -52,6 +43,15 @@ def test_post_has_ID():
     for klass in post.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_post_has_description():
+    assert hasattr(post, "description")
+    descriptor = None
+    for klass in post.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -68,17 +68,8 @@ def test_lineitem_constructor_exists():
 def test_lineitem_constructor_args():
     sig = inspect.signature(LineItem.__init__)
     params = list(sig.parameters.keys())
-    assert "tags" in params, "Missing parameter 'tags'"
     assert "category" in params, "Missing parameter 'category'"
-
-def test_lineitem_has_tags():
-    assert hasattr(LineItem, "tags")
-    descriptor = None
-    for klass in LineItem.__mro__:
-        if "tags" in klass.__dict__:
-            descriptor = klass.__dict__["tags"]
-            break
-    assert isinstance(descriptor, property)
+    assert "tags" in params, "Missing parameter 'tags'"
 
 def test_lineitem_has_category():
     assert hasattr(LineItem, "category")
@@ -86,6 +77,15 @@ def test_lineitem_has_category():
     for klass in LineItem.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lineitem_has_tags():
+    assert hasattr(LineItem, "tags")
+    descriptor = None
+    for klass in LineItem.__mro__:
+        if "tags" in klass.__dict__:
+            descriptor = klass.__dict__["tags"]
             break
     assert isinstance(descriptor, property)
 
@@ -105,8 +105,8 @@ def test_post_constructor_args():
     assert "status" in params, "Missing parameter 'status'"
     assert "ID" in params, "Missing parameter 'ID'"
     assert "User" in params, "Missing parameter 'User'"
-    assert "tags" in params, "Missing parameter 'tags'"
     assert "Category" in params, "Missing parameter 'Category'"
+    assert "tags" in params, "Missing parameter 'tags'"
     assert "Created" in params, "Missing parameter 'Created'"
 
 def test_post_has_status():
@@ -136,21 +136,21 @@ def test_post_has_User():
             break
     assert isinstance(descriptor, property)
 
-def test_post_has_tags():
-    assert hasattr(Post, "tags")
-    descriptor = None
-    for klass in Post.__mro__:
-        if "tags" in klass.__dict__:
-            descriptor = klass.__dict__["tags"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_post_has_Category():
     assert hasattr(Post, "Category")
     descriptor = None
     for klass in Post.__mro__:
         if "Category" in klass.__dict__:
             descriptor = klass.__dict__["Category"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_post_has_tags():
+    assert hasattr(Post, "tags")
+    descriptor = None
+    for klass in Post.__mro__:
+        if "tags" in klass.__dict__:
+            descriptor = klass.__dict__["tags"]
             break
     assert isinstance(descriptor, property)
 
@@ -177,8 +177,8 @@ def test_webuser_constructor_args():
     sig = inspect.signature(WebUser.__init__)
     params = list(sig.parameters.keys())
     assert "state" in params, "Missing parameter 'state'"
-    assert "login" in params, "Missing parameter 'login'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "login" in params, "Missing parameter 'login'"
 
 def test_webuser_has_state():
     assert hasattr(WebUser, "state")
@@ -189,21 +189,21 @@ def test_webuser_has_state():
             break
     assert isinstance(descriptor, property)
 
-def test_webuser_has_login():
-    assert hasattr(WebUser, "login")
-    descriptor = None
-    for klass in WebUser.__mro__:
-        if "login" in klass.__dict__:
-            descriptor = klass.__dict__["login"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_webuser_has_password():
     assert hasattr(WebUser, "password")
     descriptor = None
     for klass in WebUser.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webuser_has_login():
+    assert hasattr(WebUser, "login")
+    descriptor = None
+    for klass in WebUser.__mro__:
+        if "login" in klass.__dict__:
+            descriptor = klass.__dict__["login"]
             break
     assert isinstance(descriptor, property)
 
@@ -220,17 +220,17 @@ def test_account_constructor_exists():
 def test_account_constructor_args():
     sig = inspect.signature(Account.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
+    assert "closed" in params, "Missing parameter 'closed'"
     assert "created" in params, "Missing parameter 'created'"
     assert "isClosed" in params, "Missing parameter 'isClosed'"
-    assert "closed" in params, "Missing parameter 'closed'"
+    assert "Name" in params, "Missing parameter 'Name'"
 
-def test_account_has_Name():
-    assert hasattr(Account, "Name")
+def test_account_has_closed():
+    assert hasattr(Account, "closed")
     descriptor = None
     for klass in Account.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "closed" in klass.__dict__:
+            descriptor = klass.__dict__["closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -252,12 +252,12 @@ def test_account_has_isClosed():
             break
     assert isinstance(descriptor, property)
 
-def test_account_has_closed():
-    assert hasattr(Account, "closed")
+def test_account_has_Name():
+    assert hasattr(Account, "Name")
     descriptor = None
     for klass in Account.__mro__:
-        if "closed" in klass.__dict__:
-            descriptor = klass.__dict__["closed"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -298,18 +298,9 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
     assert "Id" in params, "Missing parameter 'Id'"
+    assert "email" in params, "Missing parameter 'email'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_user_has_email():
-    assert hasattr(User, "email")
-    descriptor = None
-    for klass in User.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_user_has_Id():
     assert hasattr(User, "Id")
@@ -317,6 +308,15 @@ def test_user_has_Id():
     for klass in User.__mro__:
         if "Id" in klass.__dict__:
             descriptor = klass.__dict__["Id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_email():
+    assert hasattr(User, "email")
+    descriptor = None
+    for klass in User.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -328,19 +328,6 @@ def test_user_has_Name():
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
-
-def test_userstate_exists():
-    # Check that the Enumeration exists
-    assert UserState is not None
-
-def test_userstate_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UserState]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UserState"
 
 def test_post_status_exists():
     # Check that the Enumeration exists
@@ -354,6 +341,19 @@ def test_post_status_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in post_status"
+
+def test_userstate_exists():
+    # Check that the Enumeration exists
+    assert UserState is not None
+
+def test_userstate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UserState]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UserState"
 
 
 # =============================================================================
@@ -369,17 +369,17 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 post_strategy = st.builds(
     post,
-    description=
-        safe_text,
     ID=
-        st.integers()
+        st.integers(),
+    description=
+        safe_text
 )
 LineItem_strategy = st.builds(
     LineItem,
-    tags=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     category=
-        st.integers()
+        st.integers(),
+    tags=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Post_strategy = st.builds(
     Post,
@@ -389,10 +389,10 @@ Post_strategy = st.builds(
         st.integers(),
     User=
         safe_text,
-    tags=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     Category=
         safe_text,
+    tags=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     Created=
         st.dates()
 )
@@ -400,21 +400,21 @@ WebUser_strategy = st.builds(
     WebUser,
     state=
         st.none(),
-    login=
-        safe_text,
     password=
+        safe_text,
+    login=
         safe_text
 )
 Account_strategy = st.builds(
     Account,
-    Name=
-        safe_text,
+    closed=
+        st.dates(),
     created=
         st.dates(),
     isClosed=
         st.booleans(),
-    closed=
-        st.dates()
+    Name=
+        safe_text
 )
 AddPost_strategy = st.builds(
     AddPost,
@@ -423,10 +423,10 @@ AddPost_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    email=
-        safe_text,
     Id=
         st.integers(),
+    email=
+        safe_text,
     Name=
         safe_text
 )
@@ -436,9 +436,14 @@ User_strategy = st.builds(
 def test_post_instantiation(instance):
     assert isinstance(instance, post)
 
+
+
 @given(instance=post_strategy)
-def test_post_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_post_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
 
 
 @given(instance=post_strategy)
@@ -447,36 +452,11 @@ def test_post_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
-@given(instance=post_strategy)
-def test_post_ID_type(instance):
-    assert isinstance(instance.ID, int)
-
-
-@given(instance=post_strategy)
-def test_post_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
 @given(instance=LineItem_strategy)
 @settings(max_examples=50)
 def test_lineitem_instantiation(instance):
     assert isinstance(instance, LineItem)
 
-@given(instance=LineItem_strategy)
-def test_lineitem_tags_type(instance):
-    assert isinstance(instance.tags, float)
-
-
-@given(instance=LineItem_strategy)
-def test_lineitem_tags_setter(instance):
-    original = instance.tags
-    instance.tags = original
-    assert instance.tags == original
-
-@given(instance=LineItem_strategy)
-def test_lineitem_category_type(instance):
-    assert isinstance(instance.category, int)
 
 
 @given(instance=LineItem_strategy)
@@ -485,14 +465,19 @@ def test_lineitem_category_setter(instance):
     instance.category = original
     assert instance.category == original
 
+
+
+@given(instance=LineItem_strategy)
+def test_lineitem_tags_setter(instance):
+    original = instance.tags
+    instance.tags = original
+    assert instance.tags == original
+
 @given(instance=Post_strategy)
 @settings(max_examples=50)
 def test_post_instantiation(instance):
     assert isinstance(instance, Post)
 
-@given(instance=Post_strategy)
-def test_post_status_type(instance):
-    assert isinstance(instance.status, post_status)
 
 
 @given(instance=Post_strategy)
@@ -501,9 +486,6 @@ def test_post_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
-@given(instance=Post_strategy)
-def test_post_ID_type(instance):
-    assert isinstance(instance.ID, int)
 
 
 @given(instance=Post_strategy)
@@ -512,9 +494,6 @@ def test_post_ID_setter(instance):
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=Post_strategy)
-def test_post_User_type(instance):
-    assert isinstance(instance.User, str)
 
 
 @given(instance=Post_strategy)
@@ -523,20 +502,6 @@ def test_post_User_setter(instance):
     instance.User = original
     assert instance.User == original
 
-@given(instance=Post_strategy)
-def test_post_tags_type(instance):
-    assert isinstance(instance.tags, float)
-
-
-@given(instance=Post_strategy)
-def test_post_tags_setter(instance):
-    original = instance.tags
-    instance.tags = original
-    assert instance.tags == original
-
-@given(instance=Post_strategy)
-def test_post_Category_type(instance):
-    assert isinstance(instance.Category, str)
 
 
 @given(instance=Post_strategy)
@@ -545,9 +510,14 @@ def test_post_Category_setter(instance):
     instance.Category = original
     assert instance.Category == original
 
+
+
 @given(instance=Post_strategy)
-def test_post_Created_type(instance):
-    assert isinstance(instance.Created, date)
+def test_post_tags_setter(instance):
+    original = instance.tags
+    instance.tags = original
+    assert instance.tags == original
+
 
 
 @given(instance=Post_strategy)
@@ -561,9 +531,6 @@ def test_post_Created_setter(instance):
 def test_webuser_instantiation(instance):
     assert isinstance(instance, WebUser)
 
-@given(instance=WebUser_strategy)
-def test_webuser_state_type(instance):
-    assert isinstance(instance.state, userstate)
 
 
 @given(instance=WebUser_strategy)
@@ -572,20 +539,6 @@ def test_webuser_state_setter(instance):
     instance.state = original
     assert instance.state == original
 
-@given(instance=WebUser_strategy)
-def test_webuser_login_type(instance):
-    assert isinstance(instance.login, str)
-
-
-@given(instance=WebUser_strategy)
-def test_webuser_login_setter(instance):
-    original = instance.login
-    instance.login = original
-    assert instance.login == original
-
-@given(instance=WebUser_strategy)
-def test_webuser_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=WebUser_strategy)
@@ -594,47 +547,19 @@ def test_webuser_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=WebUser_strategy)
+def test_webuser_login_setter(instance):
+    original = instance.login
+    instance.login = original
+    assert instance.login == original
+
 @given(instance=Account_strategy)
 @settings(max_examples=50)
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Account_strategy)
-def test_account_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Account_strategy)
-def test_account_created_type(instance):
-    assert isinstance(instance.created, date)
-
-
-@given(instance=Account_strategy)
-def test_account_created_setter(instance):
-    original = instance.created
-    instance.created = original
-    assert instance.created == original
-
-@given(instance=Account_strategy)
-def test_account_isClosed_type(instance):
-    assert isinstance(instance.isClosed, bool)
-
-
-@given(instance=Account_strategy)
-def test_account_isClosed_setter(instance):
-    original = instance.isClosed
-    instance.isClosed = original
-    assert instance.isClosed == original
-
-@given(instance=Account_strategy)
-def test_account_closed_type(instance):
-    assert isinstance(instance.closed, date)
 
 
 @given(instance=Account_strategy)
@@ -643,14 +568,35 @@ def test_account_closed_setter(instance):
     instance.closed = original
     assert instance.closed == original
 
+
+
+@given(instance=Account_strategy)
+def test_account_created_setter(instance):
+    original = instance.created
+    instance.created = original
+    assert instance.created == original
+
+
+
+@given(instance=Account_strategy)
+def test_account_isClosed_setter(instance):
+    original = instance.isClosed
+    instance.isClosed = original
+    assert instance.isClosed == original
+
+
+
+@given(instance=Account_strategy)
+def test_account_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=AddPost_strategy)
 @settings(max_examples=50)
 def test_addpost_instantiation(instance):
     assert isinstance(instance, AddPost)
 
-@given(instance=AddPost_strategy)
-def test_addpost_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=AddPost_strategy)
@@ -664,20 +610,6 @@ def test_addpost_creationDate_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=User_strategy)
-def test_user_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=User_strategy)
-def test_user_Id_type(instance):
-    assert isinstance(instance.Id, int)
 
 
 @given(instance=User_strategy)
@@ -686,9 +618,14 @@ def test_user_Id_setter(instance):
     instance.Id = original
     assert instance.Id == original
 
+
+
 @given(instance=User_strategy)
-def test_user_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 
 
 @given(instance=User_strategy)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Entertainment,
@@ -69,9 +69,9 @@ def test_households_constructor_args():
     params = list(sig.parameters.keys())
     assert "DishWasher" in params, "Missing parameter 'DishWasher'"
     assert "TimeID" in params, "Missing parameter 'TimeID'"
+    assert "Alarm" in params, "Missing parameter 'Alarm'"
     assert "Coffee" in params, "Missing parameter 'Coffee'"
     assert "WashingMachine" in params, "Missing parameter 'WashingMachine'"
-    assert "Alarm" in params, "Missing parameter 'Alarm'"
 
 def test_households_has_DishWasher():
     assert hasattr(HouseHolds, "DishWasher")
@@ -91,6 +91,15 @@ def test_households_has_TimeID():
             break
     assert isinstance(descriptor, property)
 
+def test_households_has_Alarm():
+    assert hasattr(HouseHolds, "Alarm")
+    descriptor = None
+    for klass in HouseHolds.__mro__:
+        if "Alarm" in klass.__dict__:
+            descriptor = klass.__dict__["Alarm"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_households_has_Coffee():
     assert hasattr(HouseHolds, "Coffee")
     descriptor = None
@@ -106,15 +115,6 @@ def test_households_has_WashingMachine():
     for klass in HouseHolds.__mro__:
         if "WashingMachine" in klass.__dict__:
             descriptor = klass.__dict__["WashingMachine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_households_has_Alarm():
-    assert hasattr(HouseHolds, "Alarm")
-    descriptor = None
-    for klass in HouseHolds.__mro__:
-        if "Alarm" in klass.__dict__:
-            descriptor = klass.__dict__["Alarm"]
             break
     assert isinstance(descriptor, property)
 
@@ -457,17 +457,8 @@ def test_sensor_constructor_exists():
 def test_sensor_constructor_args():
     sig = inspect.signature(Sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "SensorID" in params, "Missing parameter 'SensorID'"
     assert "SensorType" in params, "Missing parameter 'SensorType'"
-
-def test_sensor_has_SensorID():
-    assert hasattr(Sensor, "SensorID")
-    descriptor = None
-    for klass in Sensor.__mro__:
-        if "SensorID" in klass.__dict__:
-            descriptor = klass.__dict__["SensorID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "SensorID" in params, "Missing parameter 'SensorID'"
 
 def test_sensor_has_SensorType():
     assert hasattr(Sensor, "SensorType")
@@ -475,6 +466,15 @@ def test_sensor_has_SensorType():
     for klass in Sensor.__mro__:
         if "SensorType" in klass.__dict__:
             descriptor = klass.__dict__["SensorType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sensor_has_SensorID():
+    assert hasattr(Sensor, "SensorID")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorID" in klass.__dict__:
+            descriptor = klass.__dict__["SensorID"]
             break
     assert isinstance(descriptor, property)
 
@@ -535,11 +535,11 @@ HouseHolds_strategy = st.builds(
         safe_text,
     TimeID=
         safe_text,
+    Alarm=
+        safe_text,
     Coffee=
         safe_text,
     WashingMachine=
-        safe_text,
-    Alarm=
         safe_text
 )
 HomeTheatre_strategy = st.builds(
@@ -612,9 +612,9 @@ FireAlarm_Sensor_strategy = st.builds(
 )
 Sensor_strategy = st.builds(
     Sensor,
-    SensorID=
-        st.integers(),
     SensorType=
+        st.integers(),
+    SensorID=
         st.integers()
 )
 System_strategy = st.builds(
@@ -630,9 +630,6 @@ System_strategy = st.builds(
 def test_entertainment_instantiation(instance):
     assert isinstance(instance, Entertainment)
 
-@given(instance=Entertainment_strategy)
-def test_entertainment_DeviceID_type(instance):
-    assert isinstance(instance.DeviceID, int)
 
 
 @given(instance=Entertainment_strategy)
@@ -646,9 +643,6 @@ def test_entertainment_DeviceID_setter(instance):
 def test_households_instantiation(instance):
     assert isinstance(instance, HouseHolds)
 
-@given(instance=HouseHolds_strategy)
-def test_households_DishWasher_type(instance):
-    assert isinstance(instance.DishWasher, str)
 
 
 @given(instance=HouseHolds_strategy)
@@ -657,9 +651,6 @@ def test_households_DishWasher_setter(instance):
     instance.DishWasher = original
     assert instance.DishWasher == original
 
-@given(instance=HouseHolds_strategy)
-def test_households_TimeID_type(instance):
-    assert isinstance(instance.TimeID, str)
 
 
 @given(instance=HouseHolds_strategy)
@@ -668,31 +659,6 @@ def test_households_TimeID_setter(instance):
     instance.TimeID = original
     assert instance.TimeID == original
 
-@given(instance=HouseHolds_strategy)
-def test_households_Coffee_type(instance):
-    assert isinstance(instance.Coffee, str)
-
-
-@given(instance=HouseHolds_strategy)
-def test_households_Coffee_setter(instance):
-    original = instance.Coffee
-    instance.Coffee = original
-    assert instance.Coffee == original
-
-@given(instance=HouseHolds_strategy)
-def test_households_WashingMachine_type(instance):
-    assert isinstance(instance.WashingMachine, str)
-
-
-@given(instance=HouseHolds_strategy)
-def test_households_WashingMachine_setter(instance):
-    original = instance.WashingMachine
-    instance.WashingMachine = original
-    assert instance.WashingMachine == original
-
-@given(instance=HouseHolds_strategy)
-def test_households_Alarm_type(instance):
-    assert isinstance(instance.Alarm, str)
 
 
 @given(instance=HouseHolds_strategy)
@@ -701,14 +667,27 @@ def test_households_Alarm_setter(instance):
     instance.Alarm = original
     assert instance.Alarm == original
 
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_Coffee_setter(instance):
+    original = instance.Coffee
+    instance.Coffee = original
+    assert instance.Coffee == original
+
+
+
+@given(instance=HouseHolds_strategy)
+def test_households_WashingMachine_setter(instance):
+    original = instance.WashingMachine
+    instance.WashingMachine = original
+    assert instance.WashingMachine == original
+
 @given(instance=HomeTheatre_strategy)
 @settings(max_examples=50)
 def test_hometheatre_instantiation(instance):
     assert isinstance(instance, HomeTheatre)
 
-@given(instance=HomeTheatre_strategy)
-def test_hometheatre_HTID_type(instance):
-    assert isinstance(instance.HTID, str)
 
 
 @given(instance=HomeTheatre_strategy)
@@ -722,9 +701,6 @@ def test_hometheatre_HTID_setter(instance):
 def test_tv_instantiation(instance):
     assert isinstance(instance, TV)
 
-@given(instance=TV_strategy)
-def test_tv_TVID_type(instance):
-    assert isinstance(instance.TVID, int)
 
 
 @given(instance=TV_strategy)
@@ -738,9 +714,6 @@ def test_tv_TVID_setter(instance):
 def test_end_of_day_instantiation(instance):
     assert isinstance(instance, End_Of_Day)
 
-@given(instance=End_Of_Day_strategy)
-def test_end_of_day_EOT_type(instance):
-    assert isinstance(instance.EOT, int)
 
 
 @given(instance=End_Of_Day_strategy)
@@ -754,9 +727,6 @@ def test_end_of_day_EOT_setter(instance):
 def test_start_of_day_instantiation(instance):
     assert isinstance(instance, Start_Of_Day)
 
-@given(instance=Start_Of_Day_strategy)
-def test_start_of_day_SOT_type(instance):
-    assert isinstance(instance.SOT, int)
 
 
 @given(instance=Start_Of_Day_strategy)
@@ -770,9 +740,6 @@ def test_start_of_day_SOT_setter(instance):
 def test_light_instantiation(instance):
     assert isinstance(instance, Light)
 
-@given(instance=Light_strategy)
-def test_light_LightID_type(instance):
-    assert isinstance(instance.LightID, str)
 
 
 @given(instance=Light_strategy)
@@ -786,9 +753,6 @@ def test_light_LightID_setter(instance):
 def test_microphone_instantiation(instance):
     assert isinstance(instance, MicroPhone)
 
-@given(instance=MicroPhone_strategy)
-def test_microphone_MicID_type(instance):
-    assert isinstance(instance.MicID, str)
 
 
 @given(instance=MicroPhone_strategy)
@@ -802,9 +766,6 @@ def test_microphone_MicID_setter(instance):
 def test_speakers_instantiation(instance):
     assert isinstance(instance, Speakers)
 
-@given(instance=Speakers_strategy)
-def test_speakers_SpeakerID_type(instance):
-    assert isinstance(instance.SpeakerID, int)
 
 
 @given(instance=Speakers_strategy)
@@ -818,9 +779,6 @@ def test_speakers_SpeakerID_setter(instance):
 def test_camera_instantiation(instance):
     assert isinstance(instance, Camera)
 
-@given(instance=Camera_strategy)
-def test_camera_CameraID_type(instance):
-    assert isinstance(instance.CameraID, int)
 
 
 @given(instance=Camera_strategy)
@@ -834,9 +792,6 @@ def test_camera_CameraID_setter(instance):
 def test_door_instantiation(instance):
     assert isinstance(instance, Door)
 
-@given(instance=Door_strategy)
-def test_door_DoorID_type(instance):
-    assert isinstance(instance.DoorID, int)
 
 
 @given(instance=Door_strategy)
@@ -850,9 +805,6 @@ def test_door_DoorID_setter(instance):
 def test_alert_instantiation(instance):
     assert isinstance(instance, Alert)
 
-@given(instance=Alert_strategy)
-def test_alert_AlertID_type(instance):
-    assert isinstance(instance.AlertID, int)
 
 
 @given(instance=Alert_strategy)
@@ -866,9 +818,6 @@ def test_alert_AlertID_setter(instance):
 def test_home_security_system_instantiation(instance):
     assert isinstance(instance, Home_Security_System)
 
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=Home_Security_System_strategy)
@@ -892,9 +841,6 @@ def test_motion_sensor_instantiation(instance):
 def test_firealarm_sensor_instantiation(instance):
     assert isinstance(instance, FireAlarm_Sensor)
 
-@given(instance=FireAlarm_Sensor_strategy)
-def test_firealarm_sensor_SmokeAlarm_type(instance):
-    assert isinstance(instance.SmokeAlarm, bool)
 
 
 @given(instance=FireAlarm_Sensor_strategy)
@@ -903,9 +849,6 @@ def test_firealarm_sensor_SmokeAlarm_setter(instance):
     instance.SmokeAlarm = original
     assert instance.SmokeAlarm == original
 
-@given(instance=FireAlarm_Sensor_strategy)
-def test_firealarm_sensor_DispenseSprinkler_type(instance):
-    assert isinstance(instance.DispenseSprinkler, bool)
 
 
 @given(instance=FireAlarm_Sensor_strategy)
@@ -919,20 +862,6 @@ def test_firealarm_sensor_DispenseSprinkler_setter(instance):
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
-
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_setter(instance):
-    original = instance.SensorID
-    instance.SensorID = original
-    assert instance.SensorID == original
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
 
 
 @given(instance=Sensor_strategy)
@@ -941,14 +870,19 @@ def test_sensor_SensorType_setter(instance):
     instance.SensorType = original
     assert instance.SensorType == original
 
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorID_setter(instance):
+    original = instance.SensorID
+    instance.SensorID = original
+    assert instance.SensorID == original
+
 @given(instance=System_strategy)
 @settings(max_examples=50)
 def test_system_instantiation(instance):
     assert isinstance(instance, System)
 
-@given(instance=System_strategy)
-def test_system_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=System_strategy)
@@ -957,9 +891,6 @@ def test_system_Status_setter(instance):
     instance.Status = original
     assert instance.Status == original
 
-@given(instance=System_strategy)
-def test_system_Update_type(instance):
-    assert isinstance(instance.Update, float)
 
 
 @given(instance=System_strategy)

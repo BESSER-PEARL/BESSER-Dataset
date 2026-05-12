@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::CourseAllocation,
-    model::Semester,
-    model::Role,
-    model::Course,
-    model::Person,
-    model::Department,
-    model::CourseInstance,
+from python_code import (
+    model_CourseAllocation,
+    model_Semester,
+    model_Role,
+    model_Course,
+    model_Person,
+    model_Department,
+    model_CourseInstance,
     SemesterKind,
 )
 
@@ -22,33 +22,33 @@ from classes import (
 
 
 
-def test_model::courseallocation_is_not_abstract():
-    assert not inspect.isabstract(model::CourseAllocation)
+def test_model_courseallocation_is_not_abstract():
+    assert not inspect.isabstract(model_CourseAllocation)
 
 
-def test_model::courseallocation_constructor_exists():
-    assert callable(model::CourseAllocation.__init__)
+def test_model_courseallocation_constructor_exists():
+    assert callable(model_CourseAllocation.__init__)
 
 
-def test_model::courseallocation_constructor_args():
-    sig = inspect.signature(model::CourseAllocation.__init__)
+def test_model_courseallocation_constructor_args():
+    sig = inspect.signature(model_CourseAllocation.__init__)
     params = list(sig.parameters.keys())
     assert "factor" in params, "Missing parameter 'factor'"
     assert "explicitFactor" in params, "Missing parameter 'explicitFactor'"
 
-def test_model::courseallocation_has_factor():
-    assert hasattr(model::CourseAllocation, "factor")
+def test_model_courseallocation_has_factor():
+    assert hasattr(model_CourseAllocation, "factor")
     descriptor = None
-    for klass in model::CourseAllocation.__mro__:
+    for klass in model_CourseAllocation.__mro__:
         if "factor" in klass.__dict__:
             descriptor = klass.__dict__["factor"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::courseallocation_has_explicitFactor():
-    assert hasattr(model::CourseAllocation, "explicitFactor")
+def test_model_courseallocation_has_explicitFactor():
+    assert hasattr(model_CourseAllocation, "explicitFactor")
     descriptor = None
-    for klass in model::CourseAllocation.__mro__:
+    for klass in model_CourseAllocation.__mro__:
         if "explicitFactor" in klass.__dict__:
             descriptor = klass.__dict__["explicitFactor"]
             break
@@ -56,33 +56,33 @@ def test_model::courseallocation_has_explicitFactor():
 
 
 
-def test_model::semester_is_not_abstract():
-    assert not inspect.isabstract(model::Semester)
+def test_model_semester_is_not_abstract():
+    assert not inspect.isabstract(model_Semester)
 
 
-def test_model::semester_constructor_exists():
-    assert callable(model::Semester.__init__)
+def test_model_semester_constructor_exists():
+    assert callable(model_Semester.__init__)
 
 
-def test_model::semester_constructor_args():
-    sig = inspect.signature(model::Semester.__init__)
+def test_model_semester_constructor_args():
+    sig = inspect.signature(model_Semester.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_model::semester_has_year():
-    assert hasattr(model::Semester, "year")
+def test_model_semester_has_year():
+    assert hasattr(model_Semester, "year")
     descriptor = None
-    for klass in model::Semester.__mro__:
+    for klass in model_Semester.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::semester_has_kind():
-    assert hasattr(model::Semester, "kind")
+def test_model_semester_has_kind():
+    assert hasattr(model_Semester, "kind")
     descriptor = None
-    for klass in model::Semester.__mro__:
+    for klass in model_Semester.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -90,33 +90,33 @@ def test_model::semester_has_kind():
 
 
 
-def test_model::role_is_not_abstract():
-    assert not inspect.isabstract(model::Role)
+def test_model_role_is_not_abstract():
+    assert not inspect.isabstract(model_Role)
 
 
-def test_model::role_constructor_exists():
-    assert callable(model::Role.__init__)
+def test_model_role_constructor_exists():
+    assert callable(model_Role.__init__)
 
 
-def test_model::role_constructor_args():
-    sig = inspect.signature(model::Role.__init__)
+def test_model_role_constructor_args():
+    sig = inspect.signature(model_Role.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "factor" in params, "Missing parameter 'factor'"
 
-def test_model::role_has_name():
-    assert hasattr(model::Role, "name")
+def test_model_role_has_name():
+    assert hasattr(model_Role, "name")
     descriptor = None
-    for klass in model::Role.__mro__:
+    for klass in model_Role.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::role_has_factor():
-    assert hasattr(model::Role, "factor")
+def test_model_role_has_factor():
+    assert hasattr(model_Role, "factor")
     descriptor = None
-    for klass in model::Role.__mro__:
+    for klass in model_Role.__mro__:
         if "factor" in klass.__dict__:
             descriptor = klass.__dict__["factor"]
             break
@@ -124,121 +124,121 @@ def test_model::role_has_factor():
 
 
 
-def test_model::course_is_not_abstract():
-    assert not inspect.isabstract(model::Course)
+def test_model_course_is_not_abstract():
+    assert not inspect.isabstract(model_Course)
 
 
-def test_model::course_constructor_exists():
-    assert callable(model::Course.__init__)
+def test_model_course_constructor_exists():
+    assert callable(model_Course.__init__)
 
 
-def test_model::course_constructor_args():
-    sig = inspect.signature(model::Course.__init__)
+def test_model_course_constructor_args():
+    sig = inspect.signature(model_Course.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "fullName" in params, "Missing parameter 'fullName'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_model::course_has_name():
-    assert hasattr(model::Course, "name")
+def test_model_course_has_fullName():
+    assert hasattr(model_Course, "fullName")
     descriptor = None
-    for klass in model::Course.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::course_has_fullName():
-    assert hasattr(model::Course, "fullName")
-    descriptor = None
-    for klass in model::Course.__mro__:
+    for klass in model_Course.__mro__:
         if "fullName" in klass.__dict__:
             descriptor = klass.__dict__["fullName"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_course_has_name():
+    assert hasattr(model_Course, "name")
+    descriptor = None
+    for klass in model_Course.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::person_is_not_abstract():
-    assert not inspect.isabstract(model::Person)
+
+def test_model_person_is_not_abstract():
+    assert not inspect.isabstract(model_Person)
 
 
-def test_model::person_constructor_exists():
-    assert callable(model::Person.__init__)
+def test_model_person_constructor_exists():
+    assert callable(model_Person.__init__)
 
 
-def test_model::person_constructor_args():
-    sig = inspect.signature(model::Person.__init__)
+def test_model_person_constructor_args():
+    sig = inspect.signature(model_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
-    assert "userName" in params, "Missing parameter 'userName'"
     assert "faceUrl" in params, "Missing parameter 'faceUrl'"
     assert "name" in params, "Missing parameter 'name'"
     assert "employmentFactor" in params, "Missing parameter 'employmentFactor'"
+    assert "userName" in params, "Missing parameter 'userName'"
+    assert "email" in params, "Missing parameter 'email'"
 
-def test_model::person_has_email():
-    assert hasattr(model::Person, "email")
+def test_model_person_has_faceUrl():
+    assert hasattr(model_Person, "faceUrl")
     descriptor = None
-    for klass in model::Person.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::person_has_userName():
-    assert hasattr(model::Person, "userName")
-    descriptor = None
-    for klass in model::Person.__mro__:
-        if "userName" in klass.__dict__:
-            descriptor = klass.__dict__["userName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::person_has_faceUrl():
-    assert hasattr(model::Person, "faceUrl")
-    descriptor = None
-    for klass in model::Person.__mro__:
+    for klass in model_Person.__mro__:
         if "faceUrl" in klass.__dict__:
             descriptor = klass.__dict__["faceUrl"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::person_has_name():
-    assert hasattr(model::Person, "name")
+def test_model_person_has_name():
+    assert hasattr(model_Person, "name")
     descriptor = None
-    for klass in model::Person.__mro__:
+    for klass in model_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::person_has_employmentFactor():
-    assert hasattr(model::Person, "employmentFactor")
+def test_model_person_has_employmentFactor():
+    assert hasattr(model_Person, "employmentFactor")
     descriptor = None
-    for klass in model::Person.__mro__:
+    for klass in model_Person.__mro__:
         if "employmentFactor" in klass.__dict__:
             descriptor = klass.__dict__["employmentFactor"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_person_has_userName():
+    assert hasattr(model_Person, "userName")
+    descriptor = None
+    for klass in model_Person.__mro__:
+        if "userName" in klass.__dict__:
+            descriptor = klass.__dict__["userName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_person_has_email():
+    assert hasattr(model_Person, "email")
+    descriptor = None
+    for klass in model_Person.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::department_is_not_abstract():
-    assert not inspect.isabstract(model::Department)
+
+def test_model_department_is_not_abstract():
+    assert not inspect.isabstract(model_Department)
 
 
-def test_model::department_constructor_exists():
-    assert callable(model::Department.__init__)
+def test_model_department_constructor_exists():
+    assert callable(model_Department.__init__)
 
 
-def test_model::department_constructor_args():
-    sig = inspect.signature(model::Department.__init__)
+def test_model_department_constructor_args():
+    sig = inspect.signature(model_Department.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::department_has_name():
-    assert hasattr(model::Department, "name")
+def test_model_department_has_name():
+    assert hasattr(model_Department, "name")
     descriptor = None
-    for klass in model::Department.__mro__:
+    for klass in model_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -246,16 +246,16 @@ def test_model::department_has_name():
 
 
 
-def test_model::courseinstance_is_not_abstract():
-    assert not inspect.isabstract(model::CourseInstance)
+def test_model_courseinstance_is_not_abstract():
+    assert not inspect.isabstract(model_CourseInstance)
 
 
-def test_model::courseinstance_constructor_exists():
-    assert callable(model::CourseInstance.__init__)
+def test_model_courseinstance_constructor_exists():
+    assert callable(model_CourseInstance.__init__)
 
 
-def test_model::courseinstance_constructor_args():
-    sig = inspect.signature(model::CourseInstance.__init__)
+def test_model_courseinstance_constructor_args():
+    sig = inspect.signature(model_CourseInstance.__init__)
     params = list(sig.parameters.keys())
 
 def test_semesterkind_exists():
@@ -266,8 +266,8 @@ def test_semesterkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SemesterKind]
     expected_literals = [
-        "SPRING",
         "AUTUMN",
+        "SPRING",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -285,241 +285,199 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::CourseAllocation_strategy = st.builds(
-    model::CourseAllocation,
+model_CourseAllocation_strategy = st.builds(
+    model_CourseAllocation,
     factor=
         safe_text,
     explicitFactor=
         safe_text
 )
-model::Semester_strategy = st.builds(
-    model::Semester,
+model_Semester_strategy = st.builds(
+    model_Semester,
     year=
         safe_text,
     kind=
         safe_text
 )
-model::Role_strategy = st.builds(
-    model::Role,
+model_Role_strategy = st.builds(
+    model_Role,
     name=
         safe_text,
     factor=
         safe_text
 )
-model::Course_strategy = st.builds(
-    model::Course,
-    name=
-        safe_text,
+model_Course_strategy = st.builds(
+    model_Course,
     fullName=
+        safe_text,
+    name=
         safe_text
 )
-model::Person_strategy = st.builds(
-    model::Person,
-    email=
-        safe_text,
-    userName=
-        safe_text,
+model_Person_strategy = st.builds(
+    model_Person,
     faceUrl=
         safe_text,
     name=
         safe_text,
     employmentFactor=
+        safe_text,
+    userName=
+        safe_text,
+    email=
         safe_text
 )
-model::Department_strategy = st.builds(
-    model::Department,
+model_Department_strategy = st.builds(
+    model_Department,
     name=
         safe_text
 )
-model::CourseInstance_strategy = st.builds(
-    model::CourseInstance,
+model_CourseInstance_strategy = st.builds(
+    model_CourseInstance,
 )
 
-@given(instance=model::CourseAllocation_strategy)
+@given(instance=model_CourseAllocation_strategy)
 @settings(max_examples=50)
-def test_model::courseallocation_instantiation(instance):
-    assert isinstance(instance, model::CourseAllocation)
-
-@given(instance=model::CourseAllocation_strategy)
-def test_model::courseallocation_factor_type(instance):
-    assert isinstance(instance.factor, str)
+def test_model_courseallocation_instantiation(instance):
+    assert isinstance(instance, model_CourseAllocation)
 
 
-@given(instance=model::CourseAllocation_strategy)
-def test_model::courseallocation_factor_setter(instance):
+
+@given(instance=model_CourseAllocation_strategy)
+def test_model_courseallocation_factor_setter(instance):
     original = instance.factor
     instance.factor = original
     assert instance.factor == original
 
-@given(instance=model::CourseAllocation_strategy)
-def test_model::courseallocation_explicitFactor_type(instance):
-    assert isinstance(instance.explicitFactor, str)
 
 
-@given(instance=model::CourseAllocation_strategy)
-def test_model::courseallocation_explicitFactor_setter(instance):
+@given(instance=model_CourseAllocation_strategy)
+def test_model_courseallocation_explicitFactor_setter(instance):
     original = instance.explicitFactor
     instance.explicitFactor = original
     assert instance.explicitFactor == original
 
-@given(instance=model::Semester_strategy)
+@given(instance=model_Semester_strategy)
 @settings(max_examples=50)
-def test_model::semester_instantiation(instance):
-    assert isinstance(instance, model::Semester)
-
-@given(instance=model::Semester_strategy)
-def test_model::semester_year_type(instance):
-    assert isinstance(instance.year, str)
+def test_model_semester_instantiation(instance):
+    assert isinstance(instance, model_Semester)
 
 
-@given(instance=model::Semester_strategy)
-def test_model::semester_year_setter(instance):
+
+@given(instance=model_Semester_strategy)
+def test_model_semester_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
 
-@given(instance=model::Semester_strategy)
-def test_model::semester_kind_type(instance):
-    assert isinstance(instance.kind, str)
 
 
-@given(instance=model::Semester_strategy)
-def test_model::semester_kind_setter(instance):
+@given(instance=model_Semester_strategy)
+def test_model_semester_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=model::Role_strategy)
+@given(instance=model_Role_strategy)
 @settings(max_examples=50)
-def test_model::role_instantiation(instance):
-    assert isinstance(instance, model::Role)
-
-@given(instance=model::Role_strategy)
-def test_model::role_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_role_instantiation(instance):
+    assert isinstance(instance, model_Role)
 
 
-@given(instance=model::Role_strategy)
-def test_model::role_name_setter(instance):
+
+@given(instance=model_Role_strategy)
+def test_model_role_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Role_strategy)
-def test_model::role_factor_type(instance):
-    assert isinstance(instance.factor, str)
 
 
-@given(instance=model::Role_strategy)
-def test_model::role_factor_setter(instance):
+@given(instance=model_Role_strategy)
+def test_model_role_factor_setter(instance):
     original = instance.factor
     instance.factor = original
     assert instance.factor == original
 
-@given(instance=model::Course_strategy)
+@given(instance=model_Course_strategy)
 @settings(max_examples=50)
-def test_model::course_instantiation(instance):
-    assert isinstance(instance, model::Course)
-
-@given(instance=model::Course_strategy)
-def test_model::course_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_course_instantiation(instance):
+    assert isinstance(instance, model_Course)
 
 
-@given(instance=model::Course_strategy)
-def test_model::course_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=model::Course_strategy)
-def test_model::course_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
-
-
-@given(instance=model::Course_strategy)
-def test_model::course_fullName_setter(instance):
+@given(instance=model_Course_strategy)
+def test_model_course_fullName_setter(instance):
     original = instance.fullName
     instance.fullName = original
     assert instance.fullName == original
 
-@given(instance=model::Person_strategy)
+
+
+@given(instance=model_Course_strategy)
+def test_model_course_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=model_Person_strategy)
 @settings(max_examples=50)
-def test_model::person_instantiation(instance):
-    assert isinstance(instance, model::Person)
-
-@given(instance=model::Person_strategy)
-def test_model::person_email_type(instance):
-    assert isinstance(instance.email, str)
+def test_model_person_instantiation(instance):
+    assert isinstance(instance, model_Person)
 
 
-@given(instance=model::Person_strategy)
-def test_model::person_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
 
-@given(instance=model::Person_strategy)
-def test_model::person_userName_type(instance):
-    assert isinstance(instance.userName, str)
-
-
-@given(instance=model::Person_strategy)
-def test_model::person_userName_setter(instance):
-    original = instance.userName
-    instance.userName = original
-    assert instance.userName == original
-
-@given(instance=model::Person_strategy)
-def test_model::person_faceUrl_type(instance):
-    assert isinstance(instance.faceUrl, str)
-
-
-@given(instance=model::Person_strategy)
-def test_model::person_faceUrl_setter(instance):
+@given(instance=model_Person_strategy)
+def test_model_person_faceUrl_setter(instance):
     original = instance.faceUrl
     instance.faceUrl = original
     assert instance.faceUrl == original
 
-@given(instance=model::Person_strategy)
-def test_model::person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=model::Person_strategy)
-def test_model::person_name_setter(instance):
+@given(instance=model_Person_strategy)
+def test_model_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Person_strategy)
-def test_model::person_employmentFactor_type(instance):
-    assert isinstance(instance.employmentFactor, str)
 
 
-@given(instance=model::Person_strategy)
-def test_model::person_employmentFactor_setter(instance):
+@given(instance=model_Person_strategy)
+def test_model_person_employmentFactor_setter(instance):
     original = instance.employmentFactor
     instance.employmentFactor = original
     assert instance.employmentFactor == original
 
-@given(instance=model::Department_strategy)
+
+
+@given(instance=model_Person_strategy)
+def test_model_person_userName_setter(instance):
+    original = instance.userName
+    instance.userName = original
+    assert instance.userName == original
+
+
+
+@given(instance=model_Person_strategy)
+def test_model_person_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+@given(instance=model_Department_strategy)
 @settings(max_examples=50)
-def test_model::department_instantiation(instance):
-    assert isinstance(instance, model::Department)
-
-@given(instance=model::Department_strategy)
-def test_model::department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_department_instantiation(instance):
+    assert isinstance(instance, model_Department)
 
 
-@given(instance=model::Department_strategy)
-def test_model::department_name_setter(instance):
+
+@given(instance=model_Department_strategy)
+def test_model_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::CourseInstance_strategy)
+@given(instance=model_CourseInstance_strategy)
 @settings(max_examples=50)
-def test_model::courseinstance_instantiation(instance):
-    assert isinstance(instance, model::CourseInstance)
+def test_model_courseinstance_instantiation(instance):
+    assert isinstance(instance, model_CourseInstance)

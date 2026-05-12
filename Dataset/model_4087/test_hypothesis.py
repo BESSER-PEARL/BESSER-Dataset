@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    classDiagram::UMLElement,
+from python_code import (
+    classDiagram_UMLElement,
     UMLElement,
-    classDiagram::UMLIncrement,
-    classDiagram::UMLClassDiagram,
+    classDiagram_UMLIncrement,
+    classDiagram_UMLClassDiagram,
     UMLIncrement,
-    classDiagram::UMLStereotype,
-    classDiagram::UMLDiagramItem,
-    classDiagram::UMLCardinality,
-    classDiagram::UMLRole,
+    classDiagram_UMLStereotype,
+    classDiagram_UMLDiagramItem,
+    classDiagram_UMLCardinality,
+    classDiagram_UMLRole,
     UMLDiagramItem,
-    classDiagram::UMLClass,
-    classDiagram::UMLAssoc,
+    classDiagram_UMLClass,
+    classDiagram_UMLAssoc,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_classdiagram::umlelement_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLElement)
+def test_classdiagram_umlelement_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLElement)
 
 
-def test_classdiagram::umlelement_constructor_exists():
-    assert callable(classDiagram::UMLElement.__init__)
+def test_classdiagram_umlelement_constructor_exists():
+    assert callable(classDiagram_UMLElement.__init__)
 
 
-def test_classdiagram::umlelement_constructor_args():
-    sig = inspect.signature(classDiagram::UMLElement.__init__)
+def test_classdiagram_umlelement_constructor_args():
+    sig = inspect.signature(classDiagram_UMLElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classdiagram::umlelement_has_name():
-    assert hasattr(classDiagram::UMLElement, "name")
+def test_classdiagram_umlelement_has_name():
+    assert hasattr(classDiagram_UMLElement, "name")
     descriptor = None
-    for klass in classDiagram::UMLElement.__mro__:
+    for klass in classDiagram_UMLElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,30 +64,30 @@ def test_umlelement_constructor_args():
 
 
 
-def test_classdiagram::umlincrement_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLIncrement)
+def test_classdiagram_umlincrement_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLIncrement)
 
 
-def test_classdiagram::umlincrement_constructor_exists():
-    assert callable(classDiagram::UMLIncrement.__init__)
+def test_classdiagram_umlincrement_constructor_exists():
+    assert callable(classDiagram_UMLIncrement.__init__)
 
 
-def test_classdiagram::umlincrement_constructor_args():
-    sig = inspect.signature(classDiagram::UMLIncrement.__init__)
+def test_classdiagram_umlincrement_constructor_args():
+    sig = inspect.signature(classDiagram_UMLIncrement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::umlclassdiagram_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLClassDiagram)
+def test_classdiagram_umlclassdiagram_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLClassDiagram)
 
 
-def test_classdiagram::umlclassdiagram_constructor_exists():
-    assert callable(classDiagram::UMLClassDiagram.__init__)
+def test_classdiagram_umlclassdiagram_constructor_exists():
+    assert callable(classDiagram_UMLClassDiagram.__init__)
 
 
-def test_classdiagram::umlclassdiagram_constructor_args():
-    sig = inspect.signature(classDiagram::UMLClassDiagram.__init__)
+def test_classdiagram_umlclassdiagram_constructor_args():
+    sig = inspect.signature(classDiagram_UMLClassDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -106,23 +106,23 @@ def test_umlincrement_constructor_args():
 
 
 
-def test_classdiagram::umlstereotype_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLStereotype)
+def test_classdiagram_umlstereotype_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLStereotype)
 
 
-def test_classdiagram::umlstereotype_constructor_exists():
-    assert callable(classDiagram::UMLStereotype.__init__)
+def test_classdiagram_umlstereotype_constructor_exists():
+    assert callable(classDiagram_UMLStereotype.__init__)
 
 
-def test_classdiagram::umlstereotype_constructor_args():
-    sig = inspect.signature(classDiagram::UMLStereotype.__init__)
+def test_classdiagram_umlstereotype_constructor_args():
+    sig = inspect.signature(classDiagram_UMLStereotype.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_classdiagram::umlstereotype_has_text():
-    assert hasattr(classDiagram::UMLStereotype, "text")
+def test_classdiagram_umlstereotype_has_text():
+    assert hasattr(classDiagram_UMLStereotype, "text")
     descriptor = None
-    for klass in classDiagram::UMLStereotype.__mro__:
+    for klass in classDiagram_UMLStereotype.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -130,37 +130,37 @@ def test_classdiagram::umlstereotype_has_text():
 
 
 
-def test_classdiagram::umldiagramitem_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLDiagramItem)
+def test_classdiagram_umldiagramitem_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLDiagramItem)
 
 
-def test_classdiagram::umldiagramitem_constructor_exists():
-    assert callable(classDiagram::UMLDiagramItem.__init__)
+def test_classdiagram_umldiagramitem_constructor_exists():
+    assert callable(classDiagram_UMLDiagramItem.__init__)
 
 
-def test_classdiagram::umldiagramitem_constructor_args():
-    sig = inspect.signature(classDiagram::UMLDiagramItem.__init__)
+def test_classdiagram_umldiagramitem_constructor_args():
+    sig = inspect.signature(classDiagram_UMLDiagramItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::umlcardinality_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLCardinality)
+def test_classdiagram_umlcardinality_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLCardinality)
 
 
-def test_classdiagram::umlcardinality_constructor_exists():
-    assert callable(classDiagram::UMLCardinality.__init__)
+def test_classdiagram_umlcardinality_constructor_exists():
+    assert callable(classDiagram_UMLCardinality.__init__)
 
 
-def test_classdiagram::umlcardinality_constructor_args():
-    sig = inspect.signature(classDiagram::UMLCardinality.__init__)
+def test_classdiagram_umlcardinality_constructor_args():
+    sig = inspect.signature(classDiagram_UMLCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardString" in params, "Missing parameter 'cardString'"
 
-def test_classdiagram::umlcardinality_has_cardString():
-    assert hasattr(classDiagram::UMLCardinality, "cardString")
+def test_classdiagram_umlcardinality_has_cardString():
+    assert hasattr(classDiagram_UMLCardinality, "cardString")
     descriptor = None
-    for klass in classDiagram::UMLCardinality.__mro__:
+    for klass in classDiagram_UMLCardinality.__mro__:
         if "cardString" in klass.__dict__:
             descriptor = klass.__dict__["cardString"]
             break
@@ -168,23 +168,23 @@ def test_classdiagram::umlcardinality_has_cardString():
 
 
 
-def test_classdiagram::umlrole_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLRole)
+def test_classdiagram_umlrole_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLRole)
 
 
-def test_classdiagram::umlrole_constructor_exists():
-    assert callable(classDiagram::UMLRole.__init__)
+def test_classdiagram_umlrole_constructor_exists():
+    assert callable(classDiagram_UMLRole.__init__)
 
 
-def test_classdiagram::umlrole_constructor_args():
-    sig = inspect.signature(classDiagram::UMLRole.__init__)
+def test_classdiagram_umlrole_constructor_args():
+    sig = inspect.signature(classDiagram_UMLRole.__init__)
     params = list(sig.parameters.keys())
     assert "adornment" in params, "Missing parameter 'adornment'"
 
-def test_classdiagram::umlrole_has_adornment():
-    assert hasattr(classDiagram::UMLRole, "adornment")
+def test_classdiagram_umlrole_has_adornment():
+    assert hasattr(classDiagram_UMLRole, "adornment")
     descriptor = None
-    for klass in classDiagram::UMLRole.__mro__:
+    for klass in classDiagram_UMLRole.__mro__:
         if "adornment" in klass.__dict__:
             descriptor = klass.__dict__["adornment"]
             break
@@ -206,30 +206,30 @@ def test_umldiagramitem_constructor_args():
 
 
 
-def test_classdiagram::umlclass_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLClass)
+def test_classdiagram_umlclass_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLClass)
 
 
-def test_classdiagram::umlclass_constructor_exists():
-    assert callable(classDiagram::UMLClass.__init__)
+def test_classdiagram_umlclass_constructor_exists():
+    assert callable(classDiagram_UMLClass.__init__)
 
 
-def test_classdiagram::umlclass_constructor_args():
-    sig = inspect.signature(classDiagram::UMLClass.__init__)
+def test_classdiagram_umlclass_constructor_args():
+    sig = inspect.signature(classDiagram_UMLClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classdiagram::umlassoc_is_not_abstract():
-    assert not inspect.isabstract(classDiagram::UMLAssoc)
+def test_classdiagram_umlassoc_is_not_abstract():
+    assert not inspect.isabstract(classDiagram_UMLAssoc)
 
 
-def test_classdiagram::umlassoc_constructor_exists():
-    assert callable(classDiagram::UMLAssoc.__init__)
+def test_classdiagram_umlassoc_constructor_exists():
+    assert callable(classDiagram_UMLAssoc.__init__)
 
 
-def test_classdiagram::umlassoc_constructor_args():
-    sig = inspect.signature(classDiagram::UMLAssoc.__init__)
+def test_classdiagram_umlassoc_constructor_args():
+    sig = inspect.signature(classDiagram_UMLAssoc.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,63 +244,60 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-classDiagram::UMLElement_strategy = st.builds(
-    classDiagram::UMLElement,
+classDiagram_UMLElement_strategy = st.builds(
+    classDiagram_UMLElement,
     name=
         safe_text
 )
 UMLElement_strategy = st.builds(
     UMLElement,
 )
-classDiagram::UMLIncrement_strategy = st.builds(
-    classDiagram::UMLIncrement,
+classDiagram_UMLIncrement_strategy = st.builds(
+    classDiagram_UMLIncrement,
 )
-classDiagram::UMLClassDiagram_strategy = st.builds(
-    classDiagram::UMLClassDiagram,
+classDiagram_UMLClassDiagram_strategy = st.builds(
+    classDiagram_UMLClassDiagram,
 )
 UMLIncrement_strategy = st.builds(
     UMLIncrement,
 )
-classDiagram::UMLStereotype_strategy = st.builds(
-    classDiagram::UMLStereotype,
+classDiagram_UMLStereotype_strategy = st.builds(
+    classDiagram_UMLStereotype,
     text=
         safe_text
 )
-classDiagram::UMLDiagramItem_strategy = st.builds(
-    classDiagram::UMLDiagramItem,
+classDiagram_UMLDiagramItem_strategy = st.builds(
+    classDiagram_UMLDiagramItem,
 )
-classDiagram::UMLCardinality_strategy = st.builds(
-    classDiagram::UMLCardinality,
+classDiagram_UMLCardinality_strategy = st.builds(
+    classDiagram_UMLCardinality,
     cardString=
         safe_text
 )
-classDiagram::UMLRole_strategy = st.builds(
-    classDiagram::UMLRole,
+classDiagram_UMLRole_strategy = st.builds(
+    classDiagram_UMLRole,
     adornment=
         safe_text
 )
 UMLDiagramItem_strategy = st.builds(
     UMLDiagramItem,
 )
-classDiagram::UMLClass_strategy = st.builds(
-    classDiagram::UMLClass,
+classDiagram_UMLClass_strategy = st.builds(
+    classDiagram_UMLClass,
 )
-classDiagram::UMLAssoc_strategy = st.builds(
-    classDiagram::UMLAssoc,
+classDiagram_UMLAssoc_strategy = st.builds(
+    classDiagram_UMLAssoc,
 )
 
-@given(instance=classDiagram::UMLElement_strategy)
+@given(instance=classDiagram_UMLElement_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlelement_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLElement)
-
-@given(instance=classDiagram::UMLElement_strategy)
-def test_classdiagram::umlelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classdiagram_umlelement_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLElement)
 
 
-@given(instance=classDiagram::UMLElement_strategy)
-def test_classdiagram::umlelement_name_setter(instance):
+
+@given(instance=classDiagram_UMLElement_strategy)
+def test_classdiagram_umlelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -310,70 +307,61 @@ def test_classdiagram::umlelement_name_setter(instance):
 def test_umlelement_instantiation(instance):
     assert isinstance(instance, UMLElement)
 
-@given(instance=classDiagram::UMLIncrement_strategy)
+@given(instance=classDiagram_UMLIncrement_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlincrement_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLIncrement)
+def test_classdiagram_umlincrement_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLIncrement)
 
-@given(instance=classDiagram::UMLClassDiagram_strategy)
+@given(instance=classDiagram_UMLClassDiagram_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlclassdiagram_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLClassDiagram)
+def test_classdiagram_umlclassdiagram_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLClassDiagram)
 
 @given(instance=UMLIncrement_strategy)
 @settings(max_examples=50)
 def test_umlincrement_instantiation(instance):
     assert isinstance(instance, UMLIncrement)
 
-@given(instance=classDiagram::UMLStereotype_strategy)
+@given(instance=classDiagram_UMLStereotype_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlstereotype_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLStereotype)
-
-@given(instance=classDiagram::UMLStereotype_strategy)
-def test_classdiagram::umlstereotype_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_classdiagram_umlstereotype_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLStereotype)
 
 
-@given(instance=classDiagram::UMLStereotype_strategy)
-def test_classdiagram::umlstereotype_text_setter(instance):
+
+@given(instance=classDiagram_UMLStereotype_strategy)
+def test_classdiagram_umlstereotype_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=classDiagram::UMLDiagramItem_strategy)
+@given(instance=classDiagram_UMLDiagramItem_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umldiagramitem_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLDiagramItem)
+def test_classdiagram_umldiagramitem_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLDiagramItem)
 
-@given(instance=classDiagram::UMLCardinality_strategy)
+@given(instance=classDiagram_UMLCardinality_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlcardinality_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLCardinality)
-
-@given(instance=classDiagram::UMLCardinality_strategy)
-def test_classdiagram::umlcardinality_cardString_type(instance):
-    assert isinstance(instance.cardString, str)
+def test_classdiagram_umlcardinality_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLCardinality)
 
 
-@given(instance=classDiagram::UMLCardinality_strategy)
-def test_classdiagram::umlcardinality_cardString_setter(instance):
+
+@given(instance=classDiagram_UMLCardinality_strategy)
+def test_classdiagram_umlcardinality_cardString_setter(instance):
     original = instance.cardString
     instance.cardString = original
     assert instance.cardString == original
 
-@given(instance=classDiagram::UMLRole_strategy)
+@given(instance=classDiagram_UMLRole_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlrole_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLRole)
-
-@given(instance=classDiagram::UMLRole_strategy)
-def test_classdiagram::umlrole_adornment_type(instance):
-    assert isinstance(instance.adornment, str)
+def test_classdiagram_umlrole_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLRole)
 
 
-@given(instance=classDiagram::UMLRole_strategy)
-def test_classdiagram::umlrole_adornment_setter(instance):
+
+@given(instance=classDiagram_UMLRole_strategy)
+def test_classdiagram_umlrole_adornment_setter(instance):
     original = instance.adornment
     instance.adornment = original
     assert instance.adornment == original
@@ -383,12 +371,12 @@ def test_classdiagram::umlrole_adornment_setter(instance):
 def test_umldiagramitem_instantiation(instance):
     assert isinstance(instance, UMLDiagramItem)
 
-@given(instance=classDiagram::UMLClass_strategy)
+@given(instance=classDiagram_UMLClass_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlclass_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLClass)
+def test_classdiagram_umlclass_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLClass)
 
-@given(instance=classDiagram::UMLAssoc_strategy)
+@given(instance=classDiagram_UMLAssoc_strategy)
 @settings(max_examples=50)
-def test_classdiagram::umlassoc_instantiation(instance):
-    assert isinstance(instance, classDiagram::UMLAssoc)
+def test_classdiagram_umlassoc_instantiation(instance):
+    assert isinstance(instance, classDiagram_UMLAssoc)

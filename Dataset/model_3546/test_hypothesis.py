@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    functioncall::ConceptA,
-    functioncall::ConceptC,
+from python_code import (
+    functioncall_ConceptA,
+    functioncall_ConceptC,
     ConceptA,
-    functioncall::ConceptB,
+    functioncall_ConceptB,
 )
 
 # =============================================================================
@@ -18,30 +18,30 @@ from classes import (
 
 
 
-def test_functioncall::concepta_is_not_abstract():
-    assert not inspect.isabstract(functioncall::ConceptA)
+def test_functioncall_concepta_is_not_abstract():
+    assert not inspect.isabstract(functioncall_ConceptA)
 
 
-def test_functioncall::concepta_constructor_exists():
-    assert callable(functioncall::ConceptA.__init__)
+def test_functioncall_concepta_constructor_exists():
+    assert callable(functioncall_ConceptA.__init__)
 
 
-def test_functioncall::concepta_constructor_args():
-    sig = inspect.signature(functioncall::ConceptA.__init__)
+def test_functioncall_concepta_constructor_args():
+    sig = inspect.signature(functioncall_ConceptA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_functioncall::conceptc_is_not_abstract():
-    assert not inspect.isabstract(functioncall::ConceptC)
+def test_functioncall_conceptc_is_not_abstract():
+    assert not inspect.isabstract(functioncall_ConceptC)
 
 
-def test_functioncall::conceptc_constructor_exists():
-    assert callable(functioncall::ConceptC.__init__)
+def test_functioncall_conceptc_constructor_exists():
+    assert callable(functioncall_ConceptC.__init__)
 
 
-def test_functioncall::conceptc_constructor_args():
-    sig = inspect.signature(functioncall::ConceptC.__init__)
+def test_functioncall_conceptc_constructor_args():
+    sig = inspect.signature(functioncall_ConceptC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -60,16 +60,16 @@ def test_concepta_constructor_args():
 
 
 
-def test_functioncall::conceptb_is_not_abstract():
-    assert not inspect.isabstract(functioncall::ConceptB)
+def test_functioncall_conceptb_is_not_abstract():
+    assert not inspect.isabstract(functioncall_ConceptB)
 
 
-def test_functioncall::conceptb_constructor_exists():
-    assert callable(functioncall::ConceptB.__init__)
+def test_functioncall_conceptb_constructor_exists():
+    assert callable(functioncall_ConceptB.__init__)
 
 
-def test_functioncall::conceptb_constructor_args():
-    sig = inspect.signature(functioncall::ConceptB.__init__)
+def test_functioncall_conceptb_constructor_args():
+    sig = inspect.signature(functioncall_ConceptB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-functioncall::ConceptA_strategy = st.builds(
-    functioncall::ConceptA,
+functioncall_ConceptA_strategy = st.builds(
+    functioncall_ConceptA,
 )
-functioncall::ConceptC_strategy = st.builds(
-    functioncall::ConceptC,
+functioncall_ConceptC_strategy = st.builds(
+    functioncall_ConceptC,
 )
 ConceptA_strategy = st.builds(
     ConceptA,
 )
-functioncall::ConceptB_strategy = st.builds(
-    functioncall::ConceptB,
+functioncall_ConceptB_strategy = st.builds(
+    functioncall_ConceptB,
 )
 
-@given(instance=functioncall::ConceptA_strategy)
+@given(instance=functioncall_ConceptA_strategy)
 @settings(max_examples=50)
-def test_functioncall::concepta_instantiation(instance):
-    assert isinstance(instance, functioncall::ConceptA)
+def test_functioncall_concepta_instantiation(instance):
+    assert isinstance(instance, functioncall_ConceptA)
 
-@given(instance=functioncall::ConceptC_strategy)
+@given(instance=functioncall_ConceptC_strategy)
 @settings(max_examples=50)
-def test_functioncall::conceptc_instantiation(instance):
-    assert isinstance(instance, functioncall::ConceptC)
+def test_functioncall_conceptc_instantiation(instance):
+    assert isinstance(instance, functioncall_ConceptC)
 
 @given(instance=ConceptA_strategy)
 @settings(max_examples=50)
 def test_concepta_instantiation(instance):
     assert isinstance(instance, ConceptA)
 
-@given(instance=functioncall::ConceptB_strategy)
+@given(instance=functioncall_ConceptB_strategy)
 @settings(max_examples=50)
-def test_functioncall::conceptb_instantiation(instance):
-    assert isinstance(instance, functioncall::ConceptB)
+def test_functioncall_conceptb_instantiation(instance):
+    assert isinstance(instance, functioncall_ConceptB)

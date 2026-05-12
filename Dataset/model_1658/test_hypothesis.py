@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ktest400::NamedElement,
+from python_code import (
+    ktest400_NamedElement,
     NamedElement,
-    ktest400::RelatedTo,
-    ktest400::Line,
-    ktest400::Article,
-    ktest400::Thing,
-    ktest400::World,
+    ktest400_RelatedTo,
+    ktest400_Line,
+    ktest400_Article,
+    ktest400_Thing,
+    ktest400_World,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_ktest400::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ktest400::NamedElement)
+def test_ktest400_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ktest400_NamedElement)
 
 
-def test_ktest400::namedelement_constructor_exists():
-    assert callable(ktest400::NamedElement.__init__)
+def test_ktest400_namedelement_constructor_exists():
+    assert callable(ktest400_NamedElement.__init__)
 
 
-def test_ktest400::namedelement_constructor_args():
-    sig = inspect.signature(ktest400::NamedElement.__init__)
+def test_ktest400_namedelement_constructor_args():
+    sig = inspect.signature(ktest400_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ktest400::namedelement_has_name():
-    assert hasattr(ktest400::NamedElement, "name")
+def test_ktest400_namedelement_has_name():
+    assert hasattr(ktest400_NamedElement, "name")
     descriptor = None
-    for klass in ktest400::NamedElement.__mro__:
+    for klass in ktest400_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,23 +59,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_ktest400::relatedto_is_not_abstract():
-    assert not inspect.isabstract(ktest400::RelatedTo)
+def test_ktest400_relatedto_is_not_abstract():
+    assert not inspect.isabstract(ktest400_RelatedTo)
 
 
-def test_ktest400::relatedto_constructor_exists():
-    assert callable(ktest400::RelatedTo.__init__)
+def test_ktest400_relatedto_constructor_exists():
+    assert callable(ktest400_RelatedTo.__init__)
 
 
-def test_ktest400::relatedto_constructor_args():
-    sig = inspect.signature(ktest400::RelatedTo.__init__)
+def test_ktest400_relatedto_constructor_args():
+    sig = inspect.signature(ktest400_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_ktest400::relatedto_has_since():
-    assert hasattr(ktest400::RelatedTo, "since")
+def test_ktest400_relatedto_has_since():
+    assert hasattr(ktest400_RelatedTo, "since")
     descriptor = None
-    for klass in ktest400::RelatedTo.__mro__:
+    for klass in ktest400_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -83,57 +83,57 @@ def test_ktest400::relatedto_has_since():
 
 
 
-def test_ktest400::line_is_not_abstract():
-    assert not inspect.isabstract(ktest400::Line)
+def test_ktest400_line_is_not_abstract():
+    assert not inspect.isabstract(ktest400_Line)
 
 
-def test_ktest400::line_constructor_exists():
-    assert callable(ktest400::Line.__init__)
+def test_ktest400_line_constructor_exists():
+    assert callable(ktest400_Line.__init__)
 
 
-def test_ktest400::line_constructor_args():
-    sig = inspect.signature(ktest400::Line.__init__)
+def test_ktest400_line_constructor_args():
+    sig = inspect.signature(ktest400_Line.__init__)
     params = list(sig.parameters.keys())
-    assert "quant" in params, "Missing parameter 'quant'"
     assert "articleAid" in params, "Missing parameter 'articleAid'"
+    assert "quant" in params, "Missing parameter 'quant'"
 
-def test_ktest400::line_has_quant():
-    assert hasattr(ktest400::Line, "quant")
+def test_ktest400_line_has_articleAid():
+    assert hasattr(ktest400_Line, "articleAid")
     descriptor = None
-    for klass in ktest400::Line.__mro__:
-        if "quant" in klass.__dict__:
-            descriptor = klass.__dict__["quant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ktest400::line_has_articleAid():
-    assert hasattr(ktest400::Line, "articleAid")
-    descriptor = None
-    for klass in ktest400::Line.__mro__:
+    for klass in ktest400_Line.__mro__:
         if "articleAid" in klass.__dict__:
             descriptor = klass.__dict__["articleAid"]
             break
     assert isinstance(descriptor, property)
 
+def test_ktest400_line_has_quant():
+    assert hasattr(ktest400_Line, "quant")
+    descriptor = None
+    for klass in ktest400_Line.__mro__:
+        if "quant" in klass.__dict__:
+            descriptor = klass.__dict__["quant"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ktest400::article_is_not_abstract():
-    assert not inspect.isabstract(ktest400::Article)
+
+def test_ktest400_article_is_not_abstract():
+    assert not inspect.isabstract(ktest400_Article)
 
 
-def test_ktest400::article_constructor_exists():
-    assert callable(ktest400::Article.__init__)
+def test_ktest400_article_constructor_exists():
+    assert callable(ktest400_Article.__init__)
 
 
-def test_ktest400::article_constructor_args():
-    sig = inspect.signature(ktest400::Article.__init__)
+def test_ktest400_article_constructor_args():
+    sig = inspect.signature(ktest400_Article.__init__)
     params = list(sig.parameters.keys())
     assert "aid" in params, "Missing parameter 'aid'"
 
-def test_ktest400::article_has_aid():
-    assert hasattr(ktest400::Article, "aid")
+def test_ktest400_article_has_aid():
+    assert hasattr(ktest400_Article, "aid")
     descriptor = None
-    for klass in ktest400::Article.__mro__:
+    for klass in ktest400_Article.__mro__:
         if "aid" in klass.__dict__:
             descriptor = klass.__dict__["aid"]
             break
@@ -141,23 +141,23 @@ def test_ktest400::article_has_aid():
 
 
 
-def test_ktest400::thing_is_not_abstract():
-    assert not inspect.isabstract(ktest400::Thing)
+def test_ktest400_thing_is_not_abstract():
+    assert not inspect.isabstract(ktest400_Thing)
 
 
-def test_ktest400::thing_constructor_exists():
-    assert callable(ktest400::Thing.__init__)
+def test_ktest400_thing_constructor_exists():
+    assert callable(ktest400_Thing.__init__)
 
 
-def test_ktest400::thing_constructor_args():
-    sig = inspect.signature(ktest400::Thing.__init__)
+def test_ktest400_thing_constructor_args():
+    sig = inspect.signature(ktest400_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ktest400::thing_has_id():
-    assert hasattr(ktest400::Thing, "id")
+def test_ktest400_thing_has_id():
+    assert hasattr(ktest400_Thing, "id")
     descriptor = None
-    for klass in ktest400::Thing.__mro__:
+    for klass in ktest400_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -165,16 +165,16 @@ def test_ktest400::thing_has_id():
 
 
 
-def test_ktest400::world_is_not_abstract():
-    assert not inspect.isabstract(ktest400::World)
+def test_ktest400_world_is_not_abstract():
+    assert not inspect.isabstract(ktest400_World)
 
 
-def test_ktest400::world_constructor_exists():
-    assert callable(ktest400::World.__init__)
+def test_ktest400_world_constructor_exists():
+    assert callable(ktest400_World.__init__)
 
 
-def test_ktest400::world_constructor_args():
-    sig = inspect.signature(ktest400::World.__init__)
+def test_ktest400_world_constructor_args():
+    sig = inspect.signature(ktest400_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,52 +189,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ktest400::NamedElement_strategy = st.builds(
-    ktest400::NamedElement,
+ktest400_NamedElement_strategy = st.builds(
+    ktest400_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ktest400::RelatedTo_strategy = st.builds(
-    ktest400::RelatedTo,
+ktest400_RelatedTo_strategy = st.builds(
+    ktest400_RelatedTo,
     since=
         safe_text
 )
-ktest400::Line_strategy = st.builds(
-    ktest400::Line,
-    quant=
-        st.integers(),
+ktest400_Line_strategy = st.builds(
+    ktest400_Line,
     articleAid=
-        safe_text
+        safe_text,
+    quant=
+        st.integers()
 )
-ktest400::Article_strategy = st.builds(
-    ktest400::Article,
+ktest400_Article_strategy = st.builds(
+    ktest400_Article,
     aid=
         safe_text
 )
-ktest400::Thing_strategy = st.builds(
-    ktest400::Thing,
+ktest400_Thing_strategy = st.builds(
+    ktest400_Thing,
     id=
         st.integers()
 )
-ktest400::World_strategy = st.builds(
-    ktest400::World,
+ktest400_World_strategy = st.builds(
+    ktest400_World,
 )
 
-@given(instance=ktest400::NamedElement_strategy)
+@given(instance=ktest400_NamedElement_strategy)
 @settings(max_examples=50)
-def test_ktest400::namedelement_instantiation(instance):
-    assert isinstance(instance, ktest400::NamedElement)
-
-@given(instance=ktest400::NamedElement_strategy)
-def test_ktest400::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ktest400_namedelement_instantiation(instance):
+    assert isinstance(instance, ktest400_NamedElement)
 
 
-@given(instance=ktest400::NamedElement_strategy)
-def test_ktest400::namedelement_name_setter(instance):
+
+@given(instance=ktest400_NamedElement_strategy)
+def test_ktest400_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -244,82 +241,67 @@ def test_ktest400::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ktest400::RelatedTo_strategy)
+@given(instance=ktest400_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_ktest400::relatedto_instantiation(instance):
-    assert isinstance(instance, ktest400::RelatedTo)
-
-@given(instance=ktest400::RelatedTo_strategy)
-def test_ktest400::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_ktest400_relatedto_instantiation(instance):
+    assert isinstance(instance, ktest400_RelatedTo)
 
 
-@given(instance=ktest400::RelatedTo_strategy)
-def test_ktest400::relatedto_since_setter(instance):
+
+@given(instance=ktest400_RelatedTo_strategy)
+def test_ktest400_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=ktest400::Line_strategy)
+@given(instance=ktest400_Line_strategy)
 @settings(max_examples=50)
-def test_ktest400::line_instantiation(instance):
-    assert isinstance(instance, ktest400::Line)
-
-@given(instance=ktest400::Line_strategy)
-def test_ktest400::line_quant_type(instance):
-    assert isinstance(instance.quant, int)
+def test_ktest400_line_instantiation(instance):
+    assert isinstance(instance, ktest400_Line)
 
 
-@given(instance=ktest400::Line_strategy)
-def test_ktest400::line_quant_setter(instance):
-    original = instance.quant
-    instance.quant = original
-    assert instance.quant == original
 
-@given(instance=ktest400::Line_strategy)
-def test_ktest400::line_articleAid_type(instance):
-    assert isinstance(instance.articleAid, str)
-
-
-@given(instance=ktest400::Line_strategy)
-def test_ktest400::line_articleAid_setter(instance):
+@given(instance=ktest400_Line_strategy)
+def test_ktest400_line_articleAid_setter(instance):
     original = instance.articleAid
     instance.articleAid = original
     assert instance.articleAid == original
 
-@given(instance=ktest400::Article_strategy)
+
+
+@given(instance=ktest400_Line_strategy)
+def test_ktest400_line_quant_setter(instance):
+    original = instance.quant
+    instance.quant = original
+    assert instance.quant == original
+
+@given(instance=ktest400_Article_strategy)
 @settings(max_examples=50)
-def test_ktest400::article_instantiation(instance):
-    assert isinstance(instance, ktest400::Article)
-
-@given(instance=ktest400::Article_strategy)
-def test_ktest400::article_aid_type(instance):
-    assert isinstance(instance.aid, str)
+def test_ktest400_article_instantiation(instance):
+    assert isinstance(instance, ktest400_Article)
 
 
-@given(instance=ktest400::Article_strategy)
-def test_ktest400::article_aid_setter(instance):
+
+@given(instance=ktest400_Article_strategy)
+def test_ktest400_article_aid_setter(instance):
     original = instance.aid
     instance.aid = original
     assert instance.aid == original
 
-@given(instance=ktest400::Thing_strategy)
+@given(instance=ktest400_Thing_strategy)
 @settings(max_examples=50)
-def test_ktest400::thing_instantiation(instance):
-    assert isinstance(instance, ktest400::Thing)
-
-@given(instance=ktest400::Thing_strategy)
-def test_ktest400::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_ktest400_thing_instantiation(instance):
+    assert isinstance(instance, ktest400_Thing)
 
 
-@given(instance=ktest400::Thing_strategy)
-def test_ktest400::thing_id_setter(instance):
+
+@given(instance=ktest400_Thing_strategy)
+def test_ktest400_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ktest400::World_strategy)
+@given(instance=ktest400_World_strategy)
 @settings(max_examples=50)
-def test_ktest400::world_instantiation(instance):
-    assert isinstance(instance, ktest400::World)
+def test_ktest400_world_instantiation(instance):
+    assert isinstance(instance, ktest400_World)

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     RootIn,
-    in::B,
-    in::A,
-    in::RootIn,
+    in_B,
+    in_A,
+    in_RootIn,
 )
 
 # =============================================================================
@@ -32,37 +32,37 @@ def test_rootin_constructor_args():
 
 
 
-def test_in::b_is_not_abstract():
-    assert not inspect.isabstract(in::B)
+def test_in_b_is_not_abstract():
+    assert not inspect.isabstract(in_B)
 
 
-def test_in::b_constructor_exists():
-    assert callable(in::B.__init__)
+def test_in_b_constructor_exists():
+    assert callable(in_B.__init__)
 
 
-def test_in::b_constructor_args():
-    sig = inspect.signature(in::B.__init__)
+def test_in_b_constructor_args():
+    sig = inspect.signature(in_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_in::a_is_not_abstract():
-    assert not inspect.isabstract(in::A)
+def test_in_a_is_not_abstract():
+    assert not inspect.isabstract(in_A)
 
 
-def test_in::a_constructor_exists():
-    assert callable(in::A.__init__)
+def test_in_a_constructor_exists():
+    assert callable(in_A.__init__)
 
 
-def test_in::a_constructor_args():
-    sig = inspect.signature(in::A.__init__)
+def test_in_a_constructor_args():
+    sig = inspect.signature(in_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_in::a_has_name():
-    assert hasattr(in::A, "name")
+def test_in_a_has_name():
+    assert hasattr(in_A, "name")
     descriptor = None
-    for klass in in::A.__mro__:
+    for klass in in_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -70,16 +70,16 @@ def test_in::a_has_name():
 
 
 
-def test_in::rootin_is_not_abstract():
-    assert not inspect.isabstract(in::RootIn)
+def test_in_rootin_is_not_abstract():
+    assert not inspect.isabstract(in_RootIn)
 
 
-def test_in::rootin_constructor_exists():
-    assert callable(in::RootIn.__init__)
+def test_in_rootin_constructor_exists():
+    assert callable(in_RootIn.__init__)
 
 
-def test_in::rootin_constructor_args():
-    sig = inspect.signature(in::RootIn.__init__)
+def test_in_rootin_constructor_args():
+    sig = inspect.signature(in_RootIn.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -97,16 +97,16 @@ safe_text = st.text(
 RootIn_strategy = st.builds(
     RootIn,
 )
-in::B_strategy = st.builds(
-    in::B,
+in_B_strategy = st.builds(
+    in_B,
 )
-in::A_strategy = st.builds(
-    in::A,
+in_A_strategy = st.builds(
+    in_A,
     name=
         safe_text
 )
-in::RootIn_strategy = st.builds(
-    in::RootIn,
+in_RootIn_strategy = st.builds(
+    in_RootIn,
 )
 
 @given(instance=RootIn_strategy)
@@ -114,28 +114,25 @@ in::RootIn_strategy = st.builds(
 def test_rootin_instantiation(instance):
     assert isinstance(instance, RootIn)
 
-@given(instance=in::B_strategy)
+@given(instance=in_B_strategy)
 @settings(max_examples=50)
-def test_in::b_instantiation(instance):
-    assert isinstance(instance, in::B)
+def test_in_b_instantiation(instance):
+    assert isinstance(instance, in_B)
 
-@given(instance=in::A_strategy)
+@given(instance=in_A_strategy)
 @settings(max_examples=50)
-def test_in::a_instantiation(instance):
-    assert isinstance(instance, in::A)
-
-@given(instance=in::A_strategy)
-def test_in::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_in_a_instantiation(instance):
+    assert isinstance(instance, in_A)
 
 
-@given(instance=in::A_strategy)
-def test_in::a_name_setter(instance):
+
+@given(instance=in_A_strategy)
+def test_in_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=in::RootIn_strategy)
+@given(instance=in_RootIn_strategy)
 @settings(max_examples=50)
-def test_in::rootin_instantiation(instance):
-    assert isinstance(instance, in::RootIn)
+def test_in_rootin_instantiation(instance):
+    assert isinstance(instance, in_RootIn)

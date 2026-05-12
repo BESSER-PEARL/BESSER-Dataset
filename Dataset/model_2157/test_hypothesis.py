@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graphgrammar::TripleGraph,
-    graphgrammar::TripleRule,
-    graphgrammar::Edge,
-    graphgrammar::TripleGrammar,
+from python_code import (
+    graphgrammar_TripleGraph,
+    graphgrammar_TripleRule,
+    graphgrammar_Edge,
+    graphgrammar_TripleGrammar,
     Vertex,
-    graphgrammar::StringToVertexMap,
-    graphgrammar::Resolution,
-    graphgrammar::VertexToStringMap,
-    graphgrammar::ResolutionStep,
-    graphgrammar::ZoneVertex,
-    graphgrammar::ParsingTree,
-    graphgrammar::Derivation,
-    graphgrammar::VertexToVertexMap,
-    graphgrammar::DerivationStep,
-    graphgrammar::Rule,
-    graphgrammar::SymbolSymbolsPair,
-    graphgrammar::Vertex,
-    graphgrammar::VertexToSymbolSymbolsPairMap,
-    graphgrammar::Graph,
-    graphgrammar::Symbol,
-    graphgrammar::Grammar,
+    graphgrammar_StringToVertexMap,
+    graphgrammar_Resolution,
+    graphgrammar_VertexToStringMap,
+    graphgrammar_ResolutionStep,
+    graphgrammar_ZoneVertex,
+    graphgrammar_ParsingTree,
+    graphgrammar_Derivation,
+    graphgrammar_VertexToVertexMap,
+    graphgrammar_DerivationStep,
+    graphgrammar_Rule,
+    graphgrammar_SymbolSymbolsPair,
+    graphgrammar_Vertex,
+    graphgrammar_VertexToSymbolSymbolsPairMap,
+    graphgrammar_Graph,
+    graphgrammar_Symbol,
+    graphgrammar_Grammar,
 )
 
 # =============================================================================
@@ -35,65 +35,65 @@ from classes import (
 
 
 
-def test_graphgrammar::triplegraph_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::TripleGraph)
+def test_graphgrammar_triplegraph_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_TripleGraph)
 
 
-def test_graphgrammar::triplegraph_constructor_exists():
-    assert callable(graphgrammar::TripleGraph.__init__)
+def test_graphgrammar_triplegraph_constructor_exists():
+    assert callable(graphgrammar_TripleGraph.__init__)
 
 
-def test_graphgrammar::triplegraph_constructor_args():
-    sig = inspect.signature(graphgrammar::TripleGraph.__init__)
+def test_graphgrammar_triplegraph_constructor_args():
+    sig = inspect.signature(graphgrammar_TripleGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::triplerule_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::TripleRule)
+def test_graphgrammar_triplerule_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_TripleRule)
 
 
-def test_graphgrammar::triplerule_constructor_exists():
-    assert callable(graphgrammar::TripleRule.__init__)
+def test_graphgrammar_triplerule_constructor_exists():
+    assert callable(graphgrammar_TripleRule.__init__)
 
 
-def test_graphgrammar::triplerule_constructor_args():
-    sig = inspect.signature(graphgrammar::TripleRule.__init__)
+def test_graphgrammar_triplerule_constructor_args():
+    sig = inspect.signature(graphgrammar_TripleRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::edge_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Edge)
+def test_graphgrammar_edge_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Edge)
 
 
-def test_graphgrammar::edge_constructor_exists():
-    assert callable(graphgrammar::Edge.__init__)
+def test_graphgrammar_edge_constructor_exists():
+    assert callable(graphgrammar_Edge.__init__)
 
 
-def test_graphgrammar::edge_constructor_args():
-    sig = inspect.signature(graphgrammar::Edge.__init__)
+def test_graphgrammar_edge_constructor_args():
+    sig = inspect.signature(graphgrammar_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::triplegrammar_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::TripleGrammar)
+def test_graphgrammar_triplegrammar_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_TripleGrammar)
 
 
-def test_graphgrammar::triplegrammar_constructor_exists():
-    assert callable(graphgrammar::TripleGrammar.__init__)
+def test_graphgrammar_triplegrammar_constructor_exists():
+    assert callable(graphgrammar_TripleGrammar.__init__)
 
 
-def test_graphgrammar::triplegrammar_constructor_args():
-    sig = inspect.signature(graphgrammar::TripleGrammar.__init__)
+def test_graphgrammar_triplegrammar_constructor_args():
+    sig = inspect.signature(graphgrammar_TripleGrammar.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphgrammar::triplegrammar_has_name():
-    assert hasattr(graphgrammar::TripleGrammar, "name")
+def test_graphgrammar_triplegrammar_has_name():
+    assert hasattr(graphgrammar_TripleGrammar, "name")
     descriptor = None
-    for klass in graphgrammar::TripleGrammar.__mro__:
+    for klass in graphgrammar_TripleGrammar.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -115,23 +115,23 @@ def test_vertex_constructor_args():
 
 
 
-def test_graphgrammar::stringtovertexmap_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::StringToVertexMap)
+def test_graphgrammar_stringtovertexmap_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_StringToVertexMap)
 
 
-def test_graphgrammar::stringtovertexmap_constructor_exists():
-    assert callable(graphgrammar::StringToVertexMap.__init__)
+def test_graphgrammar_stringtovertexmap_constructor_exists():
+    assert callable(graphgrammar_StringToVertexMap.__init__)
 
 
-def test_graphgrammar::stringtovertexmap_constructor_args():
-    sig = inspect.signature(graphgrammar::StringToVertexMap.__init__)
+def test_graphgrammar_stringtovertexmap_constructor_args():
+    sig = inspect.signature(graphgrammar_StringToVertexMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_graphgrammar::stringtovertexmap_has_key():
-    assert hasattr(graphgrammar::StringToVertexMap, "key")
+def test_graphgrammar_stringtovertexmap_has_key():
+    assert hasattr(graphgrammar_StringToVertexMap, "key")
     descriptor = None
-    for klass in graphgrammar::StringToVertexMap.__mro__:
+    for klass in graphgrammar_StringToVertexMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -139,37 +139,37 @@ def test_graphgrammar::stringtovertexmap_has_key():
 
 
 
-def test_graphgrammar::resolution_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Resolution)
+def test_graphgrammar_resolution_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Resolution)
 
 
-def test_graphgrammar::resolution_constructor_exists():
-    assert callable(graphgrammar::Resolution.__init__)
+def test_graphgrammar_resolution_constructor_exists():
+    assert callable(graphgrammar_Resolution.__init__)
 
 
-def test_graphgrammar::resolution_constructor_args():
-    sig = inspect.signature(graphgrammar::Resolution.__init__)
+def test_graphgrammar_resolution_constructor_args():
+    sig = inspect.signature(graphgrammar_Resolution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::vertextostringmap_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::VertexToStringMap)
+def test_graphgrammar_vertextostringmap_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_VertexToStringMap)
 
 
-def test_graphgrammar::vertextostringmap_constructor_exists():
-    assert callable(graphgrammar::VertexToStringMap.__init__)
+def test_graphgrammar_vertextostringmap_constructor_exists():
+    assert callable(graphgrammar_VertexToStringMap.__init__)
 
 
-def test_graphgrammar::vertextostringmap_constructor_args():
-    sig = inspect.signature(graphgrammar::VertexToStringMap.__init__)
+def test_graphgrammar_vertextostringmap_constructor_args():
+    sig = inspect.signature(graphgrammar_VertexToStringMap.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_graphgrammar::vertextostringmap_has_value():
-    assert hasattr(graphgrammar::VertexToStringMap, "value")
+def test_graphgrammar_vertextostringmap_has_value():
+    assert hasattr(graphgrammar_VertexToStringMap, "value")
     descriptor = None
-    for klass in graphgrammar::VertexToStringMap.__mro__:
+    for klass in graphgrammar_VertexToStringMap.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -177,155 +177,155 @@ def test_graphgrammar::vertextostringmap_has_value():
 
 
 
-def test_graphgrammar::resolutionstep_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::ResolutionStep)
+def test_graphgrammar_resolutionstep_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_ResolutionStep)
 
 
-def test_graphgrammar::resolutionstep_constructor_exists():
-    assert callable(graphgrammar::ResolutionStep.__init__)
+def test_graphgrammar_resolutionstep_constructor_exists():
+    assert callable(graphgrammar_ResolutionStep.__init__)
 
 
-def test_graphgrammar::resolutionstep_constructor_args():
-    sig = inspect.signature(graphgrammar::ResolutionStep.__init__)
+def test_graphgrammar_resolutionstep_constructor_args():
+    sig = inspect.signature(graphgrammar_ResolutionStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::zonevertex_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::ZoneVertex)
+def test_graphgrammar_zonevertex_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_ZoneVertex)
 
 
-def test_graphgrammar::zonevertex_constructor_exists():
-    assert callable(graphgrammar::ZoneVertex.__init__)
+def test_graphgrammar_zonevertex_constructor_exists():
+    assert callable(graphgrammar_ZoneVertex.__init__)
 
 
-def test_graphgrammar::zonevertex_constructor_args():
-    sig = inspect.signature(graphgrammar::ZoneVertex.__init__)
+def test_graphgrammar_zonevertex_constructor_args():
+    sig = inspect.signature(graphgrammar_ZoneVertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::parsingtree_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::ParsingTree)
+def test_graphgrammar_parsingtree_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_ParsingTree)
 
 
-def test_graphgrammar::parsingtree_constructor_exists():
-    assert callable(graphgrammar::ParsingTree.__init__)
+def test_graphgrammar_parsingtree_constructor_exists():
+    assert callable(graphgrammar_ParsingTree.__init__)
 
 
-def test_graphgrammar::parsingtree_constructor_args():
-    sig = inspect.signature(graphgrammar::ParsingTree.__init__)
+def test_graphgrammar_parsingtree_constructor_args():
+    sig = inspect.signature(graphgrammar_ParsingTree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::derivation_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Derivation)
+def test_graphgrammar_derivation_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Derivation)
 
 
-def test_graphgrammar::derivation_constructor_exists():
-    assert callable(graphgrammar::Derivation.__init__)
+def test_graphgrammar_derivation_constructor_exists():
+    assert callable(graphgrammar_Derivation.__init__)
 
 
-def test_graphgrammar::derivation_constructor_args():
-    sig = inspect.signature(graphgrammar::Derivation.__init__)
+def test_graphgrammar_derivation_constructor_args():
+    sig = inspect.signature(graphgrammar_Derivation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::vertextovertexmap_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::VertexToVertexMap)
+def test_graphgrammar_vertextovertexmap_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_VertexToVertexMap)
 
 
-def test_graphgrammar::vertextovertexmap_constructor_exists():
-    assert callable(graphgrammar::VertexToVertexMap.__init__)
+def test_graphgrammar_vertextovertexmap_constructor_exists():
+    assert callable(graphgrammar_VertexToVertexMap.__init__)
 
 
-def test_graphgrammar::vertextovertexmap_constructor_args():
-    sig = inspect.signature(graphgrammar::VertexToVertexMap.__init__)
+def test_graphgrammar_vertextovertexmap_constructor_args():
+    sig = inspect.signature(graphgrammar_VertexToVertexMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::derivationstep_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::DerivationStep)
+def test_graphgrammar_derivationstep_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_DerivationStep)
 
 
-def test_graphgrammar::derivationstep_constructor_exists():
-    assert callable(graphgrammar::DerivationStep.__init__)
+def test_graphgrammar_derivationstep_constructor_exists():
+    assert callable(graphgrammar_DerivationStep.__init__)
 
 
-def test_graphgrammar::derivationstep_constructor_args():
-    sig = inspect.signature(graphgrammar::DerivationStep.__init__)
+def test_graphgrammar_derivationstep_constructor_args():
+    sig = inspect.signature(graphgrammar_DerivationStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::rule_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Rule)
+def test_graphgrammar_rule_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Rule)
 
 
-def test_graphgrammar::rule_constructor_exists():
-    assert callable(graphgrammar::Rule.__init__)
+def test_graphgrammar_rule_constructor_exists():
+    assert callable(graphgrammar_Rule.__init__)
 
 
-def test_graphgrammar::rule_constructor_args():
-    sig = inspect.signature(graphgrammar::Rule.__init__)
+def test_graphgrammar_rule_constructor_args():
+    sig = inspect.signature(graphgrammar_Rule.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_graphgrammar::rule_has_name():
-    assert hasattr(graphgrammar::Rule, "name")
+def test_graphgrammar_rule_has_id():
+    assert hasattr(graphgrammar_Rule, "id")
     descriptor = None
-    for klass in graphgrammar::Rule.__mro__:
+    for klass in graphgrammar_Rule.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_graphgrammar_rule_has_name():
+    assert hasattr(graphgrammar_Rule, "name")
+    descriptor = None
+    for klass in graphgrammar_Rule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphgrammar::rule_has_id():
-    assert hasattr(graphgrammar::Rule, "id")
-    descriptor = None
-    for klass in graphgrammar::Rule.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_graphgrammar::symbolsymbolspair_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::SymbolSymbolsPair)
-
-
-def test_graphgrammar::symbolsymbolspair_constructor_exists():
-    assert callable(graphgrammar::SymbolSymbolsPair.__init__)
+def test_graphgrammar_symbolsymbolspair_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_SymbolSymbolsPair)
 
 
-def test_graphgrammar::symbolsymbolspair_constructor_args():
-    sig = inspect.signature(graphgrammar::SymbolSymbolsPair.__init__)
+def test_graphgrammar_symbolsymbolspair_constructor_exists():
+    assert callable(graphgrammar_SymbolSymbolsPair.__init__)
+
+
+def test_graphgrammar_symbolsymbolspair_constructor_args():
+    sig = inspect.signature(graphgrammar_SymbolSymbolsPair.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::vertex_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Vertex)
+def test_graphgrammar_vertex_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Vertex)
 
 
-def test_graphgrammar::vertex_constructor_exists():
-    assert callable(graphgrammar::Vertex.__init__)
+def test_graphgrammar_vertex_constructor_exists():
+    assert callable(graphgrammar_Vertex.__init__)
 
 
-def test_graphgrammar::vertex_constructor_args():
-    sig = inspect.signature(graphgrammar::Vertex.__init__)
+def test_graphgrammar_vertex_constructor_args():
+    sig = inspect.signature(graphgrammar_Vertex.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_graphgrammar::vertex_has_id():
-    assert hasattr(graphgrammar::Vertex, "id")
+def test_graphgrammar_vertex_has_id():
+    assert hasattr(graphgrammar_Vertex, "id")
     descriptor = None
-    for klass in graphgrammar::Vertex.__mro__:
+    for klass in graphgrammar_Vertex.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -333,71 +333,71 @@ def test_graphgrammar::vertex_has_id():
 
 
 
-def test_graphgrammar::vertextosymbolsymbolspairmap_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::VertexToSymbolSymbolsPairMap)
+def test_graphgrammar_vertextosymbolsymbolspairmap_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_VertexToSymbolSymbolsPairMap)
 
 
-def test_graphgrammar::vertextosymbolsymbolspairmap_constructor_exists():
-    assert callable(graphgrammar::VertexToSymbolSymbolsPairMap.__init__)
+def test_graphgrammar_vertextosymbolsymbolspairmap_constructor_exists():
+    assert callable(graphgrammar_VertexToSymbolSymbolsPairMap.__init__)
 
 
-def test_graphgrammar::vertextosymbolsymbolspairmap_constructor_args():
-    sig = inspect.signature(graphgrammar::VertexToSymbolSymbolsPairMap.__init__)
+def test_graphgrammar_vertextosymbolsymbolspairmap_constructor_args():
+    sig = inspect.signature(graphgrammar_VertexToSymbolSymbolsPairMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::graph_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Graph)
+def test_graphgrammar_graph_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Graph)
 
 
-def test_graphgrammar::graph_constructor_exists():
-    assert callable(graphgrammar::Graph.__init__)
+def test_graphgrammar_graph_constructor_exists():
+    assert callable(graphgrammar_Graph.__init__)
 
 
-def test_graphgrammar::graph_constructor_args():
-    sig = inspect.signature(graphgrammar::Graph.__init__)
+def test_graphgrammar_graph_constructor_args():
+    sig = inspect.signature(graphgrammar_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphgrammar::symbol_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Symbol)
+def test_graphgrammar_symbol_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Symbol)
 
 
-def test_graphgrammar::symbol_constructor_exists():
-    assert callable(graphgrammar::Symbol.__init__)
+def test_graphgrammar_symbol_constructor_exists():
+    assert callable(graphgrammar_Symbol.__init__)
 
 
-def test_graphgrammar::symbol_constructor_args():
-    sig = inspect.signature(graphgrammar::Symbol.__init__)
+def test_graphgrammar_symbol_constructor_args():
+    sig = inspect.signature(graphgrammar_Symbol.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "subscript" in params, "Missing parameter 'subscript'"
     assert "superscript" in params, "Missing parameter 'superscript'"
 
-def test_graphgrammar::symbol_has_name():
-    assert hasattr(graphgrammar::Symbol, "name")
+def test_graphgrammar_symbol_has_name():
+    assert hasattr(graphgrammar_Symbol, "name")
     descriptor = None
-    for klass in graphgrammar::Symbol.__mro__:
+    for klass in graphgrammar_Symbol.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphgrammar::symbol_has_subscript():
-    assert hasattr(graphgrammar::Symbol, "subscript")
+def test_graphgrammar_symbol_has_subscript():
+    assert hasattr(graphgrammar_Symbol, "subscript")
     descriptor = None
-    for klass in graphgrammar::Symbol.__mro__:
+    for klass in graphgrammar_Symbol.__mro__:
         if "subscript" in klass.__dict__:
             descriptor = klass.__dict__["subscript"]
             break
     assert isinstance(descriptor, property)
 
-def test_graphgrammar::symbol_has_superscript():
-    assert hasattr(graphgrammar::Symbol, "superscript")
+def test_graphgrammar_symbol_has_superscript():
+    assert hasattr(graphgrammar_Symbol, "superscript")
     descriptor = None
-    for klass in graphgrammar::Symbol.__mro__:
+    for klass in graphgrammar_Symbol.__mro__:
         if "superscript" in klass.__dict__:
             descriptor = klass.__dict__["superscript"]
             break
@@ -405,23 +405,23 @@ def test_graphgrammar::symbol_has_superscript():
 
 
 
-def test_graphgrammar::grammar_is_not_abstract():
-    assert not inspect.isabstract(graphgrammar::Grammar)
+def test_graphgrammar_grammar_is_not_abstract():
+    assert not inspect.isabstract(graphgrammar_Grammar)
 
 
-def test_graphgrammar::grammar_constructor_exists():
-    assert callable(graphgrammar::Grammar.__init__)
+def test_graphgrammar_grammar_constructor_exists():
+    assert callable(graphgrammar_Grammar.__init__)
 
 
-def test_graphgrammar::grammar_constructor_args():
-    sig = inspect.signature(graphgrammar::Grammar.__init__)
+def test_graphgrammar_grammar_constructor_args():
+    sig = inspect.signature(graphgrammar_Grammar.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphgrammar::grammar_has_name():
-    assert hasattr(graphgrammar::Grammar, "name")
+def test_graphgrammar_grammar_has_name():
+    assert hasattr(graphgrammar_Grammar, "name")
     descriptor = None
-    for klass in graphgrammar::Grammar.__mro__:
+    for klass in graphgrammar_Grammar.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -439,77 +439,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graphgrammar::TripleGraph_strategy = st.builds(
-    graphgrammar::TripleGraph,
+graphgrammar_TripleGraph_strategy = st.builds(
+    graphgrammar_TripleGraph,
 )
-graphgrammar::TripleRule_strategy = st.builds(
-    graphgrammar::TripleRule,
+graphgrammar_TripleRule_strategy = st.builds(
+    graphgrammar_TripleRule,
 )
-graphgrammar::Edge_strategy = st.builds(
-    graphgrammar::Edge,
+graphgrammar_Edge_strategy = st.builds(
+    graphgrammar_Edge,
 )
-graphgrammar::TripleGrammar_strategy = st.builds(
-    graphgrammar::TripleGrammar,
+graphgrammar_TripleGrammar_strategy = st.builds(
+    graphgrammar_TripleGrammar,
     name=
         safe_text
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-graphgrammar::StringToVertexMap_strategy = st.builds(
-    graphgrammar::StringToVertexMap,
+graphgrammar_StringToVertexMap_strategy = st.builds(
+    graphgrammar_StringToVertexMap,
     key=
         safe_text
 )
-graphgrammar::Resolution_strategy = st.builds(
-    graphgrammar::Resolution,
+graphgrammar_Resolution_strategy = st.builds(
+    graphgrammar_Resolution,
 )
-graphgrammar::VertexToStringMap_strategy = st.builds(
-    graphgrammar::VertexToStringMap,
+graphgrammar_VertexToStringMap_strategy = st.builds(
+    graphgrammar_VertexToStringMap,
     value=
         safe_text
 )
-graphgrammar::ResolutionStep_strategy = st.builds(
-    graphgrammar::ResolutionStep,
+graphgrammar_ResolutionStep_strategy = st.builds(
+    graphgrammar_ResolutionStep,
 )
-graphgrammar::ZoneVertex_strategy = st.builds(
-    graphgrammar::ZoneVertex,
+graphgrammar_ZoneVertex_strategy = st.builds(
+    graphgrammar_ZoneVertex,
 )
-graphgrammar::ParsingTree_strategy = st.builds(
-    graphgrammar::ParsingTree,
+graphgrammar_ParsingTree_strategy = st.builds(
+    graphgrammar_ParsingTree,
 )
-graphgrammar::Derivation_strategy = st.builds(
-    graphgrammar::Derivation,
+graphgrammar_Derivation_strategy = st.builds(
+    graphgrammar_Derivation,
 )
-graphgrammar::VertexToVertexMap_strategy = st.builds(
-    graphgrammar::VertexToVertexMap,
+graphgrammar_VertexToVertexMap_strategy = st.builds(
+    graphgrammar_VertexToVertexMap,
 )
-graphgrammar::DerivationStep_strategy = st.builds(
-    graphgrammar::DerivationStep,
+graphgrammar_DerivationStep_strategy = st.builds(
+    graphgrammar_DerivationStep,
 )
-graphgrammar::Rule_strategy = st.builds(
-    graphgrammar::Rule,
-    name=
+graphgrammar_Rule_strategy = st.builds(
+    graphgrammar_Rule,
+    id=
         safe_text,
+    name=
+        safe_text
+)
+graphgrammar_SymbolSymbolsPair_strategy = st.builds(
+    graphgrammar_SymbolSymbolsPair,
+)
+graphgrammar_Vertex_strategy = st.builds(
+    graphgrammar_Vertex,
     id=
         safe_text
 )
-graphgrammar::SymbolSymbolsPair_strategy = st.builds(
-    graphgrammar::SymbolSymbolsPair,
+graphgrammar_VertexToSymbolSymbolsPairMap_strategy = st.builds(
+    graphgrammar_VertexToSymbolSymbolsPairMap,
 )
-graphgrammar::Vertex_strategy = st.builds(
-    graphgrammar::Vertex,
-    id=
-        safe_text
+graphgrammar_Graph_strategy = st.builds(
+    graphgrammar_Graph,
 )
-graphgrammar::VertexToSymbolSymbolsPairMap_strategy = st.builds(
-    graphgrammar::VertexToSymbolSymbolsPairMap,
-)
-graphgrammar::Graph_strategy = st.builds(
-    graphgrammar::Graph,
-)
-graphgrammar::Symbol_strategy = st.builds(
-    graphgrammar::Symbol,
+graphgrammar_Symbol_strategy = st.builds(
+    graphgrammar_Symbol,
     name=
         safe_text,
     subscript=
@@ -517,16 +517,16 @@ graphgrammar::Symbol_strategy = st.builds(
     superscript=
         safe_text
 )
-graphgrammar::Grammar_strategy = st.builds(
-    graphgrammar::Grammar,
+graphgrammar_Grammar_strategy = st.builds(
+    graphgrammar_Grammar,
     name=
         safe_text
 )
 
-@given(instance=graphgrammar::TripleGraph_strategy)
+@given(instance=graphgrammar_TripleGraph_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::triplegraph_instantiation(instance):
-    assert isinstance(instance, graphgrammar::TripleGraph)
+def test_graphgrammar_triplegraph_instantiation(instance):
+    assert isinstance(instance, graphgrammar_TripleGraph)
 
 import warnings
 import copy
@@ -534,40 +534,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::TripleGraph_strategy)
+@given(instance=graphgrammar_TripleGraph_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::triplegraph_invmt_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.invMt(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.invMt).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invMt' in graphgrammar::TripleGraph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invMt' in graphgrammar::TripleGraph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invMt' in graphgrammar::TripleGraph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::TripleGraph_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::triplegraph_invms_changes_state(instance):
+def test_graphgrammar_triplegraph_invms_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -581,19 +550,14 @@ def test_graphgrammar::triplegraph_invms_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invMs' in graphgrammar::TripleGraph is empty"
+        assert has_statements, f"Function 'invMs' in graphgrammar_TripleGraph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invMs' in graphgrammar::TripleGraph did not change state; check implementation")
+            warnings.warn(f"Operation 'invMs' in graphgrammar_TripleGraph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invMs' in graphgrammar::TripleGraph is not implemented or raised an error")
-
-@given(instance=graphgrammar::TripleRule_strategy)
-@settings(max_examples=50)
-def test_graphgrammar::triplerule_instantiation(instance):
-    assert isinstance(instance, graphgrammar::TripleRule)
+        warnings.warn(f"Operation 'invMs' in graphgrammar_TripleGraph is not implemented or raised an error")
 
 import warnings
 import copy
@@ -601,9 +565,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::TripleRule_strategy)
+@given(instance=graphgrammar_TripleGraph_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::triplerule_invmt_changes_state(instance):
+def test_graphgrammar_triplegraph_invmt_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -617,14 +581,19 @@ def test_graphgrammar::triplerule_invmt_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invMt' in graphgrammar::TripleRule is empty"
+        assert has_statements, f"Function 'invMt' in graphgrammar_TripleGraph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invMt' in graphgrammar::TripleRule did not change state; check implementation")
+            warnings.warn(f"Operation 'invMt' in graphgrammar_TripleGraph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invMt' in graphgrammar::TripleRule is not implemented or raised an error")
+        warnings.warn(f"Operation 'invMt' in graphgrammar_TripleGraph is not implemented or raised an error")
+
+@given(instance=graphgrammar_TripleRule_strategy)
+@settings(max_examples=50)
+def test_graphgrammar_triplerule_instantiation(instance):
+    assert isinstance(instance, graphgrammar_TripleRule)
 
 import warnings
 import copy
@@ -632,9 +601,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::TripleRule_strategy)
+@given(instance=graphgrammar_TripleRule_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::triplerule_invms_changes_state(instance):
+def test_graphgrammar_triplerule_invmt_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.invMt(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.invMt).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'invMt' in graphgrammar_TripleRule is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'invMt' in graphgrammar_TripleRule did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'invMt' in graphgrammar_TripleRule is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_TripleRule_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_triplerule_invms_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -648,19 +648,19 @@ def test_graphgrammar::triplerule_invms_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invMs' in graphgrammar::TripleRule is empty"
+        assert has_statements, f"Function 'invMs' in graphgrammar_TripleRule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invMs' in graphgrammar::TripleRule did not change state; check implementation")
+            warnings.warn(f"Operation 'invMs' in graphgrammar_TripleRule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invMs' in graphgrammar::TripleRule is not implemented or raised an error")
+        warnings.warn(f"Operation 'invMs' in graphgrammar_TripleRule is not implemented or raised an error")
 
-@given(instance=graphgrammar::Edge_strategy)
+@given(instance=graphgrammar_Edge_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::edge_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Edge)
+def test_graphgrammar_edge_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Edge)
 
 import warnings
 import copy
@@ -668,9 +668,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Edge_strategy)
+@given(instance=graphgrammar_Edge_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::edge_compareto_changes_state(instance):
+def test_graphgrammar_edge_compareto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -684,27 +684,24 @@ def test_graphgrammar::edge_compareto_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'compareTo' in graphgrammar::Edge is empty"
+        assert has_statements, f"Function 'compareTo' in graphgrammar_Edge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'compareTo' in graphgrammar::Edge did not change state; check implementation")
+            warnings.warn(f"Operation 'compareTo' in graphgrammar_Edge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'compareTo' in graphgrammar::Edge is not implemented or raised an error")
+        warnings.warn(f"Operation 'compareTo' in graphgrammar_Edge is not implemented or raised an error")
 
-@given(instance=graphgrammar::TripleGrammar_strategy)
+@given(instance=graphgrammar_TripleGrammar_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::triplegrammar_instantiation(instance):
-    assert isinstance(instance, graphgrammar::TripleGrammar)
-
-@given(instance=graphgrammar::TripleGrammar_strategy)
-def test_graphgrammar::triplegrammar_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphgrammar_triplegrammar_instantiation(instance):
+    assert isinstance(instance, graphgrammar_TripleGrammar)
 
 
-@given(instance=graphgrammar::TripleGrammar_strategy)
-def test_graphgrammar::triplegrammar_name_setter(instance):
+
+@given(instance=graphgrammar_TripleGrammar_strategy)
+def test_graphgrammar_triplegrammar_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -715,43 +712,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::TripleGrammar_strategy)
+@given(instance=graphgrammar_TripleGrammar_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::triplegrammar_resolve_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.resolve(
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.resolve).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'resolve' in graphgrammar::TripleGrammar is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'resolve' in graphgrammar::TripleGrammar did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'resolve' in graphgrammar::TripleGrammar is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::TripleGrammar_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::triplegrammar_produce_changes_state(instance):
+def test_graphgrammar_triplegrammar_produce_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -768,66 +731,14 @@ def test_graphgrammar::triplegrammar_produce_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'produce' in graphgrammar::TripleGrammar is empty"
+        assert has_statements, f"Function 'produce' in graphgrammar_TripleGrammar is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'produce' in graphgrammar::TripleGrammar did not change state; check implementation")
+            warnings.warn(f"Operation 'produce' in graphgrammar_TripleGrammar did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'produce' in graphgrammar::TripleGrammar is not implemented or raised an error")
-
-@given(instance=Vertex_strategy)
-@settings(max_examples=50)
-def test_vertex_instantiation(instance):
-    assert isinstance(instance, Vertex)
-
-@given(instance=graphgrammar::StringToVertexMap_strategy)
-@settings(max_examples=50)
-def test_graphgrammar::stringtovertexmap_instantiation(instance):
-    assert isinstance(instance, graphgrammar::StringToVertexMap)
-
-@given(instance=graphgrammar::StringToVertexMap_strategy)
-def test_graphgrammar::stringtovertexmap_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=graphgrammar::StringToVertexMap_strategy)
-def test_graphgrammar::stringtovertexmap_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=graphgrammar::Resolution_strategy)
-@settings(max_examples=50)
-def test_graphgrammar::resolution_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Resolution)
-
-@given(instance=graphgrammar::VertexToStringMap_strategy)
-@settings(max_examples=50)
-def test_graphgrammar::vertextostringmap_instantiation(instance):
-    assert isinstance(instance, graphgrammar::VertexToStringMap)
-
-@given(instance=graphgrammar::VertexToStringMap_strategy)
-def test_graphgrammar::vertextostringmap_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=graphgrammar::VertexToStringMap_strategy)
-def test_graphgrammar::vertextostringmap_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=graphgrammar::ResolutionStep_strategy)
-@settings(max_examples=50)
-def test_graphgrammar::resolutionstep_instantiation(instance):
-    assert isinstance(instance, graphgrammar::ResolutionStep)
-
-@given(instance=graphgrammar::ZoneVertex_strategy)
-@settings(max_examples=50)
-def test_graphgrammar::zonevertex_instantiation(instance):
-    assert isinstance(instance, graphgrammar::ZoneVertex)
+        warnings.warn(f"Operation 'produce' in graphgrammar_TripleGrammar is not implemented or raised an error")
 
 import warnings
 import copy
@@ -835,9 +746,89 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::ZoneVertex_strategy)
+@given(instance=graphgrammar_TripleGrammar_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::zonevertex_equivalates_changes_state(instance):
+def test_graphgrammar_triplegrammar_resolve_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.resolve(
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.resolve).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'resolve' in graphgrammar_TripleGrammar is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'resolve' in graphgrammar_TripleGrammar did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'resolve' in graphgrammar_TripleGrammar is not implemented or raised an error")
+
+@given(instance=Vertex_strategy)
+@settings(max_examples=50)
+def test_vertex_instantiation(instance):
+    assert isinstance(instance, Vertex)
+
+@given(instance=graphgrammar_StringToVertexMap_strategy)
+@settings(max_examples=50)
+def test_graphgrammar_stringtovertexmap_instantiation(instance):
+    assert isinstance(instance, graphgrammar_StringToVertexMap)
+
+
+
+@given(instance=graphgrammar_StringToVertexMap_strategy)
+def test_graphgrammar_stringtovertexmap_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=graphgrammar_Resolution_strategy)
+@settings(max_examples=50)
+def test_graphgrammar_resolution_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Resolution)
+
+@given(instance=graphgrammar_VertexToStringMap_strategy)
+@settings(max_examples=50)
+def test_graphgrammar_vertextostringmap_instantiation(instance):
+    assert isinstance(instance, graphgrammar_VertexToStringMap)
+
+
+
+@given(instance=graphgrammar_VertexToStringMap_strategy)
+def test_graphgrammar_vertextostringmap_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=graphgrammar_ResolutionStep_strategy)
+@settings(max_examples=50)
+def test_graphgrammar_resolutionstep_instantiation(instance):
+    assert isinstance(instance, graphgrammar_ResolutionStep)
+
+@given(instance=graphgrammar_ZoneVertex_strategy)
+@settings(max_examples=50)
+def test_graphgrammar_zonevertex_instantiation(instance):
+    assert isinstance(instance, graphgrammar_ZoneVertex)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_ZoneVertex_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_zonevertex_equivalates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -851,19 +842,19 @@ def test_graphgrammar::zonevertex_equivalates_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equivalates' in graphgrammar::ZoneVertex is empty"
+        assert has_statements, f"Function 'equivalates' in graphgrammar_ZoneVertex is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equivalates' in graphgrammar::ZoneVertex did not change state; check implementation")
+            warnings.warn(f"Operation 'equivalates' in graphgrammar_ZoneVertex did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equivalates' in graphgrammar::ZoneVertex is not implemented or raised an error")
+        warnings.warn(f"Operation 'equivalates' in graphgrammar_ZoneVertex is not implemented or raised an error")
 
-@given(instance=graphgrammar::ParsingTree_strategy)
+@given(instance=graphgrammar_ParsingTree_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::parsingtree_instantiation(instance):
-    assert isinstance(instance, graphgrammar::ParsingTree)
+def test_graphgrammar_parsingtree_instantiation(instance):
+    assert isinstance(instance, graphgrammar_ParsingTree)
 
 import warnings
 import copy
@@ -871,9 +862,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::ParsingTree_strategy)
+@given(instance=graphgrammar_ParsingTree_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::parsingtree_derivation_changes_state(instance):
+def test_graphgrammar_parsingtree_derivation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -885,89 +876,50 @@ def test_graphgrammar::parsingtree_derivation_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'derivation' in graphgrammar::ParsingTree is empty"
+        assert has_statements, f"Function 'derivation' in graphgrammar_ParsingTree is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'derivation' in graphgrammar::ParsingTree did not change state; check implementation")
+            warnings.warn(f"Operation 'derivation' in graphgrammar_ParsingTree did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'derivation' in graphgrammar::ParsingTree is not implemented or raised an error")
+        warnings.warn(f"Operation 'derivation' in graphgrammar_ParsingTree is not implemented or raised an error")
 
-@given(instance=graphgrammar::Derivation_strategy)
+@given(instance=graphgrammar_Derivation_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::derivation_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Derivation)
+def test_graphgrammar_derivation_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Derivation)
 
-@given(instance=graphgrammar::VertexToVertexMap_strategy)
+@given(instance=graphgrammar_VertexToVertexMap_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::vertextovertexmap_instantiation(instance):
-    assert isinstance(instance, graphgrammar::VertexToVertexMap)
+def test_graphgrammar_vertextovertexmap_instantiation(instance):
+    assert isinstance(instance, graphgrammar_VertexToVertexMap)
 
-@given(instance=graphgrammar::DerivationStep_strategy)
+@given(instance=graphgrammar_DerivationStep_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::derivationstep_instantiation(instance):
-    assert isinstance(instance, graphgrammar::DerivationStep)
+def test_graphgrammar_derivationstep_instantiation(instance):
+    assert isinstance(instance, graphgrammar_DerivationStep)
 
-@given(instance=graphgrammar::Rule_strategy)
+@given(instance=graphgrammar_Rule_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::rule_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Rule)
-
-@given(instance=graphgrammar::Rule_strategy)
-def test_graphgrammar::rule_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphgrammar_rule_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Rule)
 
 
-@given(instance=graphgrammar::Rule_strategy)
-def test_graphgrammar::rule_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=graphgrammar::Rule_strategy)
-def test_graphgrammar::rule_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=graphgrammar::Rule_strategy)
-def test_graphgrammar::rule_id_setter(instance):
+@given(instance=graphgrammar_Rule_strategy)
+def test_graphgrammar_rule_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=graphgrammar::Rule_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::rule_apply_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.apply(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.apply).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'apply' in graphgrammar::Rule is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'apply' in graphgrammar::Rule did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'apply' in graphgrammar::Rule is not implemented or raised an error")
+@given(instance=graphgrammar_Rule_strategy)
+def test_graphgrammar_rule_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -975,9 +927,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Rule_strategy)
+@given(instance=graphgrammar_Rule_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::rule_derive_changes_state(instance):
+def test_graphgrammar_rule_derive_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -992,14 +944,14 @@ def test_graphgrammar::rule_derive_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'derive' in graphgrammar::Rule is empty"
+        assert has_statements, f"Function 'derive' in graphgrammar_Rule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'derive' in graphgrammar::Rule did not change state; check implementation")
+            warnings.warn(f"Operation 'derive' in graphgrammar_Rule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'derive' in graphgrammar::Rule is not implemented or raised an error")
+        warnings.warn(f"Operation 'derive' in graphgrammar_Rule is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1007,9 +959,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Rule_strategy)
+@given(instance=graphgrammar_Rule_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::rule_embed_changes_state(instance):
+def test_graphgrammar_rule_embed_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1027,32 +979,62 @@ def test_graphgrammar::rule_embed_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'embed' in graphgrammar::Rule is empty"
+        assert has_statements, f"Function 'embed' in graphgrammar_Rule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'embed' in graphgrammar::Rule did not change state; check implementation")
+            warnings.warn(f"Operation 'embed' in graphgrammar_Rule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'embed' in graphgrammar::Rule is not implemented or raised an error")
+        warnings.warn(f"Operation 'embed' in graphgrammar_Rule is not implemented or raised an error")
 
-@given(instance=graphgrammar::SymbolSymbolsPair_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_Rule_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_rule_apply_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.apply(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.apply).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'apply' in graphgrammar_Rule is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'apply' in graphgrammar_Rule did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'apply' in graphgrammar_Rule is not implemented or raised an error")
+
+@given(instance=graphgrammar_SymbolSymbolsPair_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::symbolsymbolspair_instantiation(instance):
-    assert isinstance(instance, graphgrammar::SymbolSymbolsPair)
+def test_graphgrammar_symbolsymbolspair_instantiation(instance):
+    assert isinstance(instance, graphgrammar_SymbolSymbolsPair)
 
-@given(instance=graphgrammar::Vertex_strategy)
+@given(instance=graphgrammar_Vertex_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::vertex_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Vertex)
-
-@given(instance=graphgrammar::Vertex_strategy)
-def test_graphgrammar::vertex_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_graphgrammar_vertex_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Vertex)
 
 
-@given(instance=graphgrammar::Vertex_strategy)
-def test_graphgrammar::vertex_id_setter(instance):
+
+@given(instance=graphgrammar_Vertex_strategy)
+def test_graphgrammar_vertex_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -1063,9 +1045,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Vertex_strategy)
+@given(instance=graphgrammar_Vertex_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::vertex_equivalates_changes_state(instance):
+def test_graphgrammar_vertex_equivalates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1079,24 +1061,24 @@ def test_graphgrammar::vertex_equivalates_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equivalates' in graphgrammar::Vertex is empty"
+        assert has_statements, f"Function 'equivalates' in graphgrammar_Vertex is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equivalates' in graphgrammar::Vertex did not change state; check implementation")
+            warnings.warn(f"Operation 'equivalates' in graphgrammar_Vertex did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equivalates' in graphgrammar::Vertex is not implemented or raised an error")
+        warnings.warn(f"Operation 'equivalates' in graphgrammar_Vertex is not implemented or raised an error")
 
-@given(instance=graphgrammar::VertexToSymbolSymbolsPairMap_strategy)
+@given(instance=graphgrammar_VertexToSymbolSymbolsPairMap_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::vertextosymbolsymbolspairmap_instantiation(instance):
-    assert isinstance(instance, graphgrammar::VertexToSymbolSymbolsPairMap)
+def test_graphgrammar_vertextosymbolsymbolspairmap_instantiation(instance):
+    assert isinstance(instance, graphgrammar_VertexToSymbolSymbolsPairMap)
 
-@given(instance=graphgrammar::Graph_strategy)
+@given(instance=graphgrammar_Graph_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::graph_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Graph)
+def test_graphgrammar_graph_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Graph)
 
 import warnings
 import copy
@@ -1104,164 +1086,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Graph_strategy)
+@given(instance=graphgrammar_Graph_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::graph_outedges_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.outEdges(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.outEdges).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'outEdges' in graphgrammar::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'outEdges' in graphgrammar::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'outEdges' in graphgrammar::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::Graph_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::graph_inedges_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.inEdges(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.inEdges).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'inEdges' in graphgrammar::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'inEdges' in graphgrammar::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'inEdges' in graphgrammar::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::Graph_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::graph_edges_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.edges(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.edges).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'edges' in graphgrammar::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'edges' in graphgrammar::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'edges' in graphgrammar::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::Graph_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::graph_neighborhood_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.neighborhood(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.neighborhood).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'neighborhood' in graphgrammar::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'neighborhood' in graphgrammar::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'neighborhood' in graphgrammar::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::Graph_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::graph_isomorphicto_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isomorphicTo(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isomorphicTo).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isomorphicTo' in graphgrammar::Graph is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isomorphicTo' in graphgrammar::Graph did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isomorphicTo' in graphgrammar::Graph is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=graphgrammar::Graph_strategy)
-@settings(max_examples=30)
-def test_graphgrammar::graph_isomorphism_changes_state(instance):
+def test_graphgrammar_graph_isomorphism_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1275,49 +1102,195 @@ def test_graphgrammar::graph_isomorphism_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isomorphism' in graphgrammar::Graph is empty"
+        assert has_statements, f"Function 'isomorphism' in graphgrammar_Graph is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isomorphism' in graphgrammar::Graph did not change state; check implementation")
+            warnings.warn(f"Operation 'isomorphism' in graphgrammar_Graph did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isomorphism' in graphgrammar::Graph is not implemented or raised an error")
+        warnings.warn(f"Operation 'isomorphism' in graphgrammar_Graph is not implemented or raised an error")
 
-@given(instance=graphgrammar::Symbol_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_Graph_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_graph_isomorphicto_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isomorphicTo(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isomorphicTo).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isomorphicTo' in graphgrammar_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isomorphicTo' in graphgrammar_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isomorphicTo' in graphgrammar_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_Graph_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_graph_neighborhood_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.neighborhood(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.neighborhood).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'neighborhood' in graphgrammar_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'neighborhood' in graphgrammar_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'neighborhood' in graphgrammar_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_Graph_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_graph_inedges_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.inEdges(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.inEdges).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'inEdges' in graphgrammar_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'inEdges' in graphgrammar_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'inEdges' in graphgrammar_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_Graph_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_graph_edges_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.edges(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.edges).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'edges' in graphgrammar_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'edges' in graphgrammar_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'edges' in graphgrammar_Graph is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=graphgrammar_Graph_strategy)
+@settings(max_examples=30)
+def test_graphgrammar_graph_outedges_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.outEdges(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.outEdges).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'outEdges' in graphgrammar_Graph is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'outEdges' in graphgrammar_Graph did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'outEdges' in graphgrammar_Graph is not implemented or raised an error")
+
+@given(instance=graphgrammar_Symbol_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::symbol_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Symbol)
-
-@given(instance=graphgrammar::Symbol_strategy)
-def test_graphgrammar::symbol_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphgrammar_symbol_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Symbol)
 
 
-@given(instance=graphgrammar::Symbol_strategy)
-def test_graphgrammar::symbol_name_setter(instance):
+
+@given(instance=graphgrammar_Symbol_strategy)
+def test_graphgrammar_symbol_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=graphgrammar::Symbol_strategy)
-def test_graphgrammar::symbol_subscript_type(instance):
-    assert isinstance(instance.subscript, str)
 
 
-@given(instance=graphgrammar::Symbol_strategy)
-def test_graphgrammar::symbol_subscript_setter(instance):
+@given(instance=graphgrammar_Symbol_strategy)
+def test_graphgrammar_symbol_subscript_setter(instance):
     original = instance.subscript
     instance.subscript = original
     assert instance.subscript == original
 
-@given(instance=graphgrammar::Symbol_strategy)
-def test_graphgrammar::symbol_superscript_type(instance):
-    assert isinstance(instance.superscript, str)
 
 
-@given(instance=graphgrammar::Symbol_strategy)
-def test_graphgrammar::symbol_superscript_setter(instance):
+@given(instance=graphgrammar_Symbol_strategy)
+def test_graphgrammar_symbol_superscript_setter(instance):
     original = instance.superscript
     instance.superscript = original
     assert instance.superscript == original
@@ -1328,9 +1301,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Symbol_strategy)
+@given(instance=graphgrammar_Symbol_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::symbol_compareto_changes_state(instance):
+def test_graphgrammar_symbol_compareto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1344,14 +1317,14 @@ def test_graphgrammar::symbol_compareto_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'compareTo' in graphgrammar::Symbol is empty"
+        assert has_statements, f"Function 'compareTo' in graphgrammar_Symbol is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'compareTo' in graphgrammar::Symbol did not change state; check implementation")
+            warnings.warn(f"Operation 'compareTo' in graphgrammar_Symbol did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'compareTo' in graphgrammar::Symbol is not implemented or raised an error")
+        warnings.warn(f"Operation 'compareTo' in graphgrammar_Symbol is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1359,9 +1332,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Symbol_strategy)
+@given(instance=graphgrammar_Symbol_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::symbol_equivalates_changes_state(instance):
+def test_graphgrammar_symbol_equivalates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1375,27 +1348,24 @@ def test_graphgrammar::symbol_equivalates_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equivalates' in graphgrammar::Symbol is empty"
+        assert has_statements, f"Function 'equivalates' in graphgrammar_Symbol is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equivalates' in graphgrammar::Symbol did not change state; check implementation")
+            warnings.warn(f"Operation 'equivalates' in graphgrammar_Symbol did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equivalates' in graphgrammar::Symbol is not implemented or raised an error")
+        warnings.warn(f"Operation 'equivalates' in graphgrammar_Symbol is not implemented or raised an error")
 
-@given(instance=graphgrammar::Grammar_strategy)
+@given(instance=graphgrammar_Grammar_strategy)
 @settings(max_examples=50)
-def test_graphgrammar::grammar_instantiation(instance):
-    assert isinstance(instance, graphgrammar::Grammar)
-
-@given(instance=graphgrammar::Grammar_strategy)
-def test_graphgrammar::grammar_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphgrammar_grammar_instantiation(instance):
+    assert isinstance(instance, graphgrammar_Grammar)
 
 
-@given(instance=graphgrammar::Grammar_strategy)
-def test_graphgrammar::grammar_name_setter(instance):
+
+@given(instance=graphgrammar_Grammar_strategy)
+def test_graphgrammar_grammar_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1406,9 +1376,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=graphgrammar::Grammar_strategy)
+@given(instance=graphgrammar_Grammar_strategy)
 @settings(max_examples=30)
-def test_graphgrammar::grammar_derives_changes_state(instance):
+def test_graphgrammar_grammar_derives_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1425,11 +1395,11 @@ def test_graphgrammar::grammar_derives_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'derives' in graphgrammar::Grammar is empty"
+        assert has_statements, f"Function 'derives' in graphgrammar_Grammar is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'derives' in graphgrammar::Grammar did not change state; check implementation")
+            warnings.warn(f"Operation 'derives' in graphgrammar_Grammar did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'derives' in graphgrammar::Grammar is not implemented or raised an error")
+        warnings.warn(f"Operation 'derives' in graphgrammar_Grammar is not implemented or raised an error")

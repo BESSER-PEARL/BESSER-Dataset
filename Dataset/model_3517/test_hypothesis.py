@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    autocast::ConceptC,
+from python_code import (
+    autocast_ConceptC,
     ConceptA,
-    autocast::ConceptB,
-    autocast::ConceptA,
+    autocast_ConceptB,
+    autocast_ConceptA,
 )
 
 # =============================================================================
@@ -18,16 +18,16 @@ from classes import (
 
 
 
-def test_autocast::conceptc_is_not_abstract():
-    assert not inspect.isabstract(autocast::ConceptC)
+def test_autocast_conceptc_is_not_abstract():
+    assert not inspect.isabstract(autocast_ConceptC)
 
 
-def test_autocast::conceptc_constructor_exists():
-    assert callable(autocast::ConceptC.__init__)
+def test_autocast_conceptc_constructor_exists():
+    assert callable(autocast_ConceptC.__init__)
 
 
-def test_autocast::conceptc_constructor_args():
-    sig = inspect.signature(autocast::ConceptC.__init__)
+def test_autocast_conceptc_constructor_args():
+    sig = inspect.signature(autocast_ConceptC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -46,23 +46,23 @@ def test_concepta_constructor_args():
 
 
 
-def test_autocast::conceptb_is_not_abstract():
-    assert not inspect.isabstract(autocast::ConceptB)
+def test_autocast_conceptb_is_not_abstract():
+    assert not inspect.isabstract(autocast_ConceptB)
 
 
-def test_autocast::conceptb_constructor_exists():
-    assert callable(autocast::ConceptB.__init__)
+def test_autocast_conceptb_constructor_exists():
+    assert callable(autocast_ConceptB.__init__)
 
 
-def test_autocast::conceptb_constructor_args():
-    sig = inspect.signature(autocast::ConceptB.__init__)
+def test_autocast_conceptb_constructor_args():
+    sig = inspect.signature(autocast_ConceptB.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_autocast::conceptb_has_name():
-    assert hasattr(autocast::ConceptB, "name")
+def test_autocast_conceptb_has_name():
+    assert hasattr(autocast_ConceptB, "name")
     descriptor = None
-    for klass in autocast::ConceptB.__mro__:
+    for klass in autocast_ConceptB.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -70,16 +70,16 @@ def test_autocast::conceptb_has_name():
 
 
 
-def test_autocast::concepta_is_not_abstract():
-    assert not inspect.isabstract(autocast::ConceptA)
+def test_autocast_concepta_is_not_abstract():
+    assert not inspect.isabstract(autocast_ConceptA)
 
 
-def test_autocast::concepta_constructor_exists():
-    assert callable(autocast::ConceptA.__init__)
+def test_autocast_concepta_constructor_exists():
+    assert callable(autocast_ConceptA.__init__)
 
 
-def test_autocast::concepta_constructor_args():
-    sig = inspect.signature(autocast::ConceptA.__init__)
+def test_autocast_concepta_constructor_args():
+    sig = inspect.signature(autocast_ConceptA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,48 +94,45 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-autocast::ConceptC_strategy = st.builds(
-    autocast::ConceptC,
+autocast_ConceptC_strategy = st.builds(
+    autocast_ConceptC,
 )
 ConceptA_strategy = st.builds(
     ConceptA,
 )
-autocast::ConceptB_strategy = st.builds(
-    autocast::ConceptB,
+autocast_ConceptB_strategy = st.builds(
+    autocast_ConceptB,
     name=
         safe_text
 )
-autocast::ConceptA_strategy = st.builds(
-    autocast::ConceptA,
+autocast_ConceptA_strategy = st.builds(
+    autocast_ConceptA,
 )
 
-@given(instance=autocast::ConceptC_strategy)
+@given(instance=autocast_ConceptC_strategy)
 @settings(max_examples=50)
-def test_autocast::conceptc_instantiation(instance):
-    assert isinstance(instance, autocast::ConceptC)
+def test_autocast_conceptc_instantiation(instance):
+    assert isinstance(instance, autocast_ConceptC)
 
 @given(instance=ConceptA_strategy)
 @settings(max_examples=50)
 def test_concepta_instantiation(instance):
     assert isinstance(instance, ConceptA)
 
-@given(instance=autocast::ConceptB_strategy)
+@given(instance=autocast_ConceptB_strategy)
 @settings(max_examples=50)
-def test_autocast::conceptb_instantiation(instance):
-    assert isinstance(instance, autocast::ConceptB)
-
-@given(instance=autocast::ConceptB_strategy)
-def test_autocast::conceptb_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_autocast_conceptb_instantiation(instance):
+    assert isinstance(instance, autocast_ConceptB)
 
 
-@given(instance=autocast::ConceptB_strategy)
-def test_autocast::conceptb_name_setter(instance):
+
+@given(instance=autocast_ConceptB_strategy)
+def test_autocast_conceptb_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=autocast::ConceptA_strategy)
+@given(instance=autocast_ConceptA_strategy)
 @settings(max_examples=50)
-def test_autocast::concepta_instantiation(instance):
-    assert isinstance(instance, autocast::ConceptA)
+def test_autocast_concepta_instantiation(instance):
+    assert isinstance(instance, autocast_ConceptA)

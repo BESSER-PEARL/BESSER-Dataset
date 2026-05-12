@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Railway_website_Actor,
@@ -167,17 +167,8 @@ def test_pessanger_constructor_exists():
 def test_pessanger_constructor_args():
     sig = inspect.signature(Pessanger.__init__)
     params = list(sig.parameters.keys())
-    assert "AadharNo" in params, "Missing parameter 'AadharNo'"
     assert "Children" in params, "Missing parameter 'Children'"
-
-def test_pessanger_has_AadharNo():
-    assert hasattr(Pessanger, "AadharNo")
-    descriptor = None
-    for klass in Pessanger.__mro__:
-        if "AadharNo" in klass.__dict__:
-            descriptor = klass.__dict__["AadharNo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "AadharNo" in params, "Missing parameter 'AadharNo'"
 
 def test_pessanger_has_Children():
     assert hasattr(Pessanger, "Children")
@@ -185,6 +176,15 @@ def test_pessanger_has_Children():
     for klass in Pessanger.__mro__:
         if "Children" in klass.__dict__:
             descriptor = klass.__dict__["Children"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pessanger_has_AadharNo():
+    assert hasattr(Pessanger, "AadharNo")
+    descriptor = None
+    for klass in Pessanger.__mro__:
+        if "AadharNo" in klass.__dict__:
+            descriptor = klass.__dict__["AadharNo"]
             break
     assert isinstance(descriptor, property)
 
@@ -240,11 +240,11 @@ def test_superfast1_constructor_args():
     sig = inspect.signature(SuperFast1.__init__)
     params = list(sig.parameters.keys())
     assert "AC_3" in params, "Missing parameter 'AC_3'"
+    assert "AC_2" in params, "Missing parameter 'AC_2'"
     assert "AC_1" in params, "Missing parameter 'AC_1'"
+    assert "Sleeper" in params, "Missing parameter 'Sleeper'"
     assert "Ladies" in params, "Missing parameter 'Ladies'"
     assert "Handicamp" in params, "Missing parameter 'Handicamp'"
-    assert "Sleeper" in params, "Missing parameter 'Sleeper'"
-    assert "AC_2" in params, "Missing parameter 'AC_2'"
 
 def test_superfast1_has_AC_3():
     assert hasattr(SuperFast1, "AC_3")
@@ -255,12 +255,30 @@ def test_superfast1_has_AC_3():
             break
     assert isinstance(descriptor, property)
 
+def test_superfast1_has_AC_2():
+    assert hasattr(SuperFast1, "AC_2")
+    descriptor = None
+    for klass in SuperFast1.__mro__:
+        if "AC_2" in klass.__dict__:
+            descriptor = klass.__dict__["AC_2"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_superfast1_has_AC_1():
     assert hasattr(SuperFast1, "AC_1")
     descriptor = None
     for klass in SuperFast1.__mro__:
         if "AC_1" in klass.__dict__:
             descriptor = klass.__dict__["AC_1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_superfast1_has_Sleeper():
+    assert hasattr(SuperFast1, "Sleeper")
+    descriptor = None
+    for klass in SuperFast1.__mro__:
+        if "Sleeper" in klass.__dict__:
+            descriptor = klass.__dict__["Sleeper"]
             break
     assert isinstance(descriptor, property)
 
@@ -279,24 +297,6 @@ def test_superfast1_has_Handicamp():
     for klass in SuperFast1.__mro__:
         if "Handicamp" in klass.__dict__:
             descriptor = klass.__dict__["Handicamp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_superfast1_has_Sleeper():
-    assert hasattr(SuperFast1, "Sleeper")
-    descriptor = None
-    for klass in SuperFast1.__mro__:
-        if "Sleeper" in klass.__dict__:
-            descriptor = klass.__dict__["Sleeper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_superfast1_has_AC_2():
-    assert hasattr(SuperFast1, "AC_2")
-    descriptor = None
-    for klass in SuperFast1.__mro__:
-        if "AC_2" in klass.__dict__:
-            descriptor = klass.__dict__["AC_2"]
             break
     assert isinstance(descriptor, property)
 
@@ -347,28 +347,10 @@ def test_superfast_constructor_exists():
 def test_superfast_constructor_args():
     sig = inspect.signature(SuperFast.__init__)
     params = list(sig.parameters.keys())
-    assert "AC_3" in params, "Missing parameter 'AC_3'"
-    assert "AC_2" in params, "Missing parameter 'AC_2'"
     assert "AC_1" in params, "Missing parameter 'AC_1'"
     assert "Sleeper" in params, "Missing parameter 'Sleeper'"
-
-def test_superfast_has_AC_3():
-    assert hasattr(SuperFast, "AC_3")
-    descriptor = None
-    for klass in SuperFast.__mro__:
-        if "AC_3" in klass.__dict__:
-            descriptor = klass.__dict__["AC_3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_superfast_has_AC_2():
-    assert hasattr(SuperFast, "AC_2")
-    descriptor = None
-    for klass in SuperFast.__mro__:
-        if "AC_2" in klass.__dict__:
-            descriptor = klass.__dict__["AC_2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "AC_2" in params, "Missing parameter 'AC_2'"
+    assert "AC_3" in params, "Missing parameter 'AC_3'"
 
 def test_superfast_has_AC_1():
     assert hasattr(SuperFast, "AC_1")
@@ -385,6 +367,24 @@ def test_superfast_has_Sleeper():
     for klass in SuperFast.__mro__:
         if "Sleeper" in klass.__dict__:
             descriptor = klass.__dict__["Sleeper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_superfast_has_AC_2():
+    assert hasattr(SuperFast, "AC_2")
+    descriptor = None
+    for klass in SuperFast.__mro__:
+        if "AC_2" in klass.__dict__:
+            descriptor = klass.__dict__["AC_2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_superfast_has_AC_3():
+    assert hasattr(SuperFast, "AC_3")
+    descriptor = None
+    for klass in SuperFast.__mro__:
+        if "AC_3" in klass.__dict__:
+            descriptor = klass.__dict__["AC_3"]
             break
     assert isinstance(descriptor, property)
 
@@ -443,9 +443,9 @@ Traveler_Actor_strategy = st.builds(
 )
 Pessanger_strategy = st.builds(
     Pessanger,
-    AadharNo=
-        st.integers(),
     Children=
+        st.integers(),
+    AadharNo=
         st.integers()
 )
 Information_Interface_strategy = st.builds(
@@ -460,15 +460,15 @@ SuperFast1_strategy = st.builds(
     SuperFast1,
     AC_3=
         safe_text,
+    AC_2=
+        safe_text,
     AC_1=
+        safe_text,
+    Sleeper=
         safe_text,
     Ladies=
         safe_text,
     Handicamp=
-        safe_text,
-    Sleeper=
-        safe_text,
-    AC_2=
         safe_text
 )
 Express_strategy = st.builds(
@@ -480,13 +480,13 @@ Express_strategy = st.builds(
 )
 SuperFast_strategy = st.builds(
     SuperFast,
-    AC_3=
-        safe_text,
-    AC_2=
-        safe_text,
     AC_1=
         safe_text,
     Sleeper=
+        safe_text,
+    AC_2=
+        safe_text,
+    AC_3=
         safe_text
 )
 Class_strategy = st.builds(
@@ -543,20 +543,6 @@ def test_traveler_actor_instantiation(instance):
 def test_pessanger_instantiation(instance):
     assert isinstance(instance, Pessanger)
 
-@given(instance=Pessanger_strategy)
-def test_pessanger_AadharNo_type(instance):
-    assert isinstance(instance.AadharNo, int)
-
-
-@given(instance=Pessanger_strategy)
-def test_pessanger_AadharNo_setter(instance):
-    original = instance.AadharNo
-    instance.AadharNo = original
-    assert instance.AadharNo == original
-
-@given(instance=Pessanger_strategy)
-def test_pessanger_Children_type(instance):
-    assert isinstance(instance.Children, int)
 
 
 @given(instance=Pessanger_strategy)
@@ -564,6 +550,14 @@ def test_pessanger_Children_setter(instance):
     original = instance.Children
     instance.Children = original
     assert instance.Children == original
+
+
+
+@given(instance=Pessanger_strategy)
+def test_pessanger_AadharNo_setter(instance):
+    original = instance.AadharNo
+    instance.AadharNo = original
+    assert instance.AadharNo == original
 
 @given(instance=Information_Interface_strategy)
 @settings(max_examples=50)
@@ -575,9 +569,6 @@ def test_information_interface_instantiation(instance):
 def test_express1_instantiation(instance):
     assert isinstance(instance, Express1)
 
-@given(instance=Express1_strategy)
-def test_express1_SecondSitting_type(instance):
-    assert isinstance(instance.SecondSitting, str)
 
 
 @given(instance=Express1_strategy)
@@ -591,9 +582,6 @@ def test_express1_SecondSitting_setter(instance):
 def test_superfast1_instantiation(instance):
     assert isinstance(instance, SuperFast1)
 
-@given(instance=SuperFast1_strategy)
-def test_superfast1_AC_3_type(instance):
-    assert isinstance(instance.AC_3, str)
 
 
 @given(instance=SuperFast1_strategy)
@@ -602,53 +590,6 @@ def test_superfast1_AC_3_setter(instance):
     instance.AC_3 = original
     assert instance.AC_3 == original
 
-@given(instance=SuperFast1_strategy)
-def test_superfast1_AC_1_type(instance):
-    assert isinstance(instance.AC_1, str)
-
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_AC_1_setter(instance):
-    original = instance.AC_1
-    instance.AC_1 = original
-    assert instance.AC_1 == original
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_Ladies_type(instance):
-    assert isinstance(instance.Ladies, str)
-
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_Ladies_setter(instance):
-    original = instance.Ladies
-    instance.Ladies = original
-    assert instance.Ladies == original
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_Handicamp_type(instance):
-    assert isinstance(instance.Handicamp, str)
-
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_Handicamp_setter(instance):
-    original = instance.Handicamp
-    instance.Handicamp = original
-    assert instance.Handicamp == original
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_Sleeper_type(instance):
-    assert isinstance(instance.Sleeper, str)
-
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_Sleeper_setter(instance):
-    original = instance.Sleeper
-    instance.Sleeper = original
-    assert instance.Sleeper == original
-
-@given(instance=SuperFast1_strategy)
-def test_superfast1_AC_2_type(instance):
-    assert isinstance(instance.AC_2, str)
 
 
 @given(instance=SuperFast1_strategy)
@@ -657,14 +598,43 @@ def test_superfast1_AC_2_setter(instance):
     instance.AC_2 = original
     assert instance.AC_2 == original
 
+
+
+@given(instance=SuperFast1_strategy)
+def test_superfast1_AC_1_setter(instance):
+    original = instance.AC_1
+    instance.AC_1 = original
+    assert instance.AC_1 == original
+
+
+
+@given(instance=SuperFast1_strategy)
+def test_superfast1_Sleeper_setter(instance):
+    original = instance.Sleeper
+    instance.Sleeper = original
+    assert instance.Sleeper == original
+
+
+
+@given(instance=SuperFast1_strategy)
+def test_superfast1_Ladies_setter(instance):
+    original = instance.Ladies
+    instance.Ladies = original
+    assert instance.Ladies == original
+
+
+
+@given(instance=SuperFast1_strategy)
+def test_superfast1_Handicamp_setter(instance):
+    original = instance.Handicamp
+    instance.Handicamp = original
+    assert instance.Handicamp == original
+
 @given(instance=Express_strategy)
 @settings(max_examples=50)
 def test_express_instantiation(instance):
     assert isinstance(instance, Express)
 
-@given(instance=Express_strategy)
-def test_express_SecondSitting_type(instance):
-    assert isinstance(instance.SecondSitting, str)
 
 
 @given(instance=Express_strategy)
@@ -673,9 +643,6 @@ def test_express_SecondSitting_setter(instance):
     instance.SecondSitting = original
     assert instance.SecondSitting == original
 
-@given(instance=Express_strategy)
-def test_express_General_type(instance):
-    assert isinstance(instance.General, str)
 
 
 @given(instance=Express_strategy)
@@ -689,31 +656,6 @@ def test_express_General_setter(instance):
 def test_superfast_instantiation(instance):
     assert isinstance(instance, SuperFast)
 
-@given(instance=SuperFast_strategy)
-def test_superfast_AC_3_type(instance):
-    assert isinstance(instance.AC_3, str)
-
-
-@given(instance=SuperFast_strategy)
-def test_superfast_AC_3_setter(instance):
-    original = instance.AC_3
-    instance.AC_3 = original
-    assert instance.AC_3 == original
-
-@given(instance=SuperFast_strategy)
-def test_superfast_AC_2_type(instance):
-    assert isinstance(instance.AC_2, str)
-
-
-@given(instance=SuperFast_strategy)
-def test_superfast_AC_2_setter(instance):
-    original = instance.AC_2
-    instance.AC_2 = original
-    assert instance.AC_2 == original
-
-@given(instance=SuperFast_strategy)
-def test_superfast_AC_1_type(instance):
-    assert isinstance(instance.AC_1, str)
 
 
 @given(instance=SuperFast_strategy)
@@ -722,9 +664,6 @@ def test_superfast_AC_1_setter(instance):
     instance.AC_1 = original
     assert instance.AC_1 == original
 
-@given(instance=SuperFast_strategy)
-def test_superfast_Sleeper_type(instance):
-    assert isinstance(instance.Sleeper, str)
 
 
 @given(instance=SuperFast_strategy)
@@ -732,6 +671,22 @@ def test_superfast_Sleeper_setter(instance):
     original = instance.Sleeper
     instance.Sleeper = original
     assert instance.Sleeper == original
+
+
+
+@given(instance=SuperFast_strategy)
+def test_superfast_AC_2_setter(instance):
+    original = instance.AC_2
+    instance.AC_2 = original
+    assert instance.AC_2 == original
+
+
+
+@given(instance=SuperFast_strategy)
+def test_superfast_AC_3_setter(instance):
+    original = instance.AC_3
+    instance.AC_3 = original
+    assert instance.AC_3 == original
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)

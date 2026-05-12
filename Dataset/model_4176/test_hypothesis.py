@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    activator::Greeting,
-    activator::Model,
+from python_code import (
+    activator_Greeting,
+    activator_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_activator::greeting_is_not_abstract():
-    assert not inspect.isabstract(activator::Greeting)
+def test_activator_greeting_is_not_abstract():
+    assert not inspect.isabstract(activator_Greeting)
 
 
-def test_activator::greeting_constructor_exists():
-    assert callable(activator::Greeting.__init__)
+def test_activator_greeting_constructor_exists():
+    assert callable(activator_Greeting.__init__)
 
 
-def test_activator::greeting_constructor_args():
-    sig = inspect.signature(activator::Greeting.__init__)
+def test_activator_greeting_constructor_args():
+    sig = inspect.signature(activator_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activator::greeting_has_name():
-    assert hasattr(activator::Greeting, "name")
+def test_activator_greeting_has_name():
+    assert hasattr(activator_Greeting, "name")
     descriptor = None
-    for klass in activator::Greeting.__mro__:
+    for klass in activator_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_activator::greeting_has_name():
 
 
 
-def test_activator::model_is_not_abstract():
-    assert not inspect.isabstract(activator::Model)
+def test_activator_model_is_not_abstract():
+    assert not inspect.isabstract(activator_Model)
 
 
-def test_activator::model_constructor_exists():
-    assert callable(activator::Model.__init__)
+def test_activator_model_constructor_exists():
+    assert callable(activator_Model.__init__)
 
 
-def test_activator::model_constructor_args():
-    sig = inspect.signature(activator::Model.__init__)
+def test_activator_model_constructor_args():
+    sig = inspect.signature(activator_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-activator::Greeting_strategy = st.builds(
-    activator::Greeting,
+activator_Greeting_strategy = st.builds(
+    activator_Greeting,
     name=
         safe_text
 )
-activator::Model_strategy = st.builds(
-    activator::Model,
+activator_Model_strategy = st.builds(
+    activator_Model,
 )
 
-@given(instance=activator::Greeting_strategy)
+@given(instance=activator_Greeting_strategy)
 @settings(max_examples=50)
-def test_activator::greeting_instantiation(instance):
-    assert isinstance(instance, activator::Greeting)
-
-@given(instance=activator::Greeting_strategy)
-def test_activator::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activator_greeting_instantiation(instance):
+    assert isinstance(instance, activator_Greeting)
 
 
-@given(instance=activator::Greeting_strategy)
-def test_activator::greeting_name_setter(instance):
+
+@given(instance=activator_Greeting_strategy)
+def test_activator_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=activator::Model_strategy)
+@given(instance=activator_Model_strategy)
 @settings(max_examples=50)
-def test_activator::model_instantiation(instance):
-    assert isinstance(instance, activator::Model)
+def test_activator_model_instantiation(instance):
+    assert isinstance(instance, activator_Model)

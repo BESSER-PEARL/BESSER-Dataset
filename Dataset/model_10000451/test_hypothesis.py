@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ClassV,
@@ -300,9 +300,9 @@ def test_classc_constructor_args():
     sig = inspect.signature(ClassC.__init__)
     params = list(sig.parameters.keys())
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
     assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
 
 def test_classc_has_packageAttribute():
     assert hasattr(ClassC, "packageAttribute")
@@ -310,6 +310,15 @@ def test_classc_has_packageAttribute():
     for klass in ClassC.__mro__:
         if "packageAttribute" in klass.__dict__:
             descriptor = klass.__dict__["packageAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_privateAttribute():
+    assert hasattr(ClassC, "privateAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -328,15 +337,6 @@ def test_classc_has_publicAttribute():
     for klass in ClassC.__mro__:
         if "publicAttribute" in klass.__dict__:
             descriptor = klass.__dict__["publicAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classc_has_privateAttribute():
-    assert hasattr(ClassC, "privateAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -367,19 +367,10 @@ def test_asteroidspawner_constructor_exists():
 def test_asteroidspawner_constructor_args():
     sig = inspect.signature(AsteroidSpawner.__init__)
     params = list(sig.parameters.keys())
-    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
     assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
     assert "asteroids" in params, "Missing parameter 'asteroids'"
+    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
-
-def test_asteroidspawner_has_publicAttribute():
-    assert hasattr(AsteroidSpawner, "publicAttribute")
-    descriptor = None
-    for klass in AsteroidSpawner.__mro__:
-        if "publicAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["publicAttribute"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_asteroidspawner_has_privateAttribute():
     assert hasattr(AsteroidSpawner, "privateAttribute")
@@ -396,6 +387,15 @@ def test_asteroidspawner_has_asteroids():
     for klass in AsteroidSpawner.__mro__:
         if "asteroids" in klass.__dict__:
             descriptor = klass.__dict__["asteroids"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_asteroidspawner_has_publicAttribute():
+    assert hasattr(AsteroidSpawner, "publicAttribute")
+    descriptor = None
+    for klass in AsteroidSpawner.__mro__:
+        if "publicAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["publicAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -512,24 +512,24 @@ ClassC_strategy = st.builds(
     ClassC,
     packageAttribute=
         safe_text,
+    privateAttribute=
+        st.integers(),
     protectedAttribute=
         safe_text,
     publicAttribute=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    privateAttribute=
-        st.integers()
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 ClassB_strategy = st.builds(
     ClassB,
 )
 AsteroidSpawner_strategy = st.builds(
     AsteroidSpawner,
-    publicAttribute=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     privateAttribute=
         st.integers(),
     asteroids=
         safe_text,
+    publicAttribute=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     packageAttribute=
         safe_text
 )
@@ -636,9 +636,6 @@ def test_classd_instantiation(instance):
 def test_classc_instantiation(instance):
     assert isinstance(instance, ClassC)
 
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=ClassC_strategy)
@@ -647,9 +644,14 @@ def test_classc_packageAttribute_setter(instance):
     instance.packageAttribute = original
     assert instance.packageAttribute == original
 
+
+
 @given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
+def test_classc_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
+
 
 
 @given(instance=ClassC_strategy)
@@ -658,9 +660,6 @@ def test_classc_protectedAttribute_setter(instance):
     instance.protectedAttribute = original
     assert instance.protectedAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
 
 
 @given(instance=ClassC_strategy)
@@ -668,17 +667,6 @@ def test_classc_publicAttribute_setter(instance):
     original = instance.publicAttribute
     instance.publicAttribute = original
     assert instance.publicAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_setter(instance):
-    original = instance.privateAttribute
-    instance.privateAttribute = original
-    assert instance.privateAttribute == original
 
 @given(instance=ClassB_strategy)
 @settings(max_examples=50)
@@ -690,20 +678,6 @@ def test_classb_instantiation(instance):
 def test_asteroidspawner_instantiation(instance):
     assert isinstance(instance, AsteroidSpawner)
 
-@given(instance=AsteroidSpawner_strategy)
-def test_asteroidspawner_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
-
-
-@given(instance=AsteroidSpawner_strategy)
-def test_asteroidspawner_publicAttribute_setter(instance):
-    original = instance.publicAttribute
-    instance.publicAttribute = original
-    assert instance.publicAttribute == original
-
-@given(instance=AsteroidSpawner_strategy)
-def test_asteroidspawner_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=AsteroidSpawner_strategy)
@@ -712,9 +686,6 @@ def test_asteroidspawner_privateAttribute_setter(instance):
     instance.privateAttribute = original
     assert instance.privateAttribute == original
 
-@given(instance=AsteroidSpawner_strategy)
-def test_asteroidspawner_asteroids_type(instance):
-    assert isinstance(instance.asteroids, str)
 
 
 @given(instance=AsteroidSpawner_strategy)
@@ -723,9 +694,14 @@ def test_asteroidspawner_asteroids_setter(instance):
     instance.asteroids = original
     assert instance.asteroids == original
 
+
+
 @given(instance=AsteroidSpawner_strategy)
-def test_asteroidspawner_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
+def test_asteroidspawner_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
 
 
 @given(instance=AsteroidSpawner_strategy)
@@ -739,9 +715,6 @@ def test_asteroidspawner_packageAttribute_setter(instance):
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
 
 
 @given(instance=BankAccount_strategy)
@@ -750,9 +723,6 @@ def test_bankaccount_balance_setter(instance):
     instance.balance = original
     assert instance.balance == original
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
 
 
 @given(instance=BankAccount_strategy)

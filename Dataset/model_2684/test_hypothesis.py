@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleTG::A,
-    simpleTG::Container,
-    simpleTG::C,
-    simpleTG::B,
+from python_code import (
+    simpleTG_A,
+    simpleTG_Container,
+    simpleTG_C,
+    simpleTG_B,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_simpletg::a_is_not_abstract():
-    assert not inspect.isabstract(simpleTG::A)
+def test_simpletg_a_is_not_abstract():
+    assert not inspect.isabstract(simpleTG_A)
 
 
-def test_simpletg::a_constructor_exists():
-    assert callable(simpleTG::A.__init__)
+def test_simpletg_a_constructor_exists():
+    assert callable(simpleTG_A.__init__)
 
 
-def test_simpletg::a_constructor_args():
-    sig = inspect.signature(simpleTG::A.__init__)
+def test_simpletg_a_constructor_args():
+    sig = inspect.signature(simpleTG_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletg::container_is_not_abstract():
-    assert not inspect.isabstract(simpleTG::Container)
+def test_simpletg_container_is_not_abstract():
+    assert not inspect.isabstract(simpleTG_Container)
 
 
-def test_simpletg::container_constructor_exists():
-    assert callable(simpleTG::Container.__init__)
+def test_simpletg_container_constructor_exists():
+    assert callable(simpleTG_Container.__init__)
 
 
-def test_simpletg::container_constructor_args():
-    sig = inspect.signature(simpleTG::Container.__init__)
+def test_simpletg_container_constructor_args():
+    sig = inspect.signature(simpleTG_Container.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletg::c_is_not_abstract():
-    assert not inspect.isabstract(simpleTG::C)
+def test_simpletg_c_is_not_abstract():
+    assert not inspect.isabstract(simpleTG_C)
 
 
-def test_simpletg::c_constructor_exists():
-    assert callable(simpleTG::C.__init__)
+def test_simpletg_c_constructor_exists():
+    assert callable(simpleTG_C.__init__)
 
 
-def test_simpletg::c_constructor_args():
-    sig = inspect.signature(simpleTG::C.__init__)
+def test_simpletg_c_constructor_args():
+    sig = inspect.signature(simpleTG_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletg::b_is_not_abstract():
-    assert not inspect.isabstract(simpleTG::B)
+def test_simpletg_b_is_not_abstract():
+    assert not inspect.isabstract(simpleTG_B)
 
 
-def test_simpletg::b_constructor_exists():
-    assert callable(simpleTG::B.__init__)
+def test_simpletg_b_constructor_exists():
+    assert callable(simpleTG_B.__init__)
 
 
-def test_simpletg::b_constructor_args():
-    sig = inspect.signature(simpleTG::B.__init__)
+def test_simpletg_b_constructor_args():
+    sig = inspect.signature(simpleTG_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleTG::A_strategy = st.builds(
-    simpleTG::A,
+simpleTG_A_strategy = st.builds(
+    simpleTG_A,
 )
-simpleTG::Container_strategy = st.builds(
-    simpleTG::Container,
+simpleTG_Container_strategy = st.builds(
+    simpleTG_Container,
 )
-simpleTG::C_strategy = st.builds(
-    simpleTG::C,
+simpleTG_C_strategy = st.builds(
+    simpleTG_C,
 )
-simpleTG::B_strategy = st.builds(
-    simpleTG::B,
+simpleTG_B_strategy = st.builds(
+    simpleTG_B,
 )
 
-@given(instance=simpleTG::A_strategy)
+@given(instance=simpleTG_A_strategy)
 @settings(max_examples=50)
-def test_simpletg::a_instantiation(instance):
-    assert isinstance(instance, simpleTG::A)
+def test_simpletg_a_instantiation(instance):
+    assert isinstance(instance, simpleTG_A)
 
-@given(instance=simpleTG::Container_strategy)
+@given(instance=simpleTG_Container_strategy)
 @settings(max_examples=50)
-def test_simpletg::container_instantiation(instance):
-    assert isinstance(instance, simpleTG::Container)
+def test_simpletg_container_instantiation(instance):
+    assert isinstance(instance, simpleTG_Container)
 
-@given(instance=simpleTG::C_strategy)
+@given(instance=simpleTG_C_strategy)
 @settings(max_examples=50)
-def test_simpletg::c_instantiation(instance):
-    assert isinstance(instance, simpleTG::C)
+def test_simpletg_c_instantiation(instance):
+    assert isinstance(instance, simpleTG_C)
 
-@given(instance=simpleTG::B_strategy)
+@given(instance=simpleTG_B_strategy)
 @settings(max_examples=50)
-def test_simpletg::b_instantiation(instance):
-    assert isinstance(instance, simpleTG::B)
+def test_simpletg_b_instantiation(instance):
+    assert isinstance(instance, simpleTG_B)

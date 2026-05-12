@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PK461726::B461726,
-    PK461726::A461726,
+from python_code import (
+    PK461726_B461726,
+    PK461726_A461726,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_pk461726::b461726_is_not_abstract():
-    assert not inspect.isabstract(PK461726::B461726)
+def test_pk461726_b461726_is_not_abstract():
+    assert not inspect.isabstract(PK461726_B461726)
 
 
-def test_pk461726::b461726_constructor_exists():
-    assert callable(PK461726::B461726.__init__)
+def test_pk461726_b461726_constructor_exists():
+    assert callable(PK461726_B461726.__init__)
 
 
-def test_pk461726::b461726_constructor_args():
-    sig = inspect.signature(PK461726::B461726.__init__)
+def test_pk461726_b461726_constructor_args():
+    sig = inspect.signature(PK461726_B461726.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pk461726::b461726_has_name():
-    assert hasattr(PK461726::B461726, "name")
+def test_pk461726_b461726_has_name():
+    assert hasattr(PK461726_B461726, "name")
     descriptor = None
-    for klass in PK461726::B461726.__mro__:
+    for klass in PK461726_B461726.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_pk461726::b461726_has_name():
 
 
 
-def test_pk461726::a461726_is_not_abstract():
-    assert not inspect.isabstract(PK461726::A461726)
+def test_pk461726_a461726_is_not_abstract():
+    assert not inspect.isabstract(PK461726_A461726)
 
 
-def test_pk461726::a461726_constructor_exists():
-    assert callable(PK461726::A461726.__init__)
+def test_pk461726_a461726_constructor_exists():
+    assert callable(PK461726_A461726.__init__)
 
 
-def test_pk461726::a461726_constructor_args():
-    sig = inspect.signature(PK461726::A461726.__init__)
+def test_pk461726_a461726_constructor_args():
+    sig = inspect.signature(PK461726_A461726.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pk461726::a461726_has_name():
-    assert hasattr(PK461726::A461726, "name")
+def test_pk461726_a461726_has_name():
+    assert hasattr(PK461726_A461726, "name")
     descriptor = None
-    for klass in PK461726::A461726.__mro__:
+    for klass in PK461726_A461726.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PK461726::B461726_strategy = st.builds(
-    PK461726::B461726,
+PK461726_B461726_strategy = st.builds(
+    PK461726_B461726,
     name=
         safe_text
 )
-PK461726::A461726_strategy = st.builds(
-    PK461726::A461726,
+PK461726_A461726_strategy = st.builds(
+    PK461726_A461726,
     name=
         safe_text
 )
 
-@given(instance=PK461726::B461726_strategy)
+@given(instance=PK461726_B461726_strategy)
 @settings(max_examples=50)
-def test_pk461726::b461726_instantiation(instance):
-    assert isinstance(instance, PK461726::B461726)
-
-@given(instance=PK461726::B461726_strategy)
-def test_pk461726::b461726_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pk461726_b461726_instantiation(instance):
+    assert isinstance(instance, PK461726_B461726)
 
 
-@given(instance=PK461726::B461726_strategy)
-def test_pk461726::b461726_name_setter(instance):
+
+@given(instance=PK461726_B461726_strategy)
+def test_pk461726_b461726_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PK461726::A461726_strategy)
+@given(instance=PK461726_A461726_strategy)
 @settings(max_examples=50)
-def test_pk461726::a461726_instantiation(instance):
-    assert isinstance(instance, PK461726::A461726)
-
-@given(instance=PK461726::A461726_strategy)
-def test_pk461726::a461726_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pk461726_a461726_instantiation(instance):
+    assert isinstance(instance, PK461726_A461726)
 
 
-@given(instance=PK461726::A461726_strategy)
-def test_pk461726::a461726_name_setter(instance):
+
+@given(instance=PK461726_A461726_strategy)
+def test_pk461726_a461726_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

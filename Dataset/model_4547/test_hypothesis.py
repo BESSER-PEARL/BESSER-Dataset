@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     PropertyKeyContainer,
-    behaviour::TaskDescriptor,
-    behaviour::CapabilityProperties,
-    behaviour::Capability,
-    behaviour::Robot,
-    behaviour::DetectedObject,
-    behaviour::RobotCollaboration,
-    behaviour::Task,
+    behaviour_TaskDescriptor,
+    behaviour_CapabilityProperties,
+    behaviour_Capability,
+    behaviour_Robot,
+    behaviour_DetectedObject,
+    behaviour_RobotCollaboration,
+    behaviour_Task,
     CommunicationAction,
-    behaviour::BroadcastCommunication,
-    behaviour::MulticastCommunication,
-    behaviour::UnicastCommunication,
+    behaviour_MulticastCommunication,
+    behaviour_BroadcastCommunication,
+    behaviour_UnicastCommunication,
     Action,
-    behaviour::CommunicationAction,
-    behaviour::MeasureValue,
-    behaviour::AreaObject,
-    behaviour::Property,
+    behaviour_CommunicationAction,
+    behaviour_MeasureValue,
+    behaviour_AreaObject,
+    behaviour_Property,
     NamedElement,
-    behaviour::Action,
-    behaviour::MessageRepository,
-    behaviour::Message,
-    behaviour::BehaviouralPropertyKeyContainer,
-    behaviour::TaskRequirement,
-    behaviour::TaskExecution,
-    behaviour::DynamicRobot,
-    behaviour::BehaviourContainer,
+    behaviour_Action,
+    behaviour_MessageRepository,
+    behaviour_Message,
+    behaviour_BehaviouralPropertyKeyContainer,
+    behaviour_TaskRequirement,
+    behaviour_TaskExecution,
+    behaviour_DynamicRobot,
+    behaviour_BehaviourContainer,
     RobotStatus,
     TaskExecutionStatus,
 )
@@ -56,79 +56,79 @@ def test_propertykeycontainer_constructor_args():
 
 
 
-def test_behaviour::taskdescriptor_is_not_abstract():
-    assert not inspect.isabstract(behaviour::TaskDescriptor)
+def test_behaviour_taskdescriptor_is_not_abstract():
+    assert not inspect.isabstract(behaviour_TaskDescriptor)
 
 
-def test_behaviour::taskdescriptor_constructor_exists():
-    assert callable(behaviour::TaskDescriptor.__init__)
+def test_behaviour_taskdescriptor_constructor_exists():
+    assert callable(behaviour_TaskDescriptor.__init__)
 
 
-def test_behaviour::taskdescriptor_constructor_args():
-    sig = inspect.signature(behaviour::TaskDescriptor.__init__)
+def test_behaviour_taskdescriptor_constructor_args():
+    sig = inspect.signature(behaviour_TaskDescriptor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::capabilityproperties_is_not_abstract():
-    assert not inspect.isabstract(behaviour::CapabilityProperties)
+def test_behaviour_capabilityproperties_is_not_abstract():
+    assert not inspect.isabstract(behaviour_CapabilityProperties)
 
 
-def test_behaviour::capabilityproperties_constructor_exists():
-    assert callable(behaviour::CapabilityProperties.__init__)
+def test_behaviour_capabilityproperties_constructor_exists():
+    assert callable(behaviour_CapabilityProperties.__init__)
 
 
-def test_behaviour::capabilityproperties_constructor_args():
-    sig = inspect.signature(behaviour::CapabilityProperties.__init__)
+def test_behaviour_capabilityproperties_constructor_args():
+    sig = inspect.signature(behaviour_CapabilityProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::capability_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Capability)
+def test_behaviour_capability_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Capability)
 
 
-def test_behaviour::capability_constructor_exists():
-    assert callable(behaviour::Capability.__init__)
+def test_behaviour_capability_constructor_exists():
+    assert callable(behaviour_Capability.__init__)
 
 
-def test_behaviour::capability_constructor_args():
-    sig = inspect.signature(behaviour::Capability.__init__)
+def test_behaviour_capability_constructor_args():
+    sig = inspect.signature(behaviour_Capability.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::robot_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Robot)
+def test_behaviour_robot_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Robot)
 
 
-def test_behaviour::robot_constructor_exists():
-    assert callable(behaviour::Robot.__init__)
+def test_behaviour_robot_constructor_exists():
+    assert callable(behaviour_Robot.__init__)
 
 
-def test_behaviour::robot_constructor_args():
-    sig = inspect.signature(behaviour::Robot.__init__)
+def test_behaviour_robot_constructor_args():
+    sig = inspect.signature(behaviour_Robot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::detectedobject_is_not_abstract():
-    assert not inspect.isabstract(behaviour::DetectedObject)
+def test_behaviour_detectedobject_is_not_abstract():
+    assert not inspect.isabstract(behaviour_DetectedObject)
 
 
-def test_behaviour::detectedobject_constructor_exists():
-    assert callable(behaviour::DetectedObject.__init__)
+def test_behaviour_detectedobject_constructor_exists():
+    assert callable(behaviour_DetectedObject.__init__)
 
 
-def test_behaviour::detectedobject_constructor_args():
-    sig = inspect.signature(behaviour::DetectedObject.__init__)
+def test_behaviour_detectedobject_constructor_args():
+    sig = inspect.signature(behaviour_DetectedObject.__init__)
     params = list(sig.parameters.keys())
     assert "obstacle" in params, "Missing parameter 'obstacle'"
 
-def test_behaviour::detectedobject_has_obstacle():
-    assert hasattr(behaviour::DetectedObject, "obstacle")
+def test_behaviour_detectedobject_has_obstacle():
+    assert hasattr(behaviour_DetectedObject, "obstacle")
     descriptor = None
-    for klass in behaviour::DetectedObject.__mro__:
+    for klass in behaviour_DetectedObject.__mro__:
         if "obstacle" in klass.__dict__:
             descriptor = klass.__dict__["obstacle"]
             break
@@ -136,30 +136,30 @@ def test_behaviour::detectedobject_has_obstacle():
 
 
 
-def test_behaviour::robotcollaboration_is_not_abstract():
-    assert not inspect.isabstract(behaviour::RobotCollaboration)
+def test_behaviour_robotcollaboration_is_not_abstract():
+    assert not inspect.isabstract(behaviour_RobotCollaboration)
 
 
-def test_behaviour::robotcollaboration_constructor_exists():
-    assert callable(behaviour::RobotCollaboration.__init__)
+def test_behaviour_robotcollaboration_constructor_exists():
+    assert callable(behaviour_RobotCollaboration.__init__)
 
 
-def test_behaviour::robotcollaboration_constructor_args():
-    sig = inspect.signature(behaviour::RobotCollaboration.__init__)
+def test_behaviour_robotcollaboration_constructor_args():
+    sig = inspect.signature(behaviour_RobotCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::task_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Task)
+def test_behaviour_task_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Task)
 
 
-def test_behaviour::task_constructor_exists():
-    assert callable(behaviour::Task.__init__)
+def test_behaviour_task_constructor_exists():
+    assert callable(behaviour_Task.__init__)
 
 
-def test_behaviour::task_constructor_args():
-    sig = inspect.signature(behaviour::Task.__init__)
+def test_behaviour_task_constructor_args():
+    sig = inspect.signature(behaviour_Task.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,44 +178,44 @@ def test_communicationaction_constructor_args():
 
 
 
-def test_behaviour::broadcastcommunication_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BroadcastCommunication)
+def test_behaviour_multicastcommunication_is_not_abstract():
+    assert not inspect.isabstract(behaviour_MulticastCommunication)
 
 
-def test_behaviour::broadcastcommunication_constructor_exists():
-    assert callable(behaviour::BroadcastCommunication.__init__)
+def test_behaviour_multicastcommunication_constructor_exists():
+    assert callable(behaviour_MulticastCommunication.__init__)
 
 
-def test_behaviour::broadcastcommunication_constructor_args():
-    sig = inspect.signature(behaviour::BroadcastCommunication.__init__)
+def test_behaviour_multicastcommunication_constructor_args():
+    sig = inspect.signature(behaviour_MulticastCommunication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::multicastcommunication_is_not_abstract():
-    assert not inspect.isabstract(behaviour::MulticastCommunication)
+def test_behaviour_broadcastcommunication_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BroadcastCommunication)
 
 
-def test_behaviour::multicastcommunication_constructor_exists():
-    assert callable(behaviour::MulticastCommunication.__init__)
+def test_behaviour_broadcastcommunication_constructor_exists():
+    assert callable(behaviour_BroadcastCommunication.__init__)
 
 
-def test_behaviour::multicastcommunication_constructor_args():
-    sig = inspect.signature(behaviour::MulticastCommunication.__init__)
+def test_behaviour_broadcastcommunication_constructor_args():
+    sig = inspect.signature(behaviour_BroadcastCommunication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::unicastcommunication_is_not_abstract():
-    assert not inspect.isabstract(behaviour::UnicastCommunication)
+def test_behaviour_unicastcommunication_is_not_abstract():
+    assert not inspect.isabstract(behaviour_UnicastCommunication)
 
 
-def test_behaviour::unicastcommunication_constructor_exists():
-    assert callable(behaviour::UnicastCommunication.__init__)
+def test_behaviour_unicastcommunication_constructor_exists():
+    assert callable(behaviour_UnicastCommunication.__init__)
 
 
-def test_behaviour::unicastcommunication_constructor_args():
-    sig = inspect.signature(behaviour::UnicastCommunication.__init__)
+def test_behaviour_unicastcommunication_constructor_args():
+    sig = inspect.signature(behaviour_UnicastCommunication.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -234,58 +234,58 @@ def test_action_constructor_args():
 
 
 
-def test_behaviour::communicationaction_is_not_abstract():
-    assert not inspect.isabstract(behaviour::CommunicationAction)
+def test_behaviour_communicationaction_is_not_abstract():
+    assert not inspect.isabstract(behaviour_CommunicationAction)
 
 
-def test_behaviour::communicationaction_constructor_exists():
-    assert callable(behaviour::CommunicationAction.__init__)
+def test_behaviour_communicationaction_constructor_exists():
+    assert callable(behaviour_CommunicationAction.__init__)
 
 
-def test_behaviour::communicationaction_constructor_args():
-    sig = inspect.signature(behaviour::CommunicationAction.__init__)
+def test_behaviour_communicationaction_constructor_args():
+    sig = inspect.signature(behaviour_CommunicationAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::measurevalue_is_not_abstract():
-    assert not inspect.isabstract(behaviour::MeasureValue)
+def test_behaviour_measurevalue_is_not_abstract():
+    assert not inspect.isabstract(behaviour_MeasureValue)
 
 
-def test_behaviour::measurevalue_constructor_exists():
-    assert callable(behaviour::MeasureValue.__init__)
+def test_behaviour_measurevalue_constructor_exists():
+    assert callable(behaviour_MeasureValue.__init__)
 
 
-def test_behaviour::measurevalue_constructor_args():
-    sig = inspect.signature(behaviour::MeasureValue.__init__)
+def test_behaviour_measurevalue_constructor_args():
+    sig = inspect.signature(behaviour_MeasureValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::areaobject_is_not_abstract():
-    assert not inspect.isabstract(behaviour::AreaObject)
+def test_behaviour_areaobject_is_not_abstract():
+    assert not inspect.isabstract(behaviour_AreaObject)
 
 
-def test_behaviour::areaobject_constructor_exists():
-    assert callable(behaviour::AreaObject.__init__)
+def test_behaviour_areaobject_constructor_exists():
+    assert callable(behaviour_AreaObject.__init__)
 
 
-def test_behaviour::areaobject_constructor_args():
-    sig = inspect.signature(behaviour::AreaObject.__init__)
+def test_behaviour_areaobject_constructor_args():
+    sig = inspect.signature(behaviour_AreaObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::property_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Property)
+def test_behaviour_property_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Property)
 
 
-def test_behaviour::property_constructor_exists():
-    assert callable(behaviour::Property.__init__)
+def test_behaviour_property_constructor_exists():
+    assert callable(behaviour_Property.__init__)
 
 
-def test_behaviour::property_constructor_args():
-    sig = inspect.signature(behaviour::Property.__init__)
+def test_behaviour_property_constructor_args():
+    sig = inspect.signature(behaviour_Property.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -304,61 +304,61 @@ def test_namedelement_constructor_args():
 
 
 
-def test_behaviour::action_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Action)
+def test_behaviour_action_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Action)
 
 
-def test_behaviour::action_constructor_exists():
-    assert callable(behaviour::Action.__init__)
+def test_behaviour_action_constructor_exists():
+    assert callable(behaviour_Action.__init__)
 
 
-def test_behaviour::action_constructor_args():
-    sig = inspect.signature(behaviour::Action.__init__)
+def test_behaviour_action_constructor_args():
+    sig = inspect.signature(behaviour_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::messagerepository_is_not_abstract():
-    assert not inspect.isabstract(behaviour::MessageRepository)
+def test_behaviour_messagerepository_is_not_abstract():
+    assert not inspect.isabstract(behaviour_MessageRepository)
 
 
-def test_behaviour::messagerepository_constructor_exists():
-    assert callable(behaviour::MessageRepository.__init__)
+def test_behaviour_messagerepository_constructor_exists():
+    assert callable(behaviour_MessageRepository.__init__)
 
 
-def test_behaviour::messagerepository_constructor_args():
-    sig = inspect.signature(behaviour::MessageRepository.__init__)
+def test_behaviour_messagerepository_constructor_args():
+    sig = inspect.signature(behaviour_MessageRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::message_is_not_abstract():
-    assert not inspect.isabstract(behaviour::Message)
+def test_behaviour_message_is_not_abstract():
+    assert not inspect.isabstract(behaviour_Message)
 
 
-def test_behaviour::message_constructor_exists():
-    assert callable(behaviour::Message.__init__)
+def test_behaviour_message_constructor_exists():
+    assert callable(behaviour_Message.__init__)
 
 
-def test_behaviour::message_constructor_args():
-    sig = inspect.signature(behaviour::Message.__init__)
+def test_behaviour_message_constructor_args():
+    sig = inspect.signature(behaviour_Message.__init__)
     params = list(sig.parameters.keys())
     assert "timestamp" in params, "Missing parameter 'timestamp'"
     assert "needResponse" in params, "Missing parameter 'needResponse'"
 
-def test_behaviour::message_has_timestamp():
-    assert hasattr(behaviour::Message, "timestamp")
+def test_behaviour_message_has_timestamp():
+    assert hasattr(behaviour_Message, "timestamp")
     descriptor = None
-    for klass in behaviour::Message.__mro__:
+    for klass in behaviour_Message.__mro__:
         if "timestamp" in klass.__dict__:
             descriptor = klass.__dict__["timestamp"]
             break
     assert isinstance(descriptor, property)
 
-def test_behaviour::message_has_needResponse():
-    assert hasattr(behaviour::Message, "needResponse")
+def test_behaviour_message_has_needResponse():
+    assert hasattr(behaviour_Message, "needResponse")
     descriptor = None
-    for klass in behaviour::Message.__mro__:
+    for klass in behaviour_Message.__mro__:
         if "needResponse" in klass.__dict__:
             descriptor = klass.__dict__["needResponse"]
             break
@@ -366,37 +366,37 @@ def test_behaviour::message_has_needResponse():
 
 
 
-def test_behaviour::behaviouralpropertykeycontainer_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BehaviouralPropertyKeyContainer)
+def test_behaviour_behaviouralpropertykeycontainer_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BehaviouralPropertyKeyContainer)
 
 
-def test_behaviour::behaviouralpropertykeycontainer_constructor_exists():
-    assert callable(behaviour::BehaviouralPropertyKeyContainer.__init__)
+def test_behaviour_behaviouralpropertykeycontainer_constructor_exists():
+    assert callable(behaviour_BehaviouralPropertyKeyContainer.__init__)
 
 
-def test_behaviour::behaviouralpropertykeycontainer_constructor_args():
-    sig = inspect.signature(behaviour::BehaviouralPropertyKeyContainer.__init__)
+def test_behaviour_behaviouralpropertykeycontainer_constructor_args():
+    sig = inspect.signature(behaviour_BehaviouralPropertyKeyContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviour::taskrequirement_is_not_abstract():
-    assert not inspect.isabstract(behaviour::TaskRequirement)
+def test_behaviour_taskrequirement_is_not_abstract():
+    assert not inspect.isabstract(behaviour_TaskRequirement)
 
 
-def test_behaviour::taskrequirement_constructor_exists():
-    assert callable(behaviour::TaskRequirement.__init__)
+def test_behaviour_taskrequirement_constructor_exists():
+    assert callable(behaviour_TaskRequirement.__init__)
 
 
-def test_behaviour::taskrequirement_constructor_args():
-    sig = inspect.signature(behaviour::TaskRequirement.__init__)
+def test_behaviour_taskrequirement_constructor_args():
+    sig = inspect.signature(behaviour_TaskRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "participants" in params, "Missing parameter 'participants'"
 
-def test_behaviour::taskrequirement_has_participants():
-    assert hasattr(behaviour::TaskRequirement, "participants")
+def test_behaviour_taskrequirement_has_participants():
+    assert hasattr(behaviour_TaskRequirement, "participants")
     descriptor = None
-    for klass in behaviour::TaskRequirement.__mro__:
+    for klass in behaviour_TaskRequirement.__mro__:
         if "participants" in klass.__dict__:
             descriptor = klass.__dict__["participants"]
             break
@@ -404,23 +404,23 @@ def test_behaviour::taskrequirement_has_participants():
 
 
 
-def test_behaviour::taskexecution_is_not_abstract():
-    assert not inspect.isabstract(behaviour::TaskExecution)
+def test_behaviour_taskexecution_is_not_abstract():
+    assert not inspect.isabstract(behaviour_TaskExecution)
 
 
-def test_behaviour::taskexecution_constructor_exists():
-    assert callable(behaviour::TaskExecution.__init__)
+def test_behaviour_taskexecution_constructor_exists():
+    assert callable(behaviour_TaskExecution.__init__)
 
 
-def test_behaviour::taskexecution_constructor_args():
-    sig = inspect.signature(behaviour::TaskExecution.__init__)
+def test_behaviour_taskexecution_constructor_args():
+    sig = inspect.signature(behaviour_TaskExecution.__init__)
     params = list(sig.parameters.keys())
     assert "status" in params, "Missing parameter 'status'"
 
-def test_behaviour::taskexecution_has_status():
-    assert hasattr(behaviour::TaskExecution, "status")
+def test_behaviour_taskexecution_has_status():
+    assert hasattr(behaviour_TaskExecution, "status")
     descriptor = None
-    for klass in behaviour::TaskExecution.__mro__:
+    for klass in behaviour_TaskExecution.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
@@ -428,23 +428,23 @@ def test_behaviour::taskexecution_has_status():
 
 
 
-def test_behaviour::dynamicrobot_is_not_abstract():
-    assert not inspect.isabstract(behaviour::DynamicRobot)
+def test_behaviour_dynamicrobot_is_not_abstract():
+    assert not inspect.isabstract(behaviour_DynamicRobot)
 
 
-def test_behaviour::dynamicrobot_constructor_exists():
-    assert callable(behaviour::DynamicRobot.__init__)
+def test_behaviour_dynamicrobot_constructor_exists():
+    assert callable(behaviour_DynamicRobot.__init__)
 
 
-def test_behaviour::dynamicrobot_constructor_args():
-    sig = inspect.signature(behaviour::DynamicRobot.__init__)
+def test_behaviour_dynamicrobot_constructor_args():
+    sig = inspect.signature(behaviour_DynamicRobot.__init__)
     params = list(sig.parameters.keys())
     assert "status" in params, "Missing parameter 'status'"
 
-def test_behaviour::dynamicrobot_has_status():
-    assert hasattr(behaviour::DynamicRobot, "status")
+def test_behaviour_dynamicrobot_has_status():
+    assert hasattr(behaviour_DynamicRobot, "status")
     descriptor = None
-    for klass in behaviour::DynamicRobot.__mro__:
+    for klass in behaviour_DynamicRobot.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
@@ -452,16 +452,16 @@ def test_behaviour::dynamicrobot_has_status():
 
 
 
-def test_behaviour::behaviourcontainer_is_not_abstract():
-    assert not inspect.isabstract(behaviour::BehaviourContainer)
+def test_behaviour_behaviourcontainer_is_not_abstract():
+    assert not inspect.isabstract(behaviour_BehaviourContainer)
 
 
-def test_behaviour::behaviourcontainer_constructor_exists():
-    assert callable(behaviour::BehaviourContainer.__init__)
+def test_behaviour_behaviourcontainer_constructor_exists():
+    assert callable(behaviour_BehaviourContainer.__init__)
 
 
-def test_behaviour::behaviourcontainer_constructor_args():
-    sig = inspect.signature(behaviour::BehaviourContainer.__init__)
+def test_behaviour_behaviourcontainer_constructor_args():
+    sig = inspect.signature(behaviour_BehaviourContainer.__init__)
     params = list(sig.parameters.keys())
 
 def test_robotstatus_exists():
@@ -472,8 +472,8 @@ def test_robotstatus_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in RobotStatus]
     expected_literals = [
-        "Waiting",
         "Ready",
+        "Waiting",
         "Executing",
         "TurnedOff",
     ]
@@ -489,11 +489,11 @@ def test_taskexecutionstatus_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TaskExecutionStatus]
     expected_literals = [
-        "Finished",
-        "InProgress",
         "Suspended",
-        "Waiting",
+        "Finished",
         "Ready",
+        "Waiting",
+        "InProgress",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -514,92 +514,92 @@ safe_text = st.text(
 PropertyKeyContainer_strategy = st.builds(
     PropertyKeyContainer,
 )
-behaviour::TaskDescriptor_strategy = st.builds(
-    behaviour::TaskDescriptor,
+behaviour_TaskDescriptor_strategy = st.builds(
+    behaviour_TaskDescriptor,
 )
-behaviour::CapabilityProperties_strategy = st.builds(
-    behaviour::CapabilityProperties,
+behaviour_CapabilityProperties_strategy = st.builds(
+    behaviour_CapabilityProperties,
 )
-behaviour::Capability_strategy = st.builds(
-    behaviour::Capability,
+behaviour_Capability_strategy = st.builds(
+    behaviour_Capability,
 )
-behaviour::Robot_strategy = st.builds(
-    behaviour::Robot,
+behaviour_Robot_strategy = st.builds(
+    behaviour_Robot,
 )
-behaviour::DetectedObject_strategy = st.builds(
-    behaviour::DetectedObject,
+behaviour_DetectedObject_strategy = st.builds(
+    behaviour_DetectedObject,
     obstacle=
         st.booleans()
 )
-behaviour::RobotCollaboration_strategy = st.builds(
-    behaviour::RobotCollaboration,
+behaviour_RobotCollaboration_strategy = st.builds(
+    behaviour_RobotCollaboration,
 )
-behaviour::Task_strategy = st.builds(
-    behaviour::Task,
+behaviour_Task_strategy = st.builds(
+    behaviour_Task,
 )
 CommunicationAction_strategy = st.builds(
     CommunicationAction,
 )
-behaviour::BroadcastCommunication_strategy = st.builds(
-    behaviour::BroadcastCommunication,
+behaviour_MulticastCommunication_strategy = st.builds(
+    behaviour_MulticastCommunication,
 )
-behaviour::MulticastCommunication_strategy = st.builds(
-    behaviour::MulticastCommunication,
+behaviour_BroadcastCommunication_strategy = st.builds(
+    behaviour_BroadcastCommunication,
 )
-behaviour::UnicastCommunication_strategy = st.builds(
-    behaviour::UnicastCommunication,
+behaviour_UnicastCommunication_strategy = st.builds(
+    behaviour_UnicastCommunication,
 )
 Action_strategy = st.builds(
     Action,
 )
-behaviour::CommunicationAction_strategy = st.builds(
-    behaviour::CommunicationAction,
+behaviour_CommunicationAction_strategy = st.builds(
+    behaviour_CommunicationAction,
 )
-behaviour::MeasureValue_strategy = st.builds(
-    behaviour::MeasureValue,
+behaviour_MeasureValue_strategy = st.builds(
+    behaviour_MeasureValue,
 )
-behaviour::AreaObject_strategy = st.builds(
-    behaviour::AreaObject,
+behaviour_AreaObject_strategy = st.builds(
+    behaviour_AreaObject,
 )
-behaviour::Property_strategy = st.builds(
-    behaviour::Property,
+behaviour_Property_strategy = st.builds(
+    behaviour_Property,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-behaviour::Action_strategy = st.builds(
-    behaviour::Action,
+behaviour_Action_strategy = st.builds(
+    behaviour_Action,
 )
-behaviour::MessageRepository_strategy = st.builds(
-    behaviour::MessageRepository,
+behaviour_MessageRepository_strategy = st.builds(
+    behaviour_MessageRepository,
 )
-behaviour::Message_strategy = st.builds(
-    behaviour::Message,
+behaviour_Message_strategy = st.builds(
+    behaviour_Message,
     timestamp=
         st.dates(),
     needResponse=
         st.booleans()
 )
-behaviour::BehaviouralPropertyKeyContainer_strategy = st.builds(
-    behaviour::BehaviouralPropertyKeyContainer,
+behaviour_BehaviouralPropertyKeyContainer_strategy = st.builds(
+    behaviour_BehaviouralPropertyKeyContainer,
 )
-behaviour::TaskRequirement_strategy = st.builds(
-    behaviour::TaskRequirement,
+behaviour_TaskRequirement_strategy = st.builds(
+    behaviour_TaskRequirement,
     participants=
         st.integers()
 )
-behaviour::TaskExecution_strategy = st.builds(
-    behaviour::TaskExecution,
+behaviour_TaskExecution_strategy = st.builds(
+    behaviour_TaskExecution,
     status=
         safe_text
 )
-behaviour::DynamicRobot_strategy = st.builds(
-    behaviour::DynamicRobot,
+behaviour_DynamicRobot_strategy = st.builds(
+    behaviour_DynamicRobot,
     status=
         safe_text
 )
-behaviour::BehaviourContainer_strategy = st.builds(
-    behaviour::BehaviourContainer,
+behaviour_BehaviourContainer_strategy = st.builds(
+    behaviour_BehaviourContainer,
 )
 
 @given(instance=PropertyKeyContainer_strategy)
@@ -607,193 +607,175 @@ behaviour::BehaviourContainer_strategy = st.builds(
 def test_propertykeycontainer_instantiation(instance):
     assert isinstance(instance, PropertyKeyContainer)
 
-@given(instance=behaviour::TaskDescriptor_strategy)
+@given(instance=behaviour_TaskDescriptor_strategy)
 @settings(max_examples=50)
-def test_behaviour::taskdescriptor_instantiation(instance):
-    assert isinstance(instance, behaviour::TaskDescriptor)
+def test_behaviour_taskdescriptor_instantiation(instance):
+    assert isinstance(instance, behaviour_TaskDescriptor)
 
-@given(instance=behaviour::CapabilityProperties_strategy)
+@given(instance=behaviour_CapabilityProperties_strategy)
 @settings(max_examples=50)
-def test_behaviour::capabilityproperties_instantiation(instance):
-    assert isinstance(instance, behaviour::CapabilityProperties)
+def test_behaviour_capabilityproperties_instantiation(instance):
+    assert isinstance(instance, behaviour_CapabilityProperties)
 
-@given(instance=behaviour::Capability_strategy)
+@given(instance=behaviour_Capability_strategy)
 @settings(max_examples=50)
-def test_behaviour::capability_instantiation(instance):
-    assert isinstance(instance, behaviour::Capability)
+def test_behaviour_capability_instantiation(instance):
+    assert isinstance(instance, behaviour_Capability)
 
-@given(instance=behaviour::Robot_strategy)
+@given(instance=behaviour_Robot_strategy)
 @settings(max_examples=50)
-def test_behaviour::robot_instantiation(instance):
-    assert isinstance(instance, behaviour::Robot)
+def test_behaviour_robot_instantiation(instance):
+    assert isinstance(instance, behaviour_Robot)
 
-@given(instance=behaviour::DetectedObject_strategy)
+@given(instance=behaviour_DetectedObject_strategy)
 @settings(max_examples=50)
-def test_behaviour::detectedobject_instantiation(instance):
-    assert isinstance(instance, behaviour::DetectedObject)
-
-@given(instance=behaviour::DetectedObject_strategy)
-def test_behaviour::detectedobject_obstacle_type(instance):
-    assert isinstance(instance.obstacle, bool)
+def test_behaviour_detectedobject_instantiation(instance):
+    assert isinstance(instance, behaviour_DetectedObject)
 
 
-@given(instance=behaviour::DetectedObject_strategy)
-def test_behaviour::detectedobject_obstacle_setter(instance):
+
+@given(instance=behaviour_DetectedObject_strategy)
+def test_behaviour_detectedobject_obstacle_setter(instance):
     original = instance.obstacle
     instance.obstacle = original
     assert instance.obstacle == original
 
-@given(instance=behaviour::RobotCollaboration_strategy)
+@given(instance=behaviour_RobotCollaboration_strategy)
 @settings(max_examples=50)
-def test_behaviour::robotcollaboration_instantiation(instance):
-    assert isinstance(instance, behaviour::RobotCollaboration)
+def test_behaviour_robotcollaboration_instantiation(instance):
+    assert isinstance(instance, behaviour_RobotCollaboration)
 
-@given(instance=behaviour::Task_strategy)
+@given(instance=behaviour_Task_strategy)
 @settings(max_examples=50)
-def test_behaviour::task_instantiation(instance):
-    assert isinstance(instance, behaviour::Task)
+def test_behaviour_task_instantiation(instance):
+    assert isinstance(instance, behaviour_Task)
 
 @given(instance=CommunicationAction_strategy)
 @settings(max_examples=50)
 def test_communicationaction_instantiation(instance):
     assert isinstance(instance, CommunicationAction)
 
-@given(instance=behaviour::BroadcastCommunication_strategy)
+@given(instance=behaviour_MulticastCommunication_strategy)
 @settings(max_examples=50)
-def test_behaviour::broadcastcommunication_instantiation(instance):
-    assert isinstance(instance, behaviour::BroadcastCommunication)
+def test_behaviour_multicastcommunication_instantiation(instance):
+    assert isinstance(instance, behaviour_MulticastCommunication)
 
-@given(instance=behaviour::MulticastCommunication_strategy)
+@given(instance=behaviour_BroadcastCommunication_strategy)
 @settings(max_examples=50)
-def test_behaviour::multicastcommunication_instantiation(instance):
-    assert isinstance(instance, behaviour::MulticastCommunication)
+def test_behaviour_broadcastcommunication_instantiation(instance):
+    assert isinstance(instance, behaviour_BroadcastCommunication)
 
-@given(instance=behaviour::UnicastCommunication_strategy)
+@given(instance=behaviour_UnicastCommunication_strategy)
 @settings(max_examples=50)
-def test_behaviour::unicastcommunication_instantiation(instance):
-    assert isinstance(instance, behaviour::UnicastCommunication)
+def test_behaviour_unicastcommunication_instantiation(instance):
+    assert isinstance(instance, behaviour_UnicastCommunication)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=behaviour::CommunicationAction_strategy)
+@given(instance=behaviour_CommunicationAction_strategy)
 @settings(max_examples=50)
-def test_behaviour::communicationaction_instantiation(instance):
-    assert isinstance(instance, behaviour::CommunicationAction)
+def test_behaviour_communicationaction_instantiation(instance):
+    assert isinstance(instance, behaviour_CommunicationAction)
 
-@given(instance=behaviour::MeasureValue_strategy)
+@given(instance=behaviour_MeasureValue_strategy)
 @settings(max_examples=50)
-def test_behaviour::measurevalue_instantiation(instance):
-    assert isinstance(instance, behaviour::MeasureValue)
+def test_behaviour_measurevalue_instantiation(instance):
+    assert isinstance(instance, behaviour_MeasureValue)
 
-@given(instance=behaviour::AreaObject_strategy)
+@given(instance=behaviour_AreaObject_strategy)
 @settings(max_examples=50)
-def test_behaviour::areaobject_instantiation(instance):
-    assert isinstance(instance, behaviour::AreaObject)
+def test_behaviour_areaobject_instantiation(instance):
+    assert isinstance(instance, behaviour_AreaObject)
 
-@given(instance=behaviour::Property_strategy)
+@given(instance=behaviour_Property_strategy)
 @settings(max_examples=50)
-def test_behaviour::property_instantiation(instance):
-    assert isinstance(instance, behaviour::Property)
+def test_behaviour_property_instantiation(instance):
+    assert isinstance(instance, behaviour_Property)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=behaviour::Action_strategy)
+@given(instance=behaviour_Action_strategy)
 @settings(max_examples=50)
-def test_behaviour::action_instantiation(instance):
-    assert isinstance(instance, behaviour::Action)
+def test_behaviour_action_instantiation(instance):
+    assert isinstance(instance, behaviour_Action)
 
-@given(instance=behaviour::MessageRepository_strategy)
+@given(instance=behaviour_MessageRepository_strategy)
 @settings(max_examples=50)
-def test_behaviour::messagerepository_instantiation(instance):
-    assert isinstance(instance, behaviour::MessageRepository)
+def test_behaviour_messagerepository_instantiation(instance):
+    assert isinstance(instance, behaviour_MessageRepository)
 
-@given(instance=behaviour::Message_strategy)
+@given(instance=behaviour_Message_strategy)
 @settings(max_examples=50)
-def test_behaviour::message_instantiation(instance):
-    assert isinstance(instance, behaviour::Message)
-
-@given(instance=behaviour::Message_strategy)
-def test_behaviour::message_timestamp_type(instance):
-    assert isinstance(instance.timestamp, date)
+def test_behaviour_message_instantiation(instance):
+    assert isinstance(instance, behaviour_Message)
 
 
-@given(instance=behaviour::Message_strategy)
-def test_behaviour::message_timestamp_setter(instance):
+
+@given(instance=behaviour_Message_strategy)
+def test_behaviour_message_timestamp_setter(instance):
     original = instance.timestamp
     instance.timestamp = original
     assert instance.timestamp == original
 
-@given(instance=behaviour::Message_strategy)
-def test_behaviour::message_needResponse_type(instance):
-    assert isinstance(instance.needResponse, bool)
 
 
-@given(instance=behaviour::Message_strategy)
-def test_behaviour::message_needResponse_setter(instance):
+@given(instance=behaviour_Message_strategy)
+def test_behaviour_message_needResponse_setter(instance):
     original = instance.needResponse
     instance.needResponse = original
     assert instance.needResponse == original
 
-@given(instance=behaviour::BehaviouralPropertyKeyContainer_strategy)
+@given(instance=behaviour_BehaviouralPropertyKeyContainer_strategy)
 @settings(max_examples=50)
-def test_behaviour::behaviouralpropertykeycontainer_instantiation(instance):
-    assert isinstance(instance, behaviour::BehaviouralPropertyKeyContainer)
+def test_behaviour_behaviouralpropertykeycontainer_instantiation(instance):
+    assert isinstance(instance, behaviour_BehaviouralPropertyKeyContainer)
 
-@given(instance=behaviour::TaskRequirement_strategy)
+@given(instance=behaviour_TaskRequirement_strategy)
 @settings(max_examples=50)
-def test_behaviour::taskrequirement_instantiation(instance):
-    assert isinstance(instance, behaviour::TaskRequirement)
-
-@given(instance=behaviour::TaskRequirement_strategy)
-def test_behaviour::taskrequirement_participants_type(instance):
-    assert isinstance(instance.participants, int)
+def test_behaviour_taskrequirement_instantiation(instance):
+    assert isinstance(instance, behaviour_TaskRequirement)
 
 
-@given(instance=behaviour::TaskRequirement_strategy)
-def test_behaviour::taskrequirement_participants_setter(instance):
+
+@given(instance=behaviour_TaskRequirement_strategy)
+def test_behaviour_taskrequirement_participants_setter(instance):
     original = instance.participants
     instance.participants = original
     assert instance.participants == original
 
-@given(instance=behaviour::TaskExecution_strategy)
+@given(instance=behaviour_TaskExecution_strategy)
 @settings(max_examples=50)
-def test_behaviour::taskexecution_instantiation(instance):
-    assert isinstance(instance, behaviour::TaskExecution)
-
-@given(instance=behaviour::TaskExecution_strategy)
-def test_behaviour::taskexecution_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_behaviour_taskexecution_instantiation(instance):
+    assert isinstance(instance, behaviour_TaskExecution)
 
 
-@given(instance=behaviour::TaskExecution_strategy)
-def test_behaviour::taskexecution_status_setter(instance):
+
+@given(instance=behaviour_TaskExecution_strategy)
+def test_behaviour_taskexecution_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=behaviour::DynamicRobot_strategy)
+@given(instance=behaviour_DynamicRobot_strategy)
 @settings(max_examples=50)
-def test_behaviour::dynamicrobot_instantiation(instance):
-    assert isinstance(instance, behaviour::DynamicRobot)
-
-@given(instance=behaviour::DynamicRobot_strategy)
-def test_behaviour::dynamicrobot_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_behaviour_dynamicrobot_instantiation(instance):
+    assert isinstance(instance, behaviour_DynamicRobot)
 
 
-@given(instance=behaviour::DynamicRobot_strategy)
-def test_behaviour::dynamicrobot_status_setter(instance):
+
+@given(instance=behaviour_DynamicRobot_strategy)
+def test_behaviour_dynamicrobot_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=behaviour::BehaviourContainer_strategy)
+@given(instance=behaviour_BehaviourContainer_strategy)
 @settings(max_examples=50)
-def test_behaviour::behaviourcontainer_instantiation(instance):
-    assert isinstance(instance, behaviour::BehaviourContainer)
+def test_behaviour_behaviourcontainer_instantiation(instance):
+    assert isinstance(instance, behaviour_BehaviourContainer)

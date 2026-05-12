@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ardlers::Smoothing,
-    ardlers::Range,
-    ardlers::Map,
-    ardlers::Rate,
-    ardlers::ComponentBody,
-    ardlers::Assignment,
-    ardlers::State,
-    ardlers::Component,
-    ardlers::Node,
+from python_code import (
+    ardlers_Smoothing,
+    ardlers_Range,
+    ardlers_Map,
+    ardlers_Rate,
+    ardlers_ComponentBody,
+    ardlers_Assignment,
+    ardlers_State,
+    ardlers_Component,
+    ardlers_Node,
     Value,
-    ardlers::NumberLiteral,
-    ardlers::Delta,
-    ardlers::Attribute,
+    ardlers_NumberLiteral,
+    ardlers_Delta,
+    ardlers_Attribute,
     Parenthesis,
-    ardlers::Value,
+    ardlers_Value,
     Expression,
-    ardlers::Exp,
-    ardlers::Comparison,
-    ardlers::Factor,
-    ardlers::And,
-    ardlers::Parenthesis,
+    ardlers_Factor,
+    ardlers_Exp,
+    ardlers_Comparison,
+    ardlers_And,
+    ardlers_Parenthesis,
     Or,
-    ardlers::Expression,
-    ardlers::RuleBody,
-    ardlers::Or,
-    ardlers::Rule,
-    ardlers::BoardDefinition,
-    ardlers::EObject,
-    ardlers::SensorImport,
-    ardlers::Library,
-    ardlers::Program,
+    ardlers_Expression,
+    ardlers_RuleBody,
+    ardlers_Or,
+    ardlers_Rule,
+    ardlers_BoardDefinition,
+    ardlers_EObject,
+    ardlers_SensorImport,
+    ardlers_Library,
+    ardlers_Program,
     IO,
     TYPE,
 )
@@ -47,23 +47,23 @@ from classes import (
 
 
 
-def test_ardlers::smoothing_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Smoothing)
+def test_ardlers_smoothing_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Smoothing)
 
 
-def test_ardlers::smoothing_constructor_exists():
-    assert callable(ardlers::Smoothing.__init__)
+def test_ardlers_smoothing_constructor_exists():
+    assert callable(ardlers_Smoothing.__init__)
 
 
-def test_ardlers::smoothing_constructor_args():
-    sig = inspect.signature(ardlers::Smoothing.__init__)
+def test_ardlers_smoothing_constructor_args():
+    sig = inspect.signature(ardlers_Smoothing.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ardlers::smoothing_has_value():
-    assert hasattr(ardlers::Smoothing, "value")
+def test_ardlers_smoothing_has_value():
+    assert hasattr(ardlers_Smoothing, "value")
     descriptor = None
-    for klass in ardlers::Smoothing.__mro__:
+    for klass in ardlers_Smoothing.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -71,33 +71,33 @@ def test_ardlers::smoothing_has_value():
 
 
 
-def test_ardlers::range_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Range)
+def test_ardlers_range_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Range)
 
 
-def test_ardlers::range_constructor_exists():
-    assert callable(ardlers::Range.__init__)
+def test_ardlers_range_constructor_exists():
+    assert callable(ardlers_Range.__init__)
 
 
-def test_ardlers::range_constructor_args():
-    sig = inspect.signature(ardlers::Range.__init__)
+def test_ardlers_range_constructor_args():
+    sig = inspect.signature(ardlers_Range.__init__)
     params = list(sig.parameters.keys())
     assert "low" in params, "Missing parameter 'low'"
     assert "high" in params, "Missing parameter 'high'"
 
-def test_ardlers::range_has_low():
-    assert hasattr(ardlers::Range, "low")
+def test_ardlers_range_has_low():
+    assert hasattr(ardlers_Range, "low")
     descriptor = None
-    for klass in ardlers::Range.__mro__:
+    for klass in ardlers_Range.__mro__:
         if "low" in klass.__dict__:
             descriptor = klass.__dict__["low"]
             break
     assert isinstance(descriptor, property)
 
-def test_ardlers::range_has_high():
-    assert hasattr(ardlers::Range, "high")
+def test_ardlers_range_has_high():
+    assert hasattr(ardlers_Range, "high")
     descriptor = None
-    for klass in ardlers::Range.__mro__:
+    for klass in ardlers_Range.__mro__:
         if "high" in klass.__dict__:
             descriptor = klass.__dict__["high"]
             break
@@ -105,37 +105,37 @@ def test_ardlers::range_has_high():
 
 
 
-def test_ardlers::map_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Map)
+def test_ardlers_map_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Map)
 
 
-def test_ardlers::map_constructor_exists():
-    assert callable(ardlers::Map.__init__)
+def test_ardlers_map_constructor_exists():
+    assert callable(ardlers_Map.__init__)
 
 
-def test_ardlers::map_constructor_args():
-    sig = inspect.signature(ardlers::Map.__init__)
+def test_ardlers_map_constructor_args():
+    sig = inspect.signature(ardlers_Map.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::rate_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Rate)
+def test_ardlers_rate_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Rate)
 
 
-def test_ardlers::rate_constructor_exists():
-    assert callable(ardlers::Rate.__init__)
+def test_ardlers_rate_constructor_exists():
+    assert callable(ardlers_Rate.__init__)
 
 
-def test_ardlers::rate_constructor_args():
-    sig = inspect.signature(ardlers::Rate.__init__)
+def test_ardlers_rate_constructor_args():
+    sig = inspect.signature(ardlers_Rate.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ardlers::rate_has_value():
-    assert hasattr(ardlers::Rate, "value")
+def test_ardlers_rate_has_value():
+    assert hasattr(ardlers_Rate, "value")
     descriptor = None
-    for klass in ardlers::Rate.__mro__:
+    for klass in ardlers_Rate.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -143,53 +143,53 @@ def test_ardlers::rate_has_value():
 
 
 
-def test_ardlers::componentbody_is_not_abstract():
-    assert not inspect.isabstract(ardlers::ComponentBody)
+def test_ardlers_componentbody_is_not_abstract():
+    assert not inspect.isabstract(ardlers_ComponentBody)
 
 
-def test_ardlers::componentbody_constructor_exists():
-    assert callable(ardlers::ComponentBody.__init__)
+def test_ardlers_componentbody_constructor_exists():
+    assert callable(ardlers_ComponentBody.__init__)
 
 
-def test_ardlers::componentbody_constructor_args():
-    sig = inspect.signature(ardlers::ComponentBody.__init__)
+def test_ardlers_componentbody_constructor_args():
+    sig = inspect.signature(ardlers_ComponentBody.__init__)
     params = list(sig.parameters.keys())
-    assert "pin" in params, "Missing parameter 'pin'"
     assert "pinned" in params, "Missing parameter 'pinned'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "pin" in params, "Missing parameter 'pin'"
     assert "io" in params, "Missing parameter 'io'"
 
-def test_ardlers::componentbody_has_pin():
-    assert hasattr(ardlers::ComponentBody, "pin")
+def test_ardlers_componentbody_has_pinned():
+    assert hasattr(ardlers_ComponentBody, "pinned")
     descriptor = None
-    for klass in ardlers::ComponentBody.__mro__:
-        if "pin" in klass.__dict__:
-            descriptor = klass.__dict__["pin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ardlers::componentbody_has_pinned():
-    assert hasattr(ardlers::ComponentBody, "pinned")
-    descriptor = None
-    for klass in ardlers::ComponentBody.__mro__:
+    for klass in ardlers_ComponentBody.__mro__:
         if "pinned" in klass.__dict__:
             descriptor = klass.__dict__["pinned"]
             break
     assert isinstance(descriptor, property)
 
-def test_ardlers::componentbody_has_type():
-    assert hasattr(ardlers::ComponentBody, "type")
+def test_ardlers_componentbody_has_type():
+    assert hasattr(ardlers_ComponentBody, "type")
     descriptor = None
-    for klass in ardlers::ComponentBody.__mro__:
+    for klass in ardlers_ComponentBody.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ardlers::componentbody_has_io():
-    assert hasattr(ardlers::ComponentBody, "io")
+def test_ardlers_componentbody_has_pin():
+    assert hasattr(ardlers_ComponentBody, "pin")
     descriptor = None
-    for klass in ardlers::ComponentBody.__mro__:
+    for klass in ardlers_ComponentBody.__mro__:
+        if "pin" in klass.__dict__:
+            descriptor = klass.__dict__["pin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ardlers_componentbody_has_io():
+    assert hasattr(ardlers_ComponentBody, "io")
+    descriptor = None
+    for klass in ardlers_ComponentBody.__mro__:
         if "io" in klass.__dict__:
             descriptor = klass.__dict__["io"]
             break
@@ -197,37 +197,37 @@ def test_ardlers::componentbody_has_io():
 
 
 
-def test_ardlers::assignment_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Assignment)
+def test_ardlers_assignment_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Assignment)
 
 
-def test_ardlers::assignment_constructor_exists():
-    assert callable(ardlers::Assignment.__init__)
+def test_ardlers_assignment_constructor_exists():
+    assert callable(ardlers_Assignment.__init__)
 
 
-def test_ardlers::assignment_constructor_args():
-    sig = inspect.signature(ardlers::Assignment.__init__)
+def test_ardlers_assignment_constructor_args():
+    sig = inspect.signature(ardlers_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::state_is_not_abstract():
-    assert not inspect.isabstract(ardlers::State)
+def test_ardlers_state_is_not_abstract():
+    assert not inspect.isabstract(ardlers_State)
 
 
-def test_ardlers::state_constructor_exists():
-    assert callable(ardlers::State.__init__)
+def test_ardlers_state_constructor_exists():
+    assert callable(ardlers_State.__init__)
 
 
-def test_ardlers::state_constructor_args():
-    sig = inspect.signature(ardlers::State.__init__)
+def test_ardlers_state_constructor_args():
+    sig = inspect.signature(ardlers_State.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ardlers::state_has_value():
-    assert hasattr(ardlers::State, "value")
+def test_ardlers_state_has_value():
+    assert hasattr(ardlers_State, "value")
     descriptor = None
-    for klass in ardlers::State.__mro__:
+    for klass in ardlers_State.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -235,23 +235,23 @@ def test_ardlers::state_has_value():
 
 
 
-def test_ardlers::component_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Component)
+def test_ardlers_component_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Component)
 
 
-def test_ardlers::component_constructor_exists():
-    assert callable(ardlers::Component.__init__)
+def test_ardlers_component_constructor_exists():
+    assert callable(ardlers_Component.__init__)
 
 
-def test_ardlers::component_constructor_args():
-    sig = inspect.signature(ardlers::Component.__init__)
+def test_ardlers_component_constructor_args():
+    sig = inspect.signature(ardlers_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ardlers::component_has_name():
-    assert hasattr(ardlers::Component, "name")
+def test_ardlers_component_has_name():
+    assert hasattr(ardlers_Component, "name")
     descriptor = None
-    for klass in ardlers::Component.__mro__:
+    for klass in ardlers_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -259,23 +259,23 @@ def test_ardlers::component_has_name():
 
 
 
-def test_ardlers::node_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Node)
+def test_ardlers_node_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Node)
 
 
-def test_ardlers::node_constructor_exists():
-    assert callable(ardlers::Node.__init__)
+def test_ardlers_node_constructor_exists():
+    assert callable(ardlers_Node.__init__)
 
 
-def test_ardlers::node_constructor_args():
-    sig = inspect.signature(ardlers::Node.__init__)
+def test_ardlers_node_constructor_args():
+    sig = inspect.signature(ardlers_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ardlers::node_has_name():
-    assert hasattr(ardlers::Node, "name")
+def test_ardlers_node_has_name():
+    assert hasattr(ardlers_Node, "name")
     descriptor = None
-    for klass in ardlers::Node.__mro__:
+    for klass in ardlers_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -297,64 +297,64 @@ def test_value_constructor_args():
 
 
 
-def test_ardlers::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(ardlers::NumberLiteral)
+def test_ardlers_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(ardlers_NumberLiteral)
 
 
-def test_ardlers::numberliteral_constructor_exists():
-    assert callable(ardlers::NumberLiteral.__init__)
+def test_ardlers_numberliteral_constructor_exists():
+    assert callable(ardlers_NumberLiteral.__init__)
 
 
-def test_ardlers::numberliteral_constructor_args():
-    sig = inspect.signature(ardlers::NumberLiteral.__init__)
+def test_ardlers_numberliteral_constructor_args():
+    sig = inspect.signature(ardlers_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
-    assert "int" in params, "Missing parameter 'int'"
     assert "float" in params, "Missing parameter 'float'"
+    assert "int" in params, "Missing parameter 'int'"
 
-def test_ardlers::numberliteral_has_int():
-    assert hasattr(ardlers::NumberLiteral, "int")
+def test_ardlers_numberliteral_has_float():
+    assert hasattr(ardlers_NumberLiteral, "float")
     descriptor = None
-    for klass in ardlers::NumberLiteral.__mro__:
-        if "int" in klass.__dict__:
-            descriptor = klass.__dict__["int"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ardlers::numberliteral_has_float():
-    assert hasattr(ardlers::NumberLiteral, "float")
-    descriptor = None
-    for klass in ardlers::NumberLiteral.__mro__:
+    for klass in ardlers_NumberLiteral.__mro__:
         if "float" in klass.__dict__:
             descriptor = klass.__dict__["float"]
             break
     assert isinstance(descriptor, property)
 
+def test_ardlers_numberliteral_has_int():
+    assert hasattr(ardlers_NumberLiteral, "int")
+    descriptor = None
+    for klass in ardlers_NumberLiteral.__mro__:
+        if "int" in klass.__dict__:
+            descriptor = klass.__dict__["int"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ardlers::delta_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Delta)
+
+def test_ardlers_delta_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Delta)
 
 
-def test_ardlers::delta_constructor_exists():
-    assert callable(ardlers::Delta.__init__)
+def test_ardlers_delta_constructor_exists():
+    assert callable(ardlers_Delta.__init__)
 
 
-def test_ardlers::delta_constructor_args():
-    sig = inspect.signature(ardlers::Delta.__init__)
+def test_ardlers_delta_constructor_args():
+    sig = inspect.signature(ardlers_Delta.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::attribute_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Attribute)
+def test_ardlers_attribute_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Attribute)
 
 
-def test_ardlers::attribute_constructor_exists():
-    assert callable(ardlers::Attribute.__init__)
+def test_ardlers_attribute_constructor_exists():
+    assert callable(ardlers_Attribute.__init__)
 
 
-def test_ardlers::attribute_constructor_args():
-    sig = inspect.signature(ardlers::Attribute.__init__)
+def test_ardlers_attribute_constructor_args():
+    sig = inspect.signature(ardlers_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -373,16 +373,16 @@ def test_parenthesis_constructor_args():
 
 
 
-def test_ardlers::value_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Value)
+def test_ardlers_value_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Value)
 
 
-def test_ardlers::value_constructor_exists():
-    assert callable(ardlers::Value.__init__)
+def test_ardlers_value_constructor_exists():
+    assert callable(ardlers_Value.__init__)
 
 
-def test_ardlers::value_constructor_args():
-    sig = inspect.signature(ardlers::Value.__init__)
+def test_ardlers_value_constructor_args():
+    sig = inspect.signature(ardlers_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -401,72 +401,72 @@ def test_expression_constructor_args():
 
 
 
-def test_ardlers::exp_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Exp)
+def test_ardlers_factor_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Factor)
 
 
-def test_ardlers::exp_constructor_exists():
-    assert callable(ardlers::Exp.__init__)
+def test_ardlers_factor_constructor_exists():
+    assert callable(ardlers_Factor.__init__)
 
 
-def test_ardlers::exp_constructor_args():
-    sig = inspect.signature(ardlers::Exp.__init__)
+def test_ardlers_factor_constructor_args():
+    sig = inspect.signature(ardlers_Factor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::comparison_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Comparison)
+def test_ardlers_exp_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Exp)
 
 
-def test_ardlers::comparison_constructor_exists():
-    assert callable(ardlers::Comparison.__init__)
+def test_ardlers_exp_constructor_exists():
+    assert callable(ardlers_Exp.__init__)
 
 
-def test_ardlers::comparison_constructor_args():
-    sig = inspect.signature(ardlers::Comparison.__init__)
+def test_ardlers_exp_constructor_args():
+    sig = inspect.signature(ardlers_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::factor_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Factor)
+def test_ardlers_comparison_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Comparison)
 
 
-def test_ardlers::factor_constructor_exists():
-    assert callable(ardlers::Factor.__init__)
+def test_ardlers_comparison_constructor_exists():
+    assert callable(ardlers_Comparison.__init__)
 
 
-def test_ardlers::factor_constructor_args():
-    sig = inspect.signature(ardlers::Factor.__init__)
+def test_ardlers_comparison_constructor_args():
+    sig = inspect.signature(ardlers_Comparison.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::and_is_not_abstract():
-    assert not inspect.isabstract(ardlers::And)
+def test_ardlers_and_is_not_abstract():
+    assert not inspect.isabstract(ardlers_And)
 
 
-def test_ardlers::and_constructor_exists():
-    assert callable(ardlers::And.__init__)
+def test_ardlers_and_constructor_exists():
+    assert callable(ardlers_And.__init__)
 
 
-def test_ardlers::and_constructor_args():
-    sig = inspect.signature(ardlers::And.__init__)
+def test_ardlers_and_constructor_args():
+    sig = inspect.signature(ardlers_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Parenthesis)
+def test_ardlers_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Parenthesis)
 
 
-def test_ardlers::parenthesis_constructor_exists():
-    assert callable(ardlers::Parenthesis.__init__)
+def test_ardlers_parenthesis_constructor_exists():
+    assert callable(ardlers_Parenthesis.__init__)
 
 
-def test_ardlers::parenthesis_constructor_args():
-    sig = inspect.signature(ardlers::Parenthesis.__init__)
+def test_ardlers_parenthesis_constructor_args():
+    sig = inspect.signature(ardlers_Parenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -485,51 +485,51 @@ def test_or_constructor_args():
 
 
 
-def test_ardlers::expression_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Expression)
+def test_ardlers_expression_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Expression)
 
 
-def test_ardlers::expression_constructor_exists():
-    assert callable(ardlers::Expression.__init__)
+def test_ardlers_expression_constructor_exists():
+    assert callable(ardlers_Expression.__init__)
 
 
-def test_ardlers::expression_constructor_args():
-    sig = inspect.signature(ardlers::Expression.__init__)
+def test_ardlers_expression_constructor_args():
+    sig = inspect.signature(ardlers_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::rulebody_is_not_abstract():
-    assert not inspect.isabstract(ardlers::RuleBody)
+def test_ardlers_rulebody_is_not_abstract():
+    assert not inspect.isabstract(ardlers_RuleBody)
 
 
-def test_ardlers::rulebody_constructor_exists():
-    assert callable(ardlers::RuleBody.__init__)
+def test_ardlers_rulebody_constructor_exists():
+    assert callable(ardlers_RuleBody.__init__)
 
 
-def test_ardlers::rulebody_constructor_args():
-    sig = inspect.signature(ardlers::RuleBody.__init__)
+def test_ardlers_rulebody_constructor_args():
+    sig = inspect.signature(ardlers_RuleBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::or_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Or)
+def test_ardlers_or_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Or)
 
 
-def test_ardlers::or_constructor_exists():
-    assert callable(ardlers::Or.__init__)
+def test_ardlers_or_constructor_exists():
+    assert callable(ardlers_Or.__init__)
 
 
-def test_ardlers::or_constructor_args():
-    sig = inspect.signature(ardlers::Or.__init__)
+def test_ardlers_or_constructor_args():
+    sig = inspect.signature(ardlers_Or.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ardlers::or_has_operator():
-    assert hasattr(ardlers::Or, "operator")
+def test_ardlers_or_has_operator():
+    assert hasattr(ardlers_Or, "operator")
     descriptor = None
-    for klass in ardlers::Or.__mro__:
+    for klass in ardlers_Or.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -537,23 +537,23 @@ def test_ardlers::or_has_operator():
 
 
 
-def test_ardlers::rule_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Rule)
+def test_ardlers_rule_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Rule)
 
 
-def test_ardlers::rule_constructor_exists():
-    assert callable(ardlers::Rule.__init__)
+def test_ardlers_rule_constructor_exists():
+    assert callable(ardlers_Rule.__init__)
 
 
-def test_ardlers::rule_constructor_args():
-    sig = inspect.signature(ardlers::Rule.__init__)
+def test_ardlers_rule_constructor_args():
+    sig = inspect.signature(ardlers_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_ardlers::rule_has_type():
-    assert hasattr(ardlers::Rule, "type")
+def test_ardlers_rule_has_type():
+    assert hasattr(ardlers_Rule, "type")
     descriptor = None
-    for klass in ardlers::Rule.__mro__:
+    for klass in ardlers_Rule.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -561,101 +561,101 @@ def test_ardlers::rule_has_type():
 
 
 
-def test_ardlers::boarddefinition_is_not_abstract():
-    assert not inspect.isabstract(ardlers::BoardDefinition)
+def test_ardlers_boarddefinition_is_not_abstract():
+    assert not inspect.isabstract(ardlers_BoardDefinition)
 
 
-def test_ardlers::boarddefinition_constructor_exists():
-    assert callable(ardlers::BoardDefinition.__init__)
+def test_ardlers_boarddefinition_constructor_exists():
+    assert callable(ardlers_BoardDefinition.__init__)
 
 
-def test_ardlers::boarddefinition_constructor_args():
-    sig = inspect.signature(ardlers::BoardDefinition.__init__)
+def test_ardlers_boarddefinition_constructor_args():
+    sig = inspect.signature(ardlers_BoardDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "do" in params, "Missing parameter 'do'"
-    assert "di" in params, "Missing parameter 'di'"
     assert "aout" in params, "Missing parameter 'aout'"
     assert "ain" in params, "Missing parameter 'ain'"
+    assert "do" in params, "Missing parameter 'do'"
+    assert "di" in params, "Missing parameter 'di'"
 
-def test_ardlers::boarddefinition_has_name():
-    assert hasattr(ardlers::BoardDefinition, "name")
+def test_ardlers_boarddefinition_has_name():
+    assert hasattr(ardlers_BoardDefinition, "name")
     descriptor = None
-    for klass in ardlers::BoardDefinition.__mro__:
+    for klass in ardlers_BoardDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ardlers::boarddefinition_has_do():
-    assert hasattr(ardlers::BoardDefinition, "do")
+def test_ardlers_boarddefinition_has_aout():
+    assert hasattr(ardlers_BoardDefinition, "aout")
     descriptor = None
-    for klass in ardlers::BoardDefinition.__mro__:
-        if "do" in klass.__dict__:
-            descriptor = klass.__dict__["do"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ardlers::boarddefinition_has_di():
-    assert hasattr(ardlers::BoardDefinition, "di")
-    descriptor = None
-    for klass in ardlers::BoardDefinition.__mro__:
-        if "di" in klass.__dict__:
-            descriptor = klass.__dict__["di"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ardlers::boarddefinition_has_aout():
-    assert hasattr(ardlers::BoardDefinition, "aout")
-    descriptor = None
-    for klass in ardlers::BoardDefinition.__mro__:
+    for klass in ardlers_BoardDefinition.__mro__:
         if "aout" in klass.__dict__:
             descriptor = klass.__dict__["aout"]
             break
     assert isinstance(descriptor, property)
 
-def test_ardlers::boarddefinition_has_ain():
-    assert hasattr(ardlers::BoardDefinition, "ain")
+def test_ardlers_boarddefinition_has_ain():
+    assert hasattr(ardlers_BoardDefinition, "ain")
     descriptor = None
-    for klass in ardlers::BoardDefinition.__mro__:
+    for klass in ardlers_BoardDefinition.__mro__:
         if "ain" in klass.__dict__:
             descriptor = klass.__dict__["ain"]
             break
     assert isinstance(descriptor, property)
 
+def test_ardlers_boarddefinition_has_do():
+    assert hasattr(ardlers_BoardDefinition, "do")
+    descriptor = None
+    for klass in ardlers_BoardDefinition.__mro__:
+        if "do" in klass.__dict__:
+            descriptor = klass.__dict__["do"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ardlers_boarddefinition_has_di():
+    assert hasattr(ardlers_BoardDefinition, "di")
+    descriptor = None
+    for klass in ardlers_BoardDefinition.__mro__:
+        if "di" in klass.__dict__:
+            descriptor = klass.__dict__["di"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ardlers::eobject_is_not_abstract():
-    assert not inspect.isabstract(ardlers::EObject)
+
+def test_ardlers_eobject_is_not_abstract():
+    assert not inspect.isabstract(ardlers_EObject)
 
 
-def test_ardlers::eobject_constructor_exists():
-    assert callable(ardlers::EObject.__init__)
+def test_ardlers_eobject_constructor_exists():
+    assert callable(ardlers_EObject.__init__)
 
 
-def test_ardlers::eobject_constructor_args():
-    sig = inspect.signature(ardlers::EObject.__init__)
+def test_ardlers_eobject_constructor_args():
+    sig = inspect.signature(ardlers_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::sensorimport_is_not_abstract():
-    assert not inspect.isabstract(ardlers::SensorImport)
+def test_ardlers_sensorimport_is_not_abstract():
+    assert not inspect.isabstract(ardlers_SensorImport)
 
 
-def test_ardlers::sensorimport_constructor_exists():
-    assert callable(ardlers::SensorImport.__init__)
+def test_ardlers_sensorimport_constructor_exists():
+    assert callable(ardlers_SensorImport.__init__)
 
 
-def test_ardlers::sensorimport_constructor_args():
-    sig = inspect.signature(ardlers::SensorImport.__init__)
+def test_ardlers_sensorimport_constructor_args():
+    sig = inspect.signature(ardlers_SensorImport.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ardlers::sensorimport_has_name():
-    assert hasattr(ardlers::SensorImport, "name")
+def test_ardlers_sensorimport_has_name():
+    assert hasattr(ardlers_SensorImport, "name")
     descriptor = None
-    for klass in ardlers::SensorImport.__mro__:
+    for klass in ardlers_SensorImport.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -663,30 +663,30 @@ def test_ardlers::sensorimport_has_name():
 
 
 
-def test_ardlers::library_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Library)
+def test_ardlers_library_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Library)
 
 
-def test_ardlers::library_constructor_exists():
-    assert callable(ardlers::Library.__init__)
+def test_ardlers_library_constructor_exists():
+    assert callable(ardlers_Library.__init__)
 
 
-def test_ardlers::library_constructor_args():
-    sig = inspect.signature(ardlers::Library.__init__)
+def test_ardlers_library_constructor_args():
+    sig = inspect.signature(ardlers_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ardlers::program_is_not_abstract():
-    assert not inspect.isabstract(ardlers::Program)
+def test_ardlers_program_is_not_abstract():
+    assert not inspect.isabstract(ardlers_Program)
 
 
-def test_ardlers::program_constructor_exists():
-    assert callable(ardlers::Program.__init__)
+def test_ardlers_program_constructor_exists():
+    assert callable(ardlers_Program.__init__)
 
 
-def test_ardlers::program_constructor_args():
-    sig = inspect.signature(ardlers::Program.__init__)
+def test_ardlers_program_constructor_args():
+    sig = inspect.signature(ardlers_Program.__init__)
     params = list(sig.parameters.keys())
 
 def test_io_exists():
@@ -731,304 +731,271 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ardlers::Smoothing_strategy = st.builds(
-    ardlers::Smoothing,
+ardlers_Smoothing_strategy = st.builds(
+    ardlers_Smoothing,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ardlers::Range_strategy = st.builds(
-    ardlers::Range,
+ardlers_Range_strategy = st.builds(
+    ardlers_Range,
     low=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     high=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ardlers::Map_strategy = st.builds(
-    ardlers::Map,
+ardlers_Map_strategy = st.builds(
+    ardlers_Map,
 )
-ardlers::Rate_strategy = st.builds(
-    ardlers::Rate,
+ardlers_Rate_strategy = st.builds(
+    ardlers_Rate,
     value=
         st.integers()
 )
-ardlers::ComponentBody_strategy = st.builds(
-    ardlers::ComponentBody,
-    pin=
-        st.integers(),
+ardlers_ComponentBody_strategy = st.builds(
+    ardlers_ComponentBody,
     pinned=
         safe_text,
     type=
         safe_text,
+    pin=
+        st.integers(),
     io=
         safe_text
 )
-ardlers::Assignment_strategy = st.builds(
-    ardlers::Assignment,
+ardlers_Assignment_strategy = st.builds(
+    ardlers_Assignment,
 )
-ardlers::State_strategy = st.builds(
-    ardlers::State,
+ardlers_State_strategy = st.builds(
+    ardlers_State,
     value=
         safe_text
 )
-ardlers::Component_strategy = st.builds(
-    ardlers::Component,
+ardlers_Component_strategy = st.builds(
+    ardlers_Component,
     name=
         safe_text
 )
-ardlers::Node_strategy = st.builds(
-    ardlers::Node,
+ardlers_Node_strategy = st.builds(
+    ardlers_Node,
     name=
         safe_text
 )
 Value_strategy = st.builds(
     Value,
 )
-ardlers::NumberLiteral_strategy = st.builds(
-    ardlers::NumberLiteral,
-    int=
-        st.integers(),
+ardlers_NumberLiteral_strategy = st.builds(
+    ardlers_NumberLiteral,
     float=
-        safe_text
+        safe_text,
+    int=
+        st.integers()
 )
-ardlers::Delta_strategy = st.builds(
-    ardlers::Delta,
+ardlers_Delta_strategy = st.builds(
+    ardlers_Delta,
 )
-ardlers::Attribute_strategy = st.builds(
-    ardlers::Attribute,
+ardlers_Attribute_strategy = st.builds(
+    ardlers_Attribute,
 )
 Parenthesis_strategy = st.builds(
     Parenthesis,
 )
-ardlers::Value_strategy = st.builds(
-    ardlers::Value,
+ardlers_Value_strategy = st.builds(
+    ardlers_Value,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-ardlers::Exp_strategy = st.builds(
-    ardlers::Exp,
+ardlers_Factor_strategy = st.builds(
+    ardlers_Factor,
 )
-ardlers::Comparison_strategy = st.builds(
-    ardlers::Comparison,
+ardlers_Exp_strategy = st.builds(
+    ardlers_Exp,
 )
-ardlers::Factor_strategy = st.builds(
-    ardlers::Factor,
+ardlers_Comparison_strategy = st.builds(
+    ardlers_Comparison,
 )
-ardlers::And_strategy = st.builds(
-    ardlers::And,
+ardlers_And_strategy = st.builds(
+    ardlers_And,
 )
-ardlers::Parenthesis_strategy = st.builds(
-    ardlers::Parenthesis,
+ardlers_Parenthesis_strategy = st.builds(
+    ardlers_Parenthesis,
 )
 Or_strategy = st.builds(
     Or,
 )
-ardlers::Expression_strategy = st.builds(
-    ardlers::Expression,
+ardlers_Expression_strategy = st.builds(
+    ardlers_Expression,
 )
-ardlers::RuleBody_strategy = st.builds(
-    ardlers::RuleBody,
+ardlers_RuleBody_strategy = st.builds(
+    ardlers_RuleBody,
 )
-ardlers::Or_strategy = st.builds(
-    ardlers::Or,
+ardlers_Or_strategy = st.builds(
+    ardlers_Or,
     operator=
         safe_text
 )
-ardlers::Rule_strategy = st.builds(
-    ardlers::Rule,
+ardlers_Rule_strategy = st.builds(
+    ardlers_Rule,
     type=
         safe_text
 )
-ardlers::BoardDefinition_strategy = st.builds(
-    ardlers::BoardDefinition,
+ardlers_BoardDefinition_strategy = st.builds(
+    ardlers_BoardDefinition,
     name=
         safe_text,
-    do=
-        st.integers(),
-    di=
-        st.integers(),
     aout=
         st.integers(),
     ain=
+        st.integers(),
+    do=
+        st.integers(),
+    di=
         st.integers()
 )
-ardlers::EObject_strategy = st.builds(
-    ardlers::EObject,
+ardlers_EObject_strategy = st.builds(
+    ardlers_EObject,
 )
-ardlers::SensorImport_strategy = st.builds(
-    ardlers::SensorImport,
+ardlers_SensorImport_strategy = st.builds(
+    ardlers_SensorImport,
     name=
         safe_text
 )
-ardlers::Library_strategy = st.builds(
-    ardlers::Library,
+ardlers_Library_strategy = st.builds(
+    ardlers_Library,
 )
-ardlers::Program_strategy = st.builds(
-    ardlers::Program,
+ardlers_Program_strategy = st.builds(
+    ardlers_Program,
 )
 
-@given(instance=ardlers::Smoothing_strategy)
+@given(instance=ardlers_Smoothing_strategy)
 @settings(max_examples=50)
-def test_ardlers::smoothing_instantiation(instance):
-    assert isinstance(instance, ardlers::Smoothing)
-
-@given(instance=ardlers::Smoothing_strategy)
-def test_ardlers::smoothing_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_ardlers_smoothing_instantiation(instance):
+    assert isinstance(instance, ardlers_Smoothing)
 
 
-@given(instance=ardlers::Smoothing_strategy)
-def test_ardlers::smoothing_value_setter(instance):
+
+@given(instance=ardlers_Smoothing_strategy)
+def test_ardlers_smoothing_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ardlers::Range_strategy)
+@given(instance=ardlers_Range_strategy)
 @settings(max_examples=50)
-def test_ardlers::range_instantiation(instance):
-    assert isinstance(instance, ardlers::Range)
-
-@given(instance=ardlers::Range_strategy)
-def test_ardlers::range_low_type(instance):
-    assert isinstance(instance.low, float)
+def test_ardlers_range_instantiation(instance):
+    assert isinstance(instance, ardlers_Range)
 
 
-@given(instance=ardlers::Range_strategy)
-def test_ardlers::range_low_setter(instance):
+
+@given(instance=ardlers_Range_strategy)
+def test_ardlers_range_low_setter(instance):
     original = instance.low
     instance.low = original
     assert instance.low == original
 
-@given(instance=ardlers::Range_strategy)
-def test_ardlers::range_high_type(instance):
-    assert isinstance(instance.high, float)
 
 
-@given(instance=ardlers::Range_strategy)
-def test_ardlers::range_high_setter(instance):
+@given(instance=ardlers_Range_strategy)
+def test_ardlers_range_high_setter(instance):
     original = instance.high
     instance.high = original
     assert instance.high == original
 
-@given(instance=ardlers::Map_strategy)
+@given(instance=ardlers_Map_strategy)
 @settings(max_examples=50)
-def test_ardlers::map_instantiation(instance):
-    assert isinstance(instance, ardlers::Map)
+def test_ardlers_map_instantiation(instance):
+    assert isinstance(instance, ardlers_Map)
 
-@given(instance=ardlers::Rate_strategy)
+@given(instance=ardlers_Rate_strategy)
 @settings(max_examples=50)
-def test_ardlers::rate_instantiation(instance):
-    assert isinstance(instance, ardlers::Rate)
-
-@given(instance=ardlers::Rate_strategy)
-def test_ardlers::rate_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_ardlers_rate_instantiation(instance):
+    assert isinstance(instance, ardlers_Rate)
 
 
-@given(instance=ardlers::Rate_strategy)
-def test_ardlers::rate_value_setter(instance):
+
+@given(instance=ardlers_Rate_strategy)
+def test_ardlers_rate_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ardlers::ComponentBody_strategy)
+@given(instance=ardlers_ComponentBody_strategy)
 @settings(max_examples=50)
-def test_ardlers::componentbody_instantiation(instance):
-    assert isinstance(instance, ardlers::ComponentBody)
-
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_pin_type(instance):
-    assert isinstance(instance.pin, int)
+def test_ardlers_componentbody_instantiation(instance):
+    assert isinstance(instance, ardlers_ComponentBody)
 
 
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_pin_setter(instance):
-    original = instance.pin
-    instance.pin = original
-    assert instance.pin == original
 
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_pinned_type(instance):
-    assert isinstance(instance.pinned, str)
-
-
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_pinned_setter(instance):
+@given(instance=ardlers_ComponentBody_strategy)
+def test_ardlers_componentbody_pinned_setter(instance):
     original = instance.pinned
     instance.pinned = original
     assert instance.pinned == original
 
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_type_setter(instance):
+@given(instance=ardlers_ComponentBody_strategy)
+def test_ardlers_componentbody_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_io_type(instance):
-    assert isinstance(instance.io, str)
 
 
-@given(instance=ardlers::ComponentBody_strategy)
-def test_ardlers::componentbody_io_setter(instance):
+@given(instance=ardlers_ComponentBody_strategy)
+def test_ardlers_componentbody_pin_setter(instance):
+    original = instance.pin
+    instance.pin = original
+    assert instance.pin == original
+
+
+
+@given(instance=ardlers_ComponentBody_strategy)
+def test_ardlers_componentbody_io_setter(instance):
     original = instance.io
     instance.io = original
     assert instance.io == original
 
-@given(instance=ardlers::Assignment_strategy)
+@given(instance=ardlers_Assignment_strategy)
 @settings(max_examples=50)
-def test_ardlers::assignment_instantiation(instance):
-    assert isinstance(instance, ardlers::Assignment)
+def test_ardlers_assignment_instantiation(instance):
+    assert isinstance(instance, ardlers_Assignment)
 
-@given(instance=ardlers::State_strategy)
+@given(instance=ardlers_State_strategy)
 @settings(max_examples=50)
-def test_ardlers::state_instantiation(instance):
-    assert isinstance(instance, ardlers::State)
-
-@given(instance=ardlers::State_strategy)
-def test_ardlers::state_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ardlers_state_instantiation(instance):
+    assert isinstance(instance, ardlers_State)
 
 
-@given(instance=ardlers::State_strategy)
-def test_ardlers::state_value_setter(instance):
+
+@given(instance=ardlers_State_strategy)
+def test_ardlers_state_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ardlers::Component_strategy)
+@given(instance=ardlers_Component_strategy)
 @settings(max_examples=50)
-def test_ardlers::component_instantiation(instance):
-    assert isinstance(instance, ardlers::Component)
-
-@given(instance=ardlers::Component_strategy)
-def test_ardlers::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ardlers_component_instantiation(instance):
+    assert isinstance(instance, ardlers_Component)
 
 
-@given(instance=ardlers::Component_strategy)
-def test_ardlers::component_name_setter(instance):
+
+@given(instance=ardlers_Component_strategy)
+def test_ardlers_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ardlers::Node_strategy)
+@given(instance=ardlers_Node_strategy)
 @settings(max_examples=50)
-def test_ardlers::node_instantiation(instance):
-    assert isinstance(instance, ardlers::Node)
-
-@given(instance=ardlers::Node_strategy)
-def test_ardlers::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ardlers_node_instantiation(instance):
+    assert isinstance(instance, ardlers_Node)
 
 
-@given(instance=ardlers::Node_strategy)
-def test_ardlers::node_name_setter(instance):
+
+@given(instance=ardlers_Node_strategy)
+def test_ardlers_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1038,217 +1005,187 @@ def test_ardlers::node_name_setter(instance):
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=ardlers::NumberLiteral_strategy)
+@given(instance=ardlers_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_ardlers::numberliteral_instantiation(instance):
-    assert isinstance(instance, ardlers::NumberLiteral)
-
-@given(instance=ardlers::NumberLiteral_strategy)
-def test_ardlers::numberliteral_int_type(instance):
-    assert isinstance(instance.int, int)
+def test_ardlers_numberliteral_instantiation(instance):
+    assert isinstance(instance, ardlers_NumberLiteral)
 
 
-@given(instance=ardlers::NumberLiteral_strategy)
-def test_ardlers::numberliteral_int_setter(instance):
-    original = instance.int
-    instance.int = original
-    assert instance.int == original
 
-@given(instance=ardlers::NumberLiteral_strategy)
-def test_ardlers::numberliteral_float_type(instance):
-    assert isinstance(instance.float, str)
-
-
-@given(instance=ardlers::NumberLiteral_strategy)
-def test_ardlers::numberliteral_float_setter(instance):
+@given(instance=ardlers_NumberLiteral_strategy)
+def test_ardlers_numberliteral_float_setter(instance):
     original = instance.float
     instance.float = original
     assert instance.float == original
 
-@given(instance=ardlers::Delta_strategy)
-@settings(max_examples=50)
-def test_ardlers::delta_instantiation(instance):
-    assert isinstance(instance, ardlers::Delta)
 
-@given(instance=ardlers::Attribute_strategy)
+
+@given(instance=ardlers_NumberLiteral_strategy)
+def test_ardlers_numberliteral_int_setter(instance):
+    original = instance.int
+    instance.int = original
+    assert instance.int == original
+
+@given(instance=ardlers_Delta_strategy)
 @settings(max_examples=50)
-def test_ardlers::attribute_instantiation(instance):
-    assert isinstance(instance, ardlers::Attribute)
+def test_ardlers_delta_instantiation(instance):
+    assert isinstance(instance, ardlers_Delta)
+
+@given(instance=ardlers_Attribute_strategy)
+@settings(max_examples=50)
+def test_ardlers_attribute_instantiation(instance):
+    assert isinstance(instance, ardlers_Attribute)
 
 @given(instance=Parenthesis_strategy)
 @settings(max_examples=50)
 def test_parenthesis_instantiation(instance):
     assert isinstance(instance, Parenthesis)
 
-@given(instance=ardlers::Value_strategy)
+@given(instance=ardlers_Value_strategy)
 @settings(max_examples=50)
-def test_ardlers::value_instantiation(instance):
-    assert isinstance(instance, ardlers::Value)
+def test_ardlers_value_instantiation(instance):
+    assert isinstance(instance, ardlers_Value)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=ardlers::Exp_strategy)
+@given(instance=ardlers_Factor_strategy)
 @settings(max_examples=50)
-def test_ardlers::exp_instantiation(instance):
-    assert isinstance(instance, ardlers::Exp)
+def test_ardlers_factor_instantiation(instance):
+    assert isinstance(instance, ardlers_Factor)
 
-@given(instance=ardlers::Comparison_strategy)
+@given(instance=ardlers_Exp_strategy)
 @settings(max_examples=50)
-def test_ardlers::comparison_instantiation(instance):
-    assert isinstance(instance, ardlers::Comparison)
+def test_ardlers_exp_instantiation(instance):
+    assert isinstance(instance, ardlers_Exp)
 
-@given(instance=ardlers::Factor_strategy)
+@given(instance=ardlers_Comparison_strategy)
 @settings(max_examples=50)
-def test_ardlers::factor_instantiation(instance):
-    assert isinstance(instance, ardlers::Factor)
+def test_ardlers_comparison_instantiation(instance):
+    assert isinstance(instance, ardlers_Comparison)
 
-@given(instance=ardlers::And_strategy)
+@given(instance=ardlers_And_strategy)
 @settings(max_examples=50)
-def test_ardlers::and_instantiation(instance):
-    assert isinstance(instance, ardlers::And)
+def test_ardlers_and_instantiation(instance):
+    assert isinstance(instance, ardlers_And)
 
-@given(instance=ardlers::Parenthesis_strategy)
+@given(instance=ardlers_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_ardlers::parenthesis_instantiation(instance):
-    assert isinstance(instance, ardlers::Parenthesis)
+def test_ardlers_parenthesis_instantiation(instance):
+    assert isinstance(instance, ardlers_Parenthesis)
 
 @given(instance=Or_strategy)
 @settings(max_examples=50)
 def test_or_instantiation(instance):
     assert isinstance(instance, Or)
 
-@given(instance=ardlers::Expression_strategy)
+@given(instance=ardlers_Expression_strategy)
 @settings(max_examples=50)
-def test_ardlers::expression_instantiation(instance):
-    assert isinstance(instance, ardlers::Expression)
+def test_ardlers_expression_instantiation(instance):
+    assert isinstance(instance, ardlers_Expression)
 
-@given(instance=ardlers::RuleBody_strategy)
+@given(instance=ardlers_RuleBody_strategy)
 @settings(max_examples=50)
-def test_ardlers::rulebody_instantiation(instance):
-    assert isinstance(instance, ardlers::RuleBody)
+def test_ardlers_rulebody_instantiation(instance):
+    assert isinstance(instance, ardlers_RuleBody)
 
-@given(instance=ardlers::Or_strategy)
+@given(instance=ardlers_Or_strategy)
 @settings(max_examples=50)
-def test_ardlers::or_instantiation(instance):
-    assert isinstance(instance, ardlers::Or)
-
-@given(instance=ardlers::Or_strategy)
-def test_ardlers::or_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ardlers_or_instantiation(instance):
+    assert isinstance(instance, ardlers_Or)
 
 
-@given(instance=ardlers::Or_strategy)
-def test_ardlers::or_operator_setter(instance):
+
+@given(instance=ardlers_Or_strategy)
+def test_ardlers_or_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=ardlers::Rule_strategy)
+@given(instance=ardlers_Rule_strategy)
 @settings(max_examples=50)
-def test_ardlers::rule_instantiation(instance):
-    assert isinstance(instance, ardlers::Rule)
-
-@given(instance=ardlers::Rule_strategy)
-def test_ardlers::rule_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_ardlers_rule_instantiation(instance):
+    assert isinstance(instance, ardlers_Rule)
 
 
-@given(instance=ardlers::Rule_strategy)
-def test_ardlers::rule_type_setter(instance):
+
+@given(instance=ardlers_Rule_strategy)
+def test_ardlers_rule_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ardlers::BoardDefinition_strategy)
+@given(instance=ardlers_BoardDefinition_strategy)
 @settings(max_examples=50)
-def test_ardlers::boarddefinition_instantiation(instance):
-    assert isinstance(instance, ardlers::BoardDefinition)
-
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ardlers_boarddefinition_instantiation(instance):
+    assert isinstance(instance, ardlers_BoardDefinition)
 
 
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_name_setter(instance):
+
+@given(instance=ardlers_BoardDefinition_strategy)
+def test_ardlers_boarddefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_do_type(instance):
-    assert isinstance(instance.do, int)
 
 
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_do_setter(instance):
-    original = instance.do
-    instance.do = original
-    assert instance.do == original
-
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_di_type(instance):
-    assert isinstance(instance.di, int)
-
-
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_di_setter(instance):
-    original = instance.di
-    instance.di = original
-    assert instance.di == original
-
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_aout_type(instance):
-    assert isinstance(instance.aout, int)
-
-
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_aout_setter(instance):
+@given(instance=ardlers_BoardDefinition_strategy)
+def test_ardlers_boarddefinition_aout_setter(instance):
     original = instance.aout
     instance.aout = original
     assert instance.aout == original
 
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_ain_type(instance):
-    assert isinstance(instance.ain, int)
 
 
-@given(instance=ardlers::BoardDefinition_strategy)
-def test_ardlers::boarddefinition_ain_setter(instance):
+@given(instance=ardlers_BoardDefinition_strategy)
+def test_ardlers_boarddefinition_ain_setter(instance):
     original = instance.ain
     instance.ain = original
     assert instance.ain == original
 
-@given(instance=ardlers::EObject_strategy)
+
+
+@given(instance=ardlers_BoardDefinition_strategy)
+def test_ardlers_boarddefinition_do_setter(instance):
+    original = instance.do
+    instance.do = original
+    assert instance.do == original
+
+
+
+@given(instance=ardlers_BoardDefinition_strategy)
+def test_ardlers_boarddefinition_di_setter(instance):
+    original = instance.di
+    instance.di = original
+    assert instance.di == original
+
+@given(instance=ardlers_EObject_strategy)
 @settings(max_examples=50)
-def test_ardlers::eobject_instantiation(instance):
-    assert isinstance(instance, ardlers::EObject)
+def test_ardlers_eobject_instantiation(instance):
+    assert isinstance(instance, ardlers_EObject)
 
-@given(instance=ardlers::SensorImport_strategy)
+@given(instance=ardlers_SensorImport_strategy)
 @settings(max_examples=50)
-def test_ardlers::sensorimport_instantiation(instance):
-    assert isinstance(instance, ardlers::SensorImport)
-
-@given(instance=ardlers::SensorImport_strategy)
-def test_ardlers::sensorimport_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ardlers_sensorimport_instantiation(instance):
+    assert isinstance(instance, ardlers_SensorImport)
 
 
-@given(instance=ardlers::SensorImport_strategy)
-def test_ardlers::sensorimport_name_setter(instance):
+
+@given(instance=ardlers_SensorImport_strategy)
+def test_ardlers_sensorimport_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ardlers::Library_strategy)
+@given(instance=ardlers_Library_strategy)
 @settings(max_examples=50)
-def test_ardlers::library_instantiation(instance):
-    assert isinstance(instance, ardlers::Library)
+def test_ardlers_library_instantiation(instance):
+    assert isinstance(instance, ardlers_Library)
 
-@given(instance=ardlers::Program_strategy)
+@given(instance=ardlers_Program_strategy)
 @settings(max_examples=50)
-def test_ardlers::program_instantiation(instance):
-    assert isinstance(instance, ardlers::Program)
+def test_ardlers_program_instantiation(instance):
+    assert isinstance(instance, ardlers_Program)

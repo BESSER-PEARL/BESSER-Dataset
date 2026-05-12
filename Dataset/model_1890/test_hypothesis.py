@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Classes::mdsdBooking::Meal,
-    Classes::mdsdBooking::StaffBooking,
-    Classes::mdsdAdmin::HotelStaff,
+from python_code import (
+    Classes_mdsdAdmin_BookingToAdmin,
+    Classes_mdsdAdmin_Admin,
+    Pet,
+    Classes_mdsdAccount_Account,
+    Classes_mdsdAccount_BookingToAccount,
+    Classes_mdsdAdmin_Room,
+    Classes_mdsdBooking_Booking,
+    Classes_mdsdBooking_Meal,
+    Classes_mdsdBooking_StaffBooking,
+    Classes_mdsdAdmin_HotelStaff,
     HotelStaff,
     Room,
-    mdsdAdmin::Staff,
-    mdsdAdmin::BookingToAdmin,
-    mdsdAdmin::Admin,
-    Classes::mdsdAdmin::AdminController,
+    mdsdAdmin_Staff,
+    mdsdAdmin_BookingToAdmin,
+    mdsdAdmin_Admin,
+    Classes_mdsdAdmin_AdminController,
     Meal,
-    Classes::mdsdBooking::Service,
+    Classes_mdsdBooking_Service,
     Service,
     Booking,
-    mdsdBooking::StaffBooking,
-    mdsdBooking::UserBooking,
-    Classes::mdsdBooking::BookingController,
-    Classes::mdsdBilling::CustomerBilling,
-    Classes::mdsdBilling::BookingToBill,
-    Classes::mdsdBilling::StaffBilling,
-    Classes::mdsdBooking::UserBooking,
-    Classes::mdsdBilling::Transaction,
+    mdsdBooking_StaffBooking,
+    mdsdBooking_UserBooking,
+    Classes_mdsdBooking_BookingController,
+    Classes_mdsdBilling_CustomerBilling,
+    Classes_mdsdBilling_BookingToBill,
+    Classes_mdsdBilling_StaffBilling,
+    Classes_mdsdBooking_UserBooking,
+    Classes_mdsdBilling_Transaction,
     Transaction,
-    Classes::mdsdBilling::Bill,
+    Classes_mdsdBilling_Bill,
     Bill,
-    mdsdBilling::CustomerBilling,
-    mdsdBilling::BookingToBill,
-    mdsdBilling::StaffBilling,
-    Classes::mdsdBilling::BillingController,
+    mdsdBilling_CustomerBilling,
+    mdsdBilling_BookingToBill,
+    mdsdBilling_StaffBilling,
+    Classes_mdsdBilling_BillingController,
     Account,
-    mdsdAccount::CustomerAccount,
-    mdsdAccount::BookingToAccount,
-    Classes::mdsdAccount::AccountController,
-    Classes::mdsdAccount::CustomerAccount,
-    Classes::mdsdAccount::Pet,
-    Classes::mdsdAdmin::Staff,
-    Classes::mdsdAdmin::BookingToAdmin,
-    Classes::mdsdAdmin::Admin,
-    Pet,
-    Classes::mdsdAccount::Account,
-    Classes::mdsdAccount::BookingToAccount,
-    Classes::mdsdAdmin::Room,
-    Classes::mdsdBooking::Booking,
+    mdsdAccount_CustomerAccount,
+    mdsdAccount_BookingToAccount,
+    Classes_mdsdAccount_AccountController,
+    Classes_mdsdAccount_CustomerAccount,
+    Classes_mdsdAccount_Pet,
+    Classes_mdsdAdmin_Staff,
 )
 
 # =============================================================================
@@ -56,133 +56,411 @@ from classes import (
 
 
 
-def test_classes::mdsdbooking::meal_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBooking::Meal)
+def test_classes_mdsdadmin_bookingtoadmin_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAdmin_BookingToAdmin)
 
 
-def test_classes::mdsdbooking::meal_constructor_exists():
-    assert callable(Classes::mdsdBooking::Meal.__init__)
+def test_classes_mdsdadmin_bookingtoadmin_constructor_exists():
+    assert callable(Classes_mdsdAdmin_BookingToAdmin.__init__)
 
 
-def test_classes::mdsdbooking::meal_constructor_args():
-    sig = inspect.signature(Classes::mdsdBooking::Meal.__init__)
-    params = list(sig.parameters.keys())
-    assert "schedule" in params, "Missing parameter 'schedule'"
-    assert "amountOfFood" in params, "Missing parameter 'amountOfFood'"
-    assert "foodType" in params, "Missing parameter 'foodType'"
-    assert "price" in params, "Missing parameter 'price'"
-
-def test_classes::mdsdbooking::meal_has_schedule():
-    assert hasattr(Classes::mdsdBooking::Meal, "schedule")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Meal.__mro__:
-        if "schedule" in klass.__dict__:
-            descriptor = klass.__dict__["schedule"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::meal_has_amountOfFood():
-    assert hasattr(Classes::mdsdBooking::Meal, "amountOfFood")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Meal.__mro__:
-        if "amountOfFood" in klass.__dict__:
-            descriptor = klass.__dict__["amountOfFood"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::meal_has_foodType():
-    assert hasattr(Classes::mdsdBooking::Meal, "foodType")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Meal.__mro__:
-        if "foodType" in klass.__dict__:
-            descriptor = klass.__dict__["foodType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::meal_has_price():
-    assert hasattr(Classes::mdsdBooking::Meal, "price")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Meal.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_classes::mdsdbooking::staffbooking_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBooking::StaffBooking)
-
-
-def test_classes::mdsdbooking::staffbooking_constructor_exists():
-    assert callable(Classes::mdsdBooking::StaffBooking.__init__)
-
-
-def test_classes::mdsdbooking::staffbooking_constructor_args():
-    sig = inspect.signature(Classes::mdsdBooking::StaffBooking.__init__)
+def test_classes_mdsdadmin_bookingtoadmin_constructor_args():
+    sig = inspect.signature(Classes_mdsdAdmin_BookingToAdmin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdadmin::hotelstaff_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAdmin::HotelStaff)
+def test_classes_mdsdadmin_admin_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAdmin_Admin)
 
 
-def test_classes::mdsdadmin::hotelstaff_constructor_exists():
-    assert callable(Classes::mdsdAdmin::HotelStaff.__init__)
+def test_classes_mdsdadmin_admin_constructor_exists():
+    assert callable(Classes_mdsdAdmin_Admin.__init__)
 
 
-def test_classes::mdsdadmin::hotelstaff_constructor_args():
-    sig = inspect.signature(Classes::mdsdAdmin::HotelStaff.__init__)
+def test_classes_mdsdadmin_admin_constructor_args():
+    sig = inspect.signature(Classes_mdsdAdmin_Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "SSN" in params, "Missing parameter 'SSN'"
+
+
+
+def test_pet_is_not_abstract():
+    assert not inspect.isabstract(Pet)
+
+
+def test_pet_constructor_exists():
+    assert callable(Pet.__init__)
+
+
+def test_pet_constructor_args():
+    sig = inspect.signature(Pet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classes_mdsdaccount_account_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAccount_Account)
+
+
+def test_classes_mdsdaccount_account_constructor_exists():
+    assert callable(Classes_mdsdAccount_Account.__init__)
+
+
+def test_classes_mdsdaccount_account_constructor_args():
+    sig = inspect.signature(Classes_mdsdAccount_Account.__init__)
+    params = list(sig.parameters.keys())
     assert "isLoggedIn" in params, "Missing parameter 'isLoggedIn'"
-    assert "rank" in params, "Missing parameter 'rank'"
+    assert "email" in params, "Missing parameter 'email'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "accountID" in params, "Missing parameter 'accountID'"
 
-def test_classes::mdsdadmin::hotelstaff_has_Name():
-    assert hasattr(Classes::mdsdAdmin::HotelStaff, "Name")
+def test_classes_mdsdaccount_account_has_isLoggedIn():
+    assert hasattr(Classes_mdsdAccount_Account, "isLoggedIn")
     descriptor = None
-    for klass in Classes::mdsdAdmin::HotelStaff.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdadmin::hotelstaff_has_SSN():
-    assert hasattr(Classes::mdsdAdmin::HotelStaff, "SSN")
-    descriptor = None
-    for klass in Classes::mdsdAdmin::HotelStaff.__mro__:
-        if "SSN" in klass.__dict__:
-            descriptor = klass.__dict__["SSN"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdadmin::hotelstaff_has_isLoggedIn():
-    assert hasattr(Classes::mdsdAdmin::HotelStaff, "isLoggedIn")
-    descriptor = None
-    for klass in Classes::mdsdAdmin::HotelStaff.__mro__:
+    for klass in Classes_mdsdAccount_Account.__mro__:
         if "isLoggedIn" in klass.__dict__:
             descriptor = klass.__dict__["isLoggedIn"]
             break
     assert isinstance(descriptor, property)
 
-def test_classes::mdsdadmin::hotelstaff_has_rank():
-    assert hasattr(Classes::mdsdAdmin::HotelStaff, "rank")
+def test_classes_mdsdaccount_account_has_email():
+    assert hasattr(Classes_mdsdAccount_Account, "email")
     descriptor = None
-    for klass in Classes::mdsdAdmin::HotelStaff.__mro__:
-        if "rank" in klass.__dict__:
-            descriptor = klass.__dict__["rank"]
+    for klass in Classes_mdsdAccount_Account.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
-def test_classes::mdsdadmin::hotelstaff_has_password():
-    assert hasattr(Classes::mdsdAdmin::HotelStaff, "password")
+def test_classes_mdsdaccount_account_has_password():
+    assert hasattr(Classes_mdsdAccount_Account, "password")
     descriptor = None
-    for klass in Classes::mdsdAdmin::HotelStaff.__mro__:
+    for klass in Classes_mdsdAccount_Account.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdaccount_account_has_name():
+    assert hasattr(Classes_mdsdAccount_Account, "name")
+    descriptor = None
+    for klass in Classes_mdsdAccount_Account.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdaccount_account_has_accountID():
+    assert hasattr(Classes_mdsdAccount_Account, "accountID")
+    descriptor = None
+    for klass in Classes_mdsdAccount_Account.__mro__:
+        if "accountID" in klass.__dict__:
+            descriptor = klass.__dict__["accountID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classes_mdsdaccount_bookingtoaccount_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAccount_BookingToAccount)
+
+
+def test_classes_mdsdaccount_bookingtoaccount_constructor_exists():
+    assert callable(Classes_mdsdAccount_BookingToAccount.__init__)
+
+
+def test_classes_mdsdaccount_bookingtoaccount_constructor_args():
+    sig = inspect.signature(Classes_mdsdAccount_BookingToAccount.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classes_mdsdadmin_room_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAdmin_Room)
+
+
+def test_classes_mdsdadmin_room_constructor_exists():
+    assert callable(Classes_mdsdAdmin_Room.__init__)
+
+
+def test_classes_mdsdadmin_room_constructor_args():
+    sig = inspect.signature(Classes_mdsdAdmin_Room.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "number" in params, "Missing parameter 'number'"
+    assert "status" in params, "Missing parameter 'status'"
+
+def test_classes_mdsdadmin_room_has_type():
+    assert hasattr(Classes_mdsdAdmin_Room, "type")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_Room.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdadmin_room_has_number():
+    assert hasattr(Classes_mdsdAdmin_Room, "number")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_Room.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdadmin_room_has_status():
+    assert hasattr(Classes_mdsdAdmin_Room, "status")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_Room.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classes_mdsdbooking_booking_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBooking_Booking)
+
+
+def test_classes_mdsdbooking_booking_constructor_exists():
+    assert callable(Classes_mdsdBooking_Booking.__init__)
+
+
+def test_classes_mdsdbooking_booking_constructor_args():
+    sig = inspect.signature(Classes_mdsdBooking_Booking.__init__)
+    params = list(sig.parameters.keys())
+    assert "bookingId" in params, "Missing parameter 'bookingId'"
+    assert "customerName" in params, "Missing parameter 'customerName'"
+    assert "customerEmail" in params, "Missing parameter 'customerEmail'"
+    assert "dateFrom" in params, "Missing parameter 'dateFrom'"
+    assert "bill_Id" in params, "Missing parameter 'bill_Id'"
+    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
+    assert "petName" in params, "Missing parameter 'petName'"
+    assert "dateTo" in params, "Missing parameter 'dateTo'"
+    assert "isCheckedOut" in params, "Missing parameter 'isCheckedOut'"
+    assert "isCheckedIn" in params, "Missing parameter 'isCheckedIn'"
+
+def test_classes_mdsdbooking_booking_has_bookingId():
+    assert hasattr(Classes_mdsdBooking_Booking, "bookingId")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "bookingId" in klass.__dict__:
+            descriptor = klass.__dict__["bookingId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_customerName():
+    assert hasattr(Classes_mdsdBooking_Booking, "customerName")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "customerName" in klass.__dict__:
+            descriptor = klass.__dict__["customerName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_customerEmail():
+    assert hasattr(Classes_mdsdBooking_Booking, "customerEmail")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "customerEmail" in klass.__dict__:
+            descriptor = klass.__dict__["customerEmail"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_dateFrom():
+    assert hasattr(Classes_mdsdBooking_Booking, "dateFrom")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "dateFrom" in klass.__dict__:
+            descriptor = klass.__dict__["dateFrom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_bill_Id():
+    assert hasattr(Classes_mdsdBooking_Booking, "bill_Id")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "bill_Id" in klass.__dict__:
+            descriptor = klass.__dict__["bill_Id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_roomNumber():
+    assert hasattr(Classes_mdsdBooking_Booking, "roomNumber")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "roomNumber" in klass.__dict__:
+            descriptor = klass.__dict__["roomNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_petName():
+    assert hasattr(Classes_mdsdBooking_Booking, "petName")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "petName" in klass.__dict__:
+            descriptor = klass.__dict__["petName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_dateTo():
+    assert hasattr(Classes_mdsdBooking_Booking, "dateTo")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "dateTo" in klass.__dict__:
+            descriptor = klass.__dict__["dateTo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_isCheckedOut():
+    assert hasattr(Classes_mdsdBooking_Booking, "isCheckedOut")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "isCheckedOut" in klass.__dict__:
+            descriptor = klass.__dict__["isCheckedOut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_booking_has_isCheckedIn():
+    assert hasattr(Classes_mdsdBooking_Booking, "isCheckedIn")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Booking.__mro__:
+        if "isCheckedIn" in klass.__dict__:
+            descriptor = klass.__dict__["isCheckedIn"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classes_mdsdbooking_meal_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBooking_Meal)
+
+
+def test_classes_mdsdbooking_meal_constructor_exists():
+    assert callable(Classes_mdsdBooking_Meal.__init__)
+
+
+def test_classes_mdsdbooking_meal_constructor_args():
+    sig = inspect.signature(Classes_mdsdBooking_Meal.__init__)
+    params = list(sig.parameters.keys())
+    assert "schedule" in params, "Missing parameter 'schedule'"
+    assert "price" in params, "Missing parameter 'price'"
+    assert "foodType" in params, "Missing parameter 'foodType'"
+    assert "amountOfFood" in params, "Missing parameter 'amountOfFood'"
+
+def test_classes_mdsdbooking_meal_has_schedule():
+    assert hasattr(Classes_mdsdBooking_Meal, "schedule")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Meal.__mro__:
+        if "schedule" in klass.__dict__:
+            descriptor = klass.__dict__["schedule"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_meal_has_price():
+    assert hasattr(Classes_mdsdBooking_Meal, "price")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Meal.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_meal_has_foodType():
+    assert hasattr(Classes_mdsdBooking_Meal, "foodType")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Meal.__mro__:
+        if "foodType" in klass.__dict__:
+            descriptor = klass.__dict__["foodType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdbooking_meal_has_amountOfFood():
+    assert hasattr(Classes_mdsdBooking_Meal, "amountOfFood")
+    descriptor = None
+    for klass in Classes_mdsdBooking_Meal.__mro__:
+        if "amountOfFood" in klass.__dict__:
+            descriptor = klass.__dict__["amountOfFood"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classes_mdsdbooking_staffbooking_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBooking_StaffBooking)
+
+
+def test_classes_mdsdbooking_staffbooking_constructor_exists():
+    assert callable(Classes_mdsdBooking_StaffBooking.__init__)
+
+
+def test_classes_mdsdbooking_staffbooking_constructor_args():
+    sig = inspect.signature(Classes_mdsdBooking_StaffBooking.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classes_mdsdadmin_hotelstaff_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAdmin_HotelStaff)
+
+
+def test_classes_mdsdadmin_hotelstaff_constructor_exists():
+    assert callable(Classes_mdsdAdmin_HotelStaff.__init__)
+
+
+def test_classes_mdsdadmin_hotelstaff_constructor_args():
+    sig = inspect.signature(Classes_mdsdAdmin_HotelStaff.__init__)
+    params = list(sig.parameters.keys())
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "SSN" in params, "Missing parameter 'SSN'"
+    assert "isLoggedIn" in params, "Missing parameter 'isLoggedIn'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "rank" in params, "Missing parameter 'rank'"
+
+def test_classes_mdsdadmin_hotelstaff_has_Name():
+    assert hasattr(Classes_mdsdAdmin_HotelStaff, "Name")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_HotelStaff.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdadmin_hotelstaff_has_SSN():
+    assert hasattr(Classes_mdsdAdmin_HotelStaff, "SSN")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_HotelStaff.__mro__:
+        if "SSN" in klass.__dict__:
+            descriptor = klass.__dict__["SSN"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdadmin_hotelstaff_has_isLoggedIn():
+    assert hasattr(Classes_mdsdAdmin_HotelStaff, "isLoggedIn")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_HotelStaff.__mro__:
+        if "isLoggedIn" in klass.__dict__:
+            descriptor = klass.__dict__["isLoggedIn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdadmin_hotelstaff_has_password():
+    assert hasattr(Classes_mdsdAdmin_HotelStaff, "password")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_HotelStaff.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classes_mdsdadmin_hotelstaff_has_rank():
+    assert hasattr(Classes_mdsdAdmin_HotelStaff, "rank")
+    descriptor = None
+    for klass in Classes_mdsdAdmin_HotelStaff.__mro__:
+        if "rank" in klass.__dict__:
+            descriptor = klass.__dict__["rank"]
             break
     assert isinstance(descriptor, property)
 
@@ -216,58 +494,58 @@ def test_room_constructor_args():
 
 
 
-def test_mdsdadmin::staff_is_not_abstract():
-    assert not inspect.isabstract(mdsdAdmin::Staff)
+def test_mdsdadmin_staff_is_not_abstract():
+    assert not inspect.isabstract(mdsdAdmin_Staff)
 
 
-def test_mdsdadmin::staff_constructor_exists():
-    assert callable(mdsdAdmin::Staff.__init__)
+def test_mdsdadmin_staff_constructor_exists():
+    assert callable(mdsdAdmin_Staff.__init__)
 
 
-def test_mdsdadmin::staff_constructor_args():
-    sig = inspect.signature(mdsdAdmin::Staff.__init__)
+def test_mdsdadmin_staff_constructor_args():
+    sig = inspect.signature(mdsdAdmin_Staff.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mdsdadmin::bookingtoadmin_is_not_abstract():
-    assert not inspect.isabstract(mdsdAdmin::BookingToAdmin)
+def test_mdsdadmin_bookingtoadmin_is_not_abstract():
+    assert not inspect.isabstract(mdsdAdmin_BookingToAdmin)
 
 
-def test_mdsdadmin::bookingtoadmin_constructor_exists():
-    assert callable(mdsdAdmin::BookingToAdmin.__init__)
+def test_mdsdadmin_bookingtoadmin_constructor_exists():
+    assert callable(mdsdAdmin_BookingToAdmin.__init__)
 
 
-def test_mdsdadmin::bookingtoadmin_constructor_args():
-    sig = inspect.signature(mdsdAdmin::BookingToAdmin.__init__)
+def test_mdsdadmin_bookingtoadmin_constructor_args():
+    sig = inspect.signature(mdsdAdmin_BookingToAdmin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mdsdadmin::admin_is_not_abstract():
-    assert not inspect.isabstract(mdsdAdmin::Admin)
+def test_mdsdadmin_admin_is_not_abstract():
+    assert not inspect.isabstract(mdsdAdmin_Admin)
 
 
-def test_mdsdadmin::admin_constructor_exists():
-    assert callable(mdsdAdmin::Admin.__init__)
+def test_mdsdadmin_admin_constructor_exists():
+    assert callable(mdsdAdmin_Admin.__init__)
 
 
-def test_mdsdadmin::admin_constructor_args():
-    sig = inspect.signature(mdsdAdmin::Admin.__init__)
+def test_mdsdadmin_admin_constructor_args():
+    sig = inspect.signature(mdsdAdmin_Admin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdadmin::admincontroller_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAdmin::AdminController)
+def test_classes_mdsdadmin_admincontroller_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAdmin_AdminController)
 
 
-def test_classes::mdsdadmin::admincontroller_constructor_exists():
-    assert callable(Classes::mdsdAdmin::AdminController.__init__)
+def test_classes_mdsdadmin_admincontroller_constructor_exists():
+    assert callable(Classes_mdsdAdmin_AdminController.__init__)
 
 
-def test_classes::mdsdadmin::admincontroller_constructor_args():
-    sig = inspect.signature(Classes::mdsdAdmin::AdminController.__init__)
+def test_classes_mdsdadmin_admincontroller_constructor_args():
+    sig = inspect.signature(Classes_mdsdAdmin_AdminController.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -286,35 +564,35 @@ def test_meal_constructor_args():
 
 
 
-def test_classes::mdsdbooking::service_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBooking::Service)
+def test_classes_mdsdbooking_service_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBooking_Service)
 
 
-def test_classes::mdsdbooking::service_constructor_exists():
-    assert callable(Classes::mdsdBooking::Service.__init__)
+def test_classes_mdsdbooking_service_constructor_exists():
+    assert callable(Classes_mdsdBooking_Service.__init__)
 
 
-def test_classes::mdsdbooking::service_constructor_args():
-    sig = inspect.signature(Classes::mdsdBooking::Service.__init__)
+def test_classes_mdsdbooking_service_constructor_args():
+    sig = inspect.signature(Classes_mdsdBooking_Service.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "price" in params, "Missing parameter 'price'"
 
-def test_classes::mdsdbooking::service_has_price():
-    assert hasattr(Classes::mdsdBooking::Service, "price")
+def test_classes_mdsdbooking_service_has_description():
+    assert hasattr(Classes_mdsdBooking_Service, "description")
     descriptor = None
-    for klass in Classes::mdsdBooking::Service.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
+    for klass in Classes_mdsdBooking_Service.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_classes::mdsdbooking::service_has_description():
-    assert hasattr(Classes::mdsdBooking::Service, "description")
+def test_classes_mdsdbooking_service_has_price():
+    assert hasattr(Classes_mdsdBooking_Service, "price")
     descriptor = None
-    for klass in Classes::mdsdBooking::Service.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in Classes_mdsdBooking_Service.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -348,133 +626,133 @@ def test_booking_constructor_args():
 
 
 
-def test_mdsdbooking::staffbooking_is_not_abstract():
-    assert not inspect.isabstract(mdsdBooking::StaffBooking)
+def test_mdsdbooking_staffbooking_is_not_abstract():
+    assert not inspect.isabstract(mdsdBooking_StaffBooking)
 
 
-def test_mdsdbooking::staffbooking_constructor_exists():
-    assert callable(mdsdBooking::StaffBooking.__init__)
+def test_mdsdbooking_staffbooking_constructor_exists():
+    assert callable(mdsdBooking_StaffBooking.__init__)
 
 
-def test_mdsdbooking::staffbooking_constructor_args():
-    sig = inspect.signature(mdsdBooking::StaffBooking.__init__)
+def test_mdsdbooking_staffbooking_constructor_args():
+    sig = inspect.signature(mdsdBooking_StaffBooking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mdsdbooking::userbooking_is_not_abstract():
-    assert not inspect.isabstract(mdsdBooking::UserBooking)
+def test_mdsdbooking_userbooking_is_not_abstract():
+    assert not inspect.isabstract(mdsdBooking_UserBooking)
 
 
-def test_mdsdbooking::userbooking_constructor_exists():
-    assert callable(mdsdBooking::UserBooking.__init__)
+def test_mdsdbooking_userbooking_constructor_exists():
+    assert callable(mdsdBooking_UserBooking.__init__)
 
 
-def test_mdsdbooking::userbooking_constructor_args():
-    sig = inspect.signature(mdsdBooking::UserBooking.__init__)
+def test_mdsdbooking_userbooking_constructor_args():
+    sig = inspect.signature(mdsdBooking_UserBooking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbooking::bookingcontroller_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBooking::BookingController)
+def test_classes_mdsdbooking_bookingcontroller_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBooking_BookingController)
 
 
-def test_classes::mdsdbooking::bookingcontroller_constructor_exists():
-    assert callable(Classes::mdsdBooking::BookingController.__init__)
+def test_classes_mdsdbooking_bookingcontroller_constructor_exists():
+    assert callable(Classes_mdsdBooking_BookingController.__init__)
 
 
-def test_classes::mdsdbooking::bookingcontroller_constructor_args():
-    sig = inspect.signature(Classes::mdsdBooking::BookingController.__init__)
+def test_classes_mdsdbooking_bookingcontroller_constructor_args():
+    sig = inspect.signature(Classes_mdsdBooking_BookingController.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbilling::customerbilling_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBilling::CustomerBilling)
+def test_classes_mdsdbilling_customerbilling_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBilling_CustomerBilling)
 
 
-def test_classes::mdsdbilling::customerbilling_constructor_exists():
-    assert callable(Classes::mdsdBilling::CustomerBilling.__init__)
+def test_classes_mdsdbilling_customerbilling_constructor_exists():
+    assert callable(Classes_mdsdBilling_CustomerBilling.__init__)
 
 
-def test_classes::mdsdbilling::customerbilling_constructor_args():
-    sig = inspect.signature(Classes::mdsdBilling::CustomerBilling.__init__)
+def test_classes_mdsdbilling_customerbilling_constructor_args():
+    sig = inspect.signature(Classes_mdsdBilling_CustomerBilling.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbilling::bookingtobill_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBilling::BookingToBill)
+def test_classes_mdsdbilling_bookingtobill_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBilling_BookingToBill)
 
 
-def test_classes::mdsdbilling::bookingtobill_constructor_exists():
-    assert callable(Classes::mdsdBilling::BookingToBill.__init__)
+def test_classes_mdsdbilling_bookingtobill_constructor_exists():
+    assert callable(Classes_mdsdBilling_BookingToBill.__init__)
 
 
-def test_classes::mdsdbilling::bookingtobill_constructor_args():
-    sig = inspect.signature(Classes::mdsdBilling::BookingToBill.__init__)
+def test_classes_mdsdbilling_bookingtobill_constructor_args():
+    sig = inspect.signature(Classes_mdsdBilling_BookingToBill.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbilling::staffbilling_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBilling::StaffBilling)
+def test_classes_mdsdbilling_staffbilling_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBilling_StaffBilling)
 
 
-def test_classes::mdsdbilling::staffbilling_constructor_exists():
-    assert callable(Classes::mdsdBilling::StaffBilling.__init__)
+def test_classes_mdsdbilling_staffbilling_constructor_exists():
+    assert callable(Classes_mdsdBilling_StaffBilling.__init__)
 
 
-def test_classes::mdsdbilling::staffbilling_constructor_args():
-    sig = inspect.signature(Classes::mdsdBilling::StaffBilling.__init__)
+def test_classes_mdsdbilling_staffbilling_constructor_args():
+    sig = inspect.signature(Classes_mdsdBilling_StaffBilling.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbooking::userbooking_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBooking::UserBooking)
+def test_classes_mdsdbooking_userbooking_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBooking_UserBooking)
 
 
-def test_classes::mdsdbooking::userbooking_constructor_exists():
-    assert callable(Classes::mdsdBooking::UserBooking.__init__)
+def test_classes_mdsdbooking_userbooking_constructor_exists():
+    assert callable(Classes_mdsdBooking_UserBooking.__init__)
 
 
-def test_classes::mdsdbooking::userbooking_constructor_args():
-    sig = inspect.signature(Classes::mdsdBooking::UserBooking.__init__)
+def test_classes_mdsdbooking_userbooking_constructor_args():
+    sig = inspect.signature(Classes_mdsdBooking_UserBooking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbilling::transaction_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBilling::Transaction)
+def test_classes_mdsdbilling_transaction_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBilling_Transaction)
 
 
-def test_classes::mdsdbilling::transaction_constructor_exists():
-    assert callable(Classes::mdsdBilling::Transaction.__init__)
+def test_classes_mdsdbilling_transaction_constructor_exists():
+    assert callable(Classes_mdsdBilling_Transaction.__init__)
 
 
-def test_classes::mdsdbilling::transaction_constructor_args():
-    sig = inspect.signature(Classes::mdsdBilling::Transaction.__init__)
+def test_classes_mdsdbilling_transaction_constructor_args():
+    sig = inspect.signature(Classes_mdsdBilling_Transaction.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "price" in params, "Missing parameter 'price'"
 
-def test_classes::mdsdbilling::transaction_has_price():
-    assert hasattr(Classes::mdsdBilling::Transaction, "price")
+def test_classes_mdsdbilling_transaction_has_description():
+    assert hasattr(Classes_mdsdBilling_Transaction, "description")
     descriptor = None
-    for klass in Classes::mdsdBilling::Transaction.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
+    for klass in Classes_mdsdBilling_Transaction.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_classes::mdsdbilling::transaction_has_description():
-    assert hasattr(Classes::mdsdBilling::Transaction, "description")
+def test_classes_mdsdbilling_transaction_has_price():
+    assert hasattr(Classes_mdsdBilling_Transaction, "price")
     descriptor = None
-    for klass in Classes::mdsdBilling::Transaction.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in Classes_mdsdBilling_Transaction.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -494,35 +772,35 @@ def test_transaction_constructor_args():
 
 
 
-def test_classes::mdsdbilling::bill_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBilling::Bill)
+def test_classes_mdsdbilling_bill_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBilling_Bill)
 
 
-def test_classes::mdsdbilling::bill_constructor_exists():
-    assert callable(Classes::mdsdBilling::Bill.__init__)
+def test_classes_mdsdbilling_bill_constructor_exists():
+    assert callable(Classes_mdsdBilling_Bill.__init__)
 
 
-def test_classes::mdsdbilling::bill_constructor_args():
-    sig = inspect.signature(Classes::mdsdBilling::Bill.__init__)
+def test_classes_mdsdbilling_bill_constructor_args():
+    sig = inspect.signature(Classes_mdsdBilling_Bill.__init__)
     params = list(sig.parameters.keys())
-    assert "isPaid" in params, "Missing parameter 'isPaid'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "isPaid" in params, "Missing parameter 'isPaid'"
 
-def test_classes::mdsdbilling::bill_has_isPaid():
-    assert hasattr(Classes::mdsdBilling::Bill, "isPaid")
+def test_classes_mdsdbilling_bill_has_ID():
+    assert hasattr(Classes_mdsdBilling_Bill, "ID")
     descriptor = None
-    for klass in Classes::mdsdBilling::Bill.__mro__:
-        if "isPaid" in klass.__dict__:
-            descriptor = klass.__dict__["isPaid"]
+    for klass in Classes_mdsdBilling_Bill.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
-def test_classes::mdsdbilling::bill_has_ID():
-    assert hasattr(Classes::mdsdBilling::Bill, "ID")
+def test_classes_mdsdbilling_bill_has_isPaid():
+    assert hasattr(Classes_mdsdBilling_Bill, "isPaid")
     descriptor = None
-    for klass in Classes::mdsdBilling::Bill.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+    for klass in Classes_mdsdBilling_Bill.__mro__:
+        if "isPaid" in klass.__dict__:
+            descriptor = klass.__dict__["isPaid"]
             break
     assert isinstance(descriptor, property)
 
@@ -542,58 +820,58 @@ def test_bill_constructor_args():
 
 
 
-def test_mdsdbilling::customerbilling_is_not_abstract():
-    assert not inspect.isabstract(mdsdBilling::CustomerBilling)
+def test_mdsdbilling_customerbilling_is_not_abstract():
+    assert not inspect.isabstract(mdsdBilling_CustomerBilling)
 
 
-def test_mdsdbilling::customerbilling_constructor_exists():
-    assert callable(mdsdBilling::CustomerBilling.__init__)
+def test_mdsdbilling_customerbilling_constructor_exists():
+    assert callable(mdsdBilling_CustomerBilling.__init__)
 
 
-def test_mdsdbilling::customerbilling_constructor_args():
-    sig = inspect.signature(mdsdBilling::CustomerBilling.__init__)
+def test_mdsdbilling_customerbilling_constructor_args():
+    sig = inspect.signature(mdsdBilling_CustomerBilling.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mdsdbilling::bookingtobill_is_not_abstract():
-    assert not inspect.isabstract(mdsdBilling::BookingToBill)
+def test_mdsdbilling_bookingtobill_is_not_abstract():
+    assert not inspect.isabstract(mdsdBilling_BookingToBill)
 
 
-def test_mdsdbilling::bookingtobill_constructor_exists():
-    assert callable(mdsdBilling::BookingToBill.__init__)
+def test_mdsdbilling_bookingtobill_constructor_exists():
+    assert callable(mdsdBilling_BookingToBill.__init__)
 
 
-def test_mdsdbilling::bookingtobill_constructor_args():
-    sig = inspect.signature(mdsdBilling::BookingToBill.__init__)
+def test_mdsdbilling_bookingtobill_constructor_args():
+    sig = inspect.signature(mdsdBilling_BookingToBill.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mdsdbilling::staffbilling_is_not_abstract():
-    assert not inspect.isabstract(mdsdBilling::StaffBilling)
+def test_mdsdbilling_staffbilling_is_not_abstract():
+    assert not inspect.isabstract(mdsdBilling_StaffBilling)
 
 
-def test_mdsdbilling::staffbilling_constructor_exists():
-    assert callable(mdsdBilling::StaffBilling.__init__)
+def test_mdsdbilling_staffbilling_constructor_exists():
+    assert callable(mdsdBilling_StaffBilling.__init__)
 
 
-def test_mdsdbilling::staffbilling_constructor_args():
-    sig = inspect.signature(mdsdBilling::StaffBilling.__init__)
+def test_mdsdbilling_staffbilling_constructor_args():
+    sig = inspect.signature(mdsdBilling_StaffBilling.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdbilling::billingcontroller_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBilling::BillingController)
+def test_classes_mdsdbilling_billingcontroller_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdBilling_BillingController)
 
 
-def test_classes::mdsdbilling::billingcontroller_constructor_exists():
-    assert callable(Classes::mdsdBilling::BillingController.__init__)
+def test_classes_mdsdbilling_billingcontroller_constructor_exists():
+    assert callable(Classes_mdsdBilling_BillingController.__init__)
 
 
-def test_classes::mdsdbilling::billingcontroller_constructor_args():
-    sig = inspect.signature(Classes::mdsdBilling::BillingController.__init__)
+def test_classes_mdsdbilling_billingcontroller_constructor_args():
+    sig = inspect.signature(Classes_mdsdBilling_BillingController.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -612,209 +890,89 @@ def test_account_constructor_args():
 
 
 
-def test_mdsdaccount::customeraccount_is_not_abstract():
-    assert not inspect.isabstract(mdsdAccount::CustomerAccount)
+def test_mdsdaccount_customeraccount_is_not_abstract():
+    assert not inspect.isabstract(mdsdAccount_CustomerAccount)
 
 
-def test_mdsdaccount::customeraccount_constructor_exists():
-    assert callable(mdsdAccount::CustomerAccount.__init__)
+def test_mdsdaccount_customeraccount_constructor_exists():
+    assert callable(mdsdAccount_CustomerAccount.__init__)
 
 
-def test_mdsdaccount::customeraccount_constructor_args():
-    sig = inspect.signature(mdsdAccount::CustomerAccount.__init__)
+def test_mdsdaccount_customeraccount_constructor_args():
+    sig = inspect.signature(mdsdAccount_CustomerAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mdsdaccount::bookingtoaccount_is_not_abstract():
-    assert not inspect.isabstract(mdsdAccount::BookingToAccount)
+def test_mdsdaccount_bookingtoaccount_is_not_abstract():
+    assert not inspect.isabstract(mdsdAccount_BookingToAccount)
 
 
-def test_mdsdaccount::bookingtoaccount_constructor_exists():
-    assert callable(mdsdAccount::BookingToAccount.__init__)
+def test_mdsdaccount_bookingtoaccount_constructor_exists():
+    assert callable(mdsdAccount_BookingToAccount.__init__)
 
 
-def test_mdsdaccount::bookingtoaccount_constructor_args():
-    sig = inspect.signature(mdsdAccount::BookingToAccount.__init__)
+def test_mdsdaccount_bookingtoaccount_constructor_args():
+    sig = inspect.signature(mdsdAccount_BookingToAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdaccount::accountcontroller_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAccount::AccountController)
+def test_classes_mdsdaccount_accountcontroller_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAccount_AccountController)
 
 
-def test_classes::mdsdaccount::accountcontroller_constructor_exists():
-    assert callable(Classes::mdsdAccount::AccountController.__init__)
+def test_classes_mdsdaccount_accountcontroller_constructor_exists():
+    assert callable(Classes_mdsdAccount_AccountController.__init__)
 
 
-def test_classes::mdsdaccount::accountcontroller_constructor_args():
-    sig = inspect.signature(Classes::mdsdAccount::AccountController.__init__)
+def test_classes_mdsdaccount_accountcontroller_constructor_args():
+    sig = inspect.signature(Classes_mdsdAccount_AccountController.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdaccount::customeraccount_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAccount::CustomerAccount)
+def test_classes_mdsdaccount_customeraccount_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAccount_CustomerAccount)
 
 
-def test_classes::mdsdaccount::customeraccount_constructor_exists():
-    assert callable(Classes::mdsdAccount::CustomerAccount.__init__)
+def test_classes_mdsdaccount_customeraccount_constructor_exists():
+    assert callable(Classes_mdsdAccount_CustomerAccount.__init__)
 
 
-def test_classes::mdsdaccount::customeraccount_constructor_args():
-    sig = inspect.signature(Classes::mdsdAccount::CustomerAccount.__init__)
+def test_classes_mdsdaccount_customeraccount_constructor_args():
+    sig = inspect.signature(Classes_mdsdAccount_CustomerAccount.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::mdsdaccount::pet_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAccount::Pet)
+def test_classes_mdsdaccount_pet_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAccount_Pet)
 
 
-def test_classes::mdsdaccount::pet_constructor_exists():
-    assert callable(Classes::mdsdAccount::Pet.__init__)
+def test_classes_mdsdaccount_pet_constructor_exists():
+    assert callable(Classes_mdsdAccount_Pet.__init__)
 
 
-def test_classes::mdsdaccount::pet_constructor_args():
-    sig = inspect.signature(Classes::mdsdAccount::Pet.__init__)
+def test_classes_mdsdaccount_pet_constructor_args():
+    sig = inspect.signature(Classes_mdsdAccount_Pet.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_classes::mdsdaccount::pet_has_name():
-    assert hasattr(Classes::mdsdAccount::Pet, "name")
+def test_classes_mdsdaccount_pet_has_type():
+    assert hasattr(Classes_mdsdAccount_Pet, "type")
     descriptor = None
-    for klass in Classes::mdsdAccount::Pet.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdaccount::pet_has_type():
-    assert hasattr(Classes::mdsdAccount::Pet, "type")
-    descriptor = None
-    for klass in Classes::mdsdAccount::Pet.__mro__:
+    for klass in Classes_mdsdAccount_Pet.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_classes::mdsdadmin::staff_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAdmin::Staff)
-
-
-def test_classes::mdsdadmin::staff_constructor_exists():
-    assert callable(Classes::mdsdAdmin::Staff.__init__)
-
-
-def test_classes::mdsdadmin::staff_constructor_args():
-    sig = inspect.signature(Classes::mdsdAdmin::Staff.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classes::mdsdadmin::bookingtoadmin_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAdmin::BookingToAdmin)
-
-
-def test_classes::mdsdadmin::bookingtoadmin_constructor_exists():
-    assert callable(Classes::mdsdAdmin::BookingToAdmin.__init__)
-
-
-def test_classes::mdsdadmin::bookingtoadmin_constructor_args():
-    sig = inspect.signature(Classes::mdsdAdmin::BookingToAdmin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classes::mdsdadmin::admin_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAdmin::Admin)
-
-
-def test_classes::mdsdadmin::admin_constructor_exists():
-    assert callable(Classes::mdsdAdmin::Admin.__init__)
-
-
-def test_classes::mdsdadmin::admin_constructor_args():
-    sig = inspect.signature(Classes::mdsdAdmin::Admin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pet_is_not_abstract():
-    assert not inspect.isabstract(Pet)
-
-
-def test_pet_constructor_exists():
-    assert callable(Pet.__init__)
-
-
-def test_pet_constructor_args():
-    sig = inspect.signature(Pet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classes::mdsdaccount::account_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAccount::Account)
-
-
-def test_classes::mdsdaccount::account_constructor_exists():
-    assert callable(Classes::mdsdAccount::Account.__init__)
-
-
-def test_classes::mdsdaccount::account_constructor_args():
-    sig = inspect.signature(Classes::mdsdAccount::Account.__init__)
-    params = list(sig.parameters.keys())
-    assert "accountID" in params, "Missing parameter 'accountID'"
-    assert "password" in params, "Missing parameter 'password'"
-    assert "isLoggedIn" in params, "Missing parameter 'isLoggedIn'"
-    assert "email" in params, "Missing parameter 'email'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_classes::mdsdaccount::account_has_accountID():
-    assert hasattr(Classes::mdsdAccount::Account, "accountID")
+def test_classes_mdsdaccount_pet_has_name():
+    assert hasattr(Classes_mdsdAccount_Pet, "name")
     descriptor = None
-    for klass in Classes::mdsdAccount::Account.__mro__:
-        if "accountID" in klass.__dict__:
-            descriptor = klass.__dict__["accountID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdaccount::account_has_password():
-    assert hasattr(Classes::mdsdAccount::Account, "password")
-    descriptor = None
-    for klass in Classes::mdsdAccount::Account.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdaccount::account_has_isLoggedIn():
-    assert hasattr(Classes::mdsdAccount::Account, "isLoggedIn")
-    descriptor = None
-    for klass in Classes::mdsdAccount::Account.__mro__:
-        if "isLoggedIn" in klass.__dict__:
-            descriptor = klass.__dict__["isLoggedIn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdaccount::account_has_email():
-    assert hasattr(Classes::mdsdAccount::Account, "email")
-    descriptor = None
-    for klass in Classes::mdsdAccount::Account.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdaccount::account_has_name():
-    assert hasattr(Classes::mdsdAccount::Account, "name")
-    descriptor = None
-    for klass in Classes::mdsdAccount::Account.__mro__:
+    for klass in Classes_mdsdAccount_Pet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -822,175 +980,17 @@ def test_classes::mdsdaccount::account_has_name():
 
 
 
-def test_classes::mdsdaccount::bookingtoaccount_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAccount::BookingToAccount)
+def test_classes_mdsdadmin_staff_is_not_abstract():
+    assert not inspect.isabstract(Classes_mdsdAdmin_Staff)
 
 
-def test_classes::mdsdaccount::bookingtoaccount_constructor_exists():
-    assert callable(Classes::mdsdAccount::BookingToAccount.__init__)
+def test_classes_mdsdadmin_staff_constructor_exists():
+    assert callable(Classes_mdsdAdmin_Staff.__init__)
 
 
-def test_classes::mdsdaccount::bookingtoaccount_constructor_args():
-    sig = inspect.signature(Classes::mdsdAccount::BookingToAccount.__init__)
+def test_classes_mdsdadmin_staff_constructor_args():
+    sig = inspect.signature(Classes_mdsdAdmin_Staff.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_classes::mdsdadmin::room_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdAdmin::Room)
-
-
-def test_classes::mdsdadmin::room_constructor_exists():
-    assert callable(Classes::mdsdAdmin::Room.__init__)
-
-
-def test_classes::mdsdadmin::room_constructor_args():
-    sig = inspect.signature(Classes::mdsdAdmin::Room.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "number" in params, "Missing parameter 'number'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_classes::mdsdadmin::room_has_status():
-    assert hasattr(Classes::mdsdAdmin::Room, "status")
-    descriptor = None
-    for klass in Classes::mdsdAdmin::Room.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdadmin::room_has_number():
-    assert hasattr(Classes::mdsdAdmin::Room, "number")
-    descriptor = None
-    for klass in Classes::mdsdAdmin::Room.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdadmin::room_has_type():
-    assert hasattr(Classes::mdsdAdmin::Room, "type")
-    descriptor = None
-    for klass in Classes::mdsdAdmin::Room.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_classes::mdsdbooking::booking_is_not_abstract():
-    assert not inspect.isabstract(Classes::mdsdBooking::Booking)
-
-
-def test_classes::mdsdbooking::booking_constructor_exists():
-    assert callable(Classes::mdsdBooking::Booking.__init__)
-
-
-def test_classes::mdsdbooking::booking_constructor_args():
-    sig = inspect.signature(Classes::mdsdBooking::Booking.__init__)
-    params = list(sig.parameters.keys())
-    assert "isCheckedOut" in params, "Missing parameter 'isCheckedOut'"
-    assert "bookingId" in params, "Missing parameter 'bookingId'"
-    assert "dateFrom" in params, "Missing parameter 'dateFrom'"
-    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
-    assert "customerName" in params, "Missing parameter 'customerName'"
-    assert "petName" in params, "Missing parameter 'petName'"
-    assert "isCheckedIn" in params, "Missing parameter 'isCheckedIn'"
-    assert "bill_Id" in params, "Missing parameter 'bill_Id'"
-    assert "customerEmail" in params, "Missing parameter 'customerEmail'"
-    assert "dateTo" in params, "Missing parameter 'dateTo'"
-
-def test_classes::mdsdbooking::booking_has_isCheckedOut():
-    assert hasattr(Classes::mdsdBooking::Booking, "isCheckedOut")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "isCheckedOut" in klass.__dict__:
-            descriptor = klass.__dict__["isCheckedOut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_bookingId():
-    assert hasattr(Classes::mdsdBooking::Booking, "bookingId")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "bookingId" in klass.__dict__:
-            descriptor = klass.__dict__["bookingId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_dateFrom():
-    assert hasattr(Classes::mdsdBooking::Booking, "dateFrom")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "dateFrom" in klass.__dict__:
-            descriptor = klass.__dict__["dateFrom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_roomNumber():
-    assert hasattr(Classes::mdsdBooking::Booking, "roomNumber")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "roomNumber" in klass.__dict__:
-            descriptor = klass.__dict__["roomNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_customerName():
-    assert hasattr(Classes::mdsdBooking::Booking, "customerName")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "customerName" in klass.__dict__:
-            descriptor = klass.__dict__["customerName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_petName():
-    assert hasattr(Classes::mdsdBooking::Booking, "petName")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "petName" in klass.__dict__:
-            descriptor = klass.__dict__["petName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_isCheckedIn():
-    assert hasattr(Classes::mdsdBooking::Booking, "isCheckedIn")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "isCheckedIn" in klass.__dict__:
-            descriptor = klass.__dict__["isCheckedIn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_bill_Id():
-    assert hasattr(Classes::mdsdBooking::Booking, "bill_Id")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "bill_Id" in klass.__dict__:
-            descriptor = klass.__dict__["bill_Id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_customerEmail():
-    assert hasattr(Classes::mdsdBooking::Booking, "customerEmail")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "customerEmail" in klass.__dict__:
-            descriptor = klass.__dict__["customerEmail"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classes::mdsdbooking::booking_has_dateTo():
-    assert hasattr(Classes::mdsdBooking::Booking, "dateTo")
-    descriptor = None
-    for klass in Classes::mdsdBooking::Booking.__mro__:
-        if "dateTo" in klass.__dict__:
-            descriptor = klass.__dict__["dateTo"]
-            break
-    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -1004,32 +1004,89 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Classes::mdsdBooking::Meal_strategy = st.builds(
-    Classes::mdsdBooking::Meal,
+Classes_mdsdAdmin_BookingToAdmin_strategy = st.builds(
+    Classes_mdsdAdmin_BookingToAdmin,
+)
+Classes_mdsdAdmin_Admin_strategy = st.builds(
+    Classes_mdsdAdmin_Admin,
+)
+Pet_strategy = st.builds(
+    Pet,
+)
+Classes_mdsdAccount_Account_strategy = st.builds(
+    Classes_mdsdAccount_Account,
+    isLoggedIn=
+        st.booleans(),
+    email=
+        safe_text,
+    password=
+        safe_text,
+    name=
+        safe_text,
+    accountID=
+        safe_text
+)
+Classes_mdsdAccount_BookingToAccount_strategy = st.builds(
+    Classes_mdsdAccount_BookingToAccount,
+)
+Classes_mdsdAdmin_Room_strategy = st.builds(
+    Classes_mdsdAdmin_Room,
+    type=
+        safe_text,
+    number=
+        st.integers(),
+    status=
+        safe_text
+)
+Classes_mdsdBooking_Booking_strategy = st.builds(
+    Classes_mdsdBooking_Booking,
+    bookingId=
+        safe_text,
+    customerName=
+        safe_text,
+    customerEmail=
+        safe_text,
+    dateFrom=
+        st.dates(),
+    bill_Id=
+        safe_text,
+    roomNumber=
+        st.integers(),
+    petName=
+        safe_text,
+    dateTo=
+        st.dates(),
+    isCheckedOut=
+        st.booleans(),
+    isCheckedIn=
+        st.booleans()
+)
+Classes_mdsdBooking_Meal_strategy = st.builds(
+    Classes_mdsdBooking_Meal,
     schedule=
         safe_text,
-    amountOfFood=
+    price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     foodType=
         safe_text,
-    price=
+    amountOfFood=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-Classes::mdsdBooking::StaffBooking_strategy = st.builds(
-    Classes::mdsdBooking::StaffBooking,
+Classes_mdsdBooking_StaffBooking_strategy = st.builds(
+    Classes_mdsdBooking_StaffBooking,
 )
-Classes::mdsdAdmin::HotelStaff_strategy = st.builds(
-    Classes::mdsdAdmin::HotelStaff,
+Classes_mdsdAdmin_HotelStaff_strategy = st.builds(
+    Classes_mdsdAdmin_HotelStaff,
     Name=
         safe_text,
     SSN=
         safe_text,
     isLoggedIn=
         st.booleans(),
-    rank=
-        st.integers(),
     password=
-        safe_text
+        safe_text,
+    rank=
+        st.integers()
 )
 HotelStaff_strategy = st.builds(
     HotelStaff,
@@ -1037,27 +1094,27 @@ HotelStaff_strategy = st.builds(
 Room_strategy = st.builds(
     Room,
 )
-mdsdAdmin::Staff_strategy = st.builds(
-    mdsdAdmin::Staff,
+mdsdAdmin_Staff_strategy = st.builds(
+    mdsdAdmin_Staff,
 )
-mdsdAdmin::BookingToAdmin_strategy = st.builds(
-    mdsdAdmin::BookingToAdmin,
+mdsdAdmin_BookingToAdmin_strategy = st.builds(
+    mdsdAdmin_BookingToAdmin,
 )
-mdsdAdmin::Admin_strategy = st.builds(
-    mdsdAdmin::Admin,
+mdsdAdmin_Admin_strategy = st.builds(
+    mdsdAdmin_Admin,
 )
-Classes::mdsdAdmin::AdminController_strategy = st.builds(
-    Classes::mdsdAdmin::AdminController,
+Classes_mdsdAdmin_AdminController_strategy = st.builds(
+    Classes_mdsdAdmin_AdminController,
 )
 Meal_strategy = st.builds(
     Meal,
 )
-Classes::mdsdBooking::Service_strategy = st.builds(
-    Classes::mdsdBooking::Service,
-    price=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+Classes_mdsdBooking_Service_strategy = st.builds(
+    Classes_mdsdBooking_Service,
     description=
-        safe_text
+        safe_text,
+    price=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Service_strategy = st.builds(
     Service,
@@ -1065,195 +1122,94 @@ Service_strategy = st.builds(
 Booking_strategy = st.builds(
     Booking,
 )
-mdsdBooking::StaffBooking_strategy = st.builds(
-    mdsdBooking::StaffBooking,
+mdsdBooking_StaffBooking_strategy = st.builds(
+    mdsdBooking_StaffBooking,
 )
-mdsdBooking::UserBooking_strategy = st.builds(
-    mdsdBooking::UserBooking,
+mdsdBooking_UserBooking_strategy = st.builds(
+    mdsdBooking_UserBooking,
 )
-Classes::mdsdBooking::BookingController_strategy = st.builds(
-    Classes::mdsdBooking::BookingController,
+Classes_mdsdBooking_BookingController_strategy = st.builds(
+    Classes_mdsdBooking_BookingController,
 )
-Classes::mdsdBilling::CustomerBilling_strategy = st.builds(
-    Classes::mdsdBilling::CustomerBilling,
+Classes_mdsdBilling_CustomerBilling_strategy = st.builds(
+    Classes_mdsdBilling_CustomerBilling,
 )
-Classes::mdsdBilling::BookingToBill_strategy = st.builds(
-    Classes::mdsdBilling::BookingToBill,
+Classes_mdsdBilling_BookingToBill_strategy = st.builds(
+    Classes_mdsdBilling_BookingToBill,
 )
-Classes::mdsdBilling::StaffBilling_strategy = st.builds(
-    Classes::mdsdBilling::StaffBilling,
+Classes_mdsdBilling_StaffBilling_strategy = st.builds(
+    Classes_mdsdBilling_StaffBilling,
 )
-Classes::mdsdBooking::UserBooking_strategy = st.builds(
-    Classes::mdsdBooking::UserBooking,
+Classes_mdsdBooking_UserBooking_strategy = st.builds(
+    Classes_mdsdBooking_UserBooking,
 )
-Classes::mdsdBilling::Transaction_strategy = st.builds(
-    Classes::mdsdBilling::Transaction,
-    price=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+Classes_mdsdBilling_Transaction_strategy = st.builds(
+    Classes_mdsdBilling_Transaction,
     description=
-        safe_text
+        safe_text,
+    price=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Transaction_strategy = st.builds(
     Transaction,
 )
-Classes::mdsdBilling::Bill_strategy = st.builds(
-    Classes::mdsdBilling::Bill,
-    isPaid=
-        st.booleans(),
+Classes_mdsdBilling_Bill_strategy = st.builds(
+    Classes_mdsdBilling_Bill,
     ID=
-        safe_text
+        safe_text,
+    isPaid=
+        st.booleans()
 )
 Bill_strategy = st.builds(
     Bill,
 )
-mdsdBilling::CustomerBilling_strategy = st.builds(
-    mdsdBilling::CustomerBilling,
+mdsdBilling_CustomerBilling_strategy = st.builds(
+    mdsdBilling_CustomerBilling,
 )
-mdsdBilling::BookingToBill_strategy = st.builds(
-    mdsdBilling::BookingToBill,
+mdsdBilling_BookingToBill_strategy = st.builds(
+    mdsdBilling_BookingToBill,
 )
-mdsdBilling::StaffBilling_strategy = st.builds(
-    mdsdBilling::StaffBilling,
+mdsdBilling_StaffBilling_strategy = st.builds(
+    mdsdBilling_StaffBilling,
 )
-Classes::mdsdBilling::BillingController_strategy = st.builds(
-    Classes::mdsdBilling::BillingController,
+Classes_mdsdBilling_BillingController_strategy = st.builds(
+    Classes_mdsdBilling_BillingController,
 )
 Account_strategy = st.builds(
     Account,
 )
-mdsdAccount::CustomerAccount_strategy = st.builds(
-    mdsdAccount::CustomerAccount,
+mdsdAccount_CustomerAccount_strategy = st.builds(
+    mdsdAccount_CustomerAccount,
 )
-mdsdAccount::BookingToAccount_strategy = st.builds(
-    mdsdAccount::BookingToAccount,
+mdsdAccount_BookingToAccount_strategy = st.builds(
+    mdsdAccount_BookingToAccount,
 )
-Classes::mdsdAccount::AccountController_strategy = st.builds(
-    Classes::mdsdAccount::AccountController,
+Classes_mdsdAccount_AccountController_strategy = st.builds(
+    Classes_mdsdAccount_AccountController,
 )
-Classes::mdsdAccount::CustomerAccount_strategy = st.builds(
-    Classes::mdsdAccount::CustomerAccount,
+Classes_mdsdAccount_CustomerAccount_strategy = st.builds(
+    Classes_mdsdAccount_CustomerAccount,
 )
-Classes::mdsdAccount::Pet_strategy = st.builds(
-    Classes::mdsdAccount::Pet,
-    name=
-        safe_text,
+Classes_mdsdAccount_Pet_strategy = st.builds(
+    Classes_mdsdAccount_Pet,
     type=
-        safe_text
-)
-Classes::mdsdAdmin::Staff_strategy = st.builds(
-    Classes::mdsdAdmin::Staff,
-)
-Classes::mdsdAdmin::BookingToAdmin_strategy = st.builds(
-    Classes::mdsdAdmin::BookingToAdmin,
-)
-Classes::mdsdAdmin::Admin_strategy = st.builds(
-    Classes::mdsdAdmin::Admin,
-)
-Pet_strategy = st.builds(
-    Pet,
-)
-Classes::mdsdAccount::Account_strategy = st.builds(
-    Classes::mdsdAccount::Account,
-    accountID=
-        safe_text,
-    password=
-        safe_text,
-    isLoggedIn=
-        st.booleans(),
-    email=
         safe_text,
     name=
         safe_text
 )
-Classes::mdsdAccount::BookingToAccount_strategy = st.builds(
-    Classes::mdsdAccount::BookingToAccount,
-)
-Classes::mdsdAdmin::Room_strategy = st.builds(
-    Classes::mdsdAdmin::Room,
-    status=
-        safe_text,
-    number=
-        st.integers(),
-    type=
-        safe_text
-)
-Classes::mdsdBooking::Booking_strategy = st.builds(
-    Classes::mdsdBooking::Booking,
-    isCheckedOut=
-        st.booleans(),
-    bookingId=
-        safe_text,
-    dateFrom=
-        st.dates(),
-    roomNumber=
-        st.integers(),
-    customerName=
-        safe_text,
-    petName=
-        safe_text,
-    isCheckedIn=
-        st.booleans(),
-    bill_Id=
-        safe_text,
-    customerEmail=
-        safe_text,
-    dateTo=
-        st.dates()
+Classes_mdsdAdmin_Staff_strategy = st.builds(
+    Classes_mdsdAdmin_Staff,
 )
 
-@given(instance=Classes::mdsdBooking::Meal_strategy)
+@given(instance=Classes_mdsdAdmin_BookingToAdmin_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbooking::meal_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBooking::Meal)
+def test_classes_mdsdadmin_bookingtoadmin_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAdmin_BookingToAdmin)
 
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_schedule_type(instance):
-    assert isinstance(instance.schedule, str)
-
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_schedule_setter(instance):
-    original = instance.schedule
-    instance.schedule = original
-    assert instance.schedule == original
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_amountOfFood_type(instance):
-    assert isinstance(instance.amountOfFood, float)
-
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_amountOfFood_setter(instance):
-    original = instance.amountOfFood
-    instance.amountOfFood = original
-    assert instance.amountOfFood == original
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_foodType_type(instance):
-    assert isinstance(instance.foodType, str)
-
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_foodType_setter(instance):
-    original = instance.foodType
-    instance.foodType = original
-    assert instance.foodType == original
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=Classes::mdsdBooking::Meal_strategy)
-def test_classes::mdsdbooking::meal_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Classes::mdsdBooking::StaffBooking_strategy)
+@given(instance=Classes_mdsdAdmin_Admin_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbooking::staffbooking_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBooking::StaffBooking)
+def test_classes_mdsdadmin_admin_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAdmin_Admin)
 
 import warnings
 import copy
@@ -1261,9 +1217,413 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBooking::StaffBooking_strategy)
+@given(instance=Classes_mdsdAdmin_Admin_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbooking::staffbooking_addnewservice_changes_state(instance):
+def test_classes_mdsdadmin_admin_createstaff_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createStaff(
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createStaff).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createStaff' in Classes_mdsdAdmin_Admin is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createStaff' in Classes_mdsdAdmin_Admin did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createStaff' in Classes_mdsdAdmin_Admin is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAdmin_Admin_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdadmin_admin_modifystaff_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.modifyStaff(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.modifyStaff).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'modifyStaff' in Classes_mdsdAdmin_Admin is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'modifyStaff' in Classes_mdsdAdmin_Admin did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'modifyStaff' in Classes_mdsdAdmin_Admin is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAdmin_Admin_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdadmin_admin_addroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addRoom(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addRoom' in Classes_mdsdAdmin_Admin is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addRoom' in Classes_mdsdAdmin_Admin did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addRoom' in Classes_mdsdAdmin_Admin is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAdmin_Admin_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdadmin_admin_removeroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRoom(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRoom' in Classes_mdsdAdmin_Admin is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRoom' in Classes_mdsdAdmin_Admin did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRoom' in Classes_mdsdAdmin_Admin is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAdmin_Admin_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdadmin_admin_removestaff_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeStaff(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeStaff).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeStaff' in Classes_mdsdAdmin_Admin is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeStaff' in Classes_mdsdAdmin_Admin did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeStaff' in Classes_mdsdAdmin_Admin is not implemented or raised an error")
+
+@given(instance=Pet_strategy)
+@settings(max_examples=50)
+def test_pet_instantiation(instance):
+    assert isinstance(instance, Pet)
+
+@given(instance=Classes_mdsdAccount_Account_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdaccount_account_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAccount_Account)
+
+
+
+@given(instance=Classes_mdsdAccount_Account_strategy)
+def test_classes_mdsdaccount_account_isLoggedIn_setter(instance):
+    original = instance.isLoggedIn
+    instance.isLoggedIn = original
+    assert instance.isLoggedIn == original
+
+
+
+@given(instance=Classes_mdsdAccount_Account_strategy)
+def test_classes_mdsdaccount_account_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=Classes_mdsdAccount_Account_strategy)
+def test_classes_mdsdaccount_account_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Classes_mdsdAccount_Account_strategy)
+def test_classes_mdsdaccount_account_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Classes_mdsdAccount_Account_strategy)
+def test_classes_mdsdaccount_account_accountID_setter(instance):
+    original = instance.accountID
+    instance.accountID = original
+    assert instance.accountID == original
+
+@given(instance=Classes_mdsdAccount_BookingToAccount_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdaccount_bookingtoaccount_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAccount_BookingToAccount)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAccount_BookingToAccount_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdaccount_bookingtoaccount_isuserloggedin_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isUserLoggedIn(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isUserLoggedIn).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isUserLoggedIn' in Classes_mdsdAccount_BookingToAccount is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isUserLoggedIn' in Classes_mdsdAccount_BookingToAccount did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isUserLoggedIn' in Classes_mdsdAccount_BookingToAccount is not implemented or raised an error")
+
+@given(instance=Classes_mdsdAdmin_Room_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdadmin_room_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAdmin_Room)
+
+
+
+@given(instance=Classes_mdsdAdmin_Room_strategy)
+def test_classes_mdsdadmin_room_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=Classes_mdsdAdmin_Room_strategy)
+def test_classes_mdsdadmin_room_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=Classes_mdsdAdmin_Room_strategy)
+def test_classes_mdsdadmin_room_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdbooking_booking_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBooking_Booking)
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_bookingId_setter(instance):
+    original = instance.bookingId
+    instance.bookingId = original
+    assert instance.bookingId == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_customerName_setter(instance):
+    original = instance.customerName
+    instance.customerName = original
+    assert instance.customerName == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_customerEmail_setter(instance):
+    original = instance.customerEmail
+    instance.customerEmail = original
+    assert instance.customerEmail == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_dateFrom_setter(instance):
+    original = instance.dateFrom
+    instance.dateFrom = original
+    assert instance.dateFrom == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_bill_Id_setter(instance):
+    original = instance.bill_Id
+    instance.bill_Id = original
+    assert instance.bill_Id == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_roomNumber_setter(instance):
+    original = instance.roomNumber
+    instance.roomNumber = original
+    assert instance.roomNumber == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_petName_setter(instance):
+    original = instance.petName
+    instance.petName = original
+    assert instance.petName == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_dateTo_setter(instance):
+    original = instance.dateTo
+    instance.dateTo = original
+    assert instance.dateTo == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_isCheckedOut_setter(instance):
+    original = instance.isCheckedOut
+    instance.isCheckedOut = original
+    assert instance.isCheckedOut == original
+
+
+
+@given(instance=Classes_mdsdBooking_Booking_strategy)
+def test_classes_mdsdbooking_booking_isCheckedIn_setter(instance):
+    original = instance.isCheckedIn
+    instance.isCheckedIn = original
+    assert instance.isCheckedIn == original
+
+@given(instance=Classes_mdsdBooking_Meal_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdbooking_meal_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBooking_Meal)
+
+
+
+@given(instance=Classes_mdsdBooking_Meal_strategy)
+def test_classes_mdsdbooking_meal_schedule_setter(instance):
+    original = instance.schedule
+    instance.schedule = original
+    assert instance.schedule == original
+
+
+
+@given(instance=Classes_mdsdBooking_Meal_strategy)
+def test_classes_mdsdbooking_meal_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=Classes_mdsdBooking_Meal_strategy)
+def test_classes_mdsdbooking_meal_foodType_setter(instance):
+    original = instance.foodType
+    instance.foodType = original
+    assert instance.foodType == original
+
+
+
+@given(instance=Classes_mdsdBooking_Meal_strategy)
+def test_classes_mdsdbooking_meal_amountOfFood_setter(instance):
+    original = instance.amountOfFood
+    instance.amountOfFood = original
+    assert instance.amountOfFood == original
+
+@given(instance=Classes_mdsdBooking_StaffBooking_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdbooking_staffbooking_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBooking_StaffBooking)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdBooking_StaffBooking_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdbooking_staffbooking_addnewservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1278,14 +1638,14 @@ def test_classes::mdsdbooking::staffbooking_addnewservice_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addNewService' in Classes::mdsdBooking::StaffBooking is empty"
+        assert has_statements, f"Function 'addNewService' in Classes_mdsdBooking_StaffBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addNewService' in Classes::mdsdBooking::StaffBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'addNewService' in Classes_mdsdBooking_StaffBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addNewService' in Classes::mdsdBooking::StaffBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'addNewService' in Classes_mdsdBooking_StaffBooking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1293,9 +1653,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBooking::StaffBooking_strategy)
+@given(instance=Classes_mdsdBooking_StaffBooking_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbooking::staffbooking_checkout_changes_state(instance):
+def test_classes_mdsdbooking_staffbooking_checkout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1311,14 +1671,14 @@ def test_classes::mdsdbooking::staffbooking_checkout_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkOut' in Classes::mdsdBooking::StaffBooking is empty"
+        assert has_statements, f"Function 'checkOut' in Classes_mdsdBooking_StaffBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkOut' in Classes::mdsdBooking::StaffBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'checkOut' in Classes_mdsdBooking_StaffBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkOut' in Classes::mdsdBooking::StaffBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkOut' in Classes_mdsdBooking_StaffBooking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1326,9 +1686,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBooking::StaffBooking_strategy)
+@given(instance=Classes_mdsdBooking_StaffBooking_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbooking::staffbooking_checkin_changes_state(instance):
+def test_classes_mdsdbooking_staffbooking_checkin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1343,74 +1703,59 @@ def test_classes::mdsdbooking::staffbooking_checkin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkIn' in Classes::mdsdBooking::StaffBooking is empty"
+        assert has_statements, f"Function 'checkIn' in Classes_mdsdBooking_StaffBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkIn' in Classes::mdsdBooking::StaffBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'checkIn' in Classes_mdsdBooking_StaffBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkIn' in Classes::mdsdBooking::StaffBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkIn' in Classes_mdsdBooking_StaffBooking is not implemented or raised an error")
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
+@given(instance=Classes_mdsdAdmin_HotelStaff_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdadmin::hotelstaff_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAdmin::HotelStaff)
-
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_classes_mdsdadmin_hotelstaff_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAdmin_HotelStaff)
 
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_Name_setter(instance):
+
+@given(instance=Classes_mdsdAdmin_HotelStaff_strategy)
+def test_classes_mdsdadmin_hotelstaff_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_SSN_type(instance):
-    assert isinstance(instance.SSN, str)
 
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_SSN_setter(instance):
+@given(instance=Classes_mdsdAdmin_HotelStaff_strategy)
+def test_classes_mdsdadmin_hotelstaff_SSN_setter(instance):
     original = instance.SSN
     instance.SSN = original
     assert instance.SSN == original
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_isLoggedIn_type(instance):
-    assert isinstance(instance.isLoggedIn, bool)
 
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_isLoggedIn_setter(instance):
+@given(instance=Classes_mdsdAdmin_HotelStaff_strategy)
+def test_classes_mdsdadmin_hotelstaff_isLoggedIn_setter(instance):
     original = instance.isLoggedIn
     instance.isLoggedIn = original
     assert instance.isLoggedIn == original
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_rank_type(instance):
-    assert isinstance(instance.rank, int)
 
 
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_rank_setter(instance):
-    original = instance.rank
-    instance.rank = original
-    assert instance.rank == original
-
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Classes::mdsdAdmin::HotelStaff_strategy)
-def test_classes::mdsdadmin::hotelstaff_password_setter(instance):
+@given(instance=Classes_mdsdAdmin_HotelStaff_strategy)
+def test_classes_mdsdadmin_hotelstaff_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
+
+
+
+@given(instance=Classes_mdsdAdmin_HotelStaff_strategy)
+def test_classes_mdsdadmin_hotelstaff_rank_setter(instance):
+    original = instance.rank
+    instance.rank = original
+    assert instance.rank == original
 
 @given(instance=HotelStaff_strategy)
 @settings(max_examples=50)
@@ -1422,25 +1767,25 @@ def test_hotelstaff_instantiation(instance):
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=mdsdAdmin::Staff_strategy)
+@given(instance=mdsdAdmin_Staff_strategy)
 @settings(max_examples=50)
-def test_mdsdadmin::staff_instantiation(instance):
-    assert isinstance(instance, mdsdAdmin::Staff)
+def test_mdsdadmin_staff_instantiation(instance):
+    assert isinstance(instance, mdsdAdmin_Staff)
 
-@given(instance=mdsdAdmin::BookingToAdmin_strategy)
+@given(instance=mdsdAdmin_BookingToAdmin_strategy)
 @settings(max_examples=50)
-def test_mdsdadmin::bookingtoadmin_instantiation(instance):
-    assert isinstance(instance, mdsdAdmin::BookingToAdmin)
+def test_mdsdadmin_bookingtoadmin_instantiation(instance):
+    assert isinstance(instance, mdsdAdmin_BookingToAdmin)
 
-@given(instance=mdsdAdmin::Admin_strategy)
+@given(instance=mdsdAdmin_Admin_strategy)
 @settings(max_examples=50)
-def test_mdsdadmin::admin_instantiation(instance):
-    assert isinstance(instance, mdsdAdmin::Admin)
+def test_mdsdadmin_admin_instantiation(instance):
+    assert isinstance(instance, mdsdAdmin_Admin)
 
-@given(instance=Classes::mdsdAdmin::AdminController_strategy)
+@given(instance=Classes_mdsdAdmin_AdminController_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdadmin::admincontroller_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAdmin::AdminController)
+def test_classes_mdsdadmin_admincontroller_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAdmin_AdminController)
 
 import warnings
 import copy
@@ -1448,9 +1793,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAdmin::AdminController_strategy)
+@given(instance=Classes_mdsdAdmin_AdminController_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdadmin::admincontroller_isloggedin_changes_state(instance):
+def test_classes_mdsdadmin_admincontroller_isloggedin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1464,46 +1809,40 @@ def test_classes::mdsdadmin::admincontroller_isloggedin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isLoggedIn' in Classes::mdsdAdmin::AdminController is empty"
+        assert has_statements, f"Function 'isLoggedIn' in Classes_mdsdAdmin_AdminController is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isLoggedIn' in Classes::mdsdAdmin::AdminController did not change state; check implementation")
+            warnings.warn(f"Operation 'isLoggedIn' in Classes_mdsdAdmin_AdminController did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isLoggedIn' in Classes::mdsdAdmin::AdminController is not implemented or raised an error")
+        warnings.warn(f"Operation 'isLoggedIn' in Classes_mdsdAdmin_AdminController is not implemented or raised an error")
 
 @given(instance=Meal_strategy)
 @settings(max_examples=50)
 def test_meal_instantiation(instance):
     assert isinstance(instance, Meal)
 
-@given(instance=Classes::mdsdBooking::Service_strategy)
+@given(instance=Classes_mdsdBooking_Service_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbooking::service_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBooking::Service)
-
-@given(instance=Classes::mdsdBooking::Service_strategy)
-def test_classes::mdsdbooking::service_price_type(instance):
-    assert isinstance(instance.price, float)
+def test_classes_mdsdbooking_service_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBooking_Service)
 
 
-@given(instance=Classes::mdsdBooking::Service_strategy)
-def test_classes::mdsdbooking::service_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
 
-@given(instance=Classes::mdsdBooking::Service_strategy)
-def test_classes::mdsdbooking::service_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Classes::mdsdBooking::Service_strategy)
-def test_classes::mdsdbooking::service_description_setter(instance):
+@given(instance=Classes_mdsdBooking_Service_strategy)
+def test_classes_mdsdbooking_service_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=Classes_mdsdBooking_Service_strategy)
+def test_classes_mdsdbooking_service_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
 
 @given(instance=Service_strategy)
 @settings(max_examples=50)
@@ -1515,30 +1854,30 @@ def test_service_instantiation(instance):
 def test_booking_instantiation(instance):
     assert isinstance(instance, Booking)
 
-@given(instance=mdsdBooking::StaffBooking_strategy)
+@given(instance=mdsdBooking_StaffBooking_strategy)
 @settings(max_examples=50)
-def test_mdsdbooking::staffbooking_instantiation(instance):
-    assert isinstance(instance, mdsdBooking::StaffBooking)
+def test_mdsdbooking_staffbooking_instantiation(instance):
+    assert isinstance(instance, mdsdBooking_StaffBooking)
 
-@given(instance=mdsdBooking::UserBooking_strategy)
+@given(instance=mdsdBooking_UserBooking_strategy)
 @settings(max_examples=50)
-def test_mdsdbooking::userbooking_instantiation(instance):
-    assert isinstance(instance, mdsdBooking::UserBooking)
+def test_mdsdbooking_userbooking_instantiation(instance):
+    assert isinstance(instance, mdsdBooking_UserBooking)
 
-@given(instance=Classes::mdsdBooking::BookingController_strategy)
+@given(instance=Classes_mdsdBooking_BookingController_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbooking::bookingcontroller_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBooking::BookingController)
+def test_classes_mdsdbooking_bookingcontroller_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBooking_BookingController)
 
-@given(instance=Classes::mdsdBilling::CustomerBilling_strategy)
+@given(instance=Classes_mdsdBilling_CustomerBilling_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbilling::customerbilling_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBilling::CustomerBilling)
+def test_classes_mdsdbilling_customerbilling_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBilling_CustomerBilling)
 
-@given(instance=Classes::mdsdBilling::BookingToBill_strategy)
+@given(instance=Classes_mdsdBilling_BookingToBill_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbilling::bookingtobill_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBilling::BookingToBill)
+def test_classes_mdsdbilling_bookingtobill_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBilling_BookingToBill)
 
 import warnings
 import copy
@@ -1546,9 +1885,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBilling::BookingToBill_strategy)
+@given(instance=Classes_mdsdBilling_BookingToBill_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbilling::bookingtobill_addtransaction_changes_state(instance):
+def test_classes_mdsdbilling_bookingtobill_addtransaction_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1564,19 +1903,19 @@ def test_classes::mdsdbilling::bookingtobill_addtransaction_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTransaction' in Classes::mdsdBilling::BookingToBill is empty"
+        assert has_statements, f"Function 'addTransaction' in Classes_mdsdBilling_BookingToBill is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTransaction' in Classes::mdsdBilling::BookingToBill did not change state; check implementation")
+            warnings.warn(f"Operation 'addTransaction' in Classes_mdsdBilling_BookingToBill did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTransaction' in Classes::mdsdBilling::BookingToBill is not implemented or raised an error")
+        warnings.warn(f"Operation 'addTransaction' in Classes_mdsdBilling_BookingToBill is not implemented or raised an error")
 
-@given(instance=Classes::mdsdBilling::StaffBilling_strategy)
+@given(instance=Classes_mdsdBilling_StaffBilling_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbilling::staffbilling_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBilling::StaffBilling)
+def test_classes_mdsdbilling_staffbilling_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBilling_StaffBilling)
 
 import warnings
 import copy
@@ -1584,9 +1923,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBilling::StaffBilling_strategy)
+@given(instance=Classes_mdsdBilling_StaffBilling_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbilling::staffbilling_modifybill_changes_state(instance):
+def test_classes_mdsdbilling_staffbilling_printreceipt_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.printReceipt(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.printReceipt).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'printReceipt' in Classes_mdsdBilling_StaffBilling is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'printReceipt' in Classes_mdsdBilling_StaffBilling did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'printReceipt' in Classes_mdsdBilling_StaffBilling is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdBilling_StaffBilling_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdbilling_staffbilling_ispaid_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isPaid(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isPaid).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isPaid' in Classes_mdsdBilling_StaffBilling is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isPaid' in Classes_mdsdBilling_StaffBilling did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isPaid' in Classes_mdsdBilling_StaffBilling is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdBilling_StaffBilling_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdbilling_staffbilling_modifybill_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1602,14 +2003,14 @@ def test_classes::mdsdbilling::staffbilling_modifybill_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'modifyBill' in Classes::mdsdBilling::StaffBilling is empty"
+        assert has_statements, f"Function 'modifyBill' in Classes_mdsdBilling_StaffBilling is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'modifyBill' in Classes::mdsdBilling::StaffBilling did not change state; check implementation")
+            warnings.warn(f"Operation 'modifyBill' in Classes_mdsdBilling_StaffBilling did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'modifyBill' in Classes::mdsdBilling::StaffBilling is not implemented or raised an error")
+        warnings.warn(f"Operation 'modifyBill' in Classes_mdsdBilling_StaffBilling is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1617,9 +2018,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBilling::StaffBilling_strategy)
+@given(instance=Classes_mdsdBilling_StaffBilling_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbilling::staffbilling_giverefund_changes_state(instance):
+def test_classes_mdsdbilling_staffbilling_giverefund_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1634,81 +2035,19 @@ def test_classes::mdsdbilling::staffbilling_giverefund_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'giveRefund' in Classes::mdsdBilling::StaffBilling is empty"
+        assert has_statements, f"Function 'giveRefund' in Classes_mdsdBilling_StaffBilling is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'giveRefund' in Classes::mdsdBilling::StaffBilling did not change state; check implementation")
+            warnings.warn(f"Operation 'giveRefund' in Classes_mdsdBilling_StaffBilling did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'giveRefund' in Classes::mdsdBilling::StaffBilling is not implemented or raised an error")
+        warnings.warn(f"Operation 'giveRefund' in Classes_mdsdBilling_StaffBilling is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdBilling::StaffBilling_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdbilling::staffbilling_ispaid_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isPaid(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isPaid).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isPaid' in Classes::mdsdBilling::StaffBilling is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isPaid' in Classes::mdsdBilling::StaffBilling did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isPaid' in Classes::mdsdBilling::StaffBilling is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdBilling::StaffBilling_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdbilling::staffbilling_printreceipt_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.printReceipt(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.printReceipt).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printReceipt' in Classes::mdsdBilling::StaffBilling is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printReceipt' in Classes::mdsdBilling::StaffBilling did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printReceipt' in Classes::mdsdBilling::StaffBilling is not implemented or raised an error")
-
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbooking::userbooking_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBooking::UserBooking)
+def test_classes_mdsdbooking_userbooking_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBooking_UserBooking)
 
 import warnings
 import copy
@@ -1716,34 +2055,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbooking::userbooking_entermealinfo_changes_state(instance):
+def test_classes_mdsdbooking_userbooking_cancelbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.enterMealInfo(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
+        instance.cancelBooking(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.enterMealInfo).strip()
+        source = inspect.getsource(instance.cancelBooking).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enterMealInfo' in Classes::mdsdBooking::UserBooking is empty"
+        assert has_statements, f"Function 'cancelBooking' in Classes_mdsdBooking_UserBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enterMealInfo' in Classes::mdsdBooking::UserBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'cancelBooking' in Classes_mdsdBooking_UserBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enterMealInfo' in Classes::mdsdBooking::UserBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'cancelBooking' in Classes_mdsdBooking_UserBooking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1751,9 +2086,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbooking::userbooking_entercustomerinfo_changes_state(instance):
+def test_classes_mdsdbooking_userbooking_entercustomerinfo_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1771,14 +2106,14 @@ def test_classes::mdsdbooking::userbooking_entercustomerinfo_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enterCustomerInfo' in Classes::mdsdBooking::UserBooking is empty"
+        assert has_statements, f"Function 'enterCustomerInfo' in Classes_mdsdBooking_UserBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enterCustomerInfo' in Classes::mdsdBooking::UserBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'enterCustomerInfo' in Classes_mdsdBooking_UserBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enterCustomerInfo' in Classes::mdsdBooking::UserBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'enterCustomerInfo' in Classes_mdsdBooking_UserBooking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1786,103 +2121,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdbooking::userbooking_enterservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.enterService(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.enterService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enterService' in Classes::mdsdBooking::UserBooking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enterService' in Classes::mdsdBooking::UserBooking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enterService' in Classes::mdsdBooking::UserBooking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdbooking::userbooking_modifybooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.modifyBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.modifyBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'modifyBooking' in Classes::mdsdBooking::UserBooking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'modifyBooking' in Classes::mdsdBooking::UserBooking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'modifyBooking' in Classes::mdsdBooking::UserBooking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdbooking::userbooking_cancelbooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.cancelBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.cancelBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cancelBooking' in Classes::mdsdBooking::UserBooking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cancelBooking' in Classes::mdsdBooking::UserBooking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cancelBooking' in Classes::mdsdBooking::UserBooking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdBooking::UserBooking_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdbooking::userbooking_enterdatesofstay_changes_state(instance):
+def test_classes_mdsdbooking_userbooking_enterdatesofstay_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1899,123 +2140,209 @@ def test_classes::mdsdbooking::userbooking_enterdatesofstay_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enterDatesOfStay' in Classes::mdsdBooking::UserBooking is empty"
+        assert has_statements, f"Function 'enterDatesOfStay' in Classes_mdsdBooking_UserBooking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enterDatesOfStay' in Classes::mdsdBooking::UserBooking did not change state; check implementation")
+            warnings.warn(f"Operation 'enterDatesOfStay' in Classes_mdsdBooking_UserBooking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enterDatesOfStay' in Classes::mdsdBooking::UserBooking is not implemented or raised an error")
+        warnings.warn(f"Operation 'enterDatesOfStay' in Classes_mdsdBooking_UserBooking is not implemented or raised an error")
 
-@given(instance=Classes::mdsdBilling::Transaction_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdbooking_userbooking_enterservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.enterService(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.enterService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'enterService' in Classes_mdsdBooking_UserBooking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'enterService' in Classes_mdsdBooking_UserBooking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'enterService' in Classes_mdsdBooking_UserBooking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdbooking_userbooking_entermealinfo_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.enterMealInfo(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.enterMealInfo).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'enterMealInfo' in Classes_mdsdBooking_UserBooking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'enterMealInfo' in Classes_mdsdBooking_UserBooking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'enterMealInfo' in Classes_mdsdBooking_UserBooking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdBooking_UserBooking_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdbooking_userbooking_modifybooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.modifyBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.modifyBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'modifyBooking' in Classes_mdsdBooking_UserBooking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'modifyBooking' in Classes_mdsdBooking_UserBooking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'modifyBooking' in Classes_mdsdBooking_UserBooking is not implemented or raised an error")
+
+@given(instance=Classes_mdsdBilling_Transaction_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbilling::transaction_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBilling::Transaction)
-
-@given(instance=Classes::mdsdBilling::Transaction_strategy)
-def test_classes::mdsdbilling::transaction_price_type(instance):
-    assert isinstance(instance.price, float)
+def test_classes_mdsdbilling_transaction_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBilling_Transaction)
 
 
-@given(instance=Classes::mdsdBilling::Transaction_strategy)
-def test_classes::mdsdbilling::transaction_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
 
-@given(instance=Classes::mdsdBilling::Transaction_strategy)
-def test_classes::mdsdbilling::transaction_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Classes::mdsdBilling::Transaction_strategy)
-def test_classes::mdsdbilling::transaction_description_setter(instance):
+@given(instance=Classes_mdsdBilling_Transaction_strategy)
+def test_classes_mdsdbilling_transaction_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=Classes_mdsdBilling_Transaction_strategy)
+def test_classes_mdsdbilling_transaction_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
 
 @given(instance=Transaction_strategy)
 @settings(max_examples=50)
 def test_transaction_instantiation(instance):
     assert isinstance(instance, Transaction)
 
-@given(instance=Classes::mdsdBilling::Bill_strategy)
+@given(instance=Classes_mdsdBilling_Bill_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbilling::bill_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBilling::Bill)
-
-@given(instance=Classes::mdsdBilling::Bill_strategy)
-def test_classes::mdsdbilling::bill_isPaid_type(instance):
-    assert isinstance(instance.isPaid, bool)
+def test_classes_mdsdbilling_bill_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBilling_Bill)
 
 
-@given(instance=Classes::mdsdBilling::Bill_strategy)
-def test_classes::mdsdbilling::bill_isPaid_setter(instance):
-    original = instance.isPaid
-    instance.isPaid = original
-    assert instance.isPaid == original
 
-@given(instance=Classes::mdsdBilling::Bill_strategy)
-def test_classes::mdsdbilling::bill_ID_type(instance):
-    assert isinstance(instance.ID, str)
-
-
-@given(instance=Classes::mdsdBilling::Bill_strategy)
-def test_classes::mdsdbilling::bill_ID_setter(instance):
+@given(instance=Classes_mdsdBilling_Bill_strategy)
+def test_classes_mdsdbilling_bill_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
+
+
+
+@given(instance=Classes_mdsdBilling_Bill_strategy)
+def test_classes_mdsdbilling_bill_isPaid_setter(instance):
+    original = instance.isPaid
+    instance.isPaid = original
+    assert instance.isPaid == original
 
 @given(instance=Bill_strategy)
 @settings(max_examples=50)
 def test_bill_instantiation(instance):
     assert isinstance(instance, Bill)
 
-@given(instance=mdsdBilling::CustomerBilling_strategy)
+@given(instance=mdsdBilling_CustomerBilling_strategy)
 @settings(max_examples=50)
-def test_mdsdbilling::customerbilling_instantiation(instance):
-    assert isinstance(instance, mdsdBilling::CustomerBilling)
+def test_mdsdbilling_customerbilling_instantiation(instance):
+    assert isinstance(instance, mdsdBilling_CustomerBilling)
 
-@given(instance=mdsdBilling::BookingToBill_strategy)
+@given(instance=mdsdBilling_BookingToBill_strategy)
 @settings(max_examples=50)
-def test_mdsdbilling::bookingtobill_instantiation(instance):
-    assert isinstance(instance, mdsdBilling::BookingToBill)
+def test_mdsdbilling_bookingtobill_instantiation(instance):
+    assert isinstance(instance, mdsdBilling_BookingToBill)
 
-@given(instance=mdsdBilling::StaffBilling_strategy)
+@given(instance=mdsdBilling_StaffBilling_strategy)
 @settings(max_examples=50)
-def test_mdsdbilling::staffbilling_instantiation(instance):
-    assert isinstance(instance, mdsdBilling::StaffBilling)
+def test_mdsdbilling_staffbilling_instantiation(instance):
+    assert isinstance(instance, mdsdBilling_StaffBilling)
 
-@given(instance=Classes::mdsdBilling::BillingController_strategy)
+@given(instance=Classes_mdsdBilling_BillingController_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdbilling::billingcontroller_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBilling::BillingController)
+def test_classes_mdsdbilling_billingcontroller_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdBilling_BillingController)
 
 @given(instance=Account_strategy)
 @settings(max_examples=50)
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=mdsdAccount::CustomerAccount_strategy)
+@given(instance=mdsdAccount_CustomerAccount_strategy)
 @settings(max_examples=50)
-def test_mdsdaccount::customeraccount_instantiation(instance):
-    assert isinstance(instance, mdsdAccount::CustomerAccount)
+def test_mdsdaccount_customeraccount_instantiation(instance):
+    assert isinstance(instance, mdsdAccount_CustomerAccount)
 
-@given(instance=mdsdAccount::BookingToAccount_strategy)
+@given(instance=mdsdAccount_BookingToAccount_strategy)
 @settings(max_examples=50)
-def test_mdsdaccount::bookingtoaccount_instantiation(instance):
-    assert isinstance(instance, mdsdAccount::BookingToAccount)
+def test_mdsdaccount_bookingtoaccount_instantiation(instance):
+    assert isinstance(instance, mdsdAccount_BookingToAccount)
 
-@given(instance=Classes::mdsdAccount::AccountController_strategy)
+@given(instance=Classes_mdsdAccount_AccountController_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdaccount::accountcontroller_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAccount::AccountController)
+def test_classes_mdsdaccount_accountcontroller_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAccount_AccountController)
 
-@given(instance=Classes::mdsdAccount::CustomerAccount_strategy)
+@given(instance=Classes_mdsdAccount_CustomerAccount_strategy)
 @settings(max_examples=50)
-def test_classes::mdsdaccount::customeraccount_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAccount::CustomerAccount)
+def test_classes_mdsdaccount_customeraccount_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAccount_CustomerAccount)
 
 import warnings
 import copy
@@ -2023,107 +2350,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAccount::CustomerAccount_strategy)
+@given(instance=Classes_mdsdAccount_CustomerAccount_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdaccount::customeraccount_createaccount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createAccount(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createAccount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createAccount' in Classes::mdsdAccount::CustomerAccount is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createAccount' in Classes::mdsdAccount::CustomerAccount did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createAccount' in Classes::mdsdAccount::CustomerAccount is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAccount::CustomerAccount_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdaccount::customeraccount_login_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.login(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.login).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'login' in Classes::mdsdAccount::CustomerAccount is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'login' in Classes::mdsdAccount::CustomerAccount did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'login' in Classes::mdsdAccount::CustomerAccount is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAccount::CustomerAccount_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdaccount::customeraccount_addpet_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addPet(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addPet).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addPet' in Classes::mdsdAccount::CustomerAccount is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addPet' in Classes::mdsdAccount::CustomerAccount did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addPet' in Classes::mdsdAccount::CustomerAccount is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAccount::CustomerAccount_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdaccount::customeraccount_removepet_changes_state(instance):
+def test_classes_mdsdaccount_customeraccount_removepet_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2139,14 +2368,14 @@ def test_classes::mdsdaccount::customeraccount_removepet_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removePet' in Classes::mdsdAccount::CustomerAccount is empty"
+        assert has_statements, f"Function 'removePet' in Classes_mdsdAccount_CustomerAccount is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removePet' in Classes::mdsdAccount::CustomerAccount did not change state; check implementation")
+            warnings.warn(f"Operation 'removePet' in Classes_mdsdAccount_CustomerAccount did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removePet' in Classes::mdsdAccount::CustomerAccount is not implemented or raised an error")
+        warnings.warn(f"Operation 'removePet' in Classes_mdsdAccount_CustomerAccount is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2154,9 +2383,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAccount::CustomerAccount_strategy)
+@given(instance=Classes_mdsdAccount_CustomerAccount_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdaccount::customeraccount_logout_changes_state(instance):
+def test_classes_mdsdaccount_customeraccount_login_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.login(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.login).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'login' in Classes_mdsdAccount_CustomerAccount is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'login' in Classes_mdsdAccount_CustomerAccount did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'login' in Classes_mdsdAccount_CustomerAccount is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAccount_CustomerAccount_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdaccount_customeraccount_logout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2170,46 +2431,14 @@ def test_classes::mdsdaccount::customeraccount_logout_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'logout' in Classes::mdsdAccount::CustomerAccount is empty"
+        assert has_statements, f"Function 'logout' in Classes_mdsdAccount_CustomerAccount is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'logout' in Classes::mdsdAccount::CustomerAccount did not change state; check implementation")
+            warnings.warn(f"Operation 'logout' in Classes_mdsdAccount_CustomerAccount did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'logout' in Classes::mdsdAccount::CustomerAccount is not implemented or raised an error")
-
-@given(instance=Classes::mdsdAccount::Pet_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdaccount::pet_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAccount::Pet)
-
-@given(instance=Classes::mdsdAccount::Pet_strategy)
-def test_classes::mdsdaccount::pet_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Classes::mdsdAccount::Pet_strategy)
-def test_classes::mdsdaccount::pet_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Classes::mdsdAccount::Pet_strategy)
-def test_classes::mdsdaccount::pet_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Classes::mdsdAccount::Pet_strategy)
-def test_classes::mdsdaccount::pet_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Classes::mdsdAdmin::Staff_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdadmin::staff_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAdmin::Staff)
+        warnings.warn(f"Operation 'logout' in Classes_mdsdAccount_CustomerAccount is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2217,62 +2446,32 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAdmin::Staff_strategy)
+@given(instance=Classes_mdsdAccount_CustomerAccount_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdadmin::staff_stafflogout_changes_state(instance):
+def test_classes_mdsdaccount_customeraccount_addpet_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.staffLogout(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.staffLogout).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'staffLogout' in Classes::mdsdAdmin::Staff is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'staffLogout' in Classes::mdsdAdmin::Staff did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'staffLogout' in Classes::mdsdAdmin::Staff is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAdmin::Staff_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdadmin::staff_changeroomstatus_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.changeRoomStatus(
+        instance.addPet(
+            "test", 
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.changeRoomStatus).strip()
+        source = inspect.getsource(instance.addPet).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'changeRoomStatus' in Classes::mdsdAdmin::Staff is empty"
+        assert has_statements, f"Function 'addPet' in Classes_mdsdAccount_CustomerAccount is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'changeRoomStatus' in Classes::mdsdAdmin::Staff did not change state; check implementation")
+            warnings.warn(f"Operation 'addPet' in Classes_mdsdAccount_CustomerAccount did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'changeRoomStatus' in Classes::mdsdAdmin::Staff is not implemented or raised an error")
+        warnings.warn(f"Operation 'addPet' in Classes_mdsdAccount_CustomerAccount is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2280,9 +2479,68 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAdmin::Staff_strategy)
+@given(instance=Classes_mdsdAccount_CustomerAccount_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdadmin::staff_stafflogin_changes_state(instance):
+def test_classes_mdsdaccount_customeraccount_createaccount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createAccount(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createAccount).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createAccount' in Classes_mdsdAccount_CustomerAccount is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createAccount' in Classes_mdsdAccount_CustomerAccount did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createAccount' in Classes_mdsdAccount_CustomerAccount is not implemented or raised an error")
+
+@given(instance=Classes_mdsdAccount_Pet_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdaccount_pet_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAccount_Pet)
+
+
+
+@given(instance=Classes_mdsdAccount_Pet_strategy)
+def test_classes_mdsdaccount_pet_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=Classes_mdsdAccount_Pet_strategy)
+def test_classes_mdsdaccount_pet_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Classes_mdsdAdmin_Staff_strategy)
+@settings(max_examples=50)
+def test_classes_mdsdadmin_staff_instantiation(instance):
+    assert isinstance(instance, Classes_mdsdAdmin_Staff)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Classes_mdsdAdmin_Staff_strategy)
+@settings(max_examples=30)
+def test_classes_mdsdadmin_staff_stafflogin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2297,24 +2555,14 @@ def test_classes::mdsdadmin::staff_stafflogin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'staffLogin' in Classes::mdsdAdmin::Staff is empty"
+        assert has_statements, f"Function 'staffLogin' in Classes_mdsdAdmin_Staff is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'staffLogin' in Classes::mdsdAdmin::Staff did not change state; check implementation")
+            warnings.warn(f"Operation 'staffLogin' in Classes_mdsdAdmin_Staff did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'staffLogin' in Classes::mdsdAdmin::Staff is not implemented or raised an error")
-
-@given(instance=Classes::mdsdAdmin::BookingToAdmin_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdadmin::bookingtoadmin_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAdmin::BookingToAdmin)
-
-@given(instance=Classes::mdsdAdmin::Admin_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdadmin::admin_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAdmin::Admin)
+        warnings.warn(f"Operation 'staffLogin' in Classes_mdsdAdmin_Staff is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2322,30 +2570,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAdmin::Admin_strategy)
+@given(instance=Classes_mdsdAdmin_Staff_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdadmin::admin_removestaff_changes_state(instance):
+def test_classes_mdsdadmin_staff_stafflogout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.removeStaff(
+        instance.staffLogout(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeStaff).strip()
+        source = inspect.getsource(instance.staffLogout).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeStaff' in Classes::mdsdAdmin::Admin is empty"
+        assert has_statements, f"Function 'staffLogout' in Classes_mdsdAdmin_Staff is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeStaff' in Classes::mdsdAdmin::Admin did not change state; check implementation")
+            warnings.warn(f"Operation 'staffLogout' in Classes_mdsdAdmin_Staff did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeStaff' in Classes::mdsdAdmin::Admin is not implemented or raised an error")
+        warnings.warn(f"Operation 'staffLogout' in Classes_mdsdAdmin_Staff is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2353,381 +2601,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Classes::mdsdAdmin::Admin_strategy)
+@given(instance=Classes_mdsdAdmin_Staff_strategy)
 @settings(max_examples=30)
-def test_classes::mdsdadmin::admin_addroom_changes_state(instance):
+def test_classes_mdsdadmin_staff_changeroomstatus_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.addRoom(
-            "test", 
+        instance.changeRoomStatus(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addRoom).strip()
+        source = inspect.getsource(instance.changeRoomStatus).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRoom' in Classes::mdsdAdmin::Admin is empty"
+        assert has_statements, f"Function 'changeRoomStatus' in Classes_mdsdAdmin_Staff is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRoom' in Classes::mdsdAdmin::Admin did not change state; check implementation")
+            warnings.warn(f"Operation 'changeRoomStatus' in Classes_mdsdAdmin_Staff did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRoom' in Classes::mdsdAdmin::Admin is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAdmin::Admin_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdadmin::admin_removeroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeRoom(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoom' in Classes::mdsdAdmin::Admin is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoom' in Classes::mdsdAdmin::Admin did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoom' in Classes::mdsdAdmin::Admin is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAdmin::Admin_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdadmin::admin_modifystaff_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.modifyStaff(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.modifyStaff).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'modifyStaff' in Classes::mdsdAdmin::Admin is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'modifyStaff' in Classes::mdsdAdmin::Admin did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'modifyStaff' in Classes::mdsdAdmin::Admin is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAdmin::Admin_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdadmin::admin_createstaff_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createStaff(
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createStaff).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createStaff' in Classes::mdsdAdmin::Admin is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createStaff' in Classes::mdsdAdmin::Admin did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createStaff' in Classes::mdsdAdmin::Admin is not implemented or raised an error")
-
-@given(instance=Pet_strategy)
-@settings(max_examples=50)
-def test_pet_instantiation(instance):
-    assert isinstance(instance, Pet)
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdaccount::account_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAccount::Account)
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_accountID_type(instance):
-    assert isinstance(instance.accountID, str)
-
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_accountID_setter(instance):
-    original = instance.accountID
-    instance.accountID = original
-    assert instance.accountID == original
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_isLoggedIn_type(instance):
-    assert isinstance(instance.isLoggedIn, bool)
-
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_isLoggedIn_setter(instance):
-    original = instance.isLoggedIn
-    instance.isLoggedIn = original
-    assert instance.isLoggedIn == original
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Classes::mdsdAccount::Account_strategy)
-def test_classes::mdsdaccount::account_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Classes::mdsdAccount::BookingToAccount_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdaccount::bookingtoaccount_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAccount::BookingToAccount)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Classes::mdsdAccount::BookingToAccount_strategy)
-@settings(max_examples=30)
-def test_classes::mdsdaccount::bookingtoaccount_isuserloggedin_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isUserLoggedIn(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isUserLoggedIn).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isUserLoggedIn' in Classes::mdsdAccount::BookingToAccount is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isUserLoggedIn' in Classes::mdsdAccount::BookingToAccount did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isUserLoggedIn' in Classes::mdsdAccount::BookingToAccount is not implemented or raised an error")
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdadmin::room_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdAdmin::Room)
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-def test_classes::mdsdadmin::room_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-def test_classes::mdsdadmin::room_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-def test_classes::mdsdadmin::room_number_type(instance):
-    assert isinstance(instance.number, int)
-
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-def test_classes::mdsdadmin::room_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-def test_classes::mdsdadmin::room_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Classes::mdsdAdmin::Room_strategy)
-def test_classes::mdsdadmin::room_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-@settings(max_examples=50)
-def test_classes::mdsdbooking::booking_instantiation(instance):
-    assert isinstance(instance, Classes::mdsdBooking::Booking)
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_isCheckedOut_type(instance):
-    assert isinstance(instance.isCheckedOut, bool)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_isCheckedOut_setter(instance):
-    original = instance.isCheckedOut
-    instance.isCheckedOut = original
-    assert instance.isCheckedOut == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_bookingId_type(instance):
-    assert isinstance(instance.bookingId, str)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_bookingId_setter(instance):
-    original = instance.bookingId
-    instance.bookingId = original
-    assert instance.bookingId == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_dateFrom_type(instance):
-    assert isinstance(instance.dateFrom, date)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_dateFrom_setter(instance):
-    original = instance.dateFrom
-    instance.dateFrom = original
-    assert instance.dateFrom == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_roomNumber_type(instance):
-    assert isinstance(instance.roomNumber, int)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_roomNumber_setter(instance):
-    original = instance.roomNumber
-    instance.roomNumber = original
-    assert instance.roomNumber == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_customerName_type(instance):
-    assert isinstance(instance.customerName, str)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_customerName_setter(instance):
-    original = instance.customerName
-    instance.customerName = original
-    assert instance.customerName == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_petName_type(instance):
-    assert isinstance(instance.petName, str)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_petName_setter(instance):
-    original = instance.petName
-    instance.petName = original
-    assert instance.petName == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_isCheckedIn_type(instance):
-    assert isinstance(instance.isCheckedIn, bool)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_isCheckedIn_setter(instance):
-    original = instance.isCheckedIn
-    instance.isCheckedIn = original
-    assert instance.isCheckedIn == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_bill_Id_type(instance):
-    assert isinstance(instance.bill_Id, str)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_bill_Id_setter(instance):
-    original = instance.bill_Id
-    instance.bill_Id = original
-    assert instance.bill_Id == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_customerEmail_type(instance):
-    assert isinstance(instance.customerEmail, str)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_customerEmail_setter(instance):
-    original = instance.customerEmail
-    instance.customerEmail = original
-    assert instance.customerEmail == original
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_dateTo_type(instance):
-    assert isinstance(instance.dateTo, date)
-
-
-@given(instance=Classes::mdsdBooking::Booking_strategy)
-def test_classes::mdsdbooking::booking_dateTo_setter(instance):
-    original = instance.dateTo
-    instance.dateTo = original
-    assert instance.dateTo == original
+        warnings.warn(f"Operation 'changeRoomStatus' in Classes_mdsdAdmin_Staff is not implemented or raised an error")

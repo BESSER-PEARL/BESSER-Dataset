@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    b::B2,
-    b::B1,
+from python_code import (
+    b_B1,
+    b_B2,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_b::b2_is_not_abstract():
-    assert not inspect.isabstract(b::B2)
+def test_b_b1_is_not_abstract():
+    assert not inspect.isabstract(b_B1)
 
 
-def test_b::b2_constructor_exists():
-    assert callable(b::B2.__init__)
+def test_b_b1_constructor_exists():
+    assert callable(b_B1.__init__)
 
 
-def test_b::b2_constructor_args():
-    sig = inspect.signature(b::B2.__init__)
+def test_b_b1_constructor_args():
+    sig = inspect.signature(b_B1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::b1_is_not_abstract():
-    assert not inspect.isabstract(b::B1)
+def test_b_b2_is_not_abstract():
+    assert not inspect.isabstract(b_B2)
 
 
-def test_b::b1_constructor_exists():
-    assert callable(b::B1.__init__)
+def test_b_b2_constructor_exists():
+    assert callable(b_B2.__init__)
 
 
-def test_b::b1_constructor_args():
-    sig = inspect.signature(b::B1.__init__)
+def test_b_b2_constructor_args():
+    sig = inspect.signature(b_B2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-b::B2_strategy = st.builds(
-    b::B2,
+b_B1_strategy = st.builds(
+    b_B1,
 )
-b::B1_strategy = st.builds(
-    b::B1,
+b_B2_strategy = st.builds(
+    b_B2,
 )
 
-@given(instance=b::B2_strategy)
+@given(instance=b_B1_strategy)
 @settings(max_examples=50)
-def test_b::b2_instantiation(instance):
-    assert isinstance(instance, b::B2)
+def test_b_b1_instantiation(instance):
+    assert isinstance(instance, b_B1)
 
-@given(instance=b::B1_strategy)
+@given(instance=b_B2_strategy)
 @settings(max_examples=50)
-def test_b::b1_instantiation(instance):
-    assert isinstance(instance, b::B1)
+def test_b_b2_instantiation(instance):
+    assert isinstance(instance, b_B2)

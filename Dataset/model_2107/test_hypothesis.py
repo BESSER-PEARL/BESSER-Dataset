@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tests::Test,
-    tests::TestsModel,
+from python_code import (
+    tests_Test,
+    tests_TestsModel,
 )
 
 # =============================================================================
@@ -16,33 +16,33 @@ from classes import (
 
 
 
-def test_tests::test_is_not_abstract():
-    assert not inspect.isabstract(tests::Test)
+def test_tests_test_is_not_abstract():
+    assert not inspect.isabstract(tests_Test)
 
 
-def test_tests::test_constructor_exists():
-    assert callable(tests::Test.__init__)
+def test_tests_test_constructor_exists():
+    assert callable(tests_Test.__init__)
 
 
-def test_tests::test_constructor_args():
-    sig = inspect.signature(tests::Test.__init__)
+def test_tests_test_constructor_args():
+    sig = inspect.signature(tests_Test.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_tests::test_has_version():
-    assert hasattr(tests::Test, "version")
+def test_tests_test_has_version():
+    assert hasattr(tests_Test, "version")
     descriptor = None
-    for klass in tests::Test.__mro__:
+    for klass in tests_Test.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_tests::test_has_id():
-    assert hasattr(tests::Test, "id")
+def test_tests_test_has_id():
+    assert hasattr(tests_Test, "id")
     descriptor = None
-    for klass in tests::Test.__mro__:
+    for klass in tests_Test.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -50,16 +50,16 @@ def test_tests::test_has_id():
 
 
 
-def test_tests::testsmodel_is_not_abstract():
-    assert not inspect.isabstract(tests::TestsModel)
+def test_tests_testsmodel_is_not_abstract():
+    assert not inspect.isabstract(tests_TestsModel)
 
 
-def test_tests::testsmodel_constructor_exists():
-    assert callable(tests::TestsModel.__init__)
+def test_tests_testsmodel_constructor_exists():
+    assert callable(tests_TestsModel.__init__)
 
 
-def test_tests::testsmodel_constructor_args():
-    sig = inspect.signature(tests::TestsModel.__init__)
+def test_tests_testsmodel_constructor_args():
+    sig = inspect.signature(tests_TestsModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tests::Test_strategy = st.builds(
-    tests::Test,
+tests_Test_strategy = st.builds(
+    tests_Test,
     version=
         safe_text,
     id=
         safe_text
 )
-tests::TestsModel_strategy = st.builds(
-    tests::TestsModel,
+tests_TestsModel_strategy = st.builds(
+    tests_TestsModel,
 )
 
-@given(instance=tests::Test_strategy)
+@given(instance=tests_Test_strategy)
 @settings(max_examples=50)
-def test_tests::test_instantiation(instance):
-    assert isinstance(instance, tests::Test)
-
-@given(instance=tests::Test_strategy)
-def test_tests::test_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_tests_test_instantiation(instance):
+    assert isinstance(instance, tests_Test)
 
 
-@given(instance=tests::Test_strategy)
-def test_tests::test_version_setter(instance):
+
+@given(instance=tests_Test_strategy)
+def test_tests_test_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=tests::Test_strategy)
-def test_tests::test_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=tests::Test_strategy)
-def test_tests::test_id_setter(instance):
+@given(instance=tests_Test_strategy)
+def test_tests_test_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=tests::TestsModel_strategy)
+@given(instance=tests_TestsModel_strategy)
 @settings(max_examples=50)
-def test_tests::testsmodel_instantiation(instance):
-    assert isinstance(instance, tests::TestsModel)
+def test_tests_testsmodel_instantiation(instance):
+    assert isinstance(instance, tests_TestsModel)

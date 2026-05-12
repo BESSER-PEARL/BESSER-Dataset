@@ -3,126 +3,126 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ValueExpression,
-    vhdl::UnitValueExpression,
-    vhdl::ValueExpression,
+    vhdl_UnitValueExpression,
+    vhdl_ValueExpression,
     ArrayTypeDefinition,
-    vhdl::ConstrainedArrayTypeDefinition,
-    vhdl::UnconstrainedArrayTypeDefinition,
+    vhdl_ConstrainedArrayTypeDefinition,
+    vhdl_UnconstrainedArrayTypeDefinition,
     CompositeTypeDefinition,
-    vhdl::ArrayTypeDefinition,
-    vhdl::RecordTypeDefinition,
-    vhdl::RecordField,
+    vhdl_ArrayTypeDefinition,
+    vhdl_RecordTypeDefinition,
+    vhdl_RecordField,
     TypeDefinition,
-    vhdl::FileTypeDefinition,
-    vhdl::EnumerationTypeDefinition,
-    vhdl::CompositeTypeDefinition,
-    vhdl::AccessTypeDefinition,
-    vhdl::TypeDefinition,
+    vhdl_FileTypeDefinition,
+    vhdl_EnumerationTypeDefinition,
+    vhdl_CompositeTypeDefinition,
+    vhdl_AccessTypeDefinition,
+    vhdl_TypeDefinition,
     Type,
-    vhdl::TypeDeclaration,
-    vhdl::SubtypeDeclaration,
+    vhdl_TypeDeclaration,
+    vhdl_SubtypeDeclaration,
     Expression,
-    vhdl::ConditionalWaveformExpression,
-    vhdl::Boolean,
-    vhdl::Open,
-    vhdl::ShiftExpression,
-    vhdl::RelationalExpression,
-    vhdl::AddingExpression,
-    vhdl::BuiltinFuncs,
-    vhdl::MultiplyingExpression,
-    vhdl::ChoiceExpression,
-    vhdl::Char,
-    vhdl::MemberExpression,
-    vhdl::Variable,
-    vhdl::Value,
-    vhdl::SliceExpression,
-    vhdl::String,
-    vhdl::LogicalExpression,
-    vhdl::Member,
-    vhdl::Factor,
-    vhdl::Others,
-    vhdl::BitString,
-    vhdl::RangeExpression,
-    vhdl::MultiExpression,
-    vhdl::IfStatementTest,
+    vhdl_AddingExpression,
+    vhdl_BitString,
+    vhdl_Member,
+    vhdl_Boolean,
+    vhdl_Others,
+    vhdl_Char,
+    vhdl_Value,
+    vhdl_MultiplyingExpression,
+    vhdl_Factor,
+    vhdl_ChoiceExpression,
+    vhdl_MemberExpression,
+    vhdl_ShiftExpression,
+    vhdl_MultiExpression,
+    vhdl_Variable,
+    vhdl_RelationalExpression,
+    vhdl_LogicalExpression,
+    vhdl_ConditionalWaveformExpression,
+    vhdl_BuiltinFuncs,
+    vhdl_Open,
+    vhdl_SliceExpression,
+    vhdl_RangeExpression,
+    vhdl_String,
+    vhdl_IfStatementTest,
     IterationScheme,
-    vhdl::ForIterationScheme,
-    vhdl::CaseAlternative,
-    vhdl::GenericMapAssociation,
-    vhdl::PortMapAssociation,
+    vhdl_ForIterationScheme,
+    vhdl_WhileIterationScheme,
+    vhdl_IterationScheme,
+    vhdl_CaseAlternative,
+    vhdl_GenericMapAssociation,
+    vhdl_PortMapAssociation,
     SequentialStatement,
-    vhdl::SequentialSignalAssignmentStatement,
-    vhdl::LoopStatement,
-    vhdl::IfStatement,
-    vhdl::CaseStatement,
-    vhdl::WaitStatement,
-    vhdl::PortMap,
-    vhdl::GenericMap,
-    vhdl::SequentialStatement,
-    vhdl::IdList,
+    vhdl_SequentialSignalAssignmentStatement,
+    vhdl_CaseStatement,
+    vhdl_IfStatement,
+    vhdl_LoopStatement,
+    vhdl_WaitStatement,
+    vhdl_PortMap,
+    vhdl_GenericMap,
+    vhdl_SequentialStatement,
+    vhdl_IdList,
     ArchitectureStatement,
-    vhdl::ComponentInstantiationStatement,
-    vhdl::IfGenerateStatement,
-    vhdl::EntityInstantiationStatement,
-    vhdl::ConditionalSignalAssignmentStatement,
-    vhdl::ForGenerateStatement,
-    vhdl::ProcessStatement,
-    vhdl::SubtypeIndication,
+    vhdl_ForGenerateStatement,
+    vhdl_ComponentInstantiationStatement,
+    vhdl_ConditionalSignalAssignmentStatement,
+    vhdl_EntityInstantiationStatement,
+    vhdl_IfGenerateStatement,
+    vhdl_ProcessStatement,
+    vhdl_SubtypeIndication,
     Variable,
-    vhdl::LoopVariable,
-    vhdl::Constant,
-    vhdl::Port,
-    vhdl::Ports,
-    vhdl::Generics,
-    vhdl::Var,
-    vhdl::Signal,
-    package::declarative::item,
+    vhdl_LoopVariable,
+    vhdl_Constant,
+    vhdl_Port,
+    vhdl_Ports,
+    vhdl_Generics,
+    vhdl_Var,
+    vhdl_Signal,
+    package_declarative_item,
     BlockDeclarativeItem,
-    vhdl::VariableDeclaration,
-    vhdl::AttributeSpecification,
-    vhdl::SignalDeclaration,
-    vhdl::Type,
-    vhdl::ConstantDeclaration,
-    vhdl::Component,
-    vhdl::AttributeDeclaration,
-    vhdl::Alias,
-    vhdl::Generic,
-    vhdl::Expression,
-    vhdl::DesignFile,
-    vhdl::ArchitectureStatement,
-    vhdl::BlockDeclarativeItem,
-    vhdl::package::declarative::part,
-    vhdl::package::declarative::item,
+    vhdl_VariableDeclaration,
+    vhdl_Type,
+    vhdl_ConstantDeclaration,
+    vhdl_SignalDeclaration,
+    vhdl_Component,
+    vhdl_AttributeDeclaration,
+    vhdl_AttributeSpecification,
+    vhdl_Alias,
+    vhdl_Generic,
+    vhdl_Expression,
+    vhdl_DesignFile,
+    vhdl_ArchitectureStatement,
+    vhdl_BlockDeclarativeItem,
+    vhdl_package_declarative_part,
+    vhdl_package_declarative_item,
     LibraryUnit,
-    vhdl::Entity,
-    vhdl::Architecture,
-    vhdl::Package,
-    vhdl::Library,
+    vhdl_Architecture,
+    vhdl_Entity,
+    vhdl_Package,
+    vhdl_Library,
     ContextItem,
-    vhdl::LibraryClause,
-    vhdl::UseClause,
-    vhdl::LibraryUnit,
-    vhdl::ContextItem,
-    vhdl::WhileIterationScheme,
-    vhdl::IterationScheme,
-    RangeDirection,
-    UnaryOperator,
+    vhdl_LibraryClause,
+    vhdl_UseClause,
+    vhdl_LibraryUnit,
+    vhdl_ContextItem,
     AddingOperator,
-    Sign,
-    EString,
-    MultiplyingOperator,
-    EntityClass,
-    LogicalOperator,
-    BuiltinLibs,
-    SignalKind,
+    UnaryOperator,
     ShiftOperator,
-    Mode,
-    Purity,
+    BuiltinLibs,
+    EString,
+    RangeDirection,
+    LogicalOperator,
+    SignalKind,
+    EntityClass,
     RelationalOperator,
+    Sign,
+    Purity,
+    Mode,
+    MultiplyingOperator,
 )
 
 # =============================================================================
@@ -145,23 +145,23 @@ def test_valueexpression_constructor_args():
 
 
 
-def test_vhdl::unitvalueexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::UnitValueExpression)
+def test_vhdl_unitvalueexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_UnitValueExpression)
 
 
-def test_vhdl::unitvalueexpression_constructor_exists():
-    assert callable(vhdl::UnitValueExpression.__init__)
+def test_vhdl_unitvalueexpression_constructor_exists():
+    assert callable(vhdl_UnitValueExpression.__init__)
 
 
-def test_vhdl::unitvalueexpression_constructor_args():
-    sig = inspect.signature(vhdl::UnitValueExpression.__init__)
+def test_vhdl_unitvalueexpression_constructor_args():
+    sig = inspect.signature(vhdl_UnitValueExpression.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
 
-def test_vhdl::unitvalueexpression_has_unit():
-    assert hasattr(vhdl::UnitValueExpression, "unit")
+def test_vhdl_unitvalueexpression_has_unit():
+    assert hasattr(vhdl_UnitValueExpression, "unit")
     descriptor = None
-    for klass in vhdl::UnitValueExpression.__mro__:
+    for klass in vhdl_UnitValueExpression.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
@@ -169,23 +169,23 @@ def test_vhdl::unitvalueexpression_has_unit():
 
 
 
-def test_vhdl::valueexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ValueExpression)
+def test_vhdl_valueexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ValueExpression)
 
 
-def test_vhdl::valueexpression_constructor_exists():
-    assert callable(vhdl::ValueExpression.__init__)
+def test_vhdl_valueexpression_constructor_exists():
+    assert callable(vhdl_ValueExpression.__init__)
 
 
-def test_vhdl::valueexpression_constructor_args():
-    sig = inspect.signature(vhdl::ValueExpression.__init__)
+def test_vhdl_valueexpression_constructor_args():
+    sig = inspect.signature(vhdl_ValueExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vhdl::valueexpression_has_value():
-    assert hasattr(vhdl::ValueExpression, "value")
+def test_vhdl_valueexpression_has_value():
+    assert hasattr(vhdl_ValueExpression, "value")
     descriptor = None
-    for klass in vhdl::ValueExpression.__mro__:
+    for klass in vhdl_ValueExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -207,37 +207,37 @@ def test_arraytypedefinition_constructor_args():
 
 
 
-def test_vhdl::constrainedarraytypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ConstrainedArrayTypeDefinition)
+def test_vhdl_constrainedarraytypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ConstrainedArrayTypeDefinition)
 
 
-def test_vhdl::constrainedarraytypedefinition_constructor_exists():
-    assert callable(vhdl::ConstrainedArrayTypeDefinition.__init__)
+def test_vhdl_constrainedarraytypedefinition_constructor_exists():
+    assert callable(vhdl_ConstrainedArrayTypeDefinition.__init__)
 
 
-def test_vhdl::constrainedarraytypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::ConstrainedArrayTypeDefinition.__init__)
+def test_vhdl_constrainedarraytypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_ConstrainedArrayTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::unconstrainedarraytypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::UnconstrainedArrayTypeDefinition)
+def test_vhdl_unconstrainedarraytypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_UnconstrainedArrayTypeDefinition)
 
 
-def test_vhdl::unconstrainedarraytypedefinition_constructor_exists():
-    assert callable(vhdl::UnconstrainedArrayTypeDefinition.__init__)
+def test_vhdl_unconstrainedarraytypedefinition_constructor_exists():
+    assert callable(vhdl_UnconstrainedArrayTypeDefinition.__init__)
 
 
-def test_vhdl::unconstrainedarraytypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::UnconstrainedArrayTypeDefinition.__init__)
+def test_vhdl_unconstrainedarraytypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_UnconstrainedArrayTypeDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "index" in params, "Missing parameter 'index'"
 
-def test_vhdl::unconstrainedarraytypedefinition_has_index():
-    assert hasattr(vhdl::UnconstrainedArrayTypeDefinition, "index")
+def test_vhdl_unconstrainedarraytypedefinition_has_index():
+    assert hasattr(vhdl_UnconstrainedArrayTypeDefinition, "index")
     descriptor = None
-    for klass in vhdl::UnconstrainedArrayTypeDefinition.__mro__:
+    for klass in vhdl_UnconstrainedArrayTypeDefinition.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
@@ -259,51 +259,51 @@ def test_compositetypedefinition_constructor_args():
 
 
 
-def test_vhdl::arraytypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ArrayTypeDefinition)
+def test_vhdl_arraytypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ArrayTypeDefinition)
 
 
-def test_vhdl::arraytypedefinition_constructor_exists():
-    assert callable(vhdl::ArrayTypeDefinition.__init__)
+def test_vhdl_arraytypedefinition_constructor_exists():
+    assert callable(vhdl_ArrayTypeDefinition.__init__)
 
 
-def test_vhdl::arraytypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::ArrayTypeDefinition.__init__)
+def test_vhdl_arraytypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_ArrayTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::recordtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::RecordTypeDefinition)
+def test_vhdl_recordtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_RecordTypeDefinition)
 
 
-def test_vhdl::recordtypedefinition_constructor_exists():
-    assert callable(vhdl::RecordTypeDefinition.__init__)
+def test_vhdl_recordtypedefinition_constructor_exists():
+    assert callable(vhdl_RecordTypeDefinition.__init__)
 
 
-def test_vhdl::recordtypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::RecordTypeDefinition.__init__)
+def test_vhdl_recordtypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_RecordTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::recordfield_is_not_abstract():
-    assert not inspect.isabstract(vhdl::RecordField)
+def test_vhdl_recordfield_is_not_abstract():
+    assert not inspect.isabstract(vhdl_RecordField)
 
 
-def test_vhdl::recordfield_constructor_exists():
-    assert callable(vhdl::RecordField.__init__)
+def test_vhdl_recordfield_constructor_exists():
+    assert callable(vhdl_RecordField.__init__)
 
 
-def test_vhdl::recordfield_constructor_args():
-    sig = inspect.signature(vhdl::RecordField.__init__)
+def test_vhdl_recordfield_constructor_args():
+    sig = inspect.signature(vhdl_RecordField.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::recordfield_has_name():
-    assert hasattr(vhdl::RecordField, "name")
+def test_vhdl_recordfield_has_name():
+    assert hasattr(vhdl_RecordField, "name")
     descriptor = None
-    for klass in vhdl::RecordField.__mro__:
+    for klass in vhdl_RecordField.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -325,23 +325,23 @@ def test_typedefinition_constructor_args():
 
 
 
-def test_vhdl::filetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::FileTypeDefinition)
+def test_vhdl_filetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_FileTypeDefinition)
 
 
-def test_vhdl::filetypedefinition_constructor_exists():
-    assert callable(vhdl::FileTypeDefinition.__init__)
+def test_vhdl_filetypedefinition_constructor_exists():
+    assert callable(vhdl_FileTypeDefinition.__init__)
 
 
-def test_vhdl::filetypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::FileTypeDefinition.__init__)
+def test_vhdl_filetypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_FileTypeDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_vhdl::filetypedefinition_has_type():
-    assert hasattr(vhdl::FileTypeDefinition, "type")
+def test_vhdl_filetypedefinition_has_type():
+    assert hasattr(vhdl_FileTypeDefinition, "type")
     descriptor = None
-    for klass in vhdl::FileTypeDefinition.__mro__:
+    for klass in vhdl_FileTypeDefinition.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -349,23 +349,23 @@ def test_vhdl::filetypedefinition_has_type():
 
 
 
-def test_vhdl::enumerationtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::EnumerationTypeDefinition)
+def test_vhdl_enumerationtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_EnumerationTypeDefinition)
 
 
-def test_vhdl::enumerationtypedefinition_constructor_exists():
-    assert callable(vhdl::EnumerationTypeDefinition.__init__)
+def test_vhdl_enumerationtypedefinition_constructor_exists():
+    assert callable(vhdl_EnumerationTypeDefinition.__init__)
 
 
-def test_vhdl::enumerationtypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::EnumerationTypeDefinition.__init__)
+def test_vhdl_enumerationtypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_EnumerationTypeDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "literal" in params, "Missing parameter 'literal'"
 
-def test_vhdl::enumerationtypedefinition_has_literal():
-    assert hasattr(vhdl::EnumerationTypeDefinition, "literal")
+def test_vhdl_enumerationtypedefinition_has_literal():
+    assert hasattr(vhdl_EnumerationTypeDefinition, "literal")
     descriptor = None
-    for klass in vhdl::EnumerationTypeDefinition.__mro__:
+    for klass in vhdl_EnumerationTypeDefinition.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
@@ -373,44 +373,44 @@ def test_vhdl::enumerationtypedefinition_has_literal():
 
 
 
-def test_vhdl::compositetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::CompositeTypeDefinition)
+def test_vhdl_compositetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_CompositeTypeDefinition)
 
 
-def test_vhdl::compositetypedefinition_constructor_exists():
-    assert callable(vhdl::CompositeTypeDefinition.__init__)
+def test_vhdl_compositetypedefinition_constructor_exists():
+    assert callable(vhdl_CompositeTypeDefinition.__init__)
 
 
-def test_vhdl::compositetypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::CompositeTypeDefinition.__init__)
+def test_vhdl_compositetypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_CompositeTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::accesstypedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::AccessTypeDefinition)
+def test_vhdl_accesstypedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_AccessTypeDefinition)
 
 
-def test_vhdl::accesstypedefinition_constructor_exists():
-    assert callable(vhdl::AccessTypeDefinition.__init__)
+def test_vhdl_accesstypedefinition_constructor_exists():
+    assert callable(vhdl_AccessTypeDefinition.__init__)
 
 
-def test_vhdl::accesstypedefinition_constructor_args():
-    sig = inspect.signature(vhdl::AccessTypeDefinition.__init__)
+def test_vhdl_accesstypedefinition_constructor_args():
+    sig = inspect.signature(vhdl_AccessTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(vhdl::TypeDefinition)
+def test_vhdl_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(vhdl_TypeDefinition)
 
 
-def test_vhdl::typedefinition_constructor_exists():
-    assert callable(vhdl::TypeDefinition.__init__)
+def test_vhdl_typedefinition_constructor_exists():
+    assert callable(vhdl_TypeDefinition.__init__)
 
 
-def test_vhdl::typedefinition_constructor_args():
-    sig = inspect.signature(vhdl::TypeDefinition.__init__)
+def test_vhdl_typedefinition_constructor_args():
+    sig = inspect.signature(vhdl_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -429,30 +429,30 @@ def test_type_constructor_args():
 
 
 
-def test_vhdl::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(vhdl::TypeDeclaration)
+def test_vhdl_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(vhdl_TypeDeclaration)
 
 
-def test_vhdl::typedeclaration_constructor_exists():
-    assert callable(vhdl::TypeDeclaration.__init__)
+def test_vhdl_typedeclaration_constructor_exists():
+    assert callable(vhdl_TypeDeclaration.__init__)
 
 
-def test_vhdl::typedeclaration_constructor_args():
-    sig = inspect.signature(vhdl::TypeDeclaration.__init__)
+def test_vhdl_typedeclaration_constructor_args():
+    sig = inspect.signature(vhdl_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::subtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(vhdl::SubtypeDeclaration)
+def test_vhdl_subtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(vhdl_SubtypeDeclaration)
 
 
-def test_vhdl::subtypedeclaration_constructor_exists():
-    assert callable(vhdl::SubtypeDeclaration.__init__)
+def test_vhdl_subtypedeclaration_constructor_exists():
+    assert callable(vhdl_SubtypeDeclaration.__init__)
 
 
-def test_vhdl::subtypedeclaration_constructor_args():
-    sig = inspect.signature(vhdl::SubtypeDeclaration.__init__)
+def test_vhdl_subtypedeclaration_constructor_args():
+    sig = inspect.signature(vhdl_SubtypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -471,85 +471,23 @@ def test_expression_constructor_args():
 
 
 
-def test_vhdl::conditionalwaveformexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ConditionalWaveformExpression)
+def test_vhdl_addingexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_AddingExpression)
 
 
-def test_vhdl::conditionalwaveformexpression_constructor_exists():
-    assert callable(vhdl::ConditionalWaveformExpression.__init__)
+def test_vhdl_addingexpression_constructor_exists():
+    assert callable(vhdl_AddingExpression.__init__)
 
 
-def test_vhdl::conditionalwaveformexpression_constructor_args():
-    sig = inspect.signature(vhdl::ConditionalWaveformExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::boolean_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Boolean)
-
-
-def test_vhdl::boolean_constructor_exists():
-    assert callable(vhdl::Boolean.__init__)
-
-
-def test_vhdl::boolean_constructor_args():
-    sig = inspect.signature(vhdl::Boolean.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_vhdl::boolean_has_value():
-    assert hasattr(vhdl::Boolean, "value")
-    descriptor = None
-    for klass in vhdl::Boolean.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::open_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Open)
-
-
-def test_vhdl::open_constructor_exists():
-    assert callable(vhdl::Open.__init__)
-
-
-def test_vhdl::open_constructor_args():
-    sig = inspect.signature(vhdl::Open.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_vhdl::open_has_value():
-    assert hasattr(vhdl::Open, "value")
-    descriptor = None
-    for klass in vhdl::Open.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ShiftExpression)
-
-
-def test_vhdl::shiftexpression_constructor_exists():
-    assert callable(vhdl::ShiftExpression.__init__)
-
-
-def test_vhdl::shiftexpression_constructor_args():
-    sig = inspect.signature(vhdl::ShiftExpression.__init__)
+def test_vhdl_addingexpression_constructor_args():
+    sig = inspect.signature(vhdl_AddingExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_vhdl::shiftexpression_has_operator():
-    assert hasattr(vhdl::ShiftExpression, "operator")
+def test_vhdl_addingexpression_has_operator():
+    assert hasattr(vhdl_AddingExpression, "operator")
     descriptor = None
-    for klass in vhdl::ShiftExpression.__mro__:
+    for klass in vhdl_AddingExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -557,71 +495,23 @@ def test_vhdl::shiftexpression_has_operator():
 
 
 
-def test_vhdl::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::RelationalExpression)
+def test_vhdl_bitstring_is_not_abstract():
+    assert not inspect.isabstract(vhdl_BitString)
 
 
-def test_vhdl::relationalexpression_constructor_exists():
-    assert callable(vhdl::RelationalExpression.__init__)
+def test_vhdl_bitstring_constructor_exists():
+    assert callable(vhdl_BitString.__init__)
 
 
-def test_vhdl::relationalexpression_constructor_args():
-    sig = inspect.signature(vhdl::RelationalExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_vhdl::relationalexpression_has_operator():
-    assert hasattr(vhdl::RelationalExpression, "operator")
-    descriptor = None
-    for klass in vhdl::RelationalExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::addingexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::AddingExpression)
-
-
-def test_vhdl::addingexpression_constructor_exists():
-    assert callable(vhdl::AddingExpression.__init__)
-
-
-def test_vhdl::addingexpression_constructor_args():
-    sig = inspect.signature(vhdl::AddingExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_vhdl::addingexpression_has_operator():
-    assert hasattr(vhdl::AddingExpression, "operator")
-    descriptor = None
-    for klass in vhdl::AddingExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::builtinfuncs_is_not_abstract():
-    assert not inspect.isabstract(vhdl::BuiltinFuncs)
-
-
-def test_vhdl::builtinfuncs_constructor_exists():
-    assert callable(vhdl::BuiltinFuncs.__init__)
-
-
-def test_vhdl::builtinfuncs_constructor_args():
-    sig = inspect.signature(vhdl::BuiltinFuncs.__init__)
+def test_vhdl_bitstring_constructor_args():
+    sig = inspect.signature(vhdl_BitString.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vhdl::builtinfuncs_has_value():
-    assert hasattr(vhdl::BuiltinFuncs, "value")
+def test_vhdl_bitstring_has_value():
+    assert hasattr(vhdl_BitString, "value")
     descriptor = None
-    for klass in vhdl::BuiltinFuncs.__mro__:
+    for klass in vhdl_BitString.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -629,61 +519,37 @@ def test_vhdl::builtinfuncs_has_value():
 
 
 
-def test_vhdl::multiplyingexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::MultiplyingExpression)
+def test_vhdl_member_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Member)
 
 
-def test_vhdl::multiplyingexpression_constructor_exists():
-    assert callable(vhdl::MultiplyingExpression.__init__)
+def test_vhdl_member_constructor_exists():
+    assert callable(vhdl_Member.__init__)
 
 
-def test_vhdl::multiplyingexpression_constructor_args():
-    sig = inspect.signature(vhdl::MultiplyingExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_vhdl::multiplyingexpression_has_operator():
-    assert hasattr(vhdl::MultiplyingExpression, "operator")
-    descriptor = None
-    for klass in vhdl::MultiplyingExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::choiceexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ChoiceExpression)
-
-
-def test_vhdl::choiceexpression_constructor_exists():
-    assert callable(vhdl::ChoiceExpression.__init__)
-
-
-def test_vhdl::choiceexpression_constructor_args():
-    sig = inspect.signature(vhdl::ChoiceExpression.__init__)
+def test_vhdl_member_constructor_args():
+    sig = inspect.signature(vhdl_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::char_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Char)
+def test_vhdl_boolean_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Boolean)
 
 
-def test_vhdl::char_constructor_exists():
-    assert callable(vhdl::Char.__init__)
+def test_vhdl_boolean_constructor_exists():
+    assert callable(vhdl_Boolean.__init__)
 
 
-def test_vhdl::char_constructor_args():
-    sig = inspect.signature(vhdl::Char.__init__)
+def test_vhdl_boolean_constructor_args():
+    sig = inspect.signature(vhdl_Boolean.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_vhdl::char_has_value():
-    assert hasattr(vhdl::Char, "value")
+def test_vhdl_boolean_has_value():
+    assert hasattr(vhdl_Boolean, "value")
     descriptor = None
-    for klass in vhdl::Char.__mro__:
+    for klass in vhdl_Boolean.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -691,37 +557,189 @@ def test_vhdl::char_has_value():
 
 
 
-def test_vhdl::memberexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::MemberExpression)
+def test_vhdl_others_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Others)
 
 
-def test_vhdl::memberexpression_constructor_exists():
-    assert callable(vhdl::MemberExpression.__init__)
+def test_vhdl_others_constructor_exists():
+    assert callable(vhdl_Others.__init__)
 
 
-def test_vhdl::memberexpression_constructor_args():
-    sig = inspect.signature(vhdl::MemberExpression.__init__)
+def test_vhdl_others_constructor_args():
+    sig = inspect.signature(vhdl_Others.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_vhdl_others_has_value():
+    assert hasattr(vhdl_Others, "value")
+    descriptor = None
+    for klass in vhdl_Others.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_char_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Char)
+
+
+def test_vhdl_char_constructor_exists():
+    assert callable(vhdl_Char.__init__)
+
+
+def test_vhdl_char_constructor_args():
+    sig = inspect.signature(vhdl_Char.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_vhdl_char_has_value():
+    assert hasattr(vhdl_Char, "value")
+    descriptor = None
+    for klass in vhdl_Char.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_value_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Value)
+
+
+def test_vhdl_value_constructor_exists():
+    assert callable(vhdl_Value.__init__)
+
+
+def test_vhdl_value_constructor_args():
+    sig = inspect.signature(vhdl_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::variable_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Variable)
+def test_vhdl_multiplyingexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_MultiplyingExpression)
 
 
-def test_vhdl::variable_constructor_exists():
-    assert callable(vhdl::Variable.__init__)
+def test_vhdl_multiplyingexpression_constructor_exists():
+    assert callable(vhdl_MultiplyingExpression.__init__)
 
 
-def test_vhdl::variable_constructor_args():
-    sig = inspect.signature(vhdl::Variable.__init__)
+def test_vhdl_multiplyingexpression_constructor_args():
+    sig = inspect.signature(vhdl_MultiplyingExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_vhdl_multiplyingexpression_has_operator():
+    assert hasattr(vhdl_MultiplyingExpression, "operator")
+    descriptor = None
+    for klass in vhdl_MultiplyingExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_factor_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Factor)
+
+
+def test_vhdl_factor_constructor_exists():
+    assert callable(vhdl_Factor.__init__)
+
+
+def test_vhdl_factor_constructor_args():
+    sig = inspect.signature(vhdl_Factor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_choiceexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ChoiceExpression)
+
+
+def test_vhdl_choiceexpression_constructor_exists():
+    assert callable(vhdl_ChoiceExpression.__init__)
+
+
+def test_vhdl_choiceexpression_constructor_args():
+    sig = inspect.signature(vhdl_ChoiceExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_memberexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_MemberExpression)
+
+
+def test_vhdl_memberexpression_constructor_exists():
+    assert callable(vhdl_MemberExpression.__init__)
+
+
+def test_vhdl_memberexpression_constructor_args():
+    sig = inspect.signature(vhdl_MemberExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ShiftExpression)
+
+
+def test_vhdl_shiftexpression_constructor_exists():
+    assert callable(vhdl_ShiftExpression.__init__)
+
+
+def test_vhdl_shiftexpression_constructor_args():
+    sig = inspect.signature(vhdl_ShiftExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_vhdl_shiftexpression_has_operator():
+    assert hasattr(vhdl_ShiftExpression, "operator")
+    descriptor = None
+    for klass in vhdl_ShiftExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_multiexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_MultiExpression)
+
+
+def test_vhdl_multiexpression_constructor_exists():
+    assert callable(vhdl_MultiExpression.__init__)
+
+
+def test_vhdl_multiexpression_constructor_args():
+    sig = inspect.signature(vhdl_MultiExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_variable_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Variable)
+
+
+def test_vhdl_variable_constructor_exists():
+    assert callable(vhdl_Variable.__init__)
+
+
+def test_vhdl_variable_constructor_args():
+    sig = inspect.signature(vhdl_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::variable_has_name():
-    assert hasattr(vhdl::Variable, "name")
+def test_vhdl_variable_has_name():
+    assert hasattr(vhdl_Variable, "name")
     descriptor = None
-    for klass in vhdl::Variable.__mro__:
+    for klass in vhdl_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -729,75 +747,23 @@ def test_vhdl::variable_has_name():
 
 
 
-def test_vhdl::value_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Value)
+def test_vhdl_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_RelationalExpression)
 
 
-def test_vhdl::value_constructor_exists():
-    assert callable(vhdl::Value.__init__)
+def test_vhdl_relationalexpression_constructor_exists():
+    assert callable(vhdl_RelationalExpression.__init__)
 
 
-def test_vhdl::value_constructor_args():
-    sig = inspect.signature(vhdl::Value.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::sliceexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::SliceExpression)
-
-
-def test_vhdl::sliceexpression_constructor_exists():
-    assert callable(vhdl::SliceExpression.__init__)
-
-
-def test_vhdl::sliceexpression_constructor_args():
-    sig = inspect.signature(vhdl::SliceExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::string_is_not_abstract():
-    assert not inspect.isabstract(vhdl::String)
-
-
-def test_vhdl::string_constructor_exists():
-    assert callable(vhdl::String.__init__)
-
-
-def test_vhdl::string_constructor_args():
-    sig = inspect.signature(vhdl::String.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_vhdl::string_has_value():
-    assert hasattr(vhdl::String, "value")
-    descriptor = None
-    for klass in vhdl::String.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::logicalexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::LogicalExpression)
-
-
-def test_vhdl::logicalexpression_constructor_exists():
-    assert callable(vhdl::LogicalExpression.__init__)
-
-
-def test_vhdl::logicalexpression_constructor_args():
-    sig = inspect.signature(vhdl::LogicalExpression.__init__)
+def test_vhdl_relationalexpression_constructor_args():
+    sig = inspect.signature(vhdl_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_vhdl::logicalexpression_has_operator():
-    assert hasattr(vhdl::LogicalExpression, "operator")
+def test_vhdl_relationalexpression_has_operator():
+    assert hasattr(vhdl_RelationalExpression, "operator")
     descriptor = None
-    for klass in vhdl::LogicalExpression.__mro__:
+    for klass in vhdl_RelationalExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -805,140 +771,174 @@ def test_vhdl::logicalexpression_has_operator():
 
 
 
-def test_vhdl::member_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Member)
+def test_vhdl_logicalexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_LogicalExpression)
 
 
-def test_vhdl::member_constructor_exists():
-    assert callable(vhdl::Member.__init__)
+def test_vhdl_logicalexpression_constructor_exists():
+    assert callable(vhdl_LogicalExpression.__init__)
 
 
-def test_vhdl::member_constructor_args():
-    sig = inspect.signature(vhdl::Member.__init__)
+def test_vhdl_logicalexpression_constructor_args():
+    sig = inspect.signature(vhdl_LogicalExpression.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::factor_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Factor)
-
-
-def test_vhdl::factor_constructor_exists():
-    assert callable(vhdl::Factor.__init__)
-
-
-def test_vhdl::factor_constructor_args():
-    sig = inspect.signature(vhdl::Factor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::others_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Others)
-
-
-def test_vhdl::others_constructor_exists():
-    assert callable(vhdl::Others.__init__)
-
-
-def test_vhdl::others_constructor_args():
-    sig = inspect.signature(vhdl::Others.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_vhdl::others_has_value():
-    assert hasattr(vhdl::Others, "value")
-    descriptor = None
-    for klass in vhdl::Others.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::bitstring_is_not_abstract():
-    assert not inspect.isabstract(vhdl::BitString)
-
-
-def test_vhdl::bitstring_constructor_exists():
-    assert callable(vhdl::BitString.__init__)
-
-
-def test_vhdl::bitstring_constructor_args():
-    sig = inspect.signature(vhdl::BitString.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_vhdl::bitstring_has_value():
-    assert hasattr(vhdl::BitString, "value")
-    descriptor = None
-    for klass in vhdl::BitString.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::rangeexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::RangeExpression)
-
-
-def test_vhdl::rangeexpression_constructor_exists():
-    assert callable(vhdl::RangeExpression.__init__)
-
-
-def test_vhdl::rangeexpression_constructor_args():
-    sig = inspect.signature(vhdl::RangeExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_vhdl::rangeexpression_has_direction():
-    assert hasattr(vhdl::RangeExpression, "direction")
+def test_vhdl_logicalexpression_has_operator():
+    assert hasattr(vhdl_LogicalExpression, "operator")
     descriptor = None
-    for klass in vhdl::RangeExpression.__mro__:
+    for klass in vhdl_LogicalExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_conditionalwaveformexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ConditionalWaveformExpression)
+
+
+def test_vhdl_conditionalwaveformexpression_constructor_exists():
+    assert callable(vhdl_ConditionalWaveformExpression.__init__)
+
+
+def test_vhdl_conditionalwaveformexpression_constructor_args():
+    sig = inspect.signature(vhdl_ConditionalWaveformExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_builtinfuncs_is_not_abstract():
+    assert not inspect.isabstract(vhdl_BuiltinFuncs)
+
+
+def test_vhdl_builtinfuncs_constructor_exists():
+    assert callable(vhdl_BuiltinFuncs.__init__)
+
+
+def test_vhdl_builtinfuncs_constructor_args():
+    sig = inspect.signature(vhdl_BuiltinFuncs.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_vhdl_builtinfuncs_has_value():
+    assert hasattr(vhdl_BuiltinFuncs, "value")
+    descriptor = None
+    for klass in vhdl_BuiltinFuncs.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_open_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Open)
+
+
+def test_vhdl_open_constructor_exists():
+    assert callable(vhdl_Open.__init__)
+
+
+def test_vhdl_open_constructor_args():
+    sig = inspect.signature(vhdl_Open.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_vhdl_open_has_value():
+    assert hasattr(vhdl_Open, "value")
+    descriptor = None
+    for klass in vhdl_Open.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_sliceexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_SliceExpression)
+
+
+def test_vhdl_sliceexpression_constructor_exists():
+    assert callable(vhdl_SliceExpression.__init__)
+
+
+def test_vhdl_sliceexpression_constructor_args():
+    sig = inspect.signature(vhdl_SliceExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_rangeexpression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_RangeExpression)
+
+
+def test_vhdl_rangeexpression_constructor_exists():
+    assert callable(vhdl_RangeExpression.__init__)
+
+
+def test_vhdl_rangeexpression_constructor_args():
+    sig = inspect.signature(vhdl_RangeExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_vhdl_rangeexpression_has_operator():
+    assert hasattr(vhdl_RangeExpression, "operator")
+    descriptor = None
+    for klass in vhdl_RangeExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vhdl_rangeexpression_has_direction():
+    assert hasattr(vhdl_RangeExpression, "direction")
+    descriptor = None
+    for klass in vhdl_RangeExpression.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::rangeexpression_has_operator():
-    assert hasattr(vhdl::RangeExpression, "operator")
+
+
+def test_vhdl_string_is_not_abstract():
+    assert not inspect.isabstract(vhdl_String)
+
+
+def test_vhdl_string_constructor_exists():
+    assert callable(vhdl_String.__init__)
+
+
+def test_vhdl_string_constructor_args():
+    sig = inspect.signature(vhdl_String.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_vhdl_string_has_value():
+    assert hasattr(vhdl_String, "value")
     descriptor = None
-    for klass in vhdl::RangeExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
+    for klass in vhdl_String.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_vhdl::multiexpression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::MultiExpression)
+def test_vhdl_ifstatementtest_is_not_abstract():
+    assert not inspect.isabstract(vhdl_IfStatementTest)
 
 
-def test_vhdl::multiexpression_constructor_exists():
-    assert callable(vhdl::MultiExpression.__init__)
+def test_vhdl_ifstatementtest_constructor_exists():
+    assert callable(vhdl_IfStatementTest.__init__)
 
 
-def test_vhdl::multiexpression_constructor_args():
-    sig = inspect.signature(vhdl::MultiExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::ifstatementtest_is_not_abstract():
-    assert not inspect.isabstract(vhdl::IfStatementTest)
-
-
-def test_vhdl::ifstatementtest_constructor_exists():
-    assert callable(vhdl::IfStatementTest.__init__)
-
-
-def test_vhdl::ifstatementtest_constructor_args():
-    sig = inspect.signature(vhdl::IfStatementTest.__init__)
+def test_vhdl_ifstatementtest_constructor_args():
+    sig = inspect.signature(vhdl_IfStatementTest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -957,23 +957,23 @@ def test_iterationscheme_constructor_args():
 
 
 
-def test_vhdl::foriterationscheme_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ForIterationScheme)
+def test_vhdl_foriterationscheme_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ForIterationScheme)
 
 
-def test_vhdl::foriterationscheme_constructor_exists():
-    assert callable(vhdl::ForIterationScheme.__init__)
+def test_vhdl_foriterationscheme_constructor_exists():
+    assert callable(vhdl_ForIterationScheme.__init__)
 
 
-def test_vhdl::foriterationscheme_constructor_args():
-    sig = inspect.signature(vhdl::ForIterationScheme.__init__)
+def test_vhdl_foriterationscheme_constructor_args():
+    sig = inspect.signature(vhdl_ForIterationScheme.__init__)
     params = list(sig.parameters.keys())
     assert "variable" in params, "Missing parameter 'variable'"
 
-def test_vhdl::foriterationscheme_has_variable():
-    assert hasattr(vhdl::ForIterationScheme, "variable")
+def test_vhdl_foriterationscheme_has_variable():
+    assert hasattr(vhdl_ForIterationScheme, "variable")
     descriptor = None
-    for klass in vhdl::ForIterationScheme.__mro__:
+    for klass in vhdl_ForIterationScheme.__mro__:
         if "variable" in klass.__dict__:
             descriptor = klass.__dict__["variable"]
             break
@@ -981,37 +981,65 @@ def test_vhdl::foriterationscheme_has_variable():
 
 
 
-def test_vhdl::casealternative_is_not_abstract():
-    assert not inspect.isabstract(vhdl::CaseAlternative)
+def test_vhdl_whileiterationscheme_is_not_abstract():
+    assert not inspect.isabstract(vhdl_WhileIterationScheme)
 
 
-def test_vhdl::casealternative_constructor_exists():
-    assert callable(vhdl::CaseAlternative.__init__)
+def test_vhdl_whileiterationscheme_constructor_exists():
+    assert callable(vhdl_WhileIterationScheme.__init__)
 
 
-def test_vhdl::casealternative_constructor_args():
-    sig = inspect.signature(vhdl::CaseAlternative.__init__)
+def test_vhdl_whileiterationscheme_constructor_args():
+    sig = inspect.signature(vhdl_WhileIterationScheme.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::genericmapassociation_is_not_abstract():
-    assert not inspect.isabstract(vhdl::GenericMapAssociation)
+def test_vhdl_iterationscheme_is_not_abstract():
+    assert not inspect.isabstract(vhdl_IterationScheme)
 
 
-def test_vhdl::genericmapassociation_constructor_exists():
-    assert callable(vhdl::GenericMapAssociation.__init__)
+def test_vhdl_iterationscheme_constructor_exists():
+    assert callable(vhdl_IterationScheme.__init__)
 
 
-def test_vhdl::genericmapassociation_constructor_args():
-    sig = inspect.signature(vhdl::GenericMapAssociation.__init__)
+def test_vhdl_iterationscheme_constructor_args():
+    sig = inspect.signature(vhdl_IterationScheme.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_casealternative_is_not_abstract():
+    assert not inspect.isabstract(vhdl_CaseAlternative)
+
+
+def test_vhdl_casealternative_constructor_exists():
+    assert callable(vhdl_CaseAlternative.__init__)
+
+
+def test_vhdl_casealternative_constructor_args():
+    sig = inspect.signature(vhdl_CaseAlternative.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_genericmapassociation_is_not_abstract():
+    assert not inspect.isabstract(vhdl_GenericMapAssociation)
+
+
+def test_vhdl_genericmapassociation_constructor_exists():
+    assert callable(vhdl_GenericMapAssociation.__init__)
+
+
+def test_vhdl_genericmapassociation_constructor_args():
+    sig = inspect.signature(vhdl_GenericMapAssociation.__init__)
     params = list(sig.parameters.keys())
     assert "formal" in params, "Missing parameter 'formal'"
 
-def test_vhdl::genericmapassociation_has_formal():
-    assert hasattr(vhdl::GenericMapAssociation, "formal")
+def test_vhdl_genericmapassociation_has_formal():
+    assert hasattr(vhdl_GenericMapAssociation, "formal")
     descriptor = None
-    for klass in vhdl::GenericMapAssociation.__mro__:
+    for klass in vhdl_GenericMapAssociation.__mro__:
         if "formal" in klass.__dict__:
             descriptor = klass.__dict__["formal"]
             break
@@ -1019,23 +1047,23 @@ def test_vhdl::genericmapassociation_has_formal():
 
 
 
-def test_vhdl::portmapassociation_is_not_abstract():
-    assert not inspect.isabstract(vhdl::PortMapAssociation)
+def test_vhdl_portmapassociation_is_not_abstract():
+    assert not inspect.isabstract(vhdl_PortMapAssociation)
 
 
-def test_vhdl::portmapassociation_constructor_exists():
-    assert callable(vhdl::PortMapAssociation.__init__)
+def test_vhdl_portmapassociation_constructor_exists():
+    assert callable(vhdl_PortMapAssociation.__init__)
 
 
-def test_vhdl::portmapassociation_constructor_args():
-    sig = inspect.signature(vhdl::PortMapAssociation.__init__)
+def test_vhdl_portmapassociation_constructor_args():
+    sig = inspect.signature(vhdl_PortMapAssociation.__init__)
     params = list(sig.parameters.keys())
     assert "formal" in params, "Missing parameter 'formal'"
 
-def test_vhdl::portmapassociation_has_formal():
-    assert hasattr(vhdl::PortMapAssociation, "formal")
+def test_vhdl_portmapassociation_has_formal():
+    assert hasattr(vhdl_PortMapAssociation, "formal")
     descriptor = None
-    for klass in vhdl::PortMapAssociation.__mro__:
+    for klass in vhdl_PortMapAssociation.__mro__:
         if "formal" in klass.__dict__:
             descriptor = klass.__dict__["formal"]
             break
@@ -1057,81 +1085,43 @@ def test_sequentialstatement_constructor_args():
 
 
 
-def test_vhdl::sequentialsignalassignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::SequentialSignalAssignmentStatement)
+def test_vhdl_sequentialsignalassignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_SequentialSignalAssignmentStatement)
 
 
-def test_vhdl::sequentialsignalassignmentstatement_constructor_exists():
-    assert callable(vhdl::SequentialSignalAssignmentStatement.__init__)
+def test_vhdl_sequentialsignalassignmentstatement_constructor_exists():
+    assert callable(vhdl_SequentialSignalAssignmentStatement.__init__)
 
 
-def test_vhdl::sequentialsignalassignmentstatement_constructor_args():
-    sig = inspect.signature(vhdl::SequentialSignalAssignmentStatement.__init__)
+def test_vhdl_sequentialsignalassignmentstatement_constructor_args():
+    sig = inspect.signature(vhdl_SequentialSignalAssignmentStatement.__init__)
     params = list(sig.parameters.keys())
+    assert "guarded" in params, "Missing parameter 'guarded'"
     assert "postponed" in params, "Missing parameter 'postponed'"
     assert "label" in params, "Missing parameter 'label'"
-    assert "guarded" in params, "Missing parameter 'guarded'"
 
-def test_vhdl::sequentialsignalassignmentstatement_has_postponed():
-    assert hasattr(vhdl::SequentialSignalAssignmentStatement, "postponed")
+def test_vhdl_sequentialsignalassignmentstatement_has_guarded():
+    assert hasattr(vhdl_SequentialSignalAssignmentStatement, "guarded")
     descriptor = None
-    for klass in vhdl::SequentialSignalAssignmentStatement.__mro__:
-        if "postponed" in klass.__dict__:
-            descriptor = klass.__dict__["postponed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vhdl::sequentialsignalassignmentstatement_has_label():
-    assert hasattr(vhdl::SequentialSignalAssignmentStatement, "label")
-    descriptor = None
-    for klass in vhdl::SequentialSignalAssignmentStatement.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vhdl::sequentialsignalassignmentstatement_has_guarded():
-    assert hasattr(vhdl::SequentialSignalAssignmentStatement, "guarded")
-    descriptor = None
-    for klass in vhdl::SequentialSignalAssignmentStatement.__mro__:
+    for klass in vhdl_SequentialSignalAssignmentStatement.__mro__:
         if "guarded" in klass.__dict__:
             descriptor = klass.__dict__["guarded"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_vhdl::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::LoopStatement)
-
-
-def test_vhdl::loopstatement_constructor_exists():
-    assert callable(vhdl::LoopStatement.__init__)
-
-
-def test_vhdl::loopstatement_constructor_args():
-    sig = inspect.signature(vhdl::LoopStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::IfStatement)
-
-
-def test_vhdl::ifstatement_constructor_exists():
-    assert callable(vhdl::IfStatement.__init__)
-
-
-def test_vhdl::ifstatement_constructor_args():
-    sig = inspect.signature(vhdl::IfStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
-
-def test_vhdl::ifstatement_has_label():
-    assert hasattr(vhdl::IfStatement, "label")
+def test_vhdl_sequentialsignalassignmentstatement_has_postponed():
+    assert hasattr(vhdl_SequentialSignalAssignmentStatement, "postponed")
     descriptor = None
-    for klass in vhdl::IfStatement.__mro__:
+    for klass in vhdl_SequentialSignalAssignmentStatement.__mro__:
+        if "postponed" in klass.__dict__:
+            descriptor = klass.__dict__["postponed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vhdl_sequentialsignalassignmentstatement_has_label():
+    assert hasattr(vhdl_SequentialSignalAssignmentStatement, "label")
+    descriptor = None
+    for klass in vhdl_SequentialSignalAssignmentStatement.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -1139,23 +1129,23 @@ def test_vhdl::ifstatement_has_label():
 
 
 
-def test_vhdl::casestatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::CaseStatement)
+def test_vhdl_casestatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_CaseStatement)
 
 
-def test_vhdl::casestatement_constructor_exists():
-    assert callable(vhdl::CaseStatement.__init__)
+def test_vhdl_casestatement_constructor_exists():
+    assert callable(vhdl_CaseStatement.__init__)
 
 
-def test_vhdl::casestatement_constructor_args():
-    sig = inspect.signature(vhdl::CaseStatement.__init__)
+def test_vhdl_casestatement_constructor_args():
+    sig = inspect.signature(vhdl_CaseStatement.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_vhdl::casestatement_has_label():
-    assert hasattr(vhdl::CaseStatement, "label")
+def test_vhdl_casestatement_has_label():
+    assert hasattr(vhdl_CaseStatement, "label")
     descriptor = None
-    for klass in vhdl::CaseStatement.__mro__:
+    for klass in vhdl_CaseStatement.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -1163,23 +1153,23 @@ def test_vhdl::casestatement_has_label():
 
 
 
-def test_vhdl::waitstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::WaitStatement)
+def test_vhdl_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_IfStatement)
 
 
-def test_vhdl::waitstatement_constructor_exists():
-    assert callable(vhdl::WaitStatement.__init__)
+def test_vhdl_ifstatement_constructor_exists():
+    assert callable(vhdl_IfStatement.__init__)
 
 
-def test_vhdl::waitstatement_constructor_args():
-    sig = inspect.signature(vhdl::WaitStatement.__init__)
+def test_vhdl_ifstatement_constructor_args():
+    sig = inspect.signature(vhdl_IfStatement.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_vhdl::waitstatement_has_label():
-    assert hasattr(vhdl::WaitStatement, "label")
+def test_vhdl_ifstatement_has_label():
+    assert hasattr(vhdl_IfStatement, "label")
     descriptor = None
-    for klass in vhdl::WaitStatement.__mro__:
+    for klass in vhdl_IfStatement.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -1187,58 +1177,96 @@ def test_vhdl::waitstatement_has_label():
 
 
 
-def test_vhdl::portmap_is_not_abstract():
-    assert not inspect.isabstract(vhdl::PortMap)
+def test_vhdl_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_LoopStatement)
 
 
-def test_vhdl::portmap_constructor_exists():
-    assert callable(vhdl::PortMap.__init__)
+def test_vhdl_loopstatement_constructor_exists():
+    assert callable(vhdl_LoopStatement.__init__)
 
 
-def test_vhdl::portmap_constructor_args():
-    sig = inspect.signature(vhdl::PortMap.__init__)
+def test_vhdl_loopstatement_constructor_args():
+    sig = inspect.signature(vhdl_LoopStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::genericmap_is_not_abstract():
-    assert not inspect.isabstract(vhdl::GenericMap)
+def test_vhdl_waitstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_WaitStatement)
 
 
-def test_vhdl::genericmap_constructor_exists():
-    assert callable(vhdl::GenericMap.__init__)
+def test_vhdl_waitstatement_constructor_exists():
+    assert callable(vhdl_WaitStatement.__init__)
 
 
-def test_vhdl::genericmap_constructor_args():
-    sig = inspect.signature(vhdl::GenericMap.__init__)
+def test_vhdl_waitstatement_constructor_args():
+    sig = inspect.signature(vhdl_WaitStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+
+def test_vhdl_waitstatement_has_label():
+    assert hasattr(vhdl_WaitStatement, "label")
+    descriptor = None
+    for klass in vhdl_WaitStatement.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_portmap_is_not_abstract():
+    assert not inspect.isabstract(vhdl_PortMap)
+
+
+def test_vhdl_portmap_constructor_exists():
+    assert callable(vhdl_PortMap.__init__)
+
+
+def test_vhdl_portmap_constructor_args():
+    sig = inspect.signature(vhdl_PortMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::sequentialstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::SequentialStatement)
+def test_vhdl_genericmap_is_not_abstract():
+    assert not inspect.isabstract(vhdl_GenericMap)
 
 
-def test_vhdl::sequentialstatement_constructor_exists():
-    assert callable(vhdl::SequentialStatement.__init__)
+def test_vhdl_genericmap_constructor_exists():
+    assert callable(vhdl_GenericMap.__init__)
 
 
-def test_vhdl::sequentialstatement_constructor_args():
-    sig = inspect.signature(vhdl::SequentialStatement.__init__)
+def test_vhdl_genericmap_constructor_args():
+    sig = inspect.signature(vhdl_GenericMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::idlist_is_not_abstract():
-    assert not inspect.isabstract(vhdl::IdList)
+def test_vhdl_sequentialstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_SequentialStatement)
 
 
-def test_vhdl::idlist_constructor_exists():
-    assert callable(vhdl::IdList.__init__)
+def test_vhdl_sequentialstatement_constructor_exists():
+    assert callable(vhdl_SequentialStatement.__init__)
 
 
-def test_vhdl::idlist_constructor_args():
-    sig = inspect.signature(vhdl::IdList.__init__)
+def test_vhdl_sequentialstatement_constructor_args():
+    sig = inspect.signature(vhdl_SequentialStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_idlist_is_not_abstract():
+    assert not inspect.isabstract(vhdl_IdList)
+
+
+def test_vhdl_idlist_constructor_exists():
+    assert callable(vhdl_IdList.__init__)
+
+
+def test_vhdl_idlist_constructor_args():
+    sig = inspect.signature(vhdl_IdList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1257,23 +1285,37 @@ def test_architecturestatement_constructor_args():
 
 
 
-def test_vhdl::componentinstantiationstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ComponentInstantiationStatement)
+def test_vhdl_forgeneratestatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ForGenerateStatement)
 
 
-def test_vhdl::componentinstantiationstatement_constructor_exists():
-    assert callable(vhdl::ComponentInstantiationStatement.__init__)
+def test_vhdl_forgeneratestatement_constructor_exists():
+    assert callable(vhdl_ForGenerateStatement.__init__)
 
 
-def test_vhdl::componentinstantiationstatement_constructor_args():
-    sig = inspect.signature(vhdl::ComponentInstantiationStatement.__init__)
+def test_vhdl_forgeneratestatement_constructor_args():
+    sig = inspect.signature(vhdl_ForGenerateStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_componentinstantiationstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ComponentInstantiationStatement)
+
+
+def test_vhdl_componentinstantiationstatement_constructor_exists():
+    assert callable(vhdl_ComponentInstantiationStatement.__init__)
+
+
+def test_vhdl_componentinstantiationstatement_constructor_args():
+    sig = inspect.signature(vhdl_ComponentInstantiationStatement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::componentinstantiationstatement_has_name():
-    assert hasattr(vhdl::ComponentInstantiationStatement, "name")
+def test_vhdl_componentinstantiationstatement_has_name():
+    assert hasattr(vhdl_ComponentInstantiationStatement, "name")
     descriptor = None
-    for klass in vhdl::ComponentInstantiationStatement.__mro__:
+    for klass in vhdl_ComponentInstantiationStatement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1281,71 +1323,33 @@ def test_vhdl::componentinstantiationstatement_has_name():
 
 
 
-def test_vhdl::ifgeneratestatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::IfGenerateStatement)
+def test_vhdl_conditionalsignalassignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ConditionalSignalAssignmentStatement)
 
 
-def test_vhdl::ifgeneratestatement_constructor_exists():
-    assert callable(vhdl::IfGenerateStatement.__init__)
+def test_vhdl_conditionalsignalassignmentstatement_constructor_exists():
+    assert callable(vhdl_ConditionalSignalAssignmentStatement.__init__)
 
 
-def test_vhdl::ifgeneratestatement_constructor_args():
-    sig = inspect.signature(vhdl::IfGenerateStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::entityinstantiationstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::EntityInstantiationStatement)
-
-
-def test_vhdl::entityinstantiationstatement_constructor_exists():
-    assert callable(vhdl::EntityInstantiationStatement.__init__)
-
-
-def test_vhdl::entityinstantiationstatement_constructor_args():
-    sig = inspect.signature(vhdl::EntityInstantiationStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_vhdl::entityinstantiationstatement_has_name():
-    assert hasattr(vhdl::EntityInstantiationStatement, "name")
-    descriptor = None
-    for klass in vhdl::EntityInstantiationStatement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::conditionalsignalassignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ConditionalSignalAssignmentStatement)
-
-
-def test_vhdl::conditionalsignalassignmentstatement_constructor_exists():
-    assert callable(vhdl::ConditionalSignalAssignmentStatement.__init__)
-
-
-def test_vhdl::conditionalsignalassignmentstatement_constructor_args():
-    sig = inspect.signature(vhdl::ConditionalSignalAssignmentStatement.__init__)
+def test_vhdl_conditionalsignalassignmentstatement_constructor_args():
+    sig = inspect.signature(vhdl_ConditionalSignalAssignmentStatement.__init__)
     params = list(sig.parameters.keys())
     assert "guarded" in params, "Missing parameter 'guarded'"
     assert "postponed" in params, "Missing parameter 'postponed'"
 
-def test_vhdl::conditionalsignalassignmentstatement_has_guarded():
-    assert hasattr(vhdl::ConditionalSignalAssignmentStatement, "guarded")
+def test_vhdl_conditionalsignalassignmentstatement_has_guarded():
+    assert hasattr(vhdl_ConditionalSignalAssignmentStatement, "guarded")
     descriptor = None
-    for klass in vhdl::ConditionalSignalAssignmentStatement.__mro__:
+    for klass in vhdl_ConditionalSignalAssignmentStatement.__mro__:
         if "guarded" in klass.__dict__:
             descriptor = klass.__dict__["guarded"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::conditionalsignalassignmentstatement_has_postponed():
-    assert hasattr(vhdl::ConditionalSignalAssignmentStatement, "postponed")
+def test_vhdl_conditionalsignalassignmentstatement_has_postponed():
+    assert hasattr(vhdl_ConditionalSignalAssignmentStatement, "postponed")
     descriptor = None
-    for klass in vhdl::ConditionalSignalAssignmentStatement.__mro__:
+    for klass in vhdl_ConditionalSignalAssignmentStatement.__mro__:
         if "postponed" in klass.__dict__:
             descriptor = klass.__dict__["postponed"]
             break
@@ -1353,37 +1357,61 @@ def test_vhdl::conditionalsignalassignmentstatement_has_postponed():
 
 
 
-def test_vhdl::forgeneratestatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ForGenerateStatement)
+def test_vhdl_entityinstantiationstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_EntityInstantiationStatement)
 
 
-def test_vhdl::forgeneratestatement_constructor_exists():
-    assert callable(vhdl::ForGenerateStatement.__init__)
+def test_vhdl_entityinstantiationstatement_constructor_exists():
+    assert callable(vhdl_EntityInstantiationStatement.__init__)
 
 
-def test_vhdl::forgeneratestatement_constructor_args():
-    sig = inspect.signature(vhdl::ForGenerateStatement.__init__)
+def test_vhdl_entityinstantiationstatement_constructor_args():
+    sig = inspect.signature(vhdl_EntityInstantiationStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_vhdl_entityinstantiationstatement_has_name():
+    assert hasattr(vhdl_EntityInstantiationStatement, "name")
+    descriptor = None
+    for klass in vhdl_EntityInstantiationStatement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_ifgeneratestatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_IfGenerateStatement)
+
+
+def test_vhdl_ifgeneratestatement_constructor_exists():
+    assert callable(vhdl_IfGenerateStatement.__init__)
+
+
+def test_vhdl_ifgeneratestatement_constructor_args():
+    sig = inspect.signature(vhdl_IfGenerateStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::processstatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ProcessStatement)
+def test_vhdl_processstatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ProcessStatement)
 
 
-def test_vhdl::processstatement_constructor_exists():
-    assert callable(vhdl::ProcessStatement.__init__)
+def test_vhdl_processstatement_constructor_exists():
+    assert callable(vhdl_ProcessStatement.__init__)
 
 
-def test_vhdl::processstatement_constructor_args():
-    sig = inspect.signature(vhdl::ProcessStatement.__init__)
+def test_vhdl_processstatement_constructor_args():
+    sig = inspect.signature(vhdl_ProcessStatement.__init__)
     params = list(sig.parameters.keys())
     assert "postponed" in params, "Missing parameter 'postponed'"
 
-def test_vhdl::processstatement_has_postponed():
-    assert hasattr(vhdl::ProcessStatement, "postponed")
+def test_vhdl_processstatement_has_postponed():
+    assert hasattr(vhdl_ProcessStatement, "postponed")
     descriptor = None
-    for klass in vhdl::ProcessStatement.__mro__:
+    for klass in vhdl_ProcessStatement.__mro__:
         if "postponed" in klass.__dict__:
             descriptor = klass.__dict__["postponed"]
             break
@@ -1391,23 +1419,23 @@ def test_vhdl::processstatement_has_postponed():
 
 
 
-def test_vhdl::subtypeindication_is_not_abstract():
-    assert not inspect.isabstract(vhdl::SubtypeIndication)
+def test_vhdl_subtypeindication_is_not_abstract():
+    assert not inspect.isabstract(vhdl_SubtypeIndication)
 
 
-def test_vhdl::subtypeindication_constructor_exists():
-    assert callable(vhdl::SubtypeIndication.__init__)
+def test_vhdl_subtypeindication_constructor_exists():
+    assert callable(vhdl_SubtypeIndication.__init__)
 
 
-def test_vhdl::subtypeindication_constructor_args():
-    sig = inspect.signature(vhdl::SubtypeIndication.__init__)
+def test_vhdl_subtypeindication_constructor_args():
+    sig = inspect.signature(vhdl_SubtypeIndication.__init__)
     params = list(sig.parameters.keys())
     assert "builtin_type" in params, "Missing parameter 'builtin_type'"
 
-def test_vhdl::subtypeindication_has_builtin_type():
-    assert hasattr(vhdl::SubtypeIndication, "builtin_type")
+def test_vhdl_subtypeindication_has_builtin_type():
+    assert hasattr(vhdl_SubtypeIndication, "builtin_type")
     descriptor = None
-    for klass in vhdl::SubtypeIndication.__mro__:
+    for klass in vhdl_SubtypeIndication.__mro__:
         if "builtin_type" in klass.__dict__:
             descriptor = klass.__dict__["builtin_type"]
             break
@@ -1429,61 +1457,61 @@ def test_variable_constructor_args():
 
 
 
-def test_vhdl::loopvariable_is_not_abstract():
-    assert not inspect.isabstract(vhdl::LoopVariable)
+def test_vhdl_loopvariable_is_not_abstract():
+    assert not inspect.isabstract(vhdl_LoopVariable)
 
 
-def test_vhdl::loopvariable_constructor_exists():
-    assert callable(vhdl::LoopVariable.__init__)
+def test_vhdl_loopvariable_constructor_exists():
+    assert callable(vhdl_LoopVariable.__init__)
 
 
-def test_vhdl::loopvariable_constructor_args():
-    sig = inspect.signature(vhdl::LoopVariable.__init__)
+def test_vhdl_loopvariable_constructor_args():
+    sig = inspect.signature(vhdl_LoopVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::constant_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Constant)
+def test_vhdl_constant_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Constant)
 
 
-def test_vhdl::constant_constructor_exists():
-    assert callable(vhdl::Constant.__init__)
+def test_vhdl_constant_constructor_exists():
+    assert callable(vhdl_Constant.__init__)
 
 
-def test_vhdl::constant_constructor_args():
-    sig = inspect.signature(vhdl::Constant.__init__)
+def test_vhdl_constant_constructor_args():
+    sig = inspect.signature(vhdl_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::port_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Port)
+def test_vhdl_port_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Port)
 
 
-def test_vhdl::port_constructor_exists():
-    assert callable(vhdl::Port.__init__)
+def test_vhdl_port_constructor_exists():
+    assert callable(vhdl_Port.__init__)
 
 
-def test_vhdl::port_constructor_args():
-    sig = inspect.signature(vhdl::Port.__init__)
+def test_vhdl_port_constructor_args():
+    sig = inspect.signature(vhdl_Port.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_vhdl::port_has_kind():
-    assert hasattr(vhdl::Port, "kind")
+def test_vhdl_port_has_kind():
+    assert hasattr(vhdl_Port, "kind")
     descriptor = None
-    for klass in vhdl::Port.__mro__:
+    for klass in vhdl_Port.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::port_has_mode():
-    assert hasattr(vhdl::Port, "mode")
+def test_vhdl_port_has_mode():
+    assert hasattr(vhdl_Port, "mode")
     descriptor = None
-    for klass in vhdl::Port.__mro__:
+    for klass in vhdl_Port.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -1491,72 +1519,72 @@ def test_vhdl::port_has_mode():
 
 
 
-def test_vhdl::ports_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Ports)
+def test_vhdl_ports_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Ports)
 
 
-def test_vhdl::ports_constructor_exists():
-    assert callable(vhdl::Ports.__init__)
+def test_vhdl_ports_constructor_exists():
+    assert callable(vhdl_Ports.__init__)
 
 
-def test_vhdl::ports_constructor_args():
-    sig = inspect.signature(vhdl::Ports.__init__)
+def test_vhdl_ports_constructor_args():
+    sig = inspect.signature(vhdl_Ports.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::generics_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Generics)
+def test_vhdl_generics_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Generics)
 
 
-def test_vhdl::generics_constructor_exists():
-    assert callable(vhdl::Generics.__init__)
+def test_vhdl_generics_constructor_exists():
+    assert callable(vhdl_Generics.__init__)
 
 
-def test_vhdl::generics_constructor_args():
-    sig = inspect.signature(vhdl::Generics.__init__)
+def test_vhdl_generics_constructor_args():
+    sig = inspect.signature(vhdl_Generics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::var_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Var)
+def test_vhdl_var_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Var)
 
 
-def test_vhdl::var_constructor_exists():
-    assert callable(vhdl::Var.__init__)
+def test_vhdl_var_constructor_exists():
+    assert callable(vhdl_Var.__init__)
 
 
-def test_vhdl::var_constructor_args():
-    sig = inspect.signature(vhdl::Var.__init__)
+def test_vhdl_var_constructor_args():
+    sig = inspect.signature(vhdl_Var.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::signal_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Signal)
+def test_vhdl_signal_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Signal)
 
 
-def test_vhdl::signal_constructor_exists():
-    assert callable(vhdl::Signal.__init__)
+def test_vhdl_signal_constructor_exists():
+    assert callable(vhdl_Signal.__init__)
 
 
-def test_vhdl::signal_constructor_args():
-    sig = inspect.signature(vhdl::Signal.__init__)
+def test_vhdl_signal_constructor_args():
+    sig = inspect.signature(vhdl_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_package::declarative::item_is_not_abstract():
-    assert not inspect.isabstract(package::declarative::item)
+def test_package_declarative_item_is_not_abstract():
+    assert not inspect.isabstract(package_declarative_item)
 
 
-def test_package::declarative::item_constructor_exists():
-    assert callable(package::declarative::item.__init__)
+def test_package_declarative_item_constructor_exists():
+    assert callable(package_declarative_item.__init__)
 
 
-def test_package::declarative::item_constructor_args():
-    sig = inspect.signature(package::declarative::item.__init__)
+def test_package_declarative_item_constructor_args():
+    sig = inspect.signature(package_declarative_item.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1575,23 +1603,23 @@ def test_blockdeclarativeitem_constructor_args():
 
 
 
-def test_vhdl::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(vhdl::VariableDeclaration)
+def test_vhdl_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(vhdl_VariableDeclaration)
 
 
-def test_vhdl::variabledeclaration_constructor_exists():
-    assert callable(vhdl::VariableDeclaration.__init__)
+def test_vhdl_variabledeclaration_constructor_exists():
+    assert callable(vhdl_VariableDeclaration.__init__)
 
 
-def test_vhdl::variabledeclaration_constructor_args():
-    sig = inspect.signature(vhdl::VariableDeclaration.__init__)
+def test_vhdl_variabledeclaration_constructor_args():
+    sig = inspect.signature(vhdl_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "shared" in params, "Missing parameter 'shared'"
 
-def test_vhdl::variabledeclaration_has_shared():
-    assert hasattr(vhdl::VariableDeclaration, "shared")
+def test_vhdl_variabledeclaration_has_shared():
+    assert hasattr(vhdl_VariableDeclaration, "shared")
     descriptor = None
-    for klass in vhdl::VariableDeclaration.__mro__:
+    for klass in vhdl_VariableDeclaration.__mro__:
         if "shared" in klass.__dict__:
             descriptor = klass.__dict__["shared"]
             break
@@ -1599,43 +1627,33 @@ def test_vhdl::variabledeclaration_has_shared():
 
 
 
-def test_vhdl::attributespecification_is_not_abstract():
-    assert not inspect.isabstract(vhdl::AttributeSpecification)
+def test_vhdl_type_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Type)
 
 
-def test_vhdl::attributespecification_constructor_exists():
-    assert callable(vhdl::AttributeSpecification.__init__)
+def test_vhdl_type_constructor_exists():
+    assert callable(vhdl_Type.__init__)
 
 
-def test_vhdl::attributespecification_constructor_args():
-    sig = inspect.signature(vhdl::AttributeSpecification.__init__)
+def test_vhdl_type_constructor_args():
+    sig = inspect.signature(vhdl_Type.__init__)
     params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "entity" in params, "Missing parameter 'entity'"
+    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::attributespecification_has_class_():
-    assert hasattr(vhdl::AttributeSpecification, "class_")
+def test_vhdl_type_has_value():
+    assert hasattr(vhdl_Type, "value")
     descriptor = None
-    for klass in vhdl::AttributeSpecification.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
+    for klass in vhdl_Type.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::attributespecification_has_entity():
-    assert hasattr(vhdl::AttributeSpecification, "entity")
+def test_vhdl_type_has_name():
+    assert hasattr(vhdl_Type, "name")
     descriptor = None
-    for klass in vhdl::AttributeSpecification.__mro__:
-        if "entity" in klass.__dict__:
-            descriptor = klass.__dict__["entity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vhdl::attributespecification_has_name():
-    assert hasattr(vhdl::AttributeSpecification, "name")
-    descriptor = None
-    for klass in vhdl::AttributeSpecification.__mro__:
+    for klass in vhdl_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1643,23 +1661,37 @@ def test_vhdl::attributespecification_has_name():
 
 
 
-def test_vhdl::signaldeclaration_is_not_abstract():
-    assert not inspect.isabstract(vhdl::SignalDeclaration)
+def test_vhdl_constantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ConstantDeclaration)
 
 
-def test_vhdl::signaldeclaration_constructor_exists():
-    assert callable(vhdl::SignalDeclaration.__init__)
+def test_vhdl_constantdeclaration_constructor_exists():
+    assert callable(vhdl_ConstantDeclaration.__init__)
 
 
-def test_vhdl::signaldeclaration_constructor_args():
-    sig = inspect.signature(vhdl::SignalDeclaration.__init__)
+def test_vhdl_constantdeclaration_constructor_args():
+    sig = inspect.signature(vhdl_ConstantDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_signaldeclaration_is_not_abstract():
+    assert not inspect.isabstract(vhdl_SignalDeclaration)
+
+
+def test_vhdl_signaldeclaration_constructor_exists():
+    assert callable(vhdl_SignalDeclaration.__init__)
+
+
+def test_vhdl_signaldeclaration_constructor_args():
+    sig = inspect.signature(vhdl_SignalDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_vhdl::signaldeclaration_has_kind():
-    assert hasattr(vhdl::SignalDeclaration, "kind")
+def test_vhdl_signaldeclaration_has_kind():
+    assert hasattr(vhdl_SignalDeclaration, "kind")
     descriptor = None
-    for klass in vhdl::SignalDeclaration.__mro__:
+    for klass in vhdl_SignalDeclaration.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1667,71 +1699,23 @@ def test_vhdl::signaldeclaration_has_kind():
 
 
 
-def test_vhdl::type_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Type)
+def test_vhdl_component_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Component)
 
 
-def test_vhdl::type_constructor_exists():
-    assert callable(vhdl::Type.__init__)
+def test_vhdl_component_constructor_exists():
+    assert callable(vhdl_Component.__init__)
 
 
-def test_vhdl::type_constructor_args():
-    sig = inspect.signature(vhdl::Type.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_vhdl::type_has_name():
-    assert hasattr(vhdl::Type, "name")
-    descriptor = None
-    for klass in vhdl::Type.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_vhdl::type_has_value():
-    assert hasattr(vhdl::Type, "value")
-    descriptor = None
-    for klass in vhdl::Type.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_vhdl::constantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ConstantDeclaration)
-
-
-def test_vhdl::constantdeclaration_constructor_exists():
-    assert callable(vhdl::ConstantDeclaration.__init__)
-
-
-def test_vhdl::constantdeclaration_constructor_args():
-    sig = inspect.signature(vhdl::ConstantDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::component_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Component)
-
-
-def test_vhdl::component_constructor_exists():
-    assert callable(vhdl::Component.__init__)
-
-
-def test_vhdl::component_constructor_args():
-    sig = inspect.signature(vhdl::Component.__init__)
+def test_vhdl_component_constructor_args():
+    sig = inspect.signature(vhdl_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::component_has_name():
-    assert hasattr(vhdl::Component, "name")
+def test_vhdl_component_has_name():
+    assert hasattr(vhdl_Component, "name")
     descriptor = None
-    for klass in vhdl::Component.__mro__:
+    for klass in vhdl_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1739,143 +1723,187 @@ def test_vhdl::component_has_name():
 
 
 
-def test_vhdl::attributedeclaration_is_not_abstract():
-    assert not inspect.isabstract(vhdl::AttributeDeclaration)
+def test_vhdl_attributedeclaration_is_not_abstract():
+    assert not inspect.isabstract(vhdl_AttributeDeclaration)
 
 
-def test_vhdl::attributedeclaration_constructor_exists():
-    assert callable(vhdl::AttributeDeclaration.__init__)
+def test_vhdl_attributedeclaration_constructor_exists():
+    assert callable(vhdl_AttributeDeclaration.__init__)
 
 
-def test_vhdl::attributedeclaration_constructor_args():
-    sig = inspect.signature(vhdl::AttributeDeclaration.__init__)
+def test_vhdl_attributedeclaration_constructor_args():
+    sig = inspect.signature(vhdl_AttributeDeclaration.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "type_keyword" in params, "Missing parameter 'type_keyword'"
     assert "type_id" in params, "Missing parameter 'type_id'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::attributedeclaration_has_type_keyword():
-    assert hasattr(vhdl::AttributeDeclaration, "type_keyword")
+def test_vhdl_attributedeclaration_has_name():
+    assert hasattr(vhdl_AttributeDeclaration, "name")
     descriptor = None
-    for klass in vhdl::AttributeDeclaration.__mro__:
+    for klass in vhdl_AttributeDeclaration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_vhdl_attributedeclaration_has_type_keyword():
+    assert hasattr(vhdl_AttributeDeclaration, "type_keyword")
+    descriptor = None
+    for klass in vhdl_AttributeDeclaration.__mro__:
         if "type_keyword" in klass.__dict__:
             descriptor = klass.__dict__["type_keyword"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::attributedeclaration_has_type_id():
-    assert hasattr(vhdl::AttributeDeclaration, "type_id")
+def test_vhdl_attributedeclaration_has_type_id():
+    assert hasattr(vhdl_AttributeDeclaration, "type_id")
     descriptor = None
-    for klass in vhdl::AttributeDeclaration.__mro__:
+    for klass in vhdl_AttributeDeclaration.__mro__:
         if "type_id" in klass.__dict__:
             descriptor = klass.__dict__["type_id"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::attributedeclaration_has_name():
-    assert hasattr(vhdl::AttributeDeclaration, "name")
+
+
+def test_vhdl_attributespecification_is_not_abstract():
+    assert not inspect.isabstract(vhdl_AttributeSpecification)
+
+
+def test_vhdl_attributespecification_constructor_exists():
+    assert callable(vhdl_AttributeSpecification.__init__)
+
+
+def test_vhdl_attributespecification_constructor_args():
+    sig = inspect.signature(vhdl_AttributeSpecification.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "entity" in params, "Missing parameter 'entity'"
+    assert "class_" in params, "Missing parameter 'class_'"
+
+def test_vhdl_attributespecification_has_name():
+    assert hasattr(vhdl_AttributeSpecification, "name")
     descriptor = None
-    for klass in vhdl::AttributeDeclaration.__mro__:
+    for klass in vhdl_AttributeSpecification.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_vhdl::alias_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Alias)
-
-
-def test_vhdl::alias_constructor_exists():
-    assert callable(vhdl::Alias.__init__)
-
-
-def test_vhdl::alias_constructor_args():
-    sig = inspect.signature(vhdl::Alias.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::generic_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Generic)
-
-
-def test_vhdl::generic_constructor_exists():
-    assert callable(vhdl::Generic.__init__)
-
-
-def test_vhdl::generic_constructor_args():
-    sig = inspect.signature(vhdl::Generic.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::expression_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Expression)
-
-
-def test_vhdl::expression_constructor_exists():
-    assert callable(vhdl::Expression.__init__)
-
-
-def test_vhdl::expression_constructor_args():
-    sig = inspect.signature(vhdl::Expression.__init__)
-    params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "unary_operator" in params, "Missing parameter 'unary_operator'"
-
-def test_vhdl::expression_has_attribute():
-    assert hasattr(vhdl::Expression, "attribute")
+def test_vhdl_attributespecification_has_entity():
+    assert hasattr(vhdl_AttributeSpecification, "entity")
     descriptor = None
-    for klass in vhdl::Expression.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
+    for klass in vhdl_AttributeSpecification.__mro__:
+        if "entity" in klass.__dict__:
+            descriptor = klass.__dict__["entity"]
             break
     assert isinstance(descriptor, property)
 
-def test_vhdl::expression_has_unary_operator():
-    assert hasattr(vhdl::Expression, "unary_operator")
+def test_vhdl_attributespecification_has_class_():
+    assert hasattr(vhdl_AttributeSpecification, "class_")
     descriptor = None
-    for klass in vhdl::Expression.__mro__:
+    for klass in vhdl_AttributeSpecification.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_vhdl_alias_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Alias)
+
+
+def test_vhdl_alias_constructor_exists():
+    assert callable(vhdl_Alias.__init__)
+
+
+def test_vhdl_alias_constructor_args():
+    sig = inspect.signature(vhdl_Alias.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_generic_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Generic)
+
+
+def test_vhdl_generic_constructor_exists():
+    assert callable(vhdl_Generic.__init__)
+
+
+def test_vhdl_generic_constructor_args():
+    sig = inspect.signature(vhdl_Generic.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vhdl_expression_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Expression)
+
+
+def test_vhdl_expression_constructor_exists():
+    assert callable(vhdl_Expression.__init__)
+
+
+def test_vhdl_expression_constructor_args():
+    sig = inspect.signature(vhdl_Expression.__init__)
+    params = list(sig.parameters.keys())
+    assert "unary_operator" in params, "Missing parameter 'unary_operator'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
+
+def test_vhdl_expression_has_unary_operator():
+    assert hasattr(vhdl_Expression, "unary_operator")
+    descriptor = None
+    for klass in vhdl_Expression.__mro__:
         if "unary_operator" in klass.__dict__:
             descriptor = klass.__dict__["unary_operator"]
             break
     assert isinstance(descriptor, property)
 
+def test_vhdl_expression_has_attribute():
+    assert hasattr(vhdl_Expression, "attribute")
+    descriptor = None
+    for klass in vhdl_Expression.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_vhdl::designfile_is_not_abstract():
-    assert not inspect.isabstract(vhdl::DesignFile)
+
+def test_vhdl_designfile_is_not_abstract():
+    assert not inspect.isabstract(vhdl_DesignFile)
 
 
-def test_vhdl::designfile_constructor_exists():
-    assert callable(vhdl::DesignFile.__init__)
+def test_vhdl_designfile_constructor_exists():
+    assert callable(vhdl_DesignFile.__init__)
 
 
-def test_vhdl::designfile_constructor_args():
-    sig = inspect.signature(vhdl::DesignFile.__init__)
+def test_vhdl_designfile_constructor_args():
+    sig = inspect.signature(vhdl_DesignFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::architecturestatement_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ArchitectureStatement)
+def test_vhdl_architecturestatement_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ArchitectureStatement)
 
 
-def test_vhdl::architecturestatement_constructor_exists():
-    assert callable(vhdl::ArchitectureStatement.__init__)
+def test_vhdl_architecturestatement_constructor_exists():
+    assert callable(vhdl_ArchitectureStatement.__init__)
 
 
-def test_vhdl::architecturestatement_constructor_args():
-    sig = inspect.signature(vhdl::ArchitectureStatement.__init__)
+def test_vhdl_architecturestatement_constructor_args():
+    sig = inspect.signature(vhdl_ArchitectureStatement.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_vhdl::architecturestatement_has_label():
-    assert hasattr(vhdl::ArchitectureStatement, "label")
+def test_vhdl_architecturestatement_has_label():
+    assert hasattr(vhdl_ArchitectureStatement, "label")
     descriptor = None
-    for klass in vhdl::ArchitectureStatement.__mro__:
+    for klass in vhdl_ArchitectureStatement.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -1883,44 +1911,44 @@ def test_vhdl::architecturestatement_has_label():
 
 
 
-def test_vhdl::blockdeclarativeitem_is_not_abstract():
-    assert not inspect.isabstract(vhdl::BlockDeclarativeItem)
+def test_vhdl_blockdeclarativeitem_is_not_abstract():
+    assert not inspect.isabstract(vhdl_BlockDeclarativeItem)
 
 
-def test_vhdl::blockdeclarativeitem_constructor_exists():
-    assert callable(vhdl::BlockDeclarativeItem.__init__)
+def test_vhdl_blockdeclarativeitem_constructor_exists():
+    assert callable(vhdl_BlockDeclarativeItem.__init__)
 
 
-def test_vhdl::blockdeclarativeitem_constructor_args():
-    sig = inspect.signature(vhdl::BlockDeclarativeItem.__init__)
+def test_vhdl_blockdeclarativeitem_constructor_args():
+    sig = inspect.signature(vhdl_BlockDeclarativeItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::package::declarative::part_is_not_abstract():
-    assert not inspect.isabstract(vhdl::package::declarative::part)
+def test_vhdl_package_declarative_part_is_not_abstract():
+    assert not inspect.isabstract(vhdl_package_declarative_part)
 
 
-def test_vhdl::package::declarative::part_constructor_exists():
-    assert callable(vhdl::package::declarative::part.__init__)
+def test_vhdl_package_declarative_part_constructor_exists():
+    assert callable(vhdl_package_declarative_part.__init__)
 
 
-def test_vhdl::package::declarative::part_constructor_args():
-    sig = inspect.signature(vhdl::package::declarative::part.__init__)
+def test_vhdl_package_declarative_part_constructor_args():
+    sig = inspect.signature(vhdl_package_declarative_part.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::package::declarative::item_is_not_abstract():
-    assert not inspect.isabstract(vhdl::package::declarative::item)
+def test_vhdl_package_declarative_item_is_not_abstract():
+    assert not inspect.isabstract(vhdl_package_declarative_item)
 
 
-def test_vhdl::package::declarative::item_constructor_exists():
-    assert callable(vhdl::package::declarative::item.__init__)
+def test_vhdl_package_declarative_item_constructor_exists():
+    assert callable(vhdl_package_declarative_item.__init__)
 
 
-def test_vhdl::package::declarative::item_constructor_args():
-    sig = inspect.signature(vhdl::package::declarative::item.__init__)
+def test_vhdl_package_declarative_item_constructor_args():
+    sig = inspect.signature(vhdl_package_declarative_item.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1939,65 +1967,65 @@ def test_libraryunit_constructor_args():
 
 
 
-def test_vhdl::entity_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Entity)
+def test_vhdl_architecture_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Architecture)
 
 
-def test_vhdl::entity_constructor_exists():
-    assert callable(vhdl::Entity.__init__)
+def test_vhdl_architecture_constructor_exists():
+    assert callable(vhdl_Architecture.__init__)
 
 
-def test_vhdl::entity_constructor_args():
-    sig = inspect.signature(vhdl::Entity.__init__)
+def test_vhdl_architecture_constructor_args():
+    sig = inspect.signature(vhdl_Architecture.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::architecture_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Architecture)
+def test_vhdl_entity_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Entity)
 
 
-def test_vhdl::architecture_constructor_exists():
-    assert callable(vhdl::Architecture.__init__)
+def test_vhdl_entity_constructor_exists():
+    assert callable(vhdl_Entity.__init__)
 
 
-def test_vhdl::architecture_constructor_args():
-    sig = inspect.signature(vhdl::Architecture.__init__)
+def test_vhdl_entity_constructor_args():
+    sig = inspect.signature(vhdl_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::package_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Package)
+def test_vhdl_package_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Package)
 
 
-def test_vhdl::package_constructor_exists():
-    assert callable(vhdl::Package.__init__)
+def test_vhdl_package_constructor_exists():
+    assert callable(vhdl_Package.__init__)
 
 
-def test_vhdl::package_constructor_args():
-    sig = inspect.signature(vhdl::Package.__init__)
+def test_vhdl_package_constructor_args():
+    sig = inspect.signature(vhdl_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_vhdl::library_is_not_abstract():
-    assert not inspect.isabstract(vhdl::Library)
+def test_vhdl_library_is_not_abstract():
+    assert not inspect.isabstract(vhdl_Library)
 
 
-def test_vhdl::library_constructor_exists():
-    assert callable(vhdl::Library.__init__)
+def test_vhdl_library_constructor_exists():
+    assert callable(vhdl_Library.__init__)
 
 
-def test_vhdl::library_constructor_args():
-    sig = inspect.signature(vhdl::Library.__init__)
+def test_vhdl_library_constructor_args():
+    sig = inspect.signature(vhdl_Library.__init__)
     params = list(sig.parameters.keys())
     assert "builtin_lib" in params, "Missing parameter 'builtin_lib'"
 
-def test_vhdl::library_has_builtin_lib():
-    assert hasattr(vhdl::Library, "builtin_lib")
+def test_vhdl_library_has_builtin_lib():
+    assert hasattr(vhdl_Library, "builtin_lib")
     descriptor = None
-    for klass in vhdl::Library.__mro__:
+    for klass in vhdl_Library.__mro__:
         if "builtin_lib" in klass.__dict__:
             descriptor = klass.__dict__["builtin_lib"]
             break
@@ -2019,23 +2047,23 @@ def test_contextitem_constructor_args():
 
 
 
-def test_vhdl::libraryclause_is_not_abstract():
-    assert not inspect.isabstract(vhdl::LibraryClause)
+def test_vhdl_libraryclause_is_not_abstract():
+    assert not inspect.isabstract(vhdl_LibraryClause)
 
 
-def test_vhdl::libraryclause_constructor_exists():
-    assert callable(vhdl::LibraryClause.__init__)
+def test_vhdl_libraryclause_constructor_exists():
+    assert callable(vhdl_LibraryClause.__init__)
 
 
-def test_vhdl::libraryclause_constructor_args():
-    sig = inspect.signature(vhdl::LibraryClause.__init__)
+def test_vhdl_libraryclause_constructor_args():
+    sig = inspect.signature(vhdl_LibraryClause.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::libraryclause_has_name():
-    assert hasattr(vhdl::LibraryClause, "name")
+def test_vhdl_libraryclause_has_name():
+    assert hasattr(vhdl_LibraryClause, "name")
     descriptor = None
-    for klass in vhdl::LibraryClause.__mro__:
+    for klass in vhdl_LibraryClause.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2043,23 +2071,23 @@ def test_vhdl::libraryclause_has_name():
 
 
 
-def test_vhdl::useclause_is_not_abstract():
-    assert not inspect.isabstract(vhdl::UseClause)
+def test_vhdl_useclause_is_not_abstract():
+    assert not inspect.isabstract(vhdl_UseClause)
 
 
-def test_vhdl::useclause_constructor_exists():
-    assert callable(vhdl::UseClause.__init__)
+def test_vhdl_useclause_constructor_exists():
+    assert callable(vhdl_UseClause.__init__)
 
 
-def test_vhdl::useclause_constructor_args():
-    sig = inspect.signature(vhdl::UseClause.__init__)
+def test_vhdl_useclause_constructor_args():
+    sig = inspect.signature(vhdl_UseClause.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_vhdl::useclause_has_importedNamespace():
-    assert hasattr(vhdl::UseClause, "importedNamespace")
+def test_vhdl_useclause_has_importedNamespace():
+    assert hasattr(vhdl_UseClause, "importedNamespace")
     descriptor = None
-    for klass in vhdl::UseClause.__mro__:
+    for klass in vhdl_UseClause.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -2067,23 +2095,23 @@ def test_vhdl::useclause_has_importedNamespace():
 
 
 
-def test_vhdl::libraryunit_is_not_abstract():
-    assert not inspect.isabstract(vhdl::LibraryUnit)
+def test_vhdl_libraryunit_is_not_abstract():
+    assert not inspect.isabstract(vhdl_LibraryUnit)
 
 
-def test_vhdl::libraryunit_constructor_exists():
-    assert callable(vhdl::LibraryUnit.__init__)
+def test_vhdl_libraryunit_constructor_exists():
+    assert callable(vhdl_LibraryUnit.__init__)
 
 
-def test_vhdl::libraryunit_constructor_args():
-    sig = inspect.signature(vhdl::LibraryUnit.__init__)
+def test_vhdl_libraryunit_constructor_args():
+    sig = inspect.signature(vhdl_LibraryUnit.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_vhdl::libraryunit_has_name():
-    assert hasattr(vhdl::LibraryUnit, "name")
+def test_vhdl_libraryunit_has_name():
+    assert hasattr(vhdl_LibraryUnit, "name")
     descriptor = None
-    for klass in vhdl::LibraryUnit.__mro__:
+    for klass in vhdl_LibraryUnit.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2091,75 +2119,17 @@ def test_vhdl::libraryunit_has_name():
 
 
 
-def test_vhdl::contextitem_is_not_abstract():
-    assert not inspect.isabstract(vhdl::ContextItem)
+def test_vhdl_contextitem_is_not_abstract():
+    assert not inspect.isabstract(vhdl_ContextItem)
 
 
-def test_vhdl::contextitem_constructor_exists():
-    assert callable(vhdl::ContextItem.__init__)
+def test_vhdl_contextitem_constructor_exists():
+    assert callable(vhdl_ContextItem.__init__)
 
 
-def test_vhdl::contextitem_constructor_args():
-    sig = inspect.signature(vhdl::ContextItem.__init__)
+def test_vhdl_contextitem_constructor_args():
+    sig = inspect.signature(vhdl_ContextItem.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::whileiterationscheme_is_not_abstract():
-    assert not inspect.isabstract(vhdl::WhileIterationScheme)
-
-
-def test_vhdl::whileiterationscheme_constructor_exists():
-    assert callable(vhdl::WhileIterationScheme.__init__)
-
-
-def test_vhdl::whileiterationscheme_constructor_args():
-    sig = inspect.signature(vhdl::WhileIterationScheme.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vhdl::iterationscheme_is_not_abstract():
-    assert not inspect.isabstract(vhdl::IterationScheme)
-
-
-def test_vhdl::iterationscheme_constructor_exists():
-    assert callable(vhdl::IterationScheme.__init__)
-
-
-def test_vhdl::iterationscheme_constructor_args():
-    sig = inspect.signature(vhdl::IterationScheme.__init__)
-    params = list(sig.parameters.keys())
-
-def test_rangedirection_exists():
-    # Check that the Enumeration exists
-    assert RangeDirection is not None
-
-def test_rangedirection_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RangeDirection]
-    expected_literals = [
-        "TO",
-        "DOWNTO",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RangeDirection"
-
-def test_unaryoperator_exists():
-    # Check that the Enumeration exists
-    assert UnaryOperator is not None
-
-def test_unaryoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryOperator]
-    expected_literals = [
-        "ABS",
-        "NOT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
 
 def test_addingoperator_exists():
     # Check that the Enumeration exists
@@ -2177,112 +2147,39 @@ def test_addingoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AddingOperator"
 
-def test_sign_exists():
+def test_unaryoperator_exists():
     # Check that the Enumeration exists
-    assert Sign is not None
+    assert UnaryOperator is not None
 
-def test_sign_has_all_literals():
+def test_unaryoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Sign]
+    enum_literals = [lit.name for lit in UnaryOperator]
     expected_literals = [
-        "MINUS",
-        "PLUS",
+        "ABS",
+        "NOT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Sign"
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
 
-def test_estring_exists():
+def test_shiftoperator_exists():
     # Check that the Enumeration exists
-    assert EString is not None
+    assert ShiftOperator is not None
 
-def test_estring_has_all_literals():
+def test_shiftoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EString]
+    enum_literals = [lit.name for lit in ShiftOperator]
     expected_literals = [
-        "NATURAL",
-        "TO_UNSIGNED",
-        "UNSIGNED",
-        "STRING",
-        "FALLING_EDGE",
-        "STD_LOGIC",
-        "RISING_EDGE",
-        "INTEGER",
-        "STD_LOGIC_VECTOR",
+        "ROR",
+        "ROL",
+        "SLL",
+        "SRA",
+        "SLA",
+        "SRL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EString"
-
-def test_multiplyingoperator_exists():
-    # Check that the Enumeration exists
-    assert MultiplyingOperator is not None
-
-def test_multiplyingoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MultiplyingOperator]
-    expected_literals = [
-        "REM",
-        "MUL",
-        "DIV",
-        "MOD",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MultiplyingOperator"
-
-def test_entityclass_exists():
-    # Check that the Enumeration exists
-    assert EntityClass is not None
-
-def test_entityclass_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EntityClass]
-    expected_literals = [
-        "PROCEDURE",
-        "NATURE",
-        "GROUP",
-        "CONFIGURATION",
-        "VARIABLE",
-        "SUBNATURE",
-        "ARCHITECTURE",
-        "TYPE",
-        "TERMINAL",
-        "QUANTITY",
-        "LABEL",
-        "PACKAGE",
-        "SIGNAL",
-        "FUNCTION",
-        "UNITS",
-        "COMPONENT",
-        "CONSTANT",
-        "FILE",
-        "SUBTYPE",
-        "LITERAL",
-        "ENTITY",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EntityClass"
-
-def test_logicaloperator_exists():
-    # Check that the Enumeration exists
-    assert LogicalOperator is not None
-
-def test_logicaloperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LogicalOperator]
-    expected_literals = [
-        "AND",
-        "NAND",
-        "OR",
-        "XOR",
-        "NOR",
-        "XNOR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LogicalOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in ShiftOperator"
 
 def test_builtinlibs_exists():
     # Check that the Enumeration exists
@@ -2297,6 +2194,62 @@ def test_builtinlibs_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BuiltinLibs"
+
+def test_estring_exists():
+    # Check that the Enumeration exists
+    assert EString is not None
+
+def test_estring_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EString]
+    expected_literals = [
+        "STRING",
+        "RISING_EDGE",
+        "STD_LOGIC",
+        "NATURAL",
+        "TO_UNSIGNED",
+        "FALLING_EDGE",
+        "INTEGER",
+        "STD_LOGIC_VECTOR",
+        "UNSIGNED",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EString"
+
+def test_rangedirection_exists():
+    # Check that the Enumeration exists
+    assert RangeDirection is not None
+
+def test_rangedirection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RangeDirection]
+    expected_literals = [
+        "DOWNTO",
+        "TO",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RangeDirection"
+
+def test_logicaloperator_exists():
+    # Check that the Enumeration exists
+    assert LogicalOperator is not None
+
+def test_logicaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LogicalOperator]
+    expected_literals = [
+        "NAND",
+        "OR",
+        "XNOR",
+        "NOR",
+        "AND",
+        "XOR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LogicalOperator"
 
 def test_signalkind_exists():
     # Check that the Enumeration exists
@@ -2313,42 +2266,74 @@ def test_signalkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SignalKind"
 
-def test_shiftoperator_exists():
+def test_entityclass_exists():
     # Check that the Enumeration exists
-    assert ShiftOperator is not None
+    assert EntityClass is not None
 
-def test_shiftoperator_has_all_literals():
+def test_entityclass_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ShiftOperator]
+    enum_literals = [lit.name for lit in EntityClass]
     expected_literals = [
-        "ROL",
-        "SRL",
-        "SRA",
-        "SLL",
-        "ROR",
-        "SLA",
+        "ARCHITECTURE",
+        "COMPONENT",
+        "CONFIGURATION",
+        "PROCEDURE",
+        "UNITS",
+        "NATURE",
+        "SUBNATURE",
+        "QUANTITY",
+        "SIGNAL",
+        "ENTITY",
+        "FILE",
+        "CONSTANT",
+        "TYPE",
+        "TERMINAL",
+        "SUBTYPE",
+        "LABEL",
+        "FUNCTION",
+        "VARIABLE",
+        "LITERAL",
+        "PACKAGE",
+        "GROUP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ShiftOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in EntityClass"
 
-def test_mode_exists():
+def test_relationaloperator_exists():
     # Check that the Enumeration exists
-    assert Mode is not None
+    assert RelationalOperator is not None
 
-def test_mode_has_all_literals():
+def test_relationaloperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Mode]
+    enum_literals = [lit.name for lit in RelationalOperator]
     expected_literals = [
-        "IN",
-        "BUFFER",
-        "OUT",
-        "INOUT",
-        "LINKAGE",
+        "NEQ",
+        "ASSOCIATE",
+        "GE",
+        "LOWERTHAN",
+        "EQ",
+        "GREATERTHAN",
+        "LE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Mode"
+        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+
+def test_sign_exists():
+    # Check that the Enumeration exists
+    assert Sign is not None
+
+def test_sign_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Sign]
+    expected_literals = [
+        "PLUS",
+        "MINUS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Sign"
 
 def test_purity_exists():
     # Check that the Enumeration exists
@@ -2365,25 +2350,40 @@ def test_purity_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Purity"
 
-def test_relationaloperator_exists():
+def test_mode_exists():
     # Check that the Enumeration exists
-    assert RelationalOperator is not None
+    assert Mode is not None
 
-def test_relationaloperator_has_all_literals():
+def test_mode_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationalOperator]
+    enum_literals = [lit.name for lit in Mode]
     expected_literals = [
-        "LOWERTHAN",
-        "EQ",
-        "LE",
-        "ASSOCIATE",
-        "GE",
-        "NEQ",
-        "GREATERTHAN",
+        "INOUT",
+        "OUT",
+        "IN",
+        "BUFFER",
+        "LINKAGE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in Mode"
+
+def test_multiplyingoperator_exists():
+    # Check that the Enumeration exists
+    assert MultiplyingOperator is not None
+
+def test_multiplyingoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MultiplyingOperator]
+    expected_literals = [
+        "MUL",
+        "DIV",
+        "REM",
+        "MOD",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MultiplyingOperator"
 
 
 # =============================================================================
@@ -2400,423 +2400,423 @@ safe_text = st.text(
 ValueExpression_strategy = st.builds(
     ValueExpression,
 )
-vhdl::UnitValueExpression_strategy = st.builds(
-    vhdl::UnitValueExpression,
+vhdl_UnitValueExpression_strategy = st.builds(
+    vhdl_UnitValueExpression,
     unit=
         safe_text
 )
-vhdl::ValueExpression_strategy = st.builds(
-    vhdl::ValueExpression,
+vhdl_ValueExpression_strategy = st.builds(
+    vhdl_ValueExpression,
     value=
         safe_text
 )
 ArrayTypeDefinition_strategy = st.builds(
     ArrayTypeDefinition,
 )
-vhdl::ConstrainedArrayTypeDefinition_strategy = st.builds(
-    vhdl::ConstrainedArrayTypeDefinition,
+vhdl_ConstrainedArrayTypeDefinition_strategy = st.builds(
+    vhdl_ConstrainedArrayTypeDefinition,
 )
-vhdl::UnconstrainedArrayTypeDefinition_strategy = st.builds(
-    vhdl::UnconstrainedArrayTypeDefinition,
+vhdl_UnconstrainedArrayTypeDefinition_strategy = st.builds(
+    vhdl_UnconstrainedArrayTypeDefinition,
     index=
         safe_text
 )
 CompositeTypeDefinition_strategy = st.builds(
     CompositeTypeDefinition,
 )
-vhdl::ArrayTypeDefinition_strategy = st.builds(
-    vhdl::ArrayTypeDefinition,
+vhdl_ArrayTypeDefinition_strategy = st.builds(
+    vhdl_ArrayTypeDefinition,
 )
-vhdl::RecordTypeDefinition_strategy = st.builds(
-    vhdl::RecordTypeDefinition,
+vhdl_RecordTypeDefinition_strategy = st.builds(
+    vhdl_RecordTypeDefinition,
 )
-vhdl::RecordField_strategy = st.builds(
-    vhdl::RecordField,
+vhdl_RecordField_strategy = st.builds(
+    vhdl_RecordField,
     name=
         safe_text
 )
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-vhdl::FileTypeDefinition_strategy = st.builds(
-    vhdl::FileTypeDefinition,
+vhdl_FileTypeDefinition_strategy = st.builds(
+    vhdl_FileTypeDefinition,
     type=
         safe_text
 )
-vhdl::EnumerationTypeDefinition_strategy = st.builds(
-    vhdl::EnumerationTypeDefinition,
+vhdl_EnumerationTypeDefinition_strategy = st.builds(
+    vhdl_EnumerationTypeDefinition,
     literal=
         safe_text
 )
-vhdl::CompositeTypeDefinition_strategy = st.builds(
-    vhdl::CompositeTypeDefinition,
+vhdl_CompositeTypeDefinition_strategy = st.builds(
+    vhdl_CompositeTypeDefinition,
 )
-vhdl::AccessTypeDefinition_strategy = st.builds(
-    vhdl::AccessTypeDefinition,
+vhdl_AccessTypeDefinition_strategy = st.builds(
+    vhdl_AccessTypeDefinition,
 )
-vhdl::TypeDefinition_strategy = st.builds(
-    vhdl::TypeDefinition,
+vhdl_TypeDefinition_strategy = st.builds(
+    vhdl_TypeDefinition,
 )
 Type_strategy = st.builds(
     Type,
 )
-vhdl::TypeDeclaration_strategy = st.builds(
-    vhdl::TypeDeclaration,
+vhdl_TypeDeclaration_strategy = st.builds(
+    vhdl_TypeDeclaration,
 )
-vhdl::SubtypeDeclaration_strategy = st.builds(
-    vhdl::SubtypeDeclaration,
+vhdl_SubtypeDeclaration_strategy = st.builds(
+    vhdl_SubtypeDeclaration,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-vhdl::ConditionalWaveformExpression_strategy = st.builds(
-    vhdl::ConditionalWaveformExpression,
-)
-vhdl::Boolean_strategy = st.builds(
-    vhdl::Boolean,
-    value=
-        safe_text
-)
-vhdl::Open_strategy = st.builds(
-    vhdl::Open,
-    value=
-        safe_text
-)
-vhdl::ShiftExpression_strategy = st.builds(
-    vhdl::ShiftExpression,
+vhdl_AddingExpression_strategy = st.builds(
+    vhdl_AddingExpression,
     operator=
         safe_text
 )
-vhdl::RelationalExpression_strategy = st.builds(
-    vhdl::RelationalExpression,
-    operator=
-        safe_text
-)
-vhdl::AddingExpression_strategy = st.builds(
-    vhdl::AddingExpression,
-    operator=
-        safe_text
-)
-vhdl::BuiltinFuncs_strategy = st.builds(
-    vhdl::BuiltinFuncs,
+vhdl_BitString_strategy = st.builds(
+    vhdl_BitString,
     value=
         safe_text
 )
-vhdl::MultiplyingExpression_strategy = st.builds(
-    vhdl::MultiplyingExpression,
-    operator=
-        safe_text
+vhdl_Member_strategy = st.builds(
+    vhdl_Member,
 )
-vhdl::ChoiceExpression_strategy = st.builds(
-    vhdl::ChoiceExpression,
-)
-vhdl::Char_strategy = st.builds(
-    vhdl::Char,
+vhdl_Boolean_strategy = st.builds(
+    vhdl_Boolean,
     value=
         safe_text
 )
-vhdl::MemberExpression_strategy = st.builds(
-    vhdl::MemberExpression,
+vhdl_Others_strategy = st.builds(
+    vhdl_Others,
+    value=
+        safe_text
 )
-vhdl::Variable_strategy = st.builds(
-    vhdl::Variable,
+vhdl_Char_strategy = st.builds(
+    vhdl_Char,
+    value=
+        safe_text
+)
+vhdl_Value_strategy = st.builds(
+    vhdl_Value,
+)
+vhdl_MultiplyingExpression_strategy = st.builds(
+    vhdl_MultiplyingExpression,
+    operator=
+        safe_text
+)
+vhdl_Factor_strategy = st.builds(
+    vhdl_Factor,
+)
+vhdl_ChoiceExpression_strategy = st.builds(
+    vhdl_ChoiceExpression,
+)
+vhdl_MemberExpression_strategy = st.builds(
+    vhdl_MemberExpression,
+)
+vhdl_ShiftExpression_strategy = st.builds(
+    vhdl_ShiftExpression,
+    operator=
+        safe_text
+)
+vhdl_MultiExpression_strategy = st.builds(
+    vhdl_MultiExpression,
+)
+vhdl_Variable_strategy = st.builds(
+    vhdl_Variable,
     name=
         safe_text
 )
-vhdl::Value_strategy = st.builds(
-    vhdl::Value,
-)
-vhdl::SliceExpression_strategy = st.builds(
-    vhdl::SliceExpression,
-)
-vhdl::String_strategy = st.builds(
-    vhdl::String,
-    value=
-        safe_text
-)
-vhdl::LogicalExpression_strategy = st.builds(
-    vhdl::LogicalExpression,
+vhdl_RelationalExpression_strategy = st.builds(
+    vhdl_RelationalExpression,
     operator=
         safe_text
 )
-vhdl::Member_strategy = st.builds(
-    vhdl::Member,
+vhdl_LogicalExpression_strategy = st.builds(
+    vhdl_LogicalExpression,
+    operator=
+        safe_text
 )
-vhdl::Factor_strategy = st.builds(
-    vhdl::Factor,
+vhdl_ConditionalWaveformExpression_strategy = st.builds(
+    vhdl_ConditionalWaveformExpression,
 )
-vhdl::Others_strategy = st.builds(
-    vhdl::Others,
+vhdl_BuiltinFuncs_strategy = st.builds(
+    vhdl_BuiltinFuncs,
     value=
         safe_text
 )
-vhdl::BitString_strategy = st.builds(
-    vhdl::BitString,
+vhdl_Open_strategy = st.builds(
+    vhdl_Open,
     value=
         safe_text
 )
-vhdl::RangeExpression_strategy = st.builds(
-    vhdl::RangeExpression,
-    direction=
+vhdl_SliceExpression_strategy = st.builds(
+    vhdl_SliceExpression,
+)
+vhdl_RangeExpression_strategy = st.builds(
+    vhdl_RangeExpression,
+    operator=
         safe_text,
-    operator=
+    direction=
         safe_text
 )
-vhdl::MultiExpression_strategy = st.builds(
-    vhdl::MultiExpression,
+vhdl_String_strategy = st.builds(
+    vhdl_String,
+    value=
+        safe_text
 )
-vhdl::IfStatementTest_strategy = st.builds(
-    vhdl::IfStatementTest,
+vhdl_IfStatementTest_strategy = st.builds(
+    vhdl_IfStatementTest,
 )
 IterationScheme_strategy = st.builds(
     IterationScheme,
 )
-vhdl::ForIterationScheme_strategy = st.builds(
-    vhdl::ForIterationScheme,
+vhdl_ForIterationScheme_strategy = st.builds(
+    vhdl_ForIterationScheme,
     variable=
         safe_text
 )
-vhdl::CaseAlternative_strategy = st.builds(
-    vhdl::CaseAlternative,
+vhdl_WhileIterationScheme_strategy = st.builds(
+    vhdl_WhileIterationScheme,
 )
-vhdl::GenericMapAssociation_strategy = st.builds(
-    vhdl::GenericMapAssociation,
+vhdl_IterationScheme_strategy = st.builds(
+    vhdl_IterationScheme,
+)
+vhdl_CaseAlternative_strategy = st.builds(
+    vhdl_CaseAlternative,
+)
+vhdl_GenericMapAssociation_strategy = st.builds(
+    vhdl_GenericMapAssociation,
     formal=
         safe_text
 )
-vhdl::PortMapAssociation_strategy = st.builds(
-    vhdl::PortMapAssociation,
+vhdl_PortMapAssociation_strategy = st.builds(
+    vhdl_PortMapAssociation,
     formal=
         safe_text
 )
 SequentialStatement_strategy = st.builds(
     SequentialStatement,
 )
-vhdl::SequentialSignalAssignmentStatement_strategy = st.builds(
-    vhdl::SequentialSignalAssignmentStatement,
+vhdl_SequentialSignalAssignmentStatement_strategy = st.builds(
+    vhdl_SequentialSignalAssignmentStatement,
+    guarded=
+        st.booleans(),
     postponed=
         st.booleans(),
     label=
-        safe_text,
-    guarded=
-        st.booleans()
+        safe_text
 )
-vhdl::LoopStatement_strategy = st.builds(
-    vhdl::LoopStatement,
-)
-vhdl::IfStatement_strategy = st.builds(
-    vhdl::IfStatement,
+vhdl_CaseStatement_strategy = st.builds(
+    vhdl_CaseStatement,
     label=
         safe_text
 )
-vhdl::CaseStatement_strategy = st.builds(
-    vhdl::CaseStatement,
+vhdl_IfStatement_strategy = st.builds(
+    vhdl_IfStatement,
     label=
         safe_text
 )
-vhdl::WaitStatement_strategy = st.builds(
-    vhdl::WaitStatement,
+vhdl_LoopStatement_strategy = st.builds(
+    vhdl_LoopStatement,
+)
+vhdl_WaitStatement_strategy = st.builds(
+    vhdl_WaitStatement,
     label=
         safe_text
 )
-vhdl::PortMap_strategy = st.builds(
-    vhdl::PortMap,
+vhdl_PortMap_strategy = st.builds(
+    vhdl_PortMap,
 )
-vhdl::GenericMap_strategy = st.builds(
-    vhdl::GenericMap,
+vhdl_GenericMap_strategy = st.builds(
+    vhdl_GenericMap,
 )
-vhdl::SequentialStatement_strategy = st.builds(
-    vhdl::SequentialStatement,
+vhdl_SequentialStatement_strategy = st.builds(
+    vhdl_SequentialStatement,
 )
-vhdl::IdList_strategy = st.builds(
-    vhdl::IdList,
+vhdl_IdList_strategy = st.builds(
+    vhdl_IdList,
 )
 ArchitectureStatement_strategy = st.builds(
     ArchitectureStatement,
 )
-vhdl::ComponentInstantiationStatement_strategy = st.builds(
-    vhdl::ComponentInstantiationStatement,
+vhdl_ForGenerateStatement_strategy = st.builds(
+    vhdl_ForGenerateStatement,
+)
+vhdl_ComponentInstantiationStatement_strategy = st.builds(
+    vhdl_ComponentInstantiationStatement,
     name=
         safe_text
 )
-vhdl::IfGenerateStatement_strategy = st.builds(
-    vhdl::IfGenerateStatement,
-)
-vhdl::EntityInstantiationStatement_strategy = st.builds(
-    vhdl::EntityInstantiationStatement,
-    name=
-        safe_text
-)
-vhdl::ConditionalSignalAssignmentStatement_strategy = st.builds(
-    vhdl::ConditionalSignalAssignmentStatement,
+vhdl_ConditionalSignalAssignmentStatement_strategy = st.builds(
+    vhdl_ConditionalSignalAssignmentStatement,
     guarded=
         st.booleans(),
     postponed=
         st.booleans()
 )
-vhdl::ForGenerateStatement_strategy = st.builds(
-    vhdl::ForGenerateStatement,
+vhdl_EntityInstantiationStatement_strategy = st.builds(
+    vhdl_EntityInstantiationStatement,
+    name=
+        safe_text
 )
-vhdl::ProcessStatement_strategy = st.builds(
-    vhdl::ProcessStatement,
+vhdl_IfGenerateStatement_strategy = st.builds(
+    vhdl_IfGenerateStatement,
+)
+vhdl_ProcessStatement_strategy = st.builds(
+    vhdl_ProcessStatement,
     postponed=
         st.booleans()
 )
-vhdl::SubtypeIndication_strategy = st.builds(
-    vhdl::SubtypeIndication,
+vhdl_SubtypeIndication_strategy = st.builds(
+    vhdl_SubtypeIndication,
     builtin_type=
         safe_text
 )
 Variable_strategy = st.builds(
     Variable,
 )
-vhdl::LoopVariable_strategy = st.builds(
-    vhdl::LoopVariable,
+vhdl_LoopVariable_strategy = st.builds(
+    vhdl_LoopVariable,
 )
-vhdl::Constant_strategy = st.builds(
-    vhdl::Constant,
+vhdl_Constant_strategy = st.builds(
+    vhdl_Constant,
 )
-vhdl::Port_strategy = st.builds(
-    vhdl::Port,
+vhdl_Port_strategy = st.builds(
+    vhdl_Port,
     kind=
         safe_text,
     mode=
         safe_text
 )
-vhdl::Ports_strategy = st.builds(
-    vhdl::Ports,
+vhdl_Ports_strategy = st.builds(
+    vhdl_Ports,
 )
-vhdl::Generics_strategy = st.builds(
-    vhdl::Generics,
+vhdl_Generics_strategy = st.builds(
+    vhdl_Generics,
 )
-vhdl::Var_strategy = st.builds(
-    vhdl::Var,
+vhdl_Var_strategy = st.builds(
+    vhdl_Var,
 )
-vhdl::Signal_strategy = st.builds(
-    vhdl::Signal,
+vhdl_Signal_strategy = st.builds(
+    vhdl_Signal,
 )
-package::declarative::item_strategy = st.builds(
-    package::declarative::item,
+package_declarative_item_strategy = st.builds(
+    package_declarative_item,
 )
 BlockDeclarativeItem_strategy = st.builds(
     BlockDeclarativeItem,
 )
-vhdl::VariableDeclaration_strategy = st.builds(
-    vhdl::VariableDeclaration,
+vhdl_VariableDeclaration_strategy = st.builds(
+    vhdl_VariableDeclaration,
     shared=
         st.booleans()
 )
-vhdl::AttributeSpecification_strategy = st.builds(
-    vhdl::AttributeSpecification,
-    class_=
-        safe_text,
-    entity=
+vhdl_Type_strategy = st.builds(
+    vhdl_Type,
+    value=
         safe_text,
     name=
         safe_text
 )
-vhdl::SignalDeclaration_strategy = st.builds(
-    vhdl::SignalDeclaration,
+vhdl_ConstantDeclaration_strategy = st.builds(
+    vhdl_ConstantDeclaration,
+)
+vhdl_SignalDeclaration_strategy = st.builds(
+    vhdl_SignalDeclaration,
     kind=
         safe_text
 )
-vhdl::Type_strategy = st.builds(
-    vhdl::Type,
+vhdl_Component_strategy = st.builds(
+    vhdl_Component,
+    name=
+        safe_text
+)
+vhdl_AttributeDeclaration_strategy = st.builds(
+    vhdl_AttributeDeclaration,
     name=
         safe_text,
-    value=
-        safe_text
-)
-vhdl::ConstantDeclaration_strategy = st.builds(
-    vhdl::ConstantDeclaration,
-)
-vhdl::Component_strategy = st.builds(
-    vhdl::Component,
-    name=
-        safe_text
-)
-vhdl::AttributeDeclaration_strategy = st.builds(
-    vhdl::AttributeDeclaration,
     type_keyword=
         safe_text,
     type_id=
-        safe_text,
+        safe_text
+)
+vhdl_AttributeSpecification_strategy = st.builds(
+    vhdl_AttributeSpecification,
     name=
-        safe_text
-)
-vhdl::Alias_strategy = st.builds(
-    vhdl::Alias,
-)
-vhdl::Generic_strategy = st.builds(
-    vhdl::Generic,
-)
-vhdl::Expression_strategy = st.builds(
-    vhdl::Expression,
-    attribute=
         safe_text,
-    unary_operator=
+    entity=
+        safe_text,
+    class_=
         safe_text
 )
-vhdl::DesignFile_strategy = st.builds(
-    vhdl::DesignFile,
+vhdl_Alias_strategy = st.builds(
+    vhdl_Alias,
 )
-vhdl::ArchitectureStatement_strategy = st.builds(
-    vhdl::ArchitectureStatement,
+vhdl_Generic_strategy = st.builds(
+    vhdl_Generic,
+)
+vhdl_Expression_strategy = st.builds(
+    vhdl_Expression,
+    unary_operator=
+        safe_text,
+    attribute=
+        safe_text
+)
+vhdl_DesignFile_strategy = st.builds(
+    vhdl_DesignFile,
+)
+vhdl_ArchitectureStatement_strategy = st.builds(
+    vhdl_ArchitectureStatement,
     label=
         safe_text
 )
-vhdl::BlockDeclarativeItem_strategy = st.builds(
-    vhdl::BlockDeclarativeItem,
+vhdl_BlockDeclarativeItem_strategy = st.builds(
+    vhdl_BlockDeclarativeItem,
 )
-vhdl::package::declarative::part_strategy = st.builds(
-    vhdl::package::declarative::part,
+vhdl_package_declarative_part_strategy = st.builds(
+    vhdl_package_declarative_part,
 )
-vhdl::package::declarative::item_strategy = st.builds(
-    vhdl::package::declarative::item,
+vhdl_package_declarative_item_strategy = st.builds(
+    vhdl_package_declarative_item,
 )
 LibraryUnit_strategy = st.builds(
     LibraryUnit,
 )
-vhdl::Entity_strategy = st.builds(
-    vhdl::Entity,
+vhdl_Architecture_strategy = st.builds(
+    vhdl_Architecture,
 )
-vhdl::Architecture_strategy = st.builds(
-    vhdl::Architecture,
+vhdl_Entity_strategy = st.builds(
+    vhdl_Entity,
 )
-vhdl::Package_strategy = st.builds(
-    vhdl::Package,
+vhdl_Package_strategy = st.builds(
+    vhdl_Package,
 )
-vhdl::Library_strategy = st.builds(
-    vhdl::Library,
+vhdl_Library_strategy = st.builds(
+    vhdl_Library,
     builtin_lib=
         safe_text
 )
 ContextItem_strategy = st.builds(
     ContextItem,
 )
-vhdl::LibraryClause_strategy = st.builds(
-    vhdl::LibraryClause,
+vhdl_LibraryClause_strategy = st.builds(
+    vhdl_LibraryClause,
     name=
         safe_text
 )
-vhdl::UseClause_strategy = st.builds(
-    vhdl::UseClause,
+vhdl_UseClause_strategy = st.builds(
+    vhdl_UseClause,
     importedNamespace=
         safe_text
 )
-vhdl::LibraryUnit_strategy = st.builds(
-    vhdl::LibraryUnit,
+vhdl_LibraryUnit_strategy = st.builds(
+    vhdl_LibraryUnit,
     name=
         safe_text
 )
-vhdl::ContextItem_strategy = st.builds(
-    vhdl::ContextItem,
-)
-vhdl::WhileIterationScheme_strategy = st.builds(
-    vhdl::WhileIterationScheme,
-)
-vhdl::IterationScheme_strategy = st.builds(
-    vhdl::IterationScheme,
+vhdl_ContextItem_strategy = st.builds(
+    vhdl_ContextItem,
 )
 
 @given(instance=ValueExpression_strategy)
@@ -2824,34 +2824,28 @@ vhdl::IterationScheme_strategy = st.builds(
 def test_valueexpression_instantiation(instance):
     assert isinstance(instance, ValueExpression)
 
-@given(instance=vhdl::UnitValueExpression_strategy)
+@given(instance=vhdl_UnitValueExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::unitvalueexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::UnitValueExpression)
-
-@given(instance=vhdl::UnitValueExpression_strategy)
-def test_vhdl::unitvalueexpression_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_vhdl_unitvalueexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_UnitValueExpression)
 
 
-@given(instance=vhdl::UnitValueExpression_strategy)
-def test_vhdl::unitvalueexpression_unit_setter(instance):
+
+@given(instance=vhdl_UnitValueExpression_strategy)
+def test_vhdl_unitvalueexpression_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=vhdl::ValueExpression_strategy)
+@given(instance=vhdl_ValueExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::valueexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::ValueExpression)
-
-@given(instance=vhdl::ValueExpression_strategy)
-def test_vhdl::valueexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vhdl_valueexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_ValueExpression)
 
 
-@given(instance=vhdl::ValueExpression_strategy)
-def test_vhdl::valueexpression_value_setter(instance):
+
+@given(instance=vhdl_ValueExpression_strategy)
+def test_vhdl_valueexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2861,23 +2855,20 @@ def test_vhdl::valueexpression_value_setter(instance):
 def test_arraytypedefinition_instantiation(instance):
     assert isinstance(instance, ArrayTypeDefinition)
 
-@given(instance=vhdl::ConstrainedArrayTypeDefinition_strategy)
+@given(instance=vhdl_ConstrainedArrayTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::constrainedarraytypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::ConstrainedArrayTypeDefinition)
+def test_vhdl_constrainedarraytypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_ConstrainedArrayTypeDefinition)
 
-@given(instance=vhdl::UnconstrainedArrayTypeDefinition_strategy)
+@given(instance=vhdl_UnconstrainedArrayTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::unconstrainedarraytypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::UnconstrainedArrayTypeDefinition)
-
-@given(instance=vhdl::UnconstrainedArrayTypeDefinition_strategy)
-def test_vhdl::unconstrainedarraytypedefinition_index_type(instance):
-    assert isinstance(instance.index, str)
+def test_vhdl_unconstrainedarraytypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_UnconstrainedArrayTypeDefinition)
 
 
-@given(instance=vhdl::UnconstrainedArrayTypeDefinition_strategy)
-def test_vhdl::unconstrainedarraytypedefinition_index_setter(instance):
+
+@given(instance=vhdl_UnconstrainedArrayTypeDefinition_strategy)
+def test_vhdl_unconstrainedarraytypedefinition_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
@@ -2887,28 +2878,25 @@ def test_vhdl::unconstrainedarraytypedefinition_index_setter(instance):
 def test_compositetypedefinition_instantiation(instance):
     assert isinstance(instance, CompositeTypeDefinition)
 
-@given(instance=vhdl::ArrayTypeDefinition_strategy)
+@given(instance=vhdl_ArrayTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::arraytypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::ArrayTypeDefinition)
+def test_vhdl_arraytypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_ArrayTypeDefinition)
 
-@given(instance=vhdl::RecordTypeDefinition_strategy)
+@given(instance=vhdl_RecordTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::recordtypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::RecordTypeDefinition)
+def test_vhdl_recordtypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_RecordTypeDefinition)
 
-@given(instance=vhdl::RecordField_strategy)
+@given(instance=vhdl_RecordField_strategy)
 @settings(max_examples=50)
-def test_vhdl::recordfield_instantiation(instance):
-    assert isinstance(instance, vhdl::RecordField)
-
-@given(instance=vhdl::RecordField_strategy)
-def test_vhdl::recordfield_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdl_recordfield_instantiation(instance):
+    assert isinstance(instance, vhdl_RecordField)
 
 
-@given(instance=vhdl::RecordField_strategy)
-def test_vhdl::recordfield_name_setter(instance):
+
+@given(instance=vhdl_RecordField_strategy)
+def test_vhdl_recordfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2918,407 +2906,357 @@ def test_vhdl::recordfield_name_setter(instance):
 def test_typedefinition_instantiation(instance):
     assert isinstance(instance, TypeDefinition)
 
-@given(instance=vhdl::FileTypeDefinition_strategy)
+@given(instance=vhdl_FileTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::filetypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::FileTypeDefinition)
-
-@given(instance=vhdl::FileTypeDefinition_strategy)
-def test_vhdl::filetypedefinition_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_vhdl_filetypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_FileTypeDefinition)
 
 
-@given(instance=vhdl::FileTypeDefinition_strategy)
-def test_vhdl::filetypedefinition_type_setter(instance):
+
+@given(instance=vhdl_FileTypeDefinition_strategy)
+def test_vhdl_filetypedefinition_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=vhdl::EnumerationTypeDefinition_strategy)
+@given(instance=vhdl_EnumerationTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::enumerationtypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::EnumerationTypeDefinition)
-
-@given(instance=vhdl::EnumerationTypeDefinition_strategy)
-def test_vhdl::enumerationtypedefinition_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_vhdl_enumerationtypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_EnumerationTypeDefinition)
 
 
-@given(instance=vhdl::EnumerationTypeDefinition_strategy)
-def test_vhdl::enumerationtypedefinition_literal_setter(instance):
+
+@given(instance=vhdl_EnumerationTypeDefinition_strategy)
+def test_vhdl_enumerationtypedefinition_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
 
-@given(instance=vhdl::CompositeTypeDefinition_strategy)
+@given(instance=vhdl_CompositeTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::compositetypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::CompositeTypeDefinition)
+def test_vhdl_compositetypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_CompositeTypeDefinition)
 
-@given(instance=vhdl::AccessTypeDefinition_strategy)
+@given(instance=vhdl_AccessTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::accesstypedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::AccessTypeDefinition)
+def test_vhdl_accesstypedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_AccessTypeDefinition)
 
-@given(instance=vhdl::TypeDefinition_strategy)
+@given(instance=vhdl_TypeDefinition_strategy)
 @settings(max_examples=50)
-def test_vhdl::typedefinition_instantiation(instance):
-    assert isinstance(instance, vhdl::TypeDefinition)
+def test_vhdl_typedefinition_instantiation(instance):
+    assert isinstance(instance, vhdl_TypeDefinition)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=vhdl::TypeDeclaration_strategy)
+@given(instance=vhdl_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_vhdl::typedeclaration_instantiation(instance):
-    assert isinstance(instance, vhdl::TypeDeclaration)
+def test_vhdl_typedeclaration_instantiation(instance):
+    assert isinstance(instance, vhdl_TypeDeclaration)
 
-@given(instance=vhdl::SubtypeDeclaration_strategy)
+@given(instance=vhdl_SubtypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_vhdl::subtypedeclaration_instantiation(instance):
-    assert isinstance(instance, vhdl::SubtypeDeclaration)
+def test_vhdl_subtypedeclaration_instantiation(instance):
+    assert isinstance(instance, vhdl_SubtypeDeclaration)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=vhdl::ConditionalWaveformExpression_strategy)
+@given(instance=vhdl_AddingExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::conditionalwaveformexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::ConditionalWaveformExpression)
-
-@given(instance=vhdl::Boolean_strategy)
-@settings(max_examples=50)
-def test_vhdl::boolean_instantiation(instance):
-    assert isinstance(instance, vhdl::Boolean)
-
-@given(instance=vhdl::Boolean_strategy)
-def test_vhdl::boolean_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vhdl_addingexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_AddingExpression)
 
 
-@given(instance=vhdl::Boolean_strategy)
-def test_vhdl::boolean_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=vhdl::Open_strategy)
-@settings(max_examples=50)
-def test_vhdl::open_instantiation(instance):
-    assert isinstance(instance, vhdl::Open)
-
-@given(instance=vhdl::Open_strategy)
-def test_vhdl::open_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=vhdl::Open_strategy)
-def test_vhdl::open_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=vhdl::ShiftExpression_strategy)
-@settings(max_examples=50)
-def test_vhdl::shiftexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::ShiftExpression)
-
-@given(instance=vhdl::ShiftExpression_strategy)
-def test_vhdl::shiftexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=vhdl::ShiftExpression_strategy)
-def test_vhdl::shiftexpression_operator_setter(instance):
+@given(instance=vhdl_AddingExpression_strategy)
+def test_vhdl_addingexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=vhdl::RelationalExpression_strategy)
+@given(instance=vhdl_BitString_strategy)
 @settings(max_examples=50)
-def test_vhdl::relationalexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::RelationalExpression)
-
-@given(instance=vhdl::RelationalExpression_strategy)
-def test_vhdl::relationalexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_vhdl_bitstring_instantiation(instance):
+    assert isinstance(instance, vhdl_BitString)
 
 
-@given(instance=vhdl::RelationalExpression_strategy)
-def test_vhdl::relationalexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=vhdl::AddingExpression_strategy)
-@settings(max_examples=50)
-def test_vhdl::addingexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::AddingExpression)
-
-@given(instance=vhdl::AddingExpression_strategy)
-def test_vhdl::addingexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=vhdl::AddingExpression_strategy)
-def test_vhdl::addingexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=vhdl::BuiltinFuncs_strategy)
-@settings(max_examples=50)
-def test_vhdl::builtinfuncs_instantiation(instance):
-    assert isinstance(instance, vhdl::BuiltinFuncs)
-
-@given(instance=vhdl::BuiltinFuncs_strategy)
-def test_vhdl::builtinfuncs_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=vhdl::BuiltinFuncs_strategy)
-def test_vhdl::builtinfuncs_value_setter(instance):
+@given(instance=vhdl_BitString_strategy)
+def test_vhdl_bitstring_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vhdl::MultiplyingExpression_strategy)
+@given(instance=vhdl_Member_strategy)
 @settings(max_examples=50)
-def test_vhdl::multiplyingexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::MultiplyingExpression)
+def test_vhdl_member_instantiation(instance):
+    assert isinstance(instance, vhdl_Member)
 
-@given(instance=vhdl::MultiplyingExpression_strategy)
-def test_vhdl::multiplyingexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=vhdl::MultiplyingExpression_strategy)
-def test_vhdl::multiplyingexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=vhdl::ChoiceExpression_strategy)
+@given(instance=vhdl_Boolean_strategy)
 @settings(max_examples=50)
-def test_vhdl::choiceexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::ChoiceExpression)
-
-@given(instance=vhdl::Char_strategy)
-@settings(max_examples=50)
-def test_vhdl::char_instantiation(instance):
-    assert isinstance(instance, vhdl::Char)
-
-@given(instance=vhdl::Char_strategy)
-def test_vhdl::char_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vhdl_boolean_instantiation(instance):
+    assert isinstance(instance, vhdl_Boolean)
 
 
-@given(instance=vhdl::Char_strategy)
-def test_vhdl::char_value_setter(instance):
+
+@given(instance=vhdl_Boolean_strategy)
+def test_vhdl_boolean_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vhdl::MemberExpression_strategy)
+@given(instance=vhdl_Others_strategy)
 @settings(max_examples=50)
-def test_vhdl::memberexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::MemberExpression)
+def test_vhdl_others_instantiation(instance):
+    assert isinstance(instance, vhdl_Others)
 
-@given(instance=vhdl::Variable_strategy)
+
+
+@given(instance=vhdl_Others_strategy)
+def test_vhdl_others_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=vhdl_Char_strategy)
 @settings(max_examples=50)
-def test_vhdl::variable_instantiation(instance):
-    assert isinstance(instance, vhdl::Variable)
-
-@given(instance=vhdl::Variable_strategy)
-def test_vhdl::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdl_char_instantiation(instance):
+    assert isinstance(instance, vhdl_Char)
 
 
-@given(instance=vhdl::Variable_strategy)
-def test_vhdl::variable_name_setter(instance):
+
+@given(instance=vhdl_Char_strategy)
+def test_vhdl_char_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=vhdl_Value_strategy)
+@settings(max_examples=50)
+def test_vhdl_value_instantiation(instance):
+    assert isinstance(instance, vhdl_Value)
+
+@given(instance=vhdl_MultiplyingExpression_strategy)
+@settings(max_examples=50)
+def test_vhdl_multiplyingexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_MultiplyingExpression)
+
+
+
+@given(instance=vhdl_MultiplyingExpression_strategy)
+def test_vhdl_multiplyingexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=vhdl_Factor_strategy)
+@settings(max_examples=50)
+def test_vhdl_factor_instantiation(instance):
+    assert isinstance(instance, vhdl_Factor)
+
+@given(instance=vhdl_ChoiceExpression_strategy)
+@settings(max_examples=50)
+def test_vhdl_choiceexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_ChoiceExpression)
+
+@given(instance=vhdl_MemberExpression_strategy)
+@settings(max_examples=50)
+def test_vhdl_memberexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_MemberExpression)
+
+@given(instance=vhdl_ShiftExpression_strategy)
+@settings(max_examples=50)
+def test_vhdl_shiftexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_ShiftExpression)
+
+
+
+@given(instance=vhdl_ShiftExpression_strategy)
+def test_vhdl_shiftexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=vhdl_MultiExpression_strategy)
+@settings(max_examples=50)
+def test_vhdl_multiexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_MultiExpression)
+
+@given(instance=vhdl_Variable_strategy)
+@settings(max_examples=50)
+def test_vhdl_variable_instantiation(instance):
+    assert isinstance(instance, vhdl_Variable)
+
+
+
+@given(instance=vhdl_Variable_strategy)
+def test_vhdl_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vhdl::Value_strategy)
+@given(instance=vhdl_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::value_instantiation(instance):
-    assert isinstance(instance, vhdl::Value)
-
-@given(instance=vhdl::SliceExpression_strategy)
-@settings(max_examples=50)
-def test_vhdl::sliceexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::SliceExpression)
-
-@given(instance=vhdl::String_strategy)
-@settings(max_examples=50)
-def test_vhdl::string_instantiation(instance):
-    assert isinstance(instance, vhdl::String)
-
-@given(instance=vhdl::String_strategy)
-def test_vhdl::string_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vhdl_relationalexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_RelationalExpression)
 
 
-@given(instance=vhdl::String_strategy)
-def test_vhdl::string_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=vhdl::LogicalExpression_strategy)
-@settings(max_examples=50)
-def test_vhdl::logicalexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::LogicalExpression)
-
-@given(instance=vhdl::LogicalExpression_strategy)
-def test_vhdl::logicalexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=vhdl::LogicalExpression_strategy)
-def test_vhdl::logicalexpression_operator_setter(instance):
+@given(instance=vhdl_RelationalExpression_strategy)
+def test_vhdl_relationalexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=vhdl::Member_strategy)
+@given(instance=vhdl_LogicalExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::member_instantiation(instance):
-    assert isinstance(instance, vhdl::Member)
+def test_vhdl_logicalexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_LogicalExpression)
 
-@given(instance=vhdl::Factor_strategy)
+
+
+@given(instance=vhdl_LogicalExpression_strategy)
+def test_vhdl_logicalexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=vhdl_ConditionalWaveformExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::factor_instantiation(instance):
-    assert isinstance(instance, vhdl::Factor)
+def test_vhdl_conditionalwaveformexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_ConditionalWaveformExpression)
 
-@given(instance=vhdl::Others_strategy)
+@given(instance=vhdl_BuiltinFuncs_strategy)
 @settings(max_examples=50)
-def test_vhdl::others_instantiation(instance):
-    assert isinstance(instance, vhdl::Others)
-
-@given(instance=vhdl::Others_strategy)
-def test_vhdl::others_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vhdl_builtinfuncs_instantiation(instance):
+    assert isinstance(instance, vhdl_BuiltinFuncs)
 
 
-@given(instance=vhdl::Others_strategy)
-def test_vhdl::others_value_setter(instance):
+
+@given(instance=vhdl_BuiltinFuncs_strategy)
+def test_vhdl_builtinfuncs_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vhdl::BitString_strategy)
+@given(instance=vhdl_Open_strategy)
 @settings(max_examples=50)
-def test_vhdl::bitstring_instantiation(instance):
-    assert isinstance(instance, vhdl::BitString)
-
-@given(instance=vhdl::BitString_strategy)
-def test_vhdl::bitstring_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_vhdl_open_instantiation(instance):
+    assert isinstance(instance, vhdl_Open)
 
 
-@given(instance=vhdl::BitString_strategy)
-def test_vhdl::bitstring_value_setter(instance):
+
+@given(instance=vhdl_Open_strategy)
+def test_vhdl_open_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vhdl::RangeExpression_strategy)
+@given(instance=vhdl_SliceExpression_strategy)
 @settings(max_examples=50)
-def test_vhdl::rangeexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::RangeExpression)
+def test_vhdl_sliceexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_SliceExpression)
 
-@given(instance=vhdl::RangeExpression_strategy)
-def test_vhdl::rangeexpression_direction_type(instance):
-    assert isinstance(instance.direction, str)
+@given(instance=vhdl_RangeExpression_strategy)
+@settings(max_examples=50)
+def test_vhdl_rangeexpression_instantiation(instance):
+    assert isinstance(instance, vhdl_RangeExpression)
 
 
-@given(instance=vhdl::RangeExpression_strategy)
-def test_vhdl::rangeexpression_direction_setter(instance):
+
+@given(instance=vhdl_RangeExpression_strategy)
+def test_vhdl_rangeexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+
+
+@given(instance=vhdl_RangeExpression_strategy)
+def test_vhdl_rangeexpression_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=vhdl::RangeExpression_strategy)
-def test_vhdl::rangeexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=vhdl::RangeExpression_strategy)
-def test_vhdl::rangeexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=vhdl::MultiExpression_strategy)
+@given(instance=vhdl_String_strategy)
 @settings(max_examples=50)
-def test_vhdl::multiexpression_instantiation(instance):
-    assert isinstance(instance, vhdl::MultiExpression)
+def test_vhdl_string_instantiation(instance):
+    assert isinstance(instance, vhdl_String)
 
-@given(instance=vhdl::IfStatementTest_strategy)
+
+
+@given(instance=vhdl_String_strategy)
+def test_vhdl_string_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=vhdl_IfStatementTest_strategy)
 @settings(max_examples=50)
-def test_vhdl::ifstatementtest_instantiation(instance):
-    assert isinstance(instance, vhdl::IfStatementTest)
+def test_vhdl_ifstatementtest_instantiation(instance):
+    assert isinstance(instance, vhdl_IfStatementTest)
 
 @given(instance=IterationScheme_strategy)
 @settings(max_examples=50)
 def test_iterationscheme_instantiation(instance):
     assert isinstance(instance, IterationScheme)
 
-@given(instance=vhdl::ForIterationScheme_strategy)
+@given(instance=vhdl_ForIterationScheme_strategy)
 @settings(max_examples=50)
-def test_vhdl::foriterationscheme_instantiation(instance):
-    assert isinstance(instance, vhdl::ForIterationScheme)
-
-@given(instance=vhdl::ForIterationScheme_strategy)
-def test_vhdl::foriterationscheme_variable_type(instance):
-    assert isinstance(instance.variable, str)
+def test_vhdl_foriterationscheme_instantiation(instance):
+    assert isinstance(instance, vhdl_ForIterationScheme)
 
 
-@given(instance=vhdl::ForIterationScheme_strategy)
-def test_vhdl::foriterationscheme_variable_setter(instance):
+
+@given(instance=vhdl_ForIterationScheme_strategy)
+def test_vhdl_foriterationscheme_variable_setter(instance):
     original = instance.variable
     instance.variable = original
     assert instance.variable == original
 
-@given(instance=vhdl::CaseAlternative_strategy)
+@given(instance=vhdl_WhileIterationScheme_strategy)
 @settings(max_examples=50)
-def test_vhdl::casealternative_instantiation(instance):
-    assert isinstance(instance, vhdl::CaseAlternative)
+def test_vhdl_whileiterationscheme_instantiation(instance):
+    assert isinstance(instance, vhdl_WhileIterationScheme)
 
-@given(instance=vhdl::GenericMapAssociation_strategy)
+@given(instance=vhdl_IterationScheme_strategy)
 @settings(max_examples=50)
-def test_vhdl::genericmapassociation_instantiation(instance):
-    assert isinstance(instance, vhdl::GenericMapAssociation)
+def test_vhdl_iterationscheme_instantiation(instance):
+    assert isinstance(instance, vhdl_IterationScheme)
 
-@given(instance=vhdl::GenericMapAssociation_strategy)
-def test_vhdl::genericmapassociation_formal_type(instance):
-    assert isinstance(instance.formal, str)
+@given(instance=vhdl_CaseAlternative_strategy)
+@settings(max_examples=50)
+def test_vhdl_casealternative_instantiation(instance):
+    assert isinstance(instance, vhdl_CaseAlternative)
+
+@given(instance=vhdl_GenericMapAssociation_strategy)
+@settings(max_examples=50)
+def test_vhdl_genericmapassociation_instantiation(instance):
+    assert isinstance(instance, vhdl_GenericMapAssociation)
 
 
-@given(instance=vhdl::GenericMapAssociation_strategy)
-def test_vhdl::genericmapassociation_formal_setter(instance):
+
+@given(instance=vhdl_GenericMapAssociation_strategy)
+def test_vhdl_genericmapassociation_formal_setter(instance):
     original = instance.formal
     instance.formal = original
     assert instance.formal == original
 
-@given(instance=vhdl::PortMapAssociation_strategy)
+@given(instance=vhdl_PortMapAssociation_strategy)
 @settings(max_examples=50)
-def test_vhdl::portmapassociation_instantiation(instance):
-    assert isinstance(instance, vhdl::PortMapAssociation)
-
-@given(instance=vhdl::PortMapAssociation_strategy)
-def test_vhdl::portmapassociation_formal_type(instance):
-    assert isinstance(instance.formal, str)
+def test_vhdl_portmapassociation_instantiation(instance):
+    assert isinstance(instance, vhdl_PortMapAssociation)
 
 
-@given(instance=vhdl::PortMapAssociation_strategy)
-def test_vhdl::portmapassociation_formal_setter(instance):
+
+@given(instance=vhdl_PortMapAssociation_strategy)
+def test_vhdl_portmapassociation_formal_setter(instance):
     original = instance.formal
     instance.formal = original
     assert instance.formal == original
@@ -3328,219 +3266,183 @@ def test_vhdl::portmapassociation_formal_setter(instance):
 def test_sequentialstatement_instantiation(instance):
     assert isinstance(instance, SequentialStatement)
 
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
+@given(instance=vhdl_SequentialSignalAssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::sequentialsignalassignmentstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::SequentialSignalAssignmentStatement)
-
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
-def test_vhdl::sequentialsignalassignmentstatement_postponed_type(instance):
-    assert isinstance(instance.postponed, bool)
+def test_vhdl_sequentialsignalassignmentstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_SequentialSignalAssignmentStatement)
 
 
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
-def test_vhdl::sequentialsignalassignmentstatement_postponed_setter(instance):
-    original = instance.postponed
-    instance.postponed = original
-    assert instance.postponed == original
 
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
-def test_vhdl::sequentialsignalassignmentstatement_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
-def test_vhdl::sequentialsignalassignmentstatement_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
-def test_vhdl::sequentialsignalassignmentstatement_guarded_type(instance):
-    assert isinstance(instance.guarded, bool)
-
-
-@given(instance=vhdl::SequentialSignalAssignmentStatement_strategy)
-def test_vhdl::sequentialsignalassignmentstatement_guarded_setter(instance):
+@given(instance=vhdl_SequentialSignalAssignmentStatement_strategy)
+def test_vhdl_sequentialsignalassignmentstatement_guarded_setter(instance):
     original = instance.guarded
     instance.guarded = original
     assert instance.guarded == original
 
-@given(instance=vhdl::LoopStatement_strategy)
-@settings(max_examples=50)
-def test_vhdl::loopstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::LoopStatement)
-
-@given(instance=vhdl::IfStatement_strategy)
-@settings(max_examples=50)
-def test_vhdl::ifstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::IfStatement)
-
-@given(instance=vhdl::IfStatement_strategy)
-def test_vhdl::ifstatement_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
-@given(instance=vhdl::IfStatement_strategy)
-def test_vhdl::ifstatement_label_setter(instance):
+@given(instance=vhdl_SequentialSignalAssignmentStatement_strategy)
+def test_vhdl_sequentialsignalassignmentstatement_postponed_setter(instance):
+    original = instance.postponed
+    instance.postponed = original
+    assert instance.postponed == original
+
+
+
+@given(instance=vhdl_SequentialSignalAssignmentStatement_strategy)
+def test_vhdl_sequentialsignalassignmentstatement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=vhdl::CaseStatement_strategy)
+@given(instance=vhdl_CaseStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::casestatement_instantiation(instance):
-    assert isinstance(instance, vhdl::CaseStatement)
-
-@given(instance=vhdl::CaseStatement_strategy)
-def test_vhdl::casestatement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_vhdl_casestatement_instantiation(instance):
+    assert isinstance(instance, vhdl_CaseStatement)
 
 
-@given(instance=vhdl::CaseStatement_strategy)
-def test_vhdl::casestatement_label_setter(instance):
+
+@given(instance=vhdl_CaseStatement_strategy)
+def test_vhdl_casestatement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=vhdl::WaitStatement_strategy)
+@given(instance=vhdl_IfStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::waitstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::WaitStatement)
-
-@given(instance=vhdl::WaitStatement_strategy)
-def test_vhdl::waitstatement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_vhdl_ifstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_IfStatement)
 
 
-@given(instance=vhdl::WaitStatement_strategy)
-def test_vhdl::waitstatement_label_setter(instance):
+
+@given(instance=vhdl_IfStatement_strategy)
+def test_vhdl_ifstatement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=vhdl::PortMap_strategy)
+@given(instance=vhdl_LoopStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::portmap_instantiation(instance):
-    assert isinstance(instance, vhdl::PortMap)
+def test_vhdl_loopstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_LoopStatement)
 
-@given(instance=vhdl::GenericMap_strategy)
+@given(instance=vhdl_WaitStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::genericmap_instantiation(instance):
-    assert isinstance(instance, vhdl::GenericMap)
+def test_vhdl_waitstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_WaitStatement)
 
-@given(instance=vhdl::SequentialStatement_strategy)
-@settings(max_examples=50)
-def test_vhdl::sequentialstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::SequentialStatement)
 
-@given(instance=vhdl::IdList_strategy)
+
+@given(instance=vhdl_WaitStatement_strategy)
+def test_vhdl_waitstatement_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+@given(instance=vhdl_PortMap_strategy)
 @settings(max_examples=50)
-def test_vhdl::idlist_instantiation(instance):
-    assert isinstance(instance, vhdl::IdList)
+def test_vhdl_portmap_instantiation(instance):
+    assert isinstance(instance, vhdl_PortMap)
+
+@given(instance=vhdl_GenericMap_strategy)
+@settings(max_examples=50)
+def test_vhdl_genericmap_instantiation(instance):
+    assert isinstance(instance, vhdl_GenericMap)
+
+@given(instance=vhdl_SequentialStatement_strategy)
+@settings(max_examples=50)
+def test_vhdl_sequentialstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_SequentialStatement)
+
+@given(instance=vhdl_IdList_strategy)
+@settings(max_examples=50)
+def test_vhdl_idlist_instantiation(instance):
+    assert isinstance(instance, vhdl_IdList)
 
 @given(instance=ArchitectureStatement_strategy)
 @settings(max_examples=50)
 def test_architecturestatement_instantiation(instance):
     assert isinstance(instance, ArchitectureStatement)
 
-@given(instance=vhdl::ComponentInstantiationStatement_strategy)
+@given(instance=vhdl_ForGenerateStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::componentinstantiationstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::ComponentInstantiationStatement)
+def test_vhdl_forgeneratestatement_instantiation(instance):
+    assert isinstance(instance, vhdl_ForGenerateStatement)
 
-@given(instance=vhdl::ComponentInstantiationStatement_strategy)
-def test_vhdl::componentinstantiationstatement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=vhdl_ComponentInstantiationStatement_strategy)
+@settings(max_examples=50)
+def test_vhdl_componentinstantiationstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_ComponentInstantiationStatement)
 
 
-@given(instance=vhdl::ComponentInstantiationStatement_strategy)
-def test_vhdl::componentinstantiationstatement_name_setter(instance):
+
+@given(instance=vhdl_ComponentInstantiationStatement_strategy)
+def test_vhdl_componentinstantiationstatement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vhdl::IfGenerateStatement_strategy)
+@given(instance=vhdl_ConditionalSignalAssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::ifgeneratestatement_instantiation(instance):
-    assert isinstance(instance, vhdl::IfGenerateStatement)
-
-@given(instance=vhdl::EntityInstantiationStatement_strategy)
-@settings(max_examples=50)
-def test_vhdl::entityinstantiationstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::EntityInstantiationStatement)
-
-@given(instance=vhdl::EntityInstantiationStatement_strategy)
-def test_vhdl::entityinstantiationstatement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdl_conditionalsignalassignmentstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_ConditionalSignalAssignmentStatement)
 
 
-@given(instance=vhdl::EntityInstantiationStatement_strategy)
-def test_vhdl::entityinstantiationstatement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=vhdl::ConditionalSignalAssignmentStatement_strategy)
-@settings(max_examples=50)
-def test_vhdl::conditionalsignalassignmentstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::ConditionalSignalAssignmentStatement)
-
-@given(instance=vhdl::ConditionalSignalAssignmentStatement_strategy)
-def test_vhdl::conditionalsignalassignmentstatement_guarded_type(instance):
-    assert isinstance(instance.guarded, bool)
-
-
-@given(instance=vhdl::ConditionalSignalAssignmentStatement_strategy)
-def test_vhdl::conditionalsignalassignmentstatement_guarded_setter(instance):
+@given(instance=vhdl_ConditionalSignalAssignmentStatement_strategy)
+def test_vhdl_conditionalsignalassignmentstatement_guarded_setter(instance):
     original = instance.guarded
     instance.guarded = original
     assert instance.guarded == original
 
-@given(instance=vhdl::ConditionalSignalAssignmentStatement_strategy)
-def test_vhdl::conditionalsignalassignmentstatement_postponed_type(instance):
-    assert isinstance(instance.postponed, bool)
 
 
-@given(instance=vhdl::ConditionalSignalAssignmentStatement_strategy)
-def test_vhdl::conditionalsignalassignmentstatement_postponed_setter(instance):
+@given(instance=vhdl_ConditionalSignalAssignmentStatement_strategy)
+def test_vhdl_conditionalsignalassignmentstatement_postponed_setter(instance):
     original = instance.postponed
     instance.postponed = original
     assert instance.postponed == original
 
-@given(instance=vhdl::ForGenerateStatement_strategy)
+@given(instance=vhdl_EntityInstantiationStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::forgeneratestatement_instantiation(instance):
-    assert isinstance(instance, vhdl::ForGenerateStatement)
+def test_vhdl_entityinstantiationstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_EntityInstantiationStatement)
 
-@given(instance=vhdl::ProcessStatement_strategy)
+
+
+@given(instance=vhdl_EntityInstantiationStatement_strategy)
+def test_vhdl_entityinstantiationstatement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=vhdl_IfGenerateStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::processstatement_instantiation(instance):
-    assert isinstance(instance, vhdl::ProcessStatement)
+def test_vhdl_ifgeneratestatement_instantiation(instance):
+    assert isinstance(instance, vhdl_IfGenerateStatement)
 
-@given(instance=vhdl::ProcessStatement_strategy)
-def test_vhdl::processstatement_postponed_type(instance):
-    assert isinstance(instance.postponed, bool)
+@given(instance=vhdl_ProcessStatement_strategy)
+@settings(max_examples=50)
+def test_vhdl_processstatement_instantiation(instance):
+    assert isinstance(instance, vhdl_ProcessStatement)
 
 
-@given(instance=vhdl::ProcessStatement_strategy)
-def test_vhdl::processstatement_postponed_setter(instance):
+
+@given(instance=vhdl_ProcessStatement_strategy)
+def test_vhdl_processstatement_postponed_setter(instance):
     original = instance.postponed
     instance.postponed = original
     assert instance.postponed == original
 
-@given(instance=vhdl::SubtypeIndication_strategy)
+@given(instance=vhdl_SubtypeIndication_strategy)
 @settings(max_examples=50)
-def test_vhdl::subtypeindication_instantiation(instance):
-    assert isinstance(instance, vhdl::SubtypeIndication)
-
-@given(instance=vhdl::SubtypeIndication_strategy)
-def test_vhdl::subtypeindication_builtin_type_type(instance):
-    assert isinstance(instance.builtin_type, str)
+def test_vhdl_subtypeindication_instantiation(instance):
+    assert isinstance(instance, vhdl_SubtypeIndication)
 
 
-@given(instance=vhdl::SubtypeIndication_strategy)
-def test_vhdl::subtypeindication_builtin_type_setter(instance):
+
+@given(instance=vhdl_SubtypeIndication_strategy)
+def test_vhdl_subtypeindication_builtin_type_setter(instance):
     original = instance.builtin_type
     instance.builtin_type = original
     assert instance.builtin_type == original
@@ -3550,334 +3452,283 @@ def test_vhdl::subtypeindication_builtin_type_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=vhdl::LoopVariable_strategy)
+@given(instance=vhdl_LoopVariable_strategy)
 @settings(max_examples=50)
-def test_vhdl::loopvariable_instantiation(instance):
-    assert isinstance(instance, vhdl::LoopVariable)
+def test_vhdl_loopvariable_instantiation(instance):
+    assert isinstance(instance, vhdl_LoopVariable)
 
-@given(instance=vhdl::Constant_strategy)
+@given(instance=vhdl_Constant_strategy)
 @settings(max_examples=50)
-def test_vhdl::constant_instantiation(instance):
-    assert isinstance(instance, vhdl::Constant)
+def test_vhdl_constant_instantiation(instance):
+    assert isinstance(instance, vhdl_Constant)
 
-@given(instance=vhdl::Port_strategy)
+@given(instance=vhdl_Port_strategy)
 @settings(max_examples=50)
-def test_vhdl::port_instantiation(instance):
-    assert isinstance(instance, vhdl::Port)
-
-@given(instance=vhdl::Port_strategy)
-def test_vhdl::port_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_vhdl_port_instantiation(instance):
+    assert isinstance(instance, vhdl_Port)
 
 
-@given(instance=vhdl::Port_strategy)
-def test_vhdl::port_kind_setter(instance):
+
+@given(instance=vhdl_Port_strategy)
+def test_vhdl_port_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=vhdl::Port_strategy)
-def test_vhdl::port_mode_type(instance):
-    assert isinstance(instance.mode, str)
 
 
-@given(instance=vhdl::Port_strategy)
-def test_vhdl::port_mode_setter(instance):
+@given(instance=vhdl_Port_strategy)
+def test_vhdl_port_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
 
-@given(instance=vhdl::Ports_strategy)
+@given(instance=vhdl_Ports_strategy)
 @settings(max_examples=50)
-def test_vhdl::ports_instantiation(instance):
-    assert isinstance(instance, vhdl::Ports)
+def test_vhdl_ports_instantiation(instance):
+    assert isinstance(instance, vhdl_Ports)
 
-@given(instance=vhdl::Generics_strategy)
+@given(instance=vhdl_Generics_strategy)
 @settings(max_examples=50)
-def test_vhdl::generics_instantiation(instance):
-    assert isinstance(instance, vhdl::Generics)
+def test_vhdl_generics_instantiation(instance):
+    assert isinstance(instance, vhdl_Generics)
 
-@given(instance=vhdl::Var_strategy)
+@given(instance=vhdl_Var_strategy)
 @settings(max_examples=50)
-def test_vhdl::var_instantiation(instance):
-    assert isinstance(instance, vhdl::Var)
+def test_vhdl_var_instantiation(instance):
+    assert isinstance(instance, vhdl_Var)
 
-@given(instance=vhdl::Signal_strategy)
+@given(instance=vhdl_Signal_strategy)
 @settings(max_examples=50)
-def test_vhdl::signal_instantiation(instance):
-    assert isinstance(instance, vhdl::Signal)
+def test_vhdl_signal_instantiation(instance):
+    assert isinstance(instance, vhdl_Signal)
 
-@given(instance=package::declarative::item_strategy)
+@given(instance=package_declarative_item_strategy)
 @settings(max_examples=50)
-def test_package::declarative::item_instantiation(instance):
-    assert isinstance(instance, package::declarative::item)
+def test_package_declarative_item_instantiation(instance):
+    assert isinstance(instance, package_declarative_item)
 
 @given(instance=BlockDeclarativeItem_strategy)
 @settings(max_examples=50)
 def test_blockdeclarativeitem_instantiation(instance):
     assert isinstance(instance, BlockDeclarativeItem)
 
-@given(instance=vhdl::VariableDeclaration_strategy)
+@given(instance=vhdl_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_vhdl::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, vhdl::VariableDeclaration)
-
-@given(instance=vhdl::VariableDeclaration_strategy)
-def test_vhdl::variabledeclaration_shared_type(instance):
-    assert isinstance(instance.shared, bool)
+def test_vhdl_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, vhdl_VariableDeclaration)
 
 
-@given(instance=vhdl::VariableDeclaration_strategy)
-def test_vhdl::variabledeclaration_shared_setter(instance):
+
+@given(instance=vhdl_VariableDeclaration_strategy)
+def test_vhdl_variabledeclaration_shared_setter(instance):
     original = instance.shared
     instance.shared = original
     assert instance.shared == original
 
-@given(instance=vhdl::AttributeSpecification_strategy)
+@given(instance=vhdl_Type_strategy)
 @settings(max_examples=50)
-def test_vhdl::attributespecification_instantiation(instance):
-    assert isinstance(instance, vhdl::AttributeSpecification)
-
-@given(instance=vhdl::AttributeSpecification_strategy)
-def test_vhdl::attributespecification_class__type(instance):
-    assert isinstance(instance.class_, str)
+def test_vhdl_type_instantiation(instance):
+    assert isinstance(instance, vhdl_Type)
 
 
-@given(instance=vhdl::AttributeSpecification_strategy)
-def test_vhdl::attributespecification_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
 
-@given(instance=vhdl::AttributeSpecification_strategy)
-def test_vhdl::attributespecification_entity_type(instance):
-    assert isinstance(instance.entity, str)
-
-
-@given(instance=vhdl::AttributeSpecification_strategy)
-def test_vhdl::attributespecification_entity_setter(instance):
-    original = instance.entity
-    instance.entity = original
-    assert instance.entity == original
-
-@given(instance=vhdl::AttributeSpecification_strategy)
-def test_vhdl::attributespecification_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=vhdl::AttributeSpecification_strategy)
-def test_vhdl::attributespecification_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=vhdl::SignalDeclaration_strategy)
-@settings(max_examples=50)
-def test_vhdl::signaldeclaration_instantiation(instance):
-    assert isinstance(instance, vhdl::SignalDeclaration)
-
-@given(instance=vhdl::SignalDeclaration_strategy)
-def test_vhdl::signaldeclaration_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=vhdl::SignalDeclaration_strategy)
-def test_vhdl::signaldeclaration_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=vhdl::Type_strategy)
-@settings(max_examples=50)
-def test_vhdl::type_instantiation(instance):
-    assert isinstance(instance, vhdl::Type)
-
-@given(instance=vhdl::Type_strategy)
-def test_vhdl::type_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=vhdl::Type_strategy)
-def test_vhdl::type_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=vhdl::Type_strategy)
-def test_vhdl::type_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=vhdl::Type_strategy)
-def test_vhdl::type_value_setter(instance):
+@given(instance=vhdl_Type_strategy)
+def test_vhdl_type_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=vhdl::ConstantDeclaration_strategy)
-@settings(max_examples=50)
-def test_vhdl::constantdeclaration_instantiation(instance):
-    assert isinstance(instance, vhdl::ConstantDeclaration)
-
-@given(instance=vhdl::Component_strategy)
-@settings(max_examples=50)
-def test_vhdl::component_instantiation(instance):
-    assert isinstance(instance, vhdl::Component)
-
-@given(instance=vhdl::Component_strategy)
-def test_vhdl::component_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=vhdl::Component_strategy)
-def test_vhdl::component_name_setter(instance):
+@given(instance=vhdl_Type_strategy)
+def test_vhdl_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
+@given(instance=vhdl_ConstantDeclaration_strategy)
 @settings(max_examples=50)
-def test_vhdl::attributedeclaration_instantiation(instance):
-    assert isinstance(instance, vhdl::AttributeDeclaration)
+def test_vhdl_constantdeclaration_instantiation(instance):
+    assert isinstance(instance, vhdl_ConstantDeclaration)
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
-def test_vhdl::attributedeclaration_type_keyword_type(instance):
-    assert isinstance(instance.type_keyword, str)
+@given(instance=vhdl_SignalDeclaration_strategy)
+@settings(max_examples=50)
+def test_vhdl_signaldeclaration_instantiation(instance):
+    assert isinstance(instance, vhdl_SignalDeclaration)
 
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
-def test_vhdl::attributedeclaration_type_keyword_setter(instance):
+
+@given(instance=vhdl_SignalDeclaration_strategy)
+def test_vhdl_signaldeclaration_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=vhdl_Component_strategy)
+@settings(max_examples=50)
+def test_vhdl_component_instantiation(instance):
+    assert isinstance(instance, vhdl_Component)
+
+
+
+@given(instance=vhdl_Component_strategy)
+def test_vhdl_component_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=vhdl_AttributeDeclaration_strategy)
+@settings(max_examples=50)
+def test_vhdl_attributedeclaration_instantiation(instance):
+    assert isinstance(instance, vhdl_AttributeDeclaration)
+
+
+
+@given(instance=vhdl_AttributeDeclaration_strategy)
+def test_vhdl_attributedeclaration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=vhdl_AttributeDeclaration_strategy)
+def test_vhdl_attributedeclaration_type_keyword_setter(instance):
     original = instance.type_keyword
     instance.type_keyword = original
     assert instance.type_keyword == original
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
-def test_vhdl::attributedeclaration_type_id_type(instance):
-    assert isinstance(instance.type_id, str)
 
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
-def test_vhdl::attributedeclaration_type_id_setter(instance):
+@given(instance=vhdl_AttributeDeclaration_strategy)
+def test_vhdl_attributedeclaration_type_id_setter(instance):
     original = instance.type_id
     instance.type_id = original
     assert instance.type_id == original
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
-def test_vhdl::attributedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=vhdl_AttributeSpecification_strategy)
+@settings(max_examples=50)
+def test_vhdl_attributespecification_instantiation(instance):
+    assert isinstance(instance, vhdl_AttributeSpecification)
 
 
-@given(instance=vhdl::AttributeDeclaration_strategy)
-def test_vhdl::attributedeclaration_name_setter(instance):
+
+@given(instance=vhdl_AttributeSpecification_strategy)
+def test_vhdl_attributespecification_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vhdl::Alias_strategy)
+
+
+@given(instance=vhdl_AttributeSpecification_strategy)
+def test_vhdl_attributespecification_entity_setter(instance):
+    original = instance.entity
+    instance.entity = original
+    assert instance.entity == original
+
+
+
+@given(instance=vhdl_AttributeSpecification_strategy)
+def test_vhdl_attributespecification_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=vhdl_Alias_strategy)
 @settings(max_examples=50)
-def test_vhdl::alias_instantiation(instance):
-    assert isinstance(instance, vhdl::Alias)
+def test_vhdl_alias_instantiation(instance):
+    assert isinstance(instance, vhdl_Alias)
 
-@given(instance=vhdl::Generic_strategy)
+@given(instance=vhdl_Generic_strategy)
 @settings(max_examples=50)
-def test_vhdl::generic_instantiation(instance):
-    assert isinstance(instance, vhdl::Generic)
+def test_vhdl_generic_instantiation(instance):
+    assert isinstance(instance, vhdl_Generic)
 
-@given(instance=vhdl::Expression_strategy)
+@given(instance=vhdl_Expression_strategy)
 @settings(max_examples=50)
-def test_vhdl::expression_instantiation(instance):
-    assert isinstance(instance, vhdl::Expression)
-
-@given(instance=vhdl::Expression_strategy)
-def test_vhdl::expression_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
+def test_vhdl_expression_instantiation(instance):
+    assert isinstance(instance, vhdl_Expression)
 
 
-@given(instance=vhdl::Expression_strategy)
-def test_vhdl::expression_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
 
-@given(instance=vhdl::Expression_strategy)
-def test_vhdl::expression_unary_operator_type(instance):
-    assert isinstance(instance.unary_operator, str)
-
-
-@given(instance=vhdl::Expression_strategy)
-def test_vhdl::expression_unary_operator_setter(instance):
+@given(instance=vhdl_Expression_strategy)
+def test_vhdl_expression_unary_operator_setter(instance):
     original = instance.unary_operator
     instance.unary_operator = original
     assert instance.unary_operator == original
 
-@given(instance=vhdl::DesignFile_strategy)
+
+
+@given(instance=vhdl_Expression_strategy)
+def test_vhdl_expression_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+@given(instance=vhdl_DesignFile_strategy)
 @settings(max_examples=50)
-def test_vhdl::designfile_instantiation(instance):
-    assert isinstance(instance, vhdl::DesignFile)
+def test_vhdl_designfile_instantiation(instance):
+    assert isinstance(instance, vhdl_DesignFile)
 
-@given(instance=vhdl::ArchitectureStatement_strategy)
+@given(instance=vhdl_ArchitectureStatement_strategy)
 @settings(max_examples=50)
-def test_vhdl::architecturestatement_instantiation(instance):
-    assert isinstance(instance, vhdl::ArchitectureStatement)
-
-@given(instance=vhdl::ArchitectureStatement_strategy)
-def test_vhdl::architecturestatement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_vhdl_architecturestatement_instantiation(instance):
+    assert isinstance(instance, vhdl_ArchitectureStatement)
 
 
-@given(instance=vhdl::ArchitectureStatement_strategy)
-def test_vhdl::architecturestatement_label_setter(instance):
+
+@given(instance=vhdl_ArchitectureStatement_strategy)
+def test_vhdl_architecturestatement_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=vhdl::BlockDeclarativeItem_strategy)
+@given(instance=vhdl_BlockDeclarativeItem_strategy)
 @settings(max_examples=50)
-def test_vhdl::blockdeclarativeitem_instantiation(instance):
-    assert isinstance(instance, vhdl::BlockDeclarativeItem)
+def test_vhdl_blockdeclarativeitem_instantiation(instance):
+    assert isinstance(instance, vhdl_BlockDeclarativeItem)
 
-@given(instance=vhdl::package::declarative::part_strategy)
+@given(instance=vhdl_package_declarative_part_strategy)
 @settings(max_examples=50)
-def test_vhdl::package::declarative::part_instantiation(instance):
-    assert isinstance(instance, vhdl::package::declarative::part)
+def test_vhdl_package_declarative_part_instantiation(instance):
+    assert isinstance(instance, vhdl_package_declarative_part)
 
-@given(instance=vhdl::package::declarative::item_strategy)
+@given(instance=vhdl_package_declarative_item_strategy)
 @settings(max_examples=50)
-def test_vhdl::package::declarative::item_instantiation(instance):
-    assert isinstance(instance, vhdl::package::declarative::item)
+def test_vhdl_package_declarative_item_instantiation(instance):
+    assert isinstance(instance, vhdl_package_declarative_item)
 
 @given(instance=LibraryUnit_strategy)
 @settings(max_examples=50)
 def test_libraryunit_instantiation(instance):
     assert isinstance(instance, LibraryUnit)
 
-@given(instance=vhdl::Entity_strategy)
+@given(instance=vhdl_Architecture_strategy)
 @settings(max_examples=50)
-def test_vhdl::entity_instantiation(instance):
-    assert isinstance(instance, vhdl::Entity)
+def test_vhdl_architecture_instantiation(instance):
+    assert isinstance(instance, vhdl_Architecture)
 
-@given(instance=vhdl::Architecture_strategy)
+@given(instance=vhdl_Entity_strategy)
 @settings(max_examples=50)
-def test_vhdl::architecture_instantiation(instance):
-    assert isinstance(instance, vhdl::Architecture)
+def test_vhdl_entity_instantiation(instance):
+    assert isinstance(instance, vhdl_Entity)
 
-@given(instance=vhdl::Package_strategy)
+@given(instance=vhdl_Package_strategy)
 @settings(max_examples=50)
-def test_vhdl::package_instantiation(instance):
-    assert isinstance(instance, vhdl::Package)
+def test_vhdl_package_instantiation(instance):
+    assert isinstance(instance, vhdl_Package)
 
-@given(instance=vhdl::Library_strategy)
+@given(instance=vhdl_Library_strategy)
 @settings(max_examples=50)
-def test_vhdl::library_instantiation(instance):
-    assert isinstance(instance, vhdl::Library)
-
-@given(instance=vhdl::Library_strategy)
-def test_vhdl::library_builtin_lib_type(instance):
-    assert isinstance(instance.builtin_lib, str)
+def test_vhdl_library_instantiation(instance):
+    assert isinstance(instance, vhdl_Library)
 
 
-@given(instance=vhdl::Library_strategy)
-def test_vhdl::library_builtin_lib_setter(instance):
+
+@given(instance=vhdl_Library_strategy)
+def test_vhdl_library_builtin_lib_setter(instance):
     original = instance.builtin_lib
     instance.builtin_lib = original
     assert instance.builtin_lib == original
@@ -3887,65 +3738,46 @@ def test_vhdl::library_builtin_lib_setter(instance):
 def test_contextitem_instantiation(instance):
     assert isinstance(instance, ContextItem)
 
-@given(instance=vhdl::LibraryClause_strategy)
+@given(instance=vhdl_LibraryClause_strategy)
 @settings(max_examples=50)
-def test_vhdl::libraryclause_instantiation(instance):
-    assert isinstance(instance, vhdl::LibraryClause)
-
-@given(instance=vhdl::LibraryClause_strategy)
-def test_vhdl::libraryclause_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdl_libraryclause_instantiation(instance):
+    assert isinstance(instance, vhdl_LibraryClause)
 
 
-@given(instance=vhdl::LibraryClause_strategy)
-def test_vhdl::libraryclause_name_setter(instance):
+
+@given(instance=vhdl_LibraryClause_strategy)
+def test_vhdl_libraryclause_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vhdl::UseClause_strategy)
+@given(instance=vhdl_UseClause_strategy)
 @settings(max_examples=50)
-def test_vhdl::useclause_instantiation(instance):
-    assert isinstance(instance, vhdl::UseClause)
-
-@given(instance=vhdl::UseClause_strategy)
-def test_vhdl::useclause_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_vhdl_useclause_instantiation(instance):
+    assert isinstance(instance, vhdl_UseClause)
 
 
-@given(instance=vhdl::UseClause_strategy)
-def test_vhdl::useclause_importedNamespace_setter(instance):
+
+@given(instance=vhdl_UseClause_strategy)
+def test_vhdl_useclause_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=vhdl::LibraryUnit_strategy)
+@given(instance=vhdl_LibraryUnit_strategy)
 @settings(max_examples=50)
-def test_vhdl::libraryunit_instantiation(instance):
-    assert isinstance(instance, vhdl::LibraryUnit)
-
-@given(instance=vhdl::LibraryUnit_strategy)
-def test_vhdl::libraryunit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_vhdl_libraryunit_instantiation(instance):
+    assert isinstance(instance, vhdl_LibraryUnit)
 
 
-@given(instance=vhdl::LibraryUnit_strategy)
-def test_vhdl::libraryunit_name_setter(instance):
+
+@given(instance=vhdl_LibraryUnit_strategy)
+def test_vhdl_libraryunit_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=vhdl::ContextItem_strategy)
+@given(instance=vhdl_ContextItem_strategy)
 @settings(max_examples=50)
-def test_vhdl::contextitem_instantiation(instance):
-    assert isinstance(instance, vhdl::ContextItem)
-
-@given(instance=vhdl::WhileIterationScheme_strategy)
-@settings(max_examples=50)
-def test_vhdl::whileiterationscheme_instantiation(instance):
-    assert isinstance(instance, vhdl::WhileIterationScheme)
-
-@given(instance=vhdl::IterationScheme_strategy)
-@settings(max_examples=50)
-def test_vhdl::iterationscheme_instantiation(instance):
-    assert isinstance(instance, vhdl::IterationScheme)
+def test_vhdl_contextitem_instantiation(instance):
+    assert isinstance(instance, vhdl_ContextItem)

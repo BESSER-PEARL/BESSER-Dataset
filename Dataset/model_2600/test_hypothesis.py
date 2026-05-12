@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::subpackage::SubpackageMetaClass,
+from python_code import (
+    test_subpackage_SubpackageMetaClass,
     SubpackageMetaClass,
-    test::MyMetaClass,
+    test_MyMetaClass,
     MyEnum,
 )
 
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_test::subpackage::subpackagemetaclass_is_not_abstract():
-    assert not inspect.isabstract(test::subpackage::SubpackageMetaClass)
+def test_test_subpackage_subpackagemetaclass_is_not_abstract():
+    assert not inspect.isabstract(test_subpackage_SubpackageMetaClass)
 
 
-def test_test::subpackage::subpackagemetaclass_constructor_exists():
-    assert callable(test::subpackage::SubpackageMetaClass.__init__)
+def test_test_subpackage_subpackagemetaclass_constructor_exists():
+    assert callable(test_subpackage_SubpackageMetaClass.__init__)
 
 
-def test_test::subpackage::subpackagemetaclass_constructor_args():
-    sig = inspect.signature(test::subpackage::SubpackageMetaClass.__init__)
+def test_test_subpackage_subpackagemetaclass_constructor_args():
+    sig = inspect.signature(test_subpackage_SubpackageMetaClass.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_test::subpackage::subpackagemetaclass_has_name():
-    assert hasattr(test::subpackage::SubpackageMetaClass, "name")
+def test_test_subpackage_subpackagemetaclass_has_name():
+    assert hasattr(test_subpackage_SubpackageMetaClass, "name")
     descriptor = None
-    for klass in test::subpackage::SubpackageMetaClass.__mro__:
+    for klass in test_subpackage_SubpackageMetaClass.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -56,33 +56,33 @@ def test_subpackagemetaclass_constructor_args():
 
 
 
-def test_test::mymetaclass_is_not_abstract():
-    assert not inspect.isabstract(test::MyMetaClass)
+def test_test_mymetaclass_is_not_abstract():
+    assert not inspect.isabstract(test_MyMetaClass)
 
 
-def test_test::mymetaclass_constructor_exists():
-    assert callable(test::MyMetaClass.__init__)
+def test_test_mymetaclass_constructor_exists():
+    assert callable(test_MyMetaClass.__init__)
 
 
-def test_test::mymetaclass_constructor_args():
-    sig = inspect.signature(test::MyMetaClass.__init__)
+def test_test_mymetaclass_constructor_args():
+    sig = inspect.signature(test_MyMetaClass.__init__)
     params = list(sig.parameters.keys())
     assert "enumAttr" in params, "Missing parameter 'enumAttr'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_test::mymetaclass_has_enumAttr():
-    assert hasattr(test::MyMetaClass, "enumAttr")
+def test_test_mymetaclass_has_enumAttr():
+    assert hasattr(test_MyMetaClass, "enumAttr")
     descriptor = None
-    for klass in test::MyMetaClass.__mro__:
+    for klass in test_MyMetaClass.__mro__:
         if "enumAttr" in klass.__dict__:
             descriptor = klass.__dict__["enumAttr"]
             break
     assert isinstance(descriptor, property)
 
-def test_test::mymetaclass_has_name():
-    assert hasattr(test::MyMetaClass, "name")
+def test_test_mymetaclass_has_name():
+    assert hasattr(test_MyMetaClass, "name")
     descriptor = None
-    for klass in test::MyMetaClass.__mro__:
+    for klass in test_MyMetaClass.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -115,34 +115,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::subpackage::SubpackageMetaClass_strategy = st.builds(
-    test::subpackage::SubpackageMetaClass,
+test_subpackage_SubpackageMetaClass_strategy = st.builds(
+    test_subpackage_SubpackageMetaClass,
     name=
         safe_text
 )
 SubpackageMetaClass_strategy = st.builds(
     SubpackageMetaClass,
 )
-test::MyMetaClass_strategy = st.builds(
-    test::MyMetaClass,
+test_MyMetaClass_strategy = st.builds(
+    test_MyMetaClass,
     enumAttr=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=test::subpackage::SubpackageMetaClass_strategy)
+@given(instance=test_subpackage_SubpackageMetaClass_strategy)
 @settings(max_examples=50)
-def test_test::subpackage::subpackagemetaclass_instantiation(instance):
-    assert isinstance(instance, test::subpackage::SubpackageMetaClass)
-
-@given(instance=test::subpackage::SubpackageMetaClass_strategy)
-def test_test::subpackage::subpackagemetaclass_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_test_subpackage_subpackagemetaclass_instantiation(instance):
+    assert isinstance(instance, test_subpackage_SubpackageMetaClass)
 
 
-@given(instance=test::subpackage::SubpackageMetaClass_strategy)
-def test_test::subpackage::subpackagemetaclass_name_setter(instance):
+
+@given(instance=test_subpackage_SubpackageMetaClass_strategy)
+def test_test_subpackage_subpackagemetaclass_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -152,29 +149,23 @@ def test_test::subpackage::subpackagemetaclass_name_setter(instance):
 def test_subpackagemetaclass_instantiation(instance):
     assert isinstance(instance, SubpackageMetaClass)
 
-@given(instance=test::MyMetaClass_strategy)
+@given(instance=test_MyMetaClass_strategy)
 @settings(max_examples=50)
-def test_test::mymetaclass_instantiation(instance):
-    assert isinstance(instance, test::MyMetaClass)
-
-@given(instance=test::MyMetaClass_strategy)
-def test_test::mymetaclass_enumAttr_type(instance):
-    assert isinstance(instance.enumAttr, str)
+def test_test_mymetaclass_instantiation(instance):
+    assert isinstance(instance, test_MyMetaClass)
 
 
-@given(instance=test::MyMetaClass_strategy)
-def test_test::mymetaclass_enumAttr_setter(instance):
+
+@given(instance=test_MyMetaClass_strategy)
+def test_test_mymetaclass_enumAttr_setter(instance):
     original = instance.enumAttr
     instance.enumAttr = original
     assert instance.enumAttr == original
 
-@given(instance=test::MyMetaClass_strategy)
-def test_test::mymetaclass_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=test::MyMetaClass_strategy)
-def test_test::mymetaclass_name_setter(instance):
+@given(instance=test_MyMetaClass_strategy)
+def test_test_mymetaclass_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

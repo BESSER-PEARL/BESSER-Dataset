@@ -3,41 +3,41 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sxfm::Data,
-    sxfm::Literal,
+from python_code import (
+    sxfm_Data,
+    sxfm_Literal,
     Literal,
-    sxfm::Atom,
-    sxfm::Not,
-    sxfm::ConstraintableElement,
-    sxfm::ContainableElement,
-    sxfm::ContainerElement,
-    sxfm::CommonFeature,
-    sxfm::VariableFeature,
-    sxfm::FeatureChoice,
+    sxfm_Atom,
+    sxfm_Not,
+    sxfm_ConstraintableElement,
+    sxfm_ContainableElement,
+    sxfm_ContainerElement,
+    sxfm_CommonFeature,
+    sxfm_VariableFeature,
+    sxfm_FeatureChoice,
     VariableFeature,
     CommonFeature,
     ConstraintableElement,
     Feature,
     ContainableElement,
     ContainerElement,
-    sxfm::Optional,
-    sxfm::Mandatory,
-    sxfm::Or,
-    sxfm::Constraint,
-    sxfm::GroupedFeature,
+    sxfm_Optional,
+    sxfm_Mandatory,
+    sxfm_Or,
+    sxfm_Constraint,
+    sxfm_GroupedFeature,
     CardinalizedElement,
-    sxfm::CardinalizedElement,
-    sxfm::Root,
-    sxfm::FeatureModelConfiguaration,
-    sxfm::MetadataSet,
-    sxfm::FeatureTree,
-    sxfm::ConstraintsSet,
-    sxfm::FeatureModel,
-    sxfm::Group,
-    sxfm::Feature,
+    sxfm_CardinalizedElement,
+    sxfm_Root,
+    sxfm_FeatureModelConfiguaration,
+    sxfm_MetadataSet,
+    sxfm_FeatureTree,
+    sxfm_ConstraintsSet,
+    sxfm_FeatureModel,
+    sxfm_Group,
+    sxfm_Feature,
     DecisionType,
 )
 
@@ -47,33 +47,33 @@ from classes import (
 
 
 
-def test_sxfm::data_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Data)
+def test_sxfm_data_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Data)
 
 
-def test_sxfm::data_constructor_exists():
-    assert callable(sxfm::Data.__init__)
+def test_sxfm_data_constructor_exists():
+    assert callable(sxfm_Data.__init__)
 
 
-def test_sxfm::data_constructor_args():
-    sig = inspect.signature(sxfm::Data.__init__)
+def test_sxfm_data_constructor_args():
+    sig = inspect.signature(sxfm_Data.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sxfm::data_has_value():
-    assert hasattr(sxfm::Data, "value")
+def test_sxfm_data_has_value():
+    assert hasattr(sxfm_Data, "value")
     descriptor = None
-    for klass in sxfm::Data.__mro__:
+    for klass in sxfm_Data.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_sxfm::data_has_name():
-    assert hasattr(sxfm::Data, "name")
+def test_sxfm_data_has_name():
+    assert hasattr(sxfm_Data, "name")
     descriptor = None
-    for klass in sxfm::Data.__mro__:
+    for klass in sxfm_Data.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -81,16 +81,16 @@ def test_sxfm::data_has_name():
 
 
 
-def test_sxfm::literal_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Literal)
+def test_sxfm_literal_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Literal)
 
 
-def test_sxfm::literal_constructor_exists():
-    assert callable(sxfm::Literal.__init__)
+def test_sxfm_literal_constructor_exists():
+    assert callable(sxfm_Literal.__init__)
 
 
-def test_sxfm::literal_constructor_args():
-    sig = inspect.signature(sxfm::Literal.__init__)
+def test_sxfm_literal_constructor_args():
+    sig = inspect.signature(sxfm_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,143 +109,143 @@ def test_literal_constructor_args():
 
 
 
-def test_sxfm::atom_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Atom)
+def test_sxfm_atom_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Atom)
 
 
-def test_sxfm::atom_constructor_exists():
-    assert callable(sxfm::Atom.__init__)
+def test_sxfm_atom_constructor_exists():
+    assert callable(sxfm_Atom.__init__)
 
 
-def test_sxfm::atom_constructor_args():
-    sig = inspect.signature(sxfm::Atom.__init__)
+def test_sxfm_atom_constructor_args():
+    sig = inspect.signature(sxfm_Atom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::not_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Not)
+def test_sxfm_not_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Not)
 
 
-def test_sxfm::not_constructor_exists():
-    assert callable(sxfm::Not.__init__)
+def test_sxfm_not_constructor_exists():
+    assert callable(sxfm_Not.__init__)
 
 
-def test_sxfm::not_constructor_args():
-    sig = inspect.signature(sxfm::Not.__init__)
+def test_sxfm_not_constructor_args():
+    sig = inspect.signature(sxfm_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::constraintableelement_is_not_abstract():
-    assert not inspect.isabstract(sxfm::ConstraintableElement)
+def test_sxfm_constraintableelement_is_not_abstract():
+    assert not inspect.isabstract(sxfm_ConstraintableElement)
 
 
-def test_sxfm::constraintableelement_constructor_exists():
-    assert callable(sxfm::ConstraintableElement.__init__)
+def test_sxfm_constraintableelement_constructor_exists():
+    assert callable(sxfm_ConstraintableElement.__init__)
 
 
-def test_sxfm::constraintableelement_constructor_args():
-    sig = inspect.signature(sxfm::ConstraintableElement.__init__)
+def test_sxfm_constraintableelement_constructor_args():
+    sig = inspect.signature(sxfm_ConstraintableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::containableelement_is_not_abstract():
-    assert not inspect.isabstract(sxfm::ContainableElement)
+def test_sxfm_containableelement_is_not_abstract():
+    assert not inspect.isabstract(sxfm_ContainableElement)
 
 
-def test_sxfm::containableelement_constructor_exists():
-    assert callable(sxfm::ContainableElement.__init__)
+def test_sxfm_containableelement_constructor_exists():
+    assert callable(sxfm_ContainableElement.__init__)
 
 
-def test_sxfm::containableelement_constructor_args():
-    sig = inspect.signature(sxfm::ContainableElement.__init__)
+def test_sxfm_containableelement_constructor_args():
+    sig = inspect.signature(sxfm_ContainableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::containerelement_is_not_abstract():
-    assert not inspect.isabstract(sxfm::ContainerElement)
+def test_sxfm_containerelement_is_not_abstract():
+    assert not inspect.isabstract(sxfm_ContainerElement)
 
 
-def test_sxfm::containerelement_constructor_exists():
-    assert callable(sxfm::ContainerElement.__init__)
+def test_sxfm_containerelement_constructor_exists():
+    assert callable(sxfm_ContainerElement.__init__)
 
 
-def test_sxfm::containerelement_constructor_args():
-    sig = inspect.signature(sxfm::ContainerElement.__init__)
+def test_sxfm_containerelement_constructor_args():
+    sig = inspect.signature(sxfm_ContainerElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::commonfeature_is_not_abstract():
-    assert not inspect.isabstract(sxfm::CommonFeature)
+def test_sxfm_commonfeature_is_not_abstract():
+    assert not inspect.isabstract(sxfm_CommonFeature)
 
 
-def test_sxfm::commonfeature_constructor_exists():
-    assert callable(sxfm::CommonFeature.__init__)
+def test_sxfm_commonfeature_constructor_exists():
+    assert callable(sxfm_CommonFeature.__init__)
 
 
-def test_sxfm::commonfeature_constructor_args():
-    sig = inspect.signature(sxfm::CommonFeature.__init__)
+def test_sxfm_commonfeature_constructor_args():
+    sig = inspect.signature(sxfm_CommonFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::variablefeature_is_not_abstract():
-    assert not inspect.isabstract(sxfm::VariableFeature)
+def test_sxfm_variablefeature_is_not_abstract():
+    assert not inspect.isabstract(sxfm_VariableFeature)
 
 
-def test_sxfm::variablefeature_constructor_exists():
-    assert callable(sxfm::VariableFeature.__init__)
+def test_sxfm_variablefeature_constructor_exists():
+    assert callable(sxfm_VariableFeature.__init__)
 
 
-def test_sxfm::variablefeature_constructor_args():
-    sig = inspect.signature(sxfm::VariableFeature.__init__)
+def test_sxfm_variablefeature_constructor_args():
+    sig = inspect.signature(sxfm_VariableFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::featurechoice_is_not_abstract():
-    assert not inspect.isabstract(sxfm::FeatureChoice)
+def test_sxfm_featurechoice_is_not_abstract():
+    assert not inspect.isabstract(sxfm_FeatureChoice)
 
 
-def test_sxfm::featurechoice_constructor_exists():
-    assert callable(sxfm::FeatureChoice.__init__)
+def test_sxfm_featurechoice_constructor_exists():
+    assert callable(sxfm_FeatureChoice.__init__)
 
 
-def test_sxfm::featurechoice_constructor_args():
-    sig = inspect.signature(sxfm::FeatureChoice.__init__)
+def test_sxfm_featurechoice_constructor_args():
+    sig = inspect.signature(sxfm_FeatureChoice.__init__)
     params = list(sig.parameters.keys())
-    assert "decisionType" in params, "Missing parameter 'decisionType'"
-    assert "selected" in params, "Missing parameter 'selected'"
     assert "decisionStep" in params, "Missing parameter 'decisionStep'"
+    assert "selected" in params, "Missing parameter 'selected'"
+    assert "decisionType" in params, "Missing parameter 'decisionType'"
 
-def test_sxfm::featurechoice_has_decisionType():
-    assert hasattr(sxfm::FeatureChoice, "decisionType")
+def test_sxfm_featurechoice_has_decisionStep():
+    assert hasattr(sxfm_FeatureChoice, "decisionStep")
     descriptor = None
-    for klass in sxfm::FeatureChoice.__mro__:
-        if "decisionType" in klass.__dict__:
-            descriptor = klass.__dict__["decisionType"]
+    for klass in sxfm_FeatureChoice.__mro__:
+        if "decisionStep" in klass.__dict__:
+            descriptor = klass.__dict__["decisionStep"]
             break
     assert isinstance(descriptor, property)
 
-def test_sxfm::featurechoice_has_selected():
-    assert hasattr(sxfm::FeatureChoice, "selected")
+def test_sxfm_featurechoice_has_selected():
+    assert hasattr(sxfm_FeatureChoice, "selected")
     descriptor = None
-    for klass in sxfm::FeatureChoice.__mro__:
+    for klass in sxfm_FeatureChoice.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
             break
     assert isinstance(descriptor, property)
 
-def test_sxfm::featurechoice_has_decisionStep():
-    assert hasattr(sxfm::FeatureChoice, "decisionStep")
+def test_sxfm_featurechoice_has_decisionType():
+    assert hasattr(sxfm_FeatureChoice, "decisionType")
     descriptor = None
-    for klass in sxfm::FeatureChoice.__mro__:
-        if "decisionStep" in klass.__dict__:
-            descriptor = klass.__dict__["decisionStep"]
+    for klass in sxfm_FeatureChoice.__mro__:
+        if "decisionType" in klass.__dict__:
+            descriptor = klass.__dict__["decisionType"]
             break
     assert isinstance(descriptor, property)
 
@@ -335,65 +335,65 @@ def test_containerelement_constructor_args():
 
 
 
-def test_sxfm::optional_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Optional)
+def test_sxfm_optional_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Optional)
 
 
-def test_sxfm::optional_constructor_exists():
-    assert callable(sxfm::Optional.__init__)
+def test_sxfm_optional_constructor_exists():
+    assert callable(sxfm_Optional.__init__)
 
 
-def test_sxfm::optional_constructor_args():
-    sig = inspect.signature(sxfm::Optional.__init__)
+def test_sxfm_optional_constructor_args():
+    sig = inspect.signature(sxfm_Optional.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::mandatory_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Mandatory)
+def test_sxfm_mandatory_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Mandatory)
 
 
-def test_sxfm::mandatory_constructor_exists():
-    assert callable(sxfm::Mandatory.__init__)
+def test_sxfm_mandatory_constructor_exists():
+    assert callable(sxfm_Mandatory.__init__)
 
 
-def test_sxfm::mandatory_constructor_args():
-    sig = inspect.signature(sxfm::Mandatory.__init__)
+def test_sxfm_mandatory_constructor_args():
+    sig = inspect.signature(sxfm_Mandatory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::or_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Or)
+def test_sxfm_or_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Or)
 
 
-def test_sxfm::or_constructor_exists():
-    assert callable(sxfm::Or.__init__)
+def test_sxfm_or_constructor_exists():
+    assert callable(sxfm_Or.__init__)
 
 
-def test_sxfm::or_constructor_args():
-    sig = inspect.signature(sxfm::Or.__init__)
+def test_sxfm_or_constructor_args():
+    sig = inspect.signature(sxfm_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::constraint_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Constraint)
+def test_sxfm_constraint_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Constraint)
 
 
-def test_sxfm::constraint_constructor_exists():
-    assert callable(sxfm::Constraint.__init__)
+def test_sxfm_constraint_constructor_exists():
+    assert callable(sxfm_Constraint.__init__)
 
 
-def test_sxfm::constraint_constructor_args():
-    sig = inspect.signature(sxfm::Constraint.__init__)
+def test_sxfm_constraint_constructor_args():
+    sig = inspect.signature(sxfm_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_sxfm::constraint_has_id():
-    assert hasattr(sxfm::Constraint, "id")
+def test_sxfm_constraint_has_id():
+    assert hasattr(sxfm_Constraint, "id")
     descriptor = None
-    for klass in sxfm::Constraint.__mro__:
+    for klass in sxfm_Constraint.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -401,16 +401,16 @@ def test_sxfm::constraint_has_id():
 
 
 
-def test_sxfm::groupedfeature_is_not_abstract():
-    assert not inspect.isabstract(sxfm::GroupedFeature)
+def test_sxfm_groupedfeature_is_not_abstract():
+    assert not inspect.isabstract(sxfm_GroupedFeature)
 
 
-def test_sxfm::groupedfeature_constructor_exists():
-    assert callable(sxfm::GroupedFeature.__init__)
+def test_sxfm_groupedfeature_constructor_exists():
+    assert callable(sxfm_GroupedFeature.__init__)
 
 
-def test_sxfm::groupedfeature_constructor_args():
-    sig = inspect.signature(sxfm::GroupedFeature.__init__)
+def test_sxfm_groupedfeature_constructor_args():
+    sig = inspect.signature(sxfm_GroupedFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -429,33 +429,33 @@ def test_cardinalizedelement_constructor_args():
 
 
 
-def test_sxfm::cardinalizedelement_is_not_abstract():
-    assert not inspect.isabstract(sxfm::CardinalizedElement)
+def test_sxfm_cardinalizedelement_is_not_abstract():
+    assert not inspect.isabstract(sxfm_CardinalizedElement)
 
 
-def test_sxfm::cardinalizedelement_constructor_exists():
-    assert callable(sxfm::CardinalizedElement.__init__)
+def test_sxfm_cardinalizedelement_constructor_exists():
+    assert callable(sxfm_CardinalizedElement.__init__)
 
 
-def test_sxfm::cardinalizedelement_constructor_args():
-    sig = inspect.signature(sxfm::CardinalizedElement.__init__)
+def test_sxfm_cardinalizedelement_constructor_args():
+    sig = inspect.signature(sxfm_CardinalizedElement.__init__)
     params = list(sig.parameters.keys())
     assert "minCardinality" in params, "Missing parameter 'minCardinality'"
     assert "maxCardinality" in params, "Missing parameter 'maxCardinality'"
 
-def test_sxfm::cardinalizedelement_has_minCardinality():
-    assert hasattr(sxfm::CardinalizedElement, "minCardinality")
+def test_sxfm_cardinalizedelement_has_minCardinality():
+    assert hasattr(sxfm_CardinalizedElement, "minCardinality")
     descriptor = None
-    for klass in sxfm::CardinalizedElement.__mro__:
+    for klass in sxfm_CardinalizedElement.__mro__:
         if "minCardinality" in klass.__dict__:
             descriptor = klass.__dict__["minCardinality"]
             break
     assert isinstance(descriptor, property)
 
-def test_sxfm::cardinalizedelement_has_maxCardinality():
-    assert hasattr(sxfm::CardinalizedElement, "maxCardinality")
+def test_sxfm_cardinalizedelement_has_maxCardinality():
+    assert hasattr(sxfm_CardinalizedElement, "maxCardinality")
     descriptor = None
-    for klass in sxfm::CardinalizedElement.__mro__:
+    for klass in sxfm_CardinalizedElement.__mro__:
         if "maxCardinality" in klass.__dict__:
             descriptor = klass.__dict__["maxCardinality"]
             break
@@ -463,93 +463,93 @@ def test_sxfm::cardinalizedelement_has_maxCardinality():
 
 
 
-def test_sxfm::root_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Root)
+def test_sxfm_root_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Root)
 
 
-def test_sxfm::root_constructor_exists():
-    assert callable(sxfm::Root.__init__)
+def test_sxfm_root_constructor_exists():
+    assert callable(sxfm_Root.__init__)
 
 
-def test_sxfm::root_constructor_args():
-    sig = inspect.signature(sxfm::Root.__init__)
+def test_sxfm_root_constructor_args():
+    sig = inspect.signature(sxfm_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::featuremodelconfiguaration_is_not_abstract():
-    assert not inspect.isabstract(sxfm::FeatureModelConfiguaration)
+def test_sxfm_featuremodelconfiguaration_is_not_abstract():
+    assert not inspect.isabstract(sxfm_FeatureModelConfiguaration)
 
 
-def test_sxfm::featuremodelconfiguaration_constructor_exists():
-    assert callable(sxfm::FeatureModelConfiguaration.__init__)
+def test_sxfm_featuremodelconfiguaration_constructor_exists():
+    assert callable(sxfm_FeatureModelConfiguaration.__init__)
 
 
-def test_sxfm::featuremodelconfiguaration_constructor_args():
-    sig = inspect.signature(sxfm::FeatureModelConfiguaration.__init__)
+def test_sxfm_featuremodelconfiguaration_constructor_args():
+    sig = inspect.signature(sxfm_FeatureModelConfiguaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::metadataset_is_not_abstract():
-    assert not inspect.isabstract(sxfm::MetadataSet)
+def test_sxfm_metadataset_is_not_abstract():
+    assert not inspect.isabstract(sxfm_MetadataSet)
 
 
-def test_sxfm::metadataset_constructor_exists():
-    assert callable(sxfm::MetadataSet.__init__)
+def test_sxfm_metadataset_constructor_exists():
+    assert callable(sxfm_MetadataSet.__init__)
 
 
-def test_sxfm::metadataset_constructor_args():
-    sig = inspect.signature(sxfm::MetadataSet.__init__)
+def test_sxfm_metadataset_constructor_args():
+    sig = inspect.signature(sxfm_MetadataSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::featuretree_is_not_abstract():
-    assert not inspect.isabstract(sxfm::FeatureTree)
+def test_sxfm_featuretree_is_not_abstract():
+    assert not inspect.isabstract(sxfm_FeatureTree)
 
 
-def test_sxfm::featuretree_constructor_exists():
-    assert callable(sxfm::FeatureTree.__init__)
+def test_sxfm_featuretree_constructor_exists():
+    assert callable(sxfm_FeatureTree.__init__)
 
 
-def test_sxfm::featuretree_constructor_args():
-    sig = inspect.signature(sxfm::FeatureTree.__init__)
+def test_sxfm_featuretree_constructor_args():
+    sig = inspect.signature(sxfm_FeatureTree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::constraintsset_is_not_abstract():
-    assert not inspect.isabstract(sxfm::ConstraintsSet)
+def test_sxfm_constraintsset_is_not_abstract():
+    assert not inspect.isabstract(sxfm_ConstraintsSet)
 
 
-def test_sxfm::constraintsset_constructor_exists():
-    assert callable(sxfm::ConstraintsSet.__init__)
+def test_sxfm_constraintsset_constructor_exists():
+    assert callable(sxfm_ConstraintsSet.__init__)
 
 
-def test_sxfm::constraintsset_constructor_args():
-    sig = inspect.signature(sxfm::ConstraintsSet.__init__)
+def test_sxfm_constraintsset_constructor_args():
+    sig = inspect.signature(sxfm_ConstraintsSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sxfm::featuremodel_is_not_abstract():
-    assert not inspect.isabstract(sxfm::FeatureModel)
+def test_sxfm_featuremodel_is_not_abstract():
+    assert not inspect.isabstract(sxfm_FeatureModel)
 
 
-def test_sxfm::featuremodel_constructor_exists():
-    assert callable(sxfm::FeatureModel.__init__)
+def test_sxfm_featuremodel_constructor_exists():
+    assert callable(sxfm_FeatureModel.__init__)
 
 
-def test_sxfm::featuremodel_constructor_args():
-    sig = inspect.signature(sxfm::FeatureModel.__init__)
+def test_sxfm_featuremodel_constructor_args():
+    sig = inspect.signature(sxfm_FeatureModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sxfm::featuremodel_has_name():
-    assert hasattr(sxfm::FeatureModel, "name")
+def test_sxfm_featuremodel_has_name():
+    assert hasattr(sxfm_FeatureModel, "name")
     descriptor = None
-    for klass in sxfm::FeatureModel.__mro__:
+    for klass in sxfm_FeatureModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -557,23 +557,23 @@ def test_sxfm::featuremodel_has_name():
 
 
 
-def test_sxfm::group_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Group)
+def test_sxfm_group_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Group)
 
 
-def test_sxfm::group_constructor_exists():
-    assert callable(sxfm::Group.__init__)
+def test_sxfm_group_constructor_exists():
+    assert callable(sxfm_Group.__init__)
 
 
-def test_sxfm::group_constructor_args():
-    sig = inspect.signature(sxfm::Group.__init__)
+def test_sxfm_group_constructor_args():
+    sig = inspect.signature(sxfm_Group.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_sxfm::group_has_id():
-    assert hasattr(sxfm::Group, "id")
+def test_sxfm_group_has_id():
+    assert hasattr(sxfm_Group, "id")
     descriptor = None
-    for klass in sxfm::Group.__mro__:
+    for klass in sxfm_Group.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -581,55 +581,55 @@ def test_sxfm::group_has_id():
 
 
 
-def test_sxfm::feature_is_not_abstract():
-    assert not inspect.isabstract(sxfm::Feature)
+def test_sxfm_feature_is_not_abstract():
+    assert not inspect.isabstract(sxfm_Feature)
 
 
-def test_sxfm::feature_constructor_exists():
-    assert callable(sxfm::Feature.__init__)
+def test_sxfm_feature_constructor_exists():
+    assert callable(sxfm_Feature.__init__)
 
 
-def test_sxfm::feature_constructor_args():
-    sig = inspect.signature(sxfm::Feature.__init__)
+def test_sxfm_feature_constructor_args():
+    sig = inspect.signature(sxfm_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "treeLevel" in params, "Missing parameter 'treeLevel'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_sxfm::feature_has_name():
-    assert hasattr(sxfm::Feature, "name")
+def test_sxfm_feature_has_description():
+    assert hasattr(sxfm_Feature, "description")
     descriptor = None
-    for klass in sxfm::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sxfm::feature_has_description():
-    assert hasattr(sxfm::Feature, "description")
-    descriptor = None
-    for klass in sxfm::Feature.__mro__:
+    for klass in sxfm_Feature.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_sxfm::feature_has_id():
-    assert hasattr(sxfm::Feature, "id")
+def test_sxfm_feature_has_treeLevel():
+    assert hasattr(sxfm_Feature, "treeLevel")
     descriptor = None
-    for klass in sxfm::Feature.__mro__:
+    for klass in sxfm_Feature.__mro__:
+        if "treeLevel" in klass.__dict__:
+            descriptor = klass.__dict__["treeLevel"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sxfm_feature_has_id():
+    assert hasattr(sxfm_Feature, "id")
+    descriptor = None
+    for klass in sxfm_Feature.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_sxfm::feature_has_treeLevel():
-    assert hasattr(sxfm::Feature, "treeLevel")
+def test_sxfm_feature_has_name():
+    assert hasattr(sxfm_Feature, "name")
     descriptor = None
-    for klass in sxfm::Feature.__mro__:
-        if "treeLevel" in klass.__dict__:
-            descriptor = klass.__dict__["treeLevel"]
+    for klass in sxfm_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -641,9 +641,9 @@ def test_decisiontype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DecisionType]
     expected_literals = [
-        "manual",
         "autocompleted",
         "propagated",
+        "manual",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -661,48 +661,48 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sxfm::Data_strategy = st.builds(
-    sxfm::Data,
+sxfm_Data_strategy = st.builds(
+    sxfm_Data,
     value=
         safe_text,
     name=
         safe_text
 )
-sxfm::Literal_strategy = st.builds(
-    sxfm::Literal,
+sxfm_Literal_strategy = st.builds(
+    sxfm_Literal,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-sxfm::Atom_strategy = st.builds(
-    sxfm::Atom,
+sxfm_Atom_strategy = st.builds(
+    sxfm_Atom,
 )
-sxfm::Not_strategy = st.builds(
-    sxfm::Not,
+sxfm_Not_strategy = st.builds(
+    sxfm_Not,
 )
-sxfm::ConstraintableElement_strategy = st.builds(
-    sxfm::ConstraintableElement,
+sxfm_ConstraintableElement_strategy = st.builds(
+    sxfm_ConstraintableElement,
 )
-sxfm::ContainableElement_strategy = st.builds(
-    sxfm::ContainableElement,
+sxfm_ContainableElement_strategy = st.builds(
+    sxfm_ContainableElement,
 )
-sxfm::ContainerElement_strategy = st.builds(
-    sxfm::ContainerElement,
+sxfm_ContainerElement_strategy = st.builds(
+    sxfm_ContainerElement,
 )
-sxfm::CommonFeature_strategy = st.builds(
-    sxfm::CommonFeature,
+sxfm_CommonFeature_strategy = st.builds(
+    sxfm_CommonFeature,
 )
-sxfm::VariableFeature_strategy = st.builds(
-    sxfm::VariableFeature,
+sxfm_VariableFeature_strategy = st.builds(
+    sxfm_VariableFeature,
 )
-sxfm::FeatureChoice_strategy = st.builds(
-    sxfm::FeatureChoice,
-    decisionType=
-        safe_text,
+sxfm_FeatureChoice_strategy = st.builds(
+    sxfm_FeatureChoice,
+    decisionStep=
+        st.integers(),
     selected=
         st.booleans(),
-    decisionStep=
-        st.integers()
+    decisionType=
+        safe_text
 )
 VariableFeature_strategy = st.builds(
     VariableFeature,
@@ -722,179 +722,164 @@ ContainableElement_strategy = st.builds(
 ContainerElement_strategy = st.builds(
     ContainerElement,
 )
-sxfm::Optional_strategy = st.builds(
-    sxfm::Optional,
+sxfm_Optional_strategy = st.builds(
+    sxfm_Optional,
 )
-sxfm::Mandatory_strategy = st.builds(
-    sxfm::Mandatory,
+sxfm_Mandatory_strategy = st.builds(
+    sxfm_Mandatory,
 )
-sxfm::Or_strategy = st.builds(
-    sxfm::Or,
+sxfm_Or_strategy = st.builds(
+    sxfm_Or,
 )
-sxfm::Constraint_strategy = st.builds(
-    sxfm::Constraint,
+sxfm_Constraint_strategy = st.builds(
+    sxfm_Constraint,
     id=
         st.integers()
 )
-sxfm::GroupedFeature_strategy = st.builds(
-    sxfm::GroupedFeature,
+sxfm_GroupedFeature_strategy = st.builds(
+    sxfm_GroupedFeature,
 )
 CardinalizedElement_strategy = st.builds(
     CardinalizedElement,
 )
-sxfm::CardinalizedElement_strategy = st.builds(
-    sxfm::CardinalizedElement,
+sxfm_CardinalizedElement_strategy = st.builds(
+    sxfm_CardinalizedElement,
     minCardinality=
         st.integers(),
     maxCardinality=
         st.integers()
 )
-sxfm::Root_strategy = st.builds(
-    sxfm::Root,
+sxfm_Root_strategy = st.builds(
+    sxfm_Root,
 )
-sxfm::FeatureModelConfiguaration_strategy = st.builds(
-    sxfm::FeatureModelConfiguaration,
+sxfm_FeatureModelConfiguaration_strategy = st.builds(
+    sxfm_FeatureModelConfiguaration,
 )
-sxfm::MetadataSet_strategy = st.builds(
-    sxfm::MetadataSet,
+sxfm_MetadataSet_strategy = st.builds(
+    sxfm_MetadataSet,
 )
-sxfm::FeatureTree_strategy = st.builds(
-    sxfm::FeatureTree,
+sxfm_FeatureTree_strategy = st.builds(
+    sxfm_FeatureTree,
 )
-sxfm::ConstraintsSet_strategy = st.builds(
-    sxfm::ConstraintsSet,
+sxfm_ConstraintsSet_strategy = st.builds(
+    sxfm_ConstraintsSet,
 )
-sxfm::FeatureModel_strategy = st.builds(
-    sxfm::FeatureModel,
+sxfm_FeatureModel_strategy = st.builds(
+    sxfm_FeatureModel,
     name=
         safe_text
 )
-sxfm::Group_strategy = st.builds(
-    sxfm::Group,
+sxfm_Group_strategy = st.builds(
+    sxfm_Group,
     id=
         safe_text
 )
-sxfm::Feature_strategy = st.builds(
-    sxfm::Feature,
-    name=
-        safe_text,
+sxfm_Feature_strategy = st.builds(
+    sxfm_Feature,
     description=
         safe_text,
+    treeLevel=
+        st.integers(),
     id=
         safe_text,
-    treeLevel=
-        st.integers()
+    name=
+        safe_text
 )
 
-@given(instance=sxfm::Data_strategy)
+@given(instance=sxfm_Data_strategy)
 @settings(max_examples=50)
-def test_sxfm::data_instantiation(instance):
-    assert isinstance(instance, sxfm::Data)
-
-@given(instance=sxfm::Data_strategy)
-def test_sxfm::data_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_sxfm_data_instantiation(instance):
+    assert isinstance(instance, sxfm_Data)
 
 
-@given(instance=sxfm::Data_strategy)
-def test_sxfm::data_value_setter(instance):
+
+@given(instance=sxfm_Data_strategy)
+def test_sxfm_data_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=sxfm::Data_strategy)
-def test_sxfm::data_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sxfm::Data_strategy)
-def test_sxfm::data_name_setter(instance):
+@given(instance=sxfm_Data_strategy)
+def test_sxfm_data_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sxfm::Literal_strategy)
+@given(instance=sxfm_Literal_strategy)
 @settings(max_examples=50)
-def test_sxfm::literal_instantiation(instance):
-    assert isinstance(instance, sxfm::Literal)
+def test_sxfm_literal_instantiation(instance):
+    assert isinstance(instance, sxfm_Literal)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=sxfm::Atom_strategy)
+@given(instance=sxfm_Atom_strategy)
 @settings(max_examples=50)
-def test_sxfm::atom_instantiation(instance):
-    assert isinstance(instance, sxfm::Atom)
+def test_sxfm_atom_instantiation(instance):
+    assert isinstance(instance, sxfm_Atom)
 
-@given(instance=sxfm::Not_strategy)
+@given(instance=sxfm_Not_strategy)
 @settings(max_examples=50)
-def test_sxfm::not_instantiation(instance):
-    assert isinstance(instance, sxfm::Not)
+def test_sxfm_not_instantiation(instance):
+    assert isinstance(instance, sxfm_Not)
 
-@given(instance=sxfm::ConstraintableElement_strategy)
+@given(instance=sxfm_ConstraintableElement_strategy)
 @settings(max_examples=50)
-def test_sxfm::constraintableelement_instantiation(instance):
-    assert isinstance(instance, sxfm::ConstraintableElement)
+def test_sxfm_constraintableelement_instantiation(instance):
+    assert isinstance(instance, sxfm_ConstraintableElement)
 
-@given(instance=sxfm::ContainableElement_strategy)
+@given(instance=sxfm_ContainableElement_strategy)
 @settings(max_examples=50)
-def test_sxfm::containableelement_instantiation(instance):
-    assert isinstance(instance, sxfm::ContainableElement)
+def test_sxfm_containableelement_instantiation(instance):
+    assert isinstance(instance, sxfm_ContainableElement)
 
-@given(instance=sxfm::ContainerElement_strategy)
+@given(instance=sxfm_ContainerElement_strategy)
 @settings(max_examples=50)
-def test_sxfm::containerelement_instantiation(instance):
-    assert isinstance(instance, sxfm::ContainerElement)
+def test_sxfm_containerelement_instantiation(instance):
+    assert isinstance(instance, sxfm_ContainerElement)
 
-@given(instance=sxfm::CommonFeature_strategy)
+@given(instance=sxfm_CommonFeature_strategy)
 @settings(max_examples=50)
-def test_sxfm::commonfeature_instantiation(instance):
-    assert isinstance(instance, sxfm::CommonFeature)
+def test_sxfm_commonfeature_instantiation(instance):
+    assert isinstance(instance, sxfm_CommonFeature)
 
-@given(instance=sxfm::VariableFeature_strategy)
+@given(instance=sxfm_VariableFeature_strategy)
 @settings(max_examples=50)
-def test_sxfm::variablefeature_instantiation(instance):
-    assert isinstance(instance, sxfm::VariableFeature)
+def test_sxfm_variablefeature_instantiation(instance):
+    assert isinstance(instance, sxfm_VariableFeature)
 
-@given(instance=sxfm::FeatureChoice_strategy)
+@given(instance=sxfm_FeatureChoice_strategy)
 @settings(max_examples=50)
-def test_sxfm::featurechoice_instantiation(instance):
-    assert isinstance(instance, sxfm::FeatureChoice)
-
-@given(instance=sxfm::FeatureChoice_strategy)
-def test_sxfm::featurechoice_decisionType_type(instance):
-    assert isinstance(instance.decisionType, str)
+def test_sxfm_featurechoice_instantiation(instance):
+    assert isinstance(instance, sxfm_FeatureChoice)
 
 
-@given(instance=sxfm::FeatureChoice_strategy)
-def test_sxfm::featurechoice_decisionType_setter(instance):
-    original = instance.decisionType
-    instance.decisionType = original
-    assert instance.decisionType == original
 
-@given(instance=sxfm::FeatureChoice_strategy)
-def test_sxfm::featurechoice_selected_type(instance):
-    assert isinstance(instance.selected, bool)
+@given(instance=sxfm_FeatureChoice_strategy)
+def test_sxfm_featurechoice_decisionStep_setter(instance):
+    original = instance.decisionStep
+    instance.decisionStep = original
+    assert instance.decisionStep == original
 
 
-@given(instance=sxfm::FeatureChoice_strategy)
-def test_sxfm::featurechoice_selected_setter(instance):
+
+@given(instance=sxfm_FeatureChoice_strategy)
+def test_sxfm_featurechoice_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
 
-@given(instance=sxfm::FeatureChoice_strategy)
-def test_sxfm::featurechoice_decisionStep_type(instance):
-    assert isinstance(instance.decisionStep, int)
 
 
-@given(instance=sxfm::FeatureChoice_strategy)
-def test_sxfm::featurechoice_decisionStep_setter(instance):
-    original = instance.decisionStep
-    instance.decisionStep = original
-    assert instance.decisionStep == original
+@given(instance=sxfm_FeatureChoice_strategy)
+def test_sxfm_featurechoice_decisionType_setter(instance):
+    original = instance.decisionType
+    instance.decisionType = original
+    assert instance.decisionType == original
 
 @given(instance=VariableFeature_strategy)
 @settings(max_examples=50)
@@ -926,176 +911,149 @@ def test_containableelement_instantiation(instance):
 def test_containerelement_instantiation(instance):
     assert isinstance(instance, ContainerElement)
 
-@given(instance=sxfm::Optional_strategy)
+@given(instance=sxfm_Optional_strategy)
 @settings(max_examples=50)
-def test_sxfm::optional_instantiation(instance):
-    assert isinstance(instance, sxfm::Optional)
+def test_sxfm_optional_instantiation(instance):
+    assert isinstance(instance, sxfm_Optional)
 
-@given(instance=sxfm::Mandatory_strategy)
+@given(instance=sxfm_Mandatory_strategy)
 @settings(max_examples=50)
-def test_sxfm::mandatory_instantiation(instance):
-    assert isinstance(instance, sxfm::Mandatory)
+def test_sxfm_mandatory_instantiation(instance):
+    assert isinstance(instance, sxfm_Mandatory)
 
-@given(instance=sxfm::Or_strategy)
+@given(instance=sxfm_Or_strategy)
 @settings(max_examples=50)
-def test_sxfm::or_instantiation(instance):
-    assert isinstance(instance, sxfm::Or)
+def test_sxfm_or_instantiation(instance):
+    assert isinstance(instance, sxfm_Or)
 
-@given(instance=sxfm::Constraint_strategy)
+@given(instance=sxfm_Constraint_strategy)
 @settings(max_examples=50)
-def test_sxfm::constraint_instantiation(instance):
-    assert isinstance(instance, sxfm::Constraint)
-
-@given(instance=sxfm::Constraint_strategy)
-def test_sxfm::constraint_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_sxfm_constraint_instantiation(instance):
+    assert isinstance(instance, sxfm_Constraint)
 
 
-@given(instance=sxfm::Constraint_strategy)
-def test_sxfm::constraint_id_setter(instance):
+
+@given(instance=sxfm_Constraint_strategy)
+def test_sxfm_constraint_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sxfm::GroupedFeature_strategy)
+@given(instance=sxfm_GroupedFeature_strategy)
 @settings(max_examples=50)
-def test_sxfm::groupedfeature_instantiation(instance):
-    assert isinstance(instance, sxfm::GroupedFeature)
+def test_sxfm_groupedfeature_instantiation(instance):
+    assert isinstance(instance, sxfm_GroupedFeature)
 
 @given(instance=CardinalizedElement_strategy)
 @settings(max_examples=50)
 def test_cardinalizedelement_instantiation(instance):
     assert isinstance(instance, CardinalizedElement)
 
-@given(instance=sxfm::CardinalizedElement_strategy)
+@given(instance=sxfm_CardinalizedElement_strategy)
 @settings(max_examples=50)
-def test_sxfm::cardinalizedelement_instantiation(instance):
-    assert isinstance(instance, sxfm::CardinalizedElement)
-
-@given(instance=sxfm::CardinalizedElement_strategy)
-def test_sxfm::cardinalizedelement_minCardinality_type(instance):
-    assert isinstance(instance.minCardinality, int)
+def test_sxfm_cardinalizedelement_instantiation(instance):
+    assert isinstance(instance, sxfm_CardinalizedElement)
 
 
-@given(instance=sxfm::CardinalizedElement_strategy)
-def test_sxfm::cardinalizedelement_minCardinality_setter(instance):
+
+@given(instance=sxfm_CardinalizedElement_strategy)
+def test_sxfm_cardinalizedelement_minCardinality_setter(instance):
     original = instance.minCardinality
     instance.minCardinality = original
     assert instance.minCardinality == original
 
-@given(instance=sxfm::CardinalizedElement_strategy)
-def test_sxfm::cardinalizedelement_maxCardinality_type(instance):
-    assert isinstance(instance.maxCardinality, int)
 
 
-@given(instance=sxfm::CardinalizedElement_strategy)
-def test_sxfm::cardinalizedelement_maxCardinality_setter(instance):
+@given(instance=sxfm_CardinalizedElement_strategy)
+def test_sxfm_cardinalizedelement_maxCardinality_setter(instance):
     original = instance.maxCardinality
     instance.maxCardinality = original
     assert instance.maxCardinality == original
 
-@given(instance=sxfm::Root_strategy)
+@given(instance=sxfm_Root_strategy)
 @settings(max_examples=50)
-def test_sxfm::root_instantiation(instance):
-    assert isinstance(instance, sxfm::Root)
+def test_sxfm_root_instantiation(instance):
+    assert isinstance(instance, sxfm_Root)
 
-@given(instance=sxfm::FeatureModelConfiguaration_strategy)
+@given(instance=sxfm_FeatureModelConfiguaration_strategy)
 @settings(max_examples=50)
-def test_sxfm::featuremodelconfiguaration_instantiation(instance):
-    assert isinstance(instance, sxfm::FeatureModelConfiguaration)
+def test_sxfm_featuremodelconfiguaration_instantiation(instance):
+    assert isinstance(instance, sxfm_FeatureModelConfiguaration)
 
-@given(instance=sxfm::MetadataSet_strategy)
+@given(instance=sxfm_MetadataSet_strategy)
 @settings(max_examples=50)
-def test_sxfm::metadataset_instantiation(instance):
-    assert isinstance(instance, sxfm::MetadataSet)
+def test_sxfm_metadataset_instantiation(instance):
+    assert isinstance(instance, sxfm_MetadataSet)
 
-@given(instance=sxfm::FeatureTree_strategy)
+@given(instance=sxfm_FeatureTree_strategy)
 @settings(max_examples=50)
-def test_sxfm::featuretree_instantiation(instance):
-    assert isinstance(instance, sxfm::FeatureTree)
+def test_sxfm_featuretree_instantiation(instance):
+    assert isinstance(instance, sxfm_FeatureTree)
 
-@given(instance=sxfm::ConstraintsSet_strategy)
+@given(instance=sxfm_ConstraintsSet_strategy)
 @settings(max_examples=50)
-def test_sxfm::constraintsset_instantiation(instance):
-    assert isinstance(instance, sxfm::ConstraintsSet)
+def test_sxfm_constraintsset_instantiation(instance):
+    assert isinstance(instance, sxfm_ConstraintsSet)
 
-@given(instance=sxfm::FeatureModel_strategy)
+@given(instance=sxfm_FeatureModel_strategy)
 @settings(max_examples=50)
-def test_sxfm::featuremodel_instantiation(instance):
-    assert isinstance(instance, sxfm::FeatureModel)
-
-@given(instance=sxfm::FeatureModel_strategy)
-def test_sxfm::featuremodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sxfm_featuremodel_instantiation(instance):
+    assert isinstance(instance, sxfm_FeatureModel)
 
 
-@given(instance=sxfm::FeatureModel_strategy)
-def test_sxfm::featuremodel_name_setter(instance):
+
+@given(instance=sxfm_FeatureModel_strategy)
+def test_sxfm_featuremodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sxfm::Group_strategy)
+@given(instance=sxfm_Group_strategy)
 @settings(max_examples=50)
-def test_sxfm::group_instantiation(instance):
-    assert isinstance(instance, sxfm::Group)
-
-@given(instance=sxfm::Group_strategy)
-def test_sxfm::group_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_sxfm_group_instantiation(instance):
+    assert isinstance(instance, sxfm_Group)
 
 
-@given(instance=sxfm::Group_strategy)
-def test_sxfm::group_id_setter(instance):
+
+@given(instance=sxfm_Group_strategy)
+def test_sxfm_group_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sxfm::Feature_strategy)
+@given(instance=sxfm_Feature_strategy)
 @settings(max_examples=50)
-def test_sxfm::feature_instantiation(instance):
-    assert isinstance(instance, sxfm::Feature)
-
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sxfm_feature_instantiation(instance):
+    assert isinstance(instance, sxfm_Feature)
 
 
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_description_setter(instance):
+@given(instance=sxfm_Feature_strategy)
+def test_sxfm_feature_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_id_setter(instance):
+@given(instance=sxfm_Feature_strategy)
+def test_sxfm_feature_treeLevel_setter(instance):
+    original = instance.treeLevel
+    instance.treeLevel = original
+    assert instance.treeLevel == original
+
+
+
+@given(instance=sxfm_Feature_strategy)
+def test_sxfm_feature_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_treeLevel_type(instance):
-    assert isinstance(instance.treeLevel, int)
 
 
-@given(instance=sxfm::Feature_strategy)
-def test_sxfm::feature_treeLevel_setter(instance):
-    original = instance.treeLevel
-    instance.treeLevel = original
-    assert instance.treeLevel == original
+@given(instance=sxfm_Feature_strategy)
+def test_sxfm_feature_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

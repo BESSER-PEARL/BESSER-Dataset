@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     OutPortB,
-    typeB::OutType1,
+    typeB_OutType1,
     PortB,
-    typeB::PortB,
-    typeB::OutPortB,
-    typeB::InPortB,
-    typeB::BlockB,
+    typeB_PortB,
+    typeB_OutPortB,
+    typeB_InPortB,
+    typeB_BlockB,
 )
 
 # =============================================================================
@@ -35,16 +35,16 @@ def test_outportb_constructor_args():
 
 
 
-def test_typeb::outtype1_is_not_abstract():
-    assert not inspect.isabstract(typeB::OutType1)
+def test_typeb_outtype1_is_not_abstract():
+    assert not inspect.isabstract(typeB_OutType1)
 
 
-def test_typeb::outtype1_constructor_exists():
-    assert callable(typeB::OutType1.__init__)
+def test_typeb_outtype1_constructor_exists():
+    assert callable(typeB_OutType1.__init__)
 
 
-def test_typeb::outtype1_constructor_args():
-    sig = inspect.signature(typeB::OutType1.__init__)
+def test_typeb_outtype1_constructor_args():
+    sig = inspect.signature(typeB_OutType1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -63,23 +63,23 @@ def test_portb_constructor_args():
 
 
 
-def test_typeb::portb_is_not_abstract():
-    assert not inspect.isabstract(typeB::PortB)
+def test_typeb_portb_is_not_abstract():
+    assert not inspect.isabstract(typeB_PortB)
 
 
-def test_typeb::portb_constructor_exists():
-    assert callable(typeB::PortB.__init__)
+def test_typeb_portb_constructor_exists():
+    assert callable(typeB_PortB.__init__)
 
 
-def test_typeb::portb_constructor_args():
-    sig = inspect.signature(typeB::PortB.__init__)
+def test_typeb_portb_constructor_args():
+    sig = inspect.signature(typeB_PortB.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_typeb::portb_has_id():
-    assert hasattr(typeB::PortB, "id")
+def test_typeb_portb_has_id():
+    assert hasattr(typeB_PortB, "id")
     descriptor = None
-    for klass in typeB::PortB.__mro__:
+    for klass in typeB_PortB.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -87,44 +87,44 @@ def test_typeb::portb_has_id():
 
 
 
-def test_typeb::outportb_is_not_abstract():
-    assert not inspect.isabstract(typeB::OutPortB)
+def test_typeb_outportb_is_not_abstract():
+    assert not inspect.isabstract(typeB_OutPortB)
 
 
-def test_typeb::outportb_constructor_exists():
-    assert callable(typeB::OutPortB.__init__)
+def test_typeb_outportb_constructor_exists():
+    assert callable(typeB_OutPortB.__init__)
 
 
-def test_typeb::outportb_constructor_args():
-    sig = inspect.signature(typeB::OutPortB.__init__)
+def test_typeb_outportb_constructor_args():
+    sig = inspect.signature(typeB_OutPortB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeb::inportb_is_not_abstract():
-    assert not inspect.isabstract(typeB::InPortB)
+def test_typeb_inportb_is_not_abstract():
+    assert not inspect.isabstract(typeB_InPortB)
 
 
-def test_typeb::inportb_constructor_exists():
-    assert callable(typeB::InPortB.__init__)
+def test_typeb_inportb_constructor_exists():
+    assert callable(typeB_InPortB.__init__)
 
 
-def test_typeb::inportb_constructor_args():
-    sig = inspect.signature(typeB::InPortB.__init__)
+def test_typeb_inportb_constructor_args():
+    sig = inspect.signature(typeB_InPortB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typeb::blockb_is_not_abstract():
-    assert not inspect.isabstract(typeB::BlockB)
+def test_typeb_blockb_is_not_abstract():
+    assert not inspect.isabstract(typeB_BlockB)
 
 
-def test_typeb::blockb_constructor_exists():
-    assert callable(typeB::BlockB.__init__)
+def test_typeb_blockb_constructor_exists():
+    assert callable(typeB_BlockB.__init__)
 
 
-def test_typeb::blockb_constructor_args():
-    sig = inspect.signature(typeB::BlockB.__init__)
+def test_typeb_blockb_constructor_args():
+    sig = inspect.signature(typeB_BlockB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -142,25 +142,25 @@ safe_text = st.text(
 OutPortB_strategy = st.builds(
     OutPortB,
 )
-typeB::OutType1_strategy = st.builds(
-    typeB::OutType1,
+typeB_OutType1_strategy = st.builds(
+    typeB_OutType1,
 )
 PortB_strategy = st.builds(
     PortB,
 )
-typeB::PortB_strategy = st.builds(
-    typeB::PortB,
+typeB_PortB_strategy = st.builds(
+    typeB_PortB,
     id=
         st.integers()
 )
-typeB::OutPortB_strategy = st.builds(
-    typeB::OutPortB,
+typeB_OutPortB_strategy = st.builds(
+    typeB_OutPortB,
 )
-typeB::InPortB_strategy = st.builds(
-    typeB::InPortB,
+typeB_InPortB_strategy = st.builds(
+    typeB_InPortB,
 )
-typeB::BlockB_strategy = st.builds(
-    typeB::BlockB,
+typeB_BlockB_strategy = st.builds(
+    typeB_BlockB,
 )
 
 @given(instance=OutPortB_strategy)
@@ -168,43 +168,40 @@ typeB::BlockB_strategy = st.builds(
 def test_outportb_instantiation(instance):
     assert isinstance(instance, OutPortB)
 
-@given(instance=typeB::OutType1_strategy)
+@given(instance=typeB_OutType1_strategy)
 @settings(max_examples=50)
-def test_typeb::outtype1_instantiation(instance):
-    assert isinstance(instance, typeB::OutType1)
+def test_typeb_outtype1_instantiation(instance):
+    assert isinstance(instance, typeB_OutType1)
 
 @given(instance=PortB_strategy)
 @settings(max_examples=50)
 def test_portb_instantiation(instance):
     assert isinstance(instance, PortB)
 
-@given(instance=typeB::PortB_strategy)
+@given(instance=typeB_PortB_strategy)
 @settings(max_examples=50)
-def test_typeb::portb_instantiation(instance):
-    assert isinstance(instance, typeB::PortB)
-
-@given(instance=typeB::PortB_strategy)
-def test_typeb::portb_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_typeb_portb_instantiation(instance):
+    assert isinstance(instance, typeB_PortB)
 
 
-@given(instance=typeB::PortB_strategy)
-def test_typeb::portb_id_setter(instance):
+
+@given(instance=typeB_PortB_strategy)
+def test_typeb_portb_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=typeB::OutPortB_strategy)
+@given(instance=typeB_OutPortB_strategy)
 @settings(max_examples=50)
-def test_typeb::outportb_instantiation(instance):
-    assert isinstance(instance, typeB::OutPortB)
+def test_typeb_outportb_instantiation(instance):
+    assert isinstance(instance, typeB_OutPortB)
 
-@given(instance=typeB::InPortB_strategy)
+@given(instance=typeB_InPortB_strategy)
 @settings(max_examples=50)
-def test_typeb::inportb_instantiation(instance):
-    assert isinstance(instance, typeB::InPortB)
+def test_typeb_inportb_instantiation(instance):
+    assert isinstance(instance, typeB_InPortB)
 
-@given(instance=typeB::BlockB_strategy)
+@given(instance=typeB_BlockB_strategy)
 @settings(max_examples=50)
-def test_typeb::blockb_instantiation(instance):
-    assert isinstance(instance, typeB::BlockB)
+def test_typeb_blockb_instantiation(instance):
+    assert isinstance(instance, typeB_BlockB)

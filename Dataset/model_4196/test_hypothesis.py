@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloWorldDsl::Greeting,
-    helloWorldDsl::Model,
+from python_code import (
+    helloWorldDsl_Greeting,
+    helloWorldDsl_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_helloworlddsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(helloWorldDsl::Greeting)
+def test_helloworlddsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(helloWorldDsl_Greeting)
 
 
-def test_helloworlddsl::greeting_constructor_exists():
-    assert callable(helloWorldDsl::Greeting.__init__)
+def test_helloworlddsl_greeting_constructor_exists():
+    assert callable(helloWorldDsl_Greeting.__init__)
 
 
-def test_helloworlddsl::greeting_constructor_args():
-    sig = inspect.signature(helloWorldDsl::Greeting.__init__)
+def test_helloworlddsl_greeting_constructor_args():
+    sig = inspect.signature(helloWorldDsl_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloworlddsl::greeting_has_name():
-    assert hasattr(helloWorldDsl::Greeting, "name")
+def test_helloworlddsl_greeting_has_name():
+    assert hasattr(helloWorldDsl_Greeting, "name")
     descriptor = None
-    for klass in helloWorldDsl::Greeting.__mro__:
+    for klass in helloWorldDsl_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_helloworlddsl::greeting_has_name():
 
 
 
-def test_helloworlddsl::model_is_not_abstract():
-    assert not inspect.isabstract(helloWorldDsl::Model)
+def test_helloworlddsl_model_is_not_abstract():
+    assert not inspect.isabstract(helloWorldDsl_Model)
 
 
-def test_helloworlddsl::model_constructor_exists():
-    assert callable(helloWorldDsl::Model.__init__)
+def test_helloworlddsl_model_constructor_exists():
+    assert callable(helloWorldDsl_Model.__init__)
 
 
-def test_helloworlddsl::model_constructor_args():
-    sig = inspect.signature(helloWorldDsl::Model.__init__)
+def test_helloworlddsl_model_constructor_args():
+    sig = inspect.signature(helloWorldDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloWorldDsl::Greeting_strategy = st.builds(
-    helloWorldDsl::Greeting,
+helloWorldDsl_Greeting_strategy = st.builds(
+    helloWorldDsl_Greeting,
     name=
         safe_text
 )
-helloWorldDsl::Model_strategy = st.builds(
-    helloWorldDsl::Model,
+helloWorldDsl_Model_strategy = st.builds(
+    helloWorldDsl_Model,
 )
 
-@given(instance=helloWorldDsl::Greeting_strategy)
+@given(instance=helloWorldDsl_Greeting_strategy)
 @settings(max_examples=50)
-def test_helloworlddsl::greeting_instantiation(instance):
-    assert isinstance(instance, helloWorldDsl::Greeting)
-
-@given(instance=helloWorldDsl::Greeting_strategy)
-def test_helloworlddsl::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloworlddsl_greeting_instantiation(instance):
+    assert isinstance(instance, helloWorldDsl_Greeting)
 
 
-@given(instance=helloWorldDsl::Greeting_strategy)
-def test_helloworlddsl::greeting_name_setter(instance):
+
+@given(instance=helloWorldDsl_Greeting_strategy)
+def test_helloworlddsl_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloWorldDsl::Model_strategy)
+@given(instance=helloWorldDsl_Model_strategy)
 @settings(max_examples=50)
-def test_helloworlddsl::model_instantiation(instance):
-    assert isinstance(instance, helloWorldDsl::Model)
+def test_helloworlddsl_model_instantiation(instance):
+    assert isinstance(instance, helloWorldDsl_Model)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testcontainment::B,
-    testcontainment::A,
+from python_code import (
+    testcontainment_B,
+    testcontainment_A,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_testcontainment::b_is_not_abstract():
-    assert not inspect.isabstract(testcontainment::B)
+def test_testcontainment_b_is_not_abstract():
+    assert not inspect.isabstract(testcontainment_B)
 
 
-def test_testcontainment::b_constructor_exists():
-    assert callable(testcontainment::B.__init__)
+def test_testcontainment_b_constructor_exists():
+    assert callable(testcontainment_B.__init__)
 
 
-def test_testcontainment::b_constructor_args():
-    sig = inspect.signature(testcontainment::B.__init__)
+def test_testcontainment_b_constructor_args():
+    sig = inspect.signature(testcontainment_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testcontainment::a_is_not_abstract():
-    assert not inspect.isabstract(testcontainment::A)
+def test_testcontainment_a_is_not_abstract():
+    assert not inspect.isabstract(testcontainment_A)
 
 
-def test_testcontainment::a_constructor_exists():
-    assert callable(testcontainment::A.__init__)
+def test_testcontainment_a_constructor_exists():
+    assert callable(testcontainment_A.__init__)
 
 
-def test_testcontainment::a_constructor_args():
-    sig = inspect.signature(testcontainment::A.__init__)
+def test_testcontainment_a_constructor_args():
+    sig = inspect.signature(testcontainment_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testcontainment::B_strategy = st.builds(
-    testcontainment::B,
+testcontainment_B_strategy = st.builds(
+    testcontainment_B,
 )
-testcontainment::A_strategy = st.builds(
-    testcontainment::A,
+testcontainment_A_strategy = st.builds(
+    testcontainment_A,
 )
 
-@given(instance=testcontainment::B_strategy)
+@given(instance=testcontainment_B_strategy)
 @settings(max_examples=50)
-def test_testcontainment::b_instantiation(instance):
-    assert isinstance(instance, testcontainment::B)
+def test_testcontainment_b_instantiation(instance):
+    assert isinstance(instance, testcontainment_B)
 
-@given(instance=testcontainment::A_strategy)
+@given(instance=testcontainment_A_strategy)
 @settings(max_examples=50)
-def test_testcontainment::a_instantiation(instance):
-    assert isinstance(instance, testcontainment::A)
+def test_testcontainment_a_instantiation(instance):
+    assert isinstance(instance, testcontainment_A)

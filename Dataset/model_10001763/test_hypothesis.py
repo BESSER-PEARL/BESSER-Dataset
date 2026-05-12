@@ -3,14 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Recherche_Avanc_e,
-    Membre1,
-    Service,
-    Association,
-    Membre,
     __table___T_Services,
     __table___T_CompteDeLUtilisateur,
     AffichageAccueil,
@@ -37,161 +32,16 @@ from python_code import (
     Acteurs,
     Recherche_Rapide,
     Resultat_Recherche,
+    Recherche_Avanc_e,
+    Membre1,
+    Service,
+    Association,
+    Membre,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_recherche_avanc_e_is_not_abstract():
-    assert not inspect.isabstract(Recherche_Avanc_e)
-
-
-def test_recherche_avanc_e_constructor_exists():
-    assert callable(Recherche_Avanc_e.__init__)
-
-
-def test_recherche_avanc_e_constructor_args():
-    sig = inspect.signature(Recherche_Avanc_e.__init__)
-    params = list(sig.parameters.keys())
-    assert "NbParticipants" in params, "Missing parameter 'NbParticipants'"
-    assert "Association" in params, "Missing parameter 'Association'"
-    assert "Titre" in params, "Missing parameter 'Titre'"
-    assert "Pays" in params, "Missing parameter 'Pays'"
-    assert "Date" in params, "Missing parameter 'Date'"
-
-def test_recherche_avanc_e_has_NbParticipants():
-    assert hasattr(Recherche_Avanc_e, "NbParticipants")
-    descriptor = None
-    for klass in Recherche_Avanc_e.__mro__:
-        if "NbParticipants" in klass.__dict__:
-            descriptor = klass.__dict__["NbParticipants"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_recherche_avanc_e_has_Association():
-    assert hasattr(Recherche_Avanc_e, "Association")
-    descriptor = None
-    for klass in Recherche_Avanc_e.__mro__:
-        if "Association" in klass.__dict__:
-            descriptor = klass.__dict__["Association"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_recherche_avanc_e_has_Titre():
-    assert hasattr(Recherche_Avanc_e, "Titre")
-    descriptor = None
-    for klass in Recherche_Avanc_e.__mro__:
-        if "Titre" in klass.__dict__:
-            descriptor = klass.__dict__["Titre"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_recherche_avanc_e_has_Pays():
-    assert hasattr(Recherche_Avanc_e, "Pays")
-    descriptor = None
-    for klass in Recherche_Avanc_e.__mro__:
-        if "Pays" in klass.__dict__:
-            descriptor = klass.__dict__["Pays"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_recherche_avanc_e_has_Date():
-    assert hasattr(Recherche_Avanc_e, "Date")
-    descriptor = None
-    for klass in Recherche_Avanc_e.__mro__:
-        if "Date" in klass.__dict__:
-            descriptor = klass.__dict__["Date"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_membre1_is_not_abstract():
-    assert not inspect.isabstract(Membre1)
-
-
-def test_membre1_constructor_exists():
-    assert callable(Membre1.__init__)
-
-
-def test_membre1_constructor_args():
-    sig = inspect.signature(Membre1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_service_is_not_abstract():
-    assert not inspect.isabstract(Service)
-
-
-def test_service_constructor_exists():
-    assert callable(Service.__init__)
-
-
-def test_service_constructor_args():
-    sig = inspect.signature(Service.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_service_has_description():
-    assert hasattr(Service, "description")
-    descriptor = None
-    for klass in Service.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_association_is_not_abstract():
-    assert not inspect.isabstract(Association)
-
-
-def test_association_constructor_exists():
-    assert callable(Association.__init__)
-
-
-def test_association_constructor_args():
-    sig = inspect.signature(Association.__init__)
-    params = list(sig.parameters.keys())
-    assert "nom___unicef" in params, "Missing parameter 'nom___unicef'"
-
-def test_association_has_nom___unicef():
-    assert hasattr(Association, "nom___unicef")
-    descriptor = None
-    for klass in Association.__mro__:
-        if "nom___unicef" in klass.__dict__:
-            descriptor = klass.__dict__["nom___unicef"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_membre_is_not_abstract():
-    assert not inspect.isabstract(Membre)
-
-
-def test_membre_constructor_exists():
-    assert callable(Membre.__init__)
-
-
-def test_membre_constructor_args():
-    sig = inspect.signature(Membre.__init__)
-    params = list(sig.parameters.keys())
-    assert "nom___salim_talout" in params, "Missing parameter 'nom___salim_talout'"
-
-def test_membre_has_nom___salim_talout():
-    assert hasattr(Membre, "nom___salim_talout")
-    descriptor = None
-    for klass in Membre.__mro__:
-        if "nom___salim_talout" in klass.__dict__:
-            descriptor = klass.__dict__["nom___salim_talout"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -206,29 +56,29 @@ def test___table___t_services_constructor_exists():
 def test___table___t_services_constructor_args():
     sig = inspect.signature(__table___T_Services.__init__)
     params = list(sig.parameters.keys())
-    assert "numeroService" in params, "Missing parameter 'numeroService'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "nbParticipants" in params, "Missing parameter 'nbParticipants'"
+    assert "numeroUtilisateur" in params, "Missing parameter 'numeroUtilisateur'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "date" in params, "Missing parameter 'date'"
     assert "titre" in params, "Missing parameter 'titre'"
-    assert "numeroUtilisateur" in params, "Missing parameter 'numeroUtilisateur'"
+    assert "numeroService" in params, "Missing parameter 'numeroService'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test___table___t_services_has_numeroService():
-    assert hasattr(__table___T_Services, "numeroService")
+def test___table___t_services_has_nbParticipants():
+    assert hasattr(__table___T_Services, "nbParticipants")
     descriptor = None
     for klass in __table___T_Services.__mro__:
-        if "numeroService" in klass.__dict__:
-            descriptor = klass.__dict__["numeroService"]
+        if "nbParticipants" in klass.__dict__:
+            descriptor = klass.__dict__["nbParticipants"]
             break
     assert isinstance(descriptor, property)
 
-def test___table___t_services_has_description():
-    assert hasattr(__table___T_Services, "description")
+def test___table___t_services_has_numeroUtilisateur():
+    assert hasattr(__table___T_Services, "numeroUtilisateur")
     descriptor = None
     for klass in __table___T_Services.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+        if "numeroUtilisateur" in klass.__dict__:
+            descriptor = klass.__dict__["numeroUtilisateur"]
             break
     assert isinstance(descriptor, property)
 
@@ -238,15 +88,6 @@ def test___table___t_services_has_type():
     for klass in __table___T_Services.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test___table___t_services_has_nbParticipants():
-    assert hasattr(__table___T_Services, "nbParticipants")
-    descriptor = None
-    for klass in __table___T_Services.__mro__:
-        if "nbParticipants" in klass.__dict__:
-            descriptor = klass.__dict__["nbParticipants"]
             break
     assert isinstance(descriptor, property)
 
@@ -268,12 +109,21 @@ def test___table___t_services_has_titre():
             break
     assert isinstance(descriptor, property)
 
-def test___table___t_services_has_numeroUtilisateur():
-    assert hasattr(__table___T_Services, "numeroUtilisateur")
+def test___table___t_services_has_numeroService():
+    assert hasattr(__table___T_Services, "numeroService")
     descriptor = None
     for klass in __table___T_Services.__mro__:
-        if "numeroUtilisateur" in klass.__dict__:
-            descriptor = klass.__dict__["numeroUtilisateur"]
+        if "numeroService" in klass.__dict__:
+            descriptor = klass.__dict__["numeroService"]
+            break
+    assert isinstance(descriptor, property)
+
+def test___table___t_services_has_description():
+    assert hasattr(__table___T_Services, "description")
+    descriptor = None
+    for klass in __table___T_Services.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -368,27 +218,18 @@ def test_rechercheavancee_constructor_exists():
 def test_rechercheavancee_constructor_args():
     sig = inspect.signature(RechercheAvancee.__init__)
     params = list(sig.parameters.keys())
-    assert "Titre" in params, "Missing parameter 'Titre'"
-    assert "NbParticipants" in params, "Missing parameter 'NbParticipants'"
-    assert "Association" in params, "Missing parameter 'Association'"
-    assert "Date" in params, "Missing parameter 'Date'"
     assert "GenreService" in params, "Missing parameter 'GenreService'"
+    assert "Association" in params, "Missing parameter 'Association'"
+    assert "NbParticipants" in params, "Missing parameter 'NbParticipants'"
+    assert "Date" in params, "Missing parameter 'Date'"
+    assert "Titre" in params, "Missing parameter 'Titre'"
 
-def test_rechercheavancee_has_Titre():
-    assert hasattr(RechercheAvancee, "Titre")
+def test_rechercheavancee_has_GenreService():
+    assert hasattr(RechercheAvancee, "GenreService")
     descriptor = None
     for klass in RechercheAvancee.__mro__:
-        if "Titre" in klass.__dict__:
-            descriptor = klass.__dict__["Titre"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rechercheavancee_has_NbParticipants():
-    assert hasattr(RechercheAvancee, "NbParticipants")
-    descriptor = None
-    for klass in RechercheAvancee.__mro__:
-        if "NbParticipants" in klass.__dict__:
-            descriptor = klass.__dict__["NbParticipants"]
+        if "GenreService" in klass.__dict__:
+            descriptor = klass.__dict__["GenreService"]
             break
     assert isinstance(descriptor, property)
 
@@ -401,6 +242,15 @@ def test_rechercheavancee_has_Association():
             break
     assert isinstance(descriptor, property)
 
+def test_rechercheavancee_has_NbParticipants():
+    assert hasattr(RechercheAvancee, "NbParticipants")
+    descriptor = None
+    for klass in RechercheAvancee.__mro__:
+        if "NbParticipants" in klass.__dict__:
+            descriptor = klass.__dict__["NbParticipants"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_rechercheavancee_has_Date():
     assert hasattr(RechercheAvancee, "Date")
     descriptor = None
@@ -410,12 +260,12 @@ def test_rechercheavancee_has_Date():
             break
     assert isinstance(descriptor, property)
 
-def test_rechercheavancee_has_GenreService():
-    assert hasattr(RechercheAvancee, "GenreService")
+def test_rechercheavancee_has_Titre():
+    assert hasattr(RechercheAvancee, "Titre")
     descriptor = None
     for klass in RechercheAvancee.__mro__:
-        if "GenreService" in klass.__dict__:
-            descriptor = klass.__dict__["GenreService"]
+        if "Titre" in klass.__dict__:
+            descriptor = klass.__dict__["Titre"]
             break
     assert isinstance(descriptor, property)
 
@@ -574,28 +424,10 @@ def test_comptedelutilisateur1_constructor_exists():
 def test_comptedelutilisateur1_constructor_args():
     sig = inspect.signature(CompteDeLUtilisateur1.__init__)
     params = list(sig.parameters.keys())
-    assert "peudo" in params, "Missing parameter 'peudo'"
-    assert "adresseMail" in params, "Missing parameter 'adresseMail'"
     assert "motDePasse" in params, "Missing parameter 'motDePasse'"
     assert "Type" in params, "Missing parameter 'Type'"
-
-def test_comptedelutilisateur1_has_peudo():
-    assert hasattr(CompteDeLUtilisateur1, "peudo")
-    descriptor = None
-    for klass in CompteDeLUtilisateur1.__mro__:
-        if "peudo" in klass.__dict__:
-            descriptor = klass.__dict__["peudo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_comptedelutilisateur1_has_adresseMail():
-    assert hasattr(CompteDeLUtilisateur1, "adresseMail")
-    descriptor = None
-    for klass in CompteDeLUtilisateur1.__mro__:
-        if "adresseMail" in klass.__dict__:
-            descriptor = klass.__dict__["adresseMail"]
-            break
-    assert isinstance(descriptor, property)
+    assert "peudo" in params, "Missing parameter 'peudo'"
+    assert "adresseMail" in params, "Missing parameter 'adresseMail'"
 
 def test_comptedelutilisateur1_has_motDePasse():
     assert hasattr(CompteDeLUtilisateur1, "motDePasse")
@@ -612,6 +444,24 @@ def test_comptedelutilisateur1_has_Type():
     for klass in CompteDeLUtilisateur1.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_comptedelutilisateur1_has_peudo():
+    assert hasattr(CompteDeLUtilisateur1, "peudo")
+    descriptor = None
+    for klass in CompteDeLUtilisateur1.__mro__:
+        if "peudo" in klass.__dict__:
+            descriptor = klass.__dict__["peudo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_comptedelutilisateur1_has_adresseMail():
+    assert hasattr(CompteDeLUtilisateur1, "adresseMail")
+    descriptor = None
+    for klass in CompteDeLUtilisateur1.__mro__:
+        if "adresseMail" in klass.__dict__:
+            descriptor = klass.__dict__["adresseMail"]
             break
     assert isinstance(descriptor, property)
 
@@ -718,28 +568,10 @@ def test_comptedelutilisateur_constructor_exists():
 def test_comptedelutilisateur_constructor_args():
     sig = inspect.signature(CompteDeLUtilisateur.__init__)
     params = list(sig.parameters.keys())
-    assert "peudo" in params, "Missing parameter 'peudo'"
-    assert "motDePasse" in params, "Missing parameter 'motDePasse'"
     assert "adresseMail" in params, "Missing parameter 'adresseMail'"
+    assert "peudo" in params, "Missing parameter 'peudo'"
     assert "Type" in params, "Missing parameter 'Type'"
-
-def test_comptedelutilisateur_has_peudo():
-    assert hasattr(CompteDeLUtilisateur, "peudo")
-    descriptor = None
-    for klass in CompteDeLUtilisateur.__mro__:
-        if "peudo" in klass.__dict__:
-            descriptor = klass.__dict__["peudo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_comptedelutilisateur_has_motDePasse():
-    assert hasattr(CompteDeLUtilisateur, "motDePasse")
-    descriptor = None
-    for klass in CompteDeLUtilisateur.__mro__:
-        if "motDePasse" in klass.__dict__:
-            descriptor = klass.__dict__["motDePasse"]
-            break
-    assert isinstance(descriptor, property)
+    assert "motDePasse" in params, "Missing parameter 'motDePasse'"
 
 def test_comptedelutilisateur_has_adresseMail():
     assert hasattr(CompteDeLUtilisateur, "adresseMail")
@@ -750,12 +582,30 @@ def test_comptedelutilisateur_has_adresseMail():
             break
     assert isinstance(descriptor, property)
 
+def test_comptedelutilisateur_has_peudo():
+    assert hasattr(CompteDeLUtilisateur, "peudo")
+    descriptor = None
+    for klass in CompteDeLUtilisateur.__mro__:
+        if "peudo" in klass.__dict__:
+            descriptor = klass.__dict__["peudo"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_comptedelutilisateur_has_Type():
     assert hasattr(CompteDeLUtilisateur, "Type")
     descriptor = None
     for klass in CompteDeLUtilisateur.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_comptedelutilisateur_has_motDePasse():
+    assert hasattr(CompteDeLUtilisateur, "motDePasse")
+    descriptor = None
+    for klass in CompteDeLUtilisateur.__mro__:
+        if "motDePasse" in klass.__dict__:
+            descriptor = klass.__dict__["motDePasse"]
             break
     assert isinstance(descriptor, property)
 
@@ -888,6 +738,156 @@ def test_resultat_recherche_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_recherche_avanc_e_is_not_abstract():
+    assert not inspect.isabstract(Recherche_Avanc_e)
+
+
+def test_recherche_avanc_e_constructor_exists():
+    assert callable(Recherche_Avanc_e.__init__)
+
+
+def test_recherche_avanc_e_constructor_args():
+    sig = inspect.signature(Recherche_Avanc_e.__init__)
+    params = list(sig.parameters.keys())
+    assert "Date" in params, "Missing parameter 'Date'"
+    assert "Pays" in params, "Missing parameter 'Pays'"
+    assert "NbParticipants" in params, "Missing parameter 'NbParticipants'"
+    assert "Association" in params, "Missing parameter 'Association'"
+    assert "Titre" in params, "Missing parameter 'Titre'"
+
+def test_recherche_avanc_e_has_Date():
+    assert hasattr(Recherche_Avanc_e, "Date")
+    descriptor = None
+    for klass in Recherche_Avanc_e.__mro__:
+        if "Date" in klass.__dict__:
+            descriptor = klass.__dict__["Date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_recherche_avanc_e_has_Pays():
+    assert hasattr(Recherche_Avanc_e, "Pays")
+    descriptor = None
+    for klass in Recherche_Avanc_e.__mro__:
+        if "Pays" in klass.__dict__:
+            descriptor = klass.__dict__["Pays"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_recherche_avanc_e_has_NbParticipants():
+    assert hasattr(Recherche_Avanc_e, "NbParticipants")
+    descriptor = None
+    for klass in Recherche_Avanc_e.__mro__:
+        if "NbParticipants" in klass.__dict__:
+            descriptor = klass.__dict__["NbParticipants"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_recherche_avanc_e_has_Association():
+    assert hasattr(Recherche_Avanc_e, "Association")
+    descriptor = None
+    for klass in Recherche_Avanc_e.__mro__:
+        if "Association" in klass.__dict__:
+            descriptor = klass.__dict__["Association"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_recherche_avanc_e_has_Titre():
+    assert hasattr(Recherche_Avanc_e, "Titre")
+    descriptor = None
+    for klass in Recherche_Avanc_e.__mro__:
+        if "Titre" in klass.__dict__:
+            descriptor = klass.__dict__["Titre"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_membre1_is_not_abstract():
+    assert not inspect.isabstract(Membre1)
+
+
+def test_membre1_constructor_exists():
+    assert callable(Membre1.__init__)
+
+
+def test_membre1_constructor_args():
+    sig = inspect.signature(Membre1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_service_is_not_abstract():
+    assert not inspect.isabstract(Service)
+
+
+def test_service_constructor_exists():
+    assert callable(Service.__init__)
+
+
+def test_service_constructor_args():
+    sig = inspect.signature(Service.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_service_has_description():
+    assert hasattr(Service, "description")
+    descriptor = None
+    for klass in Service.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_association_is_not_abstract():
+    assert not inspect.isabstract(Association)
+
+
+def test_association_constructor_exists():
+    assert callable(Association.__init__)
+
+
+def test_association_constructor_args():
+    sig = inspect.signature(Association.__init__)
+    params = list(sig.parameters.keys())
+    assert "nom___unicef" in params, "Missing parameter 'nom___unicef'"
+
+def test_association_has_nom___unicef():
+    assert hasattr(Association, "nom___unicef")
+    descriptor = None
+    for klass in Association.__mro__:
+        if "nom___unicef" in klass.__dict__:
+            descriptor = klass.__dict__["nom___unicef"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_membre_is_not_abstract():
+    assert not inspect.isabstract(Membre)
+
+
+def test_membre_constructor_exists():
+    assert callable(Membre.__init__)
+
+
+def test_membre_constructor_args():
+    sig = inspect.signature(Membre.__init__)
+    params = list(sig.parameters.keys())
+    assert "nom___salim_talout" in params, "Missing parameter 'nom___salim_talout'"
+
+def test_membre_has_nom___salim_talout():
+    assert hasattr(Membre, "nom___salim_talout")
+    descriptor = None
+    for klass in Membre.__mro__:
+        if "nom___salim_talout" in klass.__dict__:
+            descriptor = klass.__dict__["nom___salim_talout"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -899,53 +899,22 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Recherche_Avanc_e_strategy = st.builds(
-    Recherche_Avanc_e,
-    NbParticipants=
-        st.integers(),
-    Association=
-        st.none(),
-    Titre=
-        safe_text,
-    Pays=
-        safe_text,
-    Date=
-        st.dates()
-)
-Membre1_strategy = st.builds(
-    Membre1,
-)
-Service_strategy = st.builds(
-    Service,
-    description=
-        safe_text
-)
-Association_strategy = st.builds(
-    Association,
-    nom___unicef=
-        safe_text
-)
-Membre_strategy = st.builds(
-    Membre,
-    nom___salim_talout=
-        safe_text
-)
 __table___T_Services_strategy = st.builds(
     __table___T_Services,
-    numeroService=
-        st.integers(),
-    description=
-        safe_text,
-    type=
-        safe_text,
     nbParticipants=
         st.integers(),
+    numeroUtilisateur=
+        st.integers(),
+    type=
+        safe_text,
     date=
         st.dates(),
     titre=
         safe_text,
-    numeroUtilisateur=
-        st.integers()
+    numeroService=
+        st.integers(),
+    description=
+        safe_text
 )
 __table___T_CompteDeLUtilisateur_strategy = st.builds(
     __table___T_CompteDeLUtilisateur,
@@ -965,16 +934,16 @@ AffichageAccueil_strategy = st.builds(
 )
 RechercheAvancee_strategy = st.builds(
     RechercheAvancee,
-    Titre=
-        safe_text,
-    NbParticipants=
-        st.integers(),
+    GenreService=
+        st.none(),
     Association=
         st.none(),
+    NbParticipants=
+        st.integers(),
     Date=
         st.dates(),
-    GenreService=
-        st.none()
+    Titre=
+        safe_text
 )
 RechercheRapide_strategy = st.builds(
     RechercheRapide,
@@ -1008,13 +977,13 @@ PropositionDeService1_strategy = st.builds(
 )
 CompteDeLUtilisateur1_strategy = st.builds(
     CompteDeLUtilisateur1,
-    peudo=
-        safe_text,
-    adresseMail=
-        safe_text,
     motDePasse=
         safe_text,
     Type=
+        safe_text,
+    peudo=
+        safe_text,
+    adresseMail=
         safe_text
 )
 Utilisateur1_strategy = st.builds(
@@ -1038,13 +1007,13 @@ PropositionDeService_strategy = st.builds(
 )
 CompteDeLUtilisateur_strategy = st.builds(
     CompteDeLUtilisateur,
-    peudo=
-        safe_text,
-    motDePasse=
-        safe_text,
     adresseMail=
         safe_text,
+    peudo=
+        safe_text,
     Type=
+        safe_text,
+    motDePasse=
         safe_text
 )
 Utilisateur_strategy = st.builds(
@@ -1074,161 +1043,43 @@ Recherche_Rapide_strategy = st.builds(
 Resultat_Recherche_strategy = st.builds(
     Resultat_Recherche,
 )
-
-@given(instance=Recherche_Avanc_e_strategy)
-@settings(max_examples=50)
-def test_recherche_avanc_e_instantiation(instance):
-    assert isinstance(instance, Recherche_Avanc_e)
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_NbParticipants_type(instance):
-    assert isinstance(instance.NbParticipants, int)
-
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_NbParticipants_setter(instance):
-    original = instance.NbParticipants
-    instance.NbParticipants = original
-    assert instance.NbParticipants == original
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Association_type(instance):
-    assert isinstance(instance.Association, association)
-
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Association_setter(instance):
-    original = instance.Association
-    instance.Association = original
-    assert instance.Association == original
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Titre_type(instance):
-    assert isinstance(instance.Titre, str)
-
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Titre_setter(instance):
-    original = instance.Titre
-    instance.Titre = original
-    assert instance.Titre == original
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Pays_type(instance):
-    assert isinstance(instance.Pays, str)
-
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Pays_setter(instance):
-    original = instance.Pays
-    instance.Pays = original
-    assert instance.Pays == original
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Date_type(instance):
-    assert isinstance(instance.Date, date)
-
-
-@given(instance=Recherche_Avanc_e_strategy)
-def test_recherche_avanc_e_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=Membre1_strategy)
-@settings(max_examples=50)
-def test_membre1_instantiation(instance):
-    assert isinstance(instance, Membre1)
-
-@given(instance=Service_strategy)
-@settings(max_examples=50)
-def test_service_instantiation(instance):
-    assert isinstance(instance, Service)
-
-@given(instance=Service_strategy)
-def test_service_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Service_strategy)
-def test_service_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Association_strategy)
-@settings(max_examples=50)
-def test_association_instantiation(instance):
-    assert isinstance(instance, Association)
-
-@given(instance=Association_strategy)
-def test_association_nom___unicef_type(instance):
-    assert isinstance(instance.nom___unicef, str)
-
-
-@given(instance=Association_strategy)
-def test_association_nom___unicef_setter(instance):
-    original = instance.nom___unicef
-    instance.nom___unicef = original
-    assert instance.nom___unicef == original
-
-@given(instance=Membre_strategy)
-@settings(max_examples=50)
-def test_membre_instantiation(instance):
-    assert isinstance(instance, Membre)
-
-@given(instance=Membre_strategy)
-def test_membre_nom___salim_talout_type(instance):
-    assert isinstance(instance.nom___salim_talout, str)
-
-
-@given(instance=Membre_strategy)
-def test_membre_nom___salim_talout_setter(instance):
-    original = instance.nom___salim_talout
-    instance.nom___salim_talout = original
-    assert instance.nom___salim_talout == original
+Recherche_Avanc_e_strategy = st.builds(
+    Recherche_Avanc_e,
+    Date=
+        st.dates(),
+    Pays=
+        safe_text,
+    NbParticipants=
+        st.integers(),
+    Association=
+        st.none(),
+    Titre=
+        safe_text
+)
+Membre1_strategy = st.builds(
+    Membre1,
+)
+Service_strategy = st.builds(
+    Service,
+    description=
+        safe_text
+)
+Association_strategy = st.builds(
+    Association,
+    nom___unicef=
+        safe_text
+)
+Membre_strategy = st.builds(
+    Membre,
+    nom___salim_talout=
+        safe_text
+)
 
 @given(instance=__table___T_Services_strategy)
 @settings(max_examples=50)
 def test___table___t_services_instantiation(instance):
     assert isinstance(instance, __table___T_Services)
 
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_numeroService_type(instance):
-    assert isinstance(instance.numeroService, int)
-
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_numeroService_setter(instance):
-    original = instance.numeroService
-    instance.numeroService = original
-    assert instance.numeroService == original
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_nbParticipants_type(instance):
-    assert isinstance(instance.nbParticipants, int)
 
 
 @given(instance=__table___T_Services_strategy)
@@ -1237,31 +1088,6 @@ def test___table___t_services_nbParticipants_setter(instance):
     instance.nbParticipants = original
     assert instance.nbParticipants == original
 
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_titre_type(instance):
-    assert isinstance(instance.titre, str)
-
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_titre_setter(instance):
-    original = instance.titre
-    instance.titre = original
-    assert instance.titre == original
-
-@given(instance=__table___T_Services_strategy)
-def test___table___t_services_numeroUtilisateur_type(instance):
-    assert isinstance(instance.numeroUtilisateur, int)
 
 
 @given(instance=__table___T_Services_strategy)
@@ -1270,14 +1096,51 @@ def test___table___t_services_numeroUtilisateur_setter(instance):
     instance.numeroUtilisateur = original
     assert instance.numeroUtilisateur == original
 
+
+
+@given(instance=__table___T_Services_strategy)
+def test___table___t_services_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=__table___T_Services_strategy)
+def test___table___t_services_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=__table___T_Services_strategy)
+def test___table___t_services_titre_setter(instance):
+    original = instance.titre
+    instance.titre = original
+    assert instance.titre == original
+
+
+
+@given(instance=__table___T_Services_strategy)
+def test___table___t_services_numeroService_setter(instance):
+    original = instance.numeroService
+    instance.numeroService = original
+    assert instance.numeroService == original
+
+
+
+@given(instance=__table___T_Services_strategy)
+def test___table___t_services_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
 @given(instance=__table___T_CompteDeLUtilisateur_strategy)
 @settings(max_examples=50)
 def test___table___t_comptedelutilisateur_instantiation(instance):
     assert isinstance(instance, __table___T_CompteDeLUtilisateur)
 
-@given(instance=__table___T_CompteDeLUtilisateur_strategy)
-def test___table___t_comptedelutilisateur_numeroUtilisateur_type(instance):
-    assert isinstance(instance.numeroUtilisateur, int)
 
 
 @given(instance=__table___T_CompteDeLUtilisateur_strategy)
@@ -1286,9 +1149,6 @@ def test___table___t_comptedelutilisateur_numeroUtilisateur_setter(instance):
     instance.numeroUtilisateur = original
     assert instance.numeroUtilisateur == original
 
-@given(instance=__table___T_CompteDeLUtilisateur_strategy)
-def test___table___t_comptedelutilisateur_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=__table___T_CompteDeLUtilisateur_strategy)
@@ -1297,9 +1157,6 @@ def test___table___t_comptedelutilisateur_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=__table___T_CompteDeLUtilisateur_strategy)
-def test___table___t_comptedelutilisateur_motDePasse_type(instance):
-    assert isinstance(instance.motDePasse, str)
 
 
 @given(instance=__table___T_CompteDeLUtilisateur_strategy)
@@ -1308,9 +1165,6 @@ def test___table___t_comptedelutilisateur_motDePasse_setter(instance):
     instance.motDePasse = original
     assert instance.motDePasse == original
 
-@given(instance=__table___T_CompteDeLUtilisateur_strategy)
-def test___table___t_comptedelutilisateur_adresseMail_type(instance):
-    assert isinstance(instance.adresseMail, str)
 
 
 @given(instance=__table___T_CompteDeLUtilisateur_strategy)
@@ -1319,9 +1173,6 @@ def test___table___t_comptedelutilisateur_adresseMail_setter(instance):
     instance.adresseMail = original
     assert instance.adresseMail == original
 
-@given(instance=__table___T_CompteDeLUtilisateur_strategy)
-def test___table___t_comptedelutilisateur_pseudo_type(instance):
-    assert isinstance(instance.pseudo, str)
 
 
 @given(instance=__table___T_CompteDeLUtilisateur_strategy)
@@ -1340,53 +1191,6 @@ def test_affichageaccueil_instantiation(instance):
 def test_rechercheavancee_instantiation(instance):
     assert isinstance(instance, RechercheAvancee)
 
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_Titre_type(instance):
-    assert isinstance(instance.Titre, str)
-
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_Titre_setter(instance):
-    original = instance.Titre
-    instance.Titre = original
-    assert instance.Titre == original
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_NbParticipants_type(instance):
-    assert isinstance(instance.NbParticipants, int)
-
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_NbParticipants_setter(instance):
-    original = instance.NbParticipants
-    instance.NbParticipants = original
-    assert instance.NbParticipants == original
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_Association_type(instance):
-    assert isinstance(instance.Association, association)
-
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_Association_setter(instance):
-    original = instance.Association
-    instance.Association = original
-    assert instance.Association == original
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_Date_type(instance):
-    assert isinstance(instance.Date, date)
-
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=RechercheAvancee_strategy)
-def test_rechercheavancee_GenreService_type(instance):
-    assert isinstance(instance.GenreService, service)
 
 
 @given(instance=RechercheAvancee_strategy)
@@ -1395,14 +1199,43 @@ def test_rechercheavancee_GenreService_setter(instance):
     instance.GenreService = original
     assert instance.GenreService == original
 
+
+
+@given(instance=RechercheAvancee_strategy)
+def test_rechercheavancee_Association_setter(instance):
+    original = instance.Association
+    instance.Association = original
+    assert instance.Association == original
+
+
+
+@given(instance=RechercheAvancee_strategy)
+def test_rechercheavancee_NbParticipants_setter(instance):
+    original = instance.NbParticipants
+    instance.NbParticipants = original
+    assert instance.NbParticipants == original
+
+
+
+@given(instance=RechercheAvancee_strategy)
+def test_rechercheavancee_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
+
+
+@given(instance=RechercheAvancee_strategy)
+def test_rechercheavancee_Titre_setter(instance):
+    original = instance.Titre
+    instance.Titre = original
+    assert instance.Titre == original
+
 @given(instance=RechercheRapide_strategy)
 @settings(max_examples=50)
 def test_rechercherapide_instantiation(instance):
     assert isinstance(instance, RechercheRapide)
 
-@given(instance=RechercheRapide_strategy)
-def test_rechercherapide_MotsCles_type(instance):
-    assert isinstance(instance.MotsCles, str)
 
 
 @given(instance=RechercheRapide_strategy)
@@ -1416,9 +1249,6 @@ def test_rechercherapide_MotsCles_setter(instance):
 def test_contacter_instantiation(instance):
     assert isinstance(instance, Contacter)
 
-@given(instance=Contacter_strategy)
-def test_contacter_personne_type(instance):
-    assert isinstance(instance.personne, utilisateur)
 
 
 @given(instance=Contacter_strategy)
@@ -1447,9 +1277,6 @@ def test_affichageresultats_instantiation(instance):
 def test_criterederecherche_instantiation(instance):
     assert isinstance(instance, CritereDeRecherche)
 
-@given(instance=CritereDeRecherche_strategy)
-def test_criterederecherche_critere_type(instance):
-    assert isinstance(instance.critere, str)
 
 
 @given(instance=CritereDeRecherche_strategy)
@@ -1473,31 +1300,6 @@ def test_propositiondeservice1_instantiation(instance):
 def test_comptedelutilisateur1_instantiation(instance):
     assert isinstance(instance, CompteDeLUtilisateur1)
 
-@given(instance=CompteDeLUtilisateur1_strategy)
-def test_comptedelutilisateur1_peudo_type(instance):
-    assert isinstance(instance.peudo, str)
-
-
-@given(instance=CompteDeLUtilisateur1_strategy)
-def test_comptedelutilisateur1_peudo_setter(instance):
-    original = instance.peudo
-    instance.peudo = original
-    assert instance.peudo == original
-
-@given(instance=CompteDeLUtilisateur1_strategy)
-def test_comptedelutilisateur1_adresseMail_type(instance):
-    assert isinstance(instance.adresseMail, str)
-
-
-@given(instance=CompteDeLUtilisateur1_strategy)
-def test_comptedelutilisateur1_adresseMail_setter(instance):
-    original = instance.adresseMail
-    instance.adresseMail = original
-    assert instance.adresseMail == original
-
-@given(instance=CompteDeLUtilisateur1_strategy)
-def test_comptedelutilisateur1_motDePasse_type(instance):
-    assert isinstance(instance.motDePasse, str)
 
 
 @given(instance=CompteDeLUtilisateur1_strategy)
@@ -1506,9 +1308,6 @@ def test_comptedelutilisateur1_motDePasse_setter(instance):
     instance.motDePasse = original
     assert instance.motDePasse == original
 
-@given(instance=CompteDeLUtilisateur1_strategy)
-def test_comptedelutilisateur1_Type_type(instance):
-    assert isinstance(instance.Type, str)
 
 
 @given(instance=CompteDeLUtilisateur1_strategy)
@@ -1516,6 +1315,22 @@ def test_comptedelutilisateur1_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
+
+
+
+@given(instance=CompteDeLUtilisateur1_strategy)
+def test_comptedelutilisateur1_peudo_setter(instance):
+    original = instance.peudo
+    instance.peudo = original
+    assert instance.peudo == original
+
+
+
+@given(instance=CompteDeLUtilisateur1_strategy)
+def test_comptedelutilisateur1_adresseMail_setter(instance):
+    original = instance.adresseMail
+    instance.adresseMail = original
+    assert instance.adresseMail == original
 
 @given(instance=Utilisateur1_strategy)
 @settings(max_examples=50)
@@ -1527,9 +1342,6 @@ def test_utilisateur1_instantiation(instance):
 def test_recherchedemandes_instantiation(instance):
     assert isinstance(instance, RechercheDemandes)
 
-@given(instance=RechercheDemandes_strategy)
-def test_recherchedemandes_criteres_type(instance):
-    assert isinstance(instance.criteres, str)
 
 
 @given(instance=RechercheDemandes_strategy)
@@ -1543,9 +1355,6 @@ def test_recherchedemandes_criteres_setter(instance):
 def test_recherchepropositions_instantiation(instance):
     assert isinstance(instance, RecherchePropositions)
 
-@given(instance=RecherchePropositions_strategy)
-def test_recherchepropositions_criteres_type(instance):
-    assert isinstance(instance.criteres, str)
 
 
 @given(instance=RecherchePropositions_strategy)
@@ -1569,31 +1378,6 @@ def test_propositiondeservice_instantiation(instance):
 def test_comptedelutilisateur_instantiation(instance):
     assert isinstance(instance, CompteDeLUtilisateur)
 
-@given(instance=CompteDeLUtilisateur_strategy)
-def test_comptedelutilisateur_peudo_type(instance):
-    assert isinstance(instance.peudo, str)
-
-
-@given(instance=CompteDeLUtilisateur_strategy)
-def test_comptedelutilisateur_peudo_setter(instance):
-    original = instance.peudo
-    instance.peudo = original
-    assert instance.peudo == original
-
-@given(instance=CompteDeLUtilisateur_strategy)
-def test_comptedelutilisateur_motDePasse_type(instance):
-    assert isinstance(instance.motDePasse, str)
-
-
-@given(instance=CompteDeLUtilisateur_strategy)
-def test_comptedelutilisateur_motDePasse_setter(instance):
-    original = instance.motDePasse
-    instance.motDePasse = original
-    assert instance.motDePasse == original
-
-@given(instance=CompteDeLUtilisateur_strategy)
-def test_comptedelutilisateur_adresseMail_type(instance):
-    assert isinstance(instance.adresseMail, str)
 
 
 @given(instance=CompteDeLUtilisateur_strategy)
@@ -1602,9 +1386,14 @@ def test_comptedelutilisateur_adresseMail_setter(instance):
     instance.adresseMail = original
     assert instance.adresseMail == original
 
+
+
 @given(instance=CompteDeLUtilisateur_strategy)
-def test_comptedelutilisateur_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_comptedelutilisateur_peudo_setter(instance):
+    original = instance.peudo
+    instance.peudo = original
+    assert instance.peudo == original
+
 
 
 @given(instance=CompteDeLUtilisateur_strategy)
@@ -1612,6 +1401,14 @@ def test_comptedelutilisateur_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
+
+
+
+@given(instance=CompteDeLUtilisateur_strategy)
+def test_comptedelutilisateur_motDePasse_setter(instance):
+    original = instance.motDePasse
+    instance.motDePasse = original
+    assert instance.motDePasse == original
 
 @given(instance=Utilisateur_strategy)
 @settings(max_examples=50)
@@ -1623,9 +1420,6 @@ def test_utilisateur_instantiation(instance):
 def test_resultat_instantiation(instance):
     assert isinstance(instance, Resultat)
 
-@given(instance=Resultat_strategy)
-def test_resultat_Liste_type(instance):
-    assert isinstance(instance.Liste, resultat_recherche)
 
 
 @given(instance=Resultat_strategy)
@@ -1639,9 +1433,6 @@ def test_resultat_Liste_setter(instance):
 def test_recherchedassociations_instantiation(instance):
     assert isinstance(instance, RechercheDAssociations)
 
-@given(instance=RechercheDAssociations_strategy)
-def test_recherchedassociations_criteres_type(instance):
-    assert isinstance(instance.criteres, str)
 
 
 @given(instance=RechercheDAssociations_strategy)
@@ -1665,9 +1456,6 @@ def test_acteurs_instantiation(instance):
 def test_recherche_rapide_instantiation(instance):
     assert isinstance(instance, Recherche_Rapide)
 
-@given(instance=Recherche_Rapide_strategy)
-def test_recherche_rapide_MotsCles_type(instance):
-    assert isinstance(instance.MotsCles, str)
 
 
 @given(instance=Recherche_Rapide_strategy)
@@ -1680,3 +1468,92 @@ def test_recherche_rapide_MotsCles_setter(instance):
 @settings(max_examples=50)
 def test_resultat_recherche_instantiation(instance):
     assert isinstance(instance, Resultat_Recherche)
+
+@given(instance=Recherche_Avanc_e_strategy)
+@settings(max_examples=50)
+def test_recherche_avanc_e_instantiation(instance):
+    assert isinstance(instance, Recherche_Avanc_e)
+
+
+
+@given(instance=Recherche_Avanc_e_strategy)
+def test_recherche_avanc_e_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
+
+
+@given(instance=Recherche_Avanc_e_strategy)
+def test_recherche_avanc_e_Pays_setter(instance):
+    original = instance.Pays
+    instance.Pays = original
+    assert instance.Pays == original
+
+
+
+@given(instance=Recherche_Avanc_e_strategy)
+def test_recherche_avanc_e_NbParticipants_setter(instance):
+    original = instance.NbParticipants
+    instance.NbParticipants = original
+    assert instance.NbParticipants == original
+
+
+
+@given(instance=Recherche_Avanc_e_strategy)
+def test_recherche_avanc_e_Association_setter(instance):
+    original = instance.Association
+    instance.Association = original
+    assert instance.Association == original
+
+
+
+@given(instance=Recherche_Avanc_e_strategy)
+def test_recherche_avanc_e_Titre_setter(instance):
+    original = instance.Titre
+    instance.Titre = original
+    assert instance.Titre == original
+
+@given(instance=Membre1_strategy)
+@settings(max_examples=50)
+def test_membre1_instantiation(instance):
+    assert isinstance(instance, Membre1)
+
+@given(instance=Service_strategy)
+@settings(max_examples=50)
+def test_service_instantiation(instance):
+    assert isinstance(instance, Service)
+
+
+
+@given(instance=Service_strategy)
+def test_service_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=Association_strategy)
+@settings(max_examples=50)
+def test_association_instantiation(instance):
+    assert isinstance(instance, Association)
+
+
+
+@given(instance=Association_strategy)
+def test_association_nom___unicef_setter(instance):
+    original = instance.nom___unicef
+    instance.nom___unicef = original
+    assert instance.nom___unicef == original
+
+@given(instance=Membre_strategy)
+@settings(max_examples=50)
+def test_membre_instantiation(instance):
+    assert isinstance(instance, Membre)
+
+
+
+@given(instance=Membre_strategy)
+def test_membre_nom___salim_talout_setter(instance):
+    original = instance.nom___salim_talout
+    instance.nom___salim_talout = original
+    assert instance.nom___salim_talout == original

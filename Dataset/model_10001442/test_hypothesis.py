@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Iterable_Card__Interface,
@@ -25,9 +25,9 @@ from python_code import (
     blackjack_DeckShuffledListener_Interface,
     blackjack_BlackjackGame,
     blackjack_ExampleInstrumentedTest,
+    blackjack_Suit,
     blackjack_Value,
     blackjack_GameState,
-    blackjack_Suit,
 )
 
 # =============================================================================
@@ -243,10 +243,19 @@ def test_blackjack_card_constructor_exists():
 def test_blackjack_card_constructor_args():
     sig = inspect.signature(blackjack_Card.__init__)
     params = list(sig.parameters.keys())
+    assert "suit" in params, "Missing parameter 'suit'"
     assert "MAX_VALUE_OF_ACE" in params, "Missing parameter 'MAX_VALUE_OF_ACE'"
     assert "BLACKJACK_VALUE" in params, "Missing parameter 'BLACKJACK_VALUE'"
-    assert "suit" in params, "Missing parameter 'suit'"
     assert "value" in params, "Missing parameter 'value'"
+
+def test_blackjack_card_has_suit():
+    assert hasattr(blackjack_Card, "suit")
+    descriptor = None
+    for klass in blackjack_Card.__mro__:
+        if "suit" in klass.__dict__:
+            descriptor = klass.__dict__["suit"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_blackjack_card_has_MAX_VALUE_OF_ACE():
     assert hasattr(blackjack_Card, "MAX_VALUE_OF_ACE")
@@ -263,15 +272,6 @@ def test_blackjack_card_has_BLACKJACK_VALUE():
     for klass in blackjack_Card.__mro__:
         if "BLACKJACK_VALUE" in klass.__dict__:
             descriptor = klass.__dict__["BLACKJACK_VALUE"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_blackjack_card_has_suit():
-    assert hasattr(blackjack_Card, "suit")
-    descriptor = None
-    for klass in blackjack_Card.__mro__:
-        if "suit" in klass.__dict__:
-            descriptor = klass.__dict__["suit"]
             break
     assert isinstance(descriptor, property)
 
@@ -325,50 +325,23 @@ def test_blackjack_blackjackgame_constructor_exists():
 def test_blackjack_blackjackgame_constructor_args():
     sig = inspect.signature(blackjack_BlackjackGame.__init__)
     params = list(sig.parameters.keys())
-    assert "dealersHandTextView" in params, "Missing parameter 'dealersHandTextView'"
-    assert "playersHandTextView" in params, "Missing parameter 'playersHandTextView'"
-    assert "stayButton" in params, "Missing parameter 'stayButton'"
-    assert "MAX_HITS" in params, "Missing parameter 'MAX_HITS'"
+    assert "gameResultTextView" in params, "Missing parameter 'gameResultTextView'"
     assert "hitButton" in params, "Missing parameter 'hitButton'"
     assert "MAX_CARDS_PULLED" in params, "Missing parameter 'MAX_CARDS_PULLED'"
+    assert "MAX_HITS" in params, "Missing parameter 'MAX_HITS'"
     assert "dealersHandValueTextView" in params, "Missing parameter 'dealersHandValueTextView'"
-    assert "gstate" in params, "Missing parameter 'gstate'"
+    assert "playersHandTextView" in params, "Missing parameter 'playersHandTextView'"
     assert "playerHandValueTextView" in params, "Missing parameter 'playerHandValueTextView'"
-    assert "gameResultTextView" in params, "Missing parameter 'gameResultTextView'"
+    assert "stayButton" in params, "Missing parameter 'stayButton'"
+    assert "dealersHandTextView" in params, "Missing parameter 'dealersHandTextView'"
+    assert "gstate" in params, "Missing parameter 'gstate'"
 
-def test_blackjack_blackjackgame_has_dealersHandTextView():
-    assert hasattr(blackjack_BlackjackGame, "dealersHandTextView")
+def test_blackjack_blackjackgame_has_gameResultTextView():
+    assert hasattr(blackjack_BlackjackGame, "gameResultTextView")
     descriptor = None
     for klass in blackjack_BlackjackGame.__mro__:
-        if "dealersHandTextView" in klass.__dict__:
-            descriptor = klass.__dict__["dealersHandTextView"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_blackjack_blackjackgame_has_playersHandTextView():
-    assert hasattr(blackjack_BlackjackGame, "playersHandTextView")
-    descriptor = None
-    for klass in blackjack_BlackjackGame.__mro__:
-        if "playersHandTextView" in klass.__dict__:
-            descriptor = klass.__dict__["playersHandTextView"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_blackjack_blackjackgame_has_stayButton():
-    assert hasattr(blackjack_BlackjackGame, "stayButton")
-    descriptor = None
-    for klass in blackjack_BlackjackGame.__mro__:
-        if "stayButton" in klass.__dict__:
-            descriptor = klass.__dict__["stayButton"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_blackjack_blackjackgame_has_MAX_HITS():
-    assert hasattr(blackjack_BlackjackGame, "MAX_HITS")
-    descriptor = None
-    for klass in blackjack_BlackjackGame.__mro__:
-        if "MAX_HITS" in klass.__dict__:
-            descriptor = klass.__dict__["MAX_HITS"]
+        if "gameResultTextView" in klass.__dict__:
+            descriptor = klass.__dict__["gameResultTextView"]
             break
     assert isinstance(descriptor, property)
 
@@ -390,6 +363,15 @@ def test_blackjack_blackjackgame_has_MAX_CARDS_PULLED():
             break
     assert isinstance(descriptor, property)
 
+def test_blackjack_blackjackgame_has_MAX_HITS():
+    assert hasattr(blackjack_BlackjackGame, "MAX_HITS")
+    descriptor = None
+    for klass in blackjack_BlackjackGame.__mro__:
+        if "MAX_HITS" in klass.__dict__:
+            descriptor = klass.__dict__["MAX_HITS"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_blackjack_blackjackgame_has_dealersHandValueTextView():
     assert hasattr(blackjack_BlackjackGame, "dealersHandValueTextView")
     descriptor = None
@@ -399,12 +381,12 @@ def test_blackjack_blackjackgame_has_dealersHandValueTextView():
             break
     assert isinstance(descriptor, property)
 
-def test_blackjack_blackjackgame_has_gstate():
-    assert hasattr(blackjack_BlackjackGame, "gstate")
+def test_blackjack_blackjackgame_has_playersHandTextView():
+    assert hasattr(blackjack_BlackjackGame, "playersHandTextView")
     descriptor = None
     for klass in blackjack_BlackjackGame.__mro__:
-        if "gstate" in klass.__dict__:
-            descriptor = klass.__dict__["gstate"]
+        if "playersHandTextView" in klass.__dict__:
+            descriptor = klass.__dict__["playersHandTextView"]
             break
     assert isinstance(descriptor, property)
 
@@ -417,12 +399,30 @@ def test_blackjack_blackjackgame_has_playerHandValueTextView():
             break
     assert isinstance(descriptor, property)
 
-def test_blackjack_blackjackgame_has_gameResultTextView():
-    assert hasattr(blackjack_BlackjackGame, "gameResultTextView")
+def test_blackjack_blackjackgame_has_stayButton():
+    assert hasattr(blackjack_BlackjackGame, "stayButton")
     descriptor = None
     for klass in blackjack_BlackjackGame.__mro__:
-        if "gameResultTextView" in klass.__dict__:
-            descriptor = klass.__dict__["gameResultTextView"]
+        if "stayButton" in klass.__dict__:
+            descriptor = klass.__dict__["stayButton"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_blackjack_blackjackgame_has_dealersHandTextView():
+    assert hasattr(blackjack_BlackjackGame, "dealersHandTextView")
+    descriptor = None
+    for klass in blackjack_BlackjackGame.__mro__:
+        if "dealersHandTextView" in klass.__dict__:
+            descriptor = klass.__dict__["dealersHandTextView"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_blackjack_blackjackgame_has_gstate():
+    assert hasattr(blackjack_BlackjackGame, "gstate")
+    descriptor = None
+    for klass in blackjack_BlackjackGame.__mro__:
+        if "gstate" in klass.__dict__:
+            descriptor = klass.__dict__["gstate"]
             break
     assert isinstance(descriptor, property)
 
@@ -439,6 +439,19 @@ def test_blackjack_exampleinstrumentedtest_constructor_exists():
 def test_blackjack_exampleinstrumentedtest_constructor_args():
     sig = inspect.signature(blackjack_ExampleInstrumentedTest.__init__)
     params = list(sig.parameters.keys())
+
+def test_blackjack_suit_exists():
+    # Check that the Enumeration exists
+    assert blackjack_Suit is not None
+
+def test_blackjack_suit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in blackjack_Suit]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in blackjack_Suit"
 
 def test_blackjack_value_exists():
     # Check that the Enumeration exists
@@ -465,19 +478,6 @@ def test_blackjack_gamestate_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in blackjack_GameState"
-
-def test_blackjack_suit_exists():
-    # Check that the Enumeration exists
-    assert blackjack_Suit is not None
-
-def test_blackjack_suit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in blackjack_Suit]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in blackjack_Suit"
 
 
 # =============================================================================
@@ -535,12 +535,12 @@ blackjack_CardSet_strategy = st.builds(
 )
 blackjack_Card_strategy = st.builds(
     blackjack_Card,
+    suit=
+        st.none(),
     MAX_VALUE_OF_ACE=
         st.integers(),
     BLACKJACK_VALUE=
         st.integers(),
-    suit=
-        st.none(),
     value=
         st.none()
 )
@@ -552,26 +552,26 @@ blackjack_DeckShuffledListener_Interface_strategy = st.builds(
 )
 blackjack_BlackjackGame_strategy = st.builds(
     blackjack_BlackjackGame,
-    dealersHandTextView=
+    gameResultTextView=
         safe_text,
-    playersHandTextView=
-        safe_text,
-    stayButton=
-        safe_text,
-    MAX_HITS=
-        st.integers(),
     hitButton=
         safe_text,
     MAX_CARDS_PULLED=
         st.integers(),
+    MAX_HITS=
+        st.integers(),
     dealersHandValueTextView=
         safe_text,
-    gstate=
-        st.none(),
+    playersHandTextView=
+        safe_text,
     playerHandValueTextView=
         safe_text,
-    gameResultTextView=
-        safe_text
+    stayButton=
+        safe_text,
+    dealersHandTextView=
+        safe_text,
+    gstate=
+        st.none()
 )
 blackjack_ExampleInstrumentedTest_strategy = st.builds(
     blackjack_ExampleInstrumentedTest,
@@ -652,31 +652,6 @@ def test_blackjack_cardset_instantiation(instance):
 def test_blackjack_card_instantiation(instance):
     assert isinstance(instance, blackjack_Card)
 
-@given(instance=blackjack_Card_strategy)
-def test_blackjack_card_MAX_VALUE_OF_ACE_type(instance):
-    assert isinstance(instance.MAX_VALUE_OF_ACE, int)
-
-
-@given(instance=blackjack_Card_strategy)
-def test_blackjack_card_MAX_VALUE_OF_ACE_setter(instance):
-    original = instance.MAX_VALUE_OF_ACE
-    instance.MAX_VALUE_OF_ACE = original
-    assert instance.MAX_VALUE_OF_ACE == original
-
-@given(instance=blackjack_Card_strategy)
-def test_blackjack_card_BLACKJACK_VALUE_type(instance):
-    assert isinstance(instance.BLACKJACK_VALUE, int)
-
-
-@given(instance=blackjack_Card_strategy)
-def test_blackjack_card_BLACKJACK_VALUE_setter(instance):
-    original = instance.BLACKJACK_VALUE
-    instance.BLACKJACK_VALUE = original
-    assert instance.BLACKJACK_VALUE == original
-
-@given(instance=blackjack_Card_strategy)
-def test_blackjack_card_suit_type(instance):
-    assert isinstance(instance.suit, blackjack_suit)
 
 
 @given(instance=blackjack_Card_strategy)
@@ -685,9 +660,22 @@ def test_blackjack_card_suit_setter(instance):
     instance.suit = original
     assert instance.suit == original
 
+
+
 @given(instance=blackjack_Card_strategy)
-def test_blackjack_card_value_type(instance):
-    assert isinstance(instance.value, blackjack_value)
+def test_blackjack_card_MAX_VALUE_OF_ACE_setter(instance):
+    original = instance.MAX_VALUE_OF_ACE
+    instance.MAX_VALUE_OF_ACE = original
+    assert instance.MAX_VALUE_OF_ACE == original
+
+
+
+@given(instance=blackjack_Card_strategy)
+def test_blackjack_card_BLACKJACK_VALUE_setter(instance):
+    original = instance.BLACKJACK_VALUE
+    instance.BLACKJACK_VALUE = original
+    assert instance.BLACKJACK_VALUE == original
+
 
 
 @given(instance=blackjack_Card_strategy)
@@ -711,53 +699,14 @@ def test_blackjack_deckshuffledlistener_interface_instantiation(instance):
 def test_blackjack_blackjackgame_instantiation(instance):
     assert isinstance(instance, blackjack_BlackjackGame)
 
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_dealersHandTextView_type(instance):
-    assert isinstance(instance.dealersHandTextView, str)
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_dealersHandTextView_setter(instance):
-    original = instance.dealersHandTextView
-    instance.dealersHandTextView = original
-    assert instance.dealersHandTextView == original
+def test_blackjack_blackjackgame_gameResultTextView_setter(instance):
+    original = instance.gameResultTextView
+    instance.gameResultTextView = original
+    assert instance.gameResultTextView == original
 
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_playersHandTextView_type(instance):
-    assert isinstance(instance.playersHandTextView, str)
-
-
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_playersHandTextView_setter(instance):
-    original = instance.playersHandTextView
-    instance.playersHandTextView = original
-    assert instance.playersHandTextView == original
-
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_stayButton_type(instance):
-    assert isinstance(instance.stayButton, str)
-
-
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_stayButton_setter(instance):
-    original = instance.stayButton
-    instance.stayButton = original
-    assert instance.stayButton == original
-
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_MAX_HITS_type(instance):
-    assert isinstance(instance.MAX_HITS, int)
-
-
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_MAX_HITS_setter(instance):
-    original = instance.MAX_HITS
-    instance.MAX_HITS = original
-    assert instance.MAX_HITS == original
-
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_hitButton_type(instance):
-    assert isinstance(instance.hitButton, str)
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
@@ -766,9 +715,6 @@ def test_blackjack_blackjackgame_hitButton_setter(instance):
     instance.hitButton = original
     assert instance.hitButton == original
 
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_MAX_CARDS_PULLED_type(instance):
-    assert isinstance(instance.MAX_CARDS_PULLED, int)
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
@@ -777,9 +723,14 @@ def test_blackjack_blackjackgame_MAX_CARDS_PULLED_setter(instance):
     instance.MAX_CARDS_PULLED = original
     assert instance.MAX_CARDS_PULLED == original
 
+
+
 @given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_dealersHandValueTextView_type(instance):
-    assert isinstance(instance.dealersHandValueTextView, str)
+def test_blackjack_blackjackgame_MAX_HITS_setter(instance):
+    original = instance.MAX_HITS
+    instance.MAX_HITS = original
+    assert instance.MAX_HITS == original
+
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
@@ -788,20 +739,14 @@ def test_blackjack_blackjackgame_dealersHandValueTextView_setter(instance):
     instance.dealersHandValueTextView = original
     assert instance.dealersHandValueTextView == original
 
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_gstate_type(instance):
-    assert isinstance(instance.gstate, blackjack_gamestate)
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_gstate_setter(instance):
-    original = instance.gstate
-    instance.gstate = original
-    assert instance.gstate == original
+def test_blackjack_blackjackgame_playersHandTextView_setter(instance):
+    original = instance.playersHandTextView
+    instance.playersHandTextView = original
+    assert instance.playersHandTextView == original
 
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_playerHandValueTextView_type(instance):
-    assert isinstance(instance.playerHandValueTextView, str)
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
@@ -810,16 +755,29 @@ def test_blackjack_blackjackgame_playerHandValueTextView_setter(instance):
     instance.playerHandValueTextView = original
     assert instance.playerHandValueTextView == original
 
-@given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_gameResultTextView_type(instance):
-    assert isinstance(instance.gameResultTextView, str)
 
 
 @given(instance=blackjack_BlackjackGame_strategy)
-def test_blackjack_blackjackgame_gameResultTextView_setter(instance):
-    original = instance.gameResultTextView
-    instance.gameResultTextView = original
-    assert instance.gameResultTextView == original
+def test_blackjack_blackjackgame_stayButton_setter(instance):
+    original = instance.stayButton
+    instance.stayButton = original
+    assert instance.stayButton == original
+
+
+
+@given(instance=blackjack_BlackjackGame_strategy)
+def test_blackjack_blackjackgame_dealersHandTextView_setter(instance):
+    original = instance.dealersHandTextView
+    instance.dealersHandTextView = original
+    assert instance.dealersHandTextView == original
+
+
+
+@given(instance=blackjack_BlackjackGame_strategy)
+def test_blackjack_blackjackgame_gstate_setter(instance):
+    original = instance.gstate
+    instance.gstate = original
+    assert instance.gstate == original
 
 @given(instance=blackjack_ExampleInstrumentedTest_strategy)
 @settings(max_examples=50)

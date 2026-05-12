@@ -1,0 +1,43 @@
+The model has 18 class(es).
+The class 'Player' has the following attributes: 'name' of type str.
+The class 'Game2' has the following attributes: 'name' of type str.
+The class 'Player2' has the following attributes: 'name' of type str.
+The class 'Card2' has the following attributes: 'suit' of type Suit2; 'kind' of type Kind2.
+The class 'Deck2' has no attributes.
+The class 'Deck' has no attributes.
+The class 'Avatar2' has no attributes.
+The class 'Deck1' has the following attributes: 'Card_cards_52_' of type Card.
+The class 'Card' has the following attributes: 'kind' of type Kind; 'suit' of type Suit.
+The class 'Theme1' has no attributes.
+The class 'Card1' has the following attributes: 'suit' of type Suit1; 'kind' of type Kind1.
+The class 'Avatar1' has no attributes.
+The class 'Theme' has no attributes.
+The class 'Avatar' has no attributes.
+The class 'Theme2' has no attributes.
+The class 'Player1' has the following attributes: 'hand' of type str; 'name' of type str.
+The class 'Game1' has the following attributes: 'name' of type str.
+The class 'Game' has the following attributes: 'name' of type str.
+The enumeration 'Suit2' does not specify any literals.
+The enumeration 'Suit' does not specify any literals.
+The enumeration 'Kind' does not specify any literals.
+The enumeration 'Suit1' does not specify any literals.
+The enumeration 'Kind1' does not specify any literals.
+The enumeration 'Kind2' does not specify any literals.
+'Deck2' (role 'theme12', cardinality 0..*) is associated with 'Theme2' (role 'decks13', cardinality 0..*).
+'Deck2' (role 'cards14', cardinality 0..*) is associated with 'Card2' (role 'deck15', cardinality 0..*).
+'Card' (role 'deck3', cardinality 0..*) is associated with 'Deck' (role 'cards2', cardinality 0..*).
+'Player1' (role 'games31', cardinality 0..*) is associated with 'Game1' (role 'players30', cardinality 0..*).
+'Deck1' (role 'cards26', cardinality 0..*) is associated with 'Card1' (role 'deck27', cardinality 0..*).
+'Deck2' (role 'games17', cardinality 0..*) is associated with 'Game2' (role 'decks16', cardinality 0..*).
+'Player2' (role 'games19', cardinality 0..*) is associated with 'Game2' (role 'players18', cardinality 0..*).
+'Avatar2' (role 'players23', cardinality 0..*) is associated with 'Player2' (role 'avatar22', cardinality 0..*).
+'Theme1' (role 'decks25', cardinality 0..*) is associated with 'Deck1' (role 'theme24', cardinality 0..*).
+'Theme' (role 'decks1', cardinality 0..*) is associated with 'Deck' (role 'theme0', cardinality 0..*).
+'Game1' (role 'decks28', cardinality 0..*) is associated with 'Deck1' (role 'games29', cardinality 0..*).
+'Avatar1' (role 'players35', cardinality 0..*) is associated with 'Player1' (role 'avatar34', cardinality 0..*).
+'Player' (role 'cards8', cardinality 0..*) is associated with 'Card' (role 'player9', cardinality 0..*).
+'Player2' (role 'cards20', cardinality 0..*) is associated with 'Card2' (role 'player21', cardinality 0..*).
+'Game' (role 'decks4', cardinality 0..*) is associated with 'Deck' (role 'games5', cardinality 0..*).
+'Avatar' (role 'players11', cardinality 0..*) is associated with 'Player' (role 'avatar10', cardinality 0..*).
+'Player1' (role 'cards32', cardinality 0..*) is associated with 'Card1' (role 'player33', cardinality 0..*).
+'Game' (role 'players6', cardinality 0..*) is associated with 'Player' (role 'games7', cardinality 0..*).

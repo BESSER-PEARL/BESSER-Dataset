@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hsm::Root,
-    hsm::AbstractState,
-    hsm::Transition,
-    hsm::StateMachine,
+from python_code import (
+    hsm_Root,
+    hsm_AbstractState,
+    hsm_Transition,
+    hsm_StateMachine,
     AbstractState,
-    hsm::RegularState,
-    hsm::InitialState,
-    hsm::CompositeState,
+    hsm_RegularState,
+    hsm_InitialState,
+    hsm_CompositeState,
 )
 
 # =============================================================================
@@ -22,37 +22,37 @@ from classes import (
 
 
 
-def test_hsm::root_is_not_abstract():
-    assert not inspect.isabstract(hsm::Root)
+def test_hsm_root_is_not_abstract():
+    assert not inspect.isabstract(hsm_Root)
 
 
-def test_hsm::root_constructor_exists():
-    assert callable(hsm::Root.__init__)
+def test_hsm_root_constructor_exists():
+    assert callable(hsm_Root.__init__)
 
 
-def test_hsm::root_constructor_args():
-    sig = inspect.signature(hsm::Root.__init__)
+def test_hsm_root_constructor_args():
+    sig = inspect.signature(hsm_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hsm::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(hsm::AbstractState)
+def test_hsm_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(hsm_AbstractState)
 
 
-def test_hsm::abstractstate_constructor_exists():
-    assert callable(hsm::AbstractState.__init__)
+def test_hsm_abstractstate_constructor_exists():
+    assert callable(hsm_AbstractState.__init__)
 
 
-def test_hsm::abstractstate_constructor_args():
-    sig = inspect.signature(hsm::AbstractState.__init__)
+def test_hsm_abstractstate_constructor_args():
+    sig = inspect.signature(hsm_AbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hsm::abstractstate_has_name():
-    assert hasattr(hsm::AbstractState, "name")
+def test_hsm_abstractstate_has_name():
+    assert hasattr(hsm_AbstractState, "name")
     descriptor = None
-    for klass in hsm::AbstractState.__mro__:
+    for klass in hsm_AbstractState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,23 +60,23 @@ def test_hsm::abstractstate_has_name():
 
 
 
-def test_hsm::transition_is_not_abstract():
-    assert not inspect.isabstract(hsm::Transition)
+def test_hsm_transition_is_not_abstract():
+    assert not inspect.isabstract(hsm_Transition)
 
 
-def test_hsm::transition_constructor_exists():
-    assert callable(hsm::Transition.__init__)
+def test_hsm_transition_constructor_exists():
+    assert callable(hsm_Transition.__init__)
 
 
-def test_hsm::transition_constructor_args():
-    sig = inspect.signature(hsm::Transition.__init__)
+def test_hsm_transition_constructor_args():
+    sig = inspect.signature(hsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_hsm::transition_has_label():
-    assert hasattr(hsm::Transition, "label")
+def test_hsm_transition_has_label():
+    assert hasattr(hsm_Transition, "label")
     descriptor = None
-    for klass in hsm::Transition.__mro__:
+    for klass in hsm_Transition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -84,23 +84,23 @@ def test_hsm::transition_has_label():
 
 
 
-def test_hsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(hsm::StateMachine)
+def test_hsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(hsm_StateMachine)
 
 
-def test_hsm::statemachine_constructor_exists():
-    assert callable(hsm::StateMachine.__init__)
+def test_hsm_statemachine_constructor_exists():
+    assert callable(hsm_StateMachine.__init__)
 
 
-def test_hsm::statemachine_constructor_args():
-    sig = inspect.signature(hsm::StateMachine.__init__)
+def test_hsm_statemachine_constructor_args():
+    sig = inspect.signature(hsm_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hsm::statemachine_has_name():
-    assert hasattr(hsm::StateMachine, "name")
+def test_hsm_statemachine_has_name():
+    assert hasattr(hsm_StateMachine, "name")
     descriptor = None
-    for klass in hsm::StateMachine.__mro__:
+    for klass in hsm_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -122,44 +122,44 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_hsm::regularstate_is_not_abstract():
-    assert not inspect.isabstract(hsm::RegularState)
+def test_hsm_regularstate_is_not_abstract():
+    assert not inspect.isabstract(hsm_RegularState)
 
 
-def test_hsm::regularstate_constructor_exists():
-    assert callable(hsm::RegularState.__init__)
+def test_hsm_regularstate_constructor_exists():
+    assert callable(hsm_RegularState.__init__)
 
 
-def test_hsm::regularstate_constructor_args():
-    sig = inspect.signature(hsm::RegularState.__init__)
+def test_hsm_regularstate_constructor_args():
+    sig = inspect.signature(hsm_RegularState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(hsm::InitialState)
+def test_hsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(hsm_InitialState)
 
 
-def test_hsm::initialstate_constructor_exists():
-    assert callable(hsm::InitialState.__init__)
+def test_hsm_initialstate_constructor_exists():
+    assert callable(hsm_InitialState.__init__)
 
 
-def test_hsm::initialstate_constructor_args():
-    sig = inspect.signature(hsm::InitialState.__init__)
+def test_hsm_initialstate_constructor_args():
+    sig = inspect.signature(hsm_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hsm::compositestate_is_not_abstract():
-    assert not inspect.isabstract(hsm::CompositeState)
+def test_hsm_compositestate_is_not_abstract():
+    assert not inspect.isabstract(hsm_CompositeState)
 
 
-def test_hsm::compositestate_constructor_exists():
-    assert callable(hsm::CompositeState.__init__)
+def test_hsm_compositestate_constructor_exists():
+    assert callable(hsm_CompositeState.__init__)
 
 
-def test_hsm::compositestate_constructor_args():
-    sig = inspect.signature(hsm::CompositeState.__init__)
+def test_hsm_compositestate_constructor_args():
+    sig = inspect.signature(hsm_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,86 +174,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hsm::Root_strategy = st.builds(
-    hsm::Root,
+hsm_Root_strategy = st.builds(
+    hsm_Root,
 )
-hsm::AbstractState_strategy = st.builds(
-    hsm::AbstractState,
+hsm_AbstractState_strategy = st.builds(
+    hsm_AbstractState,
     name=
         safe_text
 )
-hsm::Transition_strategy = st.builds(
-    hsm::Transition,
+hsm_Transition_strategy = st.builds(
+    hsm_Transition,
     label=
         safe_text
 )
-hsm::StateMachine_strategy = st.builds(
-    hsm::StateMachine,
+hsm_StateMachine_strategy = st.builds(
+    hsm_StateMachine,
     name=
         safe_text
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-hsm::RegularState_strategy = st.builds(
-    hsm::RegularState,
+hsm_RegularState_strategy = st.builds(
+    hsm_RegularState,
 )
-hsm::InitialState_strategy = st.builds(
-    hsm::InitialState,
+hsm_InitialState_strategy = st.builds(
+    hsm_InitialState,
 )
-hsm::CompositeState_strategy = st.builds(
-    hsm::CompositeState,
+hsm_CompositeState_strategy = st.builds(
+    hsm_CompositeState,
 )
 
-@given(instance=hsm::Root_strategy)
+@given(instance=hsm_Root_strategy)
 @settings(max_examples=50)
-def test_hsm::root_instantiation(instance):
-    assert isinstance(instance, hsm::Root)
+def test_hsm_root_instantiation(instance):
+    assert isinstance(instance, hsm_Root)
 
-@given(instance=hsm::AbstractState_strategy)
+@given(instance=hsm_AbstractState_strategy)
 @settings(max_examples=50)
-def test_hsm::abstractstate_instantiation(instance):
-    assert isinstance(instance, hsm::AbstractState)
-
-@given(instance=hsm::AbstractState_strategy)
-def test_hsm::abstractstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hsm_abstractstate_instantiation(instance):
+    assert isinstance(instance, hsm_AbstractState)
 
 
-@given(instance=hsm::AbstractState_strategy)
-def test_hsm::abstractstate_name_setter(instance):
+
+@given(instance=hsm_AbstractState_strategy)
+def test_hsm_abstractstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hsm::Transition_strategy)
+@given(instance=hsm_Transition_strategy)
 @settings(max_examples=50)
-def test_hsm::transition_instantiation(instance):
-    assert isinstance(instance, hsm::Transition)
-
-@given(instance=hsm::Transition_strategy)
-def test_hsm::transition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_hsm_transition_instantiation(instance):
+    assert isinstance(instance, hsm_Transition)
 
 
-@given(instance=hsm::Transition_strategy)
-def test_hsm::transition_label_setter(instance):
+
+@given(instance=hsm_Transition_strategy)
+def test_hsm_transition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=hsm::StateMachine_strategy)
+@given(instance=hsm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_hsm::statemachine_instantiation(instance):
-    assert isinstance(instance, hsm::StateMachine)
-
-@given(instance=hsm::StateMachine_strategy)
-def test_hsm::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hsm_statemachine_instantiation(instance):
+    assert isinstance(instance, hsm_StateMachine)
 
 
-@given(instance=hsm::StateMachine_strategy)
-def test_hsm::statemachine_name_setter(instance):
+
+@given(instance=hsm_StateMachine_strategy)
+def test_hsm_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -263,17 +254,17 @@ def test_hsm::statemachine_name_setter(instance):
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=hsm::RegularState_strategy)
+@given(instance=hsm_RegularState_strategy)
 @settings(max_examples=50)
-def test_hsm::regularstate_instantiation(instance):
-    assert isinstance(instance, hsm::RegularState)
+def test_hsm_regularstate_instantiation(instance):
+    assert isinstance(instance, hsm_RegularState)
 
-@given(instance=hsm::InitialState_strategy)
+@given(instance=hsm_InitialState_strategy)
 @settings(max_examples=50)
-def test_hsm::initialstate_instantiation(instance):
-    assert isinstance(instance, hsm::InitialState)
+def test_hsm_initialstate_instantiation(instance):
+    assert isinstance(instance, hsm_InitialState)
 
-@given(instance=hsm::CompositeState_strategy)
+@given(instance=hsm_CompositeState_strategy)
 @settings(max_examples=50)
-def test_hsm::compositestate_instantiation(instance):
-    assert isinstance(instance, hsm::CompositeState)
+def test_hsm_compositestate_instantiation(instance):
+    assert isinstance(instance, hsm_CompositeState)

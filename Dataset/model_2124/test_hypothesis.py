@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TestCategoryBase,
     TestCategoryBeanAbstract,
-    dmf::DObject,
-    tests::TestCategoryExtends,
-    tests::TestCategoryBeanConcrete,
-    tests::ExternalTestType,
+    dmf_DObject,
+    tests_TestCategoryExtends,
+    tests_TestCategoryBeanConcrete,
+    tests_ExternalTestType,
     DObject,
-    tests::TestCategoryBase,
-    tests::TestCrossLinkedParametersWithCalculation,
-    tests::TestCategoryBeanAbstract,
-    tests::TestCategoryBeanB,
-    tests::TestCategoryComposition,
-    tests::TestCategoryReference,
-    tests::TestCategoryBeanA,
-    tests::TestCategoryCompositionArray,
-    tests::TestMassParameters,
-    tests::TestCategoryIntrinsicArray,
-    tests::TestParameter,
-    tests::EReferenceTest,
-    tests::TestCategoryReferenceArray,
-    tests::TestCategoryAllProperty,
+    tests_TestCategoryBeanA,
+    tests_EReferenceTest,
+    tests_TestCategoryReferenceArray,
+    tests_TestCategoryIntrinsicArray,
+    tests_TestCategoryBeanB,
+    tests_TestMassParameters,
+    tests_TestCategoryBase,
+    tests_TestCategoryComposition,
+    tests_TestParameter,
+    tests_TestCategoryBeanAbstract,
+    tests_TestCategoryCompositionArray,
+    tests_TestCrossLinkedParametersWithCalculation,
+    tests_TestCategoryReference,
+    tests_TestCategoryAllProperty,
     EnumTestEnum,
 )
 
@@ -64,37 +64,37 @@ def test_testcategorybeanabstract_constructor_args():
 
 
 
-def test_dmf::dobject_is_not_abstract():
-    assert not inspect.isabstract(dmf::DObject)
+def test_dmf_dobject_is_not_abstract():
+    assert not inspect.isabstract(dmf_DObject)
 
 
-def test_dmf::dobject_constructor_exists():
-    assert callable(dmf::DObject.__init__)
+def test_dmf_dobject_constructor_exists():
+    assert callable(dmf_DObject.__init__)
 
 
-def test_dmf::dobject_constructor_args():
-    sig = inspect.signature(dmf::DObject.__init__)
+def test_dmf_dobject_constructor_args():
+    sig = inspect.signature(dmf_DObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::testcategoryextends_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryExtends)
+def test_tests_testcategoryextends_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryExtends)
 
 
-def test_tests::testcategoryextends_constructor_exists():
-    assert callable(tests::TestCategoryExtends.__init__)
+def test_tests_testcategoryextends_constructor_exists():
+    assert callable(tests_TestCategoryExtends.__init__)
 
 
-def test_tests::testcategoryextends_constructor_args():
-    sig = inspect.signature(tests::TestCategoryExtends.__init__)
+def test_tests_testcategoryextends_constructor_args():
+    sig = inspect.signature(tests_TestCategoryExtends.__init__)
     params = list(sig.parameters.keys())
     assert "testExtendsProperty" in params, "Missing parameter 'testExtendsProperty'"
 
-def test_tests::testcategoryextends_has_testExtendsProperty():
-    assert hasattr(tests::TestCategoryExtends, "testExtendsProperty")
+def test_tests_testcategoryextends_has_testExtendsProperty():
+    assert hasattr(tests_TestCategoryExtends, "testExtendsProperty")
     descriptor = None
-    for klass in tests::TestCategoryExtends.__mro__:
+    for klass in tests_TestCategoryExtends.__mro__:
         if "testExtendsProperty" in klass.__dict__:
             descriptor = klass.__dict__["testExtendsProperty"]
             break
@@ -102,30 +102,30 @@ def test_tests::testcategoryextends_has_testExtendsProperty():
 
 
 
-def test_tests::testcategorybeanconcrete_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryBeanConcrete)
+def test_tests_testcategorybeanconcrete_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryBeanConcrete)
 
 
-def test_tests::testcategorybeanconcrete_constructor_exists():
-    assert callable(tests::TestCategoryBeanConcrete.__init__)
+def test_tests_testcategorybeanconcrete_constructor_exists():
+    assert callable(tests_TestCategoryBeanConcrete.__init__)
 
 
-def test_tests::testcategorybeanconcrete_constructor_args():
-    sig = inspect.signature(tests::TestCategoryBeanConcrete.__init__)
+def test_tests_testcategorybeanconcrete_constructor_args():
+    sig = inspect.signature(tests_TestCategoryBeanConcrete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::externaltesttype_is_not_abstract():
-    assert not inspect.isabstract(tests::ExternalTestType)
+def test_tests_externaltesttype_is_not_abstract():
+    assert not inspect.isabstract(tests_ExternalTestType)
 
 
-def test_tests::externaltesttype_constructor_exists():
-    assert callable(tests::ExternalTestType.__init__)
+def test_tests_externaltesttype_constructor_exists():
+    assert callable(tests_ExternalTestType.__init__)
 
 
-def test_tests::externaltesttype_constructor_args():
-    sig = inspect.signature(tests::ExternalTestType.__init__)
+def test_tests_externaltesttype_constructor_args():
+    sig = inspect.signature(tests_ExternalTestType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,179 +144,75 @@ def test_dobject_constructor_args():
 
 
 
-def test_tests::testcategorybase_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryBase)
+def test_tests_testcategorybeana_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryBeanA)
 
 
-def test_tests::testcategorybase_constructor_exists():
-    assert callable(tests::TestCategoryBase.__init__)
+def test_tests_testcategorybeana_constructor_exists():
+    assert callable(tests_TestCategoryBeanA.__init__)
 
 
-def test_tests::testcategorybase_constructor_args():
-    sig = inspect.signature(tests::TestCategoryBase.__init__)
-    params = list(sig.parameters.keys())
-    assert "testBaseProperty" in params, "Missing parameter 'testBaseProperty'"
-
-def test_tests::testcategorybase_has_testBaseProperty():
-    assert hasattr(tests::TestCategoryBase, "testBaseProperty")
-    descriptor = None
-    for klass in tests::TestCategoryBase.__mro__:
-        if "testBaseProperty" in klass.__dict__:
-            descriptor = klass.__dict__["testBaseProperty"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tests::testcrosslinkedparameterswithcalculation_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCrossLinkedParametersWithCalculation)
-
-
-def test_tests::testcrosslinkedparameterswithcalculation_constructor_exists():
-    assert callable(tests::TestCrossLinkedParametersWithCalculation.__init__)
-
-
-def test_tests::testcrosslinkedparameterswithcalculation_constructor_args():
-    sig = inspect.signature(tests::TestCrossLinkedParametersWithCalculation.__init__)
-    params = list(sig.parameters.keys())
-    assert "calcedTrl" in params, "Missing parameter 'calcedTrl'"
-
-def test_tests::testcrosslinkedparameterswithcalculation_has_calcedTrl():
-    assert hasattr(tests::TestCrossLinkedParametersWithCalculation, "calcedTrl")
-    descriptor = None
-    for klass in tests::TestCrossLinkedParametersWithCalculation.__mro__:
-        if "calcedTrl" in klass.__dict__:
-            descriptor = klass.__dict__["calcedTrl"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tests::testcategorybeanabstract_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryBeanAbstract)
-
-
-def test_tests::testcategorybeanabstract_constructor_exists():
-    assert callable(tests::TestCategoryBeanAbstract.__init__)
-
-
-def test_tests::testcategorybeanabstract_constructor_args():
-    sig = inspect.signature(tests::TestCategoryBeanAbstract.__init__)
+def test_tests_testcategorybeana_constructor_args():
+    sig = inspect.signature(tests_TestCategoryBeanA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::testcategorybeanb_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryBeanB)
+def test_tests_ereferencetest_is_not_abstract():
+    assert not inspect.isabstract(tests_EReferenceTest)
 
 
-def test_tests::testcategorybeanb_constructor_exists():
-    assert callable(tests::TestCategoryBeanB.__init__)
+def test_tests_ereferencetest_constructor_exists():
+    assert callable(tests_EReferenceTest.__init__)
 
 
-def test_tests::testcategorybeanb_constructor_args():
-    sig = inspect.signature(tests::TestCategoryBeanB.__init__)
+def test_tests_ereferencetest_constructor_args():
+    sig = inspect.signature(tests_EReferenceTest.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::testcategorycomposition_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryComposition)
+def test_tests_testcategoryreferencearray_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryReferenceArray)
 
 
-def test_tests::testcategorycomposition_constructor_exists():
-    assert callable(tests::TestCategoryComposition.__init__)
+def test_tests_testcategoryreferencearray_constructor_exists():
+    assert callable(tests_TestCategoryReferenceArray.__init__)
 
 
-def test_tests::testcategorycomposition_constructor_args():
-    sig = inspect.signature(tests::TestCategoryComposition.__init__)
+def test_tests_testcategoryreferencearray_constructor_args():
+    sig = inspect.signature(tests_TestCategoryReferenceArray.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::testcategoryreference_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryReference)
+def test_tests_testcategoryintrinsicarray_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryIntrinsicArray)
 
 
-def test_tests::testcategoryreference_constructor_exists():
-    assert callable(tests::TestCategoryReference.__init__)
+def test_tests_testcategoryintrinsicarray_constructor_exists():
+    assert callable(tests_TestCategoryIntrinsicArray.__init__)
 
 
-def test_tests::testcategoryreference_constructor_args():
-    sig = inspect.signature(tests::TestCategoryReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tests::testcategorybeana_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryBeanA)
-
-
-def test_tests::testcategorybeana_constructor_exists():
-    assert callable(tests::TestCategoryBeanA.__init__)
-
-
-def test_tests::testcategorybeana_constructor_args():
-    sig = inspect.signature(tests::TestCategoryBeanA.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tests::testcategorycompositionarray_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryCompositionArray)
-
-
-def test_tests::testcategorycompositionarray_constructor_exists():
-    assert callable(tests::TestCategoryCompositionArray.__init__)
-
-
-def test_tests::testcategorycompositionarray_constructor_args():
-    sig = inspect.signature(tests::TestCategoryCompositionArray.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tests::testmassparameters_is_not_abstract():
-    assert not inspect.isabstract(tests::TestMassParameters)
-
-
-def test_tests::testmassparameters_constructor_exists():
-    assert callable(tests::TestMassParameters.__init__)
-
-
-def test_tests::testmassparameters_constructor_args():
-    sig = inspect.signature(tests::TestMassParameters.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tests::testcategoryintrinsicarray_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryIntrinsicArray)
-
-
-def test_tests::testcategoryintrinsicarray_constructor_exists():
-    assert callable(tests::TestCategoryIntrinsicArray.__init__)
-
-
-def test_tests::testcategoryintrinsicarray_constructor_args():
-    sig = inspect.signature(tests::TestCategoryIntrinsicArray.__init__)
+def test_tests_testcategoryintrinsicarray_constructor_args():
+    sig = inspect.signature(tests_TestCategoryIntrinsicArray.__init__)
     params = list(sig.parameters.keys())
     assert "testStringArrayStatic" in params, "Missing parameter 'testStringArrayStatic'"
     assert "testStringArrayDynamic" in params, "Missing parameter 'testStringArrayDynamic'"
 
-def test_tests::testcategoryintrinsicarray_has_testStringArrayStatic():
-    assert hasattr(tests::TestCategoryIntrinsicArray, "testStringArrayStatic")
+def test_tests_testcategoryintrinsicarray_has_testStringArrayStatic():
+    assert hasattr(tests_TestCategoryIntrinsicArray, "testStringArrayStatic")
     descriptor = None
-    for klass in tests::TestCategoryIntrinsicArray.__mro__:
+    for klass in tests_TestCategoryIntrinsicArray.__mro__:
         if "testStringArrayStatic" in klass.__dict__:
             descriptor = klass.__dict__["testStringArrayStatic"]
             break
     assert isinstance(descriptor, property)
 
-def test_tests::testcategoryintrinsicarray_has_testStringArrayDynamic():
-    assert hasattr(tests::TestCategoryIntrinsicArray, "testStringArrayDynamic")
+def test_tests_testcategoryintrinsicarray_has_testStringArrayDynamic():
+    assert hasattr(tests_TestCategoryIntrinsicArray, "testStringArrayDynamic")
     descriptor = None
-    for klass in tests::TestCategoryIntrinsicArray.__mro__:
+    for klass in tests_TestCategoryIntrinsicArray.__mro__:
         if "testStringArrayDynamic" in klass.__dict__:
             descriptor = klass.__dict__["testStringArrayDynamic"]
             break
@@ -324,23 +220,89 @@ def test_tests::testcategoryintrinsicarray_has_testStringArrayDynamic():
 
 
 
-def test_tests::testparameter_is_not_abstract():
-    assert not inspect.isabstract(tests::TestParameter)
+def test_tests_testcategorybeanb_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryBeanB)
 
 
-def test_tests::testparameter_constructor_exists():
-    assert callable(tests::TestParameter.__init__)
+def test_tests_testcategorybeanb_constructor_exists():
+    assert callable(tests_TestCategoryBeanB.__init__)
 
 
-def test_tests::testparameter_constructor_args():
-    sig = inspect.signature(tests::TestParameter.__init__)
+def test_tests_testcategorybeanb_constructor_args():
+    sig = inspect.signature(tests_TestCategoryBeanB.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tests_testmassparameters_is_not_abstract():
+    assert not inspect.isabstract(tests_TestMassParameters)
+
+
+def test_tests_testmassparameters_constructor_exists():
+    assert callable(tests_TestMassParameters.__init__)
+
+
+def test_tests_testmassparameters_constructor_args():
+    sig = inspect.signature(tests_TestMassParameters.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tests_testcategorybase_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryBase)
+
+
+def test_tests_testcategorybase_constructor_exists():
+    assert callable(tests_TestCategoryBase.__init__)
+
+
+def test_tests_testcategorybase_constructor_args():
+    sig = inspect.signature(tests_TestCategoryBase.__init__)
+    params = list(sig.parameters.keys())
+    assert "testBaseProperty" in params, "Missing parameter 'testBaseProperty'"
+
+def test_tests_testcategorybase_has_testBaseProperty():
+    assert hasattr(tests_TestCategoryBase, "testBaseProperty")
+    descriptor = None
+    for klass in tests_TestCategoryBase.__mro__:
+        if "testBaseProperty" in klass.__dict__:
+            descriptor = klass.__dict__["testBaseProperty"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tests_testcategorycomposition_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryComposition)
+
+
+def test_tests_testcategorycomposition_constructor_exists():
+    assert callable(tests_TestCategoryComposition.__init__)
+
+
+def test_tests_testcategorycomposition_constructor_args():
+    sig = inspect.signature(tests_TestCategoryComposition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tests_testparameter_is_not_abstract():
+    assert not inspect.isabstract(tests_TestParameter)
+
+
+def test_tests_testparameter_constructor_exists():
+    assert callable(tests_TestParameter.__init__)
+
+
+def test_tests_testparameter_constructor_args():
+    sig = inspect.signature(tests_TestParameter.__init__)
     params = list(sig.parameters.keys())
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
 
-def test_tests::testparameter_has_defaultValue():
-    assert hasattr(tests::TestParameter, "defaultValue")
+def test_tests_testparameter_has_defaultValue():
+    assert hasattr(tests_TestParameter, "defaultValue")
     descriptor = None
-    for klass in tests::TestParameter.__mro__:
+    for klass in tests_TestParameter.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
@@ -348,103 +310,141 @@ def test_tests::testparameter_has_defaultValue():
 
 
 
-def test_tests::ereferencetest_is_not_abstract():
-    assert not inspect.isabstract(tests::EReferenceTest)
+def test_tests_testcategorybeanabstract_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryBeanAbstract)
 
 
-def test_tests::ereferencetest_constructor_exists():
-    assert callable(tests::EReferenceTest.__init__)
+def test_tests_testcategorybeanabstract_constructor_exists():
+    assert callable(tests_TestCategoryBeanAbstract.__init__)
 
 
-def test_tests::ereferencetest_constructor_args():
-    sig = inspect.signature(tests::EReferenceTest.__init__)
+def test_tests_testcategorybeanabstract_constructor_args():
+    sig = inspect.signature(tests_TestCategoryBeanAbstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::testcategoryreferencearray_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryReferenceArray)
+def test_tests_testcategorycompositionarray_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryCompositionArray)
 
 
-def test_tests::testcategoryreferencearray_constructor_exists():
-    assert callable(tests::TestCategoryReferenceArray.__init__)
+def test_tests_testcategorycompositionarray_constructor_exists():
+    assert callable(tests_TestCategoryCompositionArray.__init__)
 
 
-def test_tests::testcategoryreferencearray_constructor_args():
-    sig = inspect.signature(tests::TestCategoryReferenceArray.__init__)
+def test_tests_testcategorycompositionarray_constructor_args():
+    sig = inspect.signature(tests_TestCategoryCompositionArray.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tests::testcategoryallproperty_is_not_abstract():
-    assert not inspect.isabstract(tests::TestCategoryAllProperty)
+def test_tests_testcrosslinkedparameterswithcalculation_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCrossLinkedParametersWithCalculation)
 
 
-def test_tests::testcategoryallproperty_constructor_exists():
-    assert callable(tests::TestCategoryAllProperty.__init__)
+def test_tests_testcrosslinkedparameterswithcalculation_constructor_exists():
+    assert callable(tests_TestCrossLinkedParametersWithCalculation.__init__)
 
 
-def test_tests::testcategoryallproperty_constructor_args():
-    sig = inspect.signature(tests::TestCategoryAllProperty.__init__)
+def test_tests_testcrosslinkedparameterswithcalculation_constructor_args():
+    sig = inspect.signature(tests_TestCrossLinkedParametersWithCalculation.__init__)
     params = list(sig.parameters.keys())
-    assert "testInt" in params, "Missing parameter 'testInt'"
-    assert "testResource" in params, "Missing parameter 'testResource'"
-    assert "testFloat" in params, "Missing parameter 'testFloat'"
-    assert "testString" in params, "Missing parameter 'testString'"
+    assert "calcedTrl" in params, "Missing parameter 'calcedTrl'"
+
+def test_tests_testcrosslinkedparameterswithcalculation_has_calcedTrl():
+    assert hasattr(tests_TestCrossLinkedParametersWithCalculation, "calcedTrl")
+    descriptor = None
+    for klass in tests_TestCrossLinkedParametersWithCalculation.__mro__:
+        if "calcedTrl" in klass.__dict__:
+            descriptor = klass.__dict__["calcedTrl"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tests_testcategoryreference_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryReference)
+
+
+def test_tests_testcategoryreference_constructor_exists():
+    assert callable(tests_TestCategoryReference.__init__)
+
+
+def test_tests_testcategoryreference_constructor_args():
+    sig = inspect.signature(tests_TestCategoryReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tests_testcategoryallproperty_is_not_abstract():
+    assert not inspect.isabstract(tests_TestCategoryAllProperty)
+
+
+def test_tests_testcategoryallproperty_constructor_exists():
+    assert callable(tests_TestCategoryAllProperty.__init__)
+
+
+def test_tests_testcategoryallproperty_constructor_args():
+    sig = inspect.signature(tests_TestCategoryAllProperty.__init__)
+    params = list(sig.parameters.keys())
     assert "testEnum" in params, "Missing parameter 'testEnum'"
     assert "testBool" in params, "Missing parameter 'testBool'"
+    assert "testFloat" in params, "Missing parameter 'testFloat'"
+    assert "testInt" in params, "Missing parameter 'testInt'"
+    assert "testResource" in params, "Missing parameter 'testResource'"
+    assert "testString" in params, "Missing parameter 'testString'"
 
-def test_tests::testcategoryallproperty_has_testInt():
-    assert hasattr(tests::TestCategoryAllProperty, "testInt")
+def test_tests_testcategoryallproperty_has_testEnum():
+    assert hasattr(tests_TestCategoryAllProperty, "testEnum")
     descriptor = None
-    for klass in tests::TestCategoryAllProperty.__mro__:
-        if "testInt" in klass.__dict__:
-            descriptor = klass.__dict__["testInt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tests::testcategoryallproperty_has_testResource():
-    assert hasattr(tests::TestCategoryAllProperty, "testResource")
-    descriptor = None
-    for klass in tests::TestCategoryAllProperty.__mro__:
-        if "testResource" in klass.__dict__:
-            descriptor = klass.__dict__["testResource"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tests::testcategoryallproperty_has_testFloat():
-    assert hasattr(tests::TestCategoryAllProperty, "testFloat")
-    descriptor = None
-    for klass in tests::TestCategoryAllProperty.__mro__:
-        if "testFloat" in klass.__dict__:
-            descriptor = klass.__dict__["testFloat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tests::testcategoryallproperty_has_testString():
-    assert hasattr(tests::TestCategoryAllProperty, "testString")
-    descriptor = None
-    for klass in tests::TestCategoryAllProperty.__mro__:
-        if "testString" in klass.__dict__:
-            descriptor = klass.__dict__["testString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tests::testcategoryallproperty_has_testEnum():
-    assert hasattr(tests::TestCategoryAllProperty, "testEnum")
-    descriptor = None
-    for klass in tests::TestCategoryAllProperty.__mro__:
+    for klass in tests_TestCategoryAllProperty.__mro__:
         if "testEnum" in klass.__dict__:
             descriptor = klass.__dict__["testEnum"]
             break
     assert isinstance(descriptor, property)
 
-def test_tests::testcategoryallproperty_has_testBool():
-    assert hasattr(tests::TestCategoryAllProperty, "testBool")
+def test_tests_testcategoryallproperty_has_testBool():
+    assert hasattr(tests_TestCategoryAllProperty, "testBool")
     descriptor = None
-    for klass in tests::TestCategoryAllProperty.__mro__:
+    for klass in tests_TestCategoryAllProperty.__mro__:
         if "testBool" in klass.__dict__:
             descriptor = klass.__dict__["testBool"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tests_testcategoryallproperty_has_testFloat():
+    assert hasattr(tests_TestCategoryAllProperty, "testFloat")
+    descriptor = None
+    for klass in tests_TestCategoryAllProperty.__mro__:
+        if "testFloat" in klass.__dict__:
+            descriptor = klass.__dict__["testFloat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tests_testcategoryallproperty_has_testInt():
+    assert hasattr(tests_TestCategoryAllProperty, "testInt")
+    descriptor = None
+    for klass in tests_TestCategoryAllProperty.__mro__:
+        if "testInt" in klass.__dict__:
+            descriptor = klass.__dict__["testInt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tests_testcategoryallproperty_has_testResource():
+    assert hasattr(tests_TestCategoryAllProperty, "testResource")
+    descriptor = None
+    for klass in tests_TestCategoryAllProperty.__mro__:
+        if "testResource" in klass.__dict__:
+            descriptor = klass.__dict__["testResource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tests_testcategoryallproperty_has_testString():
+    assert hasattr(tests_TestCategoryAllProperty, "testString")
+    descriptor = None
+    for klass in tests_TestCategoryAllProperty.__mro__:
+        if "testString" in klass.__dict__:
+            descriptor = klass.__dict__["testString"]
             break
     assert isinstance(descriptor, property)
 
@@ -458,8 +458,8 @@ def test_enumtestenum_has_all_literals():
     expected_literals = [
         "MEDIUM",
         "HIGH",
-        "LOW",
         "INCREDIBLE",
+        "LOW",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -483,86 +483,86 @@ TestCategoryBase_strategy = st.builds(
 TestCategoryBeanAbstract_strategy = st.builds(
     TestCategoryBeanAbstract,
 )
-dmf::DObject_strategy = st.builds(
-    dmf::DObject,
+dmf_DObject_strategy = st.builds(
+    dmf_DObject,
 )
-tests::TestCategoryExtends_strategy = st.builds(
-    tests::TestCategoryExtends,
+tests_TestCategoryExtends_strategy = st.builds(
+    tests_TestCategoryExtends,
     testExtendsProperty=
         st.integers()
 )
-tests::TestCategoryBeanConcrete_strategy = st.builds(
-    tests::TestCategoryBeanConcrete,
+tests_TestCategoryBeanConcrete_strategy = st.builds(
+    tests_TestCategoryBeanConcrete,
 )
-tests::ExternalTestType_strategy = st.builds(
-    tests::ExternalTestType,
+tests_ExternalTestType_strategy = st.builds(
+    tests_ExternalTestType,
 )
 DObject_strategy = st.builds(
     DObject,
 )
-tests::TestCategoryBase_strategy = st.builds(
-    tests::TestCategoryBase,
-    testBaseProperty=
-        st.integers()
+tests_TestCategoryBeanA_strategy = st.builds(
+    tests_TestCategoryBeanA,
 )
-tests::TestCrossLinkedParametersWithCalculation_strategy = st.builds(
-    tests::TestCrossLinkedParametersWithCalculation,
-    calcedTrl=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+tests_EReferenceTest_strategy = st.builds(
+    tests_EReferenceTest,
 )
-tests::TestCategoryBeanAbstract_strategy = st.builds(
-    tests::TestCategoryBeanAbstract,
+tests_TestCategoryReferenceArray_strategy = st.builds(
+    tests_TestCategoryReferenceArray,
 )
-tests::TestCategoryBeanB_strategy = st.builds(
-    tests::TestCategoryBeanB,
-)
-tests::TestCategoryComposition_strategy = st.builds(
-    tests::TestCategoryComposition,
-)
-tests::TestCategoryReference_strategy = st.builds(
-    tests::TestCategoryReference,
-)
-tests::TestCategoryBeanA_strategy = st.builds(
-    tests::TestCategoryBeanA,
-)
-tests::TestCategoryCompositionArray_strategy = st.builds(
-    tests::TestCategoryCompositionArray,
-)
-tests::TestMassParameters_strategy = st.builds(
-    tests::TestMassParameters,
-)
-tests::TestCategoryIntrinsicArray_strategy = st.builds(
-    tests::TestCategoryIntrinsicArray,
+tests_TestCategoryIntrinsicArray_strategy = st.builds(
+    tests_TestCategoryIntrinsicArray,
     testStringArrayStatic=
         safe_text,
     testStringArrayDynamic=
         safe_text
 )
-tests::TestParameter_strategy = st.builds(
-    tests::TestParameter,
+tests_TestCategoryBeanB_strategy = st.builds(
+    tests_TestCategoryBeanB,
+)
+tests_TestMassParameters_strategy = st.builds(
+    tests_TestMassParameters,
+)
+tests_TestCategoryBase_strategy = st.builds(
+    tests_TestCategoryBase,
+    testBaseProperty=
+        st.integers()
+)
+tests_TestCategoryComposition_strategy = st.builds(
+    tests_TestCategoryComposition,
+)
+tests_TestParameter_strategy = st.builds(
+    tests_TestParameter,
     defaultValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-tests::EReferenceTest_strategy = st.builds(
-    tests::EReferenceTest,
+tests_TestCategoryBeanAbstract_strategy = st.builds(
+    tests_TestCategoryBeanAbstract,
 )
-tests::TestCategoryReferenceArray_strategy = st.builds(
-    tests::TestCategoryReferenceArray,
+tests_TestCategoryCompositionArray_strategy = st.builds(
+    tests_TestCategoryCompositionArray,
 )
-tests::TestCategoryAllProperty_strategy = st.builds(
-    tests::TestCategoryAllProperty,
+tests_TestCrossLinkedParametersWithCalculation_strategy = st.builds(
+    tests_TestCrossLinkedParametersWithCalculation,
+    calcedTrl=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+tests_TestCategoryReference_strategy = st.builds(
+    tests_TestCategoryReference,
+)
+tests_TestCategoryAllProperty_strategy = st.builds(
+    tests_TestCategoryAllProperty,
+    testEnum=
+        safe_text,
+    testBool=
+        st.booleans(),
+    testFloat=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     testInt=
         st.integers(),
     testResource=
         safe_text,
-    testFloat=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     testString=
-        safe_text,
-    testEnum=
-        safe_text,
-    testBool=
-        st.booleans()
+        safe_text
 )
 
 @given(instance=TestCategoryBase_strategy)
@@ -575,229 +575,193 @@ def test_testcategorybase_instantiation(instance):
 def test_testcategorybeanabstract_instantiation(instance):
     assert isinstance(instance, TestCategoryBeanAbstract)
 
-@given(instance=dmf::DObject_strategy)
+@given(instance=dmf_DObject_strategy)
 @settings(max_examples=50)
-def test_dmf::dobject_instantiation(instance):
-    assert isinstance(instance, dmf::DObject)
+def test_dmf_dobject_instantiation(instance):
+    assert isinstance(instance, dmf_DObject)
 
-@given(instance=tests::TestCategoryExtends_strategy)
+@given(instance=tests_TestCategoryExtends_strategy)
 @settings(max_examples=50)
-def test_tests::testcategoryextends_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryExtends)
-
-@given(instance=tests::TestCategoryExtends_strategy)
-def test_tests::testcategoryextends_testExtendsProperty_type(instance):
-    assert isinstance(instance.testExtendsProperty, int)
+def test_tests_testcategoryextends_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryExtends)
 
 
-@given(instance=tests::TestCategoryExtends_strategy)
-def test_tests::testcategoryextends_testExtendsProperty_setter(instance):
+
+@given(instance=tests_TestCategoryExtends_strategy)
+def test_tests_testcategoryextends_testExtendsProperty_setter(instance):
     original = instance.testExtendsProperty
     instance.testExtendsProperty = original
     assert instance.testExtendsProperty == original
 
-@given(instance=tests::TestCategoryBeanConcrete_strategy)
+@given(instance=tests_TestCategoryBeanConcrete_strategy)
 @settings(max_examples=50)
-def test_tests::testcategorybeanconcrete_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryBeanConcrete)
+def test_tests_testcategorybeanconcrete_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryBeanConcrete)
 
-@given(instance=tests::ExternalTestType_strategy)
+@given(instance=tests_ExternalTestType_strategy)
 @settings(max_examples=50)
-def test_tests::externaltesttype_instantiation(instance):
-    assert isinstance(instance, tests::ExternalTestType)
+def test_tests_externaltesttype_instantiation(instance):
+    assert isinstance(instance, tests_ExternalTestType)
 
 @given(instance=DObject_strategy)
 @settings(max_examples=50)
 def test_dobject_instantiation(instance):
     assert isinstance(instance, DObject)
 
-@given(instance=tests::TestCategoryBase_strategy)
+@given(instance=tests_TestCategoryBeanA_strategy)
 @settings(max_examples=50)
-def test_tests::testcategorybase_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryBase)
+def test_tests_testcategorybeana_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryBeanA)
 
-@given(instance=tests::TestCategoryBase_strategy)
-def test_tests::testcategorybase_testBaseProperty_type(instance):
-    assert isinstance(instance.testBaseProperty, int)
-
-
-@given(instance=tests::TestCategoryBase_strategy)
-def test_tests::testcategorybase_testBaseProperty_setter(instance):
-    original = instance.testBaseProperty
-    instance.testBaseProperty = original
-    assert instance.testBaseProperty == original
-
-@given(instance=tests::TestCrossLinkedParametersWithCalculation_strategy)
+@given(instance=tests_EReferenceTest_strategy)
 @settings(max_examples=50)
-def test_tests::testcrosslinkedparameterswithcalculation_instantiation(instance):
-    assert isinstance(instance, tests::TestCrossLinkedParametersWithCalculation)
+def test_tests_ereferencetest_instantiation(instance):
+    assert isinstance(instance, tests_EReferenceTest)
 
-@given(instance=tests::TestCrossLinkedParametersWithCalculation_strategy)
-def test_tests::testcrosslinkedparameterswithcalculation_calcedTrl_type(instance):
-    assert isinstance(instance.calcedTrl, float)
-
-
-@given(instance=tests::TestCrossLinkedParametersWithCalculation_strategy)
-def test_tests::testcrosslinkedparameterswithcalculation_calcedTrl_setter(instance):
-    original = instance.calcedTrl
-    instance.calcedTrl = original
-    assert instance.calcedTrl == original
-
-@given(instance=tests::TestCategoryBeanAbstract_strategy)
+@given(instance=tests_TestCategoryReferenceArray_strategy)
 @settings(max_examples=50)
-def test_tests::testcategorybeanabstract_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryBeanAbstract)
+def test_tests_testcategoryreferencearray_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryReferenceArray)
 
-@given(instance=tests::TestCategoryBeanB_strategy)
+@given(instance=tests_TestCategoryIntrinsicArray_strategy)
 @settings(max_examples=50)
-def test_tests::testcategorybeanb_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryBeanB)
-
-@given(instance=tests::TestCategoryComposition_strategy)
-@settings(max_examples=50)
-def test_tests::testcategorycomposition_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryComposition)
-
-@given(instance=tests::TestCategoryReference_strategy)
-@settings(max_examples=50)
-def test_tests::testcategoryreference_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryReference)
-
-@given(instance=tests::TestCategoryBeanA_strategy)
-@settings(max_examples=50)
-def test_tests::testcategorybeana_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryBeanA)
-
-@given(instance=tests::TestCategoryCompositionArray_strategy)
-@settings(max_examples=50)
-def test_tests::testcategorycompositionarray_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryCompositionArray)
-
-@given(instance=tests::TestMassParameters_strategy)
-@settings(max_examples=50)
-def test_tests::testmassparameters_instantiation(instance):
-    assert isinstance(instance, tests::TestMassParameters)
-
-@given(instance=tests::TestCategoryIntrinsicArray_strategy)
-@settings(max_examples=50)
-def test_tests::testcategoryintrinsicarray_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryIntrinsicArray)
-
-@given(instance=tests::TestCategoryIntrinsicArray_strategy)
-def test_tests::testcategoryintrinsicarray_testStringArrayStatic_type(instance):
-    assert isinstance(instance.testStringArrayStatic, str)
+def test_tests_testcategoryintrinsicarray_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryIntrinsicArray)
 
 
-@given(instance=tests::TestCategoryIntrinsicArray_strategy)
-def test_tests::testcategoryintrinsicarray_testStringArrayStatic_setter(instance):
+
+@given(instance=tests_TestCategoryIntrinsicArray_strategy)
+def test_tests_testcategoryintrinsicarray_testStringArrayStatic_setter(instance):
     original = instance.testStringArrayStatic
     instance.testStringArrayStatic = original
     assert instance.testStringArrayStatic == original
 
-@given(instance=tests::TestCategoryIntrinsicArray_strategy)
-def test_tests::testcategoryintrinsicarray_testStringArrayDynamic_type(instance):
-    assert isinstance(instance.testStringArrayDynamic, str)
 
 
-@given(instance=tests::TestCategoryIntrinsicArray_strategy)
-def test_tests::testcategoryintrinsicarray_testStringArrayDynamic_setter(instance):
+@given(instance=tests_TestCategoryIntrinsicArray_strategy)
+def test_tests_testcategoryintrinsicarray_testStringArrayDynamic_setter(instance):
     original = instance.testStringArrayDynamic
     instance.testStringArrayDynamic = original
     assert instance.testStringArrayDynamic == original
 
-@given(instance=tests::TestParameter_strategy)
+@given(instance=tests_TestCategoryBeanB_strategy)
 @settings(max_examples=50)
-def test_tests::testparameter_instantiation(instance):
-    assert isinstance(instance, tests::TestParameter)
+def test_tests_testcategorybeanb_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryBeanB)
 
-@given(instance=tests::TestParameter_strategy)
-def test_tests::testparameter_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, float)
+@given(instance=tests_TestMassParameters_strategy)
+@settings(max_examples=50)
+def test_tests_testmassparameters_instantiation(instance):
+    assert isinstance(instance, tests_TestMassParameters)
+
+@given(instance=tests_TestCategoryBase_strategy)
+@settings(max_examples=50)
+def test_tests_testcategorybase_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryBase)
 
 
-@given(instance=tests::TestParameter_strategy)
-def test_tests::testparameter_defaultValue_setter(instance):
+
+@given(instance=tests_TestCategoryBase_strategy)
+def test_tests_testcategorybase_testBaseProperty_setter(instance):
+    original = instance.testBaseProperty
+    instance.testBaseProperty = original
+    assert instance.testBaseProperty == original
+
+@given(instance=tests_TestCategoryComposition_strategy)
+@settings(max_examples=50)
+def test_tests_testcategorycomposition_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryComposition)
+
+@given(instance=tests_TestParameter_strategy)
+@settings(max_examples=50)
+def test_tests_testparameter_instantiation(instance):
+    assert isinstance(instance, tests_TestParameter)
+
+
+
+@given(instance=tests_TestParameter_strategy)
+def test_tests_testparameter_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=tests::EReferenceTest_strategy)
+@given(instance=tests_TestCategoryBeanAbstract_strategy)
 @settings(max_examples=50)
-def test_tests::ereferencetest_instantiation(instance):
-    assert isinstance(instance, tests::EReferenceTest)
+def test_tests_testcategorybeanabstract_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryBeanAbstract)
 
-@given(instance=tests::TestCategoryReferenceArray_strategy)
+@given(instance=tests_TestCategoryCompositionArray_strategy)
 @settings(max_examples=50)
-def test_tests::testcategoryreferencearray_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryReferenceArray)
+def test_tests_testcategorycompositionarray_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryCompositionArray)
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
+@given(instance=tests_TestCrossLinkedParametersWithCalculation_strategy)
 @settings(max_examples=50)
-def test_tests::testcategoryallproperty_instantiation(instance):
-    assert isinstance(instance, tests::TestCategoryAllProperty)
-
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testInt_type(instance):
-    assert isinstance(instance.testInt, int)
+def test_tests_testcrosslinkedparameterswithcalculation_instantiation(instance):
+    assert isinstance(instance, tests_TestCrossLinkedParametersWithCalculation)
 
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testInt_setter(instance):
-    original = instance.testInt
-    instance.testInt = original
-    assert instance.testInt == original
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testResource_type(instance):
-    assert isinstance(instance.testResource, str)
+@given(instance=tests_TestCrossLinkedParametersWithCalculation_strategy)
+def test_tests_testcrosslinkedparameterswithcalculation_calcedTrl_setter(instance):
+    original = instance.calcedTrl
+    instance.calcedTrl = original
+    assert instance.calcedTrl == original
 
+@given(instance=tests_TestCategoryReference_strategy)
+@settings(max_examples=50)
+def test_tests_testcategoryreference_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryReference)
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testResource_setter(instance):
-    original = instance.testResource
-    instance.testResource = original
-    assert instance.testResource == original
-
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testFloat_type(instance):
-    assert isinstance(instance.testFloat, float)
+@given(instance=tests_TestCategoryAllProperty_strategy)
+@settings(max_examples=50)
+def test_tests_testcategoryallproperty_instantiation(instance):
+    assert isinstance(instance, tests_TestCategoryAllProperty)
 
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testFloat_setter(instance):
-    original = instance.testFloat
-    instance.testFloat = original
-    assert instance.testFloat == original
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testString_type(instance):
-    assert isinstance(instance.testString, str)
-
-
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testString_setter(instance):
-    original = instance.testString
-    instance.testString = original
-    assert instance.testString == original
-
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testEnum_type(instance):
-    assert isinstance(instance.testEnum, str)
-
-
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testEnum_setter(instance):
+@given(instance=tests_TestCategoryAllProperty_strategy)
+def test_tests_testcategoryallproperty_testEnum_setter(instance):
     original = instance.testEnum
     instance.testEnum = original
     assert instance.testEnum == original
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testBool_type(instance):
-    assert isinstance(instance.testBool, bool)
 
 
-@given(instance=tests::TestCategoryAllProperty_strategy)
-def test_tests::testcategoryallproperty_testBool_setter(instance):
+@given(instance=tests_TestCategoryAllProperty_strategy)
+def test_tests_testcategoryallproperty_testBool_setter(instance):
     original = instance.testBool
     instance.testBool = original
     assert instance.testBool == original
+
+
+
+@given(instance=tests_TestCategoryAllProperty_strategy)
+def test_tests_testcategoryallproperty_testFloat_setter(instance):
+    original = instance.testFloat
+    instance.testFloat = original
+    assert instance.testFloat == original
+
+
+
+@given(instance=tests_TestCategoryAllProperty_strategy)
+def test_tests_testcategoryallproperty_testInt_setter(instance):
+    original = instance.testInt
+    instance.testInt = original
+    assert instance.testInt == original
+
+
+
+@given(instance=tests_TestCategoryAllProperty_strategy)
+def test_tests_testcategoryallproperty_testResource_setter(instance):
+    original = instance.testResource
+    instance.testResource = original
+    assert instance.testResource == original
+
+
+
+@given(instance=tests_TestCategoryAllProperty_strategy)
+def test_tests_testcategoryallproperty_testString_setter(instance):
+    original = instance.testString
+    instance.testString = original
+    assert instance.testString == original

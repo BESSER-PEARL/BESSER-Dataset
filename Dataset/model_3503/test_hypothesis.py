@@ -3,1570 +3,184 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    term,
-    delphi::factor,
-    simpleExpression,
-    delphi::term,
-    expression,
-    delphi::simpleExpression,
-    strucType,
-    delphi::setType,
-    delphi::fileType,
-    delphi::recType,
-    delphi::arrayType,
-    ordinalType,
-    delphi::enumeratedType,
-    delphi::subrangeType,
-    delphi::ordIdent,
-    simpleType,
-    delphi::ordinalType,
-    delphi::realType,
-    type,
-    delphi::procedureType,
-    delphi::pointerType,
-    delphi::simpleType,
-    delphi::strucType,
-    delphi::stringType,
-    delphi::variantType,
-    delphi::classRefType,
-    interfaceDecl,
-    delphi::exportedHeading,
-    declSection,
-    delphi::constSection,
-    delphi::varSection,
-    delphi::typeSection,
-    delphi::labelDeclSection,
-    file,
-    delphi::library,
-    delphi::packageDecl,
-    delphi::unit,
-    delphi::program,
-    CSTrace,
-    delphi::implementationSection,
-    delphi::directive,
-    delphi::exportsItem,
-    delphi::ident,
-    delphi::initSection,
-    delphi::enumeratedTypeElement,
-    delphi::varDecl,
-    delphi::exportsStmt,
-    delphi::type,
-    delphi::programBlock,
-    delphi::containsClause,
-    delphi::mulOp,
-    delphi::block,
-    delphi::recVariant,
-    delphi::variantSection,
-    delphi::typeDecl,
-    delphi::usesClause,
-    delphi::restrictedType,
-    delphi::fieldList,
-    delphi::typedConstant,
-    delphi::declSection,
-    delphi::recordConstant,
-    delphi::requiresClause,
-    delphi::constExpr,
-    delphi::arrayConstant,
-    delphi::interfaceDecl,
-    delphi::constantDecl,
-    delphi::recordFieldConstant,
-    delphi::fieldDecl,
-    delphi::interfaceSection,
-    delphi::exprList,
-    delphi::relOp,
-    delphi::expression,
-    delphi::file,
-    delphi::designator,
-    delphi::addOp,
-    delphi::mainRule,
-    delphi::Visitable,
-    delphi::CSTrace,
-    constExpr,
-    delphi::MultipleConstExp,
-    delphi::RecordConstExp,
-    delphi::ConstExp,
-    ident,
-    delphi::ReservedId,
-    delphi::MineID,
-    delphi::MultipleId,
-    parameter,
-    delphi::parameterSimple,
-    delphi::parameterList,
+from python_code import (
     simpleStatement,
-    delphi::inheritedStamnt,
-    delphi::callStmnt,
-    delphi::gotoStmnt,
-    delphi::assignmentStmnt,
+    delphi_callStmnt,
+    delphi_assignmentStmnt,
     addOp,
-    delphi::adOp,
+    delphi_adOp,
     factor,
-    delphi::simpleFactor,
-    delphi::multExp,
-    delphi::addExp,
-    delphi::relExp,
-    delphi::recordConstExpr,
+    delphi_simpleFactor,
     pointerType,
-    delphi::typeId,
-    delphi::unitId,
     classHeritage,
     objFieldList,
-    delphi::identList,
-    delphi::propertySpecifiers,
-    delphi::propertyInterface,
-    delphi::interfaceHeritage,
-    delphi::propertyParameterList,
-    delphi::classHeritage,
-    delphi::propertyList,
-    delphi::classProperty,
-    delphi::classMethod,
-    delphi::classField,
-    delphi::classPropertyList,
-    delphi::classMethodList,
-    delphi::classFieldList,
-    delphi::methodHeading,
-    delphi::methodList,
-    delphi::objFieldList,
-    delphi::objHeritage,
     restrictedType,
-    delphi::classType,
-    delphi::interfaceType,
-    delphi::objectType,
-    delphi::parameter,
-    delphi::formalParm,
-    delphi::formalParameters,
+    delphi_interfaceType,
+    delphi_classType,
+    delphi_objectType,
     methodHeading,
-    delphi::constructorHeading,
-    delphi::destructorHeading,
-    delphi::procedureHeading,
-    delphi::functionHeading,
+    delphi_constructorHeading,
+    delphi_destructorHeading,
     procedureDeclSection,
-    delphi::functionDecl,
-    delphi::procedureDecl,
-    delphi::procedureDeclSection,
-    delphi::exceptionBlock,
-    delphi::qualId,
+    delphi_functionDecl,
+    delphi_procedureDecl,
     loopStmt,
-    delphi::forStmt,
-    delphi::whileStmt,
-    delphi::repeatStmt,
-    delphi::stmtList,
-    delphi::caseLabel,
-    delphi::caseSelector,
+    delphi_forStmt,
+    delphi_whileStmt,
+    delphi_repeatStmt,
     conditionalStmt,
-    delphi::caseStmt,
-    delphi::ifStmt,
+    delphi_caseStmt,
+    delphi_ifStmt,
     structStmt,
-    delphi::loopStmt,
-    delphi::conditionalStmt,
-    delphi::tryStmt,
-    delphi::withStmt,
-    delphi::raiseStmt,
-    delphi::compoundStmt,
-    delphi::assemblerStmt,
+    delphi_tryStmt,
+    delphi_assemblerStmt,
+    delphi_withStmt,
+    delphi_raiseStmt,
+    delphi_loopStmt,
+    delphi_conditionalStmt,
     unlabelledStatement,
-    delphi::structStmt,
-    delphi::simpleStatement,
-    delphi::unlabelledStatement,
-    delphi::statement,
-    delphi::setConstructor,
-    delphi::setElement,
-    delphi::reservedWord,
-    delphi::designatorPart,
-    delphi::designatorSubPart,
+    delphi_structStmt,
+    delphi_simpleStatement,
+    term,
+    delphi_multExp,
+    delphi_factor,
+    simpleExpression,
+    delphi_addExp,
+    delphi_term,
+    expression,
+    delphi_relExp,
+    delphi_simpleExpression,
+    strucType,
+    delphi_recType,
+    delphi_fileType,
+    delphi_setType,
+    delphi_arrayType,
+    ordinalType,
+    delphi_enumeratedType,
+    delphi_subrangeType,
+    delphi_ordIdent,
+    simpleType,
+    delphi_ordinalType,
+    delphi_realType,
+    type,
+    delphi_procedureType,
+    delphi_stringType,
+    delphi_variantType,
+    delphi_pointerType,
+    delphi_simpleType,
+    delphi_strucType,
+    delphi_classRefType,
+    delphi_typeId,
+    delphi_procedureHeading,
+    interfaceDecl,
+    delphi_exportedHeading,
+    declSection,
+    delphi_constSection,
+    delphi_procedureDeclSection,
+    delphi_typeSection,
+    delphi_varSection,
+    delphi_labelDeclSection,
+    delphi_compoundStmt,
+    delphi_functionHeading,
+    delphi_identList,
+    file,
+    delphi_library,
+    delphi_packageDecl,
+    delphi_unit,
+    delphi_program,
+    CSTrace,
+    delphi_classFieldList,
+    delphi_ident,
+    delphi_block,
+    delphi_propertyInterface,
+    delphi_typedConstant,
+    delphi_usesClause,
+    delphi_objFieldList,
+    delphi_recordConstExpr,
+    delphi_reservedWord,
+    delphi_file,
+    delphi_caseLabel,
+    delphi_exprList,
+    delphi_type,
+    delphi_propertyList,
+    delphi_recordConstant,
+    delphi_classProperty,
+    delphi_varDecl,
+    delphi_parameter,
+    delphi_interfaceHeritage,
+    delphi_formalParameters,
+    delphi_statement,
+    delphi_declSection,
+    delphi_designator,
+    delphi_enumeratedTypeElement,
+    delphi_designatorSubPart,
+    delphi_initSection,
+    delphi_caseSelector,
+    delphi_variantSection,
+    delphi_mulOp,
+    delphi_designatorPart,
+    delphi_restrictedType,
+    delphi_exportsStmt,
+    delphi_arrayConstant,
+    delphi_requiresClause,
+    delphi_setConstructor,
+    delphi_recordFieldConstant,
+    delphi_constantDecl,
+    delphi_implementationSection,
+    delphi_fieldList,
+    delphi_unlabelledStatement,
+    delphi_methodHeading,
+    delphi_classMethod,
+    delphi_objHeritage,
+    delphi_constExpr,
+    delphi_recVariant,
+    delphi_classField,
+    delphi_classMethodList,
+    delphi_unitId,
+    delphi_programBlock,
+    delphi_exportsItem,
+    delphi_classHeritage,
+    delphi_setElement,
+    delphi_propertySpecifiers,
+    delphi_interfaceDecl,
+    delphi_qualId,
+    delphi_directive,
+    delphi_typeDecl,
+    delphi_fieldDecl,
+    delphi_classPropertyList,
+    delphi_interfaceSection,
+    delphi_propertyParameterList,
+    delphi_formalParm,
+    delphi_stmtList,
+    delphi_relOp,
+    delphi_methodList,
+    delphi_expression,
+    delphi_exceptionBlock,
+    delphi_containsClause,
+    delphi_addOp,
+    delphi_mainRule,
+    delphi_inheritedStamnt,
+    delphi_Visitable,
+    delphi_CSTrace,
+    constExpr,
+    delphi_MultipleConstExp,
+    delphi_RecordConstExp,
+    delphi_ConstExp,
+    ident,
+    delphi_MineID,
+    delphi_ReservedId,
+    delphi_MultipleId,
+    parameter,
+    delphi_parameterSimple,
+    delphi_parameterList,
+    delphi_gotoStmnt,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_term_is_not_abstract():
-    assert not inspect.isabstract(term)
-
-
-def test_term_constructor_exists():
-    assert callable(term.__init__)
-
-
-def test_term_constructor_args():
-    sig = inspect.signature(term.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::factor_is_not_abstract():
-    assert not inspect.isabstract(delphi::factor)
-
-
-def test_delphi::factor_constructor_exists():
-    assert callable(delphi::factor.__init__)
-
-
-def test_delphi::factor_constructor_args():
-    sig = inspect.signature(delphi::factor.__init__)
-    params = list(sig.parameters.keys())
-    assert "string" in params, "Missing parameter 'string'"
-    assert "number" in params, "Missing parameter 'number'"
-
-def test_delphi::factor_has_string():
-    assert hasattr(delphi::factor, "string")
-    descriptor = None
-    for klass in delphi::factor.__mro__:
-        if "string" in klass.__dict__:
-            descriptor = klass.__dict__["string"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_delphi::factor_has_number():
-    assert hasattr(delphi::factor, "number")
-    descriptor = None
-    for klass in delphi::factor.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simpleexpression_is_not_abstract():
-    assert not inspect.isabstract(simpleExpression)
-
-
-def test_simpleexpression_constructor_exists():
-    assert callable(simpleExpression.__init__)
-
-
-def test_simpleexpression_constructor_args():
-    sig = inspect.signature(simpleExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::term_is_not_abstract():
-    assert not inspect.isabstract(delphi::term)
-
-
-def test_delphi::term_constructor_exists():
-    assert callable(delphi::term.__init__)
-
-
-def test_delphi::term_constructor_args():
-    sig = inspect.signature(delphi::term.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expression_is_not_abstract():
-    assert not inspect.isabstract(expression)
-
-
-def test_expression_constructor_exists():
-    assert callable(expression.__init__)
-
-
-def test_expression_constructor_args():
-    sig = inspect.signature(expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::simpleexpression_is_not_abstract():
-    assert not inspect.isabstract(delphi::simpleExpression)
-
-
-def test_delphi::simpleexpression_constructor_exists():
-    assert callable(delphi::simpleExpression.__init__)
-
-
-def test_delphi::simpleexpression_constructor_args():
-    sig = inspect.signature(delphi::simpleExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structype_is_not_abstract():
-    assert not inspect.isabstract(strucType)
-
-
-def test_structype_constructor_exists():
-    assert callable(strucType.__init__)
-
-
-def test_structype_constructor_args():
-    sig = inspect.signature(strucType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::settype_is_not_abstract():
-    assert not inspect.isabstract(delphi::setType)
-
-
-def test_delphi::settype_constructor_exists():
-    assert callable(delphi::setType.__init__)
-
-
-def test_delphi::settype_constructor_args():
-    sig = inspect.signature(delphi::setType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::filetype_is_not_abstract():
-    assert not inspect.isabstract(delphi::fileType)
-
-
-def test_delphi::filetype_constructor_exists():
-    assert callable(delphi::fileType.__init__)
-
-
-def test_delphi::filetype_constructor_args():
-    sig = inspect.signature(delphi::fileType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::rectype_is_not_abstract():
-    assert not inspect.isabstract(delphi::recType)
-
-
-def test_delphi::rectype_constructor_exists():
-    assert callable(delphi::recType.__init__)
-
-
-def test_delphi::rectype_constructor_args():
-    sig = inspect.signature(delphi::recType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::arraytype_is_not_abstract():
-    assert not inspect.isabstract(delphi::arrayType)
-
-
-def test_delphi::arraytype_constructor_exists():
-    assert callable(delphi::arrayType.__init__)
-
-
-def test_delphi::arraytype_constructor_args():
-    sig = inspect.signature(delphi::arrayType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ordinaltype_is_not_abstract():
-    assert not inspect.isabstract(ordinalType)
-
-
-def test_ordinaltype_constructor_exists():
-    assert callable(ordinalType.__init__)
-
-
-def test_ordinaltype_constructor_args():
-    sig = inspect.signature(ordinalType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::enumeratedtype_is_not_abstract():
-    assert not inspect.isabstract(delphi::enumeratedType)
-
-
-def test_delphi::enumeratedtype_constructor_exists():
-    assert callable(delphi::enumeratedType.__init__)
-
-
-def test_delphi::enumeratedtype_constructor_args():
-    sig = inspect.signature(delphi::enumeratedType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::subrangetype_is_not_abstract():
-    assert not inspect.isabstract(delphi::subrangeType)
-
-
-def test_delphi::subrangetype_constructor_exists():
-    assert callable(delphi::subrangeType.__init__)
-
-
-def test_delphi::subrangetype_constructor_args():
-    sig = inspect.signature(delphi::subrangeType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::ordident_is_not_abstract():
-    assert not inspect.isabstract(delphi::ordIdent)
-
-
-def test_delphi::ordident_constructor_exists():
-    assert callable(delphi::ordIdent.__init__)
-
-
-def test_delphi::ordident_constructor_args():
-    sig = inspect.signature(delphi::ordIdent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpletype_is_not_abstract():
-    assert not inspect.isabstract(simpleType)
-
-
-def test_simpletype_constructor_exists():
-    assert callable(simpleType.__init__)
-
-
-def test_simpletype_constructor_args():
-    sig = inspect.signature(simpleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::ordinaltype_is_not_abstract():
-    assert not inspect.isabstract(delphi::ordinalType)
-
-
-def test_delphi::ordinaltype_constructor_exists():
-    assert callable(delphi::ordinalType.__init__)
-
-
-def test_delphi::ordinaltype_constructor_args():
-    sig = inspect.signature(delphi::ordinalType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::realtype_is_not_abstract():
-    assert not inspect.isabstract(delphi::realType)
-
-
-def test_delphi::realtype_constructor_exists():
-    assert callable(delphi::realType.__init__)
-
-
-def test_delphi::realtype_constructor_args():
-    sig = inspect.signature(delphi::realType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(type)
-
-
-def test_type_constructor_exists():
-    assert callable(type.__init__)
-
-
-def test_type_constructor_args():
-    sig = inspect.signature(type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::proceduretype_is_not_abstract():
-    assert not inspect.isabstract(delphi::procedureType)
-
-
-def test_delphi::proceduretype_constructor_exists():
-    assert callable(delphi::procedureType.__init__)
-
-
-def test_delphi::proceduretype_constructor_args():
-    sig = inspect.signature(delphi::procedureType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::pointertype_is_not_abstract():
-    assert not inspect.isabstract(delphi::pointerType)
-
-
-def test_delphi::pointertype_constructor_exists():
-    assert callable(delphi::pointerType.__init__)
-
-
-def test_delphi::pointertype_constructor_args():
-    sig = inspect.signature(delphi::pointerType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::simpletype_is_not_abstract():
-    assert not inspect.isabstract(delphi::simpleType)
-
-
-def test_delphi::simpletype_constructor_exists():
-    assert callable(delphi::simpleType.__init__)
-
-
-def test_delphi::simpletype_constructor_args():
-    sig = inspect.signature(delphi::simpleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::structype_is_not_abstract():
-    assert not inspect.isabstract(delphi::strucType)
-
-
-def test_delphi::structype_constructor_exists():
-    assert callable(delphi::strucType.__init__)
-
-
-def test_delphi::structype_constructor_args():
-    sig = inspect.signature(delphi::strucType.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::structype_has_port():
-    assert hasattr(delphi::strucType, "port")
-    descriptor = None
-    for klass in delphi::strucType.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::stringtype_is_not_abstract():
-    assert not inspect.isabstract(delphi::stringType)
-
-
-def test_delphi::stringtype_constructor_exists():
-    assert callable(delphi::stringType.__init__)
-
-
-def test_delphi::stringtype_constructor_args():
-    sig = inspect.signature(delphi::stringType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::varianttype_is_not_abstract():
-    assert not inspect.isabstract(delphi::variantType)
-
-
-def test_delphi::varianttype_constructor_exists():
-    assert callable(delphi::variantType.__init__)
-
-
-def test_delphi::varianttype_constructor_args():
-    sig = inspect.signature(delphi::variantType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::classreftype_is_not_abstract():
-    assert not inspect.isabstract(delphi::classRefType)
-
-
-def test_delphi::classreftype_constructor_exists():
-    assert callable(delphi::classRefType.__init__)
-
-
-def test_delphi::classreftype_constructor_args():
-    sig = inspect.signature(delphi::classRefType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interfacedecl_is_not_abstract():
-    assert not inspect.isabstract(interfaceDecl)
-
-
-def test_interfacedecl_constructor_exists():
-    assert callable(interfaceDecl.__init__)
-
-
-def test_interfacedecl_constructor_args():
-    sig = inspect.signature(interfaceDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::exportedheading_is_not_abstract():
-    assert not inspect.isabstract(delphi::exportedHeading)
-
-
-def test_delphi::exportedheading_constructor_exists():
-    assert callable(delphi::exportedHeading.__init__)
-
-
-def test_delphi::exportedheading_constructor_args():
-    sig = inspect.signature(delphi::exportedHeading.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_declsection_is_not_abstract():
-    assert not inspect.isabstract(declSection)
-
-
-def test_declsection_constructor_exists():
-    assert callable(declSection.__init__)
-
-
-def test_declsection_constructor_args():
-    sig = inspect.signature(declSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::constsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::constSection)
-
-
-def test_delphi::constsection_constructor_exists():
-    assert callable(delphi::constSection.__init__)
-
-
-def test_delphi::constsection_constructor_args():
-    sig = inspect.signature(delphi::constSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::varsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::varSection)
-
-
-def test_delphi::varsection_constructor_exists():
-    assert callable(delphi::varSection.__init__)
-
-
-def test_delphi::varsection_constructor_args():
-    sig = inspect.signature(delphi::varSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::typesection_is_not_abstract():
-    assert not inspect.isabstract(delphi::typeSection)
-
-
-def test_delphi::typesection_constructor_exists():
-    assert callable(delphi::typeSection.__init__)
-
-
-def test_delphi::typesection_constructor_args():
-    sig = inspect.signature(delphi::typeSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::labeldeclsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::labelDeclSection)
-
-
-def test_delphi::labeldeclsection_constructor_exists():
-    assert callable(delphi::labelDeclSection.__init__)
-
-
-def test_delphi::labeldeclsection_constructor_args():
-    sig = inspect.signature(delphi::labelDeclSection.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_delphi::labeldeclsection_has_id():
-    assert hasattr(delphi::labelDeclSection, "id")
-    descriptor = None
-    for klass in delphi::labelDeclSection.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_file_is_not_abstract():
-    assert not inspect.isabstract(file)
-
-
-def test_file_constructor_exists():
-    assert callable(file.__init__)
-
-
-def test_file_constructor_args():
-    sig = inspect.signature(file.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::library_is_not_abstract():
-    assert not inspect.isabstract(delphi::library)
-
-
-def test_delphi::library_constructor_exists():
-    assert callable(delphi::library.__init__)
-
-
-def test_delphi::library_constructor_args():
-    sig = inspect.signature(delphi::library.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::packagedecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::packageDecl)
-
-
-def test_delphi::packagedecl_constructor_exists():
-    assert callable(delphi::packageDecl.__init__)
-
-
-def test_delphi::packagedecl_constructor_args():
-    sig = inspect.signature(delphi::packageDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::unit_is_not_abstract():
-    assert not inspect.isabstract(delphi::unit)
-
-
-def test_delphi::unit_constructor_exists():
-    assert callable(delphi::unit.__init__)
-
-
-def test_delphi::unit_constructor_args():
-    sig = inspect.signature(delphi::unit.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::unit_has_port():
-    assert hasattr(delphi::unit, "port")
-    descriptor = None
-    for klass in delphi::unit.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::program_is_not_abstract():
-    assert not inspect.isabstract(delphi::program)
-
-
-def test_delphi::program_constructor_exists():
-    assert callable(delphi::program.__init__)
-
-
-def test_delphi::program_constructor_args():
-    sig = inspect.signature(delphi::program.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cstrace_is_not_abstract():
-    assert not inspect.isabstract(CSTrace)
-
-
-def test_cstrace_constructor_exists():
-    assert callable(CSTrace.__init__)
-
-
-def test_cstrace_constructor_args():
-    sig = inspect.signature(CSTrace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::implementationsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::implementationSection)
-
-
-def test_delphi::implementationsection_constructor_exists():
-    assert callable(delphi::implementationSection.__init__)
-
-
-def test_delphi::implementationsection_constructor_args():
-    sig = inspect.signature(delphi::implementationSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::directive_is_not_abstract():
-    assert not inspect.isabstract(delphi::directive)
-
-
-def test_delphi::directive_constructor_exists():
-    assert callable(delphi::directive.__init__)
-
-
-def test_delphi::directive_constructor_args():
-    sig = inspect.signature(delphi::directive.__init__)
-    params = list(sig.parameters.keys())
-    assert "dir" in params, "Missing parameter 'dir'"
-
-def test_delphi::directive_has_dir():
-    assert hasattr(delphi::directive, "dir")
-    descriptor = None
-    for klass in delphi::directive.__mro__:
-        if "dir" in klass.__dict__:
-            descriptor = klass.__dict__["dir"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::exportsitem_is_not_abstract():
-    assert not inspect.isabstract(delphi::exportsItem)
-
-
-def test_delphi::exportsitem_constructor_exists():
-    assert callable(delphi::exportsItem.__init__)
-
-
-def test_delphi::exportsitem_constructor_args():
-    sig = inspect.signature(delphi::exportsItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::ident_is_not_abstract():
-    assert not inspect.isabstract(delphi::ident)
-
-
-def test_delphi::ident_constructor_exists():
-    assert callable(delphi::ident.__init__)
-
-
-def test_delphi::ident_constructor_args():
-    sig = inspect.signature(delphi::ident.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::initsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::initSection)
-
-
-def test_delphi::initsection_constructor_exists():
-    assert callable(delphi::initSection.__init__)
-
-
-def test_delphi::initsection_constructor_args():
-    sig = inspect.signature(delphi::initSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::enumeratedtypeelement_is_not_abstract():
-    assert not inspect.isabstract(delphi::enumeratedTypeElement)
-
-
-def test_delphi::enumeratedtypeelement_constructor_exists():
-    assert callable(delphi::enumeratedTypeElement.__init__)
-
-
-def test_delphi::enumeratedtypeelement_constructor_args():
-    sig = inspect.signature(delphi::enumeratedTypeElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::vardecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::varDecl)
-
-
-def test_delphi::vardecl_constructor_exists():
-    assert callable(delphi::varDecl.__init__)
-
-
-def test_delphi::vardecl_constructor_args():
-    sig = inspect.signature(delphi::varDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::exportsstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::exportsStmt)
-
-
-def test_delphi::exportsstmt_constructor_exists():
-    assert callable(delphi::exportsStmt.__init__)
-
-
-def test_delphi::exportsstmt_constructor_args():
-    sig = inspect.signature(delphi::exportsStmt.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::type_is_not_abstract():
-    assert not inspect.isabstract(delphi::type)
-
-
-def test_delphi::type_constructor_exists():
-    assert callable(delphi::type.__init__)
-
-
-def test_delphi::type_constructor_args():
-    sig = inspect.signature(delphi::type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::programblock_is_not_abstract():
-    assert not inspect.isabstract(delphi::programBlock)
-
-
-def test_delphi::programblock_constructor_exists():
-    assert callable(delphi::programBlock.__init__)
-
-
-def test_delphi::programblock_constructor_args():
-    sig = inspect.signature(delphi::programBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::containsclause_is_not_abstract():
-    assert not inspect.isabstract(delphi::containsClause)
-
-
-def test_delphi::containsclause_constructor_exists():
-    assert callable(delphi::containsClause.__init__)
-
-
-def test_delphi::containsclause_constructor_args():
-    sig = inspect.signature(delphi::containsClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::mulop_is_not_abstract():
-    assert not inspect.isabstract(delphi::mulOp)
-
-
-def test_delphi::mulop_constructor_exists():
-    assert callable(delphi::mulOp.__init__)
-
-
-def test_delphi::mulop_constructor_args():
-    sig = inspect.signature(delphi::mulOp.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_delphi::mulop_has_op():
-    assert hasattr(delphi::mulOp, "op")
-    descriptor = None
-    for klass in delphi::mulOp.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::block_is_not_abstract():
-    assert not inspect.isabstract(delphi::block)
-
-
-def test_delphi::block_constructor_exists():
-    assert callable(delphi::block.__init__)
-
-
-def test_delphi::block_constructor_args():
-    sig = inspect.signature(delphi::block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::recvariant_is_not_abstract():
-    assert not inspect.isabstract(delphi::recVariant)
-
-
-def test_delphi::recvariant_constructor_exists():
-    assert callable(delphi::recVariant.__init__)
-
-
-def test_delphi::recvariant_constructor_args():
-    sig = inspect.signature(delphi::recVariant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::variantsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::variantSection)
-
-
-def test_delphi::variantsection_constructor_exists():
-    assert callable(delphi::variantSection.__init__)
-
-
-def test_delphi::variantsection_constructor_args():
-    sig = inspect.signature(delphi::variantSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::typedecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::typeDecl)
-
-
-def test_delphi::typedecl_constructor_exists():
-    assert callable(delphi::typeDecl.__init__)
-
-
-def test_delphi::typedecl_constructor_args():
-    sig = inspect.signature(delphi::typeDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::typedecl_has_port():
-    assert hasattr(delphi::typeDecl, "port")
-    descriptor = None
-    for klass in delphi::typeDecl.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::usesclause_is_not_abstract():
-    assert not inspect.isabstract(delphi::usesClause)
-
-
-def test_delphi::usesclause_constructor_exists():
-    assert callable(delphi::usesClause.__init__)
-
-
-def test_delphi::usesclause_constructor_args():
-    sig = inspect.signature(delphi::usesClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::restrictedtype_is_not_abstract():
-    assert not inspect.isabstract(delphi::restrictedType)
-
-
-def test_delphi::restrictedtype_constructor_exists():
-    assert callable(delphi::restrictedType.__init__)
-
-
-def test_delphi::restrictedtype_constructor_args():
-    sig = inspect.signature(delphi::restrictedType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::fieldlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::fieldList)
-
-
-def test_delphi::fieldlist_constructor_exists():
-    assert callable(delphi::fieldList.__init__)
-
-
-def test_delphi::fieldlist_constructor_args():
-    sig = inspect.signature(delphi::fieldList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::typedconstant_is_not_abstract():
-    assert not inspect.isabstract(delphi::typedConstant)
-
-
-def test_delphi::typedconstant_constructor_exists():
-    assert callable(delphi::typedConstant.__init__)
-
-
-def test_delphi::typedconstant_constructor_args():
-    sig = inspect.signature(delphi::typedConstant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::declsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::declSection)
-
-
-def test_delphi::declsection_constructor_exists():
-    assert callable(delphi::declSection.__init__)
-
-
-def test_delphi::declsection_constructor_args():
-    sig = inspect.signature(delphi::declSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::recordconstant_is_not_abstract():
-    assert not inspect.isabstract(delphi::recordConstant)
-
-
-def test_delphi::recordconstant_constructor_exists():
-    assert callable(delphi::recordConstant.__init__)
-
-
-def test_delphi::recordconstant_constructor_args():
-    sig = inspect.signature(delphi::recordConstant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::requiresclause_is_not_abstract():
-    assert not inspect.isabstract(delphi::requiresClause)
-
-
-def test_delphi::requiresclause_constructor_exists():
-    assert callable(delphi::requiresClause.__init__)
-
-
-def test_delphi::requiresclause_constructor_args():
-    sig = inspect.signature(delphi::requiresClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::constexpr_is_not_abstract():
-    assert not inspect.isabstract(delphi::constExpr)
-
-
-def test_delphi::constexpr_constructor_exists():
-    assert callable(delphi::constExpr.__init__)
-
-
-def test_delphi::constexpr_constructor_args():
-    sig = inspect.signature(delphi::constExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::arrayconstant_is_not_abstract():
-    assert not inspect.isabstract(delphi::arrayConstant)
-
-
-def test_delphi::arrayconstant_constructor_exists():
-    assert callable(delphi::arrayConstant.__init__)
-
-
-def test_delphi::arrayconstant_constructor_args():
-    sig = inspect.signature(delphi::arrayConstant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::interfacedecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::interfaceDecl)
-
-
-def test_delphi::interfacedecl_constructor_exists():
-    assert callable(delphi::interfaceDecl.__init__)
-
-
-def test_delphi::interfacedecl_constructor_args():
-    sig = inspect.signature(delphi::interfaceDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::constantdecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::constantDecl)
-
-
-def test_delphi::constantdecl_constructor_exists():
-    assert callable(delphi::constantDecl.__init__)
-
-
-def test_delphi::constantdecl_constructor_args():
-    sig = inspect.signature(delphi::constantDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::constantdecl_has_port():
-    assert hasattr(delphi::constantDecl, "port")
-    descriptor = None
-    for klass in delphi::constantDecl.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::recordfieldconstant_is_not_abstract():
-    assert not inspect.isabstract(delphi::recordFieldConstant)
-
-
-def test_delphi::recordfieldconstant_constructor_exists():
-    assert callable(delphi::recordFieldConstant.__init__)
-
-
-def test_delphi::recordfieldconstant_constructor_args():
-    sig = inspect.signature(delphi::recordFieldConstant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::fielddecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::fieldDecl)
-
-
-def test_delphi::fielddecl_constructor_exists():
-    assert callable(delphi::fieldDecl.__init__)
-
-
-def test_delphi::fielddecl_constructor_args():
-    sig = inspect.signature(delphi::fieldDecl.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::fielddecl_has_port():
-    assert hasattr(delphi::fieldDecl, "port")
-    descriptor = None
-    for klass in delphi::fieldDecl.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::interfacesection_is_not_abstract():
-    assert not inspect.isabstract(delphi::interfaceSection)
-
-
-def test_delphi::interfacesection_constructor_exists():
-    assert callable(delphi::interfaceSection.__init__)
-
-
-def test_delphi::interfacesection_constructor_args():
-    sig = inspect.signature(delphi::interfaceSection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::exprlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::exprList)
-
-
-def test_delphi::exprlist_constructor_exists():
-    assert callable(delphi::exprList.__init__)
-
-
-def test_delphi::exprlist_constructor_args():
-    sig = inspect.signature(delphi::exprList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::relop_is_not_abstract():
-    assert not inspect.isabstract(delphi::relOp)
-
-
-def test_delphi::relop_constructor_exists():
-    assert callable(delphi::relOp.__init__)
-
-
-def test_delphi::relop_constructor_args():
-    sig = inspect.signature(delphi::relOp.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_delphi::relop_has_op():
-    assert hasattr(delphi::relOp, "op")
-    descriptor = None
-    for klass in delphi::relOp.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::expression_is_not_abstract():
-    assert not inspect.isabstract(delphi::expression)
-
-
-def test_delphi::expression_constructor_exists():
-    assert callable(delphi::expression.__init__)
-
-
-def test_delphi::expression_constructor_args():
-    sig = inspect.signature(delphi::expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::file_is_not_abstract():
-    assert not inspect.isabstract(delphi::file)
-
-
-def test_delphi::file_constructor_exists():
-    assert callable(delphi::file.__init__)
-
-
-def test_delphi::file_constructor_args():
-    sig = inspect.signature(delphi::file.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::designator_is_not_abstract():
-    assert not inspect.isabstract(delphi::designator)
-
-
-def test_delphi::designator_constructor_exists():
-    assert callable(delphi::designator.__init__)
-
-
-def test_delphi::designator_constructor_args():
-    sig = inspect.signature(delphi::designator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::addop_is_not_abstract():
-    assert not inspect.isabstract(delphi::addOp)
-
-
-def test_delphi::addop_constructor_exists():
-    assert callable(delphi::addOp.__init__)
-
-
-def test_delphi::addop_constructor_args():
-    sig = inspect.signature(delphi::addOp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::mainrule_is_not_abstract():
-    assert not inspect.isabstract(delphi::mainRule)
-
-
-def test_delphi::mainrule_constructor_exists():
-    assert callable(delphi::mainRule.__init__)
-
-
-def test_delphi::mainrule_constructor_args():
-    sig = inspect.signature(delphi::mainRule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::visitable_is_not_abstract():
-    assert not inspect.isabstract(delphi::Visitable)
-
-
-def test_delphi::visitable_constructor_exists():
-    assert callable(delphi::Visitable.__init__)
-
-
-def test_delphi::visitable_constructor_args():
-    sig = inspect.signature(delphi::Visitable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::cstrace_is_not_abstract():
-    assert not inspect.isabstract(delphi::CSTrace)
-
-
-def test_delphi::cstrace_constructor_exists():
-    assert callable(delphi::CSTrace.__init__)
-
-
-def test_delphi::cstrace_constructor_args():
-    sig = inspect.signature(delphi::CSTrace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_constexpr_is_not_abstract():
-    assert not inspect.isabstract(constExpr)
-
-
-def test_constexpr_constructor_exists():
-    assert callable(constExpr.__init__)
-
-
-def test_constexpr_constructor_args():
-    sig = inspect.signature(constExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::multipleconstexp_is_not_abstract():
-    assert not inspect.isabstract(delphi::MultipleConstExp)
-
-
-def test_delphi::multipleconstexp_constructor_exists():
-    assert callable(delphi::MultipleConstExp.__init__)
-
-
-def test_delphi::multipleconstexp_constructor_args():
-    sig = inspect.signature(delphi::MultipleConstExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::recordconstexp_is_not_abstract():
-    assert not inspect.isabstract(delphi::RecordConstExp)
-
-
-def test_delphi::recordconstexp_constructor_exists():
-    assert callable(delphi::RecordConstExp.__init__)
-
-
-def test_delphi::recordconstexp_constructor_args():
-    sig = inspect.signature(delphi::RecordConstExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::constexp_is_not_abstract():
-    assert not inspect.isabstract(delphi::ConstExp)
-
-
-def test_delphi::constexp_constructor_exists():
-    assert callable(delphi::ConstExp.__init__)
-
-
-def test_delphi::constexp_constructor_args():
-    sig = inspect.signature(delphi::ConstExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ident_is_not_abstract():
-    assert not inspect.isabstract(ident)
-
-
-def test_ident_constructor_exists():
-    assert callable(ident.__init__)
-
-
-def test_ident_constructor_args():
-    sig = inspect.signature(ident.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::reservedid_is_not_abstract():
-    assert not inspect.isabstract(delphi::ReservedId)
-
-
-def test_delphi::reservedid_constructor_exists():
-    assert callable(delphi::ReservedId.__init__)
-
-
-def test_delphi::reservedid_constructor_args():
-    sig = inspect.signature(delphi::ReservedId.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::mineid_is_not_abstract():
-    assert not inspect.isabstract(delphi::MineID)
-
-
-def test_delphi::mineid_constructor_exists():
-    assert callable(delphi::MineID.__init__)
-
-
-def test_delphi::mineid_constructor_args():
-    sig = inspect.signature(delphi::MineID.__init__)
-    params = list(sig.parameters.keys())
-    assert "second" in params, "Missing parameter 'second'"
-    assert "first" in params, "Missing parameter 'first'"
-
-def test_delphi::mineid_has_second():
-    assert hasattr(delphi::MineID, "second")
-    descriptor = None
-    for klass in delphi::MineID.__mro__:
-        if "second" in klass.__dict__:
-            descriptor = klass.__dict__["second"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_delphi::mineid_has_first():
-    assert hasattr(delphi::MineID, "first")
-    descriptor = None
-    for klass in delphi::MineID.__mro__:
-        if "first" in klass.__dict__:
-            descriptor = klass.__dict__["first"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::multipleid_is_not_abstract():
-    assert not inspect.isabstract(delphi::MultipleId)
-
-
-def test_delphi::multipleid_constructor_exists():
-    assert callable(delphi::MultipleId.__init__)
-
-
-def test_delphi::multipleid_constructor_args():
-    sig = inspect.signature(delphi::MultipleId.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_delphi::multipleid_has_id():
-    assert hasattr(delphi::MultipleId, "id")
-    descriptor = None
-    for klass in delphi::MultipleId.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_parameter_is_not_abstract():
-    assert not inspect.isabstract(parameter)
-
-
-def test_parameter_constructor_exists():
-    assert callable(parameter.__init__)
-
-
-def test_parameter_constructor_args():
-    sig = inspect.signature(parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::parametersimple_is_not_abstract():
-    assert not inspect.isabstract(delphi::parameterSimple)
-
-
-def test_delphi::parametersimple_constructor_exists():
-    assert callable(delphi::parameterSimple.__init__)
-
-
-def test_delphi::parametersimple_constructor_args():
-    sig = inspect.signature(delphi::parameterSimple.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::parameterlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::parameterList)
-
-
-def test_delphi::parameterlist_constructor_exists():
-    assert callable(delphi::parameterList.__init__)
-
-
-def test_delphi::parameterlist_constructor_args():
-    sig = inspect.signature(delphi::parameterList.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -1584,75 +198,37 @@ def test_simplestatement_constructor_args():
 
 
 
-def test_delphi::inheritedstamnt_is_not_abstract():
-    assert not inspect.isabstract(delphi::inheritedStamnt)
+def test_delphi_callstmnt_is_not_abstract():
+    assert not inspect.isabstract(delphi_callStmnt)
 
 
-def test_delphi::inheritedstamnt_constructor_exists():
-    assert callable(delphi::inheritedStamnt.__init__)
+def test_delphi_callstmnt_constructor_exists():
+    assert callable(delphi_callStmnt.__init__)
 
 
-def test_delphi::inheritedstamnt_constructor_args():
-    sig = inspect.signature(delphi::inheritedStamnt.__init__)
+def test_delphi_callstmnt_constructor_args():
+    sig = inspect.signature(delphi_callStmnt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::callstmnt_is_not_abstract():
-    assert not inspect.isabstract(delphi::callStmnt)
+def test_delphi_assignmentstmnt_is_not_abstract():
+    assert not inspect.isabstract(delphi_assignmentStmnt)
 
 
-def test_delphi::callstmnt_constructor_exists():
-    assert callable(delphi::callStmnt.__init__)
+def test_delphi_assignmentstmnt_constructor_exists():
+    assert callable(delphi_assignmentStmnt.__init__)
 
 
-def test_delphi::callstmnt_constructor_args():
-    sig = inspect.signature(delphi::callStmnt.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::gotostmnt_is_not_abstract():
-    assert not inspect.isabstract(delphi::gotoStmnt)
-
-
-def test_delphi::gotostmnt_constructor_exists():
-    assert callable(delphi::gotoStmnt.__init__)
-
-
-def test_delphi::gotostmnt_constructor_args():
-    sig = inspect.signature(delphi::gotoStmnt.__init__)
-    params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
-
-def test_delphi::gotostmnt_has_label():
-    assert hasattr(delphi::gotoStmnt, "label")
-    descriptor = None
-    for klass in delphi::gotoStmnt.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::assignmentstmnt_is_not_abstract():
-    assert not inspect.isabstract(delphi::assignmentStmnt)
-
-
-def test_delphi::assignmentstmnt_constructor_exists():
-    assert callable(delphi::assignmentStmnt.__init__)
-
-
-def test_delphi::assignmentstmnt_constructor_args():
-    sig = inspect.signature(delphi::assignmentStmnt.__init__)
+def test_delphi_assignmentstmnt_constructor_args():
+    sig = inspect.signature(delphi_assignmentStmnt.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_delphi::assignmentstmnt_has_operator():
-    assert hasattr(delphi::assignmentStmnt, "operator")
+def test_delphi_assignmentstmnt_has_operator():
+    assert hasattr(delphi_assignmentStmnt, "operator")
     descriptor = None
-    for klass in delphi::assignmentStmnt.__mro__:
+    for klass in delphi_assignmentStmnt.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1674,23 +250,23 @@ def test_addop_constructor_args():
 
 
 
-def test_delphi::adop_is_not_abstract():
-    assert not inspect.isabstract(delphi::adOp)
+def test_delphi_adop_is_not_abstract():
+    assert not inspect.isabstract(delphi_adOp)
 
 
-def test_delphi::adop_constructor_exists():
-    assert callable(delphi::adOp.__init__)
+def test_delphi_adop_constructor_exists():
+    assert callable(delphi_adOp.__init__)
 
 
-def test_delphi::adop_constructor_args():
-    sig = inspect.signature(delphi::adOp.__init__)
+def test_delphi_adop_constructor_args():
+    sig = inspect.signature(delphi_adOp.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_delphi::adop_has_op():
-    assert hasattr(delphi::adOp, "op")
+def test_delphi_adop_has_op():
+    assert hasattr(delphi_adOp, "op")
     descriptor = None
-    for klass in delphi::adOp.__mro__:
+    for klass in delphi_adOp.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1712,72 +288,16 @@ def test_factor_constructor_args():
 
 
 
-def test_delphi::simplefactor_is_not_abstract():
-    assert not inspect.isabstract(delphi::simpleFactor)
+def test_delphi_simplefactor_is_not_abstract():
+    assert not inspect.isabstract(delphi_simpleFactor)
 
 
-def test_delphi::simplefactor_constructor_exists():
-    assert callable(delphi::simpleFactor.__init__)
+def test_delphi_simplefactor_constructor_exists():
+    assert callable(delphi_simpleFactor.__init__)
 
 
-def test_delphi::simplefactor_constructor_args():
-    sig = inspect.signature(delphi::simpleFactor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::multexp_is_not_abstract():
-    assert not inspect.isabstract(delphi::multExp)
-
-
-def test_delphi::multexp_constructor_exists():
-    assert callable(delphi::multExp.__init__)
-
-
-def test_delphi::multexp_constructor_args():
-    sig = inspect.signature(delphi::multExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::addexp_is_not_abstract():
-    assert not inspect.isabstract(delphi::addExp)
-
-
-def test_delphi::addexp_constructor_exists():
-    assert callable(delphi::addExp.__init__)
-
-
-def test_delphi::addexp_constructor_args():
-    sig = inspect.signature(delphi::addExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::relexp_is_not_abstract():
-    assert not inspect.isabstract(delphi::relExp)
-
-
-def test_delphi::relexp_constructor_exists():
-    assert callable(delphi::relExp.__init__)
-
-
-def test_delphi::relexp_constructor_args():
-    sig = inspect.signature(delphi::relExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::recordconstexpr_is_not_abstract():
-    assert not inspect.isabstract(delphi::recordConstExpr)
-
-
-def test_delphi::recordconstexpr_constructor_exists():
-    assert callable(delphi::recordConstExpr.__init__)
-
-
-def test_delphi::recordconstexpr_constructor_args():
-    sig = inspect.signature(delphi::recordConstExpr.__init__)
+def test_delphi_simplefactor_constructor_args():
+    sig = inspect.signature(delphi_simpleFactor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1793,44 +313,6 @@ def test_pointertype_constructor_exists():
 def test_pointertype_constructor_args():
     sig = inspect.signature(pointerType.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_delphi::typeid_is_not_abstract():
-    assert not inspect.isabstract(delphi::typeId)
-
-
-def test_delphi::typeid_constructor_exists():
-    assert callable(delphi::typeId.__init__)
-
-
-def test_delphi::typeid_constructor_args():
-    sig = inspect.signature(delphi::typeId.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::unitid_is_not_abstract():
-    assert not inspect.isabstract(delphi::unitId)
-
-
-def test_delphi::unitid_constructor_exists():
-    assert callable(delphi::unitId.__init__)
-
-
-def test_delphi::unitid_constructor_args():
-    sig = inspect.signature(delphi::unitId.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_delphi::unitid_has_id():
-    assert hasattr(delphi::unitId, "id")
-    descriptor = None
-    for klass in delphi::unitId.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1862,284 +344,6 @@ def test_objfieldlist_constructor_args():
 
 
 
-def test_delphi::identlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::identList)
-
-
-def test_delphi::identlist_constructor_exists():
-    assert callable(delphi::identList.__init__)
-
-
-def test_delphi::identlist_constructor_args():
-    sig = inspect.signature(delphi::identList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::propertyspecifiers_is_not_abstract():
-    assert not inspect.isabstract(delphi::propertySpecifiers)
-
-
-def test_delphi::propertyspecifiers_constructor_exists():
-    assert callable(delphi::propertySpecifiers.__init__)
-
-
-def test_delphi::propertyspecifiers_constructor_args():
-    sig = inspect.signature(delphi::propertySpecifiers.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::propertyinterface_is_not_abstract():
-    assert not inspect.isabstract(delphi::propertyInterface)
-
-
-def test_delphi::propertyinterface_constructor_exists():
-    assert callable(delphi::propertyInterface.__init__)
-
-
-def test_delphi::propertyinterface_constructor_args():
-    sig = inspect.signature(delphi::propertyInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::interfaceheritage_is_not_abstract():
-    assert not inspect.isabstract(delphi::interfaceHeritage)
-
-
-def test_delphi::interfaceheritage_constructor_exists():
-    assert callable(delphi::interfaceHeritage.__init__)
-
-
-def test_delphi::interfaceheritage_constructor_args():
-    sig = inspect.signature(delphi::interfaceHeritage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::propertyparameterlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::propertyParameterList)
-
-
-def test_delphi::propertyparameterlist_constructor_exists():
-    assert callable(delphi::propertyParameterList.__init__)
-
-
-def test_delphi::propertyparameterlist_constructor_args():
-    sig = inspect.signature(delphi::propertyParameterList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::classheritage_is_not_abstract():
-    assert not inspect.isabstract(delphi::classHeritage)
-
-
-def test_delphi::classheritage_constructor_exists():
-    assert callable(delphi::classHeritage.__init__)
-
-
-def test_delphi::classheritage_constructor_args():
-    sig = inspect.signature(delphi::classHeritage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::propertylist_is_not_abstract():
-    assert not inspect.isabstract(delphi::propertyList)
-
-
-def test_delphi::propertylist_constructor_exists():
-    assert callable(delphi::propertyList.__init__)
-
-
-def test_delphi::propertylist_constructor_args():
-    sig = inspect.signature(delphi::propertyList.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::propertylist_has_port():
-    assert hasattr(delphi::propertyList, "port")
-    descriptor = None
-    for klass in delphi::propertyList.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::classproperty_is_not_abstract():
-    assert not inspect.isabstract(delphi::classProperty)
-
-
-def test_delphi::classproperty_constructor_exists():
-    assert callable(delphi::classProperty.__init__)
-
-
-def test_delphi::classproperty_constructor_args():
-    sig = inspect.signature(delphi::classProperty.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
-
-def test_delphi::classproperty_has_visibility():
-    assert hasattr(delphi::classProperty, "visibility")
-    descriptor = None
-    for klass in delphi::classProperty.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::classmethod_is_not_abstract():
-    assert not inspect.isabstract(delphi::classMethod)
-
-
-def test_delphi::classmethod_constructor_exists():
-    assert callable(delphi::classMethod.__init__)
-
-
-def test_delphi::classmethod_constructor_args():
-    sig = inspect.signature(delphi::classMethod.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
-
-def test_delphi::classmethod_has_visibility():
-    assert hasattr(delphi::classMethod, "visibility")
-    descriptor = None
-    for klass in delphi::classMethod.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::classfield_is_not_abstract():
-    assert not inspect.isabstract(delphi::classField)
-
-
-def test_delphi::classfield_constructor_exists():
-    assert callable(delphi::classField.__init__)
-
-
-def test_delphi::classfield_constructor_args():
-    sig = inspect.signature(delphi::classField.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
-
-def test_delphi::classfield_has_visibility():
-    assert hasattr(delphi::classField, "visibility")
-    descriptor = None
-    for klass in delphi::classField.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::classpropertylist_is_not_abstract():
-    assert not inspect.isabstract(delphi::classPropertyList)
-
-
-def test_delphi::classpropertylist_constructor_exists():
-    assert callable(delphi::classPropertyList.__init__)
-
-
-def test_delphi::classpropertylist_constructor_args():
-    sig = inspect.signature(delphi::classPropertyList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::classmethodlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::classMethodList)
-
-
-def test_delphi::classmethodlist_constructor_exists():
-    assert callable(delphi::classMethodList.__init__)
-
-
-def test_delphi::classmethodlist_constructor_args():
-    sig = inspect.signature(delphi::classMethodList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::classfieldlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::classFieldList)
-
-
-def test_delphi::classfieldlist_constructor_exists():
-    assert callable(delphi::classFieldList.__init__)
-
-
-def test_delphi::classfieldlist_constructor_args():
-    sig = inspect.signature(delphi::classFieldList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::methodheading_is_not_abstract():
-    assert not inspect.isabstract(delphi::methodHeading)
-
-
-def test_delphi::methodheading_constructor_exists():
-    assert callable(delphi::methodHeading.__init__)
-
-
-def test_delphi::methodheading_constructor_args():
-    sig = inspect.signature(delphi::methodHeading.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::methodlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::methodList)
-
-
-def test_delphi::methodlist_constructor_exists():
-    assert callable(delphi::methodList.__init__)
-
-
-def test_delphi::methodlist_constructor_args():
-    sig = inspect.signature(delphi::methodList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::objfieldlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::objFieldList)
-
-
-def test_delphi::objfieldlist_constructor_exists():
-    assert callable(delphi::objFieldList.__init__)
-
-
-def test_delphi::objfieldlist_constructor_args():
-    sig = inspect.signature(delphi::objFieldList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::objheritage_is_not_abstract():
-    assert not inspect.isabstract(delphi::objHeritage)
-
-
-def test_delphi::objheritage_constructor_exists():
-    assert callable(delphi::objHeritage.__init__)
-
-
-def test_delphi::objheritage_constructor_args():
-    sig = inspect.signature(delphi::objHeritage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_restrictedtype_is_not_abstract():
     assert not inspect.isabstract(restrictedType)
 
@@ -2154,23 +358,37 @@ def test_restrictedtype_constructor_args():
 
 
 
-def test_delphi::classtype_is_not_abstract():
-    assert not inspect.isabstract(delphi::classType)
+def test_delphi_interfacetype_is_not_abstract():
+    assert not inspect.isabstract(delphi_interfaceType)
 
 
-def test_delphi::classtype_constructor_exists():
-    assert callable(delphi::classType.__init__)
+def test_delphi_interfacetype_constructor_exists():
+    assert callable(delphi_interfaceType.__init__)
 
 
-def test_delphi::classtype_constructor_args():
-    sig = inspect.signature(delphi::classType.__init__)
+def test_delphi_interfacetype_constructor_args():
+    sig = inspect.signature(delphi_interfaceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_classtype_is_not_abstract():
+    assert not inspect.isabstract(delphi_classType)
+
+
+def test_delphi_classtype_constructor_exists():
+    assert callable(delphi_classType.__init__)
+
+
+def test_delphi_classtype_constructor_args():
+    sig = inspect.signature(delphi_classType.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_delphi::classtype_has_visibility():
-    assert hasattr(delphi::classType, "visibility")
+def test_delphi_classtype_has_visibility():
+    assert hasattr(delphi_classType, "visibility")
     descriptor = None
-    for klass in delphi::classType.__mro__:
+    for klass in delphi_classType.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -2178,72 +396,16 @@ def test_delphi::classtype_has_visibility():
 
 
 
-def test_delphi::interfacetype_is_not_abstract():
-    assert not inspect.isabstract(delphi::interfaceType)
+def test_delphi_objecttype_is_not_abstract():
+    assert not inspect.isabstract(delphi_objectType)
 
 
-def test_delphi::interfacetype_constructor_exists():
-    assert callable(delphi::interfaceType.__init__)
+def test_delphi_objecttype_constructor_exists():
+    assert callable(delphi_objectType.__init__)
 
 
-def test_delphi::interfacetype_constructor_args():
-    sig = inspect.signature(delphi::interfaceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::objecttype_is_not_abstract():
-    assert not inspect.isabstract(delphi::objectType)
-
-
-def test_delphi::objecttype_constructor_exists():
-    assert callable(delphi::objectType.__init__)
-
-
-def test_delphi::objecttype_constructor_args():
-    sig = inspect.signature(delphi::objectType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::parameter_is_not_abstract():
-    assert not inspect.isabstract(delphi::parameter)
-
-
-def test_delphi::parameter_constructor_exists():
-    assert callable(delphi::parameter.__init__)
-
-
-def test_delphi::parameter_constructor_args():
-    sig = inspect.signature(delphi::parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::formalparm_is_not_abstract():
-    assert not inspect.isabstract(delphi::formalParm)
-
-
-def test_delphi::formalparm_constructor_exists():
-    assert callable(delphi::formalParm.__init__)
-
-
-def test_delphi::formalparm_constructor_args():
-    sig = inspect.signature(delphi::formalParm.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::formalparameters_is_not_abstract():
-    assert not inspect.isabstract(delphi::formalParameters)
-
-
-def test_delphi::formalparameters_constructor_exists():
-    assert callable(delphi::formalParameters.__init__)
-
-
-def test_delphi::formalparameters_constructor_args():
-    sig = inspect.signature(delphi::formalParameters.__init__)
+def test_delphi_objecttype_constructor_args():
+    sig = inspect.signature(delphi_objectType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2262,58 +424,30 @@ def test_methodheading_constructor_args():
 
 
 
-def test_delphi::constructorheading_is_not_abstract():
-    assert not inspect.isabstract(delphi::constructorHeading)
+def test_delphi_constructorheading_is_not_abstract():
+    assert not inspect.isabstract(delphi_constructorHeading)
 
 
-def test_delphi::constructorheading_constructor_exists():
-    assert callable(delphi::constructorHeading.__init__)
+def test_delphi_constructorheading_constructor_exists():
+    assert callable(delphi_constructorHeading.__init__)
 
 
-def test_delphi::constructorheading_constructor_args():
-    sig = inspect.signature(delphi::constructorHeading.__init__)
+def test_delphi_constructorheading_constructor_args():
+    sig = inspect.signature(delphi_constructorHeading.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::destructorheading_is_not_abstract():
-    assert not inspect.isabstract(delphi::destructorHeading)
+def test_delphi_destructorheading_is_not_abstract():
+    assert not inspect.isabstract(delphi_destructorHeading)
 
 
-def test_delphi::destructorheading_constructor_exists():
-    assert callable(delphi::destructorHeading.__init__)
+def test_delphi_destructorheading_constructor_exists():
+    assert callable(delphi_destructorHeading.__init__)
 
 
-def test_delphi::destructorheading_constructor_args():
-    sig = inspect.signature(delphi::destructorHeading.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::procedureheading_is_not_abstract():
-    assert not inspect.isabstract(delphi::procedureHeading)
-
-
-def test_delphi::procedureheading_constructor_exists():
-    assert callable(delphi::procedureHeading.__init__)
-
-
-def test_delphi::procedureheading_constructor_args():
-    sig = inspect.signature(delphi::procedureHeading.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::functionheading_is_not_abstract():
-    assert not inspect.isabstract(delphi::functionHeading)
-
-
-def test_delphi::functionheading_constructor_exists():
-    assert callable(delphi::functionHeading.__init__)
-
-
-def test_delphi::functionheading_constructor_args():
-    sig = inspect.signature(delphi::functionHeading.__init__)
+def test_delphi_destructorheading_constructor_args():
+    sig = inspect.signature(delphi_destructorHeading.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2332,82 +466,30 @@ def test_proceduredeclsection_constructor_args():
 
 
 
-def test_delphi::functiondecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::functionDecl)
+def test_delphi_functiondecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_functionDecl)
 
 
-def test_delphi::functiondecl_constructor_exists():
-    assert callable(delphi::functionDecl.__init__)
+def test_delphi_functiondecl_constructor_exists():
+    assert callable(delphi_functionDecl.__init__)
 
 
-def test_delphi::functiondecl_constructor_args():
-    sig = inspect.signature(delphi::functionDecl.__init__)
+def test_delphi_functiondecl_constructor_args():
+    sig = inspect.signature(delphi_functionDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::proceduredecl_is_not_abstract():
-    assert not inspect.isabstract(delphi::procedureDecl)
+def test_delphi_proceduredecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_procedureDecl)
 
 
-def test_delphi::proceduredecl_constructor_exists():
-    assert callable(delphi::procedureDecl.__init__)
+def test_delphi_proceduredecl_constructor_exists():
+    assert callable(delphi_procedureDecl.__init__)
 
 
-def test_delphi::proceduredecl_constructor_args():
-    sig = inspect.signature(delphi::procedureDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::proceduredeclsection_is_not_abstract():
-    assert not inspect.isabstract(delphi::procedureDeclSection)
-
-
-def test_delphi::proceduredeclsection_constructor_exists():
-    assert callable(delphi::procedureDeclSection.__init__)
-
-
-def test_delphi::proceduredeclsection_constructor_args():
-    sig = inspect.signature(delphi::procedureDeclSection.__init__)
-    params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_delphi::proceduredeclsection_has_port():
-    assert hasattr(delphi::procedureDeclSection, "port")
-    descriptor = None
-    for klass in delphi::procedureDeclSection.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_delphi::exceptionblock_is_not_abstract():
-    assert not inspect.isabstract(delphi::exceptionBlock)
-
-
-def test_delphi::exceptionblock_constructor_exists():
-    assert callable(delphi::exceptionBlock.__init__)
-
-
-def test_delphi::exceptionblock_constructor_args():
-    sig = inspect.signature(delphi::exceptionBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::qualid_is_not_abstract():
-    assert not inspect.isabstract(delphi::qualId)
-
-
-def test_delphi::qualid_constructor_exists():
-    assert callable(delphi::qualId.__init__)
-
-
-def test_delphi::qualid_constructor_args():
-    sig = inspect.signature(delphi::qualId.__init__)
+def test_delphi_proceduredecl_constructor_args():
+    sig = inspect.signature(delphi_procedureDecl.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2426,86 +508,44 @@ def test_loopstmt_constructor_args():
 
 
 
-def test_delphi::forstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::forStmt)
+def test_delphi_forstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_forStmt)
 
 
-def test_delphi::forstmt_constructor_exists():
-    assert callable(delphi::forStmt.__init__)
+def test_delphi_forstmt_constructor_exists():
+    assert callable(delphi_forStmt.__init__)
 
 
-def test_delphi::forstmt_constructor_args():
-    sig = inspect.signature(delphi::forStmt.__init__)
+def test_delphi_forstmt_constructor_args():
+    sig = inspect.signature(delphi_forStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::whilestmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::whileStmt)
+def test_delphi_whilestmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_whileStmt)
 
 
-def test_delphi::whilestmt_constructor_exists():
-    assert callable(delphi::whileStmt.__init__)
+def test_delphi_whilestmt_constructor_exists():
+    assert callable(delphi_whileStmt.__init__)
 
 
-def test_delphi::whilestmt_constructor_args():
-    sig = inspect.signature(delphi::whileStmt.__init__)
+def test_delphi_whilestmt_constructor_args():
+    sig = inspect.signature(delphi_whileStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::repeatstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::repeatStmt)
+def test_delphi_repeatstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_repeatStmt)
 
 
-def test_delphi::repeatstmt_constructor_exists():
-    assert callable(delphi::repeatStmt.__init__)
+def test_delphi_repeatstmt_constructor_exists():
+    assert callable(delphi_repeatStmt.__init__)
 
 
-def test_delphi::repeatstmt_constructor_args():
-    sig = inspect.signature(delphi::repeatStmt.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::stmtlist_is_not_abstract():
-    assert not inspect.isabstract(delphi::stmtList)
-
-
-def test_delphi::stmtlist_constructor_exists():
-    assert callable(delphi::stmtList.__init__)
-
-
-def test_delphi::stmtlist_constructor_args():
-    sig = inspect.signature(delphi::stmtList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::caselabel_is_not_abstract():
-    assert not inspect.isabstract(delphi::caseLabel)
-
-
-def test_delphi::caselabel_constructor_exists():
-    assert callable(delphi::caseLabel.__init__)
-
-
-def test_delphi::caselabel_constructor_args():
-    sig = inspect.signature(delphi::caseLabel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_delphi::caseselector_is_not_abstract():
-    assert not inspect.isabstract(delphi::caseSelector)
-
-
-def test_delphi::caseselector_constructor_exists():
-    assert callable(delphi::caseSelector.__init__)
-
-
-def test_delphi::caseselector_constructor_args():
-    sig = inspect.signature(delphi::caseSelector.__init__)
+def test_delphi_repeatstmt_constructor_args():
+    sig = inspect.signature(delphi_repeatStmt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2524,30 +564,30 @@ def test_conditionalstmt_constructor_args():
 
 
 
-def test_delphi::casestmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::caseStmt)
+def test_delphi_casestmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_caseStmt)
 
 
-def test_delphi::casestmt_constructor_exists():
-    assert callable(delphi::caseStmt.__init__)
+def test_delphi_casestmt_constructor_exists():
+    assert callable(delphi_caseStmt.__init__)
 
 
-def test_delphi::casestmt_constructor_args():
-    sig = inspect.signature(delphi::caseStmt.__init__)
+def test_delphi_casestmt_constructor_args():
+    sig = inspect.signature(delphi_caseStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::ifstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::ifStmt)
+def test_delphi_ifstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_ifStmt)
 
 
-def test_delphi::ifstmt_constructor_exists():
-    assert callable(delphi::ifStmt.__init__)
+def test_delphi_ifstmt_constructor_exists():
+    assert callable(delphi_ifStmt.__init__)
 
 
-def test_delphi::ifstmt_constructor_args():
-    sig = inspect.signature(delphi::ifStmt.__init__)
+def test_delphi_ifstmt_constructor_args():
+    sig = inspect.signature(delphi_ifStmt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2566,120 +606,106 @@ def test_structstmt_constructor_args():
 
 
 
-def test_delphi::loopstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::loopStmt)
+def test_delphi_trystmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_tryStmt)
 
 
-def test_delphi::loopstmt_constructor_exists():
-    assert callable(delphi::loopStmt.__init__)
+def test_delphi_trystmt_constructor_exists():
+    assert callable(delphi_tryStmt.__init__)
 
 
-def test_delphi::loopstmt_constructor_args():
-    sig = inspect.signature(delphi::loopStmt.__init__)
+def test_delphi_trystmt_constructor_args():
+    sig = inspect.signature(delphi_tryStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::conditionalstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::conditionalStmt)
+def test_delphi_assemblerstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_assemblerStmt)
 
 
-def test_delphi::conditionalstmt_constructor_exists():
-    assert callable(delphi::conditionalStmt.__init__)
+def test_delphi_assemblerstmt_constructor_exists():
+    assert callable(delphi_assemblerStmt.__init__)
 
 
-def test_delphi::conditionalstmt_constructor_args():
-    sig = inspect.signature(delphi::conditionalStmt.__init__)
+def test_delphi_assemblerstmt_constructor_args():
+    sig = inspect.signature(delphi_assemblerStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::trystmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::tryStmt)
+def test_delphi_withstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_withStmt)
 
 
-def test_delphi::trystmt_constructor_exists():
-    assert callable(delphi::tryStmt.__init__)
+def test_delphi_withstmt_constructor_exists():
+    assert callable(delphi_withStmt.__init__)
 
 
-def test_delphi::trystmt_constructor_args():
-    sig = inspect.signature(delphi::tryStmt.__init__)
+def test_delphi_withstmt_constructor_args():
+    sig = inspect.signature(delphi_withStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::withstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::withStmt)
+def test_delphi_raisestmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_raiseStmt)
 
 
-def test_delphi::withstmt_constructor_exists():
-    assert callable(delphi::withStmt.__init__)
+def test_delphi_raisestmt_constructor_exists():
+    assert callable(delphi_raiseStmt.__init__)
 
 
-def test_delphi::withstmt_constructor_args():
-    sig = inspect.signature(delphi::withStmt.__init__)
+def test_delphi_raisestmt_constructor_args():
+    sig = inspect.signature(delphi_raiseStmt.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_delphi::raisestmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::raiseStmt)
-
-
-def test_delphi::raisestmt_constructor_exists():
-    assert callable(delphi::raiseStmt.__init__)
-
-
-def test_delphi::raisestmt_constructor_args():
-    sig = inspect.signature(delphi::raiseStmt.__init__)
-    params = list(sig.parameters.keys())
-    assert "at" in params, "Missing parameter 'at'"
     assert "raise_" in params, "Missing parameter 'raise_'"
+    assert "at" in params, "Missing parameter 'at'"
 
-def test_delphi::raisestmt_has_at():
-    assert hasattr(delphi::raiseStmt, "at")
+def test_delphi_raisestmt_has_raise_():
+    assert hasattr(delphi_raiseStmt, "raise_")
     descriptor = None
-    for klass in delphi::raiseStmt.__mro__:
-        if "at" in klass.__dict__:
-            descriptor = klass.__dict__["at"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_delphi::raisestmt_has_raise_():
-    assert hasattr(delphi::raiseStmt, "raise_")
-    descriptor = None
-    for klass in delphi::raiseStmt.__mro__:
+    for klass in delphi_raiseStmt.__mro__:
         if "raise_" in klass.__dict__:
             descriptor = klass.__dict__["raise_"]
             break
     assert isinstance(descriptor, property)
 
+def test_delphi_raisestmt_has_at():
+    assert hasattr(delphi_raiseStmt, "at")
+    descriptor = None
+    for klass in delphi_raiseStmt.__mro__:
+        if "at" in klass.__dict__:
+            descriptor = klass.__dict__["at"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_delphi::compoundstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::compoundStmt)
+
+def test_delphi_loopstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_loopStmt)
 
 
-def test_delphi::compoundstmt_constructor_exists():
-    assert callable(delphi::compoundStmt.__init__)
+def test_delphi_loopstmt_constructor_exists():
+    assert callable(delphi_loopStmt.__init__)
 
 
-def test_delphi::compoundstmt_constructor_args():
-    sig = inspect.signature(delphi::compoundStmt.__init__)
+def test_delphi_loopstmt_constructor_args():
+    sig = inspect.signature(delphi_loopStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::assemblerstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::assemblerStmt)
+def test_delphi_conditionalstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_conditionalStmt)
 
 
-def test_delphi::assemblerstmt_constructor_exists():
-    assert callable(delphi::assemblerStmt.__init__)
+def test_delphi_conditionalstmt_constructor_exists():
+    assert callable(delphi_conditionalStmt.__init__)
 
 
-def test_delphi::assemblerstmt_constructor_args():
-    sig = inspect.signature(delphi::assemblerStmt.__init__)
+def test_delphi_conditionalstmt_constructor_args():
+    sig = inspect.signature(delphi_conditionalStmt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2698,65 +724,1093 @@ def test_unlabelledstatement_constructor_args():
 
 
 
-def test_delphi::structstmt_is_not_abstract():
-    assert not inspect.isabstract(delphi::structStmt)
+def test_delphi_structstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_structStmt)
 
 
-def test_delphi::structstmt_constructor_exists():
-    assert callable(delphi::structStmt.__init__)
+def test_delphi_structstmt_constructor_exists():
+    assert callable(delphi_structStmt.__init__)
 
 
-def test_delphi::structstmt_constructor_args():
-    sig = inspect.signature(delphi::structStmt.__init__)
+def test_delphi_structstmt_constructor_args():
+    sig = inspect.signature(delphi_structStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::simplestatement_is_not_abstract():
-    assert not inspect.isabstract(delphi::simpleStatement)
+def test_delphi_simplestatement_is_not_abstract():
+    assert not inspect.isabstract(delphi_simpleStatement)
 
 
-def test_delphi::simplestatement_constructor_exists():
-    assert callable(delphi::simpleStatement.__init__)
+def test_delphi_simplestatement_constructor_exists():
+    assert callable(delphi_simpleStatement.__init__)
 
 
-def test_delphi::simplestatement_constructor_args():
-    sig = inspect.signature(delphi::simpleStatement.__init__)
+def test_delphi_simplestatement_constructor_args():
+    sig = inspect.signature(delphi_simpleStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::unlabelledstatement_is_not_abstract():
-    assert not inspect.isabstract(delphi::unlabelledStatement)
+def test_term_is_not_abstract():
+    assert not inspect.isabstract(term)
 
 
-def test_delphi::unlabelledstatement_constructor_exists():
-    assert callable(delphi::unlabelledStatement.__init__)
+def test_term_constructor_exists():
+    assert callable(term.__init__)
 
 
-def test_delphi::unlabelledstatement_constructor_args():
-    sig = inspect.signature(delphi::unlabelledStatement.__init__)
+def test_term_constructor_args():
+    sig = inspect.signature(term.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::statement_is_not_abstract():
-    assert not inspect.isabstract(delphi::statement)
+def test_delphi_multexp_is_not_abstract():
+    assert not inspect.isabstract(delphi_multExp)
 
 
-def test_delphi::statement_constructor_exists():
-    assert callable(delphi::statement.__init__)
+def test_delphi_multexp_constructor_exists():
+    assert callable(delphi_multExp.__init__)
 
 
-def test_delphi::statement_constructor_args():
-    sig = inspect.signature(delphi::statement.__init__)
+def test_delphi_multexp_constructor_args():
+    sig = inspect.signature(delphi_multExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_factor_is_not_abstract():
+    assert not inspect.isabstract(delphi_factor)
+
+
+def test_delphi_factor_constructor_exists():
+    assert callable(delphi_factor.__init__)
+
+
+def test_delphi_factor_constructor_args():
+    sig = inspect.signature(delphi_factor.__init__)
+    params = list(sig.parameters.keys())
+    assert "number" in params, "Missing parameter 'number'"
+    assert "string" in params, "Missing parameter 'string'"
+
+def test_delphi_factor_has_number():
+    assert hasattr(delphi_factor, "number")
+    descriptor = None
+    for klass in delphi_factor.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_delphi_factor_has_string():
+    assert hasattr(delphi_factor, "string")
+    descriptor = None
+    for klass in delphi_factor.__mro__:
+        if "string" in klass.__dict__:
+            descriptor = klass.__dict__["string"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simpleexpression_is_not_abstract():
+    assert not inspect.isabstract(simpleExpression)
+
+
+def test_simpleexpression_constructor_exists():
+    assert callable(simpleExpression.__init__)
+
+
+def test_simpleexpression_constructor_args():
+    sig = inspect.signature(simpleExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_addexp_is_not_abstract():
+    assert not inspect.isabstract(delphi_addExp)
+
+
+def test_delphi_addexp_constructor_exists():
+    assert callable(delphi_addExp.__init__)
+
+
+def test_delphi_addexp_constructor_args():
+    sig = inspect.signature(delphi_addExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_term_is_not_abstract():
+    assert not inspect.isabstract(delphi_term)
+
+
+def test_delphi_term_constructor_exists():
+    assert callable(delphi_term.__init__)
+
+
+def test_delphi_term_constructor_args():
+    sig = inspect.signature(delphi_term.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expression_is_not_abstract():
+    assert not inspect.isabstract(expression)
+
+
+def test_expression_constructor_exists():
+    assert callable(expression.__init__)
+
+
+def test_expression_constructor_args():
+    sig = inspect.signature(expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_relexp_is_not_abstract():
+    assert not inspect.isabstract(delphi_relExp)
+
+
+def test_delphi_relexp_constructor_exists():
+    assert callable(delphi_relExp.__init__)
+
+
+def test_delphi_relexp_constructor_args():
+    sig = inspect.signature(delphi_relExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_simpleexpression_is_not_abstract():
+    assert not inspect.isabstract(delphi_simpleExpression)
+
+
+def test_delphi_simpleexpression_constructor_exists():
+    assert callable(delphi_simpleExpression.__init__)
+
+
+def test_delphi_simpleexpression_constructor_args():
+    sig = inspect.signature(delphi_simpleExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structype_is_not_abstract():
+    assert not inspect.isabstract(strucType)
+
+
+def test_structype_constructor_exists():
+    assert callable(strucType.__init__)
+
+
+def test_structype_constructor_args():
+    sig = inspect.signature(strucType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_rectype_is_not_abstract():
+    assert not inspect.isabstract(delphi_recType)
+
+
+def test_delphi_rectype_constructor_exists():
+    assert callable(delphi_recType.__init__)
+
+
+def test_delphi_rectype_constructor_args():
+    sig = inspect.signature(delphi_recType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_filetype_is_not_abstract():
+    assert not inspect.isabstract(delphi_fileType)
+
+
+def test_delphi_filetype_constructor_exists():
+    assert callable(delphi_fileType.__init__)
+
+
+def test_delphi_filetype_constructor_args():
+    sig = inspect.signature(delphi_fileType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_settype_is_not_abstract():
+    assert not inspect.isabstract(delphi_setType)
+
+
+def test_delphi_settype_constructor_exists():
+    assert callable(delphi_setType.__init__)
+
+
+def test_delphi_settype_constructor_args():
+    sig = inspect.signature(delphi_setType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_arraytype_is_not_abstract():
+    assert not inspect.isabstract(delphi_arrayType)
+
+
+def test_delphi_arraytype_constructor_exists():
+    assert callable(delphi_arrayType.__init__)
+
+
+def test_delphi_arraytype_constructor_args():
+    sig = inspect.signature(delphi_arrayType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ordinaltype_is_not_abstract():
+    assert not inspect.isabstract(ordinalType)
+
+
+def test_ordinaltype_constructor_exists():
+    assert callable(ordinalType.__init__)
+
+
+def test_ordinaltype_constructor_args():
+    sig = inspect.signature(ordinalType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_enumeratedtype_is_not_abstract():
+    assert not inspect.isabstract(delphi_enumeratedType)
+
+
+def test_delphi_enumeratedtype_constructor_exists():
+    assert callable(delphi_enumeratedType.__init__)
+
+
+def test_delphi_enumeratedtype_constructor_args():
+    sig = inspect.signature(delphi_enumeratedType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_subrangetype_is_not_abstract():
+    assert not inspect.isabstract(delphi_subrangeType)
+
+
+def test_delphi_subrangetype_constructor_exists():
+    assert callable(delphi_subrangeType.__init__)
+
+
+def test_delphi_subrangetype_constructor_args():
+    sig = inspect.signature(delphi_subrangeType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_ordident_is_not_abstract():
+    assert not inspect.isabstract(delphi_ordIdent)
+
+
+def test_delphi_ordident_constructor_exists():
+    assert callable(delphi_ordIdent.__init__)
+
+
+def test_delphi_ordident_constructor_args():
+    sig = inspect.signature(delphi_ordIdent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpletype_is_not_abstract():
+    assert not inspect.isabstract(simpleType)
+
+
+def test_simpletype_constructor_exists():
+    assert callable(simpleType.__init__)
+
+
+def test_simpletype_constructor_args():
+    sig = inspect.signature(simpleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_ordinaltype_is_not_abstract():
+    assert not inspect.isabstract(delphi_ordinalType)
+
+
+def test_delphi_ordinaltype_constructor_exists():
+    assert callable(delphi_ordinalType.__init__)
+
+
+def test_delphi_ordinaltype_constructor_args():
+    sig = inspect.signature(delphi_ordinalType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_realtype_is_not_abstract():
+    assert not inspect.isabstract(delphi_realType)
+
+
+def test_delphi_realtype_constructor_exists():
+    assert callable(delphi_realType.__init__)
+
+
+def test_delphi_realtype_constructor_args():
+    sig = inspect.signature(delphi_realType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(type)
+
+
+def test_type_constructor_exists():
+    assert callable(type.__init__)
+
+
+def test_type_constructor_args():
+    sig = inspect.signature(type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_proceduretype_is_not_abstract():
+    assert not inspect.isabstract(delphi_procedureType)
+
+
+def test_delphi_proceduretype_constructor_exists():
+    assert callable(delphi_procedureType.__init__)
+
+
+def test_delphi_proceduretype_constructor_args():
+    sig = inspect.signature(delphi_procedureType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_stringtype_is_not_abstract():
+    assert not inspect.isabstract(delphi_stringType)
+
+
+def test_delphi_stringtype_constructor_exists():
+    assert callable(delphi_stringType.__init__)
+
+
+def test_delphi_stringtype_constructor_args():
+    sig = inspect.signature(delphi_stringType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_varianttype_is_not_abstract():
+    assert not inspect.isabstract(delphi_variantType)
+
+
+def test_delphi_varianttype_constructor_exists():
+    assert callable(delphi_variantType.__init__)
+
+
+def test_delphi_varianttype_constructor_args():
+    sig = inspect.signature(delphi_variantType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_pointertype_is_not_abstract():
+    assert not inspect.isabstract(delphi_pointerType)
+
+
+def test_delphi_pointertype_constructor_exists():
+    assert callable(delphi_pointerType.__init__)
+
+
+def test_delphi_pointertype_constructor_args():
+    sig = inspect.signature(delphi_pointerType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_simpletype_is_not_abstract():
+    assert not inspect.isabstract(delphi_simpleType)
+
+
+def test_delphi_simpletype_constructor_exists():
+    assert callable(delphi_simpleType.__init__)
+
+
+def test_delphi_simpletype_constructor_args():
+    sig = inspect.signature(delphi_simpleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_structype_is_not_abstract():
+    assert not inspect.isabstract(delphi_strucType)
+
+
+def test_delphi_structype_constructor_exists():
+    assert callable(delphi_strucType.__init__)
+
+
+def test_delphi_structype_constructor_args():
+    sig = inspect.signature(delphi_strucType.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_structype_has_port():
+    assert hasattr(delphi_strucType, "port")
+    descriptor = None
+    for klass in delphi_strucType.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_classreftype_is_not_abstract():
+    assert not inspect.isabstract(delphi_classRefType)
+
+
+def test_delphi_classreftype_constructor_exists():
+    assert callable(delphi_classRefType.__init__)
+
+
+def test_delphi_classreftype_constructor_args():
+    sig = inspect.signature(delphi_classRefType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_typeid_is_not_abstract():
+    assert not inspect.isabstract(delphi_typeId)
+
+
+def test_delphi_typeid_constructor_exists():
+    assert callable(delphi_typeId.__init__)
+
+
+def test_delphi_typeid_constructor_args():
+    sig = inspect.signature(delphi_typeId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_procedureheading_is_not_abstract():
+    assert not inspect.isabstract(delphi_procedureHeading)
+
+
+def test_delphi_procedureheading_constructor_exists():
+    assert callable(delphi_procedureHeading.__init__)
+
+
+def test_delphi_procedureheading_constructor_args():
+    sig = inspect.signature(delphi_procedureHeading.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interfacedecl_is_not_abstract():
+    assert not inspect.isabstract(interfaceDecl)
+
+
+def test_interfacedecl_constructor_exists():
+    assert callable(interfaceDecl.__init__)
+
+
+def test_interfacedecl_constructor_args():
+    sig = inspect.signature(interfaceDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_exportedheading_is_not_abstract():
+    assert not inspect.isabstract(delphi_exportedHeading)
+
+
+def test_delphi_exportedheading_constructor_exists():
+    assert callable(delphi_exportedHeading.__init__)
+
+
+def test_delphi_exportedheading_constructor_args():
+    sig = inspect.signature(delphi_exportedHeading.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_declsection_is_not_abstract():
+    assert not inspect.isabstract(declSection)
+
+
+def test_declsection_constructor_exists():
+    assert callable(declSection.__init__)
+
+
+def test_declsection_constructor_args():
+    sig = inspect.signature(declSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_constsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_constSection)
+
+
+def test_delphi_constsection_constructor_exists():
+    assert callable(delphi_constSection.__init__)
+
+
+def test_delphi_constsection_constructor_args():
+    sig = inspect.signature(delphi_constSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_proceduredeclsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_procedureDeclSection)
+
+
+def test_delphi_proceduredeclsection_constructor_exists():
+    assert callable(delphi_procedureDeclSection.__init__)
+
+
+def test_delphi_proceduredeclsection_constructor_args():
+    sig = inspect.signature(delphi_procedureDeclSection.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_proceduredeclsection_has_port():
+    assert hasattr(delphi_procedureDeclSection, "port")
+    descriptor = None
+    for klass in delphi_procedureDeclSection.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_typesection_is_not_abstract():
+    assert not inspect.isabstract(delphi_typeSection)
+
+
+def test_delphi_typesection_constructor_exists():
+    assert callable(delphi_typeSection.__init__)
+
+
+def test_delphi_typesection_constructor_args():
+    sig = inspect.signature(delphi_typeSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_varsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_varSection)
+
+
+def test_delphi_varsection_constructor_exists():
+    assert callable(delphi_varSection.__init__)
+
+
+def test_delphi_varsection_constructor_args():
+    sig = inspect.signature(delphi_varSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_labeldeclsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_labelDeclSection)
+
+
+def test_delphi_labeldeclsection_constructor_exists():
+    assert callable(delphi_labelDeclSection.__init__)
+
+
+def test_delphi_labeldeclsection_constructor_args():
+    sig = inspect.signature(delphi_labelDeclSection.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_delphi_labeldeclsection_has_id():
+    assert hasattr(delphi_labelDeclSection, "id")
+    descriptor = None
+    for klass in delphi_labelDeclSection.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_compoundstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_compoundStmt)
+
+
+def test_delphi_compoundstmt_constructor_exists():
+    assert callable(delphi_compoundStmt.__init__)
+
+
+def test_delphi_compoundstmt_constructor_args():
+    sig = inspect.signature(delphi_compoundStmt.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_functionheading_is_not_abstract():
+    assert not inspect.isabstract(delphi_functionHeading)
+
+
+def test_delphi_functionheading_constructor_exists():
+    assert callable(delphi_functionHeading.__init__)
+
+
+def test_delphi_functionheading_constructor_args():
+    sig = inspect.signature(delphi_functionHeading.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_identlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_identList)
+
+
+def test_delphi_identlist_constructor_exists():
+    assert callable(delphi_identList.__init__)
+
+
+def test_delphi_identlist_constructor_args():
+    sig = inspect.signature(delphi_identList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_file_is_not_abstract():
+    assert not inspect.isabstract(file)
+
+
+def test_file_constructor_exists():
+    assert callable(file.__init__)
+
+
+def test_file_constructor_args():
+    sig = inspect.signature(file.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_library_is_not_abstract():
+    assert not inspect.isabstract(delphi_library)
+
+
+def test_delphi_library_constructor_exists():
+    assert callable(delphi_library.__init__)
+
+
+def test_delphi_library_constructor_args():
+    sig = inspect.signature(delphi_library.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_packagedecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_packageDecl)
+
+
+def test_delphi_packagedecl_constructor_exists():
+    assert callable(delphi_packageDecl.__init__)
+
+
+def test_delphi_packagedecl_constructor_args():
+    sig = inspect.signature(delphi_packageDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_unit_is_not_abstract():
+    assert not inspect.isabstract(delphi_unit)
+
+
+def test_delphi_unit_constructor_exists():
+    assert callable(delphi_unit.__init__)
+
+
+def test_delphi_unit_constructor_args():
+    sig = inspect.signature(delphi_unit.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_unit_has_port():
+    assert hasattr(delphi_unit, "port")
+    descriptor = None
+    for klass in delphi_unit.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_program_is_not_abstract():
+    assert not inspect.isabstract(delphi_program)
+
+
+def test_delphi_program_constructor_exists():
+    assert callable(delphi_program.__init__)
+
+
+def test_delphi_program_constructor_args():
+    sig = inspect.signature(delphi_program.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cstrace_is_not_abstract():
+    assert not inspect.isabstract(CSTrace)
+
+
+def test_cstrace_constructor_exists():
+    assert callable(CSTrace.__init__)
+
+
+def test_cstrace_constructor_args():
+    sig = inspect.signature(CSTrace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_classfieldlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_classFieldList)
+
+
+def test_delphi_classfieldlist_constructor_exists():
+    assert callable(delphi_classFieldList.__init__)
+
+
+def test_delphi_classfieldlist_constructor_args():
+    sig = inspect.signature(delphi_classFieldList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_ident_is_not_abstract():
+    assert not inspect.isabstract(delphi_ident)
+
+
+def test_delphi_ident_constructor_exists():
+    assert callable(delphi_ident.__init__)
+
+
+def test_delphi_ident_constructor_args():
+    sig = inspect.signature(delphi_ident.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_block_is_not_abstract():
+    assert not inspect.isabstract(delphi_block)
+
+
+def test_delphi_block_constructor_exists():
+    assert callable(delphi_block.__init__)
+
+
+def test_delphi_block_constructor_args():
+    sig = inspect.signature(delphi_block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_propertyinterface_is_not_abstract():
+    assert not inspect.isabstract(delphi_propertyInterface)
+
+
+def test_delphi_propertyinterface_constructor_exists():
+    assert callable(delphi_propertyInterface.__init__)
+
+
+def test_delphi_propertyinterface_constructor_args():
+    sig = inspect.signature(delphi_propertyInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_typedconstant_is_not_abstract():
+    assert not inspect.isabstract(delphi_typedConstant)
+
+
+def test_delphi_typedconstant_constructor_exists():
+    assert callable(delphi_typedConstant.__init__)
+
+
+def test_delphi_typedconstant_constructor_args():
+    sig = inspect.signature(delphi_typedConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_usesclause_is_not_abstract():
+    assert not inspect.isabstract(delphi_usesClause)
+
+
+def test_delphi_usesclause_constructor_exists():
+    assert callable(delphi_usesClause.__init__)
+
+
+def test_delphi_usesclause_constructor_args():
+    sig = inspect.signature(delphi_usesClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_objfieldlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_objFieldList)
+
+
+def test_delphi_objfieldlist_constructor_exists():
+    assert callable(delphi_objFieldList.__init__)
+
+
+def test_delphi_objfieldlist_constructor_args():
+    sig = inspect.signature(delphi_objFieldList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_recordconstexpr_is_not_abstract():
+    assert not inspect.isabstract(delphi_recordConstExpr)
+
+
+def test_delphi_recordconstexpr_constructor_exists():
+    assert callable(delphi_recordConstExpr.__init__)
+
+
+def test_delphi_recordconstexpr_constructor_args():
+    sig = inspect.signature(delphi_recordConstExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_reservedword_is_not_abstract():
+    assert not inspect.isabstract(delphi_reservedWord)
+
+
+def test_delphi_reservedword_constructor_exists():
+    assert callable(delphi_reservedWord.__init__)
+
+
+def test_delphi_reservedword_constructor_args():
+    sig = inspect.signature(delphi_reservedWord.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_delphi_reservedword_has_id():
+    assert hasattr(delphi_reservedWord, "id")
+    descriptor = None
+    for klass in delphi_reservedWord.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_file_is_not_abstract():
+    assert not inspect.isabstract(delphi_file)
+
+
+def test_delphi_file_constructor_exists():
+    assert callable(delphi_file.__init__)
+
+
+def test_delphi_file_constructor_args():
+    sig = inspect.signature(delphi_file.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_caselabel_is_not_abstract():
+    assert not inspect.isabstract(delphi_caseLabel)
+
+
+def test_delphi_caselabel_constructor_exists():
+    assert callable(delphi_caseLabel.__init__)
+
+
+def test_delphi_caselabel_constructor_args():
+    sig = inspect.signature(delphi_caseLabel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_exprlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_exprList)
+
+
+def test_delphi_exprlist_constructor_exists():
+    assert callable(delphi_exprList.__init__)
+
+
+def test_delphi_exprlist_constructor_args():
+    sig = inspect.signature(delphi_exprList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_type_is_not_abstract():
+    assert not inspect.isabstract(delphi_type)
+
+
+def test_delphi_type_constructor_exists():
+    assert callable(delphi_type.__init__)
+
+
+def test_delphi_type_constructor_args():
+    sig = inspect.signature(delphi_type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_propertylist_is_not_abstract():
+    assert not inspect.isabstract(delphi_propertyList)
+
+
+def test_delphi_propertylist_constructor_exists():
+    assert callable(delphi_propertyList.__init__)
+
+
+def test_delphi_propertylist_constructor_args():
+    sig = inspect.signature(delphi_propertyList.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_propertylist_has_port():
+    assert hasattr(delphi_propertyList, "port")
+    descriptor = None
+    for klass in delphi_propertyList.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_recordconstant_is_not_abstract():
+    assert not inspect.isabstract(delphi_recordConstant)
+
+
+def test_delphi_recordconstant_constructor_exists():
+    assert callable(delphi_recordConstant.__init__)
+
+
+def test_delphi_recordconstant_constructor_args():
+    sig = inspect.signature(delphi_recordConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_classproperty_is_not_abstract():
+    assert not inspect.isabstract(delphi_classProperty)
+
+
+def test_delphi_classproperty_constructor_exists():
+    assert callable(delphi_classProperty.__init__)
+
+
+def test_delphi_classproperty_constructor_args():
+    sig = inspect.signature(delphi_classProperty.__init__)
+    params = list(sig.parameters.keys())
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_delphi_classproperty_has_visibility():
+    assert hasattr(delphi_classProperty, "visibility")
+    descriptor = None
+    for klass in delphi_classProperty.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_vardecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_varDecl)
+
+
+def test_delphi_vardecl_constructor_exists():
+    assert callable(delphi_varDecl.__init__)
+
+
+def test_delphi_vardecl_constructor_args():
+    sig = inspect.signature(delphi_varDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_parameter_is_not_abstract():
+    assert not inspect.isabstract(delphi_parameter)
+
+
+def test_delphi_parameter_constructor_exists():
+    assert callable(delphi_parameter.__init__)
+
+
+def test_delphi_parameter_constructor_args():
+    sig = inspect.signature(delphi_parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_interfaceheritage_is_not_abstract():
+    assert not inspect.isabstract(delphi_interfaceHeritage)
+
+
+def test_delphi_interfaceheritage_constructor_exists():
+    assert callable(delphi_interfaceHeritage.__init__)
+
+
+def test_delphi_interfaceheritage_constructor_args():
+    sig = inspect.signature(delphi_interfaceHeritage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_formalparameters_is_not_abstract():
+    assert not inspect.isabstract(delphi_formalParameters)
+
+
+def test_delphi_formalparameters_constructor_exists():
+    assert callable(delphi_formalParameters.__init__)
+
+
+def test_delphi_formalparameters_constructor_args():
+    sig = inspect.signature(delphi_formalParameters.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_statement_is_not_abstract():
+    assert not inspect.isabstract(delphi_statement)
+
+
+def test_delphi_statement_constructor_exists():
+    assert callable(delphi_statement.__init__)
+
+
+def test_delphi_statement_constructor_args():
+    sig = inspect.signature(delphi_statement.__init__)
     params = list(sig.parameters.keys())
     assert "labelId" in params, "Missing parameter 'labelId'"
 
-def test_delphi::statement_has_labelId():
-    assert hasattr(delphi::statement, "labelId")
+def test_delphi_statement_has_labelId():
+    assert hasattr(delphi_statement, "labelId")
     descriptor = None
-    for klass in delphi::statement.__mro__:
+    for klass in delphi_statement.__mro__:
         if "labelId" in klass.__dict__:
             descriptor = klass.__dict__["labelId"]
             break
@@ -2764,103 +1818,1049 @@ def test_delphi::statement_has_labelId():
 
 
 
-def test_delphi::setconstructor_is_not_abstract():
-    assert not inspect.isabstract(delphi::setConstructor)
+def test_delphi_declsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_declSection)
 
 
-def test_delphi::setconstructor_constructor_exists():
-    assert callable(delphi::setConstructor.__init__)
+def test_delphi_declsection_constructor_exists():
+    assert callable(delphi_declSection.__init__)
 
 
-def test_delphi::setconstructor_constructor_args():
-    sig = inspect.signature(delphi::setConstructor.__init__)
+def test_delphi_declsection_constructor_args():
+    sig = inspect.signature(delphi_declSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::setelement_is_not_abstract():
-    assert not inspect.isabstract(delphi::setElement)
+def test_delphi_designator_is_not_abstract():
+    assert not inspect.isabstract(delphi_designator)
 
 
-def test_delphi::setelement_constructor_exists():
-    assert callable(delphi::setElement.__init__)
+def test_delphi_designator_constructor_exists():
+    assert callable(delphi_designator.__init__)
 
 
-def test_delphi::setelement_constructor_args():
-    sig = inspect.signature(delphi::setElement.__init__)
+def test_delphi_designator_constructor_args():
+    sig = inspect.signature(delphi_designator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_delphi::reservedword_is_not_abstract():
-    assert not inspect.isabstract(delphi::reservedWord)
+def test_delphi_enumeratedtypeelement_is_not_abstract():
+    assert not inspect.isabstract(delphi_enumeratedTypeElement)
 
 
-def test_delphi::reservedword_constructor_exists():
-    assert callable(delphi::reservedWord.__init__)
+def test_delphi_enumeratedtypeelement_constructor_exists():
+    assert callable(delphi_enumeratedTypeElement.__init__)
 
 
-def test_delphi::reservedword_constructor_args():
-    sig = inspect.signature(delphi::reservedWord.__init__)
+def test_delphi_enumeratedtypeelement_constructor_args():
+    sig = inspect.signature(delphi_enumeratedTypeElement.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
 
-def test_delphi::reservedword_has_id():
-    assert hasattr(delphi::reservedWord, "id")
+
+
+def test_delphi_designatorsubpart_is_not_abstract():
+    assert not inspect.isabstract(delphi_designatorSubPart)
+
+
+def test_delphi_designatorsubpart_constructor_exists():
+    assert callable(delphi_designatorSubPart.__init__)
+
+
+def test_delphi_designatorsubpart_constructor_args():
+    sig = inspect.signature(delphi_designatorSubPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_initsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_initSection)
+
+
+def test_delphi_initsection_constructor_exists():
+    assert callable(delphi_initSection.__init__)
+
+
+def test_delphi_initsection_constructor_args():
+    sig = inspect.signature(delphi_initSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_caseselector_is_not_abstract():
+    assert not inspect.isabstract(delphi_caseSelector)
+
+
+def test_delphi_caseselector_constructor_exists():
+    assert callable(delphi_caseSelector.__init__)
+
+
+def test_delphi_caseselector_constructor_args():
+    sig = inspect.signature(delphi_caseSelector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_variantsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_variantSection)
+
+
+def test_delphi_variantsection_constructor_exists():
+    assert callable(delphi_variantSection.__init__)
+
+
+def test_delphi_variantsection_constructor_args():
+    sig = inspect.signature(delphi_variantSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_mulop_is_not_abstract():
+    assert not inspect.isabstract(delphi_mulOp)
+
+
+def test_delphi_mulop_constructor_exists():
+    assert callable(delphi_mulOp.__init__)
+
+
+def test_delphi_mulop_constructor_args():
+    sig = inspect.signature(delphi_mulOp.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_delphi_mulop_has_op():
+    assert hasattr(delphi_mulOp, "op")
     descriptor = None
-    for klass in delphi::reservedWord.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in delphi_mulOp.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_delphi::designatorpart_is_not_abstract():
-    assert not inspect.isabstract(delphi::designatorPart)
+def test_delphi_designatorpart_is_not_abstract():
+    assert not inspect.isabstract(delphi_designatorPart)
 
 
-def test_delphi::designatorpart_constructor_exists():
-    assert callable(delphi::designatorPart.__init__)
+def test_delphi_designatorpart_constructor_exists():
+    assert callable(delphi_designatorPart.__init__)
 
 
-def test_delphi::designatorpart_constructor_args():
-    sig = inspect.signature(delphi::designatorPart.__init__)
+def test_delphi_designatorpart_constructor_args():
+    sig = inspect.signature(delphi_designatorPart.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "id2" in params, "Missing parameter 'id2'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_delphi::designatorpart_has_id():
-    assert hasattr(delphi::designatorPart, "id")
+def test_delphi_designatorpart_has_id2():
+    assert hasattr(delphi_designatorPart, "id2")
     descriptor = None
-    for klass in delphi::designatorPart.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_delphi::designatorpart_has_id2():
-    assert hasattr(delphi::designatorPart, "id2")
-    descriptor = None
-    for klass in delphi::designatorPart.__mro__:
+    for klass in delphi_designatorPart.__mro__:
         if "id2" in klass.__dict__:
             descriptor = klass.__dict__["id2"]
             break
     assert isinstance(descriptor, property)
 
+def test_delphi_designatorpart_has_id():
+    assert hasattr(delphi_designatorPart, "id")
+    descriptor = None
+    for klass in delphi_designatorPart.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_delphi::designatorsubpart_is_not_abstract():
-    assert not inspect.isabstract(delphi::designatorSubPart)
+
+def test_delphi_restrictedtype_is_not_abstract():
+    assert not inspect.isabstract(delphi_restrictedType)
 
 
-def test_delphi::designatorsubpart_constructor_exists():
-    assert callable(delphi::designatorSubPart.__init__)
+def test_delphi_restrictedtype_constructor_exists():
+    assert callable(delphi_restrictedType.__init__)
 
 
-def test_delphi::designatorsubpart_constructor_args():
-    sig = inspect.signature(delphi::designatorSubPart.__init__)
+def test_delphi_restrictedtype_constructor_args():
+    sig = inspect.signature(delphi_restrictedType.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_delphi_exportsstmt_is_not_abstract():
+    assert not inspect.isabstract(delphi_exportsStmt)
+
+
+def test_delphi_exportsstmt_constructor_exists():
+    assert callable(delphi_exportsStmt.__init__)
+
+
+def test_delphi_exportsstmt_constructor_args():
+    sig = inspect.signature(delphi_exportsStmt.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_arrayconstant_is_not_abstract():
+    assert not inspect.isabstract(delphi_arrayConstant)
+
+
+def test_delphi_arrayconstant_constructor_exists():
+    assert callable(delphi_arrayConstant.__init__)
+
+
+def test_delphi_arrayconstant_constructor_args():
+    sig = inspect.signature(delphi_arrayConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_requiresclause_is_not_abstract():
+    assert not inspect.isabstract(delphi_requiresClause)
+
+
+def test_delphi_requiresclause_constructor_exists():
+    assert callable(delphi_requiresClause.__init__)
+
+
+def test_delphi_requiresclause_constructor_args():
+    sig = inspect.signature(delphi_requiresClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_setconstructor_is_not_abstract():
+    assert not inspect.isabstract(delphi_setConstructor)
+
+
+def test_delphi_setconstructor_constructor_exists():
+    assert callable(delphi_setConstructor.__init__)
+
+
+def test_delphi_setconstructor_constructor_args():
+    sig = inspect.signature(delphi_setConstructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_recordfieldconstant_is_not_abstract():
+    assert not inspect.isabstract(delphi_recordFieldConstant)
+
+
+def test_delphi_recordfieldconstant_constructor_exists():
+    assert callable(delphi_recordFieldConstant.__init__)
+
+
+def test_delphi_recordfieldconstant_constructor_args():
+    sig = inspect.signature(delphi_recordFieldConstant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_constantdecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_constantDecl)
+
+
+def test_delphi_constantdecl_constructor_exists():
+    assert callable(delphi_constantDecl.__init__)
+
+
+def test_delphi_constantdecl_constructor_args():
+    sig = inspect.signature(delphi_constantDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_constantdecl_has_port():
+    assert hasattr(delphi_constantDecl, "port")
+    descriptor = None
+    for klass in delphi_constantDecl.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_implementationsection_is_not_abstract():
+    assert not inspect.isabstract(delphi_implementationSection)
+
+
+def test_delphi_implementationsection_constructor_exists():
+    assert callable(delphi_implementationSection.__init__)
+
+
+def test_delphi_implementationsection_constructor_args():
+    sig = inspect.signature(delphi_implementationSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_fieldlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_fieldList)
+
+
+def test_delphi_fieldlist_constructor_exists():
+    assert callable(delphi_fieldList.__init__)
+
+
+def test_delphi_fieldlist_constructor_args():
+    sig = inspect.signature(delphi_fieldList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_unlabelledstatement_is_not_abstract():
+    assert not inspect.isabstract(delphi_unlabelledStatement)
+
+
+def test_delphi_unlabelledstatement_constructor_exists():
+    assert callable(delphi_unlabelledStatement.__init__)
+
+
+def test_delphi_unlabelledstatement_constructor_args():
+    sig = inspect.signature(delphi_unlabelledStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_methodheading_is_not_abstract():
+    assert not inspect.isabstract(delphi_methodHeading)
+
+
+def test_delphi_methodheading_constructor_exists():
+    assert callable(delphi_methodHeading.__init__)
+
+
+def test_delphi_methodheading_constructor_args():
+    sig = inspect.signature(delphi_methodHeading.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_classmethod_is_not_abstract():
+    assert not inspect.isabstract(delphi_classMethod)
+
+
+def test_delphi_classmethod_constructor_exists():
+    assert callable(delphi_classMethod.__init__)
+
+
+def test_delphi_classmethod_constructor_args():
+    sig = inspect.signature(delphi_classMethod.__init__)
+    params = list(sig.parameters.keys())
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_delphi_classmethod_has_visibility():
+    assert hasattr(delphi_classMethod, "visibility")
+    descriptor = None
+    for klass in delphi_classMethod.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_objheritage_is_not_abstract():
+    assert not inspect.isabstract(delphi_objHeritage)
+
+
+def test_delphi_objheritage_constructor_exists():
+    assert callable(delphi_objHeritage.__init__)
+
+
+def test_delphi_objheritage_constructor_args():
+    sig = inspect.signature(delphi_objHeritage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_constexpr_is_not_abstract():
+    assert not inspect.isabstract(delphi_constExpr)
+
+
+def test_delphi_constexpr_constructor_exists():
+    assert callable(delphi_constExpr.__init__)
+
+
+def test_delphi_constexpr_constructor_args():
+    sig = inspect.signature(delphi_constExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_recvariant_is_not_abstract():
+    assert not inspect.isabstract(delphi_recVariant)
+
+
+def test_delphi_recvariant_constructor_exists():
+    assert callable(delphi_recVariant.__init__)
+
+
+def test_delphi_recvariant_constructor_args():
+    sig = inspect.signature(delphi_recVariant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_classfield_is_not_abstract():
+    assert not inspect.isabstract(delphi_classField)
+
+
+def test_delphi_classfield_constructor_exists():
+    assert callable(delphi_classField.__init__)
+
+
+def test_delphi_classfield_constructor_args():
+    sig = inspect.signature(delphi_classField.__init__)
+    params = list(sig.parameters.keys())
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_delphi_classfield_has_visibility():
+    assert hasattr(delphi_classField, "visibility")
+    descriptor = None
+    for klass in delphi_classField.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_classmethodlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_classMethodList)
+
+
+def test_delphi_classmethodlist_constructor_exists():
+    assert callable(delphi_classMethodList.__init__)
+
+
+def test_delphi_classmethodlist_constructor_args():
+    sig = inspect.signature(delphi_classMethodList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_unitid_is_not_abstract():
+    assert not inspect.isabstract(delphi_unitId)
+
+
+def test_delphi_unitid_constructor_exists():
+    assert callable(delphi_unitId.__init__)
+
+
+def test_delphi_unitid_constructor_args():
+    sig = inspect.signature(delphi_unitId.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_delphi_unitid_has_id():
+    assert hasattr(delphi_unitId, "id")
+    descriptor = None
+    for klass in delphi_unitId.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_programblock_is_not_abstract():
+    assert not inspect.isabstract(delphi_programBlock)
+
+
+def test_delphi_programblock_constructor_exists():
+    assert callable(delphi_programBlock.__init__)
+
+
+def test_delphi_programblock_constructor_args():
+    sig = inspect.signature(delphi_programBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_exportsitem_is_not_abstract():
+    assert not inspect.isabstract(delphi_exportsItem)
+
+
+def test_delphi_exportsitem_constructor_exists():
+    assert callable(delphi_exportsItem.__init__)
+
+
+def test_delphi_exportsitem_constructor_args():
+    sig = inspect.signature(delphi_exportsItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_classheritage_is_not_abstract():
+    assert not inspect.isabstract(delphi_classHeritage)
+
+
+def test_delphi_classheritage_constructor_exists():
+    assert callable(delphi_classHeritage.__init__)
+
+
+def test_delphi_classheritage_constructor_args():
+    sig = inspect.signature(delphi_classHeritage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_setelement_is_not_abstract():
+    assert not inspect.isabstract(delphi_setElement)
+
+
+def test_delphi_setelement_constructor_exists():
+    assert callable(delphi_setElement.__init__)
+
+
+def test_delphi_setelement_constructor_args():
+    sig = inspect.signature(delphi_setElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_propertyspecifiers_is_not_abstract():
+    assert not inspect.isabstract(delphi_propertySpecifiers)
+
+
+def test_delphi_propertyspecifiers_constructor_exists():
+    assert callable(delphi_propertySpecifiers.__init__)
+
+
+def test_delphi_propertyspecifiers_constructor_args():
+    sig = inspect.signature(delphi_propertySpecifiers.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_interfacedecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_interfaceDecl)
+
+
+def test_delphi_interfacedecl_constructor_exists():
+    assert callable(delphi_interfaceDecl.__init__)
+
+
+def test_delphi_interfacedecl_constructor_args():
+    sig = inspect.signature(delphi_interfaceDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_qualid_is_not_abstract():
+    assert not inspect.isabstract(delphi_qualId)
+
+
+def test_delphi_qualid_constructor_exists():
+    assert callable(delphi_qualId.__init__)
+
+
+def test_delphi_qualid_constructor_args():
+    sig = inspect.signature(delphi_qualId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_directive_is_not_abstract():
+    assert not inspect.isabstract(delphi_directive)
+
+
+def test_delphi_directive_constructor_exists():
+    assert callable(delphi_directive.__init__)
+
+
+def test_delphi_directive_constructor_args():
+    sig = inspect.signature(delphi_directive.__init__)
+    params = list(sig.parameters.keys())
+    assert "dir" in params, "Missing parameter 'dir'"
+
+def test_delphi_directive_has_dir():
+    assert hasattr(delphi_directive, "dir")
+    descriptor = None
+    for klass in delphi_directive.__mro__:
+        if "dir" in klass.__dict__:
+            descriptor = klass.__dict__["dir"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_typedecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_typeDecl)
+
+
+def test_delphi_typedecl_constructor_exists():
+    assert callable(delphi_typeDecl.__init__)
+
+
+def test_delphi_typedecl_constructor_args():
+    sig = inspect.signature(delphi_typeDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_typedecl_has_port():
+    assert hasattr(delphi_typeDecl, "port")
+    descriptor = None
+    for klass in delphi_typeDecl.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_fielddecl_is_not_abstract():
+    assert not inspect.isabstract(delphi_fieldDecl)
+
+
+def test_delphi_fielddecl_constructor_exists():
+    assert callable(delphi_fieldDecl.__init__)
+
+
+def test_delphi_fielddecl_constructor_args():
+    sig = inspect.signature(delphi_fieldDecl.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+
+def test_delphi_fielddecl_has_port():
+    assert hasattr(delphi_fieldDecl, "port")
+    descriptor = None
+    for klass in delphi_fieldDecl.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_classpropertylist_is_not_abstract():
+    assert not inspect.isabstract(delphi_classPropertyList)
+
+
+def test_delphi_classpropertylist_constructor_exists():
+    assert callable(delphi_classPropertyList.__init__)
+
+
+def test_delphi_classpropertylist_constructor_args():
+    sig = inspect.signature(delphi_classPropertyList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_interfacesection_is_not_abstract():
+    assert not inspect.isabstract(delphi_interfaceSection)
+
+
+def test_delphi_interfacesection_constructor_exists():
+    assert callable(delphi_interfaceSection.__init__)
+
+
+def test_delphi_interfacesection_constructor_args():
+    sig = inspect.signature(delphi_interfaceSection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_propertyparameterlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_propertyParameterList)
+
+
+def test_delphi_propertyparameterlist_constructor_exists():
+    assert callable(delphi_propertyParameterList.__init__)
+
+
+def test_delphi_propertyparameterlist_constructor_args():
+    sig = inspect.signature(delphi_propertyParameterList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_formalparm_is_not_abstract():
+    assert not inspect.isabstract(delphi_formalParm)
+
+
+def test_delphi_formalparm_constructor_exists():
+    assert callable(delphi_formalParm.__init__)
+
+
+def test_delphi_formalparm_constructor_args():
+    sig = inspect.signature(delphi_formalParm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_stmtlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_stmtList)
+
+
+def test_delphi_stmtlist_constructor_exists():
+    assert callable(delphi_stmtList.__init__)
+
+
+def test_delphi_stmtlist_constructor_args():
+    sig = inspect.signature(delphi_stmtList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_relop_is_not_abstract():
+    assert not inspect.isabstract(delphi_relOp)
+
+
+def test_delphi_relop_constructor_exists():
+    assert callable(delphi_relOp.__init__)
+
+
+def test_delphi_relop_constructor_args():
+    sig = inspect.signature(delphi_relOp.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_delphi_relop_has_op():
+    assert hasattr(delphi_relOp, "op")
+    descriptor = None
+    for klass in delphi_relOp.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_methodlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_methodList)
+
+
+def test_delphi_methodlist_constructor_exists():
+    assert callable(delphi_methodList.__init__)
+
+
+def test_delphi_methodlist_constructor_args():
+    sig = inspect.signature(delphi_methodList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_expression_is_not_abstract():
+    assert not inspect.isabstract(delphi_expression)
+
+
+def test_delphi_expression_constructor_exists():
+    assert callable(delphi_expression.__init__)
+
+
+def test_delphi_expression_constructor_args():
+    sig = inspect.signature(delphi_expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_exceptionblock_is_not_abstract():
+    assert not inspect.isabstract(delphi_exceptionBlock)
+
+
+def test_delphi_exceptionblock_constructor_exists():
+    assert callable(delphi_exceptionBlock.__init__)
+
+
+def test_delphi_exceptionblock_constructor_args():
+    sig = inspect.signature(delphi_exceptionBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_containsclause_is_not_abstract():
+    assert not inspect.isabstract(delphi_containsClause)
+
+
+def test_delphi_containsclause_constructor_exists():
+    assert callable(delphi_containsClause.__init__)
+
+
+def test_delphi_containsclause_constructor_args():
+    sig = inspect.signature(delphi_containsClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_addop_is_not_abstract():
+    assert not inspect.isabstract(delphi_addOp)
+
+
+def test_delphi_addop_constructor_exists():
+    assert callable(delphi_addOp.__init__)
+
+
+def test_delphi_addop_constructor_args():
+    sig = inspect.signature(delphi_addOp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_mainrule_is_not_abstract():
+    assert not inspect.isabstract(delphi_mainRule)
+
+
+def test_delphi_mainrule_constructor_exists():
+    assert callable(delphi_mainRule.__init__)
+
+
+def test_delphi_mainrule_constructor_args():
+    sig = inspect.signature(delphi_mainRule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_inheritedstamnt_is_not_abstract():
+    assert not inspect.isabstract(delphi_inheritedStamnt)
+
+
+def test_delphi_inheritedstamnt_constructor_exists():
+    assert callable(delphi_inheritedStamnt.__init__)
+
+
+def test_delphi_inheritedstamnt_constructor_args():
+    sig = inspect.signature(delphi_inheritedStamnt.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_visitable_is_not_abstract():
+    assert not inspect.isabstract(delphi_Visitable)
+
+
+def test_delphi_visitable_constructor_exists():
+    assert callable(delphi_Visitable.__init__)
+
+
+def test_delphi_visitable_constructor_args():
+    sig = inspect.signature(delphi_Visitable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_cstrace_is_not_abstract():
+    assert not inspect.isabstract(delphi_CSTrace)
+
+
+def test_delphi_cstrace_constructor_exists():
+    assert callable(delphi_CSTrace.__init__)
+
+
+def test_delphi_cstrace_constructor_args():
+    sig = inspect.signature(delphi_CSTrace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_constexpr_is_not_abstract():
+    assert not inspect.isabstract(constExpr)
+
+
+def test_constexpr_constructor_exists():
+    assert callable(constExpr.__init__)
+
+
+def test_constexpr_constructor_args():
+    sig = inspect.signature(constExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_multipleconstexp_is_not_abstract():
+    assert not inspect.isabstract(delphi_MultipleConstExp)
+
+
+def test_delphi_multipleconstexp_constructor_exists():
+    assert callable(delphi_MultipleConstExp.__init__)
+
+
+def test_delphi_multipleconstexp_constructor_args():
+    sig = inspect.signature(delphi_MultipleConstExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_recordconstexp_is_not_abstract():
+    assert not inspect.isabstract(delphi_RecordConstExp)
+
+
+def test_delphi_recordconstexp_constructor_exists():
+    assert callable(delphi_RecordConstExp.__init__)
+
+
+def test_delphi_recordconstexp_constructor_args():
+    sig = inspect.signature(delphi_RecordConstExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_constexp_is_not_abstract():
+    assert not inspect.isabstract(delphi_ConstExp)
+
+
+def test_delphi_constexp_constructor_exists():
+    assert callable(delphi_ConstExp.__init__)
+
+
+def test_delphi_constexp_constructor_args():
+    sig = inspect.signature(delphi_ConstExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ident_is_not_abstract():
+    assert not inspect.isabstract(ident)
+
+
+def test_ident_constructor_exists():
+    assert callable(ident.__init__)
+
+
+def test_ident_constructor_args():
+    sig = inspect.signature(ident.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_mineid_is_not_abstract():
+    assert not inspect.isabstract(delphi_MineID)
+
+
+def test_delphi_mineid_constructor_exists():
+    assert callable(delphi_MineID.__init__)
+
+
+def test_delphi_mineid_constructor_args():
+    sig = inspect.signature(delphi_MineID.__init__)
+    params = list(sig.parameters.keys())
+    assert "first" in params, "Missing parameter 'first'"
+    assert "second" in params, "Missing parameter 'second'"
+
+def test_delphi_mineid_has_first():
+    assert hasattr(delphi_MineID, "first")
+    descriptor = None
+    for klass in delphi_MineID.__mro__:
+        if "first" in klass.__dict__:
+            descriptor = klass.__dict__["first"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_delphi_mineid_has_second():
+    assert hasattr(delphi_MineID, "second")
+    descriptor = None
+    for klass in delphi_MineID.__mro__:
+        if "second" in klass.__dict__:
+            descriptor = klass.__dict__["second"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_delphi_reservedid_is_not_abstract():
+    assert not inspect.isabstract(delphi_ReservedId)
+
+
+def test_delphi_reservedid_constructor_exists():
+    assert callable(delphi_ReservedId.__init__)
+
+
+def test_delphi_reservedid_constructor_args():
+    sig = inspect.signature(delphi_ReservedId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_multipleid_is_not_abstract():
+    assert not inspect.isabstract(delphi_MultipleId)
+
+
+def test_delphi_multipleid_constructor_exists():
+    assert callable(delphi_MultipleId.__init__)
+
+
+def test_delphi_multipleid_constructor_args():
+    sig = inspect.signature(delphi_MultipleId.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_delphi_multipleid_has_id():
+    assert hasattr(delphi_MultipleId, "id")
+    descriptor = None
+    for klass in delphi_MultipleId.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_parameter_is_not_abstract():
+    assert not inspect.isabstract(parameter)
+
+
+def test_parameter_constructor_exists():
+    assert callable(parameter.__init__)
+
+
+def test_parameter_constructor_args():
+    sig = inspect.signature(parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_parametersimple_is_not_abstract():
+    assert not inspect.isabstract(delphi_parameterSimple)
+
+
+def test_delphi_parametersimple_constructor_exists():
+    assert callable(delphi_parameterSimple.__init__)
+
+
+def test_delphi_parametersimple_constructor_args():
+    sig = inspect.signature(delphi_parameterSimple.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_parameterlist_is_not_abstract():
+    assert not inspect.isabstract(delphi_parameterList)
+
+
+def test_delphi_parameterlist_constructor_exists():
+    assert callable(delphi_parameterList.__init__)
+
+
+def test_delphi_parameterlist_constructor_args():
+    sig = inspect.signature(delphi_parameterList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_delphi_gotostmnt_is_not_abstract():
+    assert not inspect.isabstract(delphi_gotoStmnt)
+
+
+def test_delphi_gotostmnt_constructor_exists():
+    assert callable(delphi_gotoStmnt.__init__)
+
+
+def test_delphi_gotostmnt_constructor_args():
+    sig = inspect.signature(delphi_gotoStmnt.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+
+def test_delphi_gotostmnt_has_label():
+    assert hasattr(delphi_gotoStmnt, "label")
+    descriptor = None
+    for klass in delphi_gotoStmnt.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -2874,356 +2874,33 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-term_strategy = st.builds(
-    term,
-)
-delphi::factor_strategy = st.builds(
-    delphi::factor,
-    string=
-        safe_text,
-    number=
-        safe_text
-)
-simpleExpression_strategy = st.builds(
-    simpleExpression,
-)
-delphi::term_strategy = st.builds(
-    delphi::term,
-)
-expression_strategy = st.builds(
-    expression,
-)
-delphi::simpleExpression_strategy = st.builds(
-    delphi::simpleExpression,
-)
-strucType_strategy = st.builds(
-    strucType,
-)
-delphi::setType_strategy = st.builds(
-    delphi::setType,
-)
-delphi::fileType_strategy = st.builds(
-    delphi::fileType,
-)
-delphi::recType_strategy = st.builds(
-    delphi::recType,
-)
-delphi::arrayType_strategy = st.builds(
-    delphi::arrayType,
-)
-ordinalType_strategy = st.builds(
-    ordinalType,
-)
-delphi::enumeratedType_strategy = st.builds(
-    delphi::enumeratedType,
-)
-delphi::subrangeType_strategy = st.builds(
-    delphi::subrangeType,
-)
-delphi::ordIdent_strategy = st.builds(
-    delphi::ordIdent,
-)
-simpleType_strategy = st.builds(
-    simpleType,
-)
-delphi::ordinalType_strategy = st.builds(
-    delphi::ordinalType,
-)
-delphi::realType_strategy = st.builds(
-    delphi::realType,
-)
-type_strategy = st.builds(
-    type,
-)
-delphi::procedureType_strategy = st.builds(
-    delphi::procedureType,
-)
-delphi::pointerType_strategy = st.builds(
-    delphi::pointerType,
-)
-delphi::simpleType_strategy = st.builds(
-    delphi::simpleType,
-)
-delphi::strucType_strategy = st.builds(
-    delphi::strucType,
-    port=
-        safe_text
-)
-delphi::stringType_strategy = st.builds(
-    delphi::stringType,
-)
-delphi::variantType_strategy = st.builds(
-    delphi::variantType,
-)
-delphi::classRefType_strategy = st.builds(
-    delphi::classRefType,
-)
-interfaceDecl_strategy = st.builds(
-    interfaceDecl,
-)
-delphi::exportedHeading_strategy = st.builds(
-    delphi::exportedHeading,
-)
-declSection_strategy = st.builds(
-    declSection,
-)
-delphi::constSection_strategy = st.builds(
-    delphi::constSection,
-)
-delphi::varSection_strategy = st.builds(
-    delphi::varSection,
-)
-delphi::typeSection_strategy = st.builds(
-    delphi::typeSection,
-)
-delphi::labelDeclSection_strategy = st.builds(
-    delphi::labelDeclSection,
-    id=
-        safe_text
-)
-file_strategy = st.builds(
-    file,
-)
-delphi::library_strategy = st.builds(
-    delphi::library,
-)
-delphi::packageDecl_strategy = st.builds(
-    delphi::packageDecl,
-)
-delphi::unit_strategy = st.builds(
-    delphi::unit,
-    port=
-        safe_text
-)
-delphi::program_strategy = st.builds(
-    delphi::program,
-)
-CSTrace_strategy = st.builds(
-    CSTrace,
-)
-delphi::implementationSection_strategy = st.builds(
-    delphi::implementationSection,
-)
-delphi::directive_strategy = st.builds(
-    delphi::directive,
-    dir=
-        safe_text
-)
-delphi::exportsItem_strategy = st.builds(
-    delphi::exportsItem,
-)
-delphi::ident_strategy = st.builds(
-    delphi::ident,
-)
-delphi::initSection_strategy = st.builds(
-    delphi::initSection,
-)
-delphi::enumeratedTypeElement_strategy = st.builds(
-    delphi::enumeratedTypeElement,
-)
-delphi::varDecl_strategy = st.builds(
-    delphi::varDecl,
-)
-delphi::exportsStmt_strategy = st.builds(
-    delphi::exportsStmt,
-)
-delphi::type_strategy = st.builds(
-    delphi::type,
-)
-delphi::programBlock_strategy = st.builds(
-    delphi::programBlock,
-)
-delphi::containsClause_strategy = st.builds(
-    delphi::containsClause,
-)
-delphi::mulOp_strategy = st.builds(
-    delphi::mulOp,
-    op=
-        safe_text
-)
-delphi::block_strategy = st.builds(
-    delphi::block,
-)
-delphi::recVariant_strategy = st.builds(
-    delphi::recVariant,
-)
-delphi::variantSection_strategy = st.builds(
-    delphi::variantSection,
-)
-delphi::typeDecl_strategy = st.builds(
-    delphi::typeDecl,
-    port=
-        safe_text
-)
-delphi::usesClause_strategy = st.builds(
-    delphi::usesClause,
-)
-delphi::restrictedType_strategy = st.builds(
-    delphi::restrictedType,
-)
-delphi::fieldList_strategy = st.builds(
-    delphi::fieldList,
-)
-delphi::typedConstant_strategy = st.builds(
-    delphi::typedConstant,
-)
-delphi::declSection_strategy = st.builds(
-    delphi::declSection,
-)
-delphi::recordConstant_strategy = st.builds(
-    delphi::recordConstant,
-)
-delphi::requiresClause_strategy = st.builds(
-    delphi::requiresClause,
-)
-delphi::constExpr_strategy = st.builds(
-    delphi::constExpr,
-)
-delphi::arrayConstant_strategy = st.builds(
-    delphi::arrayConstant,
-)
-delphi::interfaceDecl_strategy = st.builds(
-    delphi::interfaceDecl,
-)
-delphi::constantDecl_strategy = st.builds(
-    delphi::constantDecl,
-    port=
-        safe_text
-)
-delphi::recordFieldConstant_strategy = st.builds(
-    delphi::recordFieldConstant,
-)
-delphi::fieldDecl_strategy = st.builds(
-    delphi::fieldDecl,
-    port=
-        safe_text
-)
-delphi::interfaceSection_strategy = st.builds(
-    delphi::interfaceSection,
-)
-delphi::exprList_strategy = st.builds(
-    delphi::exprList,
-)
-delphi::relOp_strategy = st.builds(
-    delphi::relOp,
-    op=
-        safe_text
-)
-delphi::expression_strategy = st.builds(
-    delphi::expression,
-)
-delphi::file_strategy = st.builds(
-    delphi::file,
-)
-delphi::designator_strategy = st.builds(
-    delphi::designator,
-)
-delphi::addOp_strategy = st.builds(
-    delphi::addOp,
-)
-delphi::mainRule_strategy = st.builds(
-    delphi::mainRule,
-)
-delphi::Visitable_strategy = st.builds(
-    delphi::Visitable,
-)
-delphi::CSTrace_strategy = st.builds(
-    delphi::CSTrace,
-)
-constExpr_strategy = st.builds(
-    constExpr,
-)
-delphi::MultipleConstExp_strategy = st.builds(
-    delphi::MultipleConstExp,
-)
-delphi::RecordConstExp_strategy = st.builds(
-    delphi::RecordConstExp,
-)
-delphi::ConstExp_strategy = st.builds(
-    delphi::ConstExp,
-)
-ident_strategy = st.builds(
-    ident,
-)
-delphi::ReservedId_strategy = st.builds(
-    delphi::ReservedId,
-)
-delphi::MineID_strategy = st.builds(
-    delphi::MineID,
-    second=
-        safe_text,
-    first=
-        safe_text
-)
-delphi::MultipleId_strategy = st.builds(
-    delphi::MultipleId,
-    id=
-        safe_text
-)
-parameter_strategy = st.builds(
-    parameter,
-)
-delphi::parameterSimple_strategy = st.builds(
-    delphi::parameterSimple,
-)
-delphi::parameterList_strategy = st.builds(
-    delphi::parameterList,
-)
 simpleStatement_strategy = st.builds(
     simpleStatement,
 )
-delphi::inheritedStamnt_strategy = st.builds(
-    delphi::inheritedStamnt,
+delphi_callStmnt_strategy = st.builds(
+    delphi_callStmnt,
 )
-delphi::callStmnt_strategy = st.builds(
-    delphi::callStmnt,
-)
-delphi::gotoStmnt_strategy = st.builds(
-    delphi::gotoStmnt,
-    label=
-        safe_text
-)
-delphi::assignmentStmnt_strategy = st.builds(
-    delphi::assignmentStmnt,
+delphi_assignmentStmnt_strategy = st.builds(
+    delphi_assignmentStmnt,
     operator=
         safe_text
 )
 addOp_strategy = st.builds(
     addOp,
 )
-delphi::adOp_strategy = st.builds(
-    delphi::adOp,
+delphi_adOp_strategy = st.builds(
+    delphi_adOp,
     op=
         safe_text
 )
 factor_strategy = st.builds(
     factor,
 )
-delphi::simpleFactor_strategy = st.builds(
-    delphi::simpleFactor,
-)
-delphi::multExp_strategy = st.builds(
-    delphi::multExp,
-)
-delphi::addExp_strategy = st.builds(
-    delphi::addExp,
-)
-delphi::relExp_strategy = st.builds(
-    delphi::relExp,
-)
-delphi::recordConstExpr_strategy = st.builds(
-    delphi::recordConstExpr,
+delphi_simpleFactor_strategy = st.builds(
+    delphi_simpleFactor,
 )
 pointerType_strategy = st.builds(
     pointerType,
-)
-delphi::typeId_strategy = st.builds(
-    delphi::typeId,
-)
-delphi::unitId_strategy = st.builds(
-    delphi::unitId,
-    id=
-        safe_text
 )
 classHeritage_strategy = st.builds(
     classHeritage,
@@ -3231,862 +2908,562 @@ classHeritage_strategy = st.builds(
 objFieldList_strategy = st.builds(
     objFieldList,
 )
-delphi::identList_strategy = st.builds(
-    delphi::identList,
-)
-delphi::propertySpecifiers_strategy = st.builds(
-    delphi::propertySpecifiers,
-)
-delphi::propertyInterface_strategy = st.builds(
-    delphi::propertyInterface,
-)
-delphi::interfaceHeritage_strategy = st.builds(
-    delphi::interfaceHeritage,
-)
-delphi::propertyParameterList_strategy = st.builds(
-    delphi::propertyParameterList,
-)
-delphi::classHeritage_strategy = st.builds(
-    delphi::classHeritage,
-)
-delphi::propertyList_strategy = st.builds(
-    delphi::propertyList,
-    port=
-        safe_text
-)
-delphi::classProperty_strategy = st.builds(
-    delphi::classProperty,
-    visibility=
-        safe_text
-)
-delphi::classMethod_strategy = st.builds(
-    delphi::classMethod,
-    visibility=
-        safe_text
-)
-delphi::classField_strategy = st.builds(
-    delphi::classField,
-    visibility=
-        safe_text
-)
-delphi::classPropertyList_strategy = st.builds(
-    delphi::classPropertyList,
-)
-delphi::classMethodList_strategy = st.builds(
-    delphi::classMethodList,
-)
-delphi::classFieldList_strategy = st.builds(
-    delphi::classFieldList,
-)
-delphi::methodHeading_strategy = st.builds(
-    delphi::methodHeading,
-)
-delphi::methodList_strategy = st.builds(
-    delphi::methodList,
-)
-delphi::objFieldList_strategy = st.builds(
-    delphi::objFieldList,
-)
-delphi::objHeritage_strategy = st.builds(
-    delphi::objHeritage,
-)
 restrictedType_strategy = st.builds(
     restrictedType,
 )
-delphi::classType_strategy = st.builds(
-    delphi::classType,
+delphi_interfaceType_strategy = st.builds(
+    delphi_interfaceType,
+)
+delphi_classType_strategy = st.builds(
+    delphi_classType,
     visibility=
         safe_text
 )
-delphi::interfaceType_strategy = st.builds(
-    delphi::interfaceType,
-)
-delphi::objectType_strategy = st.builds(
-    delphi::objectType,
-)
-delphi::parameter_strategy = st.builds(
-    delphi::parameter,
-)
-delphi::formalParm_strategy = st.builds(
-    delphi::formalParm,
-)
-delphi::formalParameters_strategy = st.builds(
-    delphi::formalParameters,
+delphi_objectType_strategy = st.builds(
+    delphi_objectType,
 )
 methodHeading_strategy = st.builds(
     methodHeading,
 )
-delphi::constructorHeading_strategy = st.builds(
-    delphi::constructorHeading,
+delphi_constructorHeading_strategy = st.builds(
+    delphi_constructorHeading,
 )
-delphi::destructorHeading_strategy = st.builds(
-    delphi::destructorHeading,
-)
-delphi::procedureHeading_strategy = st.builds(
-    delphi::procedureHeading,
-)
-delphi::functionHeading_strategy = st.builds(
-    delphi::functionHeading,
+delphi_destructorHeading_strategy = st.builds(
+    delphi_destructorHeading,
 )
 procedureDeclSection_strategy = st.builds(
     procedureDeclSection,
 )
-delphi::functionDecl_strategy = st.builds(
-    delphi::functionDecl,
+delphi_functionDecl_strategy = st.builds(
+    delphi_functionDecl,
 )
-delphi::procedureDecl_strategy = st.builds(
-    delphi::procedureDecl,
-)
-delphi::procedureDeclSection_strategy = st.builds(
-    delphi::procedureDeclSection,
-    port=
-        safe_text
-)
-delphi::exceptionBlock_strategy = st.builds(
-    delphi::exceptionBlock,
-)
-delphi::qualId_strategy = st.builds(
-    delphi::qualId,
+delphi_procedureDecl_strategy = st.builds(
+    delphi_procedureDecl,
 )
 loopStmt_strategy = st.builds(
     loopStmt,
 )
-delphi::forStmt_strategy = st.builds(
-    delphi::forStmt,
+delphi_forStmt_strategy = st.builds(
+    delphi_forStmt,
 )
-delphi::whileStmt_strategy = st.builds(
-    delphi::whileStmt,
+delphi_whileStmt_strategy = st.builds(
+    delphi_whileStmt,
 )
-delphi::repeatStmt_strategy = st.builds(
-    delphi::repeatStmt,
-)
-delphi::stmtList_strategy = st.builds(
-    delphi::stmtList,
-)
-delphi::caseLabel_strategy = st.builds(
-    delphi::caseLabel,
-)
-delphi::caseSelector_strategy = st.builds(
-    delphi::caseSelector,
+delphi_repeatStmt_strategy = st.builds(
+    delphi_repeatStmt,
 )
 conditionalStmt_strategy = st.builds(
     conditionalStmt,
 )
-delphi::caseStmt_strategy = st.builds(
-    delphi::caseStmt,
+delphi_caseStmt_strategy = st.builds(
+    delphi_caseStmt,
 )
-delphi::ifStmt_strategy = st.builds(
-    delphi::ifStmt,
+delphi_ifStmt_strategy = st.builds(
+    delphi_ifStmt,
 )
 structStmt_strategy = st.builds(
     structStmt,
 )
-delphi::loopStmt_strategy = st.builds(
-    delphi::loopStmt,
+delphi_tryStmt_strategy = st.builds(
+    delphi_tryStmt,
 )
-delphi::conditionalStmt_strategy = st.builds(
-    delphi::conditionalStmt,
+delphi_assemblerStmt_strategy = st.builds(
+    delphi_assemblerStmt,
 )
-delphi::tryStmt_strategy = st.builds(
-    delphi::tryStmt,
+delphi_withStmt_strategy = st.builds(
+    delphi_withStmt,
 )
-delphi::withStmt_strategy = st.builds(
-    delphi::withStmt,
-)
-delphi::raiseStmt_strategy = st.builds(
-    delphi::raiseStmt,
-    at=
-        safe_text,
+delphi_raiseStmt_strategy = st.builds(
+    delphi_raiseStmt,
     raise_=
+        safe_text,
+    at=
         safe_text
 )
-delphi::compoundStmt_strategy = st.builds(
-    delphi::compoundStmt,
+delphi_loopStmt_strategy = st.builds(
+    delphi_loopStmt,
 )
-delphi::assemblerStmt_strategy = st.builds(
-    delphi::assemblerStmt,
+delphi_conditionalStmt_strategy = st.builds(
+    delphi_conditionalStmt,
 )
 unlabelledStatement_strategy = st.builds(
     unlabelledStatement,
 )
-delphi::structStmt_strategy = st.builds(
-    delphi::structStmt,
+delphi_structStmt_strategy = st.builds(
+    delphi_structStmt,
 )
-delphi::simpleStatement_strategy = st.builds(
-    delphi::simpleStatement,
+delphi_simpleStatement_strategy = st.builds(
+    delphi_simpleStatement,
 )
-delphi::unlabelledStatement_strategy = st.builds(
-    delphi::unlabelledStatement,
+term_strategy = st.builds(
+    term,
 )
-delphi::statement_strategy = st.builds(
-    delphi::statement,
+delphi_multExp_strategy = st.builds(
+    delphi_multExp,
+)
+delphi_factor_strategy = st.builds(
+    delphi_factor,
+    number=
+        safe_text,
+    string=
+        safe_text
+)
+simpleExpression_strategy = st.builds(
+    simpleExpression,
+)
+delphi_addExp_strategy = st.builds(
+    delphi_addExp,
+)
+delphi_term_strategy = st.builds(
+    delphi_term,
+)
+expression_strategy = st.builds(
+    expression,
+)
+delphi_relExp_strategy = st.builds(
+    delphi_relExp,
+)
+delphi_simpleExpression_strategy = st.builds(
+    delphi_simpleExpression,
+)
+strucType_strategy = st.builds(
+    strucType,
+)
+delphi_recType_strategy = st.builds(
+    delphi_recType,
+)
+delphi_fileType_strategy = st.builds(
+    delphi_fileType,
+)
+delphi_setType_strategy = st.builds(
+    delphi_setType,
+)
+delphi_arrayType_strategy = st.builds(
+    delphi_arrayType,
+)
+ordinalType_strategy = st.builds(
+    ordinalType,
+)
+delphi_enumeratedType_strategy = st.builds(
+    delphi_enumeratedType,
+)
+delphi_subrangeType_strategy = st.builds(
+    delphi_subrangeType,
+)
+delphi_ordIdent_strategy = st.builds(
+    delphi_ordIdent,
+)
+simpleType_strategy = st.builds(
+    simpleType,
+)
+delphi_ordinalType_strategy = st.builds(
+    delphi_ordinalType,
+)
+delphi_realType_strategy = st.builds(
+    delphi_realType,
+)
+type_strategy = st.builds(
+    type,
+)
+delphi_procedureType_strategy = st.builds(
+    delphi_procedureType,
+)
+delphi_stringType_strategy = st.builds(
+    delphi_stringType,
+)
+delphi_variantType_strategy = st.builds(
+    delphi_variantType,
+)
+delphi_pointerType_strategy = st.builds(
+    delphi_pointerType,
+)
+delphi_simpleType_strategy = st.builds(
+    delphi_simpleType,
+)
+delphi_strucType_strategy = st.builds(
+    delphi_strucType,
+    port=
+        safe_text
+)
+delphi_classRefType_strategy = st.builds(
+    delphi_classRefType,
+)
+delphi_typeId_strategy = st.builds(
+    delphi_typeId,
+)
+delphi_procedureHeading_strategy = st.builds(
+    delphi_procedureHeading,
+)
+interfaceDecl_strategy = st.builds(
+    interfaceDecl,
+)
+delphi_exportedHeading_strategy = st.builds(
+    delphi_exportedHeading,
+)
+declSection_strategy = st.builds(
+    declSection,
+)
+delphi_constSection_strategy = st.builds(
+    delphi_constSection,
+)
+delphi_procedureDeclSection_strategy = st.builds(
+    delphi_procedureDeclSection,
+    port=
+        safe_text
+)
+delphi_typeSection_strategy = st.builds(
+    delphi_typeSection,
+)
+delphi_varSection_strategy = st.builds(
+    delphi_varSection,
+)
+delphi_labelDeclSection_strategy = st.builds(
+    delphi_labelDeclSection,
+    id=
+        safe_text
+)
+delphi_compoundStmt_strategy = st.builds(
+    delphi_compoundStmt,
+)
+delphi_functionHeading_strategy = st.builds(
+    delphi_functionHeading,
+)
+delphi_identList_strategy = st.builds(
+    delphi_identList,
+)
+file_strategy = st.builds(
+    file,
+)
+delphi_library_strategy = st.builds(
+    delphi_library,
+)
+delphi_packageDecl_strategy = st.builds(
+    delphi_packageDecl,
+)
+delphi_unit_strategy = st.builds(
+    delphi_unit,
+    port=
+        safe_text
+)
+delphi_program_strategy = st.builds(
+    delphi_program,
+)
+CSTrace_strategy = st.builds(
+    CSTrace,
+)
+delphi_classFieldList_strategy = st.builds(
+    delphi_classFieldList,
+)
+delphi_ident_strategy = st.builds(
+    delphi_ident,
+)
+delphi_block_strategy = st.builds(
+    delphi_block,
+)
+delphi_propertyInterface_strategy = st.builds(
+    delphi_propertyInterface,
+)
+delphi_typedConstant_strategy = st.builds(
+    delphi_typedConstant,
+)
+delphi_usesClause_strategy = st.builds(
+    delphi_usesClause,
+)
+delphi_objFieldList_strategy = st.builds(
+    delphi_objFieldList,
+)
+delphi_recordConstExpr_strategy = st.builds(
+    delphi_recordConstExpr,
+)
+delphi_reservedWord_strategy = st.builds(
+    delphi_reservedWord,
+    id=
+        safe_text
+)
+delphi_file_strategy = st.builds(
+    delphi_file,
+)
+delphi_caseLabel_strategy = st.builds(
+    delphi_caseLabel,
+)
+delphi_exprList_strategy = st.builds(
+    delphi_exprList,
+)
+delphi_type_strategy = st.builds(
+    delphi_type,
+)
+delphi_propertyList_strategy = st.builds(
+    delphi_propertyList,
+    port=
+        safe_text
+)
+delphi_recordConstant_strategy = st.builds(
+    delphi_recordConstant,
+)
+delphi_classProperty_strategy = st.builds(
+    delphi_classProperty,
+    visibility=
+        safe_text
+)
+delphi_varDecl_strategy = st.builds(
+    delphi_varDecl,
+)
+delphi_parameter_strategy = st.builds(
+    delphi_parameter,
+)
+delphi_interfaceHeritage_strategy = st.builds(
+    delphi_interfaceHeritage,
+)
+delphi_formalParameters_strategy = st.builds(
+    delphi_formalParameters,
+)
+delphi_statement_strategy = st.builds(
+    delphi_statement,
     labelId=
         safe_text
 )
-delphi::setConstructor_strategy = st.builds(
-    delphi::setConstructor,
+delphi_declSection_strategy = st.builds(
+    delphi_declSection,
 )
-delphi::setElement_strategy = st.builds(
-    delphi::setElement,
+delphi_designator_strategy = st.builds(
+    delphi_designator,
 )
-delphi::reservedWord_strategy = st.builds(
-    delphi::reservedWord,
-    id=
+delphi_enumeratedTypeElement_strategy = st.builds(
+    delphi_enumeratedTypeElement,
+)
+delphi_designatorSubPart_strategy = st.builds(
+    delphi_designatorSubPart,
+)
+delphi_initSection_strategy = st.builds(
+    delphi_initSection,
+)
+delphi_caseSelector_strategy = st.builds(
+    delphi_caseSelector,
+)
+delphi_variantSection_strategy = st.builds(
+    delphi_variantSection,
+)
+delphi_mulOp_strategy = st.builds(
+    delphi_mulOp,
+    op=
         safe_text
 )
-delphi::designatorPart_strategy = st.builds(
-    delphi::designatorPart,
-    id=
-        safe_text,
+delphi_designatorPart_strategy = st.builds(
+    delphi_designatorPart,
     id2=
+        safe_text,
+    id=
         safe_text
 )
-delphi::designatorSubPart_strategy = st.builds(
-    delphi::designatorSubPart,
+delphi_restrictedType_strategy = st.builds(
+    delphi_restrictedType,
 )
-
-@given(instance=term_strategy)
-@settings(max_examples=50)
-def test_term_instantiation(instance):
-    assert isinstance(instance, term)
-
-@given(instance=delphi::factor_strategy)
-@settings(max_examples=50)
-def test_delphi::factor_instantiation(instance):
-    assert isinstance(instance, delphi::factor)
-
-@given(instance=delphi::factor_strategy)
-def test_delphi::factor_string_type(instance):
-    assert isinstance(instance.string, str)
-
-
-@given(instance=delphi::factor_strategy)
-def test_delphi::factor_string_setter(instance):
-    original = instance.string
-    instance.string = original
-    assert instance.string == original
-
-@given(instance=delphi::factor_strategy)
-def test_delphi::factor_number_type(instance):
-    assert isinstance(instance.number, str)
-
-
-@given(instance=delphi::factor_strategy)
-def test_delphi::factor_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=simpleExpression_strategy)
-@settings(max_examples=50)
-def test_simpleexpression_instantiation(instance):
-    assert isinstance(instance, simpleExpression)
-
-@given(instance=delphi::term_strategy)
-@settings(max_examples=50)
-def test_delphi::term_instantiation(instance):
-    assert isinstance(instance, delphi::term)
-
-@given(instance=expression_strategy)
-@settings(max_examples=50)
-def test_expression_instantiation(instance):
-    assert isinstance(instance, expression)
-
-@given(instance=delphi::simpleExpression_strategy)
-@settings(max_examples=50)
-def test_delphi::simpleexpression_instantiation(instance):
-    assert isinstance(instance, delphi::simpleExpression)
-
-@given(instance=strucType_strategy)
-@settings(max_examples=50)
-def test_structype_instantiation(instance):
-    assert isinstance(instance, strucType)
-
-@given(instance=delphi::setType_strategy)
-@settings(max_examples=50)
-def test_delphi::settype_instantiation(instance):
-    assert isinstance(instance, delphi::setType)
-
-@given(instance=delphi::fileType_strategy)
-@settings(max_examples=50)
-def test_delphi::filetype_instantiation(instance):
-    assert isinstance(instance, delphi::fileType)
-
-@given(instance=delphi::recType_strategy)
-@settings(max_examples=50)
-def test_delphi::rectype_instantiation(instance):
-    assert isinstance(instance, delphi::recType)
-
-@given(instance=delphi::arrayType_strategy)
-@settings(max_examples=50)
-def test_delphi::arraytype_instantiation(instance):
-    assert isinstance(instance, delphi::arrayType)
-
-@given(instance=ordinalType_strategy)
-@settings(max_examples=50)
-def test_ordinaltype_instantiation(instance):
-    assert isinstance(instance, ordinalType)
-
-@given(instance=delphi::enumeratedType_strategy)
-@settings(max_examples=50)
-def test_delphi::enumeratedtype_instantiation(instance):
-    assert isinstance(instance, delphi::enumeratedType)
-
-@given(instance=delphi::subrangeType_strategy)
-@settings(max_examples=50)
-def test_delphi::subrangetype_instantiation(instance):
-    assert isinstance(instance, delphi::subrangeType)
-
-@given(instance=delphi::ordIdent_strategy)
-@settings(max_examples=50)
-def test_delphi::ordident_instantiation(instance):
-    assert isinstance(instance, delphi::ordIdent)
-
-@given(instance=simpleType_strategy)
-@settings(max_examples=50)
-def test_simpletype_instantiation(instance):
-    assert isinstance(instance, simpleType)
-
-@given(instance=delphi::ordinalType_strategy)
-@settings(max_examples=50)
-def test_delphi::ordinaltype_instantiation(instance):
-    assert isinstance(instance, delphi::ordinalType)
-
-@given(instance=delphi::realType_strategy)
-@settings(max_examples=50)
-def test_delphi::realtype_instantiation(instance):
-    assert isinstance(instance, delphi::realType)
-
-@given(instance=type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, type)
-
-@given(instance=delphi::procedureType_strategy)
-@settings(max_examples=50)
-def test_delphi::proceduretype_instantiation(instance):
-    assert isinstance(instance, delphi::procedureType)
-
-@given(instance=delphi::pointerType_strategy)
-@settings(max_examples=50)
-def test_delphi::pointertype_instantiation(instance):
-    assert isinstance(instance, delphi::pointerType)
-
-@given(instance=delphi::simpleType_strategy)
-@settings(max_examples=50)
-def test_delphi::simpletype_instantiation(instance):
-    assert isinstance(instance, delphi::simpleType)
-
-@given(instance=delphi::strucType_strategy)
-@settings(max_examples=50)
-def test_delphi::structype_instantiation(instance):
-    assert isinstance(instance, delphi::strucType)
-
-@given(instance=delphi::strucType_strategy)
-def test_delphi::structype_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::strucType_strategy)
-def test_delphi::structype_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::stringType_strategy)
-@settings(max_examples=50)
-def test_delphi::stringtype_instantiation(instance):
-    assert isinstance(instance, delphi::stringType)
-
-@given(instance=delphi::variantType_strategy)
-@settings(max_examples=50)
-def test_delphi::varianttype_instantiation(instance):
-    assert isinstance(instance, delphi::variantType)
-
-@given(instance=delphi::classRefType_strategy)
-@settings(max_examples=50)
-def test_delphi::classreftype_instantiation(instance):
-    assert isinstance(instance, delphi::classRefType)
-
-@given(instance=interfaceDecl_strategy)
-@settings(max_examples=50)
-def test_interfacedecl_instantiation(instance):
-    assert isinstance(instance, interfaceDecl)
-
-@given(instance=delphi::exportedHeading_strategy)
-@settings(max_examples=50)
-def test_delphi::exportedheading_instantiation(instance):
-    assert isinstance(instance, delphi::exportedHeading)
-
-@given(instance=declSection_strategy)
-@settings(max_examples=50)
-def test_declsection_instantiation(instance):
-    assert isinstance(instance, declSection)
-
-@given(instance=delphi::constSection_strategy)
-@settings(max_examples=50)
-def test_delphi::constsection_instantiation(instance):
-    assert isinstance(instance, delphi::constSection)
-
-@given(instance=delphi::varSection_strategy)
-@settings(max_examples=50)
-def test_delphi::varsection_instantiation(instance):
-    assert isinstance(instance, delphi::varSection)
-
-@given(instance=delphi::typeSection_strategy)
-@settings(max_examples=50)
-def test_delphi::typesection_instantiation(instance):
-    assert isinstance(instance, delphi::typeSection)
-
-@given(instance=delphi::labelDeclSection_strategy)
-@settings(max_examples=50)
-def test_delphi::labeldeclsection_instantiation(instance):
-    assert isinstance(instance, delphi::labelDeclSection)
-
-@given(instance=delphi::labelDeclSection_strategy)
-def test_delphi::labeldeclsection_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=delphi::labelDeclSection_strategy)
-def test_delphi::labeldeclsection_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=file_strategy)
-@settings(max_examples=50)
-def test_file_instantiation(instance):
-    assert isinstance(instance, file)
-
-@given(instance=delphi::library_strategy)
-@settings(max_examples=50)
-def test_delphi::library_instantiation(instance):
-    assert isinstance(instance, delphi::library)
-
-@given(instance=delphi::packageDecl_strategy)
-@settings(max_examples=50)
-def test_delphi::packagedecl_instantiation(instance):
-    assert isinstance(instance, delphi::packageDecl)
-
-@given(instance=delphi::unit_strategy)
-@settings(max_examples=50)
-def test_delphi::unit_instantiation(instance):
-    assert isinstance(instance, delphi::unit)
-
-@given(instance=delphi::unit_strategy)
-def test_delphi::unit_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::unit_strategy)
-def test_delphi::unit_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::program_strategy)
-@settings(max_examples=50)
-def test_delphi::program_instantiation(instance):
-    assert isinstance(instance, delphi::program)
-
-@given(instance=CSTrace_strategy)
-@settings(max_examples=50)
-def test_cstrace_instantiation(instance):
-    assert isinstance(instance, CSTrace)
-
-@given(instance=delphi::implementationSection_strategy)
-@settings(max_examples=50)
-def test_delphi::implementationsection_instantiation(instance):
-    assert isinstance(instance, delphi::implementationSection)
-
-@given(instance=delphi::directive_strategy)
-@settings(max_examples=50)
-def test_delphi::directive_instantiation(instance):
-    assert isinstance(instance, delphi::directive)
-
-@given(instance=delphi::directive_strategy)
-def test_delphi::directive_dir_type(instance):
-    assert isinstance(instance.dir, str)
-
-
-@given(instance=delphi::directive_strategy)
-def test_delphi::directive_dir_setter(instance):
-    original = instance.dir
-    instance.dir = original
-    assert instance.dir == original
-
-@given(instance=delphi::exportsItem_strategy)
-@settings(max_examples=50)
-def test_delphi::exportsitem_instantiation(instance):
-    assert isinstance(instance, delphi::exportsItem)
-
-@given(instance=delphi::ident_strategy)
-@settings(max_examples=50)
-def test_delphi::ident_instantiation(instance):
-    assert isinstance(instance, delphi::ident)
-
-@given(instance=delphi::initSection_strategy)
-@settings(max_examples=50)
-def test_delphi::initsection_instantiation(instance):
-    assert isinstance(instance, delphi::initSection)
-
-@given(instance=delphi::enumeratedTypeElement_strategy)
-@settings(max_examples=50)
-def test_delphi::enumeratedtypeelement_instantiation(instance):
-    assert isinstance(instance, delphi::enumeratedTypeElement)
-
-@given(instance=delphi::varDecl_strategy)
-@settings(max_examples=50)
-def test_delphi::vardecl_instantiation(instance):
-    assert isinstance(instance, delphi::varDecl)
-
-@given(instance=delphi::exportsStmt_strategy)
-@settings(max_examples=50)
-def test_delphi::exportsstmt_instantiation(instance):
-    assert isinstance(instance, delphi::exportsStmt)
-
-@given(instance=delphi::type_strategy)
-@settings(max_examples=50)
-def test_delphi::type_instantiation(instance):
-    assert isinstance(instance, delphi::type)
-
-@given(instance=delphi::programBlock_strategy)
-@settings(max_examples=50)
-def test_delphi::programblock_instantiation(instance):
-    assert isinstance(instance, delphi::programBlock)
-
-@given(instance=delphi::containsClause_strategy)
-@settings(max_examples=50)
-def test_delphi::containsclause_instantiation(instance):
-    assert isinstance(instance, delphi::containsClause)
-
-@given(instance=delphi::mulOp_strategy)
-@settings(max_examples=50)
-def test_delphi::mulop_instantiation(instance):
-    assert isinstance(instance, delphi::mulOp)
-
-@given(instance=delphi::mulOp_strategy)
-def test_delphi::mulop_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=delphi::mulOp_strategy)
-def test_delphi::mulop_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=delphi::block_strategy)
-@settings(max_examples=50)
-def test_delphi::block_instantiation(instance):
-    assert isinstance(instance, delphi::block)
-
-@given(instance=delphi::recVariant_strategy)
-@settings(max_examples=50)
-def test_delphi::recvariant_instantiation(instance):
-    assert isinstance(instance, delphi::recVariant)
-
-@given(instance=delphi::variantSection_strategy)
-@settings(max_examples=50)
-def test_delphi::variantsection_instantiation(instance):
-    assert isinstance(instance, delphi::variantSection)
-
-@given(instance=delphi::typeDecl_strategy)
-@settings(max_examples=50)
-def test_delphi::typedecl_instantiation(instance):
-    assert isinstance(instance, delphi::typeDecl)
-
-@given(instance=delphi::typeDecl_strategy)
-def test_delphi::typedecl_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::typeDecl_strategy)
-def test_delphi::typedecl_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::usesClause_strategy)
-@settings(max_examples=50)
-def test_delphi::usesclause_instantiation(instance):
-    assert isinstance(instance, delphi::usesClause)
-
-@given(instance=delphi::restrictedType_strategy)
-@settings(max_examples=50)
-def test_delphi::restrictedtype_instantiation(instance):
-    assert isinstance(instance, delphi::restrictedType)
-
-@given(instance=delphi::fieldList_strategy)
-@settings(max_examples=50)
-def test_delphi::fieldlist_instantiation(instance):
-    assert isinstance(instance, delphi::fieldList)
-
-@given(instance=delphi::typedConstant_strategy)
-@settings(max_examples=50)
-def test_delphi::typedconstant_instantiation(instance):
-    assert isinstance(instance, delphi::typedConstant)
-
-@given(instance=delphi::declSection_strategy)
-@settings(max_examples=50)
-def test_delphi::declsection_instantiation(instance):
-    assert isinstance(instance, delphi::declSection)
-
-@given(instance=delphi::recordConstant_strategy)
-@settings(max_examples=50)
-def test_delphi::recordconstant_instantiation(instance):
-    assert isinstance(instance, delphi::recordConstant)
-
-@given(instance=delphi::requiresClause_strategy)
-@settings(max_examples=50)
-def test_delphi::requiresclause_instantiation(instance):
-    assert isinstance(instance, delphi::requiresClause)
-
-@given(instance=delphi::constExpr_strategy)
-@settings(max_examples=50)
-def test_delphi::constexpr_instantiation(instance):
-    assert isinstance(instance, delphi::constExpr)
-
-@given(instance=delphi::arrayConstant_strategy)
-@settings(max_examples=50)
-def test_delphi::arrayconstant_instantiation(instance):
-    assert isinstance(instance, delphi::arrayConstant)
-
-@given(instance=delphi::interfaceDecl_strategy)
-@settings(max_examples=50)
-def test_delphi::interfacedecl_instantiation(instance):
-    assert isinstance(instance, delphi::interfaceDecl)
-
-@given(instance=delphi::constantDecl_strategy)
-@settings(max_examples=50)
-def test_delphi::constantdecl_instantiation(instance):
-    assert isinstance(instance, delphi::constantDecl)
-
-@given(instance=delphi::constantDecl_strategy)
-def test_delphi::constantdecl_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::constantDecl_strategy)
-def test_delphi::constantdecl_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::recordFieldConstant_strategy)
-@settings(max_examples=50)
-def test_delphi::recordfieldconstant_instantiation(instance):
-    assert isinstance(instance, delphi::recordFieldConstant)
-
-@given(instance=delphi::fieldDecl_strategy)
-@settings(max_examples=50)
-def test_delphi::fielddecl_instantiation(instance):
-    assert isinstance(instance, delphi::fieldDecl)
-
-@given(instance=delphi::fieldDecl_strategy)
-def test_delphi::fielddecl_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::fieldDecl_strategy)
-def test_delphi::fielddecl_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::interfaceSection_strategy)
-@settings(max_examples=50)
-def test_delphi::interfacesection_instantiation(instance):
-    assert isinstance(instance, delphi::interfaceSection)
-
-@given(instance=delphi::exprList_strategy)
-@settings(max_examples=50)
-def test_delphi::exprlist_instantiation(instance):
-    assert isinstance(instance, delphi::exprList)
-
-@given(instance=delphi::relOp_strategy)
-@settings(max_examples=50)
-def test_delphi::relop_instantiation(instance):
-    assert isinstance(instance, delphi::relOp)
-
-@given(instance=delphi::relOp_strategy)
-def test_delphi::relop_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=delphi::relOp_strategy)
-def test_delphi::relop_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=delphi::expression_strategy)
-@settings(max_examples=50)
-def test_delphi::expression_instantiation(instance):
-    assert isinstance(instance, delphi::expression)
-
-@given(instance=delphi::file_strategy)
-@settings(max_examples=50)
-def test_delphi::file_instantiation(instance):
-    assert isinstance(instance, delphi::file)
-
-@given(instance=delphi::designator_strategy)
-@settings(max_examples=50)
-def test_delphi::designator_instantiation(instance):
-    assert isinstance(instance, delphi::designator)
-
-@given(instance=delphi::addOp_strategy)
-@settings(max_examples=50)
-def test_delphi::addop_instantiation(instance):
-    assert isinstance(instance, delphi::addOp)
-
-@given(instance=delphi::mainRule_strategy)
-@settings(max_examples=50)
-def test_delphi::mainrule_instantiation(instance):
-    assert isinstance(instance, delphi::mainRule)
-
-@given(instance=delphi::Visitable_strategy)
-@settings(max_examples=50)
-def test_delphi::visitable_instantiation(instance):
-    assert isinstance(instance, delphi::Visitable)
-
-@given(instance=delphi::CSTrace_strategy)
-@settings(max_examples=50)
-def test_delphi::cstrace_instantiation(instance):
-    assert isinstance(instance, delphi::CSTrace)
-
-@given(instance=constExpr_strategy)
-@settings(max_examples=50)
-def test_constexpr_instantiation(instance):
-    assert isinstance(instance, constExpr)
-
-@given(instance=delphi::MultipleConstExp_strategy)
-@settings(max_examples=50)
-def test_delphi::multipleconstexp_instantiation(instance):
-    assert isinstance(instance, delphi::MultipleConstExp)
-
-@given(instance=delphi::RecordConstExp_strategy)
-@settings(max_examples=50)
-def test_delphi::recordconstexp_instantiation(instance):
-    assert isinstance(instance, delphi::RecordConstExp)
-
-@given(instance=delphi::ConstExp_strategy)
-@settings(max_examples=50)
-def test_delphi::constexp_instantiation(instance):
-    assert isinstance(instance, delphi::ConstExp)
-
-@given(instance=ident_strategy)
-@settings(max_examples=50)
-def test_ident_instantiation(instance):
-    assert isinstance(instance, ident)
-
-@given(instance=delphi::ReservedId_strategy)
-@settings(max_examples=50)
-def test_delphi::reservedid_instantiation(instance):
-    assert isinstance(instance, delphi::ReservedId)
-
-@given(instance=delphi::MineID_strategy)
-@settings(max_examples=50)
-def test_delphi::mineid_instantiation(instance):
-    assert isinstance(instance, delphi::MineID)
-
-@given(instance=delphi::MineID_strategy)
-def test_delphi::mineid_second_type(instance):
-    assert isinstance(instance.second, str)
-
-
-@given(instance=delphi::MineID_strategy)
-def test_delphi::mineid_second_setter(instance):
-    original = instance.second
-    instance.second = original
-    assert instance.second == original
-
-@given(instance=delphi::MineID_strategy)
-def test_delphi::mineid_first_type(instance):
-    assert isinstance(instance.first, str)
-
-
-@given(instance=delphi::MineID_strategy)
-def test_delphi::mineid_first_setter(instance):
-    original = instance.first
-    instance.first = original
-    assert instance.first == original
-
-@given(instance=delphi::MultipleId_strategy)
-@settings(max_examples=50)
-def test_delphi::multipleid_instantiation(instance):
-    assert isinstance(instance, delphi::MultipleId)
-
-@given(instance=delphi::MultipleId_strategy)
-def test_delphi::multipleid_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=delphi::MultipleId_strategy)
-def test_delphi::multipleid_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=parameter_strategy)
-@settings(max_examples=50)
-def test_parameter_instantiation(instance):
-    assert isinstance(instance, parameter)
-
-@given(instance=delphi::parameterSimple_strategy)
-@settings(max_examples=50)
-def test_delphi::parametersimple_instantiation(instance):
-    assert isinstance(instance, delphi::parameterSimple)
-
-@given(instance=delphi::parameterList_strategy)
-@settings(max_examples=50)
-def test_delphi::parameterlist_instantiation(instance):
-    assert isinstance(instance, delphi::parameterList)
+delphi_exportsStmt_strategy = st.builds(
+    delphi_exportsStmt,
+)
+delphi_arrayConstant_strategy = st.builds(
+    delphi_arrayConstant,
+)
+delphi_requiresClause_strategy = st.builds(
+    delphi_requiresClause,
+)
+delphi_setConstructor_strategy = st.builds(
+    delphi_setConstructor,
+)
+delphi_recordFieldConstant_strategy = st.builds(
+    delphi_recordFieldConstant,
+)
+delphi_constantDecl_strategy = st.builds(
+    delphi_constantDecl,
+    port=
+        safe_text
+)
+delphi_implementationSection_strategy = st.builds(
+    delphi_implementationSection,
+)
+delphi_fieldList_strategy = st.builds(
+    delphi_fieldList,
+)
+delphi_unlabelledStatement_strategy = st.builds(
+    delphi_unlabelledStatement,
+)
+delphi_methodHeading_strategy = st.builds(
+    delphi_methodHeading,
+)
+delphi_classMethod_strategy = st.builds(
+    delphi_classMethod,
+    visibility=
+        safe_text
+)
+delphi_objHeritage_strategy = st.builds(
+    delphi_objHeritage,
+)
+delphi_constExpr_strategy = st.builds(
+    delphi_constExpr,
+)
+delphi_recVariant_strategy = st.builds(
+    delphi_recVariant,
+)
+delphi_classField_strategy = st.builds(
+    delphi_classField,
+    visibility=
+        safe_text
+)
+delphi_classMethodList_strategy = st.builds(
+    delphi_classMethodList,
+)
+delphi_unitId_strategy = st.builds(
+    delphi_unitId,
+    id=
+        safe_text
+)
+delphi_programBlock_strategy = st.builds(
+    delphi_programBlock,
+)
+delphi_exportsItem_strategy = st.builds(
+    delphi_exportsItem,
+)
+delphi_classHeritage_strategy = st.builds(
+    delphi_classHeritage,
+)
+delphi_setElement_strategy = st.builds(
+    delphi_setElement,
+)
+delphi_propertySpecifiers_strategy = st.builds(
+    delphi_propertySpecifiers,
+)
+delphi_interfaceDecl_strategy = st.builds(
+    delphi_interfaceDecl,
+)
+delphi_qualId_strategy = st.builds(
+    delphi_qualId,
+)
+delphi_directive_strategy = st.builds(
+    delphi_directive,
+    dir=
+        safe_text
+)
+delphi_typeDecl_strategy = st.builds(
+    delphi_typeDecl,
+    port=
+        safe_text
+)
+delphi_fieldDecl_strategy = st.builds(
+    delphi_fieldDecl,
+    port=
+        safe_text
+)
+delphi_classPropertyList_strategy = st.builds(
+    delphi_classPropertyList,
+)
+delphi_interfaceSection_strategy = st.builds(
+    delphi_interfaceSection,
+)
+delphi_propertyParameterList_strategy = st.builds(
+    delphi_propertyParameterList,
+)
+delphi_formalParm_strategy = st.builds(
+    delphi_formalParm,
+)
+delphi_stmtList_strategy = st.builds(
+    delphi_stmtList,
+)
+delphi_relOp_strategy = st.builds(
+    delphi_relOp,
+    op=
+        safe_text
+)
+delphi_methodList_strategy = st.builds(
+    delphi_methodList,
+)
+delphi_expression_strategy = st.builds(
+    delphi_expression,
+)
+delphi_exceptionBlock_strategy = st.builds(
+    delphi_exceptionBlock,
+)
+delphi_containsClause_strategy = st.builds(
+    delphi_containsClause,
+)
+delphi_addOp_strategy = st.builds(
+    delphi_addOp,
+)
+delphi_mainRule_strategy = st.builds(
+    delphi_mainRule,
+)
+delphi_inheritedStamnt_strategy = st.builds(
+    delphi_inheritedStamnt,
+)
+delphi_Visitable_strategy = st.builds(
+    delphi_Visitable,
+)
+delphi_CSTrace_strategy = st.builds(
+    delphi_CSTrace,
+)
+constExpr_strategy = st.builds(
+    constExpr,
+)
+delphi_MultipleConstExp_strategy = st.builds(
+    delphi_MultipleConstExp,
+)
+delphi_RecordConstExp_strategy = st.builds(
+    delphi_RecordConstExp,
+)
+delphi_ConstExp_strategy = st.builds(
+    delphi_ConstExp,
+)
+ident_strategy = st.builds(
+    ident,
+)
+delphi_MineID_strategy = st.builds(
+    delphi_MineID,
+    first=
+        safe_text,
+    second=
+        safe_text
+)
+delphi_ReservedId_strategy = st.builds(
+    delphi_ReservedId,
+)
+delphi_MultipleId_strategy = st.builds(
+    delphi_MultipleId,
+    id=
+        safe_text
+)
+parameter_strategy = st.builds(
+    parameter,
+)
+delphi_parameterSimple_strategy = st.builds(
+    delphi_parameterSimple,
+)
+delphi_parameterList_strategy = st.builds(
+    delphi_parameterList,
+)
+delphi_gotoStmnt_strategy = st.builds(
+    delphi_gotoStmnt,
+    label=
+        safe_text
+)
 
 @given(instance=simpleStatement_strategy)
 @settings(max_examples=50)
 def test_simplestatement_instantiation(instance):
     assert isinstance(instance, simpleStatement)
 
-@given(instance=delphi::inheritedStamnt_strategy)
+@given(instance=delphi_callStmnt_strategy)
 @settings(max_examples=50)
-def test_delphi::inheritedstamnt_instantiation(instance):
-    assert isinstance(instance, delphi::inheritedStamnt)
+def test_delphi_callstmnt_instantiation(instance):
+    assert isinstance(instance, delphi_callStmnt)
 
-@given(instance=delphi::callStmnt_strategy)
+@given(instance=delphi_assignmentStmnt_strategy)
 @settings(max_examples=50)
-def test_delphi::callstmnt_instantiation(instance):
-    assert isinstance(instance, delphi::callStmnt)
-
-@given(instance=delphi::gotoStmnt_strategy)
-@settings(max_examples=50)
-def test_delphi::gotostmnt_instantiation(instance):
-    assert isinstance(instance, delphi::gotoStmnt)
-
-@given(instance=delphi::gotoStmnt_strategy)
-def test_delphi::gotostmnt_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_delphi_assignmentstmnt_instantiation(instance):
+    assert isinstance(instance, delphi_assignmentStmnt)
 
 
-@given(instance=delphi::gotoStmnt_strategy)
-def test_delphi::gotostmnt_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=delphi::assignmentStmnt_strategy)
-@settings(max_examples=50)
-def test_delphi::assignmentstmnt_instantiation(instance):
-    assert isinstance(instance, delphi::assignmentStmnt)
-
-@given(instance=delphi::assignmentStmnt_strategy)
-def test_delphi::assignmentstmnt_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=delphi::assignmentStmnt_strategy)
-def test_delphi::assignmentstmnt_operator_setter(instance):
+@given(instance=delphi_assignmentStmnt_strategy)
+def test_delphi_assignmentstmnt_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -4096,18 +3473,15 @@ def test_delphi::assignmentstmnt_operator_setter(instance):
 def test_addop_instantiation(instance):
     assert isinstance(instance, addOp)
 
-@given(instance=delphi::adOp_strategy)
+@given(instance=delphi_adOp_strategy)
 @settings(max_examples=50)
-def test_delphi::adop_instantiation(instance):
-    assert isinstance(instance, delphi::adOp)
-
-@given(instance=delphi::adOp_strategy)
-def test_delphi::adop_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_delphi_adop_instantiation(instance):
+    assert isinstance(instance, delphi_adOp)
 
 
-@given(instance=delphi::adOp_strategy)
-def test_delphi::adop_op_setter(instance):
+
+@given(instance=delphi_adOp_strategy)
+def test_delphi_adop_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -4117,56 +3491,15 @@ def test_delphi::adop_op_setter(instance):
 def test_factor_instantiation(instance):
     assert isinstance(instance, factor)
 
-@given(instance=delphi::simpleFactor_strategy)
+@given(instance=delphi_simpleFactor_strategy)
 @settings(max_examples=50)
-def test_delphi::simplefactor_instantiation(instance):
-    assert isinstance(instance, delphi::simpleFactor)
-
-@given(instance=delphi::multExp_strategy)
-@settings(max_examples=50)
-def test_delphi::multexp_instantiation(instance):
-    assert isinstance(instance, delphi::multExp)
-
-@given(instance=delphi::addExp_strategy)
-@settings(max_examples=50)
-def test_delphi::addexp_instantiation(instance):
-    assert isinstance(instance, delphi::addExp)
-
-@given(instance=delphi::relExp_strategy)
-@settings(max_examples=50)
-def test_delphi::relexp_instantiation(instance):
-    assert isinstance(instance, delphi::relExp)
-
-@given(instance=delphi::recordConstExpr_strategy)
-@settings(max_examples=50)
-def test_delphi::recordconstexpr_instantiation(instance):
-    assert isinstance(instance, delphi::recordConstExpr)
+def test_delphi_simplefactor_instantiation(instance):
+    assert isinstance(instance, delphi_simpleFactor)
 
 @given(instance=pointerType_strategy)
 @settings(max_examples=50)
 def test_pointertype_instantiation(instance):
     assert isinstance(instance, pointerType)
-
-@given(instance=delphi::typeId_strategy)
-@settings(max_examples=50)
-def test_delphi::typeid_instantiation(instance):
-    assert isinstance(instance, delphi::typeId)
-
-@given(instance=delphi::unitId_strategy)
-@settings(max_examples=50)
-def test_delphi::unitid_instantiation(instance):
-    assert isinstance(instance, delphi::unitId)
-
-@given(instance=delphi::unitId_strategy)
-def test_delphi::unitid_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=delphi::unitId_strategy)
-def test_delphi::unitid_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
 @given(instance=classHeritage_strategy)
 @settings(max_examples=50)
@@ -4178,449 +3511,1026 @@ def test_classheritage_instantiation(instance):
 def test_objfieldlist_instantiation(instance):
     assert isinstance(instance, objFieldList)
 
-@given(instance=delphi::identList_strategy)
-@settings(max_examples=50)
-def test_delphi::identlist_instantiation(instance):
-    assert isinstance(instance, delphi::identList)
-
-@given(instance=delphi::propertySpecifiers_strategy)
-@settings(max_examples=50)
-def test_delphi::propertyspecifiers_instantiation(instance):
-    assert isinstance(instance, delphi::propertySpecifiers)
-
-@given(instance=delphi::propertyInterface_strategy)
-@settings(max_examples=50)
-def test_delphi::propertyinterface_instantiation(instance):
-    assert isinstance(instance, delphi::propertyInterface)
-
-@given(instance=delphi::interfaceHeritage_strategy)
-@settings(max_examples=50)
-def test_delphi::interfaceheritage_instantiation(instance):
-    assert isinstance(instance, delphi::interfaceHeritage)
-
-@given(instance=delphi::propertyParameterList_strategy)
-@settings(max_examples=50)
-def test_delphi::propertyparameterlist_instantiation(instance):
-    assert isinstance(instance, delphi::propertyParameterList)
-
-@given(instance=delphi::classHeritage_strategy)
-@settings(max_examples=50)
-def test_delphi::classheritage_instantiation(instance):
-    assert isinstance(instance, delphi::classHeritage)
-
-@given(instance=delphi::propertyList_strategy)
-@settings(max_examples=50)
-def test_delphi::propertylist_instantiation(instance):
-    assert isinstance(instance, delphi::propertyList)
-
-@given(instance=delphi::propertyList_strategy)
-def test_delphi::propertylist_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::propertyList_strategy)
-def test_delphi::propertylist_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::classProperty_strategy)
-@settings(max_examples=50)
-def test_delphi::classproperty_instantiation(instance):
-    assert isinstance(instance, delphi::classProperty)
-
-@given(instance=delphi::classProperty_strategy)
-def test_delphi::classproperty_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=delphi::classProperty_strategy)
-def test_delphi::classproperty_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=delphi::classMethod_strategy)
-@settings(max_examples=50)
-def test_delphi::classmethod_instantiation(instance):
-    assert isinstance(instance, delphi::classMethod)
-
-@given(instance=delphi::classMethod_strategy)
-def test_delphi::classmethod_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=delphi::classMethod_strategy)
-def test_delphi::classmethod_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=delphi::classField_strategy)
-@settings(max_examples=50)
-def test_delphi::classfield_instantiation(instance):
-    assert isinstance(instance, delphi::classField)
-
-@given(instance=delphi::classField_strategy)
-def test_delphi::classfield_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=delphi::classField_strategy)
-def test_delphi::classfield_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=delphi::classPropertyList_strategy)
-@settings(max_examples=50)
-def test_delphi::classpropertylist_instantiation(instance):
-    assert isinstance(instance, delphi::classPropertyList)
-
-@given(instance=delphi::classMethodList_strategy)
-@settings(max_examples=50)
-def test_delphi::classmethodlist_instantiation(instance):
-    assert isinstance(instance, delphi::classMethodList)
-
-@given(instance=delphi::classFieldList_strategy)
-@settings(max_examples=50)
-def test_delphi::classfieldlist_instantiation(instance):
-    assert isinstance(instance, delphi::classFieldList)
-
-@given(instance=delphi::methodHeading_strategy)
-@settings(max_examples=50)
-def test_delphi::methodheading_instantiation(instance):
-    assert isinstance(instance, delphi::methodHeading)
-
-@given(instance=delphi::methodList_strategy)
-@settings(max_examples=50)
-def test_delphi::methodlist_instantiation(instance):
-    assert isinstance(instance, delphi::methodList)
-
-@given(instance=delphi::objFieldList_strategy)
-@settings(max_examples=50)
-def test_delphi::objfieldlist_instantiation(instance):
-    assert isinstance(instance, delphi::objFieldList)
-
-@given(instance=delphi::objHeritage_strategy)
-@settings(max_examples=50)
-def test_delphi::objheritage_instantiation(instance):
-    assert isinstance(instance, delphi::objHeritage)
-
 @given(instance=restrictedType_strategy)
 @settings(max_examples=50)
 def test_restrictedtype_instantiation(instance):
     assert isinstance(instance, restrictedType)
 
-@given(instance=delphi::classType_strategy)
+@given(instance=delphi_interfaceType_strategy)
 @settings(max_examples=50)
-def test_delphi::classtype_instantiation(instance):
-    assert isinstance(instance, delphi::classType)
+def test_delphi_interfacetype_instantiation(instance):
+    assert isinstance(instance, delphi_interfaceType)
 
-@given(instance=delphi::classType_strategy)
-def test_delphi::classtype_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+@given(instance=delphi_classType_strategy)
+@settings(max_examples=50)
+def test_delphi_classtype_instantiation(instance):
+    assert isinstance(instance, delphi_classType)
 
 
-@given(instance=delphi::classType_strategy)
-def test_delphi::classtype_visibility_setter(instance):
+
+@given(instance=delphi_classType_strategy)
+def test_delphi_classtype_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=delphi::interfaceType_strategy)
+@given(instance=delphi_objectType_strategy)
 @settings(max_examples=50)
-def test_delphi::interfacetype_instantiation(instance):
-    assert isinstance(instance, delphi::interfaceType)
-
-@given(instance=delphi::objectType_strategy)
-@settings(max_examples=50)
-def test_delphi::objecttype_instantiation(instance):
-    assert isinstance(instance, delphi::objectType)
-
-@given(instance=delphi::parameter_strategy)
-@settings(max_examples=50)
-def test_delphi::parameter_instantiation(instance):
-    assert isinstance(instance, delphi::parameter)
-
-@given(instance=delphi::formalParm_strategy)
-@settings(max_examples=50)
-def test_delphi::formalparm_instantiation(instance):
-    assert isinstance(instance, delphi::formalParm)
-
-@given(instance=delphi::formalParameters_strategy)
-@settings(max_examples=50)
-def test_delphi::formalparameters_instantiation(instance):
-    assert isinstance(instance, delphi::formalParameters)
+def test_delphi_objecttype_instantiation(instance):
+    assert isinstance(instance, delphi_objectType)
 
 @given(instance=methodHeading_strategy)
 @settings(max_examples=50)
 def test_methodheading_instantiation(instance):
     assert isinstance(instance, methodHeading)
 
-@given(instance=delphi::constructorHeading_strategy)
+@given(instance=delphi_constructorHeading_strategy)
 @settings(max_examples=50)
-def test_delphi::constructorheading_instantiation(instance):
-    assert isinstance(instance, delphi::constructorHeading)
+def test_delphi_constructorheading_instantiation(instance):
+    assert isinstance(instance, delphi_constructorHeading)
 
-@given(instance=delphi::destructorHeading_strategy)
+@given(instance=delphi_destructorHeading_strategy)
 @settings(max_examples=50)
-def test_delphi::destructorheading_instantiation(instance):
-    assert isinstance(instance, delphi::destructorHeading)
-
-@given(instance=delphi::procedureHeading_strategy)
-@settings(max_examples=50)
-def test_delphi::procedureheading_instantiation(instance):
-    assert isinstance(instance, delphi::procedureHeading)
-
-@given(instance=delphi::functionHeading_strategy)
-@settings(max_examples=50)
-def test_delphi::functionheading_instantiation(instance):
-    assert isinstance(instance, delphi::functionHeading)
+def test_delphi_destructorheading_instantiation(instance):
+    assert isinstance(instance, delphi_destructorHeading)
 
 @given(instance=procedureDeclSection_strategy)
 @settings(max_examples=50)
 def test_proceduredeclsection_instantiation(instance):
     assert isinstance(instance, procedureDeclSection)
 
-@given(instance=delphi::functionDecl_strategy)
+@given(instance=delphi_functionDecl_strategy)
 @settings(max_examples=50)
-def test_delphi::functiondecl_instantiation(instance):
-    assert isinstance(instance, delphi::functionDecl)
+def test_delphi_functiondecl_instantiation(instance):
+    assert isinstance(instance, delphi_functionDecl)
 
-@given(instance=delphi::procedureDecl_strategy)
+@given(instance=delphi_procedureDecl_strategy)
 @settings(max_examples=50)
-def test_delphi::proceduredecl_instantiation(instance):
-    assert isinstance(instance, delphi::procedureDecl)
-
-@given(instance=delphi::procedureDeclSection_strategy)
-@settings(max_examples=50)
-def test_delphi::proceduredeclsection_instantiation(instance):
-    assert isinstance(instance, delphi::procedureDeclSection)
-
-@given(instance=delphi::procedureDeclSection_strategy)
-def test_delphi::proceduredeclsection_port_type(instance):
-    assert isinstance(instance.port, str)
-
-
-@given(instance=delphi::procedureDeclSection_strategy)
-def test_delphi::proceduredeclsection_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=delphi::exceptionBlock_strategy)
-@settings(max_examples=50)
-def test_delphi::exceptionblock_instantiation(instance):
-    assert isinstance(instance, delphi::exceptionBlock)
-
-@given(instance=delphi::qualId_strategy)
-@settings(max_examples=50)
-def test_delphi::qualid_instantiation(instance):
-    assert isinstance(instance, delphi::qualId)
+def test_delphi_proceduredecl_instantiation(instance):
+    assert isinstance(instance, delphi_procedureDecl)
 
 @given(instance=loopStmt_strategy)
 @settings(max_examples=50)
 def test_loopstmt_instantiation(instance):
     assert isinstance(instance, loopStmt)
 
-@given(instance=delphi::forStmt_strategy)
+@given(instance=delphi_forStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::forstmt_instantiation(instance):
-    assert isinstance(instance, delphi::forStmt)
+def test_delphi_forstmt_instantiation(instance):
+    assert isinstance(instance, delphi_forStmt)
 
-@given(instance=delphi::whileStmt_strategy)
+@given(instance=delphi_whileStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::whilestmt_instantiation(instance):
-    assert isinstance(instance, delphi::whileStmt)
+def test_delphi_whilestmt_instantiation(instance):
+    assert isinstance(instance, delphi_whileStmt)
 
-@given(instance=delphi::repeatStmt_strategy)
+@given(instance=delphi_repeatStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::repeatstmt_instantiation(instance):
-    assert isinstance(instance, delphi::repeatStmt)
-
-@given(instance=delphi::stmtList_strategy)
-@settings(max_examples=50)
-def test_delphi::stmtlist_instantiation(instance):
-    assert isinstance(instance, delphi::stmtList)
-
-@given(instance=delphi::caseLabel_strategy)
-@settings(max_examples=50)
-def test_delphi::caselabel_instantiation(instance):
-    assert isinstance(instance, delphi::caseLabel)
-
-@given(instance=delphi::caseSelector_strategy)
-@settings(max_examples=50)
-def test_delphi::caseselector_instantiation(instance):
-    assert isinstance(instance, delphi::caseSelector)
+def test_delphi_repeatstmt_instantiation(instance):
+    assert isinstance(instance, delphi_repeatStmt)
 
 @given(instance=conditionalStmt_strategy)
 @settings(max_examples=50)
 def test_conditionalstmt_instantiation(instance):
     assert isinstance(instance, conditionalStmt)
 
-@given(instance=delphi::caseStmt_strategy)
+@given(instance=delphi_caseStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::casestmt_instantiation(instance):
-    assert isinstance(instance, delphi::caseStmt)
+def test_delphi_casestmt_instantiation(instance):
+    assert isinstance(instance, delphi_caseStmt)
 
-@given(instance=delphi::ifStmt_strategy)
+@given(instance=delphi_ifStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::ifstmt_instantiation(instance):
-    assert isinstance(instance, delphi::ifStmt)
+def test_delphi_ifstmt_instantiation(instance):
+    assert isinstance(instance, delphi_ifStmt)
 
 @given(instance=structStmt_strategy)
 @settings(max_examples=50)
 def test_structstmt_instantiation(instance):
     assert isinstance(instance, structStmt)
 
-@given(instance=delphi::loopStmt_strategy)
+@given(instance=delphi_tryStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::loopstmt_instantiation(instance):
-    assert isinstance(instance, delphi::loopStmt)
+def test_delphi_trystmt_instantiation(instance):
+    assert isinstance(instance, delphi_tryStmt)
 
-@given(instance=delphi::conditionalStmt_strategy)
+@given(instance=delphi_assemblerStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::conditionalstmt_instantiation(instance):
-    assert isinstance(instance, delphi::conditionalStmt)
+def test_delphi_assemblerstmt_instantiation(instance):
+    assert isinstance(instance, delphi_assemblerStmt)
 
-@given(instance=delphi::tryStmt_strategy)
+@given(instance=delphi_withStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::trystmt_instantiation(instance):
-    assert isinstance(instance, delphi::tryStmt)
+def test_delphi_withstmt_instantiation(instance):
+    assert isinstance(instance, delphi_withStmt)
 
-@given(instance=delphi::withStmt_strategy)
+@given(instance=delphi_raiseStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::withstmt_instantiation(instance):
-    assert isinstance(instance, delphi::withStmt)
-
-@given(instance=delphi::raiseStmt_strategy)
-@settings(max_examples=50)
-def test_delphi::raisestmt_instantiation(instance):
-    assert isinstance(instance, delphi::raiseStmt)
-
-@given(instance=delphi::raiseStmt_strategy)
-def test_delphi::raisestmt_at_type(instance):
-    assert isinstance(instance.at, str)
+def test_delphi_raisestmt_instantiation(instance):
+    assert isinstance(instance, delphi_raiseStmt)
 
 
-@given(instance=delphi::raiseStmt_strategy)
-def test_delphi::raisestmt_at_setter(instance):
-    original = instance.at
-    instance.at = original
-    assert instance.at == original
 
-@given(instance=delphi::raiseStmt_strategy)
-def test_delphi::raisestmt_raise__type(instance):
-    assert isinstance(instance.raise_, str)
-
-
-@given(instance=delphi::raiseStmt_strategy)
-def test_delphi::raisestmt_raise__setter(instance):
+@given(instance=delphi_raiseStmt_strategy)
+def test_delphi_raisestmt_raise__setter(instance):
     original = instance.raise_
     instance.raise_ = original
     assert instance.raise_ == original
 
-@given(instance=delphi::compoundStmt_strategy)
-@settings(max_examples=50)
-def test_delphi::compoundstmt_instantiation(instance):
-    assert isinstance(instance, delphi::compoundStmt)
 
-@given(instance=delphi::assemblerStmt_strategy)
+
+@given(instance=delphi_raiseStmt_strategy)
+def test_delphi_raisestmt_at_setter(instance):
+    original = instance.at
+    instance.at = original
+    assert instance.at == original
+
+@given(instance=delphi_loopStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::assemblerstmt_instantiation(instance):
-    assert isinstance(instance, delphi::assemblerStmt)
+def test_delphi_loopstmt_instantiation(instance):
+    assert isinstance(instance, delphi_loopStmt)
+
+@given(instance=delphi_conditionalStmt_strategy)
+@settings(max_examples=50)
+def test_delphi_conditionalstmt_instantiation(instance):
+    assert isinstance(instance, delphi_conditionalStmt)
 
 @given(instance=unlabelledStatement_strategy)
 @settings(max_examples=50)
 def test_unlabelledstatement_instantiation(instance):
     assert isinstance(instance, unlabelledStatement)
 
-@given(instance=delphi::structStmt_strategy)
+@given(instance=delphi_structStmt_strategy)
 @settings(max_examples=50)
-def test_delphi::structstmt_instantiation(instance):
-    assert isinstance(instance, delphi::structStmt)
+def test_delphi_structstmt_instantiation(instance):
+    assert isinstance(instance, delphi_structStmt)
 
-@given(instance=delphi::simpleStatement_strategy)
+@given(instance=delphi_simpleStatement_strategy)
 @settings(max_examples=50)
-def test_delphi::simplestatement_instantiation(instance):
-    assert isinstance(instance, delphi::simpleStatement)
+def test_delphi_simplestatement_instantiation(instance):
+    assert isinstance(instance, delphi_simpleStatement)
 
-@given(instance=delphi::unlabelledStatement_strategy)
+@given(instance=term_strategy)
 @settings(max_examples=50)
-def test_delphi::unlabelledstatement_instantiation(instance):
-    assert isinstance(instance, delphi::unlabelledStatement)
+def test_term_instantiation(instance):
+    assert isinstance(instance, term)
 
-@given(instance=delphi::statement_strategy)
+@given(instance=delphi_multExp_strategy)
 @settings(max_examples=50)
-def test_delphi::statement_instantiation(instance):
-    assert isinstance(instance, delphi::statement)
+def test_delphi_multexp_instantiation(instance):
+    assert isinstance(instance, delphi_multExp)
 
-@given(instance=delphi::statement_strategy)
-def test_delphi::statement_labelId_type(instance):
-    assert isinstance(instance.labelId, str)
+@given(instance=delphi_factor_strategy)
+@settings(max_examples=50)
+def test_delphi_factor_instantiation(instance):
+    assert isinstance(instance, delphi_factor)
 
 
-@given(instance=delphi::statement_strategy)
-def test_delphi::statement_labelId_setter(instance):
+
+@given(instance=delphi_factor_strategy)
+def test_delphi_factor_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=delphi_factor_strategy)
+def test_delphi_factor_string_setter(instance):
+    original = instance.string
+    instance.string = original
+    assert instance.string == original
+
+@given(instance=simpleExpression_strategy)
+@settings(max_examples=50)
+def test_simpleexpression_instantiation(instance):
+    assert isinstance(instance, simpleExpression)
+
+@given(instance=delphi_addExp_strategy)
+@settings(max_examples=50)
+def test_delphi_addexp_instantiation(instance):
+    assert isinstance(instance, delphi_addExp)
+
+@given(instance=delphi_term_strategy)
+@settings(max_examples=50)
+def test_delphi_term_instantiation(instance):
+    assert isinstance(instance, delphi_term)
+
+@given(instance=expression_strategy)
+@settings(max_examples=50)
+def test_expression_instantiation(instance):
+    assert isinstance(instance, expression)
+
+@given(instance=delphi_relExp_strategy)
+@settings(max_examples=50)
+def test_delphi_relexp_instantiation(instance):
+    assert isinstance(instance, delphi_relExp)
+
+@given(instance=delphi_simpleExpression_strategy)
+@settings(max_examples=50)
+def test_delphi_simpleexpression_instantiation(instance):
+    assert isinstance(instance, delphi_simpleExpression)
+
+@given(instance=strucType_strategy)
+@settings(max_examples=50)
+def test_structype_instantiation(instance):
+    assert isinstance(instance, strucType)
+
+@given(instance=delphi_recType_strategy)
+@settings(max_examples=50)
+def test_delphi_rectype_instantiation(instance):
+    assert isinstance(instance, delphi_recType)
+
+@given(instance=delphi_fileType_strategy)
+@settings(max_examples=50)
+def test_delphi_filetype_instantiation(instance):
+    assert isinstance(instance, delphi_fileType)
+
+@given(instance=delphi_setType_strategy)
+@settings(max_examples=50)
+def test_delphi_settype_instantiation(instance):
+    assert isinstance(instance, delphi_setType)
+
+@given(instance=delphi_arrayType_strategy)
+@settings(max_examples=50)
+def test_delphi_arraytype_instantiation(instance):
+    assert isinstance(instance, delphi_arrayType)
+
+@given(instance=ordinalType_strategy)
+@settings(max_examples=50)
+def test_ordinaltype_instantiation(instance):
+    assert isinstance(instance, ordinalType)
+
+@given(instance=delphi_enumeratedType_strategy)
+@settings(max_examples=50)
+def test_delphi_enumeratedtype_instantiation(instance):
+    assert isinstance(instance, delphi_enumeratedType)
+
+@given(instance=delphi_subrangeType_strategy)
+@settings(max_examples=50)
+def test_delphi_subrangetype_instantiation(instance):
+    assert isinstance(instance, delphi_subrangeType)
+
+@given(instance=delphi_ordIdent_strategy)
+@settings(max_examples=50)
+def test_delphi_ordident_instantiation(instance):
+    assert isinstance(instance, delphi_ordIdent)
+
+@given(instance=simpleType_strategy)
+@settings(max_examples=50)
+def test_simpletype_instantiation(instance):
+    assert isinstance(instance, simpleType)
+
+@given(instance=delphi_ordinalType_strategy)
+@settings(max_examples=50)
+def test_delphi_ordinaltype_instantiation(instance):
+    assert isinstance(instance, delphi_ordinalType)
+
+@given(instance=delphi_realType_strategy)
+@settings(max_examples=50)
+def test_delphi_realtype_instantiation(instance):
+    assert isinstance(instance, delphi_realType)
+
+@given(instance=type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, type)
+
+@given(instance=delphi_procedureType_strategy)
+@settings(max_examples=50)
+def test_delphi_proceduretype_instantiation(instance):
+    assert isinstance(instance, delphi_procedureType)
+
+@given(instance=delphi_stringType_strategy)
+@settings(max_examples=50)
+def test_delphi_stringtype_instantiation(instance):
+    assert isinstance(instance, delphi_stringType)
+
+@given(instance=delphi_variantType_strategy)
+@settings(max_examples=50)
+def test_delphi_varianttype_instantiation(instance):
+    assert isinstance(instance, delphi_variantType)
+
+@given(instance=delphi_pointerType_strategy)
+@settings(max_examples=50)
+def test_delphi_pointertype_instantiation(instance):
+    assert isinstance(instance, delphi_pointerType)
+
+@given(instance=delphi_simpleType_strategy)
+@settings(max_examples=50)
+def test_delphi_simpletype_instantiation(instance):
+    assert isinstance(instance, delphi_simpleType)
+
+@given(instance=delphi_strucType_strategy)
+@settings(max_examples=50)
+def test_delphi_structype_instantiation(instance):
+    assert isinstance(instance, delphi_strucType)
+
+
+
+@given(instance=delphi_strucType_strategy)
+def test_delphi_structype_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_classRefType_strategy)
+@settings(max_examples=50)
+def test_delphi_classreftype_instantiation(instance):
+    assert isinstance(instance, delphi_classRefType)
+
+@given(instance=delphi_typeId_strategy)
+@settings(max_examples=50)
+def test_delphi_typeid_instantiation(instance):
+    assert isinstance(instance, delphi_typeId)
+
+@given(instance=delphi_procedureHeading_strategy)
+@settings(max_examples=50)
+def test_delphi_procedureheading_instantiation(instance):
+    assert isinstance(instance, delphi_procedureHeading)
+
+@given(instance=interfaceDecl_strategy)
+@settings(max_examples=50)
+def test_interfacedecl_instantiation(instance):
+    assert isinstance(instance, interfaceDecl)
+
+@given(instance=delphi_exportedHeading_strategy)
+@settings(max_examples=50)
+def test_delphi_exportedheading_instantiation(instance):
+    assert isinstance(instance, delphi_exportedHeading)
+
+@given(instance=declSection_strategy)
+@settings(max_examples=50)
+def test_declsection_instantiation(instance):
+    assert isinstance(instance, declSection)
+
+@given(instance=delphi_constSection_strategy)
+@settings(max_examples=50)
+def test_delphi_constsection_instantiation(instance):
+    assert isinstance(instance, delphi_constSection)
+
+@given(instance=delphi_procedureDeclSection_strategy)
+@settings(max_examples=50)
+def test_delphi_proceduredeclsection_instantiation(instance):
+    assert isinstance(instance, delphi_procedureDeclSection)
+
+
+
+@given(instance=delphi_procedureDeclSection_strategy)
+def test_delphi_proceduredeclsection_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_typeSection_strategy)
+@settings(max_examples=50)
+def test_delphi_typesection_instantiation(instance):
+    assert isinstance(instance, delphi_typeSection)
+
+@given(instance=delphi_varSection_strategy)
+@settings(max_examples=50)
+def test_delphi_varsection_instantiation(instance):
+    assert isinstance(instance, delphi_varSection)
+
+@given(instance=delphi_labelDeclSection_strategy)
+@settings(max_examples=50)
+def test_delphi_labeldeclsection_instantiation(instance):
+    assert isinstance(instance, delphi_labelDeclSection)
+
+
+
+@given(instance=delphi_labelDeclSection_strategy)
+def test_delphi_labeldeclsection_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=delphi_compoundStmt_strategy)
+@settings(max_examples=50)
+def test_delphi_compoundstmt_instantiation(instance):
+    assert isinstance(instance, delphi_compoundStmt)
+
+@given(instance=delphi_functionHeading_strategy)
+@settings(max_examples=50)
+def test_delphi_functionheading_instantiation(instance):
+    assert isinstance(instance, delphi_functionHeading)
+
+@given(instance=delphi_identList_strategy)
+@settings(max_examples=50)
+def test_delphi_identlist_instantiation(instance):
+    assert isinstance(instance, delphi_identList)
+
+@given(instance=file_strategy)
+@settings(max_examples=50)
+def test_file_instantiation(instance):
+    assert isinstance(instance, file)
+
+@given(instance=delphi_library_strategy)
+@settings(max_examples=50)
+def test_delphi_library_instantiation(instance):
+    assert isinstance(instance, delphi_library)
+
+@given(instance=delphi_packageDecl_strategy)
+@settings(max_examples=50)
+def test_delphi_packagedecl_instantiation(instance):
+    assert isinstance(instance, delphi_packageDecl)
+
+@given(instance=delphi_unit_strategy)
+@settings(max_examples=50)
+def test_delphi_unit_instantiation(instance):
+    assert isinstance(instance, delphi_unit)
+
+
+
+@given(instance=delphi_unit_strategy)
+def test_delphi_unit_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_program_strategy)
+@settings(max_examples=50)
+def test_delphi_program_instantiation(instance):
+    assert isinstance(instance, delphi_program)
+
+@given(instance=CSTrace_strategy)
+@settings(max_examples=50)
+def test_cstrace_instantiation(instance):
+    assert isinstance(instance, CSTrace)
+
+@given(instance=delphi_classFieldList_strategy)
+@settings(max_examples=50)
+def test_delphi_classfieldlist_instantiation(instance):
+    assert isinstance(instance, delphi_classFieldList)
+
+@given(instance=delphi_ident_strategy)
+@settings(max_examples=50)
+def test_delphi_ident_instantiation(instance):
+    assert isinstance(instance, delphi_ident)
+
+@given(instance=delphi_block_strategy)
+@settings(max_examples=50)
+def test_delphi_block_instantiation(instance):
+    assert isinstance(instance, delphi_block)
+
+@given(instance=delphi_propertyInterface_strategy)
+@settings(max_examples=50)
+def test_delphi_propertyinterface_instantiation(instance):
+    assert isinstance(instance, delphi_propertyInterface)
+
+@given(instance=delphi_typedConstant_strategy)
+@settings(max_examples=50)
+def test_delphi_typedconstant_instantiation(instance):
+    assert isinstance(instance, delphi_typedConstant)
+
+@given(instance=delphi_usesClause_strategy)
+@settings(max_examples=50)
+def test_delphi_usesclause_instantiation(instance):
+    assert isinstance(instance, delphi_usesClause)
+
+@given(instance=delphi_objFieldList_strategy)
+@settings(max_examples=50)
+def test_delphi_objfieldlist_instantiation(instance):
+    assert isinstance(instance, delphi_objFieldList)
+
+@given(instance=delphi_recordConstExpr_strategy)
+@settings(max_examples=50)
+def test_delphi_recordconstexpr_instantiation(instance):
+    assert isinstance(instance, delphi_recordConstExpr)
+
+@given(instance=delphi_reservedWord_strategy)
+@settings(max_examples=50)
+def test_delphi_reservedword_instantiation(instance):
+    assert isinstance(instance, delphi_reservedWord)
+
+
+
+@given(instance=delphi_reservedWord_strategy)
+def test_delphi_reservedword_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=delphi_file_strategy)
+@settings(max_examples=50)
+def test_delphi_file_instantiation(instance):
+    assert isinstance(instance, delphi_file)
+
+@given(instance=delphi_caseLabel_strategy)
+@settings(max_examples=50)
+def test_delphi_caselabel_instantiation(instance):
+    assert isinstance(instance, delphi_caseLabel)
+
+@given(instance=delphi_exprList_strategy)
+@settings(max_examples=50)
+def test_delphi_exprlist_instantiation(instance):
+    assert isinstance(instance, delphi_exprList)
+
+@given(instance=delphi_type_strategy)
+@settings(max_examples=50)
+def test_delphi_type_instantiation(instance):
+    assert isinstance(instance, delphi_type)
+
+@given(instance=delphi_propertyList_strategy)
+@settings(max_examples=50)
+def test_delphi_propertylist_instantiation(instance):
+    assert isinstance(instance, delphi_propertyList)
+
+
+
+@given(instance=delphi_propertyList_strategy)
+def test_delphi_propertylist_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_recordConstant_strategy)
+@settings(max_examples=50)
+def test_delphi_recordconstant_instantiation(instance):
+    assert isinstance(instance, delphi_recordConstant)
+
+@given(instance=delphi_classProperty_strategy)
+@settings(max_examples=50)
+def test_delphi_classproperty_instantiation(instance):
+    assert isinstance(instance, delphi_classProperty)
+
+
+
+@given(instance=delphi_classProperty_strategy)
+def test_delphi_classproperty_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=delphi_varDecl_strategy)
+@settings(max_examples=50)
+def test_delphi_vardecl_instantiation(instance):
+    assert isinstance(instance, delphi_varDecl)
+
+@given(instance=delphi_parameter_strategy)
+@settings(max_examples=50)
+def test_delphi_parameter_instantiation(instance):
+    assert isinstance(instance, delphi_parameter)
+
+@given(instance=delphi_interfaceHeritage_strategy)
+@settings(max_examples=50)
+def test_delphi_interfaceheritage_instantiation(instance):
+    assert isinstance(instance, delphi_interfaceHeritage)
+
+@given(instance=delphi_formalParameters_strategy)
+@settings(max_examples=50)
+def test_delphi_formalparameters_instantiation(instance):
+    assert isinstance(instance, delphi_formalParameters)
+
+@given(instance=delphi_statement_strategy)
+@settings(max_examples=50)
+def test_delphi_statement_instantiation(instance):
+    assert isinstance(instance, delphi_statement)
+
+
+
+@given(instance=delphi_statement_strategy)
+def test_delphi_statement_labelId_setter(instance):
     original = instance.labelId
     instance.labelId = original
     assert instance.labelId == original
 
-@given(instance=delphi::setConstructor_strategy)
+@given(instance=delphi_declSection_strategy)
 @settings(max_examples=50)
-def test_delphi::setconstructor_instantiation(instance):
-    assert isinstance(instance, delphi::setConstructor)
+def test_delphi_declsection_instantiation(instance):
+    assert isinstance(instance, delphi_declSection)
 
-@given(instance=delphi::setElement_strategy)
+@given(instance=delphi_designator_strategy)
 @settings(max_examples=50)
-def test_delphi::setelement_instantiation(instance):
-    assert isinstance(instance, delphi::setElement)
+def test_delphi_designator_instantiation(instance):
+    assert isinstance(instance, delphi_designator)
 
-@given(instance=delphi::reservedWord_strategy)
+@given(instance=delphi_enumeratedTypeElement_strategy)
 @settings(max_examples=50)
-def test_delphi::reservedword_instantiation(instance):
-    assert isinstance(instance, delphi::reservedWord)
+def test_delphi_enumeratedtypeelement_instantiation(instance):
+    assert isinstance(instance, delphi_enumeratedTypeElement)
 
-@given(instance=delphi::reservedWord_strategy)
-def test_delphi::reservedword_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=delphi::reservedWord_strategy)
-def test_delphi::reservedword_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=delphi::designatorPart_strategy)
+@given(instance=delphi_designatorSubPart_strategy)
 @settings(max_examples=50)
-def test_delphi::designatorpart_instantiation(instance):
-    assert isinstance(instance, delphi::designatorPart)
+def test_delphi_designatorsubpart_instantiation(instance):
+    assert isinstance(instance, delphi_designatorSubPart)
 
-@given(instance=delphi::designatorPart_strategy)
-def test_delphi::designatorpart_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=delphi_initSection_strategy)
+@settings(max_examples=50)
+def test_delphi_initsection_instantiation(instance):
+    assert isinstance(instance, delphi_initSection)
+
+@given(instance=delphi_caseSelector_strategy)
+@settings(max_examples=50)
+def test_delphi_caseselector_instantiation(instance):
+    assert isinstance(instance, delphi_caseSelector)
+
+@given(instance=delphi_variantSection_strategy)
+@settings(max_examples=50)
+def test_delphi_variantsection_instantiation(instance):
+    assert isinstance(instance, delphi_variantSection)
+
+@given(instance=delphi_mulOp_strategy)
+@settings(max_examples=50)
+def test_delphi_mulop_instantiation(instance):
+    assert isinstance(instance, delphi_mulOp)
 
 
-@given(instance=delphi::designatorPart_strategy)
-def test_delphi::designatorpart_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=delphi::designatorPart_strategy)
-def test_delphi::designatorpart_id2_type(instance):
-    assert isinstance(instance.id2, str)
+@given(instance=delphi_mulOp_strategy)
+def test_delphi_mulop_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=delphi_designatorPart_strategy)
+@settings(max_examples=50)
+def test_delphi_designatorpart_instantiation(instance):
+    assert isinstance(instance, delphi_designatorPart)
 
 
-@given(instance=delphi::designatorPart_strategy)
-def test_delphi::designatorpart_id2_setter(instance):
+
+@given(instance=delphi_designatorPart_strategy)
+def test_delphi_designatorpart_id2_setter(instance):
     original = instance.id2
     instance.id2 = original
     assert instance.id2 == original
 
-@given(instance=delphi::designatorSubPart_strategy)
+
+
+@given(instance=delphi_designatorPart_strategy)
+def test_delphi_designatorpart_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=delphi_restrictedType_strategy)
 @settings(max_examples=50)
-def test_delphi::designatorsubpart_instantiation(instance):
-    assert isinstance(instance, delphi::designatorSubPart)
+def test_delphi_restrictedtype_instantiation(instance):
+    assert isinstance(instance, delphi_restrictedType)
+
+@given(instance=delphi_exportsStmt_strategy)
+@settings(max_examples=50)
+def test_delphi_exportsstmt_instantiation(instance):
+    assert isinstance(instance, delphi_exportsStmt)
+
+@given(instance=delphi_arrayConstant_strategy)
+@settings(max_examples=50)
+def test_delphi_arrayconstant_instantiation(instance):
+    assert isinstance(instance, delphi_arrayConstant)
+
+@given(instance=delphi_requiresClause_strategy)
+@settings(max_examples=50)
+def test_delphi_requiresclause_instantiation(instance):
+    assert isinstance(instance, delphi_requiresClause)
+
+@given(instance=delphi_setConstructor_strategy)
+@settings(max_examples=50)
+def test_delphi_setconstructor_instantiation(instance):
+    assert isinstance(instance, delphi_setConstructor)
+
+@given(instance=delphi_recordFieldConstant_strategy)
+@settings(max_examples=50)
+def test_delphi_recordfieldconstant_instantiation(instance):
+    assert isinstance(instance, delphi_recordFieldConstant)
+
+@given(instance=delphi_constantDecl_strategy)
+@settings(max_examples=50)
+def test_delphi_constantdecl_instantiation(instance):
+    assert isinstance(instance, delphi_constantDecl)
+
+
+
+@given(instance=delphi_constantDecl_strategy)
+def test_delphi_constantdecl_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_implementationSection_strategy)
+@settings(max_examples=50)
+def test_delphi_implementationsection_instantiation(instance):
+    assert isinstance(instance, delphi_implementationSection)
+
+@given(instance=delphi_fieldList_strategy)
+@settings(max_examples=50)
+def test_delphi_fieldlist_instantiation(instance):
+    assert isinstance(instance, delphi_fieldList)
+
+@given(instance=delphi_unlabelledStatement_strategy)
+@settings(max_examples=50)
+def test_delphi_unlabelledstatement_instantiation(instance):
+    assert isinstance(instance, delphi_unlabelledStatement)
+
+@given(instance=delphi_methodHeading_strategy)
+@settings(max_examples=50)
+def test_delphi_methodheading_instantiation(instance):
+    assert isinstance(instance, delphi_methodHeading)
+
+@given(instance=delphi_classMethod_strategy)
+@settings(max_examples=50)
+def test_delphi_classmethod_instantiation(instance):
+    assert isinstance(instance, delphi_classMethod)
+
+
+
+@given(instance=delphi_classMethod_strategy)
+def test_delphi_classmethod_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=delphi_objHeritage_strategy)
+@settings(max_examples=50)
+def test_delphi_objheritage_instantiation(instance):
+    assert isinstance(instance, delphi_objHeritage)
+
+@given(instance=delphi_constExpr_strategy)
+@settings(max_examples=50)
+def test_delphi_constexpr_instantiation(instance):
+    assert isinstance(instance, delphi_constExpr)
+
+@given(instance=delphi_recVariant_strategy)
+@settings(max_examples=50)
+def test_delphi_recvariant_instantiation(instance):
+    assert isinstance(instance, delphi_recVariant)
+
+@given(instance=delphi_classField_strategy)
+@settings(max_examples=50)
+def test_delphi_classfield_instantiation(instance):
+    assert isinstance(instance, delphi_classField)
+
+
+
+@given(instance=delphi_classField_strategy)
+def test_delphi_classfield_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=delphi_classMethodList_strategy)
+@settings(max_examples=50)
+def test_delphi_classmethodlist_instantiation(instance):
+    assert isinstance(instance, delphi_classMethodList)
+
+@given(instance=delphi_unitId_strategy)
+@settings(max_examples=50)
+def test_delphi_unitid_instantiation(instance):
+    assert isinstance(instance, delphi_unitId)
+
+
+
+@given(instance=delphi_unitId_strategy)
+def test_delphi_unitid_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=delphi_programBlock_strategy)
+@settings(max_examples=50)
+def test_delphi_programblock_instantiation(instance):
+    assert isinstance(instance, delphi_programBlock)
+
+@given(instance=delphi_exportsItem_strategy)
+@settings(max_examples=50)
+def test_delphi_exportsitem_instantiation(instance):
+    assert isinstance(instance, delphi_exportsItem)
+
+@given(instance=delphi_classHeritage_strategy)
+@settings(max_examples=50)
+def test_delphi_classheritage_instantiation(instance):
+    assert isinstance(instance, delphi_classHeritage)
+
+@given(instance=delphi_setElement_strategy)
+@settings(max_examples=50)
+def test_delphi_setelement_instantiation(instance):
+    assert isinstance(instance, delphi_setElement)
+
+@given(instance=delphi_propertySpecifiers_strategy)
+@settings(max_examples=50)
+def test_delphi_propertyspecifiers_instantiation(instance):
+    assert isinstance(instance, delphi_propertySpecifiers)
+
+@given(instance=delphi_interfaceDecl_strategy)
+@settings(max_examples=50)
+def test_delphi_interfacedecl_instantiation(instance):
+    assert isinstance(instance, delphi_interfaceDecl)
+
+@given(instance=delphi_qualId_strategy)
+@settings(max_examples=50)
+def test_delphi_qualid_instantiation(instance):
+    assert isinstance(instance, delphi_qualId)
+
+@given(instance=delphi_directive_strategy)
+@settings(max_examples=50)
+def test_delphi_directive_instantiation(instance):
+    assert isinstance(instance, delphi_directive)
+
+
+
+@given(instance=delphi_directive_strategy)
+def test_delphi_directive_dir_setter(instance):
+    original = instance.dir
+    instance.dir = original
+    assert instance.dir == original
+
+@given(instance=delphi_typeDecl_strategy)
+@settings(max_examples=50)
+def test_delphi_typedecl_instantiation(instance):
+    assert isinstance(instance, delphi_typeDecl)
+
+
+
+@given(instance=delphi_typeDecl_strategy)
+def test_delphi_typedecl_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_fieldDecl_strategy)
+@settings(max_examples=50)
+def test_delphi_fielddecl_instantiation(instance):
+    assert isinstance(instance, delphi_fieldDecl)
+
+
+
+@given(instance=delphi_fieldDecl_strategy)
+def test_delphi_fielddecl_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=delphi_classPropertyList_strategy)
+@settings(max_examples=50)
+def test_delphi_classpropertylist_instantiation(instance):
+    assert isinstance(instance, delphi_classPropertyList)
+
+@given(instance=delphi_interfaceSection_strategy)
+@settings(max_examples=50)
+def test_delphi_interfacesection_instantiation(instance):
+    assert isinstance(instance, delphi_interfaceSection)
+
+@given(instance=delphi_propertyParameterList_strategy)
+@settings(max_examples=50)
+def test_delphi_propertyparameterlist_instantiation(instance):
+    assert isinstance(instance, delphi_propertyParameterList)
+
+@given(instance=delphi_formalParm_strategy)
+@settings(max_examples=50)
+def test_delphi_formalparm_instantiation(instance):
+    assert isinstance(instance, delphi_formalParm)
+
+@given(instance=delphi_stmtList_strategy)
+@settings(max_examples=50)
+def test_delphi_stmtlist_instantiation(instance):
+    assert isinstance(instance, delphi_stmtList)
+
+@given(instance=delphi_relOp_strategy)
+@settings(max_examples=50)
+def test_delphi_relop_instantiation(instance):
+    assert isinstance(instance, delphi_relOp)
+
+
+
+@given(instance=delphi_relOp_strategy)
+def test_delphi_relop_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=delphi_methodList_strategy)
+@settings(max_examples=50)
+def test_delphi_methodlist_instantiation(instance):
+    assert isinstance(instance, delphi_methodList)
+
+@given(instance=delphi_expression_strategy)
+@settings(max_examples=50)
+def test_delphi_expression_instantiation(instance):
+    assert isinstance(instance, delphi_expression)
+
+@given(instance=delphi_exceptionBlock_strategy)
+@settings(max_examples=50)
+def test_delphi_exceptionblock_instantiation(instance):
+    assert isinstance(instance, delphi_exceptionBlock)
+
+@given(instance=delphi_containsClause_strategy)
+@settings(max_examples=50)
+def test_delphi_containsclause_instantiation(instance):
+    assert isinstance(instance, delphi_containsClause)
+
+@given(instance=delphi_addOp_strategy)
+@settings(max_examples=50)
+def test_delphi_addop_instantiation(instance):
+    assert isinstance(instance, delphi_addOp)
+
+@given(instance=delphi_mainRule_strategy)
+@settings(max_examples=50)
+def test_delphi_mainrule_instantiation(instance):
+    assert isinstance(instance, delphi_mainRule)
+
+@given(instance=delphi_inheritedStamnt_strategy)
+@settings(max_examples=50)
+def test_delphi_inheritedstamnt_instantiation(instance):
+    assert isinstance(instance, delphi_inheritedStamnt)
+
+@given(instance=delphi_Visitable_strategy)
+@settings(max_examples=50)
+def test_delphi_visitable_instantiation(instance):
+    assert isinstance(instance, delphi_Visitable)
+
+@given(instance=delphi_CSTrace_strategy)
+@settings(max_examples=50)
+def test_delphi_cstrace_instantiation(instance):
+    assert isinstance(instance, delphi_CSTrace)
+
+@given(instance=constExpr_strategy)
+@settings(max_examples=50)
+def test_constexpr_instantiation(instance):
+    assert isinstance(instance, constExpr)
+
+@given(instance=delphi_MultipleConstExp_strategy)
+@settings(max_examples=50)
+def test_delphi_multipleconstexp_instantiation(instance):
+    assert isinstance(instance, delphi_MultipleConstExp)
+
+@given(instance=delphi_RecordConstExp_strategy)
+@settings(max_examples=50)
+def test_delphi_recordconstexp_instantiation(instance):
+    assert isinstance(instance, delphi_RecordConstExp)
+
+@given(instance=delphi_ConstExp_strategy)
+@settings(max_examples=50)
+def test_delphi_constexp_instantiation(instance):
+    assert isinstance(instance, delphi_ConstExp)
+
+@given(instance=ident_strategy)
+@settings(max_examples=50)
+def test_ident_instantiation(instance):
+    assert isinstance(instance, ident)
+
+@given(instance=delphi_MineID_strategy)
+@settings(max_examples=50)
+def test_delphi_mineid_instantiation(instance):
+    assert isinstance(instance, delphi_MineID)
+
+
+
+@given(instance=delphi_MineID_strategy)
+def test_delphi_mineid_first_setter(instance):
+    original = instance.first
+    instance.first = original
+    assert instance.first == original
+
+
+
+@given(instance=delphi_MineID_strategy)
+def test_delphi_mineid_second_setter(instance):
+    original = instance.second
+    instance.second = original
+    assert instance.second == original
+
+@given(instance=delphi_ReservedId_strategy)
+@settings(max_examples=50)
+def test_delphi_reservedid_instantiation(instance):
+    assert isinstance(instance, delphi_ReservedId)
+
+@given(instance=delphi_MultipleId_strategy)
+@settings(max_examples=50)
+def test_delphi_multipleid_instantiation(instance):
+    assert isinstance(instance, delphi_MultipleId)
+
+
+
+@given(instance=delphi_MultipleId_strategy)
+def test_delphi_multipleid_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=parameter_strategy)
+@settings(max_examples=50)
+def test_parameter_instantiation(instance):
+    assert isinstance(instance, parameter)
+
+@given(instance=delphi_parameterSimple_strategy)
+@settings(max_examples=50)
+def test_delphi_parametersimple_instantiation(instance):
+    assert isinstance(instance, delphi_parameterSimple)
+
+@given(instance=delphi_parameterList_strategy)
+@settings(max_examples=50)
+def test_delphi_parameterlist_instantiation(instance):
+    assert isinstance(instance, delphi_parameterList)
+
+@given(instance=delphi_gotoStmnt_strategy)
+@settings(max_examples=50)
+def test_delphi_gotostmnt_instantiation(instance):
+    assert isinstance(instance, delphi_gotoStmnt)
+
+
+
+@given(instance=delphi_gotoStmnt_strategy)
+def test_delphi_gotostmnt_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original

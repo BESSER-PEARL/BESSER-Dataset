@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Reference,
-    titan::SingleReference,
-    titan::MultiReference,
+    titan_SingleReference,
+    titan_MultiReference,
     Feature,
-    titan::DataType,
-    titan::Reference,
+    titan_DataType,
+    titan_Reference,
     DataType,
-    titan::SingleDataType,
-    titan::MultiDataType,
-    titan::Feature,
-    titan::Entity,
-    titan::Package,
-    titan::Module,
-    DataTypes,
+    titan_SingleDataType,
+    titan_MultiDataType,
+    titan_Feature,
+    titan_Entity,
+    titan_Package,
+    titan_Module,
     InternalDSLType,
+    DataTypes,
 )
 
 # =============================================================================
@@ -43,30 +43,30 @@ def test_reference_constructor_args():
 
 
 
-def test_titan::singlereference_is_not_abstract():
-    assert not inspect.isabstract(titan::SingleReference)
+def test_titan_singlereference_is_not_abstract():
+    assert not inspect.isabstract(titan_SingleReference)
 
 
-def test_titan::singlereference_constructor_exists():
-    assert callable(titan::SingleReference.__init__)
+def test_titan_singlereference_constructor_exists():
+    assert callable(titan_SingleReference.__init__)
 
 
-def test_titan::singlereference_constructor_args():
-    sig = inspect.signature(titan::SingleReference.__init__)
+def test_titan_singlereference_constructor_args():
+    sig = inspect.signature(titan_SingleReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_titan::multireference_is_not_abstract():
-    assert not inspect.isabstract(titan::MultiReference)
+def test_titan_multireference_is_not_abstract():
+    assert not inspect.isabstract(titan_MultiReference)
 
 
-def test_titan::multireference_constructor_exists():
-    assert callable(titan::MultiReference.__init__)
+def test_titan_multireference_constructor_exists():
+    assert callable(titan_MultiReference.__init__)
 
 
-def test_titan::multireference_constructor_args():
-    sig = inspect.signature(titan::MultiReference.__init__)
+def test_titan_multireference_constructor_args():
+    sig = inspect.signature(titan_MultiReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -85,23 +85,23 @@ def test_feature_constructor_args():
 
 
 
-def test_titan::datatype_is_not_abstract():
-    assert not inspect.isabstract(titan::DataType)
+def test_titan_datatype_is_not_abstract():
+    assert not inspect.isabstract(titan_DataType)
 
 
-def test_titan::datatype_constructor_exists():
-    assert callable(titan::DataType.__init__)
+def test_titan_datatype_constructor_exists():
+    assert callable(titan_DataType.__init__)
 
 
-def test_titan::datatype_constructor_args():
-    sig = inspect.signature(titan::DataType.__init__)
+def test_titan_datatype_constructor_args():
+    sig = inspect.signature(titan_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_titan::datatype_has_type():
-    assert hasattr(titan::DataType, "type")
+def test_titan_datatype_has_type():
+    assert hasattr(titan_DataType, "type")
     descriptor = None
-    for klass in titan::DataType.__mro__:
+    for klass in titan_DataType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -109,23 +109,23 @@ def test_titan::datatype_has_type():
 
 
 
-def test_titan::reference_is_not_abstract():
-    assert not inspect.isabstract(titan::Reference)
+def test_titan_reference_is_not_abstract():
+    assert not inspect.isabstract(titan_Reference)
 
 
-def test_titan::reference_constructor_exists():
-    assert callable(titan::Reference.__init__)
+def test_titan_reference_constructor_exists():
+    assert callable(titan_Reference.__init__)
 
 
-def test_titan::reference_constructor_args():
-    sig = inspect.signature(titan::Reference.__init__)
+def test_titan_reference_constructor_args():
+    sig = inspect.signature(titan_Reference.__init__)
     params = list(sig.parameters.keys())
     assert "unique" in params, "Missing parameter 'unique'"
 
-def test_titan::reference_has_unique():
-    assert hasattr(titan::Reference, "unique")
+def test_titan_reference_has_unique():
+    assert hasattr(titan_Reference, "unique")
     descriptor = None
-    for klass in titan::Reference.__mro__:
+    for klass in titan_Reference.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
@@ -147,37 +147,37 @@ def test_datatype_constructor_args():
 
 
 
-def test_titan::singledatatype_is_not_abstract():
-    assert not inspect.isabstract(titan::SingleDataType)
+def test_titan_singledatatype_is_not_abstract():
+    assert not inspect.isabstract(titan_SingleDataType)
 
 
-def test_titan::singledatatype_constructor_exists():
-    assert callable(titan::SingleDataType.__init__)
+def test_titan_singledatatype_constructor_exists():
+    assert callable(titan_SingleDataType.__init__)
 
 
-def test_titan::singledatatype_constructor_args():
-    sig = inspect.signature(titan::SingleDataType.__init__)
+def test_titan_singledatatype_constructor_args():
+    sig = inspect.signature(titan_SingleDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_titan::multidatatype_is_not_abstract():
-    assert not inspect.isabstract(titan::MultiDataType)
+def test_titan_multidatatype_is_not_abstract():
+    assert not inspect.isabstract(titan_MultiDataType)
 
 
-def test_titan::multidatatype_constructor_exists():
-    assert callable(titan::MultiDataType.__init__)
+def test_titan_multidatatype_constructor_exists():
+    assert callable(titan_MultiDataType.__init__)
 
 
-def test_titan::multidatatype_constructor_args():
-    sig = inspect.signature(titan::MultiDataType.__init__)
+def test_titan_multidatatype_constructor_args():
+    sig = inspect.signature(titan_MultiDataType.__init__)
     params = list(sig.parameters.keys())
     assert "unique" in params, "Missing parameter 'unique'"
 
-def test_titan::multidatatype_has_unique():
-    assert hasattr(titan::MultiDataType, "unique")
+def test_titan_multidatatype_has_unique():
+    assert hasattr(titan_MultiDataType, "unique")
     descriptor = None
-    for klass in titan::MultiDataType.__mro__:
+    for klass in titan_MultiDataType.__mro__:
         if "unique" in klass.__dict__:
             descriptor = klass.__dict__["unique"]
             break
@@ -185,23 +185,23 @@ def test_titan::multidatatype_has_unique():
 
 
 
-def test_titan::feature_is_not_abstract():
-    assert not inspect.isabstract(titan::Feature)
+def test_titan_feature_is_not_abstract():
+    assert not inspect.isabstract(titan_Feature)
 
 
-def test_titan::feature_constructor_exists():
-    assert callable(titan::Feature.__init__)
+def test_titan_feature_constructor_exists():
+    assert callable(titan_Feature.__init__)
 
 
-def test_titan::feature_constructor_args():
-    sig = inspect.signature(titan::Feature.__init__)
+def test_titan_feature_constructor_args():
+    sig = inspect.signature(titan_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_titan::feature_has_name():
-    assert hasattr(titan::Feature, "name")
+def test_titan_feature_has_name():
+    assert hasattr(titan_Feature, "name")
     descriptor = None
-    for klass in titan::Feature.__mro__:
+    for klass in titan_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -209,23 +209,23 @@ def test_titan::feature_has_name():
 
 
 
-def test_titan::entity_is_not_abstract():
-    assert not inspect.isabstract(titan::Entity)
+def test_titan_entity_is_not_abstract():
+    assert not inspect.isabstract(titan_Entity)
 
 
-def test_titan::entity_constructor_exists():
-    assert callable(titan::Entity.__init__)
+def test_titan_entity_constructor_exists():
+    assert callable(titan_Entity.__init__)
 
 
-def test_titan::entity_constructor_args():
-    sig = inspect.signature(titan::Entity.__init__)
+def test_titan_entity_constructor_args():
+    sig = inspect.signature(titan_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_titan::entity_has_name():
-    assert hasattr(titan::Entity, "name")
+def test_titan_entity_has_name():
+    assert hasattr(titan_Entity, "name")
     descriptor = None
-    for klass in titan::Entity.__mro__:
+    for klass in titan_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -233,23 +233,23 @@ def test_titan::entity_has_name():
 
 
 
-def test_titan::package_is_not_abstract():
-    assert not inspect.isabstract(titan::Package)
+def test_titan_package_is_not_abstract():
+    assert not inspect.isabstract(titan_Package)
 
 
-def test_titan::package_constructor_exists():
-    assert callable(titan::Package.__init__)
+def test_titan_package_constructor_exists():
+    assert callable(titan_Package.__init__)
 
 
-def test_titan::package_constructor_args():
-    sig = inspect.signature(titan::Package.__init__)
+def test_titan_package_constructor_args():
+    sig = inspect.signature(titan_Package.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_titan::package_has_name():
-    assert hasattr(titan::Package, "name")
+def test_titan_package_has_name():
+    assert hasattr(titan_Package, "name")
     descriptor = None
-    for klass in titan::Package.__mro__:
+    for klass in titan_Package.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -257,55 +257,37 @@ def test_titan::package_has_name():
 
 
 
-def test_titan::module_is_not_abstract():
-    assert not inspect.isabstract(titan::Module)
+def test_titan_module_is_not_abstract():
+    assert not inspect.isabstract(titan_Module)
 
 
-def test_titan::module_constructor_exists():
-    assert callable(titan::Module.__init__)
+def test_titan_module_constructor_exists():
+    assert callable(titan_Module.__init__)
 
 
-def test_titan::module_constructor_args():
-    sig = inspect.signature(titan::Module.__init__)
+def test_titan_module_constructor_args():
+    sig = inspect.signature(titan_Module.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_titan::module_has_type():
-    assert hasattr(titan::Module, "type")
+def test_titan_module_has_name():
+    assert hasattr(titan_Module, "name")
     descriptor = None
-    for klass in titan::Module.__mro__:
+    for klass in titan_Module.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_titan_module_has_type():
+    assert hasattr(titan_Module, "type")
+    descriptor = None
+    for klass in titan_Module.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
-
-def test_titan::module_has_name():
-    assert hasattr(titan::Module, "name")
-    descriptor = None
-    for klass in titan::Module.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datatypes_exists():
-    # Check that the Enumeration exists
-    assert DataTypes is not None
-
-def test_datatypes_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DataTypes]
-    expected_literals = [
-        "String",
-        "Boolean",
-        "Long",
-        "Integer",
-        "Double",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DataTypes"
 
 def test_internaldsltype_exists():
     # Check that the Enumeration exists
@@ -320,6 +302,24 @@ def test_internaldsltype_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in InternalDSLType"
+
+def test_datatypes_exists():
+    # Check that the Enumeration exists
+    assert DataTypes is not None
+
+def test_datatypes_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DataTypes]
+    expected_literals = [
+        "Double",
+        "Long",
+        "Integer",
+        "String",
+        "Boolean",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DataTypes"
 
 
 # =============================================================================
@@ -336,56 +336,56 @@ safe_text = st.text(
 Reference_strategy = st.builds(
     Reference,
 )
-titan::SingleReference_strategy = st.builds(
-    titan::SingleReference,
+titan_SingleReference_strategy = st.builds(
+    titan_SingleReference,
 )
-titan::MultiReference_strategy = st.builds(
-    titan::MultiReference,
+titan_MultiReference_strategy = st.builds(
+    titan_MultiReference,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-titan::DataType_strategy = st.builds(
-    titan::DataType,
+titan_DataType_strategy = st.builds(
+    titan_DataType,
     type=
         safe_text
 )
-titan::Reference_strategy = st.builds(
-    titan::Reference,
+titan_Reference_strategy = st.builds(
+    titan_Reference,
     unique=
         st.booleans()
 )
 DataType_strategy = st.builds(
     DataType,
 )
-titan::SingleDataType_strategy = st.builds(
-    titan::SingleDataType,
+titan_SingleDataType_strategy = st.builds(
+    titan_SingleDataType,
 )
-titan::MultiDataType_strategy = st.builds(
-    titan::MultiDataType,
+titan_MultiDataType_strategy = st.builds(
+    titan_MultiDataType,
     unique=
         st.booleans()
 )
-titan::Feature_strategy = st.builds(
-    titan::Feature,
+titan_Feature_strategy = st.builds(
+    titan_Feature,
     name=
         safe_text
 )
-titan::Entity_strategy = st.builds(
-    titan::Entity,
+titan_Entity_strategy = st.builds(
+    titan_Entity,
     name=
         safe_text
 )
-titan::Package_strategy = st.builds(
-    titan::Package,
+titan_Package_strategy = st.builds(
+    titan_Package,
     name=
         safe_text
 )
-titan::Module_strategy = st.builds(
-    titan::Module,
-    type=
+titan_Module_strategy = st.builds(
+    titan_Module,
+    name=
         safe_text,
-    name=
+    type=
         safe_text
 )
 
@@ -394,49 +394,43 @@ titan::Module_strategy = st.builds(
 def test_reference_instantiation(instance):
     assert isinstance(instance, Reference)
 
-@given(instance=titan::SingleReference_strategy)
+@given(instance=titan_SingleReference_strategy)
 @settings(max_examples=50)
-def test_titan::singlereference_instantiation(instance):
-    assert isinstance(instance, titan::SingleReference)
+def test_titan_singlereference_instantiation(instance):
+    assert isinstance(instance, titan_SingleReference)
 
-@given(instance=titan::MultiReference_strategy)
+@given(instance=titan_MultiReference_strategy)
 @settings(max_examples=50)
-def test_titan::multireference_instantiation(instance):
-    assert isinstance(instance, titan::MultiReference)
+def test_titan_multireference_instantiation(instance):
+    assert isinstance(instance, titan_MultiReference)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=titan::DataType_strategy)
+@given(instance=titan_DataType_strategy)
 @settings(max_examples=50)
-def test_titan::datatype_instantiation(instance):
-    assert isinstance(instance, titan::DataType)
-
-@given(instance=titan::DataType_strategy)
-def test_titan::datatype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_titan_datatype_instantiation(instance):
+    assert isinstance(instance, titan_DataType)
 
 
-@given(instance=titan::DataType_strategy)
-def test_titan::datatype_type_setter(instance):
+
+@given(instance=titan_DataType_strategy)
+def test_titan_datatype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=titan::Reference_strategy)
+@given(instance=titan_Reference_strategy)
 @settings(max_examples=50)
-def test_titan::reference_instantiation(instance):
-    assert isinstance(instance, titan::Reference)
-
-@given(instance=titan::Reference_strategy)
-def test_titan::reference_unique_type(instance):
-    assert isinstance(instance.unique, bool)
+def test_titan_reference_instantiation(instance):
+    assert isinstance(instance, titan_Reference)
 
 
-@given(instance=titan::Reference_strategy)
-def test_titan::reference_unique_setter(instance):
+
+@given(instance=titan_Reference_strategy)
+def test_titan_reference_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
@@ -446,98 +440,80 @@ def test_titan::reference_unique_setter(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=titan::SingleDataType_strategy)
+@given(instance=titan_SingleDataType_strategy)
 @settings(max_examples=50)
-def test_titan::singledatatype_instantiation(instance):
-    assert isinstance(instance, titan::SingleDataType)
+def test_titan_singledatatype_instantiation(instance):
+    assert isinstance(instance, titan_SingleDataType)
 
-@given(instance=titan::MultiDataType_strategy)
+@given(instance=titan_MultiDataType_strategy)
 @settings(max_examples=50)
-def test_titan::multidatatype_instantiation(instance):
-    assert isinstance(instance, titan::MultiDataType)
-
-@given(instance=titan::MultiDataType_strategy)
-def test_titan::multidatatype_unique_type(instance):
-    assert isinstance(instance.unique, bool)
+def test_titan_multidatatype_instantiation(instance):
+    assert isinstance(instance, titan_MultiDataType)
 
 
-@given(instance=titan::MultiDataType_strategy)
-def test_titan::multidatatype_unique_setter(instance):
+
+@given(instance=titan_MultiDataType_strategy)
+def test_titan_multidatatype_unique_setter(instance):
     original = instance.unique
     instance.unique = original
     assert instance.unique == original
 
-@given(instance=titan::Feature_strategy)
+@given(instance=titan_Feature_strategy)
 @settings(max_examples=50)
-def test_titan::feature_instantiation(instance):
-    assert isinstance(instance, titan::Feature)
-
-@given(instance=titan::Feature_strategy)
-def test_titan::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_titan_feature_instantiation(instance):
+    assert isinstance(instance, titan_Feature)
 
 
-@given(instance=titan::Feature_strategy)
-def test_titan::feature_name_setter(instance):
+
+@given(instance=titan_Feature_strategy)
+def test_titan_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=titan::Entity_strategy)
+@given(instance=titan_Entity_strategy)
 @settings(max_examples=50)
-def test_titan::entity_instantiation(instance):
-    assert isinstance(instance, titan::Entity)
-
-@given(instance=titan::Entity_strategy)
-def test_titan::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_titan_entity_instantiation(instance):
+    assert isinstance(instance, titan_Entity)
 
 
-@given(instance=titan::Entity_strategy)
-def test_titan::entity_name_setter(instance):
+
+@given(instance=titan_Entity_strategy)
+def test_titan_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=titan::Package_strategy)
+@given(instance=titan_Package_strategy)
 @settings(max_examples=50)
-def test_titan::package_instantiation(instance):
-    assert isinstance(instance, titan::Package)
-
-@given(instance=titan::Package_strategy)
-def test_titan::package_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_titan_package_instantiation(instance):
+    assert isinstance(instance, titan_Package)
 
 
-@given(instance=titan::Package_strategy)
-def test_titan::package_name_setter(instance):
+
+@given(instance=titan_Package_strategy)
+def test_titan_package_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=titan::Module_strategy)
+@given(instance=titan_Module_strategy)
 @settings(max_examples=50)
-def test_titan::module_instantiation(instance):
-    assert isinstance(instance, titan::Module)
-
-@given(instance=titan::Module_strategy)
-def test_titan::module_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_titan_module_instantiation(instance):
+    assert isinstance(instance, titan_Module)
 
 
-@given(instance=titan::Module_strategy)
-def test_titan::module_type_setter(instance):
+
+@given(instance=titan_Module_strategy)
+def test_titan_module_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=titan_Module_strategy)
+def test_titan_module_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
-
-@given(instance=titan::Module_strategy)
-def test_titan::module_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=titan::Module_strategy)
-def test_titan::module_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original

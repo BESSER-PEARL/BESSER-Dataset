@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    euml::Relations,
+from python_code import (
+    euml_Relations,
     NamedElement,
-    euml::Attribute,
-    euml::Operation,
-    euml::Class,
-    euml::Package,
-    euml::NamedElement,
+    euml_Operation,
+    euml_Class,
+    euml_Attribute,
+    euml_Package,
+    euml_NamedElement,
     Relations,
-    euml::Realization,
-    euml::Dependecy,
-    euml::Generalization,
+    euml_Realization,
+    euml_Dependecy,
+    euml_Generalization,
 )
 
 # =============================================================================
@@ -25,16 +25,16 @@ from classes import (
 
 
 
-def test_euml::relations_is_not_abstract():
-    assert not inspect.isabstract(euml::Relations)
+def test_euml_relations_is_not_abstract():
+    assert not inspect.isabstract(euml_Relations)
 
 
-def test_euml::relations_constructor_exists():
-    assert callable(euml::Relations.__init__)
+def test_euml_relations_constructor_exists():
+    assert callable(euml_Relations.__init__)
 
 
-def test_euml::relations_constructor_args():
-    sig = inspect.signature(euml::Relations.__init__)
+def test_euml_relations_constructor_args():
+    sig = inspect.signature(euml_Relations.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -53,79 +53,79 @@ def test_namedelement_constructor_args():
 
 
 
-def test_euml::attribute_is_not_abstract():
-    assert not inspect.isabstract(euml::Attribute)
+def test_euml_operation_is_not_abstract():
+    assert not inspect.isabstract(euml_Operation)
 
 
-def test_euml::attribute_constructor_exists():
-    assert callable(euml::Attribute.__init__)
+def test_euml_operation_constructor_exists():
+    assert callable(euml_Operation.__init__)
 
 
-def test_euml::attribute_constructor_args():
-    sig = inspect.signature(euml::Attribute.__init__)
+def test_euml_operation_constructor_args():
+    sig = inspect.signature(euml_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_euml::operation_is_not_abstract():
-    assert not inspect.isabstract(euml::Operation)
+def test_euml_class_is_not_abstract():
+    assert not inspect.isabstract(euml_Class)
 
 
-def test_euml::operation_constructor_exists():
-    assert callable(euml::Operation.__init__)
+def test_euml_class_constructor_exists():
+    assert callable(euml_Class.__init__)
 
 
-def test_euml::operation_constructor_args():
-    sig = inspect.signature(euml::Operation.__init__)
+def test_euml_class_constructor_args():
+    sig = inspect.signature(euml_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_euml::class_is_not_abstract():
-    assert not inspect.isabstract(euml::Class)
+def test_euml_attribute_is_not_abstract():
+    assert not inspect.isabstract(euml_Attribute)
 
 
-def test_euml::class_constructor_exists():
-    assert callable(euml::Class.__init__)
+def test_euml_attribute_constructor_exists():
+    assert callable(euml_Attribute.__init__)
 
 
-def test_euml::class_constructor_args():
-    sig = inspect.signature(euml::Class.__init__)
+def test_euml_attribute_constructor_args():
+    sig = inspect.signature(euml_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_euml::package_is_not_abstract():
-    assert not inspect.isabstract(euml::Package)
+def test_euml_package_is_not_abstract():
+    assert not inspect.isabstract(euml_Package)
 
 
-def test_euml::package_constructor_exists():
-    assert callable(euml::Package.__init__)
+def test_euml_package_constructor_exists():
+    assert callable(euml_Package.__init__)
 
 
-def test_euml::package_constructor_args():
-    sig = inspect.signature(euml::Package.__init__)
+def test_euml_package_constructor_args():
+    sig = inspect.signature(euml_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_euml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(euml::NamedElement)
+def test_euml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(euml_NamedElement)
 
 
-def test_euml::namedelement_constructor_exists():
-    assert callable(euml::NamedElement.__init__)
+def test_euml_namedelement_constructor_exists():
+    assert callable(euml_NamedElement.__init__)
 
 
-def test_euml::namedelement_constructor_args():
-    sig = inspect.signature(euml::NamedElement.__init__)
+def test_euml_namedelement_constructor_args():
+    sig = inspect.signature(euml_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_euml::namedelement_has_name():
-    assert hasattr(euml::NamedElement, "name")
+def test_euml_namedelement_has_name():
+    assert hasattr(euml_NamedElement, "name")
     descriptor = None
-    for klass in euml::NamedElement.__mro__:
+    for klass in euml_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -147,44 +147,44 @@ def test_relations_constructor_args():
 
 
 
-def test_euml::realization_is_not_abstract():
-    assert not inspect.isabstract(euml::Realization)
+def test_euml_realization_is_not_abstract():
+    assert not inspect.isabstract(euml_Realization)
 
 
-def test_euml::realization_constructor_exists():
-    assert callable(euml::Realization.__init__)
+def test_euml_realization_constructor_exists():
+    assert callable(euml_Realization.__init__)
 
 
-def test_euml::realization_constructor_args():
-    sig = inspect.signature(euml::Realization.__init__)
+def test_euml_realization_constructor_args():
+    sig = inspect.signature(euml_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_euml::dependecy_is_not_abstract():
-    assert not inspect.isabstract(euml::Dependecy)
+def test_euml_dependecy_is_not_abstract():
+    assert not inspect.isabstract(euml_Dependecy)
 
 
-def test_euml::dependecy_constructor_exists():
-    assert callable(euml::Dependecy.__init__)
+def test_euml_dependecy_constructor_exists():
+    assert callable(euml_Dependecy.__init__)
 
 
-def test_euml::dependecy_constructor_args():
-    sig = inspect.signature(euml::Dependecy.__init__)
+def test_euml_dependecy_constructor_args():
+    sig = inspect.signature(euml_Dependecy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_euml::generalization_is_not_abstract():
-    assert not inspect.isabstract(euml::Generalization)
+def test_euml_generalization_is_not_abstract():
+    assert not inspect.isabstract(euml_Generalization)
 
 
-def test_euml::generalization_constructor_exists():
-    assert callable(euml::Generalization.__init__)
+def test_euml_generalization_constructor_exists():
+    assert callable(euml_Generalization.__init__)
 
 
-def test_euml::generalization_constructor_args():
-    sig = inspect.signature(euml::Generalization.__init__)
+def test_euml_generalization_constructor_args():
+    sig = inspect.signature(euml_Generalization.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -199,84 +199,81 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-euml::Relations_strategy = st.builds(
-    euml::Relations,
+euml_Relations_strategy = st.builds(
+    euml_Relations,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-euml::Attribute_strategy = st.builds(
-    euml::Attribute,
+euml_Operation_strategy = st.builds(
+    euml_Operation,
 )
-euml::Operation_strategy = st.builds(
-    euml::Operation,
+euml_Class_strategy = st.builds(
+    euml_Class,
 )
-euml::Class_strategy = st.builds(
-    euml::Class,
+euml_Attribute_strategy = st.builds(
+    euml_Attribute,
 )
-euml::Package_strategy = st.builds(
-    euml::Package,
+euml_Package_strategy = st.builds(
+    euml_Package,
 )
-euml::NamedElement_strategy = st.builds(
-    euml::NamedElement,
+euml_NamedElement_strategy = st.builds(
+    euml_NamedElement,
     name=
         safe_text
 )
 Relations_strategy = st.builds(
     Relations,
 )
-euml::Realization_strategy = st.builds(
-    euml::Realization,
+euml_Realization_strategy = st.builds(
+    euml_Realization,
 )
-euml::Dependecy_strategy = st.builds(
-    euml::Dependecy,
+euml_Dependecy_strategy = st.builds(
+    euml_Dependecy,
 )
-euml::Generalization_strategy = st.builds(
-    euml::Generalization,
+euml_Generalization_strategy = st.builds(
+    euml_Generalization,
 )
 
-@given(instance=euml::Relations_strategy)
+@given(instance=euml_Relations_strategy)
 @settings(max_examples=50)
-def test_euml::relations_instantiation(instance):
-    assert isinstance(instance, euml::Relations)
+def test_euml_relations_instantiation(instance):
+    assert isinstance(instance, euml_Relations)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=euml::Attribute_strategy)
+@given(instance=euml_Operation_strategy)
 @settings(max_examples=50)
-def test_euml::attribute_instantiation(instance):
-    assert isinstance(instance, euml::Attribute)
+def test_euml_operation_instantiation(instance):
+    assert isinstance(instance, euml_Operation)
 
-@given(instance=euml::Operation_strategy)
+@given(instance=euml_Class_strategy)
 @settings(max_examples=50)
-def test_euml::operation_instantiation(instance):
-    assert isinstance(instance, euml::Operation)
+def test_euml_class_instantiation(instance):
+    assert isinstance(instance, euml_Class)
 
-@given(instance=euml::Class_strategy)
+@given(instance=euml_Attribute_strategy)
 @settings(max_examples=50)
-def test_euml::class_instantiation(instance):
-    assert isinstance(instance, euml::Class)
+def test_euml_attribute_instantiation(instance):
+    assert isinstance(instance, euml_Attribute)
 
-@given(instance=euml::Package_strategy)
+@given(instance=euml_Package_strategy)
 @settings(max_examples=50)
-def test_euml::package_instantiation(instance):
-    assert isinstance(instance, euml::Package)
+def test_euml_package_instantiation(instance):
+    assert isinstance(instance, euml_Package)
 
-@given(instance=euml::NamedElement_strategy)
+@given(instance=euml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_euml::namedelement_instantiation(instance):
-    assert isinstance(instance, euml::NamedElement)
-
-@given(instance=euml::NamedElement_strategy)
-def test_euml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_euml_namedelement_instantiation(instance):
+    assert isinstance(instance, euml_NamedElement)
 
 
-@given(instance=euml::NamedElement_strategy)
-def test_euml::namedelement_name_setter(instance):
+
+@given(instance=euml_NamedElement_strategy)
+def test_euml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -286,17 +283,17 @@ def test_euml::namedelement_name_setter(instance):
 def test_relations_instantiation(instance):
     assert isinstance(instance, Relations)
 
-@given(instance=euml::Realization_strategy)
+@given(instance=euml_Realization_strategy)
 @settings(max_examples=50)
-def test_euml::realization_instantiation(instance):
-    assert isinstance(instance, euml::Realization)
+def test_euml_realization_instantiation(instance):
+    assert isinstance(instance, euml_Realization)
 
-@given(instance=euml::Dependecy_strategy)
+@given(instance=euml_Dependecy_strategy)
 @settings(max_examples=50)
-def test_euml::dependecy_instantiation(instance):
-    assert isinstance(instance, euml::Dependecy)
+def test_euml_dependecy_instantiation(instance):
+    assert isinstance(instance, euml_Dependecy)
 
-@given(instance=euml::Generalization_strategy)
+@given(instance=euml_Generalization_strategy)
 @settings(max_examples=50)
-def test_euml::generalization_instantiation(instance):
-    assert isinstance(instance, euml::Generalization)
+def test_euml_generalization_instantiation(instance):
+    assert isinstance(instance, euml_Generalization)

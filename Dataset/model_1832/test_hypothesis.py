@@ -3,57 +3,57 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    jointPackage::BibTeX2DocBook::TrgPara,
+from python_code import (
+    jointPackage_BibTeX2DocBook_TrgPara,
     SrcAuthor,
-    jointPackage::BibTeX2DocBook::SrcBibTeXEntry,
-    jointPackage::BibTeX2DocBook::SrcAuthor,
+    jointPackage_BibTeX2DocBook_SrcBibTeXEntry,
+    jointPackage_BibTeX2DocBook_SrcAuthor,
     TrgSect2,
     TrgSection,
-    jointPackage::BibTeX2DocBook::TrgSect2,
-    jointPackage::BibTeX2DocBook::TrgSect1,
+    jointPackage_BibTeX2DocBook_TrgSect2,
+    jointPackage_BibTeX2DocBook_TrgSect1,
     TrgPara,
     TrgSect1,
     TrgTitledElement,
-    jointPackage::BibTeX2DocBook::TrgSection,
-    jointPackage::BibTeX2DocBook::TrgArticle,
-    jointPackage::BibTeX2DocBook::TrgTitledElement,
+    jointPackage_BibTeX2DocBook_TrgSection,
+    jointPackage_BibTeX2DocBook_TrgArticle,
+    jointPackage_BibTeX2DocBook_TrgTitledElement,
     TrgArticle,
-    jointPackage::BibTeX2DocBook::TrgBook,
+    jointPackage_BibTeX2DocBook_TrgBook,
     TrgBook,
-    jointPackage::BibTeX2DocBook::TrgDocBook,
+    jointPackage_BibTeX2DocBook_TrgDocBook,
     SrcTitledEntry,
     SrcDatedEntry,
     SrcAuthoredEntry,
-    jointPackage::BibTeX2DocBook::SrcThesisEntry,
-    jointPackage::BibTeX2DocBook::SrcArticle,
+    jointPackage_BibTeX2DocBook_SrcThesisEntry,
+    jointPackage_BibTeX2DocBook_SrcArticle,
     SrcBibTeXEntry,
-    jointPackage::BibTeX2DocBook::SrcTitledEntry,
-    jointPackage::BibTeX2DocBook::SrcDatedEntry,
-    jointPackage::BibTeX2DocBook::SrcAuthoredEntry,
-    jointPackage::BibTeX2DocBook::SrcBookTitledEntry,
-    jointPackage::BibTeX2DocBook::SrcMisc,
-    jointPackage::BibTeX2DocBook::SrcBibTeXFile,
+    jointPackage_BibTeX2DocBook_SrcAuthoredEntry,
+    jointPackage_BibTeX2DocBook_SrcDatedEntry,
+    jointPackage_BibTeX2DocBook_SrcMisc,
+    jointPackage_BibTeX2DocBook_SrcBookTitledEntry,
+    jointPackage_BibTeX2DocBook_SrcTitledEntry,
+    jointPackage_BibTeX2DocBook_SrcBibTeXFile,
     TrgDocBook,
     SrcMasterThesis,
-    jointPackage::BibTeX2DocBook::JointMM,
+    jointPackage_BibTeX2DocBook_JointMM,
     SrcThesisEntry,
-    jointPackage::BibTeX2DocBook::SrcMasterThesis,
-    jointPackage::BibTeX2DocBook::SrcPhDThesis,
+    jointPackage_BibTeX2DocBook_SrcMasterThesis,
+    jointPackage_BibTeX2DocBook_SrcPhDThesis,
     SrcBook,
-    jointPackage::BibTeX2DocBook::SrcInBook,
-    jointPackage::BibTeX2DocBook::SrcBook,
-    jointPackage::BibTeX2DocBook::SrcBooklet,
+    jointPackage_BibTeX2DocBook_SrcInBook,
+    jointPackage_BibTeX2DocBook_SrcBook,
+    jointPackage_BibTeX2DocBook_SrcBooklet,
     SrcBookTitledEntry,
-    jointPackage::BibTeX2DocBook::SrcInCollection,
+    jointPackage_BibTeX2DocBook_SrcInCollection,
     SrcProceedings,
-    jointPackage::BibTeX2DocBook::SrcInProceedings,
-    jointPackage::BibTeX2DocBook::SrcProceedings,
-    jointPackage::BibTeX2DocBook::SrcManual,
-    jointPackage::BibTeX2DocBook::SrcUnpublished,
-    jointPackage::BibTeX2DocBook::SrcTechReport,
+    jointPackage_BibTeX2DocBook_SrcInProceedings,
+    jointPackage_BibTeX2DocBook_SrcProceedings,
+    jointPackage_BibTeX2DocBook_SrcManual,
+    jointPackage_BibTeX2DocBook_SrcUnpublished,
+    jointPackage_BibTeX2DocBook_SrcTechReport,
 )
 
 # =============================================================================
@@ -62,23 +62,23 @@ from classes import (
 
 
 
-def test_jointpackage::bibtex2docbook::trgpara_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgPara)
+def test_jointpackage_bibtex2docbook_trgpara_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgPara)
 
 
-def test_jointpackage::bibtex2docbook::trgpara_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgPara.__init__)
+def test_jointpackage_bibtex2docbook_trgpara_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgPara.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgpara_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgPara.__init__)
+def test_jointpackage_bibtex2docbook_trgpara_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgPara.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_jointpackage::bibtex2docbook::trgpara_has_content():
-    assert hasattr(jointPackage::BibTeX2DocBook::TrgPara, "content")
+def test_jointpackage_bibtex2docbook_trgpara_has_content():
+    assert hasattr(jointPackage_BibTeX2DocBook_TrgPara, "content")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::TrgPara.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_TrgPara.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -100,23 +100,23 @@ def test_srcauthor_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srcbibtexentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcBibTeXEntry)
+def test_jointpackage_bibtex2docbook_srcbibtexentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcBibTeXEntry)
 
 
-def test_jointpackage::bibtex2docbook::srcbibtexentry_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcBibTeXEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcbibtexentry_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcBibTeXEntry.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcbibtexentry_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcBibTeXEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcbibtexentry_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcBibTeXEntry.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_jointpackage::bibtex2docbook::srcbibtexentry_has_id():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcBibTeXEntry, "id")
+def test_jointpackage_bibtex2docbook_srcbibtexentry_has_id():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcBibTeXEntry, "id")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcBibTeXEntry.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcBibTeXEntry.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -124,23 +124,23 @@ def test_jointpackage::bibtex2docbook::srcbibtexentry_has_id():
 
 
 
-def test_jointpackage::bibtex2docbook::srcauthor_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcAuthor)
+def test_jointpackage_bibtex2docbook_srcauthor_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcAuthor)
 
 
-def test_jointpackage::bibtex2docbook::srcauthor_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcAuthor.__init__)
+def test_jointpackage_bibtex2docbook_srcauthor_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcAuthor.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcauthor_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcAuthor.__init__)
+def test_jointpackage_bibtex2docbook_srcauthor_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcAuthor.__init__)
     params = list(sig.parameters.keys())
     assert "author" in params, "Missing parameter 'author'"
 
-def test_jointpackage::bibtex2docbook::srcauthor_has_author():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcAuthor, "author")
+def test_jointpackage_bibtex2docbook_srcauthor_has_author():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcAuthor, "author")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcAuthor.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcAuthor.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
@@ -176,30 +176,30 @@ def test_trgsection_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::trgsect2_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgSect2)
+def test_jointpackage_bibtex2docbook_trgsect2_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgSect2)
 
 
-def test_jointpackage::bibtex2docbook::trgsect2_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgSect2.__init__)
+def test_jointpackage_bibtex2docbook_trgsect2_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgSect2.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgsect2_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgSect2.__init__)
+def test_jointpackage_bibtex2docbook_trgsect2_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgSect2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::trgsect1_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgSect1)
+def test_jointpackage_bibtex2docbook_trgsect1_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgSect1)
 
 
-def test_jointpackage::bibtex2docbook::trgsect1_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgSect1.__init__)
+def test_jointpackage_bibtex2docbook_trgsect1_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgSect1.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgsect1_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgSect1.__init__)
+def test_jointpackage_bibtex2docbook_trgsect1_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgSect1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -246,51 +246,51 @@ def test_trgtitledelement_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::trgsection_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgSection)
+def test_jointpackage_bibtex2docbook_trgsection_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgSection)
 
 
-def test_jointpackage::bibtex2docbook::trgsection_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgSection.__init__)
+def test_jointpackage_bibtex2docbook_trgsection_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgSection.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgsection_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgSection.__init__)
+def test_jointpackage_bibtex2docbook_trgsection_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::trgarticle_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgArticle)
+def test_jointpackage_bibtex2docbook_trgarticle_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgArticle)
 
 
-def test_jointpackage::bibtex2docbook::trgarticle_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgArticle.__init__)
+def test_jointpackage_bibtex2docbook_trgarticle_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgArticle.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgarticle_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgArticle.__init__)
+def test_jointpackage_bibtex2docbook_trgarticle_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgArticle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::trgtitledelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgTitledElement)
+def test_jointpackage_bibtex2docbook_trgtitledelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgTitledElement)
 
 
-def test_jointpackage::bibtex2docbook::trgtitledelement_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgTitledElement.__init__)
+def test_jointpackage_bibtex2docbook_trgtitledelement_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgTitledElement.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgtitledelement_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgTitledElement.__init__)
+def test_jointpackage_bibtex2docbook_trgtitledelement_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgTitledElement.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_jointpackage::bibtex2docbook::trgtitledelement_has_title():
-    assert hasattr(jointPackage::BibTeX2DocBook::TrgTitledElement, "title")
+def test_jointpackage_bibtex2docbook_trgtitledelement_has_title():
+    assert hasattr(jointPackage_BibTeX2DocBook_TrgTitledElement, "title")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::TrgTitledElement.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_TrgTitledElement.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -312,16 +312,16 @@ def test_trgarticle_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::trgbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgBook)
+def test_jointpackage_bibtex2docbook_trgbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgBook)
 
 
-def test_jointpackage::bibtex2docbook::trgbook_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgBook.__init__)
+def test_jointpackage_bibtex2docbook_trgbook_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgBook.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgbook_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgBook.__init__)
+def test_jointpackage_bibtex2docbook_trgbook_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgBook.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -340,16 +340,16 @@ def test_trgbook_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::trgdocbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::TrgDocBook)
+def test_jointpackage_bibtex2docbook_trgdocbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_TrgDocBook)
 
 
-def test_jointpackage::bibtex2docbook::trgdocbook_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::TrgDocBook.__init__)
+def test_jointpackage_bibtex2docbook_trgdocbook_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_TrgDocBook.__init__)
 
 
-def test_jointpackage::bibtex2docbook::trgdocbook_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::TrgDocBook.__init__)
+def test_jointpackage_bibtex2docbook_trgdocbook_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_TrgDocBook.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -396,23 +396,23 @@ def test_srcauthoredentry_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srcthesisentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcThesisEntry)
+def test_jointpackage_bibtex2docbook_srcthesisentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcThesisEntry)
 
 
-def test_jointpackage::bibtex2docbook::srcthesisentry_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcThesisEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcthesisentry_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcThesisEntry.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcthesisentry_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcThesisEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcthesisentry_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcThesisEntry.__init__)
     params = list(sig.parameters.keys())
     assert "school" in params, "Missing parameter 'school'"
 
-def test_jointpackage::bibtex2docbook::srcthesisentry_has_school():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcThesisEntry, "school")
+def test_jointpackage_bibtex2docbook_srcthesisentry_has_school():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcThesisEntry, "school")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcThesisEntry.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcThesisEntry.__mro__:
         if "school" in klass.__dict__:
             descriptor = klass.__dict__["school"]
             break
@@ -420,23 +420,23 @@ def test_jointpackage::bibtex2docbook::srcthesisentry_has_school():
 
 
 
-def test_jointpackage::bibtex2docbook::srcarticle_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcArticle)
+def test_jointpackage_bibtex2docbook_srcarticle_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcArticle)
 
 
-def test_jointpackage::bibtex2docbook::srcarticle_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcArticle.__init__)
+def test_jointpackage_bibtex2docbook_srcarticle_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcArticle.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcarticle_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcArticle.__init__)
+def test_jointpackage_bibtex2docbook_srcarticle_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcArticle.__init__)
     params = list(sig.parameters.keys())
     assert "journal" in params, "Missing parameter 'journal'"
 
-def test_jointpackage::bibtex2docbook::srcarticle_has_journal():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcArticle, "journal")
+def test_jointpackage_bibtex2docbook_srcarticle_has_journal():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcArticle, "journal")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcArticle.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcArticle.__mro__:
         if "journal" in klass.__dict__:
             descriptor = klass.__dict__["journal"]
             break
@@ -458,47 +458,37 @@ def test_srcbibtexentry_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srctitledentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcTitledEntry)
+def test_jointpackage_bibtex2docbook_srcauthoredentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcAuthoredEntry)
 
 
-def test_jointpackage::bibtex2docbook::srctitledentry_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcTitledEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcauthoredentry_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcAuthoredEntry.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srctitledentry_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcTitledEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcauthoredentry_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcAuthoredEntry.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-
-def test_jointpackage::bibtex2docbook::srctitledentry_has_title():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcTitledEntry, "title")
-    descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcTitledEntry.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_jointpackage::bibtex2docbook::srcdatedentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcDatedEntry)
+def test_jointpackage_bibtex2docbook_srcdatedentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcDatedEntry)
 
 
-def test_jointpackage::bibtex2docbook::srcdatedentry_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcDatedEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcdatedentry_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcDatedEntry.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcdatedentry_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcDatedEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcdatedentry_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcDatedEntry.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
 
-def test_jointpackage::bibtex2docbook::srcdatedentry_has_year():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcDatedEntry, "year")
+def test_jointpackage_bibtex2docbook_srcdatedentry_has_year():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcDatedEntry, "year")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcDatedEntry.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcDatedEntry.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
@@ -506,37 +496,37 @@ def test_jointpackage::bibtex2docbook::srcdatedentry_has_year():
 
 
 
-def test_jointpackage::bibtex2docbook::srcauthoredentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcAuthoredEntry)
+def test_jointpackage_bibtex2docbook_srcmisc_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcMisc)
 
 
-def test_jointpackage::bibtex2docbook::srcauthoredentry_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcAuthoredEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcmisc_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcMisc.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcauthoredentry_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcAuthoredEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcmisc_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcMisc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcBookTitledEntry)
+def test_jointpackage_bibtex2docbook_srcbooktitledentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcBookTitledEntry)
 
 
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcBookTitledEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcbooktitledentry_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcBookTitledEntry.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcBookTitledEntry.__init__)
+def test_jointpackage_bibtex2docbook_srcbooktitledentry_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcBookTitledEntry.__init__)
     params = list(sig.parameters.keys())
     assert "booktitle" in params, "Missing parameter 'booktitle'"
 
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_has_booktitle():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcBookTitledEntry, "booktitle")
+def test_jointpackage_bibtex2docbook_srcbooktitledentry_has_booktitle():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcBookTitledEntry, "booktitle")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcBookTitledEntry.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcBookTitledEntry.__mro__:
         if "booktitle" in klass.__dict__:
             descriptor = klass.__dict__["booktitle"]
             break
@@ -544,30 +534,40 @@ def test_jointpackage::bibtex2docbook::srcbooktitledentry_has_booktitle():
 
 
 
-def test_jointpackage::bibtex2docbook::srcmisc_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcMisc)
+def test_jointpackage_bibtex2docbook_srctitledentry_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcTitledEntry)
 
 
-def test_jointpackage::bibtex2docbook::srcmisc_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcMisc.__init__)
+def test_jointpackage_bibtex2docbook_srctitledentry_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcTitledEntry.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcmisc_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcMisc.__init__)
+def test_jointpackage_bibtex2docbook_srctitledentry_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcTitledEntry.__init__)
     params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_jointpackage_bibtex2docbook_srctitledentry_has_title():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcTitledEntry, "title")
+    descriptor = None
+    for klass in jointPackage_BibTeX2DocBook_SrcTitledEntry.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_jointpackage::bibtex2docbook::srcbibtexfile_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcBibTeXFile)
+def test_jointpackage_bibtex2docbook_srcbibtexfile_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcBibTeXFile)
 
 
-def test_jointpackage::bibtex2docbook::srcbibtexfile_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcBibTeXFile.__init__)
+def test_jointpackage_bibtex2docbook_srcbibtexfile_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcBibTeXFile.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcbibtexfile_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcBibTeXFile.__init__)
+def test_jointpackage_bibtex2docbook_srcbibtexfile_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcBibTeXFile.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -600,16 +600,16 @@ def test_srcmasterthesis_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::jointmm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::JointMM)
+def test_jointpackage_bibtex2docbook_jointmm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_JointMM)
 
 
-def test_jointpackage::bibtex2docbook::jointmm_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::JointMM.__init__)
+def test_jointpackage_bibtex2docbook_jointmm_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_JointMM.__init__)
 
 
-def test_jointpackage::bibtex2docbook::jointmm_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::JointMM.__init__)
+def test_jointpackage_bibtex2docbook_jointmm_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_JointMM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -628,30 +628,30 @@ def test_srcthesisentry_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srcmasterthesis_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcMasterThesis)
+def test_jointpackage_bibtex2docbook_srcmasterthesis_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcMasterThesis)
 
 
-def test_jointpackage::bibtex2docbook::srcmasterthesis_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcMasterThesis.__init__)
+def test_jointpackage_bibtex2docbook_srcmasterthesis_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcMasterThesis.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcmasterthesis_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcMasterThesis.__init__)
+def test_jointpackage_bibtex2docbook_srcmasterthesis_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcMasterThesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::srcphdthesis_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcPhDThesis)
+def test_jointpackage_bibtex2docbook_srcphdthesis_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcPhDThesis)
 
 
-def test_jointpackage::bibtex2docbook::srcphdthesis_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcPhDThesis.__init__)
+def test_jointpackage_bibtex2docbook_srcphdthesis_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcPhDThesis.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcphdthesis_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcPhDThesis.__init__)
+def test_jointpackage_bibtex2docbook_srcphdthesis_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcPhDThesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -670,23 +670,23 @@ def test_srcbook_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srcinbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcInBook)
+def test_jointpackage_bibtex2docbook_srcinbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcInBook)
 
 
-def test_jointpackage::bibtex2docbook::srcinbook_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcInBook.__init__)
+def test_jointpackage_bibtex2docbook_srcinbook_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcInBook.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcinbook_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcInBook.__init__)
+def test_jointpackage_bibtex2docbook_srcinbook_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcInBook.__init__)
     params = list(sig.parameters.keys())
     assert "chapter" in params, "Missing parameter 'chapter'"
 
-def test_jointpackage::bibtex2docbook::srcinbook_has_chapter():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcInBook, "chapter")
+def test_jointpackage_bibtex2docbook_srcinbook_has_chapter():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcInBook, "chapter")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcInBook.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcInBook.__mro__:
         if "chapter" in klass.__dict__:
             descriptor = klass.__dict__["chapter"]
             break
@@ -694,23 +694,23 @@ def test_jointpackage::bibtex2docbook::srcinbook_has_chapter():
 
 
 
-def test_jointpackage::bibtex2docbook::srcbook_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcBook)
+def test_jointpackage_bibtex2docbook_srcbook_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcBook)
 
 
-def test_jointpackage::bibtex2docbook::srcbook_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcBook.__init__)
+def test_jointpackage_bibtex2docbook_srcbook_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcBook.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcbook_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcBook.__init__)
+def test_jointpackage_bibtex2docbook_srcbook_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcBook.__init__)
     params = list(sig.parameters.keys())
     assert "publisher" in params, "Missing parameter 'publisher'"
 
-def test_jointpackage::bibtex2docbook::srcbook_has_publisher():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcBook, "publisher")
+def test_jointpackage_bibtex2docbook_srcbook_has_publisher():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcBook, "publisher")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcBook.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcBook.__mro__:
         if "publisher" in klass.__dict__:
             descriptor = klass.__dict__["publisher"]
             break
@@ -718,16 +718,16 @@ def test_jointpackage::bibtex2docbook::srcbook_has_publisher():
 
 
 
-def test_jointpackage::bibtex2docbook::srcbooklet_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcBooklet)
+def test_jointpackage_bibtex2docbook_srcbooklet_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcBooklet)
 
 
-def test_jointpackage::bibtex2docbook::srcbooklet_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcBooklet.__init__)
+def test_jointpackage_bibtex2docbook_srcbooklet_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcBooklet.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcbooklet_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcBooklet.__init__)
+def test_jointpackage_bibtex2docbook_srcbooklet_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcBooklet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -746,16 +746,16 @@ def test_srcbooktitledentry_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srcincollection_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcInCollection)
+def test_jointpackage_bibtex2docbook_srcincollection_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcInCollection)
 
 
-def test_jointpackage::bibtex2docbook::srcincollection_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcInCollection.__init__)
+def test_jointpackage_bibtex2docbook_srcincollection_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcInCollection.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcincollection_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcInCollection.__init__)
+def test_jointpackage_bibtex2docbook_srcincollection_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcInCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -774,65 +774,65 @@ def test_srcproceedings_constructor_args():
 
 
 
-def test_jointpackage::bibtex2docbook::srcinproceedings_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcInProceedings)
+def test_jointpackage_bibtex2docbook_srcinproceedings_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcInProceedings)
 
 
-def test_jointpackage::bibtex2docbook::srcinproceedings_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcInProceedings.__init__)
+def test_jointpackage_bibtex2docbook_srcinproceedings_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcInProceedings.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcinproceedings_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcInProceedings.__init__)
+def test_jointpackage_bibtex2docbook_srcinproceedings_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcInProceedings.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::srcproceedings_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcProceedings)
+def test_jointpackage_bibtex2docbook_srcproceedings_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcProceedings)
 
 
-def test_jointpackage::bibtex2docbook::srcproceedings_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcProceedings.__init__)
+def test_jointpackage_bibtex2docbook_srcproceedings_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcProceedings.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcproceedings_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcProceedings.__init__)
+def test_jointpackage_bibtex2docbook_srcproceedings_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcProceedings.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::srcmanual_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcManual)
+def test_jointpackage_bibtex2docbook_srcmanual_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcManual)
 
 
-def test_jointpackage::bibtex2docbook::srcmanual_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcManual.__init__)
+def test_jointpackage_bibtex2docbook_srcmanual_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcManual.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcmanual_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcManual.__init__)
+def test_jointpackage_bibtex2docbook_srcmanual_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcManual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::bibtex2docbook::srcunpublished_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcUnpublished)
+def test_jointpackage_bibtex2docbook_srcunpublished_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcUnpublished)
 
 
-def test_jointpackage::bibtex2docbook::srcunpublished_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcUnpublished.__init__)
+def test_jointpackage_bibtex2docbook_srcunpublished_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcUnpublished.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srcunpublished_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcUnpublished.__init__)
+def test_jointpackage_bibtex2docbook_srcunpublished_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcUnpublished.__init__)
     params = list(sig.parameters.keys())
     assert "note" in params, "Missing parameter 'note'"
 
-def test_jointpackage::bibtex2docbook::srcunpublished_has_note():
-    assert hasattr(jointPackage::BibTeX2DocBook::SrcUnpublished, "note")
+def test_jointpackage_bibtex2docbook_srcunpublished_has_note():
+    assert hasattr(jointPackage_BibTeX2DocBook_SrcUnpublished, "note")
     descriptor = None
-    for klass in jointPackage::BibTeX2DocBook::SrcUnpublished.__mro__:
+    for klass in jointPackage_BibTeX2DocBook_SrcUnpublished.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
@@ -840,16 +840,16 @@ def test_jointpackage::bibtex2docbook::srcunpublished_has_note():
 
 
 
-def test_jointpackage::bibtex2docbook::srctechreport_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::BibTeX2DocBook::SrcTechReport)
+def test_jointpackage_bibtex2docbook_srctechreport_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_BibTeX2DocBook_SrcTechReport)
 
 
-def test_jointpackage::bibtex2docbook::srctechreport_constructor_exists():
-    assert callable(jointPackage::BibTeX2DocBook::SrcTechReport.__init__)
+def test_jointpackage_bibtex2docbook_srctechreport_constructor_exists():
+    assert callable(jointPackage_BibTeX2DocBook_SrcTechReport.__init__)
 
 
-def test_jointpackage::bibtex2docbook::srctechreport_constructor_args():
-    sig = inspect.signature(jointPackage::BibTeX2DocBook::SrcTechReport.__init__)
+def test_jointpackage_bibtex2docbook_srctechreport_constructor_args():
+    sig = inspect.signature(jointPackage_BibTeX2DocBook_SrcTechReport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -864,21 +864,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-jointPackage::BibTeX2DocBook::TrgPara_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgPara,
+jointPackage_BibTeX2DocBook_TrgPara_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgPara,
     content=
         safe_text
 )
 SrcAuthor_strategy = st.builds(
     SrcAuthor,
 )
-jointPackage::BibTeX2DocBook::SrcBibTeXEntry_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcBibTeXEntry,
+jointPackage_BibTeX2DocBook_SrcBibTeXEntry_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcBibTeXEntry,
     id=
         safe_text
 )
-jointPackage::BibTeX2DocBook::SrcAuthor_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcAuthor,
+jointPackage_BibTeX2DocBook_SrcAuthor_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcAuthor,
     author=
         safe_text
 )
@@ -888,11 +888,11 @@ TrgSect2_strategy = st.builds(
 TrgSection_strategy = st.builds(
     TrgSection,
 )
-jointPackage::BibTeX2DocBook::TrgSect2_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgSect2,
+jointPackage_BibTeX2DocBook_TrgSect2_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgSect2,
 )
-jointPackage::BibTeX2DocBook::TrgSect1_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgSect1,
+jointPackage_BibTeX2DocBook_TrgSect1_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgSect1,
 )
 TrgPara_strategy = st.builds(
     TrgPara,
@@ -903,28 +903,28 @@ TrgSect1_strategy = st.builds(
 TrgTitledElement_strategy = st.builds(
     TrgTitledElement,
 )
-jointPackage::BibTeX2DocBook::TrgSection_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgSection,
+jointPackage_BibTeX2DocBook_TrgSection_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgSection,
 )
-jointPackage::BibTeX2DocBook::TrgArticle_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgArticle,
+jointPackage_BibTeX2DocBook_TrgArticle_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgArticle,
 )
-jointPackage::BibTeX2DocBook::TrgTitledElement_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgTitledElement,
+jointPackage_BibTeX2DocBook_TrgTitledElement_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgTitledElement,
     title=
         safe_text
 )
 TrgArticle_strategy = st.builds(
     TrgArticle,
 )
-jointPackage::BibTeX2DocBook::TrgBook_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgBook,
+jointPackage_BibTeX2DocBook_TrgBook_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgBook,
 )
 TrgBook_strategy = st.builds(
     TrgBook,
 )
-jointPackage::BibTeX2DocBook::TrgDocBook_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::TrgDocBook,
+jointPackage_BibTeX2DocBook_TrgDocBook_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_TrgDocBook,
 )
 SrcTitledEntry_strategy = st.builds(
     SrcTitledEntry,
@@ -935,42 +935,42 @@ SrcDatedEntry_strategy = st.builds(
 SrcAuthoredEntry_strategy = st.builds(
     SrcAuthoredEntry,
 )
-jointPackage::BibTeX2DocBook::SrcThesisEntry_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcThesisEntry,
+jointPackage_BibTeX2DocBook_SrcThesisEntry_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcThesisEntry,
     school=
         safe_text
 )
-jointPackage::BibTeX2DocBook::SrcArticle_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcArticle,
+jointPackage_BibTeX2DocBook_SrcArticle_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcArticle,
     journal=
         safe_text
 )
 SrcBibTeXEntry_strategy = st.builds(
     SrcBibTeXEntry,
 )
-jointPackage::BibTeX2DocBook::SrcTitledEntry_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcTitledEntry,
-    title=
-        safe_text
+jointPackage_BibTeX2DocBook_SrcAuthoredEntry_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcAuthoredEntry,
 )
-jointPackage::BibTeX2DocBook::SrcDatedEntry_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcDatedEntry,
+jointPackage_BibTeX2DocBook_SrcDatedEntry_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcDatedEntry,
     year=
         safe_text
 )
-jointPackage::BibTeX2DocBook::SrcAuthoredEntry_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcAuthoredEntry,
+jointPackage_BibTeX2DocBook_SrcMisc_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcMisc,
 )
-jointPackage::BibTeX2DocBook::SrcBookTitledEntry_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcBookTitledEntry,
+jointPackage_BibTeX2DocBook_SrcBookTitledEntry_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcBookTitledEntry,
     booktitle=
         safe_text
 )
-jointPackage::BibTeX2DocBook::SrcMisc_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcMisc,
+jointPackage_BibTeX2DocBook_SrcTitledEntry_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcTitledEntry,
+    title=
+        safe_text
 )
-jointPackage::BibTeX2DocBook::SrcBibTeXFile_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcBibTeXFile,
+jointPackage_BibTeX2DocBook_SrcBibTeXFile_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcBibTeXFile,
 )
 TrgDocBook_strategy = st.builds(
     TrgDocBook,
@@ -978,73 +978,70 @@ TrgDocBook_strategy = st.builds(
 SrcMasterThesis_strategy = st.builds(
     SrcMasterThesis,
 )
-jointPackage::BibTeX2DocBook::JointMM_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::JointMM,
+jointPackage_BibTeX2DocBook_JointMM_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_JointMM,
 )
 SrcThesisEntry_strategy = st.builds(
     SrcThesisEntry,
 )
-jointPackage::BibTeX2DocBook::SrcMasterThesis_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcMasterThesis,
+jointPackage_BibTeX2DocBook_SrcMasterThesis_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcMasterThesis,
 )
-jointPackage::BibTeX2DocBook::SrcPhDThesis_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcPhDThesis,
+jointPackage_BibTeX2DocBook_SrcPhDThesis_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcPhDThesis,
 )
 SrcBook_strategy = st.builds(
     SrcBook,
 )
-jointPackage::BibTeX2DocBook::SrcInBook_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcInBook,
+jointPackage_BibTeX2DocBook_SrcInBook_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcInBook,
     chapter=
         st.integers()
 )
-jointPackage::BibTeX2DocBook::SrcBook_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcBook,
+jointPackage_BibTeX2DocBook_SrcBook_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcBook,
     publisher=
         safe_text
 )
-jointPackage::BibTeX2DocBook::SrcBooklet_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcBooklet,
+jointPackage_BibTeX2DocBook_SrcBooklet_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcBooklet,
 )
 SrcBookTitledEntry_strategy = st.builds(
     SrcBookTitledEntry,
 )
-jointPackage::BibTeX2DocBook::SrcInCollection_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcInCollection,
+jointPackage_BibTeX2DocBook_SrcInCollection_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcInCollection,
 )
 SrcProceedings_strategy = st.builds(
     SrcProceedings,
 )
-jointPackage::BibTeX2DocBook::SrcInProceedings_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcInProceedings,
+jointPackage_BibTeX2DocBook_SrcInProceedings_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcInProceedings,
 )
-jointPackage::BibTeX2DocBook::SrcProceedings_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcProceedings,
+jointPackage_BibTeX2DocBook_SrcProceedings_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcProceedings,
 )
-jointPackage::BibTeX2DocBook::SrcManual_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcManual,
+jointPackage_BibTeX2DocBook_SrcManual_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcManual,
 )
-jointPackage::BibTeX2DocBook::SrcUnpublished_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcUnpublished,
+jointPackage_BibTeX2DocBook_SrcUnpublished_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcUnpublished,
     note=
         safe_text
 )
-jointPackage::BibTeX2DocBook::SrcTechReport_strategy = st.builds(
-    jointPackage::BibTeX2DocBook::SrcTechReport,
+jointPackage_BibTeX2DocBook_SrcTechReport_strategy = st.builds(
+    jointPackage_BibTeX2DocBook_SrcTechReport,
 )
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgPara_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgPara_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgpara_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgPara)
-
-@given(instance=jointPackage::BibTeX2DocBook::TrgPara_strategy)
-def test_jointpackage::bibtex2docbook::trgpara_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_jointpackage_bibtex2docbook_trgpara_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgPara)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgPara_strategy)
-def test_jointpackage::bibtex2docbook::trgpara_content_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_TrgPara_strategy)
+def test_jointpackage_bibtex2docbook_trgpara_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
@@ -1054,34 +1051,28 @@ def test_jointpackage::bibtex2docbook::trgpara_content_setter(instance):
 def test_srcauthor_instantiation(instance):
     assert isinstance(instance, SrcAuthor)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBibTeXEntry_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcBibTeXEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcbibtexentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcBibTeXEntry)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcBibTeXEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcbibtexentry_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_jointpackage_bibtex2docbook_srcbibtexentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcBibTeXEntry)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBibTeXEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcbibtexentry_id_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcBibTeXEntry_strategy)
+def test_jointpackage_bibtex2docbook_srcbibtexentry_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcAuthor_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcAuthor_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcauthor_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcAuthor)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcAuthor_strategy)
-def test_jointpackage::bibtex2docbook::srcauthor_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_jointpackage_bibtex2docbook_srcauthor_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcAuthor)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcAuthor_strategy)
-def test_jointpackage::bibtex2docbook::srcauthor_author_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcAuthor_strategy)
+def test_jointpackage_bibtex2docbook_srcauthor_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
@@ -1096,15 +1087,15 @@ def test_trgsect2_instantiation(instance):
 def test_trgsection_instantiation(instance):
     assert isinstance(instance, TrgSection)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgSect2_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgSect2_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgsect2_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgSect2)
+def test_jointpackage_bibtex2docbook_trgsect2_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgSect2)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgSect1_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgSect1_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgsect1_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgSect1)
+def test_jointpackage_bibtex2docbook_trgsect1_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgSect1)
 
 @given(instance=TrgPara_strategy)
 @settings(max_examples=50)
@@ -1121,28 +1112,25 @@ def test_trgsect1_instantiation(instance):
 def test_trgtitledelement_instantiation(instance):
     assert isinstance(instance, TrgTitledElement)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgSection_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgSection_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgsection_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgSection)
+def test_jointpackage_bibtex2docbook_trgsection_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgSection)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgArticle_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgArticle_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgarticle_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgArticle)
+def test_jointpackage_bibtex2docbook_trgarticle_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgArticle)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgTitledElement_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgTitledElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgtitledelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgTitledElement)
-
-@given(instance=jointPackage::BibTeX2DocBook::TrgTitledElement_strategy)
-def test_jointpackage::bibtex2docbook::trgtitledelement_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_jointpackage_bibtex2docbook_trgtitledelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgTitledElement)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgTitledElement_strategy)
-def test_jointpackage::bibtex2docbook::trgtitledelement_title_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_TrgTitledElement_strategy)
+def test_jointpackage_bibtex2docbook_trgtitledelement_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
@@ -1152,20 +1140,20 @@ def test_jointpackage::bibtex2docbook::trgtitledelement_title_setter(instance):
 def test_trgarticle_instantiation(instance):
     assert isinstance(instance, TrgArticle)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgBook_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgBook)
+def test_jointpackage_bibtex2docbook_trgbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgBook)
 
 @given(instance=TrgBook_strategy)
 @settings(max_examples=50)
 def test_trgbook_instantiation(instance):
     assert isinstance(instance, TrgBook)
 
-@given(instance=jointPackage::BibTeX2DocBook::TrgDocBook_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_TrgDocBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::trgdocbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::TrgDocBook)
+def test_jointpackage_bibtex2docbook_trgdocbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_TrgDocBook)
 
 @given(instance=SrcTitledEntry_strategy)
 @settings(max_examples=50)
@@ -1182,34 +1170,28 @@ def test_srcdatedentry_instantiation(instance):
 def test_srcauthoredentry_instantiation(instance):
     assert isinstance(instance, SrcAuthoredEntry)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcThesisEntry_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcThesisEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcthesisentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcThesisEntry)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcThesisEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcthesisentry_school_type(instance):
-    assert isinstance(instance.school, str)
+def test_jointpackage_bibtex2docbook_srcthesisentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcThesisEntry)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcThesisEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcthesisentry_school_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcThesisEntry_strategy)
+def test_jointpackage_bibtex2docbook_srcthesisentry_school_setter(instance):
     original = instance.school
     instance.school = original
     assert instance.school == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcArticle_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcArticle_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcarticle_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcArticle)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcArticle_strategy)
-def test_jointpackage::bibtex2docbook::srcarticle_journal_type(instance):
-    assert isinstance(instance.journal, str)
+def test_jointpackage_bibtex2docbook_srcarticle_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcArticle)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcArticle_strategy)
-def test_jointpackage::bibtex2docbook::srcarticle_journal_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcArticle_strategy)
+def test_jointpackage_bibtex2docbook_srcarticle_journal_setter(instance):
     original = instance.journal
     instance.journal = original
     assert instance.journal == original
@@ -1219,68 +1201,59 @@ def test_jointpackage::bibtex2docbook::srcarticle_journal_setter(instance):
 def test_srcbibtexentry_instantiation(instance):
     assert isinstance(instance, SrcBibTeXEntry)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcTitledEntry_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcAuthoredEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srctitledentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcTitledEntry)
+def test_jointpackage_bibtex2docbook_srcauthoredentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcAuthoredEntry)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcTitledEntry_strategy)
-def test_jointpackage::bibtex2docbook::srctitledentry_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcTitledEntry_strategy)
-def test_jointpackage::bibtex2docbook::srctitledentry_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcDatedEntry_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcDatedEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcdatedentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcDatedEntry)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcDatedEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcdatedentry_year_type(instance):
-    assert isinstance(instance.year, str)
+def test_jointpackage_bibtex2docbook_srcdatedentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcDatedEntry)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcDatedEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcdatedentry_year_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcDatedEntry_strategy)
+def test_jointpackage_bibtex2docbook_srcdatedentry_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcAuthoredEntry_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcMisc_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcauthoredentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcAuthoredEntry)
+def test_jointpackage_bibtex2docbook_srcmisc_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcMisc)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBookTitledEntry_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcBookTitledEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcBookTitledEntry)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcBookTitledEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_booktitle_type(instance):
-    assert isinstance(instance.booktitle, str)
+def test_jointpackage_bibtex2docbook_srcbooktitledentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcBookTitledEntry)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBookTitledEntry_strategy)
-def test_jointpackage::bibtex2docbook::srcbooktitledentry_booktitle_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcBookTitledEntry_strategy)
+def test_jointpackage_bibtex2docbook_srcbooktitledentry_booktitle_setter(instance):
     original = instance.booktitle
     instance.booktitle = original
     assert instance.booktitle == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcMisc_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcTitledEntry_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcmisc_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcMisc)
+def test_jointpackage_bibtex2docbook_srctitledentry_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcTitledEntry)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBibTeXFile_strategy)
+
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcTitledEntry_strategy)
+def test_jointpackage_bibtex2docbook_srctitledentry_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcBibTeXFile_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcbibtexfile_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcBibTeXFile)
+def test_jointpackage_bibtex2docbook_srcbibtexfile_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcBibTeXFile)
 
 @given(instance=TrgDocBook_strategy)
 @settings(max_examples=50)
@@ -1292,115 +1265,106 @@ def test_trgdocbook_instantiation(instance):
 def test_srcmasterthesis_instantiation(instance):
     assert isinstance(instance, SrcMasterThesis)
 
-@given(instance=jointPackage::BibTeX2DocBook::JointMM_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_JointMM_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::jointmm_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::JointMM)
+def test_jointpackage_bibtex2docbook_jointmm_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_JointMM)
 
 @given(instance=SrcThesisEntry_strategy)
 @settings(max_examples=50)
 def test_srcthesisentry_instantiation(instance):
     assert isinstance(instance, SrcThesisEntry)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcMasterThesis_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcMasterThesis_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcmasterthesis_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcMasterThesis)
+def test_jointpackage_bibtex2docbook_srcmasterthesis_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcMasterThesis)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcPhDThesis_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcPhDThesis_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcphdthesis_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcPhDThesis)
+def test_jointpackage_bibtex2docbook_srcphdthesis_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcPhDThesis)
 
 @given(instance=SrcBook_strategy)
 @settings(max_examples=50)
 def test_srcbook_instantiation(instance):
     assert isinstance(instance, SrcBook)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcInBook_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcInBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcinbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcInBook)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcInBook_strategy)
-def test_jointpackage::bibtex2docbook::srcinbook_chapter_type(instance):
-    assert isinstance(instance.chapter, int)
+def test_jointpackage_bibtex2docbook_srcinbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcInBook)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcInBook_strategy)
-def test_jointpackage::bibtex2docbook::srcinbook_chapter_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcInBook_strategy)
+def test_jointpackage_bibtex2docbook_srcinbook_chapter_setter(instance):
     original = instance.chapter
     instance.chapter = original
     assert instance.chapter == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBook_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcBook_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcbook_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcBook)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcBook_strategy)
-def test_jointpackage::bibtex2docbook::srcbook_publisher_type(instance):
-    assert isinstance(instance.publisher, str)
+def test_jointpackage_bibtex2docbook_srcbook_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcBook)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBook_strategy)
-def test_jointpackage::bibtex2docbook::srcbook_publisher_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcBook_strategy)
+def test_jointpackage_bibtex2docbook_srcbook_publisher_setter(instance):
     original = instance.publisher
     instance.publisher = original
     assert instance.publisher == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcBooklet_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcBooklet_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcbooklet_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcBooklet)
+def test_jointpackage_bibtex2docbook_srcbooklet_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcBooklet)
 
 @given(instance=SrcBookTitledEntry_strategy)
 @settings(max_examples=50)
 def test_srcbooktitledentry_instantiation(instance):
     assert isinstance(instance, SrcBookTitledEntry)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcInCollection_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcInCollection_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcincollection_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcInCollection)
+def test_jointpackage_bibtex2docbook_srcincollection_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcInCollection)
 
 @given(instance=SrcProceedings_strategy)
 @settings(max_examples=50)
 def test_srcproceedings_instantiation(instance):
     assert isinstance(instance, SrcProceedings)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcInProceedings_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcInProceedings_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcinproceedings_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcInProceedings)
+def test_jointpackage_bibtex2docbook_srcinproceedings_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcInProceedings)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcProceedings_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcProceedings_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcproceedings_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcProceedings)
+def test_jointpackage_bibtex2docbook_srcproceedings_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcProceedings)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcManual_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcManual_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcmanual_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcManual)
+def test_jointpackage_bibtex2docbook_srcmanual_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcManual)
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcUnpublished_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcUnpublished_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srcunpublished_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcUnpublished)
-
-@given(instance=jointPackage::BibTeX2DocBook::SrcUnpublished_strategy)
-def test_jointpackage::bibtex2docbook::srcunpublished_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_jointpackage_bibtex2docbook_srcunpublished_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcUnpublished)
 
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcUnpublished_strategy)
-def test_jointpackage::bibtex2docbook::srcunpublished_note_setter(instance):
+
+@given(instance=jointPackage_BibTeX2DocBook_SrcUnpublished_strategy)
+def test_jointpackage_bibtex2docbook_srcunpublished_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=jointPackage::BibTeX2DocBook::SrcTechReport_strategy)
+@given(instance=jointPackage_BibTeX2DocBook_SrcTechReport_strategy)
 @settings(max_examples=50)
-def test_jointpackage::bibtex2docbook::srctechreport_instantiation(instance):
-    assert isinstance(instance, jointPackage::BibTeX2DocBook::SrcTechReport)
+def test_jointpackage_bibtex2docbook_srctechreport_instantiation(instance):
+    assert isinstance(instance, jointPackage_BibTeX2DocBook_SrcTechReport)

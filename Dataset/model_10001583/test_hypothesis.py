@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class,
@@ -62,17 +62,8 @@ def test_rules_constructor_exists():
 def test_rules_constructor_args():
     sig = inspect.signature(Rules.__init__)
     params = list(sig.parameters.keys())
-    assert "currentRules" in params, "Missing parameter 'currentRules'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_rules_has_currentRules():
-    assert hasattr(Rules, "currentRules")
-    descriptor = None
-    for klass in Rules.__mro__:
-        if "currentRules" in klass.__dict__:
-            descriptor = klass.__dict__["currentRules"]
-            break
-    assert isinstance(descriptor, property)
+    assert "currentRules" in params, "Missing parameter 'currentRules'"
 
 def test_rules_has_attribute():
     assert hasattr(Rules, "attribute")
@@ -80,6 +71,15 @@ def test_rules_has_attribute():
     for klass in Rules.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rules_has_currentRules():
+    assert hasattr(Rules, "currentRules")
+    descriptor = None
+    for klass in Rules.__mro__:
+        if "currentRules" in klass.__dict__:
+            descriptor = klass.__dict__["currentRules"]
             break
     assert isinstance(descriptor, property)
 
@@ -196,9 +196,18 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
+    assert "suit" in params, "Missing parameter 'suit'"
     assert "color" in params, "Missing parameter 'color'"
     assert "number" in params, "Missing parameter 'number'"
-    assert "suit" in params, "Missing parameter 'suit'"
+
+def test_card_has_suit():
+    assert hasattr(Card, "suit")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "suit" in klass.__dict__:
+            descriptor = klass.__dict__["suit"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_card_has_color():
     assert hasattr(Card, "color")
@@ -215,15 +224,6 @@ def test_card_has_number():
     for klass in Card.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_card_has_suit():
-    assert hasattr(Card, "suit")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "suit" in klass.__dict__:
-            descriptor = klass.__dict__["suit"]
             break
     assert isinstance(descriptor, property)
 
@@ -247,10 +247,10 @@ GoFish_strategy = st.builds(
 )
 Rules_strategy = st.builds(
     Rules,
-    currentRules=
-        st.booleans(),
     attribute=
-        safe_text
+        safe_text,
+    currentRules=
+        st.booleans()
 )
 Game_strategy = st.builds(
     Game,
@@ -275,12 +275,12 @@ Deck_strategy = st.builds(
 )
 Card_strategy = st.builds(
     Card,
+    suit=
+        safe_text,
     color=
         safe_text,
     number=
-        st.integers(),
-    suit=
-        safe_text
+        st.integers()
 )
 
 @given(instance=Class_strategy)
@@ -298,20 +298,6 @@ def test_gofish_instantiation(instance):
 def test_rules_instantiation(instance):
     assert isinstance(instance, Rules)
 
-@given(instance=Rules_strategy)
-def test_rules_currentRules_type(instance):
-    assert isinstance(instance.currentRules, bool)
-
-
-@given(instance=Rules_strategy)
-def test_rules_currentRules_setter(instance):
-    original = instance.currentRules
-    instance.currentRules = original
-    assert instance.currentRules == original
-
-@given(instance=Rules_strategy)
-def test_rules_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Rules_strategy)
@@ -319,6 +305,14 @@ def test_rules_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Rules_strategy)
+def test_rules_currentRules_setter(instance):
+    original = instance.currentRules
+    instance.currentRules = original
+    assert instance.currentRules == original
 
 @given(instance=Game_strategy)
 @settings(max_examples=50)
@@ -340,9 +334,6 @@ def test_b_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -351,9 +342,6 @@ def test_player_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Player_strategy)
-def test_player_hand_type(instance):
-    assert isinstance(instance.hand, str)
 
 
 @given(instance=Player_strategy)
@@ -367,9 +355,6 @@ def test_player_hand_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_deck_type(instance):
-    assert isinstance(instance.deck, str)
 
 
 @given(instance=Deck_strategy)
@@ -383,9 +368,14 @@ def test_deck_deck_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
+
+
 @given(instance=Card_strategy)
-def test_card_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_card_suit_setter(instance):
+    original = instance.suit
+    instance.suit = original
+    assert instance.suit == original
+
 
 
 @given(instance=Card_strategy)
@@ -394,9 +384,6 @@ def test_card_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
-@given(instance=Card_strategy)
-def test_card_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=Card_strategy)
@@ -404,14 +391,3 @@ def test_card_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
-
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, str)
-
-
-@given(instance=Card_strategy)
-def test_card_suit_setter(instance):
-    original = instance.suit
-    instance.suit = original
-    assert instance.suit == original

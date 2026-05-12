@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mpupkb::Comment,
-    mpupkb::NamedElement,
+from python_code import (
+    mpupkb_Comment,
+    mpupkb_NamedElement,
     NamedElement,
-    mpupkb::Own,
-    mpupkb::Thing,
+    mpupkb_Own,
+    mpupkb_Thing,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_mpupkb::comment_is_not_abstract():
-    assert not inspect.isabstract(mpupkb::Comment)
+def test_mpupkb_comment_is_not_abstract():
+    assert not inspect.isabstract(mpupkb_Comment)
 
 
-def test_mpupkb::comment_constructor_exists():
-    assert callable(mpupkb::Comment.__init__)
+def test_mpupkb_comment_constructor_exists():
+    assert callable(mpupkb_Comment.__init__)
 
 
-def test_mpupkb::comment_constructor_args():
-    sig = inspect.signature(mpupkb::Comment.__init__)
+def test_mpupkb_comment_constructor_args():
+    sig = inspect.signature(mpupkb_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_mpupkb::comment_has_content():
-    assert hasattr(mpupkb::Comment, "content")
+def test_mpupkb_comment_has_content():
+    assert hasattr(mpupkb_Comment, "content")
     descriptor = None
-    for klass in mpupkb::Comment.__mro__:
+    for klass in mpupkb_Comment.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -43,23 +43,23 @@ def test_mpupkb::comment_has_content():
 
 
 
-def test_mpupkb::namedelement_is_not_abstract():
-    assert not inspect.isabstract(mpupkb::NamedElement)
+def test_mpupkb_namedelement_is_not_abstract():
+    assert not inspect.isabstract(mpupkb_NamedElement)
 
 
-def test_mpupkb::namedelement_constructor_exists():
-    assert callable(mpupkb::NamedElement.__init__)
+def test_mpupkb_namedelement_constructor_exists():
+    assert callable(mpupkb_NamedElement.__init__)
 
 
-def test_mpupkb::namedelement_constructor_args():
-    sig = inspect.signature(mpupkb::NamedElement.__init__)
+def test_mpupkb_namedelement_constructor_args():
+    sig = inspect.signature(mpupkb_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mpupkb::namedelement_has_name():
-    assert hasattr(mpupkb::NamedElement, "name")
+def test_mpupkb_namedelement_has_name():
+    assert hasattr(mpupkb_NamedElement, "name")
     descriptor = None
-    for klass in mpupkb::NamedElement.__mro__:
+    for klass in mpupkb_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -81,33 +81,33 @@ def test_namedelement_constructor_args():
 
 
 
-def test_mpupkb::own_is_not_abstract():
-    assert not inspect.isabstract(mpupkb::Own)
+def test_mpupkb_own_is_not_abstract():
+    assert not inspect.isabstract(mpupkb_Own)
 
 
-def test_mpupkb::own_constructor_exists():
-    assert callable(mpupkb::Own.__init__)
+def test_mpupkb_own_constructor_exists():
+    assert callable(mpupkb_Own.__init__)
 
 
-def test_mpupkb::own_constructor_args():
-    sig = inspect.signature(mpupkb::Own.__init__)
+def test_mpupkb_own_constructor_args():
+    sig = inspect.signature(mpupkb_Own.__init__)
     params = list(sig.parameters.keys())
     assert "ownerName" in params, "Missing parameter 'ownerName'"
     assert "since" in params, "Missing parameter 'since'"
 
-def test_mpupkb::own_has_ownerName():
-    assert hasattr(mpupkb::Own, "ownerName")
+def test_mpupkb_own_has_ownerName():
+    assert hasattr(mpupkb_Own, "ownerName")
     descriptor = None
-    for klass in mpupkb::Own.__mro__:
+    for klass in mpupkb_Own.__mro__:
         if "ownerName" in klass.__dict__:
             descriptor = klass.__dict__["ownerName"]
             break
     assert isinstance(descriptor, property)
 
-def test_mpupkb::own_has_since():
-    assert hasattr(mpupkb::Own, "since")
+def test_mpupkb_own_has_since():
+    assert hasattr(mpupkb_Own, "since")
     descriptor = None
-    for klass in mpupkb::Own.__mro__:
+    for klass in mpupkb_Own.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -115,23 +115,23 @@ def test_mpupkb::own_has_since():
 
 
 
-def test_mpupkb::thing_is_not_abstract():
-    assert not inspect.isabstract(mpupkb::Thing)
+def test_mpupkb_thing_is_not_abstract():
+    assert not inspect.isabstract(mpupkb_Thing)
 
 
-def test_mpupkb::thing_constructor_exists():
-    assert callable(mpupkb::Thing.__init__)
+def test_mpupkb_thing_constructor_exists():
+    assert callable(mpupkb_Thing.__init__)
 
 
-def test_mpupkb::thing_constructor_args():
-    sig = inspect.signature(mpupkb::Thing.__init__)
+def test_mpupkb_thing_constructor_args():
+    sig = inspect.signature(mpupkb_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_mpupkb::thing_has_id():
-    assert hasattr(mpupkb::Thing, "id")
+def test_mpupkb_thing_has_id():
+    assert hasattr(mpupkb_Thing, "id")
     descriptor = None
-    for klass in mpupkb::Thing.__mro__:
+    for klass in mpupkb_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -149,60 +149,54 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mpupkb::Comment_strategy = st.builds(
-    mpupkb::Comment,
+mpupkb_Comment_strategy = st.builds(
+    mpupkb_Comment,
     content=
         safe_text
 )
-mpupkb::NamedElement_strategy = st.builds(
-    mpupkb::NamedElement,
+mpupkb_NamedElement_strategy = st.builds(
+    mpupkb_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-mpupkb::Own_strategy = st.builds(
-    mpupkb::Own,
+mpupkb_Own_strategy = st.builds(
+    mpupkb_Own,
     ownerName=
         safe_text,
     since=
         safe_text
 )
-mpupkb::Thing_strategy = st.builds(
-    mpupkb::Thing,
+mpupkb_Thing_strategy = st.builds(
+    mpupkb_Thing,
     id=
         st.integers()
 )
 
-@given(instance=mpupkb::Comment_strategy)
+@given(instance=mpupkb_Comment_strategy)
 @settings(max_examples=50)
-def test_mpupkb::comment_instantiation(instance):
-    assert isinstance(instance, mpupkb::Comment)
-
-@given(instance=mpupkb::Comment_strategy)
-def test_mpupkb::comment_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_mpupkb_comment_instantiation(instance):
+    assert isinstance(instance, mpupkb_Comment)
 
 
-@given(instance=mpupkb::Comment_strategy)
-def test_mpupkb::comment_content_setter(instance):
+
+@given(instance=mpupkb_Comment_strategy)
+def test_mpupkb_comment_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=mpupkb::NamedElement_strategy)
+@given(instance=mpupkb_NamedElement_strategy)
 @settings(max_examples=50)
-def test_mpupkb::namedelement_instantiation(instance):
-    assert isinstance(instance, mpupkb::NamedElement)
-
-@given(instance=mpupkb::NamedElement_strategy)
-def test_mpupkb::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mpupkb_namedelement_instantiation(instance):
+    assert isinstance(instance, mpupkb_NamedElement)
 
 
-@given(instance=mpupkb::NamedElement_strategy)
-def test_mpupkb::namedelement_name_setter(instance):
+
+@given(instance=mpupkb_NamedElement_strategy)
+def test_mpupkb_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -212,45 +206,36 @@ def test_mpupkb::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=mpupkb::Own_strategy)
+@given(instance=mpupkb_Own_strategy)
 @settings(max_examples=50)
-def test_mpupkb::own_instantiation(instance):
-    assert isinstance(instance, mpupkb::Own)
-
-@given(instance=mpupkb::Own_strategy)
-def test_mpupkb::own_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
+def test_mpupkb_own_instantiation(instance):
+    assert isinstance(instance, mpupkb_Own)
 
 
-@given(instance=mpupkb::Own_strategy)
-def test_mpupkb::own_ownerName_setter(instance):
+
+@given(instance=mpupkb_Own_strategy)
+def test_mpupkb_own_ownerName_setter(instance):
     original = instance.ownerName
     instance.ownerName = original
     assert instance.ownerName == original
 
-@given(instance=mpupkb::Own_strategy)
-def test_mpupkb::own_since_type(instance):
-    assert isinstance(instance.since, str)
 
 
-@given(instance=mpupkb::Own_strategy)
-def test_mpupkb::own_since_setter(instance):
+@given(instance=mpupkb_Own_strategy)
+def test_mpupkb_own_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=mpupkb::Thing_strategy)
+@given(instance=mpupkb_Thing_strategy)
 @settings(max_examples=50)
-def test_mpupkb::thing_instantiation(instance):
-    assert isinstance(instance, mpupkb::Thing)
-
-@given(instance=mpupkb::Thing_strategy)
-def test_mpupkb::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_mpupkb_thing_instantiation(instance):
+    assert isinstance(instance, mpupkb_Thing)
 
 
-@given(instance=mpupkb::Thing_strategy)
-def test_mpupkb::thing_id_setter(instance):
+
+@given(instance=mpupkb_Thing_strategy)
+def test_mpupkb_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

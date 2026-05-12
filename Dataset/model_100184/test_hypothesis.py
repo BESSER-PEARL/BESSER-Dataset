@@ -3,136 +3,136 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sparqlas::TemplateBinding,
-    sparqlas::TemplateableElement,
-    sparqlas::TemplateParameterSubstitution,
-    sparqlas::TemplateSignature,
-    sparqlas::TemplateParameter,
-    sparqlas::ParameterableElement,
+from python_code import (
+    sparqlas_TemplateBinding,
+    sparqlas_TemplateableElement,
+    sparqlas_TemplateParameterSubstitution,
+    sparqlas_TemplateSignature,
+    sparqlas_TemplateParameter,
+    sparqlas_ParameterableElement,
     Declaration,
-    sparqlas::DatatypePropertyDeclaration,
-    sparqlas::ObjectPropertyDeclaration,
-    sparqlas::ClassDeclaration,
-    sparqlas::IndividualDeclaration,
+    sparqlas_ObjectPropertyDeclaration,
+    sparqlas_DatatypePropertyDeclaration,
+    sparqlas_ClassDeclaration,
+    sparqlas_IndividualDeclaration,
     DataPropertyAtom,
-    sparqlas::DisjointDataProperties,
-    sparqlas::FunctionalDataProperty,
-    sparqlas::DataPropertyDomain,
-    sparqlas::DataPropertyRange,
-    sparqlas::EquivalentDataProperties,
-    sparqlas::SubDataPropertyOf,
-    sparqlas::ObjectPropertyChain,
+    sparqlas_DisjointDataProperties,
+    sparqlas_DataPropertyDomain,
+    sparqlas_EquivalentDataProperties,
+    sparqlas_DataPropertyRange,
+    sparqlas_FunctionalDataProperty,
+    sparqlas_SubDataPropertyOf,
+    sparqlas_ObjectPropertyChain,
     ObjectPropertyAtom,
-    sparqlas::SymmetricObjectProperty,
-    sparqlas::EquivalentObjectProperties,
-    sparqlas::IrreflexiveObjectProperty,
-    sparqlas::ObjectPropertyRange,
-    sparqlas::TransitiveObjectProperty,
-    sparqlas::InverseObjectPropertyAtom,
-    sparqlas::AsymmetricObjectProperty,
-    sparqlas::ReflexiveObjectProperty,
-    sparqlas::InverseFunctionalObjectProperty,
-    sparqlas::FunctionalObjectProperty,
-    sparqlas::ObjectPropertyDomain,
-    sparqlas::DisjointObjectProperties,
-    sparqlas::FacetRestriction,
-    sparqlas::SubObjectPropertyOf,
-    sparqlas::DataRange,
+    sparqlas_FunctionalObjectProperty,
+    sparqlas_AsymmetricObjectProperty,
+    sparqlas_IrreflexiveObjectProperty,
+    sparqlas_EquivalentObjectProperties,
+    sparqlas_TransitiveObjectProperty,
+    sparqlas_ObjectPropertyRange,
+    sparqlas_SymmetricObjectProperty,
+    sparqlas_ReflexiveObjectProperty,
+    sparqlas_InverseFunctionalObjectProperty,
+    sparqlas_InverseObjectPropertyAtom,
+    sparqlas_ObjectPropertyDomain,
+    sparqlas_DisjointObjectProperties,
+    sparqlas_FacetRestriction,
+    sparqlas_SubObjectPropertyOf,
+    sparqlas_DataRange,
     Expression,
     ClassAtom,
-    sparqlas::StrictSubClassOf,
-    sparqlas::DirectSubClassOf,
-    sparqlas::DisjointUnion,
-    sparqlas::EquivalentClasses,
-    sparqlas::SubClassOf,
-    sparqlas::DisjointClasses,
-    sparqlas::DataPropertyExpression,
-    sparqlas::ClassExpression,
+    sparqlas_EquivalentClasses,
+    sparqlas_DirectSubClassOf,
+    sparqlas_StrictSubClassOf,
+    sparqlas_DisjointUnion,
+    sparqlas_SubClassOf,
+    sparqlas_DisjointClasses,
+    sparqlas_DataPropertyExpression,
+    sparqlas_ClassExpression,
     Assertion,
-    sparqlas::DataPropertyAssertion,
-    sparqlas::NegativeDataPropertyAssertion,
-    sparqlas::SameIndividual,
-    sparqlas::DirectClassAssertion,
-    sparqlas::NegativeObjectPropertyAssertion,
-    sparqlas::DifferentIndividuals,
-    sparqlas::ClassAssertion,
+    sparqlas_DirectClassAssertion,
+    sparqlas_NegativeObjectPropertyAssertion,
+    sparqlas_NegativeDataPropertyAssertion,
+    sparqlas_DataPropertyAssertion,
+    sparqlas_DifferentIndividuals,
+    sparqlas_SameIndividual,
+    sparqlas_ClassAssertion,
     Atom,
-    sparqlas::HasKey,
-    sparqlas::ClassAtom,
-    sparqlas::Declaration,
-    sparqlas::ObjectPropertyAtom,
-    sparqlas::DataPropertyAtom,
-    sparqlas::Assertion,
+    sparqlas_ClassAtom,
+    sparqlas_Declaration,
+    sparqlas_HasKey,
+    sparqlas_ObjectPropertyAtom,
+    sparqlas_DataPropertyAtom,
+    sparqlas_Assertion,
     ParameterableElement,
-    sparqlas::Expression,
+    sparqlas_Expression,
     AbstractLiteral,
-    sparqlas::Literal,
-    sparqlas::AbstractLiteral,
-    sparqlas::Individual,
+    sparqlas_Literal,
+    sparqlas_AbstractLiteral,
+    sparqlas_Individual,
     DataRange,
-    sparqlas::DatatypeRestriction,
-    sparqlas::DataOneOf,
-    sparqlas::DataComplementOf,
-    sparqlas::DataIntersectionOf,
-    sparqlas::DataUnionOf,
+    sparqlas_DataIntersectionOf,
+    sparqlas_DataComplementOf,
+    sparqlas_DatatypeRestriction,
+    sparqlas_DataOneOf,
+    sparqlas_DataUnionOf,
     Constant,
-    sparqlas::Datatype,
-    sparqlas::ObjectPropertyExpression,
-    sparqlas::ObjectPropertyAssertion,
+    sparqlas_Datatype,
+    sparqlas_ObjectPropertyExpression,
+    sparqlas_ObjectPropertyAssertion,
     DataPropertyExpression,
-    sparqlas::DataProperty,
+    sparqlas_DataProperty,
     ObjectPropertyExpression,
-    sparqlas::ObjectProperty,
-    sparqlas::InverseObjectProperty,
+    sparqlas_ObjectProperty,
+    sparqlas_InverseObjectProperty,
     ClassExpression,
-    sparqlas::ObjectAllValuesFrom,
-    sparqlas::ObjectUnionOf,
-    sparqlas::ObjectExactCardinality,
-    sparqlas::ObjectHasValue,
-    sparqlas::ObjectMinCardinality,
-    sparqlas::ObjectOneOf,
-    sparqlas::DataHasValue,
-    sparqlas::DataAllValuesFrom,
-    sparqlas::ObjectIntersectionOf,
-    sparqlas::DataExactCardinality,
-    sparqlas::DataSomeValuesFrom,
-    sparqlas::DataMaxCardinality,
-    sparqlas::ObjectComplementOf,
-    sparqlas::ObjectMaxCardinality,
-    sparqlas::DataMinCardinality,
-    sparqlas::ObjectSomeValuesFrom,
+    sparqlas_ObjectComplementOf,
+    sparqlas_DataAllValuesFrom,
+    sparqlas_ObjectHasValue,
+    sparqlas_DataHasValue,
+    sparqlas_ObjectIntersectionOf,
+    sparqlas_DataSomeValuesFrom,
+    sparqlas_ObjectExactCardinality,
+    sparqlas_ObjectSomeValuesFrom,
+    sparqlas_DataExactCardinality,
+    sparqlas_DataMinCardinality,
+    sparqlas_ObjectMaxCardinality,
+    sparqlas_ObjectMinCardinality,
+    sparqlas_ObjectOneOf,
+    sparqlas_ObjectUnionOf,
+    sparqlas_ObjectAllValuesFrom,
+    sparqlas_DataMaxCardinality,
     Variable,
-    sparqlas::ObjectPropertyVariable,
-    sparqlas::LiteralVariable,
-    sparqlas::DataPropertyVariable,
-    sparqlas::ClassVariable,
+    sparqlas_LiteralVariable,
+    sparqlas_ObjectPropertyVariable,
+    sparqlas_DataPropertyVariable,
+    sparqlas_ClassVariable,
     Term,
-    sparqlas::Term,
+    sparqlas_Term,
     IRI,
-    sparqlas::AbbreviatedIRI,
-    sparqlas::Class,
-    sparqlas::Constant,
+    sparqlas_AbbreviatedIRI,
+    sparqlas_Class,
+    sparqlas_Constant,
     Individual,
-    sparqlas::NamedIndividual,
-    sparqlas::AnonymousIndividual,
-    sparqlas::IndividualVariable,
-    sparqlas::Variable,
-    sparqlas::Atom,
+    sparqlas_AnonymousIndividual,
+    sparqlas_NamedIndividual,
+    sparqlas_IndividualVariable,
+    sparqlas_Variable,
+    sparqlas_Atom,
     TemplateableElement,
     Query,
-    sparqlas::ConstructQuery,
-    sparqlas::SelectQuery,
-    sparqlas::FullIRI,
-    sparqlas::DescribeQuery,
-    sparqlas::AskQuery,
-    sparqlas::Import,
-    sparqlas::IRI,
-    sparqlas::OntologyDocument,
-    sparqlas::Query,
-    sparqlas::PrefixDefinition,
+    sparqlas_ConstructQuery,
+    sparqlas_SelectQuery,
+    sparqlas_FullIRI,
+    sparqlas_DescribeQuery,
+    sparqlas_AskQuery,
+    sparqlas_Import,
+    sparqlas_IRI,
+    sparqlas_OntologyDocument,
+    sparqlas_Query,
+    sparqlas_PrefixDefinition,
 )
 
 # =============================================================================
@@ -141,86 +141,86 @@ from classes import (
 
 
 
-def test_sparqlas::templatebinding_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::TemplateBinding)
+def test_sparqlas_templatebinding_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_TemplateBinding)
 
 
-def test_sparqlas::templatebinding_constructor_exists():
-    assert callable(sparqlas::TemplateBinding.__init__)
+def test_sparqlas_templatebinding_constructor_exists():
+    assert callable(sparqlas_TemplateBinding.__init__)
 
 
-def test_sparqlas::templatebinding_constructor_args():
-    sig = inspect.signature(sparqlas::TemplateBinding.__init__)
+def test_sparqlas_templatebinding_constructor_args():
+    sig = inspect.signature(sparqlas_TemplateBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::templateableelement_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::TemplateableElement)
+def test_sparqlas_templateableelement_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_TemplateableElement)
 
 
-def test_sparqlas::templateableelement_constructor_exists():
-    assert callable(sparqlas::TemplateableElement.__init__)
+def test_sparqlas_templateableelement_constructor_exists():
+    assert callable(sparqlas_TemplateableElement.__init__)
 
 
-def test_sparqlas::templateableelement_constructor_args():
-    sig = inspect.signature(sparqlas::TemplateableElement.__init__)
+def test_sparqlas_templateableelement_constructor_args():
+    sig = inspect.signature(sparqlas_TemplateableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::templateparametersubstitution_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::TemplateParameterSubstitution)
+def test_sparqlas_templateparametersubstitution_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_TemplateParameterSubstitution)
 
 
-def test_sparqlas::templateparametersubstitution_constructor_exists():
-    assert callable(sparqlas::TemplateParameterSubstitution.__init__)
+def test_sparqlas_templateparametersubstitution_constructor_exists():
+    assert callable(sparqlas_TemplateParameterSubstitution.__init__)
 
 
-def test_sparqlas::templateparametersubstitution_constructor_args():
-    sig = inspect.signature(sparqlas::TemplateParameterSubstitution.__init__)
+def test_sparqlas_templateparametersubstitution_constructor_args():
+    sig = inspect.signature(sparqlas_TemplateParameterSubstitution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::templatesignature_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::TemplateSignature)
+def test_sparqlas_templatesignature_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_TemplateSignature)
 
 
-def test_sparqlas::templatesignature_constructor_exists():
-    assert callable(sparqlas::TemplateSignature.__init__)
+def test_sparqlas_templatesignature_constructor_exists():
+    assert callable(sparqlas_TemplateSignature.__init__)
 
 
-def test_sparqlas::templatesignature_constructor_args():
-    sig = inspect.signature(sparqlas::TemplateSignature.__init__)
+def test_sparqlas_templatesignature_constructor_args():
+    sig = inspect.signature(sparqlas_TemplateSignature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::templateparameter_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::TemplateParameter)
+def test_sparqlas_templateparameter_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_TemplateParameter)
 
 
-def test_sparqlas::templateparameter_constructor_exists():
-    assert callable(sparqlas::TemplateParameter.__init__)
+def test_sparqlas_templateparameter_constructor_exists():
+    assert callable(sparqlas_TemplateParameter.__init__)
 
 
-def test_sparqlas::templateparameter_constructor_args():
-    sig = inspect.signature(sparqlas::TemplateParameter.__init__)
+def test_sparqlas_templateparameter_constructor_args():
+    sig = inspect.signature(sparqlas_TemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::parameterableelement_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ParameterableElement)
+def test_sparqlas_parameterableelement_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ParameterableElement)
 
 
-def test_sparqlas::parameterableelement_constructor_exists():
-    assert callable(sparqlas::ParameterableElement.__init__)
+def test_sparqlas_parameterableelement_constructor_exists():
+    assert callable(sparqlas_ParameterableElement.__init__)
 
 
-def test_sparqlas::parameterableelement_constructor_args():
-    sig = inspect.signature(sparqlas::ParameterableElement.__init__)
+def test_sparqlas_parameterableelement_constructor_args():
+    sig = inspect.signature(sparqlas_ParameterableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,58 +239,58 @@ def test_declaration_constructor_args():
 
 
 
-def test_sparqlas::datatypepropertydeclaration_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DatatypePropertyDeclaration)
+def test_sparqlas_objectpropertydeclaration_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyDeclaration)
 
 
-def test_sparqlas::datatypepropertydeclaration_constructor_exists():
-    assert callable(sparqlas::DatatypePropertyDeclaration.__init__)
+def test_sparqlas_objectpropertydeclaration_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyDeclaration.__init__)
 
 
-def test_sparqlas::datatypepropertydeclaration_constructor_args():
-    sig = inspect.signature(sparqlas::DatatypePropertyDeclaration.__init__)
+def test_sparqlas_objectpropertydeclaration_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertydeclaration_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyDeclaration)
+def test_sparqlas_datatypepropertydeclaration_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DatatypePropertyDeclaration)
 
 
-def test_sparqlas::objectpropertydeclaration_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyDeclaration.__init__)
+def test_sparqlas_datatypepropertydeclaration_constructor_exists():
+    assert callable(sparqlas_DatatypePropertyDeclaration.__init__)
 
 
-def test_sparqlas::objectpropertydeclaration_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyDeclaration.__init__)
+def test_sparqlas_datatypepropertydeclaration_constructor_args():
+    sig = inspect.signature(sparqlas_DatatypePropertyDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::classdeclaration_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ClassDeclaration)
+def test_sparqlas_classdeclaration_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ClassDeclaration)
 
 
-def test_sparqlas::classdeclaration_constructor_exists():
-    assert callable(sparqlas::ClassDeclaration.__init__)
+def test_sparqlas_classdeclaration_constructor_exists():
+    assert callable(sparqlas_ClassDeclaration.__init__)
 
 
-def test_sparqlas::classdeclaration_constructor_args():
-    sig = inspect.signature(sparqlas::ClassDeclaration.__init__)
+def test_sparqlas_classdeclaration_constructor_args():
+    sig = inspect.signature(sparqlas_ClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::individualdeclaration_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::IndividualDeclaration)
+def test_sparqlas_individualdeclaration_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_IndividualDeclaration)
 
 
-def test_sparqlas::individualdeclaration_constructor_exists():
-    assert callable(sparqlas::IndividualDeclaration.__init__)
+def test_sparqlas_individualdeclaration_constructor_exists():
+    assert callable(sparqlas_IndividualDeclaration.__init__)
 
 
-def test_sparqlas::individualdeclaration_constructor_args():
-    sig = inspect.signature(sparqlas::IndividualDeclaration.__init__)
+def test_sparqlas_individualdeclaration_constructor_args():
+    sig = inspect.signature(sparqlas_IndividualDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,100 +309,100 @@ def test_datapropertyatom_constructor_args():
 
 
 
-def test_sparqlas::disjointdataproperties_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DisjointDataProperties)
+def test_sparqlas_disjointdataproperties_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DisjointDataProperties)
 
 
-def test_sparqlas::disjointdataproperties_constructor_exists():
-    assert callable(sparqlas::DisjointDataProperties.__init__)
+def test_sparqlas_disjointdataproperties_constructor_exists():
+    assert callable(sparqlas_DisjointDataProperties.__init__)
 
 
-def test_sparqlas::disjointdataproperties_constructor_args():
-    sig = inspect.signature(sparqlas::DisjointDataProperties.__init__)
+def test_sparqlas_disjointdataproperties_constructor_args():
+    sig = inspect.signature(sparqlas_DisjointDataProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::functionaldataproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::FunctionalDataProperty)
+def test_sparqlas_datapropertydomain_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataPropertyDomain)
 
 
-def test_sparqlas::functionaldataproperty_constructor_exists():
-    assert callable(sparqlas::FunctionalDataProperty.__init__)
+def test_sparqlas_datapropertydomain_constructor_exists():
+    assert callable(sparqlas_DataPropertyDomain.__init__)
 
 
-def test_sparqlas::functionaldataproperty_constructor_args():
-    sig = inspect.signature(sparqlas::FunctionalDataProperty.__init__)
+def test_sparqlas_datapropertydomain_constructor_args():
+    sig = inspect.signature(sparqlas_DataPropertyDomain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datapropertydomain_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataPropertyDomain)
+def test_sparqlas_equivalentdataproperties_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_EquivalentDataProperties)
 
 
-def test_sparqlas::datapropertydomain_constructor_exists():
-    assert callable(sparqlas::DataPropertyDomain.__init__)
+def test_sparqlas_equivalentdataproperties_constructor_exists():
+    assert callable(sparqlas_EquivalentDataProperties.__init__)
 
 
-def test_sparqlas::datapropertydomain_constructor_args():
-    sig = inspect.signature(sparqlas::DataPropertyDomain.__init__)
+def test_sparqlas_equivalentdataproperties_constructor_args():
+    sig = inspect.signature(sparqlas_EquivalentDataProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datapropertyrange_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataPropertyRange)
+def test_sparqlas_datapropertyrange_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataPropertyRange)
 
 
-def test_sparqlas::datapropertyrange_constructor_exists():
-    assert callable(sparqlas::DataPropertyRange.__init__)
+def test_sparqlas_datapropertyrange_constructor_exists():
+    assert callable(sparqlas_DataPropertyRange.__init__)
 
 
-def test_sparqlas::datapropertyrange_constructor_args():
-    sig = inspect.signature(sparqlas::DataPropertyRange.__init__)
+def test_sparqlas_datapropertyrange_constructor_args():
+    sig = inspect.signature(sparqlas_DataPropertyRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::equivalentdataproperties_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::EquivalentDataProperties)
+def test_sparqlas_functionaldataproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_FunctionalDataProperty)
 
 
-def test_sparqlas::equivalentdataproperties_constructor_exists():
-    assert callable(sparqlas::EquivalentDataProperties.__init__)
+def test_sparqlas_functionaldataproperty_constructor_exists():
+    assert callable(sparqlas_FunctionalDataProperty.__init__)
 
 
-def test_sparqlas::equivalentdataproperties_constructor_args():
-    sig = inspect.signature(sparqlas::EquivalentDataProperties.__init__)
+def test_sparqlas_functionaldataproperty_constructor_args():
+    sig = inspect.signature(sparqlas_FunctionalDataProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::subdatapropertyof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::SubDataPropertyOf)
+def test_sparqlas_subdatapropertyof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_SubDataPropertyOf)
 
 
-def test_sparqlas::subdatapropertyof_constructor_exists():
-    assert callable(sparqlas::SubDataPropertyOf.__init__)
+def test_sparqlas_subdatapropertyof_constructor_exists():
+    assert callable(sparqlas_SubDataPropertyOf.__init__)
 
 
-def test_sparqlas::subdatapropertyof_constructor_args():
-    sig = inspect.signature(sparqlas::SubDataPropertyOf.__init__)
+def test_sparqlas_subdatapropertyof_constructor_args():
+    sig = inspect.signature(sparqlas_SubDataPropertyOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertychain_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyChain)
+def test_sparqlas_objectpropertychain_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyChain)
 
 
-def test_sparqlas::objectpropertychain_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyChain.__init__)
+def test_sparqlas_objectpropertychain_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyChain.__init__)
 
 
-def test_sparqlas::objectpropertychain_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyChain.__init__)
+def test_sparqlas_objectpropertychain_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyChain.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -421,212 +421,212 @@ def test_objectpropertyatom_constructor_args():
 
 
 
-def test_sparqlas::symmetricobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::SymmetricObjectProperty)
+def test_sparqlas_functionalobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_FunctionalObjectProperty)
 
 
-def test_sparqlas::symmetricobjectproperty_constructor_exists():
-    assert callable(sparqlas::SymmetricObjectProperty.__init__)
+def test_sparqlas_functionalobjectproperty_constructor_exists():
+    assert callable(sparqlas_FunctionalObjectProperty.__init__)
 
 
-def test_sparqlas::symmetricobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::SymmetricObjectProperty.__init__)
+def test_sparqlas_functionalobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_FunctionalObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::equivalentobjectproperties_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::EquivalentObjectProperties)
+def test_sparqlas_asymmetricobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_AsymmetricObjectProperty)
 
 
-def test_sparqlas::equivalentobjectproperties_constructor_exists():
-    assert callable(sparqlas::EquivalentObjectProperties.__init__)
+def test_sparqlas_asymmetricobjectproperty_constructor_exists():
+    assert callable(sparqlas_AsymmetricObjectProperty.__init__)
 
 
-def test_sparqlas::equivalentobjectproperties_constructor_args():
-    sig = inspect.signature(sparqlas::EquivalentObjectProperties.__init__)
+def test_sparqlas_asymmetricobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_AsymmetricObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::irreflexiveobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::IrreflexiveObjectProperty)
+def test_sparqlas_irreflexiveobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_IrreflexiveObjectProperty)
 
 
-def test_sparqlas::irreflexiveobjectproperty_constructor_exists():
-    assert callable(sparqlas::IrreflexiveObjectProperty.__init__)
+def test_sparqlas_irreflexiveobjectproperty_constructor_exists():
+    assert callable(sparqlas_IrreflexiveObjectProperty.__init__)
 
 
-def test_sparqlas::irreflexiveobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::IrreflexiveObjectProperty.__init__)
+def test_sparqlas_irreflexiveobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_IrreflexiveObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertyrange_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyRange)
+def test_sparqlas_equivalentobjectproperties_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_EquivalentObjectProperties)
 
 
-def test_sparqlas::objectpropertyrange_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyRange.__init__)
+def test_sparqlas_equivalentobjectproperties_constructor_exists():
+    assert callable(sparqlas_EquivalentObjectProperties.__init__)
 
 
-def test_sparqlas::objectpropertyrange_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyRange.__init__)
+def test_sparqlas_equivalentobjectproperties_constructor_args():
+    sig = inspect.signature(sparqlas_EquivalentObjectProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::transitiveobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::TransitiveObjectProperty)
+def test_sparqlas_transitiveobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_TransitiveObjectProperty)
 
 
-def test_sparqlas::transitiveobjectproperty_constructor_exists():
-    assert callable(sparqlas::TransitiveObjectProperty.__init__)
+def test_sparqlas_transitiveobjectproperty_constructor_exists():
+    assert callable(sparqlas_TransitiveObjectProperty.__init__)
 
 
-def test_sparqlas::transitiveobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::TransitiveObjectProperty.__init__)
+def test_sparqlas_transitiveobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_TransitiveObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::inverseobjectpropertyatom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::InverseObjectPropertyAtom)
+def test_sparqlas_objectpropertyrange_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyRange)
 
 
-def test_sparqlas::inverseobjectpropertyatom_constructor_exists():
-    assert callable(sparqlas::InverseObjectPropertyAtom.__init__)
+def test_sparqlas_objectpropertyrange_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyRange.__init__)
 
 
-def test_sparqlas::inverseobjectpropertyatom_constructor_args():
-    sig = inspect.signature(sparqlas::InverseObjectPropertyAtom.__init__)
+def test_sparqlas_objectpropertyrange_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::asymmetricobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::AsymmetricObjectProperty)
+def test_sparqlas_symmetricobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_SymmetricObjectProperty)
 
 
-def test_sparqlas::asymmetricobjectproperty_constructor_exists():
-    assert callable(sparqlas::AsymmetricObjectProperty.__init__)
+def test_sparqlas_symmetricobjectproperty_constructor_exists():
+    assert callable(sparqlas_SymmetricObjectProperty.__init__)
 
 
-def test_sparqlas::asymmetricobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::AsymmetricObjectProperty.__init__)
+def test_sparqlas_symmetricobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_SymmetricObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::reflexiveobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ReflexiveObjectProperty)
+def test_sparqlas_reflexiveobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ReflexiveObjectProperty)
 
 
-def test_sparqlas::reflexiveobjectproperty_constructor_exists():
-    assert callable(sparqlas::ReflexiveObjectProperty.__init__)
+def test_sparqlas_reflexiveobjectproperty_constructor_exists():
+    assert callable(sparqlas_ReflexiveObjectProperty.__init__)
 
 
-def test_sparqlas::reflexiveobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::ReflexiveObjectProperty.__init__)
+def test_sparqlas_reflexiveobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_ReflexiveObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::inversefunctionalobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::InverseFunctionalObjectProperty)
+def test_sparqlas_inversefunctionalobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_InverseFunctionalObjectProperty)
 
 
-def test_sparqlas::inversefunctionalobjectproperty_constructor_exists():
-    assert callable(sparqlas::InverseFunctionalObjectProperty.__init__)
+def test_sparqlas_inversefunctionalobjectproperty_constructor_exists():
+    assert callable(sparqlas_InverseFunctionalObjectProperty.__init__)
 
 
-def test_sparqlas::inversefunctionalobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::InverseFunctionalObjectProperty.__init__)
+def test_sparqlas_inversefunctionalobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_InverseFunctionalObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::functionalobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::FunctionalObjectProperty)
+def test_sparqlas_inverseobjectpropertyatom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_InverseObjectPropertyAtom)
 
 
-def test_sparqlas::functionalobjectproperty_constructor_exists():
-    assert callable(sparqlas::FunctionalObjectProperty.__init__)
+def test_sparqlas_inverseobjectpropertyatom_constructor_exists():
+    assert callable(sparqlas_InverseObjectPropertyAtom.__init__)
 
 
-def test_sparqlas::functionalobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::FunctionalObjectProperty.__init__)
+def test_sparqlas_inverseobjectpropertyatom_constructor_args():
+    sig = inspect.signature(sparqlas_InverseObjectPropertyAtom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertydomain_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyDomain)
+def test_sparqlas_objectpropertydomain_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyDomain)
 
 
-def test_sparqlas::objectpropertydomain_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyDomain.__init__)
+def test_sparqlas_objectpropertydomain_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyDomain.__init__)
 
 
-def test_sparqlas::objectpropertydomain_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyDomain.__init__)
+def test_sparqlas_objectpropertydomain_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyDomain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::disjointobjectproperties_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DisjointObjectProperties)
+def test_sparqlas_disjointobjectproperties_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DisjointObjectProperties)
 
 
-def test_sparqlas::disjointobjectproperties_constructor_exists():
-    assert callable(sparqlas::DisjointObjectProperties.__init__)
+def test_sparqlas_disjointobjectproperties_constructor_exists():
+    assert callable(sparqlas_DisjointObjectProperties.__init__)
 
 
-def test_sparqlas::disjointobjectproperties_constructor_args():
-    sig = inspect.signature(sparqlas::DisjointObjectProperties.__init__)
+def test_sparqlas_disjointobjectproperties_constructor_args():
+    sig = inspect.signature(sparqlas_DisjointObjectProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::facetrestriction_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::FacetRestriction)
+def test_sparqlas_facetrestriction_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_FacetRestriction)
 
 
-def test_sparqlas::facetrestriction_constructor_exists():
-    assert callable(sparqlas::FacetRestriction.__init__)
+def test_sparqlas_facetrestriction_constructor_exists():
+    assert callable(sparqlas_FacetRestriction.__init__)
 
 
-def test_sparqlas::facetrestriction_constructor_args():
-    sig = inspect.signature(sparqlas::FacetRestriction.__init__)
+def test_sparqlas_facetrestriction_constructor_args():
+    sig = inspect.signature(sparqlas_FacetRestriction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::subobjectpropertyof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::SubObjectPropertyOf)
+def test_sparqlas_subobjectpropertyof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_SubObjectPropertyOf)
 
 
-def test_sparqlas::subobjectpropertyof_constructor_exists():
-    assert callable(sparqlas::SubObjectPropertyOf.__init__)
+def test_sparqlas_subobjectpropertyof_constructor_exists():
+    assert callable(sparqlas_SubObjectPropertyOf.__init__)
 
 
-def test_sparqlas::subobjectpropertyof_constructor_args():
-    sig = inspect.signature(sparqlas::SubObjectPropertyOf.__init__)
+def test_sparqlas_subobjectpropertyof_constructor_args():
+    sig = inspect.signature(sparqlas_SubObjectPropertyOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datarange_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataRange)
+def test_sparqlas_datarange_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataRange)
 
 
-def test_sparqlas::datarange_constructor_exists():
-    assert callable(sparqlas::DataRange.__init__)
+def test_sparqlas_datarange_constructor_exists():
+    assert callable(sparqlas_DataRange.__init__)
 
 
-def test_sparqlas::datarange_constructor_args():
-    sig = inspect.signature(sparqlas::DataRange.__init__)
+def test_sparqlas_datarange_constructor_args():
+    sig = inspect.signature(sparqlas_DataRange.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -659,114 +659,114 @@ def test_classatom_constructor_args():
 
 
 
-def test_sparqlas::strictsubclassof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::StrictSubClassOf)
+def test_sparqlas_equivalentclasses_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_EquivalentClasses)
 
 
-def test_sparqlas::strictsubclassof_constructor_exists():
-    assert callable(sparqlas::StrictSubClassOf.__init__)
+def test_sparqlas_equivalentclasses_constructor_exists():
+    assert callable(sparqlas_EquivalentClasses.__init__)
 
 
-def test_sparqlas::strictsubclassof_constructor_args():
-    sig = inspect.signature(sparqlas::StrictSubClassOf.__init__)
+def test_sparqlas_equivalentclasses_constructor_args():
+    sig = inspect.signature(sparqlas_EquivalentClasses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::directsubclassof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DirectSubClassOf)
+def test_sparqlas_directsubclassof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DirectSubClassOf)
 
 
-def test_sparqlas::directsubclassof_constructor_exists():
-    assert callable(sparqlas::DirectSubClassOf.__init__)
+def test_sparqlas_directsubclassof_constructor_exists():
+    assert callable(sparqlas_DirectSubClassOf.__init__)
 
 
-def test_sparqlas::directsubclassof_constructor_args():
-    sig = inspect.signature(sparqlas::DirectSubClassOf.__init__)
+def test_sparqlas_directsubclassof_constructor_args():
+    sig = inspect.signature(sparqlas_DirectSubClassOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::disjointunion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DisjointUnion)
+def test_sparqlas_strictsubclassof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_StrictSubClassOf)
 
 
-def test_sparqlas::disjointunion_constructor_exists():
-    assert callable(sparqlas::DisjointUnion.__init__)
+def test_sparqlas_strictsubclassof_constructor_exists():
+    assert callable(sparqlas_StrictSubClassOf.__init__)
 
 
-def test_sparqlas::disjointunion_constructor_args():
-    sig = inspect.signature(sparqlas::DisjointUnion.__init__)
+def test_sparqlas_strictsubclassof_constructor_args():
+    sig = inspect.signature(sparqlas_StrictSubClassOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::equivalentclasses_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::EquivalentClasses)
+def test_sparqlas_disjointunion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DisjointUnion)
 
 
-def test_sparqlas::equivalentclasses_constructor_exists():
-    assert callable(sparqlas::EquivalentClasses.__init__)
+def test_sparqlas_disjointunion_constructor_exists():
+    assert callable(sparqlas_DisjointUnion.__init__)
 
 
-def test_sparqlas::equivalentclasses_constructor_args():
-    sig = inspect.signature(sparqlas::EquivalentClasses.__init__)
+def test_sparqlas_disjointunion_constructor_args():
+    sig = inspect.signature(sparqlas_DisjointUnion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::subclassof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::SubClassOf)
+def test_sparqlas_subclassof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_SubClassOf)
 
 
-def test_sparqlas::subclassof_constructor_exists():
-    assert callable(sparqlas::SubClassOf.__init__)
+def test_sparqlas_subclassof_constructor_exists():
+    assert callable(sparqlas_SubClassOf.__init__)
 
 
-def test_sparqlas::subclassof_constructor_args():
-    sig = inspect.signature(sparqlas::SubClassOf.__init__)
+def test_sparqlas_subclassof_constructor_args():
+    sig = inspect.signature(sparqlas_SubClassOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::disjointclasses_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DisjointClasses)
+def test_sparqlas_disjointclasses_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DisjointClasses)
 
 
-def test_sparqlas::disjointclasses_constructor_exists():
-    assert callable(sparqlas::DisjointClasses.__init__)
+def test_sparqlas_disjointclasses_constructor_exists():
+    assert callable(sparqlas_DisjointClasses.__init__)
 
 
-def test_sparqlas::disjointclasses_constructor_args():
-    sig = inspect.signature(sparqlas::DisjointClasses.__init__)
+def test_sparqlas_disjointclasses_constructor_args():
+    sig = inspect.signature(sparqlas_DisjointClasses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datapropertyexpression_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataPropertyExpression)
+def test_sparqlas_datapropertyexpression_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataPropertyExpression)
 
 
-def test_sparqlas::datapropertyexpression_constructor_exists():
-    assert callable(sparqlas::DataPropertyExpression.__init__)
+def test_sparqlas_datapropertyexpression_constructor_exists():
+    assert callable(sparqlas_DataPropertyExpression.__init__)
 
 
-def test_sparqlas::datapropertyexpression_constructor_args():
-    sig = inspect.signature(sparqlas::DataPropertyExpression.__init__)
+def test_sparqlas_datapropertyexpression_constructor_args():
+    sig = inspect.signature(sparqlas_DataPropertyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::classexpression_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ClassExpression)
+def test_sparqlas_classexpression_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ClassExpression)
 
 
-def test_sparqlas::classexpression_constructor_exists():
-    assert callable(sparqlas::ClassExpression.__init__)
+def test_sparqlas_classexpression_constructor_exists():
+    assert callable(sparqlas_ClassExpression.__init__)
 
 
-def test_sparqlas::classexpression_constructor_args():
-    sig = inspect.signature(sparqlas::ClassExpression.__init__)
+def test_sparqlas_classexpression_constructor_args():
+    sig = inspect.signature(sparqlas_ClassExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -785,100 +785,100 @@ def test_assertion_constructor_args():
 
 
 
-def test_sparqlas::datapropertyassertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataPropertyAssertion)
+def test_sparqlas_directclassassertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DirectClassAssertion)
 
 
-def test_sparqlas::datapropertyassertion_constructor_exists():
-    assert callable(sparqlas::DataPropertyAssertion.__init__)
+def test_sparqlas_directclassassertion_constructor_exists():
+    assert callable(sparqlas_DirectClassAssertion.__init__)
 
 
-def test_sparqlas::datapropertyassertion_constructor_args():
-    sig = inspect.signature(sparqlas::DataPropertyAssertion.__init__)
+def test_sparqlas_directclassassertion_constructor_args():
+    sig = inspect.signature(sparqlas_DirectClassAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::negativedatapropertyassertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::NegativeDataPropertyAssertion)
+def test_sparqlas_negativeobjectpropertyassertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_NegativeObjectPropertyAssertion)
 
 
-def test_sparqlas::negativedatapropertyassertion_constructor_exists():
-    assert callable(sparqlas::NegativeDataPropertyAssertion.__init__)
+def test_sparqlas_negativeobjectpropertyassertion_constructor_exists():
+    assert callable(sparqlas_NegativeObjectPropertyAssertion.__init__)
 
 
-def test_sparqlas::negativedatapropertyassertion_constructor_args():
-    sig = inspect.signature(sparqlas::NegativeDataPropertyAssertion.__init__)
+def test_sparqlas_negativeobjectpropertyassertion_constructor_args():
+    sig = inspect.signature(sparqlas_NegativeObjectPropertyAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::sameindividual_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::SameIndividual)
+def test_sparqlas_negativedatapropertyassertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_NegativeDataPropertyAssertion)
 
 
-def test_sparqlas::sameindividual_constructor_exists():
-    assert callable(sparqlas::SameIndividual.__init__)
+def test_sparqlas_negativedatapropertyassertion_constructor_exists():
+    assert callable(sparqlas_NegativeDataPropertyAssertion.__init__)
 
 
-def test_sparqlas::sameindividual_constructor_args():
-    sig = inspect.signature(sparqlas::SameIndividual.__init__)
+def test_sparqlas_negativedatapropertyassertion_constructor_args():
+    sig = inspect.signature(sparqlas_NegativeDataPropertyAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::directclassassertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DirectClassAssertion)
+def test_sparqlas_datapropertyassertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataPropertyAssertion)
 
 
-def test_sparqlas::directclassassertion_constructor_exists():
-    assert callable(sparqlas::DirectClassAssertion.__init__)
+def test_sparqlas_datapropertyassertion_constructor_exists():
+    assert callable(sparqlas_DataPropertyAssertion.__init__)
 
 
-def test_sparqlas::directclassassertion_constructor_args():
-    sig = inspect.signature(sparqlas::DirectClassAssertion.__init__)
+def test_sparqlas_datapropertyassertion_constructor_args():
+    sig = inspect.signature(sparqlas_DataPropertyAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::negativeobjectpropertyassertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::NegativeObjectPropertyAssertion)
+def test_sparqlas_differentindividuals_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DifferentIndividuals)
 
 
-def test_sparqlas::negativeobjectpropertyassertion_constructor_exists():
-    assert callable(sparqlas::NegativeObjectPropertyAssertion.__init__)
+def test_sparqlas_differentindividuals_constructor_exists():
+    assert callable(sparqlas_DifferentIndividuals.__init__)
 
 
-def test_sparqlas::negativeobjectpropertyassertion_constructor_args():
-    sig = inspect.signature(sparqlas::NegativeObjectPropertyAssertion.__init__)
+def test_sparqlas_differentindividuals_constructor_args():
+    sig = inspect.signature(sparqlas_DifferentIndividuals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::differentindividuals_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DifferentIndividuals)
+def test_sparqlas_sameindividual_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_SameIndividual)
 
 
-def test_sparqlas::differentindividuals_constructor_exists():
-    assert callable(sparqlas::DifferentIndividuals.__init__)
+def test_sparqlas_sameindividual_constructor_exists():
+    assert callable(sparqlas_SameIndividual.__init__)
 
 
-def test_sparqlas::differentindividuals_constructor_args():
-    sig = inspect.signature(sparqlas::DifferentIndividuals.__init__)
+def test_sparqlas_sameindividual_constructor_args():
+    sig = inspect.signature(sparqlas_SameIndividual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::classassertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ClassAssertion)
+def test_sparqlas_classassertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ClassAssertion)
 
 
-def test_sparqlas::classassertion_constructor_exists():
-    assert callable(sparqlas::ClassAssertion.__init__)
+def test_sparqlas_classassertion_constructor_exists():
+    assert callable(sparqlas_ClassAssertion.__init__)
 
 
-def test_sparqlas::classassertion_constructor_args():
-    sig = inspect.signature(sparqlas::ClassAssertion.__init__)
+def test_sparqlas_classassertion_constructor_args():
+    sig = inspect.signature(sparqlas_ClassAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -897,86 +897,86 @@ def test_atom_constructor_args():
 
 
 
-def test_sparqlas::haskey_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::HasKey)
+def test_sparqlas_classatom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ClassAtom)
 
 
-def test_sparqlas::haskey_constructor_exists():
-    assert callable(sparqlas::HasKey.__init__)
+def test_sparqlas_classatom_constructor_exists():
+    assert callable(sparqlas_ClassAtom.__init__)
 
 
-def test_sparqlas::haskey_constructor_args():
-    sig = inspect.signature(sparqlas::HasKey.__init__)
+def test_sparqlas_classatom_constructor_args():
+    sig = inspect.signature(sparqlas_ClassAtom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::classatom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ClassAtom)
+def test_sparqlas_declaration_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Declaration)
 
 
-def test_sparqlas::classatom_constructor_exists():
-    assert callable(sparqlas::ClassAtom.__init__)
+def test_sparqlas_declaration_constructor_exists():
+    assert callable(sparqlas_Declaration.__init__)
 
 
-def test_sparqlas::classatom_constructor_args():
-    sig = inspect.signature(sparqlas::ClassAtom.__init__)
+def test_sparqlas_declaration_constructor_args():
+    sig = inspect.signature(sparqlas_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::declaration_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Declaration)
+def test_sparqlas_haskey_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_HasKey)
 
 
-def test_sparqlas::declaration_constructor_exists():
-    assert callable(sparqlas::Declaration.__init__)
+def test_sparqlas_haskey_constructor_exists():
+    assert callable(sparqlas_HasKey.__init__)
 
 
-def test_sparqlas::declaration_constructor_args():
-    sig = inspect.signature(sparqlas::Declaration.__init__)
+def test_sparqlas_haskey_constructor_args():
+    sig = inspect.signature(sparqlas_HasKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertyatom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyAtom)
+def test_sparqlas_objectpropertyatom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyAtom)
 
 
-def test_sparqlas::objectpropertyatom_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyAtom.__init__)
+def test_sparqlas_objectpropertyatom_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyAtom.__init__)
 
 
-def test_sparqlas::objectpropertyatom_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyAtom.__init__)
+def test_sparqlas_objectpropertyatom_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyAtom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datapropertyatom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataPropertyAtom)
+def test_sparqlas_datapropertyatom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataPropertyAtom)
 
 
-def test_sparqlas::datapropertyatom_constructor_exists():
-    assert callable(sparqlas::DataPropertyAtom.__init__)
+def test_sparqlas_datapropertyatom_constructor_exists():
+    assert callable(sparqlas_DataPropertyAtom.__init__)
 
 
-def test_sparqlas::datapropertyatom_constructor_args():
-    sig = inspect.signature(sparqlas::DataPropertyAtom.__init__)
+def test_sparqlas_datapropertyatom_constructor_args():
+    sig = inspect.signature(sparqlas_DataPropertyAtom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::assertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Assertion)
+def test_sparqlas_assertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Assertion)
 
 
-def test_sparqlas::assertion_constructor_exists():
-    assert callable(sparqlas::Assertion.__init__)
+def test_sparqlas_assertion_constructor_exists():
+    assert callable(sparqlas_Assertion.__init__)
 
 
-def test_sparqlas::assertion_constructor_args():
-    sig = inspect.signature(sparqlas::Assertion.__init__)
+def test_sparqlas_assertion_constructor_args():
+    sig = inspect.signature(sparqlas_Assertion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -995,16 +995,16 @@ def test_parameterableelement_constructor_args():
 
 
 
-def test_sparqlas::expression_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Expression)
+def test_sparqlas_expression_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Expression)
 
 
-def test_sparqlas::expression_constructor_exists():
-    assert callable(sparqlas::Expression.__init__)
+def test_sparqlas_expression_constructor_exists():
+    assert callable(sparqlas_Expression.__init__)
 
 
-def test_sparqlas::expression_constructor_args():
-    sig = inspect.signature(sparqlas::Expression.__init__)
+def test_sparqlas_expression_constructor_args():
+    sig = inspect.signature(sparqlas_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1023,23 +1023,23 @@ def test_abstractliteral_constructor_args():
 
 
 
-def test_sparqlas::literal_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Literal)
+def test_sparqlas_literal_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Literal)
 
 
-def test_sparqlas::literal_constructor_exists():
-    assert callable(sparqlas::Literal.__init__)
+def test_sparqlas_literal_constructor_exists():
+    assert callable(sparqlas_Literal.__init__)
 
 
-def test_sparqlas::literal_constructor_args():
-    sig = inspect.signature(sparqlas::Literal.__init__)
+def test_sparqlas_literal_constructor_args():
+    sig = inspect.signature(sparqlas_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "lexicalForm" in params, "Missing parameter 'lexicalForm'"
 
-def test_sparqlas::literal_has_lexicalForm():
-    assert hasattr(sparqlas::Literal, "lexicalForm")
+def test_sparqlas_literal_has_lexicalForm():
+    assert hasattr(sparqlas_Literal, "lexicalForm")
     descriptor = None
-    for klass in sparqlas::Literal.__mro__:
+    for klass in sparqlas_Literal.__mro__:
         if "lexicalForm" in klass.__dict__:
             descriptor = klass.__dict__["lexicalForm"]
             break
@@ -1047,30 +1047,30 @@ def test_sparqlas::literal_has_lexicalForm():
 
 
 
-def test_sparqlas::abstractliteral_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::AbstractLiteral)
+def test_sparqlas_abstractliteral_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_AbstractLiteral)
 
 
-def test_sparqlas::abstractliteral_constructor_exists():
-    assert callable(sparqlas::AbstractLiteral.__init__)
+def test_sparqlas_abstractliteral_constructor_exists():
+    assert callable(sparqlas_AbstractLiteral.__init__)
 
 
-def test_sparqlas::abstractliteral_constructor_args():
-    sig = inspect.signature(sparqlas::AbstractLiteral.__init__)
+def test_sparqlas_abstractliteral_constructor_args():
+    sig = inspect.signature(sparqlas_AbstractLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::individual_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Individual)
+def test_sparqlas_individual_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Individual)
 
 
-def test_sparqlas::individual_constructor_exists():
-    assert callable(sparqlas::Individual.__init__)
+def test_sparqlas_individual_constructor_exists():
+    assert callable(sparqlas_Individual.__init__)
 
 
-def test_sparqlas::individual_constructor_args():
-    sig = inspect.signature(sparqlas::Individual.__init__)
+def test_sparqlas_individual_constructor_args():
+    sig = inspect.signature(sparqlas_Individual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1089,72 +1089,72 @@ def test_datarange_constructor_args():
 
 
 
-def test_sparqlas::datatyperestriction_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DatatypeRestriction)
+def test_sparqlas_dataintersectionof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataIntersectionOf)
 
 
-def test_sparqlas::datatyperestriction_constructor_exists():
-    assert callable(sparqlas::DatatypeRestriction.__init__)
+def test_sparqlas_dataintersectionof_constructor_exists():
+    assert callable(sparqlas_DataIntersectionOf.__init__)
 
 
-def test_sparqlas::datatyperestriction_constructor_args():
-    sig = inspect.signature(sparqlas::DatatypeRestriction.__init__)
+def test_sparqlas_dataintersectionof_constructor_args():
+    sig = inspect.signature(sparqlas_DataIntersectionOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::dataoneof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataOneOf)
+def test_sparqlas_datacomplementof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataComplementOf)
 
 
-def test_sparqlas::dataoneof_constructor_exists():
-    assert callable(sparqlas::DataOneOf.__init__)
+def test_sparqlas_datacomplementof_constructor_exists():
+    assert callable(sparqlas_DataComplementOf.__init__)
 
 
-def test_sparqlas::dataoneof_constructor_args():
-    sig = inspect.signature(sparqlas::DataOneOf.__init__)
+def test_sparqlas_datacomplementof_constructor_args():
+    sig = inspect.signature(sparqlas_DataComplementOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datacomplementof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataComplementOf)
+def test_sparqlas_datatyperestriction_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DatatypeRestriction)
 
 
-def test_sparqlas::datacomplementof_constructor_exists():
-    assert callable(sparqlas::DataComplementOf.__init__)
+def test_sparqlas_datatyperestriction_constructor_exists():
+    assert callable(sparqlas_DatatypeRestriction.__init__)
 
 
-def test_sparqlas::datacomplementof_constructor_args():
-    sig = inspect.signature(sparqlas::DataComplementOf.__init__)
+def test_sparqlas_datatyperestriction_constructor_args():
+    sig = inspect.signature(sparqlas_DatatypeRestriction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::dataintersectionof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataIntersectionOf)
+def test_sparqlas_dataoneof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataOneOf)
 
 
-def test_sparqlas::dataintersectionof_constructor_exists():
-    assert callable(sparqlas::DataIntersectionOf.__init__)
+def test_sparqlas_dataoneof_constructor_exists():
+    assert callable(sparqlas_DataOneOf.__init__)
 
 
-def test_sparqlas::dataintersectionof_constructor_args():
-    sig = inspect.signature(sparqlas::DataIntersectionOf.__init__)
+def test_sparqlas_dataoneof_constructor_args():
+    sig = inspect.signature(sparqlas_DataOneOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::dataunionof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataUnionOf)
+def test_sparqlas_dataunionof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataUnionOf)
 
 
-def test_sparqlas::dataunionof_constructor_exists():
-    assert callable(sparqlas::DataUnionOf.__init__)
+def test_sparqlas_dataunionof_constructor_exists():
+    assert callable(sparqlas_DataUnionOf.__init__)
 
 
-def test_sparqlas::dataunionof_constructor_args():
-    sig = inspect.signature(sparqlas::DataUnionOf.__init__)
+def test_sparqlas_dataunionof_constructor_args():
+    sig = inspect.signature(sparqlas_DataUnionOf.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1173,44 +1173,44 @@ def test_constant_constructor_args():
 
 
 
-def test_sparqlas::datatype_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Datatype)
+def test_sparqlas_datatype_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Datatype)
 
 
-def test_sparqlas::datatype_constructor_exists():
-    assert callable(sparqlas::Datatype.__init__)
+def test_sparqlas_datatype_constructor_exists():
+    assert callable(sparqlas_Datatype.__init__)
 
 
-def test_sparqlas::datatype_constructor_args():
-    sig = inspect.signature(sparqlas::Datatype.__init__)
+def test_sparqlas_datatype_constructor_args():
+    sig = inspect.signature(sparqlas_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertyexpression_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyExpression)
+def test_sparqlas_objectpropertyexpression_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyExpression)
 
 
-def test_sparqlas::objectpropertyexpression_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyExpression.__init__)
+def test_sparqlas_objectpropertyexpression_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyExpression.__init__)
 
 
-def test_sparqlas::objectpropertyexpression_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyExpression.__init__)
+def test_sparqlas_objectpropertyexpression_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectpropertyassertion_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyAssertion)
+def test_sparqlas_objectpropertyassertion_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyAssertion)
 
 
-def test_sparqlas::objectpropertyassertion_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyAssertion.__init__)
+def test_sparqlas_objectpropertyassertion_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyAssertion.__init__)
 
 
-def test_sparqlas::objectpropertyassertion_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyAssertion.__init__)
+def test_sparqlas_objectpropertyassertion_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyAssertion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1229,16 +1229,16 @@ def test_datapropertyexpression_constructor_args():
 
 
 
-def test_sparqlas::dataproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataProperty)
+def test_sparqlas_dataproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataProperty)
 
 
-def test_sparqlas::dataproperty_constructor_exists():
-    assert callable(sparqlas::DataProperty.__init__)
+def test_sparqlas_dataproperty_constructor_exists():
+    assert callable(sparqlas_DataProperty.__init__)
 
 
-def test_sparqlas::dataproperty_constructor_args():
-    sig = inspect.signature(sparqlas::DataProperty.__init__)
+def test_sparqlas_dataproperty_constructor_args():
+    sig = inspect.signature(sparqlas_DataProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1257,30 +1257,30 @@ def test_objectpropertyexpression_constructor_args():
 
 
 
-def test_sparqlas::objectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectProperty)
+def test_sparqlas_objectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectProperty)
 
 
-def test_sparqlas::objectproperty_constructor_exists():
-    assert callable(sparqlas::ObjectProperty.__init__)
+def test_sparqlas_objectproperty_constructor_exists():
+    assert callable(sparqlas_ObjectProperty.__init__)
 
 
-def test_sparqlas::objectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectProperty.__init__)
+def test_sparqlas_objectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::inverseobjectproperty_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::InverseObjectProperty)
+def test_sparqlas_inverseobjectproperty_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_InverseObjectProperty)
 
 
-def test_sparqlas::inverseobjectproperty_constructor_exists():
-    assert callable(sparqlas::InverseObjectProperty.__init__)
+def test_sparqlas_inverseobjectproperty_constructor_exists():
+    assert callable(sparqlas_InverseObjectProperty.__init__)
 
 
-def test_sparqlas::inverseobjectproperty_constructor_args():
-    sig = inspect.signature(sparqlas::InverseObjectProperty.__init__)
+def test_sparqlas_inverseobjectproperty_constructor_args():
+    sig = inspect.signature(sparqlas_InverseObjectProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1299,51 +1299,107 @@ def test_classexpression_constructor_args():
 
 
 
-def test_sparqlas::objectallvaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectAllValuesFrom)
+def test_sparqlas_objectcomplementof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectComplementOf)
 
 
-def test_sparqlas::objectallvaluesfrom_constructor_exists():
-    assert callable(sparqlas::ObjectAllValuesFrom.__init__)
+def test_sparqlas_objectcomplementof_constructor_exists():
+    assert callable(sparqlas_ObjectComplementOf.__init__)
 
 
-def test_sparqlas::objectallvaluesfrom_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectAllValuesFrom.__init__)
+def test_sparqlas_objectcomplementof_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectComplementOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectunionof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectUnionOf)
+def test_sparqlas_dataallvaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataAllValuesFrom)
 
 
-def test_sparqlas::objectunionof_constructor_exists():
-    assert callable(sparqlas::ObjectUnionOf.__init__)
+def test_sparqlas_dataallvaluesfrom_constructor_exists():
+    assert callable(sparqlas_DataAllValuesFrom.__init__)
 
 
-def test_sparqlas::objectunionof_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectUnionOf.__init__)
+def test_sparqlas_dataallvaluesfrom_constructor_args():
+    sig = inspect.signature(sparqlas_DataAllValuesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectexactcardinality_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectExactCardinality)
+def test_sparqlas_objecthasvalue_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectHasValue)
 
 
-def test_sparqlas::objectexactcardinality_constructor_exists():
-    assert callable(sparqlas::ObjectExactCardinality.__init__)
+def test_sparqlas_objecthasvalue_constructor_exists():
+    assert callable(sparqlas_ObjectHasValue.__init__)
 
 
-def test_sparqlas::objectexactcardinality_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectExactCardinality.__init__)
+def test_sparqlas_objecthasvalue_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectHasValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_datahasvalue_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataHasValue)
+
+
+def test_sparqlas_datahasvalue_constructor_exists():
+    assert callable(sparqlas_DataHasValue.__init__)
+
+
+def test_sparqlas_datahasvalue_constructor_args():
+    sig = inspect.signature(sparqlas_DataHasValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_objectintersectionof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectIntersectionOf)
+
+
+def test_sparqlas_objectintersectionof_constructor_exists():
+    assert callable(sparqlas_ObjectIntersectionOf.__init__)
+
+
+def test_sparqlas_objectintersectionof_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectIntersectionOf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_datasomevaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataSomeValuesFrom)
+
+
+def test_sparqlas_datasomevaluesfrom_constructor_exists():
+    assert callable(sparqlas_DataSomeValuesFrom.__init__)
+
+
+def test_sparqlas_datasomevaluesfrom_constructor_args():
+    sig = inspect.signature(sparqlas_DataSomeValuesFrom.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_objectexactcardinality_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectExactCardinality)
+
+
+def test_sparqlas_objectexactcardinality_constructor_exists():
+    assert callable(sparqlas_ObjectExactCardinality.__init__)
+
+
+def test_sparqlas_objectexactcardinality_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectExactCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_sparqlas::objectexactcardinality_has_cardinality():
-    assert hasattr(sparqlas::ObjectExactCardinality, "cardinality")
+def test_sparqlas_objectexactcardinality_has_cardinality():
+    assert hasattr(sparqlas_ObjectExactCardinality, "cardinality")
     descriptor = None
-    for klass in sparqlas::ObjectExactCardinality.__mro__:
+    for klass in sparqlas_ObjectExactCardinality.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -1351,37 +1407,37 @@ def test_sparqlas::objectexactcardinality_has_cardinality():
 
 
 
-def test_sparqlas::objecthasvalue_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectHasValue)
+def test_sparqlas_objectsomevaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectSomeValuesFrom)
 
 
-def test_sparqlas::objecthasvalue_constructor_exists():
-    assert callable(sparqlas::ObjectHasValue.__init__)
+def test_sparqlas_objectsomevaluesfrom_constructor_exists():
+    assert callable(sparqlas_ObjectSomeValuesFrom.__init__)
 
 
-def test_sparqlas::objecthasvalue_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectHasValue.__init__)
+def test_sparqlas_objectsomevaluesfrom_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectSomeValuesFrom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::objectmincardinality_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectMinCardinality)
+def test_sparqlas_dataexactcardinality_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataExactCardinality)
 
 
-def test_sparqlas::objectmincardinality_constructor_exists():
-    assert callable(sparqlas::ObjectMinCardinality.__init__)
+def test_sparqlas_dataexactcardinality_constructor_exists():
+    assert callable(sparqlas_DataExactCardinality.__init__)
 
 
-def test_sparqlas::objectmincardinality_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectMinCardinality.__init__)
+def test_sparqlas_dataexactcardinality_constructor_args():
+    sig = inspect.signature(sparqlas_DataExactCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_sparqlas::objectmincardinality_has_cardinality():
-    assert hasattr(sparqlas::ObjectMinCardinality, "cardinality")
+def test_sparqlas_dataexactcardinality_has_cardinality():
+    assert hasattr(sparqlas_DataExactCardinality, "cardinality")
     descriptor = None
-    for klass in sparqlas::ObjectMinCardinality.__mro__:
+    for klass in sparqlas_DataExactCardinality.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -1389,79 +1445,23 @@ def test_sparqlas::objectmincardinality_has_cardinality():
 
 
 
-def test_sparqlas::objectoneof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectOneOf)
+def test_sparqlas_datamincardinality_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataMinCardinality)
 
 
-def test_sparqlas::objectoneof_constructor_exists():
-    assert callable(sparqlas::ObjectOneOf.__init__)
+def test_sparqlas_datamincardinality_constructor_exists():
+    assert callable(sparqlas_DataMinCardinality.__init__)
 
 
-def test_sparqlas::objectoneof_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectOneOf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::datahasvalue_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataHasValue)
-
-
-def test_sparqlas::datahasvalue_constructor_exists():
-    assert callable(sparqlas::DataHasValue.__init__)
-
-
-def test_sparqlas::datahasvalue_constructor_args():
-    sig = inspect.signature(sparqlas::DataHasValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::dataallvaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataAllValuesFrom)
-
-
-def test_sparqlas::dataallvaluesfrom_constructor_exists():
-    assert callable(sparqlas::DataAllValuesFrom.__init__)
-
-
-def test_sparqlas::dataallvaluesfrom_constructor_args():
-    sig = inspect.signature(sparqlas::DataAllValuesFrom.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::objectintersectionof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectIntersectionOf)
-
-
-def test_sparqlas::objectintersectionof_constructor_exists():
-    assert callable(sparqlas::ObjectIntersectionOf.__init__)
-
-
-def test_sparqlas::objectintersectionof_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectIntersectionOf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::dataexactcardinality_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataExactCardinality)
-
-
-def test_sparqlas::dataexactcardinality_constructor_exists():
-    assert callable(sparqlas::DataExactCardinality.__init__)
-
-
-def test_sparqlas::dataexactcardinality_constructor_args():
-    sig = inspect.signature(sparqlas::DataExactCardinality.__init__)
+def test_sparqlas_datamincardinality_constructor_args():
+    sig = inspect.signature(sparqlas_DataMinCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_sparqlas::dataexactcardinality_has_cardinality():
-    assert hasattr(sparqlas::DataExactCardinality, "cardinality")
+def test_sparqlas_datamincardinality_has_cardinality():
+    assert hasattr(sparqlas_DataMinCardinality, "cardinality")
     descriptor = None
-    for klass in sparqlas::DataExactCardinality.__mro__:
+    for klass in sparqlas_DataMinCardinality.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -1469,37 +1469,23 @@ def test_sparqlas::dataexactcardinality_has_cardinality():
 
 
 
-def test_sparqlas::datasomevaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataSomeValuesFrom)
+def test_sparqlas_objectmaxcardinality_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectMaxCardinality)
 
 
-def test_sparqlas::datasomevaluesfrom_constructor_exists():
-    assert callable(sparqlas::DataSomeValuesFrom.__init__)
+def test_sparqlas_objectmaxcardinality_constructor_exists():
+    assert callable(sparqlas_ObjectMaxCardinality.__init__)
 
 
-def test_sparqlas::datasomevaluesfrom_constructor_args():
-    sig = inspect.signature(sparqlas::DataSomeValuesFrom.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::datamaxcardinality_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataMaxCardinality)
-
-
-def test_sparqlas::datamaxcardinality_constructor_exists():
-    assert callable(sparqlas::DataMaxCardinality.__init__)
-
-
-def test_sparqlas::datamaxcardinality_constructor_args():
-    sig = inspect.signature(sparqlas::DataMaxCardinality.__init__)
+def test_sparqlas_objectmaxcardinality_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectMaxCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_sparqlas::datamaxcardinality_has_cardinality():
-    assert hasattr(sparqlas::DataMaxCardinality, "cardinality")
+def test_sparqlas_objectmaxcardinality_has_cardinality():
+    assert hasattr(sparqlas_ObjectMaxCardinality, "cardinality")
     descriptor = None
-    for klass in sparqlas::DataMaxCardinality.__mro__:
+    for klass in sparqlas_ObjectMaxCardinality.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -1507,37 +1493,23 @@ def test_sparqlas::datamaxcardinality_has_cardinality():
 
 
 
-def test_sparqlas::objectcomplementof_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectComplementOf)
+def test_sparqlas_objectmincardinality_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectMinCardinality)
 
 
-def test_sparqlas::objectcomplementof_constructor_exists():
-    assert callable(sparqlas::ObjectComplementOf.__init__)
+def test_sparqlas_objectmincardinality_constructor_exists():
+    assert callable(sparqlas_ObjectMinCardinality.__init__)
 
 
-def test_sparqlas::objectcomplementof_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectComplementOf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::objectmaxcardinality_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectMaxCardinality)
-
-
-def test_sparqlas::objectmaxcardinality_constructor_exists():
-    assert callable(sparqlas::ObjectMaxCardinality.__init__)
-
-
-def test_sparqlas::objectmaxcardinality_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectMaxCardinality.__init__)
+def test_sparqlas_objectmincardinality_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectMinCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_sparqlas::objectmaxcardinality_has_cardinality():
-    assert hasattr(sparqlas::ObjectMaxCardinality, "cardinality")
+def test_sparqlas_objectmincardinality_has_cardinality():
+    assert hasattr(sparqlas_ObjectMinCardinality, "cardinality")
     descriptor = None
-    for klass in sparqlas::ObjectMaxCardinality.__mro__:
+    for klass in sparqlas_ObjectMinCardinality.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -1545,41 +1517,69 @@ def test_sparqlas::objectmaxcardinality_has_cardinality():
 
 
 
-def test_sparqlas::datamincardinality_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataMinCardinality)
+def test_sparqlas_objectoneof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectOneOf)
 
 
-def test_sparqlas::datamincardinality_constructor_exists():
-    assert callable(sparqlas::DataMinCardinality.__init__)
+def test_sparqlas_objectoneof_constructor_exists():
+    assert callable(sparqlas_ObjectOneOf.__init__)
 
 
-def test_sparqlas::datamincardinality_constructor_args():
-    sig = inspect.signature(sparqlas::DataMinCardinality.__init__)
+def test_sparqlas_objectoneof_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectOneOf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_objectunionof_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectUnionOf)
+
+
+def test_sparqlas_objectunionof_constructor_exists():
+    assert callable(sparqlas_ObjectUnionOf.__init__)
+
+
+def test_sparqlas_objectunionof_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectUnionOf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_objectallvaluesfrom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectAllValuesFrom)
+
+
+def test_sparqlas_objectallvaluesfrom_constructor_exists():
+    assert callable(sparqlas_ObjectAllValuesFrom.__init__)
+
+
+def test_sparqlas_objectallvaluesfrom_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectAllValuesFrom.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_datamaxcardinality_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataMaxCardinality)
+
+
+def test_sparqlas_datamaxcardinality_constructor_exists():
+    assert callable(sparqlas_DataMaxCardinality.__init__)
+
+
+def test_sparqlas_datamaxcardinality_constructor_args():
+    sig = inspect.signature(sparqlas_DataMaxCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_sparqlas::datamincardinality_has_cardinality():
-    assert hasattr(sparqlas::DataMinCardinality, "cardinality")
+def test_sparqlas_datamaxcardinality_has_cardinality():
+    assert hasattr(sparqlas_DataMaxCardinality, "cardinality")
     descriptor = None
-    for klass in sparqlas::DataMinCardinality.__mro__:
+    for klass in sparqlas_DataMaxCardinality.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_sparqlas::objectsomevaluesfrom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectSomeValuesFrom)
-
-
-def test_sparqlas::objectsomevaluesfrom_constructor_exists():
-    assert callable(sparqlas::ObjectSomeValuesFrom.__init__)
-
-
-def test_sparqlas::objectsomevaluesfrom_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectSomeValuesFrom.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -1597,58 +1597,58 @@ def test_variable_constructor_args():
 
 
 
-def test_sparqlas::objectpropertyvariable_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ObjectPropertyVariable)
+def test_sparqlas_literalvariable_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_LiteralVariable)
 
 
-def test_sparqlas::objectpropertyvariable_constructor_exists():
-    assert callable(sparqlas::ObjectPropertyVariable.__init__)
+def test_sparqlas_literalvariable_constructor_exists():
+    assert callable(sparqlas_LiteralVariable.__init__)
 
 
-def test_sparqlas::objectpropertyvariable_constructor_args():
-    sig = inspect.signature(sparqlas::ObjectPropertyVariable.__init__)
+def test_sparqlas_literalvariable_constructor_args():
+    sig = inspect.signature(sparqlas_LiteralVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::literalvariable_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::LiteralVariable)
+def test_sparqlas_objectpropertyvariable_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ObjectPropertyVariable)
 
 
-def test_sparqlas::literalvariable_constructor_exists():
-    assert callable(sparqlas::LiteralVariable.__init__)
+def test_sparqlas_objectpropertyvariable_constructor_exists():
+    assert callable(sparqlas_ObjectPropertyVariable.__init__)
 
 
-def test_sparqlas::literalvariable_constructor_args():
-    sig = inspect.signature(sparqlas::LiteralVariable.__init__)
+def test_sparqlas_objectpropertyvariable_constructor_args():
+    sig = inspect.signature(sparqlas_ObjectPropertyVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::datapropertyvariable_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DataPropertyVariable)
+def test_sparqlas_datapropertyvariable_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DataPropertyVariable)
 
 
-def test_sparqlas::datapropertyvariable_constructor_exists():
-    assert callable(sparqlas::DataPropertyVariable.__init__)
+def test_sparqlas_datapropertyvariable_constructor_exists():
+    assert callable(sparqlas_DataPropertyVariable.__init__)
 
 
-def test_sparqlas::datapropertyvariable_constructor_args():
-    sig = inspect.signature(sparqlas::DataPropertyVariable.__init__)
+def test_sparqlas_datapropertyvariable_constructor_args():
+    sig = inspect.signature(sparqlas_DataPropertyVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::classvariable_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ClassVariable)
+def test_sparqlas_classvariable_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ClassVariable)
 
 
-def test_sparqlas::classvariable_constructor_exists():
-    assert callable(sparqlas::ClassVariable.__init__)
+def test_sparqlas_classvariable_constructor_exists():
+    assert callable(sparqlas_ClassVariable.__init__)
 
 
-def test_sparqlas::classvariable_constructor_args():
-    sig = inspect.signature(sparqlas::ClassVariable.__init__)
+def test_sparqlas_classvariable_constructor_args():
+    sig = inspect.signature(sparqlas_ClassVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1667,16 +1667,16 @@ def test_term_constructor_args():
 
 
 
-def test_sparqlas::term_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Term)
+def test_sparqlas_term_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Term)
 
 
-def test_sparqlas::term_constructor_exists():
-    assert callable(sparqlas::Term.__init__)
+def test_sparqlas_term_constructor_exists():
+    assert callable(sparqlas_Term.__init__)
 
 
-def test_sparqlas::term_constructor_args():
-    sig = inspect.signature(sparqlas::Term.__init__)
+def test_sparqlas_term_constructor_args():
+    sig = inspect.signature(sparqlas_Term.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1695,44 +1695,44 @@ def test_iri_constructor_args():
 
 
 
-def test_sparqlas::abbreviatediri_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::AbbreviatedIRI)
+def test_sparqlas_abbreviatediri_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_AbbreviatedIRI)
 
 
-def test_sparqlas::abbreviatediri_constructor_exists():
-    assert callable(sparqlas::AbbreviatedIRI.__init__)
+def test_sparqlas_abbreviatediri_constructor_exists():
+    assert callable(sparqlas_AbbreviatedIRI.__init__)
 
 
-def test_sparqlas::abbreviatediri_constructor_args():
-    sig = inspect.signature(sparqlas::AbbreviatedIRI.__init__)
+def test_sparqlas_abbreviatediri_constructor_args():
+    sig = inspect.signature(sparqlas_AbbreviatedIRI.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::class_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Class)
+def test_sparqlas_class_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Class)
 
 
-def test_sparqlas::class_constructor_exists():
-    assert callable(sparqlas::Class.__init__)
+def test_sparqlas_class_constructor_exists():
+    assert callable(sparqlas_Class.__init__)
 
 
-def test_sparqlas::class_constructor_args():
-    sig = inspect.signature(sparqlas::Class.__init__)
+def test_sparqlas_class_constructor_args():
+    sig = inspect.signature(sparqlas_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::constant_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Constant)
+def test_sparqlas_constant_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Constant)
 
 
-def test_sparqlas::constant_constructor_exists():
-    assert callable(sparqlas::Constant.__init__)
+def test_sparqlas_constant_constructor_exists():
+    assert callable(sparqlas_Constant.__init__)
 
 
-def test_sparqlas::constant_constructor_args():
-    sig = inspect.signature(sparqlas::Constant.__init__)
+def test_sparqlas_constant_constructor_args():
+    sig = inspect.signature(sparqlas_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1751,37 +1751,23 @@ def test_individual_constructor_args():
 
 
 
-def test_sparqlas::namedindividual_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::NamedIndividual)
+def test_sparqlas_anonymousindividual_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_AnonymousIndividual)
 
 
-def test_sparqlas::namedindividual_constructor_exists():
-    assert callable(sparqlas::NamedIndividual.__init__)
+def test_sparqlas_anonymousindividual_constructor_exists():
+    assert callable(sparqlas_AnonymousIndividual.__init__)
 
 
-def test_sparqlas::namedindividual_constructor_args():
-    sig = inspect.signature(sparqlas::NamedIndividual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparqlas::anonymousindividual_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::AnonymousIndividual)
-
-
-def test_sparqlas::anonymousindividual_constructor_exists():
-    assert callable(sparqlas::AnonymousIndividual.__init__)
-
-
-def test_sparqlas::anonymousindividual_constructor_args():
-    sig = inspect.signature(sparqlas::AnonymousIndividual.__init__)
+def test_sparqlas_anonymousindividual_constructor_args():
+    sig = inspect.signature(sparqlas_AnonymousIndividual.__init__)
     params = list(sig.parameters.keys())
     assert "nodeID" in params, "Missing parameter 'nodeID'"
 
-def test_sparqlas::anonymousindividual_has_nodeID():
-    assert hasattr(sparqlas::AnonymousIndividual, "nodeID")
+def test_sparqlas_anonymousindividual_has_nodeID():
+    assert hasattr(sparqlas_AnonymousIndividual, "nodeID")
     descriptor = None
-    for klass in sparqlas::AnonymousIndividual.__mro__:
+    for klass in sparqlas_AnonymousIndividual.__mro__:
         if "nodeID" in klass.__dict__:
             descriptor = klass.__dict__["nodeID"]
             break
@@ -1789,37 +1775,51 @@ def test_sparqlas::anonymousindividual_has_nodeID():
 
 
 
-def test_sparqlas::individualvariable_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::IndividualVariable)
+def test_sparqlas_namedindividual_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_NamedIndividual)
 
 
-def test_sparqlas::individualvariable_constructor_exists():
-    assert callable(sparqlas::IndividualVariable.__init__)
+def test_sparqlas_namedindividual_constructor_exists():
+    assert callable(sparqlas_NamedIndividual.__init__)
 
 
-def test_sparqlas::individualvariable_constructor_args():
-    sig = inspect.signature(sparqlas::IndividualVariable.__init__)
+def test_sparqlas_namedindividual_constructor_args():
+    sig = inspect.signature(sparqlas_NamedIndividual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::variable_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Variable)
+def test_sparqlas_individualvariable_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_IndividualVariable)
 
 
-def test_sparqlas::variable_constructor_exists():
-    assert callable(sparqlas::Variable.__init__)
+def test_sparqlas_individualvariable_constructor_exists():
+    assert callable(sparqlas_IndividualVariable.__init__)
 
 
-def test_sparqlas::variable_constructor_args():
-    sig = inspect.signature(sparqlas::Variable.__init__)
+def test_sparqlas_individualvariable_constructor_args():
+    sig = inspect.signature(sparqlas_IndividualVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparqlas_variable_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Variable)
+
+
+def test_sparqlas_variable_constructor_exists():
+    assert callable(sparqlas_Variable.__init__)
+
+
+def test_sparqlas_variable_constructor_args():
+    sig = inspect.signature(sparqlas_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_sparqlas::variable_has_symbol():
-    assert hasattr(sparqlas::Variable, "symbol")
+def test_sparqlas_variable_has_symbol():
+    assert hasattr(sparqlas_Variable, "symbol")
     descriptor = None
-    for klass in sparqlas::Variable.__mro__:
+    for klass in sparqlas_Variable.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -1827,16 +1827,16 @@ def test_sparqlas::variable_has_symbol():
 
 
 
-def test_sparqlas::atom_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Atom)
+def test_sparqlas_atom_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Atom)
 
 
-def test_sparqlas::atom_constructor_exists():
-    assert callable(sparqlas::Atom.__init__)
+def test_sparqlas_atom_constructor_exists():
+    assert callable(sparqlas_Atom.__init__)
 
 
-def test_sparqlas::atom_constructor_args():
-    sig = inspect.signature(sparqlas::Atom.__init__)
+def test_sparqlas_atom_constructor_args():
+    sig = inspect.signature(sparqlas_Atom.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1869,107 +1869,107 @@ def test_query_constructor_args():
 
 
 
-def test_sparqlas::constructquery_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::ConstructQuery)
+def test_sparqlas_constructquery_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_ConstructQuery)
 
 
-def test_sparqlas::constructquery_constructor_exists():
-    assert callable(sparqlas::ConstructQuery.__init__)
+def test_sparqlas_constructquery_constructor_exists():
+    assert callable(sparqlas_ConstructQuery.__init__)
 
 
-def test_sparqlas::constructquery_constructor_args():
-    sig = inspect.signature(sparqlas::ConstructQuery.__init__)
+def test_sparqlas_constructquery_constructor_args():
+    sig = inspect.signature(sparqlas_ConstructQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::selectquery_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::SelectQuery)
+def test_sparqlas_selectquery_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_SelectQuery)
 
 
-def test_sparqlas::selectquery_constructor_exists():
-    assert callable(sparqlas::SelectQuery.__init__)
+def test_sparqlas_selectquery_constructor_exists():
+    assert callable(sparqlas_SelectQuery.__init__)
 
 
-def test_sparqlas::selectquery_constructor_args():
-    sig = inspect.signature(sparqlas::SelectQuery.__init__)
+def test_sparqlas_selectquery_constructor_args():
+    sig = inspect.signature(sparqlas_SelectQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::fulliri_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::FullIRI)
+def test_sparqlas_fulliri_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_FullIRI)
 
 
-def test_sparqlas::fulliri_constructor_exists():
-    assert callable(sparqlas::FullIRI.__init__)
+def test_sparqlas_fulliri_constructor_exists():
+    assert callable(sparqlas_FullIRI.__init__)
 
 
-def test_sparqlas::fulliri_constructor_args():
-    sig = inspect.signature(sparqlas::FullIRI.__init__)
+def test_sparqlas_fulliri_constructor_args():
+    sig = inspect.signature(sparqlas_FullIRI.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::describequery_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::DescribeQuery)
+def test_sparqlas_describequery_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_DescribeQuery)
 
 
-def test_sparqlas::describequery_constructor_exists():
-    assert callable(sparqlas::DescribeQuery.__init__)
+def test_sparqlas_describequery_constructor_exists():
+    assert callable(sparqlas_DescribeQuery.__init__)
 
 
-def test_sparqlas::describequery_constructor_args():
-    sig = inspect.signature(sparqlas::DescribeQuery.__init__)
+def test_sparqlas_describequery_constructor_args():
+    sig = inspect.signature(sparqlas_DescribeQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::askquery_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::AskQuery)
+def test_sparqlas_askquery_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_AskQuery)
 
 
-def test_sparqlas::askquery_constructor_exists():
-    assert callable(sparqlas::AskQuery.__init__)
+def test_sparqlas_askquery_constructor_exists():
+    assert callable(sparqlas_AskQuery.__init__)
 
 
-def test_sparqlas::askquery_constructor_args():
-    sig = inspect.signature(sparqlas::AskQuery.__init__)
+def test_sparqlas_askquery_constructor_args():
+    sig = inspect.signature(sparqlas_AskQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::import_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Import)
+def test_sparqlas_import_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Import)
 
 
-def test_sparqlas::import_constructor_exists():
-    assert callable(sparqlas::Import.__init__)
+def test_sparqlas_import_constructor_exists():
+    assert callable(sparqlas_Import.__init__)
 
 
-def test_sparqlas::import_constructor_args():
-    sig = inspect.signature(sparqlas::Import.__init__)
+def test_sparqlas_import_constructor_args():
+    sig = inspect.signature(sparqlas_Import.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::iri_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::IRI)
+def test_sparqlas_iri_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_IRI)
 
 
-def test_sparqlas::iri_constructor_exists():
-    assert callable(sparqlas::IRI.__init__)
+def test_sparqlas_iri_constructor_exists():
+    assert callable(sparqlas_IRI.__init__)
 
 
-def test_sparqlas::iri_constructor_args():
-    sig = inspect.signature(sparqlas::IRI.__init__)
+def test_sparqlas_iri_constructor_args():
+    sig = inspect.signature(sparqlas_IRI.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_sparqlas::iri_has_id():
-    assert hasattr(sparqlas::IRI, "id")
+def test_sparqlas_iri_has_id():
+    assert hasattr(sparqlas_IRI, "id")
     descriptor = None
-    for klass in sparqlas::IRI.__mro__:
+    for klass in sparqlas_IRI.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1977,51 +1977,51 @@ def test_sparqlas::iri_has_id():
 
 
 
-def test_sparqlas::ontologydocument_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::OntologyDocument)
+def test_sparqlas_ontologydocument_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_OntologyDocument)
 
 
-def test_sparqlas::ontologydocument_constructor_exists():
-    assert callable(sparqlas::OntologyDocument.__init__)
+def test_sparqlas_ontologydocument_constructor_exists():
+    assert callable(sparqlas_OntologyDocument.__init__)
 
 
-def test_sparqlas::ontologydocument_constructor_args():
-    sig = inspect.signature(sparqlas::OntologyDocument.__init__)
+def test_sparqlas_ontologydocument_constructor_args():
+    sig = inspect.signature(sparqlas_OntologyDocument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::query_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::Query)
+def test_sparqlas_query_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_Query)
 
 
-def test_sparqlas::query_constructor_exists():
-    assert callable(sparqlas::Query.__init__)
+def test_sparqlas_query_constructor_exists():
+    assert callable(sparqlas_Query.__init__)
 
 
-def test_sparqlas::query_constructor_args():
-    sig = inspect.signature(sparqlas::Query.__init__)
+def test_sparqlas_query_constructor_args():
+    sig = inspect.signature(sparqlas_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparqlas::prefixdefinition_is_not_abstract():
-    assert not inspect.isabstract(sparqlas::PrefixDefinition)
+def test_sparqlas_prefixdefinition_is_not_abstract():
+    assert not inspect.isabstract(sparqlas_PrefixDefinition)
 
 
-def test_sparqlas::prefixdefinition_constructor_exists():
-    assert callable(sparqlas::PrefixDefinition.__init__)
+def test_sparqlas_prefixdefinition_constructor_exists():
+    assert callable(sparqlas_PrefixDefinition.__init__)
 
 
-def test_sparqlas::prefixdefinition_constructor_args():
-    sig = inspect.signature(sparqlas::PrefixDefinition.__init__)
+def test_sparqlas_prefixdefinition_constructor_args():
+    sig = inspect.signature(sparqlas_PrefixDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "pref" in params, "Missing parameter 'pref'"
 
-def test_sparqlas::prefixdefinition_has_pref():
-    assert hasattr(sparqlas::PrefixDefinition, "pref")
+def test_sparqlas_prefixdefinition_has_pref():
+    assert hasattr(sparqlas_PrefixDefinition, "pref")
     descriptor = None
-    for klass in sparqlas::PrefixDefinition.__mro__:
+    for klass in sparqlas_PrefixDefinition.__mro__:
         if "pref" in klass.__dict__:
             descriptor = klass.__dict__["pref"]
             break
@@ -2039,110 +2039,110 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sparqlas::TemplateBinding_strategy = st.builds(
-    sparqlas::TemplateBinding,
+sparqlas_TemplateBinding_strategy = st.builds(
+    sparqlas_TemplateBinding,
 )
-sparqlas::TemplateableElement_strategy = st.builds(
-    sparqlas::TemplateableElement,
+sparqlas_TemplateableElement_strategy = st.builds(
+    sparqlas_TemplateableElement,
 )
-sparqlas::TemplateParameterSubstitution_strategy = st.builds(
-    sparqlas::TemplateParameterSubstitution,
+sparqlas_TemplateParameterSubstitution_strategy = st.builds(
+    sparqlas_TemplateParameterSubstitution,
 )
-sparqlas::TemplateSignature_strategy = st.builds(
-    sparqlas::TemplateSignature,
+sparqlas_TemplateSignature_strategy = st.builds(
+    sparqlas_TemplateSignature,
 )
-sparqlas::TemplateParameter_strategy = st.builds(
-    sparqlas::TemplateParameter,
+sparqlas_TemplateParameter_strategy = st.builds(
+    sparqlas_TemplateParameter,
 )
-sparqlas::ParameterableElement_strategy = st.builds(
-    sparqlas::ParameterableElement,
+sparqlas_ParameterableElement_strategy = st.builds(
+    sparqlas_ParameterableElement,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-sparqlas::DatatypePropertyDeclaration_strategy = st.builds(
-    sparqlas::DatatypePropertyDeclaration,
+sparqlas_ObjectPropertyDeclaration_strategy = st.builds(
+    sparqlas_ObjectPropertyDeclaration,
 )
-sparqlas::ObjectPropertyDeclaration_strategy = st.builds(
-    sparqlas::ObjectPropertyDeclaration,
+sparqlas_DatatypePropertyDeclaration_strategy = st.builds(
+    sparqlas_DatatypePropertyDeclaration,
 )
-sparqlas::ClassDeclaration_strategy = st.builds(
-    sparqlas::ClassDeclaration,
+sparqlas_ClassDeclaration_strategy = st.builds(
+    sparqlas_ClassDeclaration,
 )
-sparqlas::IndividualDeclaration_strategy = st.builds(
-    sparqlas::IndividualDeclaration,
+sparqlas_IndividualDeclaration_strategy = st.builds(
+    sparqlas_IndividualDeclaration,
 )
 DataPropertyAtom_strategy = st.builds(
     DataPropertyAtom,
 )
-sparqlas::DisjointDataProperties_strategy = st.builds(
-    sparqlas::DisjointDataProperties,
+sparqlas_DisjointDataProperties_strategy = st.builds(
+    sparqlas_DisjointDataProperties,
 )
-sparqlas::FunctionalDataProperty_strategy = st.builds(
-    sparqlas::FunctionalDataProperty,
+sparqlas_DataPropertyDomain_strategy = st.builds(
+    sparqlas_DataPropertyDomain,
 )
-sparqlas::DataPropertyDomain_strategy = st.builds(
-    sparqlas::DataPropertyDomain,
+sparqlas_EquivalentDataProperties_strategy = st.builds(
+    sparqlas_EquivalentDataProperties,
 )
-sparqlas::DataPropertyRange_strategy = st.builds(
-    sparqlas::DataPropertyRange,
+sparqlas_DataPropertyRange_strategy = st.builds(
+    sparqlas_DataPropertyRange,
 )
-sparqlas::EquivalentDataProperties_strategy = st.builds(
-    sparqlas::EquivalentDataProperties,
+sparqlas_FunctionalDataProperty_strategy = st.builds(
+    sparqlas_FunctionalDataProperty,
 )
-sparqlas::SubDataPropertyOf_strategy = st.builds(
-    sparqlas::SubDataPropertyOf,
+sparqlas_SubDataPropertyOf_strategy = st.builds(
+    sparqlas_SubDataPropertyOf,
 )
-sparqlas::ObjectPropertyChain_strategy = st.builds(
-    sparqlas::ObjectPropertyChain,
+sparqlas_ObjectPropertyChain_strategy = st.builds(
+    sparqlas_ObjectPropertyChain,
 )
 ObjectPropertyAtom_strategy = st.builds(
     ObjectPropertyAtom,
 )
-sparqlas::SymmetricObjectProperty_strategy = st.builds(
-    sparqlas::SymmetricObjectProperty,
+sparqlas_FunctionalObjectProperty_strategy = st.builds(
+    sparqlas_FunctionalObjectProperty,
 )
-sparqlas::EquivalentObjectProperties_strategy = st.builds(
-    sparqlas::EquivalentObjectProperties,
+sparqlas_AsymmetricObjectProperty_strategy = st.builds(
+    sparqlas_AsymmetricObjectProperty,
 )
-sparqlas::IrreflexiveObjectProperty_strategy = st.builds(
-    sparqlas::IrreflexiveObjectProperty,
+sparqlas_IrreflexiveObjectProperty_strategy = st.builds(
+    sparqlas_IrreflexiveObjectProperty,
 )
-sparqlas::ObjectPropertyRange_strategy = st.builds(
-    sparqlas::ObjectPropertyRange,
+sparqlas_EquivalentObjectProperties_strategy = st.builds(
+    sparqlas_EquivalentObjectProperties,
 )
-sparqlas::TransitiveObjectProperty_strategy = st.builds(
-    sparqlas::TransitiveObjectProperty,
+sparqlas_TransitiveObjectProperty_strategy = st.builds(
+    sparqlas_TransitiveObjectProperty,
 )
-sparqlas::InverseObjectPropertyAtom_strategy = st.builds(
-    sparqlas::InverseObjectPropertyAtom,
+sparqlas_ObjectPropertyRange_strategy = st.builds(
+    sparqlas_ObjectPropertyRange,
 )
-sparqlas::AsymmetricObjectProperty_strategy = st.builds(
-    sparqlas::AsymmetricObjectProperty,
+sparqlas_SymmetricObjectProperty_strategy = st.builds(
+    sparqlas_SymmetricObjectProperty,
 )
-sparqlas::ReflexiveObjectProperty_strategy = st.builds(
-    sparqlas::ReflexiveObjectProperty,
+sparqlas_ReflexiveObjectProperty_strategy = st.builds(
+    sparqlas_ReflexiveObjectProperty,
 )
-sparqlas::InverseFunctionalObjectProperty_strategy = st.builds(
-    sparqlas::InverseFunctionalObjectProperty,
+sparqlas_InverseFunctionalObjectProperty_strategy = st.builds(
+    sparqlas_InverseFunctionalObjectProperty,
 )
-sparqlas::FunctionalObjectProperty_strategy = st.builds(
-    sparqlas::FunctionalObjectProperty,
+sparqlas_InverseObjectPropertyAtom_strategy = st.builds(
+    sparqlas_InverseObjectPropertyAtom,
 )
-sparqlas::ObjectPropertyDomain_strategy = st.builds(
-    sparqlas::ObjectPropertyDomain,
+sparqlas_ObjectPropertyDomain_strategy = st.builds(
+    sparqlas_ObjectPropertyDomain,
 )
-sparqlas::DisjointObjectProperties_strategy = st.builds(
-    sparqlas::DisjointObjectProperties,
+sparqlas_DisjointObjectProperties_strategy = st.builds(
+    sparqlas_DisjointObjectProperties,
 )
-sparqlas::FacetRestriction_strategy = st.builds(
-    sparqlas::FacetRestriction,
+sparqlas_FacetRestriction_strategy = st.builds(
+    sparqlas_FacetRestriction,
 )
-sparqlas::SubObjectPropertyOf_strategy = st.builds(
-    sparqlas::SubObjectPropertyOf,
+sparqlas_SubObjectPropertyOf_strategy = st.builds(
+    sparqlas_SubObjectPropertyOf,
 )
-sparqlas::DataRange_strategy = st.builds(
-    sparqlas::DataRange,
+sparqlas_DataRange_strategy = st.builds(
+    sparqlas_DataRange,
 )
 Expression_strategy = st.builds(
     Expression,
@@ -2150,257 +2150,257 @@ Expression_strategy = st.builds(
 ClassAtom_strategy = st.builds(
     ClassAtom,
 )
-sparqlas::StrictSubClassOf_strategy = st.builds(
-    sparqlas::StrictSubClassOf,
+sparqlas_EquivalentClasses_strategy = st.builds(
+    sparqlas_EquivalentClasses,
 )
-sparqlas::DirectSubClassOf_strategy = st.builds(
-    sparqlas::DirectSubClassOf,
+sparqlas_DirectSubClassOf_strategy = st.builds(
+    sparqlas_DirectSubClassOf,
 )
-sparqlas::DisjointUnion_strategy = st.builds(
-    sparqlas::DisjointUnion,
+sparqlas_StrictSubClassOf_strategy = st.builds(
+    sparqlas_StrictSubClassOf,
 )
-sparqlas::EquivalentClasses_strategy = st.builds(
-    sparqlas::EquivalentClasses,
+sparqlas_DisjointUnion_strategy = st.builds(
+    sparqlas_DisjointUnion,
 )
-sparqlas::SubClassOf_strategy = st.builds(
-    sparqlas::SubClassOf,
+sparqlas_SubClassOf_strategy = st.builds(
+    sparqlas_SubClassOf,
 )
-sparqlas::DisjointClasses_strategy = st.builds(
-    sparqlas::DisjointClasses,
+sparqlas_DisjointClasses_strategy = st.builds(
+    sparqlas_DisjointClasses,
 )
-sparqlas::DataPropertyExpression_strategy = st.builds(
-    sparqlas::DataPropertyExpression,
+sparqlas_DataPropertyExpression_strategy = st.builds(
+    sparqlas_DataPropertyExpression,
 )
-sparqlas::ClassExpression_strategy = st.builds(
-    sparqlas::ClassExpression,
+sparqlas_ClassExpression_strategy = st.builds(
+    sparqlas_ClassExpression,
 )
 Assertion_strategy = st.builds(
     Assertion,
 )
-sparqlas::DataPropertyAssertion_strategy = st.builds(
-    sparqlas::DataPropertyAssertion,
+sparqlas_DirectClassAssertion_strategy = st.builds(
+    sparqlas_DirectClassAssertion,
 )
-sparqlas::NegativeDataPropertyAssertion_strategy = st.builds(
-    sparqlas::NegativeDataPropertyAssertion,
+sparqlas_NegativeObjectPropertyAssertion_strategy = st.builds(
+    sparqlas_NegativeObjectPropertyAssertion,
 )
-sparqlas::SameIndividual_strategy = st.builds(
-    sparqlas::SameIndividual,
+sparqlas_NegativeDataPropertyAssertion_strategy = st.builds(
+    sparqlas_NegativeDataPropertyAssertion,
 )
-sparqlas::DirectClassAssertion_strategy = st.builds(
-    sparqlas::DirectClassAssertion,
+sparqlas_DataPropertyAssertion_strategy = st.builds(
+    sparqlas_DataPropertyAssertion,
 )
-sparqlas::NegativeObjectPropertyAssertion_strategy = st.builds(
-    sparqlas::NegativeObjectPropertyAssertion,
+sparqlas_DifferentIndividuals_strategy = st.builds(
+    sparqlas_DifferentIndividuals,
 )
-sparqlas::DifferentIndividuals_strategy = st.builds(
-    sparqlas::DifferentIndividuals,
+sparqlas_SameIndividual_strategy = st.builds(
+    sparqlas_SameIndividual,
 )
-sparqlas::ClassAssertion_strategy = st.builds(
-    sparqlas::ClassAssertion,
+sparqlas_ClassAssertion_strategy = st.builds(
+    sparqlas_ClassAssertion,
 )
 Atom_strategy = st.builds(
     Atom,
 )
-sparqlas::HasKey_strategy = st.builds(
-    sparqlas::HasKey,
+sparqlas_ClassAtom_strategy = st.builds(
+    sparqlas_ClassAtom,
 )
-sparqlas::ClassAtom_strategy = st.builds(
-    sparqlas::ClassAtom,
+sparqlas_Declaration_strategy = st.builds(
+    sparqlas_Declaration,
 )
-sparqlas::Declaration_strategy = st.builds(
-    sparqlas::Declaration,
+sparqlas_HasKey_strategy = st.builds(
+    sparqlas_HasKey,
 )
-sparqlas::ObjectPropertyAtom_strategy = st.builds(
-    sparqlas::ObjectPropertyAtom,
+sparqlas_ObjectPropertyAtom_strategy = st.builds(
+    sparqlas_ObjectPropertyAtom,
 )
-sparqlas::DataPropertyAtom_strategy = st.builds(
-    sparqlas::DataPropertyAtom,
+sparqlas_DataPropertyAtom_strategy = st.builds(
+    sparqlas_DataPropertyAtom,
 )
-sparqlas::Assertion_strategy = st.builds(
-    sparqlas::Assertion,
+sparqlas_Assertion_strategy = st.builds(
+    sparqlas_Assertion,
 )
 ParameterableElement_strategy = st.builds(
     ParameterableElement,
 )
-sparqlas::Expression_strategy = st.builds(
-    sparqlas::Expression,
+sparqlas_Expression_strategy = st.builds(
+    sparqlas_Expression,
 )
 AbstractLiteral_strategy = st.builds(
     AbstractLiteral,
 )
-sparqlas::Literal_strategy = st.builds(
-    sparqlas::Literal,
+sparqlas_Literal_strategy = st.builds(
+    sparqlas_Literal,
     lexicalForm=
         safe_text
 )
-sparqlas::AbstractLiteral_strategy = st.builds(
-    sparqlas::AbstractLiteral,
+sparqlas_AbstractLiteral_strategy = st.builds(
+    sparqlas_AbstractLiteral,
 )
-sparqlas::Individual_strategy = st.builds(
-    sparqlas::Individual,
+sparqlas_Individual_strategy = st.builds(
+    sparqlas_Individual,
 )
 DataRange_strategy = st.builds(
     DataRange,
 )
-sparqlas::DatatypeRestriction_strategy = st.builds(
-    sparqlas::DatatypeRestriction,
+sparqlas_DataIntersectionOf_strategy = st.builds(
+    sparqlas_DataIntersectionOf,
 )
-sparqlas::DataOneOf_strategy = st.builds(
-    sparqlas::DataOneOf,
+sparqlas_DataComplementOf_strategy = st.builds(
+    sparqlas_DataComplementOf,
 )
-sparqlas::DataComplementOf_strategy = st.builds(
-    sparqlas::DataComplementOf,
+sparqlas_DatatypeRestriction_strategy = st.builds(
+    sparqlas_DatatypeRestriction,
 )
-sparqlas::DataIntersectionOf_strategy = st.builds(
-    sparqlas::DataIntersectionOf,
+sparqlas_DataOneOf_strategy = st.builds(
+    sparqlas_DataOneOf,
 )
-sparqlas::DataUnionOf_strategy = st.builds(
-    sparqlas::DataUnionOf,
+sparqlas_DataUnionOf_strategy = st.builds(
+    sparqlas_DataUnionOf,
 )
 Constant_strategy = st.builds(
     Constant,
 )
-sparqlas::Datatype_strategy = st.builds(
-    sparqlas::Datatype,
+sparqlas_Datatype_strategy = st.builds(
+    sparqlas_Datatype,
 )
-sparqlas::ObjectPropertyExpression_strategy = st.builds(
-    sparqlas::ObjectPropertyExpression,
+sparqlas_ObjectPropertyExpression_strategy = st.builds(
+    sparqlas_ObjectPropertyExpression,
 )
-sparqlas::ObjectPropertyAssertion_strategy = st.builds(
-    sparqlas::ObjectPropertyAssertion,
+sparqlas_ObjectPropertyAssertion_strategy = st.builds(
+    sparqlas_ObjectPropertyAssertion,
 )
 DataPropertyExpression_strategy = st.builds(
     DataPropertyExpression,
 )
-sparqlas::DataProperty_strategy = st.builds(
-    sparqlas::DataProperty,
+sparqlas_DataProperty_strategy = st.builds(
+    sparqlas_DataProperty,
 )
 ObjectPropertyExpression_strategy = st.builds(
     ObjectPropertyExpression,
 )
-sparqlas::ObjectProperty_strategy = st.builds(
-    sparqlas::ObjectProperty,
+sparqlas_ObjectProperty_strategy = st.builds(
+    sparqlas_ObjectProperty,
 )
-sparqlas::InverseObjectProperty_strategy = st.builds(
-    sparqlas::InverseObjectProperty,
+sparqlas_InverseObjectProperty_strategy = st.builds(
+    sparqlas_InverseObjectProperty,
 )
 ClassExpression_strategy = st.builds(
     ClassExpression,
 )
-sparqlas::ObjectAllValuesFrom_strategy = st.builds(
-    sparqlas::ObjectAllValuesFrom,
+sparqlas_ObjectComplementOf_strategy = st.builds(
+    sparqlas_ObjectComplementOf,
 )
-sparqlas::ObjectUnionOf_strategy = st.builds(
-    sparqlas::ObjectUnionOf,
+sparqlas_DataAllValuesFrom_strategy = st.builds(
+    sparqlas_DataAllValuesFrom,
 )
-sparqlas::ObjectExactCardinality_strategy = st.builds(
-    sparqlas::ObjectExactCardinality,
+sparqlas_ObjectHasValue_strategy = st.builds(
+    sparqlas_ObjectHasValue,
+)
+sparqlas_DataHasValue_strategy = st.builds(
+    sparqlas_DataHasValue,
+)
+sparqlas_ObjectIntersectionOf_strategy = st.builds(
+    sparqlas_ObjectIntersectionOf,
+)
+sparqlas_DataSomeValuesFrom_strategy = st.builds(
+    sparqlas_DataSomeValuesFrom,
+)
+sparqlas_ObjectExactCardinality_strategy = st.builds(
+    sparqlas_ObjectExactCardinality,
     cardinality=
         st.integers()
 )
-sparqlas::ObjectHasValue_strategy = st.builds(
-    sparqlas::ObjectHasValue,
+sparqlas_ObjectSomeValuesFrom_strategy = st.builds(
+    sparqlas_ObjectSomeValuesFrom,
 )
-sparqlas::ObjectMinCardinality_strategy = st.builds(
-    sparqlas::ObjectMinCardinality,
+sparqlas_DataExactCardinality_strategy = st.builds(
+    sparqlas_DataExactCardinality,
     cardinality=
         st.integers()
 )
-sparqlas::ObjectOneOf_strategy = st.builds(
-    sparqlas::ObjectOneOf,
-)
-sparqlas::DataHasValue_strategy = st.builds(
-    sparqlas::DataHasValue,
-)
-sparqlas::DataAllValuesFrom_strategy = st.builds(
-    sparqlas::DataAllValuesFrom,
-)
-sparqlas::ObjectIntersectionOf_strategy = st.builds(
-    sparqlas::ObjectIntersectionOf,
-)
-sparqlas::DataExactCardinality_strategy = st.builds(
-    sparqlas::DataExactCardinality,
+sparqlas_DataMinCardinality_strategy = st.builds(
+    sparqlas_DataMinCardinality,
     cardinality=
         st.integers()
 )
-sparqlas::DataSomeValuesFrom_strategy = st.builds(
-    sparqlas::DataSomeValuesFrom,
-)
-sparqlas::DataMaxCardinality_strategy = st.builds(
-    sparqlas::DataMaxCardinality,
+sparqlas_ObjectMaxCardinality_strategy = st.builds(
+    sparqlas_ObjectMaxCardinality,
     cardinality=
         st.integers()
 )
-sparqlas::ObjectComplementOf_strategy = st.builds(
-    sparqlas::ObjectComplementOf,
-)
-sparqlas::ObjectMaxCardinality_strategy = st.builds(
-    sparqlas::ObjectMaxCardinality,
+sparqlas_ObjectMinCardinality_strategy = st.builds(
+    sparqlas_ObjectMinCardinality,
     cardinality=
         st.integers()
 )
-sparqlas::DataMinCardinality_strategy = st.builds(
-    sparqlas::DataMinCardinality,
+sparqlas_ObjectOneOf_strategy = st.builds(
+    sparqlas_ObjectOneOf,
+)
+sparqlas_ObjectUnionOf_strategy = st.builds(
+    sparqlas_ObjectUnionOf,
+)
+sparqlas_ObjectAllValuesFrom_strategy = st.builds(
+    sparqlas_ObjectAllValuesFrom,
+)
+sparqlas_DataMaxCardinality_strategy = st.builds(
+    sparqlas_DataMaxCardinality,
     cardinality=
         st.integers()
-)
-sparqlas::ObjectSomeValuesFrom_strategy = st.builds(
-    sparqlas::ObjectSomeValuesFrom,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-sparqlas::ObjectPropertyVariable_strategy = st.builds(
-    sparqlas::ObjectPropertyVariable,
+sparqlas_LiteralVariable_strategy = st.builds(
+    sparqlas_LiteralVariable,
 )
-sparqlas::LiteralVariable_strategy = st.builds(
-    sparqlas::LiteralVariable,
+sparqlas_ObjectPropertyVariable_strategy = st.builds(
+    sparqlas_ObjectPropertyVariable,
 )
-sparqlas::DataPropertyVariable_strategy = st.builds(
-    sparqlas::DataPropertyVariable,
+sparqlas_DataPropertyVariable_strategy = st.builds(
+    sparqlas_DataPropertyVariable,
 )
-sparqlas::ClassVariable_strategy = st.builds(
-    sparqlas::ClassVariable,
+sparqlas_ClassVariable_strategy = st.builds(
+    sparqlas_ClassVariable,
 )
 Term_strategy = st.builds(
     Term,
 )
-sparqlas::Term_strategy = st.builds(
-    sparqlas::Term,
+sparqlas_Term_strategy = st.builds(
+    sparqlas_Term,
 )
 IRI_strategy = st.builds(
     IRI,
 )
-sparqlas::AbbreviatedIRI_strategy = st.builds(
-    sparqlas::AbbreviatedIRI,
+sparqlas_AbbreviatedIRI_strategy = st.builds(
+    sparqlas_AbbreviatedIRI,
 )
-sparqlas::Class_strategy = st.builds(
-    sparqlas::Class,
+sparqlas_Class_strategy = st.builds(
+    sparqlas_Class,
 )
-sparqlas::Constant_strategy = st.builds(
-    sparqlas::Constant,
+sparqlas_Constant_strategy = st.builds(
+    sparqlas_Constant,
 )
 Individual_strategy = st.builds(
     Individual,
 )
-sparqlas::NamedIndividual_strategy = st.builds(
-    sparqlas::NamedIndividual,
-)
-sparqlas::AnonymousIndividual_strategy = st.builds(
-    sparqlas::AnonymousIndividual,
+sparqlas_AnonymousIndividual_strategy = st.builds(
+    sparqlas_AnonymousIndividual,
     nodeID=
         safe_text
 )
-sparqlas::IndividualVariable_strategy = st.builds(
-    sparqlas::IndividualVariable,
+sparqlas_NamedIndividual_strategy = st.builds(
+    sparqlas_NamedIndividual,
 )
-sparqlas::Variable_strategy = st.builds(
-    sparqlas::Variable,
+sparqlas_IndividualVariable_strategy = st.builds(
+    sparqlas_IndividualVariable,
+)
+sparqlas_Variable_strategy = st.builds(
+    sparqlas_Variable,
     symbol=
         safe_text
 )
-sparqlas::Atom_strategy = st.builds(
-    sparqlas::Atom,
+sparqlas_Atom_strategy = st.builds(
+    sparqlas_Atom,
 )
 TemplateableElement_strategy = st.builds(
     TemplateableElement,
@@ -2408,215 +2408,215 @@ TemplateableElement_strategy = st.builds(
 Query_strategy = st.builds(
     Query,
 )
-sparqlas::ConstructQuery_strategy = st.builds(
-    sparqlas::ConstructQuery,
+sparqlas_ConstructQuery_strategy = st.builds(
+    sparqlas_ConstructQuery,
 )
-sparqlas::SelectQuery_strategy = st.builds(
-    sparqlas::SelectQuery,
+sparqlas_SelectQuery_strategy = st.builds(
+    sparqlas_SelectQuery,
 )
-sparqlas::FullIRI_strategy = st.builds(
-    sparqlas::FullIRI,
+sparqlas_FullIRI_strategy = st.builds(
+    sparqlas_FullIRI,
 )
-sparqlas::DescribeQuery_strategy = st.builds(
-    sparqlas::DescribeQuery,
+sparqlas_DescribeQuery_strategy = st.builds(
+    sparqlas_DescribeQuery,
 )
-sparqlas::AskQuery_strategy = st.builds(
-    sparqlas::AskQuery,
+sparqlas_AskQuery_strategy = st.builds(
+    sparqlas_AskQuery,
 )
-sparqlas::Import_strategy = st.builds(
-    sparqlas::Import,
+sparqlas_Import_strategy = st.builds(
+    sparqlas_Import,
 )
-sparqlas::IRI_strategy = st.builds(
-    sparqlas::IRI,
+sparqlas_IRI_strategy = st.builds(
+    sparqlas_IRI,
     id=
         safe_text
 )
-sparqlas::OntologyDocument_strategy = st.builds(
-    sparqlas::OntologyDocument,
+sparqlas_OntologyDocument_strategy = st.builds(
+    sparqlas_OntologyDocument,
 )
-sparqlas::Query_strategy = st.builds(
-    sparqlas::Query,
+sparqlas_Query_strategy = st.builds(
+    sparqlas_Query,
 )
-sparqlas::PrefixDefinition_strategy = st.builds(
-    sparqlas::PrefixDefinition,
+sparqlas_PrefixDefinition_strategy = st.builds(
+    sparqlas_PrefixDefinition,
     pref=
         safe_text
 )
 
-@given(instance=sparqlas::TemplateBinding_strategy)
+@given(instance=sparqlas_TemplateBinding_strategy)
 @settings(max_examples=50)
-def test_sparqlas::templatebinding_instantiation(instance):
-    assert isinstance(instance, sparqlas::TemplateBinding)
+def test_sparqlas_templatebinding_instantiation(instance):
+    assert isinstance(instance, sparqlas_TemplateBinding)
 
-@given(instance=sparqlas::TemplateableElement_strategy)
+@given(instance=sparqlas_TemplateableElement_strategy)
 @settings(max_examples=50)
-def test_sparqlas::templateableelement_instantiation(instance):
-    assert isinstance(instance, sparqlas::TemplateableElement)
+def test_sparqlas_templateableelement_instantiation(instance):
+    assert isinstance(instance, sparqlas_TemplateableElement)
 
-@given(instance=sparqlas::TemplateParameterSubstitution_strategy)
+@given(instance=sparqlas_TemplateParameterSubstitution_strategy)
 @settings(max_examples=50)
-def test_sparqlas::templateparametersubstitution_instantiation(instance):
-    assert isinstance(instance, sparqlas::TemplateParameterSubstitution)
+def test_sparqlas_templateparametersubstitution_instantiation(instance):
+    assert isinstance(instance, sparqlas_TemplateParameterSubstitution)
 
-@given(instance=sparqlas::TemplateSignature_strategy)
+@given(instance=sparqlas_TemplateSignature_strategy)
 @settings(max_examples=50)
-def test_sparqlas::templatesignature_instantiation(instance):
-    assert isinstance(instance, sparqlas::TemplateSignature)
+def test_sparqlas_templatesignature_instantiation(instance):
+    assert isinstance(instance, sparqlas_TemplateSignature)
 
-@given(instance=sparqlas::TemplateParameter_strategy)
+@given(instance=sparqlas_TemplateParameter_strategy)
 @settings(max_examples=50)
-def test_sparqlas::templateparameter_instantiation(instance):
-    assert isinstance(instance, sparqlas::TemplateParameter)
+def test_sparqlas_templateparameter_instantiation(instance):
+    assert isinstance(instance, sparqlas_TemplateParameter)
 
-@given(instance=sparqlas::ParameterableElement_strategy)
+@given(instance=sparqlas_ParameterableElement_strategy)
 @settings(max_examples=50)
-def test_sparqlas::parameterableelement_instantiation(instance):
-    assert isinstance(instance, sparqlas::ParameterableElement)
+def test_sparqlas_parameterableelement_instantiation(instance):
+    assert isinstance(instance, sparqlas_ParameterableElement)
 
 @given(instance=Declaration_strategy)
 @settings(max_examples=50)
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=sparqlas::DatatypePropertyDeclaration_strategy)
+@given(instance=sparqlas_ObjectPropertyDeclaration_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datatypepropertydeclaration_instantiation(instance):
-    assert isinstance(instance, sparqlas::DatatypePropertyDeclaration)
+def test_sparqlas_objectpropertydeclaration_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyDeclaration)
 
-@given(instance=sparqlas::ObjectPropertyDeclaration_strategy)
+@given(instance=sparqlas_DatatypePropertyDeclaration_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertydeclaration_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyDeclaration)
+def test_sparqlas_datatypepropertydeclaration_instantiation(instance):
+    assert isinstance(instance, sparqlas_DatatypePropertyDeclaration)
 
-@given(instance=sparqlas::ClassDeclaration_strategy)
+@given(instance=sparqlas_ClassDeclaration_strategy)
 @settings(max_examples=50)
-def test_sparqlas::classdeclaration_instantiation(instance):
-    assert isinstance(instance, sparqlas::ClassDeclaration)
+def test_sparqlas_classdeclaration_instantiation(instance):
+    assert isinstance(instance, sparqlas_ClassDeclaration)
 
-@given(instance=sparqlas::IndividualDeclaration_strategy)
+@given(instance=sparqlas_IndividualDeclaration_strategy)
 @settings(max_examples=50)
-def test_sparqlas::individualdeclaration_instantiation(instance):
-    assert isinstance(instance, sparqlas::IndividualDeclaration)
+def test_sparqlas_individualdeclaration_instantiation(instance):
+    assert isinstance(instance, sparqlas_IndividualDeclaration)
 
 @given(instance=DataPropertyAtom_strategy)
 @settings(max_examples=50)
 def test_datapropertyatom_instantiation(instance):
     assert isinstance(instance, DataPropertyAtom)
 
-@given(instance=sparqlas::DisjointDataProperties_strategy)
+@given(instance=sparqlas_DisjointDataProperties_strategy)
 @settings(max_examples=50)
-def test_sparqlas::disjointdataproperties_instantiation(instance):
-    assert isinstance(instance, sparqlas::DisjointDataProperties)
+def test_sparqlas_disjointdataproperties_instantiation(instance):
+    assert isinstance(instance, sparqlas_DisjointDataProperties)
 
-@given(instance=sparqlas::FunctionalDataProperty_strategy)
+@given(instance=sparqlas_DataPropertyDomain_strategy)
 @settings(max_examples=50)
-def test_sparqlas::functionaldataproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::FunctionalDataProperty)
+def test_sparqlas_datapropertydomain_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataPropertyDomain)
 
-@given(instance=sparqlas::DataPropertyDomain_strategy)
+@given(instance=sparqlas_EquivalentDataProperties_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datapropertydomain_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataPropertyDomain)
+def test_sparqlas_equivalentdataproperties_instantiation(instance):
+    assert isinstance(instance, sparqlas_EquivalentDataProperties)
 
-@given(instance=sparqlas::DataPropertyRange_strategy)
+@given(instance=sparqlas_DataPropertyRange_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datapropertyrange_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataPropertyRange)
+def test_sparqlas_datapropertyrange_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataPropertyRange)
 
-@given(instance=sparqlas::EquivalentDataProperties_strategy)
+@given(instance=sparqlas_FunctionalDataProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::equivalentdataproperties_instantiation(instance):
-    assert isinstance(instance, sparqlas::EquivalentDataProperties)
+def test_sparqlas_functionaldataproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_FunctionalDataProperty)
 
-@given(instance=sparqlas::SubDataPropertyOf_strategy)
+@given(instance=sparqlas_SubDataPropertyOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::subdatapropertyof_instantiation(instance):
-    assert isinstance(instance, sparqlas::SubDataPropertyOf)
+def test_sparqlas_subdatapropertyof_instantiation(instance):
+    assert isinstance(instance, sparqlas_SubDataPropertyOf)
 
-@given(instance=sparqlas::ObjectPropertyChain_strategy)
+@given(instance=sparqlas_ObjectPropertyChain_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertychain_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyChain)
+def test_sparqlas_objectpropertychain_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyChain)
 
 @given(instance=ObjectPropertyAtom_strategy)
 @settings(max_examples=50)
 def test_objectpropertyatom_instantiation(instance):
     assert isinstance(instance, ObjectPropertyAtom)
 
-@given(instance=sparqlas::SymmetricObjectProperty_strategy)
+@given(instance=sparqlas_FunctionalObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::symmetricobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::SymmetricObjectProperty)
+def test_sparqlas_functionalobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_FunctionalObjectProperty)
 
-@given(instance=sparqlas::EquivalentObjectProperties_strategy)
+@given(instance=sparqlas_AsymmetricObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::equivalentobjectproperties_instantiation(instance):
-    assert isinstance(instance, sparqlas::EquivalentObjectProperties)
+def test_sparqlas_asymmetricobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_AsymmetricObjectProperty)
 
-@given(instance=sparqlas::IrreflexiveObjectProperty_strategy)
+@given(instance=sparqlas_IrreflexiveObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::irreflexiveobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::IrreflexiveObjectProperty)
+def test_sparqlas_irreflexiveobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_IrreflexiveObjectProperty)
 
-@given(instance=sparqlas::ObjectPropertyRange_strategy)
+@given(instance=sparqlas_EquivalentObjectProperties_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertyrange_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyRange)
+def test_sparqlas_equivalentobjectproperties_instantiation(instance):
+    assert isinstance(instance, sparqlas_EquivalentObjectProperties)
 
-@given(instance=sparqlas::TransitiveObjectProperty_strategy)
+@given(instance=sparqlas_TransitiveObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::transitiveobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::TransitiveObjectProperty)
+def test_sparqlas_transitiveobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_TransitiveObjectProperty)
 
-@given(instance=sparqlas::InverseObjectPropertyAtom_strategy)
+@given(instance=sparqlas_ObjectPropertyRange_strategy)
 @settings(max_examples=50)
-def test_sparqlas::inverseobjectpropertyatom_instantiation(instance):
-    assert isinstance(instance, sparqlas::InverseObjectPropertyAtom)
+def test_sparqlas_objectpropertyrange_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyRange)
 
-@given(instance=sparqlas::AsymmetricObjectProperty_strategy)
+@given(instance=sparqlas_SymmetricObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::asymmetricobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::AsymmetricObjectProperty)
+def test_sparqlas_symmetricobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_SymmetricObjectProperty)
 
-@given(instance=sparqlas::ReflexiveObjectProperty_strategy)
+@given(instance=sparqlas_ReflexiveObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::reflexiveobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::ReflexiveObjectProperty)
+def test_sparqlas_reflexiveobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_ReflexiveObjectProperty)
 
-@given(instance=sparqlas::InverseFunctionalObjectProperty_strategy)
+@given(instance=sparqlas_InverseFunctionalObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::inversefunctionalobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::InverseFunctionalObjectProperty)
+def test_sparqlas_inversefunctionalobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_InverseFunctionalObjectProperty)
 
-@given(instance=sparqlas::FunctionalObjectProperty_strategy)
+@given(instance=sparqlas_InverseObjectPropertyAtom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::functionalobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::FunctionalObjectProperty)
+def test_sparqlas_inverseobjectpropertyatom_instantiation(instance):
+    assert isinstance(instance, sparqlas_InverseObjectPropertyAtom)
 
-@given(instance=sparqlas::ObjectPropertyDomain_strategy)
+@given(instance=sparqlas_ObjectPropertyDomain_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertydomain_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyDomain)
+def test_sparqlas_objectpropertydomain_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyDomain)
 
-@given(instance=sparqlas::DisjointObjectProperties_strategy)
+@given(instance=sparqlas_DisjointObjectProperties_strategy)
 @settings(max_examples=50)
-def test_sparqlas::disjointobjectproperties_instantiation(instance):
-    assert isinstance(instance, sparqlas::DisjointObjectProperties)
+def test_sparqlas_disjointobjectproperties_instantiation(instance):
+    assert isinstance(instance, sparqlas_DisjointObjectProperties)
 
-@given(instance=sparqlas::FacetRestriction_strategy)
+@given(instance=sparqlas_FacetRestriction_strategy)
 @settings(max_examples=50)
-def test_sparqlas::facetrestriction_instantiation(instance):
-    assert isinstance(instance, sparqlas::FacetRestriction)
+def test_sparqlas_facetrestriction_instantiation(instance):
+    assert isinstance(instance, sparqlas_FacetRestriction)
 
-@given(instance=sparqlas::SubObjectPropertyOf_strategy)
+@given(instance=sparqlas_SubObjectPropertyOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::subobjectpropertyof_instantiation(instance):
-    assert isinstance(instance, sparqlas::SubObjectPropertyOf)
+def test_sparqlas_subobjectpropertyof_instantiation(instance):
+    assert isinstance(instance, sparqlas_SubObjectPropertyOf)
 
-@given(instance=sparqlas::DataRange_strategy)
+@given(instance=sparqlas_DataRange_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datarange_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataRange)
+def test_sparqlas_datarange_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataRange)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
@@ -2628,494 +2628,467 @@ def test_expression_instantiation(instance):
 def test_classatom_instantiation(instance):
     assert isinstance(instance, ClassAtom)
 
-@given(instance=sparqlas::StrictSubClassOf_strategy)
+@given(instance=sparqlas_EquivalentClasses_strategy)
 @settings(max_examples=50)
-def test_sparqlas::strictsubclassof_instantiation(instance):
-    assert isinstance(instance, sparqlas::StrictSubClassOf)
+def test_sparqlas_equivalentclasses_instantiation(instance):
+    assert isinstance(instance, sparqlas_EquivalentClasses)
 
-@given(instance=sparqlas::DirectSubClassOf_strategy)
+@given(instance=sparqlas_DirectSubClassOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::directsubclassof_instantiation(instance):
-    assert isinstance(instance, sparqlas::DirectSubClassOf)
+def test_sparqlas_directsubclassof_instantiation(instance):
+    assert isinstance(instance, sparqlas_DirectSubClassOf)
 
-@given(instance=sparqlas::DisjointUnion_strategy)
+@given(instance=sparqlas_StrictSubClassOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::disjointunion_instantiation(instance):
-    assert isinstance(instance, sparqlas::DisjointUnion)
+def test_sparqlas_strictsubclassof_instantiation(instance):
+    assert isinstance(instance, sparqlas_StrictSubClassOf)
 
-@given(instance=sparqlas::EquivalentClasses_strategy)
+@given(instance=sparqlas_DisjointUnion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::equivalentclasses_instantiation(instance):
-    assert isinstance(instance, sparqlas::EquivalentClasses)
+def test_sparqlas_disjointunion_instantiation(instance):
+    assert isinstance(instance, sparqlas_DisjointUnion)
 
-@given(instance=sparqlas::SubClassOf_strategy)
+@given(instance=sparqlas_SubClassOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::subclassof_instantiation(instance):
-    assert isinstance(instance, sparqlas::SubClassOf)
+def test_sparqlas_subclassof_instantiation(instance):
+    assert isinstance(instance, sparqlas_SubClassOf)
 
-@given(instance=sparqlas::DisjointClasses_strategy)
+@given(instance=sparqlas_DisjointClasses_strategy)
 @settings(max_examples=50)
-def test_sparqlas::disjointclasses_instantiation(instance):
-    assert isinstance(instance, sparqlas::DisjointClasses)
+def test_sparqlas_disjointclasses_instantiation(instance):
+    assert isinstance(instance, sparqlas_DisjointClasses)
 
-@given(instance=sparqlas::DataPropertyExpression_strategy)
+@given(instance=sparqlas_DataPropertyExpression_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datapropertyexpression_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataPropertyExpression)
+def test_sparqlas_datapropertyexpression_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataPropertyExpression)
 
-@given(instance=sparqlas::ClassExpression_strategy)
+@given(instance=sparqlas_ClassExpression_strategy)
 @settings(max_examples=50)
-def test_sparqlas::classexpression_instantiation(instance):
-    assert isinstance(instance, sparqlas::ClassExpression)
+def test_sparqlas_classexpression_instantiation(instance):
+    assert isinstance(instance, sparqlas_ClassExpression)
 
 @given(instance=Assertion_strategy)
 @settings(max_examples=50)
 def test_assertion_instantiation(instance):
     assert isinstance(instance, Assertion)
 
-@given(instance=sparqlas::DataPropertyAssertion_strategy)
+@given(instance=sparqlas_DirectClassAssertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datapropertyassertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataPropertyAssertion)
+def test_sparqlas_directclassassertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_DirectClassAssertion)
 
-@given(instance=sparqlas::NegativeDataPropertyAssertion_strategy)
+@given(instance=sparqlas_NegativeObjectPropertyAssertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::negativedatapropertyassertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::NegativeDataPropertyAssertion)
+def test_sparqlas_negativeobjectpropertyassertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_NegativeObjectPropertyAssertion)
 
-@given(instance=sparqlas::SameIndividual_strategy)
+@given(instance=sparqlas_NegativeDataPropertyAssertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::sameindividual_instantiation(instance):
-    assert isinstance(instance, sparqlas::SameIndividual)
+def test_sparqlas_negativedatapropertyassertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_NegativeDataPropertyAssertion)
 
-@given(instance=sparqlas::DirectClassAssertion_strategy)
+@given(instance=sparqlas_DataPropertyAssertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::directclassassertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::DirectClassAssertion)
+def test_sparqlas_datapropertyassertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataPropertyAssertion)
 
-@given(instance=sparqlas::NegativeObjectPropertyAssertion_strategy)
+@given(instance=sparqlas_DifferentIndividuals_strategy)
 @settings(max_examples=50)
-def test_sparqlas::negativeobjectpropertyassertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::NegativeObjectPropertyAssertion)
+def test_sparqlas_differentindividuals_instantiation(instance):
+    assert isinstance(instance, sparqlas_DifferentIndividuals)
 
-@given(instance=sparqlas::DifferentIndividuals_strategy)
+@given(instance=sparqlas_SameIndividual_strategy)
 @settings(max_examples=50)
-def test_sparqlas::differentindividuals_instantiation(instance):
-    assert isinstance(instance, sparqlas::DifferentIndividuals)
+def test_sparqlas_sameindividual_instantiation(instance):
+    assert isinstance(instance, sparqlas_SameIndividual)
 
-@given(instance=sparqlas::ClassAssertion_strategy)
+@given(instance=sparqlas_ClassAssertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::classassertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::ClassAssertion)
+def test_sparqlas_classassertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_ClassAssertion)
 
 @given(instance=Atom_strategy)
 @settings(max_examples=50)
 def test_atom_instantiation(instance):
     assert isinstance(instance, Atom)
 
-@given(instance=sparqlas::HasKey_strategy)
+@given(instance=sparqlas_ClassAtom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::haskey_instantiation(instance):
-    assert isinstance(instance, sparqlas::HasKey)
+def test_sparqlas_classatom_instantiation(instance):
+    assert isinstance(instance, sparqlas_ClassAtom)
 
-@given(instance=sparqlas::ClassAtom_strategy)
+@given(instance=sparqlas_Declaration_strategy)
 @settings(max_examples=50)
-def test_sparqlas::classatom_instantiation(instance):
-    assert isinstance(instance, sparqlas::ClassAtom)
+def test_sparqlas_declaration_instantiation(instance):
+    assert isinstance(instance, sparqlas_Declaration)
 
-@given(instance=sparqlas::Declaration_strategy)
+@given(instance=sparqlas_HasKey_strategy)
 @settings(max_examples=50)
-def test_sparqlas::declaration_instantiation(instance):
-    assert isinstance(instance, sparqlas::Declaration)
+def test_sparqlas_haskey_instantiation(instance):
+    assert isinstance(instance, sparqlas_HasKey)
 
-@given(instance=sparqlas::ObjectPropertyAtom_strategy)
+@given(instance=sparqlas_ObjectPropertyAtom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertyatom_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyAtom)
+def test_sparqlas_objectpropertyatom_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyAtom)
 
-@given(instance=sparqlas::DataPropertyAtom_strategy)
+@given(instance=sparqlas_DataPropertyAtom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datapropertyatom_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataPropertyAtom)
+def test_sparqlas_datapropertyatom_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataPropertyAtom)
 
-@given(instance=sparqlas::Assertion_strategy)
+@given(instance=sparqlas_Assertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::assertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::Assertion)
+def test_sparqlas_assertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_Assertion)
 
 @given(instance=ParameterableElement_strategy)
 @settings(max_examples=50)
 def test_parameterableelement_instantiation(instance):
     assert isinstance(instance, ParameterableElement)
 
-@given(instance=sparqlas::Expression_strategy)
+@given(instance=sparqlas_Expression_strategy)
 @settings(max_examples=50)
-def test_sparqlas::expression_instantiation(instance):
-    assert isinstance(instance, sparqlas::Expression)
+def test_sparqlas_expression_instantiation(instance):
+    assert isinstance(instance, sparqlas_Expression)
 
 @given(instance=AbstractLiteral_strategy)
 @settings(max_examples=50)
 def test_abstractliteral_instantiation(instance):
     assert isinstance(instance, AbstractLiteral)
 
-@given(instance=sparqlas::Literal_strategy)
+@given(instance=sparqlas_Literal_strategy)
 @settings(max_examples=50)
-def test_sparqlas::literal_instantiation(instance):
-    assert isinstance(instance, sparqlas::Literal)
-
-@given(instance=sparqlas::Literal_strategy)
-def test_sparqlas::literal_lexicalForm_type(instance):
-    assert isinstance(instance.lexicalForm, str)
+def test_sparqlas_literal_instantiation(instance):
+    assert isinstance(instance, sparqlas_Literal)
 
 
-@given(instance=sparqlas::Literal_strategy)
-def test_sparqlas::literal_lexicalForm_setter(instance):
+
+@given(instance=sparqlas_Literal_strategy)
+def test_sparqlas_literal_lexicalForm_setter(instance):
     original = instance.lexicalForm
     instance.lexicalForm = original
     assert instance.lexicalForm == original
 
-@given(instance=sparqlas::AbstractLiteral_strategy)
+@given(instance=sparqlas_AbstractLiteral_strategy)
 @settings(max_examples=50)
-def test_sparqlas::abstractliteral_instantiation(instance):
-    assert isinstance(instance, sparqlas::AbstractLiteral)
+def test_sparqlas_abstractliteral_instantiation(instance):
+    assert isinstance(instance, sparqlas_AbstractLiteral)
 
-@given(instance=sparqlas::Individual_strategy)
+@given(instance=sparqlas_Individual_strategy)
 @settings(max_examples=50)
-def test_sparqlas::individual_instantiation(instance):
-    assert isinstance(instance, sparqlas::Individual)
+def test_sparqlas_individual_instantiation(instance):
+    assert isinstance(instance, sparqlas_Individual)
 
 @given(instance=DataRange_strategy)
 @settings(max_examples=50)
 def test_datarange_instantiation(instance):
     assert isinstance(instance, DataRange)
 
-@given(instance=sparqlas::DatatypeRestriction_strategy)
+@given(instance=sparqlas_DataIntersectionOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datatyperestriction_instantiation(instance):
-    assert isinstance(instance, sparqlas::DatatypeRestriction)
+def test_sparqlas_dataintersectionof_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataIntersectionOf)
 
-@given(instance=sparqlas::DataOneOf_strategy)
+@given(instance=sparqlas_DataComplementOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::dataoneof_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataOneOf)
+def test_sparqlas_datacomplementof_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataComplementOf)
 
-@given(instance=sparqlas::DataComplementOf_strategy)
+@given(instance=sparqlas_DatatypeRestriction_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datacomplementof_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataComplementOf)
+def test_sparqlas_datatyperestriction_instantiation(instance):
+    assert isinstance(instance, sparqlas_DatatypeRestriction)
 
-@given(instance=sparqlas::DataIntersectionOf_strategy)
+@given(instance=sparqlas_DataOneOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::dataintersectionof_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataIntersectionOf)
+def test_sparqlas_dataoneof_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataOneOf)
 
-@given(instance=sparqlas::DataUnionOf_strategy)
+@given(instance=sparqlas_DataUnionOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::dataunionof_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataUnionOf)
+def test_sparqlas_dataunionof_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataUnionOf)
 
 @given(instance=Constant_strategy)
 @settings(max_examples=50)
 def test_constant_instantiation(instance):
     assert isinstance(instance, Constant)
 
-@given(instance=sparqlas::Datatype_strategy)
+@given(instance=sparqlas_Datatype_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datatype_instantiation(instance):
-    assert isinstance(instance, sparqlas::Datatype)
+def test_sparqlas_datatype_instantiation(instance):
+    assert isinstance(instance, sparqlas_Datatype)
 
-@given(instance=sparqlas::ObjectPropertyExpression_strategy)
+@given(instance=sparqlas_ObjectPropertyExpression_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertyexpression_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyExpression)
+def test_sparqlas_objectpropertyexpression_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyExpression)
 
-@given(instance=sparqlas::ObjectPropertyAssertion_strategy)
+@given(instance=sparqlas_ObjectPropertyAssertion_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertyassertion_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyAssertion)
+def test_sparqlas_objectpropertyassertion_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyAssertion)
 
 @given(instance=DataPropertyExpression_strategy)
 @settings(max_examples=50)
 def test_datapropertyexpression_instantiation(instance):
     assert isinstance(instance, DataPropertyExpression)
 
-@given(instance=sparqlas::DataProperty_strategy)
+@given(instance=sparqlas_DataProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::dataproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataProperty)
+def test_sparqlas_dataproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataProperty)
 
 @given(instance=ObjectPropertyExpression_strategy)
 @settings(max_examples=50)
 def test_objectpropertyexpression_instantiation(instance):
     assert isinstance(instance, ObjectPropertyExpression)
 
-@given(instance=sparqlas::ObjectProperty_strategy)
+@given(instance=sparqlas_ObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectProperty)
+def test_sparqlas_objectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectProperty)
 
-@given(instance=sparqlas::InverseObjectProperty_strategy)
+@given(instance=sparqlas_InverseObjectProperty_strategy)
 @settings(max_examples=50)
-def test_sparqlas::inverseobjectproperty_instantiation(instance):
-    assert isinstance(instance, sparqlas::InverseObjectProperty)
+def test_sparqlas_inverseobjectproperty_instantiation(instance):
+    assert isinstance(instance, sparqlas_InverseObjectProperty)
 
 @given(instance=ClassExpression_strategy)
 @settings(max_examples=50)
 def test_classexpression_instantiation(instance):
     assert isinstance(instance, ClassExpression)
 
-@given(instance=sparqlas::ObjectAllValuesFrom_strategy)
+@given(instance=sparqlas_ObjectComplementOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectallvaluesfrom_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectAllValuesFrom)
+def test_sparqlas_objectcomplementof_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectComplementOf)
 
-@given(instance=sparqlas::ObjectUnionOf_strategy)
+@given(instance=sparqlas_DataAllValuesFrom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectunionof_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectUnionOf)
+def test_sparqlas_dataallvaluesfrom_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataAllValuesFrom)
 
-@given(instance=sparqlas::ObjectExactCardinality_strategy)
+@given(instance=sparqlas_ObjectHasValue_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectexactcardinality_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectExactCardinality)
+def test_sparqlas_objecthasvalue_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectHasValue)
 
-@given(instance=sparqlas::ObjectExactCardinality_strategy)
-def test_sparqlas::objectexactcardinality_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
+@given(instance=sparqlas_DataHasValue_strategy)
+@settings(max_examples=50)
+def test_sparqlas_datahasvalue_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataHasValue)
+
+@given(instance=sparqlas_ObjectIntersectionOf_strategy)
+@settings(max_examples=50)
+def test_sparqlas_objectintersectionof_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectIntersectionOf)
+
+@given(instance=sparqlas_DataSomeValuesFrom_strategy)
+@settings(max_examples=50)
+def test_sparqlas_datasomevaluesfrom_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataSomeValuesFrom)
+
+@given(instance=sparqlas_ObjectExactCardinality_strategy)
+@settings(max_examples=50)
+def test_sparqlas_objectexactcardinality_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectExactCardinality)
 
 
-@given(instance=sparqlas::ObjectExactCardinality_strategy)
-def test_sparqlas::objectexactcardinality_cardinality_setter(instance):
+
+@given(instance=sparqlas_ObjectExactCardinality_strategy)
+def test_sparqlas_objectexactcardinality_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=sparqlas::ObjectHasValue_strategy)
+@given(instance=sparqlas_ObjectSomeValuesFrom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objecthasvalue_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectHasValue)
+def test_sparqlas_objectsomevaluesfrom_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectSomeValuesFrom)
 
-@given(instance=sparqlas::ObjectMinCardinality_strategy)
+@given(instance=sparqlas_DataExactCardinality_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectmincardinality_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectMinCardinality)
-
-@given(instance=sparqlas::ObjectMinCardinality_strategy)
-def test_sparqlas::objectmincardinality_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
+def test_sparqlas_dataexactcardinality_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataExactCardinality)
 
 
-@given(instance=sparqlas::ObjectMinCardinality_strategy)
-def test_sparqlas::objectmincardinality_cardinality_setter(instance):
+
+@given(instance=sparqlas_DataExactCardinality_strategy)
+def test_sparqlas_dataexactcardinality_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=sparqlas::ObjectOneOf_strategy)
+@given(instance=sparqlas_DataMinCardinality_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectoneof_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectOneOf)
-
-@given(instance=sparqlas::DataHasValue_strategy)
-@settings(max_examples=50)
-def test_sparqlas::datahasvalue_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataHasValue)
-
-@given(instance=sparqlas::DataAllValuesFrom_strategy)
-@settings(max_examples=50)
-def test_sparqlas::dataallvaluesfrom_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataAllValuesFrom)
-
-@given(instance=sparqlas::ObjectIntersectionOf_strategy)
-@settings(max_examples=50)
-def test_sparqlas::objectintersectionof_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectIntersectionOf)
-
-@given(instance=sparqlas::DataExactCardinality_strategy)
-@settings(max_examples=50)
-def test_sparqlas::dataexactcardinality_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataExactCardinality)
-
-@given(instance=sparqlas::DataExactCardinality_strategy)
-def test_sparqlas::dataexactcardinality_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
+def test_sparqlas_datamincardinality_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataMinCardinality)
 
 
-@given(instance=sparqlas::DataExactCardinality_strategy)
-def test_sparqlas::dataexactcardinality_cardinality_setter(instance):
+
+@given(instance=sparqlas_DataMinCardinality_strategy)
+def test_sparqlas_datamincardinality_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=sparqlas::DataSomeValuesFrom_strategy)
+@given(instance=sparqlas_ObjectMaxCardinality_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datasomevaluesfrom_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataSomeValuesFrom)
-
-@given(instance=sparqlas::DataMaxCardinality_strategy)
-@settings(max_examples=50)
-def test_sparqlas::datamaxcardinality_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataMaxCardinality)
-
-@given(instance=sparqlas::DataMaxCardinality_strategy)
-def test_sparqlas::datamaxcardinality_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
+def test_sparqlas_objectmaxcardinality_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectMaxCardinality)
 
 
-@given(instance=sparqlas::DataMaxCardinality_strategy)
-def test_sparqlas::datamaxcardinality_cardinality_setter(instance):
+
+@given(instance=sparqlas_ObjectMaxCardinality_strategy)
+def test_sparqlas_objectmaxcardinality_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=sparqlas::ObjectComplementOf_strategy)
+@given(instance=sparqlas_ObjectMinCardinality_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectcomplementof_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectComplementOf)
-
-@given(instance=sparqlas::ObjectMaxCardinality_strategy)
-@settings(max_examples=50)
-def test_sparqlas::objectmaxcardinality_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectMaxCardinality)
-
-@given(instance=sparqlas::ObjectMaxCardinality_strategy)
-def test_sparqlas::objectmaxcardinality_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
+def test_sparqlas_objectmincardinality_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectMinCardinality)
 
 
-@given(instance=sparqlas::ObjectMaxCardinality_strategy)
-def test_sparqlas::objectmaxcardinality_cardinality_setter(instance):
+
+@given(instance=sparqlas_ObjectMinCardinality_strategy)
+def test_sparqlas_objectmincardinality_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=sparqlas::DataMinCardinality_strategy)
+@given(instance=sparqlas_ObjectOneOf_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datamincardinality_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataMinCardinality)
+def test_sparqlas_objectoneof_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectOneOf)
 
-@given(instance=sparqlas::DataMinCardinality_strategy)
-def test_sparqlas::datamincardinality_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
+@given(instance=sparqlas_ObjectUnionOf_strategy)
+@settings(max_examples=50)
+def test_sparqlas_objectunionof_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectUnionOf)
+
+@given(instance=sparqlas_ObjectAllValuesFrom_strategy)
+@settings(max_examples=50)
+def test_sparqlas_objectallvaluesfrom_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectAllValuesFrom)
+
+@given(instance=sparqlas_DataMaxCardinality_strategy)
+@settings(max_examples=50)
+def test_sparqlas_datamaxcardinality_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataMaxCardinality)
 
 
-@given(instance=sparqlas::DataMinCardinality_strategy)
-def test_sparqlas::datamincardinality_cardinality_setter(instance):
+
+@given(instance=sparqlas_DataMaxCardinality_strategy)
+def test_sparqlas_datamaxcardinality_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
-
-@given(instance=sparqlas::ObjectSomeValuesFrom_strategy)
-@settings(max_examples=50)
-def test_sparqlas::objectsomevaluesfrom_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectSomeValuesFrom)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=sparqlas::ObjectPropertyVariable_strategy)
+@given(instance=sparqlas_LiteralVariable_strategy)
 @settings(max_examples=50)
-def test_sparqlas::objectpropertyvariable_instantiation(instance):
-    assert isinstance(instance, sparqlas::ObjectPropertyVariable)
+def test_sparqlas_literalvariable_instantiation(instance):
+    assert isinstance(instance, sparqlas_LiteralVariable)
 
-@given(instance=sparqlas::LiteralVariable_strategy)
+@given(instance=sparqlas_ObjectPropertyVariable_strategy)
 @settings(max_examples=50)
-def test_sparqlas::literalvariable_instantiation(instance):
-    assert isinstance(instance, sparqlas::LiteralVariable)
+def test_sparqlas_objectpropertyvariable_instantiation(instance):
+    assert isinstance(instance, sparqlas_ObjectPropertyVariable)
 
-@given(instance=sparqlas::DataPropertyVariable_strategy)
+@given(instance=sparqlas_DataPropertyVariable_strategy)
 @settings(max_examples=50)
-def test_sparqlas::datapropertyvariable_instantiation(instance):
-    assert isinstance(instance, sparqlas::DataPropertyVariable)
+def test_sparqlas_datapropertyvariable_instantiation(instance):
+    assert isinstance(instance, sparqlas_DataPropertyVariable)
 
-@given(instance=sparqlas::ClassVariable_strategy)
+@given(instance=sparqlas_ClassVariable_strategy)
 @settings(max_examples=50)
-def test_sparqlas::classvariable_instantiation(instance):
-    assert isinstance(instance, sparqlas::ClassVariable)
+def test_sparqlas_classvariable_instantiation(instance):
+    assert isinstance(instance, sparqlas_ClassVariable)
 
 @given(instance=Term_strategy)
 @settings(max_examples=50)
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=sparqlas::Term_strategy)
+@given(instance=sparqlas_Term_strategy)
 @settings(max_examples=50)
-def test_sparqlas::term_instantiation(instance):
-    assert isinstance(instance, sparqlas::Term)
+def test_sparqlas_term_instantiation(instance):
+    assert isinstance(instance, sparqlas_Term)
 
 @given(instance=IRI_strategy)
 @settings(max_examples=50)
 def test_iri_instantiation(instance):
     assert isinstance(instance, IRI)
 
-@given(instance=sparqlas::AbbreviatedIRI_strategy)
+@given(instance=sparqlas_AbbreviatedIRI_strategy)
 @settings(max_examples=50)
-def test_sparqlas::abbreviatediri_instantiation(instance):
-    assert isinstance(instance, sparqlas::AbbreviatedIRI)
+def test_sparqlas_abbreviatediri_instantiation(instance):
+    assert isinstance(instance, sparqlas_AbbreviatedIRI)
 
-@given(instance=sparqlas::Class_strategy)
+@given(instance=sparqlas_Class_strategy)
 @settings(max_examples=50)
-def test_sparqlas::class_instantiation(instance):
-    assert isinstance(instance, sparqlas::Class)
+def test_sparqlas_class_instantiation(instance):
+    assert isinstance(instance, sparqlas_Class)
 
-@given(instance=sparqlas::Constant_strategy)
+@given(instance=sparqlas_Constant_strategy)
 @settings(max_examples=50)
-def test_sparqlas::constant_instantiation(instance):
-    assert isinstance(instance, sparqlas::Constant)
+def test_sparqlas_constant_instantiation(instance):
+    assert isinstance(instance, sparqlas_Constant)
 
 @given(instance=Individual_strategy)
 @settings(max_examples=50)
 def test_individual_instantiation(instance):
     assert isinstance(instance, Individual)
 
-@given(instance=sparqlas::NamedIndividual_strategy)
+@given(instance=sparqlas_AnonymousIndividual_strategy)
 @settings(max_examples=50)
-def test_sparqlas::namedindividual_instantiation(instance):
-    assert isinstance(instance, sparqlas::NamedIndividual)
-
-@given(instance=sparqlas::AnonymousIndividual_strategy)
-@settings(max_examples=50)
-def test_sparqlas::anonymousindividual_instantiation(instance):
-    assert isinstance(instance, sparqlas::AnonymousIndividual)
-
-@given(instance=sparqlas::AnonymousIndividual_strategy)
-def test_sparqlas::anonymousindividual_nodeID_type(instance):
-    assert isinstance(instance.nodeID, str)
+def test_sparqlas_anonymousindividual_instantiation(instance):
+    assert isinstance(instance, sparqlas_AnonymousIndividual)
 
 
-@given(instance=sparqlas::AnonymousIndividual_strategy)
-def test_sparqlas::anonymousindividual_nodeID_setter(instance):
+
+@given(instance=sparqlas_AnonymousIndividual_strategy)
+def test_sparqlas_anonymousindividual_nodeID_setter(instance):
     original = instance.nodeID
     instance.nodeID = original
     assert instance.nodeID == original
 
-@given(instance=sparqlas::IndividualVariable_strategy)
+@given(instance=sparqlas_NamedIndividual_strategy)
 @settings(max_examples=50)
-def test_sparqlas::individualvariable_instantiation(instance):
-    assert isinstance(instance, sparqlas::IndividualVariable)
+def test_sparqlas_namedindividual_instantiation(instance):
+    assert isinstance(instance, sparqlas_NamedIndividual)
 
-@given(instance=sparqlas::Variable_strategy)
+@given(instance=sparqlas_IndividualVariable_strategy)
 @settings(max_examples=50)
-def test_sparqlas::variable_instantiation(instance):
-    assert isinstance(instance, sparqlas::Variable)
+def test_sparqlas_individualvariable_instantiation(instance):
+    assert isinstance(instance, sparqlas_IndividualVariable)
 
-@given(instance=sparqlas::Variable_strategy)
-def test_sparqlas::variable_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+@given(instance=sparqlas_Variable_strategy)
+@settings(max_examples=50)
+def test_sparqlas_variable_instantiation(instance):
+    assert isinstance(instance, sparqlas_Variable)
 
 
-@given(instance=sparqlas::Variable_strategy)
-def test_sparqlas::variable_symbol_setter(instance):
+
+@given(instance=sparqlas_Variable_strategy)
+def test_sparqlas_variable_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=sparqlas::Atom_strategy)
+@given(instance=sparqlas_Atom_strategy)
 @settings(max_examples=50)
-def test_sparqlas::atom_instantiation(instance):
-    assert isinstance(instance, sparqlas::Atom)
+def test_sparqlas_atom_instantiation(instance):
+    assert isinstance(instance, sparqlas_Atom)
 
 @given(instance=TemplateableElement_strategy)
 @settings(max_examples=50)
@@ -3127,74 +3100,68 @@ def test_templateableelement_instantiation(instance):
 def test_query_instantiation(instance):
     assert isinstance(instance, Query)
 
-@given(instance=sparqlas::ConstructQuery_strategy)
+@given(instance=sparqlas_ConstructQuery_strategy)
 @settings(max_examples=50)
-def test_sparqlas::constructquery_instantiation(instance):
-    assert isinstance(instance, sparqlas::ConstructQuery)
+def test_sparqlas_constructquery_instantiation(instance):
+    assert isinstance(instance, sparqlas_ConstructQuery)
 
-@given(instance=sparqlas::SelectQuery_strategy)
+@given(instance=sparqlas_SelectQuery_strategy)
 @settings(max_examples=50)
-def test_sparqlas::selectquery_instantiation(instance):
-    assert isinstance(instance, sparqlas::SelectQuery)
+def test_sparqlas_selectquery_instantiation(instance):
+    assert isinstance(instance, sparqlas_SelectQuery)
 
-@given(instance=sparqlas::FullIRI_strategy)
+@given(instance=sparqlas_FullIRI_strategy)
 @settings(max_examples=50)
-def test_sparqlas::fulliri_instantiation(instance):
-    assert isinstance(instance, sparqlas::FullIRI)
+def test_sparqlas_fulliri_instantiation(instance):
+    assert isinstance(instance, sparqlas_FullIRI)
 
-@given(instance=sparqlas::DescribeQuery_strategy)
+@given(instance=sparqlas_DescribeQuery_strategy)
 @settings(max_examples=50)
-def test_sparqlas::describequery_instantiation(instance):
-    assert isinstance(instance, sparqlas::DescribeQuery)
+def test_sparqlas_describequery_instantiation(instance):
+    assert isinstance(instance, sparqlas_DescribeQuery)
 
-@given(instance=sparqlas::AskQuery_strategy)
+@given(instance=sparqlas_AskQuery_strategy)
 @settings(max_examples=50)
-def test_sparqlas::askquery_instantiation(instance):
-    assert isinstance(instance, sparqlas::AskQuery)
+def test_sparqlas_askquery_instantiation(instance):
+    assert isinstance(instance, sparqlas_AskQuery)
 
-@given(instance=sparqlas::Import_strategy)
+@given(instance=sparqlas_Import_strategy)
 @settings(max_examples=50)
-def test_sparqlas::import_instantiation(instance):
-    assert isinstance(instance, sparqlas::Import)
+def test_sparqlas_import_instantiation(instance):
+    assert isinstance(instance, sparqlas_Import)
 
-@given(instance=sparqlas::IRI_strategy)
+@given(instance=sparqlas_IRI_strategy)
 @settings(max_examples=50)
-def test_sparqlas::iri_instantiation(instance):
-    assert isinstance(instance, sparqlas::IRI)
-
-@given(instance=sparqlas::IRI_strategy)
-def test_sparqlas::iri_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_sparqlas_iri_instantiation(instance):
+    assert isinstance(instance, sparqlas_IRI)
 
 
-@given(instance=sparqlas::IRI_strategy)
-def test_sparqlas::iri_id_setter(instance):
+
+@given(instance=sparqlas_IRI_strategy)
+def test_sparqlas_iri_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sparqlas::OntologyDocument_strategy)
+@given(instance=sparqlas_OntologyDocument_strategy)
 @settings(max_examples=50)
-def test_sparqlas::ontologydocument_instantiation(instance):
-    assert isinstance(instance, sparqlas::OntologyDocument)
+def test_sparqlas_ontologydocument_instantiation(instance):
+    assert isinstance(instance, sparqlas_OntologyDocument)
 
-@given(instance=sparqlas::Query_strategy)
+@given(instance=sparqlas_Query_strategy)
 @settings(max_examples=50)
-def test_sparqlas::query_instantiation(instance):
-    assert isinstance(instance, sparqlas::Query)
+def test_sparqlas_query_instantiation(instance):
+    assert isinstance(instance, sparqlas_Query)
 
-@given(instance=sparqlas::PrefixDefinition_strategy)
+@given(instance=sparqlas_PrefixDefinition_strategy)
 @settings(max_examples=50)
-def test_sparqlas::prefixdefinition_instantiation(instance):
-    assert isinstance(instance, sparqlas::PrefixDefinition)
-
-@given(instance=sparqlas::PrefixDefinition_strategy)
-def test_sparqlas::prefixdefinition_pref_type(instance):
-    assert isinstance(instance.pref, str)
+def test_sparqlas_prefixdefinition_instantiation(instance):
+    assert isinstance(instance, sparqlas_PrefixDefinition)
 
 
-@given(instance=sparqlas::PrefixDefinition_strategy)
-def test_sparqlas::prefixdefinition_pref_setter(instance):
+
+@given(instance=sparqlas_PrefixDefinition_strategy)
+def test_sparqlas_prefixdefinition_pref_setter(instance):
     original = instance.pref
     instance.pref = original
     assert instance.pref == original

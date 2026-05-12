@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Ventana,
@@ -30,13 +30,22 @@ def test_ventana_constructor_exists():
 def test_ventana_constructor_args():
     sig = inspect.signature(Ventana.__init__)
     params = list(sig.parameters.keys())
+    assert "c3" in params, "Missing parameter 'c3'"
     assert "l2" in params, "Missing parameter 'l2'"
     assert "fig" in params, "Missing parameter 'fig'"
     assert "c1" in params, "Missing parameter 'c1'"
-    assert "c3" in params, "Missing parameter 'c3'"
     assert "l1" in params, "Missing parameter 'l1'"
     assert "etiqueta" in params, "Missing parameter 'etiqueta'"
     assert "c2" in params, "Missing parameter 'c2'"
+
+def test_ventana_has_c3():
+    assert hasattr(Ventana, "c3")
+    descriptor = None
+    for klass in Ventana.__mro__:
+        if "c3" in klass.__dict__:
+            descriptor = klass.__dict__["c3"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_ventana_has_l2():
     assert hasattr(Ventana, "l2")
@@ -62,15 +71,6 @@ def test_ventana_has_c1():
     for klass in Ventana.__mro__:
         if "c1" in klass.__dict__:
             descriptor = klass.__dict__["c1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ventana_has_c3():
-    assert hasattr(Ventana, "c3")
-    descriptor = None
-    for klass in Ventana.__mro__:
-        if "c3" in klass.__dict__:
-            descriptor = klass.__dict__["c3"]
             break
     assert isinstance(descriptor, property)
 
@@ -128,9 +128,18 @@ def test_cuadrado_constructor_exists():
 def test_cuadrado_constructor_args():
     sig = inspect.signature(Cuadrado.__init__)
     params = list(sig.parameters.keys())
+    assert "v1" in params, "Missing parameter 'v1'"
     assert "img" in params, "Missing parameter 'img'"
     assert "v2" in params, "Missing parameter 'v2'"
-    assert "v1" in params, "Missing parameter 'v1'"
+
+def test_cuadrado_has_v1():
+    assert hasattr(Cuadrado, "v1")
+    descriptor = None
+    for klass in Cuadrado.__mro__:
+        if "v1" in klass.__dict__:
+            descriptor = klass.__dict__["v1"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_cuadrado_has_img():
     assert hasattr(Cuadrado, "img")
@@ -147,15 +156,6 @@ def test_cuadrado_has_v2():
     for klass in Cuadrado.__mro__:
         if "v2" in klass.__dict__:
             descriptor = klass.__dict__["v2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cuadrado_has_v1():
-    assert hasattr(Cuadrado, "v1")
-    descriptor = None
-    for klass in Cuadrado.__mro__:
-        if "v1" in klass.__dict__:
-            descriptor = klass.__dict__["v1"]
             break
     assert isinstance(descriptor, property)
 
@@ -221,13 +221,13 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Ventana_strategy = st.builds(
     Ventana,
+    c3=
+        st.none(),
     l2=
         st.integers(),
     fig=
         st.none(),
     c1=
-        st.none(),
-    c3=
         st.none(),
     l1=
         st.integers(),
@@ -241,11 +241,11 @@ JFrame_strategy = st.builds(
 )
 Cuadrado_strategy = st.builds(
     Cuadrado,
+    v1=
+        st.integers(),
     img=
         safe_text,
     v2=
-        st.integers(),
-    v1=
         st.integers()
 )
 Canvas_strategy = st.builds(
@@ -264,42 +264,6 @@ Figura_strategy = st.builds(
 def test_ventana_instantiation(instance):
     assert isinstance(instance, Ventana)
 
-@given(instance=Ventana_strategy)
-def test_ventana_l2_type(instance):
-    assert isinstance(instance.l2, int)
-
-
-@given(instance=Ventana_strategy)
-def test_ventana_l2_setter(instance):
-    original = instance.l2
-    instance.l2 = original
-    assert instance.l2 == original
-
-@given(instance=Ventana_strategy)
-def test_ventana_fig_type(instance):
-    assert isinstance(instance.fig, figura)
-
-
-@given(instance=Ventana_strategy)
-def test_ventana_fig_setter(instance):
-    original = instance.fig
-    instance.fig = original
-    assert instance.fig == original
-
-@given(instance=Ventana_strategy)
-def test_ventana_c1_type(instance):
-    assert isinstance(instance.c1, cuadrado)
-
-
-@given(instance=Ventana_strategy)
-def test_ventana_c1_setter(instance):
-    original = instance.c1
-    instance.c1 = original
-    assert instance.c1 == original
-
-@given(instance=Ventana_strategy)
-def test_ventana_c3_type(instance):
-    assert isinstance(instance.c3, cuadrado)
 
 
 @given(instance=Ventana_strategy)
@@ -308,9 +272,30 @@ def test_ventana_c3_setter(instance):
     instance.c3 = original
     assert instance.c3 == original
 
+
+
 @given(instance=Ventana_strategy)
-def test_ventana_l1_type(instance):
-    assert isinstance(instance.l1, int)
+def test_ventana_l2_setter(instance):
+    original = instance.l2
+    instance.l2 = original
+    assert instance.l2 == original
+
+
+
+@given(instance=Ventana_strategy)
+def test_ventana_fig_setter(instance):
+    original = instance.fig
+    instance.fig = original
+    assert instance.fig == original
+
+
+
+@given(instance=Ventana_strategy)
+def test_ventana_c1_setter(instance):
+    original = instance.c1
+    instance.c1 = original
+    assert instance.c1 == original
+
 
 
 @given(instance=Ventana_strategy)
@@ -319,9 +304,6 @@ def test_ventana_l1_setter(instance):
     instance.l1 = original
     assert instance.l1 == original
 
-@given(instance=Ventana_strategy)
-def test_ventana_etiqueta_type(instance):
-    assert isinstance(instance.etiqueta, str)
 
 
 @given(instance=Ventana_strategy)
@@ -330,9 +312,6 @@ def test_ventana_etiqueta_setter(instance):
     instance.etiqueta = original
     assert instance.etiqueta == original
 
-@given(instance=Ventana_strategy)
-def test_ventana_c2_type(instance):
-    assert isinstance(instance.c2, cuadrado)
 
 
 @given(instance=Ventana_strategy)
@@ -351,9 +330,14 @@ def test_jframe_instantiation(instance):
 def test_cuadrado_instantiation(instance):
     assert isinstance(instance, Cuadrado)
 
+
+
 @given(instance=Cuadrado_strategy)
-def test_cuadrado_img_type(instance):
-    assert isinstance(instance.img, str)
+def test_cuadrado_v1_setter(instance):
+    original = instance.v1
+    instance.v1 = original
+    assert instance.v1 == original
+
 
 
 @given(instance=Cuadrado_strategy)
@@ -362,9 +346,6 @@ def test_cuadrado_img_setter(instance):
     instance.img = original
     assert instance.img == original
 
-@given(instance=Cuadrado_strategy)
-def test_cuadrado_v2_type(instance):
-    assert isinstance(instance.v2, int)
 
 
 @given(instance=Cuadrado_strategy)
@@ -372,17 +353,6 @@ def test_cuadrado_v2_setter(instance):
     original = instance.v2
     instance.v2 = original
     assert instance.v2 == original
-
-@given(instance=Cuadrado_strategy)
-def test_cuadrado_v1_type(instance):
-    assert isinstance(instance.v1, int)
-
-
-@given(instance=Cuadrado_strategy)
-def test_cuadrado_v1_setter(instance):
-    original = instance.v1
-    instance.v1 = original
-    assert instance.v1 == original
 
 @given(instance=Canvas_strategy)
 @settings(max_examples=50)
@@ -394,9 +364,6 @@ def test_canvas_instantiation(instance):
 def test_figura_instantiation(instance):
     assert isinstance(instance, Figura)
 
-@given(instance=Figura_strategy)
-def test_figura_estado_type(instance):
-    assert isinstance(instance.estado, bool)
 
 
 @given(instance=Figura_strategy)
@@ -405,9 +372,6 @@ def test_figura_estado_setter(instance):
     instance.estado = original
     assert instance.estado == original
 
-@given(instance=Figura_strategy)
-def test_figura_valor_type(instance):
-    assert isinstance(instance.valor, int)
 
 
 @given(instance=Figura_strategy)

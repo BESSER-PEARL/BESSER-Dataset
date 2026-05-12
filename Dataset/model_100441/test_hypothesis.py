@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stateMachineActions::Parameters,
-    stateMachineActions::EXPRESSION,
-    stateMachineActions::EventAction,
-    stateMachineActions::Assignment,
-    stateMachineActions::TERM,
-    stateMachineActions::Action,
-    stateMachineActions::Model,
+from python_code import (
+    stateMachineActions_Parameters,
+    stateMachineActions_EXPRESSION,
+    stateMachineActions_EventAction,
+    stateMachineActions_Assignment,
+    stateMachineActions_TERM,
+    stateMachineActions_Action,
+    stateMachineActions_Model,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_statemachineactions::parameters_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::Parameters)
+def test_statemachineactions_parameters_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_Parameters)
 
 
-def test_statemachineactions::parameters_constructor_exists():
-    assert callable(stateMachineActions::Parameters.__init__)
+def test_statemachineactions_parameters_constructor_exists():
+    assert callable(stateMachineActions_Parameters.__init__)
 
 
-def test_statemachineactions::parameters_constructor_args():
-    sig = inspect.signature(stateMachineActions::Parameters.__init__)
+def test_statemachineactions_parameters_constructor_args():
+    sig = inspect.signature(stateMachineActions_Parameters.__init__)
     params = list(sig.parameters.keys())
     assert "param" in params, "Missing parameter 'param'"
 
-def test_statemachineactions::parameters_has_param():
-    assert hasattr(stateMachineActions::Parameters, "param")
+def test_statemachineactions_parameters_has_param():
+    assert hasattr(stateMachineActions_Parameters, "param")
     descriptor = None
-    for klass in stateMachineActions::Parameters.__mro__:
+    for klass in stateMachineActions_Parameters.__mro__:
         if "param" in klass.__dict__:
             descriptor = klass.__dict__["param"]
             break
@@ -45,23 +45,23 @@ def test_statemachineactions::parameters_has_param():
 
 
 
-def test_statemachineactions::expression_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::EXPRESSION)
+def test_statemachineactions_expression_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_EXPRESSION)
 
 
-def test_statemachineactions::expression_constructor_exists():
-    assert callable(stateMachineActions::EXPRESSION.__init__)
+def test_statemachineactions_expression_constructor_exists():
+    assert callable(stateMachineActions_EXPRESSION.__init__)
 
 
-def test_statemachineactions::expression_constructor_args():
-    sig = inspect.signature(stateMachineActions::EXPRESSION.__init__)
+def test_statemachineactions_expression_constructor_args():
+    sig = inspect.signature(stateMachineActions_EXPRESSION.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_statemachineactions::expression_has_operator():
-    assert hasattr(stateMachineActions::EXPRESSION, "operator")
+def test_statemachineactions_expression_has_operator():
+    assert hasattr(stateMachineActions_EXPRESSION, "operator")
     descriptor = None
-    for klass in stateMachineActions::EXPRESSION.__mro__:
+    for klass in stateMachineActions_EXPRESSION.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -69,33 +69,33 @@ def test_statemachineactions::expression_has_operator():
 
 
 
-def test_statemachineactions::eventaction_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::EventAction)
+def test_statemachineactions_eventaction_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_EventAction)
 
 
-def test_statemachineactions::eventaction_constructor_exists():
-    assert callable(stateMachineActions::EventAction.__init__)
+def test_statemachineactions_eventaction_constructor_exists():
+    assert callable(stateMachineActions_EventAction.__init__)
 
 
-def test_statemachineactions::eventaction_constructor_args():
-    sig = inspect.signature(stateMachineActions::EventAction.__init__)
+def test_statemachineactions_eventaction_constructor_args():
+    sig = inspect.signature(stateMachineActions_EventAction.__init__)
     params = list(sig.parameters.keys())
     assert "eventName" in params, "Missing parameter 'eventName'"
     assert "eventExtension" in params, "Missing parameter 'eventExtension'"
 
-def test_statemachineactions::eventaction_has_eventName():
-    assert hasattr(stateMachineActions::EventAction, "eventName")
+def test_statemachineactions_eventaction_has_eventName():
+    assert hasattr(stateMachineActions_EventAction, "eventName")
     descriptor = None
-    for klass in stateMachineActions::EventAction.__mro__:
+    for klass in stateMachineActions_EventAction.__mro__:
         if "eventName" in klass.__dict__:
             descriptor = klass.__dict__["eventName"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachineactions::eventaction_has_eventExtension():
-    assert hasattr(stateMachineActions::EventAction, "eventExtension")
+def test_statemachineactions_eventaction_has_eventExtension():
+    assert hasattr(stateMachineActions_EventAction, "eventExtension")
     descriptor = None
-    for klass in stateMachineActions::EventAction.__mro__:
+    for klass in stateMachineActions_EventAction.__mro__:
         if "eventExtension" in klass.__dict__:
             descriptor = klass.__dict__["eventExtension"]
             break
@@ -103,23 +103,23 @@ def test_statemachineactions::eventaction_has_eventExtension():
 
 
 
-def test_statemachineactions::assignment_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::Assignment)
+def test_statemachineactions_assignment_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_Assignment)
 
 
-def test_statemachineactions::assignment_constructor_exists():
-    assert callable(stateMachineActions::Assignment.__init__)
+def test_statemachineactions_assignment_constructor_exists():
+    assert callable(stateMachineActions_Assignment.__init__)
 
 
-def test_statemachineactions::assignment_constructor_args():
-    sig = inspect.signature(stateMachineActions::Assignment.__init__)
+def test_statemachineactions_assignment_constructor_args():
+    sig = inspect.signature(stateMachineActions_Assignment.__init__)
     params = list(sig.parameters.keys())
     assert "leftvar" in params, "Missing parameter 'leftvar'"
 
-def test_statemachineactions::assignment_has_leftvar():
-    assert hasattr(stateMachineActions::Assignment, "leftvar")
+def test_statemachineactions_assignment_has_leftvar():
+    assert hasattr(stateMachineActions_Assignment, "leftvar")
     descriptor = None
-    for klass in stateMachineActions::Assignment.__mro__:
+    for klass in stateMachineActions_Assignment.__mro__:
         if "leftvar" in klass.__dict__:
             descriptor = klass.__dict__["leftvar"]
             break
@@ -127,64 +127,64 @@ def test_statemachineactions::assignment_has_leftvar():
 
 
 
-def test_statemachineactions::term_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::TERM)
+def test_statemachineactions_term_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_TERM)
 
 
-def test_statemachineactions::term_constructor_exists():
-    assert callable(stateMachineActions::TERM.__init__)
+def test_statemachineactions_term_constructor_exists():
+    assert callable(stateMachineActions_TERM.__init__)
 
 
-def test_statemachineactions::term_constructor_args():
-    sig = inspect.signature(stateMachineActions::TERM.__init__)
+def test_statemachineactions_term_constructor_args():
+    sig = inspect.signature(stateMachineActions_TERM.__init__)
     params = list(sig.parameters.keys())
-    assert "variable" in params, "Missing parameter 'variable'"
     assert "constant" in params, "Missing parameter 'constant'"
+    assert "variable" in params, "Missing parameter 'variable'"
 
-def test_statemachineactions::term_has_variable():
-    assert hasattr(stateMachineActions::TERM, "variable")
+def test_statemachineactions_term_has_constant():
+    assert hasattr(stateMachineActions_TERM, "constant")
     descriptor = None
-    for klass in stateMachineActions::TERM.__mro__:
-        if "variable" in klass.__dict__:
-            descriptor = klass.__dict__["variable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachineactions::term_has_constant():
-    assert hasattr(stateMachineActions::TERM, "constant")
-    descriptor = None
-    for klass in stateMachineActions::TERM.__mro__:
+    for klass in stateMachineActions_TERM.__mro__:
         if "constant" in klass.__dict__:
             descriptor = klass.__dict__["constant"]
             break
     assert isinstance(descriptor, property)
 
+def test_statemachineactions_term_has_variable():
+    assert hasattr(stateMachineActions_TERM, "variable")
+    descriptor = None
+    for klass in stateMachineActions_TERM.__mro__:
+        if "variable" in klass.__dict__:
+            descriptor = klass.__dict__["variable"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_statemachineactions::action_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::Action)
+
+def test_statemachineactions_action_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_Action)
 
 
-def test_statemachineactions::action_constructor_exists():
-    assert callable(stateMachineActions::Action.__init__)
+def test_statemachineactions_action_constructor_exists():
+    assert callable(stateMachineActions_Action.__init__)
 
 
-def test_statemachineactions::action_constructor_args():
-    sig = inspect.signature(stateMachineActions::Action.__init__)
+def test_statemachineactions_action_constructor_args():
+    sig = inspect.signature(stateMachineActions_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachineactions::model_is_not_abstract():
-    assert not inspect.isabstract(stateMachineActions::Model)
+def test_statemachineactions_model_is_not_abstract():
+    assert not inspect.isabstract(stateMachineActions_Model)
 
 
-def test_statemachineactions::model_constructor_exists():
-    assert callable(stateMachineActions::Model.__init__)
+def test_statemachineactions_model_constructor_exists():
+    assert callable(stateMachineActions_Model.__init__)
 
 
-def test_statemachineactions::model_constructor_args():
-    sig = inspect.signature(stateMachineActions::Model.__init__)
+def test_statemachineactions_model_constructor_args():
+    sig = inspect.signature(stateMachineActions_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -199,150 +199,129 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stateMachineActions::Parameters_strategy = st.builds(
-    stateMachineActions::Parameters,
+stateMachineActions_Parameters_strategy = st.builds(
+    stateMachineActions_Parameters,
     param=
         safe_text
 )
-stateMachineActions::EXPRESSION_strategy = st.builds(
-    stateMachineActions::EXPRESSION,
+stateMachineActions_EXPRESSION_strategy = st.builds(
+    stateMachineActions_EXPRESSION,
     operator=
         safe_text
 )
-stateMachineActions::EventAction_strategy = st.builds(
-    stateMachineActions::EventAction,
+stateMachineActions_EventAction_strategy = st.builds(
+    stateMachineActions_EventAction,
     eventName=
         safe_text,
     eventExtension=
         safe_text
 )
-stateMachineActions::Assignment_strategy = st.builds(
-    stateMachineActions::Assignment,
+stateMachineActions_Assignment_strategy = st.builds(
+    stateMachineActions_Assignment,
     leftvar=
         safe_text
 )
-stateMachineActions::TERM_strategy = st.builds(
-    stateMachineActions::TERM,
-    variable=
-        safe_text,
+stateMachineActions_TERM_strategy = st.builds(
+    stateMachineActions_TERM,
     constant=
-        st.integers()
+        st.integers(),
+    variable=
+        safe_text
 )
-stateMachineActions::Action_strategy = st.builds(
-    stateMachineActions::Action,
+stateMachineActions_Action_strategy = st.builds(
+    stateMachineActions_Action,
 )
-stateMachineActions::Model_strategy = st.builds(
-    stateMachineActions::Model,
+stateMachineActions_Model_strategy = st.builds(
+    stateMachineActions_Model,
 )
 
-@given(instance=stateMachineActions::Parameters_strategy)
+@given(instance=stateMachineActions_Parameters_strategy)
 @settings(max_examples=50)
-def test_statemachineactions::parameters_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::Parameters)
-
-@given(instance=stateMachineActions::Parameters_strategy)
-def test_statemachineactions::parameters_param_type(instance):
-    assert isinstance(instance.param, str)
+def test_statemachineactions_parameters_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_Parameters)
 
 
-@given(instance=stateMachineActions::Parameters_strategy)
-def test_statemachineactions::parameters_param_setter(instance):
+
+@given(instance=stateMachineActions_Parameters_strategy)
+def test_statemachineactions_parameters_param_setter(instance):
     original = instance.param
     instance.param = original
     assert instance.param == original
 
-@given(instance=stateMachineActions::EXPRESSION_strategy)
+@given(instance=stateMachineActions_EXPRESSION_strategy)
 @settings(max_examples=50)
-def test_statemachineactions::expression_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::EXPRESSION)
-
-@given(instance=stateMachineActions::EXPRESSION_strategy)
-def test_statemachineactions::expression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_statemachineactions_expression_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_EXPRESSION)
 
 
-@given(instance=stateMachineActions::EXPRESSION_strategy)
-def test_statemachineactions::expression_operator_setter(instance):
+
+@given(instance=stateMachineActions_EXPRESSION_strategy)
+def test_statemachineactions_expression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=stateMachineActions::EventAction_strategy)
+@given(instance=stateMachineActions_EventAction_strategy)
 @settings(max_examples=50)
-def test_statemachineactions::eventaction_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::EventAction)
-
-@given(instance=stateMachineActions::EventAction_strategy)
-def test_statemachineactions::eventaction_eventName_type(instance):
-    assert isinstance(instance.eventName, str)
+def test_statemachineactions_eventaction_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_EventAction)
 
 
-@given(instance=stateMachineActions::EventAction_strategy)
-def test_statemachineactions::eventaction_eventName_setter(instance):
+
+@given(instance=stateMachineActions_EventAction_strategy)
+def test_statemachineactions_eventaction_eventName_setter(instance):
     original = instance.eventName
     instance.eventName = original
     assert instance.eventName == original
 
-@given(instance=stateMachineActions::EventAction_strategy)
-def test_statemachineactions::eventaction_eventExtension_type(instance):
-    assert isinstance(instance.eventExtension, str)
 
 
-@given(instance=stateMachineActions::EventAction_strategy)
-def test_statemachineactions::eventaction_eventExtension_setter(instance):
+@given(instance=stateMachineActions_EventAction_strategy)
+def test_statemachineactions_eventaction_eventExtension_setter(instance):
     original = instance.eventExtension
     instance.eventExtension = original
     assert instance.eventExtension == original
 
-@given(instance=stateMachineActions::Assignment_strategy)
+@given(instance=stateMachineActions_Assignment_strategy)
 @settings(max_examples=50)
-def test_statemachineactions::assignment_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::Assignment)
-
-@given(instance=stateMachineActions::Assignment_strategy)
-def test_statemachineactions::assignment_leftvar_type(instance):
-    assert isinstance(instance.leftvar, str)
+def test_statemachineactions_assignment_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_Assignment)
 
 
-@given(instance=stateMachineActions::Assignment_strategy)
-def test_statemachineactions::assignment_leftvar_setter(instance):
+
+@given(instance=stateMachineActions_Assignment_strategy)
+def test_statemachineactions_assignment_leftvar_setter(instance):
     original = instance.leftvar
     instance.leftvar = original
     assert instance.leftvar == original
 
-@given(instance=stateMachineActions::TERM_strategy)
+@given(instance=stateMachineActions_TERM_strategy)
 @settings(max_examples=50)
-def test_statemachineactions::term_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::TERM)
-
-@given(instance=stateMachineActions::TERM_strategy)
-def test_statemachineactions::term_variable_type(instance):
-    assert isinstance(instance.variable, str)
+def test_statemachineactions_term_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_TERM)
 
 
-@given(instance=stateMachineActions::TERM_strategy)
-def test_statemachineactions::term_variable_setter(instance):
-    original = instance.variable
-    instance.variable = original
-    assert instance.variable == original
 
-@given(instance=stateMachineActions::TERM_strategy)
-def test_statemachineactions::term_constant_type(instance):
-    assert isinstance(instance.constant, int)
-
-
-@given(instance=stateMachineActions::TERM_strategy)
-def test_statemachineactions::term_constant_setter(instance):
+@given(instance=stateMachineActions_TERM_strategy)
+def test_statemachineactions_term_constant_setter(instance):
     original = instance.constant
     instance.constant = original
     assert instance.constant == original
 
-@given(instance=stateMachineActions::Action_strategy)
-@settings(max_examples=50)
-def test_statemachineactions::action_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::Action)
 
-@given(instance=stateMachineActions::Model_strategy)
+
+@given(instance=stateMachineActions_TERM_strategy)
+def test_statemachineactions_term_variable_setter(instance):
+    original = instance.variable
+    instance.variable = original
+    assert instance.variable == original
+
+@given(instance=stateMachineActions_Action_strategy)
 @settings(max_examples=50)
-def test_statemachineactions::model_instantiation(instance):
-    assert isinstance(instance, stateMachineActions::Model)
+def test_statemachineactions_action_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_Action)
+
+@given(instance=stateMachineActions_Model_strategy)
+@settings(max_examples=50)
+def test_statemachineactions_model_instantiation(instance):
+    assert isinstance(instance, stateMachineActions_Model)

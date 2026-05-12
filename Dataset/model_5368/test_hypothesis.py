@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Y,
-    wxyz::Z3,
-    wxyz::Z1,
-    wxyz::Z2,
-    wxyz::Z,
+    wxyz_Z1,
+    wxyz_Z2,
+    wxyz_Z3,
+    wxyz_Z,
     X,
-    wxyz::Y2,
-    wxyz::Y1,
-    wxyz::Y,
+    wxyz_Y1,
+    wxyz_Y2,
+    wxyz_Y,
     W,
-    wxyz::X,
+    wxyz_X,
     NamedElt,
-    wxyz::Other,
-    wxyz::W,
-    wxyz::Model,
-    wxyz::NamedElt,
+    wxyz_Other,
+    wxyz_W,
+    wxyz_Model,
+    wxyz_NamedElt,
 )
 
 # =============================================================================
@@ -44,65 +44,65 @@ def test_y_constructor_args():
 
 
 
-def test_wxyz::z3_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Z3)
+def test_wxyz_z1_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Z1)
 
 
-def test_wxyz::z3_constructor_exists():
-    assert callable(wxyz::Z3.__init__)
+def test_wxyz_z1_constructor_exists():
+    assert callable(wxyz_Z1.__init__)
 
 
-def test_wxyz::z3_constructor_args():
-    sig = inspect.signature(wxyz::Z3.__init__)
+def test_wxyz_z1_constructor_args():
+    sig = inspect.signature(wxyz_Z1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::z1_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Z1)
+def test_wxyz_z2_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Z2)
 
 
-def test_wxyz::z1_constructor_exists():
-    assert callable(wxyz::Z1.__init__)
+def test_wxyz_z2_constructor_exists():
+    assert callable(wxyz_Z2.__init__)
 
 
-def test_wxyz::z1_constructor_args():
-    sig = inspect.signature(wxyz::Z1.__init__)
+def test_wxyz_z2_constructor_args():
+    sig = inspect.signature(wxyz_Z2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::z2_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Z2)
+def test_wxyz_z3_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Z3)
 
 
-def test_wxyz::z2_constructor_exists():
-    assert callable(wxyz::Z2.__init__)
+def test_wxyz_z3_constructor_exists():
+    assert callable(wxyz_Z3.__init__)
 
 
-def test_wxyz::z2_constructor_args():
-    sig = inspect.signature(wxyz::Z2.__init__)
+def test_wxyz_z3_constructor_args():
+    sig = inspect.signature(wxyz_Z3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::z_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Z)
+def test_wxyz_z_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Z)
 
 
-def test_wxyz::z_constructor_exists():
-    assert callable(wxyz::Z.__init__)
+def test_wxyz_z_constructor_exists():
+    assert callable(wxyz_Z.__init__)
 
 
-def test_wxyz::z_constructor_args():
-    sig = inspect.signature(wxyz::Z.__init__)
+def test_wxyz_z_constructor_args():
+    sig = inspect.signature(wxyz_Z.__init__)
     params = list(sig.parameters.keys())
     assert "propOfZ" in params, "Missing parameter 'propOfZ'"
 
-def test_wxyz::z_has_propOfZ():
-    assert hasattr(wxyz::Z, "propOfZ")
+def test_wxyz_z_has_propOfZ():
+    assert hasattr(wxyz_Z, "propOfZ")
     descriptor = None
-    for klass in wxyz::Z.__mro__:
+    for klass in wxyz_Z.__mro__:
         if "propOfZ" in klass.__dict__:
             descriptor = klass.__dict__["propOfZ"]
             break
@@ -124,51 +124,51 @@ def test_x_constructor_args():
 
 
 
-def test_wxyz::y2_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Y2)
+def test_wxyz_y1_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Y1)
 
 
-def test_wxyz::y2_constructor_exists():
-    assert callable(wxyz::Y2.__init__)
+def test_wxyz_y1_constructor_exists():
+    assert callable(wxyz_Y1.__init__)
 
 
-def test_wxyz::y2_constructor_args():
-    sig = inspect.signature(wxyz::Y2.__init__)
+def test_wxyz_y1_constructor_args():
+    sig = inspect.signature(wxyz_Y1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::y1_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Y1)
+def test_wxyz_y2_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Y2)
 
 
-def test_wxyz::y1_constructor_exists():
-    assert callable(wxyz::Y1.__init__)
+def test_wxyz_y2_constructor_exists():
+    assert callable(wxyz_Y2.__init__)
 
 
-def test_wxyz::y1_constructor_args():
-    sig = inspect.signature(wxyz::Y1.__init__)
+def test_wxyz_y2_constructor_args():
+    sig = inspect.signature(wxyz_Y2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::y_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Y)
+def test_wxyz_y_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Y)
 
 
-def test_wxyz::y_constructor_exists():
-    assert callable(wxyz::Y.__init__)
+def test_wxyz_y_constructor_exists():
+    assert callable(wxyz_Y.__init__)
 
 
-def test_wxyz::y_constructor_args():
-    sig = inspect.signature(wxyz::Y.__init__)
+def test_wxyz_y_constructor_args():
+    sig = inspect.signature(wxyz_Y.__init__)
     params = list(sig.parameters.keys())
     assert "propOfY" in params, "Missing parameter 'propOfY'"
 
-def test_wxyz::y_has_propOfY():
-    assert hasattr(wxyz::Y, "propOfY")
+def test_wxyz_y_has_propOfY():
+    assert hasattr(wxyz_Y, "propOfY")
     descriptor = None
-    for klass in wxyz::Y.__mro__:
+    for klass in wxyz_Y.__mro__:
         if "propOfY" in klass.__dict__:
             descriptor = klass.__dict__["propOfY"]
             break
@@ -190,23 +190,23 @@ def test_w_constructor_args():
 
 
 
-def test_wxyz::x_is_not_abstract():
-    assert not inspect.isabstract(wxyz::X)
+def test_wxyz_x_is_not_abstract():
+    assert not inspect.isabstract(wxyz_X)
 
 
-def test_wxyz::x_constructor_exists():
-    assert callable(wxyz::X.__init__)
+def test_wxyz_x_constructor_exists():
+    assert callable(wxyz_X.__init__)
 
 
-def test_wxyz::x_constructor_args():
-    sig = inspect.signature(wxyz::X.__init__)
+def test_wxyz_x_constructor_args():
+    sig = inspect.signature(wxyz_X.__init__)
     params = list(sig.parameters.keys())
     assert "propOfX" in params, "Missing parameter 'propOfX'"
 
-def test_wxyz::x_has_propOfX():
-    assert hasattr(wxyz::X, "propOfX")
+def test_wxyz_x_has_propOfX():
+    assert hasattr(wxyz_X, "propOfX")
     descriptor = None
-    for klass in wxyz::X.__mro__:
+    for klass in wxyz_X.__mro__:
         if "propOfX" in klass.__dict__:
             descriptor = klass.__dict__["propOfX"]
             break
@@ -228,37 +228,37 @@ def test_namedelt_constructor_args():
 
 
 
-def test_wxyz::other_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Other)
+def test_wxyz_other_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Other)
 
 
-def test_wxyz::other_constructor_exists():
-    assert callable(wxyz::Other.__init__)
+def test_wxyz_other_constructor_exists():
+    assert callable(wxyz_Other.__init__)
 
 
-def test_wxyz::other_constructor_args():
-    sig = inspect.signature(wxyz::Other.__init__)
+def test_wxyz_other_constructor_args():
+    sig = inspect.signature(wxyz_Other.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::w_is_not_abstract():
-    assert not inspect.isabstract(wxyz::W)
+def test_wxyz_w_is_not_abstract():
+    assert not inspect.isabstract(wxyz_W)
 
 
-def test_wxyz::w_constructor_exists():
-    assert callable(wxyz::W.__init__)
+def test_wxyz_w_constructor_exists():
+    assert callable(wxyz_W.__init__)
 
 
-def test_wxyz::w_constructor_args():
-    sig = inspect.signature(wxyz::W.__init__)
+def test_wxyz_w_constructor_args():
+    sig = inspect.signature(wxyz_W.__init__)
     params = list(sig.parameters.keys())
     assert "propOfW" in params, "Missing parameter 'propOfW'"
 
-def test_wxyz::w_has_propOfW():
-    assert hasattr(wxyz::W, "propOfW")
+def test_wxyz_w_has_propOfW():
+    assert hasattr(wxyz_W, "propOfW")
     descriptor = None
-    for klass in wxyz::W.__mro__:
+    for klass in wxyz_W.__mro__:
         if "propOfW" in klass.__dict__:
             descriptor = klass.__dict__["propOfW"]
             break
@@ -266,37 +266,37 @@ def test_wxyz::w_has_propOfW():
 
 
 
-def test_wxyz::model_is_not_abstract():
-    assert not inspect.isabstract(wxyz::Model)
+def test_wxyz_model_is_not_abstract():
+    assert not inspect.isabstract(wxyz_Model)
 
 
-def test_wxyz::model_constructor_exists():
-    assert callable(wxyz::Model.__init__)
+def test_wxyz_model_constructor_exists():
+    assert callable(wxyz_Model.__init__)
 
 
-def test_wxyz::model_constructor_args():
-    sig = inspect.signature(wxyz::Model.__init__)
+def test_wxyz_model_constructor_args():
+    sig = inspect.signature(wxyz_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wxyz::namedelt_is_not_abstract():
-    assert not inspect.isabstract(wxyz::NamedElt)
+def test_wxyz_namedelt_is_not_abstract():
+    assert not inspect.isabstract(wxyz_NamedElt)
 
 
-def test_wxyz::namedelt_constructor_exists():
-    assert callable(wxyz::NamedElt.__init__)
+def test_wxyz_namedelt_constructor_exists():
+    assert callable(wxyz_NamedElt.__init__)
 
 
-def test_wxyz::namedelt_constructor_args():
-    sig = inspect.signature(wxyz::NamedElt.__init__)
+def test_wxyz_namedelt_constructor_args():
+    sig = inspect.signature(wxyz_NamedElt.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wxyz::namedelt_has_name():
-    assert hasattr(wxyz::NamedElt, "name")
+def test_wxyz_namedelt_has_name():
+    assert hasattr(wxyz_NamedElt, "name")
     descriptor = None
-    for klass in wxyz::NamedElt.__mro__:
+    for klass in wxyz_NamedElt.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -317,58 +317,58 @@ safe_text = st.text(
 Y_strategy = st.builds(
     Y,
 )
-wxyz::Z3_strategy = st.builds(
-    wxyz::Z3,
+wxyz_Z1_strategy = st.builds(
+    wxyz_Z1,
 )
-wxyz::Z1_strategy = st.builds(
-    wxyz::Z1,
+wxyz_Z2_strategy = st.builds(
+    wxyz_Z2,
 )
-wxyz::Z2_strategy = st.builds(
-    wxyz::Z2,
+wxyz_Z3_strategy = st.builds(
+    wxyz_Z3,
 )
-wxyz::Z_strategy = st.builds(
-    wxyz::Z,
+wxyz_Z_strategy = st.builds(
+    wxyz_Z,
     propOfZ=
         safe_text
 )
 X_strategy = st.builds(
     X,
 )
-wxyz::Y2_strategy = st.builds(
-    wxyz::Y2,
+wxyz_Y1_strategy = st.builds(
+    wxyz_Y1,
 )
-wxyz::Y1_strategy = st.builds(
-    wxyz::Y1,
+wxyz_Y2_strategy = st.builds(
+    wxyz_Y2,
 )
-wxyz::Y_strategy = st.builds(
-    wxyz::Y,
+wxyz_Y_strategy = st.builds(
+    wxyz_Y,
     propOfY=
         safe_text
 )
 W_strategy = st.builds(
     W,
 )
-wxyz::X_strategy = st.builds(
-    wxyz::X,
+wxyz_X_strategy = st.builds(
+    wxyz_X,
     propOfX=
         safe_text
 )
 NamedElt_strategy = st.builds(
     NamedElt,
 )
-wxyz::Other_strategy = st.builds(
-    wxyz::Other,
+wxyz_Other_strategy = st.builds(
+    wxyz_Other,
 )
-wxyz::W_strategy = st.builds(
-    wxyz::W,
+wxyz_W_strategy = st.builds(
+    wxyz_W,
     propOfW=
         safe_text
 )
-wxyz::Model_strategy = st.builds(
-    wxyz::Model,
+wxyz_Model_strategy = st.builds(
+    wxyz_Model,
 )
-wxyz::NamedElt_strategy = st.builds(
-    wxyz::NamedElt,
+wxyz_NamedElt_strategy = st.builds(
+    wxyz_NamedElt,
     name=
         safe_text
 )
@@ -378,33 +378,30 @@ wxyz::NamedElt_strategy = st.builds(
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=wxyz::Z3_strategy)
+@given(instance=wxyz_Z1_strategy)
 @settings(max_examples=50)
-def test_wxyz::z3_instantiation(instance):
-    assert isinstance(instance, wxyz::Z3)
+def test_wxyz_z1_instantiation(instance):
+    assert isinstance(instance, wxyz_Z1)
 
-@given(instance=wxyz::Z1_strategy)
+@given(instance=wxyz_Z2_strategy)
 @settings(max_examples=50)
-def test_wxyz::z1_instantiation(instance):
-    assert isinstance(instance, wxyz::Z1)
+def test_wxyz_z2_instantiation(instance):
+    assert isinstance(instance, wxyz_Z2)
 
-@given(instance=wxyz::Z2_strategy)
+@given(instance=wxyz_Z3_strategy)
 @settings(max_examples=50)
-def test_wxyz::z2_instantiation(instance):
-    assert isinstance(instance, wxyz::Z2)
+def test_wxyz_z3_instantiation(instance):
+    assert isinstance(instance, wxyz_Z3)
 
-@given(instance=wxyz::Z_strategy)
+@given(instance=wxyz_Z_strategy)
 @settings(max_examples=50)
-def test_wxyz::z_instantiation(instance):
-    assert isinstance(instance, wxyz::Z)
-
-@given(instance=wxyz::Z_strategy)
-def test_wxyz::z_propOfZ_type(instance):
-    assert isinstance(instance.propOfZ, str)
+def test_wxyz_z_instantiation(instance):
+    assert isinstance(instance, wxyz_Z)
 
 
-@given(instance=wxyz::Z_strategy)
-def test_wxyz::z_propOfZ_setter(instance):
+
+@given(instance=wxyz_Z_strategy)
+def test_wxyz_z_propOfZ_setter(instance):
     original = instance.propOfZ
     instance.propOfZ = original
     assert instance.propOfZ == original
@@ -414,28 +411,25 @@ def test_wxyz::z_propOfZ_setter(instance):
 def test_x_instantiation(instance):
     assert isinstance(instance, X)
 
-@given(instance=wxyz::Y2_strategy)
+@given(instance=wxyz_Y1_strategy)
 @settings(max_examples=50)
-def test_wxyz::y2_instantiation(instance):
-    assert isinstance(instance, wxyz::Y2)
+def test_wxyz_y1_instantiation(instance):
+    assert isinstance(instance, wxyz_Y1)
 
-@given(instance=wxyz::Y1_strategy)
+@given(instance=wxyz_Y2_strategy)
 @settings(max_examples=50)
-def test_wxyz::y1_instantiation(instance):
-    assert isinstance(instance, wxyz::Y1)
+def test_wxyz_y2_instantiation(instance):
+    assert isinstance(instance, wxyz_Y2)
 
-@given(instance=wxyz::Y_strategy)
+@given(instance=wxyz_Y_strategy)
 @settings(max_examples=50)
-def test_wxyz::y_instantiation(instance):
-    assert isinstance(instance, wxyz::Y)
-
-@given(instance=wxyz::Y_strategy)
-def test_wxyz::y_propOfY_type(instance):
-    assert isinstance(instance.propOfY, str)
+def test_wxyz_y_instantiation(instance):
+    assert isinstance(instance, wxyz_Y)
 
 
-@given(instance=wxyz::Y_strategy)
-def test_wxyz::y_propOfY_setter(instance):
+
+@given(instance=wxyz_Y_strategy)
+def test_wxyz_y_propOfY_setter(instance):
     original = instance.propOfY
     instance.propOfY = original
     assert instance.propOfY == original
@@ -445,18 +439,15 @@ def test_wxyz::y_propOfY_setter(instance):
 def test_w_instantiation(instance):
     assert isinstance(instance, W)
 
-@given(instance=wxyz::X_strategy)
+@given(instance=wxyz_X_strategy)
 @settings(max_examples=50)
-def test_wxyz::x_instantiation(instance):
-    assert isinstance(instance, wxyz::X)
-
-@given(instance=wxyz::X_strategy)
-def test_wxyz::x_propOfX_type(instance):
-    assert isinstance(instance.propOfX, str)
+def test_wxyz_x_instantiation(instance):
+    assert isinstance(instance, wxyz_X)
 
 
-@given(instance=wxyz::X_strategy)
-def test_wxyz::x_propOfX_setter(instance):
+
+@given(instance=wxyz_X_strategy)
+def test_wxyz_x_propOfX_setter(instance):
     original = instance.propOfX
     instance.propOfX = original
     assert instance.propOfX == original
@@ -466,44 +457,38 @@ def test_wxyz::x_propOfX_setter(instance):
 def test_namedelt_instantiation(instance):
     assert isinstance(instance, NamedElt)
 
-@given(instance=wxyz::Other_strategy)
+@given(instance=wxyz_Other_strategy)
 @settings(max_examples=50)
-def test_wxyz::other_instantiation(instance):
-    assert isinstance(instance, wxyz::Other)
+def test_wxyz_other_instantiation(instance):
+    assert isinstance(instance, wxyz_Other)
 
-@given(instance=wxyz::W_strategy)
+@given(instance=wxyz_W_strategy)
 @settings(max_examples=50)
-def test_wxyz::w_instantiation(instance):
-    assert isinstance(instance, wxyz::W)
-
-@given(instance=wxyz::W_strategy)
-def test_wxyz::w_propOfW_type(instance):
-    assert isinstance(instance.propOfW, str)
+def test_wxyz_w_instantiation(instance):
+    assert isinstance(instance, wxyz_W)
 
 
-@given(instance=wxyz::W_strategy)
-def test_wxyz::w_propOfW_setter(instance):
+
+@given(instance=wxyz_W_strategy)
+def test_wxyz_w_propOfW_setter(instance):
     original = instance.propOfW
     instance.propOfW = original
     assert instance.propOfW == original
 
-@given(instance=wxyz::Model_strategy)
+@given(instance=wxyz_Model_strategy)
 @settings(max_examples=50)
-def test_wxyz::model_instantiation(instance):
-    assert isinstance(instance, wxyz::Model)
+def test_wxyz_model_instantiation(instance):
+    assert isinstance(instance, wxyz_Model)
 
-@given(instance=wxyz::NamedElt_strategy)
+@given(instance=wxyz_NamedElt_strategy)
 @settings(max_examples=50)
-def test_wxyz::namedelt_instantiation(instance):
-    assert isinstance(instance, wxyz::NamedElt)
-
-@given(instance=wxyz::NamedElt_strategy)
-def test_wxyz::namedelt_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wxyz_namedelt_instantiation(instance):
+    assert isinstance(instance, wxyz_NamedElt)
 
 
-@given(instance=wxyz::NamedElt_strategy)
-def test_wxyz::namedelt_name_setter(instance):
+
+@given(instance=wxyz_NamedElt_strategy)
+def test_wxyz_namedelt_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

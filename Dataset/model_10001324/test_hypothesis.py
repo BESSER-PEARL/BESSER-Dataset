@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Bank_Mobile_Money_Agent_Actor,
@@ -209,17 +209,8 @@ def test_category_constructor_exists():
 def test_category_constructor_args():
     sig = inspect.signature(Category.__init__)
     params = list(sig.parameters.keys())
-    assert "categoryName" in params, "Missing parameter 'categoryName'"
     assert "categoryID" in params, "Missing parameter 'categoryID'"
-
-def test_category_has_categoryName():
-    assert hasattr(Category, "categoryName")
-    descriptor = None
-    for klass in Category.__mro__:
-        if "categoryName" in klass.__dict__:
-            descriptor = klass.__dict__["categoryName"]
-            break
-    assert isinstance(descriptor, property)
+    assert "categoryName" in params, "Missing parameter 'categoryName'"
 
 def test_category_has_categoryID():
     assert hasattr(Category, "categoryID")
@@ -227,6 +218,15 @@ def test_category_has_categoryID():
     for klass in Category.__mro__:
         if "categoryID" in klass.__dict__:
             descriptor = klass.__dict__["categoryID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_category_has_categoryName():
+    assert hasattr(Category, "categoryName")
+    descriptor = None
+    for klass in Category.__mro__:
+        if "categoryName" in klass.__dict__:
+            descriptor = klass.__dict__["categoryName"]
             break
     assert isinstance(descriptor, property)
 
@@ -243,18 +243,9 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "CustomerID" in params, "Missing parameter 'CustomerID'"
     assert "email" in params, "Missing parameter 'email'"
     assert "username" in params, "Missing parameter 'username'"
-
-def test_customer_has_CustomerID():
-    assert hasattr(Customer, "CustomerID")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "CustomerID" in klass.__dict__:
-            descriptor = klass.__dict__["CustomerID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "CustomerID" in params, "Missing parameter 'CustomerID'"
 
 def test_customer_has_email():
     assert hasattr(Customer, "email")
@@ -274,6 +265,15 @@ def test_customer_has_username():
             break
     assert isinstance(descriptor, property)
 
+def test_customer_has_CustomerID():
+    assert hasattr(Customer, "CustomerID")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "CustomerID" in klass.__dict__:
+            descriptor = klass.__dict__["CustomerID"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_book_is_not_abstract():
@@ -287,19 +287,28 @@ def test_book_constructor_exists():
 def test_book_constructor_args():
     sig = inspect.signature(Book.__init__)
     params = list(sig.parameters.keys())
-    assert "bookID" in params, "Missing parameter 'bookID'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "author" in params, "Missing parameter 'author'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "category" in params, "Missing parameter 'category'"
     assert "price" in params, "Missing parameter 'price'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "category" in params, "Missing parameter 'category'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "bookID" in params, "Missing parameter 'bookID'"
 
-def test_book_has_bookID():
-    assert hasattr(Book, "bookID")
+def test_book_has_author():
+    assert hasattr(Book, "author")
     descriptor = None
     for klass in Book.__mro__:
-        if "bookID" in klass.__dict__:
-            descriptor = klass.__dict__["bookID"]
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_book_has_price():
+    assert hasattr(Book, "price")
+    descriptor = None
+    for klass in Book.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -312,12 +321,12 @@ def test_book_has_description():
             break
     assert isinstance(descriptor, property)
 
-def test_book_has_author():
-    assert hasattr(Book, "author")
+def test_book_has_category():
+    assert hasattr(Book, "category")
     descriptor = None
     for klass in Book.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
@@ -330,21 +339,12 @@ def test_book_has_title():
             break
     assert isinstance(descriptor, property)
 
-def test_book_has_category():
-    assert hasattr(Book, "category")
+def test_book_has_bookID():
+    assert hasattr(Book, "bookID")
     descriptor = None
     for klass in Book.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_book_has_price():
-    assert hasattr(Book, "price")
-    descriptor = None
-    for klass in Book.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
+        if "bookID" in klass.__dict__:
+            descriptor = klass.__dict__["bookID"]
             break
     assert isinstance(descriptor, property)
 
@@ -361,18 +361,9 @@ def test_administrator_constructor_exists():
 def test_administrator_constructor_args():
     sig = inspect.signature(Administrator.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
     assert "adminID" in params, "Missing parameter 'adminID'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_administrator_has_email():
-    assert hasattr(Administrator, "email")
-    descriptor = None
-    for klass in Administrator.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "email" in params, "Missing parameter 'email'"
 
 def test_administrator_has_adminID():
     assert hasattr(Administrator, "adminID")
@@ -389,6 +380,15 @@ def test_administrator_has_name():
     for klass in Administrator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_administrator_has_email():
+    assert hasattr(Administrator, "email")
+    descriptor = None
+    for klass in Administrator.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -442,42 +442,42 @@ Customer_Actor_strategy = st.builds(
 )
 Category_strategy = st.builds(
     Category,
-    categoryName=
-        safe_text,
     categoryID=
-        st.integers()
+        st.integers(),
+    categoryName=
+        safe_text
 )
 Customer_strategy = st.builds(
     Customer,
-    CustomerID=
-        st.integers(),
     email=
         safe_text,
     username=
-        safe_text
+        safe_text,
+    CustomerID=
+        st.integers()
 )
 Book_strategy = st.builds(
     Book,
-    bookID=
+    author=
+        safe_text,
+    price=
         st.integers(),
     description=
         safe_text,
-    author=
-        safe_text,
-    title=
-        safe_text,
     category=
         st.none(),
-    price=
+    title=
+        safe_text,
+    bookID=
         st.integers()
 )
 Administrator_strategy = st.builds(
     Administrator,
-    email=
-        safe_text,
     adminID=
         st.integers(),
     name=
+        safe_text,
+    email=
         safe_text
 )
 
@@ -546,20 +546,6 @@ def test_customer_actor_instantiation(instance):
 def test_category_instantiation(instance):
     assert isinstance(instance, Category)
 
-@given(instance=Category_strategy)
-def test_category_categoryName_type(instance):
-    assert isinstance(instance.categoryName, str)
-
-
-@given(instance=Category_strategy)
-def test_category_categoryName_setter(instance):
-    original = instance.categoryName
-    instance.categoryName = original
-    assert instance.categoryName == original
-
-@given(instance=Category_strategy)
-def test_category_categoryID_type(instance):
-    assert isinstance(instance.categoryID, int)
 
 
 @given(instance=Category_strategy)
@@ -568,25 +554,19 @@ def test_category_categoryID_setter(instance):
     instance.categoryID = original
     assert instance.categoryID == original
 
+
+
+@given(instance=Category_strategy)
+def test_category_categoryName_setter(instance):
+    original = instance.categoryName
+    instance.categoryName = original
+    assert instance.categoryName == original
+
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_CustomerID_type(instance):
-    assert isinstance(instance.CustomerID, int)
-
-
-@given(instance=Customer_strategy)
-def test_customer_CustomerID_setter(instance):
-    original = instance.CustomerID
-    instance.CustomerID = original
-    assert instance.CustomerID == original
-
-@given(instance=Customer_strategy)
-def test_customer_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Customer_strategy)
@@ -595,9 +575,6 @@ def test_customer_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=Customer_strategy)
-def test_customer_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Customer_strategy)
@@ -606,36 +583,19 @@ def test_customer_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
+
+
+@given(instance=Customer_strategy)
+def test_customer_CustomerID_setter(instance):
+    original = instance.CustomerID
+    instance.CustomerID = original
+    assert instance.CustomerID == original
+
 @given(instance=Book_strategy)
 @settings(max_examples=50)
 def test_book_instantiation(instance):
     assert isinstance(instance, Book)
 
-@given(instance=Book_strategy)
-def test_book_bookID_type(instance):
-    assert isinstance(instance.bookID, int)
-
-
-@given(instance=Book_strategy)
-def test_book_bookID_setter(instance):
-    original = instance.bookID
-    instance.bookID = original
-    assert instance.bookID == original
-
-@given(instance=Book_strategy)
-def test_book_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Book_strategy)
-def test_book_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Book_strategy)
-def test_book_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
 @given(instance=Book_strategy)
@@ -644,31 +604,6 @@ def test_book_author_setter(instance):
     instance.author = original
     assert instance.author == original
 
-@given(instance=Book_strategy)
-def test_book_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=Book_strategy)
-def test_book_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=Book_strategy)
-def test_book_category_type(instance):
-    assert isinstance(instance.category, customer)
-
-
-@given(instance=Book_strategy)
-def test_book_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=Book_strategy)
-def test_book_price_type(instance):
-    assert isinstance(instance.price, int)
 
 
 @given(instance=Book_strategy)
@@ -677,25 +612,43 @@ def test_book_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
+
+
+@given(instance=Book_strategy)
+def test_book_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=Book_strategy)
+def test_book_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+
+
+@given(instance=Book_strategy)
+def test_book_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=Book_strategy)
+def test_book_bookID_setter(instance):
+    original = instance.bookID
+    instance.bookID = original
+    assert instance.bookID == original
+
 @given(instance=Administrator_strategy)
 @settings(max_examples=50)
 def test_administrator_instantiation(instance):
     assert isinstance(instance, Administrator)
 
-@given(instance=Administrator_strategy)
-def test_administrator_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=Administrator_strategy)
-def test_administrator_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Administrator_strategy)
-def test_administrator_adminID_type(instance):
-    assert isinstance(instance.adminID, int)
 
 
 @given(instance=Administrator_strategy)
@@ -704,9 +657,6 @@ def test_administrator_adminID_setter(instance):
     instance.adminID = original
     assert instance.adminID == original
 
-@given(instance=Administrator_strategy)
-def test_administrator_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Administrator_strategy)
@@ -714,3 +664,11 @@ def test_administrator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Administrator_strategy)
+def test_administrator_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original

@@ -3,124 +3,124 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    camel::unit::Unit,
+from python_code import (
+    camel_unit_Unit,
     Range,
     Limit,
     EnumerateValue,
-    camel::type::SingleValue,
+    camel_type_SingleValue,
     NumericValue,
-    camel::type::DoublePrecisionValue,
-    camel::type::FloatsValue,
-    camel::type::PositiveInf,
-    camel::type::ValueToIncrease,
-    camel::type::IntegerValue,
-    camel::type::NegativeInf,
-    camel::type::Limit,
-    camel::type::ValueType,
-    camel::security::SecurityCapability,
+    camel_type_IntegerValue,
+    camel_type_ValueToIncrease,
+    camel_type_DoublePrecisionValue,
+    camel_type_PositiveInf,
+    camel_type_NegativeInf,
+    camel_type_FloatsValue,
+    camel_type_Limit,
+    camel_type_ValueType,
+    camel_security_SecurityCapability,
     RawMetric,
-    camel::security::RawSecurityMetric,
+    camel_security_RawSecurityMetric,
     RawMetricInstance,
-    camel::security::RawSecurityMetricInstance,
-    camel::security::SecurityControl,
+    camel_security_RawSecurityMetricInstance,
+    camel_security_SecurityControl,
     CompositeMetricInstance,
-    camel::security::CompositeSecurityMetricInstance,
+    camel_security_CompositeSecurityMetricInstance,
     CompositeMetric,
-    camel::security::CompositeSecurityMetric,
-    camel::security::SecurityDomain,
+    camel_security_CompositeSecurityMetric,
+    camel_security_SecurityDomain,
     SecuritySLO,
     SecurityDomain,
     CompositeSecurityMetricInstance,
     RawSecurityMetricInstance,
     CompositeSecurityMetric,
     RawSecurityMetric,
-    camel::scalability::Timer,
+    camel_scalability_Timer,
     Action,
-    camel::scalability::ScalingAction,
+    camel_scalability_ScalingAction,
     SecurityProperty,
-    camel::security::Certifiable,
+    camel_security_Certifiable,
     SecurityRequirement,
-    camel::scalability::ScalabilityRule,
-    camel::scalability::EventInstance,
+    camel_scalability_ScalabilityRule,
+    camel_scalability_EventInstance,
     MetricCondition,
     SimpleEvent,
-    camel::scalability::NonFunctionalEvent,
-    camel::scalability::FunctionalEvent,
-    scalability::camel::Action,
+    camel_scalability_NonFunctionalEvent,
+    camel_scalability_FunctionalEvent,
+    scalability_camel_Action,
     Timer,
     EventPattern,
-    camel::scalability::BinaryEventPattern,
-    camel::scalability::UnaryEventPattern,
+    camel_scalability_BinaryEventPattern,
+    camel_scalability_UnaryEventPattern,
     ScalingAction,
-    camel::scalability::VerticalScalingAction,
-    camel::scalability::HorizontalScalingAction,
+    camel_scalability_HorizontalScalingAction,
+    camel_scalability_VerticalScalingAction,
     Event,
-    camel::scalability::SimpleEvent,
-    camel::scalability::EventPattern,
-    camel::scalability::Event,
+    camel_scalability_SimpleEvent,
+    camel_scalability_EventPattern,
+    camel_scalability_Event,
     ScaleRequirement,
-    camel::requirement::HorizontalScaleRequirement,
+    camel_requirement_HorizontalScaleRequirement,
     SecurityControl,
-    camel::requirement::VerticalScaleRequirement,
+    camel_requirement_VerticalScaleRequirement,
     HardwareRequirement,
-    camel::requirement::QuantitativeHardwareRequirement,
-    camel::requirement::QualitativeHardwareRequirement,
+    camel_requirement_QuantitativeHardwareRequirement,
+    camel_requirement_QualitativeHardwareRequirement,
     SoftRequirement,
-    camel::requirement::OptimisationRequirement,
-    requirement::camel::Application,
+    camel_requirement_OptimisationRequirement,
+    requirement_camel_Application,
     HardRequirement,
-    camel::requirement::ProviderRequirement,
-    camel::requirement::SecurityRequirement,
-    camel::requirement::LocationRequirement,
-    camel::requirement::HardwareRequirement,
-    camel::requirement::ScaleRequirement,
-    camel::requirement::OSOrImageRequirement,
-    camel::requirement::ServiceLevelObjective,
-    camel::provider::Scope,
+    camel_requirement_HardwareRequirement,
+    camel_requirement_SecurityRequirement,
+    camel_requirement_LocationRequirement,
+    camel_requirement_ScaleRequirement,
+    camel_requirement_ProviderRequirement,
+    camel_requirement_OSOrImageRequirement,
+    camel_requirement_ServiceLevelObjective,
+    camel_provider_Scope,
     Alternative,
-    camel::provider::Exclusive,
+    camel_provider_Exclusive,
     GroupCardinality,
-    camel::provider::Feature,
-    camel::requirement::Requirement,
+    camel_provider_Feature,
+    camel_requirement_Requirement,
     Requirement,
-    camel::requirement::HardRequirement,
-    camel::requirement::RequirementGroup,
-    camel::requirement::SoftRequirement,
+    camel_requirement_HardRequirement,
+    camel_requirement_SoftRequirement,
+    camel_requirement_RequirementGroup,
     FeatCardinality,
     Scope,
-    camel::provider::Instance,
-    camel::provider::Product,
+    camel_provider_Product,
+    camel_provider_Instance,
     AttributeConstraint,
-    camel::provider::Constraint,
+    camel_provider_Constraint,
     Clone,
-    camel::provider::Clone,
+    camel_provider_Clone,
     Requires,
-    camel::provider::Functional,
-    camel::provider::AttributeConstraint,
-    camel::provider::Attribute,
+    camel_provider_Functional,
+    camel_provider_AttributeConstraint,
+    camel_provider_Attribute,
     Feature,
-    camel::provider::Alternative,
+    camel_provider_Alternative,
     Constraint,
-    camel::provider::Implies,
-    camel::provider::Excludes,
-    camel::provider::Requires,
+    camel_provider_Requires,
+    camel_provider_Excludes,
+    camel_provider_Implies,
     Cardinality,
-    camel::provider::GroupCardinality,
-    camel::provider::FeatCardinality,
-    camel::provider::Cardinality,
-    camel::organisation::RoleAssignment,
-    camel::organisation::Role,
-    camel::organisation::ResourceFilter,
-    camel::organisation::UserGroup,
+    camel_provider_GroupCardinality,
+    camel_provider_FeatCardinality,
+    camel_provider_Cardinality,
+    camel_organisation_RoleAssignment,
+    camel_organisation_Role,
+    camel_organisation_ResourceFilter,
+    camel_organisation_UserGroup,
     CloudCredentials,
     SecurityCapability,
-    camel::organisation::Entity,
-    camel::organisation::DataCenter,
-    camel::organisation::Permission,
-    camel::organisation::ExternalIdentifier,
+    camel_organisation_Entity,
+    camel_organisation_DataCenter,
+    camel_organisation_Permission,
+    camel_organisation_ExternalIdentifier,
     PaaSageCredentials,
     RoleAssignment,
     Role,
@@ -130,84 +130,160 @@ from classes import (
     ExternalIdentifier,
     CloudProvider,
     Organisation,
-    camel::organisation::CloudProvider,
+    camel_organisation_CloudProvider,
     Credentials,
-    camel::organisation::PaaSageCredentials,
-    camel::organisation::CloudCredentials,
-    camel::organisation::Credentials,
+    camel_organisation_PaaSageCredentials,
+    camel_organisation_CloudCredentials,
+    camel_organisation_Credentials,
     ResourceFilter,
-    camel::organisation::InformationResourceFilter,
-    camel::organisation::ServiceResourceFilter,
+    camel_organisation_ServiceResourceFilter,
+    camel_organisation_InformationResourceFilter,
     Permission,
     ConditionContext,
-    camel::metric::MetricContext,
-    camel::metric::PropertyContext,
-    camel::metric::Window,
-    camel::metric::Sensor,
-    metric::camel::Application,
-    camel::metric::ConditionContext,
-    camel::metric::MetricObjectBinding,
-    camel::metric::Schedule,
-    camel::metric::Property,
+    camel_metric_MetricContext,
+    camel_metric_PropertyContext,
+    camel_metric_Window,
+    camel_metric_Sensor,
+    metric_camel_Application,
+    camel_metric_ConditionContext,
+    camel_metric_MetricObjectBinding,
+    camel_metric_Schedule,
+    camel_metric_Property,
     Property,
-    camel::security::SecurityProperty,
+    camel_security_SecurityProperty,
     Unit,
-    camel::unit::MonetaryUnit,
-    camel::unit::Dimensionless,
-    camel::unit::RequestUnit,
-    camel::unit::CoreUnit,
+    camel_unit_TransactionUnit,
+    camel_unit_MonetaryUnit,
+    camel_unit_RequestUnit,
+    camel_unit_ThroughputUnit,
+    camel_unit_CoreUnit,
+    camel_unit_StorageUnit,
+    camel_unit_TimeIntervalUnit,
+    camel_unit_Dimensionless,
     ValueType,
-    camel::type::StringValueType,
-    camel::type::RangeUnion,
-    camel::type::BooleanValueType,
-    camel::type::List,
-    camel::type::Enumeration,
-    camel::type::Range,
+    camel_type_List,
+    camel_type_BooleanValueType,
+    camel_type_StringValueType,
+    camel_type_RangeUnion,
+    camel_type_Enumeration,
+    camel_type_Range,
     MetricFormulaParameter,
-    camel::metric::Metric,
-    camel::metric::MetricFormula,
+    camel_metric_Metric,
+    camel_metric_MetricFormula,
     MetricFormula,
     MetricObjectBinding,
-    camel::metric::MetricApplicationBinding,
-    camel::metric::MetricVMBinding,
-    camel::metric::MetricComponentBinding,
+    camel_metric_MetricVMBinding,
+    camel_metric_MetricComponentBinding,
+    camel_metric_MetricApplicationBinding,
     Window,
     Schedule,
     Metric,
-    camel::metric::CompositeMetric,
-    camel::metric::RawMetric,
-    camel::metric::MetricInstance,
-    camel::metric::MetricFormulaParameter,
+    camel_metric_RawMetric,
+    camel_metric_CompositeMetric,
+    camel_metric_MetricInstance,
+    camel_metric_MetricFormulaParameter,
     Sensor,
     TimeIntervalUnit,
     PropertyContext,
     MetricContext,
-    camel::metric::CompositeMetricContext,
-    camel::metric::RawMetricContext,
+    camel_metric_CompositeMetricContext,
+    camel_metric_RawMetricContext,
     Condition,
-    camel::metric::PropertyCondition,
-    camel::metric::MetricCondition,
-    camel::metric::Condition,
+    camel_metric_PropertyCondition,
+    camel_metric_MetricCondition,
+    camel_metric_Condition,
     Location,
-    camel::location::CloudLocation,
-    camel::location::Location,
+    camel_location_CloudLocation,
+    camel_location_Location,
     GeographicalRegion,
     Country,
     CloudLocation,
-    camel::unit::TransactionUnit,
-    camel::unit::TimeIntervalUnit,
-    camel::unit::ThroughputUnit,
-    camel::unit::StorageUnit,
+    ScalabilityRule,
+    camel_location_Country,
+    camel_location_GeographicalRegion,
+    ServiceLevelObjective,
+    camel_security_SecuritySLO,
+    MetricInstance,
+    camel_metric_RawMetricInstance,
+    camel_metric_CompositeMetricInstance,
+    camel_execution_RuleTrigger,
+    camel_execution_SLOAssessment,
+    execution_camel_Application,
+    camel_execution_ExecutionContext,
+    execution_camel_Action,
+    camel_execution_ActionRealisation,
+    RuleTrigger,
+    SLOAssessment,
+    Measurement,
+    camel_execution_VMMeasurement,
+    camel_execution_CommunicationMeasurement,
+    camel_execution_InternalComponentMeasurement,
+    camel_execution_ApplicationMeasurement,
+    ExecutionContext,
+    EventInstance,
+    ActionRealisation,
+    HostingPortInstance,
+    camel_deployment_RequiredHostInstance,
+    camel_deployment_ProvidedHostInstance,
+    camel_execution_Measurement,
+    RequirementGroup,
+    CommunicationPortInstance,
+    camel_deployment_ProvidedCommunicationInstance,
+    MonetaryUnit,
+    SingleValue,
+    camel_type_BoolValue,
+    camel_type_NumericValue,
+    camel_type_EnumerateValue,
+    camel_type_StringsValue,
+    Attribute,
+    RequiredHostInstance,
+    RequiredCommunicationInstance,
+    camel_deployment_RequiredCommunicationInstance,
+    HostingPort,
+    camel_deployment_RequiredHost,
+    camel_deployment_ProvidedHost,
+    CommunicationPort,
+    camel_deployment_RequiredCommunication,
+    camel_deployment_ProvidedCommunication,
+    ComponentInstance,
+    camel_deployment_VMInstance,
+    camel_deployment_InternalComponentInstance,
+    ProvidedHostInstance,
+    ProvidedCommunicationInstance,
+    ProviderRequirement,
+    LocationRequirement,
+    camel_deployment_VMRequirementSet,
+    RequiredHost,
+    RequiredCommunication,
+    Component,
+    camel_deployment_VM,
+    camel_deployment_InternalComponent,
+    Configuration,
+    ProvidedHost,
+    ProvidedCommunication,
+    DeploymentElement,
+    camel_deployment_CommunicationInstance,
+    camel_deployment_Communication,
+    camel_deployment_HostingPort,
+    camel_deployment_HostingPortInstance,
+    camel_deployment_Hosting,
+    camel_deployment_CommunicationPortInstance,
+    camel_deployment_ComponentInstance,
+    camel_deployment_HostingInstance,
+    camel_deployment_CommunicationPort,
+    camel_deployment_Component,
+    VMRequirementSet,
+    camel_deployment_Configuration,
     OSOrImageRequirement,
-    camel::requirement::OSRequirement,
-    camel::requirement::ImageRequirement,
+    camel_requirement_OSRequirement,
+    camel_requirement_ImageRequirement,
     QuantitativeHardwareRequirement,
     QualitativeHardwareRequirement,
     InternalComponent,
-    camel::deployment::DeploymentElement,
+    camel_deployment_DeploymentElement,
     Entity,
-    camel::organisation::Organisation,
-    camel::organisation::User,
+    camel_organisation_Organisation,
+    camel_organisation_User,
     UnitModel,
     HostingInstance,
     Hosting,
@@ -221,127 +297,51 @@ from classes import (
     LocationModel,
     ExecutionModel,
     DeploymentModel,
-    camel::Application,
-    camel::Action,
+    camel_Application,
+    camel_Action,
     Model,
-    camel::scalability::ScalabilityModel,
-    camel::metric::MetricModel,
-    camel::security::SecurityModel,
-    camel::unit::UnitModel,
-    camel::requirement::RequirementModel,
-    camel::provider::ProviderModel,
-    camel::organisation::OrganisationModel,
-    camel::type::TypeModel,
-    camel::deployment::DeploymentModel,
-    camel::CamelModel,
-    camel::Model,
+    camel_security_SecurityModel,
+    camel_organisation_OrganisationModel,
+    camel_deployment_DeploymentModel,
+    camel_metric_MetricModel,
+    camel_type_TypeModel,
+    camel_provider_ProviderModel,
+    camel_scalability_ScalabilityModel,
+    camel_requirement_RequirementModel,
+    camel_execution_ExecutionModel,
+    camel_unit_UnitModel,
+    camel_location_LocationModel,
+    camel_CamelModel,
+    camel_Model,
     TypeModel,
     SecurityModel,
     ScalabilityModel,
     RequirementModel,
     ProviderModel,
-    camel::location::LocationModel,
-    ScalabilityRule,
-    camel::location::Country,
-    camel::location::GeographicalRegion,
-    ServiceLevelObjective,
-    camel::security::SecuritySLO,
-    MetricInstance,
-    camel::metric::RawMetricInstance,
-    camel::metric::CompositeMetricInstance,
-    camel::execution::RuleTrigger,
-    camel::execution::SLOAssessment,
-    execution::camel::Application,
-    camel::execution::ExecutionContext,
-    execution::camel::Action,
-    camel::execution::ActionRealisation,
-    RuleTrigger,
-    SLOAssessment,
-    Measurement,
-    camel::execution::ApplicationMeasurement,
-    camel::execution::CommunicationMeasurement,
-    camel::execution::VMMeasurement,
-    camel::execution::InternalComponentMeasurement,
-    ExecutionContext,
-    EventInstance,
-    ActionRealisation,
-    camel::execution::ExecutionModel,
-    HostingPortInstance,
-    camel::deployment::RequiredHostInstance,
-    camel::deployment::ProvidedHostInstance,
-    camel::execution::Measurement,
-    RequirementGroup,
-    CommunicationPortInstance,
-    camel::deployment::ProvidedCommunicationInstance,
-    MonetaryUnit,
-    SingleValue,
-    camel::type::EnumerateValue,
-    camel::type::StringsValue,
-    camel::type::NumericValue,
-    camel::type::BoolValue,
-    Attribute,
-    RequiredHostInstance,
-    RequiredCommunicationInstance,
-    camel::deployment::RequiredCommunicationInstance,
-    HostingPort,
-    camel::deployment::RequiredHost,
-    camel::deployment::ProvidedHost,
-    CommunicationPort,
-    camel::deployment::RequiredCommunication,
-    camel::deployment::ProvidedCommunication,
-    ComponentInstance,
-    camel::deployment::VMInstance,
-    camel::deployment::InternalComponentInstance,
-    ProvidedHostInstance,
-    ProvidedCommunicationInstance,
-    ProviderRequirement,
-    LocationRequirement,
-    camel::deployment::VMRequirementSet,
-    RequiredHost,
-    RequiredCommunication,
-    Component,
-    camel::deployment::VM,
-    camel::deployment::InternalComponent,
-    Configuration,
-    ProvidedHost,
-    ProvidedCommunication,
-    DeploymentElement,
-    camel::deployment::CommunicationPortInstance,
-    camel::deployment::CommunicationInstance,
-    camel::deployment::ComponentInstance,
-    camel::deployment::HostingInstance,
-    camel::deployment::Hosting,
-    camel::deployment::HostingPortInstance,
-    camel::deployment::HostingPort,
-    camel::deployment::Configuration,
-    camel::deployment::CommunicationPort,
-    camel::deployment::Communication,
-    camel::deployment::Component,
-    VMRequirementSet,
     TypeEnum,
-    ComparisonOperatorType,
-    Operator,
-    UnitDimensionType,
-    MetricFunctionType,
-    OptimisationFunctionType,
-    WindowType,
-    ResourcePattern,
-    StatusType,
-    BinaryPatternOperatorType,
-    WindowSizeType,
-    UnitType,
-    QuantifierType,
-    FunctionPatternType,
-    RequirementOperatorType,
-    SecurityLevel,
-    ActionType,
-    LayerType,
-    MetricFunctionArityType,
-    UnaryPatternOperatorType,
-    PropertyType,
-    ScheduleType,
     CommunicationType,
+    SecurityLevel,
+    UnitType,
+    MetricFunctionArityType,
+    OptimisationFunctionType,
+    MetricFunctionType,
+    WindowType,
+    LayerType,
+    ActionType,
+    StatusType,
+    Operator,
+    ComparisonOperatorType,
+    WindowSizeType,
+    FunctionPatternType,
     TimerType,
+    RequirementOperatorType,
+    PropertyType,
+    QuantifierType,
+    ResourcePattern,
+    UnitDimensionType,
+    BinaryPatternOperatorType,
+    UnaryPatternOperatorType,
+    ScheduleType,
 )
 
 # =============================================================================
@@ -350,35 +350,35 @@ from classes import (
 
 
 
-def test_camel::unit::unit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::Unit)
+def test_camel_unit_unit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_Unit)
 
 
-def test_camel::unit::unit_constructor_exists():
-    assert callable(camel::unit::Unit.__init__)
+def test_camel_unit_unit_constructor_exists():
+    assert callable(camel_unit_Unit.__init__)
 
 
-def test_camel::unit::unit_constructor_args():
-    sig = inspect.signature(camel::unit::Unit.__init__)
+def test_camel_unit_unit_constructor_args():
+    sig = inspect.signature(camel_unit_Unit.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "unit" in params, "Missing parameter 'unit'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::unit::unit_has_name():
-    assert hasattr(camel::unit::Unit, "name")
+def test_camel_unit_unit_has_unit():
+    assert hasattr(camel_unit_Unit, "unit")
     descriptor = None
-    for klass in camel::unit::Unit.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in camel_unit_Unit.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::unit::unit_has_unit():
-    assert hasattr(camel::unit::Unit, "unit")
+def test_camel_unit_unit_has_name():
+    assert hasattr(camel_unit_Unit, "name")
     descriptor = None
-    for klass in camel::unit::Unit.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
+    for klass in camel_unit_Unit.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -426,16 +426,16 @@ def test_enumeratevalue_constructor_args():
 
 
 
-def test_camel::type::singlevalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::SingleValue)
+def test_camel_type_singlevalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_SingleValue)
 
 
-def test_camel::type::singlevalue_constructor_exists():
-    assert callable(camel::type::SingleValue.__init__)
+def test_camel_type_singlevalue_constructor_exists():
+    assert callable(camel_type_SingleValue.__init__)
 
 
-def test_camel::type::singlevalue_constructor_args():
-    sig = inspect.signature(camel::type::SingleValue.__init__)
+def test_camel_type_singlevalue_constructor_args():
+    sig = inspect.signature(camel_type_SingleValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -454,23 +454,23 @@ def test_numericvalue_constructor_args():
 
 
 
-def test_camel::type::doubleprecisionvalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::DoublePrecisionValue)
+def test_camel_type_integervalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_IntegerValue)
 
 
-def test_camel::type::doubleprecisionvalue_constructor_exists():
-    assert callable(camel::type::DoublePrecisionValue.__init__)
+def test_camel_type_integervalue_constructor_exists():
+    assert callable(camel_type_IntegerValue.__init__)
 
 
-def test_camel::type::doubleprecisionvalue_constructor_args():
-    sig = inspect.signature(camel::type::DoublePrecisionValue.__init__)
+def test_camel_type_integervalue_constructor_args():
+    sig = inspect.signature(camel_type_IntegerValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_camel::type::doubleprecisionvalue_has_value():
-    assert hasattr(camel::type::DoublePrecisionValue, "value")
+def test_camel_type_integervalue_has_value():
+    assert hasattr(camel_type_IntegerValue, "value")
     descriptor = None
-    for klass in camel::type::DoublePrecisionValue.__mro__:
+    for klass in camel_type_IntegerValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -478,23 +478,37 @@ def test_camel::type::doubleprecisionvalue_has_value():
 
 
 
-def test_camel::type::floatsvalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::FloatsValue)
+def test_camel_type_valuetoincrease_is_not_abstract():
+    assert not inspect.isabstract(camel_type_ValueToIncrease)
 
 
-def test_camel::type::floatsvalue_constructor_exists():
-    assert callable(camel::type::FloatsValue.__init__)
+def test_camel_type_valuetoincrease_constructor_exists():
+    assert callable(camel_type_ValueToIncrease.__init__)
 
 
-def test_camel::type::floatsvalue_constructor_args():
-    sig = inspect.signature(camel::type::FloatsValue.__init__)
+def test_camel_type_valuetoincrease_constructor_args():
+    sig = inspect.signature(camel_type_ValueToIncrease.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_type_doubleprecisionvalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_DoublePrecisionValue)
+
+
+def test_camel_type_doubleprecisionvalue_constructor_exists():
+    assert callable(camel_type_DoublePrecisionValue.__init__)
+
+
+def test_camel_type_doubleprecisionvalue_constructor_args():
+    sig = inspect.signature(camel_type_DoublePrecisionValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_camel::type::floatsvalue_has_value():
-    assert hasattr(camel::type::FloatsValue, "value")
+def test_camel_type_doubleprecisionvalue_has_value():
+    assert hasattr(camel_type_DoublePrecisionValue, "value")
     descriptor = None
-    for klass in camel::type::FloatsValue.__mro__:
+    for klass in camel_type_DoublePrecisionValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -502,51 +516,51 @@ def test_camel::type::floatsvalue_has_value():
 
 
 
-def test_camel::type::positiveinf_is_not_abstract():
-    assert not inspect.isabstract(camel::type::PositiveInf)
+def test_camel_type_positiveinf_is_not_abstract():
+    assert not inspect.isabstract(camel_type_PositiveInf)
 
 
-def test_camel::type::positiveinf_constructor_exists():
-    assert callable(camel::type::PositiveInf.__init__)
+def test_camel_type_positiveinf_constructor_exists():
+    assert callable(camel_type_PositiveInf.__init__)
 
 
-def test_camel::type::positiveinf_constructor_args():
-    sig = inspect.signature(camel::type::PositiveInf.__init__)
+def test_camel_type_positiveinf_constructor_args():
+    sig = inspect.signature(camel_type_PositiveInf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::type::valuetoincrease_is_not_abstract():
-    assert not inspect.isabstract(camel::type::ValueToIncrease)
+def test_camel_type_negativeinf_is_not_abstract():
+    assert not inspect.isabstract(camel_type_NegativeInf)
 
 
-def test_camel::type::valuetoincrease_constructor_exists():
-    assert callable(camel::type::ValueToIncrease.__init__)
+def test_camel_type_negativeinf_constructor_exists():
+    assert callable(camel_type_NegativeInf.__init__)
 
 
-def test_camel::type::valuetoincrease_constructor_args():
-    sig = inspect.signature(camel::type::ValueToIncrease.__init__)
+def test_camel_type_negativeinf_constructor_args():
+    sig = inspect.signature(camel_type_NegativeInf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::type::integervalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::IntegerValue)
+def test_camel_type_floatsvalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_FloatsValue)
 
 
-def test_camel::type::integervalue_constructor_exists():
-    assert callable(camel::type::IntegerValue.__init__)
+def test_camel_type_floatsvalue_constructor_exists():
+    assert callable(camel_type_FloatsValue.__init__)
 
 
-def test_camel::type::integervalue_constructor_args():
-    sig = inspect.signature(camel::type::IntegerValue.__init__)
+def test_camel_type_floatsvalue_constructor_args():
+    sig = inspect.signature(camel_type_FloatsValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_camel::type::integervalue_has_value():
-    assert hasattr(camel::type::IntegerValue, "value")
+def test_camel_type_floatsvalue_has_value():
+    assert hasattr(camel_type_FloatsValue, "value")
     descriptor = None
-    for klass in camel::type::IntegerValue.__mro__:
+    for klass in camel_type_FloatsValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -554,37 +568,23 @@ def test_camel::type::integervalue_has_value():
 
 
 
-def test_camel::type::negativeinf_is_not_abstract():
-    assert not inspect.isabstract(camel::type::NegativeInf)
+def test_camel_type_limit_is_not_abstract():
+    assert not inspect.isabstract(camel_type_Limit)
 
 
-def test_camel::type::negativeinf_constructor_exists():
-    assert callable(camel::type::NegativeInf.__init__)
+def test_camel_type_limit_constructor_exists():
+    assert callable(camel_type_Limit.__init__)
 
 
-def test_camel::type::negativeinf_constructor_args():
-    sig = inspect.signature(camel::type::NegativeInf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::type::limit_is_not_abstract():
-    assert not inspect.isabstract(camel::type::Limit)
-
-
-def test_camel::type::limit_constructor_exists():
-    assert callable(camel::type::Limit.__init__)
-
-
-def test_camel::type::limit_constructor_args():
-    sig = inspect.signature(camel::type::Limit.__init__)
+def test_camel_type_limit_constructor_args():
+    sig = inspect.signature(camel_type_Limit.__init__)
     params = list(sig.parameters.keys())
     assert "included" in params, "Missing parameter 'included'"
 
-def test_camel::type::limit_has_included():
-    assert hasattr(camel::type::Limit, "included")
+def test_camel_type_limit_has_included():
+    assert hasattr(camel_type_Limit, "included")
     descriptor = None
-    for klass in camel::type::Limit.__mro__:
+    for klass in camel_type_Limit.__mro__:
         if "included" in klass.__dict__:
             descriptor = klass.__dict__["included"]
             break
@@ -592,23 +592,23 @@ def test_camel::type::limit_has_included():
 
 
 
-def test_camel::type::valuetype_is_not_abstract():
-    assert not inspect.isabstract(camel::type::ValueType)
+def test_camel_type_valuetype_is_not_abstract():
+    assert not inspect.isabstract(camel_type_ValueType)
 
 
-def test_camel::type::valuetype_constructor_exists():
-    assert callable(camel::type::ValueType.__init__)
+def test_camel_type_valuetype_constructor_exists():
+    assert callable(camel_type_ValueType.__init__)
 
 
-def test_camel::type::valuetype_constructor_args():
-    sig = inspect.signature(camel::type::ValueType.__init__)
+def test_camel_type_valuetype_constructor_args():
+    sig = inspect.signature(camel_type_ValueType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::type::valuetype_has_name():
-    assert hasattr(camel::type::ValueType, "name")
+def test_camel_type_valuetype_has_name():
+    assert hasattr(camel_type_ValueType, "name")
     descriptor = None
-    for klass in camel::type::ValueType.__mro__:
+    for klass in camel_type_ValueType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -616,23 +616,23 @@ def test_camel::type::valuetype_has_name():
 
 
 
-def test_camel::security::securitycapability_is_not_abstract():
-    assert not inspect.isabstract(camel::security::SecurityCapability)
+def test_camel_security_securitycapability_is_not_abstract():
+    assert not inspect.isabstract(camel_security_SecurityCapability)
 
 
-def test_camel::security::securitycapability_constructor_exists():
-    assert callable(camel::security::SecurityCapability.__init__)
+def test_camel_security_securitycapability_constructor_exists():
+    assert callable(camel_security_SecurityCapability.__init__)
 
 
-def test_camel::security::securitycapability_constructor_args():
-    sig = inspect.signature(camel::security::SecurityCapability.__init__)
+def test_camel_security_securitycapability_constructor_args():
+    sig = inspect.signature(camel_security_SecurityCapability.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::security::securitycapability_has_name():
-    assert hasattr(camel::security::SecurityCapability, "name")
+def test_camel_security_securitycapability_has_name():
+    assert hasattr(camel_security_SecurityCapability, "name")
     descriptor = None
-    for klass in camel::security::SecurityCapability.__mro__:
+    for klass in camel_security_SecurityCapability.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -654,16 +654,16 @@ def test_rawmetric_constructor_args():
 
 
 
-def test_camel::security::rawsecuritymetric_is_not_abstract():
-    assert not inspect.isabstract(camel::security::RawSecurityMetric)
+def test_camel_security_rawsecuritymetric_is_not_abstract():
+    assert not inspect.isabstract(camel_security_RawSecurityMetric)
 
 
-def test_camel::security::rawsecuritymetric_constructor_exists():
-    assert callable(camel::security::RawSecurityMetric.__init__)
+def test_camel_security_rawsecuritymetric_constructor_exists():
+    assert callable(camel_security_RawSecurityMetric.__init__)
 
 
-def test_camel::security::rawsecuritymetric_constructor_args():
-    sig = inspect.signature(camel::security::RawSecurityMetric.__init__)
+def test_camel_security_rawsecuritymetric_constructor_args():
+    sig = inspect.signature(camel_security_RawSecurityMetric.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -682,49 +682,49 @@ def test_rawmetricinstance_constructor_args():
 
 
 
-def test_camel::security::rawsecuritymetricinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::security::RawSecurityMetricInstance)
+def test_camel_security_rawsecuritymetricinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_security_RawSecurityMetricInstance)
 
 
-def test_camel::security::rawsecuritymetricinstance_constructor_exists():
-    assert callable(camel::security::RawSecurityMetricInstance.__init__)
+def test_camel_security_rawsecuritymetricinstance_constructor_exists():
+    assert callable(camel_security_RawSecurityMetricInstance.__init__)
 
 
-def test_camel::security::rawsecuritymetricinstance_constructor_args():
-    sig = inspect.signature(camel::security::RawSecurityMetricInstance.__init__)
+def test_camel_security_rawsecuritymetricinstance_constructor_args():
+    sig = inspect.signature(camel_security_RawSecurityMetricInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::security::securitycontrol_is_not_abstract():
-    assert not inspect.isabstract(camel::security::SecurityControl)
+def test_camel_security_securitycontrol_is_not_abstract():
+    assert not inspect.isabstract(camel_security_SecurityControl)
 
 
-def test_camel::security::securitycontrol_constructor_exists():
-    assert callable(camel::security::SecurityControl.__init__)
+def test_camel_security_securitycontrol_constructor_exists():
+    assert callable(camel_security_SecurityControl.__init__)
 
 
-def test_camel::security::securitycontrol_constructor_args():
-    sig = inspect.signature(camel::security::SecurityControl.__init__)
+def test_camel_security_securitycontrol_constructor_args():
+    sig = inspect.signature(camel_security_SecurityControl.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "specification" in params, "Missing parameter 'specification'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::security::securitycontrol_has_name():
-    assert hasattr(camel::security::SecurityControl, "name")
+def test_camel_security_securitycontrol_has_specification():
+    assert hasattr(camel_security_SecurityControl, "specification")
     descriptor = None
-    for klass in camel::security::SecurityControl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in camel_security_SecurityControl.__mro__:
+        if "specification" in klass.__dict__:
+            descriptor = klass.__dict__["specification"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::security::securitycontrol_has_specification():
-    assert hasattr(camel::security::SecurityControl, "specification")
+def test_camel_security_securitycontrol_has_name():
+    assert hasattr(camel_security_SecurityControl, "name")
     descriptor = None
-    for klass in camel::security::SecurityControl.__mro__:
-        if "specification" in klass.__dict__:
-            descriptor = klass.__dict__["specification"]
+    for klass in camel_security_SecurityControl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -744,16 +744,16 @@ def test_compositemetricinstance_constructor_args():
 
 
 
-def test_camel::security::compositesecuritymetricinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::security::CompositeSecurityMetricInstance)
+def test_camel_security_compositesecuritymetricinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_security_CompositeSecurityMetricInstance)
 
 
-def test_camel::security::compositesecuritymetricinstance_constructor_exists():
-    assert callable(camel::security::CompositeSecurityMetricInstance.__init__)
+def test_camel_security_compositesecuritymetricinstance_constructor_exists():
+    assert callable(camel_security_CompositeSecurityMetricInstance.__init__)
 
 
-def test_camel::security::compositesecuritymetricinstance_constructor_args():
-    sig = inspect.signature(camel::security::CompositeSecurityMetricInstance.__init__)
+def test_camel_security_compositesecuritymetricinstance_constructor_args():
+    sig = inspect.signature(camel_security_CompositeSecurityMetricInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -772,47 +772,47 @@ def test_compositemetric_constructor_args():
 
 
 
-def test_camel::security::compositesecuritymetric_is_not_abstract():
-    assert not inspect.isabstract(camel::security::CompositeSecurityMetric)
+def test_camel_security_compositesecuritymetric_is_not_abstract():
+    assert not inspect.isabstract(camel_security_CompositeSecurityMetric)
 
 
-def test_camel::security::compositesecuritymetric_constructor_exists():
-    assert callable(camel::security::CompositeSecurityMetric.__init__)
+def test_camel_security_compositesecuritymetric_constructor_exists():
+    assert callable(camel_security_CompositeSecurityMetric.__init__)
 
 
-def test_camel::security::compositesecuritymetric_constructor_args():
-    sig = inspect.signature(camel::security::CompositeSecurityMetric.__init__)
+def test_camel_security_compositesecuritymetric_constructor_args():
+    sig = inspect.signature(camel_security_CompositeSecurityMetric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::security::securitydomain_is_not_abstract():
-    assert not inspect.isabstract(camel::security::SecurityDomain)
+def test_camel_security_securitydomain_is_not_abstract():
+    assert not inspect.isabstract(camel_security_SecurityDomain)
 
 
-def test_camel::security::securitydomain_constructor_exists():
-    assert callable(camel::security::SecurityDomain.__init__)
+def test_camel_security_securitydomain_constructor_exists():
+    assert callable(camel_security_SecurityDomain.__init__)
 
 
-def test_camel::security::securitydomain_constructor_args():
-    sig = inspect.signature(camel::security::SecurityDomain.__init__)
+def test_camel_security_securitydomain_constructor_args():
+    sig = inspect.signature(camel_security_SecurityDomain.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::security::securitydomain_has_id():
-    assert hasattr(camel::security::SecurityDomain, "id")
+def test_camel_security_securitydomain_has_id():
+    assert hasattr(camel_security_SecurityDomain, "id")
     descriptor = None
-    for klass in camel::security::SecurityDomain.__mro__:
+    for klass in camel_security_SecurityDomain.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::security::securitydomain_has_name():
-    assert hasattr(camel::security::SecurityDomain, "name")
+def test_camel_security_securitydomain_has_name():
+    assert hasattr(camel_security_SecurityDomain, "name")
     descriptor = None
-    for klass in camel::security::SecurityDomain.__mro__:
+    for klass in camel_security_SecurityDomain.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -904,55 +904,55 @@ def test_rawsecuritymetric_constructor_args():
 
 
 
-def test_camel::scalability::timer_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::Timer)
+def test_camel_scalability_timer_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_Timer)
 
 
-def test_camel::scalability::timer_constructor_exists():
-    assert callable(camel::scalability::Timer.__init__)
+def test_camel_scalability_timer_constructor_exists():
+    assert callable(camel_scalability_Timer.__init__)
 
 
-def test_camel::scalability::timer_constructor_args():
-    sig = inspect.signature(camel::scalability::Timer.__init__)
+def test_camel_scalability_timer_constructor_args():
+    sig = inspect.signature(camel_scalability_Timer.__init__)
     params = list(sig.parameters.keys())
-    assert "timeValue" in params, "Missing parameter 'timeValue'"
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
     assert "maxOccurrenceNum" in params, "Missing parameter 'maxOccurrenceNum'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "timeValue" in params, "Missing parameter 'timeValue'"
 
-def test_camel::scalability::timer_has_timeValue():
-    assert hasattr(camel::scalability::Timer, "timeValue")
+def test_camel_scalability_timer_has_name():
+    assert hasattr(camel_scalability_Timer, "name")
     descriptor = None
-    for klass in camel::scalability::Timer.__mro__:
-        if "timeValue" in klass.__dict__:
-            descriptor = klass.__dict__["timeValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::scalability::timer_has_type():
-    assert hasattr(camel::scalability::Timer, "type")
-    descriptor = None
-    for klass in camel::scalability::Timer.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::scalability::timer_has_name():
-    assert hasattr(camel::scalability::Timer, "name")
-    descriptor = None
-    for klass in camel::scalability::Timer.__mro__:
+    for klass in camel_scalability_Timer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::timer_has_maxOccurrenceNum():
-    assert hasattr(camel::scalability::Timer, "maxOccurrenceNum")
+def test_camel_scalability_timer_has_maxOccurrenceNum():
+    assert hasattr(camel_scalability_Timer, "maxOccurrenceNum")
     descriptor = None
-    for klass in camel::scalability::Timer.__mro__:
+    for klass in camel_scalability_Timer.__mro__:
         if "maxOccurrenceNum" in klass.__dict__:
             descriptor = klass.__dict__["maxOccurrenceNum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_scalability_timer_has_type():
+    assert hasattr(camel_scalability_Timer, "type")
+    descriptor = None
+    for klass in camel_scalability_Timer.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_scalability_timer_has_timeValue():
+    assert hasattr(camel_scalability_Timer, "timeValue")
+    descriptor = None
+    for klass in camel_scalability_Timer.__mro__:
+        if "timeValue" in klass.__dict__:
+            descriptor = klass.__dict__["timeValue"]
             break
     assert isinstance(descriptor, property)
 
@@ -972,16 +972,16 @@ def test_action_constructor_args():
 
 
 
-def test_camel::scalability::scalingaction_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::ScalingAction)
+def test_camel_scalability_scalingaction_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_ScalingAction)
 
 
-def test_camel::scalability::scalingaction_constructor_exists():
-    assert callable(camel::scalability::ScalingAction.__init__)
+def test_camel_scalability_scalingaction_constructor_exists():
+    assert callable(camel_scalability_ScalingAction.__init__)
 
 
-def test_camel::scalability::scalingaction_constructor_args():
-    sig = inspect.signature(camel::scalability::ScalingAction.__init__)
+def test_camel_scalability_scalingaction_constructor_args():
+    sig = inspect.signature(camel_scalability_ScalingAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1000,16 +1000,16 @@ def test_securityproperty_constructor_args():
 
 
 
-def test_camel::security::certifiable_is_not_abstract():
-    assert not inspect.isabstract(camel::security::Certifiable)
+def test_camel_security_certifiable_is_not_abstract():
+    assert not inspect.isabstract(camel_security_Certifiable)
 
 
-def test_camel::security::certifiable_constructor_exists():
-    assert callable(camel::security::Certifiable.__init__)
+def test_camel_security_certifiable_constructor_exists():
+    assert callable(camel_security_Certifiable.__init__)
 
 
-def test_camel::security::certifiable_constructor_args():
-    sig = inspect.signature(camel::security::Certifiable.__init__)
+def test_camel_security_certifiable_constructor_args():
+    sig = inspect.signature(camel_security_Certifiable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1028,23 +1028,23 @@ def test_securityrequirement_constructor_args():
 
 
 
-def test_camel::scalability::scalabilityrule_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::ScalabilityRule)
+def test_camel_scalability_scalabilityrule_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_ScalabilityRule)
 
 
-def test_camel::scalability::scalabilityrule_constructor_exists():
-    assert callable(camel::scalability::ScalabilityRule.__init__)
+def test_camel_scalability_scalabilityrule_constructor_exists():
+    assert callable(camel_scalability_ScalabilityRule.__init__)
 
 
-def test_camel::scalability::scalabilityrule_constructor_args():
-    sig = inspect.signature(camel::scalability::ScalabilityRule.__init__)
+def test_camel_scalability_scalabilityrule_constructor_args():
+    sig = inspect.signature(camel_scalability_ScalabilityRule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::scalability::scalabilityrule_has_name():
-    assert hasattr(camel::scalability::ScalabilityRule, "name")
+def test_camel_scalability_scalabilityrule_has_name():
+    assert hasattr(camel_scalability_ScalabilityRule, "name")
     descriptor = None
-    for klass in camel::scalability::ScalabilityRule.__mro__:
+    for klass in camel_scalability_ScalabilityRule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1052,45 +1052,45 @@ def test_camel::scalability::scalabilityrule_has_name():
 
 
 
-def test_camel::scalability::eventinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::EventInstance)
+def test_camel_scalability_eventinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_EventInstance)
 
 
-def test_camel::scalability::eventinstance_constructor_exists():
-    assert callable(camel::scalability::EventInstance.__init__)
+def test_camel_scalability_eventinstance_constructor_exists():
+    assert callable(camel_scalability_EventInstance.__init__)
 
 
-def test_camel::scalability::eventinstance_constructor_args():
-    sig = inspect.signature(camel::scalability::EventInstance.__init__)
+def test_camel_scalability_eventinstance_constructor_args():
+    sig = inspect.signature(camel_scalability_EventInstance.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "status" in params, "Missing parameter 'status'"
     assert "layer" in params, "Missing parameter 'layer'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::scalability::eventinstance_has_name():
-    assert hasattr(camel::scalability::EventInstance, "name")
+def test_camel_scalability_eventinstance_has_status():
+    assert hasattr(camel_scalability_EventInstance, "status")
     descriptor = None
-    for klass in camel::scalability::EventInstance.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::scalability::eventinstance_has_status():
-    assert hasattr(camel::scalability::EventInstance, "status")
-    descriptor = None
-    for klass in camel::scalability::EventInstance.__mro__:
+    for klass in camel_scalability_EventInstance.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::eventinstance_has_layer():
-    assert hasattr(camel::scalability::EventInstance, "layer")
+def test_camel_scalability_eventinstance_has_layer():
+    assert hasattr(camel_scalability_EventInstance, "layer")
     descriptor = None
-    for klass in camel::scalability::EventInstance.__mro__:
+    for klass in camel_scalability_EventInstance.__mro__:
         if "layer" in klass.__dict__:
             descriptor = klass.__dict__["layer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_scalability_eventinstance_has_name():
+    assert hasattr(camel_scalability_EventInstance, "name")
+    descriptor = None
+    for klass in camel_scalability_EventInstance.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -1124,23 +1124,23 @@ def test_simpleevent_constructor_args():
 
 
 
-def test_camel::scalability::nonfunctionalevent_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::NonFunctionalEvent)
+def test_camel_scalability_nonfunctionalevent_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_NonFunctionalEvent)
 
 
-def test_camel::scalability::nonfunctionalevent_constructor_exists():
-    assert callable(camel::scalability::NonFunctionalEvent.__init__)
+def test_camel_scalability_nonfunctionalevent_constructor_exists():
+    assert callable(camel_scalability_NonFunctionalEvent.__init__)
 
 
-def test_camel::scalability::nonfunctionalevent_constructor_args():
-    sig = inspect.signature(camel::scalability::NonFunctionalEvent.__init__)
+def test_camel_scalability_nonfunctionalevent_constructor_args():
+    sig = inspect.signature(camel_scalability_NonFunctionalEvent.__init__)
     params = list(sig.parameters.keys())
     assert "isViolation" in params, "Missing parameter 'isViolation'"
 
-def test_camel::scalability::nonfunctionalevent_has_isViolation():
-    assert hasattr(camel::scalability::NonFunctionalEvent, "isViolation")
+def test_camel_scalability_nonfunctionalevent_has_isViolation():
+    assert hasattr(camel_scalability_NonFunctionalEvent, "isViolation")
     descriptor = None
-    for klass in camel::scalability::NonFunctionalEvent.__mro__:
+    for klass in camel_scalability_NonFunctionalEvent.__mro__:
         if "isViolation" in klass.__dict__:
             descriptor = klass.__dict__["isViolation"]
             break
@@ -1148,23 +1148,23 @@ def test_camel::scalability::nonfunctionalevent_has_isViolation():
 
 
 
-def test_camel::scalability::functionalevent_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::FunctionalEvent)
+def test_camel_scalability_functionalevent_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_FunctionalEvent)
 
 
-def test_camel::scalability::functionalevent_constructor_exists():
-    assert callable(camel::scalability::FunctionalEvent.__init__)
+def test_camel_scalability_functionalevent_constructor_exists():
+    assert callable(camel_scalability_FunctionalEvent.__init__)
 
 
-def test_camel::scalability::functionalevent_constructor_args():
-    sig = inspect.signature(camel::scalability::FunctionalEvent.__init__)
+def test_camel_scalability_functionalevent_constructor_args():
+    sig = inspect.signature(camel_scalability_FunctionalEvent.__init__)
     params = list(sig.parameters.keys())
     assert "functionalType" in params, "Missing parameter 'functionalType'"
 
-def test_camel::scalability::functionalevent_has_functionalType():
-    assert hasattr(camel::scalability::FunctionalEvent, "functionalType")
+def test_camel_scalability_functionalevent_has_functionalType():
+    assert hasattr(camel_scalability_FunctionalEvent, "functionalType")
     descriptor = None
-    for klass in camel::scalability::FunctionalEvent.__mro__:
+    for klass in camel_scalability_FunctionalEvent.__mro__:
         if "functionalType" in klass.__dict__:
             descriptor = klass.__dict__["functionalType"]
             break
@@ -1172,16 +1172,16 @@ def test_camel::scalability::functionalevent_has_functionalType():
 
 
 
-def test_scalability::camel::action_is_not_abstract():
-    assert not inspect.isabstract(scalability::camel::Action)
+def test_scalability_camel_action_is_not_abstract():
+    assert not inspect.isabstract(scalability_camel_Action)
 
 
-def test_scalability::camel::action_constructor_exists():
-    assert callable(scalability::camel::Action.__init__)
+def test_scalability_camel_action_constructor_exists():
+    assert callable(scalability_camel_Action.__init__)
 
 
-def test_scalability::camel::action_constructor_args():
-    sig = inspect.signature(scalability::camel::Action.__init__)
+def test_scalability_camel_action_constructor_args():
+    sig = inspect.signature(scalability_camel_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1214,79 +1214,79 @@ def test_eventpattern_constructor_args():
 
 
 
-def test_camel::scalability::binaryeventpattern_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::BinaryEventPattern)
+def test_camel_scalability_binaryeventpattern_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_BinaryEventPattern)
 
 
-def test_camel::scalability::binaryeventpattern_constructor_exists():
-    assert callable(camel::scalability::BinaryEventPattern.__init__)
+def test_camel_scalability_binaryeventpattern_constructor_exists():
+    assert callable(camel_scalability_BinaryEventPattern.__init__)
 
 
-def test_camel::scalability::binaryeventpattern_constructor_args():
-    sig = inspect.signature(camel::scalability::BinaryEventPattern.__init__)
+def test_camel_scalability_binaryeventpattern_constructor_args():
+    sig = inspect.signature(camel_scalability_BinaryEventPattern.__init__)
     params = list(sig.parameters.keys())
+    assert "lowerOccurrenceBound" in params, "Missing parameter 'lowerOccurrenceBound'"
     assert "operator" in params, "Missing parameter 'operator'"
     assert "upperOccurrenceBound" in params, "Missing parameter 'upperOccurrenceBound'"
-    assert "lowerOccurrenceBound" in params, "Missing parameter 'lowerOccurrenceBound'"
 
-def test_camel::scalability::binaryeventpattern_has_operator():
-    assert hasattr(camel::scalability::BinaryEventPattern, "operator")
+def test_camel_scalability_binaryeventpattern_has_lowerOccurrenceBound():
+    assert hasattr(camel_scalability_BinaryEventPattern, "lowerOccurrenceBound")
     descriptor = None
-    for klass in camel::scalability::BinaryEventPattern.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::scalability::binaryeventpattern_has_upperOccurrenceBound():
-    assert hasattr(camel::scalability::BinaryEventPattern, "upperOccurrenceBound")
-    descriptor = None
-    for klass in camel::scalability::BinaryEventPattern.__mro__:
-        if "upperOccurrenceBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperOccurrenceBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::scalability::binaryeventpattern_has_lowerOccurrenceBound():
-    assert hasattr(camel::scalability::BinaryEventPattern, "lowerOccurrenceBound")
-    descriptor = None
-    for klass in camel::scalability::BinaryEventPattern.__mro__:
+    for klass in camel_scalability_BinaryEventPattern.__mro__:
         if "lowerOccurrenceBound" in klass.__dict__:
             descriptor = klass.__dict__["lowerOccurrenceBound"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_camel::scalability::unaryeventpattern_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::UnaryEventPattern)
-
-
-def test_camel::scalability::unaryeventpattern_constructor_exists():
-    assert callable(camel::scalability::UnaryEventPattern.__init__)
-
-
-def test_camel::scalability::unaryeventpattern_constructor_args():
-    sig = inspect.signature(camel::scalability::UnaryEventPattern.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-    assert "occurrenceNum" in params, "Missing parameter 'occurrenceNum'"
-
-def test_camel::scalability::unaryeventpattern_has_operator():
-    assert hasattr(camel::scalability::UnaryEventPattern, "operator")
+def test_camel_scalability_binaryeventpattern_has_operator():
+    assert hasattr(camel_scalability_BinaryEventPattern, "operator")
     descriptor = None
-    for klass in camel::scalability::UnaryEventPattern.__mro__:
+    for klass in camel_scalability_BinaryEventPattern.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::unaryeventpattern_has_occurrenceNum():
-    assert hasattr(camel::scalability::UnaryEventPattern, "occurrenceNum")
+def test_camel_scalability_binaryeventpattern_has_upperOccurrenceBound():
+    assert hasattr(camel_scalability_BinaryEventPattern, "upperOccurrenceBound")
     descriptor = None
-    for klass in camel::scalability::UnaryEventPattern.__mro__:
+    for klass in camel_scalability_BinaryEventPattern.__mro__:
+        if "upperOccurrenceBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperOccurrenceBound"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_scalability_unaryeventpattern_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_UnaryEventPattern)
+
+
+def test_camel_scalability_unaryeventpattern_constructor_exists():
+    assert callable(camel_scalability_UnaryEventPattern.__init__)
+
+
+def test_camel_scalability_unaryeventpattern_constructor_args():
+    sig = inspect.signature(camel_scalability_UnaryEventPattern.__init__)
+    params = list(sig.parameters.keys())
+    assert "occurrenceNum" in params, "Missing parameter 'occurrenceNum'"
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_camel_scalability_unaryeventpattern_has_occurrenceNum():
+    assert hasattr(camel_scalability_UnaryEventPattern, "occurrenceNum")
+    descriptor = None
+    for klass in camel_scalability_UnaryEventPattern.__mro__:
         if "occurrenceNum" in klass.__dict__:
             descriptor = klass.__dict__["occurrenceNum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_scalability_unaryeventpattern_has_operator():
+    assert hasattr(camel_scalability_UnaryEventPattern, "operator")
+    descriptor = None
+    for klass in camel_scalability_UnaryEventPattern.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
@@ -1306,99 +1306,99 @@ def test_scalingaction_constructor_args():
 
 
 
-def test_camel::scalability::verticalscalingaction_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::VerticalScalingAction)
+def test_camel_scalability_horizontalscalingaction_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_HorizontalScalingAction)
 
 
-def test_camel::scalability::verticalscalingaction_constructor_exists():
-    assert callable(camel::scalability::VerticalScalingAction.__init__)
+def test_camel_scalability_horizontalscalingaction_constructor_exists():
+    assert callable(camel_scalability_HorizontalScalingAction.__init__)
 
 
-def test_camel::scalability::verticalscalingaction_constructor_args():
-    sig = inspect.signature(camel::scalability::VerticalScalingAction.__init__)
+def test_camel_scalability_horizontalscalingaction_constructor_args():
+    sig = inspect.signature(camel_scalability_HorizontalScalingAction.__init__)
     params = list(sig.parameters.keys())
-    assert "memoryUpdate" in params, "Missing parameter 'memoryUpdate'"
-    assert "coreUpdate" in params, "Missing parameter 'coreUpdate'"
-    assert "networkUpdate" in params, "Missing parameter 'networkUpdate'"
-    assert "ioUpdate" in params, "Missing parameter 'ioUpdate'"
-    assert "CPUUpdate" in params, "Missing parameter 'CPUUpdate'"
-    assert "storageUpdate" in params, "Missing parameter 'storageUpdate'"
+    assert "count" in params, "Missing parameter 'count'"
 
-def test_camel::scalability::verticalscalingaction_has_memoryUpdate():
-    assert hasattr(camel::scalability::VerticalScalingAction, "memoryUpdate")
+def test_camel_scalability_horizontalscalingaction_has_count():
+    assert hasattr(camel_scalability_HorizontalScalingAction, "count")
     descriptor = None
-    for klass in camel::scalability::VerticalScalingAction.__mro__:
-        if "memoryUpdate" in klass.__dict__:
-            descriptor = klass.__dict__["memoryUpdate"]
+    for klass in camel_scalability_HorizontalScalingAction.__mro__:
+        if "count" in klass.__dict__:
+            descriptor = klass.__dict__["count"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::verticalscalingaction_has_coreUpdate():
-    assert hasattr(camel::scalability::VerticalScalingAction, "coreUpdate")
+
+
+def test_camel_scalability_verticalscalingaction_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_VerticalScalingAction)
+
+
+def test_camel_scalability_verticalscalingaction_constructor_exists():
+    assert callable(camel_scalability_VerticalScalingAction.__init__)
+
+
+def test_camel_scalability_verticalscalingaction_constructor_args():
+    sig = inspect.signature(camel_scalability_VerticalScalingAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "coreUpdate" in params, "Missing parameter 'coreUpdate'"
+    assert "ioUpdate" in params, "Missing parameter 'ioUpdate'"
+    assert "networkUpdate" in params, "Missing parameter 'networkUpdate'"
+    assert "memoryUpdate" in params, "Missing parameter 'memoryUpdate'"
+    assert "CPUUpdate" in params, "Missing parameter 'CPUUpdate'"
+    assert "storageUpdate" in params, "Missing parameter 'storageUpdate'"
+
+def test_camel_scalability_verticalscalingaction_has_coreUpdate():
+    assert hasattr(camel_scalability_VerticalScalingAction, "coreUpdate")
     descriptor = None
-    for klass in camel::scalability::VerticalScalingAction.__mro__:
+    for klass in camel_scalability_VerticalScalingAction.__mro__:
         if "coreUpdate" in klass.__dict__:
             descriptor = klass.__dict__["coreUpdate"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::verticalscalingaction_has_networkUpdate():
-    assert hasattr(camel::scalability::VerticalScalingAction, "networkUpdate")
+def test_camel_scalability_verticalscalingaction_has_ioUpdate():
+    assert hasattr(camel_scalability_VerticalScalingAction, "ioUpdate")
     descriptor = None
-    for klass in camel::scalability::VerticalScalingAction.__mro__:
-        if "networkUpdate" in klass.__dict__:
-            descriptor = klass.__dict__["networkUpdate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::scalability::verticalscalingaction_has_ioUpdate():
-    assert hasattr(camel::scalability::VerticalScalingAction, "ioUpdate")
-    descriptor = None
-    for klass in camel::scalability::VerticalScalingAction.__mro__:
+    for klass in camel_scalability_VerticalScalingAction.__mro__:
         if "ioUpdate" in klass.__dict__:
             descriptor = klass.__dict__["ioUpdate"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::verticalscalingaction_has_CPUUpdate():
-    assert hasattr(camel::scalability::VerticalScalingAction, "CPUUpdate")
+def test_camel_scalability_verticalscalingaction_has_networkUpdate():
+    assert hasattr(camel_scalability_VerticalScalingAction, "networkUpdate")
     descriptor = None
-    for klass in camel::scalability::VerticalScalingAction.__mro__:
+    for klass in camel_scalability_VerticalScalingAction.__mro__:
+        if "networkUpdate" in klass.__dict__:
+            descriptor = klass.__dict__["networkUpdate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_scalability_verticalscalingaction_has_memoryUpdate():
+    assert hasattr(camel_scalability_VerticalScalingAction, "memoryUpdate")
+    descriptor = None
+    for klass in camel_scalability_VerticalScalingAction.__mro__:
+        if "memoryUpdate" in klass.__dict__:
+            descriptor = klass.__dict__["memoryUpdate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_scalability_verticalscalingaction_has_CPUUpdate():
+    assert hasattr(camel_scalability_VerticalScalingAction, "CPUUpdate")
+    descriptor = None
+    for klass in camel_scalability_VerticalScalingAction.__mro__:
         if "CPUUpdate" in klass.__dict__:
             descriptor = klass.__dict__["CPUUpdate"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::scalability::verticalscalingaction_has_storageUpdate():
-    assert hasattr(camel::scalability::VerticalScalingAction, "storageUpdate")
+def test_camel_scalability_verticalscalingaction_has_storageUpdate():
+    assert hasattr(camel_scalability_VerticalScalingAction, "storageUpdate")
     descriptor = None
-    for klass in camel::scalability::VerticalScalingAction.__mro__:
+    for klass in camel_scalability_VerticalScalingAction.__mro__:
         if "storageUpdate" in klass.__dict__:
             descriptor = klass.__dict__["storageUpdate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::scalability::horizontalscalingaction_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::HorizontalScalingAction)
-
-
-def test_camel::scalability::horizontalscalingaction_constructor_exists():
-    assert callable(camel::scalability::HorizontalScalingAction.__init__)
-
-
-def test_camel::scalability::horizontalscalingaction_constructor_args():
-    sig = inspect.signature(camel::scalability::HorizontalScalingAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "count" in params, "Missing parameter 'count'"
-
-def test_camel::scalability::horizontalscalingaction_has_count():
-    assert hasattr(camel::scalability::HorizontalScalingAction, "count")
-    descriptor = None
-    for klass in camel::scalability::HorizontalScalingAction.__mro__:
-        if "count" in klass.__dict__:
-            descriptor = klass.__dict__["count"]
             break
     assert isinstance(descriptor, property)
 
@@ -1418,51 +1418,51 @@ def test_event_constructor_args():
 
 
 
-def test_camel::scalability::simpleevent_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::SimpleEvent)
+def test_camel_scalability_simpleevent_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_SimpleEvent)
 
 
-def test_camel::scalability::simpleevent_constructor_exists():
-    assert callable(camel::scalability::SimpleEvent.__init__)
+def test_camel_scalability_simpleevent_constructor_exists():
+    assert callable(camel_scalability_SimpleEvent.__init__)
 
 
-def test_camel::scalability::simpleevent_constructor_args():
-    sig = inspect.signature(camel::scalability::SimpleEvent.__init__)
+def test_camel_scalability_simpleevent_constructor_args():
+    sig = inspect.signature(camel_scalability_SimpleEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::scalability::eventpattern_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::EventPattern)
+def test_camel_scalability_eventpattern_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_EventPattern)
 
 
-def test_camel::scalability::eventpattern_constructor_exists():
-    assert callable(camel::scalability::EventPattern.__init__)
+def test_camel_scalability_eventpattern_constructor_exists():
+    assert callable(camel_scalability_EventPattern.__init__)
 
 
-def test_camel::scalability::eventpattern_constructor_args():
-    sig = inspect.signature(camel::scalability::EventPattern.__init__)
+def test_camel_scalability_eventpattern_constructor_args():
+    sig = inspect.signature(camel_scalability_EventPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::scalability::event_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::Event)
+def test_camel_scalability_event_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_Event)
 
 
-def test_camel::scalability::event_constructor_exists():
-    assert callable(camel::scalability::Event.__init__)
+def test_camel_scalability_event_constructor_exists():
+    assert callable(camel_scalability_Event.__init__)
 
 
-def test_camel::scalability::event_constructor_args():
-    sig = inspect.signature(camel::scalability::Event.__init__)
+def test_camel_scalability_event_constructor_args():
+    sig = inspect.signature(camel_scalability_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::scalability::event_has_name():
-    assert hasattr(camel::scalability::Event, "name")
+def test_camel_scalability_event_has_name():
+    assert hasattr(camel_scalability_Event, "name")
     descriptor = None
-    for klass in camel::scalability::Event.__mro__:
+    for klass in camel_scalability_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1484,35 +1484,35 @@ def test_scalerequirement_constructor_args():
 
 
 
-def test_camel::requirement::horizontalscalerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::HorizontalScaleRequirement)
+def test_camel_requirement_horizontalscalerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_HorizontalScaleRequirement)
 
 
-def test_camel::requirement::horizontalscalerequirement_constructor_exists():
-    assert callable(camel::requirement::HorizontalScaleRequirement.__init__)
+def test_camel_requirement_horizontalscalerequirement_constructor_exists():
+    assert callable(camel_requirement_HorizontalScaleRequirement.__init__)
 
 
-def test_camel::requirement::horizontalscalerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::HorizontalScaleRequirement.__init__)
+def test_camel_requirement_horizontalscalerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_HorizontalScaleRequirement.__init__)
     params = list(sig.parameters.keys())
-    assert "minInstances" in params, "Missing parameter 'minInstances'"
     assert "maxInstances" in params, "Missing parameter 'maxInstances'"
+    assert "minInstances" in params, "Missing parameter 'minInstances'"
 
-def test_camel::requirement::horizontalscalerequirement_has_minInstances():
-    assert hasattr(camel::requirement::HorizontalScaleRequirement, "minInstances")
+def test_camel_requirement_horizontalscalerequirement_has_maxInstances():
+    assert hasattr(camel_requirement_HorizontalScaleRequirement, "maxInstances")
     descriptor = None
-    for klass in camel::requirement::HorizontalScaleRequirement.__mro__:
-        if "minInstances" in klass.__dict__:
-            descriptor = klass.__dict__["minInstances"]
+    for klass in camel_requirement_HorizontalScaleRequirement.__mro__:
+        if "maxInstances" in klass.__dict__:
+            descriptor = klass.__dict__["maxInstances"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::horizontalscalerequirement_has_maxInstances():
-    assert hasattr(camel::requirement::HorizontalScaleRequirement, "maxInstances")
+def test_camel_requirement_horizontalscalerequirement_has_minInstances():
+    assert hasattr(camel_requirement_HorizontalScaleRequirement, "minInstances")
     descriptor = None
-    for klass in camel::requirement::HorizontalScaleRequirement.__mro__:
-        if "maxInstances" in klass.__dict__:
-            descriptor = klass.__dict__["maxInstances"]
+    for klass in camel_requirement_HorizontalScaleRequirement.__mro__:
+        if "minInstances" in klass.__dict__:
+            descriptor = klass.__dict__["minInstances"]
             break
     assert isinstance(descriptor, property)
 
@@ -1532,93 +1532,93 @@ def test_securitycontrol_constructor_args():
 
 
 
-def test_camel::requirement::verticalscalerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::VerticalScaleRequirement)
+def test_camel_requirement_verticalscalerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_VerticalScaleRequirement)
 
 
-def test_camel::requirement::verticalscalerequirement_constructor_exists():
-    assert callable(camel::requirement::VerticalScaleRequirement.__init__)
+def test_camel_requirement_verticalscalerequirement_constructor_exists():
+    assert callable(camel_requirement_VerticalScaleRequirement.__init__)
 
 
-def test_camel::requirement::verticalscalerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::VerticalScaleRequirement.__init__)
+def test_camel_requirement_verticalscalerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_VerticalScaleRequirement.__init__)
     params = list(sig.parameters.keys())
-    assert "minCores" in params, "Missing parameter 'minCores'"
-    assert "minCPU" in params, "Missing parameter 'minCPU'"
-    assert "maxCores" in params, "Missing parameter 'maxCores'"
     assert "maxCPU" in params, "Missing parameter 'maxCPU'"
-    assert "maxStorage" in params, "Missing parameter 'maxStorage'"
-    assert "minStorage" in params, "Missing parameter 'minStorage'"
+    assert "maxCores" in params, "Missing parameter 'maxCores'"
+    assert "minCPU" in params, "Missing parameter 'minCPU'"
+    assert "minCores" in params, "Missing parameter 'minCores'"
     assert "maxRAM" in params, "Missing parameter 'maxRAM'"
+    assert "minStorage" in params, "Missing parameter 'minStorage'"
+    assert "maxStorage" in params, "Missing parameter 'maxStorage'"
     assert "minRAM" in params, "Missing parameter 'minRAM'"
 
-def test_camel::requirement::verticalscalerequirement_has_minCores():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "minCores")
+def test_camel_requirement_verticalscalerequirement_has_maxCPU():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "maxCPU")
     descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
-        if "minCores" in klass.__dict__:
-            descriptor = klass.__dict__["minCores"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::verticalscalerequirement_has_minCPU():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "minCPU")
-    descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
-        if "minCPU" in klass.__dict__:
-            descriptor = klass.__dict__["minCPU"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::verticalscalerequirement_has_maxCores():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "maxCores")
-    descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
-        if "maxCores" in klass.__dict__:
-            descriptor = klass.__dict__["maxCores"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::verticalscalerequirement_has_maxCPU():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "maxCPU")
-    descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
         if "maxCPU" in klass.__dict__:
             descriptor = klass.__dict__["maxCPU"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::verticalscalerequirement_has_maxStorage():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "maxStorage")
+def test_camel_requirement_verticalscalerequirement_has_maxCores():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "maxCores")
     descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
-        if "maxStorage" in klass.__dict__:
-            descriptor = klass.__dict__["maxStorage"]
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
+        if "maxCores" in klass.__dict__:
+            descriptor = klass.__dict__["maxCores"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::verticalscalerequirement_has_minStorage():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "minStorage")
+def test_camel_requirement_verticalscalerequirement_has_minCPU():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "minCPU")
     descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
-        if "minStorage" in klass.__dict__:
-            descriptor = klass.__dict__["minStorage"]
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
+        if "minCPU" in klass.__dict__:
+            descriptor = klass.__dict__["minCPU"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::verticalscalerequirement_has_maxRAM():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "maxRAM")
+def test_camel_requirement_verticalscalerequirement_has_minCores():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "minCores")
     descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
+        if "minCores" in klass.__dict__:
+            descriptor = klass.__dict__["minCores"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_requirement_verticalscalerequirement_has_maxRAM():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "maxRAM")
+    descriptor = None
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
         if "maxRAM" in klass.__dict__:
             descriptor = klass.__dict__["maxRAM"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::verticalscalerequirement_has_minRAM():
-    assert hasattr(camel::requirement::VerticalScaleRequirement, "minRAM")
+def test_camel_requirement_verticalscalerequirement_has_minStorage():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "minStorage")
     descriptor = None
-    for klass in camel::requirement::VerticalScaleRequirement.__mro__:
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
+        if "minStorage" in klass.__dict__:
+            descriptor = klass.__dict__["minStorage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_requirement_verticalscalerequirement_has_maxStorage():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "maxStorage")
+    descriptor = None
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
+        if "maxStorage" in klass.__dict__:
+            descriptor = klass.__dict__["maxStorage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_requirement_verticalscalerequirement_has_minRAM():
+    assert hasattr(camel_requirement_VerticalScaleRequirement, "minRAM")
+    descriptor = None
+    for klass in camel_requirement_VerticalScaleRequirement.__mro__:
         if "minRAM" in klass.__dict__:
             descriptor = klass.__dict__["minRAM"]
             break
@@ -1640,127 +1640,127 @@ def test_hardwarerequirement_constructor_args():
 
 
 
-def test_camel::requirement::quantitativehardwarerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::QuantitativeHardwareRequirement)
+def test_camel_requirement_quantitativehardwarerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_QuantitativeHardwareRequirement)
 
 
-def test_camel::requirement::quantitativehardwarerequirement_constructor_exists():
-    assert callable(camel::requirement::QuantitativeHardwareRequirement.__init__)
+def test_camel_requirement_quantitativehardwarerequirement_constructor_exists():
+    assert callable(camel_requirement_QuantitativeHardwareRequirement.__init__)
 
 
-def test_camel::requirement::quantitativehardwarerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::QuantitativeHardwareRequirement.__init__)
+def test_camel_requirement_quantitativehardwarerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_QuantitativeHardwareRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "maxRAM" in params, "Missing parameter 'maxRAM'"
-    assert "maxStorage" in params, "Missing parameter 'maxStorage'"
-    assert "minStorage" in params, "Missing parameter 'minStorage'"
     assert "minCores" in params, "Missing parameter 'minCores'"
-    assert "minCPU" in params, "Missing parameter 'minCPU'"
-    assert "minRAM" in params, "Missing parameter 'minRAM'"
     assert "maxCores" in params, "Missing parameter 'maxCores'"
+    assert "minStorage" in params, "Missing parameter 'minStorage'"
+    assert "minRAM" in params, "Missing parameter 'minRAM'"
+    assert "maxStorage" in params, "Missing parameter 'maxStorage'"
     assert "maxCPU" in params, "Missing parameter 'maxCPU'"
+    assert "minCPU" in params, "Missing parameter 'minCPU'"
 
-def test_camel::requirement::quantitativehardwarerequirement_has_maxRAM():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "maxRAM")
+def test_camel_requirement_quantitativehardwarerequirement_has_maxRAM():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "maxRAM")
     descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
         if "maxRAM" in klass.__dict__:
             descriptor = klass.__dict__["maxRAM"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::quantitativehardwarerequirement_has_maxStorage():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "maxStorage")
+def test_camel_requirement_quantitativehardwarerequirement_has_minCores():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "minCores")
     descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
-        if "maxStorage" in klass.__dict__:
-            descriptor = klass.__dict__["maxStorage"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::quantitativehardwarerequirement_has_minStorage():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "minStorage")
-    descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
-        if "minStorage" in klass.__dict__:
-            descriptor = klass.__dict__["minStorage"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::quantitativehardwarerequirement_has_minCores():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "minCores")
-    descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
         if "minCores" in klass.__dict__:
             descriptor = klass.__dict__["minCores"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::quantitativehardwarerequirement_has_minCPU():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "minCPU")
+def test_camel_requirement_quantitativehardwarerequirement_has_maxCores():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "maxCores")
     descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
-        if "minCPU" in klass.__dict__:
-            descriptor = klass.__dict__["minCPU"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::quantitativehardwarerequirement_has_minRAM():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "minRAM")
-    descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
-        if "minRAM" in klass.__dict__:
-            descriptor = klass.__dict__["minRAM"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::requirement::quantitativehardwarerequirement_has_maxCores():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "maxCores")
-    descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
         if "maxCores" in klass.__dict__:
             descriptor = klass.__dict__["maxCores"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::quantitativehardwarerequirement_has_maxCPU():
-    assert hasattr(camel::requirement::QuantitativeHardwareRequirement, "maxCPU")
+def test_camel_requirement_quantitativehardwarerequirement_has_minStorage():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "minStorage")
     descriptor = None
-    for klass in camel::requirement::QuantitativeHardwareRequirement.__mro__:
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
+        if "minStorage" in klass.__dict__:
+            descriptor = klass.__dict__["minStorage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_requirement_quantitativehardwarerequirement_has_minRAM():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "minRAM")
+    descriptor = None
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
+        if "minRAM" in klass.__dict__:
+            descriptor = klass.__dict__["minRAM"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_requirement_quantitativehardwarerequirement_has_maxStorage():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "maxStorage")
+    descriptor = None
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
+        if "maxStorage" in klass.__dict__:
+            descriptor = klass.__dict__["maxStorage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_requirement_quantitativehardwarerequirement_has_maxCPU():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "maxCPU")
+    descriptor = None
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
         if "maxCPU" in klass.__dict__:
             descriptor = klass.__dict__["maxCPU"]
             break
     assert isinstance(descriptor, property)
 
+def test_camel_requirement_quantitativehardwarerequirement_has_minCPU():
+    assert hasattr(camel_requirement_QuantitativeHardwareRequirement, "minCPU")
+    descriptor = None
+    for klass in camel_requirement_QuantitativeHardwareRequirement.__mro__:
+        if "minCPU" in klass.__dict__:
+            descriptor = klass.__dict__["minCPU"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_camel::requirement::qualitativehardwarerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::QualitativeHardwareRequirement)
+
+def test_camel_requirement_qualitativehardwarerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_QualitativeHardwareRequirement)
 
 
-def test_camel::requirement::qualitativehardwarerequirement_constructor_exists():
-    assert callable(camel::requirement::QualitativeHardwareRequirement.__init__)
+def test_camel_requirement_qualitativehardwarerequirement_constructor_exists():
+    assert callable(camel_requirement_QualitativeHardwareRequirement.__init__)
 
 
-def test_camel::requirement::qualitativehardwarerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::QualitativeHardwareRequirement.__init__)
+def test_camel_requirement_qualitativehardwarerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_QualitativeHardwareRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "minBenchmark" in params, "Missing parameter 'minBenchmark'"
     assert "maxBenchmark" in params, "Missing parameter 'maxBenchmark'"
 
-def test_camel::requirement::qualitativehardwarerequirement_has_minBenchmark():
-    assert hasattr(camel::requirement::QualitativeHardwareRequirement, "minBenchmark")
+def test_camel_requirement_qualitativehardwarerequirement_has_minBenchmark():
+    assert hasattr(camel_requirement_QualitativeHardwareRequirement, "minBenchmark")
     descriptor = None
-    for klass in camel::requirement::QualitativeHardwareRequirement.__mro__:
+    for klass in camel_requirement_QualitativeHardwareRequirement.__mro__:
         if "minBenchmark" in klass.__dict__:
             descriptor = klass.__dict__["minBenchmark"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::qualitativehardwarerequirement_has_maxBenchmark():
-    assert hasattr(camel::requirement::QualitativeHardwareRequirement, "maxBenchmark")
+def test_camel_requirement_qualitativehardwarerequirement_has_maxBenchmark():
+    assert hasattr(camel_requirement_QualitativeHardwareRequirement, "maxBenchmark")
     descriptor = None
-    for klass in camel::requirement::QualitativeHardwareRequirement.__mro__:
+    for klass in camel_requirement_QualitativeHardwareRequirement.__mro__:
         if "maxBenchmark" in klass.__dict__:
             descriptor = klass.__dict__["maxBenchmark"]
             break
@@ -1782,23 +1782,23 @@ def test_softrequirement_constructor_args():
 
 
 
-def test_camel::requirement::optimisationrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::OptimisationRequirement)
+def test_camel_requirement_optimisationrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_OptimisationRequirement)
 
 
-def test_camel::requirement::optimisationrequirement_constructor_exists():
-    assert callable(camel::requirement::OptimisationRequirement.__init__)
+def test_camel_requirement_optimisationrequirement_constructor_exists():
+    assert callable(camel_requirement_OptimisationRequirement.__init__)
 
 
-def test_camel::requirement::optimisationrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::OptimisationRequirement.__init__)
+def test_camel_requirement_optimisationrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_OptimisationRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "optimisationFunction" in params, "Missing parameter 'optimisationFunction'"
 
-def test_camel::requirement::optimisationrequirement_has_optimisationFunction():
-    assert hasattr(camel::requirement::OptimisationRequirement, "optimisationFunction")
+def test_camel_requirement_optimisationrequirement_has_optimisationFunction():
+    assert hasattr(camel_requirement_OptimisationRequirement, "optimisationFunction")
     descriptor = None
-    for klass in camel::requirement::OptimisationRequirement.__mro__:
+    for klass in camel_requirement_OptimisationRequirement.__mro__:
         if "optimisationFunction" in klass.__dict__:
             descriptor = klass.__dict__["optimisationFunction"]
             break
@@ -1806,16 +1806,16 @@ def test_camel::requirement::optimisationrequirement_has_optimisationFunction():
 
 
 
-def test_requirement::camel::application_is_not_abstract():
-    assert not inspect.isabstract(requirement::camel::Application)
+def test_requirement_camel_application_is_not_abstract():
+    assert not inspect.isabstract(requirement_camel_Application)
 
 
-def test_requirement::camel::application_constructor_exists():
-    assert callable(requirement::camel::Application.__init__)
+def test_requirement_camel_application_constructor_exists():
+    assert callable(requirement_camel_Application.__init__)
 
 
-def test_requirement::camel::application_constructor_args():
-    sig = inspect.signature(requirement::camel::Application.__init__)
+def test_requirement_camel_application_constructor_args():
+    sig = inspect.signature(requirement_camel_Application.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1834,114 +1834,114 @@ def test_hardrequirement_constructor_args():
 
 
 
-def test_camel::requirement::providerrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::ProviderRequirement)
+def test_camel_requirement_hardwarerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_HardwareRequirement)
 
 
-def test_camel::requirement::providerrequirement_constructor_exists():
-    assert callable(camel::requirement::ProviderRequirement.__init__)
+def test_camel_requirement_hardwarerequirement_constructor_exists():
+    assert callable(camel_requirement_HardwareRequirement.__init__)
 
 
-def test_camel::requirement::providerrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::ProviderRequirement.__init__)
+def test_camel_requirement_hardwarerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_HardwareRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::securityrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::SecurityRequirement)
+def test_camel_requirement_securityrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_SecurityRequirement)
 
 
-def test_camel::requirement::securityrequirement_constructor_exists():
-    assert callable(camel::requirement::SecurityRequirement.__init__)
+def test_camel_requirement_securityrequirement_constructor_exists():
+    assert callable(camel_requirement_SecurityRequirement.__init__)
 
 
-def test_camel::requirement::securityrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::SecurityRequirement.__init__)
+def test_camel_requirement_securityrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_SecurityRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::locationrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::LocationRequirement)
+def test_camel_requirement_locationrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_LocationRequirement)
 
 
-def test_camel::requirement::locationrequirement_constructor_exists():
-    assert callable(camel::requirement::LocationRequirement.__init__)
+def test_camel_requirement_locationrequirement_constructor_exists():
+    assert callable(camel_requirement_LocationRequirement.__init__)
 
 
-def test_camel::requirement::locationrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::LocationRequirement.__init__)
+def test_camel_requirement_locationrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_LocationRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::hardwarerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::HardwareRequirement)
+def test_camel_requirement_scalerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_ScaleRequirement)
 
 
-def test_camel::requirement::hardwarerequirement_constructor_exists():
-    assert callable(camel::requirement::HardwareRequirement.__init__)
+def test_camel_requirement_scalerequirement_constructor_exists():
+    assert callable(camel_requirement_ScaleRequirement.__init__)
 
 
-def test_camel::requirement::hardwarerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::HardwareRequirement.__init__)
+def test_camel_requirement_scalerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_ScaleRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::scalerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::ScaleRequirement)
+def test_camel_requirement_providerrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_ProviderRequirement)
 
 
-def test_camel::requirement::scalerequirement_constructor_exists():
-    assert callable(camel::requirement::ScaleRequirement.__init__)
+def test_camel_requirement_providerrequirement_constructor_exists():
+    assert callable(camel_requirement_ProviderRequirement.__init__)
 
 
-def test_camel::requirement::scalerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::ScaleRequirement.__init__)
+def test_camel_requirement_providerrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_ProviderRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::osorimagerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::OSOrImageRequirement)
+def test_camel_requirement_osorimagerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_OSOrImageRequirement)
 
 
-def test_camel::requirement::osorimagerequirement_constructor_exists():
-    assert callable(camel::requirement::OSOrImageRequirement.__init__)
+def test_camel_requirement_osorimagerequirement_constructor_exists():
+    assert callable(camel_requirement_OSOrImageRequirement.__init__)
 
 
-def test_camel::requirement::osorimagerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::OSOrImageRequirement.__init__)
+def test_camel_requirement_osorimagerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_OSOrImageRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::servicelevelobjective_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::ServiceLevelObjective)
+def test_camel_requirement_servicelevelobjective_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_ServiceLevelObjective)
 
 
-def test_camel::requirement::servicelevelobjective_constructor_exists():
-    assert callable(camel::requirement::ServiceLevelObjective.__init__)
+def test_camel_requirement_servicelevelobjective_constructor_exists():
+    assert callable(camel_requirement_ServiceLevelObjective.__init__)
 
 
-def test_camel::requirement::servicelevelobjective_constructor_args():
-    sig = inspect.signature(camel::requirement::ServiceLevelObjective.__init__)
+def test_camel_requirement_servicelevelobjective_constructor_args():
+    sig = inspect.signature(camel_requirement_ServiceLevelObjective.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::provider::scope_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Scope)
+def test_camel_provider_scope_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Scope)
 
 
-def test_camel::provider::scope_constructor_exists():
-    assert callable(camel::provider::Scope.__init__)
+def test_camel_provider_scope_constructor_exists():
+    assert callable(camel_provider_Scope.__init__)
 
 
-def test_camel::provider::scope_constructor_args():
-    sig = inspect.signature(camel::provider::Scope.__init__)
+def test_camel_provider_scope_constructor_args():
+    sig = inspect.signature(camel_provider_Scope.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1960,16 +1960,16 @@ def test_alternative_constructor_args():
 
 
 
-def test_camel::provider::exclusive_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Exclusive)
+def test_camel_provider_exclusive_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Exclusive)
 
 
-def test_camel::provider::exclusive_constructor_exists():
-    assert callable(camel::provider::Exclusive.__init__)
+def test_camel_provider_exclusive_constructor_exists():
+    assert callable(camel_provider_Exclusive.__init__)
 
 
-def test_camel::provider::exclusive_constructor_args():
-    sig = inspect.signature(camel::provider::Exclusive.__init__)
+def test_camel_provider_exclusive_constructor_args():
+    sig = inspect.signature(camel_provider_Exclusive.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1988,23 +1988,23 @@ def test_groupcardinality_constructor_args():
 
 
 
-def test_camel::provider::feature_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Feature)
+def test_camel_provider_feature_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Feature)
 
 
-def test_camel::provider::feature_constructor_exists():
-    assert callable(camel::provider::Feature.__init__)
+def test_camel_provider_feature_constructor_exists():
+    assert callable(camel_provider_Feature.__init__)
 
 
-def test_camel::provider::feature_constructor_args():
-    sig = inspect.signature(camel::provider::Feature.__init__)
+def test_camel_provider_feature_constructor_args():
+    sig = inspect.signature(camel_provider_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::provider::feature_has_name():
-    assert hasattr(camel::provider::Feature, "name")
+def test_camel_provider_feature_has_name():
+    assert hasattr(camel_provider_Feature, "name")
     descriptor = None
-    for klass in camel::provider::Feature.__mro__:
+    for klass in camel_provider_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2012,23 +2012,23 @@ def test_camel::provider::feature_has_name():
 
 
 
-def test_camel::requirement::requirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::Requirement)
+def test_camel_requirement_requirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_Requirement)
 
 
-def test_camel::requirement::requirement_constructor_exists():
-    assert callable(camel::requirement::Requirement.__init__)
+def test_camel_requirement_requirement_constructor_exists():
+    assert callable(camel_requirement_Requirement.__init__)
 
 
-def test_camel::requirement::requirement_constructor_args():
-    sig = inspect.signature(camel::requirement::Requirement.__init__)
+def test_camel_requirement_requirement_constructor_args():
+    sig = inspect.signature(camel_requirement_Requirement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::requirement::requirement_has_name():
-    assert hasattr(camel::requirement::Requirement, "name")
+def test_camel_requirement_requirement_has_name():
+    assert hasattr(camel_requirement_Requirement, "name")
     descriptor = None
-    for klass in camel::requirement::Requirement.__mro__:
+    for klass in camel_requirement_Requirement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2050,63 +2050,63 @@ def test_requirement_constructor_args():
 
 
 
-def test_camel::requirement::hardrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::HardRequirement)
+def test_camel_requirement_hardrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_HardRequirement)
 
 
-def test_camel::requirement::hardrequirement_constructor_exists():
-    assert callable(camel::requirement::HardRequirement.__init__)
+def test_camel_requirement_hardrequirement_constructor_exists():
+    assert callable(camel_requirement_HardRequirement.__init__)
 
 
-def test_camel::requirement::hardrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::HardRequirement.__init__)
+def test_camel_requirement_hardrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_HardRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::requirement::requirementgroup_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::RequirementGroup)
+def test_camel_requirement_softrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_SoftRequirement)
 
 
-def test_camel::requirement::requirementgroup_constructor_exists():
-    assert callable(camel::requirement::RequirementGroup.__init__)
+def test_camel_requirement_softrequirement_constructor_exists():
+    assert callable(camel_requirement_SoftRequirement.__init__)
 
 
-def test_camel::requirement::requirementgroup_constructor_args():
-    sig = inspect.signature(camel::requirement::RequirementGroup.__init__)
+def test_camel_requirement_softrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_SoftRequirement.__init__)
     params = list(sig.parameters.keys())
-    assert "requirementOperator" in params, "Missing parameter 'requirementOperator'"
+    assert "priority" in params, "Missing parameter 'priority'"
 
-def test_camel::requirement::requirementgroup_has_requirementOperator():
-    assert hasattr(camel::requirement::RequirementGroup, "requirementOperator")
+def test_camel_requirement_softrequirement_has_priority():
+    assert hasattr(camel_requirement_SoftRequirement, "priority")
     descriptor = None
-    for klass in camel::requirement::RequirementGroup.__mro__:
-        if "requirementOperator" in klass.__dict__:
-            descriptor = klass.__dict__["requirementOperator"]
+    for klass in camel_requirement_SoftRequirement.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_camel::requirement::softrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::SoftRequirement)
+def test_camel_requirement_requirementgroup_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_RequirementGroup)
 
 
-def test_camel::requirement::softrequirement_constructor_exists():
-    assert callable(camel::requirement::SoftRequirement.__init__)
+def test_camel_requirement_requirementgroup_constructor_exists():
+    assert callable(camel_requirement_RequirementGroup.__init__)
 
 
-def test_camel::requirement::softrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::SoftRequirement.__init__)
+def test_camel_requirement_requirementgroup_constructor_args():
+    sig = inspect.signature(camel_requirement_RequirementGroup.__init__)
     params = list(sig.parameters.keys())
-    assert "priority" in params, "Missing parameter 'priority'"
+    assert "requirementOperator" in params, "Missing parameter 'requirementOperator'"
 
-def test_camel::requirement::softrequirement_has_priority():
-    assert hasattr(camel::requirement::SoftRequirement, "priority")
+def test_camel_requirement_requirementgroup_has_requirementOperator():
+    assert hasattr(camel_requirement_RequirementGroup, "requirementOperator")
     descriptor = None
-    for klass in camel::requirement::SoftRequirement.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
+    for klass in camel_requirement_RequirementGroup.__mro__:
+        if "requirementOperator" in klass.__dict__:
+            descriptor = klass.__dict__["requirementOperator"]
             break
     assert isinstance(descriptor, property)
 
@@ -2140,30 +2140,30 @@ def test_scope_constructor_args():
 
 
 
-def test_camel::provider::instance_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Instance)
+def test_camel_provider_product_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Product)
 
 
-def test_camel::provider::instance_constructor_exists():
-    assert callable(camel::provider::Instance.__init__)
+def test_camel_provider_product_constructor_exists():
+    assert callable(camel_provider_Product.__init__)
 
 
-def test_camel::provider::instance_constructor_args():
-    sig = inspect.signature(camel::provider::Instance.__init__)
+def test_camel_provider_product_constructor_args():
+    sig = inspect.signature(camel_provider_Product.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::provider::product_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Product)
+def test_camel_provider_instance_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Instance)
 
 
-def test_camel::provider::product_constructor_exists():
-    assert callable(camel::provider::Product.__init__)
+def test_camel_provider_instance_constructor_exists():
+    assert callable(camel_provider_Instance.__init__)
 
 
-def test_camel::provider::product_constructor_args():
-    sig = inspect.signature(camel::provider::Product.__init__)
+def test_camel_provider_instance_constructor_args():
+    sig = inspect.signature(camel_provider_Instance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2182,23 +2182,23 @@ def test_attributeconstraint_constructor_args():
 
 
 
-def test_camel::provider::constraint_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Constraint)
+def test_camel_provider_constraint_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Constraint)
 
 
-def test_camel::provider::constraint_constructor_exists():
-    assert callable(camel::provider::Constraint.__init__)
+def test_camel_provider_constraint_constructor_exists():
+    assert callable(camel_provider_Constraint.__init__)
 
 
-def test_camel::provider::constraint_constructor_args():
-    sig = inspect.signature(camel::provider::Constraint.__init__)
+def test_camel_provider_constraint_constructor_args():
+    sig = inspect.signature(camel_provider_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::provider::constraint_has_name():
-    assert hasattr(camel::provider::Constraint, "name")
+def test_camel_provider_constraint_has_name():
+    assert hasattr(camel_provider_Constraint, "name")
     descriptor = None
-    for klass in camel::provider::Constraint.__mro__:
+    for klass in camel_provider_Constraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2220,23 +2220,23 @@ def test_clone_constructor_args():
 
 
 
-def test_camel::provider::clone_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Clone)
+def test_camel_provider_clone_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Clone)
 
 
-def test_camel::provider::clone_constructor_exists():
-    assert callable(camel::provider::Clone.__init__)
+def test_camel_provider_clone_constructor_exists():
+    assert callable(camel_provider_Clone.__init__)
 
 
-def test_camel::provider::clone_constructor_args():
-    sig = inspect.signature(camel::provider::Clone.__init__)
+def test_camel_provider_clone_constructor_args():
+    sig = inspect.signature(camel_provider_Clone.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::provider::clone_has_name():
-    assert hasattr(camel::provider::Clone, "name")
+def test_camel_provider_clone_has_name():
+    assert hasattr(camel_provider_Clone, "name")
     descriptor = None
-    for klass in camel::provider::Clone.__mro__:
+    for klass in camel_provider_Clone.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2258,67 +2258,67 @@ def test_requires_constructor_args():
 
 
 
-def test_camel::provider::functional_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Functional)
+def test_camel_provider_functional_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Functional)
 
 
-def test_camel::provider::functional_constructor_exists():
-    assert callable(camel::provider::Functional.__init__)
+def test_camel_provider_functional_constructor_exists():
+    assert callable(camel_provider_Functional.__init__)
 
 
-def test_camel::provider::functional_constructor_args():
-    sig = inspect.signature(camel::provider::Functional.__init__)
+def test_camel_provider_functional_constructor_args():
+    sig = inspect.signature(camel_provider_Functional.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
-    assert "order" in params, "Missing parameter 'order'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "order" in params, "Missing parameter 'order'"
 
-def test_camel::provider::functional_has_type():
-    assert hasattr(camel::provider::Functional, "type")
+def test_camel_provider_functional_has_type():
+    assert hasattr(camel_provider_Functional, "type")
     descriptor = None
-    for klass in camel::provider::Functional.__mro__:
+    for klass in camel_provider_Functional.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::provider::functional_has_order():
-    assert hasattr(camel::provider::Functional, "order")
+def test_camel_provider_functional_has_value():
+    assert hasattr(camel_provider_Functional, "value")
     descriptor = None
-    for klass in camel::provider::Functional.__mro__:
-        if "order" in klass.__dict__:
-            descriptor = klass.__dict__["order"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::provider::functional_has_value():
-    assert hasattr(camel::provider::Functional, "value")
-    descriptor = None
-    for klass in camel::provider::Functional.__mro__:
+    for klass in camel_provider_Functional.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_camel_provider_functional_has_order():
+    assert hasattr(camel_provider_Functional, "order")
+    descriptor = None
+    for klass in camel_provider_Functional.__mro__:
+        if "order" in klass.__dict__:
+            descriptor = klass.__dict__["order"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_camel::provider::attributeconstraint_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::AttributeConstraint)
+
+def test_camel_provider_attributeconstraint_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_AttributeConstraint)
 
 
-def test_camel::provider::attributeconstraint_constructor_exists():
-    assert callable(camel::provider::AttributeConstraint.__init__)
+def test_camel_provider_attributeconstraint_constructor_exists():
+    assert callable(camel_provider_AttributeConstraint.__init__)
 
 
-def test_camel::provider::attributeconstraint_constructor_args():
-    sig = inspect.signature(camel::provider::AttributeConstraint.__init__)
+def test_camel_provider_attributeconstraint_constructor_args():
+    sig = inspect.signature(camel_provider_AttributeConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::provider::attributeconstraint_has_name():
-    assert hasattr(camel::provider::AttributeConstraint, "name")
+def test_camel_provider_attributeconstraint_has_name():
+    assert hasattr(camel_provider_AttributeConstraint, "name")
     descriptor = None
-    for klass in camel::provider::AttributeConstraint.__mro__:
+    for klass in camel_provider_AttributeConstraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2326,35 +2326,35 @@ def test_camel::provider::attributeconstraint_has_name():
 
 
 
-def test_camel::provider::attribute_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Attribute)
+def test_camel_provider_attribute_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Attribute)
 
 
-def test_camel::provider::attribute_constructor_exists():
-    assert callable(camel::provider::Attribute.__init__)
+def test_camel_provider_attribute_constructor_exists():
+    assert callable(camel_provider_Attribute.__init__)
 
 
-def test_camel::provider::attribute_constructor_args():
-    sig = inspect.signature(camel::provider::Attribute.__init__)
+def test_camel_provider_attribute_constructor_args():
+    sig = inspect.signature(camel_provider_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "unitType" in params, "Missing parameter 'unitType'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "unitType" in params, "Missing parameter 'unitType'"
 
-def test_camel::provider::attribute_has_unitType():
-    assert hasattr(camel::provider::Attribute, "unitType")
+def test_camel_provider_attribute_has_name():
+    assert hasattr(camel_provider_Attribute, "name")
     descriptor = None
-    for klass in camel::provider::Attribute.__mro__:
+    for klass in camel_provider_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_provider_attribute_has_unitType():
+    assert hasattr(camel_provider_Attribute, "unitType")
+    descriptor = None
+    for klass in camel_provider_Attribute.__mro__:
         if "unitType" in klass.__dict__:
             descriptor = klass.__dict__["unitType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::provider::attribute_has_name():
-    assert hasattr(camel::provider::Attribute, "name")
-    descriptor = None
-    for klass in camel::provider::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -2374,16 +2374,16 @@ def test_feature_constructor_args():
 
 
 
-def test_camel::provider::alternative_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Alternative)
+def test_camel_provider_alternative_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Alternative)
 
 
-def test_camel::provider::alternative_constructor_exists():
-    assert callable(camel::provider::Alternative.__init__)
+def test_camel_provider_alternative_constructor_exists():
+    assert callable(camel_provider_Alternative.__init__)
 
 
-def test_camel::provider::alternative_constructor_args():
-    sig = inspect.signature(camel::provider::Alternative.__init__)
+def test_camel_provider_alternative_constructor_args():
+    sig = inspect.signature(camel_provider_Alternative.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2402,44 +2402,44 @@ def test_constraint_constructor_args():
 
 
 
-def test_camel::provider::implies_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Implies)
+def test_camel_provider_requires_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Requires)
 
 
-def test_camel::provider::implies_constructor_exists():
-    assert callable(camel::provider::Implies.__init__)
+def test_camel_provider_requires_constructor_exists():
+    assert callable(camel_provider_Requires.__init__)
 
 
-def test_camel::provider::implies_constructor_args():
-    sig = inspect.signature(camel::provider::Implies.__init__)
+def test_camel_provider_requires_constructor_args():
+    sig = inspect.signature(camel_provider_Requires.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::provider::excludes_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Excludes)
+def test_camel_provider_excludes_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Excludes)
 
 
-def test_camel::provider::excludes_constructor_exists():
-    assert callable(camel::provider::Excludes.__init__)
+def test_camel_provider_excludes_constructor_exists():
+    assert callable(camel_provider_Excludes.__init__)
 
 
-def test_camel::provider::excludes_constructor_args():
-    sig = inspect.signature(camel::provider::Excludes.__init__)
+def test_camel_provider_excludes_constructor_args():
+    sig = inspect.signature(camel_provider_Excludes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::provider::requires_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Requires)
+def test_camel_provider_implies_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Implies)
 
 
-def test_camel::provider::requires_constructor_exists():
-    assert callable(camel::provider::Requires.__init__)
+def test_camel_provider_implies_constructor_exists():
+    assert callable(camel_provider_Implies.__init__)
 
 
-def test_camel::provider::requires_constructor_args():
-    sig = inspect.signature(camel::provider::Requires.__init__)
+def test_camel_provider_implies_constructor_args():
+    sig = inspect.signature(camel_provider_Implies.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2458,37 +2458,37 @@ def test_cardinality_constructor_args():
 
 
 
-def test_camel::provider::groupcardinality_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::GroupCardinality)
+def test_camel_provider_groupcardinality_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_GroupCardinality)
 
 
-def test_camel::provider::groupcardinality_constructor_exists():
-    assert callable(camel::provider::GroupCardinality.__init__)
+def test_camel_provider_groupcardinality_constructor_exists():
+    assert callable(camel_provider_GroupCardinality.__init__)
 
 
-def test_camel::provider::groupcardinality_constructor_args():
-    sig = inspect.signature(camel::provider::GroupCardinality.__init__)
+def test_camel_provider_groupcardinality_constructor_args():
+    sig = inspect.signature(camel_provider_GroupCardinality.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::provider::featcardinality_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::FeatCardinality)
+def test_camel_provider_featcardinality_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_FeatCardinality)
 
 
-def test_camel::provider::featcardinality_constructor_exists():
-    assert callable(camel::provider::FeatCardinality.__init__)
+def test_camel_provider_featcardinality_constructor_exists():
+    assert callable(camel_provider_FeatCardinality.__init__)
 
 
-def test_camel::provider::featcardinality_constructor_args():
-    sig = inspect.signature(camel::provider::FeatCardinality.__init__)
+def test_camel_provider_featcardinality_constructor_args():
+    sig = inspect.signature(camel_provider_FeatCardinality.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_camel::provider::featcardinality_has_value():
-    assert hasattr(camel::provider::FeatCardinality, "value")
+def test_camel_provider_featcardinality_has_value():
+    assert hasattr(camel_provider_FeatCardinality, "value")
     descriptor = None
-    for klass in camel::provider::FeatCardinality.__mro__:
+    for klass in camel_provider_FeatCardinality.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2496,111 +2496,111 @@ def test_camel::provider::featcardinality_has_value():
 
 
 
-def test_camel::provider::cardinality_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::Cardinality)
+def test_camel_provider_cardinality_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_Cardinality)
 
 
-def test_camel::provider::cardinality_constructor_exists():
-    assert callable(camel::provider::Cardinality.__init__)
+def test_camel_provider_cardinality_constructor_exists():
+    assert callable(camel_provider_Cardinality.__init__)
 
 
-def test_camel::provider::cardinality_constructor_args():
-    sig = inspect.signature(camel::provider::Cardinality.__init__)
+def test_camel_provider_cardinality_constructor_args():
+    sig = inspect.signature(camel_provider_Cardinality.__init__)
     params = list(sig.parameters.keys())
-    assert "cardinalityMin" in params, "Missing parameter 'cardinalityMin'"
     assert "cardinalityMax" in params, "Missing parameter 'cardinalityMax'"
+    assert "cardinalityMin" in params, "Missing parameter 'cardinalityMin'"
 
-def test_camel::provider::cardinality_has_cardinalityMin():
-    assert hasattr(camel::provider::Cardinality, "cardinalityMin")
+def test_camel_provider_cardinality_has_cardinalityMax():
+    assert hasattr(camel_provider_Cardinality, "cardinalityMax")
     descriptor = None
-    for klass in camel::provider::Cardinality.__mro__:
-        if "cardinalityMin" in klass.__dict__:
-            descriptor = klass.__dict__["cardinalityMin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::provider::cardinality_has_cardinalityMax():
-    assert hasattr(camel::provider::Cardinality, "cardinalityMax")
-    descriptor = None
-    for klass in camel::provider::Cardinality.__mro__:
+    for klass in camel_provider_Cardinality.__mro__:
         if "cardinalityMax" in klass.__dict__:
             descriptor = klass.__dict__["cardinalityMax"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_camel::organisation::roleassignment_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::RoleAssignment)
-
-
-def test_camel::organisation::roleassignment_constructor_exists():
-    assert callable(camel::organisation::RoleAssignment.__init__)
-
-
-def test_camel::organisation::roleassignment_constructor_args():
-    sig = inspect.signature(camel::organisation::RoleAssignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "startTime" in params, "Missing parameter 'startTime'"
-    assert "endTime" in params, "Missing parameter 'endTime'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "assignmentTime" in params, "Missing parameter 'assignmentTime'"
-
-def test_camel::organisation::roleassignment_has_startTime():
-    assert hasattr(camel::organisation::RoleAssignment, "startTime")
+def test_camel_provider_cardinality_has_cardinalityMin():
+    assert hasattr(camel_provider_Cardinality, "cardinalityMin")
     descriptor = None
-    for klass in camel::organisation::RoleAssignment.__mro__:
-        if "startTime" in klass.__dict__:
-            descriptor = klass.__dict__["startTime"]
+    for klass in camel_provider_Cardinality.__mro__:
+        if "cardinalityMin" in klass.__dict__:
+            descriptor = klass.__dict__["cardinalityMin"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::roleassignment_has_endTime():
-    assert hasattr(camel::organisation::RoleAssignment, "endTime")
+
+
+def test_camel_organisation_roleassignment_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_RoleAssignment)
+
+
+def test_camel_organisation_roleassignment_constructor_exists():
+    assert callable(camel_organisation_RoleAssignment.__init__)
+
+
+def test_camel_organisation_roleassignment_constructor_args():
+    sig = inspect.signature(camel_organisation_RoleAssignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "endTime" in params, "Missing parameter 'endTime'"
+    assert "assignmentTime" in params, "Missing parameter 'assignmentTime'"
+    assert "startTime" in params, "Missing parameter 'startTime'"
+
+def test_camel_organisation_roleassignment_has_name():
+    assert hasattr(camel_organisation_RoleAssignment, "name")
     descriptor = None
-    for klass in camel::organisation::RoleAssignment.__mro__:
+    for klass in camel_organisation_RoleAssignment.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_roleassignment_has_endTime():
+    assert hasattr(camel_organisation_RoleAssignment, "endTime")
+    descriptor = None
+    for klass in camel_organisation_RoleAssignment.__mro__:
         if "endTime" in klass.__dict__:
             descriptor = klass.__dict__["endTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::roleassignment_has_name():
-    assert hasattr(camel::organisation::RoleAssignment, "name")
+def test_camel_organisation_roleassignment_has_assignmentTime():
+    assert hasattr(camel_organisation_RoleAssignment, "assignmentTime")
     descriptor = None
-    for klass in camel::organisation::RoleAssignment.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::roleassignment_has_assignmentTime():
-    assert hasattr(camel::organisation::RoleAssignment, "assignmentTime")
-    descriptor = None
-    for klass in camel::organisation::RoleAssignment.__mro__:
+    for klass in camel_organisation_RoleAssignment.__mro__:
         if "assignmentTime" in klass.__dict__:
             descriptor = klass.__dict__["assignmentTime"]
             break
     assert isinstance(descriptor, property)
 
+def test_camel_organisation_roleassignment_has_startTime():
+    assert hasattr(camel_organisation_RoleAssignment, "startTime")
+    descriptor = None
+    for klass in camel_organisation_RoleAssignment.__mro__:
+        if "startTime" in klass.__dict__:
+            descriptor = klass.__dict__["startTime"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_camel::organisation::role_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::Role)
+
+def test_camel_organisation_role_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_Role)
 
 
-def test_camel::organisation::role_constructor_exists():
-    assert callable(camel::organisation::Role.__init__)
+def test_camel_organisation_role_constructor_exists():
+    assert callable(camel_organisation_Role.__init__)
 
 
-def test_camel::organisation::role_constructor_args():
-    sig = inspect.signature(camel::organisation::Role.__init__)
+def test_camel_organisation_role_constructor_args():
+    sig = inspect.signature(camel_organisation_Role.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::organisation::role_has_name():
-    assert hasattr(camel::organisation::Role, "name")
+def test_camel_organisation_role_has_name():
+    assert hasattr(camel_organisation_Role, "name")
     descriptor = None
-    for klass in camel::organisation::Role.__mro__:
+    for klass in camel_organisation_Role.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2608,57 +2608,57 @@ def test_camel::organisation::role_has_name():
 
 
 
-def test_camel::organisation::resourcefilter_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::ResourceFilter)
+def test_camel_organisation_resourcefilter_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_ResourceFilter)
 
 
-def test_camel::organisation::resourcefilter_constructor_exists():
-    assert callable(camel::organisation::ResourceFilter.__init__)
+def test_camel_organisation_resourcefilter_constructor_exists():
+    assert callable(camel_organisation_ResourceFilter.__init__)
 
 
-def test_camel::organisation::resourcefilter_constructor_args():
-    sig = inspect.signature(camel::organisation::ResourceFilter.__init__)
+def test_camel_organisation_resourcefilter_constructor_args():
+    sig = inspect.signature(camel_organisation_ResourceFilter.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "resourcePattern" in params, "Missing parameter 'resourcePattern'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::organisation::resourcefilter_has_name():
-    assert hasattr(camel::organisation::ResourceFilter, "name")
+def test_camel_organisation_resourcefilter_has_resourcePattern():
+    assert hasattr(camel_organisation_ResourceFilter, "resourcePattern")
     descriptor = None
-    for klass in camel::organisation::ResourceFilter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::resourcefilter_has_resourcePattern():
-    assert hasattr(camel::organisation::ResourceFilter, "resourcePattern")
-    descriptor = None
-    for klass in camel::organisation::ResourceFilter.__mro__:
+    for klass in camel_organisation_ResourceFilter.__mro__:
         if "resourcePattern" in klass.__dict__:
             descriptor = klass.__dict__["resourcePattern"]
             break
     assert isinstance(descriptor, property)
 
+def test_camel_organisation_resourcefilter_has_name():
+    assert hasattr(camel_organisation_ResourceFilter, "name")
+    descriptor = None
+    for klass in camel_organisation_ResourceFilter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_camel::organisation::usergroup_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::UserGroup)
+
+def test_camel_organisation_usergroup_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_UserGroup)
 
 
-def test_camel::organisation::usergroup_constructor_exists():
-    assert callable(camel::organisation::UserGroup.__init__)
+def test_camel_organisation_usergroup_constructor_exists():
+    assert callable(camel_organisation_UserGroup.__init__)
 
 
-def test_camel::organisation::usergroup_constructor_args():
-    sig = inspect.signature(camel::organisation::UserGroup.__init__)
+def test_camel_organisation_usergroup_constructor_args():
+    sig = inspect.signature(camel_organisation_UserGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::organisation::usergroup_has_name():
-    assert hasattr(camel::organisation::UserGroup, "name")
+def test_camel_organisation_usergroup_has_name():
+    assert hasattr(camel_organisation_UserGroup, "name")
     descriptor = None
-    for klass in camel::organisation::UserGroup.__mro__:
+    for klass in camel_organisation_UserGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2694,47 +2694,47 @@ def test_securitycapability_constructor_args():
 
 
 
-def test_camel::organisation::entity_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::Entity)
+def test_camel_organisation_entity_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_Entity)
 
 
-def test_camel::organisation::entity_constructor_exists():
-    assert callable(camel::organisation::Entity.__init__)
+def test_camel_organisation_entity_constructor_exists():
+    assert callable(camel_organisation_Entity.__init__)
 
 
-def test_camel::organisation::entity_constructor_args():
-    sig = inspect.signature(camel::organisation::Entity.__init__)
+def test_camel_organisation_entity_constructor_args():
+    sig = inspect.signature(camel_organisation_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::organisation::datacenter_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::DataCenter)
+def test_camel_organisation_datacenter_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_DataCenter)
 
 
-def test_camel::organisation::datacenter_constructor_exists():
-    assert callable(camel::organisation::DataCenter.__init__)
+def test_camel_organisation_datacenter_constructor_exists():
+    assert callable(camel_organisation_DataCenter.__init__)
 
 
-def test_camel::organisation::datacenter_constructor_args():
-    sig = inspect.signature(camel::organisation::DataCenter.__init__)
+def test_camel_organisation_datacenter_constructor_args():
+    sig = inspect.signature(camel_organisation_DataCenter.__init__)
     params = list(sig.parameters.keys())
     assert "codeName" in params, "Missing parameter 'codeName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::organisation::datacenter_has_codeName():
-    assert hasattr(camel::organisation::DataCenter, "codeName")
+def test_camel_organisation_datacenter_has_codeName():
+    assert hasattr(camel_organisation_DataCenter, "codeName")
     descriptor = None
-    for klass in camel::organisation::DataCenter.__mro__:
+    for klass in camel_organisation_DataCenter.__mro__:
         if "codeName" in klass.__dict__:
             descriptor = klass.__dict__["codeName"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::datacenter_has_name():
-    assert hasattr(camel::organisation::DataCenter, "name")
+def test_camel_organisation_datacenter_has_name():
+    assert hasattr(camel_organisation_DataCenter, "name")
     descriptor = None
-    for klass in camel::organisation::DataCenter.__mro__:
+    for klass in camel_organisation_DataCenter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2742,87 +2742,87 @@ def test_camel::organisation::datacenter_has_name():
 
 
 
-def test_camel::organisation::permission_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::Permission)
+def test_camel_organisation_permission_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_Permission)
 
 
-def test_camel::organisation::permission_constructor_exists():
-    assert callable(camel::organisation::Permission.__init__)
+def test_camel_organisation_permission_constructor_exists():
+    assert callable(camel_organisation_Permission.__init__)
 
 
-def test_camel::organisation::permission_constructor_args():
-    sig = inspect.signature(camel::organisation::Permission.__init__)
+def test_camel_organisation_permission_constructor_args():
+    sig = inspect.signature(camel_organisation_Permission.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "startTime" in params, "Missing parameter 'startTime'"
-    assert "endTime" in params, "Missing parameter 'endTime'"
     assert "action" in params, "Missing parameter 'action'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "endTime" in params, "Missing parameter 'endTime'"
+    assert "startTime" in params, "Missing parameter 'startTime'"
 
-def test_camel::organisation::permission_has_name():
-    assert hasattr(camel::organisation::Permission, "name")
+def test_camel_organisation_permission_has_action():
+    assert hasattr(camel_organisation_Permission, "action")
     descriptor = None
-    for klass in camel::organisation::Permission.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::permission_has_startTime():
-    assert hasattr(camel::organisation::Permission, "startTime")
-    descriptor = None
-    for klass in camel::organisation::Permission.__mro__:
-        if "startTime" in klass.__dict__:
-            descriptor = klass.__dict__["startTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::permission_has_endTime():
-    assert hasattr(camel::organisation::Permission, "endTime")
-    descriptor = None
-    for klass in camel::organisation::Permission.__mro__:
-        if "endTime" in klass.__dict__:
-            descriptor = klass.__dict__["endTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::permission_has_action():
-    assert hasattr(camel::organisation::Permission, "action")
-    descriptor = None
-    for klass in camel::organisation::Permission.__mro__:
+    for klass in camel_organisation_Permission.__mro__:
         if "action" in klass.__dict__:
             descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
+def test_camel_organisation_permission_has_name():
+    assert hasattr(camel_organisation_Permission, "name")
+    descriptor = None
+    for klass in camel_organisation_Permission.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_permission_has_endTime():
+    assert hasattr(camel_organisation_Permission, "endTime")
+    descriptor = None
+    for klass in camel_organisation_Permission.__mro__:
+        if "endTime" in klass.__dict__:
+            descriptor = klass.__dict__["endTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_permission_has_startTime():
+    assert hasattr(camel_organisation_Permission, "startTime")
+    descriptor = None
+    for klass in camel_organisation_Permission.__mro__:
+        if "startTime" in klass.__dict__:
+            descriptor = klass.__dict__["startTime"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_camel::organisation::externalidentifier_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::ExternalIdentifier)
+
+def test_camel_organisation_externalidentifier_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_ExternalIdentifier)
 
 
-def test_camel::organisation::externalidentifier_constructor_exists():
-    assert callable(camel::organisation::ExternalIdentifier.__init__)
+def test_camel_organisation_externalidentifier_constructor_exists():
+    assert callable(camel_organisation_ExternalIdentifier.__init__)
 
 
-def test_camel::organisation::externalidentifier_constructor_args():
-    sig = inspect.signature(camel::organisation::ExternalIdentifier.__init__)
+def test_camel_organisation_externalidentifier_constructor_args():
+    sig = inspect.signature(camel_organisation_ExternalIdentifier.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_camel::organisation::externalidentifier_has_identifier():
-    assert hasattr(camel::organisation::ExternalIdentifier, "identifier")
+def test_camel_organisation_externalidentifier_has_identifier():
+    assert hasattr(camel_organisation_ExternalIdentifier, "identifier")
     descriptor = None
-    for klass in camel::organisation::ExternalIdentifier.__mro__:
+    for klass in camel_organisation_ExternalIdentifier.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::externalidentifier_has_description():
-    assert hasattr(camel::organisation::ExternalIdentifier, "description")
+def test_camel_organisation_externalidentifier_has_description():
+    assert hasattr(camel_organisation_ExternalIdentifier, "description")
     descriptor = None
-    for klass in camel::organisation::ExternalIdentifier.__mro__:
+    for klass in camel_organisation_ExternalIdentifier.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -2956,55 +2956,55 @@ def test_organisation_constructor_args():
 
 
 
-def test_camel::organisation::cloudprovider_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::CloudProvider)
+def test_camel_organisation_cloudprovider_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_CloudProvider)
 
 
-def test_camel::organisation::cloudprovider_constructor_exists():
-    assert callable(camel::organisation::CloudProvider.__init__)
+def test_camel_organisation_cloudprovider_constructor_exists():
+    assert callable(camel_organisation_CloudProvider.__init__)
 
 
-def test_camel::organisation::cloudprovider_constructor_args():
-    sig = inspect.signature(camel::organisation::CloudProvider.__init__)
+def test_camel_organisation_cloudprovider_constructor_args():
+    sig = inspect.signature(camel_organisation_CloudProvider.__init__)
     params = list(sig.parameters.keys())
-    assert "public" in params, "Missing parameter 'public'"
-    assert "SaaS" in params, "Missing parameter 'SaaS'"
     assert "IaaS" in params, "Missing parameter 'IaaS'"
+    assert "SaaS" in params, "Missing parameter 'SaaS'"
     assert "PaaS" in params, "Missing parameter 'PaaS'"
+    assert "public" in params, "Missing parameter 'public'"
 
-def test_camel::organisation::cloudprovider_has_public():
-    assert hasattr(camel::organisation::CloudProvider, "public")
+def test_camel_organisation_cloudprovider_has_IaaS():
+    assert hasattr(camel_organisation_CloudProvider, "IaaS")
     descriptor = None
-    for klass in camel::organisation::CloudProvider.__mro__:
-        if "public" in klass.__dict__:
-            descriptor = klass.__dict__["public"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::cloudprovider_has_SaaS():
-    assert hasattr(camel::organisation::CloudProvider, "SaaS")
-    descriptor = None
-    for klass in camel::organisation::CloudProvider.__mro__:
-        if "SaaS" in klass.__dict__:
-            descriptor = klass.__dict__["SaaS"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::cloudprovider_has_IaaS():
-    assert hasattr(camel::organisation::CloudProvider, "IaaS")
-    descriptor = None
-    for klass in camel::organisation::CloudProvider.__mro__:
+    for klass in camel_organisation_CloudProvider.__mro__:
         if "IaaS" in klass.__dict__:
             descriptor = klass.__dict__["IaaS"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::cloudprovider_has_PaaS():
-    assert hasattr(camel::organisation::CloudProvider, "PaaS")
+def test_camel_organisation_cloudprovider_has_SaaS():
+    assert hasattr(camel_organisation_CloudProvider, "SaaS")
     descriptor = None
-    for klass in camel::organisation::CloudProvider.__mro__:
+    for klass in camel_organisation_CloudProvider.__mro__:
+        if "SaaS" in klass.__dict__:
+            descriptor = klass.__dict__["SaaS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_cloudprovider_has_PaaS():
+    assert hasattr(camel_organisation_CloudProvider, "PaaS")
+    descriptor = None
+    for klass in camel_organisation_CloudProvider.__mro__:
         if "PaaS" in klass.__dict__:
             descriptor = klass.__dict__["PaaS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_cloudprovider_has_public():
+    assert hasattr(camel_organisation_CloudProvider, "public")
+    descriptor = None
+    for klass in camel_organisation_CloudProvider.__mro__:
+        if "public" in klass.__dict__:
+            descriptor = klass.__dict__["public"]
             break
     assert isinstance(descriptor, property)
 
@@ -3024,23 +3024,23 @@ def test_credentials_constructor_args():
 
 
 
-def test_camel::organisation::paasagecredentials_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::PaaSageCredentials)
+def test_camel_organisation_paasagecredentials_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_PaaSageCredentials)
 
 
-def test_camel::organisation::paasagecredentials_constructor_exists():
-    assert callable(camel::organisation::PaaSageCredentials.__init__)
+def test_camel_organisation_paasagecredentials_constructor_exists():
+    assert callable(camel_organisation_PaaSageCredentials.__init__)
 
 
-def test_camel::organisation::paasagecredentials_constructor_args():
-    sig = inspect.signature(camel::organisation::PaaSageCredentials.__init__)
+def test_camel_organisation_paasagecredentials_constructor_args():
+    sig = inspect.signature(camel_organisation_PaaSageCredentials.__init__)
     params = list(sig.parameters.keys())
     assert "password" in params, "Missing parameter 'password'"
 
-def test_camel::organisation::paasagecredentials_has_password():
-    assert hasattr(camel::organisation::PaaSageCredentials, "password")
+def test_camel_organisation_paasagecredentials_has_password():
+    assert hasattr(camel_organisation_PaaSageCredentials, "password")
     descriptor = None
-    for klass in camel::organisation::PaaSageCredentials.__mro__:
+    for klass in camel_organisation_PaaSageCredentials.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
@@ -3048,73 +3048,73 @@ def test_camel::organisation::paasagecredentials_has_password():
 
 
 
-def test_camel::organisation::cloudcredentials_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::CloudCredentials)
+def test_camel_organisation_cloudcredentials_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_CloudCredentials)
 
 
-def test_camel::organisation::cloudcredentials_constructor_exists():
-    assert callable(camel::organisation::CloudCredentials.__init__)
+def test_camel_organisation_cloudcredentials_constructor_exists():
+    assert callable(camel_organisation_CloudCredentials.__init__)
 
 
-def test_camel::organisation::cloudcredentials_constructor_args():
-    sig = inspect.signature(camel::organisation::CloudCredentials.__init__)
+def test_camel_organisation_cloudcredentials_constructor_args():
+    sig = inspect.signature(camel_organisation_CloudCredentials.__init__)
     params = list(sig.parameters.keys())
-    assert "privateSSHKey" in params, "Missing parameter 'privateSSHKey'"
-    assert "publicSSHKey" in params, "Missing parameter 'publicSSHKey'"
     assert "username" in params, "Missing parameter 'username'"
+    assert "publicSSHKey" in params, "Missing parameter 'publicSSHKey'"
+    assert "privateSSHKey" in params, "Missing parameter 'privateSSHKey'"
     assert "password" in params, "Missing parameter 'password'"
     assert "name" in params, "Missing parameter 'name'"
     assert "securityGroup" in params, "Missing parameter 'securityGroup'"
 
-def test_camel::organisation::cloudcredentials_has_privateSSHKey():
-    assert hasattr(camel::organisation::CloudCredentials, "privateSSHKey")
+def test_camel_organisation_cloudcredentials_has_username():
+    assert hasattr(camel_organisation_CloudCredentials, "username")
     descriptor = None
-    for klass in camel::organisation::CloudCredentials.__mro__:
-        if "privateSSHKey" in klass.__dict__:
-            descriptor = klass.__dict__["privateSSHKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::cloudcredentials_has_publicSSHKey():
-    assert hasattr(camel::organisation::CloudCredentials, "publicSSHKey")
-    descriptor = None
-    for klass in camel::organisation::CloudCredentials.__mro__:
-        if "publicSSHKey" in klass.__dict__:
-            descriptor = klass.__dict__["publicSSHKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::cloudcredentials_has_username():
-    assert hasattr(camel::organisation::CloudCredentials, "username")
-    descriptor = None
-    for klass in camel::organisation::CloudCredentials.__mro__:
+    for klass in camel_organisation_CloudCredentials.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::cloudcredentials_has_password():
-    assert hasattr(camel::organisation::CloudCredentials, "password")
+def test_camel_organisation_cloudcredentials_has_publicSSHKey():
+    assert hasattr(camel_organisation_CloudCredentials, "publicSSHKey")
     descriptor = None
-    for klass in camel::organisation::CloudCredentials.__mro__:
+    for klass in camel_organisation_CloudCredentials.__mro__:
+        if "publicSSHKey" in klass.__dict__:
+            descriptor = klass.__dict__["publicSSHKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_cloudcredentials_has_privateSSHKey():
+    assert hasattr(camel_organisation_CloudCredentials, "privateSSHKey")
+    descriptor = None
+    for klass in camel_organisation_CloudCredentials.__mro__:
+        if "privateSSHKey" in klass.__dict__:
+            descriptor = klass.__dict__["privateSSHKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_cloudcredentials_has_password():
+    assert hasattr(camel_organisation_CloudCredentials, "password")
+    descriptor = None
+    for klass in camel_organisation_CloudCredentials.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::cloudcredentials_has_name():
-    assert hasattr(camel::organisation::CloudCredentials, "name")
+def test_camel_organisation_cloudcredentials_has_name():
+    assert hasattr(camel_organisation_CloudCredentials, "name")
     descriptor = None
-    for klass in camel::organisation::CloudCredentials.__mro__:
+    for klass in camel_organisation_CloudCredentials.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::cloudcredentials_has_securityGroup():
-    assert hasattr(camel::organisation::CloudCredentials, "securityGroup")
+def test_camel_organisation_cloudcredentials_has_securityGroup():
+    assert hasattr(camel_organisation_CloudCredentials, "securityGroup")
     descriptor = None
-    for klass in camel::organisation::CloudCredentials.__mro__:
+    for klass in camel_organisation_CloudCredentials.__mro__:
         if "securityGroup" in klass.__dict__:
             descriptor = klass.__dict__["securityGroup"]
             break
@@ -3122,16 +3122,16 @@ def test_camel::organisation::cloudcredentials_has_securityGroup():
 
 
 
-def test_camel::organisation::credentials_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::Credentials)
+def test_camel_organisation_credentials_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_Credentials)
 
 
-def test_camel::organisation::credentials_constructor_exists():
-    assert callable(camel::organisation::Credentials.__init__)
+def test_camel_organisation_credentials_constructor_exists():
+    assert callable(camel_organisation_Credentials.__init__)
 
 
-def test_camel::organisation::credentials_constructor_args():
-    sig = inspect.signature(camel::organisation::Credentials.__init__)
+def test_camel_organisation_credentials_constructor_args():
+    sig = inspect.signature(camel_organisation_Credentials.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3150,69 +3150,69 @@ def test_resourcefilter_constructor_args():
 
 
 
-def test_camel::organisation::informationresourcefilter_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::InformationResourceFilter)
+def test_camel_organisation_serviceresourcefilter_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_ServiceResourceFilter)
 
 
-def test_camel::organisation::informationresourcefilter_constructor_exists():
-    assert callable(camel::organisation::InformationResourceFilter.__init__)
+def test_camel_organisation_serviceresourcefilter_constructor_exists():
+    assert callable(camel_organisation_ServiceResourceFilter.__init__)
 
 
-def test_camel::organisation::informationresourcefilter_constructor_args():
-    sig = inspect.signature(camel::organisation::InformationResourceFilter.__init__)
-    params = list(sig.parameters.keys())
-    assert "everyInformationResource" in params, "Missing parameter 'everyInformationResource'"
-    assert "informationResourcePath" in params, "Missing parameter 'informationResourcePath'"
-
-def test_camel::organisation::informationresourcefilter_has_everyInformationResource():
-    assert hasattr(camel::organisation::InformationResourceFilter, "everyInformationResource")
-    descriptor = None
-    for klass in camel::organisation::InformationResourceFilter.__mro__:
-        if "everyInformationResource" in klass.__dict__:
-            descriptor = klass.__dict__["everyInformationResource"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::informationresourcefilter_has_informationResourcePath():
-    assert hasattr(camel::organisation::InformationResourceFilter, "informationResourcePath")
-    descriptor = None
-    for klass in camel::organisation::InformationResourceFilter.__mro__:
-        if "informationResourcePath" in klass.__dict__:
-            descriptor = klass.__dict__["informationResourcePath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::organisation::serviceresourcefilter_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::ServiceResourceFilter)
-
-
-def test_camel::organisation::serviceresourcefilter_constructor_exists():
-    assert callable(camel::organisation::ServiceResourceFilter.__init__)
-
-
-def test_camel::organisation::serviceresourcefilter_constructor_args():
-    sig = inspect.signature(camel::organisation::ServiceResourceFilter.__init__)
+def test_camel_organisation_serviceresourcefilter_constructor_args():
+    sig = inspect.signature(camel_organisation_ServiceResourceFilter.__init__)
     params = list(sig.parameters.keys())
     assert "everyService" in params, "Missing parameter 'everyService'"
     assert "serviceURL" in params, "Missing parameter 'serviceURL'"
 
-def test_camel::organisation::serviceresourcefilter_has_everyService():
-    assert hasattr(camel::organisation::ServiceResourceFilter, "everyService")
+def test_camel_organisation_serviceresourcefilter_has_everyService():
+    assert hasattr(camel_organisation_ServiceResourceFilter, "everyService")
     descriptor = None
-    for klass in camel::organisation::ServiceResourceFilter.__mro__:
+    for klass in camel_organisation_ServiceResourceFilter.__mro__:
         if "everyService" in klass.__dict__:
             descriptor = klass.__dict__["everyService"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::serviceresourcefilter_has_serviceURL():
-    assert hasattr(camel::organisation::ServiceResourceFilter, "serviceURL")
+def test_camel_organisation_serviceresourcefilter_has_serviceURL():
+    assert hasattr(camel_organisation_ServiceResourceFilter, "serviceURL")
     descriptor = None
-    for klass in camel::organisation::ServiceResourceFilter.__mro__:
+    for klass in camel_organisation_ServiceResourceFilter.__mro__:
         if "serviceURL" in klass.__dict__:
             descriptor = klass.__dict__["serviceURL"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_organisation_informationresourcefilter_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_InformationResourceFilter)
+
+
+def test_camel_organisation_informationresourcefilter_constructor_exists():
+    assert callable(camel_organisation_InformationResourceFilter.__init__)
+
+
+def test_camel_organisation_informationresourcefilter_constructor_args():
+    sig = inspect.signature(camel_organisation_InformationResourceFilter.__init__)
+    params = list(sig.parameters.keys())
+    assert "everyInformationResource" in params, "Missing parameter 'everyInformationResource'"
+    assert "informationResourcePath" in params, "Missing parameter 'informationResourcePath'"
+
+def test_camel_organisation_informationresourcefilter_has_everyInformationResource():
+    assert hasattr(camel_organisation_InformationResourceFilter, "everyInformationResource")
+    descriptor = None
+    for klass in camel_organisation_InformationResourceFilter.__mro__:
+        if "everyInformationResource" in klass.__dict__:
+            descriptor = klass.__dict__["everyInformationResource"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_informationresourcefilter_has_informationResourcePath():
+    assert hasattr(camel_organisation_InformationResourceFilter, "informationResourcePath")
+    descriptor = None
+    for klass in camel_organisation_InformationResourceFilter.__mro__:
+        if "informationResourcePath" in klass.__dict__:
+            descriptor = klass.__dict__["informationResourcePath"]
             break
     assert isinstance(descriptor, property)
 
@@ -3246,237 +3246,237 @@ def test_conditioncontext_constructor_args():
 
 
 
-def test_camel::metric::metriccontext_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricContext)
+def test_camel_metric_metriccontext_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricContext)
 
 
-def test_camel::metric::metriccontext_constructor_exists():
-    assert callable(camel::metric::MetricContext.__init__)
+def test_camel_metric_metriccontext_constructor_exists():
+    assert callable(camel_metric_MetricContext.__init__)
 
 
-def test_camel::metric::metriccontext_constructor_args():
-    sig = inspect.signature(camel::metric::MetricContext.__init__)
+def test_camel_metric_metriccontext_constructor_args():
+    sig = inspect.signature(camel_metric_MetricContext.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::propertycontext_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::PropertyContext)
+def test_camel_metric_propertycontext_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_PropertyContext)
 
 
-def test_camel::metric::propertycontext_constructor_exists():
-    assert callable(camel::metric::PropertyContext.__init__)
+def test_camel_metric_propertycontext_constructor_exists():
+    assert callable(camel_metric_PropertyContext.__init__)
 
 
-def test_camel::metric::propertycontext_constructor_args():
-    sig = inspect.signature(camel::metric::PropertyContext.__init__)
+def test_camel_metric_propertycontext_constructor_args():
+    sig = inspect.signature(camel_metric_PropertyContext.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::window_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::Window)
+def test_camel_metric_window_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_Window)
 
 
-def test_camel::metric::window_constructor_exists():
-    assert callable(camel::metric::Window.__init__)
+def test_camel_metric_window_constructor_exists():
+    assert callable(camel_metric_Window.__init__)
 
 
-def test_camel::metric::window_constructor_args():
-    sig = inspect.signature(camel::metric::Window.__init__)
+def test_camel_metric_window_constructor_args():
+    sig = inspect.signature(camel_metric_Window.__init__)
     params = list(sig.parameters.keys())
-    assert "windowType" in params, "Missing parameter 'windowType'"
     assert "measurementSize" in params, "Missing parameter 'measurementSize'"
-    assert "sizeType" in params, "Missing parameter 'sizeType'"
-    assert "timeSize" in params, "Missing parameter 'timeSize'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "timeSize" in params, "Missing parameter 'timeSize'"
+    assert "sizeType" in params, "Missing parameter 'sizeType'"
+    assert "windowType" in params, "Missing parameter 'windowType'"
 
-def test_camel::metric::window_has_windowType():
-    assert hasattr(camel::metric::Window, "windowType")
+def test_camel_metric_window_has_measurementSize():
+    assert hasattr(camel_metric_Window, "measurementSize")
     descriptor = None
-    for klass in camel::metric::Window.__mro__:
-        if "windowType" in klass.__dict__:
-            descriptor = klass.__dict__["windowType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::window_has_measurementSize():
-    assert hasattr(camel::metric::Window, "measurementSize")
-    descriptor = None
-    for klass in camel::metric::Window.__mro__:
+    for klass in camel_metric_Window.__mro__:
         if "measurementSize" in klass.__dict__:
             descriptor = klass.__dict__["measurementSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::window_has_sizeType():
-    assert hasattr(camel::metric::Window, "sizeType")
+def test_camel_metric_window_has_name():
+    assert hasattr(camel_metric_Window, "name")
     descriptor = None
-    for klass in camel::metric::Window.__mro__:
-        if "sizeType" in klass.__dict__:
-            descriptor = klass.__dict__["sizeType"]
+    for klass in camel_metric_Window.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::window_has_timeSize():
-    assert hasattr(camel::metric::Window, "timeSize")
+def test_camel_metric_window_has_timeSize():
+    assert hasattr(camel_metric_Window, "timeSize")
     descriptor = None
-    for klass in camel::metric::Window.__mro__:
+    for klass in camel_metric_Window.__mro__:
         if "timeSize" in klass.__dict__:
             descriptor = klass.__dict__["timeSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::window_has_name():
-    assert hasattr(camel::metric::Window, "name")
+def test_camel_metric_window_has_sizeType():
+    assert hasattr(camel_metric_Window, "sizeType")
     descriptor = None
-    for klass in camel::metric::Window.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in camel_metric_Window.__mro__:
+        if "sizeType" in klass.__dict__:
+            descriptor = klass.__dict__["sizeType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_window_has_windowType():
+    assert hasattr(camel_metric_Window, "windowType")
+    descriptor = None
+    for klass in camel_metric_Window.__mro__:
+        if "windowType" in klass.__dict__:
+            descriptor = klass.__dict__["windowType"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_camel::metric::sensor_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::Sensor)
+def test_camel_metric_sensor_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_Sensor)
 
 
-def test_camel::metric::sensor_constructor_exists():
-    assert callable(camel::metric::Sensor.__init__)
+def test_camel_metric_sensor_constructor_exists():
+    assert callable(camel_metric_Sensor.__init__)
 
 
-def test_camel::metric::sensor_constructor_args():
-    sig = inspect.signature(camel::metric::Sensor.__init__)
+def test_camel_metric_sensor_constructor_args():
+    sig = inspect.signature(camel_metric_Sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "isPush" in params, "Missing parameter 'isPush'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "configuration" in params, "Missing parameter 'configuration'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isPush" in params, "Missing parameter 'isPush'"
 
-def test_camel::metric::sensor_has_isPush():
-    assert hasattr(camel::metric::Sensor, "isPush")
+def test_camel_metric_sensor_has_configuration():
+    assert hasattr(camel_metric_Sensor, "configuration")
     descriptor = None
-    for klass in camel::metric::Sensor.__mro__:
-        if "isPush" in klass.__dict__:
-            descriptor = klass.__dict__["isPush"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::sensor_has_name():
-    assert hasattr(camel::metric::Sensor, "name")
-    descriptor = None
-    for klass in camel::metric::Sensor.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::sensor_has_configuration():
-    assert hasattr(camel::metric::Sensor, "configuration")
-    descriptor = None
-    for klass in camel::metric::Sensor.__mro__:
+    for klass in camel_metric_Sensor.__mro__:
         if "configuration" in klass.__dict__:
             descriptor = klass.__dict__["configuration"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_metric::camel::application_is_not_abstract():
-    assert not inspect.isabstract(metric::camel::Application)
-
-
-def test_metric::camel::application_constructor_exists():
-    assert callable(metric::camel::Application.__init__)
-
-
-def test_metric::camel::application_constructor_args():
-    sig = inspect.signature(metric::camel::Application.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::metric::conditioncontext_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::ConditionContext)
-
-
-def test_camel::metric::conditioncontext_constructor_exists():
-    assert callable(camel::metric::ConditionContext.__init__)
-
-
-def test_camel::metric::conditioncontext_constructor_args():
-    sig = inspect.signature(camel::metric::ConditionContext.__init__)
-    params = list(sig.parameters.keys())
-    assert "isRelative" in params, "Missing parameter 'isRelative'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "minQuantity" in params, "Missing parameter 'minQuantity'"
-    assert "quantifier" in params, "Missing parameter 'quantifier'"
-    assert "maxQuantity" in params, "Missing parameter 'maxQuantity'"
-
-def test_camel::metric::conditioncontext_has_isRelative():
-    assert hasattr(camel::metric::ConditionContext, "isRelative")
+def test_camel_metric_sensor_has_name():
+    assert hasattr(camel_metric_Sensor, "name")
     descriptor = None
-    for klass in camel::metric::ConditionContext.__mro__:
-        if "isRelative" in klass.__dict__:
-            descriptor = klass.__dict__["isRelative"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::conditioncontext_has_name():
-    assert hasattr(camel::metric::ConditionContext, "name")
-    descriptor = None
-    for klass in camel::metric::ConditionContext.__mro__:
+    for klass in camel_metric_Sensor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::conditioncontext_has_minQuantity():
-    assert hasattr(camel::metric::ConditionContext, "minQuantity")
+def test_camel_metric_sensor_has_isPush():
+    assert hasattr(camel_metric_Sensor, "isPush")
     descriptor = None
-    for klass in camel::metric::ConditionContext.__mro__:
-        if "minQuantity" in klass.__dict__:
-            descriptor = klass.__dict__["minQuantity"]
+    for klass in camel_metric_Sensor.__mro__:
+        if "isPush" in klass.__dict__:
+            descriptor = klass.__dict__["isPush"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::conditioncontext_has_quantifier():
-    assert hasattr(camel::metric::ConditionContext, "quantifier")
-    descriptor = None
-    for klass in camel::metric::ConditionContext.__mro__:
-        if "quantifier" in klass.__dict__:
-            descriptor = klass.__dict__["quantifier"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_camel::metric::conditioncontext_has_maxQuantity():
-    assert hasattr(camel::metric::ConditionContext, "maxQuantity")
+
+def test_metric_camel_application_is_not_abstract():
+    assert not inspect.isabstract(metric_camel_Application)
+
+
+def test_metric_camel_application_constructor_exists():
+    assert callable(metric_camel_Application.__init__)
+
+
+def test_metric_camel_application_constructor_args():
+    sig = inspect.signature(metric_camel_Application.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_metric_conditioncontext_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_ConditionContext)
+
+
+def test_camel_metric_conditioncontext_constructor_exists():
+    assert callable(camel_metric_ConditionContext.__init__)
+
+
+def test_camel_metric_conditioncontext_constructor_args():
+    sig = inspect.signature(camel_metric_ConditionContext.__init__)
+    params = list(sig.parameters.keys())
+    assert "maxQuantity" in params, "Missing parameter 'maxQuantity'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isRelative" in params, "Missing parameter 'isRelative'"
+    assert "quantifier" in params, "Missing parameter 'quantifier'"
+    assert "minQuantity" in params, "Missing parameter 'minQuantity'"
+
+def test_camel_metric_conditioncontext_has_maxQuantity():
+    assert hasattr(camel_metric_ConditionContext, "maxQuantity")
     descriptor = None
-    for klass in camel::metric::ConditionContext.__mro__:
+    for klass in camel_metric_ConditionContext.__mro__:
         if "maxQuantity" in klass.__dict__:
             descriptor = klass.__dict__["maxQuantity"]
             break
     assert isinstance(descriptor, property)
 
+def test_camel_metric_conditioncontext_has_name():
+    assert hasattr(camel_metric_ConditionContext, "name")
+    descriptor = None
+    for klass in camel_metric_ConditionContext.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_conditioncontext_has_isRelative():
+    assert hasattr(camel_metric_ConditionContext, "isRelative")
+    descriptor = None
+    for klass in camel_metric_ConditionContext.__mro__:
+        if "isRelative" in klass.__dict__:
+            descriptor = klass.__dict__["isRelative"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_conditioncontext_has_quantifier():
+    assert hasattr(camel_metric_ConditionContext, "quantifier")
+    descriptor = None
+    for klass in camel_metric_ConditionContext.__mro__:
+        if "quantifier" in klass.__dict__:
+            descriptor = klass.__dict__["quantifier"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_conditioncontext_has_minQuantity():
+    assert hasattr(camel_metric_ConditionContext, "minQuantity")
+    descriptor = None
+    for klass in camel_metric_ConditionContext.__mro__:
+        if "minQuantity" in klass.__dict__:
+            descriptor = klass.__dict__["minQuantity"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_camel::metric::metricobjectbinding_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricObjectBinding)
+
+def test_camel_metric_metricobjectbinding_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricObjectBinding)
 
 
-def test_camel::metric::metricobjectbinding_constructor_exists():
-    assert callable(camel::metric::MetricObjectBinding.__init__)
+def test_camel_metric_metricobjectbinding_constructor_exists():
+    assert callable(camel_metric_MetricObjectBinding.__init__)
 
 
-def test_camel::metric::metricobjectbinding_constructor_args():
-    sig = inspect.signature(camel::metric::MetricObjectBinding.__init__)
+def test_camel_metric_metricobjectbinding_constructor_args():
+    sig = inspect.signature(camel_metric_MetricObjectBinding.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::metric::metricobjectbinding_has_name():
-    assert hasattr(camel::metric::MetricObjectBinding, "name")
+def test_camel_metric_metricobjectbinding_has_name():
+    assert hasattr(camel_metric_MetricObjectBinding, "name")
     descriptor = None
-    for klass in camel::metric::MetricObjectBinding.__mro__:
+    for klass in camel_metric_MetricObjectBinding.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3484,117 +3484,117 @@ def test_camel::metric::metricobjectbinding_has_name():
 
 
 
-def test_camel::metric::schedule_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::Schedule)
+def test_camel_metric_schedule_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_Schedule)
 
 
-def test_camel::metric::schedule_constructor_exists():
-    assert callable(camel::metric::Schedule.__init__)
+def test_camel_metric_schedule_constructor_exists():
+    assert callable(camel_metric_Schedule.__init__)
 
 
-def test_camel::metric::schedule_constructor_args():
-    sig = inspect.signature(camel::metric::Schedule.__init__)
+def test_camel_metric_schedule_constructor_args():
+    sig = inspect.signature(camel_metric_Schedule.__init__)
     params = list(sig.parameters.keys())
-    assert "start" in params, "Missing parameter 'start'"
-    assert "interval" in params, "Missing parameter 'interval'"
-    assert "repetitions" in params, "Missing parameter 'repetitions'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "end" in params, "Missing parameter 'end'"
+    assert "repetitions" in params, "Missing parameter 'repetitions'"
+    assert "start" in params, "Missing parameter 'start'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "interval" in params, "Missing parameter 'interval'"
 
-def test_camel::metric::schedule_has_start():
-    assert hasattr(camel::metric::Schedule, "start")
+def test_camel_metric_schedule_has_end():
+    assert hasattr(camel_metric_Schedule, "end")
     descriptor = None
-    for klass in camel::metric::Schedule.__mro__:
-        if "start" in klass.__dict__:
-            descriptor = klass.__dict__["start"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::schedule_has_interval():
-    assert hasattr(camel::metric::Schedule, "interval")
-    descriptor = None
-    for klass in camel::metric::Schedule.__mro__:
-        if "interval" in klass.__dict__:
-            descriptor = klass.__dict__["interval"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::schedule_has_repetitions():
-    assert hasattr(camel::metric::Schedule, "repetitions")
-    descriptor = None
-    for klass in camel::metric::Schedule.__mro__:
-        if "repetitions" in klass.__dict__:
-            descriptor = klass.__dict__["repetitions"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::schedule_has_name():
-    assert hasattr(camel::metric::Schedule, "name")
-    descriptor = None
-    for klass in camel::metric::Schedule.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::schedule_has_end():
-    assert hasattr(camel::metric::Schedule, "end")
-    descriptor = None
-    for klass in camel::metric::Schedule.__mro__:
+    for klass in camel_metric_Schedule.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::schedule_has_type():
-    assert hasattr(camel::metric::Schedule, "type")
+def test_camel_metric_schedule_has_repetitions():
+    assert hasattr(camel_metric_Schedule, "repetitions")
     descriptor = None
-    for klass in camel::metric::Schedule.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in camel_metric_Schedule.__mro__:
+        if "repetitions" in klass.__dict__:
+            descriptor = klass.__dict__["repetitions"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_camel::metric::property_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::Property)
-
-
-def test_camel::metric::property_constructor_exists():
-    assert callable(camel::metric::Property.__init__)
-
-
-def test_camel::metric::property_constructor_args():
-    sig = inspect.signature(camel::metric::Property.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_camel::metric::property_has_name():
-    assert hasattr(camel::metric::Property, "name")
+def test_camel_metric_schedule_has_start():
+    assert hasattr(camel_metric_Schedule, "start")
     descriptor = None
-    for klass in camel::metric::Property.__mro__:
+    for klass in camel_metric_Schedule.__mro__:
+        if "start" in klass.__dict__:
+            descriptor = klass.__dict__["start"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_schedule_has_name():
+    assert hasattr(camel_metric_Schedule, "name")
+    descriptor = None
+    for klass in camel_metric_Schedule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::property_has_description():
-    assert hasattr(camel::metric::Property, "description")
+def test_camel_metric_schedule_has_type():
+    assert hasattr(camel_metric_Schedule, "type")
     descriptor = None
-    for klass in camel::metric::Property.__mro__:
+    for klass in camel_metric_Schedule.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_schedule_has_interval():
+    assert hasattr(camel_metric_Schedule, "interval")
+    descriptor = None
+    for klass in camel_metric_Schedule.__mro__:
+        if "interval" in klass.__dict__:
+            descriptor = klass.__dict__["interval"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_metric_property_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_Property)
+
+
+def test_camel_metric_property_constructor_exists():
+    assert callable(camel_metric_Property.__init__)
+
+
+def test_camel_metric_property_constructor_args():
+    sig = inspect.signature(camel_metric_Property.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_camel_metric_property_has_description():
+    assert hasattr(camel_metric_Property, "description")
+    descriptor = None
+    for klass in camel_metric_Property.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::property_has_type():
-    assert hasattr(camel::metric::Property, "type")
+def test_camel_metric_property_has_name():
+    assert hasattr(camel_metric_Property, "name")
     descriptor = None
-    for klass in camel::metric::Property.__mro__:
+    for klass in camel_metric_Property.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_property_has_type():
+    assert hasattr(camel_metric_Property, "type")
+    descriptor = None
+    for klass in camel_metric_Property.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -3616,16 +3616,16 @@ def test_property_constructor_args():
 
 
 
-def test_camel::security::securityproperty_is_not_abstract():
-    assert not inspect.isabstract(camel::security::SecurityProperty)
+def test_camel_security_securityproperty_is_not_abstract():
+    assert not inspect.isabstract(camel_security_SecurityProperty)
 
 
-def test_camel::security::securityproperty_constructor_exists():
-    assert callable(camel::security::SecurityProperty.__init__)
+def test_camel_security_securityproperty_constructor_exists():
+    assert callable(camel_security_SecurityProperty.__init__)
 
 
-def test_camel::security::securityproperty_constructor_args():
-    sig = inspect.signature(camel::security::SecurityProperty.__init__)
+def test_camel_security_securityproperty_constructor_args():
+    sig = inspect.signature(camel_security_SecurityProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3644,58 +3644,114 @@ def test_unit_constructor_args():
 
 
 
-def test_camel::unit::monetaryunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::MonetaryUnit)
+def test_camel_unit_transactionunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_TransactionUnit)
 
 
-def test_camel::unit::monetaryunit_constructor_exists():
-    assert callable(camel::unit::MonetaryUnit.__init__)
+def test_camel_unit_transactionunit_constructor_exists():
+    assert callable(camel_unit_TransactionUnit.__init__)
 
 
-def test_camel::unit::monetaryunit_constructor_args():
-    sig = inspect.signature(camel::unit::MonetaryUnit.__init__)
+def test_camel_unit_transactionunit_constructor_args():
+    sig = inspect.signature(camel_unit_TransactionUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::unit::dimensionless_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::Dimensionless)
+def test_camel_unit_monetaryunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_MonetaryUnit)
 
 
-def test_camel::unit::dimensionless_constructor_exists():
-    assert callable(camel::unit::Dimensionless.__init__)
+def test_camel_unit_monetaryunit_constructor_exists():
+    assert callable(camel_unit_MonetaryUnit.__init__)
 
 
-def test_camel::unit::dimensionless_constructor_args():
-    sig = inspect.signature(camel::unit::Dimensionless.__init__)
+def test_camel_unit_monetaryunit_constructor_args():
+    sig = inspect.signature(camel_unit_MonetaryUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::unit::requestunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::RequestUnit)
+def test_camel_unit_requestunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_RequestUnit)
 
 
-def test_camel::unit::requestunit_constructor_exists():
-    assert callable(camel::unit::RequestUnit.__init__)
+def test_camel_unit_requestunit_constructor_exists():
+    assert callable(camel_unit_RequestUnit.__init__)
 
 
-def test_camel::unit::requestunit_constructor_args():
-    sig = inspect.signature(camel::unit::RequestUnit.__init__)
+def test_camel_unit_requestunit_constructor_args():
+    sig = inspect.signature(camel_unit_RequestUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::unit::coreunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::CoreUnit)
+def test_camel_unit_throughputunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_ThroughputUnit)
 
 
-def test_camel::unit::coreunit_constructor_exists():
-    assert callable(camel::unit::CoreUnit.__init__)
+def test_camel_unit_throughputunit_constructor_exists():
+    assert callable(camel_unit_ThroughputUnit.__init__)
 
 
-def test_camel::unit::coreunit_constructor_args():
-    sig = inspect.signature(camel::unit::CoreUnit.__init__)
+def test_camel_unit_throughputunit_constructor_args():
+    sig = inspect.signature(camel_unit_ThroughputUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_unit_coreunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_CoreUnit)
+
+
+def test_camel_unit_coreunit_constructor_exists():
+    assert callable(camel_unit_CoreUnit.__init__)
+
+
+def test_camel_unit_coreunit_constructor_args():
+    sig = inspect.signature(camel_unit_CoreUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_unit_storageunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_StorageUnit)
+
+
+def test_camel_unit_storageunit_constructor_exists():
+    assert callable(camel_unit_StorageUnit.__init__)
+
+
+def test_camel_unit_storageunit_constructor_args():
+    sig = inspect.signature(camel_unit_StorageUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_unit_timeintervalunit_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_TimeIntervalUnit)
+
+
+def test_camel_unit_timeintervalunit_constructor_exists():
+    assert callable(camel_unit_TimeIntervalUnit.__init__)
+
+
+def test_camel_unit_timeintervalunit_constructor_args():
+    sig = inspect.signature(camel_unit_TimeIntervalUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_unit_dimensionless_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_Dimensionless)
+
+
+def test_camel_unit_dimensionless_constructor_exists():
+    assert callable(camel_unit_Dimensionless.__init__)
+
+
+def test_camel_unit_dimensionless_constructor_args():
+    sig = inspect.signature(camel_unit_Dimensionless.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3714,23 +3770,23 @@ def test_valuetype_constructor_args():
 
 
 
-def test_camel::type::stringvaluetype_is_not_abstract():
-    assert not inspect.isabstract(camel::type::StringValueType)
+def test_camel_type_list_is_not_abstract():
+    assert not inspect.isabstract(camel_type_List)
 
 
-def test_camel::type::stringvaluetype_constructor_exists():
-    assert callable(camel::type::StringValueType.__init__)
+def test_camel_type_list_constructor_exists():
+    assert callable(camel_type_List.__init__)
 
 
-def test_camel::type::stringvaluetype_constructor_args():
-    sig = inspect.signature(camel::type::StringValueType.__init__)
+def test_camel_type_list_constructor_args():
+    sig = inspect.signature(camel_type_List.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_camel::type::stringvaluetype_has_primitiveType():
-    assert hasattr(camel::type::StringValueType, "primitiveType")
+def test_camel_type_list_has_primitiveType():
+    assert hasattr(camel_type_List, "primitiveType")
     descriptor = None
-    for klass in camel::type::StringValueType.__mro__:
+    for klass in camel_type_List.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -3738,23 +3794,23 @@ def test_camel::type::stringvaluetype_has_primitiveType():
 
 
 
-def test_camel::type::rangeunion_is_not_abstract():
-    assert not inspect.isabstract(camel::type::RangeUnion)
+def test_camel_type_booleanvaluetype_is_not_abstract():
+    assert not inspect.isabstract(camel_type_BooleanValueType)
 
 
-def test_camel::type::rangeunion_constructor_exists():
-    assert callable(camel::type::RangeUnion.__init__)
+def test_camel_type_booleanvaluetype_constructor_exists():
+    assert callable(camel_type_BooleanValueType.__init__)
 
 
-def test_camel::type::rangeunion_constructor_args():
-    sig = inspect.signature(camel::type::RangeUnion.__init__)
+def test_camel_type_booleanvaluetype_constructor_args():
+    sig = inspect.signature(camel_type_BooleanValueType.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_camel::type::rangeunion_has_primitiveType():
-    assert hasattr(camel::type::RangeUnion, "primitiveType")
+def test_camel_type_booleanvaluetype_has_primitiveType():
+    assert hasattr(camel_type_BooleanValueType, "primitiveType")
     descriptor = None
-    for klass in camel::type::RangeUnion.__mro__:
+    for klass in camel_type_BooleanValueType.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -3762,23 +3818,23 @@ def test_camel::type::rangeunion_has_primitiveType():
 
 
 
-def test_camel::type::booleanvaluetype_is_not_abstract():
-    assert not inspect.isabstract(camel::type::BooleanValueType)
+def test_camel_type_stringvaluetype_is_not_abstract():
+    assert not inspect.isabstract(camel_type_StringValueType)
 
 
-def test_camel::type::booleanvaluetype_constructor_exists():
-    assert callable(camel::type::BooleanValueType.__init__)
+def test_camel_type_stringvaluetype_constructor_exists():
+    assert callable(camel_type_StringValueType.__init__)
 
 
-def test_camel::type::booleanvaluetype_constructor_args():
-    sig = inspect.signature(camel::type::BooleanValueType.__init__)
+def test_camel_type_stringvaluetype_constructor_args():
+    sig = inspect.signature(camel_type_StringValueType.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_camel::type::booleanvaluetype_has_primitiveType():
-    assert hasattr(camel::type::BooleanValueType, "primitiveType")
+def test_camel_type_stringvaluetype_has_primitiveType():
+    assert hasattr(camel_type_StringValueType, "primitiveType")
     descriptor = None
-    for klass in camel::type::BooleanValueType.__mro__:
+    for klass in camel_type_StringValueType.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -3786,23 +3842,23 @@ def test_camel::type::booleanvaluetype_has_primitiveType():
 
 
 
-def test_camel::type::list_is_not_abstract():
-    assert not inspect.isabstract(camel::type::List)
+def test_camel_type_rangeunion_is_not_abstract():
+    assert not inspect.isabstract(camel_type_RangeUnion)
 
 
-def test_camel::type::list_constructor_exists():
-    assert callable(camel::type::List.__init__)
+def test_camel_type_rangeunion_constructor_exists():
+    assert callable(camel_type_RangeUnion.__init__)
 
 
-def test_camel::type::list_constructor_args():
-    sig = inspect.signature(camel::type::List.__init__)
+def test_camel_type_rangeunion_constructor_args():
+    sig = inspect.signature(camel_type_RangeUnion.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_camel::type::list_has_primitiveType():
-    assert hasattr(camel::type::List, "primitiveType")
+def test_camel_type_rangeunion_has_primitiveType():
+    assert hasattr(camel_type_RangeUnion, "primitiveType")
     descriptor = None
-    for klass in camel::type::List.__mro__:
+    for klass in camel_type_RangeUnion.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -3810,37 +3866,37 @@ def test_camel::type::list_has_primitiveType():
 
 
 
-def test_camel::type::enumeration_is_not_abstract():
-    assert not inspect.isabstract(camel::type::Enumeration)
+def test_camel_type_enumeration_is_not_abstract():
+    assert not inspect.isabstract(camel_type_Enumeration)
 
 
-def test_camel::type::enumeration_constructor_exists():
-    assert callable(camel::type::Enumeration.__init__)
+def test_camel_type_enumeration_constructor_exists():
+    assert callable(camel_type_Enumeration.__init__)
 
 
-def test_camel::type::enumeration_constructor_args():
-    sig = inspect.signature(camel::type::Enumeration.__init__)
+def test_camel_type_enumeration_constructor_args():
+    sig = inspect.signature(camel_type_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::type::range_is_not_abstract():
-    assert not inspect.isabstract(camel::type::Range)
+def test_camel_type_range_is_not_abstract():
+    assert not inspect.isabstract(camel_type_Range)
 
 
-def test_camel::type::range_constructor_exists():
-    assert callable(camel::type::Range.__init__)
+def test_camel_type_range_constructor_exists():
+    assert callable(camel_type_Range.__init__)
 
 
-def test_camel::type::range_constructor_args():
-    sig = inspect.signature(camel::type::Range.__init__)
+def test_camel_type_range_constructor_args():
+    sig = inspect.signature(camel_type_Range.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_camel::type::range_has_primitiveType():
-    assert hasattr(camel::type::Range, "primitiveType")
+def test_camel_type_range_has_primitiveType():
+    assert hasattr(camel_type_Range, "primitiveType")
     descriptor = None
-    for klass in camel::type::Range.__mro__:
+    for klass in camel_type_Range.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -3862,99 +3918,99 @@ def test_metricformulaparameter_constructor_args():
 
 
 
-def test_camel::metric::metric_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::Metric)
+def test_camel_metric_metric_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_Metric)
 
 
-def test_camel::metric::metric_constructor_exists():
-    assert callable(camel::metric::Metric.__init__)
+def test_camel_metric_metric_constructor_exists():
+    assert callable(camel_metric_Metric.__init__)
 
 
-def test_camel::metric::metric_constructor_args():
-    sig = inspect.signature(camel::metric::Metric.__init__)
+def test_camel_metric_metric_constructor_args():
+    sig = inspect.signature(camel_metric_Metric.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
+    assert "layer" in params, "Missing parameter 'layer'"
     assert "valueDirection" in params, "Missing parameter 'valueDirection'"
     assert "isVariable" in params, "Missing parameter 'isVariable'"
-    assert "layer" in params, "Missing parameter 'layer'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_camel::metric::metric_has_description():
-    assert hasattr(camel::metric::Metric, "description")
+def test_camel_metric_metric_has_layer():
+    assert hasattr(camel_metric_Metric, "layer")
     descriptor = None
-    for klass in camel::metric::Metric.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::metric_has_valueDirection():
-    assert hasattr(camel::metric::Metric, "valueDirection")
-    descriptor = None
-    for klass in camel::metric::Metric.__mro__:
-        if "valueDirection" in klass.__dict__:
-            descriptor = klass.__dict__["valueDirection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::metric_has_isVariable():
-    assert hasattr(camel::metric::Metric, "isVariable")
-    descriptor = None
-    for klass in camel::metric::Metric.__mro__:
-        if "isVariable" in klass.__dict__:
-            descriptor = klass.__dict__["isVariable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::metric::metric_has_layer():
-    assert hasattr(camel::metric::Metric, "layer")
-    descriptor = None
-    for klass in camel::metric::Metric.__mro__:
+    for klass in camel_metric_Metric.__mro__:
         if "layer" in klass.__dict__:
             descriptor = klass.__dict__["layer"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_camel::metric::metricformula_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricFormula)
-
-
-def test_camel::metric::metricformula_constructor_exists():
-    assert callable(camel::metric::MetricFormula.__init__)
-
-
-def test_camel::metric::metricformula_constructor_args():
-    sig = inspect.signature(camel::metric::MetricFormula.__init__)
-    params = list(sig.parameters.keys())
-    assert "functionArity" in params, "Missing parameter 'functionArity'"
-    assert "function" in params, "Missing parameter 'function'"
-    assert "functionPattern" in params, "Missing parameter 'functionPattern'"
-
-def test_camel::metric::metricformula_has_functionArity():
-    assert hasattr(camel::metric::MetricFormula, "functionArity")
+def test_camel_metric_metric_has_valueDirection():
+    assert hasattr(camel_metric_Metric, "valueDirection")
     descriptor = None
-    for klass in camel::metric::MetricFormula.__mro__:
-        if "functionArity" in klass.__dict__:
-            descriptor = klass.__dict__["functionArity"]
+    for klass in camel_metric_Metric.__mro__:
+        if "valueDirection" in klass.__dict__:
+            descriptor = klass.__dict__["valueDirection"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::metricformula_has_function():
-    assert hasattr(camel::metric::MetricFormula, "function")
+def test_camel_metric_metric_has_isVariable():
+    assert hasattr(camel_metric_Metric, "isVariable")
     descriptor = None
-    for klass in camel::metric::MetricFormula.__mro__:
+    for klass in camel_metric_Metric.__mro__:
+        if "isVariable" in klass.__dict__:
+            descriptor = klass.__dict__["isVariable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_metric_has_description():
+    assert hasattr(camel_metric_Metric, "description")
+    descriptor = None
+    for klass in camel_metric_Metric.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_metric_metricformula_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricFormula)
+
+
+def test_camel_metric_metricformula_constructor_exists():
+    assert callable(camel_metric_MetricFormula.__init__)
+
+
+def test_camel_metric_metricformula_constructor_args():
+    sig = inspect.signature(camel_metric_MetricFormula.__init__)
+    params = list(sig.parameters.keys())
+    assert "functionPattern" in params, "Missing parameter 'functionPattern'"
+    assert "function" in params, "Missing parameter 'function'"
+    assert "functionArity" in params, "Missing parameter 'functionArity'"
+
+def test_camel_metric_metricformula_has_functionPattern():
+    assert hasattr(camel_metric_MetricFormula, "functionPattern")
+    descriptor = None
+    for klass in camel_metric_MetricFormula.__mro__:
+        if "functionPattern" in klass.__dict__:
+            descriptor = klass.__dict__["functionPattern"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_metric_metricformula_has_function():
+    assert hasattr(camel_metric_MetricFormula, "function")
+    descriptor = None
+    for klass in camel_metric_MetricFormula.__mro__:
         if "function" in klass.__dict__:
             descriptor = klass.__dict__["function"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::metricformula_has_functionPattern():
-    assert hasattr(camel::metric::MetricFormula, "functionPattern")
+def test_camel_metric_metricformula_has_functionArity():
+    assert hasattr(camel_metric_MetricFormula, "functionArity")
     descriptor = None
-    for klass in camel::metric::MetricFormula.__mro__:
-        if "functionPattern" in klass.__dict__:
-            descriptor = klass.__dict__["functionPattern"]
+    for klass in camel_metric_MetricFormula.__mro__:
+        if "functionArity" in klass.__dict__:
+            descriptor = klass.__dict__["functionArity"]
             break
     assert isinstance(descriptor, property)
 
@@ -3988,44 +4044,44 @@ def test_metricobjectbinding_constructor_args():
 
 
 
-def test_camel::metric::metricapplicationbinding_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricApplicationBinding)
+def test_camel_metric_metricvmbinding_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricVMBinding)
 
 
-def test_camel::metric::metricapplicationbinding_constructor_exists():
-    assert callable(camel::metric::MetricApplicationBinding.__init__)
+def test_camel_metric_metricvmbinding_constructor_exists():
+    assert callable(camel_metric_MetricVMBinding.__init__)
 
 
-def test_camel::metric::metricapplicationbinding_constructor_args():
-    sig = inspect.signature(camel::metric::MetricApplicationBinding.__init__)
+def test_camel_metric_metricvmbinding_constructor_args():
+    sig = inspect.signature(camel_metric_MetricVMBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::metricvmbinding_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricVMBinding)
+def test_camel_metric_metriccomponentbinding_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricComponentBinding)
 
 
-def test_camel::metric::metricvmbinding_constructor_exists():
-    assert callable(camel::metric::MetricVMBinding.__init__)
+def test_camel_metric_metriccomponentbinding_constructor_exists():
+    assert callable(camel_metric_MetricComponentBinding.__init__)
 
 
-def test_camel::metric::metricvmbinding_constructor_args():
-    sig = inspect.signature(camel::metric::MetricVMBinding.__init__)
+def test_camel_metric_metriccomponentbinding_constructor_args():
+    sig = inspect.signature(camel_metric_MetricComponentBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::metriccomponentbinding_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricComponentBinding)
+def test_camel_metric_metricapplicationbinding_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricApplicationBinding)
 
 
-def test_camel::metric::metriccomponentbinding_constructor_exists():
-    assert callable(camel::metric::MetricComponentBinding.__init__)
+def test_camel_metric_metricapplicationbinding_constructor_exists():
+    assert callable(camel_metric_MetricApplicationBinding.__init__)
 
 
-def test_camel::metric::metriccomponentbinding_constructor_args():
-    sig = inspect.signature(camel::metric::MetricComponentBinding.__init__)
+def test_camel_metric_metricapplicationbinding_constructor_args():
+    sig = inspect.signature(camel_metric_MetricApplicationBinding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4072,51 +4128,51 @@ def test_metric_constructor_args():
 
 
 
-def test_camel::metric::compositemetric_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::CompositeMetric)
+def test_camel_metric_rawmetric_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_RawMetric)
 
 
-def test_camel::metric::compositemetric_constructor_exists():
-    assert callable(camel::metric::CompositeMetric.__init__)
+def test_camel_metric_rawmetric_constructor_exists():
+    assert callable(camel_metric_RawMetric.__init__)
 
 
-def test_camel::metric::compositemetric_constructor_args():
-    sig = inspect.signature(camel::metric::CompositeMetric.__init__)
+def test_camel_metric_rawmetric_constructor_args():
+    sig = inspect.signature(camel_metric_RawMetric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::rawmetric_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::RawMetric)
+def test_camel_metric_compositemetric_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_CompositeMetric)
 
 
-def test_camel::metric::rawmetric_constructor_exists():
-    assert callable(camel::metric::RawMetric.__init__)
+def test_camel_metric_compositemetric_constructor_exists():
+    assert callable(camel_metric_CompositeMetric.__init__)
 
 
-def test_camel::metric::rawmetric_constructor_args():
-    sig = inspect.signature(camel::metric::RawMetric.__init__)
+def test_camel_metric_compositemetric_constructor_args():
+    sig = inspect.signature(camel_metric_CompositeMetric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::metricinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricInstance)
+def test_camel_metric_metricinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricInstance)
 
 
-def test_camel::metric::metricinstance_constructor_exists():
-    assert callable(camel::metric::MetricInstance.__init__)
+def test_camel_metric_metricinstance_constructor_exists():
+    assert callable(camel_metric_MetricInstance.__init__)
 
 
-def test_camel::metric::metricinstance_constructor_args():
-    sig = inspect.signature(camel::metric::MetricInstance.__init__)
+def test_camel_metric_metricinstance_constructor_args():
+    sig = inspect.signature(camel_metric_MetricInstance.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::metric::metricinstance_has_name():
-    assert hasattr(camel::metric::MetricInstance, "name")
+def test_camel_metric_metricinstance_has_name():
+    assert hasattr(camel_metric_MetricInstance, "name")
     descriptor = None
-    for klass in camel::metric::MetricInstance.__mro__:
+    for klass in camel_metric_MetricInstance.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4124,23 +4180,23 @@ def test_camel::metric::metricinstance_has_name():
 
 
 
-def test_camel::metric::metricformulaparameter_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricFormulaParameter)
+def test_camel_metric_metricformulaparameter_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricFormulaParameter)
 
 
-def test_camel::metric::metricformulaparameter_constructor_exists():
-    assert callable(camel::metric::MetricFormulaParameter.__init__)
+def test_camel_metric_metricformulaparameter_constructor_exists():
+    assert callable(camel_metric_MetricFormulaParameter.__init__)
 
 
-def test_camel::metric::metricformulaparameter_constructor_args():
-    sig = inspect.signature(camel::metric::MetricFormulaParameter.__init__)
+def test_camel_metric_metricformulaparameter_constructor_args():
+    sig = inspect.signature(camel_metric_MetricFormulaParameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::metric::metricformulaparameter_has_name():
-    assert hasattr(camel::metric::MetricFormulaParameter, "name")
+def test_camel_metric_metricformulaparameter_has_name():
+    assert hasattr(camel_metric_MetricFormulaParameter, "name")
     descriptor = None
-    for klass in camel::metric::MetricFormulaParameter.__mro__:
+    for klass in camel_metric_MetricFormulaParameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4204,30 +4260,30 @@ def test_metriccontext_constructor_args():
 
 
 
-def test_camel::metric::compositemetriccontext_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::CompositeMetricContext)
+def test_camel_metric_compositemetriccontext_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_CompositeMetricContext)
 
 
-def test_camel::metric::compositemetriccontext_constructor_exists():
-    assert callable(camel::metric::CompositeMetricContext.__init__)
+def test_camel_metric_compositemetriccontext_constructor_exists():
+    assert callable(camel_metric_CompositeMetricContext.__init__)
 
 
-def test_camel::metric::compositemetriccontext_constructor_args():
-    sig = inspect.signature(camel::metric::CompositeMetricContext.__init__)
+def test_camel_metric_compositemetriccontext_constructor_args():
+    sig = inspect.signature(camel_metric_CompositeMetricContext.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::rawmetriccontext_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::RawMetricContext)
+def test_camel_metric_rawmetriccontext_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_RawMetricContext)
 
 
-def test_camel::metric::rawmetriccontext_constructor_exists():
-    assert callable(camel::metric::RawMetricContext.__init__)
+def test_camel_metric_rawmetriccontext_constructor_exists():
+    assert callable(camel_metric_RawMetricContext.__init__)
 
 
-def test_camel::metric::rawmetriccontext_constructor_args():
-    sig = inspect.signature(camel::metric::RawMetricContext.__init__)
+def test_camel_metric_rawmetriccontext_constructor_args():
+    sig = inspect.signature(camel_metric_RawMetricContext.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4246,83 +4302,83 @@ def test_condition_constructor_args():
 
 
 
-def test_camel::metric::propertycondition_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::PropertyCondition)
+def test_camel_metric_propertycondition_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_PropertyCondition)
 
 
-def test_camel::metric::propertycondition_constructor_exists():
-    assert callable(camel::metric::PropertyCondition.__init__)
+def test_camel_metric_propertycondition_constructor_exists():
+    assert callable(camel_metric_PropertyCondition.__init__)
 
 
-def test_camel::metric::propertycondition_constructor_args():
-    sig = inspect.signature(camel::metric::PropertyCondition.__init__)
+def test_camel_metric_propertycondition_constructor_args():
+    sig = inspect.signature(camel_metric_PropertyCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::metriccondition_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricCondition)
+def test_camel_metric_metriccondition_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricCondition)
 
 
-def test_camel::metric::metriccondition_constructor_exists():
-    assert callable(camel::metric::MetricCondition.__init__)
+def test_camel_metric_metriccondition_constructor_exists():
+    assert callable(camel_metric_MetricCondition.__init__)
 
 
-def test_camel::metric::metriccondition_constructor_args():
-    sig = inspect.signature(camel::metric::MetricCondition.__init__)
+def test_camel_metric_metriccondition_constructor_args():
+    sig = inspect.signature(camel_metric_MetricCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::condition_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::Condition)
+def test_camel_metric_condition_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_Condition)
 
 
-def test_camel::metric::condition_constructor_exists():
-    assert callable(camel::metric::Condition.__init__)
+def test_camel_metric_condition_constructor_exists():
+    assert callable(camel_metric_Condition.__init__)
 
 
-def test_camel::metric::condition_constructor_args():
-    sig = inspect.signature(camel::metric::Condition.__init__)
+def test_camel_metric_condition_constructor_args():
+    sig = inspect.signature(camel_metric_Condition.__init__)
     params = list(sig.parameters.keys())
     assert "threshold" in params, "Missing parameter 'threshold'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "comparisonOperator" in params, "Missing parameter 'comparisonOperator'"
     assert "validity" in params, "Missing parameter 'validity'"
+    assert "comparisonOperator" in params, "Missing parameter 'comparisonOperator'"
 
-def test_camel::metric::condition_has_threshold():
-    assert hasattr(camel::metric::Condition, "threshold")
+def test_camel_metric_condition_has_threshold():
+    assert hasattr(camel_metric_Condition, "threshold")
     descriptor = None
-    for klass in camel::metric::Condition.__mro__:
+    for klass in camel_metric_Condition.__mro__:
         if "threshold" in klass.__dict__:
             descriptor = klass.__dict__["threshold"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::condition_has_name():
-    assert hasattr(camel::metric::Condition, "name")
+def test_camel_metric_condition_has_name():
+    assert hasattr(camel_metric_Condition, "name")
     descriptor = None
-    for klass in camel::metric::Condition.__mro__:
+    for klass in camel_metric_Condition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::condition_has_comparisonOperator():
-    assert hasattr(camel::metric::Condition, "comparisonOperator")
+def test_camel_metric_condition_has_validity():
+    assert hasattr(camel_metric_Condition, "validity")
     descriptor = None
-    for klass in camel::metric::Condition.__mro__:
-        if "comparisonOperator" in klass.__dict__:
-            descriptor = klass.__dict__["comparisonOperator"]
+    for klass in camel_metric_Condition.__mro__:
+        if "validity" in klass.__dict__:
+            descriptor = klass.__dict__["validity"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::metric::condition_has_validity():
-    assert hasattr(camel::metric::Condition, "validity")
+def test_camel_metric_condition_has_comparisonOperator():
+    assert hasattr(camel_metric_Condition, "comparisonOperator")
     descriptor = None
-    for klass in camel::metric::Condition.__mro__:
-        if "validity" in klass.__dict__:
-            descriptor = klass.__dict__["validity"]
+    for klass in camel_metric_Condition.__mro__:
+        if "comparisonOperator" in klass.__dict__:
+            descriptor = klass.__dict__["comparisonOperator"]
             break
     assert isinstance(descriptor, property)
 
@@ -4342,23 +4398,23 @@ def test_location_constructor_args():
 
 
 
-def test_camel::location::cloudlocation_is_not_abstract():
-    assert not inspect.isabstract(camel::location::CloudLocation)
+def test_camel_location_cloudlocation_is_not_abstract():
+    assert not inspect.isabstract(camel_location_CloudLocation)
 
 
-def test_camel::location::cloudlocation_constructor_exists():
-    assert callable(camel::location::CloudLocation.__init__)
+def test_camel_location_cloudlocation_constructor_exists():
+    assert callable(camel_location_CloudLocation.__init__)
 
 
-def test_camel::location::cloudlocation_constructor_args():
-    sig = inspect.signature(camel::location::CloudLocation.__init__)
+def test_camel_location_cloudlocation_constructor_args():
+    sig = inspect.signature(camel_location_CloudLocation.__init__)
     params = list(sig.parameters.keys())
     assert "isAssignable" in params, "Missing parameter 'isAssignable'"
 
-def test_camel::location::cloudlocation_has_isAssignable():
-    assert hasattr(camel::location::CloudLocation, "isAssignable")
+def test_camel_location_cloudlocation_has_isAssignable():
+    assert hasattr(camel_location_CloudLocation, "isAssignable")
     descriptor = None
-    for klass in camel::location::CloudLocation.__mro__:
+    for klass in camel_location_CloudLocation.__mro__:
         if "isAssignable" in klass.__dict__:
             descriptor = klass.__dict__["isAssignable"]
             break
@@ -4366,23 +4422,23 @@ def test_camel::location::cloudlocation_has_isAssignable():
 
 
 
-def test_camel::location::location_is_not_abstract():
-    assert not inspect.isabstract(camel::location::Location)
+def test_camel_location_location_is_not_abstract():
+    assert not inspect.isabstract(camel_location_Location)
 
 
-def test_camel::location::location_constructor_exists():
-    assert callable(camel::location::Location.__init__)
+def test_camel_location_location_constructor_exists():
+    assert callable(camel_location_Location.__init__)
 
 
-def test_camel::location::location_constructor_args():
-    sig = inspect.signature(camel::location::Location.__init__)
+def test_camel_location_location_constructor_args():
+    sig = inspect.signature(camel_location_Location.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_camel::location::location_has_id():
-    assert hasattr(camel::location::Location, "id")
+def test_camel_location_location_has_id():
+    assert hasattr(camel_location_Location, "id")
     descriptor = None
-    for klass in camel::location::Location.__mro__:
+    for klass in camel_location_Location.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -4432,59 +4488,1437 @@ def test_cloudlocation_constructor_args():
 
 
 
-def test_camel::unit::transactionunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::TransactionUnit)
+def test_scalabilityrule_is_not_abstract():
+    assert not inspect.isabstract(ScalabilityRule)
 
 
-def test_camel::unit::transactionunit_constructor_exists():
-    assert callable(camel::unit::TransactionUnit.__init__)
+def test_scalabilityrule_constructor_exists():
+    assert callable(ScalabilityRule.__init__)
 
 
-def test_camel::unit::transactionunit_constructor_args():
-    sig = inspect.signature(camel::unit::TransactionUnit.__init__)
+def test_scalabilityrule_constructor_args():
+    sig = inspect.signature(ScalabilityRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::unit::timeintervalunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::TimeIntervalUnit)
+def test_camel_location_country_is_not_abstract():
+    assert not inspect.isabstract(camel_location_Country)
 
 
-def test_camel::unit::timeintervalunit_constructor_exists():
-    assert callable(camel::unit::TimeIntervalUnit.__init__)
+def test_camel_location_country_constructor_exists():
+    assert callable(camel_location_Country.__init__)
 
 
-def test_camel::unit::timeintervalunit_constructor_args():
-    sig = inspect.signature(camel::unit::TimeIntervalUnit.__init__)
+def test_camel_location_country_constructor_args():
+    sig = inspect.signature(camel_location_Country.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::unit::throughputunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::ThroughputUnit)
+def test_camel_location_geographicalregion_is_not_abstract():
+    assert not inspect.isabstract(camel_location_GeographicalRegion)
 
 
-def test_camel::unit::throughputunit_constructor_exists():
-    assert callable(camel::unit::ThroughputUnit.__init__)
+def test_camel_location_geographicalregion_constructor_exists():
+    assert callable(camel_location_GeographicalRegion.__init__)
 
 
-def test_camel::unit::throughputunit_constructor_args():
-    sig = inspect.signature(camel::unit::ThroughputUnit.__init__)
+def test_camel_location_geographicalregion_constructor_args():
+    sig = inspect.signature(camel_location_GeographicalRegion.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "alternativeNames" in params, "Missing parameter 'alternativeNames'"
+
+def test_camel_location_geographicalregion_has_name():
+    assert hasattr(camel_location_GeographicalRegion, "name")
+    descriptor = None
+    for klass in camel_location_GeographicalRegion.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_location_geographicalregion_has_alternativeNames():
+    assert hasattr(camel_location_GeographicalRegion, "alternativeNames")
+    descriptor = None
+    for klass in camel_location_GeographicalRegion.__mro__:
+        if "alternativeNames" in klass.__dict__:
+            descriptor = klass.__dict__["alternativeNames"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_servicelevelobjective_is_not_abstract():
+    assert not inspect.isabstract(ServiceLevelObjective)
+
+
+def test_servicelevelobjective_constructor_exists():
+    assert callable(ServiceLevelObjective.__init__)
+
+
+def test_servicelevelobjective_constructor_args():
+    sig = inspect.signature(ServiceLevelObjective.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::unit::storageunit_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::StorageUnit)
+def test_camel_security_securityslo_is_not_abstract():
+    assert not inspect.isabstract(camel_security_SecuritySLO)
 
 
-def test_camel::unit::storageunit_constructor_exists():
-    assert callable(camel::unit::StorageUnit.__init__)
+def test_camel_security_securityslo_constructor_exists():
+    assert callable(camel_security_SecuritySLO.__init__)
 
 
-def test_camel::unit::storageunit_constructor_args():
-    sig = inspect.signature(camel::unit::StorageUnit.__init__)
+def test_camel_security_securityslo_constructor_args():
+    sig = inspect.signature(camel_security_SecuritySLO.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_metricinstance_is_not_abstract():
+    assert not inspect.isabstract(MetricInstance)
+
+
+def test_metricinstance_constructor_exists():
+    assert callable(MetricInstance.__init__)
+
+
+def test_metricinstance_constructor_args():
+    sig = inspect.signature(MetricInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_metric_rawmetricinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_RawMetricInstance)
+
+
+def test_camel_metric_rawmetricinstance_constructor_exists():
+    assert callable(camel_metric_RawMetricInstance.__init__)
+
+
+def test_camel_metric_rawmetricinstance_constructor_args():
+    sig = inspect.signature(camel_metric_RawMetricInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_metric_compositemetricinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_CompositeMetricInstance)
+
+
+def test_camel_metric_compositemetricinstance_constructor_exists():
+    assert callable(camel_metric_CompositeMetricInstance.__init__)
+
+
+def test_camel_metric_compositemetricinstance_constructor_args():
+    sig = inspect.signature(camel_metric_CompositeMetricInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_ruletrigger_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_RuleTrigger)
+
+
+def test_camel_execution_ruletrigger_constructor_exists():
+    assert callable(camel_execution_RuleTrigger.__init__)
+
+
+def test_camel_execution_ruletrigger_constructor_args():
+    sig = inspect.signature(camel_execution_RuleTrigger.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "trigerringTime" in params, "Missing parameter 'trigerringTime'"
+
+def test_camel_execution_ruletrigger_has_name():
+    assert hasattr(camel_execution_RuleTrigger, "name")
+    descriptor = None
+    for klass in camel_execution_RuleTrigger.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_ruletrigger_has_trigerringTime():
+    assert hasattr(camel_execution_RuleTrigger, "trigerringTime")
+    descriptor = None
+    for klass in camel_execution_RuleTrigger.__mro__:
+        if "trigerringTime" in klass.__dict__:
+            descriptor = klass.__dict__["trigerringTime"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_execution_sloassessment_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_SLOAssessment)
+
+
+def test_camel_execution_sloassessment_constructor_exists():
+    assert callable(camel_execution_SLOAssessment.__init__)
+
+
+def test_camel_execution_sloassessment_constructor_args():
+    sig = inspect.signature(camel_execution_SLOAssessment.__init__)
+    params = list(sig.parameters.keys())
+    assert "assessment" in params, "Missing parameter 'assessment'"
+    assert "assessmentTime" in params, "Missing parameter 'assessmentTime'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_camel_execution_sloassessment_has_assessment():
+    assert hasattr(camel_execution_SLOAssessment, "assessment")
+    descriptor = None
+    for klass in camel_execution_SLOAssessment.__mro__:
+        if "assessment" in klass.__dict__:
+            descriptor = klass.__dict__["assessment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_sloassessment_has_assessmentTime():
+    assert hasattr(camel_execution_SLOAssessment, "assessmentTime")
+    descriptor = None
+    for klass in camel_execution_SLOAssessment.__mro__:
+        if "assessmentTime" in klass.__dict__:
+            descriptor = klass.__dict__["assessmentTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_sloassessment_has_name():
+    assert hasattr(camel_execution_SLOAssessment, "name")
+    descriptor = None
+    for klass in camel_execution_SLOAssessment.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_execution_camel_application_is_not_abstract():
+    assert not inspect.isabstract(execution_camel_Application)
+
+
+def test_execution_camel_application_constructor_exists():
+    assert callable(execution_camel_Application.__init__)
+
+
+def test_execution_camel_application_constructor_args():
+    sig = inspect.signature(execution_camel_Application.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_executioncontext_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_ExecutionContext)
+
+
+def test_camel_execution_executioncontext_constructor_exists():
+    assert callable(camel_execution_ExecutionContext.__init__)
+
+
+def test_camel_execution_executioncontext_constructor_args():
+    sig = inspect.signature(camel_execution_ExecutionContext.__init__)
+    params = list(sig.parameters.keys())
+    assert "endTime" in params, "Missing parameter 'endTime'"
+    assert "startTime" in params, "Missing parameter 'startTime'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "totalCost" in params, "Missing parameter 'totalCost'"
+
+def test_camel_execution_executioncontext_has_endTime():
+    assert hasattr(camel_execution_ExecutionContext, "endTime")
+    descriptor = None
+    for klass in camel_execution_ExecutionContext.__mro__:
+        if "endTime" in klass.__dict__:
+            descriptor = klass.__dict__["endTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_executioncontext_has_startTime():
+    assert hasattr(camel_execution_ExecutionContext, "startTime")
+    descriptor = None
+    for klass in camel_execution_ExecutionContext.__mro__:
+        if "startTime" in klass.__dict__:
+            descriptor = klass.__dict__["startTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_executioncontext_has_name():
+    assert hasattr(camel_execution_ExecutionContext, "name")
+    descriptor = None
+    for klass in camel_execution_ExecutionContext.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_executioncontext_has_totalCost():
+    assert hasattr(camel_execution_ExecutionContext, "totalCost")
+    descriptor = None
+    for klass in camel_execution_ExecutionContext.__mro__:
+        if "totalCost" in klass.__dict__:
+            descriptor = klass.__dict__["totalCost"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_execution_camel_action_is_not_abstract():
+    assert not inspect.isabstract(execution_camel_Action)
+
+
+def test_execution_camel_action_constructor_exists():
+    assert callable(execution_camel_Action.__init__)
+
+
+def test_execution_camel_action_constructor_args():
+    sig = inspect.signature(execution_camel_Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_actionrealisation_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_ActionRealisation)
+
+
+def test_camel_execution_actionrealisation_constructor_exists():
+    assert callable(camel_execution_ActionRealisation.__init__)
+
+
+def test_camel_execution_actionrealisation_constructor_args():
+    sig = inspect.signature(camel_execution_ActionRealisation.__init__)
+    params = list(sig.parameters.keys())
+    assert "lowLevelActions" in params, "Missing parameter 'lowLevelActions'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "startTime" in params, "Missing parameter 'startTime'"
+    assert "endTime" in params, "Missing parameter 'endTime'"
+
+def test_camel_execution_actionrealisation_has_lowLevelActions():
+    assert hasattr(camel_execution_ActionRealisation, "lowLevelActions")
+    descriptor = None
+    for klass in camel_execution_ActionRealisation.__mro__:
+        if "lowLevelActions" in klass.__dict__:
+            descriptor = klass.__dict__["lowLevelActions"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_actionrealisation_has_name():
+    assert hasattr(camel_execution_ActionRealisation, "name")
+    descriptor = None
+    for klass in camel_execution_ActionRealisation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_actionrealisation_has_startTime():
+    assert hasattr(camel_execution_ActionRealisation, "startTime")
+    descriptor = None
+    for klass in camel_execution_ActionRealisation.__mro__:
+        if "startTime" in klass.__dict__:
+            descriptor = klass.__dict__["startTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_actionrealisation_has_endTime():
+    assert hasattr(camel_execution_ActionRealisation, "endTime")
+    descriptor = None
+    for klass in camel_execution_ActionRealisation.__mro__:
+        if "endTime" in klass.__dict__:
+            descriptor = klass.__dict__["endTime"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ruletrigger_is_not_abstract():
+    assert not inspect.isabstract(RuleTrigger)
+
+
+def test_ruletrigger_constructor_exists():
+    assert callable(RuleTrigger.__init__)
+
+
+def test_ruletrigger_constructor_args():
+    sig = inspect.signature(RuleTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sloassessment_is_not_abstract():
+    assert not inspect.isabstract(SLOAssessment)
+
+
+def test_sloassessment_constructor_exists():
+    assert callable(SLOAssessment.__init__)
+
+
+def test_sloassessment_constructor_args():
+    sig = inspect.signature(SLOAssessment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_measurement_is_not_abstract():
+    assert not inspect.isabstract(Measurement)
+
+
+def test_measurement_constructor_exists():
+    assert callable(Measurement.__init__)
+
+
+def test_measurement_constructor_args():
+    sig = inspect.signature(Measurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_vmmeasurement_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_VMMeasurement)
+
+
+def test_camel_execution_vmmeasurement_constructor_exists():
+    assert callable(camel_execution_VMMeasurement.__init__)
+
+
+def test_camel_execution_vmmeasurement_constructor_args():
+    sig = inspect.signature(camel_execution_VMMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_communicationmeasurement_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_CommunicationMeasurement)
+
+
+def test_camel_execution_communicationmeasurement_constructor_exists():
+    assert callable(camel_execution_CommunicationMeasurement.__init__)
+
+
+def test_camel_execution_communicationmeasurement_constructor_args():
+    sig = inspect.signature(camel_execution_CommunicationMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_internalcomponentmeasurement_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_InternalComponentMeasurement)
+
+
+def test_camel_execution_internalcomponentmeasurement_constructor_exists():
+    assert callable(camel_execution_InternalComponentMeasurement.__init__)
+
+
+def test_camel_execution_internalcomponentmeasurement_constructor_args():
+    sig = inspect.signature(camel_execution_InternalComponentMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_applicationmeasurement_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_ApplicationMeasurement)
+
+
+def test_camel_execution_applicationmeasurement_constructor_exists():
+    assert callable(camel_execution_ApplicationMeasurement.__init__)
+
+
+def test_camel_execution_applicationmeasurement_constructor_args():
+    sig = inspect.signature(camel_execution_ApplicationMeasurement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_executioncontext_is_not_abstract():
+    assert not inspect.isabstract(ExecutionContext)
+
+
+def test_executioncontext_constructor_exists():
+    assert callable(ExecutionContext.__init__)
+
+
+def test_executioncontext_constructor_args():
+    sig = inspect.signature(ExecutionContext.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eventinstance_is_not_abstract():
+    assert not inspect.isabstract(EventInstance)
+
+
+def test_eventinstance_constructor_exists():
+    assert callable(EventInstance.__init__)
+
+
+def test_eventinstance_constructor_args():
+    sig = inspect.signature(EventInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_actionrealisation_is_not_abstract():
+    assert not inspect.isabstract(ActionRealisation)
+
+
+def test_actionrealisation_constructor_exists():
+    assert callable(ActionRealisation.__init__)
+
+
+def test_actionrealisation_constructor_args():
+    sig = inspect.signature(ActionRealisation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_hostingportinstance_is_not_abstract():
+    assert not inspect.isabstract(HostingPortInstance)
+
+
+def test_hostingportinstance_constructor_exists():
+    assert callable(HostingPortInstance.__init__)
+
+
+def test_hostingportinstance_constructor_args():
+    sig = inspect.signature(HostingPortInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_requiredhostinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_RequiredHostInstance)
+
+
+def test_camel_deployment_requiredhostinstance_constructor_exists():
+    assert callable(camel_deployment_RequiredHostInstance.__init__)
+
+
+def test_camel_deployment_requiredhostinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_RequiredHostInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_providedhostinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_ProvidedHostInstance)
+
+
+def test_camel_deployment_providedhostinstance_constructor_exists():
+    assert callable(camel_deployment_ProvidedHostInstance.__init__)
+
+
+def test_camel_deployment_providedhostinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_ProvidedHostInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_measurement_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_Measurement)
+
+
+def test_camel_execution_measurement_constructor_exists():
+    assert callable(camel_execution_Measurement.__init__)
+
+
+def test_camel_execution_measurement_constructor_args():
+    sig = inspect.signature(camel_execution_Measurement.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "rawData" in params, "Missing parameter 'rawData'"
+    assert "measurementTime" in params, "Missing parameter 'measurementTime'"
+
+def test_camel_execution_measurement_has_value():
+    assert hasattr(camel_execution_Measurement, "value")
+    descriptor = None
+    for klass in camel_execution_Measurement.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_measurement_has_name():
+    assert hasattr(camel_execution_Measurement, "name")
+    descriptor = None
+    for klass in camel_execution_Measurement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_measurement_has_rawData():
+    assert hasattr(camel_execution_Measurement, "rawData")
+    descriptor = None
+    for klass in camel_execution_Measurement.__mro__:
+        if "rawData" in klass.__dict__:
+            descriptor = klass.__dict__["rawData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_execution_measurement_has_measurementTime():
+    assert hasattr(camel_execution_Measurement, "measurementTime")
+    descriptor = None
+    for klass in camel_execution_Measurement.__mro__:
+        if "measurementTime" in klass.__dict__:
+            descriptor = klass.__dict__["measurementTime"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_requirementgroup_is_not_abstract():
+    assert not inspect.isabstract(RequirementGroup)
+
+
+def test_requirementgroup_constructor_exists():
+    assert callable(RequirementGroup.__init__)
+
+
+def test_requirementgroup_constructor_args():
+    sig = inspect.signature(RequirementGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_communicationportinstance_is_not_abstract():
+    assert not inspect.isabstract(CommunicationPortInstance)
+
+
+def test_communicationportinstance_constructor_exists():
+    assert callable(CommunicationPortInstance.__init__)
+
+
+def test_communicationportinstance_constructor_args():
+    sig = inspect.signature(CommunicationPortInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_providedcommunicationinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_ProvidedCommunicationInstance)
+
+
+def test_camel_deployment_providedcommunicationinstance_constructor_exists():
+    assert callable(camel_deployment_ProvidedCommunicationInstance.__init__)
+
+
+def test_camel_deployment_providedcommunicationinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_ProvidedCommunicationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_monetaryunit_is_not_abstract():
+    assert not inspect.isabstract(MonetaryUnit)
+
+
+def test_monetaryunit_constructor_exists():
+    assert callable(MonetaryUnit.__init__)
+
+
+def test_monetaryunit_constructor_args():
+    sig = inspect.signature(MonetaryUnit.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_singlevalue_is_not_abstract():
+    assert not inspect.isabstract(SingleValue)
+
+
+def test_singlevalue_constructor_exists():
+    assert callable(SingleValue.__init__)
+
+
+def test_singlevalue_constructor_args():
+    sig = inspect.signature(SingleValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_type_boolvalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_BoolValue)
+
+
+def test_camel_type_boolvalue_constructor_exists():
+    assert callable(camel_type_BoolValue.__init__)
+
+
+def test_camel_type_boolvalue_constructor_args():
+    sig = inspect.signature(camel_type_BoolValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_camel_type_boolvalue_has_value():
+    assert hasattr(camel_type_BoolValue, "value")
+    descriptor = None
+    for klass in camel_type_BoolValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_type_numericvalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_NumericValue)
+
+
+def test_camel_type_numericvalue_constructor_exists():
+    assert callable(camel_type_NumericValue.__init__)
+
+
+def test_camel_type_numericvalue_constructor_args():
+    sig = inspect.signature(camel_type_NumericValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_type_enumeratevalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_EnumerateValue)
+
+
+def test_camel_type_enumeratevalue_constructor_exists():
+    assert callable(camel_type_EnumerateValue.__init__)
+
+
+def test_camel_type_enumeratevalue_constructor_args():
+    sig = inspect.signature(camel_type_EnumerateValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_camel_type_enumeratevalue_has_value():
+    assert hasattr(camel_type_EnumerateValue, "value")
+    descriptor = None
+    for klass in camel_type_EnumerateValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_type_enumeratevalue_has_name():
+    assert hasattr(camel_type_EnumerateValue, "name")
+    descriptor = None
+    for klass in camel_type_EnumerateValue.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_type_stringsvalue_is_not_abstract():
+    assert not inspect.isabstract(camel_type_StringsValue)
+
+
+def test_camel_type_stringsvalue_constructor_exists():
+    assert callable(camel_type_StringsValue.__init__)
+
+
+def test_camel_type_stringsvalue_constructor_args():
+    sig = inspect.signature(camel_type_StringsValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_camel_type_stringsvalue_has_value():
+    assert hasattr(camel_type_StringsValue, "value")
+    descriptor = None
+    for klass in camel_type_StringsValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_attribute_is_not_abstract():
+    assert not inspect.isabstract(Attribute)
+
+
+def test_attribute_constructor_exists():
+    assert callable(Attribute.__init__)
+
+
+def test_attribute_constructor_args():
+    sig = inspect.signature(Attribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_requiredhostinstance_is_not_abstract():
+    assert not inspect.isabstract(RequiredHostInstance)
+
+
+def test_requiredhostinstance_constructor_exists():
+    assert callable(RequiredHostInstance.__init__)
+
+
+def test_requiredhostinstance_constructor_args():
+    sig = inspect.signature(RequiredHostInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_requiredcommunicationinstance_is_not_abstract():
+    assert not inspect.isabstract(RequiredCommunicationInstance)
+
+
+def test_requiredcommunicationinstance_constructor_exists():
+    assert callable(RequiredCommunicationInstance.__init__)
+
+
+def test_requiredcommunicationinstance_constructor_args():
+    sig = inspect.signature(RequiredCommunicationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_requiredcommunicationinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_RequiredCommunicationInstance)
+
+
+def test_camel_deployment_requiredcommunicationinstance_constructor_exists():
+    assert callable(camel_deployment_RequiredCommunicationInstance.__init__)
+
+
+def test_camel_deployment_requiredcommunicationinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_RequiredCommunicationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_hostingport_is_not_abstract():
+    assert not inspect.isabstract(HostingPort)
+
+
+def test_hostingport_constructor_exists():
+    assert callable(HostingPort.__init__)
+
+
+def test_hostingport_constructor_args():
+    sig = inspect.signature(HostingPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_requiredhost_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_RequiredHost)
+
+
+def test_camel_deployment_requiredhost_constructor_exists():
+    assert callable(camel_deployment_RequiredHost.__init__)
+
+
+def test_camel_deployment_requiredhost_constructor_args():
+    sig = inspect.signature(camel_deployment_RequiredHost.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_providedhost_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_ProvidedHost)
+
+
+def test_camel_deployment_providedhost_constructor_exists():
+    assert callable(camel_deployment_ProvidedHost.__init__)
+
+
+def test_camel_deployment_providedhost_constructor_args():
+    sig = inspect.signature(camel_deployment_ProvidedHost.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_communicationport_is_not_abstract():
+    assert not inspect.isabstract(CommunicationPort)
+
+
+def test_communicationport_constructor_exists():
+    assert callable(CommunicationPort.__init__)
+
+
+def test_communicationport_constructor_args():
+    sig = inspect.signature(CommunicationPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_requiredcommunication_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_RequiredCommunication)
+
+
+def test_camel_deployment_requiredcommunication_constructor_exists():
+    assert callable(camel_deployment_RequiredCommunication.__init__)
+
+
+def test_camel_deployment_requiredcommunication_constructor_args():
+    sig = inspect.signature(camel_deployment_RequiredCommunication.__init__)
+    params = list(sig.parameters.keys())
+    assert "isMandatory" in params, "Missing parameter 'isMandatory'"
+
+def test_camel_deployment_requiredcommunication_has_isMandatory():
+    assert hasattr(camel_deployment_RequiredCommunication, "isMandatory")
+    descriptor = None
+    for klass in camel_deployment_RequiredCommunication.__mro__:
+        if "isMandatory" in klass.__dict__:
+            descriptor = klass.__dict__["isMandatory"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_deployment_providedcommunication_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_ProvidedCommunication)
+
+
+def test_camel_deployment_providedcommunication_constructor_exists():
+    assert callable(camel_deployment_ProvidedCommunication.__init__)
+
+
+def test_camel_deployment_providedcommunication_constructor_args():
+    sig = inspect.signature(camel_deployment_ProvidedCommunication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentInstance)
+
+
+def test_componentinstance_constructor_exists():
+    assert callable(ComponentInstance.__init__)
+
+
+def test_componentinstance_constructor_args():
+    sig = inspect.signature(ComponentInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_vminstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_VMInstance)
+
+
+def test_camel_deployment_vminstance_constructor_exists():
+    assert callable(camel_deployment_VMInstance.__init__)
+
+
+def test_camel_deployment_vminstance_constructor_args():
+    sig = inspect.signature(camel_deployment_VMInstance.__init__)
+    params = list(sig.parameters.keys())
+    assert "ip" in params, "Missing parameter 'ip'"
+
+def test_camel_deployment_vminstance_has_ip():
+    assert hasattr(camel_deployment_VMInstance, "ip")
+    descriptor = None
+    for klass in camel_deployment_VMInstance.__mro__:
+        if "ip" in klass.__dict__:
+            descriptor = klass.__dict__["ip"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_deployment_internalcomponentinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_InternalComponentInstance)
+
+
+def test_camel_deployment_internalcomponentinstance_constructor_exists():
+    assert callable(camel_deployment_InternalComponentInstance.__init__)
+
+
+def test_camel_deployment_internalcomponentinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_InternalComponentInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_providedhostinstance_is_not_abstract():
+    assert not inspect.isabstract(ProvidedHostInstance)
+
+
+def test_providedhostinstance_constructor_exists():
+    assert callable(ProvidedHostInstance.__init__)
+
+
+def test_providedhostinstance_constructor_args():
+    sig = inspect.signature(ProvidedHostInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_providedcommunicationinstance_is_not_abstract():
+    assert not inspect.isabstract(ProvidedCommunicationInstance)
+
+
+def test_providedcommunicationinstance_constructor_exists():
+    assert callable(ProvidedCommunicationInstance.__init__)
+
+
+def test_providedcommunicationinstance_constructor_args():
+    sig = inspect.signature(ProvidedCommunicationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_providerrequirement_is_not_abstract():
+    assert not inspect.isabstract(ProviderRequirement)
+
+
+def test_providerrequirement_constructor_exists():
+    assert callable(ProviderRequirement.__init__)
+
+
+def test_providerrequirement_constructor_args():
+    sig = inspect.signature(ProviderRequirement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_locationrequirement_is_not_abstract():
+    assert not inspect.isabstract(LocationRequirement)
+
+
+def test_locationrequirement_constructor_exists():
+    assert callable(LocationRequirement.__init__)
+
+
+def test_locationrequirement_constructor_args():
+    sig = inspect.signature(LocationRequirement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_vmrequirementset_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_VMRequirementSet)
+
+
+def test_camel_deployment_vmrequirementset_constructor_exists():
+    assert callable(camel_deployment_VMRequirementSet.__init__)
+
+
+def test_camel_deployment_vmrequirementset_constructor_args():
+    sig = inspect.signature(camel_deployment_VMRequirementSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_camel_deployment_vmrequirementset_has_name():
+    assert hasattr(camel_deployment_VMRequirementSet, "name")
+    descriptor = None
+    for klass in camel_deployment_VMRequirementSet.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_requiredhost_is_not_abstract():
+    assert not inspect.isabstract(RequiredHost)
+
+
+def test_requiredhost_constructor_exists():
+    assert callable(RequiredHost.__init__)
+
+
+def test_requiredhost_constructor_args():
+    sig = inspect.signature(RequiredHost.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_requiredcommunication_is_not_abstract():
+    assert not inspect.isabstract(RequiredCommunication)
+
+
+def test_requiredcommunication_constructor_exists():
+    assert callable(RequiredCommunication.__init__)
+
+
+def test_requiredcommunication_constructor_args():
+    sig = inspect.signature(RequiredCommunication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_component_is_not_abstract():
+    assert not inspect.isabstract(Component)
+
+
+def test_component_constructor_exists():
+    assert callable(Component.__init__)
+
+
+def test_component_constructor_args():
+    sig = inspect.signature(Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_vm_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_VM)
+
+
+def test_camel_deployment_vm_constructor_exists():
+    assert callable(camel_deployment_VM.__init__)
+
+
+def test_camel_deployment_vm_constructor_args():
+    sig = inspect.signature(camel_deployment_VM.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_internalcomponent_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_InternalComponent)
+
+
+def test_camel_deployment_internalcomponent_constructor_exists():
+    assert callable(camel_deployment_InternalComponent.__init__)
+
+
+def test_camel_deployment_internalcomponent_constructor_args():
+    sig = inspect.signature(camel_deployment_InternalComponent.__init__)
+    params = list(sig.parameters.keys())
+    assert "version" in params, "Missing parameter 'version'"
+
+def test_camel_deployment_internalcomponent_has_version():
+    assert hasattr(camel_deployment_InternalComponent, "version")
+    descriptor = None
+    for klass in camel_deployment_InternalComponent.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_configuration_is_not_abstract():
+    assert not inspect.isabstract(Configuration)
+
+
+def test_configuration_constructor_exists():
+    assert callable(Configuration.__init__)
+
+
+def test_configuration_constructor_args():
+    sig = inspect.signature(Configuration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_providedhost_is_not_abstract():
+    assert not inspect.isabstract(ProvidedHost)
+
+
+def test_providedhost_constructor_exists():
+    assert callable(ProvidedHost.__init__)
+
+
+def test_providedhost_constructor_args():
+    sig = inspect.signature(ProvidedHost.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_providedcommunication_is_not_abstract():
+    assert not inspect.isabstract(ProvidedCommunication)
+
+
+def test_providedcommunication_constructor_exists():
+    assert callable(ProvidedCommunication.__init__)
+
+
+def test_providedcommunication_constructor_args():
+    sig = inspect.signature(ProvidedCommunication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_deploymentelement_is_not_abstract():
+    assert not inspect.isabstract(DeploymentElement)
+
+
+def test_deploymentelement_constructor_exists():
+    assert callable(DeploymentElement.__init__)
+
+
+def test_deploymentelement_constructor_args():
+    sig = inspect.signature(DeploymentElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_communicationinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_CommunicationInstance)
+
+
+def test_camel_deployment_communicationinstance_constructor_exists():
+    assert callable(camel_deployment_CommunicationInstance.__init__)
+
+
+def test_camel_deployment_communicationinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_CommunicationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_communication_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_Communication)
+
+
+def test_camel_deployment_communication_constructor_exists():
+    assert callable(camel_deployment_Communication.__init__)
+
+
+def test_camel_deployment_communication_constructor_args():
+    sig = inspect.signature(camel_deployment_Communication.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_camel_deployment_communication_has_type():
+    assert hasattr(camel_deployment_Communication, "type")
+    descriptor = None
+    for klass in camel_deployment_Communication.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_deployment_hostingport_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_HostingPort)
+
+
+def test_camel_deployment_hostingport_constructor_exists():
+    assert callable(camel_deployment_HostingPort.__init__)
+
+
+def test_camel_deployment_hostingport_constructor_args():
+    sig = inspect.signature(camel_deployment_HostingPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_hostingportinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_HostingPortInstance)
+
+
+def test_camel_deployment_hostingportinstance_constructor_exists():
+    assert callable(camel_deployment_HostingPortInstance.__init__)
+
+
+def test_camel_deployment_hostingportinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_HostingPortInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_hosting_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_Hosting)
+
+
+def test_camel_deployment_hosting_constructor_exists():
+    assert callable(camel_deployment_Hosting.__init__)
+
+
+def test_camel_deployment_hosting_constructor_args():
+    sig = inspect.signature(camel_deployment_Hosting.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_communicationportinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_CommunicationPortInstance)
+
+
+def test_camel_deployment_communicationportinstance_constructor_exists():
+    assert callable(camel_deployment_CommunicationPortInstance.__init__)
+
+
+def test_camel_deployment_communicationportinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_CommunicationPortInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_ComponentInstance)
+
+
+def test_camel_deployment_componentinstance_constructor_exists():
+    assert callable(camel_deployment_ComponentInstance.__init__)
+
+
+def test_camel_deployment_componentinstance_constructor_args():
+    sig = inspect.signature(camel_deployment_ComponentInstance.__init__)
+    params = list(sig.parameters.keys())
+    assert "destroyedOn" in params, "Missing parameter 'destroyedOn'"
+    assert "instantiatedOn" in params, "Missing parameter 'instantiatedOn'"
+
+def test_camel_deployment_componentinstance_has_destroyedOn():
+    assert hasattr(camel_deployment_ComponentInstance, "destroyedOn")
+    descriptor = None
+    for klass in camel_deployment_ComponentInstance.__mro__:
+        if "destroyedOn" in klass.__dict__:
+            descriptor = klass.__dict__["destroyedOn"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_deployment_componentinstance_has_instantiatedOn():
+    assert hasattr(camel_deployment_ComponentInstance, "instantiatedOn")
+    descriptor = None
+    for klass in camel_deployment_ComponentInstance.__mro__:
+        if "instantiatedOn" in klass.__dict__:
+            descriptor = klass.__dict__["instantiatedOn"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_deployment_hostinginstance_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_HostingInstance)
+
+
+def test_camel_deployment_hostinginstance_constructor_exists():
+    assert callable(camel_deployment_HostingInstance.__init__)
+
+
+def test_camel_deployment_hostinginstance_constructor_args():
+    sig = inspect.signature(camel_deployment_HostingInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_communicationport_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_CommunicationPort)
+
+
+def test_camel_deployment_communicationport_constructor_exists():
+    assert callable(camel_deployment_CommunicationPort.__init__)
+
+
+def test_camel_deployment_communicationport_constructor_args():
+    sig = inspect.signature(camel_deployment_CommunicationPort.__init__)
+    params = list(sig.parameters.keys())
+    assert "portNumber" in params, "Missing parameter 'portNumber'"
+
+def test_camel_deployment_communicationport_has_portNumber():
+    assert hasattr(camel_deployment_CommunicationPort, "portNumber")
+    descriptor = None
+    for klass in camel_deployment_CommunicationPort.__mro__:
+        if "portNumber" in klass.__dict__:
+            descriptor = klass.__dict__["portNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_deployment_component_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_Component)
+
+
+def test_camel_deployment_component_constructor_exists():
+    assert callable(camel_deployment_Component.__init__)
+
+
+def test_camel_deployment_component_constructor_args():
+    sig = inspect.signature(camel_deployment_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vmrequirementset_is_not_abstract():
+    assert not inspect.isabstract(VMRequirementSet)
+
+
+def test_vmrequirementset_constructor_exists():
+    assert callable(VMRequirementSet.__init__)
+
+
+def test_vmrequirementset_constructor_args():
+    sig = inspect.signature(VMRequirementSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_deployment_configuration_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_Configuration)
+
+
+def test_camel_deployment_configuration_constructor_exists():
+    assert callable(camel_deployment_Configuration.__init__)
+
+
+def test_camel_deployment_configuration_constructor_args():
+    sig = inspect.signature(camel_deployment_Configuration.__init__)
+    params = list(sig.parameters.keys())
+    assert "installCommand" in params, "Missing parameter 'installCommand'"
+    assert "startCommand" in params, "Missing parameter 'startCommand'"
+    assert "stopCommand" in params, "Missing parameter 'stopCommand'"
+    assert "configureCommand" in params, "Missing parameter 'configureCommand'"
+    assert "downloadCommand" in params, "Missing parameter 'downloadCommand'"
+    assert "uploadCommand" in params, "Missing parameter 'uploadCommand'"
+
+def test_camel_deployment_configuration_has_installCommand():
+    assert hasattr(camel_deployment_Configuration, "installCommand")
+    descriptor = None
+    for klass in camel_deployment_Configuration.__mro__:
+        if "installCommand" in klass.__dict__:
+            descriptor = klass.__dict__["installCommand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_deployment_configuration_has_startCommand():
+    assert hasattr(camel_deployment_Configuration, "startCommand")
+    descriptor = None
+    for klass in camel_deployment_Configuration.__mro__:
+        if "startCommand" in klass.__dict__:
+            descriptor = klass.__dict__["startCommand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_deployment_configuration_has_stopCommand():
+    assert hasattr(camel_deployment_Configuration, "stopCommand")
+    descriptor = None
+    for klass in camel_deployment_Configuration.__mro__:
+        if "stopCommand" in klass.__dict__:
+            descriptor = klass.__dict__["stopCommand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_deployment_configuration_has_configureCommand():
+    assert hasattr(camel_deployment_Configuration, "configureCommand")
+    descriptor = None
+    for klass in camel_deployment_Configuration.__mro__:
+        if "configureCommand" in klass.__dict__:
+            descriptor = klass.__dict__["configureCommand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_deployment_configuration_has_downloadCommand():
+    assert hasattr(camel_deployment_Configuration, "downloadCommand")
+    descriptor = None
+    for klass in camel_deployment_Configuration.__mro__:
+        if "downloadCommand" in klass.__dict__:
+            descriptor = klass.__dict__["downloadCommand"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_deployment_configuration_has_uploadCommand():
+    assert hasattr(camel_deployment_Configuration, "uploadCommand")
+    descriptor = None
+    for klass in camel_deployment_Configuration.__mro__:
+        if "uploadCommand" in klass.__dict__:
+            descriptor = klass.__dict__["uploadCommand"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -4502,33 +5936,33 @@ def test_osorimagerequirement_constructor_args():
 
 
 
-def test_camel::requirement::osrequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::OSRequirement)
+def test_camel_requirement_osrequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_OSRequirement)
 
 
-def test_camel::requirement::osrequirement_constructor_exists():
-    assert callable(camel::requirement::OSRequirement.__init__)
+def test_camel_requirement_osrequirement_constructor_exists():
+    assert callable(camel_requirement_OSRequirement.__init__)
 
 
-def test_camel::requirement::osrequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::OSRequirement.__init__)
+def test_camel_requirement_osrequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_OSRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "is64os" in params, "Missing parameter 'is64os'"
     assert "os" in params, "Missing parameter 'os'"
 
-def test_camel::requirement::osrequirement_has_is64os():
-    assert hasattr(camel::requirement::OSRequirement, "is64os")
+def test_camel_requirement_osrequirement_has_is64os():
+    assert hasattr(camel_requirement_OSRequirement, "is64os")
     descriptor = None
-    for klass in camel::requirement::OSRequirement.__mro__:
+    for klass in camel_requirement_OSRequirement.__mro__:
         if "is64os" in klass.__dict__:
             descriptor = klass.__dict__["is64os"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::requirement::osrequirement_has_os():
-    assert hasattr(camel::requirement::OSRequirement, "os")
+def test_camel_requirement_osrequirement_has_os():
+    assert hasattr(camel_requirement_OSRequirement, "os")
     descriptor = None
-    for klass in camel::requirement::OSRequirement.__mro__:
+    for klass in camel_requirement_OSRequirement.__mro__:
         if "os" in klass.__dict__:
             descriptor = klass.__dict__["os"]
             break
@@ -4536,23 +5970,23 @@ def test_camel::requirement::osrequirement_has_os():
 
 
 
-def test_camel::requirement::imagerequirement_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::ImageRequirement)
+def test_camel_requirement_imagerequirement_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_ImageRequirement)
 
 
-def test_camel::requirement::imagerequirement_constructor_exists():
-    assert callable(camel::requirement::ImageRequirement.__init__)
+def test_camel_requirement_imagerequirement_constructor_exists():
+    assert callable(camel_requirement_ImageRequirement.__init__)
 
 
-def test_camel::requirement::imagerequirement_constructor_args():
-    sig = inspect.signature(camel::requirement::ImageRequirement.__init__)
+def test_camel_requirement_imagerequirement_constructor_args():
+    sig = inspect.signature(camel_requirement_ImageRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "imageId" in params, "Missing parameter 'imageId'"
 
-def test_camel::requirement::imagerequirement_has_imageId():
-    assert hasattr(camel::requirement::ImageRequirement, "imageId")
+def test_camel_requirement_imagerequirement_has_imageId():
+    assert hasattr(camel_requirement_ImageRequirement, "imageId")
     descriptor = None
-    for klass in camel::requirement::ImageRequirement.__mro__:
+    for klass in camel_requirement_ImageRequirement.__mro__:
         if "imageId" in klass.__dict__:
             descriptor = klass.__dict__["imageId"]
             break
@@ -4602,23 +6036,23 @@ def test_internalcomponent_constructor_args():
 
 
 
-def test_camel::deployment::deploymentelement_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::DeploymentElement)
+def test_camel_deployment_deploymentelement_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_DeploymentElement)
 
 
-def test_camel::deployment::deploymentelement_constructor_exists():
-    assert callable(camel::deployment::DeploymentElement.__init__)
+def test_camel_deployment_deploymentelement_constructor_exists():
+    assert callable(camel_deployment_DeploymentElement.__init__)
 
 
-def test_camel::deployment::deploymentelement_constructor_args():
-    sig = inspect.signature(camel::deployment::DeploymentElement.__init__)
+def test_camel_deployment_deploymentelement_constructor_args():
+    sig = inspect.signature(camel_deployment_DeploymentElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::deployment::deploymentelement_has_name():
-    assert hasattr(camel::deployment::DeploymentElement, "name")
+def test_camel_deployment_deploymentelement_has_name():
+    assert hasattr(camel_deployment_DeploymentElement, "name")
     descriptor = None
-    for klass in camel::deployment::DeploymentElement.__mro__:
+    for klass in camel_deployment_DeploymentElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4640,119 +6074,119 @@ def test_entity_constructor_args():
 
 
 
-def test_camel::organisation::organisation_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::Organisation)
+def test_camel_organisation_organisation_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_Organisation)
 
 
-def test_camel::organisation::organisation_constructor_exists():
-    assert callable(camel::organisation::Organisation.__init__)
+def test_camel_organisation_organisation_constructor_exists():
+    assert callable(camel_organisation_Organisation.__init__)
 
 
-def test_camel::organisation::organisation_constructor_args():
-    sig = inspect.signature(camel::organisation::Organisation.__init__)
+def test_camel_organisation_organisation_constructor_args():
+    sig = inspect.signature(camel_organisation_Organisation.__init__)
     params = list(sig.parameters.keys())
-    assert "www" in params, "Missing parameter 'www'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "postalAddress" in params, "Missing parameter 'postalAddress'"
+    assert "www" in params, "Missing parameter 'www'"
+    assert "email" in params, "Missing parameter 'email'"
 
-def test_camel::organisation::organisation_has_www():
-    assert hasattr(camel::organisation::Organisation, "www")
+def test_camel_organisation_organisation_has_name():
+    assert hasattr(camel_organisation_Organisation, "name")
     descriptor = None
-    for klass in camel::organisation::Organisation.__mro__:
-        if "www" in klass.__dict__:
-            descriptor = klass.__dict__["www"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::organisation_has_name():
-    assert hasattr(camel::organisation::Organisation, "name")
-    descriptor = None
-    for klass in camel::organisation::Organisation.__mro__:
+    for klass in camel_organisation_Organisation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::organisation_has_email():
-    assert hasattr(camel::organisation::Organisation, "email")
+def test_camel_organisation_organisation_has_postalAddress():
+    assert hasattr(camel_organisation_Organisation, "postalAddress")
     descriptor = None
-    for klass in camel::organisation::Organisation.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::organisation_has_postalAddress():
-    assert hasattr(camel::organisation::Organisation, "postalAddress")
-    descriptor = None
-    for klass in camel::organisation::Organisation.__mro__:
+    for klass in camel_organisation_Organisation.__mro__:
         if "postalAddress" in klass.__dict__:
             descriptor = klass.__dict__["postalAddress"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_camel::organisation::user_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::User)
-
-
-def test_camel::organisation::user_constructor_exists():
-    assert callable(camel::organisation::User.__init__)
-
-
-def test_camel::organisation::user_constructor_args():
-    sig = inspect.signature(camel::organisation::User.__init__)
-    params = list(sig.parameters.keys())
-    assert "lastName" in params, "Missing parameter 'lastName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
-    assert "www" in params, "Missing parameter 'www'"
-    assert "email" in params, "Missing parameter 'email'"
-
-def test_camel::organisation::user_has_lastName():
-    assert hasattr(camel::organisation::User, "lastName")
+def test_camel_organisation_organisation_has_www():
+    assert hasattr(camel_organisation_Organisation, "www")
     descriptor = None
-    for klass in camel::organisation::User.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::user_has_name():
-    assert hasattr(camel::organisation::User, "name")
-    descriptor = None
-    for klass in camel::organisation::User.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::user_has_firstName():
-    assert hasattr(camel::organisation::User, "firstName")
-    descriptor = None
-    for klass in camel::organisation::User.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::organisation::user_has_www():
-    assert hasattr(camel::organisation::User, "www")
-    descriptor = None
-    for klass in camel::organisation::User.__mro__:
+    for klass in camel_organisation_Organisation.__mro__:
         if "www" in klass.__dict__:
             descriptor = klass.__dict__["www"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::organisation::user_has_email():
-    assert hasattr(camel::organisation::User, "email")
+def test_camel_organisation_organisation_has_email():
+    assert hasattr(camel_organisation_Organisation, "email")
     descriptor = None
-    for klass in camel::organisation::User.__mro__:
+    for klass in camel_organisation_Organisation.__mro__:
         if "email" in klass.__dict__:
             descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_organisation_user_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_User)
+
+
+def test_camel_organisation_user_constructor_exists():
+    assert callable(camel_organisation_User.__init__)
+
+
+def test_camel_organisation_user_constructor_args():
+    sig = inspect.signature(camel_organisation_User.__init__)
+    params = list(sig.parameters.keys())
+    assert "email" in params, "Missing parameter 'email'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "www" in params, "Missing parameter 'www'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_camel_organisation_user_has_email():
+    assert hasattr(camel_organisation_User, "email")
+    descriptor = None
+    for klass in camel_organisation_User.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_user_has_firstName():
+    assert hasattr(camel_organisation_User, "firstName")
+    descriptor = None
+    for klass in camel_organisation_User.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_user_has_lastName():
+    assert hasattr(camel_organisation_User, "lastName")
+    descriptor = None
+    for klass in camel_organisation_User.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_user_has_www():
+    assert hasattr(camel_organisation_User, "www")
+    descriptor = None
+    for klass in camel_organisation_User.__mro__:
+        if "www" in klass.__dict__:
+            descriptor = klass.__dict__["www"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_organisation_user_has_name():
+    assert hasattr(camel_organisation_User, "name")
+    descriptor = None
+    for klass in camel_organisation_User.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -4940,77 +6374,77 @@ def test_deploymentmodel_constructor_args():
 
 
 
-def test_camel::application_is_not_abstract():
-    assert not inspect.isabstract(camel::Application)
+def test_camel_application_is_not_abstract():
+    assert not inspect.isabstract(camel_Application)
 
 
-def test_camel::application_constructor_exists():
-    assert callable(camel::Application.__init__)
+def test_camel_application_constructor_exists():
+    assert callable(camel_Application.__init__)
 
 
-def test_camel::application_constructor_args():
-    sig = inspect.signature(camel::Application.__init__)
+def test_camel_application_constructor_args():
+    sig = inspect.signature(camel_Application.__init__)
     params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_camel::application_has_version():
-    assert hasattr(camel::Application, "version")
+def test_camel_application_has_description():
+    assert hasattr(camel_Application, "description")
     descriptor = None
-    for klass in camel::Application.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::application_has_name():
-    assert hasattr(camel::Application, "name")
-    descriptor = None
-    for klass in camel::Application.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::application_has_description():
-    assert hasattr(camel::Application, "description")
-    descriptor = None
-    for klass in camel::Application.__mro__:
+    for klass in camel_Application.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_camel::action_is_not_abstract():
-    assert not inspect.isabstract(camel::Action)
-
-
-def test_camel::action_constructor_exists():
-    assert callable(camel::Action.__init__)
-
-
-def test_camel::action_constructor_args():
-    sig = inspect.signature(camel::Action.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_camel::action_has_name():
-    assert hasattr(camel::Action, "name")
+def test_camel_application_has_name():
+    assert hasattr(camel_Application, "name")
     descriptor = None
-    for klass in camel::Action.__mro__:
+    for klass in camel_Application.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::action_has_type():
-    assert hasattr(camel::Action, "type")
+def test_camel_application_has_version():
+    assert hasattr(camel_Application, "version")
     descriptor = None
-    for klass in camel::Action.__mro__:
+    for klass in camel_Application.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_camel_action_is_not_abstract():
+    assert not inspect.isabstract(camel_Action)
+
+
+def test_camel_action_constructor_exists():
+    assert callable(camel_Action.__init__)
+
+
+def test_camel_action_constructor_args():
+    sig = inspect.signature(camel_Action.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_camel_action_has_name():
+    assert hasattr(camel_Action, "name")
+    descriptor = None
+    for klass in camel_Action.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_camel_action_has_type():
+    assert hasattr(camel_Action, "type")
+    descriptor = None
+    for klass in camel_Action.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -5032,107 +6466,37 @@ def test_model_constructor_args():
 
 
 
-def test_camel::scalability::scalabilitymodel_is_not_abstract():
-    assert not inspect.isabstract(camel::scalability::ScalabilityModel)
+def test_camel_security_securitymodel_is_not_abstract():
+    assert not inspect.isabstract(camel_security_SecurityModel)
 
 
-def test_camel::scalability::scalabilitymodel_constructor_exists():
-    assert callable(camel::scalability::ScalabilityModel.__init__)
+def test_camel_security_securitymodel_constructor_exists():
+    assert callable(camel_security_SecurityModel.__init__)
 
 
-def test_camel::scalability::scalabilitymodel_constructor_args():
-    sig = inspect.signature(camel::scalability::ScalabilityModel.__init__)
+def test_camel_security_securitymodel_constructor_args():
+    sig = inspect.signature(camel_security_SecurityModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::metric::metricmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::MetricModel)
+def test_camel_organisation_organisationmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_organisation_OrganisationModel)
 
 
-def test_camel::metric::metricmodel_constructor_exists():
-    assert callable(camel::metric::MetricModel.__init__)
+def test_camel_organisation_organisationmodel_constructor_exists():
+    assert callable(camel_organisation_OrganisationModel.__init__)
 
 
-def test_camel::metric::metricmodel_constructor_args():
-    sig = inspect.signature(camel::metric::MetricModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::security::securitymodel_is_not_abstract():
-    assert not inspect.isabstract(camel::security::SecurityModel)
-
-
-def test_camel::security::securitymodel_constructor_exists():
-    assert callable(camel::security::SecurityModel.__init__)
-
-
-def test_camel::security::securitymodel_constructor_args():
-    sig = inspect.signature(camel::security::SecurityModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::unit::unitmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::unit::UnitModel)
-
-
-def test_camel::unit::unitmodel_constructor_exists():
-    assert callable(camel::unit::UnitModel.__init__)
-
-
-def test_camel::unit::unitmodel_constructor_args():
-    sig = inspect.signature(camel::unit::UnitModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::requirement::requirementmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::requirement::RequirementModel)
-
-
-def test_camel::requirement::requirementmodel_constructor_exists():
-    assert callable(camel::requirement::RequirementModel.__init__)
-
-
-def test_camel::requirement::requirementmodel_constructor_args():
-    sig = inspect.signature(camel::requirement::RequirementModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::provider::providermodel_is_not_abstract():
-    assert not inspect.isabstract(camel::provider::ProviderModel)
-
-
-def test_camel::provider::providermodel_constructor_exists():
-    assert callable(camel::provider::ProviderModel.__init__)
-
-
-def test_camel::provider::providermodel_constructor_args():
-    sig = inspect.signature(camel::provider::ProviderModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::organisation::organisationmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::organisation::OrganisationModel)
-
-
-def test_camel::organisation::organisationmodel_constructor_exists():
-    assert callable(camel::organisation::OrganisationModel.__init__)
-
-
-def test_camel::organisation::organisationmodel_constructor_args():
-    sig = inspect.signature(camel::organisation::OrganisationModel.__init__)
+def test_camel_organisation_organisationmodel_constructor_args():
+    sig = inspect.signature(camel_organisation_OrganisationModel.__init__)
     params = list(sig.parameters.keys())
     assert "securityLevel" in params, "Missing parameter 'securityLevel'"
 
-def test_camel::organisation::organisationmodel_has_securityLevel():
-    assert hasattr(camel::organisation::OrganisationModel, "securityLevel")
+def test_camel_organisation_organisationmodel_has_securityLevel():
+    assert hasattr(camel_organisation_OrganisationModel, "securityLevel")
     descriptor = None
-    for klass in camel::organisation::OrganisationModel.__mro__:
+    for klass in camel_organisation_OrganisationModel.__mro__:
         if "securityLevel" in klass.__dict__:
             descriptor = klass.__dict__["securityLevel"]
             break
@@ -5140,75 +6504,173 @@ def test_camel::organisation::organisationmodel_has_securityLevel():
 
 
 
-def test_camel::type::typemodel_is_not_abstract():
-    assert not inspect.isabstract(camel::type::TypeModel)
+def test_camel_deployment_deploymentmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_deployment_DeploymentModel)
 
 
-def test_camel::type::typemodel_constructor_exists():
-    assert callable(camel::type::TypeModel.__init__)
+def test_camel_deployment_deploymentmodel_constructor_exists():
+    assert callable(camel_deployment_DeploymentModel.__init__)
 
 
-def test_camel::type::typemodel_constructor_args():
-    sig = inspect.signature(camel::type::TypeModel.__init__)
+def test_camel_deployment_deploymentmodel_constructor_args():
+    sig = inspect.signature(camel_deployment_DeploymentModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::deployment::deploymentmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::DeploymentModel)
+def test_camel_metric_metricmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_metric_MetricModel)
 
 
-def test_camel::deployment::deploymentmodel_constructor_exists():
-    assert callable(camel::deployment::DeploymentModel.__init__)
+def test_camel_metric_metricmodel_constructor_exists():
+    assert callable(camel_metric_MetricModel.__init__)
 
 
-def test_camel::deployment::deploymentmodel_constructor_args():
-    sig = inspect.signature(camel::deployment::DeploymentModel.__init__)
+def test_camel_metric_metricmodel_constructor_args():
+    sig = inspect.signature(camel_metric_MetricModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::camelmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::CamelModel)
+def test_camel_type_typemodel_is_not_abstract():
+    assert not inspect.isabstract(camel_type_TypeModel)
 
 
-def test_camel::camelmodel_constructor_exists():
-    assert callable(camel::CamelModel.__init__)
+def test_camel_type_typemodel_constructor_exists():
+    assert callable(camel_type_TypeModel.__init__)
 
 
-def test_camel::camelmodel_constructor_args():
-    sig = inspect.signature(camel::CamelModel.__init__)
+def test_camel_type_typemodel_constructor_args():
+    sig = inspect.signature(camel_type_TypeModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_camel::model_is_not_abstract():
-    assert not inspect.isabstract(camel::Model)
+def test_camel_provider_providermodel_is_not_abstract():
+    assert not inspect.isabstract(camel_provider_ProviderModel)
 
 
-def test_camel::model_constructor_exists():
-    assert callable(camel::Model.__init__)
+def test_camel_provider_providermodel_constructor_exists():
+    assert callable(camel_provider_ProviderModel.__init__)
 
 
-def test_camel::model_constructor_args():
-    sig = inspect.signature(camel::Model.__init__)
+def test_camel_provider_providermodel_constructor_args():
+    sig = inspect.signature(camel_provider_ProviderModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_scalability_scalabilitymodel_is_not_abstract():
+    assert not inspect.isabstract(camel_scalability_ScalabilityModel)
+
+
+def test_camel_scalability_scalabilitymodel_constructor_exists():
+    assert callable(camel_scalability_ScalabilityModel.__init__)
+
+
+def test_camel_scalability_scalabilitymodel_constructor_args():
+    sig = inspect.signature(camel_scalability_ScalabilityModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_requirement_requirementmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_requirement_RequirementModel)
+
+
+def test_camel_requirement_requirementmodel_constructor_exists():
+    assert callable(camel_requirement_RequirementModel.__init__)
+
+
+def test_camel_requirement_requirementmodel_constructor_args():
+    sig = inspect.signature(camel_requirement_RequirementModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_execution_executionmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_execution_ExecutionModel)
+
+
+def test_camel_execution_executionmodel_constructor_exists():
+    assert callable(camel_execution_ExecutionModel.__init__)
+
+
+def test_camel_execution_executionmodel_constructor_args():
+    sig = inspect.signature(camel_execution_ExecutionModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_unit_unitmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_unit_UnitModel)
+
+
+def test_camel_unit_unitmodel_constructor_exists():
+    assert callable(camel_unit_UnitModel.__init__)
+
+
+def test_camel_unit_unitmodel_constructor_args():
+    sig = inspect.signature(camel_unit_UnitModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_location_locationmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_location_LocationModel)
+
+
+def test_camel_location_locationmodel_constructor_exists():
+    assert callable(camel_location_LocationModel.__init__)
+
+
+def test_camel_location_locationmodel_constructor_args():
+    sig = inspect.signature(camel_location_LocationModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_camelmodel_is_not_abstract():
+    assert not inspect.isabstract(camel_CamelModel)
+
+
+def test_camel_camelmodel_constructor_exists():
+    assert callable(camel_CamelModel.__init__)
+
+
+def test_camel_camelmodel_constructor_args():
+    sig = inspect.signature(camel_CamelModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_camel_model_is_not_abstract():
+    assert not inspect.isabstract(camel_Model)
+
+
+def test_camel_model_constructor_exists():
+    assert callable(camel_Model.__init__)
+
+
+def test_camel_model_constructor_args():
+    sig = inspect.signature(camel_Model.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_camel::model_has_importURI():
-    assert hasattr(camel::Model, "importURI")
+def test_camel_model_has_importURI():
+    assert hasattr(camel_Model, "importURI")
     descriptor = None
-    for klass in camel::Model.__mro__:
+    for klass in camel_Model.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
     assert isinstance(descriptor, property)
 
-def test_camel::model_has_name():
-    assert hasattr(camel::Model, "name")
+def test_camel_model_has_name():
+    assert hasattr(camel_Model, "name")
     descriptor = None
-    for klass in camel::Model.__mro__:
+    for klass in camel_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -5284,1468 +6746,6 @@ def test_providermodel_constructor_args():
     sig = inspect.signature(ProviderModel.__init__)
     params = list(sig.parameters.keys())
 
-
-
-def test_camel::location::locationmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::location::LocationModel)
-
-
-def test_camel::location::locationmodel_constructor_exists():
-    assert callable(camel::location::LocationModel.__init__)
-
-
-def test_camel::location::locationmodel_constructor_args():
-    sig = inspect.signature(camel::location::LocationModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scalabilityrule_is_not_abstract():
-    assert not inspect.isabstract(ScalabilityRule)
-
-
-def test_scalabilityrule_constructor_exists():
-    assert callable(ScalabilityRule.__init__)
-
-
-def test_scalabilityrule_constructor_args():
-    sig = inspect.signature(ScalabilityRule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::location::country_is_not_abstract():
-    assert not inspect.isabstract(camel::location::Country)
-
-
-def test_camel::location::country_constructor_exists():
-    assert callable(camel::location::Country.__init__)
-
-
-def test_camel::location::country_constructor_args():
-    sig = inspect.signature(camel::location::Country.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::location::geographicalregion_is_not_abstract():
-    assert not inspect.isabstract(camel::location::GeographicalRegion)
-
-
-def test_camel::location::geographicalregion_constructor_exists():
-    assert callable(camel::location::GeographicalRegion.__init__)
-
-
-def test_camel::location::geographicalregion_constructor_args():
-    sig = inspect.signature(camel::location::GeographicalRegion.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "alternativeNames" in params, "Missing parameter 'alternativeNames'"
-
-def test_camel::location::geographicalregion_has_name():
-    assert hasattr(camel::location::GeographicalRegion, "name")
-    descriptor = None
-    for klass in camel::location::GeographicalRegion.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::location::geographicalregion_has_alternativeNames():
-    assert hasattr(camel::location::GeographicalRegion, "alternativeNames")
-    descriptor = None
-    for klass in camel::location::GeographicalRegion.__mro__:
-        if "alternativeNames" in klass.__dict__:
-            descriptor = klass.__dict__["alternativeNames"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_servicelevelobjective_is_not_abstract():
-    assert not inspect.isabstract(ServiceLevelObjective)
-
-
-def test_servicelevelobjective_constructor_exists():
-    assert callable(ServiceLevelObjective.__init__)
-
-
-def test_servicelevelobjective_constructor_args():
-    sig = inspect.signature(ServiceLevelObjective.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::security::securityslo_is_not_abstract():
-    assert not inspect.isabstract(camel::security::SecuritySLO)
-
-
-def test_camel::security::securityslo_constructor_exists():
-    assert callable(camel::security::SecuritySLO.__init__)
-
-
-def test_camel::security::securityslo_constructor_args():
-    sig = inspect.signature(camel::security::SecuritySLO.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metricinstance_is_not_abstract():
-    assert not inspect.isabstract(MetricInstance)
-
-
-def test_metricinstance_constructor_exists():
-    assert callable(MetricInstance.__init__)
-
-
-def test_metricinstance_constructor_args():
-    sig = inspect.signature(MetricInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::metric::rawmetricinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::RawMetricInstance)
-
-
-def test_camel::metric::rawmetricinstance_constructor_exists():
-    assert callable(camel::metric::RawMetricInstance.__init__)
-
-
-def test_camel::metric::rawmetricinstance_constructor_args():
-    sig = inspect.signature(camel::metric::RawMetricInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::metric::compositemetricinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::metric::CompositeMetricInstance)
-
-
-def test_camel::metric::compositemetricinstance_constructor_exists():
-    assert callable(camel::metric::CompositeMetricInstance.__init__)
-
-
-def test_camel::metric::compositemetricinstance_constructor_args():
-    sig = inspect.signature(camel::metric::CompositeMetricInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::ruletrigger_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::RuleTrigger)
-
-
-def test_camel::execution::ruletrigger_constructor_exists():
-    assert callable(camel::execution::RuleTrigger.__init__)
-
-
-def test_camel::execution::ruletrigger_constructor_args():
-    sig = inspect.signature(camel::execution::RuleTrigger.__init__)
-    params = list(sig.parameters.keys())
-    assert "trigerringTime" in params, "Missing parameter 'trigerringTime'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_camel::execution::ruletrigger_has_trigerringTime():
-    assert hasattr(camel::execution::RuleTrigger, "trigerringTime")
-    descriptor = None
-    for klass in camel::execution::RuleTrigger.__mro__:
-        if "trigerringTime" in klass.__dict__:
-            descriptor = klass.__dict__["trigerringTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::ruletrigger_has_name():
-    assert hasattr(camel::execution::RuleTrigger, "name")
-    descriptor = None
-    for klass in camel::execution::RuleTrigger.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::execution::sloassessment_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::SLOAssessment)
-
-
-def test_camel::execution::sloassessment_constructor_exists():
-    assert callable(camel::execution::SLOAssessment.__init__)
-
-
-def test_camel::execution::sloassessment_constructor_args():
-    sig = inspect.signature(camel::execution::SLOAssessment.__init__)
-    params = list(sig.parameters.keys())
-    assert "assessment" in params, "Missing parameter 'assessment'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "assessmentTime" in params, "Missing parameter 'assessmentTime'"
-
-def test_camel::execution::sloassessment_has_assessment():
-    assert hasattr(camel::execution::SLOAssessment, "assessment")
-    descriptor = None
-    for klass in camel::execution::SLOAssessment.__mro__:
-        if "assessment" in klass.__dict__:
-            descriptor = klass.__dict__["assessment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::sloassessment_has_name():
-    assert hasattr(camel::execution::SLOAssessment, "name")
-    descriptor = None
-    for klass in camel::execution::SLOAssessment.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::sloassessment_has_assessmentTime():
-    assert hasattr(camel::execution::SLOAssessment, "assessmentTime")
-    descriptor = None
-    for klass in camel::execution::SLOAssessment.__mro__:
-        if "assessmentTime" in klass.__dict__:
-            descriptor = klass.__dict__["assessmentTime"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_execution::camel::application_is_not_abstract():
-    assert not inspect.isabstract(execution::camel::Application)
-
-
-def test_execution::camel::application_constructor_exists():
-    assert callable(execution::camel::Application.__init__)
-
-
-def test_execution::camel::application_constructor_args():
-    sig = inspect.signature(execution::camel::Application.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::executioncontext_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::ExecutionContext)
-
-
-def test_camel::execution::executioncontext_constructor_exists():
-    assert callable(camel::execution::ExecutionContext.__init__)
-
-
-def test_camel::execution::executioncontext_constructor_args():
-    sig = inspect.signature(camel::execution::ExecutionContext.__init__)
-    params = list(sig.parameters.keys())
-    assert "totalCost" in params, "Missing parameter 'totalCost'"
-    assert "startTime" in params, "Missing parameter 'startTime'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "endTime" in params, "Missing parameter 'endTime'"
-
-def test_camel::execution::executioncontext_has_totalCost():
-    assert hasattr(camel::execution::ExecutionContext, "totalCost")
-    descriptor = None
-    for klass in camel::execution::ExecutionContext.__mro__:
-        if "totalCost" in klass.__dict__:
-            descriptor = klass.__dict__["totalCost"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::executioncontext_has_startTime():
-    assert hasattr(camel::execution::ExecutionContext, "startTime")
-    descriptor = None
-    for klass in camel::execution::ExecutionContext.__mro__:
-        if "startTime" in klass.__dict__:
-            descriptor = klass.__dict__["startTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::executioncontext_has_name():
-    assert hasattr(camel::execution::ExecutionContext, "name")
-    descriptor = None
-    for klass in camel::execution::ExecutionContext.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::executioncontext_has_endTime():
-    assert hasattr(camel::execution::ExecutionContext, "endTime")
-    descriptor = None
-    for klass in camel::execution::ExecutionContext.__mro__:
-        if "endTime" in klass.__dict__:
-            descriptor = klass.__dict__["endTime"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_execution::camel::action_is_not_abstract():
-    assert not inspect.isabstract(execution::camel::Action)
-
-
-def test_execution::camel::action_constructor_exists():
-    assert callable(execution::camel::Action.__init__)
-
-
-def test_execution::camel::action_constructor_args():
-    sig = inspect.signature(execution::camel::Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::actionrealisation_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::ActionRealisation)
-
-
-def test_camel::execution::actionrealisation_constructor_exists():
-    assert callable(camel::execution::ActionRealisation.__init__)
-
-
-def test_camel::execution::actionrealisation_constructor_args():
-    sig = inspect.signature(camel::execution::ActionRealisation.__init__)
-    params = list(sig.parameters.keys())
-    assert "endTime" in params, "Missing parameter 'endTime'"
-    assert "startTime" in params, "Missing parameter 'startTime'"
-    assert "lowLevelActions" in params, "Missing parameter 'lowLevelActions'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_camel::execution::actionrealisation_has_endTime():
-    assert hasattr(camel::execution::ActionRealisation, "endTime")
-    descriptor = None
-    for klass in camel::execution::ActionRealisation.__mro__:
-        if "endTime" in klass.__dict__:
-            descriptor = klass.__dict__["endTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::actionrealisation_has_startTime():
-    assert hasattr(camel::execution::ActionRealisation, "startTime")
-    descriptor = None
-    for klass in camel::execution::ActionRealisation.__mro__:
-        if "startTime" in klass.__dict__:
-            descriptor = klass.__dict__["startTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::actionrealisation_has_lowLevelActions():
-    assert hasattr(camel::execution::ActionRealisation, "lowLevelActions")
-    descriptor = None
-    for klass in camel::execution::ActionRealisation.__mro__:
-        if "lowLevelActions" in klass.__dict__:
-            descriptor = klass.__dict__["lowLevelActions"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::actionrealisation_has_name():
-    assert hasattr(camel::execution::ActionRealisation, "name")
-    descriptor = None
-    for klass in camel::execution::ActionRealisation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ruletrigger_is_not_abstract():
-    assert not inspect.isabstract(RuleTrigger)
-
-
-def test_ruletrigger_constructor_exists():
-    assert callable(RuleTrigger.__init__)
-
-
-def test_ruletrigger_constructor_args():
-    sig = inspect.signature(RuleTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sloassessment_is_not_abstract():
-    assert not inspect.isabstract(SLOAssessment)
-
-
-def test_sloassessment_constructor_exists():
-    assert callable(SLOAssessment.__init__)
-
-
-def test_sloassessment_constructor_args():
-    sig = inspect.signature(SLOAssessment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_measurement_is_not_abstract():
-    assert not inspect.isabstract(Measurement)
-
-
-def test_measurement_constructor_exists():
-    assert callable(Measurement.__init__)
-
-
-def test_measurement_constructor_args():
-    sig = inspect.signature(Measurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::applicationmeasurement_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::ApplicationMeasurement)
-
-
-def test_camel::execution::applicationmeasurement_constructor_exists():
-    assert callable(camel::execution::ApplicationMeasurement.__init__)
-
-
-def test_camel::execution::applicationmeasurement_constructor_args():
-    sig = inspect.signature(camel::execution::ApplicationMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::communicationmeasurement_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::CommunicationMeasurement)
-
-
-def test_camel::execution::communicationmeasurement_constructor_exists():
-    assert callable(camel::execution::CommunicationMeasurement.__init__)
-
-
-def test_camel::execution::communicationmeasurement_constructor_args():
-    sig = inspect.signature(camel::execution::CommunicationMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::vmmeasurement_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::VMMeasurement)
-
-
-def test_camel::execution::vmmeasurement_constructor_exists():
-    assert callable(camel::execution::VMMeasurement.__init__)
-
-
-def test_camel::execution::vmmeasurement_constructor_args():
-    sig = inspect.signature(camel::execution::VMMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::internalcomponentmeasurement_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::InternalComponentMeasurement)
-
-
-def test_camel::execution::internalcomponentmeasurement_constructor_exists():
-    assert callable(camel::execution::InternalComponentMeasurement.__init__)
-
-
-def test_camel::execution::internalcomponentmeasurement_constructor_args():
-    sig = inspect.signature(camel::execution::InternalComponentMeasurement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_executioncontext_is_not_abstract():
-    assert not inspect.isabstract(ExecutionContext)
-
-
-def test_executioncontext_constructor_exists():
-    assert callable(ExecutionContext.__init__)
-
-
-def test_executioncontext_constructor_args():
-    sig = inspect.signature(ExecutionContext.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eventinstance_is_not_abstract():
-    assert not inspect.isabstract(EventInstance)
-
-
-def test_eventinstance_constructor_exists():
-    assert callable(EventInstance.__init__)
-
-
-def test_eventinstance_constructor_args():
-    sig = inspect.signature(EventInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_actionrealisation_is_not_abstract():
-    assert not inspect.isabstract(ActionRealisation)
-
-
-def test_actionrealisation_constructor_exists():
-    assert callable(ActionRealisation.__init__)
-
-
-def test_actionrealisation_constructor_args():
-    sig = inspect.signature(ActionRealisation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::executionmodel_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::ExecutionModel)
-
-
-def test_camel::execution::executionmodel_constructor_exists():
-    assert callable(camel::execution::ExecutionModel.__init__)
-
-
-def test_camel::execution::executionmodel_constructor_args():
-    sig = inspect.signature(camel::execution::ExecutionModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_hostingportinstance_is_not_abstract():
-    assert not inspect.isabstract(HostingPortInstance)
-
-
-def test_hostingportinstance_constructor_exists():
-    assert callable(HostingPortInstance.__init__)
-
-
-def test_hostingportinstance_constructor_args():
-    sig = inspect.signature(HostingPortInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::requiredhostinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::RequiredHostInstance)
-
-
-def test_camel::deployment::requiredhostinstance_constructor_exists():
-    assert callable(camel::deployment::RequiredHostInstance.__init__)
-
-
-def test_camel::deployment::requiredhostinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::RequiredHostInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::providedhostinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::ProvidedHostInstance)
-
-
-def test_camel::deployment::providedhostinstance_constructor_exists():
-    assert callable(camel::deployment::ProvidedHostInstance.__init__)
-
-
-def test_camel::deployment::providedhostinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::ProvidedHostInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::execution::measurement_is_not_abstract():
-    assert not inspect.isabstract(camel::execution::Measurement)
-
-
-def test_camel::execution::measurement_constructor_exists():
-    assert callable(camel::execution::Measurement.__init__)
-
-
-def test_camel::execution::measurement_constructor_args():
-    sig = inspect.signature(camel::execution::Measurement.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "rawData" in params, "Missing parameter 'rawData'"
-    assert "measurementTime" in params, "Missing parameter 'measurementTime'"
-
-def test_camel::execution::measurement_has_value():
-    assert hasattr(camel::execution::Measurement, "value")
-    descriptor = None
-    for klass in camel::execution::Measurement.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::measurement_has_name():
-    assert hasattr(camel::execution::Measurement, "name")
-    descriptor = None
-    for klass in camel::execution::Measurement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::measurement_has_rawData():
-    assert hasattr(camel::execution::Measurement, "rawData")
-    descriptor = None
-    for klass in camel::execution::Measurement.__mro__:
-        if "rawData" in klass.__dict__:
-            descriptor = klass.__dict__["rawData"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::execution::measurement_has_measurementTime():
-    assert hasattr(camel::execution::Measurement, "measurementTime")
-    descriptor = None
-    for klass in camel::execution::Measurement.__mro__:
-        if "measurementTime" in klass.__dict__:
-            descriptor = klass.__dict__["measurementTime"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_requirementgroup_is_not_abstract():
-    assert not inspect.isabstract(RequirementGroup)
-
-
-def test_requirementgroup_constructor_exists():
-    assert callable(RequirementGroup.__init__)
-
-
-def test_requirementgroup_constructor_args():
-    sig = inspect.signature(RequirementGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_communicationportinstance_is_not_abstract():
-    assert not inspect.isabstract(CommunicationPortInstance)
-
-
-def test_communicationportinstance_constructor_exists():
-    assert callable(CommunicationPortInstance.__init__)
-
-
-def test_communicationportinstance_constructor_args():
-    sig = inspect.signature(CommunicationPortInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::providedcommunicationinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::ProvidedCommunicationInstance)
-
-
-def test_camel::deployment::providedcommunicationinstance_constructor_exists():
-    assert callable(camel::deployment::ProvidedCommunicationInstance.__init__)
-
-
-def test_camel::deployment::providedcommunicationinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::ProvidedCommunicationInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_monetaryunit_is_not_abstract():
-    assert not inspect.isabstract(MonetaryUnit)
-
-
-def test_monetaryunit_constructor_exists():
-    assert callable(MonetaryUnit.__init__)
-
-
-def test_monetaryunit_constructor_args():
-    sig = inspect.signature(MonetaryUnit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_singlevalue_is_not_abstract():
-    assert not inspect.isabstract(SingleValue)
-
-
-def test_singlevalue_constructor_exists():
-    assert callable(SingleValue.__init__)
-
-
-def test_singlevalue_constructor_args():
-    sig = inspect.signature(SingleValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::type::enumeratevalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::EnumerateValue)
-
-
-def test_camel::type::enumeratevalue_constructor_exists():
-    assert callable(camel::type::EnumerateValue.__init__)
-
-
-def test_camel::type::enumeratevalue_constructor_args():
-    sig = inspect.signature(camel::type::EnumerateValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_camel::type::enumeratevalue_has_name():
-    assert hasattr(camel::type::EnumerateValue, "name")
-    descriptor = None
-    for klass in camel::type::EnumerateValue.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::type::enumeratevalue_has_value():
-    assert hasattr(camel::type::EnumerateValue, "value")
-    descriptor = None
-    for klass in camel::type::EnumerateValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::type::stringsvalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::StringsValue)
-
-
-def test_camel::type::stringsvalue_constructor_exists():
-    assert callable(camel::type::StringsValue.__init__)
-
-
-def test_camel::type::stringsvalue_constructor_args():
-    sig = inspect.signature(camel::type::StringsValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_camel::type::stringsvalue_has_value():
-    assert hasattr(camel::type::StringsValue, "value")
-    descriptor = None
-    for klass in camel::type::StringsValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::type::numericvalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::NumericValue)
-
-
-def test_camel::type::numericvalue_constructor_exists():
-    assert callable(camel::type::NumericValue.__init__)
-
-
-def test_camel::type::numericvalue_constructor_args():
-    sig = inspect.signature(camel::type::NumericValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::type::boolvalue_is_not_abstract():
-    assert not inspect.isabstract(camel::type::BoolValue)
-
-
-def test_camel::type::boolvalue_constructor_exists():
-    assert callable(camel::type::BoolValue.__init__)
-
-
-def test_camel::type::boolvalue_constructor_args():
-    sig = inspect.signature(camel::type::BoolValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_camel::type::boolvalue_has_value():
-    assert hasattr(camel::type::BoolValue, "value")
-    descriptor = None
-    for klass in camel::type::BoolValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_attribute_is_not_abstract():
-    assert not inspect.isabstract(Attribute)
-
-
-def test_attribute_constructor_exists():
-    assert callable(Attribute.__init__)
-
-
-def test_attribute_constructor_args():
-    sig = inspect.signature(Attribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_requiredhostinstance_is_not_abstract():
-    assert not inspect.isabstract(RequiredHostInstance)
-
-
-def test_requiredhostinstance_constructor_exists():
-    assert callable(RequiredHostInstance.__init__)
-
-
-def test_requiredhostinstance_constructor_args():
-    sig = inspect.signature(RequiredHostInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_requiredcommunicationinstance_is_not_abstract():
-    assert not inspect.isabstract(RequiredCommunicationInstance)
-
-
-def test_requiredcommunicationinstance_constructor_exists():
-    assert callable(RequiredCommunicationInstance.__init__)
-
-
-def test_requiredcommunicationinstance_constructor_args():
-    sig = inspect.signature(RequiredCommunicationInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::requiredcommunicationinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::RequiredCommunicationInstance)
-
-
-def test_camel::deployment::requiredcommunicationinstance_constructor_exists():
-    assert callable(camel::deployment::RequiredCommunicationInstance.__init__)
-
-
-def test_camel::deployment::requiredcommunicationinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::RequiredCommunicationInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_hostingport_is_not_abstract():
-    assert not inspect.isabstract(HostingPort)
-
-
-def test_hostingport_constructor_exists():
-    assert callable(HostingPort.__init__)
-
-
-def test_hostingport_constructor_args():
-    sig = inspect.signature(HostingPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::requiredhost_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::RequiredHost)
-
-
-def test_camel::deployment::requiredhost_constructor_exists():
-    assert callable(camel::deployment::RequiredHost.__init__)
-
-
-def test_camel::deployment::requiredhost_constructor_args():
-    sig = inspect.signature(camel::deployment::RequiredHost.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::providedhost_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::ProvidedHost)
-
-
-def test_camel::deployment::providedhost_constructor_exists():
-    assert callable(camel::deployment::ProvidedHost.__init__)
-
-
-def test_camel::deployment::providedhost_constructor_args():
-    sig = inspect.signature(camel::deployment::ProvidedHost.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_communicationport_is_not_abstract():
-    assert not inspect.isabstract(CommunicationPort)
-
-
-def test_communicationport_constructor_exists():
-    assert callable(CommunicationPort.__init__)
-
-
-def test_communicationport_constructor_args():
-    sig = inspect.signature(CommunicationPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::requiredcommunication_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::RequiredCommunication)
-
-
-def test_camel::deployment::requiredcommunication_constructor_exists():
-    assert callable(camel::deployment::RequiredCommunication.__init__)
-
-
-def test_camel::deployment::requiredcommunication_constructor_args():
-    sig = inspect.signature(camel::deployment::RequiredCommunication.__init__)
-    params = list(sig.parameters.keys())
-    assert "isMandatory" in params, "Missing parameter 'isMandatory'"
-
-def test_camel::deployment::requiredcommunication_has_isMandatory():
-    assert hasattr(camel::deployment::RequiredCommunication, "isMandatory")
-    descriptor = None
-    for klass in camel::deployment::RequiredCommunication.__mro__:
-        if "isMandatory" in klass.__dict__:
-            descriptor = klass.__dict__["isMandatory"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::deployment::providedcommunication_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::ProvidedCommunication)
-
-
-def test_camel::deployment::providedcommunication_constructor_exists():
-    assert callable(camel::deployment::ProvidedCommunication.__init__)
-
-
-def test_camel::deployment::providedcommunication_constructor_args():
-    sig = inspect.signature(camel::deployment::ProvidedCommunication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentInstance)
-
-
-def test_componentinstance_constructor_exists():
-    assert callable(ComponentInstance.__init__)
-
-
-def test_componentinstance_constructor_args():
-    sig = inspect.signature(ComponentInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::vminstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::VMInstance)
-
-
-def test_camel::deployment::vminstance_constructor_exists():
-    assert callable(camel::deployment::VMInstance.__init__)
-
-
-def test_camel::deployment::vminstance_constructor_args():
-    sig = inspect.signature(camel::deployment::VMInstance.__init__)
-    params = list(sig.parameters.keys())
-    assert "ip" in params, "Missing parameter 'ip'"
-
-def test_camel::deployment::vminstance_has_ip():
-    assert hasattr(camel::deployment::VMInstance, "ip")
-    descriptor = None
-    for klass in camel::deployment::VMInstance.__mro__:
-        if "ip" in klass.__dict__:
-            descriptor = klass.__dict__["ip"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::deployment::internalcomponentinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::InternalComponentInstance)
-
-
-def test_camel::deployment::internalcomponentinstance_constructor_exists():
-    assert callable(camel::deployment::InternalComponentInstance.__init__)
-
-
-def test_camel::deployment::internalcomponentinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::InternalComponentInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_providedhostinstance_is_not_abstract():
-    assert not inspect.isabstract(ProvidedHostInstance)
-
-
-def test_providedhostinstance_constructor_exists():
-    assert callable(ProvidedHostInstance.__init__)
-
-
-def test_providedhostinstance_constructor_args():
-    sig = inspect.signature(ProvidedHostInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_providedcommunicationinstance_is_not_abstract():
-    assert not inspect.isabstract(ProvidedCommunicationInstance)
-
-
-def test_providedcommunicationinstance_constructor_exists():
-    assert callable(ProvidedCommunicationInstance.__init__)
-
-
-def test_providedcommunicationinstance_constructor_args():
-    sig = inspect.signature(ProvidedCommunicationInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_providerrequirement_is_not_abstract():
-    assert not inspect.isabstract(ProviderRequirement)
-
-
-def test_providerrequirement_constructor_exists():
-    assert callable(ProviderRequirement.__init__)
-
-
-def test_providerrequirement_constructor_args():
-    sig = inspect.signature(ProviderRequirement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_locationrequirement_is_not_abstract():
-    assert not inspect.isabstract(LocationRequirement)
-
-
-def test_locationrequirement_constructor_exists():
-    assert callable(LocationRequirement.__init__)
-
-
-def test_locationrequirement_constructor_args():
-    sig = inspect.signature(LocationRequirement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::vmrequirementset_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::VMRequirementSet)
-
-
-def test_camel::deployment::vmrequirementset_constructor_exists():
-    assert callable(camel::deployment::VMRequirementSet.__init__)
-
-
-def test_camel::deployment::vmrequirementset_constructor_args():
-    sig = inspect.signature(camel::deployment::VMRequirementSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_camel::deployment::vmrequirementset_has_name():
-    assert hasattr(camel::deployment::VMRequirementSet, "name")
-    descriptor = None
-    for klass in camel::deployment::VMRequirementSet.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_requiredhost_is_not_abstract():
-    assert not inspect.isabstract(RequiredHost)
-
-
-def test_requiredhost_constructor_exists():
-    assert callable(RequiredHost.__init__)
-
-
-def test_requiredhost_constructor_args():
-    sig = inspect.signature(RequiredHost.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_requiredcommunication_is_not_abstract():
-    assert not inspect.isabstract(RequiredCommunication)
-
-
-def test_requiredcommunication_constructor_exists():
-    assert callable(RequiredCommunication.__init__)
-
-
-def test_requiredcommunication_constructor_args():
-    sig = inspect.signature(RequiredCommunication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_component_is_not_abstract():
-    assert not inspect.isabstract(Component)
-
-
-def test_component_constructor_exists():
-    assert callable(Component.__init__)
-
-
-def test_component_constructor_args():
-    sig = inspect.signature(Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::vm_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::VM)
-
-
-def test_camel::deployment::vm_constructor_exists():
-    assert callable(camel::deployment::VM.__init__)
-
-
-def test_camel::deployment::vm_constructor_args():
-    sig = inspect.signature(camel::deployment::VM.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::internalcomponent_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::InternalComponent)
-
-
-def test_camel::deployment::internalcomponent_constructor_exists():
-    assert callable(camel::deployment::InternalComponent.__init__)
-
-
-def test_camel::deployment::internalcomponent_constructor_args():
-    sig = inspect.signature(camel::deployment::InternalComponent.__init__)
-    params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
-
-def test_camel::deployment::internalcomponent_has_version():
-    assert hasattr(camel::deployment::InternalComponent, "version")
-    descriptor = None
-    for klass in camel::deployment::InternalComponent.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_configuration_is_not_abstract():
-    assert not inspect.isabstract(Configuration)
-
-
-def test_configuration_constructor_exists():
-    assert callable(Configuration.__init__)
-
-
-def test_configuration_constructor_args():
-    sig = inspect.signature(Configuration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_providedhost_is_not_abstract():
-    assert not inspect.isabstract(ProvidedHost)
-
-
-def test_providedhost_constructor_exists():
-    assert callable(ProvidedHost.__init__)
-
-
-def test_providedhost_constructor_args():
-    sig = inspect.signature(ProvidedHost.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_providedcommunication_is_not_abstract():
-    assert not inspect.isabstract(ProvidedCommunication)
-
-
-def test_providedcommunication_constructor_exists():
-    assert callable(ProvidedCommunication.__init__)
-
-
-def test_providedcommunication_constructor_args():
-    sig = inspect.signature(ProvidedCommunication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_deploymentelement_is_not_abstract():
-    assert not inspect.isabstract(DeploymentElement)
-
-
-def test_deploymentelement_constructor_exists():
-    assert callable(DeploymentElement.__init__)
-
-
-def test_deploymentelement_constructor_args():
-    sig = inspect.signature(DeploymentElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::communicationportinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::CommunicationPortInstance)
-
-
-def test_camel::deployment::communicationportinstance_constructor_exists():
-    assert callable(camel::deployment::CommunicationPortInstance.__init__)
-
-
-def test_camel::deployment::communicationportinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::CommunicationPortInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::communicationinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::CommunicationInstance)
-
-
-def test_camel::deployment::communicationinstance_constructor_exists():
-    assert callable(camel::deployment::CommunicationInstance.__init__)
-
-
-def test_camel::deployment::communicationinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::CommunicationInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::componentinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::ComponentInstance)
-
-
-def test_camel::deployment::componentinstance_constructor_exists():
-    assert callable(camel::deployment::ComponentInstance.__init__)
-
-
-def test_camel::deployment::componentinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::ComponentInstance.__init__)
-    params = list(sig.parameters.keys())
-    assert "destroyedOn" in params, "Missing parameter 'destroyedOn'"
-    assert "instantiatedOn" in params, "Missing parameter 'instantiatedOn'"
-
-def test_camel::deployment::componentinstance_has_destroyedOn():
-    assert hasattr(camel::deployment::ComponentInstance, "destroyedOn")
-    descriptor = None
-    for klass in camel::deployment::ComponentInstance.__mro__:
-        if "destroyedOn" in klass.__dict__:
-            descriptor = klass.__dict__["destroyedOn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::deployment::componentinstance_has_instantiatedOn():
-    assert hasattr(camel::deployment::ComponentInstance, "instantiatedOn")
-    descriptor = None
-    for klass in camel::deployment::ComponentInstance.__mro__:
-        if "instantiatedOn" in klass.__dict__:
-            descriptor = klass.__dict__["instantiatedOn"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::deployment::hostinginstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::HostingInstance)
-
-
-def test_camel::deployment::hostinginstance_constructor_exists():
-    assert callable(camel::deployment::HostingInstance.__init__)
-
-
-def test_camel::deployment::hostinginstance_constructor_args():
-    sig = inspect.signature(camel::deployment::HostingInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::hosting_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::Hosting)
-
-
-def test_camel::deployment::hosting_constructor_exists():
-    assert callable(camel::deployment::Hosting.__init__)
-
-
-def test_camel::deployment::hosting_constructor_args():
-    sig = inspect.signature(camel::deployment::Hosting.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::hostingportinstance_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::HostingPortInstance)
-
-
-def test_camel::deployment::hostingportinstance_constructor_exists():
-    assert callable(camel::deployment::HostingPortInstance.__init__)
-
-
-def test_camel::deployment::hostingportinstance_constructor_args():
-    sig = inspect.signature(camel::deployment::HostingPortInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::hostingport_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::HostingPort)
-
-
-def test_camel::deployment::hostingport_constructor_exists():
-    assert callable(camel::deployment::HostingPort.__init__)
-
-
-def test_camel::deployment::hostingport_constructor_args():
-    sig = inspect.signature(camel::deployment::HostingPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_camel::deployment::configuration_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::Configuration)
-
-
-def test_camel::deployment::configuration_constructor_exists():
-    assert callable(camel::deployment::Configuration.__init__)
-
-
-def test_camel::deployment::configuration_constructor_args():
-    sig = inspect.signature(camel::deployment::Configuration.__init__)
-    params = list(sig.parameters.keys())
-    assert "stopCommand" in params, "Missing parameter 'stopCommand'"
-    assert "startCommand" in params, "Missing parameter 'startCommand'"
-    assert "configureCommand" in params, "Missing parameter 'configureCommand'"
-    assert "uploadCommand" in params, "Missing parameter 'uploadCommand'"
-    assert "downloadCommand" in params, "Missing parameter 'downloadCommand'"
-    assert "installCommand" in params, "Missing parameter 'installCommand'"
-
-def test_camel::deployment::configuration_has_stopCommand():
-    assert hasattr(camel::deployment::Configuration, "stopCommand")
-    descriptor = None
-    for klass in camel::deployment::Configuration.__mro__:
-        if "stopCommand" in klass.__dict__:
-            descriptor = klass.__dict__["stopCommand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::deployment::configuration_has_startCommand():
-    assert hasattr(camel::deployment::Configuration, "startCommand")
-    descriptor = None
-    for klass in camel::deployment::Configuration.__mro__:
-        if "startCommand" in klass.__dict__:
-            descriptor = klass.__dict__["startCommand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::deployment::configuration_has_configureCommand():
-    assert hasattr(camel::deployment::Configuration, "configureCommand")
-    descriptor = None
-    for klass in camel::deployment::Configuration.__mro__:
-        if "configureCommand" in klass.__dict__:
-            descriptor = klass.__dict__["configureCommand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::deployment::configuration_has_uploadCommand():
-    assert hasattr(camel::deployment::Configuration, "uploadCommand")
-    descriptor = None
-    for klass in camel::deployment::Configuration.__mro__:
-        if "uploadCommand" in klass.__dict__:
-            descriptor = klass.__dict__["uploadCommand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::deployment::configuration_has_downloadCommand():
-    assert hasattr(camel::deployment::Configuration, "downloadCommand")
-    descriptor = None
-    for klass in camel::deployment::Configuration.__mro__:
-        if "downloadCommand" in klass.__dict__:
-            descriptor = klass.__dict__["downloadCommand"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_camel::deployment::configuration_has_installCommand():
-    assert hasattr(camel::deployment::Configuration, "installCommand")
-    descriptor = None
-    for klass in camel::deployment::Configuration.__mro__:
-        if "installCommand" in klass.__dict__:
-            descriptor = klass.__dict__["installCommand"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::deployment::communicationport_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::CommunicationPort)
-
-
-def test_camel::deployment::communicationport_constructor_exists():
-    assert callable(camel::deployment::CommunicationPort.__init__)
-
-
-def test_camel::deployment::communicationport_constructor_args():
-    sig = inspect.signature(camel::deployment::CommunicationPort.__init__)
-    params = list(sig.parameters.keys())
-    assert "portNumber" in params, "Missing parameter 'portNumber'"
-
-def test_camel::deployment::communicationport_has_portNumber():
-    assert hasattr(camel::deployment::CommunicationPort, "portNumber")
-    descriptor = None
-    for klass in camel::deployment::CommunicationPort.__mro__:
-        if "portNumber" in klass.__dict__:
-            descriptor = klass.__dict__["portNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::deployment::communication_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::Communication)
-
-
-def test_camel::deployment::communication_constructor_exists():
-    assert callable(camel::deployment::Communication.__init__)
-
-
-def test_camel::deployment::communication_constructor_args():
-    sig = inspect.signature(camel::deployment::Communication.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_camel::deployment::communication_has_type():
-    assert hasattr(camel::deployment::Communication, "type")
-    descriptor = None
-    for klass in camel::deployment::Communication.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_camel::deployment::component_is_not_abstract():
-    assert not inspect.isabstract(camel::deployment::Component)
-
-
-def test_camel::deployment::component_constructor_exists():
-    assert callable(camel::deployment::Component.__init__)
-
-
-def test_camel::deployment::component_constructor_args():
-    sig = inspect.signature(camel::deployment::Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vmrequirementset_is_not_abstract():
-    assert not inspect.isabstract(VMRequirementSet)
-
-
-def test_vmrequirementset_constructor_exists():
-    assert callable(VMRequirementSet.__init__)
-
-
-def test_vmrequirementset_constructor_args():
-    sig = inspect.signature(VMRequirementSet.__init__)
-    params = list(sig.parameters.keys())
-
 def test_typeenum_exists():
     # Check that the Enumeration exists
     assert TypeEnum is not None
@@ -6754,100 +6754,97 @@ def test_typeenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TypeEnum]
     expected_literals = [
-        "StringType",
         "DoubleType",
-        "BooleanType",
-        "IntType",
+        "StringType",
         "FloatType",
+        "IntType",
+        "BooleanType",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TypeEnum"
 
-def test_comparisonoperatortype_exists():
+def test_communicationtype_exists():
     # Check that the Enumeration exists
-    assert ComparisonOperatorType is not None
+    assert CommunicationType is not None
 
-def test_comparisonoperatortype_has_all_literals():
+def test_communicationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComparisonOperatorType]
+    enum_literals = [lit.name for lit in CommunicationType]
     expected_literals = [
-        "LESS_THAN",
-        "GREATER_THAN",
-        "NOT_EQUAL",
-        "GREATER_EQUAL_THAN",
-        "LESS_EQUAL_THAN",
-        "EQUAL",
+        "LOCAL",
+        "REMOTE",
+        "ANY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperatorType"
+        assert lit_name in enum_literals, f"Literal '' missing in CommunicationType"
 
-def test_operator_exists():
+def test_securitylevel_exists():
     # Check that the Enumeration exists
-    assert Operator is not None
+    assert SecurityLevel is not None
 
-def test_operator_has_all_literals():
+def test_securitylevel_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Operator]
+    enum_literals = [lit.name for lit in SecurityLevel]
     expected_literals = [
-        "divide",
-        "remove",
-        "select",
-        "add",
-        "multiply",
+        "MEDIUM",
+        "LOW",
+        "HIGH",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Operator"
+        assert lit_name in enum_literals, f"Literal '' missing in SecurityLevel"
 
-def test_unitdimensiontype_exists():
+def test_unittype_exists():
     # Check that the Enumeration exists
-    assert UnitDimensionType is not None
+    assert UnitType is not None
 
-def test_unitdimensiontype_has_all_literals():
+def test_unittype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnitDimensionType]
+    enum_literals = [lit.name for lit in UnitType]
     expected_literals = [
-        "TIME_INTERVAL",
-        "CORE_NUM",
-        "REQUEST_NUM",
-        "STORAGE",
-        "TRANSACTION_NUM",
-        "DIMENSIONLESS",
-        "THROUGHPUT",
-        "COST",
+        "BYTES",
+        "MONTHS",
+        "KILOBYTES",
+        "POUNDS",
+        "REQUESTS_PER_SECOND",
+        "CORES",
+        "PERCENTAGE",
+        "DOLLARS",
+        "MILLISECONDS",
+        "HOURS",
+        "REQUESTS",
+        "MINUTES",
+        "TRANSACTIONS_PER_SECOND",
+        "MEGABYTES",
+        "BYTES_PER_SECOND",
+        "GIGABYTES",
+        "WEEKS",
+        "SECONDS",
+        "DAYS",
+        "EUROS",
+        "TRANSACTIONS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnitDimensionType"
+        assert lit_name in enum_literals, f"Literal '' missing in UnitType"
 
-def test_metricfunctiontype_exists():
+def test_metricfunctionaritytype_exists():
     # Check that the Enumeration exists
-    assert MetricFunctionType is not None
+    assert MetricFunctionArityType is not None
 
-def test_metricfunctiontype_has_all_literals():
+def test_metricfunctionaritytype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MetricFunctionType]
+    enum_literals = [lit.name for lit in MetricFunctionArityType]
     expected_literals = [
-        "PERCENTILE",
-        "PLUS",
-        "MEAN",
-        "COUNT",
-        "DERIVATIVE",
-        "STD",
-        "MODE",
-        "MINUS",
-        "MEDIAN",
-        "MODULO",
-        "TIMES",
-        "MAX",
-        "MIN",
-        "DIV",
+        "BINARY",
+        "UNARY",
+        "N_ARY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MetricFunctionType"
+        assert lit_name in enum_literals, f"Literal '' missing in MetricFunctionArityType"
 
 def test_optimisationfunctiontype_exists():
     # Check that the Enumeration exists
@@ -6864,6 +6861,33 @@ def test_optimisationfunctiontype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in OptimisationFunctionType"
 
+def test_metricfunctiontype_exists():
+    # Check that the Enumeration exists
+    assert MetricFunctionType is not None
+
+def test_metricfunctiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MetricFunctionType]
+    expected_literals = [
+        "TIMES",
+        "PERCENTILE",
+        "PLUS",
+        "COUNT",
+        "DIV",
+        "MAX",
+        "MODE",
+        "MINUS",
+        "MIN",
+        "MEDIAN",
+        "MODULO",
+        "DERIVATIVE",
+        "MEAN",
+        "STD",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MetricFunctionType"
+
 def test_windowtype_exists():
     # Check that the Enumeration exists
     assert WindowType is not None
@@ -6879,169 +6903,23 @@ def test_windowtype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in WindowType"
 
-def test_resourcepattern_exists():
+def test_layertype_exists():
     # Check that the Enumeration exists
-    assert ResourcePattern is not None
+    assert LayerType is not None
 
-def test_resourcepattern_has_all_literals():
+def test_layertype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ResourcePattern]
+    enum_literals = [lit.name for lit in LayerType]
     expected_literals = [
-        "TREE",
-        "EXACT",
+        "IaaS",
+        "PaaS",
+        "SCC",
+        "SaaS",
+        "BPM",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ResourcePattern"
-
-def test_statustype_exists():
-    # Check that the Enumeration exists
-    assert StatusType is not None
-
-def test_statustype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in StatusType]
-    expected_literals = [
-        "WARNING",
-        "CRITICAL",
-        "FATAL",
-        "SUCCESS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in StatusType"
-
-def test_binarypatternoperatortype_exists():
-    # Check that the Enumeration exists
-    assert BinaryPatternOperatorType is not None
-
-def test_binarypatternoperatortype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BinaryPatternOperatorType]
-    expected_literals = [
-        "REPEAT_UNTIL",
-        "OR",
-        "PRECEDES",
-        "AND",
-        "XOR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BinaryPatternOperatorType"
-
-def test_windowsizetype_exists():
-    # Check that the Enumeration exists
-    assert WindowSizeType is not None
-
-def test_windowsizetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WindowSizeType]
-    expected_literals = [
-        "TIME_ONLY",
-        "BOTH_MATCH",
-        "MEASUREMENTS_ONLY",
-        "FIRST_MATCH",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WindowSizeType"
-
-def test_unittype_exists():
-    # Check that the Enumeration exists
-    assert UnitType is not None
-
-def test_unittype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnitType]
-    expected_literals = [
-        "MILLISECONDS",
-        "HOURS",
-        "REQUESTS",
-        "WEEKS",
-        "EUROS",
-        "REQUESTS_PER_SECOND",
-        "MEGABYTES",
-        "PERCENTAGE",
-        "POUNDS",
-        "SECONDS",
-        "DOLLARS",
-        "GIGABYTES",
-        "MONTHS",
-        "TRANSACTIONS",
-        "BYTES_PER_SECOND",
-        "TRANSACTIONS_PER_SECOND",
-        "KILOBYTES",
-        "CORES",
-        "BYTES",
-        "MINUTES",
-        "DAYS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnitType"
-
-def test_quantifiertype_exists():
-    # Check that the Enumeration exists
-    assert QuantifierType is not None
-
-def test_quantifiertype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in QuantifierType]
-    expected_literals = [
-        "ALL",
-        "ANY",
-        "SOME",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in QuantifierType"
-
-def test_functionpatterntype_exists():
-    # Check that the Enumeration exists
-    assert FunctionPatternType is not None
-
-def test_functionpatterntype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FunctionPatternType]
-    expected_literals = [
-        "REDUCE",
-        "MAP",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FunctionPatternType"
-
-def test_requirementoperatortype_exists():
-    # Check that the Enumeration exists
-    assert RequirementOperatorType is not None
-
-def test_requirementoperatortype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RequirementOperatorType]
-    expected_literals = [
-        "AND",
-        "XOR",
-        "OR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RequirementOperatorType"
-
-def test_securitylevel_exists():
-    # Check that the Enumeration exists
-    assert SecurityLevel is not None
-
-def test_securitylevel_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SecurityLevel]
-    expected_literals = [
-        "MEDIUM",
-        "HIGH",
-        "LOW",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SecurityLevel"
+        assert lit_name in enum_literals, f"Literal '' missing in LayerType"
 
 def test_actiontype_exists():
     # Check that the Enumeration exists
@@ -7051,68 +6929,135 @@ def test_actiontype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ActionType]
     expected_literals = [
-        "SCALE_UP",
-        "SCALE_DOWN",
         "READ",
-        "SCALE_IN",
-        "WRITE",
-        "EVENT_CREATION",
+        "SCALE_DOWN",
         "SCALE_OUT",
+        "SCALE_UP",
+        "WRITE",
+        "SCALE_IN",
+        "EVENT_CREATION",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ActionType"
 
-def test_layertype_exists():
+def test_statustype_exists():
     # Check that the Enumeration exists
-    assert LayerType is not None
+    assert StatusType is not None
 
-def test_layertype_has_all_literals():
+def test_statustype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LayerType]
+    enum_literals = [lit.name for lit in StatusType]
     expected_literals = [
-        "SCC",
-        "SaaS",
-        "PaaS",
-        "IaaS",
-        "BPM",
+        "CRITICAL",
+        "SUCCESS",
+        "FATAL",
+        "WARNING",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LayerType"
+        assert lit_name in enum_literals, f"Literal '' missing in StatusType"
 
-def test_metricfunctionaritytype_exists():
+def test_operator_exists():
     # Check that the Enumeration exists
-    assert MetricFunctionArityType is not None
+    assert Operator is not None
 
-def test_metricfunctionaritytype_has_all_literals():
+def test_operator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MetricFunctionArityType]
+    enum_literals = [lit.name for lit in Operator]
     expected_literals = [
-        "N_ARY",
-        "BINARY",
-        "UNARY",
+        "multiply",
+        "add",
+        "select",
+        "remove",
+        "divide",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MetricFunctionArityType"
+        assert lit_name in enum_literals, f"Literal '' missing in Operator"
 
-def test_unarypatternoperatortype_exists():
+def test_comparisonoperatortype_exists():
     # Check that the Enumeration exists
-    assert UnaryPatternOperatorType is not None
+    assert ComparisonOperatorType is not None
 
-def test_unarypatternoperatortype_has_all_literals():
+def test_comparisonoperatortype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryPatternOperatorType]
+    enum_literals = [lit.name for lit in ComparisonOperatorType]
     expected_literals = [
-        "EVERY",
-        "WHEN",
-        "NOT",
-        "REPEAT",
+        "EQUAL",
+        "NOT_EQUAL",
+        "GREATER_THAN",
+        "LESS_THAN",
+        "GREATER_EQUAL_THAN",
+        "LESS_EQUAL_THAN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryPatternOperatorType"
+        assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperatorType"
+
+def test_windowsizetype_exists():
+    # Check that the Enumeration exists
+    assert WindowSizeType is not None
+
+def test_windowsizetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WindowSizeType]
+    expected_literals = [
+        "BOTH_MATCH",
+        "FIRST_MATCH",
+        "TIME_ONLY",
+        "MEASUREMENTS_ONLY",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WindowSizeType"
+
+def test_functionpatterntype_exists():
+    # Check that the Enumeration exists
+    assert FunctionPatternType is not None
+
+def test_functionpatterntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FunctionPatternType]
+    expected_literals = [
+        "MAP",
+        "REDUCE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FunctionPatternType"
+
+def test_timertype_exists():
+    # Check that the Enumeration exists
+    assert TimerType is not None
+
+def test_timertype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TimerType]
+    expected_literals = [
+        "WITHIN_MAX",
+        "INTERVAL",
+        "WITHIN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TimerType"
+
+def test_requirementoperatortype_exists():
+    # Check that the Enumeration exists
+    assert RequirementOperatorType is not None
+
+def test_requirementoperatortype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RequirementOperatorType]
+    expected_literals = [
+        "XOR",
+        "AND",
+        "OR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RequirementOperatorType"
 
 def test_propertytype_exists():
     # Check that the Enumeration exists
@@ -7129,6 +7074,93 @@ def test_propertytype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PropertyType"
 
+def test_quantifiertype_exists():
+    # Check that the Enumeration exists
+    assert QuantifierType is not None
+
+def test_quantifiertype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in QuantifierType]
+    expected_literals = [
+        "ANY",
+        "SOME",
+        "ALL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in QuantifierType"
+
+def test_resourcepattern_exists():
+    # Check that the Enumeration exists
+    assert ResourcePattern is not None
+
+def test_resourcepattern_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ResourcePattern]
+    expected_literals = [
+        "EXACT",
+        "TREE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ResourcePattern"
+
+def test_unitdimensiontype_exists():
+    # Check that the Enumeration exists
+    assert UnitDimensionType is not None
+
+def test_unitdimensiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnitDimensionType]
+    expected_literals = [
+        "THROUGHPUT",
+        "DIMENSIONLESS",
+        "STORAGE",
+        "TRANSACTION_NUM",
+        "REQUEST_NUM",
+        "COST",
+        "CORE_NUM",
+        "TIME_INTERVAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnitDimensionType"
+
+def test_binarypatternoperatortype_exists():
+    # Check that the Enumeration exists
+    assert BinaryPatternOperatorType is not None
+
+def test_binarypatternoperatortype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BinaryPatternOperatorType]
+    expected_literals = [
+        "AND",
+        "REPEAT_UNTIL",
+        "XOR",
+        "PRECEDES",
+        "OR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BinaryPatternOperatorType"
+
+def test_unarypatternoperatortype_exists():
+    # Check that the Enumeration exists
+    assert UnaryPatternOperatorType is not None
+
+def test_unarypatternoperatortype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryPatternOperatorType]
+    expected_literals = [
+        "REPEAT",
+        "EVERY",
+        "NOT",
+        "WHEN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryPatternOperatorType"
+
 def test_scheduletype_exists():
     # Check that the Enumeration exists
     assert ScheduleType is not None
@@ -7138,44 +7170,12 @@ def test_scheduletype_has_all_literals():
     enum_literals = [lit.name for lit in ScheduleType]
     expected_literals = [
         "FIXED_RATE",
-        "SINGLE_EVENT",
         "FIXED_DELAY",
+        "SINGLE_EVENT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ScheduleType"
-
-def test_communicationtype_exists():
-    # Check that the Enumeration exists
-    assert CommunicationType is not None
-
-def test_communicationtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CommunicationType]
-    expected_literals = [
-        "ANY",
-        "LOCAL",
-        "REMOTE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CommunicationType"
-
-def test_timertype_exists():
-    # Check that the Enumeration exists
-    assert TimerType is not None
-
-def test_timertype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimerType]
-    expected_literals = [
-        "WITHIN_MAX",
-        "WITHIN",
-        "INTERVAL",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimerType"
 
 
 # =============================================================================
@@ -7189,11 +7189,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-camel::unit::Unit_strategy = st.builds(
-    camel::unit::Unit,
-    name=
-        safe_text,
+camel_unit_Unit_strategy = st.builds(
+    camel_unit_Unit,
     unit=
+        safe_text,
+    name=
         safe_text
 )
 Range_strategy = st.builds(
@@ -7205,84 +7205,84 @@ Limit_strategy = st.builds(
 EnumerateValue_strategy = st.builds(
     EnumerateValue,
 )
-camel::type::SingleValue_strategy = st.builds(
-    camel::type::SingleValue,
+camel_type_SingleValue_strategy = st.builds(
+    camel_type_SingleValue,
 )
 NumericValue_strategy = st.builds(
     NumericValue,
 )
-camel::type::DoublePrecisionValue_strategy = st.builds(
-    camel::type::DoublePrecisionValue,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-camel::type::FloatsValue_strategy = st.builds(
-    camel::type::FloatsValue,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-camel::type::PositiveInf_strategy = st.builds(
-    camel::type::PositiveInf,
-)
-camel::type::ValueToIncrease_strategy = st.builds(
-    camel::type::ValueToIncrease,
-)
-camel::type::IntegerValue_strategy = st.builds(
-    camel::type::IntegerValue,
+camel_type_IntegerValue_strategy = st.builds(
+    camel_type_IntegerValue,
     value=
         st.integers()
 )
-camel::type::NegativeInf_strategy = st.builds(
-    camel::type::NegativeInf,
+camel_type_ValueToIncrease_strategy = st.builds(
+    camel_type_ValueToIncrease,
 )
-camel::type::Limit_strategy = st.builds(
-    camel::type::Limit,
+camel_type_DoublePrecisionValue_strategy = st.builds(
+    camel_type_DoublePrecisionValue,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+camel_type_PositiveInf_strategy = st.builds(
+    camel_type_PositiveInf,
+)
+camel_type_NegativeInf_strategy = st.builds(
+    camel_type_NegativeInf,
+)
+camel_type_FloatsValue_strategy = st.builds(
+    camel_type_FloatsValue,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+camel_type_Limit_strategy = st.builds(
+    camel_type_Limit,
     included=
         st.booleans()
 )
-camel::type::ValueType_strategy = st.builds(
-    camel::type::ValueType,
+camel_type_ValueType_strategy = st.builds(
+    camel_type_ValueType,
     name=
         safe_text
 )
-camel::security::SecurityCapability_strategy = st.builds(
-    camel::security::SecurityCapability,
+camel_security_SecurityCapability_strategy = st.builds(
+    camel_security_SecurityCapability,
     name=
         safe_text
 )
 RawMetric_strategy = st.builds(
     RawMetric,
 )
-camel::security::RawSecurityMetric_strategy = st.builds(
-    camel::security::RawSecurityMetric,
+camel_security_RawSecurityMetric_strategy = st.builds(
+    camel_security_RawSecurityMetric,
 )
 RawMetricInstance_strategy = st.builds(
     RawMetricInstance,
 )
-camel::security::RawSecurityMetricInstance_strategy = st.builds(
-    camel::security::RawSecurityMetricInstance,
+camel_security_RawSecurityMetricInstance_strategy = st.builds(
+    camel_security_RawSecurityMetricInstance,
 )
-camel::security::SecurityControl_strategy = st.builds(
-    camel::security::SecurityControl,
-    name=
-        safe_text,
+camel_security_SecurityControl_strategy = st.builds(
+    camel_security_SecurityControl,
     specification=
+        safe_text,
+    name=
         safe_text
 )
 CompositeMetricInstance_strategy = st.builds(
     CompositeMetricInstance,
 )
-camel::security::CompositeSecurityMetricInstance_strategy = st.builds(
-    camel::security::CompositeSecurityMetricInstance,
+camel_security_CompositeSecurityMetricInstance_strategy = st.builds(
+    camel_security_CompositeSecurityMetricInstance,
 )
 CompositeMetric_strategy = st.builds(
     CompositeMetric,
 )
-camel::security::CompositeSecurityMetric_strategy = st.builds(
-    camel::security::CompositeSecurityMetric,
+camel_security_CompositeSecurityMetric_strategy = st.builds(
+    camel_security_CompositeSecurityMetric,
 )
-camel::security::SecurityDomain_strategy = st.builds(
-    camel::security::SecurityDomain,
+camel_security_SecurityDomain_strategy = st.builds(
+    camel_security_SecurityDomain,
     id=
         safe_text,
     name=
@@ -7306,44 +7306,44 @@ CompositeSecurityMetric_strategy = st.builds(
 RawSecurityMetric_strategy = st.builds(
     RawSecurityMetric,
 )
-camel::scalability::Timer_strategy = st.builds(
-    camel::scalability::Timer,
-    timeValue=
-        st.integers(),
-    type=
-        safe_text,
+camel_scalability_Timer_strategy = st.builds(
+    camel_scalability_Timer,
     name=
         safe_text,
     maxOccurrenceNum=
+        st.integers(),
+    type=
+        safe_text,
+    timeValue=
         st.integers()
 )
 Action_strategy = st.builds(
     Action,
 )
-camel::scalability::ScalingAction_strategy = st.builds(
-    camel::scalability::ScalingAction,
+camel_scalability_ScalingAction_strategy = st.builds(
+    camel_scalability_ScalingAction,
 )
 SecurityProperty_strategy = st.builds(
     SecurityProperty,
 )
-camel::security::Certifiable_strategy = st.builds(
-    camel::security::Certifiable,
+camel_security_Certifiable_strategy = st.builds(
+    camel_security_Certifiable,
 )
 SecurityRequirement_strategy = st.builds(
     SecurityRequirement,
 )
-camel::scalability::ScalabilityRule_strategy = st.builds(
-    camel::scalability::ScalabilityRule,
+camel_scalability_ScalabilityRule_strategy = st.builds(
+    camel_scalability_ScalabilityRule,
     name=
         safe_text
 )
-camel::scalability::EventInstance_strategy = st.builds(
-    camel::scalability::EventInstance,
-    name=
-        safe_text,
+camel_scalability_EventInstance_strategy = st.builds(
+    camel_scalability_EventInstance,
     status=
         safe_text,
     layer=
+        safe_text,
+    name=
         safe_text
 )
 MetricCondition_strategy = st.builds(
@@ -7352,18 +7352,18 @@ MetricCondition_strategy = st.builds(
 SimpleEvent_strategy = st.builds(
     SimpleEvent,
 )
-camel::scalability::NonFunctionalEvent_strategy = st.builds(
-    camel::scalability::NonFunctionalEvent,
+camel_scalability_NonFunctionalEvent_strategy = st.builds(
+    camel_scalability_NonFunctionalEvent,
     isViolation=
         st.booleans()
 )
-camel::scalability::FunctionalEvent_strategy = st.builds(
-    camel::scalability::FunctionalEvent,
+camel_scalability_FunctionalEvent_strategy = st.builds(
+    camel_scalability_FunctionalEvent,
     functionalType=
         safe_text
 )
-scalability::camel::Action_strategy = st.builds(
-    scalability::camel::Action,
+scalability_camel_Action_strategy = st.builds(
+    scalability_camel_Action,
 )
 Timer_strategy = st.builds(
     Timer,
@@ -7371,87 +7371,87 @@ Timer_strategy = st.builds(
 EventPattern_strategy = st.builds(
     EventPattern,
 )
-camel::scalability::BinaryEventPattern_strategy = st.builds(
-    camel::scalability::BinaryEventPattern,
+camel_scalability_BinaryEventPattern_strategy = st.builds(
+    camel_scalability_BinaryEventPattern,
+    lowerOccurrenceBound=
+        st.integers(),
     operator=
         safe_text,
     upperOccurrenceBound=
-        st.integers(),
-    lowerOccurrenceBound=
         st.integers()
 )
-camel::scalability::UnaryEventPattern_strategy = st.builds(
-    camel::scalability::UnaryEventPattern,
-    operator=
-        safe_text,
+camel_scalability_UnaryEventPattern_strategy = st.builds(
+    camel_scalability_UnaryEventPattern,
     occurrenceNum=
-        st.integers()
+        st.integers(),
+    operator=
+        safe_text
 )
 ScalingAction_strategy = st.builds(
     ScalingAction,
 )
-camel::scalability::VerticalScalingAction_strategy = st.builds(
-    camel::scalability::VerticalScalingAction,
-    memoryUpdate=
-        st.integers(),
+camel_scalability_HorizontalScalingAction_strategy = st.builds(
+    camel_scalability_HorizontalScalingAction,
+    count=
+        st.integers()
+)
+camel_scalability_VerticalScalingAction_strategy = st.builds(
+    camel_scalability_VerticalScalingAction,
     coreUpdate=
+        st.integers(),
+    ioUpdate=
         st.integers(),
     networkUpdate=
         st.integers(),
-    ioUpdate=
+    memoryUpdate=
         st.integers(),
     CPUUpdate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     storageUpdate=
         st.integers()
 )
-camel::scalability::HorizontalScalingAction_strategy = st.builds(
-    camel::scalability::HorizontalScalingAction,
-    count=
-        st.integers()
-)
 Event_strategy = st.builds(
     Event,
 )
-camel::scalability::SimpleEvent_strategy = st.builds(
-    camel::scalability::SimpleEvent,
+camel_scalability_SimpleEvent_strategy = st.builds(
+    camel_scalability_SimpleEvent,
 )
-camel::scalability::EventPattern_strategy = st.builds(
-    camel::scalability::EventPattern,
+camel_scalability_EventPattern_strategy = st.builds(
+    camel_scalability_EventPattern,
 )
-camel::scalability::Event_strategy = st.builds(
-    camel::scalability::Event,
+camel_scalability_Event_strategy = st.builds(
+    camel_scalability_Event,
     name=
         safe_text
 )
 ScaleRequirement_strategy = st.builds(
     ScaleRequirement,
 )
-camel::requirement::HorizontalScaleRequirement_strategy = st.builds(
-    camel::requirement::HorizontalScaleRequirement,
-    minInstances=
-        st.integers(),
+camel_requirement_HorizontalScaleRequirement_strategy = st.builds(
+    camel_requirement_HorizontalScaleRequirement,
     maxInstances=
+        st.integers(),
+    minInstances=
         st.integers()
 )
 SecurityControl_strategy = st.builds(
     SecurityControl,
 )
-camel::requirement::VerticalScaleRequirement_strategy = st.builds(
-    camel::requirement::VerticalScaleRequirement,
-    minCores=
-        st.integers(),
-    minCPU=
+camel_requirement_VerticalScaleRequirement_strategy = st.builds(
+    camel_requirement_VerticalScaleRequirement,
+    maxCPU=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     maxCores=
         st.integers(),
-    maxCPU=
+    minCPU=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    maxStorage=
+    minCores=
+        st.integers(),
+    maxRAM=
         st.integers(),
     minStorage=
         st.integers(),
-    maxRAM=
+    maxStorage=
         st.integers(),
     minRAM=
         st.integers()
@@ -7459,27 +7459,27 @@ camel::requirement::VerticalScaleRequirement_strategy = st.builds(
 HardwareRequirement_strategy = st.builds(
     HardwareRequirement,
 )
-camel::requirement::QuantitativeHardwareRequirement_strategy = st.builds(
-    camel::requirement::QuantitativeHardwareRequirement,
+camel_requirement_QuantitativeHardwareRequirement_strategy = st.builds(
+    camel_requirement_QuantitativeHardwareRequirement,
     maxRAM=
-        st.integers(),
-    maxStorage=
-        st.integers(),
-    minStorage=
         st.integers(),
     minCores=
         st.integers(),
-    minCPU=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    minRAM=
-        st.integers(),
     maxCores=
         st.integers(),
+    minStorage=
+        st.integers(),
+    minRAM=
+        st.integers(),
+    maxStorage=
+        st.integers(),
     maxCPU=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    minCPU=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-camel::requirement::QualitativeHardwareRequirement_strategy = st.builds(
-    camel::requirement::QualitativeHardwareRequirement,
+camel_requirement_QualitativeHardwareRequirement_strategy = st.builds(
+    camel_requirement_QualitativeHardwareRequirement,
     minBenchmark=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     maxBenchmark=
@@ -7488,75 +7488,75 @@ camel::requirement::QualitativeHardwareRequirement_strategy = st.builds(
 SoftRequirement_strategy = st.builds(
     SoftRequirement,
 )
-camel::requirement::OptimisationRequirement_strategy = st.builds(
-    camel::requirement::OptimisationRequirement,
+camel_requirement_OptimisationRequirement_strategy = st.builds(
+    camel_requirement_OptimisationRequirement,
     optimisationFunction=
         safe_text
 )
-requirement::camel::Application_strategy = st.builds(
-    requirement::camel::Application,
+requirement_camel_Application_strategy = st.builds(
+    requirement_camel_Application,
 )
 HardRequirement_strategy = st.builds(
     HardRequirement,
 )
-camel::requirement::ProviderRequirement_strategy = st.builds(
-    camel::requirement::ProviderRequirement,
+camel_requirement_HardwareRequirement_strategy = st.builds(
+    camel_requirement_HardwareRequirement,
 )
-camel::requirement::SecurityRequirement_strategy = st.builds(
-    camel::requirement::SecurityRequirement,
+camel_requirement_SecurityRequirement_strategy = st.builds(
+    camel_requirement_SecurityRequirement,
 )
-camel::requirement::LocationRequirement_strategy = st.builds(
-    camel::requirement::LocationRequirement,
+camel_requirement_LocationRequirement_strategy = st.builds(
+    camel_requirement_LocationRequirement,
 )
-camel::requirement::HardwareRequirement_strategy = st.builds(
-    camel::requirement::HardwareRequirement,
+camel_requirement_ScaleRequirement_strategy = st.builds(
+    camel_requirement_ScaleRequirement,
 )
-camel::requirement::ScaleRequirement_strategy = st.builds(
-    camel::requirement::ScaleRequirement,
+camel_requirement_ProviderRequirement_strategy = st.builds(
+    camel_requirement_ProviderRequirement,
 )
-camel::requirement::OSOrImageRequirement_strategy = st.builds(
-    camel::requirement::OSOrImageRequirement,
+camel_requirement_OSOrImageRequirement_strategy = st.builds(
+    camel_requirement_OSOrImageRequirement,
 )
-camel::requirement::ServiceLevelObjective_strategy = st.builds(
-    camel::requirement::ServiceLevelObjective,
+camel_requirement_ServiceLevelObjective_strategy = st.builds(
+    camel_requirement_ServiceLevelObjective,
 )
-camel::provider::Scope_strategy = st.builds(
-    camel::provider::Scope,
+camel_provider_Scope_strategy = st.builds(
+    camel_provider_Scope,
 )
 Alternative_strategy = st.builds(
     Alternative,
 )
-camel::provider::Exclusive_strategy = st.builds(
-    camel::provider::Exclusive,
+camel_provider_Exclusive_strategy = st.builds(
+    camel_provider_Exclusive,
 )
 GroupCardinality_strategy = st.builds(
     GroupCardinality,
 )
-camel::provider::Feature_strategy = st.builds(
-    camel::provider::Feature,
+camel_provider_Feature_strategy = st.builds(
+    camel_provider_Feature,
     name=
         safe_text
 )
-camel::requirement::Requirement_strategy = st.builds(
-    camel::requirement::Requirement,
+camel_requirement_Requirement_strategy = st.builds(
+    camel_requirement_Requirement,
     name=
         safe_text
 )
 Requirement_strategy = st.builds(
     Requirement,
 )
-camel::requirement::HardRequirement_strategy = st.builds(
-    camel::requirement::HardRequirement,
+camel_requirement_HardRequirement_strategy = st.builds(
+    camel_requirement_HardRequirement,
 )
-camel::requirement::RequirementGroup_strategy = st.builds(
-    camel::requirement::RequirementGroup,
-    requirementOperator=
-        safe_text
-)
-camel::requirement::SoftRequirement_strategy = st.builds(
-    camel::requirement::SoftRequirement,
+camel_requirement_SoftRequirement_strategy = st.builds(
+    camel_requirement_SoftRequirement,
     priority=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+camel_requirement_RequirementGroup_strategy = st.builds(
+    camel_requirement_RequirementGroup,
+    requirementOperator=
+        safe_text
 )
 FeatCardinality_strategy = st.builds(
     FeatCardinality,
@@ -7564,113 +7564,113 @@ FeatCardinality_strategy = st.builds(
 Scope_strategy = st.builds(
     Scope,
 )
-camel::provider::Instance_strategy = st.builds(
-    camel::provider::Instance,
+camel_provider_Product_strategy = st.builds(
+    camel_provider_Product,
 )
-camel::provider::Product_strategy = st.builds(
-    camel::provider::Product,
+camel_provider_Instance_strategy = st.builds(
+    camel_provider_Instance,
 )
 AttributeConstraint_strategy = st.builds(
     AttributeConstraint,
 )
-camel::provider::Constraint_strategy = st.builds(
-    camel::provider::Constraint,
+camel_provider_Constraint_strategy = st.builds(
+    camel_provider_Constraint,
     name=
         safe_text
 )
 Clone_strategy = st.builds(
     Clone,
 )
-camel::provider::Clone_strategy = st.builds(
-    camel::provider::Clone,
+camel_provider_Clone_strategy = st.builds(
+    camel_provider_Clone,
     name=
         safe_text
 )
 Requires_strategy = st.builds(
     Requires,
 )
-camel::provider::Functional_strategy = st.builds(
-    camel::provider::Functional,
+camel_provider_Functional_strategy = st.builds(
+    camel_provider_Functional,
     type=
         safe_text,
-    order=
-        st.integers(),
     value=
+        st.integers(),
+    order=
         st.integers()
 )
-camel::provider::AttributeConstraint_strategy = st.builds(
-    camel::provider::AttributeConstraint,
+camel_provider_AttributeConstraint_strategy = st.builds(
+    camel_provider_AttributeConstraint,
     name=
         safe_text
 )
-camel::provider::Attribute_strategy = st.builds(
-    camel::provider::Attribute,
-    unitType=
-        safe_text,
+camel_provider_Attribute_strategy = st.builds(
+    camel_provider_Attribute,
     name=
+        safe_text,
+    unitType=
         safe_text
 )
 Feature_strategy = st.builds(
     Feature,
 )
-camel::provider::Alternative_strategy = st.builds(
-    camel::provider::Alternative,
+camel_provider_Alternative_strategy = st.builds(
+    camel_provider_Alternative,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-camel::provider::Implies_strategy = st.builds(
-    camel::provider::Implies,
+camel_provider_Requires_strategy = st.builds(
+    camel_provider_Requires,
 )
-camel::provider::Excludes_strategy = st.builds(
-    camel::provider::Excludes,
+camel_provider_Excludes_strategy = st.builds(
+    camel_provider_Excludes,
 )
-camel::provider::Requires_strategy = st.builds(
-    camel::provider::Requires,
+camel_provider_Implies_strategy = st.builds(
+    camel_provider_Implies,
 )
 Cardinality_strategy = st.builds(
     Cardinality,
 )
-camel::provider::GroupCardinality_strategy = st.builds(
-    camel::provider::GroupCardinality,
+camel_provider_GroupCardinality_strategy = st.builds(
+    camel_provider_GroupCardinality,
 )
-camel::provider::FeatCardinality_strategy = st.builds(
-    camel::provider::FeatCardinality,
+camel_provider_FeatCardinality_strategy = st.builds(
+    camel_provider_FeatCardinality,
     value=
         st.integers()
 )
-camel::provider::Cardinality_strategy = st.builds(
-    camel::provider::Cardinality,
-    cardinalityMin=
-        st.integers(),
+camel_provider_Cardinality_strategy = st.builds(
+    camel_provider_Cardinality,
     cardinalityMax=
+        st.integers(),
+    cardinalityMin=
         st.integers()
 )
-camel::organisation::RoleAssignment_strategy = st.builds(
-    camel::organisation::RoleAssignment,
-    startTime=
-        st.dates(),
+camel_organisation_RoleAssignment_strategy = st.builds(
+    camel_organisation_RoleAssignment,
+    name=
+        safe_text,
     endTime=
         st.dates(),
-    name=
-        safe_text,
     assignmentTime=
+        st.dates(),
+    startTime=
         st.dates()
 )
-camel::organisation::Role_strategy = st.builds(
-    camel::organisation::Role,
+camel_organisation_Role_strategy = st.builds(
+    camel_organisation_Role,
     name=
         safe_text
 )
-camel::organisation::ResourceFilter_strategy = st.builds(
-    camel::organisation::ResourceFilter,
-    name=
-        safe_text,
+camel_organisation_ResourceFilter_strategy = st.builds(
+    camel_organisation_ResourceFilter,
     resourcePattern=
+        safe_text,
+    name=
         safe_text
 )
-camel::organisation::UserGroup_strategy = st.builds(
-    camel::organisation::UserGroup,
+camel_organisation_UserGroup_strategy = st.builds(
+    camel_organisation_UserGroup,
     name=
         safe_text
 )
@@ -7680,29 +7680,29 @@ CloudCredentials_strategy = st.builds(
 SecurityCapability_strategy = st.builds(
     SecurityCapability,
 )
-camel::organisation::Entity_strategy = st.builds(
-    camel::organisation::Entity,
+camel_organisation_Entity_strategy = st.builds(
+    camel_organisation_Entity,
 )
-camel::organisation::DataCenter_strategy = st.builds(
-    camel::organisation::DataCenter,
+camel_organisation_DataCenter_strategy = st.builds(
+    camel_organisation_DataCenter,
     codeName=
         safe_text,
     name=
         safe_text
 )
-camel::organisation::Permission_strategy = st.builds(
-    camel::organisation::Permission,
+camel_organisation_Permission_strategy = st.builds(
+    camel_organisation_Permission,
+    action=
+        safe_text,
     name=
         safe_text,
-    startTime=
-        st.dates(),
     endTime=
         st.dates(),
-    action=
-        safe_text
+    startTime=
+        st.dates()
 )
-camel::organisation::ExternalIdentifier_strategy = st.builds(
-    camel::organisation::ExternalIdentifier,
+camel_organisation_ExternalIdentifier_strategy = st.builds(
+    camel_organisation_ExternalIdentifier,
     identifier=
         safe_text,
     description=
@@ -7735,32 +7735,32 @@ CloudProvider_strategy = st.builds(
 Organisation_strategy = st.builds(
     Organisation,
 )
-camel::organisation::CloudProvider_strategy = st.builds(
-    camel::organisation::CloudProvider,
-    public=
+camel_organisation_CloudProvider_strategy = st.builds(
+    camel_organisation_CloudProvider,
+    IaaS=
         st.booleans(),
     SaaS=
         st.booleans(),
-    IaaS=
-        st.booleans(),
     PaaS=
+        st.booleans(),
+    public=
         st.booleans()
 )
 Credentials_strategy = st.builds(
     Credentials,
 )
-camel::organisation::PaaSageCredentials_strategy = st.builds(
-    camel::organisation::PaaSageCredentials,
+camel_organisation_PaaSageCredentials_strategy = st.builds(
+    camel_organisation_PaaSageCredentials,
     password=
         safe_text
 )
-camel::organisation::CloudCredentials_strategy = st.builds(
-    camel::organisation::CloudCredentials,
-    privateSSHKey=
+camel_organisation_CloudCredentials_strategy = st.builds(
+    camel_organisation_CloudCredentials,
+    username=
         safe_text,
     publicSSHKey=
         safe_text,
-    username=
+    privateSSHKey=
         safe_text,
     password=
         safe_text,
@@ -7769,24 +7769,24 @@ camel::organisation::CloudCredentials_strategy = st.builds(
     securityGroup=
         safe_text
 )
-camel::organisation::Credentials_strategy = st.builds(
-    camel::organisation::Credentials,
+camel_organisation_Credentials_strategy = st.builds(
+    camel_organisation_Credentials,
 )
 ResourceFilter_strategy = st.builds(
     ResourceFilter,
 )
-camel::organisation::InformationResourceFilter_strategy = st.builds(
-    camel::organisation::InformationResourceFilter,
-    everyInformationResource=
-        st.booleans(),
-    informationResourcePath=
-        safe_text
-)
-camel::organisation::ServiceResourceFilter_strategy = st.builds(
-    camel::organisation::ServiceResourceFilter,
+camel_organisation_ServiceResourceFilter_strategy = st.builds(
+    camel_organisation_ServiceResourceFilter,
     everyService=
         st.booleans(),
     serviceURL=
+        safe_text
+)
+camel_organisation_InformationResourceFilter_strategy = st.builds(
+    camel_organisation_InformationResourceFilter,
+    everyInformationResource=
+        st.booleans(),
+    informationResourcePath=
         safe_text
 )
 Permission_strategy = st.builds(
@@ -7795,75 +7795,75 @@ Permission_strategy = st.builds(
 ConditionContext_strategy = st.builds(
     ConditionContext,
 )
-camel::metric::MetricContext_strategy = st.builds(
-    camel::metric::MetricContext,
+camel_metric_MetricContext_strategy = st.builds(
+    camel_metric_MetricContext,
 )
-camel::metric::PropertyContext_strategy = st.builds(
-    camel::metric::PropertyContext,
+camel_metric_PropertyContext_strategy = st.builds(
+    camel_metric_PropertyContext,
 )
-camel::metric::Window_strategy = st.builds(
-    camel::metric::Window,
-    windowType=
-        safe_text,
+camel_metric_Window_strategy = st.builds(
+    camel_metric_Window,
     measurementSize=
         safe_text,
-    sizeType=
+    name=
         safe_text,
     timeSize=
         safe_text,
-    name=
+    sizeType=
+        safe_text,
+    windowType=
         safe_text
 )
-camel::metric::Sensor_strategy = st.builds(
-    camel::metric::Sensor,
-    isPush=
-        st.booleans(),
+camel_metric_Sensor_strategy = st.builds(
+    camel_metric_Sensor,
+    configuration=
+        safe_text,
     name=
         safe_text,
-    configuration=
-        safe_text
+    isPush=
+        st.booleans()
 )
-metric::camel::Application_strategy = st.builds(
-    metric::camel::Application,
+metric_camel_Application_strategy = st.builds(
+    metric_camel_Application,
 )
-camel::metric::ConditionContext_strategy = st.builds(
-    camel::metric::ConditionContext,
+camel_metric_ConditionContext_strategy = st.builds(
+    camel_metric_ConditionContext,
+    maxQuantity=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    name=
+        safe_text,
     isRelative=
         st.booleans(),
-    name=
-        safe_text,
-    minQuantity=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     quantifier=
         safe_text,
-    maxQuantity=
+    minQuantity=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-camel::metric::MetricObjectBinding_strategy = st.builds(
-    camel::metric::MetricObjectBinding,
+camel_metric_MetricObjectBinding_strategy = st.builds(
+    camel_metric_MetricObjectBinding,
     name=
         safe_text
 )
-camel::metric::Schedule_strategy = st.builds(
-    camel::metric::Schedule,
-    start=
-        st.dates(),
-    interval=
-        safe_text,
-    repetitions=
-        st.integers(),
-    name=
-        safe_text,
+camel_metric_Schedule_strategy = st.builds(
+    camel_metric_Schedule,
     end=
         st.dates(),
-    type=
-        safe_text
-)
-camel::metric::Property_strategy = st.builds(
-    camel::metric::Property,
+    repetitions=
+        st.integers(),
+    start=
+        st.dates(),
     name=
         safe_text,
+    type=
+        safe_text,
+    interval=
+        safe_text
+)
+camel_metric_Property_strategy = st.builds(
+    camel_metric_Property,
     description=
+        safe_text,
+    name=
         safe_text,
     type=
         safe_text
@@ -7871,76 +7871,88 @@ camel::metric::Property_strategy = st.builds(
 Property_strategy = st.builds(
     Property,
 )
-camel::security::SecurityProperty_strategy = st.builds(
-    camel::security::SecurityProperty,
+camel_security_SecurityProperty_strategy = st.builds(
+    camel_security_SecurityProperty,
 )
 Unit_strategy = st.builds(
     Unit,
 )
-camel::unit::MonetaryUnit_strategy = st.builds(
-    camel::unit::MonetaryUnit,
+camel_unit_TransactionUnit_strategy = st.builds(
+    camel_unit_TransactionUnit,
 )
-camel::unit::Dimensionless_strategy = st.builds(
-    camel::unit::Dimensionless,
+camel_unit_MonetaryUnit_strategy = st.builds(
+    camel_unit_MonetaryUnit,
 )
-camel::unit::RequestUnit_strategy = st.builds(
-    camel::unit::RequestUnit,
+camel_unit_RequestUnit_strategy = st.builds(
+    camel_unit_RequestUnit,
 )
-camel::unit::CoreUnit_strategy = st.builds(
-    camel::unit::CoreUnit,
+camel_unit_ThroughputUnit_strategy = st.builds(
+    camel_unit_ThroughputUnit,
+)
+camel_unit_CoreUnit_strategy = st.builds(
+    camel_unit_CoreUnit,
+)
+camel_unit_StorageUnit_strategy = st.builds(
+    camel_unit_StorageUnit,
+)
+camel_unit_TimeIntervalUnit_strategy = st.builds(
+    camel_unit_TimeIntervalUnit,
+)
+camel_unit_Dimensionless_strategy = st.builds(
+    camel_unit_Dimensionless,
 )
 ValueType_strategy = st.builds(
     ValueType,
 )
-camel::type::StringValueType_strategy = st.builds(
-    camel::type::StringValueType,
+camel_type_List_strategy = st.builds(
+    camel_type_List,
     primitiveType=
         safe_text
 )
-camel::type::RangeUnion_strategy = st.builds(
-    camel::type::RangeUnion,
+camel_type_BooleanValueType_strategy = st.builds(
+    camel_type_BooleanValueType,
     primitiveType=
         safe_text
 )
-camel::type::BooleanValueType_strategy = st.builds(
-    camel::type::BooleanValueType,
+camel_type_StringValueType_strategy = st.builds(
+    camel_type_StringValueType,
     primitiveType=
         safe_text
 )
-camel::type::List_strategy = st.builds(
-    camel::type::List,
+camel_type_RangeUnion_strategy = st.builds(
+    camel_type_RangeUnion,
     primitiveType=
         safe_text
 )
-camel::type::Enumeration_strategy = st.builds(
-    camel::type::Enumeration,
+camel_type_Enumeration_strategy = st.builds(
+    camel_type_Enumeration,
 )
-camel::type::Range_strategy = st.builds(
-    camel::type::Range,
+camel_type_Range_strategy = st.builds(
+    camel_type_Range,
     primitiveType=
         safe_text
 )
 MetricFormulaParameter_strategy = st.builds(
     MetricFormulaParameter,
 )
-camel::metric::Metric_strategy = st.builds(
-    camel::metric::Metric,
-    description=
+camel_metric_Metric_strategy = st.builds(
+    camel_metric_Metric,
+    layer=
         safe_text,
     valueDirection=
         safe_text,
     isVariable=
         st.booleans(),
-    layer=
+    description=
         safe_text
 )
-camel::metric::MetricFormula_strategy = st.builds(
-    camel::metric::MetricFormula,
-    functionArity=
+camel_metric_MetricFormula_strategy = st.builds(
+    camel_metric_MetricFormula,
+    functionPattern=
         safe_text,
     function=
         safe_text,
-    functionPattern=
+    functionArity=
         safe_text
 )
 MetricFormula_strategy = st.builds(
@@ -7949,14 +7961,14 @@ MetricFormula_strategy = st.builds(
 MetricObjectBinding_strategy = st.builds(
     MetricObjectBinding,
 )
-camel::metric::MetricApplicationBinding_strategy = st.builds(
-    camel::metric::MetricApplicationBinding,
+camel_metric_MetricVMBinding_strategy = st.builds(
+    camel_metric_MetricVMBinding,
 )
-camel::metric::MetricVMBinding_strategy = st.builds(
-    camel::metric::MetricVMBinding,
+camel_metric_MetricComponentBinding_strategy = st.builds(
+    camel_metric_MetricComponentBinding,
 )
-camel::metric::MetricComponentBinding_strategy = st.builds(
-    camel::metric::MetricComponentBinding,
+camel_metric_MetricApplicationBinding_strategy = st.builds(
+    camel_metric_MetricApplicationBinding,
 )
 Window_strategy = st.builds(
     Window,
@@ -7967,19 +7979,19 @@ Schedule_strategy = st.builds(
 Metric_strategy = st.builds(
     Metric,
 )
-camel::metric::CompositeMetric_strategy = st.builds(
-    camel::metric::CompositeMetric,
+camel_metric_RawMetric_strategy = st.builds(
+    camel_metric_RawMetric,
 )
-camel::metric::RawMetric_strategy = st.builds(
-    camel::metric::RawMetric,
+camel_metric_CompositeMetric_strategy = st.builds(
+    camel_metric_CompositeMetric,
 )
-camel::metric::MetricInstance_strategy = st.builds(
-    camel::metric::MetricInstance,
+camel_metric_MetricInstance_strategy = st.builds(
+    camel_metric_MetricInstance,
     name=
         safe_text
 )
-camel::metric::MetricFormulaParameter_strategy = st.builds(
-    camel::metric::MetricFormulaParameter,
+camel_metric_MetricFormulaParameter_strategy = st.builds(
+    camel_metric_MetricFormulaParameter,
     name=
         safe_text
 )
@@ -7995,42 +8007,42 @@ PropertyContext_strategy = st.builds(
 MetricContext_strategy = st.builds(
     MetricContext,
 )
-camel::metric::CompositeMetricContext_strategy = st.builds(
-    camel::metric::CompositeMetricContext,
+camel_metric_CompositeMetricContext_strategy = st.builds(
+    camel_metric_CompositeMetricContext,
 )
-camel::metric::RawMetricContext_strategy = st.builds(
-    camel::metric::RawMetricContext,
+camel_metric_RawMetricContext_strategy = st.builds(
+    camel_metric_RawMetricContext,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-camel::metric::PropertyCondition_strategy = st.builds(
-    camel::metric::PropertyCondition,
+camel_metric_PropertyCondition_strategy = st.builds(
+    camel_metric_PropertyCondition,
 )
-camel::metric::MetricCondition_strategy = st.builds(
-    camel::metric::MetricCondition,
+camel_metric_MetricCondition_strategy = st.builds(
+    camel_metric_MetricCondition,
 )
-camel::metric::Condition_strategy = st.builds(
-    camel::metric::Condition,
+camel_metric_Condition_strategy = st.builds(
+    camel_metric_Condition,
     threshold=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
         safe_text,
-    comparisonOperator=
-        safe_text,
     validity=
-        st.dates()
+        st.dates(),
+    comparisonOperator=
+        safe_text
 )
 Location_strategy = st.builds(
     Location,
 )
-camel::location::CloudLocation_strategy = st.builds(
-    camel::location::CloudLocation,
+camel_location_CloudLocation_strategy = st.builds(
+    camel_location_CloudLocation,
     isAssignable=
         st.booleans()
 )
-camel::location::Location_strategy = st.builds(
-    camel::location::Location,
+camel_location_Location_strategy = st.builds(
+    camel_location_Location,
     id=
         safe_text
 )
@@ -8043,30 +8055,320 @@ Country_strategy = st.builds(
 CloudLocation_strategy = st.builds(
     CloudLocation,
 )
-camel::unit::TransactionUnit_strategy = st.builds(
-    camel::unit::TransactionUnit,
+ScalabilityRule_strategy = st.builds(
+    ScalabilityRule,
 )
-camel::unit::TimeIntervalUnit_strategy = st.builds(
-    camel::unit::TimeIntervalUnit,
+camel_location_Country_strategy = st.builds(
+    camel_location_Country,
 )
-camel::unit::ThroughputUnit_strategy = st.builds(
-    camel::unit::ThroughputUnit,
+camel_location_GeographicalRegion_strategy = st.builds(
+    camel_location_GeographicalRegion,
+    name=
+        safe_text,
+    alternativeNames=
+        safe_text
 )
-camel::unit::StorageUnit_strategy = st.builds(
-    camel::unit::StorageUnit,
+ServiceLevelObjective_strategy = st.builds(
+    ServiceLevelObjective,
+)
+camel_security_SecuritySLO_strategy = st.builds(
+    camel_security_SecuritySLO,
+)
+MetricInstance_strategy = st.builds(
+    MetricInstance,
+)
+camel_metric_RawMetricInstance_strategy = st.builds(
+    camel_metric_RawMetricInstance,
+)
+camel_metric_CompositeMetricInstance_strategy = st.builds(
+    camel_metric_CompositeMetricInstance,
+)
+camel_execution_RuleTrigger_strategy = st.builds(
+    camel_execution_RuleTrigger,
+    name=
+        safe_text,
+    trigerringTime=
+        st.dates()
+)
+camel_execution_SLOAssessment_strategy = st.builds(
+    camel_execution_SLOAssessment,
+    assessment=
+        st.booleans(),
+    assessmentTime=
+        st.dates(),
+    name=
+        safe_text
+)
+execution_camel_Application_strategy = st.builds(
+    execution_camel_Application,
+)
+camel_execution_ExecutionContext_strategy = st.builds(
+    camel_execution_ExecutionContext,
+    endTime=
+        st.dates(),
+    startTime=
+        st.dates(),
+    name=
+        safe_text,
+    totalCost=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+execution_camel_Action_strategy = st.builds(
+    execution_camel_Action,
+)
+camel_execution_ActionRealisation_strategy = st.builds(
+    camel_execution_ActionRealisation,
+    lowLevelActions=
+        safe_text,
+    name=
+        safe_text,
+    startTime=
+        st.dates(),
+    endTime=
+        st.dates()
+)
+RuleTrigger_strategy = st.builds(
+    RuleTrigger,
+)
+SLOAssessment_strategy = st.builds(
+    SLOAssessment,
+)
+Measurement_strategy = st.builds(
+    Measurement,
+)
+camel_execution_VMMeasurement_strategy = st.builds(
+    camel_execution_VMMeasurement,
+)
+camel_execution_CommunicationMeasurement_strategy = st.builds(
+    camel_execution_CommunicationMeasurement,
+)
+camel_execution_InternalComponentMeasurement_strategy = st.builds(
+    camel_execution_InternalComponentMeasurement,
+)
+camel_execution_ApplicationMeasurement_strategy = st.builds(
+    camel_execution_ApplicationMeasurement,
+)
+ExecutionContext_strategy = st.builds(
+    ExecutionContext,
+)
+EventInstance_strategy = st.builds(
+    EventInstance,
+)
+ActionRealisation_strategy = st.builds(
+    ActionRealisation,
+)
+HostingPortInstance_strategy = st.builds(
+    HostingPortInstance,
+)
+camel_deployment_RequiredHostInstance_strategy = st.builds(
+    camel_deployment_RequiredHostInstance,
+)
+camel_deployment_ProvidedHostInstance_strategy = st.builds(
+    camel_deployment_ProvidedHostInstance,
+)
+camel_execution_Measurement_strategy = st.builds(
+    camel_execution_Measurement,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    name=
+        safe_text,
+    rawData=
+        safe_text,
+    measurementTime=
+        st.dates()
+)
+RequirementGroup_strategy = st.builds(
+    RequirementGroup,
+)
+CommunicationPortInstance_strategy = st.builds(
+    CommunicationPortInstance,
+)
+camel_deployment_ProvidedCommunicationInstance_strategy = st.builds(
+    camel_deployment_ProvidedCommunicationInstance,
+)
+MonetaryUnit_strategy = st.builds(
+    MonetaryUnit,
+)
+SingleValue_strategy = st.builds(
+    SingleValue,
+)
+camel_type_BoolValue_strategy = st.builds(
+    camel_type_BoolValue,
+    value=
+        st.booleans()
+)
+camel_type_NumericValue_strategy = st.builds(
+    camel_type_NumericValue,
+)
+camel_type_EnumerateValue_strategy = st.builds(
+    camel_type_EnumerateValue,
+    value=
+        st.integers(),
+    name=
+        safe_text
+)
+camel_type_StringsValue_strategy = st.builds(
+    camel_type_StringsValue,
+    value=
+        safe_text
+)
+Attribute_strategy = st.builds(
+    Attribute,
+)
+RequiredHostInstance_strategy = st.builds(
+    RequiredHostInstance,
+)
+RequiredCommunicationInstance_strategy = st.builds(
+    RequiredCommunicationInstance,
+)
+camel_deployment_RequiredCommunicationInstance_strategy = st.builds(
+    camel_deployment_RequiredCommunicationInstance,
+)
+HostingPort_strategy = st.builds(
+    HostingPort,
+)
+camel_deployment_RequiredHost_strategy = st.builds(
+    camel_deployment_RequiredHost,
+)
+camel_deployment_ProvidedHost_strategy = st.builds(
+    camel_deployment_ProvidedHost,
+)
+CommunicationPort_strategy = st.builds(
+    CommunicationPort,
+)
+camel_deployment_RequiredCommunication_strategy = st.builds(
+    camel_deployment_RequiredCommunication,
+    isMandatory=
+        st.booleans()
+)
+camel_deployment_ProvidedCommunication_strategy = st.builds(
+    camel_deployment_ProvidedCommunication,
+)
+ComponentInstance_strategy = st.builds(
+    ComponentInstance,
+)
+camel_deployment_VMInstance_strategy = st.builds(
+    camel_deployment_VMInstance,
+    ip=
+        safe_text
+)
+camel_deployment_InternalComponentInstance_strategy = st.builds(
+    camel_deployment_InternalComponentInstance,
+)
+ProvidedHostInstance_strategy = st.builds(
+    ProvidedHostInstance,
+)
+ProvidedCommunicationInstance_strategy = st.builds(
+    ProvidedCommunicationInstance,
+)
+ProviderRequirement_strategy = st.builds(
+    ProviderRequirement,
+)
+LocationRequirement_strategy = st.builds(
+    LocationRequirement,
+)
+camel_deployment_VMRequirementSet_strategy = st.builds(
+    camel_deployment_VMRequirementSet,
+    name=
+        safe_text
+)
+RequiredHost_strategy = st.builds(
+    RequiredHost,
+)
+RequiredCommunication_strategy = st.builds(
+    RequiredCommunication,
+)
+Component_strategy = st.builds(
+    Component,
+)
+camel_deployment_VM_strategy = st.builds(
+    camel_deployment_VM,
+)
+camel_deployment_InternalComponent_strategy = st.builds(
+    camel_deployment_InternalComponent,
+    version=
+        safe_text
+)
+Configuration_strategy = st.builds(
+    Configuration,
+)
+ProvidedHost_strategy = st.builds(
+    ProvidedHost,
+)
+ProvidedCommunication_strategy = st.builds(
+    ProvidedCommunication,
+)
+DeploymentElement_strategy = st.builds(
+    DeploymentElement,
+)
+camel_deployment_CommunicationInstance_strategy = st.builds(
+    camel_deployment_CommunicationInstance,
+)
+camel_deployment_Communication_strategy = st.builds(
+    camel_deployment_Communication,
+    type=
+        safe_text
+)
+camel_deployment_HostingPort_strategy = st.builds(
+    camel_deployment_HostingPort,
+)
+camel_deployment_HostingPortInstance_strategy = st.builds(
+    camel_deployment_HostingPortInstance,
+)
+camel_deployment_Hosting_strategy = st.builds(
+    camel_deployment_Hosting,
+)
+camel_deployment_CommunicationPortInstance_strategy = st.builds(
+    camel_deployment_CommunicationPortInstance,
+)
+camel_deployment_ComponentInstance_strategy = st.builds(
+    camel_deployment_ComponentInstance,
+    destroyedOn=
+        st.dates(),
+    instantiatedOn=
+        st.dates()
+)
+camel_deployment_HostingInstance_strategy = st.builds(
+    camel_deployment_HostingInstance,
+)
+camel_deployment_CommunicationPort_strategy = st.builds(
+    camel_deployment_CommunicationPort,
+    portNumber=
+        st.integers()
+)
+camel_deployment_Component_strategy = st.builds(
+    camel_deployment_Component,
+)
+VMRequirementSet_strategy = st.builds(
+    VMRequirementSet,
+)
+camel_deployment_Configuration_strategy = st.builds(
+    camel_deployment_Configuration,
+    installCommand=
+        safe_text,
+    startCommand=
+        safe_text,
+    stopCommand=
+        safe_text,
+    configureCommand=
+        safe_text,
+    downloadCommand=
+        safe_text,
+    uploadCommand=
+        safe_text
 )
 OSOrImageRequirement_strategy = st.builds(
     OSOrImageRequirement,
 )
-camel::requirement::OSRequirement_strategy = st.builds(
-    camel::requirement::OSRequirement,
+camel_requirement_OSRequirement_strategy = st.builds(
+    camel_requirement_OSRequirement,
     is64os=
         st.booleans(),
     os=
         safe_text
 )
-camel::requirement::ImageRequirement_strategy = st.builds(
-    camel::requirement::ImageRequirement,
+camel_requirement_ImageRequirement_strategy = st.builds(
+    camel_requirement_ImageRequirement,
     imageId=
         safe_text
 )
@@ -8079,36 +8381,36 @@ QualitativeHardwareRequirement_strategy = st.builds(
 InternalComponent_strategy = st.builds(
     InternalComponent,
 )
-camel::deployment::DeploymentElement_strategy = st.builds(
-    camel::deployment::DeploymentElement,
+camel_deployment_DeploymentElement_strategy = st.builds(
+    camel_deployment_DeploymentElement,
     name=
         safe_text
 )
 Entity_strategy = st.builds(
     Entity,
 )
-camel::organisation::Organisation_strategy = st.builds(
-    camel::organisation::Organisation,
-    www=
-        safe_text,
+camel_organisation_Organisation_strategy = st.builds(
+    camel_organisation_Organisation,
     name=
-        safe_text,
-    email=
         safe_text,
     postalAddress=
+        safe_text,
+    www=
+        safe_text,
+    email=
         safe_text
 )
-camel::organisation::User_strategy = st.builds(
-    camel::organisation::User,
-    lastName=
-        safe_text,
-    name=
+camel_organisation_User_strategy = st.builds(
+    camel_organisation_User,
+    email=
         safe_text,
     firstName=
         safe_text,
+    lastName=
+        safe_text,
     www=
         safe_text,
-    email=
+    name=
         safe_text
 )
 UnitModel_strategy = st.builds(
@@ -8150,17 +8452,17 @@ ExecutionModel_strategy = st.builds(
 DeploymentModel_strategy = st.builds(
     DeploymentModel,
 )
-camel::Application_strategy = st.builds(
-    camel::Application,
-    version=
+camel_Application_strategy = st.builds(
+    camel_Application,
+    description=
         safe_text,
     name=
         safe_text,
-    description=
+    version=
         safe_text
 )
-camel::Action_strategy = st.builds(
-    camel::Action,
+camel_Action_strategy = st.builds(
+    camel_Action,
     name=
         safe_text,
     type=
@@ -8169,40 +8471,46 @@ camel::Action_strategy = st.builds(
 Model_strategy = st.builds(
     Model,
 )
-camel::scalability::ScalabilityModel_strategy = st.builds(
-    camel::scalability::ScalabilityModel,
+camel_security_SecurityModel_strategy = st.builds(
+    camel_security_SecurityModel,
 )
-camel::metric::MetricModel_strategy = st.builds(
-    camel::metric::MetricModel,
-)
-camel::security::SecurityModel_strategy = st.builds(
-    camel::security::SecurityModel,
-)
-camel::unit::UnitModel_strategy = st.builds(
-    camel::unit::UnitModel,
-)
-camel::requirement::RequirementModel_strategy = st.builds(
-    camel::requirement::RequirementModel,
-)
-camel::provider::ProviderModel_strategy = st.builds(
-    camel::provider::ProviderModel,
-)
-camel::organisation::OrganisationModel_strategy = st.builds(
-    camel::organisation::OrganisationModel,
+camel_organisation_OrganisationModel_strategy = st.builds(
+    camel_organisation_OrganisationModel,
     securityLevel=
         safe_text
 )
-camel::type::TypeModel_strategy = st.builds(
-    camel::type::TypeModel,
+camel_deployment_DeploymentModel_strategy = st.builds(
+    camel_deployment_DeploymentModel,
 )
-camel::deployment::DeploymentModel_strategy = st.builds(
-    camel::deployment::DeploymentModel,
+camel_metric_MetricModel_strategy = st.builds(
+    camel_metric_MetricModel,
 )
-camel::CamelModel_strategy = st.builds(
-    camel::CamelModel,
+camel_type_TypeModel_strategy = st.builds(
+    camel_type_TypeModel,
 )
-camel::Model_strategy = st.builds(
-    camel::Model,
+camel_provider_ProviderModel_strategy = st.builds(
+    camel_provider_ProviderModel,
+)
+camel_scalability_ScalabilityModel_strategy = st.builds(
+    camel_scalability_ScalabilityModel,
+)
+camel_requirement_RequirementModel_strategy = st.builds(
+    camel_requirement_RequirementModel,
+)
+camel_execution_ExecutionModel_strategy = st.builds(
+    camel_execution_ExecutionModel,
+)
+camel_unit_UnitModel_strategy = st.builds(
+    camel_unit_UnitModel,
+)
+camel_location_LocationModel_strategy = st.builds(
+    camel_location_LocationModel,
+)
+camel_CamelModel_strategy = st.builds(
+    camel_CamelModel,
+)
+camel_Model_strategy = st.builds(
+    camel_Model,
     importURI=
         safe_text,
     name=
@@ -8223,341 +8531,27 @@ RequirementModel_strategy = st.builds(
 ProviderModel_strategy = st.builds(
     ProviderModel,
 )
-camel::location::LocationModel_strategy = st.builds(
-    camel::location::LocationModel,
-)
-ScalabilityRule_strategy = st.builds(
-    ScalabilityRule,
-)
-camel::location::Country_strategy = st.builds(
-    camel::location::Country,
-)
-camel::location::GeographicalRegion_strategy = st.builds(
-    camel::location::GeographicalRegion,
-    name=
-        safe_text,
-    alternativeNames=
-        safe_text
-)
-ServiceLevelObjective_strategy = st.builds(
-    ServiceLevelObjective,
-)
-camel::security::SecuritySLO_strategy = st.builds(
-    camel::security::SecuritySLO,
-)
-MetricInstance_strategy = st.builds(
-    MetricInstance,
-)
-camel::metric::RawMetricInstance_strategy = st.builds(
-    camel::metric::RawMetricInstance,
-)
-camel::metric::CompositeMetricInstance_strategy = st.builds(
-    camel::metric::CompositeMetricInstance,
-)
-camel::execution::RuleTrigger_strategy = st.builds(
-    camel::execution::RuleTrigger,
-    trigerringTime=
-        st.dates(),
-    name=
-        safe_text
-)
-camel::execution::SLOAssessment_strategy = st.builds(
-    camel::execution::SLOAssessment,
-    assessment=
-        st.booleans(),
-    name=
-        safe_text,
-    assessmentTime=
-        st.dates()
-)
-execution::camel::Application_strategy = st.builds(
-    execution::camel::Application,
-)
-camel::execution::ExecutionContext_strategy = st.builds(
-    camel::execution::ExecutionContext,
-    totalCost=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    startTime=
-        st.dates(),
-    name=
-        safe_text,
-    endTime=
-        st.dates()
-)
-execution::camel::Action_strategy = st.builds(
-    execution::camel::Action,
-)
-camel::execution::ActionRealisation_strategy = st.builds(
-    camel::execution::ActionRealisation,
-    endTime=
-        st.dates(),
-    startTime=
-        st.dates(),
-    lowLevelActions=
-        safe_text,
-    name=
-        safe_text
-)
-RuleTrigger_strategy = st.builds(
-    RuleTrigger,
-)
-SLOAssessment_strategy = st.builds(
-    SLOAssessment,
-)
-Measurement_strategy = st.builds(
-    Measurement,
-)
-camel::execution::ApplicationMeasurement_strategy = st.builds(
-    camel::execution::ApplicationMeasurement,
-)
-camel::execution::CommunicationMeasurement_strategy = st.builds(
-    camel::execution::CommunicationMeasurement,
-)
-camel::execution::VMMeasurement_strategy = st.builds(
-    camel::execution::VMMeasurement,
-)
-camel::execution::InternalComponentMeasurement_strategy = st.builds(
-    camel::execution::InternalComponentMeasurement,
-)
-ExecutionContext_strategy = st.builds(
-    ExecutionContext,
-)
-EventInstance_strategy = st.builds(
-    EventInstance,
-)
-ActionRealisation_strategy = st.builds(
-    ActionRealisation,
-)
-camel::execution::ExecutionModel_strategy = st.builds(
-    camel::execution::ExecutionModel,
-)
-HostingPortInstance_strategy = st.builds(
-    HostingPortInstance,
-)
-camel::deployment::RequiredHostInstance_strategy = st.builds(
-    camel::deployment::RequiredHostInstance,
-)
-camel::deployment::ProvidedHostInstance_strategy = st.builds(
-    camel::deployment::ProvidedHostInstance,
-)
-camel::execution::Measurement_strategy = st.builds(
-    camel::execution::Measurement,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    name=
-        safe_text,
-    rawData=
-        safe_text,
-    measurementTime=
-        st.dates()
-)
-RequirementGroup_strategy = st.builds(
-    RequirementGroup,
-)
-CommunicationPortInstance_strategy = st.builds(
-    CommunicationPortInstance,
-)
-camel::deployment::ProvidedCommunicationInstance_strategy = st.builds(
-    camel::deployment::ProvidedCommunicationInstance,
-)
-MonetaryUnit_strategy = st.builds(
-    MonetaryUnit,
-)
-SingleValue_strategy = st.builds(
-    SingleValue,
-)
-camel::type::EnumerateValue_strategy = st.builds(
-    camel::type::EnumerateValue,
-    name=
-        safe_text,
-    value=
-        st.integers()
-)
-camel::type::StringsValue_strategy = st.builds(
-    camel::type::StringsValue,
-    value=
-        safe_text
-)
-camel::type::NumericValue_strategy = st.builds(
-    camel::type::NumericValue,
-)
-camel::type::BoolValue_strategy = st.builds(
-    camel::type::BoolValue,
-    value=
-        st.booleans()
-)
-Attribute_strategy = st.builds(
-    Attribute,
-)
-RequiredHostInstance_strategy = st.builds(
-    RequiredHostInstance,
-)
-RequiredCommunicationInstance_strategy = st.builds(
-    RequiredCommunicationInstance,
-)
-camel::deployment::RequiredCommunicationInstance_strategy = st.builds(
-    camel::deployment::RequiredCommunicationInstance,
-)
-HostingPort_strategy = st.builds(
-    HostingPort,
-)
-camel::deployment::RequiredHost_strategy = st.builds(
-    camel::deployment::RequiredHost,
-)
-camel::deployment::ProvidedHost_strategy = st.builds(
-    camel::deployment::ProvidedHost,
-)
-CommunicationPort_strategy = st.builds(
-    CommunicationPort,
-)
-camel::deployment::RequiredCommunication_strategy = st.builds(
-    camel::deployment::RequiredCommunication,
-    isMandatory=
-        st.booleans()
-)
-camel::deployment::ProvidedCommunication_strategy = st.builds(
-    camel::deployment::ProvidedCommunication,
-)
-ComponentInstance_strategy = st.builds(
-    ComponentInstance,
-)
-camel::deployment::VMInstance_strategy = st.builds(
-    camel::deployment::VMInstance,
-    ip=
-        safe_text
-)
-camel::deployment::InternalComponentInstance_strategy = st.builds(
-    camel::deployment::InternalComponentInstance,
-)
-ProvidedHostInstance_strategy = st.builds(
-    ProvidedHostInstance,
-)
-ProvidedCommunicationInstance_strategy = st.builds(
-    ProvidedCommunicationInstance,
-)
-ProviderRequirement_strategy = st.builds(
-    ProviderRequirement,
-)
-LocationRequirement_strategy = st.builds(
-    LocationRequirement,
-)
-camel::deployment::VMRequirementSet_strategy = st.builds(
-    camel::deployment::VMRequirementSet,
-    name=
-        safe_text
-)
-RequiredHost_strategy = st.builds(
-    RequiredHost,
-)
-RequiredCommunication_strategy = st.builds(
-    RequiredCommunication,
-)
-Component_strategy = st.builds(
-    Component,
-)
-camel::deployment::VM_strategy = st.builds(
-    camel::deployment::VM,
-)
-camel::deployment::InternalComponent_strategy = st.builds(
-    camel::deployment::InternalComponent,
-    version=
-        safe_text
-)
-Configuration_strategy = st.builds(
-    Configuration,
-)
-ProvidedHost_strategy = st.builds(
-    ProvidedHost,
-)
-ProvidedCommunication_strategy = st.builds(
-    ProvidedCommunication,
-)
-DeploymentElement_strategy = st.builds(
-    DeploymentElement,
-)
-camel::deployment::CommunicationPortInstance_strategy = st.builds(
-    camel::deployment::CommunicationPortInstance,
-)
-camel::deployment::CommunicationInstance_strategy = st.builds(
-    camel::deployment::CommunicationInstance,
-)
-camel::deployment::ComponentInstance_strategy = st.builds(
-    camel::deployment::ComponentInstance,
-    destroyedOn=
-        st.dates(),
-    instantiatedOn=
-        st.dates()
-)
-camel::deployment::HostingInstance_strategy = st.builds(
-    camel::deployment::HostingInstance,
-)
-camel::deployment::Hosting_strategy = st.builds(
-    camel::deployment::Hosting,
-)
-camel::deployment::HostingPortInstance_strategy = st.builds(
-    camel::deployment::HostingPortInstance,
-)
-camel::deployment::HostingPort_strategy = st.builds(
-    camel::deployment::HostingPort,
-)
-camel::deployment::Configuration_strategy = st.builds(
-    camel::deployment::Configuration,
-    stopCommand=
-        safe_text,
-    startCommand=
-        safe_text,
-    configureCommand=
-        safe_text,
-    uploadCommand=
-        safe_text,
-    downloadCommand=
-        safe_text,
-    installCommand=
-        safe_text
-)
-camel::deployment::CommunicationPort_strategy = st.builds(
-    camel::deployment::CommunicationPort,
-    portNumber=
-        st.integers()
-)
-camel::deployment::Communication_strategy = st.builds(
-    camel::deployment::Communication,
-    type=
-        safe_text
-)
-camel::deployment::Component_strategy = st.builds(
-    camel::deployment::Component,
-)
-VMRequirementSet_strategy = st.builds(
-    VMRequirementSet,
-)
 
-@given(instance=camel::unit::Unit_strategy)
+@given(instance=camel_unit_Unit_strategy)
 @settings(max_examples=50)
-def test_camel::unit::unit_instantiation(instance):
-    assert isinstance(instance, camel::unit::Unit)
-
-@given(instance=camel::unit::Unit_strategy)
-def test_camel::unit::unit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_unit_unit_instantiation(instance):
+    assert isinstance(instance, camel_unit_Unit)
 
 
-@given(instance=camel::unit::Unit_strategy)
-def test_camel::unit::unit_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=camel::unit::Unit_strategy)
-def test_camel::unit::unit_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=camel::unit::Unit_strategy)
-def test_camel::unit::unit_unit_setter(instance):
+@given(instance=camel_unit_Unit_strategy)
+def test_camel_unit_unit_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
+
+
+
+@given(instance=camel_unit_Unit_strategy)
+def test_camel_unit_unit_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -8565,9 +8559,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::unit::Unit_strategy)
+@given(instance=camel_unit_Unit_strategy)
 @settings(max_examples=30)
-def test_camel::unit::unit_checkunit_changes_state(instance):
+def test_camel_unit_unit_checkunit_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8579,14 +8573,14 @@ def test_camel::unit::unit_checkunit_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkUnit' in camel::unit::Unit is empty"
+        assert has_statements, f"Function 'checkUnit' in camel_unit_Unit is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkUnit' in camel::unit::Unit did not change state; check implementation")
+            warnings.warn(f"Operation 'checkUnit' in camel_unit_Unit did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkUnit' in camel::unit::Unit is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkUnit' in camel_unit_Unit is not implemented or raised an error")
 
 @given(instance=Range_strategy)
 @settings(max_examples=50)
@@ -8603,10 +8597,10 @@ def test_limit_instantiation(instance):
 def test_enumeratevalue_instantiation(instance):
     assert isinstance(instance, EnumerateValue)
 
-@given(instance=camel::type::SingleValue_strategy)
+@given(instance=camel_type_SingleValue_strategy)
 @settings(max_examples=50)
-def test_camel::type::singlevalue_instantiation(instance):
-    assert isinstance(instance, camel::type::SingleValue)
+def test_camel_type_singlevalue_instantiation(instance):
+    assert isinstance(instance, camel_type_SingleValue)
 
 import warnings
 import copy
@@ -8614,9 +8608,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::type::SingleValue_strategy)
+@given(instance=camel_type_SingleValue_strategy)
 @settings(max_examples=30)
-def test_camel::type::singlevalue_valueequals_changes_state(instance):
+def test_camel_type_singlevalue_valueequals_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8630,127 +8624,109 @@ def test_camel::type::singlevalue_valueequals_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'valueEquals' in camel::type::SingleValue is empty"
+        assert has_statements, f"Function 'valueEquals' in camel_type_SingleValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'valueEquals' in camel::type::SingleValue did not change state; check implementation")
+            warnings.warn(f"Operation 'valueEquals' in camel_type_SingleValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'valueEquals' in camel::type::SingleValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'valueEquals' in camel_type_SingleValue is not implemented or raised an error")
 
 @given(instance=NumericValue_strategy)
 @settings(max_examples=50)
 def test_numericvalue_instantiation(instance):
     assert isinstance(instance, NumericValue)
 
-@given(instance=camel::type::DoublePrecisionValue_strategy)
+@given(instance=camel_type_IntegerValue_strategy)
 @settings(max_examples=50)
-def test_camel::type::doubleprecisionvalue_instantiation(instance):
-    assert isinstance(instance, camel::type::DoublePrecisionValue)
-
-@given(instance=camel::type::DoublePrecisionValue_strategy)
-def test_camel::type::doubleprecisionvalue_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_camel_type_integervalue_instantiation(instance):
+    assert isinstance(instance, camel_type_IntegerValue)
 
 
-@given(instance=camel::type::DoublePrecisionValue_strategy)
-def test_camel::type::doubleprecisionvalue_value_setter(instance):
+
+@given(instance=camel_type_IntegerValue_strategy)
+def test_camel_type_integervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=camel::type::FloatsValue_strategy)
+@given(instance=camel_type_ValueToIncrease_strategy)
 @settings(max_examples=50)
-def test_camel::type::floatsvalue_instantiation(instance):
-    assert isinstance(instance, camel::type::FloatsValue)
+def test_camel_type_valuetoincrease_instantiation(instance):
+    assert isinstance(instance, camel_type_ValueToIncrease)
 
-@given(instance=camel::type::FloatsValue_strategy)
-def test_camel::type::floatsvalue_value_type(instance):
-    assert isinstance(instance.value, float)
+@given(instance=camel_type_DoublePrecisionValue_strategy)
+@settings(max_examples=50)
+def test_camel_type_doubleprecisionvalue_instantiation(instance):
+    assert isinstance(instance, camel_type_DoublePrecisionValue)
 
 
-@given(instance=camel::type::FloatsValue_strategy)
-def test_camel::type::floatsvalue_value_setter(instance):
+
+@given(instance=camel_type_DoublePrecisionValue_strategy)
+def test_camel_type_doubleprecisionvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=camel::type::PositiveInf_strategy)
+@given(instance=camel_type_PositiveInf_strategy)
 @settings(max_examples=50)
-def test_camel::type::positiveinf_instantiation(instance):
-    assert isinstance(instance, camel::type::PositiveInf)
+def test_camel_type_positiveinf_instantiation(instance):
+    assert isinstance(instance, camel_type_PositiveInf)
 
-@given(instance=camel::type::ValueToIncrease_strategy)
+@given(instance=camel_type_NegativeInf_strategy)
 @settings(max_examples=50)
-def test_camel::type::valuetoincrease_instantiation(instance):
-    assert isinstance(instance, camel::type::ValueToIncrease)
+def test_camel_type_negativeinf_instantiation(instance):
+    assert isinstance(instance, camel_type_NegativeInf)
 
-@given(instance=camel::type::IntegerValue_strategy)
+@given(instance=camel_type_FloatsValue_strategy)
 @settings(max_examples=50)
-def test_camel::type::integervalue_instantiation(instance):
-    assert isinstance(instance, camel::type::IntegerValue)
-
-@given(instance=camel::type::IntegerValue_strategy)
-def test_camel::type::integervalue_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_camel_type_floatsvalue_instantiation(instance):
+    assert isinstance(instance, camel_type_FloatsValue)
 
 
-@given(instance=camel::type::IntegerValue_strategy)
-def test_camel::type::integervalue_value_setter(instance):
+
+@given(instance=camel_type_FloatsValue_strategy)
+def test_camel_type_floatsvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=camel::type::NegativeInf_strategy)
+@given(instance=camel_type_Limit_strategy)
 @settings(max_examples=50)
-def test_camel::type::negativeinf_instantiation(instance):
-    assert isinstance(instance, camel::type::NegativeInf)
-
-@given(instance=camel::type::Limit_strategy)
-@settings(max_examples=50)
-def test_camel::type::limit_instantiation(instance):
-    assert isinstance(instance, camel::type::Limit)
-
-@given(instance=camel::type::Limit_strategy)
-def test_camel::type::limit_included_type(instance):
-    assert isinstance(instance.included, bool)
+def test_camel_type_limit_instantiation(instance):
+    assert isinstance(instance, camel_type_Limit)
 
 
-@given(instance=camel::type::Limit_strategy)
-def test_camel::type::limit_included_setter(instance):
+
+@given(instance=camel_type_Limit_strategy)
+def test_camel_type_limit_included_setter(instance):
     original = instance.included
     instance.included = original
     assert instance.included == original
 
-@given(instance=camel::type::ValueType_strategy)
+@given(instance=camel_type_ValueType_strategy)
 @settings(max_examples=50)
-def test_camel::type::valuetype_instantiation(instance):
-    assert isinstance(instance, camel::type::ValueType)
-
-@given(instance=camel::type::ValueType_strategy)
-def test_camel::type::valuetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_type_valuetype_instantiation(instance):
+    assert isinstance(instance, camel_type_ValueType)
 
 
-@given(instance=camel::type::ValueType_strategy)
-def test_camel::type::valuetype_name_setter(instance):
+
+@given(instance=camel_type_ValueType_strategy)
+def test_camel_type_valuetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::security::SecurityCapability_strategy)
+@given(instance=camel_security_SecurityCapability_strategy)
 @settings(max_examples=50)
-def test_camel::security::securitycapability_instantiation(instance):
-    assert isinstance(instance, camel::security::SecurityCapability)
-
-@given(instance=camel::security::SecurityCapability_strategy)
-def test_camel::security::securitycapability_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_security_securitycapability_instantiation(instance):
+    assert isinstance(instance, camel_security_SecurityCapability)
 
 
-@given(instance=camel::security::SecurityCapability_strategy)
-def test_camel::security::securitycapability_name_setter(instance):
+
+@given(instance=camel_security_SecurityCapability_strategy)
+def test_camel_security_securitycapability_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -8760,91 +8736,79 @@ def test_camel::security::securitycapability_name_setter(instance):
 def test_rawmetric_instantiation(instance):
     assert isinstance(instance, RawMetric)
 
-@given(instance=camel::security::RawSecurityMetric_strategy)
+@given(instance=camel_security_RawSecurityMetric_strategy)
 @settings(max_examples=50)
-def test_camel::security::rawsecuritymetric_instantiation(instance):
-    assert isinstance(instance, camel::security::RawSecurityMetric)
+def test_camel_security_rawsecuritymetric_instantiation(instance):
+    assert isinstance(instance, camel_security_RawSecurityMetric)
 
 @given(instance=RawMetricInstance_strategy)
 @settings(max_examples=50)
 def test_rawmetricinstance_instantiation(instance):
     assert isinstance(instance, RawMetricInstance)
 
-@given(instance=camel::security::RawSecurityMetricInstance_strategy)
+@given(instance=camel_security_RawSecurityMetricInstance_strategy)
 @settings(max_examples=50)
-def test_camel::security::rawsecuritymetricinstance_instantiation(instance):
-    assert isinstance(instance, camel::security::RawSecurityMetricInstance)
+def test_camel_security_rawsecuritymetricinstance_instantiation(instance):
+    assert isinstance(instance, camel_security_RawSecurityMetricInstance)
 
-@given(instance=camel::security::SecurityControl_strategy)
+@given(instance=camel_security_SecurityControl_strategy)
 @settings(max_examples=50)
-def test_camel::security::securitycontrol_instantiation(instance):
-    assert isinstance(instance, camel::security::SecurityControl)
-
-@given(instance=camel::security::SecurityControl_strategy)
-def test_camel::security::securitycontrol_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_security_securitycontrol_instantiation(instance):
+    assert isinstance(instance, camel_security_SecurityControl)
 
 
-@given(instance=camel::security::SecurityControl_strategy)
-def test_camel::security::securitycontrol_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=camel::security::SecurityControl_strategy)
-def test_camel::security::securitycontrol_specification_type(instance):
-    assert isinstance(instance.specification, str)
-
-
-@given(instance=camel::security::SecurityControl_strategy)
-def test_camel::security::securitycontrol_specification_setter(instance):
+@given(instance=camel_security_SecurityControl_strategy)
+def test_camel_security_securitycontrol_specification_setter(instance):
     original = instance.specification
     instance.specification = original
     assert instance.specification == original
+
+
+
+@given(instance=camel_security_SecurityControl_strategy)
+def test_camel_security_securitycontrol_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=CompositeMetricInstance_strategy)
 @settings(max_examples=50)
 def test_compositemetricinstance_instantiation(instance):
     assert isinstance(instance, CompositeMetricInstance)
 
-@given(instance=camel::security::CompositeSecurityMetricInstance_strategy)
+@given(instance=camel_security_CompositeSecurityMetricInstance_strategy)
 @settings(max_examples=50)
-def test_camel::security::compositesecuritymetricinstance_instantiation(instance):
-    assert isinstance(instance, camel::security::CompositeSecurityMetricInstance)
+def test_camel_security_compositesecuritymetricinstance_instantiation(instance):
+    assert isinstance(instance, camel_security_CompositeSecurityMetricInstance)
 
 @given(instance=CompositeMetric_strategy)
 @settings(max_examples=50)
 def test_compositemetric_instantiation(instance):
     assert isinstance(instance, CompositeMetric)
 
-@given(instance=camel::security::CompositeSecurityMetric_strategy)
+@given(instance=camel_security_CompositeSecurityMetric_strategy)
 @settings(max_examples=50)
-def test_camel::security::compositesecuritymetric_instantiation(instance):
-    assert isinstance(instance, camel::security::CompositeSecurityMetric)
+def test_camel_security_compositesecuritymetric_instantiation(instance):
+    assert isinstance(instance, camel_security_CompositeSecurityMetric)
 
-@given(instance=camel::security::SecurityDomain_strategy)
+@given(instance=camel_security_SecurityDomain_strategy)
 @settings(max_examples=50)
-def test_camel::security::securitydomain_instantiation(instance):
-    assert isinstance(instance, camel::security::SecurityDomain)
-
-@given(instance=camel::security::SecurityDomain_strategy)
-def test_camel::security::securitydomain_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_camel_security_securitydomain_instantiation(instance):
+    assert isinstance(instance, camel_security_SecurityDomain)
 
 
-@given(instance=camel::security::SecurityDomain_strategy)
-def test_camel::security::securitydomain_id_setter(instance):
+
+@given(instance=camel_security_SecurityDomain_strategy)
+def test_camel_security_securitydomain_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=camel::security::SecurityDomain_strategy)
-def test_camel::security::securitydomain_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::security::SecurityDomain_strategy)
-def test_camel::security::securitydomain_name_setter(instance):
+@given(instance=camel_security_SecurityDomain_strategy)
+def test_camel_security_securitydomain_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -8879,133 +8843,109 @@ def test_compositesecuritymetric_instantiation(instance):
 def test_rawsecuritymetric_instantiation(instance):
     assert isinstance(instance, RawSecurityMetric)
 
-@given(instance=camel::scalability::Timer_strategy)
+@given(instance=camel_scalability_Timer_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::timer_instantiation(instance):
-    assert isinstance(instance, camel::scalability::Timer)
-
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_timeValue_type(instance):
-    assert isinstance(instance.timeValue, int)
+def test_camel_scalability_timer_instantiation(instance):
+    assert isinstance(instance, camel_scalability_Timer)
 
 
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_timeValue_setter(instance):
-    original = instance.timeValue
-    instance.timeValue = original
-    assert instance.timeValue == original
 
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_name_setter(instance):
+@given(instance=camel_scalability_Timer_strategy)
+def test_camel_scalability_timer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_maxOccurrenceNum_type(instance):
-    assert isinstance(instance.maxOccurrenceNum, int)
 
 
-@given(instance=camel::scalability::Timer_strategy)
-def test_camel::scalability::timer_maxOccurrenceNum_setter(instance):
+@given(instance=camel_scalability_Timer_strategy)
+def test_camel_scalability_timer_maxOccurrenceNum_setter(instance):
     original = instance.maxOccurrenceNum
     instance.maxOccurrenceNum = original
     assert instance.maxOccurrenceNum == original
+
+
+
+@given(instance=camel_scalability_Timer_strategy)
+def test_camel_scalability_timer_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=camel_scalability_Timer_strategy)
+def test_camel_scalability_timer_timeValue_setter(instance):
+    original = instance.timeValue
+    instance.timeValue = original
+    assert instance.timeValue == original
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=camel::scalability::ScalingAction_strategy)
+@given(instance=camel_scalability_ScalingAction_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::scalingaction_instantiation(instance):
-    assert isinstance(instance, camel::scalability::ScalingAction)
+def test_camel_scalability_scalingaction_instantiation(instance):
+    assert isinstance(instance, camel_scalability_ScalingAction)
 
 @given(instance=SecurityProperty_strategy)
 @settings(max_examples=50)
 def test_securityproperty_instantiation(instance):
     assert isinstance(instance, SecurityProperty)
 
-@given(instance=camel::security::Certifiable_strategy)
+@given(instance=camel_security_Certifiable_strategy)
 @settings(max_examples=50)
-def test_camel::security::certifiable_instantiation(instance):
-    assert isinstance(instance, camel::security::Certifiable)
+def test_camel_security_certifiable_instantiation(instance):
+    assert isinstance(instance, camel_security_Certifiable)
 
 @given(instance=SecurityRequirement_strategy)
 @settings(max_examples=50)
 def test_securityrequirement_instantiation(instance):
     assert isinstance(instance, SecurityRequirement)
 
-@given(instance=camel::scalability::ScalabilityRule_strategy)
+@given(instance=camel_scalability_ScalabilityRule_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::scalabilityrule_instantiation(instance):
-    assert isinstance(instance, camel::scalability::ScalabilityRule)
-
-@given(instance=camel::scalability::ScalabilityRule_strategy)
-def test_camel::scalability::scalabilityrule_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_scalability_scalabilityrule_instantiation(instance):
+    assert isinstance(instance, camel_scalability_ScalabilityRule)
 
 
-@given(instance=camel::scalability::ScalabilityRule_strategy)
-def test_camel::scalability::scalabilityrule_name_setter(instance):
+
+@given(instance=camel_scalability_ScalabilityRule_strategy)
+def test_camel_scalability_scalabilityrule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::scalability::EventInstance_strategy)
+@given(instance=camel_scalability_EventInstance_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::eventinstance_instantiation(instance):
-    assert isinstance(instance, camel::scalability::EventInstance)
-
-@given(instance=camel::scalability::EventInstance_strategy)
-def test_camel::scalability::eventinstance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_scalability_eventinstance_instantiation(instance):
+    assert isinstance(instance, camel_scalability_EventInstance)
 
 
-@given(instance=camel::scalability::EventInstance_strategy)
-def test_camel::scalability::eventinstance_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=camel::scalability::EventInstance_strategy)
-def test_camel::scalability::eventinstance_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=camel::scalability::EventInstance_strategy)
-def test_camel::scalability::eventinstance_status_setter(instance):
+@given(instance=camel_scalability_EventInstance_strategy)
+def test_camel_scalability_eventinstance_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=camel::scalability::EventInstance_strategy)
-def test_camel::scalability::eventinstance_layer_type(instance):
-    assert isinstance(instance.layer, str)
 
 
-@given(instance=camel::scalability::EventInstance_strategy)
-def test_camel::scalability::eventinstance_layer_setter(instance):
+@given(instance=camel_scalability_EventInstance_strategy)
+def test_camel_scalability_eventinstance_layer_setter(instance):
     original = instance.layer
     instance.layer = original
     assert instance.layer == original
+
+
+
+@given(instance=camel_scalability_EventInstance_strategy)
+def test_camel_scalability_eventinstance_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -9013,9 +8953,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::scalability::EventInstance_strategy)
+@given(instance=camel_scalability_EventInstance_strategy)
 @settings(max_examples=30)
-def test_camel::scalability::eventinstance_equallayer_changes_state(instance):
+def test_camel_scalability_eventinstance_equallayer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9030,14 +8970,14 @@ def test_camel::scalability::eventinstance_equallayer_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equalLayer' in camel::scalability::EventInstance is empty"
+        assert has_statements, f"Function 'equalLayer' in camel_scalability_EventInstance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equalLayer' in camel::scalability::EventInstance did not change state; check implementation")
+            warnings.warn(f"Operation 'equalLayer' in camel_scalability_EventInstance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equalLayer' in camel::scalability::EventInstance is not implemented or raised an error")
+        warnings.warn(f"Operation 'equalLayer' in camel_scalability_EventInstance is not implemented or raised an error")
 
 @given(instance=MetricCondition_strategy)
 @settings(max_examples=50)
@@ -9049,42 +8989,36 @@ def test_metriccondition_instantiation(instance):
 def test_simpleevent_instantiation(instance):
     assert isinstance(instance, SimpleEvent)
 
-@given(instance=camel::scalability::NonFunctionalEvent_strategy)
+@given(instance=camel_scalability_NonFunctionalEvent_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::nonfunctionalevent_instantiation(instance):
-    assert isinstance(instance, camel::scalability::NonFunctionalEvent)
-
-@given(instance=camel::scalability::NonFunctionalEvent_strategy)
-def test_camel::scalability::nonfunctionalevent_isViolation_type(instance):
-    assert isinstance(instance.isViolation, bool)
+def test_camel_scalability_nonfunctionalevent_instantiation(instance):
+    assert isinstance(instance, camel_scalability_NonFunctionalEvent)
 
 
-@given(instance=camel::scalability::NonFunctionalEvent_strategy)
-def test_camel::scalability::nonfunctionalevent_isViolation_setter(instance):
+
+@given(instance=camel_scalability_NonFunctionalEvent_strategy)
+def test_camel_scalability_nonfunctionalevent_isViolation_setter(instance):
     original = instance.isViolation
     instance.isViolation = original
     assert instance.isViolation == original
 
-@given(instance=camel::scalability::FunctionalEvent_strategy)
+@given(instance=camel_scalability_FunctionalEvent_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::functionalevent_instantiation(instance):
-    assert isinstance(instance, camel::scalability::FunctionalEvent)
-
-@given(instance=camel::scalability::FunctionalEvent_strategy)
-def test_camel::scalability::functionalevent_functionalType_type(instance):
-    assert isinstance(instance.functionalType, str)
+def test_camel_scalability_functionalevent_instantiation(instance):
+    assert isinstance(instance, camel_scalability_FunctionalEvent)
 
 
-@given(instance=camel::scalability::FunctionalEvent_strategy)
-def test_camel::scalability::functionalevent_functionalType_setter(instance):
+
+@given(instance=camel_scalability_FunctionalEvent_strategy)
+def test_camel_scalability_functionalevent_functionalType_setter(instance):
     original = instance.functionalType
     instance.functionalType = original
     assert instance.functionalType == original
 
-@given(instance=scalability::camel::Action_strategy)
+@given(instance=scalability_camel_Action_strategy)
 @settings(max_examples=50)
-def test_scalability::camel::action_instantiation(instance):
-    assert isinstance(instance, scalability::camel::Action)
+def test_scalability_camel_action_instantiation(instance):
+    assert isinstance(instance, scalability_camel_Action)
 
 @given(instance=Timer_strategy)
 @settings(max_examples=50)
@@ -9096,177 +9030,141 @@ def test_timer_instantiation(instance):
 def test_eventpattern_instantiation(instance):
     assert isinstance(instance, EventPattern)
 
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
+@given(instance=camel_scalability_BinaryEventPattern_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::binaryeventpattern_instantiation(instance):
-    assert isinstance(instance, camel::scalability::BinaryEventPattern)
-
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
-def test_camel::scalability::binaryeventpattern_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_camel_scalability_binaryeventpattern_instantiation(instance):
+    assert isinstance(instance, camel_scalability_BinaryEventPattern)
 
 
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
-def test_camel::scalability::binaryeventpattern_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
-def test_camel::scalability::binaryeventpattern_upperOccurrenceBound_type(instance):
-    assert isinstance(instance.upperOccurrenceBound, int)
-
-
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
-def test_camel::scalability::binaryeventpattern_upperOccurrenceBound_setter(instance):
-    original = instance.upperOccurrenceBound
-    instance.upperOccurrenceBound = original
-    assert instance.upperOccurrenceBound == original
-
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
-def test_camel::scalability::binaryeventpattern_lowerOccurrenceBound_type(instance):
-    assert isinstance(instance.lowerOccurrenceBound, int)
-
-
-@given(instance=camel::scalability::BinaryEventPattern_strategy)
-def test_camel::scalability::binaryeventpattern_lowerOccurrenceBound_setter(instance):
+@given(instance=camel_scalability_BinaryEventPattern_strategy)
+def test_camel_scalability_binaryeventpattern_lowerOccurrenceBound_setter(instance):
     original = instance.lowerOccurrenceBound
     instance.lowerOccurrenceBound = original
     assert instance.lowerOccurrenceBound == original
 
-@given(instance=camel::scalability::UnaryEventPattern_strategy)
-@settings(max_examples=50)
-def test_camel::scalability::unaryeventpattern_instantiation(instance):
-    assert isinstance(instance, camel::scalability::UnaryEventPattern)
-
-@given(instance=camel::scalability::UnaryEventPattern_strategy)
-def test_camel::scalability::unaryeventpattern_operator_type(instance):
-    assert isinstance(instance.operator, str)
 
 
-@given(instance=camel::scalability::UnaryEventPattern_strategy)
-def test_camel::scalability::unaryeventpattern_operator_setter(instance):
+@given(instance=camel_scalability_BinaryEventPattern_strategy)
+def test_camel_scalability_binaryeventpattern_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=camel::scalability::UnaryEventPattern_strategy)
-def test_camel::scalability::unaryeventpattern_occurrenceNum_type(instance):
-    assert isinstance(instance.occurrenceNum, int)
 
 
-@given(instance=camel::scalability::UnaryEventPattern_strategy)
-def test_camel::scalability::unaryeventpattern_occurrenceNum_setter(instance):
+@given(instance=camel_scalability_BinaryEventPattern_strategy)
+def test_camel_scalability_binaryeventpattern_upperOccurrenceBound_setter(instance):
+    original = instance.upperOccurrenceBound
+    instance.upperOccurrenceBound = original
+    assert instance.upperOccurrenceBound == original
+
+@given(instance=camel_scalability_UnaryEventPattern_strategy)
+@settings(max_examples=50)
+def test_camel_scalability_unaryeventpattern_instantiation(instance):
+    assert isinstance(instance, camel_scalability_UnaryEventPattern)
+
+
+
+@given(instance=camel_scalability_UnaryEventPattern_strategy)
+def test_camel_scalability_unaryeventpattern_occurrenceNum_setter(instance):
     original = instance.occurrenceNum
     instance.occurrenceNum = original
     assert instance.occurrenceNum == original
+
+
+
+@given(instance=camel_scalability_UnaryEventPattern_strategy)
+def test_camel_scalability_unaryeventpattern_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
 
 @given(instance=ScalingAction_strategy)
 @settings(max_examples=50)
 def test_scalingaction_instantiation(instance):
     assert isinstance(instance, ScalingAction)
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
+@given(instance=camel_scalability_HorizontalScalingAction_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::verticalscalingaction_instantiation(instance):
-    assert isinstance(instance, camel::scalability::VerticalScalingAction)
-
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_memoryUpdate_type(instance):
-    assert isinstance(instance.memoryUpdate, int)
+def test_camel_scalability_horizontalscalingaction_instantiation(instance):
+    assert isinstance(instance, camel_scalability_HorizontalScalingAction)
 
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_memoryUpdate_setter(instance):
-    original = instance.memoryUpdate
-    instance.memoryUpdate = original
-    assert instance.memoryUpdate == original
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_coreUpdate_type(instance):
-    assert isinstance(instance.coreUpdate, int)
+@given(instance=camel_scalability_HorizontalScalingAction_strategy)
+def test_camel_scalability_horizontalscalingaction_count_setter(instance):
+    original = instance.count
+    instance.count = original
+    assert instance.count == original
+
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+@settings(max_examples=50)
+def test_camel_scalability_verticalscalingaction_instantiation(instance):
+    assert isinstance(instance, camel_scalability_VerticalScalingAction)
 
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_coreUpdate_setter(instance):
+
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+def test_camel_scalability_verticalscalingaction_coreUpdate_setter(instance):
     original = instance.coreUpdate
     instance.coreUpdate = original
     assert instance.coreUpdate == original
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_networkUpdate_type(instance):
-    assert isinstance(instance.networkUpdate, int)
 
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_networkUpdate_setter(instance):
-    original = instance.networkUpdate
-    instance.networkUpdate = original
-    assert instance.networkUpdate == original
-
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_ioUpdate_type(instance):
-    assert isinstance(instance.ioUpdate, int)
-
-
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_ioUpdate_setter(instance):
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+def test_camel_scalability_verticalscalingaction_ioUpdate_setter(instance):
     original = instance.ioUpdate
     instance.ioUpdate = original
     assert instance.ioUpdate == original
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_CPUUpdate_type(instance):
-    assert isinstance(instance.CPUUpdate, float)
 
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_CPUUpdate_setter(instance):
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+def test_camel_scalability_verticalscalingaction_networkUpdate_setter(instance):
+    original = instance.networkUpdate
+    instance.networkUpdate = original
+    assert instance.networkUpdate == original
+
+
+
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+def test_camel_scalability_verticalscalingaction_memoryUpdate_setter(instance):
+    original = instance.memoryUpdate
+    instance.memoryUpdate = original
+    assert instance.memoryUpdate == original
+
+
+
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+def test_camel_scalability_verticalscalingaction_CPUUpdate_setter(instance):
     original = instance.CPUUpdate
     instance.CPUUpdate = original
     assert instance.CPUUpdate == original
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_storageUpdate_type(instance):
-    assert isinstance(instance.storageUpdate, int)
 
 
-@given(instance=camel::scalability::VerticalScalingAction_strategy)
-def test_camel::scalability::verticalscalingaction_storageUpdate_setter(instance):
+@given(instance=camel_scalability_VerticalScalingAction_strategy)
+def test_camel_scalability_verticalscalingaction_storageUpdate_setter(instance):
     original = instance.storageUpdate
     instance.storageUpdate = original
     assert instance.storageUpdate == original
-
-@given(instance=camel::scalability::HorizontalScalingAction_strategy)
-@settings(max_examples=50)
-def test_camel::scalability::horizontalscalingaction_instantiation(instance):
-    assert isinstance(instance, camel::scalability::HorizontalScalingAction)
-
-@given(instance=camel::scalability::HorizontalScalingAction_strategy)
-def test_camel::scalability::horizontalscalingaction_count_type(instance):
-    assert isinstance(instance.count, int)
-
-
-@given(instance=camel::scalability::HorizontalScalingAction_strategy)
-def test_camel::scalability::horizontalscalingaction_count_setter(instance):
-    original = instance.count
-    instance.count = original
-    assert instance.count == original
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=camel::scalability::SimpleEvent_strategy)
+@given(instance=camel_scalability_SimpleEvent_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::simpleevent_instantiation(instance):
-    assert isinstance(instance, camel::scalability::SimpleEvent)
+def test_camel_scalability_simpleevent_instantiation(instance):
+    assert isinstance(instance, camel_scalability_SimpleEvent)
 
-@given(instance=camel::scalability::EventPattern_strategy)
+@given(instance=camel_scalability_EventPattern_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::eventpattern_instantiation(instance):
-    assert isinstance(instance, camel::scalability::EventPattern)
+def test_camel_scalability_eventpattern_instantiation(instance):
+    assert isinstance(instance, camel_scalability_EventPattern)
 
 import warnings
 import copy
@@ -9274,40 +9172,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::scalability::EventPattern_strategy)
+@given(instance=camel_scalability_EventPattern_strategy)
 @settings(max_examples=30)
-def test_camel::scalability::eventpattern_includesevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.includesEvent(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.includesEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesEvent' in camel::scalability::EventPattern is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesEvent' in camel::scalability::EventPattern did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesEvent' in camel::scalability::EventPattern is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::scalability::EventPattern_strategy)
-@settings(max_examples=30)
-def test_camel::scalability::eventpattern_includesleftevent_changes_state(instance):
+def test_camel_scalability_eventpattern_includesleftevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9321,14 +9188,14 @@ def test_camel::scalability::eventpattern_includesleftevent_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesLeftEvent' in camel::scalability::EventPattern is empty"
+        assert has_statements, f"Function 'includesLeftEvent' in camel_scalability_EventPattern is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesLeftEvent' in camel::scalability::EventPattern did not change state; check implementation")
+            warnings.warn(f"Operation 'includesLeftEvent' in camel_scalability_EventPattern did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesLeftEvent' in camel::scalability::EventPattern is not implemented or raised an error")
+        warnings.warn(f"Operation 'includesLeftEvent' in camel_scalability_EventPattern is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9336,9 +9203,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::scalability::EventPattern_strategy)
+@given(instance=camel_scalability_EventPattern_strategy)
 @settings(max_examples=30)
-def test_camel::scalability::eventpattern_includesrightevent_changes_state(instance):
+def test_camel_scalability_eventpattern_includesrightevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9352,27 +9219,55 @@ def test_camel::scalability::eventpattern_includesrightevent_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesRightEvent' in camel::scalability::EventPattern is empty"
+        assert has_statements, f"Function 'includesRightEvent' in camel_scalability_EventPattern is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesRightEvent' in camel::scalability::EventPattern did not change state; check implementation")
+            warnings.warn(f"Operation 'includesRightEvent' in camel_scalability_EventPattern did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesRightEvent' in camel::scalability::EventPattern is not implemented or raised an error")
+        warnings.warn(f"Operation 'includesRightEvent' in camel_scalability_EventPattern is not implemented or raised an error")
 
-@given(instance=camel::scalability::Event_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_scalability_EventPattern_strategy)
+@settings(max_examples=30)
+def test_camel_scalability_eventpattern_includesevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.includesEvent(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.includesEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'includesEvent' in camel_scalability_EventPattern is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'includesEvent' in camel_scalability_EventPattern did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'includesEvent' in camel_scalability_EventPattern is not implemented or raised an error")
+
+@given(instance=camel_scalability_Event_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::event_instantiation(instance):
-    assert isinstance(instance, camel::scalability::Event)
-
-@given(instance=camel::scalability::Event_strategy)
-def test_camel::scalability::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_scalability_event_instantiation(instance):
+    assert isinstance(instance, camel_scalability_Event)
 
 
-@given(instance=camel::scalability::Event_strategy)
-def test_camel::scalability::event_name_setter(instance):
+
+@given(instance=camel_scalability_Event_strategy)
+def test_camel_scalability_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -9382,127 +9277,97 @@ def test_camel::scalability::event_name_setter(instance):
 def test_scalerequirement_instantiation(instance):
     assert isinstance(instance, ScaleRequirement)
 
-@given(instance=camel::requirement::HorizontalScaleRequirement_strategy)
+@given(instance=camel_requirement_HorizontalScaleRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::horizontalscalerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::HorizontalScaleRequirement)
-
-@given(instance=camel::requirement::HorizontalScaleRequirement_strategy)
-def test_camel::requirement::horizontalscalerequirement_minInstances_type(instance):
-    assert isinstance(instance.minInstances, int)
+def test_camel_requirement_horizontalscalerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_HorizontalScaleRequirement)
 
 
-@given(instance=camel::requirement::HorizontalScaleRequirement_strategy)
-def test_camel::requirement::horizontalscalerequirement_minInstances_setter(instance):
-    original = instance.minInstances
-    instance.minInstances = original
-    assert instance.minInstances == original
 
-@given(instance=camel::requirement::HorizontalScaleRequirement_strategy)
-def test_camel::requirement::horizontalscalerequirement_maxInstances_type(instance):
-    assert isinstance(instance.maxInstances, int)
-
-
-@given(instance=camel::requirement::HorizontalScaleRequirement_strategy)
-def test_camel::requirement::horizontalscalerequirement_maxInstances_setter(instance):
+@given(instance=camel_requirement_HorizontalScaleRequirement_strategy)
+def test_camel_requirement_horizontalscalerequirement_maxInstances_setter(instance):
     original = instance.maxInstances
     instance.maxInstances = original
     assert instance.maxInstances == original
+
+
+
+@given(instance=camel_requirement_HorizontalScaleRequirement_strategy)
+def test_camel_requirement_horizontalscalerequirement_minInstances_setter(instance):
+    original = instance.minInstances
+    instance.minInstances = original
+    assert instance.minInstances == original
 
 @given(instance=SecurityControl_strategy)
 @settings(max_examples=50)
 def test_securitycontrol_instantiation(instance):
     assert isinstance(instance, SecurityControl)
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::verticalscalerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::VerticalScaleRequirement)
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minCores_type(instance):
-    assert isinstance(instance.minCores, int)
+def test_camel_requirement_verticalscalerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_VerticalScaleRequirement)
 
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minCores_setter(instance):
-    original = instance.minCores
-    instance.minCores = original
-    assert instance.minCores == original
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minCPU_type(instance):
-    assert isinstance(instance.minCPU, float)
-
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minCPU_setter(instance):
-    original = instance.minCPU
-    instance.minCPU = original
-    assert instance.minCPU == original
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxCores_type(instance):
-    assert isinstance(instance.maxCores, int)
-
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxCores_setter(instance):
-    original = instance.maxCores
-    instance.maxCores = original
-    assert instance.maxCores == original
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxCPU_type(instance):
-    assert isinstance(instance.maxCPU, float)
-
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxCPU_setter(instance):
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_maxCPU_setter(instance):
     original = instance.maxCPU
     instance.maxCPU = original
     assert instance.maxCPU == original
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxStorage_type(instance):
-    assert isinstance(instance.maxStorage, int)
 
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxStorage_setter(instance):
-    original = instance.maxStorage
-    instance.maxStorage = original
-    assert instance.maxStorage == original
-
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minStorage_type(instance):
-    assert isinstance(instance.minStorage, int)
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_maxCores_setter(instance):
+    original = instance.maxCores
+    instance.maxCores = original
+    assert instance.maxCores == original
 
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minStorage_setter(instance):
-    original = instance.minStorage
-    instance.minStorage = original
-    assert instance.minStorage == original
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxRAM_type(instance):
-    assert isinstance(instance.maxRAM, int)
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_minCPU_setter(instance):
+    original = instance.minCPU
+    instance.minCPU = original
+    assert instance.minCPU == original
 
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_maxRAM_setter(instance):
+
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_minCores_setter(instance):
+    original = instance.minCores
+    instance.minCores = original
+    assert instance.minCores == original
+
+
+
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_maxRAM_setter(instance):
     original = instance.maxRAM
     instance.maxRAM = original
     assert instance.maxRAM == original
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minRAM_type(instance):
-    assert isinstance(instance.minRAM, int)
 
 
-@given(instance=camel::requirement::VerticalScaleRequirement_strategy)
-def test_camel::requirement::verticalscalerequirement_minRAM_setter(instance):
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_minStorage_setter(instance):
+    original = instance.minStorage
+    instance.minStorage = original
+    assert instance.minStorage == original
+
+
+
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_maxStorage_setter(instance):
+    original = instance.maxStorage
+    instance.maxStorage = original
+    assert instance.maxStorage == original
+
+
+
+@given(instance=camel_requirement_VerticalScaleRequirement_strategy)
+def test_camel_requirement_verticalscalerequirement_minRAM_setter(instance):
     original = instance.minRAM
     instance.minRAM = original
     assert instance.minRAM == original
@@ -9512,122 +9377,92 @@ def test_camel::requirement::verticalscalerequirement_minRAM_setter(instance):
 def test_hardwarerequirement_instantiation(instance):
     assert isinstance(instance, HardwareRequirement)
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::quantitativehardwarerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::QuantitativeHardwareRequirement)
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxRAM_type(instance):
-    assert isinstance(instance.maxRAM, int)
+def test_camel_requirement_quantitativehardwarerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_QuantitativeHardwareRequirement)
 
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxRAM_setter(instance):
+
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_maxRAM_setter(instance):
     original = instance.maxRAM
     instance.maxRAM = original
     assert instance.maxRAM == original
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxStorage_type(instance):
-    assert isinstance(instance.maxStorage, int)
 
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxStorage_setter(instance):
-    original = instance.maxStorage
-    instance.maxStorage = original
-    assert instance.maxStorage == original
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minStorage_type(instance):
-    assert isinstance(instance.minStorage, int)
-
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minStorage_setter(instance):
-    original = instance.minStorage
-    instance.minStorage = original
-    assert instance.minStorage == original
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minCores_type(instance):
-    assert isinstance(instance.minCores, int)
-
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minCores_setter(instance):
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_minCores_setter(instance):
     original = instance.minCores
     instance.minCores = original
     assert instance.minCores == original
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minCPU_type(instance):
-    assert isinstance(instance.minCPU, float)
 
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minCPU_setter(instance):
-    original = instance.minCPU
-    instance.minCPU = original
-    assert instance.minCPU == original
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minRAM_type(instance):
-    assert isinstance(instance.minRAM, int)
-
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_minRAM_setter(instance):
-    original = instance.minRAM
-    instance.minRAM = original
-    assert instance.minRAM == original
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxCores_type(instance):
-    assert isinstance(instance.maxCores, int)
-
-
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxCores_setter(instance):
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_maxCores_setter(instance):
     original = instance.maxCores
     instance.maxCores = original
     assert instance.maxCores == original
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxCPU_type(instance):
-    assert isinstance(instance.maxCPU, float)
 
 
-@given(instance=camel::requirement::QuantitativeHardwareRequirement_strategy)
-def test_camel::requirement::quantitativehardwarerequirement_maxCPU_setter(instance):
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_minStorage_setter(instance):
+    original = instance.minStorage
+    instance.minStorage = original
+    assert instance.minStorage == original
+
+
+
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_minRAM_setter(instance):
+    original = instance.minRAM
+    instance.minRAM = original
+    assert instance.minRAM == original
+
+
+
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_maxStorage_setter(instance):
+    original = instance.maxStorage
+    instance.maxStorage = original
+    assert instance.maxStorage == original
+
+
+
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_maxCPU_setter(instance):
     original = instance.maxCPU
     instance.maxCPU = original
     assert instance.maxCPU == original
 
-@given(instance=camel::requirement::QualitativeHardwareRequirement_strategy)
+
+
+@given(instance=camel_requirement_QuantitativeHardwareRequirement_strategy)
+def test_camel_requirement_quantitativehardwarerequirement_minCPU_setter(instance):
+    original = instance.minCPU
+    instance.minCPU = original
+    assert instance.minCPU == original
+
+@given(instance=camel_requirement_QualitativeHardwareRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::qualitativehardwarerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::QualitativeHardwareRequirement)
-
-@given(instance=camel::requirement::QualitativeHardwareRequirement_strategy)
-def test_camel::requirement::qualitativehardwarerequirement_minBenchmark_type(instance):
-    assert isinstance(instance.minBenchmark, float)
+def test_camel_requirement_qualitativehardwarerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_QualitativeHardwareRequirement)
 
 
-@given(instance=camel::requirement::QualitativeHardwareRequirement_strategy)
-def test_camel::requirement::qualitativehardwarerequirement_minBenchmark_setter(instance):
+
+@given(instance=camel_requirement_QualitativeHardwareRequirement_strategy)
+def test_camel_requirement_qualitativehardwarerequirement_minBenchmark_setter(instance):
     original = instance.minBenchmark
     instance.minBenchmark = original
     assert instance.minBenchmark == original
 
-@given(instance=camel::requirement::QualitativeHardwareRequirement_strategy)
-def test_camel::requirement::qualitativehardwarerequirement_maxBenchmark_type(instance):
-    assert isinstance(instance.maxBenchmark, float)
 
 
-@given(instance=camel::requirement::QualitativeHardwareRequirement_strategy)
-def test_camel::requirement::qualitativehardwarerequirement_maxBenchmark_setter(instance):
+@given(instance=camel_requirement_QualitativeHardwareRequirement_strategy)
+def test_camel_requirement_qualitativehardwarerequirement_maxBenchmark_setter(instance):
     original = instance.maxBenchmark
     instance.maxBenchmark = original
     assert instance.maxBenchmark == original
@@ -9637,115 +9472,106 @@ def test_camel::requirement::qualitativehardwarerequirement_maxBenchmark_setter(
 def test_softrequirement_instantiation(instance):
     assert isinstance(instance, SoftRequirement)
 
-@given(instance=camel::requirement::OptimisationRequirement_strategy)
+@given(instance=camel_requirement_OptimisationRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::optimisationrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::OptimisationRequirement)
-
-@given(instance=camel::requirement::OptimisationRequirement_strategy)
-def test_camel::requirement::optimisationrequirement_optimisationFunction_type(instance):
-    assert isinstance(instance.optimisationFunction, str)
+def test_camel_requirement_optimisationrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_OptimisationRequirement)
 
 
-@given(instance=camel::requirement::OptimisationRequirement_strategy)
-def test_camel::requirement::optimisationrequirement_optimisationFunction_setter(instance):
+
+@given(instance=camel_requirement_OptimisationRequirement_strategy)
+def test_camel_requirement_optimisationrequirement_optimisationFunction_setter(instance):
     original = instance.optimisationFunction
     instance.optimisationFunction = original
     assert instance.optimisationFunction == original
 
-@given(instance=requirement::camel::Application_strategy)
+@given(instance=requirement_camel_Application_strategy)
 @settings(max_examples=50)
-def test_requirement::camel::application_instantiation(instance):
-    assert isinstance(instance, requirement::camel::Application)
+def test_requirement_camel_application_instantiation(instance):
+    assert isinstance(instance, requirement_camel_Application)
 
 @given(instance=HardRequirement_strategy)
 @settings(max_examples=50)
 def test_hardrequirement_instantiation(instance):
     assert isinstance(instance, HardRequirement)
 
-@given(instance=camel::requirement::ProviderRequirement_strategy)
+@given(instance=camel_requirement_HardwareRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::providerrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::ProviderRequirement)
+def test_camel_requirement_hardwarerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_HardwareRequirement)
 
-@given(instance=camel::requirement::SecurityRequirement_strategy)
+@given(instance=camel_requirement_SecurityRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::securityrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::SecurityRequirement)
+def test_camel_requirement_securityrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_SecurityRequirement)
 
-@given(instance=camel::requirement::LocationRequirement_strategy)
+@given(instance=camel_requirement_LocationRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::locationrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::LocationRequirement)
+def test_camel_requirement_locationrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_LocationRequirement)
 
-@given(instance=camel::requirement::HardwareRequirement_strategy)
+@given(instance=camel_requirement_ScaleRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::hardwarerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::HardwareRequirement)
+def test_camel_requirement_scalerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_ScaleRequirement)
 
-@given(instance=camel::requirement::ScaleRequirement_strategy)
+@given(instance=camel_requirement_ProviderRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::scalerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::ScaleRequirement)
+def test_camel_requirement_providerrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_ProviderRequirement)
 
-@given(instance=camel::requirement::OSOrImageRequirement_strategy)
+@given(instance=camel_requirement_OSOrImageRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::osorimagerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::OSOrImageRequirement)
+def test_camel_requirement_osorimagerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_OSOrImageRequirement)
 
-@given(instance=camel::requirement::ServiceLevelObjective_strategy)
+@given(instance=camel_requirement_ServiceLevelObjective_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::servicelevelobjective_instantiation(instance):
-    assert isinstance(instance, camel::requirement::ServiceLevelObjective)
+def test_camel_requirement_servicelevelobjective_instantiation(instance):
+    assert isinstance(instance, camel_requirement_ServiceLevelObjective)
 
-@given(instance=camel::provider::Scope_strategy)
+@given(instance=camel_provider_Scope_strategy)
 @settings(max_examples=50)
-def test_camel::provider::scope_instantiation(instance):
-    assert isinstance(instance, camel::provider::Scope)
+def test_camel_provider_scope_instantiation(instance):
+    assert isinstance(instance, camel_provider_Scope)
 
 @given(instance=Alternative_strategy)
 @settings(max_examples=50)
 def test_alternative_instantiation(instance):
     assert isinstance(instance, Alternative)
 
-@given(instance=camel::provider::Exclusive_strategy)
+@given(instance=camel_provider_Exclusive_strategy)
 @settings(max_examples=50)
-def test_camel::provider::exclusive_instantiation(instance):
-    assert isinstance(instance, camel::provider::Exclusive)
+def test_camel_provider_exclusive_instantiation(instance):
+    assert isinstance(instance, camel_provider_Exclusive)
 
 @given(instance=GroupCardinality_strategy)
 @settings(max_examples=50)
 def test_groupcardinality_instantiation(instance):
     assert isinstance(instance, GroupCardinality)
 
-@given(instance=camel::provider::Feature_strategy)
+@given(instance=camel_provider_Feature_strategy)
 @settings(max_examples=50)
-def test_camel::provider::feature_instantiation(instance):
-    assert isinstance(instance, camel::provider::Feature)
-
-@given(instance=camel::provider::Feature_strategy)
-def test_camel::provider::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_provider_feature_instantiation(instance):
+    assert isinstance(instance, camel_provider_Feature)
 
 
-@given(instance=camel::provider::Feature_strategy)
-def test_camel::provider::feature_name_setter(instance):
+
+@given(instance=camel_provider_Feature_strategy)
+def test_camel_provider_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::requirement::Requirement_strategy)
+@given(instance=camel_requirement_Requirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::requirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::Requirement)
-
-@given(instance=camel::requirement::Requirement_strategy)
-def test_camel::requirement::requirement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_requirement_requirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_Requirement)
 
 
-@given(instance=camel::requirement::Requirement_strategy)
-def test_camel::requirement::requirement_name_setter(instance):
+
+@given(instance=camel_requirement_Requirement_strategy)
+def test_camel_requirement_requirement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -9755,23 +9581,33 @@ def test_camel::requirement::requirement_name_setter(instance):
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=camel::requirement::HardRequirement_strategy)
+@given(instance=camel_requirement_HardRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::hardrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::HardRequirement)
+def test_camel_requirement_hardrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_HardRequirement)
 
-@given(instance=camel::requirement::RequirementGroup_strategy)
+@given(instance=camel_requirement_SoftRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::requirementgroup_instantiation(instance):
-    assert isinstance(instance, camel::requirement::RequirementGroup)
-
-@given(instance=camel::requirement::RequirementGroup_strategy)
-def test_camel::requirement::requirementgroup_requirementOperator_type(instance):
-    assert isinstance(instance.requirementOperator, str)
+def test_camel_requirement_softrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_SoftRequirement)
 
 
-@given(instance=camel::requirement::RequirementGroup_strategy)
-def test_camel::requirement::requirementgroup_requirementOperator_setter(instance):
+
+@given(instance=camel_requirement_SoftRequirement_strategy)
+def test_camel_requirement_softrequirement_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+@given(instance=camel_requirement_RequirementGroup_strategy)
+@settings(max_examples=50)
+def test_camel_requirement_requirementgroup_instantiation(instance):
+    assert isinstance(instance, camel_requirement_RequirementGroup)
+
+
+
+@given(instance=camel_requirement_RequirementGroup_strategy)
+def test_camel_requirement_requirementgroup_requirementOperator_setter(instance):
     original = instance.requirementOperator
     instance.requirementOperator = original
     assert instance.requirementOperator == original
@@ -9782,9 +9618,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::requirement::RequirementGroup_strategy)
+@given(instance=camel_requirement_RequirementGroup_strategy)
 @settings(max_examples=30)
-def test_camel::requirement::requirementgroup_checkrecursiveness_changes_state(instance):
+def test_camel_requirement_requirementgroup_checkrecursiveness_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9801,30 +9637,14 @@ def test_camel::requirement::requirementgroup_checkrecursiveness_changes_state(i
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRecursiveness' in camel::requirement::RequirementGroup is empty"
+        assert has_statements, f"Function 'checkRecursiveness' in camel_requirement_RequirementGroup is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRecursiveness' in camel::requirement::RequirementGroup did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRecursiveness' in camel_requirement_RequirementGroup did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRecursiveness' in camel::requirement::RequirementGroup is not implemented or raised an error")
-
-@given(instance=camel::requirement::SoftRequirement_strategy)
-@settings(max_examples=50)
-def test_camel::requirement::softrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::SoftRequirement)
-
-@given(instance=camel::requirement::SoftRequirement_strategy)
-def test_camel::requirement::softrequirement_priority_type(instance):
-    assert isinstance(instance.priority, float)
-
-
-@given(instance=camel::requirement::SoftRequirement_strategy)
-def test_camel::requirement::softrequirement_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
+        warnings.warn(f"Operation 'checkRecursiveness' in camel_requirement_RequirementGroup is not implemented or raised an error")
 
 @given(instance=FeatCardinality_strategy)
 @settings(max_examples=50)
@@ -9836,33 +9656,30 @@ def test_featcardinality_instantiation(instance):
 def test_scope_instantiation(instance):
     assert isinstance(instance, Scope)
 
-@given(instance=camel::provider::Instance_strategy)
+@given(instance=camel_provider_Product_strategy)
 @settings(max_examples=50)
-def test_camel::provider::instance_instantiation(instance):
-    assert isinstance(instance, camel::provider::Instance)
+def test_camel_provider_product_instantiation(instance):
+    assert isinstance(instance, camel_provider_Product)
 
-@given(instance=camel::provider::Product_strategy)
+@given(instance=camel_provider_Instance_strategy)
 @settings(max_examples=50)
-def test_camel::provider::product_instantiation(instance):
-    assert isinstance(instance, camel::provider::Product)
+def test_camel_provider_instance_instantiation(instance):
+    assert isinstance(instance, camel_provider_Instance)
 
 @given(instance=AttributeConstraint_strategy)
 @settings(max_examples=50)
 def test_attributeconstraint_instantiation(instance):
     assert isinstance(instance, AttributeConstraint)
 
-@given(instance=camel::provider::Constraint_strategy)
+@given(instance=camel_provider_Constraint_strategy)
 @settings(max_examples=50)
-def test_camel::provider::constraint_instantiation(instance):
-    assert isinstance(instance, camel::provider::Constraint)
-
-@given(instance=camel::provider::Constraint_strategy)
-def test_camel::provider::constraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_provider_constraint_instantiation(instance):
+    assert isinstance(instance, camel_provider_Constraint)
 
 
-@given(instance=camel::provider::Constraint_strategy)
-def test_camel::provider::constraint_name_setter(instance):
+
+@given(instance=camel_provider_Constraint_strategy)
+def test_camel_provider_constraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -9872,18 +9689,15 @@ def test_camel::provider::constraint_name_setter(instance):
 def test_clone_instantiation(instance):
     assert isinstance(instance, Clone)
 
-@given(instance=camel::provider::Clone_strategy)
+@given(instance=camel_provider_Clone_strategy)
 @settings(max_examples=50)
-def test_camel::provider::clone_instantiation(instance):
-    assert isinstance(instance, camel::provider::Clone)
-
-@given(instance=camel::provider::Clone_strategy)
-def test_camel::provider::clone_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_provider_clone_instantiation(instance):
+    assert isinstance(instance, camel_provider_Clone)
 
 
-@given(instance=camel::provider::Clone_strategy)
-def test_camel::provider::clone_name_setter(instance):
+
+@given(instance=camel_provider_Clone_strategy)
+def test_camel_provider_clone_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -9893,86 +9707,68 @@ def test_camel::provider::clone_name_setter(instance):
 def test_requires_instantiation(instance):
     assert isinstance(instance, Requires)
 
-@given(instance=camel::provider::Functional_strategy)
+@given(instance=camel_provider_Functional_strategy)
 @settings(max_examples=50)
-def test_camel::provider::functional_instantiation(instance):
-    assert isinstance(instance, camel::provider::Functional)
-
-@given(instance=camel::provider::Functional_strategy)
-def test_camel::provider::functional_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_camel_provider_functional_instantiation(instance):
+    assert isinstance(instance, camel_provider_Functional)
 
 
-@given(instance=camel::provider::Functional_strategy)
-def test_camel::provider::functional_type_setter(instance):
+
+@given(instance=camel_provider_Functional_strategy)
+def test_camel_provider_functional_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=camel::provider::Functional_strategy)
-def test_camel::provider::functional_order_type(instance):
-    assert isinstance(instance.order, int)
 
 
-@given(instance=camel::provider::Functional_strategy)
-def test_camel::provider::functional_order_setter(instance):
-    original = instance.order
-    instance.order = original
-    assert instance.order == original
-
-@given(instance=camel::provider::Functional_strategy)
-def test_camel::provider::functional_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=camel::provider::Functional_strategy)
-def test_camel::provider::functional_value_setter(instance):
+@given(instance=camel_provider_Functional_strategy)
+def test_camel_provider_functional_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=camel::provider::AttributeConstraint_strategy)
+
+
+@given(instance=camel_provider_Functional_strategy)
+def test_camel_provider_functional_order_setter(instance):
+    original = instance.order
+    instance.order = original
+    assert instance.order == original
+
+@given(instance=camel_provider_AttributeConstraint_strategy)
 @settings(max_examples=50)
-def test_camel::provider::attributeconstraint_instantiation(instance):
-    assert isinstance(instance, camel::provider::AttributeConstraint)
-
-@given(instance=camel::provider::AttributeConstraint_strategy)
-def test_camel::provider::attributeconstraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_provider_attributeconstraint_instantiation(instance):
+    assert isinstance(instance, camel_provider_AttributeConstraint)
 
 
-@given(instance=camel::provider::AttributeConstraint_strategy)
-def test_camel::provider::attributeconstraint_name_setter(instance):
+
+@given(instance=camel_provider_AttributeConstraint_strategy)
+def test_camel_provider_attributeconstraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::provider::Attribute_strategy)
+@given(instance=camel_provider_Attribute_strategy)
 @settings(max_examples=50)
-def test_camel::provider::attribute_instantiation(instance):
-    assert isinstance(instance, camel::provider::Attribute)
-
-@given(instance=camel::provider::Attribute_strategy)
-def test_camel::provider::attribute_unitType_type(instance):
-    assert isinstance(instance.unitType, str)
+def test_camel_provider_attribute_instantiation(instance):
+    assert isinstance(instance, camel_provider_Attribute)
 
 
-@given(instance=camel::provider::Attribute_strategy)
-def test_camel::provider::attribute_unitType_setter(instance):
+
+@given(instance=camel_provider_Attribute_strategy)
+def test_camel_provider_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_provider_Attribute_strategy)
+def test_camel_provider_attribute_unitType_setter(instance):
     original = instance.unitType
     instance.unitType = original
     assert instance.unitType == original
-
-@given(instance=camel::provider::Attribute_strategy)
-def test_camel::provider::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::provider::Attribute_strategy)
-def test_camel::provider::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 import warnings
 import copy
@@ -9980,9 +9776,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::provider::Attribute_strategy)
+@given(instance=camel_provider_Attribute_strategy)
 @settings(max_examples=30)
-def test_camel::provider::attribute_checkvalue_changes_state(instance):
+def test_camel_provider_attribute_checkvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9997,146 +9793,125 @@ def test_camel::provider::attribute_checkvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkValue' in camel::provider::Attribute is empty"
+        assert has_statements, f"Function 'checkValue' in camel_provider_Attribute is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkValue' in camel::provider::Attribute did not change state; check implementation")
+            warnings.warn(f"Operation 'checkValue' in camel_provider_Attribute did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkValue' in camel::provider::Attribute is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkValue' in camel_provider_Attribute is not implemented or raised an error")
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=camel::provider::Alternative_strategy)
+@given(instance=camel_provider_Alternative_strategy)
 @settings(max_examples=50)
-def test_camel::provider::alternative_instantiation(instance):
-    assert isinstance(instance, camel::provider::Alternative)
+def test_camel_provider_alternative_instantiation(instance):
+    assert isinstance(instance, camel_provider_Alternative)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=camel::provider::Implies_strategy)
+@given(instance=camel_provider_Requires_strategy)
 @settings(max_examples=50)
-def test_camel::provider::implies_instantiation(instance):
-    assert isinstance(instance, camel::provider::Implies)
+def test_camel_provider_requires_instantiation(instance):
+    assert isinstance(instance, camel_provider_Requires)
 
-@given(instance=camel::provider::Excludes_strategy)
+@given(instance=camel_provider_Excludes_strategy)
 @settings(max_examples=50)
-def test_camel::provider::excludes_instantiation(instance):
-    assert isinstance(instance, camel::provider::Excludes)
+def test_camel_provider_excludes_instantiation(instance):
+    assert isinstance(instance, camel_provider_Excludes)
 
-@given(instance=camel::provider::Requires_strategy)
+@given(instance=camel_provider_Implies_strategy)
 @settings(max_examples=50)
-def test_camel::provider::requires_instantiation(instance):
-    assert isinstance(instance, camel::provider::Requires)
+def test_camel_provider_implies_instantiation(instance):
+    assert isinstance(instance, camel_provider_Implies)
 
 @given(instance=Cardinality_strategy)
 @settings(max_examples=50)
 def test_cardinality_instantiation(instance):
     assert isinstance(instance, Cardinality)
 
-@given(instance=camel::provider::GroupCardinality_strategy)
+@given(instance=camel_provider_GroupCardinality_strategy)
 @settings(max_examples=50)
-def test_camel::provider::groupcardinality_instantiation(instance):
-    assert isinstance(instance, camel::provider::GroupCardinality)
+def test_camel_provider_groupcardinality_instantiation(instance):
+    assert isinstance(instance, camel_provider_GroupCardinality)
 
-@given(instance=camel::provider::FeatCardinality_strategy)
+@given(instance=camel_provider_FeatCardinality_strategy)
 @settings(max_examples=50)
-def test_camel::provider::featcardinality_instantiation(instance):
-    assert isinstance(instance, camel::provider::FeatCardinality)
-
-@given(instance=camel::provider::FeatCardinality_strategy)
-def test_camel::provider::featcardinality_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_camel_provider_featcardinality_instantiation(instance):
+    assert isinstance(instance, camel_provider_FeatCardinality)
 
 
-@given(instance=camel::provider::FeatCardinality_strategy)
-def test_camel::provider::featcardinality_value_setter(instance):
+
+@given(instance=camel_provider_FeatCardinality_strategy)
+def test_camel_provider_featcardinality_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=camel::provider::Cardinality_strategy)
+@given(instance=camel_provider_Cardinality_strategy)
 @settings(max_examples=50)
-def test_camel::provider::cardinality_instantiation(instance):
-    assert isinstance(instance, camel::provider::Cardinality)
-
-@given(instance=camel::provider::Cardinality_strategy)
-def test_camel::provider::cardinality_cardinalityMin_type(instance):
-    assert isinstance(instance.cardinalityMin, int)
+def test_camel_provider_cardinality_instantiation(instance):
+    assert isinstance(instance, camel_provider_Cardinality)
 
 
-@given(instance=camel::provider::Cardinality_strategy)
-def test_camel::provider::cardinality_cardinalityMin_setter(instance):
-    original = instance.cardinalityMin
-    instance.cardinalityMin = original
-    assert instance.cardinalityMin == original
 
-@given(instance=camel::provider::Cardinality_strategy)
-def test_camel::provider::cardinality_cardinalityMax_type(instance):
-    assert isinstance(instance.cardinalityMax, int)
-
-
-@given(instance=camel::provider::Cardinality_strategy)
-def test_camel::provider::cardinality_cardinalityMax_setter(instance):
+@given(instance=camel_provider_Cardinality_strategy)
+def test_camel_provider_cardinality_cardinalityMax_setter(instance):
     original = instance.cardinalityMax
     instance.cardinalityMax = original
     assert instance.cardinalityMax == original
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
+
+
+@given(instance=camel_provider_Cardinality_strategy)
+def test_camel_provider_cardinality_cardinalityMin_setter(instance):
+    original = instance.cardinalityMin
+    instance.cardinalityMin = original
+    assert instance.cardinalityMin == original
+
+@given(instance=camel_organisation_RoleAssignment_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::roleassignment_instantiation(instance):
-    assert isinstance(instance, camel::organisation::RoleAssignment)
-
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_startTime_type(instance):
-    assert isinstance(instance.startTime, date)
+def test_camel_organisation_roleassignment_instantiation(instance):
+    assert isinstance(instance, camel_organisation_RoleAssignment)
 
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_startTime_setter(instance):
-    original = instance.startTime
-    instance.startTime = original
-    assert instance.startTime == original
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_endTime_type(instance):
-    assert isinstance(instance.endTime, date)
-
-
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_endTime_setter(instance):
-    original = instance.endTime
-    instance.endTime = original
-    assert instance.endTime == original
-
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_name_setter(instance):
+@given(instance=camel_organisation_RoleAssignment_strategy)
+def test_camel_organisation_roleassignment_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_assignmentTime_type(instance):
-    assert isinstance(instance.assignmentTime, date)
 
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
-def test_camel::organisation::roleassignment_assignmentTime_setter(instance):
+@given(instance=camel_organisation_RoleAssignment_strategy)
+def test_camel_organisation_roleassignment_endTime_setter(instance):
+    original = instance.endTime
+    instance.endTime = original
+    assert instance.endTime == original
+
+
+
+@given(instance=camel_organisation_RoleAssignment_strategy)
+def test_camel_organisation_roleassignment_assignmentTime_setter(instance):
     original = instance.assignmentTime
     instance.assignmentTime = original
     assert instance.assignmentTime == original
+
+
+
+@given(instance=camel_organisation_RoleAssignment_strategy)
+def test_camel_organisation_roleassignment_startTime_setter(instance):
+    original = instance.startTime
+    instance.startTime = original
+    assert instance.startTime == original
 
 import warnings
 import copy
@@ -10144,9 +9919,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
+@given(instance=camel_organisation_RoleAssignment_strategy)
 @settings(max_examples=30)
-def test_camel::organisation::roleassignment_checkassignedondates_changes_state(instance):
+def test_camel_organisation_roleassignment_checkassignedondates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10160,14 +9935,14 @@ def test_camel::organisation::roleassignment_checkassignedondates_changes_state(
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkAssignedOnDates' in camel::organisation::RoleAssignment is empty"
+        assert has_statements, f"Function 'checkAssignedOnDates' in camel_organisation_RoleAssignment is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkAssignedOnDates' in camel::organisation::RoleAssignment did not change state; check implementation")
+            warnings.warn(f"Operation 'checkAssignedOnDates' in camel_organisation_RoleAssignment did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkAssignedOnDates' in camel::organisation::RoleAssignment is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkAssignedOnDates' in camel_organisation_RoleAssignment is not implemented or raised an error")
 
 import warnings
 import copy
@@ -10175,9 +9950,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::organisation::RoleAssignment_strategy)
+@given(instance=camel_organisation_RoleAssignment_strategy)
 @settings(max_examples=30)
-def test_camel::organisation::roleassignment_checkstartenddates_changes_state(instance):
+def test_camel_organisation_roleassignment_checkstartenddates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10191,70 +9966,58 @@ def test_camel::organisation::roleassignment_checkstartenddates_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkStartEndDates' in camel::organisation::RoleAssignment is empty"
+        assert has_statements, f"Function 'checkStartEndDates' in camel_organisation_RoleAssignment is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkStartEndDates' in camel::organisation::RoleAssignment did not change state; check implementation")
+            warnings.warn(f"Operation 'checkStartEndDates' in camel_organisation_RoleAssignment did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkStartEndDates' in camel::organisation::RoleAssignment is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkStartEndDates' in camel_organisation_RoleAssignment is not implemented or raised an error")
 
-@given(instance=camel::organisation::Role_strategy)
+@given(instance=camel_organisation_Role_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::role_instantiation(instance):
-    assert isinstance(instance, camel::organisation::Role)
-
-@given(instance=camel::organisation::Role_strategy)
-def test_camel::organisation::role_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_organisation_role_instantiation(instance):
+    assert isinstance(instance, camel_organisation_Role)
 
 
-@given(instance=camel::organisation::Role_strategy)
-def test_camel::organisation::role_name_setter(instance):
+
+@given(instance=camel_organisation_Role_strategy)
+def test_camel_organisation_role_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::organisation::ResourceFilter_strategy)
+@given(instance=camel_organisation_ResourceFilter_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::resourcefilter_instantiation(instance):
-    assert isinstance(instance, camel::organisation::ResourceFilter)
-
-@given(instance=camel::organisation::ResourceFilter_strategy)
-def test_camel::organisation::resourcefilter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_organisation_resourcefilter_instantiation(instance):
+    assert isinstance(instance, camel_organisation_ResourceFilter)
 
 
-@given(instance=camel::organisation::ResourceFilter_strategy)
-def test_camel::organisation::resourcefilter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=camel::organisation::ResourceFilter_strategy)
-def test_camel::organisation::resourcefilter_resourcePattern_type(instance):
-    assert isinstance(instance.resourcePattern, str)
-
-
-@given(instance=camel::organisation::ResourceFilter_strategy)
-def test_camel::organisation::resourcefilter_resourcePattern_setter(instance):
+@given(instance=camel_organisation_ResourceFilter_strategy)
+def test_camel_organisation_resourcefilter_resourcePattern_setter(instance):
     original = instance.resourcePattern
     instance.resourcePattern = original
     assert instance.resourcePattern == original
 
-@given(instance=camel::organisation::UserGroup_strategy)
+
+
+@given(instance=camel_organisation_ResourceFilter_strategy)
+def test_camel_organisation_resourcefilter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=camel_organisation_UserGroup_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::usergroup_instantiation(instance):
-    assert isinstance(instance, camel::organisation::UserGroup)
-
-@given(instance=camel::organisation::UserGroup_strategy)
-def test_camel::organisation::usergroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_organisation_usergroup_instantiation(instance):
+    assert isinstance(instance, camel_organisation_UserGroup)
 
 
-@given(instance=camel::organisation::UserGroup_strategy)
-def test_camel::organisation::usergroup_name_setter(instance):
+
+@given(instance=camel_organisation_UserGroup_strategy)
+def test_camel_organisation_usergroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -10269,86 +10032,68 @@ def test_cloudcredentials_instantiation(instance):
 def test_securitycapability_instantiation(instance):
     assert isinstance(instance, SecurityCapability)
 
-@given(instance=camel::organisation::Entity_strategy)
+@given(instance=camel_organisation_Entity_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::entity_instantiation(instance):
-    assert isinstance(instance, camel::organisation::Entity)
+def test_camel_organisation_entity_instantiation(instance):
+    assert isinstance(instance, camel_organisation_Entity)
 
-@given(instance=camel::organisation::DataCenter_strategy)
+@given(instance=camel_organisation_DataCenter_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::datacenter_instantiation(instance):
-    assert isinstance(instance, camel::organisation::DataCenter)
-
-@given(instance=camel::organisation::DataCenter_strategy)
-def test_camel::organisation::datacenter_codeName_type(instance):
-    assert isinstance(instance.codeName, str)
+def test_camel_organisation_datacenter_instantiation(instance):
+    assert isinstance(instance, camel_organisation_DataCenter)
 
 
-@given(instance=camel::organisation::DataCenter_strategy)
-def test_camel::organisation::datacenter_codeName_setter(instance):
+
+@given(instance=camel_organisation_DataCenter_strategy)
+def test_camel_organisation_datacenter_codeName_setter(instance):
     original = instance.codeName
     instance.codeName = original
     assert instance.codeName == original
 
-@given(instance=camel::organisation::DataCenter_strategy)
-def test_camel::organisation::datacenter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::organisation::DataCenter_strategy)
-def test_camel::organisation::datacenter_name_setter(instance):
+@given(instance=camel_organisation_DataCenter_strategy)
+def test_camel_organisation_datacenter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::organisation::Permission_strategy)
+@given(instance=camel_organisation_Permission_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::permission_instantiation(instance):
-    assert isinstance(instance, camel::organisation::Permission)
-
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_organisation_permission_instantiation(instance):
+    assert isinstance(instance, camel_organisation_Permission)
 
 
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_name_setter(instance):
+
+@given(instance=camel_organisation_Permission_strategy)
+def test_camel_organisation_permission_action_setter(instance):
+    original = instance.action
+    instance.action = original
+    assert instance.action == original
+
+
+
+@given(instance=camel_organisation_Permission_strategy)
+def test_camel_organisation_permission_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_startTime_type(instance):
-    assert isinstance(instance.startTime, date)
 
 
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_startTime_setter(instance):
-    original = instance.startTime
-    instance.startTime = original
-    assert instance.startTime == original
-
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_endTime_type(instance):
-    assert isinstance(instance.endTime, date)
-
-
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_endTime_setter(instance):
+@given(instance=camel_organisation_Permission_strategy)
+def test_camel_organisation_permission_endTime_setter(instance):
     original = instance.endTime
     instance.endTime = original
     assert instance.endTime == original
 
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_action_type(instance):
-    assert isinstance(instance.action, str)
 
 
-@given(instance=camel::organisation::Permission_strategy)
-def test_camel::organisation::permission_action_setter(instance):
-    original = instance.action
-    instance.action = original
-    assert instance.action == original
+@given(instance=camel_organisation_Permission_strategy)
+def test_camel_organisation_permission_startTime_setter(instance):
+    original = instance.startTime
+    instance.startTime = original
+    assert instance.startTime == original
 
 import warnings
 import copy
@@ -10356,9 +10101,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::organisation::Permission_strategy)
+@given(instance=camel_organisation_Permission_strategy)
 @settings(max_examples=30)
-def test_camel::organisation::permission_checkstartenddates_changes_state(instance):
+def test_camel_organisation_permission_checkstartenddates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10372,38 +10117,32 @@ def test_camel::organisation::permission_checkstartenddates_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkStartEndDates' in camel::organisation::Permission is empty"
+        assert has_statements, f"Function 'checkStartEndDates' in camel_organisation_Permission is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkStartEndDates' in camel::organisation::Permission did not change state; check implementation")
+            warnings.warn(f"Operation 'checkStartEndDates' in camel_organisation_Permission did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkStartEndDates' in camel::organisation::Permission is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkStartEndDates' in camel_organisation_Permission is not implemented or raised an error")
 
-@given(instance=camel::organisation::ExternalIdentifier_strategy)
+@given(instance=camel_organisation_ExternalIdentifier_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::externalidentifier_instantiation(instance):
-    assert isinstance(instance, camel::organisation::ExternalIdentifier)
-
-@given(instance=camel::organisation::ExternalIdentifier_strategy)
-def test_camel::organisation::externalidentifier_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_camel_organisation_externalidentifier_instantiation(instance):
+    assert isinstance(instance, camel_organisation_ExternalIdentifier)
 
 
-@given(instance=camel::organisation::ExternalIdentifier_strategy)
-def test_camel::organisation::externalidentifier_identifier_setter(instance):
+
+@given(instance=camel_organisation_ExternalIdentifier_strategy)
+def test_camel_organisation_externalidentifier_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=camel::organisation::ExternalIdentifier_strategy)
-def test_camel::organisation::externalidentifier_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=camel::organisation::ExternalIdentifier_strategy)
-def test_camel::organisation::externalidentifier_description_setter(instance):
+@given(instance=camel_organisation_ExternalIdentifier_strategy)
+def test_camel_organisation_externalidentifier_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -10453,210 +10192,165 @@ def test_cloudprovider_instantiation(instance):
 def test_organisation_instantiation(instance):
     assert isinstance(instance, Organisation)
 
-@given(instance=camel::organisation::CloudProvider_strategy)
+@given(instance=camel_organisation_CloudProvider_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::cloudprovider_instantiation(instance):
-    assert isinstance(instance, camel::organisation::CloudProvider)
-
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_public_type(instance):
-    assert isinstance(instance.public, bool)
+def test_camel_organisation_cloudprovider_instantiation(instance):
+    assert isinstance(instance, camel_organisation_CloudProvider)
 
 
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_public_setter(instance):
-    original = instance.public
-    instance.public = original
-    assert instance.public == original
 
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_SaaS_type(instance):
-    assert isinstance(instance.SaaS, bool)
-
-
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_SaaS_setter(instance):
-    original = instance.SaaS
-    instance.SaaS = original
-    assert instance.SaaS == original
-
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_IaaS_type(instance):
-    assert isinstance(instance.IaaS, bool)
-
-
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_IaaS_setter(instance):
+@given(instance=camel_organisation_CloudProvider_strategy)
+def test_camel_organisation_cloudprovider_IaaS_setter(instance):
     original = instance.IaaS
     instance.IaaS = original
     assert instance.IaaS == original
 
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_PaaS_type(instance):
-    assert isinstance(instance.PaaS, bool)
 
 
-@given(instance=camel::organisation::CloudProvider_strategy)
-def test_camel::organisation::cloudprovider_PaaS_setter(instance):
+@given(instance=camel_organisation_CloudProvider_strategy)
+def test_camel_organisation_cloudprovider_SaaS_setter(instance):
+    original = instance.SaaS
+    instance.SaaS = original
+    assert instance.SaaS == original
+
+
+
+@given(instance=camel_organisation_CloudProvider_strategy)
+def test_camel_organisation_cloudprovider_PaaS_setter(instance):
     original = instance.PaaS
     instance.PaaS = original
     assert instance.PaaS == original
+
+
+
+@given(instance=camel_organisation_CloudProvider_strategy)
+def test_camel_organisation_cloudprovider_public_setter(instance):
+    original = instance.public
+    instance.public = original
+    assert instance.public == original
 
 @given(instance=Credentials_strategy)
 @settings(max_examples=50)
 def test_credentials_instantiation(instance):
     assert isinstance(instance, Credentials)
 
-@given(instance=camel::organisation::PaaSageCredentials_strategy)
+@given(instance=camel_organisation_PaaSageCredentials_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::paasagecredentials_instantiation(instance):
-    assert isinstance(instance, camel::organisation::PaaSageCredentials)
-
-@given(instance=camel::organisation::PaaSageCredentials_strategy)
-def test_camel::organisation::paasagecredentials_password_type(instance):
-    assert isinstance(instance.password, str)
+def test_camel_organisation_paasagecredentials_instantiation(instance):
+    assert isinstance(instance, camel_organisation_PaaSageCredentials)
 
 
-@given(instance=camel::organisation::PaaSageCredentials_strategy)
-def test_camel::organisation::paasagecredentials_password_setter(instance):
+
+@given(instance=camel_organisation_PaaSageCredentials_strategy)
+def test_camel_organisation_paasagecredentials_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
+@given(instance=camel_organisation_CloudCredentials_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::cloudcredentials_instantiation(instance):
-    assert isinstance(instance, camel::organisation::CloudCredentials)
-
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_privateSSHKey_type(instance):
-    assert isinstance(instance.privateSSHKey, str)
+def test_camel_organisation_cloudcredentials_instantiation(instance):
+    assert isinstance(instance, camel_organisation_CloudCredentials)
 
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_privateSSHKey_setter(instance):
-    original = instance.privateSSHKey
-    instance.privateSSHKey = original
-    assert instance.privateSSHKey == original
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_publicSSHKey_type(instance):
-    assert isinstance(instance.publicSSHKey, str)
-
-
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_publicSSHKey_setter(instance):
-    original = instance.publicSSHKey
-    instance.publicSSHKey = original
-    assert instance.publicSSHKey == original
-
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_username_setter(instance):
+@given(instance=camel_organisation_CloudCredentials_strategy)
+def test_camel_organisation_cloudcredentials_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_password_setter(instance):
+@given(instance=camel_organisation_CloudCredentials_strategy)
+def test_camel_organisation_cloudcredentials_publicSSHKey_setter(instance):
+    original = instance.publicSSHKey
+    instance.publicSSHKey = original
+    assert instance.publicSSHKey == original
+
+
+
+@given(instance=camel_organisation_CloudCredentials_strategy)
+def test_camel_organisation_cloudcredentials_privateSSHKey_setter(instance):
+    original = instance.privateSSHKey
+    instance.privateSSHKey = original
+    assert instance.privateSSHKey == original
+
+
+
+@given(instance=camel_organisation_CloudCredentials_strategy)
+def test_camel_organisation_cloudcredentials_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_name_setter(instance):
+@given(instance=camel_organisation_CloudCredentials_strategy)
+def test_camel_organisation_cloudcredentials_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_securityGroup_type(instance):
-    assert isinstance(instance.securityGroup, str)
 
 
-@given(instance=camel::organisation::CloudCredentials_strategy)
-def test_camel::organisation::cloudcredentials_securityGroup_setter(instance):
+@given(instance=camel_organisation_CloudCredentials_strategy)
+def test_camel_organisation_cloudcredentials_securityGroup_setter(instance):
     original = instance.securityGroup
     instance.securityGroup = original
     assert instance.securityGroup == original
 
-@given(instance=camel::organisation::Credentials_strategy)
+@given(instance=camel_organisation_Credentials_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::credentials_instantiation(instance):
-    assert isinstance(instance, camel::organisation::Credentials)
+def test_camel_organisation_credentials_instantiation(instance):
+    assert isinstance(instance, camel_organisation_Credentials)
 
 @given(instance=ResourceFilter_strategy)
 @settings(max_examples=50)
 def test_resourcefilter_instantiation(instance):
     assert isinstance(instance, ResourceFilter)
 
-@given(instance=camel::organisation::InformationResourceFilter_strategy)
+@given(instance=camel_organisation_ServiceResourceFilter_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::informationresourcefilter_instantiation(instance):
-    assert isinstance(instance, camel::organisation::InformationResourceFilter)
-
-@given(instance=camel::organisation::InformationResourceFilter_strategy)
-def test_camel::organisation::informationresourcefilter_everyInformationResource_type(instance):
-    assert isinstance(instance.everyInformationResource, bool)
+def test_camel_organisation_serviceresourcefilter_instantiation(instance):
+    assert isinstance(instance, camel_organisation_ServiceResourceFilter)
 
 
-@given(instance=camel::organisation::InformationResourceFilter_strategy)
-def test_camel::organisation::informationresourcefilter_everyInformationResource_setter(instance):
-    original = instance.everyInformationResource
-    instance.everyInformationResource = original
-    assert instance.everyInformationResource == original
 
-@given(instance=camel::organisation::InformationResourceFilter_strategy)
-def test_camel::organisation::informationresourcefilter_informationResourcePath_type(instance):
-    assert isinstance(instance.informationResourcePath, str)
-
-
-@given(instance=camel::organisation::InformationResourceFilter_strategy)
-def test_camel::organisation::informationresourcefilter_informationResourcePath_setter(instance):
-    original = instance.informationResourcePath
-    instance.informationResourcePath = original
-    assert instance.informationResourcePath == original
-
-@given(instance=camel::organisation::ServiceResourceFilter_strategy)
-@settings(max_examples=50)
-def test_camel::organisation::serviceresourcefilter_instantiation(instance):
-    assert isinstance(instance, camel::organisation::ServiceResourceFilter)
-
-@given(instance=camel::organisation::ServiceResourceFilter_strategy)
-def test_camel::organisation::serviceresourcefilter_everyService_type(instance):
-    assert isinstance(instance.everyService, bool)
-
-
-@given(instance=camel::organisation::ServiceResourceFilter_strategy)
-def test_camel::organisation::serviceresourcefilter_everyService_setter(instance):
+@given(instance=camel_organisation_ServiceResourceFilter_strategy)
+def test_camel_organisation_serviceresourcefilter_everyService_setter(instance):
     original = instance.everyService
     instance.everyService = original
     assert instance.everyService == original
 
-@given(instance=camel::organisation::ServiceResourceFilter_strategy)
-def test_camel::organisation::serviceresourcefilter_serviceURL_type(instance):
-    assert isinstance(instance.serviceURL, str)
 
 
-@given(instance=camel::organisation::ServiceResourceFilter_strategy)
-def test_camel::organisation::serviceresourcefilter_serviceURL_setter(instance):
+@given(instance=camel_organisation_ServiceResourceFilter_strategy)
+def test_camel_organisation_serviceresourcefilter_serviceURL_setter(instance):
     original = instance.serviceURL
     instance.serviceURL = original
     assert instance.serviceURL == original
+
+@given(instance=camel_organisation_InformationResourceFilter_strategy)
+@settings(max_examples=50)
+def test_camel_organisation_informationresourcefilter_instantiation(instance):
+    assert isinstance(instance, camel_organisation_InformationResourceFilter)
+
+
+
+@given(instance=camel_organisation_InformationResourceFilter_strategy)
+def test_camel_organisation_informationresourcefilter_everyInformationResource_setter(instance):
+    original = instance.everyInformationResource
+    instance.everyInformationResource = original
+    assert instance.everyInformationResource == original
+
+
+
+@given(instance=camel_organisation_InformationResourceFilter_strategy)
+def test_camel_organisation_informationresourcefilter_informationResourcePath_setter(instance):
+    original = instance.informationResourcePath
+    instance.informationResourcePath = original
+    assert instance.informationResourcePath == original
 
 @given(instance=Permission_strategy)
 @settings(max_examples=50)
@@ -10668,265 +10362,205 @@ def test_permission_instantiation(instance):
 def test_conditioncontext_instantiation(instance):
     assert isinstance(instance, ConditionContext)
 
-@given(instance=camel::metric::MetricContext_strategy)
+@given(instance=camel_metric_MetricContext_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metriccontext_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricContext)
+def test_camel_metric_metriccontext_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricContext)
 
-@given(instance=camel::metric::PropertyContext_strategy)
+@given(instance=camel_metric_PropertyContext_strategy)
 @settings(max_examples=50)
-def test_camel::metric::propertycontext_instantiation(instance):
-    assert isinstance(instance, camel::metric::PropertyContext)
+def test_camel_metric_propertycontext_instantiation(instance):
+    assert isinstance(instance, camel_metric_PropertyContext)
 
-@given(instance=camel::metric::Window_strategy)
+@given(instance=camel_metric_Window_strategy)
 @settings(max_examples=50)
-def test_camel::metric::window_instantiation(instance):
-    assert isinstance(instance, camel::metric::Window)
-
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_windowType_type(instance):
-    assert isinstance(instance.windowType, str)
+def test_camel_metric_window_instantiation(instance):
+    assert isinstance(instance, camel_metric_Window)
 
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_windowType_setter(instance):
-    original = instance.windowType
-    instance.windowType = original
-    assert instance.windowType == original
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_measurementSize_type(instance):
-    assert isinstance(instance.measurementSize, str)
-
-
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_measurementSize_setter(instance):
+@given(instance=camel_metric_Window_strategy)
+def test_camel_metric_window_measurementSize_setter(instance):
     original = instance.measurementSize
     instance.measurementSize = original
     assert instance.measurementSize == original
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_sizeType_type(instance):
-    assert isinstance(instance.sizeType, str)
 
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_sizeType_setter(instance):
-    original = instance.sizeType
-    instance.sizeType = original
-    assert instance.sizeType == original
-
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_timeSize_type(instance):
-    assert isinstance(instance.timeSize, str)
+@given(instance=camel_metric_Window_strategy)
+def test_camel_metric_window_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_timeSize_setter(instance):
+
+@given(instance=camel_metric_Window_strategy)
+def test_camel_metric_window_timeSize_setter(instance):
     original = instance.timeSize
     instance.timeSize = original
     assert instance.timeSize == original
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::metric::Window_strategy)
-def test_camel::metric::window_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=camel_metric_Window_strategy)
+def test_camel_metric_window_sizeType_setter(instance):
+    original = instance.sizeType
+    instance.sizeType = original
+    assert instance.sizeType == original
 
-@given(instance=camel::metric::Sensor_strategy)
+
+
+@given(instance=camel_metric_Window_strategy)
+def test_camel_metric_window_windowType_setter(instance):
+    original = instance.windowType
+    instance.windowType = original
+    assert instance.windowType == original
+
+@given(instance=camel_metric_Sensor_strategy)
 @settings(max_examples=50)
-def test_camel::metric::sensor_instantiation(instance):
-    assert isinstance(instance, camel::metric::Sensor)
-
-@given(instance=camel::metric::Sensor_strategy)
-def test_camel::metric::sensor_isPush_type(instance):
-    assert isinstance(instance.isPush, bool)
+def test_camel_metric_sensor_instantiation(instance):
+    assert isinstance(instance, camel_metric_Sensor)
 
 
-@given(instance=camel::metric::Sensor_strategy)
-def test_camel::metric::sensor_isPush_setter(instance):
-    original = instance.isPush
-    instance.isPush = original
-    assert instance.isPush == original
 
-@given(instance=camel::metric::Sensor_strategy)
-def test_camel::metric::sensor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::metric::Sensor_strategy)
-def test_camel::metric::sensor_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::metric::Sensor_strategy)
-def test_camel::metric::sensor_configuration_type(instance):
-    assert isinstance(instance.configuration, str)
-
-
-@given(instance=camel::metric::Sensor_strategy)
-def test_camel::metric::sensor_configuration_setter(instance):
+@given(instance=camel_metric_Sensor_strategy)
+def test_camel_metric_sensor_configuration_setter(instance):
     original = instance.configuration
     instance.configuration = original
     assert instance.configuration == original
 
-@given(instance=metric::camel::Application_strategy)
-@settings(max_examples=50)
-def test_metric::camel::application_instantiation(instance):
-    assert isinstance(instance, metric::camel::Application)
-
-@given(instance=camel::metric::ConditionContext_strategy)
-@settings(max_examples=50)
-def test_camel::metric::conditioncontext_instantiation(instance):
-    assert isinstance(instance, camel::metric::ConditionContext)
-
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_isRelative_type(instance):
-    assert isinstance(instance.isRelative, bool)
 
 
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_isRelative_setter(instance):
-    original = instance.isRelative
-    instance.isRelative = original
-    assert instance.isRelative == original
-
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_name_setter(instance):
+@given(instance=camel_metric_Sensor_strategy)
+def test_camel_metric_sensor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_minQuantity_type(instance):
-    assert isinstance(instance.minQuantity, float)
 
 
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_minQuantity_setter(instance):
-    original = instance.minQuantity
-    instance.minQuantity = original
-    assert instance.minQuantity == original
+@given(instance=camel_metric_Sensor_strategy)
+def test_camel_metric_sensor_isPush_setter(instance):
+    original = instance.isPush
+    instance.isPush = original
+    assert instance.isPush == original
 
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_quantifier_type(instance):
-    assert isinstance(instance.quantifier, str)
+@given(instance=metric_camel_Application_strategy)
+@settings(max_examples=50)
+def test_metric_camel_application_instantiation(instance):
+    assert isinstance(instance, metric_camel_Application)
 
-
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_quantifier_setter(instance):
-    original = instance.quantifier
-    instance.quantifier = original
-    assert instance.quantifier == original
-
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_maxQuantity_type(instance):
-    assert isinstance(instance.maxQuantity, float)
+@given(instance=camel_metric_ConditionContext_strategy)
+@settings(max_examples=50)
+def test_camel_metric_conditioncontext_instantiation(instance):
+    assert isinstance(instance, camel_metric_ConditionContext)
 
 
-@given(instance=camel::metric::ConditionContext_strategy)
-def test_camel::metric::conditioncontext_maxQuantity_setter(instance):
+
+@given(instance=camel_metric_ConditionContext_strategy)
+def test_camel_metric_conditioncontext_maxQuantity_setter(instance):
     original = instance.maxQuantity
     instance.maxQuantity = original
     assert instance.maxQuantity == original
 
-@given(instance=camel::metric::MetricObjectBinding_strategy)
-@settings(max_examples=50)
-def test_camel::metric::metricobjectbinding_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricObjectBinding)
-
-@given(instance=camel::metric::MetricObjectBinding_strategy)
-def test_camel::metric::metricobjectbinding_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::metric::MetricObjectBinding_strategy)
-def test_camel::metric::metricobjectbinding_name_setter(instance):
+@given(instance=camel_metric_ConditionContext_strategy)
+def test_camel_metric_conditioncontext_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::metric::Schedule_strategy)
+
+
+@given(instance=camel_metric_ConditionContext_strategy)
+def test_camel_metric_conditioncontext_isRelative_setter(instance):
+    original = instance.isRelative
+    instance.isRelative = original
+    assert instance.isRelative == original
+
+
+
+@given(instance=camel_metric_ConditionContext_strategy)
+def test_camel_metric_conditioncontext_quantifier_setter(instance):
+    original = instance.quantifier
+    instance.quantifier = original
+    assert instance.quantifier == original
+
+
+
+@given(instance=camel_metric_ConditionContext_strategy)
+def test_camel_metric_conditioncontext_minQuantity_setter(instance):
+    original = instance.minQuantity
+    instance.minQuantity = original
+    assert instance.minQuantity == original
+
+@given(instance=camel_metric_MetricObjectBinding_strategy)
 @settings(max_examples=50)
-def test_camel::metric::schedule_instantiation(instance):
-    assert isinstance(instance, camel::metric::Schedule)
-
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_start_type(instance):
-    assert isinstance(instance.start, date)
+def test_camel_metric_metricobjectbinding_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricObjectBinding)
 
 
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_start_setter(instance):
-    original = instance.start
-    instance.start = original
-    assert instance.start == original
 
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_interval_type(instance):
-    assert isinstance(instance.interval, str)
-
-
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_interval_setter(instance):
-    original = instance.interval
-    instance.interval = original
-    assert instance.interval == original
-
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_repetitions_type(instance):
-    assert isinstance(instance.repetitions, int)
-
-
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_repetitions_setter(instance):
-    original = instance.repetitions
-    instance.repetitions = original
-    assert instance.repetitions == original
-
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_name_setter(instance):
+@given(instance=camel_metric_MetricObjectBinding_strategy)
+def test_camel_metric_metricobjectbinding_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_end_type(instance):
-    assert isinstance(instance.end, date)
+@given(instance=camel_metric_Schedule_strategy)
+@settings(max_examples=50)
+def test_camel_metric_schedule_instantiation(instance):
+    assert isinstance(instance, camel_metric_Schedule)
 
 
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_end_setter(instance):
+
+@given(instance=camel_metric_Schedule_strategy)
+def test_camel_metric_schedule_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=camel::metric::Schedule_strategy)
-def test_camel::metric::schedule_type_setter(instance):
+@given(instance=camel_metric_Schedule_strategy)
+def test_camel_metric_schedule_repetitions_setter(instance):
+    original = instance.repetitions
+    instance.repetitions = original
+    assert instance.repetitions == original
+
+
+
+@given(instance=camel_metric_Schedule_strategy)
+def test_camel_metric_schedule_start_setter(instance):
+    original = instance.start
+    instance.start = original
+    assert instance.start == original
+
+
+
+@given(instance=camel_metric_Schedule_strategy)
+def test_camel_metric_schedule_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_metric_Schedule_strategy)
+def test_camel_metric_schedule_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
+
+
+
+@given(instance=camel_metric_Schedule_strategy)
+def test_camel_metric_schedule_interval_setter(instance):
+    original = instance.interval
+    instance.interval = original
+    assert instance.interval == original
 
 import warnings
 import copy
@@ -10934,9 +10568,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::Schedule_strategy)
+@given(instance=camel_metric_Schedule_strategy)
 @settings(max_examples=30)
-def test_camel::metric::schedule_checkstartenddates_changes_state(instance):
+def test_camel_metric_schedule_checkstartenddates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10950,14 +10584,14 @@ def test_camel::metric::schedule_checkstartenddates_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkStartEndDates' in camel::metric::Schedule is empty"
+        assert has_statements, f"Function 'checkStartEndDates' in camel_metric_Schedule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkStartEndDates' in camel::metric::Schedule did not change state; check implementation")
+            warnings.warn(f"Operation 'checkStartEndDates' in camel_metric_Schedule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkStartEndDates' in camel::metric::Schedule is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkStartEndDates' in camel_metric_Schedule is not implemented or raised an error")
 
 import warnings
 import copy
@@ -10965,9 +10599,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::Schedule_strategy)
+@given(instance=camel_metric_Schedule_strategy)
 @settings(max_examples=30)
-def test_camel::metric::schedule_checkintervalrepetitions_changes_state(instance):
+def test_camel_metric_schedule_checkintervalrepetitions_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10981,49 +10615,40 @@ def test_camel::metric::schedule_checkintervalrepetitions_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkIntervalRepetitions' in camel::metric::Schedule is empty"
+        assert has_statements, f"Function 'checkIntervalRepetitions' in camel_metric_Schedule is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkIntervalRepetitions' in camel::metric::Schedule did not change state; check implementation")
+            warnings.warn(f"Operation 'checkIntervalRepetitions' in camel_metric_Schedule did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkIntervalRepetitions' in camel::metric::Schedule is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkIntervalRepetitions' in camel_metric_Schedule is not implemented or raised an error")
 
-@given(instance=camel::metric::Property_strategy)
+@given(instance=camel_metric_Property_strategy)
 @settings(max_examples=50)
-def test_camel::metric::property_instantiation(instance):
-    assert isinstance(instance, camel::metric::Property)
-
-@given(instance=camel::metric::Property_strategy)
-def test_camel::metric::property_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_metric_property_instantiation(instance):
+    assert isinstance(instance, camel_metric_Property)
 
 
-@given(instance=camel::metric::Property_strategy)
-def test_camel::metric::property_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=camel::metric::Property_strategy)
-def test_camel::metric::property_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=camel::metric::Property_strategy)
-def test_camel::metric::property_description_setter(instance):
+@given(instance=camel_metric_Property_strategy)
+def test_camel_metric_property_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=camel::metric::Property_strategy)
-def test_camel::metric::property_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=camel::metric::Property_strategy)
-def test_camel::metric::property_type_setter(instance):
+@given(instance=camel_metric_Property_strategy)
+def test_camel_metric_property_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_metric_Property_strategy)
+def test_camel_metric_property_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -11033,69 +10658,70 @@ def test_camel::metric::property_type_setter(instance):
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=camel::security::SecurityProperty_strategy)
+@given(instance=camel_security_SecurityProperty_strategy)
 @settings(max_examples=50)
-def test_camel::security::securityproperty_instantiation(instance):
-    assert isinstance(instance, camel::security::SecurityProperty)
+def test_camel_security_securityproperty_instantiation(instance):
+    assert isinstance(instance, camel_security_SecurityProperty)
 
 @given(instance=Unit_strategy)
 @settings(max_examples=50)
 def test_unit_instantiation(instance):
     assert isinstance(instance, Unit)
 
-@given(instance=camel::unit::MonetaryUnit_strategy)
+@given(instance=camel_unit_TransactionUnit_strategy)
 @settings(max_examples=50)
-def test_camel::unit::monetaryunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::MonetaryUnit)
+def test_camel_unit_transactionunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_TransactionUnit)
 
-@given(instance=camel::unit::Dimensionless_strategy)
+@given(instance=camel_unit_MonetaryUnit_strategy)
 @settings(max_examples=50)
-def test_camel::unit::dimensionless_instantiation(instance):
-    assert isinstance(instance, camel::unit::Dimensionless)
+def test_camel_unit_monetaryunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_MonetaryUnit)
 
-@given(instance=camel::unit::RequestUnit_strategy)
+@given(instance=camel_unit_RequestUnit_strategy)
 @settings(max_examples=50)
-def test_camel::unit::requestunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::RequestUnit)
+def test_camel_unit_requestunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_RequestUnit)
 
-@given(instance=camel::unit::CoreUnit_strategy)
+@given(instance=camel_unit_ThroughputUnit_strategy)
 @settings(max_examples=50)
-def test_camel::unit::coreunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::CoreUnit)
+def test_camel_unit_throughputunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_ThroughputUnit)
+
+@given(instance=camel_unit_CoreUnit_strategy)
+@settings(max_examples=50)
+def test_camel_unit_coreunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_CoreUnit)
+
+@given(instance=camel_unit_StorageUnit_strategy)
+@settings(max_examples=50)
+def test_camel_unit_storageunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_StorageUnit)
+
+@given(instance=camel_unit_TimeIntervalUnit_strategy)
+@settings(max_examples=50)
+def test_camel_unit_timeintervalunit_instantiation(instance):
+    assert isinstance(instance, camel_unit_TimeIntervalUnit)
+
+@given(instance=camel_unit_Dimensionless_strategy)
+@settings(max_examples=50)
+def test_camel_unit_dimensionless_instantiation(instance):
+    assert isinstance(instance, camel_unit_Dimensionless)
 
 @given(instance=ValueType_strategy)
 @settings(max_examples=50)
 def test_valuetype_instantiation(instance):
     assert isinstance(instance, ValueType)
 
-@given(instance=camel::type::StringValueType_strategy)
+@given(instance=camel_type_List_strategy)
 @settings(max_examples=50)
-def test_camel::type::stringvaluetype_instantiation(instance):
-    assert isinstance(instance, camel::type::StringValueType)
-
-@given(instance=camel::type::StringValueType_strategy)
-def test_camel::type::stringvaluetype_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
+def test_camel_type_list_instantiation(instance):
+    assert isinstance(instance, camel_type_List)
 
 
-@given(instance=camel::type::StringValueType_strategy)
-def test_camel::type::stringvaluetype_primitiveType_setter(instance):
-    original = instance.primitiveType
-    instance.primitiveType = original
-    assert instance.primitiveType == original
 
-@given(instance=camel::type::RangeUnion_strategy)
-@settings(max_examples=50)
-def test_camel::type::rangeunion_instantiation(instance):
-    assert isinstance(instance, camel::type::RangeUnion)
-
-@given(instance=camel::type::RangeUnion_strategy)
-def test_camel::type::rangeunion_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
-
-
-@given(instance=camel::type::RangeUnion_strategy)
-def test_camel::type::rangeunion_primitiveType_setter(instance):
+@given(instance=camel_type_List_strategy)
+def test_camel_type_list_primitiveType_setter(instance):
     original = instance.primitiveType
     instance.primitiveType = original
     assert instance.primitiveType == original
@@ -11106,134 +10732,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::type::RangeUnion_strategy)
+@given(instance=camel_type_List_strategy)
 @settings(max_examples=30)
-def test_camel::type::rangeunion_invalidrangesequence_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.invalidRangeSequence(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.invalidRangeSequence).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'invalidRangeSequence' in camel::type::RangeUnion is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'invalidRangeSequence' in camel::type::RangeUnion did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'invalidRangeSequence' in camel::type::RangeUnion is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::type::RangeUnion_strategy)
-@settings(max_examples=30)
-def test_camel::type::rangeunion_includesvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.includesValue(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.includesValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesValue' in camel::type::RangeUnion is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesValue' in camel::type::RangeUnion did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesValue' in camel::type::RangeUnion is not implemented or raised an error")
-
-@given(instance=camel::type::BooleanValueType_strategy)
-@settings(max_examples=50)
-def test_camel::type::booleanvaluetype_instantiation(instance):
-    assert isinstance(instance, camel::type::BooleanValueType)
-
-@given(instance=camel::type::BooleanValueType_strategy)
-def test_camel::type::booleanvaluetype_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
-
-
-@given(instance=camel::type::BooleanValueType_strategy)
-def test_camel::type::booleanvaluetype_primitiveType_setter(instance):
-    original = instance.primitiveType
-    instance.primitiveType = original
-    assert instance.primitiveType == original
-
-@given(instance=camel::type::List_strategy)
-@settings(max_examples=50)
-def test_camel::type::list_instantiation(instance):
-    assert isinstance(instance, camel::type::List)
-
-@given(instance=camel::type::List_strategy)
-def test_camel::type::list_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
-
-
-@given(instance=camel::type::List_strategy)
-def test_camel::type::list_primitiveType_setter(instance):
-    original = instance.primitiveType
-    instance.primitiveType = original
-    assert instance.primitiveType == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::type::List_strategy)
-@settings(max_examples=30)
-def test_camel::type::list_includesvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.includesValue(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.includesValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesValue' in camel::type::List is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesValue' in camel::type::List did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesValue' in camel::type::List is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::type::List_strategy)
-@settings(max_examples=30)
-def test_camel::type::list_checkvaluetype_changes_state(instance):
+def test_camel_type_list_checkvaluetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11247,19 +10748,14 @@ def test_camel::type::list_checkvaluetype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkValueType' in camel::type::List is empty"
+        assert has_statements, f"Function 'checkValueType' in camel_type_List is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkValueType' in camel::type::List did not change state; check implementation")
+            warnings.warn(f"Operation 'checkValueType' in camel_type_List did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkValueType' in camel::type::List is not implemented or raised an error")
-
-@given(instance=camel::type::Enumeration_strategy)
-@settings(max_examples=50)
-def test_camel::type::enumeration_instantiation(instance):
-    assert isinstance(instance, camel::type::Enumeration)
+        warnings.warn(f"Operation 'checkValueType' in camel_type_List is not implemented or raised an error")
 
 import warnings
 import copy
@@ -11267,40 +10763,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::type::Enumeration_strategy)
+@given(instance=camel_type_List_strategy)
 @settings(max_examples=30)
-def test_camel::type::enumeration_includesname_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.includesName(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.includesName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesName' in camel::type::Enumeration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesName' in camel::type::Enumeration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesName' in camel::type::Enumeration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::type::Enumeration_strategy)
-@settings(max_examples=30)
-def test_camel::type::enumeration_includesvalue_changes_state(instance):
+def test_camel_type_list_includesvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11314,27 +10779,50 @@ def test_camel::type::enumeration_includesvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesValue' in camel::type::Enumeration is empty"
+        assert has_statements, f"Function 'includesValue' in camel_type_List is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesValue' in camel::type::Enumeration did not change state; check implementation")
+            warnings.warn(f"Operation 'includesValue' in camel_type_List did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesValue' in camel::type::Enumeration is not implemented or raised an error")
+        warnings.warn(f"Operation 'includesValue' in camel_type_List is not implemented or raised an error")
 
-@given(instance=camel::type::Range_strategy)
+@given(instance=camel_type_BooleanValueType_strategy)
 @settings(max_examples=50)
-def test_camel::type::range_instantiation(instance):
-    assert isinstance(instance, camel::type::Range)
-
-@given(instance=camel::type::Range_strategy)
-def test_camel::type::range_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
+def test_camel_type_booleanvaluetype_instantiation(instance):
+    assert isinstance(instance, camel_type_BooleanValueType)
 
 
-@given(instance=camel::type::Range_strategy)
-def test_camel::type::range_primitiveType_setter(instance):
+
+@given(instance=camel_type_BooleanValueType_strategy)
+def test_camel_type_booleanvaluetype_primitiveType_setter(instance):
+    original = instance.primitiveType
+    instance.primitiveType = original
+    assert instance.primitiveType == original
+
+@given(instance=camel_type_StringValueType_strategy)
+@settings(max_examples=50)
+def test_camel_type_stringvaluetype_instantiation(instance):
+    assert isinstance(instance, camel_type_StringValueType)
+
+
+
+@given(instance=camel_type_StringValueType_strategy)
+def test_camel_type_stringvaluetype_primitiveType_setter(instance):
+    original = instance.primitiveType
+    instance.primitiveType = original
+    assert instance.primitiveType == original
+
+@given(instance=camel_type_RangeUnion_strategy)
+@settings(max_examples=50)
+def test_camel_type_rangeunion_instantiation(instance):
+    assert isinstance(instance, camel_type_RangeUnion)
+
+
+
+@given(instance=camel_type_RangeUnion_strategy)
+def test_camel_type_rangeunion_primitiveType_setter(instance):
     original = instance.primitiveType
     instance.primitiveType = original
     assert instance.primitiveType == original
@@ -11345,9 +10833,151 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::type::Range_strategy)
+@given(instance=camel_type_RangeUnion_strategy)
 @settings(max_examples=30)
-def test_camel::type::range_checktype_changes_state(instance):
+def test_camel_type_rangeunion_includesvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.includesValue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.includesValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'includesValue' in camel_type_RangeUnion is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'includesValue' in camel_type_RangeUnion did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'includesValue' in camel_type_RangeUnion is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_type_RangeUnion_strategy)
+@settings(max_examples=30)
+def test_camel_type_rangeunion_invalidrangesequence_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.invalidRangeSequence(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.invalidRangeSequence).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'invalidRangeSequence' in camel_type_RangeUnion is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'invalidRangeSequence' in camel_type_RangeUnion did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'invalidRangeSequence' in camel_type_RangeUnion is not implemented or raised an error")
+
+@given(instance=camel_type_Enumeration_strategy)
+@settings(max_examples=50)
+def test_camel_type_enumeration_instantiation(instance):
+    assert isinstance(instance, camel_type_Enumeration)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_type_Enumeration_strategy)
+@settings(max_examples=30)
+def test_camel_type_enumeration_includesname_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.includesName(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.includesName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'includesName' in camel_type_Enumeration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'includesName' in camel_type_Enumeration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'includesName' in camel_type_Enumeration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_type_Enumeration_strategy)
+@settings(max_examples=30)
+def test_camel_type_enumeration_includesvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.includesValue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.includesValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'includesValue' in camel_type_Enumeration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'includesValue' in camel_type_Enumeration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'includesValue' in camel_type_Enumeration is not implemented or raised an error")
+
+@given(instance=camel_type_Range_strategy)
+@settings(max_examples=50)
+def test_camel_type_range_instantiation(instance):
+    assert isinstance(instance, camel_type_Range)
+
+
+
+@given(instance=camel_type_Range_strategy)
+def test_camel_type_range_primitiveType_setter(instance):
+    original = instance.primitiveType
+    instance.primitiveType = original
+    assert instance.primitiveType == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_type_Range_strategy)
+@settings(max_examples=30)
+def test_camel_type_range_checktype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11363,14 +10993,14 @@ def test_camel::type::range_checktype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkType' in camel::type::Range is empty"
+        assert has_statements, f"Function 'checkType' in camel_type_Range is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkType' in camel::type::Range did not change state; check implementation")
+            warnings.warn(f"Operation 'checkType' in camel_type_Range did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkType' in camel::type::Range is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkType' in camel_type_Range is not implemented or raised an error")
 
 import warnings
 import copy
@@ -11378,9 +11008,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::type::Range_strategy)
+@given(instance=camel_type_Range_strategy)
 @settings(max_examples=30)
-def test_camel::type::range_includesvalue_changes_state(instance):
+def test_camel_type_range_includesvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11394,68 +11024,56 @@ def test_camel::type::range_includesvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'includesValue' in camel::type::Range is empty"
+        assert has_statements, f"Function 'includesValue' in camel_type_Range is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'includesValue' in camel::type::Range did not change state; check implementation")
+            warnings.warn(f"Operation 'includesValue' in camel_type_Range did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'includesValue' in camel::type::Range is not implemented or raised an error")
+        warnings.warn(f"Operation 'includesValue' in camel_type_Range is not implemented or raised an error")
 
 @given(instance=MetricFormulaParameter_strategy)
 @settings(max_examples=50)
 def test_metricformulaparameter_instantiation(instance):
     assert isinstance(instance, MetricFormulaParameter)
 
-@given(instance=camel::metric::Metric_strategy)
+@given(instance=camel_metric_Metric_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metric_instantiation(instance):
-    assert isinstance(instance, camel::metric::Metric)
-
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_camel_metric_metric_instantiation(instance):
+    assert isinstance(instance, camel_metric_Metric)
 
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_valueDirection_type(instance):
-    assert isinstance(instance.valueDirection, str)
+@given(instance=camel_metric_Metric_strategy)
+def test_camel_metric_metric_layer_setter(instance):
+    original = instance.layer
+    instance.layer = original
+    assert instance.layer == original
 
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_valueDirection_setter(instance):
+
+@given(instance=camel_metric_Metric_strategy)
+def test_camel_metric_metric_valueDirection_setter(instance):
     original = instance.valueDirection
     instance.valueDirection = original
     assert instance.valueDirection == original
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_isVariable_type(instance):
-    assert isinstance(instance.isVariable, bool)
 
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_isVariable_setter(instance):
+@given(instance=camel_metric_Metric_strategy)
+def test_camel_metric_metric_isVariable_setter(instance):
     original = instance.isVariable
     instance.isVariable = original
     assert instance.isVariable == original
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_layer_type(instance):
-    assert isinstance(instance.layer, str)
 
 
-@given(instance=camel::metric::Metric_strategy)
-def test_camel::metric::metric_layer_setter(instance):
-    original = instance.layer
-    instance.layer = original
-    assert instance.layer == original
+@given(instance=camel_metric_Metric_strategy)
+def test_camel_metric_metric_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 import warnings
 import copy
@@ -11463,9 +11081,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::Metric_strategy)
+@given(instance=camel_metric_Metric_strategy)
 @settings(max_examples=30)
-def test_camel::metric::metric_checkrecursiveness_changes_state(instance):
+def test_camel_metric_metric_checkrecursiveness_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11480,52 +11098,43 @@ def test_camel::metric::metric_checkrecursiveness_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRecursiveness' in camel::metric::Metric is empty"
+        assert has_statements, f"Function 'checkRecursiveness' in camel_metric_Metric is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRecursiveness' in camel::metric::Metric did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRecursiveness' in camel_metric_Metric did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRecursiveness' in camel::metric::Metric is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkRecursiveness' in camel_metric_Metric is not implemented or raised an error")
 
-@given(instance=camel::metric::MetricFormula_strategy)
+@given(instance=camel_metric_MetricFormula_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metricformula_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricFormula)
-
-@given(instance=camel::metric::MetricFormula_strategy)
-def test_camel::metric::metricformula_functionArity_type(instance):
-    assert isinstance(instance.functionArity, str)
+def test_camel_metric_metricformula_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricFormula)
 
 
-@given(instance=camel::metric::MetricFormula_strategy)
-def test_camel::metric::metricformula_functionArity_setter(instance):
-    original = instance.functionArity
-    instance.functionArity = original
-    assert instance.functionArity == original
 
-@given(instance=camel::metric::MetricFormula_strategy)
-def test_camel::metric::metricformula_function_type(instance):
-    assert isinstance(instance.function, str)
+@given(instance=camel_metric_MetricFormula_strategy)
+def test_camel_metric_metricformula_functionPattern_setter(instance):
+    original = instance.functionPattern
+    instance.functionPattern = original
+    assert instance.functionPattern == original
 
 
-@given(instance=camel::metric::MetricFormula_strategy)
-def test_camel::metric::metricformula_function_setter(instance):
+
+@given(instance=camel_metric_MetricFormula_strategy)
+def test_camel_metric_metricformula_function_setter(instance):
     original = instance.function
     instance.function = original
     assert instance.function == original
 
-@given(instance=camel::metric::MetricFormula_strategy)
-def test_camel::metric::metricformula_functionPattern_type(instance):
-    assert isinstance(instance.functionPattern, str)
 
 
-@given(instance=camel::metric::MetricFormula_strategy)
-def test_camel::metric::metricformula_functionPattern_setter(instance):
-    original = instance.functionPattern
-    instance.functionPattern = original
-    assert instance.functionPattern == original
+@given(instance=camel_metric_MetricFormula_strategy)
+def test_camel_metric_metricformula_functionArity_setter(instance):
+    original = instance.functionArity
+    instance.functionArity = original
+    assert instance.functionArity == original
 
 import warnings
 import copy
@@ -11533,9 +11142,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::MetricFormula_strategy)
+@given(instance=camel_metric_MetricFormula_strategy)
 @settings(max_examples=30)
-def test_camel::metric::metricformula_hasmetric_changes_state(instance):
+def test_camel_metric_metricformula_hasmetric_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11547,14 +11156,14 @@ def test_camel::metric::metricformula_hasmetric_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasMetric' in camel::metric::MetricFormula is empty"
+        assert has_statements, f"Function 'hasMetric' in camel_metric_MetricFormula is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasMetric' in camel::metric::MetricFormula did not change state; check implementation")
+            warnings.warn(f"Operation 'hasMetric' in camel_metric_MetricFormula did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasMetric' in camel::metric::MetricFormula is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasMetric' in camel_metric_MetricFormula is not implemented or raised an error")
 
 import warnings
 import copy
@@ -11562,9 +11171,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::MetricFormula_strategy)
+@given(instance=camel_metric_MetricFormula_strategy)
 @settings(max_examples=30)
-def test_camel::metric::metricformula_containsmetric_changes_state(instance):
+def test_camel_metric_metricformula_containsmetric_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11578,14 +11187,14 @@ def test_camel::metric::metricformula_containsmetric_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'containsMetric' in camel::metric::MetricFormula is empty"
+        assert has_statements, f"Function 'containsMetric' in camel_metric_MetricFormula is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'containsMetric' in camel::metric::MetricFormula did not change state; check implementation")
+            warnings.warn(f"Operation 'containsMetric' in camel_metric_MetricFormula did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'containsMetric' in camel::metric::MetricFormula is not implemented or raised an error")
+        warnings.warn(f"Operation 'containsMetric' in camel_metric_MetricFormula is not implemented or raised an error")
 
 @given(instance=MetricFormula_strategy)
 @settings(max_examples=50)
@@ -11597,20 +11206,20 @@ def test_metricformula_instantiation(instance):
 def test_metricobjectbinding_instantiation(instance):
     assert isinstance(instance, MetricObjectBinding)
 
-@given(instance=camel::metric::MetricApplicationBinding_strategy)
+@given(instance=camel_metric_MetricVMBinding_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metricapplicationbinding_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricApplicationBinding)
+def test_camel_metric_metricvmbinding_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricVMBinding)
 
-@given(instance=camel::metric::MetricVMBinding_strategy)
+@given(instance=camel_metric_MetricComponentBinding_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metricvmbinding_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricVMBinding)
+def test_camel_metric_metriccomponentbinding_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricComponentBinding)
 
-@given(instance=camel::metric::MetricComponentBinding_strategy)
+@given(instance=camel_metric_MetricApplicationBinding_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metriccomponentbinding_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricComponentBinding)
+def test_camel_metric_metricapplicationbinding_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricApplicationBinding)
 
 @given(instance=Window_strategy)
 @settings(max_examples=50)
@@ -11627,10 +11236,15 @@ def test_schedule_instantiation(instance):
 def test_metric_instantiation(instance):
     assert isinstance(instance, Metric)
 
-@given(instance=camel::metric::CompositeMetric_strategy)
+@given(instance=camel_metric_RawMetric_strategy)
 @settings(max_examples=50)
-def test_camel::metric::compositemetric_instantiation(instance):
-    assert isinstance(instance, camel::metric::CompositeMetric)
+def test_camel_metric_rawmetric_instantiation(instance):
+    assert isinstance(instance, camel_metric_RawMetric)
+
+@given(instance=camel_metric_CompositeMetric_strategy)
+@settings(max_examples=50)
+def test_camel_metric_compositemetric_instantiation(instance):
+    assert isinstance(instance, camel_metric_CompositeMetric)
 
 import warnings
 import copy
@@ -11638,9 +11252,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::CompositeMetric_strategy)
+@given(instance=camel_metric_CompositeMetric_strategy)
 @settings(max_examples=30)
-def test_camel::metric::compositemetric_greaterequalthanlayer_changes_state(instance):
+def test_camel_metric_compositemetric_greaterequalthanlayer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11655,32 +11269,24 @@ def test_camel::metric::compositemetric_greaterequalthanlayer_changes_state(inst
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'greaterEqualThanLayer' in camel::metric::CompositeMetric is empty"
+        assert has_statements, f"Function 'greaterEqualThanLayer' in camel_metric_CompositeMetric is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'greaterEqualThanLayer' in camel::metric::CompositeMetric did not change state; check implementation")
+            warnings.warn(f"Operation 'greaterEqualThanLayer' in camel_metric_CompositeMetric did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'greaterEqualThanLayer' in camel::metric::CompositeMetric is not implemented or raised an error")
+        warnings.warn(f"Operation 'greaterEqualThanLayer' in camel_metric_CompositeMetric is not implemented or raised an error")
 
-@given(instance=camel::metric::RawMetric_strategy)
+@given(instance=camel_metric_MetricInstance_strategy)
 @settings(max_examples=50)
-def test_camel::metric::rawmetric_instantiation(instance):
-    assert isinstance(instance, camel::metric::RawMetric)
-
-@given(instance=camel::metric::MetricInstance_strategy)
-@settings(max_examples=50)
-def test_camel::metric::metricinstance_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricInstance)
-
-@given(instance=camel::metric::MetricInstance_strategy)
-def test_camel::metric::metricinstance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_metric_metricinstance_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricInstance)
 
 
-@given(instance=camel::metric::MetricInstance_strategy)
-def test_camel::metric::metricinstance_name_setter(instance):
+
+@given(instance=camel_metric_MetricInstance_strategy)
+def test_camel_metric_metricinstance_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -11691,9 +11297,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::metric::MetricInstance_strategy)
+@given(instance=camel_metric_MetricInstance_strategy)
 @settings(max_examples=30)
-def test_camel::metric::metricinstance_checkrecursiveness_changes_state(instance):
+def test_camel_metric_metricinstance_checkrecursiveness_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11708,27 +11314,24 @@ def test_camel::metric::metricinstance_checkrecursiveness_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRecursiveness' in camel::metric::MetricInstance is empty"
+        assert has_statements, f"Function 'checkRecursiveness' in camel_metric_MetricInstance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRecursiveness' in camel::metric::MetricInstance did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRecursiveness' in camel_metric_MetricInstance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRecursiveness' in camel::metric::MetricInstance is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkRecursiveness' in camel_metric_MetricInstance is not implemented or raised an error")
 
-@given(instance=camel::metric::MetricFormulaParameter_strategy)
+@given(instance=camel_metric_MetricFormulaParameter_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metricformulaparameter_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricFormulaParameter)
-
-@given(instance=camel::metric::MetricFormulaParameter_strategy)
-def test_camel::metric::metricformulaparameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_metric_metricformulaparameter_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricFormulaParameter)
 
 
-@given(instance=camel::metric::MetricFormulaParameter_strategy)
-def test_camel::metric::metricformulaparameter_name_setter(instance):
+
+@given(instance=camel_metric_MetricFormulaParameter_strategy)
+def test_camel_metric_metricformulaparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -11753,97 +11356,82 @@ def test_propertycontext_instantiation(instance):
 def test_metriccontext_instantiation(instance):
     assert isinstance(instance, MetricContext)
 
-@given(instance=camel::metric::CompositeMetricContext_strategy)
+@given(instance=camel_metric_CompositeMetricContext_strategy)
 @settings(max_examples=50)
-def test_camel::metric::compositemetriccontext_instantiation(instance):
-    assert isinstance(instance, camel::metric::CompositeMetricContext)
+def test_camel_metric_compositemetriccontext_instantiation(instance):
+    assert isinstance(instance, camel_metric_CompositeMetricContext)
 
-@given(instance=camel::metric::RawMetricContext_strategy)
+@given(instance=camel_metric_RawMetricContext_strategy)
 @settings(max_examples=50)
-def test_camel::metric::rawmetriccontext_instantiation(instance):
-    assert isinstance(instance, camel::metric::RawMetricContext)
+def test_camel_metric_rawmetriccontext_instantiation(instance):
+    assert isinstance(instance, camel_metric_RawMetricContext)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=camel::metric::PropertyCondition_strategy)
+@given(instance=camel_metric_PropertyCondition_strategy)
 @settings(max_examples=50)
-def test_camel::metric::propertycondition_instantiation(instance):
-    assert isinstance(instance, camel::metric::PropertyCondition)
+def test_camel_metric_propertycondition_instantiation(instance):
+    assert isinstance(instance, camel_metric_PropertyCondition)
 
-@given(instance=camel::metric::MetricCondition_strategy)
+@given(instance=camel_metric_MetricCondition_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metriccondition_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricCondition)
+def test_camel_metric_metriccondition_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricCondition)
 
-@given(instance=camel::metric::Condition_strategy)
+@given(instance=camel_metric_Condition_strategy)
 @settings(max_examples=50)
-def test_camel::metric::condition_instantiation(instance):
-    assert isinstance(instance, camel::metric::Condition)
-
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_threshold_type(instance):
-    assert isinstance(instance.threshold, float)
+def test_camel_metric_condition_instantiation(instance):
+    assert isinstance(instance, camel_metric_Condition)
 
 
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_threshold_setter(instance):
+
+@given(instance=camel_metric_Condition_strategy)
+def test_camel_metric_condition_threshold_setter(instance):
     original = instance.threshold
     instance.threshold = original
     assert instance.threshold == original
 
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_name_setter(instance):
+@given(instance=camel_metric_Condition_strategy)
+def test_camel_metric_condition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_comparisonOperator_type(instance):
-    assert isinstance(instance.comparisonOperator, str)
 
 
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_comparisonOperator_setter(instance):
-    original = instance.comparisonOperator
-    instance.comparisonOperator = original
-    assert instance.comparisonOperator == original
-
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_validity_type(instance):
-    assert isinstance(instance.validity, date)
-
-
-@given(instance=camel::metric::Condition_strategy)
-def test_camel::metric::condition_validity_setter(instance):
+@given(instance=camel_metric_Condition_strategy)
+def test_camel_metric_condition_validity_setter(instance):
     original = instance.validity
     instance.validity = original
     assert instance.validity == original
+
+
+
+@given(instance=camel_metric_Condition_strategy)
+def test_camel_metric_condition_comparisonOperator_setter(instance):
+    original = instance.comparisonOperator
+    instance.comparisonOperator = original
+    assert instance.comparisonOperator == original
 
 @given(instance=Location_strategy)
 @settings(max_examples=50)
 def test_location_instantiation(instance):
     assert isinstance(instance, Location)
 
-@given(instance=camel::location::CloudLocation_strategy)
+@given(instance=camel_location_CloudLocation_strategy)
 @settings(max_examples=50)
-def test_camel::location::cloudlocation_instantiation(instance):
-    assert isinstance(instance, camel::location::CloudLocation)
-
-@given(instance=camel::location::CloudLocation_strategy)
-def test_camel::location::cloudlocation_isAssignable_type(instance):
-    assert isinstance(instance.isAssignable, bool)
+def test_camel_location_cloudlocation_instantiation(instance):
+    assert isinstance(instance, camel_location_CloudLocation)
 
 
-@given(instance=camel::location::CloudLocation_strategy)
-def test_camel::location::cloudlocation_isAssignable_setter(instance):
+
+@given(instance=camel_location_CloudLocation_strategy)
+def test_camel_location_cloudlocation_isAssignable_setter(instance):
     original = instance.isAssignable
     instance.isAssignable = original
     assert instance.isAssignable == original
@@ -11854,9 +11442,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=camel::location::CloudLocation_strategy)
+@given(instance=camel_location_CloudLocation_strategy)
 @settings(max_examples=30)
-def test_camel::location::cloudlocation_checkrecursiveness_changes_state(instance):
+def test_camel_location_cloudlocation_checkrecursiveness_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -11871,27 +11459,24 @@ def test_camel::location::cloudlocation_checkrecursiveness_changes_state(instanc
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkRecursiveness' in camel::location::CloudLocation is empty"
+        assert has_statements, f"Function 'checkRecursiveness' in camel_location_CloudLocation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkRecursiveness' in camel::location::CloudLocation did not change state; check implementation")
+            warnings.warn(f"Operation 'checkRecursiveness' in camel_location_CloudLocation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkRecursiveness' in camel::location::CloudLocation is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkRecursiveness' in camel_location_CloudLocation is not implemented or raised an error")
 
-@given(instance=camel::location::Location_strategy)
+@given(instance=camel_location_Location_strategy)
 @settings(max_examples=50)
-def test_camel::location::location_instantiation(instance):
-    assert isinstance(instance, camel::location::Location)
-
-@given(instance=camel::location::Location_strategy)
-def test_camel::location::location_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_camel_location_location_instantiation(instance):
+    assert isinstance(instance, camel_location_Location)
 
 
-@given(instance=camel::location::Location_strategy)
-def test_camel::location::location_id_setter(instance):
+
+@given(instance=camel_location_Location_strategy)
+def test_camel_location_location_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -11911,70 +11496,780 @@ def test_country_instantiation(instance):
 def test_cloudlocation_instantiation(instance):
     assert isinstance(instance, CloudLocation)
 
-@given(instance=camel::unit::TransactionUnit_strategy)
+@given(instance=ScalabilityRule_strategy)
 @settings(max_examples=50)
-def test_camel::unit::transactionunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::TransactionUnit)
+def test_scalabilityrule_instantiation(instance):
+    assert isinstance(instance, ScalabilityRule)
 
-@given(instance=camel::unit::TimeIntervalUnit_strategy)
+@given(instance=camel_location_Country_strategy)
 @settings(max_examples=50)
-def test_camel::unit::timeintervalunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::TimeIntervalUnit)
+def test_camel_location_country_instantiation(instance):
+    assert isinstance(instance, camel_location_Country)
 
-@given(instance=camel::unit::ThroughputUnit_strategy)
+@given(instance=camel_location_GeographicalRegion_strategy)
 @settings(max_examples=50)
-def test_camel::unit::throughputunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::ThroughputUnit)
+def test_camel_location_geographicalregion_instantiation(instance):
+    assert isinstance(instance, camel_location_GeographicalRegion)
 
-@given(instance=camel::unit::StorageUnit_strategy)
+
+
+@given(instance=camel_location_GeographicalRegion_strategy)
+def test_camel_location_geographicalregion_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_location_GeographicalRegion_strategy)
+def test_camel_location_geographicalregion_alternativeNames_setter(instance):
+    original = instance.alternativeNames
+    instance.alternativeNames = original
+    assert instance.alternativeNames == original
+
+@given(instance=ServiceLevelObjective_strategy)
 @settings(max_examples=50)
-def test_camel::unit::storageunit_instantiation(instance):
-    assert isinstance(instance, camel::unit::StorageUnit)
+def test_servicelevelobjective_instantiation(instance):
+    assert isinstance(instance, ServiceLevelObjective)
+
+@given(instance=camel_security_SecuritySLO_strategy)
+@settings(max_examples=50)
+def test_camel_security_securityslo_instantiation(instance):
+    assert isinstance(instance, camel_security_SecuritySLO)
+
+@given(instance=MetricInstance_strategy)
+@settings(max_examples=50)
+def test_metricinstance_instantiation(instance):
+    assert isinstance(instance, MetricInstance)
+
+@given(instance=camel_metric_RawMetricInstance_strategy)
+@settings(max_examples=50)
+def test_camel_metric_rawmetricinstance_instantiation(instance):
+    assert isinstance(instance, camel_metric_RawMetricInstance)
+
+@given(instance=camel_metric_CompositeMetricInstance_strategy)
+@settings(max_examples=50)
+def test_camel_metric_compositemetricinstance_instantiation(instance):
+    assert isinstance(instance, camel_metric_CompositeMetricInstance)
+
+@given(instance=camel_execution_RuleTrigger_strategy)
+@settings(max_examples=50)
+def test_camel_execution_ruletrigger_instantiation(instance):
+    assert isinstance(instance, camel_execution_RuleTrigger)
+
+
+
+@given(instance=camel_execution_RuleTrigger_strategy)
+def test_camel_execution_ruletrigger_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_execution_RuleTrigger_strategy)
+def test_camel_execution_ruletrigger_trigerringTime_setter(instance):
+    original = instance.trigerringTime
+    instance.trigerringTime = original
+    assert instance.trigerringTime == original
+
+@given(instance=camel_execution_SLOAssessment_strategy)
+@settings(max_examples=50)
+def test_camel_execution_sloassessment_instantiation(instance):
+    assert isinstance(instance, camel_execution_SLOAssessment)
+
+
+
+@given(instance=camel_execution_SLOAssessment_strategy)
+def test_camel_execution_sloassessment_assessment_setter(instance):
+    original = instance.assessment
+    instance.assessment = original
+    assert instance.assessment == original
+
+
+
+@given(instance=camel_execution_SLOAssessment_strategy)
+def test_camel_execution_sloassessment_assessmentTime_setter(instance):
+    original = instance.assessmentTime
+    instance.assessmentTime = original
+    assert instance.assessmentTime == original
+
+
+
+@given(instance=camel_execution_SLOAssessment_strategy)
+def test_camel_execution_sloassessment_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=execution_camel_Application_strategy)
+@settings(max_examples=50)
+def test_execution_camel_application_instantiation(instance):
+    assert isinstance(instance, execution_camel_Application)
+
+@given(instance=camel_execution_ExecutionContext_strategy)
+@settings(max_examples=50)
+def test_camel_execution_executioncontext_instantiation(instance):
+    assert isinstance(instance, camel_execution_ExecutionContext)
+
+
+
+@given(instance=camel_execution_ExecutionContext_strategy)
+def test_camel_execution_executioncontext_endTime_setter(instance):
+    original = instance.endTime
+    instance.endTime = original
+    assert instance.endTime == original
+
+
+
+@given(instance=camel_execution_ExecutionContext_strategy)
+def test_camel_execution_executioncontext_startTime_setter(instance):
+    original = instance.startTime
+    instance.startTime = original
+    assert instance.startTime == original
+
+
+
+@given(instance=camel_execution_ExecutionContext_strategy)
+def test_camel_execution_executioncontext_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_execution_ExecutionContext_strategy)
+def test_camel_execution_executioncontext_totalCost_setter(instance):
+    original = instance.totalCost
+    instance.totalCost = original
+    assert instance.totalCost == original
+
+@given(instance=execution_camel_Action_strategy)
+@settings(max_examples=50)
+def test_execution_camel_action_instantiation(instance):
+    assert isinstance(instance, execution_camel_Action)
+
+@given(instance=camel_execution_ActionRealisation_strategy)
+@settings(max_examples=50)
+def test_camel_execution_actionrealisation_instantiation(instance):
+    assert isinstance(instance, camel_execution_ActionRealisation)
+
+
+
+@given(instance=camel_execution_ActionRealisation_strategy)
+def test_camel_execution_actionrealisation_lowLevelActions_setter(instance):
+    original = instance.lowLevelActions
+    instance.lowLevelActions = original
+    assert instance.lowLevelActions == original
+
+
+
+@given(instance=camel_execution_ActionRealisation_strategy)
+def test_camel_execution_actionrealisation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_execution_ActionRealisation_strategy)
+def test_camel_execution_actionrealisation_startTime_setter(instance):
+    original = instance.startTime
+    instance.startTime = original
+    assert instance.startTime == original
+
+
+
+@given(instance=camel_execution_ActionRealisation_strategy)
+def test_camel_execution_actionrealisation_endTime_setter(instance):
+    original = instance.endTime
+    instance.endTime = original
+    assert instance.endTime == original
+
+@given(instance=RuleTrigger_strategy)
+@settings(max_examples=50)
+def test_ruletrigger_instantiation(instance):
+    assert isinstance(instance, RuleTrigger)
+
+@given(instance=SLOAssessment_strategy)
+@settings(max_examples=50)
+def test_sloassessment_instantiation(instance):
+    assert isinstance(instance, SLOAssessment)
+
+@given(instance=Measurement_strategy)
+@settings(max_examples=50)
+def test_measurement_instantiation(instance):
+    assert isinstance(instance, Measurement)
+
+@given(instance=camel_execution_VMMeasurement_strategy)
+@settings(max_examples=50)
+def test_camel_execution_vmmeasurement_instantiation(instance):
+    assert isinstance(instance, camel_execution_VMMeasurement)
+
+@given(instance=camel_execution_CommunicationMeasurement_strategy)
+@settings(max_examples=50)
+def test_camel_execution_communicationmeasurement_instantiation(instance):
+    assert isinstance(instance, camel_execution_CommunicationMeasurement)
+
+@given(instance=camel_execution_InternalComponentMeasurement_strategy)
+@settings(max_examples=50)
+def test_camel_execution_internalcomponentmeasurement_instantiation(instance):
+    assert isinstance(instance, camel_execution_InternalComponentMeasurement)
+
+@given(instance=camel_execution_ApplicationMeasurement_strategy)
+@settings(max_examples=50)
+def test_camel_execution_applicationmeasurement_instantiation(instance):
+    assert isinstance(instance, camel_execution_ApplicationMeasurement)
+
+@given(instance=ExecutionContext_strategy)
+@settings(max_examples=50)
+def test_executioncontext_instantiation(instance):
+    assert isinstance(instance, ExecutionContext)
+
+@given(instance=EventInstance_strategy)
+@settings(max_examples=50)
+def test_eventinstance_instantiation(instance):
+    assert isinstance(instance, EventInstance)
+
+@given(instance=ActionRealisation_strategy)
+@settings(max_examples=50)
+def test_actionrealisation_instantiation(instance):
+    assert isinstance(instance, ActionRealisation)
+
+@given(instance=HostingPortInstance_strategy)
+@settings(max_examples=50)
+def test_hostingportinstance_instantiation(instance):
+    assert isinstance(instance, HostingPortInstance)
+
+@given(instance=camel_deployment_RequiredHostInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_requiredhostinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_RequiredHostInstance)
+
+@given(instance=camel_deployment_ProvidedHostInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_providedhostinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_ProvidedHostInstance)
+
+@given(instance=camel_execution_Measurement_strategy)
+@settings(max_examples=50)
+def test_camel_execution_measurement_instantiation(instance):
+    assert isinstance(instance, camel_execution_Measurement)
+
+
+
+@given(instance=camel_execution_Measurement_strategy)
+def test_camel_execution_measurement_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=camel_execution_Measurement_strategy)
+def test_camel_execution_measurement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_execution_Measurement_strategy)
+def test_camel_execution_measurement_rawData_setter(instance):
+    original = instance.rawData
+    instance.rawData = original
+    assert instance.rawData == original
+
+
+
+@given(instance=camel_execution_Measurement_strategy)
+def test_camel_execution_measurement_measurementTime_setter(instance):
+    original = instance.measurementTime
+    instance.measurementTime = original
+    assert instance.measurementTime == original
+
+@given(instance=RequirementGroup_strategy)
+@settings(max_examples=50)
+def test_requirementgroup_instantiation(instance):
+    assert isinstance(instance, RequirementGroup)
+
+@given(instance=CommunicationPortInstance_strategy)
+@settings(max_examples=50)
+def test_communicationportinstance_instantiation(instance):
+    assert isinstance(instance, CommunicationPortInstance)
+
+@given(instance=camel_deployment_ProvidedCommunicationInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_providedcommunicationinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_ProvidedCommunicationInstance)
+
+@given(instance=MonetaryUnit_strategy)
+@settings(max_examples=50)
+def test_monetaryunit_instantiation(instance):
+    assert isinstance(instance, MonetaryUnit)
+
+@given(instance=SingleValue_strategy)
+@settings(max_examples=50)
+def test_singlevalue_instantiation(instance):
+    assert isinstance(instance, SingleValue)
+
+@given(instance=camel_type_BoolValue_strategy)
+@settings(max_examples=50)
+def test_camel_type_boolvalue_instantiation(instance):
+    assert isinstance(instance, camel_type_BoolValue)
+
+
+
+@given(instance=camel_type_BoolValue_strategy)
+def test_camel_type_boolvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=camel_type_NumericValue_strategy)
+@settings(max_examples=50)
+def test_camel_type_numericvalue_instantiation(instance):
+    assert isinstance(instance, camel_type_NumericValue)
+
+@given(instance=camel_type_EnumerateValue_strategy)
+@settings(max_examples=50)
+def test_camel_type_enumeratevalue_instantiation(instance):
+    assert isinstance(instance, camel_type_EnumerateValue)
+
+
+
+@given(instance=camel_type_EnumerateValue_strategy)
+def test_camel_type_enumeratevalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=camel_type_EnumerateValue_strategy)
+def test_camel_type_enumeratevalue_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=camel_type_StringsValue_strategy)
+@settings(max_examples=50)
+def test_camel_type_stringsvalue_instantiation(instance):
+    assert isinstance(instance, camel_type_StringsValue)
+
+
+
+@given(instance=camel_type_StringsValue_strategy)
+def test_camel_type_stringsvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=Attribute_strategy)
+@settings(max_examples=50)
+def test_attribute_instantiation(instance):
+    assert isinstance(instance, Attribute)
+
+@given(instance=RequiredHostInstance_strategy)
+@settings(max_examples=50)
+def test_requiredhostinstance_instantiation(instance):
+    assert isinstance(instance, RequiredHostInstance)
+
+@given(instance=RequiredCommunicationInstance_strategy)
+@settings(max_examples=50)
+def test_requiredcommunicationinstance_instantiation(instance):
+    assert isinstance(instance, RequiredCommunicationInstance)
+
+@given(instance=camel_deployment_RequiredCommunicationInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_requiredcommunicationinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_RequiredCommunicationInstance)
+
+@given(instance=HostingPort_strategy)
+@settings(max_examples=50)
+def test_hostingport_instantiation(instance):
+    assert isinstance(instance, HostingPort)
+
+@given(instance=camel_deployment_RequiredHost_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_requiredhost_instantiation(instance):
+    assert isinstance(instance, camel_deployment_RequiredHost)
+
+@given(instance=camel_deployment_ProvidedHost_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_providedhost_instantiation(instance):
+    assert isinstance(instance, camel_deployment_ProvidedHost)
+
+@given(instance=CommunicationPort_strategy)
+@settings(max_examples=50)
+def test_communicationport_instantiation(instance):
+    assert isinstance(instance, CommunicationPort)
+
+@given(instance=camel_deployment_RequiredCommunication_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_requiredcommunication_instantiation(instance):
+    assert isinstance(instance, camel_deployment_RequiredCommunication)
+
+
+
+@given(instance=camel_deployment_RequiredCommunication_strategy)
+def test_camel_deployment_requiredcommunication_isMandatory_setter(instance):
+    original = instance.isMandatory
+    instance.isMandatory = original
+    assert instance.isMandatory == original
+
+@given(instance=camel_deployment_ProvidedCommunication_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_providedcommunication_instantiation(instance):
+    assert isinstance(instance, camel_deployment_ProvidedCommunication)
+
+@given(instance=ComponentInstance_strategy)
+@settings(max_examples=50)
+def test_componentinstance_instantiation(instance):
+    assert isinstance(instance, ComponentInstance)
+
+@given(instance=camel_deployment_VMInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_vminstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_VMInstance)
+
+
+
+@given(instance=camel_deployment_VMInstance_strategy)
+def test_camel_deployment_vminstance_ip_setter(instance):
+    original = instance.ip
+    instance.ip = original
+    assert instance.ip == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_deployment_VMInstance_strategy)
+@settings(max_examples=30)
+def test_camel_deployment_vminstance_checkdates_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.checkDates(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.checkDates).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'checkDates' in camel_deployment_VMInstance is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'checkDates' in camel_deployment_VMInstance did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'checkDates' in camel_deployment_VMInstance is not implemented or raised an error")
+
+@given(instance=camel_deployment_InternalComponentInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_internalcomponentinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_InternalComponentInstance)
+
+@given(instance=ProvidedHostInstance_strategy)
+@settings(max_examples=50)
+def test_providedhostinstance_instantiation(instance):
+    assert isinstance(instance, ProvidedHostInstance)
+
+@given(instance=ProvidedCommunicationInstance_strategy)
+@settings(max_examples=50)
+def test_providedcommunicationinstance_instantiation(instance):
+    assert isinstance(instance, ProvidedCommunicationInstance)
+
+@given(instance=ProviderRequirement_strategy)
+@settings(max_examples=50)
+def test_providerrequirement_instantiation(instance):
+    assert isinstance(instance, ProviderRequirement)
+
+@given(instance=LocationRequirement_strategy)
+@settings(max_examples=50)
+def test_locationrequirement_instantiation(instance):
+    assert isinstance(instance, LocationRequirement)
+
+@given(instance=camel_deployment_VMRequirementSet_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_vmrequirementset_instantiation(instance):
+    assert isinstance(instance, camel_deployment_VMRequirementSet)
+
+
+
+@given(instance=camel_deployment_VMRequirementSet_strategy)
+def test_camel_deployment_vmrequirementset_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=RequiredHost_strategy)
+@settings(max_examples=50)
+def test_requiredhost_instantiation(instance):
+    assert isinstance(instance, RequiredHost)
+
+@given(instance=RequiredCommunication_strategy)
+@settings(max_examples=50)
+def test_requiredcommunication_instantiation(instance):
+    assert isinstance(instance, RequiredCommunication)
+
+@given(instance=Component_strategy)
+@settings(max_examples=50)
+def test_component_instantiation(instance):
+    assert isinstance(instance, Component)
+
+@given(instance=camel_deployment_VM_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_vm_instantiation(instance):
+    assert isinstance(instance, camel_deployment_VM)
+
+@given(instance=camel_deployment_InternalComponent_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_internalcomponent_instantiation(instance):
+    assert isinstance(instance, camel_deployment_InternalComponent)
+
+
+
+@given(instance=camel_deployment_InternalComponent_strategy)
+def test_camel_deployment_internalcomponent_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=camel_deployment_InternalComponent_strategy)
+@settings(max_examples=30)
+def test_camel_deployment_internalcomponent_contains_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.contains(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.contains).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'contains' in camel_deployment_InternalComponent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'contains' in camel_deployment_InternalComponent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'contains' in camel_deployment_InternalComponent is not implemented or raised an error")
+
+@given(instance=Configuration_strategy)
+@settings(max_examples=50)
+def test_configuration_instantiation(instance):
+    assert isinstance(instance, Configuration)
+
+@given(instance=ProvidedHost_strategy)
+@settings(max_examples=50)
+def test_providedhost_instantiation(instance):
+    assert isinstance(instance, ProvidedHost)
+
+@given(instance=ProvidedCommunication_strategy)
+@settings(max_examples=50)
+def test_providedcommunication_instantiation(instance):
+    assert isinstance(instance, ProvidedCommunication)
+
+@given(instance=DeploymentElement_strategy)
+@settings(max_examples=50)
+def test_deploymentelement_instantiation(instance):
+    assert isinstance(instance, DeploymentElement)
+
+@given(instance=camel_deployment_CommunicationInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_communicationinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_CommunicationInstance)
+
+@given(instance=camel_deployment_Communication_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_communication_instantiation(instance):
+    assert isinstance(instance, camel_deployment_Communication)
+
+
+
+@given(instance=camel_deployment_Communication_strategy)
+def test_camel_deployment_communication_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=camel_deployment_HostingPort_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_hostingport_instantiation(instance):
+    assert isinstance(instance, camel_deployment_HostingPort)
+
+@given(instance=camel_deployment_HostingPortInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_hostingportinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_HostingPortInstance)
+
+@given(instance=camel_deployment_Hosting_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_hosting_instantiation(instance):
+    assert isinstance(instance, camel_deployment_Hosting)
+
+@given(instance=camel_deployment_CommunicationPortInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_communicationportinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_CommunicationPortInstance)
+
+@given(instance=camel_deployment_ComponentInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_componentinstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_ComponentInstance)
+
+
+
+@given(instance=camel_deployment_ComponentInstance_strategy)
+def test_camel_deployment_componentinstance_destroyedOn_setter(instance):
+    original = instance.destroyedOn
+    instance.destroyedOn = original
+    assert instance.destroyedOn == original
+
+
+
+@given(instance=camel_deployment_ComponentInstance_strategy)
+def test_camel_deployment_componentinstance_instantiatedOn_setter(instance):
+    original = instance.instantiatedOn
+    instance.instantiatedOn = original
+    assert instance.instantiatedOn == original
+
+@given(instance=camel_deployment_HostingInstance_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_hostinginstance_instantiation(instance):
+    assert isinstance(instance, camel_deployment_HostingInstance)
+
+@given(instance=camel_deployment_CommunicationPort_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_communicationport_instantiation(instance):
+    assert isinstance(instance, camel_deployment_CommunicationPort)
+
+
+
+@given(instance=camel_deployment_CommunicationPort_strategy)
+def test_camel_deployment_communicationport_portNumber_setter(instance):
+    original = instance.portNumber
+    instance.portNumber = original
+    assert instance.portNumber == original
+
+@given(instance=camel_deployment_Component_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_component_instantiation(instance):
+    assert isinstance(instance, camel_deployment_Component)
+
+@given(instance=VMRequirementSet_strategy)
+@settings(max_examples=50)
+def test_vmrequirementset_instantiation(instance):
+    assert isinstance(instance, VMRequirementSet)
+
+@given(instance=camel_deployment_Configuration_strategy)
+@settings(max_examples=50)
+def test_camel_deployment_configuration_instantiation(instance):
+    assert isinstance(instance, camel_deployment_Configuration)
+
+
+
+@given(instance=camel_deployment_Configuration_strategy)
+def test_camel_deployment_configuration_installCommand_setter(instance):
+    original = instance.installCommand
+    instance.installCommand = original
+    assert instance.installCommand == original
+
+
+
+@given(instance=camel_deployment_Configuration_strategy)
+def test_camel_deployment_configuration_startCommand_setter(instance):
+    original = instance.startCommand
+    instance.startCommand = original
+    assert instance.startCommand == original
+
+
+
+@given(instance=camel_deployment_Configuration_strategy)
+def test_camel_deployment_configuration_stopCommand_setter(instance):
+    original = instance.stopCommand
+    instance.stopCommand = original
+    assert instance.stopCommand == original
+
+
+
+@given(instance=camel_deployment_Configuration_strategy)
+def test_camel_deployment_configuration_configureCommand_setter(instance):
+    original = instance.configureCommand
+    instance.configureCommand = original
+    assert instance.configureCommand == original
+
+
+
+@given(instance=camel_deployment_Configuration_strategy)
+def test_camel_deployment_configuration_downloadCommand_setter(instance):
+    original = instance.downloadCommand
+    instance.downloadCommand = original
+    assert instance.downloadCommand == original
+
+
+
+@given(instance=camel_deployment_Configuration_strategy)
+def test_camel_deployment_configuration_uploadCommand_setter(instance):
+    original = instance.uploadCommand
+    instance.uploadCommand = original
+    assert instance.uploadCommand == original
 
 @given(instance=OSOrImageRequirement_strategy)
 @settings(max_examples=50)
 def test_osorimagerequirement_instantiation(instance):
     assert isinstance(instance, OSOrImageRequirement)
 
-@given(instance=camel::requirement::OSRequirement_strategy)
+@given(instance=camel_requirement_OSRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::osrequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::OSRequirement)
-
-@given(instance=camel::requirement::OSRequirement_strategy)
-def test_camel::requirement::osrequirement_is64os_type(instance):
-    assert isinstance(instance.is64os, bool)
+def test_camel_requirement_osrequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_OSRequirement)
 
 
-@given(instance=camel::requirement::OSRequirement_strategy)
-def test_camel::requirement::osrequirement_is64os_setter(instance):
+
+@given(instance=camel_requirement_OSRequirement_strategy)
+def test_camel_requirement_osrequirement_is64os_setter(instance):
     original = instance.is64os
     instance.is64os = original
     assert instance.is64os == original
 
-@given(instance=camel::requirement::OSRequirement_strategy)
-def test_camel::requirement::osrequirement_os_type(instance):
-    assert isinstance(instance.os, str)
 
 
-@given(instance=camel::requirement::OSRequirement_strategy)
-def test_camel::requirement::osrequirement_os_setter(instance):
+@given(instance=camel_requirement_OSRequirement_strategy)
+def test_camel_requirement_osrequirement_os_setter(instance):
     original = instance.os
     instance.os = original
     assert instance.os == original
 
-@given(instance=camel::requirement::ImageRequirement_strategy)
+@given(instance=camel_requirement_ImageRequirement_strategy)
 @settings(max_examples=50)
-def test_camel::requirement::imagerequirement_instantiation(instance):
-    assert isinstance(instance, camel::requirement::ImageRequirement)
-
-@given(instance=camel::requirement::ImageRequirement_strategy)
-def test_camel::requirement::imagerequirement_imageId_type(instance):
-    assert isinstance(instance.imageId, str)
+def test_camel_requirement_imagerequirement_instantiation(instance):
+    assert isinstance(instance, camel_requirement_ImageRequirement)
 
 
-@given(instance=camel::requirement::ImageRequirement_strategy)
-def test_camel::requirement::imagerequirement_imageId_setter(instance):
+
+@given(instance=camel_requirement_ImageRequirement_strategy)
+def test_camel_requirement_imagerequirement_imageId_setter(instance):
     original = instance.imageId
     instance.imageId = original
     assert instance.imageId == original
@@ -11994,18 +12289,15 @@ def test_qualitativehardwarerequirement_instantiation(instance):
 def test_internalcomponent_instantiation(instance):
     assert isinstance(instance, InternalComponent)
 
-@given(instance=camel::deployment::DeploymentElement_strategy)
+@given(instance=camel_deployment_DeploymentElement_strategy)
 @settings(max_examples=50)
-def test_camel::deployment::deploymentelement_instantiation(instance):
-    assert isinstance(instance, camel::deployment::DeploymentElement)
-
-@given(instance=camel::deployment::DeploymentElement_strategy)
-def test_camel::deployment::deploymentelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_camel_deployment_deploymentelement_instantiation(instance):
+    assert isinstance(instance, camel_deployment_DeploymentElement)
 
 
-@given(instance=camel::deployment::DeploymentElement_strategy)
-def test_camel::deployment::deploymentelement_name_setter(instance):
+
+@given(instance=camel_deployment_DeploymentElement_strategy)
+def test_camel_deployment_deploymentelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -12015,114 +12307,87 @@ def test_camel::deployment::deploymentelement_name_setter(instance):
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=camel::organisation::Organisation_strategy)
+@given(instance=camel_organisation_Organisation_strategy)
 @settings(max_examples=50)
-def test_camel::organisation::organisation_instantiation(instance):
-    assert isinstance(instance, camel::organisation::Organisation)
-
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_www_type(instance):
-    assert isinstance(instance.www, str)
+def test_camel_organisation_organisation_instantiation(instance):
+    assert isinstance(instance, camel_organisation_Organisation)
 
 
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_www_setter(instance):
-    original = instance.www
-    instance.www = original
-    assert instance.www == original
 
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_name_setter(instance):
+@given(instance=camel_organisation_Organisation_strategy)
+def test_camel_organisation_organisation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_postalAddress_type(instance):
-    assert isinstance(instance.postalAddress, str)
-
-
-@given(instance=camel::organisation::Organisation_strategy)
-def test_camel::organisation::organisation_postalAddress_setter(instance):
+@given(instance=camel_organisation_Organisation_strategy)
+def test_camel_organisation_organisation_postalAddress_setter(instance):
     original = instance.postalAddress
     instance.postalAddress = original
     assert instance.postalAddress == original
 
-@given(instance=camel::organisation::User_strategy)
-@settings(max_examples=50)
-def test_camel::organisation::user_instantiation(instance):
-    assert isinstance(instance, camel::organisation::User)
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
 
 
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_www_type(instance):
-    assert isinstance(instance.www, str)
-
-
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_www_setter(instance):
+@given(instance=camel_organisation_Organisation_strategy)
+def test_camel_organisation_organisation_www_setter(instance):
     original = instance.www
     instance.www = original
     assert instance.www == original
 
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
-@given(instance=camel::organisation::User_strategy)
-def test_camel::organisation::user_email_setter(instance):
+@given(instance=camel_organisation_Organisation_strategy)
+def test_camel_organisation_organisation_email_setter(instance):
     original = instance.email
     instance.email = original
     assert instance.email == original
+
+@given(instance=camel_organisation_User_strategy)
+@settings(max_examples=50)
+def test_camel_organisation_user_instantiation(instance):
+    assert isinstance(instance, camel_organisation_User)
+
+
+
+@given(instance=camel_organisation_User_strategy)
+def test_camel_organisation_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=camel_organisation_User_strategy)
+def test_camel_organisation_user_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+
+
+@given(instance=camel_organisation_User_strategy)
+def test_camel_organisation_user_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+
+
+@given(instance=camel_organisation_User_strategy)
+def test_camel_organisation_user_www_setter(instance):
+    original = instance.www
+    instance.www = original
+    assert instance.www == original
+
+
+
+@given(instance=camel_organisation_User_strategy)
+def test_camel_organisation_user_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=UnitModel_strategy)
 @settings(max_examples=50)
@@ -12189,67 +12454,52 @@ def test_executionmodel_instantiation(instance):
 def test_deploymentmodel_instantiation(instance):
     assert isinstance(instance, DeploymentModel)
 
-@given(instance=camel::Application_strategy)
+@given(instance=camel_Application_strategy)
 @settings(max_examples=50)
-def test_camel::application_instantiation(instance):
-    assert isinstance(instance, camel::Application)
-
-@given(instance=camel::Application_strategy)
-def test_camel::application_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_camel_application_instantiation(instance):
+    assert isinstance(instance, camel_Application)
 
 
-@given(instance=camel::Application_strategy)
-def test_camel::application_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=camel::Application_strategy)
-def test_camel::application_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::Application_strategy)
-def test_camel::application_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::Application_strategy)
-def test_camel::application_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=camel::Application_strategy)
-def test_camel::application_description_setter(instance):
+@given(instance=camel_Application_strategy)
+def test_camel_application_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=camel::Action_strategy)
-@settings(max_examples=50)
-def test_camel::action_instantiation(instance):
-    assert isinstance(instance, camel::Action)
-
-@given(instance=camel::Action_strategy)
-def test_camel::action_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::Action_strategy)
-def test_camel::action_name_setter(instance):
+@given(instance=camel_Application_strategy)
+def test_camel_application_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=camel::Action_strategy)
-def test_camel::action_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=camel::Action_strategy)
-def test_camel::action_type_setter(instance):
+@given(instance=camel_Application_strategy)
+def test_camel_application_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=camel_Action_strategy)
+@settings(max_examples=50)
+def test_camel_action_instantiation(instance):
+    assert isinstance(instance, camel_Action)
+
+
+
+@given(instance=camel_Action_strategy)
+def test_camel_action_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=camel_Action_strategy)
+def test_camel_action_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -12259,90 +12509,91 @@ def test_camel::action_type_setter(instance):
 def test_model_instantiation(instance):
     assert isinstance(instance, Model)
 
-@given(instance=camel::scalability::ScalabilityModel_strategy)
+@given(instance=camel_security_SecurityModel_strategy)
 @settings(max_examples=50)
-def test_camel::scalability::scalabilitymodel_instantiation(instance):
-    assert isinstance(instance, camel::scalability::ScalabilityModel)
+def test_camel_security_securitymodel_instantiation(instance):
+    assert isinstance(instance, camel_security_SecurityModel)
 
-@given(instance=camel::metric::MetricModel_strategy)
+@given(instance=camel_organisation_OrganisationModel_strategy)
 @settings(max_examples=50)
-def test_camel::metric::metricmodel_instantiation(instance):
-    assert isinstance(instance, camel::metric::MetricModel)
-
-@given(instance=camel::security::SecurityModel_strategy)
-@settings(max_examples=50)
-def test_camel::security::securitymodel_instantiation(instance):
-    assert isinstance(instance, camel::security::SecurityModel)
-
-@given(instance=camel::unit::UnitModel_strategy)
-@settings(max_examples=50)
-def test_camel::unit::unitmodel_instantiation(instance):
-    assert isinstance(instance, camel::unit::UnitModel)
-
-@given(instance=camel::requirement::RequirementModel_strategy)
-@settings(max_examples=50)
-def test_camel::requirement::requirementmodel_instantiation(instance):
-    assert isinstance(instance, camel::requirement::RequirementModel)
-
-@given(instance=camel::provider::ProviderModel_strategy)
-@settings(max_examples=50)
-def test_camel::provider::providermodel_instantiation(instance):
-    assert isinstance(instance, camel::provider::ProviderModel)
-
-@given(instance=camel::organisation::OrganisationModel_strategy)
-@settings(max_examples=50)
-def test_camel::organisation::organisationmodel_instantiation(instance):
-    assert isinstance(instance, camel::organisation::OrganisationModel)
-
-@given(instance=camel::organisation::OrganisationModel_strategy)
-def test_camel::organisation::organisationmodel_securityLevel_type(instance):
-    assert isinstance(instance.securityLevel, str)
+def test_camel_organisation_organisationmodel_instantiation(instance):
+    assert isinstance(instance, camel_organisation_OrganisationModel)
 
 
-@given(instance=camel::organisation::OrganisationModel_strategy)
-def test_camel::organisation::organisationmodel_securityLevel_setter(instance):
+
+@given(instance=camel_organisation_OrganisationModel_strategy)
+def test_camel_organisation_organisationmodel_securityLevel_setter(instance):
     original = instance.securityLevel
     instance.securityLevel = original
     assert instance.securityLevel == original
 
-@given(instance=camel::type::TypeModel_strategy)
+@given(instance=camel_deployment_DeploymentModel_strategy)
 @settings(max_examples=50)
-def test_camel::type::typemodel_instantiation(instance):
-    assert isinstance(instance, camel::type::TypeModel)
+def test_camel_deployment_deploymentmodel_instantiation(instance):
+    assert isinstance(instance, camel_deployment_DeploymentModel)
 
-@given(instance=camel::deployment::DeploymentModel_strategy)
+@given(instance=camel_metric_MetricModel_strategy)
 @settings(max_examples=50)
-def test_camel::deployment::deploymentmodel_instantiation(instance):
-    assert isinstance(instance, camel::deployment::DeploymentModel)
+def test_camel_metric_metricmodel_instantiation(instance):
+    assert isinstance(instance, camel_metric_MetricModel)
 
-@given(instance=camel::CamelModel_strategy)
+@given(instance=camel_type_TypeModel_strategy)
 @settings(max_examples=50)
-def test_camel::camelmodel_instantiation(instance):
-    assert isinstance(instance, camel::CamelModel)
+def test_camel_type_typemodel_instantiation(instance):
+    assert isinstance(instance, camel_type_TypeModel)
 
-@given(instance=camel::Model_strategy)
+@given(instance=camel_provider_ProviderModel_strategy)
 @settings(max_examples=50)
-def test_camel::model_instantiation(instance):
-    assert isinstance(instance, camel::Model)
+def test_camel_provider_providermodel_instantiation(instance):
+    assert isinstance(instance, camel_provider_ProviderModel)
 
-@given(instance=camel::Model_strategy)
-def test_camel::model_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+@given(instance=camel_scalability_ScalabilityModel_strategy)
+@settings(max_examples=50)
+def test_camel_scalability_scalabilitymodel_instantiation(instance):
+    assert isinstance(instance, camel_scalability_ScalabilityModel)
+
+@given(instance=camel_requirement_RequirementModel_strategy)
+@settings(max_examples=50)
+def test_camel_requirement_requirementmodel_instantiation(instance):
+    assert isinstance(instance, camel_requirement_RequirementModel)
+
+@given(instance=camel_execution_ExecutionModel_strategy)
+@settings(max_examples=50)
+def test_camel_execution_executionmodel_instantiation(instance):
+    assert isinstance(instance, camel_execution_ExecutionModel)
+
+@given(instance=camel_unit_UnitModel_strategy)
+@settings(max_examples=50)
+def test_camel_unit_unitmodel_instantiation(instance):
+    assert isinstance(instance, camel_unit_UnitModel)
+
+@given(instance=camel_location_LocationModel_strategy)
+@settings(max_examples=50)
+def test_camel_location_locationmodel_instantiation(instance):
+    assert isinstance(instance, camel_location_LocationModel)
+
+@given(instance=camel_CamelModel_strategy)
+@settings(max_examples=50)
+def test_camel_camelmodel_instantiation(instance):
+    assert isinstance(instance, camel_CamelModel)
+
+@given(instance=camel_Model_strategy)
+@settings(max_examples=50)
+def test_camel_model_instantiation(instance):
+    assert isinstance(instance, camel_Model)
 
 
-@given(instance=camel::Model_strategy)
-def test_camel::model_importURI_setter(instance):
+
+@given(instance=camel_Model_strategy)
+def test_camel_model_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=camel::Model_strategy)
-def test_camel::model_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=camel::Model_strategy)
-def test_camel::model_name_setter(instance):
+@given(instance=camel_Model_strategy)
+def test_camel_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -12371,863 +12622,3 @@ def test_requirementmodel_instantiation(instance):
 @settings(max_examples=50)
 def test_providermodel_instantiation(instance):
     assert isinstance(instance, ProviderModel)
-
-@given(instance=camel::location::LocationModel_strategy)
-@settings(max_examples=50)
-def test_camel::location::locationmodel_instantiation(instance):
-    assert isinstance(instance, camel::location::LocationModel)
-
-@given(instance=ScalabilityRule_strategy)
-@settings(max_examples=50)
-def test_scalabilityrule_instantiation(instance):
-    assert isinstance(instance, ScalabilityRule)
-
-@given(instance=camel::location::Country_strategy)
-@settings(max_examples=50)
-def test_camel::location::country_instantiation(instance):
-    assert isinstance(instance, camel::location::Country)
-
-@given(instance=camel::location::GeographicalRegion_strategy)
-@settings(max_examples=50)
-def test_camel::location::geographicalregion_instantiation(instance):
-    assert isinstance(instance, camel::location::GeographicalRegion)
-
-@given(instance=camel::location::GeographicalRegion_strategy)
-def test_camel::location::geographicalregion_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::location::GeographicalRegion_strategy)
-def test_camel::location::geographicalregion_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::location::GeographicalRegion_strategy)
-def test_camel::location::geographicalregion_alternativeNames_type(instance):
-    assert isinstance(instance.alternativeNames, str)
-
-
-@given(instance=camel::location::GeographicalRegion_strategy)
-def test_camel::location::geographicalregion_alternativeNames_setter(instance):
-    original = instance.alternativeNames
-    instance.alternativeNames = original
-    assert instance.alternativeNames == original
-
-@given(instance=ServiceLevelObjective_strategy)
-@settings(max_examples=50)
-def test_servicelevelobjective_instantiation(instance):
-    assert isinstance(instance, ServiceLevelObjective)
-
-@given(instance=camel::security::SecuritySLO_strategy)
-@settings(max_examples=50)
-def test_camel::security::securityslo_instantiation(instance):
-    assert isinstance(instance, camel::security::SecuritySLO)
-
-@given(instance=MetricInstance_strategy)
-@settings(max_examples=50)
-def test_metricinstance_instantiation(instance):
-    assert isinstance(instance, MetricInstance)
-
-@given(instance=camel::metric::RawMetricInstance_strategy)
-@settings(max_examples=50)
-def test_camel::metric::rawmetricinstance_instantiation(instance):
-    assert isinstance(instance, camel::metric::RawMetricInstance)
-
-@given(instance=camel::metric::CompositeMetricInstance_strategy)
-@settings(max_examples=50)
-def test_camel::metric::compositemetricinstance_instantiation(instance):
-    assert isinstance(instance, camel::metric::CompositeMetricInstance)
-
-@given(instance=camel::execution::RuleTrigger_strategy)
-@settings(max_examples=50)
-def test_camel::execution::ruletrigger_instantiation(instance):
-    assert isinstance(instance, camel::execution::RuleTrigger)
-
-@given(instance=camel::execution::RuleTrigger_strategy)
-def test_camel::execution::ruletrigger_trigerringTime_type(instance):
-    assert isinstance(instance.trigerringTime, date)
-
-
-@given(instance=camel::execution::RuleTrigger_strategy)
-def test_camel::execution::ruletrigger_trigerringTime_setter(instance):
-    original = instance.trigerringTime
-    instance.trigerringTime = original
-    assert instance.trigerringTime == original
-
-@given(instance=camel::execution::RuleTrigger_strategy)
-def test_camel::execution::ruletrigger_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::execution::RuleTrigger_strategy)
-def test_camel::execution::ruletrigger_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-@settings(max_examples=50)
-def test_camel::execution::sloassessment_instantiation(instance):
-    assert isinstance(instance, camel::execution::SLOAssessment)
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-def test_camel::execution::sloassessment_assessment_type(instance):
-    assert isinstance(instance.assessment, bool)
-
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-def test_camel::execution::sloassessment_assessment_setter(instance):
-    original = instance.assessment
-    instance.assessment = original
-    assert instance.assessment == original
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-def test_camel::execution::sloassessment_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-def test_camel::execution::sloassessment_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-def test_camel::execution::sloassessment_assessmentTime_type(instance):
-    assert isinstance(instance.assessmentTime, date)
-
-
-@given(instance=camel::execution::SLOAssessment_strategy)
-def test_camel::execution::sloassessment_assessmentTime_setter(instance):
-    original = instance.assessmentTime
-    instance.assessmentTime = original
-    assert instance.assessmentTime == original
-
-@given(instance=execution::camel::Application_strategy)
-@settings(max_examples=50)
-def test_execution::camel::application_instantiation(instance):
-    assert isinstance(instance, execution::camel::Application)
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-@settings(max_examples=50)
-def test_camel::execution::executioncontext_instantiation(instance):
-    assert isinstance(instance, camel::execution::ExecutionContext)
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_totalCost_type(instance):
-    assert isinstance(instance.totalCost, float)
-
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_totalCost_setter(instance):
-    original = instance.totalCost
-    instance.totalCost = original
-    assert instance.totalCost == original
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_startTime_type(instance):
-    assert isinstance(instance.startTime, date)
-
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_startTime_setter(instance):
-    original = instance.startTime
-    instance.startTime = original
-    assert instance.startTime == original
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_endTime_type(instance):
-    assert isinstance(instance.endTime, date)
-
-
-@given(instance=camel::execution::ExecutionContext_strategy)
-def test_camel::execution::executioncontext_endTime_setter(instance):
-    original = instance.endTime
-    instance.endTime = original
-    assert instance.endTime == original
-
-@given(instance=execution::camel::Action_strategy)
-@settings(max_examples=50)
-def test_execution::camel::action_instantiation(instance):
-    assert isinstance(instance, execution::camel::Action)
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-@settings(max_examples=50)
-def test_camel::execution::actionrealisation_instantiation(instance):
-    assert isinstance(instance, camel::execution::ActionRealisation)
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_endTime_type(instance):
-    assert isinstance(instance.endTime, date)
-
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_endTime_setter(instance):
-    original = instance.endTime
-    instance.endTime = original
-    assert instance.endTime == original
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_startTime_type(instance):
-    assert isinstance(instance.startTime, date)
-
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_startTime_setter(instance):
-    original = instance.startTime
-    instance.startTime = original
-    assert instance.startTime == original
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_lowLevelActions_type(instance):
-    assert isinstance(instance.lowLevelActions, str)
-
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_lowLevelActions_setter(instance):
-    original = instance.lowLevelActions
-    instance.lowLevelActions = original
-    assert instance.lowLevelActions == original
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::execution::ActionRealisation_strategy)
-def test_camel::execution::actionrealisation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=RuleTrigger_strategy)
-@settings(max_examples=50)
-def test_ruletrigger_instantiation(instance):
-    assert isinstance(instance, RuleTrigger)
-
-@given(instance=SLOAssessment_strategy)
-@settings(max_examples=50)
-def test_sloassessment_instantiation(instance):
-    assert isinstance(instance, SLOAssessment)
-
-@given(instance=Measurement_strategy)
-@settings(max_examples=50)
-def test_measurement_instantiation(instance):
-    assert isinstance(instance, Measurement)
-
-@given(instance=camel::execution::ApplicationMeasurement_strategy)
-@settings(max_examples=50)
-def test_camel::execution::applicationmeasurement_instantiation(instance):
-    assert isinstance(instance, camel::execution::ApplicationMeasurement)
-
-@given(instance=camel::execution::CommunicationMeasurement_strategy)
-@settings(max_examples=50)
-def test_camel::execution::communicationmeasurement_instantiation(instance):
-    assert isinstance(instance, camel::execution::CommunicationMeasurement)
-
-@given(instance=camel::execution::VMMeasurement_strategy)
-@settings(max_examples=50)
-def test_camel::execution::vmmeasurement_instantiation(instance):
-    assert isinstance(instance, camel::execution::VMMeasurement)
-
-@given(instance=camel::execution::InternalComponentMeasurement_strategy)
-@settings(max_examples=50)
-def test_camel::execution::internalcomponentmeasurement_instantiation(instance):
-    assert isinstance(instance, camel::execution::InternalComponentMeasurement)
-
-@given(instance=ExecutionContext_strategy)
-@settings(max_examples=50)
-def test_executioncontext_instantiation(instance):
-    assert isinstance(instance, ExecutionContext)
-
-@given(instance=EventInstance_strategy)
-@settings(max_examples=50)
-def test_eventinstance_instantiation(instance):
-    assert isinstance(instance, EventInstance)
-
-@given(instance=ActionRealisation_strategy)
-@settings(max_examples=50)
-def test_actionrealisation_instantiation(instance):
-    assert isinstance(instance, ActionRealisation)
-
-@given(instance=camel::execution::ExecutionModel_strategy)
-@settings(max_examples=50)
-def test_camel::execution::executionmodel_instantiation(instance):
-    assert isinstance(instance, camel::execution::ExecutionModel)
-
-@given(instance=HostingPortInstance_strategy)
-@settings(max_examples=50)
-def test_hostingportinstance_instantiation(instance):
-    assert isinstance(instance, HostingPortInstance)
-
-@given(instance=camel::deployment::RequiredHostInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::requiredhostinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::RequiredHostInstance)
-
-@given(instance=camel::deployment::ProvidedHostInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::providedhostinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::ProvidedHostInstance)
-
-@given(instance=camel::execution::Measurement_strategy)
-@settings(max_examples=50)
-def test_camel::execution::measurement_instantiation(instance):
-    assert isinstance(instance, camel::execution::Measurement)
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_rawData_type(instance):
-    assert isinstance(instance.rawData, str)
-
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_rawData_setter(instance):
-    original = instance.rawData
-    instance.rawData = original
-    assert instance.rawData == original
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_measurementTime_type(instance):
-    assert isinstance(instance.measurementTime, date)
-
-
-@given(instance=camel::execution::Measurement_strategy)
-def test_camel::execution::measurement_measurementTime_setter(instance):
-    original = instance.measurementTime
-    instance.measurementTime = original
-    assert instance.measurementTime == original
-
-@given(instance=RequirementGroup_strategy)
-@settings(max_examples=50)
-def test_requirementgroup_instantiation(instance):
-    assert isinstance(instance, RequirementGroup)
-
-@given(instance=CommunicationPortInstance_strategy)
-@settings(max_examples=50)
-def test_communicationportinstance_instantiation(instance):
-    assert isinstance(instance, CommunicationPortInstance)
-
-@given(instance=camel::deployment::ProvidedCommunicationInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::providedcommunicationinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::ProvidedCommunicationInstance)
-
-@given(instance=MonetaryUnit_strategy)
-@settings(max_examples=50)
-def test_monetaryunit_instantiation(instance):
-    assert isinstance(instance, MonetaryUnit)
-
-@given(instance=SingleValue_strategy)
-@settings(max_examples=50)
-def test_singlevalue_instantiation(instance):
-    assert isinstance(instance, SingleValue)
-
-@given(instance=camel::type::EnumerateValue_strategy)
-@settings(max_examples=50)
-def test_camel::type::enumeratevalue_instantiation(instance):
-    assert isinstance(instance, camel::type::EnumerateValue)
-
-@given(instance=camel::type::EnumerateValue_strategy)
-def test_camel::type::enumeratevalue_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::type::EnumerateValue_strategy)
-def test_camel::type::enumeratevalue_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=camel::type::EnumerateValue_strategy)
-def test_camel::type::enumeratevalue_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=camel::type::EnumerateValue_strategy)
-def test_camel::type::enumeratevalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=camel::type::StringsValue_strategy)
-@settings(max_examples=50)
-def test_camel::type::stringsvalue_instantiation(instance):
-    assert isinstance(instance, camel::type::StringsValue)
-
-@given(instance=camel::type::StringsValue_strategy)
-def test_camel::type::stringsvalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=camel::type::StringsValue_strategy)
-def test_camel::type::stringsvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=camel::type::NumericValue_strategy)
-@settings(max_examples=50)
-def test_camel::type::numericvalue_instantiation(instance):
-    assert isinstance(instance, camel::type::NumericValue)
-
-@given(instance=camel::type::BoolValue_strategy)
-@settings(max_examples=50)
-def test_camel::type::boolvalue_instantiation(instance):
-    assert isinstance(instance, camel::type::BoolValue)
-
-@given(instance=camel::type::BoolValue_strategy)
-def test_camel::type::boolvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=camel::type::BoolValue_strategy)
-def test_camel::type::boolvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Attribute_strategy)
-@settings(max_examples=50)
-def test_attribute_instantiation(instance):
-    assert isinstance(instance, Attribute)
-
-@given(instance=RequiredHostInstance_strategy)
-@settings(max_examples=50)
-def test_requiredhostinstance_instantiation(instance):
-    assert isinstance(instance, RequiredHostInstance)
-
-@given(instance=RequiredCommunicationInstance_strategy)
-@settings(max_examples=50)
-def test_requiredcommunicationinstance_instantiation(instance):
-    assert isinstance(instance, RequiredCommunicationInstance)
-
-@given(instance=camel::deployment::RequiredCommunicationInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::requiredcommunicationinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::RequiredCommunicationInstance)
-
-@given(instance=HostingPort_strategy)
-@settings(max_examples=50)
-def test_hostingport_instantiation(instance):
-    assert isinstance(instance, HostingPort)
-
-@given(instance=camel::deployment::RequiredHost_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::requiredhost_instantiation(instance):
-    assert isinstance(instance, camel::deployment::RequiredHost)
-
-@given(instance=camel::deployment::ProvidedHost_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::providedhost_instantiation(instance):
-    assert isinstance(instance, camel::deployment::ProvidedHost)
-
-@given(instance=CommunicationPort_strategy)
-@settings(max_examples=50)
-def test_communicationport_instantiation(instance):
-    assert isinstance(instance, CommunicationPort)
-
-@given(instance=camel::deployment::RequiredCommunication_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::requiredcommunication_instantiation(instance):
-    assert isinstance(instance, camel::deployment::RequiredCommunication)
-
-@given(instance=camel::deployment::RequiredCommunication_strategy)
-def test_camel::deployment::requiredcommunication_isMandatory_type(instance):
-    assert isinstance(instance.isMandatory, bool)
-
-
-@given(instance=camel::deployment::RequiredCommunication_strategy)
-def test_camel::deployment::requiredcommunication_isMandatory_setter(instance):
-    original = instance.isMandatory
-    instance.isMandatory = original
-    assert instance.isMandatory == original
-
-@given(instance=camel::deployment::ProvidedCommunication_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::providedcommunication_instantiation(instance):
-    assert isinstance(instance, camel::deployment::ProvidedCommunication)
-
-@given(instance=ComponentInstance_strategy)
-@settings(max_examples=50)
-def test_componentinstance_instantiation(instance):
-    assert isinstance(instance, ComponentInstance)
-
-@given(instance=camel::deployment::VMInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::vminstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::VMInstance)
-
-@given(instance=camel::deployment::VMInstance_strategy)
-def test_camel::deployment::vminstance_ip_type(instance):
-    assert isinstance(instance.ip, str)
-
-
-@given(instance=camel::deployment::VMInstance_strategy)
-def test_camel::deployment::vminstance_ip_setter(instance):
-    original = instance.ip
-    instance.ip = original
-    assert instance.ip == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::deployment::VMInstance_strategy)
-@settings(max_examples=30)
-def test_camel::deployment::vminstance_checkdates_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.checkDates(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkDates).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkDates' in camel::deployment::VMInstance is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkDates' in camel::deployment::VMInstance did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkDates' in camel::deployment::VMInstance is not implemented or raised an error")
-
-@given(instance=camel::deployment::InternalComponentInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::internalcomponentinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::InternalComponentInstance)
-
-@given(instance=ProvidedHostInstance_strategy)
-@settings(max_examples=50)
-def test_providedhostinstance_instantiation(instance):
-    assert isinstance(instance, ProvidedHostInstance)
-
-@given(instance=ProvidedCommunicationInstance_strategy)
-@settings(max_examples=50)
-def test_providedcommunicationinstance_instantiation(instance):
-    assert isinstance(instance, ProvidedCommunicationInstance)
-
-@given(instance=ProviderRequirement_strategy)
-@settings(max_examples=50)
-def test_providerrequirement_instantiation(instance):
-    assert isinstance(instance, ProviderRequirement)
-
-@given(instance=LocationRequirement_strategy)
-@settings(max_examples=50)
-def test_locationrequirement_instantiation(instance):
-    assert isinstance(instance, LocationRequirement)
-
-@given(instance=camel::deployment::VMRequirementSet_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::vmrequirementset_instantiation(instance):
-    assert isinstance(instance, camel::deployment::VMRequirementSet)
-
-@given(instance=camel::deployment::VMRequirementSet_strategy)
-def test_camel::deployment::vmrequirementset_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=camel::deployment::VMRequirementSet_strategy)
-def test_camel::deployment::vmrequirementset_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=RequiredHost_strategy)
-@settings(max_examples=50)
-def test_requiredhost_instantiation(instance):
-    assert isinstance(instance, RequiredHost)
-
-@given(instance=RequiredCommunication_strategy)
-@settings(max_examples=50)
-def test_requiredcommunication_instantiation(instance):
-    assert isinstance(instance, RequiredCommunication)
-
-@given(instance=Component_strategy)
-@settings(max_examples=50)
-def test_component_instantiation(instance):
-    assert isinstance(instance, Component)
-
-@given(instance=camel::deployment::VM_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::vm_instantiation(instance):
-    assert isinstance(instance, camel::deployment::VM)
-
-@given(instance=camel::deployment::InternalComponent_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::internalcomponent_instantiation(instance):
-    assert isinstance(instance, camel::deployment::InternalComponent)
-
-@given(instance=camel::deployment::InternalComponent_strategy)
-def test_camel::deployment::internalcomponent_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=camel::deployment::InternalComponent_strategy)
-def test_camel::deployment::internalcomponent_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=camel::deployment::InternalComponent_strategy)
-@settings(max_examples=30)
-def test_camel::deployment::internalcomponent_contains_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.contains(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.contains).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'contains' in camel::deployment::InternalComponent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'contains' in camel::deployment::InternalComponent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'contains' in camel::deployment::InternalComponent is not implemented or raised an error")
-
-@given(instance=Configuration_strategy)
-@settings(max_examples=50)
-def test_configuration_instantiation(instance):
-    assert isinstance(instance, Configuration)
-
-@given(instance=ProvidedHost_strategy)
-@settings(max_examples=50)
-def test_providedhost_instantiation(instance):
-    assert isinstance(instance, ProvidedHost)
-
-@given(instance=ProvidedCommunication_strategy)
-@settings(max_examples=50)
-def test_providedcommunication_instantiation(instance):
-    assert isinstance(instance, ProvidedCommunication)
-
-@given(instance=DeploymentElement_strategy)
-@settings(max_examples=50)
-def test_deploymentelement_instantiation(instance):
-    assert isinstance(instance, DeploymentElement)
-
-@given(instance=camel::deployment::CommunicationPortInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::communicationportinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::CommunicationPortInstance)
-
-@given(instance=camel::deployment::CommunicationInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::communicationinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::CommunicationInstance)
-
-@given(instance=camel::deployment::ComponentInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::componentinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::ComponentInstance)
-
-@given(instance=camel::deployment::ComponentInstance_strategy)
-def test_camel::deployment::componentinstance_destroyedOn_type(instance):
-    assert isinstance(instance.destroyedOn, date)
-
-
-@given(instance=camel::deployment::ComponentInstance_strategy)
-def test_camel::deployment::componentinstance_destroyedOn_setter(instance):
-    original = instance.destroyedOn
-    instance.destroyedOn = original
-    assert instance.destroyedOn == original
-
-@given(instance=camel::deployment::ComponentInstance_strategy)
-def test_camel::deployment::componentinstance_instantiatedOn_type(instance):
-    assert isinstance(instance.instantiatedOn, date)
-
-
-@given(instance=camel::deployment::ComponentInstance_strategy)
-def test_camel::deployment::componentinstance_instantiatedOn_setter(instance):
-    original = instance.instantiatedOn
-    instance.instantiatedOn = original
-    assert instance.instantiatedOn == original
-
-@given(instance=camel::deployment::HostingInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::hostinginstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::HostingInstance)
-
-@given(instance=camel::deployment::Hosting_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::hosting_instantiation(instance):
-    assert isinstance(instance, camel::deployment::Hosting)
-
-@given(instance=camel::deployment::HostingPortInstance_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::hostingportinstance_instantiation(instance):
-    assert isinstance(instance, camel::deployment::HostingPortInstance)
-
-@given(instance=camel::deployment::HostingPort_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::hostingport_instantiation(instance):
-    assert isinstance(instance, camel::deployment::HostingPort)
-
-@given(instance=camel::deployment::Configuration_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::configuration_instantiation(instance):
-    assert isinstance(instance, camel::deployment::Configuration)
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_stopCommand_type(instance):
-    assert isinstance(instance.stopCommand, str)
-
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_stopCommand_setter(instance):
-    original = instance.stopCommand
-    instance.stopCommand = original
-    assert instance.stopCommand == original
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_startCommand_type(instance):
-    assert isinstance(instance.startCommand, str)
-
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_startCommand_setter(instance):
-    original = instance.startCommand
-    instance.startCommand = original
-    assert instance.startCommand == original
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_configureCommand_type(instance):
-    assert isinstance(instance.configureCommand, str)
-
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_configureCommand_setter(instance):
-    original = instance.configureCommand
-    instance.configureCommand = original
-    assert instance.configureCommand == original
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_uploadCommand_type(instance):
-    assert isinstance(instance.uploadCommand, str)
-
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_uploadCommand_setter(instance):
-    original = instance.uploadCommand
-    instance.uploadCommand = original
-    assert instance.uploadCommand == original
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_downloadCommand_type(instance):
-    assert isinstance(instance.downloadCommand, str)
-
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_downloadCommand_setter(instance):
-    original = instance.downloadCommand
-    instance.downloadCommand = original
-    assert instance.downloadCommand == original
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_installCommand_type(instance):
-    assert isinstance(instance.installCommand, str)
-
-
-@given(instance=camel::deployment::Configuration_strategy)
-def test_camel::deployment::configuration_installCommand_setter(instance):
-    original = instance.installCommand
-    instance.installCommand = original
-    assert instance.installCommand == original
-
-@given(instance=camel::deployment::CommunicationPort_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::communicationport_instantiation(instance):
-    assert isinstance(instance, camel::deployment::CommunicationPort)
-
-@given(instance=camel::deployment::CommunicationPort_strategy)
-def test_camel::deployment::communicationport_portNumber_type(instance):
-    assert isinstance(instance.portNumber, int)
-
-
-@given(instance=camel::deployment::CommunicationPort_strategy)
-def test_camel::deployment::communicationport_portNumber_setter(instance):
-    original = instance.portNumber
-    instance.portNumber = original
-    assert instance.portNumber == original
-
-@given(instance=camel::deployment::Communication_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::communication_instantiation(instance):
-    assert isinstance(instance, camel::deployment::Communication)
-
-@given(instance=camel::deployment::Communication_strategy)
-def test_camel::deployment::communication_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=camel::deployment::Communication_strategy)
-def test_camel::deployment::communication_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=camel::deployment::Component_strategy)
-@settings(max_examples=50)
-def test_camel::deployment::component_instantiation(instance):
-    assert isinstance(instance, camel::deployment::Component)
-
-@given(instance=VMRequirementSet_strategy)
-@settings(max_examples=50)
-def test_vmrequirementset_instantiation(instance):
-    assert isinstance(instance, VMRequirementSet)

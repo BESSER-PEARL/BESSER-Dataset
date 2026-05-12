@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Binding,
-    adl402::EClass2,
-    adl402::EClass1,
-    adl402::Content,
+    adl402_EClass2,
+    adl402_EClass1,
+    adl402_Content,
     Interface,
-    adl402::Provided,
-    adl402::Required,
-    adl402::EClass0,
-    adl402::Component,
-    adl402::Binding,
-    adl402::Interface,
+    adl402_Provided,
+    adl402_Required,
+    adl402_EClass0,
+    adl402_Component,
+    adl402_Binding,
+    adl402_Interface,
 )
 
 # =============================================================================
@@ -39,63 +39,63 @@ def test_binding_constructor_args():
 
 
 
-def test_adl402::eclass2_is_not_abstract():
-    assert not inspect.isabstract(adl402::EClass2)
+def test_adl402_eclass2_is_not_abstract():
+    assert not inspect.isabstract(adl402_EClass2)
 
 
-def test_adl402::eclass2_constructor_exists():
-    assert callable(adl402::EClass2.__init__)
+def test_adl402_eclass2_constructor_exists():
+    assert callable(adl402_EClass2.__init__)
 
 
-def test_adl402::eclass2_constructor_args():
-    sig = inspect.signature(adl402::EClass2.__init__)
+def test_adl402_eclass2_constructor_args():
+    sig = inspect.signature(adl402_EClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl402::eclass1_is_not_abstract():
-    assert not inspect.isabstract(adl402::EClass1)
+def test_adl402_eclass1_is_not_abstract():
+    assert not inspect.isabstract(adl402_EClass1)
 
 
-def test_adl402::eclass1_constructor_exists():
-    assert callable(adl402::EClass1.__init__)
+def test_adl402_eclass1_constructor_exists():
+    assert callable(adl402_EClass1.__init__)
 
 
-def test_adl402::eclass1_constructor_args():
-    sig = inspect.signature(adl402::EClass1.__init__)
+def test_adl402_eclass1_constructor_args():
+    sig = inspect.signature(adl402_EClass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl402::content_is_not_abstract():
-    assert not inspect.isabstract(adl402::Content)
+def test_adl402_content_is_not_abstract():
+    assert not inspect.isabstract(adl402_Content)
 
 
-def test_adl402::content_constructor_exists():
-    assert callable(adl402::Content.__init__)
+def test_adl402_content_constructor_exists():
+    assert callable(adl402_Content.__init__)
 
 
-def test_adl402::content_constructor_args():
-    sig = inspect.signature(adl402::Content.__init__)
+def test_adl402_content_constructor_args():
+    sig = inspect.signature(adl402_Content.__init__)
     params = list(sig.parameters.keys())
-    assert "language" in params, "Missing parameter 'language'"
     assert "expression" in params, "Missing parameter 'expression'"
+    assert "language" in params, "Missing parameter 'language'"
 
-def test_adl402::content_has_language():
-    assert hasattr(adl402::Content, "language")
+def test_adl402_content_has_expression():
+    assert hasattr(adl402_Content, "expression")
     descriptor = None
-    for klass in adl402::Content.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
+    for klass in adl402_Content.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
             break
     assert isinstance(descriptor, property)
 
-def test_adl402::content_has_expression():
-    assert hasattr(adl402::Content, "expression")
+def test_adl402_content_has_language():
+    assert hasattr(adl402_Content, "language")
     descriptor = None
-    for klass in adl402::Content.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
+    for klass in adl402_Content.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
@@ -115,51 +115,51 @@ def test_interface_constructor_args():
 
 
 
-def test_adl402::provided_is_not_abstract():
-    assert not inspect.isabstract(adl402::Provided)
+def test_adl402_provided_is_not_abstract():
+    assert not inspect.isabstract(adl402_Provided)
 
 
-def test_adl402::provided_constructor_exists():
-    assert callable(adl402::Provided.__init__)
+def test_adl402_provided_constructor_exists():
+    assert callable(adl402_Provided.__init__)
 
 
-def test_adl402::provided_constructor_args():
-    sig = inspect.signature(adl402::Provided.__init__)
+def test_adl402_provided_constructor_args():
+    sig = inspect.signature(adl402_Provided.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl402::required_is_not_abstract():
-    assert not inspect.isabstract(adl402::Required)
+def test_adl402_required_is_not_abstract():
+    assert not inspect.isabstract(adl402_Required)
 
 
-def test_adl402::required_constructor_exists():
-    assert callable(adl402::Required.__init__)
+def test_adl402_required_constructor_exists():
+    assert callable(adl402_Required.__init__)
 
 
-def test_adl402::required_constructor_args():
-    sig = inspect.signature(adl402::Required.__init__)
+def test_adl402_required_constructor_args():
+    sig = inspect.signature(adl402_Required.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl402::eclass0_is_not_abstract():
-    assert not inspect.isabstract(adl402::EClass0)
+def test_adl402_eclass0_is_not_abstract():
+    assert not inspect.isabstract(adl402_EClass0)
 
 
-def test_adl402::eclass0_constructor_exists():
-    assert callable(adl402::EClass0.__init__)
+def test_adl402_eclass0_constructor_exists():
+    assert callable(adl402_EClass0.__init__)
 
 
-def test_adl402::eclass0_constructor_args():
-    sig = inspect.signature(adl402::EClass0.__init__)
+def test_adl402_eclass0_constructor_args():
+    sig = inspect.signature(adl402_EClass0.__init__)
     params = list(sig.parameters.keys())
     assert "EAttribute0" in params, "Missing parameter 'EAttribute0'"
 
-def test_adl402::eclass0_has_EAttribute0():
-    assert hasattr(adl402::EClass0, "EAttribute0")
+def test_adl402_eclass0_has_EAttribute0():
+    assert hasattr(adl402_EClass0, "EAttribute0")
     descriptor = None
-    for klass in adl402::EClass0.__mro__:
+    for klass in adl402_EClass0.__mro__:
         if "EAttribute0" in klass.__dict__:
             descriptor = klass.__dict__["EAttribute0"]
             break
@@ -167,23 +167,23 @@ def test_adl402::eclass0_has_EAttribute0():
 
 
 
-def test_adl402::component_is_not_abstract():
-    assert not inspect.isabstract(adl402::Component)
+def test_adl402_component_is_not_abstract():
+    assert not inspect.isabstract(adl402_Component)
 
 
-def test_adl402::component_constructor_exists():
-    assert callable(adl402::Component.__init__)
+def test_adl402_component_constructor_exists():
+    assert callable(adl402_Component.__init__)
 
 
-def test_adl402::component_constructor_args():
-    sig = inspect.signature(adl402::Component.__init__)
+def test_adl402_component_constructor_args():
+    sig = inspect.signature(adl402_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adl402::component_has_name():
-    assert hasattr(adl402::Component, "name")
+def test_adl402_component_has_name():
+    assert hasattr(adl402_Component, "name")
     descriptor = None
-    for klass in adl402::Component.__mro__:
+    for klass in adl402_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -191,47 +191,47 @@ def test_adl402::component_has_name():
 
 
 
-def test_adl402::binding_is_not_abstract():
-    assert not inspect.isabstract(adl402::Binding)
+def test_adl402_binding_is_not_abstract():
+    assert not inspect.isabstract(adl402_Binding)
 
 
-def test_adl402::binding_constructor_exists():
-    assert callable(adl402::Binding.__init__)
+def test_adl402_binding_constructor_exists():
+    assert callable(adl402_Binding.__init__)
 
 
-def test_adl402::binding_constructor_args():
-    sig = inspect.signature(adl402::Binding.__init__)
+def test_adl402_binding_constructor_args():
+    sig = inspect.signature(adl402_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl402::interface_is_not_abstract():
-    assert not inspect.isabstract(adl402::Interface)
+def test_adl402_interface_is_not_abstract():
+    assert not inspect.isabstract(adl402_Interface)
 
 
-def test_adl402::interface_constructor_exists():
-    assert callable(adl402::Interface.__init__)
+def test_adl402_interface_constructor_exists():
+    assert callable(adl402_Interface.__init__)
 
 
-def test_adl402::interface_constructor_args():
-    sig = inspect.signature(adl402::Interface.__init__)
+def test_adl402_interface_constructor_args():
+    sig = inspect.signature(adl402_Interface.__init__)
     params = list(sig.parameters.keys())
     assert "signature" in params, "Missing parameter 'signature'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adl402::interface_has_signature():
-    assert hasattr(adl402::Interface, "signature")
+def test_adl402_interface_has_signature():
+    assert hasattr(adl402_Interface, "signature")
     descriptor = None
-    for klass in adl402::Interface.__mro__:
+    for klass in adl402_Interface.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
     assert isinstance(descriptor, property)
 
-def test_adl402::interface_has_name():
-    assert hasattr(adl402::Interface, "name")
+def test_adl402_interface_has_name():
+    assert hasattr(adl402_Interface, "name")
     descriptor = None
-    for klass in adl402::Interface.__mro__:
+    for klass in adl402_Interface.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -252,43 +252,43 @@ safe_text = st.text(
 Binding_strategy = st.builds(
     Binding,
 )
-adl402::EClass2_strategy = st.builds(
-    adl402::EClass2,
+adl402_EClass2_strategy = st.builds(
+    adl402_EClass2,
 )
-adl402::EClass1_strategy = st.builds(
-    adl402::EClass1,
+adl402_EClass1_strategy = st.builds(
+    adl402_EClass1,
 )
-adl402::Content_strategy = st.builds(
-    adl402::Content,
-    language=
-        safe_text,
+adl402_Content_strategy = st.builds(
+    adl402_Content,
     expression=
+        safe_text,
+    language=
         safe_text
 )
 Interface_strategy = st.builds(
     Interface,
 )
-adl402::Provided_strategy = st.builds(
-    adl402::Provided,
+adl402_Provided_strategy = st.builds(
+    adl402_Provided,
 )
-adl402::Required_strategy = st.builds(
-    adl402::Required,
+adl402_Required_strategy = st.builds(
+    adl402_Required,
 )
-adl402::EClass0_strategy = st.builds(
-    adl402::EClass0,
+adl402_EClass0_strategy = st.builds(
+    adl402_EClass0,
     EAttribute0=
         safe_text
 )
-adl402::Component_strategy = st.builds(
-    adl402::Component,
+adl402_Component_strategy = st.builds(
+    adl402_Component,
     name=
         safe_text
 )
-adl402::Binding_strategy = st.builds(
-    adl402::Binding,
+adl402_Binding_strategy = st.builds(
+    adl402_Binding,
 )
-adl402::Interface_strategy = st.builds(
-    adl402::Interface,
+adl402_Interface_strategy = st.builds(
+    adl402_Interface,
     signature=
         safe_text,
     name=
@@ -300,118 +300,100 @@ adl402::Interface_strategy = st.builds(
 def test_binding_instantiation(instance):
     assert isinstance(instance, Binding)
 
-@given(instance=adl402::EClass2_strategy)
+@given(instance=adl402_EClass2_strategy)
 @settings(max_examples=50)
-def test_adl402::eclass2_instantiation(instance):
-    assert isinstance(instance, adl402::EClass2)
+def test_adl402_eclass2_instantiation(instance):
+    assert isinstance(instance, adl402_EClass2)
 
-@given(instance=adl402::EClass1_strategy)
+@given(instance=adl402_EClass1_strategy)
 @settings(max_examples=50)
-def test_adl402::eclass1_instantiation(instance):
-    assert isinstance(instance, adl402::EClass1)
+def test_adl402_eclass1_instantiation(instance):
+    assert isinstance(instance, adl402_EClass1)
 
-@given(instance=adl402::Content_strategy)
+@given(instance=adl402_Content_strategy)
 @settings(max_examples=50)
-def test_adl402::content_instantiation(instance):
-    assert isinstance(instance, adl402::Content)
-
-@given(instance=adl402::Content_strategy)
-def test_adl402::content_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_adl402_content_instantiation(instance):
+    assert isinstance(instance, adl402_Content)
 
 
-@given(instance=adl402::Content_strategy)
-def test_adl402::content_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
 
-@given(instance=adl402::Content_strategy)
-def test_adl402::content_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=adl402::Content_strategy)
-def test_adl402::content_expression_setter(instance):
+@given(instance=adl402_Content_strategy)
+def test_adl402_content_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
+
+
+
+@given(instance=adl402_Content_strategy)
+def test_adl402_content_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
 
 @given(instance=Interface_strategy)
 @settings(max_examples=50)
 def test_interface_instantiation(instance):
     assert isinstance(instance, Interface)
 
-@given(instance=adl402::Provided_strategy)
+@given(instance=adl402_Provided_strategy)
 @settings(max_examples=50)
-def test_adl402::provided_instantiation(instance):
-    assert isinstance(instance, adl402::Provided)
+def test_adl402_provided_instantiation(instance):
+    assert isinstance(instance, adl402_Provided)
 
-@given(instance=adl402::Required_strategy)
+@given(instance=adl402_Required_strategy)
 @settings(max_examples=50)
-def test_adl402::required_instantiation(instance):
-    assert isinstance(instance, adl402::Required)
+def test_adl402_required_instantiation(instance):
+    assert isinstance(instance, adl402_Required)
 
-@given(instance=adl402::EClass0_strategy)
+@given(instance=adl402_EClass0_strategy)
 @settings(max_examples=50)
-def test_adl402::eclass0_instantiation(instance):
-    assert isinstance(instance, adl402::EClass0)
-
-@given(instance=adl402::EClass0_strategy)
-def test_adl402::eclass0_EAttribute0_type(instance):
-    assert isinstance(instance.EAttribute0, str)
+def test_adl402_eclass0_instantiation(instance):
+    assert isinstance(instance, adl402_EClass0)
 
 
-@given(instance=adl402::EClass0_strategy)
-def test_adl402::eclass0_EAttribute0_setter(instance):
+
+@given(instance=adl402_EClass0_strategy)
+def test_adl402_eclass0_EAttribute0_setter(instance):
     original = instance.EAttribute0
     instance.EAttribute0 = original
     assert instance.EAttribute0 == original
 
-@given(instance=adl402::Component_strategy)
+@given(instance=adl402_Component_strategy)
 @settings(max_examples=50)
-def test_adl402::component_instantiation(instance):
-    assert isinstance(instance, adl402::Component)
-
-@given(instance=adl402::Component_strategy)
-def test_adl402::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adl402_component_instantiation(instance):
+    assert isinstance(instance, adl402_Component)
 
 
-@given(instance=adl402::Component_strategy)
-def test_adl402::component_name_setter(instance):
+
+@given(instance=adl402_Component_strategy)
+def test_adl402_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adl402::Binding_strategy)
+@given(instance=adl402_Binding_strategy)
 @settings(max_examples=50)
-def test_adl402::binding_instantiation(instance):
-    assert isinstance(instance, adl402::Binding)
+def test_adl402_binding_instantiation(instance):
+    assert isinstance(instance, adl402_Binding)
 
-@given(instance=adl402::Interface_strategy)
+@given(instance=adl402_Interface_strategy)
 @settings(max_examples=50)
-def test_adl402::interface_instantiation(instance):
-    assert isinstance(instance, adl402::Interface)
-
-@given(instance=adl402::Interface_strategy)
-def test_adl402::interface_signature_type(instance):
-    assert isinstance(instance.signature, str)
+def test_adl402_interface_instantiation(instance):
+    assert isinstance(instance, adl402_Interface)
 
 
-@given(instance=adl402::Interface_strategy)
-def test_adl402::interface_signature_setter(instance):
+
+@given(instance=adl402_Interface_strategy)
+def test_adl402_interface_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=adl402::Interface_strategy)
-def test_adl402::interface_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=adl402::Interface_strategy)
-def test_adl402::interface_name_setter(instance):
+@given(instance=adl402_Interface_strategy)
+def test_adl402_interface_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

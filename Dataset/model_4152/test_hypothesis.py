@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    greetings::Greeting,
-    greetings::GreetingsModel,
+from python_code import (
+    greetings_Greeting,
+    greetings_GreetingsModel,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_greetings::greeting_is_not_abstract():
-    assert not inspect.isabstract(greetings::Greeting)
+def test_greetings_greeting_is_not_abstract():
+    assert not inspect.isabstract(greetings_Greeting)
 
 
-def test_greetings::greeting_constructor_exists():
-    assert callable(greetings::Greeting.__init__)
+def test_greetings_greeting_constructor_exists():
+    assert callable(greetings_Greeting.__init__)
 
 
-def test_greetings::greeting_constructor_args():
-    sig = inspect.signature(greetings::Greeting.__init__)
+def test_greetings_greeting_constructor_args():
+    sig = inspect.signature(greetings_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_greetings::greeting_has_name():
-    assert hasattr(greetings::Greeting, "name")
+def test_greetings_greeting_has_name():
+    assert hasattr(greetings_Greeting, "name")
     descriptor = None
-    for klass in greetings::Greeting.__mro__:
+    for klass in greetings_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_greetings::greeting_has_name():
 
 
 
-def test_greetings::greetingsmodel_is_not_abstract():
-    assert not inspect.isabstract(greetings::GreetingsModel)
+def test_greetings_greetingsmodel_is_not_abstract():
+    assert not inspect.isabstract(greetings_GreetingsModel)
 
 
-def test_greetings::greetingsmodel_constructor_exists():
-    assert callable(greetings::GreetingsModel.__init__)
+def test_greetings_greetingsmodel_constructor_exists():
+    assert callable(greetings_GreetingsModel.__init__)
 
 
-def test_greetings::greetingsmodel_constructor_args():
-    sig = inspect.signature(greetings::GreetingsModel.__init__)
+def test_greetings_greetingsmodel_constructor_args():
+    sig = inspect.signature(greetings_GreetingsModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-greetings::Greeting_strategy = st.builds(
-    greetings::Greeting,
+greetings_Greeting_strategy = st.builds(
+    greetings_Greeting,
     name=
         safe_text
 )
-greetings::GreetingsModel_strategy = st.builds(
-    greetings::GreetingsModel,
+greetings_GreetingsModel_strategy = st.builds(
+    greetings_GreetingsModel,
 )
 
-@given(instance=greetings::Greeting_strategy)
+@given(instance=greetings_Greeting_strategy)
 @settings(max_examples=50)
-def test_greetings::greeting_instantiation(instance):
-    assert isinstance(instance, greetings::Greeting)
-
-@given(instance=greetings::Greeting_strategy)
-def test_greetings::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_greetings_greeting_instantiation(instance):
+    assert isinstance(instance, greetings_Greeting)
 
 
-@given(instance=greetings::Greeting_strategy)
-def test_greetings::greeting_name_setter(instance):
+
+@given(instance=greetings_Greeting_strategy)
+def test_greetings_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=greetings::GreetingsModel_strategy)
+@given(instance=greetings_GreetingsModel_strategy)
 @settings(max_examples=50)
-def test_greetings::greetingsmodel_instantiation(instance):
-    assert isinstance(instance, greetings::GreetingsModel)
+def test_greetings_greetingsmodel_instantiation(instance):
+    assert isinstance(instance, greetings_GreetingsModel)

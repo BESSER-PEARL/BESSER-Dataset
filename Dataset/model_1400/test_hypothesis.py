@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsmcore::Statement,
-    fsmcore::NamedElement,
-    fsmcore::Constraint,
+from python_code import (
+    fsmcore_Statement,
+    fsmcore_NamedElement,
+    fsmcore_Constraint,
     State,
-    fsmcore::Trigger,
-    fsmcore::Program,
-    AbstractState,
-    fsmcore::State,
-    fsmcore::FinalState,
-    fsmcore::Pseudostate,
+    fsmcore_FinalState,
     Statement,
-    fsmcore::VarDecl,
-    fsmcore::Loop,
-    fsmcore::Conditional,
+    fsmcore_VarDecl,
+    fsmcore_Loop,
+    fsmcore_Conditional,
     NamedElement,
-    fsmcore::Region,
-    fsmcore::StateMachine,
-    fsmcore::Transition,
-    fsmcore::AbstractState,
+    fsmcore_Region,
+    fsmcore_StateMachine,
+    fsmcore_Trigger,
+    fsmcore_Program,
+    AbstractState,
+    fsmcore_Pseudostate,
+    fsmcore_State,
+    fsmcore_Transition,
+    fsmcore_AbstractState,
     PseudostateKind,
 )
 
@@ -34,37 +34,37 @@ from classes import (
 
 
 
-def test_fsmcore::statement_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Statement)
+def test_fsmcore_statement_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Statement)
 
 
-def test_fsmcore::statement_constructor_exists():
-    assert callable(fsmcore::Statement.__init__)
+def test_fsmcore_statement_constructor_exists():
+    assert callable(fsmcore_Statement.__init__)
 
 
-def test_fsmcore::statement_constructor_args():
-    sig = inspect.signature(fsmcore::Statement.__init__)
+def test_fsmcore_statement_constructor_args():
+    sig = inspect.signature(fsmcore_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::namedelement_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::NamedElement)
+def test_fsmcore_namedelement_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_NamedElement)
 
 
-def test_fsmcore::namedelement_constructor_exists():
-    assert callable(fsmcore::NamedElement.__init__)
+def test_fsmcore_namedelement_constructor_exists():
+    assert callable(fsmcore_NamedElement.__init__)
 
 
-def test_fsmcore::namedelement_constructor_args():
-    sig = inspect.signature(fsmcore::NamedElement.__init__)
+def test_fsmcore_namedelement_constructor_args():
+    sig = inspect.signature(fsmcore_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsmcore::namedelement_has_name():
-    assert hasattr(fsmcore::NamedElement, "name")
+def test_fsmcore_namedelement_has_name():
+    assert hasattr(fsmcore_NamedElement, "name")
     descriptor = None
-    for klass in fsmcore::NamedElement.__mro__:
+    for klass in fsmcore_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -72,16 +72,16 @@ def test_fsmcore::namedelement_has_name():
 
 
 
-def test_fsmcore::constraint_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Constraint)
+def test_fsmcore_constraint_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Constraint)
 
 
-def test_fsmcore::constraint_constructor_exists():
-    assert callable(fsmcore::Constraint.__init__)
+def test_fsmcore_constraint_constructor_exists():
+    assert callable(fsmcore_Constraint.__init__)
 
 
-def test_fsmcore::constraint_constructor_args():
-    sig = inspect.signature(fsmcore::Constraint.__init__)
+def test_fsmcore_constraint_constructor_args():
+    sig = inspect.signature(fsmcore_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,107 +100,17 @@ def test_state_constructor_args():
 
 
 
-def test_fsmcore::trigger_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Trigger)
+def test_fsmcore_finalstate_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_FinalState)
 
 
-def test_fsmcore::trigger_constructor_exists():
-    assert callable(fsmcore::Trigger.__init__)
+def test_fsmcore_finalstate_constructor_exists():
+    assert callable(fsmcore_FinalState.__init__)
 
 
-def test_fsmcore::trigger_constructor_args():
-    sig = inspect.signature(fsmcore::Trigger.__init__)
+def test_fsmcore_finalstate_constructor_args():
+    sig = inspect.signature(fsmcore_FinalState.__init__)
     params = list(sig.parameters.keys())
-    assert "expression" in params, "Missing parameter 'expression'"
-
-def test_fsmcore::trigger_has_expression():
-    assert hasattr(fsmcore::Trigger, "expression")
-    descriptor = None
-    for klass in fsmcore::Trigger.__mro__:
-        if "expression" in klass.__dict__:
-            descriptor = klass.__dict__["expression"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_fsmcore::program_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Program)
-
-
-def test_fsmcore::program_constructor_exists():
-    assert callable(fsmcore::Program.__init__)
-
-
-def test_fsmcore::program_constructor_args():
-    sig = inspect.signature(fsmcore::Program.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_abstractstate_is_not_abstract():
-    assert not inspect.isabstract(AbstractState)
-
-
-def test_abstractstate_constructor_exists():
-    assert callable(AbstractState.__init__)
-
-
-def test_abstractstate_constructor_args():
-    sig = inspect.signature(AbstractState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fsmcore::state_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::State)
-
-
-def test_fsmcore::state_constructor_exists():
-    assert callable(fsmcore::State.__init__)
-
-
-def test_fsmcore::state_constructor_args():
-    sig = inspect.signature(fsmcore::State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fsmcore::finalstate_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::FinalState)
-
-
-def test_fsmcore::finalstate_constructor_exists():
-    assert callable(fsmcore::FinalState.__init__)
-
-
-def test_fsmcore::finalstate_constructor_args():
-    sig = inspect.signature(fsmcore::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fsmcore::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Pseudostate)
-
-
-def test_fsmcore::pseudostate_constructor_exists():
-    assert callable(fsmcore::Pseudostate.__init__)
-
-
-def test_fsmcore::pseudostate_constructor_args():
-    sig = inspect.signature(fsmcore::Pseudostate.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_fsmcore::pseudostate_has_kind():
-    assert hasattr(fsmcore::Pseudostate, "kind")
-    descriptor = None
-    for klass in fsmcore::Pseudostate.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -218,44 +128,44 @@ def test_statement_constructor_args():
 
 
 
-def test_fsmcore::vardecl_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::VarDecl)
+def test_fsmcore_vardecl_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_VarDecl)
 
 
-def test_fsmcore::vardecl_constructor_exists():
-    assert callable(fsmcore::VarDecl.__init__)
+def test_fsmcore_vardecl_constructor_exists():
+    assert callable(fsmcore_VarDecl.__init__)
 
 
-def test_fsmcore::vardecl_constructor_args():
-    sig = inspect.signature(fsmcore::VarDecl.__init__)
+def test_fsmcore_vardecl_constructor_args():
+    sig = inspect.signature(fsmcore_VarDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::loop_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Loop)
+def test_fsmcore_loop_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Loop)
 
 
-def test_fsmcore::loop_constructor_exists():
-    assert callable(fsmcore::Loop.__init__)
+def test_fsmcore_loop_constructor_exists():
+    assert callable(fsmcore_Loop.__init__)
 
 
-def test_fsmcore::loop_constructor_args():
-    sig = inspect.signature(fsmcore::Loop.__init__)
+def test_fsmcore_loop_constructor_args():
+    sig = inspect.signature(fsmcore_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::conditional_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Conditional)
+def test_fsmcore_conditional_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Conditional)
 
 
-def test_fsmcore::conditional_constructor_exists():
-    assert callable(fsmcore::Conditional.__init__)
+def test_fsmcore_conditional_constructor_exists():
+    assert callable(fsmcore_Conditional.__init__)
 
 
-def test_fsmcore::conditional_constructor_args():
-    sig = inspect.signature(fsmcore::Conditional.__init__)
+def test_fsmcore_conditional_constructor_args():
+    sig = inspect.signature(fsmcore_Conditional.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -274,58 +184,148 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fsmcore::region_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Region)
+def test_fsmcore_region_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Region)
 
 
-def test_fsmcore::region_constructor_exists():
-    assert callable(fsmcore::Region.__init__)
+def test_fsmcore_region_constructor_exists():
+    assert callable(fsmcore_Region.__init__)
 
 
-def test_fsmcore::region_constructor_args():
-    sig = inspect.signature(fsmcore::Region.__init__)
+def test_fsmcore_region_constructor_args():
+    sig = inspect.signature(fsmcore_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::statemachine_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::StateMachine)
+def test_fsmcore_statemachine_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_StateMachine)
 
 
-def test_fsmcore::statemachine_constructor_exists():
-    assert callable(fsmcore::StateMachine.__init__)
+def test_fsmcore_statemachine_constructor_exists():
+    assert callable(fsmcore_StateMachine.__init__)
 
 
-def test_fsmcore::statemachine_constructor_args():
-    sig = inspect.signature(fsmcore::StateMachine.__init__)
+def test_fsmcore_statemachine_constructor_args():
+    sig = inspect.signature(fsmcore_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::transition_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Transition)
+def test_fsmcore_trigger_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Trigger)
 
 
-def test_fsmcore::transition_constructor_exists():
-    assert callable(fsmcore::Transition.__init__)
+def test_fsmcore_trigger_constructor_exists():
+    assert callable(fsmcore_Trigger.__init__)
 
 
-def test_fsmcore::transition_constructor_args():
-    sig = inspect.signature(fsmcore::Transition.__init__)
+def test_fsmcore_trigger_constructor_args():
+    sig = inspect.signature(fsmcore_Trigger.__init__)
+    params = list(sig.parameters.keys())
+    assert "expression" in params, "Missing parameter 'expression'"
+
+def test_fsmcore_trigger_has_expression():
+    assert hasattr(fsmcore_Trigger, "expression")
+    descriptor = None
+    for klass in fsmcore_Trigger.__mro__:
+        if "expression" in klass.__dict__:
+            descriptor = klass.__dict__["expression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fsmcore_program_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Program)
+
+
+def test_fsmcore_program_constructor_exists():
+    assert callable(fsmcore_Program.__init__)
+
+
+def test_fsmcore_program_constructor_args():
+    sig = inspect.signature(fsmcore_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::AbstractState)
+def test_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(AbstractState)
 
 
-def test_fsmcore::abstractstate_constructor_exists():
-    assert callable(fsmcore::AbstractState.__init__)
+def test_abstractstate_constructor_exists():
+    assert callable(AbstractState.__init__)
 
 
-def test_fsmcore::abstractstate_constructor_args():
-    sig = inspect.signature(fsmcore::AbstractState.__init__)
+def test_abstractstate_constructor_args():
+    sig = inspect.signature(AbstractState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fsmcore_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Pseudostate)
+
+
+def test_fsmcore_pseudostate_constructor_exists():
+    assert callable(fsmcore_Pseudostate.__init__)
+
+
+def test_fsmcore_pseudostate_constructor_args():
+    sig = inspect.signature(fsmcore_Pseudostate.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_fsmcore_pseudostate_has_kind():
+    assert hasattr(fsmcore_Pseudostate, "kind")
+    descriptor = None
+    for klass in fsmcore_Pseudostate.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fsmcore_state_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_State)
+
+
+def test_fsmcore_state_constructor_exists():
+    assert callable(fsmcore_State.__init__)
+
+
+def test_fsmcore_state_constructor_args():
+    sig = inspect.signature(fsmcore_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fsmcore_transition_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Transition)
+
+
+def test_fsmcore_transition_constructor_exists():
+    assert callable(fsmcore_Transition.__init__)
+
+
+def test_fsmcore_transition_constructor_args():
+    sig = inspect.signature(fsmcore_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fsmcore_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_AbstractState)
+
+
+def test_fsmcore_abstractstate_constructor_exists():
+    assert callable(fsmcore_AbstractState.__init__)
+
+
+def test_fsmcore_abstractstate_constructor_args():
+    sig = inspect.signature(fsmcore_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 def test_pseudostatekind_exists():
@@ -354,74 +354,74 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsmcore::Statement_strategy = st.builds(
-    fsmcore::Statement,
+fsmcore_Statement_strategy = st.builds(
+    fsmcore_Statement,
 )
-fsmcore::NamedElement_strategy = st.builds(
-    fsmcore::NamedElement,
+fsmcore_NamedElement_strategy = st.builds(
+    fsmcore_NamedElement,
     name=
         safe_text
 )
-fsmcore::Constraint_strategy = st.builds(
-    fsmcore::Constraint,
+fsmcore_Constraint_strategy = st.builds(
+    fsmcore_Constraint,
 )
 State_strategy = st.builds(
     State,
 )
-fsmcore::Trigger_strategy = st.builds(
-    fsmcore::Trigger,
-    expression=
-        st.booleans()
-)
-fsmcore::Program_strategy = st.builds(
-    fsmcore::Program,
-)
-AbstractState_strategy = st.builds(
-    AbstractState,
-)
-fsmcore::State_strategy = st.builds(
-    fsmcore::State,
-)
-fsmcore::FinalState_strategy = st.builds(
-    fsmcore::FinalState,
-)
-fsmcore::Pseudostate_strategy = st.builds(
-    fsmcore::Pseudostate,
-    kind=
-        safe_text
+fsmcore_FinalState_strategy = st.builds(
+    fsmcore_FinalState,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-fsmcore::VarDecl_strategy = st.builds(
-    fsmcore::VarDecl,
+fsmcore_VarDecl_strategy = st.builds(
+    fsmcore_VarDecl,
 )
-fsmcore::Loop_strategy = st.builds(
-    fsmcore::Loop,
+fsmcore_Loop_strategy = st.builds(
+    fsmcore_Loop,
 )
-fsmcore::Conditional_strategy = st.builds(
-    fsmcore::Conditional,
+fsmcore_Conditional_strategy = st.builds(
+    fsmcore_Conditional,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-fsmcore::Region_strategy = st.builds(
-    fsmcore::Region,
+fsmcore_Region_strategy = st.builds(
+    fsmcore_Region,
 )
-fsmcore::StateMachine_strategy = st.builds(
-    fsmcore::StateMachine,
+fsmcore_StateMachine_strategy = st.builds(
+    fsmcore_StateMachine,
 )
-fsmcore::Transition_strategy = st.builds(
-    fsmcore::Transition,
+fsmcore_Trigger_strategy = st.builds(
+    fsmcore_Trigger,
+    expression=
+        st.booleans()
 )
-fsmcore::AbstractState_strategy = st.builds(
-    fsmcore::AbstractState,
+fsmcore_Program_strategy = st.builds(
+    fsmcore_Program,
+)
+AbstractState_strategy = st.builds(
+    AbstractState,
+)
+fsmcore_Pseudostate_strategy = st.builds(
+    fsmcore_Pseudostate,
+    kind=
+        safe_text
+)
+fsmcore_State_strategy = st.builds(
+    fsmcore_State,
+)
+fsmcore_Transition_strategy = st.builds(
+    fsmcore_Transition,
+)
+fsmcore_AbstractState_strategy = st.builds(
+    fsmcore_AbstractState,
 )
 
-@given(instance=fsmcore::Statement_strategy)
+@given(instance=fsmcore_Statement_strategy)
 @settings(max_examples=50)
-def test_fsmcore::statement_instantiation(instance):
-    assert isinstance(instance, fsmcore::Statement)
+def test_fsmcore_statement_instantiation(instance):
+    assert isinstance(instance, fsmcore_Statement)
 
 import warnings
 import copy
@@ -429,9 +429,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsmcore::Statement_strategy)
+@given(instance=fsmcore_Statement_strategy)
 @settings(max_examples=30)
-def test_fsmcore::statement_eval_changes_state(instance):
+def test_fsmcore_statement_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -445,35 +445,32 @@ def test_fsmcore::statement_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in fsmcore::Statement is empty"
+        assert has_statements, f"Function 'eval' in fsmcore_Statement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in fsmcore::Statement did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in fsmcore_Statement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in fsmcore::Statement is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in fsmcore_Statement is not implemented or raised an error")
 
-@given(instance=fsmcore::NamedElement_strategy)
+@given(instance=fsmcore_NamedElement_strategy)
 @settings(max_examples=50)
-def test_fsmcore::namedelement_instantiation(instance):
-    assert isinstance(instance, fsmcore::NamedElement)
-
-@given(instance=fsmcore::NamedElement_strategy)
-def test_fsmcore::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsmcore_namedelement_instantiation(instance):
+    assert isinstance(instance, fsmcore_NamedElement)
 
 
-@given(instance=fsmcore::NamedElement_strategy)
-def test_fsmcore::namedelement_name_setter(instance):
+
+@given(instance=fsmcore_NamedElement_strategy)
+def test_fsmcore_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsmcore::Constraint_strategy)
+@given(instance=fsmcore_Constraint_strategy)
 @settings(max_examples=50)
-def test_fsmcore::constraint_instantiation(instance):
-    assert isinstance(instance, fsmcore::Constraint)
+def test_fsmcore_constraint_instantiation(instance):
+    assert isinstance(instance, fsmcore_Constraint)
 
 import warnings
 import copy
@@ -481,9 +478,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsmcore::Constraint_strategy)
+@given(instance=fsmcore_Constraint_strategy)
 @settings(max_examples=30)
-def test_fsmcore::constraint_evalconstraint_changes_state(instance):
+def test_fsmcore_constraint_evalconstraint_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -497,40 +494,77 @@ def test_fsmcore::constraint_evalconstraint_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evalConstraint' in fsmcore::Constraint is empty"
+        assert has_statements, f"Function 'evalConstraint' in fsmcore_Constraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evalConstraint' in fsmcore::Constraint did not change state; check implementation")
+            warnings.warn(f"Operation 'evalConstraint' in fsmcore_Constraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evalConstraint' in fsmcore::Constraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'evalConstraint' in fsmcore_Constraint is not implemented or raised an error")
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=fsmcore::Trigger_strategy)
+@given(instance=fsmcore_FinalState_strategy)
 @settings(max_examples=50)
-def test_fsmcore::trigger_instantiation(instance):
-    assert isinstance(instance, fsmcore::Trigger)
+def test_fsmcore_finalstate_instantiation(instance):
+    assert isinstance(instance, fsmcore_FinalState)
 
-@given(instance=fsmcore::Trigger_strategy)
-def test_fsmcore::trigger_expression_type(instance):
-    assert isinstance(instance.expression, bool)
+@given(instance=Statement_strategy)
+@settings(max_examples=50)
+def test_statement_instantiation(instance):
+    assert isinstance(instance, Statement)
+
+@given(instance=fsmcore_VarDecl_strategy)
+@settings(max_examples=50)
+def test_fsmcore_vardecl_instantiation(instance):
+    assert isinstance(instance, fsmcore_VarDecl)
+
+@given(instance=fsmcore_Loop_strategy)
+@settings(max_examples=50)
+def test_fsmcore_loop_instantiation(instance):
+    assert isinstance(instance, fsmcore_Loop)
+
+@given(instance=fsmcore_Conditional_strategy)
+@settings(max_examples=50)
+def test_fsmcore_conditional_instantiation(instance):
+    assert isinstance(instance, fsmcore_Conditional)
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=fsmcore_Region_strategy)
+@settings(max_examples=50)
+def test_fsmcore_region_instantiation(instance):
+    assert isinstance(instance, fsmcore_Region)
+
+@given(instance=fsmcore_StateMachine_strategy)
+@settings(max_examples=50)
+def test_fsmcore_statemachine_instantiation(instance):
+    assert isinstance(instance, fsmcore_StateMachine)
+
+@given(instance=fsmcore_Trigger_strategy)
+@settings(max_examples=50)
+def test_fsmcore_trigger_instantiation(instance):
+    assert isinstance(instance, fsmcore_Trigger)
 
 
-@given(instance=fsmcore::Trigger_strategy)
-def test_fsmcore::trigger_expression_setter(instance):
+
+@given(instance=fsmcore_Trigger_strategy)
+def test_fsmcore_trigger_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=fsmcore::Program_strategy)
+@given(instance=fsmcore_Program_strategy)
 @settings(max_examples=50)
-def test_fsmcore::program_instantiation(instance):
-    assert isinstance(instance, fsmcore::Program)
+def test_fsmcore_program_instantiation(instance):
+    assert isinstance(instance, fsmcore_Program)
 
 import warnings
 import copy
@@ -538,9 +572,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsmcore::Program_strategy)
+@given(instance=fsmcore_Program_strategy)
 @settings(max_examples=30)
-def test_fsmcore::program_eval_changes_state(instance):
+def test_fsmcore_program_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -554,87 +588,44 @@ def test_fsmcore::program_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in fsmcore::Program is empty"
+        assert has_statements, f"Function 'eval' in fsmcore_Program is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in fsmcore::Program did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in fsmcore_Program did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in fsmcore::Program is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in fsmcore_Program is not implemented or raised an error")
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=fsmcore::State_strategy)
+@given(instance=fsmcore_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_fsmcore::state_instantiation(instance):
-    assert isinstance(instance, fsmcore::State)
-
-@given(instance=fsmcore::FinalState_strategy)
-@settings(max_examples=50)
-def test_fsmcore::finalstate_instantiation(instance):
-    assert isinstance(instance, fsmcore::FinalState)
-
-@given(instance=fsmcore::Pseudostate_strategy)
-@settings(max_examples=50)
-def test_fsmcore::pseudostate_instantiation(instance):
-    assert isinstance(instance, fsmcore::Pseudostate)
-
-@given(instance=fsmcore::Pseudostate_strategy)
-def test_fsmcore::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_fsmcore_pseudostate_instantiation(instance):
+    assert isinstance(instance, fsmcore_Pseudostate)
 
 
-@given(instance=fsmcore::Pseudostate_strategy)
-def test_fsmcore::pseudostate_kind_setter(instance):
+
+@given(instance=fsmcore_Pseudostate_strategy)
+def test_fsmcore_pseudostate_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=Statement_strategy)
+@given(instance=fsmcore_State_strategy)
 @settings(max_examples=50)
-def test_statement_instantiation(instance):
-    assert isinstance(instance, Statement)
+def test_fsmcore_state_instantiation(instance):
+    assert isinstance(instance, fsmcore_State)
 
-@given(instance=fsmcore::VarDecl_strategy)
+@given(instance=fsmcore_Transition_strategy)
 @settings(max_examples=50)
-def test_fsmcore::vardecl_instantiation(instance):
-    assert isinstance(instance, fsmcore::VarDecl)
+def test_fsmcore_transition_instantiation(instance):
+    assert isinstance(instance, fsmcore_Transition)
 
-@given(instance=fsmcore::Loop_strategy)
+@given(instance=fsmcore_AbstractState_strategy)
 @settings(max_examples=50)
-def test_fsmcore::loop_instantiation(instance):
-    assert isinstance(instance, fsmcore::Loop)
-
-@given(instance=fsmcore::Conditional_strategy)
-@settings(max_examples=50)
-def test_fsmcore::conditional_instantiation(instance):
-    assert isinstance(instance, fsmcore::Conditional)
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=fsmcore::Region_strategy)
-@settings(max_examples=50)
-def test_fsmcore::region_instantiation(instance):
-    assert isinstance(instance, fsmcore::Region)
-
-@given(instance=fsmcore::StateMachine_strategy)
-@settings(max_examples=50)
-def test_fsmcore::statemachine_instantiation(instance):
-    assert isinstance(instance, fsmcore::StateMachine)
-
-@given(instance=fsmcore::Transition_strategy)
-@settings(max_examples=50)
-def test_fsmcore::transition_instantiation(instance):
-    assert isinstance(instance, fsmcore::Transition)
-
-@given(instance=fsmcore::AbstractState_strategy)
-@settings(max_examples=50)
-def test_fsmcore::abstractstate_instantiation(instance):
-    assert isinstance(instance, fsmcore::AbstractState)
+def test_fsmcore_abstractstate_instantiation(instance):
+    assert isinstance(instance, fsmcore_AbstractState)

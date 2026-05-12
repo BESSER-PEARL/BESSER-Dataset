@@ -3,65 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    faculty_manager,
-    class_manager,
-    room_manager,
     outputgenerator,
     ATTGS,
     activity_manager,
     time_manager,
     subject_manager,
     data_manager,
+    faculty_manager,
+    class_manager,
+    room_manager,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_faculty_manager_is_not_abstract():
-    assert not inspect.isabstract(faculty_manager)
-
-
-def test_faculty_manager_constructor_exists():
-    assert callable(faculty_manager.__init__)
-
-
-def test_faculty_manager_constructor_args():
-    sig = inspect.signature(faculty_manager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_class_manager_is_not_abstract():
-    assert not inspect.isabstract(class_manager)
-
-
-def test_class_manager_constructor_exists():
-    assert callable(class_manager.__init__)
-
-
-def test_class_manager_constructor_args():
-    sig = inspect.signature(class_manager.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_room_manager_is_not_abstract():
-    assert not inspect.isabstract(room_manager)
-
-
-def test_room_manager_constructor_exists():
-    assert callable(room_manager.__init__)
-
-
-def test_room_manager_constructor_args():
-    sig = inspect.signature(room_manager.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -148,6 +106,48 @@ def test_data_manager_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_faculty_manager_is_not_abstract():
+    assert not inspect.isabstract(faculty_manager)
+
+
+def test_faculty_manager_constructor_exists():
+    assert callable(faculty_manager.__init__)
+
+
+def test_faculty_manager_constructor_args():
+    sig = inspect.signature(faculty_manager.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_class_manager_is_not_abstract():
+    assert not inspect.isabstract(class_manager)
+
+
+def test_class_manager_constructor_exists():
+    assert callable(class_manager.__init__)
+
+
+def test_class_manager_constructor_args():
+    sig = inspect.signature(class_manager.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_room_manager_is_not_abstract():
+    assert not inspect.isabstract(room_manager)
+
+
+def test_room_manager_constructor_exists():
+    assert callable(room_manager.__init__)
+
+
+def test_room_manager_constructor_args():
+    sig = inspect.signature(room_manager.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -159,15 +159,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-faculty_manager_strategy = st.builds(
-    faculty_manager,
-)
-class_manager_strategy = st.builds(
-    class_manager,
-)
-room_manager_strategy = st.builds(
-    room_manager,
-)
 outputgenerator_strategy = st.builds(
     outputgenerator,
 )
@@ -186,21 +177,15 @@ subject_manager_strategy = st.builds(
 data_manager_strategy = st.builds(
     data_manager,
 )
-
-@given(instance=faculty_manager_strategy)
-@settings(max_examples=50)
-def test_faculty_manager_instantiation(instance):
-    assert isinstance(instance, faculty_manager)
-
-@given(instance=class_manager_strategy)
-@settings(max_examples=50)
-def test_class_manager_instantiation(instance):
-    assert isinstance(instance, class_manager)
-
-@given(instance=room_manager_strategy)
-@settings(max_examples=50)
-def test_room_manager_instantiation(instance):
-    assert isinstance(instance, room_manager)
+faculty_manager_strategy = st.builds(
+    faculty_manager,
+)
+class_manager_strategy = st.builds(
+    class_manager,
+)
+room_manager_strategy = st.builds(
+    room_manager,
+)
 
 @given(instance=outputgenerator_strategy)
 @settings(max_examples=50)
@@ -231,3 +216,18 @@ def test_subject_manager_instantiation(instance):
 @settings(max_examples=50)
 def test_data_manager_instantiation(instance):
     assert isinstance(instance, data_manager)
+
+@given(instance=faculty_manager_strategy)
+@settings(max_examples=50)
+def test_faculty_manager_instantiation(instance):
+    assert isinstance(instance, faculty_manager)
+
+@given(instance=class_manager_strategy)
+@settings(max_examples=50)
+def test_class_manager_instantiation(instance):
+    assert isinstance(instance, class_manager)
+
+@given(instance=room_manager_strategy)
+@settings(max_examples=50)
+def test_room_manager_instantiation(instance):
+    assert isinstance(instance, room_manager)

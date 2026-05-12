@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testbidirectionalrelation::ConceptG,
-    testbidirectionalrelation::ConceptF,
-    testbidirectionalrelation::ConceptE,
-    testbidirectionalrelation::ConceptD,
-    testbidirectionalrelation::ConceptC,
-    testbidirectionalrelation::ConceptB,
-    testbidirectionalrelation::ConceptA,
+from python_code import (
+    testbidirectionalrelation_ConceptG,
+    testbidirectionalrelation_ConceptF,
+    testbidirectionalrelation_ConceptE,
+    testbidirectionalrelation_ConceptD,
+    testbidirectionalrelation_ConceptC,
+    testbidirectionalrelation_ConceptB,
+    testbidirectionalrelation_ConceptA,
 )
 
 # =============================================================================
@@ -21,100 +21,100 @@ from classes import (
 
 
 
-def test_testbidirectionalrelation::conceptg_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptG)
+def test_testbidirectionalrelation_conceptg_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptG)
 
 
-def test_testbidirectionalrelation::conceptg_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptG.__init__)
+def test_testbidirectionalrelation_conceptg_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptG.__init__)
 
 
-def test_testbidirectionalrelation::conceptg_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptG.__init__)
+def test_testbidirectionalrelation_conceptg_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptG.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testbidirectionalrelation::conceptf_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptF)
+def test_testbidirectionalrelation_conceptf_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptF)
 
 
-def test_testbidirectionalrelation::conceptf_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptF.__init__)
+def test_testbidirectionalrelation_conceptf_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptF.__init__)
 
 
-def test_testbidirectionalrelation::conceptf_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptF.__init__)
+def test_testbidirectionalrelation_conceptf_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptF.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testbidirectionalrelation::concepte_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptE)
+def test_testbidirectionalrelation_concepte_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptE)
 
 
-def test_testbidirectionalrelation::concepte_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptE.__init__)
+def test_testbidirectionalrelation_concepte_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptE.__init__)
 
 
-def test_testbidirectionalrelation::concepte_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptE.__init__)
+def test_testbidirectionalrelation_concepte_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testbidirectionalrelation::conceptd_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptD)
+def test_testbidirectionalrelation_conceptd_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptD)
 
 
-def test_testbidirectionalrelation::conceptd_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptD.__init__)
+def test_testbidirectionalrelation_conceptd_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptD.__init__)
 
 
-def test_testbidirectionalrelation::conceptd_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptD.__init__)
+def test_testbidirectionalrelation_conceptd_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testbidirectionalrelation::conceptc_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptC)
+def test_testbidirectionalrelation_conceptc_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptC)
 
 
-def test_testbidirectionalrelation::conceptc_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptC.__init__)
+def test_testbidirectionalrelation_conceptc_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptC.__init__)
 
 
-def test_testbidirectionalrelation::conceptc_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptC.__init__)
+def test_testbidirectionalrelation_conceptc_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testbidirectionalrelation::conceptb_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptB)
+def test_testbidirectionalrelation_conceptb_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptB)
 
 
-def test_testbidirectionalrelation::conceptb_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptB.__init__)
+def test_testbidirectionalrelation_conceptb_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptB.__init__)
 
 
-def test_testbidirectionalrelation::conceptb_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptB.__init__)
+def test_testbidirectionalrelation_conceptb_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testbidirectionalrelation::concepta_is_not_abstract():
-    assert not inspect.isabstract(testbidirectionalrelation::ConceptA)
+def test_testbidirectionalrelation_concepta_is_not_abstract():
+    assert not inspect.isabstract(testbidirectionalrelation_ConceptA)
 
 
-def test_testbidirectionalrelation::concepta_constructor_exists():
-    assert callable(testbidirectionalrelation::ConceptA.__init__)
+def test_testbidirectionalrelation_concepta_constructor_exists():
+    assert callable(testbidirectionalrelation_ConceptA.__init__)
 
 
-def test_testbidirectionalrelation::concepta_constructor_args():
-    sig = inspect.signature(testbidirectionalrelation::ConceptA.__init__)
+def test_testbidirectionalrelation_concepta_constructor_args():
+    sig = inspect.signature(testbidirectionalrelation_ConceptA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,59 +129,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testbidirectionalrelation::ConceptG_strategy = st.builds(
-    testbidirectionalrelation::ConceptG,
+testbidirectionalrelation_ConceptG_strategy = st.builds(
+    testbidirectionalrelation_ConceptG,
 )
-testbidirectionalrelation::ConceptF_strategy = st.builds(
-    testbidirectionalrelation::ConceptF,
+testbidirectionalrelation_ConceptF_strategy = st.builds(
+    testbidirectionalrelation_ConceptF,
 )
-testbidirectionalrelation::ConceptE_strategy = st.builds(
-    testbidirectionalrelation::ConceptE,
+testbidirectionalrelation_ConceptE_strategy = st.builds(
+    testbidirectionalrelation_ConceptE,
 )
-testbidirectionalrelation::ConceptD_strategy = st.builds(
-    testbidirectionalrelation::ConceptD,
+testbidirectionalrelation_ConceptD_strategy = st.builds(
+    testbidirectionalrelation_ConceptD,
 )
-testbidirectionalrelation::ConceptC_strategy = st.builds(
-    testbidirectionalrelation::ConceptC,
+testbidirectionalrelation_ConceptC_strategy = st.builds(
+    testbidirectionalrelation_ConceptC,
 )
-testbidirectionalrelation::ConceptB_strategy = st.builds(
-    testbidirectionalrelation::ConceptB,
+testbidirectionalrelation_ConceptB_strategy = st.builds(
+    testbidirectionalrelation_ConceptB,
 )
-testbidirectionalrelation::ConceptA_strategy = st.builds(
-    testbidirectionalrelation::ConceptA,
+testbidirectionalrelation_ConceptA_strategy = st.builds(
+    testbidirectionalrelation_ConceptA,
 )
 
-@given(instance=testbidirectionalrelation::ConceptG_strategy)
+@given(instance=testbidirectionalrelation_ConceptG_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::conceptg_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptG)
+def test_testbidirectionalrelation_conceptg_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptG)
 
-@given(instance=testbidirectionalrelation::ConceptF_strategy)
+@given(instance=testbidirectionalrelation_ConceptF_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::conceptf_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptF)
+def test_testbidirectionalrelation_conceptf_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptF)
 
-@given(instance=testbidirectionalrelation::ConceptE_strategy)
+@given(instance=testbidirectionalrelation_ConceptE_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::concepte_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptE)
+def test_testbidirectionalrelation_concepte_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptE)
 
-@given(instance=testbidirectionalrelation::ConceptD_strategy)
+@given(instance=testbidirectionalrelation_ConceptD_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::conceptd_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptD)
+def test_testbidirectionalrelation_conceptd_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptD)
 
-@given(instance=testbidirectionalrelation::ConceptC_strategy)
+@given(instance=testbidirectionalrelation_ConceptC_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::conceptc_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptC)
+def test_testbidirectionalrelation_conceptc_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptC)
 
-@given(instance=testbidirectionalrelation::ConceptB_strategy)
+@given(instance=testbidirectionalrelation_ConceptB_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::conceptb_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptB)
+def test_testbidirectionalrelation_conceptb_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptB)
 
-@given(instance=testbidirectionalrelation::ConceptA_strategy)
+@given(instance=testbidirectionalrelation_ConceptA_strategy)
 @settings(max_examples=50)
-def test_testbidirectionalrelation::concepta_instantiation(instance):
-    assert isinstance(instance, testbidirectionalrelation::ConceptA)
+def test_testbidirectionalrelation_concepta_instantiation(instance):
+    assert isinstance(instance, testbidirectionalrelation_ConceptA)

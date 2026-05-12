@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    standard::SystemModel,
-    standard::Model,
-    standard::Metamodel,
-    standard::Subsystem,
-    standard::Specification,
-    standard::Source,
-    standard::Service,
-    standard::Classifier,
-    standard::Realization,
-    standard::Process,
-    standard::Library,
-    standard::File,
-    standard::Executable,
-    standard::Entity,
-    standard::Responsibility,
-    standard::Refine,
-    standard::ModelLibrary,
-    standard::Metaclass,
-    standard::Instantiate,
-    standard::ImplementationClass,
-    standard::Implement,
-    standard::Package,
-    standard::Framework,
-    standard::Focus,
-    standard::Destroy,
-    standard::Abstraction,
-    standard::Derive,
-    standard::Document,
-    standard::Utility,
-    standard::Type,
-    standard::Trace,
-    standard::Send,
-    standard::Artifact,
-    standard::Script,
-    standard::Call,
-    standard::Usage,
-    standard::BehavioralFeature,
-    standard::Create,
-    standard::Component,
-    standard::BuildComponent,
-    standard::Class,
-    standard::Auxiliary,
+from python_code import (
+    standard_SystemModel,
+    standard_Model,
+    standard_Metamodel,
+    standard_Subsystem,
+    standard_Specification,
+    standard_Source,
+    standard_Service,
+    standard_Classifier,
+    standard_Realization,
+    standard_Process,
+    standard_Library,
+    standard_File,
+    standard_Executable,
+    standard_Entity,
+    standard_Responsibility,
+    standard_Refine,
+    standard_ModelLibrary,
+    standard_Metaclass,
+    standard_Instantiate,
+    standard_ImplementationClass,
+    standard_Implement,
+    standard_Package,
+    standard_Framework,
+    standard_Focus,
+    standard_Destroy,
+    standard_Abstraction,
+    standard_Derive,
+    standard_Document,
+    standard_Utility,
+    standard_Type,
+    standard_Trace,
+    standard_Send,
+    standard_Artifact,
+    standard_Script,
+    standard_Call,
+    standard_Usage,
+    standard_BehavioralFeature,
+    standard_Create,
+    standard_Component,
+    standard_BuildComponent,
+    standard_Class,
+    standard_Auxiliary,
 )
 
 # =============================================================================
@@ -56,590 +56,590 @@ from classes import (
 
 
 
-def test_standard::systemmodel_is_not_abstract():
-    assert not inspect.isabstract(standard::SystemModel)
+def test_standard_systemmodel_is_not_abstract():
+    assert not inspect.isabstract(standard_SystemModel)
 
 
-def test_standard::systemmodel_constructor_exists():
-    assert callable(standard::SystemModel.__init__)
+def test_standard_systemmodel_constructor_exists():
+    assert callable(standard_SystemModel.__init__)
 
 
-def test_standard::systemmodel_constructor_args():
-    sig = inspect.signature(standard::SystemModel.__init__)
+def test_standard_systemmodel_constructor_args():
+    sig = inspect.signature(standard_SystemModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::model_is_not_abstract():
-    assert not inspect.isabstract(standard::Model)
+def test_standard_model_is_not_abstract():
+    assert not inspect.isabstract(standard_Model)
 
 
-def test_standard::model_constructor_exists():
-    assert callable(standard::Model.__init__)
+def test_standard_model_constructor_exists():
+    assert callable(standard_Model.__init__)
 
 
-def test_standard::model_constructor_args():
-    sig = inspect.signature(standard::Model.__init__)
+def test_standard_model_constructor_args():
+    sig = inspect.signature(standard_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::metamodel_is_not_abstract():
-    assert not inspect.isabstract(standard::Metamodel)
+def test_standard_metamodel_is_not_abstract():
+    assert not inspect.isabstract(standard_Metamodel)
 
 
-def test_standard::metamodel_constructor_exists():
-    assert callable(standard::Metamodel.__init__)
+def test_standard_metamodel_constructor_exists():
+    assert callable(standard_Metamodel.__init__)
 
 
-def test_standard::metamodel_constructor_args():
-    sig = inspect.signature(standard::Metamodel.__init__)
+def test_standard_metamodel_constructor_args():
+    sig = inspect.signature(standard_Metamodel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::subsystem_is_not_abstract():
-    assert not inspect.isabstract(standard::Subsystem)
+def test_standard_subsystem_is_not_abstract():
+    assert not inspect.isabstract(standard_Subsystem)
 
 
-def test_standard::subsystem_constructor_exists():
-    assert callable(standard::Subsystem.__init__)
+def test_standard_subsystem_constructor_exists():
+    assert callable(standard_Subsystem.__init__)
 
 
-def test_standard::subsystem_constructor_args():
-    sig = inspect.signature(standard::Subsystem.__init__)
+def test_standard_subsystem_constructor_args():
+    sig = inspect.signature(standard_Subsystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::specification_is_not_abstract():
-    assert not inspect.isabstract(standard::Specification)
+def test_standard_specification_is_not_abstract():
+    assert not inspect.isabstract(standard_Specification)
 
 
-def test_standard::specification_constructor_exists():
-    assert callable(standard::Specification.__init__)
+def test_standard_specification_constructor_exists():
+    assert callable(standard_Specification.__init__)
 
 
-def test_standard::specification_constructor_args():
-    sig = inspect.signature(standard::Specification.__init__)
+def test_standard_specification_constructor_args():
+    sig = inspect.signature(standard_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::source_is_not_abstract():
-    assert not inspect.isabstract(standard::Source)
+def test_standard_source_is_not_abstract():
+    assert not inspect.isabstract(standard_Source)
 
 
-def test_standard::source_constructor_exists():
-    assert callable(standard::Source.__init__)
+def test_standard_source_constructor_exists():
+    assert callable(standard_Source.__init__)
 
 
-def test_standard::source_constructor_args():
-    sig = inspect.signature(standard::Source.__init__)
+def test_standard_source_constructor_args():
+    sig = inspect.signature(standard_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::service_is_not_abstract():
-    assert not inspect.isabstract(standard::Service)
+def test_standard_service_is_not_abstract():
+    assert not inspect.isabstract(standard_Service)
 
 
-def test_standard::service_constructor_exists():
-    assert callable(standard::Service.__init__)
+def test_standard_service_constructor_exists():
+    assert callable(standard_Service.__init__)
 
 
-def test_standard::service_constructor_args():
-    sig = inspect.signature(standard::Service.__init__)
+def test_standard_service_constructor_args():
+    sig = inspect.signature(standard_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::classifier_is_not_abstract():
-    assert not inspect.isabstract(standard::Classifier)
+def test_standard_classifier_is_not_abstract():
+    assert not inspect.isabstract(standard_Classifier)
 
 
-def test_standard::classifier_constructor_exists():
-    assert callable(standard::Classifier.__init__)
+def test_standard_classifier_constructor_exists():
+    assert callable(standard_Classifier.__init__)
 
 
-def test_standard::classifier_constructor_args():
-    sig = inspect.signature(standard::Classifier.__init__)
+def test_standard_classifier_constructor_args():
+    sig = inspect.signature(standard_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::realization_is_not_abstract():
-    assert not inspect.isabstract(standard::Realization)
+def test_standard_realization_is_not_abstract():
+    assert not inspect.isabstract(standard_Realization)
 
 
-def test_standard::realization_constructor_exists():
-    assert callable(standard::Realization.__init__)
+def test_standard_realization_constructor_exists():
+    assert callable(standard_Realization.__init__)
 
 
-def test_standard::realization_constructor_args():
-    sig = inspect.signature(standard::Realization.__init__)
+def test_standard_realization_constructor_args():
+    sig = inspect.signature(standard_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::process_is_not_abstract():
-    assert not inspect.isabstract(standard::Process)
+def test_standard_process_is_not_abstract():
+    assert not inspect.isabstract(standard_Process)
 
 
-def test_standard::process_constructor_exists():
-    assert callable(standard::Process.__init__)
+def test_standard_process_constructor_exists():
+    assert callable(standard_Process.__init__)
 
 
-def test_standard::process_constructor_args():
-    sig = inspect.signature(standard::Process.__init__)
+def test_standard_process_constructor_args():
+    sig = inspect.signature(standard_Process.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::library_is_not_abstract():
-    assert not inspect.isabstract(standard::Library)
+def test_standard_library_is_not_abstract():
+    assert not inspect.isabstract(standard_Library)
 
 
-def test_standard::library_constructor_exists():
-    assert callable(standard::Library.__init__)
+def test_standard_library_constructor_exists():
+    assert callable(standard_Library.__init__)
 
 
-def test_standard::library_constructor_args():
-    sig = inspect.signature(standard::Library.__init__)
+def test_standard_library_constructor_args():
+    sig = inspect.signature(standard_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::file_is_not_abstract():
-    assert not inspect.isabstract(standard::File)
+def test_standard_file_is_not_abstract():
+    assert not inspect.isabstract(standard_File)
 
 
-def test_standard::file_constructor_exists():
-    assert callable(standard::File.__init__)
+def test_standard_file_constructor_exists():
+    assert callable(standard_File.__init__)
 
 
-def test_standard::file_constructor_args():
-    sig = inspect.signature(standard::File.__init__)
+def test_standard_file_constructor_args():
+    sig = inspect.signature(standard_File.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::executable_is_not_abstract():
-    assert not inspect.isabstract(standard::Executable)
+def test_standard_executable_is_not_abstract():
+    assert not inspect.isabstract(standard_Executable)
 
 
-def test_standard::executable_constructor_exists():
-    assert callable(standard::Executable.__init__)
+def test_standard_executable_constructor_exists():
+    assert callable(standard_Executable.__init__)
 
 
-def test_standard::executable_constructor_args():
-    sig = inspect.signature(standard::Executable.__init__)
+def test_standard_executable_constructor_args():
+    sig = inspect.signature(standard_Executable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::entity_is_not_abstract():
-    assert not inspect.isabstract(standard::Entity)
+def test_standard_entity_is_not_abstract():
+    assert not inspect.isabstract(standard_Entity)
 
 
-def test_standard::entity_constructor_exists():
-    assert callable(standard::Entity.__init__)
+def test_standard_entity_constructor_exists():
+    assert callable(standard_Entity.__init__)
 
 
-def test_standard::entity_constructor_args():
-    sig = inspect.signature(standard::Entity.__init__)
+def test_standard_entity_constructor_args():
+    sig = inspect.signature(standard_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::responsibility_is_not_abstract():
-    assert not inspect.isabstract(standard::Responsibility)
+def test_standard_responsibility_is_not_abstract():
+    assert not inspect.isabstract(standard_Responsibility)
 
 
-def test_standard::responsibility_constructor_exists():
-    assert callable(standard::Responsibility.__init__)
+def test_standard_responsibility_constructor_exists():
+    assert callable(standard_Responsibility.__init__)
 
 
-def test_standard::responsibility_constructor_args():
-    sig = inspect.signature(standard::Responsibility.__init__)
+def test_standard_responsibility_constructor_args():
+    sig = inspect.signature(standard_Responsibility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::refine_is_not_abstract():
-    assert not inspect.isabstract(standard::Refine)
+def test_standard_refine_is_not_abstract():
+    assert not inspect.isabstract(standard_Refine)
 
 
-def test_standard::refine_constructor_exists():
-    assert callable(standard::Refine.__init__)
+def test_standard_refine_constructor_exists():
+    assert callable(standard_Refine.__init__)
 
 
-def test_standard::refine_constructor_args():
-    sig = inspect.signature(standard::Refine.__init__)
+def test_standard_refine_constructor_args():
+    sig = inspect.signature(standard_Refine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::modellibrary_is_not_abstract():
-    assert not inspect.isabstract(standard::ModelLibrary)
+def test_standard_modellibrary_is_not_abstract():
+    assert not inspect.isabstract(standard_ModelLibrary)
 
 
-def test_standard::modellibrary_constructor_exists():
-    assert callable(standard::ModelLibrary.__init__)
+def test_standard_modellibrary_constructor_exists():
+    assert callable(standard_ModelLibrary.__init__)
 
 
-def test_standard::modellibrary_constructor_args():
-    sig = inspect.signature(standard::ModelLibrary.__init__)
+def test_standard_modellibrary_constructor_args():
+    sig = inspect.signature(standard_ModelLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::metaclass_is_not_abstract():
-    assert not inspect.isabstract(standard::Metaclass)
+def test_standard_metaclass_is_not_abstract():
+    assert not inspect.isabstract(standard_Metaclass)
 
 
-def test_standard::metaclass_constructor_exists():
-    assert callable(standard::Metaclass.__init__)
+def test_standard_metaclass_constructor_exists():
+    assert callable(standard_Metaclass.__init__)
 
 
-def test_standard::metaclass_constructor_args():
-    sig = inspect.signature(standard::Metaclass.__init__)
+def test_standard_metaclass_constructor_args():
+    sig = inspect.signature(standard_Metaclass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::instantiate_is_not_abstract():
-    assert not inspect.isabstract(standard::Instantiate)
+def test_standard_instantiate_is_not_abstract():
+    assert not inspect.isabstract(standard_Instantiate)
 
 
-def test_standard::instantiate_constructor_exists():
-    assert callable(standard::Instantiate.__init__)
+def test_standard_instantiate_constructor_exists():
+    assert callable(standard_Instantiate.__init__)
 
 
-def test_standard::instantiate_constructor_args():
-    sig = inspect.signature(standard::Instantiate.__init__)
+def test_standard_instantiate_constructor_args():
+    sig = inspect.signature(standard_Instantiate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::implementationclass_is_not_abstract():
-    assert not inspect.isabstract(standard::ImplementationClass)
+def test_standard_implementationclass_is_not_abstract():
+    assert not inspect.isabstract(standard_ImplementationClass)
 
 
-def test_standard::implementationclass_constructor_exists():
-    assert callable(standard::ImplementationClass.__init__)
+def test_standard_implementationclass_constructor_exists():
+    assert callable(standard_ImplementationClass.__init__)
 
 
-def test_standard::implementationclass_constructor_args():
-    sig = inspect.signature(standard::ImplementationClass.__init__)
+def test_standard_implementationclass_constructor_args():
+    sig = inspect.signature(standard_ImplementationClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::implement_is_not_abstract():
-    assert not inspect.isabstract(standard::Implement)
+def test_standard_implement_is_not_abstract():
+    assert not inspect.isabstract(standard_Implement)
 
 
-def test_standard::implement_constructor_exists():
-    assert callable(standard::Implement.__init__)
+def test_standard_implement_constructor_exists():
+    assert callable(standard_Implement.__init__)
 
 
-def test_standard::implement_constructor_args():
-    sig = inspect.signature(standard::Implement.__init__)
+def test_standard_implement_constructor_args():
+    sig = inspect.signature(standard_Implement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::package_is_not_abstract():
-    assert not inspect.isabstract(standard::Package)
+def test_standard_package_is_not_abstract():
+    assert not inspect.isabstract(standard_Package)
 
 
-def test_standard::package_constructor_exists():
-    assert callable(standard::Package.__init__)
+def test_standard_package_constructor_exists():
+    assert callable(standard_Package.__init__)
 
 
-def test_standard::package_constructor_args():
-    sig = inspect.signature(standard::Package.__init__)
+def test_standard_package_constructor_args():
+    sig = inspect.signature(standard_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::framework_is_not_abstract():
-    assert not inspect.isabstract(standard::Framework)
+def test_standard_framework_is_not_abstract():
+    assert not inspect.isabstract(standard_Framework)
 
 
-def test_standard::framework_constructor_exists():
-    assert callable(standard::Framework.__init__)
+def test_standard_framework_constructor_exists():
+    assert callable(standard_Framework.__init__)
 
 
-def test_standard::framework_constructor_args():
-    sig = inspect.signature(standard::Framework.__init__)
+def test_standard_framework_constructor_args():
+    sig = inspect.signature(standard_Framework.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::focus_is_not_abstract():
-    assert not inspect.isabstract(standard::Focus)
+def test_standard_focus_is_not_abstract():
+    assert not inspect.isabstract(standard_Focus)
 
 
-def test_standard::focus_constructor_exists():
-    assert callable(standard::Focus.__init__)
+def test_standard_focus_constructor_exists():
+    assert callable(standard_Focus.__init__)
 
 
-def test_standard::focus_constructor_args():
-    sig = inspect.signature(standard::Focus.__init__)
+def test_standard_focus_constructor_args():
+    sig = inspect.signature(standard_Focus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::destroy_is_not_abstract():
-    assert not inspect.isabstract(standard::Destroy)
+def test_standard_destroy_is_not_abstract():
+    assert not inspect.isabstract(standard_Destroy)
 
 
-def test_standard::destroy_constructor_exists():
-    assert callable(standard::Destroy.__init__)
+def test_standard_destroy_constructor_exists():
+    assert callable(standard_Destroy.__init__)
 
 
-def test_standard::destroy_constructor_args():
-    sig = inspect.signature(standard::Destroy.__init__)
+def test_standard_destroy_constructor_args():
+    sig = inspect.signature(standard_Destroy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::abstraction_is_not_abstract():
-    assert not inspect.isabstract(standard::Abstraction)
+def test_standard_abstraction_is_not_abstract():
+    assert not inspect.isabstract(standard_Abstraction)
 
 
-def test_standard::abstraction_constructor_exists():
-    assert callable(standard::Abstraction.__init__)
+def test_standard_abstraction_constructor_exists():
+    assert callable(standard_Abstraction.__init__)
 
 
-def test_standard::abstraction_constructor_args():
-    sig = inspect.signature(standard::Abstraction.__init__)
+def test_standard_abstraction_constructor_args():
+    sig = inspect.signature(standard_Abstraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::derive_is_not_abstract():
-    assert not inspect.isabstract(standard::Derive)
+def test_standard_derive_is_not_abstract():
+    assert not inspect.isabstract(standard_Derive)
 
 
-def test_standard::derive_constructor_exists():
-    assert callable(standard::Derive.__init__)
+def test_standard_derive_constructor_exists():
+    assert callable(standard_Derive.__init__)
 
 
-def test_standard::derive_constructor_args():
-    sig = inspect.signature(standard::Derive.__init__)
+def test_standard_derive_constructor_args():
+    sig = inspect.signature(standard_Derive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::document_is_not_abstract():
-    assert not inspect.isabstract(standard::Document)
+def test_standard_document_is_not_abstract():
+    assert not inspect.isabstract(standard_Document)
 
 
-def test_standard::document_constructor_exists():
-    assert callable(standard::Document.__init__)
+def test_standard_document_constructor_exists():
+    assert callable(standard_Document.__init__)
 
 
-def test_standard::document_constructor_args():
-    sig = inspect.signature(standard::Document.__init__)
+def test_standard_document_constructor_args():
+    sig = inspect.signature(standard_Document.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::utility_is_not_abstract():
-    assert not inspect.isabstract(standard::Utility)
+def test_standard_utility_is_not_abstract():
+    assert not inspect.isabstract(standard_Utility)
 
 
-def test_standard::utility_constructor_exists():
-    assert callable(standard::Utility.__init__)
+def test_standard_utility_constructor_exists():
+    assert callable(standard_Utility.__init__)
 
 
-def test_standard::utility_constructor_args():
-    sig = inspect.signature(standard::Utility.__init__)
+def test_standard_utility_constructor_args():
+    sig = inspect.signature(standard_Utility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::type_is_not_abstract():
-    assert not inspect.isabstract(standard::Type)
+def test_standard_type_is_not_abstract():
+    assert not inspect.isabstract(standard_Type)
 
 
-def test_standard::type_constructor_exists():
-    assert callable(standard::Type.__init__)
+def test_standard_type_constructor_exists():
+    assert callable(standard_Type.__init__)
 
 
-def test_standard::type_constructor_args():
-    sig = inspect.signature(standard::Type.__init__)
+def test_standard_type_constructor_args():
+    sig = inspect.signature(standard_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::trace_is_not_abstract():
-    assert not inspect.isabstract(standard::Trace)
+def test_standard_trace_is_not_abstract():
+    assert not inspect.isabstract(standard_Trace)
 
 
-def test_standard::trace_constructor_exists():
-    assert callable(standard::Trace.__init__)
+def test_standard_trace_constructor_exists():
+    assert callable(standard_Trace.__init__)
 
 
-def test_standard::trace_constructor_args():
-    sig = inspect.signature(standard::Trace.__init__)
+def test_standard_trace_constructor_args():
+    sig = inspect.signature(standard_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::send_is_not_abstract():
-    assert not inspect.isabstract(standard::Send)
+def test_standard_send_is_not_abstract():
+    assert not inspect.isabstract(standard_Send)
 
 
-def test_standard::send_constructor_exists():
-    assert callable(standard::Send.__init__)
+def test_standard_send_constructor_exists():
+    assert callable(standard_Send.__init__)
 
 
-def test_standard::send_constructor_args():
-    sig = inspect.signature(standard::Send.__init__)
+def test_standard_send_constructor_args():
+    sig = inspect.signature(standard_Send.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::artifact_is_not_abstract():
-    assert not inspect.isabstract(standard::Artifact)
+def test_standard_artifact_is_not_abstract():
+    assert not inspect.isabstract(standard_Artifact)
 
 
-def test_standard::artifact_constructor_exists():
-    assert callable(standard::Artifact.__init__)
+def test_standard_artifact_constructor_exists():
+    assert callable(standard_Artifact.__init__)
 
 
-def test_standard::artifact_constructor_args():
-    sig = inspect.signature(standard::Artifact.__init__)
+def test_standard_artifact_constructor_args():
+    sig = inspect.signature(standard_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::script_is_not_abstract():
-    assert not inspect.isabstract(standard::Script)
+def test_standard_script_is_not_abstract():
+    assert not inspect.isabstract(standard_Script)
 
 
-def test_standard::script_constructor_exists():
-    assert callable(standard::Script.__init__)
+def test_standard_script_constructor_exists():
+    assert callable(standard_Script.__init__)
 
 
-def test_standard::script_constructor_args():
-    sig = inspect.signature(standard::Script.__init__)
+def test_standard_script_constructor_args():
+    sig = inspect.signature(standard_Script.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::call_is_not_abstract():
-    assert not inspect.isabstract(standard::Call)
+def test_standard_call_is_not_abstract():
+    assert not inspect.isabstract(standard_Call)
 
 
-def test_standard::call_constructor_exists():
-    assert callable(standard::Call.__init__)
+def test_standard_call_constructor_exists():
+    assert callable(standard_Call.__init__)
 
 
-def test_standard::call_constructor_args():
-    sig = inspect.signature(standard::Call.__init__)
+def test_standard_call_constructor_args():
+    sig = inspect.signature(standard_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::usage_is_not_abstract():
-    assert not inspect.isabstract(standard::Usage)
+def test_standard_usage_is_not_abstract():
+    assert not inspect.isabstract(standard_Usage)
 
 
-def test_standard::usage_constructor_exists():
-    assert callable(standard::Usage.__init__)
+def test_standard_usage_constructor_exists():
+    assert callable(standard_Usage.__init__)
 
 
-def test_standard::usage_constructor_args():
-    sig = inspect.signature(standard::Usage.__init__)
+def test_standard_usage_constructor_args():
+    sig = inspect.signature(standard_Usage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(standard::BehavioralFeature)
+def test_standard_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(standard_BehavioralFeature)
 
 
-def test_standard::behavioralfeature_constructor_exists():
-    assert callable(standard::BehavioralFeature.__init__)
+def test_standard_behavioralfeature_constructor_exists():
+    assert callable(standard_BehavioralFeature.__init__)
 
 
-def test_standard::behavioralfeature_constructor_args():
-    sig = inspect.signature(standard::BehavioralFeature.__init__)
+def test_standard_behavioralfeature_constructor_args():
+    sig = inspect.signature(standard_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::create_is_not_abstract():
-    assert not inspect.isabstract(standard::Create)
+def test_standard_create_is_not_abstract():
+    assert not inspect.isabstract(standard_Create)
 
 
-def test_standard::create_constructor_exists():
-    assert callable(standard::Create.__init__)
+def test_standard_create_constructor_exists():
+    assert callable(standard_Create.__init__)
 
 
-def test_standard::create_constructor_args():
-    sig = inspect.signature(standard::Create.__init__)
+def test_standard_create_constructor_args():
+    sig = inspect.signature(standard_Create.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::component_is_not_abstract():
-    assert not inspect.isabstract(standard::Component)
+def test_standard_component_is_not_abstract():
+    assert not inspect.isabstract(standard_Component)
 
 
-def test_standard::component_constructor_exists():
-    assert callable(standard::Component.__init__)
+def test_standard_component_constructor_exists():
+    assert callable(standard_Component.__init__)
 
 
-def test_standard::component_constructor_args():
-    sig = inspect.signature(standard::Component.__init__)
+def test_standard_component_constructor_args():
+    sig = inspect.signature(standard_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::buildcomponent_is_not_abstract():
-    assert not inspect.isabstract(standard::BuildComponent)
+def test_standard_buildcomponent_is_not_abstract():
+    assert not inspect.isabstract(standard_BuildComponent)
 
 
-def test_standard::buildcomponent_constructor_exists():
-    assert callable(standard::BuildComponent.__init__)
+def test_standard_buildcomponent_constructor_exists():
+    assert callable(standard_BuildComponent.__init__)
 
 
-def test_standard::buildcomponent_constructor_args():
-    sig = inspect.signature(standard::BuildComponent.__init__)
+def test_standard_buildcomponent_constructor_args():
+    sig = inspect.signature(standard_BuildComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::class_is_not_abstract():
-    assert not inspect.isabstract(standard::Class)
+def test_standard_class_is_not_abstract():
+    assert not inspect.isabstract(standard_Class)
 
 
-def test_standard::class_constructor_exists():
-    assert callable(standard::Class.__init__)
+def test_standard_class_constructor_exists():
+    assert callable(standard_Class.__init__)
 
 
-def test_standard::class_constructor_args():
-    sig = inspect.signature(standard::Class.__init__)
+def test_standard_class_constructor_args():
+    sig = inspect.signature(standard_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standard::auxiliary_is_not_abstract():
-    assert not inspect.isabstract(standard::Auxiliary)
+def test_standard_auxiliary_is_not_abstract():
+    assert not inspect.isabstract(standard_Auxiliary)
 
 
-def test_standard::auxiliary_constructor_exists():
-    assert callable(standard::Auxiliary.__init__)
+def test_standard_auxiliary_constructor_exists():
+    assert callable(standard_Auxiliary.__init__)
 
 
-def test_standard::auxiliary_constructor_args():
-    sig = inspect.signature(standard::Auxiliary.__init__)
+def test_standard_auxiliary_constructor_args():
+    sig = inspect.signature(standard_Auxiliary.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -654,339 +654,339 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-standard::SystemModel_strategy = st.builds(
-    standard::SystemModel,
+standard_SystemModel_strategy = st.builds(
+    standard_SystemModel,
 )
-standard::Model_strategy = st.builds(
-    standard::Model,
+standard_Model_strategy = st.builds(
+    standard_Model,
 )
-standard::Metamodel_strategy = st.builds(
-    standard::Metamodel,
+standard_Metamodel_strategy = st.builds(
+    standard_Metamodel,
 )
-standard::Subsystem_strategy = st.builds(
-    standard::Subsystem,
+standard_Subsystem_strategy = st.builds(
+    standard_Subsystem,
 )
-standard::Specification_strategy = st.builds(
-    standard::Specification,
+standard_Specification_strategy = st.builds(
+    standard_Specification,
 )
-standard::Source_strategy = st.builds(
-    standard::Source,
+standard_Source_strategy = st.builds(
+    standard_Source,
 )
-standard::Service_strategy = st.builds(
-    standard::Service,
+standard_Service_strategy = st.builds(
+    standard_Service,
 )
-standard::Classifier_strategy = st.builds(
-    standard::Classifier,
+standard_Classifier_strategy = st.builds(
+    standard_Classifier,
 )
-standard::Realization_strategy = st.builds(
-    standard::Realization,
+standard_Realization_strategy = st.builds(
+    standard_Realization,
 )
-standard::Process_strategy = st.builds(
-    standard::Process,
+standard_Process_strategy = st.builds(
+    standard_Process,
 )
-standard::Library_strategy = st.builds(
-    standard::Library,
+standard_Library_strategy = st.builds(
+    standard_Library,
 )
-standard::File_strategy = st.builds(
-    standard::File,
+standard_File_strategy = st.builds(
+    standard_File,
 )
-standard::Executable_strategy = st.builds(
-    standard::Executable,
+standard_Executable_strategy = st.builds(
+    standard_Executable,
 )
-standard::Entity_strategy = st.builds(
-    standard::Entity,
+standard_Entity_strategy = st.builds(
+    standard_Entity,
 )
-standard::Responsibility_strategy = st.builds(
-    standard::Responsibility,
+standard_Responsibility_strategy = st.builds(
+    standard_Responsibility,
 )
-standard::Refine_strategy = st.builds(
-    standard::Refine,
+standard_Refine_strategy = st.builds(
+    standard_Refine,
 )
-standard::ModelLibrary_strategy = st.builds(
-    standard::ModelLibrary,
+standard_ModelLibrary_strategy = st.builds(
+    standard_ModelLibrary,
 )
-standard::Metaclass_strategy = st.builds(
-    standard::Metaclass,
+standard_Metaclass_strategy = st.builds(
+    standard_Metaclass,
 )
-standard::Instantiate_strategy = st.builds(
-    standard::Instantiate,
+standard_Instantiate_strategy = st.builds(
+    standard_Instantiate,
 )
-standard::ImplementationClass_strategy = st.builds(
-    standard::ImplementationClass,
+standard_ImplementationClass_strategy = st.builds(
+    standard_ImplementationClass,
 )
-standard::Implement_strategy = st.builds(
-    standard::Implement,
+standard_Implement_strategy = st.builds(
+    standard_Implement,
 )
-standard::Package_strategy = st.builds(
-    standard::Package,
+standard_Package_strategy = st.builds(
+    standard_Package,
 )
-standard::Framework_strategy = st.builds(
-    standard::Framework,
+standard_Framework_strategy = st.builds(
+    standard_Framework,
 )
-standard::Focus_strategy = st.builds(
-    standard::Focus,
+standard_Focus_strategy = st.builds(
+    standard_Focus,
 )
-standard::Destroy_strategy = st.builds(
-    standard::Destroy,
+standard_Destroy_strategy = st.builds(
+    standard_Destroy,
 )
-standard::Abstraction_strategy = st.builds(
-    standard::Abstraction,
+standard_Abstraction_strategy = st.builds(
+    standard_Abstraction,
 )
-standard::Derive_strategy = st.builds(
-    standard::Derive,
+standard_Derive_strategy = st.builds(
+    standard_Derive,
 )
-standard::Document_strategy = st.builds(
-    standard::Document,
+standard_Document_strategy = st.builds(
+    standard_Document,
 )
-standard::Utility_strategy = st.builds(
-    standard::Utility,
+standard_Utility_strategy = st.builds(
+    standard_Utility,
 )
-standard::Type_strategy = st.builds(
-    standard::Type,
+standard_Type_strategy = st.builds(
+    standard_Type,
 )
-standard::Trace_strategy = st.builds(
-    standard::Trace,
+standard_Trace_strategy = st.builds(
+    standard_Trace,
 )
-standard::Send_strategy = st.builds(
-    standard::Send,
+standard_Send_strategy = st.builds(
+    standard_Send,
 )
-standard::Artifact_strategy = st.builds(
-    standard::Artifact,
+standard_Artifact_strategy = st.builds(
+    standard_Artifact,
 )
-standard::Script_strategy = st.builds(
-    standard::Script,
+standard_Script_strategy = st.builds(
+    standard_Script,
 )
-standard::Call_strategy = st.builds(
-    standard::Call,
+standard_Call_strategy = st.builds(
+    standard_Call,
 )
-standard::Usage_strategy = st.builds(
-    standard::Usage,
+standard_Usage_strategy = st.builds(
+    standard_Usage,
 )
-standard::BehavioralFeature_strategy = st.builds(
-    standard::BehavioralFeature,
+standard_BehavioralFeature_strategy = st.builds(
+    standard_BehavioralFeature,
 )
-standard::Create_strategy = st.builds(
-    standard::Create,
+standard_Create_strategy = st.builds(
+    standard_Create,
 )
-standard::Component_strategy = st.builds(
-    standard::Component,
+standard_Component_strategy = st.builds(
+    standard_Component,
 )
-standard::BuildComponent_strategy = st.builds(
-    standard::BuildComponent,
+standard_BuildComponent_strategy = st.builds(
+    standard_BuildComponent,
 )
-standard::Class_strategy = st.builds(
-    standard::Class,
+standard_Class_strategy = st.builds(
+    standard_Class,
 )
-standard::Auxiliary_strategy = st.builds(
-    standard::Auxiliary,
+standard_Auxiliary_strategy = st.builds(
+    standard_Auxiliary,
 )
 
-@given(instance=standard::SystemModel_strategy)
+@given(instance=standard_SystemModel_strategy)
 @settings(max_examples=50)
-def test_standard::systemmodel_instantiation(instance):
-    assert isinstance(instance, standard::SystemModel)
+def test_standard_systemmodel_instantiation(instance):
+    assert isinstance(instance, standard_SystemModel)
 
-@given(instance=standard::Model_strategy)
+@given(instance=standard_Model_strategy)
 @settings(max_examples=50)
-def test_standard::model_instantiation(instance):
-    assert isinstance(instance, standard::Model)
+def test_standard_model_instantiation(instance):
+    assert isinstance(instance, standard_Model)
 
-@given(instance=standard::Metamodel_strategy)
+@given(instance=standard_Metamodel_strategy)
 @settings(max_examples=50)
-def test_standard::metamodel_instantiation(instance):
-    assert isinstance(instance, standard::Metamodel)
+def test_standard_metamodel_instantiation(instance):
+    assert isinstance(instance, standard_Metamodel)
 
-@given(instance=standard::Subsystem_strategy)
+@given(instance=standard_Subsystem_strategy)
 @settings(max_examples=50)
-def test_standard::subsystem_instantiation(instance):
-    assert isinstance(instance, standard::Subsystem)
+def test_standard_subsystem_instantiation(instance):
+    assert isinstance(instance, standard_Subsystem)
 
-@given(instance=standard::Specification_strategy)
+@given(instance=standard_Specification_strategy)
 @settings(max_examples=50)
-def test_standard::specification_instantiation(instance):
-    assert isinstance(instance, standard::Specification)
+def test_standard_specification_instantiation(instance):
+    assert isinstance(instance, standard_Specification)
 
-@given(instance=standard::Source_strategy)
+@given(instance=standard_Source_strategy)
 @settings(max_examples=50)
-def test_standard::source_instantiation(instance):
-    assert isinstance(instance, standard::Source)
+def test_standard_source_instantiation(instance):
+    assert isinstance(instance, standard_Source)
 
-@given(instance=standard::Service_strategy)
+@given(instance=standard_Service_strategy)
 @settings(max_examples=50)
-def test_standard::service_instantiation(instance):
-    assert isinstance(instance, standard::Service)
+def test_standard_service_instantiation(instance):
+    assert isinstance(instance, standard_Service)
 
-@given(instance=standard::Classifier_strategy)
+@given(instance=standard_Classifier_strategy)
 @settings(max_examples=50)
-def test_standard::classifier_instantiation(instance):
-    assert isinstance(instance, standard::Classifier)
+def test_standard_classifier_instantiation(instance):
+    assert isinstance(instance, standard_Classifier)
 
-@given(instance=standard::Realization_strategy)
+@given(instance=standard_Realization_strategy)
 @settings(max_examples=50)
-def test_standard::realization_instantiation(instance):
-    assert isinstance(instance, standard::Realization)
+def test_standard_realization_instantiation(instance):
+    assert isinstance(instance, standard_Realization)
 
-@given(instance=standard::Process_strategy)
+@given(instance=standard_Process_strategy)
 @settings(max_examples=50)
-def test_standard::process_instantiation(instance):
-    assert isinstance(instance, standard::Process)
+def test_standard_process_instantiation(instance):
+    assert isinstance(instance, standard_Process)
 
-@given(instance=standard::Library_strategy)
+@given(instance=standard_Library_strategy)
 @settings(max_examples=50)
-def test_standard::library_instantiation(instance):
-    assert isinstance(instance, standard::Library)
+def test_standard_library_instantiation(instance):
+    assert isinstance(instance, standard_Library)
 
-@given(instance=standard::File_strategy)
+@given(instance=standard_File_strategy)
 @settings(max_examples=50)
-def test_standard::file_instantiation(instance):
-    assert isinstance(instance, standard::File)
+def test_standard_file_instantiation(instance):
+    assert isinstance(instance, standard_File)
 
-@given(instance=standard::Executable_strategy)
+@given(instance=standard_Executable_strategy)
 @settings(max_examples=50)
-def test_standard::executable_instantiation(instance):
-    assert isinstance(instance, standard::Executable)
+def test_standard_executable_instantiation(instance):
+    assert isinstance(instance, standard_Executable)
 
-@given(instance=standard::Entity_strategy)
+@given(instance=standard_Entity_strategy)
 @settings(max_examples=50)
-def test_standard::entity_instantiation(instance):
-    assert isinstance(instance, standard::Entity)
+def test_standard_entity_instantiation(instance):
+    assert isinstance(instance, standard_Entity)
 
-@given(instance=standard::Responsibility_strategy)
+@given(instance=standard_Responsibility_strategy)
 @settings(max_examples=50)
-def test_standard::responsibility_instantiation(instance):
-    assert isinstance(instance, standard::Responsibility)
+def test_standard_responsibility_instantiation(instance):
+    assert isinstance(instance, standard_Responsibility)
 
-@given(instance=standard::Refine_strategy)
+@given(instance=standard_Refine_strategy)
 @settings(max_examples=50)
-def test_standard::refine_instantiation(instance):
-    assert isinstance(instance, standard::Refine)
+def test_standard_refine_instantiation(instance):
+    assert isinstance(instance, standard_Refine)
 
-@given(instance=standard::ModelLibrary_strategy)
+@given(instance=standard_ModelLibrary_strategy)
 @settings(max_examples=50)
-def test_standard::modellibrary_instantiation(instance):
-    assert isinstance(instance, standard::ModelLibrary)
+def test_standard_modellibrary_instantiation(instance):
+    assert isinstance(instance, standard_ModelLibrary)
 
-@given(instance=standard::Metaclass_strategy)
+@given(instance=standard_Metaclass_strategy)
 @settings(max_examples=50)
-def test_standard::metaclass_instantiation(instance):
-    assert isinstance(instance, standard::Metaclass)
+def test_standard_metaclass_instantiation(instance):
+    assert isinstance(instance, standard_Metaclass)
 
-@given(instance=standard::Instantiate_strategy)
+@given(instance=standard_Instantiate_strategy)
 @settings(max_examples=50)
-def test_standard::instantiate_instantiation(instance):
-    assert isinstance(instance, standard::Instantiate)
+def test_standard_instantiate_instantiation(instance):
+    assert isinstance(instance, standard_Instantiate)
 
-@given(instance=standard::ImplementationClass_strategy)
+@given(instance=standard_ImplementationClass_strategy)
 @settings(max_examples=50)
-def test_standard::implementationclass_instantiation(instance):
-    assert isinstance(instance, standard::ImplementationClass)
+def test_standard_implementationclass_instantiation(instance):
+    assert isinstance(instance, standard_ImplementationClass)
 
-@given(instance=standard::Implement_strategy)
+@given(instance=standard_Implement_strategy)
 @settings(max_examples=50)
-def test_standard::implement_instantiation(instance):
-    assert isinstance(instance, standard::Implement)
+def test_standard_implement_instantiation(instance):
+    assert isinstance(instance, standard_Implement)
 
-@given(instance=standard::Package_strategy)
+@given(instance=standard_Package_strategy)
 @settings(max_examples=50)
-def test_standard::package_instantiation(instance):
-    assert isinstance(instance, standard::Package)
+def test_standard_package_instantiation(instance):
+    assert isinstance(instance, standard_Package)
 
-@given(instance=standard::Framework_strategy)
+@given(instance=standard_Framework_strategy)
 @settings(max_examples=50)
-def test_standard::framework_instantiation(instance):
-    assert isinstance(instance, standard::Framework)
+def test_standard_framework_instantiation(instance):
+    assert isinstance(instance, standard_Framework)
 
-@given(instance=standard::Focus_strategy)
+@given(instance=standard_Focus_strategy)
 @settings(max_examples=50)
-def test_standard::focus_instantiation(instance):
-    assert isinstance(instance, standard::Focus)
+def test_standard_focus_instantiation(instance):
+    assert isinstance(instance, standard_Focus)
 
-@given(instance=standard::Destroy_strategy)
+@given(instance=standard_Destroy_strategy)
 @settings(max_examples=50)
-def test_standard::destroy_instantiation(instance):
-    assert isinstance(instance, standard::Destroy)
+def test_standard_destroy_instantiation(instance):
+    assert isinstance(instance, standard_Destroy)
 
-@given(instance=standard::Abstraction_strategy)
+@given(instance=standard_Abstraction_strategy)
 @settings(max_examples=50)
-def test_standard::abstraction_instantiation(instance):
-    assert isinstance(instance, standard::Abstraction)
+def test_standard_abstraction_instantiation(instance):
+    assert isinstance(instance, standard_Abstraction)
 
-@given(instance=standard::Derive_strategy)
+@given(instance=standard_Derive_strategy)
 @settings(max_examples=50)
-def test_standard::derive_instantiation(instance):
-    assert isinstance(instance, standard::Derive)
+def test_standard_derive_instantiation(instance):
+    assert isinstance(instance, standard_Derive)
 
-@given(instance=standard::Document_strategy)
+@given(instance=standard_Document_strategy)
 @settings(max_examples=50)
-def test_standard::document_instantiation(instance):
-    assert isinstance(instance, standard::Document)
+def test_standard_document_instantiation(instance):
+    assert isinstance(instance, standard_Document)
 
-@given(instance=standard::Utility_strategy)
+@given(instance=standard_Utility_strategy)
 @settings(max_examples=50)
-def test_standard::utility_instantiation(instance):
-    assert isinstance(instance, standard::Utility)
+def test_standard_utility_instantiation(instance):
+    assert isinstance(instance, standard_Utility)
 
-@given(instance=standard::Type_strategy)
+@given(instance=standard_Type_strategy)
 @settings(max_examples=50)
-def test_standard::type_instantiation(instance):
-    assert isinstance(instance, standard::Type)
+def test_standard_type_instantiation(instance):
+    assert isinstance(instance, standard_Type)
 
-@given(instance=standard::Trace_strategy)
+@given(instance=standard_Trace_strategy)
 @settings(max_examples=50)
-def test_standard::trace_instantiation(instance):
-    assert isinstance(instance, standard::Trace)
+def test_standard_trace_instantiation(instance):
+    assert isinstance(instance, standard_Trace)
 
-@given(instance=standard::Send_strategy)
+@given(instance=standard_Send_strategy)
 @settings(max_examples=50)
-def test_standard::send_instantiation(instance):
-    assert isinstance(instance, standard::Send)
+def test_standard_send_instantiation(instance):
+    assert isinstance(instance, standard_Send)
 
-@given(instance=standard::Artifact_strategy)
+@given(instance=standard_Artifact_strategy)
 @settings(max_examples=50)
-def test_standard::artifact_instantiation(instance):
-    assert isinstance(instance, standard::Artifact)
+def test_standard_artifact_instantiation(instance):
+    assert isinstance(instance, standard_Artifact)
 
-@given(instance=standard::Script_strategy)
+@given(instance=standard_Script_strategy)
 @settings(max_examples=50)
-def test_standard::script_instantiation(instance):
-    assert isinstance(instance, standard::Script)
+def test_standard_script_instantiation(instance):
+    assert isinstance(instance, standard_Script)
 
-@given(instance=standard::Call_strategy)
+@given(instance=standard_Call_strategy)
 @settings(max_examples=50)
-def test_standard::call_instantiation(instance):
-    assert isinstance(instance, standard::Call)
+def test_standard_call_instantiation(instance):
+    assert isinstance(instance, standard_Call)
 
-@given(instance=standard::Usage_strategy)
+@given(instance=standard_Usage_strategy)
 @settings(max_examples=50)
-def test_standard::usage_instantiation(instance):
-    assert isinstance(instance, standard::Usage)
+def test_standard_usage_instantiation(instance):
+    assert isinstance(instance, standard_Usage)
 
-@given(instance=standard::BehavioralFeature_strategy)
+@given(instance=standard_BehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_standard::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, standard::BehavioralFeature)
+def test_standard_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, standard_BehavioralFeature)
 
-@given(instance=standard::Create_strategy)
+@given(instance=standard_Create_strategy)
 @settings(max_examples=50)
-def test_standard::create_instantiation(instance):
-    assert isinstance(instance, standard::Create)
+def test_standard_create_instantiation(instance):
+    assert isinstance(instance, standard_Create)
 
-@given(instance=standard::Component_strategy)
+@given(instance=standard_Component_strategy)
 @settings(max_examples=50)
-def test_standard::component_instantiation(instance):
-    assert isinstance(instance, standard::Component)
+def test_standard_component_instantiation(instance):
+    assert isinstance(instance, standard_Component)
 
-@given(instance=standard::BuildComponent_strategy)
+@given(instance=standard_BuildComponent_strategy)
 @settings(max_examples=50)
-def test_standard::buildcomponent_instantiation(instance):
-    assert isinstance(instance, standard::BuildComponent)
+def test_standard_buildcomponent_instantiation(instance):
+    assert isinstance(instance, standard_BuildComponent)
 
-@given(instance=standard::Class_strategy)
+@given(instance=standard_Class_strategy)
 @settings(max_examples=50)
-def test_standard::class_instantiation(instance):
-    assert isinstance(instance, standard::Class)
+def test_standard_class_instantiation(instance):
+    assert isinstance(instance, standard_Class)
 
-@given(instance=standard::Auxiliary_strategy)
+@given(instance=standard_Auxiliary_strategy)
 @settings(max_examples=50)
-def test_standard::auxiliary_instantiation(instance):
-    assert isinstance(instance, standard::Auxiliary)
+def test_standard_auxiliary_instantiation(instance):
+    assert isinstance(instance, standard_Auxiliary)

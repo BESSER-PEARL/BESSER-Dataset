@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    StateMachines::ProtocolStateMachines::Operation,
+from python_code import (
+    StateMachines_ProtocolStateMachines_Operation,
     Operation,
     Classifier,
-    StateMachines::ProtocolStateMachines::Interface,
-    StateMachines::ProtocolStateMachines::Port,
-    StateMachines::ProtocolStateMachines::DirectedRelationship,
+    StateMachines_ProtocolStateMachines_Interface,
+    StateMachines_ProtocolStateMachines_Port,
+    StateMachines_ProtocolStateMachines_DirectedRelationship,
     ProtocolStateMachine,
     DirectedRelationship,
-    StateMachines::ProtocolStateMachines::ProtocolConformance,
+    StateMachines_ProtocolStateMachines_ProtocolConformance,
     ProtocolConformance,
     ConnectionPointReference,
-    BehaviorStateMachines::Vertex,
-    StateMachines::BehaviorStateMachines::Trigger,
-    StateMachines::BehaviorStateMachines::Constraint,
-    StateMachines::BehaviorStateMachines::TimeEvent,
-    StateMachines::BehaviorStateMachines::Classifier,
-    StateMachines::BehaviorStateMachines::RedefinableElement,
+    BehaviorStateMachines_Vertex,
+    StateMachines_BehaviorStateMachines_Trigger,
+    StateMachines_BehaviorStateMachines_Constraint,
+    StateMachines_BehaviorStateMachines_TimeEvent,
+    StateMachines_BehaviorStateMachines_Classifier,
+    StateMachines_BehaviorStateMachines_RedefinableElement,
     NamedElement,
-    StateMachines::BehaviorStateMachines::Vertex,
-    StateMachines::BehaviorStateMachines::NamedElement,
+    StateMachines_BehaviorStateMachines_Vertex,
+    StateMachines_BehaviorStateMachines_NamedElement,
     Transition,
-    StateMachines::ProtocolStateMachines::ProtocolTransition,
+    StateMachines_ProtocolStateMachines_ProtocolTransition,
     Vertex,
-    StateMachines::BehaviorStateMachines::ConnectionPointReference,
-    StateMachines::BehaviorStateMachines::Pseudostate,
-    BehaviorStateMachines::RedefinableElement,
-    BehaviorStateMachines::Namespace,
-    StateMachines::BehaviorStateMachines::State,
-    StateMachines::BehaviorStateMachines::Region,
-    StateMachines::BehaviorStateMachines::Namespace,
+    StateMachines_BehaviorStateMachines_Pseudostate,
+    StateMachines_BehaviorStateMachines_ConnectionPointReference,
+    BehaviorStateMachines_RedefinableElement,
+    BehaviorStateMachines_Namespace,
+    StateMachines_BehaviorStateMachines_State,
+    StateMachines_BehaviorStateMachines_Region,
+    StateMachines_BehaviorStateMachines_Namespace,
     StateMachine,
-    StateMachines::ProtocolStateMachines::ProtocolStateMachine,
+    StateMachines_ProtocolStateMachines_ProtocolStateMachine,
     State,
-    StateMachines::BehaviorStateMachines::FinalState,
+    StateMachines_BehaviorStateMachines_FinalState,
     Constraint,
     Trigger,
-    StateMachines::BehaviorStateMachines::Transition,
+    StateMachines_BehaviorStateMachines_Transition,
     Pseudostate,
     Region,
     Behavior,
-    StateMachines::BehaviorStateMachines::StateMachine,
-    StateMachines::BehaviorStateMachines::Behavior,
+    StateMachines_BehaviorStateMachines_StateMachine,
+    StateMachines_BehaviorStateMachines_Behavior,
     TransitionKind,
 )
 
@@ -57,16 +57,16 @@ from classes import (
 
 
 
-def test_statemachines::protocolstatemachines::operation_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::Operation)
+def test_statemachines_protocolstatemachines_operation_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_Operation)
 
 
-def test_statemachines::protocolstatemachines::operation_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::Operation.__init__)
+def test_statemachines_protocolstatemachines_operation_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_Operation.__init__)
 
 
-def test_statemachines::protocolstatemachines::operation_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::Operation.__init__)
+def test_statemachines_protocolstatemachines_operation_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,44 +99,44 @@ def test_classifier_constructor_args():
 
 
 
-def test_statemachines::protocolstatemachines::interface_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::Interface)
+def test_statemachines_protocolstatemachines_interface_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_Interface)
 
 
-def test_statemachines::protocolstatemachines::interface_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::Interface.__init__)
+def test_statemachines_protocolstatemachines_interface_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_Interface.__init__)
 
 
-def test_statemachines::protocolstatemachines::interface_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::Interface.__init__)
+def test_statemachines_protocolstatemachines_interface_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::protocolstatemachines::port_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::Port)
+def test_statemachines_protocolstatemachines_port_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_Port)
 
 
-def test_statemachines::protocolstatemachines::port_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::Port.__init__)
+def test_statemachines_protocolstatemachines_port_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_Port.__init__)
 
 
-def test_statemachines::protocolstatemachines::port_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::Port.__init__)
+def test_statemachines_protocolstatemachines_port_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_Port.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::protocolstatemachines::directedrelationship_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::DirectedRelationship)
+def test_statemachines_protocolstatemachines_directedrelationship_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_DirectedRelationship)
 
 
-def test_statemachines::protocolstatemachines::directedrelationship_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::DirectedRelationship.__init__)
+def test_statemachines_protocolstatemachines_directedrelationship_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_DirectedRelationship.__init__)
 
 
-def test_statemachines::protocolstatemachines::directedrelationship_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::DirectedRelationship.__init__)
+def test_statemachines_protocolstatemachines_directedrelationship_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_DirectedRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,16 +169,16 @@ def test_directedrelationship_constructor_args():
 
 
 
-def test_statemachines::protocolstatemachines::protocolconformance_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::ProtocolConformance)
+def test_statemachines_protocolstatemachines_protocolconformance_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_ProtocolConformance)
 
 
-def test_statemachines::protocolstatemachines::protocolconformance_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::ProtocolConformance.__init__)
+def test_statemachines_protocolstatemachines_protocolconformance_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_ProtocolConformance.__init__)
 
 
-def test_statemachines::protocolstatemachines::protocolconformance_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::ProtocolConformance.__init__)
+def test_statemachines_protocolstatemachines_protocolconformance_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_ProtocolConformance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,86 +211,86 @@ def test_connectionpointreference_constructor_args():
 
 
 
-def test_behaviorstatemachines::vertex_is_not_abstract():
-    assert not inspect.isabstract(BehaviorStateMachines::Vertex)
+def test_behaviorstatemachines_vertex_is_not_abstract():
+    assert not inspect.isabstract(BehaviorStateMachines_Vertex)
 
 
-def test_behaviorstatemachines::vertex_constructor_exists():
-    assert callable(BehaviorStateMachines::Vertex.__init__)
+def test_behaviorstatemachines_vertex_constructor_exists():
+    assert callable(BehaviorStateMachines_Vertex.__init__)
 
 
-def test_behaviorstatemachines::vertex_constructor_args():
-    sig = inspect.signature(BehaviorStateMachines::Vertex.__init__)
+def test_behaviorstatemachines_vertex_constructor_args():
+    sig = inspect.signature(BehaviorStateMachines_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::trigger_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Trigger)
+def test_statemachines_behaviorstatemachines_trigger_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Trigger)
 
 
-def test_statemachines::behaviorstatemachines::trigger_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Trigger.__init__)
+def test_statemachines_behaviorstatemachines_trigger_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Trigger.__init__)
 
 
-def test_statemachines::behaviorstatemachines::trigger_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Trigger.__init__)
+def test_statemachines_behaviorstatemachines_trigger_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::constraint_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Constraint)
+def test_statemachines_behaviorstatemachines_constraint_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Constraint)
 
 
-def test_statemachines::behaviorstatemachines::constraint_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Constraint.__init__)
+def test_statemachines_behaviorstatemachines_constraint_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Constraint.__init__)
 
 
-def test_statemachines::behaviorstatemachines::constraint_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Constraint.__init__)
+def test_statemachines_behaviorstatemachines_constraint_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::timeevent_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::TimeEvent)
+def test_statemachines_behaviorstatemachines_timeevent_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_TimeEvent)
 
 
-def test_statemachines::behaviorstatemachines::timeevent_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::TimeEvent.__init__)
+def test_statemachines_behaviorstatemachines_timeevent_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_TimeEvent.__init__)
 
 
-def test_statemachines::behaviorstatemachines::timeevent_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::TimeEvent.__init__)
+def test_statemachines_behaviorstatemachines_timeevent_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_TimeEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::classifier_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Classifier)
+def test_statemachines_behaviorstatemachines_classifier_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Classifier)
 
 
-def test_statemachines::behaviorstatemachines::classifier_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Classifier.__init__)
+def test_statemachines_behaviorstatemachines_classifier_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Classifier.__init__)
 
 
-def test_statemachines::behaviorstatemachines::classifier_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Classifier.__init__)
+def test_statemachines_behaviorstatemachines_classifier_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::redefinableelement_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::RedefinableElement)
+def test_statemachines_behaviorstatemachines_redefinableelement_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_RedefinableElement)
 
 
-def test_statemachines::behaviorstatemachines::redefinableelement_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::RedefinableElement.__init__)
+def test_statemachines_behaviorstatemachines_redefinableelement_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_RedefinableElement.__init__)
 
 
-def test_statemachines::behaviorstatemachines::redefinableelement_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::RedefinableElement.__init__)
+def test_statemachines_behaviorstatemachines_redefinableelement_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_RedefinableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,30 +309,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_statemachines::behaviorstatemachines::vertex_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Vertex)
+def test_statemachines_behaviorstatemachines_vertex_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Vertex)
 
 
-def test_statemachines::behaviorstatemachines::vertex_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Vertex.__init__)
+def test_statemachines_behaviorstatemachines_vertex_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Vertex.__init__)
 
 
-def test_statemachines::behaviorstatemachines::vertex_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Vertex.__init__)
+def test_statemachines_behaviorstatemachines_vertex_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::namedelement_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::NamedElement)
+def test_statemachines_behaviorstatemachines_namedelement_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_NamedElement)
 
 
-def test_statemachines::behaviorstatemachines::namedelement_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::NamedElement.__init__)
+def test_statemachines_behaviorstatemachines_namedelement_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_NamedElement.__init__)
 
 
-def test_statemachines::behaviorstatemachines::namedelement_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::NamedElement.__init__)
+def test_statemachines_behaviorstatemachines_namedelement_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -351,16 +351,16 @@ def test_transition_constructor_args():
 
 
 
-def test_statemachines::protocolstatemachines::protocoltransition_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::ProtocolTransition)
+def test_statemachines_protocolstatemachines_protocoltransition_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_ProtocolTransition)
 
 
-def test_statemachines::protocolstatemachines::protocoltransition_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::ProtocolTransition.__init__)
+def test_statemachines_protocolstatemachines_protocoltransition_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_ProtocolTransition.__init__)
 
 
-def test_statemachines::protocolstatemachines::protocoltransition_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::ProtocolTransition.__init__)
+def test_statemachines_protocolstatemachines_protocoltransition_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_ProtocolTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -379,109 +379,109 @@ def test_vertex_constructor_args():
 
 
 
-def test_statemachines::behaviorstatemachines::connectionpointreference_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::ConnectionPointReference)
+def test_statemachines_behaviorstatemachines_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Pseudostate)
 
 
-def test_statemachines::behaviorstatemachines::connectionpointreference_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::ConnectionPointReference.__init__)
+def test_statemachines_behaviorstatemachines_pseudostate_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Pseudostate.__init__)
 
 
-def test_statemachines::behaviorstatemachines::connectionpointreference_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::ConnectionPointReference.__init__)
+def test_statemachines_behaviorstatemachines_pseudostate_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Pseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Pseudostate)
+def test_statemachines_behaviorstatemachines_connectionpointreference_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_ConnectionPointReference)
 
 
-def test_statemachines::behaviorstatemachines::pseudostate_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Pseudostate.__init__)
+def test_statemachines_behaviorstatemachines_connectionpointreference_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_ConnectionPointReference.__init__)
 
 
-def test_statemachines::behaviorstatemachines::pseudostate_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Pseudostate.__init__)
+def test_statemachines_behaviorstatemachines_connectionpointreference_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_ConnectionPointReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviorstatemachines::redefinableelement_is_not_abstract():
-    assert not inspect.isabstract(BehaviorStateMachines::RedefinableElement)
+def test_behaviorstatemachines_redefinableelement_is_not_abstract():
+    assert not inspect.isabstract(BehaviorStateMachines_RedefinableElement)
 
 
-def test_behaviorstatemachines::redefinableelement_constructor_exists():
-    assert callable(BehaviorStateMachines::RedefinableElement.__init__)
+def test_behaviorstatemachines_redefinableelement_constructor_exists():
+    assert callable(BehaviorStateMachines_RedefinableElement.__init__)
 
 
-def test_behaviorstatemachines::redefinableelement_constructor_args():
-    sig = inspect.signature(BehaviorStateMachines::RedefinableElement.__init__)
+def test_behaviorstatemachines_redefinableelement_constructor_args():
+    sig = inspect.signature(BehaviorStateMachines_RedefinableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviorstatemachines::namespace_is_not_abstract():
-    assert not inspect.isabstract(BehaviorStateMachines::Namespace)
+def test_behaviorstatemachines_namespace_is_not_abstract():
+    assert not inspect.isabstract(BehaviorStateMachines_Namespace)
 
 
-def test_behaviorstatemachines::namespace_constructor_exists():
-    assert callable(BehaviorStateMachines::Namespace.__init__)
+def test_behaviorstatemachines_namespace_constructor_exists():
+    assert callable(BehaviorStateMachines_Namespace.__init__)
 
 
-def test_behaviorstatemachines::namespace_constructor_args():
-    sig = inspect.signature(BehaviorStateMachines::Namespace.__init__)
+def test_behaviorstatemachines_namespace_constructor_args():
+    sig = inspect.signature(BehaviorStateMachines_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::state_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::State)
+def test_statemachines_behaviorstatemachines_state_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_State)
 
 
-def test_statemachines::behaviorstatemachines::state_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::State.__init__)
+def test_statemachines_behaviorstatemachines_state_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_State.__init__)
 
 
-def test_statemachines::behaviorstatemachines::state_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::State.__init__)
+def test_statemachines_behaviorstatemachines_state_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_State.__init__)
     params = list(sig.parameters.keys())
     assert "isComposite" in params, "Missing parameter 'isComposite'"
-    assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
     assert "isOrthogonal" in params, "Missing parameter 'isOrthogonal'"
+    assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
     assert "isSimple" in params, "Missing parameter 'isSimple'"
 
-def test_statemachines::behaviorstatemachines::state_has_isComposite():
-    assert hasattr(StateMachines::BehaviorStateMachines::State, "isComposite")
+def test_statemachines_behaviorstatemachines_state_has_isComposite():
+    assert hasattr(StateMachines_BehaviorStateMachines_State, "isComposite")
     descriptor = None
-    for klass in StateMachines::BehaviorStateMachines::State.__mro__:
+    for klass in StateMachines_BehaviorStateMachines_State.__mro__:
         if "isComposite" in klass.__dict__:
             descriptor = klass.__dict__["isComposite"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachines::behaviorstatemachines::state_has_isSubmachineState():
-    assert hasattr(StateMachines::BehaviorStateMachines::State, "isSubmachineState")
+def test_statemachines_behaviorstatemachines_state_has_isOrthogonal():
+    assert hasattr(StateMachines_BehaviorStateMachines_State, "isOrthogonal")
     descriptor = None
-    for klass in StateMachines::BehaviorStateMachines::State.__mro__:
-        if "isSubmachineState" in klass.__dict__:
-            descriptor = klass.__dict__["isSubmachineState"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachines::behaviorstatemachines::state_has_isOrthogonal():
-    assert hasattr(StateMachines::BehaviorStateMachines::State, "isOrthogonal")
-    descriptor = None
-    for klass in StateMachines::BehaviorStateMachines::State.__mro__:
+    for klass in StateMachines_BehaviorStateMachines_State.__mro__:
         if "isOrthogonal" in klass.__dict__:
             descriptor = klass.__dict__["isOrthogonal"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachines::behaviorstatemachines::state_has_isSimple():
-    assert hasattr(StateMachines::BehaviorStateMachines::State, "isSimple")
+def test_statemachines_behaviorstatemachines_state_has_isSubmachineState():
+    assert hasattr(StateMachines_BehaviorStateMachines_State, "isSubmachineState")
     descriptor = None
-    for klass in StateMachines::BehaviorStateMachines::State.__mro__:
+    for klass in StateMachines_BehaviorStateMachines_State.__mro__:
+        if "isSubmachineState" in klass.__dict__:
+            descriptor = klass.__dict__["isSubmachineState"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachines_behaviorstatemachines_state_has_isSimple():
+    assert hasattr(StateMachines_BehaviorStateMachines_State, "isSimple")
+    descriptor = None
+    for klass in StateMachines_BehaviorStateMachines_State.__mro__:
         if "isSimple" in klass.__dict__:
             descriptor = klass.__dict__["isSimple"]
             break
@@ -489,30 +489,30 @@ def test_statemachines::behaviorstatemachines::state_has_isSimple():
 
 
 
-def test_statemachines::behaviorstatemachines::region_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Region)
+def test_statemachines_behaviorstatemachines_region_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Region)
 
 
-def test_statemachines::behaviorstatemachines::region_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Region.__init__)
+def test_statemachines_behaviorstatemachines_region_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Region.__init__)
 
 
-def test_statemachines::behaviorstatemachines::region_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Region.__init__)
+def test_statemachines_behaviorstatemachines_region_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::namespace_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Namespace)
+def test_statemachines_behaviorstatemachines_namespace_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Namespace)
 
 
-def test_statemachines::behaviorstatemachines::namespace_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Namespace.__init__)
+def test_statemachines_behaviorstatemachines_namespace_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Namespace.__init__)
 
 
-def test_statemachines::behaviorstatemachines::namespace_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Namespace.__init__)
+def test_statemachines_behaviorstatemachines_namespace_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -531,16 +531,16 @@ def test_statemachine_constructor_args():
 
 
 
-def test_statemachines::protocolstatemachines::protocolstatemachine_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::ProtocolStateMachines::ProtocolStateMachine)
+def test_statemachines_protocolstatemachines_protocolstatemachine_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_ProtocolStateMachines_ProtocolStateMachine)
 
 
-def test_statemachines::protocolstatemachines::protocolstatemachine_constructor_exists():
-    assert callable(StateMachines::ProtocolStateMachines::ProtocolStateMachine.__init__)
+def test_statemachines_protocolstatemachines_protocolstatemachine_constructor_exists():
+    assert callable(StateMachines_ProtocolStateMachines_ProtocolStateMachine.__init__)
 
 
-def test_statemachines::protocolstatemachines::protocolstatemachine_constructor_args():
-    sig = inspect.signature(StateMachines::ProtocolStateMachines::ProtocolStateMachine.__init__)
+def test_statemachines_protocolstatemachines_protocolstatemachine_constructor_args():
+    sig = inspect.signature(StateMachines_ProtocolStateMachines_ProtocolStateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -559,16 +559,16 @@ def test_state_constructor_args():
 
 
 
-def test_statemachines::behaviorstatemachines::finalstate_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::FinalState)
+def test_statemachines_behaviorstatemachines_finalstate_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_FinalState)
 
 
-def test_statemachines::behaviorstatemachines::finalstate_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::FinalState.__init__)
+def test_statemachines_behaviorstatemachines_finalstate_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_FinalState.__init__)
 
 
-def test_statemachines::behaviorstatemachines::finalstate_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::FinalState.__init__)
+def test_statemachines_behaviorstatemachines_finalstate_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -601,23 +601,23 @@ def test_trigger_constructor_args():
 
 
 
-def test_statemachines::behaviorstatemachines::transition_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Transition)
+def test_statemachines_behaviorstatemachines_transition_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Transition)
 
 
-def test_statemachines::behaviorstatemachines::transition_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Transition.__init__)
+def test_statemachines_behaviorstatemachines_transition_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Transition.__init__)
 
 
-def test_statemachines::behaviorstatemachines::transition_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Transition.__init__)
+def test_statemachines_behaviorstatemachines_transition_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_statemachines::behaviorstatemachines::transition_has_kind():
-    assert hasattr(StateMachines::BehaviorStateMachines::Transition, "kind")
+def test_statemachines_behaviorstatemachines_transition_has_kind():
+    assert hasattr(StateMachines_BehaviorStateMachines_Transition, "kind")
     descriptor = None
-    for klass in StateMachines::BehaviorStateMachines::Transition.__mro__:
+    for klass in StateMachines_BehaviorStateMachines_Transition.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -667,30 +667,30 @@ def test_behavior_constructor_args():
 
 
 
-def test_statemachines::behaviorstatemachines::statemachine_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::StateMachine)
+def test_statemachines_behaviorstatemachines_statemachine_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_StateMachine)
 
 
-def test_statemachines::behaviorstatemachines::statemachine_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::StateMachine.__init__)
+def test_statemachines_behaviorstatemachines_statemachine_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_StateMachine.__init__)
 
 
-def test_statemachines::behaviorstatemachines::statemachine_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::StateMachine.__init__)
+def test_statemachines_behaviorstatemachines_statemachine_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachines::behaviorstatemachines::behavior_is_not_abstract():
-    assert not inspect.isabstract(StateMachines::BehaviorStateMachines::Behavior)
+def test_statemachines_behaviorstatemachines_behavior_is_not_abstract():
+    assert not inspect.isabstract(StateMachines_BehaviorStateMachines_Behavior)
 
 
-def test_statemachines::behaviorstatemachines::behavior_constructor_exists():
-    assert callable(StateMachines::BehaviorStateMachines::Behavior.__init__)
+def test_statemachines_behaviorstatemachines_behavior_constructor_exists():
+    assert callable(StateMachines_BehaviorStateMachines_Behavior.__init__)
 
 
-def test_statemachines::behaviorstatemachines::behavior_constructor_args():
-    sig = inspect.signature(StateMachines::BehaviorStateMachines::Behavior.__init__)
+def test_statemachines_behaviorstatemachines_behavior_constructor_args():
+    sig = inspect.signature(StateMachines_BehaviorStateMachines_Behavior.__init__)
     params = list(sig.parameters.keys())
 
 def test_transitionkind_exists():
@@ -701,8 +701,8 @@ def test_transitionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TransitionKind]
     expected_literals = [
-        "internal",
         "external",
+        "internal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -720,8 +720,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-StateMachines::ProtocolStateMachines::Operation_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::Operation,
+StateMachines_ProtocolStateMachines_Operation_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_Operation,
 )
 Operation_strategy = st.builds(
     Operation,
@@ -729,14 +729,14 @@ Operation_strategy = st.builds(
 Classifier_strategy = st.builds(
     Classifier,
 )
-StateMachines::ProtocolStateMachines::Interface_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::Interface,
+StateMachines_ProtocolStateMachines_Interface_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_Interface,
 )
-StateMachines::ProtocolStateMachines::Port_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::Port,
+StateMachines_ProtocolStateMachines_Port_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_Port,
 )
-StateMachines::ProtocolStateMachines::DirectedRelationship_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::DirectedRelationship,
+StateMachines_ProtocolStateMachines_DirectedRelationship_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_DirectedRelationship,
 )
 ProtocolStateMachine_strategy = st.builds(
     ProtocolStateMachine,
@@ -744,8 +744,8 @@ ProtocolStateMachine_strategy = st.builds(
 DirectedRelationship_strategy = st.builds(
     DirectedRelationship,
 )
-StateMachines::ProtocolStateMachines::ProtocolConformance_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::ProtocolConformance,
+StateMachines_ProtocolStateMachines_ProtocolConformance_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_ProtocolConformance,
 )
 ProtocolConformance_strategy = st.builds(
     ProtocolConformance,
@@ -753,82 +753,82 @@ ProtocolConformance_strategy = st.builds(
 ConnectionPointReference_strategy = st.builds(
     ConnectionPointReference,
 )
-BehaviorStateMachines::Vertex_strategy = st.builds(
-    BehaviorStateMachines::Vertex,
+BehaviorStateMachines_Vertex_strategy = st.builds(
+    BehaviorStateMachines_Vertex,
 )
-StateMachines::BehaviorStateMachines::Trigger_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Trigger,
+StateMachines_BehaviorStateMachines_Trigger_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Trigger,
 )
-StateMachines::BehaviorStateMachines::Constraint_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Constraint,
+StateMachines_BehaviorStateMachines_Constraint_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Constraint,
 )
-StateMachines::BehaviorStateMachines::TimeEvent_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::TimeEvent,
+StateMachines_BehaviorStateMachines_TimeEvent_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_TimeEvent,
 )
-StateMachines::BehaviorStateMachines::Classifier_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Classifier,
+StateMachines_BehaviorStateMachines_Classifier_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Classifier,
 )
-StateMachines::BehaviorStateMachines::RedefinableElement_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::RedefinableElement,
+StateMachines_BehaviorStateMachines_RedefinableElement_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_RedefinableElement,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-StateMachines::BehaviorStateMachines::Vertex_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Vertex,
+StateMachines_BehaviorStateMachines_Vertex_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Vertex,
 )
-StateMachines::BehaviorStateMachines::NamedElement_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::NamedElement,
+StateMachines_BehaviorStateMachines_NamedElement_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_NamedElement,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-StateMachines::ProtocolStateMachines::ProtocolTransition_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::ProtocolTransition,
+StateMachines_ProtocolStateMachines_ProtocolTransition_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_ProtocolTransition,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-StateMachines::BehaviorStateMachines::ConnectionPointReference_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::ConnectionPointReference,
+StateMachines_BehaviorStateMachines_Pseudostate_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Pseudostate,
 )
-StateMachines::BehaviorStateMachines::Pseudostate_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Pseudostate,
+StateMachines_BehaviorStateMachines_ConnectionPointReference_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_ConnectionPointReference,
 )
-BehaviorStateMachines::RedefinableElement_strategy = st.builds(
-    BehaviorStateMachines::RedefinableElement,
+BehaviorStateMachines_RedefinableElement_strategy = st.builds(
+    BehaviorStateMachines_RedefinableElement,
 )
-BehaviorStateMachines::Namespace_strategy = st.builds(
-    BehaviorStateMachines::Namespace,
+BehaviorStateMachines_Namespace_strategy = st.builds(
+    BehaviorStateMachines_Namespace,
 )
-StateMachines::BehaviorStateMachines::State_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::State,
+StateMachines_BehaviorStateMachines_State_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_State,
     isComposite=
         st.booleans(),
-    isSubmachineState=
-        st.booleans(),
     isOrthogonal=
+        st.booleans(),
+    isSubmachineState=
         st.booleans(),
     isSimple=
         st.booleans()
 )
-StateMachines::BehaviorStateMachines::Region_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Region,
+StateMachines_BehaviorStateMachines_Region_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Region,
 )
-StateMachines::BehaviorStateMachines::Namespace_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Namespace,
+StateMachines_BehaviorStateMachines_Namespace_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Namespace,
 )
 StateMachine_strategy = st.builds(
     StateMachine,
 )
-StateMachines::ProtocolStateMachines::ProtocolStateMachine_strategy = st.builds(
-    StateMachines::ProtocolStateMachines::ProtocolStateMachine,
+StateMachines_ProtocolStateMachines_ProtocolStateMachine_strategy = st.builds(
+    StateMachines_ProtocolStateMachines_ProtocolStateMachine,
 )
 State_strategy = st.builds(
     State,
 )
-StateMachines::BehaviorStateMachines::FinalState_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::FinalState,
+StateMachines_BehaviorStateMachines_FinalState_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_FinalState,
 )
 Constraint_strategy = st.builds(
     Constraint,
@@ -836,8 +836,8 @@ Constraint_strategy = st.builds(
 Trigger_strategy = st.builds(
     Trigger,
 )
-StateMachines::BehaviorStateMachines::Transition_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Transition,
+StateMachines_BehaviorStateMachines_Transition_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Transition,
     kind=
         safe_text
 )
@@ -850,17 +850,17 @@ Region_strategy = st.builds(
 Behavior_strategy = st.builds(
     Behavior,
 )
-StateMachines::BehaviorStateMachines::StateMachine_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::StateMachine,
+StateMachines_BehaviorStateMachines_StateMachine_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_StateMachine,
 )
-StateMachines::BehaviorStateMachines::Behavior_strategy = st.builds(
-    StateMachines::BehaviorStateMachines::Behavior,
+StateMachines_BehaviorStateMachines_Behavior_strategy = st.builds(
+    StateMachines_BehaviorStateMachines_Behavior,
 )
 
-@given(instance=StateMachines::ProtocolStateMachines::Operation_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_Operation_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::operation_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::Operation)
+def test_statemachines_protocolstatemachines_operation_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_Operation)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
@@ -872,20 +872,20 @@ def test_operation_instantiation(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=StateMachines::ProtocolStateMachines::Interface_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_Interface_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::interface_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::Interface)
+def test_statemachines_protocolstatemachines_interface_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_Interface)
 
-@given(instance=StateMachines::ProtocolStateMachines::Port_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_Port_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::port_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::Port)
+def test_statemachines_protocolstatemachines_port_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_Port)
 
-@given(instance=StateMachines::ProtocolStateMachines::DirectedRelationship_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_DirectedRelationship_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::directedrelationship_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::DirectedRelationship)
+def test_statemachines_protocolstatemachines_directedrelationship_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_DirectedRelationship)
 
 @given(instance=ProtocolStateMachine_strategy)
 @settings(max_examples=50)
@@ -897,10 +897,10 @@ def test_protocolstatemachine_instantiation(instance):
 def test_directedrelationship_instantiation(instance):
     assert isinstance(instance, DirectedRelationship)
 
-@given(instance=StateMachines::ProtocolStateMachines::ProtocolConformance_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_ProtocolConformance_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::protocolconformance_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::ProtocolConformance)
+def test_statemachines_protocolstatemachines_protocolconformance_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_ProtocolConformance)
 
 @given(instance=ProtocolConformance_strategy)
 @settings(max_examples=50)
@@ -912,164 +912,152 @@ def test_protocolconformance_instantiation(instance):
 def test_connectionpointreference_instantiation(instance):
     assert isinstance(instance, ConnectionPointReference)
 
-@given(instance=BehaviorStateMachines::Vertex_strategy)
+@given(instance=BehaviorStateMachines_Vertex_strategy)
 @settings(max_examples=50)
-def test_behaviorstatemachines::vertex_instantiation(instance):
-    assert isinstance(instance, BehaviorStateMachines::Vertex)
+def test_behaviorstatemachines_vertex_instantiation(instance):
+    assert isinstance(instance, BehaviorStateMachines_Vertex)
 
-@given(instance=StateMachines::BehaviorStateMachines::Trigger_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Trigger_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::trigger_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Trigger)
+def test_statemachines_behaviorstatemachines_trigger_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Trigger)
 
-@given(instance=StateMachines::BehaviorStateMachines::Constraint_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Constraint_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::constraint_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Constraint)
+def test_statemachines_behaviorstatemachines_constraint_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Constraint)
 
-@given(instance=StateMachines::BehaviorStateMachines::TimeEvent_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_TimeEvent_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::timeevent_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::TimeEvent)
+def test_statemachines_behaviorstatemachines_timeevent_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_TimeEvent)
 
-@given(instance=StateMachines::BehaviorStateMachines::Classifier_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Classifier_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::classifier_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Classifier)
+def test_statemachines_behaviorstatemachines_classifier_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Classifier)
 
-@given(instance=StateMachines::BehaviorStateMachines::RedefinableElement_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_RedefinableElement_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::redefinableelement_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::RedefinableElement)
+def test_statemachines_behaviorstatemachines_redefinableelement_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_RedefinableElement)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=StateMachines::BehaviorStateMachines::Vertex_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Vertex_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::vertex_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Vertex)
+def test_statemachines_behaviorstatemachines_vertex_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Vertex)
 
-@given(instance=StateMachines::BehaviorStateMachines::NamedElement_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_NamedElement_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::namedelement_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::NamedElement)
+def test_statemachines_behaviorstatemachines_namedelement_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_NamedElement)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=StateMachines::ProtocolStateMachines::ProtocolTransition_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_ProtocolTransition_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::protocoltransition_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::ProtocolTransition)
+def test_statemachines_protocolstatemachines_protocoltransition_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_ProtocolTransition)
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=StateMachines::BehaviorStateMachines::ConnectionPointReference_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::connectionpointreference_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::ConnectionPointReference)
+def test_statemachines_behaviorstatemachines_pseudostate_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Pseudostate)
 
-@given(instance=StateMachines::BehaviorStateMachines::Pseudostate_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_ConnectionPointReference_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::pseudostate_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Pseudostate)
+def test_statemachines_behaviorstatemachines_connectionpointreference_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_ConnectionPointReference)
 
-@given(instance=BehaviorStateMachines::RedefinableElement_strategy)
+@given(instance=BehaviorStateMachines_RedefinableElement_strategy)
 @settings(max_examples=50)
-def test_behaviorstatemachines::redefinableelement_instantiation(instance):
-    assert isinstance(instance, BehaviorStateMachines::RedefinableElement)
+def test_behaviorstatemachines_redefinableelement_instantiation(instance):
+    assert isinstance(instance, BehaviorStateMachines_RedefinableElement)
 
-@given(instance=BehaviorStateMachines::Namespace_strategy)
+@given(instance=BehaviorStateMachines_Namespace_strategy)
 @settings(max_examples=50)
-def test_behaviorstatemachines::namespace_instantiation(instance):
-    assert isinstance(instance, BehaviorStateMachines::Namespace)
+def test_behaviorstatemachines_namespace_instantiation(instance):
+    assert isinstance(instance, BehaviorStateMachines_Namespace)
 
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_State_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::state_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::State)
-
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isComposite_type(instance):
-    assert isinstance(instance.isComposite, bool)
+def test_statemachines_behaviorstatemachines_state_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_State)
 
 
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isComposite_setter(instance):
+
+@given(instance=StateMachines_BehaviorStateMachines_State_strategy)
+def test_statemachines_behaviorstatemachines_state_isComposite_setter(instance):
     original = instance.isComposite
     instance.isComposite = original
     assert instance.isComposite == original
 
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isSubmachineState_type(instance):
-    assert isinstance(instance.isSubmachineState, bool)
 
 
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isSubmachineState_setter(instance):
-    original = instance.isSubmachineState
-    instance.isSubmachineState = original
-    assert instance.isSubmachineState == original
-
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isOrthogonal_type(instance):
-    assert isinstance(instance.isOrthogonal, bool)
-
-
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isOrthogonal_setter(instance):
+@given(instance=StateMachines_BehaviorStateMachines_State_strategy)
+def test_statemachines_behaviorstatemachines_state_isOrthogonal_setter(instance):
     original = instance.isOrthogonal
     instance.isOrthogonal = original
     assert instance.isOrthogonal == original
 
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isSimple_type(instance):
-    assert isinstance(instance.isSimple, bool)
 
 
-@given(instance=StateMachines::BehaviorStateMachines::State_strategy)
-def test_statemachines::behaviorstatemachines::state_isSimple_setter(instance):
+@given(instance=StateMachines_BehaviorStateMachines_State_strategy)
+def test_statemachines_behaviorstatemachines_state_isSubmachineState_setter(instance):
+    original = instance.isSubmachineState
+    instance.isSubmachineState = original
+    assert instance.isSubmachineState == original
+
+
+
+@given(instance=StateMachines_BehaviorStateMachines_State_strategy)
+def test_statemachines_behaviorstatemachines_state_isSimple_setter(instance):
     original = instance.isSimple
     instance.isSimple = original
     assert instance.isSimple == original
 
-@given(instance=StateMachines::BehaviorStateMachines::Region_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Region_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::region_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Region)
+def test_statemachines_behaviorstatemachines_region_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Region)
 
-@given(instance=StateMachines::BehaviorStateMachines::Namespace_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Namespace_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::namespace_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Namespace)
+def test_statemachines_behaviorstatemachines_namespace_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Namespace)
 
 @given(instance=StateMachine_strategy)
 @settings(max_examples=50)
 def test_statemachine_instantiation(instance):
     assert isinstance(instance, StateMachine)
 
-@given(instance=StateMachines::ProtocolStateMachines::ProtocolStateMachine_strategy)
+@given(instance=StateMachines_ProtocolStateMachines_ProtocolStateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachines::protocolstatemachines::protocolstatemachine_instantiation(instance):
-    assert isinstance(instance, StateMachines::ProtocolStateMachines::ProtocolStateMachine)
+def test_statemachines_protocolstatemachines_protocolstatemachine_instantiation(instance):
+    assert isinstance(instance, StateMachines_ProtocolStateMachines_ProtocolStateMachine)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=StateMachines::BehaviorStateMachines::FinalState_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_FinalState_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::finalstate_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::FinalState)
+def test_statemachines_behaviorstatemachines_finalstate_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_FinalState)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
@@ -1081,18 +1069,15 @@ def test_constraint_instantiation(instance):
 def test_trigger_instantiation(instance):
     assert isinstance(instance, Trigger)
 
-@given(instance=StateMachines::BehaviorStateMachines::Transition_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::transition_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Transition)
-
-@given(instance=StateMachines::BehaviorStateMachines::Transition_strategy)
-def test_statemachines::behaviorstatemachines::transition_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_statemachines_behaviorstatemachines_transition_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Transition)
 
 
-@given(instance=StateMachines::BehaviorStateMachines::Transition_strategy)
-def test_statemachines::behaviorstatemachines::transition_kind_setter(instance):
+
+@given(instance=StateMachines_BehaviorStateMachines_Transition_strategy)
+def test_statemachines_behaviorstatemachines_transition_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -1112,12 +1097,12 @@ def test_region_instantiation(instance):
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=StateMachines::BehaviorStateMachines::StateMachine_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::statemachine_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::StateMachine)
+def test_statemachines_behaviorstatemachines_statemachine_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_StateMachine)
 
-@given(instance=StateMachines::BehaviorStateMachines::Behavior_strategy)
+@given(instance=StateMachines_BehaviorStateMachines_Behavior_strategy)
 @settings(max_examples=50)
-def test_statemachines::behaviorstatemachines::behavior_instantiation(instance):
-    assert isinstance(instance, StateMachines::BehaviorStateMachines::Behavior)
+def test_statemachines_behaviorstatemachines_behavior_instantiation(instance):
+    assert isinstance(instance, StateMachines_BehaviorStateMachines_Behavior)

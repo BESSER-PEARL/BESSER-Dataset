@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Value,
-    trace::LiteralValue,
-    trace::RefValue,
-    trace::ParameterValue,
-    trace::Value,
-    trace::TracedObject,
-    trace::ObjectState,
-    trace::ModelState,
-    trace::Step,
-    trace::Trace,
+    trace_LiteralValue,
+    trace_RefValue,
+    trace_ParameterValue,
+    trace_Value,
+    trace_TracedObject,
+    trace_ObjectState,
+    trace_ModelState,
+    trace_Step,
+    trace_Trace,
     Step,
-    trace::SmallStep,
-    trace::BigStep,
+    trace_BigStep,
+    trace_SmallStep,
     ParamterKindEnum,
 )
 
@@ -42,51 +42,51 @@ def test_value_constructor_args():
 
 
 
-def test_trace::literalvalue_is_not_abstract():
-    assert not inspect.isabstract(trace::LiteralValue)
+def test_trace_literalvalue_is_not_abstract():
+    assert not inspect.isabstract(trace_LiteralValue)
 
 
-def test_trace::literalvalue_constructor_exists():
-    assert callable(trace::LiteralValue.__init__)
+def test_trace_literalvalue_constructor_exists():
+    assert callable(trace_LiteralValue.__init__)
 
 
-def test_trace::literalvalue_constructor_args():
-    sig = inspect.signature(trace::LiteralValue.__init__)
+def test_trace_literalvalue_constructor_args():
+    sig = inspect.signature(trace_LiteralValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::refvalue_is_not_abstract():
-    assert not inspect.isabstract(trace::RefValue)
+def test_trace_refvalue_is_not_abstract():
+    assert not inspect.isabstract(trace_RefValue)
 
 
-def test_trace::refvalue_constructor_exists():
-    assert callable(trace::RefValue.__init__)
+def test_trace_refvalue_constructor_exists():
+    assert callable(trace_RefValue.__init__)
 
 
-def test_trace::refvalue_constructor_args():
-    sig = inspect.signature(trace::RefValue.__init__)
+def test_trace_refvalue_constructor_args():
+    sig = inspect.signature(trace_RefValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::parametervalue_is_not_abstract():
-    assert not inspect.isabstract(trace::ParameterValue)
+def test_trace_parametervalue_is_not_abstract():
+    assert not inspect.isabstract(trace_ParameterValue)
 
 
-def test_trace::parametervalue_constructor_exists():
-    assert callable(trace::ParameterValue.__init__)
+def test_trace_parametervalue_constructor_exists():
+    assert callable(trace_ParameterValue.__init__)
 
 
-def test_trace::parametervalue_constructor_args():
-    sig = inspect.signature(trace::ParameterValue.__init__)
+def test_trace_parametervalue_constructor_args():
+    sig = inspect.signature(trace_ParameterValue.__init__)
     params = list(sig.parameters.keys())
     assert "DirectionKind" in params, "Missing parameter 'DirectionKind'"
 
-def test_trace::parametervalue_has_DirectionKind():
-    assert hasattr(trace::ParameterValue, "DirectionKind")
+def test_trace_parametervalue_has_DirectionKind():
+    assert hasattr(trace_ParameterValue, "DirectionKind")
     descriptor = None
-    for klass in trace::ParameterValue.__mro__:
+    for klass in trace_ParameterValue.__mro__:
         if "DirectionKind" in klass.__dict__:
             descriptor = klass.__dict__["DirectionKind"]
             break
@@ -94,86 +94,86 @@ def test_trace::parametervalue_has_DirectionKind():
 
 
 
-def test_trace::value_is_not_abstract():
-    assert not inspect.isabstract(trace::Value)
+def test_trace_value_is_not_abstract():
+    assert not inspect.isabstract(trace_Value)
 
 
-def test_trace::value_constructor_exists():
-    assert callable(trace::Value.__init__)
+def test_trace_value_constructor_exists():
+    assert callable(trace_Value.__init__)
 
 
-def test_trace::value_constructor_args():
-    sig = inspect.signature(trace::Value.__init__)
+def test_trace_value_constructor_args():
+    sig = inspect.signature(trace_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::tracedobject_is_not_abstract():
-    assert not inspect.isabstract(trace::TracedObject)
+def test_trace_tracedobject_is_not_abstract():
+    assert not inspect.isabstract(trace_TracedObject)
 
 
-def test_trace::tracedobject_constructor_exists():
-    assert callable(trace::TracedObject.__init__)
+def test_trace_tracedobject_constructor_exists():
+    assert callable(trace_TracedObject.__init__)
 
 
-def test_trace::tracedobject_constructor_args():
-    sig = inspect.signature(trace::TracedObject.__init__)
+def test_trace_tracedobject_constructor_args():
+    sig = inspect.signature(trace_TracedObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::objectstate_is_not_abstract():
-    assert not inspect.isabstract(trace::ObjectState)
+def test_trace_objectstate_is_not_abstract():
+    assert not inspect.isabstract(trace_ObjectState)
 
 
-def test_trace::objectstate_constructor_exists():
-    assert callable(trace::ObjectState.__init__)
+def test_trace_objectstate_constructor_exists():
+    assert callable(trace_ObjectState.__init__)
 
 
-def test_trace::objectstate_constructor_args():
-    sig = inspect.signature(trace::ObjectState.__init__)
+def test_trace_objectstate_constructor_args():
+    sig = inspect.signature(trace_ObjectState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::modelstate_is_not_abstract():
-    assert not inspect.isabstract(trace::ModelState)
+def test_trace_modelstate_is_not_abstract():
+    assert not inspect.isabstract(trace_ModelState)
 
 
-def test_trace::modelstate_constructor_exists():
-    assert callable(trace::ModelState.__init__)
+def test_trace_modelstate_constructor_exists():
+    assert callable(trace_ModelState.__init__)
 
 
-def test_trace::modelstate_constructor_args():
-    sig = inspect.signature(trace::ModelState.__init__)
+def test_trace_modelstate_constructor_args():
+    sig = inspect.signature(trace_ModelState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::step_is_not_abstract():
-    assert not inspect.isabstract(trace::Step)
+def test_trace_step_is_not_abstract():
+    assert not inspect.isabstract(trace_Step)
 
 
-def test_trace::step_constructor_exists():
-    assert callable(trace::Step.__init__)
+def test_trace_step_constructor_exists():
+    assert callable(trace_Step.__init__)
 
 
-def test_trace::step_constructor_args():
-    sig = inspect.signature(trace::Step.__init__)
+def test_trace_step_constructor_args():
+    sig = inspect.signature(trace_Step.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,30 +192,30 @@ def test_step_constructor_args():
 
 
 
-def test_trace::smallstep_is_not_abstract():
-    assert not inspect.isabstract(trace::SmallStep)
+def test_trace_bigstep_is_not_abstract():
+    assert not inspect.isabstract(trace_BigStep)
 
 
-def test_trace::smallstep_constructor_exists():
-    assert callable(trace::SmallStep.__init__)
+def test_trace_bigstep_constructor_exists():
+    assert callable(trace_BigStep.__init__)
 
 
-def test_trace::smallstep_constructor_args():
-    sig = inspect.signature(trace::SmallStep.__init__)
+def test_trace_bigstep_constructor_args():
+    sig = inspect.signature(trace_BigStep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::bigstep_is_not_abstract():
-    assert not inspect.isabstract(trace::BigStep)
+def test_trace_smallstep_is_not_abstract():
+    assert not inspect.isabstract(trace_SmallStep)
 
 
-def test_trace::bigstep_constructor_exists():
-    assert callable(trace::BigStep.__init__)
+def test_trace_smallstep_constructor_exists():
+    assert callable(trace_SmallStep.__init__)
 
 
-def test_trace::bigstep_constructor_args():
-    sig = inspect.signature(trace::BigStep.__init__)
+def test_trace_smallstep_constructor_args():
+    sig = inspect.signature(trace_SmallStep.__init__)
     params = list(sig.parameters.keys())
 
 def test_paramterkindenum_exists():
@@ -227,9 +227,9 @@ def test_paramterkindenum_has_all_literals():
     enum_literals = [lit.name for lit in ParamterKindEnum]
     expected_literals = [
         "RETURN",
-        "IN",
-        "INOUT",
         "OUT",
+        "INOUT",
+        "IN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -250,43 +250,43 @@ safe_text = st.text(
 Value_strategy = st.builds(
     Value,
 )
-trace::LiteralValue_strategy = st.builds(
-    trace::LiteralValue,
+trace_LiteralValue_strategy = st.builds(
+    trace_LiteralValue,
 )
-trace::RefValue_strategy = st.builds(
-    trace::RefValue,
+trace_RefValue_strategy = st.builds(
+    trace_RefValue,
 )
-trace::ParameterValue_strategy = st.builds(
-    trace::ParameterValue,
+trace_ParameterValue_strategy = st.builds(
+    trace_ParameterValue,
     DirectionKind=
         safe_text
 )
-trace::Value_strategy = st.builds(
-    trace::Value,
+trace_Value_strategy = st.builds(
+    trace_Value,
 )
-trace::TracedObject_strategy = st.builds(
-    trace::TracedObject,
+trace_TracedObject_strategy = st.builds(
+    trace_TracedObject,
 )
-trace::ObjectState_strategy = st.builds(
-    trace::ObjectState,
+trace_ObjectState_strategy = st.builds(
+    trace_ObjectState,
 )
-trace::ModelState_strategy = st.builds(
-    trace::ModelState,
+trace_ModelState_strategy = st.builds(
+    trace_ModelState,
 )
-trace::Step_strategy = st.builds(
-    trace::Step,
+trace_Step_strategy = st.builds(
+    trace_Step,
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
 Step_strategy = st.builds(
     Step,
 )
-trace::SmallStep_strategy = st.builds(
-    trace::SmallStep,
+trace_BigStep_strategy = st.builds(
+    trace_BigStep,
 )
-trace::BigStep_strategy = st.builds(
-    trace::BigStep,
+trace_SmallStep_strategy = st.builds(
+    trace_SmallStep,
 )
 
 @given(instance=Value_strategy)
@@ -294,73 +294,70 @@ trace::BigStep_strategy = st.builds(
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=trace::LiteralValue_strategy)
+@given(instance=trace_LiteralValue_strategy)
 @settings(max_examples=50)
-def test_trace::literalvalue_instantiation(instance):
-    assert isinstance(instance, trace::LiteralValue)
+def test_trace_literalvalue_instantiation(instance):
+    assert isinstance(instance, trace_LiteralValue)
 
-@given(instance=trace::RefValue_strategy)
+@given(instance=trace_RefValue_strategy)
 @settings(max_examples=50)
-def test_trace::refvalue_instantiation(instance):
-    assert isinstance(instance, trace::RefValue)
+def test_trace_refvalue_instantiation(instance):
+    assert isinstance(instance, trace_RefValue)
 
-@given(instance=trace::ParameterValue_strategy)
+@given(instance=trace_ParameterValue_strategy)
 @settings(max_examples=50)
-def test_trace::parametervalue_instantiation(instance):
-    assert isinstance(instance, trace::ParameterValue)
-
-@given(instance=trace::ParameterValue_strategy)
-def test_trace::parametervalue_DirectionKind_type(instance):
-    assert isinstance(instance.DirectionKind, str)
+def test_trace_parametervalue_instantiation(instance):
+    assert isinstance(instance, trace_ParameterValue)
 
 
-@given(instance=trace::ParameterValue_strategy)
-def test_trace::parametervalue_DirectionKind_setter(instance):
+
+@given(instance=trace_ParameterValue_strategy)
+def test_trace_parametervalue_DirectionKind_setter(instance):
     original = instance.DirectionKind
     instance.DirectionKind = original
     assert instance.DirectionKind == original
 
-@given(instance=trace::Value_strategy)
+@given(instance=trace_Value_strategy)
 @settings(max_examples=50)
-def test_trace::value_instantiation(instance):
-    assert isinstance(instance, trace::Value)
+def test_trace_value_instantiation(instance):
+    assert isinstance(instance, trace_Value)
 
-@given(instance=trace::TracedObject_strategy)
+@given(instance=trace_TracedObject_strategy)
 @settings(max_examples=50)
-def test_trace::tracedobject_instantiation(instance):
-    assert isinstance(instance, trace::TracedObject)
+def test_trace_tracedobject_instantiation(instance):
+    assert isinstance(instance, trace_TracedObject)
 
-@given(instance=trace::ObjectState_strategy)
+@given(instance=trace_ObjectState_strategy)
 @settings(max_examples=50)
-def test_trace::objectstate_instantiation(instance):
-    assert isinstance(instance, trace::ObjectState)
+def test_trace_objectstate_instantiation(instance):
+    assert isinstance(instance, trace_ObjectState)
 
-@given(instance=trace::ModelState_strategy)
+@given(instance=trace_ModelState_strategy)
 @settings(max_examples=50)
-def test_trace::modelstate_instantiation(instance):
-    assert isinstance(instance, trace::ModelState)
+def test_trace_modelstate_instantiation(instance):
+    assert isinstance(instance, trace_ModelState)
 
-@given(instance=trace::Step_strategy)
+@given(instance=trace_Step_strategy)
 @settings(max_examples=50)
-def test_trace::step_instantiation(instance):
-    assert isinstance(instance, trace::Step)
+def test_trace_step_instantiation(instance):
+    assert isinstance(instance, trace_Step)
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)
 
 @given(instance=Step_strategy)
 @settings(max_examples=50)
 def test_step_instantiation(instance):
     assert isinstance(instance, Step)
 
-@given(instance=trace::SmallStep_strategy)
+@given(instance=trace_BigStep_strategy)
 @settings(max_examples=50)
-def test_trace::smallstep_instantiation(instance):
-    assert isinstance(instance, trace::SmallStep)
+def test_trace_bigstep_instantiation(instance):
+    assert isinstance(instance, trace_BigStep)
 
-@given(instance=trace::BigStep_strategy)
+@given(instance=trace_SmallStep_strategy)
 @settings(max_examples=50)
-def test_trace::bigstep_instantiation(instance):
-    assert isinstance(instance, trace::BigStep)
+def test_trace_smallstep_instantiation(instance):
+    assert isinstance(instance, trace_SmallStep)

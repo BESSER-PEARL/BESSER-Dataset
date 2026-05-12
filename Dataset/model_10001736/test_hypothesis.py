@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     UseCase_UseCase,
@@ -246,17 +246,8 @@ def test_recently_played_constructor_exists():
 def test_recently_played_constructor_args():
     sig = inspect.signature(Recently_Played.__init__)
     params = list(sig.parameters.keys())
-    assert "sID" in params, "Missing parameter 'sID'"
     assert "rpID" in params, "Missing parameter 'rpID'"
-
-def test_recently_played_has_sID():
-    assert hasattr(Recently_Played, "sID")
-    descriptor = None
-    for klass in Recently_Played.__mro__:
-        if "sID" in klass.__dict__:
-            descriptor = klass.__dict__["sID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "sID" in params, "Missing parameter 'sID'"
 
 def test_recently_played_has_rpID():
     assert hasattr(Recently_Played, "rpID")
@@ -264,6 +255,15 @@ def test_recently_played_has_rpID():
     for klass in Recently_Played.__mro__:
         if "rpID" in klass.__dict__:
             descriptor = klass.__dict__["rpID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_recently_played_has_sID():
+    assert hasattr(Recently_Played, "sID")
+    descriptor = None
+    for klass in Recently_Played.__mro__:
+        if "sID" in klass.__dict__:
+            descriptor = klass.__dict__["sID"]
             break
     assert isinstance(descriptor, property)
 
@@ -280,17 +280,8 @@ def test_downloads_constructor_exists():
 def test_downloads_constructor_args():
     sig = inspect.signature(Downloads.__init__)
     params = list(sig.parameters.keys())
-    assert "dID" in params, "Missing parameter 'dID'"
     assert "sID" in params, "Missing parameter 'sID'"
-
-def test_downloads_has_dID():
-    assert hasattr(Downloads, "dID")
-    descriptor = None
-    for klass in Downloads.__mro__:
-        if "dID" in klass.__dict__:
-            descriptor = klass.__dict__["dID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "dID" in params, "Missing parameter 'dID'"
 
 def test_downloads_has_sID():
     assert hasattr(Downloads, "sID")
@@ -298,6 +289,15 @@ def test_downloads_has_sID():
     for klass in Downloads.__mro__:
         if "sID" in klass.__dict__:
             descriptor = klass.__dict__["sID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_downloads_has_dID():
+    assert hasattr(Downloads, "dID")
+    descriptor = None
+    for klass in Downloads.__mro__:
+        if "dID" in klass.__dict__:
+            descriptor = klass.__dict__["dID"]
             break
     assert isinstance(descriptor, property)
 
@@ -314,17 +314,8 @@ def test_favourites_constructor_exists():
 def test_favourites_constructor_args():
     sig = inspect.signature(Favourites.__init__)
     params = list(sig.parameters.keys())
-    assert "fID" in params, "Missing parameter 'fID'"
     assert "sID" in params, "Missing parameter 'sID'"
-
-def test_favourites_has_fID():
-    assert hasattr(Favourites, "fID")
-    descriptor = None
-    for klass in Favourites.__mro__:
-        if "fID" in klass.__dict__:
-            descriptor = klass.__dict__["fID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "fID" in params, "Missing parameter 'fID'"
 
 def test_favourites_has_sID():
     assert hasattr(Favourites, "sID")
@@ -332,6 +323,15 @@ def test_favourites_has_sID():
     for klass in Favourites.__mro__:
         if "sID" in klass.__dict__:
             descriptor = klass.__dict__["sID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_favourites_has_fID():
+    assert hasattr(Favourites, "fID")
+    descriptor = None
+    for klass in Favourites.__mro__:
+        if "fID" in klass.__dict__:
+            descriptor = klass.__dict__["fID"]
             break
     assert isinstance(descriptor, property)
 
@@ -348,17 +348,8 @@ def test_playlist_song_constructor_exists():
 def test_playlist_song_constructor_args():
     sig = inspect.signature(Playlist_Song.__init__)
     params = list(sig.parameters.keys())
-    assert "sID" in params, "Missing parameter 'sID'"
     assert "pID" in params, "Missing parameter 'pID'"
-
-def test_playlist_song_has_sID():
-    assert hasattr(Playlist_Song, "sID")
-    descriptor = None
-    for klass in Playlist_Song.__mro__:
-        if "sID" in klass.__dict__:
-            descriptor = klass.__dict__["sID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "sID" in params, "Missing parameter 'sID'"
 
 def test_playlist_song_has_pID():
     assert hasattr(Playlist_Song, "pID")
@@ -366,6 +357,15 @@ def test_playlist_song_has_pID():
     for klass in Playlist_Song.__mro__:
         if "pID" in klass.__dict__:
             descriptor = klass.__dict__["pID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_playlist_song_has_sID():
+    assert hasattr(Playlist_Song, "sID")
+    descriptor = None
+    for klass in Playlist_Song.__mro__:
+        if "sID" in klass.__dict__:
+            descriptor = klass.__dict__["sID"]
             break
     assert isinstance(descriptor, property)
 
@@ -382,16 +382,16 @@ def test_playlist_constructor_exists():
 def test_playlist_constructor_args():
     sig = inspect.signature(Playlist.__init__)
     params = list(sig.parameters.keys())
-    assert "pDate" in params, "Missing parameter 'pDate'"
-    assert "pName" in params, "Missing parameter 'pName'"
     assert "pID" in params, "Missing parameter 'pID'"
+    assert "pName" in params, "Missing parameter 'pName'"
+    assert "pDate" in params, "Missing parameter 'pDate'"
 
-def test_playlist_has_pDate():
-    assert hasattr(Playlist, "pDate")
+def test_playlist_has_pID():
+    assert hasattr(Playlist, "pID")
     descriptor = None
     for klass in Playlist.__mro__:
-        if "pDate" in klass.__dict__:
-            descriptor = klass.__dict__["pDate"]
+        if "pID" in klass.__dict__:
+            descriptor = klass.__dict__["pID"]
             break
     assert isinstance(descriptor, property)
 
@@ -404,12 +404,12 @@ def test_playlist_has_pName():
             break
     assert isinstance(descriptor, property)
 
-def test_playlist_has_pID():
-    assert hasattr(Playlist, "pID")
+def test_playlist_has_pDate():
+    assert hasattr(Playlist, "pDate")
     descriptor = None
     for klass in Playlist.__mro__:
-        if "pID" in klass.__dict__:
-            descriptor = klass.__dict__["pID"]
+        if "pDate" in klass.__dict__:
+            descriptor = klass.__dict__["pDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -428,10 +428,10 @@ def test_song_constructor_args():
     params = list(sig.parameters.keys())
     assert "sIMG_url" in params, "Missing parameter 'sIMG_url'"
     assert "sName" in params, "Missing parameter 'sName'"
-    assert "sID" in params, "Missing parameter 'sID'"
+    assert "sCateg" in params, "Missing parameter 'sCateg'"
     assert "sDate" in params, "Missing parameter 'sDate'"
     assert "sArtist" in params, "Missing parameter 'sArtist'"
-    assert "sCateg" in params, "Missing parameter 'sCateg'"
+    assert "sID" in params, "Missing parameter 'sID'"
 
 def test_song_has_sIMG_url():
     assert hasattr(Song, "sIMG_url")
@@ -451,12 +451,12 @@ def test_song_has_sName():
             break
     assert isinstance(descriptor, property)
 
-def test_song_has_sID():
-    assert hasattr(Song, "sID")
+def test_song_has_sCateg():
+    assert hasattr(Song, "sCateg")
     descriptor = None
     for klass in Song.__mro__:
-        if "sID" in klass.__dict__:
-            descriptor = klass.__dict__["sID"]
+        if "sCateg" in klass.__dict__:
+            descriptor = klass.__dict__["sCateg"]
             break
     assert isinstance(descriptor, property)
 
@@ -478,12 +478,12 @@ def test_song_has_sArtist():
             break
     assert isinstance(descriptor, property)
 
-def test_song_has_sCateg():
-    assert hasattr(Song, "sCateg")
+def test_song_has_sID():
+    assert hasattr(Song, "sID")
     descriptor = None
     for klass in Song.__mro__:
-        if "sCateg" in klass.__dict__:
-            descriptor = klass.__dict__["sCateg"]
+        if "sID" in klass.__dict__:
+            descriptor = klass.__dict__["sID"]
             break
     assert isinstance(descriptor, property)
 
@@ -544,40 +544,40 @@ TopMostPlayed_strategy = st.builds(
 )
 Recently_Played_strategy = st.builds(
     Recently_Played,
-    sID=
-        st.integers(),
     rpID=
+        st.integers(),
+    sID=
         st.integers()
 )
 Downloads_strategy = st.builds(
     Downloads,
-    dID=
-        st.integers(),
     sID=
+        st.integers(),
+    dID=
         st.integers()
 )
 Favourites_strategy = st.builds(
     Favourites,
-    fID=
-        st.integers(),
     sID=
+        st.integers(),
+    fID=
         st.integers()
 )
 Playlist_Song_strategy = st.builds(
     Playlist_Song,
-    sID=
-        st.integers(),
     pID=
+        st.integers(),
+    sID=
         st.integers()
 )
 Playlist_strategy = st.builds(
     Playlist,
-    pDate=
-        safe_text,
+    pID=
+        st.integers(),
     pName=
         safe_text,
-    pID=
-        st.integers()
+    pDate=
+        safe_text
 )
 Song_strategy = st.builds(
     Song,
@@ -585,14 +585,14 @@ Song_strategy = st.builds(
         safe_text,
     sName=
         safe_text,
-    sID=
-        st.integers(),
+    sCateg=
+        safe_text,
     sDate=
         safe_text,
     sArtist=
         safe_text,
-    sCateg=
-        safe_text
+    sID=
+        st.integers()
 )
 
 @given(instance=UseCase_UseCase_strategy)
@@ -660,9 +660,6 @@ def test_user_actor_instantiation(instance):
 def test_topmostplayed_instantiation(instance):
     assert isinstance(instance, TopMostPlayed)
 
-@given(instance=TopMostPlayed_strategy)
-def test_topmostplayed_sID_type(instance):
-    assert isinstance(instance.sID, int)
 
 
 @given(instance=TopMostPlayed_strategy)
@@ -671,9 +668,6 @@ def test_topmostplayed_sID_setter(instance):
     instance.sID = original
     assert instance.sID == original
 
-@given(instance=TopMostPlayed_strategy)
-def test_topmostplayed_mpID_type(instance):
-    assert isinstance(instance.mpID, int)
 
 
 @given(instance=TopMostPlayed_strategy)
@@ -687,20 +681,6 @@ def test_topmostplayed_mpID_setter(instance):
 def test_recently_played_instantiation(instance):
     assert isinstance(instance, Recently_Played)
 
-@given(instance=Recently_Played_strategy)
-def test_recently_played_sID_type(instance):
-    assert isinstance(instance.sID, int)
-
-
-@given(instance=Recently_Played_strategy)
-def test_recently_played_sID_setter(instance):
-    original = instance.sID
-    instance.sID = original
-    assert instance.sID == original
-
-@given(instance=Recently_Played_strategy)
-def test_recently_played_rpID_type(instance):
-    assert isinstance(instance.rpID, int)
 
 
 @given(instance=Recently_Played_strategy)
@@ -709,25 +689,19 @@ def test_recently_played_rpID_setter(instance):
     instance.rpID = original
     assert instance.rpID == original
 
+
+
+@given(instance=Recently_Played_strategy)
+def test_recently_played_sID_setter(instance):
+    original = instance.sID
+    instance.sID = original
+    assert instance.sID == original
+
 @given(instance=Downloads_strategy)
 @settings(max_examples=50)
 def test_downloads_instantiation(instance):
     assert isinstance(instance, Downloads)
 
-@given(instance=Downloads_strategy)
-def test_downloads_dID_type(instance):
-    assert isinstance(instance.dID, int)
-
-
-@given(instance=Downloads_strategy)
-def test_downloads_dID_setter(instance):
-    original = instance.dID
-    instance.dID = original
-    assert instance.dID == original
-
-@given(instance=Downloads_strategy)
-def test_downloads_sID_type(instance):
-    assert isinstance(instance.sID, int)
 
 
 @given(instance=Downloads_strategy)
@@ -736,25 +710,19 @@ def test_downloads_sID_setter(instance):
     instance.sID = original
     assert instance.sID == original
 
+
+
+@given(instance=Downloads_strategy)
+def test_downloads_dID_setter(instance):
+    original = instance.dID
+    instance.dID = original
+    assert instance.dID == original
+
 @given(instance=Favourites_strategy)
 @settings(max_examples=50)
 def test_favourites_instantiation(instance):
     assert isinstance(instance, Favourites)
 
-@given(instance=Favourites_strategy)
-def test_favourites_fID_type(instance):
-    assert isinstance(instance.fID, int)
-
-
-@given(instance=Favourites_strategy)
-def test_favourites_fID_setter(instance):
-    original = instance.fID
-    instance.fID = original
-    assert instance.fID == original
-
-@given(instance=Favourites_strategy)
-def test_favourites_sID_type(instance):
-    assert isinstance(instance.sID, int)
 
 
 @given(instance=Favourites_strategy)
@@ -763,25 +731,19 @@ def test_favourites_sID_setter(instance):
     instance.sID = original
     assert instance.sID == original
 
+
+
+@given(instance=Favourites_strategy)
+def test_favourites_fID_setter(instance):
+    original = instance.fID
+    instance.fID = original
+    assert instance.fID == original
+
 @given(instance=Playlist_Song_strategy)
 @settings(max_examples=50)
 def test_playlist_song_instantiation(instance):
     assert isinstance(instance, Playlist_Song)
 
-@given(instance=Playlist_Song_strategy)
-def test_playlist_song_sID_type(instance):
-    assert isinstance(instance.sID, int)
-
-
-@given(instance=Playlist_Song_strategy)
-def test_playlist_song_sID_setter(instance):
-    original = instance.sID
-    instance.sID = original
-    assert instance.sID == original
-
-@given(instance=Playlist_Song_strategy)
-def test_playlist_song_pID_type(instance):
-    assert isinstance(instance.pID, int)
 
 
 @given(instance=Playlist_Song_strategy)
@@ -790,36 +752,19 @@ def test_playlist_song_pID_setter(instance):
     instance.pID = original
     assert instance.pID == original
 
+
+
+@given(instance=Playlist_Song_strategy)
+def test_playlist_song_sID_setter(instance):
+    original = instance.sID
+    instance.sID = original
+    assert instance.sID == original
+
 @given(instance=Playlist_strategy)
 @settings(max_examples=50)
 def test_playlist_instantiation(instance):
     assert isinstance(instance, Playlist)
 
-@given(instance=Playlist_strategy)
-def test_playlist_pDate_type(instance):
-    assert isinstance(instance.pDate, str)
-
-
-@given(instance=Playlist_strategy)
-def test_playlist_pDate_setter(instance):
-    original = instance.pDate
-    instance.pDate = original
-    assert instance.pDate == original
-
-@given(instance=Playlist_strategy)
-def test_playlist_pName_type(instance):
-    assert isinstance(instance.pName, str)
-
-
-@given(instance=Playlist_strategy)
-def test_playlist_pName_setter(instance):
-    original = instance.pName
-    instance.pName = original
-    assert instance.pName == original
-
-@given(instance=Playlist_strategy)
-def test_playlist_pID_type(instance):
-    assert isinstance(instance.pID, int)
 
 
 @given(instance=Playlist_strategy)
@@ -828,14 +773,27 @@ def test_playlist_pID_setter(instance):
     instance.pID = original
     assert instance.pID == original
 
+
+
+@given(instance=Playlist_strategy)
+def test_playlist_pName_setter(instance):
+    original = instance.pName
+    instance.pName = original
+    assert instance.pName == original
+
+
+
+@given(instance=Playlist_strategy)
+def test_playlist_pDate_setter(instance):
+    original = instance.pDate
+    instance.pDate = original
+    assert instance.pDate == original
+
 @given(instance=Song_strategy)
 @settings(max_examples=50)
 def test_song_instantiation(instance):
     assert isinstance(instance, Song)
 
-@given(instance=Song_strategy)
-def test_song_sIMG_url_type(instance):
-    assert isinstance(instance.sIMG_url, str)
 
 
 @given(instance=Song_strategy)
@@ -844,9 +802,6 @@ def test_song_sIMG_url_setter(instance):
     instance.sIMG_url = original
     assert instance.sIMG_url == original
 
-@given(instance=Song_strategy)
-def test_song_sName_type(instance):
-    assert isinstance(instance.sName, str)
 
 
 @given(instance=Song_strategy)
@@ -855,20 +810,14 @@ def test_song_sName_setter(instance):
     instance.sName = original
     assert instance.sName == original
 
-@given(instance=Song_strategy)
-def test_song_sID_type(instance):
-    assert isinstance(instance.sID, int)
 
 
 @given(instance=Song_strategy)
-def test_song_sID_setter(instance):
-    original = instance.sID
-    instance.sID = original
-    assert instance.sID == original
+def test_song_sCateg_setter(instance):
+    original = instance.sCateg
+    instance.sCateg = original
+    assert instance.sCateg == original
 
-@given(instance=Song_strategy)
-def test_song_sDate_type(instance):
-    assert isinstance(instance.sDate, str)
 
 
 @given(instance=Song_strategy)
@@ -877,9 +826,6 @@ def test_song_sDate_setter(instance):
     instance.sDate = original
     assert instance.sDate == original
 
-@given(instance=Song_strategy)
-def test_song_sArtist_type(instance):
-    assert isinstance(instance.sArtist, str)
 
 
 @given(instance=Song_strategy)
@@ -888,13 +834,10 @@ def test_song_sArtist_setter(instance):
     instance.sArtist = original
     assert instance.sArtist == original
 
-@given(instance=Song_strategy)
-def test_song_sCateg_type(instance):
-    assert isinstance(instance.sCateg, str)
 
 
 @given(instance=Song_strategy)
-def test_song_sCateg_setter(instance):
-    original = instance.sCateg
-    instance.sCateg = original
-    assert instance.sCateg == original
+def test_song_sID_setter(instance):
+    original = instance.sID
+    instance.sID = original
+    assert instance.sID == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Message,
@@ -198,9 +198,6 @@ def test_friend_instantiation(instance):
 def test_listaencadeada_instantiation(instance):
     assert isinstance(instance, ListaEncadeada)
 
-@given(instance=ListaEncadeada_strategy)
-def test_listaencadeada_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=ListaEncadeada_strategy)

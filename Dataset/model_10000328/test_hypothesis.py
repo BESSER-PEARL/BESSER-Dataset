@@ -3,9 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    TPagarBanco,
+    Tarjeta,
+    Monopoly,
     TPagarPorEdificios1,
     TPagarJugadores1,
     TCobrarBanco1,
@@ -40,14 +43,53 @@ from python_code import (
     TAvanzar,
     TCobrarBanco,
     TPagarJugadores,
-    TPagarBanco,
-    Tarjeta,
-    Monopoly,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_tpagarbanco_is_not_abstract():
+    assert not inspect.isabstract(TPagarBanco)
+
+
+def test_tpagarbanco_constructor_exists():
+    assert callable(TPagarBanco.__init__)
+
+
+def test_tpagarbanco_constructor_args():
+    sig = inspect.signature(TPagarBanco.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tarjeta_is_not_abstract():
+    assert not inspect.isabstract(Tarjeta)
+
+
+def test_tarjeta_constructor_exists():
+    assert callable(Tarjeta.__init__)
+
+
+def test_tarjeta_constructor_args():
+    sig = inspect.signature(Tarjeta.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_monopoly_is_not_abstract():
+    assert not inspect.isabstract(Monopoly)
+
+
+def test_monopoly_constructor_exists():
+    assert callable(Monopoly.__init__)
+
+
+def test_monopoly_constructor_args():
+    sig = inspect.signature(Monopoly.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -586,48 +628,6 @@ def test_tpagarjugadores_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_tpagarbanco_is_not_abstract():
-    assert not inspect.isabstract(TPagarBanco)
-
-
-def test_tpagarbanco_constructor_exists():
-    assert callable(TPagarBanco.__init__)
-
-
-def test_tpagarbanco_constructor_args():
-    sig = inspect.signature(TPagarBanco.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tarjeta_is_not_abstract():
-    assert not inspect.isabstract(Tarjeta)
-
-
-def test_tarjeta_constructor_exists():
-    assert callable(Tarjeta.__init__)
-
-
-def test_tarjeta_constructor_args():
-    sig = inspect.signature(Tarjeta.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_monopoly_is_not_abstract():
-    assert not inspect.isabstract(Monopoly)
-
-
-def test_monopoly_constructor_exists():
-    assert callable(Monopoly.__init__)
-
-
-def test_monopoly_constructor_args():
-    sig = inspect.signature(Monopoly.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -639,6 +639,15 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+TPagarBanco_strategy = st.builds(
+    TPagarBanco,
+)
+Tarjeta_strategy = st.builds(
+    Tarjeta,
+)
+Monopoly_strategy = st.builds(
+    Monopoly,
+)
 TPagarPorEdificios1_strategy = st.builds(
     TPagarPorEdificios1,
 )
@@ -753,15 +762,21 @@ TCobrarBanco_strategy = st.builds(
 TPagarJugadores_strategy = st.builds(
     TPagarJugadores,
 )
-TPagarBanco_strategy = st.builds(
-    TPagarBanco,
-)
-Tarjeta_strategy = st.builds(
-    Tarjeta,
-)
-Monopoly_strategy = st.builds(
-    Monopoly,
-)
+
+@given(instance=TPagarBanco_strategy)
+@settings(max_examples=50)
+def test_tpagarbanco_instantiation(instance):
+    assert isinstance(instance, TPagarBanco)
+
+@given(instance=Tarjeta_strategy)
+@settings(max_examples=50)
+def test_tarjeta_instantiation(instance):
+    assert isinstance(instance, Tarjeta)
+
+@given(instance=Monopoly_strategy)
+@settings(max_examples=50)
+def test_monopoly_instantiation(instance):
+    assert isinstance(instance, Monopoly)
 
 @given(instance=TPagarPorEdificios1_strategy)
 @settings(max_examples=50)
@@ -773,9 +788,6 @@ def test_tpagarporedificios1_instantiation(instance):
 def test_tpagarjugadores1_instantiation(instance):
     assert isinstance(instance, TPagarJugadores1)
 
-@given(instance=TPagarJugadores1_strategy)
-def test_tpagarjugadores1_monto_type(instance):
-    assert isinstance(instance.monto, int)
 
 
 @given(instance=TPagarJugadores1_strategy)
@@ -809,9 +821,6 @@ def test_tavanzar1_instantiation(instance):
 def test_tcobrarjugadores1_instantiation(instance):
     assert isinstance(instance, TCobrarJugadores1)
 
-@given(instance=TCobrarJugadores1_strategy)
-def test_tcobrarjugadores1_monto_type(instance):
-    assert isinstance(instance.monto, int)
 
 
 @given(instance=TCobrarJugadores1_strategy)
@@ -830,9 +839,6 @@ def test_tpagarporedificios_instantiation(instance):
 def test_tpagarbanco1_instantiation(instance):
     assert isinstance(instance, TPagarBanco1)
 
-@given(instance=TPagarBanco1_strategy)
-def test_tpagarbanco1_monto_type(instance):
-    assert isinstance(instance.monto, int)
 
 
 @given(instance=TPagarBanco1_strategy)
@@ -846,9 +852,6 @@ def test_tpagarbanco1_monto_setter(instance):
 def test_tarjeta1_instantiation(instance):
     assert isinstance(instance, Tarjeta1)
 
-@given(instance=Tarjeta1_strategy)
-def test_tarjeta1_tipoDeCarta_type(instance):
-    assert isinstance(instance.tipoDeCarta, str)
 
 
 @given(instance=Tarjeta1_strategy)
@@ -857,9 +860,6 @@ def test_tarjeta1_tipoDeCarta_setter(instance):
     instance.tipoDeCarta = original
     assert instance.tipoDeCarta == original
 
-@given(instance=Tarjeta1_strategy)
-def test_tarjeta1_descripcion_type(instance):
-    assert isinstance(instance.descripcion, str)
 
 
 @given(instance=Tarjeta1_strategy)
@@ -968,9 +968,6 @@ def test_tiracarcel_instantiation(instance):
 def test_monopoly1_instantiation(instance):
     assert isinstance(instance, Monopoly1)
 
-@given(instance=Monopoly1_strategy)
-def test_monopoly1_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Monopoly1_strategy)
@@ -998,18 +995,3 @@ def test_tcobrarbanco_instantiation(instance):
 @settings(max_examples=50)
 def test_tpagarjugadores_instantiation(instance):
     assert isinstance(instance, TPagarJugadores)
-
-@given(instance=TPagarBanco_strategy)
-@settings(max_examples=50)
-def test_tpagarbanco_instantiation(instance):
-    assert isinstance(instance, TPagarBanco)
-
-@given(instance=Tarjeta_strategy)
-@settings(max_examples=50)
-def test_tarjeta_instantiation(instance):
-    assert isinstance(instance, Tarjeta)
-
-@given(instance=Monopoly_strategy)
-@settings(max_examples=50)
-def test_monopoly_instantiation(instance):
-    assert isinstance(instance, Monopoly)

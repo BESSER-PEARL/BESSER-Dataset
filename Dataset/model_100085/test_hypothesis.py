@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    metadata::Versions,
-    metadata::Versioning,
-    metadata::MetaData,
-    metadata::EStringToStringMapEntry,
-    metadata::DocumentRoot,
+from python_code import (
+    metadata_Versions,
+    metadata_Versioning,
+    metadata_MetaData,
+    metadata_EStringToStringMapEntry,
+    metadata_DocumentRoot,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_metadata::versions_is_not_abstract():
-    assert not inspect.isabstract(metadata::Versions)
+def test_metadata_versions_is_not_abstract():
+    assert not inspect.isabstract(metadata_Versions)
 
 
-def test_metadata::versions_constructor_exists():
-    assert callable(metadata::Versions.__init__)
+def test_metadata_versions_constructor_exists():
+    assert callable(metadata_Versions.__init__)
 
 
-def test_metadata::versions_constructor_args():
-    sig = inspect.signature(metadata::Versions.__init__)
+def test_metadata_versions_constructor_args():
+    sig = inspect.signature(metadata_Versions.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
 
-def test_metadata::versions_has_version():
-    assert hasattr(metadata::Versions, "version")
+def test_metadata_versions_has_version():
+    assert hasattr(metadata_Versions, "version")
     descriptor = None
-    for klass in metadata::Versions.__mro__:
+    for klass in metadata_Versions.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -43,125 +43,125 @@ def test_metadata::versions_has_version():
 
 
 
-def test_metadata::versioning_is_not_abstract():
-    assert not inspect.isabstract(metadata::Versioning)
+def test_metadata_versioning_is_not_abstract():
+    assert not inspect.isabstract(metadata_Versioning)
 
 
-def test_metadata::versioning_constructor_exists():
-    assert callable(metadata::Versioning.__init__)
+def test_metadata_versioning_constructor_exists():
+    assert callable(metadata_Versioning.__init__)
 
 
-def test_metadata::versioning_constructor_args():
-    sig = inspect.signature(metadata::Versioning.__init__)
+def test_metadata_versioning_constructor_args():
+    sig = inspect.signature(metadata_Versioning.__init__)
     params = list(sig.parameters.keys())
+    assert "latest" in params, "Missing parameter 'latest'"
     assert "release" in params, "Missing parameter 'release'"
     assert "lastUpdated" in params, "Missing parameter 'lastUpdated'"
-    assert "latest" in params, "Missing parameter 'latest'"
 
-def test_metadata::versioning_has_release():
-    assert hasattr(metadata::Versioning, "release")
+def test_metadata_versioning_has_latest():
+    assert hasattr(metadata_Versioning, "latest")
     descriptor = None
-    for klass in metadata::Versioning.__mro__:
-        if "release" in klass.__dict__:
-            descriptor = klass.__dict__["release"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metadata::versioning_has_lastUpdated():
-    assert hasattr(metadata::Versioning, "lastUpdated")
-    descriptor = None
-    for klass in metadata::Versioning.__mro__:
-        if "lastUpdated" in klass.__dict__:
-            descriptor = klass.__dict__["lastUpdated"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metadata::versioning_has_latest():
-    assert hasattr(metadata::Versioning, "latest")
-    descriptor = None
-    for klass in metadata::Versioning.__mro__:
+    for klass in metadata_Versioning.__mro__:
         if "latest" in klass.__dict__:
             descriptor = klass.__dict__["latest"]
             break
     assert isinstance(descriptor, property)
 
+def test_metadata_versioning_has_release():
+    assert hasattr(metadata_Versioning, "release")
+    descriptor = None
+    for klass in metadata_Versioning.__mro__:
+        if "release" in klass.__dict__:
+            descriptor = klass.__dict__["release"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metadata_versioning_has_lastUpdated():
+    assert hasattr(metadata_Versioning, "lastUpdated")
+    descriptor = None
+    for klass in metadata_Versioning.__mro__:
+        if "lastUpdated" in klass.__dict__:
+            descriptor = klass.__dict__["lastUpdated"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metadata::metadata_is_not_abstract():
-    assert not inspect.isabstract(metadata::MetaData)
+
+def test_metadata_metadata_is_not_abstract():
+    assert not inspect.isabstract(metadata_MetaData)
 
 
-def test_metadata::metadata_constructor_exists():
-    assert callable(metadata::MetaData.__init__)
+def test_metadata_metadata_constructor_exists():
+    assert callable(metadata_MetaData.__init__)
 
 
-def test_metadata::metadata_constructor_args():
-    sig = inspect.signature(metadata::MetaData.__init__)
+def test_metadata_metadata_constructor_args():
+    sig = inspect.signature(metadata_MetaData.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
-    assert "groupId" in params, "Missing parameter 'groupId'"
     assert "artifactId" in params, "Missing parameter 'artifactId'"
+    assert "groupId" in params, "Missing parameter 'groupId'"
 
-def test_metadata::metadata_has_version():
-    assert hasattr(metadata::MetaData, "version")
+def test_metadata_metadata_has_version():
+    assert hasattr(metadata_MetaData, "version")
     descriptor = None
-    for klass in metadata::MetaData.__mro__:
+    for klass in metadata_MetaData.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_metadata::metadata_has_groupId():
-    assert hasattr(metadata::MetaData, "groupId")
+def test_metadata_metadata_has_artifactId():
+    assert hasattr(metadata_MetaData, "artifactId")
     descriptor = None
-    for klass in metadata::MetaData.__mro__:
-        if "groupId" in klass.__dict__:
-            descriptor = klass.__dict__["groupId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metadata::metadata_has_artifactId():
-    assert hasattr(metadata::MetaData, "artifactId")
-    descriptor = None
-    for klass in metadata::MetaData.__mro__:
+    for klass in metadata_MetaData.__mro__:
         if "artifactId" in klass.__dict__:
             descriptor = klass.__dict__["artifactId"]
             break
     assert isinstance(descriptor, property)
 
+def test_metadata_metadata_has_groupId():
+    assert hasattr(metadata_MetaData, "groupId")
+    descriptor = None
+    for klass in metadata_MetaData.__mro__:
+        if "groupId" in klass.__dict__:
+            descriptor = klass.__dict__["groupId"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metadata::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(metadata::EStringToStringMapEntry)
+
+def test_metadata_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(metadata_EStringToStringMapEntry)
 
 
-def test_metadata::estringtostringmapentry_constructor_exists():
-    assert callable(metadata::EStringToStringMapEntry.__init__)
+def test_metadata_estringtostringmapentry_constructor_exists():
+    assert callable(metadata_EStringToStringMapEntry.__init__)
 
 
-def test_metadata::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(metadata::EStringToStringMapEntry.__init__)
+def test_metadata_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(metadata_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metadata::documentroot_is_not_abstract():
-    assert not inspect.isabstract(metadata::DocumentRoot)
+def test_metadata_documentroot_is_not_abstract():
+    assert not inspect.isabstract(metadata_DocumentRoot)
 
 
-def test_metadata::documentroot_constructor_exists():
-    assert callable(metadata::DocumentRoot.__init__)
+def test_metadata_documentroot_constructor_exists():
+    assert callable(metadata_DocumentRoot.__init__)
 
 
-def test_metadata::documentroot_constructor_args():
-    sig = inspect.signature(metadata::DocumentRoot.__init__)
+def test_metadata_documentroot_constructor_args():
+    sig = inspect.signature(metadata_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_metadata::documentroot_has_mixed():
-    assert hasattr(metadata::DocumentRoot, "mixed")
+def test_metadata_documentroot_has_mixed():
+    assert hasattr(metadata_DocumentRoot, "mixed")
     descriptor = None
-    for klass in metadata::DocumentRoot.__mro__:
+    for klass in metadata_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -179,147 +179,123 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-metadata::Versions_strategy = st.builds(
-    metadata::Versions,
+metadata_Versions_strategy = st.builds(
+    metadata_Versions,
     version=
         safe_text
 )
-metadata::Versioning_strategy = st.builds(
-    metadata::Versioning,
+metadata_Versioning_strategy = st.builds(
+    metadata_Versioning,
+    latest=
+        safe_text,
     release=
         safe_text,
     lastUpdated=
-        safe_text,
-    latest=
         safe_text
 )
-metadata::MetaData_strategy = st.builds(
-    metadata::MetaData,
+metadata_MetaData_strategy = st.builds(
+    metadata_MetaData,
     version=
         safe_text,
-    groupId=
-        safe_text,
     artifactId=
+        safe_text,
+    groupId=
         safe_text
 )
-metadata::EStringToStringMapEntry_strategy = st.builds(
-    metadata::EStringToStringMapEntry,
+metadata_EStringToStringMapEntry_strategy = st.builds(
+    metadata_EStringToStringMapEntry,
 )
-metadata::DocumentRoot_strategy = st.builds(
-    metadata::DocumentRoot,
+metadata_DocumentRoot_strategy = st.builds(
+    metadata_DocumentRoot,
     mixed=
         safe_text
 )
 
-@given(instance=metadata::Versions_strategy)
+@given(instance=metadata_Versions_strategy)
 @settings(max_examples=50)
-def test_metadata::versions_instantiation(instance):
-    assert isinstance(instance, metadata::Versions)
-
-@given(instance=metadata::Versions_strategy)
-def test_metadata::versions_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_metadata_versions_instantiation(instance):
+    assert isinstance(instance, metadata_Versions)
 
 
-@given(instance=metadata::Versions_strategy)
-def test_metadata::versions_version_setter(instance):
+
+@given(instance=metadata_Versions_strategy)
+def test_metadata_versions_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=metadata::Versioning_strategy)
+@given(instance=metadata_Versioning_strategy)
 @settings(max_examples=50)
-def test_metadata::versioning_instantiation(instance):
-    assert isinstance(instance, metadata::Versioning)
-
-@given(instance=metadata::Versioning_strategy)
-def test_metadata::versioning_release_type(instance):
-    assert isinstance(instance.release, str)
+def test_metadata_versioning_instantiation(instance):
+    assert isinstance(instance, metadata_Versioning)
 
 
-@given(instance=metadata::Versioning_strategy)
-def test_metadata::versioning_release_setter(instance):
-    original = instance.release
-    instance.release = original
-    assert instance.release == original
 
-@given(instance=metadata::Versioning_strategy)
-def test_metadata::versioning_lastUpdated_type(instance):
-    assert isinstance(instance.lastUpdated, str)
-
-
-@given(instance=metadata::Versioning_strategy)
-def test_metadata::versioning_lastUpdated_setter(instance):
-    original = instance.lastUpdated
-    instance.lastUpdated = original
-    assert instance.lastUpdated == original
-
-@given(instance=metadata::Versioning_strategy)
-def test_metadata::versioning_latest_type(instance):
-    assert isinstance(instance.latest, str)
-
-
-@given(instance=metadata::Versioning_strategy)
-def test_metadata::versioning_latest_setter(instance):
+@given(instance=metadata_Versioning_strategy)
+def test_metadata_versioning_latest_setter(instance):
     original = instance.latest
     instance.latest = original
     assert instance.latest == original
 
-@given(instance=metadata::MetaData_strategy)
+
+
+@given(instance=metadata_Versioning_strategy)
+def test_metadata_versioning_release_setter(instance):
+    original = instance.release
+    instance.release = original
+    assert instance.release == original
+
+
+
+@given(instance=metadata_Versioning_strategy)
+def test_metadata_versioning_lastUpdated_setter(instance):
+    original = instance.lastUpdated
+    instance.lastUpdated = original
+    assert instance.lastUpdated == original
+
+@given(instance=metadata_MetaData_strategy)
 @settings(max_examples=50)
-def test_metadata::metadata_instantiation(instance):
-    assert isinstance(instance, metadata::MetaData)
-
-@given(instance=metadata::MetaData_strategy)
-def test_metadata::metadata_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_metadata_metadata_instantiation(instance):
+    assert isinstance(instance, metadata_MetaData)
 
 
-@given(instance=metadata::MetaData_strategy)
-def test_metadata::metadata_version_setter(instance):
+
+@given(instance=metadata_MetaData_strategy)
+def test_metadata_metadata_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=metadata::MetaData_strategy)
-def test_metadata::metadata_groupId_type(instance):
-    assert isinstance(instance.groupId, str)
 
 
-@given(instance=metadata::MetaData_strategy)
-def test_metadata::metadata_groupId_setter(instance):
-    original = instance.groupId
-    instance.groupId = original
-    assert instance.groupId == original
-
-@given(instance=metadata::MetaData_strategy)
-def test_metadata::metadata_artifactId_type(instance):
-    assert isinstance(instance.artifactId, str)
-
-
-@given(instance=metadata::MetaData_strategy)
-def test_metadata::metadata_artifactId_setter(instance):
+@given(instance=metadata_MetaData_strategy)
+def test_metadata_metadata_artifactId_setter(instance):
     original = instance.artifactId
     instance.artifactId = original
     assert instance.artifactId == original
 
-@given(instance=metadata::EStringToStringMapEntry_strategy)
+
+
+@given(instance=metadata_MetaData_strategy)
+def test_metadata_metadata_groupId_setter(instance):
+    original = instance.groupId
+    instance.groupId = original
+    assert instance.groupId == original
+
+@given(instance=metadata_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_metadata::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, metadata::EStringToStringMapEntry)
+def test_metadata_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, metadata_EStringToStringMapEntry)
 
-@given(instance=metadata::DocumentRoot_strategy)
+@given(instance=metadata_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_metadata::documentroot_instantiation(instance):
-    assert isinstance(instance, metadata::DocumentRoot)
-
-@given(instance=metadata::DocumentRoot_strategy)
-def test_metadata::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_metadata_documentroot_instantiation(instance):
+    assert isinstance(instance, metadata_DocumentRoot)
 
 
-@given(instance=metadata::DocumentRoot_strategy)
-def test_metadata::documentroot_mixed_setter(instance):
+
+@given(instance=metadata_DocumentRoot_strategy)
+def test_metadata_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original

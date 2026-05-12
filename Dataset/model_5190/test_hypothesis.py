@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    A,
-    diamon::B,
-    diamon::A,
+from python_code import (
+    diamon_A,
     C,
     B,
-    diamon::D,
-    diamon::C,
+    diamon_D,
+    A,
+    diamon_C,
+    diamon_B,
 )
 
 # =============================================================================
@@ -21,44 +21,16 @@ from classes import (
 
 
 
-def test_a_is_not_abstract():
-    assert not inspect.isabstract(A)
+def test_diamon_a_is_not_abstract():
+    assert not inspect.isabstract(diamon_A)
 
 
-def test_a_constructor_exists():
-    assert callable(A.__init__)
+def test_diamon_a_constructor_exists():
+    assert callable(diamon_A.__init__)
 
 
-def test_a_constructor_args():
-    sig = inspect.signature(A.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diamon::b_is_not_abstract():
-    assert not inspect.isabstract(diamon::B)
-
-
-def test_diamon::b_constructor_exists():
-    assert callable(diamon::B.__init__)
-
-
-def test_diamon::b_constructor_args():
-    sig = inspect.signature(diamon::B.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diamon::a_is_not_abstract():
-    assert not inspect.isabstract(diamon::A)
-
-
-def test_diamon::a_constructor_exists():
-    assert callable(diamon::A.__init__)
-
-
-def test_diamon::a_constructor_args():
-    sig = inspect.signature(diamon::A.__init__)
+def test_diamon_a_constructor_args():
+    sig = inspect.signature(diamon_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -91,30 +63,58 @@ def test_b_constructor_args():
 
 
 
-def test_diamon::d_is_not_abstract():
-    assert not inspect.isabstract(diamon::D)
+def test_diamon_d_is_not_abstract():
+    assert not inspect.isabstract(diamon_D)
 
 
-def test_diamon::d_constructor_exists():
-    assert callable(diamon::D.__init__)
+def test_diamon_d_constructor_exists():
+    assert callable(diamon_D.__init__)
 
 
-def test_diamon::d_constructor_args():
-    sig = inspect.signature(diamon::D.__init__)
+def test_diamon_d_constructor_args():
+    sig = inspect.signature(diamon_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diamon::c_is_not_abstract():
-    assert not inspect.isabstract(diamon::C)
+def test_a_is_not_abstract():
+    assert not inspect.isabstract(A)
 
 
-def test_diamon::c_constructor_exists():
-    assert callable(diamon::C.__init__)
+def test_a_constructor_exists():
+    assert callable(A.__init__)
 
 
-def test_diamon::c_constructor_args():
-    sig = inspect.signature(diamon::C.__init__)
+def test_a_constructor_args():
+    sig = inspect.signature(A.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diamon_c_is_not_abstract():
+    assert not inspect.isabstract(diamon_C)
+
+
+def test_diamon_c_constructor_exists():
+    assert callable(diamon_C.__init__)
+
+
+def test_diamon_c_constructor_args():
+    sig = inspect.signature(diamon_C.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diamon_b_is_not_abstract():
+    assert not inspect.isabstract(diamon_B)
+
+
+def test_diamon_b_constructor_exists():
+    assert callable(diamon_B.__init__)
+
+
+def test_diamon_b_constructor_args():
+    sig = inspect.signature(diamon_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,14 +129,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-A_strategy = st.builds(
-    A,
-)
-diamon::B_strategy = st.builds(
-    diamon::B,
-)
-diamon::A_strategy = st.builds(
-    diamon::A,
+diamon_A_strategy = st.builds(
+    diamon_A,
 )
 C_strategy = st.builds(
     C,
@@ -144,27 +138,23 @@ C_strategy = st.builds(
 B_strategy = st.builds(
     B,
 )
-diamon::D_strategy = st.builds(
-    diamon::D,
+diamon_D_strategy = st.builds(
+    diamon_D,
 )
-diamon::C_strategy = st.builds(
-    diamon::C,
+A_strategy = st.builds(
+    A,
+)
+diamon_C_strategy = st.builds(
+    diamon_C,
+)
+diamon_B_strategy = st.builds(
+    diamon_B,
 )
 
-@given(instance=A_strategy)
+@given(instance=diamon_A_strategy)
 @settings(max_examples=50)
-def test_a_instantiation(instance):
-    assert isinstance(instance, A)
-
-@given(instance=diamon::B_strategy)
-@settings(max_examples=50)
-def test_diamon::b_instantiation(instance):
-    assert isinstance(instance, diamon::B)
-
-@given(instance=diamon::A_strategy)
-@settings(max_examples=50)
-def test_diamon::a_instantiation(instance):
-    assert isinstance(instance, diamon::A)
+def test_diamon_a_instantiation(instance):
+    assert isinstance(instance, diamon_A)
 
 @given(instance=C_strategy)
 @settings(max_examples=50)
@@ -176,12 +166,22 @@ def test_c_instantiation(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=diamon::D_strategy)
+@given(instance=diamon_D_strategy)
 @settings(max_examples=50)
-def test_diamon::d_instantiation(instance):
-    assert isinstance(instance, diamon::D)
+def test_diamon_d_instantiation(instance):
+    assert isinstance(instance, diamon_D)
 
-@given(instance=diamon::C_strategy)
+@given(instance=A_strategy)
 @settings(max_examples=50)
-def test_diamon::c_instantiation(instance):
-    assert isinstance(instance, diamon::C)
+def test_a_instantiation(instance):
+    assert isinstance(instance, A)
+
+@given(instance=diamon_C_strategy)
+@settings(max_examples=50)
+def test_diamon_c_instantiation(instance):
+    assert isinstance(instance, diamon_C)
+
+@given(instance=diamon_B_strategy)
+@settings(max_examples=50)
+def test_diamon_b_instantiation(instance):
+    assert isinstance(instance, diamon_B)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    eCoreContainemntTree::EObject,
-    eCoreContainemntTree::Node,
+from python_code import (
+    eCoreContainemntTree_EObject,
+    eCoreContainemntTree_Node,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_ecorecontainemnttree::eobject_is_not_abstract():
-    assert not inspect.isabstract(eCoreContainemntTree::EObject)
+def test_ecorecontainemnttree_eobject_is_not_abstract():
+    assert not inspect.isabstract(eCoreContainemntTree_EObject)
 
 
-def test_ecorecontainemnttree::eobject_constructor_exists():
-    assert callable(eCoreContainemntTree::EObject.__init__)
+def test_ecorecontainemnttree_eobject_constructor_exists():
+    assert callable(eCoreContainemntTree_EObject.__init__)
 
 
-def test_ecorecontainemnttree::eobject_constructor_args():
-    sig = inspect.signature(eCoreContainemntTree::EObject.__init__)
+def test_ecorecontainemnttree_eobject_constructor_args():
+    sig = inspect.signature(eCoreContainemntTree_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ecorecontainemnttree::node_is_not_abstract():
-    assert not inspect.isabstract(eCoreContainemntTree::Node)
+def test_ecorecontainemnttree_node_is_not_abstract():
+    assert not inspect.isabstract(eCoreContainemntTree_Node)
 
 
-def test_ecorecontainemnttree::node_constructor_exists():
-    assert callable(eCoreContainemntTree::Node.__init__)
+def test_ecorecontainemnttree_node_constructor_exists():
+    assert callable(eCoreContainemntTree_Node.__init__)
 
 
-def test_ecorecontainemnttree::node_constructor_args():
-    sig = inspect.signature(eCoreContainemntTree::Node.__init__)
+def test_ecorecontainemnttree_node_constructor_args():
+    sig = inspect.signature(eCoreContainemntTree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecorecontainemnttree::node_has_name():
-    assert hasattr(eCoreContainemntTree::Node, "name")
+def test_ecorecontainemnttree_node_has_name():
+    assert hasattr(eCoreContainemntTree_Node, "name")
     descriptor = None
-    for klass in eCoreContainemntTree::Node.__mro__:
+    for klass in eCoreContainemntTree_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-eCoreContainemntTree::EObject_strategy = st.builds(
-    eCoreContainemntTree::EObject,
+eCoreContainemntTree_EObject_strategy = st.builds(
+    eCoreContainemntTree_EObject,
 )
-eCoreContainemntTree::Node_strategy = st.builds(
-    eCoreContainemntTree::Node,
+eCoreContainemntTree_Node_strategy = st.builds(
+    eCoreContainemntTree_Node,
     name=
         safe_text
 )
 
-@given(instance=eCoreContainemntTree::EObject_strategy)
+@given(instance=eCoreContainemntTree_EObject_strategy)
 @settings(max_examples=50)
-def test_ecorecontainemnttree::eobject_instantiation(instance):
-    assert isinstance(instance, eCoreContainemntTree::EObject)
+def test_ecorecontainemnttree_eobject_instantiation(instance):
+    assert isinstance(instance, eCoreContainemntTree_EObject)
 
-@given(instance=eCoreContainemntTree::Node_strategy)
+@given(instance=eCoreContainemntTree_Node_strategy)
 @settings(max_examples=50)
-def test_ecorecontainemnttree::node_instantiation(instance):
-    assert isinstance(instance, eCoreContainemntTree::Node)
-
-@given(instance=eCoreContainemntTree::Node_strategy)
-def test_ecorecontainemnttree::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecorecontainemnttree_node_instantiation(instance):
+    assert isinstance(instance, eCoreContainemntTree_Node)
 
 
-@given(instance=eCoreContainemntTree::Node_strategy)
-def test_ecorecontainemnttree::node_name_setter(instance):
+
+@given(instance=eCoreContainemntTree_Node_strategy)
+def test_ecorecontainemnttree_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

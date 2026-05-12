@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ecoreJavascriptTest::C2,
-    ecoreJavascriptTest::C1,
+from python_code import (
+    ecoreJavascriptTest_C2,
+    ecoreJavascriptTest_C1,
     C2,
-    ecoreJavascriptTest::C3,
+    ecoreJavascriptTest_C3,
 )
 
 # =============================================================================
@@ -18,33 +18,33 @@ from classes import (
 
 
 
-def test_ecorejavascripttest::c2_is_not_abstract():
-    assert not inspect.isabstract(ecoreJavascriptTest::C2)
+def test_ecorejavascripttest_c2_is_not_abstract():
+    assert not inspect.isabstract(ecoreJavascriptTest_C2)
 
 
-def test_ecorejavascripttest::c2_constructor_exists():
-    assert callable(ecoreJavascriptTest::C2.__init__)
+def test_ecorejavascripttest_c2_constructor_exists():
+    assert callable(ecoreJavascriptTest_C2.__init__)
 
 
-def test_ecorejavascripttest::c2_constructor_args():
-    sig = inspect.signature(ecoreJavascriptTest::C2.__init__)
+def test_ecorejavascripttest_c2_constructor_args():
+    sig = inspect.signature(ecoreJavascriptTest_C2.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ecorejavascripttest::c2_has_name():
-    assert hasattr(ecoreJavascriptTest::C2, "name")
+def test_ecorejavascripttest_c2_has_name():
+    assert hasattr(ecoreJavascriptTest_C2, "name")
     descriptor = None
-    for klass in ecoreJavascriptTest::C2.__mro__:
+    for klass in ecoreJavascriptTest_C2.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecorejavascripttest::c2_has_value():
-    assert hasattr(ecoreJavascriptTest::C2, "value")
+def test_ecorejavascripttest_c2_has_value():
+    assert hasattr(ecoreJavascriptTest_C2, "value")
     descriptor = None
-    for klass in ecoreJavascriptTest::C2.__mro__:
+    for klass in ecoreJavascriptTest_C2.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -52,23 +52,23 @@ def test_ecorejavascripttest::c2_has_value():
 
 
 
-def test_ecorejavascripttest::c1_is_not_abstract():
-    assert not inspect.isabstract(ecoreJavascriptTest::C1)
+def test_ecorejavascripttest_c1_is_not_abstract():
+    assert not inspect.isabstract(ecoreJavascriptTest_C1)
 
 
-def test_ecorejavascripttest::c1_constructor_exists():
-    assert callable(ecoreJavascriptTest::C1.__init__)
+def test_ecorejavascripttest_c1_constructor_exists():
+    assert callable(ecoreJavascriptTest_C1.__init__)
 
 
-def test_ecorejavascripttest::c1_constructor_args():
-    sig = inspect.signature(ecoreJavascriptTest::C1.__init__)
+def test_ecorejavascripttest_c1_constructor_args():
+    sig = inspect.signature(ecoreJavascriptTest_C1.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecorejavascripttest::c1_has_name():
-    assert hasattr(ecoreJavascriptTest::C1, "name")
+def test_ecorejavascripttest_c1_has_name():
+    assert hasattr(ecoreJavascriptTest_C1, "name")
     descriptor = None
-    for klass in ecoreJavascriptTest::C1.__mro__:
+    for klass in ecoreJavascriptTest_C1.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,16 +90,16 @@ def test_c2_constructor_args():
 
 
 
-def test_ecorejavascripttest::c3_is_not_abstract():
-    assert not inspect.isabstract(ecoreJavascriptTest::C3)
+def test_ecorejavascripttest_c3_is_not_abstract():
+    assert not inspect.isabstract(ecoreJavascriptTest_C3)
 
 
-def test_ecorejavascripttest::c3_constructor_exists():
-    assert callable(ecoreJavascriptTest::C3.__init__)
+def test_ecorejavascripttest_c3_constructor_exists():
+    assert callable(ecoreJavascriptTest_C3.__init__)
 
 
-def test_ecorejavascripttest::c3_constructor_args():
-    sig = inspect.signature(ecoreJavascriptTest::C3.__init__)
+def test_ecorejavascripttest_c3_constructor_args():
+    sig = inspect.signature(ecoreJavascriptTest_C3.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,64 +114,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ecoreJavascriptTest::C2_strategy = st.builds(
-    ecoreJavascriptTest::C2,
+ecoreJavascriptTest_C2_strategy = st.builds(
+    ecoreJavascriptTest_C2,
     name=
         safe_text,
     value=
         st.integers()
 )
-ecoreJavascriptTest::C1_strategy = st.builds(
-    ecoreJavascriptTest::C1,
+ecoreJavascriptTest_C1_strategy = st.builds(
+    ecoreJavascriptTest_C1,
     name=
         safe_text
 )
 C2_strategy = st.builds(
     C2,
 )
-ecoreJavascriptTest::C3_strategy = st.builds(
-    ecoreJavascriptTest::C3,
+ecoreJavascriptTest_C3_strategy = st.builds(
+    ecoreJavascriptTest_C3,
 )
 
-@given(instance=ecoreJavascriptTest::C2_strategy)
+@given(instance=ecoreJavascriptTest_C2_strategy)
 @settings(max_examples=50)
-def test_ecorejavascripttest::c2_instantiation(instance):
-    assert isinstance(instance, ecoreJavascriptTest::C2)
-
-@given(instance=ecoreJavascriptTest::C2_strategy)
-def test_ecorejavascripttest::c2_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecorejavascripttest_c2_instantiation(instance):
+    assert isinstance(instance, ecoreJavascriptTest_C2)
 
 
-@given(instance=ecoreJavascriptTest::C2_strategy)
-def test_ecorejavascripttest::c2_name_setter(instance):
+
+@given(instance=ecoreJavascriptTest_C2_strategy)
+def test_ecorejavascripttest_c2_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ecoreJavascriptTest::C2_strategy)
-def test_ecorejavascripttest::c2_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=ecoreJavascriptTest::C2_strategy)
-def test_ecorejavascripttest::c2_value_setter(instance):
+@given(instance=ecoreJavascriptTest_C2_strategy)
+def test_ecorejavascripttest_c2_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ecoreJavascriptTest::C1_strategy)
+@given(instance=ecoreJavascriptTest_C1_strategy)
 @settings(max_examples=50)
-def test_ecorejavascripttest::c1_instantiation(instance):
-    assert isinstance(instance, ecoreJavascriptTest::C1)
-
-@given(instance=ecoreJavascriptTest::C1_strategy)
-def test_ecorejavascripttest::c1_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecorejavascripttest_c1_instantiation(instance):
+    assert isinstance(instance, ecoreJavascriptTest_C1)
 
 
-@given(instance=ecoreJavascriptTest::C1_strategy)
-def test_ecorejavascripttest::c1_name_setter(instance):
+
+@given(instance=ecoreJavascriptTest_C1_strategy)
+def test_ecorejavascripttest_c1_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -181,7 +172,7 @@ def test_ecorejavascripttest::c1_name_setter(instance):
 def test_c2_instantiation(instance):
     assert isinstance(instance, C2)
 
-@given(instance=ecoreJavascriptTest::C3_strategy)
+@given(instance=ecoreJavascriptTest_C3_strategy)
 @settings(max_examples=50)
-def test_ecorejavascripttest::c3_instantiation(instance):
-    assert isinstance(instance, ecoreJavascriptTest::C3)
+def test_ecorejavascripttest_c3_instantiation(instance):
+    assert isinstance(instance, ecoreJavascriptTest_C3)

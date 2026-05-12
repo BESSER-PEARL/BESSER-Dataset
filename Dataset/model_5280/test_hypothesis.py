@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BaseContaineeB,
-    MetamodelInheritance2::BaseContaineeC,
-    MetamodelInheritance2::ChildContaineeD,
-    MetamodelInheritance2::ChildB,
+    MetamodelInheritance2_BaseContaineeC,
+    MetamodelInheritance2_ChildContaineeD,
+    MetamodelInheritance2_ChildB,
     BaseContaineeA,
-    MetamodelInheritance2::ChildA,
+    MetamodelInheritance2_ChildA,
 )
 
 # =============================================================================
@@ -34,44 +34,44 @@ def test_basecontaineeb_constructor_args():
 
 
 
-def test_metamodelinheritance2::basecontaineec_is_not_abstract():
-    assert not inspect.isabstract(MetamodelInheritance2::BaseContaineeC)
+def test_metamodelinheritance2_basecontaineec_is_not_abstract():
+    assert not inspect.isabstract(MetamodelInheritance2_BaseContaineeC)
 
 
-def test_metamodelinheritance2::basecontaineec_constructor_exists():
-    assert callable(MetamodelInheritance2::BaseContaineeC.__init__)
+def test_metamodelinheritance2_basecontaineec_constructor_exists():
+    assert callable(MetamodelInheritance2_BaseContaineeC.__init__)
 
 
-def test_metamodelinheritance2::basecontaineec_constructor_args():
-    sig = inspect.signature(MetamodelInheritance2::BaseContaineeC.__init__)
+def test_metamodelinheritance2_basecontaineec_constructor_args():
+    sig = inspect.signature(MetamodelInheritance2_BaseContaineeC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelinheritance2::childcontaineed_is_not_abstract():
-    assert not inspect.isabstract(MetamodelInheritance2::ChildContaineeD)
+def test_metamodelinheritance2_childcontaineed_is_not_abstract():
+    assert not inspect.isabstract(MetamodelInheritance2_ChildContaineeD)
 
 
-def test_metamodelinheritance2::childcontaineed_constructor_exists():
-    assert callable(MetamodelInheritance2::ChildContaineeD.__init__)
+def test_metamodelinheritance2_childcontaineed_constructor_exists():
+    assert callable(MetamodelInheritance2_ChildContaineeD.__init__)
 
 
-def test_metamodelinheritance2::childcontaineed_constructor_args():
-    sig = inspect.signature(MetamodelInheritance2::ChildContaineeD.__init__)
+def test_metamodelinheritance2_childcontaineed_constructor_args():
+    sig = inspect.signature(MetamodelInheritance2_ChildContaineeD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelinheritance2::childb_is_not_abstract():
-    assert not inspect.isabstract(MetamodelInheritance2::ChildB)
+def test_metamodelinheritance2_childb_is_not_abstract():
+    assert not inspect.isabstract(MetamodelInheritance2_ChildB)
 
 
-def test_metamodelinheritance2::childb_constructor_exists():
-    assert callable(MetamodelInheritance2::ChildB.__init__)
+def test_metamodelinheritance2_childb_constructor_exists():
+    assert callable(MetamodelInheritance2_ChildB.__init__)
 
 
-def test_metamodelinheritance2::childb_constructor_args():
-    sig = inspect.signature(MetamodelInheritance2::ChildB.__init__)
+def test_metamodelinheritance2_childb_constructor_args():
+    sig = inspect.signature(MetamodelInheritance2_ChildB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,16 +90,16 @@ def test_basecontaineea_constructor_args():
 
 
 
-def test_metamodelinheritance2::childa_is_not_abstract():
-    assert not inspect.isabstract(MetamodelInheritance2::ChildA)
+def test_metamodelinheritance2_childa_is_not_abstract():
+    assert not inspect.isabstract(MetamodelInheritance2_ChildA)
 
 
-def test_metamodelinheritance2::childa_constructor_exists():
-    assert callable(MetamodelInheritance2::ChildA.__init__)
+def test_metamodelinheritance2_childa_constructor_exists():
+    assert callable(MetamodelInheritance2_ChildA.__init__)
 
 
-def test_metamodelinheritance2::childa_constructor_args():
-    sig = inspect.signature(MetamodelInheritance2::ChildA.__init__)
+def test_metamodelinheritance2_childa_constructor_args():
+    sig = inspect.signature(MetamodelInheritance2_ChildA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,20 +117,20 @@ safe_text = st.text(
 BaseContaineeB_strategy = st.builds(
     BaseContaineeB,
 )
-MetamodelInheritance2::BaseContaineeC_strategy = st.builds(
-    MetamodelInheritance2::BaseContaineeC,
+MetamodelInheritance2_BaseContaineeC_strategy = st.builds(
+    MetamodelInheritance2_BaseContaineeC,
 )
-MetamodelInheritance2::ChildContaineeD_strategy = st.builds(
-    MetamodelInheritance2::ChildContaineeD,
+MetamodelInheritance2_ChildContaineeD_strategy = st.builds(
+    MetamodelInheritance2_ChildContaineeD,
 )
-MetamodelInheritance2::ChildB_strategy = st.builds(
-    MetamodelInheritance2::ChildB,
+MetamodelInheritance2_ChildB_strategy = st.builds(
+    MetamodelInheritance2_ChildB,
 )
 BaseContaineeA_strategy = st.builds(
     BaseContaineeA,
 )
-MetamodelInheritance2::ChildA_strategy = st.builds(
-    MetamodelInheritance2::ChildA,
+MetamodelInheritance2_ChildA_strategy = st.builds(
+    MetamodelInheritance2_ChildA,
 )
 
 @given(instance=BaseContaineeB_strategy)
@@ -138,27 +138,27 @@ MetamodelInheritance2::ChildA_strategy = st.builds(
 def test_basecontaineeb_instantiation(instance):
     assert isinstance(instance, BaseContaineeB)
 
-@given(instance=MetamodelInheritance2::BaseContaineeC_strategy)
+@given(instance=MetamodelInheritance2_BaseContaineeC_strategy)
 @settings(max_examples=50)
-def test_metamodelinheritance2::basecontaineec_instantiation(instance):
-    assert isinstance(instance, MetamodelInheritance2::BaseContaineeC)
+def test_metamodelinheritance2_basecontaineec_instantiation(instance):
+    assert isinstance(instance, MetamodelInheritance2_BaseContaineeC)
 
-@given(instance=MetamodelInheritance2::ChildContaineeD_strategy)
+@given(instance=MetamodelInheritance2_ChildContaineeD_strategy)
 @settings(max_examples=50)
-def test_metamodelinheritance2::childcontaineed_instantiation(instance):
-    assert isinstance(instance, MetamodelInheritance2::ChildContaineeD)
+def test_metamodelinheritance2_childcontaineed_instantiation(instance):
+    assert isinstance(instance, MetamodelInheritance2_ChildContaineeD)
 
-@given(instance=MetamodelInheritance2::ChildB_strategy)
+@given(instance=MetamodelInheritance2_ChildB_strategy)
 @settings(max_examples=50)
-def test_metamodelinheritance2::childb_instantiation(instance):
-    assert isinstance(instance, MetamodelInheritance2::ChildB)
+def test_metamodelinheritance2_childb_instantiation(instance):
+    assert isinstance(instance, MetamodelInheritance2_ChildB)
 
 @given(instance=BaseContaineeA_strategy)
 @settings(max_examples=50)
 def test_basecontaineea_instantiation(instance):
     assert isinstance(instance, BaseContaineeA)
 
-@given(instance=MetamodelInheritance2::ChildA_strategy)
+@given(instance=MetamodelInheritance2_ChildA_strategy)
 @settings(max_examples=50)
-def test_metamodelinheritance2::childa_instantiation(instance):
-    assert isinstance(instance, MetamodelInheritance2::ChildA)
+def test_metamodelinheritance2_childa_instantiation(instance):
+    assert isinstance(instance, MetamodelInheritance2_ChildA)

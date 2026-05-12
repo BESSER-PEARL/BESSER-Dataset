@@ -3,42 +3,42 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DSimpleEdge,
-    diagraph::DNavigationEdge,
-    diagraph::DLineEdge,
-    diagraph::EAttribute,
+    diagraph_DNavigationEdge,
+    diagraph_DLineEdge,
+    diagraph_EAttribute,
     DNode,
     DNestedEdge,
-    diagraph::DAffixedEdge,
-    diagraph::DCompartmentEdge,
+    diagraph_DAffixedEdge,
+    diagraph_DCompartmentEdge,
     DEdge,
-    diagraph::DSimpleEdge,
+    diagraph_DSimpleEdge,
     DLineEdge,
-    diagraph::DReference,
+    diagraph_DReference,
     DOwnedEdge,
-    diagraph::DNestedEdge,
-    diagraph::DContainment,
-    diagraph::DViewNavigation,
+    diagraph_DNestedEdge,
+    diagraph_DContainment,
+    diagraph_DViewNavigation,
     DOwnedElement,
-    diagraph::DOwnedEdge,
+    diagraph_DOwnedEdge,
     DLabeledElement,
-    diagraph::DLabeledEdge,
-    diagraph::DGeneric,
-    diagraph::DGraph,
-    diagraph::ENamedElement,
-    diagraph::DGraphElement,
-    diagraph::EReference,
-    diagraph::DNode,
-    diagraph::DOwnedElement,
-    diagraph::DLabel,
-    diagraph::EClass,
-    diagraph::DPointOfView,
+    diagraph_DGeneric,
+    diagraph_DLabeledEdge,
+    diagraph_DGraph,
+    diagraph_ENamedElement,
+    diagraph_DGraphElement,
+    diagraph_EReference,
+    diagraph_DNode,
+    diagraph_DOwnedElement,
+    diagraph_DLabel,
+    diagraph_EClass,
+    diagraph_DPointOfView,
     DGraphElement,
-    diagraph::DLabeledElement,
-    diagraph::DEdge,
+    diagraph_DLabeledElement,
+    diagraph_DEdge,
     DShape,
 )
 
@@ -62,37 +62,37 @@ def test_dsimpleedge_constructor_args():
 
 
 
-def test_diagraph::dnavigationedge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DNavigationEdge)
+def test_diagraph_dnavigationedge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DNavigationEdge)
 
 
-def test_diagraph::dnavigationedge_constructor_exists():
-    assert callable(diagraph::DNavigationEdge.__init__)
+def test_diagraph_dnavigationedge_constructor_exists():
+    assert callable(diagraph_DNavigationEdge.__init__)
 
 
-def test_diagraph::dnavigationedge_constructor_args():
-    sig = inspect.signature(diagraph::DNavigationEdge.__init__)
+def test_diagraph_dnavigationedge_constructor_args():
+    sig = inspect.signature(diagraph_DNavigationEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dlineedge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DLineEdge)
+def test_diagraph_dlineedge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DLineEdge)
 
 
-def test_diagraph::dlineedge_constructor_exists():
-    assert callable(diagraph::DLineEdge.__init__)
+def test_diagraph_dlineedge_constructor_exists():
+    assert callable(diagraph_DLineEdge.__init__)
 
 
-def test_diagraph::dlineedge_constructor_args():
-    sig = inspect.signature(diagraph::DLineEdge.__init__)
+def test_diagraph_dlineedge_constructor_args():
+    sig = inspect.signature(diagraph_DLineEdge.__init__)
     params = list(sig.parameters.keys())
     assert "arrows" in params, "Missing parameter 'arrows'"
 
-def test_diagraph::dlineedge_has_arrows():
-    assert hasattr(diagraph::DLineEdge, "arrows")
+def test_diagraph_dlineedge_has_arrows():
+    assert hasattr(diagraph_DLineEdge, "arrows")
     descriptor = None
-    for klass in diagraph::DLineEdge.__mro__:
+    for klass in diagraph_DLineEdge.__mro__:
         if "arrows" in klass.__dict__:
             descriptor = klass.__dict__["arrows"]
             break
@@ -100,16 +100,16 @@ def test_diagraph::dlineedge_has_arrows():
 
 
 
-def test_diagraph::eattribute_is_not_abstract():
-    assert not inspect.isabstract(diagraph::EAttribute)
+def test_diagraph_eattribute_is_not_abstract():
+    assert not inspect.isabstract(diagraph_EAttribute)
 
 
-def test_diagraph::eattribute_constructor_exists():
-    assert callable(diagraph::EAttribute.__init__)
+def test_diagraph_eattribute_constructor_exists():
+    assert callable(diagraph_EAttribute.__init__)
 
 
-def test_diagraph::eattribute_constructor_args():
-    sig = inspect.signature(diagraph::EAttribute.__init__)
+def test_diagraph_eattribute_constructor_args():
+    sig = inspect.signature(diagraph_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -142,47 +142,47 @@ def test_dnestededge_constructor_args():
 
 
 
-def test_diagraph::daffixededge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DAffixedEdge)
+def test_diagraph_daffixededge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DAffixedEdge)
 
 
-def test_diagraph::daffixededge_constructor_exists():
-    assert callable(diagraph::DAffixedEdge.__init__)
+def test_diagraph_daffixededge_constructor_exists():
+    assert callable(diagraph_DAffixedEdge.__init__)
 
 
-def test_diagraph::daffixededge_constructor_args():
-    sig = inspect.signature(diagraph::DAffixedEdge.__init__)
+def test_diagraph_daffixededge_constructor_args():
+    sig = inspect.signature(diagraph_DAffixedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dcompartmentedge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DCompartmentEdge)
+def test_diagraph_dcompartmentedge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DCompartmentEdge)
 
 
-def test_diagraph::dcompartmentedge_constructor_exists():
-    assert callable(diagraph::DCompartmentEdge.__init__)
+def test_diagraph_dcompartmentedge_constructor_exists():
+    assert callable(diagraph_DCompartmentEdge.__init__)
 
 
-def test_diagraph::dcompartmentedge_constructor_args():
-    sig = inspect.signature(diagraph::DCompartmentEdge.__init__)
+def test_diagraph_dcompartmentedge_constructor_args():
+    sig = inspect.signature(diagraph_DCompartmentEdge.__init__)
     params = list(sig.parameters.keys())
     assert "partitionName" in params, "Missing parameter 'partitionName'"
     assert "depth" in params, "Missing parameter 'depth'"
 
-def test_diagraph::dcompartmentedge_has_partitionName():
-    assert hasattr(diagraph::DCompartmentEdge, "partitionName")
+def test_diagraph_dcompartmentedge_has_partitionName():
+    assert hasattr(diagraph_DCompartmentEdge, "partitionName")
     descriptor = None
-    for klass in diagraph::DCompartmentEdge.__mro__:
+    for klass in diagraph_DCompartmentEdge.__mro__:
         if "partitionName" in klass.__dict__:
             descriptor = klass.__dict__["partitionName"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dcompartmentedge_has_depth():
-    assert hasattr(diagraph::DCompartmentEdge, "depth")
+def test_diagraph_dcompartmentedge_has_depth():
+    assert hasattr(diagraph_DCompartmentEdge, "depth")
     descriptor = None
-    for klass in diagraph::DCompartmentEdge.__mro__:
+    for klass in diagraph_DCompartmentEdge.__mro__:
         if "depth" in klass.__dict__:
             descriptor = klass.__dict__["depth"]
             break
@@ -204,16 +204,16 @@ def test_dedge_constructor_args():
 
 
 
-def test_diagraph::dsimpleedge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DSimpleEdge)
+def test_diagraph_dsimpleedge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DSimpleEdge)
 
 
-def test_diagraph::dsimpleedge_constructor_exists():
-    assert callable(diagraph::DSimpleEdge.__init__)
+def test_diagraph_dsimpleedge_constructor_exists():
+    assert callable(diagraph_DSimpleEdge.__init__)
 
 
-def test_diagraph::dsimpleedge_constructor_args():
-    sig = inspect.signature(diagraph::DSimpleEdge.__init__)
+def test_diagraph_dsimpleedge_constructor_args():
+    sig = inspect.signature(diagraph_DSimpleEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,16 +232,16 @@ def test_dlineedge_constructor_args():
 
 
 
-def test_diagraph::dreference_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DReference)
+def test_diagraph_dreference_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DReference)
 
 
-def test_diagraph::dreference_constructor_exists():
-    assert callable(diagraph::DReference.__init__)
+def test_diagraph_dreference_constructor_exists():
+    assert callable(diagraph_DReference.__init__)
 
 
-def test_diagraph::dreference_constructor_args():
-    sig = inspect.signature(diagraph::DReference.__init__)
+def test_diagraph_dreference_constructor_args():
+    sig = inspect.signature(diagraph_DReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -260,37 +260,37 @@ def test_downededge_constructor_args():
 
 
 
-def test_diagraph::dnestededge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DNestedEdge)
+def test_diagraph_dnestededge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DNestedEdge)
 
 
-def test_diagraph::dnestededge_constructor_exists():
-    assert callable(diagraph::DNestedEdge.__init__)
+def test_diagraph_dnestededge_constructor_exists():
+    assert callable(diagraph_DNestedEdge.__init__)
 
 
-def test_diagraph::dnestededge_constructor_args():
-    sig = inspect.signature(diagraph::DNestedEdge.__init__)
+def test_diagraph_dnestededge_constructor_args():
+    sig = inspect.signature(diagraph_DNestedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dcontainment_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DContainment)
+def test_diagraph_dcontainment_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DContainment)
 
 
-def test_diagraph::dcontainment_constructor_exists():
-    assert callable(diagraph::DContainment.__init__)
+def test_diagraph_dcontainment_constructor_exists():
+    assert callable(diagraph_DContainment.__init__)
 
 
-def test_diagraph::dcontainment_constructor_args():
-    sig = inspect.signature(diagraph::DContainment.__init__)
+def test_diagraph_dcontainment_constructor_args():
+    sig = inspect.signature(diagraph_DContainment.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_diagraph::dcontainment_has_name():
-    assert hasattr(diagraph::DContainment, "name")
+def test_diagraph_dcontainment_has_name():
+    assert hasattr(diagraph_DContainment, "name")
     descriptor = None
-    for klass in diagraph::DContainment.__mro__:
+    for klass in diagraph_DContainment.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -298,23 +298,23 @@ def test_diagraph::dcontainment_has_name():
 
 
 
-def test_diagraph::dviewnavigation_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DViewNavigation)
+def test_diagraph_dviewnavigation_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DViewNavigation)
 
 
-def test_diagraph::dviewnavigation_constructor_exists():
-    assert callable(diagraph::DViewNavigation.__init__)
+def test_diagraph_dviewnavigation_constructor_exists():
+    assert callable(diagraph_DViewNavigation.__init__)
 
 
-def test_diagraph::dviewnavigation_constructor_args():
-    sig = inspect.signature(diagraph::DViewNavigation.__init__)
+def test_diagraph_dviewnavigation_constructor_args():
+    sig = inspect.signature(diagraph_DViewNavigation.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_diagraph::dviewnavigation_has_id():
-    assert hasattr(diagraph::DViewNavigation, "id")
+def test_diagraph_dviewnavigation_has_id():
+    assert hasattr(diagraph_DViewNavigation, "id")
     descriptor = None
-    for klass in diagraph::DViewNavigation.__mro__:
+    for klass in diagraph_DViewNavigation.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -336,16 +336,16 @@ def test_downedelement_constructor_args():
 
 
 
-def test_diagraph::downededge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DOwnedEdge)
+def test_diagraph_downededge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DOwnedEdge)
 
 
-def test_diagraph::downededge_constructor_exists():
-    assert callable(diagraph::DOwnedEdge.__init__)
+def test_diagraph_downededge_constructor_exists():
+    assert callable(diagraph_DOwnedEdge.__init__)
 
 
-def test_diagraph::downededge_constructor_args():
-    sig = inspect.signature(diagraph::DOwnedEdge.__init__)
+def test_diagraph_downededge_constructor_args():
+    sig = inspect.signature(diagraph_DOwnedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -364,129 +364,129 @@ def test_dlabeledelement_constructor_args():
 
 
 
-def test_diagraph::dlabelededge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DLabeledEdge)
+def test_diagraph_dgeneric_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DGeneric)
 
 
-def test_diagraph::dlabelededge_constructor_exists():
-    assert callable(diagraph::DLabeledEdge.__init__)
+def test_diagraph_dgeneric_constructor_exists():
+    assert callable(diagraph_DGeneric.__init__)
 
 
-def test_diagraph::dlabelededge_constructor_args():
-    sig = inspect.signature(diagraph::DLabeledEdge.__init__)
+def test_diagraph_dgeneric_constructor_args():
+    sig = inspect.signature(diagraph_DGeneric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dgeneric_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DGeneric)
+def test_diagraph_dlabelededge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DLabeledEdge)
 
 
-def test_diagraph::dgeneric_constructor_exists():
-    assert callable(diagraph::DGeneric.__init__)
+def test_diagraph_dlabelededge_constructor_exists():
+    assert callable(diagraph_DLabeledEdge.__init__)
 
 
-def test_diagraph::dgeneric_constructor_args():
-    sig = inspect.signature(diagraph::DGeneric.__init__)
+def test_diagraph_dlabelededge_constructor_args():
+    sig = inspect.signature(diagraph_DLabeledEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dgraph_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DGraph)
+def test_diagraph_dgraph_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DGraph)
 
 
-def test_diagraph::dgraph_constructor_exists():
-    assert callable(diagraph::DGraph.__init__)
+def test_diagraph_dgraph_constructor_exists():
+    assert callable(diagraph_DGraph.__init__)
 
 
-def test_diagraph::dgraph_constructor_args():
-    sig = inspect.signature(diagraph::DGraph.__init__)
+def test_diagraph_dgraph_constructor_args():
+    sig = inspect.signature(diagraph_DGraph.__init__)
     params = list(sig.parameters.keys())
-    assert "facade1" in params, "Missing parameter 'facade1'"
     assert "viewName" in params, "Missing parameter 'viewName'"
     assert "facade2" in params, "Missing parameter 'facade2'"
+    assert "facade1" in params, "Missing parameter 'facade1'"
 
-def test_diagraph::dgraph_has_facade1():
-    assert hasattr(diagraph::DGraph, "facade1")
+def test_diagraph_dgraph_has_viewName():
+    assert hasattr(diagraph_DGraph, "viewName")
     descriptor = None
-    for klass in diagraph::DGraph.__mro__:
-        if "facade1" in klass.__dict__:
-            descriptor = klass.__dict__["facade1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagraph::dgraph_has_viewName():
-    assert hasattr(diagraph::DGraph, "viewName")
-    descriptor = None
-    for klass in diagraph::DGraph.__mro__:
+    for klass in diagraph_DGraph.__mro__:
         if "viewName" in klass.__dict__:
             descriptor = klass.__dict__["viewName"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dgraph_has_facade2():
-    assert hasattr(diagraph::DGraph, "facade2")
+def test_diagraph_dgraph_has_facade2():
+    assert hasattr(diagraph_DGraph, "facade2")
     descriptor = None
-    for klass in diagraph::DGraph.__mro__:
+    for klass in diagraph_DGraph.__mro__:
         if "facade2" in klass.__dict__:
             descriptor = klass.__dict__["facade2"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_diagraph::enamedelement_is_not_abstract():
-    assert not inspect.isabstract(diagraph::ENamedElement)
-
-
-def test_diagraph::enamedelement_constructor_exists():
-    assert callable(diagraph::ENamedElement.__init__)
-
-
-def test_diagraph::enamedelement_constructor_args():
-    sig = inspect.signature(diagraph::ENamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagraph::dgraphelement_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DGraphElement)
-
-
-def test_diagraph::dgraphelement_constructor_exists():
-    assert callable(diagraph::DGraphElement.__init__)
-
-
-def test_diagraph::dgraphelement_constructor_args():
-    sig = inspect.signature(diagraph::DGraphElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "icon" in params, "Missing parameter 'icon'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "abztract" in params, "Missing parameter 'abztract'"
-
-def test_diagraph::dgraphelement_has_icon():
-    assert hasattr(diagraph::DGraphElement, "icon")
+def test_diagraph_dgraph_has_facade1():
+    assert hasattr(diagraph_DGraph, "facade1")
     descriptor = None
-    for klass in diagraph::DGraphElement.__mro__:
-        if "icon" in klass.__dict__:
-            descriptor = klass.__dict__["icon"]
+    for klass in diagraph_DGraph.__mro__:
+        if "facade1" in klass.__dict__:
+            descriptor = klass.__dict__["facade1"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dgraphelement_has_name():
-    assert hasattr(diagraph::DGraphElement, "name")
+
+
+def test_diagraph_enamedelement_is_not_abstract():
+    assert not inspect.isabstract(diagraph_ENamedElement)
+
+
+def test_diagraph_enamedelement_constructor_exists():
+    assert callable(diagraph_ENamedElement.__init__)
+
+
+def test_diagraph_enamedelement_constructor_args():
+    sig = inspect.signature(diagraph_ENamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_diagraph_dgraphelement_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DGraphElement)
+
+
+def test_diagraph_dgraphelement_constructor_exists():
+    assert callable(diagraph_DGraphElement.__init__)
+
+
+def test_diagraph_dgraphelement_constructor_args():
+    sig = inspect.signature(diagraph_DGraphElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "icon" in params, "Missing parameter 'icon'"
+    assert "abztract" in params, "Missing parameter 'abztract'"
+
+def test_diagraph_dgraphelement_has_name():
+    assert hasattr(diagraph_DGraphElement, "name")
     descriptor = None
-    for klass in diagraph::DGraphElement.__mro__:
+    for klass in diagraph_DGraphElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dgraphelement_has_abztract():
-    assert hasattr(diagraph::DGraphElement, "abztract")
+def test_diagraph_dgraphelement_has_icon():
+    assert hasattr(diagraph_DGraphElement, "icon")
     descriptor = None
-    for klass in diagraph::DGraphElement.__mro__:
+    for klass in diagraph_DGraphElement.__mro__:
+        if "icon" in klass.__dict__:
+            descriptor = klass.__dict__["icon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagraph_dgraphelement_has_abztract():
+    assert hasattr(diagraph_DGraphElement, "abztract")
+    descriptor = None
+    for klass in diagraph_DGraphElement.__mro__:
         if "abztract" in klass.__dict__:
             descriptor = klass.__dict__["abztract"]
             break
@@ -494,57 +494,57 @@ def test_diagraph::dgraphelement_has_abztract():
 
 
 
-def test_diagraph::ereference_is_not_abstract():
-    assert not inspect.isabstract(diagraph::EReference)
+def test_diagraph_ereference_is_not_abstract():
+    assert not inspect.isabstract(diagraph_EReference)
 
 
-def test_diagraph::ereference_constructor_exists():
-    assert callable(diagraph::EReference.__init__)
+def test_diagraph_ereference_constructor_exists():
+    assert callable(diagraph_EReference.__init__)
 
 
-def test_diagraph::ereference_constructor_args():
-    sig = inspect.signature(diagraph::EReference.__init__)
+def test_diagraph_ereference_constructor_args():
+    sig = inspect.signature(diagraph_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dnode_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DNode)
+def test_diagraph_dnode_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DNode)
 
 
-def test_diagraph::dnode_constructor_exists():
-    assert callable(diagraph::DNode.__init__)
+def test_diagraph_dnode_constructor_exists():
+    assert callable(diagraph_DNode.__init__)
 
 
-def test_diagraph::dnode_constructor_args():
-    sig = inspect.signature(diagraph::DNode.__init__)
+def test_diagraph_dnode_constructor_args():
+    sig = inspect.signature(diagraph_DNode.__init__)
     params = list(sig.parameters.keys())
     assert "layout" in params, "Missing parameter 'layout'"
     assert "navigationLink" in params, "Missing parameter 'navigationLink'"
     assert "shape" in params, "Missing parameter 'shape'"
 
-def test_diagraph::dnode_has_layout():
-    assert hasattr(diagraph::DNode, "layout")
+def test_diagraph_dnode_has_layout():
+    assert hasattr(diagraph_DNode, "layout")
     descriptor = None
-    for klass in diagraph::DNode.__mro__:
+    for klass in diagraph_DNode.__mro__:
         if "layout" in klass.__dict__:
             descriptor = klass.__dict__["layout"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dnode_has_navigationLink():
-    assert hasattr(diagraph::DNode, "navigationLink")
+def test_diagraph_dnode_has_navigationLink():
+    assert hasattr(diagraph_DNode, "navigationLink")
     descriptor = None
-    for klass in diagraph::DNode.__mro__:
+    for klass in diagraph_DNode.__mro__:
         if "navigationLink" in klass.__dict__:
             descriptor = klass.__dict__["navigationLink"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dnode_has_shape():
-    assert hasattr(diagraph::DNode, "shape")
+def test_diagraph_dnode_has_shape():
+    assert hasattr(diagraph_DNode, "shape")
     descriptor = None
-    for klass in diagraph::DNode.__mro__:
+    for klass in diagraph_DNode.__mro__:
         if "shape" in klass.__dict__:
             descriptor = klass.__dict__["shape"]
             break
@@ -552,88 +552,88 @@ def test_diagraph::dnode_has_shape():
 
 
 
-def test_diagraph::downedelement_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DOwnedElement)
+def test_diagraph_downedelement_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DOwnedElement)
 
 
-def test_diagraph::downedelement_constructor_exists():
-    assert callable(diagraph::DOwnedElement.__init__)
+def test_diagraph_downedelement_constructor_exists():
+    assert callable(diagraph_DOwnedElement.__init__)
 
 
-def test_diagraph::downedelement_constructor_args():
-    sig = inspect.signature(diagraph::DOwnedElement.__init__)
+def test_diagraph_downedelement_constructor_args():
+    sig = inspect.signature(diagraph_DOwnedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dlabel_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DLabel)
+def test_diagraph_dlabel_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DLabel)
 
 
-def test_diagraph::dlabel_constructor_exists():
-    assert callable(diagraph::DLabel.__init__)
+def test_diagraph_dlabel_constructor_exists():
+    assert callable(diagraph_DLabel.__init__)
 
 
-def test_diagraph::dlabel_constructor_args():
-    sig = inspect.signature(diagraph::DLabel.__init__)
+def test_diagraph_dlabel_constructor_args():
+    sig = inspect.signature(diagraph_DLabel.__init__)
     params = list(sig.parameters.keys())
+    assert "inferred" in params, "Missing parameter 'inferred'"
     assert "propagated" in params, "Missing parameter 'propagated'"
     assert "abztract" in params, "Missing parameter 'abztract'"
-    assert "inferred" in params, "Missing parameter 'inferred'"
 
-def test_diagraph::dlabel_has_propagated():
-    assert hasattr(diagraph::DLabel, "propagated")
+def test_diagraph_dlabel_has_inferred():
+    assert hasattr(diagraph_DLabel, "inferred")
     descriptor = None
-    for klass in diagraph::DLabel.__mro__:
-        if "propagated" in klass.__dict__:
-            descriptor = klass.__dict__["propagated"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagraph::dlabel_has_abztract():
-    assert hasattr(diagraph::DLabel, "abztract")
-    descriptor = None
-    for klass in diagraph::DLabel.__mro__:
-        if "abztract" in klass.__dict__:
-            descriptor = klass.__dict__["abztract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diagraph::dlabel_has_inferred():
-    assert hasattr(diagraph::DLabel, "inferred")
-    descriptor = None
-    for klass in diagraph::DLabel.__mro__:
+    for klass in diagraph_DLabel.__mro__:
         if "inferred" in klass.__dict__:
             descriptor = klass.__dict__["inferred"]
             break
     assert isinstance(descriptor, property)
 
+def test_diagraph_dlabel_has_propagated():
+    assert hasattr(diagraph_DLabel, "propagated")
+    descriptor = None
+    for klass in diagraph_DLabel.__mro__:
+        if "propagated" in klass.__dict__:
+            descriptor = klass.__dict__["propagated"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diagraph_dlabel_has_abztract():
+    assert hasattr(diagraph_DLabel, "abztract")
+    descriptor = None
+    for klass in diagraph_DLabel.__mro__:
+        if "abztract" in klass.__dict__:
+            descriptor = klass.__dict__["abztract"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_diagraph::eclass_is_not_abstract():
-    assert not inspect.isabstract(diagraph::EClass)
+
+def test_diagraph_eclass_is_not_abstract():
+    assert not inspect.isabstract(diagraph_EClass)
 
 
-def test_diagraph::eclass_constructor_exists():
-    assert callable(diagraph::EClass.__init__)
+def test_diagraph_eclass_constructor_exists():
+    assert callable(diagraph_EClass.__init__)
 
 
-def test_diagraph::eclass_constructor_args():
-    sig = inspect.signature(diagraph::EClass.__init__)
+def test_diagraph_eclass_constructor_args():
+    sig = inspect.signature(diagraph_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diagraph::dpointofview_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DPointOfView)
+def test_diagraph_dpointofview_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DPointOfView)
 
 
-def test_diagraph::dpointofview_constructor_exists():
-    assert callable(diagraph::DPointOfView.__init__)
+def test_diagraph_dpointofview_constructor_exists():
+    assert callable(diagraph_DPointOfView.__init__)
 
 
-def test_diagraph::dpointofview_constructor_args():
-    sig = inspect.signature(diagraph::DPointOfView.__init__)
+def test_diagraph_dpointofview_constructor_args():
+    sig = inspect.signature(diagraph_DPointOfView.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -652,33 +652,33 @@ def test_dgraphelement_constructor_args():
 
 
 
-def test_diagraph::dlabeledelement_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DLabeledElement)
+def test_diagraph_dlabeledelement_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DLabeledElement)
 
 
-def test_diagraph::dlabeledelement_constructor_exists():
-    assert callable(diagraph::DLabeledElement.__init__)
+def test_diagraph_dlabeledelement_constructor_exists():
+    assert callable(diagraph_DLabeledElement.__init__)
 
 
-def test_diagraph::dlabeledelement_constructor_args():
-    sig = inspect.signature(diagraph::DLabeledElement.__init__)
+def test_diagraph_dlabeledelement_constructor_args():
+    sig = inspect.signature(diagraph_DLabeledElement.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
     assert "labls" in params, "Missing parameter 'labls'"
 
-def test_diagraph::dlabeledelement_has_expression():
-    assert hasattr(diagraph::DLabeledElement, "expression")
+def test_diagraph_dlabeledelement_has_expression():
+    assert hasattr(diagraph_DLabeledElement, "expression")
     descriptor = None
-    for klass in diagraph::DLabeledElement.__mro__:
+    for klass in diagraph_DLabeledElement.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
     assert isinstance(descriptor, property)
 
-def test_diagraph::dlabeledelement_has_labls():
-    assert hasattr(diagraph::DLabeledElement, "labls")
+def test_diagraph_dlabeledelement_has_labls():
+    assert hasattr(diagraph_DLabeledElement, "labls")
     descriptor = None
-    for klass in diagraph::DLabeledElement.__mro__:
+    for klass in diagraph_DLabeledElement.__mro__:
         if "labls" in klass.__dict__:
             descriptor = klass.__dict__["labls"]
             break
@@ -686,23 +686,23 @@ def test_diagraph::dlabeledelement_has_labls():
 
 
 
-def test_diagraph::dedge_is_not_abstract():
-    assert not inspect.isabstract(diagraph::DEdge)
+def test_diagraph_dedge_is_not_abstract():
+    assert not inspect.isabstract(diagraph_DEdge)
 
 
-def test_diagraph::dedge_constructor_exists():
-    assert callable(diagraph::DEdge.__init__)
+def test_diagraph_dedge_constructor_exists():
+    assert callable(diagraph_DEdge.__init__)
 
 
-def test_diagraph::dedge_constructor_args():
-    sig = inspect.signature(diagraph::DEdge.__init__)
+def test_diagraph_dedge_constructor_args():
+    sig = inspect.signature(diagraph_DEdge.__init__)
     params = list(sig.parameters.keys())
     assert "propagated" in params, "Missing parameter 'propagated'"
 
-def test_diagraph::dedge_has_propagated():
-    assert hasattr(diagraph::DEdge, "propagated")
+def test_diagraph_dedge_has_propagated():
+    assert hasattr(diagraph_DEdge, "propagated")
     descriptor = None
-    for klass in diagraph::DEdge.__mro__:
+    for klass in diagraph_DEdge.__mro__:
         if "propagated" in klass.__dict__:
             descriptor = klass.__dict__["propagated"]
             break
@@ -716,12 +716,12 @@ def test_dshape_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DShape]
     expected_literals = [
-        "circle",
-        "triangle",
-        "dot",
         "rectangle",
-        "roundedRect",
         "vee",
+        "roundedRect",
+        "triangle",
+        "circle",
+        "dot",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -742,16 +742,16 @@ safe_text = st.text(
 DSimpleEdge_strategy = st.builds(
     DSimpleEdge,
 )
-diagraph::DNavigationEdge_strategy = st.builds(
-    diagraph::DNavigationEdge,
+diagraph_DNavigationEdge_strategy = st.builds(
+    diagraph_DNavigationEdge,
 )
-diagraph::DLineEdge_strategy = st.builds(
-    diagraph::DLineEdge,
+diagraph_DLineEdge_strategy = st.builds(
+    diagraph_DLineEdge,
     arrows=
         safe_text
 )
-diagraph::EAttribute_strategy = st.builds(
-    diagraph::EAttribute,
+diagraph_EAttribute_strategy = st.builds(
+    diagraph_EAttribute,
 )
 DNode_strategy = st.builds(
     DNode,
@@ -759,11 +759,11 @@ DNode_strategy = st.builds(
 DNestedEdge_strategy = st.builds(
     DNestedEdge,
 )
-diagraph::DAffixedEdge_strategy = st.builds(
-    diagraph::DAffixedEdge,
+diagraph_DAffixedEdge_strategy = st.builds(
+    diagraph_DAffixedEdge,
 )
-diagraph::DCompartmentEdge_strategy = st.builds(
-    diagraph::DCompartmentEdge,
+diagraph_DCompartmentEdge_strategy = st.builds(
+    diagraph_DCompartmentEdge,
     partitionName=
         safe_text,
     depth=
@@ -772,72 +772,72 @@ diagraph::DCompartmentEdge_strategy = st.builds(
 DEdge_strategy = st.builds(
     DEdge,
 )
-diagraph::DSimpleEdge_strategy = st.builds(
-    diagraph::DSimpleEdge,
+diagraph_DSimpleEdge_strategy = st.builds(
+    diagraph_DSimpleEdge,
 )
 DLineEdge_strategy = st.builds(
     DLineEdge,
 )
-diagraph::DReference_strategy = st.builds(
-    diagraph::DReference,
+diagraph_DReference_strategy = st.builds(
+    diagraph_DReference,
 )
 DOwnedEdge_strategy = st.builds(
     DOwnedEdge,
 )
-diagraph::DNestedEdge_strategy = st.builds(
-    diagraph::DNestedEdge,
+diagraph_DNestedEdge_strategy = st.builds(
+    diagraph_DNestedEdge,
 )
-diagraph::DContainment_strategy = st.builds(
-    diagraph::DContainment,
+diagraph_DContainment_strategy = st.builds(
+    diagraph_DContainment,
     name=
         safe_text
 )
-diagraph::DViewNavigation_strategy = st.builds(
-    diagraph::DViewNavigation,
+diagraph_DViewNavigation_strategy = st.builds(
+    diagraph_DViewNavigation,
     id=
         safe_text
 )
 DOwnedElement_strategy = st.builds(
     DOwnedElement,
 )
-diagraph::DOwnedEdge_strategy = st.builds(
-    diagraph::DOwnedEdge,
+diagraph_DOwnedEdge_strategy = st.builds(
+    diagraph_DOwnedEdge,
 )
 DLabeledElement_strategy = st.builds(
     DLabeledElement,
 )
-diagraph::DLabeledEdge_strategy = st.builds(
-    diagraph::DLabeledEdge,
+diagraph_DGeneric_strategy = st.builds(
+    diagraph_DGeneric,
 )
-diagraph::DGeneric_strategy = st.builds(
-    diagraph::DGeneric,
+diagraph_DLabeledEdge_strategy = st.builds(
+    diagraph_DLabeledEdge,
 )
-diagraph::DGraph_strategy = st.builds(
-    diagraph::DGraph,
-    facade1=
-        safe_text,
+diagraph_DGraph_strategy = st.builds(
+    diagraph_DGraph,
     viewName=
         safe_text,
     facade2=
+        safe_text,
+    facade1=
         safe_text
 )
-diagraph::ENamedElement_strategy = st.builds(
-    diagraph::ENamedElement,
+diagraph_ENamedElement_strategy = st.builds(
+    diagraph_ENamedElement,
 )
-diagraph::DGraphElement_strategy = st.builds(
-    diagraph::DGraphElement,
-    icon=
-        safe_text,
+diagraph_DGraphElement_strategy = st.builds(
+    diagraph_DGraphElement,
     name=
+        safe_text,
+    icon=
         safe_text,
     abztract=
         st.booleans()
 )
-diagraph::EReference_strategy = st.builds(
-    diagraph::EReference,
+diagraph_EReference_strategy = st.builds(
+    diagraph_EReference,
 )
-diagraph::DNode_strategy = st.builds(
-    diagraph::DNode,
+diagraph_DNode_strategy = st.builds(
+    diagraph_DNode,
     layout=
         st.booleans(),
     navigationLink=
@@ -845,36 +845,36 @@ diagraph::DNode_strategy = st.builds(
     shape=
         safe_text
 )
-diagraph::DOwnedElement_strategy = st.builds(
-    diagraph::DOwnedElement,
+diagraph_DOwnedElement_strategy = st.builds(
+    diagraph_DOwnedElement,
 )
-diagraph::DLabel_strategy = st.builds(
-    diagraph::DLabel,
+diagraph_DLabel_strategy = st.builds(
+    diagraph_DLabel,
+    inferred=
+        st.booleans(),
     propagated=
         st.booleans(),
     abztract=
-        st.booleans(),
-    inferred=
         st.booleans()
 )
-diagraph::EClass_strategy = st.builds(
-    diagraph::EClass,
+diagraph_EClass_strategy = st.builds(
+    diagraph_EClass,
 )
-diagraph::DPointOfView_strategy = st.builds(
-    diagraph::DPointOfView,
+diagraph_DPointOfView_strategy = st.builds(
+    diagraph_DPointOfView,
 )
 DGraphElement_strategy = st.builds(
     DGraphElement,
 )
-diagraph::DLabeledElement_strategy = st.builds(
-    diagraph::DLabeledElement,
+diagraph_DLabeledElement_strategy = st.builds(
+    diagraph_DLabeledElement,
     expression=
         safe_text,
     labls=
         safe_text
 )
-diagraph::DEdge_strategy = st.builds(
-    diagraph::DEdge,
+diagraph_DEdge_strategy = st.builds(
+    diagraph_DEdge,
     propagated=
         st.booleans()
 )
@@ -884,31 +884,28 @@ diagraph::DEdge_strategy = st.builds(
 def test_dsimpleedge_instantiation(instance):
     assert isinstance(instance, DSimpleEdge)
 
-@given(instance=diagraph::DNavigationEdge_strategy)
+@given(instance=diagraph_DNavigationEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dnavigationedge_instantiation(instance):
-    assert isinstance(instance, diagraph::DNavigationEdge)
+def test_diagraph_dnavigationedge_instantiation(instance):
+    assert isinstance(instance, diagraph_DNavigationEdge)
 
-@given(instance=diagraph::DLineEdge_strategy)
+@given(instance=diagraph_DLineEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dlineedge_instantiation(instance):
-    assert isinstance(instance, diagraph::DLineEdge)
-
-@given(instance=diagraph::DLineEdge_strategy)
-def test_diagraph::dlineedge_arrows_type(instance):
-    assert isinstance(instance.arrows, str)
+def test_diagraph_dlineedge_instantiation(instance):
+    assert isinstance(instance, diagraph_DLineEdge)
 
 
-@given(instance=diagraph::DLineEdge_strategy)
-def test_diagraph::dlineedge_arrows_setter(instance):
+
+@given(instance=diagraph_DLineEdge_strategy)
+def test_diagraph_dlineedge_arrows_setter(instance):
     original = instance.arrows
     instance.arrows = original
     assert instance.arrows == original
 
-@given(instance=diagraph::EAttribute_strategy)
+@given(instance=diagraph_EAttribute_strategy)
 @settings(max_examples=50)
-def test_diagraph::eattribute_instantiation(instance):
-    assert isinstance(instance, diagraph::EAttribute)
+def test_diagraph_eattribute_instantiation(instance):
+    assert isinstance(instance, diagraph_EAttribute)
 
 @given(instance=DNode_strategy)
 @settings(max_examples=50)
@@ -920,34 +917,28 @@ def test_dnode_instantiation(instance):
 def test_dnestededge_instantiation(instance):
     assert isinstance(instance, DNestedEdge)
 
-@given(instance=diagraph::DAffixedEdge_strategy)
+@given(instance=diagraph_DAffixedEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::daffixededge_instantiation(instance):
-    assert isinstance(instance, diagraph::DAffixedEdge)
+def test_diagraph_daffixededge_instantiation(instance):
+    assert isinstance(instance, diagraph_DAffixedEdge)
 
-@given(instance=diagraph::DCompartmentEdge_strategy)
+@given(instance=diagraph_DCompartmentEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dcompartmentedge_instantiation(instance):
-    assert isinstance(instance, diagraph::DCompartmentEdge)
-
-@given(instance=diagraph::DCompartmentEdge_strategy)
-def test_diagraph::dcompartmentedge_partitionName_type(instance):
-    assert isinstance(instance.partitionName, str)
+def test_diagraph_dcompartmentedge_instantiation(instance):
+    assert isinstance(instance, diagraph_DCompartmentEdge)
 
 
-@given(instance=diagraph::DCompartmentEdge_strategy)
-def test_diagraph::dcompartmentedge_partitionName_setter(instance):
+
+@given(instance=diagraph_DCompartmentEdge_strategy)
+def test_diagraph_dcompartmentedge_partitionName_setter(instance):
     original = instance.partitionName
     instance.partitionName = original
     assert instance.partitionName == original
 
-@given(instance=diagraph::DCompartmentEdge_strategy)
-def test_diagraph::dcompartmentedge_depth_type(instance):
-    assert isinstance(instance.depth, int)
 
 
-@given(instance=diagraph::DCompartmentEdge_strategy)
-def test_diagraph::dcompartmentedge_depth_setter(instance):
+@given(instance=diagraph_DCompartmentEdge_strategy)
+def test_diagraph_dcompartmentedge_depth_setter(instance):
     original = instance.depth
     instance.depth = original
     assert instance.depth == original
@@ -957,59 +948,53 @@ def test_diagraph::dcompartmentedge_depth_setter(instance):
 def test_dedge_instantiation(instance):
     assert isinstance(instance, DEdge)
 
-@given(instance=diagraph::DSimpleEdge_strategy)
+@given(instance=diagraph_DSimpleEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dsimpleedge_instantiation(instance):
-    assert isinstance(instance, diagraph::DSimpleEdge)
+def test_diagraph_dsimpleedge_instantiation(instance):
+    assert isinstance(instance, diagraph_DSimpleEdge)
 
 @given(instance=DLineEdge_strategy)
 @settings(max_examples=50)
 def test_dlineedge_instantiation(instance):
     assert isinstance(instance, DLineEdge)
 
-@given(instance=diagraph::DReference_strategy)
+@given(instance=diagraph_DReference_strategy)
 @settings(max_examples=50)
-def test_diagraph::dreference_instantiation(instance):
-    assert isinstance(instance, diagraph::DReference)
+def test_diagraph_dreference_instantiation(instance):
+    assert isinstance(instance, diagraph_DReference)
 
 @given(instance=DOwnedEdge_strategy)
 @settings(max_examples=50)
 def test_downededge_instantiation(instance):
     assert isinstance(instance, DOwnedEdge)
 
-@given(instance=diagraph::DNestedEdge_strategy)
+@given(instance=diagraph_DNestedEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dnestededge_instantiation(instance):
-    assert isinstance(instance, diagraph::DNestedEdge)
+def test_diagraph_dnestededge_instantiation(instance):
+    assert isinstance(instance, diagraph_DNestedEdge)
 
-@given(instance=diagraph::DContainment_strategy)
+@given(instance=diagraph_DContainment_strategy)
 @settings(max_examples=50)
-def test_diagraph::dcontainment_instantiation(instance):
-    assert isinstance(instance, diagraph::DContainment)
-
-@given(instance=diagraph::DContainment_strategy)
-def test_diagraph::dcontainment_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_diagraph_dcontainment_instantiation(instance):
+    assert isinstance(instance, diagraph_DContainment)
 
 
-@given(instance=diagraph::DContainment_strategy)
-def test_diagraph::dcontainment_name_setter(instance):
+
+@given(instance=diagraph_DContainment_strategy)
+def test_diagraph_dcontainment_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=diagraph::DViewNavigation_strategy)
+@given(instance=diagraph_DViewNavigation_strategy)
 @settings(max_examples=50)
-def test_diagraph::dviewnavigation_instantiation(instance):
-    assert isinstance(instance, diagraph::DViewNavigation)
-
-@given(instance=diagraph::DViewNavigation_strategy)
-def test_diagraph::dviewnavigation_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_diagraph_dviewnavigation_instantiation(instance):
+    assert isinstance(instance, diagraph_DViewNavigation)
 
 
-@given(instance=diagraph::DViewNavigation_strategy)
-def test_diagraph::dviewnavigation_id_setter(instance):
+
+@given(instance=diagraph_DViewNavigation_strategy)
+def test_diagraph_dviewnavigation_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -1019,247 +1004,202 @@ def test_diagraph::dviewnavigation_id_setter(instance):
 def test_downedelement_instantiation(instance):
     assert isinstance(instance, DOwnedElement)
 
-@given(instance=diagraph::DOwnedEdge_strategy)
+@given(instance=diagraph_DOwnedEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::downededge_instantiation(instance):
-    assert isinstance(instance, diagraph::DOwnedEdge)
+def test_diagraph_downededge_instantiation(instance):
+    assert isinstance(instance, diagraph_DOwnedEdge)
 
 @given(instance=DLabeledElement_strategy)
 @settings(max_examples=50)
 def test_dlabeledelement_instantiation(instance):
     assert isinstance(instance, DLabeledElement)
 
-@given(instance=diagraph::DLabeledEdge_strategy)
+@given(instance=diagraph_DGeneric_strategy)
 @settings(max_examples=50)
-def test_diagraph::dlabelededge_instantiation(instance):
-    assert isinstance(instance, diagraph::DLabeledEdge)
+def test_diagraph_dgeneric_instantiation(instance):
+    assert isinstance(instance, diagraph_DGeneric)
 
-@given(instance=diagraph::DGeneric_strategy)
+@given(instance=diagraph_DLabeledEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dgeneric_instantiation(instance):
-    assert isinstance(instance, diagraph::DGeneric)
+def test_diagraph_dlabelededge_instantiation(instance):
+    assert isinstance(instance, diagraph_DLabeledEdge)
 
-@given(instance=diagraph::DGraph_strategy)
+@given(instance=diagraph_DGraph_strategy)
 @settings(max_examples=50)
-def test_diagraph::dgraph_instantiation(instance):
-    assert isinstance(instance, diagraph::DGraph)
-
-@given(instance=diagraph::DGraph_strategy)
-def test_diagraph::dgraph_facade1_type(instance):
-    assert isinstance(instance.facade1, str)
+def test_diagraph_dgraph_instantiation(instance):
+    assert isinstance(instance, diagraph_DGraph)
 
 
-@given(instance=diagraph::DGraph_strategy)
-def test_diagraph::dgraph_facade1_setter(instance):
-    original = instance.facade1
-    instance.facade1 = original
-    assert instance.facade1 == original
 
-@given(instance=diagraph::DGraph_strategy)
-def test_diagraph::dgraph_viewName_type(instance):
-    assert isinstance(instance.viewName, str)
-
-
-@given(instance=diagraph::DGraph_strategy)
-def test_diagraph::dgraph_viewName_setter(instance):
+@given(instance=diagraph_DGraph_strategy)
+def test_diagraph_dgraph_viewName_setter(instance):
     original = instance.viewName
     instance.viewName = original
     assert instance.viewName == original
 
-@given(instance=diagraph::DGraph_strategy)
-def test_diagraph::dgraph_facade2_type(instance):
-    assert isinstance(instance.facade2, str)
 
 
-@given(instance=diagraph::DGraph_strategy)
-def test_diagraph::dgraph_facade2_setter(instance):
+@given(instance=diagraph_DGraph_strategy)
+def test_diagraph_dgraph_facade2_setter(instance):
     original = instance.facade2
     instance.facade2 = original
     assert instance.facade2 == original
 
-@given(instance=diagraph::ENamedElement_strategy)
+
+
+@given(instance=diagraph_DGraph_strategy)
+def test_diagraph_dgraph_facade1_setter(instance):
+    original = instance.facade1
+    instance.facade1 = original
+    assert instance.facade1 == original
+
+@given(instance=diagraph_ENamedElement_strategy)
 @settings(max_examples=50)
-def test_diagraph::enamedelement_instantiation(instance):
-    assert isinstance(instance, diagraph::ENamedElement)
+def test_diagraph_enamedelement_instantiation(instance):
+    assert isinstance(instance, diagraph_ENamedElement)
 
-@given(instance=diagraph::DGraphElement_strategy)
+@given(instance=diagraph_DGraphElement_strategy)
 @settings(max_examples=50)
-def test_diagraph::dgraphelement_instantiation(instance):
-    assert isinstance(instance, diagraph::DGraphElement)
-
-@given(instance=diagraph::DGraphElement_strategy)
-def test_diagraph::dgraphelement_icon_type(instance):
-    assert isinstance(instance.icon, str)
+def test_diagraph_dgraphelement_instantiation(instance):
+    assert isinstance(instance, diagraph_DGraphElement)
 
 
-@given(instance=diagraph::DGraphElement_strategy)
-def test_diagraph::dgraphelement_icon_setter(instance):
-    original = instance.icon
-    instance.icon = original
-    assert instance.icon == original
 
-@given(instance=diagraph::DGraphElement_strategy)
-def test_diagraph::dgraphelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=diagraph::DGraphElement_strategy)
-def test_diagraph::dgraphelement_name_setter(instance):
+@given(instance=diagraph_DGraphElement_strategy)
+def test_diagraph_dgraphelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=diagraph::DGraphElement_strategy)
-def test_diagraph::dgraphelement_abztract_type(instance):
-    assert isinstance(instance.abztract, bool)
 
 
-@given(instance=diagraph::DGraphElement_strategy)
-def test_diagraph::dgraphelement_abztract_setter(instance):
+@given(instance=diagraph_DGraphElement_strategy)
+def test_diagraph_dgraphelement_icon_setter(instance):
+    original = instance.icon
+    instance.icon = original
+    assert instance.icon == original
+
+
+
+@given(instance=diagraph_DGraphElement_strategy)
+def test_diagraph_dgraphelement_abztract_setter(instance):
     original = instance.abztract
     instance.abztract = original
     assert instance.abztract == original
 
-@given(instance=diagraph::EReference_strategy)
+@given(instance=diagraph_EReference_strategy)
 @settings(max_examples=50)
-def test_diagraph::ereference_instantiation(instance):
-    assert isinstance(instance, diagraph::EReference)
+def test_diagraph_ereference_instantiation(instance):
+    assert isinstance(instance, diagraph_EReference)
 
-@given(instance=diagraph::DNode_strategy)
+@given(instance=diagraph_DNode_strategy)
 @settings(max_examples=50)
-def test_diagraph::dnode_instantiation(instance):
-    assert isinstance(instance, diagraph::DNode)
-
-@given(instance=diagraph::DNode_strategy)
-def test_diagraph::dnode_layout_type(instance):
-    assert isinstance(instance.layout, bool)
+def test_diagraph_dnode_instantiation(instance):
+    assert isinstance(instance, diagraph_DNode)
 
 
-@given(instance=diagraph::DNode_strategy)
-def test_diagraph::dnode_layout_setter(instance):
+
+@given(instance=diagraph_DNode_strategy)
+def test_diagraph_dnode_layout_setter(instance):
     original = instance.layout
     instance.layout = original
     assert instance.layout == original
 
-@given(instance=diagraph::DNode_strategy)
-def test_diagraph::dnode_navigationLink_type(instance):
-    assert isinstance(instance.navigationLink, str)
 
 
-@given(instance=diagraph::DNode_strategy)
-def test_diagraph::dnode_navigationLink_setter(instance):
+@given(instance=diagraph_DNode_strategy)
+def test_diagraph_dnode_navigationLink_setter(instance):
     original = instance.navigationLink
     instance.navigationLink = original
     assert instance.navigationLink == original
 
-@given(instance=diagraph::DNode_strategy)
-def test_diagraph::dnode_shape_type(instance):
-    assert isinstance(instance.shape, str)
 
 
-@given(instance=diagraph::DNode_strategy)
-def test_diagraph::dnode_shape_setter(instance):
+@given(instance=diagraph_DNode_strategy)
+def test_diagraph_dnode_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=diagraph::DOwnedElement_strategy)
+@given(instance=diagraph_DOwnedElement_strategy)
 @settings(max_examples=50)
-def test_diagraph::downedelement_instantiation(instance):
-    assert isinstance(instance, diagraph::DOwnedElement)
+def test_diagraph_downedelement_instantiation(instance):
+    assert isinstance(instance, diagraph_DOwnedElement)
 
-@given(instance=diagraph::DLabel_strategy)
+@given(instance=diagraph_DLabel_strategy)
 @settings(max_examples=50)
-def test_diagraph::dlabel_instantiation(instance):
-    assert isinstance(instance, diagraph::DLabel)
-
-@given(instance=diagraph::DLabel_strategy)
-def test_diagraph::dlabel_propagated_type(instance):
-    assert isinstance(instance.propagated, bool)
+def test_diagraph_dlabel_instantiation(instance):
+    assert isinstance(instance, diagraph_DLabel)
 
 
-@given(instance=diagraph::DLabel_strategy)
-def test_diagraph::dlabel_propagated_setter(instance):
-    original = instance.propagated
-    instance.propagated = original
-    assert instance.propagated == original
 
-@given(instance=diagraph::DLabel_strategy)
-def test_diagraph::dlabel_abztract_type(instance):
-    assert isinstance(instance.abztract, bool)
-
-
-@given(instance=diagraph::DLabel_strategy)
-def test_diagraph::dlabel_abztract_setter(instance):
-    original = instance.abztract
-    instance.abztract = original
-    assert instance.abztract == original
-
-@given(instance=diagraph::DLabel_strategy)
-def test_diagraph::dlabel_inferred_type(instance):
-    assert isinstance(instance.inferred, bool)
-
-
-@given(instance=diagraph::DLabel_strategy)
-def test_diagraph::dlabel_inferred_setter(instance):
+@given(instance=diagraph_DLabel_strategy)
+def test_diagraph_dlabel_inferred_setter(instance):
     original = instance.inferred
     instance.inferred = original
     assert instance.inferred == original
 
-@given(instance=diagraph::EClass_strategy)
-@settings(max_examples=50)
-def test_diagraph::eclass_instantiation(instance):
-    assert isinstance(instance, diagraph::EClass)
 
-@given(instance=diagraph::DPointOfView_strategy)
+
+@given(instance=diagraph_DLabel_strategy)
+def test_diagraph_dlabel_propagated_setter(instance):
+    original = instance.propagated
+    instance.propagated = original
+    assert instance.propagated == original
+
+
+
+@given(instance=diagraph_DLabel_strategy)
+def test_diagraph_dlabel_abztract_setter(instance):
+    original = instance.abztract
+    instance.abztract = original
+    assert instance.abztract == original
+
+@given(instance=diagraph_EClass_strategy)
 @settings(max_examples=50)
-def test_diagraph::dpointofview_instantiation(instance):
-    assert isinstance(instance, diagraph::DPointOfView)
+def test_diagraph_eclass_instantiation(instance):
+    assert isinstance(instance, diagraph_EClass)
+
+@given(instance=diagraph_DPointOfView_strategy)
+@settings(max_examples=50)
+def test_diagraph_dpointofview_instantiation(instance):
+    assert isinstance(instance, diagraph_DPointOfView)
 
 @given(instance=DGraphElement_strategy)
 @settings(max_examples=50)
 def test_dgraphelement_instantiation(instance):
     assert isinstance(instance, DGraphElement)
 
-@given(instance=diagraph::DLabeledElement_strategy)
+@given(instance=diagraph_DLabeledElement_strategy)
 @settings(max_examples=50)
-def test_diagraph::dlabeledelement_instantiation(instance):
-    assert isinstance(instance, diagraph::DLabeledElement)
-
-@given(instance=diagraph::DLabeledElement_strategy)
-def test_diagraph::dlabeledelement_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_diagraph_dlabeledelement_instantiation(instance):
+    assert isinstance(instance, diagraph_DLabeledElement)
 
 
-@given(instance=diagraph::DLabeledElement_strategy)
-def test_diagraph::dlabeledelement_expression_setter(instance):
+
+@given(instance=diagraph_DLabeledElement_strategy)
+def test_diagraph_dlabeledelement_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=diagraph::DLabeledElement_strategy)
-def test_diagraph::dlabeledelement_labls_type(instance):
-    assert isinstance(instance.labls, str)
 
 
-@given(instance=diagraph::DLabeledElement_strategy)
-def test_diagraph::dlabeledelement_labls_setter(instance):
+@given(instance=diagraph_DLabeledElement_strategy)
+def test_diagraph_dlabeledelement_labls_setter(instance):
     original = instance.labls
     instance.labls = original
     assert instance.labls == original
 
-@given(instance=diagraph::DEdge_strategy)
+@given(instance=diagraph_DEdge_strategy)
 @settings(max_examples=50)
-def test_diagraph::dedge_instantiation(instance):
-    assert isinstance(instance, diagraph::DEdge)
-
-@given(instance=diagraph::DEdge_strategy)
-def test_diagraph::dedge_propagated_type(instance):
-    assert isinstance(instance.propagated, bool)
+def test_diagraph_dedge_instantiation(instance):
+    assert isinstance(instance, diagraph_DEdge)
 
 
-@given(instance=diagraph::DEdge_strategy)
-def test_diagraph::dedge_propagated_setter(instance):
+
+@given(instance=diagraph_DEdge_strategy)
+def test_diagraph_dedge_propagated_setter(instance):
     original = instance.propagated
     instance.propagated = original
     assert instance.propagated == original

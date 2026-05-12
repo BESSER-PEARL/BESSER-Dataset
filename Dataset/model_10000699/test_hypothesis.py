@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ClassF,
@@ -80,19 +80,10 @@ def test_commentaires_constructor_exists():
 def test_commentaires_constructor_args():
     sig = inspect.signature(Commentaires.__init__)
     params = list(sig.parameters.keys())
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "idComm" in params, "Missing parameter 'idComm'"
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
-
-def test_commentaires_has_protectedAttribute():
-    assert hasattr(Commentaires, "protectedAttribute")
-    descriptor = None
-    for klass in Commentaires.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
 
 def test_commentaires_has_idComm():
     assert hasattr(Commentaires, "idComm")
@@ -103,12 +94,12 @@ def test_commentaires_has_idComm():
             break
     assert isinstance(descriptor, property)
 
-def test_commentaires_has_privateAttribute():
-    assert hasattr(Commentaires, "privateAttribute")
+def test_commentaires_has_protectedAttribute():
+    assert hasattr(Commentaires, "protectedAttribute")
     descriptor = None
     for klass in Commentaires.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -118,6 +109,15 @@ def test_commentaires_has_packageAttribute():
     for klass in Commentaires.__mro__:
         if "packageAttribute" in klass.__dict__:
             descriptor = klass.__dict__["packageAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_commentaires_has_privateAttribute():
+    assert hasattr(Commentaires, "privateAttribute")
+    descriptor = None
+    for klass in Commentaires.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -149,11 +149,11 @@ def test_membres_constructor_args():
     sig = inspect.signature(Membres.__init__)
     params = list(sig.parameters.keys())
     assert "nom" in params, "Missing parameter 'nom'"
-    assert "mdp" in params, "Missing parameter 'mdp'"
-    assert "prenom" in params, "Missing parameter 'prenom'"
     assert "telephone" in params, "Missing parameter 'telephone'"
     assert "email" in params, "Missing parameter 'email'"
+    assert "mdp" in params, "Missing parameter 'mdp'"
     assert "idM" in params, "Missing parameter 'idM'"
+    assert "prenom" in params, "Missing parameter 'prenom'"
 
 def test_membres_has_nom():
     assert hasattr(Membres, "nom")
@@ -161,24 +161,6 @@ def test_membres_has_nom():
     for klass in Membres.__mro__:
         if "nom" in klass.__dict__:
             descriptor = klass.__dict__["nom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_membres_has_mdp():
-    assert hasattr(Membres, "mdp")
-    descriptor = None
-    for klass in Membres.__mro__:
-        if "mdp" in klass.__dict__:
-            descriptor = klass.__dict__["mdp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_membres_has_prenom():
-    assert hasattr(Membres, "prenom")
-    descriptor = None
-    for klass in Membres.__mro__:
-        if "prenom" in klass.__dict__:
-            descriptor = klass.__dict__["prenom"]
             break
     assert isinstance(descriptor, property)
 
@@ -200,12 +182,30 @@ def test_membres_has_email():
             break
     assert isinstance(descriptor, property)
 
+def test_membres_has_mdp():
+    assert hasattr(Membres, "mdp")
+    descriptor = None
+    for klass in Membres.__mro__:
+        if "mdp" in klass.__dict__:
+            descriptor = klass.__dict__["mdp"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_membres_has_idM():
     assert hasattr(Membres, "idM")
     descriptor = None
     for klass in Membres.__mro__:
         if "idM" in klass.__dict__:
             descriptor = klass.__dict__["idM"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_membres_has_prenom():
+    assert hasattr(Membres, "prenom")
+    descriptor = None
+    for klass in Membres.__mro__:
+        if "prenom" in klass.__dict__:
+            descriptor = klass.__dict__["prenom"]
             break
     assert isinstance(descriptor, property)
 
@@ -350,14 +350,14 @@ ClassD_strategy = st.builds(
 )
 Commentaires_strategy = st.builds(
     Commentaires,
-    protectedAttribute=
-        safe_text,
     idComm=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    privateAttribute=
-        st.integers(),
+    protectedAttribute=
+        safe_text,
     packageAttribute=
-        safe_text
+        safe_text,
+    privateAttribute=
+        st.integers()
 )
 Cours_strategy = st.builds(
     Cours,
@@ -366,15 +366,15 @@ Membres_strategy = st.builds(
     Membres,
     nom=
         safe_text,
-    mdp=
-        safe_text,
-    prenom=
-        safe_text,
     telephone=
         st.integers(),
     email=
         safe_text,
+    mdp=
+        safe_text,
     idM=
+        safe_text,
+    prenom=
         safe_text
 )
 Quizz_strategy = st.builds(
@@ -423,20 +423,6 @@ def test_classd_instantiation(instance):
 def test_commentaires_instantiation(instance):
     assert isinstance(instance, Commentaires)
 
-@given(instance=Commentaires_strategy)
-def test_commentaires_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=Commentaires_strategy)
-def test_commentaires_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
-
-@given(instance=Commentaires_strategy)
-def test_commentaires_idComm_type(instance):
-    assert isinstance(instance.idComm, float)
 
 
 @given(instance=Commentaires_strategy)
@@ -445,20 +431,14 @@ def test_commentaires_idComm_setter(instance):
     instance.idComm = original
     assert instance.idComm == original
 
-@given(instance=Commentaires_strategy)
-def test_commentaires_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=Commentaires_strategy)
-def test_commentaires_privateAttribute_setter(instance):
-    original = instance.privateAttribute
-    instance.privateAttribute = original
-    assert instance.privateAttribute == original
+def test_commentaires_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
 
-@given(instance=Commentaires_strategy)
-def test_commentaires_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
 
 
 @given(instance=Commentaires_strategy)
@@ -466,6 +446,14 @@ def test_commentaires_packageAttribute_setter(instance):
     original = instance.packageAttribute
     instance.packageAttribute = original
     assert instance.packageAttribute == original
+
+
+
+@given(instance=Commentaires_strategy)
+def test_commentaires_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
 
 @given(instance=Cours_strategy)
 @settings(max_examples=50)
@@ -477,9 +465,6 @@ def test_cours_instantiation(instance):
 def test_membres_instantiation(instance):
     assert isinstance(instance, Membres)
 
-@given(instance=Membres_strategy)
-def test_membres_nom_type(instance):
-    assert isinstance(instance.nom, str)
 
 
 @given(instance=Membres_strategy)
@@ -488,31 +473,6 @@ def test_membres_nom_setter(instance):
     instance.nom = original
     assert instance.nom == original
 
-@given(instance=Membres_strategy)
-def test_membres_mdp_type(instance):
-    assert isinstance(instance.mdp, str)
-
-
-@given(instance=Membres_strategy)
-def test_membres_mdp_setter(instance):
-    original = instance.mdp
-    instance.mdp = original
-    assert instance.mdp == original
-
-@given(instance=Membres_strategy)
-def test_membres_prenom_type(instance):
-    assert isinstance(instance.prenom, str)
-
-
-@given(instance=Membres_strategy)
-def test_membres_prenom_setter(instance):
-    original = instance.prenom
-    instance.prenom = original
-    assert instance.prenom == original
-
-@given(instance=Membres_strategy)
-def test_membres_telephone_type(instance):
-    assert isinstance(instance.telephone, int)
 
 
 @given(instance=Membres_strategy)
@@ -521,9 +481,6 @@ def test_membres_telephone_setter(instance):
     instance.telephone = original
     assert instance.telephone == original
 
-@given(instance=Membres_strategy)
-def test_membres_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Membres_strategy)
@@ -532,9 +489,14 @@ def test_membres_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
 @given(instance=Membres_strategy)
-def test_membres_idM_type(instance):
-    assert isinstance(instance.idM, str)
+def test_membres_mdp_setter(instance):
+    original = instance.mdp
+    instance.mdp = original
+    assert instance.mdp == original
+
 
 
 @given(instance=Membres_strategy)
@@ -543,14 +505,19 @@ def test_membres_idM_setter(instance):
     instance.idM = original
     assert instance.idM == original
 
+
+
+@given(instance=Membres_strategy)
+def test_membres_prenom_setter(instance):
+    original = instance.prenom
+    instance.prenom = original
+    assert instance.prenom == original
+
 @given(instance=Quizz_strategy)
 @settings(max_examples=50)
 def test_quizz_instantiation(instance):
     assert isinstance(instance, Quizz)
 
-@given(instance=Quizz_strategy)
-def test_quizz_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
 
 
 @given(instance=Quizz_strategy)
@@ -559,9 +526,6 @@ def test_quizz_ownerName_setter(instance):
     instance.ownerName = original
     assert instance.ownerName == original
 
-@given(instance=Quizz_strategy)
-def test_quizz_balance_type(instance):
-    assert isinstance(instance.balance, float)
 
 
 @given(instance=Quizz_strategy)

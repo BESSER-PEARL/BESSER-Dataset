@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mytest::MyRoot,
-    mytest::B,
-    mytest::A,
+from python_code import (
+    mytest_MyRoot,
+    mytest_B,
+    mytest_A,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_mytest::myroot_is_not_abstract():
-    assert not inspect.isabstract(mytest::MyRoot)
+def test_mytest_myroot_is_not_abstract():
+    assert not inspect.isabstract(mytest_MyRoot)
 
 
-def test_mytest::myroot_constructor_exists():
-    assert callable(mytest::MyRoot.__init__)
+def test_mytest_myroot_constructor_exists():
+    assert callable(mytest_MyRoot.__init__)
 
 
-def test_mytest::myroot_constructor_args():
-    sig = inspect.signature(mytest::MyRoot.__init__)
+def test_mytest_myroot_constructor_args():
+    sig = inspect.signature(mytest_MyRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mytest::b_is_not_abstract():
-    assert not inspect.isabstract(mytest::B)
+def test_mytest_b_is_not_abstract():
+    assert not inspect.isabstract(mytest_B)
 
 
-def test_mytest::b_constructor_exists():
-    assert callable(mytest::B.__init__)
+def test_mytest_b_constructor_exists():
+    assert callable(mytest_B.__init__)
 
 
-def test_mytest::b_constructor_args():
-    sig = inspect.signature(mytest::B.__init__)
+def test_mytest_b_constructor_args():
+    sig = inspect.signature(mytest_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mytest::a_is_not_abstract():
-    assert not inspect.isabstract(mytest::A)
+def test_mytest_a_is_not_abstract():
+    assert not inspect.isabstract(mytest_A)
 
 
-def test_mytest::a_constructor_exists():
-    assert callable(mytest::A.__init__)
+def test_mytest_a_constructor_exists():
+    assert callable(mytest_A.__init__)
 
 
-def test_mytest::a_constructor_args():
-    sig = inspect.signature(mytest::A.__init__)
+def test_mytest_a_constructor_args():
+    sig = inspect.signature(mytest_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mytest::MyRoot_strategy = st.builds(
-    mytest::MyRoot,
+mytest_MyRoot_strategy = st.builds(
+    mytest_MyRoot,
 )
-mytest::B_strategy = st.builds(
-    mytest::B,
+mytest_B_strategy = st.builds(
+    mytest_B,
 )
-mytest::A_strategy = st.builds(
-    mytest::A,
+mytest_A_strategy = st.builds(
+    mytest_A,
 )
 
-@given(instance=mytest::MyRoot_strategy)
+@given(instance=mytest_MyRoot_strategy)
 @settings(max_examples=50)
-def test_mytest::myroot_instantiation(instance):
-    assert isinstance(instance, mytest::MyRoot)
+def test_mytest_myroot_instantiation(instance):
+    assert isinstance(instance, mytest_MyRoot)
 
-@given(instance=mytest::B_strategy)
+@given(instance=mytest_B_strategy)
 @settings(max_examples=50)
-def test_mytest::b_instantiation(instance):
-    assert isinstance(instance, mytest::B)
+def test_mytest_b_instantiation(instance):
+    assert isinstance(instance, mytest_B)
 
-@given(instance=mytest::A_strategy)
+@given(instance=mytest_A_strategy)
 @settings(max_examples=50)
-def test_mytest::a_instantiation(instance):
-    assert isinstance(instance, mytest::A)
+def test_mytest_a_instantiation(instance):
+    assert isinstance(instance, mytest_A)

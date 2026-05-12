@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DataMove,
-    pyrep::Turn,
-    pyrep::Move,
+    pyrep_Turn,
+    pyrep_Move,
     AbstractDataMove,
-    pyrep::AbstractCrossMove,
-    pyrep::AbstractMove,
-    pyrep::AbstractDataMove,
+    pyrep_AbstractCrossMove,
+    pyrep_AbstractMove,
+    pyrep_AbstractDataMove,
     Entity,
-    pyrep::MoveCollection,
-    pyrep::IP,
-    pyrep::Robot,
-    pyrep::Sensor,
-    pyrep::DataMove,
-    pyrep::Wheel,
-    pyrep::TypeSensor,
-    pyrep::Environment,
-    pyrep::Entity,
-    pyrep::Model,
+    pyrep_Wheel,
+    pyrep_DataMove,
+    pyrep_IP,
+    pyrep_MoveCollection,
+    pyrep_Robot,
+    pyrep_TypeSensor,
+    pyrep_Sensor,
+    pyrep_Environment,
+    pyrep_Entity,
+    pyrep_Model,
 )
 
 # =============================================================================
@@ -46,37 +46,37 @@ def test_datamove_constructor_args():
 
 
 
-def test_pyrep::turn_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Turn)
+def test_pyrep_turn_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Turn)
 
 
-def test_pyrep::turn_constructor_exists():
-    assert callable(pyrep::Turn.__init__)
+def test_pyrep_turn_constructor_exists():
+    assert callable(pyrep_Turn.__init__)
 
 
-def test_pyrep::turn_constructor_args():
-    sig = inspect.signature(pyrep::Turn.__init__)
+def test_pyrep_turn_constructor_args():
+    sig = inspect.signature(pyrep_Turn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pyrep::move_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Move)
+def test_pyrep_move_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Move)
 
 
-def test_pyrep::move_constructor_exists():
-    assert callable(pyrep::Move.__init__)
+def test_pyrep_move_constructor_exists():
+    assert callable(pyrep_Move.__init__)
 
 
-def test_pyrep::move_constructor_args():
-    sig = inspect.signature(pyrep::Move.__init__)
+def test_pyrep_move_constructor_args():
+    sig = inspect.signature(pyrep_Move.__init__)
     params = list(sig.parameters.keys())
     assert "distance" in params, "Missing parameter 'distance'"
 
-def test_pyrep::move_has_distance():
-    assert hasattr(pyrep::Move, "distance")
+def test_pyrep_move_has_distance():
+    assert hasattr(pyrep_Move, "distance")
     descriptor = None
-    for klass in pyrep::Move.__mro__:
+    for klass in pyrep_Move.__mro__:
         if "distance" in klass.__dict__:
             descriptor = klass.__dict__["distance"]
             break
@@ -98,44 +98,44 @@ def test_abstractdatamove_constructor_args():
 
 
 
-def test_pyrep::abstractcrossmove_is_not_abstract():
-    assert not inspect.isabstract(pyrep::AbstractCrossMove)
+def test_pyrep_abstractcrossmove_is_not_abstract():
+    assert not inspect.isabstract(pyrep_AbstractCrossMove)
 
 
-def test_pyrep::abstractcrossmove_constructor_exists():
-    assert callable(pyrep::AbstractCrossMove.__init__)
+def test_pyrep_abstractcrossmove_constructor_exists():
+    assert callable(pyrep_AbstractCrossMove.__init__)
 
 
-def test_pyrep::abstractcrossmove_constructor_args():
-    sig = inspect.signature(pyrep::AbstractCrossMove.__init__)
+def test_pyrep_abstractcrossmove_constructor_args():
+    sig = inspect.signature(pyrep_AbstractCrossMove.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pyrep::abstractmove_is_not_abstract():
-    assert not inspect.isabstract(pyrep::AbstractMove)
+def test_pyrep_abstractmove_is_not_abstract():
+    assert not inspect.isabstract(pyrep_AbstractMove)
 
 
-def test_pyrep::abstractmove_constructor_exists():
-    assert callable(pyrep::AbstractMove.__init__)
+def test_pyrep_abstractmove_constructor_exists():
+    assert callable(pyrep_AbstractMove.__init__)
 
 
-def test_pyrep::abstractmove_constructor_args():
-    sig = inspect.signature(pyrep::AbstractMove.__init__)
+def test_pyrep_abstractmove_constructor_args():
+    sig = inspect.signature(pyrep_AbstractMove.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pyrep::abstractdatamove_is_not_abstract():
-    assert not inspect.isabstract(pyrep::AbstractDataMove)
+def test_pyrep_abstractdatamove_is_not_abstract():
+    assert not inspect.isabstract(pyrep_AbstractDataMove)
 
 
-def test_pyrep::abstractdatamove_constructor_exists():
-    assert callable(pyrep::AbstractDataMove.__init__)
+def test_pyrep_abstractdatamove_constructor_exists():
+    assert callable(pyrep_AbstractDataMove.__init__)
 
 
-def test_pyrep::abstractdatamove_constructor_args():
-    sig = inspect.signature(pyrep::AbstractDataMove.__init__)
+def test_pyrep_abstractdatamove_constructor_args():
+    sig = inspect.signature(pyrep_AbstractDataMove.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,169 +154,77 @@ def test_entity_constructor_args():
 
 
 
-def test_pyrep::movecollection_is_not_abstract():
-    assert not inspect.isabstract(pyrep::MoveCollection)
+def test_pyrep_wheel_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Wheel)
 
 
-def test_pyrep::movecollection_constructor_exists():
-    assert callable(pyrep::MoveCollection.__init__)
+def test_pyrep_wheel_constructor_exists():
+    assert callable(pyrep_Wheel.__init__)
 
 
-def test_pyrep::movecollection_constructor_args():
-    sig = inspect.signature(pyrep::MoveCollection.__init__)
+def test_pyrep_wheel_constructor_args():
+    sig = inspect.signature(pyrep_Wheel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "concurrent" in params, "Missing parameter 'concurrent'"
+    assert "radius" in params, "Missing parameter 'radius'"
 
-def test_pyrep::movecollection_has_name():
-    assert hasattr(pyrep::MoveCollection, "name")
+def test_pyrep_wheel_has_name():
+    assert hasattr(pyrep_Wheel, "name")
     descriptor = None
-    for klass in pyrep::MoveCollection.__mro__:
+    for klass in pyrep_Wheel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_pyrep::movecollection_has_concurrent():
-    assert hasattr(pyrep::MoveCollection, "concurrent")
+def test_pyrep_wheel_has_radius():
+    assert hasattr(pyrep_Wheel, "radius")
     descriptor = None
-    for klass in pyrep::MoveCollection.__mro__:
-        if "concurrent" in klass.__dict__:
-            descriptor = klass.__dict__["concurrent"]
+    for klass in pyrep_Wheel.__mro__:
+        if "radius" in klass.__dict__:
+            descriptor = klass.__dict__["radius"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_pyrep::ip_is_not_abstract():
-    assert not inspect.isabstract(pyrep::IP)
+def test_pyrep_datamove_is_not_abstract():
+    assert not inspect.isabstract(pyrep_DataMove)
 
 
-def test_pyrep::ip_constructor_exists():
-    assert callable(pyrep::IP.__init__)
+def test_pyrep_datamove_constructor_exists():
+    assert callable(pyrep_DataMove.__init__)
 
 
-def test_pyrep::ip_constructor_args():
-    sig = inspect.signature(pyrep::IP.__init__)
-    params = list(sig.parameters.keys())
-    assert "ip" in params, "Missing parameter 'ip'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_pyrep::ip_has_ip():
-    assert hasattr(pyrep::IP, "ip")
-    descriptor = None
-    for klass in pyrep::IP.__mro__:
-        if "ip" in klass.__dict__:
-            descriptor = klass.__dict__["ip"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pyrep::ip_has_name():
-    assert hasattr(pyrep::IP, "name")
-    descriptor = None
-    for klass in pyrep::IP.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pyrep::robot_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Robot)
-
-
-def test_pyrep::robot_constructor_exists():
-    assert callable(pyrep::Robot.__init__)
-
-
-def test_pyrep::robot_constructor_args():
-    sig = inspect.signature(pyrep::Robot.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "port" in params, "Missing parameter 'port'"
-
-def test_pyrep::robot_has_name():
-    assert hasattr(pyrep::Robot, "name")
-    descriptor = None
-    for klass in pyrep::Robot.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pyrep::robot_has_port():
-    assert hasattr(pyrep::Robot, "port")
-    descriptor = None
-    for klass in pyrep::Robot.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pyrep::sensor_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Sensor)
-
-
-def test_pyrep::sensor_constructor_exists():
-    assert callable(pyrep::Sensor.__init__)
-
-
-def test_pyrep::sensor_constructor_args():
-    sig = inspect.signature(pyrep::Sensor.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_pyrep::sensor_has_name():
-    assert hasattr(pyrep::Sensor, "name")
-    descriptor = None
-    for klass in pyrep::Sensor.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pyrep::datamove_is_not_abstract():
-    assert not inspect.isabstract(pyrep::DataMove)
-
-
-def test_pyrep::datamove_constructor_exists():
-    assert callable(pyrep::DataMove.__init__)
-
-
-def test_pyrep::datamove_constructor_args():
-    sig = inspect.signature(pyrep::DataMove.__init__)
+def test_pyrep_datamove_constructor_args():
+    sig = inspect.signature(pyrep_DataMove.__init__)
     params = list(sig.parameters.keys())
     assert "velocity" in params, "Missing parameter 'velocity'"
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_pyrep::datamove_has_velocity():
-    assert hasattr(pyrep::DataMove, "velocity")
+def test_pyrep_datamove_has_velocity():
+    assert hasattr(pyrep_DataMove, "velocity")
     descriptor = None
-    for klass in pyrep::DataMove.__mro__:
+    for klass in pyrep_DataMove.__mro__:
         if "velocity" in klass.__dict__:
             descriptor = klass.__dict__["velocity"]
             break
     assert isinstance(descriptor, property)
 
-def test_pyrep::datamove_has_name():
-    assert hasattr(pyrep::DataMove, "name")
+def test_pyrep_datamove_has_name():
+    assert hasattr(pyrep_DataMove, "name")
     descriptor = None
-    for klass in pyrep::DataMove.__mro__:
+    for klass in pyrep_DataMove.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_pyrep::datamove_has_type():
-    assert hasattr(pyrep::DataMove, "type")
+def test_pyrep_datamove_has_type():
+    assert hasattr(pyrep_DataMove, "type")
     descriptor = None
-    for klass in pyrep::DataMove.__mro__:
+    for klass in pyrep_DataMove.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -324,33 +232,67 @@ def test_pyrep::datamove_has_type():
 
 
 
-def test_pyrep::wheel_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Wheel)
+def test_pyrep_ip_is_not_abstract():
+    assert not inspect.isabstract(pyrep_IP)
 
 
-def test_pyrep::wheel_constructor_exists():
-    assert callable(pyrep::Wheel.__init__)
+def test_pyrep_ip_constructor_exists():
+    assert callable(pyrep_IP.__init__)
 
 
-def test_pyrep::wheel_constructor_args():
-    sig = inspect.signature(pyrep::Wheel.__init__)
+def test_pyrep_ip_constructor_args():
+    sig = inspect.signature(pyrep_IP.__init__)
     params = list(sig.parameters.keys())
-    assert "radius" in params, "Missing parameter 'radius'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "ip" in params, "Missing parameter 'ip'"
 
-def test_pyrep::wheel_has_radius():
-    assert hasattr(pyrep::Wheel, "radius")
+def test_pyrep_ip_has_name():
+    assert hasattr(pyrep_IP, "name")
     descriptor = None
-    for klass in pyrep::Wheel.__mro__:
-        if "radius" in klass.__dict__:
-            descriptor = klass.__dict__["radius"]
+    for klass in pyrep_IP.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_pyrep::wheel_has_name():
-    assert hasattr(pyrep::Wheel, "name")
+def test_pyrep_ip_has_ip():
+    assert hasattr(pyrep_IP, "ip")
     descriptor = None
-    for klass in pyrep::Wheel.__mro__:
+    for klass in pyrep_IP.__mro__:
+        if "ip" in klass.__dict__:
+            descriptor = klass.__dict__["ip"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pyrep_movecollection_is_not_abstract():
+    assert not inspect.isabstract(pyrep_MoveCollection)
+
+
+def test_pyrep_movecollection_constructor_exists():
+    assert callable(pyrep_MoveCollection.__init__)
+
+
+def test_pyrep_movecollection_constructor_args():
+    sig = inspect.signature(pyrep_MoveCollection.__init__)
+    params = list(sig.parameters.keys())
+    assert "concurrent" in params, "Missing parameter 'concurrent'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_pyrep_movecollection_has_concurrent():
+    assert hasattr(pyrep_MoveCollection, "concurrent")
+    descriptor = None
+    for klass in pyrep_MoveCollection.__mro__:
+        if "concurrent" in klass.__dict__:
+            descriptor = klass.__dict__["concurrent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pyrep_movecollection_has_name():
+    assert hasattr(pyrep_MoveCollection, "name")
+    descriptor = None
+    for klass in pyrep_MoveCollection.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -358,23 +300,57 @@ def test_pyrep::wheel_has_name():
 
 
 
-def test_pyrep::typesensor_is_not_abstract():
-    assert not inspect.isabstract(pyrep::TypeSensor)
+def test_pyrep_robot_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Robot)
 
 
-def test_pyrep::typesensor_constructor_exists():
-    assert callable(pyrep::TypeSensor.__init__)
+def test_pyrep_robot_constructor_exists():
+    assert callable(pyrep_Robot.__init__)
 
 
-def test_pyrep::typesensor_constructor_args():
-    sig = inspect.signature(pyrep::TypeSensor.__init__)
+def test_pyrep_robot_constructor_args():
+    sig = inspect.signature(pyrep_Robot.__init__)
+    params = list(sig.parameters.keys())
+    assert "port" in params, "Missing parameter 'port'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_pyrep_robot_has_port():
+    assert hasattr(pyrep_Robot, "port")
+    descriptor = None
+    for klass in pyrep_Robot.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pyrep_robot_has_name():
+    assert hasattr(pyrep_Robot, "name")
+    descriptor = None
+    for klass in pyrep_Robot.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pyrep_typesensor_is_not_abstract():
+    assert not inspect.isabstract(pyrep_TypeSensor)
+
+
+def test_pyrep_typesensor_constructor_exists():
+    assert callable(pyrep_TypeSensor.__init__)
+
+
+def test_pyrep_typesensor_constructor_args():
+    sig = inspect.signature(pyrep_TypeSensor.__init__)
     params = list(sig.parameters.keys())
     assert "typeName" in params, "Missing parameter 'typeName'"
 
-def test_pyrep::typesensor_has_typeName():
-    assert hasattr(pyrep::TypeSensor, "typeName")
+def test_pyrep_typesensor_has_typeName():
+    assert hasattr(pyrep_TypeSensor, "typeName")
     descriptor = None
-    for klass in pyrep::TypeSensor.__mro__:
+    for klass in pyrep_TypeSensor.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
@@ -382,23 +358,23 @@ def test_pyrep::typesensor_has_typeName():
 
 
 
-def test_pyrep::environment_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Environment)
+def test_pyrep_sensor_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Sensor)
 
 
-def test_pyrep::environment_constructor_exists():
-    assert callable(pyrep::Environment.__init__)
+def test_pyrep_sensor_constructor_exists():
+    assert callable(pyrep_Sensor.__init__)
 
 
-def test_pyrep::environment_constructor_args():
-    sig = inspect.signature(pyrep::Environment.__init__)
+def test_pyrep_sensor_constructor_args():
+    sig = inspect.signature(pyrep_Sensor.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pyrep::environment_has_name():
-    assert hasattr(pyrep::Environment, "name")
+def test_pyrep_sensor_has_name():
+    assert hasattr(pyrep_Sensor, "name")
     descriptor = None
-    for klass in pyrep::Environment.__mro__:
+    for klass in pyrep_Sensor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -406,30 +382,54 @@ def test_pyrep::environment_has_name():
 
 
 
-def test_pyrep::entity_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Entity)
+def test_pyrep_environment_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Environment)
 
 
-def test_pyrep::entity_constructor_exists():
-    assert callable(pyrep::Entity.__init__)
+def test_pyrep_environment_constructor_exists():
+    assert callable(pyrep_Environment.__init__)
 
 
-def test_pyrep::entity_constructor_args():
-    sig = inspect.signature(pyrep::Entity.__init__)
+def test_pyrep_environment_constructor_args():
+    sig = inspect.signature(pyrep_Environment.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_pyrep_environment_has_name():
+    assert hasattr(pyrep_Environment, "name")
+    descriptor = None
+    for klass in pyrep_Environment.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pyrep_entity_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Entity)
+
+
+def test_pyrep_entity_constructor_exists():
+    assert callable(pyrep_Entity.__init__)
+
+
+def test_pyrep_entity_constructor_args():
+    sig = inspect.signature(pyrep_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pyrep::model_is_not_abstract():
-    assert not inspect.isabstract(pyrep::Model)
+def test_pyrep_model_is_not_abstract():
+    assert not inspect.isabstract(pyrep_Model)
 
 
-def test_pyrep::model_constructor_exists():
-    assert callable(pyrep::Model.__init__)
+def test_pyrep_model_constructor_exists():
+    assert callable(pyrep_Model.__init__)
 
 
-def test_pyrep::model_constructor_args():
-    sig = inspect.signature(pyrep::Model.__init__)
+def test_pyrep_model_constructor_args():
+    sig = inspect.signature(pyrep_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -447,57 +447,38 @@ safe_text = st.text(
 DataMove_strategy = st.builds(
     DataMove,
 )
-pyrep::Turn_strategy = st.builds(
-    pyrep::Turn,
+pyrep_Turn_strategy = st.builds(
+    pyrep_Turn,
 )
-pyrep::Move_strategy = st.builds(
-    pyrep::Move,
+pyrep_Move_strategy = st.builds(
+    pyrep_Move,
     distance=
         safe_text
 )
 AbstractDataMove_strategy = st.builds(
     AbstractDataMove,
 )
-pyrep::AbstractCrossMove_strategy = st.builds(
-    pyrep::AbstractCrossMove,
+pyrep_AbstractCrossMove_strategy = st.builds(
+    pyrep_AbstractCrossMove,
 )
-pyrep::AbstractMove_strategy = st.builds(
-    pyrep::AbstractMove,
+pyrep_AbstractMove_strategy = st.builds(
+    pyrep_AbstractMove,
 )
-pyrep::AbstractDataMove_strategy = st.builds(
-    pyrep::AbstractDataMove,
+pyrep_AbstractDataMove_strategy = st.builds(
+    pyrep_AbstractDataMove,
 )
 Entity_strategy = st.builds(
     Entity,
 )
-pyrep::MoveCollection_strategy = st.builds(
-    pyrep::MoveCollection,
+pyrep_Wheel_strategy = st.builds(
+    pyrep_Wheel,
     name=
         safe_text,
-    concurrent=
-        st.booleans()
-)
-pyrep::IP_strategy = st.builds(
-    pyrep::IP,
-    ip=
-        safe_text,
-    name=
+    radius=
         safe_text
 )
-pyrep::Robot_strategy = st.builds(
-    pyrep::Robot,
-    name=
-        safe_text,
-    port=
-        st.integers()
-)
-pyrep::Sensor_strategy = st.builds(
-    pyrep::Sensor,
-    name=
-        safe_text
-)
-pyrep::DataMove_strategy = st.builds(
-    pyrep::DataMove,
+pyrep_DataMove_strategy = st.builds(
+    pyrep_DataMove,
     velocity=
         safe_text,
     name=
@@ -505,28 +486,47 @@ pyrep::DataMove_strategy = st.builds(
     type=
         safe_text
 )
-pyrep::Wheel_strategy = st.builds(
-    pyrep::Wheel,
-    radius=
+pyrep_IP_strategy = st.builds(
+    pyrep_IP,
+    name=
         safe_text,
+    ip=
+        safe_text
+)
+pyrep_MoveCollection_strategy = st.builds(
+    pyrep_MoveCollection,
+    concurrent=
+        st.booleans(),
     name=
         safe_text
 )
-pyrep::TypeSensor_strategy = st.builds(
-    pyrep::TypeSensor,
+pyrep_Robot_strategy = st.builds(
+    pyrep_Robot,
+    port=
+        st.integers(),
+    name=
+        safe_text
+)
+pyrep_TypeSensor_strategy = st.builds(
+    pyrep_TypeSensor,
     typeName=
         safe_text
 )
-pyrep::Environment_strategy = st.builds(
-    pyrep::Environment,
+pyrep_Sensor_strategy = st.builds(
+    pyrep_Sensor,
     name=
         safe_text
 )
-pyrep::Entity_strategy = st.builds(
-    pyrep::Entity,
+pyrep_Environment_strategy = st.builds(
+    pyrep_Environment,
+    name=
+        safe_text
 )
-pyrep::Model_strategy = st.builds(
-    pyrep::Model,
+pyrep_Entity_strategy = st.builds(
+    pyrep_Entity,
+)
+pyrep_Model_strategy = st.builds(
+    pyrep_Model,
 )
 
 @given(instance=DataMove_strategy)
@@ -534,23 +534,20 @@ pyrep::Model_strategy = st.builds(
 def test_datamove_instantiation(instance):
     assert isinstance(instance, DataMove)
 
-@given(instance=pyrep::Turn_strategy)
+@given(instance=pyrep_Turn_strategy)
 @settings(max_examples=50)
-def test_pyrep::turn_instantiation(instance):
-    assert isinstance(instance, pyrep::Turn)
+def test_pyrep_turn_instantiation(instance):
+    assert isinstance(instance, pyrep_Turn)
 
-@given(instance=pyrep::Move_strategy)
+@given(instance=pyrep_Move_strategy)
 @settings(max_examples=50)
-def test_pyrep::move_instantiation(instance):
-    assert isinstance(instance, pyrep::Move)
-
-@given(instance=pyrep::Move_strategy)
-def test_pyrep::move_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_pyrep_move_instantiation(instance):
+    assert isinstance(instance, pyrep_Move)
 
 
-@given(instance=pyrep::Move_strategy)
-def test_pyrep::move_distance_setter(instance):
+
+@given(instance=pyrep_Move_strategy)
+def test_pyrep_move_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
@@ -560,226 +557,184 @@ def test_pyrep::move_distance_setter(instance):
 def test_abstractdatamove_instantiation(instance):
     assert isinstance(instance, AbstractDataMove)
 
-@given(instance=pyrep::AbstractCrossMove_strategy)
+@given(instance=pyrep_AbstractCrossMove_strategy)
 @settings(max_examples=50)
-def test_pyrep::abstractcrossmove_instantiation(instance):
-    assert isinstance(instance, pyrep::AbstractCrossMove)
+def test_pyrep_abstractcrossmove_instantiation(instance):
+    assert isinstance(instance, pyrep_AbstractCrossMove)
 
-@given(instance=pyrep::AbstractMove_strategy)
+@given(instance=pyrep_AbstractMove_strategy)
 @settings(max_examples=50)
-def test_pyrep::abstractmove_instantiation(instance):
-    assert isinstance(instance, pyrep::AbstractMove)
+def test_pyrep_abstractmove_instantiation(instance):
+    assert isinstance(instance, pyrep_AbstractMove)
 
-@given(instance=pyrep::AbstractDataMove_strategy)
+@given(instance=pyrep_AbstractDataMove_strategy)
 @settings(max_examples=50)
-def test_pyrep::abstractdatamove_instantiation(instance):
-    assert isinstance(instance, pyrep::AbstractDataMove)
+def test_pyrep_abstractdatamove_instantiation(instance):
+    assert isinstance(instance, pyrep_AbstractDataMove)
 
 @given(instance=Entity_strategy)
 @settings(max_examples=50)
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=pyrep::MoveCollection_strategy)
+@given(instance=pyrep_Wheel_strategy)
 @settings(max_examples=50)
-def test_pyrep::movecollection_instantiation(instance):
-    assert isinstance(instance, pyrep::MoveCollection)
-
-@given(instance=pyrep::MoveCollection_strategy)
-def test_pyrep::movecollection_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pyrep_wheel_instantiation(instance):
+    assert isinstance(instance, pyrep_Wheel)
 
 
-@given(instance=pyrep::MoveCollection_strategy)
-def test_pyrep::movecollection_name_setter(instance):
+
+@given(instance=pyrep_Wheel_strategy)
+def test_pyrep_wheel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pyrep::MoveCollection_strategy)
-def test_pyrep::movecollection_concurrent_type(instance):
-    assert isinstance(instance.concurrent, bool)
 
 
-@given(instance=pyrep::MoveCollection_strategy)
-def test_pyrep::movecollection_concurrent_setter(instance):
-    original = instance.concurrent
-    instance.concurrent = original
-    assert instance.concurrent == original
-
-@given(instance=pyrep::IP_strategy)
-@settings(max_examples=50)
-def test_pyrep::ip_instantiation(instance):
-    assert isinstance(instance, pyrep::IP)
-
-@given(instance=pyrep::IP_strategy)
-def test_pyrep::ip_ip_type(instance):
-    assert isinstance(instance.ip, str)
-
-
-@given(instance=pyrep::IP_strategy)
-def test_pyrep::ip_ip_setter(instance):
-    original = instance.ip
-    instance.ip = original
-    assert instance.ip == original
-
-@given(instance=pyrep::IP_strategy)
-def test_pyrep::ip_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=pyrep::IP_strategy)
-def test_pyrep::ip_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=pyrep::Robot_strategy)
-@settings(max_examples=50)
-def test_pyrep::robot_instantiation(instance):
-    assert isinstance(instance, pyrep::Robot)
-
-@given(instance=pyrep::Robot_strategy)
-def test_pyrep::robot_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=pyrep::Robot_strategy)
-def test_pyrep::robot_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=pyrep::Robot_strategy)
-def test_pyrep::robot_port_type(instance):
-    assert isinstance(instance.port, int)
-
-
-@given(instance=pyrep::Robot_strategy)
-def test_pyrep::robot_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
-
-@given(instance=pyrep::Sensor_strategy)
-@settings(max_examples=50)
-def test_pyrep::sensor_instantiation(instance):
-    assert isinstance(instance, pyrep::Sensor)
-
-@given(instance=pyrep::Sensor_strategy)
-def test_pyrep::sensor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=pyrep::Sensor_strategy)
-def test_pyrep::sensor_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=pyrep::DataMove_strategy)
-@settings(max_examples=50)
-def test_pyrep::datamove_instantiation(instance):
-    assert isinstance(instance, pyrep::DataMove)
-
-@given(instance=pyrep::DataMove_strategy)
-def test_pyrep::datamove_velocity_type(instance):
-    assert isinstance(instance.velocity, str)
-
-
-@given(instance=pyrep::DataMove_strategy)
-def test_pyrep::datamove_velocity_setter(instance):
-    original = instance.velocity
-    instance.velocity = original
-    assert instance.velocity == original
-
-@given(instance=pyrep::DataMove_strategy)
-def test_pyrep::datamove_name_type(instance):
-    assert isinstance(instance.name, bool)
-
-
-@given(instance=pyrep::DataMove_strategy)
-def test_pyrep::datamove_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=pyrep::DataMove_strategy)
-def test_pyrep::datamove_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=pyrep::DataMove_strategy)
-def test_pyrep::datamove_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=pyrep::Wheel_strategy)
-@settings(max_examples=50)
-def test_pyrep::wheel_instantiation(instance):
-    assert isinstance(instance, pyrep::Wheel)
-
-@given(instance=pyrep::Wheel_strategy)
-def test_pyrep::wheel_radius_type(instance):
-    assert isinstance(instance.radius, str)
-
-
-@given(instance=pyrep::Wheel_strategy)
-def test_pyrep::wheel_radius_setter(instance):
+@given(instance=pyrep_Wheel_strategy)
+def test_pyrep_wheel_radius_setter(instance):
     original = instance.radius
     instance.radius = original
     assert instance.radius == original
 
-@given(instance=pyrep::Wheel_strategy)
-def test_pyrep::wheel_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=pyrep_DataMove_strategy)
+@settings(max_examples=50)
+def test_pyrep_datamove_instantiation(instance):
+    assert isinstance(instance, pyrep_DataMove)
 
 
-@given(instance=pyrep::Wheel_strategy)
-def test_pyrep::wheel_name_setter(instance):
+
+@given(instance=pyrep_DataMove_strategy)
+def test_pyrep_datamove_velocity_setter(instance):
+    original = instance.velocity
+    instance.velocity = original
+    assert instance.velocity == original
+
+
+
+@given(instance=pyrep_DataMove_strategy)
+def test_pyrep_datamove_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pyrep::TypeSensor_strategy)
+
+
+@given(instance=pyrep_DataMove_strategy)
+def test_pyrep_datamove_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=pyrep_IP_strategy)
 @settings(max_examples=50)
-def test_pyrep::typesensor_instantiation(instance):
-    assert isinstance(instance, pyrep::TypeSensor)
-
-@given(instance=pyrep::TypeSensor_strategy)
-def test_pyrep::typesensor_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
+def test_pyrep_ip_instantiation(instance):
+    assert isinstance(instance, pyrep_IP)
 
 
-@given(instance=pyrep::TypeSensor_strategy)
-def test_pyrep::typesensor_typeName_setter(instance):
+
+@given(instance=pyrep_IP_strategy)
+def test_pyrep_ip_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=pyrep_IP_strategy)
+def test_pyrep_ip_ip_setter(instance):
+    original = instance.ip
+    instance.ip = original
+    assert instance.ip == original
+
+@given(instance=pyrep_MoveCollection_strategy)
+@settings(max_examples=50)
+def test_pyrep_movecollection_instantiation(instance):
+    assert isinstance(instance, pyrep_MoveCollection)
+
+
+
+@given(instance=pyrep_MoveCollection_strategy)
+def test_pyrep_movecollection_concurrent_setter(instance):
+    original = instance.concurrent
+    instance.concurrent = original
+    assert instance.concurrent == original
+
+
+
+@given(instance=pyrep_MoveCollection_strategy)
+def test_pyrep_movecollection_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=pyrep_Robot_strategy)
+@settings(max_examples=50)
+def test_pyrep_robot_instantiation(instance):
+    assert isinstance(instance, pyrep_Robot)
+
+
+
+@given(instance=pyrep_Robot_strategy)
+def test_pyrep_robot_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+
+
+@given(instance=pyrep_Robot_strategy)
+def test_pyrep_robot_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=pyrep_TypeSensor_strategy)
+@settings(max_examples=50)
+def test_pyrep_typesensor_instantiation(instance):
+    assert isinstance(instance, pyrep_TypeSensor)
+
+
+
+@given(instance=pyrep_TypeSensor_strategy)
+def test_pyrep_typesensor_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=pyrep::Environment_strategy)
+@given(instance=pyrep_Sensor_strategy)
 @settings(max_examples=50)
-def test_pyrep::environment_instantiation(instance):
-    assert isinstance(instance, pyrep::Environment)
-
-@given(instance=pyrep::Environment_strategy)
-def test_pyrep::environment_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pyrep_sensor_instantiation(instance):
+    assert isinstance(instance, pyrep_Sensor)
 
 
-@given(instance=pyrep::Environment_strategy)
-def test_pyrep::environment_name_setter(instance):
+
+@given(instance=pyrep_Sensor_strategy)
+def test_pyrep_sensor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pyrep::Entity_strategy)
+@given(instance=pyrep_Environment_strategy)
 @settings(max_examples=50)
-def test_pyrep::entity_instantiation(instance):
-    assert isinstance(instance, pyrep::Entity)
+def test_pyrep_environment_instantiation(instance):
+    assert isinstance(instance, pyrep_Environment)
 
-@given(instance=pyrep::Model_strategy)
+
+
+@given(instance=pyrep_Environment_strategy)
+def test_pyrep_environment_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=pyrep_Entity_strategy)
 @settings(max_examples=50)
-def test_pyrep::model_instantiation(instance):
-    assert isinstance(instance, pyrep::Model)
+def test_pyrep_entity_instantiation(instance):
+    assert isinstance(instance, pyrep_Entity)
+
+@given(instance=pyrep_Model_strategy)
+@settings(max_examples=50)
+def test_pyrep_model_instantiation(instance):
+    assert isinstance(instance, pyrep_Model)

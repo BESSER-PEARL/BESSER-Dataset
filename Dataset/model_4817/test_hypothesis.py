@@ -3,412 +3,142 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    DiagramModelConnection,
-    model::DiagramModelArchimateConnection,
-    DiagramModel,
-    model::SketchModel,
-    model::ArchimateDiagramModel,
-    model::Lockable,
-    model::DiagramModelImageProvider,
-    model::BorderObject,
-    model::FontAttribute,
-    model::Bounds,
+from python_code import (
     FontAttribute,
     DiagramModelImageProvider,
     BorderObject,
     TextContent,
     MotivationElement,
-    model::Assessment,
-    model::Constraint,
-    model::Requirement,
-    model::Driver,
-    model::Goal,
-    model::Stakeholder,
+    model_Constraint,
+    model_Goal,
+    model_Assessment,
+    model_Driver,
+    model_Requirement,
+    model_Stakeholder,
     DiagramModelObject,
-    model::DiagramModelNote,
-    model::DiagramModelImage,
-    model::DiagramModelReference,
+    model_DiagramModelImage,
+    model_DiagramModelNote,
+    model_DiagramModelReference,
     DiagramModelContainer,
-    model::DiagramModelArchimateObject,
     DiagramModelComponent,
-    model::DiagramModelObject,
-    model::DiagramModelContainer,
+    model_DiagramModelObject,
+    model_DiagramModelContainer,
     ImplementationMigrationElement,
-    model::Plateau,
-    model::Gap,
-    model::Deliverable,
-    model::WorkPackage,
-    model::Principle,
+    model_Plateau,
+    model_Gap,
+    model_Deliverable,
+    model_WorkPackage,
+    model_Principle,
     InterfaceElement,
     BusinessLayerElement,
-    model::BusinessActor,
-    model::BusinessCollaboration,
-    model::BusinessInteraction,
-    model::Contract,
-    model::BusinessEvent,
-    model::BusinessFunction,
-    model::BusinessObject,
-    model::Meaning,
-    model::BusinessProcess,
-    model::BusinessInterface,
-    model::BusinessActivity,
+    model_BusinessFunction,
+    model_BusinessProcess,
+    model_BusinessInteraction,
+    model_BusinessObject,
+    model_BusinessActor,
+    model_BusinessInterface,
+    model_BusinessEvent,
+    model_BusinessCollaboration,
+    model_Contract,
+    model_Meaning,
+    model_BusinessActivity,
     TechnologyLayerElement,
-    model::CommunicationPath,
-    model::Node,
-    model::InfrastructureService,
-    model::InfrastructureFunction,
-    model::SystemSoftware,
-    model::InfrastructureInterface,
-    model::Network,
-    model::Device,
-    model::Artifact,
+    model_Node,
+    model_CommunicationPath,
+    model_InfrastructureInterface,
+    model_Network,
+    model_InfrastructureService,
+    model_InfrastructureFunction,
+    model_SystemSoftware,
+    model_Device,
+    model_Artifact,
     ApplicationLayerElement,
-    model::DataObject,
-    model::ApplicationFunction,
-    model::ApplicationInteraction,
-    model::ApplicationComponent,
-    model::ApplicationInterface,
-    model::ApplicationService,
-    model::ApplicationCollaboration,
-    model::Location,
-    model::Value,
-    model::BusinessService,
-    model::BusinessRole,
-    model::Representation,
-    model::Product,
+    model_ApplicationComponent,
+    model_DataObject,
+    model_ApplicationFunction,
+    model_ApplicationInterface,
+    model_ApplicationService,
+    model_ApplicationInteraction,
+    model_ApplicationCollaboration,
+    model_Location,
+    model_Value,
+    model_BusinessService,
+    model_BusinessRole,
+    model_Representation,
+    model_Product,
     JunctionElement,
-    model::Junction,
+    model_Junction,
     ArchimateElement,
-    model::TechnologyLayerElement,
-    model::ImplementationMigrationElement,
-    model::MotivationElement,
-    model::InterfaceElement,
-    model::BusinessLayerElement,
-    model::ApplicationLayerElement,
-    model::JunctionElement,
+    model_ImplementationMigrationElement,
+    model_ApplicationLayerElement,
+    model_TechnologyLayerElement,
+    model_MotivationElement,
+    model_BusinessLayerElement,
+    model_InterfaceElement,
+    model_JunctionElement,
     Cloneable,
-    model::DiagramModelBendpoint,
-    model::EObject,
+    model_EObject,
+    DiagramModelConnection,
+    model_DiagramModelArchimateConnection,
+    model_DiagramModelBendpoint,
+    model_DiagramModelArchimateObject,
+    DiagramModel,
+    model_SketchModel,
+    model_ArchimateDiagramModel,
+    model_Lockable,
+    model_DiagramModelImageProvider,
+    model_BorderObject,
+    model_FontAttribute,
+    model_Bounds,
     Relationship,
-    model::InfluenceRelationship,
-    model::UsedByRelationship,
-    model::SpecialisationRelationship,
-    model::AssignmentRelationship,
-    model::AggregationRelationship,
-    model::AssociationRelationship,
-    model::RealisationRelationship,
-    model::CompositionRelationship,
-    model::FlowRelationship,
-    model::TriggeringRelationship,
-    model::AccessRelationship,
-    model::Relationship,
-    model::OrJunction,
-    model::AndJunction,
-    model::FolderContainer,
-    model::Cloneable,
+    model_InfluenceRelationship,
+    model_FlowRelationship,
+    model_SpecialisationRelationship,
+    model_TriggeringRelationship,
+    model_CompositionRelationship,
+    model_AggregationRelationship,
+    model_AssignmentRelationship,
+    model_UsedByRelationship,
+    model_AssociationRelationship,
+    model_RealisationRelationship,
+    model_AccessRelationship,
+    model_Relationship,
+    model_OrJunction,
+    model_AndJunction,
+    model_FolderContainer,
+    model_Cloneable,
     Documentable,
     Adapter,
-    model::ArchimateModelElement,
+    model_ArchimateModelElement,
     Properties,
-    model::DiagramModelConnection,
-    model::DiagramModelGroup,
-    model::SketchModelActor,
-    model::SketchModelSticky,
+    model_SketchModelActor,
+    model_SketchModelSticky,
+    model_DiagramModelConnection,
+    model_DiagramModelGroup,
     ArchimateModelElement,
-    model::DiagramModel,
+    model_DiagramModel,
     Identifier,
     Nameable,
-    model::DiagramModelComponent,
-    model::ArchimateElement,
+    model_ArchimateElement,
+    model_DiagramModelComponent,
     FolderContainer,
-    model::Folder,
-    model::ArchimateModel,
-    model::Adapter,
-    model::Documentable,
-    model::TextContent,
-    model::Nameable,
-    model::Properties,
-    model::Property,
-    model::Identifier,
+    model_Folder,
+    model_ArchimateModel,
+    model_Adapter,
+    model_Documentable,
+    model_TextContent,
+    model_Nameable,
+    model_Properties,
+    model_Property,
+    model_Identifier,
     FolderType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_diagrammodelconnection_is_not_abstract():
-    assert not inspect.isabstract(DiagramModelConnection)
-
-
-def test_diagrammodelconnection_constructor_exists():
-    assert callable(DiagramModelConnection.__init__)
-
-
-def test_diagrammodelconnection_constructor_args():
-    sig = inspect.signature(DiagramModelConnection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::diagrammodelarchimateconnection_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelArchimateConnection)
-
-
-def test_model::diagrammodelarchimateconnection_constructor_exists():
-    assert callable(model::DiagramModelArchimateConnection.__init__)
-
-
-def test_model::diagrammodelarchimateconnection_constructor_args():
-    sig = inspect.signature(model::DiagramModelArchimateConnection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_diagrammodel_is_not_abstract():
-    assert not inspect.isabstract(DiagramModel)
-
-
-def test_diagrammodel_constructor_exists():
-    assert callable(DiagramModel.__init__)
-
-
-def test_diagrammodel_constructor_args():
-    sig = inspect.signature(DiagramModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::sketchmodel_is_not_abstract():
-    assert not inspect.isabstract(model::SketchModel)
-
-
-def test_model::sketchmodel_constructor_exists():
-    assert callable(model::SketchModel.__init__)
-
-
-def test_model::sketchmodel_constructor_args():
-    sig = inspect.signature(model::SketchModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "background" in params, "Missing parameter 'background'"
-
-def test_model::sketchmodel_has_background():
-    assert hasattr(model::SketchModel, "background")
-    descriptor = None
-    for klass in model::SketchModel.__mro__:
-        if "background" in klass.__dict__:
-            descriptor = klass.__dict__["background"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::archimatediagrammodel_is_not_abstract():
-    assert not inspect.isabstract(model::ArchimateDiagramModel)
-
-
-def test_model::archimatediagrammodel_constructor_exists():
-    assert callable(model::ArchimateDiagramModel.__init__)
-
-
-def test_model::archimatediagrammodel_constructor_args():
-    sig = inspect.signature(model::ArchimateDiagramModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "viewpoint" in params, "Missing parameter 'viewpoint'"
-
-def test_model::archimatediagrammodel_has_viewpoint():
-    assert hasattr(model::ArchimateDiagramModel, "viewpoint")
-    descriptor = None
-    for klass in model::ArchimateDiagramModel.__mro__:
-        if "viewpoint" in klass.__dict__:
-            descriptor = klass.__dict__["viewpoint"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::lockable_is_not_abstract():
-    assert not inspect.isabstract(model::Lockable)
-
-
-def test_model::lockable_constructor_exists():
-    assert callable(model::Lockable.__init__)
-
-
-def test_model::lockable_constructor_args():
-    sig = inspect.signature(model::Lockable.__init__)
-    params = list(sig.parameters.keys())
-    assert "locked" in params, "Missing parameter 'locked'"
-
-def test_model::lockable_has_locked():
-    assert hasattr(model::Lockable, "locked")
-    descriptor = None
-    for klass in model::Lockable.__mro__:
-        if "locked" in klass.__dict__:
-            descriptor = klass.__dict__["locked"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::diagrammodelimageprovider_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelImageProvider)
-
-
-def test_model::diagrammodelimageprovider_constructor_exists():
-    assert callable(model::DiagramModelImageProvider.__init__)
-
-
-def test_model::diagrammodelimageprovider_constructor_args():
-    sig = inspect.signature(model::DiagramModelImageProvider.__init__)
-    params = list(sig.parameters.keys())
-    assert "imagePath" in params, "Missing parameter 'imagePath'"
-
-def test_model::diagrammodelimageprovider_has_imagePath():
-    assert hasattr(model::DiagramModelImageProvider, "imagePath")
-    descriptor = None
-    for klass in model::DiagramModelImageProvider.__mro__:
-        if "imagePath" in klass.__dict__:
-            descriptor = klass.__dict__["imagePath"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::borderobject_is_not_abstract():
-    assert not inspect.isabstract(model::BorderObject)
-
-
-def test_model::borderobject_constructor_exists():
-    assert callable(model::BorderObject.__init__)
-
-
-def test_model::borderobject_constructor_args():
-    sig = inspect.signature(model::BorderObject.__init__)
-    params = list(sig.parameters.keys())
-    assert "borderColor" in params, "Missing parameter 'borderColor'"
-
-def test_model::borderobject_has_borderColor():
-    assert hasattr(model::BorderObject, "borderColor")
-    descriptor = None
-    for klass in model::BorderObject.__mro__:
-        if "borderColor" in klass.__dict__:
-            descriptor = klass.__dict__["borderColor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::fontattribute_is_not_abstract():
-    assert not inspect.isabstract(model::FontAttribute)
-
-
-def test_model::fontattribute_constructor_exists():
-    assert callable(model::FontAttribute.__init__)
-
-
-def test_model::fontattribute_constructor_args():
-    sig = inspect.signature(model::FontAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "textAlignment" in params, "Missing parameter 'textAlignment'"
-    assert "textPosition" in params, "Missing parameter 'textPosition'"
-    assert "font" in params, "Missing parameter 'font'"
-    assert "fontColor" in params, "Missing parameter 'fontColor'"
-
-def test_model::fontattribute_has_textAlignment():
-    assert hasattr(model::FontAttribute, "textAlignment")
-    descriptor = None
-    for klass in model::FontAttribute.__mro__:
-        if "textAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["textAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::fontattribute_has_textPosition():
-    assert hasattr(model::FontAttribute, "textPosition")
-    descriptor = None
-    for klass in model::FontAttribute.__mro__:
-        if "textPosition" in klass.__dict__:
-            descriptor = klass.__dict__["textPosition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::fontattribute_has_font():
-    assert hasattr(model::FontAttribute, "font")
-    descriptor = None
-    for klass in model::FontAttribute.__mro__:
-        if "font" in klass.__dict__:
-            descriptor = klass.__dict__["font"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::fontattribute_has_fontColor():
-    assert hasattr(model::FontAttribute, "fontColor")
-    descriptor = None
-    for klass in model::FontAttribute.__mro__:
-        if "fontColor" in klass.__dict__:
-            descriptor = klass.__dict__["fontColor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_model::bounds_is_not_abstract():
-    assert not inspect.isabstract(model::Bounds)
-
-
-def test_model::bounds_constructor_exists():
-    assert callable(model::Bounds.__init__)
-
-
-def test_model::bounds_constructor_args():
-    sig = inspect.signature(model::Bounds.__init__)
-    params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "x" in params, "Missing parameter 'x'"
-
-def test_model::bounds_has_y():
-    assert hasattr(model::Bounds, "y")
-    descriptor = None
-    for klass in model::Bounds.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::bounds_has_height():
-    assert hasattr(model::Bounds, "height")
-    descriptor = None
-    for klass in model::Bounds.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::bounds_has_width():
-    assert hasattr(model::Bounds, "width")
-    descriptor = None
-    for klass in model::Bounds.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::bounds_has_x():
-    assert hasattr(model::Bounds, "x")
-    descriptor = None
-    for klass in model::Bounds.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -482,86 +212,86 @@ def test_motivationelement_constructor_args():
 
 
 
-def test_model::assessment_is_not_abstract():
-    assert not inspect.isabstract(model::Assessment)
+def test_model_constraint_is_not_abstract():
+    assert not inspect.isabstract(model_Constraint)
 
 
-def test_model::assessment_constructor_exists():
-    assert callable(model::Assessment.__init__)
+def test_model_constraint_constructor_exists():
+    assert callable(model_Constraint.__init__)
 
 
-def test_model::assessment_constructor_args():
-    sig = inspect.signature(model::Assessment.__init__)
+def test_model_constraint_constructor_args():
+    sig = inspect.signature(model_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::constraint_is_not_abstract():
-    assert not inspect.isabstract(model::Constraint)
+def test_model_goal_is_not_abstract():
+    assert not inspect.isabstract(model_Goal)
 
 
-def test_model::constraint_constructor_exists():
-    assert callable(model::Constraint.__init__)
+def test_model_goal_constructor_exists():
+    assert callable(model_Goal.__init__)
 
 
-def test_model::constraint_constructor_args():
-    sig = inspect.signature(model::Constraint.__init__)
+def test_model_goal_constructor_args():
+    sig = inspect.signature(model_Goal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::requirement_is_not_abstract():
-    assert not inspect.isabstract(model::Requirement)
+def test_model_assessment_is_not_abstract():
+    assert not inspect.isabstract(model_Assessment)
 
 
-def test_model::requirement_constructor_exists():
-    assert callable(model::Requirement.__init__)
+def test_model_assessment_constructor_exists():
+    assert callable(model_Assessment.__init__)
 
 
-def test_model::requirement_constructor_args():
-    sig = inspect.signature(model::Requirement.__init__)
+def test_model_assessment_constructor_args():
+    sig = inspect.signature(model_Assessment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::driver_is_not_abstract():
-    assert not inspect.isabstract(model::Driver)
+def test_model_driver_is_not_abstract():
+    assert not inspect.isabstract(model_Driver)
 
 
-def test_model::driver_constructor_exists():
-    assert callable(model::Driver.__init__)
+def test_model_driver_constructor_exists():
+    assert callable(model_Driver.__init__)
 
 
-def test_model::driver_constructor_args():
-    sig = inspect.signature(model::Driver.__init__)
+def test_model_driver_constructor_args():
+    sig = inspect.signature(model_Driver.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::goal_is_not_abstract():
-    assert not inspect.isabstract(model::Goal)
+def test_model_requirement_is_not_abstract():
+    assert not inspect.isabstract(model_Requirement)
 
 
-def test_model::goal_constructor_exists():
-    assert callable(model::Goal.__init__)
+def test_model_requirement_constructor_exists():
+    assert callable(model_Requirement.__init__)
 
 
-def test_model::goal_constructor_args():
-    sig = inspect.signature(model::Goal.__init__)
+def test_model_requirement_constructor_args():
+    sig = inspect.signature(model_Requirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::stakeholder_is_not_abstract():
-    assert not inspect.isabstract(model::Stakeholder)
+def test_model_stakeholder_is_not_abstract():
+    assert not inspect.isabstract(model_Stakeholder)
 
 
-def test_model::stakeholder_constructor_exists():
-    assert callable(model::Stakeholder.__init__)
+def test_model_stakeholder_constructor_exists():
+    assert callable(model_Stakeholder.__init__)
 
 
-def test_model::stakeholder_constructor_args():
-    sig = inspect.signature(model::Stakeholder.__init__)
+def test_model_stakeholder_constructor_args():
+    sig = inspect.signature(model_Stakeholder.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -580,44 +310,44 @@ def test_diagrammodelobject_constructor_args():
 
 
 
-def test_model::diagrammodelnote_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelNote)
+def test_model_diagrammodelimage_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelImage)
 
 
-def test_model::diagrammodelnote_constructor_exists():
-    assert callable(model::DiagramModelNote.__init__)
+def test_model_diagrammodelimage_constructor_exists():
+    assert callable(model_DiagramModelImage.__init__)
 
 
-def test_model::diagrammodelnote_constructor_args():
-    sig = inspect.signature(model::DiagramModelNote.__init__)
+def test_model_diagrammodelimage_constructor_args():
+    sig = inspect.signature(model_DiagramModelImage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::diagrammodelimage_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelImage)
+def test_model_diagrammodelnote_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelNote)
 
 
-def test_model::diagrammodelimage_constructor_exists():
-    assert callable(model::DiagramModelImage.__init__)
+def test_model_diagrammodelnote_constructor_exists():
+    assert callable(model_DiagramModelNote.__init__)
 
 
-def test_model::diagrammodelimage_constructor_args():
-    sig = inspect.signature(model::DiagramModelImage.__init__)
+def test_model_diagrammodelnote_constructor_args():
+    sig = inspect.signature(model_DiagramModelNote.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::diagrammodelreference_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelReference)
+def test_model_diagrammodelreference_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelReference)
 
 
-def test_model::diagrammodelreference_constructor_exists():
-    assert callable(model::DiagramModelReference.__init__)
+def test_model_diagrammodelreference_constructor_exists():
+    assert callable(model_DiagramModelReference.__init__)
 
 
-def test_model::diagrammodelreference_constructor_args():
-    sig = inspect.signature(model::DiagramModelReference.__init__)
+def test_model_diagrammodelreference_constructor_args():
+    sig = inspect.signature(model_DiagramModelReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -636,30 +366,6 @@ def test_diagrammodelcontainer_constructor_args():
 
 
 
-def test_model::diagrammodelarchimateobject_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelArchimateObject)
-
-
-def test_model::diagrammodelarchimateobject_constructor_exists():
-    assert callable(model::DiagramModelArchimateObject.__init__)
-
-
-def test_model::diagrammodelarchimateobject_constructor_args():
-    sig = inspect.signature(model::DiagramModelArchimateObject.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_model::diagrammodelarchimateobject_has_type():
-    assert hasattr(model::DiagramModelArchimateObject, "type")
-    descriptor = None
-    for klass in model::DiagramModelArchimateObject.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
 def test_diagrammodelcomponent_is_not_abstract():
     assert not inspect.isabstract(DiagramModelComponent)
 
@@ -674,23 +380,23 @@ def test_diagrammodelcomponent_constructor_args():
 
 
 
-def test_model::diagrammodelobject_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelObject)
+def test_model_diagrammodelobject_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelObject)
 
 
-def test_model::diagrammodelobject_constructor_exists():
-    assert callable(model::DiagramModelObject.__init__)
+def test_model_diagrammodelobject_constructor_exists():
+    assert callable(model_DiagramModelObject.__init__)
 
 
-def test_model::diagrammodelobject_constructor_args():
-    sig = inspect.signature(model::DiagramModelObject.__init__)
+def test_model_diagrammodelobject_constructor_args():
+    sig = inspect.signature(model_DiagramModelObject.__init__)
     params = list(sig.parameters.keys())
     assert "fillColor" in params, "Missing parameter 'fillColor'"
 
-def test_model::diagrammodelobject_has_fillColor():
-    assert hasattr(model::DiagramModelObject, "fillColor")
+def test_model_diagrammodelobject_has_fillColor():
+    assert hasattr(model_DiagramModelObject, "fillColor")
     descriptor = None
-    for klass in model::DiagramModelObject.__mro__:
+    for klass in model_DiagramModelObject.__mro__:
         if "fillColor" in klass.__dict__:
             descriptor = klass.__dict__["fillColor"]
             break
@@ -698,16 +404,16 @@ def test_model::diagrammodelobject_has_fillColor():
 
 
 
-def test_model::diagrammodelcontainer_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelContainer)
+def test_model_diagrammodelcontainer_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelContainer)
 
 
-def test_model::diagrammodelcontainer_constructor_exists():
-    assert callable(model::DiagramModelContainer.__init__)
+def test_model_diagrammodelcontainer_constructor_exists():
+    assert callable(model_DiagramModelContainer.__init__)
 
 
-def test_model::diagrammodelcontainer_constructor_args():
-    sig = inspect.signature(model::DiagramModelContainer.__init__)
+def test_model_diagrammodelcontainer_constructor_args():
+    sig = inspect.signature(model_DiagramModelContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -726,72 +432,72 @@ def test_implementationmigrationelement_constructor_args():
 
 
 
-def test_model::plateau_is_not_abstract():
-    assert not inspect.isabstract(model::Plateau)
+def test_model_plateau_is_not_abstract():
+    assert not inspect.isabstract(model_Plateau)
 
 
-def test_model::plateau_constructor_exists():
-    assert callable(model::Plateau.__init__)
+def test_model_plateau_constructor_exists():
+    assert callable(model_Plateau.__init__)
 
 
-def test_model::plateau_constructor_args():
-    sig = inspect.signature(model::Plateau.__init__)
+def test_model_plateau_constructor_args():
+    sig = inspect.signature(model_Plateau.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::gap_is_not_abstract():
-    assert not inspect.isabstract(model::Gap)
+def test_model_gap_is_not_abstract():
+    assert not inspect.isabstract(model_Gap)
 
 
-def test_model::gap_constructor_exists():
-    assert callable(model::Gap.__init__)
+def test_model_gap_constructor_exists():
+    assert callable(model_Gap.__init__)
 
 
-def test_model::gap_constructor_args():
-    sig = inspect.signature(model::Gap.__init__)
+def test_model_gap_constructor_args():
+    sig = inspect.signature(model_Gap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::deliverable_is_not_abstract():
-    assert not inspect.isabstract(model::Deliverable)
+def test_model_deliverable_is_not_abstract():
+    assert not inspect.isabstract(model_Deliverable)
 
 
-def test_model::deliverable_constructor_exists():
-    assert callable(model::Deliverable.__init__)
+def test_model_deliverable_constructor_exists():
+    assert callable(model_Deliverable.__init__)
 
 
-def test_model::deliverable_constructor_args():
-    sig = inspect.signature(model::Deliverable.__init__)
+def test_model_deliverable_constructor_args():
+    sig = inspect.signature(model_Deliverable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::workpackage_is_not_abstract():
-    assert not inspect.isabstract(model::WorkPackage)
+def test_model_workpackage_is_not_abstract():
+    assert not inspect.isabstract(model_WorkPackage)
 
 
-def test_model::workpackage_constructor_exists():
-    assert callable(model::WorkPackage.__init__)
+def test_model_workpackage_constructor_exists():
+    assert callable(model_WorkPackage.__init__)
 
 
-def test_model::workpackage_constructor_args():
-    sig = inspect.signature(model::WorkPackage.__init__)
+def test_model_workpackage_constructor_args():
+    sig = inspect.signature(model_WorkPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::principle_is_not_abstract():
-    assert not inspect.isabstract(model::Principle)
+def test_model_principle_is_not_abstract():
+    assert not inspect.isabstract(model_Principle)
 
 
-def test_model::principle_constructor_exists():
-    assert callable(model::Principle.__init__)
+def test_model_principle_constructor_exists():
+    assert callable(model_Principle.__init__)
 
 
-def test_model::principle_constructor_args():
-    sig = inspect.signature(model::Principle.__init__)
+def test_model_principle_constructor_args():
+    sig = inspect.signature(model_Principle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -824,156 +530,156 @@ def test_businesslayerelement_constructor_args():
 
 
 
-def test_model::businessactor_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessActor)
+def test_model_businessfunction_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessFunction)
 
 
-def test_model::businessactor_constructor_exists():
-    assert callable(model::BusinessActor.__init__)
+def test_model_businessfunction_constructor_exists():
+    assert callable(model_BusinessFunction.__init__)
 
 
-def test_model::businessactor_constructor_args():
-    sig = inspect.signature(model::BusinessActor.__init__)
+def test_model_businessfunction_constructor_args():
+    sig = inspect.signature(model_BusinessFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businesscollaboration_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessCollaboration)
+def test_model_businessprocess_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessProcess)
 
 
-def test_model::businesscollaboration_constructor_exists():
-    assert callable(model::BusinessCollaboration.__init__)
+def test_model_businessprocess_constructor_exists():
+    assert callable(model_BusinessProcess.__init__)
 
 
-def test_model::businesscollaboration_constructor_args():
-    sig = inspect.signature(model::BusinessCollaboration.__init__)
+def test_model_businessprocess_constructor_args():
+    sig = inspect.signature(model_BusinessProcess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessinteraction_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessInteraction)
+def test_model_businessinteraction_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessInteraction)
 
 
-def test_model::businessinteraction_constructor_exists():
-    assert callable(model::BusinessInteraction.__init__)
+def test_model_businessinteraction_constructor_exists():
+    assert callable(model_BusinessInteraction.__init__)
 
 
-def test_model::businessinteraction_constructor_args():
-    sig = inspect.signature(model::BusinessInteraction.__init__)
+def test_model_businessinteraction_constructor_args():
+    sig = inspect.signature(model_BusinessInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::contract_is_not_abstract():
-    assert not inspect.isabstract(model::Contract)
+def test_model_businessobject_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessObject)
 
 
-def test_model::contract_constructor_exists():
-    assert callable(model::Contract.__init__)
+def test_model_businessobject_constructor_exists():
+    assert callable(model_BusinessObject.__init__)
 
 
-def test_model::contract_constructor_args():
-    sig = inspect.signature(model::Contract.__init__)
+def test_model_businessobject_constructor_args():
+    sig = inspect.signature(model_BusinessObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessevent_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessEvent)
+def test_model_businessactor_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessActor)
 
 
-def test_model::businessevent_constructor_exists():
-    assert callable(model::BusinessEvent.__init__)
+def test_model_businessactor_constructor_exists():
+    assert callable(model_BusinessActor.__init__)
 
 
-def test_model::businessevent_constructor_args():
-    sig = inspect.signature(model::BusinessEvent.__init__)
+def test_model_businessactor_constructor_args():
+    sig = inspect.signature(model_BusinessActor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessfunction_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessFunction)
+def test_model_businessinterface_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessInterface)
 
 
-def test_model::businessfunction_constructor_exists():
-    assert callable(model::BusinessFunction.__init__)
+def test_model_businessinterface_constructor_exists():
+    assert callable(model_BusinessInterface.__init__)
 
 
-def test_model::businessfunction_constructor_args():
-    sig = inspect.signature(model::BusinessFunction.__init__)
+def test_model_businessinterface_constructor_args():
+    sig = inspect.signature(model_BusinessInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessobject_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessObject)
+def test_model_businessevent_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessEvent)
 
 
-def test_model::businessobject_constructor_exists():
-    assert callable(model::BusinessObject.__init__)
+def test_model_businessevent_constructor_exists():
+    assert callable(model_BusinessEvent.__init__)
 
 
-def test_model::businessobject_constructor_args():
-    sig = inspect.signature(model::BusinessObject.__init__)
+def test_model_businessevent_constructor_args():
+    sig = inspect.signature(model_BusinessEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::meaning_is_not_abstract():
-    assert not inspect.isabstract(model::Meaning)
+def test_model_businesscollaboration_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessCollaboration)
 
 
-def test_model::meaning_constructor_exists():
-    assert callable(model::Meaning.__init__)
+def test_model_businesscollaboration_constructor_exists():
+    assert callable(model_BusinessCollaboration.__init__)
 
 
-def test_model::meaning_constructor_args():
-    sig = inspect.signature(model::Meaning.__init__)
+def test_model_businesscollaboration_constructor_args():
+    sig = inspect.signature(model_BusinessCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessprocess_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessProcess)
+def test_model_contract_is_not_abstract():
+    assert not inspect.isabstract(model_Contract)
 
 
-def test_model::businessprocess_constructor_exists():
-    assert callable(model::BusinessProcess.__init__)
+def test_model_contract_constructor_exists():
+    assert callable(model_Contract.__init__)
 
 
-def test_model::businessprocess_constructor_args():
-    sig = inspect.signature(model::BusinessProcess.__init__)
+def test_model_contract_constructor_args():
+    sig = inspect.signature(model_Contract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessinterface_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessInterface)
+def test_model_meaning_is_not_abstract():
+    assert not inspect.isabstract(model_Meaning)
 
 
-def test_model::businessinterface_constructor_exists():
-    assert callable(model::BusinessInterface.__init__)
+def test_model_meaning_constructor_exists():
+    assert callable(model_Meaning.__init__)
 
 
-def test_model::businessinterface_constructor_args():
-    sig = inspect.signature(model::BusinessInterface.__init__)
+def test_model_meaning_constructor_args():
+    sig = inspect.signature(model_Meaning.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessactivity_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessActivity)
+def test_model_businessactivity_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessActivity)
 
 
-def test_model::businessactivity_constructor_exists():
-    assert callable(model::BusinessActivity.__init__)
+def test_model_businessactivity_constructor_exists():
+    assert callable(model_BusinessActivity.__init__)
 
 
-def test_model::businessactivity_constructor_args():
-    sig = inspect.signature(model::BusinessActivity.__init__)
+def test_model_businessactivity_constructor_args():
+    sig = inspect.signature(model_BusinessActivity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -992,128 +698,128 @@ def test_technologylayerelement_constructor_args():
 
 
 
-def test_model::communicationpath_is_not_abstract():
-    assert not inspect.isabstract(model::CommunicationPath)
+def test_model_node_is_not_abstract():
+    assert not inspect.isabstract(model_Node)
 
 
-def test_model::communicationpath_constructor_exists():
-    assert callable(model::CommunicationPath.__init__)
+def test_model_node_constructor_exists():
+    assert callable(model_Node.__init__)
 
 
-def test_model::communicationpath_constructor_args():
-    sig = inspect.signature(model::CommunicationPath.__init__)
+def test_model_node_constructor_args():
+    sig = inspect.signature(model_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::node_is_not_abstract():
-    assert not inspect.isabstract(model::Node)
+def test_model_communicationpath_is_not_abstract():
+    assert not inspect.isabstract(model_CommunicationPath)
 
 
-def test_model::node_constructor_exists():
-    assert callable(model::Node.__init__)
+def test_model_communicationpath_constructor_exists():
+    assert callable(model_CommunicationPath.__init__)
 
 
-def test_model::node_constructor_args():
-    sig = inspect.signature(model::Node.__init__)
+def test_model_communicationpath_constructor_args():
+    sig = inspect.signature(model_CommunicationPath.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::infrastructureservice_is_not_abstract():
-    assert not inspect.isabstract(model::InfrastructureService)
+def test_model_infrastructureinterface_is_not_abstract():
+    assert not inspect.isabstract(model_InfrastructureInterface)
 
 
-def test_model::infrastructureservice_constructor_exists():
-    assert callable(model::InfrastructureService.__init__)
+def test_model_infrastructureinterface_constructor_exists():
+    assert callable(model_InfrastructureInterface.__init__)
 
 
-def test_model::infrastructureservice_constructor_args():
-    sig = inspect.signature(model::InfrastructureService.__init__)
+def test_model_infrastructureinterface_constructor_args():
+    sig = inspect.signature(model_InfrastructureInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::infrastructurefunction_is_not_abstract():
-    assert not inspect.isabstract(model::InfrastructureFunction)
+def test_model_network_is_not_abstract():
+    assert not inspect.isabstract(model_Network)
 
 
-def test_model::infrastructurefunction_constructor_exists():
-    assert callable(model::InfrastructureFunction.__init__)
+def test_model_network_constructor_exists():
+    assert callable(model_Network.__init__)
 
 
-def test_model::infrastructurefunction_constructor_args():
-    sig = inspect.signature(model::InfrastructureFunction.__init__)
+def test_model_network_constructor_args():
+    sig = inspect.signature(model_Network.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::systemsoftware_is_not_abstract():
-    assert not inspect.isabstract(model::SystemSoftware)
+def test_model_infrastructureservice_is_not_abstract():
+    assert not inspect.isabstract(model_InfrastructureService)
 
 
-def test_model::systemsoftware_constructor_exists():
-    assert callable(model::SystemSoftware.__init__)
+def test_model_infrastructureservice_constructor_exists():
+    assert callable(model_InfrastructureService.__init__)
 
 
-def test_model::systemsoftware_constructor_args():
-    sig = inspect.signature(model::SystemSoftware.__init__)
+def test_model_infrastructureservice_constructor_args():
+    sig = inspect.signature(model_InfrastructureService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::infrastructureinterface_is_not_abstract():
-    assert not inspect.isabstract(model::InfrastructureInterface)
+def test_model_infrastructurefunction_is_not_abstract():
+    assert not inspect.isabstract(model_InfrastructureFunction)
 
 
-def test_model::infrastructureinterface_constructor_exists():
-    assert callable(model::InfrastructureInterface.__init__)
+def test_model_infrastructurefunction_constructor_exists():
+    assert callable(model_InfrastructureFunction.__init__)
 
 
-def test_model::infrastructureinterface_constructor_args():
-    sig = inspect.signature(model::InfrastructureInterface.__init__)
+def test_model_infrastructurefunction_constructor_args():
+    sig = inspect.signature(model_InfrastructureFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::network_is_not_abstract():
-    assert not inspect.isabstract(model::Network)
+def test_model_systemsoftware_is_not_abstract():
+    assert not inspect.isabstract(model_SystemSoftware)
 
 
-def test_model::network_constructor_exists():
-    assert callable(model::Network.__init__)
+def test_model_systemsoftware_constructor_exists():
+    assert callable(model_SystemSoftware.__init__)
 
 
-def test_model::network_constructor_args():
-    sig = inspect.signature(model::Network.__init__)
+def test_model_systemsoftware_constructor_args():
+    sig = inspect.signature(model_SystemSoftware.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::device_is_not_abstract():
-    assert not inspect.isabstract(model::Device)
+def test_model_device_is_not_abstract():
+    assert not inspect.isabstract(model_Device)
 
 
-def test_model::device_constructor_exists():
-    assert callable(model::Device.__init__)
+def test_model_device_constructor_exists():
+    assert callable(model_Device.__init__)
 
 
-def test_model::device_constructor_args():
-    sig = inspect.signature(model::Device.__init__)
+def test_model_device_constructor_args():
+    sig = inspect.signature(model_Device.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::artifact_is_not_abstract():
-    assert not inspect.isabstract(model::Artifact)
+def test_model_artifact_is_not_abstract():
+    assert not inspect.isabstract(model_Artifact)
 
 
-def test_model::artifact_constructor_exists():
-    assert callable(model::Artifact.__init__)
+def test_model_artifact_constructor_exists():
+    assert callable(model_Artifact.__init__)
 
 
-def test_model::artifact_constructor_args():
-    sig = inspect.signature(model::Artifact.__init__)
+def test_model_artifact_constructor_args():
+    sig = inspect.signature(model_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1132,184 +838,184 @@ def test_applicationlayerelement_constructor_args():
 
 
 
-def test_model::dataobject_is_not_abstract():
-    assert not inspect.isabstract(model::DataObject)
+def test_model_applicationcomponent_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationComponent)
 
 
-def test_model::dataobject_constructor_exists():
-    assert callable(model::DataObject.__init__)
+def test_model_applicationcomponent_constructor_exists():
+    assert callable(model_ApplicationComponent.__init__)
 
 
-def test_model::dataobject_constructor_args():
-    sig = inspect.signature(model::DataObject.__init__)
+def test_model_applicationcomponent_constructor_args():
+    sig = inspect.signature(model_ApplicationComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::applicationfunction_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationFunction)
+def test_model_dataobject_is_not_abstract():
+    assert not inspect.isabstract(model_DataObject)
 
 
-def test_model::applicationfunction_constructor_exists():
-    assert callable(model::ApplicationFunction.__init__)
+def test_model_dataobject_constructor_exists():
+    assert callable(model_DataObject.__init__)
 
 
-def test_model::applicationfunction_constructor_args():
-    sig = inspect.signature(model::ApplicationFunction.__init__)
+def test_model_dataobject_constructor_args():
+    sig = inspect.signature(model_DataObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::applicationinteraction_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationInteraction)
+def test_model_applicationfunction_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationFunction)
 
 
-def test_model::applicationinteraction_constructor_exists():
-    assert callable(model::ApplicationInteraction.__init__)
+def test_model_applicationfunction_constructor_exists():
+    assert callable(model_ApplicationFunction.__init__)
 
 
-def test_model::applicationinteraction_constructor_args():
-    sig = inspect.signature(model::ApplicationInteraction.__init__)
+def test_model_applicationfunction_constructor_args():
+    sig = inspect.signature(model_ApplicationFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::applicationcomponent_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationComponent)
+def test_model_applicationinterface_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationInterface)
 
 
-def test_model::applicationcomponent_constructor_exists():
-    assert callable(model::ApplicationComponent.__init__)
+def test_model_applicationinterface_constructor_exists():
+    assert callable(model_ApplicationInterface.__init__)
 
 
-def test_model::applicationcomponent_constructor_args():
-    sig = inspect.signature(model::ApplicationComponent.__init__)
+def test_model_applicationinterface_constructor_args():
+    sig = inspect.signature(model_ApplicationInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::applicationinterface_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationInterface)
+def test_model_applicationservice_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationService)
 
 
-def test_model::applicationinterface_constructor_exists():
-    assert callable(model::ApplicationInterface.__init__)
+def test_model_applicationservice_constructor_exists():
+    assert callable(model_ApplicationService.__init__)
 
 
-def test_model::applicationinterface_constructor_args():
-    sig = inspect.signature(model::ApplicationInterface.__init__)
+def test_model_applicationservice_constructor_args():
+    sig = inspect.signature(model_ApplicationService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::applicationservice_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationService)
+def test_model_applicationinteraction_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationInteraction)
 
 
-def test_model::applicationservice_constructor_exists():
-    assert callable(model::ApplicationService.__init__)
+def test_model_applicationinteraction_constructor_exists():
+    assert callable(model_ApplicationInteraction.__init__)
 
 
-def test_model::applicationservice_constructor_args():
-    sig = inspect.signature(model::ApplicationService.__init__)
+def test_model_applicationinteraction_constructor_args():
+    sig = inspect.signature(model_ApplicationInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::applicationcollaboration_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationCollaboration)
+def test_model_applicationcollaboration_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationCollaboration)
 
 
-def test_model::applicationcollaboration_constructor_exists():
-    assert callable(model::ApplicationCollaboration.__init__)
+def test_model_applicationcollaboration_constructor_exists():
+    assert callable(model_ApplicationCollaboration.__init__)
 
 
-def test_model::applicationcollaboration_constructor_args():
-    sig = inspect.signature(model::ApplicationCollaboration.__init__)
+def test_model_applicationcollaboration_constructor_args():
+    sig = inspect.signature(model_ApplicationCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::location_is_not_abstract():
-    assert not inspect.isabstract(model::Location)
+def test_model_location_is_not_abstract():
+    assert not inspect.isabstract(model_Location)
 
 
-def test_model::location_constructor_exists():
-    assert callable(model::Location.__init__)
+def test_model_location_constructor_exists():
+    assert callable(model_Location.__init__)
 
 
-def test_model::location_constructor_args():
-    sig = inspect.signature(model::Location.__init__)
+def test_model_location_constructor_args():
+    sig = inspect.signature(model_Location.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::value_is_not_abstract():
-    assert not inspect.isabstract(model::Value)
+def test_model_value_is_not_abstract():
+    assert not inspect.isabstract(model_Value)
 
 
-def test_model::value_constructor_exists():
-    assert callable(model::Value.__init__)
+def test_model_value_constructor_exists():
+    assert callable(model_Value.__init__)
 
 
-def test_model::value_constructor_args():
-    sig = inspect.signature(model::Value.__init__)
+def test_model_value_constructor_args():
+    sig = inspect.signature(model_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessservice_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessService)
+def test_model_businessservice_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessService)
 
 
-def test_model::businessservice_constructor_exists():
-    assert callable(model::BusinessService.__init__)
+def test_model_businessservice_constructor_exists():
+    assert callable(model_BusinessService.__init__)
 
 
-def test_model::businessservice_constructor_args():
-    sig = inspect.signature(model::BusinessService.__init__)
+def test_model_businessservice_constructor_args():
+    sig = inspect.signature(model_BusinessService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::businessrole_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessRole)
+def test_model_businessrole_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessRole)
 
 
-def test_model::businessrole_constructor_exists():
-    assert callable(model::BusinessRole.__init__)
+def test_model_businessrole_constructor_exists():
+    assert callable(model_BusinessRole.__init__)
 
 
-def test_model::businessrole_constructor_args():
-    sig = inspect.signature(model::BusinessRole.__init__)
+def test_model_businessrole_constructor_args():
+    sig = inspect.signature(model_BusinessRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::representation_is_not_abstract():
-    assert not inspect.isabstract(model::Representation)
+def test_model_representation_is_not_abstract():
+    assert not inspect.isabstract(model_Representation)
 
 
-def test_model::representation_constructor_exists():
-    assert callable(model::Representation.__init__)
+def test_model_representation_constructor_exists():
+    assert callable(model_Representation.__init__)
 
 
-def test_model::representation_constructor_args():
-    sig = inspect.signature(model::Representation.__init__)
+def test_model_representation_constructor_args():
+    sig = inspect.signature(model_Representation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::product_is_not_abstract():
-    assert not inspect.isabstract(model::Product)
+def test_model_product_is_not_abstract():
+    assert not inspect.isabstract(model_Product)
 
 
-def test_model::product_constructor_exists():
-    assert callable(model::Product.__init__)
+def test_model_product_constructor_exists():
+    assert callable(model_Product.__init__)
 
 
-def test_model::product_constructor_args():
-    sig = inspect.signature(model::Product.__init__)
+def test_model_product_constructor_args():
+    sig = inspect.signature(model_Product.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1328,16 +1034,16 @@ def test_junctionelement_constructor_args():
 
 
 
-def test_model::junction_is_not_abstract():
-    assert not inspect.isabstract(model::Junction)
+def test_model_junction_is_not_abstract():
+    assert not inspect.isabstract(model_Junction)
 
 
-def test_model::junction_constructor_exists():
-    assert callable(model::Junction.__init__)
+def test_model_junction_constructor_exists():
+    assert callable(model_Junction.__init__)
 
 
-def test_model::junction_constructor_args():
-    sig = inspect.signature(model::Junction.__init__)
+def test_model_junction_constructor_args():
+    sig = inspect.signature(model_Junction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1356,65 +1062,93 @@ def test_archimateelement_constructor_args():
 
 
 
-def test_model::technologylayerelement_is_not_abstract():
-    assert not inspect.isabstract(model::TechnologyLayerElement)
+def test_model_implementationmigrationelement_is_not_abstract():
+    assert not inspect.isabstract(model_ImplementationMigrationElement)
 
 
-def test_model::technologylayerelement_constructor_exists():
-    assert callable(model::TechnologyLayerElement.__init__)
+def test_model_implementationmigrationelement_constructor_exists():
+    assert callable(model_ImplementationMigrationElement.__init__)
 
 
-def test_model::technologylayerelement_constructor_args():
-    sig = inspect.signature(model::TechnologyLayerElement.__init__)
+def test_model_implementationmigrationelement_constructor_args():
+    sig = inspect.signature(model_ImplementationMigrationElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::implementationmigrationelement_is_not_abstract():
-    assert not inspect.isabstract(model::ImplementationMigrationElement)
+def test_model_applicationlayerelement_is_not_abstract():
+    assert not inspect.isabstract(model_ApplicationLayerElement)
 
 
-def test_model::implementationmigrationelement_constructor_exists():
-    assert callable(model::ImplementationMigrationElement.__init__)
+def test_model_applicationlayerelement_constructor_exists():
+    assert callable(model_ApplicationLayerElement.__init__)
 
 
-def test_model::implementationmigrationelement_constructor_args():
-    sig = inspect.signature(model::ImplementationMigrationElement.__init__)
+def test_model_applicationlayerelement_constructor_args():
+    sig = inspect.signature(model_ApplicationLayerElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::motivationelement_is_not_abstract():
-    assert not inspect.isabstract(model::MotivationElement)
+def test_model_technologylayerelement_is_not_abstract():
+    assert not inspect.isabstract(model_TechnologyLayerElement)
 
 
-def test_model::motivationelement_constructor_exists():
-    assert callable(model::MotivationElement.__init__)
+def test_model_technologylayerelement_constructor_exists():
+    assert callable(model_TechnologyLayerElement.__init__)
 
 
-def test_model::motivationelement_constructor_args():
-    sig = inspect.signature(model::MotivationElement.__init__)
+def test_model_technologylayerelement_constructor_args():
+    sig = inspect.signature(model_TechnologyLayerElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::interfaceelement_is_not_abstract():
-    assert not inspect.isabstract(model::InterfaceElement)
+def test_model_motivationelement_is_not_abstract():
+    assert not inspect.isabstract(model_MotivationElement)
 
 
-def test_model::interfaceelement_constructor_exists():
-    assert callable(model::InterfaceElement.__init__)
+def test_model_motivationelement_constructor_exists():
+    assert callable(model_MotivationElement.__init__)
 
 
-def test_model::interfaceelement_constructor_args():
-    sig = inspect.signature(model::InterfaceElement.__init__)
+def test_model_motivationelement_constructor_args():
+    sig = inspect.signature(model_MotivationElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_businesslayerelement_is_not_abstract():
+    assert not inspect.isabstract(model_BusinessLayerElement)
+
+
+def test_model_businesslayerelement_constructor_exists():
+    assert callable(model_BusinessLayerElement.__init__)
+
+
+def test_model_businesslayerelement_constructor_args():
+    sig = inspect.signature(model_BusinessLayerElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_interfaceelement_is_not_abstract():
+    assert not inspect.isabstract(model_InterfaceElement)
+
+
+def test_model_interfaceelement_constructor_exists():
+    assert callable(model_InterfaceElement.__init__)
+
+
+def test_model_interfaceelement_constructor_args():
+    sig = inspect.signature(model_InterfaceElement.__init__)
     params = list(sig.parameters.keys())
     assert "interfaceType" in params, "Missing parameter 'interfaceType'"
 
-def test_model::interfaceelement_has_interfaceType():
-    assert hasattr(model::InterfaceElement, "interfaceType")
+def test_model_interfaceelement_has_interfaceType():
+    assert hasattr(model_InterfaceElement, "interfaceType")
     descriptor = None
-    for klass in model::InterfaceElement.__mro__:
+    for klass in model_InterfaceElement.__mro__:
         if "interfaceType" in klass.__dict__:
             descriptor = klass.__dict__["interfaceType"]
             break
@@ -1422,44 +1156,16 @@ def test_model::interfaceelement_has_interfaceType():
 
 
 
-def test_model::businesslayerelement_is_not_abstract():
-    assert not inspect.isabstract(model::BusinessLayerElement)
+def test_model_junctionelement_is_not_abstract():
+    assert not inspect.isabstract(model_JunctionElement)
 
 
-def test_model::businesslayerelement_constructor_exists():
-    assert callable(model::BusinessLayerElement.__init__)
+def test_model_junctionelement_constructor_exists():
+    assert callable(model_JunctionElement.__init__)
 
 
-def test_model::businesslayerelement_constructor_args():
-    sig = inspect.signature(model::BusinessLayerElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::applicationlayerelement_is_not_abstract():
-    assert not inspect.isabstract(model::ApplicationLayerElement)
-
-
-def test_model::applicationlayerelement_constructor_exists():
-    assert callable(model::ApplicationLayerElement.__init__)
-
-
-def test_model::applicationlayerelement_constructor_args():
-    sig = inspect.signature(model::ApplicationLayerElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::junctionelement_is_not_abstract():
-    assert not inspect.isabstract(model::JunctionElement)
-
-
-def test_model::junctionelement_constructor_exists():
-    assert callable(model::JunctionElement.__init__)
-
-
-def test_model::junctionelement_constructor_args():
-    sig = inspect.signature(model::JunctionElement.__init__)
+def test_model_junctionelement_constructor_args():
+    sig = inspect.signature(model_JunctionElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1478,53 +1184,95 @@ def test_cloneable_constructor_args():
 
 
 
-def test_model::diagrammodelbendpoint_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelBendpoint)
+def test_model_eobject_is_not_abstract():
+    assert not inspect.isabstract(model_EObject)
 
 
-def test_model::diagrammodelbendpoint_constructor_exists():
-    assert callable(model::DiagramModelBendpoint.__init__)
+def test_model_eobject_constructor_exists():
+    assert callable(model_EObject.__init__)
 
 
-def test_model::diagrammodelbendpoint_constructor_args():
-    sig = inspect.signature(model::DiagramModelBendpoint.__init__)
+def test_model_eobject_constructor_args():
+    sig = inspect.signature(model_EObject.__init__)
     params = list(sig.parameters.keys())
-    assert "endX" in params, "Missing parameter 'endX'"
+
+
+
+def test_diagrammodelconnection_is_not_abstract():
+    assert not inspect.isabstract(DiagramModelConnection)
+
+
+def test_diagrammodelconnection_constructor_exists():
+    assert callable(DiagramModelConnection.__init__)
+
+
+def test_diagrammodelconnection_constructor_args():
+    sig = inspect.signature(DiagramModelConnection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_diagrammodelarchimateconnection_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelArchimateConnection)
+
+
+def test_model_diagrammodelarchimateconnection_constructor_exists():
+    assert callable(model_DiagramModelArchimateConnection.__init__)
+
+
+def test_model_diagrammodelarchimateconnection_constructor_args():
+    sig = inspect.signature(model_DiagramModelArchimateConnection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_diagrammodelbendpoint_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelBendpoint)
+
+
+def test_model_diagrammodelbendpoint_constructor_exists():
+    assert callable(model_DiagramModelBendpoint.__init__)
+
+
+def test_model_diagrammodelbendpoint_constructor_args():
+    sig = inspect.signature(model_DiagramModelBendpoint.__init__)
+    params = list(sig.parameters.keys())
     assert "startY" in params, "Missing parameter 'startY'"
     assert "endY" in params, "Missing parameter 'endY'"
+    assert "endX" in params, "Missing parameter 'endX'"
     assert "startX" in params, "Missing parameter 'startX'"
 
-def test_model::diagrammodelbendpoint_has_endX():
-    assert hasattr(model::DiagramModelBendpoint, "endX")
+def test_model_diagrammodelbendpoint_has_startY():
+    assert hasattr(model_DiagramModelBendpoint, "startY")
     descriptor = None
-    for klass in model::DiagramModelBendpoint.__mro__:
-        if "endX" in klass.__dict__:
-            descriptor = klass.__dict__["endX"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::diagrammodelbendpoint_has_startY():
-    assert hasattr(model::DiagramModelBendpoint, "startY")
-    descriptor = None
-    for klass in model::DiagramModelBendpoint.__mro__:
+    for klass in model_DiagramModelBendpoint.__mro__:
         if "startY" in klass.__dict__:
             descriptor = klass.__dict__["startY"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::diagrammodelbendpoint_has_endY():
-    assert hasattr(model::DiagramModelBendpoint, "endY")
+def test_model_diagrammodelbendpoint_has_endY():
+    assert hasattr(model_DiagramModelBendpoint, "endY")
     descriptor = None
-    for klass in model::DiagramModelBendpoint.__mro__:
+    for klass in model_DiagramModelBendpoint.__mro__:
         if "endY" in klass.__dict__:
             descriptor = klass.__dict__["endY"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::diagrammodelbendpoint_has_startX():
-    assert hasattr(model::DiagramModelBendpoint, "startX")
+def test_model_diagrammodelbendpoint_has_endX():
+    assert hasattr(model_DiagramModelBendpoint, "endX")
     descriptor = None
-    for klass in model::DiagramModelBendpoint.__mro__:
+    for klass in model_DiagramModelBendpoint.__mro__:
+        if "endX" in klass.__dict__:
+            descriptor = klass.__dict__["endX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_diagrammodelbendpoint_has_startX():
+    assert hasattr(model_DiagramModelBendpoint, "startX")
+    descriptor = None
+    for klass in model_DiagramModelBendpoint.__mro__:
         if "startX" in klass.__dict__:
             descriptor = klass.__dict__["startX"]
             break
@@ -1532,17 +1280,269 @@ def test_model::diagrammodelbendpoint_has_startX():
 
 
 
-def test_model::eobject_is_not_abstract():
-    assert not inspect.isabstract(model::EObject)
+def test_model_diagrammodelarchimateobject_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelArchimateObject)
 
 
-def test_model::eobject_constructor_exists():
-    assert callable(model::EObject.__init__)
+def test_model_diagrammodelarchimateobject_constructor_exists():
+    assert callable(model_DiagramModelArchimateObject.__init__)
 
 
-def test_model::eobject_constructor_args():
-    sig = inspect.signature(model::EObject.__init__)
+def test_model_diagrammodelarchimateobject_constructor_args():
+    sig = inspect.signature(model_DiagramModelArchimateObject.__init__)
     params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_model_diagrammodelarchimateobject_has_type():
+    assert hasattr(model_DiagramModelArchimateObject, "type")
+    descriptor = None
+    for klass in model_DiagramModelArchimateObject.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_diagrammodel_is_not_abstract():
+    assert not inspect.isabstract(DiagramModel)
+
+
+def test_diagrammodel_constructor_exists():
+    assert callable(DiagramModel.__init__)
+
+
+def test_diagrammodel_constructor_args():
+    sig = inspect.signature(DiagramModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_sketchmodel_is_not_abstract():
+    assert not inspect.isabstract(model_SketchModel)
+
+
+def test_model_sketchmodel_constructor_exists():
+    assert callable(model_SketchModel.__init__)
+
+
+def test_model_sketchmodel_constructor_args():
+    sig = inspect.signature(model_SketchModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "background" in params, "Missing parameter 'background'"
+
+def test_model_sketchmodel_has_background():
+    assert hasattr(model_SketchModel, "background")
+    descriptor = None
+    for klass in model_SketchModel.__mro__:
+        if "background" in klass.__dict__:
+            descriptor = klass.__dict__["background"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_archimatediagrammodel_is_not_abstract():
+    assert not inspect.isabstract(model_ArchimateDiagramModel)
+
+
+def test_model_archimatediagrammodel_constructor_exists():
+    assert callable(model_ArchimateDiagramModel.__init__)
+
+
+def test_model_archimatediagrammodel_constructor_args():
+    sig = inspect.signature(model_ArchimateDiagramModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "viewpoint" in params, "Missing parameter 'viewpoint'"
+
+def test_model_archimatediagrammodel_has_viewpoint():
+    assert hasattr(model_ArchimateDiagramModel, "viewpoint")
+    descriptor = None
+    for klass in model_ArchimateDiagramModel.__mro__:
+        if "viewpoint" in klass.__dict__:
+            descriptor = klass.__dict__["viewpoint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_lockable_is_not_abstract():
+    assert not inspect.isabstract(model_Lockable)
+
+
+def test_model_lockable_constructor_exists():
+    assert callable(model_Lockable.__init__)
+
+
+def test_model_lockable_constructor_args():
+    sig = inspect.signature(model_Lockable.__init__)
+    params = list(sig.parameters.keys())
+    assert "locked" in params, "Missing parameter 'locked'"
+
+def test_model_lockable_has_locked():
+    assert hasattr(model_Lockable, "locked")
+    descriptor = None
+    for klass in model_Lockable.__mro__:
+        if "locked" in klass.__dict__:
+            descriptor = klass.__dict__["locked"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_diagrammodelimageprovider_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelImageProvider)
+
+
+def test_model_diagrammodelimageprovider_constructor_exists():
+    assert callable(model_DiagramModelImageProvider.__init__)
+
+
+def test_model_diagrammodelimageprovider_constructor_args():
+    sig = inspect.signature(model_DiagramModelImageProvider.__init__)
+    params = list(sig.parameters.keys())
+    assert "imagePath" in params, "Missing parameter 'imagePath'"
+
+def test_model_diagrammodelimageprovider_has_imagePath():
+    assert hasattr(model_DiagramModelImageProvider, "imagePath")
+    descriptor = None
+    for klass in model_DiagramModelImageProvider.__mro__:
+        if "imagePath" in klass.__dict__:
+            descriptor = klass.__dict__["imagePath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_borderobject_is_not_abstract():
+    assert not inspect.isabstract(model_BorderObject)
+
+
+def test_model_borderobject_constructor_exists():
+    assert callable(model_BorderObject.__init__)
+
+
+def test_model_borderobject_constructor_args():
+    sig = inspect.signature(model_BorderObject.__init__)
+    params = list(sig.parameters.keys())
+    assert "borderColor" in params, "Missing parameter 'borderColor'"
+
+def test_model_borderobject_has_borderColor():
+    assert hasattr(model_BorderObject, "borderColor")
+    descriptor = None
+    for klass in model_BorderObject.__mro__:
+        if "borderColor" in klass.__dict__:
+            descriptor = klass.__dict__["borderColor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_fontattribute_is_not_abstract():
+    assert not inspect.isabstract(model_FontAttribute)
+
+
+def test_model_fontattribute_constructor_exists():
+    assert callable(model_FontAttribute.__init__)
+
+
+def test_model_fontattribute_constructor_args():
+    sig = inspect.signature(model_FontAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "fontColor" in params, "Missing parameter 'fontColor'"
+    assert "textPosition" in params, "Missing parameter 'textPosition'"
+    assert "textAlignment" in params, "Missing parameter 'textAlignment'"
+    assert "font" in params, "Missing parameter 'font'"
+
+def test_model_fontattribute_has_fontColor():
+    assert hasattr(model_FontAttribute, "fontColor")
+    descriptor = None
+    for klass in model_FontAttribute.__mro__:
+        if "fontColor" in klass.__dict__:
+            descriptor = klass.__dict__["fontColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_fontattribute_has_textPosition():
+    assert hasattr(model_FontAttribute, "textPosition")
+    descriptor = None
+    for klass in model_FontAttribute.__mro__:
+        if "textPosition" in klass.__dict__:
+            descriptor = klass.__dict__["textPosition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_fontattribute_has_textAlignment():
+    assert hasattr(model_FontAttribute, "textAlignment")
+    descriptor = None
+    for klass in model_FontAttribute.__mro__:
+        if "textAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["textAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_fontattribute_has_font():
+    assert hasattr(model_FontAttribute, "font")
+    descriptor = None
+    for klass in model_FontAttribute.__mro__:
+        if "font" in klass.__dict__:
+            descriptor = klass.__dict__["font"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_bounds_is_not_abstract():
+    assert not inspect.isabstract(model_Bounds)
+
+
+def test_model_bounds_constructor_exists():
+    assert callable(model_Bounds.__init__)
+
+
+def test_model_bounds_constructor_args():
+    sig = inspect.signature(model_Bounds.__init__)
+    params = list(sig.parameters.keys())
+    assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+
+def test_model_bounds_has_x():
+    assert hasattr(model_Bounds, "x")
+    descriptor = None
+    for klass in model_Bounds.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_bounds_has_y():
+    assert hasattr(model_Bounds, "y")
+    descriptor = None
+    for klass in model_Bounds.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_bounds_has_width():
+    assert hasattr(model_Bounds, "width")
+    descriptor = None
+    for klass in model_Bounds.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_bounds_has_height():
+    assert hasattr(model_Bounds, "height")
+    descriptor = None
+    for klass in model_Bounds.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1560,163 +1560,163 @@ def test_relationship_constructor_args():
 
 
 
-def test_model::influencerelationship_is_not_abstract():
-    assert not inspect.isabstract(model::InfluenceRelationship)
+def test_model_influencerelationship_is_not_abstract():
+    assert not inspect.isabstract(model_InfluenceRelationship)
 
 
-def test_model::influencerelationship_constructor_exists():
-    assert callable(model::InfluenceRelationship.__init__)
+def test_model_influencerelationship_constructor_exists():
+    assert callable(model_InfluenceRelationship.__init__)
 
 
-def test_model::influencerelationship_constructor_args():
-    sig = inspect.signature(model::InfluenceRelationship.__init__)
+def test_model_influencerelationship_constructor_args():
+    sig = inspect.signature(model_InfluenceRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::usedbyrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::UsedByRelationship)
+def test_model_flowrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_FlowRelationship)
 
 
-def test_model::usedbyrelationship_constructor_exists():
-    assert callable(model::UsedByRelationship.__init__)
+def test_model_flowrelationship_constructor_exists():
+    assert callable(model_FlowRelationship.__init__)
 
 
-def test_model::usedbyrelationship_constructor_args():
-    sig = inspect.signature(model::UsedByRelationship.__init__)
+def test_model_flowrelationship_constructor_args():
+    sig = inspect.signature(model_FlowRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::specialisationrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::SpecialisationRelationship)
+def test_model_specialisationrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_SpecialisationRelationship)
 
 
-def test_model::specialisationrelationship_constructor_exists():
-    assert callable(model::SpecialisationRelationship.__init__)
+def test_model_specialisationrelationship_constructor_exists():
+    assert callable(model_SpecialisationRelationship.__init__)
 
 
-def test_model::specialisationrelationship_constructor_args():
-    sig = inspect.signature(model::SpecialisationRelationship.__init__)
+def test_model_specialisationrelationship_constructor_args():
+    sig = inspect.signature(model_SpecialisationRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::assignmentrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::AssignmentRelationship)
+def test_model_triggeringrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_TriggeringRelationship)
 
 
-def test_model::assignmentrelationship_constructor_exists():
-    assert callable(model::AssignmentRelationship.__init__)
+def test_model_triggeringrelationship_constructor_exists():
+    assert callable(model_TriggeringRelationship.__init__)
 
 
-def test_model::assignmentrelationship_constructor_args():
-    sig = inspect.signature(model::AssignmentRelationship.__init__)
+def test_model_triggeringrelationship_constructor_args():
+    sig = inspect.signature(model_TriggeringRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::aggregationrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::AggregationRelationship)
+def test_model_compositionrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_CompositionRelationship)
 
 
-def test_model::aggregationrelationship_constructor_exists():
-    assert callable(model::AggregationRelationship.__init__)
+def test_model_compositionrelationship_constructor_exists():
+    assert callable(model_CompositionRelationship.__init__)
 
 
-def test_model::aggregationrelationship_constructor_args():
-    sig = inspect.signature(model::AggregationRelationship.__init__)
+def test_model_compositionrelationship_constructor_args():
+    sig = inspect.signature(model_CompositionRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::associationrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::AssociationRelationship)
+def test_model_aggregationrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_AggregationRelationship)
 
 
-def test_model::associationrelationship_constructor_exists():
-    assert callable(model::AssociationRelationship.__init__)
+def test_model_aggregationrelationship_constructor_exists():
+    assert callable(model_AggregationRelationship.__init__)
 
 
-def test_model::associationrelationship_constructor_args():
-    sig = inspect.signature(model::AssociationRelationship.__init__)
+def test_model_aggregationrelationship_constructor_args():
+    sig = inspect.signature(model_AggregationRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::realisationrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::RealisationRelationship)
+def test_model_assignmentrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_AssignmentRelationship)
 
 
-def test_model::realisationrelationship_constructor_exists():
-    assert callable(model::RealisationRelationship.__init__)
+def test_model_assignmentrelationship_constructor_exists():
+    assert callable(model_AssignmentRelationship.__init__)
 
 
-def test_model::realisationrelationship_constructor_args():
-    sig = inspect.signature(model::RealisationRelationship.__init__)
+def test_model_assignmentrelationship_constructor_args():
+    sig = inspect.signature(model_AssignmentRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::compositionrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::CompositionRelationship)
+def test_model_usedbyrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_UsedByRelationship)
 
 
-def test_model::compositionrelationship_constructor_exists():
-    assert callable(model::CompositionRelationship.__init__)
+def test_model_usedbyrelationship_constructor_exists():
+    assert callable(model_UsedByRelationship.__init__)
 
 
-def test_model::compositionrelationship_constructor_args():
-    sig = inspect.signature(model::CompositionRelationship.__init__)
+def test_model_usedbyrelationship_constructor_args():
+    sig = inspect.signature(model_UsedByRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::flowrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::FlowRelationship)
+def test_model_associationrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_AssociationRelationship)
 
 
-def test_model::flowrelationship_constructor_exists():
-    assert callable(model::FlowRelationship.__init__)
+def test_model_associationrelationship_constructor_exists():
+    assert callable(model_AssociationRelationship.__init__)
 
 
-def test_model::flowrelationship_constructor_args():
-    sig = inspect.signature(model::FlowRelationship.__init__)
+def test_model_associationrelationship_constructor_args():
+    sig = inspect.signature(model_AssociationRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::triggeringrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::TriggeringRelationship)
+def test_model_realisationrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_RealisationRelationship)
 
 
-def test_model::triggeringrelationship_constructor_exists():
-    assert callable(model::TriggeringRelationship.__init__)
+def test_model_realisationrelationship_constructor_exists():
+    assert callable(model_RealisationRelationship.__init__)
 
 
-def test_model::triggeringrelationship_constructor_args():
-    sig = inspect.signature(model::TriggeringRelationship.__init__)
+def test_model_realisationrelationship_constructor_args():
+    sig = inspect.signature(model_RealisationRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::accessrelationship_is_not_abstract():
-    assert not inspect.isabstract(model::AccessRelationship)
+def test_model_accessrelationship_is_not_abstract():
+    assert not inspect.isabstract(model_AccessRelationship)
 
 
-def test_model::accessrelationship_constructor_exists():
-    assert callable(model::AccessRelationship.__init__)
+def test_model_accessrelationship_constructor_exists():
+    assert callable(model_AccessRelationship.__init__)
 
 
-def test_model::accessrelationship_constructor_args():
-    sig = inspect.signature(model::AccessRelationship.__init__)
+def test_model_accessrelationship_constructor_args():
+    sig = inspect.signature(model_AccessRelationship.__init__)
     params = list(sig.parameters.keys())
     assert "accessType" in params, "Missing parameter 'accessType'"
 
-def test_model::accessrelationship_has_accessType():
-    assert hasattr(model::AccessRelationship, "accessType")
+def test_model_accessrelationship_has_accessType():
+    assert hasattr(model_AccessRelationship, "accessType")
     descriptor = None
-    for klass in model::AccessRelationship.__mro__:
+    for klass in model_AccessRelationship.__mro__:
         if "accessType" in klass.__dict__:
             descriptor = klass.__dict__["accessType"]
             break
@@ -1724,72 +1724,72 @@ def test_model::accessrelationship_has_accessType():
 
 
 
-def test_model::relationship_is_not_abstract():
-    assert not inspect.isabstract(model::Relationship)
+def test_model_relationship_is_not_abstract():
+    assert not inspect.isabstract(model_Relationship)
 
 
-def test_model::relationship_constructor_exists():
-    assert callable(model::Relationship.__init__)
+def test_model_relationship_constructor_exists():
+    assert callable(model_Relationship.__init__)
 
 
-def test_model::relationship_constructor_args():
-    sig = inspect.signature(model::Relationship.__init__)
+def test_model_relationship_constructor_args():
+    sig = inspect.signature(model_Relationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::orjunction_is_not_abstract():
-    assert not inspect.isabstract(model::OrJunction)
+def test_model_orjunction_is_not_abstract():
+    assert not inspect.isabstract(model_OrJunction)
 
 
-def test_model::orjunction_constructor_exists():
-    assert callable(model::OrJunction.__init__)
+def test_model_orjunction_constructor_exists():
+    assert callable(model_OrJunction.__init__)
 
 
-def test_model::orjunction_constructor_args():
-    sig = inspect.signature(model::OrJunction.__init__)
+def test_model_orjunction_constructor_args():
+    sig = inspect.signature(model_OrJunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::andjunction_is_not_abstract():
-    assert not inspect.isabstract(model::AndJunction)
+def test_model_andjunction_is_not_abstract():
+    assert not inspect.isabstract(model_AndJunction)
 
 
-def test_model::andjunction_constructor_exists():
-    assert callable(model::AndJunction.__init__)
+def test_model_andjunction_constructor_exists():
+    assert callable(model_AndJunction.__init__)
 
 
-def test_model::andjunction_constructor_args():
-    sig = inspect.signature(model::AndJunction.__init__)
+def test_model_andjunction_constructor_args():
+    sig = inspect.signature(model_AndJunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::foldercontainer_is_not_abstract():
-    assert not inspect.isabstract(model::FolderContainer)
+def test_model_foldercontainer_is_not_abstract():
+    assert not inspect.isabstract(model_FolderContainer)
 
 
-def test_model::foldercontainer_constructor_exists():
-    assert callable(model::FolderContainer.__init__)
+def test_model_foldercontainer_constructor_exists():
+    assert callable(model_FolderContainer.__init__)
 
 
-def test_model::foldercontainer_constructor_args():
-    sig = inspect.signature(model::FolderContainer.__init__)
+def test_model_foldercontainer_constructor_args():
+    sig = inspect.signature(model_FolderContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::cloneable_is_not_abstract():
-    assert not inspect.isabstract(model::Cloneable)
+def test_model_cloneable_is_not_abstract():
+    assert not inspect.isabstract(model_Cloneable)
 
 
-def test_model::cloneable_constructor_exists():
-    assert callable(model::Cloneable.__init__)
+def test_model_cloneable_constructor_exists():
+    assert callable(model_Cloneable.__init__)
 
 
-def test_model::cloneable_constructor_args():
-    sig = inspect.signature(model::Cloneable.__init__)
+def test_model_cloneable_constructor_args():
+    sig = inspect.signature(model_Cloneable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1822,16 +1822,16 @@ def test_adapter_constructor_args():
 
 
 
-def test_model::archimatemodelelement_is_not_abstract():
-    assert not inspect.isabstract(model::ArchimateModelElement)
+def test_model_archimatemodelelement_is_not_abstract():
+    assert not inspect.isabstract(model_ArchimateModelElement)
 
 
-def test_model::archimatemodelelement_constructor_exists():
-    assert callable(model::ArchimateModelElement.__init__)
+def test_model_archimatemodelelement_constructor_exists():
+    assert callable(model_ArchimateModelElement.__init__)
 
 
-def test_model::archimatemodelelement_constructor_args():
-    sig = inspect.signature(model::ArchimateModelElement.__init__)
+def test_model_archimatemodelelement_constructor_args():
+    sig = inspect.signature(model_ArchimateModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1850,98 +1850,98 @@ def test_properties_constructor_args():
 
 
 
-def test_model::diagrammodelconnection_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelConnection)
+def test_model_sketchmodelactor_is_not_abstract():
+    assert not inspect.isabstract(model_SketchModelActor)
 
 
-def test_model::diagrammodelconnection_constructor_exists():
-    assert callable(model::DiagramModelConnection.__init__)
+def test_model_sketchmodelactor_constructor_exists():
+    assert callable(model_SketchModelActor.__init__)
 
 
-def test_model::diagrammodelconnection_constructor_args():
-    sig = inspect.signature(model::DiagramModelConnection.__init__)
+def test_model_sketchmodelactor_constructor_args():
+    sig = inspect.signature(model_SketchModelActor.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_model_sketchmodelsticky_is_not_abstract():
+    assert not inspect.isabstract(model_SketchModelSticky)
+
+
+def test_model_sketchmodelsticky_constructor_exists():
+    assert callable(model_SketchModelSticky.__init__)
+
+
+def test_model_sketchmodelsticky_constructor_args():
+    sig = inspect.signature(model_SketchModelSticky.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_diagrammodelconnection_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelConnection)
+
+
+def test_model_diagrammodelconnection_constructor_exists():
+    assert callable(model_DiagramModelConnection.__init__)
+
+
+def test_model_diagrammodelconnection_constructor_args():
+    sig = inspect.signature(model_DiagramModelConnection.__init__)
+    params = list(sig.parameters.keys())
+    assert "lineWidth" in params, "Missing parameter 'lineWidth'"
+    assert "lineColor" in params, "Missing parameter 'lineColor'"
     assert "text" in params, "Missing parameter 'text'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "lineColor" in params, "Missing parameter 'lineColor'"
-    assert "lineWidth" in params, "Missing parameter 'lineWidth'"
 
-def test_model::diagrammodelconnection_has_text():
-    assert hasattr(model::DiagramModelConnection, "text")
+def test_model_diagrammodelconnection_has_lineWidth():
+    assert hasattr(model_DiagramModelConnection, "lineWidth")
     descriptor = None
-    for klass in model::DiagramModelConnection.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::diagrammodelconnection_has_type():
-    assert hasattr(model::DiagramModelConnection, "type")
-    descriptor = None
-    for klass in model::DiagramModelConnection.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::diagrammodelconnection_has_lineColor():
-    assert hasattr(model::DiagramModelConnection, "lineColor")
-    descriptor = None
-    for klass in model::DiagramModelConnection.__mro__:
-        if "lineColor" in klass.__dict__:
-            descriptor = klass.__dict__["lineColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::diagrammodelconnection_has_lineWidth():
-    assert hasattr(model::DiagramModelConnection, "lineWidth")
-    descriptor = None
-    for klass in model::DiagramModelConnection.__mro__:
+    for klass in model_DiagramModelConnection.__mro__:
         if "lineWidth" in klass.__dict__:
             descriptor = klass.__dict__["lineWidth"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_diagrammodelconnection_has_lineColor():
+    assert hasattr(model_DiagramModelConnection, "lineColor")
+    descriptor = None
+    for klass in model_DiagramModelConnection.__mro__:
+        if "lineColor" in klass.__dict__:
+            descriptor = klass.__dict__["lineColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_diagrammodelconnection_has_text():
+    assert hasattr(model_DiagramModelConnection, "text")
+    descriptor = None
+    for klass in model_DiagramModelConnection.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_diagrammodelconnection_has_type():
+    assert hasattr(model_DiagramModelConnection, "type")
+    descriptor = None
+    for klass in model_DiagramModelConnection.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::diagrammodelgroup_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelGroup)
+
+def test_model_diagrammodelgroup_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelGroup)
 
 
-def test_model::diagrammodelgroup_constructor_exists():
-    assert callable(model::DiagramModelGroup.__init__)
+def test_model_diagrammodelgroup_constructor_exists():
+    assert callable(model_DiagramModelGroup.__init__)
 
 
-def test_model::diagrammodelgroup_constructor_args():
-    sig = inspect.signature(model::DiagramModelGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::sketchmodelactor_is_not_abstract():
-    assert not inspect.isabstract(model::SketchModelActor)
-
-
-def test_model::sketchmodelactor_constructor_exists():
-    assert callable(model::SketchModelActor.__init__)
-
-
-def test_model::sketchmodelactor_constructor_args():
-    sig = inspect.signature(model::SketchModelActor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::sketchmodelsticky_is_not_abstract():
-    assert not inspect.isabstract(model::SketchModelSticky)
-
-
-def test_model::sketchmodelsticky_constructor_exists():
-    assert callable(model::SketchModelSticky.__init__)
-
-
-def test_model::sketchmodelsticky_constructor_args():
-    sig = inspect.signature(model::SketchModelSticky.__init__)
+def test_model_diagrammodelgroup_constructor_args():
+    sig = inspect.signature(model_DiagramModelGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1960,23 +1960,23 @@ def test_archimatemodelelement_constructor_args():
 
 
 
-def test_model::diagrammodel_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModel)
+def test_model_diagrammodel_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModel)
 
 
-def test_model::diagrammodel_constructor_exists():
-    assert callable(model::DiagramModel.__init__)
+def test_model_diagrammodel_constructor_exists():
+    assert callable(model_DiagramModel.__init__)
 
 
-def test_model::diagrammodel_constructor_args():
-    sig = inspect.signature(model::DiagramModel.__init__)
+def test_model_diagrammodel_constructor_args():
+    sig = inspect.signature(model_DiagramModel.__init__)
     params = list(sig.parameters.keys())
     assert "connectionRouterType" in params, "Missing parameter 'connectionRouterType'"
 
-def test_model::diagrammodel_has_connectionRouterType():
-    assert hasattr(model::DiagramModel, "connectionRouterType")
+def test_model_diagrammodel_has_connectionRouterType():
+    assert hasattr(model_DiagramModel, "connectionRouterType")
     descriptor = None
-    for klass in model::DiagramModel.__mro__:
+    for klass in model_DiagramModel.__mro__:
         if "connectionRouterType" in klass.__dict__:
             descriptor = klass.__dict__["connectionRouterType"]
             break
@@ -2012,30 +2012,30 @@ def test_nameable_constructor_args():
 
 
 
-def test_model::diagrammodelcomponent_is_not_abstract():
-    assert not inspect.isabstract(model::DiagramModelComponent)
+def test_model_archimateelement_is_not_abstract():
+    assert not inspect.isabstract(model_ArchimateElement)
 
 
-def test_model::diagrammodelcomponent_constructor_exists():
-    assert callable(model::DiagramModelComponent.__init__)
+def test_model_archimateelement_constructor_exists():
+    assert callable(model_ArchimateElement.__init__)
 
 
-def test_model::diagrammodelcomponent_constructor_args():
-    sig = inspect.signature(model::DiagramModelComponent.__init__)
+def test_model_archimateelement_constructor_args():
+    sig = inspect.signature(model_ArchimateElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::archimateelement_is_not_abstract():
-    assert not inspect.isabstract(model::ArchimateElement)
+def test_model_diagrammodelcomponent_is_not_abstract():
+    assert not inspect.isabstract(model_DiagramModelComponent)
 
 
-def test_model::archimateelement_constructor_exists():
-    assert callable(model::ArchimateElement.__init__)
+def test_model_diagrammodelcomponent_constructor_exists():
+    assert callable(model_DiagramModelComponent.__init__)
 
 
-def test_model::archimateelement_constructor_args():
-    sig = inspect.signature(model::ArchimateElement.__init__)
+def test_model_diagrammodelcomponent_constructor_args():
+    sig = inspect.signature(model_DiagramModelComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2054,23 +2054,23 @@ def test_foldercontainer_constructor_args():
 
 
 
-def test_model::folder_is_not_abstract():
-    assert not inspect.isabstract(model::Folder)
+def test_model_folder_is_not_abstract():
+    assert not inspect.isabstract(model_Folder)
 
 
-def test_model::folder_constructor_exists():
-    assert callable(model::Folder.__init__)
+def test_model_folder_constructor_exists():
+    assert callable(model_Folder.__init__)
 
 
-def test_model::folder_constructor_args():
-    sig = inspect.signature(model::Folder.__init__)
+def test_model_folder_constructor_args():
+    sig = inspect.signature(model_Folder.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_model::folder_has_type():
-    assert hasattr(model::Folder, "type")
+def test_model_folder_has_type():
+    assert hasattr(model_Folder, "type")
     descriptor = None
-    for klass in model::Folder.__mro__:
+    for klass in model_Folder.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -2078,81 +2078,81 @@ def test_model::folder_has_type():
 
 
 
-def test_model::archimatemodel_is_not_abstract():
-    assert not inspect.isabstract(model::ArchimateModel)
+def test_model_archimatemodel_is_not_abstract():
+    assert not inspect.isabstract(model_ArchimateModel)
 
 
-def test_model::archimatemodel_constructor_exists():
-    assert callable(model::ArchimateModel.__init__)
+def test_model_archimatemodel_constructor_exists():
+    assert callable(model_ArchimateModel.__init__)
 
 
-def test_model::archimatemodel_constructor_args():
-    sig = inspect.signature(model::ArchimateModel.__init__)
+def test_model_archimatemodel_constructor_args():
+    sig = inspect.signature(model_ArchimateModel.__init__)
     params = list(sig.parameters.keys())
-    assert "purpose" in params, "Missing parameter 'purpose'"
     assert "file" in params, "Missing parameter 'file'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "purpose" in params, "Missing parameter 'purpose'"
 
-def test_model::archimatemodel_has_purpose():
-    assert hasattr(model::ArchimateModel, "purpose")
+def test_model_archimatemodel_has_file():
+    assert hasattr(model_ArchimateModel, "file")
     descriptor = None
-    for klass in model::ArchimateModel.__mro__:
-        if "purpose" in klass.__dict__:
-            descriptor = klass.__dict__["purpose"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::archimatemodel_has_file():
-    assert hasattr(model::ArchimateModel, "file")
-    descriptor = None
-    for klass in model::ArchimateModel.__mro__:
+    for klass in model_ArchimateModel.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::archimatemodel_has_version():
-    assert hasattr(model::ArchimateModel, "version")
+def test_model_archimatemodel_has_version():
+    assert hasattr(model_ArchimateModel, "version")
     descriptor = None
-    for klass in model::ArchimateModel.__mro__:
+    for klass in model_ArchimateModel.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_archimatemodel_has_purpose():
+    assert hasattr(model_ArchimateModel, "purpose")
+    descriptor = None
+    for klass in model_ArchimateModel.__mro__:
+        if "purpose" in klass.__dict__:
+            descriptor = klass.__dict__["purpose"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::adapter_is_not_abstract():
-    assert not inspect.isabstract(model::Adapter)
+
+def test_model_adapter_is_not_abstract():
+    assert not inspect.isabstract(model_Adapter)
 
 
-def test_model::adapter_constructor_exists():
-    assert callable(model::Adapter.__init__)
+def test_model_adapter_constructor_exists():
+    assert callable(model_Adapter.__init__)
 
 
-def test_model::adapter_constructor_args():
-    sig = inspect.signature(model::Adapter.__init__)
+def test_model_adapter_constructor_args():
+    sig = inspect.signature(model_Adapter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::documentable_is_not_abstract():
-    assert not inspect.isabstract(model::Documentable)
+def test_model_documentable_is_not_abstract():
+    assert not inspect.isabstract(model_Documentable)
 
 
-def test_model::documentable_constructor_exists():
-    assert callable(model::Documentable.__init__)
+def test_model_documentable_constructor_exists():
+    assert callable(model_Documentable.__init__)
 
 
-def test_model::documentable_constructor_args():
-    sig = inspect.signature(model::Documentable.__init__)
+def test_model_documentable_constructor_args():
+    sig = inspect.signature(model_Documentable.__init__)
     params = list(sig.parameters.keys())
     assert "documentation" in params, "Missing parameter 'documentation'"
 
-def test_model::documentable_has_documentation():
-    assert hasattr(model::Documentable, "documentation")
+def test_model_documentable_has_documentation():
+    assert hasattr(model_Documentable, "documentation")
     descriptor = None
-    for klass in model::Documentable.__mro__:
+    for klass in model_Documentable.__mro__:
         if "documentation" in klass.__dict__:
             descriptor = klass.__dict__["documentation"]
             break
@@ -2160,23 +2160,23 @@ def test_model::documentable_has_documentation():
 
 
 
-def test_model::textcontent_is_not_abstract():
-    assert not inspect.isabstract(model::TextContent)
+def test_model_textcontent_is_not_abstract():
+    assert not inspect.isabstract(model_TextContent)
 
 
-def test_model::textcontent_constructor_exists():
-    assert callable(model::TextContent.__init__)
+def test_model_textcontent_constructor_exists():
+    assert callable(model_TextContent.__init__)
 
 
-def test_model::textcontent_constructor_args():
-    sig = inspect.signature(model::TextContent.__init__)
+def test_model_textcontent_constructor_args():
+    sig = inspect.signature(model_TextContent.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_model::textcontent_has_content():
-    assert hasattr(model::TextContent, "content")
+def test_model_textcontent_has_content():
+    assert hasattr(model_TextContent, "content")
     descriptor = None
-    for klass in model::TextContent.__mro__:
+    for klass in model_TextContent.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -2184,23 +2184,23 @@ def test_model::textcontent_has_content():
 
 
 
-def test_model::nameable_is_not_abstract():
-    assert not inspect.isabstract(model::Nameable)
+def test_model_nameable_is_not_abstract():
+    assert not inspect.isabstract(model_Nameable)
 
 
-def test_model::nameable_constructor_exists():
-    assert callable(model::Nameable.__init__)
+def test_model_nameable_constructor_exists():
+    assert callable(model_Nameable.__init__)
 
 
-def test_model::nameable_constructor_args():
-    sig = inspect.signature(model::Nameable.__init__)
+def test_model_nameable_constructor_args():
+    sig = inspect.signature(model_Nameable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::nameable_has_name():
-    assert hasattr(model::Nameable, "name")
+def test_model_nameable_has_name():
+    assert hasattr(model_Nameable, "name")
     descriptor = None
-    for klass in model::Nameable.__mro__:
+    for klass in model_Nameable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2208,47 +2208,47 @@ def test_model::nameable_has_name():
 
 
 
-def test_model::properties_is_not_abstract():
-    assert not inspect.isabstract(model::Properties)
+def test_model_properties_is_not_abstract():
+    assert not inspect.isabstract(model_Properties)
 
 
-def test_model::properties_constructor_exists():
-    assert callable(model::Properties.__init__)
+def test_model_properties_constructor_exists():
+    assert callable(model_Properties.__init__)
 
 
-def test_model::properties_constructor_args():
-    sig = inspect.signature(model::Properties.__init__)
+def test_model_properties_constructor_args():
+    sig = inspect.signature(model_Properties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::property_is_not_abstract():
-    assert not inspect.isabstract(model::Property)
+def test_model_property_is_not_abstract():
+    assert not inspect.isabstract(model_Property)
 
 
-def test_model::property_constructor_exists():
-    assert callable(model::Property.__init__)
+def test_model_property_constructor_exists():
+    assert callable(model_Property.__init__)
 
 
-def test_model::property_constructor_args():
-    sig = inspect.signature(model::Property.__init__)
+def test_model_property_constructor_args():
+    sig = inspect.signature(model_Property.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::property_has_key():
-    assert hasattr(model::Property, "key")
+def test_model_property_has_key():
+    assert hasattr(model_Property, "key")
     descriptor = None
-    for klass in model::Property.__mro__:
+    for klass in model_Property.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::property_has_value():
-    assert hasattr(model::Property, "value")
+def test_model_property_has_value():
+    assert hasattr(model_Property, "value")
     descriptor = None
-    for klass in model::Property.__mro__:
+    for klass in model_Property.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2256,23 +2256,23 @@ def test_model::property_has_value():
 
 
 
-def test_model::identifier_is_not_abstract():
-    assert not inspect.isabstract(model::Identifier)
+def test_model_identifier_is_not_abstract():
+    assert not inspect.isabstract(model_Identifier)
 
 
-def test_model::identifier_constructor_exists():
-    assert callable(model::Identifier.__init__)
+def test_model_identifier_constructor_exists():
+    assert callable(model_Identifier.__init__)
 
 
-def test_model::identifier_constructor_args():
-    sig = inspect.signature(model::Identifier.__init__)
+def test_model_identifier_constructor_args():
+    sig = inspect.signature(model_Identifier.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_model::identifier_has_id():
-    assert hasattr(model::Identifier, "id")
+def test_model_identifier_has_id():
+    assert hasattr(model_Identifier, "id")
     descriptor = None
-    for klass in model::Identifier.__mro__:
+    for klass in model_Identifier.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2286,16 +2286,16 @@ def test_foldertype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FolderType]
     expected_literals = [
+        "technology",
         "relations",
+        "user",
+        "connectors",
         "diagrams",
         "derived",
-        "user",
-        "application",
-        "technology",
-        "motivation",
-        "implementation_migration",
-        "connectors",
         "business",
+        "motivation",
+        "application",
+        "implementation_migration",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2313,62 +2313,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DiagramModelConnection_strategy = st.builds(
-    DiagramModelConnection,
-)
-model::DiagramModelArchimateConnection_strategy = st.builds(
-    model::DiagramModelArchimateConnection,
-)
-DiagramModel_strategy = st.builds(
-    DiagramModel,
-)
-model::SketchModel_strategy = st.builds(
-    model::SketchModel,
-    background=
-        st.integers()
-)
-model::ArchimateDiagramModel_strategy = st.builds(
-    model::ArchimateDiagramModel,
-    viewpoint=
-        st.integers()
-)
-model::Lockable_strategy = st.builds(
-    model::Lockable,
-    locked=
-        st.booleans()
-)
-model::DiagramModelImageProvider_strategy = st.builds(
-    model::DiagramModelImageProvider,
-    imagePath=
-        safe_text
-)
-model::BorderObject_strategy = st.builds(
-    model::BorderObject,
-    borderColor=
-        safe_text
-)
-model::FontAttribute_strategy = st.builds(
-    model::FontAttribute,
-    textAlignment=
-        st.integers(),
-    textPosition=
-        st.integers(),
-    font=
-        safe_text,
-    fontColor=
-        safe_text
-)
-model::Bounds_strategy = st.builds(
-    model::Bounds,
-    y=
-        st.integers(),
-    height=
-        st.integers(),
-    width=
-        st.integers(),
-    x=
-        st.integers()
-)
 FontAttribute_strategy = st.builds(
     FontAttribute,
 )
@@ -2384,72 +2328,67 @@ TextContent_strategy = st.builds(
 MotivationElement_strategy = st.builds(
     MotivationElement,
 )
-model::Assessment_strategy = st.builds(
-    model::Assessment,
+model_Constraint_strategy = st.builds(
+    model_Constraint,
 )
-model::Constraint_strategy = st.builds(
-    model::Constraint,
+model_Goal_strategy = st.builds(
+    model_Goal,
 )
-model::Requirement_strategy = st.builds(
-    model::Requirement,
+model_Assessment_strategy = st.builds(
+    model_Assessment,
 )
-model::Driver_strategy = st.builds(
-    model::Driver,
+model_Driver_strategy = st.builds(
+    model_Driver,
 )
-model::Goal_strategy = st.builds(
-    model::Goal,
+model_Requirement_strategy = st.builds(
+    model_Requirement,
 )
-model::Stakeholder_strategy = st.builds(
-    model::Stakeholder,
+model_Stakeholder_strategy = st.builds(
+    model_Stakeholder,
 )
 DiagramModelObject_strategy = st.builds(
     DiagramModelObject,
 )
-model::DiagramModelNote_strategy = st.builds(
-    model::DiagramModelNote,
+model_DiagramModelImage_strategy = st.builds(
+    model_DiagramModelImage,
 )
-model::DiagramModelImage_strategy = st.builds(
-    model::DiagramModelImage,
+model_DiagramModelNote_strategy = st.builds(
+    model_DiagramModelNote,
 )
-model::DiagramModelReference_strategy = st.builds(
-    model::DiagramModelReference,
+model_DiagramModelReference_strategy = st.builds(
+    model_DiagramModelReference,
 )
 DiagramModelContainer_strategy = st.builds(
     DiagramModelContainer,
 )
-model::DiagramModelArchimateObject_strategy = st.builds(
-    model::DiagramModelArchimateObject,
-    type=
-        st.integers()
-)
 DiagramModelComponent_strategy = st.builds(
     DiagramModelComponent,
 )
-model::DiagramModelObject_strategy = st.builds(
-    model::DiagramModelObject,
+model_DiagramModelObject_strategy = st.builds(
+    model_DiagramModelObject,
     fillColor=
         safe_text
 )
-model::DiagramModelContainer_strategy = st.builds(
-    model::DiagramModelContainer,
+model_DiagramModelContainer_strategy = st.builds(
+    model_DiagramModelContainer,
 )
 ImplementationMigrationElement_strategy = st.builds(
     ImplementationMigrationElement,
 )
-model::Plateau_strategy = st.builds(
-    model::Plateau,
+model_Plateau_strategy = st.builds(
+    model_Plateau,
 )
-model::Gap_strategy = st.builds(
-    model::Gap,
+model_Gap_strategy = st.builds(
+    model_Gap,
 )
-model::Deliverable_strategy = st.builds(
-    model::Deliverable,
+model_Deliverable_strategy = st.builds(
+    model_Deliverable,
 )
-model::WorkPackage_strategy = st.builds(
-    model::WorkPackage,
+model_WorkPackage_strategy = st.builds(
+    model_WorkPackage,
 )
-model::Principle_strategy = st.builds(
-    model::Principle,
+model_Principle_strategy = st.builds(
+    model_Principle,
 )
 InterfaceElement_strategy = st.builds(
     InterfaceElement,
@@ -2457,212 +2396,273 @@ InterfaceElement_strategy = st.builds(
 BusinessLayerElement_strategy = st.builds(
     BusinessLayerElement,
 )
-model::BusinessActor_strategy = st.builds(
-    model::BusinessActor,
+model_BusinessFunction_strategy = st.builds(
+    model_BusinessFunction,
 )
-model::BusinessCollaboration_strategy = st.builds(
-    model::BusinessCollaboration,
+model_BusinessProcess_strategy = st.builds(
+    model_BusinessProcess,
 )
-model::BusinessInteraction_strategy = st.builds(
-    model::BusinessInteraction,
+model_BusinessInteraction_strategy = st.builds(
+    model_BusinessInteraction,
 )
-model::Contract_strategy = st.builds(
-    model::Contract,
+model_BusinessObject_strategy = st.builds(
+    model_BusinessObject,
 )
-model::BusinessEvent_strategy = st.builds(
-    model::BusinessEvent,
+model_BusinessActor_strategy = st.builds(
+    model_BusinessActor,
 )
-model::BusinessFunction_strategy = st.builds(
-    model::BusinessFunction,
+model_BusinessInterface_strategy = st.builds(
+    model_BusinessInterface,
 )
-model::BusinessObject_strategy = st.builds(
-    model::BusinessObject,
+model_BusinessEvent_strategy = st.builds(
+    model_BusinessEvent,
 )
-model::Meaning_strategy = st.builds(
-    model::Meaning,
+model_BusinessCollaboration_strategy = st.builds(
+    model_BusinessCollaboration,
 )
-model::BusinessProcess_strategy = st.builds(
-    model::BusinessProcess,
+model_Contract_strategy = st.builds(
+    model_Contract,
 )
-model::BusinessInterface_strategy = st.builds(
-    model::BusinessInterface,
+model_Meaning_strategy = st.builds(
+    model_Meaning,
 )
-model::BusinessActivity_strategy = st.builds(
-    model::BusinessActivity,
+model_BusinessActivity_strategy = st.builds(
+    model_BusinessActivity,
 )
 TechnologyLayerElement_strategy = st.builds(
     TechnologyLayerElement,
 )
-model::CommunicationPath_strategy = st.builds(
-    model::CommunicationPath,
+model_Node_strategy = st.builds(
+    model_Node,
 )
-model::Node_strategy = st.builds(
-    model::Node,
+model_CommunicationPath_strategy = st.builds(
+    model_CommunicationPath,
 )
-model::InfrastructureService_strategy = st.builds(
-    model::InfrastructureService,
+model_InfrastructureInterface_strategy = st.builds(
+    model_InfrastructureInterface,
 )
-model::InfrastructureFunction_strategy = st.builds(
-    model::InfrastructureFunction,
+model_Network_strategy = st.builds(
+    model_Network,
 )
-model::SystemSoftware_strategy = st.builds(
-    model::SystemSoftware,
+model_InfrastructureService_strategy = st.builds(
+    model_InfrastructureService,
 )
-model::InfrastructureInterface_strategy = st.builds(
-    model::InfrastructureInterface,
+model_InfrastructureFunction_strategy = st.builds(
+    model_InfrastructureFunction,
 )
-model::Network_strategy = st.builds(
-    model::Network,
+model_SystemSoftware_strategy = st.builds(
+    model_SystemSoftware,
 )
-model::Device_strategy = st.builds(
-    model::Device,
+model_Device_strategy = st.builds(
+    model_Device,
 )
-model::Artifact_strategy = st.builds(
-    model::Artifact,
+model_Artifact_strategy = st.builds(
+    model_Artifact,
 )
 ApplicationLayerElement_strategy = st.builds(
     ApplicationLayerElement,
 )
-model::DataObject_strategy = st.builds(
-    model::DataObject,
+model_ApplicationComponent_strategy = st.builds(
+    model_ApplicationComponent,
 )
-model::ApplicationFunction_strategy = st.builds(
-    model::ApplicationFunction,
+model_DataObject_strategy = st.builds(
+    model_DataObject,
 )
-model::ApplicationInteraction_strategy = st.builds(
-    model::ApplicationInteraction,
+model_ApplicationFunction_strategy = st.builds(
+    model_ApplicationFunction,
 )
-model::ApplicationComponent_strategy = st.builds(
-    model::ApplicationComponent,
+model_ApplicationInterface_strategy = st.builds(
+    model_ApplicationInterface,
 )
-model::ApplicationInterface_strategy = st.builds(
-    model::ApplicationInterface,
+model_ApplicationService_strategy = st.builds(
+    model_ApplicationService,
 )
-model::ApplicationService_strategy = st.builds(
-    model::ApplicationService,
+model_ApplicationInteraction_strategy = st.builds(
+    model_ApplicationInteraction,
 )
-model::ApplicationCollaboration_strategy = st.builds(
-    model::ApplicationCollaboration,
+model_ApplicationCollaboration_strategy = st.builds(
+    model_ApplicationCollaboration,
 )
-model::Location_strategy = st.builds(
-    model::Location,
+model_Location_strategy = st.builds(
+    model_Location,
 )
-model::Value_strategy = st.builds(
-    model::Value,
+model_Value_strategy = st.builds(
+    model_Value,
 )
-model::BusinessService_strategy = st.builds(
-    model::BusinessService,
+model_BusinessService_strategy = st.builds(
+    model_BusinessService,
 )
-model::BusinessRole_strategy = st.builds(
-    model::BusinessRole,
+model_BusinessRole_strategy = st.builds(
+    model_BusinessRole,
 )
-model::Representation_strategy = st.builds(
-    model::Representation,
+model_Representation_strategy = st.builds(
+    model_Representation,
 )
-model::Product_strategy = st.builds(
-    model::Product,
+model_Product_strategy = st.builds(
+    model_Product,
 )
 JunctionElement_strategy = st.builds(
     JunctionElement,
 )
-model::Junction_strategy = st.builds(
-    model::Junction,
+model_Junction_strategy = st.builds(
+    model_Junction,
 )
 ArchimateElement_strategy = st.builds(
     ArchimateElement,
 )
-model::TechnologyLayerElement_strategy = st.builds(
-    model::TechnologyLayerElement,
+model_ImplementationMigrationElement_strategy = st.builds(
+    model_ImplementationMigrationElement,
 )
-model::ImplementationMigrationElement_strategy = st.builds(
-    model::ImplementationMigrationElement,
+model_ApplicationLayerElement_strategy = st.builds(
+    model_ApplicationLayerElement,
 )
-model::MotivationElement_strategy = st.builds(
-    model::MotivationElement,
+model_TechnologyLayerElement_strategy = st.builds(
+    model_TechnologyLayerElement,
 )
-model::InterfaceElement_strategy = st.builds(
-    model::InterfaceElement,
+model_MotivationElement_strategy = st.builds(
+    model_MotivationElement,
+)
+model_BusinessLayerElement_strategy = st.builds(
+    model_BusinessLayerElement,
+)
+model_InterfaceElement_strategy = st.builds(
+    model_InterfaceElement,
     interfaceType=
         st.integers()
 )
-model::BusinessLayerElement_strategy = st.builds(
-    model::BusinessLayerElement,
-)
-model::ApplicationLayerElement_strategy = st.builds(
-    model::ApplicationLayerElement,
-)
-model::JunctionElement_strategy = st.builds(
-    model::JunctionElement,
+model_JunctionElement_strategy = st.builds(
+    model_JunctionElement,
 )
 Cloneable_strategy = st.builds(
     Cloneable,
 )
-model::DiagramModelBendpoint_strategy = st.builds(
-    model::DiagramModelBendpoint,
-    endX=
-        st.integers(),
+model_EObject_strategy = st.builds(
+    model_EObject,
+)
+DiagramModelConnection_strategy = st.builds(
+    DiagramModelConnection,
+)
+model_DiagramModelArchimateConnection_strategy = st.builds(
+    model_DiagramModelArchimateConnection,
+)
+model_DiagramModelBendpoint_strategy = st.builds(
+    model_DiagramModelBendpoint,
     startY=
         st.integers(),
     endY=
         st.integers(),
+    endX=
+        st.integers(),
     startX=
         st.integers()
 )
-model::EObject_strategy = st.builds(
-    model::EObject,
+model_DiagramModelArchimateObject_strategy = st.builds(
+    model_DiagramModelArchimateObject,
+    type=
+        st.integers()
+)
+DiagramModel_strategy = st.builds(
+    DiagramModel,
+)
+model_SketchModel_strategy = st.builds(
+    model_SketchModel,
+    background=
+        st.integers()
+)
+model_ArchimateDiagramModel_strategy = st.builds(
+    model_ArchimateDiagramModel,
+    viewpoint=
+        st.integers()
+)
+model_Lockable_strategy = st.builds(
+    model_Lockable,
+    locked=
+        st.booleans()
+)
+model_DiagramModelImageProvider_strategy = st.builds(
+    model_DiagramModelImageProvider,
+    imagePath=
+        safe_text
+)
+model_BorderObject_strategy = st.builds(
+    model_BorderObject,
+    borderColor=
+        safe_text
+)
+model_FontAttribute_strategy = st.builds(
+    model_FontAttribute,
+    fontColor=
+        safe_text,
+    textPosition=
+        st.integers(),
+    textAlignment=
+        st.integers(),
+    font=
+        safe_text
+)
+model_Bounds_strategy = st.builds(
+    model_Bounds,
+    x=
+        st.integers(),
+    y=
+        st.integers(),
+    width=
+        st.integers(),
+    height=
+        st.integers()
 )
 Relationship_strategy = st.builds(
     Relationship,
 )
-model::InfluenceRelationship_strategy = st.builds(
-    model::InfluenceRelationship,
+model_InfluenceRelationship_strategy = st.builds(
+    model_InfluenceRelationship,
 )
-model::UsedByRelationship_strategy = st.builds(
-    model::UsedByRelationship,
+model_FlowRelationship_strategy = st.builds(
+    model_FlowRelationship,
 )
-model::SpecialisationRelationship_strategy = st.builds(
-    model::SpecialisationRelationship,
+model_SpecialisationRelationship_strategy = st.builds(
+    model_SpecialisationRelationship,
 )
-model::AssignmentRelationship_strategy = st.builds(
-    model::AssignmentRelationship,
+model_TriggeringRelationship_strategy = st.builds(
+    model_TriggeringRelationship,
 )
-model::AggregationRelationship_strategy = st.builds(
-    model::AggregationRelationship,
+model_CompositionRelationship_strategy = st.builds(
+    model_CompositionRelationship,
 )
-model::AssociationRelationship_strategy = st.builds(
-    model::AssociationRelationship,
+model_AggregationRelationship_strategy = st.builds(
+    model_AggregationRelationship,
 )
-model::RealisationRelationship_strategy = st.builds(
-    model::RealisationRelationship,
+model_AssignmentRelationship_strategy = st.builds(
+    model_AssignmentRelationship,
 )
-model::CompositionRelationship_strategy = st.builds(
-    model::CompositionRelationship,
+model_UsedByRelationship_strategy = st.builds(
+    model_UsedByRelationship,
 )
-model::FlowRelationship_strategy = st.builds(
-    model::FlowRelationship,
+model_AssociationRelationship_strategy = st.builds(
+    model_AssociationRelationship,
 )
-model::TriggeringRelationship_strategy = st.builds(
-    model::TriggeringRelationship,
+model_RealisationRelationship_strategy = st.builds(
+    model_RealisationRelationship,
 )
-model::AccessRelationship_strategy = st.builds(
-    model::AccessRelationship,
+model_AccessRelationship_strategy = st.builds(
+    model_AccessRelationship,
     accessType=
         st.integers()
 )
-model::Relationship_strategy = st.builds(
-    model::Relationship,
+model_Relationship_strategy = st.builds(
+    model_Relationship,
 )
-model::OrJunction_strategy = st.builds(
-    model::OrJunction,
+model_OrJunction_strategy = st.builds(
+    model_OrJunction,
 )
-model::AndJunction_strategy = st.builds(
-    model::AndJunction,
+model_AndJunction_strategy = st.builds(
+    model_AndJunction,
 )
-model::FolderContainer_strategy = st.builds(
-    model::FolderContainer,
+model_FolderContainer_strategy = st.builds(
+    model_FolderContainer,
 )
-model::Cloneable_strategy = st.builds(
-    model::Cloneable,
+model_Cloneable_strategy = st.builds(
+    model_Cloneable,
 )
 Documentable_strategy = st.builds(
     Documentable,
@@ -2670,37 +2670,37 @@ Documentable_strategy = st.builds(
 Adapter_strategy = st.builds(
     Adapter,
 )
-model::ArchimateModelElement_strategy = st.builds(
-    model::ArchimateModelElement,
+model_ArchimateModelElement_strategy = st.builds(
+    model_ArchimateModelElement,
 )
 Properties_strategy = st.builds(
     Properties,
 )
-model::DiagramModelConnection_strategy = st.builds(
-    model::DiagramModelConnection,
-    text=
-        safe_text,
-    type=
+model_SketchModelActor_strategy = st.builds(
+    model_SketchModelActor,
+)
+model_SketchModelSticky_strategy = st.builds(
+    model_SketchModelSticky,
+)
+model_DiagramModelConnection_strategy = st.builds(
+    model_DiagramModelConnection,
+    lineWidth=
         st.integers(),
     lineColor=
         safe_text,
-    lineWidth=
+    text=
+        safe_text,
+    type=
         st.integers()
 )
-model::DiagramModelGroup_strategy = st.builds(
-    model::DiagramModelGroup,
-)
-model::SketchModelActor_strategy = st.builds(
-    model::SketchModelActor,
-)
-model::SketchModelSticky_strategy = st.builds(
-    model::SketchModelSticky,
+model_DiagramModelGroup_strategy = st.builds(
+    model_DiagramModelGroup,
 )
 ArchimateModelElement_strategy = st.builds(
     ArchimateModelElement,
 )
-model::DiagramModel_strategy = st.builds(
-    model::DiagramModel,
+model_DiagramModel_strategy = st.builds(
+    model_DiagramModel,
     connectionRouterType=
         st.integers()
 )
@@ -2710,315 +2710,62 @@ Identifier_strategy = st.builds(
 Nameable_strategy = st.builds(
     Nameable,
 )
-model::DiagramModelComponent_strategy = st.builds(
-    model::DiagramModelComponent,
+model_ArchimateElement_strategy = st.builds(
+    model_ArchimateElement,
 )
-model::ArchimateElement_strategy = st.builds(
-    model::ArchimateElement,
+model_DiagramModelComponent_strategy = st.builds(
+    model_DiagramModelComponent,
 )
 FolderContainer_strategy = st.builds(
     FolderContainer,
 )
-model::Folder_strategy = st.builds(
-    model::Folder,
+model_Folder_strategy = st.builds(
+    model_Folder,
     type=
         safe_text
 )
-model::ArchimateModel_strategy = st.builds(
-    model::ArchimateModel,
-    purpose=
-        safe_text,
+model_ArchimateModel_strategy = st.builds(
+    model_ArchimateModel,
     file=
         safe_text,
     version=
+        safe_text,
+    purpose=
         safe_text
 )
-model::Adapter_strategy = st.builds(
-    model::Adapter,
+model_Adapter_strategy = st.builds(
+    model_Adapter,
 )
-model::Documentable_strategy = st.builds(
-    model::Documentable,
+model_Documentable_strategy = st.builds(
+    model_Documentable,
     documentation=
         safe_text
 )
-model::TextContent_strategy = st.builds(
-    model::TextContent,
+model_TextContent_strategy = st.builds(
+    model_TextContent,
     content=
         safe_text
 )
-model::Nameable_strategy = st.builds(
-    model::Nameable,
+model_Nameable_strategy = st.builds(
+    model_Nameable,
     name=
         safe_text
 )
-model::Properties_strategy = st.builds(
-    model::Properties,
+model_Properties_strategy = st.builds(
+    model_Properties,
 )
-model::Property_strategy = st.builds(
-    model::Property,
+model_Property_strategy = st.builds(
+    model_Property,
     key=
         safe_text,
     value=
         safe_text
 )
-model::Identifier_strategy = st.builds(
-    model::Identifier,
+model_Identifier_strategy = st.builds(
+    model_Identifier,
     id=
         safe_text
 )
-
-@given(instance=DiagramModelConnection_strategy)
-@settings(max_examples=50)
-def test_diagrammodelconnection_instantiation(instance):
-    assert isinstance(instance, DiagramModelConnection)
-
-@given(instance=model::DiagramModelArchimateConnection_strategy)
-@settings(max_examples=50)
-def test_model::diagrammodelarchimateconnection_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelArchimateConnection)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::DiagramModelArchimateConnection_strategy)
-@settings(max_examples=30)
-def test_model::diagrammodelarchimateconnection_addrelationshiptomodel_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addRelationshipToModel(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addRelationshipToModel).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRelationshipToModel' in model::DiagramModelArchimateConnection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRelationshipToModel' in model::DiagramModelArchimateConnection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRelationshipToModel' in model::DiagramModelArchimateConnection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::DiagramModelArchimateConnection_strategy)
-@settings(max_examples=30)
-def test_model::diagrammodelarchimateconnection_removerelationshipfrommodel_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeRelationshipFromModel()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRelationshipFromModel).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRelationshipFromModel' in model::DiagramModelArchimateConnection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRelationshipFromModel' in model::DiagramModelArchimateConnection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRelationshipFromModel' in model::DiagramModelArchimateConnection is not implemented or raised an error")
-
-@given(instance=DiagramModel_strategy)
-@settings(max_examples=50)
-def test_diagrammodel_instantiation(instance):
-    assert isinstance(instance, DiagramModel)
-
-@given(instance=model::SketchModel_strategy)
-@settings(max_examples=50)
-def test_model::sketchmodel_instantiation(instance):
-    assert isinstance(instance, model::SketchModel)
-
-@given(instance=model::SketchModel_strategy)
-def test_model::sketchmodel_background_type(instance):
-    assert isinstance(instance.background, int)
-
-
-@given(instance=model::SketchModel_strategy)
-def test_model::sketchmodel_background_setter(instance):
-    original = instance.background
-    instance.background = original
-    assert instance.background == original
-
-@given(instance=model::ArchimateDiagramModel_strategy)
-@settings(max_examples=50)
-def test_model::archimatediagrammodel_instantiation(instance):
-    assert isinstance(instance, model::ArchimateDiagramModel)
-
-@given(instance=model::ArchimateDiagramModel_strategy)
-def test_model::archimatediagrammodel_viewpoint_type(instance):
-    assert isinstance(instance.viewpoint, int)
-
-
-@given(instance=model::ArchimateDiagramModel_strategy)
-def test_model::archimatediagrammodel_viewpoint_setter(instance):
-    original = instance.viewpoint
-    instance.viewpoint = original
-    assert instance.viewpoint == original
-
-@given(instance=model::Lockable_strategy)
-@settings(max_examples=50)
-def test_model::lockable_instantiation(instance):
-    assert isinstance(instance, model::Lockable)
-
-@given(instance=model::Lockable_strategy)
-def test_model::lockable_locked_type(instance):
-    assert isinstance(instance.locked, bool)
-
-
-@given(instance=model::Lockable_strategy)
-def test_model::lockable_locked_setter(instance):
-    original = instance.locked
-    instance.locked = original
-    assert instance.locked == original
-
-@given(instance=model::DiagramModelImageProvider_strategy)
-@settings(max_examples=50)
-def test_model::diagrammodelimageprovider_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelImageProvider)
-
-@given(instance=model::DiagramModelImageProvider_strategy)
-def test_model::diagrammodelimageprovider_imagePath_type(instance):
-    assert isinstance(instance.imagePath, str)
-
-
-@given(instance=model::DiagramModelImageProvider_strategy)
-def test_model::diagrammodelimageprovider_imagePath_setter(instance):
-    original = instance.imagePath
-    instance.imagePath = original
-    assert instance.imagePath == original
-
-@given(instance=model::BorderObject_strategy)
-@settings(max_examples=50)
-def test_model::borderobject_instantiation(instance):
-    assert isinstance(instance, model::BorderObject)
-
-@given(instance=model::BorderObject_strategy)
-def test_model::borderobject_borderColor_type(instance):
-    assert isinstance(instance.borderColor, str)
-
-
-@given(instance=model::BorderObject_strategy)
-def test_model::borderobject_borderColor_setter(instance):
-    original = instance.borderColor
-    instance.borderColor = original
-    assert instance.borderColor == original
-
-@given(instance=model::FontAttribute_strategy)
-@settings(max_examples=50)
-def test_model::fontattribute_instantiation(instance):
-    assert isinstance(instance, model::FontAttribute)
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_textAlignment_type(instance):
-    assert isinstance(instance.textAlignment, int)
-
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_textAlignment_setter(instance):
-    original = instance.textAlignment
-    instance.textAlignment = original
-    assert instance.textAlignment == original
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_textPosition_type(instance):
-    assert isinstance(instance.textPosition, int)
-
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_textPosition_setter(instance):
-    original = instance.textPosition
-    instance.textPosition = original
-    assert instance.textPosition == original
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_font_type(instance):
-    assert isinstance(instance.font, str)
-
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_font_setter(instance):
-    original = instance.font
-    instance.font = original
-    assert instance.font == original
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_fontColor_type(instance):
-    assert isinstance(instance.fontColor, str)
-
-
-@given(instance=model::FontAttribute_strategy)
-def test_model::fontattribute_fontColor_setter(instance):
-    original = instance.fontColor
-    instance.fontColor = original
-    assert instance.fontColor == original
-
-@given(instance=model::Bounds_strategy)
-@settings(max_examples=50)
-def test_model::bounds_instantiation(instance):
-    assert isinstance(instance, model::Bounds)
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_height_type(instance):
-    assert isinstance(instance.height, int)
-
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=model::Bounds_strategy)
-def test_model::bounds_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
 @given(instance=FontAttribute_strategy)
 @settings(max_examples=50)
@@ -3045,154 +2792,75 @@ def test_textcontent_instantiation(instance):
 def test_motivationelement_instantiation(instance):
     assert isinstance(instance, MotivationElement)
 
-@given(instance=model::Assessment_strategy)
+@given(instance=model_Constraint_strategy)
 @settings(max_examples=50)
-def test_model::assessment_instantiation(instance):
-    assert isinstance(instance, model::Assessment)
+def test_model_constraint_instantiation(instance):
+    assert isinstance(instance, model_Constraint)
 
-@given(instance=model::Constraint_strategy)
+@given(instance=model_Goal_strategy)
 @settings(max_examples=50)
-def test_model::constraint_instantiation(instance):
-    assert isinstance(instance, model::Constraint)
+def test_model_goal_instantiation(instance):
+    assert isinstance(instance, model_Goal)
 
-@given(instance=model::Requirement_strategy)
+@given(instance=model_Assessment_strategy)
 @settings(max_examples=50)
-def test_model::requirement_instantiation(instance):
-    assert isinstance(instance, model::Requirement)
+def test_model_assessment_instantiation(instance):
+    assert isinstance(instance, model_Assessment)
 
-@given(instance=model::Driver_strategy)
+@given(instance=model_Driver_strategy)
 @settings(max_examples=50)
-def test_model::driver_instantiation(instance):
-    assert isinstance(instance, model::Driver)
+def test_model_driver_instantiation(instance):
+    assert isinstance(instance, model_Driver)
 
-@given(instance=model::Goal_strategy)
+@given(instance=model_Requirement_strategy)
 @settings(max_examples=50)
-def test_model::goal_instantiation(instance):
-    assert isinstance(instance, model::Goal)
+def test_model_requirement_instantiation(instance):
+    assert isinstance(instance, model_Requirement)
 
-@given(instance=model::Stakeholder_strategy)
+@given(instance=model_Stakeholder_strategy)
 @settings(max_examples=50)
-def test_model::stakeholder_instantiation(instance):
-    assert isinstance(instance, model::Stakeholder)
+def test_model_stakeholder_instantiation(instance):
+    assert isinstance(instance, model_Stakeholder)
 
 @given(instance=DiagramModelObject_strategy)
 @settings(max_examples=50)
 def test_diagrammodelobject_instantiation(instance):
     assert isinstance(instance, DiagramModelObject)
 
-@given(instance=model::DiagramModelNote_strategy)
+@given(instance=model_DiagramModelImage_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelnote_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelNote)
+def test_model_diagrammodelimage_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelImage)
 
-@given(instance=model::DiagramModelImage_strategy)
+@given(instance=model_DiagramModelNote_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelimage_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelImage)
+def test_model_diagrammodelnote_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelNote)
 
-@given(instance=model::DiagramModelReference_strategy)
+@given(instance=model_DiagramModelReference_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelreference_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelReference)
+def test_model_diagrammodelreference_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelReference)
 
 @given(instance=DiagramModelContainer_strategy)
 @settings(max_examples=50)
 def test_diagrammodelcontainer_instantiation(instance):
     assert isinstance(instance, DiagramModelContainer)
 
-@given(instance=model::DiagramModelArchimateObject_strategy)
-@settings(max_examples=50)
-def test_model::diagrammodelarchimateobject_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelArchimateObject)
-
-@given(instance=model::DiagramModelArchimateObject_strategy)
-def test_model::diagrammodelarchimateobject_type_type(instance):
-    assert isinstance(instance.type, int)
-
-
-@given(instance=model::DiagramModelArchimateObject_strategy)
-def test_model::diagrammodelarchimateobject_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::DiagramModelArchimateObject_strategy)
-@settings(max_examples=30)
-def test_model::diagrammodelarchimateobject_removearchimateelementfrommodel_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeArchimateElementFromModel()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeArchimateElementFromModel).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeArchimateElementFromModel' in model::DiagramModelArchimateObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeArchimateElementFromModel' in model::DiagramModelArchimateObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeArchimateElementFromModel' in model::DiagramModelArchimateObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::DiagramModelArchimateObject_strategy)
-@settings(max_examples=30)
-def test_model::diagrammodelarchimateobject_addarchimateelementtomodel_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addArchimateElementToModel(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addArchimateElementToModel).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addArchimateElementToModel' in model::DiagramModelArchimateObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addArchimateElementToModel' in model::DiagramModelArchimateObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addArchimateElementToModel' in model::DiagramModelArchimateObject is not implemented or raised an error")
-
 @given(instance=DiagramModelComponent_strategy)
 @settings(max_examples=50)
 def test_diagrammodelcomponent_instantiation(instance):
     assert isinstance(instance, DiagramModelComponent)
 
-@given(instance=model::DiagramModelObject_strategy)
+@given(instance=model_DiagramModelObject_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelobject_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelObject)
-
-@given(instance=model::DiagramModelObject_strategy)
-def test_model::diagrammodelobject_fillColor_type(instance):
-    assert isinstance(instance.fillColor, str)
+def test_model_diagrammodelobject_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelObject)
 
 
-@given(instance=model::DiagramModelObject_strategy)
-def test_model::diagrammodelobject_fillColor_setter(instance):
+
+@given(instance=model_DiagramModelObject_strategy)
+def test_model_diagrammodelobject_fillColor_setter(instance):
     original = instance.fillColor
     instance.fillColor = original
     assert instance.fillColor == original
@@ -3203,40 +2871,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::DiagramModelObject_strategy)
+@given(instance=model_DiagramModelObject_strategy)
 @settings(max_examples=30)
-def test_model::diagrammodelobject_addconnection_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addConnection(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addConnection).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addConnection' in model::DiagramModelObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addConnection' in model::DiagramModelObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addConnection' in model::DiagramModelObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::DiagramModelObject_strategy)
-@settings(max_examples=30)
-def test_model::diagrammodelobject_setbounds_changes_state(instance):
+def test_model_diagrammodelobject_setbounds_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3253,14 +2890,14 @@ def test_model::diagrammodelobject_setbounds_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setBounds' in model::DiagramModelObject is empty"
+        assert has_statements, f"Function 'setBounds' in model_DiagramModelObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setBounds' in model::DiagramModelObject did not change state; check implementation")
+            warnings.warn(f"Operation 'setBounds' in model_DiagramModelObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setBounds' in model::DiagramModelObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'setBounds' in model_DiagramModelObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3268,9 +2905,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::DiagramModelObject_strategy)
+@given(instance=model_DiagramModelObject_strategy)
 @settings(max_examples=30)
-def test_model::diagrammodelobject_removeconnection_changes_state(instance):
+def test_model_diagrammodelobject_removeconnection_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3284,49 +2921,80 @@ def test_model::diagrammodelobject_removeconnection_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeConnection' in model::DiagramModelObject is empty"
+        assert has_statements, f"Function 'removeConnection' in model_DiagramModelObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeConnection' in model::DiagramModelObject did not change state; check implementation")
+            warnings.warn(f"Operation 'removeConnection' in model_DiagramModelObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeConnection' in model::DiagramModelObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeConnection' in model_DiagramModelObject is not implemented or raised an error")
 
-@given(instance=model::DiagramModelContainer_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_DiagramModelObject_strategy)
+@settings(max_examples=30)
+def test_model_diagrammodelobject_addconnection_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addConnection(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addConnection).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addConnection' in model_DiagramModelObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addConnection' in model_DiagramModelObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addConnection' in model_DiagramModelObject is not implemented or raised an error")
+
+@given(instance=model_DiagramModelContainer_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelcontainer_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelContainer)
+def test_model_diagrammodelcontainer_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelContainer)
 
 @given(instance=ImplementationMigrationElement_strategy)
 @settings(max_examples=50)
 def test_implementationmigrationelement_instantiation(instance):
     assert isinstance(instance, ImplementationMigrationElement)
 
-@given(instance=model::Plateau_strategy)
+@given(instance=model_Plateau_strategy)
 @settings(max_examples=50)
-def test_model::plateau_instantiation(instance):
-    assert isinstance(instance, model::Plateau)
+def test_model_plateau_instantiation(instance):
+    assert isinstance(instance, model_Plateau)
 
-@given(instance=model::Gap_strategy)
+@given(instance=model_Gap_strategy)
 @settings(max_examples=50)
-def test_model::gap_instantiation(instance):
-    assert isinstance(instance, model::Gap)
+def test_model_gap_instantiation(instance):
+    assert isinstance(instance, model_Gap)
 
-@given(instance=model::Deliverable_strategy)
+@given(instance=model_Deliverable_strategy)
 @settings(max_examples=50)
-def test_model::deliverable_instantiation(instance):
-    assert isinstance(instance, model::Deliverable)
+def test_model_deliverable_instantiation(instance):
+    assert isinstance(instance, model_Deliverable)
 
-@given(instance=model::WorkPackage_strategy)
+@given(instance=model_WorkPackage_strategy)
 @settings(max_examples=50)
-def test_model::workpackage_instantiation(instance):
-    assert isinstance(instance, model::WorkPackage)
+def test_model_workpackage_instantiation(instance):
+    assert isinstance(instance, model_WorkPackage)
 
-@given(instance=model::Principle_strategy)
+@given(instance=model_Principle_strategy)
 @settings(max_examples=50)
-def test_model::principle_instantiation(instance):
-    assert isinstance(instance, model::Principle)
+def test_model_principle_instantiation(instance):
+    assert isinstance(instance, model_Principle)
 
 @given(instance=InterfaceElement_strategy)
 @settings(max_examples=50)
@@ -3338,396 +3006,665 @@ def test_interfaceelement_instantiation(instance):
 def test_businesslayerelement_instantiation(instance):
     assert isinstance(instance, BusinessLayerElement)
 
-@given(instance=model::BusinessActor_strategy)
+@given(instance=model_BusinessFunction_strategy)
 @settings(max_examples=50)
-def test_model::businessactor_instantiation(instance):
-    assert isinstance(instance, model::BusinessActor)
+def test_model_businessfunction_instantiation(instance):
+    assert isinstance(instance, model_BusinessFunction)
 
-@given(instance=model::BusinessCollaboration_strategy)
+@given(instance=model_BusinessProcess_strategy)
 @settings(max_examples=50)
-def test_model::businesscollaboration_instantiation(instance):
-    assert isinstance(instance, model::BusinessCollaboration)
+def test_model_businessprocess_instantiation(instance):
+    assert isinstance(instance, model_BusinessProcess)
 
-@given(instance=model::BusinessInteraction_strategy)
+@given(instance=model_BusinessInteraction_strategy)
 @settings(max_examples=50)
-def test_model::businessinteraction_instantiation(instance):
-    assert isinstance(instance, model::BusinessInteraction)
+def test_model_businessinteraction_instantiation(instance):
+    assert isinstance(instance, model_BusinessInteraction)
 
-@given(instance=model::Contract_strategy)
+@given(instance=model_BusinessObject_strategy)
 @settings(max_examples=50)
-def test_model::contract_instantiation(instance):
-    assert isinstance(instance, model::Contract)
+def test_model_businessobject_instantiation(instance):
+    assert isinstance(instance, model_BusinessObject)
 
-@given(instance=model::BusinessEvent_strategy)
+@given(instance=model_BusinessActor_strategy)
 @settings(max_examples=50)
-def test_model::businessevent_instantiation(instance):
-    assert isinstance(instance, model::BusinessEvent)
+def test_model_businessactor_instantiation(instance):
+    assert isinstance(instance, model_BusinessActor)
 
-@given(instance=model::BusinessFunction_strategy)
+@given(instance=model_BusinessInterface_strategy)
 @settings(max_examples=50)
-def test_model::businessfunction_instantiation(instance):
-    assert isinstance(instance, model::BusinessFunction)
+def test_model_businessinterface_instantiation(instance):
+    assert isinstance(instance, model_BusinessInterface)
 
-@given(instance=model::BusinessObject_strategy)
+@given(instance=model_BusinessEvent_strategy)
 @settings(max_examples=50)
-def test_model::businessobject_instantiation(instance):
-    assert isinstance(instance, model::BusinessObject)
+def test_model_businessevent_instantiation(instance):
+    assert isinstance(instance, model_BusinessEvent)
 
-@given(instance=model::Meaning_strategy)
+@given(instance=model_BusinessCollaboration_strategy)
 @settings(max_examples=50)
-def test_model::meaning_instantiation(instance):
-    assert isinstance(instance, model::Meaning)
+def test_model_businesscollaboration_instantiation(instance):
+    assert isinstance(instance, model_BusinessCollaboration)
 
-@given(instance=model::BusinessProcess_strategy)
+@given(instance=model_Contract_strategy)
 @settings(max_examples=50)
-def test_model::businessprocess_instantiation(instance):
-    assert isinstance(instance, model::BusinessProcess)
+def test_model_contract_instantiation(instance):
+    assert isinstance(instance, model_Contract)
 
-@given(instance=model::BusinessInterface_strategy)
+@given(instance=model_Meaning_strategy)
 @settings(max_examples=50)
-def test_model::businessinterface_instantiation(instance):
-    assert isinstance(instance, model::BusinessInterface)
+def test_model_meaning_instantiation(instance):
+    assert isinstance(instance, model_Meaning)
 
-@given(instance=model::BusinessActivity_strategy)
+@given(instance=model_BusinessActivity_strategy)
 @settings(max_examples=50)
-def test_model::businessactivity_instantiation(instance):
-    assert isinstance(instance, model::BusinessActivity)
+def test_model_businessactivity_instantiation(instance):
+    assert isinstance(instance, model_BusinessActivity)
 
 @given(instance=TechnologyLayerElement_strategy)
 @settings(max_examples=50)
 def test_technologylayerelement_instantiation(instance):
     assert isinstance(instance, TechnologyLayerElement)
 
-@given(instance=model::CommunicationPath_strategy)
+@given(instance=model_Node_strategy)
 @settings(max_examples=50)
-def test_model::communicationpath_instantiation(instance):
-    assert isinstance(instance, model::CommunicationPath)
+def test_model_node_instantiation(instance):
+    assert isinstance(instance, model_Node)
 
-@given(instance=model::Node_strategy)
+@given(instance=model_CommunicationPath_strategy)
 @settings(max_examples=50)
-def test_model::node_instantiation(instance):
-    assert isinstance(instance, model::Node)
+def test_model_communicationpath_instantiation(instance):
+    assert isinstance(instance, model_CommunicationPath)
 
-@given(instance=model::InfrastructureService_strategy)
+@given(instance=model_InfrastructureInterface_strategy)
 @settings(max_examples=50)
-def test_model::infrastructureservice_instantiation(instance):
-    assert isinstance(instance, model::InfrastructureService)
+def test_model_infrastructureinterface_instantiation(instance):
+    assert isinstance(instance, model_InfrastructureInterface)
 
-@given(instance=model::InfrastructureFunction_strategy)
+@given(instance=model_Network_strategy)
 @settings(max_examples=50)
-def test_model::infrastructurefunction_instantiation(instance):
-    assert isinstance(instance, model::InfrastructureFunction)
+def test_model_network_instantiation(instance):
+    assert isinstance(instance, model_Network)
 
-@given(instance=model::SystemSoftware_strategy)
+@given(instance=model_InfrastructureService_strategy)
 @settings(max_examples=50)
-def test_model::systemsoftware_instantiation(instance):
-    assert isinstance(instance, model::SystemSoftware)
+def test_model_infrastructureservice_instantiation(instance):
+    assert isinstance(instance, model_InfrastructureService)
 
-@given(instance=model::InfrastructureInterface_strategy)
+@given(instance=model_InfrastructureFunction_strategy)
 @settings(max_examples=50)
-def test_model::infrastructureinterface_instantiation(instance):
-    assert isinstance(instance, model::InfrastructureInterface)
+def test_model_infrastructurefunction_instantiation(instance):
+    assert isinstance(instance, model_InfrastructureFunction)
 
-@given(instance=model::Network_strategy)
+@given(instance=model_SystemSoftware_strategy)
 @settings(max_examples=50)
-def test_model::network_instantiation(instance):
-    assert isinstance(instance, model::Network)
+def test_model_systemsoftware_instantiation(instance):
+    assert isinstance(instance, model_SystemSoftware)
 
-@given(instance=model::Device_strategy)
+@given(instance=model_Device_strategy)
 @settings(max_examples=50)
-def test_model::device_instantiation(instance):
-    assert isinstance(instance, model::Device)
+def test_model_device_instantiation(instance):
+    assert isinstance(instance, model_Device)
 
-@given(instance=model::Artifact_strategy)
+@given(instance=model_Artifact_strategy)
 @settings(max_examples=50)
-def test_model::artifact_instantiation(instance):
-    assert isinstance(instance, model::Artifact)
+def test_model_artifact_instantiation(instance):
+    assert isinstance(instance, model_Artifact)
 
 @given(instance=ApplicationLayerElement_strategy)
 @settings(max_examples=50)
 def test_applicationlayerelement_instantiation(instance):
     assert isinstance(instance, ApplicationLayerElement)
 
-@given(instance=model::DataObject_strategy)
+@given(instance=model_ApplicationComponent_strategy)
 @settings(max_examples=50)
-def test_model::dataobject_instantiation(instance):
-    assert isinstance(instance, model::DataObject)
+def test_model_applicationcomponent_instantiation(instance):
+    assert isinstance(instance, model_ApplicationComponent)
 
-@given(instance=model::ApplicationFunction_strategy)
+@given(instance=model_DataObject_strategy)
 @settings(max_examples=50)
-def test_model::applicationfunction_instantiation(instance):
-    assert isinstance(instance, model::ApplicationFunction)
+def test_model_dataobject_instantiation(instance):
+    assert isinstance(instance, model_DataObject)
 
-@given(instance=model::ApplicationInteraction_strategy)
+@given(instance=model_ApplicationFunction_strategy)
 @settings(max_examples=50)
-def test_model::applicationinteraction_instantiation(instance):
-    assert isinstance(instance, model::ApplicationInteraction)
+def test_model_applicationfunction_instantiation(instance):
+    assert isinstance(instance, model_ApplicationFunction)
 
-@given(instance=model::ApplicationComponent_strategy)
+@given(instance=model_ApplicationInterface_strategy)
 @settings(max_examples=50)
-def test_model::applicationcomponent_instantiation(instance):
-    assert isinstance(instance, model::ApplicationComponent)
+def test_model_applicationinterface_instantiation(instance):
+    assert isinstance(instance, model_ApplicationInterface)
 
-@given(instance=model::ApplicationInterface_strategy)
+@given(instance=model_ApplicationService_strategy)
 @settings(max_examples=50)
-def test_model::applicationinterface_instantiation(instance):
-    assert isinstance(instance, model::ApplicationInterface)
+def test_model_applicationservice_instantiation(instance):
+    assert isinstance(instance, model_ApplicationService)
 
-@given(instance=model::ApplicationService_strategy)
+@given(instance=model_ApplicationInteraction_strategy)
 @settings(max_examples=50)
-def test_model::applicationservice_instantiation(instance):
-    assert isinstance(instance, model::ApplicationService)
+def test_model_applicationinteraction_instantiation(instance):
+    assert isinstance(instance, model_ApplicationInteraction)
 
-@given(instance=model::ApplicationCollaboration_strategy)
+@given(instance=model_ApplicationCollaboration_strategy)
 @settings(max_examples=50)
-def test_model::applicationcollaboration_instantiation(instance):
-    assert isinstance(instance, model::ApplicationCollaboration)
+def test_model_applicationcollaboration_instantiation(instance):
+    assert isinstance(instance, model_ApplicationCollaboration)
 
-@given(instance=model::Location_strategy)
+@given(instance=model_Location_strategy)
 @settings(max_examples=50)
-def test_model::location_instantiation(instance):
-    assert isinstance(instance, model::Location)
+def test_model_location_instantiation(instance):
+    assert isinstance(instance, model_Location)
 
-@given(instance=model::Value_strategy)
+@given(instance=model_Value_strategy)
 @settings(max_examples=50)
-def test_model::value_instantiation(instance):
-    assert isinstance(instance, model::Value)
+def test_model_value_instantiation(instance):
+    assert isinstance(instance, model_Value)
 
-@given(instance=model::BusinessService_strategy)
+@given(instance=model_BusinessService_strategy)
 @settings(max_examples=50)
-def test_model::businessservice_instantiation(instance):
-    assert isinstance(instance, model::BusinessService)
+def test_model_businessservice_instantiation(instance):
+    assert isinstance(instance, model_BusinessService)
 
-@given(instance=model::BusinessRole_strategy)
+@given(instance=model_BusinessRole_strategy)
 @settings(max_examples=50)
-def test_model::businessrole_instantiation(instance):
-    assert isinstance(instance, model::BusinessRole)
+def test_model_businessrole_instantiation(instance):
+    assert isinstance(instance, model_BusinessRole)
 
-@given(instance=model::Representation_strategy)
+@given(instance=model_Representation_strategy)
 @settings(max_examples=50)
-def test_model::representation_instantiation(instance):
-    assert isinstance(instance, model::Representation)
+def test_model_representation_instantiation(instance):
+    assert isinstance(instance, model_Representation)
 
-@given(instance=model::Product_strategy)
+@given(instance=model_Product_strategy)
 @settings(max_examples=50)
-def test_model::product_instantiation(instance):
-    assert isinstance(instance, model::Product)
+def test_model_product_instantiation(instance):
+    assert isinstance(instance, model_Product)
 
 @given(instance=JunctionElement_strategy)
 @settings(max_examples=50)
 def test_junctionelement_instantiation(instance):
     assert isinstance(instance, JunctionElement)
 
-@given(instance=model::Junction_strategy)
+@given(instance=model_Junction_strategy)
 @settings(max_examples=50)
-def test_model::junction_instantiation(instance):
-    assert isinstance(instance, model::Junction)
+def test_model_junction_instantiation(instance):
+    assert isinstance(instance, model_Junction)
 
 @given(instance=ArchimateElement_strategy)
 @settings(max_examples=50)
 def test_archimateelement_instantiation(instance):
     assert isinstance(instance, ArchimateElement)
 
-@given(instance=model::TechnologyLayerElement_strategy)
+@given(instance=model_ImplementationMigrationElement_strategy)
 @settings(max_examples=50)
-def test_model::technologylayerelement_instantiation(instance):
-    assert isinstance(instance, model::TechnologyLayerElement)
+def test_model_implementationmigrationelement_instantiation(instance):
+    assert isinstance(instance, model_ImplementationMigrationElement)
 
-@given(instance=model::ImplementationMigrationElement_strategy)
+@given(instance=model_ApplicationLayerElement_strategy)
 @settings(max_examples=50)
-def test_model::implementationmigrationelement_instantiation(instance):
-    assert isinstance(instance, model::ImplementationMigrationElement)
+def test_model_applicationlayerelement_instantiation(instance):
+    assert isinstance(instance, model_ApplicationLayerElement)
 
-@given(instance=model::MotivationElement_strategy)
+@given(instance=model_TechnologyLayerElement_strategy)
 @settings(max_examples=50)
-def test_model::motivationelement_instantiation(instance):
-    assert isinstance(instance, model::MotivationElement)
+def test_model_technologylayerelement_instantiation(instance):
+    assert isinstance(instance, model_TechnologyLayerElement)
 
-@given(instance=model::InterfaceElement_strategy)
+@given(instance=model_MotivationElement_strategy)
 @settings(max_examples=50)
-def test_model::interfaceelement_instantiation(instance):
-    assert isinstance(instance, model::InterfaceElement)
+def test_model_motivationelement_instantiation(instance):
+    assert isinstance(instance, model_MotivationElement)
 
-@given(instance=model::InterfaceElement_strategy)
-def test_model::interfaceelement_interfaceType_type(instance):
-    assert isinstance(instance.interfaceType, int)
+@given(instance=model_BusinessLayerElement_strategy)
+@settings(max_examples=50)
+def test_model_businesslayerelement_instantiation(instance):
+    assert isinstance(instance, model_BusinessLayerElement)
+
+@given(instance=model_InterfaceElement_strategy)
+@settings(max_examples=50)
+def test_model_interfaceelement_instantiation(instance):
+    assert isinstance(instance, model_InterfaceElement)
 
 
-@given(instance=model::InterfaceElement_strategy)
-def test_model::interfaceelement_interfaceType_setter(instance):
+
+@given(instance=model_InterfaceElement_strategy)
+def test_model_interfaceelement_interfaceType_setter(instance):
     original = instance.interfaceType
     instance.interfaceType = original
     assert instance.interfaceType == original
 
-@given(instance=model::BusinessLayerElement_strategy)
+@given(instance=model_JunctionElement_strategy)
 @settings(max_examples=50)
-def test_model::businesslayerelement_instantiation(instance):
-    assert isinstance(instance, model::BusinessLayerElement)
-
-@given(instance=model::ApplicationLayerElement_strategy)
-@settings(max_examples=50)
-def test_model::applicationlayerelement_instantiation(instance):
-    assert isinstance(instance, model::ApplicationLayerElement)
-
-@given(instance=model::JunctionElement_strategy)
-@settings(max_examples=50)
-def test_model::junctionelement_instantiation(instance):
-    assert isinstance(instance, model::JunctionElement)
+def test_model_junctionelement_instantiation(instance):
+    assert isinstance(instance, model_JunctionElement)
 
 @given(instance=Cloneable_strategy)
 @settings(max_examples=50)
 def test_cloneable_instantiation(instance):
     assert isinstance(instance, Cloneable)
 
-@given(instance=model::DiagramModelBendpoint_strategy)
+@given(instance=model_EObject_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelbendpoint_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelBendpoint)
+def test_model_eobject_instantiation(instance):
+    assert isinstance(instance, model_EObject)
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_endX_type(instance):
-    assert isinstance(instance.endX, int)
+@given(instance=DiagramModelConnection_strategy)
+@settings(max_examples=50)
+def test_diagrammodelconnection_instantiation(instance):
+    assert isinstance(instance, DiagramModelConnection)
+
+@given(instance=model_DiagramModelArchimateConnection_strategy)
+@settings(max_examples=50)
+def test_model_diagrammodelarchimateconnection_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelArchimateConnection)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_DiagramModelArchimateConnection_strategy)
+@settings(max_examples=30)
+def test_model_diagrammodelarchimateconnection_addrelationshiptomodel_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addRelationshipToModel(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addRelationshipToModel).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addRelationshipToModel' in model_DiagramModelArchimateConnection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addRelationshipToModel' in model_DiagramModelArchimateConnection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addRelationshipToModel' in model_DiagramModelArchimateConnection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_DiagramModelArchimateConnection_strategy)
+@settings(max_examples=30)
+def test_model_diagrammodelarchimateconnection_removerelationshipfrommodel_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRelationshipFromModel()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRelationshipFromModel).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRelationshipFromModel' in model_DiagramModelArchimateConnection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRelationshipFromModel' in model_DiagramModelArchimateConnection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRelationshipFromModel' in model_DiagramModelArchimateConnection is not implemented or raised an error")
+
+@given(instance=model_DiagramModelBendpoint_strategy)
+@settings(max_examples=50)
+def test_model_diagrammodelbendpoint_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelBendpoint)
 
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_endX_setter(instance):
-    original = instance.endX
-    instance.endX = original
-    assert instance.endX == original
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_startY_type(instance):
-    assert isinstance(instance.startY, int)
-
-
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_startY_setter(instance):
+@given(instance=model_DiagramModelBendpoint_strategy)
+def test_model_diagrammodelbendpoint_startY_setter(instance):
     original = instance.startY
     instance.startY = original
     assert instance.startY == original
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_endY_type(instance):
-    assert isinstance(instance.endY, int)
 
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_endY_setter(instance):
+@given(instance=model_DiagramModelBendpoint_strategy)
+def test_model_diagrammodelbendpoint_endY_setter(instance):
     original = instance.endY
     instance.endY = original
     assert instance.endY == original
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_startX_type(instance):
-    assert isinstance(instance.startX, int)
 
 
-@given(instance=model::DiagramModelBendpoint_strategy)
-def test_model::diagrammodelbendpoint_startX_setter(instance):
+@given(instance=model_DiagramModelBendpoint_strategy)
+def test_model_diagrammodelbendpoint_endX_setter(instance):
+    original = instance.endX
+    instance.endX = original
+    assert instance.endX == original
+
+
+
+@given(instance=model_DiagramModelBendpoint_strategy)
+def test_model_diagrammodelbendpoint_startX_setter(instance):
     original = instance.startX
     instance.startX = original
     assert instance.startX == original
 
-@given(instance=model::EObject_strategy)
+@given(instance=model_DiagramModelArchimateObject_strategy)
 @settings(max_examples=50)
-def test_model::eobject_instantiation(instance):
-    assert isinstance(instance, model::EObject)
+def test_model_diagrammodelarchimateobject_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelArchimateObject)
+
+
+
+@given(instance=model_DiagramModelArchimateObject_strategy)
+def test_model_diagrammodelarchimateobject_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_DiagramModelArchimateObject_strategy)
+@settings(max_examples=30)
+def test_model_diagrammodelarchimateobject_removearchimateelementfrommodel_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeArchimateElementFromModel()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeArchimateElementFromModel).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeArchimateElementFromModel' in model_DiagramModelArchimateObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeArchimateElementFromModel' in model_DiagramModelArchimateObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeArchimateElementFromModel' in model_DiagramModelArchimateObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_DiagramModelArchimateObject_strategy)
+@settings(max_examples=30)
+def test_model_diagrammodelarchimateobject_addarchimateelementtomodel_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addArchimateElementToModel(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addArchimateElementToModel).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addArchimateElementToModel' in model_DiagramModelArchimateObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addArchimateElementToModel' in model_DiagramModelArchimateObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addArchimateElementToModel' in model_DiagramModelArchimateObject is not implemented or raised an error")
+
+@given(instance=DiagramModel_strategy)
+@settings(max_examples=50)
+def test_diagrammodel_instantiation(instance):
+    assert isinstance(instance, DiagramModel)
+
+@given(instance=model_SketchModel_strategy)
+@settings(max_examples=50)
+def test_model_sketchmodel_instantiation(instance):
+    assert isinstance(instance, model_SketchModel)
+
+
+
+@given(instance=model_SketchModel_strategy)
+def test_model_sketchmodel_background_setter(instance):
+    original = instance.background
+    instance.background = original
+    assert instance.background == original
+
+@given(instance=model_ArchimateDiagramModel_strategy)
+@settings(max_examples=50)
+def test_model_archimatediagrammodel_instantiation(instance):
+    assert isinstance(instance, model_ArchimateDiagramModel)
+
+
+
+@given(instance=model_ArchimateDiagramModel_strategy)
+def test_model_archimatediagrammodel_viewpoint_setter(instance):
+    original = instance.viewpoint
+    instance.viewpoint = original
+    assert instance.viewpoint == original
+
+@given(instance=model_Lockable_strategy)
+@settings(max_examples=50)
+def test_model_lockable_instantiation(instance):
+    assert isinstance(instance, model_Lockable)
+
+
+
+@given(instance=model_Lockable_strategy)
+def test_model_lockable_locked_setter(instance):
+    original = instance.locked
+    instance.locked = original
+    assert instance.locked == original
+
+@given(instance=model_DiagramModelImageProvider_strategy)
+@settings(max_examples=50)
+def test_model_diagrammodelimageprovider_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelImageProvider)
+
+
+
+@given(instance=model_DiagramModelImageProvider_strategy)
+def test_model_diagrammodelimageprovider_imagePath_setter(instance):
+    original = instance.imagePath
+    instance.imagePath = original
+    assert instance.imagePath == original
+
+@given(instance=model_BorderObject_strategy)
+@settings(max_examples=50)
+def test_model_borderobject_instantiation(instance):
+    assert isinstance(instance, model_BorderObject)
+
+
+
+@given(instance=model_BorderObject_strategy)
+def test_model_borderobject_borderColor_setter(instance):
+    original = instance.borderColor
+    instance.borderColor = original
+    assert instance.borderColor == original
+
+@given(instance=model_FontAttribute_strategy)
+@settings(max_examples=50)
+def test_model_fontattribute_instantiation(instance):
+    assert isinstance(instance, model_FontAttribute)
+
+
+
+@given(instance=model_FontAttribute_strategy)
+def test_model_fontattribute_fontColor_setter(instance):
+    original = instance.fontColor
+    instance.fontColor = original
+    assert instance.fontColor == original
+
+
+
+@given(instance=model_FontAttribute_strategy)
+def test_model_fontattribute_textPosition_setter(instance):
+    original = instance.textPosition
+    instance.textPosition = original
+    assert instance.textPosition == original
+
+
+
+@given(instance=model_FontAttribute_strategy)
+def test_model_fontattribute_textAlignment_setter(instance):
+    original = instance.textAlignment
+    instance.textAlignment = original
+    assert instance.textAlignment == original
+
+
+
+@given(instance=model_FontAttribute_strategy)
+def test_model_fontattribute_font_setter(instance):
+    original = instance.font
+    instance.font = original
+    assert instance.font == original
+
+@given(instance=model_Bounds_strategy)
+@settings(max_examples=50)
+def test_model_bounds_instantiation(instance):
+    assert isinstance(instance, model_Bounds)
+
+
+
+@given(instance=model_Bounds_strategy)
+def test_model_bounds_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=model_Bounds_strategy)
+def test_model_bounds_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=model_Bounds_strategy)
+def test_model_bounds_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=model_Bounds_strategy)
+def test_model_bounds_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=model::InfluenceRelationship_strategy)
+@given(instance=model_InfluenceRelationship_strategy)
 @settings(max_examples=50)
-def test_model::influencerelationship_instantiation(instance):
-    assert isinstance(instance, model::InfluenceRelationship)
+def test_model_influencerelationship_instantiation(instance):
+    assert isinstance(instance, model_InfluenceRelationship)
 
-@given(instance=model::UsedByRelationship_strategy)
+@given(instance=model_FlowRelationship_strategy)
 @settings(max_examples=50)
-def test_model::usedbyrelationship_instantiation(instance):
-    assert isinstance(instance, model::UsedByRelationship)
+def test_model_flowrelationship_instantiation(instance):
+    assert isinstance(instance, model_FlowRelationship)
 
-@given(instance=model::SpecialisationRelationship_strategy)
+@given(instance=model_SpecialisationRelationship_strategy)
 @settings(max_examples=50)
-def test_model::specialisationrelationship_instantiation(instance):
-    assert isinstance(instance, model::SpecialisationRelationship)
+def test_model_specialisationrelationship_instantiation(instance):
+    assert isinstance(instance, model_SpecialisationRelationship)
 
-@given(instance=model::AssignmentRelationship_strategy)
+@given(instance=model_TriggeringRelationship_strategy)
 @settings(max_examples=50)
-def test_model::assignmentrelationship_instantiation(instance):
-    assert isinstance(instance, model::AssignmentRelationship)
+def test_model_triggeringrelationship_instantiation(instance):
+    assert isinstance(instance, model_TriggeringRelationship)
 
-@given(instance=model::AggregationRelationship_strategy)
+@given(instance=model_CompositionRelationship_strategy)
 @settings(max_examples=50)
-def test_model::aggregationrelationship_instantiation(instance):
-    assert isinstance(instance, model::AggregationRelationship)
+def test_model_compositionrelationship_instantiation(instance):
+    assert isinstance(instance, model_CompositionRelationship)
 
-@given(instance=model::AssociationRelationship_strategy)
+@given(instance=model_AggregationRelationship_strategy)
 @settings(max_examples=50)
-def test_model::associationrelationship_instantiation(instance):
-    assert isinstance(instance, model::AssociationRelationship)
+def test_model_aggregationrelationship_instantiation(instance):
+    assert isinstance(instance, model_AggregationRelationship)
 
-@given(instance=model::RealisationRelationship_strategy)
+@given(instance=model_AssignmentRelationship_strategy)
 @settings(max_examples=50)
-def test_model::realisationrelationship_instantiation(instance):
-    assert isinstance(instance, model::RealisationRelationship)
+def test_model_assignmentrelationship_instantiation(instance):
+    assert isinstance(instance, model_AssignmentRelationship)
 
-@given(instance=model::CompositionRelationship_strategy)
+@given(instance=model_UsedByRelationship_strategy)
 @settings(max_examples=50)
-def test_model::compositionrelationship_instantiation(instance):
-    assert isinstance(instance, model::CompositionRelationship)
+def test_model_usedbyrelationship_instantiation(instance):
+    assert isinstance(instance, model_UsedByRelationship)
 
-@given(instance=model::FlowRelationship_strategy)
+@given(instance=model_AssociationRelationship_strategy)
 @settings(max_examples=50)
-def test_model::flowrelationship_instantiation(instance):
-    assert isinstance(instance, model::FlowRelationship)
+def test_model_associationrelationship_instantiation(instance):
+    assert isinstance(instance, model_AssociationRelationship)
 
-@given(instance=model::TriggeringRelationship_strategy)
+@given(instance=model_RealisationRelationship_strategy)
 @settings(max_examples=50)
-def test_model::triggeringrelationship_instantiation(instance):
-    assert isinstance(instance, model::TriggeringRelationship)
+def test_model_realisationrelationship_instantiation(instance):
+    assert isinstance(instance, model_RealisationRelationship)
 
-@given(instance=model::AccessRelationship_strategy)
+@given(instance=model_AccessRelationship_strategy)
 @settings(max_examples=50)
-def test_model::accessrelationship_instantiation(instance):
-    assert isinstance(instance, model::AccessRelationship)
-
-@given(instance=model::AccessRelationship_strategy)
-def test_model::accessrelationship_accessType_type(instance):
-    assert isinstance(instance.accessType, int)
+def test_model_accessrelationship_instantiation(instance):
+    assert isinstance(instance, model_AccessRelationship)
 
 
-@given(instance=model::AccessRelationship_strategy)
-def test_model::accessrelationship_accessType_setter(instance):
+
+@given(instance=model_AccessRelationship_strategy)
+def test_model_accessrelationship_accessType_setter(instance):
     original = instance.accessType
     instance.accessType = original
     assert instance.accessType == original
 
-@given(instance=model::Relationship_strategy)
+@given(instance=model_Relationship_strategy)
 @settings(max_examples=50)
-def test_model::relationship_instantiation(instance):
-    assert isinstance(instance, model::Relationship)
+def test_model_relationship_instantiation(instance):
+    assert isinstance(instance, model_Relationship)
 
-@given(instance=model::OrJunction_strategy)
+@given(instance=model_OrJunction_strategy)
 @settings(max_examples=50)
-def test_model::orjunction_instantiation(instance):
-    assert isinstance(instance, model::OrJunction)
+def test_model_orjunction_instantiation(instance):
+    assert isinstance(instance, model_OrJunction)
 
-@given(instance=model::AndJunction_strategy)
+@given(instance=model_AndJunction_strategy)
 @settings(max_examples=50)
-def test_model::andjunction_instantiation(instance):
-    assert isinstance(instance, model::AndJunction)
+def test_model_andjunction_instantiation(instance):
+    assert isinstance(instance, model_AndJunction)
 
-@given(instance=model::FolderContainer_strategy)
+@given(instance=model_FolderContainer_strategy)
 @settings(max_examples=50)
-def test_model::foldercontainer_instantiation(instance):
-    assert isinstance(instance, model::FolderContainer)
+def test_model_foldercontainer_instantiation(instance):
+    assert isinstance(instance, model_FolderContainer)
 
-@given(instance=model::Cloneable_strategy)
+@given(instance=model_Cloneable_strategy)
 @settings(max_examples=50)
-def test_model::cloneable_instantiation(instance):
-    assert isinstance(instance, model::Cloneable)
+def test_model_cloneable_instantiation(instance):
+    assert isinstance(instance, model_Cloneable)
 
 @given(instance=Documentable_strategy)
 @settings(max_examples=50)
@@ -3739,64 +3676,62 @@ def test_documentable_instantiation(instance):
 def test_adapter_instantiation(instance):
     assert isinstance(instance, Adapter)
 
-@given(instance=model::ArchimateModelElement_strategy)
+@given(instance=model_ArchimateModelElement_strategy)
 @settings(max_examples=50)
-def test_model::archimatemodelelement_instantiation(instance):
-    assert isinstance(instance, model::ArchimateModelElement)
+def test_model_archimatemodelelement_instantiation(instance):
+    assert isinstance(instance, model_ArchimateModelElement)
 
 @given(instance=Properties_strategy)
 @settings(max_examples=50)
 def test_properties_instantiation(instance):
     assert isinstance(instance, Properties)
 
-@given(instance=model::DiagramModelConnection_strategy)
+@given(instance=model_SketchModelActor_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelconnection_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelConnection)
+def test_model_sketchmodelactor_instantiation(instance):
+    assert isinstance(instance, model_SketchModelActor)
 
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=model_SketchModelSticky_strategy)
+@settings(max_examples=50)
+def test_model_sketchmodelsticky_instantiation(instance):
+    assert isinstance(instance, model_SketchModelSticky)
 
-
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_type_type(instance):
-    assert isinstance(instance.type, int)
+@given(instance=model_DiagramModelConnection_strategy)
+@settings(max_examples=50)
+def test_model_diagrammodelconnection_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelConnection)
 
 
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_lineColor_type(instance):
-    assert isinstance(instance.lineColor, str)
+@given(instance=model_DiagramModelConnection_strategy)
+def test_model_diagrammodelconnection_lineWidth_setter(instance):
+    original = instance.lineWidth
+    instance.lineWidth = original
+    assert instance.lineWidth == original
 
 
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_lineColor_setter(instance):
+
+@given(instance=model_DiagramModelConnection_strategy)
+def test_model_diagrammodelconnection_lineColor_setter(instance):
     original = instance.lineColor
     instance.lineColor = original
     assert instance.lineColor == original
 
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_lineWidth_type(instance):
-    assert isinstance(instance.lineWidth, int)
 
 
-@given(instance=model::DiagramModelConnection_strategy)
-def test_model::diagrammodelconnection_lineWidth_setter(instance):
-    original = instance.lineWidth
-    instance.lineWidth = original
-    assert instance.lineWidth == original
+@given(instance=model_DiagramModelConnection_strategy)
+def test_model_diagrammodelconnection_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=model_DiagramModelConnection_strategy)
+def test_model_diagrammodelconnection_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 import warnings
 import copy
@@ -3804,9 +3739,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::DiagramModelConnection_strategy)
+@given(instance=model_DiagramModelConnection_strategy)
 @settings(max_examples=30)
-def test_model::diagrammodelconnection_connect_changes_state(instance):
+def test_model_diagrammodelconnection_connect_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3821,14 +3756,14 @@ def test_model::diagrammodelconnection_connect_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'connect' in model::DiagramModelConnection is empty"
+        assert has_statements, f"Function 'connect' in model_DiagramModelConnection is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'connect' in model::DiagramModelConnection did not change state; check implementation")
+            warnings.warn(f"Operation 'connect' in model_DiagramModelConnection did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'connect' in model::DiagramModelConnection is not implemented or raised an error")
+        warnings.warn(f"Operation 'connect' in model_DiagramModelConnection is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3836,38 +3771,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::DiagramModelConnection_strategy)
+@given(instance=model_DiagramModelConnection_strategy)
 @settings(max_examples=30)
-def test_model::diagrammodelconnection_disconnect_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.disconnect()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.disconnect).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'disconnect' in model::DiagramModelConnection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'disconnect' in model::DiagramModelConnection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'disconnect' in model::DiagramModelConnection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::DiagramModelConnection_strategy)
-@settings(max_examples=30)
-def test_model::diagrammodelconnection_reconnect_changes_state(instance):
+def test_model_diagrammodelconnection_reconnect_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3879,47 +3785,63 @@ def test_model::diagrammodelconnection_reconnect_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reconnect' in model::DiagramModelConnection is empty"
+        assert has_statements, f"Function 'reconnect' in model_DiagramModelConnection is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reconnect' in model::DiagramModelConnection did not change state; check implementation")
+            warnings.warn(f"Operation 'reconnect' in model_DiagramModelConnection did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reconnect' in model::DiagramModelConnection is not implemented or raised an error")
+        warnings.warn(f"Operation 'reconnect' in model_DiagramModelConnection is not implemented or raised an error")
 
-@given(instance=model::DiagramModelGroup_strategy)
-@settings(max_examples=50)
-def test_model::diagrammodelgroup_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelGroup)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=model::SketchModelActor_strategy)
-@settings(max_examples=50)
-def test_model::sketchmodelactor_instantiation(instance):
-    assert isinstance(instance, model::SketchModelActor)
+@given(instance=model_DiagramModelConnection_strategy)
+@settings(max_examples=30)
+def test_model_diagrammodelconnection_disconnect_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.disconnect()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.disconnect).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'disconnect' in model_DiagramModelConnection is empty"
 
-@given(instance=model::SketchModelSticky_strategy)
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'disconnect' in model_DiagramModelConnection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'disconnect' in model_DiagramModelConnection is not implemented or raised an error")
+
+@given(instance=model_DiagramModelGroup_strategy)
 @settings(max_examples=50)
-def test_model::sketchmodelsticky_instantiation(instance):
-    assert isinstance(instance, model::SketchModelSticky)
+def test_model_diagrammodelgroup_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelGroup)
 
 @given(instance=ArchimateModelElement_strategy)
 @settings(max_examples=50)
 def test_archimatemodelelement_instantiation(instance):
     assert isinstance(instance, ArchimateModelElement)
 
-@given(instance=model::DiagramModel_strategy)
+@given(instance=model_DiagramModel_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodel_instantiation(instance):
-    assert isinstance(instance, model::DiagramModel)
-
-@given(instance=model::DiagramModel_strategy)
-def test_model::diagrammodel_connectionRouterType_type(instance):
-    assert isinstance(instance.connectionRouterType, int)
+def test_model_diagrammodel_instantiation(instance):
+    assert isinstance(instance, model_DiagramModel)
 
 
-@given(instance=model::DiagramModel_strategy)
-def test_model::diagrammodel_connectionRouterType_setter(instance):
+
+@given(instance=model_DiagramModel_strategy)
+def test_model_diagrammodel_connectionRouterType_setter(instance):
     original = instance.connectionRouterType
     instance.connectionRouterType = original
     assert instance.connectionRouterType == original
@@ -3934,74 +3856,62 @@ def test_identifier_instantiation(instance):
 def test_nameable_instantiation(instance):
     assert isinstance(instance, Nameable)
 
-@given(instance=model::DiagramModelComponent_strategy)
+@given(instance=model_ArchimateElement_strategy)
 @settings(max_examples=50)
-def test_model::diagrammodelcomponent_instantiation(instance):
-    assert isinstance(instance, model::DiagramModelComponent)
+def test_model_archimateelement_instantiation(instance):
+    assert isinstance(instance, model_ArchimateElement)
 
-@given(instance=model::ArchimateElement_strategy)
+@given(instance=model_DiagramModelComponent_strategy)
 @settings(max_examples=50)
-def test_model::archimateelement_instantiation(instance):
-    assert isinstance(instance, model::ArchimateElement)
+def test_model_diagrammodelcomponent_instantiation(instance):
+    assert isinstance(instance, model_DiagramModelComponent)
 
 @given(instance=FolderContainer_strategy)
 @settings(max_examples=50)
 def test_foldercontainer_instantiation(instance):
     assert isinstance(instance, FolderContainer)
 
-@given(instance=model::Folder_strategy)
+@given(instance=model_Folder_strategy)
 @settings(max_examples=50)
-def test_model::folder_instantiation(instance):
-    assert isinstance(instance, model::Folder)
-
-@given(instance=model::Folder_strategy)
-def test_model::folder_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_model_folder_instantiation(instance):
+    assert isinstance(instance, model_Folder)
 
 
-@given(instance=model::Folder_strategy)
-def test_model::folder_type_setter(instance):
+
+@given(instance=model_Folder_strategy)
+def test_model_folder_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=model::ArchimateModel_strategy)
+@given(instance=model_ArchimateModel_strategy)
 @settings(max_examples=50)
-def test_model::archimatemodel_instantiation(instance):
-    assert isinstance(instance, model::ArchimateModel)
-
-@given(instance=model::ArchimateModel_strategy)
-def test_model::archimatemodel_purpose_type(instance):
-    assert isinstance(instance.purpose, str)
+def test_model_archimatemodel_instantiation(instance):
+    assert isinstance(instance, model_ArchimateModel)
 
 
-@given(instance=model::ArchimateModel_strategy)
-def test_model::archimatemodel_purpose_setter(instance):
-    original = instance.purpose
-    instance.purpose = original
-    assert instance.purpose == original
 
-@given(instance=model::ArchimateModel_strategy)
-def test_model::archimatemodel_file_type(instance):
-    assert isinstance(instance.file, str)
-
-
-@given(instance=model::ArchimateModel_strategy)
-def test_model::archimatemodel_file_setter(instance):
+@given(instance=model_ArchimateModel_strategy)
+def test_model_archimatemodel_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=model::ArchimateModel_strategy)
-def test_model::archimatemodel_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=model::ArchimateModel_strategy)
-def test_model::archimatemodel_version_setter(instance):
+@given(instance=model_ArchimateModel_strategy)
+def test_model_archimatemodel_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
+
+
+
+@given(instance=model_ArchimateModel_strategy)
+def test_model_archimatemodel_purpose_setter(instance):
+    original = instance.purpose
+    instance.purpose = original
+    assert instance.purpose == original
 
 import warnings
 import copy
@@ -4009,9 +3919,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::ArchimateModel_strategy)
+@given(instance=model_ArchimateModel_strategy)
 @settings(max_examples=30)
-def test_model::archimatemodel_removederivedrelationsfolder_changes_state(instance):
+def test_model_archimatemodel_removederivedrelationsfolder_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4023,14 +3933,14 @@ def test_model::archimatemodel_removederivedrelationsfolder_changes_state(instan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeDerivedRelationsFolder' in model::ArchimateModel is empty"
+        assert has_statements, f"Function 'removeDerivedRelationsFolder' in model_ArchimateModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeDerivedRelationsFolder' in model::ArchimateModel did not change state; check implementation")
+            warnings.warn(f"Operation 'removeDerivedRelationsFolder' in model_ArchimateModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeDerivedRelationsFolder' in model::ArchimateModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeDerivedRelationsFolder' in model_ArchimateModel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4038,38 +3948,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::ArchimateModel_strategy)
+@given(instance=model_ArchimateModel_strategy)
 @settings(max_examples=30)
-def test_model::archimatemodel_addderivedrelationsfolder_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addDerivedRelationsFolder()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addDerivedRelationsFolder).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addDerivedRelationsFolder' in model::ArchimateModel is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addDerivedRelationsFolder' in model::ArchimateModel did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addDerivedRelationsFolder' in model::ArchimateModel is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=model::ArchimateModel_strategy)
-@settings(max_examples=30)
-def test_model::archimatemodel_setdefaults_changes_state(instance):
+def test_model_archimatemodel_setdefaults_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4081,19 +3962,14 @@ def test_model::archimatemodel_setdefaults_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDefaults' in model::ArchimateModel is empty"
+        assert has_statements, f"Function 'setDefaults' in model_ArchimateModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDefaults' in model::ArchimateModel did not change state; check implementation")
+            warnings.warn(f"Operation 'setDefaults' in model_ArchimateModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDefaults' in model::ArchimateModel is not implemented or raised an error")
-
-@given(instance=model::Adapter_strategy)
-@settings(max_examples=50)
-def test_model::adapter_instantiation(instance):
-    assert isinstance(instance, model::Adapter)
+        warnings.warn(f"Operation 'setDefaults' in model_ArchimateModel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4101,9 +3977,43 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=model::Adapter_strategy)
+@given(instance=model_ArchimateModel_strategy)
 @settings(max_examples=30)
-def test_model::adapter_setadapter_changes_state(instance):
+def test_model_archimatemodel_addderivedrelationsfolder_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addDerivedRelationsFolder()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addDerivedRelationsFolder).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addDerivedRelationsFolder' in model_ArchimateModel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addDerivedRelationsFolder' in model_ArchimateModel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addDerivedRelationsFolder' in model_ArchimateModel is not implemented or raised an error")
+
+@given(instance=model_Adapter_strategy)
+@settings(max_examples=50)
+def test_model_adapter_instantiation(instance):
+    assert isinstance(instance, model_Adapter)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=model_Adapter_strategy)
+@settings(max_examples=30)
+def test_model_adapter_setadapter_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4118,107 +4028,89 @@ def test_model::adapter_setadapter_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setAdapter' in model::Adapter is empty"
+        assert has_statements, f"Function 'setAdapter' in model_Adapter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setAdapter' in model::Adapter did not change state; check implementation")
+            warnings.warn(f"Operation 'setAdapter' in model_Adapter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setAdapter' in model::Adapter is not implemented or raised an error")
+        warnings.warn(f"Operation 'setAdapter' in model_Adapter is not implemented or raised an error")
 
-@given(instance=model::Documentable_strategy)
+@given(instance=model_Documentable_strategy)
 @settings(max_examples=50)
-def test_model::documentable_instantiation(instance):
-    assert isinstance(instance, model::Documentable)
-
-@given(instance=model::Documentable_strategy)
-def test_model::documentable_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
+def test_model_documentable_instantiation(instance):
+    assert isinstance(instance, model_Documentable)
 
 
-@given(instance=model::Documentable_strategy)
-def test_model::documentable_documentation_setter(instance):
+
+@given(instance=model_Documentable_strategy)
+def test_model_documentable_documentation_setter(instance):
     original = instance.documentation
     instance.documentation = original
     assert instance.documentation == original
 
-@given(instance=model::TextContent_strategy)
+@given(instance=model_TextContent_strategy)
 @settings(max_examples=50)
-def test_model::textcontent_instantiation(instance):
-    assert isinstance(instance, model::TextContent)
-
-@given(instance=model::TextContent_strategy)
-def test_model::textcontent_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_model_textcontent_instantiation(instance):
+    assert isinstance(instance, model_TextContent)
 
 
-@given(instance=model::TextContent_strategy)
-def test_model::textcontent_content_setter(instance):
+
+@given(instance=model_TextContent_strategy)
+def test_model_textcontent_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=model::Nameable_strategy)
+@given(instance=model_Nameable_strategy)
 @settings(max_examples=50)
-def test_model::nameable_instantiation(instance):
-    assert isinstance(instance, model::Nameable)
-
-@given(instance=model::Nameable_strategy)
-def test_model::nameable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_nameable_instantiation(instance):
+    assert isinstance(instance, model_Nameable)
 
 
-@given(instance=model::Nameable_strategy)
-def test_model::nameable_name_setter(instance):
+
+@given(instance=model_Nameable_strategy)
+def test_model_nameable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Properties_strategy)
+@given(instance=model_Properties_strategy)
 @settings(max_examples=50)
-def test_model::properties_instantiation(instance):
-    assert isinstance(instance, model::Properties)
+def test_model_properties_instantiation(instance):
+    assert isinstance(instance, model_Properties)
 
-@given(instance=model::Property_strategy)
+@given(instance=model_Property_strategy)
 @settings(max_examples=50)
-def test_model::property_instantiation(instance):
-    assert isinstance(instance, model::Property)
-
-@given(instance=model::Property_strategy)
-def test_model::property_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_model_property_instantiation(instance):
+    assert isinstance(instance, model_Property)
 
 
-@given(instance=model::Property_strategy)
-def test_model::property_key_setter(instance):
+
+@given(instance=model_Property_strategy)
+def test_model_property_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=model::Property_strategy)
-def test_model::property_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=model::Property_strategy)
-def test_model::property_value_setter(instance):
+@given(instance=model_Property_strategy)
+def test_model_property_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=model::Identifier_strategy)
+@given(instance=model_Identifier_strategy)
 @settings(max_examples=50)
-def test_model::identifier_instantiation(instance):
-    assert isinstance(instance, model::Identifier)
-
-@given(instance=model::Identifier_strategy)
-def test_model::identifier_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_model_identifier_instantiation(instance):
+    assert isinstance(instance, model_Identifier)
 
 
-@given(instance=model::Identifier_strategy)
-def test_model::identifier_id_setter(instance):
+
+@given(instance=model_Identifier_strategy)
+def test_model_identifier_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

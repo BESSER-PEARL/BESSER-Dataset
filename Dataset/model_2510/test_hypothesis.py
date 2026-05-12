@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    refact::Named,
-    refact::A,
+from python_code import (
+    refact_Named,
+    refact_A,
     Named,
-    refact::C,
-    refact::E,
-    refact::D,
-    refact::B,
+    refact_D,
+    refact_B,
+    refact_C,
+    refact_E,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_refact::named_is_not_abstract():
-    assert not inspect.isabstract(refact::Named)
+def test_refact_named_is_not_abstract():
+    assert not inspect.isabstract(refact_Named)
 
 
-def test_refact::named_constructor_exists():
-    assert callable(refact::Named.__init__)
+def test_refact_named_constructor_exists():
+    assert callable(refact_Named.__init__)
 
 
-def test_refact::named_constructor_args():
-    sig = inspect.signature(refact::Named.__init__)
+def test_refact_named_constructor_args():
+    sig = inspect.signature(refact_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_refact::named_has_name():
-    assert hasattr(refact::Named, "name")
+def test_refact_named_has_name():
+    assert hasattr(refact_Named, "name")
     descriptor = None
-    for klass in refact::Named.__mro__:
+    for klass in refact_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -45,16 +45,16 @@ def test_refact::named_has_name():
 
 
 
-def test_refact::a_is_not_abstract():
-    assert not inspect.isabstract(refact::A)
+def test_refact_a_is_not_abstract():
+    assert not inspect.isabstract(refact_A)
 
 
-def test_refact::a_constructor_exists():
-    assert callable(refact::A.__init__)
+def test_refact_a_constructor_exists():
+    assert callable(refact_A.__init__)
 
 
-def test_refact::a_constructor_args():
-    sig = inspect.signature(refact::A.__init__)
+def test_refact_a_constructor_args():
+    sig = inspect.signature(refact_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,58 +73,58 @@ def test_named_constructor_args():
 
 
 
-def test_refact::c_is_not_abstract():
-    assert not inspect.isabstract(refact::C)
+def test_refact_d_is_not_abstract():
+    assert not inspect.isabstract(refact_D)
 
 
-def test_refact::c_constructor_exists():
-    assert callable(refact::C.__init__)
+def test_refact_d_constructor_exists():
+    assert callable(refact_D.__init__)
 
 
-def test_refact::c_constructor_args():
-    sig = inspect.signature(refact::C.__init__)
+def test_refact_d_constructor_args():
+    sig = inspect.signature(refact_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refact::e_is_not_abstract():
-    assert not inspect.isabstract(refact::E)
+def test_refact_b_is_not_abstract():
+    assert not inspect.isabstract(refact_B)
 
 
-def test_refact::e_constructor_exists():
-    assert callable(refact::E.__init__)
+def test_refact_b_constructor_exists():
+    assert callable(refact_B.__init__)
 
 
-def test_refact::e_constructor_args():
-    sig = inspect.signature(refact::E.__init__)
+def test_refact_b_constructor_args():
+    sig = inspect.signature(refact_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refact::d_is_not_abstract():
-    assert not inspect.isabstract(refact::D)
+def test_refact_c_is_not_abstract():
+    assert not inspect.isabstract(refact_C)
 
 
-def test_refact::d_constructor_exists():
-    assert callable(refact::D.__init__)
+def test_refact_c_constructor_exists():
+    assert callable(refact_C.__init__)
 
 
-def test_refact::d_constructor_args():
-    sig = inspect.signature(refact::D.__init__)
+def test_refact_c_constructor_args():
+    sig = inspect.signature(refact_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refact::b_is_not_abstract():
-    assert not inspect.isabstract(refact::B)
+def test_refact_e_is_not_abstract():
+    assert not inspect.isabstract(refact_E)
 
 
-def test_refact::b_constructor_exists():
-    assert callable(refact::B.__init__)
+def test_refact_e_constructor_exists():
+    assert callable(refact_E.__init__)
 
 
-def test_refact::b_constructor_args():
-    sig = inspect.signature(refact::B.__init__)
+def test_refact_e_constructor_args():
+    sig = inspect.signature(refact_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,72 +139,69 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-refact::Named_strategy = st.builds(
-    refact::Named,
+refact_Named_strategy = st.builds(
+    refact_Named,
     name=
         safe_text
 )
-refact::A_strategy = st.builds(
-    refact::A,
+refact_A_strategy = st.builds(
+    refact_A,
 )
 Named_strategy = st.builds(
     Named,
 )
-refact::C_strategy = st.builds(
-    refact::C,
+refact_D_strategy = st.builds(
+    refact_D,
 )
-refact::E_strategy = st.builds(
-    refact::E,
+refact_B_strategy = st.builds(
+    refact_B,
 )
-refact::D_strategy = st.builds(
-    refact::D,
+refact_C_strategy = st.builds(
+    refact_C,
 )
-refact::B_strategy = st.builds(
-    refact::B,
+refact_E_strategy = st.builds(
+    refact_E,
 )
 
-@given(instance=refact::Named_strategy)
+@given(instance=refact_Named_strategy)
 @settings(max_examples=50)
-def test_refact::named_instantiation(instance):
-    assert isinstance(instance, refact::Named)
-
-@given(instance=refact::Named_strategy)
-def test_refact::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_refact_named_instantiation(instance):
+    assert isinstance(instance, refact_Named)
 
 
-@given(instance=refact::Named_strategy)
-def test_refact::named_name_setter(instance):
+
+@given(instance=refact_Named_strategy)
+def test_refact_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=refact::A_strategy)
+@given(instance=refact_A_strategy)
 @settings(max_examples=50)
-def test_refact::a_instantiation(instance):
-    assert isinstance(instance, refact::A)
+def test_refact_a_instantiation(instance):
+    assert isinstance(instance, refact_A)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=refact::C_strategy)
+@given(instance=refact_D_strategy)
 @settings(max_examples=50)
-def test_refact::c_instantiation(instance):
-    assert isinstance(instance, refact::C)
+def test_refact_d_instantiation(instance):
+    assert isinstance(instance, refact_D)
 
-@given(instance=refact::E_strategy)
+@given(instance=refact_B_strategy)
 @settings(max_examples=50)
-def test_refact::e_instantiation(instance):
-    assert isinstance(instance, refact::E)
+def test_refact_b_instantiation(instance):
+    assert isinstance(instance, refact_B)
 
-@given(instance=refact::D_strategy)
+@given(instance=refact_C_strategy)
 @settings(max_examples=50)
-def test_refact::d_instantiation(instance):
-    assert isinstance(instance, refact::D)
+def test_refact_c_instantiation(instance):
+    assert isinstance(instance, refact_C)
 
-@given(instance=refact::B_strategy)
+@given(instance=refact_E_strategy)
 @settings(max_examples=50)
-def test_refact::b_instantiation(instance):
-    assert isinstance(instance, refact::B)
+def test_refact_e_instantiation(instance):
+    assert isinstance(instance, refact_E)

@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    platoon::PlatooningSystem,
-    platoon::JoiningPosition,
-    platoon::JoinPlatoonCoord,
-    platoon::Platoon,
-    platoon::FrontGap,
+from python_code import (
+    platoon_PlatooningSystem,
+    platoon_JoiningPosition,
+    platoon_JoinPlatoonCoord,
+    platoon_Platoon,
+    platoon_FrontGap,
     Vehicle,
-    platoon::PlatoonVehicle,
-    platoon::JoiningVehicle,
-    platoon::Vehicle,
+    platoon_PlatoonVehicle,
+    platoon_JoiningVehicle,
+    platoon_Vehicle,
 )
 
 # =============================================================================
@@ -23,99 +23,99 @@ from classes import (
 
 
 
-def test_platoon::platooningsystem_is_not_abstract():
-    assert not inspect.isabstract(platoon::PlatooningSystem)
+def test_platoon_platooningsystem_is_not_abstract():
+    assert not inspect.isabstract(platoon_PlatooningSystem)
 
 
-def test_platoon::platooningsystem_constructor_exists():
-    assert callable(platoon::PlatooningSystem.__init__)
+def test_platoon_platooningsystem_constructor_exists():
+    assert callable(platoon_PlatooningSystem.__init__)
 
 
-def test_platoon::platooningsystem_constructor_args():
-    sig = inspect.signature(platoon::PlatooningSystem.__init__)
+def test_platoon_platooningsystem_constructor_args():
+    sig = inspect.signature(platoon_PlatooningSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_platoon::joiningposition_is_not_abstract():
-    assert not inspect.isabstract(platoon::JoiningPosition)
+def test_platoon_joiningposition_is_not_abstract():
+    assert not inspect.isabstract(platoon_JoiningPosition)
 
 
-def test_platoon::joiningposition_constructor_exists():
-    assert callable(platoon::JoiningPosition.__init__)
+def test_platoon_joiningposition_constructor_exists():
+    assert callable(platoon_JoiningPosition.__init__)
 
 
-def test_platoon::joiningposition_constructor_args():
-    sig = inspect.signature(platoon::JoiningPosition.__init__)
+def test_platoon_joiningposition_constructor_args():
+    sig = inspect.signature(platoon_JoiningPosition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_platoon::joinplatooncoord_is_not_abstract():
-    assert not inspect.isabstract(platoon::JoinPlatoonCoord)
+def test_platoon_joinplatooncoord_is_not_abstract():
+    assert not inspect.isabstract(platoon_JoinPlatoonCoord)
 
 
-def test_platoon::joinplatooncoord_constructor_exists():
-    assert callable(platoon::JoinPlatoonCoord.__init__)
+def test_platoon_joinplatooncoord_constructor_exists():
+    assert callable(platoon_JoinPlatoonCoord.__init__)
 
 
-def test_platoon::joinplatooncoord_constructor_args():
-    sig = inspect.signature(platoon::JoinPlatoonCoord.__init__)
+def test_platoon_joinplatooncoord_constructor_args():
+    sig = inspect.signature(platoon_JoinPlatoonCoord.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_platoon::platoon_is_not_abstract():
-    assert not inspect.isabstract(platoon::Platoon)
+def test_platoon_platoon_is_not_abstract():
+    assert not inspect.isabstract(platoon_Platoon)
 
 
-def test_platoon::platoon_constructor_exists():
-    assert callable(platoon::Platoon.__init__)
+def test_platoon_platoon_constructor_exists():
+    assert callable(platoon_Platoon.__init__)
 
 
-def test_platoon::platoon_constructor_args():
-    sig = inspect.signature(platoon::Platoon.__init__)
+def test_platoon_platoon_constructor_args():
+    sig = inspect.signature(platoon_Platoon.__init__)
     params = list(sig.parameters.keys())
-    assert "length" in params, "Missing parameter 'length'"
     assert "desiredGapSize" in params, "Missing parameter 'desiredGapSize'"
+    assert "length" in params, "Missing parameter 'length'"
 
-def test_platoon::platoon_has_length():
-    assert hasattr(platoon::Platoon, "length")
+def test_platoon_platoon_has_desiredGapSize():
+    assert hasattr(platoon_Platoon, "desiredGapSize")
     descriptor = None
-    for klass in platoon::Platoon.__mro__:
-        if "length" in klass.__dict__:
-            descriptor = klass.__dict__["length"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_platoon::platoon_has_desiredGapSize():
-    assert hasattr(platoon::Platoon, "desiredGapSize")
-    descriptor = None
-    for klass in platoon::Platoon.__mro__:
+    for klass in platoon_Platoon.__mro__:
         if "desiredGapSize" in klass.__dict__:
             descriptor = klass.__dict__["desiredGapSize"]
             break
     assert isinstance(descriptor, property)
 
+def test_platoon_platoon_has_length():
+    assert hasattr(platoon_Platoon, "length")
+    descriptor = None
+    for klass in platoon_Platoon.__mro__:
+        if "length" in klass.__dict__:
+            descriptor = klass.__dict__["length"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_platoon::frontgap_is_not_abstract():
-    assert not inspect.isabstract(platoon::FrontGap)
+
+def test_platoon_frontgap_is_not_abstract():
+    assert not inspect.isabstract(platoon_FrontGap)
 
 
-def test_platoon::frontgap_constructor_exists():
-    assert callable(platoon::FrontGap.__init__)
+def test_platoon_frontgap_constructor_exists():
+    assert callable(platoon_FrontGap.__init__)
 
 
-def test_platoon::frontgap_constructor_args():
-    sig = inspect.signature(platoon::FrontGap.__init__)
+def test_platoon_frontgap_constructor_args():
+    sig = inspect.signature(platoon_FrontGap.__init__)
     params = list(sig.parameters.keys())
     assert "actualGapSize" in params, "Missing parameter 'actualGapSize'"
 
-def test_platoon::frontgap_has_actualGapSize():
-    assert hasattr(platoon::FrontGap, "actualGapSize")
+def test_platoon_frontgap_has_actualGapSize():
+    assert hasattr(platoon_FrontGap, "actualGapSize")
     descriptor = None
-    for klass in platoon::FrontGap.__mro__:
+    for klass in platoon_FrontGap.__mro__:
         if "actualGapSize" in klass.__dict__:
             descriptor = klass.__dict__["actualGapSize"]
             break
@@ -137,23 +137,23 @@ def test_vehicle_constructor_args():
 
 
 
-def test_platoon::platoonvehicle_is_not_abstract():
-    assert not inspect.isabstract(platoon::PlatoonVehicle)
+def test_platoon_platoonvehicle_is_not_abstract():
+    assert not inspect.isabstract(platoon_PlatoonVehicle)
 
 
-def test_platoon::platoonvehicle_constructor_exists():
-    assert callable(platoon::PlatoonVehicle.__init__)
+def test_platoon_platoonvehicle_constructor_exists():
+    assert callable(platoon_PlatoonVehicle.__init__)
 
 
-def test_platoon::platoonvehicle_constructor_args():
-    sig = inspect.signature(platoon::PlatoonVehicle.__init__)
+def test_platoon_platoonvehicle_constructor_args():
+    sig = inspect.signature(platoon_PlatoonVehicle.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_platoon::platoonvehicle_has_position():
-    assert hasattr(platoon::PlatoonVehicle, "position")
+def test_platoon_platoonvehicle_has_position():
+    assert hasattr(platoon_PlatoonVehicle, "position")
     descriptor = None
-    for klass in platoon::PlatoonVehicle.__mro__:
+    for klass in platoon_PlatoonVehicle.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -161,37 +161,37 @@ def test_platoon::platoonvehicle_has_position():
 
 
 
-def test_platoon::joiningvehicle_is_not_abstract():
-    assert not inspect.isabstract(platoon::JoiningVehicle)
+def test_platoon_joiningvehicle_is_not_abstract():
+    assert not inspect.isabstract(platoon_JoiningVehicle)
 
 
-def test_platoon::joiningvehicle_constructor_exists():
-    assert callable(platoon::JoiningVehicle.__init__)
+def test_platoon_joiningvehicle_constructor_exists():
+    assert callable(platoon_JoiningVehicle.__init__)
 
 
-def test_platoon::joiningvehicle_constructor_args():
-    sig = inspect.signature(platoon::JoiningVehicle.__init__)
+def test_platoon_joiningvehicle_constructor_args():
+    sig = inspect.signature(platoon_JoiningVehicle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_platoon::vehicle_is_not_abstract():
-    assert not inspect.isabstract(platoon::Vehicle)
+def test_platoon_vehicle_is_not_abstract():
+    assert not inspect.isabstract(platoon_Vehicle)
 
 
-def test_platoon::vehicle_constructor_exists():
-    assert callable(platoon::Vehicle.__init__)
+def test_platoon_vehicle_constructor_exists():
+    assert callable(platoon_Vehicle.__init__)
 
 
-def test_platoon::vehicle_constructor_args():
-    sig = inspect.signature(platoon::Vehicle.__init__)
+def test_platoon_vehicle_constructor_args():
+    sig = inspect.signature(platoon_Vehicle.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_platoon::vehicle_has_id():
-    assert hasattr(platoon::Vehicle, "id")
+def test_platoon_vehicle_has_id():
+    assert hasattr(platoon_Vehicle, "id")
     descriptor = None
-    for klass in platoon::Vehicle.__mro__:
+    for klass in platoon_Vehicle.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -209,98 +209,89 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-platoon::PlatooningSystem_strategy = st.builds(
-    platoon::PlatooningSystem,
+platoon_PlatooningSystem_strategy = st.builds(
+    platoon_PlatooningSystem,
 )
-platoon::JoiningPosition_strategy = st.builds(
-    platoon::JoiningPosition,
+platoon_JoiningPosition_strategy = st.builds(
+    platoon_JoiningPosition,
 )
-platoon::JoinPlatoonCoord_strategy = st.builds(
-    platoon::JoinPlatoonCoord,
+platoon_JoinPlatoonCoord_strategy = st.builds(
+    platoon_JoinPlatoonCoord,
 )
-platoon::Platoon_strategy = st.builds(
-    platoon::Platoon,
-    length=
-        st.integers(),
+platoon_Platoon_strategy = st.builds(
+    platoon_Platoon,
     desiredGapSize=
+        st.integers(),
+    length=
         st.integers()
 )
-platoon::FrontGap_strategy = st.builds(
-    platoon::FrontGap,
+platoon_FrontGap_strategy = st.builds(
+    platoon_FrontGap,
     actualGapSize=
         st.integers()
 )
 Vehicle_strategy = st.builds(
     Vehicle,
 )
-platoon::PlatoonVehicle_strategy = st.builds(
-    platoon::PlatoonVehicle,
+platoon_PlatoonVehicle_strategy = st.builds(
+    platoon_PlatoonVehicle,
     position=
         st.integers()
 )
-platoon::JoiningVehicle_strategy = st.builds(
-    platoon::JoiningVehicle,
+platoon_JoiningVehicle_strategy = st.builds(
+    platoon_JoiningVehicle,
 )
-platoon::Vehicle_strategy = st.builds(
-    platoon::Vehicle,
+platoon_Vehicle_strategy = st.builds(
+    platoon_Vehicle,
     id=
         st.integers()
 )
 
-@given(instance=platoon::PlatooningSystem_strategy)
+@given(instance=platoon_PlatooningSystem_strategy)
 @settings(max_examples=50)
-def test_platoon::platooningsystem_instantiation(instance):
-    assert isinstance(instance, platoon::PlatooningSystem)
+def test_platoon_platooningsystem_instantiation(instance):
+    assert isinstance(instance, platoon_PlatooningSystem)
 
-@given(instance=platoon::JoiningPosition_strategy)
+@given(instance=platoon_JoiningPosition_strategy)
 @settings(max_examples=50)
-def test_platoon::joiningposition_instantiation(instance):
-    assert isinstance(instance, platoon::JoiningPosition)
+def test_platoon_joiningposition_instantiation(instance):
+    assert isinstance(instance, platoon_JoiningPosition)
 
-@given(instance=platoon::JoinPlatoonCoord_strategy)
+@given(instance=platoon_JoinPlatoonCoord_strategy)
 @settings(max_examples=50)
-def test_platoon::joinplatooncoord_instantiation(instance):
-    assert isinstance(instance, platoon::JoinPlatoonCoord)
+def test_platoon_joinplatooncoord_instantiation(instance):
+    assert isinstance(instance, platoon_JoinPlatoonCoord)
 
-@given(instance=platoon::Platoon_strategy)
+@given(instance=platoon_Platoon_strategy)
 @settings(max_examples=50)
-def test_platoon::platoon_instantiation(instance):
-    assert isinstance(instance, platoon::Platoon)
-
-@given(instance=platoon::Platoon_strategy)
-def test_platoon::platoon_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_platoon_platoon_instantiation(instance):
+    assert isinstance(instance, platoon_Platoon)
 
 
-@given(instance=platoon::Platoon_strategy)
-def test_platoon::platoon_length_setter(instance):
-    original = instance.length
-    instance.length = original
-    assert instance.length == original
 
-@given(instance=platoon::Platoon_strategy)
-def test_platoon::platoon_desiredGapSize_type(instance):
-    assert isinstance(instance.desiredGapSize, int)
-
-
-@given(instance=platoon::Platoon_strategy)
-def test_platoon::platoon_desiredGapSize_setter(instance):
+@given(instance=platoon_Platoon_strategy)
+def test_platoon_platoon_desiredGapSize_setter(instance):
     original = instance.desiredGapSize
     instance.desiredGapSize = original
     assert instance.desiredGapSize == original
 
-@given(instance=platoon::FrontGap_strategy)
+
+
+@given(instance=platoon_Platoon_strategy)
+def test_platoon_platoon_length_setter(instance):
+    original = instance.length
+    instance.length = original
+    assert instance.length == original
+
+@given(instance=platoon_FrontGap_strategy)
 @settings(max_examples=50)
-def test_platoon::frontgap_instantiation(instance):
-    assert isinstance(instance, platoon::FrontGap)
-
-@given(instance=platoon::FrontGap_strategy)
-def test_platoon::frontgap_actualGapSize_type(instance):
-    assert isinstance(instance.actualGapSize, int)
+def test_platoon_frontgap_instantiation(instance):
+    assert isinstance(instance, platoon_FrontGap)
 
 
-@given(instance=platoon::FrontGap_strategy)
-def test_platoon::frontgap_actualGapSize_setter(instance):
+
+@given(instance=platoon_FrontGap_strategy)
+def test_platoon_frontgap_actualGapSize_setter(instance):
     original = instance.actualGapSize
     instance.actualGapSize = original
     assert instance.actualGapSize == original
@@ -310,39 +301,33 @@ def test_platoon::frontgap_actualGapSize_setter(instance):
 def test_vehicle_instantiation(instance):
     assert isinstance(instance, Vehicle)
 
-@given(instance=platoon::PlatoonVehicle_strategy)
+@given(instance=platoon_PlatoonVehicle_strategy)
 @settings(max_examples=50)
-def test_platoon::platoonvehicle_instantiation(instance):
-    assert isinstance(instance, platoon::PlatoonVehicle)
-
-@given(instance=platoon::PlatoonVehicle_strategy)
-def test_platoon::platoonvehicle_position_type(instance):
-    assert isinstance(instance.position, int)
+def test_platoon_platoonvehicle_instantiation(instance):
+    assert isinstance(instance, platoon_PlatoonVehicle)
 
 
-@given(instance=platoon::PlatoonVehicle_strategy)
-def test_platoon::platoonvehicle_position_setter(instance):
+
+@given(instance=platoon_PlatoonVehicle_strategy)
+def test_platoon_platoonvehicle_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=platoon::JoiningVehicle_strategy)
+@given(instance=platoon_JoiningVehicle_strategy)
 @settings(max_examples=50)
-def test_platoon::joiningvehicle_instantiation(instance):
-    assert isinstance(instance, platoon::JoiningVehicle)
+def test_platoon_joiningvehicle_instantiation(instance):
+    assert isinstance(instance, platoon_JoiningVehicle)
 
-@given(instance=platoon::Vehicle_strategy)
+@given(instance=platoon_Vehicle_strategy)
 @settings(max_examples=50)
-def test_platoon::vehicle_instantiation(instance):
-    assert isinstance(instance, platoon::Vehicle)
-
-@given(instance=platoon::Vehicle_strategy)
-def test_platoon::vehicle_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_platoon_vehicle_instantiation(instance):
+    assert isinstance(instance, platoon_Vehicle)
 
 
-@given(instance=platoon::Vehicle_strategy)
-def test_platoon::vehicle_id_setter(instance):
+
+@given(instance=platoon_Vehicle_strategy)
+def test_platoon_vehicle_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

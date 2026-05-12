@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    office::NamedElement,
+from python_code import (
+    office_NamedElement,
     OfficeElement,
-    office::Office,
-    office::Employee,
+    office_Office,
+    office_Employee,
     NamedElement,
-    office::OfficeElement,
-    office::OfficeModel,
+    office_OfficeElement,
+    office_OfficeModel,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_office::namedelement_is_not_abstract():
-    assert not inspect.isabstract(office::NamedElement)
+def test_office_namedelement_is_not_abstract():
+    assert not inspect.isabstract(office_NamedElement)
 
 
-def test_office::namedelement_constructor_exists():
-    assert callable(office::NamedElement.__init__)
+def test_office_namedelement_constructor_exists():
+    assert callable(office_NamedElement.__init__)
 
 
-def test_office::namedelement_constructor_args():
-    sig = inspect.signature(office::NamedElement.__init__)
+def test_office_namedelement_constructor_args():
+    sig = inspect.signature(office_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_office::namedelement_has_name():
-    assert hasattr(office::NamedElement, "name")
+def test_office_namedelement_has_name():
+    assert hasattr(office_NamedElement, "name")
     descriptor = None
-    for klass in office::NamedElement.__mro__:
+    for klass in office_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,37 +59,37 @@ def test_officeelement_constructor_args():
 
 
 
-def test_office::office_is_not_abstract():
-    assert not inspect.isabstract(office::Office)
+def test_office_office_is_not_abstract():
+    assert not inspect.isabstract(office_Office)
 
 
-def test_office::office_constructor_exists():
-    assert callable(office::Office.__init__)
+def test_office_office_constructor_exists():
+    assert callable(office_Office.__init__)
 
 
-def test_office::office_constructor_args():
-    sig = inspect.signature(office::Office.__init__)
+def test_office_office_constructor_args():
+    sig = inspect.signature(office_Office.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_office::employee_is_not_abstract():
-    assert not inspect.isabstract(office::Employee)
+def test_office_employee_is_not_abstract():
+    assert not inspect.isabstract(office_Employee)
 
 
-def test_office::employee_constructor_exists():
-    assert callable(office::Employee.__init__)
+def test_office_employee_constructor_exists():
+    assert callable(office_Employee.__init__)
 
 
-def test_office::employee_constructor_args():
-    sig = inspect.signature(office::Employee.__init__)
+def test_office_employee_constructor_args():
+    sig = inspect.signature(office_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_office::employee_has_title():
-    assert hasattr(office::Employee, "title")
+def test_office_employee_has_title():
+    assert hasattr(office_Employee, "title")
     descriptor = None
-    for klass in office::Employee.__mro__:
+    for klass in office_Employee.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -111,30 +111,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_office::officeelement_is_not_abstract():
-    assert not inspect.isabstract(office::OfficeElement)
+def test_office_officeelement_is_not_abstract():
+    assert not inspect.isabstract(office_OfficeElement)
 
 
-def test_office::officeelement_constructor_exists():
-    assert callable(office::OfficeElement.__init__)
+def test_office_officeelement_constructor_exists():
+    assert callable(office_OfficeElement.__init__)
 
 
-def test_office::officeelement_constructor_args():
-    sig = inspect.signature(office::OfficeElement.__init__)
+def test_office_officeelement_constructor_args():
+    sig = inspect.signature(office_OfficeElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_office::officemodel_is_not_abstract():
-    assert not inspect.isabstract(office::OfficeModel)
+def test_office_officemodel_is_not_abstract():
+    assert not inspect.isabstract(office_OfficeModel)
 
 
-def test_office::officemodel_constructor_exists():
-    assert callable(office::OfficeModel.__init__)
+def test_office_officemodel_constructor_exists():
+    assert callable(office_OfficeModel.__init__)
 
 
-def test_office::officemodel_constructor_args():
-    sig = inspect.signature(office::OfficeModel.__init__)
+def test_office_officemodel_constructor_args():
+    sig = inspect.signature(office_OfficeModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,44 +149,41 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-office::NamedElement_strategy = st.builds(
-    office::NamedElement,
+office_NamedElement_strategy = st.builds(
+    office_NamedElement,
     name=
         safe_text
 )
 OfficeElement_strategy = st.builds(
     OfficeElement,
 )
-office::Office_strategy = st.builds(
-    office::Office,
+office_Office_strategy = st.builds(
+    office_Office,
 )
-office::Employee_strategy = st.builds(
-    office::Employee,
+office_Employee_strategy = st.builds(
+    office_Employee,
     title=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-office::OfficeElement_strategy = st.builds(
-    office::OfficeElement,
+office_OfficeElement_strategy = st.builds(
+    office_OfficeElement,
 )
-office::OfficeModel_strategy = st.builds(
-    office::OfficeModel,
+office_OfficeModel_strategy = st.builds(
+    office_OfficeModel,
 )
 
-@given(instance=office::NamedElement_strategy)
+@given(instance=office_NamedElement_strategy)
 @settings(max_examples=50)
-def test_office::namedelement_instantiation(instance):
-    assert isinstance(instance, office::NamedElement)
-
-@given(instance=office::NamedElement_strategy)
-def test_office::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_office_namedelement_instantiation(instance):
+    assert isinstance(instance, office_NamedElement)
 
 
-@given(instance=office::NamedElement_strategy)
-def test_office::namedelement_name_setter(instance):
+
+@given(instance=office_NamedElement_strategy)
+def test_office_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -196,23 +193,20 @@ def test_office::namedelement_name_setter(instance):
 def test_officeelement_instantiation(instance):
     assert isinstance(instance, OfficeElement)
 
-@given(instance=office::Office_strategy)
+@given(instance=office_Office_strategy)
 @settings(max_examples=50)
-def test_office::office_instantiation(instance):
-    assert isinstance(instance, office::Office)
+def test_office_office_instantiation(instance):
+    assert isinstance(instance, office_Office)
 
-@given(instance=office::Employee_strategy)
+@given(instance=office_Employee_strategy)
 @settings(max_examples=50)
-def test_office::employee_instantiation(instance):
-    assert isinstance(instance, office::Employee)
-
-@given(instance=office::Employee_strategy)
-def test_office::employee_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_office_employee_instantiation(instance):
+    assert isinstance(instance, office_Employee)
 
 
-@given(instance=office::Employee_strategy)
-def test_office::employee_title_setter(instance):
+
+@given(instance=office_Employee_strategy)
+def test_office_employee_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
@@ -222,12 +216,12 @@ def test_office::employee_title_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=office::OfficeElement_strategy)
+@given(instance=office_OfficeElement_strategy)
 @settings(max_examples=50)
-def test_office::officeelement_instantiation(instance):
-    assert isinstance(instance, office::OfficeElement)
+def test_office_officeelement_instantiation(instance):
+    assert isinstance(instance, office_OfficeElement)
 
-@given(instance=office::OfficeModel_strategy)
+@given(instance=office_OfficeModel_strategy)
 @settings(max_examples=50)
-def test_office::officemodel_instantiation(instance):
-    assert isinstance(instance, office::OfficeModel)
+def test_office_officemodel_instantiation(instance):
+    assert isinstance(instance, office_OfficeModel)

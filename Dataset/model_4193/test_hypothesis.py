@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloBuck::Greeting,
-    helloBuck::Model,
+from python_code import (
+    helloBuck_Greeting,
+    helloBuck_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_hellobuck::greeting_is_not_abstract():
-    assert not inspect.isabstract(helloBuck::Greeting)
+def test_hellobuck_greeting_is_not_abstract():
+    assert not inspect.isabstract(helloBuck_Greeting)
 
 
-def test_hellobuck::greeting_constructor_exists():
-    assert callable(helloBuck::Greeting.__init__)
+def test_hellobuck_greeting_constructor_exists():
+    assert callable(helloBuck_Greeting.__init__)
 
 
-def test_hellobuck::greeting_constructor_args():
-    sig = inspect.signature(helloBuck::Greeting.__init__)
+def test_hellobuck_greeting_constructor_args():
+    sig = inspect.signature(helloBuck_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hellobuck::greeting_has_name():
-    assert hasattr(helloBuck::Greeting, "name")
+def test_hellobuck_greeting_has_name():
+    assert hasattr(helloBuck_Greeting, "name")
     descriptor = None
-    for klass in helloBuck::Greeting.__mro__:
+    for klass in helloBuck_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_hellobuck::greeting_has_name():
 
 
 
-def test_hellobuck::model_is_not_abstract():
-    assert not inspect.isabstract(helloBuck::Model)
+def test_hellobuck_model_is_not_abstract():
+    assert not inspect.isabstract(helloBuck_Model)
 
 
-def test_hellobuck::model_constructor_exists():
-    assert callable(helloBuck::Model.__init__)
+def test_hellobuck_model_constructor_exists():
+    assert callable(helloBuck_Model.__init__)
 
 
-def test_hellobuck::model_constructor_args():
-    sig = inspect.signature(helloBuck::Model.__init__)
+def test_hellobuck_model_constructor_args():
+    sig = inspect.signature(helloBuck_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloBuck::Greeting_strategy = st.builds(
-    helloBuck::Greeting,
+helloBuck_Greeting_strategy = st.builds(
+    helloBuck_Greeting,
     name=
         safe_text
 )
-helloBuck::Model_strategy = st.builds(
-    helloBuck::Model,
+helloBuck_Model_strategy = st.builds(
+    helloBuck_Model,
 )
 
-@given(instance=helloBuck::Greeting_strategy)
+@given(instance=helloBuck_Greeting_strategy)
 @settings(max_examples=50)
-def test_hellobuck::greeting_instantiation(instance):
-    assert isinstance(instance, helloBuck::Greeting)
-
-@given(instance=helloBuck::Greeting_strategy)
-def test_hellobuck::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hellobuck_greeting_instantiation(instance):
+    assert isinstance(instance, helloBuck_Greeting)
 
 
-@given(instance=helloBuck::Greeting_strategy)
-def test_hellobuck::greeting_name_setter(instance):
+
+@given(instance=helloBuck_Greeting_strategy)
+def test_hellobuck_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloBuck::Model_strategy)
+@given(instance=helloBuck_Model_strategy)
 @settings(max_examples=50)
-def test_hellobuck::model_instantiation(instance):
-    assert isinstance(instance, helloBuck::Model)
+def test_hellobuck_model_instantiation(instance):
+    assert isinstance(instance, helloBuck_Model)

@@ -3,53 +3,53 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ContainerView,
-    classLayout2Frontend::InputForm,
-    classLayout2Frontend::IterationContainer,
+    classLayout2Frontend_InputForm,
+    classLayout2Frontend_IterationContainer,
     PropertyType,
-    classLayout2Frontend::Enumeration,
-    classLayout2Frontend::PrimitiveType,
-    classLayout2Frontend::StaticContainer,
-    classLayout2Frontend::ElementView,
+    classLayout2Frontend_PrimitiveType,
+    classLayout2Frontend_StaticContainer,
+    classLayout2Frontend_ElementView,
+    classLayout2Frontend_Enumeration,
     Input,
-    classLayout2Frontend::Selection,
-    classLayout2Frontend::FileUpload,
-    classLayout2Frontend::InputText,
-    classLayout2Frontend::IterationFilter,
+    classLayout2Frontend_FileUpload,
+    classLayout2Frontend_Selection,
+    classLayout2Frontend_InputText,
+    classLayout2Frontend_IterationFilter,
     AtomicView,
-    classLayout2Frontend::Input,
-    classLayout2Frontend::Output,
+    classLayout2Frontend_Input,
+    classLayout2Frontend_Output,
     Output,
-    classLayout2Frontend::TextArea,
-    classLayout2Frontend::Image,
+    classLayout2Frontend_TextArea,
+    classLayout2Frontend_Image,
     Selection,
-    classLayout2Frontend::CheckList,
-    classLayout2Frontend::List,
-    classLayout2Frontend::Dropdownlist,
-    classLayout2Frontend::RadioButtonGroup,
-    classLayout2Frontend::Autocomplete,
+    classLayout2Frontend_List,
+    classLayout2Frontend_RadioButtonGroup,
+    classLayout2Frontend_Dropdownlist,
+    classLayout2Frontend_CheckList,
+    classLayout2Frontend_Autocomplete,
     ElementView,
-    classLayout2Frontend::AtomicView,
-    classLayout2Frontend::SiteView,
-    classLayout2Frontend::EntitiesModel,
-    classLayout2Frontend::Project,
-    classLayout2Frontend::EntityModelElement,
+    classLayout2Frontend_AtomicView,
+    classLayout2Frontend_SiteView,
+    classLayout2Frontend_EntitiesModel,
+    classLayout2Frontend_Project,
+    classLayout2Frontend_EntityModelElement,
     EntityModelElement,
-    classLayout2Frontend::Literal,
-    classLayout2Frontend::StructuralFeature,
-    classLayout2Frontend::PropertyType,
-    classLayout2Frontend::Entity,
+    classLayout2Frontend_StructuralFeature,
+    classLayout2Frontend_Literal,
+    classLayout2Frontend_PropertyType,
+    classLayout2Frontend_Entity,
     StructuralFeature,
-    classLayout2Frontend::Property,
-    classLayout2Frontend::Association,
+    classLayout2Frontend_Property,
+    classLayout2Frontend_Association,
     Association,
-    classLayout2Frontend::Reference,
-    classLayout2Frontend::Composition,
-    classLayout2Frontend::ContainerView,
-    classLayout2Frontend::PageView,
+    classLayout2Frontend_Reference,
+    classLayout2Frontend_Composition,
+    classLayout2Frontend_ContainerView,
+    classLayout2Frontend_PageView,
     LayoutType,
 )
 
@@ -73,30 +73,30 @@ def test_containerview_constructor_args():
 
 
 
-def test_classlayout2frontend::inputform_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::InputForm)
+def test_classlayout2frontend_inputform_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_InputForm)
 
 
-def test_classlayout2frontend::inputform_constructor_exists():
-    assert callable(classLayout2Frontend::InputForm.__init__)
+def test_classlayout2frontend_inputform_constructor_exists():
+    assert callable(classLayout2Frontend_InputForm.__init__)
 
 
-def test_classlayout2frontend::inputform_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::InputForm.__init__)
+def test_classlayout2frontend_inputform_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_InputForm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::iterationcontainer_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::IterationContainer)
+def test_classlayout2frontend_iterationcontainer_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_IterationContainer)
 
 
-def test_classlayout2frontend::iterationcontainer_constructor_exists():
-    assert callable(classLayout2Frontend::IterationContainer.__init__)
+def test_classlayout2frontend_iterationcontainer_constructor_exists():
+    assert callable(classLayout2Frontend_IterationContainer.__init__)
 
 
-def test_classlayout2frontend::iterationcontainer_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::IterationContainer.__init__)
+def test_classlayout2frontend_iterationcontainer_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_IterationContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -115,89 +115,89 @@ def test_propertytype_constructor_args():
 
 
 
-def test_classlayout2frontend::enumeration_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Enumeration)
+def test_classlayout2frontend_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_PrimitiveType)
 
 
-def test_classlayout2frontend::enumeration_constructor_exists():
-    assert callable(classLayout2Frontend::Enumeration.__init__)
+def test_classlayout2frontend_primitivetype_constructor_exists():
+    assert callable(classLayout2Frontend_PrimitiveType.__init__)
 
 
-def test_classlayout2frontend::enumeration_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Enumeration.__init__)
+def test_classlayout2frontend_primitivetype_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::PrimitiveType)
+def test_classlayout2frontend_staticcontainer_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_StaticContainer)
 
 
-def test_classlayout2frontend::primitivetype_constructor_exists():
-    assert callable(classLayout2Frontend::PrimitiveType.__init__)
+def test_classlayout2frontend_staticcontainer_constructor_exists():
+    assert callable(classLayout2Frontend_StaticContainer.__init__)
 
 
-def test_classlayout2frontend::primitivetype_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::PrimitiveType.__init__)
+def test_classlayout2frontend_staticcontainer_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_StaticContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::staticcontainer_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::StaticContainer)
+def test_classlayout2frontend_elementview_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_ElementView)
 
 
-def test_classlayout2frontend::staticcontainer_constructor_exists():
-    assert callable(classLayout2Frontend::StaticContainer.__init__)
+def test_classlayout2frontend_elementview_constructor_exists():
+    assert callable(classLayout2Frontend_ElementView.__init__)
 
 
-def test_classlayout2frontend::staticcontainer_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::StaticContainer.__init__)
+def test_classlayout2frontend_elementview_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_ElementView.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_classlayout2frontend::elementview_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::ElementView)
-
-
-def test_classlayout2frontend::elementview_constructor_exists():
-    assert callable(classLayout2Frontend::ElementView.__init__)
-
-
-def test_classlayout2frontend::elementview_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::ElementView.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
     assert "displayName" in params, "Missing parameter 'displayName'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_classlayout2frontend::elementview_has_name():
-    assert hasattr(classLayout2Frontend::ElementView, "name")
+def test_classlayout2frontend_elementview_has_description():
+    assert hasattr(classLayout2Frontend_ElementView, "description")
     descriptor = None
-    for klass in classLayout2Frontend::ElementView.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classlayout2frontend::elementview_has_description():
-    assert hasattr(classLayout2Frontend::ElementView, "description")
-    descriptor = None
-    for klass in classLayout2Frontend::ElementView.__mro__:
+    for klass in classLayout2Frontend_ElementView.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_classlayout2frontend::elementview_has_displayName():
-    assert hasattr(classLayout2Frontend::ElementView, "displayName")
+def test_classlayout2frontend_elementview_has_displayName():
+    assert hasattr(classLayout2Frontend_ElementView, "displayName")
     descriptor = None
-    for klass in classLayout2Frontend::ElementView.__mro__:
+    for klass in classLayout2Frontend_ElementView.__mro__:
         if "displayName" in klass.__dict__:
             descriptor = klass.__dict__["displayName"]
             break
     assert isinstance(descriptor, property)
+
+def test_classlayout2frontend_elementview_has_name():
+    assert hasattr(classLayout2Frontend_ElementView, "name")
+    descriptor = None
+    for klass in classLayout2Frontend_ElementView.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classlayout2frontend_enumeration_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Enumeration)
+
+
+def test_classlayout2frontend_enumeration_constructor_exists():
+    assert callable(classLayout2Frontend_Enumeration.__init__)
+
+
+def test_classlayout2frontend_enumeration_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Enumeration.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -215,51 +215,51 @@ def test_input_constructor_args():
 
 
 
-def test_classlayout2frontend::selection_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Selection)
+def test_classlayout2frontend_fileupload_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_FileUpload)
 
 
-def test_classlayout2frontend::selection_constructor_exists():
-    assert callable(classLayout2Frontend::Selection.__init__)
+def test_classlayout2frontend_fileupload_constructor_exists():
+    assert callable(classLayout2Frontend_FileUpload.__init__)
 
 
-def test_classlayout2frontend::selection_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Selection.__init__)
+def test_classlayout2frontend_fileupload_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_FileUpload.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::fileupload_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::FileUpload)
+def test_classlayout2frontend_selection_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Selection)
 
 
-def test_classlayout2frontend::fileupload_constructor_exists():
-    assert callable(classLayout2Frontend::FileUpload.__init__)
+def test_classlayout2frontend_selection_constructor_exists():
+    assert callable(classLayout2Frontend_Selection.__init__)
 
 
-def test_classlayout2frontend::fileupload_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::FileUpload.__init__)
+def test_classlayout2frontend_selection_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Selection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::inputtext_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::InputText)
+def test_classlayout2frontend_inputtext_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_InputText)
 
 
-def test_classlayout2frontend::inputtext_constructor_exists():
-    assert callable(classLayout2Frontend::InputText.__init__)
+def test_classlayout2frontend_inputtext_constructor_exists():
+    assert callable(classLayout2Frontend_InputText.__init__)
 
 
-def test_classlayout2frontend::inputtext_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::InputText.__init__)
+def test_classlayout2frontend_inputtext_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_InputText.__init__)
     params = list(sig.parameters.keys())
     assert "multiline" in params, "Missing parameter 'multiline'"
 
-def test_classlayout2frontend::inputtext_has_multiline():
-    assert hasattr(classLayout2Frontend::InputText, "multiline")
+def test_classlayout2frontend_inputtext_has_multiline():
+    assert hasattr(classLayout2Frontend_InputText, "multiline")
     descriptor = None
-    for klass in classLayout2Frontend::InputText.__mro__:
+    for klass in classLayout2Frontend_InputText.__mro__:
         if "multiline" in klass.__dict__:
             descriptor = klass.__dict__["multiline"]
             break
@@ -267,16 +267,16 @@ def test_classlayout2frontend::inputtext_has_multiline():
 
 
 
-def test_classlayout2frontend::iterationfilter_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::IterationFilter)
+def test_classlayout2frontend_iterationfilter_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_IterationFilter)
 
 
-def test_classlayout2frontend::iterationfilter_constructor_exists():
-    assert callable(classLayout2Frontend::IterationFilter.__init__)
+def test_classlayout2frontend_iterationfilter_constructor_exists():
+    assert callable(classLayout2Frontend_IterationFilter.__init__)
 
 
-def test_classlayout2frontend::iterationfilter_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::IterationFilter.__init__)
+def test_classlayout2frontend_iterationfilter_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_IterationFilter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -295,23 +295,23 @@ def test_atomicview_constructor_args():
 
 
 
-def test_classlayout2frontend::input_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Input)
+def test_classlayout2frontend_input_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Input)
 
 
-def test_classlayout2frontend::input_constructor_exists():
-    assert callable(classLayout2Frontend::Input.__init__)
+def test_classlayout2frontend_input_constructor_exists():
+    assert callable(classLayout2Frontend_Input.__init__)
 
 
-def test_classlayout2frontend::input_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Input.__init__)
+def test_classlayout2frontend_input_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Input.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_classlayout2frontend::input_has_label():
-    assert hasattr(classLayout2Frontend::Input, "label")
+def test_classlayout2frontend_input_has_label():
+    assert hasattr(classLayout2Frontend_Input, "label")
     descriptor = None
-    for klass in classLayout2Frontend::Input.__mro__:
+    for klass in classLayout2Frontend_Input.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -319,16 +319,16 @@ def test_classlayout2frontend::input_has_label():
 
 
 
-def test_classlayout2frontend::output_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Output)
+def test_classlayout2frontend_output_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Output)
 
 
-def test_classlayout2frontend::output_constructor_exists():
-    assert callable(classLayout2Frontend::Output.__init__)
+def test_classlayout2frontend_output_constructor_exists():
+    assert callable(classLayout2Frontend_Output.__init__)
 
 
-def test_classlayout2frontend::output_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Output.__init__)
+def test_classlayout2frontend_output_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Output.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -347,67 +347,67 @@ def test_output_constructor_args():
 
 
 
-def test_classlayout2frontend::textarea_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::TextArea)
+def test_classlayout2frontend_textarea_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_TextArea)
 
 
-def test_classlayout2frontend::textarea_constructor_exists():
-    assert callable(classLayout2Frontend::TextArea.__init__)
+def test_classlayout2frontend_textarea_constructor_exists():
+    assert callable(classLayout2Frontend_TextArea.__init__)
 
 
-def test_classlayout2frontend::textarea_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::TextArea.__init__)
+def test_classlayout2frontend_textarea_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_TextArea.__init__)
     params = list(sig.parameters.keys())
-    assert "isTitle" in params, "Missing parameter 'isTitle'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "isTitle" in params, "Missing parameter 'isTitle'"
 
-def test_classlayout2frontend::textarea_has_isTitle():
-    assert hasattr(classLayout2Frontend::TextArea, "isTitle")
+def test_classlayout2frontend_textarea_has_value():
+    assert hasattr(classLayout2Frontend_TextArea, "value")
     descriptor = None
-    for klass in classLayout2Frontend::TextArea.__mro__:
-        if "isTitle" in klass.__dict__:
-            descriptor = klass.__dict__["isTitle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classlayout2frontend::textarea_has_value():
-    assert hasattr(classLayout2Frontend::TextArea, "value")
-    descriptor = None
-    for klass in classLayout2Frontend::TextArea.__mro__:
+    for klass in classLayout2Frontend_TextArea.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_classlayout2frontend_textarea_has_isTitle():
+    assert hasattr(classLayout2Frontend_TextArea, "isTitle")
+    descriptor = None
+    for klass in classLayout2Frontend_TextArea.__mro__:
+        if "isTitle" in klass.__dict__:
+            descriptor = klass.__dict__["isTitle"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_classlayout2frontend::image_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Image)
+
+def test_classlayout2frontend_image_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Image)
 
 
-def test_classlayout2frontend::image_constructor_exists():
-    assert callable(classLayout2Frontend::Image.__init__)
+def test_classlayout2frontend_image_constructor_exists():
+    assert callable(classLayout2Frontend_Image.__init__)
 
 
-def test_classlayout2frontend::image_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Image.__init__)
+def test_classlayout2frontend_image_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Image.__init__)
     params = list(sig.parameters.keys())
     assert "height" in params, "Missing parameter 'height'"
     assert "width" in params, "Missing parameter 'width'"
 
-def test_classlayout2frontend::image_has_height():
-    assert hasattr(classLayout2Frontend::Image, "height")
+def test_classlayout2frontend_image_has_height():
+    assert hasattr(classLayout2Frontend_Image, "height")
     descriptor = None
-    for klass in classLayout2Frontend::Image.__mro__:
+    for klass in classLayout2Frontend_Image.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-def test_classlayout2frontend::image_has_width():
-    assert hasattr(classLayout2Frontend::Image, "width")
+def test_classlayout2frontend_image_has_width():
+    assert hasattr(classLayout2Frontend_Image, "width")
     descriptor = None
-    for klass in classLayout2Frontend::Image.__mro__:
+    for klass in classLayout2Frontend_Image.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
@@ -429,37 +429,23 @@ def test_selection_constructor_args():
 
 
 
-def test_classlayout2frontend::checklist_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::CheckList)
+def test_classlayout2frontend_list_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_List)
 
 
-def test_classlayout2frontend::checklist_constructor_exists():
-    assert callable(classLayout2Frontend::CheckList.__init__)
+def test_classlayout2frontend_list_constructor_exists():
+    assert callable(classLayout2Frontend_List.__init__)
 
 
-def test_classlayout2frontend::checklist_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::CheckList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classlayout2frontend::list_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::List)
-
-
-def test_classlayout2frontend::list_constructor_exists():
-    assert callable(classLayout2Frontend::List.__init__)
-
-
-def test_classlayout2frontend::list_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::List.__init__)
+def test_classlayout2frontend_list_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_List.__init__)
     params = list(sig.parameters.keys())
     assert "multiple" in params, "Missing parameter 'multiple'"
 
-def test_classlayout2frontend::list_has_multiple():
-    assert hasattr(classLayout2Frontend::List, "multiple")
+def test_classlayout2frontend_list_has_multiple():
+    assert hasattr(classLayout2Frontend_List, "multiple")
     descriptor = None
-    for klass in classLayout2Frontend::List.__mro__:
+    for klass in classLayout2Frontend_List.__mro__:
         if "multiple" in klass.__dict__:
             descriptor = klass.__dict__["multiple"]
             break
@@ -467,51 +453,65 @@ def test_classlayout2frontend::list_has_multiple():
 
 
 
-def test_classlayout2frontend::dropdownlist_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Dropdownlist)
+def test_classlayout2frontend_radiobuttongroup_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_RadioButtonGroup)
 
 
-def test_classlayout2frontend::dropdownlist_constructor_exists():
-    assert callable(classLayout2Frontend::Dropdownlist.__init__)
+def test_classlayout2frontend_radiobuttongroup_constructor_exists():
+    assert callable(classLayout2Frontend_RadioButtonGroup.__init__)
 
 
-def test_classlayout2frontend::dropdownlist_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Dropdownlist.__init__)
+def test_classlayout2frontend_radiobuttongroup_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_RadioButtonGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::radiobuttongroup_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::RadioButtonGroup)
+def test_classlayout2frontend_dropdownlist_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Dropdownlist)
 
 
-def test_classlayout2frontend::radiobuttongroup_constructor_exists():
-    assert callable(classLayout2Frontend::RadioButtonGroup.__init__)
+def test_classlayout2frontend_dropdownlist_constructor_exists():
+    assert callable(classLayout2Frontend_Dropdownlist.__init__)
 
 
-def test_classlayout2frontend::radiobuttongroup_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::RadioButtonGroup.__init__)
+def test_classlayout2frontend_dropdownlist_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Dropdownlist.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::autocomplete_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Autocomplete)
+def test_classlayout2frontend_checklist_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_CheckList)
 
 
-def test_classlayout2frontend::autocomplete_constructor_exists():
-    assert callable(classLayout2Frontend::Autocomplete.__init__)
+def test_classlayout2frontend_checklist_constructor_exists():
+    assert callable(classLayout2Frontend_CheckList.__init__)
 
 
-def test_classlayout2frontend::autocomplete_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Autocomplete.__init__)
+def test_classlayout2frontend_checklist_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_CheckList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classlayout2frontend_autocomplete_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Autocomplete)
+
+
+def test_classlayout2frontend_autocomplete_constructor_exists():
+    assert callable(classLayout2Frontend_Autocomplete.__init__)
+
+
+def test_classlayout2frontend_autocomplete_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Autocomplete.__init__)
     params = list(sig.parameters.keys())
     assert "multiple" in params, "Missing parameter 'multiple'"
 
-def test_classlayout2frontend::autocomplete_has_multiple():
-    assert hasattr(classLayout2Frontend::Autocomplete, "multiple")
+def test_classlayout2frontend_autocomplete_has_multiple():
+    assert hasattr(classLayout2Frontend_Autocomplete, "multiple")
     descriptor = None
-    for klass in classLayout2Frontend::Autocomplete.__mro__:
+    for klass in classLayout2Frontend_Autocomplete.__mro__:
         if "multiple" in klass.__dict__:
             descriptor = klass.__dict__["multiple"]
             break
@@ -533,161 +533,161 @@ def test_elementview_constructor_args():
 
 
 
-def test_classlayout2frontend::atomicview_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::AtomicView)
+def test_classlayout2frontend_atomicview_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_AtomicView)
 
 
-def test_classlayout2frontend::atomicview_constructor_exists():
-    assert callable(classLayout2Frontend::AtomicView.__init__)
+def test_classlayout2frontend_atomicview_constructor_exists():
+    assert callable(classLayout2Frontend_AtomicView.__init__)
 
 
-def test_classlayout2frontend::atomicview_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::AtomicView.__init__)
+def test_classlayout2frontend_atomicview_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_AtomicView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::siteview_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::SiteView)
+def test_classlayout2frontend_siteview_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_SiteView)
 
 
-def test_classlayout2frontend::siteview_constructor_exists():
-    assert callable(classLayout2Frontend::SiteView.__init__)
+def test_classlayout2frontend_siteview_constructor_exists():
+    assert callable(classLayout2Frontend_SiteView.__init__)
 
 
-def test_classlayout2frontend::siteview_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::SiteView.__init__)
+def test_classlayout2frontend_siteview_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_SiteView.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "displayName" in params, "Missing parameter 'displayName'"
-    assert "templateColor" in params, "Missing parameter 'templateColor'"
     assert "templateName" in params, "Missing parameter 'templateName'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "templateColor" in params, "Missing parameter 'templateColor'"
+    assert "displayName" in params, "Missing parameter 'displayName'"
 
-def test_classlayout2frontend::siteview_has_name():
-    assert hasattr(classLayout2Frontend::SiteView, "name")
+def test_classlayout2frontend_siteview_has_templateName():
+    assert hasattr(classLayout2Frontend_SiteView, "templateName")
     descriptor = None
-    for klass in classLayout2Frontend::SiteView.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classlayout2frontend::siteview_has_displayName():
-    assert hasattr(classLayout2Frontend::SiteView, "displayName")
-    descriptor = None
-    for klass in classLayout2Frontend::SiteView.__mro__:
-        if "displayName" in klass.__dict__:
-            descriptor = klass.__dict__["displayName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classlayout2frontend::siteview_has_templateColor():
-    assert hasattr(classLayout2Frontend::SiteView, "templateColor")
-    descriptor = None
-    for klass in classLayout2Frontend::SiteView.__mro__:
-        if "templateColor" in klass.__dict__:
-            descriptor = klass.__dict__["templateColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classlayout2frontend::siteview_has_templateName():
-    assert hasattr(classLayout2Frontend::SiteView, "templateName")
-    descriptor = None
-    for klass in classLayout2Frontend::SiteView.__mro__:
+    for klass in classLayout2Frontend_SiteView.__mro__:
         if "templateName" in klass.__dict__:
             descriptor = klass.__dict__["templateName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_classlayout2frontend::entitiesmodel_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::EntitiesModel)
-
-
-def test_classlayout2frontend::entitiesmodel_constructor_exists():
-    assert callable(classLayout2Frontend::EntitiesModel.__init__)
-
-
-def test_classlayout2frontend::entitiesmodel_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::EntitiesModel.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_classlayout2frontend::entitiesmodel_has_name():
-    assert hasattr(classLayout2Frontend::EntitiesModel, "name")
+def test_classlayout2frontend_siteview_has_name():
+    assert hasattr(classLayout2Frontend_SiteView, "name")
     descriptor = None
-    for klass in classLayout2Frontend::EntitiesModel.__mro__:
+    for klass in classLayout2Frontend_SiteView.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_classlayout2frontend::project_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Project)
-
-
-def test_classlayout2frontend::project_constructor_exists():
-    assert callable(classLayout2Frontend::Project.__init__)
-
-
-def test_classlayout2frontend::project_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Project.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_classlayout2frontend::project_has_name():
-    assert hasattr(classLayout2Frontend::Project, "name")
+def test_classlayout2frontend_siteview_has_templateColor():
+    assert hasattr(classLayout2Frontend_SiteView, "templateColor")
     descriptor = None
-    for klass in classLayout2Frontend::Project.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in classLayout2Frontend_SiteView.__mro__:
+        if "templateColor" in klass.__dict__:
+            descriptor = klass.__dict__["templateColor"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_classlayout2frontend::entitymodelelement_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::EntityModelElement)
-
-
-def test_classlayout2frontend::entitymodelelement_constructor_exists():
-    assert callable(classLayout2Frontend::EntityModelElement.__init__)
-
-
-def test_classlayout2frontend::entitymodelelement_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::EntityModelElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "displayName" in params, "Missing parameter 'displayName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_classlayout2frontend::entitymodelelement_has_displayName():
-    assert hasattr(classLayout2Frontend::EntityModelElement, "displayName")
+def test_classlayout2frontend_siteview_has_displayName():
+    assert hasattr(classLayout2Frontend_SiteView, "displayName")
     descriptor = None
-    for klass in classLayout2Frontend::EntityModelElement.__mro__:
+    for klass in classLayout2Frontend_SiteView.__mro__:
         if "displayName" in klass.__dict__:
             descriptor = klass.__dict__["displayName"]
             break
     assert isinstance(descriptor, property)
 
-def test_classlayout2frontend::entitymodelelement_has_name():
-    assert hasattr(classLayout2Frontend::EntityModelElement, "name")
+
+
+def test_classlayout2frontend_entitiesmodel_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_EntitiesModel)
+
+
+def test_classlayout2frontend_entitiesmodel_constructor_exists():
+    assert callable(classLayout2Frontend_EntitiesModel.__init__)
+
+
+def test_classlayout2frontend_entitiesmodel_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_EntitiesModel.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_classlayout2frontend_entitiesmodel_has_name():
+    assert hasattr(classLayout2Frontend_EntitiesModel, "name")
     descriptor = None
-    for klass in classLayout2Frontend::EntityModelElement.__mro__:
+    for klass in classLayout2Frontend_EntitiesModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_classlayout2frontend::entitymodelelement_has_description():
-    assert hasattr(classLayout2Frontend::EntityModelElement, "description")
+
+
+def test_classlayout2frontend_project_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Project)
+
+
+def test_classlayout2frontend_project_constructor_exists():
+    assert callable(classLayout2Frontend_Project.__init__)
+
+
+def test_classlayout2frontend_project_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Project.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_classlayout2frontend_project_has_name():
+    assert hasattr(classLayout2Frontend_Project, "name")
     descriptor = None
-    for klass in classLayout2Frontend::EntityModelElement.__mro__:
+    for klass in classLayout2Frontend_Project.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classlayout2frontend_entitymodelelement_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_EntityModelElement)
+
+
+def test_classlayout2frontend_entitymodelelement_constructor_exists():
+    assert callable(classLayout2Frontend_EntityModelElement.__init__)
+
+
+def test_classlayout2frontend_entitymodelelement_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_EntityModelElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "displayName" in params, "Missing parameter 'displayName'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_classlayout2frontend_entitymodelelement_has_displayName():
+    assert hasattr(classLayout2Frontend_EntityModelElement, "displayName")
+    descriptor = None
+    for klass in classLayout2Frontend_EntityModelElement.__mro__:
+        if "displayName" in klass.__dict__:
+            descriptor = klass.__dict__["displayName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classlayout2frontend_entitymodelelement_has_description():
+    assert hasattr(classLayout2Frontend_EntityModelElement, "description")
+    descriptor = None
+    for klass in classLayout2Frontend_EntityModelElement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classlayout2frontend_entitymodelelement_has_name():
+    assert hasattr(classLayout2Frontend_EntityModelElement, "name")
+    descriptor = None
+    for klass in classLayout2Frontend_EntityModelElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -707,47 +707,23 @@ def test_entitymodelelement_constructor_args():
 
 
 
-def test_classlayout2frontend::literal_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Literal)
+def test_classlayout2frontend_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_StructuralFeature)
 
 
-def test_classlayout2frontend::literal_constructor_exists():
-    assert callable(classLayout2Frontend::Literal.__init__)
+def test_classlayout2frontend_structuralfeature_constructor_exists():
+    assert callable(classLayout2Frontend_StructuralFeature.__init__)
 
 
-def test_classlayout2frontend::literal_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Literal.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_classlayout2frontend::literal_has_value():
-    assert hasattr(classLayout2Frontend::Literal, "value")
-    descriptor = None
-    for klass in classLayout2Frontend::Literal.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_classlayout2frontend::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::StructuralFeature)
-
-
-def test_classlayout2frontend::structuralfeature_constructor_exists():
-    assert callable(classLayout2Frontend::StructuralFeature.__init__)
-
-
-def test_classlayout2frontend::structuralfeature_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::StructuralFeature.__init__)
+def test_classlayout2frontend_structuralfeature_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "required" in params, "Missing parameter 'required'"
 
-def test_classlayout2frontend::structuralfeature_has_required():
-    assert hasattr(classLayout2Frontend::StructuralFeature, "required")
+def test_classlayout2frontend_structuralfeature_has_required():
+    assert hasattr(classLayout2Frontend_StructuralFeature, "required")
     descriptor = None
-    for klass in classLayout2Frontend::StructuralFeature.__mro__:
+    for klass in classLayout2Frontend_StructuralFeature.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
@@ -755,37 +731,61 @@ def test_classlayout2frontend::structuralfeature_has_required():
 
 
 
-def test_classlayout2frontend::propertytype_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::PropertyType)
+def test_classlayout2frontend_literal_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Literal)
 
 
-def test_classlayout2frontend::propertytype_constructor_exists():
-    assert callable(classLayout2Frontend::PropertyType.__init__)
+def test_classlayout2frontend_literal_constructor_exists():
+    assert callable(classLayout2Frontend_Literal.__init__)
 
 
-def test_classlayout2frontend::propertytype_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::PropertyType.__init__)
+def test_classlayout2frontend_literal_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Literal.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_classlayout2frontend_literal_has_value():
+    assert hasattr(classLayout2Frontend_Literal, "value")
+    descriptor = None
+    for klass in classLayout2Frontend_Literal.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classlayout2frontend_propertytype_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_PropertyType)
+
+
+def test_classlayout2frontend_propertytype_constructor_exists():
+    assert callable(classLayout2Frontend_PropertyType.__init__)
+
+
+def test_classlayout2frontend_propertytype_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_PropertyType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::entity_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Entity)
+def test_classlayout2frontend_entity_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Entity)
 
 
-def test_classlayout2frontend::entity_constructor_exists():
-    assert callable(classLayout2Frontend::Entity.__init__)
+def test_classlayout2frontend_entity_constructor_exists():
+    assert callable(classLayout2Frontend_Entity.__init__)
 
 
-def test_classlayout2frontend::entity_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Entity.__init__)
+def test_classlayout2frontend_entity_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_classlayout2frontend::entity_has_isAbstract():
-    assert hasattr(classLayout2Frontend::Entity, "isAbstract")
+def test_classlayout2frontend_entity_has_isAbstract():
+    assert hasattr(classLayout2Frontend_Entity, "isAbstract")
     descriptor = None
-    for klass in classLayout2Frontend::Entity.__mro__:
+    for klass in classLayout2Frontend_Entity.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -807,23 +807,23 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_classlayout2frontend::property_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Property)
+def test_classlayout2frontend_property_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Property)
 
 
-def test_classlayout2frontend::property_constructor_exists():
-    assert callable(classLayout2Frontend::Property.__init__)
+def test_classlayout2frontend_property_constructor_exists():
+    assert callable(classLayout2Frontend_Property.__init__)
 
 
-def test_classlayout2frontend::property_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Property.__init__)
+def test_classlayout2frontend_property_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Property.__init__)
     params = list(sig.parameters.keys())
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
 
-def test_classlayout2frontend::property_has_defaultValue():
-    assert hasattr(classLayout2Frontend::Property, "defaultValue")
+def test_classlayout2frontend_property_has_defaultValue():
+    assert hasattr(classLayout2Frontend_Property, "defaultValue")
     descriptor = None
-    for klass in classLayout2Frontend::Property.__mro__:
+    for klass in classLayout2Frontend_Property.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
@@ -831,23 +831,23 @@ def test_classlayout2frontend::property_has_defaultValue():
 
 
 
-def test_classlayout2frontend::association_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Association)
+def test_classlayout2frontend_association_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Association)
 
 
-def test_classlayout2frontend::association_constructor_exists():
-    assert callable(classLayout2Frontend::Association.__init__)
+def test_classlayout2frontend_association_constructor_exists():
+    assert callable(classLayout2Frontend_Association.__init__)
 
 
-def test_classlayout2frontend::association_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Association.__init__)
+def test_classlayout2frontend_association_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Association.__init__)
     params = list(sig.parameters.keys())
     assert "many" in params, "Missing parameter 'many'"
 
-def test_classlayout2frontend::association_has_many():
-    assert hasattr(classLayout2Frontend::Association, "many")
+def test_classlayout2frontend_association_has_many():
+    assert hasattr(classLayout2Frontend_Association, "many")
     descriptor = None
-    for klass in classLayout2Frontend::Association.__mro__:
+    for klass in classLayout2Frontend_Association.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
@@ -869,75 +869,75 @@ def test_association_constructor_args():
 
 
 
-def test_classlayout2frontend::reference_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Reference)
+def test_classlayout2frontend_reference_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Reference)
 
 
-def test_classlayout2frontend::reference_constructor_exists():
-    assert callable(classLayout2Frontend::Reference.__init__)
+def test_classlayout2frontend_reference_constructor_exists():
+    assert callable(classLayout2Frontend_Reference.__init__)
 
 
-def test_classlayout2frontend::reference_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Reference.__init__)
+def test_classlayout2frontend_reference_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::composition_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::Composition)
+def test_classlayout2frontend_composition_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_Composition)
 
 
-def test_classlayout2frontend::composition_constructor_exists():
-    assert callable(classLayout2Frontend::Composition.__init__)
+def test_classlayout2frontend_composition_constructor_exists():
+    assert callable(classLayout2Frontend_Composition.__init__)
 
 
-def test_classlayout2frontend::composition_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::Composition.__init__)
+def test_classlayout2frontend_composition_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_Composition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::containerview_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::ContainerView)
+def test_classlayout2frontend_containerview_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_ContainerView)
 
 
-def test_classlayout2frontend::containerview_constructor_exists():
-    assert callable(classLayout2Frontend::ContainerView.__init__)
+def test_classlayout2frontend_containerview_constructor_exists():
+    assert callable(classLayout2Frontend_ContainerView.__init__)
 
 
-def test_classlayout2frontend::containerview_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::ContainerView.__init__)
+def test_classlayout2frontend_containerview_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_ContainerView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classlayout2frontend::pageview_is_not_abstract():
-    assert not inspect.isabstract(classLayout2Frontend::PageView)
+def test_classlayout2frontend_pageview_is_not_abstract():
+    assert not inspect.isabstract(classLayout2Frontend_PageView)
 
 
-def test_classlayout2frontend::pageview_constructor_exists():
-    assert callable(classLayout2Frontend::PageView.__init__)
+def test_classlayout2frontend_pageview_constructor_exists():
+    assert callable(classLayout2Frontend_PageView.__init__)
 
 
-def test_classlayout2frontend::pageview_constructor_args():
-    sig = inspect.signature(classLayout2Frontend::PageView.__init__)
+def test_classlayout2frontend_pageview_constructor_args():
+    sig = inspect.signature(classLayout2Frontend_PageView.__init__)
     params = list(sig.parameters.keys())
     assert "layoutType" in params, "Missing parameter 'layoutType'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classlayout2frontend::pageview_has_layoutType():
-    assert hasattr(classLayout2Frontend::PageView, "layoutType")
+def test_classlayout2frontend_pageview_has_layoutType():
+    assert hasattr(classLayout2Frontend_PageView, "layoutType")
     descriptor = None
-    for klass in classLayout2Frontend::PageView.__mro__:
+    for klass in classLayout2Frontend_PageView.__mro__:
         if "layoutType" in klass.__dict__:
             descriptor = klass.__dict__["layoutType"]
             break
     assert isinstance(descriptor, property)
 
-def test_classlayout2frontend::pageview_has_name():
-    assert hasattr(classLayout2Frontend::PageView, "name")
+def test_classlayout2frontend_pageview_has_name():
+    assert hasattr(classLayout2Frontend_PageView, "name")
     descriptor = None
-    for klass in classLayout2Frontend::PageView.__mro__:
+    for klass in classLayout2Frontend_PageView.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -951,11 +951,11 @@ def test_layouttype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LayoutType]
     expected_literals = [
-        "TWO_COLUMNS",
-        "SINGLE_COLUMN",
         "THREE_COLUMNS",
         "LEFT_BAR",
+        "TWO_COLUMNS",
         "RIGHT_BAR",
+        "SINGLE_COLUMN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -976,73 +976,73 @@ safe_text = st.text(
 ContainerView_strategy = st.builds(
     ContainerView,
 )
-classLayout2Frontend::InputForm_strategy = st.builds(
-    classLayout2Frontend::InputForm,
+classLayout2Frontend_InputForm_strategy = st.builds(
+    classLayout2Frontend_InputForm,
 )
-classLayout2Frontend::IterationContainer_strategy = st.builds(
-    classLayout2Frontend::IterationContainer,
+classLayout2Frontend_IterationContainer_strategy = st.builds(
+    classLayout2Frontend_IterationContainer,
 )
 PropertyType_strategy = st.builds(
     PropertyType,
 )
-classLayout2Frontend::Enumeration_strategy = st.builds(
-    classLayout2Frontend::Enumeration,
+classLayout2Frontend_PrimitiveType_strategy = st.builds(
+    classLayout2Frontend_PrimitiveType,
 )
-classLayout2Frontend::PrimitiveType_strategy = st.builds(
-    classLayout2Frontend::PrimitiveType,
+classLayout2Frontend_StaticContainer_strategy = st.builds(
+    classLayout2Frontend_StaticContainer,
 )
-classLayout2Frontend::StaticContainer_strategy = st.builds(
-    classLayout2Frontend::StaticContainer,
-)
-classLayout2Frontend::ElementView_strategy = st.builds(
-    classLayout2Frontend::ElementView,
-    name=
-        safe_text,
+classLayout2Frontend_ElementView_strategy = st.builds(
+    classLayout2Frontend_ElementView,
     description=
         safe_text,
     displayName=
+        safe_text,
+    name=
         safe_text
+)
+classLayout2Frontend_Enumeration_strategy = st.builds(
+    classLayout2Frontend_Enumeration,
 )
 Input_strategy = st.builds(
     Input,
 )
-classLayout2Frontend::Selection_strategy = st.builds(
-    classLayout2Frontend::Selection,
+classLayout2Frontend_FileUpload_strategy = st.builds(
+    classLayout2Frontend_FileUpload,
 )
-classLayout2Frontend::FileUpload_strategy = st.builds(
-    classLayout2Frontend::FileUpload,
+classLayout2Frontend_Selection_strategy = st.builds(
+    classLayout2Frontend_Selection,
 )
-classLayout2Frontend::InputText_strategy = st.builds(
-    classLayout2Frontend::InputText,
+classLayout2Frontend_InputText_strategy = st.builds(
+    classLayout2Frontend_InputText,
     multiline=
         st.booleans()
 )
-classLayout2Frontend::IterationFilter_strategy = st.builds(
-    classLayout2Frontend::IterationFilter,
+classLayout2Frontend_IterationFilter_strategy = st.builds(
+    classLayout2Frontend_IterationFilter,
 )
 AtomicView_strategy = st.builds(
     AtomicView,
 )
-classLayout2Frontend::Input_strategy = st.builds(
-    classLayout2Frontend::Input,
+classLayout2Frontend_Input_strategy = st.builds(
+    classLayout2Frontend_Input,
     label=
         safe_text
 )
-classLayout2Frontend::Output_strategy = st.builds(
-    classLayout2Frontend::Output,
+classLayout2Frontend_Output_strategy = st.builds(
+    classLayout2Frontend_Output,
 )
 Output_strategy = st.builds(
     Output,
 )
-classLayout2Frontend::TextArea_strategy = st.builds(
-    classLayout2Frontend::TextArea,
-    isTitle=
-        st.booleans(),
+classLayout2Frontend_TextArea_strategy = st.builds(
+    classLayout2Frontend_TextArea,
     value=
-        safe_text
+        safe_text,
+    isTitle=
+        st.booleans()
 )
-classLayout2Frontend::Image_strategy = st.builds(
-    classLayout2Frontend::Image,
+classLayout2Frontend_Image_strategy = st.builds(
+    classLayout2Frontend_Image,
     height=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     width=
@@ -1051,109 +1051,109 @@ classLayout2Frontend::Image_strategy = st.builds(
 Selection_strategy = st.builds(
     Selection,
 )
-classLayout2Frontend::CheckList_strategy = st.builds(
-    classLayout2Frontend::CheckList,
-)
-classLayout2Frontend::List_strategy = st.builds(
-    classLayout2Frontend::List,
+classLayout2Frontend_List_strategy = st.builds(
+    classLayout2Frontend_List,
     multiple=
         st.booleans()
 )
-classLayout2Frontend::Dropdownlist_strategy = st.builds(
-    classLayout2Frontend::Dropdownlist,
+classLayout2Frontend_RadioButtonGroup_strategy = st.builds(
+    classLayout2Frontend_RadioButtonGroup,
 )
-classLayout2Frontend::RadioButtonGroup_strategy = st.builds(
-    classLayout2Frontend::RadioButtonGroup,
+classLayout2Frontend_Dropdownlist_strategy = st.builds(
+    classLayout2Frontend_Dropdownlist,
 )
-classLayout2Frontend::Autocomplete_strategy = st.builds(
-    classLayout2Frontend::Autocomplete,
+classLayout2Frontend_CheckList_strategy = st.builds(
+    classLayout2Frontend_CheckList,
+)
+classLayout2Frontend_Autocomplete_strategy = st.builds(
+    classLayout2Frontend_Autocomplete,
     multiple=
         st.booleans()
 )
 ElementView_strategy = st.builds(
     ElementView,
 )
-classLayout2Frontend::AtomicView_strategy = st.builds(
-    classLayout2Frontend::AtomicView,
+classLayout2Frontend_AtomicView_strategy = st.builds(
+    classLayout2Frontend_AtomicView,
 )
-classLayout2Frontend::SiteView_strategy = st.builds(
-    classLayout2Frontend::SiteView,
-    name=
+classLayout2Frontend_SiteView_strategy = st.builds(
+    classLayout2Frontend_SiteView,
+    templateName=
         safe_text,
-    displayName=
+    name=
         safe_text,
     templateColor=
         safe_text,
-    templateName=
+    displayName=
         safe_text
 )
-classLayout2Frontend::EntitiesModel_strategy = st.builds(
-    classLayout2Frontend::EntitiesModel,
+classLayout2Frontend_EntitiesModel_strategy = st.builds(
+    classLayout2Frontend_EntitiesModel,
     name=
         safe_text
 )
-classLayout2Frontend::Project_strategy = st.builds(
-    classLayout2Frontend::Project,
+classLayout2Frontend_Project_strategy = st.builds(
+    classLayout2Frontend_Project,
     name=
         safe_text
 )
-classLayout2Frontend::EntityModelElement_strategy = st.builds(
-    classLayout2Frontend::EntityModelElement,
+classLayout2Frontend_EntityModelElement_strategy = st.builds(
+    classLayout2Frontend_EntityModelElement,
     displayName=
         safe_text,
-    name=
-        safe_text,
     description=
+        safe_text,
+    name=
         safe_text
 )
 EntityModelElement_strategy = st.builds(
     EntityModelElement,
 )
-classLayout2Frontend::Literal_strategy = st.builds(
-    classLayout2Frontend::Literal,
-    value=
-        st.integers()
-)
-classLayout2Frontend::StructuralFeature_strategy = st.builds(
-    classLayout2Frontend::StructuralFeature,
+classLayout2Frontend_StructuralFeature_strategy = st.builds(
+    classLayout2Frontend_StructuralFeature,
     required=
         st.booleans()
 )
-classLayout2Frontend::PropertyType_strategy = st.builds(
-    classLayout2Frontend::PropertyType,
+classLayout2Frontend_Literal_strategy = st.builds(
+    classLayout2Frontend_Literal,
+    value=
+        st.integers()
 )
-classLayout2Frontend::Entity_strategy = st.builds(
-    classLayout2Frontend::Entity,
+classLayout2Frontend_PropertyType_strategy = st.builds(
+    classLayout2Frontend_PropertyType,
+)
+classLayout2Frontend_Entity_strategy = st.builds(
+    classLayout2Frontend_Entity,
     isAbstract=
         st.booleans()
 )
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-classLayout2Frontend::Property_strategy = st.builds(
-    classLayout2Frontend::Property,
+classLayout2Frontend_Property_strategy = st.builds(
+    classLayout2Frontend_Property,
     defaultValue=
         safe_text
 )
-classLayout2Frontend::Association_strategy = st.builds(
-    classLayout2Frontend::Association,
+classLayout2Frontend_Association_strategy = st.builds(
+    classLayout2Frontend_Association,
     many=
         st.booleans()
 )
 Association_strategy = st.builds(
     Association,
 )
-classLayout2Frontend::Reference_strategy = st.builds(
-    classLayout2Frontend::Reference,
+classLayout2Frontend_Reference_strategy = st.builds(
+    classLayout2Frontend_Reference,
 )
-classLayout2Frontend::Composition_strategy = st.builds(
-    classLayout2Frontend::Composition,
+classLayout2Frontend_Composition_strategy = st.builds(
+    classLayout2Frontend_Composition,
 )
-classLayout2Frontend::ContainerView_strategy = st.builds(
-    classLayout2Frontend::ContainerView,
+classLayout2Frontend_ContainerView_strategy = st.builds(
+    classLayout2Frontend_ContainerView,
 )
-classLayout2Frontend::PageView_strategy = st.builds(
-    classLayout2Frontend::PageView,
+classLayout2Frontend_PageView_strategy = st.builds(
+    classLayout2Frontend_PageView,
     layoutType=
         safe_text,
     name=
@@ -1165,191 +1165,164 @@ classLayout2Frontend::PageView_strategy = st.builds(
 def test_containerview_instantiation(instance):
     assert isinstance(instance, ContainerView)
 
-@given(instance=classLayout2Frontend::InputForm_strategy)
+@given(instance=classLayout2Frontend_InputForm_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::inputform_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::InputForm)
+def test_classlayout2frontend_inputform_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_InputForm)
 
-@given(instance=classLayout2Frontend::IterationContainer_strategy)
+@given(instance=classLayout2Frontend_IterationContainer_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::iterationcontainer_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::IterationContainer)
+def test_classlayout2frontend_iterationcontainer_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_IterationContainer)
 
 @given(instance=PropertyType_strategy)
 @settings(max_examples=50)
 def test_propertytype_instantiation(instance):
     assert isinstance(instance, PropertyType)
 
-@given(instance=classLayout2Frontend::Enumeration_strategy)
+@given(instance=classLayout2Frontend_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::enumeration_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Enumeration)
+def test_classlayout2frontend_primitivetype_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_PrimitiveType)
 
-@given(instance=classLayout2Frontend::PrimitiveType_strategy)
+@given(instance=classLayout2Frontend_StaticContainer_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::primitivetype_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::PrimitiveType)
+def test_classlayout2frontend_staticcontainer_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_StaticContainer)
 
-@given(instance=classLayout2Frontend::StaticContainer_strategy)
+@given(instance=classLayout2Frontend_ElementView_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::staticcontainer_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::StaticContainer)
-
-@given(instance=classLayout2Frontend::ElementView_strategy)
-@settings(max_examples=50)
-def test_classlayout2frontend::elementview_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::ElementView)
-
-@given(instance=classLayout2Frontend::ElementView_strategy)
-def test_classlayout2frontend::elementview_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classlayout2frontend_elementview_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_ElementView)
 
 
-@given(instance=classLayout2Frontend::ElementView_strategy)
-def test_classlayout2frontend::elementview_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=classLayout2Frontend::ElementView_strategy)
-def test_classlayout2frontend::elementview_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=classLayout2Frontend::ElementView_strategy)
-def test_classlayout2frontend::elementview_description_setter(instance):
+@given(instance=classLayout2Frontend_ElementView_strategy)
+def test_classlayout2frontend_elementview_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=classLayout2Frontend::ElementView_strategy)
-def test_classlayout2frontend::elementview_displayName_type(instance):
-    assert isinstance(instance.displayName, str)
 
 
-@given(instance=classLayout2Frontend::ElementView_strategy)
-def test_classlayout2frontend::elementview_displayName_setter(instance):
+@given(instance=classLayout2Frontend_ElementView_strategy)
+def test_classlayout2frontend_elementview_displayName_setter(instance):
     original = instance.displayName
     instance.displayName = original
     assert instance.displayName == original
+
+
+
+@given(instance=classLayout2Frontend_ElementView_strategy)
+def test_classlayout2frontend_elementview_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=classLayout2Frontend_Enumeration_strategy)
+@settings(max_examples=50)
+def test_classlayout2frontend_enumeration_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Enumeration)
 
 @given(instance=Input_strategy)
 @settings(max_examples=50)
 def test_input_instantiation(instance):
     assert isinstance(instance, Input)
 
-@given(instance=classLayout2Frontend::Selection_strategy)
+@given(instance=classLayout2Frontend_FileUpload_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::selection_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Selection)
+def test_classlayout2frontend_fileupload_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_FileUpload)
 
-@given(instance=classLayout2Frontend::FileUpload_strategy)
+@given(instance=classLayout2Frontend_Selection_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::fileupload_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::FileUpload)
+def test_classlayout2frontend_selection_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Selection)
 
-@given(instance=classLayout2Frontend::InputText_strategy)
+@given(instance=classLayout2Frontend_InputText_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::inputtext_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::InputText)
-
-@given(instance=classLayout2Frontend::InputText_strategy)
-def test_classlayout2frontend::inputtext_multiline_type(instance):
-    assert isinstance(instance.multiline, bool)
+def test_classlayout2frontend_inputtext_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_InputText)
 
 
-@given(instance=classLayout2Frontend::InputText_strategy)
-def test_classlayout2frontend::inputtext_multiline_setter(instance):
+
+@given(instance=classLayout2Frontend_InputText_strategy)
+def test_classlayout2frontend_inputtext_multiline_setter(instance):
     original = instance.multiline
     instance.multiline = original
     assert instance.multiline == original
 
-@given(instance=classLayout2Frontend::IterationFilter_strategy)
+@given(instance=classLayout2Frontend_IterationFilter_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::iterationfilter_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::IterationFilter)
+def test_classlayout2frontend_iterationfilter_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_IterationFilter)
 
 @given(instance=AtomicView_strategy)
 @settings(max_examples=50)
 def test_atomicview_instantiation(instance):
     assert isinstance(instance, AtomicView)
 
-@given(instance=classLayout2Frontend::Input_strategy)
+@given(instance=classLayout2Frontend_Input_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::input_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Input)
-
-@given(instance=classLayout2Frontend::Input_strategy)
-def test_classlayout2frontend::input_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_classlayout2frontend_input_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Input)
 
 
-@given(instance=classLayout2Frontend::Input_strategy)
-def test_classlayout2frontend::input_label_setter(instance):
+
+@given(instance=classLayout2Frontend_Input_strategy)
+def test_classlayout2frontend_input_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=classLayout2Frontend::Output_strategy)
+@given(instance=classLayout2Frontend_Output_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::output_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Output)
+def test_classlayout2frontend_output_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Output)
 
 @given(instance=Output_strategy)
 @settings(max_examples=50)
 def test_output_instantiation(instance):
     assert isinstance(instance, Output)
 
-@given(instance=classLayout2Frontend::TextArea_strategy)
+@given(instance=classLayout2Frontend_TextArea_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::textarea_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::TextArea)
-
-@given(instance=classLayout2Frontend::TextArea_strategy)
-def test_classlayout2frontend::textarea_isTitle_type(instance):
-    assert isinstance(instance.isTitle, bool)
+def test_classlayout2frontend_textarea_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_TextArea)
 
 
-@given(instance=classLayout2Frontend::TextArea_strategy)
-def test_classlayout2frontend::textarea_isTitle_setter(instance):
-    original = instance.isTitle
-    instance.isTitle = original
-    assert instance.isTitle == original
 
-@given(instance=classLayout2Frontend::TextArea_strategy)
-def test_classlayout2frontend::textarea_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=classLayout2Frontend::TextArea_strategy)
-def test_classlayout2frontend::textarea_value_setter(instance):
+@given(instance=classLayout2Frontend_TextArea_strategy)
+def test_classlayout2frontend_textarea_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=classLayout2Frontend::Image_strategy)
+
+
+@given(instance=classLayout2Frontend_TextArea_strategy)
+def test_classlayout2frontend_textarea_isTitle_setter(instance):
+    original = instance.isTitle
+    instance.isTitle = original
+    assert instance.isTitle == original
+
+@given(instance=classLayout2Frontend_Image_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::image_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Image)
-
-@given(instance=classLayout2Frontend::Image_strategy)
-def test_classlayout2frontend::image_height_type(instance):
-    assert isinstance(instance.height, float)
+def test_classlayout2frontend_image_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Image)
 
 
-@given(instance=classLayout2Frontend::Image_strategy)
-def test_classlayout2frontend::image_height_setter(instance):
+
+@given(instance=classLayout2Frontend_Image_strategy)
+def test_classlayout2frontend_image_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=classLayout2Frontend::Image_strategy)
-def test_classlayout2frontend::image_width_type(instance):
-    assert isinstance(instance.width, float)
 
 
-@given(instance=classLayout2Frontend::Image_strategy)
-def test_classlayout2frontend::image_width_setter(instance):
+@given(instance=classLayout2Frontend_Image_strategy)
+def test_classlayout2frontend_image_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
@@ -1359,49 +1332,43 @@ def test_classlayout2frontend::image_width_setter(instance):
 def test_selection_instantiation(instance):
     assert isinstance(instance, Selection)
 
-@given(instance=classLayout2Frontend::CheckList_strategy)
+@given(instance=classLayout2Frontend_List_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::checklist_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::CheckList)
-
-@given(instance=classLayout2Frontend::List_strategy)
-@settings(max_examples=50)
-def test_classlayout2frontend::list_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::List)
-
-@given(instance=classLayout2Frontend::List_strategy)
-def test_classlayout2frontend::list_multiple_type(instance):
-    assert isinstance(instance.multiple, bool)
+def test_classlayout2frontend_list_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_List)
 
 
-@given(instance=classLayout2Frontend::List_strategy)
-def test_classlayout2frontend::list_multiple_setter(instance):
+
+@given(instance=classLayout2Frontend_List_strategy)
+def test_classlayout2frontend_list_multiple_setter(instance):
     original = instance.multiple
     instance.multiple = original
     assert instance.multiple == original
 
-@given(instance=classLayout2Frontend::Dropdownlist_strategy)
+@given(instance=classLayout2Frontend_RadioButtonGroup_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::dropdownlist_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Dropdownlist)
+def test_classlayout2frontend_radiobuttongroup_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_RadioButtonGroup)
 
-@given(instance=classLayout2Frontend::RadioButtonGroup_strategy)
+@given(instance=classLayout2Frontend_Dropdownlist_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::radiobuttongroup_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::RadioButtonGroup)
+def test_classlayout2frontend_dropdownlist_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Dropdownlist)
 
-@given(instance=classLayout2Frontend::Autocomplete_strategy)
+@given(instance=classLayout2Frontend_CheckList_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::autocomplete_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Autocomplete)
+def test_classlayout2frontend_checklist_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_CheckList)
 
-@given(instance=classLayout2Frontend::Autocomplete_strategy)
-def test_classlayout2frontend::autocomplete_multiple_type(instance):
-    assert isinstance(instance.multiple, bool)
+@given(instance=classLayout2Frontend_Autocomplete_strategy)
+@settings(max_examples=50)
+def test_classlayout2frontend_autocomplete_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Autocomplete)
 
 
-@given(instance=classLayout2Frontend::Autocomplete_strategy)
-def test_classlayout2frontend::autocomplete_multiple_setter(instance):
+
+@given(instance=classLayout2Frontend_Autocomplete_strategy)
+def test_classlayout2frontend_autocomplete_multiple_setter(instance):
     original = instance.multiple
     instance.multiple = original
     assert instance.multiple == original
@@ -1411,184 +1378,148 @@ def test_classlayout2frontend::autocomplete_multiple_setter(instance):
 def test_elementview_instantiation(instance):
     assert isinstance(instance, ElementView)
 
-@given(instance=classLayout2Frontend::AtomicView_strategy)
+@given(instance=classLayout2Frontend_AtomicView_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::atomicview_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::AtomicView)
+def test_classlayout2frontend_atomicview_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_AtomicView)
 
-@given(instance=classLayout2Frontend::SiteView_strategy)
+@given(instance=classLayout2Frontend_SiteView_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::siteview_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::SiteView)
-
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classlayout2frontend_siteview_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_SiteView)
 
 
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_displayName_type(instance):
-    assert isinstance(instance.displayName, str)
-
-
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_displayName_setter(instance):
-    original = instance.displayName
-    instance.displayName = original
-    assert instance.displayName == original
-
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_templateColor_type(instance):
-    assert isinstance(instance.templateColor, str)
-
-
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_templateColor_setter(instance):
-    original = instance.templateColor
-    instance.templateColor = original
-    assert instance.templateColor == original
-
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_templateName_type(instance):
-    assert isinstance(instance.templateName, str)
-
-
-@given(instance=classLayout2Frontend::SiteView_strategy)
-def test_classlayout2frontend::siteview_templateName_setter(instance):
+@given(instance=classLayout2Frontend_SiteView_strategy)
+def test_classlayout2frontend_siteview_templateName_setter(instance):
     original = instance.templateName
     instance.templateName = original
     assert instance.templateName == original
 
-@given(instance=classLayout2Frontend::EntitiesModel_strategy)
-@settings(max_examples=50)
-def test_classlayout2frontend::entitiesmodel_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::EntitiesModel)
-
-@given(instance=classLayout2Frontend::EntitiesModel_strategy)
-def test_classlayout2frontend::entitiesmodel_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=classLayout2Frontend::EntitiesModel_strategy)
-def test_classlayout2frontend::entitiesmodel_name_setter(instance):
+@given(instance=classLayout2Frontend_SiteView_strategy)
+def test_classlayout2frontend_siteview_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=classLayout2Frontend::Project_strategy)
-@settings(max_examples=50)
-def test_classlayout2frontend::project_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Project)
-
-@given(instance=classLayout2Frontend::Project_strategy)
-def test_classlayout2frontend::project_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=classLayout2Frontend::Project_strategy)
-def test_classlayout2frontend::project_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-@settings(max_examples=50)
-def test_classlayout2frontend::entitymodelelement_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::EntityModelElement)
-
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-def test_classlayout2frontend::entitymodelelement_displayName_type(instance):
-    assert isinstance(instance.displayName, str)
+@given(instance=classLayout2Frontend_SiteView_strategy)
+def test_classlayout2frontend_siteview_templateColor_setter(instance):
+    original = instance.templateColor
+    instance.templateColor = original
+    assert instance.templateColor == original
 
 
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-def test_classlayout2frontend::entitymodelelement_displayName_setter(instance):
+
+@given(instance=classLayout2Frontend_SiteView_strategy)
+def test_classlayout2frontend_siteview_displayName_setter(instance):
     original = instance.displayName
     instance.displayName = original
     assert instance.displayName == original
 
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-def test_classlayout2frontend::entitymodelelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=classLayout2Frontend_EntitiesModel_strategy)
+@settings(max_examples=50)
+def test_classlayout2frontend_entitiesmodel_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_EntitiesModel)
 
 
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-def test_classlayout2frontend::entitymodelelement_name_setter(instance):
+
+@given(instance=classLayout2Frontend_EntitiesModel_strategy)
+def test_classlayout2frontend_entitiesmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-def test_classlayout2frontend::entitymodelelement_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=classLayout2Frontend_Project_strategy)
+@settings(max_examples=50)
+def test_classlayout2frontend_project_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Project)
 
 
-@given(instance=classLayout2Frontend::EntityModelElement_strategy)
-def test_classlayout2frontend::entitymodelelement_description_setter(instance):
+
+@given(instance=classLayout2Frontend_Project_strategy)
+def test_classlayout2frontend_project_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=classLayout2Frontend_EntityModelElement_strategy)
+@settings(max_examples=50)
+def test_classlayout2frontend_entitymodelelement_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_EntityModelElement)
+
+
+
+@given(instance=classLayout2Frontend_EntityModelElement_strategy)
+def test_classlayout2frontend_entitymodelelement_displayName_setter(instance):
+    original = instance.displayName
+    instance.displayName = original
+    assert instance.displayName == original
+
+
+
+@given(instance=classLayout2Frontend_EntityModelElement_strategy)
+def test_classlayout2frontend_entitymodelelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=classLayout2Frontend_EntityModelElement_strategy)
+def test_classlayout2frontend_entitymodelelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=EntityModelElement_strategy)
 @settings(max_examples=50)
 def test_entitymodelelement_instantiation(instance):
     assert isinstance(instance, EntityModelElement)
 
-@given(instance=classLayout2Frontend::Literal_strategy)
+@given(instance=classLayout2Frontend_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::literal_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Literal)
-
-@given(instance=classLayout2Frontend::Literal_strategy)
-def test_classlayout2frontend::literal_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_classlayout2frontend_structuralfeature_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_StructuralFeature)
 
 
-@given(instance=classLayout2Frontend::Literal_strategy)
-def test_classlayout2frontend::literal_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=classLayout2Frontend::StructuralFeature_strategy)
-@settings(max_examples=50)
-def test_classlayout2frontend::structuralfeature_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::StructuralFeature)
-
-@given(instance=classLayout2Frontend::StructuralFeature_strategy)
-def test_classlayout2frontend::structuralfeature_required_type(instance):
-    assert isinstance(instance.required, bool)
-
-
-@given(instance=classLayout2Frontend::StructuralFeature_strategy)
-def test_classlayout2frontend::structuralfeature_required_setter(instance):
+@given(instance=classLayout2Frontend_StructuralFeature_strategy)
+def test_classlayout2frontend_structuralfeature_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=classLayout2Frontend::PropertyType_strategy)
+@given(instance=classLayout2Frontend_Literal_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::propertytype_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::PropertyType)
+def test_classlayout2frontend_literal_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Literal)
 
-@given(instance=classLayout2Frontend::Entity_strategy)
+
+
+@given(instance=classLayout2Frontend_Literal_strategy)
+def test_classlayout2frontend_literal_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=classLayout2Frontend_PropertyType_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::entity_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Entity)
+def test_classlayout2frontend_propertytype_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_PropertyType)
 
-@given(instance=classLayout2Frontend::Entity_strategy)
-def test_classlayout2frontend::entity_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+@given(instance=classLayout2Frontend_Entity_strategy)
+@settings(max_examples=50)
+def test_classlayout2frontend_entity_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Entity)
 
 
-@given(instance=classLayout2Frontend::Entity_strategy)
-def test_classlayout2frontend::entity_isAbstract_setter(instance):
+
+@given(instance=classLayout2Frontend_Entity_strategy)
+def test_classlayout2frontend_entity_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -1598,34 +1529,28 @@ def test_classlayout2frontend::entity_isAbstract_setter(instance):
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=classLayout2Frontend::Property_strategy)
+@given(instance=classLayout2Frontend_Property_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::property_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Property)
-
-@given(instance=classLayout2Frontend::Property_strategy)
-def test_classlayout2frontend::property_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
+def test_classlayout2frontend_property_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Property)
 
 
-@given(instance=classLayout2Frontend::Property_strategy)
-def test_classlayout2frontend::property_defaultValue_setter(instance):
+
+@given(instance=classLayout2Frontend_Property_strategy)
+def test_classlayout2frontend_property_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=classLayout2Frontend::Association_strategy)
+@given(instance=classLayout2Frontend_Association_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::association_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Association)
-
-@given(instance=classLayout2Frontend::Association_strategy)
-def test_classlayout2frontend::association_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_classlayout2frontend_association_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Association)
 
 
-@given(instance=classLayout2Frontend::Association_strategy)
-def test_classlayout2frontend::association_many_setter(instance):
+
+@given(instance=classLayout2Frontend_Association_strategy)
+def test_classlayout2frontend_association_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
@@ -1635,44 +1560,38 @@ def test_classlayout2frontend::association_many_setter(instance):
 def test_association_instantiation(instance):
     assert isinstance(instance, Association)
 
-@given(instance=classLayout2Frontend::Reference_strategy)
+@given(instance=classLayout2Frontend_Reference_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::reference_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Reference)
+def test_classlayout2frontend_reference_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Reference)
 
-@given(instance=classLayout2Frontend::Composition_strategy)
+@given(instance=classLayout2Frontend_Composition_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::composition_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::Composition)
+def test_classlayout2frontend_composition_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_Composition)
 
-@given(instance=classLayout2Frontend::ContainerView_strategy)
+@given(instance=classLayout2Frontend_ContainerView_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::containerview_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::ContainerView)
+def test_classlayout2frontend_containerview_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_ContainerView)
 
-@given(instance=classLayout2Frontend::PageView_strategy)
+@given(instance=classLayout2Frontend_PageView_strategy)
 @settings(max_examples=50)
-def test_classlayout2frontend::pageview_instantiation(instance):
-    assert isinstance(instance, classLayout2Frontend::PageView)
-
-@given(instance=classLayout2Frontend::PageView_strategy)
-def test_classlayout2frontend::pageview_layoutType_type(instance):
-    assert isinstance(instance.layoutType, str)
+def test_classlayout2frontend_pageview_instantiation(instance):
+    assert isinstance(instance, classLayout2Frontend_PageView)
 
 
-@given(instance=classLayout2Frontend::PageView_strategy)
-def test_classlayout2frontend::pageview_layoutType_setter(instance):
+
+@given(instance=classLayout2Frontend_PageView_strategy)
+def test_classlayout2frontend_pageview_layoutType_setter(instance):
     original = instance.layoutType
     instance.layoutType = original
     assert instance.layoutType == original
 
-@given(instance=classLayout2Frontend::PageView_strategy)
-def test_classlayout2frontend::pageview_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=classLayout2Frontend::PageView_strategy)
-def test_classlayout2frontend::pageview_name_setter(instance):
+@given(instance=classLayout2Frontend_PageView_strategy)
+def test_classlayout2frontend_pageview_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

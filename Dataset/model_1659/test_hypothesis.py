@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hello123::Alias,
-    hello123::NamedElement,
-    hello123::Bar,
-    hello123::Foo,
-    hello123::Property,
+from python_code import (
+    hello123_Alias,
+    hello123_NamedElement,
+    hello123_Bar,
+    hello123_Foo,
+    hello123_Property,
     NamedElement,
-    hello123::RelatedTo,
-    hello123::Thing,
-    hello123::World,
+    hello123_RelatedTo,
+    hello123_Thing,
+    hello123_World,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_hello123::alias_is_not_abstract():
-    assert not inspect.isabstract(hello123::Alias)
+def test_hello123_alias_is_not_abstract():
+    assert not inspect.isabstract(hello123_Alias)
 
 
-def test_hello123::alias_constructor_exists():
-    assert callable(hello123::Alias.__init__)
+def test_hello123_alias_constructor_exists():
+    assert callable(hello123_Alias.__init__)
 
 
-def test_hello123::alias_constructor_args():
-    sig = inspect.signature(hello123::Alias.__init__)
+def test_hello123_alias_constructor_args():
+    sig = inspect.signature(hello123_Alias.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_hello123::alias_has_id():
-    assert hasattr(hello123::Alias, "id")
+def test_hello123_alias_has_id():
+    assert hasattr(hello123_Alias, "id")
     descriptor = None
-    for klass in hello123::Alias.__mro__:
+    for klass in hello123_Alias.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -47,23 +47,23 @@ def test_hello123::alias_has_id():
 
 
 
-def test_hello123::namedelement_is_not_abstract():
-    assert not inspect.isabstract(hello123::NamedElement)
+def test_hello123_namedelement_is_not_abstract():
+    assert not inspect.isabstract(hello123_NamedElement)
 
 
-def test_hello123::namedelement_constructor_exists():
-    assert callable(hello123::NamedElement.__init__)
+def test_hello123_namedelement_constructor_exists():
+    assert callable(hello123_NamedElement.__init__)
 
 
-def test_hello123::namedelement_constructor_args():
-    sig = inspect.signature(hello123::NamedElement.__init__)
+def test_hello123_namedelement_constructor_args():
+    sig = inspect.signature(hello123_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hello123::namedelement_has_name():
-    assert hasattr(hello123::NamedElement, "name")
+def test_hello123_namedelement_has_name():
+    assert hasattr(hello123_NamedElement, "name")
     descriptor = None
-    for klass in hello123::NamedElement.__mro__:
+    for klass in hello123_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -71,23 +71,23 @@ def test_hello123::namedelement_has_name():
 
 
 
-def test_hello123::bar_is_not_abstract():
-    assert not inspect.isabstract(hello123::Bar)
+def test_hello123_bar_is_not_abstract():
+    assert not inspect.isabstract(hello123_Bar)
 
 
-def test_hello123::bar_constructor_exists():
-    assert callable(hello123::Bar.__init__)
+def test_hello123_bar_constructor_exists():
+    assert callable(hello123_Bar.__init__)
 
 
-def test_hello123::bar_constructor_args():
-    sig = inspect.signature(hello123::Bar.__init__)
+def test_hello123_bar_constructor_args():
+    sig = inspect.signature(hello123_Bar.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_hello123::bar_has_id():
-    assert hasattr(hello123::Bar, "id")
+def test_hello123_bar_has_id():
+    assert hasattr(hello123_Bar, "id")
     descriptor = None
-    for klass in hello123::Bar.__mro__:
+    for klass in hello123_Bar.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -95,23 +95,23 @@ def test_hello123::bar_has_id():
 
 
 
-def test_hello123::foo_is_not_abstract():
-    assert not inspect.isabstract(hello123::Foo)
+def test_hello123_foo_is_not_abstract():
+    assert not inspect.isabstract(hello123_Foo)
 
 
-def test_hello123::foo_constructor_exists():
-    assert callable(hello123::Foo.__init__)
+def test_hello123_foo_constructor_exists():
+    assert callable(hello123_Foo.__init__)
 
 
-def test_hello123::foo_constructor_args():
-    sig = inspect.signature(hello123::Foo.__init__)
+def test_hello123_foo_constructor_args():
+    sig = inspect.signature(hello123_Foo.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_hello123::foo_has_id():
-    assert hasattr(hello123::Foo, "id")
+def test_hello123_foo_has_id():
+    assert hasattr(hello123_Foo, "id")
     descriptor = None
-    for klass in hello123::Foo.__mro__:
+    for klass in hello123_Foo.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -119,35 +119,35 @@ def test_hello123::foo_has_id():
 
 
 
-def test_hello123::property_is_not_abstract():
-    assert not inspect.isabstract(hello123::Property)
+def test_hello123_property_is_not_abstract():
+    assert not inspect.isabstract(hello123_Property)
 
 
-def test_hello123::property_constructor_exists():
-    assert callable(hello123::Property.__init__)
+def test_hello123_property_constructor_exists():
+    assert callable(hello123_Property.__init__)
 
 
-def test_hello123::property_constructor_args():
-    sig = inspect.signature(hello123::Property.__init__)
+def test_hello123_property_constructor_args():
+    sig = inspect.signature(hello123_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_hello123::property_has_value():
-    assert hasattr(hello123::Property, "value")
+def test_hello123_property_has_name():
+    assert hasattr(hello123_Property, "name")
     descriptor = None
-    for klass in hello123::Property.__mro__:
+    for klass in hello123_Property.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hello123_property_has_value():
+    assert hasattr(hello123_Property, "value")
+    descriptor = None
+    for klass in hello123_Property.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hello123::property_has_name():
-    assert hasattr(hello123::Property, "name")
-    descriptor = None
-    for klass in hello123::Property.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -167,23 +167,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_hello123::relatedto_is_not_abstract():
-    assert not inspect.isabstract(hello123::RelatedTo)
+def test_hello123_relatedto_is_not_abstract():
+    assert not inspect.isabstract(hello123_RelatedTo)
 
 
-def test_hello123::relatedto_constructor_exists():
-    assert callable(hello123::RelatedTo.__init__)
+def test_hello123_relatedto_constructor_exists():
+    assert callable(hello123_RelatedTo.__init__)
 
 
-def test_hello123::relatedto_constructor_args():
-    sig = inspect.signature(hello123::RelatedTo.__init__)
+def test_hello123_relatedto_constructor_args():
+    sig = inspect.signature(hello123_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_hello123::relatedto_has_since():
-    assert hasattr(hello123::RelatedTo, "since")
+def test_hello123_relatedto_has_since():
+    assert hasattr(hello123_RelatedTo, "since")
     descriptor = None
-    for klass in hello123::RelatedTo.__mro__:
+    for klass in hello123_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -191,23 +191,23 @@ def test_hello123::relatedto_has_since():
 
 
 
-def test_hello123::thing_is_not_abstract():
-    assert not inspect.isabstract(hello123::Thing)
+def test_hello123_thing_is_not_abstract():
+    assert not inspect.isabstract(hello123_Thing)
 
 
-def test_hello123::thing_constructor_exists():
-    assert callable(hello123::Thing.__init__)
+def test_hello123_thing_constructor_exists():
+    assert callable(hello123_Thing.__init__)
 
 
-def test_hello123::thing_constructor_args():
-    sig = inspect.signature(hello123::Thing.__init__)
+def test_hello123_thing_constructor_args():
+    sig = inspect.signature(hello123_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_hello123::thing_has_id():
-    assert hasattr(hello123::Thing, "id")
+def test_hello123_thing_has_id():
+    assert hasattr(hello123_Thing, "id")
     descriptor = None
-    for klass in hello123::Thing.__mro__:
+    for klass in hello123_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -215,16 +215,16 @@ def test_hello123::thing_has_id():
 
 
 
-def test_hello123::world_is_not_abstract():
-    assert not inspect.isabstract(hello123::World)
+def test_hello123_world_is_not_abstract():
+    assert not inspect.isabstract(hello123_World)
 
 
-def test_hello123::world_constructor_exists():
-    assert callable(hello123::World.__init__)
+def test_hello123_world_constructor_exists():
+    assert callable(hello123_World.__init__)
 
 
-def test_hello123::world_constructor_args():
-    sig = inspect.signature(hello123::World.__init__)
+def test_hello123_world_constructor_args():
+    sig = inspect.signature(hello123_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,179 +239,155 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hello123::Alias_strategy = st.builds(
-    hello123::Alias,
+hello123_Alias_strategy = st.builds(
+    hello123_Alias,
     id=
         safe_text
 )
-hello123::NamedElement_strategy = st.builds(
-    hello123::NamedElement,
+hello123_NamedElement_strategy = st.builds(
+    hello123_NamedElement,
     name=
         safe_text
 )
-hello123::Bar_strategy = st.builds(
-    hello123::Bar,
+hello123_Bar_strategy = st.builds(
+    hello123_Bar,
     id=
         safe_text
 )
-hello123::Foo_strategy = st.builds(
-    hello123::Foo,
+hello123_Foo_strategy = st.builds(
+    hello123_Foo,
     id=
         safe_text
 )
-hello123::Property_strategy = st.builds(
-    hello123::Property,
-    value=
+hello123_Property_strategy = st.builds(
+    hello123_Property,
+    name=
         safe_text,
-    name=
+    value=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-hello123::RelatedTo_strategy = st.builds(
-    hello123::RelatedTo,
+hello123_RelatedTo_strategy = st.builds(
+    hello123_RelatedTo,
     since=
         safe_text
 )
-hello123::Thing_strategy = st.builds(
-    hello123::Thing,
+hello123_Thing_strategy = st.builds(
+    hello123_Thing,
     id=
         st.integers()
 )
-hello123::World_strategy = st.builds(
-    hello123::World,
+hello123_World_strategy = st.builds(
+    hello123_World,
 )
 
-@given(instance=hello123::Alias_strategy)
+@given(instance=hello123_Alias_strategy)
 @settings(max_examples=50)
-def test_hello123::alias_instantiation(instance):
-    assert isinstance(instance, hello123::Alias)
-
-@given(instance=hello123::Alias_strategy)
-def test_hello123::alias_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_hello123_alias_instantiation(instance):
+    assert isinstance(instance, hello123_Alias)
 
 
-@given(instance=hello123::Alias_strategy)
-def test_hello123::alias_id_setter(instance):
+
+@given(instance=hello123_Alias_strategy)
+def test_hello123_alias_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=hello123::NamedElement_strategy)
+@given(instance=hello123_NamedElement_strategy)
 @settings(max_examples=50)
-def test_hello123::namedelement_instantiation(instance):
-    assert isinstance(instance, hello123::NamedElement)
-
-@given(instance=hello123::NamedElement_strategy)
-def test_hello123::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hello123_namedelement_instantiation(instance):
+    assert isinstance(instance, hello123_NamedElement)
 
 
-@given(instance=hello123::NamedElement_strategy)
-def test_hello123::namedelement_name_setter(instance):
+
+@given(instance=hello123_NamedElement_strategy)
+def test_hello123_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hello123::Bar_strategy)
+@given(instance=hello123_Bar_strategy)
 @settings(max_examples=50)
-def test_hello123::bar_instantiation(instance):
-    assert isinstance(instance, hello123::Bar)
-
-@given(instance=hello123::Bar_strategy)
-def test_hello123::bar_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_hello123_bar_instantiation(instance):
+    assert isinstance(instance, hello123_Bar)
 
 
-@given(instance=hello123::Bar_strategy)
-def test_hello123::bar_id_setter(instance):
+
+@given(instance=hello123_Bar_strategy)
+def test_hello123_bar_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=hello123::Foo_strategy)
+@given(instance=hello123_Foo_strategy)
 @settings(max_examples=50)
-def test_hello123::foo_instantiation(instance):
-    assert isinstance(instance, hello123::Foo)
-
-@given(instance=hello123::Foo_strategy)
-def test_hello123::foo_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_hello123_foo_instantiation(instance):
+    assert isinstance(instance, hello123_Foo)
 
 
-@given(instance=hello123::Foo_strategy)
-def test_hello123::foo_id_setter(instance):
+
+@given(instance=hello123_Foo_strategy)
+def test_hello123_foo_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=hello123::Property_strategy)
+@given(instance=hello123_Property_strategy)
 @settings(max_examples=50)
-def test_hello123::property_instantiation(instance):
-    assert isinstance(instance, hello123::Property)
-
-@given(instance=hello123::Property_strategy)
-def test_hello123::property_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_hello123_property_instantiation(instance):
+    assert isinstance(instance, hello123_Property)
 
 
-@given(instance=hello123::Property_strategy)
-def test_hello123::property_value_setter(instance):
+
+@given(instance=hello123_Property_strategy)
+def test_hello123_property_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=hello123_Property_strategy)
+def test_hello123_property_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=hello123::Property_strategy)
-def test_hello123::property_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=hello123::Property_strategy)
-def test_hello123::property_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=hello123::RelatedTo_strategy)
+@given(instance=hello123_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_hello123::relatedto_instantiation(instance):
-    assert isinstance(instance, hello123::RelatedTo)
-
-@given(instance=hello123::RelatedTo_strategy)
-def test_hello123::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_hello123_relatedto_instantiation(instance):
+    assert isinstance(instance, hello123_RelatedTo)
 
 
-@given(instance=hello123::RelatedTo_strategy)
-def test_hello123::relatedto_since_setter(instance):
+
+@given(instance=hello123_RelatedTo_strategy)
+def test_hello123_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=hello123::Thing_strategy)
+@given(instance=hello123_Thing_strategy)
 @settings(max_examples=50)
-def test_hello123::thing_instantiation(instance):
-    assert isinstance(instance, hello123::Thing)
-
-@given(instance=hello123::Thing_strategy)
-def test_hello123::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_hello123_thing_instantiation(instance):
+    assert isinstance(instance, hello123_Thing)
 
 
-@given(instance=hello123::Thing_strategy)
-def test_hello123::thing_id_setter(instance):
+
+@given(instance=hello123_Thing_strategy)
+def test_hello123_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=hello123::World_strategy)
+@given(instance=hello123_World_strategy)
 @settings(max_examples=50)
-def test_hello123::world_instantiation(instance):
-    assert isinstance(instance, hello123::World)
+def test_hello123_world_instantiation(instance):
+    assert isinstance(instance, hello123_World)

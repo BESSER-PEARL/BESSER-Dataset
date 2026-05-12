@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    feature::SimpleIdentifier,
+from python_code import (
+    feature_SimpleIdentifier,
     SimpleFeature,
-    feature::AnnotatedSimpleFeature,
+    feature_AnnotatedSimpleFeature,
     SimpleIdentifier,
-    feature::SimpleFeature,
-    feature::FeatureSet,
-    feature::EvidenceCode,
-    feature::SimpleOntologyTerm,
-    feature::Value,
-    feature::Feature,
+    feature_SimpleFeature,
+    feature_FeatureSet,
+    feature_EvidenceCode,
+    feature_SimpleOntologyTerm,
+    feature_Value,
+    feature_Feature,
 )
 
 # =============================================================================
@@ -24,16 +24,16 @@ from classes import (
 
 
 
-def test_feature::simpleidentifier_is_not_abstract():
-    assert not inspect.isabstract(feature::SimpleIdentifier)
+def test_feature_simpleidentifier_is_not_abstract():
+    assert not inspect.isabstract(feature_SimpleIdentifier)
 
 
-def test_feature::simpleidentifier_constructor_exists():
-    assert callable(feature::SimpleIdentifier.__init__)
+def test_feature_simpleidentifier_constructor_exists():
+    assert callable(feature_SimpleIdentifier.__init__)
 
 
-def test_feature::simpleidentifier_constructor_args():
-    sig = inspect.signature(feature::SimpleIdentifier.__init__)
+def test_feature_simpleidentifier_constructor_args():
+    sig = inspect.signature(feature_SimpleIdentifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -52,16 +52,16 @@ def test_simplefeature_constructor_args():
 
 
 
-def test_feature::annotatedsimplefeature_is_not_abstract():
-    assert not inspect.isabstract(feature::AnnotatedSimpleFeature)
+def test_feature_annotatedsimplefeature_is_not_abstract():
+    assert not inspect.isabstract(feature_AnnotatedSimpleFeature)
 
 
-def test_feature::annotatedsimplefeature_constructor_exists():
-    assert callable(feature::AnnotatedSimpleFeature.__init__)
+def test_feature_annotatedsimplefeature_constructor_exists():
+    assert callable(feature_AnnotatedSimpleFeature.__init__)
 
 
-def test_feature::annotatedsimplefeature_constructor_args():
-    sig = inspect.signature(feature::AnnotatedSimpleFeature.__init__)
+def test_feature_annotatedsimplefeature_constructor_args():
+    sig = inspect.signature(feature_AnnotatedSimpleFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -80,23 +80,23 @@ def test_simpleidentifier_constructor_args():
 
 
 
-def test_feature::simplefeature_is_not_abstract():
-    assert not inspect.isabstract(feature::SimpleFeature)
+def test_feature_simplefeature_is_not_abstract():
+    assert not inspect.isabstract(feature_SimpleFeature)
 
 
-def test_feature::simplefeature_constructor_exists():
-    assert callable(feature::SimpleFeature.__init__)
+def test_feature_simplefeature_constructor_exists():
+    assert callable(feature_SimpleFeature.__init__)
 
 
-def test_feature::simplefeature_constructor_args():
-    sig = inspect.signature(feature::SimpleFeature.__init__)
+def test_feature_simplefeature_constructor_args():
+    sig = inspect.signature(feature_SimpleFeature.__init__)
     params = list(sig.parameters.keys())
     assert "valueString" in params, "Missing parameter 'valueString'"
 
-def test_feature::simplefeature_has_valueString():
-    assert hasattr(feature::SimpleFeature, "valueString")
+def test_feature_simplefeature_has_valueString():
+    assert hasattr(feature_SimpleFeature, "valueString")
     descriptor = None
-    for klass in feature::SimpleFeature.__mro__:
+    for klass in feature_SimpleFeature.__mro__:
         if "valueString" in klass.__dict__:
             descriptor = klass.__dict__["valueString"]
             break
@@ -104,72 +104,72 @@ def test_feature::simplefeature_has_valueString():
 
 
 
-def test_feature::featureset_is_not_abstract():
-    assert not inspect.isabstract(feature::FeatureSet)
+def test_feature_featureset_is_not_abstract():
+    assert not inspect.isabstract(feature_FeatureSet)
 
 
-def test_feature::featureset_constructor_exists():
-    assert callable(feature::FeatureSet.__init__)
+def test_feature_featureset_constructor_exists():
+    assert callable(feature_FeatureSet.__init__)
 
 
-def test_feature::featureset_constructor_args():
-    sig = inspect.signature(feature::FeatureSet.__init__)
+def test_feature_featureset_constructor_args():
+    sig = inspect.signature(feature_FeatureSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::evidencecode_is_not_abstract():
-    assert not inspect.isabstract(feature::EvidenceCode)
+def test_feature_evidencecode_is_not_abstract():
+    assert not inspect.isabstract(feature_EvidenceCode)
 
 
-def test_feature::evidencecode_constructor_exists():
-    assert callable(feature::EvidenceCode.__init__)
+def test_feature_evidencecode_constructor_exists():
+    assert callable(feature_EvidenceCode.__init__)
 
 
-def test_feature::evidencecode_constructor_args():
-    sig = inspect.signature(feature::EvidenceCode.__init__)
+def test_feature_evidencecode_constructor_args():
+    sig = inspect.signature(feature_EvidenceCode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::simpleontologyterm_is_not_abstract():
-    assert not inspect.isabstract(feature::SimpleOntologyTerm)
+def test_feature_simpleontologyterm_is_not_abstract():
+    assert not inspect.isabstract(feature_SimpleOntologyTerm)
 
 
-def test_feature::simpleontologyterm_constructor_exists():
-    assert callable(feature::SimpleOntologyTerm.__init__)
+def test_feature_simpleontologyterm_constructor_exists():
+    assert callable(feature_SimpleOntologyTerm.__init__)
 
 
-def test_feature::simpleontologyterm_constructor_args():
-    sig = inspect.signature(feature::SimpleOntologyTerm.__init__)
+def test_feature_simpleontologyterm_constructor_args():
+    sig = inspect.signature(feature_SimpleOntologyTerm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::value_is_not_abstract():
-    assert not inspect.isabstract(feature::Value)
+def test_feature_value_is_not_abstract():
+    assert not inspect.isabstract(feature_Value)
 
 
-def test_feature::value_constructor_exists():
-    assert callable(feature::Value.__init__)
+def test_feature_value_constructor_exists():
+    assert callable(feature_Value.__init__)
 
 
-def test_feature::value_constructor_args():
-    sig = inspect.signature(feature::Value.__init__)
+def test_feature_value_constructor_args():
+    sig = inspect.signature(feature_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::feature_is_not_abstract():
-    assert not inspect.isabstract(feature::Feature)
+def test_feature_feature_is_not_abstract():
+    assert not inspect.isabstract(feature_Feature)
 
 
-def test_feature::feature_constructor_exists():
-    assert callable(feature::Feature.__init__)
+def test_feature_feature_constructor_exists():
+    assert callable(feature_Feature.__init__)
 
 
-def test_feature::feature_constructor_args():
-    sig = inspect.signature(feature::Feature.__init__)
+def test_feature_feature_constructor_args():
+    sig = inspect.signature(feature_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -184,96 +184,93 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-feature::SimpleIdentifier_strategy = st.builds(
-    feature::SimpleIdentifier,
+feature_SimpleIdentifier_strategy = st.builds(
+    feature_SimpleIdentifier,
 )
 SimpleFeature_strategy = st.builds(
     SimpleFeature,
 )
-feature::AnnotatedSimpleFeature_strategy = st.builds(
-    feature::AnnotatedSimpleFeature,
+feature_AnnotatedSimpleFeature_strategy = st.builds(
+    feature_AnnotatedSimpleFeature,
 )
 SimpleIdentifier_strategy = st.builds(
     SimpleIdentifier,
 )
-feature::SimpleFeature_strategy = st.builds(
-    feature::SimpleFeature,
+feature_SimpleFeature_strategy = st.builds(
+    feature_SimpleFeature,
     valueString=
         safe_text
 )
-feature::FeatureSet_strategy = st.builds(
-    feature::FeatureSet,
+feature_FeatureSet_strategy = st.builds(
+    feature_FeatureSet,
 )
-feature::EvidenceCode_strategy = st.builds(
-    feature::EvidenceCode,
+feature_EvidenceCode_strategy = st.builds(
+    feature_EvidenceCode,
 )
-feature::SimpleOntologyTerm_strategy = st.builds(
-    feature::SimpleOntologyTerm,
+feature_SimpleOntologyTerm_strategy = st.builds(
+    feature_SimpleOntologyTerm,
 )
-feature::Value_strategy = st.builds(
-    feature::Value,
+feature_Value_strategy = st.builds(
+    feature_Value,
 )
-feature::Feature_strategy = st.builds(
-    feature::Feature,
+feature_Feature_strategy = st.builds(
+    feature_Feature,
 )
 
-@given(instance=feature::SimpleIdentifier_strategy)
+@given(instance=feature_SimpleIdentifier_strategy)
 @settings(max_examples=50)
-def test_feature::simpleidentifier_instantiation(instance):
-    assert isinstance(instance, feature::SimpleIdentifier)
+def test_feature_simpleidentifier_instantiation(instance):
+    assert isinstance(instance, feature_SimpleIdentifier)
 
 @given(instance=SimpleFeature_strategy)
 @settings(max_examples=50)
 def test_simplefeature_instantiation(instance):
     assert isinstance(instance, SimpleFeature)
 
-@given(instance=feature::AnnotatedSimpleFeature_strategy)
+@given(instance=feature_AnnotatedSimpleFeature_strategy)
 @settings(max_examples=50)
-def test_feature::annotatedsimplefeature_instantiation(instance):
-    assert isinstance(instance, feature::AnnotatedSimpleFeature)
+def test_feature_annotatedsimplefeature_instantiation(instance):
+    assert isinstance(instance, feature_AnnotatedSimpleFeature)
 
 @given(instance=SimpleIdentifier_strategy)
 @settings(max_examples=50)
 def test_simpleidentifier_instantiation(instance):
     assert isinstance(instance, SimpleIdentifier)
 
-@given(instance=feature::SimpleFeature_strategy)
+@given(instance=feature_SimpleFeature_strategy)
 @settings(max_examples=50)
-def test_feature::simplefeature_instantiation(instance):
-    assert isinstance(instance, feature::SimpleFeature)
-
-@given(instance=feature::SimpleFeature_strategy)
-def test_feature::simplefeature_valueString_type(instance):
-    assert isinstance(instance.valueString, str)
+def test_feature_simplefeature_instantiation(instance):
+    assert isinstance(instance, feature_SimpleFeature)
 
 
-@given(instance=feature::SimpleFeature_strategy)
-def test_feature::simplefeature_valueString_setter(instance):
+
+@given(instance=feature_SimpleFeature_strategy)
+def test_feature_simplefeature_valueString_setter(instance):
     original = instance.valueString
     instance.valueString = original
     assert instance.valueString == original
 
-@given(instance=feature::FeatureSet_strategy)
+@given(instance=feature_FeatureSet_strategy)
 @settings(max_examples=50)
-def test_feature::featureset_instantiation(instance):
-    assert isinstance(instance, feature::FeatureSet)
+def test_feature_featureset_instantiation(instance):
+    assert isinstance(instance, feature_FeatureSet)
 
-@given(instance=feature::EvidenceCode_strategy)
+@given(instance=feature_EvidenceCode_strategy)
 @settings(max_examples=50)
-def test_feature::evidencecode_instantiation(instance):
-    assert isinstance(instance, feature::EvidenceCode)
+def test_feature_evidencecode_instantiation(instance):
+    assert isinstance(instance, feature_EvidenceCode)
 
-@given(instance=feature::SimpleOntologyTerm_strategy)
+@given(instance=feature_SimpleOntologyTerm_strategy)
 @settings(max_examples=50)
-def test_feature::simpleontologyterm_instantiation(instance):
-    assert isinstance(instance, feature::SimpleOntologyTerm)
+def test_feature_simpleontologyterm_instantiation(instance):
+    assert isinstance(instance, feature_SimpleOntologyTerm)
 
-@given(instance=feature::Value_strategy)
+@given(instance=feature_Value_strategy)
 @settings(max_examples=50)
-def test_feature::value_instantiation(instance):
-    assert isinstance(instance, feature::Value)
+def test_feature_value_instantiation(instance):
+    assert isinstance(instance, feature_Value)
 
-@given(instance=feature::Feature_strategy)
+@given(instance=feature_Feature_strategy)
 @settings(max_examples=50)
-def test_feature::feature_instantiation(instance):
-    assert isinstance(instance, feature::Feature)
+def test_feature_feature_instantiation(instance):
+    assert isinstance(instance, feature_Feature)

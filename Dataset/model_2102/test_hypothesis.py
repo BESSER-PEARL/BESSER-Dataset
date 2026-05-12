@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Text,
-    SimpleTree::TreeElement,
-    SimpleTree::Node,
+    SimpleTree_TreeElement,
+    SimpleTree_Node,
     TreeElement,
-    SimpleTree::Text,
-    SimpleTree::File,
-    SimpleTree::Folder,
-    SimpleTree::Attribute,
+    SimpleTree_File,
+    SimpleTree_Folder,
+    SimpleTree_Text,
+    SimpleTree_Attribute,
 )
 
 # =============================================================================
@@ -36,33 +36,33 @@ def test_text_constructor_args():
 
 
 
-def test_simpletree::treeelement_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::TreeElement)
+def test_simpletree_treeelement_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_TreeElement)
 
 
-def test_simpletree::treeelement_constructor_exists():
-    assert callable(SimpleTree::TreeElement.__init__)
+def test_simpletree_treeelement_constructor_exists():
+    assert callable(SimpleTree_TreeElement.__init__)
 
 
-def test_simpletree::treeelement_constructor_args():
-    sig = inspect.signature(SimpleTree::TreeElement.__init__)
+def test_simpletree_treeelement_constructor_args():
+    sig = inspect.signature(SimpleTree_TreeElement.__init__)
     params = list(sig.parameters.keys())
     assert "index" in params, "Missing parameter 'index'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpletree::treeelement_has_index():
-    assert hasattr(SimpleTree::TreeElement, "index")
+def test_simpletree_treeelement_has_index():
+    assert hasattr(SimpleTree_TreeElement, "index")
     descriptor = None
-    for klass in SimpleTree::TreeElement.__mro__:
+    for klass in SimpleTree_TreeElement.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpletree::treeelement_has_name():
-    assert hasattr(SimpleTree::TreeElement, "name")
+def test_simpletree_treeelement_has_name():
+    assert hasattr(SimpleTree_TreeElement, "name")
     descriptor = None
-    for klass in SimpleTree::TreeElement.__mro__:
+    for klass in SimpleTree_TreeElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -70,55 +70,55 @@ def test_simpletree::treeelement_has_name():
 
 
 
-def test_simpletree::node_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::Node)
+def test_simpletree_node_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_Node)
 
 
-def test_simpletree::node_constructor_exists():
-    assert callable(SimpleTree::Node.__init__)
+def test_simpletree_node_constructor_exists():
+    assert callable(SimpleTree_Node.__init__)
 
 
-def test_simpletree::node_constructor_args():
-    sig = inspect.signature(SimpleTree::Node.__init__)
+def test_simpletree_node_constructor_args():
+    sig = inspect.signature(SimpleTree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "stopLineIndex" in params, "Missing parameter 'stopLineIndex'"
+    assert "startIndex" in params, "Missing parameter 'startIndex'"
     assert "startLineIndex" in params, "Missing parameter 'startLineIndex'"
     assert "stopIndex" in params, "Missing parameter 'stopIndex'"
-    assert "startIndex" in params, "Missing parameter 'startIndex'"
 
-def test_simpletree::node_has_stopLineIndex():
-    assert hasattr(SimpleTree::Node, "stopLineIndex")
+def test_simpletree_node_has_stopLineIndex():
+    assert hasattr(SimpleTree_Node, "stopLineIndex")
     descriptor = None
-    for klass in SimpleTree::Node.__mro__:
+    for klass in SimpleTree_Node.__mro__:
         if "stopLineIndex" in klass.__dict__:
             descriptor = klass.__dict__["stopLineIndex"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpletree::node_has_startLineIndex():
-    assert hasattr(SimpleTree::Node, "startLineIndex")
+def test_simpletree_node_has_startIndex():
+    assert hasattr(SimpleTree_Node, "startIndex")
     descriptor = None
-    for klass in SimpleTree::Node.__mro__:
+    for klass in SimpleTree_Node.__mro__:
+        if "startIndex" in klass.__dict__:
+            descriptor = klass.__dict__["startIndex"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simpletree_node_has_startLineIndex():
+    assert hasattr(SimpleTree_Node, "startLineIndex")
+    descriptor = None
+    for klass in SimpleTree_Node.__mro__:
         if "startLineIndex" in klass.__dict__:
             descriptor = klass.__dict__["startLineIndex"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpletree::node_has_stopIndex():
-    assert hasattr(SimpleTree::Node, "stopIndex")
+def test_simpletree_node_has_stopIndex():
+    assert hasattr(SimpleTree_Node, "stopIndex")
     descriptor = None
-    for klass in SimpleTree::Node.__mro__:
+    for klass in SimpleTree_Node.__mro__:
         if "stopIndex" in klass.__dict__:
             descriptor = klass.__dict__["stopIndex"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simpletree::node_has_startIndex():
-    assert hasattr(SimpleTree::Node, "startIndex")
-    descriptor = None
-    for klass in SimpleTree::Node.__mro__:
-        if "startIndex" in klass.__dict__:
-            descriptor = klass.__dict__["startIndex"]
             break
     assert isinstance(descriptor, property)
 
@@ -138,65 +138,65 @@ def test_treeelement_constructor_args():
 
 
 
-def test_simpletree::text_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::Text)
+def test_simpletree_file_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_File)
 
 
-def test_simpletree::text_constructor_exists():
-    assert callable(SimpleTree::Text.__init__)
+def test_simpletree_file_constructor_exists():
+    assert callable(SimpleTree_File.__init__)
 
 
-def test_simpletree::text_constructor_args():
-    sig = inspect.signature(SimpleTree::Text.__init__)
+def test_simpletree_file_constructor_args():
+    sig = inspect.signature(SimpleTree_File.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletree::file_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::File)
+def test_simpletree_folder_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_Folder)
 
 
-def test_simpletree::file_constructor_exists():
-    assert callable(SimpleTree::File.__init__)
+def test_simpletree_folder_constructor_exists():
+    assert callable(SimpleTree_Folder.__init__)
 
 
-def test_simpletree::file_constructor_args():
-    sig = inspect.signature(SimpleTree::File.__init__)
+def test_simpletree_folder_constructor_args():
+    sig = inspect.signature(SimpleTree_Folder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletree::folder_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::Folder)
+def test_simpletree_text_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_Text)
 
 
-def test_simpletree::folder_constructor_exists():
-    assert callable(SimpleTree::Folder.__init__)
+def test_simpletree_text_constructor_exists():
+    assert callable(SimpleTree_Text.__init__)
 
 
-def test_simpletree::folder_constructor_args():
-    sig = inspect.signature(SimpleTree::Folder.__init__)
+def test_simpletree_text_constructor_args():
+    sig = inspect.signature(SimpleTree_Text.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletree::attribute_is_not_abstract():
-    assert not inspect.isabstract(SimpleTree::Attribute)
+def test_simpletree_attribute_is_not_abstract():
+    assert not inspect.isabstract(SimpleTree_Attribute)
 
 
-def test_simpletree::attribute_constructor_exists():
-    assert callable(SimpleTree::Attribute.__init__)
+def test_simpletree_attribute_constructor_exists():
+    assert callable(SimpleTree_Attribute.__init__)
 
 
-def test_simpletree::attribute_constructor_args():
-    sig = inspect.signature(SimpleTree::Attribute.__init__)
+def test_simpletree_attribute_constructor_args():
+    sig = inspect.signature(SimpleTree_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simpletree::attribute_has_value():
-    assert hasattr(SimpleTree::Attribute, "value")
+def test_simpletree_attribute_has_value():
+    assert hasattr(SimpleTree_Attribute, "value")
     descriptor = None
-    for klass in SimpleTree::Attribute.__mro__:
+    for klass in SimpleTree_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -217,38 +217,38 @@ safe_text = st.text(
 Text_strategy = st.builds(
     Text,
 )
-SimpleTree::TreeElement_strategy = st.builds(
-    SimpleTree::TreeElement,
+SimpleTree_TreeElement_strategy = st.builds(
+    SimpleTree_TreeElement,
     index=
         st.integers(),
     name=
         safe_text
 )
-SimpleTree::Node_strategy = st.builds(
-    SimpleTree::Node,
+SimpleTree_Node_strategy = st.builds(
+    SimpleTree_Node,
     stopLineIndex=
+        st.integers(),
+    startIndex=
         st.integers(),
     startLineIndex=
         st.integers(),
     stopIndex=
-        st.integers(),
-    startIndex=
         st.integers()
 )
 TreeElement_strategy = st.builds(
     TreeElement,
 )
-SimpleTree::Text_strategy = st.builds(
-    SimpleTree::Text,
+SimpleTree_File_strategy = st.builds(
+    SimpleTree_File,
 )
-SimpleTree::File_strategy = st.builds(
-    SimpleTree::File,
+SimpleTree_Folder_strategy = st.builds(
+    SimpleTree_Folder,
 )
-SimpleTree::Folder_strategy = st.builds(
-    SimpleTree::Folder,
+SimpleTree_Text_strategy = st.builds(
+    SimpleTree_Text,
 )
-SimpleTree::Attribute_strategy = st.builds(
-    SimpleTree::Attribute,
+SimpleTree_Attribute_strategy = st.builds(
+    SimpleTree_Attribute,
     value=
         safe_text
 )
@@ -258,114 +258,93 @@ SimpleTree::Attribute_strategy = st.builds(
 def test_text_instantiation(instance):
     assert isinstance(instance, Text)
 
-@given(instance=SimpleTree::TreeElement_strategy)
+@given(instance=SimpleTree_TreeElement_strategy)
 @settings(max_examples=50)
-def test_simpletree::treeelement_instantiation(instance):
-    assert isinstance(instance, SimpleTree::TreeElement)
-
-@given(instance=SimpleTree::TreeElement_strategy)
-def test_simpletree::treeelement_index_type(instance):
-    assert isinstance(instance.index, int)
+def test_simpletree_treeelement_instantiation(instance):
+    assert isinstance(instance, SimpleTree_TreeElement)
 
 
-@given(instance=SimpleTree::TreeElement_strategy)
-def test_simpletree::treeelement_index_setter(instance):
+
+@given(instance=SimpleTree_TreeElement_strategy)
+def test_simpletree_treeelement_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
 
-@given(instance=SimpleTree::TreeElement_strategy)
-def test_simpletree::treeelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=SimpleTree::TreeElement_strategy)
-def test_simpletree::treeelement_name_setter(instance):
+@given(instance=SimpleTree_TreeElement_strategy)
+def test_simpletree_treeelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SimpleTree::Node_strategy)
+@given(instance=SimpleTree_Node_strategy)
 @settings(max_examples=50)
-def test_simpletree::node_instantiation(instance):
-    assert isinstance(instance, SimpleTree::Node)
-
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_stopLineIndex_type(instance):
-    assert isinstance(instance.stopLineIndex, int)
+def test_simpletree_node_instantiation(instance):
+    assert isinstance(instance, SimpleTree_Node)
 
 
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_stopLineIndex_setter(instance):
+
+@given(instance=SimpleTree_Node_strategy)
+def test_simpletree_node_stopLineIndex_setter(instance):
     original = instance.stopLineIndex
     instance.stopLineIndex = original
     assert instance.stopLineIndex == original
 
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_startLineIndex_type(instance):
-    assert isinstance(instance.startLineIndex, int)
 
 
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_startLineIndex_setter(instance):
+@given(instance=SimpleTree_Node_strategy)
+def test_simpletree_node_startIndex_setter(instance):
+    original = instance.startIndex
+    instance.startIndex = original
+    assert instance.startIndex == original
+
+
+
+@given(instance=SimpleTree_Node_strategy)
+def test_simpletree_node_startLineIndex_setter(instance):
     original = instance.startLineIndex
     instance.startLineIndex = original
     assert instance.startLineIndex == original
 
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_stopIndex_type(instance):
-    assert isinstance(instance.stopIndex, int)
 
 
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_stopIndex_setter(instance):
+@given(instance=SimpleTree_Node_strategy)
+def test_simpletree_node_stopIndex_setter(instance):
     original = instance.stopIndex
     instance.stopIndex = original
     assert instance.stopIndex == original
-
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_startIndex_type(instance):
-    assert isinstance(instance.startIndex, int)
-
-
-@given(instance=SimpleTree::Node_strategy)
-def test_simpletree::node_startIndex_setter(instance):
-    original = instance.startIndex
-    instance.startIndex = original
-    assert instance.startIndex == original
 
 @given(instance=TreeElement_strategy)
 @settings(max_examples=50)
 def test_treeelement_instantiation(instance):
     assert isinstance(instance, TreeElement)
 
-@given(instance=SimpleTree::Text_strategy)
+@given(instance=SimpleTree_File_strategy)
 @settings(max_examples=50)
-def test_simpletree::text_instantiation(instance):
-    assert isinstance(instance, SimpleTree::Text)
+def test_simpletree_file_instantiation(instance):
+    assert isinstance(instance, SimpleTree_File)
 
-@given(instance=SimpleTree::File_strategy)
+@given(instance=SimpleTree_Folder_strategy)
 @settings(max_examples=50)
-def test_simpletree::file_instantiation(instance):
-    assert isinstance(instance, SimpleTree::File)
+def test_simpletree_folder_instantiation(instance):
+    assert isinstance(instance, SimpleTree_Folder)
 
-@given(instance=SimpleTree::Folder_strategy)
+@given(instance=SimpleTree_Text_strategy)
 @settings(max_examples=50)
-def test_simpletree::folder_instantiation(instance):
-    assert isinstance(instance, SimpleTree::Folder)
+def test_simpletree_text_instantiation(instance):
+    assert isinstance(instance, SimpleTree_Text)
 
-@given(instance=SimpleTree::Attribute_strategy)
+@given(instance=SimpleTree_Attribute_strategy)
 @settings(max_examples=50)
-def test_simpletree::attribute_instantiation(instance):
-    assert isinstance(instance, SimpleTree::Attribute)
-
-@given(instance=SimpleTree::Attribute_strategy)
-def test_simpletree::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_simpletree_attribute_instantiation(instance):
+    assert isinstance(instance, SimpleTree_Attribute)
 
 
-@given(instance=SimpleTree::Attribute_strategy)
-def test_simpletree::attribute_value_setter(instance):
+
+@given(instance=SimpleTree_Attribute_strategy)
+def test_simpletree_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original

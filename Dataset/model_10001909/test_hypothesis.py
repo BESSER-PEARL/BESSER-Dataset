@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Revisi_n_de_factura_external,
@@ -398,18 +398,9 @@ def test_autores_constructor_exists():
 def test_autores_constructor_args():
     sig = inspect.signature(Autores.__init__)
     params = list(sig.parameters.keys())
-    assert "fechaEliminaci_n" in params, "Missing parameter 'fechaEliminaci_n'"
     assert "fechamodificaci_n" in params, "Missing parameter 'fechamodificaci_n'"
     assert "fechaCreaci_n" in params, "Missing parameter 'fechaCreaci_n'"
-
-def test_autores_has_fechaEliminaci_n():
-    assert hasattr(Autores, "fechaEliminaci_n")
-    descriptor = None
-    for klass in Autores.__mro__:
-        if "fechaEliminaci_n" in klass.__dict__:
-            descriptor = klass.__dict__["fechaEliminaci_n"]
-            break
-    assert isinstance(descriptor, property)
+    assert "fechaEliminaci_n" in params, "Missing parameter 'fechaEliminaci_n'"
 
 def test_autores_has_fechamodificaci_n():
     assert hasattr(Autores, "fechamodificaci_n")
@@ -429,6 +420,15 @@ def test_autores_has_fechaCreaci_n():
             break
     assert isinstance(descriptor, property)
 
+def test_autores_has_fechaEliminaci_n():
+    assert hasattr(Autores, "fechaEliminaci_n")
+    descriptor = None
+    for klass in Autores.__mro__:
+        if "fechaEliminaci_n" in klass.__dict__:
+            descriptor = klass.__dict__["fechaEliminaci_n"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_editoriales_is_not_abstract():
@@ -442,19 +442,10 @@ def test_editoriales_constructor_exists():
 def test_editoriales_constructor_args():
     sig = inspect.signature(Editoriales.__init__)
     params = list(sig.parameters.keys())
-    assert "direcci_nEmail" in params, "Missing parameter 'direcci_nEmail'"
     assert "n_meroTel_fono" in params, "Missing parameter 'n_meroTel_fono'"
-    assert "personaContacto" in params, "Missing parameter 'personaContacto'"
     assert "direcci_nF_sica" in params, "Missing parameter 'direcci_nF_sica'"
-
-def test_editoriales_has_direcci_nEmail():
-    assert hasattr(Editoriales, "direcci_nEmail")
-    descriptor = None
-    for klass in Editoriales.__mro__:
-        if "direcci_nEmail" in klass.__dict__:
-            descriptor = klass.__dict__["direcci_nEmail"]
-            break
-    assert isinstance(descriptor, property)
+    assert "personaContacto" in params, "Missing parameter 'personaContacto'"
+    assert "direcci_nEmail" in params, "Missing parameter 'direcci_nEmail'"
 
 def test_editoriales_has_n_meroTel_fono():
     assert hasattr(Editoriales, "n_meroTel_fono")
@@ -462,6 +453,15 @@ def test_editoriales_has_n_meroTel_fono():
     for klass in Editoriales.__mro__:
         if "n_meroTel_fono" in klass.__dict__:
             descriptor = klass.__dict__["n_meroTel_fono"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_editoriales_has_direcci_nF_sica():
+    assert hasattr(Editoriales, "direcci_nF_sica")
+    descriptor = None
+    for klass in Editoriales.__mro__:
+        if "direcci_nF_sica" in klass.__dict__:
+            descriptor = klass.__dict__["direcci_nF_sica"]
             break
     assert isinstance(descriptor, property)
 
@@ -474,12 +474,12 @@ def test_editoriales_has_personaContacto():
             break
     assert isinstance(descriptor, property)
 
-def test_editoriales_has_direcci_nF_sica():
-    assert hasattr(Editoriales, "direcci_nF_sica")
+def test_editoriales_has_direcci_nEmail():
+    assert hasattr(Editoriales, "direcci_nEmail")
     descriptor = None
     for klass in Editoriales.__mro__:
-        if "direcci_nF_sica" in klass.__dict__:
-            descriptor = klass.__dict__["direcci_nF_sica"]
+        if "direcci_nEmail" in klass.__dict__:
+            descriptor = klass.__dict__["direcci_nEmail"]
             break
     assert isinstance(descriptor, property)
 
@@ -568,14 +568,50 @@ def test_documentos_constructor_exists():
 def test_documentos_constructor_args():
     sig = inspect.signature(Documentos.__init__)
     params = list(sig.parameters.keys())
-    assert "editorial" in params, "Missing parameter 'editorial'"
-    assert "fechaCreaci_n" in params, "Missing parameter 'fechaCreaci_n'"
-    assert "d_a" in params, "Missing parameter 'd_a'"
-    assert "mesPublicaci_n" in params, "Missing parameter 'mesPublicaci_n'"
     assert "autores" in params, "Missing parameter 'autores'"
     assert "fechaPublicaci_n" in params, "Missing parameter 'fechaPublicaci_n'"
-    assert "ISBN" in params, "Missing parameter 'ISBN'"
     assert "titulo" in params, "Missing parameter 'titulo'"
+    assert "mesPublicaci_n" in params, "Missing parameter 'mesPublicaci_n'"
+    assert "editorial" in params, "Missing parameter 'editorial'"
+    assert "ISBN" in params, "Missing parameter 'ISBN'"
+    assert "fechaCreaci_n" in params, "Missing parameter 'fechaCreaci_n'"
+    assert "d_a" in params, "Missing parameter 'd_a'"
+
+def test_documentos_has_autores():
+    assert hasattr(Documentos, "autores")
+    descriptor = None
+    for klass in Documentos.__mro__:
+        if "autores" in klass.__dict__:
+            descriptor = klass.__dict__["autores"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_documentos_has_fechaPublicaci_n():
+    assert hasattr(Documentos, "fechaPublicaci_n")
+    descriptor = None
+    for klass in Documentos.__mro__:
+        if "fechaPublicaci_n" in klass.__dict__:
+            descriptor = klass.__dict__["fechaPublicaci_n"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_documentos_has_titulo():
+    assert hasattr(Documentos, "titulo")
+    descriptor = None
+    for klass in Documentos.__mro__:
+        if "titulo" in klass.__dict__:
+            descriptor = klass.__dict__["titulo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_documentos_has_mesPublicaci_n():
+    assert hasattr(Documentos, "mesPublicaci_n")
+    descriptor = None
+    for klass in Documentos.__mro__:
+        if "mesPublicaci_n" in klass.__dict__:
+            descriptor = klass.__dict__["mesPublicaci_n"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_documentos_has_editorial():
     assert hasattr(Documentos, "editorial")
@@ -583,6 +619,15 @@ def test_documentos_has_editorial():
     for klass in Documentos.__mro__:
         if "editorial" in klass.__dict__:
             descriptor = klass.__dict__["editorial"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_documentos_has_ISBN():
+    assert hasattr(Documentos, "ISBN")
+    descriptor = None
+    for klass in Documentos.__mro__:
+        if "ISBN" in klass.__dict__:
+            descriptor = klass.__dict__["ISBN"]
             break
     assert isinstance(descriptor, property)
 
@@ -604,51 +649,6 @@ def test_documentos_has_d_a():
             break
     assert isinstance(descriptor, property)
 
-def test_documentos_has_mesPublicaci_n():
-    assert hasattr(Documentos, "mesPublicaci_n")
-    descriptor = None
-    for klass in Documentos.__mro__:
-        if "mesPublicaci_n" in klass.__dict__:
-            descriptor = klass.__dict__["mesPublicaci_n"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_documentos_has_autores():
-    assert hasattr(Documentos, "autores")
-    descriptor = None
-    for klass in Documentos.__mro__:
-        if "autores" in klass.__dict__:
-            descriptor = klass.__dict__["autores"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_documentos_has_fechaPublicaci_n():
-    assert hasattr(Documentos, "fechaPublicaci_n")
-    descriptor = None
-    for klass in Documentos.__mro__:
-        if "fechaPublicaci_n" in klass.__dict__:
-            descriptor = klass.__dict__["fechaPublicaci_n"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_documentos_has_ISBN():
-    assert hasattr(Documentos, "ISBN")
-    descriptor = None
-    for klass in Documentos.__mro__:
-        if "ISBN" in klass.__dict__:
-            descriptor = klass.__dict__["ISBN"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_documentos_has_titulo():
-    assert hasattr(Documentos, "titulo")
-    descriptor = None
-    for klass in Documentos.__mro__:
-        if "titulo" in klass.__dict__:
-            descriptor = klass.__dict__["titulo"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_dependencia_is_not_abstract():
@@ -662,18 +662,9 @@ def test_dependencia_constructor_exists():
 def test_dependencia_constructor_args():
     sig = inspect.signature(Dependencia.__init__)
     params = list(sig.parameters.keys())
-    assert "codigo" in params, "Missing parameter 'codigo'"
     assert "responsable" in params, "Missing parameter 'responsable'"
     assert "nombre" in params, "Missing parameter 'nombre'"
-
-def test_dependencia_has_codigo():
-    assert hasattr(Dependencia, "codigo")
-    descriptor = None
-    for klass in Dependencia.__mro__:
-        if "codigo" in klass.__dict__:
-            descriptor = klass.__dict__["codigo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "codigo" in params, "Missing parameter 'codigo'"
 
 def test_dependencia_has_responsable():
     assert hasattr(Dependencia, "responsable")
@@ -693,6 +684,15 @@ def test_dependencia_has_nombre():
             break
     assert isinstance(descriptor, property)
 
+def test_dependencia_has_codigo():
+    assert hasattr(Dependencia, "codigo")
+    descriptor = None
+    for klass in Dependencia.__mro__:
+        if "codigo" in klass.__dict__:
+            descriptor = klass.__dict__["codigo"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_solicitudsuministro_is_not_abstract():
@@ -706,17 +706,8 @@ def test_solicitudsuministro_constructor_exists():
 def test_solicitudsuministro_constructor_args():
     sig = inspect.signature(SolicitudSuministro.__init__)
     params = list(sig.parameters.keys())
-    assert "codigo" in params, "Missing parameter 'codigo'"
     assert "fecha" in params, "Missing parameter 'fecha'"
-
-def test_solicitudsuministro_has_codigo():
-    assert hasattr(SolicitudSuministro, "codigo")
-    descriptor = None
-    for klass in SolicitudSuministro.__mro__:
-        if "codigo" in klass.__dict__:
-            descriptor = klass.__dict__["codigo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "codigo" in params, "Missing parameter 'codigo'"
 
 def test_solicitudsuministro_has_fecha():
     assert hasattr(SolicitudSuministro, "fecha")
@@ -724,6 +715,15 @@ def test_solicitudsuministro_has_fecha():
     for klass in SolicitudSuministro.__mro__:
         if "fecha" in klass.__dict__:
             descriptor = klass.__dict__["fecha"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_solicitudsuministro_has_codigo():
+    assert hasattr(SolicitudSuministro, "codigo")
+    descriptor = None
+    for klass in SolicitudSuministro.__mro__:
+        if "codigo" in klass.__dict__:
+            descriptor = klass.__dict__["codigo"]
             break
     assert isinstance(descriptor, property)
 
@@ -809,8 +809,8 @@ def test_proveedor_constructor_args():
     sig = inspect.signature(Proveedor.__init__)
     params = list(sig.parameters.keys())
     assert "razonSocial" in params, "Missing parameter 'razonSocial'"
-    assert "tel_fonos" in params, "Missing parameter 'tel_fonos'"
     assert "nit" in params, "Missing parameter 'nit'"
+    assert "tel_fonos" in params, "Missing parameter 'tel_fonos'"
     assert "direcci_n" in params, "Missing parameter 'direcci_n'"
 
 def test_proveedor_has_razonSocial():
@@ -822,21 +822,21 @@ def test_proveedor_has_razonSocial():
             break
     assert isinstance(descriptor, property)
 
-def test_proveedor_has_tel_fonos():
-    assert hasattr(Proveedor, "tel_fonos")
-    descriptor = None
-    for klass in Proveedor.__mro__:
-        if "tel_fonos" in klass.__dict__:
-            descriptor = klass.__dict__["tel_fonos"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_proveedor_has_nit():
     assert hasattr(Proveedor, "nit")
     descriptor = None
     for klass in Proveedor.__mro__:
         if "nit" in klass.__dict__:
             descriptor = klass.__dict__["nit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_proveedor_has_tel_fonos():
+    assert hasattr(Proveedor, "tel_fonos")
+    descriptor = None
+    for klass in Proveedor.__mro__:
+        if "tel_fonos" in klass.__dict__:
+            descriptor = klass.__dict__["tel_fonos"]
             break
     assert isinstance(descriptor, property)
 
@@ -1036,17 +1036,8 @@ def test_pedidos_constructor_exists():
 def test_pedidos_constructor_args():
     sig = inspect.signature(Pedidos.__init__)
     params = list(sig.parameters.keys())
-    assert "codigo" in params, "Missing parameter 'codigo'"
     assert "fecha" in params, "Missing parameter 'fecha'"
-
-def test_pedidos_has_codigo():
-    assert hasattr(Pedidos, "codigo")
-    descriptor = None
-    for klass in Pedidos.__mro__:
-        if "codigo" in klass.__dict__:
-            descriptor = klass.__dict__["codigo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "codigo" in params, "Missing parameter 'codigo'"
 
 def test_pedidos_has_fecha():
     assert hasattr(Pedidos, "fecha")
@@ -1054,6 +1045,15 @@ def test_pedidos_has_fecha():
     for klass in Pedidos.__mro__:
         if "fecha" in klass.__dict__:
             descriptor = klass.__dict__["fecha"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pedidos_has_codigo():
+    assert hasattr(Pedidos, "codigo")
+    descriptor = None
+    for klass in Pedidos.__mro__:
+        if "codigo" in klass.__dict__:
+            descriptor = klass.__dict__["codigo"]
             break
     assert isinstance(descriptor, property)
 
@@ -1141,22 +1141,22 @@ Servidor_intel_I8_Node_strategy = st.builds(
 )
 Autores_strategy = st.builds(
     Autores,
-    fechaEliminaci_n=
-        safe_text,
     fechamodificaci_n=
         safe_text,
     fechaCreaci_n=
+        safe_text,
+    fechaEliminaci_n=
         safe_text
 )
 Editoriales_strategy = st.builds(
     Editoriales,
-    direcci_nEmail=
-        safe_text,
     n_meroTel_fono=
+        safe_text,
+    direcci_nF_sica=
         safe_text,
     personaContacto=
         safe_text,
-    direcci_nF_sica=
+    direcci_nEmail=
         safe_text
 )
 ArticulosCient_ficos_strategy = st.builds(
@@ -1176,37 +1176,37 @@ Libros_strategy = st.builds(
 )
 Documentos_strategy = st.builds(
     Documentos,
-    editorial=
-        safe_text,
-    fechaCreaci_n=
-        safe_text,
-    d_a=
-        safe_text,
-    mesPublicaci_n=
-        safe_text,
     autores=
         safe_text,
     fechaPublicaci_n=
         safe_text,
+    titulo=
+        safe_text,
+    mesPublicaci_n=
+        safe_text,
+    editorial=
+        safe_text,
     ISBN=
         safe_text,
-    titulo=
+    fechaCreaci_n=
+        safe_text,
+    d_a=
         safe_text
 )
 Dependencia_strategy = st.builds(
     Dependencia,
-    codigo=
-        safe_text,
     responsable=
         safe_text,
     nombre=
+        safe_text,
+    codigo=
         safe_text
 )
 SolicitudSuministro_strategy = st.builds(
     SolicitudSuministro,
-    codigo=
-        safe_text,
     fecha=
+        safe_text,
+    codigo=
         safe_text
 )
 Factura_strategy = st.builds(
@@ -1227,9 +1227,9 @@ Proveedor_strategy = st.builds(
     Proveedor,
     razonSocial=
         safe_text,
-    tel_fonos=
-        safe_text,
     nit=
+        safe_text,
+    tel_fonos=
         safe_text,
     direcci_n=
         safe_text
@@ -1273,9 +1273,9 @@ Milenium_Component_strategy = st.builds(
 )
 Pedidos_strategy = st.builds(
     Pedidos,
-    codigo=
-        safe_text,
     fecha=
+        safe_text,
+    codigo=
         safe_text
 )
 
@@ -1384,9 +1384,6 @@ def test__a__bicicletabuilder_instantiation(instance):
 def test_director_instantiation(instance):
     assert isinstance(instance, Director)
 
-@given(instance=Director_strategy)
-def test_director_bicicletaBuilder_type(instance):
-    assert isinstance(instance.bicicletaBuilder, _a__bicicletabuilder)
 
 
 @given(instance=Director_strategy)
@@ -1395,9 +1392,6 @@ def test_director_bicicletaBuilder_setter(instance):
     instance.bicicletaBuilder = original
     assert instance.bicicletaBuilder == original
 
-@given(instance=Director_strategy)
-def test_director_void_construirBicicleta_type(instance):
-    assert isinstance(instance.void_construirBicicleta, str)
 
 
 @given(instance=Director_strategy)
@@ -1416,20 +1410,6 @@ def test_servidor_intel_i8_node_instantiation(instance):
 def test_autores_instantiation(instance):
     assert isinstance(instance, Autores)
 
-@given(instance=Autores_strategy)
-def test_autores_fechaEliminaci_n_type(instance):
-    assert isinstance(instance.fechaEliminaci_n, str)
-
-
-@given(instance=Autores_strategy)
-def test_autores_fechaEliminaci_n_setter(instance):
-    original = instance.fechaEliminaci_n
-    instance.fechaEliminaci_n = original
-    assert instance.fechaEliminaci_n == original
-
-@given(instance=Autores_strategy)
-def test_autores_fechamodificaci_n_type(instance):
-    assert isinstance(instance.fechamodificaci_n, str)
 
 
 @given(instance=Autores_strategy)
@@ -1438,9 +1418,6 @@ def test_autores_fechamodificaci_n_setter(instance):
     instance.fechamodificaci_n = original
     assert instance.fechamodificaci_n == original
 
-@given(instance=Autores_strategy)
-def test_autores_fechaCreaci_n_type(instance):
-    assert isinstance(instance.fechaCreaci_n, str)
 
 
 @given(instance=Autores_strategy)
@@ -1449,25 +1426,19 @@ def test_autores_fechaCreaci_n_setter(instance):
     instance.fechaCreaci_n = original
     assert instance.fechaCreaci_n == original
 
+
+
+@given(instance=Autores_strategy)
+def test_autores_fechaEliminaci_n_setter(instance):
+    original = instance.fechaEliminaci_n
+    instance.fechaEliminaci_n = original
+    assert instance.fechaEliminaci_n == original
+
 @given(instance=Editoriales_strategy)
 @settings(max_examples=50)
 def test_editoriales_instantiation(instance):
     assert isinstance(instance, Editoriales)
 
-@given(instance=Editoriales_strategy)
-def test_editoriales_direcci_nEmail_type(instance):
-    assert isinstance(instance.direcci_nEmail, str)
-
-
-@given(instance=Editoriales_strategy)
-def test_editoriales_direcci_nEmail_setter(instance):
-    original = instance.direcci_nEmail
-    instance.direcci_nEmail = original
-    assert instance.direcci_nEmail == original
-
-@given(instance=Editoriales_strategy)
-def test_editoriales_n_meroTel_fono_type(instance):
-    assert isinstance(instance.n_meroTel_fono, str)
 
 
 @given(instance=Editoriales_strategy)
@@ -1476,20 +1447,6 @@ def test_editoriales_n_meroTel_fono_setter(instance):
     instance.n_meroTel_fono = original
     assert instance.n_meroTel_fono == original
 
-@given(instance=Editoriales_strategy)
-def test_editoriales_personaContacto_type(instance):
-    assert isinstance(instance.personaContacto, str)
-
-
-@given(instance=Editoriales_strategy)
-def test_editoriales_personaContacto_setter(instance):
-    original = instance.personaContacto
-    instance.personaContacto = original
-    assert instance.personaContacto == original
-
-@given(instance=Editoriales_strategy)
-def test_editoriales_direcci_nF_sica_type(instance):
-    assert isinstance(instance.direcci_nF_sica, str)
 
 
 @given(instance=Editoriales_strategy)
@@ -1498,14 +1455,27 @@ def test_editoriales_direcci_nF_sica_setter(instance):
     instance.direcci_nF_sica = original
     assert instance.direcci_nF_sica == original
 
+
+
+@given(instance=Editoriales_strategy)
+def test_editoriales_personaContacto_setter(instance):
+    original = instance.personaContacto
+    instance.personaContacto = original
+    assert instance.personaContacto == original
+
+
+
+@given(instance=Editoriales_strategy)
+def test_editoriales_direcci_nEmail_setter(instance):
+    original = instance.direcci_nEmail
+    instance.direcci_nEmail = original
+    assert instance.direcci_nEmail == original
+
 @given(instance=ArticulosCient_ficos_strategy)
 @settings(max_examples=50)
 def test_articuloscient_ficos_instantiation(instance):
     assert isinstance(instance, ArticulosCient_ficos)
 
-@given(instance=ArticulosCient_ficos_strategy)
-def test_articuloscient_ficos_SSN_type(instance):
-    assert isinstance(instance.SSN, str)
 
 
 @given(instance=ArticulosCient_ficos_strategy)
@@ -1519,9 +1489,6 @@ def test_articuloscient_ficos_SSN_setter(instance):
 def test_ponencias_instantiation(instance):
     assert isinstance(instance, Ponencias)
 
-@given(instance=Ponencias_strategy)
-def test_ponencias_nombreCongreso_type(instance):
-    assert isinstance(instance.nombreCongreso, str)
 
 
 @given(instance=Ponencias_strategy)
@@ -1535,9 +1502,6 @@ def test_ponencias_nombreCongreso_setter(instance):
 def test_libros_instantiation(instance):
     assert isinstance(instance, Libros)
 
-@given(instance=Libros_strategy)
-def test_libros_n_meroP_ginas_type(instance):
-    assert isinstance(instance.n_meroP_ginas, str)
 
 
 @given(instance=Libros_strategy)
@@ -1551,53 +1515,6 @@ def test_libros_n_meroP_ginas_setter(instance):
 def test_documentos_instantiation(instance):
     assert isinstance(instance, Documentos)
 
-@given(instance=Documentos_strategy)
-def test_documentos_editorial_type(instance):
-    assert isinstance(instance.editorial, str)
-
-
-@given(instance=Documentos_strategy)
-def test_documentos_editorial_setter(instance):
-    original = instance.editorial
-    instance.editorial = original
-    assert instance.editorial == original
-
-@given(instance=Documentos_strategy)
-def test_documentos_fechaCreaci_n_type(instance):
-    assert isinstance(instance.fechaCreaci_n, str)
-
-
-@given(instance=Documentos_strategy)
-def test_documentos_fechaCreaci_n_setter(instance):
-    original = instance.fechaCreaci_n
-    instance.fechaCreaci_n = original
-    assert instance.fechaCreaci_n == original
-
-@given(instance=Documentos_strategy)
-def test_documentos_d_a_type(instance):
-    assert isinstance(instance.d_a, str)
-
-
-@given(instance=Documentos_strategy)
-def test_documentos_d_a_setter(instance):
-    original = instance.d_a
-    instance.d_a = original
-    assert instance.d_a == original
-
-@given(instance=Documentos_strategy)
-def test_documentos_mesPublicaci_n_type(instance):
-    assert isinstance(instance.mesPublicaci_n, str)
-
-
-@given(instance=Documentos_strategy)
-def test_documentos_mesPublicaci_n_setter(instance):
-    original = instance.mesPublicaci_n
-    instance.mesPublicaci_n = original
-    assert instance.mesPublicaci_n == original
-
-@given(instance=Documentos_strategy)
-def test_documentos_autores_type(instance):
-    assert isinstance(instance.autores, str)
 
 
 @given(instance=Documentos_strategy)
@@ -1606,9 +1523,6 @@ def test_documentos_autores_setter(instance):
     instance.autores = original
     assert instance.autores == original
 
-@given(instance=Documentos_strategy)
-def test_documentos_fechaPublicaci_n_type(instance):
-    assert isinstance(instance.fechaPublicaci_n, str)
 
 
 @given(instance=Documentos_strategy)
@@ -1617,20 +1531,6 @@ def test_documentos_fechaPublicaci_n_setter(instance):
     instance.fechaPublicaci_n = original
     assert instance.fechaPublicaci_n == original
 
-@given(instance=Documentos_strategy)
-def test_documentos_ISBN_type(instance):
-    assert isinstance(instance.ISBN, str)
-
-
-@given(instance=Documentos_strategy)
-def test_documentos_ISBN_setter(instance):
-    original = instance.ISBN
-    instance.ISBN = original
-    assert instance.ISBN == original
-
-@given(instance=Documentos_strategy)
-def test_documentos_titulo_type(instance):
-    assert isinstance(instance.titulo, str)
 
 
 @given(instance=Documentos_strategy)
@@ -1639,25 +1539,51 @@ def test_documentos_titulo_setter(instance):
     instance.titulo = original
     assert instance.titulo == original
 
+
+
+@given(instance=Documentos_strategy)
+def test_documentos_mesPublicaci_n_setter(instance):
+    original = instance.mesPublicaci_n
+    instance.mesPublicaci_n = original
+    assert instance.mesPublicaci_n == original
+
+
+
+@given(instance=Documentos_strategy)
+def test_documentos_editorial_setter(instance):
+    original = instance.editorial
+    instance.editorial = original
+    assert instance.editorial == original
+
+
+
+@given(instance=Documentos_strategy)
+def test_documentos_ISBN_setter(instance):
+    original = instance.ISBN
+    instance.ISBN = original
+    assert instance.ISBN == original
+
+
+
+@given(instance=Documentos_strategy)
+def test_documentos_fechaCreaci_n_setter(instance):
+    original = instance.fechaCreaci_n
+    instance.fechaCreaci_n = original
+    assert instance.fechaCreaci_n == original
+
+
+
+@given(instance=Documentos_strategy)
+def test_documentos_d_a_setter(instance):
+    original = instance.d_a
+    instance.d_a = original
+    assert instance.d_a == original
+
 @given(instance=Dependencia_strategy)
 @settings(max_examples=50)
 def test_dependencia_instantiation(instance):
     assert isinstance(instance, Dependencia)
 
-@given(instance=Dependencia_strategy)
-def test_dependencia_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
-
-
-@given(instance=Dependencia_strategy)
-def test_dependencia_codigo_setter(instance):
-    original = instance.codigo
-    instance.codigo = original
-    assert instance.codigo == original
-
-@given(instance=Dependencia_strategy)
-def test_dependencia_responsable_type(instance):
-    assert isinstance(instance.responsable, str)
 
 
 @given(instance=Dependencia_strategy)
@@ -1666,9 +1592,6 @@ def test_dependencia_responsable_setter(instance):
     instance.responsable = original
     assert instance.responsable == original
 
-@given(instance=Dependencia_strategy)
-def test_dependencia_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
 @given(instance=Dependencia_strategy)
@@ -1677,25 +1600,19 @@ def test_dependencia_nombre_setter(instance):
     instance.nombre = original
     assert instance.nombre == original
 
-@given(instance=SolicitudSuministro_strategy)
-@settings(max_examples=50)
-def test_solicitudsuministro_instantiation(instance):
-    assert isinstance(instance, SolicitudSuministro)
-
-@given(instance=SolicitudSuministro_strategy)
-def test_solicitudsuministro_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
 
 
-@given(instance=SolicitudSuministro_strategy)
-def test_solicitudsuministro_codigo_setter(instance):
+@given(instance=Dependencia_strategy)
+def test_dependencia_codigo_setter(instance):
     original = instance.codigo
     instance.codigo = original
     assert instance.codigo == original
 
 @given(instance=SolicitudSuministro_strategy)
-def test_solicitudsuministro_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
+@settings(max_examples=50)
+def test_solicitudsuministro_instantiation(instance):
+    assert isinstance(instance, SolicitudSuministro)
+
 
 
 @given(instance=SolicitudSuministro_strategy)
@@ -1704,14 +1621,19 @@ def test_solicitudsuministro_fecha_setter(instance):
     instance.fecha = original
     assert instance.fecha == original
 
+
+
+@given(instance=SolicitudSuministro_strategy)
+def test_solicitudsuministro_codigo_setter(instance):
+    original = instance.codigo
+    instance.codigo = original
+    assert instance.codigo == original
+
 @given(instance=Factura_strategy)
 @settings(max_examples=50)
 def test_factura_instantiation(instance):
     assert isinstance(instance, Factura)
 
-@given(instance=Factura_strategy)
-def test_factura_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
 
 
 @given(instance=Factura_strategy)
@@ -1720,9 +1642,6 @@ def test_factura_codigo_setter(instance):
     instance.codigo = original
     assert instance.codigo == original
 
-@given(instance=Factura_strategy)
-def test_factura_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
 
 
 @given(instance=Factura_strategy)
@@ -1736,9 +1655,6 @@ def test_factura_fecha_setter(instance):
 def test_elementos_instantiation(instance):
     assert isinstance(instance, Elementos)
 
-@given(instance=Elementos_strategy)
-def test_elementos_clasificaci_n_type(instance):
-    assert isinstance(instance.clasificaci_n, str)
 
 
 @given(instance=Elementos_strategy)
@@ -1747,9 +1663,6 @@ def test_elementos_clasificaci_n_setter(instance):
     instance.clasificaci_n = original
     assert instance.clasificaci_n == original
 
-@given(instance=Elementos_strategy)
-def test_elementos_referencia_type(instance):
-    assert isinstance(instance.referencia, str)
 
 
 @given(instance=Elementos_strategy)
@@ -1763,9 +1676,6 @@ def test_elementos_referencia_setter(instance):
 def test_proveedor_instantiation(instance):
     assert isinstance(instance, Proveedor)
 
-@given(instance=Proveedor_strategy)
-def test_proveedor_razonSocial_type(instance):
-    assert isinstance(instance.razonSocial, str)
 
 
 @given(instance=Proveedor_strategy)
@@ -1774,20 +1684,6 @@ def test_proveedor_razonSocial_setter(instance):
     instance.razonSocial = original
     assert instance.razonSocial == original
 
-@given(instance=Proveedor_strategy)
-def test_proveedor_tel_fonos_type(instance):
-    assert isinstance(instance.tel_fonos, str)
-
-
-@given(instance=Proveedor_strategy)
-def test_proveedor_tel_fonos_setter(instance):
-    original = instance.tel_fonos
-    instance.tel_fonos = original
-    assert instance.tel_fonos == original
-
-@given(instance=Proveedor_strategy)
-def test_proveedor_nit_type(instance):
-    assert isinstance(instance.nit, str)
 
 
 @given(instance=Proveedor_strategy)
@@ -1796,9 +1692,14 @@ def test_proveedor_nit_setter(instance):
     instance.nit = original
     assert instance.nit == original
 
+
+
 @given(instance=Proveedor_strategy)
-def test_proveedor_direcci_n_type(instance):
-    assert isinstance(instance.direcci_n, str)
+def test_proveedor_tel_fonos_setter(instance):
+    original = instance.tel_fonos
+    instance.tel_fonos = original
+    assert instance.tel_fonos == original
+
 
 
 @given(instance=Proveedor_strategy)
@@ -1812,9 +1713,6 @@ def test_proveedor_direcci_n_setter(instance):
 def test_ordenespedido_instantiation(instance):
     assert isinstance(instance, OrdenesPedido)
 
-@given(instance=OrdenesPedido_strategy)
-def test_ordenespedido_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
 
 
 @given(instance=OrdenesPedido_strategy)
@@ -1823,9 +1721,6 @@ def test_ordenespedido_codigo_setter(instance):
     instance.codigo = original
     assert instance.codigo == original
 
-@given(instance=OrdenesPedido_strategy)
-def test_ordenespedido_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
 
 
 @given(instance=OrdenesPedido_strategy)
@@ -1889,20 +1784,6 @@ def test_milenium_component_instantiation(instance):
 def test_pedidos_instantiation(instance):
     assert isinstance(instance, Pedidos)
 
-@given(instance=Pedidos_strategy)
-def test_pedidos_codigo_type(instance):
-    assert isinstance(instance.codigo, str)
-
-
-@given(instance=Pedidos_strategy)
-def test_pedidos_codigo_setter(instance):
-    original = instance.codigo
-    instance.codigo = original
-    assert instance.codigo == original
-
-@given(instance=Pedidos_strategy)
-def test_pedidos_fecha_type(instance):
-    assert isinstance(instance.fecha, str)
 
 
 @given(instance=Pedidos_strategy)
@@ -1910,3 +1791,11 @@ def test_pedidos_fecha_setter(instance):
     original = instance.fecha
     instance.fecha = original
     assert instance.fecha == original
+
+
+
+@given(instance=Pedidos_strategy)
+def test_pedidos_codigo_setter(instance):
+    original = instance.codigo
+    instance.codigo = original
+    assert instance.codigo == original

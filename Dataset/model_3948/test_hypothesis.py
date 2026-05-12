@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PathExp::State,
+from python_code import (
+    PathExp_State,
     Transition,
     State,
     Element,
-    PathExp::PathExp,
-    PathExp::Element,
-    PathExp::Internal,
-    PathExp::Final,
-    PathExp::Initial,
-    PathExp::Transition,
+    PathExp_PathExp,
+    PathExp_Element,
+    PathExp_Internal,
+    PathExp_Final,
+    PathExp_Initial,
+    PathExp_Transition,
     PathExp,
 )
 
@@ -25,16 +25,16 @@ from classes import (
 
 
 
-def test_pathexp::state_is_not_abstract():
-    assert not inspect.isabstract(PathExp::State)
+def test_pathexp_state_is_not_abstract():
+    assert not inspect.isabstract(PathExp_State)
 
 
-def test_pathexp::state_constructor_exists():
-    assert callable(PathExp::State.__init__)
+def test_pathexp_state_constructor_exists():
+    assert callable(PathExp_State.__init__)
 
 
-def test_pathexp::state_constructor_args():
-    sig = inspect.signature(PathExp::State.__init__)
+def test_pathexp_state_constructor_args():
+    sig = inspect.signature(PathExp_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,37 +81,37 @@ def test_element_constructor_args():
 
 
 
-def test_pathexp::pathexp_is_not_abstract():
-    assert not inspect.isabstract(PathExp::PathExp)
+def test_pathexp_pathexp_is_not_abstract():
+    assert not inspect.isabstract(PathExp_PathExp)
 
 
-def test_pathexp::pathexp_constructor_exists():
-    assert callable(PathExp::PathExp.__init__)
+def test_pathexp_pathexp_constructor_exists():
+    assert callable(PathExp_PathExp.__init__)
 
 
-def test_pathexp::pathexp_constructor_args():
-    sig = inspect.signature(PathExp::PathExp.__init__)
+def test_pathexp_pathexp_constructor_args():
+    sig = inspect.signature(PathExp_PathExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pathexp::element_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Element)
+def test_pathexp_element_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Element)
 
 
-def test_pathexp::element_constructor_exists():
-    assert callable(PathExp::Element.__init__)
+def test_pathexp_element_constructor_exists():
+    assert callable(PathExp_Element.__init__)
 
 
-def test_pathexp::element_constructor_args():
-    sig = inspect.signature(PathExp::Element.__init__)
+def test_pathexp_element_constructor_args():
+    sig = inspect.signature(PathExp_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pathexp::element_has_name():
-    assert hasattr(PathExp::Element, "name")
+def test_pathexp_element_has_name():
+    assert hasattr(PathExp_Element, "name")
     descriptor = None
-    for klass in PathExp::Element.__mro__:
+    for klass in PathExp_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -119,23 +119,23 @@ def test_pathexp::element_has_name():
 
 
 
-def test_pathexp::internal_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Internal)
+def test_pathexp_internal_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Internal)
 
 
-def test_pathexp::internal_constructor_exists():
-    assert callable(PathExp::Internal.__init__)
+def test_pathexp_internal_constructor_exists():
+    assert callable(PathExp_Internal.__init__)
 
 
-def test_pathexp::internal_constructor_args():
-    sig = inspect.signature(PathExp::Internal.__init__)
+def test_pathexp_internal_constructor_args():
+    sig = inspect.signature(PathExp_Internal.__init__)
     params = list(sig.parameters.keys())
     assert "attr" in params, "Missing parameter 'attr'"
 
-def test_pathexp::internal_has_attr():
-    assert hasattr(PathExp::Internal, "attr")
+def test_pathexp_internal_has_attr():
+    assert hasattr(PathExp_Internal, "attr")
     descriptor = None
-    for klass in PathExp::Internal.__mro__:
+    for klass in PathExp_Internal.__mro__:
         if "attr" in klass.__dict__:
             descriptor = klass.__dict__["attr"]
             break
@@ -143,23 +143,23 @@ def test_pathexp::internal_has_attr():
 
 
 
-def test_pathexp::final_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Final)
+def test_pathexp_final_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Final)
 
 
-def test_pathexp::final_constructor_exists():
-    assert callable(PathExp::Final.__init__)
+def test_pathexp_final_constructor_exists():
+    assert callable(PathExp_Final.__init__)
 
 
-def test_pathexp::final_constructor_args():
-    sig = inspect.signature(PathExp::Final.__init__)
+def test_pathexp_final_constructor_args():
+    sig = inspect.signature(PathExp_Final.__init__)
     params = list(sig.parameters.keys())
     assert "bool_attr" in params, "Missing parameter 'bool_attr'"
 
-def test_pathexp::final_has_bool_attr():
-    assert hasattr(PathExp::Final, "bool_attr")
+def test_pathexp_final_has_bool_attr():
+    assert hasattr(PathExp_Final, "bool_attr")
     descriptor = None
-    for klass in PathExp::Final.__mro__:
+    for klass in PathExp_Final.__mro__:
         if "bool_attr" in klass.__dict__:
             descriptor = klass.__dict__["bool_attr"]
             break
@@ -167,23 +167,23 @@ def test_pathexp::final_has_bool_attr():
 
 
 
-def test_pathexp::initial_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Initial)
+def test_pathexp_initial_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Initial)
 
 
-def test_pathexp::initial_constructor_exists():
-    assert callable(PathExp::Initial.__init__)
+def test_pathexp_initial_constructor_exists():
+    assert callable(PathExp_Initial.__init__)
 
 
-def test_pathexp::initial_constructor_args():
-    sig = inspect.signature(PathExp::Initial.__init__)
+def test_pathexp_initial_constructor_args():
+    sig = inspect.signature(PathExp_Initial.__init__)
     params = list(sig.parameters.keys())
     assert "bool_attr" in params, "Missing parameter 'bool_attr'"
 
-def test_pathexp::initial_has_bool_attr():
-    assert hasattr(PathExp::Initial, "bool_attr")
+def test_pathexp_initial_has_bool_attr():
+    assert hasattr(PathExp_Initial, "bool_attr")
     descriptor = None
-    for klass in PathExp::Initial.__mro__:
+    for klass in PathExp_Initial.__mro__:
         if "bool_attr" in klass.__dict__:
             descriptor = klass.__dict__["bool_attr"]
             break
@@ -191,16 +191,16 @@ def test_pathexp::initial_has_bool_attr():
 
 
 
-def test_pathexp::transition_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Transition)
+def test_pathexp_transition_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Transition)
 
 
-def test_pathexp::transition_constructor_exists():
-    assert callable(PathExp::Transition.__init__)
+def test_pathexp_transition_constructor_exists():
+    assert callable(PathExp_Transition.__init__)
 
 
-def test_pathexp::transition_constructor_args():
-    sig = inspect.signature(PathExp::Transition.__init__)
+def test_pathexp_transition_constructor_args():
+    sig = inspect.signature(PathExp_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -229,8 +229,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PathExp::State_strategy = st.builds(
-    PathExp::State,
+PathExp_State_strategy = st.builds(
+    PathExp_State,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -241,40 +241,40 @@ State_strategy = st.builds(
 Element_strategy = st.builds(
     Element,
 )
-PathExp::PathExp_strategy = st.builds(
-    PathExp::PathExp,
+PathExp_PathExp_strategy = st.builds(
+    PathExp_PathExp,
 )
-PathExp::Element_strategy = st.builds(
-    PathExp::Element,
+PathExp_Element_strategy = st.builds(
+    PathExp_Element,
     name=
         safe_text
 )
-PathExp::Internal_strategy = st.builds(
-    PathExp::Internal,
+PathExp_Internal_strategy = st.builds(
+    PathExp_Internal,
     attr=
         st.integers()
 )
-PathExp::Final_strategy = st.builds(
-    PathExp::Final,
+PathExp_Final_strategy = st.builds(
+    PathExp_Final,
     bool_attr=
         st.booleans()
 )
-PathExp::Initial_strategy = st.builds(
-    PathExp::Initial,
+PathExp_Initial_strategy = st.builds(
+    PathExp_Initial,
     bool_attr=
         st.booleans()
 )
-PathExp::Transition_strategy = st.builds(
-    PathExp::Transition,
+PathExp_Transition_strategy = st.builds(
+    PathExp_Transition,
 )
 PathExp_strategy = st.builds(
     PathExp,
 )
 
-@given(instance=PathExp::State_strategy)
+@given(instance=PathExp_State_strategy)
 @settings(max_examples=50)
-def test_pathexp::state_instantiation(instance):
-    assert isinstance(instance, PathExp::State)
+def test_pathexp_state_instantiation(instance):
+    assert isinstance(instance, PathExp_State)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -291,79 +291,67 @@ def test_state_instantiation(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=PathExp::PathExp_strategy)
+@given(instance=PathExp_PathExp_strategy)
 @settings(max_examples=50)
-def test_pathexp::pathexp_instantiation(instance):
-    assert isinstance(instance, PathExp::PathExp)
+def test_pathexp_pathexp_instantiation(instance):
+    assert isinstance(instance, PathExp_PathExp)
 
-@given(instance=PathExp::Element_strategy)
+@given(instance=PathExp_Element_strategy)
 @settings(max_examples=50)
-def test_pathexp::element_instantiation(instance):
-    assert isinstance(instance, PathExp::Element)
-
-@given(instance=PathExp::Element_strategy)
-def test_pathexp::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pathexp_element_instantiation(instance):
+    assert isinstance(instance, PathExp_Element)
 
 
-@given(instance=PathExp::Element_strategy)
-def test_pathexp::element_name_setter(instance):
+
+@given(instance=PathExp_Element_strategy)
+def test_pathexp_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PathExp::Internal_strategy)
+@given(instance=PathExp_Internal_strategy)
 @settings(max_examples=50)
-def test_pathexp::internal_instantiation(instance):
-    assert isinstance(instance, PathExp::Internal)
-
-@given(instance=PathExp::Internal_strategy)
-def test_pathexp::internal_attr_type(instance):
-    assert isinstance(instance.attr, int)
+def test_pathexp_internal_instantiation(instance):
+    assert isinstance(instance, PathExp_Internal)
 
 
-@given(instance=PathExp::Internal_strategy)
-def test_pathexp::internal_attr_setter(instance):
+
+@given(instance=PathExp_Internal_strategy)
+def test_pathexp_internal_attr_setter(instance):
     original = instance.attr
     instance.attr = original
     assert instance.attr == original
 
-@given(instance=PathExp::Final_strategy)
+@given(instance=PathExp_Final_strategy)
 @settings(max_examples=50)
-def test_pathexp::final_instantiation(instance):
-    assert isinstance(instance, PathExp::Final)
-
-@given(instance=PathExp::Final_strategy)
-def test_pathexp::final_bool_attr_type(instance):
-    assert isinstance(instance.bool_attr, bool)
+def test_pathexp_final_instantiation(instance):
+    assert isinstance(instance, PathExp_Final)
 
 
-@given(instance=PathExp::Final_strategy)
-def test_pathexp::final_bool_attr_setter(instance):
+
+@given(instance=PathExp_Final_strategy)
+def test_pathexp_final_bool_attr_setter(instance):
     original = instance.bool_attr
     instance.bool_attr = original
     assert instance.bool_attr == original
 
-@given(instance=PathExp::Initial_strategy)
+@given(instance=PathExp_Initial_strategy)
 @settings(max_examples=50)
-def test_pathexp::initial_instantiation(instance):
-    assert isinstance(instance, PathExp::Initial)
-
-@given(instance=PathExp::Initial_strategy)
-def test_pathexp::initial_bool_attr_type(instance):
-    assert isinstance(instance.bool_attr, bool)
+def test_pathexp_initial_instantiation(instance):
+    assert isinstance(instance, PathExp_Initial)
 
 
-@given(instance=PathExp::Initial_strategy)
-def test_pathexp::initial_bool_attr_setter(instance):
+
+@given(instance=PathExp_Initial_strategy)
+def test_pathexp_initial_bool_attr_setter(instance):
     original = instance.bool_attr
     instance.bool_attr = original
     assert instance.bool_attr == original
 
-@given(instance=PathExp::Transition_strategy)
+@given(instance=PathExp_Transition_strategy)
 @settings(max_examples=50)
-def test_pathexp::transition_instantiation(instance):
-    assert isinstance(instance, PathExp::Transition)
+def test_pathexp_transition_instantiation(instance):
+    assert isinstance(instance, PathExp_Transition)
 
 @given(instance=PathExp_strategy)
 @settings(max_examples=50)

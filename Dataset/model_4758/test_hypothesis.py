@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    effbd106::ProcessNode,
-    effbd106::SequenceNode,
-    effbd106::Token,
-    effbd106::Description,
-    effbd106::Item,
-    effbd106::Port,
+from python_code import (
+    effbd106_ProcessNode,
+    effbd106_SequenceNode,
+    effbd106_Token,
+    effbd106_Description,
+    effbd106_Item,
+    effbd106_Port,
     Port,
-    effbd106::InputPort,
+    effbd106_InputPort,
     Sequence,
-    effbd106::Or,
-    effbd106::Iteration,
-    effbd106::Start,
-    effbd106::LoopExit,
-    effbd106::Final,
-    effbd106::Loop,
-    effbd106::And,
+    effbd106_LoopExit,
+    effbd106_Iteration,
+    effbd106_Start,
+    effbd106_Final,
+    effbd106_Or,
+    effbd106_Loop,
+    effbd106_And,
     ProcessNode,
     SequenceNode,
-    effbd106::Function,
-    effbd106::OutputPort,
-    effbd106::Flow,
-    effbd106::Sequence,
+    effbd106_Function,
+    effbd106_OutputPort,
+    effbd106_Flow,
+    effbd106_Sequence,
     FunctionDomain,
 )
 
@@ -37,23 +37,23 @@ from classes import (
 
 
 
-def test_effbd106::processnode_is_not_abstract():
-    assert not inspect.isabstract(effbd106::ProcessNode)
+def test_effbd106_processnode_is_not_abstract():
+    assert not inspect.isabstract(effbd106_ProcessNode)
 
 
-def test_effbd106::processnode_constructor_exists():
-    assert callable(effbd106::ProcessNode.__init__)
+def test_effbd106_processnode_constructor_exists():
+    assert callable(effbd106_ProcessNode.__init__)
 
 
-def test_effbd106::processnode_constructor_args():
-    sig = inspect.signature(effbd106::ProcessNode.__init__)
+def test_effbd106_processnode_constructor_args():
+    sig = inspect.signature(effbd106_ProcessNode.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_effbd106::processnode_has_label():
-    assert hasattr(effbd106::ProcessNode, "label")
+def test_effbd106_processnode_has_label():
+    assert hasattr(effbd106_ProcessNode, "label")
     descriptor = None
-    for klass in effbd106::ProcessNode.__mro__:
+    for klass in effbd106_ProcessNode.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -61,81 +61,81 @@ def test_effbd106::processnode_has_label():
 
 
 
-def test_effbd106::sequencenode_is_not_abstract():
-    assert not inspect.isabstract(effbd106::SequenceNode)
+def test_effbd106_sequencenode_is_not_abstract():
+    assert not inspect.isabstract(effbd106_SequenceNode)
 
 
-def test_effbd106::sequencenode_constructor_exists():
-    assert callable(effbd106::SequenceNode.__init__)
+def test_effbd106_sequencenode_constructor_exists():
+    assert callable(effbd106_SequenceNode.__init__)
 
 
-def test_effbd106::sequencenode_constructor_args():
-    sig = inspect.signature(effbd106::SequenceNode.__init__)
+def test_effbd106_sequencenode_constructor_args():
+    sig = inspect.signature(effbd106_SequenceNode.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "tMax" in params, "Missing parameter 'tMax'"
     assert "tMin" in params, "Missing parameter 'tMin'"
+    assert "tMax" in params, "Missing parameter 'tMax'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_effbd106::sequencenode_has_name():
-    assert hasattr(effbd106::SequenceNode, "name")
+def test_effbd106_sequencenode_has_tMin():
+    assert hasattr(effbd106_SequenceNode, "tMin")
     descriptor = None
-    for klass in effbd106::SequenceNode.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbd106::sequencenode_has_tMax():
-    assert hasattr(effbd106::SequenceNode, "tMax")
-    descriptor = None
-    for klass in effbd106::SequenceNode.__mro__:
-        if "tMax" in klass.__dict__:
-            descriptor = klass.__dict__["tMax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbd106::sequencenode_has_tMin():
-    assert hasattr(effbd106::SequenceNode, "tMin")
-    descriptor = None
-    for klass in effbd106::SequenceNode.__mro__:
+    for klass in effbd106_SequenceNode.__mro__:
         if "tMin" in klass.__dict__:
             descriptor = klass.__dict__["tMin"]
             break
     assert isinstance(descriptor, property)
 
+def test_effbd106_sequencenode_has_tMax():
+    assert hasattr(effbd106_SequenceNode, "tMax")
+    descriptor = None
+    for klass in effbd106_SequenceNode.__mro__:
+        if "tMax" in klass.__dict__:
+            descriptor = klass.__dict__["tMax"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_effbd106_sequencenode_has_name():
+    assert hasattr(effbd106_SequenceNode, "name")
+    descriptor = None
+    for klass in effbd106_SequenceNode.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_effbd106::token_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Token)
+
+def test_effbd106_token_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Token)
 
 
-def test_effbd106::token_constructor_exists():
-    assert callable(effbd106::Token.__init__)
+def test_effbd106_token_constructor_exists():
+    assert callable(effbd106_Token.__init__)
 
 
-def test_effbd106::token_constructor_args():
-    sig = inspect.signature(effbd106::Token.__init__)
+def test_effbd106_token_constructor_args():
+    sig = inspect.signature(effbd106_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::description_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Description)
+def test_effbd106_description_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Description)
 
 
-def test_effbd106::description_constructor_exists():
-    assert callable(effbd106::Description.__init__)
+def test_effbd106_description_constructor_exists():
+    assert callable(effbd106_Description.__init__)
 
 
-def test_effbd106::description_constructor_args():
-    sig = inspect.signature(effbd106::Description.__init__)
+def test_effbd106_description_constructor_args():
+    sig = inspect.signature(effbd106_Description.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_effbd106::description_has_content():
-    assert hasattr(effbd106::Description, "content")
+def test_effbd106_description_has_content():
+    assert hasattr(effbd106_Description, "content")
     descriptor = None
-    for klass in effbd106::Description.__mro__:
+    for klass in effbd106_Description.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -143,23 +143,23 @@ def test_effbd106::description_has_content():
 
 
 
-def test_effbd106::item_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Item)
+def test_effbd106_item_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Item)
 
 
-def test_effbd106::item_constructor_exists():
-    assert callable(effbd106::Item.__init__)
+def test_effbd106_item_constructor_exists():
+    assert callable(effbd106_Item.__init__)
 
 
-def test_effbd106::item_constructor_args():
-    sig = inspect.signature(effbd106::Item.__init__)
+def test_effbd106_item_constructor_args():
+    sig = inspect.signature(effbd106_Item.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_effbd106::item_has_name():
-    assert hasattr(effbd106::Item, "name")
+def test_effbd106_item_has_name():
+    assert hasattr(effbd106_Item, "name")
     descriptor = None
-    for klass in effbd106::Item.__mro__:
+    for klass in effbd106_Item.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -167,23 +167,23 @@ def test_effbd106::item_has_name():
 
 
 
-def test_effbd106::port_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Port)
+def test_effbd106_port_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Port)
 
 
-def test_effbd106::port_constructor_exists():
-    assert callable(effbd106::Port.__init__)
+def test_effbd106_port_constructor_exists():
+    assert callable(effbd106_Port.__init__)
 
 
-def test_effbd106::port_constructor_args():
-    sig = inspect.signature(effbd106::Port.__init__)
+def test_effbd106_port_constructor_args():
+    sig = inspect.signature(effbd106_Port.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_effbd106::port_has_id():
-    assert hasattr(effbd106::Port, "id")
+def test_effbd106_port_has_id():
+    assert hasattr(effbd106_Port, "id")
     descriptor = None
-    for klass in effbd106::Port.__mro__:
+    for klass in effbd106_Port.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -205,16 +205,16 @@ def test_port_constructor_args():
 
 
 
-def test_effbd106::inputport_is_not_abstract():
-    assert not inspect.isabstract(effbd106::InputPort)
+def test_effbd106_inputport_is_not_abstract():
+    assert not inspect.isabstract(effbd106_InputPort)
 
 
-def test_effbd106::inputport_constructor_exists():
-    assert callable(effbd106::InputPort.__init__)
+def test_effbd106_inputport_constructor_exists():
+    assert callable(effbd106_InputPort.__init__)
 
 
-def test_effbd106::inputport_constructor_args():
-    sig = inspect.signature(effbd106::InputPort.__init__)
+def test_effbd106_inputport_constructor_args():
+    sig = inspect.signature(effbd106_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -233,100 +233,100 @@ def test_sequence_constructor_args():
 
 
 
-def test_effbd106::or_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Or)
+def test_effbd106_loopexit_is_not_abstract():
+    assert not inspect.isabstract(effbd106_LoopExit)
 
 
-def test_effbd106::or_constructor_exists():
-    assert callable(effbd106::Or.__init__)
+def test_effbd106_loopexit_constructor_exists():
+    assert callable(effbd106_LoopExit.__init__)
 
 
-def test_effbd106::or_constructor_args():
-    sig = inspect.signature(effbd106::Or.__init__)
+def test_effbd106_loopexit_constructor_args():
+    sig = inspect.signature(effbd106_LoopExit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::iteration_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Iteration)
+def test_effbd106_iteration_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Iteration)
 
 
-def test_effbd106::iteration_constructor_exists():
-    assert callable(effbd106::Iteration.__init__)
+def test_effbd106_iteration_constructor_exists():
+    assert callable(effbd106_Iteration.__init__)
 
 
-def test_effbd106::iteration_constructor_args():
-    sig = inspect.signature(effbd106::Iteration.__init__)
+def test_effbd106_iteration_constructor_args():
+    sig = inspect.signature(effbd106_Iteration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::start_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Start)
+def test_effbd106_start_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Start)
 
 
-def test_effbd106::start_constructor_exists():
-    assert callable(effbd106::Start.__init__)
+def test_effbd106_start_constructor_exists():
+    assert callable(effbd106_Start.__init__)
 
 
-def test_effbd106::start_constructor_args():
-    sig = inspect.signature(effbd106::Start.__init__)
+def test_effbd106_start_constructor_args():
+    sig = inspect.signature(effbd106_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::loopexit_is_not_abstract():
-    assert not inspect.isabstract(effbd106::LoopExit)
+def test_effbd106_final_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Final)
 
 
-def test_effbd106::loopexit_constructor_exists():
-    assert callable(effbd106::LoopExit.__init__)
+def test_effbd106_final_constructor_exists():
+    assert callable(effbd106_Final.__init__)
 
 
-def test_effbd106::loopexit_constructor_args():
-    sig = inspect.signature(effbd106::LoopExit.__init__)
+def test_effbd106_final_constructor_args():
+    sig = inspect.signature(effbd106_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::final_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Final)
+def test_effbd106_or_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Or)
 
 
-def test_effbd106::final_constructor_exists():
-    assert callable(effbd106::Final.__init__)
+def test_effbd106_or_constructor_exists():
+    assert callable(effbd106_Or.__init__)
 
 
-def test_effbd106::final_constructor_args():
-    sig = inspect.signature(effbd106::Final.__init__)
+def test_effbd106_or_constructor_args():
+    sig = inspect.signature(effbd106_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::loop_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Loop)
+def test_effbd106_loop_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Loop)
 
 
-def test_effbd106::loop_constructor_exists():
-    assert callable(effbd106::Loop.__init__)
+def test_effbd106_loop_constructor_exists():
+    assert callable(effbd106_Loop.__init__)
 
 
-def test_effbd106::loop_constructor_args():
-    sig = inspect.signature(effbd106::Loop.__init__)
+def test_effbd106_loop_constructor_args():
+    sig = inspect.signature(effbd106_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::and_is_not_abstract():
-    assert not inspect.isabstract(effbd106::And)
+def test_effbd106_and_is_not_abstract():
+    assert not inspect.isabstract(effbd106_And)
 
 
-def test_effbd106::and_constructor_exists():
-    assert callable(effbd106::And.__init__)
+def test_effbd106_and_constructor_exists():
+    assert callable(effbd106_And.__init__)
 
 
-def test_effbd106::and_constructor_args():
-    sig = inspect.signature(effbd106::And.__init__)
+def test_effbd106_and_constructor_args():
+    sig = inspect.signature(effbd106_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -359,23 +359,23 @@ def test_sequencenode_constructor_args():
 
 
 
-def test_effbd106::function_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Function)
+def test_effbd106_function_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Function)
 
 
-def test_effbd106::function_constructor_exists():
-    assert callable(effbd106::Function.__init__)
+def test_effbd106_function_constructor_exists():
+    assert callable(effbd106_Function.__init__)
 
 
-def test_effbd106::function_constructor_args():
-    sig = inspect.signature(effbd106::Function.__init__)
+def test_effbd106_function_constructor_args():
+    sig = inspect.signature(effbd106_Function.__init__)
     params = list(sig.parameters.keys())
     assert "domain" in params, "Missing parameter 'domain'"
 
-def test_effbd106::function_has_domain():
-    assert hasattr(effbd106::Function, "domain")
+def test_effbd106_function_has_domain():
+    assert hasattr(effbd106_Function, "domain")
     descriptor = None
-    for klass in effbd106::Function.__mro__:
+    for klass in effbd106_Function.__mro__:
         if "domain" in klass.__dict__:
             descriptor = klass.__dict__["domain"]
             break
@@ -383,44 +383,44 @@ def test_effbd106::function_has_domain():
 
 
 
-def test_effbd106::outputport_is_not_abstract():
-    assert not inspect.isabstract(effbd106::OutputPort)
+def test_effbd106_outputport_is_not_abstract():
+    assert not inspect.isabstract(effbd106_OutputPort)
 
 
-def test_effbd106::outputport_constructor_exists():
-    assert callable(effbd106::OutputPort.__init__)
+def test_effbd106_outputport_constructor_exists():
+    assert callable(effbd106_OutputPort.__init__)
 
 
-def test_effbd106::outputport_constructor_args():
-    sig = inspect.signature(effbd106::OutputPort.__init__)
+def test_effbd106_outputport_constructor_args():
+    sig = inspect.signature(effbd106_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::flow_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Flow)
+def test_effbd106_flow_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Flow)
 
 
-def test_effbd106::flow_constructor_exists():
-    assert callable(effbd106::Flow.__init__)
+def test_effbd106_flow_constructor_exists():
+    assert callable(effbd106_Flow.__init__)
 
 
-def test_effbd106::flow_constructor_args():
-    sig = inspect.signature(effbd106::Flow.__init__)
+def test_effbd106_flow_constructor_args():
+    sig = inspect.signature(effbd106_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd106::sequence_is_not_abstract():
-    assert not inspect.isabstract(effbd106::Sequence)
+def test_effbd106_sequence_is_not_abstract():
+    assert not inspect.isabstract(effbd106_Sequence)
 
 
-def test_effbd106::sequence_constructor_exists():
-    assert callable(effbd106::Sequence.__init__)
+def test_effbd106_sequence_constructor_exists():
+    assert callable(effbd106_Sequence.__init__)
 
 
-def test_effbd106::sequence_constructor_args():
-    sig = inspect.signature(effbd106::Sequence.__init__)
+def test_effbd106_sequence_constructor_args():
+    sig = inspect.signature(effbd106_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 def test_functiondomain_exists():
@@ -451,67 +451,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-effbd106::ProcessNode_strategy = st.builds(
-    effbd106::ProcessNode,
+effbd106_ProcessNode_strategy = st.builds(
+    effbd106_ProcessNode,
     label=
         safe_text
 )
-effbd106::SequenceNode_strategy = st.builds(
-    effbd106::SequenceNode,
-    name=
-        safe_text,
+effbd106_SequenceNode_strategy = st.builds(
+    effbd106_SequenceNode,
+    tMin=
+        st.integers(),
     tMax=
         st.integers(),
-    tMin=
-        st.integers()
+    name=
+        safe_text
 )
-effbd106::Token_strategy = st.builds(
-    effbd106::Token,
+effbd106_Token_strategy = st.builds(
+    effbd106_Token,
 )
-effbd106::Description_strategy = st.builds(
-    effbd106::Description,
+effbd106_Description_strategy = st.builds(
+    effbd106_Description,
     content=
         safe_text
 )
-effbd106::Item_strategy = st.builds(
-    effbd106::Item,
+effbd106_Item_strategy = st.builds(
+    effbd106_Item,
     name=
         safe_text
 )
-effbd106::Port_strategy = st.builds(
-    effbd106::Port,
+effbd106_Port_strategy = st.builds(
+    effbd106_Port,
     id=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-effbd106::InputPort_strategy = st.builds(
-    effbd106::InputPort,
+effbd106_InputPort_strategy = st.builds(
+    effbd106_InputPort,
 )
 Sequence_strategy = st.builds(
     Sequence,
 )
-effbd106::Or_strategy = st.builds(
-    effbd106::Or,
+effbd106_LoopExit_strategy = st.builds(
+    effbd106_LoopExit,
 )
-effbd106::Iteration_strategy = st.builds(
-    effbd106::Iteration,
+effbd106_Iteration_strategy = st.builds(
+    effbd106_Iteration,
 )
-effbd106::Start_strategy = st.builds(
-    effbd106::Start,
+effbd106_Start_strategy = st.builds(
+    effbd106_Start,
 )
-effbd106::LoopExit_strategy = st.builds(
-    effbd106::LoopExit,
+effbd106_Final_strategy = st.builds(
+    effbd106_Final,
 )
-effbd106::Final_strategy = st.builds(
-    effbd106::Final,
+effbd106_Or_strategy = st.builds(
+    effbd106_Or,
 )
-effbd106::Loop_strategy = st.builds(
-    effbd106::Loop,
+effbd106_Loop_strategy = st.builds(
+    effbd106_Loop,
 )
-effbd106::And_strategy = st.builds(
-    effbd106::And,
+effbd106_And_strategy = st.builds(
+    effbd106_And,
 )
 ProcessNode_strategy = st.builds(
     ProcessNode,
@@ -519,124 +519,103 @@ ProcessNode_strategy = st.builds(
 SequenceNode_strategy = st.builds(
     SequenceNode,
 )
-effbd106::Function_strategy = st.builds(
-    effbd106::Function,
+effbd106_Function_strategy = st.builds(
+    effbd106_Function,
     domain=
         safe_text
 )
-effbd106::OutputPort_strategy = st.builds(
-    effbd106::OutputPort,
+effbd106_OutputPort_strategy = st.builds(
+    effbd106_OutputPort,
 )
-effbd106::Flow_strategy = st.builds(
-    effbd106::Flow,
+effbd106_Flow_strategy = st.builds(
+    effbd106_Flow,
 )
-effbd106::Sequence_strategy = st.builds(
-    effbd106::Sequence,
+effbd106_Sequence_strategy = st.builds(
+    effbd106_Sequence,
 )
 
-@given(instance=effbd106::ProcessNode_strategy)
+@given(instance=effbd106_ProcessNode_strategy)
 @settings(max_examples=50)
-def test_effbd106::processnode_instantiation(instance):
-    assert isinstance(instance, effbd106::ProcessNode)
-
-@given(instance=effbd106::ProcessNode_strategy)
-def test_effbd106::processnode_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_effbd106_processnode_instantiation(instance):
+    assert isinstance(instance, effbd106_ProcessNode)
 
 
-@given(instance=effbd106::ProcessNode_strategy)
-def test_effbd106::processnode_label_setter(instance):
+
+@given(instance=effbd106_ProcessNode_strategy)
+def test_effbd106_processnode_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=effbd106::SequenceNode_strategy)
+@given(instance=effbd106_SequenceNode_strategy)
 @settings(max_examples=50)
-def test_effbd106::sequencenode_instantiation(instance):
-    assert isinstance(instance, effbd106::SequenceNode)
-
-@given(instance=effbd106::SequenceNode_strategy)
-def test_effbd106::sequencenode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbd106_sequencenode_instantiation(instance):
+    assert isinstance(instance, effbd106_SequenceNode)
 
 
-@given(instance=effbd106::SequenceNode_strategy)
-def test_effbd106::sequencenode_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=effbd106::SequenceNode_strategy)
-def test_effbd106::sequencenode_tMax_type(instance):
-    assert isinstance(instance.tMax, int)
-
-
-@given(instance=effbd106::SequenceNode_strategy)
-def test_effbd106::sequencenode_tMax_setter(instance):
-    original = instance.tMax
-    instance.tMax = original
-    assert instance.tMax == original
-
-@given(instance=effbd106::SequenceNode_strategy)
-def test_effbd106::sequencenode_tMin_type(instance):
-    assert isinstance(instance.tMin, int)
-
-
-@given(instance=effbd106::SequenceNode_strategy)
-def test_effbd106::sequencenode_tMin_setter(instance):
+@given(instance=effbd106_SequenceNode_strategy)
+def test_effbd106_sequencenode_tMin_setter(instance):
     original = instance.tMin
     instance.tMin = original
     assert instance.tMin == original
 
-@given(instance=effbd106::Token_strategy)
-@settings(max_examples=50)
-def test_effbd106::token_instantiation(instance):
-    assert isinstance(instance, effbd106::Token)
-
-@given(instance=effbd106::Description_strategy)
-@settings(max_examples=50)
-def test_effbd106::description_instantiation(instance):
-    assert isinstance(instance, effbd106::Description)
-
-@given(instance=effbd106::Description_strategy)
-def test_effbd106::description_content_type(instance):
-    assert isinstance(instance.content, str)
 
 
-@given(instance=effbd106::Description_strategy)
-def test_effbd106::description_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
-
-@given(instance=effbd106::Item_strategy)
-@settings(max_examples=50)
-def test_effbd106::item_instantiation(instance):
-    assert isinstance(instance, effbd106::Item)
-
-@given(instance=effbd106::Item_strategy)
-def test_effbd106::item_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=effbd106_SequenceNode_strategy)
+def test_effbd106_sequencenode_tMax_setter(instance):
+    original = instance.tMax
+    instance.tMax = original
+    assert instance.tMax == original
 
 
-@given(instance=effbd106::Item_strategy)
-def test_effbd106::item_name_setter(instance):
+
+@given(instance=effbd106_SequenceNode_strategy)
+def test_effbd106_sequencenode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbd106::Port_strategy)
+@given(instance=effbd106_Token_strategy)
 @settings(max_examples=50)
-def test_effbd106::port_instantiation(instance):
-    assert isinstance(instance, effbd106::Port)
+def test_effbd106_token_instantiation(instance):
+    assert isinstance(instance, effbd106_Token)
 
-@given(instance=effbd106::Port_strategy)
-def test_effbd106::port_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=effbd106_Description_strategy)
+@settings(max_examples=50)
+def test_effbd106_description_instantiation(instance):
+    assert isinstance(instance, effbd106_Description)
 
 
-@given(instance=effbd106::Port_strategy)
-def test_effbd106::port_id_setter(instance):
+
+@given(instance=effbd106_Description_strategy)
+def test_effbd106_description_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
+
+@given(instance=effbd106_Item_strategy)
+@settings(max_examples=50)
+def test_effbd106_item_instantiation(instance):
+    assert isinstance(instance, effbd106_Item)
+
+
+
+@given(instance=effbd106_Item_strategy)
+def test_effbd106_item_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=effbd106_Port_strategy)
+@settings(max_examples=50)
+def test_effbd106_port_instantiation(instance):
+    assert isinstance(instance, effbd106_Port)
+
+
+
+@given(instance=effbd106_Port_strategy)
+def test_effbd106_port_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -646,50 +625,50 @@ def test_effbd106::port_id_setter(instance):
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=effbd106::InputPort_strategy)
+@given(instance=effbd106_InputPort_strategy)
 @settings(max_examples=50)
-def test_effbd106::inputport_instantiation(instance):
-    assert isinstance(instance, effbd106::InputPort)
+def test_effbd106_inputport_instantiation(instance):
+    assert isinstance(instance, effbd106_InputPort)
 
 @given(instance=Sequence_strategy)
 @settings(max_examples=50)
 def test_sequence_instantiation(instance):
     assert isinstance(instance, Sequence)
 
-@given(instance=effbd106::Or_strategy)
+@given(instance=effbd106_LoopExit_strategy)
 @settings(max_examples=50)
-def test_effbd106::or_instantiation(instance):
-    assert isinstance(instance, effbd106::Or)
+def test_effbd106_loopexit_instantiation(instance):
+    assert isinstance(instance, effbd106_LoopExit)
 
-@given(instance=effbd106::Iteration_strategy)
+@given(instance=effbd106_Iteration_strategy)
 @settings(max_examples=50)
-def test_effbd106::iteration_instantiation(instance):
-    assert isinstance(instance, effbd106::Iteration)
+def test_effbd106_iteration_instantiation(instance):
+    assert isinstance(instance, effbd106_Iteration)
 
-@given(instance=effbd106::Start_strategy)
+@given(instance=effbd106_Start_strategy)
 @settings(max_examples=50)
-def test_effbd106::start_instantiation(instance):
-    assert isinstance(instance, effbd106::Start)
+def test_effbd106_start_instantiation(instance):
+    assert isinstance(instance, effbd106_Start)
 
-@given(instance=effbd106::LoopExit_strategy)
+@given(instance=effbd106_Final_strategy)
 @settings(max_examples=50)
-def test_effbd106::loopexit_instantiation(instance):
-    assert isinstance(instance, effbd106::LoopExit)
+def test_effbd106_final_instantiation(instance):
+    assert isinstance(instance, effbd106_Final)
 
-@given(instance=effbd106::Final_strategy)
+@given(instance=effbd106_Or_strategy)
 @settings(max_examples=50)
-def test_effbd106::final_instantiation(instance):
-    assert isinstance(instance, effbd106::Final)
+def test_effbd106_or_instantiation(instance):
+    assert isinstance(instance, effbd106_Or)
 
-@given(instance=effbd106::Loop_strategy)
+@given(instance=effbd106_Loop_strategy)
 @settings(max_examples=50)
-def test_effbd106::loop_instantiation(instance):
-    assert isinstance(instance, effbd106::Loop)
+def test_effbd106_loop_instantiation(instance):
+    assert isinstance(instance, effbd106_Loop)
 
-@given(instance=effbd106::And_strategy)
+@given(instance=effbd106_And_strategy)
 @settings(max_examples=50)
-def test_effbd106::and_instantiation(instance):
-    assert isinstance(instance, effbd106::And)
+def test_effbd106_and_instantiation(instance):
+    assert isinstance(instance, effbd106_And)
 
 @given(instance=ProcessNode_strategy)
 @settings(max_examples=50)
@@ -701,33 +680,30 @@ def test_processnode_instantiation(instance):
 def test_sequencenode_instantiation(instance):
     assert isinstance(instance, SequenceNode)
 
-@given(instance=effbd106::Function_strategy)
+@given(instance=effbd106_Function_strategy)
 @settings(max_examples=50)
-def test_effbd106::function_instantiation(instance):
-    assert isinstance(instance, effbd106::Function)
-
-@given(instance=effbd106::Function_strategy)
-def test_effbd106::function_domain_type(instance):
-    assert isinstance(instance.domain, str)
+def test_effbd106_function_instantiation(instance):
+    assert isinstance(instance, effbd106_Function)
 
 
-@given(instance=effbd106::Function_strategy)
-def test_effbd106::function_domain_setter(instance):
+
+@given(instance=effbd106_Function_strategy)
+def test_effbd106_function_domain_setter(instance):
     original = instance.domain
     instance.domain = original
     assert instance.domain == original
 
-@given(instance=effbd106::OutputPort_strategy)
+@given(instance=effbd106_OutputPort_strategy)
 @settings(max_examples=50)
-def test_effbd106::outputport_instantiation(instance):
-    assert isinstance(instance, effbd106::OutputPort)
+def test_effbd106_outputport_instantiation(instance):
+    assert isinstance(instance, effbd106_OutputPort)
 
-@given(instance=effbd106::Flow_strategy)
+@given(instance=effbd106_Flow_strategy)
 @settings(max_examples=50)
-def test_effbd106::flow_instantiation(instance):
-    assert isinstance(instance, effbd106::Flow)
+def test_effbd106_flow_instantiation(instance):
+    assert isinstance(instance, effbd106_Flow)
 
-@given(instance=effbd106::Sequence_strategy)
+@given(instance=effbd106_Sequence_strategy)
 @settings(max_examples=50)
-def test_effbd106::sequence_instantiation(instance):
-    assert isinstance(instance, effbd106::Sequence)
+def test_effbd106_sequence_instantiation(instance):
+    assert isinstance(instance, effbd106_Sequence)

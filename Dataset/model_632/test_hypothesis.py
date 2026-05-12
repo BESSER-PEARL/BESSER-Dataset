@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractPerson,
-    library::Loan,
-    library::AbstractPerson,
-    library::Author,
-    library::Person,
-    library::Library,
-    library::UoD,
-    library::Book,
+    library_Loan,
+    library_AbstractPerson,
+    library_Author,
+    library_Person,
+    library_Library,
+    library_UoD,
+    library_Book,
 )
 
 # =============================================================================
@@ -36,37 +36,37 @@ def test_abstractperson_constructor_args():
 
 
 
-def test_library::loan_is_not_abstract():
-    assert not inspect.isabstract(library::Loan)
+def test_library_loan_is_not_abstract():
+    assert not inspect.isabstract(library_Loan)
 
 
-def test_library::loan_constructor_exists():
-    assert callable(library::Loan.__init__)
+def test_library_loan_constructor_exists():
+    assert callable(library_Loan.__init__)
 
 
-def test_library::loan_constructor_args():
-    sig = inspect.signature(library::Loan.__init__)
+def test_library_loan_constructor_args():
+    sig = inspect.signature(library_Loan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::abstractperson_is_not_abstract():
-    assert not inspect.isabstract(library::AbstractPerson)
+def test_library_abstractperson_is_not_abstract():
+    assert not inspect.isabstract(library_AbstractPerson)
 
 
-def test_library::abstractperson_constructor_exists():
-    assert callable(library::AbstractPerson.__init__)
+def test_library_abstractperson_constructor_exists():
+    assert callable(library_AbstractPerson.__init__)
 
 
-def test_library::abstractperson_constructor_args():
-    sig = inspect.signature(library::AbstractPerson.__init__)
+def test_library_abstractperson_constructor_args():
+    sig = inspect.signature(library_AbstractPerson.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::abstractperson_has_name():
-    assert hasattr(library::AbstractPerson, "name")
+def test_library_abstractperson_has_name():
+    assert hasattr(library_AbstractPerson, "name")
     descriptor = None
-    for klass in library::AbstractPerson.__mro__:
+    for klass in library_AbstractPerson.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,51 +74,51 @@ def test_library::abstractperson_has_name():
 
 
 
-def test_library::author_is_not_abstract():
-    assert not inspect.isabstract(library::Author)
+def test_library_author_is_not_abstract():
+    assert not inspect.isabstract(library_Author)
 
 
-def test_library::author_constructor_exists():
-    assert callable(library::Author.__init__)
+def test_library_author_constructor_exists():
+    assert callable(library_Author.__init__)
 
 
-def test_library::author_constructor_args():
-    sig = inspect.signature(library::Author.__init__)
+def test_library_author_constructor_args():
+    sig = inspect.signature(library_Author.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::person_is_not_abstract():
-    assert not inspect.isabstract(library::Person)
+def test_library_person_is_not_abstract():
+    assert not inspect.isabstract(library_Person)
 
 
-def test_library::person_constructor_exists():
-    assert callable(library::Person.__init__)
+def test_library_person_constructor_exists():
+    assert callable(library_Person.__init__)
 
 
-def test_library::person_constructor_args():
-    sig = inspect.signature(library::Person.__init__)
+def test_library_person_constructor_args():
+    sig = inspect.signature(library_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(library_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::library_has_name():
-    assert hasattr(library::Library, "name")
+def test_library_library_has_name():
+    assert hasattr(library_Library, "name")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -126,49 +126,49 @@ def test_library::library_has_name():
 
 
 
-def test_library::uod_is_not_abstract():
-    assert not inspect.isabstract(library::UoD)
+def test_library_uod_is_not_abstract():
+    assert not inspect.isabstract(library_UoD)
 
 
-def test_library::uod_constructor_exists():
-    assert callable(library::UoD.__init__)
+def test_library_uod_constructor_exists():
+    assert callable(library_UoD.__init__)
 
 
-def test_library::uod_constructor_args():
-    sig = inspect.signature(library::UoD.__init__)
+def test_library_uod_constructor_args():
+    sig = inspect.signature(library_UoD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "isbn" in params, "Missing parameter 'isbn'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "isbn" in params, "Missing parameter 'isbn'"
 
-def test_library::book_has_isbn():
-    assert hasattr(library::Book, "isbn")
+def test_library_book_has_title():
+    assert hasattr(library_Book, "title")
     descriptor = None
-    for klass in library::Book.__mro__:
-        if "isbn" in klass.__dict__:
-            descriptor = klass.__dict__["isbn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::book_has_title():
-    assert hasattr(library::Book, "title")
-    descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_book_has_isbn():
+    assert hasattr(library_Book, "isbn")
+    descriptor = None
+    for klass in library_Book.__mro__:
+        if "isbn" in klass.__dict__:
+            descriptor = klass.__dict__["isbn"]
             break
     assert isinstance(descriptor, property)
 
@@ -187,33 +187,33 @@ safe_text = st.text(
 AbstractPerson_strategy = st.builds(
     AbstractPerson,
 )
-library::Loan_strategy = st.builds(
-    library::Loan,
+library_Loan_strategy = st.builds(
+    library_Loan,
 )
-library::AbstractPerson_strategy = st.builds(
-    library::AbstractPerson,
+library_AbstractPerson_strategy = st.builds(
+    library_AbstractPerson,
     name=
         safe_text
 )
-library::Author_strategy = st.builds(
-    library::Author,
+library_Author_strategy = st.builds(
+    library_Author,
 )
-library::Person_strategy = st.builds(
-    library::Person,
+library_Person_strategy = st.builds(
+    library_Person,
 )
-library::Library_strategy = st.builds(
-    library::Library,
+library_Library_strategy = st.builds(
+    library_Library,
     name=
         safe_text
 )
-library::UoD_strategy = st.builds(
-    library::UoD,
+library_UoD_strategy = st.builds(
+    library_UoD,
 )
-library::Book_strategy = st.builds(
-    library::Book,
-    isbn=
-        safe_text,
+library_Book_strategy = st.builds(
+    library_Book,
     title=
+        safe_text,
+    isbn=
         safe_text
 )
 
@@ -222,81 +222,69 @@ library::Book_strategy = st.builds(
 def test_abstractperson_instantiation(instance):
     assert isinstance(instance, AbstractPerson)
 
-@given(instance=library::Loan_strategy)
+@given(instance=library_Loan_strategy)
 @settings(max_examples=50)
-def test_library::loan_instantiation(instance):
-    assert isinstance(instance, library::Loan)
+def test_library_loan_instantiation(instance):
+    assert isinstance(instance, library_Loan)
 
-@given(instance=library::AbstractPerson_strategy)
+@given(instance=library_AbstractPerson_strategy)
 @settings(max_examples=50)
-def test_library::abstractperson_instantiation(instance):
-    assert isinstance(instance, library::AbstractPerson)
-
-@given(instance=library::AbstractPerson_strategy)
-def test_library::abstractperson_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_abstractperson_instantiation(instance):
+    assert isinstance(instance, library_AbstractPerson)
 
 
-@given(instance=library::AbstractPerson_strategy)
-def test_library::abstractperson_name_setter(instance):
+
+@given(instance=library_AbstractPerson_strategy)
+def test_library_abstractperson_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Author_strategy)
+@given(instance=library_Author_strategy)
 @settings(max_examples=50)
-def test_library::author_instantiation(instance):
-    assert isinstance(instance, library::Author)
+def test_library_author_instantiation(instance):
+    assert isinstance(instance, library_Author)
 
-@given(instance=library::Person_strategy)
+@given(instance=library_Person_strategy)
 @settings(max_examples=50)
-def test_library::person_instantiation(instance):
-    assert isinstance(instance, library::Person)
+def test_library_person_instantiation(instance):
+    assert isinstance(instance, library_Person)
 
-@given(instance=library::Library_strategy)
+@given(instance=library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, library::Library)
-
-@given(instance=library::Library_strategy)
-def test_library::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, library_Library)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_name_setter(instance):
+
+@given(instance=library_Library_strategy)
+def test_library_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::UoD_strategy)
+@given(instance=library_UoD_strategy)
 @settings(max_examples=50)
-def test_library::uod_instantiation(instance):
-    assert isinstance(instance, library::UoD)
+def test_library_uod_instantiation(instance):
+    assert isinstance(instance, library_UoD)
 
-@given(instance=library::Book_strategy)
+@given(instance=library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::Book)
-
-@given(instance=library::Book_strategy)
-def test_library::book_isbn_type(instance):
-    assert isinstance(instance.isbn, str)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_Book)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_isbn_setter(instance):
-    original = instance.isbn
-    instance.isbn = original
-    assert instance.isbn == original
 
-@given(instance=library::Book_strategy)
-def test_library::book_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=library::Book_strategy)
-def test_library::book_title_setter(instance):
+@given(instance=library_Book_strategy)
+def test_library_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
+
+
+
+@given(instance=library_Book_strategy)
+def test_library_book_isbn_setter(instance):
+    original = instance.isbn
+    instance.isbn = original
+    assert instance.isbn == original

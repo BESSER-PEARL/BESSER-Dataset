@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    forms::EntityModel,
+from python_code import (
+    forms_EntityModel,
     Type,
-    forms::Entity,
-    forms::DataType,
+    forms_Entity,
+    forms_DataType,
     NamedElement,
-    forms::Feature,
-    forms::Type,
-    forms::NamedElement,
+    forms_Feature,
+    forms_Type,
+    forms_NamedElement,
     FeatureKind,
 )
 
@@ -23,16 +23,16 @@ from classes import (
 
 
 
-def test_forms::entitymodel_is_not_abstract():
-    assert not inspect.isabstract(forms::EntityModel)
+def test_forms_entitymodel_is_not_abstract():
+    assert not inspect.isabstract(forms_EntityModel)
 
 
-def test_forms::entitymodel_constructor_exists():
-    assert callable(forms::EntityModel.__init__)
+def test_forms_entitymodel_constructor_exists():
+    assert callable(forms_EntityModel.__init__)
 
 
-def test_forms::entitymodel_constructor_args():
-    sig = inspect.signature(forms::EntityModel.__init__)
+def test_forms_entitymodel_constructor_args():
+    sig = inspect.signature(forms_EntityModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -51,23 +51,23 @@ def test_type_constructor_args():
 
 
 
-def test_forms::entity_is_not_abstract():
-    assert not inspect.isabstract(forms::Entity)
+def test_forms_entity_is_not_abstract():
+    assert not inspect.isabstract(forms_Entity)
 
 
-def test_forms::entity_constructor_exists():
-    assert callable(forms::Entity.__init__)
+def test_forms_entity_constructor_exists():
+    assert callable(forms_Entity.__init__)
 
 
-def test_forms::entity_constructor_args():
-    sig = inspect.signature(forms::Entity.__init__)
+def test_forms_entity_constructor_args():
+    sig = inspect.signature(forms_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_forms::entity_has_abstract():
-    assert hasattr(forms::Entity, "abstract")
+def test_forms_entity_has_abstract():
+    assert hasattr(forms_Entity, "abstract")
     descriptor = None
-    for klass in forms::Entity.__mro__:
+    for klass in forms_Entity.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -75,16 +75,16 @@ def test_forms::entity_has_abstract():
 
 
 
-def test_forms::datatype_is_not_abstract():
-    assert not inspect.isabstract(forms::DataType)
+def test_forms_datatype_is_not_abstract():
+    assert not inspect.isabstract(forms_DataType)
 
 
-def test_forms::datatype_constructor_exists():
-    assert callable(forms::DataType.__init__)
+def test_forms_datatype_constructor_exists():
+    assert callable(forms_DataType.__init__)
 
 
-def test_forms::datatype_constructor_args():
-    sig = inspect.signature(forms::DataType.__init__)
+def test_forms_datatype_constructor_args():
+    sig = inspect.signature(forms_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -103,23 +103,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_forms::feature_is_not_abstract():
-    assert not inspect.isabstract(forms::Feature)
+def test_forms_feature_is_not_abstract():
+    assert not inspect.isabstract(forms_Feature)
 
 
-def test_forms::feature_constructor_exists():
-    assert callable(forms::Feature.__init__)
+def test_forms_feature_constructor_exists():
+    assert callable(forms_Feature.__init__)
 
 
-def test_forms::feature_constructor_args():
-    sig = inspect.signature(forms::Feature.__init__)
+def test_forms_feature_constructor_args():
+    sig = inspect.signature(forms_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_forms::feature_has_kind():
-    assert hasattr(forms::Feature, "kind")
+def test_forms_feature_has_kind():
+    assert hasattr(forms_Feature, "kind")
     descriptor = None
-    for klass in forms::Feature.__mro__:
+    for klass in forms_Feature.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -127,37 +127,37 @@ def test_forms::feature_has_kind():
 
 
 
-def test_forms::type_is_not_abstract():
-    assert not inspect.isabstract(forms::Type)
+def test_forms_type_is_not_abstract():
+    assert not inspect.isabstract(forms_Type)
 
 
-def test_forms::type_constructor_exists():
-    assert callable(forms::Type.__init__)
+def test_forms_type_constructor_exists():
+    assert callable(forms_Type.__init__)
 
 
-def test_forms::type_constructor_args():
-    sig = inspect.signature(forms::Type.__init__)
+def test_forms_type_constructor_args():
+    sig = inspect.signature(forms_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::namedelement_is_not_abstract():
-    assert not inspect.isabstract(forms::NamedElement)
+def test_forms_namedelement_is_not_abstract():
+    assert not inspect.isabstract(forms_NamedElement)
 
 
-def test_forms::namedelement_constructor_exists():
-    assert callable(forms::NamedElement.__init__)
+def test_forms_namedelement_constructor_exists():
+    assert callable(forms_NamedElement.__init__)
 
 
-def test_forms::namedelement_constructor_args():
-    sig = inspect.signature(forms::NamedElement.__init__)
+def test_forms_namedelement_constructor_args():
+    sig = inspect.signature(forms_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_forms::namedelement_has_name():
-    assert hasattr(forms::NamedElement, "name")
+def test_forms_namedelement_has_name():
+    assert hasattr(forms_NamedElement, "name")
     descriptor = None
-    for klass in forms::NamedElement.__mro__:
+    for klass in forms_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -172,8 +172,8 @@ def test_featurekind_has_all_literals():
     enum_literals = [lit.name for lit in FeatureKind]
     expected_literals = [
         "attribute",
-        "containment",
         "reference",
+        "containment",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -191,106 +191,97 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-forms::EntityModel_strategy = st.builds(
-    forms::EntityModel,
+forms_EntityModel_strategy = st.builds(
+    forms_EntityModel,
 )
 Type_strategy = st.builds(
     Type,
 )
-forms::Entity_strategy = st.builds(
-    forms::Entity,
+forms_Entity_strategy = st.builds(
+    forms_Entity,
     abstract=
         st.booleans()
 )
-forms::DataType_strategy = st.builds(
-    forms::DataType,
+forms_DataType_strategy = st.builds(
+    forms_DataType,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-forms::Feature_strategy = st.builds(
-    forms::Feature,
+forms_Feature_strategy = st.builds(
+    forms_Feature,
     kind=
         safe_text
 )
-forms::Type_strategy = st.builds(
-    forms::Type,
+forms_Type_strategy = st.builds(
+    forms_Type,
 )
-forms::NamedElement_strategy = st.builds(
-    forms::NamedElement,
+forms_NamedElement_strategy = st.builds(
+    forms_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=forms::EntityModel_strategy)
+@given(instance=forms_EntityModel_strategy)
 @settings(max_examples=50)
-def test_forms::entitymodel_instantiation(instance):
-    assert isinstance(instance, forms::EntityModel)
+def test_forms_entitymodel_instantiation(instance):
+    assert isinstance(instance, forms_EntityModel)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=forms::Entity_strategy)
+@given(instance=forms_Entity_strategy)
 @settings(max_examples=50)
-def test_forms::entity_instantiation(instance):
-    assert isinstance(instance, forms::Entity)
-
-@given(instance=forms::Entity_strategy)
-def test_forms::entity_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+def test_forms_entity_instantiation(instance):
+    assert isinstance(instance, forms_Entity)
 
 
-@given(instance=forms::Entity_strategy)
-def test_forms::entity_abstract_setter(instance):
+
+@given(instance=forms_Entity_strategy)
+def test_forms_entity_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=forms::DataType_strategy)
+@given(instance=forms_DataType_strategy)
 @settings(max_examples=50)
-def test_forms::datatype_instantiation(instance):
-    assert isinstance(instance, forms::DataType)
+def test_forms_datatype_instantiation(instance):
+    assert isinstance(instance, forms_DataType)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=forms::Feature_strategy)
+@given(instance=forms_Feature_strategy)
 @settings(max_examples=50)
-def test_forms::feature_instantiation(instance):
-    assert isinstance(instance, forms::Feature)
-
-@given(instance=forms::Feature_strategy)
-def test_forms::feature_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_forms_feature_instantiation(instance):
+    assert isinstance(instance, forms_Feature)
 
 
-@given(instance=forms::Feature_strategy)
-def test_forms::feature_kind_setter(instance):
+
+@given(instance=forms_Feature_strategy)
+def test_forms_feature_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=forms::Type_strategy)
+@given(instance=forms_Type_strategy)
 @settings(max_examples=50)
-def test_forms::type_instantiation(instance):
-    assert isinstance(instance, forms::Type)
+def test_forms_type_instantiation(instance):
+    assert isinstance(instance, forms_Type)
 
-@given(instance=forms::NamedElement_strategy)
+@given(instance=forms_NamedElement_strategy)
 @settings(max_examples=50)
-def test_forms::namedelement_instantiation(instance):
-    assert isinstance(instance, forms::NamedElement)
-
-@given(instance=forms::NamedElement_strategy)
-def test_forms::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_forms_namedelement_instantiation(instance):
+    assert isinstance(instance, forms_NamedElement)
 
 
-@given(instance=forms::NamedElement_strategy)
-def test_forms::namedelement_name_setter(instance):
+
+@given(instance=forms_NamedElement_strategy)
+def test_forms_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

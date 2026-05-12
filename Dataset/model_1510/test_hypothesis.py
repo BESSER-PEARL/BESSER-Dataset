@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Transition,
-    PetriNetSim::Transition,
+    PetriNetSim_Transition,
     PetriNet,
-    PetriNetSim::PetriNet,
+    PetriNetSim_PetriNet,
     Place,
-    PetriNetSim::Place,
+    PetriNetSim_Place,
 )
 
 # =============================================================================
@@ -34,16 +34,16 @@ def test_transition_constructor_args():
 
 
 
-def test_petrinetsim::transition_is_not_abstract():
-    assert not inspect.isabstract(PetriNetSim::Transition)
+def test_petrinetsim_transition_is_not_abstract():
+    assert not inspect.isabstract(PetriNetSim_Transition)
 
 
-def test_petrinetsim::transition_constructor_exists():
-    assert callable(PetriNetSim::Transition.__init__)
+def test_petrinetsim_transition_constructor_exists():
+    assert callable(PetriNetSim_Transition.__init__)
 
 
-def test_petrinetsim::transition_constructor_args():
-    sig = inspect.signature(PetriNetSim::Transition.__init__)
+def test_petrinetsim_transition_constructor_args():
+    sig = inspect.signature(PetriNetSim_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -62,16 +62,16 @@ def test_petrinet_constructor_args():
 
 
 
-def test_petrinetsim::petrinet_is_not_abstract():
-    assert not inspect.isabstract(PetriNetSim::PetriNet)
+def test_petrinetsim_petrinet_is_not_abstract():
+    assert not inspect.isabstract(PetriNetSim_PetriNet)
 
 
-def test_petrinetsim::petrinet_constructor_exists():
-    assert callable(PetriNetSim::PetriNet.__init__)
+def test_petrinetsim_petrinet_constructor_exists():
+    assert callable(PetriNetSim_PetriNet.__init__)
 
 
-def test_petrinetsim::petrinet_constructor_args():
-    sig = inspect.signature(PetriNetSim::PetriNet.__init__)
+def test_petrinetsim_petrinet_constructor_args():
+    sig = inspect.signature(PetriNetSim_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,16 +90,16 @@ def test_place_constructor_args():
 
 
 
-def test_petrinetsim::place_is_not_abstract():
-    assert not inspect.isabstract(PetriNetSim::Place)
+def test_petrinetsim_place_is_not_abstract():
+    assert not inspect.isabstract(PetriNetSim_Place)
 
 
-def test_petrinetsim::place_constructor_exists():
-    assert callable(PetriNetSim::Place.__init__)
+def test_petrinetsim_place_constructor_exists():
+    assert callable(PetriNetSim_Place.__init__)
 
 
-def test_petrinetsim::place_constructor_args():
-    sig = inspect.signature(PetriNetSim::Place.__init__)
+def test_petrinetsim_place_constructor_args():
+    sig = inspect.signature(PetriNetSim_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,20 +117,20 @@ safe_text = st.text(
 Transition_strategy = st.builds(
     Transition,
 )
-PetriNetSim::Transition_strategy = st.builds(
-    PetriNetSim::Transition,
+PetriNetSim_Transition_strategy = st.builds(
+    PetriNetSim_Transition,
 )
 PetriNet_strategy = st.builds(
     PetriNet,
 )
-PetriNetSim::PetriNet_strategy = st.builds(
-    PetriNetSim::PetriNet,
+PetriNetSim_PetriNet_strategy = st.builds(
+    PetriNetSim_PetriNet,
 )
 Place_strategy = st.builds(
     Place,
 )
-PetriNetSim::Place_strategy = st.builds(
-    PetriNetSim::Place,
+PetriNetSim_Place_strategy = st.builds(
+    PetriNetSim_Place,
 )
 
 @given(instance=Transition_strategy)
@@ -138,10 +138,10 @@ PetriNetSim::Place_strategy = st.builds(
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=PetriNetSim::Transition_strategy)
+@given(instance=PetriNetSim_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinetsim::transition_instantiation(instance):
-    assert isinstance(instance, PetriNetSim::Transition)
+def test_petrinetsim_transition_instantiation(instance):
+    assert isinstance(instance, PetriNetSim_Transition)
 
 import warnings
 import copy
@@ -149,38 +149,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PetriNetSim::Transition_strategy)
+@given(instance=PetriNetSim_Transition_strategy)
 @settings(max_examples=30)
-def test_petrinetsim::transition_enabled_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.enabled()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.enabled).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enabled' in PetriNetSim::Transition is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enabled' in PetriNetSim::Transition did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enabled' in PetriNetSim::Transition is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=PetriNetSim::Transition_strategy)
-@settings(max_examples=30)
-def test_petrinetsim::transition_fire_changes_state(instance):
+def test_petrinetsim_transition_fire_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -192,24 +163,53 @@ def test_petrinetsim::transition_fire_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fire' in PetriNetSim::Transition is empty"
+        assert has_statements, f"Function 'fire' in PetriNetSim_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fire' in PetriNetSim::Transition did not change state; check implementation")
+            warnings.warn(f"Operation 'fire' in PetriNetSim_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fire' in PetriNetSim::Transition is not implemented or raised an error")
+        warnings.warn(f"Operation 'fire' in PetriNetSim_Transition is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=PetriNetSim_Transition_strategy)
+@settings(max_examples=30)
+def test_petrinetsim_transition_enabled_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.enabled()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.enabled).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'enabled' in PetriNetSim_Transition is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'enabled' in PetriNetSim_Transition did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'enabled' in PetriNetSim_Transition is not implemented or raised an error")
 
 @given(instance=PetriNet_strategy)
 @settings(max_examples=50)
 def test_petrinet_instantiation(instance):
     assert isinstance(instance, PetriNet)
 
-@given(instance=PetriNetSim::PetriNet_strategy)
+@given(instance=PetriNetSim_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinetsim::petrinet_instantiation(instance):
-    assert isinstance(instance, PetriNetSim::PetriNet)
+def test_petrinetsim_petrinet_instantiation(instance):
+    assert isinstance(instance, PetriNetSim_PetriNet)
 
 import warnings
 import copy
@@ -217,38 +217,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PetriNetSim::PetriNet_strategy)
+@given(instance=PetriNetSim_PetriNet_strategy)
 @settings(max_examples=30)
-def test_petrinetsim::petrinet_simulate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.simulate()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.simulate).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'simulate' in PetriNetSim::PetriNet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'simulate' in PetriNetSim::PetriNet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'simulate' in PetriNetSim::PetriNet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=PetriNetSim::PetriNet_strategy)
-@settings(max_examples=30)
-def test_petrinetsim::petrinet_pick_changes_state(instance):
+def test_petrinetsim_petrinet_pick_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -262,14 +233,14 @@ def test_petrinetsim::petrinet_pick_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'pick' in PetriNetSim::PetriNet is empty"
+        assert has_statements, f"Function 'pick' in PetriNetSim_PetriNet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'pick' in PetriNetSim::PetriNet did not change state; check implementation")
+            warnings.warn(f"Operation 'pick' in PetriNetSim_PetriNet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'pick' in PetriNetSim::PetriNet is not implemented or raised an error")
+        warnings.warn(f"Operation 'pick' in PetriNetSim_PetriNet is not implemented or raised an error")
 
 import warnings
 import copy
@@ -277,9 +248,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PetriNetSim::PetriNet_strategy)
+@given(instance=PetriNetSim_PetriNet_strategy)
 @settings(max_examples=30)
-def test_petrinetsim::petrinet_step_changes_state(instance):
+def test_petrinetsim_petrinet_step_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -291,24 +262,14 @@ def test_petrinetsim::petrinet_step_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'step' in PetriNetSim::PetriNet is empty"
+        assert has_statements, f"Function 'step' in PetriNetSim_PetriNet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'step' in PetriNetSim::PetriNet did not change state; check implementation")
+            warnings.warn(f"Operation 'step' in PetriNetSim_PetriNet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'step' in PetriNetSim::PetriNet is not implemented or raised an error")
-
-@given(instance=Place_strategy)
-@settings(max_examples=50)
-def test_place_instantiation(instance):
-    assert isinstance(instance, Place)
-
-@given(instance=PetriNetSim::Place_strategy)
-@settings(max_examples=50)
-def test_petrinetsim::place_instantiation(instance):
-    assert isinstance(instance, PetriNetSim::Place)
+        warnings.warn(f"Operation 'step' in PetriNetSim_PetriNet is not implemented or raised an error")
 
 import warnings
 import copy
@@ -316,9 +277,48 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PetriNetSim::Place_strategy)
+@given(instance=PetriNetSim_PetriNet_strategy)
 @settings(max_examples=30)
-def test_petrinetsim::place_modify_changes_state(instance):
+def test_petrinetsim_petrinet_simulate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.simulate()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.simulate).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'simulate' in PetriNetSim_PetriNet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'simulate' in PetriNetSim_PetriNet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'simulate' in PetriNetSim_PetriNet is not implemented or raised an error")
+
+@given(instance=Place_strategy)
+@settings(max_examples=50)
+def test_place_instantiation(instance):
+    assert isinstance(instance, Place)
+
+@given(instance=PetriNetSim_Place_strategy)
+@settings(max_examples=50)
+def test_petrinetsim_place_instantiation(instance):
+    assert isinstance(instance, PetriNetSim_Place)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=PetriNetSim_Place_strategy)
+@settings(max_examples=30)
+def test_petrinetsim_place_modify_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -332,11 +332,11 @@ def test_petrinetsim::place_modify_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'modify' in PetriNetSim::Place is empty"
+        assert has_statements, f"Function 'modify' in PetriNetSim_Place is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'modify' in PetriNetSim::Place did not change state; check implementation")
+            warnings.warn(f"Operation 'modify' in PetriNetSim_Place did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'modify' in PetriNetSim::Place is not implemented or raised an error")
+        warnings.warn(f"Operation 'modify' in PetriNetSim_Place is not implemented or raised an error")

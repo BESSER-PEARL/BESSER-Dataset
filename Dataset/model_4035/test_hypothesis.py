@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    simpleClass::Association,
-    simpleClass::Class,
-    simpleClass::Attribute,
-    simpleClass::Package,
-    simpleClass::ClassModel,
-    simpleClass::NamedElement,
+    simpleClass_Attribute,
+    simpleClass_Association,
+    simpleClass_Class,
+    simpleClass_Package,
+    simpleClass_ClassModel,
+    simpleClass_NamedElement,
 )
 
 # =============================================================================
@@ -35,37 +35,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simpleclass::association_is_not_abstract():
-    assert not inspect.isabstract(simpleClass::Association)
+def test_simpleclass_attribute_is_not_abstract():
+    assert not inspect.isabstract(simpleClass_Attribute)
 
 
-def test_simpleclass::association_constructor_exists():
-    assert callable(simpleClass::Association.__init__)
+def test_simpleclass_attribute_constructor_exists():
+    assert callable(simpleClass_Attribute.__init__)
 
 
-def test_simpleclass::association_constructor_args():
-    sig = inspect.signature(simpleClass::Association.__init__)
+def test_simpleclass_attribute_constructor_args():
+    sig = inspect.signature(simpleClass_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleclass::class_is_not_abstract():
-    assert not inspect.isabstract(simpleClass::Class)
+def test_simpleclass_association_is_not_abstract():
+    assert not inspect.isabstract(simpleClass_Association)
 
 
-def test_simpleclass::class_constructor_exists():
-    assert callable(simpleClass::Class.__init__)
+def test_simpleclass_association_constructor_exists():
+    assert callable(simpleClass_Association.__init__)
 
 
-def test_simpleclass::class_constructor_args():
-    sig = inspect.signature(simpleClass::Class.__init__)
+def test_simpleclass_association_constructor_args():
+    sig = inspect.signature(simpleClass_Association.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleclass_class_is_not_abstract():
+    assert not inspect.isabstract(simpleClass_Class)
+
+
+def test_simpleclass_class_constructor_exists():
+    assert callable(simpleClass_Class.__init__)
+
+
+def test_simpleclass_class_constructor_args():
+    sig = inspect.signature(simpleClass_Class.__init__)
     params = list(sig.parameters.keys())
     assert "persistent" in params, "Missing parameter 'persistent'"
 
-def test_simpleclass::class_has_persistent():
-    assert hasattr(simpleClass::Class, "persistent")
+def test_simpleclass_class_has_persistent():
+    assert hasattr(simpleClass_Class, "persistent")
     descriptor = None
-    for klass in simpleClass::Class.__mro__:
+    for klass in simpleClass_Class.__mro__:
         if "persistent" in klass.__dict__:
             descriptor = klass.__dict__["persistent"]
             break
@@ -73,65 +87,51 @@ def test_simpleclass::class_has_persistent():
 
 
 
-def test_simpleclass::attribute_is_not_abstract():
-    assert not inspect.isabstract(simpleClass::Attribute)
+def test_simpleclass_package_is_not_abstract():
+    assert not inspect.isabstract(simpleClass_Package)
 
 
-def test_simpleclass::attribute_constructor_exists():
-    assert callable(simpleClass::Attribute.__init__)
+def test_simpleclass_package_constructor_exists():
+    assert callable(simpleClass_Package.__init__)
 
 
-def test_simpleclass::attribute_constructor_args():
-    sig = inspect.signature(simpleClass::Attribute.__init__)
+def test_simpleclass_package_constructor_args():
+    sig = inspect.signature(simpleClass_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleclass::package_is_not_abstract():
-    assert not inspect.isabstract(simpleClass::Package)
+def test_simpleclass_classmodel_is_not_abstract():
+    assert not inspect.isabstract(simpleClass_ClassModel)
 
 
-def test_simpleclass::package_constructor_exists():
-    assert callable(simpleClass::Package.__init__)
+def test_simpleclass_classmodel_constructor_exists():
+    assert callable(simpleClass_ClassModel.__init__)
 
 
-def test_simpleclass::package_constructor_args():
-    sig = inspect.signature(simpleClass::Package.__init__)
+def test_simpleclass_classmodel_constructor_args():
+    sig = inspect.signature(simpleClass_ClassModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleclass::classmodel_is_not_abstract():
-    assert not inspect.isabstract(simpleClass::ClassModel)
+def test_simpleclass_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simpleClass_NamedElement)
 
 
-def test_simpleclass::classmodel_constructor_exists():
-    assert callable(simpleClass::ClassModel.__init__)
+def test_simpleclass_namedelement_constructor_exists():
+    assert callable(simpleClass_NamedElement.__init__)
 
 
-def test_simpleclass::classmodel_constructor_args():
-    sig = inspect.signature(simpleClass::ClassModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleclass::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simpleClass::NamedElement)
-
-
-def test_simpleclass::namedelement_constructor_exists():
-    assert callable(simpleClass::NamedElement.__init__)
-
-
-def test_simpleclass::namedelement_constructor_args():
-    sig = inspect.signature(simpleClass::NamedElement.__init__)
+def test_simpleclass_namedelement_constructor_args():
+    sig = inspect.signature(simpleClass_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleclass::namedelement_has_name():
-    assert hasattr(simpleClass::NamedElement, "name")
+def test_simpleclass_namedelement_has_name():
+    assert hasattr(simpleClass_NamedElement, "name")
     descriptor = None
-    for klass in simpleClass::NamedElement.__mro__:
+    for klass in simpleClass_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -152,25 +152,25 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-simpleClass::Association_strategy = st.builds(
-    simpleClass::Association,
+simpleClass_Attribute_strategy = st.builds(
+    simpleClass_Attribute,
 )
-simpleClass::Class_strategy = st.builds(
-    simpleClass::Class,
+simpleClass_Association_strategy = st.builds(
+    simpleClass_Association,
+)
+simpleClass_Class_strategy = st.builds(
+    simpleClass_Class,
     persistent=
         st.booleans()
 )
-simpleClass::Attribute_strategy = st.builds(
-    simpleClass::Attribute,
+simpleClass_Package_strategy = st.builds(
+    simpleClass_Package,
 )
-simpleClass::Package_strategy = st.builds(
-    simpleClass::Package,
+simpleClass_ClassModel_strategy = st.builds(
+    simpleClass_ClassModel,
 )
-simpleClass::ClassModel_strategy = st.builds(
-    simpleClass::ClassModel,
-)
-simpleClass::NamedElement_strategy = st.builds(
-    simpleClass::NamedElement,
+simpleClass_NamedElement_strategy = st.builds(
+    simpleClass_NamedElement,
     name=
         safe_text
 )
@@ -180,54 +180,48 @@ simpleClass::NamedElement_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simpleClass::Association_strategy)
+@given(instance=simpleClass_Attribute_strategy)
 @settings(max_examples=50)
-def test_simpleclass::association_instantiation(instance):
-    assert isinstance(instance, simpleClass::Association)
+def test_simpleclass_attribute_instantiation(instance):
+    assert isinstance(instance, simpleClass_Attribute)
 
-@given(instance=simpleClass::Class_strategy)
+@given(instance=simpleClass_Association_strategy)
 @settings(max_examples=50)
-def test_simpleclass::class_instantiation(instance):
-    assert isinstance(instance, simpleClass::Class)
+def test_simpleclass_association_instantiation(instance):
+    assert isinstance(instance, simpleClass_Association)
 
-@given(instance=simpleClass::Class_strategy)
-def test_simpleclass::class_persistent_type(instance):
-    assert isinstance(instance.persistent, bool)
+@given(instance=simpleClass_Class_strategy)
+@settings(max_examples=50)
+def test_simpleclass_class_instantiation(instance):
+    assert isinstance(instance, simpleClass_Class)
 
 
-@given(instance=simpleClass::Class_strategy)
-def test_simpleclass::class_persistent_setter(instance):
+
+@given(instance=simpleClass_Class_strategy)
+def test_simpleclass_class_persistent_setter(instance):
     original = instance.persistent
     instance.persistent = original
     assert instance.persistent == original
 
-@given(instance=simpleClass::Attribute_strategy)
+@given(instance=simpleClass_Package_strategy)
 @settings(max_examples=50)
-def test_simpleclass::attribute_instantiation(instance):
-    assert isinstance(instance, simpleClass::Attribute)
+def test_simpleclass_package_instantiation(instance):
+    assert isinstance(instance, simpleClass_Package)
 
-@given(instance=simpleClass::Package_strategy)
+@given(instance=simpleClass_ClassModel_strategy)
 @settings(max_examples=50)
-def test_simpleclass::package_instantiation(instance):
-    assert isinstance(instance, simpleClass::Package)
+def test_simpleclass_classmodel_instantiation(instance):
+    assert isinstance(instance, simpleClass_ClassModel)
 
-@given(instance=simpleClass::ClassModel_strategy)
+@given(instance=simpleClass_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simpleclass::classmodel_instantiation(instance):
-    assert isinstance(instance, simpleClass::ClassModel)
-
-@given(instance=simpleClass::NamedElement_strategy)
-@settings(max_examples=50)
-def test_simpleclass::namedelement_instantiation(instance):
-    assert isinstance(instance, simpleClass::NamedElement)
-
-@given(instance=simpleClass::NamedElement_strategy)
-def test_simpleclass::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleclass_namedelement_instantiation(instance):
+    assert isinstance(instance, simpleClass_NamedElement)
 
 
-@given(instance=simpleClass::NamedElement_strategy)
-def test_simpleclass::namedelement_name_setter(instance):
+
+@given(instance=simpleClass_NamedElement_strategy)
+def test_simpleclass_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

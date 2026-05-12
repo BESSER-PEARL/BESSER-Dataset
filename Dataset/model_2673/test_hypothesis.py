@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     F,
-    namd::I,
-    namd::Named,
+    namd_I,
+    namd_Named,
     Named,
-    namd::G,
-    namd::C,
-    namd::H,
-    namd::B,
-    namd::A,
+    namd_C,
+    namd_H,
+    namd_G,
+    namd_B,
+    namd_A,
     D,
-    namd::F,
-    namd::E,
+    namd_F,
+    namd_E,
     B,
-    namd::D,
+    namd_D,
 )
 
 # =============================================================================
@@ -42,37 +42,37 @@ def test_f_constructor_args():
 
 
 
-def test_namd::i_is_not_abstract():
-    assert not inspect.isabstract(namd::I)
+def test_namd_i_is_not_abstract():
+    assert not inspect.isabstract(namd_I)
 
 
-def test_namd::i_constructor_exists():
-    assert callable(namd::I.__init__)
+def test_namd_i_constructor_exists():
+    assert callable(namd_I.__init__)
 
 
-def test_namd::i_constructor_args():
-    sig = inspect.signature(namd::I.__init__)
+def test_namd_i_constructor_args():
+    sig = inspect.signature(namd_I.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namd::named_is_not_abstract():
-    assert not inspect.isabstract(namd::Named)
+def test_namd_named_is_not_abstract():
+    assert not inspect.isabstract(namd_Named)
 
 
-def test_namd::named_constructor_exists():
-    assert callable(namd::Named.__init__)
+def test_namd_named_constructor_exists():
+    assert callable(namd_Named.__init__)
 
 
-def test_namd::named_constructor_args():
-    sig = inspect.signature(namd::Named.__init__)
+def test_namd_named_constructor_args():
+    sig = inspect.signature(namd_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_namd::named_has_name():
-    assert hasattr(namd::Named, "name")
+def test_namd_named_has_name():
+    assert hasattr(namd_Named, "name")
     descriptor = None
-    for klass in namd::Named.__mro__:
+    for klass in namd_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -94,72 +94,72 @@ def test_named_constructor_args():
 
 
 
-def test_namd::g_is_not_abstract():
-    assert not inspect.isabstract(namd::G)
+def test_namd_c_is_not_abstract():
+    assert not inspect.isabstract(namd_C)
 
 
-def test_namd::g_constructor_exists():
-    assert callable(namd::G.__init__)
+def test_namd_c_constructor_exists():
+    assert callable(namd_C.__init__)
 
 
-def test_namd::g_constructor_args():
-    sig = inspect.signature(namd::G.__init__)
+def test_namd_c_constructor_args():
+    sig = inspect.signature(namd_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namd::c_is_not_abstract():
-    assert not inspect.isabstract(namd::C)
+def test_namd_h_is_not_abstract():
+    assert not inspect.isabstract(namd_H)
 
 
-def test_namd::c_constructor_exists():
-    assert callable(namd::C.__init__)
+def test_namd_h_constructor_exists():
+    assert callable(namd_H.__init__)
 
 
-def test_namd::c_constructor_args():
-    sig = inspect.signature(namd::C.__init__)
+def test_namd_h_constructor_args():
+    sig = inspect.signature(namd_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namd::h_is_not_abstract():
-    assert not inspect.isabstract(namd::H)
+def test_namd_g_is_not_abstract():
+    assert not inspect.isabstract(namd_G)
 
 
-def test_namd::h_constructor_exists():
-    assert callable(namd::H.__init__)
+def test_namd_g_constructor_exists():
+    assert callable(namd_G.__init__)
 
 
-def test_namd::h_constructor_args():
-    sig = inspect.signature(namd::H.__init__)
+def test_namd_g_constructor_args():
+    sig = inspect.signature(namd_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namd::b_is_not_abstract():
-    assert not inspect.isabstract(namd::B)
+def test_namd_b_is_not_abstract():
+    assert not inspect.isabstract(namd_B)
 
 
-def test_namd::b_constructor_exists():
-    assert callable(namd::B.__init__)
+def test_namd_b_constructor_exists():
+    assert callable(namd_B.__init__)
 
 
-def test_namd::b_constructor_args():
-    sig = inspect.signature(namd::B.__init__)
+def test_namd_b_constructor_args():
+    sig = inspect.signature(namd_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namd::a_is_not_abstract():
-    assert not inspect.isabstract(namd::A)
+def test_namd_a_is_not_abstract():
+    assert not inspect.isabstract(namd_A)
 
 
-def test_namd::a_constructor_exists():
-    assert callable(namd::A.__init__)
+def test_namd_a_constructor_exists():
+    assert callable(namd_A.__init__)
 
 
-def test_namd::a_constructor_args():
-    sig = inspect.signature(namd::A.__init__)
+def test_namd_a_constructor_args():
+    sig = inspect.signature(namd_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,30 +178,30 @@ def test_d_constructor_args():
 
 
 
-def test_namd::f_is_not_abstract():
-    assert not inspect.isabstract(namd::F)
+def test_namd_f_is_not_abstract():
+    assert not inspect.isabstract(namd_F)
 
 
-def test_namd::f_constructor_exists():
-    assert callable(namd::F.__init__)
+def test_namd_f_constructor_exists():
+    assert callable(namd_F.__init__)
 
 
-def test_namd::f_constructor_args():
-    sig = inspect.signature(namd::F.__init__)
+def test_namd_f_constructor_args():
+    sig = inspect.signature(namd_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namd::e_is_not_abstract():
-    assert not inspect.isabstract(namd::E)
+def test_namd_e_is_not_abstract():
+    assert not inspect.isabstract(namd_E)
 
 
-def test_namd::e_constructor_exists():
-    assert callable(namd::E.__init__)
+def test_namd_e_constructor_exists():
+    assert callable(namd_E.__init__)
 
 
-def test_namd::e_constructor_args():
-    sig = inspect.signature(namd::E.__init__)
+def test_namd_e_constructor_args():
+    sig = inspect.signature(namd_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -220,16 +220,16 @@ def test_b_constructor_args():
 
 
 
-def test_namd::d_is_not_abstract():
-    assert not inspect.isabstract(namd::D)
+def test_namd_d_is_not_abstract():
+    assert not inspect.isabstract(namd_D)
 
 
-def test_namd::d_constructor_exists():
-    assert callable(namd::D.__init__)
+def test_namd_d_constructor_exists():
+    assert callable(namd_D.__init__)
 
 
-def test_namd::d_constructor_args():
-    sig = inspect.signature(namd::D.__init__)
+def test_namd_d_constructor_args():
+    sig = inspect.signature(namd_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -247,46 +247,46 @@ safe_text = st.text(
 F_strategy = st.builds(
     F,
 )
-namd::I_strategy = st.builds(
-    namd::I,
+namd_I_strategy = st.builds(
+    namd_I,
 )
-namd::Named_strategy = st.builds(
-    namd::Named,
+namd_Named_strategy = st.builds(
+    namd_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-namd::G_strategy = st.builds(
-    namd::G,
+namd_C_strategy = st.builds(
+    namd_C,
 )
-namd::C_strategy = st.builds(
-    namd::C,
+namd_H_strategy = st.builds(
+    namd_H,
 )
-namd::H_strategy = st.builds(
-    namd::H,
+namd_G_strategy = st.builds(
+    namd_G,
 )
-namd::B_strategy = st.builds(
-    namd::B,
+namd_B_strategy = st.builds(
+    namd_B,
 )
-namd::A_strategy = st.builds(
-    namd::A,
+namd_A_strategy = st.builds(
+    namd_A,
 )
 D_strategy = st.builds(
     D,
 )
-namd::F_strategy = st.builds(
-    namd::F,
+namd_F_strategy = st.builds(
+    namd_F,
 )
-namd::E_strategy = st.builds(
-    namd::E,
+namd_E_strategy = st.builds(
+    namd_E,
 )
 B_strategy = st.builds(
     B,
 )
-namd::D_strategy = st.builds(
-    namd::D,
+namd_D_strategy = st.builds(
+    namd_D,
 )
 
 @given(instance=F_strategy)
@@ -294,23 +294,20 @@ namd::D_strategy = st.builds(
 def test_f_instantiation(instance):
     assert isinstance(instance, F)
 
-@given(instance=namd::I_strategy)
+@given(instance=namd_I_strategy)
 @settings(max_examples=50)
-def test_namd::i_instantiation(instance):
-    assert isinstance(instance, namd::I)
+def test_namd_i_instantiation(instance):
+    assert isinstance(instance, namd_I)
 
-@given(instance=namd::Named_strategy)
+@given(instance=namd_Named_strategy)
 @settings(max_examples=50)
-def test_namd::named_instantiation(instance):
-    assert isinstance(instance, namd::Named)
-
-@given(instance=namd::Named_strategy)
-def test_namd::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_namd_named_instantiation(instance):
+    assert isinstance(instance, namd_Named)
 
 
-@given(instance=namd::Named_strategy)
-def test_namd::named_name_setter(instance):
+
+@given(instance=namd_Named_strategy)
+def test_namd_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -320,52 +317,52 @@ def test_namd::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=namd::G_strategy)
+@given(instance=namd_C_strategy)
 @settings(max_examples=50)
-def test_namd::g_instantiation(instance):
-    assert isinstance(instance, namd::G)
+def test_namd_c_instantiation(instance):
+    assert isinstance(instance, namd_C)
 
-@given(instance=namd::C_strategy)
+@given(instance=namd_H_strategy)
 @settings(max_examples=50)
-def test_namd::c_instantiation(instance):
-    assert isinstance(instance, namd::C)
+def test_namd_h_instantiation(instance):
+    assert isinstance(instance, namd_H)
 
-@given(instance=namd::H_strategy)
+@given(instance=namd_G_strategy)
 @settings(max_examples=50)
-def test_namd::h_instantiation(instance):
-    assert isinstance(instance, namd::H)
+def test_namd_g_instantiation(instance):
+    assert isinstance(instance, namd_G)
 
-@given(instance=namd::B_strategy)
+@given(instance=namd_B_strategy)
 @settings(max_examples=50)
-def test_namd::b_instantiation(instance):
-    assert isinstance(instance, namd::B)
+def test_namd_b_instantiation(instance):
+    assert isinstance(instance, namd_B)
 
-@given(instance=namd::A_strategy)
+@given(instance=namd_A_strategy)
 @settings(max_examples=50)
-def test_namd::a_instantiation(instance):
-    assert isinstance(instance, namd::A)
+def test_namd_a_instantiation(instance):
+    assert isinstance(instance, namd_A)
 
 @given(instance=D_strategy)
 @settings(max_examples=50)
 def test_d_instantiation(instance):
     assert isinstance(instance, D)
 
-@given(instance=namd::F_strategy)
+@given(instance=namd_F_strategy)
 @settings(max_examples=50)
-def test_namd::f_instantiation(instance):
-    assert isinstance(instance, namd::F)
+def test_namd_f_instantiation(instance):
+    assert isinstance(instance, namd_F)
 
-@given(instance=namd::E_strategy)
+@given(instance=namd_E_strategy)
 @settings(max_examples=50)
-def test_namd::e_instantiation(instance):
-    assert isinstance(instance, namd::E)
+def test_namd_e_instantiation(instance):
+    assert isinstance(instance, namd_E)
 
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=namd::D_strategy)
+@given(instance=namd_D_strategy)
 @settings(max_examples=50)
-def test_namd::d_instantiation(instance):
-    assert isinstance(instance, namd::D)
+def test_namd_d_instantiation(instance):
+    assert isinstance(instance, namd_D)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Logo::Expression,
+from python_code import (
+    Logo_Expression,
     Primitive,
-    Logo::Left,
-    Logo::Clear,
-    Logo::Forward,
-    Logo::Right,
-    Logo::PenUp,
-    Logo::PenDown,
-    Logo::Back,
-    Logo::Primitive,
-    Logo::LogoProgram,
+    Logo_PenUp,
+    Logo_Right,
+    Logo_Forward,
+    Logo_PenDown,
+    Logo_Clear,
+    Logo_Left,
+    Logo_Back,
+    Logo_Primitive,
+    Logo_LogoProgram,
 )
 
 # =============================================================================
@@ -25,16 +25,16 @@ from classes import (
 
 
 
-def test_logo::expression_is_not_abstract():
-    assert not inspect.isabstract(Logo::Expression)
+def test_logo_expression_is_not_abstract():
+    assert not inspect.isabstract(Logo_Expression)
 
 
-def test_logo::expression_constructor_exists():
-    assert callable(Logo::Expression.__init__)
+def test_logo_expression_constructor_exists():
+    assert callable(Logo_Expression.__init__)
 
 
-def test_logo::expression_constructor_args():
-    sig = inspect.signature(Logo::Expression.__init__)
+def test_logo_expression_constructor_args():
+    sig = inspect.signature(Logo_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -53,128 +53,128 @@ def test_primitive_constructor_args():
 
 
 
-def test_logo::left_is_not_abstract():
-    assert not inspect.isabstract(Logo::Left)
+def test_logo_penup_is_not_abstract():
+    assert not inspect.isabstract(Logo_PenUp)
 
 
-def test_logo::left_constructor_exists():
-    assert callable(Logo::Left.__init__)
+def test_logo_penup_constructor_exists():
+    assert callable(Logo_PenUp.__init__)
 
 
-def test_logo::left_constructor_args():
-    sig = inspect.signature(Logo::Left.__init__)
+def test_logo_penup_constructor_args():
+    sig = inspect.signature(Logo_PenUp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::clear_is_not_abstract():
-    assert not inspect.isabstract(Logo::Clear)
+def test_logo_right_is_not_abstract():
+    assert not inspect.isabstract(Logo_Right)
 
 
-def test_logo::clear_constructor_exists():
-    assert callable(Logo::Clear.__init__)
+def test_logo_right_constructor_exists():
+    assert callable(Logo_Right.__init__)
 
 
-def test_logo::clear_constructor_args():
-    sig = inspect.signature(Logo::Clear.__init__)
+def test_logo_right_constructor_args():
+    sig = inspect.signature(Logo_Right.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::forward_is_not_abstract():
-    assert not inspect.isabstract(Logo::Forward)
+def test_logo_forward_is_not_abstract():
+    assert not inspect.isabstract(Logo_Forward)
 
 
-def test_logo::forward_constructor_exists():
-    assert callable(Logo::Forward.__init__)
+def test_logo_forward_constructor_exists():
+    assert callable(Logo_Forward.__init__)
 
 
-def test_logo::forward_constructor_args():
-    sig = inspect.signature(Logo::Forward.__init__)
+def test_logo_forward_constructor_args():
+    sig = inspect.signature(Logo_Forward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::right_is_not_abstract():
-    assert not inspect.isabstract(Logo::Right)
+def test_logo_pendown_is_not_abstract():
+    assert not inspect.isabstract(Logo_PenDown)
 
 
-def test_logo::right_constructor_exists():
-    assert callable(Logo::Right.__init__)
+def test_logo_pendown_constructor_exists():
+    assert callable(Logo_PenDown.__init__)
 
 
-def test_logo::right_constructor_args():
-    sig = inspect.signature(Logo::Right.__init__)
+def test_logo_pendown_constructor_args():
+    sig = inspect.signature(Logo_PenDown.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::penup_is_not_abstract():
-    assert not inspect.isabstract(Logo::PenUp)
+def test_logo_clear_is_not_abstract():
+    assert not inspect.isabstract(Logo_Clear)
 
 
-def test_logo::penup_constructor_exists():
-    assert callable(Logo::PenUp.__init__)
+def test_logo_clear_constructor_exists():
+    assert callable(Logo_Clear.__init__)
 
 
-def test_logo::penup_constructor_args():
-    sig = inspect.signature(Logo::PenUp.__init__)
+def test_logo_clear_constructor_args():
+    sig = inspect.signature(Logo_Clear.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::pendown_is_not_abstract():
-    assert not inspect.isabstract(Logo::PenDown)
+def test_logo_left_is_not_abstract():
+    assert not inspect.isabstract(Logo_Left)
 
 
-def test_logo::pendown_constructor_exists():
-    assert callable(Logo::PenDown.__init__)
+def test_logo_left_constructor_exists():
+    assert callable(Logo_Left.__init__)
 
 
-def test_logo::pendown_constructor_args():
-    sig = inspect.signature(Logo::PenDown.__init__)
+def test_logo_left_constructor_args():
+    sig = inspect.signature(Logo_Left.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::back_is_not_abstract():
-    assert not inspect.isabstract(Logo::Back)
+def test_logo_back_is_not_abstract():
+    assert not inspect.isabstract(Logo_Back)
 
 
-def test_logo::back_constructor_exists():
-    assert callable(Logo::Back.__init__)
+def test_logo_back_constructor_exists():
+    assert callable(Logo_Back.__init__)
 
 
-def test_logo::back_constructor_args():
-    sig = inspect.signature(Logo::Back.__init__)
+def test_logo_back_constructor_args():
+    sig = inspect.signature(Logo_Back.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::primitive_is_not_abstract():
-    assert not inspect.isabstract(Logo::Primitive)
+def test_logo_primitive_is_not_abstract():
+    assert not inspect.isabstract(Logo_Primitive)
 
 
-def test_logo::primitive_constructor_exists():
-    assert callable(Logo::Primitive.__init__)
+def test_logo_primitive_constructor_exists():
+    assert callable(Logo_Primitive.__init__)
 
 
-def test_logo::primitive_constructor_args():
-    sig = inspect.signature(Logo::Primitive.__init__)
+def test_logo_primitive_constructor_args():
+    sig = inspect.signature(Logo_Primitive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::logoprogram_is_not_abstract():
-    assert not inspect.isabstract(Logo::LogoProgram)
+def test_logo_logoprogram_is_not_abstract():
+    assert not inspect.isabstract(Logo_LogoProgram)
 
 
-def test_logo::logoprogram_constructor_exists():
-    assert callable(Logo::LogoProgram.__init__)
+def test_logo_logoprogram_constructor_exists():
+    assert callable(Logo_LogoProgram.__init__)
 
 
-def test_logo::logoprogram_constructor_args():
-    sig = inspect.signature(Logo::LogoProgram.__init__)
+def test_logo_logoprogram_constructor_args():
+    sig = inspect.signature(Logo_LogoProgram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,44 +189,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Logo::Expression_strategy = st.builds(
-    Logo::Expression,
+Logo_Expression_strategy = st.builds(
+    Logo_Expression,
 )
 Primitive_strategy = st.builds(
     Primitive,
 )
-Logo::Left_strategy = st.builds(
-    Logo::Left,
+Logo_PenUp_strategy = st.builds(
+    Logo_PenUp,
 )
-Logo::Clear_strategy = st.builds(
-    Logo::Clear,
+Logo_Right_strategy = st.builds(
+    Logo_Right,
 )
-Logo::Forward_strategy = st.builds(
-    Logo::Forward,
+Logo_Forward_strategy = st.builds(
+    Logo_Forward,
 )
-Logo::Right_strategy = st.builds(
-    Logo::Right,
+Logo_PenDown_strategy = st.builds(
+    Logo_PenDown,
 )
-Logo::PenUp_strategy = st.builds(
-    Logo::PenUp,
+Logo_Clear_strategy = st.builds(
+    Logo_Clear,
 )
-Logo::PenDown_strategy = st.builds(
-    Logo::PenDown,
+Logo_Left_strategy = st.builds(
+    Logo_Left,
 )
-Logo::Back_strategy = st.builds(
-    Logo::Back,
+Logo_Back_strategy = st.builds(
+    Logo_Back,
 )
-Logo::Primitive_strategy = st.builds(
-    Logo::Primitive,
+Logo_Primitive_strategy = st.builds(
+    Logo_Primitive,
 )
-Logo::LogoProgram_strategy = st.builds(
-    Logo::LogoProgram,
+Logo_LogoProgram_strategy = st.builds(
+    Logo_LogoProgram,
 )
 
-@given(instance=Logo::Expression_strategy)
+@given(instance=Logo_Expression_strategy)
 @settings(max_examples=50)
-def test_logo::expression_instantiation(instance):
-    assert isinstance(instance, Logo::Expression)
+def test_logo_expression_instantiation(instance):
+    assert isinstance(instance, Logo_Expression)
 
 import warnings
 import copy
@@ -234,9 +234,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Logo::Expression_strategy)
+@given(instance=Logo_Expression_strategy)
 @settings(max_examples=30)
-def test_logo::expression_eval_changes_state(instance):
+def test_logo_expression_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -250,61 +250,61 @@ def test_logo::expression_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in Logo::Expression is empty"
+        assert has_statements, f"Function 'eval' in Logo_Expression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in Logo::Expression did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in Logo_Expression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in Logo::Expression is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in Logo_Expression is not implemented or raised an error")
 
 @given(instance=Primitive_strategy)
 @settings(max_examples=50)
 def test_primitive_instantiation(instance):
     assert isinstance(instance, Primitive)
 
-@given(instance=Logo::Left_strategy)
+@given(instance=Logo_PenUp_strategy)
 @settings(max_examples=50)
-def test_logo::left_instantiation(instance):
-    assert isinstance(instance, Logo::Left)
+def test_logo_penup_instantiation(instance):
+    assert isinstance(instance, Logo_PenUp)
 
-@given(instance=Logo::Clear_strategy)
+@given(instance=Logo_Right_strategy)
 @settings(max_examples=50)
-def test_logo::clear_instantiation(instance):
-    assert isinstance(instance, Logo::Clear)
+def test_logo_right_instantiation(instance):
+    assert isinstance(instance, Logo_Right)
 
-@given(instance=Logo::Forward_strategy)
+@given(instance=Logo_Forward_strategy)
 @settings(max_examples=50)
-def test_logo::forward_instantiation(instance):
-    assert isinstance(instance, Logo::Forward)
+def test_logo_forward_instantiation(instance):
+    assert isinstance(instance, Logo_Forward)
 
-@given(instance=Logo::Right_strategy)
+@given(instance=Logo_PenDown_strategy)
 @settings(max_examples=50)
-def test_logo::right_instantiation(instance):
-    assert isinstance(instance, Logo::Right)
+def test_logo_pendown_instantiation(instance):
+    assert isinstance(instance, Logo_PenDown)
 
-@given(instance=Logo::PenUp_strategy)
+@given(instance=Logo_Clear_strategy)
 @settings(max_examples=50)
-def test_logo::penup_instantiation(instance):
-    assert isinstance(instance, Logo::PenUp)
+def test_logo_clear_instantiation(instance):
+    assert isinstance(instance, Logo_Clear)
 
-@given(instance=Logo::PenDown_strategy)
+@given(instance=Logo_Left_strategy)
 @settings(max_examples=50)
-def test_logo::pendown_instantiation(instance):
-    assert isinstance(instance, Logo::PenDown)
+def test_logo_left_instantiation(instance):
+    assert isinstance(instance, Logo_Left)
 
-@given(instance=Logo::Back_strategy)
+@given(instance=Logo_Back_strategy)
 @settings(max_examples=50)
-def test_logo::back_instantiation(instance):
-    assert isinstance(instance, Logo::Back)
+def test_logo_back_instantiation(instance):
+    assert isinstance(instance, Logo_Back)
 
-@given(instance=Logo::Primitive_strategy)
+@given(instance=Logo_Primitive_strategy)
 @settings(max_examples=50)
-def test_logo::primitive_instantiation(instance):
-    assert isinstance(instance, Logo::Primitive)
+def test_logo_primitive_instantiation(instance):
+    assert isinstance(instance, Logo_Primitive)
 
-@given(instance=Logo::LogoProgram_strategy)
+@given(instance=Logo_LogoProgram_strategy)
 @settings(max_examples=50)
-def test_logo::logoprogram_instantiation(instance):
-    assert isinstance(instance, Logo::LogoProgram)
+def test_logo_logoprogram_instantiation(instance):
+    assert isinstance(instance, Logo_LogoProgram)

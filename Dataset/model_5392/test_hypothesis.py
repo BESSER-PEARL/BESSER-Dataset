@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Action,
-    essai::B,
+    essai_B,
     Kind,
-    essai::A,
+    essai_A,
 )
 
 # =============================================================================
@@ -32,16 +32,16 @@ def test_action_constructor_args():
 
 
 
-def test_essai::b_is_not_abstract():
-    assert not inspect.isabstract(essai::B)
+def test_essai_b_is_not_abstract():
+    assert not inspect.isabstract(essai_B)
 
 
-def test_essai::b_constructor_exists():
-    assert callable(essai::B.__init__)
+def test_essai_b_constructor_exists():
+    assert callable(essai_B.__init__)
 
 
-def test_essai::b_constructor_args():
-    sig = inspect.signature(essai::B.__init__)
+def test_essai_b_constructor_args():
+    sig = inspect.signature(essai_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -60,16 +60,16 @@ def test_kind_constructor_args():
 
 
 
-def test_essai::a_is_not_abstract():
-    assert not inspect.isabstract(essai::A)
+def test_essai_a_is_not_abstract():
+    assert not inspect.isabstract(essai_A)
 
 
-def test_essai::a_constructor_exists():
-    assert callable(essai::A.__init__)
+def test_essai_a_constructor_exists():
+    assert callable(essai_A.__init__)
 
 
-def test_essai::a_constructor_args():
-    sig = inspect.signature(essai::A.__init__)
+def test_essai_a_constructor_args():
+    sig = inspect.signature(essai_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,14 +87,14 @@ safe_text = st.text(
 Action_strategy = st.builds(
     Action,
 )
-essai::B_strategy = st.builds(
-    essai::B,
+essai_B_strategy = st.builds(
+    essai_B,
 )
 Kind_strategy = st.builds(
     Kind,
 )
-essai::A_strategy = st.builds(
-    essai::A,
+essai_A_strategy = st.builds(
+    essai_A,
 )
 
 @given(instance=Action_strategy)
@@ -102,17 +102,17 @@ essai::A_strategy = st.builds(
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=essai::B_strategy)
+@given(instance=essai_B_strategy)
 @settings(max_examples=50)
-def test_essai::b_instantiation(instance):
-    assert isinstance(instance, essai::B)
+def test_essai_b_instantiation(instance):
+    assert isinstance(instance, essai_B)
 
 @given(instance=Kind_strategy)
 @settings(max_examples=50)
 def test_kind_instantiation(instance):
     assert isinstance(instance, Kind)
 
-@given(instance=essai::A_strategy)
+@given(instance=essai_A_strategy)
 @settings(max_examples=50)
-def test_essai::a_instantiation(instance):
-    assert isinstance(instance, essai::A)
+def test_essai_a_instantiation(instance):
+    assert isinstance(instance, essai_A)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Denda,
@@ -50,19 +50,10 @@ def test_denda_constructor_exists():
 def test_denda_constructor_args():
     sig = inspect.signature(Denda.__init__)
     params = list(sig.parameters.keys())
-    assert "jumlah" in params, "Missing parameter 'jumlah'"
     assert "ID_Denda" in params, "Missing parameter 'ID_Denda'"
     assert "keterangan" in params, "Missing parameter 'keterangan'"
     assert "ID_Reservasi" in params, "Missing parameter 'ID_Reservasi'"
-
-def test_denda_has_jumlah():
-    assert hasattr(Denda, "jumlah")
-    descriptor = None
-    for klass in Denda.__mro__:
-        if "jumlah" in klass.__dict__:
-            descriptor = klass.__dict__["jumlah"]
-            break
-    assert isinstance(descriptor, property)
+    assert "jumlah" in params, "Missing parameter 'jumlah'"
 
 def test_denda_has_ID_Denda():
     assert hasattr(Denda, "ID_Denda")
@@ -91,6 +82,15 @@ def test_denda_has_ID_Reservasi():
             break
     assert isinstance(descriptor, property)
 
+def test_denda_has_jumlah():
+    assert hasattr(Denda, "jumlah")
+    descriptor = None
+    for klass in Denda.__mro__:
+        if "jumlah" in klass.__dict__:
+            descriptor = klass.__dict__["jumlah"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_pembayaran_is_not_abstract():
@@ -104,18 +104,18 @@ def test_pembayaran_constructor_exists():
 def test_pembayaran_constructor_args():
     sig = inspect.signature(Pembayaran.__init__)
     params = list(sig.parameters.keys())
-    assert "ID_Reservasi" in params, "Missing parameter 'ID_Reservasi'"
-    assert "jumlah" in params, "Missing parameter 'jumlah'"
     assert "ID_Pembayaran" in params, "Missing parameter 'ID_Pembayaran'"
+    assert "jumlah" in params, "Missing parameter 'jumlah'"
     assert "deadline_bayar" in params, "Missing parameter 'deadline_bayar'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "ID_Reservasi" in params, "Missing parameter 'ID_Reservasi'"
 
-def test_pembayaran_has_ID_Reservasi():
-    assert hasattr(Pembayaran, "ID_Reservasi")
+def test_pembayaran_has_ID_Pembayaran():
+    assert hasattr(Pembayaran, "ID_Pembayaran")
     descriptor = None
     for klass in Pembayaran.__mro__:
-        if "ID_Reservasi" in klass.__dict__:
-            descriptor = klass.__dict__["ID_Reservasi"]
+        if "ID_Pembayaran" in klass.__dict__:
+            descriptor = klass.__dict__["ID_Pembayaran"]
             break
     assert isinstance(descriptor, property)
 
@@ -125,15 +125,6 @@ def test_pembayaran_has_jumlah():
     for klass in Pembayaran.__mro__:
         if "jumlah" in klass.__dict__:
             descriptor = klass.__dict__["jumlah"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayaran_has_ID_Pembayaran():
-    assert hasattr(Pembayaran, "ID_Pembayaran")
-    descriptor = None
-    for klass in Pembayaran.__mro__:
-        if "ID_Pembayaran" in klass.__dict__:
-            descriptor = klass.__dict__["ID_Pembayaran"]
             break
     assert isinstance(descriptor, property)
 
@@ -155,6 +146,15 @@ def test_pembayaran_has_status():
             break
     assert isinstance(descriptor, property)
 
+def test_pembayaran_has_ID_Reservasi():
+    assert hasattr(Pembayaran, "ID_Reservasi")
+    descriptor = None
+    for klass in Pembayaran.__mro__:
+        if "ID_Reservasi" in klass.__dict__:
+            descriptor = klass.__dict__["ID_Reservasi"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_reservasikamar_is_not_abstract():
@@ -168,22 +168,13 @@ def test_reservasikamar_constructor_exists():
 def test_reservasikamar_constructor_args():
     sig = inspect.signature(ReservasiKamar.__init__)
     params = list(sig.parameters.keys())
-    assert "no_kamar" in params, "Missing parameter 'no_kamar'"
     assert "NIK" in params, "Missing parameter 'NIK'"
-    assert "tgl_start_booking" in params, "Missing parameter 'tgl_start_booking'"
-    assert "ID_Reservasi" in params, "Missing parameter 'ID_Reservasi'"
-    assert "tgl_end_booking" in params, "Missing parameter 'tgl_end_booking'"
-    assert "ID_admin" in params, "Missing parameter 'ID_admin'"
     assert "ID_pembayaran" in params, "Missing parameter 'ID_pembayaran'"
-
-def test_reservasikamar_has_no_kamar():
-    assert hasattr(ReservasiKamar, "no_kamar")
-    descriptor = None
-    for klass in ReservasiKamar.__mro__:
-        if "no_kamar" in klass.__dict__:
-            descriptor = klass.__dict__["no_kamar"]
-            break
-    assert isinstance(descriptor, property)
+    assert "ID_admin" in params, "Missing parameter 'ID_admin'"
+    assert "ID_Reservasi" in params, "Missing parameter 'ID_Reservasi'"
+    assert "no_kamar" in params, "Missing parameter 'no_kamar'"
+    assert "tgl_start_booking" in params, "Missing parameter 'tgl_start_booking'"
+    assert "tgl_end_booking" in params, "Missing parameter 'tgl_end_booking'"
 
 def test_reservasikamar_has_NIK():
     assert hasattr(ReservasiKamar, "NIK")
@@ -194,30 +185,12 @@ def test_reservasikamar_has_NIK():
             break
     assert isinstance(descriptor, property)
 
-def test_reservasikamar_has_tgl_start_booking():
-    assert hasattr(ReservasiKamar, "tgl_start_booking")
+def test_reservasikamar_has_ID_pembayaran():
+    assert hasattr(ReservasiKamar, "ID_pembayaran")
     descriptor = None
     for klass in ReservasiKamar.__mro__:
-        if "tgl_start_booking" in klass.__dict__:
-            descriptor = klass.__dict__["tgl_start_booking"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_reservasikamar_has_ID_Reservasi():
-    assert hasattr(ReservasiKamar, "ID_Reservasi")
-    descriptor = None
-    for klass in ReservasiKamar.__mro__:
-        if "ID_Reservasi" in klass.__dict__:
-            descriptor = klass.__dict__["ID_Reservasi"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_reservasikamar_has_tgl_end_booking():
-    assert hasattr(ReservasiKamar, "tgl_end_booking")
-    descriptor = None
-    for klass in ReservasiKamar.__mro__:
-        if "tgl_end_booking" in klass.__dict__:
-            descriptor = klass.__dict__["tgl_end_booking"]
+        if "ID_pembayaran" in klass.__dict__:
+            descriptor = klass.__dict__["ID_pembayaran"]
             break
     assert isinstance(descriptor, property)
 
@@ -230,12 +203,39 @@ def test_reservasikamar_has_ID_admin():
             break
     assert isinstance(descriptor, property)
 
-def test_reservasikamar_has_ID_pembayaran():
-    assert hasattr(ReservasiKamar, "ID_pembayaran")
+def test_reservasikamar_has_ID_Reservasi():
+    assert hasattr(ReservasiKamar, "ID_Reservasi")
     descriptor = None
     for klass in ReservasiKamar.__mro__:
-        if "ID_pembayaran" in klass.__dict__:
-            descriptor = klass.__dict__["ID_pembayaran"]
+        if "ID_Reservasi" in klass.__dict__:
+            descriptor = klass.__dict__["ID_Reservasi"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_reservasikamar_has_no_kamar():
+    assert hasattr(ReservasiKamar, "no_kamar")
+    descriptor = None
+    for klass in ReservasiKamar.__mro__:
+        if "no_kamar" in klass.__dict__:
+            descriptor = klass.__dict__["no_kamar"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_reservasikamar_has_tgl_start_booking():
+    assert hasattr(ReservasiKamar, "tgl_start_booking")
+    descriptor = None
+    for klass in ReservasiKamar.__mro__:
+        if "tgl_start_booking" in klass.__dict__:
+            descriptor = klass.__dict__["tgl_start_booking"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_reservasikamar_has_tgl_end_booking():
+    assert hasattr(ReservasiKamar, "tgl_end_booking")
+    descriptor = None
+    for klass in ReservasiKamar.__mro__:
+        if "tgl_end_booking" in klass.__dict__:
+            descriptor = klass.__dict__["tgl_end_booking"]
             break
     assert isinstance(descriptor, property)
 
@@ -252,11 +252,20 @@ def test_kamar_constructor_exists():
 def test_kamar_constructor_args():
     sig = inspect.signature(Kamar.__init__)
     params = list(sig.parameters.keys())
+    assert "_attr" in params, "Missing parameter '_attr'"
     assert "status" in params, "Missing parameter 'status'"
     assert "jumlah_bed" in params, "Missing parameter 'jumlah_bed'"
     assert "no_kamar" in params, "Missing parameter 'no_kamar'"
-    assert "_attr" in params, "Missing parameter '_attr'"
     assert "tipe" in params, "Missing parameter 'tipe'"
+
+def test_kamar_has__attr():
+    assert hasattr(Kamar, "_attr")
+    descriptor = None
+    for klass in Kamar.__mro__:
+        if "_attr" in klass.__dict__:
+            descriptor = klass.__dict__["_attr"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_kamar_has_status():
     assert hasattr(Kamar, "status")
@@ -282,15 +291,6 @@ def test_kamar_has_no_kamar():
     for klass in Kamar.__mro__:
         if "no_kamar" in klass.__dict__:
             descriptor = klass.__dict__["no_kamar"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kamar_has__attr():
-    assert hasattr(Kamar, "_attr")
-    descriptor = None
-    for klass in Kamar.__mro__:
-        if "_attr" in klass.__dict__:
-            descriptor = klass.__dict__["_attr"]
             break
     assert isinstance(descriptor, property)
 
@@ -330,36 +330,18 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
-    assert "insertData" in params, "Missing parameter 'insertData'"
-    assert "ID_admin" in params, "Missing parameter 'ID_admin'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "username" in params, "Missing parameter 'username'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "insertData" in params, "Missing parameter 'insertData'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "ID_admin" in params, "Missing parameter 'ID_admin'"
 
-def test_admin_has_password():
-    assert hasattr(Admin, "password")
+def test_admin_has_username():
+    assert hasattr(Admin, "username")
     descriptor = None
     for klass in Admin.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_admin_has_insertData():
-    assert hasattr(Admin, "insertData")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "insertData" in klass.__dict__:
-            descriptor = klass.__dict__["insertData"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_admin_has_ID_admin():
-    assert hasattr(Admin, "ID_admin")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "ID_admin" in klass.__dict__:
-            descriptor = klass.__dict__["ID_admin"]
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
@@ -372,12 +354,30 @@ def test_admin_has_attribute():
             break
     assert isinstance(descriptor, property)
 
-def test_admin_has_username():
-    assert hasattr(Admin, "username")
+def test_admin_has_insertData():
+    assert hasattr(Admin, "insertData")
     descriptor = None
     for klass in Admin.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
+        if "insertData" in klass.__dict__:
+            descriptor = klass.__dict__["insertData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_password():
+    assert hasattr(Admin, "password")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_ID_admin():
+    assert hasattr(Admin, "ID_admin")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "ID_admin" in klass.__dict__:
+            descriptor = klass.__dict__["ID_admin"]
             break
     assert isinstance(descriptor, property)
 
@@ -394,20 +394,20 @@ def test_pemesan_constructor_exists():
 def test_pemesan_constructor_args():
     sig = inspect.signature(Pemesan.__init__)
     params = list(sig.parameters.keys())
-    assert "username" in params, "Missing parameter 'username'"
-    assert "Alamat" in params, "Missing parameter 'Alamat'"
     assert "Emai" in params, "Missing parameter 'Emai'"
-    assert "password" in params, "Missing parameter 'password'"
+    assert "Alamat" in params, "Missing parameter 'Alamat'"
     assert "Nama" in params, "Missing parameter 'Nama'"
-    assert "phone_number" in params, "Missing parameter 'phone_number'"
+    assert "username" in params, "Missing parameter 'username'"
+    assert "password" in params, "Missing parameter 'password'"
     assert "NIK" in params, "Missing parameter 'NIK'"
+    assert "phone_number" in params, "Missing parameter 'phone_number'"
 
-def test_pemesan_has_username():
-    assert hasattr(Pemesan, "username")
+def test_pemesan_has_Emai():
+    assert hasattr(Pemesan, "Emai")
     descriptor = None
     for klass in Pemesan.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
+        if "Emai" in klass.__dict__:
+            descriptor = klass.__dict__["Emai"]
             break
     assert isinstance(descriptor, property)
 
@@ -420,12 +420,21 @@ def test_pemesan_has_Alamat():
             break
     assert isinstance(descriptor, property)
 
-def test_pemesan_has_Emai():
-    assert hasattr(Pemesan, "Emai")
+def test_pemesan_has_Nama():
+    assert hasattr(Pemesan, "Nama")
     descriptor = None
     for klass in Pemesan.__mro__:
-        if "Emai" in klass.__dict__:
-            descriptor = klass.__dict__["Emai"]
+        if "Nama" in klass.__dict__:
+            descriptor = klass.__dict__["Nama"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pemesan_has_username():
+    assert hasattr(Pemesan, "username")
+    descriptor = None
+    for klass in Pemesan.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
@@ -438,12 +447,12 @@ def test_pemesan_has_password():
             break
     assert isinstance(descriptor, property)
 
-def test_pemesan_has_Nama():
-    assert hasattr(Pemesan, "Nama")
+def test_pemesan_has_NIK():
+    assert hasattr(Pemesan, "NIK")
     descriptor = None
     for klass in Pemesan.__mro__:
-        if "Nama" in klass.__dict__:
-            descriptor = klass.__dict__["Nama"]
+        if "NIK" in klass.__dict__:
+            descriptor = klass.__dict__["NIK"]
             break
     assert isinstance(descriptor, property)
 
@@ -453,15 +462,6 @@ def test_pemesan_has_phone_number():
     for klass in Pemesan.__mro__:
         if "phone_number" in klass.__dict__:
             descriptor = klass.__dict__["phone_number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pemesan_has_NIK():
-    assert hasattr(Pemesan, "NIK")
-    descriptor = None
-    for klass in Pemesan.__mro__:
-        if "NIK" in klass.__dict__:
-            descriptor = klass.__dict__["NIK"]
             break
     assert isinstance(descriptor, property)
 
@@ -730,55 +730,55 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Denda_strategy = st.builds(
     Denda,
-    jumlah=
-        st.integers(),
     ID_Denda=
         st.integers(),
     keterangan=
         safe_text,
     ID_Reservasi=
+        st.integers(),
+    jumlah=
         st.integers()
 )
 Pembayaran_strategy = st.builds(
     Pembayaran,
-    ID_Reservasi=
+    ID_Pembayaran=
         st.integers(),
     jumlah=
-        st.integers(),
-    ID_Pembayaran=
         st.integers(),
     deadline_bayar=
         safe_text,
     status=
-        safe_text
+        safe_text,
+    ID_Reservasi=
+        st.integers()
 )
 ReservasiKamar_strategy = st.builds(
     ReservasiKamar,
-    no_kamar=
-        st.integers(),
     NIK=
+        st.integers(),
+    ID_pembayaran=
+        st.integers(),
+    ID_admin=
+        st.integers(),
+    ID_Reservasi=
+        st.integers(),
+    no_kamar=
         st.integers(),
     tgl_start_booking=
         safe_text,
-    ID_Reservasi=
-        st.integers(),
     tgl_end_booking=
-        safe_text,
-    ID_admin=
-        st.integers(),
-    ID_pembayaran=
-        st.integers()
+        safe_text
 )
 Kamar_strategy = st.builds(
     Kamar,
+    _attr=
+        safe_text,
     status=
         safe_text,
     jumlah_bed=
         st.integers(),
     no_kamar=
         st.integers(),
-    _attr=
-        safe_text,
     tipe=
         safe_text
 )
@@ -787,33 +787,33 @@ hjb_Interface_strategy = st.builds(
 )
 Admin_strategy = st.builds(
     Admin,
-    password=
+    username=
+        safe_text,
+    attribute=
         safe_text,
     insertData=
         safe_text,
-    ID_admin=
-        st.integers(),
-    attribute=
+    password=
         safe_text,
-    username=
-        safe_text
+    ID_admin=
+        st.integers()
 )
 Pemesan_strategy = st.builds(
     Pemesan,
-    username=
+    Emai=
         safe_text,
     Alamat=
         safe_text,
-    Emai=
+    Nama=
+        safe_text,
+    username=
         safe_text,
     password=
         safe_text,
-    Nama=
-        safe_text,
-    phone_number=
-        safe_text,
     NIK=
-        st.integers()
+        st.integers(),
+    phone_number=
+        safe_text
 )
 Register_UseCase_strategy = st.builds(
     Register_UseCase,
@@ -872,20 +872,6 @@ Pengunjung_Actor_strategy = st.builds(
 def test_denda_instantiation(instance):
     assert isinstance(instance, Denda)
 
-@given(instance=Denda_strategy)
-def test_denda_jumlah_type(instance):
-    assert isinstance(instance.jumlah, int)
-
-
-@given(instance=Denda_strategy)
-def test_denda_jumlah_setter(instance):
-    original = instance.jumlah
-    instance.jumlah = original
-    assert instance.jumlah == original
-
-@given(instance=Denda_strategy)
-def test_denda_ID_Denda_type(instance):
-    assert isinstance(instance.ID_Denda, int)
 
 
 @given(instance=Denda_strategy)
@@ -894,9 +880,6 @@ def test_denda_ID_Denda_setter(instance):
     instance.ID_Denda = original
     assert instance.ID_Denda == original
 
-@given(instance=Denda_strategy)
-def test_denda_keterangan_type(instance):
-    assert isinstance(instance.keterangan, str)
 
 
 @given(instance=Denda_strategy)
@@ -905,9 +888,6 @@ def test_denda_keterangan_setter(instance):
     instance.keterangan = original
     assert instance.keterangan == original
 
-@given(instance=Denda_strategy)
-def test_denda_ID_Reservasi_type(instance):
-    assert isinstance(instance.ID_Reservasi, int)
 
 
 @given(instance=Denda_strategy)
@@ -916,36 +896,19 @@ def test_denda_ID_Reservasi_setter(instance):
     instance.ID_Reservasi = original
     assert instance.ID_Reservasi == original
 
-@given(instance=Pembayaran_strategy)
-@settings(max_examples=50)
-def test_pembayaran_instantiation(instance):
-    assert isinstance(instance, Pembayaran)
-
-@given(instance=Pembayaran_strategy)
-def test_pembayaran_ID_Reservasi_type(instance):
-    assert isinstance(instance.ID_Reservasi, int)
 
 
-@given(instance=Pembayaran_strategy)
-def test_pembayaran_ID_Reservasi_setter(instance):
-    original = instance.ID_Reservasi
-    instance.ID_Reservasi = original
-    assert instance.ID_Reservasi == original
-
-@given(instance=Pembayaran_strategy)
-def test_pembayaran_jumlah_type(instance):
-    assert isinstance(instance.jumlah, int)
-
-
-@given(instance=Pembayaran_strategy)
-def test_pembayaran_jumlah_setter(instance):
+@given(instance=Denda_strategy)
+def test_denda_jumlah_setter(instance):
     original = instance.jumlah
     instance.jumlah = original
     assert instance.jumlah == original
 
 @given(instance=Pembayaran_strategy)
-def test_pembayaran_ID_Pembayaran_type(instance):
-    assert isinstance(instance.ID_Pembayaran, int)
+@settings(max_examples=50)
+def test_pembayaran_instantiation(instance):
+    assert isinstance(instance, Pembayaran)
+
 
 
 @given(instance=Pembayaran_strategy)
@@ -954,9 +917,14 @@ def test_pembayaran_ID_Pembayaran_setter(instance):
     instance.ID_Pembayaran = original
     assert instance.ID_Pembayaran == original
 
+
+
 @given(instance=Pembayaran_strategy)
-def test_pembayaran_deadline_bayar_type(instance):
-    assert isinstance(instance.deadline_bayar, str)
+def test_pembayaran_jumlah_setter(instance):
+    original = instance.jumlah
+    instance.jumlah = original
+    assert instance.jumlah == original
+
 
 
 @given(instance=Pembayaran_strategy)
@@ -965,9 +933,6 @@ def test_pembayaran_deadline_bayar_setter(instance):
     instance.deadline_bayar = original
     assert instance.deadline_bayar == original
 
-@given(instance=Pembayaran_strategy)
-def test_pembayaran_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
 @given(instance=Pembayaran_strategy)
@@ -976,25 +941,19 @@ def test_pembayaran_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Pembayaran_strategy)
+def test_pembayaran_ID_Reservasi_setter(instance):
+    original = instance.ID_Reservasi
+    instance.ID_Reservasi = original
+    assert instance.ID_Reservasi == original
+
 @given(instance=ReservasiKamar_strategy)
 @settings(max_examples=50)
 def test_reservasikamar_instantiation(instance):
     assert isinstance(instance, ReservasiKamar)
 
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_no_kamar_type(instance):
-    assert isinstance(instance.no_kamar, int)
-
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_no_kamar_setter(instance):
-    original = instance.no_kamar
-    instance.no_kamar = original
-    assert instance.no_kamar == original
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_NIK_type(instance):
-    assert isinstance(instance.NIK, int)
 
 
 @given(instance=ReservasiKamar_strategy)
@@ -1003,53 +962,6 @@ def test_reservasikamar_NIK_setter(instance):
     instance.NIK = original
     assert instance.NIK == original
 
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_tgl_start_booking_type(instance):
-    assert isinstance(instance.tgl_start_booking, str)
-
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_tgl_start_booking_setter(instance):
-    original = instance.tgl_start_booking
-    instance.tgl_start_booking = original
-    assert instance.tgl_start_booking == original
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_ID_Reservasi_type(instance):
-    assert isinstance(instance.ID_Reservasi, int)
-
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_ID_Reservasi_setter(instance):
-    original = instance.ID_Reservasi
-    instance.ID_Reservasi = original
-    assert instance.ID_Reservasi == original
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_tgl_end_booking_type(instance):
-    assert isinstance(instance.tgl_end_booking, str)
-
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_tgl_end_booking_setter(instance):
-    original = instance.tgl_end_booking
-    instance.tgl_end_booking = original
-    assert instance.tgl_end_booking == original
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_ID_admin_type(instance):
-    assert isinstance(instance.ID_admin, int)
-
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_ID_admin_setter(instance):
-    original = instance.ID_admin
-    instance.ID_admin = original
-    assert instance.ID_admin == original
-
-@given(instance=ReservasiKamar_strategy)
-def test_reservasikamar_ID_pembayaran_type(instance):
-    assert isinstance(instance.ID_pembayaran, int)
 
 
 @given(instance=ReservasiKamar_strategy)
@@ -1058,47 +970,51 @@ def test_reservasikamar_ID_pembayaran_setter(instance):
     instance.ID_pembayaran = original
     assert instance.ID_pembayaran == original
 
+
+
+@given(instance=ReservasiKamar_strategy)
+def test_reservasikamar_ID_admin_setter(instance):
+    original = instance.ID_admin
+    instance.ID_admin = original
+    assert instance.ID_admin == original
+
+
+
+@given(instance=ReservasiKamar_strategy)
+def test_reservasikamar_ID_Reservasi_setter(instance):
+    original = instance.ID_Reservasi
+    instance.ID_Reservasi = original
+    assert instance.ID_Reservasi == original
+
+
+
+@given(instance=ReservasiKamar_strategy)
+def test_reservasikamar_no_kamar_setter(instance):
+    original = instance.no_kamar
+    instance.no_kamar = original
+    assert instance.no_kamar == original
+
+
+
+@given(instance=ReservasiKamar_strategy)
+def test_reservasikamar_tgl_start_booking_setter(instance):
+    original = instance.tgl_start_booking
+    instance.tgl_start_booking = original
+    assert instance.tgl_start_booking == original
+
+
+
+@given(instance=ReservasiKamar_strategy)
+def test_reservasikamar_tgl_end_booking_setter(instance):
+    original = instance.tgl_end_booking
+    instance.tgl_end_booking = original
+    assert instance.tgl_end_booking == original
+
 @given(instance=Kamar_strategy)
 @settings(max_examples=50)
 def test_kamar_instantiation(instance):
     assert isinstance(instance, Kamar)
 
-@given(instance=Kamar_strategy)
-def test_kamar_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=Kamar_strategy)
-def test_kamar_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=Kamar_strategy)
-def test_kamar_jumlah_bed_type(instance):
-    assert isinstance(instance.jumlah_bed, int)
-
-
-@given(instance=Kamar_strategy)
-def test_kamar_jumlah_bed_setter(instance):
-    original = instance.jumlah_bed
-    instance.jumlah_bed = original
-    assert instance.jumlah_bed == original
-
-@given(instance=Kamar_strategy)
-def test_kamar_no_kamar_type(instance):
-    assert isinstance(instance.no_kamar, int)
-
-
-@given(instance=Kamar_strategy)
-def test_kamar_no_kamar_setter(instance):
-    original = instance.no_kamar
-    instance.no_kamar = original
-    assert instance.no_kamar == original
-
-@given(instance=Kamar_strategy)
-def test_kamar__attr_type(instance):
-    assert isinstance(instance._attr, str)
 
 
 @given(instance=Kamar_strategy)
@@ -1107,9 +1023,30 @@ def test_kamar__attr_setter(instance):
     instance._attr = original
     assert instance._attr == original
 
+
+
 @given(instance=Kamar_strategy)
-def test_kamar_tipe_type(instance):
-    assert isinstance(instance.tipe, str)
+def test_kamar_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=Kamar_strategy)
+def test_kamar_jumlah_bed_setter(instance):
+    original = instance.jumlah_bed
+    instance.jumlah_bed = original
+    assert instance.jumlah_bed == original
+
+
+
+@given(instance=Kamar_strategy)
+def test_kamar_no_kamar_setter(instance):
+    original = instance.no_kamar
+    instance.no_kamar = original
+    assert instance.no_kamar == original
+
 
 
 @given(instance=Kamar_strategy)
@@ -1128,53 +1065,6 @@ def test_hjb_interface_instantiation(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Admin_strategy)
-def test_admin_insertData_type(instance):
-    assert isinstance(instance.insertData, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_insertData_setter(instance):
-    original = instance.insertData
-    instance.insertData = original
-    assert instance.insertData == original
-
-@given(instance=Admin_strategy)
-def test_admin_ID_admin_type(instance):
-    assert isinstance(instance.ID_admin, int)
-
-
-@given(instance=Admin_strategy)
-def test_admin_ID_admin_setter(instance):
-    original = instance.ID_admin
-    instance.ID_admin = original
-    assert instance.ID_admin == original
-
-@given(instance=Admin_strategy)
-def test_admin_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Admin_strategy)
-def test_admin_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Admin_strategy)
@@ -1183,36 +1073,43 @@ def test_admin_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
+
+
+@given(instance=Admin_strategy)
+def test_admin_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=Admin_strategy)
+def test_admin_insertData_setter(instance):
+    original = instance.insertData
+    instance.insertData = original
+    assert instance.insertData == original
+
+
+
+@given(instance=Admin_strategy)
+def test_admin_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Admin_strategy)
+def test_admin_ID_admin_setter(instance):
+    original = instance.ID_admin
+    instance.ID_admin = original
+    assert instance.ID_admin == original
+
 @given(instance=Pemesan_strategy)
 @settings(max_examples=50)
 def test_pemesan_instantiation(instance):
     assert isinstance(instance, Pemesan)
 
-@given(instance=Pemesan_strategy)
-def test_pemesan_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Pemesan_strategy)
-def test_pemesan_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Pemesan_strategy)
-def test_pemesan_Alamat_type(instance):
-    assert isinstance(instance.Alamat, str)
-
-
-@given(instance=Pemesan_strategy)
-def test_pemesan_Alamat_setter(instance):
-    original = instance.Alamat
-    instance.Alamat = original
-    assert instance.Alamat == original
-
-@given(instance=Pemesan_strategy)
-def test_pemesan_Emai_type(instance):
-    assert isinstance(instance.Emai, str)
 
 
 @given(instance=Pemesan_strategy)
@@ -1221,20 +1118,14 @@ def test_pemesan_Emai_setter(instance):
     instance.Emai = original
     assert instance.Emai == original
 
-@given(instance=Pemesan_strategy)
-def test_pemesan_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Pemesan_strategy)
-def test_pemesan_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
+def test_pemesan_Alamat_setter(instance):
+    original = instance.Alamat
+    instance.Alamat = original
+    assert instance.Alamat == original
 
-@given(instance=Pemesan_strategy)
-def test_pemesan_Nama_type(instance):
-    assert isinstance(instance.Nama, str)
 
 
 @given(instance=Pemesan_strategy)
@@ -1243,20 +1134,22 @@ def test_pemesan_Nama_setter(instance):
     instance.Nama = original
     assert instance.Nama == original
 
-@given(instance=Pemesan_strategy)
-def test_pemesan_phone_number_type(instance):
-    assert isinstance(instance.phone_number, str)
 
 
 @given(instance=Pemesan_strategy)
-def test_pemesan_phone_number_setter(instance):
-    original = instance.phone_number
-    instance.phone_number = original
-    assert instance.phone_number == original
+def test_pemesan_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+
 
 @given(instance=Pemesan_strategy)
-def test_pemesan_NIK_type(instance):
-    assert isinstance(instance.NIK, int)
+def test_pemesan_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 
 
 @given(instance=Pemesan_strategy)
@@ -1264,6 +1157,14 @@ def test_pemesan_NIK_setter(instance):
     original = instance.NIK
     instance.NIK = original
     assert instance.NIK == original
+
+
+
+@given(instance=Pemesan_strategy)
+def test_pemesan_phone_number_setter(instance):
+    original = instance.phone_number
+    instance.phone_number = original
+    assert instance.phone_number == original
 
 @given(instance=Register_UseCase_strategy)
 @settings(max_examples=50)

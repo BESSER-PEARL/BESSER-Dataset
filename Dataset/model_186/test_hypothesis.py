@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    lit::petriNets::2::Arc,
-    lit::petriNets::2::Transition,
+from python_code import (
+    lit_petriNets_2_Arc,
+    lit_petriNets_2_Transition,
     Arc,
-    lit::petriNets::2::TPArc,
-    lit::petriNets::2::PTArc,
-    lit::petriNets::2::Place,
-    lit::petriNets::2::Net,
+    lit_petriNets_2_PTArc,
+    lit_petriNets_2_TPArc,
+    lit_petriNets_2_Place,
+    lit_petriNets_2_Net,
 )
 
 # =============================================================================
@@ -21,37 +21,37 @@ from classes import (
 
 
 
-def test_lit::petrinets::2::arc_is_not_abstract():
-    assert not inspect.isabstract(lit::petriNets::2::Arc)
+def test_lit_petrinets_2_arc_is_not_abstract():
+    assert not inspect.isabstract(lit_petriNets_2_Arc)
 
 
-def test_lit::petrinets::2::arc_constructor_exists():
-    assert callable(lit::petriNets::2::Arc.__init__)
+def test_lit_petrinets_2_arc_constructor_exists():
+    assert callable(lit_petriNets_2_Arc.__init__)
 
 
-def test_lit::petrinets::2::arc_constructor_args():
-    sig = inspect.signature(lit::petriNets::2::Arc.__init__)
+def test_lit_petrinets_2_arc_constructor_args():
+    sig = inspect.signature(lit_petriNets_2_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lit::petrinets::2::transition_is_not_abstract():
-    assert not inspect.isabstract(lit::petriNets::2::Transition)
+def test_lit_petrinets_2_transition_is_not_abstract():
+    assert not inspect.isabstract(lit_petriNets_2_Transition)
 
 
-def test_lit::petrinets::2::transition_constructor_exists():
-    assert callable(lit::petriNets::2::Transition.__init__)
+def test_lit_petrinets_2_transition_constructor_exists():
+    assert callable(lit_petriNets_2_Transition.__init__)
 
 
-def test_lit::petrinets::2::transition_constructor_args():
-    sig = inspect.signature(lit::petriNets::2::Transition.__init__)
+def test_lit_petrinets_2_transition_constructor_args():
+    sig = inspect.signature(lit_petriNets_2_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lit::petrinets::2::transition_has_name():
-    assert hasattr(lit::petriNets::2::Transition, "name")
+def test_lit_petrinets_2_transition_has_name():
+    assert hasattr(lit_petriNets_2_Transition, "name")
     descriptor = None
-    for klass in lit::petriNets::2::Transition.__mro__:
+    for klass in lit_petriNets_2_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -73,51 +73,51 @@ def test_arc_constructor_args():
 
 
 
-def test_lit::petrinets::2::tparc_is_not_abstract():
-    assert not inspect.isabstract(lit::petriNets::2::TPArc)
+def test_lit_petrinets_2_ptarc_is_not_abstract():
+    assert not inspect.isabstract(lit_petriNets_2_PTArc)
 
 
-def test_lit::petrinets::2::tparc_constructor_exists():
-    assert callable(lit::petriNets::2::TPArc.__init__)
+def test_lit_petrinets_2_ptarc_constructor_exists():
+    assert callable(lit_petriNets_2_PTArc.__init__)
 
 
-def test_lit::petrinets::2::tparc_constructor_args():
-    sig = inspect.signature(lit::petriNets::2::TPArc.__init__)
+def test_lit_petrinets_2_ptarc_constructor_args():
+    sig = inspect.signature(lit_petriNets_2_PTArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lit::petrinets::2::ptarc_is_not_abstract():
-    assert not inspect.isabstract(lit::petriNets::2::PTArc)
+def test_lit_petrinets_2_tparc_is_not_abstract():
+    assert not inspect.isabstract(lit_petriNets_2_TPArc)
 
 
-def test_lit::petrinets::2::ptarc_constructor_exists():
-    assert callable(lit::petriNets::2::PTArc.__init__)
+def test_lit_petrinets_2_tparc_constructor_exists():
+    assert callable(lit_petriNets_2_TPArc.__init__)
 
 
-def test_lit::petrinets::2::ptarc_constructor_args():
-    sig = inspect.signature(lit::petriNets::2::PTArc.__init__)
+def test_lit_petrinets_2_tparc_constructor_args():
+    sig = inspect.signature(lit_petriNets_2_TPArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lit::petrinets::2::place_is_not_abstract():
-    assert not inspect.isabstract(lit::petriNets::2::Place)
+def test_lit_petrinets_2_place_is_not_abstract():
+    assert not inspect.isabstract(lit_petriNets_2_Place)
 
 
-def test_lit::petrinets::2::place_constructor_exists():
-    assert callable(lit::petriNets::2::Place.__init__)
+def test_lit_petrinets_2_place_constructor_exists():
+    assert callable(lit_petriNets_2_Place.__init__)
 
 
-def test_lit::petrinets::2::place_constructor_args():
-    sig = inspect.signature(lit::petriNets::2::Place.__init__)
+def test_lit_petrinets_2_place_constructor_args():
+    sig = inspect.signature(lit_petriNets_2_Place.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lit::petrinets::2::place_has_name():
-    assert hasattr(lit::petriNets::2::Place, "name")
+def test_lit_petrinets_2_place_has_name():
+    assert hasattr(lit_petriNets_2_Place, "name")
     descriptor = None
-    for klass in lit::petriNets::2::Place.__mro__:
+    for klass in lit_petriNets_2_Place.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,16 +125,16 @@ def test_lit::petrinets::2::place_has_name():
 
 
 
-def test_lit::petrinets::2::net_is_not_abstract():
-    assert not inspect.isabstract(lit::petriNets::2::Net)
+def test_lit_petrinets_2_net_is_not_abstract():
+    assert not inspect.isabstract(lit_petriNets_2_Net)
 
 
-def test_lit::petrinets::2::net_constructor_exists():
-    assert callable(lit::petriNets::2::Net.__init__)
+def test_lit_petrinets_2_net_constructor_exists():
+    assert callable(lit_petriNets_2_Net.__init__)
 
 
-def test_lit::petrinets::2::net_constructor_args():
-    sig = inspect.signature(lit::petriNets::2::Net.__init__)
+def test_lit_petrinets_2_net_constructor_args():
+    sig = inspect.signature(lit_petriNets_2_Net.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,49 +149,46 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-lit::petriNets::2::Arc_strategy = st.builds(
-    lit::petriNets::2::Arc,
+lit_petriNets_2_Arc_strategy = st.builds(
+    lit_petriNets_2_Arc,
 )
-lit::petriNets::2::Transition_strategy = st.builds(
-    lit::petriNets::2::Transition,
+lit_petriNets_2_Transition_strategy = st.builds(
+    lit_petriNets_2_Transition,
     name=
         safe_text
 )
 Arc_strategy = st.builds(
     Arc,
 )
-lit::petriNets::2::TPArc_strategy = st.builds(
-    lit::petriNets::2::TPArc,
+lit_petriNets_2_PTArc_strategy = st.builds(
+    lit_petriNets_2_PTArc,
 )
-lit::petriNets::2::PTArc_strategy = st.builds(
-    lit::petriNets::2::PTArc,
+lit_petriNets_2_TPArc_strategy = st.builds(
+    lit_petriNets_2_TPArc,
 )
-lit::petriNets::2::Place_strategy = st.builds(
-    lit::petriNets::2::Place,
+lit_petriNets_2_Place_strategy = st.builds(
+    lit_petriNets_2_Place,
     name=
         safe_text
 )
-lit::petriNets::2::Net_strategy = st.builds(
-    lit::petriNets::2::Net,
+lit_petriNets_2_Net_strategy = st.builds(
+    lit_petriNets_2_Net,
 )
 
-@given(instance=lit::petriNets::2::Arc_strategy)
+@given(instance=lit_petriNets_2_Arc_strategy)
 @settings(max_examples=50)
-def test_lit::petrinets::2::arc_instantiation(instance):
-    assert isinstance(instance, lit::petriNets::2::Arc)
+def test_lit_petrinets_2_arc_instantiation(instance):
+    assert isinstance(instance, lit_petriNets_2_Arc)
 
-@given(instance=lit::petriNets::2::Transition_strategy)
+@given(instance=lit_petriNets_2_Transition_strategy)
 @settings(max_examples=50)
-def test_lit::petrinets::2::transition_instantiation(instance):
-    assert isinstance(instance, lit::petriNets::2::Transition)
-
-@given(instance=lit::petriNets::2::Transition_strategy)
-def test_lit::petrinets::2::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lit_petrinets_2_transition_instantiation(instance):
+    assert isinstance(instance, lit_petriNets_2_Transition)
 
 
-@given(instance=lit::petriNets::2::Transition_strategy)
-def test_lit::petrinets::2::transition_name_setter(instance):
+
+@given(instance=lit_petriNets_2_Transition_strategy)
+def test_lit_petrinets_2_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -201,33 +198,30 @@ def test_lit::petrinets::2::transition_name_setter(instance):
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=lit::petriNets::2::TPArc_strategy)
+@given(instance=lit_petriNets_2_PTArc_strategy)
 @settings(max_examples=50)
-def test_lit::petrinets::2::tparc_instantiation(instance):
-    assert isinstance(instance, lit::petriNets::2::TPArc)
+def test_lit_petrinets_2_ptarc_instantiation(instance):
+    assert isinstance(instance, lit_petriNets_2_PTArc)
 
-@given(instance=lit::petriNets::2::PTArc_strategy)
+@given(instance=lit_petriNets_2_TPArc_strategy)
 @settings(max_examples=50)
-def test_lit::petrinets::2::ptarc_instantiation(instance):
-    assert isinstance(instance, lit::petriNets::2::PTArc)
+def test_lit_petrinets_2_tparc_instantiation(instance):
+    assert isinstance(instance, lit_petriNets_2_TPArc)
 
-@given(instance=lit::petriNets::2::Place_strategy)
+@given(instance=lit_petriNets_2_Place_strategy)
 @settings(max_examples=50)
-def test_lit::petrinets::2::place_instantiation(instance):
-    assert isinstance(instance, lit::petriNets::2::Place)
-
-@given(instance=lit::petriNets::2::Place_strategy)
-def test_lit::petrinets::2::place_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lit_petrinets_2_place_instantiation(instance):
+    assert isinstance(instance, lit_petriNets_2_Place)
 
 
-@given(instance=lit::petriNets::2::Place_strategy)
-def test_lit::petrinets::2::place_name_setter(instance):
+
+@given(instance=lit_petriNets_2_Place_strategy)
+def test_lit_petrinets_2_place_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lit::petriNets::2::Net_strategy)
+@given(instance=lit_petriNets_2_Net_strategy)
 @settings(max_examples=50)
-def test_lit::petrinets::2::net_instantiation(instance):
-    assert isinstance(instance, lit::petriNets::2::Net)
+def test_lit_petrinets_2_net_instantiation(instance):
+    assert isinstance(instance, lit_petriNets_2_Net)

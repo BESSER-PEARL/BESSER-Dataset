@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    umlknes::NamedElement,
+from python_code import (
+    umlknes_NamedElement,
     ValueSpecification,
-    umlknes::OpaqueExpression,
+    umlknes_OpaqueExpression,
     Event,
-    umlknes::DestructionEvent,
-    umlknes::CreationEvent,
-    umlknes::ExecutionEvent,
-    umlknes::Event,
+    umlknes_CreationEvent,
+    umlknes_DestructionEvent,
+    umlknes_ExecutionEvent,
+    umlknes_Event,
     RedefinableElement,
-    umlknes::ActivityEdge,
+    umlknes_ActivityEdge,
     NamedElement,
-    umlknes::RedefinableElement,
-    umlknes::Trigger,
+    umlknes_RedefinableElement,
+    umlknes_Trigger,
     Action,
-    umlknes::AcceptEventAction,
+    umlknes_AcceptEventAction,
     ActivityEdge,
-    umlknes::ControlFlow,
-    umlknes::ValueSpecification,
+    umlknes_ControlFlow,
+    umlknes_ValueSpecification,
     ControlNode,
-    umlknes::DecisionNode,
-    umlknes::InitialNode,
-    umlknes::ActivityFinalNode,
+    umlknes_DecisionNode,
+    umlknes_InitialNode,
+    umlknes_ActivityFinalNode,
     ActivityNode,
-    umlknes::Action,
-    umlknes::ControlNode,
-    umlknes::ActivityNode,
-    umlknes::Activity,
+    umlknes_Action,
+    umlknes_ControlNode,
+    umlknes_ActivityNode,
+    umlknes_Activity,
     VisibilityKind,
 )
 
@@ -42,23 +42,23 @@ from classes import (
 
 
 
-def test_umlknes::namedelement_is_not_abstract():
-    assert not inspect.isabstract(umlknes::NamedElement)
+def test_umlknes_namedelement_is_not_abstract():
+    assert not inspect.isabstract(umlknes_NamedElement)
 
 
-def test_umlknes::namedelement_constructor_exists():
-    assert callable(umlknes::NamedElement.__init__)
+def test_umlknes_namedelement_constructor_exists():
+    assert callable(umlknes_NamedElement.__init__)
 
 
-def test_umlknes::namedelement_constructor_args():
-    sig = inspect.signature(umlknes::NamedElement.__init__)
+def test_umlknes_namedelement_constructor_args():
+    sig = inspect.signature(umlknes_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_umlknes::namedelement_has_visibility():
-    assert hasattr(umlknes::NamedElement, "visibility")
+def test_umlknes_namedelement_has_visibility():
+    assert hasattr(umlknes_NamedElement, "visibility")
     descriptor = None
-    for klass in umlknes::NamedElement.__mro__:
+    for klass in umlknes_NamedElement.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -80,16 +80,16 @@ def test_valuespecification_constructor_args():
 
 
 
-def test_umlknes::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(umlknes::OpaqueExpression)
+def test_umlknes_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(umlknes_OpaqueExpression)
 
 
-def test_umlknes::opaqueexpression_constructor_exists():
-    assert callable(umlknes::OpaqueExpression.__init__)
+def test_umlknes_opaqueexpression_constructor_exists():
+    assert callable(umlknes_OpaqueExpression.__init__)
 
 
-def test_umlknes::opaqueexpression_constructor_args():
-    sig = inspect.signature(umlknes::OpaqueExpression.__init__)
+def test_umlknes_opaqueexpression_constructor_args():
+    sig = inspect.signature(umlknes_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,58 +108,58 @@ def test_event_constructor_args():
 
 
 
-def test_umlknes::destructionevent_is_not_abstract():
-    assert not inspect.isabstract(umlknes::DestructionEvent)
+def test_umlknes_creationevent_is_not_abstract():
+    assert not inspect.isabstract(umlknes_CreationEvent)
 
 
-def test_umlknes::destructionevent_constructor_exists():
-    assert callable(umlknes::DestructionEvent.__init__)
+def test_umlknes_creationevent_constructor_exists():
+    assert callable(umlknes_CreationEvent.__init__)
 
 
-def test_umlknes::destructionevent_constructor_args():
-    sig = inspect.signature(umlknes::DestructionEvent.__init__)
+def test_umlknes_creationevent_constructor_args():
+    sig = inspect.signature(umlknes_CreationEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::creationevent_is_not_abstract():
-    assert not inspect.isabstract(umlknes::CreationEvent)
+def test_umlknes_destructionevent_is_not_abstract():
+    assert not inspect.isabstract(umlknes_DestructionEvent)
 
 
-def test_umlknes::creationevent_constructor_exists():
-    assert callable(umlknes::CreationEvent.__init__)
+def test_umlknes_destructionevent_constructor_exists():
+    assert callable(umlknes_DestructionEvent.__init__)
 
 
-def test_umlknes::creationevent_constructor_args():
-    sig = inspect.signature(umlknes::CreationEvent.__init__)
+def test_umlknes_destructionevent_constructor_args():
+    sig = inspect.signature(umlknes_DestructionEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::executionevent_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ExecutionEvent)
+def test_umlknes_executionevent_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ExecutionEvent)
 
 
-def test_umlknes::executionevent_constructor_exists():
-    assert callable(umlknes::ExecutionEvent.__init__)
+def test_umlknes_executionevent_constructor_exists():
+    assert callable(umlknes_ExecutionEvent.__init__)
 
 
-def test_umlknes::executionevent_constructor_args():
-    sig = inspect.signature(umlknes::ExecutionEvent.__init__)
+def test_umlknes_executionevent_constructor_args():
+    sig = inspect.signature(umlknes_ExecutionEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::event_is_not_abstract():
-    assert not inspect.isabstract(umlknes::Event)
+def test_umlknes_event_is_not_abstract():
+    assert not inspect.isabstract(umlknes_Event)
 
 
-def test_umlknes::event_constructor_exists():
-    assert callable(umlknes::Event.__init__)
+def test_umlknes_event_constructor_exists():
+    assert callable(umlknes_Event.__init__)
 
 
-def test_umlknes::event_constructor_args():
-    sig = inspect.signature(umlknes::Event.__init__)
+def test_umlknes_event_constructor_args():
+    sig = inspect.signature(umlknes_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -178,16 +178,16 @@ def test_redefinableelement_constructor_args():
 
 
 
-def test_umlknes::activityedge_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ActivityEdge)
+def test_umlknes_activityedge_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ActivityEdge)
 
 
-def test_umlknes::activityedge_constructor_exists():
-    assert callable(umlknes::ActivityEdge.__init__)
+def test_umlknes_activityedge_constructor_exists():
+    assert callable(umlknes_ActivityEdge.__init__)
 
 
-def test_umlknes::activityedge_constructor_args():
-    sig = inspect.signature(umlknes::ActivityEdge.__init__)
+def test_umlknes_activityedge_constructor_args():
+    sig = inspect.signature(umlknes_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -206,23 +206,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_umlknes::redefinableelement_is_not_abstract():
-    assert not inspect.isabstract(umlknes::RedefinableElement)
+def test_umlknes_redefinableelement_is_not_abstract():
+    assert not inspect.isabstract(umlknes_RedefinableElement)
 
 
-def test_umlknes::redefinableelement_constructor_exists():
-    assert callable(umlknes::RedefinableElement.__init__)
+def test_umlknes_redefinableelement_constructor_exists():
+    assert callable(umlknes_RedefinableElement.__init__)
 
 
-def test_umlknes::redefinableelement_constructor_args():
-    sig = inspect.signature(umlknes::RedefinableElement.__init__)
+def test_umlknes_redefinableelement_constructor_args():
+    sig = inspect.signature(umlknes_RedefinableElement.__init__)
     params = list(sig.parameters.keys())
     assert "isLeaf" in params, "Missing parameter 'isLeaf'"
 
-def test_umlknes::redefinableelement_has_isLeaf():
-    assert hasattr(umlknes::RedefinableElement, "isLeaf")
+def test_umlknes_redefinableelement_has_isLeaf():
+    assert hasattr(umlknes_RedefinableElement, "isLeaf")
     descriptor = None
-    for klass in umlknes::RedefinableElement.__mro__:
+    for klass in umlknes_RedefinableElement.__mro__:
         if "isLeaf" in klass.__dict__:
             descriptor = klass.__dict__["isLeaf"]
             break
@@ -230,16 +230,16 @@ def test_umlknes::redefinableelement_has_isLeaf():
 
 
 
-def test_umlknes::trigger_is_not_abstract():
-    assert not inspect.isabstract(umlknes::Trigger)
+def test_umlknes_trigger_is_not_abstract():
+    assert not inspect.isabstract(umlknes_Trigger)
 
 
-def test_umlknes::trigger_constructor_exists():
-    assert callable(umlknes::Trigger.__init__)
+def test_umlknes_trigger_constructor_exists():
+    assert callable(umlknes_Trigger.__init__)
 
 
-def test_umlknes::trigger_constructor_args():
-    sig = inspect.signature(umlknes::Trigger.__init__)
+def test_umlknes_trigger_constructor_args():
+    sig = inspect.signature(umlknes_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -258,23 +258,23 @@ def test_action_constructor_args():
 
 
 
-def test_umlknes::accepteventaction_is_not_abstract():
-    assert not inspect.isabstract(umlknes::AcceptEventAction)
+def test_umlknes_accepteventaction_is_not_abstract():
+    assert not inspect.isabstract(umlknes_AcceptEventAction)
 
 
-def test_umlknes::accepteventaction_constructor_exists():
-    assert callable(umlknes::AcceptEventAction.__init__)
+def test_umlknes_accepteventaction_constructor_exists():
+    assert callable(umlknes_AcceptEventAction.__init__)
 
 
-def test_umlknes::accepteventaction_constructor_args():
-    sig = inspect.signature(umlknes::AcceptEventAction.__init__)
+def test_umlknes_accepteventaction_constructor_args():
+    sig = inspect.signature(umlknes_AcceptEventAction.__init__)
     params = list(sig.parameters.keys())
     assert "isUnMarshall" in params, "Missing parameter 'isUnMarshall'"
 
-def test_umlknes::accepteventaction_has_isUnMarshall():
-    assert hasattr(umlknes::AcceptEventAction, "isUnMarshall")
+def test_umlknes_accepteventaction_has_isUnMarshall():
+    assert hasattr(umlknes_AcceptEventAction, "isUnMarshall")
     descriptor = None
-    for klass in umlknes::AcceptEventAction.__mro__:
+    for klass in umlknes_AcceptEventAction.__mro__:
         if "isUnMarshall" in klass.__dict__:
             descriptor = klass.__dict__["isUnMarshall"]
             break
@@ -296,30 +296,30 @@ def test_activityedge_constructor_args():
 
 
 
-def test_umlknes::controlflow_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ControlFlow)
+def test_umlknes_controlflow_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ControlFlow)
 
 
-def test_umlknes::controlflow_constructor_exists():
-    assert callable(umlknes::ControlFlow.__init__)
+def test_umlknes_controlflow_constructor_exists():
+    assert callable(umlknes_ControlFlow.__init__)
 
 
-def test_umlknes::controlflow_constructor_args():
-    sig = inspect.signature(umlknes::ControlFlow.__init__)
+def test_umlknes_controlflow_constructor_args():
+    sig = inspect.signature(umlknes_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ValueSpecification)
+def test_umlknes_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ValueSpecification)
 
 
-def test_umlknes::valuespecification_constructor_exists():
-    assert callable(umlknes::ValueSpecification.__init__)
+def test_umlknes_valuespecification_constructor_exists():
+    assert callable(umlknes_ValueSpecification.__init__)
 
 
-def test_umlknes::valuespecification_constructor_args():
-    sig = inspect.signature(umlknes::ValueSpecification.__init__)
+def test_umlknes_valuespecification_constructor_args():
+    sig = inspect.signature(umlknes_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -338,44 +338,44 @@ def test_controlnode_constructor_args():
 
 
 
-def test_umlknes::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(umlknes::DecisionNode)
+def test_umlknes_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(umlknes_DecisionNode)
 
 
-def test_umlknes::decisionnode_constructor_exists():
-    assert callable(umlknes::DecisionNode.__init__)
+def test_umlknes_decisionnode_constructor_exists():
+    assert callable(umlknes_DecisionNode.__init__)
 
 
-def test_umlknes::decisionnode_constructor_args():
-    sig = inspect.signature(umlknes::DecisionNode.__init__)
+def test_umlknes_decisionnode_constructor_args():
+    sig = inspect.signature(umlknes_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::initialnode_is_not_abstract():
-    assert not inspect.isabstract(umlknes::InitialNode)
+def test_umlknes_initialnode_is_not_abstract():
+    assert not inspect.isabstract(umlknes_InitialNode)
 
 
-def test_umlknes::initialnode_constructor_exists():
-    assert callable(umlknes::InitialNode.__init__)
+def test_umlknes_initialnode_constructor_exists():
+    assert callable(umlknes_InitialNode.__init__)
 
 
-def test_umlknes::initialnode_constructor_args():
-    sig = inspect.signature(umlknes::InitialNode.__init__)
+def test_umlknes_initialnode_constructor_args():
+    sig = inspect.signature(umlknes_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ActivityFinalNode)
+def test_umlknes_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ActivityFinalNode)
 
 
-def test_umlknes::activityfinalnode_constructor_exists():
-    assert callable(umlknes::ActivityFinalNode.__init__)
+def test_umlknes_activityfinalnode_constructor_exists():
+    assert callable(umlknes_ActivityFinalNode.__init__)
 
 
-def test_umlknes::activityfinalnode_constructor_args():
-    sig = inspect.signature(umlknes::ActivityFinalNode.__init__)
+def test_umlknes_activityfinalnode_constructor_args():
+    sig = inspect.signature(umlknes_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -394,77 +394,77 @@ def test_activitynode_constructor_args():
 
 
 
-def test_umlknes::action_is_not_abstract():
-    assert not inspect.isabstract(umlknes::Action)
+def test_umlknes_action_is_not_abstract():
+    assert not inspect.isabstract(umlknes_Action)
 
 
-def test_umlknes::action_constructor_exists():
-    assert callable(umlknes::Action.__init__)
+def test_umlknes_action_constructor_exists():
+    assert callable(umlknes_Action.__init__)
 
 
-def test_umlknes::action_constructor_args():
-    sig = inspect.signature(umlknes::Action.__init__)
+def test_umlknes_action_constructor_args():
+    sig = inspect.signature(umlknes_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::controlnode_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ControlNode)
+def test_umlknes_controlnode_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ControlNode)
 
 
-def test_umlknes::controlnode_constructor_exists():
-    assert callable(umlknes::ControlNode.__init__)
+def test_umlknes_controlnode_constructor_exists():
+    assert callable(umlknes_ControlNode.__init__)
 
 
-def test_umlknes::controlnode_constructor_args():
-    sig = inspect.signature(umlknes::ControlNode.__init__)
+def test_umlknes_controlnode_constructor_args():
+    sig = inspect.signature(umlknes_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::activitynode_is_not_abstract():
-    assert not inspect.isabstract(umlknes::ActivityNode)
+def test_umlknes_activitynode_is_not_abstract():
+    assert not inspect.isabstract(umlknes_ActivityNode)
 
 
-def test_umlknes::activitynode_constructor_exists():
-    assert callable(umlknes::ActivityNode.__init__)
+def test_umlknes_activitynode_constructor_exists():
+    assert callable(umlknes_ActivityNode.__init__)
 
 
-def test_umlknes::activitynode_constructor_args():
-    sig = inspect.signature(umlknes::ActivityNode.__init__)
+def test_umlknes_activitynode_constructor_args():
+    sig = inspect.signature(umlknes_ActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlknes::activity_is_not_abstract():
-    assert not inspect.isabstract(umlknes::Activity)
+def test_umlknes_activity_is_not_abstract():
+    assert not inspect.isabstract(umlknes_Activity)
 
 
-def test_umlknes::activity_constructor_exists():
-    assert callable(umlknes::Activity.__init__)
+def test_umlknes_activity_constructor_exists():
+    assert callable(umlknes_Activity.__init__)
 
 
-def test_umlknes::activity_constructor_args():
-    sig = inspect.signature(umlknes::Activity.__init__)
+def test_umlknes_activity_constructor_args():
+    sig = inspect.signature(umlknes_Activity.__init__)
     params = list(sig.parameters.keys())
-    assert "isSingleExecution" in params, "Missing parameter 'isSingleExecution'"
     assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
+    assert "isSingleExecution" in params, "Missing parameter 'isSingleExecution'"
 
-def test_umlknes::activity_has_isSingleExecution():
-    assert hasattr(umlknes::Activity, "isSingleExecution")
+def test_umlknes_activity_has_isReadOnly():
+    assert hasattr(umlknes_Activity, "isReadOnly")
     descriptor = None
-    for klass in umlknes::Activity.__mro__:
-        if "isSingleExecution" in klass.__dict__:
-            descriptor = klass.__dict__["isSingleExecution"]
+    for klass in umlknes_Activity.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlknes::activity_has_isReadOnly():
-    assert hasattr(umlknes::Activity, "isReadOnly")
+def test_umlknes_activity_has_isSingleExecution():
+    assert hasattr(umlknes_Activity, "isSingleExecution")
     descriptor = None
-    for klass in umlknes::Activity.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
+    for klass in umlknes_Activity.__mro__:
+        if "isSingleExecution" in klass.__dict__:
+            descriptor = klass.__dict__["isSingleExecution"]
             break
     assert isinstance(descriptor, property)
 
@@ -476,8 +476,8 @@ def test_visibilitykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VisibilityKind]
     expected_literals = [
-        "package",
         "protected",
+        "package",
         "public",
     ]
     # Check that all expected literals exist
@@ -496,110 +496,107 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-umlknes::NamedElement_strategy = st.builds(
-    umlknes::NamedElement,
+umlknes_NamedElement_strategy = st.builds(
+    umlknes_NamedElement,
     visibility=
         safe_text
 )
 ValueSpecification_strategy = st.builds(
     ValueSpecification,
 )
-umlknes::OpaqueExpression_strategy = st.builds(
-    umlknes::OpaqueExpression,
+umlknes_OpaqueExpression_strategy = st.builds(
+    umlknes_OpaqueExpression,
 )
 Event_strategy = st.builds(
     Event,
 )
-umlknes::DestructionEvent_strategy = st.builds(
-    umlknes::DestructionEvent,
+umlknes_CreationEvent_strategy = st.builds(
+    umlknes_CreationEvent,
 )
-umlknes::CreationEvent_strategy = st.builds(
-    umlknes::CreationEvent,
+umlknes_DestructionEvent_strategy = st.builds(
+    umlknes_DestructionEvent,
 )
-umlknes::ExecutionEvent_strategy = st.builds(
-    umlknes::ExecutionEvent,
+umlknes_ExecutionEvent_strategy = st.builds(
+    umlknes_ExecutionEvent,
 )
-umlknes::Event_strategy = st.builds(
-    umlknes::Event,
+umlknes_Event_strategy = st.builds(
+    umlknes_Event,
 )
 RedefinableElement_strategy = st.builds(
     RedefinableElement,
 )
-umlknes::ActivityEdge_strategy = st.builds(
-    umlknes::ActivityEdge,
+umlknes_ActivityEdge_strategy = st.builds(
+    umlknes_ActivityEdge,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-umlknes::RedefinableElement_strategy = st.builds(
-    umlknes::RedefinableElement,
+umlknes_RedefinableElement_strategy = st.builds(
+    umlknes_RedefinableElement,
     isLeaf=
         st.booleans()
 )
-umlknes::Trigger_strategy = st.builds(
-    umlknes::Trigger,
+umlknes_Trigger_strategy = st.builds(
+    umlknes_Trigger,
 )
 Action_strategy = st.builds(
     Action,
 )
-umlknes::AcceptEventAction_strategy = st.builds(
-    umlknes::AcceptEventAction,
+umlknes_AcceptEventAction_strategy = st.builds(
+    umlknes_AcceptEventAction,
     isUnMarshall=
         st.booleans()
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-umlknes::ControlFlow_strategy = st.builds(
-    umlknes::ControlFlow,
+umlknes_ControlFlow_strategy = st.builds(
+    umlknes_ControlFlow,
 )
-umlknes::ValueSpecification_strategy = st.builds(
-    umlknes::ValueSpecification,
+umlknes_ValueSpecification_strategy = st.builds(
+    umlknes_ValueSpecification,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-umlknes::DecisionNode_strategy = st.builds(
-    umlknes::DecisionNode,
+umlknes_DecisionNode_strategy = st.builds(
+    umlknes_DecisionNode,
 )
-umlknes::InitialNode_strategy = st.builds(
-    umlknes::InitialNode,
+umlknes_InitialNode_strategy = st.builds(
+    umlknes_InitialNode,
 )
-umlknes::ActivityFinalNode_strategy = st.builds(
-    umlknes::ActivityFinalNode,
+umlknes_ActivityFinalNode_strategy = st.builds(
+    umlknes_ActivityFinalNode,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-umlknes::Action_strategy = st.builds(
-    umlknes::Action,
+umlknes_Action_strategy = st.builds(
+    umlknes_Action,
 )
-umlknes::ControlNode_strategy = st.builds(
-    umlknes::ControlNode,
+umlknes_ControlNode_strategy = st.builds(
+    umlknes_ControlNode,
 )
-umlknes::ActivityNode_strategy = st.builds(
-    umlknes::ActivityNode,
+umlknes_ActivityNode_strategy = st.builds(
+    umlknes_ActivityNode,
 )
-umlknes::Activity_strategy = st.builds(
-    umlknes::Activity,
-    isSingleExecution=
-        st.booleans(),
+umlknes_Activity_strategy = st.builds(
+    umlknes_Activity,
     isReadOnly=
+        st.booleans(),
+    isSingleExecution=
         st.booleans()
 )
 
-@given(instance=umlknes::NamedElement_strategy)
+@given(instance=umlknes_NamedElement_strategy)
 @settings(max_examples=50)
-def test_umlknes::namedelement_instantiation(instance):
-    assert isinstance(instance, umlknes::NamedElement)
-
-@given(instance=umlknes::NamedElement_strategy)
-def test_umlknes::namedelement_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_umlknes_namedelement_instantiation(instance):
+    assert isinstance(instance, umlknes_NamedElement)
 
 
-@given(instance=umlknes::NamedElement_strategy)
-def test_umlknes::namedelement_visibility_setter(instance):
+
+@given(instance=umlknes_NamedElement_strategy)
+def test_umlknes_namedelement_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
@@ -609,89 +606,83 @@ def test_umlknes::namedelement_visibility_setter(instance):
 def test_valuespecification_instantiation(instance):
     assert isinstance(instance, ValueSpecification)
 
-@given(instance=umlknes::OpaqueExpression_strategy)
+@given(instance=umlknes_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_umlknes::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, umlknes::OpaqueExpression)
+def test_umlknes_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, umlknes_OpaqueExpression)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=umlknes::DestructionEvent_strategy)
+@given(instance=umlknes_CreationEvent_strategy)
 @settings(max_examples=50)
-def test_umlknes::destructionevent_instantiation(instance):
-    assert isinstance(instance, umlknes::DestructionEvent)
+def test_umlknes_creationevent_instantiation(instance):
+    assert isinstance(instance, umlknes_CreationEvent)
 
-@given(instance=umlknes::CreationEvent_strategy)
+@given(instance=umlknes_DestructionEvent_strategy)
 @settings(max_examples=50)
-def test_umlknes::creationevent_instantiation(instance):
-    assert isinstance(instance, umlknes::CreationEvent)
+def test_umlknes_destructionevent_instantiation(instance):
+    assert isinstance(instance, umlknes_DestructionEvent)
 
-@given(instance=umlknes::ExecutionEvent_strategy)
+@given(instance=umlknes_ExecutionEvent_strategy)
 @settings(max_examples=50)
-def test_umlknes::executionevent_instantiation(instance):
-    assert isinstance(instance, umlknes::ExecutionEvent)
+def test_umlknes_executionevent_instantiation(instance):
+    assert isinstance(instance, umlknes_ExecutionEvent)
 
-@given(instance=umlknes::Event_strategy)
+@given(instance=umlknes_Event_strategy)
 @settings(max_examples=50)
-def test_umlknes::event_instantiation(instance):
-    assert isinstance(instance, umlknes::Event)
+def test_umlknes_event_instantiation(instance):
+    assert isinstance(instance, umlknes_Event)
 
 @given(instance=RedefinableElement_strategy)
 @settings(max_examples=50)
 def test_redefinableelement_instantiation(instance):
     assert isinstance(instance, RedefinableElement)
 
-@given(instance=umlknes::ActivityEdge_strategy)
+@given(instance=umlknes_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_umlknes::activityedge_instantiation(instance):
-    assert isinstance(instance, umlknes::ActivityEdge)
+def test_umlknes_activityedge_instantiation(instance):
+    assert isinstance(instance, umlknes_ActivityEdge)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=umlknes::RedefinableElement_strategy)
+@given(instance=umlknes_RedefinableElement_strategy)
 @settings(max_examples=50)
-def test_umlknes::redefinableelement_instantiation(instance):
-    assert isinstance(instance, umlknes::RedefinableElement)
-
-@given(instance=umlknes::RedefinableElement_strategy)
-def test_umlknes::redefinableelement_isLeaf_type(instance):
-    assert isinstance(instance.isLeaf, bool)
+def test_umlknes_redefinableelement_instantiation(instance):
+    assert isinstance(instance, umlknes_RedefinableElement)
 
 
-@given(instance=umlknes::RedefinableElement_strategy)
-def test_umlknes::redefinableelement_isLeaf_setter(instance):
+
+@given(instance=umlknes_RedefinableElement_strategy)
+def test_umlknes_redefinableelement_isLeaf_setter(instance):
     original = instance.isLeaf
     instance.isLeaf = original
     assert instance.isLeaf == original
 
-@given(instance=umlknes::Trigger_strategy)
+@given(instance=umlknes_Trigger_strategy)
 @settings(max_examples=50)
-def test_umlknes::trigger_instantiation(instance):
-    assert isinstance(instance, umlknes::Trigger)
+def test_umlknes_trigger_instantiation(instance):
+    assert isinstance(instance, umlknes_Trigger)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=umlknes::AcceptEventAction_strategy)
+@given(instance=umlknes_AcceptEventAction_strategy)
 @settings(max_examples=50)
-def test_umlknes::accepteventaction_instantiation(instance):
-    assert isinstance(instance, umlknes::AcceptEventAction)
-
-@given(instance=umlknes::AcceptEventAction_strategy)
-def test_umlknes::accepteventaction_isUnMarshall_type(instance):
-    assert isinstance(instance.isUnMarshall, bool)
+def test_umlknes_accepteventaction_instantiation(instance):
+    assert isinstance(instance, umlknes_AcceptEventAction)
 
 
-@given(instance=umlknes::AcceptEventAction_strategy)
-def test_umlknes::accepteventaction_isUnMarshall_setter(instance):
+
+@given(instance=umlknes_AcceptEventAction_strategy)
+def test_umlknes_accepteventaction_isUnMarshall_setter(instance):
     original = instance.isUnMarshall
     instance.isUnMarshall = original
     assert instance.isUnMarshall == original
@@ -701,79 +692,73 @@ def test_umlknes::accepteventaction_isUnMarshall_setter(instance):
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=umlknes::ControlFlow_strategy)
+@given(instance=umlknes_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_umlknes::controlflow_instantiation(instance):
-    assert isinstance(instance, umlknes::ControlFlow)
+def test_umlknes_controlflow_instantiation(instance):
+    assert isinstance(instance, umlknes_ControlFlow)
 
-@given(instance=umlknes::ValueSpecification_strategy)
+@given(instance=umlknes_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_umlknes::valuespecification_instantiation(instance):
-    assert isinstance(instance, umlknes::ValueSpecification)
+def test_umlknes_valuespecification_instantiation(instance):
+    assert isinstance(instance, umlknes_ValueSpecification)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=umlknes::DecisionNode_strategy)
+@given(instance=umlknes_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_umlknes::decisionnode_instantiation(instance):
-    assert isinstance(instance, umlknes::DecisionNode)
+def test_umlknes_decisionnode_instantiation(instance):
+    assert isinstance(instance, umlknes_DecisionNode)
 
-@given(instance=umlknes::InitialNode_strategy)
+@given(instance=umlknes_InitialNode_strategy)
 @settings(max_examples=50)
-def test_umlknes::initialnode_instantiation(instance):
-    assert isinstance(instance, umlknes::InitialNode)
+def test_umlknes_initialnode_instantiation(instance):
+    assert isinstance(instance, umlknes_InitialNode)
 
-@given(instance=umlknes::ActivityFinalNode_strategy)
+@given(instance=umlknes_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_umlknes::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, umlknes::ActivityFinalNode)
+def test_umlknes_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, umlknes_ActivityFinalNode)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=umlknes::Action_strategy)
+@given(instance=umlknes_Action_strategy)
 @settings(max_examples=50)
-def test_umlknes::action_instantiation(instance):
-    assert isinstance(instance, umlknes::Action)
+def test_umlknes_action_instantiation(instance):
+    assert isinstance(instance, umlknes_Action)
 
-@given(instance=umlknes::ControlNode_strategy)
+@given(instance=umlknes_ControlNode_strategy)
 @settings(max_examples=50)
-def test_umlknes::controlnode_instantiation(instance):
-    assert isinstance(instance, umlknes::ControlNode)
+def test_umlknes_controlnode_instantiation(instance):
+    assert isinstance(instance, umlknes_ControlNode)
 
-@given(instance=umlknes::ActivityNode_strategy)
+@given(instance=umlknes_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_umlknes::activitynode_instantiation(instance):
-    assert isinstance(instance, umlknes::ActivityNode)
+def test_umlknes_activitynode_instantiation(instance):
+    assert isinstance(instance, umlknes_ActivityNode)
 
-@given(instance=umlknes::Activity_strategy)
+@given(instance=umlknes_Activity_strategy)
 @settings(max_examples=50)
-def test_umlknes::activity_instantiation(instance):
-    assert isinstance(instance, umlknes::Activity)
-
-@given(instance=umlknes::Activity_strategy)
-def test_umlknes::activity_isSingleExecution_type(instance):
-    assert isinstance(instance.isSingleExecution, bool)
+def test_umlknes_activity_instantiation(instance):
+    assert isinstance(instance, umlknes_Activity)
 
 
-@given(instance=umlknes::Activity_strategy)
-def test_umlknes::activity_isSingleExecution_setter(instance):
-    original = instance.isSingleExecution
-    instance.isSingleExecution = original
-    assert instance.isSingleExecution == original
 
-@given(instance=umlknes::Activity_strategy)
-def test_umlknes::activity_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
-
-
-@given(instance=umlknes::Activity_strategy)
-def test_umlknes::activity_isReadOnly_setter(instance):
+@given(instance=umlknes_Activity_strategy)
+def test_umlknes_activity_isReadOnly_setter(instance):
     original = instance.isReadOnly
     instance.isReadOnly = original
     assert instance.isReadOnly == original
+
+
+
+@given(instance=umlknes_Activity_strategy)
+def test_umlknes_activity_isSingleExecution_setter(instance):
+    original = instance.isSingleExecution
+    instance.isSingleExecution = original
+    assert instance.isSingleExecution == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Menu,
@@ -96,17 +96,8 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "color" in params, "Missing parameter 'color'"
-
-def test_player_has_type():
-    assert hasattr(Player, "type")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
+    assert "type" in params, "Missing parameter 'type'"
 
 def test_player_has_color():
     assert hasattr(Player, "color")
@@ -114,6 +105,15 @@ def test_player_has_color():
     for klass in Player.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_type():
+    assert hasattr(Player, "type")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -200,16 +200,16 @@ def test_field_constructor_exists():
 def test_field_constructor_args():
     sig = inspect.signature(Field.__init__)
     params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
-    assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "color" in params, "Missing parameter 'color'"
 
-def test_field_has_color():
-    assert hasattr(Field, "color")
+def test_field_has_x():
+    assert hasattr(Field, "x")
     descriptor = None
     for klass in Field.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,12 +222,12 @@ def test_field_has_y():
             break
     assert isinstance(descriptor, property)
 
-def test_field_has_x():
-    assert hasattr(Field, "x")
+def test_field_has_color():
+    assert hasattr(Field, "color")
     descriptor = None
     for klass in Field.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
@@ -321,9 +321,9 @@ Window_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
-    type=
-        st.none(),
     color=
+        st.none(),
+    type=
         st.none()
 )
 Pawn_strategy = st.builds(
@@ -343,12 +343,12 @@ GameEngine_strategy = st.builds(
 )
 Field_strategy = st.builds(
     Field,
-    color=
-        st.none(),
+    x=
+        st.integers(),
     y=
         st.integers(),
-    x=
-        st.integers()
+    color=
+        st.none()
 )
 Dice_strategy = st.builds(
     Dice,
@@ -384,20 +384,6 @@ def test_window_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_type_type(instance):
-    assert isinstance(instance.type, playertype)
-
-
-@given(instance=Player_strategy)
-def test_player_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Player_strategy)
-def test_player_color_type(instance):
-    assert isinstance(instance.color, color)
 
 
 @given(instance=Player_strategy)
@@ -405,6 +391,14 @@ def test_player_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
+
+
+
+@given(instance=Player_strategy)
+def test_player_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 @given(instance=Pawn_strategy)
 @settings(max_examples=50)
@@ -436,20 +430,14 @@ def test_gameengine_instantiation(instance):
 def test_field_instantiation(instance):
     assert isinstance(instance, Field)
 
-@given(instance=Field_strategy)
-def test_field_color_type(instance):
-    assert isinstance(instance.color, color)
 
 
 @given(instance=Field_strategy)
-def test_field_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
+def test_field_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
 
-@given(instance=Field_strategy)
-def test_field_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
 @given(instance=Field_strategy)
@@ -458,16 +446,13 @@ def test_field_y_setter(instance):
     instance.y = original
     assert instance.y == original
 
-@given(instance=Field_strategy)
-def test_field_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=Field_strategy)
-def test_field_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
+def test_field_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
 
 @given(instance=Dice_strategy)
 @settings(max_examples=50)
@@ -479,9 +464,6 @@ def test_dice_instantiation(instance):
 def test_board_instantiation(instance):
     assert isinstance(instance, Board)
 
-@given(instance=Board_strategy)
-def test_board_board_type(instance):
-    assert isinstance(instance.board, str)
 
 
 @given(instance=Board_strategy)

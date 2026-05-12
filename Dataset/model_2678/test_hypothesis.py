@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     D,
-    refinher::F,
+    refinher_F,
     K,
     F,
-    refinher::I,
+    refinher_I,
     B,
-    refinher::D,
+    refinher_D,
     Named,
-    refinher::G,
-    refinher::L,
-    refinher::C,
-    refinher::E,
-    refinher::H,
-    refinher::Named,
-    refinher::K,
-    refinher::B,
-    refinher::A,
+    refinher_C,
+    refinher_L,
+    refinher_E,
+    refinher_H,
+    refinher_G,
+    refinher_Named,
+    refinher_K,
+    refinher_B,
+    refinher_A,
 )
 
 # =============================================================================
@@ -45,16 +45,16 @@ def test_d_constructor_args():
 
 
 
-def test_refinher::f_is_not_abstract():
-    assert not inspect.isabstract(refinher::F)
+def test_refinher_f_is_not_abstract():
+    assert not inspect.isabstract(refinher_F)
 
 
-def test_refinher::f_constructor_exists():
-    assert callable(refinher::F.__init__)
+def test_refinher_f_constructor_exists():
+    assert callable(refinher_F.__init__)
 
 
-def test_refinher::f_constructor_args():
-    sig = inspect.signature(refinher::F.__init__)
+def test_refinher_f_constructor_args():
+    sig = inspect.signature(refinher_F.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,16 +87,16 @@ def test_f_constructor_args():
 
 
 
-def test_refinher::i_is_not_abstract():
-    assert not inspect.isabstract(refinher::I)
+def test_refinher_i_is_not_abstract():
+    assert not inspect.isabstract(refinher_I)
 
 
-def test_refinher::i_constructor_exists():
-    assert callable(refinher::I.__init__)
+def test_refinher_i_constructor_exists():
+    assert callable(refinher_I.__init__)
 
 
-def test_refinher::i_constructor_args():
-    sig = inspect.signature(refinher::I.__init__)
+def test_refinher_i_constructor_args():
+    sig = inspect.signature(refinher_I.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -115,16 +115,16 @@ def test_b_constructor_args():
 
 
 
-def test_refinher::d_is_not_abstract():
-    assert not inspect.isabstract(refinher::D)
+def test_refinher_d_is_not_abstract():
+    assert not inspect.isabstract(refinher_D)
 
 
-def test_refinher::d_constructor_exists():
-    assert callable(refinher::D.__init__)
+def test_refinher_d_constructor_exists():
+    assert callable(refinher_D.__init__)
 
 
-def test_refinher::d_constructor_args():
-    sig = inspect.signature(refinher::D.__init__)
+def test_refinher_d_constructor_args():
+    sig = inspect.signature(refinher_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -143,93 +143,93 @@ def test_named_constructor_args():
 
 
 
-def test_refinher::g_is_not_abstract():
-    assert not inspect.isabstract(refinher::G)
+def test_refinher_c_is_not_abstract():
+    assert not inspect.isabstract(refinher_C)
 
 
-def test_refinher::g_constructor_exists():
-    assert callable(refinher::G.__init__)
+def test_refinher_c_constructor_exists():
+    assert callable(refinher_C.__init__)
 
 
-def test_refinher::g_constructor_args():
-    sig = inspect.signature(refinher::G.__init__)
+def test_refinher_c_constructor_args():
+    sig = inspect.signature(refinher_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::l_is_not_abstract():
-    assert not inspect.isabstract(refinher::L)
+def test_refinher_l_is_not_abstract():
+    assert not inspect.isabstract(refinher_L)
 
 
-def test_refinher::l_constructor_exists():
-    assert callable(refinher::L.__init__)
+def test_refinher_l_constructor_exists():
+    assert callable(refinher_L.__init__)
 
 
-def test_refinher::l_constructor_args():
-    sig = inspect.signature(refinher::L.__init__)
+def test_refinher_l_constructor_args():
+    sig = inspect.signature(refinher_L.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::c_is_not_abstract():
-    assert not inspect.isabstract(refinher::C)
+def test_refinher_e_is_not_abstract():
+    assert not inspect.isabstract(refinher_E)
 
 
-def test_refinher::c_constructor_exists():
-    assert callable(refinher::C.__init__)
+def test_refinher_e_constructor_exists():
+    assert callable(refinher_E.__init__)
 
 
-def test_refinher::c_constructor_args():
-    sig = inspect.signature(refinher::C.__init__)
+def test_refinher_e_constructor_args():
+    sig = inspect.signature(refinher_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::e_is_not_abstract():
-    assert not inspect.isabstract(refinher::E)
+def test_refinher_h_is_not_abstract():
+    assert not inspect.isabstract(refinher_H)
 
 
-def test_refinher::e_constructor_exists():
-    assert callable(refinher::E.__init__)
+def test_refinher_h_constructor_exists():
+    assert callable(refinher_H.__init__)
 
 
-def test_refinher::e_constructor_args():
-    sig = inspect.signature(refinher::E.__init__)
+def test_refinher_h_constructor_args():
+    sig = inspect.signature(refinher_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::h_is_not_abstract():
-    assert not inspect.isabstract(refinher::H)
+def test_refinher_g_is_not_abstract():
+    assert not inspect.isabstract(refinher_G)
 
 
-def test_refinher::h_constructor_exists():
-    assert callable(refinher::H.__init__)
+def test_refinher_g_constructor_exists():
+    assert callable(refinher_G.__init__)
 
 
-def test_refinher::h_constructor_args():
-    sig = inspect.signature(refinher::H.__init__)
+def test_refinher_g_constructor_args():
+    sig = inspect.signature(refinher_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::named_is_not_abstract():
-    assert not inspect.isabstract(refinher::Named)
+def test_refinher_named_is_not_abstract():
+    assert not inspect.isabstract(refinher_Named)
 
 
-def test_refinher::named_constructor_exists():
-    assert callable(refinher::Named.__init__)
+def test_refinher_named_constructor_exists():
+    assert callable(refinher_Named.__init__)
 
 
-def test_refinher::named_constructor_args():
-    sig = inspect.signature(refinher::Named.__init__)
+def test_refinher_named_constructor_args():
+    sig = inspect.signature(refinher_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_refinher::named_has_name():
-    assert hasattr(refinher::Named, "name")
+def test_refinher_named_has_name():
+    assert hasattr(refinher_Named, "name")
     descriptor = None
-    for klass in refinher::Named.__mro__:
+    for klass in refinher_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -237,44 +237,44 @@ def test_refinher::named_has_name():
 
 
 
-def test_refinher::k_is_not_abstract():
-    assert not inspect.isabstract(refinher::K)
+def test_refinher_k_is_not_abstract():
+    assert not inspect.isabstract(refinher_K)
 
 
-def test_refinher::k_constructor_exists():
-    assert callable(refinher::K.__init__)
+def test_refinher_k_constructor_exists():
+    assert callable(refinher_K.__init__)
 
 
-def test_refinher::k_constructor_args():
-    sig = inspect.signature(refinher::K.__init__)
+def test_refinher_k_constructor_args():
+    sig = inspect.signature(refinher_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::b_is_not_abstract():
-    assert not inspect.isabstract(refinher::B)
+def test_refinher_b_is_not_abstract():
+    assert not inspect.isabstract(refinher_B)
 
 
-def test_refinher::b_constructor_exists():
-    assert callable(refinher::B.__init__)
+def test_refinher_b_constructor_exists():
+    assert callable(refinher_B.__init__)
 
 
-def test_refinher::b_constructor_args():
-    sig = inspect.signature(refinher::B.__init__)
+def test_refinher_b_constructor_args():
+    sig = inspect.signature(refinher_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinher::a_is_not_abstract():
-    assert not inspect.isabstract(refinher::A)
+def test_refinher_a_is_not_abstract():
+    assert not inspect.isabstract(refinher_A)
 
 
-def test_refinher::a_constructor_exists():
-    assert callable(refinher::A.__init__)
+def test_refinher_a_constructor_exists():
+    assert callable(refinher_A.__init__)
 
 
-def test_refinher::a_constructor_args():
-    sig = inspect.signature(refinher::A.__init__)
+def test_refinher_a_constructor_args():
+    sig = inspect.signature(refinher_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,8 +292,8 @@ safe_text = st.text(
 D_strategy = st.builds(
     D,
 )
-refinher::F_strategy = st.builds(
-    refinher::F,
+refinher_F_strategy = st.builds(
+    refinher_F,
 )
 K_strategy = st.builds(
     K,
@@ -301,46 +301,46 @@ K_strategy = st.builds(
 F_strategy = st.builds(
     F,
 )
-refinher::I_strategy = st.builds(
-    refinher::I,
+refinher_I_strategy = st.builds(
+    refinher_I,
 )
 B_strategy = st.builds(
     B,
 )
-refinher::D_strategy = st.builds(
-    refinher::D,
+refinher_D_strategy = st.builds(
+    refinher_D,
 )
 Named_strategy = st.builds(
     Named,
 )
-refinher::G_strategy = st.builds(
-    refinher::G,
+refinher_C_strategy = st.builds(
+    refinher_C,
 )
-refinher::L_strategy = st.builds(
-    refinher::L,
+refinher_L_strategy = st.builds(
+    refinher_L,
 )
-refinher::C_strategy = st.builds(
-    refinher::C,
+refinher_E_strategy = st.builds(
+    refinher_E,
 )
-refinher::E_strategy = st.builds(
-    refinher::E,
+refinher_H_strategy = st.builds(
+    refinher_H,
 )
-refinher::H_strategy = st.builds(
-    refinher::H,
+refinher_G_strategy = st.builds(
+    refinher_G,
 )
-refinher::Named_strategy = st.builds(
-    refinher::Named,
+refinher_Named_strategy = st.builds(
+    refinher_Named,
     name=
         safe_text
 )
-refinher::K_strategy = st.builds(
-    refinher::K,
+refinher_K_strategy = st.builds(
+    refinher_K,
 )
-refinher::B_strategy = st.builds(
-    refinher::B,
+refinher_B_strategy = st.builds(
+    refinher_B,
 )
-refinher::A_strategy = st.builds(
-    refinher::A,
+refinher_A_strategy = st.builds(
+    refinher_A,
 )
 
 @given(instance=D_strategy)
@@ -348,10 +348,10 @@ refinher::A_strategy = st.builds(
 def test_d_instantiation(instance):
     assert isinstance(instance, D)
 
-@given(instance=refinher::F_strategy)
+@given(instance=refinher_F_strategy)
 @settings(max_examples=50)
-def test_refinher::f_instantiation(instance):
-    assert isinstance(instance, refinher::F)
+def test_refinher_f_instantiation(instance):
+    assert isinstance(instance, refinher_F)
 
 @given(instance=K_strategy)
 @settings(max_examples=50)
@@ -363,78 +363,75 @@ def test_k_instantiation(instance):
 def test_f_instantiation(instance):
     assert isinstance(instance, F)
 
-@given(instance=refinher::I_strategy)
+@given(instance=refinher_I_strategy)
 @settings(max_examples=50)
-def test_refinher::i_instantiation(instance):
-    assert isinstance(instance, refinher::I)
+def test_refinher_i_instantiation(instance):
+    assert isinstance(instance, refinher_I)
 
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=refinher::D_strategy)
+@given(instance=refinher_D_strategy)
 @settings(max_examples=50)
-def test_refinher::d_instantiation(instance):
-    assert isinstance(instance, refinher::D)
+def test_refinher_d_instantiation(instance):
+    assert isinstance(instance, refinher_D)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=refinher::G_strategy)
+@given(instance=refinher_C_strategy)
 @settings(max_examples=50)
-def test_refinher::g_instantiation(instance):
-    assert isinstance(instance, refinher::G)
+def test_refinher_c_instantiation(instance):
+    assert isinstance(instance, refinher_C)
 
-@given(instance=refinher::L_strategy)
+@given(instance=refinher_L_strategy)
 @settings(max_examples=50)
-def test_refinher::l_instantiation(instance):
-    assert isinstance(instance, refinher::L)
+def test_refinher_l_instantiation(instance):
+    assert isinstance(instance, refinher_L)
 
-@given(instance=refinher::C_strategy)
+@given(instance=refinher_E_strategy)
 @settings(max_examples=50)
-def test_refinher::c_instantiation(instance):
-    assert isinstance(instance, refinher::C)
+def test_refinher_e_instantiation(instance):
+    assert isinstance(instance, refinher_E)
 
-@given(instance=refinher::E_strategy)
+@given(instance=refinher_H_strategy)
 @settings(max_examples=50)
-def test_refinher::e_instantiation(instance):
-    assert isinstance(instance, refinher::E)
+def test_refinher_h_instantiation(instance):
+    assert isinstance(instance, refinher_H)
 
-@given(instance=refinher::H_strategy)
+@given(instance=refinher_G_strategy)
 @settings(max_examples=50)
-def test_refinher::h_instantiation(instance):
-    assert isinstance(instance, refinher::H)
+def test_refinher_g_instantiation(instance):
+    assert isinstance(instance, refinher_G)
 
-@given(instance=refinher::Named_strategy)
+@given(instance=refinher_Named_strategy)
 @settings(max_examples=50)
-def test_refinher::named_instantiation(instance):
-    assert isinstance(instance, refinher::Named)
-
-@given(instance=refinher::Named_strategy)
-def test_refinher::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_refinher_named_instantiation(instance):
+    assert isinstance(instance, refinher_Named)
 
 
-@given(instance=refinher::Named_strategy)
-def test_refinher::named_name_setter(instance):
+
+@given(instance=refinher_Named_strategy)
+def test_refinher_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=refinher::K_strategy)
+@given(instance=refinher_K_strategy)
 @settings(max_examples=50)
-def test_refinher::k_instantiation(instance):
-    assert isinstance(instance, refinher::K)
+def test_refinher_k_instantiation(instance):
+    assert isinstance(instance, refinher_K)
 
-@given(instance=refinher::B_strategy)
+@given(instance=refinher_B_strategy)
 @settings(max_examples=50)
-def test_refinher::b_instantiation(instance):
-    assert isinstance(instance, refinher::B)
+def test_refinher_b_instantiation(instance):
+    assert isinstance(instance, refinher_B)
 
-@given(instance=refinher::A_strategy)
+@given(instance=refinher_A_strategy)
 @settings(max_examples=50)
-def test_refinher::a_instantiation(instance):
-    assert isinstance(instance, refinher::A)
+def test_refinher_a_instantiation(instance):
+    assert isinstance(instance, refinher_A)

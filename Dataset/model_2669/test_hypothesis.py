@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    minher::E,
+    minher_E,
     Named,
-    minher::G,
-    minher::C,
-    minher::B,
-    minher::A,
-    minher::Named,
+    minher_G,
+    minher_C,
+    minher_B,
+    minher_A,
+    minher_Named,
 )
 
 # =============================================================================
@@ -36,16 +36,16 @@ def test_b_constructor_args():
 
 
 
-def test_minher::e_is_not_abstract():
-    assert not inspect.isabstract(minher::E)
+def test_minher_e_is_not_abstract():
+    assert not inspect.isabstract(minher_E)
 
 
-def test_minher::e_constructor_exists():
-    assert callable(minher::E.__init__)
+def test_minher_e_constructor_exists():
+    assert callable(minher_E.__init__)
 
 
-def test_minher::e_constructor_args():
-    sig = inspect.signature(minher::E.__init__)
+def test_minher_e_constructor_args():
+    sig = inspect.signature(minher_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,51 +64,51 @@ def test_named_constructor_args():
 
 
 
-def test_minher::g_is_not_abstract():
-    assert not inspect.isabstract(minher::G)
+def test_minher_g_is_not_abstract():
+    assert not inspect.isabstract(minher_G)
 
 
-def test_minher::g_constructor_exists():
-    assert callable(minher::G.__init__)
+def test_minher_g_constructor_exists():
+    assert callable(minher_G.__init__)
 
 
-def test_minher::g_constructor_args():
-    sig = inspect.signature(minher::G.__init__)
+def test_minher_g_constructor_args():
+    sig = inspect.signature(minher_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_minher::c_is_not_abstract():
-    assert not inspect.isabstract(minher::C)
+def test_minher_c_is_not_abstract():
+    assert not inspect.isabstract(minher_C)
 
 
-def test_minher::c_constructor_exists():
-    assert callable(minher::C.__init__)
+def test_minher_c_constructor_exists():
+    assert callable(minher_C.__init__)
 
 
-def test_minher::c_constructor_args():
-    sig = inspect.signature(minher::C.__init__)
+def test_minher_c_constructor_args():
+    sig = inspect.signature(minher_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_minher::b_is_not_abstract():
-    assert not inspect.isabstract(minher::B)
+def test_minher_b_is_not_abstract():
+    assert not inspect.isabstract(minher_B)
 
 
-def test_minher::b_constructor_exists():
-    assert callable(minher::B.__init__)
+def test_minher_b_constructor_exists():
+    assert callable(minher_B.__init__)
 
 
-def test_minher::b_constructor_args():
-    sig = inspect.signature(minher::B.__init__)
+def test_minher_b_constructor_args():
+    sig = inspect.signature(minher_B.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_minher::b_has_value():
-    assert hasattr(minher::B, "value")
+def test_minher_b_has_value():
+    assert hasattr(minher_B, "value")
     descriptor = None
-    for klass in minher::B.__mro__:
+    for klass in minher_B.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -116,37 +116,37 @@ def test_minher::b_has_value():
 
 
 
-def test_minher::a_is_not_abstract():
-    assert not inspect.isabstract(minher::A)
+def test_minher_a_is_not_abstract():
+    assert not inspect.isabstract(minher_A)
 
 
-def test_minher::a_constructor_exists():
-    assert callable(minher::A.__init__)
+def test_minher_a_constructor_exists():
+    assert callable(minher_A.__init__)
 
 
-def test_minher::a_constructor_args():
-    sig = inspect.signature(minher::A.__init__)
+def test_minher_a_constructor_args():
+    sig = inspect.signature(minher_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_minher::named_is_not_abstract():
-    assert not inspect.isabstract(minher::Named)
+def test_minher_named_is_not_abstract():
+    assert not inspect.isabstract(minher_Named)
 
 
-def test_minher::named_constructor_exists():
-    assert callable(minher::Named.__init__)
+def test_minher_named_constructor_exists():
+    assert callable(minher_Named.__init__)
 
 
-def test_minher::named_constructor_args():
-    sig = inspect.signature(minher::Named.__init__)
+def test_minher_named_constructor_args():
+    sig = inspect.signature(minher_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_minher::named_has_name():
-    assert hasattr(minher::Named, "name")
+def test_minher_named_has_name():
+    assert hasattr(minher_Named, "name")
     descriptor = None
-    for klass in minher::Named.__mro__:
+    for klass in minher_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -167,28 +167,28 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-minher::E_strategy = st.builds(
-    minher::E,
+minher_E_strategy = st.builds(
+    minher_E,
 )
 Named_strategy = st.builds(
     Named,
 )
-minher::G_strategy = st.builds(
-    minher::G,
+minher_G_strategy = st.builds(
+    minher_G,
 )
-minher::C_strategy = st.builds(
-    minher::C,
+minher_C_strategy = st.builds(
+    minher_C,
 )
-minher::B_strategy = st.builds(
-    minher::B,
+minher_B_strategy = st.builds(
+    minher_B,
     value=
         safe_text
 )
-minher::A_strategy = st.builds(
-    minher::A,
+minher_A_strategy = st.builds(
+    minher_A,
 )
-minher::Named_strategy = st.builds(
-    minher::Named,
+minher_Named_strategy = st.builds(
+    minher_Named,
     name=
         safe_text
 )
@@ -198,59 +198,53 @@ minher::Named_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=minher::E_strategy)
+@given(instance=minher_E_strategy)
 @settings(max_examples=50)
-def test_minher::e_instantiation(instance):
-    assert isinstance(instance, minher::E)
+def test_minher_e_instantiation(instance):
+    assert isinstance(instance, minher_E)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=minher::G_strategy)
+@given(instance=minher_G_strategy)
 @settings(max_examples=50)
-def test_minher::g_instantiation(instance):
-    assert isinstance(instance, minher::G)
+def test_minher_g_instantiation(instance):
+    assert isinstance(instance, minher_G)
 
-@given(instance=minher::C_strategy)
+@given(instance=minher_C_strategy)
 @settings(max_examples=50)
-def test_minher::c_instantiation(instance):
-    assert isinstance(instance, minher::C)
+def test_minher_c_instantiation(instance):
+    assert isinstance(instance, minher_C)
 
-@given(instance=minher::B_strategy)
+@given(instance=minher_B_strategy)
 @settings(max_examples=50)
-def test_minher::b_instantiation(instance):
-    assert isinstance(instance, minher::B)
-
-@given(instance=minher::B_strategy)
-def test_minher::b_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_minher_b_instantiation(instance):
+    assert isinstance(instance, minher_B)
 
 
-@given(instance=minher::B_strategy)
-def test_minher::b_value_setter(instance):
+
+@given(instance=minher_B_strategy)
+def test_minher_b_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=minher::A_strategy)
+@given(instance=minher_A_strategy)
 @settings(max_examples=50)
-def test_minher::a_instantiation(instance):
-    assert isinstance(instance, minher::A)
+def test_minher_a_instantiation(instance):
+    assert isinstance(instance, minher_A)
 
-@given(instance=minher::Named_strategy)
+@given(instance=minher_Named_strategy)
 @settings(max_examples=50)
-def test_minher::named_instantiation(instance):
-    assert isinstance(instance, minher::Named)
-
-@given(instance=minher::Named_strategy)
-def test_minher::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_minher_named_instantiation(instance):
+    assert isinstance(instance, minher_Named)
 
 
-@given(instance=minher::Named_strategy)
-def test_minher::named_name_setter(instance):
+
+@given(instance=minher_Named_strategy)
+def test_minher_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

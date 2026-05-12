@@ -3,45 +3,45 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    selflet::FinalState,
-    selflet::InitialState,
-    selflet::State,
+    selflet_AbilityState,
+    selflet_IntermediateState,
+    selflet_FinalState,
+    selflet_InitialState,
+    selflet_State,
     Behavior,
-    selflet::ComplexBehavior,
-    selflet::ElementaryBehavior,
-    selflet::Services,
-    selflet::TypeKnowledge,
-    selflet::SelfletResources,
-    selflet::SelfletProperties,
-    selflet::Selflet,
-    selflet::Rule,
-    selflet::Rules,
-    selflet::Output,
-    selflet::Reds,
-    selflet::OfferMode,
-    selflet::Parameter,
-    selflet::Input,
-    selflet::SelfLetProperty,
-    selflet::Method,
-    selflet::Condition,
-    selflet::Conditions,
-    selflet::Service,
-    selflet::Behavior,
-    selflet::GeneralKnowledge,
-    selflet::Empty,
-    selflet::CPUUtilization,
-    selflet::Actions,
-    selflet::Methods,
-    selflet::Ability,
-    selflet::Abilities,
-    selflet::Active,
-    selflet::Action,
-    selflet::IntermediateState,
-    selflet::AbilityState,
+    selflet_ComplexBehavior,
+    selflet_ElementaryBehavior,
+    selflet_Services,
+    selflet_TypeKnowledge,
+    selflet_SelfletResources,
+    selflet_SelfletProperties,
+    selflet_Selflet,
+    selflet_Rule,
+    selflet_Rules,
+    selflet_Output,
+    selflet_Reds,
+    selflet_OfferMode,
+    selflet_Parameter,
+    selflet_Input,
+    selflet_SelfLetProperty,
+    selflet_Method,
+    selflet_Condition,
+    selflet_Conditions,
+    selflet_Service,
+    selflet_Behavior,
+    selflet_GeneralKnowledge,
+    selflet_Empty,
+    selflet_CPUUtilization,
+    selflet_Actions,
+    selflet_Methods,
+    selflet_Ability,
+    selflet_Abilities,
+    selflet_Active,
+    selflet_Action,
     Mode,
     Type,
 )
@@ -66,51 +66,79 @@ def test_state_constructor_args():
 
 
 
-def test_selflet::finalstate_is_not_abstract():
-    assert not inspect.isabstract(selflet::FinalState)
+def test_selflet_abilitystate_is_not_abstract():
+    assert not inspect.isabstract(selflet_AbilityState)
 
 
-def test_selflet::finalstate_constructor_exists():
-    assert callable(selflet::FinalState.__init__)
+def test_selflet_abilitystate_constructor_exists():
+    assert callable(selflet_AbilityState.__init__)
 
 
-def test_selflet::finalstate_constructor_args():
-    sig = inspect.signature(selflet::FinalState.__init__)
+def test_selflet_abilitystate_constructor_args():
+    sig = inspect.signature(selflet_AbilityState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::initialstate_is_not_abstract():
-    assert not inspect.isabstract(selflet::InitialState)
+def test_selflet_intermediatestate_is_not_abstract():
+    assert not inspect.isabstract(selflet_IntermediateState)
 
 
-def test_selflet::initialstate_constructor_exists():
-    assert callable(selflet::InitialState.__init__)
+def test_selflet_intermediatestate_constructor_exists():
+    assert callable(selflet_IntermediateState.__init__)
 
 
-def test_selflet::initialstate_constructor_args():
-    sig = inspect.signature(selflet::InitialState.__init__)
+def test_selflet_intermediatestate_constructor_args():
+    sig = inspect.signature(selflet_IntermediateState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::state_is_not_abstract():
-    assert not inspect.isabstract(selflet::State)
+def test_selflet_finalstate_is_not_abstract():
+    assert not inspect.isabstract(selflet_FinalState)
 
 
-def test_selflet::state_constructor_exists():
-    assert callable(selflet::State.__init__)
+def test_selflet_finalstate_constructor_exists():
+    assert callable(selflet_FinalState.__init__)
 
 
-def test_selflet::state_constructor_args():
-    sig = inspect.signature(selflet::State.__init__)
+def test_selflet_finalstate_constructor_args():
+    sig = inspect.signature(selflet_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_selflet_initialstate_is_not_abstract():
+    assert not inspect.isabstract(selflet_InitialState)
+
+
+def test_selflet_initialstate_constructor_exists():
+    assert callable(selflet_InitialState.__init__)
+
+
+def test_selflet_initialstate_constructor_args():
+    sig = inspect.signature(selflet_InitialState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_selflet_state_is_not_abstract():
+    assert not inspect.isabstract(selflet_State)
+
+
+def test_selflet_state_constructor_exists():
+    assert callable(selflet_State.__init__)
+
+
+def test_selflet_state_constructor_args():
+    sig = inspect.signature(selflet_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_selflet::state_has_name():
-    assert hasattr(selflet::State, "name")
+def test_selflet_state_has_name():
+    assert hasattr(selflet_State, "name")
     descriptor = None
-    for klass in selflet::State.__mro__:
+    for klass in selflet_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,157 +160,157 @@ def test_behavior_constructor_args():
 
 
 
-def test_selflet::complexbehavior_is_not_abstract():
-    assert not inspect.isabstract(selflet::ComplexBehavior)
+def test_selflet_complexbehavior_is_not_abstract():
+    assert not inspect.isabstract(selflet_ComplexBehavior)
 
 
-def test_selflet::complexbehavior_constructor_exists():
-    assert callable(selflet::ComplexBehavior.__init__)
+def test_selflet_complexbehavior_constructor_exists():
+    assert callable(selflet_ComplexBehavior.__init__)
 
 
-def test_selflet::complexbehavior_constructor_args():
-    sig = inspect.signature(selflet::ComplexBehavior.__init__)
+def test_selflet_complexbehavior_constructor_args():
+    sig = inspect.signature(selflet_ComplexBehavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::elementarybehavior_is_not_abstract():
-    assert not inspect.isabstract(selflet::ElementaryBehavior)
+def test_selflet_elementarybehavior_is_not_abstract():
+    assert not inspect.isabstract(selflet_ElementaryBehavior)
 
 
-def test_selflet::elementarybehavior_constructor_exists():
-    assert callable(selflet::ElementaryBehavior.__init__)
+def test_selflet_elementarybehavior_constructor_exists():
+    assert callable(selflet_ElementaryBehavior.__init__)
 
 
-def test_selflet::elementarybehavior_constructor_args():
-    sig = inspect.signature(selflet::ElementaryBehavior.__init__)
+def test_selflet_elementarybehavior_constructor_args():
+    sig = inspect.signature(selflet_ElementaryBehavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::services_is_not_abstract():
-    assert not inspect.isabstract(selflet::Services)
+def test_selflet_services_is_not_abstract():
+    assert not inspect.isabstract(selflet_Services)
 
 
-def test_selflet::services_constructor_exists():
-    assert callable(selflet::Services.__init__)
+def test_selflet_services_constructor_exists():
+    assert callable(selflet_Services.__init__)
 
 
-def test_selflet::services_constructor_args():
-    sig = inspect.signature(selflet::Services.__init__)
+def test_selflet_services_constructor_args():
+    sig = inspect.signature(selflet_Services.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::typeknowledge_is_not_abstract():
-    assert not inspect.isabstract(selflet::TypeKnowledge)
+def test_selflet_typeknowledge_is_not_abstract():
+    assert not inspect.isabstract(selflet_TypeKnowledge)
 
 
-def test_selflet::typeknowledge_constructor_exists():
-    assert callable(selflet::TypeKnowledge.__init__)
+def test_selflet_typeknowledge_constructor_exists():
+    assert callable(selflet_TypeKnowledge.__init__)
 
 
-def test_selflet::typeknowledge_constructor_args():
-    sig = inspect.signature(selflet::TypeKnowledge.__init__)
+def test_selflet_typeknowledge_constructor_args():
+    sig = inspect.signature(selflet_TypeKnowledge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::selfletresources_is_not_abstract():
-    assert not inspect.isabstract(selflet::SelfletResources)
+def test_selflet_selfletresources_is_not_abstract():
+    assert not inspect.isabstract(selflet_SelfletResources)
 
 
-def test_selflet::selfletresources_constructor_exists():
-    assert callable(selflet::SelfletResources.__init__)
+def test_selflet_selfletresources_constructor_exists():
+    assert callable(selflet_SelfletResources.__init__)
 
 
-def test_selflet::selfletresources_constructor_args():
-    sig = inspect.signature(selflet::SelfletResources.__init__)
+def test_selflet_selfletresources_constructor_args():
+    sig = inspect.signature(selflet_SelfletResources.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::selfletproperties_is_not_abstract():
-    assert not inspect.isabstract(selflet::SelfletProperties)
+def test_selflet_selfletproperties_is_not_abstract():
+    assert not inspect.isabstract(selflet_SelfletProperties)
 
 
-def test_selflet::selfletproperties_constructor_exists():
-    assert callable(selflet::SelfletProperties.__init__)
+def test_selflet_selfletproperties_constructor_exists():
+    assert callable(selflet_SelfletProperties.__init__)
 
 
-def test_selflet::selfletproperties_constructor_args():
-    sig = inspect.signature(selflet::SelfletProperties.__init__)
+def test_selflet_selfletproperties_constructor_args():
+    sig = inspect.signature(selflet_SelfletProperties.__init__)
     params = list(sig.parameters.keys())
+    assert "enableOptimizationPolicy" in params, "Missing parameter 'enableOptimizationPolicy'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "author" in params, "Missing parameter 'author'"
     assert "limePort" in params, "Missing parameter 'limePort'"
     assert "enableCloudOptimizationPolicy" in params, "Missing parameter 'enableCloudOptimizationPolicy'"
-    assert "author" in params, "Missing parameter 'author'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "enableOptimizationPolicy" in params, "Missing parameter 'enableOptimizationPolicy'"
 
-def test_selflet::selfletproperties_has_limePort():
-    assert hasattr(selflet::SelfletProperties, "limePort")
+def test_selflet_selfletproperties_has_enableOptimizationPolicy():
+    assert hasattr(selflet_SelfletProperties, "enableOptimizationPolicy")
     descriptor = None
-    for klass in selflet::SelfletProperties.__mro__:
-        if "limePort" in klass.__dict__:
-            descriptor = klass.__dict__["limePort"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::selfletproperties_has_enableCloudOptimizationPolicy():
-    assert hasattr(selflet::SelfletProperties, "enableCloudOptimizationPolicy")
-    descriptor = None
-    for klass in selflet::SelfletProperties.__mro__:
-        if "enableCloudOptimizationPolicy" in klass.__dict__:
-            descriptor = klass.__dict__["enableCloudOptimizationPolicy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::selfletproperties_has_author():
-    assert hasattr(selflet::SelfletProperties, "author")
-    descriptor = None
-    for klass in selflet::SelfletProperties.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::selfletproperties_has_description():
-    assert hasattr(selflet::SelfletProperties, "description")
-    descriptor = None
-    for klass in selflet::SelfletProperties.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::selfletproperties_has_enableOptimizationPolicy():
-    assert hasattr(selflet::SelfletProperties, "enableOptimizationPolicy")
-    descriptor = None
-    for klass in selflet::SelfletProperties.__mro__:
+    for klass in selflet_SelfletProperties.__mro__:
         if "enableOptimizationPolicy" in klass.__dict__:
             descriptor = klass.__dict__["enableOptimizationPolicy"]
             break
     assert isinstance(descriptor, property)
 
+def test_selflet_selfletproperties_has_description():
+    assert hasattr(selflet_SelfletProperties, "description")
+    descriptor = None
+    for klass in selflet_SelfletProperties.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_selflet_selfletproperties_has_author():
+    assert hasattr(selflet_SelfletProperties, "author")
+    descriptor = None
+    for klass in selflet_SelfletProperties.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_selflet_selfletproperties_has_limePort():
+    assert hasattr(selflet_SelfletProperties, "limePort")
+    descriptor = None
+    for klass in selflet_SelfletProperties.__mro__:
+        if "limePort" in klass.__dict__:
+            descriptor = klass.__dict__["limePort"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_selflet_selfletproperties_has_enableCloudOptimizationPolicy():
+    assert hasattr(selflet_SelfletProperties, "enableCloudOptimizationPolicy")
+    descriptor = None
+    for klass in selflet_SelfletProperties.__mro__:
+        if "enableCloudOptimizationPolicy" in klass.__dict__:
+            descriptor = klass.__dict__["enableCloudOptimizationPolicy"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_selflet::selflet_is_not_abstract():
-    assert not inspect.isabstract(selflet::Selflet)
+
+def test_selflet_selflet_is_not_abstract():
+    assert not inspect.isabstract(selflet_Selflet)
 
 
-def test_selflet::selflet_constructor_exists():
-    assert callable(selflet::Selflet.__init__)
+def test_selflet_selflet_constructor_exists():
+    assert callable(selflet_Selflet.__init__)
 
 
-def test_selflet::selflet_constructor_args():
-    sig = inspect.signature(selflet::Selflet.__init__)
+def test_selflet_selflet_constructor_args():
+    sig = inspect.signature(selflet_Selflet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_selflet::selflet_has_name():
-    assert hasattr(selflet::Selflet, "name")
+def test_selflet_selflet_has_name():
+    assert hasattr(selflet_Selflet, "name")
     descriptor = None
-    for klass in selflet::Selflet.__mro__:
+    for klass in selflet_Selflet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -290,23 +318,23 @@ def test_selflet::selflet_has_name():
 
 
 
-def test_selflet::rule_is_not_abstract():
-    assert not inspect.isabstract(selflet::Rule)
+def test_selflet_rule_is_not_abstract():
+    assert not inspect.isabstract(selflet_Rule)
 
 
-def test_selflet::rule_constructor_exists():
-    assert callable(selflet::Rule.__init__)
+def test_selflet_rule_constructor_exists():
+    assert callable(selflet_Rule.__init__)
 
 
-def test_selflet::rule_constructor_args():
-    sig = inspect.signature(selflet::Rule.__init__)
+def test_selflet_rule_constructor_args():
+    sig = inspect.signature(selflet_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_selflet::rule_has_file():
-    assert hasattr(selflet::Rule, "file")
+def test_selflet_rule_has_file():
+    assert hasattr(selflet_Rule, "file")
     descriptor = None
-    for klass in selflet::Rule.__mro__:
+    for klass in selflet_Rule.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -314,85 +342,85 @@ def test_selflet::rule_has_file():
 
 
 
-def test_selflet::rules_is_not_abstract():
-    assert not inspect.isabstract(selflet::Rules)
+def test_selflet_rules_is_not_abstract():
+    assert not inspect.isabstract(selflet_Rules)
 
 
-def test_selflet::rules_constructor_exists():
-    assert callable(selflet::Rules.__init__)
+def test_selflet_rules_constructor_exists():
+    assert callable(selflet_Rules.__init__)
 
 
-def test_selflet::rules_constructor_args():
-    sig = inspect.signature(selflet::Rules.__init__)
+def test_selflet_rules_constructor_args():
+    sig = inspect.signature(selflet_Rules.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::output_is_not_abstract():
-    assert not inspect.isabstract(selflet::Output)
+def test_selflet_output_is_not_abstract():
+    assert not inspect.isabstract(selflet_Output)
 
 
-def test_selflet::output_constructor_exists():
-    assert callable(selflet::Output.__init__)
+def test_selflet_output_constructor_exists():
+    assert callable(selflet_Output.__init__)
 
 
-def test_selflet::output_constructor_args():
-    sig = inspect.signature(selflet::Output.__init__)
+def test_selflet_output_constructor_args():
+    sig = inspect.signature(selflet_Output.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::reds_is_not_abstract():
-    assert not inspect.isabstract(selflet::Reds)
+def test_selflet_reds_is_not_abstract():
+    assert not inspect.isabstract(selflet_Reds)
 
 
-def test_selflet::reds_constructor_exists():
-    assert callable(selflet::Reds.__init__)
+def test_selflet_reds_constructor_exists():
+    assert callable(selflet_Reds.__init__)
 
 
-def test_selflet::reds_constructor_args():
-    sig = inspect.signature(selflet::Reds.__init__)
+def test_selflet_reds_constructor_args():
+    sig = inspect.signature(selflet_Reds.__init__)
     params = list(sig.parameters.keys())
-    assert "port" in params, "Missing parameter 'port'"
     assert "ipAddress" in params, "Missing parameter 'ipAddress'"
+    assert "port" in params, "Missing parameter 'port'"
 
-def test_selflet::reds_has_port():
-    assert hasattr(selflet::Reds, "port")
+def test_selflet_reds_has_ipAddress():
+    assert hasattr(selflet_Reds, "ipAddress")
     descriptor = None
-    for klass in selflet::Reds.__mro__:
-        if "port" in klass.__dict__:
-            descriptor = klass.__dict__["port"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::reds_has_ipAddress():
-    assert hasattr(selflet::Reds, "ipAddress")
-    descriptor = None
-    for klass in selflet::Reds.__mro__:
+    for klass in selflet_Reds.__mro__:
         if "ipAddress" in klass.__dict__:
             descriptor = klass.__dict__["ipAddress"]
             break
     assert isinstance(descriptor, property)
 
+def test_selflet_reds_has_port():
+    assert hasattr(selflet_Reds, "port")
+    descriptor = None
+    for klass in selflet_Reds.__mro__:
+        if "port" in klass.__dict__:
+            descriptor = klass.__dict__["port"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_selflet::offermode_is_not_abstract():
-    assert not inspect.isabstract(selflet::OfferMode)
+
+def test_selflet_offermode_is_not_abstract():
+    assert not inspect.isabstract(selflet_OfferMode)
 
 
-def test_selflet::offermode_constructor_exists():
-    assert callable(selflet::OfferMode.__init__)
+def test_selflet_offermode_constructor_exists():
+    assert callable(selflet_OfferMode.__init__)
 
 
-def test_selflet::offermode_constructor_args():
-    sig = inspect.signature(selflet::OfferMode.__init__)
+def test_selflet_offermode_constructor_args():
+    sig = inspect.signature(selflet_OfferMode.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_selflet::offermode_has_mode():
-    assert hasattr(selflet::OfferMode, "mode")
+def test_selflet_offermode_has_mode():
+    assert hasattr(selflet_OfferMode, "mode")
     descriptor = None
-    for klass in selflet::OfferMode.__mro__:
+    for klass in selflet_OfferMode.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -400,33 +428,33 @@ def test_selflet::offermode_has_mode():
 
 
 
-def test_selflet::parameter_is_not_abstract():
-    assert not inspect.isabstract(selflet::Parameter)
+def test_selflet_parameter_is_not_abstract():
+    assert not inspect.isabstract(selflet_Parameter)
 
 
-def test_selflet::parameter_constructor_exists():
-    assert callable(selflet::Parameter.__init__)
+def test_selflet_parameter_constructor_exists():
+    assert callable(selflet_Parameter.__init__)
 
 
-def test_selflet::parameter_constructor_args():
-    sig = inspect.signature(selflet::Parameter.__init__)
+def test_selflet_parameter_constructor_args():
+    sig = inspect.signature(selflet_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_selflet::parameter_has_type():
-    assert hasattr(selflet::Parameter, "type")
+def test_selflet_parameter_has_type():
+    assert hasattr(selflet_Parameter, "type")
     descriptor = None
-    for klass in selflet::Parameter.__mro__:
+    for klass in selflet_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::parameter_has_name():
-    assert hasattr(selflet::Parameter, "name")
+def test_selflet_parameter_has_name():
+    assert hasattr(selflet_Parameter, "name")
     descriptor = None
-    for klass in selflet::Parameter.__mro__:
+    for klass in selflet_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -434,57 +462,57 @@ def test_selflet::parameter_has_name():
 
 
 
-def test_selflet::input_is_not_abstract():
-    assert not inspect.isabstract(selflet::Input)
+def test_selflet_input_is_not_abstract():
+    assert not inspect.isabstract(selflet_Input)
 
 
-def test_selflet::input_constructor_exists():
-    assert callable(selflet::Input.__init__)
+def test_selflet_input_constructor_exists():
+    assert callable(selflet_Input.__init__)
 
 
-def test_selflet::input_constructor_args():
-    sig = inspect.signature(selflet::Input.__init__)
+def test_selflet_input_constructor_args():
+    sig = inspect.signature(selflet_Input.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::selfletproperty_is_not_abstract():
-    assert not inspect.isabstract(selflet::SelfLetProperty)
+def test_selflet_selfletproperty_is_not_abstract():
+    assert not inspect.isabstract(selflet_SelfLetProperty)
 
 
-def test_selflet::selfletproperty_constructor_exists():
-    assert callable(selflet::SelfLetProperty.__init__)
+def test_selflet_selfletproperty_constructor_exists():
+    assert callable(selflet_SelfLetProperty.__init__)
 
 
-def test_selflet::selfletproperty_constructor_args():
-    sig = inspect.signature(selflet::SelfLetProperty.__init__)
+def test_selflet_selfletproperty_constructor_args():
+    sig = inspect.signature(selflet_SelfLetProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_selflet::selfletproperty_has_name():
-    assert hasattr(selflet::SelfLetProperty, "name")
+def test_selflet_selfletproperty_has_name():
+    assert hasattr(selflet_SelfLetProperty, "name")
     descriptor = None
-    for klass in selflet::SelfLetProperty.__mro__:
+    for klass in selflet_SelfLetProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::selfletproperty_has_type():
-    assert hasattr(selflet::SelfLetProperty, "type")
+def test_selflet_selfletproperty_has_type():
+    assert hasattr(selflet_SelfLetProperty, "type")
     descriptor = None
-    for klass in selflet::SelfLetProperty.__mro__:
+    for klass in selflet_SelfLetProperty.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::selfletproperty_has_value():
-    assert hasattr(selflet::SelfLetProperty, "value")
+def test_selflet_selfletproperty_has_value():
+    assert hasattr(selflet_SelfLetProperty, "value")
     descriptor = None
-    for klass in selflet::SelfLetProperty.__mro__:
+    for klass in selflet_SelfLetProperty.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -492,57 +520,57 @@ def test_selflet::selfletproperty_has_value():
 
 
 
-def test_selflet::method_is_not_abstract():
-    assert not inspect.isabstract(selflet::Method)
+def test_selflet_method_is_not_abstract():
+    assert not inspect.isabstract(selflet_Method)
 
 
-def test_selflet::method_constructor_exists():
-    assert callable(selflet::Method.__init__)
+def test_selflet_method_constructor_exists():
+    assert callable(selflet_Method.__init__)
 
 
-def test_selflet::method_constructor_args():
-    sig = inspect.signature(selflet::Method.__init__)
+def test_selflet_method_constructor_args():
+    sig = inspect.signature(selflet_Method.__init__)
     params = list(sig.parameters.keys())
-    assert "paramType" in params, "Missing parameter 'paramType'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "paramType" in params, "Missing parameter 'paramType'"
 
-def test_selflet::method_has_paramType():
-    assert hasattr(selflet::Method, "paramType")
+def test_selflet_method_has_name():
+    assert hasattr(selflet_Method, "name")
     descriptor = None
-    for klass in selflet::Method.__mro__:
+    for klass in selflet_Method.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_selflet_method_has_paramType():
+    assert hasattr(selflet_Method, "paramType")
+    descriptor = None
+    for klass in selflet_Method.__mro__:
         if "paramType" in klass.__dict__:
             descriptor = klass.__dict__["paramType"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::method_has_name():
-    assert hasattr(selflet::Method, "name")
-    descriptor = None
-    for klass in selflet::Method.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_selflet::condition_is_not_abstract():
-    assert not inspect.isabstract(selflet::Condition)
-
-
-def test_selflet::condition_constructor_exists():
-    assert callable(selflet::Condition.__init__)
+def test_selflet_condition_is_not_abstract():
+    assert not inspect.isabstract(selflet_Condition)
 
 
-def test_selflet::condition_constructor_args():
-    sig = inspect.signature(selflet::Condition.__init__)
+def test_selflet_condition_constructor_exists():
+    assert callable(selflet_Condition.__init__)
+
+
+def test_selflet_condition_constructor_args():
+    sig = inspect.signature(selflet_Condition.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_selflet::condition_has_file():
-    assert hasattr(selflet::Condition, "file")
+def test_selflet_condition_has_file():
+    assert hasattr(selflet_Condition, "file")
     descriptor = None
-    for klass in selflet::Condition.__mro__:
+    for klass in selflet_Condition.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -550,255 +578,255 @@ def test_selflet::condition_has_file():
 
 
 
-def test_selflet::conditions_is_not_abstract():
-    assert not inspect.isabstract(selflet::Conditions)
+def test_selflet_conditions_is_not_abstract():
+    assert not inspect.isabstract(selflet_Conditions)
 
 
-def test_selflet::conditions_constructor_exists():
-    assert callable(selflet::Conditions.__init__)
+def test_selflet_conditions_constructor_exists():
+    assert callable(selflet_Conditions.__init__)
 
 
-def test_selflet::conditions_constructor_args():
-    sig = inspect.signature(selflet::Conditions.__init__)
+def test_selflet_conditions_constructor_args():
+    sig = inspect.signature(selflet_Conditions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::service_is_not_abstract():
-    assert not inspect.isabstract(selflet::Service)
+def test_selflet_service_is_not_abstract():
+    assert not inspect.isabstract(selflet_Service)
 
 
-def test_selflet::service_constructor_exists():
-    assert callable(selflet::Service.__init__)
+def test_selflet_service_constructor_exists():
+    assert callable(selflet_Service.__init__)
 
 
-def test_selflet::service_constructor_args():
-    sig = inspect.signature(selflet::Service.__init__)
+def test_selflet_service_constructor_args():
+    sig = inspect.signature(selflet_Service.__init__)
     params = list(sig.parameters.keys())
-    assert "active" in params, "Missing parameter 'active'"
-    assert "maxResponseTime" in params, "Missing parameter 'maxResponseTime'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "revenue" in params, "Missing parameter 'revenue'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "maxResponseTime" in params, "Missing parameter 'maxResponseTime'"
+    assert "active" in params, "Missing parameter 'active'"
 
-def test_selflet::service_has_active():
-    assert hasattr(selflet::Service, "active")
+def test_selflet_service_has_revenue():
+    assert hasattr(selflet_Service, "revenue")
     descriptor = None
-    for klass in selflet::Service.__mro__:
-        if "active" in klass.__dict__:
-            descriptor = klass.__dict__["active"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::service_has_maxResponseTime():
-    assert hasattr(selflet::Service, "maxResponseTime")
-    descriptor = None
-    for klass in selflet::Service.__mro__:
-        if "maxResponseTime" in klass.__dict__:
-            descriptor = klass.__dict__["maxResponseTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::service_has_name():
-    assert hasattr(selflet::Service, "name")
-    descriptor = None
-    for klass in selflet::Service.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::service_has_revenue():
-    assert hasattr(selflet::Service, "revenue")
-    descriptor = None
-    for klass in selflet::Service.__mro__:
+    for klass in selflet_Service.__mro__:
         if "revenue" in klass.__dict__:
             descriptor = klass.__dict__["revenue"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_selflet::behavior_is_not_abstract():
-    assert not inspect.isabstract(selflet::Behavior)
-
-
-def test_selflet::behavior_constructor_exists():
-    assert callable(selflet::Behavior.__init__)
-
-
-def test_selflet::behavior_constructor_args():
-    sig = inspect.signature(selflet::Behavior.__init__)
-    params = list(sig.parameters.keys())
-    assert "elementaryBehaviorCPUTime" in params, "Missing parameter 'elementaryBehaviorCPUTime'"
-    assert "isDefaultBehavior" in params, "Missing parameter 'isDefaultBehavior'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "fileName" in params, "Missing parameter 'fileName'"
-    assert "elementaryBehaviorCost" in params, "Missing parameter 'elementaryBehaviorCost'"
-
-def test_selflet::behavior_has_elementaryBehaviorCPUTime():
-    assert hasattr(selflet::Behavior, "elementaryBehaviorCPUTime")
+def test_selflet_service_has_name():
+    assert hasattr(selflet_Service, "name")
     descriptor = None
-    for klass in selflet::Behavior.__mro__:
-        if "elementaryBehaviorCPUTime" in klass.__dict__:
-            descriptor = klass.__dict__["elementaryBehaviorCPUTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::behavior_has_isDefaultBehavior():
-    assert hasattr(selflet::Behavior, "isDefaultBehavior")
-    descriptor = None
-    for klass in selflet::Behavior.__mro__:
-        if "isDefaultBehavior" in klass.__dict__:
-            descriptor = klass.__dict__["isDefaultBehavior"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_selflet::behavior_has_name():
-    assert hasattr(selflet::Behavior, "name")
-    descriptor = None
-    for klass in selflet::Behavior.__mro__:
+    for klass in selflet_Service.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::behavior_has_fileName():
-    assert hasattr(selflet::Behavior, "fileName")
+def test_selflet_service_has_maxResponseTime():
+    assert hasattr(selflet_Service, "maxResponseTime")
     descriptor = None
-    for klass in selflet::Behavior.__mro__:
-        if "fileName" in klass.__dict__:
-            descriptor = klass.__dict__["fileName"]
+    for klass in selflet_Service.__mro__:
+        if "maxResponseTime" in klass.__dict__:
+            descriptor = klass.__dict__["maxResponseTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::behavior_has_elementaryBehaviorCost():
-    assert hasattr(selflet::Behavior, "elementaryBehaviorCost")
+def test_selflet_service_has_active():
+    assert hasattr(selflet_Service, "active")
     descriptor = None
-    for klass in selflet::Behavior.__mro__:
+    for klass in selflet_Service.__mro__:
+        if "active" in klass.__dict__:
+            descriptor = klass.__dict__["active"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_selflet_behavior_is_not_abstract():
+    assert not inspect.isabstract(selflet_Behavior)
+
+
+def test_selflet_behavior_constructor_exists():
+    assert callable(selflet_Behavior.__init__)
+
+
+def test_selflet_behavior_constructor_args():
+    sig = inspect.signature(selflet_Behavior.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isDefaultBehavior" in params, "Missing parameter 'isDefaultBehavior'"
+    assert "elementaryBehaviorCost" in params, "Missing parameter 'elementaryBehaviorCost'"
+    assert "fileName" in params, "Missing parameter 'fileName'"
+    assert "elementaryBehaviorCPUTime" in params, "Missing parameter 'elementaryBehaviorCPUTime'"
+
+def test_selflet_behavior_has_name():
+    assert hasattr(selflet_Behavior, "name")
+    descriptor = None
+    for klass in selflet_Behavior.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_selflet_behavior_has_isDefaultBehavior():
+    assert hasattr(selflet_Behavior, "isDefaultBehavior")
+    descriptor = None
+    for klass in selflet_Behavior.__mro__:
+        if "isDefaultBehavior" in klass.__dict__:
+            descriptor = klass.__dict__["isDefaultBehavior"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_selflet_behavior_has_elementaryBehaviorCost():
+    assert hasattr(selflet_Behavior, "elementaryBehaviorCost")
+    descriptor = None
+    for klass in selflet_Behavior.__mro__:
         if "elementaryBehaviorCost" in klass.__dict__:
             descriptor = klass.__dict__["elementaryBehaviorCost"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_selflet::generalknowledge_is_not_abstract():
-    assert not inspect.isabstract(selflet::GeneralKnowledge)
-
-
-def test_selflet::generalknowledge_constructor_exists():
-    assert callable(selflet::GeneralKnowledge.__init__)
-
-
-def test_selflet::generalknowledge_constructor_args():
-    sig = inspect.signature(selflet::GeneralKnowledge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_selflet::empty_is_not_abstract():
-    assert not inspect.isabstract(selflet::Empty)
-
-
-def test_selflet::empty_constructor_exists():
-    assert callable(selflet::Empty.__init__)
-
-
-def test_selflet::empty_constructor_args():
-    sig = inspect.signature(selflet::Empty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_selflet::cpuutilization_is_not_abstract():
-    assert not inspect.isabstract(selflet::CPUUtilization)
-
-
-def test_selflet::cpuutilization_constructor_exists():
-    assert callable(selflet::CPUUtilization.__init__)
-
-
-def test_selflet::cpuutilization_constructor_args():
-    sig = inspect.signature(selflet::CPUUtilization.__init__)
-    params = list(sig.parameters.keys())
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-
-def test_selflet::cpuutilization_has_lowerBound():
-    assert hasattr(selflet::CPUUtilization, "lowerBound")
+def test_selflet_behavior_has_fileName():
+    assert hasattr(selflet_Behavior, "fileName")
     descriptor = None
-    for klass in selflet::CPUUtilization.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
+    for klass in selflet_Behavior.__mro__:
+        if "fileName" in klass.__dict__:
+            descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::cpuutilization_has_upperBound():
-    assert hasattr(selflet::CPUUtilization, "upperBound")
+def test_selflet_behavior_has_elementaryBehaviorCPUTime():
+    assert hasattr(selflet_Behavior, "elementaryBehaviorCPUTime")
     descriptor = None
-    for klass in selflet::CPUUtilization.__mro__:
+    for klass in selflet_Behavior.__mro__:
+        if "elementaryBehaviorCPUTime" in klass.__dict__:
+            descriptor = klass.__dict__["elementaryBehaviorCPUTime"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_selflet_generalknowledge_is_not_abstract():
+    assert not inspect.isabstract(selflet_GeneralKnowledge)
+
+
+def test_selflet_generalknowledge_constructor_exists():
+    assert callable(selflet_GeneralKnowledge.__init__)
+
+
+def test_selflet_generalknowledge_constructor_args():
+    sig = inspect.signature(selflet_GeneralKnowledge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_selflet_empty_is_not_abstract():
+    assert not inspect.isabstract(selflet_Empty)
+
+
+def test_selflet_empty_constructor_exists():
+    assert callable(selflet_Empty.__init__)
+
+
+def test_selflet_empty_constructor_args():
+    sig = inspect.signature(selflet_Empty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_selflet_cpuutilization_is_not_abstract():
+    assert not inspect.isabstract(selflet_CPUUtilization)
+
+
+def test_selflet_cpuutilization_constructor_exists():
+    assert callable(selflet_CPUUtilization.__init__)
+
+
+def test_selflet_cpuutilization_constructor_args():
+    sig = inspect.signature(selflet_CPUUtilization.__init__)
+    params = list(sig.parameters.keys())
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+
+def test_selflet_cpuutilization_has_upperBound():
+    assert hasattr(selflet_CPUUtilization, "upperBound")
+    descriptor = None
+    for klass in selflet_CPUUtilization.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
+def test_selflet_cpuutilization_has_lowerBound():
+    assert hasattr(selflet_CPUUtilization, "lowerBound")
+    descriptor = None
+    for klass in selflet_CPUUtilization.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_selflet::actions_is_not_abstract():
-    assert not inspect.isabstract(selflet::Actions)
+
+def test_selflet_actions_is_not_abstract():
+    assert not inspect.isabstract(selflet_Actions)
 
 
-def test_selflet::actions_constructor_exists():
-    assert callable(selflet::Actions.__init__)
+def test_selflet_actions_constructor_exists():
+    assert callable(selflet_Actions.__init__)
 
 
-def test_selflet::actions_constructor_args():
-    sig = inspect.signature(selflet::Actions.__init__)
+def test_selflet_actions_constructor_args():
+    sig = inspect.signature(selflet_Actions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::methods_is_not_abstract():
-    assert not inspect.isabstract(selflet::Methods)
+def test_selflet_methods_is_not_abstract():
+    assert not inspect.isabstract(selflet_Methods)
 
 
-def test_selflet::methods_constructor_exists():
-    assert callable(selflet::Methods.__init__)
+def test_selflet_methods_constructor_exists():
+    assert callable(selflet_Methods.__init__)
 
 
-def test_selflet::methods_constructor_args():
-    sig = inspect.signature(selflet::Methods.__init__)
+def test_selflet_methods_constructor_args():
+    sig = inspect.signature(selflet_Methods.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::ability_is_not_abstract():
-    assert not inspect.isabstract(selflet::Ability)
+def test_selflet_ability_is_not_abstract():
+    assert not inspect.isabstract(selflet_Ability)
 
 
-def test_selflet::ability_constructor_exists():
-    assert callable(selflet::Ability.__init__)
+def test_selflet_ability_constructor_exists():
+    assert callable(selflet_Ability.__init__)
 
 
-def test_selflet::ability_constructor_args():
-    sig = inspect.signature(selflet::Ability.__init__)
+def test_selflet_ability_constructor_args():
+    sig = inspect.signature(selflet_Ability.__init__)
     params = list(sig.parameters.keys())
     assert "service" in params, "Missing parameter 'service'"
     assert "file" in params, "Missing parameter 'file'"
 
-def test_selflet::ability_has_service():
-    assert hasattr(selflet::Ability, "service")
+def test_selflet_ability_has_service():
+    assert hasattr(selflet_Ability, "service")
     descriptor = None
-    for klass in selflet::Ability.__mro__:
+    for klass in selflet_Ability.__mro__:
         if "service" in klass.__dict__:
             descriptor = klass.__dict__["service"]
             break
     assert isinstance(descriptor, property)
 
-def test_selflet::ability_has_file():
-    assert hasattr(selflet::Ability, "file")
+def test_selflet_ability_has_file():
+    assert hasattr(selflet_Ability, "file")
     descriptor = None
-    for klass in selflet::Ability.__mro__:
+    for klass in selflet_Ability.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -806,37 +834,37 @@ def test_selflet::ability_has_file():
 
 
 
-def test_selflet::abilities_is_not_abstract():
-    assert not inspect.isabstract(selflet::Abilities)
+def test_selflet_abilities_is_not_abstract():
+    assert not inspect.isabstract(selflet_Abilities)
 
 
-def test_selflet::abilities_constructor_exists():
-    assert callable(selflet::Abilities.__init__)
+def test_selflet_abilities_constructor_exists():
+    assert callable(selflet_Abilities.__init__)
 
 
-def test_selflet::abilities_constructor_args():
-    sig = inspect.signature(selflet::Abilities.__init__)
+def test_selflet_abilities_constructor_args():
+    sig = inspect.signature(selflet_Abilities.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selflet::active_is_not_abstract():
-    assert not inspect.isabstract(selflet::Active)
+def test_selflet_active_is_not_abstract():
+    assert not inspect.isabstract(selflet_Active)
 
 
-def test_selflet::active_constructor_exists():
-    assert callable(selflet::Active.__init__)
+def test_selflet_active_constructor_exists():
+    assert callable(selflet_Active.__init__)
 
 
-def test_selflet::active_constructor_args():
-    sig = inspect.signature(selflet::Active.__init__)
+def test_selflet_active_constructor_args():
+    sig = inspect.signature(selflet_Active.__init__)
     params = list(sig.parameters.keys())
     assert "mainService" in params, "Missing parameter 'mainService'"
 
-def test_selflet::active_has_mainService():
-    assert hasattr(selflet::Active, "mainService")
+def test_selflet_active_has_mainService():
+    assert hasattr(selflet_Active, "mainService")
     descriptor = None
-    for klass in selflet::Active.__mro__:
+    for klass in selflet_Active.__mro__:
         if "mainService" in klass.__dict__:
             descriptor = klass.__dict__["mainService"]
             break
@@ -844,55 +872,27 @@ def test_selflet::active_has_mainService():
 
 
 
-def test_selflet::action_is_not_abstract():
-    assert not inspect.isabstract(selflet::Action)
+def test_selflet_action_is_not_abstract():
+    assert not inspect.isabstract(selflet_Action)
 
 
-def test_selflet::action_constructor_exists():
-    assert callable(selflet::Action.__init__)
+def test_selflet_action_constructor_exists():
+    assert callable(selflet_Action.__init__)
 
 
-def test_selflet::action_constructor_args():
-    sig = inspect.signature(selflet::Action.__init__)
+def test_selflet_action_constructor_args():
+    sig = inspect.signature(selflet_Action.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_selflet::action_has_file():
-    assert hasattr(selflet::Action, "file")
+def test_selflet_action_has_file():
+    assert hasattr(selflet_Action, "file")
     descriptor = None
-    for klass in selflet::Action.__mro__:
+    for klass in selflet_Action.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_selflet::intermediatestate_is_not_abstract():
-    assert not inspect.isabstract(selflet::IntermediateState)
-
-
-def test_selflet::intermediatestate_constructor_exists():
-    assert callable(selflet::IntermediateState.__init__)
-
-
-def test_selflet::intermediatestate_constructor_args():
-    sig = inspect.signature(selflet::IntermediateState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_selflet::abilitystate_is_not_abstract():
-    assert not inspect.isabstract(selflet::AbilityState)
-
-
-def test_selflet::abilitystate_constructor_exists():
-    assert callable(selflet::AbilityState.__init__)
-
-
-def test_selflet::abilitystate_constructor_args():
-    sig = inspect.signature(selflet::AbilityState.__init__)
-    params = list(sig.parameters.keys())
 
 def test_mode_exists():
     # Check that the Enumeration exists
@@ -902,13 +902,13 @@ def test_mode_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Mode]
     expected_literals = [
-        "None_",
         "KnowsWhoCanDo",
-        "Both",
-        "CanTeach",
         "KnowsWhoCanBoth",
         "CanDo",
+        "Both",
+        "CanTeach",
         "KnowsWhoCanTeach",
+        "None_",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -922,16 +922,16 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
-        "Double1",
-        "Boolean1",
-        "double",
-        "boolean",
-        "integer",
-        "string",
-        "ServiceAskMode",
         "ServiceOfferMode",
+        "double",
+        "integer",
+        "boolean",
+        "ServiceAskMode",
+        "Double1",
         "Integer1",
+        "string",
         "String1",
+        "Boolean1",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -952,88 +952,94 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-selflet::FinalState_strategy = st.builds(
-    selflet::FinalState,
+selflet_AbilityState_strategy = st.builds(
+    selflet_AbilityState,
 )
-selflet::InitialState_strategy = st.builds(
-    selflet::InitialState,
+selflet_IntermediateState_strategy = st.builds(
+    selflet_IntermediateState,
 )
-selflet::State_strategy = st.builds(
-    selflet::State,
+selflet_FinalState_strategy = st.builds(
+    selflet_FinalState,
+)
+selflet_InitialState_strategy = st.builds(
+    selflet_InitialState,
+)
+selflet_State_strategy = st.builds(
+    selflet_State,
     name=
         safe_text
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-selflet::ComplexBehavior_strategy = st.builds(
-    selflet::ComplexBehavior,
+selflet_ComplexBehavior_strategy = st.builds(
+    selflet_ComplexBehavior,
 )
-selflet::ElementaryBehavior_strategy = st.builds(
-    selflet::ElementaryBehavior,
+selflet_ElementaryBehavior_strategy = st.builds(
+    selflet_ElementaryBehavior,
 )
-selflet::Services_strategy = st.builds(
-    selflet::Services,
+selflet_Services_strategy = st.builds(
+    selflet_Services,
 )
-selflet::TypeKnowledge_strategy = st.builds(
-    selflet::TypeKnowledge,
+selflet_TypeKnowledge_strategy = st.builds(
+    selflet_TypeKnowledge,
 )
-selflet::SelfletResources_strategy = st.builds(
-    selflet::SelfletResources,
+selflet_SelfletResources_strategy = st.builds(
+    selflet_SelfletResources,
 )
-selflet::SelfletProperties_strategy = st.builds(
-    selflet::SelfletProperties,
-    limePort=
-        safe_text,
-    enableCloudOptimizationPolicy=
-        safe_text,
-    author=
+selflet_SelfletProperties_strategy = st.builds(
+    selflet_SelfletProperties,
+    enableOptimizationPolicy=
         safe_text,
     description=
         safe_text,
-    enableOptimizationPolicy=
+    author=
+        safe_text,
+    limePort=
+        safe_text,
+    enableCloudOptimizationPolicy=
         safe_text
 )
-selflet::Selflet_strategy = st.builds(
-    selflet::Selflet,
+selflet_Selflet_strategy = st.builds(
+    selflet_Selflet,
     name=
         safe_text
 )
-selflet::Rule_strategy = st.builds(
-    selflet::Rule,
+selflet_Rule_strategy = st.builds(
+    selflet_Rule,
     file=
         safe_text
 )
-selflet::Rules_strategy = st.builds(
-    selflet::Rules,
+selflet_Rules_strategy = st.builds(
+    selflet_Rules,
 )
-selflet::Output_strategy = st.builds(
-    selflet::Output,
+selflet_Output_strategy = st.builds(
+    selflet_Output,
 )
-selflet::Reds_strategy = st.builds(
-    selflet::Reds,
-    port=
-        safe_text,
+selflet_Reds_strategy = st.builds(
+    selflet_Reds,
     ipAddress=
+        safe_text,
+    port=
         safe_text
 )
-selflet::OfferMode_strategy = st.builds(
-    selflet::OfferMode,
+selflet_OfferMode_strategy = st.builds(
+    selflet_OfferMode,
     mode=
         safe_text
 )
-selflet::Parameter_strategy = st.builds(
-    selflet::Parameter,
+selflet_Parameter_strategy = st.builds(
+    selflet_Parameter,
     type=
         safe_text,
     name=
         safe_text
 )
-selflet::Input_strategy = st.builds(
-    selflet::Input,
+selflet_Input_strategy = st.builds(
+    selflet_Input,
 )
-selflet::SelfLetProperty_strategy = st.builds(
-    selflet::SelfLetProperty,
+selflet_SelfLetProperty_strategy = st.builds(
+    selflet_SelfLetProperty,
     name=
         safe_text,
     type=
@@ -1041,89 +1047,83 @@ selflet::SelfLetProperty_strategy = st.builds(
     value=
         safe_text
 )
-selflet::Method_strategy = st.builds(
-    selflet::Method,
-    paramType=
-        safe_text,
+selflet_Method_strategy = st.builds(
+    selflet_Method,
     name=
+        safe_text,
+    paramType=
         safe_text
 )
-selflet::Condition_strategy = st.builds(
-    selflet::Condition,
+selflet_Condition_strategy = st.builds(
+    selflet_Condition,
     file=
         safe_text
 )
-selflet::Conditions_strategy = st.builds(
-    selflet::Conditions,
+selflet_Conditions_strategy = st.builds(
+    selflet_Conditions,
 )
-selflet::Service_strategy = st.builds(
-    selflet::Service,
-    active=
+selflet_Service_strategy = st.builds(
+    selflet_Service,
+    revenue=
+        safe_text,
+    name=
         safe_text,
     maxResponseTime=
         safe_text,
-    name=
-        safe_text,
-    revenue=
+    active=
         safe_text
 )
-selflet::Behavior_strategy = st.builds(
-    selflet::Behavior,
-    elementaryBehaviorCPUTime=
+selflet_Behavior_strategy = st.builds(
+    selflet_Behavior,
+    name=
         safe_text,
     isDefaultBehavior=
         safe_text,
-    name=
+    elementaryBehaviorCost=
         safe_text,
     fileName=
         safe_text,
-    elementaryBehaviorCost=
+    elementaryBehaviorCPUTime=
         safe_text
 )
-selflet::GeneralKnowledge_strategy = st.builds(
-    selflet::GeneralKnowledge,
+selflet_GeneralKnowledge_strategy = st.builds(
+    selflet_GeneralKnowledge,
 )
-selflet::Empty_strategy = st.builds(
-    selflet::Empty,
+selflet_Empty_strategy = st.builds(
+    selflet_Empty,
 )
-selflet::CPUUtilization_strategy = st.builds(
-    selflet::CPUUtilization,
-    lowerBound=
-        safe_text,
+selflet_CPUUtilization_strategy = st.builds(
+    selflet_CPUUtilization,
     upperBound=
+        safe_text,
+    lowerBound=
         safe_text
 )
-selflet::Actions_strategy = st.builds(
-    selflet::Actions,
+selflet_Actions_strategy = st.builds(
+    selflet_Actions,
 )
-selflet::Methods_strategy = st.builds(
-    selflet::Methods,
+selflet_Methods_strategy = st.builds(
+    selflet_Methods,
 )
-selflet::Ability_strategy = st.builds(
-    selflet::Ability,
+selflet_Ability_strategy = st.builds(
+    selflet_Ability,
     service=
         safe_text,
     file=
         safe_text
 )
-selflet::Abilities_strategy = st.builds(
-    selflet::Abilities,
+selflet_Abilities_strategy = st.builds(
+    selflet_Abilities,
 )
-selflet::Active_strategy = st.builds(
-    selflet::Active,
+selflet_Active_strategy = st.builds(
+    selflet_Active,
     mainService=
         safe_text
 )
-selflet::Action_strategy = st.builds(
-    selflet::Action,
+selflet_Action_strategy = st.builds(
+    selflet_Action,
     file=
         safe_text
-)
-selflet::IntermediateState_strategy = st.builds(
-    selflet::IntermediateState,
-)
-selflet::AbilityState_strategy = st.builds(
-    selflet::AbilityState,
 )
 
 @given(instance=State_strategy)
@@ -1131,28 +1131,35 @@ selflet::AbilityState_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=selflet::FinalState_strategy)
+@given(instance=selflet_AbilityState_strategy)
 @settings(max_examples=50)
-def test_selflet::finalstate_instantiation(instance):
-    assert isinstance(instance, selflet::FinalState)
+def test_selflet_abilitystate_instantiation(instance):
+    assert isinstance(instance, selflet_AbilityState)
 
-@given(instance=selflet::InitialState_strategy)
+@given(instance=selflet_IntermediateState_strategy)
 @settings(max_examples=50)
-def test_selflet::initialstate_instantiation(instance):
-    assert isinstance(instance, selflet::InitialState)
+def test_selflet_intermediatestate_instantiation(instance):
+    assert isinstance(instance, selflet_IntermediateState)
 
-@given(instance=selflet::State_strategy)
+@given(instance=selflet_FinalState_strategy)
 @settings(max_examples=50)
-def test_selflet::state_instantiation(instance):
-    assert isinstance(instance, selflet::State)
+def test_selflet_finalstate_instantiation(instance):
+    assert isinstance(instance, selflet_FinalState)
 
-@given(instance=selflet::State_strategy)
-def test_selflet::state_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=selflet_InitialState_strategy)
+@settings(max_examples=50)
+def test_selflet_initialstate_instantiation(instance):
+    assert isinstance(instance, selflet_InitialState)
+
+@given(instance=selflet_State_strategy)
+@settings(max_examples=50)
+def test_selflet_state_instantiation(instance):
+    assert isinstance(instance, selflet_State)
 
 
-@given(instance=selflet::State_strategy)
-def test_selflet::state_name_setter(instance):
+
+@given(instance=selflet_State_strategy)
+def test_selflet_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1162,520 +1169,411 @@ def test_selflet::state_name_setter(instance):
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=selflet::ComplexBehavior_strategy)
+@given(instance=selflet_ComplexBehavior_strategy)
 @settings(max_examples=50)
-def test_selflet::complexbehavior_instantiation(instance):
-    assert isinstance(instance, selflet::ComplexBehavior)
+def test_selflet_complexbehavior_instantiation(instance):
+    assert isinstance(instance, selflet_ComplexBehavior)
 
-@given(instance=selflet::ElementaryBehavior_strategy)
+@given(instance=selflet_ElementaryBehavior_strategy)
 @settings(max_examples=50)
-def test_selflet::elementarybehavior_instantiation(instance):
-    assert isinstance(instance, selflet::ElementaryBehavior)
+def test_selflet_elementarybehavior_instantiation(instance):
+    assert isinstance(instance, selflet_ElementaryBehavior)
 
-@given(instance=selflet::Services_strategy)
+@given(instance=selflet_Services_strategy)
 @settings(max_examples=50)
-def test_selflet::services_instantiation(instance):
-    assert isinstance(instance, selflet::Services)
+def test_selflet_services_instantiation(instance):
+    assert isinstance(instance, selflet_Services)
 
-@given(instance=selflet::TypeKnowledge_strategy)
+@given(instance=selflet_TypeKnowledge_strategy)
 @settings(max_examples=50)
-def test_selflet::typeknowledge_instantiation(instance):
-    assert isinstance(instance, selflet::TypeKnowledge)
+def test_selflet_typeknowledge_instantiation(instance):
+    assert isinstance(instance, selflet_TypeKnowledge)
 
-@given(instance=selflet::SelfletResources_strategy)
+@given(instance=selflet_SelfletResources_strategy)
 @settings(max_examples=50)
-def test_selflet::selfletresources_instantiation(instance):
-    assert isinstance(instance, selflet::SelfletResources)
+def test_selflet_selfletresources_instantiation(instance):
+    assert isinstance(instance, selflet_SelfletResources)
 
-@given(instance=selflet::SelfletProperties_strategy)
+@given(instance=selflet_SelfletProperties_strategy)
 @settings(max_examples=50)
-def test_selflet::selfletproperties_instantiation(instance):
-    assert isinstance(instance, selflet::SelfletProperties)
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_limePort_type(instance):
-    assert isinstance(instance.limePort, str)
+def test_selflet_selfletproperties_instantiation(instance):
+    assert isinstance(instance, selflet_SelfletProperties)
 
 
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_limePort_setter(instance):
-    original = instance.limePort
-    instance.limePort = original
-    assert instance.limePort == original
 
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_enableCloudOptimizationPolicy_type(instance):
-    assert isinstance(instance.enableCloudOptimizationPolicy, str)
-
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_enableCloudOptimizationPolicy_setter(instance):
-    original = instance.enableCloudOptimizationPolicy
-    instance.enableCloudOptimizationPolicy = original
-    assert instance.enableCloudOptimizationPolicy == original
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_enableOptimizationPolicy_type(instance):
-    assert isinstance(instance.enableOptimizationPolicy, str)
-
-
-@given(instance=selflet::SelfletProperties_strategy)
-def test_selflet::selfletproperties_enableOptimizationPolicy_setter(instance):
+@given(instance=selflet_SelfletProperties_strategy)
+def test_selflet_selfletproperties_enableOptimizationPolicy_setter(instance):
     original = instance.enableOptimizationPolicy
     instance.enableOptimizationPolicy = original
     assert instance.enableOptimizationPolicy == original
 
-@given(instance=selflet::Selflet_strategy)
+
+
+@given(instance=selflet_SelfletProperties_strategy)
+def test_selflet_selfletproperties_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=selflet_SelfletProperties_strategy)
+def test_selflet_selfletproperties_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
+
+
+@given(instance=selflet_SelfletProperties_strategy)
+def test_selflet_selfletproperties_limePort_setter(instance):
+    original = instance.limePort
+    instance.limePort = original
+    assert instance.limePort == original
+
+
+
+@given(instance=selflet_SelfletProperties_strategy)
+def test_selflet_selfletproperties_enableCloudOptimizationPolicy_setter(instance):
+    original = instance.enableCloudOptimizationPolicy
+    instance.enableCloudOptimizationPolicy = original
+    assert instance.enableCloudOptimizationPolicy == original
+
+@given(instance=selflet_Selflet_strategy)
 @settings(max_examples=50)
-def test_selflet::selflet_instantiation(instance):
-    assert isinstance(instance, selflet::Selflet)
-
-@given(instance=selflet::Selflet_strategy)
-def test_selflet::selflet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_selflet_selflet_instantiation(instance):
+    assert isinstance(instance, selflet_Selflet)
 
 
-@given(instance=selflet::Selflet_strategy)
-def test_selflet::selflet_name_setter(instance):
+
+@given(instance=selflet_Selflet_strategy)
+def test_selflet_selflet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=selflet::Rule_strategy)
+@given(instance=selflet_Rule_strategy)
 @settings(max_examples=50)
-def test_selflet::rule_instantiation(instance):
-    assert isinstance(instance, selflet::Rule)
-
-@given(instance=selflet::Rule_strategy)
-def test_selflet::rule_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_selflet_rule_instantiation(instance):
+    assert isinstance(instance, selflet_Rule)
 
 
-@given(instance=selflet::Rule_strategy)
-def test_selflet::rule_file_setter(instance):
+
+@given(instance=selflet_Rule_strategy)
+def test_selflet_rule_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=selflet::Rules_strategy)
+@given(instance=selflet_Rules_strategy)
 @settings(max_examples=50)
-def test_selflet::rules_instantiation(instance):
-    assert isinstance(instance, selflet::Rules)
+def test_selflet_rules_instantiation(instance):
+    assert isinstance(instance, selflet_Rules)
 
-@given(instance=selflet::Output_strategy)
+@given(instance=selflet_Output_strategy)
 @settings(max_examples=50)
-def test_selflet::output_instantiation(instance):
-    assert isinstance(instance, selflet::Output)
+def test_selflet_output_instantiation(instance):
+    assert isinstance(instance, selflet_Output)
 
-@given(instance=selflet::Reds_strategy)
+@given(instance=selflet_Reds_strategy)
 @settings(max_examples=50)
-def test_selflet::reds_instantiation(instance):
-    assert isinstance(instance, selflet::Reds)
-
-@given(instance=selflet::Reds_strategy)
-def test_selflet::reds_port_type(instance):
-    assert isinstance(instance.port, str)
+def test_selflet_reds_instantiation(instance):
+    assert isinstance(instance, selflet_Reds)
 
 
-@given(instance=selflet::Reds_strategy)
-def test_selflet::reds_port_setter(instance):
-    original = instance.port
-    instance.port = original
-    assert instance.port == original
 
-@given(instance=selflet::Reds_strategy)
-def test_selflet::reds_ipAddress_type(instance):
-    assert isinstance(instance.ipAddress, str)
-
-
-@given(instance=selflet::Reds_strategy)
-def test_selflet::reds_ipAddress_setter(instance):
+@given(instance=selflet_Reds_strategy)
+def test_selflet_reds_ipAddress_setter(instance):
     original = instance.ipAddress
     instance.ipAddress = original
     assert instance.ipAddress == original
 
-@given(instance=selflet::OfferMode_strategy)
+
+
+@given(instance=selflet_Reds_strategy)
+def test_selflet_reds_port_setter(instance):
+    original = instance.port
+    instance.port = original
+    assert instance.port == original
+
+@given(instance=selflet_OfferMode_strategy)
 @settings(max_examples=50)
-def test_selflet::offermode_instantiation(instance):
-    assert isinstance(instance, selflet::OfferMode)
-
-@given(instance=selflet::OfferMode_strategy)
-def test_selflet::offermode_mode_type(instance):
-    assert isinstance(instance.mode, str)
+def test_selflet_offermode_instantiation(instance):
+    assert isinstance(instance, selflet_OfferMode)
 
 
-@given(instance=selflet::OfferMode_strategy)
-def test_selflet::offermode_mode_setter(instance):
+
+@given(instance=selflet_OfferMode_strategy)
+def test_selflet_offermode_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
 
-@given(instance=selflet::Parameter_strategy)
+@given(instance=selflet_Parameter_strategy)
 @settings(max_examples=50)
-def test_selflet::parameter_instantiation(instance):
-    assert isinstance(instance, selflet::Parameter)
-
-@given(instance=selflet::Parameter_strategy)
-def test_selflet::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_selflet_parameter_instantiation(instance):
+    assert isinstance(instance, selflet_Parameter)
 
 
-@given(instance=selflet::Parameter_strategy)
-def test_selflet::parameter_type_setter(instance):
+
+@given(instance=selflet_Parameter_strategy)
+def test_selflet_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=selflet::Parameter_strategy)
-def test_selflet::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=selflet::Parameter_strategy)
-def test_selflet::parameter_name_setter(instance):
+@given(instance=selflet_Parameter_strategy)
+def test_selflet_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=selflet::Input_strategy)
+@given(instance=selflet_Input_strategy)
 @settings(max_examples=50)
-def test_selflet::input_instantiation(instance):
-    assert isinstance(instance, selflet::Input)
+def test_selflet_input_instantiation(instance):
+    assert isinstance(instance, selflet_Input)
 
-@given(instance=selflet::SelfLetProperty_strategy)
+@given(instance=selflet_SelfLetProperty_strategy)
 @settings(max_examples=50)
-def test_selflet::selfletproperty_instantiation(instance):
-    assert isinstance(instance, selflet::SelfLetProperty)
-
-@given(instance=selflet::SelfLetProperty_strategy)
-def test_selflet::selfletproperty_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_selflet_selfletproperty_instantiation(instance):
+    assert isinstance(instance, selflet_SelfLetProperty)
 
 
-@given(instance=selflet::SelfLetProperty_strategy)
-def test_selflet::selfletproperty_name_setter(instance):
+
+@given(instance=selflet_SelfLetProperty_strategy)
+def test_selflet_selfletproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=selflet::SelfLetProperty_strategy)
-def test_selflet::selfletproperty_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=selflet::SelfLetProperty_strategy)
-def test_selflet::selfletproperty_type_setter(instance):
+@given(instance=selflet_SelfLetProperty_strategy)
+def test_selflet_selfletproperty_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=selflet::SelfLetProperty_strategy)
-def test_selflet::selfletproperty_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=selflet::SelfLetProperty_strategy)
-def test_selflet::selfletproperty_value_setter(instance):
+@given(instance=selflet_SelfLetProperty_strategy)
+def test_selflet_selfletproperty_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=selflet::Method_strategy)
+@given(instance=selflet_Method_strategy)
 @settings(max_examples=50)
-def test_selflet::method_instantiation(instance):
-    assert isinstance(instance, selflet::Method)
-
-@given(instance=selflet::Method_strategy)
-def test_selflet::method_paramType_type(instance):
-    assert isinstance(instance.paramType, str)
+def test_selflet_method_instantiation(instance):
+    assert isinstance(instance, selflet_Method)
 
 
-@given(instance=selflet::Method_strategy)
-def test_selflet::method_paramType_setter(instance):
+
+@given(instance=selflet_Method_strategy)
+def test_selflet_method_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=selflet_Method_strategy)
+def test_selflet_method_paramType_setter(instance):
     original = instance.paramType
     instance.paramType = original
     assert instance.paramType == original
 
-@given(instance=selflet::Method_strategy)
-def test_selflet::method_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=selflet::Method_strategy)
-def test_selflet::method_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=selflet::Condition_strategy)
+@given(instance=selflet_Condition_strategy)
 @settings(max_examples=50)
-def test_selflet::condition_instantiation(instance):
-    assert isinstance(instance, selflet::Condition)
-
-@given(instance=selflet::Condition_strategy)
-def test_selflet::condition_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_selflet_condition_instantiation(instance):
+    assert isinstance(instance, selflet_Condition)
 
 
-@given(instance=selflet::Condition_strategy)
-def test_selflet::condition_file_setter(instance):
+
+@given(instance=selflet_Condition_strategy)
+def test_selflet_condition_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=selflet::Conditions_strategy)
+@given(instance=selflet_Conditions_strategy)
 @settings(max_examples=50)
-def test_selflet::conditions_instantiation(instance):
-    assert isinstance(instance, selflet::Conditions)
+def test_selflet_conditions_instantiation(instance):
+    assert isinstance(instance, selflet_Conditions)
 
-@given(instance=selflet::Service_strategy)
+@given(instance=selflet_Service_strategy)
 @settings(max_examples=50)
-def test_selflet::service_instantiation(instance):
-    assert isinstance(instance, selflet::Service)
-
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_active_type(instance):
-    assert isinstance(instance.active, str)
+def test_selflet_service_instantiation(instance):
+    assert isinstance(instance, selflet_Service)
 
 
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_active_setter(instance):
-    original = instance.active
-    instance.active = original
-    assert instance.active == original
 
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_maxResponseTime_type(instance):
-    assert isinstance(instance.maxResponseTime, str)
-
-
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_maxResponseTime_setter(instance):
-    original = instance.maxResponseTime
-    instance.maxResponseTime = original
-    assert instance.maxResponseTime == original
-
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_revenue_type(instance):
-    assert isinstance(instance.revenue, str)
-
-
-@given(instance=selflet::Service_strategy)
-def test_selflet::service_revenue_setter(instance):
+@given(instance=selflet_Service_strategy)
+def test_selflet_service_revenue_setter(instance):
     original = instance.revenue
     instance.revenue = original
     assert instance.revenue == original
 
-@given(instance=selflet::Behavior_strategy)
-@settings(max_examples=50)
-def test_selflet::behavior_instantiation(instance):
-    assert isinstance(instance, selflet::Behavior)
-
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_elementaryBehaviorCPUTime_type(instance):
-    assert isinstance(instance.elementaryBehaviorCPUTime, str)
 
 
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_elementaryBehaviorCPUTime_setter(instance):
-    original = instance.elementaryBehaviorCPUTime
-    instance.elementaryBehaviorCPUTime = original
-    assert instance.elementaryBehaviorCPUTime == original
-
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_isDefaultBehavior_type(instance):
-    assert isinstance(instance.isDefaultBehavior, str)
-
-
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_isDefaultBehavior_setter(instance):
-    original = instance.isDefaultBehavior
-    instance.isDefaultBehavior = original
-    assert instance.isDefaultBehavior == original
-
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_name_setter(instance):
+@given(instance=selflet_Service_strategy)
+def test_selflet_service_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
 
 
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_fileName_setter(instance):
-    original = instance.fileName
-    instance.fileName = original
-    assert instance.fileName == original
-
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_elementaryBehaviorCost_type(instance):
-    assert isinstance(instance.elementaryBehaviorCost, str)
+@given(instance=selflet_Service_strategy)
+def test_selflet_service_maxResponseTime_setter(instance):
+    original = instance.maxResponseTime
+    instance.maxResponseTime = original
+    assert instance.maxResponseTime == original
 
 
-@given(instance=selflet::Behavior_strategy)
-def test_selflet::behavior_elementaryBehaviorCost_setter(instance):
+
+@given(instance=selflet_Service_strategy)
+def test_selflet_service_active_setter(instance):
+    original = instance.active
+    instance.active = original
+    assert instance.active == original
+
+@given(instance=selflet_Behavior_strategy)
+@settings(max_examples=50)
+def test_selflet_behavior_instantiation(instance):
+    assert isinstance(instance, selflet_Behavior)
+
+
+
+@given(instance=selflet_Behavior_strategy)
+def test_selflet_behavior_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=selflet_Behavior_strategy)
+def test_selflet_behavior_isDefaultBehavior_setter(instance):
+    original = instance.isDefaultBehavior
+    instance.isDefaultBehavior = original
+    assert instance.isDefaultBehavior == original
+
+
+
+@given(instance=selflet_Behavior_strategy)
+def test_selflet_behavior_elementaryBehaviorCost_setter(instance):
     original = instance.elementaryBehaviorCost
     instance.elementaryBehaviorCost = original
     assert instance.elementaryBehaviorCost == original
 
-@given(instance=selflet::GeneralKnowledge_strategy)
+
+
+@given(instance=selflet_Behavior_strategy)
+def test_selflet_behavior_fileName_setter(instance):
+    original = instance.fileName
+    instance.fileName = original
+    assert instance.fileName == original
+
+
+
+@given(instance=selflet_Behavior_strategy)
+def test_selflet_behavior_elementaryBehaviorCPUTime_setter(instance):
+    original = instance.elementaryBehaviorCPUTime
+    instance.elementaryBehaviorCPUTime = original
+    assert instance.elementaryBehaviorCPUTime == original
+
+@given(instance=selflet_GeneralKnowledge_strategy)
 @settings(max_examples=50)
-def test_selflet::generalknowledge_instantiation(instance):
-    assert isinstance(instance, selflet::GeneralKnowledge)
+def test_selflet_generalknowledge_instantiation(instance):
+    assert isinstance(instance, selflet_GeneralKnowledge)
 
-@given(instance=selflet::Empty_strategy)
+@given(instance=selflet_Empty_strategy)
 @settings(max_examples=50)
-def test_selflet::empty_instantiation(instance):
-    assert isinstance(instance, selflet::Empty)
+def test_selflet_empty_instantiation(instance):
+    assert isinstance(instance, selflet_Empty)
 
-@given(instance=selflet::CPUUtilization_strategy)
+@given(instance=selflet_CPUUtilization_strategy)
 @settings(max_examples=50)
-def test_selflet::cpuutilization_instantiation(instance):
-    assert isinstance(instance, selflet::CPUUtilization)
-
-@given(instance=selflet::CPUUtilization_strategy)
-def test_selflet::cpuutilization_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, str)
+def test_selflet_cpuutilization_instantiation(instance):
+    assert isinstance(instance, selflet_CPUUtilization)
 
 
-@given(instance=selflet::CPUUtilization_strategy)
-def test_selflet::cpuutilization_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
 
-@given(instance=selflet::CPUUtilization_strategy)
-def test_selflet::cpuutilization_upperBound_type(instance):
-    assert isinstance(instance.upperBound, str)
-
-
-@given(instance=selflet::CPUUtilization_strategy)
-def test_selflet::cpuutilization_upperBound_setter(instance):
+@given(instance=selflet_CPUUtilization_strategy)
+def test_selflet_cpuutilization_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=selflet::Actions_strategy)
+
+
+@given(instance=selflet_CPUUtilization_strategy)
+def test_selflet_cpuutilization_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+@given(instance=selflet_Actions_strategy)
 @settings(max_examples=50)
-def test_selflet::actions_instantiation(instance):
-    assert isinstance(instance, selflet::Actions)
+def test_selflet_actions_instantiation(instance):
+    assert isinstance(instance, selflet_Actions)
 
-@given(instance=selflet::Methods_strategy)
+@given(instance=selflet_Methods_strategy)
 @settings(max_examples=50)
-def test_selflet::methods_instantiation(instance):
-    assert isinstance(instance, selflet::Methods)
+def test_selflet_methods_instantiation(instance):
+    assert isinstance(instance, selflet_Methods)
 
-@given(instance=selflet::Ability_strategy)
+@given(instance=selflet_Ability_strategy)
 @settings(max_examples=50)
-def test_selflet::ability_instantiation(instance):
-    assert isinstance(instance, selflet::Ability)
-
-@given(instance=selflet::Ability_strategy)
-def test_selflet::ability_service_type(instance):
-    assert isinstance(instance.service, str)
+def test_selflet_ability_instantiation(instance):
+    assert isinstance(instance, selflet_Ability)
 
 
-@given(instance=selflet::Ability_strategy)
-def test_selflet::ability_service_setter(instance):
+
+@given(instance=selflet_Ability_strategy)
+def test_selflet_ability_service_setter(instance):
     original = instance.service
     instance.service = original
     assert instance.service == original
 
-@given(instance=selflet::Ability_strategy)
-def test_selflet::ability_file_type(instance):
-    assert isinstance(instance.file, str)
 
 
-@given(instance=selflet::Ability_strategy)
-def test_selflet::ability_file_setter(instance):
+@given(instance=selflet_Ability_strategy)
+def test_selflet_ability_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=selflet::Abilities_strategy)
+@given(instance=selflet_Abilities_strategy)
 @settings(max_examples=50)
-def test_selflet::abilities_instantiation(instance):
-    assert isinstance(instance, selflet::Abilities)
+def test_selflet_abilities_instantiation(instance):
+    assert isinstance(instance, selflet_Abilities)
 
-@given(instance=selflet::Active_strategy)
+@given(instance=selflet_Active_strategy)
 @settings(max_examples=50)
-def test_selflet::active_instantiation(instance):
-    assert isinstance(instance, selflet::Active)
-
-@given(instance=selflet::Active_strategy)
-def test_selflet::active_mainService_type(instance):
-    assert isinstance(instance.mainService, str)
+def test_selflet_active_instantiation(instance):
+    assert isinstance(instance, selflet_Active)
 
 
-@given(instance=selflet::Active_strategy)
-def test_selflet::active_mainService_setter(instance):
+
+@given(instance=selflet_Active_strategy)
+def test_selflet_active_mainService_setter(instance):
     original = instance.mainService
     instance.mainService = original
     assert instance.mainService == original
 
-@given(instance=selflet::Action_strategy)
+@given(instance=selflet_Action_strategy)
 @settings(max_examples=50)
-def test_selflet::action_instantiation(instance):
-    assert isinstance(instance, selflet::Action)
-
-@given(instance=selflet::Action_strategy)
-def test_selflet::action_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_selflet_action_instantiation(instance):
+    assert isinstance(instance, selflet_Action)
 
 
-@given(instance=selflet::Action_strategy)
-def test_selflet::action_file_setter(instance):
+
+@given(instance=selflet_Action_strategy)
+def test_selflet_action_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
-
-@given(instance=selflet::IntermediateState_strategy)
-@settings(max_examples=50)
-def test_selflet::intermediatestate_instantiation(instance):
-    assert isinstance(instance, selflet::IntermediateState)
-
-@given(instance=selflet::AbilityState_strategy)
-@settings(max_examples=50)
-def test_selflet::abilitystate_instantiation(instance):
-    assert isinstance(instance, selflet::AbilityState)

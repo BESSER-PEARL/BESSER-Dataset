@@ -3,54 +3,54 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petrinet::trace::Place,
-    trace::petrinet::TracedPlace,
-    trace::Traced::TracedObjects,
-    States::trace::GlobalState,
-    trace::States::Place::tokens::State,
-    Events::trace::EObject,
-    Events::trace::Transition,
-    petrinet::TracedPlace,
-    Events::trace::Net,
-    Transition::fireExitEventOccurrence,
-    Transition::fireEntryEventOccurrence,
-    Transition::isEnabledExitEventOccurrence,
-    Transition::isEnabledEntryEventOccurrence,
-    Place::removeTokenExitEventOccurrence,
-    Place::removeTokenEntryEventOccurrence,
-    Place::addTokenExitEventOccurrence,
-    Place::addTokenEntryEventOccurrence,
-    Net::runExitEventOccurrence,
-    Net::runEntryEventOccurrence,
-    Net::mainExitEventOccurrence,
-    Net::mainEntryEventOccurrence,
-    trace::Events::Events,
-    Events::trace::GlobalState,
-    trace::Events::EventOccurrence,
-    trace::Net,
-    trace::Transition,
-    Place::tokens::State,
+from python_code import (
+    Events_trace_Net,
+    Transition_fireExitEventOccurrence,
+    Transition_fireEntryEventOccurrence,
+    Transition_isEnabledExitEventOccurrence,
+    Transition_isEnabledEntryEventOccurrence,
+    Place_removeTokenExitEventOccurrence,
+    Place_removeTokenEntryEventOccurrence,
+    Place_addTokenExitEventOccurrence,
+    Place_addTokenEntryEventOccurrence,
+    Net_runExitEventOccurrence,
+    Net_runEntryEventOccurrence,
+    Net_mainExitEventOccurrence,
+    Net_mainEntryEventOccurrence,
+    trace_Events_Events,
+    Events_trace_GlobalState,
+    trace_Events_EventOccurrence,
+    trace_Net,
+    trace_Transition,
+    Place_tokens_State,
     EventOccurrence,
-    trace::Events::Net::runExitEventOccurrence,
-    trace::Events::Place::addTokenEntryEventOccurrence,
-    trace::Events::Place::removeTokenEntryEventOccurrence,
-    trace::Events::Net::mainExitEventOccurrence,
-    trace::Events::Net::mainEntryEventOccurrence,
-    trace::Events::Transition::isEnabledExitEventOccurrence,
-    trace::Events::Transition::fireEntryEventOccurrence,
-    trace::Events::Transition::isEnabledEntryEventOccurrence,
-    trace::Events::Place::addTokenExitEventOccurrence,
-    trace::Events::Transition::fireExitEventOccurrence,
-    trace::Events::Place::removeTokenExitEventOccurrence,
-    trace::Events::Net::runEntryEventOccurrence,
-    trace::StaticObjectsPools,
+    trace_Events_Net_mainEntryEventOccurrence,
+    trace_StaticObjectsPools,
     TracedObjects,
+    petrinet_trace_Place,
+    trace_petrinet_TracedPlace,
+    trace_Traced_TracedObjects,
+    States_trace_GlobalState,
+    trace_States_Place_tokens_State,
+    trace_Events_Transition_fireExitEventOccurrence,
+    trace_Events_Transition_fireEntryEventOccurrence,
+    Events_trace_EObject,
+    trace_Events_Transition_isEnabledExitEventOccurrence,
+    Events_trace_Transition,
+    trace_Events_Transition_isEnabledEntryEventOccurrence,
+    trace_Events_Place_removeTokenExitEventOccurrence,
+    trace_Events_Place_removeTokenEntryEventOccurrence,
+    trace_Events_Place_addTokenExitEventOccurrence,
+    petrinet_TracedPlace,
+    trace_Events_Place_addTokenEntryEventOccurrence,
+    trace_Events_Net_runExitEventOccurrence,
+    trace_Events_Net_runEntryEventOccurrence,
+    trace_Events_Net_mainExitEventOccurrence,
     Events,
-    trace::GlobalState,
-    trace::Trace,
+    trace_GlobalState,
+    trace_Trace,
 )
 
 # =============================================================================
@@ -59,410 +59,268 @@ from classes import (
 
 
 
-def test_petrinet::trace::place_is_not_abstract():
-    assert not inspect.isabstract(petrinet::trace::Place)
+def test_events_trace_net_is_not_abstract():
+    assert not inspect.isabstract(Events_trace_Net)
 
 
-def test_petrinet::trace::place_constructor_exists():
-    assert callable(petrinet::trace::Place.__init__)
+def test_events_trace_net_constructor_exists():
+    assert callable(Events_trace_Net.__init__)
 
 
-def test_petrinet::trace::place_constructor_args():
-    sig = inspect.signature(petrinet::trace::Place.__init__)
+def test_events_trace_net_constructor_args():
+    sig = inspect.signature(Events_trace_Net.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::petrinet::tracedplace_is_not_abstract():
-    assert not inspect.isabstract(trace::petrinet::TracedPlace)
+def test_transition_fireexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Transition_fireExitEventOccurrence)
 
 
-def test_trace::petrinet::tracedplace_constructor_exists():
-    assert callable(trace::petrinet::TracedPlace.__init__)
+def test_transition_fireexiteventoccurrence_constructor_exists():
+    assert callable(Transition_fireExitEventOccurrence.__init__)
 
 
-def test_trace::petrinet::tracedplace_constructor_args():
-    sig = inspect.signature(trace::petrinet::TracedPlace.__init__)
-    params = list(sig.parameters.keys())
-    assert "initialTokens" in params, "Missing parameter 'initialTokens'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_trace::petrinet::tracedplace_has_initialTokens():
-    assert hasattr(trace::petrinet::TracedPlace, "initialTokens")
-    descriptor = None
-    for klass in trace::petrinet::TracedPlace.__mro__:
-        if "initialTokens" in klass.__dict__:
-            descriptor = klass.__dict__["initialTokens"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::petrinet::tracedplace_has_name():
-    assert hasattr(trace::petrinet::TracedPlace, "name")
-    descriptor = None
-    for klass in trace::petrinet::TracedPlace.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_trace::traced::tracedobjects_is_not_abstract():
-    assert not inspect.isabstract(trace::Traced::TracedObjects)
-
-
-def test_trace::traced::tracedobjects_constructor_exists():
-    assert callable(trace::Traced::TracedObjects.__init__)
-
-
-def test_trace::traced::tracedobjects_constructor_args():
-    sig = inspect.signature(trace::Traced::TracedObjects.__init__)
+def test_transition_fireexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Transition_fireExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_states::trace::globalstate_is_not_abstract():
-    assert not inspect.isabstract(States::trace::GlobalState)
+def test_transition_fireentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Transition_fireEntryEventOccurrence)
 
 
-def test_states::trace::globalstate_constructor_exists():
-    assert callable(States::trace::GlobalState.__init__)
+def test_transition_fireentryeventoccurrence_constructor_exists():
+    assert callable(Transition_fireEntryEventOccurrence.__init__)
 
 
-def test_states::trace::globalstate_constructor_args():
-    sig = inspect.signature(States::trace::GlobalState.__init__)
+def test_transition_fireentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Transition_fireEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::states::place::tokens::state_is_not_abstract():
-    assert not inspect.isabstract(trace::States::Place::tokens::State)
+def test_transition_isenabledexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Transition_isEnabledExitEventOccurrence)
 
 
-def test_trace::states::place::tokens::state_constructor_exists():
-    assert callable(trace::States::Place::tokens::State.__init__)
+def test_transition_isenabledexiteventoccurrence_constructor_exists():
+    assert callable(Transition_isEnabledExitEventOccurrence.__init__)
 
 
-def test_trace::states::place::tokens::state_constructor_args():
-    sig = inspect.signature(trace::States::Place::tokens::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "tokens" in params, "Missing parameter 'tokens'"
-
-def test_trace::states::place::tokens::state_has_tokens():
-    assert hasattr(trace::States::Place::tokens::State, "tokens")
-    descriptor = None
-    for klass in trace::States::Place::tokens::State.__mro__:
-        if "tokens" in klass.__dict__:
-            descriptor = klass.__dict__["tokens"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_events::trace::eobject_is_not_abstract():
-    assert not inspect.isabstract(Events::trace::EObject)
-
-
-def test_events::trace::eobject_constructor_exists():
-    assert callable(Events::trace::EObject.__init__)
-
-
-def test_events::trace::eobject_constructor_args():
-    sig = inspect.signature(Events::trace::EObject.__init__)
+def test_transition_isenabledexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Transition_isEnabledExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::trace::transition_is_not_abstract():
-    assert not inspect.isabstract(Events::trace::Transition)
+def test_transition_isenabledentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Transition_isEnabledEntryEventOccurrence)
 
 
-def test_events::trace::transition_constructor_exists():
-    assert callable(Events::trace::Transition.__init__)
+def test_transition_isenabledentryeventoccurrence_constructor_exists():
+    assert callable(Transition_isEnabledEntryEventOccurrence.__init__)
 
 
-def test_events::trace::transition_constructor_args():
-    sig = inspect.signature(Events::trace::Transition.__init__)
+def test_transition_isenabledentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Transition_isEnabledEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::tracedplace_is_not_abstract():
-    assert not inspect.isabstract(petrinet::TracedPlace)
+def test_place_removetokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Place_removeTokenExitEventOccurrence)
 
 
-def test_petrinet::tracedplace_constructor_exists():
-    assert callable(petrinet::TracedPlace.__init__)
+def test_place_removetokenexiteventoccurrence_constructor_exists():
+    assert callable(Place_removeTokenExitEventOccurrence.__init__)
 
 
-def test_petrinet::tracedplace_constructor_args():
-    sig = inspect.signature(petrinet::TracedPlace.__init__)
+def test_place_removetokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Place_removeTokenExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::trace::net_is_not_abstract():
-    assert not inspect.isabstract(Events::trace::Net)
+def test_place_removetokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Place_removeTokenEntryEventOccurrence)
 
 
-def test_events::trace::net_constructor_exists():
-    assert callable(Events::trace::Net.__init__)
+def test_place_removetokenentryeventoccurrence_constructor_exists():
+    assert callable(Place_removeTokenEntryEventOccurrence.__init__)
 
 
-def test_events::trace::net_constructor_args():
-    sig = inspect.signature(Events::trace::Net.__init__)
+def test_place_removetokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Place_removeTokenEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transition::fireexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Transition::fireExitEventOccurrence)
+def test_place_addtokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Place_addTokenExitEventOccurrence)
 
 
-def test_transition::fireexiteventoccurrence_constructor_exists():
-    assert callable(Transition::fireExitEventOccurrence.__init__)
+def test_place_addtokenexiteventoccurrence_constructor_exists():
+    assert callable(Place_addTokenExitEventOccurrence.__init__)
 
 
-def test_transition::fireexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Transition::fireExitEventOccurrence.__init__)
+def test_place_addtokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Place_addTokenExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transition::fireentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Transition::fireEntryEventOccurrence)
+def test_place_addtokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Place_addTokenEntryEventOccurrence)
 
 
-def test_transition::fireentryeventoccurrence_constructor_exists():
-    assert callable(Transition::fireEntryEventOccurrence.__init__)
+def test_place_addtokenentryeventoccurrence_constructor_exists():
+    assert callable(Place_addTokenEntryEventOccurrence.__init__)
 
 
-def test_transition::fireentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Transition::fireEntryEventOccurrence.__init__)
+def test_place_addtokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Place_addTokenEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transition::isenabledexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Transition::isEnabledExitEventOccurrence)
+def test_net_runexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Net_runExitEventOccurrence)
 
 
-def test_transition::isenabledexiteventoccurrence_constructor_exists():
-    assert callable(Transition::isEnabledExitEventOccurrence.__init__)
+def test_net_runexiteventoccurrence_constructor_exists():
+    assert callable(Net_runExitEventOccurrence.__init__)
 
 
-def test_transition::isenabledexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Transition::isEnabledExitEventOccurrence.__init__)
+def test_net_runexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Net_runExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transition::isenabledentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Transition::isEnabledEntryEventOccurrence)
+def test_net_runentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Net_runEntryEventOccurrence)
 
 
-def test_transition::isenabledentryeventoccurrence_constructor_exists():
-    assert callable(Transition::isEnabledEntryEventOccurrence.__init__)
+def test_net_runentryeventoccurrence_constructor_exists():
+    assert callable(Net_runEntryEventOccurrence.__init__)
 
 
-def test_transition::isenabledentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Transition::isEnabledEntryEventOccurrence.__init__)
+def test_net_runentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Net_runEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_place::removetokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Place::removeTokenExitEventOccurrence)
+def test_net_mainexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Net_mainExitEventOccurrence)
 
 
-def test_place::removetokenexiteventoccurrence_constructor_exists():
-    assert callable(Place::removeTokenExitEventOccurrence.__init__)
+def test_net_mainexiteventoccurrence_constructor_exists():
+    assert callable(Net_mainExitEventOccurrence.__init__)
 
 
-def test_place::removetokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Place::removeTokenExitEventOccurrence.__init__)
+def test_net_mainexiteventoccurrence_constructor_args():
+    sig = inspect.signature(Net_mainExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_place::removetokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Place::removeTokenEntryEventOccurrence)
+def test_net_mainentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(Net_mainEntryEventOccurrence)
 
 
-def test_place::removetokenentryeventoccurrence_constructor_exists():
-    assert callable(Place::removeTokenEntryEventOccurrence.__init__)
+def test_net_mainentryeventoccurrence_constructor_exists():
+    assert callable(Net_mainEntryEventOccurrence.__init__)
 
 
-def test_place::removetokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Place::removeTokenEntryEventOccurrence.__init__)
+def test_net_mainentryeventoccurrence_constructor_args():
+    sig = inspect.signature(Net_mainEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_place::addtokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Place::addTokenExitEventOccurrence)
+def test_trace_events_events_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Events)
 
 
-def test_place::addtokenexiteventoccurrence_constructor_exists():
-    assert callable(Place::addTokenExitEventOccurrence.__init__)
+def test_trace_events_events_constructor_exists():
+    assert callable(trace_Events_Events.__init__)
 
 
-def test_place::addtokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Place::addTokenExitEventOccurrence.__init__)
+def test_trace_events_events_constructor_args():
+    sig = inspect.signature(trace_Events_Events.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_place::addtokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Place::addTokenEntryEventOccurrence)
+def test_events_trace_globalstate_is_not_abstract():
+    assert not inspect.isabstract(Events_trace_GlobalState)
 
 
-def test_place::addtokenentryeventoccurrence_constructor_exists():
-    assert callable(Place::addTokenEntryEventOccurrence.__init__)
+def test_events_trace_globalstate_constructor_exists():
+    assert callable(Events_trace_GlobalState.__init__)
 
 
-def test_place::addtokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Place::addTokenEntryEventOccurrence.__init__)
+def test_events_trace_globalstate_constructor_args():
+    sig = inspect.signature(Events_trace_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_net::runexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Net::runExitEventOccurrence)
+def test_trace_events_eventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_EventOccurrence)
 
 
-def test_net::runexiteventoccurrence_constructor_exists():
-    assert callable(Net::runExitEventOccurrence.__init__)
+def test_trace_events_eventoccurrence_constructor_exists():
+    assert callable(trace_Events_EventOccurrence.__init__)
 
 
-def test_net::runexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Net::runExitEventOccurrence.__init__)
+def test_trace_events_eventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_EventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_net::runentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Net::runEntryEventOccurrence)
+def test_trace_net_is_not_abstract():
+    assert not inspect.isabstract(trace_Net)
 
 
-def test_net::runentryeventoccurrence_constructor_exists():
-    assert callable(Net::runEntryEventOccurrence.__init__)
+def test_trace_net_constructor_exists():
+    assert callable(trace_Net.__init__)
 
 
-def test_net::runentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Net::runEntryEventOccurrence.__init__)
+def test_trace_net_constructor_args():
+    sig = inspect.signature(trace_Net.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_net::mainexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Net::mainExitEventOccurrence)
+def test_trace_transition_is_not_abstract():
+    assert not inspect.isabstract(trace_Transition)
 
 
-def test_net::mainexiteventoccurrence_constructor_exists():
-    assert callable(Net::mainExitEventOccurrence.__init__)
+def test_trace_transition_constructor_exists():
+    assert callable(trace_Transition.__init__)
 
 
-def test_net::mainexiteventoccurrence_constructor_args():
-    sig = inspect.signature(Net::mainExitEventOccurrence.__init__)
+def test_trace_transition_constructor_args():
+    sig = inspect.signature(trace_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_net::mainentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(Net::mainEntryEventOccurrence)
+def test_place_tokens_state_is_not_abstract():
+    assert not inspect.isabstract(Place_tokens_State)
 
 
-def test_net::mainentryeventoccurrence_constructor_exists():
-    assert callable(Net::mainEntryEventOccurrence.__init__)
+def test_place_tokens_state_constructor_exists():
+    assert callable(Place_tokens_State.__init__)
 
 
-def test_net::mainentryeventoccurrence_constructor_args():
-    sig = inspect.signature(Net::mainEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::events_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Events)
-
-
-def test_trace::events::events_constructor_exists():
-    assert callable(trace::Events::Events.__init__)
-
-
-def test_trace::events::events_constructor_args():
-    sig = inspect.signature(trace::Events::Events.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::trace::globalstate_is_not_abstract():
-    assert not inspect.isabstract(Events::trace::GlobalState)
-
-
-def test_events::trace::globalstate_constructor_exists():
-    assert callable(Events::trace::GlobalState.__init__)
-
-
-def test_events::trace::globalstate_constructor_args():
-    sig = inspect.signature(Events::trace::GlobalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::eventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::EventOccurrence)
-
-
-def test_trace::events::eventoccurrence_constructor_exists():
-    assert callable(trace::Events::EventOccurrence.__init__)
-
-
-def test_trace::events::eventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::EventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::net_is_not_abstract():
-    assert not inspect.isabstract(trace::Net)
-
-
-def test_trace::net_constructor_exists():
-    assert callable(trace::Net.__init__)
-
-
-def test_trace::net_constructor_args():
-    sig = inspect.signature(trace::Net.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::transition_is_not_abstract():
-    assert not inspect.isabstract(trace::Transition)
-
-
-def test_trace::transition_constructor_exists():
-    assert callable(trace::Transition.__init__)
-
-
-def test_trace::transition_constructor_args():
-    sig = inspect.signature(trace::Transition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_place::tokens::state_is_not_abstract():
-    assert not inspect.isabstract(Place::tokens::State)
-
-
-def test_place::tokens::state_constructor_exists():
-    assert callable(Place::tokens::State.__init__)
-
-
-def test_place::tokens::state_constructor_args():
-    sig = inspect.signature(Place::tokens::State.__init__)
+def test_place_tokens_state_constructor_args():
+    sig = inspect.signature(Place_tokens_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -481,184 +339,30 @@ def test_eventoccurrence_constructor_args():
 
 
 
-def test_trace::events::net::runexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Net::runExitEventOccurrence)
+def test_trace_events_net_mainentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Net_mainEntryEventOccurrence)
 
 
-def test_trace::events::net::runexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::Net::runExitEventOccurrence.__init__)
+def test_trace_events_net_mainentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_Net_mainEntryEventOccurrence.__init__)
 
 
-def test_trace::events::net::runexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Net::runExitEventOccurrence.__init__)
+def test_trace_events_net_mainentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Net_mainEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::events::place::addtokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Place::addTokenEntryEventOccurrence)
+def test_trace_staticobjectspools_is_not_abstract():
+    assert not inspect.isabstract(trace_StaticObjectsPools)
 
 
-def test_trace::events::place::addtokenentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::Place::addTokenEntryEventOccurrence.__init__)
+def test_trace_staticobjectspools_constructor_exists():
+    assert callable(trace_StaticObjectsPools.__init__)
 
 
-def test_trace::events::place::addtokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Place::addTokenEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::place::removetokenentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Place::removeTokenEntryEventOccurrence)
-
-
-def test_trace::events::place::removetokenentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::Place::removeTokenEntryEventOccurrence.__init__)
-
-
-def test_trace::events::place::removetokenentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Place::removeTokenEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::net::mainexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Net::mainExitEventOccurrence)
-
-
-def test_trace::events::net::mainexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::Net::mainExitEventOccurrence.__init__)
-
-
-def test_trace::events::net::mainexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Net::mainExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::net::mainentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Net::mainEntryEventOccurrence)
-
-
-def test_trace::events::net::mainentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::Net::mainEntryEventOccurrence.__init__)
-
-
-def test_trace::events::net::mainentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Net::mainEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::transition::isenabledexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Transition::isEnabledExitEventOccurrence)
-
-
-def test_trace::events::transition::isenabledexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::Transition::isEnabledExitEventOccurrence.__init__)
-
-
-def test_trace::events::transition::isenabledexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Transition::isEnabledExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::transition::fireentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Transition::fireEntryEventOccurrence)
-
-
-def test_trace::events::transition::fireentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::Transition::fireEntryEventOccurrence.__init__)
-
-
-def test_trace::events::transition::fireentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Transition::fireEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::transition::isenabledentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Transition::isEnabledEntryEventOccurrence)
-
-
-def test_trace::events::transition::isenabledentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::Transition::isEnabledEntryEventOccurrence.__init__)
-
-
-def test_trace::events::transition::isenabledentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Transition::isEnabledEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::place::addtokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Place::addTokenExitEventOccurrence)
-
-
-def test_trace::events::place::addtokenexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::Place::addTokenExitEventOccurrence.__init__)
-
-
-def test_trace::events::place::addtokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Place::addTokenExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::transition::fireexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Transition::fireExitEventOccurrence)
-
-
-def test_trace::events::transition::fireexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::Transition::fireExitEventOccurrence.__init__)
-
-
-def test_trace::events::transition::fireexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Transition::fireExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::place::removetokenexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Place::removeTokenExitEventOccurrence)
-
-
-def test_trace::events::place::removetokenexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::Place::removeTokenExitEventOccurrence.__init__)
-
-
-def test_trace::events::place::removetokenexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Place::removeTokenExitEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::events::net::runentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Net::runEntryEventOccurrence)
-
-
-def test_trace::events::net::runentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::Net::runEntryEventOccurrence.__init__)
-
-
-def test_trace::events::net::runentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::Net::runEntryEventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trace::staticobjectspools_is_not_abstract():
-    assert not inspect.isabstract(trace::StaticObjectsPools)
-
-
-def test_trace::staticobjectspools_constructor_exists():
-    assert callable(trace::StaticObjectsPools.__init__)
-
-
-def test_trace::staticobjectspools_constructor_args():
-    sig = inspect.signature(trace::StaticObjectsPools.__init__)
+def test_trace_staticobjectspools_constructor_args():
+    sig = inspect.signature(trace_StaticObjectsPools.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -677,6 +381,302 @@ def test_tracedobjects_constructor_args():
 
 
 
+def test_petrinet_trace_place_is_not_abstract():
+    assert not inspect.isabstract(petrinet_trace_Place)
+
+
+def test_petrinet_trace_place_constructor_exists():
+    assert callable(petrinet_trace_Place.__init__)
+
+
+def test_petrinet_trace_place_constructor_args():
+    sig = inspect.signature(petrinet_trace_Place.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_petrinet_tracedplace_is_not_abstract():
+    assert not inspect.isabstract(trace_petrinet_TracedPlace)
+
+
+def test_trace_petrinet_tracedplace_constructor_exists():
+    assert callable(trace_petrinet_TracedPlace.__init__)
+
+
+def test_trace_petrinet_tracedplace_constructor_args():
+    sig = inspect.signature(trace_petrinet_TracedPlace.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "initialTokens" in params, "Missing parameter 'initialTokens'"
+
+def test_trace_petrinet_tracedplace_has_name():
+    assert hasattr(trace_petrinet_TracedPlace, "name")
+    descriptor = None
+    for klass in trace_petrinet_TracedPlace.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_petrinet_tracedplace_has_initialTokens():
+    assert hasattr(trace_petrinet_TracedPlace, "initialTokens")
+    descriptor = None
+    for klass in trace_petrinet_TracedPlace.__mro__:
+        if "initialTokens" in klass.__dict__:
+            descriptor = klass.__dict__["initialTokens"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_trace_traced_tracedobjects_is_not_abstract():
+    assert not inspect.isabstract(trace_Traced_TracedObjects)
+
+
+def test_trace_traced_tracedobjects_constructor_exists():
+    assert callable(trace_Traced_TracedObjects.__init__)
+
+
+def test_trace_traced_tracedobjects_constructor_args():
+    sig = inspect.signature(trace_Traced_TracedObjects.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_states_trace_globalstate_is_not_abstract():
+    assert not inspect.isabstract(States_trace_GlobalState)
+
+
+def test_states_trace_globalstate_constructor_exists():
+    assert callable(States_trace_GlobalState.__init__)
+
+
+def test_states_trace_globalstate_constructor_args():
+    sig = inspect.signature(States_trace_GlobalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_states_place_tokens_state_is_not_abstract():
+    assert not inspect.isabstract(trace_States_Place_tokens_State)
+
+
+def test_trace_states_place_tokens_state_constructor_exists():
+    assert callable(trace_States_Place_tokens_State.__init__)
+
+
+def test_trace_states_place_tokens_state_constructor_args():
+    sig = inspect.signature(trace_States_Place_tokens_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "tokens" in params, "Missing parameter 'tokens'"
+
+def test_trace_states_place_tokens_state_has_tokens():
+    assert hasattr(trace_States_Place_tokens_State, "tokens")
+    descriptor = None
+    for klass in trace_States_Place_tokens_State.__mro__:
+        if "tokens" in klass.__dict__:
+            descriptor = klass.__dict__["tokens"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_trace_events_transition_fireexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Transition_fireExitEventOccurrence)
+
+
+def test_trace_events_transition_fireexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_Transition_fireExitEventOccurrence.__init__)
+
+
+def test_trace_events_transition_fireexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Transition_fireExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_transition_fireentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Transition_fireEntryEventOccurrence)
+
+
+def test_trace_events_transition_fireentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_Transition_fireEntryEventOccurrence.__init__)
+
+
+def test_trace_events_transition_fireentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Transition_fireEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_trace_eobject_is_not_abstract():
+    assert not inspect.isabstract(Events_trace_EObject)
+
+
+def test_events_trace_eobject_constructor_exists():
+    assert callable(Events_trace_EObject.__init__)
+
+
+def test_events_trace_eobject_constructor_args():
+    sig = inspect.signature(Events_trace_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_transition_isenabledexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Transition_isEnabledExitEventOccurrence)
+
+
+def test_trace_events_transition_isenabledexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_Transition_isEnabledExitEventOccurrence.__init__)
+
+
+def test_trace_events_transition_isenabledexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Transition_isEnabledExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_trace_transition_is_not_abstract():
+    assert not inspect.isabstract(Events_trace_Transition)
+
+
+def test_events_trace_transition_constructor_exists():
+    assert callable(Events_trace_Transition.__init__)
+
+
+def test_events_trace_transition_constructor_args():
+    sig = inspect.signature(Events_trace_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_transition_isenabledentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Transition_isEnabledEntryEventOccurrence)
+
+
+def test_trace_events_transition_isenabledentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_Transition_isEnabledEntryEventOccurrence.__init__)
+
+
+def test_trace_events_transition_isenabledentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Transition_isEnabledEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_place_removetokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Place_removeTokenExitEventOccurrence)
+
+
+def test_trace_events_place_removetokenexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_Place_removeTokenExitEventOccurrence.__init__)
+
+
+def test_trace_events_place_removetokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Place_removeTokenExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_place_removetokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Place_removeTokenEntryEventOccurrence)
+
+
+def test_trace_events_place_removetokenentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_Place_removeTokenEntryEventOccurrence.__init__)
+
+
+def test_trace_events_place_removetokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Place_removeTokenEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_place_addtokenexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Place_addTokenExitEventOccurrence)
+
+
+def test_trace_events_place_addtokenexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_Place_addTokenExitEventOccurrence.__init__)
+
+
+def test_trace_events_place_addtokenexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Place_addTokenExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_petrinet_tracedplace_is_not_abstract():
+    assert not inspect.isabstract(petrinet_TracedPlace)
+
+
+def test_petrinet_tracedplace_constructor_exists():
+    assert callable(petrinet_TracedPlace.__init__)
+
+
+def test_petrinet_tracedplace_constructor_args():
+    sig = inspect.signature(petrinet_TracedPlace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_place_addtokenentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Place_addTokenEntryEventOccurrence)
+
+
+def test_trace_events_place_addtokenentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_Place_addTokenEntryEventOccurrence.__init__)
+
+
+def test_trace_events_place_addtokenentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Place_addTokenEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_net_runexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Net_runExitEventOccurrence)
+
+
+def test_trace_events_net_runexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_Net_runExitEventOccurrence.__init__)
+
+
+def test_trace_events_net_runexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Net_runExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_net_runentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Net_runEntryEventOccurrence)
+
+
+def test_trace_events_net_runentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_Net_runEntryEventOccurrence.__init__)
+
+
+def test_trace_events_net_runentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Net_runEntryEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trace_events_net_mainexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Net_mainExitEventOccurrence)
+
+
+def test_trace_events_net_mainexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_Net_mainExitEventOccurrence.__init__)
+
+
+def test_trace_events_net_mainexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_Net_mainExitEventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_events_is_not_abstract():
     assert not inspect.isabstract(Events)
 
@@ -691,30 +691,30 @@ def test_events_constructor_args():
 
 
 
-def test_trace::globalstate_is_not_abstract():
-    assert not inspect.isabstract(trace::GlobalState)
+def test_trace_globalstate_is_not_abstract():
+    assert not inspect.isabstract(trace_GlobalState)
 
 
-def test_trace::globalstate_constructor_exists():
-    assert callable(trace::GlobalState.__init__)
+def test_trace_globalstate_constructor_exists():
+    assert callable(trace_GlobalState.__init__)
 
 
-def test_trace::globalstate_constructor_args():
-    sig = inspect.signature(trace::GlobalState.__init__)
+def test_trace_globalstate_constructor_args():
+    sig = inspect.signature(trace_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -729,402 +729,393 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petrinet::trace::Place_strategy = st.builds(
-    petrinet::trace::Place,
+Events_trace_Net_strategy = st.builds(
+    Events_trace_Net,
 )
-trace::petrinet::TracedPlace_strategy = st.builds(
-    trace::petrinet::TracedPlace,
-    initialTokens=
-        st.integers(),
-    name=
-        safe_text
+Transition_fireExitEventOccurrence_strategy = st.builds(
+    Transition_fireExitEventOccurrence,
 )
-trace::Traced::TracedObjects_strategy = st.builds(
-    trace::Traced::TracedObjects,
+Transition_fireEntryEventOccurrence_strategy = st.builds(
+    Transition_fireEntryEventOccurrence,
 )
-States::trace::GlobalState_strategy = st.builds(
-    States::trace::GlobalState,
+Transition_isEnabledExitEventOccurrence_strategy = st.builds(
+    Transition_isEnabledExitEventOccurrence,
 )
-trace::States::Place::tokens::State_strategy = st.builds(
-    trace::States::Place::tokens::State,
-    tokens=
-        st.integers()
+Transition_isEnabledEntryEventOccurrence_strategy = st.builds(
+    Transition_isEnabledEntryEventOccurrence,
 )
-Events::trace::EObject_strategy = st.builds(
-    Events::trace::EObject,
+Place_removeTokenExitEventOccurrence_strategy = st.builds(
+    Place_removeTokenExitEventOccurrence,
 )
-Events::trace::Transition_strategy = st.builds(
-    Events::trace::Transition,
+Place_removeTokenEntryEventOccurrence_strategy = st.builds(
+    Place_removeTokenEntryEventOccurrence,
 )
-petrinet::TracedPlace_strategy = st.builds(
-    petrinet::TracedPlace,
+Place_addTokenExitEventOccurrence_strategy = st.builds(
+    Place_addTokenExitEventOccurrence,
 )
-Events::trace::Net_strategy = st.builds(
-    Events::trace::Net,
+Place_addTokenEntryEventOccurrence_strategy = st.builds(
+    Place_addTokenEntryEventOccurrence,
 )
-Transition::fireExitEventOccurrence_strategy = st.builds(
-    Transition::fireExitEventOccurrence,
+Net_runExitEventOccurrence_strategy = st.builds(
+    Net_runExitEventOccurrence,
 )
-Transition::fireEntryEventOccurrence_strategy = st.builds(
-    Transition::fireEntryEventOccurrence,
+Net_runEntryEventOccurrence_strategy = st.builds(
+    Net_runEntryEventOccurrence,
 )
-Transition::isEnabledExitEventOccurrence_strategy = st.builds(
-    Transition::isEnabledExitEventOccurrence,
+Net_mainExitEventOccurrence_strategy = st.builds(
+    Net_mainExitEventOccurrence,
 )
-Transition::isEnabledEntryEventOccurrence_strategy = st.builds(
-    Transition::isEnabledEntryEventOccurrence,
+Net_mainEntryEventOccurrence_strategy = st.builds(
+    Net_mainEntryEventOccurrence,
 )
-Place::removeTokenExitEventOccurrence_strategy = st.builds(
-    Place::removeTokenExitEventOccurrence,
+trace_Events_Events_strategy = st.builds(
+    trace_Events_Events,
 )
-Place::removeTokenEntryEventOccurrence_strategy = st.builds(
-    Place::removeTokenEntryEventOccurrence,
+Events_trace_GlobalState_strategy = st.builds(
+    Events_trace_GlobalState,
 )
-Place::addTokenExitEventOccurrence_strategy = st.builds(
-    Place::addTokenExitEventOccurrence,
+trace_Events_EventOccurrence_strategy = st.builds(
+    trace_Events_EventOccurrence,
 )
-Place::addTokenEntryEventOccurrence_strategy = st.builds(
-    Place::addTokenEntryEventOccurrence,
+trace_Net_strategy = st.builds(
+    trace_Net,
 )
-Net::runExitEventOccurrence_strategy = st.builds(
-    Net::runExitEventOccurrence,
+trace_Transition_strategy = st.builds(
+    trace_Transition,
 )
-Net::runEntryEventOccurrence_strategy = st.builds(
-    Net::runEntryEventOccurrence,
-)
-Net::mainExitEventOccurrence_strategy = st.builds(
-    Net::mainExitEventOccurrence,
-)
-Net::mainEntryEventOccurrence_strategy = st.builds(
-    Net::mainEntryEventOccurrence,
-)
-trace::Events::Events_strategy = st.builds(
-    trace::Events::Events,
-)
-Events::trace::GlobalState_strategy = st.builds(
-    Events::trace::GlobalState,
-)
-trace::Events::EventOccurrence_strategy = st.builds(
-    trace::Events::EventOccurrence,
-)
-trace::Net_strategy = st.builds(
-    trace::Net,
-)
-trace::Transition_strategy = st.builds(
-    trace::Transition,
-)
-Place::tokens::State_strategy = st.builds(
-    Place::tokens::State,
+Place_tokens_State_strategy = st.builds(
+    Place_tokens_State,
 )
 EventOccurrence_strategy = st.builds(
     EventOccurrence,
 )
-trace::Events::Net::runExitEventOccurrence_strategy = st.builds(
-    trace::Events::Net::runExitEventOccurrence,
+trace_Events_Net_mainEntryEventOccurrence_strategy = st.builds(
+    trace_Events_Net_mainEntryEventOccurrence,
 )
-trace::Events::Place::addTokenEntryEventOccurrence_strategy = st.builds(
-    trace::Events::Place::addTokenEntryEventOccurrence,
-)
-trace::Events::Place::removeTokenEntryEventOccurrence_strategy = st.builds(
-    trace::Events::Place::removeTokenEntryEventOccurrence,
-)
-trace::Events::Net::mainExitEventOccurrence_strategy = st.builds(
-    trace::Events::Net::mainExitEventOccurrence,
-)
-trace::Events::Net::mainEntryEventOccurrence_strategy = st.builds(
-    trace::Events::Net::mainEntryEventOccurrence,
-)
-trace::Events::Transition::isEnabledExitEventOccurrence_strategy = st.builds(
-    trace::Events::Transition::isEnabledExitEventOccurrence,
-)
-trace::Events::Transition::fireEntryEventOccurrence_strategy = st.builds(
-    trace::Events::Transition::fireEntryEventOccurrence,
-)
-trace::Events::Transition::isEnabledEntryEventOccurrence_strategy = st.builds(
-    trace::Events::Transition::isEnabledEntryEventOccurrence,
-)
-trace::Events::Place::addTokenExitEventOccurrence_strategy = st.builds(
-    trace::Events::Place::addTokenExitEventOccurrence,
-)
-trace::Events::Transition::fireExitEventOccurrence_strategy = st.builds(
-    trace::Events::Transition::fireExitEventOccurrence,
-)
-trace::Events::Place::removeTokenExitEventOccurrence_strategy = st.builds(
-    trace::Events::Place::removeTokenExitEventOccurrence,
-)
-trace::Events::Net::runEntryEventOccurrence_strategy = st.builds(
-    trace::Events::Net::runEntryEventOccurrence,
-)
-trace::StaticObjectsPools_strategy = st.builds(
-    trace::StaticObjectsPools,
+trace_StaticObjectsPools_strategy = st.builds(
+    trace_StaticObjectsPools,
 )
 TracedObjects_strategy = st.builds(
     TracedObjects,
 )
+petrinet_trace_Place_strategy = st.builds(
+    petrinet_trace_Place,
+)
+trace_petrinet_TracedPlace_strategy = st.builds(
+    trace_petrinet_TracedPlace,
+    name=
+        safe_text,
+    initialTokens=
+        st.integers()
+)
+trace_Traced_TracedObjects_strategy = st.builds(
+    trace_Traced_TracedObjects,
+)
+States_trace_GlobalState_strategy = st.builds(
+    States_trace_GlobalState,
+)
+trace_States_Place_tokens_State_strategy = st.builds(
+    trace_States_Place_tokens_State,
+    tokens=
+        st.integers()
+)
+trace_Events_Transition_fireExitEventOccurrence_strategy = st.builds(
+    trace_Events_Transition_fireExitEventOccurrence,
+)
+trace_Events_Transition_fireEntryEventOccurrence_strategy = st.builds(
+    trace_Events_Transition_fireEntryEventOccurrence,
+)
+Events_trace_EObject_strategy = st.builds(
+    Events_trace_EObject,
+)
+trace_Events_Transition_isEnabledExitEventOccurrence_strategy = st.builds(
+    trace_Events_Transition_isEnabledExitEventOccurrence,
+)
+Events_trace_Transition_strategy = st.builds(
+    Events_trace_Transition,
+)
+trace_Events_Transition_isEnabledEntryEventOccurrence_strategy = st.builds(
+    trace_Events_Transition_isEnabledEntryEventOccurrence,
+)
+trace_Events_Place_removeTokenExitEventOccurrence_strategy = st.builds(
+    trace_Events_Place_removeTokenExitEventOccurrence,
+)
+trace_Events_Place_removeTokenEntryEventOccurrence_strategy = st.builds(
+    trace_Events_Place_removeTokenEntryEventOccurrence,
+)
+trace_Events_Place_addTokenExitEventOccurrence_strategy = st.builds(
+    trace_Events_Place_addTokenExitEventOccurrence,
+)
+petrinet_TracedPlace_strategy = st.builds(
+    petrinet_TracedPlace,
+)
+trace_Events_Place_addTokenEntryEventOccurrence_strategy = st.builds(
+    trace_Events_Place_addTokenEntryEventOccurrence,
+)
+trace_Events_Net_runExitEventOccurrence_strategy = st.builds(
+    trace_Events_Net_runExitEventOccurrence,
+)
+trace_Events_Net_runEntryEventOccurrence_strategy = st.builds(
+    trace_Events_Net_runEntryEventOccurrence,
+)
+trace_Events_Net_mainExitEventOccurrence_strategy = st.builds(
+    trace_Events_Net_mainExitEventOccurrence,
+)
 Events_strategy = st.builds(
     Events,
 )
-trace::GlobalState_strategy = st.builds(
-    trace::GlobalState,
+trace_GlobalState_strategy = st.builds(
+    trace_GlobalState,
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
 
-@given(instance=petrinet::trace::Place_strategy)
+@given(instance=Events_trace_Net_strategy)
 @settings(max_examples=50)
-def test_petrinet::trace::place_instantiation(instance):
-    assert isinstance(instance, petrinet::trace::Place)
+def test_events_trace_net_instantiation(instance):
+    assert isinstance(instance, Events_trace_Net)
 
-@given(instance=trace::petrinet::TracedPlace_strategy)
+@given(instance=Transition_fireExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::petrinet::tracedplace_instantiation(instance):
-    assert isinstance(instance, trace::petrinet::TracedPlace)
+def test_transition_fireexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Transition_fireExitEventOccurrence)
 
-@given(instance=trace::petrinet::TracedPlace_strategy)
-def test_trace::petrinet::tracedplace_initialTokens_type(instance):
-    assert isinstance(instance.initialTokens, int)
-
-
-@given(instance=trace::petrinet::TracedPlace_strategy)
-def test_trace::petrinet::tracedplace_initialTokens_setter(instance):
-    original = instance.initialTokens
-    instance.initialTokens = original
-    assert instance.initialTokens == original
-
-@given(instance=trace::petrinet::TracedPlace_strategy)
-def test_trace::petrinet::tracedplace_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=trace::petrinet::TracedPlace_strategy)
-def test_trace::petrinet::tracedplace_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=trace::Traced::TracedObjects_strategy)
+@given(instance=Transition_fireEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::traced::tracedobjects_instantiation(instance):
-    assert isinstance(instance, trace::Traced::TracedObjects)
+def test_transition_fireentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Transition_fireEntryEventOccurrence)
 
-@given(instance=States::trace::GlobalState_strategy)
+@given(instance=Transition_isEnabledExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_states::trace::globalstate_instantiation(instance):
-    assert isinstance(instance, States::trace::GlobalState)
+def test_transition_isenabledexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Transition_isEnabledExitEventOccurrence)
 
-@given(instance=trace::States::Place::tokens::State_strategy)
+@given(instance=Transition_isEnabledEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::states::place::tokens::state_instantiation(instance):
-    assert isinstance(instance, trace::States::Place::tokens::State)
+def test_transition_isenabledentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Transition_isEnabledEntryEventOccurrence)
 
-@given(instance=trace::States::Place::tokens::State_strategy)
-def test_trace::states::place::tokens::state_tokens_type(instance):
-    assert isinstance(instance.tokens, int)
-
-
-@given(instance=trace::States::Place::tokens::State_strategy)
-def test_trace::states::place::tokens::state_tokens_setter(instance):
-    original = instance.tokens
-    instance.tokens = original
-    assert instance.tokens == original
-
-@given(instance=Events::trace::EObject_strategy)
+@given(instance=Place_removeTokenExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_events::trace::eobject_instantiation(instance):
-    assert isinstance(instance, Events::trace::EObject)
+def test_place_removetokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Place_removeTokenExitEventOccurrence)
 
-@given(instance=Events::trace::Transition_strategy)
+@given(instance=Place_removeTokenEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_events::trace::transition_instantiation(instance):
-    assert isinstance(instance, Events::trace::Transition)
+def test_place_removetokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Place_removeTokenEntryEventOccurrence)
 
-@given(instance=petrinet::TracedPlace_strategy)
+@given(instance=Place_addTokenExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_petrinet::tracedplace_instantiation(instance):
-    assert isinstance(instance, petrinet::TracedPlace)
+def test_place_addtokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Place_addTokenExitEventOccurrence)
 
-@given(instance=Events::trace::Net_strategy)
+@given(instance=Place_addTokenEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_events::trace::net_instantiation(instance):
-    assert isinstance(instance, Events::trace::Net)
+def test_place_addtokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Place_addTokenEntryEventOccurrence)
 
-@given(instance=Transition::fireExitEventOccurrence_strategy)
+@given(instance=Net_runExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_transition::fireexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Transition::fireExitEventOccurrence)
+def test_net_runexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Net_runExitEventOccurrence)
 
-@given(instance=Transition::fireEntryEventOccurrence_strategy)
+@given(instance=Net_runEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_transition::fireentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Transition::fireEntryEventOccurrence)
+def test_net_runentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Net_runEntryEventOccurrence)
 
-@given(instance=Transition::isEnabledExitEventOccurrence_strategy)
+@given(instance=Net_mainExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_transition::isenabledexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Transition::isEnabledExitEventOccurrence)
+def test_net_mainexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, Net_mainExitEventOccurrence)
 
-@given(instance=Transition::isEnabledEntryEventOccurrence_strategy)
+@given(instance=Net_mainEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_transition::isenabledentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Transition::isEnabledEntryEventOccurrence)
+def test_net_mainentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, Net_mainEntryEventOccurrence)
 
-@given(instance=Place::removeTokenExitEventOccurrence_strategy)
+@given(instance=trace_Events_Events_strategy)
 @settings(max_examples=50)
-def test_place::removetokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Place::removeTokenExitEventOccurrence)
+def test_trace_events_events_instantiation(instance):
+    assert isinstance(instance, trace_Events_Events)
 
-@given(instance=Place::removeTokenEntryEventOccurrence_strategy)
+@given(instance=Events_trace_GlobalState_strategy)
 @settings(max_examples=50)
-def test_place::removetokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Place::removeTokenEntryEventOccurrence)
+def test_events_trace_globalstate_instantiation(instance):
+    assert isinstance(instance, Events_trace_GlobalState)
 
-@given(instance=Place::addTokenExitEventOccurrence_strategy)
+@given(instance=trace_Events_EventOccurrence_strategy)
 @settings(max_examples=50)
-def test_place::addtokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Place::addTokenExitEventOccurrence)
+def test_trace_events_eventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_EventOccurrence)
 
-@given(instance=Place::addTokenEntryEventOccurrence_strategy)
+@given(instance=trace_Net_strategy)
 @settings(max_examples=50)
-def test_place::addtokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Place::addTokenEntryEventOccurrence)
+def test_trace_net_instantiation(instance):
+    assert isinstance(instance, trace_Net)
 
-@given(instance=Net::runExitEventOccurrence_strategy)
+@given(instance=trace_Transition_strategy)
 @settings(max_examples=50)
-def test_net::runexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Net::runExitEventOccurrence)
+def test_trace_transition_instantiation(instance):
+    assert isinstance(instance, trace_Transition)
 
-@given(instance=Net::runEntryEventOccurrence_strategy)
+@given(instance=Place_tokens_State_strategy)
 @settings(max_examples=50)
-def test_net::runentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Net::runEntryEventOccurrence)
-
-@given(instance=Net::mainExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_net::mainexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, Net::mainExitEventOccurrence)
-
-@given(instance=Net::mainEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_net::mainentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, Net::mainEntryEventOccurrence)
-
-@given(instance=trace::Events::Events_strategy)
-@settings(max_examples=50)
-def test_trace::events::events_instantiation(instance):
-    assert isinstance(instance, trace::Events::Events)
-
-@given(instance=Events::trace::GlobalState_strategy)
-@settings(max_examples=50)
-def test_events::trace::globalstate_instantiation(instance):
-    assert isinstance(instance, Events::trace::GlobalState)
-
-@given(instance=trace::Events::EventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::eventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::EventOccurrence)
-
-@given(instance=trace::Net_strategy)
-@settings(max_examples=50)
-def test_trace::net_instantiation(instance):
-    assert isinstance(instance, trace::Net)
-
-@given(instance=trace::Transition_strategy)
-@settings(max_examples=50)
-def test_trace::transition_instantiation(instance):
-    assert isinstance(instance, trace::Transition)
-
-@given(instance=Place::tokens::State_strategy)
-@settings(max_examples=50)
-def test_place::tokens::state_instantiation(instance):
-    assert isinstance(instance, Place::tokens::State)
+def test_place_tokens_state_instantiation(instance):
+    assert isinstance(instance, Place_tokens_State)
 
 @given(instance=EventOccurrence_strategy)
 @settings(max_examples=50)
 def test_eventoccurrence_instantiation(instance):
     assert isinstance(instance, EventOccurrence)
 
-@given(instance=trace::Events::Net::runExitEventOccurrence_strategy)
+@given(instance=trace_Events_Net_mainEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::events::net::runexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Net::runExitEventOccurrence)
+def test_trace_events_net_mainentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Net_mainEntryEventOccurrence)
 
-@given(instance=trace::Events::Place::addTokenEntryEventOccurrence_strategy)
+@given(instance=trace_StaticObjectsPools_strategy)
 @settings(max_examples=50)
-def test_trace::events::place::addtokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Place::addTokenEntryEventOccurrence)
-
-@given(instance=trace::Events::Place::removeTokenEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::place::removetokenentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Place::removeTokenEntryEventOccurrence)
-
-@given(instance=trace::Events::Net::mainExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::net::mainexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Net::mainExitEventOccurrence)
-
-@given(instance=trace::Events::Net::mainEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::net::mainentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Net::mainEntryEventOccurrence)
-
-@given(instance=trace::Events::Transition::isEnabledExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::transition::isenabledexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Transition::isEnabledExitEventOccurrence)
-
-@given(instance=trace::Events::Transition::fireEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::transition::fireentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Transition::fireEntryEventOccurrence)
-
-@given(instance=trace::Events::Transition::isEnabledEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::transition::isenabledentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Transition::isEnabledEntryEventOccurrence)
-
-@given(instance=trace::Events::Place::addTokenExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::place::addtokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Place::addTokenExitEventOccurrence)
-
-@given(instance=trace::Events::Transition::fireExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::transition::fireexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Transition::fireExitEventOccurrence)
-
-@given(instance=trace::Events::Place::removeTokenExitEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::place::removetokenexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Place::removeTokenExitEventOccurrence)
-
-@given(instance=trace::Events::Net::runEntryEventOccurrence_strategy)
-@settings(max_examples=50)
-def test_trace::events::net::runentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::Net::runEntryEventOccurrence)
-
-@given(instance=trace::StaticObjectsPools_strategy)
-@settings(max_examples=50)
-def test_trace::staticobjectspools_instantiation(instance):
-    assert isinstance(instance, trace::StaticObjectsPools)
+def test_trace_staticobjectspools_instantiation(instance):
+    assert isinstance(instance, trace_StaticObjectsPools)
 
 @given(instance=TracedObjects_strategy)
 @settings(max_examples=50)
 def test_tracedobjects_instantiation(instance):
     assert isinstance(instance, TracedObjects)
 
+@given(instance=petrinet_trace_Place_strategy)
+@settings(max_examples=50)
+def test_petrinet_trace_place_instantiation(instance):
+    assert isinstance(instance, petrinet_trace_Place)
+
+@given(instance=trace_petrinet_TracedPlace_strategy)
+@settings(max_examples=50)
+def test_trace_petrinet_tracedplace_instantiation(instance):
+    assert isinstance(instance, trace_petrinet_TracedPlace)
+
+
+
+@given(instance=trace_petrinet_TracedPlace_strategy)
+def test_trace_petrinet_tracedplace_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=trace_petrinet_TracedPlace_strategy)
+def test_trace_petrinet_tracedplace_initialTokens_setter(instance):
+    original = instance.initialTokens
+    instance.initialTokens = original
+    assert instance.initialTokens == original
+
+@given(instance=trace_Traced_TracedObjects_strategy)
+@settings(max_examples=50)
+def test_trace_traced_tracedobjects_instantiation(instance):
+    assert isinstance(instance, trace_Traced_TracedObjects)
+
+@given(instance=States_trace_GlobalState_strategy)
+@settings(max_examples=50)
+def test_states_trace_globalstate_instantiation(instance):
+    assert isinstance(instance, States_trace_GlobalState)
+
+@given(instance=trace_States_Place_tokens_State_strategy)
+@settings(max_examples=50)
+def test_trace_states_place_tokens_state_instantiation(instance):
+    assert isinstance(instance, trace_States_Place_tokens_State)
+
+
+
+@given(instance=trace_States_Place_tokens_State_strategy)
+def test_trace_states_place_tokens_state_tokens_setter(instance):
+    original = instance.tokens
+    instance.tokens = original
+    assert instance.tokens == original
+
+@given(instance=trace_Events_Transition_fireExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_transition_fireexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Transition_fireExitEventOccurrence)
+
+@given(instance=trace_Events_Transition_fireEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_transition_fireentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Transition_fireEntryEventOccurrence)
+
+@given(instance=Events_trace_EObject_strategy)
+@settings(max_examples=50)
+def test_events_trace_eobject_instantiation(instance):
+    assert isinstance(instance, Events_trace_EObject)
+
+@given(instance=trace_Events_Transition_isEnabledExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_transition_isenabledexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Transition_isEnabledExitEventOccurrence)
+
+@given(instance=Events_trace_Transition_strategy)
+@settings(max_examples=50)
+def test_events_trace_transition_instantiation(instance):
+    assert isinstance(instance, Events_trace_Transition)
+
+@given(instance=trace_Events_Transition_isEnabledEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_transition_isenabledentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Transition_isEnabledEntryEventOccurrence)
+
+@given(instance=trace_Events_Place_removeTokenExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_place_removetokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Place_removeTokenExitEventOccurrence)
+
+@given(instance=trace_Events_Place_removeTokenEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_place_removetokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Place_removeTokenEntryEventOccurrence)
+
+@given(instance=trace_Events_Place_addTokenExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_place_addtokenexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Place_addTokenExitEventOccurrence)
+
+@given(instance=petrinet_TracedPlace_strategy)
+@settings(max_examples=50)
+def test_petrinet_tracedplace_instantiation(instance):
+    assert isinstance(instance, petrinet_TracedPlace)
+
+@given(instance=trace_Events_Place_addTokenEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_place_addtokenentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Place_addTokenEntryEventOccurrence)
+
+@given(instance=trace_Events_Net_runExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_net_runexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Net_runExitEventOccurrence)
+
+@given(instance=trace_Events_Net_runEntryEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_net_runentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Net_runEntryEventOccurrence)
+
+@given(instance=trace_Events_Net_mainExitEventOccurrence_strategy)
+@settings(max_examples=50)
+def test_trace_events_net_mainexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_Net_mainExitEventOccurrence)
+
 @given(instance=Events_strategy)
 @settings(max_examples=50)
 def test_events_instantiation(instance):
     assert isinstance(instance, Events)
 
-@given(instance=trace::GlobalState_strategy)
+@given(instance=trace_GlobalState_strategy)
 @settings(max_examples=50)
-def test_trace::globalstate_instantiation(instance):
-    assert isinstance(instance, trace::GlobalState)
+def test_trace_globalstate_instantiation(instance):
+    assert isinstance(instance, trace_GlobalState)
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)

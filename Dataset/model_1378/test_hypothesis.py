@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsmcore::NamedElement,
-    fsmcore::Trigger,
-    fsmcore::Constraint,
-    fsmcore::Program,
+from python_code import (
+    fsmcore_NamedElement,
+    fsmcore_Trigger,
+    fsmcore_Constraint,
+    fsmcore_Program,
     NamedElement,
-    fsmcore::Transition,
-    fsmcore::State,
-    fsmcore::StateMachine,
+    fsmcore_State,
+    fsmcore_Transition,
+    fsmcore_StateMachine,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_fsmcore::namedelement_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::NamedElement)
+def test_fsmcore_namedelement_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_NamedElement)
 
 
-def test_fsmcore::namedelement_constructor_exists():
-    assert callable(fsmcore::NamedElement.__init__)
+def test_fsmcore_namedelement_constructor_exists():
+    assert callable(fsmcore_NamedElement.__init__)
 
 
-def test_fsmcore::namedelement_constructor_args():
-    sig = inspect.signature(fsmcore::NamedElement.__init__)
+def test_fsmcore_namedelement_constructor_args():
+    sig = inspect.signature(fsmcore_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsmcore::namedelement_has_name():
-    assert hasattr(fsmcore::NamedElement, "name")
+def test_fsmcore_namedelement_has_name():
+    assert hasattr(fsmcore_NamedElement, "name")
     descriptor = None
-    for klass in fsmcore::NamedElement.__mro__:
+    for klass in fsmcore_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -46,23 +46,23 @@ def test_fsmcore::namedelement_has_name():
 
 
 
-def test_fsmcore::trigger_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Trigger)
+def test_fsmcore_trigger_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Trigger)
 
 
-def test_fsmcore::trigger_constructor_exists():
-    assert callable(fsmcore::Trigger.__init__)
+def test_fsmcore_trigger_constructor_exists():
+    assert callable(fsmcore_Trigger.__init__)
 
 
-def test_fsmcore::trigger_constructor_args():
-    sig = inspect.signature(fsmcore::Trigger.__init__)
+def test_fsmcore_trigger_constructor_args():
+    sig = inspect.signature(fsmcore_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_fsmcore::trigger_has_expression():
-    assert hasattr(fsmcore::Trigger, "expression")
+def test_fsmcore_trigger_has_expression():
+    assert hasattr(fsmcore_Trigger, "expression")
     descriptor = None
-    for klass in fsmcore::Trigger.__mro__:
+    for klass in fsmcore_Trigger.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -70,30 +70,30 @@ def test_fsmcore::trigger_has_expression():
 
 
 
-def test_fsmcore::constraint_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Constraint)
+def test_fsmcore_constraint_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Constraint)
 
 
-def test_fsmcore::constraint_constructor_exists():
-    assert callable(fsmcore::Constraint.__init__)
+def test_fsmcore_constraint_constructor_exists():
+    assert callable(fsmcore_Constraint.__init__)
 
 
-def test_fsmcore::constraint_constructor_args():
-    sig = inspect.signature(fsmcore::Constraint.__init__)
+def test_fsmcore_constraint_constructor_args():
+    sig = inspect.signature(fsmcore_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::program_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Program)
+def test_fsmcore_program_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Program)
 
 
-def test_fsmcore::program_constructor_exists():
-    assert callable(fsmcore::Program.__init__)
+def test_fsmcore_program_constructor_exists():
+    assert callable(fsmcore_Program.__init__)
 
 
-def test_fsmcore::program_constructor_args():
-    sig = inspect.signature(fsmcore::Program.__init__)
+def test_fsmcore_program_constructor_args():
+    sig = inspect.signature(fsmcore_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,44 +112,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fsmcore::transition_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::Transition)
+def test_fsmcore_state_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_State)
 
 
-def test_fsmcore::transition_constructor_exists():
-    assert callable(fsmcore::Transition.__init__)
+def test_fsmcore_state_constructor_exists():
+    assert callable(fsmcore_State.__init__)
 
 
-def test_fsmcore::transition_constructor_args():
-    sig = inspect.signature(fsmcore::Transition.__init__)
+def test_fsmcore_state_constructor_args():
+    sig = inspect.signature(fsmcore_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::state_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::State)
+def test_fsmcore_transition_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_Transition)
 
 
-def test_fsmcore::state_constructor_exists():
-    assert callable(fsmcore::State.__init__)
+def test_fsmcore_transition_constructor_exists():
+    assert callable(fsmcore_Transition.__init__)
 
 
-def test_fsmcore::state_constructor_args():
-    sig = inspect.signature(fsmcore::State.__init__)
+def test_fsmcore_transition_constructor_args():
+    sig = inspect.signature(fsmcore_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmcore::statemachine_is_not_abstract():
-    assert not inspect.isabstract(fsmcore::StateMachine)
+def test_fsmcore_statemachine_is_not_abstract():
+    assert not inspect.isabstract(fsmcore_StateMachine)
 
 
-def test_fsmcore::statemachine_constructor_exists():
-    assert callable(fsmcore::StateMachine.__init__)
+def test_fsmcore_statemachine_constructor_exists():
+    assert callable(fsmcore_StateMachine.__init__)
 
 
-def test_fsmcore::statemachine_constructor_args():
-    sig = inspect.signature(fsmcore::StateMachine.__init__)
+def test_fsmcore_statemachine_constructor_args():
+    sig = inspect.signature(fsmcore_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,93 +164,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsmcore::NamedElement_strategy = st.builds(
-    fsmcore::NamedElement,
+fsmcore_NamedElement_strategy = st.builds(
+    fsmcore_NamedElement,
     name=
         safe_text
 )
-fsmcore::Trigger_strategy = st.builds(
-    fsmcore::Trigger,
+fsmcore_Trigger_strategy = st.builds(
+    fsmcore_Trigger,
     expression=
         safe_text
 )
-fsmcore::Constraint_strategy = st.builds(
-    fsmcore::Constraint,
+fsmcore_Constraint_strategy = st.builds(
+    fsmcore_Constraint,
 )
-fsmcore::Program_strategy = st.builds(
-    fsmcore::Program,
+fsmcore_Program_strategy = st.builds(
+    fsmcore_Program,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-fsmcore::Transition_strategy = st.builds(
-    fsmcore::Transition,
+fsmcore_State_strategy = st.builds(
+    fsmcore_State,
 )
-fsmcore::State_strategy = st.builds(
-    fsmcore::State,
+fsmcore_Transition_strategy = st.builds(
+    fsmcore_Transition,
 )
-fsmcore::StateMachine_strategy = st.builds(
-    fsmcore::StateMachine,
+fsmcore_StateMachine_strategy = st.builds(
+    fsmcore_StateMachine,
 )
 
-@given(instance=fsmcore::NamedElement_strategy)
+@given(instance=fsmcore_NamedElement_strategy)
 @settings(max_examples=50)
-def test_fsmcore::namedelement_instantiation(instance):
-    assert isinstance(instance, fsmcore::NamedElement)
-
-@given(instance=fsmcore::NamedElement_strategy)
-def test_fsmcore::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsmcore_namedelement_instantiation(instance):
+    assert isinstance(instance, fsmcore_NamedElement)
 
 
-@given(instance=fsmcore::NamedElement_strategy)
-def test_fsmcore::namedelement_name_setter(instance):
+
+@given(instance=fsmcore_NamedElement_strategy)
+def test_fsmcore_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsmcore::Trigger_strategy)
+@given(instance=fsmcore_Trigger_strategy)
 @settings(max_examples=50)
-def test_fsmcore::trigger_instantiation(instance):
-    assert isinstance(instance, fsmcore::Trigger)
-
-@given(instance=fsmcore::Trigger_strategy)
-def test_fsmcore::trigger_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_fsmcore_trigger_instantiation(instance):
+    assert isinstance(instance, fsmcore_Trigger)
 
 
-@given(instance=fsmcore::Trigger_strategy)
-def test_fsmcore::trigger_expression_setter(instance):
+
+@given(instance=fsmcore_Trigger_strategy)
+def test_fsmcore_trigger_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=fsmcore::Constraint_strategy)
+@given(instance=fsmcore_Constraint_strategy)
 @settings(max_examples=50)
-def test_fsmcore::constraint_instantiation(instance):
-    assert isinstance(instance, fsmcore::Constraint)
+def test_fsmcore_constraint_instantiation(instance):
+    assert isinstance(instance, fsmcore_Constraint)
 
-@given(instance=fsmcore::Program_strategy)
+@given(instance=fsmcore_Program_strategy)
 @settings(max_examples=50)
-def test_fsmcore::program_instantiation(instance):
-    assert isinstance(instance, fsmcore::Program)
+def test_fsmcore_program_instantiation(instance):
+    assert isinstance(instance, fsmcore_Program)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=fsmcore::Transition_strategy)
+@given(instance=fsmcore_State_strategy)
 @settings(max_examples=50)
-def test_fsmcore::transition_instantiation(instance):
-    assert isinstance(instance, fsmcore::Transition)
+def test_fsmcore_state_instantiation(instance):
+    assert isinstance(instance, fsmcore_State)
 
-@given(instance=fsmcore::State_strategy)
+@given(instance=fsmcore_Transition_strategy)
 @settings(max_examples=50)
-def test_fsmcore::state_instantiation(instance):
-    assert isinstance(instance, fsmcore::State)
+def test_fsmcore_transition_instantiation(instance):
+    assert isinstance(instance, fsmcore_Transition)
 
-@given(instance=fsmcore::StateMachine_strategy)
+@given(instance=fsmcore_StateMachine_strategy)
 @settings(max_examples=50)
-def test_fsmcore::statemachine_instantiation(instance):
-    assert isinstance(instance, fsmcore::StateMachine)
+def test_fsmcore_statemachine_instantiation(instance):
+    assert isinstance(instance, fsmcore_StateMachine)

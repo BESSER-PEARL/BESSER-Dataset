@@ -3,17 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Business_User_Actor,
-    Business_Users_Creation_UseCase,
-    Sales_Users_Creation_UseCase,
-    Login_and_authentication_UseCase,
-    Sales_User_Actor,
-    Support_User_Actor,
-    Assign_Roles_external,
-    Manage_Accounts_external,
     Confirm_Order_external,
     Review_Order_external,
     Select_Products_external,
@@ -31,123 +23,19 @@ from python_code import (
     T,
     Order_Management_System_Component,
     Component_Component,
+    Business_User_Actor,
+    Business_Users_Creation_UseCase,
+    Sales_Users_Creation_UseCase,
+    Login_and_authentication_UseCase,
+    Sales_User_Actor,
+    Support_User_Actor,
+    Assign_Roles_external,
+    Manage_Accounts_external,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_business_user_actor_is_not_abstract():
-    assert not inspect.isabstract(Business_User_Actor)
-
-
-def test_business_user_actor_constructor_exists():
-    assert callable(Business_User_Actor.__init__)
-
-
-def test_business_user_actor_constructor_args():
-    sig = inspect.signature(Business_User_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_business_users_creation_usecase_is_not_abstract():
-    assert not inspect.isabstract(Business_Users_Creation_UseCase)
-
-
-def test_business_users_creation_usecase_constructor_exists():
-    assert callable(Business_Users_Creation_UseCase.__init__)
-
-
-def test_business_users_creation_usecase_constructor_args():
-    sig = inspect.signature(Business_Users_Creation_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sales_users_creation_usecase_is_not_abstract():
-    assert not inspect.isabstract(Sales_Users_Creation_UseCase)
-
-
-def test_sales_users_creation_usecase_constructor_exists():
-    assert callable(Sales_Users_Creation_UseCase.__init__)
-
-
-def test_sales_users_creation_usecase_constructor_args():
-    sig = inspect.signature(Sales_Users_Creation_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_login_and_authentication_usecase_is_not_abstract():
-    assert not inspect.isabstract(Login_and_authentication_UseCase)
-
-
-def test_login_and_authentication_usecase_constructor_exists():
-    assert callable(Login_and_authentication_UseCase.__init__)
-
-
-def test_login_and_authentication_usecase_constructor_args():
-    sig = inspect.signature(Login_and_authentication_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sales_user_actor_is_not_abstract():
-    assert not inspect.isabstract(Sales_User_Actor)
-
-
-def test_sales_user_actor_constructor_exists():
-    assert callable(Sales_User_Actor.__init__)
-
-
-def test_sales_user_actor_constructor_args():
-    sig = inspect.signature(Sales_User_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_support_user_actor_is_not_abstract():
-    assert not inspect.isabstract(Support_User_Actor)
-
-
-def test_support_user_actor_constructor_exists():
-    assert callable(Support_User_Actor.__init__)
-
-
-def test_support_user_actor_constructor_args():
-    sig = inspect.signature(Support_User_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_assign_roles_external_is_not_abstract():
-    assert not inspect.isabstract(Assign_Roles_external)
-
-
-def test_assign_roles_external_constructor_exists():
-    assert callable(Assign_Roles_external.__init__)
-
-
-def test_assign_roles_external_constructor_args():
-    sig = inspect.signature(Assign_Roles_external.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_manage_accounts_external_is_not_abstract():
-    assert not inspect.isabstract(Manage_Accounts_external)
-
-
-def test_manage_accounts_external_constructor_exists():
-    assert callable(Manage_Accounts_external.__init__)
-
-
-def test_manage_accounts_external_constructor_args():
-    sig = inspect.signature(Manage_Accounts_external.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -388,6 +276,118 @@ def test_component_component_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_business_user_actor_is_not_abstract():
+    assert not inspect.isabstract(Business_User_Actor)
+
+
+def test_business_user_actor_constructor_exists():
+    assert callable(Business_User_Actor.__init__)
+
+
+def test_business_user_actor_constructor_args():
+    sig = inspect.signature(Business_User_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_business_users_creation_usecase_is_not_abstract():
+    assert not inspect.isabstract(Business_Users_Creation_UseCase)
+
+
+def test_business_users_creation_usecase_constructor_exists():
+    assert callable(Business_Users_Creation_UseCase.__init__)
+
+
+def test_business_users_creation_usecase_constructor_args():
+    sig = inspect.signature(Business_Users_Creation_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sales_users_creation_usecase_is_not_abstract():
+    assert not inspect.isabstract(Sales_Users_Creation_UseCase)
+
+
+def test_sales_users_creation_usecase_constructor_exists():
+    assert callable(Sales_Users_Creation_UseCase.__init__)
+
+
+def test_sales_users_creation_usecase_constructor_args():
+    sig = inspect.signature(Sales_Users_Creation_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_login_and_authentication_usecase_is_not_abstract():
+    assert not inspect.isabstract(Login_and_authentication_UseCase)
+
+
+def test_login_and_authentication_usecase_constructor_exists():
+    assert callable(Login_and_authentication_UseCase.__init__)
+
+
+def test_login_and_authentication_usecase_constructor_args():
+    sig = inspect.signature(Login_and_authentication_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sales_user_actor_is_not_abstract():
+    assert not inspect.isabstract(Sales_User_Actor)
+
+
+def test_sales_user_actor_constructor_exists():
+    assert callable(Sales_User_Actor.__init__)
+
+
+def test_sales_user_actor_constructor_args():
+    sig = inspect.signature(Sales_User_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_support_user_actor_is_not_abstract():
+    assert not inspect.isabstract(Support_User_Actor)
+
+
+def test_support_user_actor_constructor_exists():
+    assert callable(Support_User_Actor.__init__)
+
+
+def test_support_user_actor_constructor_args():
+    sig = inspect.signature(Support_User_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_assign_roles_external_is_not_abstract():
+    assert not inspect.isabstract(Assign_Roles_external)
+
+
+def test_assign_roles_external_constructor_exists():
+    assert callable(Assign_Roles_external.__init__)
+
+
+def test_assign_roles_external_constructor_args():
+    sig = inspect.signature(Assign_Roles_external.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_manage_accounts_external_is_not_abstract():
+    assert not inspect.isabstract(Manage_Accounts_external)
+
+
+def test_manage_accounts_external_constructor_exists():
+    assert callable(Manage_Accounts_external.__init__)
+
+
+def test_manage_accounts_external_constructor_args():
+    sig = inspect.signature(Manage_Accounts_external.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -399,30 +399,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Business_User_Actor_strategy = st.builds(
-    Business_User_Actor,
-)
-Business_Users_Creation_UseCase_strategy = st.builds(
-    Business_Users_Creation_UseCase,
-)
-Sales_Users_Creation_UseCase_strategy = st.builds(
-    Sales_Users_Creation_UseCase,
-)
-Login_and_authentication_UseCase_strategy = st.builds(
-    Login_and_authentication_UseCase,
-)
-Sales_User_Actor_strategy = st.builds(
-    Sales_User_Actor,
-)
-Support_User_Actor_strategy = st.builds(
-    Support_User_Actor,
-)
-Assign_Roles_external_strategy = st.builds(
-    Assign_Roles_external,
-)
-Manage_Accounts_external_strategy = st.builds(
-    Manage_Accounts_external,
-)
 Confirm_Order_external_strategy = st.builds(
     Confirm_Order_external,
 )
@@ -474,46 +450,30 @@ Order_Management_System_Component_strategy = st.builds(
 Component_Component_strategy = st.builds(
     Component_Component,
 )
-
-@given(instance=Business_User_Actor_strategy)
-@settings(max_examples=50)
-def test_business_user_actor_instantiation(instance):
-    assert isinstance(instance, Business_User_Actor)
-
-@given(instance=Business_Users_Creation_UseCase_strategy)
-@settings(max_examples=50)
-def test_business_users_creation_usecase_instantiation(instance):
-    assert isinstance(instance, Business_Users_Creation_UseCase)
-
-@given(instance=Sales_Users_Creation_UseCase_strategy)
-@settings(max_examples=50)
-def test_sales_users_creation_usecase_instantiation(instance):
-    assert isinstance(instance, Sales_Users_Creation_UseCase)
-
-@given(instance=Login_and_authentication_UseCase_strategy)
-@settings(max_examples=50)
-def test_login_and_authentication_usecase_instantiation(instance):
-    assert isinstance(instance, Login_and_authentication_UseCase)
-
-@given(instance=Sales_User_Actor_strategy)
-@settings(max_examples=50)
-def test_sales_user_actor_instantiation(instance):
-    assert isinstance(instance, Sales_User_Actor)
-
-@given(instance=Support_User_Actor_strategy)
-@settings(max_examples=50)
-def test_support_user_actor_instantiation(instance):
-    assert isinstance(instance, Support_User_Actor)
-
-@given(instance=Assign_Roles_external_strategy)
-@settings(max_examples=50)
-def test_assign_roles_external_instantiation(instance):
-    assert isinstance(instance, Assign_Roles_external)
-
-@given(instance=Manage_Accounts_external_strategy)
-@settings(max_examples=50)
-def test_manage_accounts_external_instantiation(instance):
-    assert isinstance(instance, Manage_Accounts_external)
+Business_User_Actor_strategy = st.builds(
+    Business_User_Actor,
+)
+Business_Users_Creation_UseCase_strategy = st.builds(
+    Business_Users_Creation_UseCase,
+)
+Sales_Users_Creation_UseCase_strategy = st.builds(
+    Sales_Users_Creation_UseCase,
+)
+Login_and_authentication_UseCase_strategy = st.builds(
+    Login_and_authentication_UseCase,
+)
+Sales_User_Actor_strategy = st.builds(
+    Sales_User_Actor,
+)
+Support_User_Actor_strategy = st.builds(
+    Support_User_Actor,
+)
+Assign_Roles_external_strategy = st.builds(
+    Assign_Roles_external,
+)
+Manage_Accounts_external_strategy = st.builds(
+    Manage_Accounts_external,
+)
 
 @given(instance=Confirm_Order_external_strategy)
 @settings(max_examples=50)
@@ -599,3 +559,43 @@ def test_order_management_system_component_instantiation(instance):
 @settings(max_examples=50)
 def test_component_component_instantiation(instance):
     assert isinstance(instance, Component_Component)
+
+@given(instance=Business_User_Actor_strategy)
+@settings(max_examples=50)
+def test_business_user_actor_instantiation(instance):
+    assert isinstance(instance, Business_User_Actor)
+
+@given(instance=Business_Users_Creation_UseCase_strategy)
+@settings(max_examples=50)
+def test_business_users_creation_usecase_instantiation(instance):
+    assert isinstance(instance, Business_Users_Creation_UseCase)
+
+@given(instance=Sales_Users_Creation_UseCase_strategy)
+@settings(max_examples=50)
+def test_sales_users_creation_usecase_instantiation(instance):
+    assert isinstance(instance, Sales_Users_Creation_UseCase)
+
+@given(instance=Login_and_authentication_UseCase_strategy)
+@settings(max_examples=50)
+def test_login_and_authentication_usecase_instantiation(instance):
+    assert isinstance(instance, Login_and_authentication_UseCase)
+
+@given(instance=Sales_User_Actor_strategy)
+@settings(max_examples=50)
+def test_sales_user_actor_instantiation(instance):
+    assert isinstance(instance, Sales_User_Actor)
+
+@given(instance=Support_User_Actor_strategy)
+@settings(max_examples=50)
+def test_support_user_actor_instantiation(instance):
+    assert isinstance(instance, Support_User_Actor)
+
+@given(instance=Assign_Roles_external_strategy)
+@settings(max_examples=50)
+def test_assign_roles_external_instantiation(instance):
+    assert isinstance(instance, Assign_Roles_external)
+
+@given(instance=Manage_Accounts_external_strategy)
+@settings(max_examples=50)
+def test_manage_accounts_external_instantiation(instance):
+    assert isinstance(instance, Manage_Accounts_external)

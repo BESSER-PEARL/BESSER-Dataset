@@ -3,129 +3,143 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    Metamodelo_Cpp_CppModelElement,
     CppFieldContainer,
-    Metamodelo::Cpp::CppModel,
+    Metamodelo_Cpp_CppModel,
     CppPathReferentiable,
     CppModelElement,
-    Metamodelo::Cpp::CppPathReference,
-    Metamodelo::Cpp::CppPackage,
+    Metamodelo_Cpp_CppComment,
+    Metamodelo_Cpp_CppExpression,
+    Metamodelo_Cpp_CppPathReference,
+    Metamodelo_Cpp_CppPackage,
     CppNamedElement,
-    Metamodelo::Cpp::CppPathReferentiable,
-    Metamodelo::Cpp::CppClassFile,
-    Metamodelo::Cpp::CppType,
-    Metamodelo::Cpp::CppVariableDeclaration,
-    Metamodelo::Cpp::CppFieldContainer,
-    Metamodelo::Cpp::CppField,
+    Metamodelo_Cpp_CppEnumConstructor,
+    Metamodelo_Cpp_CppPathReferentiable,
+    Metamodelo_Cpp_CppClassFile,
+    Metamodelo_Cpp_CppType,
+    Metamodelo_Cpp_CppVariableDeclaration,
+    Metamodelo_Cpp_CppFieldContainer,
+    Metamodelo_Cpp_CppField,
     CppBinaryExpression,
-    Metamodelo::Cpp::CppAssignamentStatement,
+    Metamodelo_Cpp_CppAssignamentStatement,
     CppUnaryExpression,
-    Metamodelo::Cpp::CppPrefixExpression,
-    Metamodelo::Cpp::CppPostfixExpression,
-    Metamodelo::Cpp::CppInfixExpression,
+    Metamodelo_Cpp_CppPrefixExpression,
+    Metamodelo_Cpp_CppPostfixExpression,
+    Metamodelo_Cpp_CppInfixExpression,
     CppSelectionStatement,
-    Metamodelo::Cpp::CppIfElseStatement,
-    Metamodelo::Cpp::CppIfStatement,
+    Metamodelo_Cpp_CppIfElseStatement,
+    Metamodelo_Cpp_CppIfStatement,
     CppMethodInvocation,
-    Metamodelo::Cpp::CppSuperConstructorInvocation,
+    Metamodelo_Cpp_CppSuperConstructorInvocation,
     CppJumpStatement,
-    Metamodelo::Cpp::CppGotoStatement,
-    Metamodelo::Cpp::CppContinueStatement,
-    Metamodelo::Cpp::CppReturnStatement,
-    Metamodelo::Cpp::CppBreakStatement,
+    Metamodelo_Cpp_CppContinueStatement,
+    Metamodelo_Cpp_CppReturnStatement,
+    Metamodelo_Cpp_CppGotoStatement,
+    Metamodelo_Cpp_CppBreakStatement,
     CppIterationStatement,
-    Metamodelo::Cpp::CppForStatement,
-    Metamodelo::Cpp::CppDoWhileStatement,
-    Metamodelo::Cpp::CppWhileStatement,
+    Metamodelo_Cpp_CppForStatement,
+    Metamodelo_Cpp_CppDoWhileStatement,
+    Metamodelo_Cpp_CppWhileStatement,
     CppExpression,
-    Metamodelo::Cpp::CppUnaryExpression,
-    Metamodelo::Cpp::CppBooleanLiteral,
-    Metamodelo::Cpp::CppBinaryExpression,
-    Metamodelo::Cpp::CppTryExpression,
-    Metamodelo::Cpp::CppIterationStatement,
-    Metamodelo::Cpp::CppThisExpression,
-    Metamodelo::Cpp::CppThrowExpression,
-    Metamodelo::Cpp::CppJumpStatement,
-    Metamodelo::Cpp::CppSwitchExpression,
-    Metamodelo::Cpp::CppFieldAccess,
-    Metamodelo::Cpp::CppNullLiteral,
-    Metamodelo::Cpp::CppVariableAccess,
-    Metamodelo::Cpp::CppCastExpression,
-    Metamodelo::Cpp::CppConstantExpression,
-    Metamodelo::Cpp::CppRegexLiteral,
-    Metamodelo::Cpp::CppCharacterLiteral,
-    Metamodelo::Cpp::CppCase,
-    Metamodelo::Cpp::CppDeclarationExpression,
-    Metamodelo::Cpp::CppCatchClause,
-    Metamodelo::Cpp::CppNumberLiteral,
-    Metamodelo::Cpp::CppParenthizedExpression,
-    Metamodelo::Cpp::CppLabeledStatement,
-    Metamodelo::Cpp::CppArrayAccess,
-    Metamodelo::Cpp::CppBlock,
-    Metamodelo::Cpp::CppStringLiteral,
-    Metamodelo::Cpp::CppSelectionStatement,
-    Metamodelo::Cpp::CppArrayInitializer,
+    Metamodelo_Cpp_CppCatchClause,
+    Metamodelo_Cpp_CppSelectionStatement,
+    Metamodelo_Cpp_CppFieldAccess,
+    Metamodelo_Cpp_CppThrowExpression,
+    Metamodelo_Cpp_CppNullLiteral,
+    Metamodelo_Cpp_CppParenthizedExpression,
+    Metamodelo_Cpp_CppUnaryExpression,
+    Metamodelo_Cpp_CppIterationStatement,
+    Metamodelo_Cpp_CppSwitchExpression,
+    Metamodelo_Cpp_CppArrayAccess,
+    Metamodelo_Cpp_CppTryExpression,
+    Metamodelo_Cpp_CppJumpStatement,
+    Metamodelo_Cpp_CppConstantExpression,
+    Metamodelo_Cpp_CppNumberLiteral,
+    Metamodelo_Cpp_CppBlock,
+    Metamodelo_Cpp_CppCharacterLiteral,
+    Metamodelo_Cpp_CppDeclarationExpression,
+    Metamodelo_Cpp_CppCase,
+    Metamodelo_Cpp_CppBooleanLiteral,
+    Metamodelo_Cpp_CppLabeledStatement,
+    Metamodelo_Cpp_CppVariableAccess,
+    Metamodelo_Cpp_CppBinaryExpression,
+    Metamodelo_Cpp_CppThisExpression,
+    Metamodelo_Cpp_CppStringLiteral,
+    Metamodelo_Cpp_CppCastExpression,
+    Metamodelo_Cpp_CppRegexLiteral,
+    Metamodelo_Cpp_CppArrayInitializer,
     CppTypedElement,
-    Metamodelo::Cpp::CppVariableDeclarationGroup,
+    Metamodelo_Cpp_CppVariableDeclarationGroup,
     CppField,
     CppVariableDeclaration,
-    Metamodelo::Cpp::CppSingleVariableDeclaration,
-    Metamodelo::Cpp::CppVariableDeclarationFragment,
+    Metamodelo_Cpp_CppSingleVariableDeclaration,
+    Metamodelo_Cpp_CppVariableDeclarationFragment,
     CppAbstractMethodInvocation,
-    Metamodelo::Cpp::CppSuperMethodInvocation,
-    Metamodelo::Cpp::CppMethodInvocation,
-    Metamodelo::Cpp::CppAbstractMethodInvocation,
+    Metamodelo_Cpp_CppSuperMethodInvocation,
+    Metamodelo_Cpp_CppMethodInvocation,
+    Metamodelo_Cpp_CppAbstractMethodInvocation,
     CppMemberFunction,
-    Metamodelo::Cpp::CppMethod,
-    Metamodelo::Cpp::CppDestructor,
-    Metamodelo::Cpp::CppConstructor,
+    Metamodelo_Cpp_CppMethod,
+    Metamodelo_Cpp_CppDestructor,
+    Metamodelo_Cpp_CppConstructor,
     CppFunction,
-    Metamodelo::Cpp::CppMemberFunction,
-    Metamodelo::Cpp::CppTypedElement,
+    Metamodelo_Cpp_CppMemberFunction,
+    Metamodelo_Cpp_CppTypedElement,
     CppClassifier,
-    Metamodelo::Cpp::CppClass,
+    Metamodelo_Cpp_CppClass,
     CppPrimitiveType,
-    Metamodelo::Cpp::CppLongType,
-    Metamodelo::Cpp::CppUnsignedType,
-    Metamodelo::Cpp::CppFloatType,
-    Metamodelo::Cpp::CppVoidType,
-    Metamodelo::Cpp::CppSignedType,
-    Metamodelo::Cpp::CppShortType,
-    Metamodelo::Cpp::CppDoubleType,
-    Metamodelo::Cpp::CppCharType,
-    Metamodelo::Cpp::CppIntType,
-    Metamodelo::Cpp::CppBooleanType,
+    Metamodelo_Cpp_CppFloatType,
+    Metamodelo_Cpp_CppUnsignedType,
+    Metamodelo_Cpp_CppVoidType,
+    Metamodelo_Cpp_CppSignedType,
+    Metamodelo_Cpp_CppLongType,
+    Metamodelo_Cpp_CppDoubleType,
+    Metamodelo_Cpp_CppShortType,
+    Metamodelo_Cpp_CppCharType,
+    Metamodelo_Cpp_CppIntType,
+    Metamodelo_Cpp_CppBooleanType,
     CppType,
-    Metamodelo::Cpp::CppFunction,
-    Metamodelo::Cpp::CppClassifier,
-    Metamodelo::Cpp::CppPrimitiveType,
-    Metamodelo::Cpp::CppTypeParameter,
-    Metamodelo::Cpp::CppTypeAccess,
-    Metamodelo::Cpp::CppImportDeclaration,
-    Metamodelo::Cpp::CppNamedElement,
-    Metamodelo::Cpp::CppModelElement,
-    Metamodelo::Cpp::CppComment,
-    Metamodelo::Cpp::CppExpression,
-    Metamodelo::Cpp::CppEnumConstructor,
-    Metamodelo::Cpp::CppEnum,
-    Metamodelo::Cpp::CppVariable,
+    Metamodelo_Cpp_CppVariable,
+    Metamodelo_Cpp_CppEnum,
+    Metamodelo_Cpp_CppClassifier,
+    Metamodelo_Cpp_CppFunction,
+    Metamodelo_Cpp_CppPrimitiveType,
+    Metamodelo_Cpp_CppTypeParameter,
+    Metamodelo_Cpp_CppTypeAccess,
+    Metamodelo_Cpp_CppImportDeclaration,
+    Metamodelo_Cpp_CppNamedElement,
     CppLinkageSpecifier,
+    CppClassKey,
+    CppOperator,
+    CppStorageType,
+    CppAccessSpecifier,
+    CppPostfixOperator,
     CppQualifierType,
     CppAssignmentOperator,
-    CppStorageType,
-    CppOperator,
-    CppUnaryOperator,
-    CppPostfixOperator,
-    CppAccessSpecifier,
-    CppClassKey,
     CppVarType,
+    CppUnaryOperator,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_metamodelo_cpp_cppmodelelement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppModelElement)
+
+
+def test_metamodelo_cpp_cppmodelelement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppModelElement.__init__)
+
+
+def test_metamodelo_cpp_cppmodelelement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppModelElement.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -143,45 +157,45 @@ def test_cppfieldcontainer_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppmodel_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppModel)
+def test_metamodelo_cpp_cppmodel_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppModel)
 
 
-def test_metamodelo::cpp::cppmodel_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppModel.__init__)
+def test_metamodelo_cpp_cppmodel_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppModel.__init__)
 
 
-def test_metamodelo::cpp::cppmodel_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppModel.__init__)
+def test_metamodelo_cpp_cppmodel_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "targetFolder" in params, "Missing parameter 'targetFolder'"
     assert "sourceFolder" in params, "Missing parameter 'sourceFolder'"
+    assert "targetFolder" in params, "Missing parameter 'targetFolder'"
 
-def test_metamodelo::cpp::cppmodel_has_name():
-    assert hasattr(Metamodelo::Cpp::CppModel, "name")
+def test_metamodelo_cpp_cppmodel_has_name():
+    assert hasattr(Metamodelo_Cpp_CppModel, "name")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppModel.__mro__:
+    for klass in Metamodelo_Cpp_CppModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppmodel_has_targetFolder():
-    assert hasattr(Metamodelo::Cpp::CppModel, "targetFolder")
+def test_metamodelo_cpp_cppmodel_has_sourceFolder():
+    assert hasattr(Metamodelo_Cpp_CppModel, "sourceFolder")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppModel.__mro__:
-        if "targetFolder" in klass.__dict__:
-            descriptor = klass.__dict__["targetFolder"]
+    for klass in Metamodelo_Cpp_CppModel.__mro__:
+        if "sourceFolder" in klass.__dict__:
+            descriptor = klass.__dict__["sourceFolder"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppmodel_has_sourceFolder():
-    assert hasattr(Metamodelo::Cpp::CppModel, "sourceFolder")
+def test_metamodelo_cpp_cppmodel_has_targetFolder():
+    assert hasattr(Metamodelo_Cpp_CppModel, "targetFolder")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppModel.__mro__:
-        if "sourceFolder" in klass.__dict__:
-            descriptor = klass.__dict__["sourceFolder"]
+    for klass in Metamodelo_Cpp_CppModel.__mro__:
+        if "targetFolder" in klass.__dict__:
+            descriptor = klass.__dict__["targetFolder"]
             break
     assert isinstance(descriptor, property)
 
@@ -215,30 +229,88 @@ def test_cppmodelelement_constructor_args():
 
 
 
-def test_metamodelo::cpp::cpppathreference_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppPathReference)
+def test_metamodelo_cpp_cppcomment_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppComment)
 
 
-def test_metamodelo::cpp::cpppathreference_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppPathReference.__init__)
+def test_metamodelo_cpp_cppcomment_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppComment.__init__)
 
 
-def test_metamodelo::cpp::cpppathreference_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppPathReference.__init__)
+def test_metamodelo_cpp_cppcomment_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppComment.__init__)
+    params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
+    assert "multiLine" in params, "Missing parameter 'multiLine'"
+    assert "singleLine" in params, "Missing parameter 'singleLine'"
+
+def test_metamodelo_cpp_cppcomment_has_content():
+    assert hasattr(Metamodelo_Cpp_CppComment, "content")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppComment.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppcomment_has_multiLine():
+    assert hasattr(Metamodelo_Cpp_CppComment, "multiLine")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppComment.__mro__:
+        if "multiLine" in klass.__dict__:
+            descriptor = klass.__dict__["multiLine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppcomment_has_singleLine():
+    assert hasattr(Metamodelo_Cpp_CppComment, "singleLine")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppComment.__mro__:
+        if "singleLine" in klass.__dict__:
+            descriptor = klass.__dict__["singleLine"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_metamodelo_cpp_cppexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppExpression)
+
+
+def test_metamodelo_cpp_cppexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppExpression.__init__)
+
+
+def test_metamodelo_cpp_cppexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpppackage_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppPackage)
+def test_metamodelo_cpp_cpppathreference_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppPathReference)
 
 
-def test_metamodelo::cpp::cpppackage_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppPackage.__init__)
+def test_metamodelo_cpp_cpppathreference_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppPathReference.__init__)
 
 
-def test_metamodelo::cpp::cpppackage_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppPackage.__init__)
+def test_metamodelo_cpp_cpppathreference_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppPathReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cpppackage_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppPackage)
+
+
+def test_metamodelo_cpp_cpppackage_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppPackage.__init__)
+
+
+def test_metamodelo_cpp_cpppackage_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,75 +329,89 @@ def test_cppnamedelement_constructor_args():
 
 
 
-def test_metamodelo::cpp::cpppathreferentiable_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppPathReferentiable)
+def test_metamodelo_cpp_cppenumconstructor_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppEnumConstructor)
 
 
-def test_metamodelo::cpp::cpppathreferentiable_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppPathReferentiable.__init__)
+def test_metamodelo_cpp_cppenumconstructor_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppEnumConstructor.__init__)
 
 
-def test_metamodelo::cpp::cpppathreferentiable_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppPathReferentiable.__init__)
+def test_metamodelo_cpp_cppenumconstructor_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppEnumConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppclassfile_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppClassFile)
+def test_metamodelo_cpp_cpppathreferentiable_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppPathReferentiable)
 
 
-def test_metamodelo::cpp::cppclassfile_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppClassFile.__init__)
+def test_metamodelo_cpp_cpppathreferentiable_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppPathReferentiable.__init__)
 
 
-def test_metamodelo::cpp::cppclassfile_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppClassFile.__init__)
+def test_metamodelo_cpp_cpppathreferentiable_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppPathReferentiable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpptype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppType)
+def test_metamodelo_cpp_cppclassfile_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppClassFile)
 
 
-def test_metamodelo::cpp::cpptype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppType.__init__)
+def test_metamodelo_cpp_cppclassfile_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppClassFile.__init__)
 
 
-def test_metamodelo::cpp::cpptype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppType.__init__)
+def test_metamodelo_cpp_cppclassfile_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppClassFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppVariableDeclaration)
+def test_metamodelo_cpp_cpptype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppType)
 
 
-def test_metamodelo::cpp::cppvariabledeclaration_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppVariableDeclaration.__init__)
+def test_metamodelo_cpp_cpptype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppType.__init__)
 
 
-def test_metamodelo::cpp::cppvariabledeclaration_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppVariableDeclaration.__init__)
+def test_metamodelo_cpp_cpptype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cppvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppVariableDeclaration)
+
+
+def test_metamodelo_cpp_cppvariabledeclaration_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppVariableDeclaration.__init__)
+
+
+def test_metamodelo_cpp_cppvariabledeclaration_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "vartype" in params, "Missing parameter 'vartype'"
     assert "isArray" in params, "Missing parameter 'isArray'"
 
-def test_metamodelo::cpp::cppvariabledeclaration_has_vartype():
-    assert hasattr(Metamodelo::Cpp::CppVariableDeclaration, "vartype")
+def test_metamodelo_cpp_cppvariabledeclaration_has_vartype():
+    assert hasattr(Metamodelo_Cpp_CppVariableDeclaration, "vartype")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppVariableDeclaration.__mro__:
+    for klass in Metamodelo_Cpp_CppVariableDeclaration.__mro__:
         if "vartype" in klass.__dict__:
             descriptor = klass.__dict__["vartype"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppvariabledeclaration_has_isArray():
-    assert hasattr(Metamodelo::Cpp::CppVariableDeclaration, "isArray")
+def test_metamodelo_cpp_cppvariabledeclaration_has_isArray():
+    assert hasattr(Metamodelo_Cpp_CppVariableDeclaration, "isArray")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppVariableDeclaration.__mro__:
+    for klass in Metamodelo_Cpp_CppVariableDeclaration.__mro__:
         if "isArray" in klass.__dict__:
             descriptor = klass.__dict__["isArray"]
             break
@@ -333,37 +419,37 @@ def test_metamodelo::cpp::cppvariabledeclaration_has_isArray():
 
 
 
-def test_metamodelo::cpp::cppfieldcontainer_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppFieldContainer)
+def test_metamodelo_cpp_cppfieldcontainer_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppFieldContainer)
 
 
-def test_metamodelo::cpp::cppfieldcontainer_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppFieldContainer.__init__)
+def test_metamodelo_cpp_cppfieldcontainer_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppFieldContainer.__init__)
 
 
-def test_metamodelo::cpp::cppfieldcontainer_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppFieldContainer.__init__)
+def test_metamodelo_cpp_cppfieldcontainer_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppFieldContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppfield_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppField)
+def test_metamodelo_cpp_cppfield_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppField)
 
 
-def test_metamodelo::cpp::cppfield_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppField.__init__)
+def test_metamodelo_cpp_cppfield_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppField.__init__)
 
 
-def test_metamodelo::cpp::cppfield_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppField.__init__)
+def test_metamodelo_cpp_cppfield_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppField.__init__)
     params = list(sig.parameters.keys())
     assert "accessSpecifier" in params, "Missing parameter 'accessSpecifier'"
 
-def test_metamodelo::cpp::cppfield_has_accessSpecifier():
-    assert hasattr(Metamodelo::Cpp::CppField, "accessSpecifier")
+def test_metamodelo_cpp_cppfield_has_accessSpecifier():
+    assert hasattr(Metamodelo_Cpp_CppField, "accessSpecifier")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppField.__mro__:
+    for klass in Metamodelo_Cpp_CppField.__mro__:
         if "accessSpecifier" in klass.__dict__:
             descriptor = klass.__dict__["accessSpecifier"]
             break
@@ -385,23 +471,23 @@ def test_cppbinaryexpression_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppassignamentstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppAssignamentStatement)
+def test_metamodelo_cpp_cppassignamentstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppAssignamentStatement)
 
 
-def test_metamodelo::cpp::cppassignamentstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppAssignamentStatement.__init__)
+def test_metamodelo_cpp_cppassignamentstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppAssignamentStatement.__init__)
 
 
-def test_metamodelo::cpp::cppassignamentstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppAssignamentStatement.__init__)
+def test_metamodelo_cpp_cppassignamentstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppAssignamentStatement.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_metamodelo::cpp::cppassignamentstatement_has_operator():
-    assert hasattr(Metamodelo::Cpp::CppAssignamentStatement, "operator")
+def test_metamodelo_cpp_cppassignamentstatement_has_operator():
+    assert hasattr(Metamodelo_Cpp_CppAssignamentStatement, "operator")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppAssignamentStatement.__mro__:
+    for klass in Metamodelo_Cpp_CppAssignamentStatement.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -423,23 +509,23 @@ def test_cppunaryexpression_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppprefixexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppPrefixExpression)
+def test_metamodelo_cpp_cppprefixexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppPrefixExpression)
 
 
-def test_metamodelo::cpp::cppprefixexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppPrefixExpression.__init__)
+def test_metamodelo_cpp_cppprefixexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppPrefixExpression.__init__)
 
 
-def test_metamodelo::cpp::cppprefixexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppPrefixExpression.__init__)
+def test_metamodelo_cpp_cppprefixexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppPrefixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_metamodelo::cpp::cppprefixexpression_has_operator():
-    assert hasattr(Metamodelo::Cpp::CppPrefixExpression, "operator")
+def test_metamodelo_cpp_cppprefixexpression_has_operator():
+    assert hasattr(Metamodelo_Cpp_CppPrefixExpression, "operator")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppPrefixExpression.__mro__:
+    for klass in Metamodelo_Cpp_CppPrefixExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -447,23 +533,23 @@ def test_metamodelo::cpp::cppprefixexpression_has_operator():
 
 
 
-def test_metamodelo::cpp::cpppostfixexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppPostfixExpression)
+def test_metamodelo_cpp_cpppostfixexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppPostfixExpression)
 
 
-def test_metamodelo::cpp::cpppostfixexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppPostfixExpression.__init__)
+def test_metamodelo_cpp_cpppostfixexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppPostfixExpression.__init__)
 
 
-def test_metamodelo::cpp::cpppostfixexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppPostfixExpression.__init__)
+def test_metamodelo_cpp_cpppostfixexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppPostfixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_metamodelo::cpp::cpppostfixexpression_has_operator():
-    assert hasattr(Metamodelo::Cpp::CppPostfixExpression, "operator")
+def test_metamodelo_cpp_cpppostfixexpression_has_operator():
+    assert hasattr(Metamodelo_Cpp_CppPostfixExpression, "operator")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppPostfixExpression.__mro__:
+    for klass in Metamodelo_Cpp_CppPostfixExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -471,23 +557,23 @@ def test_metamodelo::cpp::cpppostfixexpression_has_operator():
 
 
 
-def test_metamodelo::cpp::cppinfixexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppInfixExpression)
+def test_metamodelo_cpp_cppinfixexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppInfixExpression)
 
 
-def test_metamodelo::cpp::cppinfixexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppInfixExpression.__init__)
+def test_metamodelo_cpp_cppinfixexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppInfixExpression.__init__)
 
 
-def test_metamodelo::cpp::cppinfixexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppInfixExpression.__init__)
+def test_metamodelo_cpp_cppinfixexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppInfixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_metamodelo::cpp::cppinfixexpression_has_operator():
-    assert hasattr(Metamodelo::Cpp::CppInfixExpression, "operator")
+def test_metamodelo_cpp_cppinfixexpression_has_operator():
+    assert hasattr(Metamodelo_Cpp_CppInfixExpression, "operator")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppInfixExpression.__mro__:
+    for klass in Metamodelo_Cpp_CppInfixExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -509,23 +595,23 @@ def test_cppselectionstatement_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppifelsestatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppIfElseStatement)
+def test_metamodelo_cpp_cppifelsestatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppIfElseStatement)
 
 
-def test_metamodelo::cpp::cppifelsestatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppIfElseStatement.__init__)
+def test_metamodelo_cpp_cppifelsestatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppIfElseStatement.__init__)
 
 
-def test_metamodelo::cpp::cppifelsestatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppIfElseStatement.__init__)
+def test_metamodelo_cpp_cppifelsestatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppIfElseStatement.__init__)
     params = list(sig.parameters.keys())
     assert "inLine" in params, "Missing parameter 'inLine'"
 
-def test_metamodelo::cpp::cppifelsestatement_has_inLine():
-    assert hasattr(Metamodelo::Cpp::CppIfElseStatement, "inLine")
+def test_metamodelo_cpp_cppifelsestatement_has_inLine():
+    assert hasattr(Metamodelo_Cpp_CppIfElseStatement, "inLine")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppIfElseStatement.__mro__:
+    for klass in Metamodelo_Cpp_CppIfElseStatement.__mro__:
         if "inLine" in klass.__dict__:
             descriptor = klass.__dict__["inLine"]
             break
@@ -533,16 +619,16 @@ def test_metamodelo::cpp::cppifelsestatement_has_inLine():
 
 
 
-def test_metamodelo::cpp::cppifstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppIfStatement)
+def test_metamodelo_cpp_cppifstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppIfStatement)
 
 
-def test_metamodelo::cpp::cppifstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppIfStatement.__init__)
+def test_metamodelo_cpp_cppifstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppIfStatement.__init__)
 
 
-def test_metamodelo::cpp::cppifstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppIfStatement.__init__)
+def test_metamodelo_cpp_cppifstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppIfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -561,16 +647,16 @@ def test_cppmethodinvocation_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppsuperconstructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppSuperConstructorInvocation)
+def test_metamodelo_cpp_cppsuperconstructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppSuperConstructorInvocation)
 
 
-def test_metamodelo::cpp::cppsuperconstructorinvocation_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppSuperConstructorInvocation.__init__)
+def test_metamodelo_cpp_cppsuperconstructorinvocation_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppSuperConstructorInvocation.__init__)
 
 
-def test_metamodelo::cpp::cppsuperconstructorinvocation_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppSuperConstructorInvocation.__init__)
+def test_metamodelo_cpp_cppsuperconstructorinvocation_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppSuperConstructorInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -589,58 +675,58 @@ def test_cppjumpstatement_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppgotostatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppGotoStatement)
+def test_metamodelo_cpp_cppcontinuestatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppContinueStatement)
 
 
-def test_metamodelo::cpp::cppgotostatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppGotoStatement.__init__)
+def test_metamodelo_cpp_cppcontinuestatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppContinueStatement.__init__)
 
 
-def test_metamodelo::cpp::cppgotostatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppGotoStatement.__init__)
+def test_metamodelo_cpp_cppcontinuestatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppcontinuestatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppContinueStatement)
+def test_metamodelo_cpp_cppreturnstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppReturnStatement)
 
 
-def test_metamodelo::cpp::cppcontinuestatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppContinueStatement.__init__)
+def test_metamodelo_cpp_cppreturnstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppReturnStatement.__init__)
 
 
-def test_metamodelo::cpp::cppcontinuestatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppContinueStatement.__init__)
+def test_metamodelo_cpp_cppreturnstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppreturnstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppReturnStatement)
+def test_metamodelo_cpp_cppgotostatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppGotoStatement)
 
 
-def test_metamodelo::cpp::cppreturnstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppReturnStatement.__init__)
+def test_metamodelo_cpp_cppgotostatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppGotoStatement.__init__)
 
 
-def test_metamodelo::cpp::cppreturnstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppReturnStatement.__init__)
+def test_metamodelo_cpp_cppgotostatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppGotoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppbreakstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppBreakStatement)
+def test_metamodelo_cpp_cppbreakstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppBreakStatement)
 
 
-def test_metamodelo::cpp::cppbreakstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppBreakStatement.__init__)
+def test_metamodelo_cpp_cppbreakstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppBreakStatement.__init__)
 
 
-def test_metamodelo::cpp::cppbreakstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppBreakStatement.__init__)
+def test_metamodelo_cpp_cppbreakstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppBreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -659,44 +745,44 @@ def test_cppiterationstatement_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppforstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppForStatement)
+def test_metamodelo_cpp_cppforstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppForStatement)
 
 
-def test_metamodelo::cpp::cppforstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppForStatement.__init__)
+def test_metamodelo_cpp_cppforstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppForStatement.__init__)
 
 
-def test_metamodelo::cpp::cppforstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppForStatement.__init__)
+def test_metamodelo_cpp_cppforstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppdowhilestatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppDoWhileStatement)
+def test_metamodelo_cpp_cppdowhilestatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppDoWhileStatement)
 
 
-def test_metamodelo::cpp::cppdowhilestatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppDoWhileStatement.__init__)
+def test_metamodelo_cpp_cppdowhilestatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppDoWhileStatement.__init__)
 
 
-def test_metamodelo::cpp::cppdowhilestatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppDoWhileStatement.__init__)
+def test_metamodelo_cpp_cppdowhilestatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppDoWhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppwhilestatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppWhileStatement)
+def test_metamodelo_cpp_cppwhilestatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppWhileStatement)
 
 
-def test_metamodelo::cpp::cppwhilestatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppWhileStatement.__init__)
+def test_metamodelo_cpp_cppwhilestatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppWhileStatement.__init__)
 
 
-def test_metamodelo::cpp::cppwhilestatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppWhileStatement.__init__)
+def test_metamodelo_cpp_cppwhilestatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppWhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -715,329 +801,205 @@ def test_cppexpression_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppUnaryExpression)
+def test_metamodelo_cpp_cppcatchclause_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppCatchClause)
 
 
-def test_metamodelo::cpp::cppunaryexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppUnaryExpression.__init__)
+def test_metamodelo_cpp_cppcatchclause_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppCatchClause.__init__)
 
 
-def test_metamodelo::cpp::cppunaryexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppUnaryExpression.__init__)
+def test_metamodelo_cpp_cppcatchclause_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppCatchClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppbooleanliteral_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppBooleanLiteral)
+def test_metamodelo_cpp_cppselectionstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppSelectionStatement)
 
 
-def test_metamodelo::cpp::cppbooleanliteral_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppBooleanLiteral.__init__)
+def test_metamodelo_cpp_cppselectionstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppSelectionStatement.__init__)
 
 
-def test_metamodelo::cpp::cppbooleanliteral_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppBooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "booleanValue" in params, "Missing parameter 'booleanValue'"
-
-def test_metamodelo::cpp::cppbooleanliteral_has_booleanValue():
-    assert hasattr(Metamodelo::Cpp::CppBooleanLiteral, "booleanValue")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppBooleanLiteral.__mro__:
-        if "booleanValue" in klass.__dict__:
-            descriptor = klass.__dict__["booleanValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_metamodelo::cpp::cppbinaryexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppBinaryExpression)
-
-
-def test_metamodelo::cpp::cppbinaryexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppBinaryExpression.__init__)
-
-
-def test_metamodelo::cpp::cppbinaryexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppBinaryExpression.__init__)
+def test_metamodelo_cpp_cppselectionstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppSelectionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpptryexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppTryExpression)
+def test_metamodelo_cpp_cppfieldaccess_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppFieldAccess)
 
 
-def test_metamodelo::cpp::cpptryexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppTryExpression.__init__)
+def test_metamodelo_cpp_cppfieldaccess_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppFieldAccess.__init__)
 
 
-def test_metamodelo::cpp::cpptryexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppTryExpression.__init__)
+def test_metamodelo_cpp_cppfieldaccess_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppFieldAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppiterationstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppIterationStatement)
+def test_metamodelo_cpp_cppthrowexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppThrowExpression)
 
 
-def test_metamodelo::cpp::cppiterationstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppIterationStatement.__init__)
+def test_metamodelo_cpp_cppthrowexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppThrowExpression.__init__)
 
 
-def test_metamodelo::cpp::cppiterationstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppIterationStatement.__init__)
+def test_metamodelo_cpp_cppthrowexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppThrowExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppthisexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppThisExpression)
+def test_metamodelo_cpp_cppnullliteral_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppNullLiteral)
 
 
-def test_metamodelo::cpp::cppthisexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppThisExpression.__init__)
+def test_metamodelo_cpp_cppnullliteral_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppNullLiteral.__init__)
 
 
-def test_metamodelo::cpp::cppthisexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppThisExpression.__init__)
+def test_metamodelo_cpp_cppnullliteral_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppNullLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppthrowexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppThrowExpression)
+def test_metamodelo_cpp_cppparenthizedexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppParenthizedExpression)
 
 
-def test_metamodelo::cpp::cppthrowexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppThrowExpression.__init__)
+def test_metamodelo_cpp_cppparenthizedexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppParenthizedExpression.__init__)
 
 
-def test_metamodelo::cpp::cppthrowexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppThrowExpression.__init__)
+def test_metamodelo_cpp_cppparenthizedexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppParenthizedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppjumpstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppJumpStatement)
+def test_metamodelo_cpp_cppunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppUnaryExpression)
 
 
-def test_metamodelo::cpp::cppjumpstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppJumpStatement.__init__)
+def test_metamodelo_cpp_cppunaryexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppUnaryExpression.__init__)
 
 
-def test_metamodelo::cpp::cppjumpstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppJumpStatement.__init__)
+def test_metamodelo_cpp_cppunaryexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppUnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppswitchexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppSwitchExpression)
+def test_metamodelo_cpp_cppiterationstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppIterationStatement)
 
 
-def test_metamodelo::cpp::cppswitchexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppSwitchExpression.__init__)
+def test_metamodelo_cpp_cppiterationstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppIterationStatement.__init__)
 
 
-def test_metamodelo::cpp::cppswitchexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppSwitchExpression.__init__)
+def test_metamodelo_cpp_cppiterationstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppIterationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppfieldaccess_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppFieldAccess)
+def test_metamodelo_cpp_cppswitchexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppSwitchExpression)
 
 
-def test_metamodelo::cpp::cppfieldaccess_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppFieldAccess.__init__)
+def test_metamodelo_cpp_cppswitchexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppSwitchExpression.__init__)
 
 
-def test_metamodelo::cpp::cppfieldaccess_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppFieldAccess.__init__)
+def test_metamodelo_cpp_cppswitchexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppSwitchExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppnullliteral_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppNullLiteral)
+def test_metamodelo_cpp_cpparrayaccess_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppArrayAccess)
 
 
-def test_metamodelo::cpp::cppnullliteral_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppNullLiteral.__init__)
+def test_metamodelo_cpp_cpparrayaccess_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppArrayAccess.__init__)
 
 
-def test_metamodelo::cpp::cppnullliteral_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppNullLiteral.__init__)
+def test_metamodelo_cpp_cpparrayaccess_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppArrayAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppvariableaccess_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppVariableAccess)
+def test_metamodelo_cpp_cpptryexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppTryExpression)
 
 
-def test_metamodelo::cpp::cppvariableaccess_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppVariableAccess.__init__)
+def test_metamodelo_cpp_cpptryexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppTryExpression.__init__)
 
 
-def test_metamodelo::cpp::cppvariableaccess_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppVariableAccess.__init__)
+def test_metamodelo_cpp_cpptryexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppTryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppcastexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppCastExpression)
+def test_metamodelo_cpp_cppjumpstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppJumpStatement)
 
 
-def test_metamodelo::cpp::cppcastexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppCastExpression.__init__)
+def test_metamodelo_cpp_cppjumpstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppJumpStatement.__init__)
 
 
-def test_metamodelo::cpp::cppcastexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppCastExpression.__init__)
+def test_metamodelo_cpp_cppjumpstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppJumpStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppconstantexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppConstantExpression)
+def test_metamodelo_cpp_cppconstantexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppConstantExpression)
 
 
-def test_metamodelo::cpp::cppconstantexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppConstantExpression.__init__)
+def test_metamodelo_cpp_cppconstantexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppConstantExpression.__init__)
 
 
-def test_metamodelo::cpp::cppconstantexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppConstantExpression.__init__)
+def test_metamodelo_cpp_cppconstantexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppConstantExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppregexliteral_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppRegexLiteral)
+def test_metamodelo_cpp_cppnumberliteral_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppNumberLiteral)
 
 
-def test_metamodelo::cpp::cppregexliteral_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppRegexLiteral.__init__)
+def test_metamodelo_cpp_cppnumberliteral_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppNumberLiteral.__init__)
 
 
-def test_metamodelo::cpp::cppregexliteral_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppRegexLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "pattern" in params, "Missing parameter 'pattern'"
-    assert "options" in params, "Missing parameter 'options'"
-
-def test_metamodelo::cpp::cppregexliteral_has_pattern():
-    assert hasattr(Metamodelo::Cpp::CppRegexLiteral, "pattern")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppRegexLiteral.__mro__:
-        if "pattern" in klass.__dict__:
-            descriptor = klass.__dict__["pattern"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppregexliteral_has_options():
-    assert hasattr(Metamodelo::Cpp::CppRegexLiteral, "options")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppRegexLiteral.__mro__:
-        if "options" in klass.__dict__:
-            descriptor = klass.__dict__["options"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_metamodelo::cpp::cppcharacterliteral_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppCharacterLiteral)
-
-
-def test_metamodelo::cpp::cppcharacterliteral_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppCharacterLiteral.__init__)
-
-
-def test_metamodelo::cpp::cppcharacterliteral_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppCharacterLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "charValue" in params, "Missing parameter 'charValue'"
-
-def test_metamodelo::cpp::cppcharacterliteral_has_charValue():
-    assert hasattr(Metamodelo::Cpp::CppCharacterLiteral, "charValue")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppCharacterLiteral.__mro__:
-        if "charValue" in klass.__dict__:
-            descriptor = klass.__dict__["charValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_metamodelo::cpp::cppcase_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppCase)
-
-
-def test_metamodelo::cpp::cppcase_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppCase.__init__)
-
-
-def test_metamodelo::cpp::cppcase_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppdeclarationexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppDeclarationExpression)
-
-
-def test_metamodelo::cpp::cppdeclarationexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppDeclarationExpression.__init__)
-
-
-def test_metamodelo::cpp::cppdeclarationexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppDeclarationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppcatchclause_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppCatchClause)
-
-
-def test_metamodelo::cpp::cppcatchclause_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppCatchClause.__init__)
-
-
-def test_metamodelo::cpp::cppcatchclause_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppCatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppnumberliteral_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppNumberLiteral)
-
-
-def test_metamodelo::cpp::cppnumberliteral_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppNumberLiteral.__init__)
-
-
-def test_metamodelo::cpp::cppnumberliteral_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppNumberLiteral.__init__)
+def test_metamodelo_cpp_cppnumberliteral_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppNumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "token" in params, "Missing parameter 'token'"
 
-def test_metamodelo::cpp::cppnumberliteral_has_token():
-    assert hasattr(Metamodelo::Cpp::CppNumberLiteral, "token")
+def test_metamodelo_cpp_cppnumberliteral_has_token():
+    assert hasattr(Metamodelo_Cpp_CppNumberLiteral, "token")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppNumberLiteral.__mro__:
+    for klass in Metamodelo_Cpp_CppNumberLiteral.__mro__:
         if "token" in klass.__dict__:
             descriptor = klass.__dict__["token"]
             break
@@ -1045,79 +1007,169 @@ def test_metamodelo::cpp::cppnumberliteral_has_token():
 
 
 
-def test_metamodelo::cpp::cppparenthizedexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppParenthizedExpression)
+def test_metamodelo_cpp_cppblock_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppBlock)
 
 
-def test_metamodelo::cpp::cppparenthizedexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppParenthizedExpression.__init__)
+def test_metamodelo_cpp_cppblock_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppBlock.__init__)
 
 
-def test_metamodelo::cpp::cppparenthizedexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppParenthizedExpression.__init__)
+def test_metamodelo_cpp_cppblock_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpplabeledstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppLabeledStatement)
+def test_metamodelo_cpp_cppcharacterliteral_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppCharacterLiteral)
 
 
-def test_metamodelo::cpp::cpplabeledstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppLabeledStatement.__init__)
+def test_metamodelo_cpp_cppcharacterliteral_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppCharacterLiteral.__init__)
 
 
-def test_metamodelo::cpp::cpplabeledstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppLabeledStatement.__init__)
+def test_metamodelo_cpp_cppcharacterliteral_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppCharacterLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "charValue" in params, "Missing parameter 'charValue'"
+
+def test_metamodelo_cpp_cppcharacterliteral_has_charValue():
+    assert hasattr(Metamodelo_Cpp_CppCharacterLiteral, "charValue")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppCharacterLiteral.__mro__:
+        if "charValue" in klass.__dict__:
+            descriptor = klass.__dict__["charValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_metamodelo_cpp_cppdeclarationexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppDeclarationExpression)
+
+
+def test_metamodelo_cpp_cppdeclarationexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppDeclarationExpression.__init__)
+
+
+def test_metamodelo_cpp_cppdeclarationexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppDeclarationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpparrayaccess_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppArrayAccess)
+def test_metamodelo_cpp_cppcase_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppCase)
 
 
-def test_metamodelo::cpp::cpparrayaccess_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppArrayAccess.__init__)
+def test_metamodelo_cpp_cppcase_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppCase.__init__)
 
 
-def test_metamodelo::cpp::cpparrayaccess_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppArrayAccess.__init__)
+def test_metamodelo_cpp_cppcase_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppblock_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppBlock)
+def test_metamodelo_cpp_cppbooleanliteral_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppBooleanLiteral)
 
 
-def test_metamodelo::cpp::cppblock_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppBlock.__init__)
+def test_metamodelo_cpp_cppbooleanliteral_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppBooleanLiteral.__init__)
 
 
-def test_metamodelo::cpp::cppblock_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppBlock.__init__)
+def test_metamodelo_cpp_cppbooleanliteral_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppBooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "booleanValue" in params, "Missing parameter 'booleanValue'"
+
+def test_metamodelo_cpp_cppbooleanliteral_has_booleanValue():
+    assert hasattr(Metamodelo_Cpp_CppBooleanLiteral, "booleanValue")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppBooleanLiteral.__mro__:
+        if "booleanValue" in klass.__dict__:
+            descriptor = klass.__dict__["booleanValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_metamodelo_cpp_cpplabeledstatement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppLabeledStatement)
+
+
+def test_metamodelo_cpp_cpplabeledstatement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppLabeledStatement.__init__)
+
+
+def test_metamodelo_cpp_cpplabeledstatement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppLabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppstringliteral_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppStringLiteral)
+def test_metamodelo_cpp_cppvariableaccess_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppVariableAccess)
 
 
-def test_metamodelo::cpp::cppstringliteral_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppStringLiteral.__init__)
+def test_metamodelo_cpp_cppvariableaccess_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppVariableAccess.__init__)
 
 
-def test_metamodelo::cpp::cppstringliteral_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppStringLiteral.__init__)
+def test_metamodelo_cpp_cppvariableaccess_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppVariableAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cppbinaryexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppBinaryExpression)
+
+
+def test_metamodelo_cpp_cppbinaryexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppBinaryExpression.__init__)
+
+
+def test_metamodelo_cpp_cppbinaryexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppBinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cppthisexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppThisExpression)
+
+
+def test_metamodelo_cpp_cppthisexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppThisExpression.__init__)
+
+
+def test_metamodelo_cpp_cppthisexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppThisExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cppstringliteral_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppStringLiteral)
+
+
+def test_metamodelo_cpp_cppstringliteral_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppStringLiteral.__init__)
+
+
+def test_metamodelo_cpp_cppstringliteral_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppStringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "literalValue" in params, "Missing parameter 'literalValue'"
 
-def test_metamodelo::cpp::cppstringliteral_has_literalValue():
-    assert hasattr(Metamodelo::Cpp::CppStringLiteral, "literalValue")
+def test_metamodelo_cpp_cppstringliteral_has_literalValue():
+    assert hasattr(Metamodelo_Cpp_CppStringLiteral, "literalValue")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppStringLiteral.__mro__:
+    for klass in Metamodelo_Cpp_CppStringLiteral.__mro__:
         if "literalValue" in klass.__dict__:
             descriptor = klass.__dict__["literalValue"]
             break
@@ -1125,30 +1177,64 @@ def test_metamodelo::cpp::cppstringliteral_has_literalValue():
 
 
 
-def test_metamodelo::cpp::cppselectionstatement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppSelectionStatement)
+def test_metamodelo_cpp_cppcastexpression_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppCastExpression)
 
 
-def test_metamodelo::cpp::cppselectionstatement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppSelectionStatement.__init__)
+def test_metamodelo_cpp_cppcastexpression_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppCastExpression.__init__)
 
 
-def test_metamodelo::cpp::cppselectionstatement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppSelectionStatement.__init__)
+def test_metamodelo_cpp_cppcastexpression_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppCastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpparrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppArrayInitializer)
+def test_metamodelo_cpp_cppregexliteral_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppRegexLiteral)
 
 
-def test_metamodelo::cpp::cpparrayinitializer_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppArrayInitializer.__init__)
+def test_metamodelo_cpp_cppregexliteral_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppRegexLiteral.__init__)
 
 
-def test_metamodelo::cpp::cpparrayinitializer_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppArrayInitializer.__init__)
+def test_metamodelo_cpp_cppregexliteral_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppRegexLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "options" in params, "Missing parameter 'options'"
+    assert "pattern" in params, "Missing parameter 'pattern'"
+
+def test_metamodelo_cpp_cppregexliteral_has_options():
+    assert hasattr(Metamodelo_Cpp_CppRegexLiteral, "options")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppRegexLiteral.__mro__:
+        if "options" in klass.__dict__:
+            descriptor = klass.__dict__["options"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppregexliteral_has_pattern():
+    assert hasattr(Metamodelo_Cpp_CppRegexLiteral, "pattern")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppRegexLiteral.__mro__:
+        if "pattern" in klass.__dict__:
+            descriptor = klass.__dict__["pattern"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_metamodelo_cpp_cpparrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppArrayInitializer)
+
+
+def test_metamodelo_cpp_cpparrayinitializer_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppArrayInitializer.__init__)
+
+
+def test_metamodelo_cpp_cpparrayinitializer_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppArrayInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1167,16 +1253,16 @@ def test_cpptypedelement_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppvariabledeclarationgroup_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppVariableDeclarationGroup)
+def test_metamodelo_cpp_cppvariabledeclarationgroup_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppVariableDeclarationGroup)
 
 
-def test_metamodelo::cpp::cppvariabledeclarationgroup_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppVariableDeclarationGroup.__init__)
+def test_metamodelo_cpp_cppvariabledeclarationgroup_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppVariableDeclarationGroup.__init__)
 
 
-def test_metamodelo::cpp::cppvariabledeclarationgroup_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppVariableDeclarationGroup.__init__)
+def test_metamodelo_cpp_cppvariabledeclarationgroup_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppVariableDeclarationGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1209,30 +1295,30 @@ def test_cppvariabledeclaration_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppsinglevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppSingleVariableDeclaration)
+def test_metamodelo_cpp_cppsinglevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppSingleVariableDeclaration)
 
 
-def test_metamodelo::cpp::cppsinglevariabledeclaration_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppSingleVariableDeclaration.__init__)
+def test_metamodelo_cpp_cppsinglevariabledeclaration_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppSingleVariableDeclaration.__init__)
 
 
-def test_metamodelo::cpp::cppsinglevariabledeclaration_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppSingleVariableDeclaration.__init__)
+def test_metamodelo_cpp_cppsinglevariabledeclaration_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppSingleVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppvariabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppVariableDeclarationFragment)
+def test_metamodelo_cpp_cppvariabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppVariableDeclarationFragment)
 
 
-def test_metamodelo::cpp::cppvariabledeclarationfragment_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppVariableDeclarationFragment.__init__)
+def test_metamodelo_cpp_cppvariabledeclarationfragment_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppVariableDeclarationFragment.__init__)
 
 
-def test_metamodelo::cpp::cppvariabledeclarationfragment_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppVariableDeclarationFragment.__init__)
+def test_metamodelo_cpp_cppvariabledeclarationfragment_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppVariableDeclarationFragment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1251,44 +1337,44 @@ def test_cppabstractmethodinvocation_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppsupermethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppSuperMethodInvocation)
+def test_metamodelo_cpp_cppsupermethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppSuperMethodInvocation)
 
 
-def test_metamodelo::cpp::cppsupermethodinvocation_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppSuperMethodInvocation.__init__)
+def test_metamodelo_cpp_cppsupermethodinvocation_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppSuperMethodInvocation.__init__)
 
 
-def test_metamodelo::cpp::cppsupermethodinvocation_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppSuperMethodInvocation.__init__)
+def test_metamodelo_cpp_cppsupermethodinvocation_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppSuperMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppmethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppMethodInvocation)
+def test_metamodelo_cpp_cppmethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppMethodInvocation)
 
 
-def test_metamodelo::cpp::cppmethodinvocation_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppMethodInvocation.__init__)
+def test_metamodelo_cpp_cppmethodinvocation_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppMethodInvocation.__init__)
 
 
-def test_metamodelo::cpp::cppmethodinvocation_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppMethodInvocation.__init__)
+def test_metamodelo_cpp_cppmethodinvocation_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppabstractmethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppAbstractMethodInvocation)
+def test_metamodelo_cpp_cppabstractmethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppAbstractMethodInvocation)
 
 
-def test_metamodelo::cpp::cppabstractmethodinvocation_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppAbstractMethodInvocation.__init__)
+def test_metamodelo_cpp_cppabstractmethodinvocation_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppAbstractMethodInvocation.__init__)
 
 
-def test_metamodelo::cpp::cppabstractmethodinvocation_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppAbstractMethodInvocation.__init__)
+def test_metamodelo_cpp_cppabstractmethodinvocation_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppAbstractMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1307,77 +1393,77 @@ def test_cppmemberfunction_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppmethod_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppMethod)
+def test_metamodelo_cpp_cppmethod_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppMethod)
 
 
-def test_metamodelo::cpp::cppmethod_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppMethod.__init__)
+def test_metamodelo_cpp_cppmethod_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppMethod.__init__)
 
 
-def test_metamodelo::cpp::cppmethod_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppMethod.__init__)
+def test_metamodelo_cpp_cppmethod_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppMethod.__init__)
     params = list(sig.parameters.keys())
-    assert "isFinal" in params, "Missing parameter 'isFinal'"
-    assert "isVirtual" in params, "Missing parameter 'isVirtual'"
     assert "isConst" in params, "Missing parameter 'isConst'"
     assert "isPureVirtual" in params, "Missing parameter 'isPureVirtual'"
+    assert "isVirtual" in params, "Missing parameter 'isVirtual'"
+    assert "isFinal" in params, "Missing parameter 'isFinal'"
 
-def test_metamodelo::cpp::cppmethod_has_isFinal():
-    assert hasattr(Metamodelo::Cpp::CppMethod, "isFinal")
+def test_metamodelo_cpp_cppmethod_has_isConst():
+    assert hasattr(Metamodelo_Cpp_CppMethod, "isConst")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppMethod.__mro__:
-        if "isFinal" in klass.__dict__:
-            descriptor = klass.__dict__["isFinal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppmethod_has_isVirtual():
-    assert hasattr(Metamodelo::Cpp::CppMethod, "isVirtual")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppMethod.__mro__:
-        if "isVirtual" in klass.__dict__:
-            descriptor = klass.__dict__["isVirtual"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppmethod_has_isConst():
-    assert hasattr(Metamodelo::Cpp::CppMethod, "isConst")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppMethod.__mro__:
+    for klass in Metamodelo_Cpp_CppMethod.__mro__:
         if "isConst" in klass.__dict__:
             descriptor = klass.__dict__["isConst"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppmethod_has_isPureVirtual():
-    assert hasattr(Metamodelo::Cpp::CppMethod, "isPureVirtual")
+def test_metamodelo_cpp_cppmethod_has_isPureVirtual():
+    assert hasattr(Metamodelo_Cpp_CppMethod, "isPureVirtual")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppMethod.__mro__:
+    for klass in Metamodelo_Cpp_CppMethod.__mro__:
         if "isPureVirtual" in klass.__dict__:
             descriptor = klass.__dict__["isPureVirtual"]
             break
     assert isinstance(descriptor, property)
 
+def test_metamodelo_cpp_cppmethod_has_isVirtual():
+    assert hasattr(Metamodelo_Cpp_CppMethod, "isVirtual")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppMethod.__mro__:
+        if "isVirtual" in klass.__dict__:
+            descriptor = klass.__dict__["isVirtual"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppmethod_has_isFinal():
+    assert hasattr(Metamodelo_Cpp_CppMethod, "isFinal")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppMethod.__mro__:
+        if "isFinal" in klass.__dict__:
+            descriptor = klass.__dict__["isFinal"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metamodelo::cpp::cppdestructor_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppDestructor)
+
+def test_metamodelo_cpp_cppdestructor_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppDestructor)
 
 
-def test_metamodelo::cpp::cppdestructor_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppDestructor.__init__)
+def test_metamodelo_cpp_cppdestructor_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppDestructor.__init__)
 
 
-def test_metamodelo::cpp::cppdestructor_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppDestructor.__init__)
+def test_metamodelo_cpp_cppdestructor_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppDestructor.__init__)
     params = list(sig.parameters.keys())
     assert "isVirtual" in params, "Missing parameter 'isVirtual'"
 
-def test_metamodelo::cpp::cppdestructor_has_isVirtual():
-    assert hasattr(Metamodelo::Cpp::CppDestructor, "isVirtual")
+def test_metamodelo_cpp_cppdestructor_has_isVirtual():
+    assert hasattr(Metamodelo_Cpp_CppDestructor, "isVirtual")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppDestructor.__mro__:
+    for klass in Metamodelo_Cpp_CppDestructor.__mro__:
         if "isVirtual" in klass.__dict__:
             descriptor = klass.__dict__["isVirtual"]
             break
@@ -1385,16 +1471,16 @@ def test_metamodelo::cpp::cppdestructor_has_isVirtual():
 
 
 
-def test_metamodelo::cpp::cppconstructor_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppConstructor)
+def test_metamodelo_cpp_cppconstructor_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppConstructor)
 
 
-def test_metamodelo::cpp::cppconstructor_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppConstructor.__init__)
+def test_metamodelo_cpp_cppconstructor_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppConstructor.__init__)
 
 
-def test_metamodelo::cpp::cppconstructor_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppConstructor.__init__)
+def test_metamodelo_cpp_cppconstructor_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1413,30 +1499,30 @@ def test_cppfunction_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppMemberFunction)
+def test_metamodelo_cpp_cppmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppMemberFunction)
 
 
-def test_metamodelo::cpp::cppmemberfunction_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppMemberFunction.__init__)
+def test_metamodelo_cpp_cppmemberfunction_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppMemberFunction.__init__)
 
 
-def test_metamodelo::cpp::cppmemberfunction_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppMemberFunction.__init__)
+def test_metamodelo_cpp_cppmemberfunction_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppMemberFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpptypedelement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppTypedElement)
+def test_metamodelo_cpp_cpptypedelement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppTypedElement)
 
 
-def test_metamodelo::cpp::cpptypedelement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppTypedElement.__init__)
+def test_metamodelo_cpp_cpptypedelement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppTypedElement.__init__)
 
 
-def test_metamodelo::cpp::cpptypedelement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppTypedElement.__init__)
+def test_metamodelo_cpp_cpptypedelement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppTypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1455,55 +1541,55 @@ def test_cppclassifier_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppclass_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppClass)
+def test_metamodelo_cpp_cppclass_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppClass)
 
 
-def test_metamodelo::cpp::cppclass_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppClass.__init__)
+def test_metamodelo_cpp_cppclass_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppClass.__init__)
 
 
-def test_metamodelo::cpp::cppclass_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppClass.__init__)
+def test_metamodelo_cpp_cppclass_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppClass.__init__)
     params = list(sig.parameters.keys())
-    assert "isFinal" in params, "Missing parameter 'isFinal'"
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
     assert "classkey" in params, "Missing parameter 'classkey'"
+    assert "isFinal" in params, "Missing parameter 'isFinal'"
     assert "isGeneric" in params, "Missing parameter 'isGeneric'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_metamodelo::cpp::cppclass_has_isFinal():
-    assert hasattr(Metamodelo::Cpp::CppClass, "isFinal")
+def test_metamodelo_cpp_cppclass_has_classkey():
+    assert hasattr(Metamodelo_Cpp_CppClass, "classkey")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppClass.__mro__:
-        if "isFinal" in klass.__dict__:
-            descriptor = klass.__dict__["isFinal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppclass_has_isAbstract():
-    assert hasattr(Metamodelo::Cpp::CppClass, "isAbstract")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppClass.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppclass_has_classkey():
-    assert hasattr(Metamodelo::Cpp::CppClass, "classkey")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppClass.__mro__:
+    for klass in Metamodelo_Cpp_CppClass.__mro__:
         if "classkey" in klass.__dict__:
             descriptor = klass.__dict__["classkey"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppclass_has_isGeneric():
-    assert hasattr(Metamodelo::Cpp::CppClass, "isGeneric")
+def test_metamodelo_cpp_cppclass_has_isFinal():
+    assert hasattr(Metamodelo_Cpp_CppClass, "isFinal")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppClass.__mro__:
+    for klass in Metamodelo_Cpp_CppClass.__mro__:
+        if "isFinal" in klass.__dict__:
+            descriptor = klass.__dict__["isFinal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppclass_has_isGeneric():
+    assert hasattr(Metamodelo_Cpp_CppClass, "isGeneric")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppClass.__mro__:
         if "isGeneric" in klass.__dict__:
             descriptor = klass.__dict__["isGeneric"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppclass_has_isAbstract():
+    assert hasattr(Metamodelo_Cpp_CppClass, "isAbstract")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppClass.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
 
@@ -1523,142 +1609,142 @@ def test_cppprimitivetype_constructor_args():
 
 
 
-def test_metamodelo::cpp::cpplongtype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppLongType)
+def test_metamodelo_cpp_cppfloattype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppFloatType)
 
 
-def test_metamodelo::cpp::cpplongtype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppLongType.__init__)
+def test_metamodelo_cpp_cppfloattype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppFloatType.__init__)
 
 
-def test_metamodelo::cpp::cpplongtype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppLongType.__init__)
+def test_metamodelo_cpp_cppfloattype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppFloatType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppunsignedtype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppUnsignedType)
+def test_metamodelo_cpp_cppunsignedtype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppUnsignedType)
 
 
-def test_metamodelo::cpp::cppunsignedtype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppUnsignedType.__init__)
+def test_metamodelo_cpp_cppunsignedtype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppUnsignedType.__init__)
 
 
-def test_metamodelo::cpp::cppunsignedtype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppUnsignedType.__init__)
+def test_metamodelo_cpp_cppunsignedtype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppUnsignedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppfloattype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppFloatType)
+def test_metamodelo_cpp_cppvoidtype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppVoidType)
 
 
-def test_metamodelo::cpp::cppfloattype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppFloatType.__init__)
+def test_metamodelo_cpp_cppvoidtype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppVoidType.__init__)
 
 
-def test_metamodelo::cpp::cppfloattype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppFloatType.__init__)
+def test_metamodelo_cpp_cppvoidtype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppVoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppvoidtype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppVoidType)
+def test_metamodelo_cpp_cppsignedtype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppSignedType)
 
 
-def test_metamodelo::cpp::cppvoidtype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppVoidType.__init__)
+def test_metamodelo_cpp_cppsignedtype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppSignedType.__init__)
 
 
-def test_metamodelo::cpp::cppvoidtype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppVoidType.__init__)
+def test_metamodelo_cpp_cppsignedtype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppSignedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppsignedtype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppSignedType)
+def test_metamodelo_cpp_cpplongtype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppLongType)
 
 
-def test_metamodelo::cpp::cppsignedtype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppSignedType.__init__)
+def test_metamodelo_cpp_cpplongtype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppLongType.__init__)
 
 
-def test_metamodelo::cpp::cppsignedtype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppSignedType.__init__)
+def test_metamodelo_cpp_cpplongtype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppLongType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppshorttype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppShortType)
+def test_metamodelo_cpp_cppdoubletype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppDoubleType)
 
 
-def test_metamodelo::cpp::cppshorttype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppShortType.__init__)
+def test_metamodelo_cpp_cppdoubletype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppDoubleType.__init__)
 
 
-def test_metamodelo::cpp::cppshorttype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppShortType.__init__)
+def test_metamodelo_cpp_cppdoubletype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppDoubleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppdoubletype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppDoubleType)
+def test_metamodelo_cpp_cppshorttype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppShortType)
 
 
-def test_metamodelo::cpp::cppdoubletype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppDoubleType.__init__)
+def test_metamodelo_cpp_cppshorttype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppShortType.__init__)
 
 
-def test_metamodelo::cpp::cppdoubletype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppDoubleType.__init__)
+def test_metamodelo_cpp_cppshorttype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppShortType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppchartype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppCharType)
+def test_metamodelo_cpp_cppchartype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppCharType)
 
 
-def test_metamodelo::cpp::cppchartype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppCharType.__init__)
+def test_metamodelo_cpp_cppchartype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppCharType.__init__)
 
 
-def test_metamodelo::cpp::cppchartype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppCharType.__init__)
+def test_metamodelo_cpp_cppchartype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppCharType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppinttype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppIntType)
+def test_metamodelo_cpp_cppinttype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppIntType)
 
 
-def test_metamodelo::cpp::cppinttype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppIntType.__init__)
+def test_metamodelo_cpp_cppinttype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppIntType.__init__)
 
 
-def test_metamodelo::cpp::cppinttype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppIntType.__init__)
+def test_metamodelo_cpp_cppinttype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppIntType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppbooleantype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppBooleanType)
+def test_metamodelo_cpp_cppbooleantype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppBooleanType)
 
 
-def test_metamodelo::cpp::cppbooleantype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppBooleanType.__init__)
+def test_metamodelo_cpp_cppbooleantype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppBooleanType.__init__)
 
 
-def test_metamodelo::cpp::cppbooleantype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppBooleanType.__init__)
+def test_metamodelo_cpp_cppbooleantype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppBooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1677,43 +1763,105 @@ def test_cpptype_constructor_args():
 
 
 
-def test_metamodelo::cpp::cppfunction_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppFunction)
+def test_metamodelo_cpp_cppvariable_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppVariable)
 
 
-def test_metamodelo::cpp::cppfunction_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppFunction.__init__)
+def test_metamodelo_cpp_cppvariable_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppVariable.__init__)
 
 
-def test_metamodelo::cpp::cppfunction_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppFunction.__init__)
+def test_metamodelo_cpp_cppvariable_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppVariable.__init__)
     params = list(sig.parameters.keys())
-    assert "isInline" in params, "Missing parameter 'isInline'"
-    assert "isVarArg" in params, "Missing parameter 'isVarArg'"
-    assert "linkage" in params, "Missing parameter 'linkage'"
+    assert "isConst" in params, "Missing parameter 'isConst'"
+    assert "storage" in params, "Missing parameter 'storage'"
 
-def test_metamodelo::cpp::cppfunction_has_isInline():
-    assert hasattr(Metamodelo::Cpp::CppFunction, "isInline")
+def test_metamodelo_cpp_cppvariable_has_isConst():
+    assert hasattr(Metamodelo_Cpp_CppVariable, "isConst")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppFunction.__mro__:
-        if "isInline" in klass.__dict__:
-            descriptor = klass.__dict__["isInline"]
+    for klass in Metamodelo_Cpp_CppVariable.__mro__:
+        if "isConst" in klass.__dict__:
+            descriptor = klass.__dict__["isConst"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppfunction_has_isVarArg():
-    assert hasattr(Metamodelo::Cpp::CppFunction, "isVarArg")
+def test_metamodelo_cpp_cppvariable_has_storage():
+    assert hasattr(Metamodelo_Cpp_CppVariable, "storage")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppFunction.__mro__:
+    for klass in Metamodelo_Cpp_CppVariable.__mro__:
+        if "storage" in klass.__dict__:
+            descriptor = klass.__dict__["storage"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_metamodelo_cpp_cppenum_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppEnum)
+
+
+def test_metamodelo_cpp_cppenum_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppEnum.__init__)
+
+
+def test_metamodelo_cpp_cppenum_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppEnum.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cppclassifier_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppClassifier)
+
+
+def test_metamodelo_cpp_cppclassifier_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppClassifier.__init__)
+
+
+def test_metamodelo_cpp_cppclassifier_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metamodelo_cpp_cppfunction_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppFunction)
+
+
+def test_metamodelo_cpp_cppfunction_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppFunction.__init__)
+
+
+def test_metamodelo_cpp_cppfunction_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppFunction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isVarArg" in params, "Missing parameter 'isVarArg'"
+    assert "isInline" in params, "Missing parameter 'isInline'"
+    assert "linkage" in params, "Missing parameter 'linkage'"
+
+def test_metamodelo_cpp_cppfunction_has_isVarArg():
+    assert hasattr(Metamodelo_Cpp_CppFunction, "isVarArg")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppFunction.__mro__:
         if "isVarArg" in klass.__dict__:
             descriptor = klass.__dict__["isVarArg"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodelo::cpp::cppfunction_has_linkage():
-    assert hasattr(Metamodelo::Cpp::CppFunction, "linkage")
+def test_metamodelo_cpp_cppfunction_has_isInline():
+    assert hasattr(Metamodelo_Cpp_CppFunction, "isInline")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppFunction.__mro__:
+    for klass in Metamodelo_Cpp_CppFunction.__mro__:
+        if "isInline" in klass.__dict__:
+            descriptor = klass.__dict__["isInline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodelo_cpp_cppfunction_has_linkage():
+    assert hasattr(Metamodelo_Cpp_CppFunction, "linkage")
+    descriptor = None
+    for klass in Metamodelo_Cpp_CppFunction.__mro__:
         if "linkage" in klass.__dict__:
             descriptor = klass.__dict__["linkage"]
             break
@@ -1721,229 +1869,81 @@ def test_metamodelo::cpp::cppfunction_has_linkage():
 
 
 
-def test_metamodelo::cpp::cppclassifier_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppClassifier)
+def test_metamodelo_cpp_cppprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppPrimitiveType)
 
 
-def test_metamodelo::cpp::cppclassifier_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppClassifier.__init__)
+def test_metamodelo_cpp_cppprimitivetype_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppPrimitiveType.__init__)
 
 
-def test_metamodelo::cpp::cppclassifier_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppClassifier.__init__)
+def test_metamodelo_cpp_cppprimitivetype_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppPrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppPrimitiveType)
+def test_metamodelo_cpp_cpptypeparameter_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppTypeParameter)
 
 
-def test_metamodelo::cpp::cppprimitivetype_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppPrimitiveType.__init__)
+def test_metamodelo_cpp_cpptypeparameter_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppTypeParameter.__init__)
 
 
-def test_metamodelo::cpp::cppprimitivetype_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppPrimitiveType.__init__)
+def test_metamodelo_cpp_cpptypeparameter_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppTypeParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpptypeparameter_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppTypeParameter)
+def test_metamodelo_cpp_cpptypeaccess_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppTypeAccess)
 
 
-def test_metamodelo::cpp::cpptypeparameter_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppTypeParameter.__init__)
+def test_metamodelo_cpp_cpptypeaccess_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppTypeAccess.__init__)
 
 
-def test_metamodelo::cpp::cpptypeparameter_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppTypeParameter.__init__)
+def test_metamodelo_cpp_cpptypeaccess_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppTypeAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cpptypeaccess_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppTypeAccess)
+def test_metamodelo_cpp_cppimportdeclaration_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppImportDeclaration)
 
 
-def test_metamodelo::cpp::cpptypeaccess_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppTypeAccess.__init__)
+def test_metamodelo_cpp_cppimportdeclaration_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppImportDeclaration.__init__)
 
 
-def test_metamodelo::cpp::cpptypeaccess_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppTypeAccess.__init__)
+def test_metamodelo_cpp_cppimportdeclaration_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppImportDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodelo::cpp::cppimportdeclaration_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppImportDeclaration)
+def test_metamodelo_cpp_cppnamedelement_is_not_abstract():
+    assert not inspect.isabstract(Metamodelo_Cpp_CppNamedElement)
 
 
-def test_metamodelo::cpp::cppimportdeclaration_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppImportDeclaration.__init__)
+def test_metamodelo_cpp_cppnamedelement_constructor_exists():
+    assert callable(Metamodelo_Cpp_CppNamedElement.__init__)
 
 
-def test_metamodelo::cpp::cppimportdeclaration_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppImportDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppnamedelement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppNamedElement)
-
-
-def test_metamodelo::cpp::cppnamedelement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppNamedElement.__init__)
-
-
-def test_metamodelo::cpp::cppnamedelement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppNamedElement.__init__)
+def test_metamodelo_cpp_cppnamedelement_constructor_args():
+    sig = inspect.signature(Metamodelo_Cpp_CppNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodelo::cpp::cppnamedelement_has_name():
-    assert hasattr(Metamodelo::Cpp::CppNamedElement, "name")
+def test_metamodelo_cpp_cppnamedelement_has_name():
+    assert hasattr(Metamodelo_Cpp_CppNamedElement, "name")
     descriptor = None
-    for klass in Metamodelo::Cpp::CppNamedElement.__mro__:
+    for klass in Metamodelo_Cpp_CppNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_metamodelo::cpp::cppmodelelement_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppModelElement)
-
-
-def test_metamodelo::cpp::cppmodelelement_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppModelElement.__init__)
-
-
-def test_metamodelo::cpp::cppmodelelement_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppcomment_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppComment)
-
-
-def test_metamodelo::cpp::cppcomment_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppComment.__init__)
-
-
-def test_metamodelo::cpp::cppcomment_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppComment.__init__)
-    params = list(sig.parameters.keys())
-    assert "multiLine" in params, "Missing parameter 'multiLine'"
-    assert "singleLine" in params, "Missing parameter 'singleLine'"
-    assert "content" in params, "Missing parameter 'content'"
-
-def test_metamodelo::cpp::cppcomment_has_multiLine():
-    assert hasattr(Metamodelo::Cpp::CppComment, "multiLine")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppComment.__mro__:
-        if "multiLine" in klass.__dict__:
-            descriptor = klass.__dict__["multiLine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppcomment_has_singleLine():
-    assert hasattr(Metamodelo::Cpp::CppComment, "singleLine")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppComment.__mro__:
-        if "singleLine" in klass.__dict__:
-            descriptor = klass.__dict__["singleLine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppcomment_has_content():
-    assert hasattr(Metamodelo::Cpp::CppComment, "content")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppComment.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_metamodelo::cpp::cppexpression_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppExpression)
-
-
-def test_metamodelo::cpp::cppexpression_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppExpression.__init__)
-
-
-def test_metamodelo::cpp::cppexpression_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppenumconstructor_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppEnumConstructor)
-
-
-def test_metamodelo::cpp::cppenumconstructor_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppEnumConstructor.__init__)
-
-
-def test_metamodelo::cpp::cppenumconstructor_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppEnumConstructor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppenum_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppEnum)
-
-
-def test_metamodelo::cpp::cppenum_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppEnum.__init__)
-
-
-def test_metamodelo::cpp::cppenum_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppEnum.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_metamodelo::cpp::cppvariable_is_not_abstract():
-    assert not inspect.isabstract(Metamodelo::Cpp::CppVariable)
-
-
-def test_metamodelo::cpp::cppvariable_constructor_exists():
-    assert callable(Metamodelo::Cpp::CppVariable.__init__)
-
-
-def test_metamodelo::cpp::cppvariable_constructor_args():
-    sig = inspect.signature(Metamodelo::Cpp::CppVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "isConst" in params, "Missing parameter 'isConst'"
-    assert "storage" in params, "Missing parameter 'storage'"
-
-def test_metamodelo::cpp::cppvariable_has_isConst():
-    assert hasattr(Metamodelo::Cpp::CppVariable, "isConst")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppVariable.__mro__:
-        if "isConst" in klass.__dict__:
-            descriptor = klass.__dict__["isConst"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodelo::cpp::cppvariable_has_storage():
-    assert hasattr(Metamodelo::Cpp::CppVariable, "storage")
-    descriptor = None
-    for klass in Metamodelo::Cpp::CppVariable.__mro__:
-        if "storage" in klass.__dict__:
-            descriptor = klass.__dict__["storage"]
             break
     assert isinstance(descriptor, property)
 
@@ -1962,66 +1962,21 @@ def test_cpplinkagespecifier_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CppLinkageSpecifier"
 
-def test_cppqualifiertype_exists():
+def test_cppclasskey_exists():
     # Check that the Enumeration exists
-    assert CppQualifierType is not None
+    assert CppClassKey is not None
 
-def test_cppqualifiertype_has_all_literals():
+def test_cppclasskey_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CppQualifierType]
+    enum_literals = [lit.name for lit in CppClassKey]
     expected_literals = [
-        "VOLATILE",
-        "CONST",
-        "ATOMIC",
-        "RESTRICT",
+        "UNION",
+        "CLASS",
+        "STRUCT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CppQualifierType"
-
-def test_cppassignmentoperator_exists():
-    # Check that the Enumeration exists
-    assert CppAssignmentOperator is not None
-
-def test_cppassignmentoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CppAssignmentOperator]
-    expected_literals = [
-        "OR_ASSIGN",
-        "ASSIGN",
-        "PLUS_ASSIGN",
-        "MODULO_ASSIGN",
-        "AND_ASSIGN",
-        "MINUS_ASSIGN",
-        "SHIFT_LEFT_ASSIGN",
-        "SHIFT_RIGHT_ASSIGN",
-        "DIVISSION_ASSIGN",
-        "XOR_ASSIGN",
-        "TIMES_ASSIGN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CppAssignmentOperator"
-
-def test_cppstoragetype_exists():
-    # Check that the Enumeration exists
-    assert CppStorageType is not None
-
-def test_cppstoragetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CppStorageType]
-    expected_literals = [
-        "REGISTER",
-        "MUTABLE",
-        "TYPEDEF",
-        "STATIC",
-        "THREAD_LOCAL",
-        "AUTO",
-        "EXTERN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CppStorageType"
+        assert lit_name in enum_literals, f"Literal '' missing in CppClassKey"
 
 def test_cppoperator_exists():
     # Check that the Enumeration exists
@@ -2031,65 +1986,49 @@ def test_cppoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CppOperator]
     expected_literals = [
-        "LESS_THAN",
-        "XOR_EQ",
-        "TIMES",
-        "BIT_AND",
-        "SHIFT_LEFT",
+        "PLUS",
         "SHIFT_RIGHT",
-        "NOT_EQUALS",
-        "BIT_OR",
+        "TIMES",
         "GREATER_EQUALS",
+        "LESS_THAN",
+        "REMAINDER",
+        "EQUALS",
+        "SHIFT_LEFT",
+        "XOR_EQ",
         "XOR",
-        "GREATER_THAN",
+        "OR",
+        "BIT_OR",
         "LESS_EQUALS",
         "MINUS",
-        "DIVISION",
-        "OR",
-        "EQUALS",
-        "REMAINDER",
-        "PLUS",
+        "BIT_AND",
+        "GREATER_THAN",
         "AND",
+        "NOT_EQUALS",
+        "DIVISION",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CppOperator"
 
-def test_cppunaryoperator_exists():
+def test_cppstoragetype_exists():
     # Check that the Enumeration exists
-    assert CppUnaryOperator is not None
+    assert CppStorageType is not None
 
-def test_cppunaryoperator_has_all_literals():
+def test_cppstoragetype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CppUnaryOperator]
+    enum_literals = [lit.name for lit in CppStorageType]
     expected_literals = [
-        "NOT",
-        "MINUS",
-        "ASTERISK",
-        "PLUS",
-        "INCREMENT",
-        "AMPERSAND",
-        "DECREMENT",
-        "BIT_NOT",
+        "TYPEDEF",
+        "STATIC",
+        "AUTO",
+        "EXTERN",
+        "REGISTER",
+        "THREAD_LOCAL",
+        "MUTABLE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CppUnaryOperator"
-
-def test_cpppostfixoperator_exists():
-    # Check that the Enumeration exists
-    assert CppPostfixOperator is not None
-
-def test_cpppostfixoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CppPostfixOperator]
-    expected_literals = [
-        "DECREMENT",
-        "INCREMENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CppPostfixOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in CppStorageType"
 
 def test_cppaccessspecifier_exists():
     # Check that the Enumeration exists
@@ -2107,21 +2046,61 @@ def test_cppaccessspecifier_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CppAccessSpecifier"
 
-def test_cppclasskey_exists():
+def test_cpppostfixoperator_exists():
     # Check that the Enumeration exists
-    assert CppClassKey is not None
+    assert CppPostfixOperator is not None
 
-def test_cppclasskey_has_all_literals():
+def test_cpppostfixoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CppClassKey]
+    enum_literals = [lit.name for lit in CppPostfixOperator]
     expected_literals = [
-        "UNION",
-        "CLASS",
-        "STRUCT",
+        "INCREMENT",
+        "DECREMENT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CppClassKey"
+        assert lit_name in enum_literals, f"Literal '' missing in CppPostfixOperator"
+
+def test_cppqualifiertype_exists():
+    # Check that the Enumeration exists
+    assert CppQualifierType is not None
+
+def test_cppqualifiertype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CppQualifierType]
+    expected_literals = [
+        "ATOMIC",
+        "RESTRICT",
+        "CONST",
+        "VOLATILE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CppQualifierType"
+
+def test_cppassignmentoperator_exists():
+    # Check that the Enumeration exists
+    assert CppAssignmentOperator is not None
+
+def test_cppassignmentoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CppAssignmentOperator]
+    expected_literals = [
+        "DIVISSION_ASSIGN",
+        "PLUS_ASSIGN",
+        "SHIFT_RIGHT_ASSIGN",
+        "MINUS_ASSIGN",
+        "MODULO_ASSIGN",
+        "ASSIGN",
+        "TIMES_ASSIGN",
+        "XOR_ASSIGN",
+        "AND_ASSIGN",
+        "SHIFT_LEFT_ASSIGN",
+        "OR_ASSIGN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CppAssignmentOperator"
 
 def test_cppvartype_exists():
     # Check that the Enumeration exists
@@ -2139,6 +2118,27 @@ def test_cppvartype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CppVarType"
 
+def test_cppunaryoperator_exists():
+    # Check that the Enumeration exists
+    assert CppUnaryOperator is not None
+
+def test_cppunaryoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CppUnaryOperator]
+    expected_literals = [
+        "BIT_NOT",
+        "DECREMENT",
+        "AMPERSAND",
+        "PLUS",
+        "ASTERISK",
+        "MINUS",
+        "NOT",
+        "INCREMENT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CppUnaryOperator"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -2151,16 +2151,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Metamodelo_Cpp_CppModelElement_strategy = st.builds(
+    Metamodelo_Cpp_CppModelElement,
+)
 CppFieldContainer_strategy = st.builds(
     CppFieldContainer,
 )
-Metamodelo::Cpp::CppModel_strategy = st.builds(
-    Metamodelo::Cpp::CppModel,
+Metamodelo_Cpp_CppModel_strategy = st.builds(
+    Metamodelo_Cpp_CppModel,
     name=
         safe_text,
-    targetFolder=
-        safe_text,
     sourceFolder=
+        safe_text,
+    targetFolder=
         safe_text
 )
 CppPathReferentiable_strategy = st.builds(
@@ -2169,210 +2172,225 @@ CppPathReferentiable_strategy = st.builds(
 CppModelElement_strategy = st.builds(
     CppModelElement,
 )
-Metamodelo::Cpp::CppPathReference_strategy = st.builds(
-    Metamodelo::Cpp::CppPathReference,
+Metamodelo_Cpp_CppComment_strategy = st.builds(
+    Metamodelo_Cpp_CppComment,
+    content=
+        safe_text,
+    multiLine=
+        st.booleans(),
+    singleLine=
+        st.booleans()
 )
-Metamodelo::Cpp::CppPackage_strategy = st.builds(
-    Metamodelo::Cpp::CppPackage,
+Metamodelo_Cpp_CppExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppExpression,
+)
+Metamodelo_Cpp_CppPathReference_strategy = st.builds(
+    Metamodelo_Cpp_CppPathReference,
+)
+Metamodelo_Cpp_CppPackage_strategy = st.builds(
+    Metamodelo_Cpp_CppPackage,
 )
 CppNamedElement_strategy = st.builds(
     CppNamedElement,
 )
-Metamodelo::Cpp::CppPathReferentiable_strategy = st.builds(
-    Metamodelo::Cpp::CppPathReferentiable,
+Metamodelo_Cpp_CppEnumConstructor_strategy = st.builds(
+    Metamodelo_Cpp_CppEnumConstructor,
 )
-Metamodelo::Cpp::CppClassFile_strategy = st.builds(
-    Metamodelo::Cpp::CppClassFile,
+Metamodelo_Cpp_CppPathReferentiable_strategy = st.builds(
+    Metamodelo_Cpp_CppPathReferentiable,
 )
-Metamodelo::Cpp::CppType_strategy = st.builds(
-    Metamodelo::Cpp::CppType,
+Metamodelo_Cpp_CppClassFile_strategy = st.builds(
+    Metamodelo_Cpp_CppClassFile,
 )
-Metamodelo::Cpp::CppVariableDeclaration_strategy = st.builds(
-    Metamodelo::Cpp::CppVariableDeclaration,
+Metamodelo_Cpp_CppType_strategy = st.builds(
+    Metamodelo_Cpp_CppType,
+)
+Metamodelo_Cpp_CppVariableDeclaration_strategy = st.builds(
+    Metamodelo_Cpp_CppVariableDeclaration,
     vartype=
         safe_text,
     isArray=
         st.booleans()
 )
-Metamodelo::Cpp::CppFieldContainer_strategy = st.builds(
-    Metamodelo::Cpp::CppFieldContainer,
+Metamodelo_Cpp_CppFieldContainer_strategy = st.builds(
+    Metamodelo_Cpp_CppFieldContainer,
 )
-Metamodelo::Cpp::CppField_strategy = st.builds(
-    Metamodelo::Cpp::CppField,
+Metamodelo_Cpp_CppField_strategy = st.builds(
+    Metamodelo_Cpp_CppField,
     accessSpecifier=
         safe_text
 )
 CppBinaryExpression_strategy = st.builds(
     CppBinaryExpression,
 )
-Metamodelo::Cpp::CppAssignamentStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppAssignamentStatement,
+Metamodelo_Cpp_CppAssignamentStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppAssignamentStatement,
     operator=
         safe_text
 )
 CppUnaryExpression_strategy = st.builds(
     CppUnaryExpression,
 )
-Metamodelo::Cpp::CppPrefixExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppPrefixExpression,
+Metamodelo_Cpp_CppPrefixExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppPrefixExpression,
     operator=
         safe_text
 )
-Metamodelo::Cpp::CppPostfixExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppPostfixExpression,
+Metamodelo_Cpp_CppPostfixExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppPostfixExpression,
     operator=
         safe_text
 )
-Metamodelo::Cpp::CppInfixExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppInfixExpression,
+Metamodelo_Cpp_CppInfixExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppInfixExpression,
     operator=
         safe_text
 )
 CppSelectionStatement_strategy = st.builds(
     CppSelectionStatement,
 )
-Metamodelo::Cpp::CppIfElseStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppIfElseStatement,
+Metamodelo_Cpp_CppIfElseStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppIfElseStatement,
     inLine=
         st.booleans()
 )
-Metamodelo::Cpp::CppIfStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppIfStatement,
+Metamodelo_Cpp_CppIfStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppIfStatement,
 )
 CppMethodInvocation_strategy = st.builds(
     CppMethodInvocation,
 )
-Metamodelo::Cpp::CppSuperConstructorInvocation_strategy = st.builds(
-    Metamodelo::Cpp::CppSuperConstructorInvocation,
+Metamodelo_Cpp_CppSuperConstructorInvocation_strategy = st.builds(
+    Metamodelo_Cpp_CppSuperConstructorInvocation,
 )
 CppJumpStatement_strategy = st.builds(
     CppJumpStatement,
 )
-Metamodelo::Cpp::CppGotoStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppGotoStatement,
+Metamodelo_Cpp_CppContinueStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppContinueStatement,
 )
-Metamodelo::Cpp::CppContinueStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppContinueStatement,
+Metamodelo_Cpp_CppReturnStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppReturnStatement,
 )
-Metamodelo::Cpp::CppReturnStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppReturnStatement,
+Metamodelo_Cpp_CppGotoStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppGotoStatement,
 )
-Metamodelo::Cpp::CppBreakStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppBreakStatement,
+Metamodelo_Cpp_CppBreakStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppBreakStatement,
 )
 CppIterationStatement_strategy = st.builds(
     CppIterationStatement,
 )
-Metamodelo::Cpp::CppForStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppForStatement,
+Metamodelo_Cpp_CppForStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppForStatement,
 )
-Metamodelo::Cpp::CppDoWhileStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppDoWhileStatement,
+Metamodelo_Cpp_CppDoWhileStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppDoWhileStatement,
 )
-Metamodelo::Cpp::CppWhileStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppWhileStatement,
+Metamodelo_Cpp_CppWhileStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppWhileStatement,
 )
 CppExpression_strategy = st.builds(
     CppExpression,
 )
-Metamodelo::Cpp::CppUnaryExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppUnaryExpression,
+Metamodelo_Cpp_CppCatchClause_strategy = st.builds(
+    Metamodelo_Cpp_CppCatchClause,
 )
-Metamodelo::Cpp::CppBooleanLiteral_strategy = st.builds(
-    Metamodelo::Cpp::CppBooleanLiteral,
-    booleanValue=
-        st.booleans()
+Metamodelo_Cpp_CppSelectionStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppSelectionStatement,
 )
-Metamodelo::Cpp::CppBinaryExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppBinaryExpression,
+Metamodelo_Cpp_CppFieldAccess_strategy = st.builds(
+    Metamodelo_Cpp_CppFieldAccess,
 )
-Metamodelo::Cpp::CppTryExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppTryExpression,
+Metamodelo_Cpp_CppThrowExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppThrowExpression,
 )
-Metamodelo::Cpp::CppIterationStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppIterationStatement,
+Metamodelo_Cpp_CppNullLiteral_strategy = st.builds(
+    Metamodelo_Cpp_CppNullLiteral,
 )
-Metamodelo::Cpp::CppThisExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppThisExpression,
+Metamodelo_Cpp_CppParenthizedExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppParenthizedExpression,
 )
-Metamodelo::Cpp::CppThrowExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppThrowExpression,
+Metamodelo_Cpp_CppUnaryExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppUnaryExpression,
 )
-Metamodelo::Cpp::CppJumpStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppJumpStatement,
+Metamodelo_Cpp_CppIterationStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppIterationStatement,
 )
-Metamodelo::Cpp::CppSwitchExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppSwitchExpression,
+Metamodelo_Cpp_CppSwitchExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppSwitchExpression,
 )
-Metamodelo::Cpp::CppFieldAccess_strategy = st.builds(
-    Metamodelo::Cpp::CppFieldAccess,
+Metamodelo_Cpp_CppArrayAccess_strategy = st.builds(
+    Metamodelo_Cpp_CppArrayAccess,
 )
-Metamodelo::Cpp::CppNullLiteral_strategy = st.builds(
-    Metamodelo::Cpp::CppNullLiteral,
+Metamodelo_Cpp_CppTryExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppTryExpression,
 )
-Metamodelo::Cpp::CppVariableAccess_strategy = st.builds(
-    Metamodelo::Cpp::CppVariableAccess,
+Metamodelo_Cpp_CppJumpStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppJumpStatement,
 )
-Metamodelo::Cpp::CppCastExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppCastExpression,
+Metamodelo_Cpp_CppConstantExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppConstantExpression,
 )
-Metamodelo::Cpp::CppConstantExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppConstantExpression,
-)
-Metamodelo::Cpp::CppRegexLiteral_strategy = st.builds(
-    Metamodelo::Cpp::CppRegexLiteral,
-    pattern=
-        safe_text,
-    options=
-        safe_text
-)
-Metamodelo::Cpp::CppCharacterLiteral_strategy = st.builds(
-    Metamodelo::Cpp::CppCharacterLiteral,
-    charValue=
-        safe_text
-)
-Metamodelo::Cpp::CppCase_strategy = st.builds(
-    Metamodelo::Cpp::CppCase,
-)
-Metamodelo::Cpp::CppDeclarationExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppDeclarationExpression,
-)
-Metamodelo::Cpp::CppCatchClause_strategy = st.builds(
-    Metamodelo::Cpp::CppCatchClause,
-)
-Metamodelo::Cpp::CppNumberLiteral_strategy = st.builds(
-    Metamodelo::Cpp::CppNumberLiteral,
+Metamodelo_Cpp_CppNumberLiteral_strategy = st.builds(
+    Metamodelo_Cpp_CppNumberLiteral,
     token=
         safe_text
 )
-Metamodelo::Cpp::CppParenthizedExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppParenthizedExpression,
+Metamodelo_Cpp_CppBlock_strategy = st.builds(
+    Metamodelo_Cpp_CppBlock,
 )
-Metamodelo::Cpp::CppLabeledStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppLabeledStatement,
+Metamodelo_Cpp_CppCharacterLiteral_strategy = st.builds(
+    Metamodelo_Cpp_CppCharacterLiteral,
+    charValue=
+        safe_text
 )
-Metamodelo::Cpp::CppArrayAccess_strategy = st.builds(
-    Metamodelo::Cpp::CppArrayAccess,
+Metamodelo_Cpp_CppDeclarationExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppDeclarationExpression,
 )
-Metamodelo::Cpp::CppBlock_strategy = st.builds(
-    Metamodelo::Cpp::CppBlock,
+Metamodelo_Cpp_CppCase_strategy = st.builds(
+    Metamodelo_Cpp_CppCase,
 )
-Metamodelo::Cpp::CppStringLiteral_strategy = st.builds(
-    Metamodelo::Cpp::CppStringLiteral,
+Metamodelo_Cpp_CppBooleanLiteral_strategy = st.builds(
+    Metamodelo_Cpp_CppBooleanLiteral,
+    booleanValue=
+        st.booleans()
+)
+Metamodelo_Cpp_CppLabeledStatement_strategy = st.builds(
+    Metamodelo_Cpp_CppLabeledStatement,
+)
+Metamodelo_Cpp_CppVariableAccess_strategy = st.builds(
+    Metamodelo_Cpp_CppVariableAccess,
+)
+Metamodelo_Cpp_CppBinaryExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppBinaryExpression,
+)
+Metamodelo_Cpp_CppThisExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppThisExpression,
+)
+Metamodelo_Cpp_CppStringLiteral_strategy = st.builds(
+    Metamodelo_Cpp_CppStringLiteral,
     literalValue=
         safe_text
 )
-Metamodelo::Cpp::CppSelectionStatement_strategy = st.builds(
-    Metamodelo::Cpp::CppSelectionStatement,
+Metamodelo_Cpp_CppCastExpression_strategy = st.builds(
+    Metamodelo_Cpp_CppCastExpression,
 )
-Metamodelo::Cpp::CppArrayInitializer_strategy = st.builds(
-    Metamodelo::Cpp::CppArrayInitializer,
+Metamodelo_Cpp_CppRegexLiteral_strategy = st.builds(
+    Metamodelo_Cpp_CppRegexLiteral,
+    options=
+        safe_text,
+    pattern=
+        safe_text
+)
+Metamodelo_Cpp_CppArrayInitializer_strategy = st.builds(
+    Metamodelo_Cpp_CppArrayInitializer,
 )
 CppTypedElement_strategy = st.builds(
     CppTypedElement,
 )
-Metamodelo::Cpp::CppVariableDeclarationGroup_strategy = st.builds(
-    Metamodelo::Cpp::CppVariableDeclarationGroup,
+Metamodelo_Cpp_CppVariableDeclarationGroup_strategy = st.builds(
+    Metamodelo_Cpp_CppVariableDeclarationGroup,
 )
 CppField_strategy = st.builds(
     CppField,
@@ -2380,205 +2398,183 @@ CppField_strategy = st.builds(
 CppVariableDeclaration_strategy = st.builds(
     CppVariableDeclaration,
 )
-Metamodelo::Cpp::CppSingleVariableDeclaration_strategy = st.builds(
-    Metamodelo::Cpp::CppSingleVariableDeclaration,
+Metamodelo_Cpp_CppSingleVariableDeclaration_strategy = st.builds(
+    Metamodelo_Cpp_CppSingleVariableDeclaration,
 )
-Metamodelo::Cpp::CppVariableDeclarationFragment_strategy = st.builds(
-    Metamodelo::Cpp::CppVariableDeclarationFragment,
+Metamodelo_Cpp_CppVariableDeclarationFragment_strategy = st.builds(
+    Metamodelo_Cpp_CppVariableDeclarationFragment,
 )
 CppAbstractMethodInvocation_strategy = st.builds(
     CppAbstractMethodInvocation,
 )
-Metamodelo::Cpp::CppSuperMethodInvocation_strategy = st.builds(
-    Metamodelo::Cpp::CppSuperMethodInvocation,
+Metamodelo_Cpp_CppSuperMethodInvocation_strategy = st.builds(
+    Metamodelo_Cpp_CppSuperMethodInvocation,
 )
-Metamodelo::Cpp::CppMethodInvocation_strategy = st.builds(
-    Metamodelo::Cpp::CppMethodInvocation,
+Metamodelo_Cpp_CppMethodInvocation_strategy = st.builds(
+    Metamodelo_Cpp_CppMethodInvocation,
 )
-Metamodelo::Cpp::CppAbstractMethodInvocation_strategy = st.builds(
-    Metamodelo::Cpp::CppAbstractMethodInvocation,
+Metamodelo_Cpp_CppAbstractMethodInvocation_strategy = st.builds(
+    Metamodelo_Cpp_CppAbstractMethodInvocation,
 )
 CppMemberFunction_strategy = st.builds(
     CppMemberFunction,
 )
-Metamodelo::Cpp::CppMethod_strategy = st.builds(
-    Metamodelo::Cpp::CppMethod,
-    isFinal=
-        st.booleans(),
-    isVirtual=
-        st.booleans(),
+Metamodelo_Cpp_CppMethod_strategy = st.builds(
+    Metamodelo_Cpp_CppMethod,
     isConst=
         st.booleans(),
     isPureVirtual=
+        st.booleans(),
+    isVirtual=
+        st.booleans(),
+    isFinal=
         st.booleans()
 )
-Metamodelo::Cpp::CppDestructor_strategy = st.builds(
-    Metamodelo::Cpp::CppDestructor,
+Metamodelo_Cpp_CppDestructor_strategy = st.builds(
+    Metamodelo_Cpp_CppDestructor,
     isVirtual=
         st.booleans()
 )
-Metamodelo::Cpp::CppConstructor_strategy = st.builds(
-    Metamodelo::Cpp::CppConstructor,
+Metamodelo_Cpp_CppConstructor_strategy = st.builds(
+    Metamodelo_Cpp_CppConstructor,
 )
 CppFunction_strategy = st.builds(
     CppFunction,
 )
-Metamodelo::Cpp::CppMemberFunction_strategy = st.builds(
-    Metamodelo::Cpp::CppMemberFunction,
+Metamodelo_Cpp_CppMemberFunction_strategy = st.builds(
+    Metamodelo_Cpp_CppMemberFunction,
 )
-Metamodelo::Cpp::CppTypedElement_strategy = st.builds(
-    Metamodelo::Cpp::CppTypedElement,
+Metamodelo_Cpp_CppTypedElement_strategy = st.builds(
+    Metamodelo_Cpp_CppTypedElement,
 )
 CppClassifier_strategy = st.builds(
     CppClassifier,
 )
-Metamodelo::Cpp::CppClass_strategy = st.builds(
-    Metamodelo::Cpp::CppClass,
-    isFinal=
-        st.booleans(),
-    isAbstract=
-        st.booleans(),
+Metamodelo_Cpp_CppClass_strategy = st.builds(
+    Metamodelo_Cpp_CppClass,
     classkey=
         safe_text,
+    isFinal=
+        st.booleans(),
     isGeneric=
+        st.booleans(),
+    isAbstract=
         st.booleans()
 )
 CppPrimitiveType_strategy = st.builds(
     CppPrimitiveType,
 )
-Metamodelo::Cpp::CppLongType_strategy = st.builds(
-    Metamodelo::Cpp::CppLongType,
+Metamodelo_Cpp_CppFloatType_strategy = st.builds(
+    Metamodelo_Cpp_CppFloatType,
 )
-Metamodelo::Cpp::CppUnsignedType_strategy = st.builds(
-    Metamodelo::Cpp::CppUnsignedType,
+Metamodelo_Cpp_CppUnsignedType_strategy = st.builds(
+    Metamodelo_Cpp_CppUnsignedType,
 )
-Metamodelo::Cpp::CppFloatType_strategy = st.builds(
-    Metamodelo::Cpp::CppFloatType,
+Metamodelo_Cpp_CppVoidType_strategy = st.builds(
+    Metamodelo_Cpp_CppVoidType,
 )
-Metamodelo::Cpp::CppVoidType_strategy = st.builds(
-    Metamodelo::Cpp::CppVoidType,
+Metamodelo_Cpp_CppSignedType_strategy = st.builds(
+    Metamodelo_Cpp_CppSignedType,
 )
-Metamodelo::Cpp::CppSignedType_strategy = st.builds(
-    Metamodelo::Cpp::CppSignedType,
+Metamodelo_Cpp_CppLongType_strategy = st.builds(
+    Metamodelo_Cpp_CppLongType,
 )
-Metamodelo::Cpp::CppShortType_strategy = st.builds(
-    Metamodelo::Cpp::CppShortType,
+Metamodelo_Cpp_CppDoubleType_strategy = st.builds(
+    Metamodelo_Cpp_CppDoubleType,
 )
-Metamodelo::Cpp::CppDoubleType_strategy = st.builds(
-    Metamodelo::Cpp::CppDoubleType,
+Metamodelo_Cpp_CppShortType_strategy = st.builds(
+    Metamodelo_Cpp_CppShortType,
 )
-Metamodelo::Cpp::CppCharType_strategy = st.builds(
-    Metamodelo::Cpp::CppCharType,
+Metamodelo_Cpp_CppCharType_strategy = st.builds(
+    Metamodelo_Cpp_CppCharType,
 )
-Metamodelo::Cpp::CppIntType_strategy = st.builds(
-    Metamodelo::Cpp::CppIntType,
+Metamodelo_Cpp_CppIntType_strategy = st.builds(
+    Metamodelo_Cpp_CppIntType,
 )
-Metamodelo::Cpp::CppBooleanType_strategy = st.builds(
-    Metamodelo::Cpp::CppBooleanType,
+Metamodelo_Cpp_CppBooleanType_strategy = st.builds(
+    Metamodelo_Cpp_CppBooleanType,
 )
 CppType_strategy = st.builds(
     CppType,
 )
-Metamodelo::Cpp::CppFunction_strategy = st.builds(
-    Metamodelo::Cpp::CppFunction,
-    isInline=
-        st.booleans(),
-    isVarArg=
-        st.booleans(),
-    linkage=
-        safe_text
-)
-Metamodelo::Cpp::CppClassifier_strategy = st.builds(
-    Metamodelo::Cpp::CppClassifier,
-)
-Metamodelo::Cpp::CppPrimitiveType_strategy = st.builds(
-    Metamodelo::Cpp::CppPrimitiveType,
-)
-Metamodelo::Cpp::CppTypeParameter_strategy = st.builds(
-    Metamodelo::Cpp::CppTypeParameter,
-)
-Metamodelo::Cpp::CppTypeAccess_strategy = st.builds(
-    Metamodelo::Cpp::CppTypeAccess,
-)
-Metamodelo::Cpp::CppImportDeclaration_strategy = st.builds(
-    Metamodelo::Cpp::CppImportDeclaration,
-)
-Metamodelo::Cpp::CppNamedElement_strategy = st.builds(
-    Metamodelo::Cpp::CppNamedElement,
-    name=
-        safe_text
-)
-Metamodelo::Cpp::CppModelElement_strategy = st.builds(
-    Metamodelo::Cpp::CppModelElement,
-)
-Metamodelo::Cpp::CppComment_strategy = st.builds(
-    Metamodelo::Cpp::CppComment,
-    multiLine=
-        st.booleans(),
-    singleLine=
-        st.booleans(),
-    content=
-        safe_text
-)
-Metamodelo::Cpp::CppExpression_strategy = st.builds(
-    Metamodelo::Cpp::CppExpression,
-)
-Metamodelo::Cpp::CppEnumConstructor_strategy = st.builds(
-    Metamodelo::Cpp::CppEnumConstructor,
-)
-Metamodelo::Cpp::CppEnum_strategy = st.builds(
-    Metamodelo::Cpp::CppEnum,
-)
-Metamodelo::Cpp::CppVariable_strategy = st.builds(
-    Metamodelo::Cpp::CppVariable,
+Metamodelo_Cpp_CppVariable_strategy = st.builds(
+    Metamodelo_Cpp_CppVariable,
     isConst=
         st.booleans(),
     storage=
         safe_text
 )
+Metamodelo_Cpp_CppEnum_strategy = st.builds(
+    Metamodelo_Cpp_CppEnum,
+)
+Metamodelo_Cpp_CppClassifier_strategy = st.builds(
+    Metamodelo_Cpp_CppClassifier,
+)
+Metamodelo_Cpp_CppFunction_strategy = st.builds(
+    Metamodelo_Cpp_CppFunction,
+    isVarArg=
+        st.booleans(),
+    isInline=
+        st.booleans(),
+    linkage=
+        safe_text
+)
+Metamodelo_Cpp_CppPrimitiveType_strategy = st.builds(
+    Metamodelo_Cpp_CppPrimitiveType,
+)
+Metamodelo_Cpp_CppTypeParameter_strategy = st.builds(
+    Metamodelo_Cpp_CppTypeParameter,
+)
+Metamodelo_Cpp_CppTypeAccess_strategy = st.builds(
+    Metamodelo_Cpp_CppTypeAccess,
+)
+Metamodelo_Cpp_CppImportDeclaration_strategy = st.builds(
+    Metamodelo_Cpp_CppImportDeclaration,
+)
+Metamodelo_Cpp_CppNamedElement_strategy = st.builds(
+    Metamodelo_Cpp_CppNamedElement,
+    name=
+        safe_text
+)
+
+@given(instance=Metamodelo_Cpp_CppModelElement_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppmodelelement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppModelElement)
 
 @given(instance=CppFieldContainer_strategy)
 @settings(max_examples=50)
 def test_cppfieldcontainer_instantiation(instance):
     assert isinstance(instance, CppFieldContainer)
 
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
+@given(instance=Metamodelo_Cpp_CppModel_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppmodel_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppModel)
-
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
-def test_metamodelo::cpp::cppmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodelo_cpp_cppmodel_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppModel)
 
 
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
-def test_metamodelo::cpp::cppmodel_name_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppModel_strategy)
+def test_metamodelo_cpp_cppmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
-def test_metamodelo::cpp::cppmodel_targetFolder_type(instance):
-    assert isinstance(instance.targetFolder, str)
 
 
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
-def test_metamodelo::cpp::cppmodel_targetFolder_setter(instance):
-    original = instance.targetFolder
-    instance.targetFolder = original
-    assert instance.targetFolder == original
-
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
-def test_metamodelo::cpp::cppmodel_sourceFolder_type(instance):
-    assert isinstance(instance.sourceFolder, str)
-
-
-@given(instance=Metamodelo::Cpp::CppModel_strategy)
-def test_metamodelo::cpp::cppmodel_sourceFolder_setter(instance):
+@given(instance=Metamodelo_Cpp_CppModel_strategy)
+def test_metamodelo_cpp_cppmodel_sourceFolder_setter(instance):
     original = instance.sourceFolder
     instance.sourceFolder = original
     assert instance.sourceFolder == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppModel_strategy)
+def test_metamodelo_cpp_cppmodel_targetFolder_setter(instance):
+    original = instance.targetFolder
+    instance.targetFolder = original
+    assert instance.targetFolder == original
 
 @given(instance=CppPathReferentiable_strategy)
 @settings(max_examples=50)
@@ -2590,80 +2586,110 @@ def test_cpppathreferentiable_instantiation(instance):
 def test_cppmodelelement_instantiation(instance):
     assert isinstance(instance, CppModelElement)
 
-@given(instance=Metamodelo::Cpp::CppPathReference_strategy)
+@given(instance=Metamodelo_Cpp_CppComment_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpppathreference_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppPathReference)
+def test_metamodelo_cpp_cppcomment_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppComment)
 
-@given(instance=Metamodelo::Cpp::CppPackage_strategy)
+
+
+@given(instance=Metamodelo_Cpp_CppComment_strategy)
+def test_metamodelo_cpp_cppcomment_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppComment_strategy)
+def test_metamodelo_cpp_cppcomment_multiLine_setter(instance):
+    original = instance.multiLine
+    instance.multiLine = original
+    assert instance.multiLine == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppComment_strategy)
+def test_metamodelo_cpp_cppcomment_singleLine_setter(instance):
+    original = instance.singleLine
+    instance.singleLine = original
+    assert instance.singleLine == original
+
+@given(instance=Metamodelo_Cpp_CppExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpppackage_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppPackage)
+def test_metamodelo_cpp_cppexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppExpression)
+
+@given(instance=Metamodelo_Cpp_CppPathReference_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cpppathreference_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppPathReference)
+
+@given(instance=Metamodelo_Cpp_CppPackage_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cpppackage_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppPackage)
 
 @given(instance=CppNamedElement_strategy)
 @settings(max_examples=50)
 def test_cppnamedelement_instantiation(instance):
     assert isinstance(instance, CppNamedElement)
 
-@given(instance=Metamodelo::Cpp::CppPathReferentiable_strategy)
+@given(instance=Metamodelo_Cpp_CppEnumConstructor_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpppathreferentiable_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppPathReferentiable)
+def test_metamodelo_cpp_cppenumconstructor_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppEnumConstructor)
 
-@given(instance=Metamodelo::Cpp::CppClassFile_strategy)
+@given(instance=Metamodelo_Cpp_CppPathReferentiable_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppclassfile_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppClassFile)
+def test_metamodelo_cpp_cpppathreferentiable_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppPathReferentiable)
 
-@given(instance=Metamodelo::Cpp::CppType_strategy)
+@given(instance=Metamodelo_Cpp_CppClassFile_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpptype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppType)
+def test_metamodelo_cpp_cppclassfile_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppClassFile)
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclaration_strategy)
+@given(instance=Metamodelo_Cpp_CppType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppVariableDeclaration)
+def test_metamodelo_cpp_cpptype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppType)
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclaration_strategy)
-def test_metamodelo::cpp::cppvariabledeclaration_vartype_type(instance):
-    assert isinstance(instance.vartype, str)
+@given(instance=Metamodelo_Cpp_CppVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppVariableDeclaration)
 
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclaration_strategy)
-def test_metamodelo::cpp::cppvariabledeclaration_vartype_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppVariableDeclaration_strategy)
+def test_metamodelo_cpp_cppvariabledeclaration_vartype_setter(instance):
     original = instance.vartype
     instance.vartype = original
     assert instance.vartype == original
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclaration_strategy)
-def test_metamodelo::cpp::cppvariabledeclaration_isArray_type(instance):
-    assert isinstance(instance.isArray, bool)
 
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclaration_strategy)
-def test_metamodelo::cpp::cppvariabledeclaration_isArray_setter(instance):
+@given(instance=Metamodelo_Cpp_CppVariableDeclaration_strategy)
+def test_metamodelo_cpp_cppvariabledeclaration_isArray_setter(instance):
     original = instance.isArray
     instance.isArray = original
     assert instance.isArray == original
 
-@given(instance=Metamodelo::Cpp::CppFieldContainer_strategy)
+@given(instance=Metamodelo_Cpp_CppFieldContainer_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppfieldcontainer_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppFieldContainer)
+def test_metamodelo_cpp_cppfieldcontainer_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppFieldContainer)
 
-@given(instance=Metamodelo::Cpp::CppField_strategy)
+@given(instance=Metamodelo_Cpp_CppField_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppfield_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppField)
-
-@given(instance=Metamodelo::Cpp::CppField_strategy)
-def test_metamodelo::cpp::cppfield_accessSpecifier_type(instance):
-    assert isinstance(instance.accessSpecifier, str)
+def test_metamodelo_cpp_cppfield_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppField)
 
 
-@given(instance=Metamodelo::Cpp::CppField_strategy)
-def test_metamodelo::cpp::cppfield_accessSpecifier_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppField_strategy)
+def test_metamodelo_cpp_cppfield_accessSpecifier_setter(instance):
     original = instance.accessSpecifier
     instance.accessSpecifier = original
     assert instance.accessSpecifier == original
@@ -2673,18 +2699,15 @@ def test_metamodelo::cpp::cppfield_accessSpecifier_setter(instance):
 def test_cppbinaryexpression_instantiation(instance):
     assert isinstance(instance, CppBinaryExpression)
 
-@given(instance=Metamodelo::Cpp::CppAssignamentStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppAssignamentStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppassignamentstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppAssignamentStatement)
-
-@given(instance=Metamodelo::Cpp::CppAssignamentStatement_strategy)
-def test_metamodelo::cpp::cppassignamentstatement_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_metamodelo_cpp_cppassignamentstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppAssignamentStatement)
 
 
-@given(instance=Metamodelo::Cpp::CppAssignamentStatement_strategy)
-def test_metamodelo::cpp::cppassignamentstatement_operator_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppAssignamentStatement_strategy)
+def test_metamodelo_cpp_cppassignamentstatement_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -2694,50 +2717,41 @@ def test_metamodelo::cpp::cppassignamentstatement_operator_setter(instance):
 def test_cppunaryexpression_instantiation(instance):
     assert isinstance(instance, CppUnaryExpression)
 
-@given(instance=Metamodelo::Cpp::CppPrefixExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppPrefixExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppprefixexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppPrefixExpression)
-
-@given(instance=Metamodelo::Cpp::CppPrefixExpression_strategy)
-def test_metamodelo::cpp::cppprefixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_metamodelo_cpp_cppprefixexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppPrefixExpression)
 
 
-@given(instance=Metamodelo::Cpp::CppPrefixExpression_strategy)
-def test_metamodelo::cpp::cppprefixexpression_operator_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppPrefixExpression_strategy)
+def test_metamodelo_cpp_cppprefixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=Metamodelo::Cpp::CppPostfixExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppPostfixExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpppostfixexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppPostfixExpression)
-
-@given(instance=Metamodelo::Cpp::CppPostfixExpression_strategy)
-def test_metamodelo::cpp::cpppostfixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_metamodelo_cpp_cpppostfixexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppPostfixExpression)
 
 
-@given(instance=Metamodelo::Cpp::CppPostfixExpression_strategy)
-def test_metamodelo::cpp::cpppostfixexpression_operator_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppPostfixExpression_strategy)
+def test_metamodelo_cpp_cpppostfixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=Metamodelo::Cpp::CppInfixExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppInfixExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppinfixexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppInfixExpression)
-
-@given(instance=Metamodelo::Cpp::CppInfixExpression_strategy)
-def test_metamodelo::cpp::cppinfixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_metamodelo_cpp_cppinfixexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppInfixExpression)
 
 
-@given(instance=Metamodelo::Cpp::CppInfixExpression_strategy)
-def test_metamodelo::cpp::cppinfixexpression_operator_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppInfixExpression_strategy)
+def test_metamodelo_cpp_cppinfixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -2747,297 +2761,276 @@ def test_metamodelo::cpp::cppinfixexpression_operator_setter(instance):
 def test_cppselectionstatement_instantiation(instance):
     assert isinstance(instance, CppSelectionStatement)
 
-@given(instance=Metamodelo::Cpp::CppIfElseStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppIfElseStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppifelsestatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppIfElseStatement)
-
-@given(instance=Metamodelo::Cpp::CppIfElseStatement_strategy)
-def test_metamodelo::cpp::cppifelsestatement_inLine_type(instance):
-    assert isinstance(instance.inLine, bool)
+def test_metamodelo_cpp_cppifelsestatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppIfElseStatement)
 
 
-@given(instance=Metamodelo::Cpp::CppIfElseStatement_strategy)
-def test_metamodelo::cpp::cppifelsestatement_inLine_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppIfElseStatement_strategy)
+def test_metamodelo_cpp_cppifelsestatement_inLine_setter(instance):
     original = instance.inLine
     instance.inLine = original
     assert instance.inLine == original
 
-@given(instance=Metamodelo::Cpp::CppIfStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppIfStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppifstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppIfStatement)
+def test_metamodelo_cpp_cppifstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppIfStatement)
 
 @given(instance=CppMethodInvocation_strategy)
 @settings(max_examples=50)
 def test_cppmethodinvocation_instantiation(instance):
     assert isinstance(instance, CppMethodInvocation)
 
-@given(instance=Metamodelo::Cpp::CppSuperConstructorInvocation_strategy)
+@given(instance=Metamodelo_Cpp_CppSuperConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppsuperconstructorinvocation_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppSuperConstructorInvocation)
+def test_metamodelo_cpp_cppsuperconstructorinvocation_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppSuperConstructorInvocation)
 
 @given(instance=CppJumpStatement_strategy)
 @settings(max_examples=50)
 def test_cppjumpstatement_instantiation(instance):
     assert isinstance(instance, CppJumpStatement)
 
-@given(instance=Metamodelo::Cpp::CppGotoStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppContinueStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppgotostatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppGotoStatement)
+def test_metamodelo_cpp_cppcontinuestatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppContinueStatement)
 
-@given(instance=Metamodelo::Cpp::CppContinueStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppReturnStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppcontinuestatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppContinueStatement)
+def test_metamodelo_cpp_cppreturnstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppReturnStatement)
 
-@given(instance=Metamodelo::Cpp::CppReturnStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppGotoStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppreturnstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppReturnStatement)
+def test_metamodelo_cpp_cppgotostatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppGotoStatement)
 
-@given(instance=Metamodelo::Cpp::CppBreakStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppBreakStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppbreakstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppBreakStatement)
+def test_metamodelo_cpp_cppbreakstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppBreakStatement)
 
 @given(instance=CppIterationStatement_strategy)
 @settings(max_examples=50)
 def test_cppiterationstatement_instantiation(instance):
     assert isinstance(instance, CppIterationStatement)
 
-@given(instance=Metamodelo::Cpp::CppForStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppForStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppforstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppForStatement)
+def test_metamodelo_cpp_cppforstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppForStatement)
 
-@given(instance=Metamodelo::Cpp::CppDoWhileStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppDoWhileStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppdowhilestatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppDoWhileStatement)
+def test_metamodelo_cpp_cppdowhilestatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppDoWhileStatement)
 
-@given(instance=Metamodelo::Cpp::CppWhileStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppWhileStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppwhilestatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppWhileStatement)
+def test_metamodelo_cpp_cppwhilestatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppWhileStatement)
 
 @given(instance=CppExpression_strategy)
 @settings(max_examples=50)
 def test_cppexpression_instantiation(instance):
     assert isinstance(instance, CppExpression)
 
-@given(instance=Metamodelo::Cpp::CppUnaryExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppCatchClause_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppunaryexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppUnaryExpression)
+def test_metamodelo_cpp_cppcatchclause_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppCatchClause)
 
-@given(instance=Metamodelo::Cpp::CppBooleanLiteral_strategy)
+@given(instance=Metamodelo_Cpp_CppSelectionStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppbooleanliteral_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppBooleanLiteral)
+def test_metamodelo_cpp_cppselectionstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppSelectionStatement)
 
-@given(instance=Metamodelo::Cpp::CppBooleanLiteral_strategy)
-def test_metamodelo::cpp::cppbooleanliteral_booleanValue_type(instance):
-    assert isinstance(instance.booleanValue, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppBooleanLiteral_strategy)
-def test_metamodelo::cpp::cppbooleanliteral_booleanValue_setter(instance):
-    original = instance.booleanValue
-    instance.booleanValue = original
-    assert instance.booleanValue == original
-
-@given(instance=Metamodelo::Cpp::CppBinaryExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppFieldAccess_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppbinaryexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppBinaryExpression)
+def test_metamodelo_cpp_cppfieldaccess_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppFieldAccess)
 
-@given(instance=Metamodelo::Cpp::CppTryExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppThrowExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpptryexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppTryExpression)
+def test_metamodelo_cpp_cppthrowexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppThrowExpression)
 
-@given(instance=Metamodelo::Cpp::CppIterationStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppNullLiteral_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppiterationstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppIterationStatement)
+def test_metamodelo_cpp_cppnullliteral_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppNullLiteral)
 
-@given(instance=Metamodelo::Cpp::CppThisExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppParenthizedExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppthisexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppThisExpression)
+def test_metamodelo_cpp_cppparenthizedexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppParenthizedExpression)
 
-@given(instance=Metamodelo::Cpp::CppThrowExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppUnaryExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppthrowexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppThrowExpression)
+def test_metamodelo_cpp_cppunaryexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppUnaryExpression)
 
-@given(instance=Metamodelo::Cpp::CppJumpStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppIterationStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppjumpstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppJumpStatement)
+def test_metamodelo_cpp_cppiterationstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppIterationStatement)
 
-@given(instance=Metamodelo::Cpp::CppSwitchExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppSwitchExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppswitchexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppSwitchExpression)
+def test_metamodelo_cpp_cppswitchexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppSwitchExpression)
 
-@given(instance=Metamodelo::Cpp::CppFieldAccess_strategy)
+@given(instance=Metamodelo_Cpp_CppArrayAccess_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppfieldaccess_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppFieldAccess)
+def test_metamodelo_cpp_cpparrayaccess_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppArrayAccess)
 
-@given(instance=Metamodelo::Cpp::CppNullLiteral_strategy)
+@given(instance=Metamodelo_Cpp_CppTryExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppnullliteral_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppNullLiteral)
+def test_metamodelo_cpp_cpptryexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppTryExpression)
 
-@given(instance=Metamodelo::Cpp::CppVariableAccess_strategy)
+@given(instance=Metamodelo_Cpp_CppJumpStatement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppvariableaccess_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppVariableAccess)
+def test_metamodelo_cpp_cppjumpstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppJumpStatement)
 
-@given(instance=Metamodelo::Cpp::CppCastExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppConstantExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppcastexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppCastExpression)
+def test_metamodelo_cpp_cppconstantexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppConstantExpression)
 
-@given(instance=Metamodelo::Cpp::CppConstantExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppNumberLiteral_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppconstantexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppConstantExpression)
-
-@given(instance=Metamodelo::Cpp::CppRegexLiteral_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppregexliteral_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppRegexLiteral)
-
-@given(instance=Metamodelo::Cpp::CppRegexLiteral_strategy)
-def test_metamodelo::cpp::cppregexliteral_pattern_type(instance):
-    assert isinstance(instance.pattern, str)
+def test_metamodelo_cpp_cppnumberliteral_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppNumberLiteral)
 
 
-@given(instance=Metamodelo::Cpp::CppRegexLiteral_strategy)
-def test_metamodelo::cpp::cppregexliteral_pattern_setter(instance):
-    original = instance.pattern
-    instance.pattern = original
-    assert instance.pattern == original
 
-@given(instance=Metamodelo::Cpp::CppRegexLiteral_strategy)
-def test_metamodelo::cpp::cppregexliteral_options_type(instance):
-    assert isinstance(instance.options, str)
-
-
-@given(instance=Metamodelo::Cpp::CppRegexLiteral_strategy)
-def test_metamodelo::cpp::cppregexliteral_options_setter(instance):
-    original = instance.options
-    instance.options = original
-    assert instance.options == original
-
-@given(instance=Metamodelo::Cpp::CppCharacterLiteral_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppcharacterliteral_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppCharacterLiteral)
-
-@given(instance=Metamodelo::Cpp::CppCharacterLiteral_strategy)
-def test_metamodelo::cpp::cppcharacterliteral_charValue_type(instance):
-    assert isinstance(instance.charValue, str)
-
-
-@given(instance=Metamodelo::Cpp::CppCharacterLiteral_strategy)
-def test_metamodelo::cpp::cppcharacterliteral_charValue_setter(instance):
-    original = instance.charValue
-    instance.charValue = original
-    assert instance.charValue == original
-
-@given(instance=Metamodelo::Cpp::CppCase_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppcase_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppCase)
-
-@given(instance=Metamodelo::Cpp::CppDeclarationExpression_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppdeclarationexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppDeclarationExpression)
-
-@given(instance=Metamodelo::Cpp::CppCatchClause_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppcatchclause_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppCatchClause)
-
-@given(instance=Metamodelo::Cpp::CppNumberLiteral_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppnumberliteral_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppNumberLiteral)
-
-@given(instance=Metamodelo::Cpp::CppNumberLiteral_strategy)
-def test_metamodelo::cpp::cppnumberliteral_token_type(instance):
-    assert isinstance(instance.token, str)
-
-
-@given(instance=Metamodelo::Cpp::CppNumberLiteral_strategy)
-def test_metamodelo::cpp::cppnumberliteral_token_setter(instance):
+@given(instance=Metamodelo_Cpp_CppNumberLiteral_strategy)
+def test_metamodelo_cpp_cppnumberliteral_token_setter(instance):
     original = instance.token
     instance.token = original
     assert instance.token == original
 
-@given(instance=Metamodelo::Cpp::CppParenthizedExpression_strategy)
+@given(instance=Metamodelo_Cpp_CppBlock_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppparenthizedexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppParenthizedExpression)
+def test_metamodelo_cpp_cppblock_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppBlock)
 
-@given(instance=Metamodelo::Cpp::CppLabeledStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppCharacterLiteral_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpplabeledstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppLabeledStatement)
+def test_metamodelo_cpp_cppcharacterliteral_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppCharacterLiteral)
 
-@given(instance=Metamodelo::Cpp::CppArrayAccess_strategy)
+
+
+@given(instance=Metamodelo_Cpp_CppCharacterLiteral_strategy)
+def test_metamodelo_cpp_cppcharacterliteral_charValue_setter(instance):
+    original = instance.charValue
+    instance.charValue = original
+    assert instance.charValue == original
+
+@given(instance=Metamodelo_Cpp_CppDeclarationExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpparrayaccess_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppArrayAccess)
+def test_metamodelo_cpp_cppdeclarationexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppDeclarationExpression)
 
-@given(instance=Metamodelo::Cpp::CppBlock_strategy)
+@given(instance=Metamodelo_Cpp_CppCase_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppblock_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppBlock)
+def test_metamodelo_cpp_cppcase_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppCase)
 
-@given(instance=Metamodelo::Cpp::CppStringLiteral_strategy)
+@given(instance=Metamodelo_Cpp_CppBooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppstringliteral_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppStringLiteral)
-
-@given(instance=Metamodelo::Cpp::CppStringLiteral_strategy)
-def test_metamodelo::cpp::cppstringliteral_literalValue_type(instance):
-    assert isinstance(instance.literalValue, str)
+def test_metamodelo_cpp_cppbooleanliteral_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppBooleanLiteral)
 
 
-@given(instance=Metamodelo::Cpp::CppStringLiteral_strategy)
-def test_metamodelo::cpp::cppstringliteral_literalValue_setter(instance):
+
+@given(instance=Metamodelo_Cpp_CppBooleanLiteral_strategy)
+def test_metamodelo_cpp_cppbooleanliteral_booleanValue_setter(instance):
+    original = instance.booleanValue
+    instance.booleanValue = original
+    assert instance.booleanValue == original
+
+@given(instance=Metamodelo_Cpp_CppLabeledStatement_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cpplabeledstatement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppLabeledStatement)
+
+@given(instance=Metamodelo_Cpp_CppVariableAccess_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppvariableaccess_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppVariableAccess)
+
+@given(instance=Metamodelo_Cpp_CppBinaryExpression_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppbinaryexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppBinaryExpression)
+
+@given(instance=Metamodelo_Cpp_CppThisExpression_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppthisexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppThisExpression)
+
+@given(instance=Metamodelo_Cpp_CppStringLiteral_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppstringliteral_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppStringLiteral)
+
+
+
+@given(instance=Metamodelo_Cpp_CppStringLiteral_strategy)
+def test_metamodelo_cpp_cppstringliteral_literalValue_setter(instance):
     original = instance.literalValue
     instance.literalValue = original
     assert instance.literalValue == original
 
-@given(instance=Metamodelo::Cpp::CppSelectionStatement_strategy)
+@given(instance=Metamodelo_Cpp_CppCastExpression_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppselectionstatement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppSelectionStatement)
+def test_metamodelo_cpp_cppcastexpression_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppCastExpression)
 
-@given(instance=Metamodelo::Cpp::CppArrayInitializer_strategy)
+@given(instance=Metamodelo_Cpp_CppRegexLiteral_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpparrayinitializer_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppArrayInitializer)
+def test_metamodelo_cpp_cppregexliteral_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppRegexLiteral)
+
+
+
+@given(instance=Metamodelo_Cpp_CppRegexLiteral_strategy)
+def test_metamodelo_cpp_cppregexliteral_options_setter(instance):
+    original = instance.options
+    instance.options = original
+    assert instance.options == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppRegexLiteral_strategy)
+def test_metamodelo_cpp_cppregexliteral_pattern_setter(instance):
+    original = instance.pattern
+    instance.pattern = original
+    assert instance.pattern == original
+
+@given(instance=Metamodelo_Cpp_CppArrayInitializer_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cpparrayinitializer_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppArrayInitializer)
 
 @given(instance=CppTypedElement_strategy)
 @settings(max_examples=50)
 def test_cpptypedelement_instantiation(instance):
     assert isinstance(instance, CppTypedElement)
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclarationGroup_strategy)
+@given(instance=Metamodelo_Cpp_CppVariableDeclarationGroup_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppvariabledeclarationgroup_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppVariableDeclarationGroup)
+def test_metamodelo_cpp_cppvariabledeclarationgroup_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppVariableDeclarationGroup)
 
 @given(instance=CppField_strategy)
 @settings(max_examples=50)
@@ -3049,400 +3042,302 @@ def test_cppfield_instantiation(instance):
 def test_cppvariabledeclaration_instantiation(instance):
     assert isinstance(instance, CppVariableDeclaration)
 
-@given(instance=Metamodelo::Cpp::CppSingleVariableDeclaration_strategy)
+@given(instance=Metamodelo_Cpp_CppSingleVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppsinglevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppSingleVariableDeclaration)
+def test_metamodelo_cpp_cppsinglevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppSingleVariableDeclaration)
 
-@given(instance=Metamodelo::Cpp::CppVariableDeclarationFragment_strategy)
+@given(instance=Metamodelo_Cpp_CppVariableDeclarationFragment_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppvariabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppVariableDeclarationFragment)
+def test_metamodelo_cpp_cppvariabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppVariableDeclarationFragment)
 
 @given(instance=CppAbstractMethodInvocation_strategy)
 @settings(max_examples=50)
 def test_cppabstractmethodinvocation_instantiation(instance):
     assert isinstance(instance, CppAbstractMethodInvocation)
 
-@given(instance=Metamodelo::Cpp::CppSuperMethodInvocation_strategy)
+@given(instance=Metamodelo_Cpp_CppSuperMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppsupermethodinvocation_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppSuperMethodInvocation)
+def test_metamodelo_cpp_cppsupermethodinvocation_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppSuperMethodInvocation)
 
-@given(instance=Metamodelo::Cpp::CppMethodInvocation_strategy)
+@given(instance=Metamodelo_Cpp_CppMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppmethodinvocation_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppMethodInvocation)
+def test_metamodelo_cpp_cppmethodinvocation_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppMethodInvocation)
 
-@given(instance=Metamodelo::Cpp::CppAbstractMethodInvocation_strategy)
+@given(instance=Metamodelo_Cpp_CppAbstractMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppabstractmethodinvocation_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppAbstractMethodInvocation)
+def test_metamodelo_cpp_cppabstractmethodinvocation_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppAbstractMethodInvocation)
 
 @given(instance=CppMemberFunction_strategy)
 @settings(max_examples=50)
 def test_cppmemberfunction_instantiation(instance):
     assert isinstance(instance, CppMemberFunction)
 
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
+@given(instance=Metamodelo_Cpp_CppMethod_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppmethod_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppMethod)
-
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isFinal_type(instance):
-    assert isinstance(instance.isFinal, bool)
+def test_metamodelo_cpp_cppmethod_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppMethod)
 
 
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isFinal_setter(instance):
-    original = instance.isFinal
-    instance.isFinal = original
-    assert instance.isFinal == original
 
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isVirtual_type(instance):
-    assert isinstance(instance.isVirtual, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isVirtual_setter(instance):
-    original = instance.isVirtual
-    instance.isVirtual = original
-    assert instance.isVirtual == original
-
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isConst_type(instance):
-    assert isinstance(instance.isConst, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isConst_setter(instance):
+@given(instance=Metamodelo_Cpp_CppMethod_strategy)
+def test_metamodelo_cpp_cppmethod_isConst_setter(instance):
     original = instance.isConst
     instance.isConst = original
     assert instance.isConst == original
 
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isPureVirtual_type(instance):
-    assert isinstance(instance.isPureVirtual, bool)
 
 
-@given(instance=Metamodelo::Cpp::CppMethod_strategy)
-def test_metamodelo::cpp::cppmethod_isPureVirtual_setter(instance):
+@given(instance=Metamodelo_Cpp_CppMethod_strategy)
+def test_metamodelo_cpp_cppmethod_isPureVirtual_setter(instance):
     original = instance.isPureVirtual
     instance.isPureVirtual = original
     assert instance.isPureVirtual == original
 
-@given(instance=Metamodelo::Cpp::CppDestructor_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppdestructor_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppDestructor)
-
-@given(instance=Metamodelo::Cpp::CppDestructor_strategy)
-def test_metamodelo::cpp::cppdestructor_isVirtual_type(instance):
-    assert isinstance(instance.isVirtual, bool)
 
 
-@given(instance=Metamodelo::Cpp::CppDestructor_strategy)
-def test_metamodelo::cpp::cppdestructor_isVirtual_setter(instance):
+@given(instance=Metamodelo_Cpp_CppMethod_strategy)
+def test_metamodelo_cpp_cppmethod_isVirtual_setter(instance):
     original = instance.isVirtual
     instance.isVirtual = original
     assert instance.isVirtual == original
 
-@given(instance=Metamodelo::Cpp::CppConstructor_strategy)
+
+
+@given(instance=Metamodelo_Cpp_CppMethod_strategy)
+def test_metamodelo_cpp_cppmethod_isFinal_setter(instance):
+    original = instance.isFinal
+    instance.isFinal = original
+    assert instance.isFinal == original
+
+@given(instance=Metamodelo_Cpp_CppDestructor_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppconstructor_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppConstructor)
+def test_metamodelo_cpp_cppdestructor_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppDestructor)
+
+
+
+@given(instance=Metamodelo_Cpp_CppDestructor_strategy)
+def test_metamodelo_cpp_cppdestructor_isVirtual_setter(instance):
+    original = instance.isVirtual
+    instance.isVirtual = original
+    assert instance.isVirtual == original
+
+@given(instance=Metamodelo_Cpp_CppConstructor_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppconstructor_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppConstructor)
 
 @given(instance=CppFunction_strategy)
 @settings(max_examples=50)
 def test_cppfunction_instantiation(instance):
     assert isinstance(instance, CppFunction)
 
-@given(instance=Metamodelo::Cpp::CppMemberFunction_strategy)
+@given(instance=Metamodelo_Cpp_CppMemberFunction_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppmemberfunction_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppMemberFunction)
+def test_metamodelo_cpp_cppmemberfunction_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppMemberFunction)
 
-@given(instance=Metamodelo::Cpp::CppTypedElement_strategy)
+@given(instance=Metamodelo_Cpp_CppTypedElement_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpptypedelement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppTypedElement)
+def test_metamodelo_cpp_cpptypedelement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppTypedElement)
 
 @given(instance=CppClassifier_strategy)
 @settings(max_examples=50)
 def test_cppclassifier_instantiation(instance):
     assert isinstance(instance, CppClassifier)
 
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
+@given(instance=Metamodelo_Cpp_CppClass_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppclass_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppClass)
-
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_isFinal_type(instance):
-    assert isinstance(instance.isFinal, bool)
+def test_metamodelo_cpp_cppclass_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppClass)
 
 
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_isFinal_setter(instance):
-    original = instance.isFinal
-    instance.isFinal = original
-    assert instance.isFinal == original
 
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
-
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_classkey_type(instance):
-    assert isinstance(instance.classkey, str)
-
-
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_classkey_setter(instance):
+@given(instance=Metamodelo_Cpp_CppClass_strategy)
+def test_metamodelo_cpp_cppclass_classkey_setter(instance):
     original = instance.classkey
     instance.classkey = original
     assert instance.classkey == original
 
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_isGeneric_type(instance):
-    assert isinstance(instance.isGeneric, bool)
 
 
-@given(instance=Metamodelo::Cpp::CppClass_strategy)
-def test_metamodelo::cpp::cppclass_isGeneric_setter(instance):
+@given(instance=Metamodelo_Cpp_CppClass_strategy)
+def test_metamodelo_cpp_cppclass_isFinal_setter(instance):
+    original = instance.isFinal
+    instance.isFinal = original
+    assert instance.isFinal == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppClass_strategy)
+def test_metamodelo_cpp_cppclass_isGeneric_setter(instance):
     original = instance.isGeneric
     instance.isGeneric = original
     assert instance.isGeneric == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppClass_strategy)
+def test_metamodelo_cpp_cppclass_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
 
 @given(instance=CppPrimitiveType_strategy)
 @settings(max_examples=50)
 def test_cppprimitivetype_instantiation(instance):
     assert isinstance(instance, CppPrimitiveType)
 
-@given(instance=Metamodelo::Cpp::CppLongType_strategy)
+@given(instance=Metamodelo_Cpp_CppFloatType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cpplongtype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppLongType)
+def test_metamodelo_cpp_cppfloattype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppFloatType)
 
-@given(instance=Metamodelo::Cpp::CppUnsignedType_strategy)
+@given(instance=Metamodelo_Cpp_CppUnsignedType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppunsignedtype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppUnsignedType)
+def test_metamodelo_cpp_cppunsignedtype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppUnsignedType)
 
-@given(instance=Metamodelo::Cpp::CppFloatType_strategy)
+@given(instance=Metamodelo_Cpp_CppVoidType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppfloattype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppFloatType)
+def test_metamodelo_cpp_cppvoidtype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppVoidType)
 
-@given(instance=Metamodelo::Cpp::CppVoidType_strategy)
+@given(instance=Metamodelo_Cpp_CppSignedType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppvoidtype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppVoidType)
+def test_metamodelo_cpp_cppsignedtype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppSignedType)
 
-@given(instance=Metamodelo::Cpp::CppSignedType_strategy)
+@given(instance=Metamodelo_Cpp_CppLongType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppsignedtype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppSignedType)
+def test_metamodelo_cpp_cpplongtype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppLongType)
 
-@given(instance=Metamodelo::Cpp::CppShortType_strategy)
+@given(instance=Metamodelo_Cpp_CppDoubleType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppshorttype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppShortType)
+def test_metamodelo_cpp_cppdoubletype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppDoubleType)
 
-@given(instance=Metamodelo::Cpp::CppDoubleType_strategy)
+@given(instance=Metamodelo_Cpp_CppShortType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppdoubletype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppDoubleType)
+def test_metamodelo_cpp_cppshorttype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppShortType)
 
-@given(instance=Metamodelo::Cpp::CppCharType_strategy)
+@given(instance=Metamodelo_Cpp_CppCharType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppchartype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppCharType)
+def test_metamodelo_cpp_cppchartype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppCharType)
 
-@given(instance=Metamodelo::Cpp::CppIntType_strategy)
+@given(instance=Metamodelo_Cpp_CppIntType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppinttype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppIntType)
+def test_metamodelo_cpp_cppinttype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppIntType)
 
-@given(instance=Metamodelo::Cpp::CppBooleanType_strategy)
+@given(instance=Metamodelo_Cpp_CppBooleanType_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppbooleantype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppBooleanType)
+def test_metamodelo_cpp_cppbooleantype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppBooleanType)
 
 @given(instance=CppType_strategy)
 @settings(max_examples=50)
 def test_cpptype_instantiation(instance):
     assert isinstance(instance, CppType)
 
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
+@given(instance=Metamodelo_Cpp_CppVariable_strategy)
 @settings(max_examples=50)
-def test_metamodelo::cpp::cppfunction_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppFunction)
-
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
-def test_metamodelo::cpp::cppfunction_isInline_type(instance):
-    assert isinstance(instance.isInline, bool)
+def test_metamodelo_cpp_cppvariable_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppVariable)
 
 
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
-def test_metamodelo::cpp::cppfunction_isInline_setter(instance):
-    original = instance.isInline
-    instance.isInline = original
-    assert instance.isInline == original
 
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
-def test_metamodelo::cpp::cppfunction_isVarArg_type(instance):
-    assert isinstance(instance.isVarArg, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
-def test_metamodelo::cpp::cppfunction_isVarArg_setter(instance):
-    original = instance.isVarArg
-    instance.isVarArg = original
-    assert instance.isVarArg == original
-
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
-def test_metamodelo::cpp::cppfunction_linkage_type(instance):
-    assert isinstance(instance.linkage, str)
-
-
-@given(instance=Metamodelo::Cpp::CppFunction_strategy)
-def test_metamodelo::cpp::cppfunction_linkage_setter(instance):
-    original = instance.linkage
-    instance.linkage = original
-    assert instance.linkage == original
-
-@given(instance=Metamodelo::Cpp::CppClassifier_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppclassifier_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppClassifier)
-
-@given(instance=Metamodelo::Cpp::CppPrimitiveType_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppprimitivetype_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppPrimitiveType)
-
-@given(instance=Metamodelo::Cpp::CppTypeParameter_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cpptypeparameter_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppTypeParameter)
-
-@given(instance=Metamodelo::Cpp::CppTypeAccess_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cpptypeaccess_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppTypeAccess)
-
-@given(instance=Metamodelo::Cpp::CppImportDeclaration_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppimportdeclaration_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppImportDeclaration)
-
-@given(instance=Metamodelo::Cpp::CppNamedElement_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppnamedelement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppNamedElement)
-
-@given(instance=Metamodelo::Cpp::CppNamedElement_strategy)
-def test_metamodelo::cpp::cppnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Metamodelo::Cpp::CppNamedElement_strategy)
-def test_metamodelo::cpp::cppnamedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Metamodelo::Cpp::CppModelElement_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppmodelelement_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppModelElement)
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppcomment_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppComment)
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-def test_metamodelo::cpp::cppcomment_multiLine_type(instance):
-    assert isinstance(instance.multiLine, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-def test_metamodelo::cpp::cppcomment_multiLine_setter(instance):
-    original = instance.multiLine
-    instance.multiLine = original
-    assert instance.multiLine == original
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-def test_metamodelo::cpp::cppcomment_singleLine_type(instance):
-    assert isinstance(instance.singleLine, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-def test_metamodelo::cpp::cppcomment_singleLine_setter(instance):
-    original = instance.singleLine
-    instance.singleLine = original
-    assert instance.singleLine == original
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-def test_metamodelo::cpp::cppcomment_content_type(instance):
-    assert isinstance(instance.content, str)
-
-
-@given(instance=Metamodelo::Cpp::CppComment_strategy)
-def test_metamodelo::cpp::cppcomment_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
-
-@given(instance=Metamodelo::Cpp::CppExpression_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppexpression_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppExpression)
-
-@given(instance=Metamodelo::Cpp::CppEnumConstructor_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppenumconstructor_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppEnumConstructor)
-
-@given(instance=Metamodelo::Cpp::CppEnum_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppenum_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppEnum)
-
-@given(instance=Metamodelo::Cpp::CppVariable_strategy)
-@settings(max_examples=50)
-def test_metamodelo::cpp::cppvariable_instantiation(instance):
-    assert isinstance(instance, Metamodelo::Cpp::CppVariable)
-
-@given(instance=Metamodelo::Cpp::CppVariable_strategy)
-def test_metamodelo::cpp::cppvariable_isConst_type(instance):
-    assert isinstance(instance.isConst, bool)
-
-
-@given(instance=Metamodelo::Cpp::CppVariable_strategy)
-def test_metamodelo::cpp::cppvariable_isConst_setter(instance):
+@given(instance=Metamodelo_Cpp_CppVariable_strategy)
+def test_metamodelo_cpp_cppvariable_isConst_setter(instance):
     original = instance.isConst
     instance.isConst = original
     assert instance.isConst == original
 
-@given(instance=Metamodelo::Cpp::CppVariable_strategy)
-def test_metamodelo::cpp::cppvariable_storage_type(instance):
-    assert isinstance(instance.storage, str)
 
 
-@given(instance=Metamodelo::Cpp::CppVariable_strategy)
-def test_metamodelo::cpp::cppvariable_storage_setter(instance):
+@given(instance=Metamodelo_Cpp_CppVariable_strategy)
+def test_metamodelo_cpp_cppvariable_storage_setter(instance):
     original = instance.storage
     instance.storage = original
     assert instance.storage == original
+
+@given(instance=Metamodelo_Cpp_CppEnum_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppenum_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppEnum)
+
+@given(instance=Metamodelo_Cpp_CppClassifier_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppclassifier_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppClassifier)
+
+@given(instance=Metamodelo_Cpp_CppFunction_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppfunction_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppFunction)
+
+
+
+@given(instance=Metamodelo_Cpp_CppFunction_strategy)
+def test_metamodelo_cpp_cppfunction_isVarArg_setter(instance):
+    original = instance.isVarArg
+    instance.isVarArg = original
+    assert instance.isVarArg == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppFunction_strategy)
+def test_metamodelo_cpp_cppfunction_isInline_setter(instance):
+    original = instance.isInline
+    instance.isInline = original
+    assert instance.isInline == original
+
+
+
+@given(instance=Metamodelo_Cpp_CppFunction_strategy)
+def test_metamodelo_cpp_cppfunction_linkage_setter(instance):
+    original = instance.linkage
+    instance.linkage = original
+    assert instance.linkage == original
+
+@given(instance=Metamodelo_Cpp_CppPrimitiveType_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppprimitivetype_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppPrimitiveType)
+
+@given(instance=Metamodelo_Cpp_CppTypeParameter_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cpptypeparameter_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppTypeParameter)
+
+@given(instance=Metamodelo_Cpp_CppTypeAccess_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cpptypeaccess_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppTypeAccess)
+
+@given(instance=Metamodelo_Cpp_CppImportDeclaration_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppimportdeclaration_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppImportDeclaration)
+
+@given(instance=Metamodelo_Cpp_CppNamedElement_strategy)
+@settings(max_examples=50)
+def test_metamodelo_cpp_cppnamedelement_instantiation(instance):
+    assert isinstance(instance, Metamodelo_Cpp_CppNamedElement)
+
+
+
+@given(instance=Metamodelo_Cpp_CppNamedElement_strategy)
+def test_metamodelo_cpp_cppnamedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

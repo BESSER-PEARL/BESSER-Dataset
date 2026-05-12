@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Component,
-    testport::Base,
-    testport::Required,
-    testport::Component,
+    testport_Base,
+    testport_Required,
+    testport_Component,
 )
 
 # =============================================================================
@@ -32,51 +32,51 @@ def test_component_constructor_args():
 
 
 
-def test_testport::base_is_not_abstract():
-    assert not inspect.isabstract(testport::Base)
+def test_testport_base_is_not_abstract():
+    assert not inspect.isabstract(testport_Base)
 
 
-def test_testport::base_constructor_exists():
-    assert callable(testport::Base.__init__)
+def test_testport_base_constructor_exists():
+    assert callable(testport_Base.__init__)
 
 
-def test_testport::base_constructor_args():
-    sig = inspect.signature(testport::Base.__init__)
+def test_testport_base_constructor_args():
+    sig = inspect.signature(testport_Base.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testport::required_is_not_abstract():
-    assert not inspect.isabstract(testport::Required)
+def test_testport_required_is_not_abstract():
+    assert not inspect.isabstract(testport_Required)
 
 
-def test_testport::required_constructor_exists():
-    assert callable(testport::Required.__init__)
+def test_testport_required_constructor_exists():
+    assert callable(testport_Required.__init__)
 
 
-def test_testport::required_constructor_args():
-    sig = inspect.signature(testport::Required.__init__)
+def test_testport_required_constructor_args():
+    sig = inspect.signature(testport_Required.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testport::component_is_not_abstract():
-    assert not inspect.isabstract(testport::Component)
+def test_testport_component_is_not_abstract():
+    assert not inspect.isabstract(testport_Component)
 
 
-def test_testport::component_constructor_exists():
-    assert callable(testport::Component.__init__)
+def test_testport_component_constructor_exists():
+    assert callable(testport_Component.__init__)
 
 
-def test_testport::component_constructor_args():
-    sig = inspect.signature(testport::Component.__init__)
+def test_testport_component_constructor_args():
+    sig = inspect.signature(testport_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testport::component_has_name():
-    assert hasattr(testport::Component, "name")
+def test_testport_component_has_name():
+    assert hasattr(testport_Component, "name")
     descriptor = None
-    for klass in testport::Component.__mro__:
+    for klass in testport_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -97,14 +97,14 @@ safe_text = st.text(
 Component_strategy = st.builds(
     Component,
 )
-testport::Base_strategy = st.builds(
-    testport::Base,
+testport_Base_strategy = st.builds(
+    testport_Base,
 )
-testport::Required_strategy = st.builds(
-    testport::Required,
+testport_Required_strategy = st.builds(
+    testport_Required,
 )
-testport::Component_strategy = st.builds(
-    testport::Component,
+testport_Component_strategy = st.builds(
+    testport_Component,
     name=
         safe_text
 )
@@ -114,28 +114,25 @@ testport::Component_strategy = st.builds(
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=testport::Base_strategy)
+@given(instance=testport_Base_strategy)
 @settings(max_examples=50)
-def test_testport::base_instantiation(instance):
-    assert isinstance(instance, testport::Base)
+def test_testport_base_instantiation(instance):
+    assert isinstance(instance, testport_Base)
 
-@given(instance=testport::Required_strategy)
+@given(instance=testport_Required_strategy)
 @settings(max_examples=50)
-def test_testport::required_instantiation(instance):
-    assert isinstance(instance, testport::Required)
+def test_testport_required_instantiation(instance):
+    assert isinstance(instance, testport_Required)
 
-@given(instance=testport::Component_strategy)
+@given(instance=testport_Component_strategy)
 @settings(max_examples=50)
-def test_testport::component_instantiation(instance):
-    assert isinstance(instance, testport::Component)
-
-@given(instance=testport::Component_strategy)
-def test_testport::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_testport_component_instantiation(instance):
+    assert isinstance(instance, testport_Component)
 
 
-@given(instance=testport::Component_strategy)
-def test_testport::component_name_setter(instance):
+
+@given(instance=testport_Component_strategy)
+def test_testport_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

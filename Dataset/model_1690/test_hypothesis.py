@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloworld150::Profession,
-    helloworld150::World,
-    helloworld150::Comment,
-    helloworld150::NamedElement,
+from python_code import (
+    helloworld150_Profession,
+    helloworld150_World,
+    helloworld150_Comment,
+    helloworld150_NamedElement,
     NamedElement,
-    helloworld150::Own,
-    helloworld150::Person,
-    helloworld150::Thing,
+    helloworld150_Thing,
+    helloworld150_Own,
+    helloworld150_Person,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_helloworld150::profession_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::Profession)
+def test_helloworld150_profession_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_Profession)
 
 
-def test_helloworld150::profession_constructor_exists():
-    assert callable(helloworld150::Profession.__init__)
+def test_helloworld150_profession_constructor_exists():
+    assert callable(helloworld150_Profession.__init__)
 
 
-def test_helloworld150::profession_constructor_args():
-    sig = inspect.signature(helloworld150::Profession.__init__)
+def test_helloworld150_profession_constructor_args():
+    sig = inspect.signature(helloworld150_Profession.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloworld150::profession_has_name():
-    assert hasattr(helloworld150::Profession, "name")
+def test_helloworld150_profession_has_name():
+    assert hasattr(helloworld150_Profession, "name")
     descriptor = None
-    for klass in helloworld150::Profession.__mro__:
+    for klass in helloworld150_Profession.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -46,37 +46,37 @@ def test_helloworld150::profession_has_name():
 
 
 
-def test_helloworld150::world_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::World)
+def test_helloworld150_world_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_World)
 
 
-def test_helloworld150::world_constructor_exists():
-    assert callable(helloworld150::World.__init__)
+def test_helloworld150_world_constructor_exists():
+    assert callable(helloworld150_World.__init__)
 
 
-def test_helloworld150::world_constructor_args():
-    sig = inspect.signature(helloworld150::World.__init__)
+def test_helloworld150_world_constructor_args():
+    sig = inspect.signature(helloworld150_World.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_helloworld150::comment_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::Comment)
+def test_helloworld150_comment_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_Comment)
 
 
-def test_helloworld150::comment_constructor_exists():
-    assert callable(helloworld150::Comment.__init__)
+def test_helloworld150_comment_constructor_exists():
+    assert callable(helloworld150_Comment.__init__)
 
 
-def test_helloworld150::comment_constructor_args():
-    sig = inspect.signature(helloworld150::Comment.__init__)
+def test_helloworld150_comment_constructor_args():
+    sig = inspect.signature(helloworld150_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_helloworld150::comment_has_content():
-    assert hasattr(helloworld150::Comment, "content")
+def test_helloworld150_comment_has_content():
+    assert hasattr(helloworld150_Comment, "content")
     descriptor = None
-    for klass in helloworld150::Comment.__mro__:
+    for klass in helloworld150_Comment.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -84,23 +84,23 @@ def test_helloworld150::comment_has_content():
 
 
 
-def test_helloworld150::namedelement_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::NamedElement)
+def test_helloworld150_namedelement_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_NamedElement)
 
 
-def test_helloworld150::namedelement_constructor_exists():
-    assert callable(helloworld150::NamedElement.__init__)
+def test_helloworld150_namedelement_constructor_exists():
+    assert callable(helloworld150_NamedElement.__init__)
 
 
-def test_helloworld150::namedelement_constructor_args():
-    sig = inspect.signature(helloworld150::NamedElement.__init__)
+def test_helloworld150_namedelement_constructor_args():
+    sig = inspect.signature(helloworld150_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloworld150::namedelement_has_name():
-    assert hasattr(helloworld150::NamedElement, "name")
+def test_helloworld150_namedelement_has_name():
+    assert hasattr(helloworld150_NamedElement, "name")
     descriptor = None
-    for klass in helloworld150::NamedElement.__mro__:
+    for klass in helloworld150_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -122,33 +122,57 @@ def test_namedelement_constructor_args():
 
 
 
-def test_helloworld150::own_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::Own)
+def test_helloworld150_thing_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_Thing)
 
 
-def test_helloworld150::own_constructor_exists():
-    assert callable(helloworld150::Own.__init__)
+def test_helloworld150_thing_constructor_exists():
+    assert callable(helloworld150_Thing.__init__)
 
 
-def test_helloworld150::own_constructor_args():
-    sig = inspect.signature(helloworld150::Own.__init__)
+def test_helloworld150_thing_constructor_args():
+    sig = inspect.signature(helloworld150_Thing.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_helloworld150_thing_has_id():
+    assert hasattr(helloworld150_Thing, "id")
+    descriptor = None
+    for klass in helloworld150_Thing.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_helloworld150_own_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_Own)
+
+
+def test_helloworld150_own_constructor_exists():
+    assert callable(helloworld150_Own.__init__)
+
+
+def test_helloworld150_own_constructor_args():
+    sig = inspect.signature(helloworld150_Own.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
     assert "ownerName" in params, "Missing parameter 'ownerName'"
 
-def test_helloworld150::own_has_since():
-    assert hasattr(helloworld150::Own, "since")
+def test_helloworld150_own_has_since():
+    assert hasattr(helloworld150_Own, "since")
     descriptor = None
-    for klass in helloworld150::Own.__mro__:
+    for klass in helloworld150_Own.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
     assert isinstance(descriptor, property)
 
-def test_helloworld150::own_has_ownerName():
-    assert hasattr(helloworld150::Own, "ownerName")
+def test_helloworld150_own_has_ownerName():
+    assert hasattr(helloworld150_Own, "ownerName")
     descriptor = None
-    for klass in helloworld150::Own.__mro__:
+    for klass in helloworld150_Own.__mro__:
         if "ownerName" in klass.__dict__:
             descriptor = klass.__dict__["ownerName"]
             break
@@ -156,59 +180,35 @@ def test_helloworld150::own_has_ownerName():
 
 
 
-def test_helloworld150::person_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::Person)
+def test_helloworld150_person_is_not_abstract():
+    assert not inspect.isabstract(helloworld150_Person)
 
 
-def test_helloworld150::person_constructor_exists():
-    assert callable(helloworld150::Person.__init__)
+def test_helloworld150_person_constructor_exists():
+    assert callable(helloworld150_Person.__init__)
 
 
-def test_helloworld150::person_constructor_args():
-    sig = inspect.signature(helloworld150::Person.__init__)
+def test_helloworld150_person_constructor_args():
+    sig = inspect.signature(helloworld150_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "birthDate" in params, "Missing parameter 'birthDate'"
     assert "forName" in params, "Missing parameter 'forName'"
+    assert "birthDate" in params, "Missing parameter 'birthDate'"
 
-def test_helloworld150::person_has_birthDate():
-    assert hasattr(helloworld150::Person, "birthDate")
+def test_helloworld150_person_has_forName():
+    assert hasattr(helloworld150_Person, "forName")
     descriptor = None
-    for klass in helloworld150::Person.__mro__:
-        if "birthDate" in klass.__dict__:
-            descriptor = klass.__dict__["birthDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_helloworld150::person_has_forName():
-    assert hasattr(helloworld150::Person, "forName")
-    descriptor = None
-    for klass in helloworld150::Person.__mro__:
+    for klass in helloworld150_Person.__mro__:
         if "forName" in klass.__dict__:
             descriptor = klass.__dict__["forName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_helloworld150::thing_is_not_abstract():
-    assert not inspect.isabstract(helloworld150::Thing)
-
-
-def test_helloworld150::thing_constructor_exists():
-    assert callable(helloworld150::Thing.__init__)
-
-
-def test_helloworld150::thing_constructor_args():
-    sig = inspect.signature(helloworld150::Thing.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_helloworld150::thing_has_id():
-    assert hasattr(helloworld150::Thing, "id")
+def test_helloworld150_person_has_birthDate():
+    assert hasattr(helloworld150_Person, "birthDate")
     descriptor = None
-    for klass in helloworld150::Thing.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in helloworld150_Person.__mro__:
+        if "birthDate" in klass.__dict__:
+            descriptor = klass.__dict__["birthDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -224,96 +224,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloworld150::Profession_strategy = st.builds(
-    helloworld150::Profession,
+helloworld150_Profession_strategy = st.builds(
+    helloworld150_Profession,
     name=
         safe_text
 )
-helloworld150::World_strategy = st.builds(
-    helloworld150::World,
+helloworld150_World_strategy = st.builds(
+    helloworld150_World,
 )
-helloworld150::Comment_strategy = st.builds(
-    helloworld150::Comment,
+helloworld150_Comment_strategy = st.builds(
+    helloworld150_Comment,
     content=
         safe_text
 )
-helloworld150::NamedElement_strategy = st.builds(
-    helloworld150::NamedElement,
+helloworld150_NamedElement_strategy = st.builds(
+    helloworld150_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-helloworld150::Own_strategy = st.builds(
-    helloworld150::Own,
+helloworld150_Thing_strategy = st.builds(
+    helloworld150_Thing,
+    id=
+        st.integers()
+)
+helloworld150_Own_strategy = st.builds(
+    helloworld150_Own,
     since=
         safe_text,
     ownerName=
         safe_text
 )
-helloworld150::Person_strategy = st.builds(
-    helloworld150::Person,
-    birthDate=
-        safe_text,
+helloworld150_Person_strategy = st.builds(
+    helloworld150_Person,
     forName=
+        safe_text,
+    birthDate=
         safe_text
 )
-helloworld150::Thing_strategy = st.builds(
-    helloworld150::Thing,
-    id=
-        st.integers()
-)
 
-@given(instance=helloworld150::Profession_strategy)
+@given(instance=helloworld150_Profession_strategy)
 @settings(max_examples=50)
-def test_helloworld150::profession_instantiation(instance):
-    assert isinstance(instance, helloworld150::Profession)
-
-@given(instance=helloworld150::Profession_strategy)
-def test_helloworld150::profession_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloworld150_profession_instantiation(instance):
+    assert isinstance(instance, helloworld150_Profession)
 
 
-@given(instance=helloworld150::Profession_strategy)
-def test_helloworld150::profession_name_setter(instance):
+
+@given(instance=helloworld150_Profession_strategy)
+def test_helloworld150_profession_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloworld150::World_strategy)
+@given(instance=helloworld150_World_strategy)
 @settings(max_examples=50)
-def test_helloworld150::world_instantiation(instance):
-    assert isinstance(instance, helloworld150::World)
+def test_helloworld150_world_instantiation(instance):
+    assert isinstance(instance, helloworld150_World)
 
-@given(instance=helloworld150::Comment_strategy)
+@given(instance=helloworld150_Comment_strategy)
 @settings(max_examples=50)
-def test_helloworld150::comment_instantiation(instance):
-    assert isinstance(instance, helloworld150::Comment)
-
-@given(instance=helloworld150::Comment_strategy)
-def test_helloworld150::comment_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_helloworld150_comment_instantiation(instance):
+    assert isinstance(instance, helloworld150_Comment)
 
 
-@given(instance=helloworld150::Comment_strategy)
-def test_helloworld150::comment_content_setter(instance):
+
+@given(instance=helloworld150_Comment_strategy)
+def test_helloworld150_comment_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=helloworld150::NamedElement_strategy)
+@given(instance=helloworld150_NamedElement_strategy)
 @settings(max_examples=50)
-def test_helloworld150::namedelement_instantiation(instance):
-    assert isinstance(instance, helloworld150::NamedElement)
-
-@given(instance=helloworld150::NamedElement_strategy)
-def test_helloworld150::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloworld150_namedelement_instantiation(instance):
+    assert isinstance(instance, helloworld150_NamedElement)
 
 
-@given(instance=helloworld150::NamedElement_strategy)
-def test_helloworld150::namedelement_name_setter(instance):
+
+@given(instance=helloworld150_NamedElement_strategy)
+def test_helloworld150_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -323,72 +314,57 @@ def test_helloworld150::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=helloworld150::Own_strategy)
+@given(instance=helloworld150_Thing_strategy)
 @settings(max_examples=50)
-def test_helloworld150::own_instantiation(instance):
-    assert isinstance(instance, helloworld150::Own)
-
-@given(instance=helloworld150::Own_strategy)
-def test_helloworld150::own_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_helloworld150_thing_instantiation(instance):
+    assert isinstance(instance, helloworld150_Thing)
 
 
-@given(instance=helloworld150::Own_strategy)
-def test_helloworld150::own_since_setter(instance):
+
+@given(instance=helloworld150_Thing_strategy)
+def test_helloworld150_thing_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=helloworld150_Own_strategy)
+@settings(max_examples=50)
+def test_helloworld150_own_instantiation(instance):
+    assert isinstance(instance, helloworld150_Own)
+
+
+
+@given(instance=helloworld150_Own_strategy)
+def test_helloworld150_own_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=helloworld150::Own_strategy)
-def test_helloworld150::own_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
 
 
-@given(instance=helloworld150::Own_strategy)
-def test_helloworld150::own_ownerName_setter(instance):
+@given(instance=helloworld150_Own_strategy)
+def test_helloworld150_own_ownerName_setter(instance):
     original = instance.ownerName
     instance.ownerName = original
     assert instance.ownerName == original
 
-@given(instance=helloworld150::Person_strategy)
+@given(instance=helloworld150_Person_strategy)
 @settings(max_examples=50)
-def test_helloworld150::person_instantiation(instance):
-    assert isinstance(instance, helloworld150::Person)
-
-@given(instance=helloworld150::Person_strategy)
-def test_helloworld150::person_birthDate_type(instance):
-    assert isinstance(instance.birthDate, str)
+def test_helloworld150_person_instantiation(instance):
+    assert isinstance(instance, helloworld150_Person)
 
 
-@given(instance=helloworld150::Person_strategy)
-def test_helloworld150::person_birthDate_setter(instance):
-    original = instance.birthDate
-    instance.birthDate = original
-    assert instance.birthDate == original
 
-@given(instance=helloworld150::Person_strategy)
-def test_helloworld150::person_forName_type(instance):
-    assert isinstance(instance.forName, str)
-
-
-@given(instance=helloworld150::Person_strategy)
-def test_helloworld150::person_forName_setter(instance):
+@given(instance=helloworld150_Person_strategy)
+def test_helloworld150_person_forName_setter(instance):
     original = instance.forName
     instance.forName = original
     assert instance.forName == original
 
-@given(instance=helloworld150::Thing_strategy)
-@settings(max_examples=50)
-def test_helloworld150::thing_instantiation(instance):
-    assert isinstance(instance, helloworld150::Thing)
-
-@given(instance=helloworld150::Thing_strategy)
-def test_helloworld150::thing_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
-@given(instance=helloworld150::Thing_strategy)
-def test_helloworld150::thing_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+@given(instance=helloworld150_Person_strategy)
+def test_helloworld150_person_birthDate_setter(instance):
+    original = instance.birthDate
+    instance.birthDate = original
+    assert instance.birthDate == original

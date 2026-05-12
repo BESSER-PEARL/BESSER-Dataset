@@ -3,75 +3,75 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Conflict,
-    mancoosimm::OrConflict,
-    mancoosimm::AndConflict,
-    mancoosimm::SingleConflict,
-    mancoosimm::SharedLibrary,
-    mancoosimm::MimeType,
-    mancoosimm::MimeTypeHandler,
+    mancoosimm_AndConflict,
+    mancoosimm_OrConflict,
+    mancoosimm_SingleConflict,
+    mancoosimm_SharedLibrary,
+    mancoosimm_MimeType,
+    mancoosimm_MimeTypeHandler,
     File,
-    mancoosimm::InformationFile,
-    mancoosimm::Boot,
-    mancoosimm::Menu,
-    mancoosimm::GConf,
-    mancoosimm::XFontCache,
-    mancoosimm::ModuleCache,
-    mancoosimm::LibraryCache,
-    mancoosimm::MimeTypeHandlerCache,
-    mancoosimm::DesktopDB,
-    mancoosimm::IconCache,
-    mancoosimm::NotInv,
-    mancoosimm::OrInv,
-    mancoosimm::AndInv,
+    mancoosimm_InformationFile,
+    mancoosimm_Boot,
+    mancoosimm_Menu,
+    mancoosimm_GConf,
+    mancoosimm_XFontCache,
+    mancoosimm_ModuleCache,
+    mancoosimm_LibraryCache,
+    mancoosimm_MimeTypeHandlerCache,
+    mancoosimm_DesktopDB,
+    mancoosimm_IconCache,
+    mancoosimm_NotInv,
+    mancoosimm_OrInv,
+    mancoosimm_AndInv,
     Dependence,
-    mancoosimm::SingleDep,
-    mancoosimm::OrDep,
+    mancoosimm_SingleDep,
+    mancoosimm_OrDep,
     InstalledPackage,
-    mancoosimm::BinPackage,
+    mancoosimm_BinPackage,
     UnpackedPackage,
-    mancoosimm::AndDep,
-    mancoosimm::VirtualPackage,
-    mancoosimm::Dependence,
-    mancoosimm::SrcPackage,
+    mancoosimm_AndDep,
+    mancoosimm_VirtualPackage,
+    mancoosimm_Dependence,
+    mancoosimm_SrcPackage,
     Package,
-    mancoosimm::Conflict,
-    mancoosimm::DocumentationFile,
-    mancoosimm::HalfConfiguredPackage,
-    mancoosimm::UnpackedPackage,
-    mancoosimm::ConfigFilesPackage,
-    mancoosimm::NotInstalledPackage,
-    mancoosimm::InstalledPackage,
+    mancoosimm_Conflict,
+    mancoosimm_DocumentationFile,
+    mancoosimm_HalfConfiguredPackage,
+    mancoosimm_UnpackedPackage,
+    mancoosimm_ConfigFilesPackage,
+    mancoosimm_NotInstalledPackage,
+    mancoosimm_InstalledPackage,
     NamedElement,
-    mancoosimm::SkeeperDocument,
-    mancoosimm::Module,
-    mancoosimm::Environment,
-    mancoosimm::MenuEntry,
-    mancoosimm::EmacsPackage,
-    mancoosimm::User,
-    mancoosimm::SGMLDocument,
-    mancoosimm::XFont,
-    mancoosimm::Atom,
-    mancoosimm::Group,
-    mancoosimm::Alternative,
-    mancoosimm::Invariant,
-    mancoosimm::File,
-    mancoosimm::Service,
-    mancoosimm::SGMLCatalog,
-    mancoosimm::SkeeperCatalog,
-    mancoosimm::ApplicationMenuCatalog,
-    mancoosimm::FileSystem,
-    mancoosimm::PackageSetting,
-    mancoosimm::Configuration,
-    mancoosimm::NamedElement,
-    mancoosimm::Package,
-    mancoosimm::HalfInstalledPackage,
-    PriorityType,
-    VersionType,
+    mancoosimm_User,
+    mancoosimm_ApplicationMenuCatalog,
+    mancoosimm_Invariant,
+    mancoosimm_PackageSetting,
+    mancoosimm_EmacsPackage,
+    mancoosimm_MenuEntry,
+    mancoosimm_Environment,
+    mancoosimm_Alternative,
+    mancoosimm_Service,
+    mancoosimm_SGMLDocument,
+    mancoosimm_SGMLCatalog,
+    mancoosimm_XFont,
+    mancoosimm_SkeeperDocument,
+    mancoosimm_SkeeperCatalog,
+    mancoosimm_Module,
+    mancoosimm_Atom,
+    mancoosimm_Group,
+    mancoosimm_File,
+    mancoosimm_FileSystem,
+    mancoosimm_Configuration,
+    mancoosimm_NamedElement,
+    mancoosimm_Package,
+    mancoosimm_HalfInstalledPackage,
     StatusType,
+    VersionType,
+    PriorityType,
 )
 
 # =============================================================================
@@ -94,146 +94,146 @@ def test_conflict_constructor_args():
 
 
 
-def test_mancoosimm::orconflict_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::OrConflict)
+def test_mancoosimm_andconflict_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_AndConflict)
 
 
-def test_mancoosimm::orconflict_constructor_exists():
-    assert callable(mancoosimm::OrConflict.__init__)
+def test_mancoosimm_andconflict_constructor_exists():
+    assert callable(mancoosimm_AndConflict.__init__)
 
 
-def test_mancoosimm::orconflict_constructor_args():
-    sig = inspect.signature(mancoosimm::OrConflict.__init__)
+def test_mancoosimm_andconflict_constructor_args():
+    sig = inspect.signature(mancoosimm_AndConflict.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::andconflict_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::AndConflict)
+def test_mancoosimm_orconflict_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_OrConflict)
 
 
-def test_mancoosimm::andconflict_constructor_exists():
-    assert callable(mancoosimm::AndConflict.__init__)
+def test_mancoosimm_orconflict_constructor_exists():
+    assert callable(mancoosimm_OrConflict.__init__)
 
 
-def test_mancoosimm::andconflict_constructor_args():
-    sig = inspect.signature(mancoosimm::AndConflict.__init__)
+def test_mancoosimm_orconflict_constructor_args():
+    sig = inspect.signature(mancoosimm_OrConflict.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::singleconflict_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SingleConflict)
+def test_mancoosimm_singleconflict_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SingleConflict)
 
 
-def test_mancoosimm::singleconflict_constructor_exists():
-    assert callable(mancoosimm::SingleConflict.__init__)
+def test_mancoosimm_singleconflict_constructor_exists():
+    assert callable(mancoosimm_SingleConflict.__init__)
 
 
-def test_mancoosimm::singleconflict_constructor_args():
-    sig = inspect.signature(mancoosimm::SingleConflict.__init__)
+def test_mancoosimm_singleconflict_constructor_args():
+    sig = inspect.signature(mancoosimm_SingleConflict.__init__)
     params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_mancoosimm::singleconflict_has_version():
-    assert hasattr(mancoosimm::SingleConflict, "version")
+def test_mancoosimm_singleconflict_has_value():
+    assert hasattr(mancoosimm_SingleConflict, "value")
     descriptor = None
-    for klass in mancoosimm::SingleConflict.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::singleconflict_has_value():
-    assert hasattr(mancoosimm::SingleConflict, "value")
-    descriptor = None
-    for klass in mancoosimm::SingleConflict.__mro__:
+    for klass in mancoosimm_SingleConflict.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mancoosimm::sharedlibrary_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SharedLibrary)
-
-
-def test_mancoosimm::sharedlibrary_constructor_exists():
-    assert callable(mancoosimm::SharedLibrary.__init__)
-
-
-def test_mancoosimm::sharedlibrary_constructor_args():
-    sig = inspect.signature(mancoosimm::SharedLibrary.__init__)
-    params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mancoosimm::sharedlibrary_has_version():
-    assert hasattr(mancoosimm::SharedLibrary, "version")
+def test_mancoosimm_singleconflict_has_version():
+    assert hasattr(mancoosimm_SingleConflict, "version")
     descriptor = None
-    for klass in mancoosimm::SharedLibrary.__mro__:
+    for klass in mancoosimm_SingleConflict.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::sharedlibrary_has_name():
-    assert hasattr(mancoosimm::SharedLibrary, "name")
-    descriptor = None
-    for klass in mancoosimm::SharedLibrary.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_mancoosimm::mimetype_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::MimeType)
-
-
-def test_mancoosimm::mimetype_constructor_exists():
-    assert callable(mancoosimm::MimeType.__init__)
+def test_mancoosimm_sharedlibrary_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SharedLibrary)
 
 
-def test_mancoosimm::mimetype_constructor_args():
-    sig = inspect.signature(mancoosimm::MimeType.__init__)
+def test_mancoosimm_sharedlibrary_constructor_exists():
+    assert callable(mancoosimm_SharedLibrary.__init__)
+
+
+def test_mancoosimm_sharedlibrary_constructor_args():
+    sig = inspect.signature(mancoosimm_SharedLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "extension" in params, "Missing parameter 'extension'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_mancoosimm::mimetype_has_name():
-    assert hasattr(mancoosimm::MimeType, "name")
+def test_mancoosimm_sharedlibrary_has_name():
+    assert hasattr(mancoosimm_SharedLibrary, "name")
     descriptor = None
-    for klass in mancoosimm::MimeType.__mro__:
+    for klass in mancoosimm_SharedLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::mimetype_has_extension():
-    assert hasattr(mancoosimm::MimeType, "extension")
+def test_mancoosimm_sharedlibrary_has_version():
+    assert hasattr(mancoosimm_SharedLibrary, "version")
     descriptor = None
-    for klass in mancoosimm::MimeType.__mro__:
+    for klass in mancoosimm_SharedLibrary.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mancoosimm_mimetype_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_MimeType)
+
+
+def test_mancoosimm_mimetype_constructor_exists():
+    assert callable(mancoosimm_MimeType.__init__)
+
+
+def test_mancoosimm_mimetype_constructor_args():
+    sig = inspect.signature(mancoosimm_MimeType.__init__)
+    params = list(sig.parameters.keys())
+    assert "extension" in params, "Missing parameter 'extension'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mancoosimm_mimetype_has_extension():
+    assert hasattr(mancoosimm_MimeType, "extension")
+    descriptor = None
+    for klass in mancoosimm_MimeType.__mro__:
         if "extension" in klass.__dict__:
             descriptor = klass.__dict__["extension"]
             break
     assert isinstance(descriptor, property)
 
+def test_mancoosimm_mimetype_has_name():
+    assert hasattr(mancoosimm_MimeType, "name")
+    descriptor = None
+    for klass in mancoosimm_MimeType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mancoosimm::mimetypehandler_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::MimeTypeHandler)
+
+def test_mancoosimm_mimetypehandler_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_MimeTypeHandler)
 
 
-def test_mancoosimm::mimetypehandler_constructor_exists():
-    assert callable(mancoosimm::MimeTypeHandler.__init__)
+def test_mancoosimm_mimetypehandler_constructor_exists():
+    assert callable(mancoosimm_MimeTypeHandler.__init__)
 
 
-def test_mancoosimm::mimetypehandler_constructor_args():
-    sig = inspect.signature(mancoosimm::MimeTypeHandler.__init__)
+def test_mancoosimm_mimetypehandler_constructor_args():
+    sig = inspect.signature(mancoosimm_MimeTypeHandler.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -252,79 +252,79 @@ def test_file_constructor_args():
 
 
 
-def test_mancoosimm::informationfile_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::InformationFile)
+def test_mancoosimm_informationfile_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_InformationFile)
 
 
-def test_mancoosimm::informationfile_constructor_exists():
-    assert callable(mancoosimm::InformationFile.__init__)
+def test_mancoosimm_informationfile_constructor_exists():
+    assert callable(mancoosimm_InformationFile.__init__)
 
 
-def test_mancoosimm::informationfile_constructor_args():
-    sig = inspect.signature(mancoosimm::InformationFile.__init__)
+def test_mancoosimm_informationfile_constructor_args():
+    sig = inspect.signature(mancoosimm_InformationFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::boot_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Boot)
+def test_mancoosimm_boot_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Boot)
 
 
-def test_mancoosimm::boot_constructor_exists():
-    assert callable(mancoosimm::Boot.__init__)
+def test_mancoosimm_boot_constructor_exists():
+    assert callable(mancoosimm_Boot.__init__)
 
 
-def test_mancoosimm::boot_constructor_args():
-    sig = inspect.signature(mancoosimm::Boot.__init__)
+def test_mancoosimm_boot_constructor_args():
+    sig = inspect.signature(mancoosimm_Boot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::menu_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Menu)
+def test_mancoosimm_menu_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Menu)
 
 
-def test_mancoosimm::menu_constructor_exists():
-    assert callable(mancoosimm::Menu.__init__)
+def test_mancoosimm_menu_constructor_exists():
+    assert callable(mancoosimm_Menu.__init__)
 
 
-def test_mancoosimm::menu_constructor_args():
-    sig = inspect.signature(mancoosimm::Menu.__init__)
+def test_mancoosimm_menu_constructor_args():
+    sig = inspect.signature(mancoosimm_Menu.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::gconf_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::GConf)
+def test_mancoosimm_gconf_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_GConf)
 
 
-def test_mancoosimm::gconf_constructor_exists():
-    assert callable(mancoosimm::GConf.__init__)
+def test_mancoosimm_gconf_constructor_exists():
+    assert callable(mancoosimm_GConf.__init__)
 
 
-def test_mancoosimm::gconf_constructor_args():
-    sig = inspect.signature(mancoosimm::GConf.__init__)
+def test_mancoosimm_gconf_constructor_args():
+    sig = inspect.signature(mancoosimm_GConf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::xfontcache_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::XFontCache)
+def test_mancoosimm_xfontcache_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_XFontCache)
 
 
-def test_mancoosimm::xfontcache_constructor_exists():
-    assert callable(mancoosimm::XFontCache.__init__)
+def test_mancoosimm_xfontcache_constructor_exists():
+    assert callable(mancoosimm_XFontCache.__init__)
 
 
-def test_mancoosimm::xfontcache_constructor_args():
-    sig = inspect.signature(mancoosimm::XFontCache.__init__)
+def test_mancoosimm_xfontcache_constructor_args():
+    sig = inspect.signature(mancoosimm_XFontCache.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_mancoosimm::xfontcache_has_location():
-    assert hasattr(mancoosimm::XFontCache, "location")
+def test_mancoosimm_xfontcache_has_location():
+    assert hasattr(mancoosimm_XFontCache, "location")
     descriptor = None
-    for klass in mancoosimm::XFontCache.__mro__:
+    for klass in mancoosimm_XFontCache.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -332,23 +332,23 @@ def test_mancoosimm::xfontcache_has_location():
 
 
 
-def test_mancoosimm::modulecache_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::ModuleCache)
+def test_mancoosimm_modulecache_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_ModuleCache)
 
 
-def test_mancoosimm::modulecache_constructor_exists():
-    assert callable(mancoosimm::ModuleCache.__init__)
+def test_mancoosimm_modulecache_constructor_exists():
+    assert callable(mancoosimm_ModuleCache.__init__)
 
 
-def test_mancoosimm::modulecache_constructor_args():
-    sig = inspect.signature(mancoosimm::ModuleCache.__init__)
+def test_mancoosimm_modulecache_constructor_args():
+    sig = inspect.signature(mancoosimm_ModuleCache.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
 
-def test_mancoosimm::modulecache_has_version():
-    assert hasattr(mancoosimm::ModuleCache, "version")
+def test_mancoosimm_modulecache_has_version():
+    assert hasattr(mancoosimm_ModuleCache, "version")
     descriptor = None
-    for klass in mancoosimm::ModuleCache.__mro__:
+    for klass in mancoosimm_ModuleCache.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -356,65 +356,65 @@ def test_mancoosimm::modulecache_has_version():
 
 
 
-def test_mancoosimm::librarycache_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::LibraryCache)
+def test_mancoosimm_librarycache_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_LibraryCache)
 
 
-def test_mancoosimm::librarycache_constructor_exists():
-    assert callable(mancoosimm::LibraryCache.__init__)
+def test_mancoosimm_librarycache_constructor_exists():
+    assert callable(mancoosimm_LibraryCache.__init__)
 
 
-def test_mancoosimm::librarycache_constructor_args():
-    sig = inspect.signature(mancoosimm::LibraryCache.__init__)
+def test_mancoosimm_librarycache_constructor_args():
+    sig = inspect.signature(mancoosimm_LibraryCache.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::mimetypehandlercache_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::MimeTypeHandlerCache)
+def test_mancoosimm_mimetypehandlercache_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_MimeTypeHandlerCache)
 
 
-def test_mancoosimm::mimetypehandlercache_constructor_exists():
-    assert callable(mancoosimm::MimeTypeHandlerCache.__init__)
+def test_mancoosimm_mimetypehandlercache_constructor_exists():
+    assert callable(mancoosimm_MimeTypeHandlerCache.__init__)
 
 
-def test_mancoosimm::mimetypehandlercache_constructor_args():
-    sig = inspect.signature(mancoosimm::MimeTypeHandlerCache.__init__)
+def test_mancoosimm_mimetypehandlercache_constructor_args():
+    sig = inspect.signature(mancoosimm_MimeTypeHandlerCache.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::desktopdb_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::DesktopDB)
+def test_mancoosimm_desktopdb_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_DesktopDB)
 
 
-def test_mancoosimm::desktopdb_constructor_exists():
-    assert callable(mancoosimm::DesktopDB.__init__)
+def test_mancoosimm_desktopdb_constructor_exists():
+    assert callable(mancoosimm_DesktopDB.__init__)
 
 
-def test_mancoosimm::desktopdb_constructor_args():
-    sig = inspect.signature(mancoosimm::DesktopDB.__init__)
+def test_mancoosimm_desktopdb_constructor_args():
+    sig = inspect.signature(mancoosimm_DesktopDB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::iconcache_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::IconCache)
+def test_mancoosimm_iconcache_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_IconCache)
 
 
-def test_mancoosimm::iconcache_constructor_exists():
-    assert callable(mancoosimm::IconCache.__init__)
+def test_mancoosimm_iconcache_constructor_exists():
+    assert callable(mancoosimm_IconCache.__init__)
 
 
-def test_mancoosimm::iconcache_constructor_args():
-    sig = inspect.signature(mancoosimm::IconCache.__init__)
+def test_mancoosimm_iconcache_constructor_args():
+    sig = inspect.signature(mancoosimm_IconCache.__init__)
     params = list(sig.parameters.keys())
     assert "mtime" in params, "Missing parameter 'mtime'"
 
-def test_mancoosimm::iconcache_has_mtime():
-    assert hasattr(mancoosimm::IconCache, "mtime")
+def test_mancoosimm_iconcache_has_mtime():
+    assert hasattr(mancoosimm_IconCache, "mtime")
     descriptor = None
-    for klass in mancoosimm::IconCache.__mro__:
+    for klass in mancoosimm_IconCache.__mro__:
         if "mtime" in klass.__dict__:
             descriptor = klass.__dict__["mtime"]
             break
@@ -422,44 +422,44 @@ def test_mancoosimm::iconcache_has_mtime():
 
 
 
-def test_mancoosimm::notinv_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::NotInv)
+def test_mancoosimm_notinv_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_NotInv)
 
 
-def test_mancoosimm::notinv_constructor_exists():
-    assert callable(mancoosimm::NotInv.__init__)
+def test_mancoosimm_notinv_constructor_exists():
+    assert callable(mancoosimm_NotInv.__init__)
 
 
-def test_mancoosimm::notinv_constructor_args():
-    sig = inspect.signature(mancoosimm::NotInv.__init__)
+def test_mancoosimm_notinv_constructor_args():
+    sig = inspect.signature(mancoosimm_NotInv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::orinv_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::OrInv)
+def test_mancoosimm_orinv_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_OrInv)
 
 
-def test_mancoosimm::orinv_constructor_exists():
-    assert callable(mancoosimm::OrInv.__init__)
+def test_mancoosimm_orinv_constructor_exists():
+    assert callable(mancoosimm_OrInv.__init__)
 
 
-def test_mancoosimm::orinv_constructor_args():
-    sig = inspect.signature(mancoosimm::OrInv.__init__)
+def test_mancoosimm_orinv_constructor_args():
+    sig = inspect.signature(mancoosimm_OrInv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::andinv_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::AndInv)
+def test_mancoosimm_andinv_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_AndInv)
 
 
-def test_mancoosimm::andinv_constructor_exists():
-    assert callable(mancoosimm::AndInv.__init__)
+def test_mancoosimm_andinv_constructor_exists():
+    assert callable(mancoosimm_AndInv.__init__)
 
 
-def test_mancoosimm::andinv_constructor_args():
-    sig = inspect.signature(mancoosimm::AndInv.__init__)
+def test_mancoosimm_andinv_constructor_args():
+    sig = inspect.signature(mancoosimm_AndInv.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -478,50 +478,50 @@ def test_dependence_constructor_args():
 
 
 
-def test_mancoosimm::singledep_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SingleDep)
+def test_mancoosimm_singledep_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SingleDep)
 
 
-def test_mancoosimm::singledep_constructor_exists():
-    assert callable(mancoosimm::SingleDep.__init__)
+def test_mancoosimm_singledep_constructor_exists():
+    assert callable(mancoosimm_SingleDep.__init__)
 
 
-def test_mancoosimm::singledep_constructor_args():
-    sig = inspect.signature(mancoosimm::SingleDep.__init__)
+def test_mancoosimm_singledep_constructor_args():
+    sig = inspect.signature(mancoosimm_SingleDep.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_mancoosimm::singledep_has_value():
-    assert hasattr(mancoosimm::SingleDep, "value")
+def test_mancoosimm_singledep_has_version():
+    assert hasattr(mancoosimm_SingleDep, "version")
     descriptor = None
-    for klass in mancoosimm::SingleDep.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::singledep_has_version():
-    assert hasattr(mancoosimm::SingleDep, "version")
-    descriptor = None
-    for klass in mancoosimm::SingleDep.__mro__:
+    for klass in mancoosimm_SingleDep.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
+def test_mancoosimm_singledep_has_value():
+    assert hasattr(mancoosimm_SingleDep, "value")
+    descriptor = None
+    for klass in mancoosimm_SingleDep.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mancoosimm::ordep_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::OrDep)
+
+def test_mancoosimm_ordep_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_OrDep)
 
 
-def test_mancoosimm::ordep_constructor_exists():
-    assert callable(mancoosimm::OrDep.__init__)
+def test_mancoosimm_ordep_constructor_exists():
+    assert callable(mancoosimm_OrDep.__init__)
 
 
-def test_mancoosimm::ordep_constructor_args():
-    sig = inspect.signature(mancoosimm::OrDep.__init__)
+def test_mancoosimm_ordep_constructor_args():
+    sig = inspect.signature(mancoosimm_OrDep.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -540,16 +540,16 @@ def test_installedpackage_constructor_args():
 
 
 
-def test_mancoosimm::binpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::BinPackage)
+def test_mancoosimm_binpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_BinPackage)
 
 
-def test_mancoosimm::binpackage_constructor_exists():
-    assert callable(mancoosimm::BinPackage.__init__)
+def test_mancoosimm_binpackage_constructor_exists():
+    assert callable(mancoosimm_BinPackage.__init__)
 
 
-def test_mancoosimm::binpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::BinPackage.__init__)
+def test_mancoosimm_binpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_BinPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -568,58 +568,58 @@ def test_unpackedpackage_constructor_args():
 
 
 
-def test_mancoosimm::anddep_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::AndDep)
+def test_mancoosimm_anddep_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_AndDep)
 
 
-def test_mancoosimm::anddep_constructor_exists():
-    assert callable(mancoosimm::AndDep.__init__)
+def test_mancoosimm_anddep_constructor_exists():
+    assert callable(mancoosimm_AndDep.__init__)
 
 
-def test_mancoosimm::anddep_constructor_args():
-    sig = inspect.signature(mancoosimm::AndDep.__init__)
+def test_mancoosimm_anddep_constructor_args():
+    sig = inspect.signature(mancoosimm_AndDep.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::virtualpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::VirtualPackage)
+def test_mancoosimm_virtualpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_VirtualPackage)
 
 
-def test_mancoosimm::virtualpackage_constructor_exists():
-    assert callable(mancoosimm::VirtualPackage.__init__)
+def test_mancoosimm_virtualpackage_constructor_exists():
+    assert callable(mancoosimm_VirtualPackage.__init__)
 
 
-def test_mancoosimm::virtualpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::VirtualPackage.__init__)
+def test_mancoosimm_virtualpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_VirtualPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::dependence_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Dependence)
+def test_mancoosimm_dependence_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Dependence)
 
 
-def test_mancoosimm::dependence_constructor_exists():
-    assert callable(mancoosimm::Dependence.__init__)
+def test_mancoosimm_dependence_constructor_exists():
+    assert callable(mancoosimm_Dependence.__init__)
 
 
-def test_mancoosimm::dependence_constructor_args():
-    sig = inspect.signature(mancoosimm::Dependence.__init__)
+def test_mancoosimm_dependence_constructor_args():
+    sig = inspect.signature(mancoosimm_Dependence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::srcpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SrcPackage)
+def test_mancoosimm_srcpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SrcPackage)
 
 
-def test_mancoosimm::srcpackage_constructor_exists():
-    assert callable(mancoosimm::SrcPackage.__init__)
+def test_mancoosimm_srcpackage_constructor_exists():
+    assert callable(mancoosimm_SrcPackage.__init__)
 
 
-def test_mancoosimm::srcpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::SrcPackage.__init__)
+def test_mancoosimm_srcpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_SrcPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -638,125 +638,125 @@ def test_package_constructor_args():
 
 
 
-def test_mancoosimm::conflict_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Conflict)
+def test_mancoosimm_conflict_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Conflict)
 
 
-def test_mancoosimm::conflict_constructor_exists():
-    assert callable(mancoosimm::Conflict.__init__)
+def test_mancoosimm_conflict_constructor_exists():
+    assert callable(mancoosimm_Conflict.__init__)
 
 
-def test_mancoosimm::conflict_constructor_args():
-    sig = inspect.signature(mancoosimm::Conflict.__init__)
+def test_mancoosimm_conflict_constructor_args():
+    sig = inspect.signature(mancoosimm_Conflict.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::documentationfile_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::DocumentationFile)
+def test_mancoosimm_documentationfile_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_DocumentationFile)
 
 
-def test_mancoosimm::documentationfile_constructor_exists():
-    assert callable(mancoosimm::DocumentationFile.__init__)
+def test_mancoosimm_documentationfile_constructor_exists():
+    assert callable(mancoosimm_DocumentationFile.__init__)
 
 
-def test_mancoosimm::documentationfile_constructor_args():
-    sig = inspect.signature(mancoosimm::DocumentationFile.__init__)
+def test_mancoosimm_documentationfile_constructor_args():
+    sig = inspect.signature(mancoosimm_DocumentationFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::halfconfiguredpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::HalfConfiguredPackage)
+def test_mancoosimm_halfconfiguredpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_HalfConfiguredPackage)
 
 
-def test_mancoosimm::halfconfiguredpackage_constructor_exists():
-    assert callable(mancoosimm::HalfConfiguredPackage.__init__)
+def test_mancoosimm_halfconfiguredpackage_constructor_exists():
+    assert callable(mancoosimm_HalfConfiguredPackage.__init__)
 
 
-def test_mancoosimm::halfconfiguredpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::HalfConfiguredPackage.__init__)
+def test_mancoosimm_halfconfiguredpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_HalfConfiguredPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::unpackedpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::UnpackedPackage)
+def test_mancoosimm_unpackedpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_UnpackedPackage)
 
 
-def test_mancoosimm::unpackedpackage_constructor_exists():
-    assert callable(mancoosimm::UnpackedPackage.__init__)
+def test_mancoosimm_unpackedpackage_constructor_exists():
+    assert callable(mancoosimm_UnpackedPackage.__init__)
 
 
-def test_mancoosimm::unpackedpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::UnpackedPackage.__init__)
+def test_mancoosimm_unpackedpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_UnpackedPackage.__init__)
     params = list(sig.parameters.keys())
+    assert "uploaders" in params, "Missing parameter 'uploaders'"
+    assert "section" in params, "Missing parameter 'section'"
+    assert "priority" in params, "Missing parameter 'priority'"
+    assert "tag" in params, "Missing parameter 'tag'"
     assert "description" in params, "Missing parameter 'description'"
     assert "maintainer" in params, "Missing parameter 'maintainer'"
-    assert "tag" in params, "Missing parameter 'tag'"
-    assert "uploaders" in params, "Missing parameter 'uploaders'"
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "section" in params, "Missing parameter 'section'"
     assert "checkSum" in params, "Missing parameter 'checkSum'"
 
-def test_mancoosimm::unpackedpackage_has_description():
-    assert hasattr(mancoosimm::UnpackedPackage, "description")
+def test_mancoosimm_unpackedpackage_has_uploaders():
+    assert hasattr(mancoosimm_UnpackedPackage, "uploaders")
     descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::unpackedpackage_has_maintainer():
-    assert hasattr(mancoosimm::UnpackedPackage, "maintainer")
-    descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
-        if "maintainer" in klass.__dict__:
-            descriptor = klass.__dict__["maintainer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::unpackedpackage_has_tag():
-    assert hasattr(mancoosimm::UnpackedPackage, "tag")
-    descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
-        if "tag" in klass.__dict__:
-            descriptor = klass.__dict__["tag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::unpackedpackage_has_uploaders():
-    assert hasattr(mancoosimm::UnpackedPackage, "uploaders")
-    descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
+    for klass in mancoosimm_UnpackedPackage.__mro__:
         if "uploaders" in klass.__dict__:
             descriptor = klass.__dict__["uploaders"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::unpackedpackage_has_priority():
-    assert hasattr(mancoosimm::UnpackedPackage, "priority")
+def test_mancoosimm_unpackedpackage_has_section():
+    assert hasattr(mancoosimm_UnpackedPackage, "section")
     descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::unpackedpackage_has_section():
-    assert hasattr(mancoosimm::UnpackedPackage, "section")
-    descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
+    for klass in mancoosimm_UnpackedPackage.__mro__:
         if "section" in klass.__dict__:
             descriptor = klass.__dict__["section"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::unpackedpackage_has_checkSum():
-    assert hasattr(mancoosimm::UnpackedPackage, "checkSum")
+def test_mancoosimm_unpackedpackage_has_priority():
+    assert hasattr(mancoosimm_UnpackedPackage, "priority")
     descriptor = None
-    for klass in mancoosimm::UnpackedPackage.__mro__:
+    for klass in mancoosimm_UnpackedPackage.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_unpackedpackage_has_tag():
+    assert hasattr(mancoosimm_UnpackedPackage, "tag")
+    descriptor = None
+    for klass in mancoosimm_UnpackedPackage.__mro__:
+        if "tag" in klass.__dict__:
+            descriptor = klass.__dict__["tag"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_unpackedpackage_has_description():
+    assert hasattr(mancoosimm_UnpackedPackage, "description")
+    descriptor = None
+    for klass in mancoosimm_UnpackedPackage.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_unpackedpackage_has_maintainer():
+    assert hasattr(mancoosimm_UnpackedPackage, "maintainer")
+    descriptor = None
+    for klass in mancoosimm_UnpackedPackage.__mro__:
+        if "maintainer" in klass.__dict__:
+            descriptor = klass.__dict__["maintainer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_unpackedpackage_has_checkSum():
+    assert hasattr(mancoosimm_UnpackedPackage, "checkSum")
+    descriptor = None
+    for klass in mancoosimm_UnpackedPackage.__mro__:
         if "checkSum" in klass.__dict__:
             descriptor = klass.__dict__["checkSum"]
             break
@@ -764,201 +764,201 @@ def test_mancoosimm::unpackedpackage_has_checkSum():
 
 
 
-def test_mancoosimm::configfilespackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::ConfigFilesPackage)
+def test_mancoosimm_configfilespackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_ConfigFilesPackage)
 
 
-def test_mancoosimm::configfilespackage_constructor_exists():
-    assert callable(mancoosimm::ConfigFilesPackage.__init__)
+def test_mancoosimm_configfilespackage_constructor_exists():
+    assert callable(mancoosimm_ConfigFilesPackage.__init__)
 
 
-def test_mancoosimm::configfilespackage_constructor_args():
-    sig = inspect.signature(mancoosimm::ConfigFilesPackage.__init__)
+def test_mancoosimm_configfilespackage_constructor_args():
+    sig = inspect.signature(mancoosimm_ConfigFilesPackage.__init__)
     params = list(sig.parameters.keys())
     assert "section" in params, "Missing parameter 'section'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "priority" in params, "Missing parameter 'priority'"
-    assert "checkSum" in params, "Missing parameter 'checkSum'"
-    assert "maintainer" in params, "Missing parameter 'maintainer'"
-    assert "uploaders" in params, "Missing parameter 'uploaders'"
     assert "tag" in params, "Missing parameter 'tag'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "maintainer" in params, "Missing parameter 'maintainer'"
+    assert "checkSum" in params, "Missing parameter 'checkSum'"
+    assert "uploaders" in params, "Missing parameter 'uploaders'"
 
-def test_mancoosimm::configfilespackage_has_section():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "section")
+def test_mancoosimm_configfilespackage_has_section():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "section")
     descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
         if "section" in klass.__dict__:
             descriptor = klass.__dict__["section"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::configfilespackage_has_description():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "description")
+def test_mancoosimm_configfilespackage_has_priority():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "priority")
     descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::configfilespackage_has_priority():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "priority")
-    descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::configfilespackage_has_checkSum():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "checkSum")
+def test_mancoosimm_configfilespackage_has_tag():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "tag")
     descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
-        if "checkSum" in klass.__dict__:
-            descriptor = klass.__dict__["checkSum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::configfilespackage_has_maintainer():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "maintainer")
-    descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
-        if "maintainer" in klass.__dict__:
-            descriptor = klass.__dict__["maintainer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::configfilespackage_has_uploaders():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "uploaders")
-    descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
-        if "uploaders" in klass.__dict__:
-            descriptor = klass.__dict__["uploaders"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::configfilespackage_has_tag():
-    assert hasattr(mancoosimm::ConfigFilesPackage, "tag")
-    descriptor = None
-    for klass in mancoosimm::ConfigFilesPackage.__mro__:
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
     assert isinstance(descriptor, property)
 
+def test_mancoosimm_configfilespackage_has_description():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "description")
+    descriptor = None
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_configfilespackage_has_maintainer():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "maintainer")
+    descriptor = None
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
+        if "maintainer" in klass.__dict__:
+            descriptor = klass.__dict__["maintainer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_configfilespackage_has_checkSum():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "checkSum")
+    descriptor = None
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
+        if "checkSum" in klass.__dict__:
+            descriptor = klass.__dict__["checkSum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_configfilespackage_has_uploaders():
+    assert hasattr(mancoosimm_ConfigFilesPackage, "uploaders")
+    descriptor = None
+    for klass in mancoosimm_ConfigFilesPackage.__mro__:
+        if "uploaders" in klass.__dict__:
+            descriptor = klass.__dict__["uploaders"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mancoosimm::notinstalledpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::NotInstalledPackage)
+
+def test_mancoosimm_notinstalledpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_NotInstalledPackage)
 
 
-def test_mancoosimm::notinstalledpackage_constructor_exists():
-    assert callable(mancoosimm::NotInstalledPackage.__init__)
+def test_mancoosimm_notinstalledpackage_constructor_exists():
+    assert callable(mancoosimm_NotInstalledPackage.__init__)
 
 
-def test_mancoosimm::notinstalledpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::NotInstalledPackage.__init__)
+def test_mancoosimm_notinstalledpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_NotInstalledPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::installedpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::InstalledPackage)
+def test_mancoosimm_installedpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_InstalledPackage)
 
 
-def test_mancoosimm::installedpackage_constructor_exists():
-    assert callable(mancoosimm::InstalledPackage.__init__)
+def test_mancoosimm_installedpackage_constructor_exists():
+    assert callable(mancoosimm_InstalledPackage.__init__)
 
 
-def test_mancoosimm::installedpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::InstalledPackage.__init__)
+def test_mancoosimm_installedpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_InstalledPackage.__init__)
     params = list(sig.parameters.keys())
     assert "uploaders" in params, "Missing parameter 'uploaders'"
-    assert "checkSum" in params, "Missing parameter 'checkSum'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "fileSize" in params, "Missing parameter 'fileSize'"
     assert "maintainer" in params, "Missing parameter 'maintainer'"
-    assert "section" in params, "Missing parameter 'section'"
     assert "installedSize" in params, "Missing parameter 'installedSize'"
+    assert "section" in params, "Missing parameter 'section'"
+    assert "fileSize" in params, "Missing parameter 'fileSize'"
     assert "tag" in params, "Missing parameter 'tag'"
+    assert "checkSum" in params, "Missing parameter 'checkSum'"
+    assert "description" in params, "Missing parameter 'description'"
     assert "priority" in params, "Missing parameter 'priority'"
 
-def test_mancoosimm::installedpackage_has_uploaders():
-    assert hasattr(mancoosimm::InstalledPackage, "uploaders")
+def test_mancoosimm_installedpackage_has_uploaders():
+    assert hasattr(mancoosimm_InstalledPackage, "uploaders")
     descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
+    for klass in mancoosimm_InstalledPackage.__mro__:
         if "uploaders" in klass.__dict__:
             descriptor = klass.__dict__["uploaders"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::installedpackage_has_checkSum():
-    assert hasattr(mancoosimm::InstalledPackage, "checkSum")
+def test_mancoosimm_installedpackage_has_maintainer():
+    assert hasattr(mancoosimm_InstalledPackage, "maintainer")
     descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
-        if "checkSum" in klass.__dict__:
-            descriptor = klass.__dict__["checkSum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::installedpackage_has_description():
-    assert hasattr(mancoosimm::InstalledPackage, "description")
-    descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::installedpackage_has_fileSize():
-    assert hasattr(mancoosimm::InstalledPackage, "fileSize")
-    descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
-        if "fileSize" in klass.__dict__:
-            descriptor = klass.__dict__["fileSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::installedpackage_has_maintainer():
-    assert hasattr(mancoosimm::InstalledPackage, "maintainer")
-    descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
+    for klass in mancoosimm_InstalledPackage.__mro__:
         if "maintainer" in klass.__dict__:
             descriptor = klass.__dict__["maintainer"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::installedpackage_has_section():
-    assert hasattr(mancoosimm::InstalledPackage, "section")
+def test_mancoosimm_installedpackage_has_installedSize():
+    assert hasattr(mancoosimm_InstalledPackage, "installedSize")
     descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
-        if "section" in klass.__dict__:
-            descriptor = klass.__dict__["section"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::installedpackage_has_installedSize():
-    assert hasattr(mancoosimm::InstalledPackage, "installedSize")
-    descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
+    for klass in mancoosimm_InstalledPackage.__mro__:
         if "installedSize" in klass.__dict__:
             descriptor = klass.__dict__["installedSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::installedpackage_has_tag():
-    assert hasattr(mancoosimm::InstalledPackage, "tag")
+def test_mancoosimm_installedpackage_has_section():
+    assert hasattr(mancoosimm_InstalledPackage, "section")
     descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
+    for klass in mancoosimm_InstalledPackage.__mro__:
+        if "section" in klass.__dict__:
+            descriptor = klass.__dict__["section"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_installedpackage_has_fileSize():
+    assert hasattr(mancoosimm_InstalledPackage, "fileSize")
+    descriptor = None
+    for klass in mancoosimm_InstalledPackage.__mro__:
+        if "fileSize" in klass.__dict__:
+            descriptor = klass.__dict__["fileSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_installedpackage_has_tag():
+    assert hasattr(mancoosimm_InstalledPackage, "tag")
+    descriptor = None
+    for klass in mancoosimm_InstalledPackage.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::installedpackage_has_priority():
-    assert hasattr(mancoosimm::InstalledPackage, "priority")
+def test_mancoosimm_installedpackage_has_checkSum():
+    assert hasattr(mancoosimm_InstalledPackage, "checkSum")
     descriptor = None
-    for klass in mancoosimm::InstalledPackage.__mro__:
+    for klass in mancoosimm_InstalledPackage.__mro__:
+        if "checkSum" in klass.__dict__:
+            descriptor = klass.__dict__["checkSum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_installedpackage_has_description():
+    assert hasattr(mancoosimm_InstalledPackage, "description")
+    descriptor = None
+    for klass in mancoosimm_InstalledPackage.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_installedpackage_has_priority():
+    assert hasattr(mancoosimm_InstalledPackage, "priority")
+    descriptor = None
+    for klass in mancoosimm_InstalledPackage.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
@@ -980,423 +980,423 @@ def test_namedelement_constructor_args():
 
 
 
-def test_mancoosimm::skeeperdocument_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SkeeperDocument)
+def test_mancoosimm_user_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_User)
 
 
-def test_mancoosimm::skeeperdocument_constructor_exists():
-    assert callable(mancoosimm::SkeeperDocument.__init__)
+def test_mancoosimm_user_constructor_exists():
+    assert callable(mancoosimm_User.__init__)
 
 
-def test_mancoosimm::skeeperdocument_constructor_args():
-    sig = inspect.signature(mancoosimm::SkeeperDocument.__init__)
+def test_mancoosimm_user_constructor_args():
+    sig = inspect.signature(mancoosimm_User.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::module_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Module)
+def test_mancoosimm_applicationmenucatalog_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_ApplicationMenuCatalog)
 
 
-def test_mancoosimm::module_constructor_exists():
-    assert callable(mancoosimm::Module.__init__)
+def test_mancoosimm_applicationmenucatalog_constructor_exists():
+    assert callable(mancoosimm_ApplicationMenuCatalog.__init__)
 
 
-def test_mancoosimm::module_constructor_args():
-    sig = inspect.signature(mancoosimm::Module.__init__)
+def test_mancoosimm_applicationmenucatalog_constructor_args():
+    sig = inspect.signature(mancoosimm_ApplicationMenuCatalog.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::environment_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Environment)
+def test_mancoosimm_invariant_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Invariant)
 
 
-def test_mancoosimm::environment_constructor_exists():
-    assert callable(mancoosimm::Environment.__init__)
+def test_mancoosimm_invariant_constructor_exists():
+    assert callable(mancoosimm_Invariant.__init__)
 
 
-def test_mancoosimm::environment_constructor_args():
-    sig = inspect.signature(mancoosimm::Environment.__init__)
+def test_mancoosimm_invariant_constructor_args():
+    sig = inspect.signature(mancoosimm_Invariant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::menuentry_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::MenuEntry)
+def test_mancoosimm_packagesetting_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_PackageSetting)
 
 
-def test_mancoosimm::menuentry_constructor_exists():
-    assert callable(mancoosimm::MenuEntry.__init__)
+def test_mancoosimm_packagesetting_constructor_exists():
+    assert callable(mancoosimm_PackageSetting.__init__)
 
 
-def test_mancoosimm::menuentry_constructor_args():
-    sig = inspect.signature(mancoosimm::MenuEntry.__init__)
+def test_mancoosimm_packagesetting_constructor_args():
+    sig = inspect.signature(mancoosimm_PackageSetting.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::emacspackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::EmacsPackage)
+def test_mancoosimm_emacspackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_EmacsPackage)
 
 
-def test_mancoosimm::emacspackage_constructor_exists():
-    assert callable(mancoosimm::EmacsPackage.__init__)
+def test_mancoosimm_emacspackage_constructor_exists():
+    assert callable(mancoosimm_EmacsPackage.__init__)
 
 
-def test_mancoosimm::emacspackage_constructor_args():
-    sig = inspect.signature(mancoosimm::EmacsPackage.__init__)
+def test_mancoosimm_emacspackage_constructor_args():
+    sig = inspect.signature(mancoosimm_EmacsPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::user_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::User)
+def test_mancoosimm_menuentry_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_MenuEntry)
 
 
-def test_mancoosimm::user_constructor_exists():
-    assert callable(mancoosimm::User.__init__)
+def test_mancoosimm_menuentry_constructor_exists():
+    assert callable(mancoosimm_MenuEntry.__init__)
 
 
-def test_mancoosimm::user_constructor_args():
-    sig = inspect.signature(mancoosimm::User.__init__)
+def test_mancoosimm_menuentry_constructor_args():
+    sig = inspect.signature(mancoosimm_MenuEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::sgmldocument_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SGMLDocument)
+def test_mancoosimm_environment_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Environment)
 
 
-def test_mancoosimm::sgmldocument_constructor_exists():
-    assert callable(mancoosimm::SGMLDocument.__init__)
+def test_mancoosimm_environment_constructor_exists():
+    assert callable(mancoosimm_Environment.__init__)
 
 
-def test_mancoosimm::sgmldocument_constructor_args():
-    sig = inspect.signature(mancoosimm::SGMLDocument.__init__)
+def test_mancoosimm_environment_constructor_args():
+    sig = inspect.signature(mancoosimm_Environment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::xfont_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::XFont)
+def test_mancoosimm_alternative_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Alternative)
 
 
-def test_mancoosimm::xfont_constructor_exists():
-    assert callable(mancoosimm::XFont.__init__)
+def test_mancoosimm_alternative_constructor_exists():
+    assert callable(mancoosimm_Alternative.__init__)
 
 
-def test_mancoosimm::xfont_constructor_args():
-    sig = inspect.signature(mancoosimm::XFont.__init__)
+def test_mancoosimm_alternative_constructor_args():
+    sig = inspect.signature(mancoosimm_Alternative.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::atom_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Atom)
+def test_mancoosimm_service_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Service)
 
 
-def test_mancoosimm::atom_constructor_exists():
-    assert callable(mancoosimm::Atom.__init__)
+def test_mancoosimm_service_constructor_exists():
+    assert callable(mancoosimm_Service.__init__)
 
 
-def test_mancoosimm::atom_constructor_args():
-    sig = inspect.signature(mancoosimm::Atom.__init__)
+def test_mancoosimm_service_constructor_args():
+    sig = inspect.signature(mancoosimm_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::group_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Group)
+def test_mancoosimm_sgmldocument_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SGMLDocument)
 
 
-def test_mancoosimm::group_constructor_exists():
-    assert callable(mancoosimm::Group.__init__)
+def test_mancoosimm_sgmldocument_constructor_exists():
+    assert callable(mancoosimm_SGMLDocument.__init__)
 
 
-def test_mancoosimm::group_constructor_args():
-    sig = inspect.signature(mancoosimm::Group.__init__)
+def test_mancoosimm_sgmldocument_constructor_args():
+    sig = inspect.signature(mancoosimm_SGMLDocument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::alternative_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Alternative)
+def test_mancoosimm_sgmlcatalog_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SGMLCatalog)
 
 
-def test_mancoosimm::alternative_constructor_exists():
-    assert callable(mancoosimm::Alternative.__init__)
+def test_mancoosimm_sgmlcatalog_constructor_exists():
+    assert callable(mancoosimm_SGMLCatalog.__init__)
 
 
-def test_mancoosimm::alternative_constructor_args():
-    sig = inspect.signature(mancoosimm::Alternative.__init__)
+def test_mancoosimm_sgmlcatalog_constructor_args():
+    sig = inspect.signature(mancoosimm_SGMLCatalog.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::invariant_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Invariant)
+def test_mancoosimm_xfont_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_XFont)
 
 
-def test_mancoosimm::invariant_constructor_exists():
-    assert callable(mancoosimm::Invariant.__init__)
+def test_mancoosimm_xfont_constructor_exists():
+    assert callable(mancoosimm_XFont.__init__)
 
 
-def test_mancoosimm::invariant_constructor_args():
-    sig = inspect.signature(mancoosimm::Invariant.__init__)
+def test_mancoosimm_xfont_constructor_args():
+    sig = inspect.signature(mancoosimm_XFont.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mancoosimm::file_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::File)
+def test_mancoosimm_skeeperdocument_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SkeeperDocument)
 
 
-def test_mancoosimm::file_constructor_exists():
-    assert callable(mancoosimm::File.__init__)
+def test_mancoosimm_skeeperdocument_constructor_exists():
+    assert callable(mancoosimm_SkeeperDocument.__init__)
 
 
-def test_mancoosimm::file_constructor_args():
-    sig = inspect.signature(mancoosimm::File.__init__)
+def test_mancoosimm_skeeperdocument_constructor_args():
+    sig = inspect.signature(mancoosimm_SkeeperDocument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mancoosimm_skeepercatalog_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_SkeeperCatalog)
+
+
+def test_mancoosimm_skeepercatalog_constructor_exists():
+    assert callable(mancoosimm_SkeeperCatalog.__init__)
+
+
+def test_mancoosimm_skeepercatalog_constructor_args():
+    sig = inspect.signature(mancoosimm_SkeeperCatalog.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mancoosimm_module_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Module)
+
+
+def test_mancoosimm_module_constructor_exists():
+    assert callable(mancoosimm_Module.__init__)
+
+
+def test_mancoosimm_module_constructor_args():
+    sig = inspect.signature(mancoosimm_Module.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mancoosimm_atom_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Atom)
+
+
+def test_mancoosimm_atom_constructor_exists():
+    assert callable(mancoosimm_Atom.__init__)
+
+
+def test_mancoosimm_atom_constructor_args():
+    sig = inspect.signature(mancoosimm_Atom.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mancoosimm_group_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Group)
+
+
+def test_mancoosimm_group_constructor_exists():
+    assert callable(mancoosimm_Group.__init__)
+
+
+def test_mancoosimm_group_constructor_args():
+    sig = inspect.signature(mancoosimm_Group.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mancoosimm_file_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_File)
+
+
+def test_mancoosimm_file_constructor_exists():
+    assert callable(mancoosimm_File.__init__)
+
+
+def test_mancoosimm_file_constructor_args():
+    sig = inspect.signature(mancoosimm_File.__init__)
     params = list(sig.parameters.keys())
     assert "extension" in params, "Missing parameter 'extension'"
-    assert "location" in params, "Missing parameter 'location'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "permission" in params, "Missing parameter 'permission'"
     assert "guid" in params, "Missing parameter 'guid'"
     assert "size" in params, "Missing parameter 'size'"
     assert "isDirectory" in params, "Missing parameter 'isDirectory'"
-    assert "checkSum" in params, "Missing parameter 'checkSum'"
-    assert "suid" in params, "Missing parameter 'suid'"
-    assert "permission" in params, "Missing parameter 'permission'"
     assert "isMissing" in params, "Missing parameter 'isMissing'"
-    assert "description" in params, "Missing parameter 'description'"
+    assert "suid" in params, "Missing parameter 'suid'"
+    assert "checkSum" in params, "Missing parameter 'checkSum'"
+    assert "location" in params, "Missing parameter 'location'"
 
-def test_mancoosimm::file_has_extension():
-    assert hasattr(mancoosimm::File, "extension")
+def test_mancoosimm_file_has_extension():
+    assert hasattr(mancoosimm_File, "extension")
     descriptor = None
-    for klass in mancoosimm::File.__mro__:
+    for klass in mancoosimm_File.__mro__:
         if "extension" in klass.__dict__:
             descriptor = klass.__dict__["extension"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::file_has_location():
-    assert hasattr(mancoosimm::File, "location")
+def test_mancoosimm_file_has_description():
+    assert hasattr(mancoosimm_File, "description")
     descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_guid():
-    assert hasattr(mancoosimm::File, "guid")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "guid" in klass.__dict__:
-            descriptor = klass.__dict__["guid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_size():
-    assert hasattr(mancoosimm::File, "size")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_isDirectory():
-    assert hasattr(mancoosimm::File, "isDirectory")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "isDirectory" in klass.__dict__:
-            descriptor = klass.__dict__["isDirectory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_checkSum():
-    assert hasattr(mancoosimm::File, "checkSum")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "checkSum" in klass.__dict__:
-            descriptor = klass.__dict__["checkSum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_suid():
-    assert hasattr(mancoosimm::File, "suid")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "suid" in klass.__dict__:
-            descriptor = klass.__dict__["suid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_permission():
-    assert hasattr(mancoosimm::File, "permission")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "permission" in klass.__dict__:
-            descriptor = klass.__dict__["permission"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_isMissing():
-    assert hasattr(mancoosimm::File, "isMissing")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
-        if "isMissing" in klass.__dict__:
-            descriptor = klass.__dict__["isMissing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::file_has_description():
-    assert hasattr(mancoosimm::File, "description")
-    descriptor = None
-    for klass in mancoosimm::File.__mro__:
+    for klass in mancoosimm_File.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mancoosimm::service_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Service)
-
-
-def test_mancoosimm::service_constructor_exists():
-    assert callable(mancoosimm::Service.__init__)
-
-
-def test_mancoosimm::service_constructor_args():
-    sig = inspect.signature(mancoosimm::Service.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mancoosimm::sgmlcatalog_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SGMLCatalog)
-
-
-def test_mancoosimm::sgmlcatalog_constructor_exists():
-    assert callable(mancoosimm::SGMLCatalog.__init__)
-
-
-def test_mancoosimm::sgmlcatalog_constructor_args():
-    sig = inspect.signature(mancoosimm::SGMLCatalog.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mancoosimm::skeepercatalog_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::SkeeperCatalog)
-
-
-def test_mancoosimm::skeepercatalog_constructor_exists():
-    assert callable(mancoosimm::SkeeperCatalog.__init__)
-
-
-def test_mancoosimm::skeepercatalog_constructor_args():
-    sig = inspect.signature(mancoosimm::SkeeperCatalog.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mancoosimm::applicationmenucatalog_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::ApplicationMenuCatalog)
-
-
-def test_mancoosimm::applicationmenucatalog_constructor_exists():
-    assert callable(mancoosimm::ApplicationMenuCatalog.__init__)
-
-
-def test_mancoosimm::applicationmenucatalog_constructor_args():
-    sig = inspect.signature(mancoosimm::ApplicationMenuCatalog.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mancoosimm::filesystem_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::FileSystem)
-
-
-def test_mancoosimm::filesystem_constructor_exists():
-    assert callable(mancoosimm::FileSystem.__init__)
-
-
-def test_mancoosimm::filesystem_constructor_args():
-    sig = inspect.signature(mancoosimm::FileSystem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mancoosimm::packagesetting_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::PackageSetting)
-
-
-def test_mancoosimm::packagesetting_constructor_exists():
-    assert callable(mancoosimm::PackageSetting.__init__)
-
-
-def test_mancoosimm::packagesetting_constructor_args():
-    sig = inspect.signature(mancoosimm::PackageSetting.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mancoosimm::configuration_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Configuration)
-
-
-def test_mancoosimm::configuration_constructor_exists():
-    assert callable(mancoosimm::Configuration.__init__)
-
-
-def test_mancoosimm::configuration_constructor_args():
-    sig = inspect.signature(mancoosimm::Configuration.__init__)
-    params = list(sig.parameters.keys())
-    assert "creationTime" in params, "Missing parameter 'creationTime'"
-    assert "systemType" in params, "Missing parameter 'systemType'"
-
-def test_mancoosimm::configuration_has_creationTime():
-    assert hasattr(mancoosimm::Configuration, "creationTime")
+def test_mancoosimm_file_has_permission():
+    assert hasattr(mancoosimm_File, "permission")
     descriptor = None
-    for klass in mancoosimm::Configuration.__mro__:
-        if "creationTime" in klass.__dict__:
-            descriptor = klass.__dict__["creationTime"]
+    for klass in mancoosimm_File.__mro__:
+        if "permission" in klass.__dict__:
+            descriptor = klass.__dict__["permission"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::configuration_has_systemType():
-    assert hasattr(mancoosimm::Configuration, "systemType")
+def test_mancoosimm_file_has_guid():
+    assert hasattr(mancoosimm_File, "guid")
     descriptor = None
-    for klass in mancoosimm::Configuration.__mro__:
+    for klass in mancoosimm_File.__mro__:
+        if "guid" in klass.__dict__:
+            descriptor = klass.__dict__["guid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_file_has_size():
+    assert hasattr(mancoosimm_File, "size")
+    descriptor = None
+    for klass in mancoosimm_File.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_file_has_isDirectory():
+    assert hasattr(mancoosimm_File, "isDirectory")
+    descriptor = None
+    for klass in mancoosimm_File.__mro__:
+        if "isDirectory" in klass.__dict__:
+            descriptor = klass.__dict__["isDirectory"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_file_has_isMissing():
+    assert hasattr(mancoosimm_File, "isMissing")
+    descriptor = None
+    for klass in mancoosimm_File.__mro__:
+        if "isMissing" in klass.__dict__:
+            descriptor = klass.__dict__["isMissing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_file_has_suid():
+    assert hasattr(mancoosimm_File, "suid")
+    descriptor = None
+    for klass in mancoosimm_File.__mro__:
+        if "suid" in klass.__dict__:
+            descriptor = klass.__dict__["suid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_file_has_checkSum():
+    assert hasattr(mancoosimm_File, "checkSum")
+    descriptor = None
+    for klass in mancoosimm_File.__mro__:
+        if "checkSum" in klass.__dict__:
+            descriptor = klass.__dict__["checkSum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_file_has_location():
+    assert hasattr(mancoosimm_File, "location")
+    descriptor = None
+    for klass in mancoosimm_File.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mancoosimm_filesystem_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_FileSystem)
+
+
+def test_mancoosimm_filesystem_constructor_exists():
+    assert callable(mancoosimm_FileSystem.__init__)
+
+
+def test_mancoosimm_filesystem_constructor_args():
+    sig = inspect.signature(mancoosimm_FileSystem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mancoosimm_configuration_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Configuration)
+
+
+def test_mancoosimm_configuration_constructor_exists():
+    assert callable(mancoosimm_Configuration.__init__)
+
+
+def test_mancoosimm_configuration_constructor_args():
+    sig = inspect.signature(mancoosimm_Configuration.__init__)
+    params = list(sig.parameters.keys())
+    assert "systemType" in params, "Missing parameter 'systemType'"
+    assert "creationTime" in params, "Missing parameter 'creationTime'"
+
+def test_mancoosimm_configuration_has_systemType():
+    assert hasattr(mancoosimm_Configuration, "systemType")
+    descriptor = None
+    for klass in mancoosimm_Configuration.__mro__:
         if "systemType" in klass.__dict__:
             descriptor = klass.__dict__["systemType"]
             break
     assert isinstance(descriptor, property)
 
+def test_mancoosimm_configuration_has_creationTime():
+    assert hasattr(mancoosimm_Configuration, "creationTime")
+    descriptor = None
+    for klass in mancoosimm_Configuration.__mro__:
+        if "creationTime" in klass.__dict__:
+            descriptor = klass.__dict__["creationTime"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mancoosimm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::NamedElement)
+
+def test_mancoosimm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_NamedElement)
 
 
-def test_mancoosimm::namedelement_constructor_exists():
-    assert callable(mancoosimm::NamedElement.__init__)
+def test_mancoosimm_namedelement_constructor_exists():
+    assert callable(mancoosimm_NamedElement.__init__)
 
 
-def test_mancoosimm::namedelement_constructor_args():
-    sig = inspect.signature(mancoosimm::NamedElement.__init__)
+def test_mancoosimm_namedelement_constructor_args():
+    sig = inspect.signature(mancoosimm_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mancoosimm::namedelement_has_name():
-    assert hasattr(mancoosimm::NamedElement, "name")
+def test_mancoosimm_namedelement_has_name():
+    assert hasattr(mancoosimm_NamedElement, "name")
     descriptor = None
-    for klass in mancoosimm::NamedElement.__mro__:
+    for klass in mancoosimm_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1404,33 +1404,33 @@ def test_mancoosimm::namedelement_has_name():
 
 
 
-def test_mancoosimm::package_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::Package)
+def test_mancoosimm_package_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_Package)
 
 
-def test_mancoosimm::package_constructor_exists():
-    assert callable(mancoosimm::Package.__init__)
+def test_mancoosimm_package_constructor_exists():
+    assert callable(mancoosimm_Package.__init__)
 
 
-def test_mancoosimm::package_constructor_args():
-    sig = inspect.signature(mancoosimm::Package.__init__)
+def test_mancoosimm_package_constructor_args():
+    sig = inspect.signature(mancoosimm_Package.__init__)
     params = list(sig.parameters.keys())
     assert "architecture" in params, "Missing parameter 'architecture'"
     assert "version" in params, "Missing parameter 'version'"
 
-def test_mancoosimm::package_has_architecture():
-    assert hasattr(mancoosimm::Package, "architecture")
+def test_mancoosimm_package_has_architecture():
+    assert hasattr(mancoosimm_Package, "architecture")
     descriptor = None
-    for klass in mancoosimm::Package.__mro__:
+    for klass in mancoosimm_Package.__mro__:
         if "architecture" in klass.__dict__:
             descriptor = klass.__dict__["architecture"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::package_has_version():
-    assert hasattr(mancoosimm::Package, "version")
+def test_mancoosimm_package_has_version():
+    assert hasattr(mancoosimm_Package, "version")
     descriptor = None
-    for klass in mancoosimm::Package.__mro__:
+    for klass in mancoosimm_Package.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -1438,125 +1438,87 @@ def test_mancoosimm::package_has_version():
 
 
 
-def test_mancoosimm::halfinstalledpackage_is_not_abstract():
-    assert not inspect.isabstract(mancoosimm::HalfInstalledPackage)
+def test_mancoosimm_halfinstalledpackage_is_not_abstract():
+    assert not inspect.isabstract(mancoosimm_HalfInstalledPackage)
 
 
-def test_mancoosimm::halfinstalledpackage_constructor_exists():
-    assert callable(mancoosimm::HalfInstalledPackage.__init__)
+def test_mancoosimm_halfinstalledpackage_constructor_exists():
+    assert callable(mancoosimm_HalfInstalledPackage.__init__)
 
 
-def test_mancoosimm::halfinstalledpackage_constructor_args():
-    sig = inspect.signature(mancoosimm::HalfInstalledPackage.__init__)
+def test_mancoosimm_halfinstalledpackage_constructor_args():
+    sig = inspect.signature(mancoosimm_HalfInstalledPackage.__init__)
     params = list(sig.parameters.keys())
     assert "tag" in params, "Missing parameter 'tag'"
-    assert "maintainer" in params, "Missing parameter 'maintainer'"
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "checkSum" in params, "Missing parameter 'checkSum'"
     assert "section" in params, "Missing parameter 'section'"
+    assert "priority" in params, "Missing parameter 'priority'"
     assert "uploaders" in params, "Missing parameter 'uploaders'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "maintainer" in params, "Missing parameter 'maintainer'"
 
-def test_mancoosimm::halfinstalledpackage_has_tag():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "tag")
+def test_mancoosimm_halfinstalledpackage_has_tag():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "tag")
     descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::halfinstalledpackage_has_maintainer():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "maintainer")
+def test_mancoosimm_halfinstalledpackage_has_checkSum():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "checkSum")
     descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
-        if "maintainer" in klass.__dict__:
-            descriptor = klass.__dict__["maintainer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::halfinstalledpackage_has_priority():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "priority")
-    descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::halfinstalledpackage_has_description():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "description")
-    descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mancoosimm::halfinstalledpackage_has_checkSum():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "checkSum")
-    descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
         if "checkSum" in klass.__dict__:
             descriptor = klass.__dict__["checkSum"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::halfinstalledpackage_has_section():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "section")
+def test_mancoosimm_halfinstalledpackage_has_section():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "section")
     descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
         if "section" in klass.__dict__:
             descriptor = klass.__dict__["section"]
             break
     assert isinstance(descriptor, property)
 
-def test_mancoosimm::halfinstalledpackage_has_uploaders():
-    assert hasattr(mancoosimm::HalfInstalledPackage, "uploaders")
+def test_mancoosimm_halfinstalledpackage_has_priority():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "priority")
     descriptor = None
-    for klass in mancoosimm::HalfInstalledPackage.__mro__:
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mancoosimm_halfinstalledpackage_has_uploaders():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "uploaders")
+    descriptor = None
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
         if "uploaders" in klass.__dict__:
             descriptor = klass.__dict__["uploaders"]
             break
     assert isinstance(descriptor, property)
 
-def test_prioritytype_exists():
-    # Check that the Enumeration exists
-    assert PriorityType is not None
+def test_mancoosimm_halfinstalledpackage_has_description():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "description")
+    descriptor = None
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_prioritytype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PriorityType]
-    expected_literals = [
-        "standard",
-        "optional",
-        "required",
-        "extra",
-        "important",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PriorityType"
-
-def test_versiontype_exists():
-    # Check that the Enumeration exists
-    assert VersionType is not None
-
-def test_versiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VersionType]
-    expected_literals = [
-        "eq",
-        "ge",
-        "gt",
-        "ggt",
-        "lt",
-        "le",
-        "llt",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VersionType"
+def test_mancoosimm_halfinstalledpackage_has_maintainer():
+    assert hasattr(mancoosimm_HalfInstalledPackage, "maintainer")
+    descriptor = None
+    for klass in mancoosimm_HalfInstalledPackage.__mro__:
+        if "maintainer" in klass.__dict__:
+            descriptor = klass.__dict__["maintainer"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_statustype_exists():
     # Check that the Enumeration exists
@@ -1566,16 +1528,54 @@ def test_statustype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StatusType]
     expected_literals = [
-        "installed",
-        "not_installed",
         "half_configured",
         "half_installed",
-        "unpacked",
+        "not_installed",
         "config_files",
+        "unpacked",
+        "installed",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in StatusType"
+
+def test_versiontype_exists():
+    # Check that the Enumeration exists
+    assert VersionType is not None
+
+def test_versiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in VersionType]
+    expected_literals = [
+        "lt",
+        "llt",
+        "ge",
+        "eq",
+        "le",
+        "gt",
+        "ggt",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in VersionType"
+
+def test_prioritytype_exists():
+    # Check that the Enumeration exists
+    assert PriorityType is not None
+
+def test_prioritytype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PriorityType]
+    expected_literals = [
+        "important",
+        "extra",
+        "required",
+        "standard",
+        "optional",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PriorityType"
 
 
 # =============================================================================
@@ -1592,184 +1592,184 @@ safe_text = st.text(
 Conflict_strategy = st.builds(
     Conflict,
 )
-mancoosimm::OrConflict_strategy = st.builds(
-    mancoosimm::OrConflict,
+mancoosimm_AndConflict_strategy = st.builds(
+    mancoosimm_AndConflict,
 )
-mancoosimm::AndConflict_strategy = st.builds(
-    mancoosimm::AndConflict,
+mancoosimm_OrConflict_strategy = st.builds(
+    mancoosimm_OrConflict,
 )
-mancoosimm::SingleConflict_strategy = st.builds(
-    mancoosimm::SingleConflict,
-    version=
-        safe_text,
+mancoosimm_SingleConflict_strategy = st.builds(
+    mancoosimm_SingleConflict,
     value=
-        safe_text
-)
-mancoosimm::SharedLibrary_strategy = st.builds(
-    mancoosimm::SharedLibrary,
+        safe_text,
     version=
-        safe_text,
-    name=
         safe_text
 )
-mancoosimm::MimeType_strategy = st.builds(
-    mancoosimm::MimeType,
+mancoosimm_SharedLibrary_strategy = st.builds(
+    mancoosimm_SharedLibrary,
     name=
         safe_text,
+    version=
+        safe_text
+)
+mancoosimm_MimeType_strategy = st.builds(
+    mancoosimm_MimeType,
     extension=
+        safe_text,
+    name=
         safe_text
 )
-mancoosimm::MimeTypeHandler_strategy = st.builds(
-    mancoosimm::MimeTypeHandler,
+mancoosimm_MimeTypeHandler_strategy = st.builds(
+    mancoosimm_MimeTypeHandler,
 )
 File_strategy = st.builds(
     File,
 )
-mancoosimm::InformationFile_strategy = st.builds(
-    mancoosimm::InformationFile,
+mancoosimm_InformationFile_strategy = st.builds(
+    mancoosimm_InformationFile,
 )
-mancoosimm::Boot_strategy = st.builds(
-    mancoosimm::Boot,
+mancoosimm_Boot_strategy = st.builds(
+    mancoosimm_Boot,
 )
-mancoosimm::Menu_strategy = st.builds(
-    mancoosimm::Menu,
+mancoosimm_Menu_strategy = st.builds(
+    mancoosimm_Menu,
 )
-mancoosimm::GConf_strategy = st.builds(
-    mancoosimm::GConf,
+mancoosimm_GConf_strategy = st.builds(
+    mancoosimm_GConf,
 )
-mancoosimm::XFontCache_strategy = st.builds(
-    mancoosimm::XFontCache,
+mancoosimm_XFontCache_strategy = st.builds(
+    mancoosimm_XFontCache,
     location=
         safe_text
 )
-mancoosimm::ModuleCache_strategy = st.builds(
-    mancoosimm::ModuleCache,
+mancoosimm_ModuleCache_strategy = st.builds(
+    mancoosimm_ModuleCache,
     version=
         safe_text
 )
-mancoosimm::LibraryCache_strategy = st.builds(
-    mancoosimm::LibraryCache,
+mancoosimm_LibraryCache_strategy = st.builds(
+    mancoosimm_LibraryCache,
 )
-mancoosimm::MimeTypeHandlerCache_strategy = st.builds(
-    mancoosimm::MimeTypeHandlerCache,
+mancoosimm_MimeTypeHandlerCache_strategy = st.builds(
+    mancoosimm_MimeTypeHandlerCache,
 )
-mancoosimm::DesktopDB_strategy = st.builds(
-    mancoosimm::DesktopDB,
+mancoosimm_DesktopDB_strategy = st.builds(
+    mancoosimm_DesktopDB,
 )
-mancoosimm::IconCache_strategy = st.builds(
-    mancoosimm::IconCache,
+mancoosimm_IconCache_strategy = st.builds(
+    mancoosimm_IconCache,
     mtime=
         safe_text
 )
-mancoosimm::NotInv_strategy = st.builds(
-    mancoosimm::NotInv,
+mancoosimm_NotInv_strategy = st.builds(
+    mancoosimm_NotInv,
 )
-mancoosimm::OrInv_strategy = st.builds(
-    mancoosimm::OrInv,
+mancoosimm_OrInv_strategy = st.builds(
+    mancoosimm_OrInv,
 )
-mancoosimm::AndInv_strategy = st.builds(
-    mancoosimm::AndInv,
+mancoosimm_AndInv_strategy = st.builds(
+    mancoosimm_AndInv,
 )
 Dependence_strategy = st.builds(
     Dependence,
 )
-mancoosimm::SingleDep_strategy = st.builds(
-    mancoosimm::SingleDep,
-    value=
-        safe_text,
+mancoosimm_SingleDep_strategy = st.builds(
+    mancoosimm_SingleDep,
     version=
+        safe_text,
+    value=
         safe_text
 )
-mancoosimm::OrDep_strategy = st.builds(
-    mancoosimm::OrDep,
+mancoosimm_OrDep_strategy = st.builds(
+    mancoosimm_OrDep,
 )
 InstalledPackage_strategy = st.builds(
     InstalledPackage,
 )
-mancoosimm::BinPackage_strategy = st.builds(
-    mancoosimm::BinPackage,
+mancoosimm_BinPackage_strategy = st.builds(
+    mancoosimm_BinPackage,
 )
 UnpackedPackage_strategy = st.builds(
     UnpackedPackage,
 )
-mancoosimm::AndDep_strategy = st.builds(
-    mancoosimm::AndDep,
+mancoosimm_AndDep_strategy = st.builds(
+    mancoosimm_AndDep,
 )
-mancoosimm::VirtualPackage_strategy = st.builds(
-    mancoosimm::VirtualPackage,
+mancoosimm_VirtualPackage_strategy = st.builds(
+    mancoosimm_VirtualPackage,
 )
-mancoosimm::Dependence_strategy = st.builds(
-    mancoosimm::Dependence,
+mancoosimm_Dependence_strategy = st.builds(
+    mancoosimm_Dependence,
 )
-mancoosimm::SrcPackage_strategy = st.builds(
-    mancoosimm::SrcPackage,
+mancoosimm_SrcPackage_strategy = st.builds(
+    mancoosimm_SrcPackage,
 )
 Package_strategy = st.builds(
     Package,
 )
-mancoosimm::Conflict_strategy = st.builds(
-    mancoosimm::Conflict,
+mancoosimm_Conflict_strategy = st.builds(
+    mancoosimm_Conflict,
 )
-mancoosimm::DocumentationFile_strategy = st.builds(
-    mancoosimm::DocumentationFile,
+mancoosimm_DocumentationFile_strategy = st.builds(
+    mancoosimm_DocumentationFile,
 )
-mancoosimm::HalfConfiguredPackage_strategy = st.builds(
-    mancoosimm::HalfConfiguredPackage,
+mancoosimm_HalfConfiguredPackage_strategy = st.builds(
+    mancoosimm_HalfConfiguredPackage,
 )
-mancoosimm::UnpackedPackage_strategy = st.builds(
-    mancoosimm::UnpackedPackage,
-    description=
-        safe_text,
-    maintainer=
-        safe_text,
-    tag=
-        safe_text,
+mancoosimm_UnpackedPackage_strategy = st.builds(
+    mancoosimm_UnpackedPackage,
     uploaders=
+        safe_text,
+    section=
         safe_text,
     priority=
         safe_text,
-    section=
+    tag=
+        safe_text,
+    description=
+        safe_text,
+    maintainer=
         safe_text,
     checkSum=
         safe_text
 )
-mancoosimm::ConfigFilesPackage_strategy = st.builds(
-    mancoosimm::ConfigFilesPackage,
+mancoosimm_ConfigFilesPackage_strategy = st.builds(
+    mancoosimm_ConfigFilesPackage,
     section=
-        safe_text,
-    description=
         safe_text,
     priority=
         safe_text,
-    checkSum=
-        safe_text,
-    maintainer=
-        safe_text,
-    uploaders=
-        safe_text,
     tag=
-        safe_text
-)
-mancoosimm::NotInstalledPackage_strategy = st.builds(
-    mancoosimm::NotInstalledPackage,
-)
-mancoosimm::InstalledPackage_strategy = st.builds(
-    mancoosimm::InstalledPackage,
-    uploaders=
-        safe_text,
-    checkSum=
         safe_text,
     description=
         safe_text,
-    fileSize=
-        st.integers(),
     maintainer=
         safe_text,
-    section=
+    checkSum=
+        safe_text,
+    uploaders=
+        safe_text
+)
+mancoosimm_NotInstalledPackage_strategy = st.builds(
+    mancoosimm_NotInstalledPackage,
+)
+mancoosimm_InstalledPackage_strategy = st.builds(
+    mancoosimm_InstalledPackage,
+    uploaders=
+        safe_text,
+    maintainer=
         safe_text,
     installedSize=
         st.integers(),
+    section=
+        safe_text,
+    fileSize=
+        st.integers(),
     tag=
+        safe_text,
+    checkSum=
+        safe_text,
+    description=
         safe_text,
     priority=
         safe_text
@@ -1777,47 +1777,64 @@ mancoosimm::InstalledPackage_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-mancoosimm::SkeeperDocument_strategy = st.builds(
-    mancoosimm::SkeeperDocument,
+mancoosimm_User_strategy = st.builds(
+    mancoosimm_User,
 )
-mancoosimm::Module_strategy = st.builds(
-    mancoosimm::Module,
+mancoosimm_ApplicationMenuCatalog_strategy = st.builds(
+    mancoosimm_ApplicationMenuCatalog,
 )
-mancoosimm::Environment_strategy = st.builds(
-    mancoosimm::Environment,
+mancoosimm_Invariant_strategy = st.builds(
+    mancoosimm_Invariant,
 )
-mancoosimm::MenuEntry_strategy = st.builds(
-    mancoosimm::MenuEntry,
+mancoosimm_PackageSetting_strategy = st.builds(
+    mancoosimm_PackageSetting,
 )
-mancoosimm::EmacsPackage_strategy = st.builds(
-    mancoosimm::EmacsPackage,
+mancoosimm_EmacsPackage_strategy = st.builds(
+    mancoosimm_EmacsPackage,
 )
-mancoosimm::User_strategy = st.builds(
-    mancoosimm::User,
+mancoosimm_MenuEntry_strategy = st.builds(
+    mancoosimm_MenuEntry,
 )
-mancoosimm::SGMLDocument_strategy = st.builds(
-    mancoosimm::SGMLDocument,
+mancoosimm_Environment_strategy = st.builds(
+    mancoosimm_Environment,
 )
-mancoosimm::XFont_strategy = st.builds(
-    mancoosimm::XFont,
+mancoosimm_Alternative_strategy = st.builds(
+    mancoosimm_Alternative,
 )
-mancoosimm::Atom_strategy = st.builds(
-    mancoosimm::Atom,
+mancoosimm_Service_strategy = st.builds(
+    mancoosimm_Service,
 )
-mancoosimm::Group_strategy = st.builds(
-    mancoosimm::Group,
+mancoosimm_SGMLDocument_strategy = st.builds(
+    mancoosimm_SGMLDocument,
 )
-mancoosimm::Alternative_strategy = st.builds(
-    mancoosimm::Alternative,
+mancoosimm_SGMLCatalog_strategy = st.builds(
+    mancoosimm_SGMLCatalog,
 )
-mancoosimm::Invariant_strategy = st.builds(
-    mancoosimm::Invariant,
+mancoosimm_XFont_strategy = st.builds(
+    mancoosimm_XFont,
 )
-mancoosimm::File_strategy = st.builds(
-    mancoosimm::File,
+mancoosimm_SkeeperDocument_strategy = st.builds(
+    mancoosimm_SkeeperDocument,
+)
+mancoosimm_SkeeperCatalog_strategy = st.builds(
+    mancoosimm_SkeeperCatalog,
+)
+mancoosimm_Module_strategy = st.builds(
+    mancoosimm_Module,
+)
+mancoosimm_Atom_strategy = st.builds(
+    mancoosimm_Atom,
+)
+mancoosimm_Group_strategy = st.builds(
+    mancoosimm_Group,
+)
+mancoosimm_File_strategy = st.builds(
+    mancoosimm_File,
     extension=
         safe_text,
-    location=
+    description=
+        safe_text,
+    permission=
         safe_text,
     guid=
         st.booleans(),
@@ -1825,69 +1842,52 @@ mancoosimm::File_strategy = st.builds(
         st.integers(),
     isDirectory=
         st.booleans(),
-    checkSum=
-        safe_text,
-    suid=
-        st.booleans(),
-    permission=
-        safe_text,
     isMissing=
         st.booleans(),
-    description=
-        safe_text
-)
-mancoosimm::Service_strategy = st.builds(
-    mancoosimm::Service,
-)
-mancoosimm::SGMLCatalog_strategy = st.builds(
-    mancoosimm::SGMLCatalog,
-)
-mancoosimm::SkeeperCatalog_strategy = st.builds(
-    mancoosimm::SkeeperCatalog,
-)
-mancoosimm::ApplicationMenuCatalog_strategy = st.builds(
-    mancoosimm::ApplicationMenuCatalog,
-)
-mancoosimm::FileSystem_strategy = st.builds(
-    mancoosimm::FileSystem,
-)
-mancoosimm::PackageSetting_strategy = st.builds(
-    mancoosimm::PackageSetting,
-)
-mancoosimm::Configuration_strategy = st.builds(
-    mancoosimm::Configuration,
-    creationTime=
+    suid=
+        st.booleans(),
+    checkSum=
         safe_text,
-    systemType=
+    location=
         safe_text
 )
-mancoosimm::NamedElement_strategy = st.builds(
-    mancoosimm::NamedElement,
+mancoosimm_FileSystem_strategy = st.builds(
+    mancoosimm_FileSystem,
+)
+mancoosimm_Configuration_strategy = st.builds(
+    mancoosimm_Configuration,
+    systemType=
+        safe_text,
+    creationTime=
+        safe_text
+)
+mancoosimm_NamedElement_strategy = st.builds(
+    mancoosimm_NamedElement,
     name=
         safe_text
 )
-mancoosimm::Package_strategy = st.builds(
-    mancoosimm::Package,
+mancoosimm_Package_strategy = st.builds(
+    mancoosimm_Package,
     architecture=
         safe_text,
     version=
         safe_text
 )
-mancoosimm::HalfInstalledPackage_strategy = st.builds(
-    mancoosimm::HalfInstalledPackage,
+mancoosimm_HalfInstalledPackage_strategy = st.builds(
+    mancoosimm_HalfInstalledPackage,
     tag=
-        safe_text,
-    maintainer=
-        safe_text,
-    priority=
-        safe_text,
-    description=
         safe_text,
     checkSum=
         safe_text,
     section=
         safe_text,
+    priority=
+        safe_text,
     uploaders=
+        safe_text,
+    description=
+        safe_text,
+    maintainer=
         safe_text
 )
 
@@ -1896,566 +1896,464 @@ mancoosimm::HalfInstalledPackage_strategy = st.builds(
 def test_conflict_instantiation(instance):
     assert isinstance(instance, Conflict)
 
-@given(instance=mancoosimm::OrConflict_strategy)
+@given(instance=mancoosimm_AndConflict_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::orconflict_instantiation(instance):
-    assert isinstance(instance, mancoosimm::OrConflict)
+def test_mancoosimm_andconflict_instantiation(instance):
+    assert isinstance(instance, mancoosimm_AndConflict)
 
-@given(instance=mancoosimm::AndConflict_strategy)
+@given(instance=mancoosimm_OrConflict_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::andconflict_instantiation(instance):
-    assert isinstance(instance, mancoosimm::AndConflict)
+def test_mancoosimm_orconflict_instantiation(instance):
+    assert isinstance(instance, mancoosimm_OrConflict)
 
-@given(instance=mancoosimm::SingleConflict_strategy)
+@given(instance=mancoosimm_SingleConflict_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::singleconflict_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SingleConflict)
-
-@given(instance=mancoosimm::SingleConflict_strategy)
-def test_mancoosimm::singleconflict_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_mancoosimm_singleconflict_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SingleConflict)
 
 
-@given(instance=mancoosimm::SingleConflict_strategy)
-def test_mancoosimm::singleconflict_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=mancoosimm::SingleConflict_strategy)
-def test_mancoosimm::singleconflict_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=mancoosimm::SingleConflict_strategy)
-def test_mancoosimm::singleconflict_value_setter(instance):
+@given(instance=mancoosimm_SingleConflict_strategy)
+def test_mancoosimm_singleconflict_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mancoosimm::SharedLibrary_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::sharedlibrary_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SharedLibrary)
-
-@given(instance=mancoosimm::SharedLibrary_strategy)
-def test_mancoosimm::sharedlibrary_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=mancoosimm::SharedLibrary_strategy)
-def test_mancoosimm::sharedlibrary_version_setter(instance):
+@given(instance=mancoosimm_SingleConflict_strategy)
+def test_mancoosimm_singleconflict_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=mancoosimm::SharedLibrary_strategy)
-def test_mancoosimm::sharedlibrary_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mancoosimm::SharedLibrary_strategy)
-def test_mancoosimm::sharedlibrary_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=mancoosimm::MimeType_strategy)
+@given(instance=mancoosimm_SharedLibrary_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::mimetype_instantiation(instance):
-    assert isinstance(instance, mancoosimm::MimeType)
-
-@given(instance=mancoosimm::MimeType_strategy)
-def test_mancoosimm::mimetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mancoosimm_sharedlibrary_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SharedLibrary)
 
 
-@given(instance=mancoosimm::MimeType_strategy)
-def test_mancoosimm::mimetype_name_setter(instance):
+
+@given(instance=mancoosimm_SharedLibrary_strategy)
+def test_mancoosimm_sharedlibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mancoosimm::MimeType_strategy)
-def test_mancoosimm::mimetype_extension_type(instance):
-    assert isinstance(instance.extension, str)
 
 
-@given(instance=mancoosimm::MimeType_strategy)
-def test_mancoosimm::mimetype_extension_setter(instance):
+@given(instance=mancoosimm_SharedLibrary_strategy)
+def test_mancoosimm_sharedlibrary_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=mancoosimm_MimeType_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_mimetype_instantiation(instance):
+    assert isinstance(instance, mancoosimm_MimeType)
+
+
+
+@given(instance=mancoosimm_MimeType_strategy)
+def test_mancoosimm_mimetype_extension_setter(instance):
     original = instance.extension
     instance.extension = original
     assert instance.extension == original
 
-@given(instance=mancoosimm::MimeTypeHandler_strategy)
+
+
+@given(instance=mancoosimm_MimeType_strategy)
+def test_mancoosimm_mimetype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mancoosimm_MimeTypeHandler_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::mimetypehandler_instantiation(instance):
-    assert isinstance(instance, mancoosimm::MimeTypeHandler)
+def test_mancoosimm_mimetypehandler_instantiation(instance):
+    assert isinstance(instance, mancoosimm_MimeTypeHandler)
 
 @given(instance=File_strategy)
 @settings(max_examples=50)
 def test_file_instantiation(instance):
     assert isinstance(instance, File)
 
-@given(instance=mancoosimm::InformationFile_strategy)
+@given(instance=mancoosimm_InformationFile_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::informationfile_instantiation(instance):
-    assert isinstance(instance, mancoosimm::InformationFile)
+def test_mancoosimm_informationfile_instantiation(instance):
+    assert isinstance(instance, mancoosimm_InformationFile)
 
-@given(instance=mancoosimm::Boot_strategy)
+@given(instance=mancoosimm_Boot_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::boot_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Boot)
+def test_mancoosimm_boot_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Boot)
 
-@given(instance=mancoosimm::Menu_strategy)
+@given(instance=mancoosimm_Menu_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::menu_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Menu)
+def test_mancoosimm_menu_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Menu)
 
-@given(instance=mancoosimm::GConf_strategy)
+@given(instance=mancoosimm_GConf_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::gconf_instantiation(instance):
-    assert isinstance(instance, mancoosimm::GConf)
+def test_mancoosimm_gconf_instantiation(instance):
+    assert isinstance(instance, mancoosimm_GConf)
 
-@given(instance=mancoosimm::XFontCache_strategy)
+@given(instance=mancoosimm_XFontCache_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::xfontcache_instantiation(instance):
-    assert isinstance(instance, mancoosimm::XFontCache)
-
-@given(instance=mancoosimm::XFontCache_strategy)
-def test_mancoosimm::xfontcache_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_mancoosimm_xfontcache_instantiation(instance):
+    assert isinstance(instance, mancoosimm_XFontCache)
 
 
-@given(instance=mancoosimm::XFontCache_strategy)
-def test_mancoosimm::xfontcache_location_setter(instance):
+
+@given(instance=mancoosimm_XFontCache_strategy)
+def test_mancoosimm_xfontcache_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=mancoosimm::ModuleCache_strategy)
+@given(instance=mancoosimm_ModuleCache_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::modulecache_instantiation(instance):
-    assert isinstance(instance, mancoosimm::ModuleCache)
-
-@given(instance=mancoosimm::ModuleCache_strategy)
-def test_mancoosimm::modulecache_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_mancoosimm_modulecache_instantiation(instance):
+    assert isinstance(instance, mancoosimm_ModuleCache)
 
 
-@given(instance=mancoosimm::ModuleCache_strategy)
-def test_mancoosimm::modulecache_version_setter(instance):
+
+@given(instance=mancoosimm_ModuleCache_strategy)
+def test_mancoosimm_modulecache_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=mancoosimm::LibraryCache_strategy)
+@given(instance=mancoosimm_LibraryCache_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::librarycache_instantiation(instance):
-    assert isinstance(instance, mancoosimm::LibraryCache)
+def test_mancoosimm_librarycache_instantiation(instance):
+    assert isinstance(instance, mancoosimm_LibraryCache)
 
-@given(instance=mancoosimm::MimeTypeHandlerCache_strategy)
+@given(instance=mancoosimm_MimeTypeHandlerCache_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::mimetypehandlercache_instantiation(instance):
-    assert isinstance(instance, mancoosimm::MimeTypeHandlerCache)
+def test_mancoosimm_mimetypehandlercache_instantiation(instance):
+    assert isinstance(instance, mancoosimm_MimeTypeHandlerCache)
 
-@given(instance=mancoosimm::DesktopDB_strategy)
+@given(instance=mancoosimm_DesktopDB_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::desktopdb_instantiation(instance):
-    assert isinstance(instance, mancoosimm::DesktopDB)
+def test_mancoosimm_desktopdb_instantiation(instance):
+    assert isinstance(instance, mancoosimm_DesktopDB)
 
-@given(instance=mancoosimm::IconCache_strategy)
+@given(instance=mancoosimm_IconCache_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::iconcache_instantiation(instance):
-    assert isinstance(instance, mancoosimm::IconCache)
-
-@given(instance=mancoosimm::IconCache_strategy)
-def test_mancoosimm::iconcache_mtime_type(instance):
-    assert isinstance(instance.mtime, str)
+def test_mancoosimm_iconcache_instantiation(instance):
+    assert isinstance(instance, mancoosimm_IconCache)
 
 
-@given(instance=mancoosimm::IconCache_strategy)
-def test_mancoosimm::iconcache_mtime_setter(instance):
+
+@given(instance=mancoosimm_IconCache_strategy)
+def test_mancoosimm_iconcache_mtime_setter(instance):
     original = instance.mtime
     instance.mtime = original
     assert instance.mtime == original
 
-@given(instance=mancoosimm::NotInv_strategy)
+@given(instance=mancoosimm_NotInv_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::notinv_instantiation(instance):
-    assert isinstance(instance, mancoosimm::NotInv)
+def test_mancoosimm_notinv_instantiation(instance):
+    assert isinstance(instance, mancoosimm_NotInv)
 
-@given(instance=mancoosimm::OrInv_strategy)
+@given(instance=mancoosimm_OrInv_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::orinv_instantiation(instance):
-    assert isinstance(instance, mancoosimm::OrInv)
+def test_mancoosimm_orinv_instantiation(instance):
+    assert isinstance(instance, mancoosimm_OrInv)
 
-@given(instance=mancoosimm::AndInv_strategy)
+@given(instance=mancoosimm_AndInv_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::andinv_instantiation(instance):
-    assert isinstance(instance, mancoosimm::AndInv)
+def test_mancoosimm_andinv_instantiation(instance):
+    assert isinstance(instance, mancoosimm_AndInv)
 
 @given(instance=Dependence_strategy)
 @settings(max_examples=50)
 def test_dependence_instantiation(instance):
     assert isinstance(instance, Dependence)
 
-@given(instance=mancoosimm::SingleDep_strategy)
+@given(instance=mancoosimm_SingleDep_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::singledep_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SingleDep)
-
-@given(instance=mancoosimm::SingleDep_strategy)
-def test_mancoosimm::singledep_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mancoosimm_singledep_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SingleDep)
 
 
-@given(instance=mancoosimm::SingleDep_strategy)
-def test_mancoosimm::singledep_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=mancoosimm::SingleDep_strategy)
-def test_mancoosimm::singledep_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=mancoosimm::SingleDep_strategy)
-def test_mancoosimm::singledep_version_setter(instance):
+@given(instance=mancoosimm_SingleDep_strategy)
+def test_mancoosimm_singledep_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=mancoosimm::OrDep_strategy)
+
+
+@given(instance=mancoosimm_SingleDep_strategy)
+def test_mancoosimm_singledep_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=mancoosimm_OrDep_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::ordep_instantiation(instance):
-    assert isinstance(instance, mancoosimm::OrDep)
+def test_mancoosimm_ordep_instantiation(instance):
+    assert isinstance(instance, mancoosimm_OrDep)
 
 @given(instance=InstalledPackage_strategy)
 @settings(max_examples=50)
 def test_installedpackage_instantiation(instance):
     assert isinstance(instance, InstalledPackage)
 
-@given(instance=mancoosimm::BinPackage_strategy)
+@given(instance=mancoosimm_BinPackage_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::binpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::BinPackage)
+def test_mancoosimm_binpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_BinPackage)
 
 @given(instance=UnpackedPackage_strategy)
 @settings(max_examples=50)
 def test_unpackedpackage_instantiation(instance):
     assert isinstance(instance, UnpackedPackage)
 
-@given(instance=mancoosimm::AndDep_strategy)
+@given(instance=mancoosimm_AndDep_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::anddep_instantiation(instance):
-    assert isinstance(instance, mancoosimm::AndDep)
+def test_mancoosimm_anddep_instantiation(instance):
+    assert isinstance(instance, mancoosimm_AndDep)
 
-@given(instance=mancoosimm::VirtualPackage_strategy)
+@given(instance=mancoosimm_VirtualPackage_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::virtualpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::VirtualPackage)
+def test_mancoosimm_virtualpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_VirtualPackage)
 
-@given(instance=mancoosimm::Dependence_strategy)
+@given(instance=mancoosimm_Dependence_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::dependence_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Dependence)
+def test_mancoosimm_dependence_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Dependence)
 
-@given(instance=mancoosimm::SrcPackage_strategy)
+@given(instance=mancoosimm_SrcPackage_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::srcpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SrcPackage)
+def test_mancoosimm_srcpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SrcPackage)
 
 @given(instance=Package_strategy)
 @settings(max_examples=50)
 def test_package_instantiation(instance):
     assert isinstance(instance, Package)
 
-@given(instance=mancoosimm::Conflict_strategy)
+@given(instance=mancoosimm_Conflict_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::conflict_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Conflict)
+def test_mancoosimm_conflict_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Conflict)
 
-@given(instance=mancoosimm::DocumentationFile_strategy)
+@given(instance=mancoosimm_DocumentationFile_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::documentationfile_instantiation(instance):
-    assert isinstance(instance, mancoosimm::DocumentationFile)
+def test_mancoosimm_documentationfile_instantiation(instance):
+    assert isinstance(instance, mancoosimm_DocumentationFile)
 
-@given(instance=mancoosimm::HalfConfiguredPackage_strategy)
+@given(instance=mancoosimm_HalfConfiguredPackage_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::halfconfiguredpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::HalfConfiguredPackage)
+def test_mancoosimm_halfconfiguredpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_HalfConfiguredPackage)
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
+@given(instance=mancoosimm_UnpackedPackage_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::unpackedpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::UnpackedPackage)
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_mancoosimm_unpackedpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_UnpackedPackage)
 
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_maintainer_type(instance):
-    assert isinstance(instance.maintainer, str)
-
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_maintainer_setter(instance):
-    original = instance.maintainer
-    instance.maintainer = original
-    assert instance.maintainer == original
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_tag_type(instance):
-    assert isinstance(instance.tag, str)
-
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_tag_setter(instance):
-    original = instance.tag
-    instance.tag = original
-    assert instance.tag == original
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_uploaders_type(instance):
-    assert isinstance(instance.uploaders, str)
-
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_uploaders_setter(instance):
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_uploaders_setter(instance):
     original = instance.uploaders
     instance.uploaders = original
     assert instance.uploaders == original
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_priority_type(instance):
-    assert isinstance(instance.priority, str)
 
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_priority_setter(instance):
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_section_setter(instance):
+    original = instance.section
+    instance.section = original
+    assert instance.section == original
+
+
+
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_section_type(instance):
-    assert isinstance(instance.section, str)
 
 
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_section_setter(instance):
-    original = instance.section
-    instance.section = original
-    assert instance.section == original
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_checkSum_type(instance):
-    assert isinstance(instance.checkSum, str)
-
-
-@given(instance=mancoosimm::UnpackedPackage_strategy)
-def test_mancoosimm::unpackedpackage_checkSum_setter(instance):
-    original = instance.checkSum
-    instance.checkSum = original
-    assert instance.checkSum == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::configfilespackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::ConfigFilesPackage)
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_section_type(instance):
-    assert isinstance(instance.section, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_section_setter(instance):
-    original = instance.section
-    instance.section = original
-    assert instance.section == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_priority_type(instance):
-    assert isinstance(instance.priority, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_checkSum_type(instance):
-    assert isinstance(instance.checkSum, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_checkSum_setter(instance):
-    original = instance.checkSum
-    instance.checkSum = original
-    assert instance.checkSum == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_maintainer_type(instance):
-    assert isinstance(instance.maintainer, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_maintainer_setter(instance):
-    original = instance.maintainer
-    instance.maintainer = original
-    assert instance.maintainer == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_uploaders_type(instance):
-    assert isinstance(instance.uploaders, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_uploaders_setter(instance):
-    original = instance.uploaders
-    instance.uploaders = original
-    assert instance.uploaders == original
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_tag_type(instance):
-    assert isinstance(instance.tag, str)
-
-
-@given(instance=mancoosimm::ConfigFilesPackage_strategy)
-def test_mancoosimm::configfilespackage_tag_setter(instance):
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_tag_setter(instance):
     original = instance.tag
     instance.tag = original
     assert instance.tag == original
 
-@given(instance=mancoosimm::NotInstalledPackage_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::notinstalledpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::NotInstalledPackage)
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::installedpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::InstalledPackage)
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_uploaders_type(instance):
-    assert isinstance(instance.uploaders, str)
 
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_uploaders_setter(instance):
-    original = instance.uploaders
-    instance.uploaders = original
-    assert instance.uploaders == original
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_checkSum_type(instance):
-    assert isinstance(instance.checkSum, str)
-
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_checkSum_setter(instance):
-    original = instance.checkSum
-    instance.checkSum = original
-    assert instance.checkSum == original
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_description_setter(instance):
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_fileSize_type(instance):
-    assert isinstance(instance.fileSize, int)
 
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_fileSize_setter(instance):
-    original = instance.fileSize
-    instance.fileSize = original
-    assert instance.fileSize == original
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_maintainer_type(instance):
-    assert isinstance(instance.maintainer, str)
-
-
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_maintainer_setter(instance):
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_maintainer_setter(instance):
     original = instance.maintainer
     instance.maintainer = original
     assert instance.maintainer == original
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_section_type(instance):
-    assert isinstance(instance.section, str)
 
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_section_setter(instance):
+@given(instance=mancoosimm_UnpackedPackage_strategy)
+def test_mancoosimm_unpackedpackage_checkSum_setter(instance):
+    original = instance.checkSum
+    instance.checkSum = original
+    assert instance.checkSum == original
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_configfilespackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_ConfigFilesPackage)
+
+
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_section_setter(instance):
     original = instance.section
     instance.section = original
     assert instance.section == original
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_installedSize_type(instance):
-    assert isinstance(instance.installedSize, int)
 
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_installedSize_setter(instance):
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_tag_setter(instance):
+    original = instance.tag
+    instance.tag = original
+    assert instance.tag == original
+
+
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_maintainer_setter(instance):
+    original = instance.maintainer
+    instance.maintainer = original
+    assert instance.maintainer == original
+
+
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_checkSum_setter(instance):
+    original = instance.checkSum
+    instance.checkSum = original
+    assert instance.checkSum == original
+
+
+
+@given(instance=mancoosimm_ConfigFilesPackage_strategy)
+def test_mancoosimm_configfilespackage_uploaders_setter(instance):
+    original = instance.uploaders
+    instance.uploaders = original
+    assert instance.uploaders == original
+
+@given(instance=mancoosimm_NotInstalledPackage_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_notinstalledpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_NotInstalledPackage)
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_installedpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_InstalledPackage)
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_uploaders_setter(instance):
+    original = instance.uploaders
+    instance.uploaders = original
+    assert instance.uploaders == original
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_maintainer_setter(instance):
+    original = instance.maintainer
+    instance.maintainer = original
+    assert instance.maintainer == original
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_installedSize_setter(instance):
     original = instance.installedSize
     instance.installedSize = original
     assert instance.installedSize == original
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_tag_type(instance):
-    assert isinstance(instance.tag, str)
 
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_tag_setter(instance):
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_section_setter(instance):
+    original = instance.section
+    instance.section = original
+    assert instance.section == original
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_fileSize_setter(instance):
+    original = instance.fileSize
+    instance.fileSize = original
+    assert instance.fileSize == original
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_tag_setter(instance):
     original = instance.tag
     instance.tag = original
     assert instance.tag == original
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_priority_type(instance):
-    assert isinstance(instance.priority, str)
 
 
-@given(instance=mancoosimm::InstalledPackage_strategy)
-def test_mancoosimm::installedpackage_priority_setter(instance):
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_checkSum_setter(instance):
+    original = instance.checkSum
+    instance.checkSum = original
+    assert instance.checkSum == original
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=mancoosimm_InstalledPackage_strategy)
+def test_mancoosimm_installedpackage_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
@@ -2465,359 +2363,293 @@ def test_mancoosimm::installedpackage_priority_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=mancoosimm::SkeeperDocument_strategy)
+@given(instance=mancoosimm_User_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::skeeperdocument_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SkeeperDocument)
+def test_mancoosimm_user_instantiation(instance):
+    assert isinstance(instance, mancoosimm_User)
 
-@given(instance=mancoosimm::Module_strategy)
+@given(instance=mancoosimm_ApplicationMenuCatalog_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::module_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Module)
+def test_mancoosimm_applicationmenucatalog_instantiation(instance):
+    assert isinstance(instance, mancoosimm_ApplicationMenuCatalog)
 
-@given(instance=mancoosimm::Environment_strategy)
+@given(instance=mancoosimm_Invariant_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::environment_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Environment)
+def test_mancoosimm_invariant_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Invariant)
 
-@given(instance=mancoosimm::MenuEntry_strategy)
+@given(instance=mancoosimm_PackageSetting_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::menuentry_instantiation(instance):
-    assert isinstance(instance, mancoosimm::MenuEntry)
+def test_mancoosimm_packagesetting_instantiation(instance):
+    assert isinstance(instance, mancoosimm_PackageSetting)
 
-@given(instance=mancoosimm::EmacsPackage_strategy)
+@given(instance=mancoosimm_EmacsPackage_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::emacspackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::EmacsPackage)
+def test_mancoosimm_emacspackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_EmacsPackage)
 
-@given(instance=mancoosimm::User_strategy)
+@given(instance=mancoosimm_MenuEntry_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::user_instantiation(instance):
-    assert isinstance(instance, mancoosimm::User)
+def test_mancoosimm_menuentry_instantiation(instance):
+    assert isinstance(instance, mancoosimm_MenuEntry)
 
-@given(instance=mancoosimm::SGMLDocument_strategy)
+@given(instance=mancoosimm_Environment_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::sgmldocument_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SGMLDocument)
+def test_mancoosimm_environment_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Environment)
 
-@given(instance=mancoosimm::XFont_strategy)
+@given(instance=mancoosimm_Alternative_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::xfont_instantiation(instance):
-    assert isinstance(instance, mancoosimm::XFont)
+def test_mancoosimm_alternative_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Alternative)
 
-@given(instance=mancoosimm::Atom_strategy)
+@given(instance=mancoosimm_Service_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::atom_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Atom)
+def test_mancoosimm_service_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Service)
 
-@given(instance=mancoosimm::Group_strategy)
+@given(instance=mancoosimm_SGMLDocument_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::group_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Group)
+def test_mancoosimm_sgmldocument_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SGMLDocument)
 
-@given(instance=mancoosimm::Alternative_strategy)
+@given(instance=mancoosimm_SGMLCatalog_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::alternative_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Alternative)
+def test_mancoosimm_sgmlcatalog_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SGMLCatalog)
 
-@given(instance=mancoosimm::Invariant_strategy)
+@given(instance=mancoosimm_XFont_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::invariant_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Invariant)
+def test_mancoosimm_xfont_instantiation(instance):
+    assert isinstance(instance, mancoosimm_XFont)
 
-@given(instance=mancoosimm::File_strategy)
+@given(instance=mancoosimm_SkeeperDocument_strategy)
 @settings(max_examples=50)
-def test_mancoosimm::file_instantiation(instance):
-    assert isinstance(instance, mancoosimm::File)
+def test_mancoosimm_skeeperdocument_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SkeeperDocument)
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_extension_type(instance):
-    assert isinstance(instance.extension, str)
+@given(instance=mancoosimm_SkeeperCatalog_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_skeepercatalog_instantiation(instance):
+    assert isinstance(instance, mancoosimm_SkeeperCatalog)
+
+@given(instance=mancoosimm_Module_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_module_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Module)
+
+@given(instance=mancoosimm_Atom_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_atom_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Atom)
+
+@given(instance=mancoosimm_Group_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_group_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Group)
+
+@given(instance=mancoosimm_File_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_file_instantiation(instance):
+    assert isinstance(instance, mancoosimm_File)
 
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_extension_setter(instance):
+
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_extension_setter(instance):
     original = instance.extension
     instance.extension = original
     assert instance.extension == original
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_guid_type(instance):
-    assert isinstance(instance.guid, bool)
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_guid_setter(instance):
-    original = instance.guid
-    instance.guid = original
-    assert instance.guid == original
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_isDirectory_type(instance):
-    assert isinstance(instance.isDirectory, bool)
-
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_isDirectory_setter(instance):
-    original = instance.isDirectory
-    instance.isDirectory = original
-    assert instance.isDirectory == original
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_checkSum_type(instance):
-    assert isinstance(instance.checkSum, str)
-
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_checkSum_setter(instance):
-    original = instance.checkSum
-    instance.checkSum = original
-    assert instance.checkSum == original
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_suid_type(instance):
-    assert isinstance(instance.suid, bool)
-
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_suid_setter(instance):
-    original = instance.suid
-    instance.suid = original
-    assert instance.suid == original
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_permission_type(instance):
-    assert isinstance(instance.permission, str)
-
-
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_permission_setter(instance):
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_permission_setter(instance):
     original = instance.permission
     instance.permission = original
     assert instance.permission == original
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_isMissing_type(instance):
-    assert isinstance(instance.isMissing, bool)
 
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_isMissing_setter(instance):
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_guid_setter(instance):
+    original = instance.guid
+    instance.guid = original
+    assert instance.guid == original
+
+
+
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_isDirectory_setter(instance):
+    original = instance.isDirectory
+    instance.isDirectory = original
+    assert instance.isDirectory == original
+
+
+
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_isMissing_setter(instance):
     original = instance.isMissing
     instance.isMissing = original
     assert instance.isMissing == original
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=mancoosimm::File_strategy)
-def test_mancoosimm::file_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=mancoosimm::Service_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::service_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Service)
-
-@given(instance=mancoosimm::SGMLCatalog_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::sgmlcatalog_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SGMLCatalog)
-
-@given(instance=mancoosimm::SkeeperCatalog_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::skeepercatalog_instantiation(instance):
-    assert isinstance(instance, mancoosimm::SkeeperCatalog)
-
-@given(instance=mancoosimm::ApplicationMenuCatalog_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::applicationmenucatalog_instantiation(instance):
-    assert isinstance(instance, mancoosimm::ApplicationMenuCatalog)
-
-@given(instance=mancoosimm::FileSystem_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::filesystem_instantiation(instance):
-    assert isinstance(instance, mancoosimm::FileSystem)
-
-@given(instance=mancoosimm::PackageSetting_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::packagesetting_instantiation(instance):
-    assert isinstance(instance, mancoosimm::PackageSetting)
-
-@given(instance=mancoosimm::Configuration_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::configuration_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Configuration)
-
-@given(instance=mancoosimm::Configuration_strategy)
-def test_mancoosimm::configuration_creationTime_type(instance):
-    assert isinstance(instance.creationTime, str)
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_suid_setter(instance):
+    original = instance.suid
+    instance.suid = original
+    assert instance.suid == original
 
 
-@given(instance=mancoosimm::Configuration_strategy)
-def test_mancoosimm::configuration_creationTime_setter(instance):
-    original = instance.creationTime
-    instance.creationTime = original
-    assert instance.creationTime == original
 
-@given(instance=mancoosimm::Configuration_strategy)
-def test_mancoosimm::configuration_systemType_type(instance):
-    assert isinstance(instance.systemType, str)
-
-
-@given(instance=mancoosimm::Configuration_strategy)
-def test_mancoosimm::configuration_systemType_setter(instance):
-    original = instance.systemType
-    instance.systemType = original
-    assert instance.systemType == original
-
-@given(instance=mancoosimm::NamedElement_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::namedelement_instantiation(instance):
-    assert isinstance(instance, mancoosimm::NamedElement)
-
-@given(instance=mancoosimm::NamedElement_strategy)
-def test_mancoosimm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mancoosimm::NamedElement_strategy)
-def test_mancoosimm::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=mancoosimm::Package_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::package_instantiation(instance):
-    assert isinstance(instance, mancoosimm::Package)
-
-@given(instance=mancoosimm::Package_strategy)
-def test_mancoosimm::package_architecture_type(instance):
-    assert isinstance(instance.architecture, str)
-
-
-@given(instance=mancoosimm::Package_strategy)
-def test_mancoosimm::package_architecture_setter(instance):
-    original = instance.architecture
-    instance.architecture = original
-    assert instance.architecture == original
-
-@given(instance=mancoosimm::Package_strategy)
-def test_mancoosimm::package_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=mancoosimm::Package_strategy)
-def test_mancoosimm::package_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-@settings(max_examples=50)
-def test_mancoosimm::halfinstalledpackage_instantiation(instance):
-    assert isinstance(instance, mancoosimm::HalfInstalledPackage)
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_tag_type(instance):
-    assert isinstance(instance.tag, str)
-
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_tag_setter(instance):
-    original = instance.tag
-    instance.tag = original
-    assert instance.tag == original
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_maintainer_type(instance):
-    assert isinstance(instance.maintainer, str)
-
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_maintainer_setter(instance):
-    original = instance.maintainer
-    instance.maintainer = original
-    assert instance.maintainer == original
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_priority_type(instance):
-    assert isinstance(instance.priority, str)
-
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_checkSum_type(instance):
-    assert isinstance(instance.checkSum, str)
-
-
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_checkSum_setter(instance):
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_checkSum_setter(instance):
     original = instance.checkSum
     instance.checkSum = original
     assert instance.checkSum == original
 
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_section_type(instance):
-    assert isinstance(instance.section, str)
 
 
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_section_setter(instance):
+@given(instance=mancoosimm_File_strategy)
+def test_mancoosimm_file_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+@given(instance=mancoosimm_FileSystem_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_filesystem_instantiation(instance):
+    assert isinstance(instance, mancoosimm_FileSystem)
+
+@given(instance=mancoosimm_Configuration_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_configuration_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Configuration)
+
+
+
+@given(instance=mancoosimm_Configuration_strategy)
+def test_mancoosimm_configuration_systemType_setter(instance):
+    original = instance.systemType
+    instance.systemType = original
+    assert instance.systemType == original
+
+
+
+@given(instance=mancoosimm_Configuration_strategy)
+def test_mancoosimm_configuration_creationTime_setter(instance):
+    original = instance.creationTime
+    instance.creationTime = original
+    assert instance.creationTime == original
+
+@given(instance=mancoosimm_NamedElement_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_namedelement_instantiation(instance):
+    assert isinstance(instance, mancoosimm_NamedElement)
+
+
+
+@given(instance=mancoosimm_NamedElement_strategy)
+def test_mancoosimm_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mancoosimm_Package_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_package_instantiation(instance):
+    assert isinstance(instance, mancoosimm_Package)
+
+
+
+@given(instance=mancoosimm_Package_strategy)
+def test_mancoosimm_package_architecture_setter(instance):
+    original = instance.architecture
+    instance.architecture = original
+    assert instance.architecture == original
+
+
+
+@given(instance=mancoosimm_Package_strategy)
+def test_mancoosimm_package_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+@settings(max_examples=50)
+def test_mancoosimm_halfinstalledpackage_instantiation(instance):
+    assert isinstance(instance, mancoosimm_HalfInstalledPackage)
+
+
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_tag_setter(instance):
+    original = instance.tag
+    instance.tag = original
+    assert instance.tag == original
+
+
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_checkSum_setter(instance):
+    original = instance.checkSum
+    instance.checkSum = original
+    assert instance.checkSum == original
+
+
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_section_setter(instance):
     original = instance.section
     instance.section = original
     assert instance.section == original
 
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_uploaders_type(instance):
-    assert isinstance(instance.uploaders, str)
 
 
-@given(instance=mancoosimm::HalfInstalledPackage_strategy)
-def test_mancoosimm::halfinstalledpackage_uploaders_setter(instance):
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_uploaders_setter(instance):
     original = instance.uploaders
     instance.uploaders = original
     assert instance.uploaders == original
+
+
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=mancoosimm_HalfInstalledPackage_strategy)
+def test_mancoosimm_halfinstalledpackage_maintainer_setter(instance):
+    original = instance.maintainer
+    instance.maintainer = original
+    assert instance.maintainer == original

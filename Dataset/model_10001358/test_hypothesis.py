@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     mypackage_MyClass20,
@@ -497,9 +497,6 @@ def test_mypackage_myclass2_instantiation(instance):
 def test_mypackage_myclass_instantiation(instance):
     assert isinstance(instance, mypackage_MyClass)
 
-@given(instance=mypackage_MyClass_strategy)
-def test_mypackage_myclass_haarfarbe_type(instance):
-    assert isinstance(instance.haarfarbe, str)
 
 
 @given(instance=mypackage_MyClass_strategy)

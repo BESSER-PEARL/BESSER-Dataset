@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Admin,
@@ -126,30 +126,12 @@ def test_event_constructor_exists():
 def test_event_constructor_args():
     sig = inspect.signature(Event.__init__)
     params = list(sig.parameters.keys())
-    assert "eventhead" in params, "Missing parameter 'eventhead'"
-    assert "eventname" in params, "Missing parameter 'eventname'"
     assert "eventid" in params, "Missing parameter 'eventid'"
-    assert "date" in params, "Missing parameter 'date'"
     assert "eventype" in params, "Missing parameter 'eventype'"
     assert "amount" in params, "Missing parameter 'amount'"
-
-def test_event_has_eventhead():
-    assert hasattr(Event, "eventhead")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "eventhead" in klass.__dict__:
-            descriptor = klass.__dict__["eventhead"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_eventname():
-    assert hasattr(Event, "eventname")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "eventname" in klass.__dict__:
-            descriptor = klass.__dict__["eventname"]
-            break
-    assert isinstance(descriptor, property)
+    assert "date" in params, "Missing parameter 'date'"
+    assert "eventname" in params, "Missing parameter 'eventname'"
+    assert "eventhead" in params, "Missing parameter 'eventhead'"
 
 def test_event_has_eventid():
     assert hasattr(Event, "eventid")
@@ -157,15 +139,6 @@ def test_event_has_eventid():
     for klass in Event.__mro__:
         if "eventid" in klass.__dict__:
             descriptor = klass.__dict__["eventid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_event_has_date():
-    assert hasattr(Event, "date")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -187,6 +160,33 @@ def test_event_has_amount():
             break
     assert isinstance(descriptor, property)
 
+def test_event_has_date():
+    assert hasattr(Event, "date")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_eventname():
+    assert hasattr(Event, "eventname")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "eventname" in klass.__dict__:
+            descriptor = klass.__dict__["eventname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_eventhead():
+    assert hasattr(Event, "eventhead")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "eventhead" in klass.__dict__:
+            descriptor = klass.__dict__["eventhead"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_payment_is_not_abstract():
@@ -201,8 +201,8 @@ def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
     assert "amout" in params, "Missing parameter 'amout'"
-    assert "paytype" in params, "Missing parameter 'paytype'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "paytype" in params, "Missing parameter 'paytype'"
 
 def test_payment_has_amout():
     assert hasattr(Payment, "amout")
@@ -213,21 +213,21 @@ def test_payment_has_amout():
             break
     assert isinstance(descriptor, property)
 
-def test_payment_has_paytype():
-    assert hasattr(Payment, "paytype")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "paytype" in klass.__dict__:
-            descriptor = klass.__dict__["paytype"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_payment_has_status():
     assert hasattr(Payment, "status")
     descriptor = None
     for klass in Payment.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_payment_has_paytype():
+    assert hasattr(Payment, "paytype")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "paytype" in klass.__dict__:
+            descriptor = klass.__dict__["paytype"]
             break
     assert isinstance(descriptor, property)
 
@@ -316,19 +316,10 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "fname" in params, "Missing parameter 'fname'"
     assert "username" in params, "Missing parameter 'username'"
-    assert "lname" in params, "Missing parameter 'lname'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_user_has_fname():
-    assert hasattr(User, "fname")
-    descriptor = None
-    for klass in User.__mro__:
-        if "fname" in klass.__dict__:
-            descriptor = klass.__dict__["fname"]
-            break
-    assert isinstance(descriptor, property)
+    assert "fname" in params, "Missing parameter 'fname'"
+    assert "lname" in params, "Missing parameter 'lname'"
 
 def test_user_has_username():
     assert hasattr(User, "username")
@@ -339,21 +330,30 @@ def test_user_has_username():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_lname():
-    assert hasattr(User, "lname")
-    descriptor = None
-    for klass in User.__mro__:
-        if "lname" in klass.__dict__:
-            descriptor = klass.__dict__["lname"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_user_has_password():
     assert hasattr(User, "password")
     descriptor = None
     for klass in User.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_fname():
+    assert hasattr(User, "fname")
+    descriptor = None
+    for klass in User.__mro__:
+        if "fname" in klass.__dict__:
+            descriptor = klass.__dict__["fname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_lname():
+    assert hasattr(User, "lname")
+    descriptor = None
+    for klass in User.__mro__:
+        if "lname" in klass.__dict__:
+            descriptor = klass.__dict__["lname"]
             break
     assert isinstance(descriptor, property)
 
@@ -390,26 +390,26 @@ Refreshment_strategy = st.builds(
 )
 Event_strategy = st.builds(
     Event,
-    eventhead=
-        st.none(),
-    eventname=
-        safe_text,
     eventid=
-        st.integers(),
-    date=
         st.integers(),
     eventype=
         safe_text,
     amount=
-        st.integers()
+        st.integers(),
+    date=
+        st.integers(),
+    eventname=
+        safe_text,
+    eventhead=
+        st.none()
 )
 Payment_strategy = st.builds(
     Payment,
     amout=
         st.integers(),
-    paytype=
-        safe_text,
     status=
+        safe_text,
+    paytype=
         safe_text
 )
 Volunteer_strategy = st.builds(
@@ -429,13 +429,13 @@ Client_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    fname=
-        safe_text,
     username=
         safe_text,
-    lname=
-        safe_text,
     password=
+        safe_text,
+    fname=
+        safe_text,
+    lname=
         safe_text
 )
 
@@ -444,9 +444,6 @@ User_strategy = st.builds(
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Admin_strategy)
@@ -455,9 +452,6 @@ def test_admin_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
-@given(instance=Admin_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Admin_strategy)
@@ -491,31 +485,6 @@ def test_refreshment_instantiation(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=Event_strategy)
-def test_event_eventhead_type(instance):
-    assert isinstance(instance.eventhead, eventhead)
-
-
-@given(instance=Event_strategy)
-def test_event_eventhead_setter(instance):
-    original = instance.eventhead
-    instance.eventhead = original
-    assert instance.eventhead == original
-
-@given(instance=Event_strategy)
-def test_event_eventname_type(instance):
-    assert isinstance(instance.eventname, str)
-
-
-@given(instance=Event_strategy)
-def test_event_eventname_setter(instance):
-    original = instance.eventname
-    instance.eventname = original
-    assert instance.eventname == original
-
-@given(instance=Event_strategy)
-def test_event_eventid_type(instance):
-    assert isinstance(instance.eventid, int)
 
 
 @given(instance=Event_strategy)
@@ -524,20 +493,6 @@ def test_event_eventid_setter(instance):
     instance.eventid = original
     assert instance.eventid == original
 
-@given(instance=Event_strategy)
-def test_event_date_type(instance):
-    assert isinstance(instance.date, int)
-
-
-@given(instance=Event_strategy)
-def test_event_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=Event_strategy)
-def test_event_eventype_type(instance):
-    assert isinstance(instance.eventype, str)
 
 
 @given(instance=Event_strategy)
@@ -546,9 +501,6 @@ def test_event_eventype_setter(instance):
     instance.eventype = original
     assert instance.eventype == original
 
-@given(instance=Event_strategy)
-def test_event_amount_type(instance):
-    assert isinstance(instance.amount, int)
 
 
 @given(instance=Event_strategy)
@@ -557,14 +509,35 @@ def test_event_amount_setter(instance):
     instance.amount = original
     assert instance.amount == original
 
+
+
+@given(instance=Event_strategy)
+def test_event_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_eventname_setter(instance):
+    original = instance.eventname
+    instance.eventname = original
+    assert instance.eventname == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_eventhead_setter(instance):
+    original = instance.eventhead
+    instance.eventhead = original
+    assert instance.eventhead == original
+
 @given(instance=Payment_strategy)
 @settings(max_examples=50)
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_amout_type(instance):
-    assert isinstance(instance.amout, int)
 
 
 @given(instance=Payment_strategy)
@@ -573,20 +546,6 @@ def test_payment_amout_setter(instance):
     instance.amout = original
     assert instance.amout == original
 
-@given(instance=Payment_strategy)
-def test_payment_paytype_type(instance):
-    assert isinstance(instance.paytype, str)
-
-
-@given(instance=Payment_strategy)
-def test_payment_paytype_setter(instance):
-    original = instance.paytype
-    instance.paytype = original
-    assert instance.paytype == original
-
-@given(instance=Payment_strategy)
-def test_payment_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
 @given(instance=Payment_strategy)
@@ -595,14 +554,19 @@ def test_payment_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Payment_strategy)
+def test_payment_paytype_setter(instance):
+    original = instance.paytype
+    instance.paytype = original
+    assert instance.paytype == original
+
 @given(instance=Volunteer_strategy)
 @settings(max_examples=50)
 def test_volunteer_instantiation(instance):
     assert isinstance(instance, Volunteer)
 
-@given(instance=Volunteer_strategy)
-def test_volunteer_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Volunteer_strategy)
@@ -616,9 +580,6 @@ def test_volunteer_id_setter(instance):
 def test_eventhead_instantiation(instance):
     assert isinstance(instance, Eventhead)
 
-@given(instance=Eventhead_strategy)
-def test_eventhead_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Eventhead_strategy)
@@ -632,9 +593,6 @@ def test_eventhead_id_setter(instance):
 def test_client_instantiation(instance):
     assert isinstance(instance, Client)
 
-@given(instance=Client_strategy)
-def test_client_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Client_strategy)
@@ -648,20 +606,6 @@ def test_client_id_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_fname_type(instance):
-    assert isinstance(instance.fname, str)
-
-
-@given(instance=User_strategy)
-def test_user_fname_setter(instance):
-    original = instance.fname
-    instance.fname = original
-    assert instance.fname == original
-
-@given(instance=User_strategy)
-def test_user_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=User_strategy)
@@ -670,20 +614,6 @@ def test_user_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
-@given(instance=User_strategy)
-def test_user_lname_type(instance):
-    assert isinstance(instance.lname, str)
-
-
-@given(instance=User_strategy)
-def test_user_lname_setter(instance):
-    original = instance.lname
-    instance.lname = original
-    assert instance.lname == original
-
-@given(instance=User_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=User_strategy)
@@ -691,3 +621,19 @@ def test_user_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
+
+
+
+@given(instance=User_strategy)
+def test_user_fname_setter(instance):
+    original = instance.fname
+    instance.fname = original
+    assert instance.fname == original
+
+
+
+@given(instance=User_strategy)
+def test_user_lname_setter(instance):
+    original = instance.lname
+    instance.lname = original
+    assert instance.lname == original

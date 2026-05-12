@@ -3,198 +3,198 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    method::Method,
-    variable::FieldVariable,
-    import::ImportStatement,
-    complexType::JInterface,
-    ccsl::elements::Element,
+from python_code import (
+    PrimitiveType,
+    ccsl_datatype_StringPrimitiveType,
+    DataType,
+    ccsl_datatype_PrimitiveType,
+    annotation_Annotation,
+    complexType_AnnotationType,
+    statements_Block,
+    tryCatch_CatchClause,
+    UnaryAssignment,
+    ccsl_assignment_PostfixUnaryAssignment,
+    ccsl_assignment_PrefixUnaryAssignment,
+    AbstractAssignment,
+    ccsl_assignment_UnaryAssignment,
+    ccsl_assignment_Assignment,
+    OperatorExpression,
+    ccsl_expressions_InfixExpression,
+    ccsl_expressions_BooleanExpression,
+    ccsl_expressions_ArithmeticExpression,
+    ccsl_expressions_StringConcatenation,
+    Block,
+    ccsl_controlFlow_SwitchCaseBlock,
+    controlFlow_SwitchCaseBlock,
+    ControlFlow,
+    ccsl_controlFlow_LoopStatement,
+    ccsl_controlFlow_IfStatement,
+    ccsl_controlFlow_SwitchStatement,
+    LiteralValue,
+    ccsl_literalValues_BooleanLiteral,
+    ccsl_literalValues_StringLiteral,
+    ccsl_literalValues_CharacterLiteral,
+    ccsl_literalValues_NumberLiteral,
+    ccsl_literalValues_NullLiteral,
+    ccsl_statements_ThrowStatement,
+    Statement,
+    ccsl_statements_ArrayCreation,
+    ccsl_statements_ContinueStatement,
+    ccsl_expressions_ParenthesizedExpression,
+    ccsl_statements_Access,
+    ccsl_statements_SynchronizedBlock,
+    ccsl_expressions_OperatorExpression,
+    ccsl_tryCatch_TryStatement,
+    ccsl_annotation_Annotation,
+    ccsl_literalValues_LiteralValue,
+    ccsl_assignment_AbstractAssignment,
+    ccsl_tryCatch_CatchClause,
+    ccsl_statements_ThisStatement,
+    ccsl_statements_ReturnStatement,
+    ccsl_statements_InstanceOf,
+    ccsl_statements_BreakStatement,
+    ccsl_statements_EmptyStatement,
+    ccsl_statements_NamedElementAccess,
+    method_SimpleMethod,
+    variable_ParameterVariable,
+    elements_Element,
+    SimpleMethod,
+    ccsl_method_Constructor,
+    ccsl_statements_InstanceCreation,
+    ccsl_statements_VarDeclaration,
+    ccsl_statements_Block,
+    ccsl_statements_ControlFlow,
+    Access,
+    ccsl_statements_DataTypeAccess,
+    ccsl_statements_VariableAccess,
+    complexType_JClass,
+    method_Constructor,
+    datatype_ObjectType,
+    ComplexType,
+    ccsl_complexType_AnonymousClass,
+    complexType_ComplexType,
+    variable_InitializableVariable,
+    statements_Statement,
+    DeclaredType,
+    ccsl_complexType_AnnotationType,
+    method_Method,
+    variable_FieldVariable,
+    import_ImportStatement,
+    complexType_JInterface,
+    ccsl_elements_Element,
     InjectionStrategy,
     InjectionAction,
-    ccsl::Root,
+    ccsl_Root,
     Variable,
-    ccsl::variable::InitializableVariable,
+    ccsl_variable_InitializableVariable,
     InitializableVariable,
-    ccsl::variable::LocalVariable,
-    annotation::AnnotableElement,
-    variable::Variable,
-    ccsl::variable::ParameterVariable,
-    datatype::DataType,
+    ccsl_variable_LocalVariable,
+    annotation_AnnotableElement,
+    ccsl_variable_FieldVariable,
+    ccsl_method_SimpleMethod,
+    variable_Variable,
+    ccsl_variable_ParameterVariable,
+    datatype_DataType,
     NamedElement,
-    ccsl::variable::Variable,
-    complexType::DeclaredType,
-    import::ImportableElement,
-    namedElements::NamedElement,
-    ccsl::namedElements::Package,
+    ccsl_variable_Variable,
+    complexType_DeclaredType,
+    ccsl_complexType_JClass,
+    ccsl_complexType_JInterface,
+    import_ImportableElement,
+    namedElements_NamedElement,
+    ccsl_method_Method,
+    ccsl_complexType_DeclaredType,
+    ccsl_namedElements_Package,
     Context,
     Element,
-    ccsl::complexType::ComplexType,
-    ccsl::namedElements::NamedElement,
+    ccsl_complexType_ComplexType,
+    ccsl_namedElements_NamedElement,
+    ccsl_annotation_AnnotableElement,
+    ccsl_datatype_DataType,
+    ccsl_statements_Statement,
     Rule,
-    ccsl::AtomicRule,
-    ccsl::CompositeRule,
+    ccsl_AtomicRule,
+    ccsl_CompositeRule,
     Root,
-    ccsl::FaultTypeDescription,
-    ccsl::Rule,
-    statements::Access,
+    ccsl_FaultTypeDescription,
+    ccsl_Rule,
+    statements_Access,
     CcslNumberFunction,
-    ccsl::numberFunctions::GetIndexOf,
-    ccsl::numberFunctions::CcslIntegerLiteral,
-    numberFunctions::CcslNumberFunction,
-    ccsl::filters::EquationFilter,
+    ccsl_numberFunctions_GetIndexOf,
+    ccsl_numberFunctions_CcslIntegerLiteral,
+    numberFunctions_CcslNumberFunction,
+    ccsl_filters_EquationFilter,
     AtomicFilter,
-    ccsl::filters::TemplateFilter,
-    ccsl::filters::FromClosureFilter,
-    ccsl::filters::SameNameFilter,
-    ccsl::filters::SuperClassClosureFilter,
-    ccsl::filters::ChildClosureComplexTypeFilter,
-    ccsl::filters::IsStringFilter,
-    ccsl::filters::SuperMethodClosureFilter,
-    ccsl::filters::HasSameReferenceFilter,
-    ccsl::filters::IsKindOfFilter,
-    ccsl::filters::BlockLastStatementFilter,
-    ccsl::filters::IsTypeOfFilter,
-    ccsl::filters::PropertyFilter,
+    ccsl_filters_SameNameFilter,
+    ccsl_filters_HasSameReferenceFilter,
+    ccsl_filters_IsKindOfFilter,
+    ccsl_filters_SuperClassClosureFilter,
+    ccsl_filters_IsStringFilter,
+    ccsl_filters_BlockLastStatementFilter,
+    ccsl_filters_TemplateFilter,
+    ccsl_filters_ChildClosureComplexTypeFilter,
+    ccsl_filters_FromClosureFilter,
+    ccsl_filters_SuperMethodClosureFilter,
+    ccsl_filters_IsTypeOfFilter,
+    ccsl_filters_PropertyFilter,
     Filter,
-    ccsl::filters::CompositeFilter,
-    ccsl::filters::AtomicFilter,
+    ccsl_filters_CompositeFilter,
+    ccsl_filters_AtomicFilter,
     CcslBooleanFunction,
-    ccsl::filters::Filter,
+    ccsl_filters_Filter,
     CcslFunction,
-    ccsl::numberFunctions::CcslNumberFunction,
-    ccsl::booleanFunctions::CcslBooleanFunction,
-    ccsl::filters::ImplicityContainerFilter,
-    expressions::OperatorExpression,
+    ccsl_numberFunctions_CcslNumberFunction,
+    ccsl_booleanFunctions_CcslBooleanFunction,
+    ccsl_filters_ImplicityContainerFilter,
+    expressions_OperatorExpression,
     TemplateFilter,
-    ccsl::filters::ImplicityOperandFilter,
-    ccsl::filters::RegexMatch,
-    ccsl::filters::CountFilter,
-    ccsl::faultTypeDescription::InjectionAction,
-    filters::Filter,
-    ccsl::context::Context,
+    ccsl_filters_ImplicityOperandFilter,
+    ccsl_filters_RegexMatch,
+    ccsl_filters_CountFilter,
+    ccsl_faultTypeDescription_InjectionAction,
+    filters_Filter,
+    ccsl_context_Context,
+    ccsl_datatype_VoidType,
+    ccsl_datatype_IntPrimitiveType,
+    ccsl_datatype_GenericType,
     ObjectType,
-    ccsl::datatype::ArrayType,
-    ccsl::datatype::ParameterizedType,
-    ccsl::functions::CcslFunction,
-    ccsl::strategy::AllStrategy,
-    ccsl::action::ArithmeticOperatorMap,
-    action::ArithmeticOperatorMap,
-    ccsl::action::ReplaceArithmeticOperatorAction,
-    ccsl::action::ReplaceVariableAccessAction,
-    ccsl::action::DeleteRandomStatementAction,
-    ccsl::action::ChangeLiteralValueAction,
-    ccsl::action::DeleteInfixOperatorAction,
-    ccsl::action::MoveScopeUpAction,
-    ccsl::action::DeleteAction,
-    ccsl::faultTypeDescription::InjectionStrategy,
-    ccsl::import::ImportableElement,
+    ccsl_datatype_ArrayType,
+    ccsl_datatype_ParameterizedType,
+    ccsl_datatype_ObjectType,
+    ccsl_functions_CcslFunction,
+    ccsl_strategy_AllStrategy,
+    ccsl_action_ArithmeticOperatorMap,
+    action_ArithmeticOperatorMap,
+    ccsl_action_ReplaceArithmeticOperatorAction,
+    ccsl_action_ReplaceVariableAccessAction,
+    ccsl_action_DeleteRandomStatementAction,
+    ccsl_action_ChangeLiteralValueAction,
+    ccsl_action_DeleteInfixOperatorAction,
+    ccsl_action_MoveScopeUpAction,
+    ccsl_action_DeleteAction,
+    ccsl_faultTypeDescription_InjectionStrategy,
+    ccsl_import_ImportStatement,
+    ccsl_import_ImportableElement,
     Invocation,
-    ccsl::invocation::SimpleMethodInvocation,
-    ccsl::invocation::ConstructorInvocation,
+    ccsl_invocation_SimpleMethodInvocation,
+    ccsl_invocation_ConstructorInvocation,
+    ccsl_invocation_Invocation,
     SimpleMethodInvocation,
-    ccsl::invocation::SuperMethodInvocation,
-    ccsl::invocation::MethodInvocation,
-    PrimitiveType,
-    ccsl::datatype::BooleanPrimitiveType,
-    ccsl::datatype::IntPrimitiveType,
-    ccsl::datatype::ShortPrimitiveType,
-    ccsl::datatype::VoidType,
-    ccsl::datatype::StringPrimitiveType,
-    DataType,
-    ccsl::datatype::ObjectType,
-    ccsl::datatype::PrimitiveType,
-    ccsl::datatype::DataType,
-    annotation::Annotation,
-    ccsl::annotation::AnnotableElement,
-    complexType::AnnotationType,
-    statements::Block,
-    tryCatch::CatchClause,
-    UnaryAssignment,
-    ccsl::assignment::PostfixUnaryAssignment,
-    ccsl::assignment::PrefixUnaryAssignment,
-    AbstractAssignment,
-    ccsl::assignment::UnaryAssignment,
-    ccsl::assignment::Assignment,
-    OperatorExpression,
-    ccsl::expressions::ArithmeticExpression,
-    ccsl::expressions::BooleanExpression,
-    ccsl::expressions::InfixExpression,
-    ccsl::expressions::StringConcatenation,
-    Block,
-    ccsl::controlFlow::SwitchCaseBlock,
-    controlFlow::SwitchCaseBlock,
-    ControlFlow,
-    ccsl::controlFlow::IfStatement,
-    ccsl::controlFlow::LoopStatement,
-    ccsl::controlFlow::SwitchStatement,
-    LiteralValue,
-    ccsl::literalValues::StringLiteral,
-    ccsl::literalValues::CharacterLiteral,
-    ccsl::literalValues::NumberLiteral,
-    ccsl::literalValues::BooleanLiteral,
-    ccsl::literalValues::NullLiteral,
-    ccsl::statements::ThrowStatement,
-    Statement,
-    ccsl::statements::ReturnStatement,
-    ccsl::statements::InstanceOf,
-    ccsl::tryCatch::CatchClause,
-    ccsl::literalValues::LiteralValue,
-    ccsl::annotation::Annotation,
-    ccsl::import::ImportStatement,
-    ccsl::statements::ArrayCreation,
-    ccsl::statements::BreakStatement,
-    ccsl::statements::ThisStatement,
-    ccsl::statements::ContinueStatement,
-    ccsl::assignment::AbstractAssignment,
-    ccsl::tryCatch::TryStatement,
-    ccsl::expressions::ParenthesizedExpression,
-    ccsl::statements::SynchronizedBlock,
-    ccsl::statements::Access,
-    ccsl::invocation::Invocation,
-    ccsl::expressions::OperatorExpression,
-    ccsl::statements::EmptyStatement,
-    ccsl::statements::NamedElementAccess,
-    ccsl::statements::Statement,
-    method::SimpleMethod,
-    ccsl::method::Method,
-    variable::ParameterVariable,
-    elements::Element,
-    ccsl::method::SimpleMethod,
-    SimpleMethod,
-    ccsl::method::Constructor,
-    ccsl::statements::InstanceCreation,
-    ccsl::statements::VarDeclaration,
-    ccsl::statements::Block,
-    ccsl::statements::ControlFlow,
-    Access,
-    ccsl::statements::DataTypeAccess,
-    ccsl::statements::VariableAccess,
-    complexType::JClass,
-    method::Constructor,
-    datatype::ObjectType,
-    ccsl::complexType::DeclaredType,
-    ComplexType,
-    ccsl::datatype::GenericType,
-    ccsl::complexType::AnonymousClass,
-    complexType::ComplexType,
-    ccsl::complexType::JClass,
-    ccsl::complexType::JInterface,
-    variable::InitializableVariable,
-    ccsl::variable::FieldVariable,
-    statements::Statement,
-    DeclaredType,
-    ccsl::complexType::AnnotationType,
-    UnaryAssignmentOperator,
-    LogicOperator,
-    EquationOperator,
-    AssignmentOperator,
-    Inheritance,
-    BooleanOperator,
-    ArithmeticOperator,
-    Visibility,
+    ccsl_invocation_SuperMethodInvocation,
+    ccsl_invocation_MethodInvocation,
+    ccsl_datatype_ShortPrimitiveType,
+    ccsl_datatype_BooleanPrimitiveType,
     CollectionKind,
+    EquationOperator,
+    UnaryAssignmentOperator,
+    Inheritance,
+    AssignmentOperator,
+    Visibility,
+    ArithmeticOperator,
+    LogicOperator,
+    BooleanOperator,
 )
 
 # =============================================================================
@@ -203,79 +203,1191 @@ from classes import (
 
 
 
-def test_method::method_is_not_abstract():
-    assert not inspect.isabstract(method::Method)
+def test_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(PrimitiveType)
 
 
-def test_method::method_constructor_exists():
-    assert callable(method::Method.__init__)
+def test_primitivetype_constructor_exists():
+    assert callable(PrimitiveType.__init__)
 
 
-def test_method::method_constructor_args():
-    sig = inspect.signature(method::Method.__init__)
+def test_primitivetype_constructor_args():
+    sig = inspect.signature(PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_variable::fieldvariable_is_not_abstract():
-    assert not inspect.isabstract(variable::FieldVariable)
+def test_ccsl_datatype_stringprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_StringPrimitiveType)
 
 
-def test_variable::fieldvariable_constructor_exists():
-    assert callable(variable::FieldVariable.__init__)
+def test_ccsl_datatype_stringprimitivetype_constructor_exists():
+    assert callable(ccsl_datatype_StringPrimitiveType.__init__)
 
 
-def test_variable::fieldvariable_constructor_args():
-    sig = inspect.signature(variable::FieldVariable.__init__)
+def test_ccsl_datatype_stringprimitivetype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_StringPrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_import::importstatement_is_not_abstract():
-    assert not inspect.isabstract(import::ImportStatement)
+def test_datatype_is_not_abstract():
+    assert not inspect.isabstract(DataType)
 
 
-def test_import::importstatement_constructor_exists():
-    assert callable(import::ImportStatement.__init__)
+def test_datatype_constructor_exists():
+    assert callable(DataType.__init__)
 
 
-def test_import::importstatement_constructor_args():
-    sig = inspect.signature(import::ImportStatement.__init__)
+def test_datatype_constructor_args():
+    sig = inspect.signature(DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_complextype::jinterface_is_not_abstract():
-    assert not inspect.isabstract(complexType::JInterface)
+def test_ccsl_datatype_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_PrimitiveType)
 
 
-def test_complextype::jinterface_constructor_exists():
-    assert callable(complexType::JInterface.__init__)
+def test_ccsl_datatype_primitivetype_constructor_exists():
+    assert callable(ccsl_datatype_PrimitiveType.__init__)
 
 
-def test_complextype::jinterface_constructor_args():
-    sig = inspect.signature(complexType::JInterface.__init__)
+def test_ccsl_datatype_primitivetype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::elements::element_is_not_abstract():
-    assert not inspect.isabstract(ccsl::elements::Element)
+def test_annotation_annotation_is_not_abstract():
+    assert not inspect.isabstract(annotation_Annotation)
 
 
-def test_ccsl::elements::element_constructor_exists():
-    assert callable(ccsl::elements::Element.__init__)
+def test_annotation_annotation_constructor_exists():
+    assert callable(annotation_Annotation.__init__)
 
 
-def test_ccsl::elements::element_constructor_args():
-    sig = inspect.signature(ccsl::elements::Element.__init__)
+def test_annotation_annotation_constructor_args():
+    sig = inspect.signature(annotation_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_complextype_annotationtype_is_not_abstract():
+    assert not inspect.isabstract(complexType_AnnotationType)
+
+
+def test_complextype_annotationtype_constructor_exists():
+    assert callable(complexType_AnnotationType.__init__)
+
+
+def test_complextype_annotationtype_constructor_args():
+    sig = inspect.signature(complexType_AnnotationType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_block_is_not_abstract():
+    assert not inspect.isabstract(statements_Block)
+
+
+def test_statements_block_constructor_exists():
+    assert callable(statements_Block.__init__)
+
+
+def test_statements_block_constructor_args():
+    sig = inspect.signature(statements_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trycatch_catchclause_is_not_abstract():
+    assert not inspect.isabstract(tryCatch_CatchClause)
+
+
+def test_trycatch_catchclause_constructor_exists():
+    assert callable(tryCatch_CatchClause.__init__)
+
+
+def test_trycatch_catchclause_constructor_args():
+    sig = inspect.signature(tryCatch_CatchClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unaryassignment_is_not_abstract():
+    assert not inspect.isabstract(UnaryAssignment)
+
+
+def test_unaryassignment_constructor_exists():
+    assert callable(UnaryAssignment.__init__)
+
+
+def test_unaryassignment_constructor_args():
+    sig = inspect.signature(UnaryAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_assignment_postfixunaryassignment_is_not_abstract():
+    assert not inspect.isabstract(ccsl_assignment_PostfixUnaryAssignment)
+
+
+def test_ccsl_assignment_postfixunaryassignment_constructor_exists():
+    assert callable(ccsl_assignment_PostfixUnaryAssignment.__init__)
+
+
+def test_ccsl_assignment_postfixunaryassignment_constructor_args():
+    sig = inspect.signature(ccsl_assignment_PostfixUnaryAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_assignment_prefixunaryassignment_is_not_abstract():
+    assert not inspect.isabstract(ccsl_assignment_PrefixUnaryAssignment)
+
+
+def test_ccsl_assignment_prefixunaryassignment_constructor_exists():
+    assert callable(ccsl_assignment_PrefixUnaryAssignment.__init__)
+
+
+def test_ccsl_assignment_prefixunaryassignment_constructor_args():
+    sig = inspect.signature(ccsl_assignment_PrefixUnaryAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_abstractassignment_is_not_abstract():
+    assert not inspect.isabstract(AbstractAssignment)
+
+
+def test_abstractassignment_constructor_exists():
+    assert callable(AbstractAssignment.__init__)
+
+
+def test_abstractassignment_constructor_args():
+    sig = inspect.signature(AbstractAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_assignment_unaryassignment_is_not_abstract():
+    assert not inspect.isabstract(ccsl_assignment_UnaryAssignment)
+
+
+def test_ccsl_assignment_unaryassignment_constructor_exists():
+    assert callable(ccsl_assignment_UnaryAssignment.__init__)
+
+
+def test_ccsl_assignment_unaryassignment_constructor_args():
+    sig = inspect.signature(ccsl_assignment_UnaryAssignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ccsl_assignment_unaryassignment_has_operator():
+    assert hasattr(ccsl_assignment_UnaryAssignment, "operator")
+    descriptor = None
+    for klass in ccsl_assignment_UnaryAssignment.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_assignment_assignment_is_not_abstract():
+    assert not inspect.isabstract(ccsl_assignment_Assignment)
+
+
+def test_ccsl_assignment_assignment_constructor_exists():
+    assert callable(ccsl_assignment_Assignment.__init__)
+
+
+def test_ccsl_assignment_assignment_constructor_args():
+    sig = inspect.signature(ccsl_assignment_Assignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_ccsl_assignment_assignment_has_operator():
+    assert hasattr(ccsl_assignment_Assignment, "operator")
+    descriptor = None
+    for klass in ccsl_assignment_Assignment.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_operatorexpression_is_not_abstract():
+    assert not inspect.isabstract(OperatorExpression)
+
+
+def test_operatorexpression_constructor_exists():
+    assert callable(OperatorExpression.__init__)
+
+
+def test_operatorexpression_constructor_args():
+    sig = inspect.signature(OperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_expressions_infixexpression_is_not_abstract():
+    assert not inspect.isabstract(ccsl_expressions_InfixExpression)
+
+
+def test_ccsl_expressions_infixexpression_constructor_exists():
+    assert callable(ccsl_expressions_InfixExpression.__init__)
+
+
+def test_ccsl_expressions_infixexpression_constructor_args():
+    sig = inspect.signature(ccsl_expressions_InfixExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_expressions_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(ccsl_expressions_BooleanExpression)
+
+
+def test_ccsl_expressions_booleanexpression_constructor_exists():
+    assert callable(ccsl_expressions_BooleanExpression.__init__)
+
+
+def test_ccsl_expressions_booleanexpression_constructor_args():
+    sig = inspect.signature(ccsl_expressions_BooleanExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "booleanOperator" in params, "Missing parameter 'booleanOperator'"
+
+def test_ccsl_expressions_booleanexpression_has_booleanOperator():
+    assert hasattr(ccsl_expressions_BooleanExpression, "booleanOperator")
+    descriptor = None
+    for klass in ccsl_expressions_BooleanExpression.__mro__:
+        if "booleanOperator" in klass.__dict__:
+            descriptor = klass.__dict__["booleanOperator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_expressions_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(ccsl_expressions_ArithmeticExpression)
+
+
+def test_ccsl_expressions_arithmeticexpression_constructor_exists():
+    assert callable(ccsl_expressions_ArithmeticExpression.__init__)
+
+
+def test_ccsl_expressions_arithmeticexpression_constructor_args():
+    sig = inspect.signature(ccsl_expressions_ArithmeticExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "arithmeticOperator" in params, "Missing parameter 'arithmeticOperator'"
+
+def test_ccsl_expressions_arithmeticexpression_has_arithmeticOperator():
+    assert hasattr(ccsl_expressions_ArithmeticExpression, "arithmeticOperator")
+    descriptor = None
+    for klass in ccsl_expressions_ArithmeticExpression.__mro__:
+        if "arithmeticOperator" in klass.__dict__:
+            descriptor = klass.__dict__["arithmeticOperator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_expressions_stringconcatenation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_expressions_StringConcatenation)
+
+
+def test_ccsl_expressions_stringconcatenation_constructor_exists():
+    assert callable(ccsl_expressions_StringConcatenation.__init__)
+
+
+def test_ccsl_expressions_stringconcatenation_constructor_args():
+    sig = inspect.signature(ccsl_expressions_StringConcatenation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_block_is_not_abstract():
+    assert not inspect.isabstract(Block)
+
+
+def test_block_constructor_exists():
+    assert callable(Block.__init__)
+
+
+def test_block_constructor_args():
+    sig = inspect.signature(Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_controlflow_switchcaseblock_is_not_abstract():
+    assert not inspect.isabstract(ccsl_controlFlow_SwitchCaseBlock)
+
+
+def test_ccsl_controlflow_switchcaseblock_constructor_exists():
+    assert callable(ccsl_controlFlow_SwitchCaseBlock.__init__)
+
+
+def test_ccsl_controlflow_switchcaseblock_constructor_args():
+    sig = inspect.signature(ccsl_controlFlow_SwitchCaseBlock.__init__)
+    params = list(sig.parameters.keys())
+    assert "default" in params, "Missing parameter 'default'"
+
+def test_ccsl_controlflow_switchcaseblock_has_default():
+    assert hasattr(ccsl_controlFlow_SwitchCaseBlock, "default")
+    descriptor = None
+    for klass in ccsl_controlFlow_SwitchCaseBlock.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_controlflow_switchcaseblock_is_not_abstract():
+    assert not inspect.isabstract(controlFlow_SwitchCaseBlock)
+
+
+def test_controlflow_switchcaseblock_constructor_exists():
+    assert callable(controlFlow_SwitchCaseBlock.__init__)
+
+
+def test_controlflow_switchcaseblock_constructor_args():
+    sig = inspect.signature(controlFlow_SwitchCaseBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_controlflow_is_not_abstract():
+    assert not inspect.isabstract(ControlFlow)
+
+
+def test_controlflow_constructor_exists():
+    assert callable(ControlFlow.__init__)
+
+
+def test_controlflow_constructor_args():
+    sig = inspect.signature(ControlFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_controlflow_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_controlFlow_LoopStatement)
+
+
+def test_ccsl_controlflow_loopstatement_constructor_exists():
+    assert callable(ccsl_controlFlow_LoopStatement.__init__)
+
+
+def test_ccsl_controlflow_loopstatement_constructor_args():
+    sig = inspect.signature(ccsl_controlFlow_LoopStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_controlflow_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_controlFlow_IfStatement)
+
+
+def test_ccsl_controlflow_ifstatement_constructor_exists():
+    assert callable(ccsl_controlFlow_IfStatement.__init__)
+
+
+def test_ccsl_controlflow_ifstatement_constructor_args():
+    sig = inspect.signature(ccsl_controlFlow_IfStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_controlflow_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_controlFlow_SwitchStatement)
+
+
+def test_ccsl_controlflow_switchstatement_constructor_exists():
+    assert callable(ccsl_controlFlow_SwitchStatement.__init__)
+
+
+def test_ccsl_controlflow_switchstatement_constructor_args():
+    sig = inspect.signature(ccsl_controlFlow_SwitchStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literalvalue_is_not_abstract():
+    assert not inspect.isabstract(LiteralValue)
+
+
+def test_literalvalue_constructor_exists():
+    assert callable(LiteralValue.__init__)
+
+
+def test_literalvalue_constructor_args():
+    sig = inspect.signature(LiteralValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_literalvalues_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(ccsl_literalValues_BooleanLiteral)
+
+
+def test_ccsl_literalvalues_booleanliteral_constructor_exists():
+    assert callable(ccsl_literalValues_BooleanLiteral.__init__)
+
+
+def test_ccsl_literalvalues_booleanliteral_constructor_args():
+    sig = inspect.signature(ccsl_literalValues_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_literalvalues_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(ccsl_literalValues_StringLiteral)
+
+
+def test_ccsl_literalvalues_stringliteral_constructor_exists():
+    assert callable(ccsl_literalValues_StringLiteral.__init__)
+
+
+def test_ccsl_literalvalues_stringliteral_constructor_args():
+    sig = inspect.signature(ccsl_literalValues_StringLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_literalvalues_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(ccsl_literalValues_CharacterLiteral)
+
+
+def test_ccsl_literalvalues_characterliteral_constructor_exists():
+    assert callable(ccsl_literalValues_CharacterLiteral.__init__)
+
+
+def test_ccsl_literalvalues_characterliteral_constructor_args():
+    sig = inspect.signature(ccsl_literalValues_CharacterLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_literalvalues_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(ccsl_literalValues_NumberLiteral)
+
+
+def test_ccsl_literalvalues_numberliteral_constructor_exists():
+    assert callable(ccsl_literalValues_NumberLiteral.__init__)
+
+
+def test_ccsl_literalvalues_numberliteral_constructor_args():
+    sig = inspect.signature(ccsl_literalValues_NumberLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_literalvalues_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(ccsl_literalValues_NullLiteral)
+
+
+def test_ccsl_literalvalues_nullliteral_constructor_exists():
+    assert callable(ccsl_literalValues_NullLiteral.__init__)
+
+
+def test_ccsl_literalvalues_nullliteral_constructor_args():
+    sig = inspect.signature(ccsl_literalValues_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_ThrowStatement)
+
+
+def test_ccsl_statements_throwstatement_constructor_exists():
+    assert callable(ccsl_statements_ThrowStatement.__init__)
+
+
+def test_ccsl_statements_throwstatement_constructor_args():
+    sig = inspect.signature(ccsl_statements_ThrowStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statement_is_not_abstract():
+    assert not inspect.isabstract(Statement)
+
+
+def test_statement_constructor_exists():
+    assert callable(Statement.__init__)
+
+
+def test_statement_constructor_args():
+    sig = inspect.signature(Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_arraycreation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_ArrayCreation)
+
+
+def test_ccsl_statements_arraycreation_constructor_exists():
+    assert callable(ccsl_statements_ArrayCreation.__init__)
+
+
+def test_ccsl_statements_arraycreation_constructor_args():
+    sig = inspect.signature(ccsl_statements_ArrayCreation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_ContinueStatement)
+
+
+def test_ccsl_statements_continuestatement_constructor_exists():
+    assert callable(ccsl_statements_ContinueStatement.__init__)
+
+
+def test_ccsl_statements_continuestatement_constructor_args():
+    sig = inspect.signature(ccsl_statements_ContinueStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_expressions_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(ccsl_expressions_ParenthesizedExpression)
+
+
+def test_ccsl_expressions_parenthesizedexpression_constructor_exists():
+    assert callable(ccsl_expressions_ParenthesizedExpression.__init__)
+
+
+def test_ccsl_expressions_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(ccsl_expressions_ParenthesizedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_access_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_Access)
+
+
+def test_ccsl_statements_access_constructor_exists():
+    assert callable(ccsl_statements_Access.__init__)
+
+
+def test_ccsl_statements_access_constructor_args():
+    sig = inspect.signature(ccsl_statements_Access.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_synchronizedblock_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_SynchronizedBlock)
+
+
+def test_ccsl_statements_synchronizedblock_constructor_exists():
+    assert callable(ccsl_statements_SynchronizedBlock.__init__)
+
+
+def test_ccsl_statements_synchronizedblock_constructor_args():
+    sig = inspect.signature(ccsl_statements_SynchronizedBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_expressions_operatorexpression_is_not_abstract():
+    assert not inspect.isabstract(ccsl_expressions_OperatorExpression)
+
+
+def test_ccsl_expressions_operatorexpression_constructor_exists():
+    assert callable(ccsl_expressions_OperatorExpression.__init__)
+
+
+def test_ccsl_expressions_operatorexpression_constructor_args():
+    sig = inspect.signature(ccsl_expressions_OperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_trycatch_trystatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_tryCatch_TryStatement)
+
+
+def test_ccsl_trycatch_trystatement_constructor_exists():
+    assert callable(ccsl_tryCatch_TryStatement.__init__)
+
+
+def test_ccsl_trycatch_trystatement_constructor_args():
+    sig = inspect.signature(ccsl_tryCatch_TryStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_annotation_annotation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_annotation_Annotation)
+
+
+def test_ccsl_annotation_annotation_constructor_exists():
+    assert callable(ccsl_annotation_Annotation.__init__)
+
+
+def test_ccsl_annotation_annotation_constructor_args():
+    sig = inspect.signature(ccsl_annotation_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_literalvalues_literalvalue_is_not_abstract():
+    assert not inspect.isabstract(ccsl_literalValues_LiteralValue)
+
+
+def test_ccsl_literalvalues_literalvalue_constructor_exists():
+    assert callable(ccsl_literalValues_LiteralValue.__init__)
+
+
+def test_ccsl_literalvalues_literalvalue_constructor_args():
+    sig = inspect.signature(ccsl_literalValues_LiteralValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_ccsl_literalvalues_literalvalue_has_value():
+    assert hasattr(ccsl_literalValues_LiteralValue, "value")
+    descriptor = None
+    for klass in ccsl_literalValues_LiteralValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_assignment_abstractassignment_is_not_abstract():
+    assert not inspect.isabstract(ccsl_assignment_AbstractAssignment)
+
+
+def test_ccsl_assignment_abstractassignment_constructor_exists():
+    assert callable(ccsl_assignment_AbstractAssignment.__init__)
+
+
+def test_ccsl_assignment_abstractassignment_constructor_args():
+    sig = inspect.signature(ccsl_assignment_AbstractAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_trycatch_catchclause_is_not_abstract():
+    assert not inspect.isabstract(ccsl_tryCatch_CatchClause)
+
+
+def test_ccsl_trycatch_catchclause_constructor_exists():
+    assert callable(ccsl_tryCatch_CatchClause.__init__)
+
+
+def test_ccsl_trycatch_catchclause_constructor_args():
+    sig = inspect.signature(ccsl_tryCatch_CatchClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_thisstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_ThisStatement)
+
+
+def test_ccsl_statements_thisstatement_constructor_exists():
+    assert callable(ccsl_statements_ThisStatement.__init__)
+
+
+def test_ccsl_statements_thisstatement_constructor_args():
+    sig = inspect.signature(ccsl_statements_ThisStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_ReturnStatement)
+
+
+def test_ccsl_statements_returnstatement_constructor_exists():
+    assert callable(ccsl_statements_ReturnStatement.__init__)
+
+
+def test_ccsl_statements_returnstatement_constructor_args():
+    sig = inspect.signature(ccsl_statements_ReturnStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_instanceof_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_InstanceOf)
+
+
+def test_ccsl_statements_instanceof_constructor_exists():
+    assert callable(ccsl_statements_InstanceOf.__init__)
+
+
+def test_ccsl_statements_instanceof_constructor_args():
+    sig = inspect.signature(ccsl_statements_InstanceOf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_BreakStatement)
+
+
+def test_ccsl_statements_breakstatement_constructor_exists():
+    assert callable(ccsl_statements_BreakStatement.__init__)
+
+
+def test_ccsl_statements_breakstatement_constructor_args():
+    sig = inspect.signature(ccsl_statements_BreakStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_EmptyStatement)
+
+
+def test_ccsl_statements_emptystatement_constructor_exists():
+    assert callable(ccsl_statements_EmptyStatement.__init__)
+
+
+def test_ccsl_statements_emptystatement_constructor_args():
+    sig = inspect.signature(ccsl_statements_EmptyStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_namedelementaccess_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_NamedElementAccess)
+
+
+def test_ccsl_statements_namedelementaccess_constructor_exists():
+    assert callable(ccsl_statements_NamedElementAccess.__init__)
+
+
+def test_ccsl_statements_namedelementaccess_constructor_args():
+    sig = inspect.signature(ccsl_statements_NamedElementAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_method_simplemethod_is_not_abstract():
+    assert not inspect.isabstract(method_SimpleMethod)
+
+
+def test_method_simplemethod_constructor_exists():
+    assert callable(method_SimpleMethod.__init__)
+
+
+def test_method_simplemethod_constructor_args():
+    sig = inspect.signature(method_SimpleMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variable_parametervariable_is_not_abstract():
+    assert not inspect.isabstract(variable_ParameterVariable)
+
+
+def test_variable_parametervariable_constructor_exists():
+    assert callable(variable_ParameterVariable.__init__)
+
+
+def test_variable_parametervariable_constructor_args():
+    sig = inspect.signature(variable_ParameterVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_elements_element_is_not_abstract():
+    assert not inspect.isabstract(elements_Element)
+
+
+def test_elements_element_constructor_exists():
+    assert callable(elements_Element.__init__)
+
+
+def test_elements_element_constructor_args():
+    sig = inspect.signature(elements_Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simplemethod_is_not_abstract():
+    assert not inspect.isabstract(SimpleMethod)
+
+
+def test_simplemethod_constructor_exists():
+    assert callable(SimpleMethod.__init__)
+
+
+def test_simplemethod_constructor_args():
+    sig = inspect.signature(SimpleMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_method_constructor_is_not_abstract():
+    assert not inspect.isabstract(ccsl_method_Constructor)
+
+
+def test_ccsl_method_constructor_constructor_exists():
+    assert callable(ccsl_method_Constructor.__init__)
+
+
+def test_ccsl_method_constructor_constructor_args():
+    sig = inspect.signature(ccsl_method_Constructor.__init__)
+    params = list(sig.parameters.keys())
+    assert "avaliableInSourceCode" in params, "Missing parameter 'avaliableInSourceCode'"
+
+def test_ccsl_method_constructor_has_avaliableInSourceCode():
+    assert hasattr(ccsl_method_Constructor, "avaliableInSourceCode")
+    descriptor = None
+    for klass in ccsl_method_Constructor.__mro__:
+        if "avaliableInSourceCode" in klass.__dict__:
+            descriptor = klass.__dict__["avaliableInSourceCode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_statements_instancecreation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_InstanceCreation)
+
+
+def test_ccsl_statements_instancecreation_constructor_exists():
+    assert callable(ccsl_statements_InstanceCreation.__init__)
+
+
+def test_ccsl_statements_instancecreation_constructor_args():
+    sig = inspect.signature(ccsl_statements_InstanceCreation.__init__)
+    params = list(sig.parameters.keys())
+    assert "argsKind" in params, "Missing parameter 'argsKind'"
+
+def test_ccsl_statements_instancecreation_has_argsKind():
+    assert hasattr(ccsl_statements_InstanceCreation, "argsKind")
+    descriptor = None
+    for klass in ccsl_statements_InstanceCreation.__mro__:
+        if "argsKind" in klass.__dict__:
+            descriptor = klass.__dict__["argsKind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_statements_vardeclaration_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_VarDeclaration)
+
+
+def test_ccsl_statements_vardeclaration_constructor_exists():
+    assert callable(ccsl_statements_VarDeclaration.__init__)
+
+
+def test_ccsl_statements_vardeclaration_constructor_args():
+    sig = inspect.signature(ccsl_statements_VarDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_block_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_Block)
+
+
+def test_ccsl_statements_block_constructor_exists():
+    assert callable(ccsl_statements_Block.__init__)
+
+
+def test_ccsl_statements_block_constructor_args():
+    sig = inspect.signature(ccsl_statements_Block.__init__)
+    params = list(sig.parameters.keys())
+    assert "statementsKind" in params, "Missing parameter 'statementsKind'"
+
+def test_ccsl_statements_block_has_statementsKind():
+    assert hasattr(ccsl_statements_Block, "statementsKind")
+    descriptor = None
+    for klass in ccsl_statements_Block.__mro__:
+        if "statementsKind" in klass.__dict__:
+            descriptor = klass.__dict__["statementsKind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_statements_controlflow_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_ControlFlow)
+
+
+def test_ccsl_statements_controlflow_constructor_exists():
+    assert callable(ccsl_statements_ControlFlow.__init__)
+
+
+def test_ccsl_statements_controlflow_constructor_args():
+    sig = inspect.signature(ccsl_statements_ControlFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_access_is_not_abstract():
+    assert not inspect.isabstract(Access)
+
+
+def test_access_constructor_exists():
+    assert callable(Access.__init__)
+
+
+def test_access_constructor_args():
+    sig = inspect.signature(Access.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_datatypeaccess_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_DataTypeAccess)
+
+
+def test_ccsl_statements_datatypeaccess_constructor_exists():
+    assert callable(ccsl_statements_DataTypeAccess.__init__)
+
+
+def test_ccsl_statements_datatypeaccess_constructor_args():
+    sig = inspect.signature(ccsl_statements_DataTypeAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_variableaccess_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_VariableAccess)
+
+
+def test_ccsl_statements_variableaccess_constructor_exists():
+    assert callable(ccsl_statements_VariableAccess.__init__)
+
+
+def test_ccsl_statements_variableaccess_constructor_args():
+    sig = inspect.signature(ccsl_statements_VariableAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_complextype_jclass_is_not_abstract():
+    assert not inspect.isabstract(complexType_JClass)
+
+
+def test_complextype_jclass_constructor_exists():
+    assert callable(complexType_JClass.__init__)
+
+
+def test_complextype_jclass_constructor_args():
+    sig = inspect.signature(complexType_JClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_method_constructor_is_not_abstract():
+    assert not inspect.isabstract(method_Constructor)
+
+
+def test_method_constructor_constructor_exists():
+    assert callable(method_Constructor.__init__)
+
+
+def test_method_constructor_constructor_args():
+    sig = inspect.signature(method_Constructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_datatype_objecttype_is_not_abstract():
+    assert not inspect.isabstract(datatype_ObjectType)
+
+
+def test_datatype_objecttype_constructor_exists():
+    assert callable(datatype_ObjectType.__init__)
+
+
+def test_datatype_objecttype_constructor_args():
+    sig = inspect.signature(datatype_ObjectType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_complextype_is_not_abstract():
+    assert not inspect.isabstract(ComplexType)
+
+
+def test_complextype_constructor_exists():
+    assert callable(ComplexType.__init__)
+
+
+def test_complextype_constructor_args():
+    sig = inspect.signature(ComplexType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_complextype_anonymousclass_is_not_abstract():
+    assert not inspect.isabstract(ccsl_complexType_AnonymousClass)
+
+
+def test_ccsl_complextype_anonymousclass_constructor_exists():
+    assert callable(ccsl_complexType_AnonymousClass.__init__)
+
+
+def test_ccsl_complextype_anonymousclass_constructor_args():
+    sig = inspect.signature(ccsl_complexType_AnonymousClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_complextype_complextype_is_not_abstract():
+    assert not inspect.isabstract(complexType_ComplexType)
+
+
+def test_complextype_complextype_constructor_exists():
+    assert callable(complexType_ComplexType.__init__)
+
+
+def test_complextype_complextype_constructor_args():
+    sig = inspect.signature(complexType_ComplexType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variable_initializablevariable_is_not_abstract():
+    assert not inspect.isabstract(variable_InitializableVariable)
+
+
+def test_variable_initializablevariable_constructor_exists():
+    assert callable(variable_InitializableVariable.__init__)
+
+
+def test_variable_initializablevariable_constructor_args():
+    sig = inspect.signature(variable_InitializableVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(statements_Statement)
+
+
+def test_statements_statement_constructor_exists():
+    assert callable(statements_Statement.__init__)
+
+
+def test_statements_statement_constructor_args():
+    sig = inspect.signature(statements_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_declaredtype_is_not_abstract():
+    assert not inspect.isabstract(DeclaredType)
+
+
+def test_declaredtype_constructor_exists():
+    assert callable(DeclaredType.__init__)
+
+
+def test_declaredtype_constructor_args():
+    sig = inspect.signature(DeclaredType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_complextype_annotationtype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_complexType_AnnotationType)
+
+
+def test_ccsl_complextype_annotationtype_constructor_exists():
+    assert callable(ccsl_complexType_AnnotationType.__init__)
+
+
+def test_ccsl_complextype_annotationtype_constructor_args():
+    sig = inspect.signature(ccsl_complexType_AnnotationType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_method_method_is_not_abstract():
+    assert not inspect.isabstract(method_Method)
+
+
+def test_method_method_constructor_exists():
+    assert callable(method_Method.__init__)
+
+
+def test_method_method_constructor_args():
+    sig = inspect.signature(method_Method.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variable_fieldvariable_is_not_abstract():
+    assert not inspect.isabstract(variable_FieldVariable)
+
+
+def test_variable_fieldvariable_constructor_exists():
+    assert callable(variable_FieldVariable.__init__)
+
+
+def test_variable_fieldvariable_constructor_args():
+    sig = inspect.signature(variable_FieldVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_import_importstatement_is_not_abstract():
+    assert not inspect.isabstract(import_ImportStatement)
+
+
+def test_import_importstatement_constructor_exists():
+    assert callable(import_ImportStatement.__init__)
+
+
+def test_import_importstatement_constructor_args():
+    sig = inspect.signature(import_ImportStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_complextype_jinterface_is_not_abstract():
+    assert not inspect.isabstract(complexType_JInterface)
+
+
+def test_complextype_jinterface_constructor_exists():
+    assert callable(complexType_JInterface.__init__)
+
+
+def test_complextype_jinterface_constructor_args():
+    sig = inspect.signature(complexType_JInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_elements_element_is_not_abstract():
+    assert not inspect.isabstract(ccsl_elements_Element)
+
+
+def test_ccsl_elements_element_constructor_exists():
+    assert callable(ccsl_elements_Element.__init__)
+
+
+def test_ccsl_elements_element_constructor_args():
+    sig = inspect.signature(ccsl_elements_Element.__init__)
     params = list(sig.parameters.keys())
     assert "uniqueName" in params, "Missing parameter 'uniqueName'"
 
-def test_ccsl::elements::element_has_uniqueName():
-    assert hasattr(ccsl::elements::Element, "uniqueName")
+def test_ccsl_elements_element_has_uniqueName():
+    assert hasattr(ccsl_elements_Element, "uniqueName")
     descriptor = None
-    for klass in ccsl::elements::Element.__mro__:
+    for klass in ccsl_elements_Element.__mro__:
         if "uniqueName" in klass.__dict__:
             descriptor = klass.__dict__["uniqueName"]
             break
@@ -311,16 +1423,16 @@ def test_injectionaction_constructor_args():
 
 
 
-def test_ccsl::root_is_not_abstract():
-    assert not inspect.isabstract(ccsl::Root)
+def test_ccsl_root_is_not_abstract():
+    assert not inspect.isabstract(ccsl_Root)
 
 
-def test_ccsl::root_constructor_exists():
-    assert callable(ccsl::Root.__init__)
+def test_ccsl_root_constructor_exists():
+    assert callable(ccsl_Root.__init__)
 
 
-def test_ccsl::root_constructor_args():
-    sig = inspect.signature(ccsl::Root.__init__)
+def test_ccsl_root_constructor_args():
+    sig = inspect.signature(ccsl_Root.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -339,16 +1451,16 @@ def test_variable_constructor_args():
 
 
 
-def test_ccsl::variable::initializablevariable_is_not_abstract():
-    assert not inspect.isabstract(ccsl::variable::InitializableVariable)
+def test_ccsl_variable_initializablevariable_is_not_abstract():
+    assert not inspect.isabstract(ccsl_variable_InitializableVariable)
 
 
-def test_ccsl::variable::initializablevariable_constructor_exists():
-    assert callable(ccsl::variable::InitializableVariable.__init__)
+def test_ccsl_variable_initializablevariable_constructor_exists():
+    assert callable(ccsl_variable_InitializableVariable.__init__)
 
 
-def test_ccsl::variable::initializablevariable_constructor_args():
-    sig = inspect.signature(ccsl::variable::InitializableVariable.__init__)
+def test_ccsl_variable_initializablevariable_constructor_args():
+    sig = inspect.signature(ccsl_variable_InitializableVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -367,72 +1479,140 @@ def test_initializablevariable_constructor_args():
 
 
 
-def test_ccsl::variable::localvariable_is_not_abstract():
-    assert not inspect.isabstract(ccsl::variable::LocalVariable)
+def test_ccsl_variable_localvariable_is_not_abstract():
+    assert not inspect.isabstract(ccsl_variable_LocalVariable)
 
 
-def test_ccsl::variable::localvariable_constructor_exists():
-    assert callable(ccsl::variable::LocalVariable.__init__)
+def test_ccsl_variable_localvariable_constructor_exists():
+    assert callable(ccsl_variable_LocalVariable.__init__)
 
 
-def test_ccsl::variable::localvariable_constructor_args():
-    sig = inspect.signature(ccsl::variable::LocalVariable.__init__)
+def test_ccsl_variable_localvariable_constructor_args():
+    sig = inspect.signature(ccsl_variable_LocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_annotation::annotableelement_is_not_abstract():
-    assert not inspect.isabstract(annotation::AnnotableElement)
+def test_annotation_annotableelement_is_not_abstract():
+    assert not inspect.isabstract(annotation_AnnotableElement)
 
 
-def test_annotation::annotableelement_constructor_exists():
-    assert callable(annotation::AnnotableElement.__init__)
+def test_annotation_annotableelement_constructor_exists():
+    assert callable(annotation_AnnotableElement.__init__)
 
 
-def test_annotation::annotableelement_constructor_args():
-    sig = inspect.signature(annotation::AnnotableElement.__init__)
+def test_annotation_annotableelement_constructor_args():
+    sig = inspect.signature(annotation_AnnotableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_variable::variable_is_not_abstract():
-    assert not inspect.isabstract(variable::Variable)
+def test_ccsl_variable_fieldvariable_is_not_abstract():
+    assert not inspect.isabstract(ccsl_variable_FieldVariable)
 
 
-def test_variable::variable_constructor_exists():
-    assert callable(variable::Variable.__init__)
+def test_ccsl_variable_fieldvariable_constructor_exists():
+    assert callable(ccsl_variable_FieldVariable.__init__)
 
 
-def test_variable::variable_constructor_args():
-    sig = inspect.signature(variable::Variable.__init__)
+def test_ccsl_variable_fieldvariable_constructor_args():
+    sig = inspect.signature(ccsl_variable_FieldVariable.__init__)
+    params = list(sig.parameters.keys())
+    assert "static" in params, "Missing parameter 'static'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_ccsl_variable_fieldvariable_has_static():
+    assert hasattr(ccsl_variable_FieldVariable, "static")
+    descriptor = None
+    for klass in ccsl_variable_FieldVariable.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_variable_fieldvariable_has_visibility():
+    assert hasattr(ccsl_variable_FieldVariable, "visibility")
+    descriptor = None
+    for klass in ccsl_variable_FieldVariable.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_method_simplemethod_is_not_abstract():
+    assert not inspect.isabstract(ccsl_method_SimpleMethod)
+
+
+def test_ccsl_method_simplemethod_constructor_exists():
+    assert callable(ccsl_method_SimpleMethod.__init__)
+
+
+def test_ccsl_method_simplemethod_constructor_args():
+    sig = inspect.signature(ccsl_method_SimpleMethod.__init__)
+    params = list(sig.parameters.keys())
+    assert "paramsKind" in params, "Missing parameter 'paramsKind'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_ccsl_method_simplemethod_has_paramsKind():
+    assert hasattr(ccsl_method_SimpleMethod, "paramsKind")
+    descriptor = None
+    for klass in ccsl_method_SimpleMethod.__mro__:
+        if "paramsKind" in klass.__dict__:
+            descriptor = klass.__dict__["paramsKind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_method_simplemethod_has_visibility():
+    assert hasattr(ccsl_method_SimpleMethod, "visibility")
+    descriptor = None
+    for klass in ccsl_method_SimpleMethod.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_variable_variable_is_not_abstract():
+    assert not inspect.isabstract(variable_Variable)
+
+
+def test_variable_variable_constructor_exists():
+    assert callable(variable_Variable.__init__)
+
+
+def test_variable_variable_constructor_args():
+    sig = inspect.signature(variable_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::variable::parametervariable_is_not_abstract():
-    assert not inspect.isabstract(ccsl::variable::ParameterVariable)
+def test_ccsl_variable_parametervariable_is_not_abstract():
+    assert not inspect.isabstract(ccsl_variable_ParameterVariable)
 
 
-def test_ccsl::variable::parametervariable_constructor_exists():
-    assert callable(ccsl::variable::ParameterVariable.__init__)
+def test_ccsl_variable_parametervariable_constructor_exists():
+    assert callable(ccsl_variable_ParameterVariable.__init__)
 
 
-def test_ccsl::variable::parametervariable_constructor_args():
-    sig = inspect.signature(ccsl::variable::ParameterVariable.__init__)
+def test_ccsl_variable_parametervariable_constructor_args():
+    sig = inspect.signature(ccsl_variable_ParameterVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_datatype::datatype_is_not_abstract():
-    assert not inspect.isabstract(datatype::DataType)
+def test_datatype_datatype_is_not_abstract():
+    assert not inspect.isabstract(datatype_DataType)
 
 
-def test_datatype::datatype_constructor_exists():
-    assert callable(datatype::DataType.__init__)
+def test_datatype_datatype_constructor_exists():
+    assert callable(datatype_DataType.__init__)
 
 
-def test_datatype::datatype_constructor_args():
-    sig = inspect.signature(datatype::DataType.__init__)
+def test_datatype_datatype_constructor_args():
+    sig = inspect.signature(datatype_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -451,23 +1631,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_ccsl::variable::variable_is_not_abstract():
-    assert not inspect.isabstract(ccsl::variable::Variable)
+def test_ccsl_variable_variable_is_not_abstract():
+    assert not inspect.isabstract(ccsl_variable_Variable)
 
 
-def test_ccsl::variable::variable_constructor_exists():
-    assert callable(ccsl::variable::Variable.__init__)
+def test_ccsl_variable_variable_constructor_exists():
+    assert callable(ccsl_variable_Variable.__init__)
 
 
-def test_ccsl::variable::variable_constructor_args():
-    sig = inspect.signature(ccsl::variable::Variable.__init__)
+def test_ccsl_variable_variable_constructor_args():
+    sig = inspect.signature(ccsl_variable_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "final" in params, "Missing parameter 'final'"
 
-def test_ccsl::variable::variable_has_final():
-    assert hasattr(ccsl::variable::Variable, "final")
+def test_ccsl_variable_variable_has_final():
+    assert hasattr(ccsl_variable_Variable, "final")
     descriptor = None
-    for klass in ccsl::variable::Variable.__mro__:
+    for klass in ccsl_variable_Variable.__mro__:
         if "final" in klass.__dict__:
             descriptor = klass.__dict__["final"]
             break
@@ -475,58 +1655,184 @@ def test_ccsl::variable::variable_has_final():
 
 
 
-def test_complextype::declaredtype_is_not_abstract():
-    assert not inspect.isabstract(complexType::DeclaredType)
+def test_complextype_declaredtype_is_not_abstract():
+    assert not inspect.isabstract(complexType_DeclaredType)
 
 
-def test_complextype::declaredtype_constructor_exists():
-    assert callable(complexType::DeclaredType.__init__)
+def test_complextype_declaredtype_constructor_exists():
+    assert callable(complexType_DeclaredType.__init__)
 
 
-def test_complextype::declaredtype_constructor_args():
-    sig = inspect.signature(complexType::DeclaredType.__init__)
+def test_complextype_declaredtype_constructor_args():
+    sig = inspect.signature(complexType_DeclaredType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_import::importableelement_is_not_abstract():
-    assert not inspect.isabstract(import::ImportableElement)
+def test_ccsl_complextype_jclass_is_not_abstract():
+    assert not inspect.isabstract(ccsl_complexType_JClass)
 
 
-def test_import::importableelement_constructor_exists():
-    assert callable(import::ImportableElement.__init__)
+def test_ccsl_complextype_jclass_constructor_exists():
+    assert callable(ccsl_complexType_JClass.__init__)
 
 
-def test_import::importableelement_constructor_args():
-    sig = inspect.signature(import::ImportableElement.__init__)
+def test_ccsl_complextype_jclass_constructor_args():
+    sig = inspect.signature(ccsl_complexType_JClass.__init__)
+    params = list(sig.parameters.keys())
+    assert "inheritance" in params, "Missing parameter 'inheritance'"
+
+def test_ccsl_complextype_jclass_has_inheritance():
+    assert hasattr(ccsl_complexType_JClass, "inheritance")
+    descriptor = None
+    for klass in ccsl_complexType_JClass.__mro__:
+        if "inheritance" in klass.__dict__:
+            descriptor = klass.__dict__["inheritance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_complextype_jinterface_is_not_abstract():
+    assert not inspect.isabstract(ccsl_complexType_JInterface)
+
+
+def test_ccsl_complextype_jinterface_constructor_exists():
+    assert callable(ccsl_complexType_JInterface.__init__)
+
+
+def test_ccsl_complextype_jinterface_constructor_args():
+    sig = inspect.signature(ccsl_complexType_JInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_namedelements::namedelement_is_not_abstract():
-    assert not inspect.isabstract(namedElements::NamedElement)
+def test_import_importableelement_is_not_abstract():
+    assert not inspect.isabstract(import_ImportableElement)
 
 
-def test_namedelements::namedelement_constructor_exists():
-    assert callable(namedElements::NamedElement.__init__)
+def test_import_importableelement_constructor_exists():
+    assert callable(import_ImportableElement.__init__)
 
 
-def test_namedelements::namedelement_constructor_args():
-    sig = inspect.signature(namedElements::NamedElement.__init__)
+def test_import_importableelement_constructor_args():
+    sig = inspect.signature(import_ImportableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::namedelements::package_is_not_abstract():
-    assert not inspect.isabstract(ccsl::namedElements::Package)
+def test_namedelements_namedelement_is_not_abstract():
+    assert not inspect.isabstract(namedElements_NamedElement)
 
 
-def test_ccsl::namedelements::package_constructor_exists():
-    assert callable(ccsl::namedElements::Package.__init__)
+def test_namedelements_namedelement_constructor_exists():
+    assert callable(namedElements_NamedElement.__init__)
 
 
-def test_ccsl::namedelements::package_constructor_args():
-    sig = inspect.signature(ccsl::namedElements::Package.__init__)
+def test_namedelements_namedelement_constructor_args():
+    sig = inspect.signature(namedElements_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_method_method_is_not_abstract():
+    assert not inspect.isabstract(ccsl_method_Method)
+
+
+def test_ccsl_method_method_constructor_exists():
+    assert callable(ccsl_method_Method.__init__)
+
+
+def test_ccsl_method_method_constructor_args():
+    sig = inspect.signature(ccsl_method_Method.__init__)
+    params = list(sig.parameters.keys())
+    assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "static" in params, "Missing parameter 'static'"
+    assert "final" in params, "Missing parameter 'final'"
+    assert "inheritance" in params, "Missing parameter 'inheritance'"
+
+def test_ccsl_method_method_has_abstract():
+    assert hasattr(ccsl_method_Method, "abstract")
+    descriptor = None
+    for klass in ccsl_method_Method.__mro__:
+        if "abstract" in klass.__dict__:
+            descriptor = klass.__dict__["abstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_method_method_has_static():
+    assert hasattr(ccsl_method_Method, "static")
+    descriptor = None
+    for klass in ccsl_method_Method.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_method_method_has_final():
+    assert hasattr(ccsl_method_Method, "final")
+    descriptor = None
+    for klass in ccsl_method_Method.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_method_method_has_inheritance():
+    assert hasattr(ccsl_method_Method, "inheritance")
+    descriptor = None
+    for klass in ccsl_method_Method.__mro__:
+        if "inheritance" in klass.__dict__:
+            descriptor = klass.__dict__["inheritance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_complextype_declaredtype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_complexType_DeclaredType)
+
+
+def test_ccsl_complextype_declaredtype_constructor_exists():
+    assert callable(ccsl_complexType_DeclaredType.__init__)
+
+
+def test_ccsl_complextype_declaredtype_constructor_args():
+    sig = inspect.signature(ccsl_complexType_DeclaredType.__init__)
+    params = list(sig.parameters.keys())
+    assert "static" in params, "Missing parameter 'static'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_ccsl_complextype_declaredtype_has_static():
+    assert hasattr(ccsl_complexType_DeclaredType, "static")
+    descriptor = None
+    for klass in ccsl_complexType_DeclaredType.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_complextype_declaredtype_has_visibility():
+    assert hasattr(ccsl_complexType_DeclaredType, "visibility")
+    descriptor = None
+    for klass in ccsl_complexType_DeclaredType.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_namedelements_package_is_not_abstract():
+    assert not inspect.isabstract(ccsl_namedElements_Package)
+
+
+def test_ccsl_namedelements_package_constructor_exists():
+    assert callable(ccsl_namedElements_Package.__init__)
+
+
+def test_ccsl_namedelements_package_constructor_args():
+    sig = inspect.signature(ccsl_namedElements_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -559,51 +1865,103 @@ def test_element_constructor_args():
 
 
 
-def test_ccsl::complextype::complextype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::complexType::ComplexType)
+def test_ccsl_complextype_complextype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_complexType_ComplexType)
 
 
-def test_ccsl::complextype::complextype_constructor_exists():
-    assert callable(ccsl::complexType::ComplexType.__init__)
+def test_ccsl_complextype_complextype_constructor_exists():
+    assert callable(ccsl_complexType_ComplexType.__init__)
 
 
-def test_ccsl::complextype::complextype_constructor_args():
-    sig = inspect.signature(ccsl::complexType::ComplexType.__init__)
+def test_ccsl_complextype_complextype_constructor_args():
+    sig = inspect.signature(ccsl_complexType_ComplexType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::namedelements::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::namedElements::NamedElement)
+def test_ccsl_namedelements_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_namedElements_NamedElement)
 
 
-def test_ccsl::namedelements::namedelement_constructor_exists():
-    assert callable(ccsl::namedElements::NamedElement.__init__)
+def test_ccsl_namedelements_namedelement_constructor_exists():
+    assert callable(ccsl_namedElements_NamedElement.__init__)
 
 
-def test_ccsl::namedelements::namedelement_constructor_args():
-    sig = inspect.signature(ccsl::namedElements::NamedElement.__init__)
+def test_ccsl_namedelements_namedelement_constructor_args():
+    sig = inspect.signature(ccsl_namedElements_NamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "avaliableInSourceCode" in params, "Missing parameter 'avaliableInSourceCode'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "avaliableInSourceCode" in params, "Missing parameter 'avaliableInSourceCode'"
 
-def test_ccsl::namedelements::namedelement_has_avaliableInSourceCode():
-    assert hasattr(ccsl::namedElements::NamedElement, "avaliableInSourceCode")
+def test_ccsl_namedelements_namedelement_has_name():
+    assert hasattr(ccsl_namedElements_NamedElement, "name")
     descriptor = None
-    for klass in ccsl::namedElements::NamedElement.__mro__:
+    for klass in ccsl_namedElements_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ccsl_namedelements_namedelement_has_avaliableInSourceCode():
+    assert hasattr(ccsl_namedElements_NamedElement, "avaliableInSourceCode")
+    descriptor = None
+    for klass in ccsl_namedElements_NamedElement.__mro__:
         if "avaliableInSourceCode" in klass.__dict__:
             descriptor = klass.__dict__["avaliableInSourceCode"]
             break
     assert isinstance(descriptor, property)
 
-def test_ccsl::namedelements::namedelement_has_name():
-    assert hasattr(ccsl::namedElements::NamedElement, "name")
+
+
+def test_ccsl_annotation_annotableelement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_annotation_AnnotableElement)
+
+
+def test_ccsl_annotation_annotableelement_constructor_exists():
+    assert callable(ccsl_annotation_AnnotableElement.__init__)
+
+
+def test_ccsl_annotation_annotableelement_constructor_args():
+    sig = inspect.signature(ccsl_annotation_AnnotableElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "annotationsKind" in params, "Missing parameter 'annotationsKind'"
+
+def test_ccsl_annotation_annotableelement_has_annotationsKind():
+    assert hasattr(ccsl_annotation_AnnotableElement, "annotationsKind")
     descriptor = None
-    for klass in ccsl::namedElements::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in ccsl_annotation_AnnotableElement.__mro__:
+        if "annotationsKind" in klass.__dict__:
+            descriptor = klass.__dict__["annotationsKind"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_ccsl_datatype_datatype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_DataType)
+
+
+def test_ccsl_datatype_datatype_constructor_exists():
+    assert callable(ccsl_datatype_DataType.__init__)
+
+
+def test_ccsl_datatype_datatype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_statements_Statement)
+
+
+def test_ccsl_statements_statement_constructor_exists():
+    assert callable(ccsl_statements_Statement.__init__)
+
+
+def test_ccsl_statements_statement_constructor_args():
+    sig = inspect.signature(ccsl_statements_Statement.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -621,37 +1979,37 @@ def test_rule_constructor_args():
 
 
 
-def test_ccsl::atomicrule_is_not_abstract():
-    assert not inspect.isabstract(ccsl::AtomicRule)
+def test_ccsl_atomicrule_is_not_abstract():
+    assert not inspect.isabstract(ccsl_AtomicRule)
 
 
-def test_ccsl::atomicrule_constructor_exists():
-    assert callable(ccsl::AtomicRule.__init__)
+def test_ccsl_atomicrule_constructor_exists():
+    assert callable(ccsl_AtomicRule.__init__)
 
 
-def test_ccsl::atomicrule_constructor_args():
-    sig = inspect.signature(ccsl::AtomicRule.__init__)
+def test_ccsl_atomicrule_constructor_args():
+    sig = inspect.signature(ccsl_AtomicRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::compositerule_is_not_abstract():
-    assert not inspect.isabstract(ccsl::CompositeRule)
+def test_ccsl_compositerule_is_not_abstract():
+    assert not inspect.isabstract(ccsl_CompositeRule)
 
 
-def test_ccsl::compositerule_constructor_exists():
-    assert callable(ccsl::CompositeRule.__init__)
+def test_ccsl_compositerule_constructor_exists():
+    assert callable(ccsl_CompositeRule.__init__)
 
 
-def test_ccsl::compositerule_constructor_args():
-    sig = inspect.signature(ccsl::CompositeRule.__init__)
+def test_ccsl_compositerule_constructor_args():
+    sig = inspect.signature(ccsl_CompositeRule.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ccsl::compositerule_has_operator():
-    assert hasattr(ccsl::CompositeRule, "operator")
+def test_ccsl_compositerule_has_operator():
+    assert hasattr(ccsl_CompositeRule, "operator")
     descriptor = None
-    for klass in ccsl::CompositeRule.__mro__:
+    for klass in ccsl_CompositeRule.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -673,23 +2031,23 @@ def test_root_constructor_args():
 
 
 
-def test_ccsl::faulttypedescription_is_not_abstract():
-    assert not inspect.isabstract(ccsl::FaultTypeDescription)
+def test_ccsl_faulttypedescription_is_not_abstract():
+    assert not inspect.isabstract(ccsl_FaultTypeDescription)
 
 
-def test_ccsl::faulttypedescription_constructor_exists():
-    assert callable(ccsl::FaultTypeDescription.__init__)
+def test_ccsl_faulttypedescription_constructor_exists():
+    assert callable(ccsl_FaultTypeDescription.__init__)
 
 
-def test_ccsl::faulttypedescription_constructor_args():
-    sig = inspect.signature(ccsl::FaultTypeDescription.__init__)
+def test_ccsl_faulttypedescription_constructor_args():
+    sig = inspect.signature(ccsl_FaultTypeDescription.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ccsl::faulttypedescription_has_name():
-    assert hasattr(ccsl::FaultTypeDescription, "name")
+def test_ccsl_faulttypedescription_has_name():
+    assert hasattr(ccsl_FaultTypeDescription, "name")
     descriptor = None
-    for klass in ccsl::FaultTypeDescription.__mro__:
+    for klass in ccsl_FaultTypeDescription.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -697,23 +2055,23 @@ def test_ccsl::faulttypedescription_has_name():
 
 
 
-def test_ccsl::rule_is_not_abstract():
-    assert not inspect.isabstract(ccsl::Rule)
+def test_ccsl_rule_is_not_abstract():
+    assert not inspect.isabstract(ccsl_Rule)
 
 
-def test_ccsl::rule_constructor_exists():
-    assert callable(ccsl::Rule.__init__)
+def test_ccsl_rule_constructor_exists():
+    assert callable(ccsl_Rule.__init__)
 
 
-def test_ccsl::rule_constructor_args():
-    sig = inspect.signature(ccsl::Rule.__init__)
+def test_ccsl_rule_constructor_args():
+    sig = inspect.signature(ccsl_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "negated" in params, "Missing parameter 'negated'"
 
-def test_ccsl::rule_has_negated():
-    assert hasattr(ccsl::Rule, "negated")
+def test_ccsl_rule_has_negated():
+    assert hasattr(ccsl_Rule, "negated")
     descriptor = None
-    for klass in ccsl::Rule.__mro__:
+    for klass in ccsl_Rule.__mro__:
         if "negated" in klass.__dict__:
             descriptor = klass.__dict__["negated"]
             break
@@ -721,16 +2079,16 @@ def test_ccsl::rule_has_negated():
 
 
 
-def test_statements::access_is_not_abstract():
-    assert not inspect.isabstract(statements::Access)
+def test_statements_access_is_not_abstract():
+    assert not inspect.isabstract(statements_Access)
 
 
-def test_statements::access_constructor_exists():
-    assert callable(statements::Access.__init__)
+def test_statements_access_constructor_exists():
+    assert callable(statements_Access.__init__)
 
 
-def test_statements::access_constructor_args():
-    sig = inspect.signature(statements::Access.__init__)
+def test_statements_access_constructor_args():
+    sig = inspect.signature(statements_Access.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -749,37 +2107,37 @@ def test_ccslnumberfunction_constructor_args():
 
 
 
-def test_ccsl::numberfunctions::getindexof_is_not_abstract():
-    assert not inspect.isabstract(ccsl::numberFunctions::GetIndexOf)
+def test_ccsl_numberfunctions_getindexof_is_not_abstract():
+    assert not inspect.isabstract(ccsl_numberFunctions_GetIndexOf)
 
 
-def test_ccsl::numberfunctions::getindexof_constructor_exists():
-    assert callable(ccsl::numberFunctions::GetIndexOf.__init__)
+def test_ccsl_numberfunctions_getindexof_constructor_exists():
+    assert callable(ccsl_numberFunctions_GetIndexOf.__init__)
 
 
-def test_ccsl::numberfunctions::getindexof_constructor_args():
-    sig = inspect.signature(ccsl::numberFunctions::GetIndexOf.__init__)
+def test_ccsl_numberfunctions_getindexof_constructor_args():
+    sig = inspect.signature(ccsl_numberFunctions_GetIndexOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::numberfunctions::ccslintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(ccsl::numberFunctions::CcslIntegerLiteral)
+def test_ccsl_numberfunctions_ccslintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(ccsl_numberFunctions_CcslIntegerLiteral)
 
 
-def test_ccsl::numberfunctions::ccslintegerliteral_constructor_exists():
-    assert callable(ccsl::numberFunctions::CcslIntegerLiteral.__init__)
+def test_ccsl_numberfunctions_ccslintegerliteral_constructor_exists():
+    assert callable(ccsl_numberFunctions_CcslIntegerLiteral.__init__)
 
 
-def test_ccsl::numberfunctions::ccslintegerliteral_constructor_args():
-    sig = inspect.signature(ccsl::numberFunctions::CcslIntegerLiteral.__init__)
+def test_ccsl_numberfunctions_ccslintegerliteral_constructor_args():
+    sig = inspect.signature(ccsl_numberFunctions_CcslIntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ccsl::numberfunctions::ccslintegerliteral_has_value():
-    assert hasattr(ccsl::numberFunctions::CcslIntegerLiteral, "value")
+def test_ccsl_numberfunctions_ccslintegerliteral_has_value():
+    assert hasattr(ccsl_numberFunctions_CcslIntegerLiteral, "value")
     descriptor = None
-    for klass in ccsl::numberFunctions::CcslIntegerLiteral.__mro__:
+    for klass in ccsl_numberFunctions_CcslIntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -787,37 +2145,37 @@ def test_ccsl::numberfunctions::ccslintegerliteral_has_value():
 
 
 
-def test_numberfunctions::ccslnumberfunction_is_not_abstract():
-    assert not inspect.isabstract(numberFunctions::CcslNumberFunction)
+def test_numberfunctions_ccslnumberfunction_is_not_abstract():
+    assert not inspect.isabstract(numberFunctions_CcslNumberFunction)
 
 
-def test_numberfunctions::ccslnumberfunction_constructor_exists():
-    assert callable(numberFunctions::CcslNumberFunction.__init__)
+def test_numberfunctions_ccslnumberfunction_constructor_exists():
+    assert callable(numberFunctions_CcslNumberFunction.__init__)
 
 
-def test_numberfunctions::ccslnumberfunction_constructor_args():
-    sig = inspect.signature(numberFunctions::CcslNumberFunction.__init__)
+def test_numberfunctions_ccslnumberfunction_constructor_args():
+    sig = inspect.signature(numberFunctions_CcslNumberFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::equationfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::EquationFilter)
+def test_ccsl_filters_equationfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_EquationFilter)
 
 
-def test_ccsl::filters::equationfilter_constructor_exists():
-    assert callable(ccsl::filters::EquationFilter.__init__)
+def test_ccsl_filters_equationfilter_constructor_exists():
+    assert callable(ccsl_filters_EquationFilter.__init__)
 
 
-def test_ccsl::filters::equationfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::EquationFilter.__init__)
+def test_ccsl_filters_equationfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_EquationFilter.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ccsl::filters::equationfilter_has_operator():
-    assert hasattr(ccsl::filters::EquationFilter, "operator")
+def test_ccsl_filters_equationfilter_has_operator():
+    assert hasattr(ccsl_filters_EquationFilter, "operator")
     descriptor = None
-    for klass in ccsl::filters::EquationFilter.__mro__:
+    for klass in ccsl_filters_EquationFilter.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -839,51 +2197,23 @@ def test_atomicfilter_constructor_args():
 
 
 
-def test_ccsl::filters::templatefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::TemplateFilter)
+def test_ccsl_filters_samenamefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_SameNameFilter)
 
 
-def test_ccsl::filters::templatefilter_constructor_exists():
-    assert callable(ccsl::filters::TemplateFilter.__init__)
+def test_ccsl_filters_samenamefilter_constructor_exists():
+    assert callable(ccsl_filters_SameNameFilter.__init__)
 
 
-def test_ccsl::filters::templatefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::TemplateFilter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::filters::fromclosurefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::FromClosureFilter)
-
-
-def test_ccsl::filters::fromclosurefilter_constructor_exists():
-    assert callable(ccsl::filters::FromClosureFilter.__init__)
-
-
-def test_ccsl::filters::fromclosurefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::FromClosureFilter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::filters::samenamefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::SameNameFilter)
-
-
-def test_ccsl::filters::samenamefilter_constructor_exists():
-    assert callable(ccsl::filters::SameNameFilter.__init__)
-
-
-def test_ccsl::filters::samenamefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::SameNameFilter.__init__)
+def test_ccsl_filters_samenamefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_SameNameFilter.__init__)
     params = list(sig.parameters.keys())
     assert "ignoreCase" in params, "Missing parameter 'ignoreCase'"
 
-def test_ccsl::filters::samenamefilter_has_ignoreCase():
-    assert hasattr(ccsl::filters::SameNameFilter, "ignoreCase")
+def test_ccsl_filters_samenamefilter_has_ignoreCase():
+    assert hasattr(ccsl_filters_SameNameFilter, "ignoreCase")
     descriptor = None
-    for klass in ccsl::filters::SameNameFilter.__mro__:
+    for klass in ccsl_filters_SameNameFilter.__mro__:
         if "ignoreCase" in klass.__dict__:
             descriptor = klass.__dict__["ignoreCase"]
             break
@@ -891,23 +2221,51 @@ def test_ccsl::filters::samenamefilter_has_ignoreCase():
 
 
 
-def test_ccsl::filters::superclassclosurefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::SuperClassClosureFilter)
+def test_ccsl_filters_hassamereferencefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_HasSameReferenceFilter)
 
 
-def test_ccsl::filters::superclassclosurefilter_constructor_exists():
-    assert callable(ccsl::filters::SuperClassClosureFilter.__init__)
+def test_ccsl_filters_hassamereferencefilter_constructor_exists():
+    assert callable(ccsl_filters_HasSameReferenceFilter.__init__)
 
 
-def test_ccsl::filters::superclassclosurefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::SuperClassClosureFilter.__init__)
+def test_ccsl_filters_hassamereferencefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_HasSameReferenceFilter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_filters_iskindoffilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_IsKindOfFilter)
+
+
+def test_ccsl_filters_iskindoffilter_constructor_exists():
+    assert callable(ccsl_filters_IsKindOfFilter.__init__)
+
+
+def test_ccsl_filters_iskindoffilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_IsKindOfFilter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_filters_superclassclosurefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_SuperClassClosureFilter)
+
+
+def test_ccsl_filters_superclassclosurefilter_constructor_exists():
+    assert callable(ccsl_filters_SuperClassClosureFilter.__init__)
+
+
+def test_ccsl_filters_superclassclosurefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_SuperClassClosureFilter.__init__)
     params = list(sig.parameters.keys())
     assert "includesSubClass" in params, "Missing parameter 'includesSubClass'"
 
-def test_ccsl::filters::superclassclosurefilter_has_includesSubClass():
-    assert hasattr(ccsl::filters::SuperClassClosureFilter, "includesSubClass")
+def test_ccsl_filters_superclassclosurefilter_has_includesSubClass():
+    assert hasattr(ccsl_filters_SuperClassClosureFilter, "includesSubClass")
     descriptor = None
-    for klass in ccsl::filters::SuperClassClosureFilter.__mro__:
+    for klass in ccsl_filters_SuperClassClosureFilter.__mro__:
         if "includesSubClass" in klass.__dict__:
             descriptor = klass.__dict__["includesSubClass"]
             break
@@ -915,114 +2273,114 @@ def test_ccsl::filters::superclassclosurefilter_has_includesSubClass():
 
 
 
-def test_ccsl::filters::childclosurecomplextypefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::ChildClosureComplexTypeFilter)
+def test_ccsl_filters_isstringfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_IsStringFilter)
 
 
-def test_ccsl::filters::childclosurecomplextypefilter_constructor_exists():
-    assert callable(ccsl::filters::ChildClosureComplexTypeFilter.__init__)
+def test_ccsl_filters_isstringfilter_constructor_exists():
+    assert callable(ccsl_filters_IsStringFilter.__init__)
 
 
-def test_ccsl::filters::childclosurecomplextypefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::ChildClosureComplexTypeFilter.__init__)
+def test_ccsl_filters_isstringfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_IsStringFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::isstringfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::IsStringFilter)
+def test_ccsl_filters_blocklaststatementfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_BlockLastStatementFilter)
 
 
-def test_ccsl::filters::isstringfilter_constructor_exists():
-    assert callable(ccsl::filters::IsStringFilter.__init__)
+def test_ccsl_filters_blocklaststatementfilter_constructor_exists():
+    assert callable(ccsl_filters_BlockLastStatementFilter.__init__)
 
 
-def test_ccsl::filters::isstringfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::IsStringFilter.__init__)
+def test_ccsl_filters_blocklaststatementfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_BlockLastStatementFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::supermethodclosurefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::SuperMethodClosureFilter)
+def test_ccsl_filters_templatefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_TemplateFilter)
 
 
-def test_ccsl::filters::supermethodclosurefilter_constructor_exists():
-    assert callable(ccsl::filters::SuperMethodClosureFilter.__init__)
+def test_ccsl_filters_templatefilter_constructor_exists():
+    assert callable(ccsl_filters_TemplateFilter.__init__)
 
 
-def test_ccsl::filters::supermethodclosurefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::SuperMethodClosureFilter.__init__)
+def test_ccsl_filters_templatefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_TemplateFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::hassamereferencefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::HasSameReferenceFilter)
+def test_ccsl_filters_childclosurecomplextypefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_ChildClosureComplexTypeFilter)
 
 
-def test_ccsl::filters::hassamereferencefilter_constructor_exists():
-    assert callable(ccsl::filters::HasSameReferenceFilter.__init__)
+def test_ccsl_filters_childclosurecomplextypefilter_constructor_exists():
+    assert callable(ccsl_filters_ChildClosureComplexTypeFilter.__init__)
 
 
-def test_ccsl::filters::hassamereferencefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::HasSameReferenceFilter.__init__)
+def test_ccsl_filters_childclosurecomplextypefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_ChildClosureComplexTypeFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::iskindoffilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::IsKindOfFilter)
+def test_ccsl_filters_fromclosurefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_FromClosureFilter)
 
 
-def test_ccsl::filters::iskindoffilter_constructor_exists():
-    assert callable(ccsl::filters::IsKindOfFilter.__init__)
+def test_ccsl_filters_fromclosurefilter_constructor_exists():
+    assert callable(ccsl_filters_FromClosureFilter.__init__)
 
 
-def test_ccsl::filters::iskindoffilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::IsKindOfFilter.__init__)
+def test_ccsl_filters_fromclosurefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_FromClosureFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::blocklaststatementfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::BlockLastStatementFilter)
+def test_ccsl_filters_supermethodclosurefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_SuperMethodClosureFilter)
 
 
-def test_ccsl::filters::blocklaststatementfilter_constructor_exists():
-    assert callable(ccsl::filters::BlockLastStatementFilter.__init__)
+def test_ccsl_filters_supermethodclosurefilter_constructor_exists():
+    assert callable(ccsl_filters_SuperMethodClosureFilter.__init__)
 
 
-def test_ccsl::filters::blocklaststatementfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::BlockLastStatementFilter.__init__)
+def test_ccsl_filters_supermethodclosurefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_SuperMethodClosureFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::istypeoffilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::IsTypeOfFilter)
+def test_ccsl_filters_istypeoffilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_IsTypeOfFilter)
 
 
-def test_ccsl::filters::istypeoffilter_constructor_exists():
-    assert callable(ccsl::filters::IsTypeOfFilter.__init__)
+def test_ccsl_filters_istypeoffilter_constructor_exists():
+    assert callable(ccsl_filters_IsTypeOfFilter.__init__)
 
 
-def test_ccsl::filters::istypeoffilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::IsTypeOfFilter.__init__)
+def test_ccsl_filters_istypeoffilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_IsTypeOfFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::propertyfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::PropertyFilter)
+def test_ccsl_filters_propertyfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_PropertyFilter)
 
 
-def test_ccsl::filters::propertyfilter_constructor_exists():
-    assert callable(ccsl::filters::PropertyFilter.__init__)
+def test_ccsl_filters_propertyfilter_constructor_exists():
+    assert callable(ccsl_filters_PropertyFilter.__init__)
 
 
-def test_ccsl::filters::propertyfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::PropertyFilter.__init__)
+def test_ccsl_filters_propertyfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_PropertyFilter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1041,23 +2399,23 @@ def test_filter_constructor_args():
 
 
 
-def test_ccsl::filters::compositefilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::CompositeFilter)
+def test_ccsl_filters_compositefilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_CompositeFilter)
 
 
-def test_ccsl::filters::compositefilter_constructor_exists():
-    assert callable(ccsl::filters::CompositeFilter.__init__)
+def test_ccsl_filters_compositefilter_constructor_exists():
+    assert callable(ccsl_filters_CompositeFilter.__init__)
 
 
-def test_ccsl::filters::compositefilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::CompositeFilter.__init__)
+def test_ccsl_filters_compositefilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_CompositeFilter.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ccsl::filters::compositefilter_has_operator():
-    assert hasattr(ccsl::filters::CompositeFilter, "operator")
+def test_ccsl_filters_compositefilter_has_operator():
+    assert hasattr(ccsl_filters_CompositeFilter, "operator")
     descriptor = None
-    for klass in ccsl::filters::CompositeFilter.__mro__:
+    for klass in ccsl_filters_CompositeFilter.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1065,16 +2423,16 @@ def test_ccsl::filters::compositefilter_has_operator():
 
 
 
-def test_ccsl::filters::atomicfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::AtomicFilter)
+def test_ccsl_filters_atomicfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_AtomicFilter)
 
 
-def test_ccsl::filters::atomicfilter_constructor_exists():
-    assert callable(ccsl::filters::AtomicFilter.__init__)
+def test_ccsl_filters_atomicfilter_constructor_exists():
+    assert callable(ccsl_filters_AtomicFilter.__init__)
 
 
-def test_ccsl::filters::atomicfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::AtomicFilter.__init__)
+def test_ccsl_filters_atomicfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_AtomicFilter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1093,23 +2451,23 @@ def test_ccslbooleanfunction_constructor_args():
 
 
 
-def test_ccsl::filters::filter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::Filter)
+def test_ccsl_filters_filter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_Filter)
 
 
-def test_ccsl::filters::filter_constructor_exists():
-    assert callable(ccsl::filters::Filter.__init__)
+def test_ccsl_filters_filter_constructor_exists():
+    assert callable(ccsl_filters_Filter.__init__)
 
 
-def test_ccsl::filters::filter_constructor_args():
-    sig = inspect.signature(ccsl::filters::Filter.__init__)
+def test_ccsl_filters_filter_constructor_args():
+    sig = inspect.signature(ccsl_filters_Filter.__init__)
     params = list(sig.parameters.keys())
     assert "negated" in params, "Missing parameter 'negated'"
 
-def test_ccsl::filters::filter_has_negated():
-    assert hasattr(ccsl::filters::Filter, "negated")
+def test_ccsl_filters_filter_has_negated():
+    assert hasattr(ccsl_filters_Filter, "negated")
     descriptor = None
-    for klass in ccsl::filters::Filter.__mro__:
+    for klass in ccsl_filters_Filter.__mro__:
         if "negated" in klass.__dict__:
             descriptor = klass.__dict__["negated"]
             break
@@ -1131,58 +2489,58 @@ def test_ccslfunction_constructor_args():
 
 
 
-def test_ccsl::numberfunctions::ccslnumberfunction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::numberFunctions::CcslNumberFunction)
+def test_ccsl_numberfunctions_ccslnumberfunction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_numberFunctions_CcslNumberFunction)
 
 
-def test_ccsl::numberfunctions::ccslnumberfunction_constructor_exists():
-    assert callable(ccsl::numberFunctions::CcslNumberFunction.__init__)
+def test_ccsl_numberfunctions_ccslnumberfunction_constructor_exists():
+    assert callable(ccsl_numberFunctions_CcslNumberFunction.__init__)
 
 
-def test_ccsl::numberfunctions::ccslnumberfunction_constructor_args():
-    sig = inspect.signature(ccsl::numberFunctions::CcslNumberFunction.__init__)
+def test_ccsl_numberfunctions_ccslnumberfunction_constructor_args():
+    sig = inspect.signature(ccsl_numberFunctions_CcslNumberFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::booleanfunctions::ccslbooleanfunction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::booleanFunctions::CcslBooleanFunction)
+def test_ccsl_booleanfunctions_ccslbooleanfunction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_booleanFunctions_CcslBooleanFunction)
 
 
-def test_ccsl::booleanfunctions::ccslbooleanfunction_constructor_exists():
-    assert callable(ccsl::booleanFunctions::CcslBooleanFunction.__init__)
+def test_ccsl_booleanfunctions_ccslbooleanfunction_constructor_exists():
+    assert callable(ccsl_booleanFunctions_CcslBooleanFunction.__init__)
 
 
-def test_ccsl::booleanfunctions::ccslbooleanfunction_constructor_args():
-    sig = inspect.signature(ccsl::booleanFunctions::CcslBooleanFunction.__init__)
+def test_ccsl_booleanfunctions_ccslbooleanfunction_constructor_args():
+    sig = inspect.signature(ccsl_booleanFunctions_CcslBooleanFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::implicitycontainerfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::ImplicityContainerFilter)
+def test_ccsl_filters_implicitycontainerfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_ImplicityContainerFilter)
 
 
-def test_ccsl::filters::implicitycontainerfilter_constructor_exists():
-    assert callable(ccsl::filters::ImplicityContainerFilter.__init__)
+def test_ccsl_filters_implicitycontainerfilter_constructor_exists():
+    assert callable(ccsl_filters_ImplicityContainerFilter.__init__)
 
 
-def test_ccsl::filters::implicitycontainerfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::ImplicityContainerFilter.__init__)
+def test_ccsl_filters_implicitycontainerfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_ImplicityContainerFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::operatorexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::OperatorExpression)
+def test_expressions_operatorexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_OperatorExpression)
 
 
-def test_expressions::operatorexpression_constructor_exists():
-    assert callable(expressions::OperatorExpression.__init__)
+def test_expressions_operatorexpression_constructor_exists():
+    assert callable(expressions_OperatorExpression.__init__)
 
 
-def test_expressions::operatorexpression_constructor_args():
-    sig = inspect.signature(expressions::OperatorExpression.__init__)
+def test_expressions_operatorexpression_constructor_args():
+    sig = inspect.signature(expressions_OperatorExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1201,37 +2559,37 @@ def test_templatefilter_constructor_args():
 
 
 
-def test_ccsl::filters::implicityoperandfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::ImplicityOperandFilter)
+def test_ccsl_filters_implicityoperandfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_ImplicityOperandFilter)
 
 
-def test_ccsl::filters::implicityoperandfilter_constructor_exists():
-    assert callable(ccsl::filters::ImplicityOperandFilter.__init__)
+def test_ccsl_filters_implicityoperandfilter_constructor_exists():
+    assert callable(ccsl_filters_ImplicityOperandFilter.__init__)
 
 
-def test_ccsl::filters::implicityoperandfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::ImplicityOperandFilter.__init__)
+def test_ccsl_filters_implicityoperandfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_ImplicityOperandFilter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::filters::regexmatch_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::RegexMatch)
+def test_ccsl_filters_regexmatch_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_RegexMatch)
 
 
-def test_ccsl::filters::regexmatch_constructor_exists():
-    assert callable(ccsl::filters::RegexMatch.__init__)
+def test_ccsl_filters_regexmatch_constructor_exists():
+    assert callable(ccsl_filters_RegexMatch.__init__)
 
 
-def test_ccsl::filters::regexmatch_constructor_args():
-    sig = inspect.signature(ccsl::filters::RegexMatch.__init__)
+def test_ccsl_filters_regexmatch_constructor_args():
+    sig = inspect.signature(ccsl_filters_RegexMatch.__init__)
     params = list(sig.parameters.keys())
     assert "regex" in params, "Missing parameter 'regex'"
 
-def test_ccsl::filters::regexmatch_has_regex():
-    assert hasattr(ccsl::filters::RegexMatch, "regex")
+def test_ccsl_filters_regexmatch_has_regex():
+    assert hasattr(ccsl_filters_RegexMatch, "regex")
     descriptor = None
-    for klass in ccsl::filters::RegexMatch.__mro__:
+    for klass in ccsl_filters_RegexMatch.__mro__:
         if "regex" in klass.__dict__:
             descriptor = klass.__dict__["regex"]
             break
@@ -1239,78 +2597,120 @@ def test_ccsl::filters::regexmatch_has_regex():
 
 
 
-def test_ccsl::filters::countfilter_is_not_abstract():
-    assert not inspect.isabstract(ccsl::filters::CountFilter)
+def test_ccsl_filters_countfilter_is_not_abstract():
+    assert not inspect.isabstract(ccsl_filters_CountFilter)
 
 
-def test_ccsl::filters::countfilter_constructor_exists():
-    assert callable(ccsl::filters::CountFilter.__init__)
+def test_ccsl_filters_countfilter_constructor_exists():
+    assert callable(ccsl_filters_CountFilter.__init__)
 
 
-def test_ccsl::filters::countfilter_constructor_args():
-    sig = inspect.signature(ccsl::filters::CountFilter.__init__)
+def test_ccsl_filters_countfilter_constructor_args():
+    sig = inspect.signature(ccsl_filters_CountFilter.__init__)
     params = list(sig.parameters.keys())
-    assert "max" in params, "Missing parameter 'max'"
     assert "min" in params, "Missing parameter 'min'"
+    assert "max" in params, "Missing parameter 'max'"
 
-def test_ccsl::filters::countfilter_has_max():
-    assert hasattr(ccsl::filters::CountFilter, "max")
+def test_ccsl_filters_countfilter_has_min():
+    assert hasattr(ccsl_filters_CountFilter, "min")
     descriptor = None
-    for klass in ccsl::filters::CountFilter.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::filters::countfilter_has_min():
-    assert hasattr(ccsl::filters::CountFilter, "min")
-    descriptor = None
-    for klass in ccsl::filters::CountFilter.__mro__:
+    for klass in ccsl_filters_CountFilter.__mro__:
         if "min" in klass.__dict__:
             descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
+def test_ccsl_filters_countfilter_has_max():
+    assert hasattr(ccsl_filters_CountFilter, "max")
+    descriptor = None
+    for klass in ccsl_filters_CountFilter.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ccsl::faulttypedescription::injectionaction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::faultTypeDescription::InjectionAction)
+
+def test_ccsl_faulttypedescription_injectionaction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_faultTypeDescription_InjectionAction)
 
 
-def test_ccsl::faulttypedescription::injectionaction_constructor_exists():
-    assert callable(ccsl::faultTypeDescription::InjectionAction.__init__)
+def test_ccsl_faulttypedescription_injectionaction_constructor_exists():
+    assert callable(ccsl_faultTypeDescription_InjectionAction.__init__)
 
 
-def test_ccsl::faulttypedescription::injectionaction_constructor_args():
-    sig = inspect.signature(ccsl::faultTypeDescription::InjectionAction.__init__)
+def test_ccsl_faulttypedescription_injectionaction_constructor_args():
+    sig = inspect.signature(ccsl_faultTypeDescription_InjectionAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_filters::filter_is_not_abstract():
-    assert not inspect.isabstract(filters::Filter)
+def test_filters_filter_is_not_abstract():
+    assert not inspect.isabstract(filters_Filter)
 
 
-def test_filters::filter_constructor_exists():
-    assert callable(filters::Filter.__init__)
+def test_filters_filter_constructor_exists():
+    assert callable(filters_Filter.__init__)
 
 
-def test_filters::filter_constructor_args():
-    sig = inspect.signature(filters::Filter.__init__)
+def test_filters_filter_constructor_args():
+    sig = inspect.signature(filters_Filter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::context::context_is_not_abstract():
-    assert not inspect.isabstract(ccsl::context::Context)
+def test_ccsl_context_context_is_not_abstract():
+    assert not inspect.isabstract(ccsl_context_Context)
 
 
-def test_ccsl::context::context_constructor_exists():
-    assert callable(ccsl::context::Context.__init__)
+def test_ccsl_context_context_constructor_exists():
+    assert callable(ccsl_context_Context.__init__)
 
 
-def test_ccsl::context::context_constructor_args():
-    sig = inspect.signature(ccsl::context::Context.__init__)
+def test_ccsl_context_context_constructor_args():
+    sig = inspect.signature(ccsl_context_Context.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_datatype_voidtype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_VoidType)
+
+
+def test_ccsl_datatype_voidtype_constructor_exists():
+    assert callable(ccsl_datatype_VoidType.__init__)
+
+
+def test_ccsl_datatype_voidtype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_VoidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_datatype_intprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_IntPrimitiveType)
+
+
+def test_ccsl_datatype_intprimitivetype_constructor_exists():
+    assert callable(ccsl_datatype_IntPrimitiveType.__init__)
+
+
+def test_ccsl_datatype_intprimitivetype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_IntPrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_datatype_generictype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_GenericType)
+
+
+def test_ccsl_datatype_generictype_constructor_exists():
+    assert callable(ccsl_datatype_GenericType.__init__)
+
+
+def test_ccsl_datatype_generictype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_GenericType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1329,23 +2729,23 @@ def test_objecttype_constructor_args():
 
 
 
-def test_ccsl::datatype::arraytype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::ArrayType)
+def test_ccsl_datatype_arraytype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_ArrayType)
 
 
-def test_ccsl::datatype::arraytype_constructor_exists():
-    assert callable(ccsl::datatype::ArrayType.__init__)
+def test_ccsl_datatype_arraytype_constructor_exists():
+    assert callable(ccsl_datatype_ArrayType.__init__)
 
 
-def test_ccsl::datatype::arraytype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::ArrayType.__init__)
+def test_ccsl_datatype_arraytype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_ArrayType.__init__)
     params = list(sig.parameters.keys())
     assert "dimensions" in params, "Missing parameter 'dimensions'"
 
-def test_ccsl::datatype::arraytype_has_dimensions():
-    assert hasattr(ccsl::datatype::ArrayType, "dimensions")
+def test_ccsl_datatype_arraytype_has_dimensions():
+    assert hasattr(ccsl_datatype_ArrayType, "dimensions")
     descriptor = None
-    for klass in ccsl::datatype::ArrayType.__mro__:
+    for klass in ccsl_datatype_ArrayType.__mro__:
         if "dimensions" in klass.__dict__:
             descriptor = klass.__dict__["dimensions"]
             break
@@ -1353,218 +2753,246 @@ def test_ccsl::datatype::arraytype_has_dimensions():
 
 
 
-def test_ccsl::datatype::parameterizedtype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::ParameterizedType)
+def test_ccsl_datatype_parameterizedtype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_ParameterizedType)
 
 
-def test_ccsl::datatype::parameterizedtype_constructor_exists():
-    assert callable(ccsl::datatype::ParameterizedType.__init__)
+def test_ccsl_datatype_parameterizedtype_constructor_exists():
+    assert callable(ccsl_datatype_ParameterizedType.__init__)
 
 
-def test_ccsl::datatype::parameterizedtype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::ParameterizedType.__init__)
+def test_ccsl_datatype_parameterizedtype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_ParameterizedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::functions::ccslfunction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::functions::CcslFunction)
+def test_ccsl_datatype_objecttype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_ObjectType)
 
 
-def test_ccsl::functions::ccslfunction_constructor_exists():
-    assert callable(ccsl::functions::CcslFunction.__init__)
+def test_ccsl_datatype_objecttype_constructor_exists():
+    assert callable(ccsl_datatype_ObjectType.__init__)
 
 
-def test_ccsl::functions::ccslfunction_constructor_args():
-    sig = inspect.signature(ccsl::functions::CcslFunction.__init__)
+def test_ccsl_datatype_objecttype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_ObjectType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::strategy::allstrategy_is_not_abstract():
-    assert not inspect.isabstract(ccsl::strategy::AllStrategy)
+def test_ccsl_functions_ccslfunction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_functions_CcslFunction)
 
 
-def test_ccsl::strategy::allstrategy_constructor_exists():
-    assert callable(ccsl::strategy::AllStrategy.__init__)
+def test_ccsl_functions_ccslfunction_constructor_exists():
+    assert callable(ccsl_functions_CcslFunction.__init__)
 
 
-def test_ccsl::strategy::allstrategy_constructor_args():
-    sig = inspect.signature(ccsl::strategy::AllStrategy.__init__)
+def test_ccsl_functions_ccslfunction_constructor_args():
+    sig = inspect.signature(ccsl_functions_CcslFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::arithmeticoperatormap_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::ArithmeticOperatorMap)
+def test_ccsl_strategy_allstrategy_is_not_abstract():
+    assert not inspect.isabstract(ccsl_strategy_AllStrategy)
 
 
-def test_ccsl::action::arithmeticoperatormap_constructor_exists():
-    assert callable(ccsl::action::ArithmeticOperatorMap.__init__)
+def test_ccsl_strategy_allstrategy_constructor_exists():
+    assert callable(ccsl_strategy_AllStrategy.__init__)
 
 
-def test_ccsl::action::arithmeticoperatormap_constructor_args():
-    sig = inspect.signature(ccsl::action::ArithmeticOperatorMap.__init__)
+def test_ccsl_strategy_allstrategy_constructor_args():
+    sig = inspect.signature(ccsl_strategy_AllStrategy.__init__)
     params = list(sig.parameters.keys())
-    assert "newArithmeticOperator" in params, "Missing parameter 'newArithmeticOperator'"
+
+
+
+def test_ccsl_action_arithmeticoperatormap_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_ArithmeticOperatorMap)
+
+
+def test_ccsl_action_arithmeticoperatormap_constructor_exists():
+    assert callable(ccsl_action_ArithmeticOperatorMap.__init__)
+
+
+def test_ccsl_action_arithmeticoperatormap_constructor_args():
+    sig = inspect.signature(ccsl_action_ArithmeticOperatorMap.__init__)
+    params = list(sig.parameters.keys())
     assert "oldArithmeticOperator" in params, "Missing parameter 'oldArithmeticOperator'"
+    assert "newArithmeticOperator" in params, "Missing parameter 'newArithmeticOperator'"
 
-def test_ccsl::action::arithmeticoperatormap_has_newArithmeticOperator():
-    assert hasattr(ccsl::action::ArithmeticOperatorMap, "newArithmeticOperator")
+def test_ccsl_action_arithmeticoperatormap_has_oldArithmeticOperator():
+    assert hasattr(ccsl_action_ArithmeticOperatorMap, "oldArithmeticOperator")
     descriptor = None
-    for klass in ccsl::action::ArithmeticOperatorMap.__mro__:
-        if "newArithmeticOperator" in klass.__dict__:
-            descriptor = klass.__dict__["newArithmeticOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::action::arithmeticoperatormap_has_oldArithmeticOperator():
-    assert hasattr(ccsl::action::ArithmeticOperatorMap, "oldArithmeticOperator")
-    descriptor = None
-    for klass in ccsl::action::ArithmeticOperatorMap.__mro__:
+    for klass in ccsl_action_ArithmeticOperatorMap.__mro__:
         if "oldArithmeticOperator" in klass.__dict__:
             descriptor = klass.__dict__["oldArithmeticOperator"]
             break
     assert isinstance(descriptor, property)
 
+def test_ccsl_action_arithmeticoperatormap_has_newArithmeticOperator():
+    assert hasattr(ccsl_action_ArithmeticOperatorMap, "newArithmeticOperator")
+    descriptor = None
+    for klass in ccsl_action_ArithmeticOperatorMap.__mro__:
+        if "newArithmeticOperator" in klass.__dict__:
+            descriptor = klass.__dict__["newArithmeticOperator"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_action::arithmeticoperatormap_is_not_abstract():
-    assert not inspect.isabstract(action::ArithmeticOperatorMap)
+
+def test_action_arithmeticoperatormap_is_not_abstract():
+    assert not inspect.isabstract(action_ArithmeticOperatorMap)
 
 
-def test_action::arithmeticoperatormap_constructor_exists():
-    assert callable(action::ArithmeticOperatorMap.__init__)
+def test_action_arithmeticoperatormap_constructor_exists():
+    assert callable(action_ArithmeticOperatorMap.__init__)
 
 
-def test_action::arithmeticoperatormap_constructor_args():
-    sig = inspect.signature(action::ArithmeticOperatorMap.__init__)
+def test_action_arithmeticoperatormap_constructor_args():
+    sig = inspect.signature(action_ArithmeticOperatorMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::replacearithmeticoperatoraction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::ReplaceArithmeticOperatorAction)
+def test_ccsl_action_replacearithmeticoperatoraction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_ReplaceArithmeticOperatorAction)
 
 
-def test_ccsl::action::replacearithmeticoperatoraction_constructor_exists():
-    assert callable(ccsl::action::ReplaceArithmeticOperatorAction.__init__)
+def test_ccsl_action_replacearithmeticoperatoraction_constructor_exists():
+    assert callable(ccsl_action_ReplaceArithmeticOperatorAction.__init__)
 
 
-def test_ccsl::action::replacearithmeticoperatoraction_constructor_args():
-    sig = inspect.signature(ccsl::action::ReplaceArithmeticOperatorAction.__init__)
+def test_ccsl_action_replacearithmeticoperatoraction_constructor_args():
+    sig = inspect.signature(ccsl_action_ReplaceArithmeticOperatorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::replacevariableaccessaction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::ReplaceVariableAccessAction)
+def test_ccsl_action_replacevariableaccessaction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_ReplaceVariableAccessAction)
 
 
-def test_ccsl::action::replacevariableaccessaction_constructor_exists():
-    assert callable(ccsl::action::ReplaceVariableAccessAction.__init__)
+def test_ccsl_action_replacevariableaccessaction_constructor_exists():
+    assert callable(ccsl_action_ReplaceVariableAccessAction.__init__)
 
 
-def test_ccsl::action::replacevariableaccessaction_constructor_args():
-    sig = inspect.signature(ccsl::action::ReplaceVariableAccessAction.__init__)
+def test_ccsl_action_replacevariableaccessaction_constructor_args():
+    sig = inspect.signature(ccsl_action_ReplaceVariableAccessAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::deleterandomstatementaction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::DeleteRandomStatementAction)
+def test_ccsl_action_deleterandomstatementaction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_DeleteRandomStatementAction)
 
 
-def test_ccsl::action::deleterandomstatementaction_constructor_exists():
-    assert callable(ccsl::action::DeleteRandomStatementAction.__init__)
+def test_ccsl_action_deleterandomstatementaction_constructor_exists():
+    assert callable(ccsl_action_DeleteRandomStatementAction.__init__)
 
 
-def test_ccsl::action::deleterandomstatementaction_constructor_args():
-    sig = inspect.signature(ccsl::action::DeleteRandomStatementAction.__init__)
+def test_ccsl_action_deleterandomstatementaction_constructor_args():
+    sig = inspect.signature(ccsl_action_DeleteRandomStatementAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::changeliteralvalueaction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::ChangeLiteralValueAction)
+def test_ccsl_action_changeliteralvalueaction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_ChangeLiteralValueAction)
 
 
-def test_ccsl::action::changeliteralvalueaction_constructor_exists():
-    assert callable(ccsl::action::ChangeLiteralValueAction.__init__)
+def test_ccsl_action_changeliteralvalueaction_constructor_exists():
+    assert callable(ccsl_action_ChangeLiteralValueAction.__init__)
 
 
-def test_ccsl::action::changeliteralvalueaction_constructor_args():
-    sig = inspect.signature(ccsl::action::ChangeLiteralValueAction.__init__)
+def test_ccsl_action_changeliteralvalueaction_constructor_args():
+    sig = inspect.signature(ccsl_action_ChangeLiteralValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::deleteinfixoperatoraction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::DeleteInfixOperatorAction)
+def test_ccsl_action_deleteinfixoperatoraction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_DeleteInfixOperatorAction)
 
 
-def test_ccsl::action::deleteinfixoperatoraction_constructor_exists():
-    assert callable(ccsl::action::DeleteInfixOperatorAction.__init__)
+def test_ccsl_action_deleteinfixoperatoraction_constructor_exists():
+    assert callable(ccsl_action_DeleteInfixOperatorAction.__init__)
 
 
-def test_ccsl::action::deleteinfixoperatoraction_constructor_args():
-    sig = inspect.signature(ccsl::action::DeleteInfixOperatorAction.__init__)
+def test_ccsl_action_deleteinfixoperatoraction_constructor_args():
+    sig = inspect.signature(ccsl_action_DeleteInfixOperatorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::movescopeupaction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::MoveScopeUpAction)
+def test_ccsl_action_movescopeupaction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_MoveScopeUpAction)
 
 
-def test_ccsl::action::movescopeupaction_constructor_exists():
-    assert callable(ccsl::action::MoveScopeUpAction.__init__)
+def test_ccsl_action_movescopeupaction_constructor_exists():
+    assert callable(ccsl_action_MoveScopeUpAction.__init__)
 
 
-def test_ccsl::action::movescopeupaction_constructor_args():
-    sig = inspect.signature(ccsl::action::MoveScopeUpAction.__init__)
+def test_ccsl_action_movescopeupaction_constructor_args():
+    sig = inspect.signature(ccsl_action_MoveScopeUpAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::action::deleteaction_is_not_abstract():
-    assert not inspect.isabstract(ccsl::action::DeleteAction)
+def test_ccsl_action_deleteaction_is_not_abstract():
+    assert not inspect.isabstract(ccsl_action_DeleteAction)
 
 
-def test_ccsl::action::deleteaction_constructor_exists():
-    assert callable(ccsl::action::DeleteAction.__init__)
+def test_ccsl_action_deleteaction_constructor_exists():
+    assert callable(ccsl_action_DeleteAction.__init__)
 
 
-def test_ccsl::action::deleteaction_constructor_args():
-    sig = inspect.signature(ccsl::action::DeleteAction.__init__)
+def test_ccsl_action_deleteaction_constructor_args():
+    sig = inspect.signature(ccsl_action_DeleteAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::faulttypedescription::injectionstrategy_is_not_abstract():
-    assert not inspect.isabstract(ccsl::faultTypeDescription::InjectionStrategy)
+def test_ccsl_faulttypedescription_injectionstrategy_is_not_abstract():
+    assert not inspect.isabstract(ccsl_faultTypeDescription_InjectionStrategy)
 
 
-def test_ccsl::faulttypedescription::injectionstrategy_constructor_exists():
-    assert callable(ccsl::faultTypeDescription::InjectionStrategy.__init__)
+def test_ccsl_faulttypedescription_injectionstrategy_constructor_exists():
+    assert callable(ccsl_faultTypeDescription_InjectionStrategy.__init__)
 
 
-def test_ccsl::faulttypedescription::injectionstrategy_constructor_args():
-    sig = inspect.signature(ccsl::faultTypeDescription::InjectionStrategy.__init__)
+def test_ccsl_faulttypedescription_injectionstrategy_constructor_args():
+    sig = inspect.signature(ccsl_faultTypeDescription_InjectionStrategy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::import::importableelement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::import::ImportableElement)
+def test_ccsl_import_importstatement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_import_ImportStatement)
 
 
-def test_ccsl::import::importableelement_constructor_exists():
-    assert callable(ccsl::import::ImportableElement.__init__)
+def test_ccsl_import_importstatement_constructor_exists():
+    assert callable(ccsl_import_ImportStatement.__init__)
 
 
-def test_ccsl::import::importableelement_constructor_args():
-    sig = inspect.signature(ccsl::import::ImportableElement.__init__)
+def test_ccsl_import_importstatement_constructor_args():
+    sig = inspect.signature(ccsl_import_ImportStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_import_importableelement_is_not_abstract():
+    assert not inspect.isabstract(ccsl_import_ImportableElement)
+
+
+def test_ccsl_import_importableelement_constructor_exists():
+    assert callable(ccsl_import_ImportableElement.__init__)
+
+
+def test_ccsl_import_importableelement_constructor_args():
+    sig = inspect.signature(ccsl_import_ImportableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1583,31 +3011,55 @@ def test_invocation_constructor_args():
 
 
 
-def test_ccsl::invocation::simplemethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::invocation::SimpleMethodInvocation)
+def test_ccsl_invocation_simplemethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_invocation_SimpleMethodInvocation)
 
 
-def test_ccsl::invocation::simplemethodinvocation_constructor_exists():
-    assert callable(ccsl::invocation::SimpleMethodInvocation.__init__)
+def test_ccsl_invocation_simplemethodinvocation_constructor_exists():
+    assert callable(ccsl_invocation_SimpleMethodInvocation.__init__)
 
 
-def test_ccsl::invocation::simplemethodinvocation_constructor_args():
-    sig = inspect.signature(ccsl::invocation::SimpleMethodInvocation.__init__)
+def test_ccsl_invocation_simplemethodinvocation_constructor_args():
+    sig = inspect.signature(ccsl_invocation_SimpleMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::invocation::constructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::invocation::ConstructorInvocation)
+def test_ccsl_invocation_constructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_invocation_ConstructorInvocation)
 
 
-def test_ccsl::invocation::constructorinvocation_constructor_exists():
-    assert callable(ccsl::invocation::ConstructorInvocation.__init__)
+def test_ccsl_invocation_constructorinvocation_constructor_exists():
+    assert callable(ccsl_invocation_ConstructorInvocation.__init__)
 
 
-def test_ccsl::invocation::constructorinvocation_constructor_args():
-    sig = inspect.signature(ccsl::invocation::ConstructorInvocation.__init__)
+def test_ccsl_invocation_constructorinvocation_constructor_args():
+    sig = inspect.signature(ccsl_invocation_ConstructorInvocation.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_ccsl_invocation_invocation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_invocation_Invocation)
+
+
+def test_ccsl_invocation_invocation_constructor_exists():
+    assert callable(ccsl_invocation_Invocation.__init__)
+
+
+def test_ccsl_invocation_invocation_constructor_args():
+    sig = inspect.signature(ccsl_invocation_Invocation.__init__)
+    params = list(sig.parameters.keys())
+    assert "argsKind" in params, "Missing parameter 'argsKind'"
+
+def test_ccsl_invocation_invocation_has_argsKind():
+    assert hasattr(ccsl_invocation_Invocation, "argsKind")
+    descriptor = None
+    for klass in ccsl_invocation_Invocation.__mro__:
+        if "argsKind" in klass.__dict__:
+            descriptor = klass.__dict__["argsKind"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1625,1650 +3077,59 @@ def test_simplemethodinvocation_constructor_args():
 
 
 
-def test_ccsl::invocation::supermethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::invocation::SuperMethodInvocation)
+def test_ccsl_invocation_supermethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_invocation_SuperMethodInvocation)
 
 
-def test_ccsl::invocation::supermethodinvocation_constructor_exists():
-    assert callable(ccsl::invocation::SuperMethodInvocation.__init__)
+def test_ccsl_invocation_supermethodinvocation_constructor_exists():
+    assert callable(ccsl_invocation_SuperMethodInvocation.__init__)
 
 
-def test_ccsl::invocation::supermethodinvocation_constructor_args():
-    sig = inspect.signature(ccsl::invocation::SuperMethodInvocation.__init__)
+def test_ccsl_invocation_supermethodinvocation_constructor_args():
+    sig = inspect.signature(ccsl_invocation_SuperMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::invocation::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::invocation::MethodInvocation)
+def test_ccsl_invocation_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(ccsl_invocation_MethodInvocation)
 
 
-def test_ccsl::invocation::methodinvocation_constructor_exists():
-    assert callable(ccsl::invocation::MethodInvocation.__init__)
+def test_ccsl_invocation_methodinvocation_constructor_exists():
+    assert callable(ccsl_invocation_MethodInvocation.__init__)
 
 
-def test_ccsl::invocation::methodinvocation_constructor_args():
-    sig = inspect.signature(ccsl::invocation::MethodInvocation.__init__)
+def test_ccsl_invocation_methodinvocation_constructor_args():
+    sig = inspect.signature(ccsl_invocation_MethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_primitivetype_is_not_abstract():
-    assert not inspect.isabstract(PrimitiveType)
+def test_ccsl_datatype_shortprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_ShortPrimitiveType)
 
 
-def test_primitivetype_constructor_exists():
-    assert callable(PrimitiveType.__init__)
+def test_ccsl_datatype_shortprimitivetype_constructor_exists():
+    assert callable(ccsl_datatype_ShortPrimitiveType.__init__)
 
 
-def test_primitivetype_constructor_args():
-    sig = inspect.signature(PrimitiveType.__init__)
+def test_ccsl_datatype_shortprimitivetype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_ShortPrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ccsl::datatype::booleanprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::BooleanPrimitiveType)
+def test_ccsl_datatype_booleanprimitivetype_is_not_abstract():
+    assert not inspect.isabstract(ccsl_datatype_BooleanPrimitiveType)
 
 
-def test_ccsl::datatype::booleanprimitivetype_constructor_exists():
-    assert callable(ccsl::datatype::BooleanPrimitiveType.__init__)
+def test_ccsl_datatype_booleanprimitivetype_constructor_exists():
+    assert callable(ccsl_datatype_BooleanPrimitiveType.__init__)
 
 
-def test_ccsl::datatype::booleanprimitivetype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::BooleanPrimitiveType.__init__)
+def test_ccsl_datatype_booleanprimitivetype_constructor_args():
+    sig = inspect.signature(ccsl_datatype_BooleanPrimitiveType.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::intprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::IntPrimitiveType)
-
-
-def test_ccsl::datatype::intprimitivetype_constructor_exists():
-    assert callable(ccsl::datatype::IntPrimitiveType.__init__)
-
-
-def test_ccsl::datatype::intprimitivetype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::IntPrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::shortprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::ShortPrimitiveType)
-
-
-def test_ccsl::datatype::shortprimitivetype_constructor_exists():
-    assert callable(ccsl::datatype::ShortPrimitiveType.__init__)
-
-
-def test_ccsl::datatype::shortprimitivetype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::ShortPrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::voidtype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::VoidType)
-
-
-def test_ccsl::datatype::voidtype_constructor_exists():
-    assert callable(ccsl::datatype::VoidType.__init__)
-
-
-def test_ccsl::datatype::voidtype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::stringprimitivetype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::StringPrimitiveType)
-
-
-def test_ccsl::datatype::stringprimitivetype_constructor_exists():
-    assert callable(ccsl::datatype::StringPrimitiveType.__init__)
-
-
-def test_ccsl::datatype::stringprimitivetype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::StringPrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_datatype_is_not_abstract():
-    assert not inspect.isabstract(DataType)
-
-
-def test_datatype_constructor_exists():
-    assert callable(DataType.__init__)
-
-
-def test_datatype_constructor_args():
-    sig = inspect.signature(DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::objecttype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::ObjectType)
-
-
-def test_ccsl::datatype::objecttype_constructor_exists():
-    assert callable(ccsl::datatype::ObjectType.__init__)
-
-
-def test_ccsl::datatype::objecttype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::ObjectType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::PrimitiveType)
-
-
-def test_ccsl::datatype::primitivetype_constructor_exists():
-    assert callable(ccsl::datatype::PrimitiveType.__init__)
-
-
-def test_ccsl::datatype::primitivetype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::datatype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::DataType)
-
-
-def test_ccsl::datatype::datatype_constructor_exists():
-    assert callable(ccsl::datatype::DataType.__init__)
-
-
-def test_ccsl::datatype::datatype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotation::annotation_is_not_abstract():
-    assert not inspect.isabstract(annotation::Annotation)
-
-
-def test_annotation::annotation_constructor_exists():
-    assert callable(annotation::Annotation.__init__)
-
-
-def test_annotation::annotation_constructor_args():
-    sig = inspect.signature(annotation::Annotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::annotation::annotableelement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::annotation::AnnotableElement)
-
-
-def test_ccsl::annotation::annotableelement_constructor_exists():
-    assert callable(ccsl::annotation::AnnotableElement.__init__)
-
-
-def test_ccsl::annotation::annotableelement_constructor_args():
-    sig = inspect.signature(ccsl::annotation::AnnotableElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "annotationsKind" in params, "Missing parameter 'annotationsKind'"
-
-def test_ccsl::annotation::annotableelement_has_annotationsKind():
-    assert hasattr(ccsl::annotation::AnnotableElement, "annotationsKind")
-    descriptor = None
-    for klass in ccsl::annotation::AnnotableElement.__mro__:
-        if "annotationsKind" in klass.__dict__:
-            descriptor = klass.__dict__["annotationsKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_complextype::annotationtype_is_not_abstract():
-    assert not inspect.isabstract(complexType::AnnotationType)
-
-
-def test_complextype::annotationtype_constructor_exists():
-    assert callable(complexType::AnnotationType.__init__)
-
-
-def test_complextype::annotationtype_constructor_args():
-    sig = inspect.signature(complexType::AnnotationType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::block_is_not_abstract():
-    assert not inspect.isabstract(statements::Block)
-
-
-def test_statements::block_constructor_exists():
-    assert callable(statements::Block.__init__)
-
-
-def test_statements::block_constructor_args():
-    sig = inspect.signature(statements::Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trycatch::catchclause_is_not_abstract():
-    assert not inspect.isabstract(tryCatch::CatchClause)
-
-
-def test_trycatch::catchclause_constructor_exists():
-    assert callable(tryCatch::CatchClause.__init__)
-
-
-def test_trycatch::catchclause_constructor_args():
-    sig = inspect.signature(tryCatch::CatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unaryassignment_is_not_abstract():
-    assert not inspect.isabstract(UnaryAssignment)
-
-
-def test_unaryassignment_constructor_exists():
-    assert callable(UnaryAssignment.__init__)
-
-
-def test_unaryassignment_constructor_args():
-    sig = inspect.signature(UnaryAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::assignment::postfixunaryassignment_is_not_abstract():
-    assert not inspect.isabstract(ccsl::assignment::PostfixUnaryAssignment)
-
-
-def test_ccsl::assignment::postfixunaryassignment_constructor_exists():
-    assert callable(ccsl::assignment::PostfixUnaryAssignment.__init__)
-
-
-def test_ccsl::assignment::postfixunaryassignment_constructor_args():
-    sig = inspect.signature(ccsl::assignment::PostfixUnaryAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::assignment::prefixunaryassignment_is_not_abstract():
-    assert not inspect.isabstract(ccsl::assignment::PrefixUnaryAssignment)
-
-
-def test_ccsl::assignment::prefixunaryassignment_constructor_exists():
-    assert callable(ccsl::assignment::PrefixUnaryAssignment.__init__)
-
-
-def test_ccsl::assignment::prefixunaryassignment_constructor_args():
-    sig = inspect.signature(ccsl::assignment::PrefixUnaryAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_abstractassignment_is_not_abstract():
-    assert not inspect.isabstract(AbstractAssignment)
-
-
-def test_abstractassignment_constructor_exists():
-    assert callable(AbstractAssignment.__init__)
-
-
-def test_abstractassignment_constructor_args():
-    sig = inspect.signature(AbstractAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::assignment::unaryassignment_is_not_abstract():
-    assert not inspect.isabstract(ccsl::assignment::UnaryAssignment)
-
-
-def test_ccsl::assignment::unaryassignment_constructor_exists():
-    assert callable(ccsl::assignment::UnaryAssignment.__init__)
-
-
-def test_ccsl::assignment::unaryassignment_constructor_args():
-    sig = inspect.signature(ccsl::assignment::UnaryAssignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ccsl::assignment::unaryassignment_has_operator():
-    assert hasattr(ccsl::assignment::UnaryAssignment, "operator")
-    descriptor = None
-    for klass in ccsl::assignment::UnaryAssignment.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::assignment::assignment_is_not_abstract():
-    assert not inspect.isabstract(ccsl::assignment::Assignment)
-
-
-def test_ccsl::assignment::assignment_constructor_exists():
-    assert callable(ccsl::assignment::Assignment.__init__)
-
-
-def test_ccsl::assignment::assignment_constructor_args():
-    sig = inspect.signature(ccsl::assignment::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_ccsl::assignment::assignment_has_operator():
-    assert hasattr(ccsl::assignment::Assignment, "operator")
-    descriptor = None
-    for klass in ccsl::assignment::Assignment.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_operatorexpression_is_not_abstract():
-    assert not inspect.isabstract(OperatorExpression)
-
-
-def test_operatorexpression_constructor_exists():
-    assert callable(OperatorExpression.__init__)
-
-
-def test_operatorexpression_constructor_args():
-    sig = inspect.signature(OperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::expressions::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(ccsl::expressions::ArithmeticExpression)
-
-
-def test_ccsl::expressions::arithmeticexpression_constructor_exists():
-    assert callable(ccsl::expressions::ArithmeticExpression.__init__)
-
-
-def test_ccsl::expressions::arithmeticexpression_constructor_args():
-    sig = inspect.signature(ccsl::expressions::ArithmeticExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "arithmeticOperator" in params, "Missing parameter 'arithmeticOperator'"
-
-def test_ccsl::expressions::arithmeticexpression_has_arithmeticOperator():
-    assert hasattr(ccsl::expressions::ArithmeticExpression, "arithmeticOperator")
-    descriptor = None
-    for klass in ccsl::expressions::ArithmeticExpression.__mro__:
-        if "arithmeticOperator" in klass.__dict__:
-            descriptor = klass.__dict__["arithmeticOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::expressions::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(ccsl::expressions::BooleanExpression)
-
-
-def test_ccsl::expressions::booleanexpression_constructor_exists():
-    assert callable(ccsl::expressions::BooleanExpression.__init__)
-
-
-def test_ccsl::expressions::booleanexpression_constructor_args():
-    sig = inspect.signature(ccsl::expressions::BooleanExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "booleanOperator" in params, "Missing parameter 'booleanOperator'"
-
-def test_ccsl::expressions::booleanexpression_has_booleanOperator():
-    assert hasattr(ccsl::expressions::BooleanExpression, "booleanOperator")
-    descriptor = None
-    for klass in ccsl::expressions::BooleanExpression.__mro__:
-        if "booleanOperator" in klass.__dict__:
-            descriptor = klass.__dict__["booleanOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::expressions::infixexpression_is_not_abstract():
-    assert not inspect.isabstract(ccsl::expressions::InfixExpression)
-
-
-def test_ccsl::expressions::infixexpression_constructor_exists():
-    assert callable(ccsl::expressions::InfixExpression.__init__)
-
-
-def test_ccsl::expressions::infixexpression_constructor_args():
-    sig = inspect.signature(ccsl::expressions::InfixExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::expressions::stringconcatenation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::expressions::StringConcatenation)
-
-
-def test_ccsl::expressions::stringconcatenation_constructor_exists():
-    assert callable(ccsl::expressions::StringConcatenation.__init__)
-
-
-def test_ccsl::expressions::stringconcatenation_constructor_args():
-    sig = inspect.signature(ccsl::expressions::StringConcatenation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_block_is_not_abstract():
-    assert not inspect.isabstract(Block)
-
-
-def test_block_constructor_exists():
-    assert callable(Block.__init__)
-
-
-def test_block_constructor_args():
-    sig = inspect.signature(Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::controlflow::switchcaseblock_is_not_abstract():
-    assert not inspect.isabstract(ccsl::controlFlow::SwitchCaseBlock)
-
-
-def test_ccsl::controlflow::switchcaseblock_constructor_exists():
-    assert callable(ccsl::controlFlow::SwitchCaseBlock.__init__)
-
-
-def test_ccsl::controlflow::switchcaseblock_constructor_args():
-    sig = inspect.signature(ccsl::controlFlow::SwitchCaseBlock.__init__)
-    params = list(sig.parameters.keys())
-    assert "default" in params, "Missing parameter 'default'"
-
-def test_ccsl::controlflow::switchcaseblock_has_default():
-    assert hasattr(ccsl::controlFlow::SwitchCaseBlock, "default")
-    descriptor = None
-    for klass in ccsl::controlFlow::SwitchCaseBlock.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_controlflow::switchcaseblock_is_not_abstract():
-    assert not inspect.isabstract(controlFlow::SwitchCaseBlock)
-
-
-def test_controlflow::switchcaseblock_constructor_exists():
-    assert callable(controlFlow::SwitchCaseBlock.__init__)
-
-
-def test_controlflow::switchcaseblock_constructor_args():
-    sig = inspect.signature(controlFlow::SwitchCaseBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controlflow_is_not_abstract():
-    assert not inspect.isabstract(ControlFlow)
-
-
-def test_controlflow_constructor_exists():
-    assert callable(ControlFlow.__init__)
-
-
-def test_controlflow_constructor_args():
-    sig = inspect.signature(ControlFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::controlflow::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::controlFlow::IfStatement)
-
-
-def test_ccsl::controlflow::ifstatement_constructor_exists():
-    assert callable(ccsl::controlFlow::IfStatement.__init__)
-
-
-def test_ccsl::controlflow::ifstatement_constructor_args():
-    sig = inspect.signature(ccsl::controlFlow::IfStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::controlflow::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::controlFlow::LoopStatement)
-
-
-def test_ccsl::controlflow::loopstatement_constructor_exists():
-    assert callable(ccsl::controlFlow::LoopStatement.__init__)
-
-
-def test_ccsl::controlflow::loopstatement_constructor_args():
-    sig = inspect.signature(ccsl::controlFlow::LoopStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::controlflow::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::controlFlow::SwitchStatement)
-
-
-def test_ccsl::controlflow::switchstatement_constructor_exists():
-    assert callable(ccsl::controlFlow::SwitchStatement.__init__)
-
-
-def test_ccsl::controlflow::switchstatement_constructor_args():
-    sig = inspect.signature(ccsl::controlFlow::SwitchStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literalvalue_is_not_abstract():
-    assert not inspect.isabstract(LiteralValue)
-
-
-def test_literalvalue_constructor_exists():
-    assert callable(LiteralValue.__init__)
-
-
-def test_literalvalue_constructor_args():
-    sig = inspect.signature(LiteralValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::literalvalues::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(ccsl::literalValues::StringLiteral)
-
-
-def test_ccsl::literalvalues::stringliteral_constructor_exists():
-    assert callable(ccsl::literalValues::StringLiteral.__init__)
-
-
-def test_ccsl::literalvalues::stringliteral_constructor_args():
-    sig = inspect.signature(ccsl::literalValues::StringLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::literalvalues::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(ccsl::literalValues::CharacterLiteral)
-
-
-def test_ccsl::literalvalues::characterliteral_constructor_exists():
-    assert callable(ccsl::literalValues::CharacterLiteral.__init__)
-
-
-def test_ccsl::literalvalues::characterliteral_constructor_args():
-    sig = inspect.signature(ccsl::literalValues::CharacterLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::literalvalues::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(ccsl::literalValues::NumberLiteral)
-
-
-def test_ccsl::literalvalues::numberliteral_constructor_exists():
-    assert callable(ccsl::literalValues::NumberLiteral.__init__)
-
-
-def test_ccsl::literalvalues::numberliteral_constructor_args():
-    sig = inspect.signature(ccsl::literalValues::NumberLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::literalvalues::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(ccsl::literalValues::BooleanLiteral)
-
-
-def test_ccsl::literalvalues::booleanliteral_constructor_exists():
-    assert callable(ccsl::literalValues::BooleanLiteral.__init__)
-
-
-def test_ccsl::literalvalues::booleanliteral_constructor_args():
-    sig = inspect.signature(ccsl::literalValues::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::literalvalues::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(ccsl::literalValues::NullLiteral)
-
-
-def test_ccsl::literalvalues::nullliteral_constructor_exists():
-    assert callable(ccsl::literalValues::NullLiteral.__init__)
-
-
-def test_ccsl::literalvalues::nullliteral_constructor_args():
-    sig = inspect.signature(ccsl::literalValues::NullLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::ThrowStatement)
-
-
-def test_ccsl::statements::throwstatement_constructor_exists():
-    assert callable(ccsl::statements::ThrowStatement.__init__)
-
-
-def test_ccsl::statements::throwstatement_constructor_args():
-    sig = inspect.signature(ccsl::statements::ThrowStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statement_is_not_abstract():
-    assert not inspect.isabstract(Statement)
-
-
-def test_statement_constructor_exists():
-    assert callable(Statement.__init__)
-
-
-def test_statement_constructor_args():
-    sig = inspect.signature(Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::ReturnStatement)
-
-
-def test_ccsl::statements::returnstatement_constructor_exists():
-    assert callable(ccsl::statements::ReturnStatement.__init__)
-
-
-def test_ccsl::statements::returnstatement_constructor_args():
-    sig = inspect.signature(ccsl::statements::ReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::instanceof_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::InstanceOf)
-
-
-def test_ccsl::statements::instanceof_constructor_exists():
-    assert callable(ccsl::statements::InstanceOf.__init__)
-
-
-def test_ccsl::statements::instanceof_constructor_args():
-    sig = inspect.signature(ccsl::statements::InstanceOf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::trycatch::catchclause_is_not_abstract():
-    assert not inspect.isabstract(ccsl::tryCatch::CatchClause)
-
-
-def test_ccsl::trycatch::catchclause_constructor_exists():
-    assert callable(ccsl::tryCatch::CatchClause.__init__)
-
-
-def test_ccsl::trycatch::catchclause_constructor_args():
-    sig = inspect.signature(ccsl::tryCatch::CatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::literalvalues::literalvalue_is_not_abstract():
-    assert not inspect.isabstract(ccsl::literalValues::LiteralValue)
-
-
-def test_ccsl::literalvalues::literalvalue_constructor_exists():
-    assert callable(ccsl::literalValues::LiteralValue.__init__)
-
-
-def test_ccsl::literalvalues::literalvalue_constructor_args():
-    sig = inspect.signature(ccsl::literalValues::LiteralValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_ccsl::literalvalues::literalvalue_has_value():
-    assert hasattr(ccsl::literalValues::LiteralValue, "value")
-    descriptor = None
-    for klass in ccsl::literalValues::LiteralValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::annotation::annotation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::annotation::Annotation)
-
-
-def test_ccsl::annotation::annotation_constructor_exists():
-    assert callable(ccsl::annotation::Annotation.__init__)
-
-
-def test_ccsl::annotation::annotation_constructor_args():
-    sig = inspect.signature(ccsl::annotation::Annotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::import::importstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::import::ImportStatement)
-
-
-def test_ccsl::import::importstatement_constructor_exists():
-    assert callable(ccsl::import::ImportStatement.__init__)
-
-
-def test_ccsl::import::importstatement_constructor_args():
-    sig = inspect.signature(ccsl::import::ImportStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::arraycreation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::ArrayCreation)
-
-
-def test_ccsl::statements::arraycreation_constructor_exists():
-    assert callable(ccsl::statements::ArrayCreation.__init__)
-
-
-def test_ccsl::statements::arraycreation_constructor_args():
-    sig = inspect.signature(ccsl::statements::ArrayCreation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::BreakStatement)
-
-
-def test_ccsl::statements::breakstatement_constructor_exists():
-    assert callable(ccsl::statements::BreakStatement.__init__)
-
-
-def test_ccsl::statements::breakstatement_constructor_args():
-    sig = inspect.signature(ccsl::statements::BreakStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::thisstatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::ThisStatement)
-
-
-def test_ccsl::statements::thisstatement_constructor_exists():
-    assert callable(ccsl::statements::ThisStatement.__init__)
-
-
-def test_ccsl::statements::thisstatement_constructor_args():
-    sig = inspect.signature(ccsl::statements::ThisStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::ContinueStatement)
-
-
-def test_ccsl::statements::continuestatement_constructor_exists():
-    assert callable(ccsl::statements::ContinueStatement.__init__)
-
-
-def test_ccsl::statements::continuestatement_constructor_args():
-    sig = inspect.signature(ccsl::statements::ContinueStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::assignment::abstractassignment_is_not_abstract():
-    assert not inspect.isabstract(ccsl::assignment::AbstractAssignment)
-
-
-def test_ccsl::assignment::abstractassignment_constructor_exists():
-    assert callable(ccsl::assignment::AbstractAssignment.__init__)
-
-
-def test_ccsl::assignment::abstractassignment_constructor_args():
-    sig = inspect.signature(ccsl::assignment::AbstractAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::trycatch::trystatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::tryCatch::TryStatement)
-
-
-def test_ccsl::trycatch::trystatement_constructor_exists():
-    assert callable(ccsl::tryCatch::TryStatement.__init__)
-
-
-def test_ccsl::trycatch::trystatement_constructor_args():
-    sig = inspect.signature(ccsl::tryCatch::TryStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::expressions::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(ccsl::expressions::ParenthesizedExpression)
-
-
-def test_ccsl::expressions::parenthesizedexpression_constructor_exists():
-    assert callable(ccsl::expressions::ParenthesizedExpression.__init__)
-
-
-def test_ccsl::expressions::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(ccsl::expressions::ParenthesizedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::synchronizedblock_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::SynchronizedBlock)
-
-
-def test_ccsl::statements::synchronizedblock_constructor_exists():
-    assert callable(ccsl::statements::SynchronizedBlock.__init__)
-
-
-def test_ccsl::statements::synchronizedblock_constructor_args():
-    sig = inspect.signature(ccsl::statements::SynchronizedBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::access_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::Access)
-
-
-def test_ccsl::statements::access_constructor_exists():
-    assert callable(ccsl::statements::Access.__init__)
-
-
-def test_ccsl::statements::access_constructor_args():
-    sig = inspect.signature(ccsl::statements::Access.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::invocation::invocation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::invocation::Invocation)
-
-
-def test_ccsl::invocation::invocation_constructor_exists():
-    assert callable(ccsl::invocation::Invocation.__init__)
-
-
-def test_ccsl::invocation::invocation_constructor_args():
-    sig = inspect.signature(ccsl::invocation::Invocation.__init__)
-    params = list(sig.parameters.keys())
-    assert "argsKind" in params, "Missing parameter 'argsKind'"
-
-def test_ccsl::invocation::invocation_has_argsKind():
-    assert hasattr(ccsl::invocation::Invocation, "argsKind")
-    descriptor = None
-    for klass in ccsl::invocation::Invocation.__mro__:
-        if "argsKind" in klass.__dict__:
-            descriptor = klass.__dict__["argsKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::expressions::operatorexpression_is_not_abstract():
-    assert not inspect.isabstract(ccsl::expressions::OperatorExpression)
-
-
-def test_ccsl::expressions::operatorexpression_constructor_exists():
-    assert callable(ccsl::expressions::OperatorExpression.__init__)
-
-
-def test_ccsl::expressions::operatorexpression_constructor_args():
-    sig = inspect.signature(ccsl::expressions::OperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::EmptyStatement)
-
-
-def test_ccsl::statements::emptystatement_constructor_exists():
-    assert callable(ccsl::statements::EmptyStatement.__init__)
-
-
-def test_ccsl::statements::emptystatement_constructor_args():
-    sig = inspect.signature(ccsl::statements::EmptyStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::namedelementaccess_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::NamedElementAccess)
-
-
-def test_ccsl::statements::namedelementaccess_constructor_exists():
-    assert callable(ccsl::statements::NamedElementAccess.__init__)
-
-
-def test_ccsl::statements::namedelementaccess_constructor_args():
-    sig = inspect.signature(ccsl::statements::NamedElementAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::statement_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::Statement)
-
-
-def test_ccsl::statements::statement_constructor_exists():
-    assert callable(ccsl::statements::Statement.__init__)
-
-
-def test_ccsl::statements::statement_constructor_args():
-    sig = inspect.signature(ccsl::statements::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_method::simplemethod_is_not_abstract():
-    assert not inspect.isabstract(method::SimpleMethod)
-
-
-def test_method::simplemethod_constructor_exists():
-    assert callable(method::SimpleMethod.__init__)
-
-
-def test_method::simplemethod_constructor_args():
-    sig = inspect.signature(method::SimpleMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::method::method_is_not_abstract():
-    assert not inspect.isabstract(ccsl::method::Method)
-
-
-def test_ccsl::method::method_constructor_exists():
-    assert callable(ccsl::method::Method.__init__)
-
-
-def test_ccsl::method::method_constructor_args():
-    sig = inspect.signature(ccsl::method::Method.__init__)
-    params = list(sig.parameters.keys())
-    assert "inheritance" in params, "Missing parameter 'inheritance'"
-    assert "final" in params, "Missing parameter 'final'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_ccsl::method::method_has_inheritance():
-    assert hasattr(ccsl::method::Method, "inheritance")
-    descriptor = None
-    for klass in ccsl::method::Method.__mro__:
-        if "inheritance" in klass.__dict__:
-            descriptor = klass.__dict__["inheritance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::method::method_has_final():
-    assert hasattr(ccsl::method::Method, "final")
-    descriptor = None
-    for klass in ccsl::method::Method.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::method::method_has_abstract():
-    assert hasattr(ccsl::method::Method, "abstract")
-    descriptor = None
-    for klass in ccsl::method::Method.__mro__:
-        if "abstract" in klass.__dict__:
-            descriptor = klass.__dict__["abstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::method::method_has_static():
-    assert hasattr(ccsl::method::Method, "static")
-    descriptor = None
-    for klass in ccsl::method::Method.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_variable::parametervariable_is_not_abstract():
-    assert not inspect.isabstract(variable::ParameterVariable)
-
-
-def test_variable::parametervariable_constructor_exists():
-    assert callable(variable::ParameterVariable.__init__)
-
-
-def test_variable::parametervariable_constructor_args():
-    sig = inspect.signature(variable::ParameterVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_elements::element_is_not_abstract():
-    assert not inspect.isabstract(elements::Element)
-
-
-def test_elements::element_constructor_exists():
-    assert callable(elements::Element.__init__)
-
-
-def test_elements::element_constructor_args():
-    sig = inspect.signature(elements::Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::method::simplemethod_is_not_abstract():
-    assert not inspect.isabstract(ccsl::method::SimpleMethod)
-
-
-def test_ccsl::method::simplemethod_constructor_exists():
-    assert callable(ccsl::method::SimpleMethod.__init__)
-
-
-def test_ccsl::method::simplemethod_constructor_args():
-    sig = inspect.signature(ccsl::method::SimpleMethod.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "paramsKind" in params, "Missing parameter 'paramsKind'"
-
-def test_ccsl::method::simplemethod_has_visibility():
-    assert hasattr(ccsl::method::SimpleMethod, "visibility")
-    descriptor = None
-    for klass in ccsl::method::SimpleMethod.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::method::simplemethod_has_paramsKind():
-    assert hasattr(ccsl::method::SimpleMethod, "paramsKind")
-    descriptor = None
-    for klass in ccsl::method::SimpleMethod.__mro__:
-        if "paramsKind" in klass.__dict__:
-            descriptor = klass.__dict__["paramsKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simplemethod_is_not_abstract():
-    assert not inspect.isabstract(SimpleMethod)
-
-
-def test_simplemethod_constructor_exists():
-    assert callable(SimpleMethod.__init__)
-
-
-def test_simplemethod_constructor_args():
-    sig = inspect.signature(SimpleMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::method::constructor_is_not_abstract():
-    assert not inspect.isabstract(ccsl::method::Constructor)
-
-
-def test_ccsl::method::constructor_constructor_exists():
-    assert callable(ccsl::method::Constructor.__init__)
-
-
-def test_ccsl::method::constructor_constructor_args():
-    sig = inspect.signature(ccsl::method::Constructor.__init__)
-    params = list(sig.parameters.keys())
-    assert "avaliableInSourceCode" in params, "Missing parameter 'avaliableInSourceCode'"
-
-def test_ccsl::method::constructor_has_avaliableInSourceCode():
-    assert hasattr(ccsl::method::Constructor, "avaliableInSourceCode")
-    descriptor = None
-    for klass in ccsl::method::Constructor.__mro__:
-        if "avaliableInSourceCode" in klass.__dict__:
-            descriptor = klass.__dict__["avaliableInSourceCode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::statements::instancecreation_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::InstanceCreation)
-
-
-def test_ccsl::statements::instancecreation_constructor_exists():
-    assert callable(ccsl::statements::InstanceCreation.__init__)
-
-
-def test_ccsl::statements::instancecreation_constructor_args():
-    sig = inspect.signature(ccsl::statements::InstanceCreation.__init__)
-    params = list(sig.parameters.keys())
-    assert "argsKind" in params, "Missing parameter 'argsKind'"
-
-def test_ccsl::statements::instancecreation_has_argsKind():
-    assert hasattr(ccsl::statements::InstanceCreation, "argsKind")
-    descriptor = None
-    for klass in ccsl::statements::InstanceCreation.__mro__:
-        if "argsKind" in klass.__dict__:
-            descriptor = klass.__dict__["argsKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::statements::vardeclaration_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::VarDeclaration)
-
-
-def test_ccsl::statements::vardeclaration_constructor_exists():
-    assert callable(ccsl::statements::VarDeclaration.__init__)
-
-
-def test_ccsl::statements::vardeclaration_constructor_args():
-    sig = inspect.signature(ccsl::statements::VarDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::block_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::Block)
-
-
-def test_ccsl::statements::block_constructor_exists():
-    assert callable(ccsl::statements::Block.__init__)
-
-
-def test_ccsl::statements::block_constructor_args():
-    sig = inspect.signature(ccsl::statements::Block.__init__)
-    params = list(sig.parameters.keys())
-    assert "statementsKind" in params, "Missing parameter 'statementsKind'"
-
-def test_ccsl::statements::block_has_statementsKind():
-    assert hasattr(ccsl::statements::Block, "statementsKind")
-    descriptor = None
-    for klass in ccsl::statements::Block.__mro__:
-        if "statementsKind" in klass.__dict__:
-            descriptor = klass.__dict__["statementsKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::statements::controlflow_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::ControlFlow)
-
-
-def test_ccsl::statements::controlflow_constructor_exists():
-    assert callable(ccsl::statements::ControlFlow.__init__)
-
-
-def test_ccsl::statements::controlflow_constructor_args():
-    sig = inspect.signature(ccsl::statements::ControlFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_access_is_not_abstract():
-    assert not inspect.isabstract(Access)
-
-
-def test_access_constructor_exists():
-    assert callable(Access.__init__)
-
-
-def test_access_constructor_args():
-    sig = inspect.signature(Access.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::datatypeaccess_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::DataTypeAccess)
-
-
-def test_ccsl::statements::datatypeaccess_constructor_exists():
-    assert callable(ccsl::statements::DataTypeAccess.__init__)
-
-
-def test_ccsl::statements::datatypeaccess_constructor_args():
-    sig = inspect.signature(ccsl::statements::DataTypeAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::statements::variableaccess_is_not_abstract():
-    assert not inspect.isabstract(ccsl::statements::VariableAccess)
-
-
-def test_ccsl::statements::variableaccess_constructor_exists():
-    assert callable(ccsl::statements::VariableAccess.__init__)
-
-
-def test_ccsl::statements::variableaccess_constructor_args():
-    sig = inspect.signature(ccsl::statements::VariableAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_complextype::jclass_is_not_abstract():
-    assert not inspect.isabstract(complexType::JClass)
-
-
-def test_complextype::jclass_constructor_exists():
-    assert callable(complexType::JClass.__init__)
-
-
-def test_complextype::jclass_constructor_args():
-    sig = inspect.signature(complexType::JClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_method::constructor_is_not_abstract():
-    assert not inspect.isabstract(method::Constructor)
-
-
-def test_method::constructor_constructor_exists():
-    assert callable(method::Constructor.__init__)
-
-
-def test_method::constructor_constructor_args():
-    sig = inspect.signature(method::Constructor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_datatype::objecttype_is_not_abstract():
-    assert not inspect.isabstract(datatype::ObjectType)
-
-
-def test_datatype::objecttype_constructor_exists():
-    assert callable(datatype::ObjectType.__init__)
-
-
-def test_datatype::objecttype_constructor_args():
-    sig = inspect.signature(datatype::ObjectType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::complextype::declaredtype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::complexType::DeclaredType)
-
-
-def test_ccsl::complextype::declaredtype_constructor_exists():
-    assert callable(ccsl::complexType::DeclaredType.__init__)
-
-
-def test_ccsl::complextype::declaredtype_constructor_args():
-    sig = inspect.signature(ccsl::complexType::DeclaredType.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_ccsl::complextype::declaredtype_has_visibility():
-    assert hasattr(ccsl::complexType::DeclaredType, "visibility")
-    descriptor = None
-    for klass in ccsl::complexType::DeclaredType.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::complextype::declaredtype_has_static():
-    assert hasattr(ccsl::complexType::DeclaredType, "static")
-    descriptor = None
-    for klass in ccsl::complexType::DeclaredType.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_complextype_is_not_abstract():
-    assert not inspect.isabstract(ComplexType)
-
-
-def test_complextype_constructor_exists():
-    assert callable(ComplexType.__init__)
-
-
-def test_complextype_constructor_args():
-    sig = inspect.signature(ComplexType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::datatype::generictype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::datatype::GenericType)
-
-
-def test_ccsl::datatype::generictype_constructor_exists():
-    assert callable(ccsl::datatype::GenericType.__init__)
-
-
-def test_ccsl::datatype::generictype_constructor_args():
-    sig = inspect.signature(ccsl::datatype::GenericType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::complextype::anonymousclass_is_not_abstract():
-    assert not inspect.isabstract(ccsl::complexType::AnonymousClass)
-
-
-def test_ccsl::complextype::anonymousclass_constructor_exists():
-    assert callable(ccsl::complexType::AnonymousClass.__init__)
-
-
-def test_ccsl::complextype::anonymousclass_constructor_args():
-    sig = inspect.signature(ccsl::complexType::AnonymousClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_complextype::complextype_is_not_abstract():
-    assert not inspect.isabstract(complexType::ComplexType)
-
-
-def test_complextype::complextype_constructor_exists():
-    assert callable(complexType::ComplexType.__init__)
-
-
-def test_complextype::complextype_constructor_args():
-    sig = inspect.signature(complexType::ComplexType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::complextype::jclass_is_not_abstract():
-    assert not inspect.isabstract(ccsl::complexType::JClass)
-
-
-def test_ccsl::complextype::jclass_constructor_exists():
-    assert callable(ccsl::complexType::JClass.__init__)
-
-
-def test_ccsl::complextype::jclass_constructor_args():
-    sig = inspect.signature(ccsl::complexType::JClass.__init__)
-    params = list(sig.parameters.keys())
-    assert "inheritance" in params, "Missing parameter 'inheritance'"
-
-def test_ccsl::complextype::jclass_has_inheritance():
-    assert hasattr(ccsl::complexType::JClass, "inheritance")
-    descriptor = None
-    for klass in ccsl::complexType::JClass.__mro__:
-        if "inheritance" in klass.__dict__:
-            descriptor = klass.__dict__["inheritance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ccsl::complextype::jinterface_is_not_abstract():
-    assert not inspect.isabstract(ccsl::complexType::JInterface)
-
-
-def test_ccsl::complextype::jinterface_constructor_exists():
-    assert callable(ccsl::complexType::JInterface.__init__)
-
-
-def test_ccsl::complextype::jinterface_constructor_args():
-    sig = inspect.signature(ccsl::complexType::JInterface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_variable::initializablevariable_is_not_abstract():
-    assert not inspect.isabstract(variable::InitializableVariable)
-
-
-def test_variable::initializablevariable_constructor_exists():
-    assert callable(variable::InitializableVariable.__init__)
-
-
-def test_variable::initializablevariable_constructor_args():
-    sig = inspect.signature(variable::InitializableVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::variable::fieldvariable_is_not_abstract():
-    assert not inspect.isabstract(ccsl::variable::FieldVariable)
-
-
-def test_ccsl::variable::fieldvariable_constructor_exists():
-    assert callable(ccsl::variable::FieldVariable.__init__)
-
-
-def test_ccsl::variable::fieldvariable_constructor_args():
-    sig = inspect.signature(ccsl::variable::FieldVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_ccsl::variable::fieldvariable_has_visibility():
-    assert hasattr(ccsl::variable::FieldVariable, "visibility")
-    descriptor = None
-    for klass in ccsl::variable::FieldVariable.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ccsl::variable::fieldvariable_has_static():
-    assert hasattr(ccsl::variable::FieldVariable, "static")
-    descriptor = None
-    for klass in ccsl::variable::FieldVariable.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statements::statement_is_not_abstract():
-    assert not inspect.isabstract(statements::Statement)
-
-
-def test_statements::statement_constructor_exists():
-    assert callable(statements::Statement.__init__)
-
-
-def test_statements::statement_constructor_args():
-    sig = inspect.signature(statements::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_declaredtype_is_not_abstract():
-    assert not inspect.isabstract(DeclaredType)
-
-
-def test_declaredtype_constructor_exists():
-    assert callable(DeclaredType.__init__)
-
-
-def test_declaredtype_constructor_args():
-    sig = inspect.signature(DeclaredType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ccsl::complextype::annotationtype_is_not_abstract():
-    assert not inspect.isabstract(ccsl::complexType::AnnotationType)
-
-
-def test_ccsl::complextype::annotationtype_constructor_exists():
-    assert callable(ccsl::complexType::AnnotationType.__init__)
-
-
-def test_ccsl::complextype::annotationtype_constructor_args():
-    sig = inspect.signature(ccsl::complexType::AnnotationType.__init__)
-    params = list(sig.parameters.keys())
-
-def test_unaryassignmentoperator_exists():
-    # Check that the Enumeration exists
-    assert UnaryAssignmentOperator is not None
-
-def test_unaryassignmentoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryAssignmentOperator]
-    expected_literals = [
-        "ANY",
-        "DECREMENT",
-        "INCREMENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryAssignmentOperator"
-
-def test_logicoperator_exists():
-    # Check that the Enumeration exists
-    assert LogicOperator is not None
-
-def test_logicoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LogicOperator]
-    expected_literals = [
-        "OR",
-        "IF_THEN",
-        "AND",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LogicOperator"
-
-def test_equationoperator_exists():
-    # Check that the Enumeration exists
-    assert EquationOperator is not None
-
-def test_equationoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EquationOperator]
-    expected_literals = [
-        "PLUS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EquationOperator"
-
-def test_assignmentoperator_exists():
-    # Check that the Enumeration exists
-    assert AssignmentOperator is not None
-
-def test_assignmentoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssignmentOperator]
-    expected_literals = [
-        "PLUS_ASSIGN",
-        "ANY",
-        "ASSIGN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
-
-def test_inheritance_exists():
-    # Check that the Enumeration exists
-    assert Inheritance is not None
-
-def test_inheritance_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Inheritance]
-    expected_literals = [
-        "ANY",
-        "ABSTRACT",
-        "NONE",
-        "FINAL",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Inheritance"
-
-def test_booleanoperator_exists():
-    # Check that the Enumeration exists
-    assert BooleanOperator is not None
-
-def test_booleanoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanOperator]
-    expected_literals = [
-        "AND",
-        "NOT",
-        "LESS_THAN_OR_EQUAL_TO",
-        "NOT_EQUAL_TO",
-        "EQUAL_TO",
-        "GREATER_THAN_OR_EQUAL_TO",
-        "OR",
-        "LESS_THAN",
-        "GREATER_THAN",
-        "ANY",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
-
-def test_arithmeticoperator_exists():
-    # Check that the Enumeration exists
-    assert ArithmeticOperator is not None
-
-def test_arithmeticoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArithmeticOperator]
-    expected_literals = [
-        "MULTIPLICATION",
-        "DIVISION",
-        "SUBTRACTION",
-        "ADDITION",
-        "UNDEFINED",
-        "MODULUS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArithmeticOperator"
-
-def test_visibility_exists():
-    # Check that the Enumeration exists
-    assert Visibility is not None
-
-def test_visibility_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Visibility]
-    expected_literals = [
-        "ANY",
-        "PRIVATE",
-        "PROTECTED",
-        "PUBLIC",
-        "PACKAGE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Visibility"
 
 def test_collectionkind_exists():
     # Check that the Enumeration exists
@@ -3287,6 +3148,145 @@ def test_collectionkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CollectionKind"
 
+def test_equationoperator_exists():
+    # Check that the Enumeration exists
+    assert EquationOperator is not None
+
+def test_equationoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EquationOperator]
+    expected_literals = [
+        "PLUS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EquationOperator"
+
+def test_unaryassignmentoperator_exists():
+    # Check that the Enumeration exists
+    assert UnaryAssignmentOperator is not None
+
+def test_unaryassignmentoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryAssignmentOperator]
+    expected_literals = [
+        "DECREMENT",
+        "ANY",
+        "INCREMENT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryAssignmentOperator"
+
+def test_inheritance_exists():
+    # Check that the Enumeration exists
+    assert Inheritance is not None
+
+def test_inheritance_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Inheritance]
+    expected_literals = [
+        "NONE",
+        "ABSTRACT",
+        "FINAL",
+        "ANY",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Inheritance"
+
+def test_assignmentoperator_exists():
+    # Check that the Enumeration exists
+    assert AssignmentOperator is not None
+
+def test_assignmentoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssignmentOperator]
+    expected_literals = [
+        "ANY",
+        "PLUS_ASSIGN",
+        "ASSIGN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
+
+def test_visibility_exists():
+    # Check that the Enumeration exists
+    assert Visibility is not None
+
+def test_visibility_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Visibility]
+    expected_literals = [
+        "ANY",
+        "PROTECTED",
+        "PACKAGE",
+        "PRIVATE",
+        "PUBLIC",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Visibility"
+
+def test_arithmeticoperator_exists():
+    # Check that the Enumeration exists
+    assert ArithmeticOperator is not None
+
+def test_arithmeticoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ArithmeticOperator]
+    expected_literals = [
+        "SUBTRACTION",
+        "ADDITION",
+        "DIVISION",
+        "MODULUS",
+        "UNDEFINED",
+        "MULTIPLICATION",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ArithmeticOperator"
+
+def test_logicoperator_exists():
+    # Check that the Enumeration exists
+    assert LogicOperator is not None
+
+def test_logicoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LogicOperator]
+    expected_literals = [
+        "OR",
+        "AND",
+        "IF_THEN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LogicOperator"
+
+def test_booleanoperator_exists():
+    # Check that the Enumeration exists
+    assert BooleanOperator is not None
+
+def test_booleanoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BooleanOperator]
+    expected_literals = [
+        "ANY",
+        "EQUAL_TO",
+        "LESS_THAN_OR_EQUAL_TO",
+        "OR",
+        "GREATER_THAN",
+        "GREATER_THAN_OR_EQUAL_TO",
+        "NOT",
+        "NOT_EQUAL_TO",
+        "AND",
+        "LESS_THAN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -3299,20 +3299,257 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-method::Method_strategy = st.builds(
-    method::Method,
+PrimitiveType_strategy = st.builds(
+    PrimitiveType,
 )
-variable::FieldVariable_strategy = st.builds(
-    variable::FieldVariable,
+ccsl_datatype_StringPrimitiveType_strategy = st.builds(
+    ccsl_datatype_StringPrimitiveType,
 )
-import::ImportStatement_strategy = st.builds(
-    import::ImportStatement,
+DataType_strategy = st.builds(
+    DataType,
 )
-complexType::JInterface_strategy = st.builds(
-    complexType::JInterface,
+ccsl_datatype_PrimitiveType_strategy = st.builds(
+    ccsl_datatype_PrimitiveType,
 )
-ccsl::elements::Element_strategy = st.builds(
-    ccsl::elements::Element,
+annotation_Annotation_strategy = st.builds(
+    annotation_Annotation,
+)
+complexType_AnnotationType_strategy = st.builds(
+    complexType_AnnotationType,
+)
+statements_Block_strategy = st.builds(
+    statements_Block,
+)
+tryCatch_CatchClause_strategy = st.builds(
+    tryCatch_CatchClause,
+)
+UnaryAssignment_strategy = st.builds(
+    UnaryAssignment,
+)
+ccsl_assignment_PostfixUnaryAssignment_strategy = st.builds(
+    ccsl_assignment_PostfixUnaryAssignment,
+)
+ccsl_assignment_PrefixUnaryAssignment_strategy = st.builds(
+    ccsl_assignment_PrefixUnaryAssignment,
+)
+AbstractAssignment_strategy = st.builds(
+    AbstractAssignment,
+)
+ccsl_assignment_UnaryAssignment_strategy = st.builds(
+    ccsl_assignment_UnaryAssignment,
+    operator=
+        safe_text
+)
+ccsl_assignment_Assignment_strategy = st.builds(
+    ccsl_assignment_Assignment,
+    operator=
+        safe_text
+)
+OperatorExpression_strategy = st.builds(
+    OperatorExpression,
+)
+ccsl_expressions_InfixExpression_strategy = st.builds(
+    ccsl_expressions_InfixExpression,
+)
+ccsl_expressions_BooleanExpression_strategy = st.builds(
+    ccsl_expressions_BooleanExpression,
+    booleanOperator=
+        safe_text
+)
+ccsl_expressions_ArithmeticExpression_strategy = st.builds(
+    ccsl_expressions_ArithmeticExpression,
+    arithmeticOperator=
+        safe_text
+)
+ccsl_expressions_StringConcatenation_strategy = st.builds(
+    ccsl_expressions_StringConcatenation,
+)
+Block_strategy = st.builds(
+    Block,
+)
+ccsl_controlFlow_SwitchCaseBlock_strategy = st.builds(
+    ccsl_controlFlow_SwitchCaseBlock,
+    default=
+        safe_text
+)
+controlFlow_SwitchCaseBlock_strategy = st.builds(
+    controlFlow_SwitchCaseBlock,
+)
+ControlFlow_strategy = st.builds(
+    ControlFlow,
+)
+ccsl_controlFlow_LoopStatement_strategy = st.builds(
+    ccsl_controlFlow_LoopStatement,
+)
+ccsl_controlFlow_IfStatement_strategy = st.builds(
+    ccsl_controlFlow_IfStatement,
+)
+ccsl_controlFlow_SwitchStatement_strategy = st.builds(
+    ccsl_controlFlow_SwitchStatement,
+)
+LiteralValue_strategy = st.builds(
+    LiteralValue,
+)
+ccsl_literalValues_BooleanLiteral_strategy = st.builds(
+    ccsl_literalValues_BooleanLiteral,
+)
+ccsl_literalValues_StringLiteral_strategy = st.builds(
+    ccsl_literalValues_StringLiteral,
+)
+ccsl_literalValues_CharacterLiteral_strategy = st.builds(
+    ccsl_literalValues_CharacterLiteral,
+)
+ccsl_literalValues_NumberLiteral_strategy = st.builds(
+    ccsl_literalValues_NumberLiteral,
+)
+ccsl_literalValues_NullLiteral_strategy = st.builds(
+    ccsl_literalValues_NullLiteral,
+)
+ccsl_statements_ThrowStatement_strategy = st.builds(
+    ccsl_statements_ThrowStatement,
+)
+Statement_strategy = st.builds(
+    Statement,
+)
+ccsl_statements_ArrayCreation_strategy = st.builds(
+    ccsl_statements_ArrayCreation,
+)
+ccsl_statements_ContinueStatement_strategy = st.builds(
+    ccsl_statements_ContinueStatement,
+)
+ccsl_expressions_ParenthesizedExpression_strategy = st.builds(
+    ccsl_expressions_ParenthesizedExpression,
+)
+ccsl_statements_Access_strategy = st.builds(
+    ccsl_statements_Access,
+)
+ccsl_statements_SynchronizedBlock_strategy = st.builds(
+    ccsl_statements_SynchronizedBlock,
+)
+ccsl_expressions_OperatorExpression_strategy = st.builds(
+    ccsl_expressions_OperatorExpression,
+)
+ccsl_tryCatch_TryStatement_strategy = st.builds(
+    ccsl_tryCatch_TryStatement,
+)
+ccsl_annotation_Annotation_strategy = st.builds(
+    ccsl_annotation_Annotation,
+)
+ccsl_literalValues_LiteralValue_strategy = st.builds(
+    ccsl_literalValues_LiteralValue,
+    value=
+        safe_text
+)
+ccsl_assignment_AbstractAssignment_strategy = st.builds(
+    ccsl_assignment_AbstractAssignment,
+)
+ccsl_tryCatch_CatchClause_strategy = st.builds(
+    ccsl_tryCatch_CatchClause,
+)
+ccsl_statements_ThisStatement_strategy = st.builds(
+    ccsl_statements_ThisStatement,
+)
+ccsl_statements_ReturnStatement_strategy = st.builds(
+    ccsl_statements_ReturnStatement,
+)
+ccsl_statements_InstanceOf_strategy = st.builds(
+    ccsl_statements_InstanceOf,
+)
+ccsl_statements_BreakStatement_strategy = st.builds(
+    ccsl_statements_BreakStatement,
+)
+ccsl_statements_EmptyStatement_strategy = st.builds(
+    ccsl_statements_EmptyStatement,
+)
+ccsl_statements_NamedElementAccess_strategy = st.builds(
+    ccsl_statements_NamedElementAccess,
+)
+method_SimpleMethod_strategy = st.builds(
+    method_SimpleMethod,
+)
+variable_ParameterVariable_strategy = st.builds(
+    variable_ParameterVariable,
+)
+elements_Element_strategy = st.builds(
+    elements_Element,
+)
+SimpleMethod_strategy = st.builds(
+    SimpleMethod,
+)
+ccsl_method_Constructor_strategy = st.builds(
+    ccsl_method_Constructor,
+    avaliableInSourceCode=
+        safe_text
+)
+ccsl_statements_InstanceCreation_strategy = st.builds(
+    ccsl_statements_InstanceCreation,
+    argsKind=
+        safe_text
+)
+ccsl_statements_VarDeclaration_strategy = st.builds(
+    ccsl_statements_VarDeclaration,
+)
+ccsl_statements_Block_strategy = st.builds(
+    ccsl_statements_Block,
+    statementsKind=
+        safe_text
+)
+ccsl_statements_ControlFlow_strategy = st.builds(
+    ccsl_statements_ControlFlow,
+)
+Access_strategy = st.builds(
+    Access,
+)
+ccsl_statements_DataTypeAccess_strategy = st.builds(
+    ccsl_statements_DataTypeAccess,
+)
+ccsl_statements_VariableAccess_strategy = st.builds(
+    ccsl_statements_VariableAccess,
+)
+complexType_JClass_strategy = st.builds(
+    complexType_JClass,
+)
+method_Constructor_strategy = st.builds(
+    method_Constructor,
+)
+datatype_ObjectType_strategy = st.builds(
+    datatype_ObjectType,
+)
+ComplexType_strategy = st.builds(
+    ComplexType,
+)
+ccsl_complexType_AnonymousClass_strategy = st.builds(
+    ccsl_complexType_AnonymousClass,
+)
+complexType_ComplexType_strategy = st.builds(
+    complexType_ComplexType,
+)
+variable_InitializableVariable_strategy = st.builds(
+    variable_InitializableVariable,
+)
+statements_Statement_strategy = st.builds(
+    statements_Statement,
+)
+DeclaredType_strategy = st.builds(
+    DeclaredType,
+)
+ccsl_complexType_AnnotationType_strategy = st.builds(
+    ccsl_complexType_AnnotationType,
+)
+method_Method_strategy = st.builds(
+    method_Method,
+)
+variable_FieldVariable_strategy = st.builds(
+    variable_FieldVariable,
+)
+import_ImportStatement_strategy = st.builds(
+    import_ImportStatement,
+)
+complexType_JInterface_strategy = st.builds(
+    complexType_JInterface,
+)
+ccsl_elements_Element_strategy = st.builds(
+    ccsl_elements_Element,
     uniqueName=
         safe_text
 )
@@ -3322,52 +3559,92 @@ InjectionStrategy_strategy = st.builds(
 InjectionAction_strategy = st.builds(
     InjectionAction,
 )
-ccsl::Root_strategy = st.builds(
-    ccsl::Root,
+ccsl_Root_strategy = st.builds(
+    ccsl_Root,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-ccsl::variable::InitializableVariable_strategy = st.builds(
-    ccsl::variable::InitializableVariable,
+ccsl_variable_InitializableVariable_strategy = st.builds(
+    ccsl_variable_InitializableVariable,
 )
 InitializableVariable_strategy = st.builds(
     InitializableVariable,
 )
-ccsl::variable::LocalVariable_strategy = st.builds(
-    ccsl::variable::LocalVariable,
+ccsl_variable_LocalVariable_strategy = st.builds(
+    ccsl_variable_LocalVariable,
 )
-annotation::AnnotableElement_strategy = st.builds(
-    annotation::AnnotableElement,
+annotation_AnnotableElement_strategy = st.builds(
+    annotation_AnnotableElement,
 )
-variable::Variable_strategy = st.builds(
-    variable::Variable,
+ccsl_variable_FieldVariable_strategy = st.builds(
+    ccsl_variable_FieldVariable,
+    static=
+        safe_text,
+    visibility=
+        safe_text
 )
-ccsl::variable::ParameterVariable_strategy = st.builds(
-    ccsl::variable::ParameterVariable,
+ccsl_method_SimpleMethod_strategy = st.builds(
+    ccsl_method_SimpleMethod,
+    paramsKind=
+        safe_text,
+    visibility=
+        safe_text
 )
-datatype::DataType_strategy = st.builds(
-    datatype::DataType,
+variable_Variable_strategy = st.builds(
+    variable_Variable,
+)
+ccsl_variable_ParameterVariable_strategy = st.builds(
+    ccsl_variable_ParameterVariable,
+)
+datatype_DataType_strategy = st.builds(
+    datatype_DataType,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ccsl::variable::Variable_strategy = st.builds(
-    ccsl::variable::Variable,
+ccsl_variable_Variable_strategy = st.builds(
+    ccsl_variable_Variable,
     final=
         safe_text
 )
-complexType::DeclaredType_strategy = st.builds(
-    complexType::DeclaredType,
+complexType_DeclaredType_strategy = st.builds(
+    complexType_DeclaredType,
 )
-import::ImportableElement_strategy = st.builds(
-    import::ImportableElement,
+ccsl_complexType_JClass_strategy = st.builds(
+    ccsl_complexType_JClass,
+    inheritance=
+        safe_text
 )
-namedElements::NamedElement_strategy = st.builds(
-    namedElements::NamedElement,
+ccsl_complexType_JInterface_strategy = st.builds(
+    ccsl_complexType_JInterface,
 )
-ccsl::namedElements::Package_strategy = st.builds(
-    ccsl::namedElements::Package,
+import_ImportableElement_strategy = st.builds(
+    import_ImportableElement,
+)
+namedElements_NamedElement_strategy = st.builds(
+    namedElements_NamedElement,
+)
+ccsl_method_Method_strategy = st.builds(
+    ccsl_method_Method,
+    abstract=
+        safe_text,
+    static=
+        safe_text,
+    final=
+        safe_text,
+    inheritance=
+        safe_text
+)
+ccsl_complexType_DeclaredType_strategy = st.builds(
+    ccsl_complexType_DeclaredType,
+    static=
+        safe_text,
+    visibility=
+        safe_text
+)
+ccsl_namedElements_Package_strategy = st.builds(
+    ccsl_namedElements_Package,
 )
 Context_strategy = st.builds(
     Context,
@@ -3375,585 +3652,742 @@ Context_strategy = st.builds(
 Element_strategy = st.builds(
     Element,
 )
-ccsl::complexType::ComplexType_strategy = st.builds(
-    ccsl::complexType::ComplexType,
+ccsl_complexType_ComplexType_strategy = st.builds(
+    ccsl_complexType_ComplexType,
 )
-ccsl::namedElements::NamedElement_strategy = st.builds(
-    ccsl::namedElements::NamedElement,
-    avaliableInSourceCode=
-        safe_text,
+ccsl_namedElements_NamedElement_strategy = st.builds(
+    ccsl_namedElements_NamedElement,
     name=
+        safe_text,
+    avaliableInSourceCode=
         safe_text
+)
+ccsl_annotation_AnnotableElement_strategy = st.builds(
+    ccsl_annotation_AnnotableElement,
+    annotationsKind=
+        safe_text
+)
+ccsl_datatype_DataType_strategy = st.builds(
+    ccsl_datatype_DataType,
+)
+ccsl_statements_Statement_strategy = st.builds(
+    ccsl_statements_Statement,
 )
 Rule_strategy = st.builds(
     Rule,
 )
-ccsl::AtomicRule_strategy = st.builds(
-    ccsl::AtomicRule,
+ccsl_AtomicRule_strategy = st.builds(
+    ccsl_AtomicRule,
 )
-ccsl::CompositeRule_strategy = st.builds(
-    ccsl::CompositeRule,
+ccsl_CompositeRule_strategy = st.builds(
+    ccsl_CompositeRule,
     operator=
         safe_text
 )
 Root_strategy = st.builds(
     Root,
 )
-ccsl::FaultTypeDescription_strategy = st.builds(
-    ccsl::FaultTypeDescription,
+ccsl_FaultTypeDescription_strategy = st.builds(
+    ccsl_FaultTypeDescription,
     name=
         safe_text
 )
-ccsl::Rule_strategy = st.builds(
-    ccsl::Rule,
+ccsl_Rule_strategy = st.builds(
+    ccsl_Rule,
     negated=
         safe_text
 )
-statements::Access_strategy = st.builds(
-    statements::Access,
+statements_Access_strategy = st.builds(
+    statements_Access,
 )
 CcslNumberFunction_strategy = st.builds(
     CcslNumberFunction,
 )
-ccsl::numberFunctions::GetIndexOf_strategy = st.builds(
-    ccsl::numberFunctions::GetIndexOf,
+ccsl_numberFunctions_GetIndexOf_strategy = st.builds(
+    ccsl_numberFunctions_GetIndexOf,
 )
-ccsl::numberFunctions::CcslIntegerLiteral_strategy = st.builds(
-    ccsl::numberFunctions::CcslIntegerLiteral,
+ccsl_numberFunctions_CcslIntegerLiteral_strategy = st.builds(
+    ccsl_numberFunctions_CcslIntegerLiteral,
     value=
         safe_text
 )
-numberFunctions::CcslNumberFunction_strategy = st.builds(
-    numberFunctions::CcslNumberFunction,
+numberFunctions_CcslNumberFunction_strategy = st.builds(
+    numberFunctions_CcslNumberFunction,
 )
-ccsl::filters::EquationFilter_strategy = st.builds(
-    ccsl::filters::EquationFilter,
+ccsl_filters_EquationFilter_strategy = st.builds(
+    ccsl_filters_EquationFilter,
     operator=
         safe_text
 )
 AtomicFilter_strategy = st.builds(
     AtomicFilter,
 )
-ccsl::filters::TemplateFilter_strategy = st.builds(
-    ccsl::filters::TemplateFilter,
-)
-ccsl::filters::FromClosureFilter_strategy = st.builds(
-    ccsl::filters::FromClosureFilter,
-)
-ccsl::filters::SameNameFilter_strategy = st.builds(
-    ccsl::filters::SameNameFilter,
+ccsl_filters_SameNameFilter_strategy = st.builds(
+    ccsl_filters_SameNameFilter,
     ignoreCase=
         safe_text
 )
-ccsl::filters::SuperClassClosureFilter_strategy = st.builds(
-    ccsl::filters::SuperClassClosureFilter,
+ccsl_filters_HasSameReferenceFilter_strategy = st.builds(
+    ccsl_filters_HasSameReferenceFilter,
+)
+ccsl_filters_IsKindOfFilter_strategy = st.builds(
+    ccsl_filters_IsKindOfFilter,
+)
+ccsl_filters_SuperClassClosureFilter_strategy = st.builds(
+    ccsl_filters_SuperClassClosureFilter,
     includesSubClass=
         safe_text
 )
-ccsl::filters::ChildClosureComplexTypeFilter_strategy = st.builds(
-    ccsl::filters::ChildClosureComplexTypeFilter,
+ccsl_filters_IsStringFilter_strategy = st.builds(
+    ccsl_filters_IsStringFilter,
 )
-ccsl::filters::IsStringFilter_strategy = st.builds(
-    ccsl::filters::IsStringFilter,
+ccsl_filters_BlockLastStatementFilter_strategy = st.builds(
+    ccsl_filters_BlockLastStatementFilter,
 )
-ccsl::filters::SuperMethodClosureFilter_strategy = st.builds(
-    ccsl::filters::SuperMethodClosureFilter,
+ccsl_filters_TemplateFilter_strategy = st.builds(
+    ccsl_filters_TemplateFilter,
 )
-ccsl::filters::HasSameReferenceFilter_strategy = st.builds(
-    ccsl::filters::HasSameReferenceFilter,
+ccsl_filters_ChildClosureComplexTypeFilter_strategy = st.builds(
+    ccsl_filters_ChildClosureComplexTypeFilter,
 )
-ccsl::filters::IsKindOfFilter_strategy = st.builds(
-    ccsl::filters::IsKindOfFilter,
+ccsl_filters_FromClosureFilter_strategy = st.builds(
+    ccsl_filters_FromClosureFilter,
 )
-ccsl::filters::BlockLastStatementFilter_strategy = st.builds(
-    ccsl::filters::BlockLastStatementFilter,
+ccsl_filters_SuperMethodClosureFilter_strategy = st.builds(
+    ccsl_filters_SuperMethodClosureFilter,
 )
-ccsl::filters::IsTypeOfFilter_strategy = st.builds(
-    ccsl::filters::IsTypeOfFilter,
+ccsl_filters_IsTypeOfFilter_strategy = st.builds(
+    ccsl_filters_IsTypeOfFilter,
 )
-ccsl::filters::PropertyFilter_strategy = st.builds(
-    ccsl::filters::PropertyFilter,
+ccsl_filters_PropertyFilter_strategy = st.builds(
+    ccsl_filters_PropertyFilter,
 )
 Filter_strategy = st.builds(
     Filter,
 )
-ccsl::filters::CompositeFilter_strategy = st.builds(
-    ccsl::filters::CompositeFilter,
+ccsl_filters_CompositeFilter_strategy = st.builds(
+    ccsl_filters_CompositeFilter,
     operator=
         safe_text
 )
-ccsl::filters::AtomicFilter_strategy = st.builds(
-    ccsl::filters::AtomicFilter,
+ccsl_filters_AtomicFilter_strategy = st.builds(
+    ccsl_filters_AtomicFilter,
 )
 CcslBooleanFunction_strategy = st.builds(
     CcslBooleanFunction,
 )
-ccsl::filters::Filter_strategy = st.builds(
-    ccsl::filters::Filter,
+ccsl_filters_Filter_strategy = st.builds(
+    ccsl_filters_Filter,
     negated=
         safe_text
 )
 CcslFunction_strategy = st.builds(
     CcslFunction,
 )
-ccsl::numberFunctions::CcslNumberFunction_strategy = st.builds(
-    ccsl::numberFunctions::CcslNumberFunction,
+ccsl_numberFunctions_CcslNumberFunction_strategy = st.builds(
+    ccsl_numberFunctions_CcslNumberFunction,
 )
-ccsl::booleanFunctions::CcslBooleanFunction_strategy = st.builds(
-    ccsl::booleanFunctions::CcslBooleanFunction,
+ccsl_booleanFunctions_CcslBooleanFunction_strategy = st.builds(
+    ccsl_booleanFunctions_CcslBooleanFunction,
 )
-ccsl::filters::ImplicityContainerFilter_strategy = st.builds(
-    ccsl::filters::ImplicityContainerFilter,
+ccsl_filters_ImplicityContainerFilter_strategy = st.builds(
+    ccsl_filters_ImplicityContainerFilter,
 )
-expressions::OperatorExpression_strategy = st.builds(
-    expressions::OperatorExpression,
+expressions_OperatorExpression_strategy = st.builds(
+    expressions_OperatorExpression,
 )
 TemplateFilter_strategy = st.builds(
     TemplateFilter,
 )
-ccsl::filters::ImplicityOperandFilter_strategy = st.builds(
-    ccsl::filters::ImplicityOperandFilter,
+ccsl_filters_ImplicityOperandFilter_strategy = st.builds(
+    ccsl_filters_ImplicityOperandFilter,
 )
-ccsl::filters::RegexMatch_strategy = st.builds(
-    ccsl::filters::RegexMatch,
+ccsl_filters_RegexMatch_strategy = st.builds(
+    ccsl_filters_RegexMatch,
     regex=
         safe_text
 )
-ccsl::filters::CountFilter_strategy = st.builds(
-    ccsl::filters::CountFilter,
-    max=
-        safe_text,
+ccsl_filters_CountFilter_strategy = st.builds(
+    ccsl_filters_CountFilter,
     min=
+        safe_text,
+    max=
         safe_text
 )
-ccsl::faultTypeDescription::InjectionAction_strategy = st.builds(
-    ccsl::faultTypeDescription::InjectionAction,
+ccsl_faultTypeDescription_InjectionAction_strategy = st.builds(
+    ccsl_faultTypeDescription_InjectionAction,
 )
-filters::Filter_strategy = st.builds(
-    filters::Filter,
+filters_Filter_strategy = st.builds(
+    filters_Filter,
 )
-ccsl::context::Context_strategy = st.builds(
-    ccsl::context::Context,
+ccsl_context_Context_strategy = st.builds(
+    ccsl_context_Context,
+)
+ccsl_datatype_VoidType_strategy = st.builds(
+    ccsl_datatype_VoidType,
+)
+ccsl_datatype_IntPrimitiveType_strategy = st.builds(
+    ccsl_datatype_IntPrimitiveType,
+)
+ccsl_datatype_GenericType_strategy = st.builds(
+    ccsl_datatype_GenericType,
 )
 ObjectType_strategy = st.builds(
     ObjectType,
 )
-ccsl::datatype::ArrayType_strategy = st.builds(
-    ccsl::datatype::ArrayType,
+ccsl_datatype_ArrayType_strategy = st.builds(
+    ccsl_datatype_ArrayType,
     dimensions=
         safe_text
 )
-ccsl::datatype::ParameterizedType_strategy = st.builds(
-    ccsl::datatype::ParameterizedType,
+ccsl_datatype_ParameterizedType_strategy = st.builds(
+    ccsl_datatype_ParameterizedType,
 )
-ccsl::functions::CcslFunction_strategy = st.builds(
-    ccsl::functions::CcslFunction,
+ccsl_datatype_ObjectType_strategy = st.builds(
+    ccsl_datatype_ObjectType,
 )
-ccsl::strategy::AllStrategy_strategy = st.builds(
-    ccsl::strategy::AllStrategy,
+ccsl_functions_CcslFunction_strategy = st.builds(
+    ccsl_functions_CcslFunction,
 )
-ccsl::action::ArithmeticOperatorMap_strategy = st.builds(
-    ccsl::action::ArithmeticOperatorMap,
-    newArithmeticOperator=
-        safe_text,
+ccsl_strategy_AllStrategy_strategy = st.builds(
+    ccsl_strategy_AllStrategy,
+)
+ccsl_action_ArithmeticOperatorMap_strategy = st.builds(
+    ccsl_action_ArithmeticOperatorMap,
     oldArithmeticOperator=
+        safe_text,
+    newArithmeticOperator=
         safe_text
 )
-action::ArithmeticOperatorMap_strategy = st.builds(
-    action::ArithmeticOperatorMap,
+action_ArithmeticOperatorMap_strategy = st.builds(
+    action_ArithmeticOperatorMap,
 )
-ccsl::action::ReplaceArithmeticOperatorAction_strategy = st.builds(
-    ccsl::action::ReplaceArithmeticOperatorAction,
+ccsl_action_ReplaceArithmeticOperatorAction_strategy = st.builds(
+    ccsl_action_ReplaceArithmeticOperatorAction,
 )
-ccsl::action::ReplaceVariableAccessAction_strategy = st.builds(
-    ccsl::action::ReplaceVariableAccessAction,
+ccsl_action_ReplaceVariableAccessAction_strategy = st.builds(
+    ccsl_action_ReplaceVariableAccessAction,
 )
-ccsl::action::DeleteRandomStatementAction_strategy = st.builds(
-    ccsl::action::DeleteRandomStatementAction,
+ccsl_action_DeleteRandomStatementAction_strategy = st.builds(
+    ccsl_action_DeleteRandomStatementAction,
 )
-ccsl::action::ChangeLiteralValueAction_strategy = st.builds(
-    ccsl::action::ChangeLiteralValueAction,
+ccsl_action_ChangeLiteralValueAction_strategy = st.builds(
+    ccsl_action_ChangeLiteralValueAction,
 )
-ccsl::action::DeleteInfixOperatorAction_strategy = st.builds(
-    ccsl::action::DeleteInfixOperatorAction,
+ccsl_action_DeleteInfixOperatorAction_strategy = st.builds(
+    ccsl_action_DeleteInfixOperatorAction,
 )
-ccsl::action::MoveScopeUpAction_strategy = st.builds(
-    ccsl::action::MoveScopeUpAction,
+ccsl_action_MoveScopeUpAction_strategy = st.builds(
+    ccsl_action_MoveScopeUpAction,
 )
-ccsl::action::DeleteAction_strategy = st.builds(
-    ccsl::action::DeleteAction,
+ccsl_action_DeleteAction_strategy = st.builds(
+    ccsl_action_DeleteAction,
 )
-ccsl::faultTypeDescription::InjectionStrategy_strategy = st.builds(
-    ccsl::faultTypeDescription::InjectionStrategy,
+ccsl_faultTypeDescription_InjectionStrategy_strategy = st.builds(
+    ccsl_faultTypeDescription_InjectionStrategy,
 )
-ccsl::import::ImportableElement_strategy = st.builds(
-    ccsl::import::ImportableElement,
+ccsl_import_ImportStatement_strategy = st.builds(
+    ccsl_import_ImportStatement,
+)
+ccsl_import_ImportableElement_strategy = st.builds(
+    ccsl_import_ImportableElement,
 )
 Invocation_strategy = st.builds(
     Invocation,
 )
-ccsl::invocation::SimpleMethodInvocation_strategy = st.builds(
-    ccsl::invocation::SimpleMethodInvocation,
+ccsl_invocation_SimpleMethodInvocation_strategy = st.builds(
+    ccsl_invocation_SimpleMethodInvocation,
 )
-ccsl::invocation::ConstructorInvocation_strategy = st.builds(
-    ccsl::invocation::ConstructorInvocation,
+ccsl_invocation_ConstructorInvocation_strategy = st.builds(
+    ccsl_invocation_ConstructorInvocation,
+)
+ccsl_invocation_Invocation_strategy = st.builds(
+    ccsl_invocation_Invocation,
+    argsKind=
+        safe_text
 )
 SimpleMethodInvocation_strategy = st.builds(
     SimpleMethodInvocation,
 )
-ccsl::invocation::SuperMethodInvocation_strategy = st.builds(
-    ccsl::invocation::SuperMethodInvocation,
+ccsl_invocation_SuperMethodInvocation_strategy = st.builds(
+    ccsl_invocation_SuperMethodInvocation,
 )
-ccsl::invocation::MethodInvocation_strategy = st.builds(
-    ccsl::invocation::MethodInvocation,
+ccsl_invocation_MethodInvocation_strategy = st.builds(
+    ccsl_invocation_MethodInvocation,
 )
-PrimitiveType_strategy = st.builds(
-    PrimitiveType,
+ccsl_datatype_ShortPrimitiveType_strategy = st.builds(
+    ccsl_datatype_ShortPrimitiveType,
 )
-ccsl::datatype::BooleanPrimitiveType_strategy = st.builds(
-    ccsl::datatype::BooleanPrimitiveType,
-)
-ccsl::datatype::IntPrimitiveType_strategy = st.builds(
-    ccsl::datatype::IntPrimitiveType,
-)
-ccsl::datatype::ShortPrimitiveType_strategy = st.builds(
-    ccsl::datatype::ShortPrimitiveType,
-)
-ccsl::datatype::VoidType_strategy = st.builds(
-    ccsl::datatype::VoidType,
-)
-ccsl::datatype::StringPrimitiveType_strategy = st.builds(
-    ccsl::datatype::StringPrimitiveType,
-)
-DataType_strategy = st.builds(
-    DataType,
-)
-ccsl::datatype::ObjectType_strategy = st.builds(
-    ccsl::datatype::ObjectType,
-)
-ccsl::datatype::PrimitiveType_strategy = st.builds(
-    ccsl::datatype::PrimitiveType,
-)
-ccsl::datatype::DataType_strategy = st.builds(
-    ccsl::datatype::DataType,
-)
-annotation::Annotation_strategy = st.builds(
-    annotation::Annotation,
-)
-ccsl::annotation::AnnotableElement_strategy = st.builds(
-    ccsl::annotation::AnnotableElement,
-    annotationsKind=
-        safe_text
-)
-complexType::AnnotationType_strategy = st.builds(
-    complexType::AnnotationType,
-)
-statements::Block_strategy = st.builds(
-    statements::Block,
-)
-tryCatch::CatchClause_strategy = st.builds(
-    tryCatch::CatchClause,
-)
-UnaryAssignment_strategy = st.builds(
-    UnaryAssignment,
-)
-ccsl::assignment::PostfixUnaryAssignment_strategy = st.builds(
-    ccsl::assignment::PostfixUnaryAssignment,
-)
-ccsl::assignment::PrefixUnaryAssignment_strategy = st.builds(
-    ccsl::assignment::PrefixUnaryAssignment,
-)
-AbstractAssignment_strategy = st.builds(
-    AbstractAssignment,
-)
-ccsl::assignment::UnaryAssignment_strategy = st.builds(
-    ccsl::assignment::UnaryAssignment,
-    operator=
-        safe_text
-)
-ccsl::assignment::Assignment_strategy = st.builds(
-    ccsl::assignment::Assignment,
-    operator=
-        safe_text
-)
-OperatorExpression_strategy = st.builds(
-    OperatorExpression,
-)
-ccsl::expressions::ArithmeticExpression_strategy = st.builds(
-    ccsl::expressions::ArithmeticExpression,
-    arithmeticOperator=
-        safe_text
-)
-ccsl::expressions::BooleanExpression_strategy = st.builds(
-    ccsl::expressions::BooleanExpression,
-    booleanOperator=
-        safe_text
-)
-ccsl::expressions::InfixExpression_strategy = st.builds(
-    ccsl::expressions::InfixExpression,
-)
-ccsl::expressions::StringConcatenation_strategy = st.builds(
-    ccsl::expressions::StringConcatenation,
-)
-Block_strategy = st.builds(
-    Block,
-)
-ccsl::controlFlow::SwitchCaseBlock_strategy = st.builds(
-    ccsl::controlFlow::SwitchCaseBlock,
-    default=
-        safe_text
-)
-controlFlow::SwitchCaseBlock_strategy = st.builds(
-    controlFlow::SwitchCaseBlock,
-)
-ControlFlow_strategy = st.builds(
-    ControlFlow,
-)
-ccsl::controlFlow::IfStatement_strategy = st.builds(
-    ccsl::controlFlow::IfStatement,
-)
-ccsl::controlFlow::LoopStatement_strategy = st.builds(
-    ccsl::controlFlow::LoopStatement,
-)
-ccsl::controlFlow::SwitchStatement_strategy = st.builds(
-    ccsl::controlFlow::SwitchStatement,
-)
-LiteralValue_strategy = st.builds(
-    LiteralValue,
-)
-ccsl::literalValues::StringLiteral_strategy = st.builds(
-    ccsl::literalValues::StringLiteral,
-)
-ccsl::literalValues::CharacterLiteral_strategy = st.builds(
-    ccsl::literalValues::CharacterLiteral,
-)
-ccsl::literalValues::NumberLiteral_strategy = st.builds(
-    ccsl::literalValues::NumberLiteral,
-)
-ccsl::literalValues::BooleanLiteral_strategy = st.builds(
-    ccsl::literalValues::BooleanLiteral,
-)
-ccsl::literalValues::NullLiteral_strategy = st.builds(
-    ccsl::literalValues::NullLiteral,
-)
-ccsl::statements::ThrowStatement_strategy = st.builds(
-    ccsl::statements::ThrowStatement,
-)
-Statement_strategy = st.builds(
-    Statement,
-)
-ccsl::statements::ReturnStatement_strategy = st.builds(
-    ccsl::statements::ReturnStatement,
-)
-ccsl::statements::InstanceOf_strategy = st.builds(
-    ccsl::statements::InstanceOf,
-)
-ccsl::tryCatch::CatchClause_strategy = st.builds(
-    ccsl::tryCatch::CatchClause,
-)
-ccsl::literalValues::LiteralValue_strategy = st.builds(
-    ccsl::literalValues::LiteralValue,
-    value=
-        safe_text
-)
-ccsl::annotation::Annotation_strategy = st.builds(
-    ccsl::annotation::Annotation,
-)
-ccsl::import::ImportStatement_strategy = st.builds(
-    ccsl::import::ImportStatement,
-)
-ccsl::statements::ArrayCreation_strategy = st.builds(
-    ccsl::statements::ArrayCreation,
-)
-ccsl::statements::BreakStatement_strategy = st.builds(
-    ccsl::statements::BreakStatement,
-)
-ccsl::statements::ThisStatement_strategy = st.builds(
-    ccsl::statements::ThisStatement,
-)
-ccsl::statements::ContinueStatement_strategy = st.builds(
-    ccsl::statements::ContinueStatement,
-)
-ccsl::assignment::AbstractAssignment_strategy = st.builds(
-    ccsl::assignment::AbstractAssignment,
-)
-ccsl::tryCatch::TryStatement_strategy = st.builds(
-    ccsl::tryCatch::TryStatement,
-)
-ccsl::expressions::ParenthesizedExpression_strategy = st.builds(
-    ccsl::expressions::ParenthesizedExpression,
-)
-ccsl::statements::SynchronizedBlock_strategy = st.builds(
-    ccsl::statements::SynchronizedBlock,
-)
-ccsl::statements::Access_strategy = st.builds(
-    ccsl::statements::Access,
-)
-ccsl::invocation::Invocation_strategy = st.builds(
-    ccsl::invocation::Invocation,
-    argsKind=
-        safe_text
-)
-ccsl::expressions::OperatorExpression_strategy = st.builds(
-    ccsl::expressions::OperatorExpression,
-)
-ccsl::statements::EmptyStatement_strategy = st.builds(
-    ccsl::statements::EmptyStatement,
-)
-ccsl::statements::NamedElementAccess_strategy = st.builds(
-    ccsl::statements::NamedElementAccess,
-)
-ccsl::statements::Statement_strategy = st.builds(
-    ccsl::statements::Statement,
-)
-method::SimpleMethod_strategy = st.builds(
-    method::SimpleMethod,
-)
-ccsl::method::Method_strategy = st.builds(
-    ccsl::method::Method,
-    inheritance=
-        safe_text,
-    final=
-        safe_text,
-    abstract=
-        safe_text,
-    static=
-        safe_text
-)
-variable::ParameterVariable_strategy = st.builds(
-    variable::ParameterVariable,
-)
-elements::Element_strategy = st.builds(
-    elements::Element,
-)
-ccsl::method::SimpleMethod_strategy = st.builds(
-    ccsl::method::SimpleMethod,
-    visibility=
-        safe_text,
-    paramsKind=
-        safe_text
-)
-SimpleMethod_strategy = st.builds(
-    SimpleMethod,
-)
-ccsl::method::Constructor_strategy = st.builds(
-    ccsl::method::Constructor,
-    avaliableInSourceCode=
-        safe_text
-)
-ccsl::statements::InstanceCreation_strategy = st.builds(
-    ccsl::statements::InstanceCreation,
-    argsKind=
-        safe_text
-)
-ccsl::statements::VarDeclaration_strategy = st.builds(
-    ccsl::statements::VarDeclaration,
-)
-ccsl::statements::Block_strategy = st.builds(
-    ccsl::statements::Block,
-    statementsKind=
-        safe_text
-)
-ccsl::statements::ControlFlow_strategy = st.builds(
-    ccsl::statements::ControlFlow,
-)
-Access_strategy = st.builds(
-    Access,
-)
-ccsl::statements::DataTypeAccess_strategy = st.builds(
-    ccsl::statements::DataTypeAccess,
-)
-ccsl::statements::VariableAccess_strategy = st.builds(
-    ccsl::statements::VariableAccess,
-)
-complexType::JClass_strategy = st.builds(
-    complexType::JClass,
-)
-method::Constructor_strategy = st.builds(
-    method::Constructor,
-)
-datatype::ObjectType_strategy = st.builds(
-    datatype::ObjectType,
-)
-ccsl::complexType::DeclaredType_strategy = st.builds(
-    ccsl::complexType::DeclaredType,
-    visibility=
-        safe_text,
-    static=
-        safe_text
-)
-ComplexType_strategy = st.builds(
-    ComplexType,
-)
-ccsl::datatype::GenericType_strategy = st.builds(
-    ccsl::datatype::GenericType,
-)
-ccsl::complexType::AnonymousClass_strategy = st.builds(
-    ccsl::complexType::AnonymousClass,
-)
-complexType::ComplexType_strategy = st.builds(
-    complexType::ComplexType,
-)
-ccsl::complexType::JClass_strategy = st.builds(
-    ccsl::complexType::JClass,
-    inheritance=
-        safe_text
-)
-ccsl::complexType::JInterface_strategy = st.builds(
-    ccsl::complexType::JInterface,
-)
-variable::InitializableVariable_strategy = st.builds(
-    variable::InitializableVariable,
-)
-ccsl::variable::FieldVariable_strategy = st.builds(
-    ccsl::variable::FieldVariable,
-    visibility=
-        safe_text,
-    static=
-        safe_text
-)
-statements::Statement_strategy = st.builds(
-    statements::Statement,
-)
-DeclaredType_strategy = st.builds(
-    DeclaredType,
-)
-ccsl::complexType::AnnotationType_strategy = st.builds(
-    ccsl::complexType::AnnotationType,
+ccsl_datatype_BooleanPrimitiveType_strategy = st.builds(
+    ccsl_datatype_BooleanPrimitiveType,
 )
 
-@given(instance=method::Method_strategy)
+@given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_method::method_instantiation(instance):
-    assert isinstance(instance, method::Method)
+def test_primitivetype_instantiation(instance):
+    assert isinstance(instance, PrimitiveType)
 
-@given(instance=variable::FieldVariable_strategy)
+@given(instance=ccsl_datatype_StringPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_variable::fieldvariable_instantiation(instance):
-    assert isinstance(instance, variable::FieldVariable)
+def test_ccsl_datatype_stringprimitivetype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_StringPrimitiveType)
 
-@given(instance=import::ImportStatement_strategy)
+@given(instance=DataType_strategy)
 @settings(max_examples=50)
-def test_import::importstatement_instantiation(instance):
-    assert isinstance(instance, import::ImportStatement)
+def test_datatype_instantiation(instance):
+    assert isinstance(instance, DataType)
 
-@given(instance=complexType::JInterface_strategy)
+@given(instance=ccsl_datatype_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_complextype::jinterface_instantiation(instance):
-    assert isinstance(instance, complexType::JInterface)
+def test_ccsl_datatype_primitivetype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_PrimitiveType)
 
-@given(instance=ccsl::elements::Element_strategy)
+@given(instance=annotation_Annotation_strategy)
 @settings(max_examples=50)
-def test_ccsl::elements::element_instantiation(instance):
-    assert isinstance(instance, ccsl::elements::Element)
+def test_annotation_annotation_instantiation(instance):
+    assert isinstance(instance, annotation_Annotation)
 
-@given(instance=ccsl::elements::Element_strategy)
-def test_ccsl::elements::element_uniqueName_type(instance):
-    assert isinstance(instance.uniqueName, str)
+@given(instance=complexType_AnnotationType_strategy)
+@settings(max_examples=50)
+def test_complextype_annotationtype_instantiation(instance):
+    assert isinstance(instance, complexType_AnnotationType)
+
+@given(instance=statements_Block_strategy)
+@settings(max_examples=50)
+def test_statements_block_instantiation(instance):
+    assert isinstance(instance, statements_Block)
+
+@given(instance=tryCatch_CatchClause_strategy)
+@settings(max_examples=50)
+def test_trycatch_catchclause_instantiation(instance):
+    assert isinstance(instance, tryCatch_CatchClause)
+
+@given(instance=UnaryAssignment_strategy)
+@settings(max_examples=50)
+def test_unaryassignment_instantiation(instance):
+    assert isinstance(instance, UnaryAssignment)
+
+@given(instance=ccsl_assignment_PostfixUnaryAssignment_strategy)
+@settings(max_examples=50)
+def test_ccsl_assignment_postfixunaryassignment_instantiation(instance):
+    assert isinstance(instance, ccsl_assignment_PostfixUnaryAssignment)
+
+@given(instance=ccsl_assignment_PrefixUnaryAssignment_strategy)
+@settings(max_examples=50)
+def test_ccsl_assignment_prefixunaryassignment_instantiation(instance):
+    assert isinstance(instance, ccsl_assignment_PrefixUnaryAssignment)
+
+@given(instance=AbstractAssignment_strategy)
+@settings(max_examples=50)
+def test_abstractassignment_instantiation(instance):
+    assert isinstance(instance, AbstractAssignment)
+
+@given(instance=ccsl_assignment_UnaryAssignment_strategy)
+@settings(max_examples=50)
+def test_ccsl_assignment_unaryassignment_instantiation(instance):
+    assert isinstance(instance, ccsl_assignment_UnaryAssignment)
 
 
-@given(instance=ccsl::elements::Element_strategy)
-def test_ccsl::elements::element_uniqueName_setter(instance):
+
+@given(instance=ccsl_assignment_UnaryAssignment_strategy)
+def test_ccsl_assignment_unaryassignment_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=ccsl_assignment_Assignment_strategy)
+@settings(max_examples=50)
+def test_ccsl_assignment_assignment_instantiation(instance):
+    assert isinstance(instance, ccsl_assignment_Assignment)
+
+
+
+@given(instance=ccsl_assignment_Assignment_strategy)
+def test_ccsl_assignment_assignment_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=OperatorExpression_strategy)
+@settings(max_examples=50)
+def test_operatorexpression_instantiation(instance):
+    assert isinstance(instance, OperatorExpression)
+
+@given(instance=ccsl_expressions_InfixExpression_strategy)
+@settings(max_examples=50)
+def test_ccsl_expressions_infixexpression_instantiation(instance):
+    assert isinstance(instance, ccsl_expressions_InfixExpression)
+
+@given(instance=ccsl_expressions_BooleanExpression_strategy)
+@settings(max_examples=50)
+def test_ccsl_expressions_booleanexpression_instantiation(instance):
+    assert isinstance(instance, ccsl_expressions_BooleanExpression)
+
+
+
+@given(instance=ccsl_expressions_BooleanExpression_strategy)
+def test_ccsl_expressions_booleanexpression_booleanOperator_setter(instance):
+    original = instance.booleanOperator
+    instance.booleanOperator = original
+    assert instance.booleanOperator == original
+
+@given(instance=ccsl_expressions_ArithmeticExpression_strategy)
+@settings(max_examples=50)
+def test_ccsl_expressions_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, ccsl_expressions_ArithmeticExpression)
+
+
+
+@given(instance=ccsl_expressions_ArithmeticExpression_strategy)
+def test_ccsl_expressions_arithmeticexpression_arithmeticOperator_setter(instance):
+    original = instance.arithmeticOperator
+    instance.arithmeticOperator = original
+    assert instance.arithmeticOperator == original
+
+@given(instance=ccsl_expressions_StringConcatenation_strategy)
+@settings(max_examples=50)
+def test_ccsl_expressions_stringconcatenation_instantiation(instance):
+    assert isinstance(instance, ccsl_expressions_StringConcatenation)
+
+@given(instance=Block_strategy)
+@settings(max_examples=50)
+def test_block_instantiation(instance):
+    assert isinstance(instance, Block)
+
+@given(instance=ccsl_controlFlow_SwitchCaseBlock_strategy)
+@settings(max_examples=50)
+def test_ccsl_controlflow_switchcaseblock_instantiation(instance):
+    assert isinstance(instance, ccsl_controlFlow_SwitchCaseBlock)
+
+
+
+@given(instance=ccsl_controlFlow_SwitchCaseBlock_strategy)
+def test_ccsl_controlflow_switchcaseblock_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+@given(instance=controlFlow_SwitchCaseBlock_strategy)
+@settings(max_examples=50)
+def test_controlflow_switchcaseblock_instantiation(instance):
+    assert isinstance(instance, controlFlow_SwitchCaseBlock)
+
+@given(instance=ControlFlow_strategy)
+@settings(max_examples=50)
+def test_controlflow_instantiation(instance):
+    assert isinstance(instance, ControlFlow)
+
+@given(instance=ccsl_controlFlow_LoopStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_controlflow_loopstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_controlFlow_LoopStatement)
+
+@given(instance=ccsl_controlFlow_IfStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_controlflow_ifstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_controlFlow_IfStatement)
+
+@given(instance=ccsl_controlFlow_SwitchStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_controlflow_switchstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_controlFlow_SwitchStatement)
+
+@given(instance=LiteralValue_strategy)
+@settings(max_examples=50)
+def test_literalvalue_instantiation(instance):
+    assert isinstance(instance, LiteralValue)
+
+@given(instance=ccsl_literalValues_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_ccsl_literalvalues_booleanliteral_instantiation(instance):
+    assert isinstance(instance, ccsl_literalValues_BooleanLiteral)
+
+@given(instance=ccsl_literalValues_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_ccsl_literalvalues_stringliteral_instantiation(instance):
+    assert isinstance(instance, ccsl_literalValues_StringLiteral)
+
+@given(instance=ccsl_literalValues_CharacterLiteral_strategy)
+@settings(max_examples=50)
+def test_ccsl_literalvalues_characterliteral_instantiation(instance):
+    assert isinstance(instance, ccsl_literalValues_CharacterLiteral)
+
+@given(instance=ccsl_literalValues_NumberLiteral_strategy)
+@settings(max_examples=50)
+def test_ccsl_literalvalues_numberliteral_instantiation(instance):
+    assert isinstance(instance, ccsl_literalValues_NumberLiteral)
+
+@given(instance=ccsl_literalValues_NullLiteral_strategy)
+@settings(max_examples=50)
+def test_ccsl_literalvalues_nullliteral_instantiation(instance):
+    assert isinstance(instance, ccsl_literalValues_NullLiteral)
+
+@given(instance=ccsl_statements_ThrowStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_throwstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_ThrowStatement)
+
+@given(instance=Statement_strategy)
+@settings(max_examples=50)
+def test_statement_instantiation(instance):
+    assert isinstance(instance, Statement)
+
+@given(instance=ccsl_statements_ArrayCreation_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_arraycreation_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_ArrayCreation)
+
+@given(instance=ccsl_statements_ContinueStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_continuestatement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_ContinueStatement)
+
+@given(instance=ccsl_expressions_ParenthesizedExpression_strategy)
+@settings(max_examples=50)
+def test_ccsl_expressions_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, ccsl_expressions_ParenthesizedExpression)
+
+@given(instance=ccsl_statements_Access_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_access_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_Access)
+
+@given(instance=ccsl_statements_SynchronizedBlock_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_synchronizedblock_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_SynchronizedBlock)
+
+@given(instance=ccsl_expressions_OperatorExpression_strategy)
+@settings(max_examples=50)
+def test_ccsl_expressions_operatorexpression_instantiation(instance):
+    assert isinstance(instance, ccsl_expressions_OperatorExpression)
+
+@given(instance=ccsl_tryCatch_TryStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_trycatch_trystatement_instantiation(instance):
+    assert isinstance(instance, ccsl_tryCatch_TryStatement)
+
+@given(instance=ccsl_annotation_Annotation_strategy)
+@settings(max_examples=50)
+def test_ccsl_annotation_annotation_instantiation(instance):
+    assert isinstance(instance, ccsl_annotation_Annotation)
+
+@given(instance=ccsl_literalValues_LiteralValue_strategy)
+@settings(max_examples=50)
+def test_ccsl_literalvalues_literalvalue_instantiation(instance):
+    assert isinstance(instance, ccsl_literalValues_LiteralValue)
+
+
+
+@given(instance=ccsl_literalValues_LiteralValue_strategy)
+def test_ccsl_literalvalues_literalvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=ccsl_assignment_AbstractAssignment_strategy)
+@settings(max_examples=50)
+def test_ccsl_assignment_abstractassignment_instantiation(instance):
+    assert isinstance(instance, ccsl_assignment_AbstractAssignment)
+
+@given(instance=ccsl_tryCatch_CatchClause_strategy)
+@settings(max_examples=50)
+def test_ccsl_trycatch_catchclause_instantiation(instance):
+    assert isinstance(instance, ccsl_tryCatch_CatchClause)
+
+@given(instance=ccsl_statements_ThisStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_thisstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_ThisStatement)
+
+@given(instance=ccsl_statements_ReturnStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_returnstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_ReturnStatement)
+
+@given(instance=ccsl_statements_InstanceOf_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_instanceof_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_InstanceOf)
+
+@given(instance=ccsl_statements_BreakStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_breakstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_BreakStatement)
+
+@given(instance=ccsl_statements_EmptyStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_emptystatement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_EmptyStatement)
+
+@given(instance=ccsl_statements_NamedElementAccess_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_namedelementaccess_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_NamedElementAccess)
+
+@given(instance=method_SimpleMethod_strategy)
+@settings(max_examples=50)
+def test_method_simplemethod_instantiation(instance):
+    assert isinstance(instance, method_SimpleMethod)
+
+@given(instance=variable_ParameterVariable_strategy)
+@settings(max_examples=50)
+def test_variable_parametervariable_instantiation(instance):
+    assert isinstance(instance, variable_ParameterVariable)
+
+@given(instance=elements_Element_strategy)
+@settings(max_examples=50)
+def test_elements_element_instantiation(instance):
+    assert isinstance(instance, elements_Element)
+
+@given(instance=SimpleMethod_strategy)
+@settings(max_examples=50)
+def test_simplemethod_instantiation(instance):
+    assert isinstance(instance, SimpleMethod)
+
+@given(instance=ccsl_method_Constructor_strategy)
+@settings(max_examples=50)
+def test_ccsl_method_constructor_instantiation(instance):
+    assert isinstance(instance, ccsl_method_Constructor)
+
+
+
+@given(instance=ccsl_method_Constructor_strategy)
+def test_ccsl_method_constructor_avaliableInSourceCode_setter(instance):
+    original = instance.avaliableInSourceCode
+    instance.avaliableInSourceCode = original
+    assert instance.avaliableInSourceCode == original
+
+@given(instance=ccsl_statements_InstanceCreation_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_instancecreation_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_InstanceCreation)
+
+
+
+@given(instance=ccsl_statements_InstanceCreation_strategy)
+def test_ccsl_statements_instancecreation_argsKind_setter(instance):
+    original = instance.argsKind
+    instance.argsKind = original
+    assert instance.argsKind == original
+
+@given(instance=ccsl_statements_VarDeclaration_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_vardeclaration_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_VarDeclaration)
+
+@given(instance=ccsl_statements_Block_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_block_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_Block)
+
+
+
+@given(instance=ccsl_statements_Block_strategy)
+def test_ccsl_statements_block_statementsKind_setter(instance):
+    original = instance.statementsKind
+    instance.statementsKind = original
+    assert instance.statementsKind == original
+
+@given(instance=ccsl_statements_ControlFlow_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_controlflow_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_ControlFlow)
+
+@given(instance=Access_strategy)
+@settings(max_examples=50)
+def test_access_instantiation(instance):
+    assert isinstance(instance, Access)
+
+@given(instance=ccsl_statements_DataTypeAccess_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_datatypeaccess_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_DataTypeAccess)
+
+@given(instance=ccsl_statements_VariableAccess_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_variableaccess_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_VariableAccess)
+
+@given(instance=complexType_JClass_strategy)
+@settings(max_examples=50)
+def test_complextype_jclass_instantiation(instance):
+    assert isinstance(instance, complexType_JClass)
+
+@given(instance=method_Constructor_strategy)
+@settings(max_examples=50)
+def test_method_constructor_instantiation(instance):
+    assert isinstance(instance, method_Constructor)
+
+@given(instance=datatype_ObjectType_strategy)
+@settings(max_examples=50)
+def test_datatype_objecttype_instantiation(instance):
+    assert isinstance(instance, datatype_ObjectType)
+
+@given(instance=ComplexType_strategy)
+@settings(max_examples=50)
+def test_complextype_instantiation(instance):
+    assert isinstance(instance, ComplexType)
+
+@given(instance=ccsl_complexType_AnonymousClass_strategy)
+@settings(max_examples=50)
+def test_ccsl_complextype_anonymousclass_instantiation(instance):
+    assert isinstance(instance, ccsl_complexType_AnonymousClass)
+
+@given(instance=complexType_ComplexType_strategy)
+@settings(max_examples=50)
+def test_complextype_complextype_instantiation(instance):
+    assert isinstance(instance, complexType_ComplexType)
+
+@given(instance=variable_InitializableVariable_strategy)
+@settings(max_examples=50)
+def test_variable_initializablevariable_instantiation(instance):
+    assert isinstance(instance, variable_InitializableVariable)
+
+@given(instance=statements_Statement_strategy)
+@settings(max_examples=50)
+def test_statements_statement_instantiation(instance):
+    assert isinstance(instance, statements_Statement)
+
+@given(instance=DeclaredType_strategy)
+@settings(max_examples=50)
+def test_declaredtype_instantiation(instance):
+    assert isinstance(instance, DeclaredType)
+
+@given(instance=ccsl_complexType_AnnotationType_strategy)
+@settings(max_examples=50)
+def test_ccsl_complextype_annotationtype_instantiation(instance):
+    assert isinstance(instance, ccsl_complexType_AnnotationType)
+
+@given(instance=method_Method_strategy)
+@settings(max_examples=50)
+def test_method_method_instantiation(instance):
+    assert isinstance(instance, method_Method)
+
+@given(instance=variable_FieldVariable_strategy)
+@settings(max_examples=50)
+def test_variable_fieldvariable_instantiation(instance):
+    assert isinstance(instance, variable_FieldVariable)
+
+@given(instance=import_ImportStatement_strategy)
+@settings(max_examples=50)
+def test_import_importstatement_instantiation(instance):
+    assert isinstance(instance, import_ImportStatement)
+
+@given(instance=complexType_JInterface_strategy)
+@settings(max_examples=50)
+def test_complextype_jinterface_instantiation(instance):
+    assert isinstance(instance, complexType_JInterface)
+
+@given(instance=ccsl_elements_Element_strategy)
+@settings(max_examples=50)
+def test_ccsl_elements_element_instantiation(instance):
+    assert isinstance(instance, ccsl_elements_Element)
+
+
+
+@given(instance=ccsl_elements_Element_strategy)
+def test_ccsl_elements_element_uniqueName_setter(instance):
     original = instance.uniqueName
     instance.uniqueName = original
     assert instance.uniqueName == original
@@ -3968,91 +4402,206 @@ def test_injectionstrategy_instantiation(instance):
 def test_injectionaction_instantiation(instance):
     assert isinstance(instance, InjectionAction)
 
-@given(instance=ccsl::Root_strategy)
+@given(instance=ccsl_Root_strategy)
 @settings(max_examples=50)
-def test_ccsl::root_instantiation(instance):
-    assert isinstance(instance, ccsl::Root)
+def test_ccsl_root_instantiation(instance):
+    assert isinstance(instance, ccsl_Root)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=ccsl::variable::InitializableVariable_strategy)
+@given(instance=ccsl_variable_InitializableVariable_strategy)
 @settings(max_examples=50)
-def test_ccsl::variable::initializablevariable_instantiation(instance):
-    assert isinstance(instance, ccsl::variable::InitializableVariable)
+def test_ccsl_variable_initializablevariable_instantiation(instance):
+    assert isinstance(instance, ccsl_variable_InitializableVariable)
 
 @given(instance=InitializableVariable_strategy)
 @settings(max_examples=50)
 def test_initializablevariable_instantiation(instance):
     assert isinstance(instance, InitializableVariable)
 
-@given(instance=ccsl::variable::LocalVariable_strategy)
+@given(instance=ccsl_variable_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_ccsl::variable::localvariable_instantiation(instance):
-    assert isinstance(instance, ccsl::variable::LocalVariable)
+def test_ccsl_variable_localvariable_instantiation(instance):
+    assert isinstance(instance, ccsl_variable_LocalVariable)
 
-@given(instance=annotation::AnnotableElement_strategy)
+@given(instance=annotation_AnnotableElement_strategy)
 @settings(max_examples=50)
-def test_annotation::annotableelement_instantiation(instance):
-    assert isinstance(instance, annotation::AnnotableElement)
+def test_annotation_annotableelement_instantiation(instance):
+    assert isinstance(instance, annotation_AnnotableElement)
 
-@given(instance=variable::Variable_strategy)
+@given(instance=ccsl_variable_FieldVariable_strategy)
 @settings(max_examples=50)
-def test_variable::variable_instantiation(instance):
-    assert isinstance(instance, variable::Variable)
+def test_ccsl_variable_fieldvariable_instantiation(instance):
+    assert isinstance(instance, ccsl_variable_FieldVariable)
 
-@given(instance=ccsl::variable::ParameterVariable_strategy)
-@settings(max_examples=50)
-def test_ccsl::variable::parametervariable_instantiation(instance):
-    assert isinstance(instance, ccsl::variable::ParameterVariable)
 
-@given(instance=datatype::DataType_strategy)
+
+@given(instance=ccsl_variable_FieldVariable_strategy)
+def test_ccsl_variable_fieldvariable_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+
+
+@given(instance=ccsl_variable_FieldVariable_strategy)
+def test_ccsl_variable_fieldvariable_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=ccsl_method_SimpleMethod_strategy)
 @settings(max_examples=50)
-def test_datatype::datatype_instantiation(instance):
-    assert isinstance(instance, datatype::DataType)
+def test_ccsl_method_simplemethod_instantiation(instance):
+    assert isinstance(instance, ccsl_method_SimpleMethod)
+
+
+
+@given(instance=ccsl_method_SimpleMethod_strategy)
+def test_ccsl_method_simplemethod_paramsKind_setter(instance):
+    original = instance.paramsKind
+    instance.paramsKind = original
+    assert instance.paramsKind == original
+
+
+
+@given(instance=ccsl_method_SimpleMethod_strategy)
+def test_ccsl_method_simplemethod_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=variable_Variable_strategy)
+@settings(max_examples=50)
+def test_variable_variable_instantiation(instance):
+    assert isinstance(instance, variable_Variable)
+
+@given(instance=ccsl_variable_ParameterVariable_strategy)
+@settings(max_examples=50)
+def test_ccsl_variable_parametervariable_instantiation(instance):
+    assert isinstance(instance, ccsl_variable_ParameterVariable)
+
+@given(instance=datatype_DataType_strategy)
+@settings(max_examples=50)
+def test_datatype_datatype_instantiation(instance):
+    assert isinstance(instance, datatype_DataType)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ccsl::variable::Variable_strategy)
+@given(instance=ccsl_variable_Variable_strategy)
 @settings(max_examples=50)
-def test_ccsl::variable::variable_instantiation(instance):
-    assert isinstance(instance, ccsl::variable::Variable)
-
-@given(instance=ccsl::variable::Variable_strategy)
-def test_ccsl::variable::variable_final_type(instance):
-    assert isinstance(instance.final, str)
+def test_ccsl_variable_variable_instantiation(instance):
+    assert isinstance(instance, ccsl_variable_Variable)
 
 
-@given(instance=ccsl::variable::Variable_strategy)
-def test_ccsl::variable::variable_final_setter(instance):
+
+@given(instance=ccsl_variable_Variable_strategy)
+def test_ccsl_variable_variable_final_setter(instance):
     original = instance.final
     instance.final = original
     assert instance.final == original
 
-@given(instance=complexType::DeclaredType_strategy)
+@given(instance=complexType_DeclaredType_strategy)
 @settings(max_examples=50)
-def test_complextype::declaredtype_instantiation(instance):
-    assert isinstance(instance, complexType::DeclaredType)
+def test_complextype_declaredtype_instantiation(instance):
+    assert isinstance(instance, complexType_DeclaredType)
 
-@given(instance=import::ImportableElement_strategy)
+@given(instance=ccsl_complexType_JClass_strategy)
 @settings(max_examples=50)
-def test_import::importableelement_instantiation(instance):
-    assert isinstance(instance, import::ImportableElement)
+def test_ccsl_complextype_jclass_instantiation(instance):
+    assert isinstance(instance, ccsl_complexType_JClass)
 
-@given(instance=namedElements::NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelements::namedelement_instantiation(instance):
-    assert isinstance(instance, namedElements::NamedElement)
 
-@given(instance=ccsl::namedElements::Package_strategy)
+
+@given(instance=ccsl_complexType_JClass_strategy)
+def test_ccsl_complextype_jclass_inheritance_setter(instance):
+    original = instance.inheritance
+    instance.inheritance = original
+    assert instance.inheritance == original
+
+@given(instance=ccsl_complexType_JInterface_strategy)
 @settings(max_examples=50)
-def test_ccsl::namedelements::package_instantiation(instance):
-    assert isinstance(instance, ccsl::namedElements::Package)
+def test_ccsl_complextype_jinterface_instantiation(instance):
+    assert isinstance(instance, ccsl_complexType_JInterface)
+
+@given(instance=import_ImportableElement_strategy)
+@settings(max_examples=50)
+def test_import_importableelement_instantiation(instance):
+    assert isinstance(instance, import_ImportableElement)
+
+@given(instance=namedElements_NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelements_namedelement_instantiation(instance):
+    assert isinstance(instance, namedElements_NamedElement)
+
+@given(instance=ccsl_method_Method_strategy)
+@settings(max_examples=50)
+def test_ccsl_method_method_instantiation(instance):
+    assert isinstance(instance, ccsl_method_Method)
+
+
+
+@given(instance=ccsl_method_Method_strategy)
+def test_ccsl_method_method_abstract_setter(instance):
+    original = instance.abstract
+    instance.abstract = original
+    assert instance.abstract == original
+
+
+
+@given(instance=ccsl_method_Method_strategy)
+def test_ccsl_method_method_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+
+
+@given(instance=ccsl_method_Method_strategy)
+def test_ccsl_method_method_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
+
+
+
+@given(instance=ccsl_method_Method_strategy)
+def test_ccsl_method_method_inheritance_setter(instance):
+    original = instance.inheritance
+    instance.inheritance = original
+    assert instance.inheritance == original
+
+@given(instance=ccsl_complexType_DeclaredType_strategy)
+@settings(max_examples=50)
+def test_ccsl_complextype_declaredtype_instantiation(instance):
+    assert isinstance(instance, ccsl_complexType_DeclaredType)
+
+
+
+@given(instance=ccsl_complexType_DeclaredType_strategy)
+def test_ccsl_complextype_declaredtype_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+
+
+@given(instance=ccsl_complexType_DeclaredType_strategy)
+def test_ccsl_complextype_declaredtype_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=ccsl_namedElements_Package_strategy)
+@settings(max_examples=50)
+def test_ccsl_namedelements_package_instantiation(instance):
+    assert isinstance(instance, ccsl_namedElements_Package)
 
 @given(instance=Context_strategy)
 @settings(max_examples=50)
@@ -4064,60 +4613,74 @@ def test_context_instantiation(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=ccsl::complexType::ComplexType_strategy)
+@given(instance=ccsl_complexType_ComplexType_strategy)
 @settings(max_examples=50)
-def test_ccsl::complextype::complextype_instantiation(instance):
-    assert isinstance(instance, ccsl::complexType::ComplexType)
+def test_ccsl_complextype_complextype_instantiation(instance):
+    assert isinstance(instance, ccsl_complexType_ComplexType)
 
-@given(instance=ccsl::namedElements::NamedElement_strategy)
+@given(instance=ccsl_namedElements_NamedElement_strategy)
 @settings(max_examples=50)
-def test_ccsl::namedelements::namedelement_instantiation(instance):
-    assert isinstance(instance, ccsl::namedElements::NamedElement)
-
-@given(instance=ccsl::namedElements::NamedElement_strategy)
-def test_ccsl::namedelements::namedelement_avaliableInSourceCode_type(instance):
-    assert isinstance(instance.avaliableInSourceCode, str)
+def test_ccsl_namedelements_namedelement_instantiation(instance):
+    assert isinstance(instance, ccsl_namedElements_NamedElement)
 
 
-@given(instance=ccsl::namedElements::NamedElement_strategy)
-def test_ccsl::namedelements::namedelement_avaliableInSourceCode_setter(instance):
+
+@given(instance=ccsl_namedElements_NamedElement_strategy)
+def test_ccsl_namedelements_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ccsl_namedElements_NamedElement_strategy)
+def test_ccsl_namedelements_namedelement_avaliableInSourceCode_setter(instance):
     original = instance.avaliableInSourceCode
     instance.avaliableInSourceCode = original
     assert instance.avaliableInSourceCode == original
 
-@given(instance=ccsl::namedElements::NamedElement_strategy)
-def test_ccsl::namedelements::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=ccsl_annotation_AnnotableElement_strategy)
+@settings(max_examples=50)
+def test_ccsl_annotation_annotableelement_instantiation(instance):
+    assert isinstance(instance, ccsl_annotation_AnnotableElement)
 
 
-@given(instance=ccsl::namedElements::NamedElement_strategy)
-def test_ccsl::namedelements::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+
+@given(instance=ccsl_annotation_AnnotableElement_strategy)
+def test_ccsl_annotation_annotableelement_annotationsKind_setter(instance):
+    original = instance.annotationsKind
+    instance.annotationsKind = original
+    assert instance.annotationsKind == original
+
+@given(instance=ccsl_datatype_DataType_strategy)
+@settings(max_examples=50)
+def test_ccsl_datatype_datatype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_DataType)
+
+@given(instance=ccsl_statements_Statement_strategy)
+@settings(max_examples=50)
+def test_ccsl_statements_statement_instantiation(instance):
+    assert isinstance(instance, ccsl_statements_Statement)
 
 @given(instance=Rule_strategy)
 @settings(max_examples=50)
 def test_rule_instantiation(instance):
     assert isinstance(instance, Rule)
 
-@given(instance=ccsl::AtomicRule_strategy)
+@given(instance=ccsl_AtomicRule_strategy)
 @settings(max_examples=50)
-def test_ccsl::atomicrule_instantiation(instance):
-    assert isinstance(instance, ccsl::AtomicRule)
+def test_ccsl_atomicrule_instantiation(instance):
+    assert isinstance(instance, ccsl_AtomicRule)
 
-@given(instance=ccsl::CompositeRule_strategy)
+@given(instance=ccsl_CompositeRule_strategy)
 @settings(max_examples=50)
-def test_ccsl::compositerule_instantiation(instance):
-    assert isinstance(instance, ccsl::CompositeRule)
-
-@given(instance=ccsl::CompositeRule_strategy)
-def test_ccsl::compositerule_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ccsl_compositerule_instantiation(instance):
+    assert isinstance(instance, ccsl_CompositeRule)
 
 
-@given(instance=ccsl::CompositeRule_strategy)
-def test_ccsl::compositerule_operator_setter(instance):
+
+@given(instance=ccsl_CompositeRule_strategy)
+def test_ccsl_compositerule_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -4127,86 +4690,74 @@ def test_ccsl::compositerule_operator_setter(instance):
 def test_root_instantiation(instance):
     assert isinstance(instance, Root)
 
-@given(instance=ccsl::FaultTypeDescription_strategy)
+@given(instance=ccsl_FaultTypeDescription_strategy)
 @settings(max_examples=50)
-def test_ccsl::faulttypedescription_instantiation(instance):
-    assert isinstance(instance, ccsl::FaultTypeDescription)
-
-@given(instance=ccsl::FaultTypeDescription_strategy)
-def test_ccsl::faulttypedescription_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ccsl_faulttypedescription_instantiation(instance):
+    assert isinstance(instance, ccsl_FaultTypeDescription)
 
 
-@given(instance=ccsl::FaultTypeDescription_strategy)
-def test_ccsl::faulttypedescription_name_setter(instance):
+
+@given(instance=ccsl_FaultTypeDescription_strategy)
+def test_ccsl_faulttypedescription_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ccsl::Rule_strategy)
+@given(instance=ccsl_Rule_strategy)
 @settings(max_examples=50)
-def test_ccsl::rule_instantiation(instance):
-    assert isinstance(instance, ccsl::Rule)
-
-@given(instance=ccsl::Rule_strategy)
-def test_ccsl::rule_negated_type(instance):
-    assert isinstance(instance.negated, str)
+def test_ccsl_rule_instantiation(instance):
+    assert isinstance(instance, ccsl_Rule)
 
 
-@given(instance=ccsl::Rule_strategy)
-def test_ccsl::rule_negated_setter(instance):
+
+@given(instance=ccsl_Rule_strategy)
+def test_ccsl_rule_negated_setter(instance):
     original = instance.negated
     instance.negated = original
     assert instance.negated == original
 
-@given(instance=statements::Access_strategy)
+@given(instance=statements_Access_strategy)
 @settings(max_examples=50)
-def test_statements::access_instantiation(instance):
-    assert isinstance(instance, statements::Access)
+def test_statements_access_instantiation(instance):
+    assert isinstance(instance, statements_Access)
 
 @given(instance=CcslNumberFunction_strategy)
 @settings(max_examples=50)
 def test_ccslnumberfunction_instantiation(instance):
     assert isinstance(instance, CcslNumberFunction)
 
-@given(instance=ccsl::numberFunctions::GetIndexOf_strategy)
+@given(instance=ccsl_numberFunctions_GetIndexOf_strategy)
 @settings(max_examples=50)
-def test_ccsl::numberfunctions::getindexof_instantiation(instance):
-    assert isinstance(instance, ccsl::numberFunctions::GetIndexOf)
+def test_ccsl_numberfunctions_getindexof_instantiation(instance):
+    assert isinstance(instance, ccsl_numberFunctions_GetIndexOf)
 
-@given(instance=ccsl::numberFunctions::CcslIntegerLiteral_strategy)
+@given(instance=ccsl_numberFunctions_CcslIntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_ccsl::numberfunctions::ccslintegerliteral_instantiation(instance):
-    assert isinstance(instance, ccsl::numberFunctions::CcslIntegerLiteral)
-
-@given(instance=ccsl::numberFunctions::CcslIntegerLiteral_strategy)
-def test_ccsl::numberfunctions::ccslintegerliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ccsl_numberfunctions_ccslintegerliteral_instantiation(instance):
+    assert isinstance(instance, ccsl_numberFunctions_CcslIntegerLiteral)
 
 
-@given(instance=ccsl::numberFunctions::CcslIntegerLiteral_strategy)
-def test_ccsl::numberfunctions::ccslintegerliteral_value_setter(instance):
+
+@given(instance=ccsl_numberFunctions_CcslIntegerLiteral_strategy)
+def test_ccsl_numberfunctions_ccslintegerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=numberFunctions::CcslNumberFunction_strategy)
+@given(instance=numberFunctions_CcslNumberFunction_strategy)
 @settings(max_examples=50)
-def test_numberfunctions::ccslnumberfunction_instantiation(instance):
-    assert isinstance(instance, numberFunctions::CcslNumberFunction)
+def test_numberfunctions_ccslnumberfunction_instantiation(instance):
+    assert isinstance(instance, numberFunctions_CcslNumberFunction)
 
-@given(instance=ccsl::filters::EquationFilter_strategy)
+@given(instance=ccsl_filters_EquationFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::equationfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::EquationFilter)
-
-@given(instance=ccsl::filters::EquationFilter_strategy)
-def test_ccsl::filters::equationfilter_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ccsl_filters_equationfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_EquationFilter)
 
 
-@given(instance=ccsl::filters::EquationFilter_strategy)
-def test_ccsl::filters::equationfilter_operator_setter(instance):
+
+@given(instance=ccsl_filters_EquationFilter_strategy)
+def test_ccsl_filters_equationfilter_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -4216,131 +4767,119 @@ def test_ccsl::filters::equationfilter_operator_setter(instance):
 def test_atomicfilter_instantiation(instance):
     assert isinstance(instance, AtomicFilter)
 
-@given(instance=ccsl::filters::TemplateFilter_strategy)
+@given(instance=ccsl_filters_SameNameFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::templatefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::TemplateFilter)
-
-@given(instance=ccsl::filters::FromClosureFilter_strategy)
-@settings(max_examples=50)
-def test_ccsl::filters::fromclosurefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::FromClosureFilter)
-
-@given(instance=ccsl::filters::SameNameFilter_strategy)
-@settings(max_examples=50)
-def test_ccsl::filters::samenamefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::SameNameFilter)
-
-@given(instance=ccsl::filters::SameNameFilter_strategy)
-def test_ccsl::filters::samenamefilter_ignoreCase_type(instance):
-    assert isinstance(instance.ignoreCase, str)
+def test_ccsl_filters_samenamefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_SameNameFilter)
 
 
-@given(instance=ccsl::filters::SameNameFilter_strategy)
-def test_ccsl::filters::samenamefilter_ignoreCase_setter(instance):
+
+@given(instance=ccsl_filters_SameNameFilter_strategy)
+def test_ccsl_filters_samenamefilter_ignoreCase_setter(instance):
     original = instance.ignoreCase
     instance.ignoreCase = original
     assert instance.ignoreCase == original
 
-@given(instance=ccsl::filters::SuperClassClosureFilter_strategy)
+@given(instance=ccsl_filters_HasSameReferenceFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::superclassclosurefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::SuperClassClosureFilter)
+def test_ccsl_filters_hassamereferencefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_HasSameReferenceFilter)
 
-@given(instance=ccsl::filters::SuperClassClosureFilter_strategy)
-def test_ccsl::filters::superclassclosurefilter_includesSubClass_type(instance):
-    assert isinstance(instance.includesSubClass, str)
+@given(instance=ccsl_filters_IsKindOfFilter_strategy)
+@settings(max_examples=50)
+def test_ccsl_filters_iskindoffilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_IsKindOfFilter)
+
+@given(instance=ccsl_filters_SuperClassClosureFilter_strategy)
+@settings(max_examples=50)
+def test_ccsl_filters_superclassclosurefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_SuperClassClosureFilter)
 
 
-@given(instance=ccsl::filters::SuperClassClosureFilter_strategy)
-def test_ccsl::filters::superclassclosurefilter_includesSubClass_setter(instance):
+
+@given(instance=ccsl_filters_SuperClassClosureFilter_strategy)
+def test_ccsl_filters_superclassclosurefilter_includesSubClass_setter(instance):
     original = instance.includesSubClass
     instance.includesSubClass = original
     assert instance.includesSubClass == original
 
-@given(instance=ccsl::filters::ChildClosureComplexTypeFilter_strategy)
+@given(instance=ccsl_filters_IsStringFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::childclosurecomplextypefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::ChildClosureComplexTypeFilter)
+def test_ccsl_filters_isstringfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_IsStringFilter)
 
-@given(instance=ccsl::filters::IsStringFilter_strategy)
+@given(instance=ccsl_filters_BlockLastStatementFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::isstringfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::IsStringFilter)
+def test_ccsl_filters_blocklaststatementfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_BlockLastStatementFilter)
 
-@given(instance=ccsl::filters::SuperMethodClosureFilter_strategy)
+@given(instance=ccsl_filters_TemplateFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::supermethodclosurefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::SuperMethodClosureFilter)
+def test_ccsl_filters_templatefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_TemplateFilter)
 
-@given(instance=ccsl::filters::HasSameReferenceFilter_strategy)
+@given(instance=ccsl_filters_ChildClosureComplexTypeFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::hassamereferencefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::HasSameReferenceFilter)
+def test_ccsl_filters_childclosurecomplextypefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_ChildClosureComplexTypeFilter)
 
-@given(instance=ccsl::filters::IsKindOfFilter_strategy)
+@given(instance=ccsl_filters_FromClosureFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::iskindoffilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::IsKindOfFilter)
+def test_ccsl_filters_fromclosurefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_FromClosureFilter)
 
-@given(instance=ccsl::filters::BlockLastStatementFilter_strategy)
+@given(instance=ccsl_filters_SuperMethodClosureFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::blocklaststatementfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::BlockLastStatementFilter)
+def test_ccsl_filters_supermethodclosurefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_SuperMethodClosureFilter)
 
-@given(instance=ccsl::filters::IsTypeOfFilter_strategy)
+@given(instance=ccsl_filters_IsTypeOfFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::istypeoffilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::IsTypeOfFilter)
+def test_ccsl_filters_istypeoffilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_IsTypeOfFilter)
 
-@given(instance=ccsl::filters::PropertyFilter_strategy)
+@given(instance=ccsl_filters_PropertyFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::propertyfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::PropertyFilter)
+def test_ccsl_filters_propertyfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_PropertyFilter)
 
 @given(instance=Filter_strategy)
 @settings(max_examples=50)
 def test_filter_instantiation(instance):
     assert isinstance(instance, Filter)
 
-@given(instance=ccsl::filters::CompositeFilter_strategy)
+@given(instance=ccsl_filters_CompositeFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::compositefilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::CompositeFilter)
-
-@given(instance=ccsl::filters::CompositeFilter_strategy)
-def test_ccsl::filters::compositefilter_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ccsl_filters_compositefilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_CompositeFilter)
 
 
-@given(instance=ccsl::filters::CompositeFilter_strategy)
-def test_ccsl::filters::compositefilter_operator_setter(instance):
+
+@given(instance=ccsl_filters_CompositeFilter_strategy)
+def test_ccsl_filters_compositefilter_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=ccsl::filters::AtomicFilter_strategy)
+@given(instance=ccsl_filters_AtomicFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::atomicfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::AtomicFilter)
+def test_ccsl_filters_atomicfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_AtomicFilter)
 
 @given(instance=CcslBooleanFunction_strategy)
 @settings(max_examples=50)
 def test_ccslbooleanfunction_instantiation(instance):
     assert isinstance(instance, CcslBooleanFunction)
 
-@given(instance=ccsl::filters::Filter_strategy)
+@given(instance=ccsl_filters_Filter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::filter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::Filter)
-
-@given(instance=ccsl::filters::Filter_strategy)
-def test_ccsl::filters::filter_negated_type(instance):
-    assert isinstance(instance.negated, str)
+def test_ccsl_filters_filter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_Filter)
 
 
-@given(instance=ccsl::filters::Filter_strategy)
-def test_ccsl::filters::filter_negated_setter(instance):
+
+@given(instance=ccsl_filters_Filter_strategy)
+def test_ccsl_filters_filter_negated_setter(instance):
     original = instance.negated
     instance.negated = original
     assert instance.negated == original
@@ -4350,925 +4889,263 @@ def test_ccsl::filters::filter_negated_setter(instance):
 def test_ccslfunction_instantiation(instance):
     assert isinstance(instance, CcslFunction)
 
-@given(instance=ccsl::numberFunctions::CcslNumberFunction_strategy)
+@given(instance=ccsl_numberFunctions_CcslNumberFunction_strategy)
 @settings(max_examples=50)
-def test_ccsl::numberfunctions::ccslnumberfunction_instantiation(instance):
-    assert isinstance(instance, ccsl::numberFunctions::CcslNumberFunction)
+def test_ccsl_numberfunctions_ccslnumberfunction_instantiation(instance):
+    assert isinstance(instance, ccsl_numberFunctions_CcslNumberFunction)
 
-@given(instance=ccsl::booleanFunctions::CcslBooleanFunction_strategy)
+@given(instance=ccsl_booleanFunctions_CcslBooleanFunction_strategy)
 @settings(max_examples=50)
-def test_ccsl::booleanfunctions::ccslbooleanfunction_instantiation(instance):
-    assert isinstance(instance, ccsl::booleanFunctions::CcslBooleanFunction)
+def test_ccsl_booleanfunctions_ccslbooleanfunction_instantiation(instance):
+    assert isinstance(instance, ccsl_booleanFunctions_CcslBooleanFunction)
 
-@given(instance=ccsl::filters::ImplicityContainerFilter_strategy)
+@given(instance=ccsl_filters_ImplicityContainerFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::implicitycontainerfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::ImplicityContainerFilter)
+def test_ccsl_filters_implicitycontainerfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_ImplicityContainerFilter)
 
-@given(instance=expressions::OperatorExpression_strategy)
+@given(instance=expressions_OperatorExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::operatorexpression_instantiation(instance):
-    assert isinstance(instance, expressions::OperatorExpression)
+def test_expressions_operatorexpression_instantiation(instance):
+    assert isinstance(instance, expressions_OperatorExpression)
 
 @given(instance=TemplateFilter_strategy)
 @settings(max_examples=50)
 def test_templatefilter_instantiation(instance):
     assert isinstance(instance, TemplateFilter)
 
-@given(instance=ccsl::filters::ImplicityOperandFilter_strategy)
+@given(instance=ccsl_filters_ImplicityOperandFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::implicityoperandfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::ImplicityOperandFilter)
+def test_ccsl_filters_implicityoperandfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_ImplicityOperandFilter)
 
-@given(instance=ccsl::filters::RegexMatch_strategy)
+@given(instance=ccsl_filters_RegexMatch_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::regexmatch_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::RegexMatch)
-
-@given(instance=ccsl::filters::RegexMatch_strategy)
-def test_ccsl::filters::regexmatch_regex_type(instance):
-    assert isinstance(instance.regex, str)
+def test_ccsl_filters_regexmatch_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_RegexMatch)
 
 
-@given(instance=ccsl::filters::RegexMatch_strategy)
-def test_ccsl::filters::regexmatch_regex_setter(instance):
+
+@given(instance=ccsl_filters_RegexMatch_strategy)
+def test_ccsl_filters_regexmatch_regex_setter(instance):
     original = instance.regex
     instance.regex = original
     assert instance.regex == original
 
-@given(instance=ccsl::filters::CountFilter_strategy)
+@given(instance=ccsl_filters_CountFilter_strategy)
 @settings(max_examples=50)
-def test_ccsl::filters::countfilter_instantiation(instance):
-    assert isinstance(instance, ccsl::filters::CountFilter)
-
-@given(instance=ccsl::filters::CountFilter_strategy)
-def test_ccsl::filters::countfilter_max_type(instance):
-    assert isinstance(instance.max, str)
+def test_ccsl_filters_countfilter_instantiation(instance):
+    assert isinstance(instance, ccsl_filters_CountFilter)
 
 
-@given(instance=ccsl::filters::CountFilter_strategy)
-def test_ccsl::filters::countfilter_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
 
-@given(instance=ccsl::filters::CountFilter_strategy)
-def test_ccsl::filters::countfilter_min_type(instance):
-    assert isinstance(instance.min, str)
-
-
-@given(instance=ccsl::filters::CountFilter_strategy)
-def test_ccsl::filters::countfilter_min_setter(instance):
+@given(instance=ccsl_filters_CountFilter_strategy)
+def test_ccsl_filters_countfilter_min_setter(instance):
     original = instance.min
     instance.min = original
     assert instance.min == original
 
-@given(instance=ccsl::faultTypeDescription::InjectionAction_strategy)
-@settings(max_examples=50)
-def test_ccsl::faulttypedescription::injectionaction_instantiation(instance):
-    assert isinstance(instance, ccsl::faultTypeDescription::InjectionAction)
 
-@given(instance=filters::Filter_strategy)
-@settings(max_examples=50)
-def test_filters::filter_instantiation(instance):
-    assert isinstance(instance, filters::Filter)
 
-@given(instance=ccsl::context::Context_strategy)
+@given(instance=ccsl_filters_CountFilter_strategy)
+def test_ccsl_filters_countfilter_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
+
+@given(instance=ccsl_faultTypeDescription_InjectionAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::context::context_instantiation(instance):
-    assert isinstance(instance, ccsl::context::Context)
+def test_ccsl_faulttypedescription_injectionaction_instantiation(instance):
+    assert isinstance(instance, ccsl_faultTypeDescription_InjectionAction)
+
+@given(instance=filters_Filter_strategy)
+@settings(max_examples=50)
+def test_filters_filter_instantiation(instance):
+    assert isinstance(instance, filters_Filter)
+
+@given(instance=ccsl_context_Context_strategy)
+@settings(max_examples=50)
+def test_ccsl_context_context_instantiation(instance):
+    assert isinstance(instance, ccsl_context_Context)
+
+@given(instance=ccsl_datatype_VoidType_strategy)
+@settings(max_examples=50)
+def test_ccsl_datatype_voidtype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_VoidType)
+
+@given(instance=ccsl_datatype_IntPrimitiveType_strategy)
+@settings(max_examples=50)
+def test_ccsl_datatype_intprimitivetype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_IntPrimitiveType)
+
+@given(instance=ccsl_datatype_GenericType_strategy)
+@settings(max_examples=50)
+def test_ccsl_datatype_generictype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_GenericType)
 
 @given(instance=ObjectType_strategy)
 @settings(max_examples=50)
 def test_objecttype_instantiation(instance):
     assert isinstance(instance, ObjectType)
 
-@given(instance=ccsl::datatype::ArrayType_strategy)
+@given(instance=ccsl_datatype_ArrayType_strategy)
 @settings(max_examples=50)
-def test_ccsl::datatype::arraytype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::ArrayType)
-
-@given(instance=ccsl::datatype::ArrayType_strategy)
-def test_ccsl::datatype::arraytype_dimensions_type(instance):
-    assert isinstance(instance.dimensions, str)
+def test_ccsl_datatype_arraytype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_ArrayType)
 
 
-@given(instance=ccsl::datatype::ArrayType_strategy)
-def test_ccsl::datatype::arraytype_dimensions_setter(instance):
+
+@given(instance=ccsl_datatype_ArrayType_strategy)
+def test_ccsl_datatype_arraytype_dimensions_setter(instance):
     original = instance.dimensions
     instance.dimensions = original
     assert instance.dimensions == original
 
-@given(instance=ccsl::datatype::ParameterizedType_strategy)
+@given(instance=ccsl_datatype_ParameterizedType_strategy)
 @settings(max_examples=50)
-def test_ccsl::datatype::parameterizedtype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::ParameterizedType)
+def test_ccsl_datatype_parameterizedtype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_ParameterizedType)
 
-@given(instance=ccsl::functions::CcslFunction_strategy)
+@given(instance=ccsl_datatype_ObjectType_strategy)
 @settings(max_examples=50)
-def test_ccsl::functions::ccslfunction_instantiation(instance):
-    assert isinstance(instance, ccsl::functions::CcslFunction)
+def test_ccsl_datatype_objecttype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_ObjectType)
 
-@given(instance=ccsl::strategy::AllStrategy_strategy)
+@given(instance=ccsl_functions_CcslFunction_strategy)
 @settings(max_examples=50)
-def test_ccsl::strategy::allstrategy_instantiation(instance):
-    assert isinstance(instance, ccsl::strategy::AllStrategy)
+def test_ccsl_functions_ccslfunction_instantiation(instance):
+    assert isinstance(instance, ccsl_functions_CcslFunction)
 
-@given(instance=ccsl::action::ArithmeticOperatorMap_strategy)
+@given(instance=ccsl_strategy_AllStrategy_strategy)
 @settings(max_examples=50)
-def test_ccsl::action::arithmeticoperatormap_instantiation(instance):
-    assert isinstance(instance, ccsl::action::ArithmeticOperatorMap)
+def test_ccsl_strategy_allstrategy_instantiation(instance):
+    assert isinstance(instance, ccsl_strategy_AllStrategy)
 
-@given(instance=ccsl::action::ArithmeticOperatorMap_strategy)
-def test_ccsl::action::arithmeticoperatormap_newArithmeticOperator_type(instance):
-    assert isinstance(instance.newArithmeticOperator, str)
-
-
-@given(instance=ccsl::action::ArithmeticOperatorMap_strategy)
-def test_ccsl::action::arithmeticoperatormap_newArithmeticOperator_setter(instance):
-    original = instance.newArithmeticOperator
-    instance.newArithmeticOperator = original
-    assert instance.newArithmeticOperator == original
-
-@given(instance=ccsl::action::ArithmeticOperatorMap_strategy)
-def test_ccsl::action::arithmeticoperatormap_oldArithmeticOperator_type(instance):
-    assert isinstance(instance.oldArithmeticOperator, str)
+@given(instance=ccsl_action_ArithmeticOperatorMap_strategy)
+@settings(max_examples=50)
+def test_ccsl_action_arithmeticoperatormap_instantiation(instance):
+    assert isinstance(instance, ccsl_action_ArithmeticOperatorMap)
 
 
-@given(instance=ccsl::action::ArithmeticOperatorMap_strategy)
-def test_ccsl::action::arithmeticoperatormap_oldArithmeticOperator_setter(instance):
+
+@given(instance=ccsl_action_ArithmeticOperatorMap_strategy)
+def test_ccsl_action_arithmeticoperatormap_oldArithmeticOperator_setter(instance):
     original = instance.oldArithmeticOperator
     instance.oldArithmeticOperator = original
     assert instance.oldArithmeticOperator == original
 
-@given(instance=action::ArithmeticOperatorMap_strategy)
-@settings(max_examples=50)
-def test_action::arithmeticoperatormap_instantiation(instance):
-    assert isinstance(instance, action::ArithmeticOperatorMap)
 
-@given(instance=ccsl::action::ReplaceArithmeticOperatorAction_strategy)
-@settings(max_examples=50)
-def test_ccsl::action::replacearithmeticoperatoraction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::ReplaceArithmeticOperatorAction)
 
-@given(instance=ccsl::action::ReplaceVariableAccessAction_strategy)
-@settings(max_examples=50)
-def test_ccsl::action::replacevariableaccessaction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::ReplaceVariableAccessAction)
+@given(instance=ccsl_action_ArithmeticOperatorMap_strategy)
+def test_ccsl_action_arithmeticoperatormap_newArithmeticOperator_setter(instance):
+    original = instance.newArithmeticOperator
+    instance.newArithmeticOperator = original
+    assert instance.newArithmeticOperator == original
 
-@given(instance=ccsl::action::DeleteRandomStatementAction_strategy)
+@given(instance=action_ArithmeticOperatorMap_strategy)
 @settings(max_examples=50)
-def test_ccsl::action::deleterandomstatementaction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::DeleteRandomStatementAction)
+def test_action_arithmeticoperatormap_instantiation(instance):
+    assert isinstance(instance, action_ArithmeticOperatorMap)
 
-@given(instance=ccsl::action::ChangeLiteralValueAction_strategy)
+@given(instance=ccsl_action_ReplaceArithmeticOperatorAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::action::changeliteralvalueaction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::ChangeLiteralValueAction)
+def test_ccsl_action_replacearithmeticoperatoraction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_ReplaceArithmeticOperatorAction)
 
-@given(instance=ccsl::action::DeleteInfixOperatorAction_strategy)
+@given(instance=ccsl_action_ReplaceVariableAccessAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::action::deleteinfixoperatoraction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::DeleteInfixOperatorAction)
+def test_ccsl_action_replacevariableaccessaction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_ReplaceVariableAccessAction)
 
-@given(instance=ccsl::action::MoveScopeUpAction_strategy)
+@given(instance=ccsl_action_DeleteRandomStatementAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::action::movescopeupaction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::MoveScopeUpAction)
+def test_ccsl_action_deleterandomstatementaction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_DeleteRandomStatementAction)
 
-@given(instance=ccsl::action::DeleteAction_strategy)
+@given(instance=ccsl_action_ChangeLiteralValueAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::action::deleteaction_instantiation(instance):
-    assert isinstance(instance, ccsl::action::DeleteAction)
+def test_ccsl_action_changeliteralvalueaction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_ChangeLiteralValueAction)
 
-@given(instance=ccsl::faultTypeDescription::InjectionStrategy_strategy)
+@given(instance=ccsl_action_DeleteInfixOperatorAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::faulttypedescription::injectionstrategy_instantiation(instance):
-    assert isinstance(instance, ccsl::faultTypeDescription::InjectionStrategy)
+def test_ccsl_action_deleteinfixoperatoraction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_DeleteInfixOperatorAction)
 
-@given(instance=ccsl::import::ImportableElement_strategy)
+@given(instance=ccsl_action_MoveScopeUpAction_strategy)
 @settings(max_examples=50)
-def test_ccsl::import::importableelement_instantiation(instance):
-    assert isinstance(instance, ccsl::import::ImportableElement)
+def test_ccsl_action_movescopeupaction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_MoveScopeUpAction)
+
+@given(instance=ccsl_action_DeleteAction_strategy)
+@settings(max_examples=50)
+def test_ccsl_action_deleteaction_instantiation(instance):
+    assert isinstance(instance, ccsl_action_DeleteAction)
+
+@given(instance=ccsl_faultTypeDescription_InjectionStrategy_strategy)
+@settings(max_examples=50)
+def test_ccsl_faulttypedescription_injectionstrategy_instantiation(instance):
+    assert isinstance(instance, ccsl_faultTypeDescription_InjectionStrategy)
+
+@given(instance=ccsl_import_ImportStatement_strategy)
+@settings(max_examples=50)
+def test_ccsl_import_importstatement_instantiation(instance):
+    assert isinstance(instance, ccsl_import_ImportStatement)
+
+@given(instance=ccsl_import_ImportableElement_strategy)
+@settings(max_examples=50)
+def test_ccsl_import_importableelement_instantiation(instance):
+    assert isinstance(instance, ccsl_import_ImportableElement)
 
 @given(instance=Invocation_strategy)
 @settings(max_examples=50)
 def test_invocation_instantiation(instance):
     assert isinstance(instance, Invocation)
 
-@given(instance=ccsl::invocation::SimpleMethodInvocation_strategy)
+@given(instance=ccsl_invocation_SimpleMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_ccsl::invocation::simplemethodinvocation_instantiation(instance):
-    assert isinstance(instance, ccsl::invocation::SimpleMethodInvocation)
+def test_ccsl_invocation_simplemethodinvocation_instantiation(instance):
+    assert isinstance(instance, ccsl_invocation_SimpleMethodInvocation)
 
-@given(instance=ccsl::invocation::ConstructorInvocation_strategy)
+@given(instance=ccsl_invocation_ConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_ccsl::invocation::constructorinvocation_instantiation(instance):
-    assert isinstance(instance, ccsl::invocation::ConstructorInvocation)
+def test_ccsl_invocation_constructorinvocation_instantiation(instance):
+    assert isinstance(instance, ccsl_invocation_ConstructorInvocation)
+
+@given(instance=ccsl_invocation_Invocation_strategy)
+@settings(max_examples=50)
+def test_ccsl_invocation_invocation_instantiation(instance):
+    assert isinstance(instance, ccsl_invocation_Invocation)
+
+
+
+@given(instance=ccsl_invocation_Invocation_strategy)
+def test_ccsl_invocation_invocation_argsKind_setter(instance):
+    original = instance.argsKind
+    instance.argsKind = original
+    assert instance.argsKind == original
 
 @given(instance=SimpleMethodInvocation_strategy)
 @settings(max_examples=50)
 def test_simplemethodinvocation_instantiation(instance):
     assert isinstance(instance, SimpleMethodInvocation)
 
-@given(instance=ccsl::invocation::SuperMethodInvocation_strategy)
+@given(instance=ccsl_invocation_SuperMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_ccsl::invocation::supermethodinvocation_instantiation(instance):
-    assert isinstance(instance, ccsl::invocation::SuperMethodInvocation)
+def test_ccsl_invocation_supermethodinvocation_instantiation(instance):
+    assert isinstance(instance, ccsl_invocation_SuperMethodInvocation)
 
-@given(instance=ccsl::invocation::MethodInvocation_strategy)
+@given(instance=ccsl_invocation_MethodInvocation_strategy)
 @settings(max_examples=50)
-def test_ccsl::invocation::methodinvocation_instantiation(instance):
-    assert isinstance(instance, ccsl::invocation::MethodInvocation)
+def test_ccsl_invocation_methodinvocation_instantiation(instance):
+    assert isinstance(instance, ccsl_invocation_MethodInvocation)
 
-@given(instance=PrimitiveType_strategy)
+@given(instance=ccsl_datatype_ShortPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_primitivetype_instantiation(instance):
-    assert isinstance(instance, PrimitiveType)
+def test_ccsl_datatype_shortprimitivetype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_ShortPrimitiveType)
 
-@given(instance=ccsl::datatype::BooleanPrimitiveType_strategy)
+@given(instance=ccsl_datatype_BooleanPrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ccsl::datatype::booleanprimitivetype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::BooleanPrimitiveType)
-
-@given(instance=ccsl::datatype::IntPrimitiveType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::intprimitivetype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::IntPrimitiveType)
-
-@given(instance=ccsl::datatype::ShortPrimitiveType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::shortprimitivetype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::ShortPrimitiveType)
-
-@given(instance=ccsl::datatype::VoidType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::voidtype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::VoidType)
-
-@given(instance=ccsl::datatype::StringPrimitiveType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::stringprimitivetype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::StringPrimitiveType)
-
-@given(instance=DataType_strategy)
-@settings(max_examples=50)
-def test_datatype_instantiation(instance):
-    assert isinstance(instance, DataType)
-
-@given(instance=ccsl::datatype::ObjectType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::objecttype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::ObjectType)
-
-@given(instance=ccsl::datatype::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::primitivetype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::PrimitiveType)
-
-@given(instance=ccsl::datatype::DataType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::datatype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::DataType)
-
-@given(instance=annotation::Annotation_strategy)
-@settings(max_examples=50)
-def test_annotation::annotation_instantiation(instance):
-    assert isinstance(instance, annotation::Annotation)
-
-@given(instance=ccsl::annotation::AnnotableElement_strategy)
-@settings(max_examples=50)
-def test_ccsl::annotation::annotableelement_instantiation(instance):
-    assert isinstance(instance, ccsl::annotation::AnnotableElement)
-
-@given(instance=ccsl::annotation::AnnotableElement_strategy)
-def test_ccsl::annotation::annotableelement_annotationsKind_type(instance):
-    assert isinstance(instance.annotationsKind, str)
-
-
-@given(instance=ccsl::annotation::AnnotableElement_strategy)
-def test_ccsl::annotation::annotableelement_annotationsKind_setter(instance):
-    original = instance.annotationsKind
-    instance.annotationsKind = original
-    assert instance.annotationsKind == original
-
-@given(instance=complexType::AnnotationType_strategy)
-@settings(max_examples=50)
-def test_complextype::annotationtype_instantiation(instance):
-    assert isinstance(instance, complexType::AnnotationType)
-
-@given(instance=statements::Block_strategy)
-@settings(max_examples=50)
-def test_statements::block_instantiation(instance):
-    assert isinstance(instance, statements::Block)
-
-@given(instance=tryCatch::CatchClause_strategy)
-@settings(max_examples=50)
-def test_trycatch::catchclause_instantiation(instance):
-    assert isinstance(instance, tryCatch::CatchClause)
-
-@given(instance=UnaryAssignment_strategy)
-@settings(max_examples=50)
-def test_unaryassignment_instantiation(instance):
-    assert isinstance(instance, UnaryAssignment)
-
-@given(instance=ccsl::assignment::PostfixUnaryAssignment_strategy)
-@settings(max_examples=50)
-def test_ccsl::assignment::postfixunaryassignment_instantiation(instance):
-    assert isinstance(instance, ccsl::assignment::PostfixUnaryAssignment)
-
-@given(instance=ccsl::assignment::PrefixUnaryAssignment_strategy)
-@settings(max_examples=50)
-def test_ccsl::assignment::prefixunaryassignment_instantiation(instance):
-    assert isinstance(instance, ccsl::assignment::PrefixUnaryAssignment)
-
-@given(instance=AbstractAssignment_strategy)
-@settings(max_examples=50)
-def test_abstractassignment_instantiation(instance):
-    assert isinstance(instance, AbstractAssignment)
-
-@given(instance=ccsl::assignment::UnaryAssignment_strategy)
-@settings(max_examples=50)
-def test_ccsl::assignment::unaryassignment_instantiation(instance):
-    assert isinstance(instance, ccsl::assignment::UnaryAssignment)
-
-@given(instance=ccsl::assignment::UnaryAssignment_strategy)
-def test_ccsl::assignment::unaryassignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ccsl::assignment::UnaryAssignment_strategy)
-def test_ccsl::assignment::unaryassignment_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=ccsl::assignment::Assignment_strategy)
-@settings(max_examples=50)
-def test_ccsl::assignment::assignment_instantiation(instance):
-    assert isinstance(instance, ccsl::assignment::Assignment)
-
-@given(instance=ccsl::assignment::Assignment_strategy)
-def test_ccsl::assignment::assignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=ccsl::assignment::Assignment_strategy)
-def test_ccsl::assignment::assignment_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=OperatorExpression_strategy)
-@settings(max_examples=50)
-def test_operatorexpression_instantiation(instance):
-    assert isinstance(instance, OperatorExpression)
-
-@given(instance=ccsl::expressions::ArithmeticExpression_strategy)
-@settings(max_examples=50)
-def test_ccsl::expressions::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, ccsl::expressions::ArithmeticExpression)
-
-@given(instance=ccsl::expressions::ArithmeticExpression_strategy)
-def test_ccsl::expressions::arithmeticexpression_arithmeticOperator_type(instance):
-    assert isinstance(instance.arithmeticOperator, str)
-
-
-@given(instance=ccsl::expressions::ArithmeticExpression_strategy)
-def test_ccsl::expressions::arithmeticexpression_arithmeticOperator_setter(instance):
-    original = instance.arithmeticOperator
-    instance.arithmeticOperator = original
-    assert instance.arithmeticOperator == original
-
-@given(instance=ccsl::expressions::BooleanExpression_strategy)
-@settings(max_examples=50)
-def test_ccsl::expressions::booleanexpression_instantiation(instance):
-    assert isinstance(instance, ccsl::expressions::BooleanExpression)
-
-@given(instance=ccsl::expressions::BooleanExpression_strategy)
-def test_ccsl::expressions::booleanexpression_booleanOperator_type(instance):
-    assert isinstance(instance.booleanOperator, str)
-
-
-@given(instance=ccsl::expressions::BooleanExpression_strategy)
-def test_ccsl::expressions::booleanexpression_booleanOperator_setter(instance):
-    original = instance.booleanOperator
-    instance.booleanOperator = original
-    assert instance.booleanOperator == original
-
-@given(instance=ccsl::expressions::InfixExpression_strategy)
-@settings(max_examples=50)
-def test_ccsl::expressions::infixexpression_instantiation(instance):
-    assert isinstance(instance, ccsl::expressions::InfixExpression)
-
-@given(instance=ccsl::expressions::StringConcatenation_strategy)
-@settings(max_examples=50)
-def test_ccsl::expressions::stringconcatenation_instantiation(instance):
-    assert isinstance(instance, ccsl::expressions::StringConcatenation)
-
-@given(instance=Block_strategy)
-@settings(max_examples=50)
-def test_block_instantiation(instance):
-    assert isinstance(instance, Block)
-
-@given(instance=ccsl::controlFlow::SwitchCaseBlock_strategy)
-@settings(max_examples=50)
-def test_ccsl::controlflow::switchcaseblock_instantiation(instance):
-    assert isinstance(instance, ccsl::controlFlow::SwitchCaseBlock)
-
-@given(instance=ccsl::controlFlow::SwitchCaseBlock_strategy)
-def test_ccsl::controlflow::switchcaseblock_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=ccsl::controlFlow::SwitchCaseBlock_strategy)
-def test_ccsl::controlflow::switchcaseblock_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=controlFlow::SwitchCaseBlock_strategy)
-@settings(max_examples=50)
-def test_controlflow::switchcaseblock_instantiation(instance):
-    assert isinstance(instance, controlFlow::SwitchCaseBlock)
-
-@given(instance=ControlFlow_strategy)
-@settings(max_examples=50)
-def test_controlflow_instantiation(instance):
-    assert isinstance(instance, ControlFlow)
-
-@given(instance=ccsl::controlFlow::IfStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::controlflow::ifstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::controlFlow::IfStatement)
-
-@given(instance=ccsl::controlFlow::LoopStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::controlflow::loopstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::controlFlow::LoopStatement)
-
-@given(instance=ccsl::controlFlow::SwitchStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::controlflow::switchstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::controlFlow::SwitchStatement)
-
-@given(instance=LiteralValue_strategy)
-@settings(max_examples=50)
-def test_literalvalue_instantiation(instance):
-    assert isinstance(instance, LiteralValue)
-
-@given(instance=ccsl::literalValues::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_ccsl::literalvalues::stringliteral_instantiation(instance):
-    assert isinstance(instance, ccsl::literalValues::StringLiteral)
-
-@given(instance=ccsl::literalValues::CharacterLiteral_strategy)
-@settings(max_examples=50)
-def test_ccsl::literalvalues::characterliteral_instantiation(instance):
-    assert isinstance(instance, ccsl::literalValues::CharacterLiteral)
-
-@given(instance=ccsl::literalValues::NumberLiteral_strategy)
-@settings(max_examples=50)
-def test_ccsl::literalvalues::numberliteral_instantiation(instance):
-    assert isinstance(instance, ccsl::literalValues::NumberLiteral)
-
-@given(instance=ccsl::literalValues::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_ccsl::literalvalues::booleanliteral_instantiation(instance):
-    assert isinstance(instance, ccsl::literalValues::BooleanLiteral)
-
-@given(instance=ccsl::literalValues::NullLiteral_strategy)
-@settings(max_examples=50)
-def test_ccsl::literalvalues::nullliteral_instantiation(instance):
-    assert isinstance(instance, ccsl::literalValues::NullLiteral)
-
-@given(instance=ccsl::statements::ThrowStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::throwstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::ThrowStatement)
-
-@given(instance=Statement_strategy)
-@settings(max_examples=50)
-def test_statement_instantiation(instance):
-    assert isinstance(instance, Statement)
-
-@given(instance=ccsl::statements::ReturnStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::returnstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::ReturnStatement)
-
-@given(instance=ccsl::statements::InstanceOf_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::instanceof_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::InstanceOf)
-
-@given(instance=ccsl::tryCatch::CatchClause_strategy)
-@settings(max_examples=50)
-def test_ccsl::trycatch::catchclause_instantiation(instance):
-    assert isinstance(instance, ccsl::tryCatch::CatchClause)
-
-@given(instance=ccsl::literalValues::LiteralValue_strategy)
-@settings(max_examples=50)
-def test_ccsl::literalvalues::literalvalue_instantiation(instance):
-    assert isinstance(instance, ccsl::literalValues::LiteralValue)
-
-@given(instance=ccsl::literalValues::LiteralValue_strategy)
-def test_ccsl::literalvalues::literalvalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=ccsl::literalValues::LiteralValue_strategy)
-def test_ccsl::literalvalues::literalvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=ccsl::annotation::Annotation_strategy)
-@settings(max_examples=50)
-def test_ccsl::annotation::annotation_instantiation(instance):
-    assert isinstance(instance, ccsl::annotation::Annotation)
-
-@given(instance=ccsl::import::ImportStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::import::importstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::import::ImportStatement)
-
-@given(instance=ccsl::statements::ArrayCreation_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::arraycreation_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::ArrayCreation)
-
-@given(instance=ccsl::statements::BreakStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::breakstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::BreakStatement)
-
-@given(instance=ccsl::statements::ThisStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::thisstatement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::ThisStatement)
-
-@given(instance=ccsl::statements::ContinueStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::continuestatement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::ContinueStatement)
-
-@given(instance=ccsl::assignment::AbstractAssignment_strategy)
-@settings(max_examples=50)
-def test_ccsl::assignment::abstractassignment_instantiation(instance):
-    assert isinstance(instance, ccsl::assignment::AbstractAssignment)
-
-@given(instance=ccsl::tryCatch::TryStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::trycatch::trystatement_instantiation(instance):
-    assert isinstance(instance, ccsl::tryCatch::TryStatement)
-
-@given(instance=ccsl::expressions::ParenthesizedExpression_strategy)
-@settings(max_examples=50)
-def test_ccsl::expressions::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, ccsl::expressions::ParenthesizedExpression)
-
-@given(instance=ccsl::statements::SynchronizedBlock_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::synchronizedblock_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::SynchronizedBlock)
-
-@given(instance=ccsl::statements::Access_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::access_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::Access)
-
-@given(instance=ccsl::invocation::Invocation_strategy)
-@settings(max_examples=50)
-def test_ccsl::invocation::invocation_instantiation(instance):
-    assert isinstance(instance, ccsl::invocation::Invocation)
-
-@given(instance=ccsl::invocation::Invocation_strategy)
-def test_ccsl::invocation::invocation_argsKind_type(instance):
-    assert isinstance(instance.argsKind, str)
-
-
-@given(instance=ccsl::invocation::Invocation_strategy)
-def test_ccsl::invocation::invocation_argsKind_setter(instance):
-    original = instance.argsKind
-    instance.argsKind = original
-    assert instance.argsKind == original
-
-@given(instance=ccsl::expressions::OperatorExpression_strategy)
-@settings(max_examples=50)
-def test_ccsl::expressions::operatorexpression_instantiation(instance):
-    assert isinstance(instance, ccsl::expressions::OperatorExpression)
-
-@given(instance=ccsl::statements::EmptyStatement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::emptystatement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::EmptyStatement)
-
-@given(instance=ccsl::statements::NamedElementAccess_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::namedelementaccess_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::NamedElementAccess)
-
-@given(instance=ccsl::statements::Statement_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::statement_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::Statement)
-
-@given(instance=method::SimpleMethod_strategy)
-@settings(max_examples=50)
-def test_method::simplemethod_instantiation(instance):
-    assert isinstance(instance, method::SimpleMethod)
-
-@given(instance=ccsl::method::Method_strategy)
-@settings(max_examples=50)
-def test_ccsl::method::method_instantiation(instance):
-    assert isinstance(instance, ccsl::method::Method)
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_inheritance_type(instance):
-    assert isinstance(instance.inheritance, str)
-
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_inheritance_setter(instance):
-    original = instance.inheritance
-    instance.inheritance = original
-    assert instance.inheritance == original
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_final_type(instance):
-    assert isinstance(instance.final, str)
-
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_abstract_type(instance):
-    assert isinstance(instance.abstract, str)
-
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_abstract_setter(instance):
-    original = instance.abstract
-    instance.abstract = original
-    assert instance.abstract == original
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_static_type(instance):
-    assert isinstance(instance.static, str)
-
-
-@given(instance=ccsl::method::Method_strategy)
-def test_ccsl::method::method_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=variable::ParameterVariable_strategy)
-@settings(max_examples=50)
-def test_variable::parametervariable_instantiation(instance):
-    assert isinstance(instance, variable::ParameterVariable)
-
-@given(instance=elements::Element_strategy)
-@settings(max_examples=50)
-def test_elements::element_instantiation(instance):
-    assert isinstance(instance, elements::Element)
-
-@given(instance=ccsl::method::SimpleMethod_strategy)
-@settings(max_examples=50)
-def test_ccsl::method::simplemethod_instantiation(instance):
-    assert isinstance(instance, ccsl::method::SimpleMethod)
-
-@given(instance=ccsl::method::SimpleMethod_strategy)
-def test_ccsl::method::simplemethod_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=ccsl::method::SimpleMethod_strategy)
-def test_ccsl::method::simplemethod_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=ccsl::method::SimpleMethod_strategy)
-def test_ccsl::method::simplemethod_paramsKind_type(instance):
-    assert isinstance(instance.paramsKind, str)
-
-
-@given(instance=ccsl::method::SimpleMethod_strategy)
-def test_ccsl::method::simplemethod_paramsKind_setter(instance):
-    original = instance.paramsKind
-    instance.paramsKind = original
-    assert instance.paramsKind == original
-
-@given(instance=SimpleMethod_strategy)
-@settings(max_examples=50)
-def test_simplemethod_instantiation(instance):
-    assert isinstance(instance, SimpleMethod)
-
-@given(instance=ccsl::method::Constructor_strategy)
-@settings(max_examples=50)
-def test_ccsl::method::constructor_instantiation(instance):
-    assert isinstance(instance, ccsl::method::Constructor)
-
-@given(instance=ccsl::method::Constructor_strategy)
-def test_ccsl::method::constructor_avaliableInSourceCode_type(instance):
-    assert isinstance(instance.avaliableInSourceCode, str)
-
-
-@given(instance=ccsl::method::Constructor_strategy)
-def test_ccsl::method::constructor_avaliableInSourceCode_setter(instance):
-    original = instance.avaliableInSourceCode
-    instance.avaliableInSourceCode = original
-    assert instance.avaliableInSourceCode == original
-
-@given(instance=ccsl::statements::InstanceCreation_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::instancecreation_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::InstanceCreation)
-
-@given(instance=ccsl::statements::InstanceCreation_strategy)
-def test_ccsl::statements::instancecreation_argsKind_type(instance):
-    assert isinstance(instance.argsKind, str)
-
-
-@given(instance=ccsl::statements::InstanceCreation_strategy)
-def test_ccsl::statements::instancecreation_argsKind_setter(instance):
-    original = instance.argsKind
-    instance.argsKind = original
-    assert instance.argsKind == original
-
-@given(instance=ccsl::statements::VarDeclaration_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::vardeclaration_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::VarDeclaration)
-
-@given(instance=ccsl::statements::Block_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::block_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::Block)
-
-@given(instance=ccsl::statements::Block_strategy)
-def test_ccsl::statements::block_statementsKind_type(instance):
-    assert isinstance(instance.statementsKind, str)
-
-
-@given(instance=ccsl::statements::Block_strategy)
-def test_ccsl::statements::block_statementsKind_setter(instance):
-    original = instance.statementsKind
-    instance.statementsKind = original
-    assert instance.statementsKind == original
-
-@given(instance=ccsl::statements::ControlFlow_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::controlflow_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::ControlFlow)
-
-@given(instance=Access_strategy)
-@settings(max_examples=50)
-def test_access_instantiation(instance):
-    assert isinstance(instance, Access)
-
-@given(instance=ccsl::statements::DataTypeAccess_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::datatypeaccess_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::DataTypeAccess)
-
-@given(instance=ccsl::statements::VariableAccess_strategy)
-@settings(max_examples=50)
-def test_ccsl::statements::variableaccess_instantiation(instance):
-    assert isinstance(instance, ccsl::statements::VariableAccess)
-
-@given(instance=complexType::JClass_strategy)
-@settings(max_examples=50)
-def test_complextype::jclass_instantiation(instance):
-    assert isinstance(instance, complexType::JClass)
-
-@given(instance=method::Constructor_strategy)
-@settings(max_examples=50)
-def test_method::constructor_instantiation(instance):
-    assert isinstance(instance, method::Constructor)
-
-@given(instance=datatype::ObjectType_strategy)
-@settings(max_examples=50)
-def test_datatype::objecttype_instantiation(instance):
-    assert isinstance(instance, datatype::ObjectType)
-
-@given(instance=ccsl::complexType::DeclaredType_strategy)
-@settings(max_examples=50)
-def test_ccsl::complextype::declaredtype_instantiation(instance):
-    assert isinstance(instance, ccsl::complexType::DeclaredType)
-
-@given(instance=ccsl::complexType::DeclaredType_strategy)
-def test_ccsl::complextype::declaredtype_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=ccsl::complexType::DeclaredType_strategy)
-def test_ccsl::complextype::declaredtype_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=ccsl::complexType::DeclaredType_strategy)
-def test_ccsl::complextype::declaredtype_static_type(instance):
-    assert isinstance(instance.static, str)
-
-
-@given(instance=ccsl::complexType::DeclaredType_strategy)
-def test_ccsl::complextype::declaredtype_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=ComplexType_strategy)
-@settings(max_examples=50)
-def test_complextype_instantiation(instance):
-    assert isinstance(instance, ComplexType)
-
-@given(instance=ccsl::datatype::GenericType_strategy)
-@settings(max_examples=50)
-def test_ccsl::datatype::generictype_instantiation(instance):
-    assert isinstance(instance, ccsl::datatype::GenericType)
-
-@given(instance=ccsl::complexType::AnonymousClass_strategy)
-@settings(max_examples=50)
-def test_ccsl::complextype::anonymousclass_instantiation(instance):
-    assert isinstance(instance, ccsl::complexType::AnonymousClass)
-
-@given(instance=complexType::ComplexType_strategy)
-@settings(max_examples=50)
-def test_complextype::complextype_instantiation(instance):
-    assert isinstance(instance, complexType::ComplexType)
-
-@given(instance=ccsl::complexType::JClass_strategy)
-@settings(max_examples=50)
-def test_ccsl::complextype::jclass_instantiation(instance):
-    assert isinstance(instance, ccsl::complexType::JClass)
-
-@given(instance=ccsl::complexType::JClass_strategy)
-def test_ccsl::complextype::jclass_inheritance_type(instance):
-    assert isinstance(instance.inheritance, str)
-
-
-@given(instance=ccsl::complexType::JClass_strategy)
-def test_ccsl::complextype::jclass_inheritance_setter(instance):
-    original = instance.inheritance
-    instance.inheritance = original
-    assert instance.inheritance == original
-
-@given(instance=ccsl::complexType::JInterface_strategy)
-@settings(max_examples=50)
-def test_ccsl::complextype::jinterface_instantiation(instance):
-    assert isinstance(instance, ccsl::complexType::JInterface)
-
-@given(instance=variable::InitializableVariable_strategy)
-@settings(max_examples=50)
-def test_variable::initializablevariable_instantiation(instance):
-    assert isinstance(instance, variable::InitializableVariable)
-
-@given(instance=ccsl::variable::FieldVariable_strategy)
-@settings(max_examples=50)
-def test_ccsl::variable::fieldvariable_instantiation(instance):
-    assert isinstance(instance, ccsl::variable::FieldVariable)
-
-@given(instance=ccsl::variable::FieldVariable_strategy)
-def test_ccsl::variable::fieldvariable_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=ccsl::variable::FieldVariable_strategy)
-def test_ccsl::variable::fieldvariable_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=ccsl::variable::FieldVariable_strategy)
-def test_ccsl::variable::fieldvariable_static_type(instance):
-    assert isinstance(instance.static, str)
-
-
-@given(instance=ccsl::variable::FieldVariable_strategy)
-def test_ccsl::variable::fieldvariable_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=statements::Statement_strategy)
-@settings(max_examples=50)
-def test_statements::statement_instantiation(instance):
-    assert isinstance(instance, statements::Statement)
-
-@given(instance=DeclaredType_strategy)
-@settings(max_examples=50)
-def test_declaredtype_instantiation(instance):
-    assert isinstance(instance, DeclaredType)
-
-@given(instance=ccsl::complexType::AnnotationType_strategy)
-@settings(max_examples=50)
-def test_ccsl::complextype::annotationtype_instantiation(instance):
-    assert isinstance(instance, ccsl::complexType::AnnotationType)
+def test_ccsl_datatype_booleanprimitivetype_instantiation(instance):
+    assert isinstance(instance, ccsl_datatype_BooleanPrimitiveType)

@@ -3,85 +3,85 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     EcaAwReq,
-    acad::AR2,
-    acad::AR3,
-    acad::AR7,
-    acad::AR9,
-    acad::AR5,
-    acad::AR4,
-    acad::AR8,
-    acad::AR11,
-    acad::AR10,
-    acad::AR6,
-    acad::AR1,
+    acad_AR2,
+    acad_AR6,
+    acad_AR7,
+    acad_AR8,
+    acad_AR11,
+    acad_AR3,
+    acad_AR10,
+    acad_AR9,
+    acad_AR5,
+    acad_AR4,
+    acad_AR1,
     QualityConstraint,
-    acad::Q::MaxCost,
-    acad::Q::IncidResolv,
-    acad::Q::MaxTimeMsg,
-    acad::Q::AmbArriv,
-    acad::Q::Dispatch,
+    acad_Q_MaxTimeMsg,
+    acad_Q_MaxCost,
+    acad_Q_AmbArriv,
+    acad_Q_IncidResolv,
+    acad_Q_Dispatch,
     Softgoal,
-    acad::S::LowCost,
-    acad::S::UserFriendly,
-    acad::S::FastArriv,
-    acad::S::FastAssist,
-    acad::S::FastDispatch,
+    acad_S_FastArriv,
+    acad_S_LowCost,
+    acad_S_UserFriendly,
+    acad_S_FastAssist,
+    acad_S_FastDispatch,
     Parameter,
-    acad::CV::MST,
+    acad_CV_MST,
     GoalModel,
-    acad::AcadGoalModel,
-    acad::AR15,
-    acad::AR14,
-    acad::AR13,
-    acad::AR12,
+    acad_AcadGoalModel,
+    acad_AR15,
+    acad_AR14,
+    acad_AR13,
+    acad_AR12,
     Task,
-    acad::T::InformStat,
-    acad::T::AcadAssists,
-    acad::T::SearchDuplic,
-    acad::T::ConfIncident,
-    acad::T::StaffAssists,
-    acad::T::DetBestAmb,
-    acad::T::CheckPaper,
-    acad::T::InputInfo,
-    acad::T::CloseIncident,
-    acad::T::CreateOrAssign,
-    acad::T::CheckGazet,
-    acad::T::ExceptQueue,
-    acad::T::DetectLoc,
-    acad::T::SpecConfig,
-    acad::T::Feedback,
-    acad::T::ConfirmCall,
-    acad::T::Except,
-    acad::T::ReplAmb,
-    acad::T::DispDepArriv,
-    acad::T::DispStatus,
-    acad::T::MonitorStatus,
-    acad::T::RadioPos,
+    acad_T_DetBestAmb,
+    acad_T_CheckPaper,
+    acad_T_Feedback,
+    acad_T_InputInfo,
+    acad_T_CheckGazet,
+    acad_T_SearchDuplic,
+    acad_T_DetectLoc,
+    acad_T_ConfIncident,
+    acad_T_InformStat,
+    acad_T_AcadAssists,
+    acad_T_StaffAssists,
+    acad_T_CreateOrAssign,
+    acad_T_ExceptQueue,
+    acad_T_CloseIncident,
+    acad_T_SpecConfig,
+    acad_T_ConfirmCall,
+    acad_T_Except,
+    acad_T_ReplAmb,
+    acad_T_DispDepArriv,
+    acad_T_DispStatus,
+    acad_T_MonitorStatus,
+    acad_T_RadioPos,
     HardGoal,
-    acad::G::RegCall,
-    acad::G::DispExcept,
-    acad::G::MonitorRes,
-    acad::G::RouteAssist,
-    acad::G::ManualMap,
-    acad::G::AssignIncident,
-    acad::G::UpdPosition,
-    acad::G::GenDispatch,
-    acad::G::IncidentUpd,
-    acad::G::ObtainMap,
-    acad::G::ResourceMob,
-    acad::G::ResourceId,
+    acad_G_ManualMap,
+    acad_G_RegCall,
+    acad_G_UpdPosition,
+    acad_G_MonitorRes,
+    acad_G_RouteAssist,
+    acad_G_AssignIncident,
+    acad_G_DispExcept,
+    acad_G_GenDispatch,
+    acad_G_IncidentUpd,
+    acad_G_ObtainMap,
+    acad_G_ResourceMob,
+    acad_G_ResourceId,
     DomainAssumption,
-    acad::D::MDTPos,
-    acad::D::GazetUpd,
-    acad::D::MDTUse,
-    acad::D::DriverKnows,
-    acad::D::MaxCalls,
-    acad::D::DataUpd,
-    acad::G::CallTaking,
+    acad_D_DriverKnows,
+    acad_D_MDTPos,
+    acad_D_MDTUse,
+    acad_D_GazetUpd,
+    acad_D_MaxCalls,
+    acad_D_DataUpd,
+    acad_G_CallTaking,
 )
 
 # =============================================================================
@@ -104,156 +104,156 @@ def test_ecaawreq_constructor_args():
 
 
 
-def test_acad::ar2_is_not_abstract():
-    assert not inspect.isabstract(acad::AR2)
+def test_acad_ar2_is_not_abstract():
+    assert not inspect.isabstract(acad_AR2)
 
 
-def test_acad::ar2_constructor_exists():
-    assert callable(acad::AR2.__init__)
+def test_acad_ar2_constructor_exists():
+    assert callable(acad_AR2.__init__)
 
 
-def test_acad::ar2_constructor_args():
-    sig = inspect.signature(acad::AR2.__init__)
+def test_acad_ar2_constructor_args():
+    sig = inspect.signature(acad_AR2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar3_is_not_abstract():
-    assert not inspect.isabstract(acad::AR3)
+def test_acad_ar6_is_not_abstract():
+    assert not inspect.isabstract(acad_AR6)
 
 
-def test_acad::ar3_constructor_exists():
-    assert callable(acad::AR3.__init__)
+def test_acad_ar6_constructor_exists():
+    assert callable(acad_AR6.__init__)
 
 
-def test_acad::ar3_constructor_args():
-    sig = inspect.signature(acad::AR3.__init__)
+def test_acad_ar6_constructor_args():
+    sig = inspect.signature(acad_AR6.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar7_is_not_abstract():
-    assert not inspect.isabstract(acad::AR7)
+def test_acad_ar7_is_not_abstract():
+    assert not inspect.isabstract(acad_AR7)
 
 
-def test_acad::ar7_constructor_exists():
-    assert callable(acad::AR7.__init__)
+def test_acad_ar7_constructor_exists():
+    assert callable(acad_AR7.__init__)
 
 
-def test_acad::ar7_constructor_args():
-    sig = inspect.signature(acad::AR7.__init__)
+def test_acad_ar7_constructor_args():
+    sig = inspect.signature(acad_AR7.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar9_is_not_abstract():
-    assert not inspect.isabstract(acad::AR9)
+def test_acad_ar8_is_not_abstract():
+    assert not inspect.isabstract(acad_AR8)
 
 
-def test_acad::ar9_constructor_exists():
-    assert callable(acad::AR9.__init__)
+def test_acad_ar8_constructor_exists():
+    assert callable(acad_AR8.__init__)
 
 
-def test_acad::ar9_constructor_args():
-    sig = inspect.signature(acad::AR9.__init__)
+def test_acad_ar8_constructor_args():
+    sig = inspect.signature(acad_AR8.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar5_is_not_abstract():
-    assert not inspect.isabstract(acad::AR5)
+def test_acad_ar11_is_not_abstract():
+    assert not inspect.isabstract(acad_AR11)
 
 
-def test_acad::ar5_constructor_exists():
-    assert callable(acad::AR5.__init__)
+def test_acad_ar11_constructor_exists():
+    assert callable(acad_AR11.__init__)
 
 
-def test_acad::ar5_constructor_args():
-    sig = inspect.signature(acad::AR5.__init__)
+def test_acad_ar11_constructor_args():
+    sig = inspect.signature(acad_AR11.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar4_is_not_abstract():
-    assert not inspect.isabstract(acad::AR4)
+def test_acad_ar3_is_not_abstract():
+    assert not inspect.isabstract(acad_AR3)
 
 
-def test_acad::ar4_constructor_exists():
-    assert callable(acad::AR4.__init__)
+def test_acad_ar3_constructor_exists():
+    assert callable(acad_AR3.__init__)
 
 
-def test_acad::ar4_constructor_args():
-    sig = inspect.signature(acad::AR4.__init__)
+def test_acad_ar3_constructor_args():
+    sig = inspect.signature(acad_AR3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar8_is_not_abstract():
-    assert not inspect.isabstract(acad::AR8)
+def test_acad_ar10_is_not_abstract():
+    assert not inspect.isabstract(acad_AR10)
 
 
-def test_acad::ar8_constructor_exists():
-    assert callable(acad::AR8.__init__)
+def test_acad_ar10_constructor_exists():
+    assert callable(acad_AR10.__init__)
 
 
-def test_acad::ar8_constructor_args():
-    sig = inspect.signature(acad::AR8.__init__)
+def test_acad_ar10_constructor_args():
+    sig = inspect.signature(acad_AR10.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar11_is_not_abstract():
-    assert not inspect.isabstract(acad::AR11)
+def test_acad_ar9_is_not_abstract():
+    assert not inspect.isabstract(acad_AR9)
 
 
-def test_acad::ar11_constructor_exists():
-    assert callable(acad::AR11.__init__)
+def test_acad_ar9_constructor_exists():
+    assert callable(acad_AR9.__init__)
 
 
-def test_acad::ar11_constructor_args():
-    sig = inspect.signature(acad::AR11.__init__)
+def test_acad_ar9_constructor_args():
+    sig = inspect.signature(acad_AR9.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar10_is_not_abstract():
-    assert not inspect.isabstract(acad::AR10)
+def test_acad_ar5_is_not_abstract():
+    assert not inspect.isabstract(acad_AR5)
 
 
-def test_acad::ar10_constructor_exists():
-    assert callable(acad::AR10.__init__)
+def test_acad_ar5_constructor_exists():
+    assert callable(acad_AR5.__init__)
 
 
-def test_acad::ar10_constructor_args():
-    sig = inspect.signature(acad::AR10.__init__)
+def test_acad_ar5_constructor_args():
+    sig = inspect.signature(acad_AR5.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar6_is_not_abstract():
-    assert not inspect.isabstract(acad::AR6)
+def test_acad_ar4_is_not_abstract():
+    assert not inspect.isabstract(acad_AR4)
 
 
-def test_acad::ar6_constructor_exists():
-    assert callable(acad::AR6.__init__)
+def test_acad_ar4_constructor_exists():
+    assert callable(acad_AR4.__init__)
 
 
-def test_acad::ar6_constructor_args():
-    sig = inspect.signature(acad::AR6.__init__)
+def test_acad_ar4_constructor_args():
+    sig = inspect.signature(acad_AR4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar1_is_not_abstract():
-    assert not inspect.isabstract(acad::AR1)
+def test_acad_ar1_is_not_abstract():
+    assert not inspect.isabstract(acad_AR1)
 
 
-def test_acad::ar1_constructor_exists():
-    assert callable(acad::AR1.__init__)
+def test_acad_ar1_constructor_exists():
+    assert callable(acad_AR1.__init__)
 
 
-def test_acad::ar1_constructor_args():
-    sig = inspect.signature(acad::AR1.__init__)
+def test_acad_ar1_constructor_args():
+    sig = inspect.signature(acad_AR1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -272,72 +272,72 @@ def test_qualityconstraint_constructor_args():
 
 
 
-def test_acad::q::maxcost_is_not_abstract():
-    assert not inspect.isabstract(acad::Q::MaxCost)
+def test_acad_q_maxtimemsg_is_not_abstract():
+    assert not inspect.isabstract(acad_Q_MaxTimeMsg)
 
 
-def test_acad::q::maxcost_constructor_exists():
-    assert callable(acad::Q::MaxCost.__init__)
+def test_acad_q_maxtimemsg_constructor_exists():
+    assert callable(acad_Q_MaxTimeMsg.__init__)
 
 
-def test_acad::q::maxcost_constructor_args():
-    sig = inspect.signature(acad::Q::MaxCost.__init__)
+def test_acad_q_maxtimemsg_constructor_args():
+    sig = inspect.signature(acad_Q_MaxTimeMsg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::q::incidresolv_is_not_abstract():
-    assert not inspect.isabstract(acad::Q::IncidResolv)
+def test_acad_q_maxcost_is_not_abstract():
+    assert not inspect.isabstract(acad_Q_MaxCost)
 
 
-def test_acad::q::incidresolv_constructor_exists():
-    assert callable(acad::Q::IncidResolv.__init__)
+def test_acad_q_maxcost_constructor_exists():
+    assert callable(acad_Q_MaxCost.__init__)
 
 
-def test_acad::q::incidresolv_constructor_args():
-    sig = inspect.signature(acad::Q::IncidResolv.__init__)
+def test_acad_q_maxcost_constructor_args():
+    sig = inspect.signature(acad_Q_MaxCost.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::q::maxtimemsg_is_not_abstract():
-    assert not inspect.isabstract(acad::Q::MaxTimeMsg)
+def test_acad_q_ambarriv_is_not_abstract():
+    assert not inspect.isabstract(acad_Q_AmbArriv)
 
 
-def test_acad::q::maxtimemsg_constructor_exists():
-    assert callable(acad::Q::MaxTimeMsg.__init__)
+def test_acad_q_ambarriv_constructor_exists():
+    assert callable(acad_Q_AmbArriv.__init__)
 
 
-def test_acad::q::maxtimemsg_constructor_args():
-    sig = inspect.signature(acad::Q::MaxTimeMsg.__init__)
+def test_acad_q_ambarriv_constructor_args():
+    sig = inspect.signature(acad_Q_AmbArriv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::q::ambarriv_is_not_abstract():
-    assert not inspect.isabstract(acad::Q::AmbArriv)
+def test_acad_q_incidresolv_is_not_abstract():
+    assert not inspect.isabstract(acad_Q_IncidResolv)
 
 
-def test_acad::q::ambarriv_constructor_exists():
-    assert callable(acad::Q::AmbArriv.__init__)
+def test_acad_q_incidresolv_constructor_exists():
+    assert callable(acad_Q_IncidResolv.__init__)
 
 
-def test_acad::q::ambarriv_constructor_args():
-    sig = inspect.signature(acad::Q::AmbArriv.__init__)
+def test_acad_q_incidresolv_constructor_args():
+    sig = inspect.signature(acad_Q_IncidResolv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::q::dispatch_is_not_abstract():
-    assert not inspect.isabstract(acad::Q::Dispatch)
+def test_acad_q_dispatch_is_not_abstract():
+    assert not inspect.isabstract(acad_Q_Dispatch)
 
 
-def test_acad::q::dispatch_constructor_exists():
-    assert callable(acad::Q::Dispatch.__init__)
+def test_acad_q_dispatch_constructor_exists():
+    assert callable(acad_Q_Dispatch.__init__)
 
 
-def test_acad::q::dispatch_constructor_args():
-    sig = inspect.signature(acad::Q::Dispatch.__init__)
+def test_acad_q_dispatch_constructor_args():
+    sig = inspect.signature(acad_Q_Dispatch.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -356,72 +356,72 @@ def test_softgoal_constructor_args():
 
 
 
-def test_acad::s::lowcost_is_not_abstract():
-    assert not inspect.isabstract(acad::S::LowCost)
+def test_acad_s_fastarriv_is_not_abstract():
+    assert not inspect.isabstract(acad_S_FastArriv)
 
 
-def test_acad::s::lowcost_constructor_exists():
-    assert callable(acad::S::LowCost.__init__)
+def test_acad_s_fastarriv_constructor_exists():
+    assert callable(acad_S_FastArriv.__init__)
 
 
-def test_acad::s::lowcost_constructor_args():
-    sig = inspect.signature(acad::S::LowCost.__init__)
+def test_acad_s_fastarriv_constructor_args():
+    sig = inspect.signature(acad_S_FastArriv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::s::userfriendly_is_not_abstract():
-    assert not inspect.isabstract(acad::S::UserFriendly)
+def test_acad_s_lowcost_is_not_abstract():
+    assert not inspect.isabstract(acad_S_LowCost)
 
 
-def test_acad::s::userfriendly_constructor_exists():
-    assert callable(acad::S::UserFriendly.__init__)
+def test_acad_s_lowcost_constructor_exists():
+    assert callable(acad_S_LowCost.__init__)
 
 
-def test_acad::s::userfriendly_constructor_args():
-    sig = inspect.signature(acad::S::UserFriendly.__init__)
+def test_acad_s_lowcost_constructor_args():
+    sig = inspect.signature(acad_S_LowCost.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::s::fastarriv_is_not_abstract():
-    assert not inspect.isabstract(acad::S::FastArriv)
+def test_acad_s_userfriendly_is_not_abstract():
+    assert not inspect.isabstract(acad_S_UserFriendly)
 
 
-def test_acad::s::fastarriv_constructor_exists():
-    assert callable(acad::S::FastArriv.__init__)
+def test_acad_s_userfriendly_constructor_exists():
+    assert callable(acad_S_UserFriendly.__init__)
 
 
-def test_acad::s::fastarriv_constructor_args():
-    sig = inspect.signature(acad::S::FastArriv.__init__)
+def test_acad_s_userfriendly_constructor_args():
+    sig = inspect.signature(acad_S_UserFriendly.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::s::fastassist_is_not_abstract():
-    assert not inspect.isabstract(acad::S::FastAssist)
+def test_acad_s_fastassist_is_not_abstract():
+    assert not inspect.isabstract(acad_S_FastAssist)
 
 
-def test_acad::s::fastassist_constructor_exists():
-    assert callable(acad::S::FastAssist.__init__)
+def test_acad_s_fastassist_constructor_exists():
+    assert callable(acad_S_FastAssist.__init__)
 
 
-def test_acad::s::fastassist_constructor_args():
-    sig = inspect.signature(acad::S::FastAssist.__init__)
+def test_acad_s_fastassist_constructor_args():
+    sig = inspect.signature(acad_S_FastAssist.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::s::fastdispatch_is_not_abstract():
-    assert not inspect.isabstract(acad::S::FastDispatch)
+def test_acad_s_fastdispatch_is_not_abstract():
+    assert not inspect.isabstract(acad_S_FastDispatch)
 
 
-def test_acad::s::fastdispatch_constructor_exists():
-    assert callable(acad::S::FastDispatch.__init__)
+def test_acad_s_fastdispatch_constructor_exists():
+    assert callable(acad_S_FastDispatch.__init__)
 
 
-def test_acad::s::fastdispatch_constructor_args():
-    sig = inspect.signature(acad::S::FastDispatch.__init__)
+def test_acad_s_fastdispatch_constructor_args():
+    sig = inspect.signature(acad_S_FastDispatch.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -440,16 +440,16 @@ def test_parameter_constructor_args():
 
 
 
-def test_acad::cv::mst_is_not_abstract():
-    assert not inspect.isabstract(acad::CV::MST)
+def test_acad_cv_mst_is_not_abstract():
+    assert not inspect.isabstract(acad_CV_MST)
 
 
-def test_acad::cv::mst_constructor_exists():
-    assert callable(acad::CV::MST.__init__)
+def test_acad_cv_mst_constructor_exists():
+    assert callable(acad_CV_MST.__init__)
 
 
-def test_acad::cv::mst_constructor_args():
-    sig = inspect.signature(acad::CV::MST.__init__)
+def test_acad_cv_mst_constructor_args():
+    sig = inspect.signature(acad_CV_MST.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -468,72 +468,72 @@ def test_goalmodel_constructor_args():
 
 
 
-def test_acad::acadgoalmodel_is_not_abstract():
-    assert not inspect.isabstract(acad::AcadGoalModel)
+def test_acad_acadgoalmodel_is_not_abstract():
+    assert not inspect.isabstract(acad_AcadGoalModel)
 
 
-def test_acad::acadgoalmodel_constructor_exists():
-    assert callable(acad::AcadGoalModel.__init__)
+def test_acad_acadgoalmodel_constructor_exists():
+    assert callable(acad_AcadGoalModel.__init__)
 
 
-def test_acad::acadgoalmodel_constructor_args():
-    sig = inspect.signature(acad::AcadGoalModel.__init__)
+def test_acad_acadgoalmodel_constructor_args():
+    sig = inspect.signature(acad_AcadGoalModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar15_is_not_abstract():
-    assert not inspect.isabstract(acad::AR15)
+def test_acad_ar15_is_not_abstract():
+    assert not inspect.isabstract(acad_AR15)
 
 
-def test_acad::ar15_constructor_exists():
-    assert callable(acad::AR15.__init__)
+def test_acad_ar15_constructor_exists():
+    assert callable(acad_AR15.__init__)
 
 
-def test_acad::ar15_constructor_args():
-    sig = inspect.signature(acad::AR15.__init__)
+def test_acad_ar15_constructor_args():
+    sig = inspect.signature(acad_AR15.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar14_is_not_abstract():
-    assert not inspect.isabstract(acad::AR14)
+def test_acad_ar14_is_not_abstract():
+    assert not inspect.isabstract(acad_AR14)
 
 
-def test_acad::ar14_constructor_exists():
-    assert callable(acad::AR14.__init__)
+def test_acad_ar14_constructor_exists():
+    assert callable(acad_AR14.__init__)
 
 
-def test_acad::ar14_constructor_args():
-    sig = inspect.signature(acad::AR14.__init__)
+def test_acad_ar14_constructor_args():
+    sig = inspect.signature(acad_AR14.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar13_is_not_abstract():
-    assert not inspect.isabstract(acad::AR13)
+def test_acad_ar13_is_not_abstract():
+    assert not inspect.isabstract(acad_AR13)
 
 
-def test_acad::ar13_constructor_exists():
-    assert callable(acad::AR13.__init__)
+def test_acad_ar13_constructor_exists():
+    assert callable(acad_AR13.__init__)
 
 
-def test_acad::ar13_constructor_args():
-    sig = inspect.signature(acad::AR13.__init__)
+def test_acad_ar13_constructor_args():
+    sig = inspect.signature(acad_AR13.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::ar12_is_not_abstract():
-    assert not inspect.isabstract(acad::AR12)
+def test_acad_ar12_is_not_abstract():
+    assert not inspect.isabstract(acad_AR12)
 
 
-def test_acad::ar12_constructor_exists():
-    assert callable(acad::AR12.__init__)
+def test_acad_ar12_constructor_exists():
+    assert callable(acad_AR12.__init__)
 
 
-def test_acad::ar12_constructor_args():
-    sig = inspect.signature(acad::AR12.__init__)
+def test_acad_ar12_constructor_args():
+    sig = inspect.signature(acad_AR12.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -552,310 +552,310 @@ def test_task_constructor_args():
 
 
 
-def test_acad::t::informstat_is_not_abstract():
-    assert not inspect.isabstract(acad::T::InformStat)
+def test_acad_t_detbestamb_is_not_abstract():
+    assert not inspect.isabstract(acad_T_DetBestAmb)
 
 
-def test_acad::t::informstat_constructor_exists():
-    assert callable(acad::T::InformStat.__init__)
+def test_acad_t_detbestamb_constructor_exists():
+    assert callable(acad_T_DetBestAmb.__init__)
 
 
-def test_acad::t::informstat_constructor_args():
-    sig = inspect.signature(acad::T::InformStat.__init__)
+def test_acad_t_detbestamb_constructor_args():
+    sig = inspect.signature(acad_T_DetBestAmb.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::acadassists_is_not_abstract():
-    assert not inspect.isabstract(acad::T::AcadAssists)
+def test_acad_t_checkpaper_is_not_abstract():
+    assert not inspect.isabstract(acad_T_CheckPaper)
 
 
-def test_acad::t::acadassists_constructor_exists():
-    assert callable(acad::T::AcadAssists.__init__)
+def test_acad_t_checkpaper_constructor_exists():
+    assert callable(acad_T_CheckPaper.__init__)
 
 
-def test_acad::t::acadassists_constructor_args():
-    sig = inspect.signature(acad::T::AcadAssists.__init__)
+def test_acad_t_checkpaper_constructor_args():
+    sig = inspect.signature(acad_T_CheckPaper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::searchduplic_is_not_abstract():
-    assert not inspect.isabstract(acad::T::SearchDuplic)
+def test_acad_t_feedback_is_not_abstract():
+    assert not inspect.isabstract(acad_T_Feedback)
 
 
-def test_acad::t::searchduplic_constructor_exists():
-    assert callable(acad::T::SearchDuplic.__init__)
+def test_acad_t_feedback_constructor_exists():
+    assert callable(acad_T_Feedback.__init__)
 
 
-def test_acad::t::searchduplic_constructor_args():
-    sig = inspect.signature(acad::T::SearchDuplic.__init__)
+def test_acad_t_feedback_constructor_args():
+    sig = inspect.signature(acad_T_Feedback.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::confincident_is_not_abstract():
-    assert not inspect.isabstract(acad::T::ConfIncident)
+def test_acad_t_inputinfo_is_not_abstract():
+    assert not inspect.isabstract(acad_T_InputInfo)
 
 
-def test_acad::t::confincident_constructor_exists():
-    assert callable(acad::T::ConfIncident.__init__)
+def test_acad_t_inputinfo_constructor_exists():
+    assert callable(acad_T_InputInfo.__init__)
 
 
-def test_acad::t::confincident_constructor_args():
-    sig = inspect.signature(acad::T::ConfIncident.__init__)
+def test_acad_t_inputinfo_constructor_args():
+    sig = inspect.signature(acad_T_InputInfo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::staffassists_is_not_abstract():
-    assert not inspect.isabstract(acad::T::StaffAssists)
+def test_acad_t_checkgazet_is_not_abstract():
+    assert not inspect.isabstract(acad_T_CheckGazet)
 
 
-def test_acad::t::staffassists_constructor_exists():
-    assert callable(acad::T::StaffAssists.__init__)
+def test_acad_t_checkgazet_constructor_exists():
+    assert callable(acad_T_CheckGazet.__init__)
 
 
-def test_acad::t::staffassists_constructor_args():
-    sig = inspect.signature(acad::T::StaffAssists.__init__)
+def test_acad_t_checkgazet_constructor_args():
+    sig = inspect.signature(acad_T_CheckGazet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::detbestamb_is_not_abstract():
-    assert not inspect.isabstract(acad::T::DetBestAmb)
+def test_acad_t_searchduplic_is_not_abstract():
+    assert not inspect.isabstract(acad_T_SearchDuplic)
 
 
-def test_acad::t::detbestamb_constructor_exists():
-    assert callable(acad::T::DetBestAmb.__init__)
+def test_acad_t_searchduplic_constructor_exists():
+    assert callable(acad_T_SearchDuplic.__init__)
 
 
-def test_acad::t::detbestamb_constructor_args():
-    sig = inspect.signature(acad::T::DetBestAmb.__init__)
+def test_acad_t_searchduplic_constructor_args():
+    sig = inspect.signature(acad_T_SearchDuplic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::checkpaper_is_not_abstract():
-    assert not inspect.isabstract(acad::T::CheckPaper)
+def test_acad_t_detectloc_is_not_abstract():
+    assert not inspect.isabstract(acad_T_DetectLoc)
 
 
-def test_acad::t::checkpaper_constructor_exists():
-    assert callable(acad::T::CheckPaper.__init__)
+def test_acad_t_detectloc_constructor_exists():
+    assert callable(acad_T_DetectLoc.__init__)
 
 
-def test_acad::t::checkpaper_constructor_args():
-    sig = inspect.signature(acad::T::CheckPaper.__init__)
+def test_acad_t_detectloc_constructor_args():
+    sig = inspect.signature(acad_T_DetectLoc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::inputinfo_is_not_abstract():
-    assert not inspect.isabstract(acad::T::InputInfo)
+def test_acad_t_confincident_is_not_abstract():
+    assert not inspect.isabstract(acad_T_ConfIncident)
 
 
-def test_acad::t::inputinfo_constructor_exists():
-    assert callable(acad::T::InputInfo.__init__)
+def test_acad_t_confincident_constructor_exists():
+    assert callable(acad_T_ConfIncident.__init__)
 
 
-def test_acad::t::inputinfo_constructor_args():
-    sig = inspect.signature(acad::T::InputInfo.__init__)
+def test_acad_t_confincident_constructor_args():
+    sig = inspect.signature(acad_T_ConfIncident.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::closeincident_is_not_abstract():
-    assert not inspect.isabstract(acad::T::CloseIncident)
+def test_acad_t_informstat_is_not_abstract():
+    assert not inspect.isabstract(acad_T_InformStat)
 
 
-def test_acad::t::closeincident_constructor_exists():
-    assert callable(acad::T::CloseIncident.__init__)
+def test_acad_t_informstat_constructor_exists():
+    assert callable(acad_T_InformStat.__init__)
 
 
-def test_acad::t::closeincident_constructor_args():
-    sig = inspect.signature(acad::T::CloseIncident.__init__)
+def test_acad_t_informstat_constructor_args():
+    sig = inspect.signature(acad_T_InformStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::createorassign_is_not_abstract():
-    assert not inspect.isabstract(acad::T::CreateOrAssign)
+def test_acad_t_acadassists_is_not_abstract():
+    assert not inspect.isabstract(acad_T_AcadAssists)
 
 
-def test_acad::t::createorassign_constructor_exists():
-    assert callable(acad::T::CreateOrAssign.__init__)
+def test_acad_t_acadassists_constructor_exists():
+    assert callable(acad_T_AcadAssists.__init__)
 
 
-def test_acad::t::createorassign_constructor_args():
-    sig = inspect.signature(acad::T::CreateOrAssign.__init__)
+def test_acad_t_acadassists_constructor_args():
+    sig = inspect.signature(acad_T_AcadAssists.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::checkgazet_is_not_abstract():
-    assert not inspect.isabstract(acad::T::CheckGazet)
+def test_acad_t_staffassists_is_not_abstract():
+    assert not inspect.isabstract(acad_T_StaffAssists)
 
 
-def test_acad::t::checkgazet_constructor_exists():
-    assert callable(acad::T::CheckGazet.__init__)
+def test_acad_t_staffassists_constructor_exists():
+    assert callable(acad_T_StaffAssists.__init__)
 
 
-def test_acad::t::checkgazet_constructor_args():
-    sig = inspect.signature(acad::T::CheckGazet.__init__)
+def test_acad_t_staffassists_constructor_args():
+    sig = inspect.signature(acad_T_StaffAssists.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::exceptqueue_is_not_abstract():
-    assert not inspect.isabstract(acad::T::ExceptQueue)
+def test_acad_t_createorassign_is_not_abstract():
+    assert not inspect.isabstract(acad_T_CreateOrAssign)
 
 
-def test_acad::t::exceptqueue_constructor_exists():
-    assert callable(acad::T::ExceptQueue.__init__)
+def test_acad_t_createorassign_constructor_exists():
+    assert callable(acad_T_CreateOrAssign.__init__)
 
 
-def test_acad::t::exceptqueue_constructor_args():
-    sig = inspect.signature(acad::T::ExceptQueue.__init__)
+def test_acad_t_createorassign_constructor_args():
+    sig = inspect.signature(acad_T_CreateOrAssign.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::detectloc_is_not_abstract():
-    assert not inspect.isabstract(acad::T::DetectLoc)
+def test_acad_t_exceptqueue_is_not_abstract():
+    assert not inspect.isabstract(acad_T_ExceptQueue)
 
 
-def test_acad::t::detectloc_constructor_exists():
-    assert callable(acad::T::DetectLoc.__init__)
+def test_acad_t_exceptqueue_constructor_exists():
+    assert callable(acad_T_ExceptQueue.__init__)
 
 
-def test_acad::t::detectloc_constructor_args():
-    sig = inspect.signature(acad::T::DetectLoc.__init__)
+def test_acad_t_exceptqueue_constructor_args():
+    sig = inspect.signature(acad_T_ExceptQueue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::specconfig_is_not_abstract():
-    assert not inspect.isabstract(acad::T::SpecConfig)
+def test_acad_t_closeincident_is_not_abstract():
+    assert not inspect.isabstract(acad_T_CloseIncident)
 
 
-def test_acad::t::specconfig_constructor_exists():
-    assert callable(acad::T::SpecConfig.__init__)
+def test_acad_t_closeincident_constructor_exists():
+    assert callable(acad_T_CloseIncident.__init__)
 
 
-def test_acad::t::specconfig_constructor_args():
-    sig = inspect.signature(acad::T::SpecConfig.__init__)
+def test_acad_t_closeincident_constructor_args():
+    sig = inspect.signature(acad_T_CloseIncident.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::feedback_is_not_abstract():
-    assert not inspect.isabstract(acad::T::Feedback)
+def test_acad_t_specconfig_is_not_abstract():
+    assert not inspect.isabstract(acad_T_SpecConfig)
 
 
-def test_acad::t::feedback_constructor_exists():
-    assert callable(acad::T::Feedback.__init__)
+def test_acad_t_specconfig_constructor_exists():
+    assert callable(acad_T_SpecConfig.__init__)
 
 
-def test_acad::t::feedback_constructor_args():
-    sig = inspect.signature(acad::T::Feedback.__init__)
+def test_acad_t_specconfig_constructor_args():
+    sig = inspect.signature(acad_T_SpecConfig.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::confirmcall_is_not_abstract():
-    assert not inspect.isabstract(acad::T::ConfirmCall)
+def test_acad_t_confirmcall_is_not_abstract():
+    assert not inspect.isabstract(acad_T_ConfirmCall)
 
 
-def test_acad::t::confirmcall_constructor_exists():
-    assert callable(acad::T::ConfirmCall.__init__)
+def test_acad_t_confirmcall_constructor_exists():
+    assert callable(acad_T_ConfirmCall.__init__)
 
 
-def test_acad::t::confirmcall_constructor_args():
-    sig = inspect.signature(acad::T::ConfirmCall.__init__)
+def test_acad_t_confirmcall_constructor_args():
+    sig = inspect.signature(acad_T_ConfirmCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::except_is_not_abstract():
-    assert not inspect.isabstract(acad::T::Except)
+def test_acad_t_except_is_not_abstract():
+    assert not inspect.isabstract(acad_T_Except)
 
 
-def test_acad::t::except_constructor_exists():
-    assert callable(acad::T::Except.__init__)
+def test_acad_t_except_constructor_exists():
+    assert callable(acad_T_Except.__init__)
 
 
-def test_acad::t::except_constructor_args():
-    sig = inspect.signature(acad::T::Except.__init__)
+def test_acad_t_except_constructor_args():
+    sig = inspect.signature(acad_T_Except.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::replamb_is_not_abstract():
-    assert not inspect.isabstract(acad::T::ReplAmb)
+def test_acad_t_replamb_is_not_abstract():
+    assert not inspect.isabstract(acad_T_ReplAmb)
 
 
-def test_acad::t::replamb_constructor_exists():
-    assert callable(acad::T::ReplAmb.__init__)
+def test_acad_t_replamb_constructor_exists():
+    assert callable(acad_T_ReplAmb.__init__)
 
 
-def test_acad::t::replamb_constructor_args():
-    sig = inspect.signature(acad::T::ReplAmb.__init__)
+def test_acad_t_replamb_constructor_args():
+    sig = inspect.signature(acad_T_ReplAmb.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::dispdeparriv_is_not_abstract():
-    assert not inspect.isabstract(acad::T::DispDepArriv)
+def test_acad_t_dispdeparriv_is_not_abstract():
+    assert not inspect.isabstract(acad_T_DispDepArriv)
 
 
-def test_acad::t::dispdeparriv_constructor_exists():
-    assert callable(acad::T::DispDepArriv.__init__)
+def test_acad_t_dispdeparriv_constructor_exists():
+    assert callable(acad_T_DispDepArriv.__init__)
 
 
-def test_acad::t::dispdeparriv_constructor_args():
-    sig = inspect.signature(acad::T::DispDepArriv.__init__)
+def test_acad_t_dispdeparriv_constructor_args():
+    sig = inspect.signature(acad_T_DispDepArriv.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::dispstatus_is_not_abstract():
-    assert not inspect.isabstract(acad::T::DispStatus)
+def test_acad_t_dispstatus_is_not_abstract():
+    assert not inspect.isabstract(acad_T_DispStatus)
 
 
-def test_acad::t::dispstatus_constructor_exists():
-    assert callable(acad::T::DispStatus.__init__)
+def test_acad_t_dispstatus_constructor_exists():
+    assert callable(acad_T_DispStatus.__init__)
 
 
-def test_acad::t::dispstatus_constructor_args():
-    sig = inspect.signature(acad::T::DispStatus.__init__)
+def test_acad_t_dispstatus_constructor_args():
+    sig = inspect.signature(acad_T_DispStatus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::monitorstatus_is_not_abstract():
-    assert not inspect.isabstract(acad::T::MonitorStatus)
+def test_acad_t_monitorstatus_is_not_abstract():
+    assert not inspect.isabstract(acad_T_MonitorStatus)
 
 
-def test_acad::t::monitorstatus_constructor_exists():
-    assert callable(acad::T::MonitorStatus.__init__)
+def test_acad_t_monitorstatus_constructor_exists():
+    assert callable(acad_T_MonitorStatus.__init__)
 
 
-def test_acad::t::monitorstatus_constructor_args():
-    sig = inspect.signature(acad::T::MonitorStatus.__init__)
+def test_acad_t_monitorstatus_constructor_args():
+    sig = inspect.signature(acad_T_MonitorStatus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::t::radiopos_is_not_abstract():
-    assert not inspect.isabstract(acad::T::RadioPos)
+def test_acad_t_radiopos_is_not_abstract():
+    assert not inspect.isabstract(acad_T_RadioPos)
 
 
-def test_acad::t::radiopos_constructor_exists():
-    assert callable(acad::T::RadioPos.__init__)
+def test_acad_t_radiopos_constructor_exists():
+    assert callable(acad_T_RadioPos.__init__)
 
 
-def test_acad::t::radiopos_constructor_args():
-    sig = inspect.signature(acad::T::RadioPos.__init__)
+def test_acad_t_radiopos_constructor_args():
+    sig = inspect.signature(acad_T_RadioPos.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -874,170 +874,170 @@ def test_hardgoal_constructor_args():
 
 
 
-def test_acad::g::regcall_is_not_abstract():
-    assert not inspect.isabstract(acad::G::RegCall)
+def test_acad_g_manualmap_is_not_abstract():
+    assert not inspect.isabstract(acad_G_ManualMap)
 
 
-def test_acad::g::regcall_constructor_exists():
-    assert callable(acad::G::RegCall.__init__)
+def test_acad_g_manualmap_constructor_exists():
+    assert callable(acad_G_ManualMap.__init__)
 
 
-def test_acad::g::regcall_constructor_args():
-    sig = inspect.signature(acad::G::RegCall.__init__)
+def test_acad_g_manualmap_constructor_args():
+    sig = inspect.signature(acad_G_ManualMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::dispexcept_is_not_abstract():
-    assert not inspect.isabstract(acad::G::DispExcept)
+def test_acad_g_regcall_is_not_abstract():
+    assert not inspect.isabstract(acad_G_RegCall)
 
 
-def test_acad::g::dispexcept_constructor_exists():
-    assert callable(acad::G::DispExcept.__init__)
+def test_acad_g_regcall_constructor_exists():
+    assert callable(acad_G_RegCall.__init__)
 
 
-def test_acad::g::dispexcept_constructor_args():
-    sig = inspect.signature(acad::G::DispExcept.__init__)
+def test_acad_g_regcall_constructor_args():
+    sig = inspect.signature(acad_G_RegCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::monitorres_is_not_abstract():
-    assert not inspect.isabstract(acad::G::MonitorRes)
+def test_acad_g_updposition_is_not_abstract():
+    assert not inspect.isabstract(acad_G_UpdPosition)
 
 
-def test_acad::g::monitorres_constructor_exists():
-    assert callable(acad::G::MonitorRes.__init__)
+def test_acad_g_updposition_constructor_exists():
+    assert callable(acad_G_UpdPosition.__init__)
 
 
-def test_acad::g::monitorres_constructor_args():
-    sig = inspect.signature(acad::G::MonitorRes.__init__)
+def test_acad_g_updposition_constructor_args():
+    sig = inspect.signature(acad_G_UpdPosition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::routeassist_is_not_abstract():
-    assert not inspect.isabstract(acad::G::RouteAssist)
+def test_acad_g_monitorres_is_not_abstract():
+    assert not inspect.isabstract(acad_G_MonitorRes)
 
 
-def test_acad::g::routeassist_constructor_exists():
-    assert callable(acad::G::RouteAssist.__init__)
+def test_acad_g_monitorres_constructor_exists():
+    assert callable(acad_G_MonitorRes.__init__)
 
 
-def test_acad::g::routeassist_constructor_args():
-    sig = inspect.signature(acad::G::RouteAssist.__init__)
+def test_acad_g_monitorres_constructor_args():
+    sig = inspect.signature(acad_G_MonitorRes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::manualmap_is_not_abstract():
-    assert not inspect.isabstract(acad::G::ManualMap)
+def test_acad_g_routeassist_is_not_abstract():
+    assert not inspect.isabstract(acad_G_RouteAssist)
 
 
-def test_acad::g::manualmap_constructor_exists():
-    assert callable(acad::G::ManualMap.__init__)
+def test_acad_g_routeassist_constructor_exists():
+    assert callable(acad_G_RouteAssist.__init__)
 
 
-def test_acad::g::manualmap_constructor_args():
-    sig = inspect.signature(acad::G::ManualMap.__init__)
+def test_acad_g_routeassist_constructor_args():
+    sig = inspect.signature(acad_G_RouteAssist.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::assignincident_is_not_abstract():
-    assert not inspect.isabstract(acad::G::AssignIncident)
+def test_acad_g_assignincident_is_not_abstract():
+    assert not inspect.isabstract(acad_G_AssignIncident)
 
 
-def test_acad::g::assignincident_constructor_exists():
-    assert callable(acad::G::AssignIncident.__init__)
+def test_acad_g_assignincident_constructor_exists():
+    assert callable(acad_G_AssignIncident.__init__)
 
 
-def test_acad::g::assignincident_constructor_args():
-    sig = inspect.signature(acad::G::AssignIncident.__init__)
+def test_acad_g_assignincident_constructor_args():
+    sig = inspect.signature(acad_G_AssignIncident.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::updposition_is_not_abstract():
-    assert not inspect.isabstract(acad::G::UpdPosition)
+def test_acad_g_dispexcept_is_not_abstract():
+    assert not inspect.isabstract(acad_G_DispExcept)
 
 
-def test_acad::g::updposition_constructor_exists():
-    assert callable(acad::G::UpdPosition.__init__)
+def test_acad_g_dispexcept_constructor_exists():
+    assert callable(acad_G_DispExcept.__init__)
 
 
-def test_acad::g::updposition_constructor_args():
-    sig = inspect.signature(acad::G::UpdPosition.__init__)
+def test_acad_g_dispexcept_constructor_args():
+    sig = inspect.signature(acad_G_DispExcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::gendispatch_is_not_abstract():
-    assert not inspect.isabstract(acad::G::GenDispatch)
+def test_acad_g_gendispatch_is_not_abstract():
+    assert not inspect.isabstract(acad_G_GenDispatch)
 
 
-def test_acad::g::gendispatch_constructor_exists():
-    assert callable(acad::G::GenDispatch.__init__)
+def test_acad_g_gendispatch_constructor_exists():
+    assert callable(acad_G_GenDispatch.__init__)
 
 
-def test_acad::g::gendispatch_constructor_args():
-    sig = inspect.signature(acad::G::GenDispatch.__init__)
+def test_acad_g_gendispatch_constructor_args():
+    sig = inspect.signature(acad_G_GenDispatch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::incidentupd_is_not_abstract():
-    assert not inspect.isabstract(acad::G::IncidentUpd)
+def test_acad_g_incidentupd_is_not_abstract():
+    assert not inspect.isabstract(acad_G_IncidentUpd)
 
 
-def test_acad::g::incidentupd_constructor_exists():
-    assert callable(acad::G::IncidentUpd.__init__)
+def test_acad_g_incidentupd_constructor_exists():
+    assert callable(acad_G_IncidentUpd.__init__)
 
 
-def test_acad::g::incidentupd_constructor_args():
-    sig = inspect.signature(acad::G::IncidentUpd.__init__)
+def test_acad_g_incidentupd_constructor_args():
+    sig = inspect.signature(acad_G_IncidentUpd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::obtainmap_is_not_abstract():
-    assert not inspect.isabstract(acad::G::ObtainMap)
+def test_acad_g_obtainmap_is_not_abstract():
+    assert not inspect.isabstract(acad_G_ObtainMap)
 
 
-def test_acad::g::obtainmap_constructor_exists():
-    assert callable(acad::G::ObtainMap.__init__)
+def test_acad_g_obtainmap_constructor_exists():
+    assert callable(acad_G_ObtainMap.__init__)
 
 
-def test_acad::g::obtainmap_constructor_args():
-    sig = inspect.signature(acad::G::ObtainMap.__init__)
+def test_acad_g_obtainmap_constructor_args():
+    sig = inspect.signature(acad_G_ObtainMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::resourcemob_is_not_abstract():
-    assert not inspect.isabstract(acad::G::ResourceMob)
+def test_acad_g_resourcemob_is_not_abstract():
+    assert not inspect.isabstract(acad_G_ResourceMob)
 
 
-def test_acad::g::resourcemob_constructor_exists():
-    assert callable(acad::G::ResourceMob.__init__)
+def test_acad_g_resourcemob_constructor_exists():
+    assert callable(acad_G_ResourceMob.__init__)
 
 
-def test_acad::g::resourcemob_constructor_args():
-    sig = inspect.signature(acad::G::ResourceMob.__init__)
+def test_acad_g_resourcemob_constructor_args():
+    sig = inspect.signature(acad_G_ResourceMob.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::resourceid_is_not_abstract():
-    assert not inspect.isabstract(acad::G::ResourceId)
+def test_acad_g_resourceid_is_not_abstract():
+    assert not inspect.isabstract(acad_G_ResourceId)
 
 
-def test_acad::g::resourceid_constructor_exists():
-    assert callable(acad::G::ResourceId.__init__)
+def test_acad_g_resourceid_constructor_exists():
+    assert callable(acad_G_ResourceId.__init__)
 
 
-def test_acad::g::resourceid_constructor_args():
-    sig = inspect.signature(acad::G::ResourceId.__init__)
+def test_acad_g_resourceid_constructor_args():
+    sig = inspect.signature(acad_G_ResourceId.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1056,100 +1056,100 @@ def test_domainassumption_constructor_args():
 
 
 
-def test_acad::d::mdtpos_is_not_abstract():
-    assert not inspect.isabstract(acad::D::MDTPos)
+def test_acad_d_driverknows_is_not_abstract():
+    assert not inspect.isabstract(acad_D_DriverKnows)
 
 
-def test_acad::d::mdtpos_constructor_exists():
-    assert callable(acad::D::MDTPos.__init__)
+def test_acad_d_driverknows_constructor_exists():
+    assert callable(acad_D_DriverKnows.__init__)
 
 
-def test_acad::d::mdtpos_constructor_args():
-    sig = inspect.signature(acad::D::MDTPos.__init__)
+def test_acad_d_driverknows_constructor_args():
+    sig = inspect.signature(acad_D_DriverKnows.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::d::gazetupd_is_not_abstract():
-    assert not inspect.isabstract(acad::D::GazetUpd)
+def test_acad_d_mdtpos_is_not_abstract():
+    assert not inspect.isabstract(acad_D_MDTPos)
 
 
-def test_acad::d::gazetupd_constructor_exists():
-    assert callable(acad::D::GazetUpd.__init__)
+def test_acad_d_mdtpos_constructor_exists():
+    assert callable(acad_D_MDTPos.__init__)
 
 
-def test_acad::d::gazetupd_constructor_args():
-    sig = inspect.signature(acad::D::GazetUpd.__init__)
+def test_acad_d_mdtpos_constructor_args():
+    sig = inspect.signature(acad_D_MDTPos.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::d::mdtuse_is_not_abstract():
-    assert not inspect.isabstract(acad::D::MDTUse)
+def test_acad_d_mdtuse_is_not_abstract():
+    assert not inspect.isabstract(acad_D_MDTUse)
 
 
-def test_acad::d::mdtuse_constructor_exists():
-    assert callable(acad::D::MDTUse.__init__)
+def test_acad_d_mdtuse_constructor_exists():
+    assert callable(acad_D_MDTUse.__init__)
 
 
-def test_acad::d::mdtuse_constructor_args():
-    sig = inspect.signature(acad::D::MDTUse.__init__)
+def test_acad_d_mdtuse_constructor_args():
+    sig = inspect.signature(acad_D_MDTUse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::d::driverknows_is_not_abstract():
-    assert not inspect.isabstract(acad::D::DriverKnows)
+def test_acad_d_gazetupd_is_not_abstract():
+    assert not inspect.isabstract(acad_D_GazetUpd)
 
 
-def test_acad::d::driverknows_constructor_exists():
-    assert callable(acad::D::DriverKnows.__init__)
+def test_acad_d_gazetupd_constructor_exists():
+    assert callable(acad_D_GazetUpd.__init__)
 
 
-def test_acad::d::driverknows_constructor_args():
-    sig = inspect.signature(acad::D::DriverKnows.__init__)
+def test_acad_d_gazetupd_constructor_args():
+    sig = inspect.signature(acad_D_GazetUpd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::d::maxcalls_is_not_abstract():
-    assert not inspect.isabstract(acad::D::MaxCalls)
+def test_acad_d_maxcalls_is_not_abstract():
+    assert not inspect.isabstract(acad_D_MaxCalls)
 
 
-def test_acad::d::maxcalls_constructor_exists():
-    assert callable(acad::D::MaxCalls.__init__)
+def test_acad_d_maxcalls_constructor_exists():
+    assert callable(acad_D_MaxCalls.__init__)
 
 
-def test_acad::d::maxcalls_constructor_args():
-    sig = inspect.signature(acad::D::MaxCalls.__init__)
+def test_acad_d_maxcalls_constructor_args():
+    sig = inspect.signature(acad_D_MaxCalls.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::d::dataupd_is_not_abstract():
-    assert not inspect.isabstract(acad::D::DataUpd)
+def test_acad_d_dataupd_is_not_abstract():
+    assert not inspect.isabstract(acad_D_DataUpd)
 
 
-def test_acad::d::dataupd_constructor_exists():
-    assert callable(acad::D::DataUpd.__init__)
+def test_acad_d_dataupd_constructor_exists():
+    assert callable(acad_D_DataUpd.__init__)
 
 
-def test_acad::d::dataupd_constructor_args():
-    sig = inspect.signature(acad::D::DataUpd.__init__)
+def test_acad_d_dataupd_constructor_args():
+    sig = inspect.signature(acad_D_DataUpd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_acad::g::calltaking_is_not_abstract():
-    assert not inspect.isabstract(acad::G::CallTaking)
+def test_acad_g_calltaking_is_not_abstract():
+    assert not inspect.isabstract(acad_G_CallTaking)
 
 
-def test_acad::g::calltaking_constructor_exists():
-    assert callable(acad::G::CallTaking.__init__)
+def test_acad_g_calltaking_constructor_exists():
+    assert callable(acad_G_CallTaking.__init__)
 
 
-def test_acad::g::calltaking_constructor_args():
-    sig = inspect.signature(acad::G::CallTaking.__init__)
+def test_acad_g_calltaking_constructor_args():
+    sig = inspect.signature(acad_G_CallTaking.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1167,230 +1167,230 @@ safe_text = st.text(
 EcaAwReq_strategy = st.builds(
     EcaAwReq,
 )
-acad::AR2_strategy = st.builds(
-    acad::AR2,
+acad_AR2_strategy = st.builds(
+    acad_AR2,
 )
-acad::AR3_strategy = st.builds(
-    acad::AR3,
+acad_AR6_strategy = st.builds(
+    acad_AR6,
 )
-acad::AR7_strategy = st.builds(
-    acad::AR7,
+acad_AR7_strategy = st.builds(
+    acad_AR7,
 )
-acad::AR9_strategy = st.builds(
-    acad::AR9,
+acad_AR8_strategy = st.builds(
+    acad_AR8,
 )
-acad::AR5_strategy = st.builds(
-    acad::AR5,
+acad_AR11_strategy = st.builds(
+    acad_AR11,
 )
-acad::AR4_strategy = st.builds(
-    acad::AR4,
+acad_AR3_strategy = st.builds(
+    acad_AR3,
 )
-acad::AR8_strategy = st.builds(
-    acad::AR8,
+acad_AR10_strategy = st.builds(
+    acad_AR10,
 )
-acad::AR11_strategy = st.builds(
-    acad::AR11,
+acad_AR9_strategy = st.builds(
+    acad_AR9,
 )
-acad::AR10_strategy = st.builds(
-    acad::AR10,
+acad_AR5_strategy = st.builds(
+    acad_AR5,
 )
-acad::AR6_strategy = st.builds(
-    acad::AR6,
+acad_AR4_strategy = st.builds(
+    acad_AR4,
 )
-acad::AR1_strategy = st.builds(
-    acad::AR1,
+acad_AR1_strategy = st.builds(
+    acad_AR1,
 )
 QualityConstraint_strategy = st.builds(
     QualityConstraint,
 )
-acad::Q::MaxCost_strategy = st.builds(
-    acad::Q::MaxCost,
+acad_Q_MaxTimeMsg_strategy = st.builds(
+    acad_Q_MaxTimeMsg,
 )
-acad::Q::IncidResolv_strategy = st.builds(
-    acad::Q::IncidResolv,
+acad_Q_MaxCost_strategy = st.builds(
+    acad_Q_MaxCost,
 )
-acad::Q::MaxTimeMsg_strategy = st.builds(
-    acad::Q::MaxTimeMsg,
+acad_Q_AmbArriv_strategy = st.builds(
+    acad_Q_AmbArriv,
 )
-acad::Q::AmbArriv_strategy = st.builds(
-    acad::Q::AmbArriv,
+acad_Q_IncidResolv_strategy = st.builds(
+    acad_Q_IncidResolv,
 )
-acad::Q::Dispatch_strategy = st.builds(
-    acad::Q::Dispatch,
+acad_Q_Dispatch_strategy = st.builds(
+    acad_Q_Dispatch,
 )
 Softgoal_strategy = st.builds(
     Softgoal,
 )
-acad::S::LowCost_strategy = st.builds(
-    acad::S::LowCost,
+acad_S_FastArriv_strategy = st.builds(
+    acad_S_FastArriv,
 )
-acad::S::UserFriendly_strategy = st.builds(
-    acad::S::UserFriendly,
+acad_S_LowCost_strategy = st.builds(
+    acad_S_LowCost,
 )
-acad::S::FastArriv_strategy = st.builds(
-    acad::S::FastArriv,
+acad_S_UserFriendly_strategy = st.builds(
+    acad_S_UserFriendly,
 )
-acad::S::FastAssist_strategy = st.builds(
-    acad::S::FastAssist,
+acad_S_FastAssist_strategy = st.builds(
+    acad_S_FastAssist,
 )
-acad::S::FastDispatch_strategy = st.builds(
-    acad::S::FastDispatch,
+acad_S_FastDispatch_strategy = st.builds(
+    acad_S_FastDispatch,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-acad::CV::MST_strategy = st.builds(
-    acad::CV::MST,
+acad_CV_MST_strategy = st.builds(
+    acad_CV_MST,
 )
 GoalModel_strategy = st.builds(
     GoalModel,
 )
-acad::AcadGoalModel_strategy = st.builds(
-    acad::AcadGoalModel,
+acad_AcadGoalModel_strategy = st.builds(
+    acad_AcadGoalModel,
 )
-acad::AR15_strategy = st.builds(
-    acad::AR15,
+acad_AR15_strategy = st.builds(
+    acad_AR15,
 )
-acad::AR14_strategy = st.builds(
-    acad::AR14,
+acad_AR14_strategy = st.builds(
+    acad_AR14,
 )
-acad::AR13_strategy = st.builds(
-    acad::AR13,
+acad_AR13_strategy = st.builds(
+    acad_AR13,
 )
-acad::AR12_strategy = st.builds(
-    acad::AR12,
+acad_AR12_strategy = st.builds(
+    acad_AR12,
 )
 Task_strategy = st.builds(
     Task,
 )
-acad::T::InformStat_strategy = st.builds(
-    acad::T::InformStat,
+acad_T_DetBestAmb_strategy = st.builds(
+    acad_T_DetBestAmb,
 )
-acad::T::AcadAssists_strategy = st.builds(
-    acad::T::AcadAssists,
+acad_T_CheckPaper_strategy = st.builds(
+    acad_T_CheckPaper,
 )
-acad::T::SearchDuplic_strategy = st.builds(
-    acad::T::SearchDuplic,
+acad_T_Feedback_strategy = st.builds(
+    acad_T_Feedback,
 )
-acad::T::ConfIncident_strategy = st.builds(
-    acad::T::ConfIncident,
+acad_T_InputInfo_strategy = st.builds(
+    acad_T_InputInfo,
 )
-acad::T::StaffAssists_strategy = st.builds(
-    acad::T::StaffAssists,
+acad_T_CheckGazet_strategy = st.builds(
+    acad_T_CheckGazet,
 )
-acad::T::DetBestAmb_strategy = st.builds(
-    acad::T::DetBestAmb,
+acad_T_SearchDuplic_strategy = st.builds(
+    acad_T_SearchDuplic,
 )
-acad::T::CheckPaper_strategy = st.builds(
-    acad::T::CheckPaper,
+acad_T_DetectLoc_strategy = st.builds(
+    acad_T_DetectLoc,
 )
-acad::T::InputInfo_strategy = st.builds(
-    acad::T::InputInfo,
+acad_T_ConfIncident_strategy = st.builds(
+    acad_T_ConfIncident,
 )
-acad::T::CloseIncident_strategy = st.builds(
-    acad::T::CloseIncident,
+acad_T_InformStat_strategy = st.builds(
+    acad_T_InformStat,
 )
-acad::T::CreateOrAssign_strategy = st.builds(
-    acad::T::CreateOrAssign,
+acad_T_AcadAssists_strategy = st.builds(
+    acad_T_AcadAssists,
 )
-acad::T::CheckGazet_strategy = st.builds(
-    acad::T::CheckGazet,
+acad_T_StaffAssists_strategy = st.builds(
+    acad_T_StaffAssists,
 )
-acad::T::ExceptQueue_strategy = st.builds(
-    acad::T::ExceptQueue,
+acad_T_CreateOrAssign_strategy = st.builds(
+    acad_T_CreateOrAssign,
 )
-acad::T::DetectLoc_strategy = st.builds(
-    acad::T::DetectLoc,
+acad_T_ExceptQueue_strategy = st.builds(
+    acad_T_ExceptQueue,
 )
-acad::T::SpecConfig_strategy = st.builds(
-    acad::T::SpecConfig,
+acad_T_CloseIncident_strategy = st.builds(
+    acad_T_CloseIncident,
 )
-acad::T::Feedback_strategy = st.builds(
-    acad::T::Feedback,
+acad_T_SpecConfig_strategy = st.builds(
+    acad_T_SpecConfig,
 )
-acad::T::ConfirmCall_strategy = st.builds(
-    acad::T::ConfirmCall,
+acad_T_ConfirmCall_strategy = st.builds(
+    acad_T_ConfirmCall,
 )
-acad::T::Except_strategy = st.builds(
-    acad::T::Except,
+acad_T_Except_strategy = st.builds(
+    acad_T_Except,
 )
-acad::T::ReplAmb_strategy = st.builds(
-    acad::T::ReplAmb,
+acad_T_ReplAmb_strategy = st.builds(
+    acad_T_ReplAmb,
 )
-acad::T::DispDepArriv_strategy = st.builds(
-    acad::T::DispDepArriv,
+acad_T_DispDepArriv_strategy = st.builds(
+    acad_T_DispDepArriv,
 )
-acad::T::DispStatus_strategy = st.builds(
-    acad::T::DispStatus,
+acad_T_DispStatus_strategy = st.builds(
+    acad_T_DispStatus,
 )
-acad::T::MonitorStatus_strategy = st.builds(
-    acad::T::MonitorStatus,
+acad_T_MonitorStatus_strategy = st.builds(
+    acad_T_MonitorStatus,
 )
-acad::T::RadioPos_strategy = st.builds(
-    acad::T::RadioPos,
+acad_T_RadioPos_strategy = st.builds(
+    acad_T_RadioPos,
 )
 HardGoal_strategy = st.builds(
     HardGoal,
 )
-acad::G::RegCall_strategy = st.builds(
-    acad::G::RegCall,
+acad_G_ManualMap_strategy = st.builds(
+    acad_G_ManualMap,
 )
-acad::G::DispExcept_strategy = st.builds(
-    acad::G::DispExcept,
+acad_G_RegCall_strategy = st.builds(
+    acad_G_RegCall,
 )
-acad::G::MonitorRes_strategy = st.builds(
-    acad::G::MonitorRes,
+acad_G_UpdPosition_strategy = st.builds(
+    acad_G_UpdPosition,
 )
-acad::G::RouteAssist_strategy = st.builds(
-    acad::G::RouteAssist,
+acad_G_MonitorRes_strategy = st.builds(
+    acad_G_MonitorRes,
 )
-acad::G::ManualMap_strategy = st.builds(
-    acad::G::ManualMap,
+acad_G_RouteAssist_strategy = st.builds(
+    acad_G_RouteAssist,
 )
-acad::G::AssignIncident_strategy = st.builds(
-    acad::G::AssignIncident,
+acad_G_AssignIncident_strategy = st.builds(
+    acad_G_AssignIncident,
 )
-acad::G::UpdPosition_strategy = st.builds(
-    acad::G::UpdPosition,
+acad_G_DispExcept_strategy = st.builds(
+    acad_G_DispExcept,
 )
-acad::G::GenDispatch_strategy = st.builds(
-    acad::G::GenDispatch,
+acad_G_GenDispatch_strategy = st.builds(
+    acad_G_GenDispatch,
 )
-acad::G::IncidentUpd_strategy = st.builds(
-    acad::G::IncidentUpd,
+acad_G_IncidentUpd_strategy = st.builds(
+    acad_G_IncidentUpd,
 )
-acad::G::ObtainMap_strategy = st.builds(
-    acad::G::ObtainMap,
+acad_G_ObtainMap_strategy = st.builds(
+    acad_G_ObtainMap,
 )
-acad::G::ResourceMob_strategy = st.builds(
-    acad::G::ResourceMob,
+acad_G_ResourceMob_strategy = st.builds(
+    acad_G_ResourceMob,
 )
-acad::G::ResourceId_strategy = st.builds(
-    acad::G::ResourceId,
+acad_G_ResourceId_strategy = st.builds(
+    acad_G_ResourceId,
 )
 DomainAssumption_strategy = st.builds(
     DomainAssumption,
 )
-acad::D::MDTPos_strategy = st.builds(
-    acad::D::MDTPos,
+acad_D_DriverKnows_strategy = st.builds(
+    acad_D_DriverKnows,
 )
-acad::D::GazetUpd_strategy = st.builds(
-    acad::D::GazetUpd,
+acad_D_MDTPos_strategy = st.builds(
+    acad_D_MDTPos,
 )
-acad::D::MDTUse_strategy = st.builds(
-    acad::D::MDTUse,
+acad_D_MDTUse_strategy = st.builds(
+    acad_D_MDTUse,
 )
-acad::D::DriverKnows_strategy = st.builds(
-    acad::D::DriverKnows,
+acad_D_GazetUpd_strategy = st.builds(
+    acad_D_GazetUpd,
 )
-acad::D::MaxCalls_strategy = st.builds(
-    acad::D::MaxCalls,
+acad_D_MaxCalls_strategy = st.builds(
+    acad_D_MaxCalls,
 )
-acad::D::DataUpd_strategy = st.builds(
-    acad::D::DataUpd,
+acad_D_DataUpd_strategy = st.builds(
+    acad_D_DataUpd,
 )
-acad::G::CallTaking_strategy = st.builds(
-    acad::G::CallTaking,
+acad_G_CallTaking_strategy = st.builds(
+    acad_G_CallTaking,
 )
 
 @given(instance=EcaAwReq_strategy)
@@ -1398,377 +1398,377 @@ acad::G::CallTaking_strategy = st.builds(
 def test_ecaawreq_instantiation(instance):
     assert isinstance(instance, EcaAwReq)
 
-@given(instance=acad::AR2_strategy)
+@given(instance=acad_AR2_strategy)
 @settings(max_examples=50)
-def test_acad::ar2_instantiation(instance):
-    assert isinstance(instance, acad::AR2)
+def test_acad_ar2_instantiation(instance):
+    assert isinstance(instance, acad_AR2)
 
-@given(instance=acad::AR3_strategy)
+@given(instance=acad_AR6_strategy)
 @settings(max_examples=50)
-def test_acad::ar3_instantiation(instance):
-    assert isinstance(instance, acad::AR3)
+def test_acad_ar6_instantiation(instance):
+    assert isinstance(instance, acad_AR6)
 
-@given(instance=acad::AR7_strategy)
+@given(instance=acad_AR7_strategy)
 @settings(max_examples=50)
-def test_acad::ar7_instantiation(instance):
-    assert isinstance(instance, acad::AR7)
+def test_acad_ar7_instantiation(instance):
+    assert isinstance(instance, acad_AR7)
 
-@given(instance=acad::AR9_strategy)
+@given(instance=acad_AR8_strategy)
 @settings(max_examples=50)
-def test_acad::ar9_instantiation(instance):
-    assert isinstance(instance, acad::AR9)
+def test_acad_ar8_instantiation(instance):
+    assert isinstance(instance, acad_AR8)
 
-@given(instance=acad::AR5_strategy)
+@given(instance=acad_AR11_strategy)
 @settings(max_examples=50)
-def test_acad::ar5_instantiation(instance):
-    assert isinstance(instance, acad::AR5)
+def test_acad_ar11_instantiation(instance):
+    assert isinstance(instance, acad_AR11)
 
-@given(instance=acad::AR4_strategy)
+@given(instance=acad_AR3_strategy)
 @settings(max_examples=50)
-def test_acad::ar4_instantiation(instance):
-    assert isinstance(instance, acad::AR4)
+def test_acad_ar3_instantiation(instance):
+    assert isinstance(instance, acad_AR3)
 
-@given(instance=acad::AR8_strategy)
+@given(instance=acad_AR10_strategy)
 @settings(max_examples=50)
-def test_acad::ar8_instantiation(instance):
-    assert isinstance(instance, acad::AR8)
+def test_acad_ar10_instantiation(instance):
+    assert isinstance(instance, acad_AR10)
 
-@given(instance=acad::AR11_strategy)
+@given(instance=acad_AR9_strategy)
 @settings(max_examples=50)
-def test_acad::ar11_instantiation(instance):
-    assert isinstance(instance, acad::AR11)
+def test_acad_ar9_instantiation(instance):
+    assert isinstance(instance, acad_AR9)
 
-@given(instance=acad::AR10_strategy)
+@given(instance=acad_AR5_strategy)
 @settings(max_examples=50)
-def test_acad::ar10_instantiation(instance):
-    assert isinstance(instance, acad::AR10)
+def test_acad_ar5_instantiation(instance):
+    assert isinstance(instance, acad_AR5)
 
-@given(instance=acad::AR6_strategy)
+@given(instance=acad_AR4_strategy)
 @settings(max_examples=50)
-def test_acad::ar6_instantiation(instance):
-    assert isinstance(instance, acad::AR6)
+def test_acad_ar4_instantiation(instance):
+    assert isinstance(instance, acad_AR4)
 
-@given(instance=acad::AR1_strategy)
+@given(instance=acad_AR1_strategy)
 @settings(max_examples=50)
-def test_acad::ar1_instantiation(instance):
-    assert isinstance(instance, acad::AR1)
+def test_acad_ar1_instantiation(instance):
+    assert isinstance(instance, acad_AR1)
 
 @given(instance=QualityConstraint_strategy)
 @settings(max_examples=50)
 def test_qualityconstraint_instantiation(instance):
     assert isinstance(instance, QualityConstraint)
 
-@given(instance=acad::Q::MaxCost_strategy)
+@given(instance=acad_Q_MaxTimeMsg_strategy)
 @settings(max_examples=50)
-def test_acad::q::maxcost_instantiation(instance):
-    assert isinstance(instance, acad::Q::MaxCost)
+def test_acad_q_maxtimemsg_instantiation(instance):
+    assert isinstance(instance, acad_Q_MaxTimeMsg)
 
-@given(instance=acad::Q::IncidResolv_strategy)
+@given(instance=acad_Q_MaxCost_strategy)
 @settings(max_examples=50)
-def test_acad::q::incidresolv_instantiation(instance):
-    assert isinstance(instance, acad::Q::IncidResolv)
+def test_acad_q_maxcost_instantiation(instance):
+    assert isinstance(instance, acad_Q_MaxCost)
 
-@given(instance=acad::Q::MaxTimeMsg_strategy)
+@given(instance=acad_Q_AmbArriv_strategy)
 @settings(max_examples=50)
-def test_acad::q::maxtimemsg_instantiation(instance):
-    assert isinstance(instance, acad::Q::MaxTimeMsg)
+def test_acad_q_ambarriv_instantiation(instance):
+    assert isinstance(instance, acad_Q_AmbArriv)
 
-@given(instance=acad::Q::AmbArriv_strategy)
+@given(instance=acad_Q_IncidResolv_strategy)
 @settings(max_examples=50)
-def test_acad::q::ambarriv_instantiation(instance):
-    assert isinstance(instance, acad::Q::AmbArriv)
+def test_acad_q_incidresolv_instantiation(instance):
+    assert isinstance(instance, acad_Q_IncidResolv)
 
-@given(instance=acad::Q::Dispatch_strategy)
+@given(instance=acad_Q_Dispatch_strategy)
 @settings(max_examples=50)
-def test_acad::q::dispatch_instantiation(instance):
-    assert isinstance(instance, acad::Q::Dispatch)
+def test_acad_q_dispatch_instantiation(instance):
+    assert isinstance(instance, acad_Q_Dispatch)
 
 @given(instance=Softgoal_strategy)
 @settings(max_examples=50)
 def test_softgoal_instantiation(instance):
     assert isinstance(instance, Softgoal)
 
-@given(instance=acad::S::LowCost_strategy)
+@given(instance=acad_S_FastArriv_strategy)
 @settings(max_examples=50)
-def test_acad::s::lowcost_instantiation(instance):
-    assert isinstance(instance, acad::S::LowCost)
+def test_acad_s_fastarriv_instantiation(instance):
+    assert isinstance(instance, acad_S_FastArriv)
 
-@given(instance=acad::S::UserFriendly_strategy)
+@given(instance=acad_S_LowCost_strategy)
 @settings(max_examples=50)
-def test_acad::s::userfriendly_instantiation(instance):
-    assert isinstance(instance, acad::S::UserFriendly)
+def test_acad_s_lowcost_instantiation(instance):
+    assert isinstance(instance, acad_S_LowCost)
 
-@given(instance=acad::S::FastArriv_strategy)
+@given(instance=acad_S_UserFriendly_strategy)
 @settings(max_examples=50)
-def test_acad::s::fastarriv_instantiation(instance):
-    assert isinstance(instance, acad::S::FastArriv)
+def test_acad_s_userfriendly_instantiation(instance):
+    assert isinstance(instance, acad_S_UserFriendly)
 
-@given(instance=acad::S::FastAssist_strategy)
+@given(instance=acad_S_FastAssist_strategy)
 @settings(max_examples=50)
-def test_acad::s::fastassist_instantiation(instance):
-    assert isinstance(instance, acad::S::FastAssist)
+def test_acad_s_fastassist_instantiation(instance):
+    assert isinstance(instance, acad_S_FastAssist)
 
-@given(instance=acad::S::FastDispatch_strategy)
+@given(instance=acad_S_FastDispatch_strategy)
 @settings(max_examples=50)
-def test_acad::s::fastdispatch_instantiation(instance):
-    assert isinstance(instance, acad::S::FastDispatch)
+def test_acad_s_fastdispatch_instantiation(instance):
+    assert isinstance(instance, acad_S_FastDispatch)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=acad::CV::MST_strategy)
+@given(instance=acad_CV_MST_strategy)
 @settings(max_examples=50)
-def test_acad::cv::mst_instantiation(instance):
-    assert isinstance(instance, acad::CV::MST)
+def test_acad_cv_mst_instantiation(instance):
+    assert isinstance(instance, acad_CV_MST)
 
 @given(instance=GoalModel_strategy)
 @settings(max_examples=50)
 def test_goalmodel_instantiation(instance):
     assert isinstance(instance, GoalModel)
 
-@given(instance=acad::AcadGoalModel_strategy)
+@given(instance=acad_AcadGoalModel_strategy)
 @settings(max_examples=50)
-def test_acad::acadgoalmodel_instantiation(instance):
-    assert isinstance(instance, acad::AcadGoalModel)
+def test_acad_acadgoalmodel_instantiation(instance):
+    assert isinstance(instance, acad_AcadGoalModel)
 
-@given(instance=acad::AR15_strategy)
+@given(instance=acad_AR15_strategy)
 @settings(max_examples=50)
-def test_acad::ar15_instantiation(instance):
-    assert isinstance(instance, acad::AR15)
+def test_acad_ar15_instantiation(instance):
+    assert isinstance(instance, acad_AR15)
 
-@given(instance=acad::AR14_strategy)
+@given(instance=acad_AR14_strategy)
 @settings(max_examples=50)
-def test_acad::ar14_instantiation(instance):
-    assert isinstance(instance, acad::AR14)
+def test_acad_ar14_instantiation(instance):
+    assert isinstance(instance, acad_AR14)
 
-@given(instance=acad::AR13_strategy)
+@given(instance=acad_AR13_strategy)
 @settings(max_examples=50)
-def test_acad::ar13_instantiation(instance):
-    assert isinstance(instance, acad::AR13)
+def test_acad_ar13_instantiation(instance):
+    assert isinstance(instance, acad_AR13)
 
-@given(instance=acad::AR12_strategy)
+@given(instance=acad_AR12_strategy)
 @settings(max_examples=50)
-def test_acad::ar12_instantiation(instance):
-    assert isinstance(instance, acad::AR12)
+def test_acad_ar12_instantiation(instance):
+    assert isinstance(instance, acad_AR12)
 
 @given(instance=Task_strategy)
 @settings(max_examples=50)
 def test_task_instantiation(instance):
     assert isinstance(instance, Task)
 
-@given(instance=acad::T::InformStat_strategy)
+@given(instance=acad_T_DetBestAmb_strategy)
 @settings(max_examples=50)
-def test_acad::t::informstat_instantiation(instance):
-    assert isinstance(instance, acad::T::InformStat)
+def test_acad_t_detbestamb_instantiation(instance):
+    assert isinstance(instance, acad_T_DetBestAmb)
 
-@given(instance=acad::T::AcadAssists_strategy)
+@given(instance=acad_T_CheckPaper_strategy)
 @settings(max_examples=50)
-def test_acad::t::acadassists_instantiation(instance):
-    assert isinstance(instance, acad::T::AcadAssists)
+def test_acad_t_checkpaper_instantiation(instance):
+    assert isinstance(instance, acad_T_CheckPaper)
 
-@given(instance=acad::T::SearchDuplic_strategy)
+@given(instance=acad_T_Feedback_strategy)
 @settings(max_examples=50)
-def test_acad::t::searchduplic_instantiation(instance):
-    assert isinstance(instance, acad::T::SearchDuplic)
+def test_acad_t_feedback_instantiation(instance):
+    assert isinstance(instance, acad_T_Feedback)
 
-@given(instance=acad::T::ConfIncident_strategy)
+@given(instance=acad_T_InputInfo_strategy)
 @settings(max_examples=50)
-def test_acad::t::confincident_instantiation(instance):
-    assert isinstance(instance, acad::T::ConfIncident)
+def test_acad_t_inputinfo_instantiation(instance):
+    assert isinstance(instance, acad_T_InputInfo)
 
-@given(instance=acad::T::StaffAssists_strategy)
+@given(instance=acad_T_CheckGazet_strategy)
 @settings(max_examples=50)
-def test_acad::t::staffassists_instantiation(instance):
-    assert isinstance(instance, acad::T::StaffAssists)
+def test_acad_t_checkgazet_instantiation(instance):
+    assert isinstance(instance, acad_T_CheckGazet)
 
-@given(instance=acad::T::DetBestAmb_strategy)
+@given(instance=acad_T_SearchDuplic_strategy)
 @settings(max_examples=50)
-def test_acad::t::detbestamb_instantiation(instance):
-    assert isinstance(instance, acad::T::DetBestAmb)
+def test_acad_t_searchduplic_instantiation(instance):
+    assert isinstance(instance, acad_T_SearchDuplic)
 
-@given(instance=acad::T::CheckPaper_strategy)
+@given(instance=acad_T_DetectLoc_strategy)
 @settings(max_examples=50)
-def test_acad::t::checkpaper_instantiation(instance):
-    assert isinstance(instance, acad::T::CheckPaper)
+def test_acad_t_detectloc_instantiation(instance):
+    assert isinstance(instance, acad_T_DetectLoc)
 
-@given(instance=acad::T::InputInfo_strategy)
+@given(instance=acad_T_ConfIncident_strategy)
 @settings(max_examples=50)
-def test_acad::t::inputinfo_instantiation(instance):
-    assert isinstance(instance, acad::T::InputInfo)
+def test_acad_t_confincident_instantiation(instance):
+    assert isinstance(instance, acad_T_ConfIncident)
 
-@given(instance=acad::T::CloseIncident_strategy)
+@given(instance=acad_T_InformStat_strategy)
 @settings(max_examples=50)
-def test_acad::t::closeincident_instantiation(instance):
-    assert isinstance(instance, acad::T::CloseIncident)
+def test_acad_t_informstat_instantiation(instance):
+    assert isinstance(instance, acad_T_InformStat)
 
-@given(instance=acad::T::CreateOrAssign_strategy)
+@given(instance=acad_T_AcadAssists_strategy)
 @settings(max_examples=50)
-def test_acad::t::createorassign_instantiation(instance):
-    assert isinstance(instance, acad::T::CreateOrAssign)
+def test_acad_t_acadassists_instantiation(instance):
+    assert isinstance(instance, acad_T_AcadAssists)
 
-@given(instance=acad::T::CheckGazet_strategy)
+@given(instance=acad_T_StaffAssists_strategy)
 @settings(max_examples=50)
-def test_acad::t::checkgazet_instantiation(instance):
-    assert isinstance(instance, acad::T::CheckGazet)
+def test_acad_t_staffassists_instantiation(instance):
+    assert isinstance(instance, acad_T_StaffAssists)
 
-@given(instance=acad::T::ExceptQueue_strategy)
+@given(instance=acad_T_CreateOrAssign_strategy)
 @settings(max_examples=50)
-def test_acad::t::exceptqueue_instantiation(instance):
-    assert isinstance(instance, acad::T::ExceptQueue)
+def test_acad_t_createorassign_instantiation(instance):
+    assert isinstance(instance, acad_T_CreateOrAssign)
 
-@given(instance=acad::T::DetectLoc_strategy)
+@given(instance=acad_T_ExceptQueue_strategy)
 @settings(max_examples=50)
-def test_acad::t::detectloc_instantiation(instance):
-    assert isinstance(instance, acad::T::DetectLoc)
+def test_acad_t_exceptqueue_instantiation(instance):
+    assert isinstance(instance, acad_T_ExceptQueue)
 
-@given(instance=acad::T::SpecConfig_strategy)
+@given(instance=acad_T_CloseIncident_strategy)
 @settings(max_examples=50)
-def test_acad::t::specconfig_instantiation(instance):
-    assert isinstance(instance, acad::T::SpecConfig)
+def test_acad_t_closeincident_instantiation(instance):
+    assert isinstance(instance, acad_T_CloseIncident)
 
-@given(instance=acad::T::Feedback_strategy)
+@given(instance=acad_T_SpecConfig_strategy)
 @settings(max_examples=50)
-def test_acad::t::feedback_instantiation(instance):
-    assert isinstance(instance, acad::T::Feedback)
+def test_acad_t_specconfig_instantiation(instance):
+    assert isinstance(instance, acad_T_SpecConfig)
 
-@given(instance=acad::T::ConfirmCall_strategy)
+@given(instance=acad_T_ConfirmCall_strategy)
 @settings(max_examples=50)
-def test_acad::t::confirmcall_instantiation(instance):
-    assert isinstance(instance, acad::T::ConfirmCall)
+def test_acad_t_confirmcall_instantiation(instance):
+    assert isinstance(instance, acad_T_ConfirmCall)
 
-@given(instance=acad::T::Except_strategy)
+@given(instance=acad_T_Except_strategy)
 @settings(max_examples=50)
-def test_acad::t::except_instantiation(instance):
-    assert isinstance(instance, acad::T::Except)
+def test_acad_t_except_instantiation(instance):
+    assert isinstance(instance, acad_T_Except)
 
-@given(instance=acad::T::ReplAmb_strategy)
+@given(instance=acad_T_ReplAmb_strategy)
 @settings(max_examples=50)
-def test_acad::t::replamb_instantiation(instance):
-    assert isinstance(instance, acad::T::ReplAmb)
+def test_acad_t_replamb_instantiation(instance):
+    assert isinstance(instance, acad_T_ReplAmb)
 
-@given(instance=acad::T::DispDepArriv_strategy)
+@given(instance=acad_T_DispDepArriv_strategy)
 @settings(max_examples=50)
-def test_acad::t::dispdeparriv_instantiation(instance):
-    assert isinstance(instance, acad::T::DispDepArriv)
+def test_acad_t_dispdeparriv_instantiation(instance):
+    assert isinstance(instance, acad_T_DispDepArriv)
 
-@given(instance=acad::T::DispStatus_strategy)
+@given(instance=acad_T_DispStatus_strategy)
 @settings(max_examples=50)
-def test_acad::t::dispstatus_instantiation(instance):
-    assert isinstance(instance, acad::T::DispStatus)
+def test_acad_t_dispstatus_instantiation(instance):
+    assert isinstance(instance, acad_T_DispStatus)
 
-@given(instance=acad::T::MonitorStatus_strategy)
+@given(instance=acad_T_MonitorStatus_strategy)
 @settings(max_examples=50)
-def test_acad::t::monitorstatus_instantiation(instance):
-    assert isinstance(instance, acad::T::MonitorStatus)
+def test_acad_t_monitorstatus_instantiation(instance):
+    assert isinstance(instance, acad_T_MonitorStatus)
 
-@given(instance=acad::T::RadioPos_strategy)
+@given(instance=acad_T_RadioPos_strategy)
 @settings(max_examples=50)
-def test_acad::t::radiopos_instantiation(instance):
-    assert isinstance(instance, acad::T::RadioPos)
+def test_acad_t_radiopos_instantiation(instance):
+    assert isinstance(instance, acad_T_RadioPos)
 
 @given(instance=HardGoal_strategy)
 @settings(max_examples=50)
 def test_hardgoal_instantiation(instance):
     assert isinstance(instance, HardGoal)
 
-@given(instance=acad::G::RegCall_strategy)
+@given(instance=acad_G_ManualMap_strategy)
 @settings(max_examples=50)
-def test_acad::g::regcall_instantiation(instance):
-    assert isinstance(instance, acad::G::RegCall)
+def test_acad_g_manualmap_instantiation(instance):
+    assert isinstance(instance, acad_G_ManualMap)
 
-@given(instance=acad::G::DispExcept_strategy)
+@given(instance=acad_G_RegCall_strategy)
 @settings(max_examples=50)
-def test_acad::g::dispexcept_instantiation(instance):
-    assert isinstance(instance, acad::G::DispExcept)
+def test_acad_g_regcall_instantiation(instance):
+    assert isinstance(instance, acad_G_RegCall)
 
-@given(instance=acad::G::MonitorRes_strategy)
+@given(instance=acad_G_UpdPosition_strategy)
 @settings(max_examples=50)
-def test_acad::g::monitorres_instantiation(instance):
-    assert isinstance(instance, acad::G::MonitorRes)
+def test_acad_g_updposition_instantiation(instance):
+    assert isinstance(instance, acad_G_UpdPosition)
 
-@given(instance=acad::G::RouteAssist_strategy)
+@given(instance=acad_G_MonitorRes_strategy)
 @settings(max_examples=50)
-def test_acad::g::routeassist_instantiation(instance):
-    assert isinstance(instance, acad::G::RouteAssist)
+def test_acad_g_monitorres_instantiation(instance):
+    assert isinstance(instance, acad_G_MonitorRes)
 
-@given(instance=acad::G::ManualMap_strategy)
+@given(instance=acad_G_RouteAssist_strategy)
 @settings(max_examples=50)
-def test_acad::g::manualmap_instantiation(instance):
-    assert isinstance(instance, acad::G::ManualMap)
+def test_acad_g_routeassist_instantiation(instance):
+    assert isinstance(instance, acad_G_RouteAssist)
 
-@given(instance=acad::G::AssignIncident_strategy)
+@given(instance=acad_G_AssignIncident_strategy)
 @settings(max_examples=50)
-def test_acad::g::assignincident_instantiation(instance):
-    assert isinstance(instance, acad::G::AssignIncident)
+def test_acad_g_assignincident_instantiation(instance):
+    assert isinstance(instance, acad_G_AssignIncident)
 
-@given(instance=acad::G::UpdPosition_strategy)
+@given(instance=acad_G_DispExcept_strategy)
 @settings(max_examples=50)
-def test_acad::g::updposition_instantiation(instance):
-    assert isinstance(instance, acad::G::UpdPosition)
+def test_acad_g_dispexcept_instantiation(instance):
+    assert isinstance(instance, acad_G_DispExcept)
 
-@given(instance=acad::G::GenDispatch_strategy)
+@given(instance=acad_G_GenDispatch_strategy)
 @settings(max_examples=50)
-def test_acad::g::gendispatch_instantiation(instance):
-    assert isinstance(instance, acad::G::GenDispatch)
+def test_acad_g_gendispatch_instantiation(instance):
+    assert isinstance(instance, acad_G_GenDispatch)
 
-@given(instance=acad::G::IncidentUpd_strategy)
+@given(instance=acad_G_IncidentUpd_strategy)
 @settings(max_examples=50)
-def test_acad::g::incidentupd_instantiation(instance):
-    assert isinstance(instance, acad::G::IncidentUpd)
+def test_acad_g_incidentupd_instantiation(instance):
+    assert isinstance(instance, acad_G_IncidentUpd)
 
-@given(instance=acad::G::ObtainMap_strategy)
+@given(instance=acad_G_ObtainMap_strategy)
 @settings(max_examples=50)
-def test_acad::g::obtainmap_instantiation(instance):
-    assert isinstance(instance, acad::G::ObtainMap)
+def test_acad_g_obtainmap_instantiation(instance):
+    assert isinstance(instance, acad_G_ObtainMap)
 
-@given(instance=acad::G::ResourceMob_strategy)
+@given(instance=acad_G_ResourceMob_strategy)
 @settings(max_examples=50)
-def test_acad::g::resourcemob_instantiation(instance):
-    assert isinstance(instance, acad::G::ResourceMob)
+def test_acad_g_resourcemob_instantiation(instance):
+    assert isinstance(instance, acad_G_ResourceMob)
 
-@given(instance=acad::G::ResourceId_strategy)
+@given(instance=acad_G_ResourceId_strategy)
 @settings(max_examples=50)
-def test_acad::g::resourceid_instantiation(instance):
-    assert isinstance(instance, acad::G::ResourceId)
+def test_acad_g_resourceid_instantiation(instance):
+    assert isinstance(instance, acad_G_ResourceId)
 
 @given(instance=DomainAssumption_strategy)
 @settings(max_examples=50)
 def test_domainassumption_instantiation(instance):
     assert isinstance(instance, DomainAssumption)
 
-@given(instance=acad::D::MDTPos_strategy)
+@given(instance=acad_D_DriverKnows_strategy)
 @settings(max_examples=50)
-def test_acad::d::mdtpos_instantiation(instance):
-    assert isinstance(instance, acad::D::MDTPos)
+def test_acad_d_driverknows_instantiation(instance):
+    assert isinstance(instance, acad_D_DriverKnows)
 
-@given(instance=acad::D::GazetUpd_strategy)
+@given(instance=acad_D_MDTPos_strategy)
 @settings(max_examples=50)
-def test_acad::d::gazetupd_instantiation(instance):
-    assert isinstance(instance, acad::D::GazetUpd)
+def test_acad_d_mdtpos_instantiation(instance):
+    assert isinstance(instance, acad_D_MDTPos)
 
-@given(instance=acad::D::MDTUse_strategy)
+@given(instance=acad_D_MDTUse_strategy)
 @settings(max_examples=50)
-def test_acad::d::mdtuse_instantiation(instance):
-    assert isinstance(instance, acad::D::MDTUse)
+def test_acad_d_mdtuse_instantiation(instance):
+    assert isinstance(instance, acad_D_MDTUse)
 
-@given(instance=acad::D::DriverKnows_strategy)
+@given(instance=acad_D_GazetUpd_strategy)
 @settings(max_examples=50)
-def test_acad::d::driverknows_instantiation(instance):
-    assert isinstance(instance, acad::D::DriverKnows)
+def test_acad_d_gazetupd_instantiation(instance):
+    assert isinstance(instance, acad_D_GazetUpd)
 
-@given(instance=acad::D::MaxCalls_strategy)
+@given(instance=acad_D_MaxCalls_strategy)
 @settings(max_examples=50)
-def test_acad::d::maxcalls_instantiation(instance):
-    assert isinstance(instance, acad::D::MaxCalls)
+def test_acad_d_maxcalls_instantiation(instance):
+    assert isinstance(instance, acad_D_MaxCalls)
 
-@given(instance=acad::D::DataUpd_strategy)
+@given(instance=acad_D_DataUpd_strategy)
 @settings(max_examples=50)
-def test_acad::d::dataupd_instantiation(instance):
-    assert isinstance(instance, acad::D::DataUpd)
+def test_acad_d_dataupd_instantiation(instance):
+    assert isinstance(instance, acad_D_DataUpd)
 
-@given(instance=acad::G::CallTaking_strategy)
+@given(instance=acad_G_CallTaking_strategy)
 @settings(max_examples=50)
-def test_acad::g::calltaking_instantiation(instance):
-    assert isinstance(instance, acad::G::CallTaking)
+def test_acad_g_calltaking_instantiation(instance):
+    assert isinstance(instance, acad_G_CallTaking)

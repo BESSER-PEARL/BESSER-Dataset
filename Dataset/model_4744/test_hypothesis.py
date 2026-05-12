@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Multiple,
-    WebApp::MultipleForQuestionnary,
-    WebApp::MultipleForSurvey,
+    WebApp_MultipleForQuestionnary,
+    WebApp_MultipleForSurvey,
     TrueFalse,
-    WebApp::TrueFalseForQuestionnary,
-    WebApp::TrueFalseForSurvey,
+    WebApp_TrueFalseForQuestionnary,
+    WebApp_TrueFalseForSurvey,
     ExternalSource,
-    WebApp::RSSFeed,
-    WebApp::Twitter,
+    WebApp_RSSFeed,
+    WebApp_Twitter,
     Question,
-    WebApp::GroupOfQuestions,
-    WebApp::Option,
-    WebApp::SimpleQuestion,
-    WebApp::ExternalLink,
-    WebApp::ExternalSource,
+    WebApp_GroupOfQuestions,
+    WebApp_Option,
+    WebApp_SimpleQuestion,
+    WebApp_ExternalLink,
+    WebApp_ExternalSource,
     EntityWebPage,
-    WebApp::Details,
-    WebApp::Create,
-    WebApp::CRUD,
-    WebApp::Delete,
-    WebApp::Index,
-    WebApp::Question,
+    WebApp_Delete,
+    WebApp_CRUD,
+    WebApp_Details,
+    WebApp_Create,
+    WebApp_Index,
+    WebApp_Question,
     WebPage,
-    WebApp::Home,
-    WebApp::EntityWebPage,
-    WebApp::PageS::Q,
+    WebApp_Home,
+    WebApp_EntityWebPage,
+    WebApp_PageS_Q,
     SimpleQuestion,
-    WebApp::Multiple,
-    WebApp::TrueFalse,
-    WebApp::Opened,
-    PageS::Q,
-    WebApp::Questionnary,
-    WebApp::Survey,
-    WebApp::QuestionBank,
-    WebApp::DataBase,
-    WebApp::WebPage,
-    WebApp::Entity,
-    WebApp::Attribute,
-    WebApp::WebApp,
-    MySqlType,
+    WebApp_TrueFalse,
+    WebApp_Multiple,
+    WebApp_Opened,
+    PageS_Q,
+    WebApp_Questionnary,
+    WebApp_Survey,
+    WebApp_QuestionBank,
+    WebApp_DataBase,
+    WebApp_WebPage,
+    WebApp_Entity,
+    WebApp_Attribute,
+    WebApp_WebApp,
     CorrectAnwser,
     VisualRepresentation,
+    MySqlType,
 )
 
 # =============================================================================
@@ -70,30 +70,30 @@ def test_multiple_constructor_args():
 
 
 
-def test_webapp::multipleforquestionnary_is_not_abstract():
-    assert not inspect.isabstract(WebApp::MultipleForQuestionnary)
+def test_webapp_multipleforquestionnary_is_not_abstract():
+    assert not inspect.isabstract(WebApp_MultipleForQuestionnary)
 
 
-def test_webapp::multipleforquestionnary_constructor_exists():
-    assert callable(WebApp::MultipleForQuestionnary.__init__)
+def test_webapp_multipleforquestionnary_constructor_exists():
+    assert callable(WebApp_MultipleForQuestionnary.__init__)
 
 
-def test_webapp::multipleforquestionnary_constructor_args():
-    sig = inspect.signature(WebApp::MultipleForQuestionnary.__init__)
+def test_webapp_multipleforquestionnary_constructor_args():
+    sig = inspect.signature(WebApp_MultipleForQuestionnary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::multipleforsurvey_is_not_abstract():
-    assert not inspect.isabstract(WebApp::MultipleForSurvey)
+def test_webapp_multipleforsurvey_is_not_abstract():
+    assert not inspect.isabstract(WebApp_MultipleForSurvey)
 
 
-def test_webapp::multipleforsurvey_constructor_exists():
-    assert callable(WebApp::MultipleForSurvey.__init__)
+def test_webapp_multipleforsurvey_constructor_exists():
+    assert callable(WebApp_MultipleForSurvey.__init__)
 
 
-def test_webapp::multipleforsurvey_constructor_args():
-    sig = inspect.signature(WebApp::MultipleForSurvey.__init__)
+def test_webapp_multipleforsurvey_constructor_args():
+    sig = inspect.signature(WebApp_MultipleForSurvey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,23 +112,23 @@ def test_truefalse_constructor_args():
 
 
 
-def test_webapp::truefalseforquestionnary_is_not_abstract():
-    assert not inspect.isabstract(WebApp::TrueFalseForQuestionnary)
+def test_webapp_truefalseforquestionnary_is_not_abstract():
+    assert not inspect.isabstract(WebApp_TrueFalseForQuestionnary)
 
 
-def test_webapp::truefalseforquestionnary_constructor_exists():
-    assert callable(WebApp::TrueFalseForQuestionnary.__init__)
+def test_webapp_truefalseforquestionnary_constructor_exists():
+    assert callable(WebApp_TrueFalseForQuestionnary.__init__)
 
 
-def test_webapp::truefalseforquestionnary_constructor_args():
-    sig = inspect.signature(WebApp::TrueFalseForQuestionnary.__init__)
+def test_webapp_truefalseforquestionnary_constructor_args():
+    sig = inspect.signature(WebApp_TrueFalseForQuestionnary.__init__)
     params = list(sig.parameters.keys())
     assert "correct" in params, "Missing parameter 'correct'"
 
-def test_webapp::truefalseforquestionnary_has_correct():
-    assert hasattr(WebApp::TrueFalseForQuestionnary, "correct")
+def test_webapp_truefalseforquestionnary_has_correct():
+    assert hasattr(WebApp_TrueFalseForQuestionnary, "correct")
     descriptor = None
-    for klass in WebApp::TrueFalseForQuestionnary.__mro__:
+    for klass in WebApp_TrueFalseForQuestionnary.__mro__:
         if "correct" in klass.__dict__:
             descriptor = klass.__dict__["correct"]
             break
@@ -136,16 +136,16 @@ def test_webapp::truefalseforquestionnary_has_correct():
 
 
 
-def test_webapp::truefalseforsurvey_is_not_abstract():
-    assert not inspect.isabstract(WebApp::TrueFalseForSurvey)
+def test_webapp_truefalseforsurvey_is_not_abstract():
+    assert not inspect.isabstract(WebApp_TrueFalseForSurvey)
 
 
-def test_webapp::truefalseforsurvey_constructor_exists():
-    assert callable(WebApp::TrueFalseForSurvey.__init__)
+def test_webapp_truefalseforsurvey_constructor_exists():
+    assert callable(WebApp_TrueFalseForSurvey.__init__)
 
 
-def test_webapp::truefalseforsurvey_constructor_args():
-    sig = inspect.signature(WebApp::TrueFalseForSurvey.__init__)
+def test_webapp_truefalseforsurvey_constructor_args():
+    sig = inspect.signature(WebApp_TrueFalseForSurvey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,77 +164,77 @@ def test_externalsource_constructor_args():
 
 
 
-def test_webapp::rssfeed_is_not_abstract():
-    assert not inspect.isabstract(WebApp::RSSFeed)
+def test_webapp_rssfeed_is_not_abstract():
+    assert not inspect.isabstract(WebApp_RSSFeed)
 
 
-def test_webapp::rssfeed_constructor_exists():
-    assert callable(WebApp::RSSFeed.__init__)
+def test_webapp_rssfeed_constructor_exists():
+    assert callable(WebApp_RSSFeed.__init__)
 
 
-def test_webapp::rssfeed_constructor_args():
-    sig = inspect.signature(WebApp::RSSFeed.__init__)
+def test_webapp_rssfeed_constructor_args():
+    sig = inspect.signature(WebApp_RSSFeed.__init__)
     params = list(sig.parameters.keys())
-    assert "items_to_display" in params, "Missing parameter 'items_to_display'"
+    assert "url" in params, "Missing parameter 'url'"
     assert "feedname" in params, "Missing parameter 'feedname'"
     assert "show_date" in params, "Missing parameter 'show_date'"
-    assert "url" in params, "Missing parameter 'url'"
+    assert "items_to_display" in params, "Missing parameter 'items_to_display'"
 
-def test_webapp::rssfeed_has_items_to_display():
-    assert hasattr(WebApp::RSSFeed, "items_to_display")
+def test_webapp_rssfeed_has_url():
+    assert hasattr(WebApp_RSSFeed, "url")
     descriptor = None
-    for klass in WebApp::RSSFeed.__mro__:
-        if "items_to_display" in klass.__dict__:
-            descriptor = klass.__dict__["items_to_display"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::rssfeed_has_feedname():
-    assert hasattr(WebApp::RSSFeed, "feedname")
-    descriptor = None
-    for klass in WebApp::RSSFeed.__mro__:
-        if "feedname" in klass.__dict__:
-            descriptor = klass.__dict__["feedname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::rssfeed_has_show_date():
-    assert hasattr(WebApp::RSSFeed, "show_date")
-    descriptor = None
-    for klass in WebApp::RSSFeed.__mro__:
-        if "show_date" in klass.__dict__:
-            descriptor = klass.__dict__["show_date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::rssfeed_has_url():
-    assert hasattr(WebApp::RSSFeed, "url")
-    descriptor = None
-    for klass in WebApp::RSSFeed.__mro__:
+    for klass in WebApp_RSSFeed.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
     assert isinstance(descriptor, property)
 
+def test_webapp_rssfeed_has_feedname():
+    assert hasattr(WebApp_RSSFeed, "feedname")
+    descriptor = None
+    for klass in WebApp_RSSFeed.__mro__:
+        if "feedname" in klass.__dict__:
+            descriptor = klass.__dict__["feedname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_rssfeed_has_show_date():
+    assert hasattr(WebApp_RSSFeed, "show_date")
+    descriptor = None
+    for klass in WebApp_RSSFeed.__mro__:
+        if "show_date" in klass.__dict__:
+            descriptor = klass.__dict__["show_date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webapp_rssfeed_has_items_to_display():
+    assert hasattr(WebApp_RSSFeed, "items_to_display")
+    descriptor = None
+    for klass in WebApp_RSSFeed.__mro__:
+        if "items_to_display" in klass.__dict__:
+            descriptor = klass.__dict__["items_to_display"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_webapp::twitter_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Twitter)
+
+def test_webapp_twitter_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Twitter)
 
 
-def test_webapp::twitter_constructor_exists():
-    assert callable(WebApp::Twitter.__init__)
+def test_webapp_twitter_constructor_exists():
+    assert callable(WebApp_Twitter.__init__)
 
 
-def test_webapp::twitter_constructor_args():
-    sig = inspect.signature(WebApp::Twitter.__init__)
+def test_webapp_twitter_constructor_args():
+    sig = inspect.signature(WebApp_Twitter.__init__)
     params = list(sig.parameters.keys())
     assert "username" in params, "Missing parameter 'username'"
 
-def test_webapp::twitter_has_username():
-    assert hasattr(WebApp::Twitter, "username")
+def test_webapp_twitter_has_username():
+    assert hasattr(WebApp_Twitter, "username")
     descriptor = None
-    for klass in WebApp::Twitter.__mro__:
+    for klass in WebApp_Twitter.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
@@ -256,23 +256,23 @@ def test_question_constructor_args():
 
 
 
-def test_webapp::groupofquestions_is_not_abstract():
-    assert not inspect.isabstract(WebApp::GroupOfQuestions)
+def test_webapp_groupofquestions_is_not_abstract():
+    assert not inspect.isabstract(WebApp_GroupOfQuestions)
 
 
-def test_webapp::groupofquestions_constructor_exists():
-    assert callable(WebApp::GroupOfQuestions.__init__)
+def test_webapp_groupofquestions_constructor_exists():
+    assert callable(WebApp_GroupOfQuestions.__init__)
 
 
-def test_webapp::groupofquestions_constructor_args():
-    sig = inspect.signature(WebApp::GroupOfQuestions.__init__)
+def test_webapp_groupofquestions_constructor_args():
+    sig = inspect.signature(WebApp_GroupOfQuestions.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::groupofquestions_has_name():
-    assert hasattr(WebApp::GroupOfQuestions, "name")
+def test_webapp_groupofquestions_has_name():
+    assert hasattr(WebApp_GroupOfQuestions, "name")
     descriptor = None
-    for klass in WebApp::GroupOfQuestions.__mro__:
+    for klass in WebApp_GroupOfQuestions.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -280,67 +280,67 @@ def test_webapp::groupofquestions_has_name():
 
 
 
-def test_webapp::option_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Option)
+def test_webapp_option_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Option)
 
 
-def test_webapp::option_constructor_exists():
-    assert callable(WebApp::Option.__init__)
+def test_webapp_option_constructor_exists():
+    assert callable(WebApp_Option.__init__)
 
 
-def test_webapp::option_constructor_args():
-    sig = inspect.signature(WebApp::Option.__init__)
+def test_webapp_option_constructor_args():
+    sig = inspect.signature(WebApp_Option.__init__)
     params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
     assert "fraction" in params, "Missing parameter 'fraction'"
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_webapp::option_has_text():
-    assert hasattr(WebApp::Option, "text")
+def test_webapp_option_has_fraction():
+    assert hasattr(WebApp_Option, "fraction")
     descriptor = None
-    for klass in WebApp::Option.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::option_has_fraction():
-    assert hasattr(WebApp::Option, "fraction")
-    descriptor = None
-    for klass in WebApp::Option.__mro__:
+    for klass in WebApp_Option.__mro__:
         if "fraction" in klass.__dict__:
             descriptor = klass.__dict__["fraction"]
             break
     assert isinstance(descriptor, property)
 
+def test_webapp_option_has_text():
+    assert hasattr(WebApp_Option, "text")
+    descriptor = None
+    for klass in WebApp_Option.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_webapp::simplequestion_is_not_abstract():
-    assert not inspect.isabstract(WebApp::SimpleQuestion)
+
+def test_webapp_simplequestion_is_not_abstract():
+    assert not inspect.isabstract(WebApp_SimpleQuestion)
 
 
-def test_webapp::simplequestion_constructor_exists():
-    assert callable(WebApp::SimpleQuestion.__init__)
+def test_webapp_simplequestion_constructor_exists():
+    assert callable(WebApp_SimpleQuestion.__init__)
 
 
-def test_webapp::simplequestion_constructor_args():
-    sig = inspect.signature(WebApp::SimpleQuestion.__init__)
+def test_webapp_simplequestion_constructor_args():
+    sig = inspect.signature(WebApp_SimpleQuestion.__init__)
     params = list(sig.parameters.keys())
     assert "visualRep" in params, "Missing parameter 'visualRep'"
     assert "QuestionText" in params, "Missing parameter 'QuestionText'"
 
-def test_webapp::simplequestion_has_visualRep():
-    assert hasattr(WebApp::SimpleQuestion, "visualRep")
+def test_webapp_simplequestion_has_visualRep():
+    assert hasattr(WebApp_SimpleQuestion, "visualRep")
     descriptor = None
-    for klass in WebApp::SimpleQuestion.__mro__:
+    for klass in WebApp_SimpleQuestion.__mro__:
         if "visualRep" in klass.__dict__:
             descriptor = klass.__dict__["visualRep"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::simplequestion_has_QuestionText():
-    assert hasattr(WebApp::SimpleQuestion, "QuestionText")
+def test_webapp_simplequestion_has_QuestionText():
+    assert hasattr(WebApp_SimpleQuestion, "QuestionText")
     descriptor = None
-    for klass in WebApp::SimpleQuestion.__mro__:
+    for klass in WebApp_SimpleQuestion.__mro__:
         if "QuestionText" in klass.__dict__:
             descriptor = klass.__dict__["QuestionText"]
             break
@@ -348,23 +348,23 @@ def test_webapp::simplequestion_has_QuestionText():
 
 
 
-def test_webapp::externallink_is_not_abstract():
-    assert not inspect.isabstract(WebApp::ExternalLink)
+def test_webapp_externallink_is_not_abstract():
+    assert not inspect.isabstract(WebApp_ExternalLink)
 
 
-def test_webapp::externallink_constructor_exists():
-    assert callable(WebApp::ExternalLink.__init__)
+def test_webapp_externallink_constructor_exists():
+    assert callable(WebApp_ExternalLink.__init__)
 
 
-def test_webapp::externallink_constructor_args():
-    sig = inspect.signature(WebApp::ExternalLink.__init__)
+def test_webapp_externallink_constructor_args():
+    sig = inspect.signature(WebApp_ExternalLink.__init__)
     params = list(sig.parameters.keys())
     assert "url" in params, "Missing parameter 'url'"
 
-def test_webapp::externallink_has_url():
-    assert hasattr(WebApp::ExternalLink, "url")
+def test_webapp_externallink_has_url():
+    assert hasattr(WebApp_ExternalLink, "url")
     descriptor = None
-    for klass in WebApp::ExternalLink.__mro__:
+    for klass in WebApp_ExternalLink.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
@@ -372,16 +372,16 @@ def test_webapp::externallink_has_url():
 
 
 
-def test_webapp::externalsource_is_not_abstract():
-    assert not inspect.isabstract(WebApp::ExternalSource)
+def test_webapp_externalsource_is_not_abstract():
+    assert not inspect.isabstract(WebApp_ExternalSource)
 
 
-def test_webapp::externalsource_constructor_exists():
-    assert callable(WebApp::ExternalSource.__init__)
+def test_webapp_externalsource_constructor_exists():
+    assert callable(WebApp_ExternalSource.__init__)
 
 
-def test_webapp::externalsource_constructor_args():
-    sig = inspect.signature(WebApp::ExternalSource.__init__)
+def test_webapp_externalsource_constructor_args():
+    sig = inspect.signature(WebApp_ExternalSource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -400,86 +400,86 @@ def test_entitywebpage_constructor_args():
 
 
 
-def test_webapp::details_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Details)
+def test_webapp_delete_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Delete)
 
 
-def test_webapp::details_constructor_exists():
-    assert callable(WebApp::Details.__init__)
+def test_webapp_delete_constructor_exists():
+    assert callable(WebApp_Delete.__init__)
 
 
-def test_webapp::details_constructor_args():
-    sig = inspect.signature(WebApp::Details.__init__)
+def test_webapp_delete_constructor_args():
+    sig = inspect.signature(WebApp_Delete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::create_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Create)
+def test_webapp_crud_is_not_abstract():
+    assert not inspect.isabstract(WebApp_CRUD)
 
 
-def test_webapp::create_constructor_exists():
-    assert callable(WebApp::Create.__init__)
+def test_webapp_crud_constructor_exists():
+    assert callable(WebApp_CRUD.__init__)
 
 
-def test_webapp::create_constructor_args():
-    sig = inspect.signature(WebApp::Create.__init__)
+def test_webapp_crud_constructor_args():
+    sig = inspect.signature(WebApp_CRUD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::crud_is_not_abstract():
-    assert not inspect.isabstract(WebApp::CRUD)
+def test_webapp_details_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Details)
 
 
-def test_webapp::crud_constructor_exists():
-    assert callable(WebApp::CRUD.__init__)
+def test_webapp_details_constructor_exists():
+    assert callable(WebApp_Details.__init__)
 
 
-def test_webapp::crud_constructor_args():
-    sig = inspect.signature(WebApp::CRUD.__init__)
+def test_webapp_details_constructor_args():
+    sig = inspect.signature(WebApp_Details.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::delete_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Delete)
+def test_webapp_create_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Create)
 
 
-def test_webapp::delete_constructor_exists():
-    assert callable(WebApp::Delete.__init__)
+def test_webapp_create_constructor_exists():
+    assert callable(WebApp_Create.__init__)
 
 
-def test_webapp::delete_constructor_args():
-    sig = inspect.signature(WebApp::Delete.__init__)
+def test_webapp_create_constructor_args():
+    sig = inspect.signature(WebApp_Create.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::index_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Index)
+def test_webapp_index_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Index)
 
 
-def test_webapp::index_constructor_exists():
-    assert callable(WebApp::Index.__init__)
+def test_webapp_index_constructor_exists():
+    assert callable(WebApp_Index.__init__)
 
 
-def test_webapp::index_constructor_args():
-    sig = inspect.signature(WebApp::Index.__init__)
+def test_webapp_index_constructor_args():
+    sig = inspect.signature(WebApp_Index.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::question_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Question)
+def test_webapp_question_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Question)
 
 
-def test_webapp::question_constructor_exists():
-    assert callable(WebApp::Question.__init__)
+def test_webapp_question_constructor_exists():
+    assert callable(WebApp_Question.__init__)
 
 
-def test_webapp::question_constructor_args():
-    sig = inspect.signature(WebApp::Question.__init__)
+def test_webapp_question_constructor_args():
+    sig = inspect.signature(WebApp_Question.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -498,44 +498,44 @@ def test_webpage_constructor_args():
 
 
 
-def test_webapp::home_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Home)
+def test_webapp_home_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Home)
 
 
-def test_webapp::home_constructor_exists():
-    assert callable(WebApp::Home.__init__)
+def test_webapp_home_constructor_exists():
+    assert callable(WebApp_Home.__init__)
 
 
-def test_webapp::home_constructor_args():
-    sig = inspect.signature(WebApp::Home.__init__)
+def test_webapp_home_constructor_args():
+    sig = inspect.signature(WebApp_Home.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::entitywebpage_is_not_abstract():
-    assert not inspect.isabstract(WebApp::EntityWebPage)
+def test_webapp_entitywebpage_is_not_abstract():
+    assert not inspect.isabstract(WebApp_EntityWebPage)
 
 
-def test_webapp::entitywebpage_constructor_exists():
-    assert callable(WebApp::EntityWebPage.__init__)
+def test_webapp_entitywebpage_constructor_exists():
+    assert callable(WebApp_EntityWebPage.__init__)
 
 
-def test_webapp::entitywebpage_constructor_args():
-    sig = inspect.signature(WebApp::EntityWebPage.__init__)
+def test_webapp_entitywebpage_constructor_args():
+    sig = inspect.signature(WebApp_EntityWebPage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::pages::q_is_not_abstract():
-    assert not inspect.isabstract(WebApp::PageS::Q)
+def test_webapp_pages_q_is_not_abstract():
+    assert not inspect.isabstract(WebApp_PageS_Q)
 
 
-def test_webapp::pages::q_constructor_exists():
-    assert callable(WebApp::PageS::Q.__init__)
+def test_webapp_pages_q_constructor_exists():
+    assert callable(WebApp_PageS_Q.__init__)
 
 
-def test_webapp::pages::q_constructor_args():
-    sig = inspect.signature(WebApp::PageS::Q.__init__)
+def test_webapp_pages_q_constructor_args():
+    sig = inspect.signature(WebApp_PageS_Q.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -554,79 +554,79 @@ def test_simplequestion_constructor_args():
 
 
 
-def test_webapp::multiple_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Multiple)
+def test_webapp_truefalse_is_not_abstract():
+    assert not inspect.isabstract(WebApp_TrueFalse)
 
 
-def test_webapp::multiple_constructor_exists():
-    assert callable(WebApp::Multiple.__init__)
+def test_webapp_truefalse_constructor_exists():
+    assert callable(WebApp_TrueFalse.__init__)
 
 
-def test_webapp::multiple_constructor_args():
-    sig = inspect.signature(WebApp::Multiple.__init__)
+def test_webapp_truefalse_constructor_args():
+    sig = inspect.signature(WebApp_TrueFalse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::truefalse_is_not_abstract():
-    assert not inspect.isabstract(WebApp::TrueFalse)
+def test_webapp_multiple_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Multiple)
 
 
-def test_webapp::truefalse_constructor_exists():
-    assert callable(WebApp::TrueFalse.__init__)
+def test_webapp_multiple_constructor_exists():
+    assert callable(WebApp_Multiple.__init__)
 
 
-def test_webapp::truefalse_constructor_args():
-    sig = inspect.signature(WebApp::TrueFalse.__init__)
+def test_webapp_multiple_constructor_args():
+    sig = inspect.signature(WebApp_Multiple.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::opened_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Opened)
+def test_webapp_opened_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Opened)
 
 
-def test_webapp::opened_constructor_exists():
-    assert callable(WebApp::Opened.__init__)
+def test_webapp_opened_constructor_exists():
+    assert callable(WebApp_Opened.__init__)
 
 
-def test_webapp::opened_constructor_args():
-    sig = inspect.signature(WebApp::Opened.__init__)
+def test_webapp_opened_constructor_args():
+    sig = inspect.signature(WebApp_Opened.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pages::q_is_not_abstract():
-    assert not inspect.isabstract(PageS::Q)
+def test_pages_q_is_not_abstract():
+    assert not inspect.isabstract(PageS_Q)
 
 
-def test_pages::q_constructor_exists():
-    assert callable(PageS::Q.__init__)
+def test_pages_q_constructor_exists():
+    assert callable(PageS_Q.__init__)
 
 
-def test_pages::q_constructor_args():
-    sig = inspect.signature(PageS::Q.__init__)
+def test_pages_q_constructor_args():
+    sig = inspect.signature(PageS_Q.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::questionnary_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Questionnary)
+def test_webapp_questionnary_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Questionnary)
 
 
-def test_webapp::questionnary_constructor_exists():
-    assert callable(WebApp::Questionnary.__init__)
+def test_webapp_questionnary_constructor_exists():
+    assert callable(WebApp_Questionnary.__init__)
 
 
-def test_webapp::questionnary_constructor_args():
-    sig = inspect.signature(WebApp::Questionnary.__init__)
+def test_webapp_questionnary_constructor_args():
+    sig = inspect.signature(WebApp_Questionnary.__init__)
     params = list(sig.parameters.keys())
     assert "feedback" in params, "Missing parameter 'feedback'"
 
-def test_webapp::questionnary_has_feedback():
-    assert hasattr(WebApp::Questionnary, "feedback")
+def test_webapp_questionnary_has_feedback():
+    assert hasattr(WebApp_Questionnary, "feedback")
     descriptor = None
-    for klass in WebApp::Questionnary.__mro__:
+    for klass in WebApp_Questionnary.__mro__:
         if "feedback" in klass.__dict__:
             descriptor = klass.__dict__["feedback"]
             break
@@ -634,65 +634,65 @@ def test_webapp::questionnary_has_feedback():
 
 
 
-def test_webapp::survey_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Survey)
+def test_webapp_survey_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Survey)
 
 
-def test_webapp::survey_constructor_exists():
-    assert callable(WebApp::Survey.__init__)
+def test_webapp_survey_constructor_exists():
+    assert callable(WebApp_Survey.__init__)
 
 
-def test_webapp::survey_constructor_args():
-    sig = inspect.signature(WebApp::Survey.__init__)
+def test_webapp_survey_constructor_args():
+    sig = inspect.signature(WebApp_Survey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::questionbank_is_not_abstract():
-    assert not inspect.isabstract(WebApp::QuestionBank)
+def test_webapp_questionbank_is_not_abstract():
+    assert not inspect.isabstract(WebApp_QuestionBank)
 
 
-def test_webapp::questionbank_constructor_exists():
-    assert callable(WebApp::QuestionBank.__init__)
+def test_webapp_questionbank_constructor_exists():
+    assert callable(WebApp_QuestionBank.__init__)
 
 
-def test_webapp::questionbank_constructor_args():
-    sig = inspect.signature(WebApp::QuestionBank.__init__)
+def test_webapp_questionbank_constructor_args():
+    sig = inspect.signature(WebApp_QuestionBank.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::database_is_not_abstract():
-    assert not inspect.isabstract(WebApp::DataBase)
+def test_webapp_database_is_not_abstract():
+    assert not inspect.isabstract(WebApp_DataBase)
 
 
-def test_webapp::database_constructor_exists():
-    assert callable(WebApp::DataBase.__init__)
+def test_webapp_database_constructor_exists():
+    assert callable(WebApp_DataBase.__init__)
 
 
-def test_webapp::database_constructor_args():
-    sig = inspect.signature(WebApp::DataBase.__init__)
+def test_webapp_database_constructor_args():
+    sig = inspect.signature(WebApp_DataBase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webapp::webpage_is_not_abstract():
-    assert not inspect.isabstract(WebApp::WebPage)
+def test_webapp_webpage_is_not_abstract():
+    assert not inspect.isabstract(WebApp_WebPage)
 
 
-def test_webapp::webpage_constructor_exists():
-    assert callable(WebApp::WebPage.__init__)
+def test_webapp_webpage_constructor_exists():
+    assert callable(WebApp_WebPage.__init__)
 
 
-def test_webapp::webpage_constructor_args():
-    sig = inspect.signature(WebApp::WebPage.__init__)
+def test_webapp_webpage_constructor_args():
+    sig = inspect.signature(WebApp_WebPage.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::webpage_has_name():
-    assert hasattr(WebApp::WebPage, "name")
+def test_webapp_webpage_has_name():
+    assert hasattr(WebApp_WebPage, "name")
     descriptor = None
-    for klass in WebApp::WebPage.__mro__:
+    for klass in WebApp_WebPage.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -700,23 +700,23 @@ def test_webapp::webpage_has_name():
 
 
 
-def test_webapp::entity_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Entity)
+def test_webapp_entity_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Entity)
 
 
-def test_webapp::entity_constructor_exists():
-    assert callable(WebApp::Entity.__init__)
+def test_webapp_entity_constructor_exists():
+    assert callable(WebApp_Entity.__init__)
 
 
-def test_webapp::entity_constructor_args():
-    sig = inspect.signature(WebApp::Entity.__init__)
+def test_webapp_entity_constructor_args():
+    sig = inspect.signature(WebApp_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webapp::entity_has_name():
-    assert hasattr(WebApp::Entity, "name")
+def test_webapp_entity_has_name():
+    assert hasattr(WebApp_Entity, "name")
     descriptor = None
-    for klass in WebApp::Entity.__mro__:
+    for klass in WebApp_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -724,33 +724,33 @@ def test_webapp::entity_has_name():
 
 
 
-def test_webapp::attribute_is_not_abstract():
-    assert not inspect.isabstract(WebApp::Attribute)
+def test_webapp_attribute_is_not_abstract():
+    assert not inspect.isabstract(WebApp_Attribute)
 
 
-def test_webapp::attribute_constructor_exists():
-    assert callable(WebApp::Attribute.__init__)
+def test_webapp_attribute_constructor_exists():
+    assert callable(WebApp_Attribute.__init__)
 
 
-def test_webapp::attribute_constructor_args():
-    sig = inspect.signature(WebApp::Attribute.__init__)
+def test_webapp_attribute_constructor_args():
+    sig = inspect.signature(WebApp_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_webapp::attribute_has_name():
-    assert hasattr(WebApp::Attribute, "name")
+def test_webapp_attribute_has_name():
+    assert hasattr(WebApp_Attribute, "name")
     descriptor = None
-    for klass in WebApp::Attribute.__mro__:
+    for klass in WebApp_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::attribute_has_type():
-    assert hasattr(WebApp::Attribute, "type")
+def test_webapp_attribute_has_type():
+    assert hasattr(WebApp_Attribute, "type")
     descriptor = None
-    for klass in WebApp::Attribute.__mro__:
+    for klass in WebApp_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -758,65 +758,47 @@ def test_webapp::attribute_has_type():
 
 
 
-def test_webapp::webapp_is_not_abstract():
-    assert not inspect.isabstract(WebApp::WebApp)
+def test_webapp_webapp_is_not_abstract():
+    assert not inspect.isabstract(WebApp_WebApp)
 
 
-def test_webapp::webapp_constructor_exists():
-    assert callable(WebApp::WebApp.__init__)
+def test_webapp_webapp_constructor_exists():
+    assert callable(WebApp_WebApp.__init__)
 
 
-def test_webapp::webapp_constructor_args():
-    sig = inspect.signature(WebApp::WebApp.__init__)
+def test_webapp_webapp_constructor_args():
+    sig = inspect.signature(WebApp_WebApp.__init__)
     params = list(sig.parameters.keys())
-    assert "Password" in params, "Missing parameter 'Password'"
     assert "name" in params, "Missing parameter 'name'"
     assert "User" in params, "Missing parameter 'User'"
+    assert "Password" in params, "Missing parameter 'Password'"
 
-def test_webapp::webapp_has_Password():
-    assert hasattr(WebApp::WebApp, "Password")
+def test_webapp_webapp_has_name():
+    assert hasattr(WebApp_WebApp, "name")
     descriptor = None
-    for klass in WebApp::WebApp.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webapp::webapp_has_name():
-    assert hasattr(WebApp::WebApp, "name")
-    descriptor = None
-    for klass in WebApp::WebApp.__mro__:
+    for klass in WebApp_WebApp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webapp::webapp_has_User():
-    assert hasattr(WebApp::WebApp, "User")
+def test_webapp_webapp_has_User():
+    assert hasattr(WebApp_WebApp, "User")
     descriptor = None
-    for klass in WebApp::WebApp.__mro__:
+    for klass in WebApp_WebApp.__mro__:
         if "User" in klass.__dict__:
             descriptor = klass.__dict__["User"]
             break
     assert isinstance(descriptor, property)
 
-def test_mysqltype_exists():
-    # Check that the Enumeration exists
-    assert MySqlType is not None
-
-def test_mysqltype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MySqlType]
-    expected_literals = [
-        "BOOLEAN",
-        "INT",
-        "VARCHAR",
-        "REAL",
-        "DATE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MySqlType"
+def test_webapp_webapp_has_Password():
+    assert hasattr(WebApp_WebApp, "Password")
+    descriptor = None
+    for klass in WebApp_WebApp.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_correctanwser_exists():
     # Check that the Enumeration exists
@@ -826,8 +808,8 @@ def test_correctanwser_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CorrectAnwser]
     expected_literals = [
-        "False_",
         "True_",
+        "False_",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -841,14 +823,32 @@ def test_visualrepresentation_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VisualRepresentation]
     expected_literals = [
-        "TEXTUAL",
         "LINEAL_CHART",
         "PIE_CHART",
+        "TEXTUAL",
         "BAR_CHART",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VisualRepresentation"
+
+def test_mysqltype_exists():
+    # Check that the Enumeration exists
+    assert MySqlType is not None
+
+def test_mysqltype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MySqlType]
+    expected_literals = [
+        "DATE",
+        "INT",
+        "VARCHAR",
+        "BOOLEAN",
+        "REAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MySqlType"
 
 
 # =============================================================================
@@ -865,158 +865,158 @@ safe_text = st.text(
 Multiple_strategy = st.builds(
     Multiple,
 )
-WebApp::MultipleForQuestionnary_strategy = st.builds(
-    WebApp::MultipleForQuestionnary,
+WebApp_MultipleForQuestionnary_strategy = st.builds(
+    WebApp_MultipleForQuestionnary,
 )
-WebApp::MultipleForSurvey_strategy = st.builds(
-    WebApp::MultipleForSurvey,
+WebApp_MultipleForSurvey_strategy = st.builds(
+    WebApp_MultipleForSurvey,
 )
 TrueFalse_strategy = st.builds(
     TrueFalse,
 )
-WebApp::TrueFalseForQuestionnary_strategy = st.builds(
-    WebApp::TrueFalseForQuestionnary,
+WebApp_TrueFalseForQuestionnary_strategy = st.builds(
+    WebApp_TrueFalseForQuestionnary,
     correct=
         safe_text
 )
-WebApp::TrueFalseForSurvey_strategy = st.builds(
-    WebApp::TrueFalseForSurvey,
+WebApp_TrueFalseForSurvey_strategy = st.builds(
+    WebApp_TrueFalseForSurvey,
 )
 ExternalSource_strategy = st.builds(
     ExternalSource,
 )
-WebApp::RSSFeed_strategy = st.builds(
-    WebApp::RSSFeed,
-    items_to_display=
-        st.integers(),
+WebApp_RSSFeed_strategy = st.builds(
+    WebApp_RSSFeed,
+    url=
+        safe_text,
     feedname=
         safe_text,
     show_date=
         safe_text,
-    url=
-        safe_text
+    items_to_display=
+        st.integers()
 )
-WebApp::Twitter_strategy = st.builds(
-    WebApp::Twitter,
+WebApp_Twitter_strategy = st.builds(
+    WebApp_Twitter,
     username=
         safe_text
 )
 Question_strategy = st.builds(
     Question,
 )
-WebApp::GroupOfQuestions_strategy = st.builds(
-    WebApp::GroupOfQuestions,
+WebApp_GroupOfQuestions_strategy = st.builds(
+    WebApp_GroupOfQuestions,
     name=
         safe_text
 )
-WebApp::Option_strategy = st.builds(
-    WebApp::Option,
-    text=
-        safe_text,
+WebApp_Option_strategy = st.builds(
+    WebApp_Option,
     fraction=
-        st.integers()
+        st.integers(),
+    text=
+        safe_text
 )
-WebApp::SimpleQuestion_strategy = st.builds(
-    WebApp::SimpleQuestion,
+WebApp_SimpleQuestion_strategy = st.builds(
+    WebApp_SimpleQuestion,
     visualRep=
         safe_text,
     QuestionText=
         safe_text
 )
-WebApp::ExternalLink_strategy = st.builds(
-    WebApp::ExternalLink,
+WebApp_ExternalLink_strategy = st.builds(
+    WebApp_ExternalLink,
     url=
         safe_text
 )
-WebApp::ExternalSource_strategy = st.builds(
-    WebApp::ExternalSource,
+WebApp_ExternalSource_strategy = st.builds(
+    WebApp_ExternalSource,
 )
 EntityWebPage_strategy = st.builds(
     EntityWebPage,
 )
-WebApp::Details_strategy = st.builds(
-    WebApp::Details,
+WebApp_Delete_strategy = st.builds(
+    WebApp_Delete,
 )
-WebApp::Create_strategy = st.builds(
-    WebApp::Create,
+WebApp_CRUD_strategy = st.builds(
+    WebApp_CRUD,
 )
-WebApp::CRUD_strategy = st.builds(
-    WebApp::CRUD,
+WebApp_Details_strategy = st.builds(
+    WebApp_Details,
 )
-WebApp::Delete_strategy = st.builds(
-    WebApp::Delete,
+WebApp_Create_strategy = st.builds(
+    WebApp_Create,
 )
-WebApp::Index_strategy = st.builds(
-    WebApp::Index,
+WebApp_Index_strategy = st.builds(
+    WebApp_Index,
 )
-WebApp::Question_strategy = st.builds(
-    WebApp::Question,
+WebApp_Question_strategy = st.builds(
+    WebApp_Question,
 )
 WebPage_strategy = st.builds(
     WebPage,
 )
-WebApp::Home_strategy = st.builds(
-    WebApp::Home,
+WebApp_Home_strategy = st.builds(
+    WebApp_Home,
 )
-WebApp::EntityWebPage_strategy = st.builds(
-    WebApp::EntityWebPage,
+WebApp_EntityWebPage_strategy = st.builds(
+    WebApp_EntityWebPage,
 )
-WebApp::PageS::Q_strategy = st.builds(
-    WebApp::PageS::Q,
+WebApp_PageS_Q_strategy = st.builds(
+    WebApp_PageS_Q,
 )
 SimpleQuestion_strategy = st.builds(
     SimpleQuestion,
 )
-WebApp::Multiple_strategy = st.builds(
-    WebApp::Multiple,
+WebApp_TrueFalse_strategy = st.builds(
+    WebApp_TrueFalse,
 )
-WebApp::TrueFalse_strategy = st.builds(
-    WebApp::TrueFalse,
+WebApp_Multiple_strategy = st.builds(
+    WebApp_Multiple,
 )
-WebApp::Opened_strategy = st.builds(
-    WebApp::Opened,
+WebApp_Opened_strategy = st.builds(
+    WebApp_Opened,
 )
-PageS::Q_strategy = st.builds(
-    PageS::Q,
+PageS_Q_strategy = st.builds(
+    PageS_Q,
 )
-WebApp::Questionnary_strategy = st.builds(
-    WebApp::Questionnary,
+WebApp_Questionnary_strategy = st.builds(
+    WebApp_Questionnary,
     feedback=
         st.booleans()
 )
-WebApp::Survey_strategy = st.builds(
-    WebApp::Survey,
+WebApp_Survey_strategy = st.builds(
+    WebApp_Survey,
 )
-WebApp::QuestionBank_strategy = st.builds(
-    WebApp::QuestionBank,
+WebApp_QuestionBank_strategy = st.builds(
+    WebApp_QuestionBank,
 )
-WebApp::DataBase_strategy = st.builds(
-    WebApp::DataBase,
+WebApp_DataBase_strategy = st.builds(
+    WebApp_DataBase,
 )
-WebApp::WebPage_strategy = st.builds(
-    WebApp::WebPage,
+WebApp_WebPage_strategy = st.builds(
+    WebApp_WebPage,
     name=
         safe_text
 )
-WebApp::Entity_strategy = st.builds(
-    WebApp::Entity,
+WebApp_Entity_strategy = st.builds(
+    WebApp_Entity,
     name=
         safe_text
 )
-WebApp::Attribute_strategy = st.builds(
-    WebApp::Attribute,
+WebApp_Attribute_strategy = st.builds(
+    WebApp_Attribute,
     name=
         safe_text,
     type=
         safe_text
 )
-WebApp::WebApp_strategy = st.builds(
-    WebApp::WebApp,
-    Password=
-        safe_text,
+WebApp_WebApp_strategy = st.builds(
+    WebApp_WebApp,
     name=
         safe_text,
     User=
+        safe_text,
+    Password=
         safe_text
 )
 
@@ -1025,108 +1025,90 @@ WebApp::WebApp_strategy = st.builds(
 def test_multiple_instantiation(instance):
     assert isinstance(instance, Multiple)
 
-@given(instance=WebApp::MultipleForQuestionnary_strategy)
+@given(instance=WebApp_MultipleForQuestionnary_strategy)
 @settings(max_examples=50)
-def test_webapp::multipleforquestionnary_instantiation(instance):
-    assert isinstance(instance, WebApp::MultipleForQuestionnary)
+def test_webapp_multipleforquestionnary_instantiation(instance):
+    assert isinstance(instance, WebApp_MultipleForQuestionnary)
 
-@given(instance=WebApp::MultipleForSurvey_strategy)
+@given(instance=WebApp_MultipleForSurvey_strategy)
 @settings(max_examples=50)
-def test_webapp::multipleforsurvey_instantiation(instance):
-    assert isinstance(instance, WebApp::MultipleForSurvey)
+def test_webapp_multipleforsurvey_instantiation(instance):
+    assert isinstance(instance, WebApp_MultipleForSurvey)
 
 @given(instance=TrueFalse_strategy)
 @settings(max_examples=50)
 def test_truefalse_instantiation(instance):
     assert isinstance(instance, TrueFalse)
 
-@given(instance=WebApp::TrueFalseForQuestionnary_strategy)
+@given(instance=WebApp_TrueFalseForQuestionnary_strategy)
 @settings(max_examples=50)
-def test_webapp::truefalseforquestionnary_instantiation(instance):
-    assert isinstance(instance, WebApp::TrueFalseForQuestionnary)
-
-@given(instance=WebApp::TrueFalseForQuestionnary_strategy)
-def test_webapp::truefalseforquestionnary_correct_type(instance):
-    assert isinstance(instance.correct, str)
+def test_webapp_truefalseforquestionnary_instantiation(instance):
+    assert isinstance(instance, WebApp_TrueFalseForQuestionnary)
 
 
-@given(instance=WebApp::TrueFalseForQuestionnary_strategy)
-def test_webapp::truefalseforquestionnary_correct_setter(instance):
+
+@given(instance=WebApp_TrueFalseForQuestionnary_strategy)
+def test_webapp_truefalseforquestionnary_correct_setter(instance):
     original = instance.correct
     instance.correct = original
     assert instance.correct == original
 
-@given(instance=WebApp::TrueFalseForSurvey_strategy)
+@given(instance=WebApp_TrueFalseForSurvey_strategy)
 @settings(max_examples=50)
-def test_webapp::truefalseforsurvey_instantiation(instance):
-    assert isinstance(instance, WebApp::TrueFalseForSurvey)
+def test_webapp_truefalseforsurvey_instantiation(instance):
+    assert isinstance(instance, WebApp_TrueFalseForSurvey)
 
 @given(instance=ExternalSource_strategy)
 @settings(max_examples=50)
 def test_externalsource_instantiation(instance):
     assert isinstance(instance, ExternalSource)
 
-@given(instance=WebApp::RSSFeed_strategy)
+@given(instance=WebApp_RSSFeed_strategy)
 @settings(max_examples=50)
-def test_webapp::rssfeed_instantiation(instance):
-    assert isinstance(instance, WebApp::RSSFeed)
-
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_items_to_display_type(instance):
-    assert isinstance(instance.items_to_display, int)
+def test_webapp_rssfeed_instantiation(instance):
+    assert isinstance(instance, WebApp_RSSFeed)
 
 
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_items_to_display_setter(instance):
-    original = instance.items_to_display
-    instance.items_to_display = original
-    assert instance.items_to_display == original
 
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_feedname_type(instance):
-    assert isinstance(instance.feedname, str)
-
-
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_feedname_setter(instance):
-    original = instance.feedname
-    instance.feedname = original
-    assert instance.feedname == original
-
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_show_date_type(instance):
-    assert isinstance(instance.show_date, str)
-
-
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_show_date_setter(instance):
-    original = instance.show_date
-    instance.show_date = original
-    assert instance.show_date == original
-
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_url_type(instance):
-    assert isinstance(instance.url, str)
-
-
-@given(instance=WebApp::RSSFeed_strategy)
-def test_webapp::rssfeed_url_setter(instance):
+@given(instance=WebApp_RSSFeed_strategy)
+def test_webapp_rssfeed_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=WebApp::Twitter_strategy)
+
+
+@given(instance=WebApp_RSSFeed_strategy)
+def test_webapp_rssfeed_feedname_setter(instance):
+    original = instance.feedname
+    instance.feedname = original
+    assert instance.feedname == original
+
+
+
+@given(instance=WebApp_RSSFeed_strategy)
+def test_webapp_rssfeed_show_date_setter(instance):
+    original = instance.show_date
+    instance.show_date = original
+    assert instance.show_date == original
+
+
+
+@given(instance=WebApp_RSSFeed_strategy)
+def test_webapp_rssfeed_items_to_display_setter(instance):
+    original = instance.items_to_display
+    instance.items_to_display = original
+    assert instance.items_to_display == original
+
+@given(instance=WebApp_Twitter_strategy)
 @settings(max_examples=50)
-def test_webapp::twitter_instantiation(instance):
-    assert isinstance(instance, WebApp::Twitter)
-
-@given(instance=WebApp::Twitter_strategy)
-def test_webapp::twitter_username_type(instance):
-    assert isinstance(instance.username, str)
+def test_webapp_twitter_instantiation(instance):
+    assert isinstance(instance, WebApp_Twitter)
 
 
-@given(instance=WebApp::Twitter_strategy)
-def test_webapp::twitter_username_setter(instance):
+
+@given(instance=WebApp_Twitter_strategy)
+def test_webapp_twitter_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
@@ -1136,301 +1118,259 @@ def test_webapp::twitter_username_setter(instance):
 def test_question_instantiation(instance):
     assert isinstance(instance, Question)
 
-@given(instance=WebApp::GroupOfQuestions_strategy)
+@given(instance=WebApp_GroupOfQuestions_strategy)
 @settings(max_examples=50)
-def test_webapp::groupofquestions_instantiation(instance):
-    assert isinstance(instance, WebApp::GroupOfQuestions)
-
-@given(instance=WebApp::GroupOfQuestions_strategy)
-def test_webapp::groupofquestions_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_groupofquestions_instantiation(instance):
+    assert isinstance(instance, WebApp_GroupOfQuestions)
 
 
-@given(instance=WebApp::GroupOfQuestions_strategy)
-def test_webapp::groupofquestions_name_setter(instance):
+
+@given(instance=WebApp_GroupOfQuestions_strategy)
+def test_webapp_groupofquestions_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WebApp::Option_strategy)
+@given(instance=WebApp_Option_strategy)
 @settings(max_examples=50)
-def test_webapp::option_instantiation(instance):
-    assert isinstance(instance, WebApp::Option)
-
-@given(instance=WebApp::Option_strategy)
-def test_webapp::option_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_webapp_option_instantiation(instance):
+    assert isinstance(instance, WebApp_Option)
 
 
-@given(instance=WebApp::Option_strategy)
-def test_webapp::option_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=WebApp::Option_strategy)
-def test_webapp::option_fraction_type(instance):
-    assert isinstance(instance.fraction, int)
-
-
-@given(instance=WebApp::Option_strategy)
-def test_webapp::option_fraction_setter(instance):
+@given(instance=WebApp_Option_strategy)
+def test_webapp_option_fraction_setter(instance):
     original = instance.fraction
     instance.fraction = original
     assert instance.fraction == original
 
-@given(instance=WebApp::SimpleQuestion_strategy)
+
+
+@given(instance=WebApp_Option_strategy)
+def test_webapp_option_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=WebApp_SimpleQuestion_strategy)
 @settings(max_examples=50)
-def test_webapp::simplequestion_instantiation(instance):
-    assert isinstance(instance, WebApp::SimpleQuestion)
-
-@given(instance=WebApp::SimpleQuestion_strategy)
-def test_webapp::simplequestion_visualRep_type(instance):
-    assert isinstance(instance.visualRep, str)
+def test_webapp_simplequestion_instantiation(instance):
+    assert isinstance(instance, WebApp_SimpleQuestion)
 
 
-@given(instance=WebApp::SimpleQuestion_strategy)
-def test_webapp::simplequestion_visualRep_setter(instance):
+
+@given(instance=WebApp_SimpleQuestion_strategy)
+def test_webapp_simplequestion_visualRep_setter(instance):
     original = instance.visualRep
     instance.visualRep = original
     assert instance.visualRep == original
 
-@given(instance=WebApp::SimpleQuestion_strategy)
-def test_webapp::simplequestion_QuestionText_type(instance):
-    assert isinstance(instance.QuestionText, str)
 
 
-@given(instance=WebApp::SimpleQuestion_strategy)
-def test_webapp::simplequestion_QuestionText_setter(instance):
+@given(instance=WebApp_SimpleQuestion_strategy)
+def test_webapp_simplequestion_QuestionText_setter(instance):
     original = instance.QuestionText
     instance.QuestionText = original
     assert instance.QuestionText == original
 
-@given(instance=WebApp::ExternalLink_strategy)
+@given(instance=WebApp_ExternalLink_strategy)
 @settings(max_examples=50)
-def test_webapp::externallink_instantiation(instance):
-    assert isinstance(instance, WebApp::ExternalLink)
-
-@given(instance=WebApp::ExternalLink_strategy)
-def test_webapp::externallink_url_type(instance):
-    assert isinstance(instance.url, str)
+def test_webapp_externallink_instantiation(instance):
+    assert isinstance(instance, WebApp_ExternalLink)
 
 
-@given(instance=WebApp::ExternalLink_strategy)
-def test_webapp::externallink_url_setter(instance):
+
+@given(instance=WebApp_ExternalLink_strategy)
+def test_webapp_externallink_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=WebApp::ExternalSource_strategy)
+@given(instance=WebApp_ExternalSource_strategy)
 @settings(max_examples=50)
-def test_webapp::externalsource_instantiation(instance):
-    assert isinstance(instance, WebApp::ExternalSource)
+def test_webapp_externalsource_instantiation(instance):
+    assert isinstance(instance, WebApp_ExternalSource)
 
 @given(instance=EntityWebPage_strategy)
 @settings(max_examples=50)
 def test_entitywebpage_instantiation(instance):
     assert isinstance(instance, EntityWebPage)
 
-@given(instance=WebApp::Details_strategy)
+@given(instance=WebApp_Delete_strategy)
 @settings(max_examples=50)
-def test_webapp::details_instantiation(instance):
-    assert isinstance(instance, WebApp::Details)
+def test_webapp_delete_instantiation(instance):
+    assert isinstance(instance, WebApp_Delete)
 
-@given(instance=WebApp::Create_strategy)
+@given(instance=WebApp_CRUD_strategy)
 @settings(max_examples=50)
-def test_webapp::create_instantiation(instance):
-    assert isinstance(instance, WebApp::Create)
+def test_webapp_crud_instantiation(instance):
+    assert isinstance(instance, WebApp_CRUD)
 
-@given(instance=WebApp::CRUD_strategy)
+@given(instance=WebApp_Details_strategy)
 @settings(max_examples=50)
-def test_webapp::crud_instantiation(instance):
-    assert isinstance(instance, WebApp::CRUD)
+def test_webapp_details_instantiation(instance):
+    assert isinstance(instance, WebApp_Details)
 
-@given(instance=WebApp::Delete_strategy)
+@given(instance=WebApp_Create_strategy)
 @settings(max_examples=50)
-def test_webapp::delete_instantiation(instance):
-    assert isinstance(instance, WebApp::Delete)
+def test_webapp_create_instantiation(instance):
+    assert isinstance(instance, WebApp_Create)
 
-@given(instance=WebApp::Index_strategy)
+@given(instance=WebApp_Index_strategy)
 @settings(max_examples=50)
-def test_webapp::index_instantiation(instance):
-    assert isinstance(instance, WebApp::Index)
+def test_webapp_index_instantiation(instance):
+    assert isinstance(instance, WebApp_Index)
 
-@given(instance=WebApp::Question_strategy)
+@given(instance=WebApp_Question_strategy)
 @settings(max_examples=50)
-def test_webapp::question_instantiation(instance):
-    assert isinstance(instance, WebApp::Question)
+def test_webapp_question_instantiation(instance):
+    assert isinstance(instance, WebApp_Question)
 
 @given(instance=WebPage_strategy)
 @settings(max_examples=50)
 def test_webpage_instantiation(instance):
     assert isinstance(instance, WebPage)
 
-@given(instance=WebApp::Home_strategy)
+@given(instance=WebApp_Home_strategy)
 @settings(max_examples=50)
-def test_webapp::home_instantiation(instance):
-    assert isinstance(instance, WebApp::Home)
+def test_webapp_home_instantiation(instance):
+    assert isinstance(instance, WebApp_Home)
 
-@given(instance=WebApp::EntityWebPage_strategy)
+@given(instance=WebApp_EntityWebPage_strategy)
 @settings(max_examples=50)
-def test_webapp::entitywebpage_instantiation(instance):
-    assert isinstance(instance, WebApp::EntityWebPage)
+def test_webapp_entitywebpage_instantiation(instance):
+    assert isinstance(instance, WebApp_EntityWebPage)
 
-@given(instance=WebApp::PageS::Q_strategy)
+@given(instance=WebApp_PageS_Q_strategy)
 @settings(max_examples=50)
-def test_webapp::pages::q_instantiation(instance):
-    assert isinstance(instance, WebApp::PageS::Q)
+def test_webapp_pages_q_instantiation(instance):
+    assert isinstance(instance, WebApp_PageS_Q)
 
 @given(instance=SimpleQuestion_strategy)
 @settings(max_examples=50)
 def test_simplequestion_instantiation(instance):
     assert isinstance(instance, SimpleQuestion)
 
-@given(instance=WebApp::Multiple_strategy)
+@given(instance=WebApp_TrueFalse_strategy)
 @settings(max_examples=50)
-def test_webapp::multiple_instantiation(instance):
-    assert isinstance(instance, WebApp::Multiple)
+def test_webapp_truefalse_instantiation(instance):
+    assert isinstance(instance, WebApp_TrueFalse)
 
-@given(instance=WebApp::TrueFalse_strategy)
+@given(instance=WebApp_Multiple_strategy)
 @settings(max_examples=50)
-def test_webapp::truefalse_instantiation(instance):
-    assert isinstance(instance, WebApp::TrueFalse)
+def test_webapp_multiple_instantiation(instance):
+    assert isinstance(instance, WebApp_Multiple)
 
-@given(instance=WebApp::Opened_strategy)
+@given(instance=WebApp_Opened_strategy)
 @settings(max_examples=50)
-def test_webapp::opened_instantiation(instance):
-    assert isinstance(instance, WebApp::Opened)
+def test_webapp_opened_instantiation(instance):
+    assert isinstance(instance, WebApp_Opened)
 
-@given(instance=PageS::Q_strategy)
+@given(instance=PageS_Q_strategy)
 @settings(max_examples=50)
-def test_pages::q_instantiation(instance):
-    assert isinstance(instance, PageS::Q)
+def test_pages_q_instantiation(instance):
+    assert isinstance(instance, PageS_Q)
 
-@given(instance=WebApp::Questionnary_strategy)
+@given(instance=WebApp_Questionnary_strategy)
 @settings(max_examples=50)
-def test_webapp::questionnary_instantiation(instance):
-    assert isinstance(instance, WebApp::Questionnary)
-
-@given(instance=WebApp::Questionnary_strategy)
-def test_webapp::questionnary_feedback_type(instance):
-    assert isinstance(instance.feedback, bool)
+def test_webapp_questionnary_instantiation(instance):
+    assert isinstance(instance, WebApp_Questionnary)
 
 
-@given(instance=WebApp::Questionnary_strategy)
-def test_webapp::questionnary_feedback_setter(instance):
+
+@given(instance=WebApp_Questionnary_strategy)
+def test_webapp_questionnary_feedback_setter(instance):
     original = instance.feedback
     instance.feedback = original
     assert instance.feedback == original
 
-@given(instance=WebApp::Survey_strategy)
+@given(instance=WebApp_Survey_strategy)
 @settings(max_examples=50)
-def test_webapp::survey_instantiation(instance):
-    assert isinstance(instance, WebApp::Survey)
+def test_webapp_survey_instantiation(instance):
+    assert isinstance(instance, WebApp_Survey)
 
-@given(instance=WebApp::QuestionBank_strategy)
+@given(instance=WebApp_QuestionBank_strategy)
 @settings(max_examples=50)
-def test_webapp::questionbank_instantiation(instance):
-    assert isinstance(instance, WebApp::QuestionBank)
+def test_webapp_questionbank_instantiation(instance):
+    assert isinstance(instance, WebApp_QuestionBank)
 
-@given(instance=WebApp::DataBase_strategy)
+@given(instance=WebApp_DataBase_strategy)
 @settings(max_examples=50)
-def test_webapp::database_instantiation(instance):
-    assert isinstance(instance, WebApp::DataBase)
+def test_webapp_database_instantiation(instance):
+    assert isinstance(instance, WebApp_DataBase)
 
-@given(instance=WebApp::WebPage_strategy)
+@given(instance=WebApp_WebPage_strategy)
 @settings(max_examples=50)
-def test_webapp::webpage_instantiation(instance):
-    assert isinstance(instance, WebApp::WebPage)
-
-@given(instance=WebApp::WebPage_strategy)
-def test_webapp::webpage_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_webpage_instantiation(instance):
+    assert isinstance(instance, WebApp_WebPage)
 
 
-@given(instance=WebApp::WebPage_strategy)
-def test_webapp::webpage_name_setter(instance):
+
+@given(instance=WebApp_WebPage_strategy)
+def test_webapp_webpage_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WebApp::Entity_strategy)
+@given(instance=WebApp_Entity_strategy)
 @settings(max_examples=50)
-def test_webapp::entity_instantiation(instance):
-    assert isinstance(instance, WebApp::Entity)
-
-@given(instance=WebApp::Entity_strategy)
-def test_webapp::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_entity_instantiation(instance):
+    assert isinstance(instance, WebApp_Entity)
 
 
-@given(instance=WebApp::Entity_strategy)
-def test_webapp::entity_name_setter(instance):
+
+@given(instance=WebApp_Entity_strategy)
+def test_webapp_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WebApp::Attribute_strategy)
+@given(instance=WebApp_Attribute_strategy)
 @settings(max_examples=50)
-def test_webapp::attribute_instantiation(instance):
-    assert isinstance(instance, WebApp::Attribute)
-
-@given(instance=WebApp::Attribute_strategy)
-def test_webapp::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webapp_attribute_instantiation(instance):
+    assert isinstance(instance, WebApp_Attribute)
 
 
-@given(instance=WebApp::Attribute_strategy)
-def test_webapp::attribute_name_setter(instance):
+
+@given(instance=WebApp_Attribute_strategy)
+def test_webapp_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WebApp::Attribute_strategy)
-def test_webapp::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=WebApp::Attribute_strategy)
-def test_webapp::attribute_type_setter(instance):
+@given(instance=WebApp_Attribute_strategy)
+def test_webapp_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=WebApp::WebApp_strategy)
+@given(instance=WebApp_WebApp_strategy)
 @settings(max_examples=50)
-def test_webapp::webapp_instantiation(instance):
-    assert isinstance(instance, WebApp::WebApp)
-
-@given(instance=WebApp::WebApp_strategy)
-def test_webapp::webapp_Password_type(instance):
-    assert isinstance(instance.Password, str)
+def test_webapp_webapp_instantiation(instance):
+    assert isinstance(instance, WebApp_WebApp)
 
 
-@given(instance=WebApp::WebApp_strategy)
-def test_webapp::webapp_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
 
-@given(instance=WebApp::WebApp_strategy)
-def test_webapp::webapp_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=WebApp::WebApp_strategy)
-def test_webapp::webapp_name_setter(instance):
+@given(instance=WebApp_WebApp_strategy)
+def test_webapp_webapp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WebApp::WebApp_strategy)
-def test_webapp::webapp_User_type(instance):
-    assert isinstance(instance.User, str)
 
 
-@given(instance=WebApp::WebApp_strategy)
-def test_webapp::webapp_User_setter(instance):
+@given(instance=WebApp_WebApp_strategy)
+def test_webapp_webapp_User_setter(instance):
     original = instance.User
     instance.User = original
     assert instance.User == original
+
+
+
+@given(instance=WebApp_WebApp_strategy)
+def test_webapp_webapp_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original

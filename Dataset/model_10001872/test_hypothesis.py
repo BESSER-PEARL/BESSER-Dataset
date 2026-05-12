@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Food,
@@ -34,17 +34,8 @@ def test_food_constructor_exists():
 def test_food_constructor_args():
     sig = inspect.signature(Food.__init__)
     params = list(sig.parameters.keys())
-    assert "foodID" in params, "Missing parameter 'foodID'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_food_has_foodID():
-    assert hasattr(Food, "foodID")
-    descriptor = None
-    for klass in Food.__mro__:
-        if "foodID" in klass.__dict__:
-            descriptor = klass.__dict__["foodID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "foodID" in params, "Missing parameter 'foodID'"
 
 def test_food_has_name():
     assert hasattr(Food, "name")
@@ -52,6 +43,15 @@ def test_food_has_name():
     for klass in Food.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_food_has_foodID():
+    assert hasattr(Food, "foodID")
+    descriptor = None
+    for klass in Food.__mro__:
+        if "foodID" in klass.__dict__:
+            descriptor = klass.__dict__["foodID"]
             break
     assert isinstance(descriptor, property)
 
@@ -68,16 +68,16 @@ def test_housekeeping_constructor_exists():
 def test_housekeeping_constructor_args():
     sig = inspect.signature(Housekeeping.__init__)
     params = list(sig.parameters.keys())
-    assert "hkID" in params, "Missing parameter 'hkID'"
-    assert "branch" in params, "Missing parameter 'branch'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "branch" in params, "Missing parameter 'branch'"
+    assert "hkID" in params, "Missing parameter 'hkID'"
 
-def test_housekeeping_has_hkID():
-    assert hasattr(Housekeeping, "hkID")
+def test_housekeeping_has_name():
+    assert hasattr(Housekeeping, "name")
     descriptor = None
     for klass in Housekeeping.__mro__:
-        if "hkID" in klass.__dict__:
-            descriptor = klass.__dict__["hkID"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -90,12 +90,12 @@ def test_housekeeping_has_branch():
             break
     assert isinstance(descriptor, property)
 
-def test_housekeeping_has_name():
-    assert hasattr(Housekeeping, "name")
+def test_housekeeping_has_hkID():
+    assert hasattr(Housekeeping, "hkID")
     descriptor = None
     for klass in Housekeeping.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+        if "hkID" in klass.__dict__:
+            descriptor = klass.__dict__["hkID"]
             break
     assert isinstance(descriptor, property)
 
@@ -180,9 +180,18 @@ def test_chef_constructor_exists():
 def test_chef_constructor_args():
     sig = inspect.signature(Chef.__init__)
     params = list(sig.parameters.keys())
+    assert "branch" in params, "Missing parameter 'branch'"
     assert "name" in params, "Missing parameter 'name'"
     assert "chefID" in params, "Missing parameter 'chefID'"
-    assert "branch" in params, "Missing parameter 'branch'"
+
+def test_chef_has_branch():
+    assert hasattr(Chef, "branch")
+    descriptor = None
+    for klass in Chef.__mro__:
+        if "branch" in klass.__dict__:
+            descriptor = klass.__dict__["branch"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_chef_has_name():
     assert hasattr(Chef, "name")
@@ -202,15 +211,6 @@ def test_chef_has_chefID():
             break
     assert isinstance(descriptor, property)
 
-def test_chef_has_branch():
-    assert hasattr(Chef, "branch")
-    descriptor = None
-    for klass in Chef.__mro__:
-        if "branch" in klass.__dict__:
-            descriptor = klass.__dict__["branch"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_guest_is_not_abstract():
@@ -224,27 +224,18 @@ def test_guest_constructor_exists():
 def test_guest_constructor_args():
     sig = inspect.signature(Guest.__init__)
     params = list(sig.parameters.keys())
-    assert "guestID" in params, "Missing parameter 'guestID'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "roomNo" in params, "Missing parameter 'roomNo'"
-    assert "address" in params, "Missing parameter 'address'"
     assert "phoneNo" in params, "Missing parameter 'phoneNo'"
+    assert "roomNo" in params, "Missing parameter 'roomNo'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "guestID" in params, "Missing parameter 'guestID'"
+    assert "address" in params, "Missing parameter 'address'"
 
-def test_guest_has_guestID():
-    assert hasattr(Guest, "guestID")
+def test_guest_has_phoneNo():
+    assert hasattr(Guest, "phoneNo")
     descriptor = None
     for klass in Guest.__mro__:
-        if "guestID" in klass.__dict__:
-            descriptor = klass.__dict__["guestID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guest_has_name():
-    assert hasattr(Guest, "name")
-    descriptor = None
-    for klass in Guest.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+        if "phoneNo" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNo"]
             break
     assert isinstance(descriptor, property)
 
@@ -257,21 +248,30 @@ def test_guest_has_roomNo():
             break
     assert isinstance(descriptor, property)
 
+def test_guest_has_name():
+    assert hasattr(Guest, "name")
+    descriptor = None
+    for klass in Guest.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guest_has_guestID():
+    assert hasattr(Guest, "guestID")
+    descriptor = None
+    for klass in Guest.__mro__:
+        if "guestID" in klass.__dict__:
+            descriptor = klass.__dict__["guestID"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_guest_has_address():
     assert hasattr(Guest, "address")
     descriptor = None
     for klass in Guest.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guest_has_phoneNo():
-    assert hasattr(Guest, "phoneNo")
-    descriptor = None
-    for klass in Guest.__mro__:
-        if "phoneNo" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNo"]
             break
     assert isinstance(descriptor, property)
 
@@ -288,17 +288,8 @@ def test_inventory_constructor_exists():
 def test_inventory_constructor_args():
     sig = inspect.signature(Inventory.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "status" in params, "Missing parameter 'status'"
-
-def test_inventory_has_type():
-    assert hasattr(Inventory, "type")
-    descriptor = None
-    for klass in Inventory.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
+    assert "type" in params, "Missing parameter 'type'"
 
 def test_inventory_has_status():
     assert hasattr(Inventory, "status")
@@ -306,6 +297,15 @@ def test_inventory_has_status():
     for klass in Inventory.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_inventory_has_type():
+    assert hasattr(Inventory, "type")
+    descriptor = None
+    for klass in Inventory.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -322,10 +322,28 @@ def test_receptionist_constructor_exists():
 def test_receptionist_constructor_args():
     sig = inspect.signature(Receptionist.__init__)
     params = list(sig.parameters.keys())
+    assert "phoneNo" in params, "Missing parameter 'phoneNo'"
+    assert "branch" in params, "Missing parameter 'branch'"
     assert "name" in params, "Missing parameter 'name'"
     assert "rID" in params, "Missing parameter 'rID'"
-    assert "branch" in params, "Missing parameter 'branch'"
-    assert "phoneNo" in params, "Missing parameter 'phoneNo'"
+
+def test_receptionist_has_phoneNo():
+    assert hasattr(Receptionist, "phoneNo")
+    descriptor = None
+    for klass in Receptionist.__mro__:
+        if "phoneNo" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_receptionist_has_branch():
+    assert hasattr(Receptionist, "branch")
+    descriptor = None
+    for klass in Receptionist.__mro__:
+        if "branch" in klass.__dict__:
+            descriptor = klass.__dict__["branch"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_receptionist_has_name():
     assert hasattr(Receptionist, "name")
@@ -345,24 +363,6 @@ def test_receptionist_has_rID():
             break
     assert isinstance(descriptor, property)
 
-def test_receptionist_has_branch():
-    assert hasattr(Receptionist, "branch")
-    descriptor = None
-    for klass in Receptionist.__mro__:
-        if "branch" in klass.__dict__:
-            descriptor = klass.__dict__["branch"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_receptionist_has_phoneNo():
-    assert hasattr(Receptionist, "phoneNo")
-    descriptor = None
-    for klass in Receptionist.__mro__:
-        if "phoneNo" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNo"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_manager_is_not_abstract():
@@ -377,9 +377,9 @@ def test_manager_constructor_args():
     sig = inspect.signature(Manager.__init__)
     params = list(sig.parameters.keys())
     assert "managerID" in params, "Missing parameter 'managerID'"
+    assert "branch" in params, "Missing parameter 'branch'"
     assert "phoneNo" in params, "Missing parameter 'phoneNo'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "branch" in params, "Missing parameter 'branch'"
 
 def test_manager_has_managerID():
     assert hasattr(Manager, "managerID")
@@ -387,6 +387,15 @@ def test_manager_has_managerID():
     for klass in Manager.__mro__:
         if "managerID" in klass.__dict__:
             descriptor = klass.__dict__["managerID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_manager_has_branch():
+    assert hasattr(Manager, "branch")
+    descriptor = None
+    for klass in Manager.__mro__:
+        if "branch" in klass.__dict__:
+            descriptor = klass.__dict__["branch"]
             break
     assert isinstance(descriptor, property)
 
@@ -408,15 +417,6 @@ def test_manager_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_manager_has_branch():
-    assert hasattr(Manager, "branch")
-    descriptor = None
-    for klass in Manager.__mro__:
-        if "branch" in klass.__dict__:
-            descriptor = klass.__dict__["branch"]
-            break
-    assert isinstance(descriptor, property)
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -431,19 +431,19 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Food_strategy = st.builds(
     Food,
-    foodID=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    foodID=
+        st.integers()
 )
 Housekeeping_strategy = st.builds(
     Housekeeping,
-    hkID=
-        st.integers(),
+    name=
+        safe_text,
     branch=
         safe_text,
-    name=
-        safe_text
+    hkID=
+        st.integers()
 )
 Bill_strategy = st.builds(
     Bill,
@@ -461,53 +461,53 @@ Rooms_strategy = st.builds(
 )
 Chef_strategy = st.builds(
     Chef,
+    branch=
+        safe_text,
     name=
         safe_text,
     chefID=
-        st.integers(),
-    branch=
-        safe_text
+        st.integers()
 )
 Guest_strategy = st.builds(
     Guest,
-    guestID=
+    phoneNo=
+        st.integers(),
+    roomNo=
         st.integers(),
     name=
         safe_text,
-    roomNo=
+    guestID=
         st.integers(),
     address=
-        safe_text,
-    phoneNo=
-        st.integers()
+        safe_text
 )
 Inventory_strategy = st.builds(
     Inventory,
-    type=
-        safe_text,
     status=
+        safe_text,
+    type=
         safe_text
 )
 Receptionist_strategy = st.builds(
     Receptionist,
-    name=
-        safe_text,
-    rID=
+    phoneNo=
         st.integers(),
     branch=
         safe_text,
-    phoneNo=
+    name=
+        safe_text,
+    rID=
         st.integers()
 )
 Manager_strategy = st.builds(
     Manager,
     managerID=
         st.integers(),
+    branch=
+        safe_text,
     phoneNo=
         st.integers(),
     name=
-        safe_text,
-    branch=
         safe_text
 )
 
@@ -516,20 +516,6 @@ Manager_strategy = st.builds(
 def test_food_instantiation(instance):
     assert isinstance(instance, Food)
 
-@given(instance=Food_strategy)
-def test_food_foodID_type(instance):
-    assert isinstance(instance.foodID, int)
-
-
-@given(instance=Food_strategy)
-def test_food_foodID_setter(instance):
-    original = instance.foodID
-    instance.foodID = original
-    assert instance.foodID == original
-
-@given(instance=Food_strategy)
-def test_food_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Food_strategy)
@@ -538,36 +524,19 @@ def test_food_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Food_strategy)
+def test_food_foodID_setter(instance):
+    original = instance.foodID
+    instance.foodID = original
+    assert instance.foodID == original
+
 @given(instance=Housekeeping_strategy)
 @settings(max_examples=50)
 def test_housekeeping_instantiation(instance):
     assert isinstance(instance, Housekeeping)
 
-@given(instance=Housekeeping_strategy)
-def test_housekeeping_hkID_type(instance):
-    assert isinstance(instance.hkID, int)
-
-
-@given(instance=Housekeeping_strategy)
-def test_housekeeping_hkID_setter(instance):
-    original = instance.hkID
-    instance.hkID = original
-    assert instance.hkID == original
-
-@given(instance=Housekeeping_strategy)
-def test_housekeeping_branch_type(instance):
-    assert isinstance(instance.branch, str)
-
-
-@given(instance=Housekeeping_strategy)
-def test_housekeeping_branch_setter(instance):
-    original = instance.branch
-    instance.branch = original
-    assert instance.branch == original
-
-@given(instance=Housekeeping_strategy)
-def test_housekeeping_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Housekeeping_strategy)
@@ -576,14 +545,27 @@ def test_housekeeping_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Housekeeping_strategy)
+def test_housekeeping_branch_setter(instance):
+    original = instance.branch
+    instance.branch = original
+    assert instance.branch == original
+
+
+
+@given(instance=Housekeeping_strategy)
+def test_housekeeping_hkID_setter(instance):
+    original = instance.hkID
+    instance.hkID = original
+    assert instance.hkID == original
+
 @given(instance=Bill_strategy)
 @settings(max_examples=50)
 def test_bill_instantiation(instance):
     assert isinstance(instance, Bill)
 
-@given(instance=Bill_strategy)
-def test_bill_billNo_type(instance):
-    assert isinstance(instance.billNo, int)
 
 
 @given(instance=Bill_strategy)
@@ -592,9 +574,6 @@ def test_bill_billNo_setter(instance):
     instance.billNo = original
     assert instance.billNo == original
 
-@given(instance=Bill_strategy)
-def test_bill_guestID_type(instance):
-    assert isinstance(instance.guestID, int)
 
 
 @given(instance=Bill_strategy)
@@ -608,9 +587,6 @@ def test_bill_guestID_setter(instance):
 def test_rooms_instantiation(instance):
     assert isinstance(instance, Rooms)
 
-@given(instance=Rooms_strategy)
-def test_rooms_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=Rooms_strategy)
@@ -619,9 +595,6 @@ def test_rooms_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=Rooms_strategy)
-def test_rooms_roomNo_type(instance):
-    assert isinstance(instance.roomNo, int)
 
 
 @given(instance=Rooms_strategy)
@@ -635,31 +608,6 @@ def test_rooms_roomNo_setter(instance):
 def test_chef_instantiation(instance):
     assert isinstance(instance, Chef)
 
-@given(instance=Chef_strategy)
-def test_chef_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Chef_strategy)
-def test_chef_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Chef_strategy)
-def test_chef_chefID_type(instance):
-    assert isinstance(instance.chefID, int)
-
-
-@given(instance=Chef_strategy)
-def test_chef_chefID_setter(instance):
-    original = instance.chefID
-    instance.chefID = original
-    assert instance.chefID == original
-
-@given(instance=Chef_strategy)
-def test_chef_branch_type(instance):
-    assert isinstance(instance.branch, str)
 
 
 @given(instance=Chef_strategy)
@@ -668,58 +616,27 @@ def test_chef_branch_setter(instance):
     instance.branch = original
     assert instance.branch == original
 
+
+
+@given(instance=Chef_strategy)
+def test_chef_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Chef_strategy)
+def test_chef_chefID_setter(instance):
+    original = instance.chefID
+    instance.chefID = original
+    assert instance.chefID == original
+
 @given(instance=Guest_strategy)
 @settings(max_examples=50)
 def test_guest_instantiation(instance):
     assert isinstance(instance, Guest)
 
-@given(instance=Guest_strategy)
-def test_guest_guestID_type(instance):
-    assert isinstance(instance.guestID, int)
-
-
-@given(instance=Guest_strategy)
-def test_guest_guestID_setter(instance):
-    original = instance.guestID
-    instance.guestID = original
-    assert instance.guestID == original
-
-@given(instance=Guest_strategy)
-def test_guest_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Guest_strategy)
-def test_guest_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Guest_strategy)
-def test_guest_roomNo_type(instance):
-    assert isinstance(instance.roomNo, int)
-
-
-@given(instance=Guest_strategy)
-def test_guest_roomNo_setter(instance):
-    original = instance.roomNo
-    instance.roomNo = original
-    assert instance.roomNo == original
-
-@given(instance=Guest_strategy)
-def test_guest_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Guest_strategy)
-def test_guest_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Guest_strategy)
-def test_guest_phoneNo_type(instance):
-    assert isinstance(instance.phoneNo, int)
 
 
 @given(instance=Guest_strategy)
@@ -728,25 +645,43 @@ def test_guest_phoneNo_setter(instance):
     instance.phoneNo = original
     assert instance.phoneNo == original
 
+
+
+@given(instance=Guest_strategy)
+def test_guest_roomNo_setter(instance):
+    original = instance.roomNo
+    instance.roomNo = original
+    assert instance.roomNo == original
+
+
+
+@given(instance=Guest_strategy)
+def test_guest_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Guest_strategy)
+def test_guest_guestID_setter(instance):
+    original = instance.guestID
+    instance.guestID = original
+    assert instance.guestID == original
+
+
+
+@given(instance=Guest_strategy)
+def test_guest_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
 @given(instance=Inventory_strategy)
 @settings(max_examples=50)
 def test_inventory_instantiation(instance):
     assert isinstance(instance, Inventory)
 
-@given(instance=Inventory_strategy)
-def test_inventory_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Inventory_strategy)
-def test_inventory_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Inventory_strategy)
-def test_inventory_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
 @given(instance=Inventory_strategy)
@@ -755,47 +690,19 @@ def test_inventory_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Inventory_strategy)
+def test_inventory_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
 @given(instance=Receptionist_strategy)
 @settings(max_examples=50)
 def test_receptionist_instantiation(instance):
     assert isinstance(instance, Receptionist)
 
-@given(instance=Receptionist_strategy)
-def test_receptionist_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Receptionist_strategy)
-def test_receptionist_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Receptionist_strategy)
-def test_receptionist_rID_type(instance):
-    assert isinstance(instance.rID, int)
-
-
-@given(instance=Receptionist_strategy)
-def test_receptionist_rID_setter(instance):
-    original = instance.rID
-    instance.rID = original
-    assert instance.rID == original
-
-@given(instance=Receptionist_strategy)
-def test_receptionist_branch_type(instance):
-    assert isinstance(instance.branch, str)
-
-
-@given(instance=Receptionist_strategy)
-def test_receptionist_branch_setter(instance):
-    original = instance.branch
-    instance.branch = original
-    assert instance.branch == original
-
-@given(instance=Receptionist_strategy)
-def test_receptionist_phoneNo_type(instance):
-    assert isinstance(instance.phoneNo, int)
 
 
 @given(instance=Receptionist_strategy)
@@ -804,14 +711,35 @@ def test_receptionist_phoneNo_setter(instance):
     instance.phoneNo = original
     assert instance.phoneNo == original
 
+
+
+@given(instance=Receptionist_strategy)
+def test_receptionist_branch_setter(instance):
+    original = instance.branch
+    instance.branch = original
+    assert instance.branch == original
+
+
+
+@given(instance=Receptionist_strategy)
+def test_receptionist_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Receptionist_strategy)
+def test_receptionist_rID_setter(instance):
+    original = instance.rID
+    instance.rID = original
+    assert instance.rID == original
+
 @given(instance=Manager_strategy)
 @settings(max_examples=50)
 def test_manager_instantiation(instance):
     assert isinstance(instance, Manager)
 
-@given(instance=Manager_strategy)
-def test_manager_managerID_type(instance):
-    assert isinstance(instance.managerID, int)
 
 
 @given(instance=Manager_strategy)
@@ -820,9 +748,14 @@ def test_manager_managerID_setter(instance):
     instance.managerID = original
     assert instance.managerID == original
 
+
+
 @given(instance=Manager_strategy)
-def test_manager_phoneNo_type(instance):
-    assert isinstance(instance.phoneNo, int)
+def test_manager_branch_setter(instance):
+    original = instance.branch
+    instance.branch = original
+    assert instance.branch == original
+
 
 
 @given(instance=Manager_strategy)
@@ -831,9 +764,6 @@ def test_manager_phoneNo_setter(instance):
     instance.phoneNo = original
     assert instance.phoneNo == original
 
-@given(instance=Manager_strategy)
-def test_manager_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Manager_strategy)
@@ -841,14 +771,3 @@ def test_manager_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=Manager_strategy)
-def test_manager_branch_type(instance):
-    assert isinstance(instance.branch, str)
-
-
-@given(instance=Manager_strategy)
-def test_manager_branch_setter(instance):
-    original = instance.branch
-    instance.branch = original
-    assert instance.branch == original

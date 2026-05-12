@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mm2::Member,
-    mm2::Category,
-    mm2::Medium,
-    mm2::Library,
+from python_code import (
+    mm2_Member,
+    mm2_Category,
+    mm2_Medium,
+    mm2_Library,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_mm2::member_is_not_abstract():
-    assert not inspect.isabstract(mm2::Member)
+def test_mm2_member_is_not_abstract():
+    assert not inspect.isabstract(mm2_Member)
 
 
-def test_mm2::member_constructor_exists():
-    assert callable(mm2::Member.__init__)
+def test_mm2_member_constructor_exists():
+    assert callable(mm2_Member.__init__)
 
 
-def test_mm2::member_constructor_args():
-    sig = inspect.signature(mm2::Member.__init__)
+def test_mm2_member_constructor_args():
+    sig = inspect.signature(mm2_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm2::member_has_name():
-    assert hasattr(mm2::Member, "name")
+def test_mm2_member_has_name():
+    assert hasattr(mm2_Member, "name")
     descriptor = None
-    for klass in mm2::Member.__mro__:
+    for klass in mm2_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_mm2::member_has_name():
 
 
 
-def test_mm2::category_is_not_abstract():
-    assert not inspect.isabstract(mm2::Category)
+def test_mm2_category_is_not_abstract():
+    assert not inspect.isabstract(mm2_Category)
 
 
-def test_mm2::category_constructor_exists():
-    assert callable(mm2::Category.__init__)
+def test_mm2_category_constructor_exists():
+    assert callable(mm2_Category.__init__)
 
 
-def test_mm2::category_constructor_args():
-    sig = inspect.signature(mm2::Category.__init__)
+def test_mm2_category_constructor_args():
+    sig = inspect.signature(mm2_Category.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm2::category_has_name():
-    assert hasattr(mm2::Category, "name")
+def test_mm2_category_has_name():
+    assert hasattr(mm2_Category, "name")
     descriptor = None
-    for klass in mm2::Category.__mro__:
+    for klass in mm2_Category.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,33 +66,33 @@ def test_mm2::category_has_name():
 
 
 
-def test_mm2::medium_is_not_abstract():
-    assert not inspect.isabstract(mm2::Medium)
+def test_mm2_medium_is_not_abstract():
+    assert not inspect.isabstract(mm2_Medium)
 
 
-def test_mm2::medium_constructor_exists():
-    assert callable(mm2::Medium.__init__)
+def test_mm2_medium_constructor_exists():
+    assert callable(mm2_Medium.__init__)
 
 
-def test_mm2::medium_constructor_args():
-    sig = inspect.signature(mm2::Medium.__init__)
+def test_mm2_medium_constructor_args():
+    sig = inspect.signature(mm2_Medium.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_mm2::medium_has_name():
-    assert hasattr(mm2::Medium, "name")
+def test_mm2_medium_has_name():
+    assert hasattr(mm2_Medium, "name")
     descriptor = None
-    for klass in mm2::Medium.__mro__:
+    for klass in mm2_Medium.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm2::medium_has_type():
-    assert hasattr(mm2::Medium, "type")
+def test_mm2_medium_has_type():
+    assert hasattr(mm2_Medium, "type")
     descriptor = None
-    for klass in mm2::Medium.__mro__:
+    for klass in mm2_Medium.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -100,23 +100,23 @@ def test_mm2::medium_has_type():
 
 
 
-def test_mm2::library_is_not_abstract():
-    assert not inspect.isabstract(mm2::Library)
+def test_mm2_library_is_not_abstract():
+    assert not inspect.isabstract(mm2_Library)
 
 
-def test_mm2::library_constructor_exists():
-    assert callable(mm2::Library.__init__)
+def test_mm2_library_constructor_exists():
+    assert callable(mm2_Library.__init__)
 
 
-def test_mm2::library_constructor_args():
-    sig = inspect.signature(mm2::Library.__init__)
+def test_mm2_library_constructor_args():
+    sig = inspect.signature(mm2_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm2::library_has_name():
-    assert hasattr(mm2::Library, "name")
+def test_mm2_library_has_name():
+    assert hasattr(mm2_Library, "name")
     descriptor = None
-    for klass in mm2::Library.__mro__:
+    for klass in mm2_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mm2::Member_strategy = st.builds(
-    mm2::Member,
+mm2_Member_strategy = st.builds(
+    mm2_Member,
     name=
         safe_text
 )
-mm2::Category_strategy = st.builds(
-    mm2::Category,
+mm2_Category_strategy = st.builds(
+    mm2_Category,
     name=
         safe_text
 )
-mm2::Medium_strategy = st.builds(
-    mm2::Medium,
+mm2_Medium_strategy = st.builds(
+    mm2_Medium,
     name=
         safe_text,
     type=
         safe_text
 )
-mm2::Library_strategy = st.builds(
-    mm2::Library,
+mm2_Library_strategy = st.builds(
+    mm2_Library,
     name=
         safe_text
 )
 
-@given(instance=mm2::Member_strategy)
+@given(instance=mm2_Member_strategy)
 @settings(max_examples=50)
-def test_mm2::member_instantiation(instance):
-    assert isinstance(instance, mm2::Member)
-
-@given(instance=mm2::Member_strategy)
-def test_mm2::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_member_instantiation(instance):
+    assert isinstance(instance, mm2_Member)
 
 
-@given(instance=mm2::Member_strategy)
-def test_mm2::member_name_setter(instance):
+
+@given(instance=mm2_Member_strategy)
+def test_mm2_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm2::Category_strategy)
+@given(instance=mm2_Category_strategy)
 @settings(max_examples=50)
-def test_mm2::category_instantiation(instance):
-    assert isinstance(instance, mm2::Category)
-
-@given(instance=mm2::Category_strategy)
-def test_mm2::category_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_category_instantiation(instance):
+    assert isinstance(instance, mm2_Category)
 
 
-@given(instance=mm2::Category_strategy)
-def test_mm2::category_name_setter(instance):
+
+@given(instance=mm2_Category_strategy)
+def test_mm2_category_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm2::Medium_strategy)
+@given(instance=mm2_Medium_strategy)
 @settings(max_examples=50)
-def test_mm2::medium_instantiation(instance):
-    assert isinstance(instance, mm2::Medium)
-
-@given(instance=mm2::Medium_strategy)
-def test_mm2::medium_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_medium_instantiation(instance):
+    assert isinstance(instance, mm2_Medium)
 
 
-@given(instance=mm2::Medium_strategy)
-def test_mm2::medium_name_setter(instance):
+
+@given(instance=mm2_Medium_strategy)
+def test_mm2_medium_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm2::Medium_strategy)
-def test_mm2::medium_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=mm2::Medium_strategy)
-def test_mm2::medium_type_setter(instance):
+@given(instance=mm2_Medium_strategy)
+def test_mm2_medium_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mm2::Library_strategy)
+@given(instance=mm2_Library_strategy)
 @settings(max_examples=50)
-def test_mm2::library_instantiation(instance):
-    assert isinstance(instance, mm2::Library)
-
-@given(instance=mm2::Library_strategy)
-def test_mm2::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_library_instantiation(instance):
+    assert isinstance(instance, mm2_Library)
 
 
-@given(instance=mm2::Library_strategy)
-def test_mm2::library_name_setter(instance):
+
+@given(instance=mm2_Library_strategy)
+def test_mm2_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

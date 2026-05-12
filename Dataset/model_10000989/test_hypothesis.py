@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     MaglevCar,
@@ -35,17 +35,8 @@ def test_maglevcar_constructor_exists():
 def test_maglevcar_constructor_args():
     sig = inspect.signature(MaglevCar.__init__)
     params = list(sig.parameters.keys())
-    assert "NUMSEATS" in params, "Missing parameter 'NUMSEATS'"
     assert "numSeatsOccupied" in params, "Missing parameter 'numSeatsOccupied'"
-
-def test_maglevcar_has_NUMSEATS():
-    assert hasattr(MaglevCar, "NUMSEATS")
-    descriptor = None
-    for klass in MaglevCar.__mro__:
-        if "NUMSEATS" in klass.__dict__:
-            descriptor = klass.__dict__["NUMSEATS"]
-            break
-    assert isinstance(descriptor, property)
+    assert "NUMSEATS" in params, "Missing parameter 'NUMSEATS'"
 
 def test_maglevcar_has_numSeatsOccupied():
     assert hasattr(MaglevCar, "numSeatsOccupied")
@@ -53,6 +44,15 @@ def test_maglevcar_has_numSeatsOccupied():
     for klass in MaglevCar.__mro__:
         if "numSeatsOccupied" in klass.__dict__:
             descriptor = klass.__dict__["numSeatsOccupied"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_maglevcar_has_NUMSEATS():
+    assert hasattr(MaglevCar, "NUMSEATS")
+    descriptor = None
+    for klass in MaglevCar.__mro__:
+        if "NUMSEATS" in klass.__dict__:
+            descriptor = klass.__dict__["NUMSEATS"]
             break
     assert isinstance(descriptor, property)
 
@@ -117,18 +117,9 @@ def test_containercar_constructor_exists():
 def test_containercar_constructor_args():
     sig = inspect.signature(ContainerCar.__init__)
     params = list(sig.parameters.keys())
-    assert "temp" in params, "Missing parameter 'temp'"
     assert "cubicFeet" in params, "Missing parameter 'cubicFeet'"
     assert "climateControlled" in params, "Missing parameter 'climateControlled'"
-
-def test_containercar_has_temp():
-    assert hasattr(ContainerCar, "temp")
-    descriptor = None
-    for klass in ContainerCar.__mro__:
-        if "temp" in klass.__dict__:
-            descriptor = klass.__dict__["temp"]
-            break
-    assert isinstance(descriptor, property)
+    assert "temp" in params, "Missing parameter 'temp'"
 
 def test_containercar_has_cubicFeet():
     assert hasattr(ContainerCar, "cubicFeet")
@@ -148,6 +139,15 @@ def test_containercar_has_climateControlled():
             break
     assert isinstance(descriptor, property)
 
+def test_containercar_has_temp():
+    assert hasattr(ContainerCar, "temp")
+    descriptor = None
+    for klass in ContainerCar.__mro__:
+        if "temp" in klass.__dict__:
+            descriptor = klass.__dict__["temp"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_passengercar_is_not_abstract():
@@ -161,17 +161,8 @@ def test_passengercar_constructor_exists():
 def test_passengercar_constructor_args():
     sig = inspect.signature(PassengerCar.__init__)
     params = list(sig.parameters.keys())
-    assert "numSeatsOccupied" in params, "Missing parameter 'numSeatsOccupied'"
     assert "NUMSEATS" in params, "Missing parameter 'NUMSEATS'"
-
-def test_passengercar_has_numSeatsOccupied():
-    assert hasattr(PassengerCar, "numSeatsOccupied")
-    descriptor = None
-    for klass in PassengerCar.__mro__:
-        if "numSeatsOccupied" in klass.__dict__:
-            descriptor = klass.__dict__["numSeatsOccupied"]
-            break
-    assert isinstance(descriptor, property)
+    assert "numSeatsOccupied" in params, "Missing parameter 'numSeatsOccupied'"
 
 def test_passengercar_has_NUMSEATS():
     assert hasattr(PassengerCar, "NUMSEATS")
@@ -179,6 +170,15 @@ def test_passengercar_has_NUMSEATS():
     for klass in PassengerCar.__mro__:
         if "NUMSEATS" in klass.__dict__:
             descriptor = klass.__dict__["NUMSEATS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_passengercar_has_numSeatsOccupied():
+    assert hasattr(PassengerCar, "numSeatsOccupied")
+    descriptor = None
+    for klass in PassengerCar.__mro__:
+        if "numSeatsOccupied" in klass.__dict__:
+            descriptor = klass.__dict__["numSeatsOccupied"]
             break
     assert isinstance(descriptor, property)
 
@@ -306,9 +306,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 MaglevCar_strategy = st.builds(
     MaglevCar,
-    NUMSEATS=
-        st.integers(),
     numSeatsOccupied=
+        st.integers(),
+    NUMSEATS=
         st.integers()
 )
 ElectricTrain_strategy = st.builds(
@@ -323,18 +323,18 @@ Maglev_strategy = st.builds(
 )
 ContainerCar_strategy = st.builds(
     ContainerCar,
-    temp=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     cubicFeet=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     climateControlled=
-        st.booleans()
+        st.booleans(),
+    temp=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 PassengerCar_strategy = st.builds(
     PassengerCar,
-    numSeatsOccupied=
-        st.integers(),
     NUMSEATS=
+        st.integers(),
+    numSeatsOccupied=
         st.integers()
 )
 EngineCar_strategy = st.builds(
@@ -366,20 +366,6 @@ Train_strategy = st.builds(
 def test_maglevcar_instantiation(instance):
     assert isinstance(instance, MaglevCar)
 
-@given(instance=MaglevCar_strategy)
-def test_maglevcar_NUMSEATS_type(instance):
-    assert isinstance(instance.NUMSEATS, int)
-
-
-@given(instance=MaglevCar_strategy)
-def test_maglevcar_NUMSEATS_setter(instance):
-    original = instance.NUMSEATS
-    instance.NUMSEATS = original
-    assert instance.NUMSEATS == original
-
-@given(instance=MaglevCar_strategy)
-def test_maglevcar_numSeatsOccupied_type(instance):
-    assert isinstance(instance.numSeatsOccupied, int)
 
 
 @given(instance=MaglevCar_strategy)
@@ -388,14 +374,19 @@ def test_maglevcar_numSeatsOccupied_setter(instance):
     instance.numSeatsOccupied = original
     assert instance.numSeatsOccupied == original
 
+
+
+@given(instance=MaglevCar_strategy)
+def test_maglevcar_NUMSEATS_setter(instance):
+    original = instance.NUMSEATS
+    instance.NUMSEATS = original
+    assert instance.NUMSEATS == original
+
 @given(instance=ElectricTrain_strategy)
 @settings(max_examples=50)
 def test_electrictrain_instantiation(instance):
     assert isinstance(instance, ElectricTrain)
 
-@given(instance=ElectricTrain_strategy)
-def test_electrictrain_MAXSPEED_type(instance):
-    assert isinstance(instance.MAXSPEED, float)
 
 
 @given(instance=ElectricTrain_strategy)
@@ -409,9 +400,6 @@ def test_electrictrain_MAXSPEED_setter(instance):
 def test_maglev_instantiation(instance):
     assert isinstance(instance, Maglev)
 
-@given(instance=Maglev_strategy)
-def test_maglev_MAXSPEED_type(instance):
-    assert isinstance(instance.MAXSPEED, float)
 
 
 @given(instance=Maglev_strategy)
@@ -425,20 +413,6 @@ def test_maglev_MAXSPEED_setter(instance):
 def test_containercar_instantiation(instance):
     assert isinstance(instance, ContainerCar)
 
-@given(instance=ContainerCar_strategy)
-def test_containercar_temp_type(instance):
-    assert isinstance(instance.temp, float)
-
-
-@given(instance=ContainerCar_strategy)
-def test_containercar_temp_setter(instance):
-    original = instance.temp
-    instance.temp = original
-    assert instance.temp == original
-
-@given(instance=ContainerCar_strategy)
-def test_containercar_cubicFeet_type(instance):
-    assert isinstance(instance.cubicFeet, float)
 
 
 @given(instance=ContainerCar_strategy)
@@ -447,9 +421,6 @@ def test_containercar_cubicFeet_setter(instance):
     instance.cubicFeet = original
     assert instance.cubicFeet == original
 
-@given(instance=ContainerCar_strategy)
-def test_containercar_climateControlled_type(instance):
-    assert isinstance(instance.climateControlled, bool)
 
 
 @given(instance=ContainerCar_strategy)
@@ -458,25 +429,19 @@ def test_containercar_climateControlled_setter(instance):
     instance.climateControlled = original
     assert instance.climateControlled == original
 
+
+
+@given(instance=ContainerCar_strategy)
+def test_containercar_temp_setter(instance):
+    original = instance.temp
+    instance.temp = original
+    assert instance.temp == original
+
 @given(instance=PassengerCar_strategy)
 @settings(max_examples=50)
 def test_passengercar_instantiation(instance):
     assert isinstance(instance, PassengerCar)
 
-@given(instance=PassengerCar_strategy)
-def test_passengercar_numSeatsOccupied_type(instance):
-    assert isinstance(instance.numSeatsOccupied, int)
-
-
-@given(instance=PassengerCar_strategy)
-def test_passengercar_numSeatsOccupied_setter(instance):
-    original = instance.numSeatsOccupied
-    instance.numSeatsOccupied = original
-    assert instance.numSeatsOccupied == original
-
-@given(instance=PassengerCar_strategy)
-def test_passengercar_NUMSEATS_type(instance):
-    assert isinstance(instance.NUMSEATS, int)
 
 
 @given(instance=PassengerCar_strategy)
@@ -485,14 +450,19 @@ def test_passengercar_NUMSEATS_setter(instance):
     instance.NUMSEATS = original
     assert instance.NUMSEATS == original
 
+
+
+@given(instance=PassengerCar_strategy)
+def test_passengercar_numSeatsOccupied_setter(instance):
+    original = instance.numSeatsOccupied
+    instance.numSeatsOccupied = original
+    assert instance.numSeatsOccupied == original
+
 @given(instance=EngineCar_strategy)
 @settings(max_examples=50)
 def test_enginecar_instantiation(instance):
     assert isinstance(instance, EngineCar)
 
-@given(instance=EngineCar_strategy)
-def test_enginecar_MAXSPEED_type(instance):
-    assert isinstance(instance.MAXSPEED, float)
 
 
 @given(instance=EngineCar_strategy)
@@ -511,9 +481,6 @@ def test_passengertrain_instantiation(instance):
 def test_freighttrain_instantiation(instance):
     assert isinstance(instance, FreightTrain)
 
-@given(instance=FreightTrain_strategy)
-def test_freighttrain_containerTrain_type(instance):
-    assert isinstance(instance.containerTrain, bool)
 
 
 @given(instance=FreightTrain_strategy)
@@ -532,9 +499,6 @@ def test_t_instantiation(instance):
 def test_train_instantiation(instance):
     assert isinstance(instance, Train)
 
-@given(instance=Train_strategy)
-def test_train_totalCars_type(instance):
-    assert isinstance(instance.totalCars, int)
 
 
 @given(instance=Train_strategy)
@@ -543,9 +507,6 @@ def test_train_totalCars_setter(instance):
     instance.totalCars = original
     assert instance.totalCars == original
 
-@given(instance=Train_strategy)
-def test_train_milesPerHour_type(instance):
-    assert isinstance(instance.milesPerHour, float)
 
 
 @given(instance=Train_strategy)

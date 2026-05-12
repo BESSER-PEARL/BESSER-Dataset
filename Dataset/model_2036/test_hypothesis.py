@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    eMFProject::State,
-    eMFProject::Command,
-    eMFProject::Event,
-    eMFProject::Transition,
-    eMFProject::Statemachine,
+from python_code import (
+    eMFProject_State,
+    eMFProject_Command,
+    eMFProject_Event,
+    eMFProject_Transition,
+    eMFProject_Statemachine,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_emfproject::state_is_not_abstract():
-    assert not inspect.isabstract(eMFProject::State)
+def test_emfproject_state_is_not_abstract():
+    assert not inspect.isabstract(eMFProject_State)
 
 
-def test_emfproject::state_constructor_exists():
-    assert callable(eMFProject::State.__init__)
+def test_emfproject_state_constructor_exists():
+    assert callable(eMFProject_State.__init__)
 
 
-def test_emfproject::state_constructor_args():
-    sig = inspect.signature(eMFProject::State.__init__)
+def test_emfproject_state_constructor_args():
+    sig = inspect.signature(eMFProject_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emfproject::state_has_name():
-    assert hasattr(eMFProject::State, "name")
+def test_emfproject_state_has_name():
+    assert hasattr(eMFProject_State, "name")
     descriptor = None
-    for klass in eMFProject::State.__mro__:
+    for klass in eMFProject_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,67 +43,67 @@ def test_emfproject::state_has_name():
 
 
 
-def test_emfproject::command_is_not_abstract():
-    assert not inspect.isabstract(eMFProject::Command)
+def test_emfproject_command_is_not_abstract():
+    assert not inspect.isabstract(eMFProject_Command)
 
 
-def test_emfproject::command_constructor_exists():
-    assert callable(eMFProject::Command.__init__)
+def test_emfproject_command_constructor_exists():
+    assert callable(eMFProject_Command.__init__)
 
 
-def test_emfproject::command_constructor_args():
-    sig = inspect.signature(eMFProject::Command.__init__)
+def test_emfproject_command_constructor_args():
+    sig = inspect.signature(eMFProject_Command.__init__)
     params = list(sig.parameters.keys())
-    assert "code" in params, "Missing parameter 'code'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "code" in params, "Missing parameter 'code'"
 
-def test_emfproject::command_has_code():
-    assert hasattr(eMFProject::Command, "code")
+def test_emfproject_command_has_name():
+    assert hasattr(eMFProject_Command, "name")
     descriptor = None
-    for klass in eMFProject::Command.__mro__:
+    for klass in eMFProject_Command.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emfproject_command_has_code():
+    assert hasattr(eMFProject_Command, "code")
+    descriptor = None
+    for klass in eMFProject_Command.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
     assert isinstance(descriptor, property)
 
-def test_emfproject::command_has_name():
-    assert hasattr(eMFProject::Command, "name")
-    descriptor = None
-    for klass in eMFProject::Command.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_emfproject::event_is_not_abstract():
-    assert not inspect.isabstract(eMFProject::Event)
-
-
-def test_emfproject::event_constructor_exists():
-    assert callable(eMFProject::Event.__init__)
+def test_emfproject_event_is_not_abstract():
+    assert not inspect.isabstract(eMFProject_Event)
 
 
-def test_emfproject::event_constructor_args():
-    sig = inspect.signature(eMFProject::Event.__init__)
+def test_emfproject_event_constructor_exists():
+    assert callable(eMFProject_Event.__init__)
+
+
+def test_emfproject_event_constructor_args():
+    sig = inspect.signature(eMFProject_Event.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emfproject::event_has_code():
-    assert hasattr(eMFProject::Event, "code")
+def test_emfproject_event_has_code():
+    assert hasattr(eMFProject_Event, "code")
     descriptor = None
-    for klass in eMFProject::Event.__mro__:
+    for klass in eMFProject_Event.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
     assert isinstance(descriptor, property)
 
-def test_emfproject::event_has_name():
-    assert hasattr(eMFProject::Event, "name")
+def test_emfproject_event_has_name():
+    assert hasattr(eMFProject_Event, "name")
     descriptor = None
-    for klass in eMFProject::Event.__mro__:
+    for klass in eMFProject_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -111,30 +111,30 @@ def test_emfproject::event_has_name():
 
 
 
-def test_emfproject::transition_is_not_abstract():
-    assert not inspect.isabstract(eMFProject::Transition)
+def test_emfproject_transition_is_not_abstract():
+    assert not inspect.isabstract(eMFProject_Transition)
 
 
-def test_emfproject::transition_constructor_exists():
-    assert callable(eMFProject::Transition.__init__)
+def test_emfproject_transition_constructor_exists():
+    assert callable(eMFProject_Transition.__init__)
 
 
-def test_emfproject::transition_constructor_args():
-    sig = inspect.signature(eMFProject::Transition.__init__)
+def test_emfproject_transition_constructor_args():
+    sig = inspect.signature(eMFProject_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emfproject::statemachine_is_not_abstract():
-    assert not inspect.isabstract(eMFProject::Statemachine)
+def test_emfproject_statemachine_is_not_abstract():
+    assert not inspect.isabstract(eMFProject_Statemachine)
 
 
-def test_emfproject::statemachine_constructor_exists():
-    assert callable(eMFProject::Statemachine.__init__)
+def test_emfproject_statemachine_constructor_exists():
+    assert callable(eMFProject_Statemachine.__init__)
 
 
-def test_emfproject::statemachine_constructor_args():
-    sig = inspect.signature(eMFProject::Statemachine.__init__)
+def test_emfproject_statemachine_constructor_args():
+    sig = inspect.signature(eMFProject_Statemachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,108 +149,93 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-eMFProject::State_strategy = st.builds(
-    eMFProject::State,
+eMFProject_State_strategy = st.builds(
+    eMFProject_State,
     name=
         safe_text
 )
-eMFProject::Command_strategy = st.builds(
-    eMFProject::Command,
+eMFProject_Command_strategy = st.builds(
+    eMFProject_Command,
+    name=
+        safe_text,
+    code=
+        safe_text
+)
+eMFProject_Event_strategy = st.builds(
+    eMFProject_Event,
     code=
         safe_text,
     name=
         safe_text
 )
-eMFProject::Event_strategy = st.builds(
-    eMFProject::Event,
-    code=
-        safe_text,
-    name=
-        safe_text
+eMFProject_Transition_strategy = st.builds(
+    eMFProject_Transition,
 )
-eMFProject::Transition_strategy = st.builds(
-    eMFProject::Transition,
-)
-eMFProject::Statemachine_strategy = st.builds(
-    eMFProject::Statemachine,
+eMFProject_Statemachine_strategy = st.builds(
+    eMFProject_Statemachine,
 )
 
-@given(instance=eMFProject::State_strategy)
+@given(instance=eMFProject_State_strategy)
 @settings(max_examples=50)
-def test_emfproject::state_instantiation(instance):
-    assert isinstance(instance, eMFProject::State)
-
-@given(instance=eMFProject::State_strategy)
-def test_emfproject::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emfproject_state_instantiation(instance):
+    assert isinstance(instance, eMFProject_State)
 
 
-@given(instance=eMFProject::State_strategy)
-def test_emfproject::state_name_setter(instance):
+
+@given(instance=eMFProject_State_strategy)
+def test_emfproject_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=eMFProject::Command_strategy)
+@given(instance=eMFProject_Command_strategy)
 @settings(max_examples=50)
-def test_emfproject::command_instantiation(instance):
-    assert isinstance(instance, eMFProject::Command)
-
-@given(instance=eMFProject::Command_strategy)
-def test_emfproject::command_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_emfproject_command_instantiation(instance):
+    assert isinstance(instance, eMFProject_Command)
 
 
-@given(instance=eMFProject::Command_strategy)
-def test_emfproject::command_code_setter(instance):
+
+@given(instance=eMFProject_Command_strategy)
+def test_emfproject_command_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=eMFProject_Command_strategy)
+def test_emfproject_command_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=eMFProject::Command_strategy)
-def test_emfproject::command_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=eMFProject::Command_strategy)
-def test_emfproject::command_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=eMFProject::Event_strategy)
+@given(instance=eMFProject_Event_strategy)
 @settings(max_examples=50)
-def test_emfproject::event_instantiation(instance):
-    assert isinstance(instance, eMFProject::Event)
-
-@given(instance=eMFProject::Event_strategy)
-def test_emfproject::event_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_emfproject_event_instantiation(instance):
+    assert isinstance(instance, eMFProject_Event)
 
 
-@given(instance=eMFProject::Event_strategy)
-def test_emfproject::event_code_setter(instance):
+
+@given(instance=eMFProject_Event_strategy)
+def test_emfproject_event_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=eMFProject::Event_strategy)
-def test_emfproject::event_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=eMFProject::Event_strategy)
-def test_emfproject::event_name_setter(instance):
+@given(instance=eMFProject_Event_strategy)
+def test_emfproject_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=eMFProject::Transition_strategy)
+@given(instance=eMFProject_Transition_strategy)
 @settings(max_examples=50)
-def test_emfproject::transition_instantiation(instance):
-    assert isinstance(instance, eMFProject::Transition)
+def test_emfproject_transition_instantiation(instance):
+    assert isinstance(instance, eMFProject_Transition)
 
-@given(instance=eMFProject::Statemachine_strategy)
+@given(instance=eMFProject_Statemachine_strategy)
 @settings(max_examples=50)
-def test_emfproject::statemachine_instantiation(instance):
-    assert isinstance(instance, eMFProject::Statemachine)
+def test_emfproject_statemachine_instantiation(instance):
+    assert isinstance(instance, eMFProject_Statemachine)

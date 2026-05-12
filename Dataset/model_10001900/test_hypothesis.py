@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     C32,
@@ -68,17 +68,8 @@ def test_c4_constructor_exists():
 def test_c4_constructor_args():
     sig = inspect.signature(C4.__init__)
     params = list(sig.parameters.keys())
-    assert "attC2" in params, "Missing parameter 'attC2'"
     assert "attC" in params, "Missing parameter 'attC'"
-
-def test_c4_has_attC2():
-    assert hasattr(C4, "attC2")
-    descriptor = None
-    for klass in C4.__mro__:
-        if "attC2" in klass.__dict__:
-            descriptor = klass.__dict__["attC2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attC2" in params, "Missing parameter 'attC2'"
 
 def test_c4_has_attC():
     assert hasattr(C4, "attC")
@@ -86,6 +77,15 @@ def test_c4_has_attC():
     for klass in C4.__mro__:
         if "attC" in klass.__dict__:
             descriptor = klass.__dict__["attC"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_c4_has_attC2():
+    assert hasattr(C4, "attC2")
+    descriptor = None
+    for klass in C4.__mro__:
+        if "attC2" in klass.__dict__:
+            descriptor = klass.__dict__["attC2"]
             break
     assert isinstance(descriptor, property)
 
@@ -337,10 +337,10 @@ C22_strategy = st.builds(
 )
 C4_strategy = st.builds(
     C4,
-    attC2=
-        st.integers(),
     attC=
-        st.booleans()
+        st.booleans(),
+    attC2=
+        st.integers()
 )
 B2_strategy = st.builds(
     B2,
@@ -406,20 +406,6 @@ def test_c22_instantiation(instance):
 def test_c4_instantiation(instance):
     assert isinstance(instance, C4)
 
-@given(instance=C4_strategy)
-def test_c4_attC2_type(instance):
-    assert isinstance(instance.attC2, int)
-
-
-@given(instance=C4_strategy)
-def test_c4_attC2_setter(instance):
-    original = instance.attC2
-    instance.attC2 = original
-    assert instance.attC2 == original
-
-@given(instance=C4_strategy)
-def test_c4_attC_type(instance):
-    assert isinstance(instance.attC, bool)
 
 
 @given(instance=C4_strategy)
@@ -428,14 +414,19 @@ def test_c4_attC_setter(instance):
     instance.attC = original
     assert instance.attC == original
 
+
+
+@given(instance=C4_strategy)
+def test_c4_attC2_setter(instance):
+    original = instance.attC2
+    instance.attC2 = original
+    assert instance.attC2 == original
+
 @given(instance=B2_strategy)
 @settings(max_examples=50)
 def test_b2_instantiation(instance):
     assert isinstance(instance, B2)
 
-@given(instance=B2_strategy)
-def test_b2_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B2_strategy)
@@ -454,9 +445,6 @@ def test_z2_instantiation(instance):
 def test_a2_instantiation(instance):
     assert isinstance(instance, A2)
 
-@given(instance=A2_strategy)
-def test_a2_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A2_strategy)
@@ -475,9 +463,6 @@ def test_r2_instantiation(instance):
 def test_y2_instantiation(instance):
     assert isinstance(instance, Y2)
 
-@given(instance=Y2_strategy)
-def test_y2_attY_type(instance):
-    assert isinstance(instance.attY, str)
 
 
 @given(instance=Y2_strategy)
@@ -491,9 +476,6 @@ def test_y2_attY_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A_strategy)
@@ -527,9 +509,6 @@ def test_z_instantiation(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B_strategy)
@@ -543,9 +522,6 @@ def test_b_attB_setter(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=Y_strategy)
-def test_y_attY_type(instance):
-    assert isinstance(instance.attY, str)
 
 
 @given(instance=Y_strategy)

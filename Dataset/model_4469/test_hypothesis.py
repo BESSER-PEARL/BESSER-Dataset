@@ -3,43 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    logoASM::LogoProgram,
+from python_code import (
+    logoASM_LogoProgram,
     BinaryExp,
-    logoASM::Lower,
-    logoASM::Div,
-    logoASM::Greater,
-    logoASM::Equals,
-    logoASM::Mult,
-    logoASM::Minus,
-    logoASM::Plus,
+    logoASM_Minus,
+    logoASM_Greater,
+    logoASM_Equals,
+    logoASM_Lower,
+    logoASM_Div,
+    logoASM_Mult,
+    logoASM_Plus,
     Expression,
-    logoASM::ParameterCall,
-    logoASM::BinaryExp,
+    logoASM_ParameterCall,
+    logoASM_BinaryExp,
     ControlStructure,
-    logoASM::While,
-    logoASM::Repeat,
-    logoASM::If,
-    logoASM::Parameter,
-    logoASM::ProcCall,
-    logoASM::Constant,
+    logoASM_Repeat,
+    logoASM_While,
+    logoASM_If,
+    logoASM_Parameter,
+    logoASM_ProcCall,
+    logoASM_Constant,
     Primitive,
-    logoASM::Clear,
-    logoASM::PenDown,
-    logoASM::Forward,
-    logoASM::Right,
-    logoASM::Left,
-    logoASM::PenUp,
-    logoASM::Back,
+    logoASM_Right,
+    logoASM_PenDown,
+    logoASM_Clear,
+    logoASM_Left,
+    logoASM_Forward,
+    logoASM_PenUp,
+    logoASM_Back,
     Instruction,
-    logoASM::ProcDeclaration,
-    logoASM::Block,
-    logoASM::ControlStructure,
-    logoASM::Expression,
-    logoASM::Primitive,
-    logoASM::Instruction,
+    logoASM_ProcDeclaration,
+    logoASM_Expression,
+    logoASM_Block,
+    logoASM_ControlStructure,
+    logoASM_Primitive,
+    logoASM_Instruction,
 )
 
 # =============================================================================
@@ -48,16 +48,16 @@ from classes import (
 
 
 
-def test_logoasm::logoprogram_is_not_abstract():
-    assert not inspect.isabstract(logoASM::LogoProgram)
+def test_logoasm_logoprogram_is_not_abstract():
+    assert not inspect.isabstract(logoASM_LogoProgram)
 
 
-def test_logoasm::logoprogram_constructor_exists():
-    assert callable(logoASM::LogoProgram.__init__)
+def test_logoasm_logoprogram_constructor_exists():
+    assert callable(logoASM_LogoProgram.__init__)
 
 
-def test_logoasm::logoprogram_constructor_args():
-    sig = inspect.signature(logoASM::LogoProgram.__init__)
+def test_logoasm_logoprogram_constructor_args():
+    sig = inspect.signature(logoASM_LogoProgram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -76,100 +76,100 @@ def test_binaryexp_constructor_args():
 
 
 
-def test_logoasm::lower_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Lower)
+def test_logoasm_minus_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Minus)
 
 
-def test_logoasm::lower_constructor_exists():
-    assert callable(logoASM::Lower.__init__)
+def test_logoasm_minus_constructor_exists():
+    assert callable(logoASM_Minus.__init__)
 
 
-def test_logoasm::lower_constructor_args():
-    sig = inspect.signature(logoASM::Lower.__init__)
+def test_logoasm_minus_constructor_args():
+    sig = inspect.signature(logoASM_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::div_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Div)
+def test_logoasm_greater_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Greater)
 
 
-def test_logoasm::div_constructor_exists():
-    assert callable(logoASM::Div.__init__)
+def test_logoasm_greater_constructor_exists():
+    assert callable(logoASM_Greater.__init__)
 
 
-def test_logoasm::div_constructor_args():
-    sig = inspect.signature(logoASM::Div.__init__)
+def test_logoasm_greater_constructor_args():
+    sig = inspect.signature(logoASM_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::greater_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Greater)
+def test_logoasm_equals_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Equals)
 
 
-def test_logoasm::greater_constructor_exists():
-    assert callable(logoASM::Greater.__init__)
+def test_logoasm_equals_constructor_exists():
+    assert callable(logoASM_Equals.__init__)
 
 
-def test_logoasm::greater_constructor_args():
-    sig = inspect.signature(logoASM::Greater.__init__)
+def test_logoasm_equals_constructor_args():
+    sig = inspect.signature(logoASM_Equals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::equals_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Equals)
+def test_logoasm_lower_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Lower)
 
 
-def test_logoasm::equals_constructor_exists():
-    assert callable(logoASM::Equals.__init__)
+def test_logoasm_lower_constructor_exists():
+    assert callable(logoASM_Lower.__init__)
 
 
-def test_logoasm::equals_constructor_args():
-    sig = inspect.signature(logoASM::Equals.__init__)
+def test_logoasm_lower_constructor_args():
+    sig = inspect.signature(logoASM_Lower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::mult_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Mult)
+def test_logoasm_div_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Div)
 
 
-def test_logoasm::mult_constructor_exists():
-    assert callable(logoASM::Mult.__init__)
+def test_logoasm_div_constructor_exists():
+    assert callable(logoASM_Div.__init__)
 
 
-def test_logoasm::mult_constructor_args():
-    sig = inspect.signature(logoASM::Mult.__init__)
+def test_logoasm_div_constructor_args():
+    sig = inspect.signature(logoASM_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::minus_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Minus)
+def test_logoasm_mult_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Mult)
 
 
-def test_logoasm::minus_constructor_exists():
-    assert callable(logoASM::Minus.__init__)
+def test_logoasm_mult_constructor_exists():
+    assert callable(logoASM_Mult.__init__)
 
 
-def test_logoasm::minus_constructor_args():
-    sig = inspect.signature(logoASM::Minus.__init__)
+def test_logoasm_mult_constructor_args():
+    sig = inspect.signature(logoASM_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::plus_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Plus)
+def test_logoasm_plus_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Plus)
 
 
-def test_logoasm::plus_constructor_exists():
-    assert callable(logoASM::Plus.__init__)
+def test_logoasm_plus_constructor_exists():
+    assert callable(logoASM_Plus.__init__)
 
 
-def test_logoasm::plus_constructor_args():
-    sig = inspect.signature(logoASM::Plus.__init__)
+def test_logoasm_plus_constructor_args():
+    sig = inspect.signature(logoASM_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -188,30 +188,30 @@ def test_expression_constructor_args():
 
 
 
-def test_logoasm::parametercall_is_not_abstract():
-    assert not inspect.isabstract(logoASM::ParameterCall)
+def test_logoasm_parametercall_is_not_abstract():
+    assert not inspect.isabstract(logoASM_ParameterCall)
 
 
-def test_logoasm::parametercall_constructor_exists():
-    assert callable(logoASM::ParameterCall.__init__)
+def test_logoasm_parametercall_constructor_exists():
+    assert callable(logoASM_ParameterCall.__init__)
 
 
-def test_logoasm::parametercall_constructor_args():
-    sig = inspect.signature(logoASM::ParameterCall.__init__)
+def test_logoasm_parametercall_constructor_args():
+    sig = inspect.signature(logoASM_ParameterCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::binaryexp_is_not_abstract():
-    assert not inspect.isabstract(logoASM::BinaryExp)
+def test_logoasm_binaryexp_is_not_abstract():
+    assert not inspect.isabstract(logoASM_BinaryExp)
 
 
-def test_logoasm::binaryexp_constructor_exists():
-    assert callable(logoASM::BinaryExp.__init__)
+def test_logoasm_binaryexp_constructor_exists():
+    assert callable(logoASM_BinaryExp.__init__)
 
 
-def test_logoasm::binaryexp_constructor_args():
-    sig = inspect.signature(logoASM::BinaryExp.__init__)
+def test_logoasm_binaryexp_constructor_args():
+    sig = inspect.signature(logoASM_BinaryExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -230,65 +230,65 @@ def test_controlstructure_constructor_args():
 
 
 
-def test_logoasm::while_is_not_abstract():
-    assert not inspect.isabstract(logoASM::While)
+def test_logoasm_repeat_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Repeat)
 
 
-def test_logoasm::while_constructor_exists():
-    assert callable(logoASM::While.__init__)
+def test_logoasm_repeat_constructor_exists():
+    assert callable(logoASM_Repeat.__init__)
 
 
-def test_logoasm::while_constructor_args():
-    sig = inspect.signature(logoASM::While.__init__)
+def test_logoasm_repeat_constructor_args():
+    sig = inspect.signature(logoASM_Repeat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::repeat_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Repeat)
+def test_logoasm_while_is_not_abstract():
+    assert not inspect.isabstract(logoASM_While)
 
 
-def test_logoasm::repeat_constructor_exists():
-    assert callable(logoASM::Repeat.__init__)
+def test_logoasm_while_constructor_exists():
+    assert callable(logoASM_While.__init__)
 
 
-def test_logoasm::repeat_constructor_args():
-    sig = inspect.signature(logoASM::Repeat.__init__)
+def test_logoasm_while_constructor_args():
+    sig = inspect.signature(logoASM_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::if_is_not_abstract():
-    assert not inspect.isabstract(logoASM::If)
+def test_logoasm_if_is_not_abstract():
+    assert not inspect.isabstract(logoASM_If)
 
 
-def test_logoasm::if_constructor_exists():
-    assert callable(logoASM::If.__init__)
+def test_logoasm_if_constructor_exists():
+    assert callable(logoASM_If.__init__)
 
 
-def test_logoasm::if_constructor_args():
-    sig = inspect.signature(logoASM::If.__init__)
+def test_logoasm_if_constructor_args():
+    sig = inspect.signature(logoASM_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::parameter_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Parameter)
+def test_logoasm_parameter_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Parameter)
 
 
-def test_logoasm::parameter_constructor_exists():
-    assert callable(logoASM::Parameter.__init__)
+def test_logoasm_parameter_constructor_exists():
+    assert callable(logoASM_Parameter.__init__)
 
 
-def test_logoasm::parameter_constructor_args():
-    sig = inspect.signature(logoASM::Parameter.__init__)
+def test_logoasm_parameter_constructor_args():
+    sig = inspect.signature(logoASM_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logoasm::parameter_has_name():
-    assert hasattr(logoASM::Parameter, "name")
+def test_logoasm_parameter_has_name():
+    assert hasattr(logoASM_Parameter, "name")
     descriptor = None
-    for klass in logoASM::Parameter.__mro__:
+    for klass in logoASM_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -296,37 +296,37 @@ def test_logoasm::parameter_has_name():
 
 
 
-def test_logoasm::proccall_is_not_abstract():
-    assert not inspect.isabstract(logoASM::ProcCall)
+def test_logoasm_proccall_is_not_abstract():
+    assert not inspect.isabstract(logoASM_ProcCall)
 
 
-def test_logoasm::proccall_constructor_exists():
-    assert callable(logoASM::ProcCall.__init__)
+def test_logoasm_proccall_constructor_exists():
+    assert callable(logoASM_ProcCall.__init__)
 
 
-def test_logoasm::proccall_constructor_args():
-    sig = inspect.signature(logoASM::ProcCall.__init__)
+def test_logoasm_proccall_constructor_args():
+    sig = inspect.signature(logoASM_ProcCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::constant_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Constant)
+def test_logoasm_constant_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Constant)
 
 
-def test_logoasm::constant_constructor_exists():
-    assert callable(logoASM::Constant.__init__)
+def test_logoasm_constant_constructor_exists():
+    assert callable(logoASM_Constant.__init__)
 
 
-def test_logoasm::constant_constructor_args():
-    sig = inspect.signature(logoASM::Constant.__init__)
+def test_logoasm_constant_constructor_args():
+    sig = inspect.signature(logoASM_Constant.__init__)
     params = list(sig.parameters.keys())
     assert "integerValue" in params, "Missing parameter 'integerValue'"
 
-def test_logoasm::constant_has_integerValue():
-    assert hasattr(logoASM::Constant, "integerValue")
+def test_logoasm_constant_has_integerValue():
+    assert hasattr(logoASM_Constant, "integerValue")
     descriptor = None
-    for klass in logoASM::Constant.__mro__:
+    for klass in logoASM_Constant.__mro__:
         if "integerValue" in klass.__dict__:
             descriptor = klass.__dict__["integerValue"]
             break
@@ -348,100 +348,100 @@ def test_primitive_constructor_args():
 
 
 
-def test_logoasm::clear_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Clear)
+def test_logoasm_right_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Right)
 
 
-def test_logoasm::clear_constructor_exists():
-    assert callable(logoASM::Clear.__init__)
+def test_logoasm_right_constructor_exists():
+    assert callable(logoASM_Right.__init__)
 
 
-def test_logoasm::clear_constructor_args():
-    sig = inspect.signature(logoASM::Clear.__init__)
+def test_logoasm_right_constructor_args():
+    sig = inspect.signature(logoASM_Right.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::pendown_is_not_abstract():
-    assert not inspect.isabstract(logoASM::PenDown)
+def test_logoasm_pendown_is_not_abstract():
+    assert not inspect.isabstract(logoASM_PenDown)
 
 
-def test_logoasm::pendown_constructor_exists():
-    assert callable(logoASM::PenDown.__init__)
+def test_logoasm_pendown_constructor_exists():
+    assert callable(logoASM_PenDown.__init__)
 
 
-def test_logoasm::pendown_constructor_args():
-    sig = inspect.signature(logoASM::PenDown.__init__)
+def test_logoasm_pendown_constructor_args():
+    sig = inspect.signature(logoASM_PenDown.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::forward_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Forward)
+def test_logoasm_clear_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Clear)
 
 
-def test_logoasm::forward_constructor_exists():
-    assert callable(logoASM::Forward.__init__)
+def test_logoasm_clear_constructor_exists():
+    assert callable(logoASM_Clear.__init__)
 
 
-def test_logoasm::forward_constructor_args():
-    sig = inspect.signature(logoASM::Forward.__init__)
+def test_logoasm_clear_constructor_args():
+    sig = inspect.signature(logoASM_Clear.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::right_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Right)
+def test_logoasm_left_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Left)
 
 
-def test_logoasm::right_constructor_exists():
-    assert callable(logoASM::Right.__init__)
+def test_logoasm_left_constructor_exists():
+    assert callable(logoASM_Left.__init__)
 
 
-def test_logoasm::right_constructor_args():
-    sig = inspect.signature(logoASM::Right.__init__)
+def test_logoasm_left_constructor_args():
+    sig = inspect.signature(logoASM_Left.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::left_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Left)
+def test_logoasm_forward_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Forward)
 
 
-def test_logoasm::left_constructor_exists():
-    assert callable(logoASM::Left.__init__)
+def test_logoasm_forward_constructor_exists():
+    assert callable(logoASM_Forward.__init__)
 
 
-def test_logoasm::left_constructor_args():
-    sig = inspect.signature(logoASM::Left.__init__)
+def test_logoasm_forward_constructor_args():
+    sig = inspect.signature(logoASM_Forward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::penup_is_not_abstract():
-    assert not inspect.isabstract(logoASM::PenUp)
+def test_logoasm_penup_is_not_abstract():
+    assert not inspect.isabstract(logoASM_PenUp)
 
 
-def test_logoasm::penup_constructor_exists():
-    assert callable(logoASM::PenUp.__init__)
+def test_logoasm_penup_constructor_exists():
+    assert callable(logoASM_PenUp.__init__)
 
 
-def test_logoasm::penup_constructor_args():
-    sig = inspect.signature(logoASM::PenUp.__init__)
+def test_logoasm_penup_constructor_args():
+    sig = inspect.signature(logoASM_PenUp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::back_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Back)
+def test_logoasm_back_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Back)
 
 
-def test_logoasm::back_constructor_exists():
-    assert callable(logoASM::Back.__init__)
+def test_logoasm_back_constructor_exists():
+    assert callable(logoASM_Back.__init__)
 
 
-def test_logoasm::back_constructor_args():
-    sig = inspect.signature(logoASM::Back.__init__)
+def test_logoasm_back_constructor_args():
+    sig = inspect.signature(logoASM_Back.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -460,23 +460,23 @@ def test_instruction_constructor_args():
 
 
 
-def test_logoasm::procdeclaration_is_not_abstract():
-    assert not inspect.isabstract(logoASM::ProcDeclaration)
+def test_logoasm_procdeclaration_is_not_abstract():
+    assert not inspect.isabstract(logoASM_ProcDeclaration)
 
 
-def test_logoasm::procdeclaration_constructor_exists():
-    assert callable(logoASM::ProcDeclaration.__init__)
+def test_logoasm_procdeclaration_constructor_exists():
+    assert callable(logoASM_ProcDeclaration.__init__)
 
 
-def test_logoasm::procdeclaration_constructor_args():
-    sig = inspect.signature(logoASM::ProcDeclaration.__init__)
+def test_logoasm_procdeclaration_constructor_args():
+    sig = inspect.signature(logoASM_ProcDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logoasm::procdeclaration_has_name():
-    assert hasattr(logoASM::ProcDeclaration, "name")
+def test_logoasm_procdeclaration_has_name():
+    assert hasattr(logoASM_ProcDeclaration, "name")
     descriptor = None
-    for klass in logoASM::ProcDeclaration.__mro__:
+    for klass in logoASM_ProcDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -484,72 +484,72 @@ def test_logoasm::procdeclaration_has_name():
 
 
 
-def test_logoasm::block_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Block)
+def test_logoasm_expression_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Expression)
 
 
-def test_logoasm::block_constructor_exists():
-    assert callable(logoASM::Block.__init__)
+def test_logoasm_expression_constructor_exists():
+    assert callable(logoASM_Expression.__init__)
 
 
-def test_logoasm::block_constructor_args():
-    sig = inspect.signature(logoASM::Block.__init__)
+def test_logoasm_expression_constructor_args():
+    sig = inspect.signature(logoASM_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::controlstructure_is_not_abstract():
-    assert not inspect.isabstract(logoASM::ControlStructure)
+def test_logoasm_block_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Block)
 
 
-def test_logoasm::controlstructure_constructor_exists():
-    assert callable(logoASM::ControlStructure.__init__)
+def test_logoasm_block_constructor_exists():
+    assert callable(logoASM_Block.__init__)
 
 
-def test_logoasm::controlstructure_constructor_args():
-    sig = inspect.signature(logoASM::ControlStructure.__init__)
+def test_logoasm_block_constructor_args():
+    sig = inspect.signature(logoASM_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::expression_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Expression)
+def test_logoasm_controlstructure_is_not_abstract():
+    assert not inspect.isabstract(logoASM_ControlStructure)
 
 
-def test_logoasm::expression_constructor_exists():
-    assert callable(logoASM::Expression.__init__)
+def test_logoasm_controlstructure_constructor_exists():
+    assert callable(logoASM_ControlStructure.__init__)
 
 
-def test_logoasm::expression_constructor_args():
-    sig = inspect.signature(logoASM::Expression.__init__)
+def test_logoasm_controlstructure_constructor_args():
+    sig = inspect.signature(logoASM_ControlStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::primitive_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Primitive)
+def test_logoasm_primitive_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Primitive)
 
 
-def test_logoasm::primitive_constructor_exists():
-    assert callable(logoASM::Primitive.__init__)
+def test_logoasm_primitive_constructor_exists():
+    assert callable(logoASM_Primitive.__init__)
 
 
-def test_logoasm::primitive_constructor_args():
-    sig = inspect.signature(logoASM::Primitive.__init__)
+def test_logoasm_primitive_constructor_args():
+    sig = inspect.signature(logoASM_Primitive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logoasm::instruction_is_not_abstract():
-    assert not inspect.isabstract(logoASM::Instruction)
+def test_logoasm_instruction_is_not_abstract():
+    assert not inspect.isabstract(logoASM_Instruction)
 
 
-def test_logoasm::instruction_constructor_exists():
-    assert callable(logoASM::Instruction.__init__)
+def test_logoasm_instruction_constructor_exists():
+    assert callable(logoASM_Instruction.__init__)
 
 
-def test_logoasm::instruction_constructor_args():
-    sig = inspect.signature(logoASM::Instruction.__init__)
+def test_logoasm_instruction_constructor_args():
+    sig = inspect.signature(logoASM_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -564,228 +564,222 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-logoASM::LogoProgram_strategy = st.builds(
-    logoASM::LogoProgram,
+logoASM_LogoProgram_strategy = st.builds(
+    logoASM_LogoProgram,
 )
 BinaryExp_strategy = st.builds(
     BinaryExp,
 )
-logoASM::Lower_strategy = st.builds(
-    logoASM::Lower,
+logoASM_Minus_strategy = st.builds(
+    logoASM_Minus,
 )
-logoASM::Div_strategy = st.builds(
-    logoASM::Div,
+logoASM_Greater_strategy = st.builds(
+    logoASM_Greater,
 )
-logoASM::Greater_strategy = st.builds(
-    logoASM::Greater,
+logoASM_Equals_strategy = st.builds(
+    logoASM_Equals,
 )
-logoASM::Equals_strategy = st.builds(
-    logoASM::Equals,
+logoASM_Lower_strategy = st.builds(
+    logoASM_Lower,
 )
-logoASM::Mult_strategy = st.builds(
-    logoASM::Mult,
+logoASM_Div_strategy = st.builds(
+    logoASM_Div,
 )
-logoASM::Minus_strategy = st.builds(
-    logoASM::Minus,
+logoASM_Mult_strategy = st.builds(
+    logoASM_Mult,
 )
-logoASM::Plus_strategy = st.builds(
-    logoASM::Plus,
+logoASM_Plus_strategy = st.builds(
+    logoASM_Plus,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-logoASM::ParameterCall_strategy = st.builds(
-    logoASM::ParameterCall,
+logoASM_ParameterCall_strategy = st.builds(
+    logoASM_ParameterCall,
 )
-logoASM::BinaryExp_strategy = st.builds(
-    logoASM::BinaryExp,
+logoASM_BinaryExp_strategy = st.builds(
+    logoASM_BinaryExp,
 )
 ControlStructure_strategy = st.builds(
     ControlStructure,
 )
-logoASM::While_strategy = st.builds(
-    logoASM::While,
+logoASM_Repeat_strategy = st.builds(
+    logoASM_Repeat,
 )
-logoASM::Repeat_strategy = st.builds(
-    logoASM::Repeat,
+logoASM_While_strategy = st.builds(
+    logoASM_While,
 )
-logoASM::If_strategy = st.builds(
-    logoASM::If,
+logoASM_If_strategy = st.builds(
+    logoASM_If,
 )
-logoASM::Parameter_strategy = st.builds(
-    logoASM::Parameter,
+logoASM_Parameter_strategy = st.builds(
+    logoASM_Parameter,
     name=
         safe_text
 )
-logoASM::ProcCall_strategy = st.builds(
-    logoASM::ProcCall,
+logoASM_ProcCall_strategy = st.builds(
+    logoASM_ProcCall,
 )
-logoASM::Constant_strategy = st.builds(
-    logoASM::Constant,
+logoASM_Constant_strategy = st.builds(
+    logoASM_Constant,
     integerValue=
         st.integers()
 )
 Primitive_strategy = st.builds(
     Primitive,
 )
-logoASM::Clear_strategy = st.builds(
-    logoASM::Clear,
+logoASM_Right_strategy = st.builds(
+    logoASM_Right,
 )
-logoASM::PenDown_strategy = st.builds(
-    logoASM::PenDown,
+logoASM_PenDown_strategy = st.builds(
+    logoASM_PenDown,
 )
-logoASM::Forward_strategy = st.builds(
-    logoASM::Forward,
+logoASM_Clear_strategy = st.builds(
+    logoASM_Clear,
 )
-logoASM::Right_strategy = st.builds(
-    logoASM::Right,
+logoASM_Left_strategy = st.builds(
+    logoASM_Left,
 )
-logoASM::Left_strategy = st.builds(
-    logoASM::Left,
+logoASM_Forward_strategy = st.builds(
+    logoASM_Forward,
 )
-logoASM::PenUp_strategy = st.builds(
-    logoASM::PenUp,
+logoASM_PenUp_strategy = st.builds(
+    logoASM_PenUp,
 )
-logoASM::Back_strategy = st.builds(
-    logoASM::Back,
+logoASM_Back_strategy = st.builds(
+    logoASM_Back,
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-logoASM::ProcDeclaration_strategy = st.builds(
-    logoASM::ProcDeclaration,
+logoASM_ProcDeclaration_strategy = st.builds(
+    logoASM_ProcDeclaration,
     name=
         safe_text
 )
-logoASM::Block_strategy = st.builds(
-    logoASM::Block,
+logoASM_Expression_strategy = st.builds(
+    logoASM_Expression,
 )
-logoASM::ControlStructure_strategy = st.builds(
-    logoASM::ControlStructure,
+logoASM_Block_strategy = st.builds(
+    logoASM_Block,
 )
-logoASM::Expression_strategy = st.builds(
-    logoASM::Expression,
+logoASM_ControlStructure_strategy = st.builds(
+    logoASM_ControlStructure,
 )
-logoASM::Primitive_strategy = st.builds(
-    logoASM::Primitive,
+logoASM_Primitive_strategy = st.builds(
+    logoASM_Primitive,
 )
-logoASM::Instruction_strategy = st.builds(
-    logoASM::Instruction,
+logoASM_Instruction_strategy = st.builds(
+    logoASM_Instruction,
 )
 
-@given(instance=logoASM::LogoProgram_strategy)
+@given(instance=logoASM_LogoProgram_strategy)
 @settings(max_examples=50)
-def test_logoasm::logoprogram_instantiation(instance):
-    assert isinstance(instance, logoASM::LogoProgram)
+def test_logoasm_logoprogram_instantiation(instance):
+    assert isinstance(instance, logoASM_LogoProgram)
 
 @given(instance=BinaryExp_strategy)
 @settings(max_examples=50)
 def test_binaryexp_instantiation(instance):
     assert isinstance(instance, BinaryExp)
 
-@given(instance=logoASM::Lower_strategy)
+@given(instance=logoASM_Minus_strategy)
 @settings(max_examples=50)
-def test_logoasm::lower_instantiation(instance):
-    assert isinstance(instance, logoASM::Lower)
+def test_logoasm_minus_instantiation(instance):
+    assert isinstance(instance, logoASM_Minus)
 
-@given(instance=logoASM::Div_strategy)
+@given(instance=logoASM_Greater_strategy)
 @settings(max_examples=50)
-def test_logoasm::div_instantiation(instance):
-    assert isinstance(instance, logoASM::Div)
+def test_logoasm_greater_instantiation(instance):
+    assert isinstance(instance, logoASM_Greater)
 
-@given(instance=logoASM::Greater_strategy)
+@given(instance=logoASM_Equals_strategy)
 @settings(max_examples=50)
-def test_logoasm::greater_instantiation(instance):
-    assert isinstance(instance, logoASM::Greater)
+def test_logoasm_equals_instantiation(instance):
+    assert isinstance(instance, logoASM_Equals)
 
-@given(instance=logoASM::Equals_strategy)
+@given(instance=logoASM_Lower_strategy)
 @settings(max_examples=50)
-def test_logoasm::equals_instantiation(instance):
-    assert isinstance(instance, logoASM::Equals)
+def test_logoasm_lower_instantiation(instance):
+    assert isinstance(instance, logoASM_Lower)
 
-@given(instance=logoASM::Mult_strategy)
+@given(instance=logoASM_Div_strategy)
 @settings(max_examples=50)
-def test_logoasm::mult_instantiation(instance):
-    assert isinstance(instance, logoASM::Mult)
+def test_logoasm_div_instantiation(instance):
+    assert isinstance(instance, logoASM_Div)
 
-@given(instance=logoASM::Minus_strategy)
+@given(instance=logoASM_Mult_strategy)
 @settings(max_examples=50)
-def test_logoasm::minus_instantiation(instance):
-    assert isinstance(instance, logoASM::Minus)
+def test_logoasm_mult_instantiation(instance):
+    assert isinstance(instance, logoASM_Mult)
 
-@given(instance=logoASM::Plus_strategy)
+@given(instance=logoASM_Plus_strategy)
 @settings(max_examples=50)
-def test_logoasm::plus_instantiation(instance):
-    assert isinstance(instance, logoASM::Plus)
+def test_logoasm_plus_instantiation(instance):
+    assert isinstance(instance, logoASM_Plus)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=logoASM::ParameterCall_strategy)
+@given(instance=logoASM_ParameterCall_strategy)
 @settings(max_examples=50)
-def test_logoasm::parametercall_instantiation(instance):
-    assert isinstance(instance, logoASM::ParameterCall)
+def test_logoasm_parametercall_instantiation(instance):
+    assert isinstance(instance, logoASM_ParameterCall)
 
-@given(instance=logoASM::BinaryExp_strategy)
+@given(instance=logoASM_BinaryExp_strategy)
 @settings(max_examples=50)
-def test_logoasm::binaryexp_instantiation(instance):
-    assert isinstance(instance, logoASM::BinaryExp)
+def test_logoasm_binaryexp_instantiation(instance):
+    assert isinstance(instance, logoASM_BinaryExp)
 
 @given(instance=ControlStructure_strategy)
 @settings(max_examples=50)
 def test_controlstructure_instantiation(instance):
     assert isinstance(instance, ControlStructure)
 
-@given(instance=logoASM::While_strategy)
+@given(instance=logoASM_Repeat_strategy)
 @settings(max_examples=50)
-def test_logoasm::while_instantiation(instance):
-    assert isinstance(instance, logoASM::While)
+def test_logoasm_repeat_instantiation(instance):
+    assert isinstance(instance, logoASM_Repeat)
 
-@given(instance=logoASM::Repeat_strategy)
+@given(instance=logoASM_While_strategy)
 @settings(max_examples=50)
-def test_logoasm::repeat_instantiation(instance):
-    assert isinstance(instance, logoASM::Repeat)
+def test_logoasm_while_instantiation(instance):
+    assert isinstance(instance, logoASM_While)
 
-@given(instance=logoASM::If_strategy)
+@given(instance=logoASM_If_strategy)
 @settings(max_examples=50)
-def test_logoasm::if_instantiation(instance):
-    assert isinstance(instance, logoASM::If)
+def test_logoasm_if_instantiation(instance):
+    assert isinstance(instance, logoASM_If)
 
-@given(instance=logoASM::Parameter_strategy)
+@given(instance=logoASM_Parameter_strategy)
 @settings(max_examples=50)
-def test_logoasm::parameter_instantiation(instance):
-    assert isinstance(instance, logoASM::Parameter)
-
-@given(instance=logoASM::Parameter_strategy)
-def test_logoasm::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logoasm_parameter_instantiation(instance):
+    assert isinstance(instance, logoASM_Parameter)
 
 
-@given(instance=logoASM::Parameter_strategy)
-def test_logoasm::parameter_name_setter(instance):
+
+@given(instance=logoASM_Parameter_strategy)
+def test_logoasm_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=logoASM::ProcCall_strategy)
+@given(instance=logoASM_ProcCall_strategy)
 @settings(max_examples=50)
-def test_logoasm::proccall_instantiation(instance):
-    assert isinstance(instance, logoASM::ProcCall)
+def test_logoasm_proccall_instantiation(instance):
+    assert isinstance(instance, logoASM_ProcCall)
 
-@given(instance=logoASM::Constant_strategy)
+@given(instance=logoASM_Constant_strategy)
 @settings(max_examples=50)
-def test_logoasm::constant_instantiation(instance):
-    assert isinstance(instance, logoASM::Constant)
-
-@given(instance=logoASM::Constant_strategy)
-def test_logoasm::constant_integerValue_type(instance):
-    assert isinstance(instance.integerValue, int)
+def test_logoasm_constant_instantiation(instance):
+    assert isinstance(instance, logoASM_Constant)
 
 
-@given(instance=logoASM::Constant_strategy)
-def test_logoasm::constant_integerValue_setter(instance):
+
+@given(instance=logoASM_Constant_strategy)
+def test_logoasm_constant_integerValue_setter(instance):
     original = instance.integerValue
     instance.integerValue = original
     assert instance.integerValue == original
@@ -795,83 +789,80 @@ def test_logoasm::constant_integerValue_setter(instance):
 def test_primitive_instantiation(instance):
     assert isinstance(instance, Primitive)
 
-@given(instance=logoASM::Clear_strategy)
+@given(instance=logoASM_Right_strategy)
 @settings(max_examples=50)
-def test_logoasm::clear_instantiation(instance):
-    assert isinstance(instance, logoASM::Clear)
+def test_logoasm_right_instantiation(instance):
+    assert isinstance(instance, logoASM_Right)
 
-@given(instance=logoASM::PenDown_strategy)
+@given(instance=logoASM_PenDown_strategy)
 @settings(max_examples=50)
-def test_logoasm::pendown_instantiation(instance):
-    assert isinstance(instance, logoASM::PenDown)
+def test_logoasm_pendown_instantiation(instance):
+    assert isinstance(instance, logoASM_PenDown)
 
-@given(instance=logoASM::Forward_strategy)
+@given(instance=logoASM_Clear_strategy)
 @settings(max_examples=50)
-def test_logoasm::forward_instantiation(instance):
-    assert isinstance(instance, logoASM::Forward)
+def test_logoasm_clear_instantiation(instance):
+    assert isinstance(instance, logoASM_Clear)
 
-@given(instance=logoASM::Right_strategy)
+@given(instance=logoASM_Left_strategy)
 @settings(max_examples=50)
-def test_logoasm::right_instantiation(instance):
-    assert isinstance(instance, logoASM::Right)
+def test_logoasm_left_instantiation(instance):
+    assert isinstance(instance, logoASM_Left)
 
-@given(instance=logoASM::Left_strategy)
+@given(instance=logoASM_Forward_strategy)
 @settings(max_examples=50)
-def test_logoasm::left_instantiation(instance):
-    assert isinstance(instance, logoASM::Left)
+def test_logoasm_forward_instantiation(instance):
+    assert isinstance(instance, logoASM_Forward)
 
-@given(instance=logoASM::PenUp_strategy)
+@given(instance=logoASM_PenUp_strategy)
 @settings(max_examples=50)
-def test_logoasm::penup_instantiation(instance):
-    assert isinstance(instance, logoASM::PenUp)
+def test_logoasm_penup_instantiation(instance):
+    assert isinstance(instance, logoASM_PenUp)
 
-@given(instance=logoASM::Back_strategy)
+@given(instance=logoASM_Back_strategy)
 @settings(max_examples=50)
-def test_logoasm::back_instantiation(instance):
-    assert isinstance(instance, logoASM::Back)
+def test_logoasm_back_instantiation(instance):
+    assert isinstance(instance, logoASM_Back)
 
 @given(instance=Instruction_strategy)
 @settings(max_examples=50)
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=logoASM::ProcDeclaration_strategy)
+@given(instance=logoASM_ProcDeclaration_strategy)
 @settings(max_examples=50)
-def test_logoasm::procdeclaration_instantiation(instance):
-    assert isinstance(instance, logoASM::ProcDeclaration)
-
-@given(instance=logoASM::ProcDeclaration_strategy)
-def test_logoasm::procdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logoasm_procdeclaration_instantiation(instance):
+    assert isinstance(instance, logoASM_ProcDeclaration)
 
 
-@given(instance=logoASM::ProcDeclaration_strategy)
-def test_logoasm::procdeclaration_name_setter(instance):
+
+@given(instance=logoASM_ProcDeclaration_strategy)
+def test_logoasm_procdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=logoASM::Block_strategy)
+@given(instance=logoASM_Expression_strategy)
 @settings(max_examples=50)
-def test_logoasm::block_instantiation(instance):
-    assert isinstance(instance, logoASM::Block)
+def test_logoasm_expression_instantiation(instance):
+    assert isinstance(instance, logoASM_Expression)
 
-@given(instance=logoASM::ControlStructure_strategy)
+@given(instance=logoASM_Block_strategy)
 @settings(max_examples=50)
-def test_logoasm::controlstructure_instantiation(instance):
-    assert isinstance(instance, logoASM::ControlStructure)
+def test_logoasm_block_instantiation(instance):
+    assert isinstance(instance, logoASM_Block)
 
-@given(instance=logoASM::Expression_strategy)
+@given(instance=logoASM_ControlStructure_strategy)
 @settings(max_examples=50)
-def test_logoasm::expression_instantiation(instance):
-    assert isinstance(instance, logoASM::Expression)
+def test_logoasm_controlstructure_instantiation(instance):
+    assert isinstance(instance, logoASM_ControlStructure)
 
-@given(instance=logoASM::Primitive_strategy)
+@given(instance=logoASM_Primitive_strategy)
 @settings(max_examples=50)
-def test_logoasm::primitive_instantiation(instance):
-    assert isinstance(instance, logoASM::Primitive)
+def test_logoasm_primitive_instantiation(instance):
+    assert isinstance(instance, logoASM_Primitive)
 
-@given(instance=logoASM::Instruction_strategy)
+@given(instance=logoASM_Instruction_strategy)
 @settings(max_examples=50)
-def test_logoasm::instruction_instantiation(instance):
-    assert isinstance(instance, logoASM::Instruction)
+def test_logoasm_instruction_instantiation(instance):
+    assert isinstance(instance, logoASM_Instruction)

@@ -1,0 +1,19 @@
+The model has 6 class(es).
+The class 'Project' has the following attributes: 'Subscriptions___' of type str; 'Author' of type User; 'Attachments___' of type str; 'ProjectManager' of type User; 'Assignee' of type User; 'Title' of type str; 'PorjectID' of type int; 'Created' of type str; 'Activities___' of type str; 'Comments___' of type str; 'PriorityID' of type int; 'Team___' of type str; 'Description' of type str; 'Deadline' of type str; 'StatusID' of type int.
+The class 'User' has the following attributes: 'Dateofbirth' of type str; 'Active' of type bool; 'Hiredate' of type str; 'Username' of type str; 'Position' of type str; 'TitleID' of type int; 'DepartmentID' of type int; 'Lastname' of type str; 'Linkedin_link' of type str; 'Facebook_link' of type str; 'About' of type str; 'Email' of type str; 'Password' of type str; 'UserID' of type int; 'Roles___' of type str; 'Firstname' of type str; 'Settings' of type str; 'Google_plus_link' of type str; 'Phone' of type str.
+The class 'Activity' has the following attributes: 'Project' of type Project; 'ActivityType' of type int; 'Seen' of type bool; 'NewValue' of type str; 'ActivityID' of type int; 'ActivitySubType' of type int; 'PrevValue' of type str; 'User' of type User.
+The class 'Attachment' has the following attributes: 'Path' of type str; 'Size' of type str; 'AttachmentID' of type int; 'Project' of type Project; 'User' of type User; 'Name' of type str; 'Created' of type str; 'Extension' of type str.
+The class 'Comment' has the following attributes: 'Content' of type str; 'Created' of type str; 'Project' of type Project; 'CommentID' of type int; 'User' of type User.
+The class 'Role' has the following attributes: 'RoleID' of type int; 'Name' of type String; 'Description' of type str.
+The enumeration 'String' does not specify any literals.
+'Project' (role 'Comment10', cardinality 0..*) is associated with 'Comment' (role 'Project11', cardinality 0..*).
+'Project' (role 'Activity8', cardinality 0..*) is associated with 'Activity' (role 'Project9', cardinality 0..*).
+'User' (role 'Author0', cardinality 0..*) is associated with 'Project' (role 'User1', cardinality 0..*).
+'Project' (role 'User3', cardinality 0..*) is associated with 'User' (role 'ProjectMan_2', cardinality 0..*).
+'Attachment' (role 'User15', cardinality 0..*) is associated with 'User' (role 'Attachment14', cardinality 0..*).
+'Project' (role 'User5', cardinality 0..*) is associated with 'User' (role 'Assignee4', cardinality 0..*).
+'User' (role 'Comment12', cardinality 0..*) is associated with 'Comment' (role 'User13', cardinality 0..*).
+'Project' (role 'Attachment16', cardinality 0..*) is associated with 'Attachment' (role 'Project17', cardinality 0..*).
+'Activity' (role 'User7', cardinality 0..*) is associated with 'User' (role 'Activity6', cardinality 0..*).
+'Project' (role 'User20', cardinality 0..*) is associated with 'User' (role 'Project21', cardinality 0..*).
+'Role' (role 'User19', cardinality 0..*) is associated with 'User' (role 'Role18', cardinality 0..*).

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    myDsl::Import,
-    myDsl::Greeting,
-    myDsl::Model,
+from python_code import (
+    myDsl_Import,
+    myDsl_Greeting,
+    myDsl_Model,
 )
 
 # =============================================================================
@@ -17,33 +17,33 @@ from classes import (
 
 
 
-def test_mydsl::import_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Import)
+def test_mydsl_import_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Import)
 
 
-def test_mydsl::import_constructor_exists():
-    assert callable(myDsl::Import.__init__)
+def test_mydsl_import_constructor_exists():
+    assert callable(myDsl_Import.__init__)
 
 
-def test_mydsl::import_constructor_args():
-    sig = inspect.signature(myDsl::Import.__init__)
+def test_mydsl_import_constructor_args():
+    sig = inspect.signature(myDsl_Import.__init__)
     params = list(sig.parameters.keys())
     assert "Import_type" in params, "Missing parameter 'Import_type'"
     assert "import_num" in params, "Missing parameter 'import_num'"
 
-def test_mydsl::import_has_Import_type():
-    assert hasattr(myDsl::Import, "Import_type")
+def test_mydsl_import_has_Import_type():
+    assert hasattr(myDsl_Import, "Import_type")
     descriptor = None
-    for klass in myDsl::Import.__mro__:
+    for klass in myDsl_Import.__mro__:
         if "Import_type" in klass.__dict__:
             descriptor = klass.__dict__["Import_type"]
             break
     assert isinstance(descriptor, property)
 
-def test_mydsl::import_has_import_num():
-    assert hasattr(myDsl::Import, "import_num")
+def test_mydsl_import_has_import_num():
+    assert hasattr(myDsl_Import, "import_num")
     descriptor = None
-    for klass in myDsl::Import.__mro__:
+    for klass in myDsl_Import.__mro__:
         if "import_num" in klass.__dict__:
             descriptor = klass.__dict__["import_num"]
             break
@@ -51,23 +51,23 @@ def test_mydsl::import_has_import_num():
 
 
 
-def test_mydsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Greeting)
+def test_mydsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Greeting)
 
 
-def test_mydsl::greeting_constructor_exists():
-    assert callable(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_exists():
+    assert callable(myDsl_Greeting.__init__)
 
 
-def test_mydsl::greeting_constructor_args():
-    sig = inspect.signature(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_args():
+    sig = inspect.signature(myDsl_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::greeting_has_name():
-    assert hasattr(myDsl::Greeting, "name")
+def test_mydsl_greeting_has_name():
+    assert hasattr(myDsl_Greeting, "name")
     descriptor = None
-    for klass in myDsl::Greeting.__mro__:
+    for klass in myDsl_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -75,16 +75,16 @@ def test_mydsl::greeting_has_name():
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-myDsl::Import_strategy = st.builds(
-    myDsl::Import,
+myDsl_Import_strategy = st.builds(
+    myDsl_Import,
     Import_type=
         safe_text,
     import_num=
         st.integers()
 )
-myDsl::Greeting_strategy = st.builds(
-    myDsl::Greeting,
+myDsl_Greeting_strategy = st.builds(
+    myDsl_Greeting,
     name=
         safe_text
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
 
-@given(instance=myDsl::Import_strategy)
+@given(instance=myDsl_Import_strategy)
 @settings(max_examples=50)
-def test_mydsl::import_instantiation(instance):
-    assert isinstance(instance, myDsl::Import)
-
-@given(instance=myDsl::Import_strategy)
-def test_mydsl::import_Import_type_type(instance):
-    assert isinstance(instance.Import_type, str)
+def test_mydsl_import_instantiation(instance):
+    assert isinstance(instance, myDsl_Import)
 
 
-@given(instance=myDsl::Import_strategy)
-def test_mydsl::import_Import_type_setter(instance):
+
+@given(instance=myDsl_Import_strategy)
+def test_mydsl_import_Import_type_setter(instance):
     original = instance.Import_type
     instance.Import_type = original
     assert instance.Import_type == original
 
-@given(instance=myDsl::Import_strategy)
-def test_mydsl::import_import_num_type(instance):
-    assert isinstance(instance.import_num, int)
 
 
-@given(instance=myDsl::Import_strategy)
-def test_mydsl::import_import_num_setter(instance):
+@given(instance=myDsl_Import_strategy)
+def test_mydsl_import_import_num_setter(instance):
     original = instance.import_num
     instance.import_num = original
     assert instance.import_num == original
 
-@given(instance=myDsl::Greeting_strategy)
+@given(instance=myDsl_Greeting_strategy)
 @settings(max_examples=50)
-def test_mydsl::greeting_instantiation(instance):
-    assert isinstance(instance, myDsl::Greeting)
-
-@given(instance=myDsl::Greeting_strategy)
-def test_mydsl::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_greeting_instantiation(instance):
+    assert isinstance(instance, myDsl_Greeting)
 
 
-@given(instance=myDsl::Greeting_strategy)
-def test_mydsl::greeting_name_setter(instance):
+
+@given(instance=myDsl_Greeting_strategy)
+def test_mydsl_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)

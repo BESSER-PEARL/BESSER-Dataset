@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    UMLRealTimeStateMach::RTTrigger,
-    UMLRealTimeStateMach::Pseudostate,
-    UMLRealTimeStateMach::Operation,
-    UMLRealTimeStateMach::RTPseudostate,
-    UMLRealTimeStateMach::State,
-    UMLRealTimeStateMach::RTState,
-    UMLRealTimeStateMach::Region,
-    UMLRealTimeStateMach::RTRegion,
-    UMLRealTimeStateMach::StateMachine,
-    UMLRealTimeStateMach::RTStateMachine,
+from python_code import (
+    UMLRealTimeStateMach_RTTrigger,
+    UMLRealTimeStateMach_Pseudostate,
+    UMLRealTimeStateMach_Operation,
+    UMLRealTimeStateMach_RTPseudostate,
+    UMLRealTimeStateMach_State,
+    UMLRealTimeStateMach_RTState,
+    UMLRealTimeStateMach_Region,
+    UMLRealTimeStateMach_RTRegion,
+    UMLRealTimeStateMach_StateMachine,
+    UMLRealTimeStateMach_RTStateMachine,
 )
 
 # =============================================================================
@@ -24,149 +24,149 @@ from classes import (
 
 
 
-def test_umlrealtimestatemach::rttrigger_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::RTTrigger)
+def test_umlrealtimestatemach_rttrigger_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_RTTrigger)
 
 
-def test_umlrealtimestatemach::rttrigger_constructor_exists():
-    assert callable(UMLRealTimeStateMach::RTTrigger.__init__)
+def test_umlrealtimestatemach_rttrigger_constructor_exists():
+    assert callable(UMLRealTimeStateMach_RTTrigger.__init__)
 
 
-def test_umlrealtimestatemach::rttrigger_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::RTTrigger.__init__)
+def test_umlrealtimestatemach_rttrigger_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_RTTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::Pseudostate)
+def test_umlrealtimestatemach_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_Pseudostate)
 
 
-def test_umlrealtimestatemach::pseudostate_constructor_exists():
-    assert callable(UMLRealTimeStateMach::Pseudostate.__init__)
+def test_umlrealtimestatemach_pseudostate_constructor_exists():
+    assert callable(UMLRealTimeStateMach_Pseudostate.__init__)
 
 
-def test_umlrealtimestatemach::pseudostate_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::Pseudostate.__init__)
+def test_umlrealtimestatemach_pseudostate_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_Pseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::operation_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::Operation)
+def test_umlrealtimestatemach_operation_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_Operation)
 
 
-def test_umlrealtimestatemach::operation_constructor_exists():
-    assert callable(UMLRealTimeStateMach::Operation.__init__)
+def test_umlrealtimestatemach_operation_constructor_exists():
+    assert callable(UMLRealTimeStateMach_Operation.__init__)
 
 
-def test_umlrealtimestatemach::operation_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::Operation.__init__)
+def test_umlrealtimestatemach_operation_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::rtpseudostate_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::RTPseudostate)
+def test_umlrealtimestatemach_rtpseudostate_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_RTPseudostate)
 
 
-def test_umlrealtimestatemach::rtpseudostate_constructor_exists():
-    assert callable(UMLRealTimeStateMach::RTPseudostate.__init__)
+def test_umlrealtimestatemach_rtpseudostate_constructor_exists():
+    assert callable(UMLRealTimeStateMach_RTPseudostate.__init__)
 
 
-def test_umlrealtimestatemach::rtpseudostate_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::RTPseudostate.__init__)
+def test_umlrealtimestatemach_rtpseudostate_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_RTPseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::state_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::State)
+def test_umlrealtimestatemach_state_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_State)
 
 
-def test_umlrealtimestatemach::state_constructor_exists():
-    assert callable(UMLRealTimeStateMach::State.__init__)
+def test_umlrealtimestatemach_state_constructor_exists():
+    assert callable(UMLRealTimeStateMach_State.__init__)
 
 
-def test_umlrealtimestatemach::state_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::State.__init__)
+def test_umlrealtimestatemach_state_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::rtstate_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::RTState)
+def test_umlrealtimestatemach_rtstate_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_RTState)
 
 
-def test_umlrealtimestatemach::rtstate_constructor_exists():
-    assert callable(UMLRealTimeStateMach::RTState.__init__)
+def test_umlrealtimestatemach_rtstate_constructor_exists():
+    assert callable(UMLRealTimeStateMach_RTState.__init__)
 
 
-def test_umlrealtimestatemach::rtstate_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::RTState.__init__)
+def test_umlrealtimestatemach_rtstate_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_RTState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::region_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::Region)
+def test_umlrealtimestatemach_region_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_Region)
 
 
-def test_umlrealtimestatemach::region_constructor_exists():
-    assert callable(UMLRealTimeStateMach::Region.__init__)
+def test_umlrealtimestatemach_region_constructor_exists():
+    assert callable(UMLRealTimeStateMach_Region.__init__)
 
 
-def test_umlrealtimestatemach::region_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::Region.__init__)
+def test_umlrealtimestatemach_region_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::rtregion_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::RTRegion)
+def test_umlrealtimestatemach_rtregion_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_RTRegion)
 
 
-def test_umlrealtimestatemach::rtregion_constructor_exists():
-    assert callable(UMLRealTimeStateMach::RTRegion.__init__)
+def test_umlrealtimestatemach_rtregion_constructor_exists():
+    assert callable(UMLRealTimeStateMach_RTRegion.__init__)
 
 
-def test_umlrealtimestatemach::rtregion_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::RTRegion.__init__)
+def test_umlrealtimestatemach_rtregion_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_RTRegion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::statemachine_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::StateMachine)
+def test_umlrealtimestatemach_statemachine_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_StateMachine)
 
 
-def test_umlrealtimestatemach::statemachine_constructor_exists():
-    assert callable(UMLRealTimeStateMach::StateMachine.__init__)
+def test_umlrealtimestatemach_statemachine_constructor_exists():
+    assert callable(UMLRealTimeStateMach_StateMachine.__init__)
 
 
-def test_umlrealtimestatemach::statemachine_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::StateMachine.__init__)
+def test_umlrealtimestatemach_statemachine_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlrealtimestatemach::rtstatemachine_is_not_abstract():
-    assert not inspect.isabstract(UMLRealTimeStateMach::RTStateMachine)
+def test_umlrealtimestatemach_rtstatemachine_is_not_abstract():
+    assert not inspect.isabstract(UMLRealTimeStateMach_RTStateMachine)
 
 
-def test_umlrealtimestatemach::rtstatemachine_constructor_exists():
-    assert callable(UMLRealTimeStateMach::RTStateMachine.__init__)
+def test_umlrealtimestatemach_rtstatemachine_constructor_exists():
+    assert callable(UMLRealTimeStateMach_RTStateMachine.__init__)
 
 
-def test_umlrealtimestatemach::rtstatemachine_constructor_args():
-    sig = inspect.signature(UMLRealTimeStateMach::RTStateMachine.__init__)
+def test_umlrealtimestatemach_rtstatemachine_constructor_args():
+    sig = inspect.signature(UMLRealTimeStateMach_RTStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "isPassive" in params, "Missing parameter 'isPassive'"
 
-def test_umlrealtimestatemach::rtstatemachine_has_isPassive():
-    assert hasattr(UMLRealTimeStateMach::RTStateMachine, "isPassive")
+def test_umlrealtimestatemach_rtstatemachine_has_isPassive():
+    assert hasattr(UMLRealTimeStateMach_RTStateMachine, "isPassive")
     descriptor = None
-    for klass in UMLRealTimeStateMach::RTStateMachine.__mro__:
+    for klass in UMLRealTimeStateMach_RTStateMachine.__mro__:
         if "isPassive" in klass.__dict__:
             descriptor = klass.__dict__["isPassive"]
             break
@@ -184,58 +184,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-UMLRealTimeStateMach::RTTrigger_strategy = st.builds(
-    UMLRealTimeStateMach::RTTrigger,
+UMLRealTimeStateMach_RTTrigger_strategy = st.builds(
+    UMLRealTimeStateMach_RTTrigger,
 )
-UMLRealTimeStateMach::Pseudostate_strategy = st.builds(
-    UMLRealTimeStateMach::Pseudostate,
+UMLRealTimeStateMach_Pseudostate_strategy = st.builds(
+    UMLRealTimeStateMach_Pseudostate,
 )
-UMLRealTimeStateMach::Operation_strategy = st.builds(
-    UMLRealTimeStateMach::Operation,
+UMLRealTimeStateMach_Operation_strategy = st.builds(
+    UMLRealTimeStateMach_Operation,
 )
-UMLRealTimeStateMach::RTPseudostate_strategy = st.builds(
-    UMLRealTimeStateMach::RTPseudostate,
+UMLRealTimeStateMach_RTPseudostate_strategy = st.builds(
+    UMLRealTimeStateMach_RTPseudostate,
 )
-UMLRealTimeStateMach::State_strategy = st.builds(
-    UMLRealTimeStateMach::State,
+UMLRealTimeStateMach_State_strategy = st.builds(
+    UMLRealTimeStateMach_State,
 )
-UMLRealTimeStateMach::RTState_strategy = st.builds(
-    UMLRealTimeStateMach::RTState,
+UMLRealTimeStateMach_RTState_strategy = st.builds(
+    UMLRealTimeStateMach_RTState,
 )
-UMLRealTimeStateMach::Region_strategy = st.builds(
-    UMLRealTimeStateMach::Region,
+UMLRealTimeStateMach_Region_strategy = st.builds(
+    UMLRealTimeStateMach_Region,
 )
-UMLRealTimeStateMach::RTRegion_strategy = st.builds(
-    UMLRealTimeStateMach::RTRegion,
+UMLRealTimeStateMach_RTRegion_strategy = st.builds(
+    UMLRealTimeStateMach_RTRegion,
 )
-UMLRealTimeStateMach::StateMachine_strategy = st.builds(
-    UMLRealTimeStateMach::StateMachine,
+UMLRealTimeStateMach_StateMachine_strategy = st.builds(
+    UMLRealTimeStateMach_StateMachine,
 )
-UMLRealTimeStateMach::RTStateMachine_strategy = st.builds(
-    UMLRealTimeStateMach::RTStateMachine,
+UMLRealTimeStateMach_RTStateMachine_strategy = st.builds(
+    UMLRealTimeStateMach_RTStateMachine,
     isPassive=
         safe_text
 )
 
-@given(instance=UMLRealTimeStateMach::RTTrigger_strategy)
+@given(instance=UMLRealTimeStateMach_RTTrigger_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::rttrigger_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::RTTrigger)
+def test_umlrealtimestatemach_rttrigger_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_RTTrigger)
 
-@given(instance=UMLRealTimeStateMach::Pseudostate_strategy)
+@given(instance=UMLRealTimeStateMach_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::pseudostate_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::Pseudostate)
+def test_umlrealtimestatemach_pseudostate_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_Pseudostate)
 
-@given(instance=UMLRealTimeStateMach::Operation_strategy)
+@given(instance=UMLRealTimeStateMach_Operation_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::operation_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::Operation)
+def test_umlrealtimestatemach_operation_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_Operation)
 
-@given(instance=UMLRealTimeStateMach::RTPseudostate_strategy)
+@given(instance=UMLRealTimeStateMach_RTPseudostate_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::rtpseudostate_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::RTPseudostate)
+def test_umlrealtimestatemach_rtpseudostate_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_RTPseudostate)
 
 import warnings
 import copy
@@ -243,9 +243,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTPseudostate_strategy)
+@given(instance=UMLRealTimeStateMach_RTPseudostate_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtpseudostate_rtstatemachinesdonotsupportconcurrencyorshallowhistory_changes_state(instance):
+def test_umlrealtimestatemach_rtpseudostate_rtstatemachinesdonotsupportconcurrencyorshallowhistory_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -260,24 +260,24 @@ def test_umlrealtimestatemach::rtpseudostate_rtstatemachinesdonotsupportconcurre
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RTstatemachinesdonotsupportconcurrencyorshallowhistory' in UMLRealTimeStateMach::RTPseudostate is empty"
+        assert has_statements, f"Function 'RTstatemachinesdonotsupportconcurrencyorshallowhistory' in UMLRealTimeStateMach_RTPseudostate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RTstatemachinesdonotsupportconcurrencyorshallowhistory' in UMLRealTimeStateMach::RTPseudostate did not change state; check implementation")
+            warnings.warn(f"Operation 'RTstatemachinesdonotsupportconcurrencyorshallowhistory' in UMLRealTimeStateMach_RTPseudostate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RTstatemachinesdonotsupportconcurrencyorshallowhistory' in UMLRealTimeStateMach::RTPseudostate is not implemented or raised an error")
+        warnings.warn(f"Operation 'RTstatemachinesdonotsupportconcurrencyorshallowhistory' in UMLRealTimeStateMach_RTPseudostate is not implemented or raised an error")
 
-@given(instance=UMLRealTimeStateMach::State_strategy)
+@given(instance=UMLRealTimeStateMach_State_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::state_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::State)
+def test_umlrealtimestatemach_state_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_State)
 
-@given(instance=UMLRealTimeStateMach::RTState_strategy)
+@given(instance=UMLRealTimeStateMach_RTState_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::rtstate_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::RTState)
+def test_umlrealtimestatemach_rtstate_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_RTState)
 
 import warnings
 import copy
@@ -285,9 +285,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTState_strategy)
+@given(instance=UMLRealTimeStateMach_RTState_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstate_rtdoesnotsupportsubmachinestates_changes_state(instance):
+def test_umlrealtimestatemach_rtstate_rtdoesnotsupportsubmachinestates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -302,14 +302,14 @@ def test_umlrealtimestatemach::rtstate_rtdoesnotsupportsubmachinestates_changes_
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RTdoesnotsupportsubmachinestates' in UMLRealTimeStateMach::RTState is empty"
+        assert has_statements, f"Function 'RTdoesnotsupportsubmachinestates' in UMLRealTimeStateMach_RTState is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RTdoesnotsupportsubmachinestates' in UMLRealTimeStateMach::RTState did not change state; check implementation")
+            warnings.warn(f"Operation 'RTdoesnotsupportsubmachinestates' in UMLRealTimeStateMach_RTState did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RTdoesnotsupportsubmachinestates' in UMLRealTimeStateMach::RTState is not implemented or raised an error")
+        warnings.warn(f"Operation 'RTdoesnotsupportsubmachinestates' in UMLRealTimeStateMach_RTState is not implemented or raised an error")
 
 import warnings
 import copy
@@ -317,73 +317,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTState_strategy)
+@given(instance=UMLRealTimeStateMach_RTState_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstate_constraint5_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.Constraint5(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.Constraint5).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Constraint5' in UMLRealTimeStateMach::RTState is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Constraint5' in UMLRealTimeStateMach::RTState did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Constraint5' in UMLRealTimeStateMach::RTState is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=UMLRealTimeStateMach::RTState_strategy)
-@settings(max_examples=30)
-def test_umlrealtimestatemach::rtstate_rtstatemachinescannothaveanydeferredtriggers_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.RTstatemachinescannothaveanydeferredtriggers(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.RTstatemachinescannothaveanydeferredtriggers).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RTstatemachinescannothaveanydeferredtriggers' in UMLRealTimeStateMach::RTState is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RTstatemachinescannothaveanydeferredtriggers' in UMLRealTimeStateMach::RTState did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RTstatemachinescannothaveanydeferredtriggers' in UMLRealTimeStateMach::RTState is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=UMLRealTimeStateMach::RTState_strategy)
-@settings(max_examples=30)
-def test_umlrealtimestatemach::rtstate_acompostertstatehasexactlyoneregion_changes_state(instance):
+def test_umlrealtimestatemach_rtstate_acompostertstatehasexactlyoneregion_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -398,14 +334,14 @@ def test_umlrealtimestatemach::rtstate_acompostertstatehasexactlyoneregion_chang
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AcomposteRTstatehasexactlyoneregion' in UMLRealTimeStateMach::RTState is empty"
+        assert has_statements, f"Function 'AcomposteRTstatehasexactlyoneregion' in UMLRealTimeStateMach_RTState is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AcomposteRTstatehasexactlyoneregion' in UMLRealTimeStateMach::RTState did not change state; check implementation")
+            warnings.warn(f"Operation 'AcomposteRTstatehasexactlyoneregion' in UMLRealTimeStateMach_RTState did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AcomposteRTstatehasexactlyoneregion' in UMLRealTimeStateMach::RTState is not implemented or raised an error")
+        warnings.warn(f"Operation 'AcomposteRTstatehasexactlyoneregion' in UMLRealTimeStateMach_RTState is not implemented or raised an error")
 
 import warnings
 import copy
@@ -413,9 +349,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTState_strategy)
+@given(instance=UMLRealTimeStateMach_RTState_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstate_rtstatemachinesdonotsupportdoactivities_changes_state(instance):
+def test_umlrealtimestatemach_rtstate_constraint5_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.Constraint5(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.Constraint5).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'Constraint5' in UMLRealTimeStateMach_RTState is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'Constraint5' in UMLRealTimeStateMach_RTState did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'Constraint5' in UMLRealTimeStateMach_RTState is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=UMLRealTimeStateMach_RTState_strategy)
+@settings(max_examples=30)
+def test_umlrealtimestatemach_rtstate_rtstatemachinesdonotsupportdoactivities_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -430,24 +398,14 @@ def test_umlrealtimestatemach::rtstate_rtstatemachinesdonotsupportdoactivities_c
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RTstatemachinesdonotsupportdoactivities' in UMLRealTimeStateMach::RTState is empty"
+        assert has_statements, f"Function 'RTstatemachinesdonotsupportdoactivities' in UMLRealTimeStateMach_RTState is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RTstatemachinesdonotsupportdoactivities' in UMLRealTimeStateMach::RTState did not change state; check implementation")
+            warnings.warn(f"Operation 'RTstatemachinesdonotsupportdoactivities' in UMLRealTimeStateMach_RTState did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RTstatemachinesdonotsupportdoactivities' in UMLRealTimeStateMach::RTState is not implemented or raised an error")
-
-@given(instance=UMLRealTimeStateMach::Region_strategy)
-@settings(max_examples=50)
-def test_umlrealtimestatemach::region_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::Region)
-
-@given(instance=UMLRealTimeStateMach::RTRegion_strategy)
-@settings(max_examples=50)
-def test_umlrealtimestatemach::rtregion_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::RTRegion)
+        warnings.warn(f"Operation 'RTstatemachinesdonotsupportdoactivities' in UMLRealTimeStateMach_RTState is not implemented or raised an error")
 
 import warnings
 import copy
@@ -455,9 +413,51 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTRegion_strategy)
+@given(instance=UMLRealTimeStateMach_RTState_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtregion_regionsinrtstatemachinescannothaveafinalstate_changes_state(instance):
+def test_umlrealtimestatemach_rtstate_rtstatemachinescannothaveanydeferredtriggers_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.RTstatemachinescannothaveanydeferredtriggers(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.RTstatemachinescannothaveanydeferredtriggers).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'RTstatemachinescannothaveanydeferredtriggers' in UMLRealTimeStateMach_RTState is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'RTstatemachinescannothaveanydeferredtriggers' in UMLRealTimeStateMach_RTState did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'RTstatemachinescannothaveanydeferredtriggers' in UMLRealTimeStateMach_RTState is not implemented or raised an error")
+
+@given(instance=UMLRealTimeStateMach_Region_strategy)
+@settings(max_examples=50)
+def test_umlrealtimestatemach_region_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_Region)
+
+@given(instance=UMLRealTimeStateMach_RTRegion_strategy)
+@settings(max_examples=50)
+def test_umlrealtimestatemach_rtregion_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_RTRegion)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=UMLRealTimeStateMach_RTRegion_strategy)
+@settings(max_examples=30)
+def test_umlrealtimestatemach_rtregion_regionsinrtstatemachinescannothaveafinalstate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -472,32 +472,29 @@ def test_umlrealtimestatemach::rtregion_regionsinrtstatemachinescannothaveafinal
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RegionsinRTstatemachinescannothaveafinalstate' in UMLRealTimeStateMach::RTRegion is empty"
+        assert has_statements, f"Function 'RegionsinRTstatemachinescannothaveafinalstate' in UMLRealTimeStateMach_RTRegion is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RegionsinRTstatemachinescannothaveafinalstate' in UMLRealTimeStateMach::RTRegion did not change state; check implementation")
+            warnings.warn(f"Operation 'RegionsinRTstatemachinescannothaveafinalstate' in UMLRealTimeStateMach_RTRegion did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RegionsinRTstatemachinescannothaveafinalstate' in UMLRealTimeStateMach::RTRegion is not implemented or raised an error")
+        warnings.warn(f"Operation 'RegionsinRTstatemachinescannothaveafinalstate' in UMLRealTimeStateMach_RTRegion is not implemented or raised an error")
 
-@given(instance=UMLRealTimeStateMach::StateMachine_strategy)
+@given(instance=UMLRealTimeStateMach_StateMachine_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::statemachine_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::StateMachine)
+def test_umlrealtimestatemach_statemachine_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_StateMachine)
 
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
 @settings(max_examples=50)
-def test_umlrealtimestatemach::rtstatemachine_instantiation(instance):
-    assert isinstance(instance, UMLRealTimeStateMach::RTStateMachine)
-
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
-def test_umlrealtimestatemach::rtstatemachine_isPassive_type(instance):
-    assert isinstance(instance.isPassive, str)
+def test_umlrealtimestatemach_rtstatemachine_instantiation(instance):
+    assert isinstance(instance, UMLRealTimeStateMach_RTStateMachine)
 
 
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
-def test_umlrealtimestatemach::rtstatemachine_isPassive_setter(instance):
+
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
+def test_umlrealtimestatemach_rtstatemachine_isPassive_setter(instance):
     original = instance.isPassive
     instance.isPassive = original
     assert instance.isPassive == original
@@ -508,9 +505,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstatemachine_passivestatemachineareonlyallowedonpassivedataclasses_changes_state(instance):
+def test_umlrealtimestatemach_rtstatemachine_passivestatemachineareonlyallowedonpassivedataclasses_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -525,14 +522,14 @@ def test_umlrealtimestatemach::rtstatemachine_passivestatemachineareonlyallowedo
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'Passivestatemachineareonlyallowedonpassivedataclasses' in UMLRealTimeStateMach::RTStateMachine is empty"
+        assert has_statements, f"Function 'Passivestatemachineareonlyallowedonpassivedataclasses' in UMLRealTimeStateMach_RTStateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'Passivestatemachineareonlyallowedonpassivedataclasses' in UMLRealTimeStateMach::RTStateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'Passivestatemachineareonlyallowedonpassivedataclasses' in UMLRealTimeStateMach_RTStateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'Passivestatemachineareonlyallowedonpassivedataclasses' in UMLRealTimeStateMach::RTStateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'Passivestatemachineareonlyallowedonpassivedataclasses' in UMLRealTimeStateMach_RTStateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -540,9 +537,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstatemachine_anrtstatemachinehasexactlyoneregion_changes_state(instance):
+def test_umlrealtimestatemach_rtstatemachine_anrtstatemachinehasexactlyoneregion_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -557,14 +554,14 @@ def test_umlrealtimestatemach::rtstatemachine_anrtstatemachinehasexactlyoneregio
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AnRTstatemachinehasexactlyoneregion' in UMLRealTimeStateMach::RTStateMachine is empty"
+        assert has_statements, f"Function 'AnRTstatemachinehasexactlyoneregion' in UMLRealTimeStateMach_RTStateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AnRTstatemachinehasexactlyoneregion' in UMLRealTimeStateMach::RTStateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'AnRTstatemachinehasexactlyoneregion' in UMLRealTimeStateMach_RTStateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AnRTstatemachinehasexactlyoneregion' in UMLRealTimeStateMach::RTStateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'AnRTstatemachinehasexactlyoneregion' in UMLRealTimeStateMach_RTStateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -572,9 +569,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstatemachine_rtstatemachinesmusthaveacontextanditmustbeaclass_changes_state(instance):
+def test_umlrealtimestatemach_rtstatemachine_rtstatemachinesmusthaveacontextanditmustbeaclass_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -589,14 +586,14 @@ def test_umlrealtimestatemach::rtstatemachine_rtstatemachinesmusthaveacontextand
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RTstatemachinesmusthaveacontextanditmustbeaClass' in UMLRealTimeStateMach::RTStateMachine is empty"
+        assert has_statements, f"Function 'RTstatemachinesmusthaveacontextanditmustbeaClass' in UMLRealTimeStateMach_RTStateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RTstatemachinesmusthaveacontextanditmustbeaClass' in UMLRealTimeStateMach::RTStateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'RTstatemachinesmusthaveacontextanditmustbeaClass' in UMLRealTimeStateMach_RTStateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RTstatemachinesmusthaveacontextanditmustbeaClass' in UMLRealTimeStateMach::RTStateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'RTstatemachinesmusthaveacontextanditmustbeaClass' in UMLRealTimeStateMach_RTStateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -604,41 +601,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
 @settings(max_examples=30)
-def test_umlrealtimestatemach::rtstatemachine_anrtstatemachineisneverreentrant_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.AnRTstatemachineisneverreentrant(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.AnRTstatemachineisneverreentrant).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AnRTstatemachineisneverreentrant' in UMLRealTimeStateMach::RTStateMachine is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AnRTstatemachineisneverreentrant' in UMLRealTimeStateMach::RTStateMachine did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AnRTstatemachineisneverreentrant' in UMLRealTimeStateMach::RTStateMachine is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=UMLRealTimeStateMach::RTStateMachine_strategy)
-@settings(max_examples=30)
-def test_umlrealtimestatemach::rtstatemachine_rtstatemachinesdonothaveparametersorparametersets_changes_state(instance):
+def test_umlrealtimestatemach_rtstatemachine_rtstatemachinesdonothaveparametersorparametersets_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -653,11 +618,43 @@ def test_umlrealtimestatemach::rtstatemachine_rtstatemachinesdonothaveparameters
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RTstatemachinesdonothaveparametersorparametersets' in UMLRealTimeStateMach::RTStateMachine is empty"
+        assert has_statements, f"Function 'RTstatemachinesdonothaveparametersorparametersets' in UMLRealTimeStateMach_RTStateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RTstatemachinesdonothaveparametersorparametersets' in UMLRealTimeStateMach::RTStateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'RTstatemachinesdonothaveparametersorparametersets' in UMLRealTimeStateMach_RTStateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RTstatemachinesdonothaveparametersorparametersets' in UMLRealTimeStateMach::RTStateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'RTstatemachinesdonothaveparametersorparametersets' in UMLRealTimeStateMach_RTStateMachine is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=UMLRealTimeStateMach_RTStateMachine_strategy)
+@settings(max_examples=30)
+def test_umlrealtimestatemach_rtstatemachine_anrtstatemachineisneverreentrant_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.AnRTstatemachineisneverreentrant(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.AnRTstatemachineisneverreentrant).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'AnRTstatemachineisneverreentrant' in UMLRealTimeStateMach_RTStateMachine is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'AnRTstatemachineisneverreentrant' in UMLRealTimeStateMach_RTStateMachine did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'AnRTstatemachineisneverreentrant' in UMLRealTimeStateMach_RTStateMachine is not implemented or raised an error")

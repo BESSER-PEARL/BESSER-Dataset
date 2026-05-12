@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fSM::EnumerationLiteral,
-    fSM::State,
-    fSM::FSM,
-    fSM::EnumerationType,
-    fSM::Model,
-    fSM::Transition,
+from python_code import (
+    fSM_EnumerationLiteral,
+    fSM_State,
+    fSM_FSM,
+    fSM_EnumerationType,
+    fSM_Model,
+    fSM_Transition,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_fsm::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(fSM::EnumerationLiteral)
+def test_fsm_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(fSM_EnumerationLiteral)
 
 
-def test_fsm::enumerationliteral_constructor_exists():
-    assert callable(fSM::EnumerationLiteral.__init__)
+def test_fsm_enumerationliteral_constructor_exists():
+    assert callable(fSM_EnumerationLiteral.__init__)
 
 
-def test_fsm::enumerationliteral_constructor_args():
-    sig = inspect.signature(fSM::EnumerationLiteral.__init__)
+def test_fsm_enumerationliteral_constructor_args():
+    sig = inspect.signature(fSM_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::enumerationliteral_has_name():
-    assert hasattr(fSM::EnumerationLiteral, "name")
+def test_fsm_enumerationliteral_has_name():
+    assert hasattr(fSM_EnumerationLiteral, "name")
     descriptor = None
-    for klass in fSM::EnumerationLiteral.__mro__:
+    for klass in fSM_EnumerationLiteral.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,51 +44,51 @@ def test_fsm::enumerationliteral_has_name():
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fSM::State)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fSM_State)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fSM::State.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fSM_State.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fSM::State.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fSM_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(fSM::FSM)
+def test_fsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(fSM_FSM)
 
 
-def test_fsm::fsm_constructor_exists():
-    assert callable(fSM::FSM.__init__)
+def test_fsm_fsm_constructor_exists():
+    assert callable(fSM_FSM.__init__)
 
 
-def test_fsm::fsm_constructor_args():
-    sig = inspect.signature(fSM::FSM.__init__)
+def test_fsm_fsm_constructor_args():
+    sig = inspect.signature(fSM_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::enumerationtype_is_not_abstract():
-    assert not inspect.isabstract(fSM::EnumerationType)
+def test_fsm_enumerationtype_is_not_abstract():
+    assert not inspect.isabstract(fSM_EnumerationType)
 
 
-def test_fsm::enumerationtype_constructor_exists():
-    assert callable(fSM::EnumerationType.__init__)
+def test_fsm_enumerationtype_constructor_exists():
+    assert callable(fSM_EnumerationType.__init__)
 
 
-def test_fsm::enumerationtype_constructor_args():
-    sig = inspect.signature(fSM::EnumerationType.__init__)
+def test_fsm_enumerationtype_constructor_args():
+    sig = inspect.signature(fSM_EnumerationType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::enumerationtype_has_name():
-    assert hasattr(fSM::EnumerationType, "name")
+def test_fsm_enumerationtype_has_name():
+    assert hasattr(fSM_EnumerationType, "name")
     descriptor = None
-    for klass in fSM::EnumerationType.__mro__:
+    for klass in fSM_EnumerationType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -96,30 +96,30 @@ def test_fsm::enumerationtype_has_name():
 
 
 
-def test_fsm::model_is_not_abstract():
-    assert not inspect.isabstract(fSM::Model)
+def test_fsm_model_is_not_abstract():
+    assert not inspect.isabstract(fSM_Model)
 
 
-def test_fsm::model_constructor_exists():
-    assert callable(fSM::Model.__init__)
+def test_fsm_model_constructor_exists():
+    assert callable(fSM_Model.__init__)
 
 
-def test_fsm::model_constructor_args():
-    sig = inspect.signature(fSM::Model.__init__)
+def test_fsm_model_constructor_args():
+    sig = inspect.signature(fSM_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fSM::Transition)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fSM_Transition)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fSM::Transition.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fSM_Transition.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fSM::Transition.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fSM_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,77 +134,71 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fSM::EnumerationLiteral_strategy = st.builds(
-    fSM::EnumerationLiteral,
+fSM_EnumerationLiteral_strategy = st.builds(
+    fSM_EnumerationLiteral,
     name=
         safe_text
 )
-fSM::State_strategy = st.builds(
-    fSM::State,
+fSM_State_strategy = st.builds(
+    fSM_State,
 )
-fSM::FSM_strategy = st.builds(
-    fSM::FSM,
+fSM_FSM_strategy = st.builds(
+    fSM_FSM,
 )
-fSM::EnumerationType_strategy = st.builds(
-    fSM::EnumerationType,
+fSM_EnumerationType_strategy = st.builds(
+    fSM_EnumerationType,
     name=
         safe_text
 )
-fSM::Model_strategy = st.builds(
-    fSM::Model,
+fSM_Model_strategy = st.builds(
+    fSM_Model,
 )
-fSM::Transition_strategy = st.builds(
-    fSM::Transition,
+fSM_Transition_strategy = st.builds(
+    fSM_Transition,
 )
 
-@given(instance=fSM::EnumerationLiteral_strategy)
+@given(instance=fSM_EnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_fsm::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, fSM::EnumerationLiteral)
-
-@given(instance=fSM::EnumerationLiteral_strategy)
-def test_fsm::enumerationliteral_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, fSM_EnumerationLiteral)
 
 
-@given(instance=fSM::EnumerationLiteral_strategy)
-def test_fsm::enumerationliteral_name_setter(instance):
+
+@given(instance=fSM_EnumerationLiteral_strategy)
+def test_fsm_enumerationliteral_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fSM::State_strategy)
+@given(instance=fSM_State_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fSM::State)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fSM_State)
 
-@given(instance=fSM::FSM_strategy)
+@given(instance=fSM_FSM_strategy)
 @settings(max_examples=50)
-def test_fsm::fsm_instantiation(instance):
-    assert isinstance(instance, fSM::FSM)
+def test_fsm_fsm_instantiation(instance):
+    assert isinstance(instance, fSM_FSM)
 
-@given(instance=fSM::EnumerationType_strategy)
+@given(instance=fSM_EnumerationType_strategy)
 @settings(max_examples=50)
-def test_fsm::enumerationtype_instantiation(instance):
-    assert isinstance(instance, fSM::EnumerationType)
-
-@given(instance=fSM::EnumerationType_strategy)
-def test_fsm::enumerationtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_enumerationtype_instantiation(instance):
+    assert isinstance(instance, fSM_EnumerationType)
 
 
-@given(instance=fSM::EnumerationType_strategy)
-def test_fsm::enumerationtype_name_setter(instance):
+
+@given(instance=fSM_EnumerationType_strategy)
+def test_fsm_enumerationtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fSM::Model_strategy)
+@given(instance=fSM_Model_strategy)
 @settings(max_examples=50)
-def test_fsm::model_instantiation(instance):
-    assert isinstance(instance, fSM::Model)
+def test_fsm_model_instantiation(instance):
+    assert isinstance(instance, fSM_Model)
 
-@given(instance=fSM::Transition_strategy)
+@given(instance=fSM_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fSM::Transition)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fSM_Transition)

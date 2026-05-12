@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    comp::Model,
-    comp::Greeting,
+from python_code import (
+    comp_Greeting,
+    comp_Model,
 )
 
 # =============================================================================
@@ -16,41 +16,41 @@ from classes import (
 
 
 
-def test_comp::model_is_not_abstract():
-    assert not inspect.isabstract(comp::Model)
+def test_comp_greeting_is_not_abstract():
+    assert not inspect.isabstract(comp_Greeting)
 
 
-def test_comp::model_constructor_exists():
-    assert callable(comp::Model.__init__)
+def test_comp_greeting_constructor_exists():
+    assert callable(comp_Greeting.__init__)
 
 
-def test_comp::model_constructor_args():
-    sig = inspect.signature(comp::Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_comp::greeting_is_not_abstract():
-    assert not inspect.isabstract(comp::Greeting)
-
-
-def test_comp::greeting_constructor_exists():
-    assert callable(comp::Greeting.__init__)
-
-
-def test_comp::greeting_constructor_args():
-    sig = inspect.signature(comp::Greeting.__init__)
+def test_comp_greeting_constructor_args():
+    sig = inspect.signature(comp_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_comp::greeting_has_name():
-    assert hasattr(comp::Greeting, "name")
+def test_comp_greeting_has_name():
+    assert hasattr(comp_Greeting, "name")
     descriptor = None
-    for klass in comp::Greeting.__mro__:
+    for klass in comp_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_comp_model_is_not_abstract():
+    assert not inspect.isabstract(comp_Model)
+
+
+def test_comp_model_constructor_exists():
+    assert callable(comp_Model.__init__)
+
+
+def test_comp_model_constructor_args():
+    sig = inspect.signature(comp_Model.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-comp::Model_strategy = st.builds(
-    comp::Model,
-)
-comp::Greeting_strategy = st.builds(
-    comp::Greeting,
+comp_Greeting_strategy = st.builds(
+    comp_Greeting,
     name=
         safe_text
 )
+comp_Model_strategy = st.builds(
+    comp_Model,
+)
 
-@given(instance=comp::Model_strategy)
+@given(instance=comp_Greeting_strategy)
 @settings(max_examples=50)
-def test_comp::model_instantiation(instance):
-    assert isinstance(instance, comp::Model)
-
-@given(instance=comp::Greeting_strategy)
-@settings(max_examples=50)
-def test_comp::greeting_instantiation(instance):
-    assert isinstance(instance, comp::Greeting)
-
-@given(instance=comp::Greeting_strategy)
-def test_comp::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_comp_greeting_instantiation(instance):
+    assert isinstance(instance, comp_Greeting)
 
 
-@given(instance=comp::Greeting_strategy)
-def test_comp::greeting_name_setter(instance):
+
+@given(instance=comp_Greeting_strategy)
+def test_comp_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=comp_Model_strategy)
+@settings(max_examples=50)
+def test_comp_model_instantiation(instance):
+    assert isinstance(instance, comp_Model)

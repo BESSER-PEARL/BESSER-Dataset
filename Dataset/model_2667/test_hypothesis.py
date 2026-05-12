@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mydsl::W,
+from python_code import (
+    mydsl_W,
     W,
-    mydsl::L,
-    mydsl::B,
-    mydsl::D,
-    mydsl::C,
-    mydsl::A,
+    mydsl_L,
+    mydsl_D,
+    mydsl_B,
+    mydsl_C,
+    mydsl_A,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_mydsl::w_is_not_abstract():
-    assert not inspect.isabstract(mydsl::W)
+def test_mydsl_w_is_not_abstract():
+    assert not inspect.isabstract(mydsl_W)
 
 
-def test_mydsl::w_constructor_exists():
-    assert callable(mydsl::W.__init__)
+def test_mydsl_w_constructor_exists():
+    assert callable(mydsl_W.__init__)
 
 
-def test_mydsl::w_constructor_args():
-    sig = inspect.signature(mydsl::W.__init__)
+def test_mydsl_w_constructor_args():
+    sig = inspect.signature(mydsl_W.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::w_has_name():
-    assert hasattr(mydsl::W, "name")
+def test_mydsl_w_has_name():
+    assert hasattr(mydsl_W, "name")
     descriptor = None
-    for klass in mydsl::W.__mro__:
+    for klass in mydsl_W.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,72 +59,72 @@ def test_w_constructor_args():
 
 
 
-def test_mydsl::l_is_not_abstract():
-    assert not inspect.isabstract(mydsl::L)
+def test_mydsl_l_is_not_abstract():
+    assert not inspect.isabstract(mydsl_L)
 
 
-def test_mydsl::l_constructor_exists():
-    assert callable(mydsl::L.__init__)
+def test_mydsl_l_constructor_exists():
+    assert callable(mydsl_L.__init__)
 
 
-def test_mydsl::l_constructor_args():
-    sig = inspect.signature(mydsl::L.__init__)
+def test_mydsl_l_constructor_args():
+    sig = inspect.signature(mydsl_L.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::b_is_not_abstract():
-    assert not inspect.isabstract(mydsl::B)
+def test_mydsl_d_is_not_abstract():
+    assert not inspect.isabstract(mydsl_D)
 
 
-def test_mydsl::b_constructor_exists():
-    assert callable(mydsl::B.__init__)
+def test_mydsl_d_constructor_exists():
+    assert callable(mydsl_D.__init__)
 
 
-def test_mydsl::b_constructor_args():
-    sig = inspect.signature(mydsl::B.__init__)
+def test_mydsl_d_constructor_args():
+    sig = inspect.signature(mydsl_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::d_is_not_abstract():
-    assert not inspect.isabstract(mydsl::D)
+def test_mydsl_b_is_not_abstract():
+    assert not inspect.isabstract(mydsl_B)
 
 
-def test_mydsl::d_constructor_exists():
-    assert callable(mydsl::D.__init__)
+def test_mydsl_b_constructor_exists():
+    assert callable(mydsl_B.__init__)
 
 
-def test_mydsl::d_constructor_args():
-    sig = inspect.signature(mydsl::D.__init__)
+def test_mydsl_b_constructor_args():
+    sig = inspect.signature(mydsl_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::c_is_not_abstract():
-    assert not inspect.isabstract(mydsl::C)
+def test_mydsl_c_is_not_abstract():
+    assert not inspect.isabstract(mydsl_C)
 
 
-def test_mydsl::c_constructor_exists():
-    assert callable(mydsl::C.__init__)
+def test_mydsl_c_constructor_exists():
+    assert callable(mydsl_C.__init__)
 
 
-def test_mydsl::c_constructor_args():
-    sig = inspect.signature(mydsl::C.__init__)
+def test_mydsl_c_constructor_args():
+    sig = inspect.signature(mydsl_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::a_is_not_abstract():
-    assert not inspect.isabstract(mydsl::A)
+def test_mydsl_a_is_not_abstract():
+    assert not inspect.isabstract(mydsl_A)
 
 
-def test_mydsl::a_constructor_exists():
-    assert callable(mydsl::A.__init__)
+def test_mydsl_a_constructor_exists():
+    assert callable(mydsl_A.__init__)
 
 
-def test_mydsl::a_constructor_args():
-    sig = inspect.signature(mydsl::A.__init__)
+def test_mydsl_a_constructor_args():
+    sig = inspect.signature(mydsl_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,42 +139,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mydsl::W_strategy = st.builds(
-    mydsl::W,
+mydsl_W_strategy = st.builds(
+    mydsl_W,
     name=
         safe_text
 )
 W_strategy = st.builds(
     W,
 )
-mydsl::L_strategy = st.builds(
-    mydsl::L,
+mydsl_L_strategy = st.builds(
+    mydsl_L,
 )
-mydsl::B_strategy = st.builds(
-    mydsl::B,
+mydsl_D_strategy = st.builds(
+    mydsl_D,
 )
-mydsl::D_strategy = st.builds(
-    mydsl::D,
+mydsl_B_strategy = st.builds(
+    mydsl_B,
 )
-mydsl::C_strategy = st.builds(
-    mydsl::C,
+mydsl_C_strategy = st.builds(
+    mydsl_C,
 )
-mydsl::A_strategy = st.builds(
-    mydsl::A,
+mydsl_A_strategy = st.builds(
+    mydsl_A,
 )
 
-@given(instance=mydsl::W_strategy)
+@given(instance=mydsl_W_strategy)
 @settings(max_examples=50)
-def test_mydsl::w_instantiation(instance):
-    assert isinstance(instance, mydsl::W)
-
-@given(instance=mydsl::W_strategy)
-def test_mydsl::w_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_w_instantiation(instance):
+    assert isinstance(instance, mydsl_W)
 
 
-@given(instance=mydsl::W_strategy)
-def test_mydsl::w_name_setter(instance):
+
+@given(instance=mydsl_W_strategy)
+def test_mydsl_w_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -184,27 +181,27 @@ def test_mydsl::w_name_setter(instance):
 def test_w_instantiation(instance):
     assert isinstance(instance, W)
 
-@given(instance=mydsl::L_strategy)
+@given(instance=mydsl_L_strategy)
 @settings(max_examples=50)
-def test_mydsl::l_instantiation(instance):
-    assert isinstance(instance, mydsl::L)
+def test_mydsl_l_instantiation(instance):
+    assert isinstance(instance, mydsl_L)
 
-@given(instance=mydsl::B_strategy)
+@given(instance=mydsl_D_strategy)
 @settings(max_examples=50)
-def test_mydsl::b_instantiation(instance):
-    assert isinstance(instance, mydsl::B)
+def test_mydsl_d_instantiation(instance):
+    assert isinstance(instance, mydsl_D)
 
-@given(instance=mydsl::D_strategy)
+@given(instance=mydsl_B_strategy)
 @settings(max_examples=50)
-def test_mydsl::d_instantiation(instance):
-    assert isinstance(instance, mydsl::D)
+def test_mydsl_b_instantiation(instance):
+    assert isinstance(instance, mydsl_B)
 
-@given(instance=mydsl::C_strategy)
+@given(instance=mydsl_C_strategy)
 @settings(max_examples=50)
-def test_mydsl::c_instantiation(instance):
-    assert isinstance(instance, mydsl::C)
+def test_mydsl_c_instantiation(instance):
+    assert isinstance(instance, mydsl_C)
 
-@given(instance=mydsl::A_strategy)
+@given(instance=mydsl_A_strategy)
 @settings(max_examples=50)
-def test_mydsl::a_instantiation(instance):
-    assert isinstance(instance, mydsl::A)
+def test_mydsl_a_instantiation(instance):
+    assert isinstance(instance, mydsl_A)

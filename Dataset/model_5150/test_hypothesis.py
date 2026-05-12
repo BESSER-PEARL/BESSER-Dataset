@@ -3,77 +3,77 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    xhtml::Tr,
-    xhtml::Tbody,
-    xhtml::Tfoot,
-    xhtml::Thead,
-    xhtml::PreContent,
+from python_code import (
+    xhtml_Tr,
+    xhtml_Tbody,
+    xhtml_Tfoot,
+    xhtml_Thead,
+    xhtml_PreContent,
     PreContent,
-    xhtml::Param,
-    xhtml::Inline,
-    xhtml::Flow,
+    xhtml_Param,
+    xhtml_Inline,
+    xhtml_Flow,
     Flow,
-    xhtml::Th,
-    xhtml::Td,
-    xhtml::Ins,
-    xhtml::Del,
-    xhtml::Li,
-    xhtml::Dd,
-    xhtml::Colgroup,
-    xhtml::Col,
+    xhtml_Th,
+    xhtml_Del,
+    xhtml_Td,
+    xhtml_Li,
+    xhtml_Ins,
+    xhtml_Dd,
+    xhtml_Colgroup,
+    xhtml_Col,
     Block,
-    xhtml::Table,
-    xhtml::Blockquote,
-    xhtml::Ol,
-    xhtml::Ul,
-    xhtml::Div,
-    xhtml::Hr,
-    xhtml::Pre,
-    xhtml::Dl,
-    xhtml::Block,
-    xhtml::Br,
-    xhtml::AContent,
-    xhtml::Img,
-    xhtml::Object,
+    xhtml_Table,
+    xhtml_Blockquote,
+    xhtml_Ol,
+    xhtml_Ul,
+    xhtml_Div,
+    xhtml_Hr,
+    xhtml_Pre,
+    xhtml_Dl,
+    xhtml_Block,
+    xhtml_Br,
+    xhtml_AContent,
+    xhtml_Img,
+    xhtml_Object,
     Inline,
-    xhtml::Q,
-    xhtml::Big,
-    xhtml::B,
-    xhtml::Tt,
-    xhtml::Caption,
-    xhtml::Sub,
-    xhtml::Small,
-    xhtml::Sup,
-    xhtml::Kbd,
-    xhtml::Cite,
-    xhtml::Span,
-    xhtml::Dfn,
-    xhtml::Acronym,
-    xhtml::Strong,
-    xhtml::Var,
-    xhtml::Samp,
-    xhtml::P,
-    xhtml::Code,
-    xhtml::Dt,
-    xhtml::Em,
-    xhtml::I,
-    xhtml::Abbr,
+    xhtml_I,
+    xhtml_Sub,
+    xhtml_Sup,
+    xhtml_Em,
+    xhtml_Acronym,
+    xhtml_Cite,
+    xhtml_Small,
+    xhtml_B,
+    xhtml_Q,
+    xhtml_Kbd,
+    xhtml_Samp,
+    xhtml_Strong,
+    xhtml_Dfn,
+    xhtml_Dt,
+    xhtml_Caption,
+    xhtml_Tt,
+    xhtml_P,
+    xhtml_Code,
+    xhtml_Big,
+    xhtml_Var,
+    xhtml_Span,
+    xhtml_Abbr,
     AContent,
-    xhtml::A,
-    MifClassType,
+    xhtml_A,
+    Shape,
     TFrame,
     ValignType,
-    AlignType,
     TRules,
-    StyleSheet,
-    ImageKind,
     ParamName,
+    AlignType,
     MediaType,
-    Shape,
     ObjectName,
+    ImageKind,
+    StyleSheet,
+    MifClassType,
 )
 
 # =============================================================================
@@ -82,381 +82,381 @@ from classes import (
 
 
 
-def test_xhtml::tr_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Tr)
+def test_xhtml_tr_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Tr)
 
 
-def test_xhtml::tr_constructor_exists():
-    assert callable(xhtml::Tr.__init__)
+def test_xhtml_tr_constructor_exists():
+    assert callable(xhtml_Tr.__init__)
 
 
-def test_xhtml::tr_constructor_args():
-    sig = inspect.signature(xhtml::Tr.__init__)
+def test_xhtml_tr_constructor_args():
+    sig = inspect.signature(xhtml_Tr.__init__)
     params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
     assert "char" in params, "Missing parameter 'char'"
+    assert "lang" in params, "Missing parameter 'lang'"
     assert "charoff" in params, "Missing parameter 'charoff'"
-    assert "align" in params, "Missing parameter 'align'"
+    assert "style" in params, "Missing parameter 'style'"
     assert "group" in params, "Missing parameter 'group'"
     assert "valign" in params, "Missing parameter 'valign'"
+    assert "align" in params, "Missing parameter 'align'"
     assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
 
-def test_xhtml::tr_has_style():
-    assert hasattr(xhtml::Tr, "style")
+def test_xhtml_tr_has_char():
+    assert hasattr(xhtml_Tr, "char")
     descriptor = None
-    for klass in xhtml::Tr.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tr_has_char():
-    assert hasattr(xhtml::Tr, "char")
-    descriptor = None
-    for klass in xhtml::Tr.__mro__:
+    for klass in xhtml_Tr.__mro__:
         if "char" in klass.__dict__:
             descriptor = klass.__dict__["char"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tr_has_charoff():
-    assert hasattr(xhtml::Tr, "charoff")
+def test_xhtml_tr_has_lang():
+    assert hasattr(xhtml_Tr, "lang")
     descriptor = None
-    for klass in xhtml::Tr.__mro__:
+    for klass in xhtml_Tr.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tr_has_charoff():
+    assert hasattr(xhtml_Tr, "charoff")
+    descriptor = None
+    for klass in xhtml_Tr.__mro__:
         if "charoff" in klass.__dict__:
             descriptor = klass.__dict__["charoff"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tr_has_align():
-    assert hasattr(xhtml::Tr, "align")
+def test_xhtml_tr_has_style():
+    assert hasattr(xhtml_Tr, "style")
     descriptor = None
-    for klass in xhtml::Tr.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
+    for klass in xhtml_Tr.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tr_has_group():
-    assert hasattr(xhtml::Tr, "group")
+def test_xhtml_tr_has_group():
+    assert hasattr(xhtml_Tr, "group")
     descriptor = None
-    for klass in xhtml::Tr.__mro__:
+    for klass in xhtml_Tr.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tr_has_valign():
-    assert hasattr(xhtml::Tr, "valign")
+def test_xhtml_tr_has_valign():
+    assert hasattr(xhtml_Tr, "valign")
     descriptor = None
-    for klass in xhtml::Tr.__mro__:
+    for klass in xhtml_Tr.__mro__:
         if "valign" in klass.__dict__:
             descriptor = klass.__dict__["valign"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tr_has_class_():
-    assert hasattr(xhtml::Tr, "class_")
+def test_xhtml_tr_has_align():
+    assert hasattr(xhtml_Tr, "align")
     descriptor = None
-    for klass in xhtml::Tr.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tr_has_lang():
-    assert hasattr(xhtml::Tr, "lang")
-    descriptor = None
-    for klass in xhtml::Tr.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::tbody_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Tbody)
-
-
-def test_xhtml::tbody_constructor_exists():
-    assert callable(xhtml::Tbody.__init__)
-
-
-def test_xhtml::tbody_constructor_args():
-    sig = inspect.signature(xhtml::Tbody.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "valign" in params, "Missing parameter 'valign'"
-    assert "char" in params, "Missing parameter 'char'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-
-def test_xhtml::tbody_has_lang():
-    assert hasattr(xhtml::Tbody, "lang")
-    descriptor = None
-    for klass in xhtml::Tbody.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tbody_has_class_():
-    assert hasattr(xhtml::Tbody, "class_")
-    descriptor = None
-    for klass in xhtml::Tbody.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tbody_has_valign():
-    assert hasattr(xhtml::Tbody, "valign")
-    descriptor = None
-    for klass in xhtml::Tbody.__mro__:
-        if "valign" in klass.__dict__:
-            descriptor = klass.__dict__["valign"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tbody_has_char():
-    assert hasattr(xhtml::Tbody, "char")
-    descriptor = None
-    for klass in xhtml::Tbody.__mro__:
-        if "char" in klass.__dict__:
-            descriptor = klass.__dict__["char"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tbody_has_align():
-    assert hasattr(xhtml::Tbody, "align")
-    descriptor = None
-    for klass in xhtml::Tbody.__mro__:
+    for klass in xhtml_Tr.__mro__:
         if "align" in klass.__dict__:
             descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tbody_has_style():
-    assert hasattr(xhtml::Tbody, "style")
+def test_xhtml_tr_has_class_():
+    assert hasattr(xhtml_Tr, "class_")
     descriptor = None
-    for klass in xhtml::Tbody.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tbody_has_charoff():
-    assert hasattr(xhtml::Tbody, "charoff")
-    descriptor = None
-    for klass in xhtml::Tbody.__mro__:
-        if "charoff" in klass.__dict__:
-            descriptor = klass.__dict__["charoff"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::tfoot_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Tfoot)
-
-
-def test_xhtml::tfoot_constructor_exists():
-    assert callable(xhtml::Tfoot.__init__)
-
-
-def test_xhtml::tfoot_constructor_args():
-    sig = inspect.signature(xhtml::Tfoot.__init__)
-    params = list(sig.parameters.keys())
-    assert "align" in params, "Missing parameter 'align'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "valign" in params, "Missing parameter 'valign'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "char" in params, "Missing parameter 'char'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-
-def test_xhtml::tfoot_has_align():
-    assert hasattr(xhtml::Tfoot, "align")
-    descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tfoot_has_class_():
-    assert hasattr(xhtml::Tfoot, "class_")
-    descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
+    for klass in xhtml_Tr.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tfoot_has_valign():
-    assert hasattr(xhtml::Tfoot, "valign")
-    descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
-        if "valign" in klass.__dict__:
-            descriptor = klass.__dict__["valign"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_xhtml::tfoot_has_style():
-    assert hasattr(xhtml::Tfoot, "style")
+
+def test_xhtml_tbody_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Tbody)
+
+
+def test_xhtml_tbody_constructor_exists():
+    assert callable(xhtml_Tbody.__init__)
+
+
+def test_xhtml_tbody_constructor_args():
+    sig = inspect.signature(xhtml_Tbody.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "char" in params, "Missing parameter 'char'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "valign" in params, "Missing parameter 'valign'"
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+
+def test_xhtml_tbody_has_style():
+    assert hasattr(xhtml_Tbody, "style")
     descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
+    for klass in xhtml_Tbody.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tfoot_has_char():
-    assert hasattr(xhtml::Tfoot, "char")
+def test_xhtml_tbody_has_char():
+    assert hasattr(xhtml_Tbody, "char")
     descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
+    for klass in xhtml_Tbody.__mro__:
         if "char" in klass.__dict__:
             descriptor = klass.__dict__["char"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::tfoot_has_lang():
-    assert hasattr(xhtml::Tfoot, "lang")
+def test_xhtml_tbody_has_align():
+    assert hasattr(xhtml_Tbody, "align")
     descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tfoot_has_charoff():
-    assert hasattr(xhtml::Tfoot, "charoff")
-    descriptor = None
-    for klass in xhtml::Tfoot.__mro__:
-        if "charoff" in klass.__dict__:
-            descriptor = klass.__dict__["charoff"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::thead_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Thead)
-
-
-def test_xhtml::thead_constructor_exists():
-    assert callable(xhtml::Thead.__init__)
-
-
-def test_xhtml::thead_constructor_args():
-    sig = inspect.signature(xhtml::Thead.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "char" in params, "Missing parameter 'char'"
-    assert "valign" in params, "Missing parameter 'valign'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-
-def test_xhtml::thead_has_lang():
-    assert hasattr(xhtml::Thead, "lang")
-    descriptor = None
-    for klass in xhtml::Thead.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::thead_has_class_():
-    assert hasattr(xhtml::Thead, "class_")
-    descriptor = None
-    for klass in xhtml::Thead.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::thead_has_align():
-    assert hasattr(xhtml::Thead, "align")
-    descriptor = None
-    for klass in xhtml::Thead.__mro__:
+    for klass in xhtml_Tbody.__mro__:
         if "align" in klass.__dict__:
             descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::thead_has_style():
-    assert hasattr(xhtml::Thead, "style")
+def test_xhtml_tbody_has_valign():
+    assert hasattr(xhtml_Tbody, "valign")
     descriptor = None
-    for klass in xhtml::Thead.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::thead_has_char():
-    assert hasattr(xhtml::Thead, "char")
-    descriptor = None
-    for klass in xhtml::Thead.__mro__:
-        if "char" in klass.__dict__:
-            descriptor = klass.__dict__["char"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::thead_has_valign():
-    assert hasattr(xhtml::Thead, "valign")
-    descriptor = None
-    for klass in xhtml::Thead.__mro__:
+    for klass in xhtml_Tbody.__mro__:
         if "valign" in klass.__dict__:
             descriptor = klass.__dict__["valign"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::thead_has_charoff():
-    assert hasattr(xhtml::Thead, "charoff")
+def test_xhtml_tbody_has_charoff():
+    assert hasattr(xhtml_Tbody, "charoff")
     descriptor = None
-    for klass in xhtml::Thead.__mro__:
+    for klass in xhtml_Tbody.__mro__:
         if "charoff" in klass.__dict__:
             descriptor = klass.__dict__["charoff"]
             break
     assert isinstance(descriptor, property)
 
+def test_xhtml_tbody_has_lang():
+    assert hasattr(xhtml_Tbody, "lang")
+    descriptor = None
+    for klass in xhtml_Tbody.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tbody_has_class_():
+    assert hasattr(xhtml_Tbody, "class_")
+    descriptor = None
+    for klass in xhtml_Tbody.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_xhtml::precontent_is_not_abstract():
-    assert not inspect.isabstract(xhtml::PreContent)
+
+def test_xhtml_tfoot_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Tfoot)
 
 
-def test_xhtml::precontent_constructor_exists():
-    assert callable(xhtml::PreContent.__init__)
+def test_xhtml_tfoot_constructor_exists():
+    assert callable(xhtml_Tfoot.__init__)
 
 
-def test_xhtml::precontent_constructor_args():
-    sig = inspect.signature(xhtml::PreContent.__init__)
+def test_xhtml_tfoot_constructor_args():
+    sig = inspect.signature(xhtml_Tfoot.__init__)
     params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "char" in params, "Missing parameter 'char'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "valign" in params, "Missing parameter 'valign'"
+
+def test_xhtml_tfoot_has_char():
+    assert hasattr(xhtml_Tfoot, "char")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "char" in klass.__dict__:
+            descriptor = klass.__dict__["char"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tfoot_has_class_():
+    assert hasattr(xhtml_Tfoot, "class_")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tfoot_has_align():
+    assert hasattr(xhtml_Tfoot, "align")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tfoot_has_charoff():
+    assert hasattr(xhtml_Tfoot, "charoff")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "charoff" in klass.__dict__:
+            descriptor = klass.__dict__["charoff"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tfoot_has_lang():
+    assert hasattr(xhtml_Tfoot, "lang")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tfoot_has_style():
+    assert hasattr(xhtml_Tfoot, "style")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tfoot_has_valign():
+    assert hasattr(xhtml_Tfoot, "valign")
+    descriptor = None
+    for klass in xhtml_Tfoot.__mro__:
+        if "valign" in klass.__dict__:
+            descriptor = klass.__dict__["valign"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_thead_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Thead)
+
+
+def test_xhtml_thead_constructor_exists():
+    assert callable(xhtml_Thead.__init__)
+
+
+def test_xhtml_thead_constructor_args():
+    sig = inspect.signature(xhtml_Thead.__init__)
+    params = list(sig.parameters.keys())
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "valign" in params, "Missing parameter 'valign'"
+    assert "char" in params, "Missing parameter 'char'"
+
+def test_xhtml_thead_has_charoff():
+    assert hasattr(xhtml_Thead, "charoff")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "charoff" in klass.__dict__:
+            descriptor = klass.__dict__["charoff"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_thead_has_align():
+    assert hasattr(xhtml_Thead, "align")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_thead_has_class_():
+    assert hasattr(xhtml_Thead, "class_")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_thead_has_lang():
+    assert hasattr(xhtml_Thead, "lang")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_thead_has_style():
+    assert hasattr(xhtml_Thead, "style")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_thead_has_valign():
+    assert hasattr(xhtml_Thead, "valign")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "valign" in klass.__dict__:
+            descriptor = klass.__dict__["valign"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_thead_has_char():
+    assert hasattr(xhtml_Thead, "char")
+    descriptor = None
+    for klass in xhtml_Thead.__mro__:
+        if "char" in klass.__dict__:
+            descriptor = klass.__dict__["char"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_precontent_is_not_abstract():
+    assert not inspect.isabstract(xhtml_PreContent)
+
+
+def test_xhtml_precontent_constructor_exists():
+    assert callable(xhtml_PreContent.__init__)
+
+
+def test_xhtml_precontent_constructor_args():
+    sig = inspect.signature(xhtml_PreContent.__init__)
+    params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_xhtml::precontent_has_mixed():
-    assert hasattr(xhtml::PreContent, "mixed")
+def test_xhtml_precontent_has_group():
+    assert hasattr(xhtml_PreContent, "group")
     descriptor = None
-    for klass in xhtml::PreContent.__mro__:
+    for klass in xhtml_PreContent.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_precontent_has_mixed():
+    assert hasattr(xhtml_PreContent, "mixed")
+    descriptor = None
+    for klass in xhtml_PreContent.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::precontent_has_group():
-    assert hasattr(xhtml::PreContent, "group")
-    descriptor = None
-    for klass in xhtml::PreContent.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
@@ -476,67 +476,67 @@ def test_precontent_constructor_args():
 
 
 
-def test_xhtml::param_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Param)
+def test_xhtml_param_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Param)
 
 
-def test_xhtml::param_constructor_exists():
-    assert callable(xhtml::Param.__init__)
+def test_xhtml_param_constructor_exists():
+    assert callable(xhtml_Param.__init__)
 
 
-def test_xhtml::param_constructor_args():
-    sig = inspect.signature(xhtml::Param.__init__)
+def test_xhtml_param_constructor_args():
+    sig = inspect.signature(xhtml_Param.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_xhtml::param_has_name():
-    assert hasattr(xhtml::Param, "name")
+def test_xhtml_param_has_value():
+    assert hasattr(xhtml_Param, "value")
     descriptor = None
-    for klass in xhtml::Param.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::param_has_value():
-    assert hasattr(xhtml::Param, "value")
-    descriptor = None
-    for klass in xhtml::Param.__mro__:
+    for klass in xhtml_Param.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_xhtml_param_has_name():
+    assert hasattr(xhtml_Param, "name")
+    descriptor = None
+    for klass in xhtml_Param.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_xhtml::inline_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Inline)
+
+def test_xhtml_inline_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Inline)
 
 
-def test_xhtml::inline_constructor_exists():
-    assert callable(xhtml::Inline.__init__)
+def test_xhtml_inline_constructor_exists():
+    assert callable(xhtml_Inline.__init__)
 
 
-def test_xhtml::inline_constructor_args():
-    sig = inspect.signature(xhtml::Inline.__init__)
+def test_xhtml_inline_constructor_args():
+    sig = inspect.signature(xhtml_Inline.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
     assert "inline" in params, "Missing parameter 'inline'"
 
-def test_xhtml::inline_has_mixed():
-    assert hasattr(xhtml::Inline, "mixed")
+def test_xhtml_inline_has_mixed():
+    assert hasattr(xhtml_Inline, "mixed")
     descriptor = None
-    for klass in xhtml::Inline.__mro__:
+    for klass in xhtml_Inline.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::inline_has_inline():
-    assert hasattr(xhtml::Inline, "inline")
+def test_xhtml_inline_has_inline():
+    assert hasattr(xhtml_Inline, "inline")
     descriptor = None
-    for klass in xhtml::Inline.__mro__:
+    for klass in xhtml_Inline.__mro__:
         if "inline" in klass.__dict__:
             descriptor = klass.__dict__["inline"]
             break
@@ -544,35 +544,35 @@ def test_xhtml::inline_has_inline():
 
 
 
-def test_xhtml::flow_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Flow)
+def test_xhtml_flow_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Flow)
 
 
-def test_xhtml::flow_constructor_exists():
-    assert callable(xhtml::Flow.__init__)
+def test_xhtml_flow_constructor_exists():
+    assert callable(xhtml_Flow.__init__)
 
 
-def test_xhtml::flow_constructor_args():
-    sig = inspect.signature(xhtml::Flow.__init__)
+def test_xhtml_flow_constructor_args():
+    sig = inspect.signature(xhtml_Flow.__init__)
     params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
     assert "group" in params, "Missing parameter 'group'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_xhtml::flow_has_mixed():
-    assert hasattr(xhtml::Flow, "mixed")
+def test_xhtml_flow_has_group():
+    assert hasattr(xhtml_Flow, "group")
     descriptor = None
-    for klass in xhtml::Flow.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
+    for klass in xhtml_Flow.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::flow_has_group():
-    assert hasattr(xhtml::Flow, "group")
+def test_xhtml_flow_has_mixed():
+    assert hasattr(xhtml_Flow, "mixed")
     descriptor = None
-    for klass in xhtml::Flow.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
+    for klass in xhtml_Flow.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
             break
     assert isinstance(descriptor, property)
 
@@ -592,531 +592,531 @@ def test_flow_constructor_args():
 
 
 
-def test_xhtml::th_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Th)
+def test_xhtml_th_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Th)
 
 
-def test_xhtml::th_constructor_exists():
-    assert callable(xhtml::Th.__init__)
+def test_xhtml_th_constructor_exists():
+    assert callable(xhtml_Th.__init__)
 
 
-def test_xhtml::th_constructor_args():
-    sig = inspect.signature(xhtml::Th.__init__)
+def test_xhtml_th_constructor_args():
+    sig = inspect.signature(xhtml_Th.__init__)
     params = list(sig.parameters.keys())
-    assert "valign" in params, "Missing parameter 'valign'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "colspan" in params, "Missing parameter 'colspan'"
     assert "rowspan" in params, "Missing parameter 'rowspan'"
-    assert "lang" in params, "Missing parameter 'lang'"
+    assert "valign" in params, "Missing parameter 'valign'"
     assert "char" in params, "Missing parameter 'char'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "colspan" in params, "Missing parameter 'colspan'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "style" in params, "Missing parameter 'style'"
 
-def test_xhtml::th_has_valign():
-    assert hasattr(xhtml::Th, "valign")
+def test_xhtml_th_has_rowspan():
+    assert hasattr(xhtml_Th, "rowspan")
     descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "valign" in klass.__dict__:
-            descriptor = klass.__dict__["valign"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_class_():
-    assert hasattr(xhtml::Th, "class_")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_style():
-    assert hasattr(xhtml::Th, "style")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_charoff():
-    assert hasattr(xhtml::Th, "charoff")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "charoff" in klass.__dict__:
-            descriptor = klass.__dict__["charoff"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_align():
-    assert hasattr(xhtml::Th, "align")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_colspan():
-    assert hasattr(xhtml::Th, "colspan")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "colspan" in klass.__dict__:
-            descriptor = klass.__dict__["colspan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_rowspan():
-    assert hasattr(xhtml::Th, "rowspan")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "rowspan" in klass.__dict__:
             descriptor = klass.__dict__["rowspan"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::th_has_lang():
-    assert hasattr(xhtml::Th, "lang")
+def test_xhtml_th_has_valign():
+    assert hasattr(xhtml_Th, "valign")
     descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::th_has_char():
-    assert hasattr(xhtml::Th, "char")
-    descriptor = None
-    for klass in xhtml::Th.__mro__:
-        if "char" in klass.__dict__:
-            descriptor = klass.__dict__["char"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::td_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Td)
-
-
-def test_xhtml::td_constructor_exists():
-    assert callable(xhtml::Td.__init__)
-
-
-def test_xhtml::td_constructor_args():
-    sig = inspect.signature(xhtml::Td.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "valign" in params, "Missing parameter 'valign'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "rowspan" in params, "Missing parameter 'rowspan'"
-    assert "colspan" in params, "Missing parameter 'colspan'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "char" in params, "Missing parameter 'char'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::td_has_style():
-    assert hasattr(xhtml::Td, "style")
-    descriptor = None
-    for klass in xhtml::Td.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::td_has_valign():
-    assert hasattr(xhtml::Td, "valign")
-    descriptor = None
-    for klass in xhtml::Td.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "valign" in klass.__dict__:
             descriptor = klass.__dict__["valign"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::td_has_charoff():
-    assert hasattr(xhtml::Td, "charoff")
+def test_xhtml_th_has_char():
+    assert hasattr(xhtml_Th, "char")
     descriptor = None
-    for klass in xhtml::Td.__mro__:
-        if "charoff" in klass.__dict__:
-            descriptor = klass.__dict__["charoff"]
+    for klass in xhtml_Th.__mro__:
+        if "char" in klass.__dict__:
+            descriptor = klass.__dict__["char"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::td_has_align():
-    assert hasattr(xhtml::Td, "align")
+def test_xhtml_th_has_class_():
+    assert hasattr(xhtml_Th, "class_")
     descriptor = None
-    for klass in xhtml::Td.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
+    for klass in xhtml_Th.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::td_has_rowspan():
-    assert hasattr(xhtml::Td, "rowspan")
+def test_xhtml_th_has_colspan():
+    assert hasattr(xhtml_Th, "colspan")
     descriptor = None
-    for klass in xhtml::Td.__mro__:
-        if "rowspan" in klass.__dict__:
-            descriptor = klass.__dict__["rowspan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::td_has_colspan():
-    assert hasattr(xhtml::Td, "colspan")
-    descriptor = None
-    for klass in xhtml::Td.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "colspan" in klass.__dict__:
             descriptor = klass.__dict__["colspan"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::td_has_class_():
-    assert hasattr(xhtml::Td, "class_")
+def test_xhtml_th_has_lang():
+    assert hasattr(xhtml_Th, "lang")
     descriptor = None
-    for klass in xhtml::Td.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::td_has_char():
-    assert hasattr(xhtml::Td, "char")
-    descriptor = None
-    for klass in xhtml::Td.__mro__:
-        if "char" in klass.__dict__:
-            descriptor = klass.__dict__["char"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::td_has_lang():
-    assert hasattr(xhtml::Td, "lang")
-    descriptor = None
-    for klass in xhtml::Td.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_xhtml::ins_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Ins)
-
-
-def test_xhtml::ins_constructor_exists():
-    assert callable(xhtml::Ins.__init__)
-
-
-def test_xhtml::ins_constructor_args():
-    sig = inspect.signature(xhtml::Ins.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xhtml::del_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Del)
-
-
-def test_xhtml::del_constructor_exists():
-    assert callable(xhtml::Del.__init__)
-
-
-def test_xhtml::del_constructor_args():
-    sig = inspect.signature(xhtml::Del.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xhtml::li_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Li)
-
-
-def test_xhtml::li_constructor_exists():
-    assert callable(xhtml::Li.__init__)
-
-
-def test_xhtml::li_constructor_args():
-    sig = inspect.signature(xhtml::Li.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-
-def test_xhtml::li_has_class_():
-    assert hasattr(xhtml::Li, "class_")
+def test_xhtml_th_has_align():
+    assert hasattr(xhtml_Th, "align")
     descriptor = None
-    for klass in xhtml::Li.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::li_has_lang():
-    assert hasattr(xhtml::Li, "lang")
-    descriptor = None
-    for klass in xhtml::Li.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::li_has_style():
-    assert hasattr(xhtml::Li, "style")
-    descriptor = None
-    for klass in xhtml::Li.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::dd_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Dd)
-
-
-def test_xhtml::dd_constructor_exists():
-    assert callable(xhtml::Dd.__init__)
-
-
-def test_xhtml::dd_constructor_args():
-    sig = inspect.signature(xhtml::Dd.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::dd_has_class_():
-    assert hasattr(xhtml::Dd, "class_")
-    descriptor = None
-    for klass in xhtml::Dd.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dd_has_style():
-    assert hasattr(xhtml::Dd, "style")
-    descriptor = None
-    for klass in xhtml::Dd.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dd_has_lang():
-    assert hasattr(xhtml::Dd, "lang")
-    descriptor = None
-    for klass in xhtml::Dd.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::colgroup_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Colgroup)
-
-
-def test_xhtml::colgroup_constructor_exists():
-    assert callable(xhtml::Colgroup.__init__)
-
-
-def test_xhtml::colgroup_constructor_args():
-    sig = inspect.signature(xhtml::Colgroup.__init__)
-    params = list(sig.parameters.keys())
-    assert "span" in params, "Missing parameter 'span'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "char" in params, "Missing parameter 'char'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "valign" in params, "Missing parameter 'valign'"
-
-def test_xhtml::colgroup_has_span():
-    assert hasattr(xhtml::Colgroup, "span")
-    descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
-        if "span" in klass.__dict__:
-            descriptor = klass.__dict__["span"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::colgroup_has_align():
-    assert hasattr(xhtml::Colgroup, "align")
-    descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "align" in klass.__dict__:
             descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::colgroup_has_charoff():
-    assert hasattr(xhtml::Colgroup, "charoff")
+def test_xhtml_th_has_charoff():
+    assert hasattr(xhtml_Th, "charoff")
     descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "charoff" in klass.__dict__:
             descriptor = klass.__dict__["charoff"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::colgroup_has_class_():
-    assert hasattr(xhtml::Colgroup, "class_")
+def test_xhtml_th_has_style():
+    assert hasattr(xhtml_Th, "style")
     descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::colgroup_has_width():
-    assert hasattr(xhtml::Colgroup, "width")
-    descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::colgroup_has_lang():
-    assert hasattr(xhtml::Colgroup, "lang")
-    descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::colgroup_has_char():
-    assert hasattr(xhtml::Colgroup, "char")
-    descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
-        if "char" in klass.__dict__:
-            descriptor = klass.__dict__["char"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::colgroup_has_style():
-    assert hasattr(xhtml::Colgroup, "style")
-    descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
+    for klass in xhtml_Th.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::colgroup_has_valign():
-    assert hasattr(xhtml::Colgroup, "valign")
+
+
+def test_xhtml_del_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Del)
+
+
+def test_xhtml_del_constructor_exists():
+    assert callable(xhtml_Del.__init__)
+
+
+def test_xhtml_del_constructor_args():
+    sig = inspect.signature(xhtml_Del.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xhtml_td_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Td)
+
+
+def test_xhtml_td_constructor_exists():
+    assert callable(xhtml_Td.__init__)
+
+
+def test_xhtml_td_constructor_args():
+    sig = inspect.signature(xhtml_Td.__init__)
+    params = list(sig.parameters.keys())
+    assert "char" in params, "Missing parameter 'char'"
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "rowspan" in params, "Missing parameter 'rowspan'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "colspan" in params, "Missing parameter 'colspan'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "valign" in params, "Missing parameter 'valign'"
+    assert "class_" in params, "Missing parameter 'class_'"
+
+def test_xhtml_td_has_char():
+    assert hasattr(xhtml_Td, "char")
     descriptor = None
-    for klass in xhtml::Colgroup.__mro__:
+    for klass in xhtml_Td.__mro__:
+        if "char" in klass.__dict__:
+            descriptor = klass.__dict__["char"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_charoff():
+    assert hasattr(xhtml_Td, "charoff")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
+        if "charoff" in klass.__dict__:
+            descriptor = klass.__dict__["charoff"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_rowspan():
+    assert hasattr(xhtml_Td, "rowspan")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
+        if "rowspan" in klass.__dict__:
+            descriptor = klass.__dict__["rowspan"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_lang():
+    assert hasattr(xhtml_Td, "lang")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_style():
+    assert hasattr(xhtml_Td, "style")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_colspan():
+    assert hasattr(xhtml_Td, "colspan")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
+        if "colspan" in klass.__dict__:
+            descriptor = klass.__dict__["colspan"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_align():
+    assert hasattr(xhtml_Td, "align")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_td_has_valign():
+    assert hasattr(xhtml_Td, "valign")
+    descriptor = None
+    for klass in xhtml_Td.__mro__:
         if "valign" in klass.__dict__:
             descriptor = klass.__dict__["valign"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_xhtml::col_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Col)
-
-
-def test_xhtml::col_constructor_exists():
-    assert callable(xhtml::Col.__init__)
-
-
-def test_xhtml::col_constructor_args():
-    sig = inspect.signature(xhtml::Col.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "charoff" in params, "Missing parameter 'charoff'"
-    assert "span" in params, "Missing parameter 'span'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "char" in params, "Missing parameter 'char'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "valign" in params, "Missing parameter 'valign'"
-
-def test_xhtml::col_has_class_():
-    assert hasattr(xhtml::Col, "class_")
+def test_xhtml_td_has_class_():
+    assert hasattr(xhtml_Td, "class_")
     descriptor = None
-    for klass in xhtml::Col.__mro__:
+    for klass in xhtml_Td.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::col_has_style():
-    assert hasattr(xhtml::Col, "style")
+
+
+def test_xhtml_li_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Li)
+
+
+def test_xhtml_li_constructor_exists():
+    assert callable(xhtml_Li.__init__)
+
+
+def test_xhtml_li_constructor_args():
+    sig = inspect.signature(xhtml_Li.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_li_has_class_():
+    assert hasattr(xhtml_Li, "class_")
     descriptor = None
-    for klass in xhtml::Col.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
+    for klass in xhtml_Li.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::col_has_align():
-    assert hasattr(xhtml::Col, "align")
+def test_xhtml_li_has_lang():
+    assert hasattr(xhtml_Li, "lang")
     descriptor = None
-    for klass in xhtml::Col.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::col_has_charoff():
-    assert hasattr(xhtml::Col, "charoff")
-    descriptor = None
-    for klass in xhtml::Col.__mro__:
-        if "charoff" in klass.__dict__:
-            descriptor = klass.__dict__["charoff"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::col_has_span():
-    assert hasattr(xhtml::Col, "span")
-    descriptor = None
-    for klass in xhtml::Col.__mro__:
-        if "span" in klass.__dict__:
-            descriptor = klass.__dict__["span"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::col_has_width():
-    assert hasattr(xhtml::Col, "width")
-    descriptor = None
-    for klass in xhtml::Col.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::col_has_char():
-    assert hasattr(xhtml::Col, "char")
-    descriptor = None
-    for klass in xhtml::Col.__mro__:
-        if "char" in klass.__dict__:
-            descriptor = klass.__dict__["char"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::col_has_lang():
-    assert hasattr(xhtml::Col, "lang")
-    descriptor = None
-    for klass in xhtml::Col.__mro__:
+    for klass in xhtml_Li.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::col_has_valign():
-    assert hasattr(xhtml::Col, "valign")
+def test_xhtml_li_has_style():
+    assert hasattr(xhtml_Li, "style")
     descriptor = None
-    for klass in xhtml::Col.__mro__:
+    for klass in xhtml_Li.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_ins_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Ins)
+
+
+def test_xhtml_ins_constructor_exists():
+    assert callable(xhtml_Ins.__init__)
+
+
+def test_xhtml_ins_constructor_args():
+    sig = inspect.signature(xhtml_Ins.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xhtml_dd_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Dd)
+
+
+def test_xhtml_dd_constructor_exists():
+    assert callable(xhtml_Dd.__init__)
+
+
+def test_xhtml_dd_constructor_args():
+    sig = inspect.signature(xhtml_Dd.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_dd_has_class_():
+    assert hasattr(xhtml_Dd, "class_")
+    descriptor = None
+    for klass in xhtml_Dd.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dd_has_lang():
+    assert hasattr(xhtml_Dd, "lang")
+    descriptor = None
+    for klass in xhtml_Dd.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dd_has_style():
+    assert hasattr(xhtml_Dd, "style")
+    descriptor = None
+    for klass in xhtml_Dd.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_colgroup_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Colgroup)
+
+
+def test_xhtml_colgroup_constructor_exists():
+    assert callable(xhtml_Colgroup.__init__)
+
+
+def test_xhtml_colgroup_constructor_args():
+    sig = inspect.signature(xhtml_Colgroup.__init__)
+    params = list(sig.parameters.keys())
+    assert "align" in params, "Missing parameter 'align'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "valign" in params, "Missing parameter 'valign'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "char" in params, "Missing parameter 'char'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "span" in params, "Missing parameter 'span'"
+
+def test_xhtml_colgroup_has_align():
+    assert hasattr(xhtml_Colgroup, "align")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_style():
+    assert hasattr(xhtml_Colgroup, "style")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_valign():
+    assert hasattr(xhtml_Colgroup, "valign")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "valign" in klass.__dict__:
+            descriptor = klass.__dict__["valign"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_width():
+    assert hasattr(xhtml_Colgroup, "width")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_lang():
+    assert hasattr(xhtml_Colgroup, "lang")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_char():
+    assert hasattr(xhtml_Colgroup, "char")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "char" in klass.__dict__:
+            descriptor = klass.__dict__["char"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_class_():
+    assert hasattr(xhtml_Colgroup, "class_")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_charoff():
+    assert hasattr(xhtml_Colgroup, "charoff")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "charoff" in klass.__dict__:
+            descriptor = klass.__dict__["charoff"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_colgroup_has_span():
+    assert hasattr(xhtml_Colgroup, "span")
+    descriptor = None
+    for klass in xhtml_Colgroup.__mro__:
+        if "span" in klass.__dict__:
+            descriptor = klass.__dict__["span"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_col_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Col)
+
+
+def test_xhtml_col_constructor_exists():
+    assert callable(xhtml_Col.__init__)
+
+
+def test_xhtml_col_constructor_args():
+    sig = inspect.signature(xhtml_Col.__init__)
+    params = list(sig.parameters.keys())
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "char" in params, "Missing parameter 'char'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "charoff" in params, "Missing parameter 'charoff'"
+    assert "span" in params, "Missing parameter 'span'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "valign" in params, "Missing parameter 'valign'"
+
+def test_xhtml_col_has_lang():
+    assert hasattr(xhtml_Col, "lang")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_class_():
+    assert hasattr(xhtml_Col, "class_")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_char():
+    assert hasattr(xhtml_Col, "char")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "char" in klass.__dict__:
+            descriptor = klass.__dict__["char"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_style():
+    assert hasattr(xhtml_Col, "style")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_charoff():
+    assert hasattr(xhtml_Col, "charoff")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "charoff" in klass.__dict__:
+            descriptor = klass.__dict__["charoff"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_span():
+    assert hasattr(xhtml_Col, "span")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "span" in klass.__dict__:
+            descriptor = klass.__dict__["span"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_align():
+    assert hasattr(xhtml_Col, "align")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_width():
+    assert hasattr(xhtml_Col, "width")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_col_has_valign():
+    assert hasattr(xhtml_Col, "valign")
+    descriptor = None
+    for klass in xhtml_Col.__mro__:
         if "valign" in klass.__dict__:
             descriptor = klass.__dict__["valign"]
             break
@@ -1138,753 +1138,753 @@ def test_block_constructor_args():
 
 
 
-def test_xhtml::table_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Table)
+def test_xhtml_table_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Table)
 
 
-def test_xhtml::table_constructor_exists():
-    assert callable(xhtml::Table.__init__)
+def test_xhtml_table_constructor_exists():
+    assert callable(xhtml_Table.__init__)
 
 
-def test_xhtml::table_constructor_args():
-    sig = inspect.signature(xhtml::Table.__init__)
+def test_xhtml_table_constructor_args():
+    sig = inspect.signature(xhtml_Table.__init__)
     params = list(sig.parameters.keys())
-    assert "border" in params, "Missing parameter 'border'"
-    assert "rules" in params, "Missing parameter 'rules'"
     assert "frame" in params, "Missing parameter 'frame'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "width" in params, "Missing parameter 'width'"
     assert "cellspacing" in params, "Missing parameter 'cellspacing'"
-    assert "style" in params, "Missing parameter 'style'"
+    assert "rules" in params, "Missing parameter 'rules'"
     assert "cellpadding" in params, "Missing parameter 'cellpadding'"
-    assert "class_" in params, "Missing parameter 'class_'"
+    assert "width" in params, "Missing parameter 'width'"
     assert "hl7Id" in params, "Missing parameter 'hl7Id'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "border" in params, "Missing parameter 'border'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
 
-def test_xhtml::table_has_border():
-    assert hasattr(xhtml::Table, "border")
+def test_xhtml_table_has_frame():
+    assert hasattr(xhtml_Table, "frame")
     descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "border" in klass.__dict__:
-            descriptor = klass.__dict__["border"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::table_has_rules():
-    assert hasattr(xhtml::Table, "rules")
-    descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "rules" in klass.__dict__:
-            descriptor = klass.__dict__["rules"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::table_has_frame():
-    assert hasattr(xhtml::Table, "frame")
-    descriptor = None
-    for klass in xhtml::Table.__mro__:
+    for klass in xhtml_Table.__mro__:
         if "frame" in klass.__dict__:
             descriptor = klass.__dict__["frame"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::table_has_lang():
-    assert hasattr(xhtml::Table, "lang")
+def test_xhtml_table_has_cellspacing():
+    assert hasattr(xhtml_Table, "cellspacing")
     descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::table_has_width():
-    assert hasattr(xhtml::Table, "width")
-    descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::table_has_cellspacing():
-    assert hasattr(xhtml::Table, "cellspacing")
-    descriptor = None
-    for klass in xhtml::Table.__mro__:
+    for klass in xhtml_Table.__mro__:
         if "cellspacing" in klass.__dict__:
             descriptor = klass.__dict__["cellspacing"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::table_has_style():
-    assert hasattr(xhtml::Table, "style")
+def test_xhtml_table_has_rules():
+    assert hasattr(xhtml_Table, "rules")
     descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
+    for klass in xhtml_Table.__mro__:
+        if "rules" in klass.__dict__:
+            descriptor = klass.__dict__["rules"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::table_has_cellpadding():
-    assert hasattr(xhtml::Table, "cellpadding")
+def test_xhtml_table_has_cellpadding():
+    assert hasattr(xhtml_Table, "cellpadding")
     descriptor = None
-    for klass in xhtml::Table.__mro__:
+    for klass in xhtml_Table.__mro__:
         if "cellpadding" in klass.__dict__:
             descriptor = klass.__dict__["cellpadding"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::table_has_class_():
-    assert hasattr(xhtml::Table, "class_")
+def test_xhtml_table_has_width():
+    assert hasattr(xhtml_Table, "width")
     descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::table_has_hl7Id():
-    assert hasattr(xhtml::Table, "hl7Id")
-    descriptor = None
-    for klass in xhtml::Table.__mro__:
-        if "hl7Id" in klass.__dict__:
-            descriptor = klass.__dict__["hl7Id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::blockquote_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Blockquote)
-
-
-def test_xhtml::blockquote_constructor_exists():
-    assert callable(xhtml::Blockquote.__init__)
-
-
-def test_xhtml::blockquote_constructor_args():
-    sig = inspect.signature(xhtml::Blockquote.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "cite" in params, "Missing parameter 'cite'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::blockquote_has_class_():
-    assert hasattr(xhtml::Blockquote, "class_")
-    descriptor = None
-    for klass in xhtml::Blockquote.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::blockquote_has_style():
-    assert hasattr(xhtml::Blockquote, "style")
-    descriptor = None
-    for klass in xhtml::Blockquote.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::blockquote_has_cite():
-    assert hasattr(xhtml::Blockquote, "cite")
-    descriptor = None
-    for klass in xhtml::Blockquote.__mro__:
-        if "cite" in klass.__dict__:
-            descriptor = klass.__dict__["cite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::blockquote_has_lang():
-    assert hasattr(xhtml::Blockquote, "lang")
-    descriptor = None
-    for klass in xhtml::Blockquote.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::ol_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Ol)
-
-
-def test_xhtml::ol_constructor_exists():
-    assert callable(xhtml::Ol.__init__)
-
-
-def test_xhtml::ol_constructor_args():
-    sig = inspect.signature(xhtml::Ol.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "li" in params, "Missing parameter 'li'"
-
-def test_xhtml::ol_has_style():
-    assert hasattr(xhtml::Ol, "style")
-    descriptor = None
-    for klass in xhtml::Ol.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::ol_has_lang():
-    assert hasattr(xhtml::Ol, "lang")
-    descriptor = None
-    for klass in xhtml::Ol.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::ol_has_class_():
-    assert hasattr(xhtml::Ol, "class_")
-    descriptor = None
-    for klass in xhtml::Ol.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::ol_has_li():
-    assert hasattr(xhtml::Ol, "li")
-    descriptor = None
-    for klass in xhtml::Ol.__mro__:
-        if "li" in klass.__dict__:
-            descriptor = klass.__dict__["li"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::ul_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Ul)
-
-
-def test_xhtml::ul_constructor_exists():
-    assert callable(xhtml::Ul.__init__)
-
-
-def test_xhtml::ul_constructor_args():
-    sig = inspect.signature(xhtml::Ul.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "li" in params, "Missing parameter 'li'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::ul_has_style():
-    assert hasattr(xhtml::Ul, "style")
-    descriptor = None
-    for klass in xhtml::Ul.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::ul_has_class_():
-    assert hasattr(xhtml::Ul, "class_")
-    descriptor = None
-    for klass in xhtml::Ul.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::ul_has_li():
-    assert hasattr(xhtml::Ul, "li")
-    descriptor = None
-    for klass in xhtml::Ul.__mro__:
-        if "li" in klass.__dict__:
-            descriptor = klass.__dict__["li"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::ul_has_lang():
-    assert hasattr(xhtml::Ul, "lang")
-    descriptor = None
-    for klass in xhtml::Ul.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::div_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Div)
-
-
-def test_xhtml::div_constructor_exists():
-    assert callable(xhtml::Div.__init__)
-
-
-def test_xhtml::div_constructor_args():
-    sig = inspect.signature(xhtml::Div.__init__)
-    params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-    assert "hl7Id" in params, "Missing parameter 'hl7Id'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::div_has_title():
-    assert hasattr(xhtml::Div, "title")
-    descriptor = None
-    for klass in xhtml::Div.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::div_has_hl7Id():
-    assert hasattr(xhtml::Div, "hl7Id")
-    descriptor = None
-    for klass in xhtml::Div.__mro__:
-        if "hl7Id" in klass.__dict__:
-            descriptor = klass.__dict__["hl7Id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::div_has_lang():
-    assert hasattr(xhtml::Div, "lang")
-    descriptor = None
-    for klass in xhtml::Div.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::div_has_style():
-    assert hasattr(xhtml::Div, "style")
-    descriptor = None
-    for klass in xhtml::Div.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::div_has_class_():
-    assert hasattr(xhtml::Div, "class_")
-    descriptor = None
-    for klass in xhtml::Div.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::hr_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Hr)
-
-
-def test_xhtml::hr_constructor_exists():
-    assert callable(xhtml::Hr.__init__)
-
-
-def test_xhtml::hr_constructor_args():
-    sig = inspect.signature(xhtml::Hr.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::hr_has_lang():
-    assert hasattr(xhtml::Hr, "lang")
-    descriptor = None
-    for klass in xhtml::Hr.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::hr_has_style():
-    assert hasattr(xhtml::Hr, "style")
-    descriptor = None
-    for klass in xhtml::Hr.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::hr_has_class_():
-    assert hasattr(xhtml::Hr, "class_")
-    descriptor = None
-    for klass in xhtml::Hr.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::pre_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Pre)
-
-
-def test_xhtml::pre_constructor_exists():
-    assert callable(xhtml::Pre.__init__)
-
-
-def test_xhtml::pre_constructor_args():
-    sig = inspect.signature(xhtml::Pre.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "space" in params, "Missing parameter 'space'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-
-def test_xhtml::pre_has_lang():
-    assert hasattr(xhtml::Pre, "lang")
-    descriptor = None
-    for klass in xhtml::Pre.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::pre_has_space():
-    assert hasattr(xhtml::Pre, "space")
-    descriptor = None
-    for klass in xhtml::Pre.__mro__:
-        if "space" in klass.__dict__:
-            descriptor = klass.__dict__["space"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::pre_has_class_():
-    assert hasattr(xhtml::Pre, "class_")
-    descriptor = None
-    for klass in xhtml::Pre.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::pre_has_style():
-    assert hasattr(xhtml::Pre, "style")
-    descriptor = None
-    for klass in xhtml::Pre.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::dl_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Dl)
-
-
-def test_xhtml::dl_constructor_exists():
-    assert callable(xhtml::Dl.__init__)
-
-
-def test_xhtml::dl_constructor_args():
-    sig = inspect.signature(xhtml::Dl.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_xhtml::dl_has_lang():
-    assert hasattr(xhtml::Dl, "lang")
-    descriptor = None
-    for klass in xhtml::Dl.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dl_has_style():
-    assert hasattr(xhtml::Dl, "style")
-    descriptor = None
-    for klass in xhtml::Dl.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dl_has_class_():
-    assert hasattr(xhtml::Dl, "class_")
-    descriptor = None
-    for klass in xhtml::Dl.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dl_has_group():
-    assert hasattr(xhtml::Dl, "group")
-    descriptor = None
-    for klass in xhtml::Dl.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::block_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Block)
-
-
-def test_xhtml::block_constructor_exists():
-    assert callable(xhtml::Block.__init__)
-
-
-def test_xhtml::block_constructor_args():
-    sig = inspect.signature(xhtml::Block.__init__)
-    params = list(sig.parameters.keys())
-    assert "block" in params, "Missing parameter 'block'"
-    assert "mixed" in params, "Missing parameter 'mixed'"
-
-def test_xhtml::block_has_block():
-    assert hasattr(xhtml::Block, "block")
-    descriptor = None
-    for klass in xhtml::Block.__mro__:
-        if "block" in klass.__dict__:
-            descriptor = klass.__dict__["block"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::block_has_mixed():
-    assert hasattr(xhtml::Block, "mixed")
-    descriptor = None
-    for klass in xhtml::Block.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::br_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Br)
-
-
-def test_xhtml::br_constructor_exists():
-    assert callable(xhtml::Br.__init__)
-
-
-def test_xhtml::br_constructor_args():
-    sig = inspect.signature(xhtml::Br.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::br_has_style():
-    assert hasattr(xhtml::Br, "style")
-    descriptor = None
-    for klass in xhtml::Br.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::br_has_class_():
-    assert hasattr(xhtml::Br, "class_")
-    descriptor = None
-    for klass in xhtml::Br.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::acontent_is_not_abstract():
-    assert not inspect.isabstract(xhtml::AContent)
-
-
-def test_xhtml::acontent_constructor_exists():
-    assert callable(xhtml::AContent.__init__)
-
-
-def test_xhtml::acontent_constructor_args():
-    sig = inspect.signature(xhtml::AContent.__init__)
-    params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "group" in params, "Missing parameter 'group'"
-
-def test_xhtml::acontent_has_mixed():
-    assert hasattr(xhtml::AContent, "mixed")
-    descriptor = None
-    for klass in xhtml::AContent.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::acontent_has_group():
-    assert hasattr(xhtml::AContent, "group")
-    descriptor = None
-    for klass in xhtml::AContent.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::img_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Img)
-
-
-def test_xhtml::img_constructor_exists():
-    assert callable(xhtml::Img.__init__)
-
-
-def test_xhtml::img_constructor_args():
-    sig = inspect.signature(xhtml::Img.__init__)
-    params = list(sig.parameters.keys())
-    assert "hl7Id" in params, "Missing parameter 'hl7Id'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "height" in params, "Missing parameter 'height'"
-    assert "src" in params, "Missing parameter 'src'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "alt" in params, "Missing parameter 'alt'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "imageType" in params, "Missing parameter 'imageType'"
-
-def test_xhtml::img_has_hl7Id():
-    assert hasattr(xhtml::Img, "hl7Id")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "hl7Id" in klass.__dict__:
-            descriptor = klass.__dict__["hl7Id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_width():
-    assert hasattr(xhtml::Img, "width")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
+    for klass in xhtml_Table.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::img_has_height():
-    assert hasattr(xhtml::Img, "height")
+def test_xhtml_table_has_hl7Id():
+    assert hasattr(xhtml_Table, "hl7Id")
     descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_src():
-    assert hasattr(xhtml::Img, "src")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_class_():
-    assert hasattr(xhtml::Img, "class_")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_alt():
-    assert hasattr(xhtml::Img, "alt")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "alt" in klass.__dict__:
-            descriptor = klass.__dict__["alt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_lang():
-    assert hasattr(xhtml::Img, "lang")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_style():
-    assert hasattr(xhtml::Img, "style")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::img_has_imageType():
-    assert hasattr(xhtml::Img, "imageType")
-    descriptor = None
-    for klass in xhtml::Img.__mro__:
-        if "imageType" in klass.__dict__:
-            descriptor = klass.__dict__["imageType"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::object_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Object)
-
-
-def test_xhtml::object_constructor_exists():
-    assert callable(xhtml::Object.__init__)
-
-
-def test_xhtml::object_constructor_args():
-    sig = inspect.signature(xhtml::Object.__init__)
-    params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
-    assert "group" in params, "Missing parameter 'group'"
-    assert "hl7Id" in params, "Missing parameter 'hl7Id'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_xhtml::object_has_mixed():
-    assert hasattr(xhtml::Object, "mixed")
-    descriptor = None
-    for klass in xhtml::Object.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::object_has_group():
-    assert hasattr(xhtml::Object, "group")
-    descriptor = None
-    for klass in xhtml::Object.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::object_has_hl7Id():
-    assert hasattr(xhtml::Object, "hl7Id")
-    descriptor = None
-    for klass in xhtml::Object.__mro__:
+    for klass in xhtml_Table.__mro__:
         if "hl7Id" in klass.__dict__:
             descriptor = klass.__dict__["hl7Id"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::object_has_name():
-    assert hasattr(xhtml::Object, "name")
+def test_xhtml_table_has_style():
+    assert hasattr(xhtml_Table, "style")
     descriptor = None
-    for klass in xhtml::Object.__mro__:
+    for klass in xhtml_Table.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_table_has_border():
+    assert hasattr(xhtml_Table, "border")
+    descriptor = None
+    for klass in xhtml_Table.__mro__:
+        if "border" in klass.__dict__:
+            descriptor = klass.__dict__["border"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_table_has_lang():
+    assert hasattr(xhtml_Table, "lang")
+    descriptor = None
+    for klass in xhtml_Table.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_table_has_class_():
+    assert hasattr(xhtml_Table, "class_")
+    descriptor = None
+    for klass in xhtml_Table.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_blockquote_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Blockquote)
+
+
+def test_xhtml_blockquote_constructor_exists():
+    assert callable(xhtml_Blockquote.__init__)
+
+
+def test_xhtml_blockquote_constructor_args():
+    sig = inspect.signature(xhtml_Blockquote.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "cite" in params, "Missing parameter 'cite'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "lang" in params, "Missing parameter 'lang'"
+
+def test_xhtml_blockquote_has_class_():
+    assert hasattr(xhtml_Blockquote, "class_")
+    descriptor = None
+    for klass in xhtml_Blockquote.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_blockquote_has_cite():
+    assert hasattr(xhtml_Blockquote, "cite")
+    descriptor = None
+    for klass in xhtml_Blockquote.__mro__:
+        if "cite" in klass.__dict__:
+            descriptor = klass.__dict__["cite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_blockquote_has_style():
+    assert hasattr(xhtml_Blockquote, "style")
+    descriptor = None
+    for klass in xhtml_Blockquote.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_blockquote_has_lang():
+    assert hasattr(xhtml_Blockquote, "lang")
+    descriptor = None
+    for klass in xhtml_Blockquote.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_ol_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Ol)
+
+
+def test_xhtml_ol_constructor_exists():
+    assert callable(xhtml_Ol.__init__)
+
+
+def test_xhtml_ol_constructor_args():
+    sig = inspect.signature(xhtml_Ol.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "li" in params, "Missing parameter 'li'"
+
+def test_xhtml_ol_has_style():
+    assert hasattr(xhtml_Ol, "style")
+    descriptor = None
+    for klass in xhtml_Ol.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_ol_has_lang():
+    assert hasattr(xhtml_Ol, "lang")
+    descriptor = None
+    for klass in xhtml_Ol.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_ol_has_class_():
+    assert hasattr(xhtml_Ol, "class_")
+    descriptor = None
+    for klass in xhtml_Ol.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_ol_has_li():
+    assert hasattr(xhtml_Ol, "li")
+    descriptor = None
+    for klass in xhtml_Ol.__mro__:
+        if "li" in klass.__dict__:
+            descriptor = klass.__dict__["li"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_ul_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Ul)
+
+
+def test_xhtml_ul_constructor_exists():
+    assert callable(xhtml_Ul.__init__)
+
+
+def test_xhtml_ul_constructor_args():
+    sig = inspect.signature(xhtml_Ul.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "li" in params, "Missing parameter 'li'"
+
+def test_xhtml_ul_has_class_():
+    assert hasattr(xhtml_Ul, "class_")
+    descriptor = None
+    for klass in xhtml_Ul.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_ul_has_lang():
+    assert hasattr(xhtml_Ul, "lang")
+    descriptor = None
+    for klass in xhtml_Ul.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_ul_has_style():
+    assert hasattr(xhtml_Ul, "style")
+    descriptor = None
+    for klass in xhtml_Ul.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_ul_has_li():
+    assert hasattr(xhtml_Ul, "li")
+    descriptor = None
+    for klass in xhtml_Ul.__mro__:
+        if "li" in klass.__dict__:
+            descriptor = klass.__dict__["li"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_div_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Div)
+
+
+def test_xhtml_div_constructor_exists():
+    assert callable(xhtml_Div.__init__)
+
+
+def test_xhtml_div_constructor_args():
+    sig = inspect.signature(xhtml_Div.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "hl7Id" in params, "Missing parameter 'hl7Id'"
+
+def test_xhtml_div_has_title():
+    assert hasattr(xhtml_Div, "title")
+    descriptor = None
+    for klass in xhtml_Div.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_div_has_class_():
+    assert hasattr(xhtml_Div, "class_")
+    descriptor = None
+    for klass in xhtml_Div.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_div_has_style():
+    assert hasattr(xhtml_Div, "style")
+    descriptor = None
+    for klass in xhtml_Div.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_div_has_lang():
+    assert hasattr(xhtml_Div, "lang")
+    descriptor = None
+    for klass in xhtml_Div.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_div_has_hl7Id():
+    assert hasattr(xhtml_Div, "hl7Id")
+    descriptor = None
+    for klass in xhtml_Div.__mro__:
+        if "hl7Id" in klass.__dict__:
+            descriptor = klass.__dict__["hl7Id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_hr_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Hr)
+
+
+def test_xhtml_hr_constructor_exists():
+    assert callable(xhtml_Hr.__init__)
+
+
+def test_xhtml_hr_constructor_args():
+    sig = inspect.signature(xhtml_Hr.__init__)
+    params = list(sig.parameters.keys())
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_hr_has_lang():
+    assert hasattr(xhtml_Hr, "lang")
+    descriptor = None
+    for klass in xhtml_Hr.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_hr_has_class_():
+    assert hasattr(xhtml_Hr, "class_")
+    descriptor = None
+    for klass in xhtml_Hr.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_hr_has_style():
+    assert hasattr(xhtml_Hr, "style")
+    descriptor = None
+    for klass in xhtml_Hr.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_pre_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Pre)
+
+
+def test_xhtml_pre_constructor_exists():
+    assert callable(xhtml_Pre.__init__)
+
+
+def test_xhtml_pre_constructor_args():
+    sig = inspect.signature(xhtml_Pre.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "space" in params, "Missing parameter 'space'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_pre_has_class_():
+    assert hasattr(xhtml_Pre, "class_")
+    descriptor = None
+    for klass in xhtml_Pre.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_pre_has_lang():
+    assert hasattr(xhtml_Pre, "lang")
+    descriptor = None
+    for klass in xhtml_Pre.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_pre_has_space():
+    assert hasattr(xhtml_Pre, "space")
+    descriptor = None
+    for klass in xhtml_Pre.__mro__:
+        if "space" in klass.__dict__:
+            descriptor = klass.__dict__["space"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_pre_has_style():
+    assert hasattr(xhtml_Pre, "style")
+    descriptor = None
+    for klass in xhtml_Pre.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_dl_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Dl)
+
+
+def test_xhtml_dl_constructor_exists():
+    assert callable(xhtml_Dl.__init__)
+
+
+def test_xhtml_dl_constructor_args():
+    sig = inspect.signature(xhtml_Dl.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_xhtml_dl_has_style():
+    assert hasattr(xhtml_Dl, "style")
+    descriptor = None
+    for klass in xhtml_Dl.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dl_has_class_():
+    assert hasattr(xhtml_Dl, "class_")
+    descriptor = None
+    for klass in xhtml_Dl.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dl_has_lang():
+    assert hasattr(xhtml_Dl, "lang")
+    descriptor = None
+    for klass in xhtml_Dl.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dl_has_group():
+    assert hasattr(xhtml_Dl, "group")
+    descriptor = None
+    for klass in xhtml_Dl.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_block_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Block)
+
+
+def test_xhtml_block_constructor_exists():
+    assert callable(xhtml_Block.__init__)
+
+
+def test_xhtml_block_constructor_args():
+    sig = inspect.signature(xhtml_Block.__init__)
+    params = list(sig.parameters.keys())
+    assert "block" in params, "Missing parameter 'block'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+
+def test_xhtml_block_has_block():
+    assert hasattr(xhtml_Block, "block")
+    descriptor = None
+    for klass in xhtml_Block.__mro__:
+        if "block" in klass.__dict__:
+            descriptor = klass.__dict__["block"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_block_has_mixed():
+    assert hasattr(xhtml_Block, "mixed")
+    descriptor = None
+    for klass in xhtml_Block.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_br_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Br)
+
+
+def test_xhtml_br_constructor_exists():
+    assert callable(xhtml_Br.__init__)
+
+
+def test_xhtml_br_constructor_args():
+    sig = inspect.signature(xhtml_Br.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_br_has_class_():
+    assert hasattr(xhtml_Br, "class_")
+    descriptor = None
+    for klass in xhtml_Br.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_br_has_style():
+    assert hasattr(xhtml_Br, "style")
+    descriptor = None
+    for klass in xhtml_Br.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_acontent_is_not_abstract():
+    assert not inspect.isabstract(xhtml_AContent)
+
+
+def test_xhtml_acontent_constructor_exists():
+    assert callable(xhtml_AContent.__init__)
+
+
+def test_xhtml_acontent_constructor_args():
+    sig = inspect.signature(xhtml_AContent.__init__)
+    params = list(sig.parameters.keys())
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_xhtml_acontent_has_mixed():
+    assert hasattr(xhtml_AContent, "mixed")
+    descriptor = None
+    for klass in xhtml_AContent.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_acontent_has_group():
+    assert hasattr(xhtml_AContent, "group")
+    descriptor = None
+    for klass in xhtml_AContent.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_img_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Img)
+
+
+def test_xhtml_img_constructor_exists():
+    assert callable(xhtml_Img.__init__)
+
+
+def test_xhtml_img_constructor_args():
+    sig = inspect.signature(xhtml_Img.__init__)
+    params = list(sig.parameters.keys())
+    assert "alt" in params, "Missing parameter 'alt'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "imageType" in params, "Missing parameter 'imageType'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "hl7Id" in params, "Missing parameter 'hl7Id'"
+    assert "src" in params, "Missing parameter 'src'"
+
+def test_xhtml_img_has_alt():
+    assert hasattr(xhtml_Img, "alt")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "alt" in klass.__dict__:
+            descriptor = klass.__dict__["alt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_width():
+    assert hasattr(xhtml_Img, "width")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_imageType():
+    assert hasattr(xhtml_Img, "imageType")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "imageType" in klass.__dict__:
+            descriptor = klass.__dict__["imageType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_lang():
+    assert hasattr(xhtml_Img, "lang")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_style():
+    assert hasattr(xhtml_Img, "style")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_class_():
+    assert hasattr(xhtml_Img, "class_")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_height():
+    assert hasattr(xhtml_Img, "height")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_hl7Id():
+    assert hasattr(xhtml_Img, "hl7Id")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "hl7Id" in klass.__dict__:
+            descriptor = klass.__dict__["hl7Id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_img_has_src():
+    assert hasattr(xhtml_Img, "src")
+    descriptor = None
+    for klass in xhtml_Img.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_object_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Object)
+
+
+def test_xhtml_object_constructor_exists():
+    assert callable(xhtml_Object.__init__)
+
+
+def test_xhtml_object_constructor_args():
+    sig = inspect.signature(xhtml_Object.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "hl7Id" in params, "Missing parameter 'hl7Id'"
+    assert "mixed" in params, "Missing parameter 'mixed'"
+    assert "group" in params, "Missing parameter 'group'"
+
+def test_xhtml_object_has_name():
+    assert hasattr(xhtml_Object, "name")
+    descriptor = None
+    for klass in xhtml_Object.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_object_has_hl7Id():
+    assert hasattr(xhtml_Object, "hl7Id")
+    descriptor = None
+    for klass in xhtml_Object.__mro__:
+        if "hl7Id" in klass.__dict__:
+            descriptor = klass.__dict__["hl7Id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_object_has_mixed():
+    assert hasattr(xhtml_Object, "mixed")
+    descriptor = None
+    for klass in xhtml_Object.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_object_has_group():
+    assert hasattr(xhtml_Object, "group")
+    descriptor = None
+    for klass in xhtml_Object.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
             break
     assert isinstance(descriptor, property)
 
@@ -1904,361 +1904,405 @@ def test_inline_constructor_args():
 
 
 
-def test_xhtml::q_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Q)
+def test_xhtml_i_is_not_abstract():
+    assert not inspect.isabstract(xhtml_I)
 
 
-def test_xhtml::q_constructor_exists():
-    assert callable(xhtml::Q.__init__)
+def test_xhtml_i_constructor_exists():
+    assert callable(xhtml_I.__init__)
 
 
-def test_xhtml::q_constructor_args():
-    sig = inspect.signature(xhtml::Q.__init__)
+def test_xhtml_i_constructor_args():
+    sig = inspect.signature(xhtml_I.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_i_has_class_():
+    assert hasattr(xhtml_I, "class_")
+    descriptor = None
+    for klass in xhtml_I.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_i_has_lang():
+    assert hasattr(xhtml_I, "lang")
+    descriptor = None
+    for klass in xhtml_I.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_i_has_style():
+    assert hasattr(xhtml_I, "style")
+    descriptor = None
+    for klass in xhtml_I.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_sub_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Sub)
+
+
+def test_xhtml_sub_constructor_exists():
+    assert callable(xhtml_Sub.__init__)
+
+
+def test_xhtml_sub_constructor_args():
+    sig = inspect.signature(xhtml_Sub.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "lang" in params, "Missing parameter 'lang'"
+
+def test_xhtml_sub_has_class_():
+    assert hasattr(xhtml_Sub, "class_")
+    descriptor = None
+    for klass in xhtml_Sub.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_sub_has_style():
+    assert hasattr(xhtml_Sub, "style")
+    descriptor = None
+    for klass in xhtml_Sub.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_sub_has_lang():
+    assert hasattr(xhtml_Sub, "lang")
+    descriptor = None
+    for klass in xhtml_Sub.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_sup_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Sup)
+
+
+def test_xhtml_sup_constructor_exists():
+    assert callable(xhtml_Sup.__init__)
+
+
+def test_xhtml_sup_constructor_args():
+    sig = inspect.signature(xhtml_Sup.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+
+def test_xhtml_sup_has_style():
+    assert hasattr(xhtml_Sup, "style")
+    descriptor = None
+    for klass in xhtml_Sup.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_sup_has_class_():
+    assert hasattr(xhtml_Sup, "class_")
+    descriptor = None
+    for klass in xhtml_Sup.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_sup_has_lang():
+    assert hasattr(xhtml_Sup, "lang")
+    descriptor = None
+    for klass in xhtml_Sup.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_em_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Em)
+
+
+def test_xhtml_em_constructor_exists():
+    assert callable(xhtml_Em.__init__)
+
+
+def test_xhtml_em_constructor_args():
+    sig = inspect.signature(xhtml_Em.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+
+def test_xhtml_em_has_style():
+    assert hasattr(xhtml_Em, "style")
+    descriptor = None
+    for klass in xhtml_Em.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_em_has_lang():
+    assert hasattr(xhtml_Em, "lang")
+    descriptor = None
+    for klass in xhtml_Em.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_em_has_class_():
+    assert hasattr(xhtml_Em, "class_")
+    descriptor = None
+    for klass in xhtml_Em.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_acronym_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Acronym)
+
+
+def test_xhtml_acronym_constructor_exists():
+    assert callable(xhtml_Acronym.__init__)
+
+
+def test_xhtml_acronym_constructor_args():
+    sig = inspect.signature(xhtml_Acronym.__init__)
+    params = list(sig.parameters.keys())
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_acronym_has_lang():
+    assert hasattr(xhtml_Acronym, "lang")
+    descriptor = None
+    for klass in xhtml_Acronym.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_acronym_has_class_():
+    assert hasattr(xhtml_Acronym, "class_")
+    descriptor = None
+    for klass in xhtml_Acronym.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_acronym_has_style():
+    assert hasattr(xhtml_Acronym, "style")
+    descriptor = None
+    for klass in xhtml_Acronym.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_cite_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Cite)
+
+
+def test_xhtml_cite_constructor_exists():
+    assert callable(xhtml_Cite.__init__)
+
+
+def test_xhtml_cite_constructor_args():
+    sig = inspect.signature(xhtml_Cite.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+
+def test_xhtml_cite_has_style():
+    assert hasattr(xhtml_Cite, "style")
+    descriptor = None
+    for klass in xhtml_Cite.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_cite_has_class_():
+    assert hasattr(xhtml_Cite, "class_")
+    descriptor = None
+    for klass in xhtml_Cite.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_cite_has_lang():
+    assert hasattr(xhtml_Cite, "lang")
+    descriptor = None
+    for klass in xhtml_Cite.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_small_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Small)
+
+
+def test_xhtml_small_constructor_exists():
+    assert callable(xhtml_Small.__init__)
+
+
+def test_xhtml_small_constructor_args():
+    sig = inspect.signature(xhtml_Small.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_small_has_class_():
+    assert hasattr(xhtml_Small, "class_")
+    descriptor = None
+    for klass in xhtml_Small.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_small_has_lang():
+    assert hasattr(xhtml_Small, "lang")
+    descriptor = None
+    for klass in xhtml_Small.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_small_has_style():
+    assert hasattr(xhtml_Small, "style")
+    descriptor = None
+    for klass in xhtml_Small.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_b_is_not_abstract():
+    assert not inspect.isabstract(xhtml_B)
+
+
+def test_xhtml_b_constructor_exists():
+    assert callable(xhtml_B.__init__)
+
+
+def test_xhtml_b_constructor_args():
+    sig = inspect.signature(xhtml_B.__init__)
+    params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_b_has_class_():
+    assert hasattr(xhtml_B, "class_")
+    descriptor = None
+    for klass in xhtml_B.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_b_has_lang():
+    assert hasattr(xhtml_B, "lang")
+    descriptor = None
+    for klass in xhtml_B.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_b_has_style():
+    assert hasattr(xhtml_B, "style")
+    descriptor = None
+    for klass in xhtml_B.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_q_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Q)
+
+
+def test_xhtml_q_constructor_exists():
+    assert callable(xhtml_Q.__init__)
+
+
+def test_xhtml_q_constructor_args():
+    sig = inspect.signature(xhtml_Q.__init__)
     params = list(sig.parameters.keys())
     assert "cite1" in params, "Missing parameter 'cite1'"
     assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
 
-def test_xhtml::q_has_cite1():
-    assert hasattr(xhtml::Q, "cite1")
+def test_xhtml_q_has_cite1():
+    assert hasattr(xhtml_Q, "cite1")
     descriptor = None
-    for klass in xhtml::Q.__mro__:
+    for klass in xhtml_Q.__mro__:
         if "cite1" in klass.__dict__:
             descriptor = klass.__dict__["cite1"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::q_has_lang():
-    assert hasattr(xhtml::Q, "lang")
+def test_xhtml_q_has_lang():
+    assert hasattr(xhtml_Q, "lang")
     descriptor = None
-    for klass in xhtml::Q.__mro__:
+    for klass in xhtml_Q.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::q_has_style():
-    assert hasattr(xhtml::Q, "style")
+def test_xhtml_q_has_class_():
+    assert hasattr(xhtml_Q, "class_")
     descriptor = None
-    for klass in xhtml::Q.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::q_has_class_():
-    assert hasattr(xhtml::Q, "class_")
-    descriptor = None
-    for klass in xhtml::Q.__mro__:
+    for klass in xhtml_Q.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_xhtml::big_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Big)
-
-
-def test_xhtml::big_constructor_exists():
-    assert callable(xhtml::Big.__init__)
-
-
-def test_xhtml::big_constructor_args():
-    sig = inspect.signature(xhtml::Big.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::big_has_class_():
-    assert hasattr(xhtml::Big, "class_")
+def test_xhtml_q_has_style():
+    assert hasattr(xhtml_Q, "style")
     descriptor = None
-    for klass in xhtml::Big.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::big_has_style():
-    assert hasattr(xhtml::Big, "style")
-    descriptor = None
-    for klass in xhtml::Big.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::big_has_lang():
-    assert hasattr(xhtml::Big, "lang")
-    descriptor = None
-    for klass in xhtml::Big.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::b_is_not_abstract():
-    assert not inspect.isabstract(xhtml::B)
-
-
-def test_xhtml::b_constructor_exists():
-    assert callable(xhtml::B.__init__)
-
-
-def test_xhtml::b_constructor_args():
-    sig = inspect.signature(xhtml::B.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::b_has_lang():
-    assert hasattr(xhtml::B, "lang")
-    descriptor = None
-    for klass in xhtml::B.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::b_has_style():
-    assert hasattr(xhtml::B, "style")
-    descriptor = None
-    for klass in xhtml::B.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::b_has_class_():
-    assert hasattr(xhtml::B, "class_")
-    descriptor = None
-    for klass in xhtml::B.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::tt_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Tt)
-
-
-def test_xhtml::tt_constructor_exists():
-    assert callable(xhtml::Tt.__init__)
-
-
-def test_xhtml::tt_constructor_args():
-    sig = inspect.signature(xhtml::Tt.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::tt_has_style():
-    assert hasattr(xhtml::Tt, "style")
-    descriptor = None
-    for klass in xhtml::Tt.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tt_has_class_():
-    assert hasattr(xhtml::Tt, "class_")
-    descriptor = None
-    for klass in xhtml::Tt.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::tt_has_lang():
-    assert hasattr(xhtml::Tt, "lang")
-    descriptor = None
-    for klass in xhtml::Tt.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::caption_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Caption)
-
-
-def test_xhtml::caption_constructor_exists():
-    assert callable(xhtml::Caption.__init__)
-
-
-def test_xhtml::caption_constructor_args():
-    sig = inspect.signature(xhtml::Caption.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::caption_has_class_():
-    assert hasattr(xhtml::Caption, "class_")
-    descriptor = None
-    for klass in xhtml::Caption.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::caption_has_style():
-    assert hasattr(xhtml::Caption, "style")
-    descriptor = None
-    for klass in xhtml::Caption.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::caption_has_lang():
-    assert hasattr(xhtml::Caption, "lang")
-    descriptor = None
-    for klass in xhtml::Caption.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::sub_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Sub)
-
-
-def test_xhtml::sub_constructor_exists():
-    assert callable(xhtml::Sub.__init__)
-
-
-def test_xhtml::sub_constructor_args():
-    sig = inspect.signature(xhtml::Sub.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::sub_has_style():
-    assert hasattr(xhtml::Sub, "style")
-    descriptor = None
-    for klass in xhtml::Sub.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::sub_has_lang():
-    assert hasattr(xhtml::Sub, "lang")
-    descriptor = None
-    for klass in xhtml::Sub.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::sub_has_class_():
-    assert hasattr(xhtml::Sub, "class_")
-    descriptor = None
-    for klass in xhtml::Sub.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::small_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Small)
-
-
-def test_xhtml::small_constructor_exists():
-    assert callable(xhtml::Small.__init__)
-
-
-def test_xhtml::small_constructor_args():
-    sig = inspect.signature(xhtml::Small.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::small_has_style():
-    assert hasattr(xhtml::Small, "style")
-    descriptor = None
-    for klass in xhtml::Small.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::small_has_lang():
-    assert hasattr(xhtml::Small, "lang")
-    descriptor = None
-    for klass in xhtml::Small.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::small_has_class_():
-    assert hasattr(xhtml::Small, "class_")
-    descriptor = None
-    for klass in xhtml::Small.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::sup_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Sup)
-
-
-def test_xhtml::sup_constructor_exists():
-    assert callable(xhtml::Sup.__init__)
-
-
-def test_xhtml::sup_constructor_args():
-    sig = inspect.signature(xhtml::Sup.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-
-def test_xhtml::sup_has_class_():
-    assert hasattr(xhtml::Sup, "class_")
-    descriptor = None
-    for klass in xhtml::Sup.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::sup_has_lang():
-    assert hasattr(xhtml::Sup, "lang")
-    descriptor = None
-    for klass in xhtml::Sup.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::sup_has_style():
-    assert hasattr(xhtml::Sup, "style")
-    descriptor = None
-    for klass in xhtml::Sup.__mro__:
+    for klass in xhtml_Q.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2266,43 +2310,43 @@ def test_xhtml::sup_has_style():
 
 
 
-def test_xhtml::kbd_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Kbd)
+def test_xhtml_kbd_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Kbd)
 
 
-def test_xhtml::kbd_constructor_exists():
-    assert callable(xhtml::Kbd.__init__)
+def test_xhtml_kbd_constructor_exists():
+    assert callable(xhtml_Kbd.__init__)
 
 
-def test_xhtml::kbd_constructor_args():
-    sig = inspect.signature(xhtml::Kbd.__init__)
+def test_xhtml_kbd_constructor_args():
+    sig = inspect.signature(xhtml_Kbd.__init__)
     params = list(sig.parameters.keys())
     assert "lang" in params, "Missing parameter 'lang'"
     assert "class_" in params, "Missing parameter 'class_'"
     assert "style" in params, "Missing parameter 'style'"
 
-def test_xhtml::kbd_has_lang():
-    assert hasattr(xhtml::Kbd, "lang")
+def test_xhtml_kbd_has_lang():
+    assert hasattr(xhtml_Kbd, "lang")
     descriptor = None
-    for klass in xhtml::Kbd.__mro__:
+    for klass in xhtml_Kbd.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::kbd_has_class_():
-    assert hasattr(xhtml::Kbd, "class_")
+def test_xhtml_kbd_has_class_():
+    assert hasattr(xhtml_Kbd, "class_")
     descriptor = None
-    for klass in xhtml::Kbd.__mro__:
+    for klass in xhtml_Kbd.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::kbd_has_style():
-    assert hasattr(xhtml::Kbd, "style")
+def test_xhtml_kbd_has_style():
+    assert hasattr(xhtml_Kbd, "style")
     descriptor = None
-    for klass in xhtml::Kbd.__mro__:
+    for klass in xhtml_Kbd.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2310,175 +2354,43 @@ def test_xhtml::kbd_has_style():
 
 
 
-def test_xhtml::cite_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Cite)
+def test_xhtml_samp_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Samp)
 
 
-def test_xhtml::cite_constructor_exists():
-    assert callable(xhtml::Cite.__init__)
+def test_xhtml_samp_constructor_exists():
+    assert callable(xhtml_Samp.__init__)
 
 
-def test_xhtml::cite_constructor_args():
-    sig = inspect.signature(xhtml::Cite.__init__)
+def test_xhtml_samp_constructor_args():
+    sig = inspect.signature(xhtml_Samp.__init__)
     params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
     assert "lang" in params, "Missing parameter 'lang'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
 
-def test_xhtml::cite_has_style():
-    assert hasattr(xhtml::Cite, "style")
+def test_xhtml_samp_has_lang():
+    assert hasattr(xhtml_Samp, "lang")
     descriptor = None
-    for klass in xhtml::Cite.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::cite_has_lang():
-    assert hasattr(xhtml::Cite, "lang")
-    descriptor = None
-    for klass in xhtml::Cite.__mro__:
+    for klass in xhtml_Samp.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::cite_has_class_():
-    assert hasattr(xhtml::Cite, "class_")
+def test_xhtml_samp_has_class_():
+    assert hasattr(xhtml_Samp, "class_")
     descriptor = None
-    for klass in xhtml::Cite.__mro__:
+    for klass in xhtml_Samp.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_xhtml::span_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Span)
-
-
-def test_xhtml::span_constructor_exists():
-    assert callable(xhtml::Span.__init__)
-
-
-def test_xhtml::span_constructor_args():
-    sig = inspect.signature(xhtml::Span.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::span_has_style():
-    assert hasattr(xhtml::Span, "style")
+def test_xhtml_samp_has_style():
+    assert hasattr(xhtml_Samp, "style")
     descriptor = None
-    for klass in xhtml::Span.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::span_has_class_():
-    assert hasattr(xhtml::Span, "class_")
-    descriptor = None
-    for klass in xhtml::Span.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::span_has_lang():
-    assert hasattr(xhtml::Span, "lang")
-    descriptor = None
-    for klass in xhtml::Span.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::dfn_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Dfn)
-
-
-def test_xhtml::dfn_constructor_exists():
-    assert callable(xhtml::Dfn.__init__)
-
-
-def test_xhtml::dfn_constructor_args():
-    sig = inspect.signature(xhtml::Dfn.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
-
-def test_xhtml::dfn_has_style():
-    assert hasattr(xhtml::Dfn, "style")
-    descriptor = None
-    for klass in xhtml::Dfn.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dfn_has_class_():
-    assert hasattr(xhtml::Dfn, "class_")
-    descriptor = None
-    for klass in xhtml::Dfn.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::dfn_has_lang():
-    assert hasattr(xhtml::Dfn, "lang")
-    descriptor = None
-    for klass in xhtml::Dfn.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xhtml::acronym_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Acronym)
-
-
-def test_xhtml::acronym_constructor_exists():
-    assert callable(xhtml::Acronym.__init__)
-
-
-def test_xhtml::acronym_constructor_args():
-    sig = inspect.signature(xhtml::Acronym.__init__)
-    params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-
-def test_xhtml::acronym_has_class_():
-    assert hasattr(xhtml::Acronym, "class_")
-    descriptor = None
-    for klass in xhtml::Acronym.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::acronym_has_lang():
-    assert hasattr(xhtml::Acronym, "lang")
-    descriptor = None
-    for klass in xhtml::Acronym.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::acronym_has_style():
-    assert hasattr(xhtml::Acronym, "style")
-    descriptor = None
-    for klass in xhtml::Acronym.__mro__:
+    for klass in xhtml_Samp.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2486,43 +2398,131 @@ def test_xhtml::acronym_has_style():
 
 
 
-def test_xhtml::strong_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Strong)
+def test_xhtml_strong_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Strong)
 
 
-def test_xhtml::strong_constructor_exists():
-    assert callable(xhtml::Strong.__init__)
+def test_xhtml_strong_constructor_exists():
+    assert callable(xhtml_Strong.__init__)
 
 
-def test_xhtml::strong_constructor_args():
-    sig = inspect.signature(xhtml::Strong.__init__)
+def test_xhtml_strong_constructor_args():
+    sig = inspect.signature(xhtml_Strong.__init__)
     params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
-    assert "lang" in params, "Missing parameter 'lang'"
     assert "style" in params, "Missing parameter 'style'"
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
 
-def test_xhtml::strong_has_class_():
-    assert hasattr(xhtml::Strong, "class_")
+def test_xhtml_strong_has_style():
+    assert hasattr(xhtml_Strong, "style")
     descriptor = None
-    for klass in xhtml::Strong.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
+    for klass in xhtml_Strong.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::strong_has_lang():
-    assert hasattr(xhtml::Strong, "lang")
+def test_xhtml_strong_has_lang():
+    assert hasattr(xhtml_Strong, "lang")
     descriptor = None
-    for klass in xhtml::Strong.__mro__:
+    for klass in xhtml_Strong.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::strong_has_style():
-    assert hasattr(xhtml::Strong, "style")
+def test_xhtml_strong_has_class_():
+    assert hasattr(xhtml_Strong, "class_")
     descriptor = None
-    for klass in xhtml::Strong.__mro__:
+    for klass in xhtml_Strong.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_dfn_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Dfn)
+
+
+def test_xhtml_dfn_constructor_exists():
+    assert callable(xhtml_Dfn.__init__)
+
+
+def test_xhtml_dfn_constructor_args():
+    sig = inspect.signature(xhtml_Dfn.__init__)
+    params = list(sig.parameters.keys())
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "class_" in params, "Missing parameter 'class_'"
+
+def test_xhtml_dfn_has_lang():
+    assert hasattr(xhtml_Dfn, "lang")
+    descriptor = None
+    for klass in xhtml_Dfn.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dfn_has_style():
+    assert hasattr(xhtml_Dfn, "style")
+    descriptor = None
+    for klass in xhtml_Dfn.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dfn_has_class_():
+    assert hasattr(xhtml_Dfn, "class_")
+    descriptor = None
+    for klass in xhtml_Dfn.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xhtml_dt_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Dt)
+
+
+def test_xhtml_dt_constructor_exists():
+    assert callable(xhtml_Dt.__init__)
+
+
+def test_xhtml_dt_constructor_args():
+    sig = inspect.signature(xhtml_Dt.__init__)
+    params = list(sig.parameters.keys())
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_dt_has_lang():
+    assert hasattr(xhtml_Dt, "lang")
+    descriptor = None
+    for klass in xhtml_Dt.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dt_has_class_():
+    assert hasattr(xhtml_Dt, "class_")
+    descriptor = None
+    for klass in xhtml_Dt.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_dt_has_style():
+    assert hasattr(xhtml_Dt, "style")
+    descriptor = None
+    for klass in xhtml_Dt.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2530,87 +2530,87 @@ def test_xhtml::strong_has_style():
 
 
 
-def test_xhtml::var_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Var)
+def test_xhtml_caption_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Caption)
 
 
-def test_xhtml::var_constructor_exists():
-    assert callable(xhtml::Var.__init__)
+def test_xhtml_caption_constructor_exists():
+    assert callable(xhtml_Caption.__init__)
 
 
-def test_xhtml::var_constructor_args():
-    sig = inspect.signature(xhtml::Var.__init__)
+def test_xhtml_caption_constructor_args():
+    sig = inspect.signature(xhtml_Caption.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
     assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
 
-def test_xhtml::var_has_style():
-    assert hasattr(xhtml::Var, "style")
+def test_xhtml_caption_has_style():
+    assert hasattr(xhtml_Caption, "style")
     descriptor = None
-    for klass in xhtml::Var.__mro__:
+    for klass in xhtml_Caption.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::var_has_class_():
-    assert hasattr(xhtml::Var, "class_")
+def test_xhtml_caption_has_lang():
+    assert hasattr(xhtml_Caption, "lang")
     descriptor = None
-    for klass in xhtml::Var.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::var_has_lang():
-    assert hasattr(xhtml::Var, "lang")
-    descriptor = None
-    for klass in xhtml::Var.__mro__:
+    for klass in xhtml_Caption.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
+def test_xhtml_caption_has_class_():
+    assert hasattr(xhtml_Caption, "class_")
+    descriptor = None
+    for klass in xhtml_Caption.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_xhtml::samp_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Samp)
+
+def test_xhtml_tt_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Tt)
 
 
-def test_xhtml::samp_constructor_exists():
-    assert callable(xhtml::Samp.__init__)
+def test_xhtml_tt_constructor_exists():
+    assert callable(xhtml_Tt.__init__)
 
 
-def test_xhtml::samp_constructor_args():
-    sig = inspect.signature(xhtml::Samp.__init__)
+def test_xhtml_tt_constructor_args():
+    sig = inspect.signature(xhtml_Tt.__init__)
     params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
     assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
     assert "style" in params, "Missing parameter 'style'"
 
-def test_xhtml::samp_has_class_():
-    assert hasattr(xhtml::Samp, "class_")
+def test_xhtml_tt_has_lang():
+    assert hasattr(xhtml_Tt, "lang")
     descriptor = None
-    for klass in xhtml::Samp.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::samp_has_lang():
-    assert hasattr(xhtml::Samp, "lang")
-    descriptor = None
-    for klass in xhtml::Samp.__mro__:
+    for klass in xhtml_Tt.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::samp_has_style():
-    assert hasattr(xhtml::Samp, "style")
+def test_xhtml_tt_has_class_():
+    assert hasattr(xhtml_Tt, "class_")
     descriptor = None
-    for klass in xhtml::Samp.__mro__:
+    for klass in xhtml_Tt.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_tt_has_style():
+    assert hasattr(xhtml_Tt, "style")
+    descriptor = None
+    for klass in xhtml_Tt.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2618,131 +2618,131 @@ def test_xhtml::samp_has_style():
 
 
 
-def test_xhtml::p_is_not_abstract():
-    assert not inspect.isabstract(xhtml::P)
+def test_xhtml_p_is_not_abstract():
+    assert not inspect.isabstract(xhtml_P)
 
 
-def test_xhtml::p_constructor_exists():
-    assert callable(xhtml::P.__init__)
+def test_xhtml_p_constructor_exists():
+    assert callable(xhtml_P.__init__)
 
 
-def test_xhtml::p_constructor_args():
-    sig = inspect.signature(xhtml::P.__init__)
+def test_xhtml_p_constructor_args():
+    sig = inspect.signature(xhtml_P.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
 
-def test_xhtml::p_has_style():
-    assert hasattr(xhtml::P, "style")
+def test_xhtml_p_has_style():
+    assert hasattr(xhtml_P, "style")
     descriptor = None
-    for klass in xhtml::P.__mro__:
+    for klass in xhtml_P.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::p_has_lang():
-    assert hasattr(xhtml::P, "lang")
+def test_xhtml_p_has_class_():
+    assert hasattr(xhtml_P, "class_")
     descriptor = None
-    for klass in xhtml::P.__mro__:
-        if "lang" in klass.__dict__:
-            descriptor = klass.__dict__["lang"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::p_has_class_():
-    assert hasattr(xhtml::P, "class_")
-    descriptor = None
-    for klass in xhtml::P.__mro__:
+    for klass in xhtml_P.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_xhtml::code_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Code)
-
-
-def test_xhtml::code_constructor_exists():
-    assert callable(xhtml::Code.__init__)
-
-
-def test_xhtml::code_constructor_args():
-    sig = inspect.signature(xhtml::Code.__init__)
-    params = list(sig.parameters.keys())
-    assert "lang" in params, "Missing parameter 'lang'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "class_" in params, "Missing parameter 'class_'"
-
-def test_xhtml::code_has_lang():
-    assert hasattr(xhtml::Code, "lang")
+def test_xhtml_p_has_lang():
+    assert hasattr(xhtml_P, "lang")
     descriptor = None
-    for klass in xhtml::Code.__mro__:
+    for klass in xhtml_P.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::code_has_style():
-    assert hasattr(xhtml::Code, "style")
+
+
+def test_xhtml_code_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Code)
+
+
+def test_xhtml_code_constructor_exists():
+    assert callable(xhtml_Code.__init__)
+
+
+def test_xhtml_code_constructor_args():
+    sig = inspect.signature(xhtml_Code.__init__)
+    params = list(sig.parameters.keys())
+    assert "lang" in params, "Missing parameter 'lang'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_xhtml_code_has_lang():
+    assert hasattr(xhtml_Code, "lang")
     descriptor = None
-    for klass in xhtml::Code.__mro__:
+    for klass in xhtml_Code.__mro__:
+        if "lang" in klass.__dict__:
+            descriptor = klass.__dict__["lang"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_code_has_class_():
+    assert hasattr(xhtml_Code, "class_")
+    descriptor = None
+    for klass in xhtml_Code.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_code_has_style():
+    assert hasattr(xhtml_Code, "style")
+    descriptor = None
+    for klass in xhtml_Code.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::code_has_class_():
-    assert hasattr(xhtml::Code, "class_")
-    descriptor = None
-    for klass in xhtml::Code.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_xhtml::dt_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Dt)
-
-
-def test_xhtml::dt_constructor_exists():
-    assert callable(xhtml::Dt.__init__)
+def test_xhtml_big_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Big)
 
 
-def test_xhtml::dt_constructor_args():
-    sig = inspect.signature(xhtml::Dt.__init__)
+def test_xhtml_big_constructor_exists():
+    assert callable(xhtml_Big.__init__)
+
+
+def test_xhtml_big_constructor_args():
+    sig = inspect.signature(xhtml_Big.__init__)
     params = list(sig.parameters.keys())
     assert "lang" in params, "Missing parameter 'lang'"
     assert "style" in params, "Missing parameter 'style'"
     assert "class_" in params, "Missing parameter 'class_'"
 
-def test_xhtml::dt_has_lang():
-    assert hasattr(xhtml::Dt, "lang")
+def test_xhtml_big_has_lang():
+    assert hasattr(xhtml_Big, "lang")
     descriptor = None
-    for klass in xhtml::Dt.__mro__:
+    for klass in xhtml_Big.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::dt_has_style():
-    assert hasattr(xhtml::Dt, "style")
+def test_xhtml_big_has_style():
+    assert hasattr(xhtml_Big, "style")
     descriptor = None
-    for klass in xhtml::Dt.__mro__:
+    for klass in xhtml_Big.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::dt_has_class_():
-    assert hasattr(xhtml::Dt, "class_")
+def test_xhtml_big_has_class_():
+    assert hasattr(xhtml_Big, "class_")
     descriptor = None
-    for klass in xhtml::Dt.__mro__:
+    for klass in xhtml_Big.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
@@ -2750,87 +2750,87 @@ def test_xhtml::dt_has_class_():
 
 
 
-def test_xhtml::em_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Em)
+def test_xhtml_var_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Var)
 
 
-def test_xhtml::em_constructor_exists():
-    assert callable(xhtml::Em.__init__)
+def test_xhtml_var_constructor_exists():
+    assert callable(xhtml_Var.__init__)
 
 
-def test_xhtml::em_constructor_args():
-    sig = inspect.signature(xhtml::Em.__init__)
+def test_xhtml_var_constructor_args():
+    sig = inspect.signature(xhtml_Var.__init__)
     params = list(sig.parameters.keys())
+    assert "class_" in params, "Missing parameter 'class_'"
     assert "style" in params, "Missing parameter 'style'"
     assert "lang" in params, "Missing parameter 'lang'"
-    assert "class_" in params, "Missing parameter 'class_'"
 
-def test_xhtml::em_has_style():
-    assert hasattr(xhtml::Em, "style")
+def test_xhtml_var_has_class_():
+    assert hasattr(xhtml_Var, "class_")
     descriptor = None
-    for klass in xhtml::Em.__mro__:
+    for klass in xhtml_Var.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_var_has_style():
+    assert hasattr(xhtml_Var, "style")
+    descriptor = None
+    for klass in xhtml_Var.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::em_has_lang():
-    assert hasattr(xhtml::Em, "lang")
+def test_xhtml_var_has_lang():
+    assert hasattr(xhtml_Var, "lang")
     descriptor = None
-    for klass in xhtml::Em.__mro__:
+    for klass in xhtml_Var.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::em_has_class_():
-    assert hasattr(xhtml::Em, "class_")
-    descriptor = None
-    for klass in xhtml::Em.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_xhtml::i_is_not_abstract():
-    assert not inspect.isabstract(xhtml::I)
-
-
-def test_xhtml::i_constructor_exists():
-    assert callable(xhtml::I.__init__)
+def test_xhtml_span_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Span)
 
 
-def test_xhtml::i_constructor_args():
-    sig = inspect.signature(xhtml::I.__init__)
+def test_xhtml_span_constructor_exists():
+    assert callable(xhtml_Span.__init__)
+
+
+def test_xhtml_span_constructor_args():
+    sig = inspect.signature(xhtml_Span.__init__)
     params = list(sig.parameters.keys())
     assert "class_" in params, "Missing parameter 'class_'"
     assert "style" in params, "Missing parameter 'style'"
     assert "lang" in params, "Missing parameter 'lang'"
 
-def test_xhtml::i_has_class_():
-    assert hasattr(xhtml::I, "class_")
+def test_xhtml_span_has_class_():
+    assert hasattr(xhtml_Span, "class_")
     descriptor = None
-    for klass in xhtml::I.__mro__:
+    for klass in xhtml_Span.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::i_has_style():
-    assert hasattr(xhtml::I, "style")
+def test_xhtml_span_has_style():
+    assert hasattr(xhtml_Span, "style")
     descriptor = None
-    for klass in xhtml::I.__mro__:
+    for klass in xhtml_Span.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::i_has_lang():
-    assert hasattr(xhtml::I, "lang")
+def test_xhtml_span_has_lang():
+    assert hasattr(xhtml_Span, "lang")
     descriptor = None
-    for klass in xhtml::I.__mro__:
+    for klass in xhtml_Span.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
@@ -2838,43 +2838,43 @@ def test_xhtml::i_has_lang():
 
 
 
-def test_xhtml::abbr_is_not_abstract():
-    assert not inspect.isabstract(xhtml::Abbr)
+def test_xhtml_abbr_is_not_abstract():
+    assert not inspect.isabstract(xhtml_Abbr)
 
 
-def test_xhtml::abbr_constructor_exists():
-    assert callable(xhtml::Abbr.__init__)
+def test_xhtml_abbr_constructor_exists():
+    assert callable(xhtml_Abbr.__init__)
 
 
-def test_xhtml::abbr_constructor_args():
-    sig = inspect.signature(xhtml::Abbr.__init__)
+def test_xhtml_abbr_constructor_args():
+    sig = inspect.signature(xhtml_Abbr.__init__)
     params = list(sig.parameters.keys())
     assert "class_" in params, "Missing parameter 'class_'"
     assert "lang" in params, "Missing parameter 'lang'"
     assert "style" in params, "Missing parameter 'style'"
 
-def test_xhtml::abbr_has_class_():
-    assert hasattr(xhtml::Abbr, "class_")
+def test_xhtml_abbr_has_class_():
+    assert hasattr(xhtml_Abbr, "class_")
     descriptor = None
-    for klass in xhtml::Abbr.__mro__:
+    for klass in xhtml_Abbr.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::abbr_has_lang():
-    assert hasattr(xhtml::Abbr, "lang")
+def test_xhtml_abbr_has_lang():
+    assert hasattr(xhtml_Abbr, "lang")
     descriptor = None
-    for klass in xhtml::Abbr.__mro__:
+    for klass in xhtml_Abbr.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_xhtml::abbr_has_style():
-    assert hasattr(xhtml::Abbr, "style")
+def test_xhtml_abbr_has_style():
+    assert hasattr(xhtml_Abbr, "style")
     descriptor = None
-    for klass in xhtml::Abbr.__mro__:
+    for klass in xhtml_Abbr.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2896,113 +2896,114 @@ def test_acontent_constructor_args():
 
 
 
-def test_xhtml::a_is_not_abstract():
-    assert not inspect.isabstract(xhtml::A)
+def test_xhtml_a_is_not_abstract():
+    assert not inspect.isabstract(xhtml_A)
 
 
-def test_xhtml::a_constructor_exists():
-    assert callable(xhtml::A.__init__)
+def test_xhtml_a_constructor_exists():
+    assert callable(xhtml_A.__init__)
 
 
-def test_xhtml::a_constructor_args():
-    sig = inspect.signature(xhtml::A.__init__)
+def test_xhtml_a_constructor_args():
+    sig = inspect.signature(xhtml_A.__init__)
     params = list(sig.parameters.keys())
-    assert "shape" in params, "Missing parameter 'shape'"
-    assert "coords" in params, "Missing parameter 'coords'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "href" in params, "Missing parameter 'href'"
-    assert "class_" in params, "Missing parameter 'class_'"
+    assert "lang" in params, "Missing parameter 'lang'"
     assert "type" in params, "Missing parameter 'type'"
     assert "style" in params, "Missing parameter 'style'"
-    assert "lang" in params, "Missing parameter 'lang'"
+    assert "shape" in params, "Missing parameter 'shape'"
+    assert "class_" in params, "Missing parameter 'class_'"
+    assert "href" in params, "Missing parameter 'href'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "coords" in params, "Missing parameter 'coords'"
 
-def test_xhtml::a_has_shape():
-    assert hasattr(xhtml::A, "shape")
+def test_xhtml_a_has_lang():
+    assert hasattr(xhtml_A, "lang")
     descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_coords():
-    assert hasattr(xhtml::A, "coords")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "coords" in klass.__dict__:
-            descriptor = klass.__dict__["coords"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_name():
-    assert hasattr(xhtml::A, "name")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_href():
-    assert hasattr(xhtml::A, "href")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "href" in klass.__dict__:
-            descriptor = klass.__dict__["href"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_class_():
-    assert hasattr(xhtml::A, "class_")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_type():
-    assert hasattr(xhtml::A, "type")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_style():
-    assert hasattr(xhtml::A, "style")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xhtml::a_has_lang():
-    assert hasattr(xhtml::A, "lang")
-    descriptor = None
-    for klass in xhtml::A.__mro__:
+    for klass in xhtml_A.__mro__:
         if "lang" in klass.__dict__:
             descriptor = klass.__dict__["lang"]
             break
     assert isinstance(descriptor, property)
 
-def test_mifclasstype_exists():
-    # Check that the Enumeration exists
-    assert MifClassType is not None
+def test_xhtml_a_has_type():
+    assert hasattr(xhtml_A, "type")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_mifclasstype_has_all_literals():
+def test_xhtml_a_has_style():
+    assert hasattr(xhtml_A, "style")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_a_has_shape():
+    assert hasattr(xhtml_A, "shape")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_a_has_class_():
+    assert hasattr(xhtml_A, "class_")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_a_has_href():
+    assert hasattr(xhtml_A, "href")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "href" in klass.__dict__:
+            descriptor = klass.__dict__["href"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_a_has_name():
+    assert hasattr(xhtml_A, "name")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xhtml_a_has_coords():
+    assert hasattr(xhtml_A, "coords")
+    descriptor = None
+    for klass in xhtml_A.__mro__:
+        if "coords" in klass.__dict__:
+            descriptor = klass.__dict__["coords"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_shape_exists():
+    # Check that the Enumeration exists
+    assert Shape is not None
+
+def test_shape_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MifClassType]
+    enum_literals = [lit.name for lit in Shape]
     expected_literals = [
-        "inserted",
-        "changed",
-        "deleted",
+        "rect",
+        "default",
+        "poly",
+        "circle",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MifClassType"
+        assert lit_name in enum_literals, f"Literal '' missing in Shape"
 
 def test_tframe_exists():
     # Check that the Enumeration exists
@@ -3013,14 +3014,14 @@ def test_tframe_has_all_literals():
     enum_literals = [lit.name for lit in TFrame]
     expected_literals = [
         "hsides",
-        "vsides",
-        "above",
-        "box",
-        "border",
         "below",
-        "void",
+        "box",
         "rhs",
         "lhs",
+        "void",
+        "vsides",
+        "above",
+        "border",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -3034,32 +3035,14 @@ def test_valigntype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ValignType]
     expected_literals = [
-        "middle",
-        "bottom",
-        "top",
         "baseline",
+        "top",
+        "bottom",
+        "middle",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ValignType"
-
-def test_aligntype_exists():
-    # Check that the Enumeration exists
-    assert AlignType is not None
-
-def test_aligntype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AlignType]
-    expected_literals = [
-        "right",
-        "justify",
-        "char",
-        "center",
-        "left",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AlignType"
 
 def test_trules_exists():
     # Check that the Enumeration exists
@@ -3071,53 +3054,13 @@ def test_trules_has_all_literals():
     expected_literals = [
         "rows",
         "cols",
+        "none",
         "groups",
         "all",
-        "none",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TRules"
-
-def test_stylesheet_exists():
-    # Check that the Enumeration exists
-    assert StyleSheet is not None
-
-def test_stylesheet_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in StyleSheet]
-    expected_literals = [
-        "BackgroundPink",
-        "NonNumbered",
-        "Indent",
-        "Note",
-        "BackgroundYellow",
-        "Requirement",
-        "BackgroundLime",
-        "BackgroundAqua",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in StyleSheet"
-
-def test_imagekind_exists():
-    # Check that the Enumeration exists
-    assert ImageKind is not None
-
-def test_imagekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ImageKind]
-    expected_literals = [
-        "imageGif",
-        "applicationPng",
-        "applicationPostscript",
-        "applicationJpeg",
-        "applicationSvgXml",
-        "applicationPdf",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ImageKind"
 
 def test_paramname_exists():
     # Check that the Enumeration exists
@@ -3127,38 +3070,56 @@ def test_paramname_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParamName]
     expected_literals = [
-        "constructType",
-        "artifact",
-        "code",
-        "domain",
-        "item",
-        "propertyName",
-        "annotationKind",
-        "realmNamespace",
-        "supplierBindingArgumentDatatype",
-        "conversionDatatype",
-        "relationshipName",
-        "stateName",
-        "root",
-        "version",
-        "subArtifact",
         "termName",
-        "group",
-        "datatypeName",
-        "artifactName",
-        "codeSystemId",
-        "withinClassName",
         "linkToEnd",
+        "subArtifact",
+        "id",
+        "annotationKind",
         "attributeName",
-        "name",
-        "className",
+        "code",
+        "codeSystemId",
+        "stateName",
+        "withinClassName",
+        "version",
         "stateTransitionName",
         "subjectAreaName",
-        "id",
+        "supplierBindingArgumentDatatype",
+        "propertyName",
+        "constructType",
+        "item",
+        "domain",
+        "name",
+        "className",
+        "relationshipName",
+        "artifact",
+        "conversionDatatype",
+        "group",
+        "artifactName",
+        "datatypeName",
+        "root",
+        "realmNamespace",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ParamName"
+
+def test_aligntype_exists():
+    # Check that the Enumeration exists
+    assert AlignType is not None
+
+def test_aligntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AlignType]
+    expected_literals = [
+        "left",
+        "center",
+        "char",
+        "right",
+        "justify",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AlignType"
 
 def test_mediatype_exists():
     # Check that the Enumeration exists
@@ -3168,38 +3129,21 @@ def test_mediatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MediaType]
     expected_literals = [
-        "textPlain",
-        "audioMpeg",
-        "imagePng",
-        "applicationPdf",
-        "textXml",
         "applicationMsword",
-        "imageJpeg",
-        "videoMpeg",
         "textRtf",
-        "textHtml",
+        "textXml",
+        "audioMpeg",
+        "applicationPdf",
+        "imagePng",
         "imageGif",
+        "textPlain",
+        "textHtml",
+        "videoMpeg",
+        "imageJpeg",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MediaType"
-
-def test_shape_exists():
-    # Check that the Enumeration exists
-    assert Shape is not None
-
-def test_shape_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Shape]
-    expected_literals = [
-        "default",
-        "circle",
-        "rect",
-        "poly",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Shape"
 
 def test_objectname_exists():
     # Check that the Enumeration exists
@@ -3209,47 +3153,103 @@ def test_objectname_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ObjectName]
     expected_literals = [
-        "datatypeRef",
-        "subjectAreaRef",
-        "triggerEventRef",
-        "testCaseRef",
-        "testScenarioRef",
-        "itemName",
-        "transitionRef",
-        "storyboardRef",
-        "propertyRef",
-        "glossaryRef",
-        "glossaryTermRef",
-        "datatypeModelRef",
-        "interactionRef",
-        "vocabularyModelRef",
-        "vocabularyCodeSystemRef",
-        "associationEndRef",
-        "vocabularyValueSetRef",
-        "requirementRef",
-        "freehandDocumentRef",
-        "publicationRef",
-        "externalSpecRef",
-        "packageRef",
-        "stateRef",
-        "annotationRef",
-        "artifactGroupRef",
-        "footnote",
-        "figureRef",
-        "applicationRoleRef",
-        "attributeRef",
         "domainInstanceExampleRef",
-        "staticModelRef",
-        "tableRef",
-        "conceptDomainRef",
-        "domainAnalysisModelRef",
-        "classRef",
-        "constructedElement",
+        "storyboardRef",
+        "externalSpecRef",
+        "itemName",
+        "datatypeRef",
+        "stateRef",
         "vocabularyCodeRef",
+        "constructedElement",
+        "artifactGroupRef",
+        "testScenarioRef",
+        "publicationRef",
+        "vocabularyCodeSystemRef",
+        "domainAnalysisModelRef",
+        "triggerEventRef",
+        "vocabularyModelRef",
+        "subjectAreaRef",
+        "glossaryTermRef",
+        "packageRef",
+        "associationEndRef",
+        "applicationRoleRef",
+        "freehandDocumentRef",
+        "requirementRef",
+        "interactionRef",
+        "testCaseRef",
+        "annotationRef",
+        "glossaryRef",
+        "transitionRef",
+        "classRef",
+        "footnote",
+        "staticModelRef",
+        "vocabularyValueSetRef",
+        "conceptDomainRef",
+        "figureRef",
+        "attributeRef",
+        "tableRef",
+        "datatypeModelRef",
+        "propertyRef",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ObjectName"
+
+def test_imagekind_exists():
+    # Check that the Enumeration exists
+    assert ImageKind is not None
+
+def test_imagekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ImageKind]
+    expected_literals = [
+        "applicationPostscript",
+        "imageGif",
+        "applicationPng",
+        "applicationSvgXml",
+        "applicationPdf",
+        "applicationJpeg",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ImageKind"
+
+def test_stylesheet_exists():
+    # Check that the Enumeration exists
+    assert StyleSheet is not None
+
+def test_stylesheet_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in StyleSheet]
+    expected_literals = [
+        "BackgroundAqua",
+        "Note",
+        "BackgroundPink",
+        "BackgroundLime",
+        "NonNumbered",
+        "BackgroundYellow",
+        "Requirement",
+        "Indent",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in StyleSheet"
+
+def test_mifclasstype_exists():
+    # Check that the Enumeration exists
+    assert MifClassType is not None
+
+def test_mifclasstype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MifClassType]
+    expected_literals = [
+        "deleted",
+        "inserted",
+        "changed",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MifClassType"
 
 
 # =============================================================================
@@ -3263,185 +3263,183 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-xhtml::Tr_strategy = st.builds(
-    xhtml::Tr,
-    style=
-        safe_text,
+xhtml_Tr_strategy = st.builds(
+    xhtml_Tr,
     char=
+        safe_text,
+    lang=
         safe_text,
     charoff=
         safe_text,
-    align=
+    style=
         safe_text,
     group=
         safe_text,
     valign=
         safe_text,
-    class_=
+    align=
         safe_text,
-    lang=
+    class_=
         safe_text
 )
-xhtml::Tbody_strategy = st.builds(
-    xhtml::Tbody,
-    lang=
-        safe_text,
-    class_=
-        safe_text,
-    valign=
+xhtml_Tbody_strategy = st.builds(
+    xhtml_Tbody,
+    style=
         safe_text,
     char=
         safe_text,
     align=
         safe_text,
-    style=
-        safe_text,
-    charoff=
-        safe_text
-)
-xhtml::Tfoot_strategy = st.builds(
-    xhtml::Tfoot,
-    align=
-        safe_text,
-    class_=
-        safe_text,
     valign=
         safe_text,
-    style=
-        safe_text,
-    char=
+    charoff=
         safe_text,
     lang=
         safe_text,
-    charoff=
+    class_=
         safe_text
 )
-xhtml::Thead_strategy = st.builds(
-    xhtml::Thead,
-    lang=
+xhtml_Tfoot_strategy = st.builds(
+    xhtml_Tfoot,
+    char=
         safe_text,
     class_=
         safe_text,
     align=
         safe_text,
+    charoff=
+        safe_text,
+    lang=
+        safe_text,
     style=
         safe_text,
-    char=
+    valign=
+        safe_text
+)
+xhtml_Thead_strategy = st.builds(
+    xhtml_Thead,
+    charoff=
+        safe_text,
+    align=
+        safe_text,
+    class_=
+        safe_text,
+    lang=
+        safe_text,
+    style=
         safe_text,
     valign=
         safe_text,
-    charoff=
+    char=
         safe_text
 )
-xhtml::PreContent_strategy = st.builds(
-    xhtml::PreContent,
+xhtml_PreContent_strategy = st.builds(
+    xhtml_PreContent,
+    group=
+        safe_text,
     mixed=
-        safe_text,
-    group=
         safe_text
 )
 PreContent_strategy = st.builds(
     PreContent,
 )
-xhtml::Param_strategy = st.builds(
-    xhtml::Param,
-    name=
-        safe_text,
+xhtml_Param_strategy = st.builds(
+    xhtml_Param,
     value=
+        safe_text,
+    name=
         safe_text
 )
-xhtml::Inline_strategy = st.builds(
-    xhtml::Inline,
+xhtml_Inline_strategy = st.builds(
+    xhtml_Inline,
     mixed=
         safe_text,
     inline=
         safe_text
 )
-xhtml::Flow_strategy = st.builds(
-    xhtml::Flow,
-    mixed=
-        safe_text,
+xhtml_Flow_strategy = st.builds(
+    xhtml_Flow,
     group=
+        safe_text,
+    mixed=
         safe_text
 )
 Flow_strategy = st.builds(
     Flow,
 )
-xhtml::Th_strategy = st.builds(
-    xhtml::Th,
+xhtml_Th_strategy = st.builds(
+    xhtml_Th,
+    rowspan=
+        safe_text,
     valign=
+        safe_text,
+    char=
         safe_text,
     class_=
         safe_text,
-    style=
+    colspan=
         safe_text,
-    charoff=
+    lang=
         safe_text,
     align=
         safe_text,
-    colspan=
+    charoff=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Del_strategy = st.builds(
+    xhtml_Del,
+)
+xhtml_Td_strategy = st.builds(
+    xhtml_Td,
+    char=
+        safe_text,
+    charoff=
         safe_text,
     rowspan=
         safe_text,
     lang=
         safe_text,
-    char=
-        safe_text
-)
-xhtml::Td_strategy = st.builds(
-    xhtml::Td,
     style=
-        safe_text,
-    valign=
-        safe_text,
-    charoff=
-        safe_text,
-    align=
-        safe_text,
-    rowspan=
         safe_text,
     colspan=
         safe_text,
-    class_=
-        safe_text,
-    char=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Ins_strategy = st.builds(
-    xhtml::Ins,
-)
-xhtml::Del_strategy = st.builds(
-    xhtml::Del,
-)
-xhtml::Li_strategy = st.builds(
-    xhtml::Li,
-    class_=
-        safe_text,
-    lang=
-        safe_text,
-    style=
-        safe_text
-)
-xhtml::Dd_strategy = st.builds(
-    xhtml::Dd,
-    class_=
-        safe_text,
-    style=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Colgroup_strategy = st.builds(
-    xhtml::Colgroup,
-    span=
-        safe_text,
     align=
         safe_text,
-    charoff=
+    valign=
         safe_text,
     class_=
+        safe_text
+)
+xhtml_Li_strategy = st.builds(
+    xhtml_Li,
+    class_=
+        safe_text,
+    lang=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Ins_strategy = st.builds(
+    xhtml_Ins,
+)
+xhtml_Dd_strategy = st.builds(
+    xhtml_Dd,
+    class_=
+        safe_text,
+    lang=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Colgroup_strategy = st.builds(
+    xhtml_Colgroup,
+    align=
+        safe_text,
+    style=
+        safe_text,
+    valign=
         safe_text,
     width=
         safe_text,
@@ -3449,28 +3447,30 @@ xhtml::Colgroup_strategy = st.builds(
         safe_text,
     char=
         safe_text,
-    style=
-        safe_text,
-    valign=
-        safe_text
-)
-xhtml::Col_strategy = st.builds(
-    xhtml::Col,
     class_=
         safe_text,
-    style=
+    charoff=
         safe_text,
-    align=
+    span=
+        safe_text
+)
+xhtml_Col_strategy = st.builds(
+    xhtml_Col,
+    lang=
+        safe_text,
+    class_=
+        safe_text,
+    char=
+        safe_text,
+    style=
         safe_text,
     charoff=
         safe_text,
     span=
         safe_text,
+    align=
+        safe_text,
     width=
-        safe_text,
-    char=
-        safe_text,
-    lang=
         safe_text,
     valign=
         safe_text
@@ -3478,42 +3478,42 @@ xhtml::Col_strategy = st.builds(
 Block_strategy = st.builds(
     Block,
 )
-xhtml::Table_strategy = st.builds(
-    xhtml::Table,
-    border=
-        safe_text,
-    rules=
-        safe_text,
+xhtml_Table_strategy = st.builds(
+    xhtml_Table,
     frame=
-        safe_text,
-    lang=
-        safe_text,
-    width=
         safe_text,
     cellspacing=
         safe_text,
-    style=
+    rules=
         safe_text,
     cellpadding=
         safe_text,
-    class_=
+    width=
         safe_text,
     hl7Id=
-        safe_text
-)
-xhtml::Blockquote_strategy = st.builds(
-    xhtml::Blockquote,
-    class_=
         safe_text,
     style=
+        safe_text,
+    border=
+        safe_text,
+    lang=
+        safe_text,
+    class_=
+        safe_text
+)
+xhtml_Blockquote_strategy = st.builds(
+    xhtml_Blockquote,
+    class_=
         safe_text,
     cite=
         safe_text,
+    style=
+        safe_text,
     lang=
         safe_text
 )
-xhtml::Ol_strategy = st.builds(
-    xhtml::Ol,
+xhtml_Ol_strategy = st.builds(
+    xhtml_Ol,
     style=
         safe_text,
     lang=
@@ -3523,193 +3523,202 @@ xhtml::Ol_strategy = st.builds(
     li=
         safe_text
 )
-xhtml::Ul_strategy = st.builds(
-    xhtml::Ul,
-    style=
-        safe_text,
+xhtml_Ul_strategy = st.builds(
+    xhtml_Ul,
     class_=
         safe_text,
-    li=
-        safe_text,
     lang=
+        safe_text,
+    style=
+        safe_text,
+    li=
         safe_text
 )
-xhtml::Div_strategy = st.builds(
-    xhtml::Div,
+xhtml_Div_strategy = st.builds(
+    xhtml_Div,
     title=
         safe_text,
+    class_=
+        safe_text,
+    style=
+        safe_text,
+    lang=
+        safe_text,
     hl7Id=
-        safe_text,
-    lang=
-        safe_text,
-    style=
-        safe_text,
-    class_=
         safe_text
 )
-xhtml::Hr_strategy = st.builds(
-    xhtml::Hr,
+xhtml_Hr_strategy = st.builds(
+    xhtml_Hr,
     lang=
         safe_text,
-    style=
-        safe_text,
     class_=
+        safe_text,
+    style=
         safe_text
 )
-xhtml::Pre_strategy = st.builds(
-    xhtml::Pre,
+xhtml_Pre_strategy = st.builds(
+    xhtml_Pre,
+    class_=
+        safe_text,
     lang=
         safe_text,
     space=
         safe_text,
-    class_=
-        safe_text,
     style=
         safe_text
 )
-xhtml::Dl_strategy = st.builds(
-    xhtml::Dl,
-    lang=
-        safe_text,
+xhtml_Dl_strategy = st.builds(
+    xhtml_Dl,
     style=
         safe_text,
     class_=
+        safe_text,
+    lang=
         safe_text,
     group=
         safe_text
 )
-xhtml::Block_strategy = st.builds(
-    xhtml::Block,
+xhtml_Block_strategy = st.builds(
+    xhtml_Block,
     block=
         safe_text,
     mixed=
         safe_text
 )
-xhtml::Br_strategy = st.builds(
-    xhtml::Br,
-    style=
-        safe_text,
+xhtml_Br_strategy = st.builds(
+    xhtml_Br,
     class_=
+        safe_text,
+    style=
         safe_text
 )
-xhtml::AContent_strategy = st.builds(
-    xhtml::AContent,
+xhtml_AContent_strategy = st.builds(
+    xhtml_AContent,
     mixed=
         safe_text,
     group=
         safe_text
 )
-xhtml::Img_strategy = st.builds(
-    xhtml::Img,
-    hl7Id=
+xhtml_Img_strategy = st.builds(
+    xhtml_Img,
+    alt=
         safe_text,
     width=
         safe_text,
-    height=
-        safe_text,
-    src=
-        safe_text,
-    class_=
-        safe_text,
-    alt=
+    imageType=
         safe_text,
     lang=
         safe_text,
     style=
         safe_text,
-    imageType=
-        safe_text
-)
-xhtml::Object_strategy = st.builds(
-    xhtml::Object,
-    mixed=
+    class_=
         safe_text,
-    group=
+    height=
         safe_text,
     hl7Id=
         safe_text,
+    src=
+        safe_text
+)
+xhtml_Object_strategy = st.builds(
+    xhtml_Object,
     name=
+        safe_text,
+    hl7Id=
+        safe_text,
+    mixed=
+        safe_text,
+    group=
         safe_text
 )
 Inline_strategy = st.builds(
     Inline,
 )
-xhtml::Q_strategy = st.builds(
-    xhtml::Q,
+xhtml_I_strategy = st.builds(
+    xhtml_I,
+    class_=
+        safe_text,
+    lang=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Sub_strategy = st.builds(
+    xhtml_Sub,
+    class_=
+        safe_text,
+    style=
+        safe_text,
+    lang=
+        safe_text
+)
+xhtml_Sup_strategy = st.builds(
+    xhtml_Sup,
+    style=
+        safe_text,
+    class_=
+        safe_text,
+    lang=
+        safe_text
+)
+xhtml_Em_strategy = st.builds(
+    xhtml_Em,
+    style=
+        safe_text,
+    lang=
+        safe_text,
+    class_=
+        safe_text
+)
+xhtml_Acronym_strategy = st.builds(
+    xhtml_Acronym,
+    lang=
+        safe_text,
+    class_=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Cite_strategy = st.builds(
+    xhtml_Cite,
+    style=
+        safe_text,
+    class_=
+        safe_text,
+    lang=
+        safe_text
+)
+xhtml_Small_strategy = st.builds(
+    xhtml_Small,
+    class_=
+        safe_text,
+    lang=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_B_strategy = st.builds(
+    xhtml_B,
+    class_=
+        safe_text,
+    lang=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Q_strategy = st.builds(
+    xhtml_Q,
     cite1=
         safe_text,
     lang=
         safe_text,
-    style=
-        safe_text,
     class_=
-        safe_text
-)
-xhtml::Big_strategy = st.builds(
-    xhtml::Big,
-    class_=
-        safe_text,
-    style=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::B_strategy = st.builds(
-    xhtml::B,
-    lang=
-        safe_text,
-    style=
-        safe_text,
-    class_=
-        safe_text
-)
-xhtml::Tt_strategy = st.builds(
-    xhtml::Tt,
-    style=
-        safe_text,
-    class_=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Caption_strategy = st.builds(
-    xhtml::Caption,
-    class_=
-        safe_text,
-    style=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Sub_strategy = st.builds(
-    xhtml::Sub,
-    style=
-        safe_text,
-    lang=
-        safe_text,
-    class_=
-        safe_text
-)
-xhtml::Small_strategy = st.builds(
-    xhtml::Small,
-    style=
-        safe_text,
-    lang=
-        safe_text,
-    class_=
-        safe_text
-)
-xhtml::Sup_strategy = st.builds(
-    xhtml::Sup,
-    class_=
-        safe_text,
-    lang=
         safe_text,
     style=
         safe_text
 )
-xhtml::Kbd_strategy = st.builds(
-    xhtml::Kbd,
+xhtml_Kbd_strategy = st.builds(
+    xhtml_Kbd,
     lang=
         safe_text,
     class_=
@@ -3717,8 +3726,17 @@ xhtml::Kbd_strategy = st.builds(
     style=
         safe_text
 )
-xhtml::Cite_strategy = st.builds(
-    xhtml::Cite,
+xhtml_Samp_strategy = st.builds(
+    xhtml_Samp,
+    lang=
+        safe_text,
+    class_=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Strong_strategy = st.builds(
+    xhtml_Strong,
     style=
         safe_text,
     lang=
@@ -3726,71 +3744,8 @@ xhtml::Cite_strategy = st.builds(
     class_=
         safe_text
 )
-xhtml::Span_strategy = st.builds(
-    xhtml::Span,
-    style=
-        safe_text,
-    class_=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Dfn_strategy = st.builds(
-    xhtml::Dfn,
-    style=
-        safe_text,
-    class_=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Acronym_strategy = st.builds(
-    xhtml::Acronym,
-    class_=
-        safe_text,
-    lang=
-        safe_text,
-    style=
-        safe_text
-)
-xhtml::Strong_strategy = st.builds(
-    xhtml::Strong,
-    class_=
-        safe_text,
-    lang=
-        safe_text,
-    style=
-        safe_text
-)
-xhtml::Var_strategy = st.builds(
-    xhtml::Var,
-    style=
-        safe_text,
-    class_=
-        safe_text,
-    lang=
-        safe_text
-)
-xhtml::Samp_strategy = st.builds(
-    xhtml::Samp,
-    class_=
-        safe_text,
-    lang=
-        safe_text,
-    style=
-        safe_text
-)
-xhtml::P_strategy = st.builds(
-    xhtml::P,
-    style=
-        safe_text,
-    lang=
-        safe_text,
-    class_=
-        safe_text
-)
-xhtml::Code_strategy = st.builds(
-    xhtml::Code,
+xhtml_Dfn_strategy = st.builds(
+    xhtml_Dfn,
     lang=
         safe_text,
     style=
@@ -3798,8 +3753,53 @@ xhtml::Code_strategy = st.builds(
     class_=
         safe_text
 )
-xhtml::Dt_strategy = st.builds(
-    xhtml::Dt,
+xhtml_Dt_strategy = st.builds(
+    xhtml_Dt,
+    lang=
+        safe_text,
+    class_=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Caption_strategy = st.builds(
+    xhtml_Caption,
+    style=
+        safe_text,
+    lang=
+        safe_text,
+    class_=
+        safe_text
+)
+xhtml_Tt_strategy = st.builds(
+    xhtml_Tt,
+    lang=
+        safe_text,
+    class_=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_P_strategy = st.builds(
+    xhtml_P,
+    style=
+        safe_text,
+    class_=
+        safe_text,
+    lang=
+        safe_text
+)
+xhtml_Code_strategy = st.builds(
+    xhtml_Code,
+    lang=
+        safe_text,
+    class_=
+        safe_text,
+    style=
+        safe_text
+)
+xhtml_Big_strategy = st.builds(
+    xhtml_Big,
     lang=
         safe_text,
     style=
@@ -3807,17 +3807,8 @@ xhtml::Dt_strategy = st.builds(
     class_=
         safe_text
 )
-xhtml::Em_strategy = st.builds(
-    xhtml::Em,
-    style=
-        safe_text,
-    lang=
-        safe_text,
-    class_=
-        safe_text
-)
-xhtml::I_strategy = st.builds(
-    xhtml::I,
+xhtml_Var_strategy = st.builds(
+    xhtml_Var,
     class_=
         safe_text,
     style=
@@ -3825,8 +3816,17 @@ xhtml::I_strategy = st.builds(
     lang=
         safe_text
 )
-xhtml::Abbr_strategy = st.builds(
-    xhtml::Abbr,
+xhtml_Span_strategy = st.builds(
+    xhtml_Span,
+    class_=
+        safe_text,
+    style=
+        safe_text,
+    lang=
+        safe_text
+)
+xhtml_Abbr_strategy = st.builds(
+    xhtml_Abbr,
     class_=
         safe_text,
     lang=
@@ -3837,981 +3837,744 @@ xhtml::Abbr_strategy = st.builds(
 AContent_strategy = st.builds(
     AContent,
 )
-xhtml::A_strategy = st.builds(
-    xhtml::A,
-    shape=
-        safe_text,
-    coords=
-        safe_text,
-    name=
-        safe_text,
-    href=
-        safe_text,
-    class_=
+xhtml_A_strategy = st.builds(
+    xhtml_A,
+    lang=
         safe_text,
     type=
         safe_text,
     style=
         safe_text,
-    lang=
+    shape=
+        safe_text,
+    class_=
+        safe_text,
+    href=
+        safe_text,
+    name=
+        safe_text,
+    coords=
         safe_text
 )
 
-@given(instance=xhtml::Tr_strategy)
+@given(instance=xhtml_Tr_strategy)
 @settings(max_examples=50)
-def test_xhtml::tr_instantiation(instance):
-    assert isinstance(instance, xhtml::Tr)
-
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_xhtml_tr_instantiation(instance):
+    assert isinstance(instance, xhtml_Tr)
 
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_char_setter(instance):
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_char_setter(instance):
     original = instance.char
     instance.char = original
     assert instance.char == original
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
 
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_charoff_setter(instance):
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_charoff_setter(instance):
     original = instance.charoff
     instance.charoff = original
     assert instance.charoff == original
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_align_type(instance):
-    assert isinstance(instance.align, str)
 
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_group_type(instance):
-    assert isinstance(instance.group, str)
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
 
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_group_setter(instance):
+
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_valign_type(instance):
-    assert isinstance(instance.valign, str)
 
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_valign_setter(instance):
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_valign_setter(instance):
     original = instance.valign
     instance.valign = original
     assert instance.valign == original
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Tr_strategy)
-def test_xhtml::tr_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Tbody_strategy)
-@settings(max_examples=50)
-def test_xhtml::tbody_instantiation(instance):
-    assert isinstance(instance, xhtml::Tbody)
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_valign_type(instance):
-    assert isinstance(instance.valign, str)
-
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_valign_setter(instance):
-    original = instance.valign
-    instance.valign = original
-    assert instance.valign == original
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_char_setter(instance):
-    original = instance.char
-    instance.char = original
-    assert instance.char == original
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_align_setter(instance):
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
-
-
-@given(instance=xhtml::Tbody_strategy)
-def test_xhtml::tbody_charoff_setter(instance):
-    original = instance.charoff
-    instance.charoff = original
-    assert instance.charoff == original
-
-@given(instance=xhtml::Tfoot_strategy)
-@settings(max_examples=50)
-def test_xhtml::tfoot_instantiation(instance):
-    assert isinstance(instance, xhtml::Tfoot)
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_class__setter(instance):
+@given(instance=xhtml_Tr_strategy)
+def test_xhtml_tr_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_valign_type(instance):
-    assert isinstance(instance.valign, str)
+@given(instance=xhtml_Tbody_strategy)
+@settings(max_examples=50)
+def test_xhtml_tbody_instantiation(instance):
+    assert isinstance(instance, xhtml_Tbody)
 
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_valign_setter(instance):
-    original = instance.valign
-    instance.valign = original
-    assert instance.valign == original
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_style_setter(instance):
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_char_type(instance):
-    assert isinstance(instance.char, str)
 
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_char_setter(instance):
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_char_setter(instance):
     original = instance.char
     instance.char = original
     assert instance.char == original
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
-
-
-@given(instance=xhtml::Tfoot_strategy)
-def test_xhtml::tfoot_charoff_setter(instance):
-    original = instance.charoff
-    instance.charoff = original
-    assert instance.charoff == original
-
-@given(instance=xhtml::Thead_strategy)
-@settings(max_examples=50)
-def test_xhtml::thead_instantiation(instance):
-    assert isinstance(instance, xhtml::Thead)
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_align_setter(instance):
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_char_setter(instance):
-    original = instance.char
-    instance.char = original
-    assert instance.char == original
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_valign_type(instance):
-    assert isinstance(instance.valign, str)
-
-
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_valign_setter(instance):
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_valign_setter(instance):
     original = instance.valign
     instance.valign = original
     assert instance.valign == original
 
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
 
 
-@given(instance=xhtml::Thead_strategy)
-def test_xhtml::thead_charoff_setter(instance):
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_charoff_setter(instance):
     original = instance.charoff
     instance.charoff = original
     assert instance.charoff == original
 
-@given(instance=xhtml::PreContent_strategy)
+
+
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Tbody_strategy)
+def test_xhtml_tbody_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=xhtml_Tfoot_strategy)
 @settings(max_examples=50)
-def test_xhtml::precontent_instantiation(instance):
-    assert isinstance(instance, xhtml::PreContent)
-
-@given(instance=xhtml::PreContent_strategy)
-def test_xhtml::precontent_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_xhtml_tfoot_instantiation(instance):
+    assert isinstance(instance, xhtml_Tfoot)
 
 
-@given(instance=xhtml::PreContent_strategy)
-def test_xhtml::precontent_mixed_setter(instance):
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_char_setter(instance):
+    original = instance.char
+    instance.char = original
+    assert instance.char == original
+
+
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_charoff_setter(instance):
+    original = instance.charoff
+    instance.charoff = original
+    assert instance.charoff == original
+
+
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Tfoot_strategy)
+def test_xhtml_tfoot_valign_setter(instance):
+    original = instance.valign
+    instance.valign = original
+    assert instance.valign == original
+
+@given(instance=xhtml_Thead_strategy)
+@settings(max_examples=50)
+def test_xhtml_thead_instantiation(instance):
+    assert isinstance(instance, xhtml_Thead)
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_charoff_setter(instance):
+    original = instance.charoff
+    instance.charoff = original
+    assert instance.charoff == original
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_valign_setter(instance):
+    original = instance.valign
+    instance.valign = original
+    assert instance.valign == original
+
+
+
+@given(instance=xhtml_Thead_strategy)
+def test_xhtml_thead_char_setter(instance):
+    original = instance.char
+    instance.char = original
+    assert instance.char == original
+
+@given(instance=xhtml_PreContent_strategy)
+@settings(max_examples=50)
+def test_xhtml_precontent_instantiation(instance):
+    assert isinstance(instance, xhtml_PreContent)
+
+
+
+@given(instance=xhtml_PreContent_strategy)
+def test_xhtml_precontent_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+
+
+@given(instance=xhtml_PreContent_strategy)
+def test_xhtml_precontent_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
-
-@given(instance=xhtml::PreContent_strategy)
-def test_xhtml::precontent_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=xhtml::PreContent_strategy)
-def test_xhtml::precontent_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
 
 @given(instance=PreContent_strategy)
 @settings(max_examples=50)
 def test_precontent_instantiation(instance):
     assert isinstance(instance, PreContent)
 
-@given(instance=xhtml::Param_strategy)
+@given(instance=xhtml_Param_strategy)
 @settings(max_examples=50)
-def test_xhtml::param_instantiation(instance):
-    assert isinstance(instance, xhtml::Param)
-
-@given(instance=xhtml::Param_strategy)
-def test_xhtml::param_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_xhtml_param_instantiation(instance):
+    assert isinstance(instance, xhtml_Param)
 
 
-@given(instance=xhtml::Param_strategy)
-def test_xhtml::param_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=xhtml::Param_strategy)
-def test_xhtml::param_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=xhtml::Param_strategy)
-def test_xhtml::param_value_setter(instance):
+@given(instance=xhtml_Param_strategy)
+def test_xhtml_param_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xhtml::Inline_strategy)
+
+
+@given(instance=xhtml_Param_strategy)
+def test_xhtml_param_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=xhtml_Inline_strategy)
 @settings(max_examples=50)
-def test_xhtml::inline_instantiation(instance):
-    assert isinstance(instance, xhtml::Inline)
-
-@given(instance=xhtml::Inline_strategy)
-def test_xhtml::inline_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_xhtml_inline_instantiation(instance):
+    assert isinstance(instance, xhtml_Inline)
 
 
-@given(instance=xhtml::Inline_strategy)
-def test_xhtml::inline_mixed_setter(instance):
+
+@given(instance=xhtml_Inline_strategy)
+def test_xhtml_inline_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=xhtml::Inline_strategy)
-def test_xhtml::inline_inline_type(instance):
-    assert isinstance(instance.inline, str)
 
 
-@given(instance=xhtml::Inline_strategy)
-def test_xhtml::inline_inline_setter(instance):
+@given(instance=xhtml_Inline_strategy)
+def test_xhtml_inline_inline_setter(instance):
     original = instance.inline
     instance.inline = original
     assert instance.inline == original
 
-@given(instance=xhtml::Flow_strategy)
+@given(instance=xhtml_Flow_strategy)
 @settings(max_examples=50)
-def test_xhtml::flow_instantiation(instance):
-    assert isinstance(instance, xhtml::Flow)
-
-@given(instance=xhtml::Flow_strategy)
-def test_xhtml::flow_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_xhtml_flow_instantiation(instance):
+    assert isinstance(instance, xhtml_Flow)
 
 
-@given(instance=xhtml::Flow_strategy)
-def test_xhtml::flow_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
 
-@given(instance=xhtml::Flow_strategy)
-def test_xhtml::flow_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=xhtml::Flow_strategy)
-def test_xhtml::flow_group_setter(instance):
+@given(instance=xhtml_Flow_strategy)
+def test_xhtml_flow_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
+
+
+
+@given(instance=xhtml_Flow_strategy)
+def test_xhtml_flow_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
 
 @given(instance=Flow_strategy)
 @settings(max_examples=50)
 def test_flow_instantiation(instance):
     assert isinstance(instance, Flow)
 
-@given(instance=xhtml::Th_strategy)
+@given(instance=xhtml_Th_strategy)
 @settings(max_examples=50)
-def test_xhtml::th_instantiation(instance):
-    assert isinstance(instance, xhtml::Th)
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_valign_type(instance):
-    assert isinstance(instance.valign, str)
+def test_xhtml_th_instantiation(instance):
+    assert isinstance(instance, xhtml_Th)
 
 
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_valign_setter(instance):
-    original = instance.valign
-    instance.valign = original
-    assert instance.valign == original
 
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_charoff_setter(instance):
-    original = instance.charoff
-    instance.charoff = original
-    assert instance.charoff == original
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_colspan_type(instance):
-    assert isinstance(instance.colspan, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_colspan_setter(instance):
-    original = instance.colspan
-    instance.colspan = original
-    assert instance.colspan == original
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_rowspan_type(instance):
-    assert isinstance(instance.rowspan, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_rowspan_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_rowspan_setter(instance):
     original = instance.rowspan
     instance.rowspan = original
     assert instance.rowspan == original
 
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Th_strategy)
-def test_xhtml::th_char_setter(instance):
-    original = instance.char
-    instance.char = original
-    assert instance.char == original
-
-@given(instance=xhtml::Td_strategy)
-@settings(max_examples=50)
-def test_xhtml::td_instantiation(instance):
-    assert isinstance(instance, xhtml::Td)
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_valign_type(instance):
-    assert isinstance(instance.valign, str)
-
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_valign_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_valign_setter(instance):
     original = instance.valign
     instance.valign = original
     assert instance.valign == original
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
 
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_charoff_setter(instance):
-    original = instance.charoff
-    instance.charoff = original
-    assert instance.charoff == original
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_align_type(instance):
-    assert isinstance(instance.align, str)
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_char_setter(instance):
+    original = instance.char
+    instance.char = original
+    assert instance.char == original
 
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_rowspan_type(instance):
-    assert isinstance(instance.rowspan, str)
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
 
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_rowspan_setter(instance):
-    original = instance.rowspan
-    instance.rowspan = original
-    assert instance.rowspan == original
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_colspan_type(instance):
-    assert isinstance(instance.colspan, str)
-
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_colspan_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_colspan_setter(instance):
     original = instance.colspan
     instance.colspan = original
     assert instance.colspan == original
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_char_setter(instance):
-    original = instance.char
-    instance.char = original
-    assert instance.char == original
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Td_strategy)
-def test_xhtml::td_lang_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Ins_strategy)
-@settings(max_examples=50)
-def test_xhtml::ins_instantiation(instance):
-    assert isinstance(instance, xhtml::Ins)
-
-@given(instance=xhtml::Del_strategy)
-@settings(max_examples=50)
-def test_xhtml::del_instantiation(instance):
-    assert isinstance(instance, xhtml::Del)
-
-@given(instance=xhtml::Li_strategy)
-@settings(max_examples=50)
-def test_xhtml::li_instantiation(instance):
-    assert isinstance(instance, xhtml::Li)
-
-@given(instance=xhtml::Li_strategy)
-def test_xhtml::li_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Li_strategy)
-def test_xhtml::li_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Li_strategy)
-def test_xhtml::li_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Li_strategy)
-def test_xhtml::li_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Li_strategy)
-def test_xhtml::li_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Li_strategy)
-def test_xhtml::li_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Dd_strategy)
-@settings(max_examples=50)
-def test_xhtml::dd_instantiation(instance):
-    assert isinstance(instance, xhtml::Dd)
-
-@given(instance=xhtml::Dd_strategy)
-def test_xhtml::dd_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Dd_strategy)
-def test_xhtml::dd_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Dd_strategy)
-def test_xhtml::dd_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Dd_strategy)
-def test_xhtml::dd_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Dd_strategy)
-def test_xhtml::dd_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Dd_strategy)
-def test_xhtml::dd_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Colgroup_strategy)
-@settings(max_examples=50)
-def test_xhtml::colgroup_instantiation(instance):
-    assert isinstance(instance, xhtml::Colgroup)
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_span_type(instance):
-    assert isinstance(instance.span, str)
-
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_span_setter(instance):
-    original = instance.span
-    instance.span = original
-    assert instance.span == original
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_align_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
 
 
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_charoff_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_charoff_setter(instance):
     original = instance.charoff
     instance.charoff = original
     assert instance.charoff == original
 
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_char_setter(instance):
-    original = instance.char
-    instance.char = original
-    assert instance.char == original
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_style_setter(instance):
+@given(instance=xhtml_Th_strategy)
+def test_xhtml_th_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_valign_type(instance):
-    assert isinstance(instance.valign, str)
+@given(instance=xhtml_Del_strategy)
+@settings(max_examples=50)
+def test_xhtml_del_instantiation(instance):
+    assert isinstance(instance, xhtml_Del)
+
+@given(instance=xhtml_Td_strategy)
+@settings(max_examples=50)
+def test_xhtml_td_instantiation(instance):
+    assert isinstance(instance, xhtml_Td)
 
 
-@given(instance=xhtml::Colgroup_strategy)
-def test_xhtml::colgroup_valign_setter(instance):
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_char_setter(instance):
+    original = instance.char
+    instance.char = original
+    assert instance.char == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_charoff_setter(instance):
+    original = instance.charoff
+    instance.charoff = original
+    assert instance.charoff == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_rowspan_setter(instance):
+    original = instance.rowspan
+    instance.rowspan = original
+    assert instance.rowspan == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_colspan_setter(instance):
+    original = instance.colspan
+    instance.colspan = original
+    assert instance.colspan == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_valign_setter(instance):
     original = instance.valign
     instance.valign = original
     assert instance.valign == original
 
-@given(instance=xhtml::Col_strategy)
-@settings(max_examples=50)
-def test_xhtml::col_instantiation(instance):
-    assert isinstance(instance, xhtml::Col)
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_class__setter(instance):
+@given(instance=xhtml_Td_strategy)
+def test_xhtml_td_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_style_type(instance):
-    assert isinstance(instance.style, str)
+@given(instance=xhtml_Li_strategy)
+@settings(max_examples=50)
+def test_xhtml_li_instantiation(instance):
+    assert isinstance(instance, xhtml_Li)
 
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_align_type(instance):
-    assert isinstance(instance.align, str)
+@given(instance=xhtml_Li_strategy)
+def test_xhtml_li_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
 
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_charoff_type(instance):
-    assert isinstance(instance.charoff, str)
-
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_charoff_setter(instance):
-    original = instance.charoff
-    instance.charoff = original
-    assert instance.charoff == original
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_span_type(instance):
-    assert isinstance(instance.span, str)
-
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_span_setter(instance):
-    original = instance.span
-    instance.span = original
-    assert instance.span == original
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_char_type(instance):
-    assert isinstance(instance.char, str)
-
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_char_setter(instance):
-    original = instance.char
-    instance.char = original
-    assert instance.char == original
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_lang_setter(instance):
+@given(instance=xhtml_Li_strategy)
+def test_xhtml_li_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_valign_type(instance):
-    assert isinstance(instance.valign, str)
 
 
-@given(instance=xhtml::Col_strategy)
-def test_xhtml::col_valign_setter(instance):
+@given(instance=xhtml_Li_strategy)
+def test_xhtml_li_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Ins_strategy)
+@settings(max_examples=50)
+def test_xhtml_ins_instantiation(instance):
+    assert isinstance(instance, xhtml_Ins)
+
+@given(instance=xhtml_Dd_strategy)
+@settings(max_examples=50)
+def test_xhtml_dd_instantiation(instance):
+    assert isinstance(instance, xhtml_Dd)
+
+
+
+@given(instance=xhtml_Dd_strategy)
+def test_xhtml_dd_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Dd_strategy)
+def test_xhtml_dd_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Dd_strategy)
+def test_xhtml_dd_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Colgroup_strategy)
+@settings(max_examples=50)
+def test_xhtml_colgroup_instantiation(instance):
+    assert isinstance(instance, xhtml_Colgroup)
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_valign_setter(instance):
+    original = instance.valign
+    instance.valign = original
+    assert instance.valign == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_char_setter(instance):
+    original = instance.char
+    instance.char = original
+    assert instance.char == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_charoff_setter(instance):
+    original = instance.charoff
+    instance.charoff = original
+    assert instance.charoff == original
+
+
+
+@given(instance=xhtml_Colgroup_strategy)
+def test_xhtml_colgroup_span_setter(instance):
+    original = instance.span
+    instance.span = original
+    assert instance.span == original
+
+@given(instance=xhtml_Col_strategy)
+@settings(max_examples=50)
+def test_xhtml_col_instantiation(instance):
+    assert isinstance(instance, xhtml_Col)
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_char_setter(instance):
+    original = instance.char
+    instance.char = original
+    assert instance.char == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_charoff_setter(instance):
+    original = instance.charoff
+    instance.charoff = original
+    assert instance.charoff == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_span_setter(instance):
+    original = instance.span
+    instance.span = original
+    assert instance.span == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=xhtml_Col_strategy)
+def test_xhtml_col_valign_setter(instance):
     original = instance.valign
     instance.valign = original
     assert instance.valign == original
@@ -4821,1546 +4584,1174 @@ def test_xhtml::col_valign_setter(instance):
 def test_block_instantiation(instance):
     assert isinstance(instance, Block)
 
-@given(instance=xhtml::Table_strategy)
+@given(instance=xhtml_Table_strategy)
 @settings(max_examples=50)
-def test_xhtml::table_instantiation(instance):
-    assert isinstance(instance, xhtml::Table)
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_border_type(instance):
-    assert isinstance(instance.border, str)
+def test_xhtml_table_instantiation(instance):
+    assert isinstance(instance, xhtml_Table)
 
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_border_setter(instance):
-    original = instance.border
-    instance.border = original
-    assert instance.border == original
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_rules_type(instance):
-    assert isinstance(instance.rules, str)
-
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_rules_setter(instance):
-    original = instance.rules
-    instance.rules = original
-    assert instance.rules == original
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_frame_type(instance):
-    assert isinstance(instance.frame, str)
-
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_frame_setter(instance):
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_frame_setter(instance):
     original = instance.frame
     instance.frame = original
     assert instance.frame == original
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_cellspacing_type(instance):
-    assert isinstance(instance.cellspacing, str)
-
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_cellspacing_setter(instance):
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_cellspacing_setter(instance):
     original = instance.cellspacing
     instance.cellspacing = original
     assert instance.cellspacing == original
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_cellpadding_type(instance):
-    assert isinstance(instance.cellpadding, str)
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_rules_setter(instance):
+    original = instance.rules
+    instance.rules = original
+    assert instance.rules == original
 
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_cellpadding_setter(instance):
+
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_cellpadding_setter(instance):
     original = instance.cellpadding
     instance.cellpadding = original
     assert instance.cellpadding == original
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_hl7Id_type(instance):
-    assert isinstance(instance.hl7Id, str)
-
-
-@given(instance=xhtml::Table_strategy)
-def test_xhtml::table_hl7Id_setter(instance):
-    original = instance.hl7Id
-    instance.hl7Id = original
-    assert instance.hl7Id == original
-
-@given(instance=xhtml::Blockquote_strategy)
-@settings(max_examples=50)
-def test_xhtml::blockquote_instantiation(instance):
-    assert isinstance(instance, xhtml::Blockquote)
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_cite_type(instance):
-    assert isinstance(instance.cite, str)
-
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_cite_setter(instance):
-    original = instance.cite
-    instance.cite = original
-    assert instance.cite == original
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Blockquote_strategy)
-def test_xhtml::blockquote_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Ol_strategy)
-@settings(max_examples=50)
-def test_xhtml::ol_instantiation(instance):
-    assert isinstance(instance, xhtml::Ol)
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_li_type(instance):
-    assert isinstance(instance.li, str)
-
-
-@given(instance=xhtml::Ol_strategy)
-def test_xhtml::ol_li_setter(instance):
-    original = instance.li
-    instance.li = original
-    assert instance.li == original
-
-@given(instance=xhtml::Ul_strategy)
-@settings(max_examples=50)
-def test_xhtml::ul_instantiation(instance):
-    assert isinstance(instance, xhtml::Ul)
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_li_type(instance):
-    assert isinstance(instance.li, str)
-
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_li_setter(instance):
-    original = instance.li
-    instance.li = original
-    assert instance.li == original
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Ul_strategy)
-def test_xhtml::ul_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Div_strategy)
-@settings(max_examples=50)
-def test_xhtml::div_instantiation(instance):
-    assert isinstance(instance, xhtml::Div)
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_hl7Id_type(instance):
-    assert isinstance(instance.hl7Id, str)
-
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_hl7Id_setter(instance):
-    original = instance.hl7Id
-    instance.hl7Id = original
-    assert instance.hl7Id == original
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Div_strategy)
-def test_xhtml::div_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Hr_strategy)
-@settings(max_examples=50)
-def test_xhtml::hr_instantiation(instance):
-    assert isinstance(instance, xhtml::Hr)
-
-@given(instance=xhtml::Hr_strategy)
-def test_xhtml::hr_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Hr_strategy)
-def test_xhtml::hr_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Hr_strategy)
-def test_xhtml::hr_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Hr_strategy)
-def test_xhtml::hr_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Hr_strategy)
-def test_xhtml::hr_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Hr_strategy)
-def test_xhtml::hr_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Pre_strategy)
-@settings(max_examples=50)
-def test_xhtml::pre_instantiation(instance):
-    assert isinstance(instance, xhtml::Pre)
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_space_type(instance):
-    assert isinstance(instance.space, str)
-
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_space_setter(instance):
-    original = instance.space
-    instance.space = original
-    assert instance.space == original
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Pre_strategy)
-def test_xhtml::pre_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Dl_strategy)
-@settings(max_examples=50)
-def test_xhtml::dl_instantiation(instance):
-    assert isinstance(instance, xhtml::Dl)
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=xhtml::Dl_strategy)
-def test_xhtml::dl_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=xhtml::Block_strategy)
-@settings(max_examples=50)
-def test_xhtml::block_instantiation(instance):
-    assert isinstance(instance, xhtml::Block)
-
-@given(instance=xhtml::Block_strategy)
-def test_xhtml::block_block_type(instance):
-    assert isinstance(instance.block, str)
-
-
-@given(instance=xhtml::Block_strategy)
-def test_xhtml::block_block_setter(instance):
-    original = instance.block
-    instance.block = original
-    assert instance.block == original
-
-@given(instance=xhtml::Block_strategy)
-def test_xhtml::block_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
-
-
-@given(instance=xhtml::Block_strategy)
-def test_xhtml::block_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=xhtml::Br_strategy)
-@settings(max_examples=50)
-def test_xhtml::br_instantiation(instance):
-    assert isinstance(instance, xhtml::Br)
-
-@given(instance=xhtml::Br_strategy)
-def test_xhtml::br_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Br_strategy)
-def test_xhtml::br_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Br_strategy)
-def test_xhtml::br_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Br_strategy)
-def test_xhtml::br_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::AContent_strategy)
-@settings(max_examples=50)
-def test_xhtml::acontent_instantiation(instance):
-    assert isinstance(instance, xhtml::AContent)
-
-@given(instance=xhtml::AContent_strategy)
-def test_xhtml::acontent_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
-
-
-@given(instance=xhtml::AContent_strategy)
-def test_xhtml::acontent_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=xhtml::AContent_strategy)
-def test_xhtml::acontent_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=xhtml::AContent_strategy)
-def test_xhtml::acontent_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=xhtml::Img_strategy)
-@settings(max_examples=50)
-def test_xhtml::img_instantiation(instance):
-    assert isinstance(instance, xhtml::Img)
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_hl7Id_type(instance):
-    assert isinstance(instance.hl7Id, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_hl7Id_setter(instance):
-    original = instance.hl7Id
-    instance.hl7Id = original
-    assert instance.hl7Id == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_width_setter(instance):
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_height_type(instance):
-    assert isinstance(instance.height, str)
 
 
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_src_type(instance):
-    assert isinstance(instance.src, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_alt_type(instance):
-    assert isinstance(instance.alt, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_alt_setter(instance):
-    original = instance.alt
-    instance.alt = original
-    assert instance.alt == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_imageType_type(instance):
-    assert isinstance(instance.imageType, str)
-
-
-@given(instance=xhtml::Img_strategy)
-def test_xhtml::img_imageType_setter(instance):
-    original = instance.imageType
-    instance.imageType = original
-    assert instance.imageType == original
-
-@given(instance=xhtml::Object_strategy)
-@settings(max_examples=50)
-def test_xhtml::object_instantiation(instance):
-    assert isinstance(instance, xhtml::Object)
-
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
-
-
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_hl7Id_type(instance):
-    assert isinstance(instance.hl7Id, str)
-
-
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_hl7Id_setter(instance):
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_hl7Id_setter(instance):
     original = instance.hl7Id
     instance.hl7Id = original
     assert instance.hl7Id == original
 
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=xhtml::Object_strategy)
-def test_xhtml::object_name_setter(instance):
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_border_setter(instance):
+    original = instance.border
+    instance.border = original
+    assert instance.border == original
+
+
+
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Table_strategy)
+def test_xhtml_table_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=xhtml_Blockquote_strategy)
+@settings(max_examples=50)
+def test_xhtml_blockquote_instantiation(instance):
+    assert isinstance(instance, xhtml_Blockquote)
+
+
+
+@given(instance=xhtml_Blockquote_strategy)
+def test_xhtml_blockquote_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Blockquote_strategy)
+def test_xhtml_blockquote_cite_setter(instance):
+    original = instance.cite
+    instance.cite = original
+    assert instance.cite == original
+
+
+
+@given(instance=xhtml_Blockquote_strategy)
+def test_xhtml_blockquote_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Blockquote_strategy)
+def test_xhtml_blockquote_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+@given(instance=xhtml_Ol_strategy)
+@settings(max_examples=50)
+def test_xhtml_ol_instantiation(instance):
+    assert isinstance(instance, xhtml_Ol)
+
+
+
+@given(instance=xhtml_Ol_strategy)
+def test_xhtml_ol_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Ol_strategy)
+def test_xhtml_ol_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Ol_strategy)
+def test_xhtml_ol_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Ol_strategy)
+def test_xhtml_ol_li_setter(instance):
+    original = instance.li
+    instance.li = original
+    assert instance.li == original
+
+@given(instance=xhtml_Ul_strategy)
+@settings(max_examples=50)
+def test_xhtml_ul_instantiation(instance):
+    assert isinstance(instance, xhtml_Ul)
+
+
+
+@given(instance=xhtml_Ul_strategy)
+def test_xhtml_ul_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Ul_strategy)
+def test_xhtml_ul_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Ul_strategy)
+def test_xhtml_ul_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Ul_strategy)
+def test_xhtml_ul_li_setter(instance):
+    original = instance.li
+    instance.li = original
+    assert instance.li == original
+
+@given(instance=xhtml_Div_strategy)
+@settings(max_examples=50)
+def test_xhtml_div_instantiation(instance):
+    assert isinstance(instance, xhtml_Div)
+
+
+
+@given(instance=xhtml_Div_strategy)
+def test_xhtml_div_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=xhtml_Div_strategy)
+def test_xhtml_div_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Div_strategy)
+def test_xhtml_div_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Div_strategy)
+def test_xhtml_div_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Div_strategy)
+def test_xhtml_div_hl7Id_setter(instance):
+    original = instance.hl7Id
+    instance.hl7Id = original
+    assert instance.hl7Id == original
+
+@given(instance=xhtml_Hr_strategy)
+@settings(max_examples=50)
+def test_xhtml_hr_instantiation(instance):
+    assert isinstance(instance, xhtml_Hr)
+
+
+
+@given(instance=xhtml_Hr_strategy)
+def test_xhtml_hr_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Hr_strategy)
+def test_xhtml_hr_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Hr_strategy)
+def test_xhtml_hr_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Pre_strategy)
+@settings(max_examples=50)
+def test_xhtml_pre_instantiation(instance):
+    assert isinstance(instance, xhtml_Pre)
+
+
+
+@given(instance=xhtml_Pre_strategy)
+def test_xhtml_pre_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Pre_strategy)
+def test_xhtml_pre_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Pre_strategy)
+def test_xhtml_pre_space_setter(instance):
+    original = instance.space
+    instance.space = original
+    assert instance.space == original
+
+
+
+@given(instance=xhtml_Pre_strategy)
+def test_xhtml_pre_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Dl_strategy)
+@settings(max_examples=50)
+def test_xhtml_dl_instantiation(instance):
+    assert isinstance(instance, xhtml_Dl)
+
+
+
+@given(instance=xhtml_Dl_strategy)
+def test_xhtml_dl_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Dl_strategy)
+def test_xhtml_dl_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Dl_strategy)
+def test_xhtml_dl_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Dl_strategy)
+def test_xhtml_dl_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=xhtml_Block_strategy)
+@settings(max_examples=50)
+def test_xhtml_block_instantiation(instance):
+    assert isinstance(instance, xhtml_Block)
+
+
+
+@given(instance=xhtml_Block_strategy)
+def test_xhtml_block_block_setter(instance):
+    original = instance.block
+    instance.block = original
+    assert instance.block == original
+
+
+
+@given(instance=xhtml_Block_strategy)
+def test_xhtml_block_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+@given(instance=xhtml_Br_strategy)
+@settings(max_examples=50)
+def test_xhtml_br_instantiation(instance):
+    assert isinstance(instance, xhtml_Br)
+
+
+
+@given(instance=xhtml_Br_strategy)
+def test_xhtml_br_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Br_strategy)
+def test_xhtml_br_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_AContent_strategy)
+@settings(max_examples=50)
+def test_xhtml_acontent_instantiation(instance):
+    assert isinstance(instance, xhtml_AContent)
+
+
+
+@given(instance=xhtml_AContent_strategy)
+def test_xhtml_acontent_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=xhtml_AContent_strategy)
+def test_xhtml_acontent_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=xhtml_Img_strategy)
+@settings(max_examples=50)
+def test_xhtml_img_instantiation(instance):
+    assert isinstance(instance, xhtml_Img)
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_alt_setter(instance):
+    original = instance.alt
+    instance.alt = original
+    assert instance.alt == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_imageType_setter(instance):
+    original = instance.imageType
+    instance.imageType = original
+    assert instance.imageType == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_hl7Id_setter(instance):
+    original = instance.hl7Id
+    instance.hl7Id = original
+    assert instance.hl7Id == original
+
+
+
+@given(instance=xhtml_Img_strategy)
+def test_xhtml_img_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+@given(instance=xhtml_Object_strategy)
+@settings(max_examples=50)
+def test_xhtml_object_instantiation(instance):
+    assert isinstance(instance, xhtml_Object)
+
+
+
+@given(instance=xhtml_Object_strategy)
+def test_xhtml_object_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=xhtml_Object_strategy)
+def test_xhtml_object_hl7Id_setter(instance):
+    original = instance.hl7Id
+    instance.hl7Id = original
+    assert instance.hl7Id == original
+
+
+
+@given(instance=xhtml_Object_strategy)
+def test_xhtml_object_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+
+
+@given(instance=xhtml_Object_strategy)
+def test_xhtml_object_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
 
 @given(instance=Inline_strategy)
 @settings(max_examples=50)
 def test_inline_instantiation(instance):
     assert isinstance(instance, Inline)
 
-@given(instance=xhtml::Q_strategy)
+@given(instance=xhtml_I_strategy)
 @settings(max_examples=50)
-def test_xhtml::q_instantiation(instance):
-    assert isinstance(instance, xhtml::Q)
-
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_cite1_type(instance):
-    assert isinstance(instance.cite1, str)
+def test_xhtml_i_instantiation(instance):
+    assert isinstance(instance, xhtml_I)
 
 
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_cite1_setter(instance):
+
+@given(instance=xhtml_I_strategy)
+def test_xhtml_i_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_I_strategy)
+def test_xhtml_i_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_I_strategy)
+def test_xhtml_i_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Sub_strategy)
+@settings(max_examples=50)
+def test_xhtml_sub_instantiation(instance):
+    assert isinstance(instance, xhtml_Sub)
+
+
+
+@given(instance=xhtml_Sub_strategy)
+def test_xhtml_sub_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Sub_strategy)
+def test_xhtml_sub_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Sub_strategy)
+def test_xhtml_sub_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+@given(instance=xhtml_Sup_strategy)
+@settings(max_examples=50)
+def test_xhtml_sup_instantiation(instance):
+    assert isinstance(instance, xhtml_Sup)
+
+
+
+@given(instance=xhtml_Sup_strategy)
+def test_xhtml_sup_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Sup_strategy)
+def test_xhtml_sup_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Sup_strategy)
+def test_xhtml_sup_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+@given(instance=xhtml_Em_strategy)
+@settings(max_examples=50)
+def test_xhtml_em_instantiation(instance):
+    assert isinstance(instance, xhtml_Em)
+
+
+
+@given(instance=xhtml_Em_strategy)
+def test_xhtml_em_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Em_strategy)
+def test_xhtml_em_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Em_strategy)
+def test_xhtml_em_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=xhtml_Acronym_strategy)
+@settings(max_examples=50)
+def test_xhtml_acronym_instantiation(instance):
+    assert isinstance(instance, xhtml_Acronym)
+
+
+
+@given(instance=xhtml_Acronym_strategy)
+def test_xhtml_acronym_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Acronym_strategy)
+def test_xhtml_acronym_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Acronym_strategy)
+def test_xhtml_acronym_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Cite_strategy)
+@settings(max_examples=50)
+def test_xhtml_cite_instantiation(instance):
+    assert isinstance(instance, xhtml_Cite)
+
+
+
+@given(instance=xhtml_Cite_strategy)
+def test_xhtml_cite_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=xhtml_Cite_strategy)
+def test_xhtml_cite_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Cite_strategy)
+def test_xhtml_cite_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+@given(instance=xhtml_Small_strategy)
+@settings(max_examples=50)
+def test_xhtml_small_instantiation(instance):
+    assert isinstance(instance, xhtml_Small)
+
+
+
+@given(instance=xhtml_Small_strategy)
+def test_xhtml_small_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Small_strategy)
+def test_xhtml_small_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Small_strategy)
+def test_xhtml_small_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_B_strategy)
+@settings(max_examples=50)
+def test_xhtml_b_instantiation(instance):
+    assert isinstance(instance, xhtml_B)
+
+
+
+@given(instance=xhtml_B_strategy)
+def test_xhtml_b_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_B_strategy)
+def test_xhtml_b_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_B_strategy)
+def test_xhtml_b_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=xhtml_Q_strategy)
+@settings(max_examples=50)
+def test_xhtml_q_instantiation(instance):
+    assert isinstance(instance, xhtml_Q)
+
+
+
+@given(instance=xhtml_Q_strategy)
+def test_xhtml_q_cite1_setter(instance):
     original = instance.cite1
     instance.cite1 = original
     assert instance.cite1 == original
 
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_lang_setter(instance):
+@given(instance=xhtml_Q_strategy)
+def test_xhtml_q_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_style_setter(instance):
+@given(instance=xhtml_Q_strategy)
+def test_xhtml_q_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Q_strategy)
+def test_xhtml_q_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Q_strategy)
-def test_xhtml::q_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Big_strategy)
+@given(instance=xhtml_Kbd_strategy)
 @settings(max_examples=50)
-def test_xhtml::big_instantiation(instance):
-    assert isinstance(instance, xhtml::Big)
-
-@given(instance=xhtml::Big_strategy)
-def test_xhtml::big_class__type(instance):
-    assert isinstance(instance.class_, str)
+def test_xhtml_kbd_instantiation(instance):
+    assert isinstance(instance, xhtml_Kbd)
 
 
-@given(instance=xhtml::Big_strategy)
-def test_xhtml::big_class__setter(instance):
+
+@given(instance=xhtml_Kbd_strategy)
+def test_xhtml_kbd_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Kbd_strategy)
+def test_xhtml_kbd_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Big_strategy)
-def test_xhtml::big_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Big_strategy)
-def test_xhtml::big_style_setter(instance):
+@given(instance=xhtml_Kbd_strategy)
+def test_xhtml_kbd_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Big_strategy)
-def test_xhtml::big_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Big_strategy)
-def test_xhtml::big_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::B_strategy)
+@given(instance=xhtml_Samp_strategy)
 @settings(max_examples=50)
-def test_xhtml::b_instantiation(instance):
-    assert isinstance(instance, xhtml::B)
-
-@given(instance=xhtml::B_strategy)
-def test_xhtml::b_lang_type(instance):
-    assert isinstance(instance.lang, str)
+def test_xhtml_samp_instantiation(instance):
+    assert isinstance(instance, xhtml_Samp)
 
 
-@given(instance=xhtml::B_strategy)
-def test_xhtml::b_lang_setter(instance):
+
+@given(instance=xhtml_Samp_strategy)
+def test_xhtml_samp_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::B_strategy)
-def test_xhtml::b_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::B_strategy)
-def test_xhtml::b_style_setter(instance):
+@given(instance=xhtml_Samp_strategy)
+def test_xhtml_samp_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Samp_strategy)
+def test_xhtml_samp_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::B_strategy)
-def test_xhtml::b_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::B_strategy)
-def test_xhtml::b_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Tt_strategy)
+@given(instance=xhtml_Strong_strategy)
 @settings(max_examples=50)
-def test_xhtml::tt_instantiation(instance):
-    assert isinstance(instance, xhtml::Tt)
-
-@given(instance=xhtml::Tt_strategy)
-def test_xhtml::tt_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_xhtml_strong_instantiation(instance):
+    assert isinstance(instance, xhtml_Strong)
 
 
-@given(instance=xhtml::Tt_strategy)
-def test_xhtml::tt_style_setter(instance):
+
+@given(instance=xhtml_Strong_strategy)
+def test_xhtml_strong_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Tt_strategy)
-def test_xhtml::tt_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Tt_strategy)
-def test_xhtml::tt_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Tt_strategy)
-def test_xhtml::tt_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Tt_strategy)
-def test_xhtml::tt_lang_setter(instance):
+@given(instance=xhtml_Strong_strategy)
+def test_xhtml_strong_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Caption_strategy)
-@settings(max_examples=50)
-def test_xhtml::caption_instantiation(instance):
-    assert isinstance(instance, xhtml::Caption)
-
-@given(instance=xhtml::Caption_strategy)
-def test_xhtml::caption_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Caption_strategy)
-def test_xhtml::caption_class__setter(instance):
+@given(instance=xhtml_Strong_strategy)
+def test_xhtml_strong_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Caption_strategy)
-def test_xhtml::caption_style_type(instance):
-    assert isinstance(instance.style, str)
+@given(instance=xhtml_Dfn_strategy)
+@settings(max_examples=50)
+def test_xhtml_dfn_instantiation(instance):
+    assert isinstance(instance, xhtml_Dfn)
 
 
-@given(instance=xhtml::Caption_strategy)
-def test_xhtml::caption_style_setter(instance):
+
+@given(instance=xhtml_Dfn_strategy)
+def test_xhtml_dfn_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Dfn_strategy)
+def test_xhtml_dfn_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Caption_strategy)
-def test_xhtml::caption_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Caption_strategy)
-def test_xhtml::caption_lang_setter(instance):
+@given(instance=xhtml_Dfn_strategy)
+def test_xhtml_dfn_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=xhtml_Dt_strategy)
+@settings(max_examples=50)
+def test_xhtml_dt_instantiation(instance):
+    assert isinstance(instance, xhtml_Dt)
+
+
+
+@given(instance=xhtml_Dt_strategy)
+def test_xhtml_dt_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Sub_strategy)
-@settings(max_examples=50)
-def test_xhtml::sub_instantiation(instance):
-    assert isinstance(instance, xhtml::Sub)
-
-@given(instance=xhtml::Sub_strategy)
-def test_xhtml::sub_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Sub_strategy)
-def test_xhtml::sub_style_setter(instance):
+@given(instance=xhtml_Dt_strategy)
+def test_xhtml_dt_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Dt_strategy)
+def test_xhtml_dt_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Sub_strategy)
-def test_xhtml::sub_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Sub_strategy)
-def test_xhtml::sub_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Sub_strategy)
-def test_xhtml::sub_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Sub_strategy)
-def test_xhtml::sub_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Small_strategy)
+@given(instance=xhtml_Caption_strategy)
 @settings(max_examples=50)
-def test_xhtml::small_instantiation(instance):
-    assert isinstance(instance, xhtml::Small)
-
-@given(instance=xhtml::Small_strategy)
-def test_xhtml::small_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_xhtml_caption_instantiation(instance):
+    assert isinstance(instance, xhtml_Caption)
 
 
-@given(instance=xhtml::Small_strategy)
-def test_xhtml::small_style_setter(instance):
+
+@given(instance=xhtml_Caption_strategy)
+def test_xhtml_caption_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Small_strategy)
-def test_xhtml::small_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Small_strategy)
-def test_xhtml::small_lang_setter(instance):
+@given(instance=xhtml_Caption_strategy)
+def test_xhtml_caption_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Small_strategy)
-def test_xhtml::small_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Small_strategy)
-def test_xhtml::small_class__setter(instance):
+@given(instance=xhtml_Caption_strategy)
+def test_xhtml_caption_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Sup_strategy)
+@given(instance=xhtml_Tt_strategy)
 @settings(max_examples=50)
-def test_xhtml::sup_instantiation(instance):
-    assert isinstance(instance, xhtml::Sup)
-
-@given(instance=xhtml::Sup_strategy)
-def test_xhtml::sup_class__type(instance):
-    assert isinstance(instance.class_, str)
+def test_xhtml_tt_instantiation(instance):
+    assert isinstance(instance, xhtml_Tt)
 
 
-@given(instance=xhtml::Sup_strategy)
-def test_xhtml::sup_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
 
-@given(instance=xhtml::Sup_strategy)
-def test_xhtml::sup_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Sup_strategy)
-def test_xhtml::sup_lang_setter(instance):
+@given(instance=xhtml_Tt_strategy)
+def test_xhtml_tt_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Sup_strategy)
-def test_xhtml::sup_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::Sup_strategy)
-def test_xhtml::sup_style_setter(instance):
+@given(instance=xhtml_Tt_strategy)
+def test_xhtml_tt_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Tt_strategy)
+def test_xhtml_tt_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Kbd_strategy)
+@given(instance=xhtml_P_strategy)
 @settings(max_examples=50)
-def test_xhtml::kbd_instantiation(instance):
-    assert isinstance(instance, xhtml::Kbd)
-
-@given(instance=xhtml::Kbd_strategy)
-def test_xhtml::kbd_lang_type(instance):
-    assert isinstance(instance.lang, str)
+def test_xhtml_p_instantiation(instance):
+    assert isinstance(instance, xhtml_P)
 
 
-@given(instance=xhtml::Kbd_strategy)
-def test_xhtml::kbd_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
 
-@given(instance=xhtml::Kbd_strategy)
-def test_xhtml::kbd_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Kbd_strategy)
-def test_xhtml::kbd_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Kbd_strategy)
-def test_xhtml::kbd_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Kbd_strategy)
-def test_xhtml::kbd_style_setter(instance):
+@given(instance=xhtml_P_strategy)
+def test_xhtml_p_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Cite_strategy)
+
+
+@given(instance=xhtml_P_strategy)
+def test_xhtml_p_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_P_strategy)
+def test_xhtml_p_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+@given(instance=xhtml_Code_strategy)
 @settings(max_examples=50)
-def test_xhtml::cite_instantiation(instance):
-    assert isinstance(instance, xhtml::Cite)
-
-@given(instance=xhtml::Cite_strategy)
-def test_xhtml::cite_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_xhtml_code_instantiation(instance):
+    assert isinstance(instance, xhtml_Code)
 
 
-@given(instance=xhtml::Cite_strategy)
-def test_xhtml::cite_style_setter(instance):
+
+@given(instance=xhtml_Code_strategy)
+def test_xhtml_code_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
+
+
+
+@given(instance=xhtml_Code_strategy)
+def test_xhtml_code_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Code_strategy)
+def test_xhtml_code_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Cite_strategy)
-def test_xhtml::cite_lang_type(instance):
-    assert isinstance(instance.lang, str)
+@given(instance=xhtml_Big_strategy)
+@settings(max_examples=50)
+def test_xhtml_big_instantiation(instance):
+    assert isinstance(instance, xhtml_Big)
 
 
-@given(instance=xhtml::Cite_strategy)
-def test_xhtml::cite_lang_setter(instance):
+
+@given(instance=xhtml_Big_strategy)
+def test_xhtml_big_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Cite_strategy)
-def test_xhtml::cite_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Cite_strategy)
-def test_xhtml::cite_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Span_strategy)
-@settings(max_examples=50)
-def test_xhtml::span_instantiation(instance):
-    assert isinstance(instance, xhtml::Span)
-
-@given(instance=xhtml::Span_strategy)
-def test_xhtml::span_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Span_strategy)
-def test_xhtml::span_style_setter(instance):
+@given(instance=xhtml_Big_strategy)
+def test_xhtml_big_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Span_strategy)
-def test_xhtml::span_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Span_strategy)
-def test_xhtml::span_class__setter(instance):
+@given(instance=xhtml_Big_strategy)
+def test_xhtml_big_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Span_strategy)
-def test_xhtml::span_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Span_strategy)
-def test_xhtml::span_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Dfn_strategy)
+@given(instance=xhtml_Var_strategy)
 @settings(max_examples=50)
-def test_xhtml::dfn_instantiation(instance):
-    assert isinstance(instance, xhtml::Dfn)
-
-@given(instance=xhtml::Dfn_strategy)
-def test_xhtml::dfn_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_xhtml_var_instantiation(instance):
+    assert isinstance(instance, xhtml_Var)
 
 
-@given(instance=xhtml::Dfn_strategy)
-def test_xhtml::dfn_style_setter(instance):
+
+@given(instance=xhtml_Var_strategy)
+def test_xhtml_var_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_Var_strategy)
+def test_xhtml_var_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Dfn_strategy)
-def test_xhtml::dfn_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Dfn_strategy)
-def test_xhtml::dfn_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Dfn_strategy)
-def test_xhtml::dfn_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Dfn_strategy)
-def test_xhtml::dfn_lang_setter(instance):
+@given(instance=xhtml_Var_strategy)
+def test_xhtml_var_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Acronym_strategy)
+@given(instance=xhtml_Span_strategy)
 @settings(max_examples=50)
-def test_xhtml::acronym_instantiation(instance):
-    assert isinstance(instance, xhtml::Acronym)
-
-@given(instance=xhtml::Acronym_strategy)
-def test_xhtml::acronym_class__type(instance):
-    assert isinstance(instance.class_, str)
+def test_xhtml_span_instantiation(instance):
+    assert isinstance(instance, xhtml_Span)
 
 
-@given(instance=xhtml::Acronym_strategy)
-def test_xhtml::acronym_class__setter(instance):
+
+@given(instance=xhtml_Span_strategy)
+def test_xhtml_span_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Acronym_strategy)
-def test_xhtml::acronym_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Acronym_strategy)
-def test_xhtml::acronym_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Acronym_strategy)
-def test_xhtml::acronym_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Acronym_strategy)
-def test_xhtml::acronym_style_setter(instance):
+@given(instance=xhtml_Span_strategy)
+def test_xhtml_span_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::Strong_strategy)
-@settings(max_examples=50)
-def test_xhtml::strong_instantiation(instance):
-    assert isinstance(instance, xhtml::Strong)
-
-@given(instance=xhtml::Strong_strategy)
-def test_xhtml::strong_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=xhtml::Strong_strategy)
-def test_xhtml::strong_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Strong_strategy)
-def test_xhtml::strong_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Strong_strategy)
-def test_xhtml::strong_lang_setter(instance):
+@given(instance=xhtml_Span_strategy)
+def test_xhtml_span_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Strong_strategy)
-def test_xhtml::strong_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Strong_strategy)
-def test_xhtml::strong_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Var_strategy)
+@given(instance=xhtml_Abbr_strategy)
 @settings(max_examples=50)
-def test_xhtml::var_instantiation(instance):
-    assert isinstance(instance, xhtml::Var)
-
-@given(instance=xhtml::Var_strategy)
-def test_xhtml::var_style_type(instance):
-    assert isinstance(instance.style, str)
+def test_xhtml_abbr_instantiation(instance):
+    assert isinstance(instance, xhtml_Abbr)
 
 
-@given(instance=xhtml::Var_strategy)
-def test_xhtml::var_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
 
-@given(instance=xhtml::Var_strategy)
-def test_xhtml::var_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Var_strategy)
-def test_xhtml::var_class__setter(instance):
+@given(instance=xhtml_Abbr_strategy)
+def test_xhtml_abbr_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=xhtml::Var_strategy)
-def test_xhtml::var_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::Var_strategy)
-def test_xhtml::var_lang_setter(instance):
+@given(instance=xhtml_Abbr_strategy)
+def test_xhtml_abbr_lang_setter(instance):
     original = instance.lang
     instance.lang = original
     assert instance.lang == original
 
-@given(instance=xhtml::Samp_strategy)
-@settings(max_examples=50)
-def test_xhtml::samp_instantiation(instance):
-    assert isinstance(instance, xhtml::Samp)
 
-@given(instance=xhtml::Samp_strategy)
-def test_xhtml::samp_class__type(instance):
-    assert isinstance(instance.class_, str)
 
-
-@given(instance=xhtml::Samp_strategy)
-def test_xhtml::samp_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Samp_strategy)
-def test_xhtml::samp_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Samp_strategy)
-def test_xhtml::samp_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Samp_strategy)
-def test_xhtml::samp_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Samp_strategy)
-def test_xhtml::samp_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::P_strategy)
-@settings(max_examples=50)
-def test_xhtml::p_instantiation(instance):
-    assert isinstance(instance, xhtml::P)
-
-@given(instance=xhtml::P_strategy)
-def test_xhtml::p_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::P_strategy)
-def test_xhtml::p_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::P_strategy)
-def test_xhtml::p_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::P_strategy)
-def test_xhtml::p_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::P_strategy)
-def test_xhtml::p_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::P_strategy)
-def test_xhtml::p_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Code_strategy)
-@settings(max_examples=50)
-def test_xhtml::code_instantiation(instance):
-    assert isinstance(instance, xhtml::Code)
-
-@given(instance=xhtml::Code_strategy)
-def test_xhtml::code_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Code_strategy)
-def test_xhtml::code_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Code_strategy)
-def test_xhtml::code_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Code_strategy)
-def test_xhtml::code_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Code_strategy)
-def test_xhtml::code_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Code_strategy)
-def test_xhtml::code_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Dt_strategy)
-@settings(max_examples=50)
-def test_xhtml::dt_instantiation(instance):
-    assert isinstance(instance, xhtml::Dt)
-
-@given(instance=xhtml::Dt_strategy)
-def test_xhtml::dt_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Dt_strategy)
-def test_xhtml::dt_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Dt_strategy)
-def test_xhtml::dt_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Dt_strategy)
-def test_xhtml::dt_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Dt_strategy)
-def test_xhtml::dt_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Dt_strategy)
-def test_xhtml::dt_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Em_strategy)
-@settings(max_examples=50)
-def test_xhtml::em_instantiation(instance):
-    assert isinstance(instance, xhtml::Em)
-
-@given(instance=xhtml::Em_strategy)
-def test_xhtml::em_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Em_strategy)
-def test_xhtml::em_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::Em_strategy)
-def test_xhtml::em_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Em_strategy)
-def test_xhtml::em_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Em_strategy)
-def test_xhtml::em_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Em_strategy)
-def test_xhtml::em_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::I_strategy)
-@settings(max_examples=50)
-def test_xhtml::i_instantiation(instance):
-    assert isinstance(instance, xhtml::I)
-
-@given(instance=xhtml::I_strategy)
-def test_xhtml::i_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::I_strategy)
-def test_xhtml::i_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::I_strategy)
-def test_xhtml::i_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::I_strategy)
-def test_xhtml::i_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=xhtml::I_strategy)
-def test_xhtml::i_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::I_strategy)
-def test_xhtml::i_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Abbr_strategy)
-@settings(max_examples=50)
-def test_xhtml::abbr_instantiation(instance):
-    assert isinstance(instance, xhtml::Abbr)
-
-@given(instance=xhtml::Abbr_strategy)
-def test_xhtml::abbr_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::Abbr_strategy)
-def test_xhtml::abbr_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::Abbr_strategy)
-def test_xhtml::abbr_lang_type(instance):
-    assert isinstance(instance.lang, str)
-
-
-@given(instance=xhtml::Abbr_strategy)
-def test_xhtml::abbr_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
-
-@given(instance=xhtml::Abbr_strategy)
-def test_xhtml::abbr_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=xhtml::Abbr_strategy)
-def test_xhtml::abbr_style_setter(instance):
+@given(instance=xhtml_Abbr_strategy)
+def test_xhtml_abbr_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
@@ -6370,95 +5761,71 @@ def test_xhtml::abbr_style_setter(instance):
 def test_acontent_instantiation(instance):
     assert isinstance(instance, AContent)
 
-@given(instance=xhtml::A_strategy)
+@given(instance=xhtml_A_strategy)
 @settings(max_examples=50)
-def test_xhtml::a_instantiation(instance):
-    assert isinstance(instance, xhtml::A)
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_shape_type(instance):
-    assert isinstance(instance.shape, str)
+def test_xhtml_a_instantiation(instance):
+    assert isinstance(instance, xhtml_A)
 
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_coords_type(instance):
-    assert isinstance(instance.coords, str)
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_lang_setter(instance):
+    original = instance.lang
+    instance.lang = original
+    assert instance.lang == original
 
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_coords_setter(instance):
-    original = instance.coords
-    instance.coords = original
-    assert instance.coords == original
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_href_type(instance):
-    assert isinstance(instance.href, str)
-
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_href_setter(instance):
-    original = instance.href
-    instance.href = original
-    assert instance.href == original
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_type_setter(instance):
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_style_setter(instance):
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_lang_type(instance):
-    assert isinstance(instance.lang, str)
 
 
-@given(instance=xhtml::A_strategy)
-def test_xhtml::a_lang_setter(instance):
-    original = instance.lang
-    instance.lang = original
-    assert instance.lang == original
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+
+
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_href_setter(instance):
+    original = instance.href
+    instance.href = original
+    assert instance.href == original
+
+
+
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=xhtml_A_strategy)
+def test_xhtml_a_coords_setter(instance):
+    original = instance.coords
+    instance.coords = original
+    assert instance.coords == original

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    lts::Transition,
-    lts::LTS,
-    lts::State,
-    lts::FinalState,
-    lts::IntermediateState,
-    lts::InitialState,
+    lts_Transition,
+    lts_LTS,
+    lts_State,
+    lts_FinalState,
+    lts_IntermediateState,
+    lts_InitialState,
 )
 
 # =============================================================================
@@ -35,23 +35,23 @@ def test_state_constructor_args():
 
 
 
-def test_lts::transition_is_not_abstract():
-    assert not inspect.isabstract(lts::Transition)
+def test_lts_transition_is_not_abstract():
+    assert not inspect.isabstract(lts_Transition)
 
 
-def test_lts::transition_constructor_exists():
-    assert callable(lts::Transition.__init__)
+def test_lts_transition_constructor_exists():
+    assert callable(lts_Transition.__init__)
 
 
-def test_lts::transition_constructor_args():
-    sig = inspect.signature(lts::Transition.__init__)
+def test_lts_transition_constructor_args():
+    sig = inspect.signature(lts_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_lts::transition_has_label():
-    assert hasattr(lts::Transition, "label")
+def test_lts_transition_has_label():
+    assert hasattr(lts_Transition, "label")
     descriptor = None
-    for klass in lts::Transition.__mro__:
+    for klass in lts_Transition.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -59,23 +59,23 @@ def test_lts::transition_has_label():
 
 
 
-def test_lts::lts_is_not_abstract():
-    assert not inspect.isabstract(lts::LTS)
+def test_lts_lts_is_not_abstract():
+    assert not inspect.isabstract(lts_LTS)
 
 
-def test_lts::lts_constructor_exists():
-    assert callable(lts::LTS.__init__)
+def test_lts_lts_constructor_exists():
+    assert callable(lts_LTS.__init__)
 
 
-def test_lts::lts_constructor_args():
-    sig = inspect.signature(lts::LTS.__init__)
+def test_lts_lts_constructor_args():
+    sig = inspect.signature(lts_LTS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lts::lts_has_name():
-    assert hasattr(lts::LTS, "name")
+def test_lts_lts_has_name():
+    assert hasattr(lts_LTS, "name")
     descriptor = None
-    for klass in lts::LTS.__mro__:
+    for klass in lts_LTS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -83,23 +83,23 @@ def test_lts::lts_has_name():
 
 
 
-def test_lts::state_is_not_abstract():
-    assert not inspect.isabstract(lts::State)
+def test_lts_state_is_not_abstract():
+    assert not inspect.isabstract(lts_State)
 
 
-def test_lts::state_constructor_exists():
-    assert callable(lts::State.__init__)
+def test_lts_state_constructor_exists():
+    assert callable(lts_State.__init__)
 
 
-def test_lts::state_constructor_args():
-    sig = inspect.signature(lts::State.__init__)
+def test_lts_state_constructor_args():
+    sig = inspect.signature(lts_State.__init__)
     params = list(sig.parameters.keys())
     assert "Id" in params, "Missing parameter 'Id'"
 
-def test_lts::state_has_Id():
-    assert hasattr(lts::State, "Id")
+def test_lts_state_has_Id():
+    assert hasattr(lts_State, "Id")
     descriptor = None
-    for klass in lts::State.__mro__:
+    for klass in lts_State.__mro__:
         if "Id" in klass.__dict__:
             descriptor = klass.__dict__["Id"]
             break
@@ -107,44 +107,44 @@ def test_lts::state_has_Id():
 
 
 
-def test_lts::finalstate_is_not_abstract():
-    assert not inspect.isabstract(lts::FinalState)
+def test_lts_finalstate_is_not_abstract():
+    assert not inspect.isabstract(lts_FinalState)
 
 
-def test_lts::finalstate_constructor_exists():
-    assert callable(lts::FinalState.__init__)
+def test_lts_finalstate_constructor_exists():
+    assert callable(lts_FinalState.__init__)
 
 
-def test_lts::finalstate_constructor_args():
-    sig = inspect.signature(lts::FinalState.__init__)
+def test_lts_finalstate_constructor_args():
+    sig = inspect.signature(lts_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts::intermediatestate_is_not_abstract():
-    assert not inspect.isabstract(lts::IntermediateState)
+def test_lts_intermediatestate_is_not_abstract():
+    assert not inspect.isabstract(lts_IntermediateState)
 
 
-def test_lts::intermediatestate_constructor_exists():
-    assert callable(lts::IntermediateState.__init__)
+def test_lts_intermediatestate_constructor_exists():
+    assert callable(lts_IntermediateState.__init__)
 
 
-def test_lts::intermediatestate_constructor_args():
-    sig = inspect.signature(lts::IntermediateState.__init__)
+def test_lts_intermediatestate_constructor_args():
+    sig = inspect.signature(lts_IntermediateState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lts::initialstate_is_not_abstract():
-    assert not inspect.isabstract(lts::InitialState)
+def test_lts_initialstate_is_not_abstract():
+    assert not inspect.isabstract(lts_InitialState)
 
 
-def test_lts::initialstate_constructor_exists():
-    assert callable(lts::InitialState.__init__)
+def test_lts_initialstate_constructor_exists():
+    assert callable(lts_InitialState.__init__)
 
 
-def test_lts::initialstate_constructor_args():
-    sig = inspect.signature(lts::InitialState.__init__)
+def test_lts_initialstate_constructor_args():
+    sig = inspect.signature(lts_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,29 +162,29 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-lts::Transition_strategy = st.builds(
-    lts::Transition,
+lts_Transition_strategy = st.builds(
+    lts_Transition,
     label=
         safe_text
 )
-lts::LTS_strategy = st.builds(
-    lts::LTS,
+lts_LTS_strategy = st.builds(
+    lts_LTS,
     name=
         safe_text
 )
-lts::State_strategy = st.builds(
-    lts::State,
+lts_State_strategy = st.builds(
+    lts_State,
     Id=
         safe_text
 )
-lts::FinalState_strategy = st.builds(
-    lts::FinalState,
+lts_FinalState_strategy = st.builds(
+    lts_FinalState,
 )
-lts::IntermediateState_strategy = st.builds(
-    lts::IntermediateState,
+lts_IntermediateState_strategy = st.builds(
+    lts_IntermediateState,
 )
-lts::InitialState_strategy = st.builds(
-    lts::InitialState,
+lts_InitialState_strategy = st.builds(
+    lts_InitialState,
 )
 
 @given(instance=State_strategy)
@@ -192,65 +192,56 @@ lts::InitialState_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=lts::Transition_strategy)
+@given(instance=lts_Transition_strategy)
 @settings(max_examples=50)
-def test_lts::transition_instantiation(instance):
-    assert isinstance(instance, lts::Transition)
-
-@given(instance=lts::Transition_strategy)
-def test_lts::transition_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_lts_transition_instantiation(instance):
+    assert isinstance(instance, lts_Transition)
 
 
-@given(instance=lts::Transition_strategy)
-def test_lts::transition_label_setter(instance):
+
+@given(instance=lts_Transition_strategy)
+def test_lts_transition_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=lts::LTS_strategy)
+@given(instance=lts_LTS_strategy)
 @settings(max_examples=50)
-def test_lts::lts_instantiation(instance):
-    assert isinstance(instance, lts::LTS)
-
-@given(instance=lts::LTS_strategy)
-def test_lts::lts_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lts_lts_instantiation(instance):
+    assert isinstance(instance, lts_LTS)
 
 
-@given(instance=lts::LTS_strategy)
-def test_lts::lts_name_setter(instance):
+
+@given(instance=lts_LTS_strategy)
+def test_lts_lts_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=lts::State_strategy)
+@given(instance=lts_State_strategy)
 @settings(max_examples=50)
-def test_lts::state_instantiation(instance):
-    assert isinstance(instance, lts::State)
-
-@given(instance=lts::State_strategy)
-def test_lts::state_Id_type(instance):
-    assert isinstance(instance.Id, str)
+def test_lts_state_instantiation(instance):
+    assert isinstance(instance, lts_State)
 
 
-@given(instance=lts::State_strategy)
-def test_lts::state_Id_setter(instance):
+
+@given(instance=lts_State_strategy)
+def test_lts_state_Id_setter(instance):
     original = instance.Id
     instance.Id = original
     assert instance.Id == original
 
-@given(instance=lts::FinalState_strategy)
+@given(instance=lts_FinalState_strategy)
 @settings(max_examples=50)
-def test_lts::finalstate_instantiation(instance):
-    assert isinstance(instance, lts::FinalState)
+def test_lts_finalstate_instantiation(instance):
+    assert isinstance(instance, lts_FinalState)
 
-@given(instance=lts::IntermediateState_strategy)
+@given(instance=lts_IntermediateState_strategy)
 @settings(max_examples=50)
-def test_lts::intermediatestate_instantiation(instance):
-    assert isinstance(instance, lts::IntermediateState)
+def test_lts_intermediatestate_instantiation(instance):
+    assert isinstance(instance, lts_IntermediateState)
 
-@given(instance=lts::InitialState_strategy)
+@given(instance=lts_InitialState_strategy)
 @settings(max_examples=50)
-def test_lts::initialstate_instantiation(instance):
-    assert isinstance(instance, lts::InitialState)
+def test_lts_initialstate_instantiation(instance):
+    assert isinstance(instance, lts_InitialState)

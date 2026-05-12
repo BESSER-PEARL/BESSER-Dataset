@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplefsm::Transition,
-    simplefsm::State,
-    simplefsm::FSM,
+from python_code import (
+    simplefsm_Transition,
+    simplefsm_State,
+    simplefsm_FSM,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_simplefsm::transition_is_not_abstract():
-    assert not inspect.isabstract(simplefsm::Transition)
+def test_simplefsm_transition_is_not_abstract():
+    assert not inspect.isabstract(simplefsm_Transition)
 
 
-def test_simplefsm::transition_constructor_exists():
-    assert callable(simplefsm::Transition.__init__)
+def test_simplefsm_transition_constructor_exists():
+    assert callable(simplefsm_Transition.__init__)
 
 
-def test_simplefsm::transition_constructor_args():
-    sig = inspect.signature(simplefsm::Transition.__init__)
+def test_simplefsm_transition_constructor_args():
+    sig = inspect.signature(simplefsm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplefsm::state_is_not_abstract():
-    assert not inspect.isabstract(simplefsm::State)
+def test_simplefsm_state_is_not_abstract():
+    assert not inspect.isabstract(simplefsm_State)
 
 
-def test_simplefsm::state_constructor_exists():
-    assert callable(simplefsm::State.__init__)
+def test_simplefsm_state_constructor_exists():
+    assert callable(simplefsm_State.__init__)
 
 
-def test_simplefsm::state_constructor_args():
-    sig = inspect.signature(simplefsm::State.__init__)
+def test_simplefsm_state_constructor_args():
+    sig = inspect.signature(simplefsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplefsm::state_has_name():
-    assert hasattr(simplefsm::State, "name")
+def test_simplefsm_state_has_name():
+    assert hasattr(simplefsm_State, "name")
     descriptor = None
-    for klass in simplefsm::State.__mro__:
+    for klass in simplefsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -55,16 +55,16 @@ def test_simplefsm::state_has_name():
 
 
 
-def test_simplefsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(simplefsm::FSM)
+def test_simplefsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(simplefsm_FSM)
 
 
-def test_simplefsm::fsm_constructor_exists():
-    assert callable(simplefsm::FSM.__init__)
+def test_simplefsm_fsm_constructor_exists():
+    assert callable(simplefsm_FSM.__init__)
 
 
-def test_simplefsm::fsm_constructor_args():
-    sig = inspect.signature(simplefsm::FSM.__init__)
+def test_simplefsm_fsm_constructor_args():
+    sig = inspect.signature(simplefsm_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplefsm::Transition_strategy = st.builds(
-    simplefsm::Transition,
+simplefsm_Transition_strategy = st.builds(
+    simplefsm_Transition,
 )
-simplefsm::State_strategy = st.builds(
-    simplefsm::State,
+simplefsm_State_strategy = st.builds(
+    simplefsm_State,
     name=
         safe_text
 )
-simplefsm::FSM_strategy = st.builds(
-    simplefsm::FSM,
+simplefsm_FSM_strategy = st.builds(
+    simplefsm_FSM,
 )
 
-@given(instance=simplefsm::Transition_strategy)
+@given(instance=simplefsm_Transition_strategy)
 @settings(max_examples=50)
-def test_simplefsm::transition_instantiation(instance):
-    assert isinstance(instance, simplefsm::Transition)
+def test_simplefsm_transition_instantiation(instance):
+    assert isinstance(instance, simplefsm_Transition)
 
-@given(instance=simplefsm::State_strategy)
+@given(instance=simplefsm_State_strategy)
 @settings(max_examples=50)
-def test_simplefsm::state_instantiation(instance):
-    assert isinstance(instance, simplefsm::State)
-
-@given(instance=simplefsm::State_strategy)
-def test_simplefsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplefsm_state_instantiation(instance):
+    assert isinstance(instance, simplefsm_State)
 
 
-@given(instance=simplefsm::State_strategy)
-def test_simplefsm::state_name_setter(instance):
+
+@given(instance=simplefsm_State_strategy)
+def test_simplefsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplefsm::FSM_strategy)
+@given(instance=simplefsm_FSM_strategy)
 @settings(max_examples=50)
-def test_simplefsm::fsm_instantiation(instance):
-    assert isinstance(instance, simplefsm::FSM)
+def test_simplefsm_fsm_instantiation(instance):
+    assert isinstance(instance, simplefsm_FSM)

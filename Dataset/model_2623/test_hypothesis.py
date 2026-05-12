@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     GraphElement,
-    Dot::DirectedArc,
-    Dot::Node,
-    Dot::NamedElement,
+    Dot_DirectedArc,
+    Dot_Node,
+    Dot_NamedElement,
     NamedElement,
-    Dot::GraphElement,
-    Dot::Graph,
+    Dot_GraphElement,
+    Dot_Graph,
 )
 
 # =============================================================================
@@ -35,47 +35,47 @@ def test_graphelement_constructor_args():
 
 
 
-def test_dot::directedarc_is_not_abstract():
-    assert not inspect.isabstract(Dot::DirectedArc)
+def test_dot_directedarc_is_not_abstract():
+    assert not inspect.isabstract(Dot_DirectedArc)
 
 
-def test_dot::directedarc_constructor_exists():
-    assert callable(Dot::DirectedArc.__init__)
+def test_dot_directedarc_constructor_exists():
+    assert callable(Dot_DirectedArc.__init__)
 
 
-def test_dot::directedarc_constructor_args():
-    sig = inspect.signature(Dot::DirectedArc.__init__)
+def test_dot_directedarc_constructor_args():
+    sig = inspect.signature(Dot_DirectedArc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::node_is_not_abstract():
-    assert not inspect.isabstract(Dot::Node)
+def test_dot_node_is_not_abstract():
+    assert not inspect.isabstract(Dot_Node)
 
 
-def test_dot::node_constructor_exists():
-    assert callable(Dot::Node.__init__)
+def test_dot_node_constructor_exists():
+    assert callable(Dot_Node.__init__)
 
 
-def test_dot::node_constructor_args():
-    sig = inspect.signature(Dot::Node.__init__)
+def test_dot_node_constructor_args():
+    sig = inspect.signature(Dot_Node.__init__)
     params = list(sig.parameters.keys())
     assert "shape" in params, "Missing parameter 'shape'"
     assert "style" in params, "Missing parameter 'style'"
 
-def test_dot::node_has_shape():
-    assert hasattr(Dot::Node, "shape")
+def test_dot_node_has_shape():
+    assert hasattr(Dot_Node, "shape")
     descriptor = None
-    for klass in Dot::Node.__mro__:
+    for klass in Dot_Node.__mro__:
         if "shape" in klass.__dict__:
             descriptor = klass.__dict__["shape"]
             break
     assert isinstance(descriptor, property)
 
-def test_dot::node_has_style():
-    assert hasattr(Dot::Node, "style")
+def test_dot_node_has_style():
+    assert hasattr(Dot_Node, "style")
     descriptor = None
-    for klass in Dot::Node.__mro__:
+    for klass in Dot_Node.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -83,23 +83,23 @@ def test_dot::node_has_style():
 
 
 
-def test_dot::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Dot::NamedElement)
+def test_dot_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Dot_NamedElement)
 
 
-def test_dot::namedelement_constructor_exists():
-    assert callable(Dot::NamedElement.__init__)
+def test_dot_namedelement_constructor_exists():
+    assert callable(Dot_NamedElement.__init__)
 
 
-def test_dot::namedelement_constructor_args():
-    sig = inspect.signature(Dot::NamedElement.__init__)
+def test_dot_namedelement_constructor_args():
+    sig = inspect.signature(Dot_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dot::namedelement_has_name():
-    assert hasattr(Dot::NamedElement, "name")
+def test_dot_namedelement_has_name():
+    assert hasattr(Dot_NamedElement, "name")
     descriptor = None
-    for klass in Dot::NamedElement.__mro__:
+    for klass in Dot_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -121,50 +121,50 @@ def test_namedelement_constructor_args():
 
 
 
-def test_dot::graphelement_is_not_abstract():
-    assert not inspect.isabstract(Dot::GraphElement)
+def test_dot_graphelement_is_not_abstract():
+    assert not inspect.isabstract(Dot_GraphElement)
 
 
-def test_dot::graphelement_constructor_exists():
-    assert callable(Dot::GraphElement.__init__)
+def test_dot_graphelement_constructor_exists():
+    assert callable(Dot_GraphElement.__init__)
 
 
-def test_dot::graphelement_constructor_args():
-    sig = inspect.signature(Dot::GraphElement.__init__)
+def test_dot_graphelement_constructor_args():
+    sig = inspect.signature(Dot_GraphElement.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "color" in params, "Missing parameter 'color'"
+    assert "label" in params, "Missing parameter 'label'"
 
-def test_dot::graphelement_has_label():
-    assert hasattr(Dot::GraphElement, "label")
+def test_dot_graphelement_has_color():
+    assert hasattr(Dot_GraphElement, "color")
     descriptor = None
-    for klass in Dot::GraphElement.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dot::graphelement_has_color():
-    assert hasattr(Dot::GraphElement, "color")
-    descriptor = None
-    for klass in Dot::GraphElement.__mro__:
+    for klass in Dot_GraphElement.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
+def test_dot_graphelement_has_label():
+    assert hasattr(Dot_GraphElement, "label")
+    descriptor = None
+    for klass in Dot_GraphElement.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dot::graph_is_not_abstract():
-    assert not inspect.isabstract(Dot::Graph)
+
+def test_dot_graph_is_not_abstract():
+    assert not inspect.isabstract(Dot_Graph)
 
 
-def test_dot::graph_constructor_exists():
-    assert callable(Dot::Graph.__init__)
+def test_dot_graph_constructor_exists():
+    assert callable(Dot_Graph.__init__)
 
 
-def test_dot::graph_constructor_args():
-    sig = inspect.signature(Dot::Graph.__init__)
+def test_dot_graph_constructor_args():
+    sig = inspect.signature(Dot_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,33 +182,33 @@ safe_text = st.text(
 GraphElement_strategy = st.builds(
     GraphElement,
 )
-Dot::DirectedArc_strategy = st.builds(
-    Dot::DirectedArc,
+Dot_DirectedArc_strategy = st.builds(
+    Dot_DirectedArc,
 )
-Dot::Node_strategy = st.builds(
-    Dot::Node,
+Dot_Node_strategy = st.builds(
+    Dot_Node,
     shape=
         safe_text,
     style=
         safe_text
 )
-Dot::NamedElement_strategy = st.builds(
-    Dot::NamedElement,
+Dot_NamedElement_strategy = st.builds(
+    Dot_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Dot::GraphElement_strategy = st.builds(
-    Dot::GraphElement,
-    label=
-        safe_text,
+Dot_GraphElement_strategy = st.builds(
+    Dot_GraphElement,
     color=
+        safe_text,
+    label=
         safe_text
 )
-Dot::Graph_strategy = st.builds(
-    Dot::Graph,
+Dot_Graph_strategy = st.builds(
+    Dot_Graph,
 )
 
 @given(instance=GraphElement_strategy)
@@ -216,50 +216,41 @@ Dot::Graph_strategy = st.builds(
 def test_graphelement_instantiation(instance):
     assert isinstance(instance, GraphElement)
 
-@given(instance=Dot::DirectedArc_strategy)
+@given(instance=Dot_DirectedArc_strategy)
 @settings(max_examples=50)
-def test_dot::directedarc_instantiation(instance):
-    assert isinstance(instance, Dot::DirectedArc)
+def test_dot_directedarc_instantiation(instance):
+    assert isinstance(instance, Dot_DirectedArc)
 
-@given(instance=Dot::Node_strategy)
+@given(instance=Dot_Node_strategy)
 @settings(max_examples=50)
-def test_dot::node_instantiation(instance):
-    assert isinstance(instance, Dot::Node)
-
-@given(instance=Dot::Node_strategy)
-def test_dot::node_shape_type(instance):
-    assert isinstance(instance.shape, str)
+def test_dot_node_instantiation(instance):
+    assert isinstance(instance, Dot_Node)
 
 
-@given(instance=Dot::Node_strategy)
-def test_dot::node_shape_setter(instance):
+
+@given(instance=Dot_Node_strategy)
+def test_dot_node_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=Dot::Node_strategy)
-def test_dot::node_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=Dot::Node_strategy)
-def test_dot::node_style_setter(instance):
+@given(instance=Dot_Node_strategy)
+def test_dot_node_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=Dot::NamedElement_strategy)
+@given(instance=Dot_NamedElement_strategy)
 @settings(max_examples=50)
-def test_dot::namedelement_instantiation(instance):
-    assert isinstance(instance, Dot::NamedElement)
-
-@given(instance=Dot::NamedElement_strategy)
-def test_dot::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dot_namedelement_instantiation(instance):
+    assert isinstance(instance, Dot_NamedElement)
 
 
-@given(instance=Dot::NamedElement_strategy)
-def test_dot::namedelement_name_setter(instance):
+
+@given(instance=Dot_NamedElement_strategy)
+def test_dot_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -269,34 +260,28 @@ def test_dot::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Dot::GraphElement_strategy)
+@given(instance=Dot_GraphElement_strategy)
 @settings(max_examples=50)
-def test_dot::graphelement_instantiation(instance):
-    assert isinstance(instance, Dot::GraphElement)
-
-@given(instance=Dot::GraphElement_strategy)
-def test_dot::graphelement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_dot_graphelement_instantiation(instance):
+    assert isinstance(instance, Dot_GraphElement)
 
 
-@given(instance=Dot::GraphElement_strategy)
-def test_dot::graphelement_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=Dot::GraphElement_strategy)
-def test_dot::graphelement_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Dot::GraphElement_strategy)
-def test_dot::graphelement_color_setter(instance):
+@given(instance=Dot_GraphElement_strategy)
+def test_dot_graphelement_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=Dot::Graph_strategy)
+
+
+@given(instance=Dot_GraphElement_strategy)
+def test_dot_graphelement_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+@given(instance=Dot_Graph_strategy)
 @settings(max_examples=50)
-def test_dot::graph_instantiation(instance):
-    assert isinstance(instance, Dot::Graph)
+def test_dot_graph_instantiation(instance):
+    assert isinstance(instance, Dot_Graph)

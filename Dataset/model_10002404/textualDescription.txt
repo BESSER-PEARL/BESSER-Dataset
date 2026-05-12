@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'Role_external' has no attributes.
+The class 'Player' has the following attributes: 'bid' of type int; 'stack' of type int.
+The class 'SUIT_external' has no attributes.
+The class '__abstract___BaseDeck' has no attributes.
+The class 'PlayerView' has no attributes.
+The class 'PlayCard' has no attributes.
+The class 'RANK_external' has no attributes.
+The class 'PokerTable' has no attributes.
+The class 'GameRound' has no attributes.
+The class 'T' has no attributes.
+The class 'PokerTableView' has no attributes.
+The class 'StandardDeck' has no attributes.
+'PlayCard' (role 'pelaaja1', cardinality 0..*) is associated with 'Player' (role 'kortti0', cardinality 0..*).
+'PokerTable' (role 'Has_had_06', cardinality 0..*) is associated with 'GameRound' (role 'Previous7', cardinality 0..*).
+'RANK_external' (role 'playCard15', cardinality 0..*) is associated with 'PlayCard' (role 'rANK14', cardinality 0..*).
+'PokerTable' (role 'pokerTableView21', cardinality 0..*) is associated with 'PokerTableView' (role 'pokerTable20', cardinality 0..*).
+'Role_external' (role 'player13', cardinality 0..*) is associated with 'Player' (role 'role12', cardinality 0..*).
+'SUIT_external' (role 'playCard17', cardinality 0..*) is associated with 'PlayCard' (role 'sUIT16', cardinality 0..*).
+'Player' (role 'Table3', cardinality 0..*) is associated with 'PokerTable' (role 'pelaaja2', cardinality 0..*).
+'PlayCard' (role 'deck5', cardinality 0..*) is associated with '__abstract___BaseDeck' (role 'card4', cardinality 0..*).
+'PokerTable' (role 'card8', cardinality 0..*) is associated with 'PlayCard' (role 'table9', cardinality 0..*).
+'PokerTable' (role 'Active18', cardinality 0..*) is associated with 'Player' (role 'pokerTable19', cardinality 0..*).
+'PokerTable' (role 'deck10', cardinality 0..*) is associated with '__abstract___BaseDeck' (role 'table11', cardinality 0..*).

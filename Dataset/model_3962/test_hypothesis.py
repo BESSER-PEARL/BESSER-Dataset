@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Operation,
-    umlClass::AlternativeOperation,
-    umlClass::OptionalOperation,
+    umlClass_AlternativeOperation,
+    umlClass_OptionalOperation,
     DirectedRelationship,
     Relationship,
-    umlClass::DirectedRelationship,
-    umlClass::Element,
+    umlClass_DirectedRelationship,
+    umlClass_Element,
     StructuralFeature,
     Classifier,
-    umlClass::Association,
-    umlClass::DataType,
-    umlClass::Class,
+    umlClass_Association,
+    umlClass_DataType,
+    umlClass_Class,
     TypedElement,
-    umlClass::StructuralFeature,
-    umlClass::Generalization,
-    umlClass::Property,
+    umlClass_StructuralFeature,
+    umlClass_Generalization,
+    umlClass_Property,
     NamedElement,
-    umlClass::TypedElement,
-    umlClass::Package,
-    umlClass::Operation,
-    umlClass::Classifier,
+    umlClass_Operation,
+    umlClass_TypedElement,
+    umlClass_Package,
+    umlClass_Classifier,
     Element,
-    umlClass::NamedElement,
-    umlClass::Relationship,
+    umlClass_NamedElement,
+    umlClass_Relationship,
 )
 
 # =============================================================================
@@ -52,30 +52,30 @@ def test_operation_constructor_args():
 
 
 
-def test_umlclass::alternativeoperation_is_not_abstract():
-    assert not inspect.isabstract(umlClass::AlternativeOperation)
+def test_umlclass_alternativeoperation_is_not_abstract():
+    assert not inspect.isabstract(umlClass_AlternativeOperation)
 
 
-def test_umlclass::alternativeoperation_constructor_exists():
-    assert callable(umlClass::AlternativeOperation.__init__)
+def test_umlclass_alternativeoperation_constructor_exists():
+    assert callable(umlClass_AlternativeOperation.__init__)
 
 
-def test_umlclass::alternativeoperation_constructor_args():
-    sig = inspect.signature(umlClass::AlternativeOperation.__init__)
+def test_umlclass_alternativeoperation_constructor_args():
+    sig = inspect.signature(umlClass_AlternativeOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclass::optionaloperation_is_not_abstract():
-    assert not inspect.isabstract(umlClass::OptionalOperation)
+def test_umlclass_optionaloperation_is_not_abstract():
+    assert not inspect.isabstract(umlClass_OptionalOperation)
 
 
-def test_umlclass::optionaloperation_constructor_exists():
-    assert callable(umlClass::OptionalOperation.__init__)
+def test_umlclass_optionaloperation_constructor_exists():
+    assert callable(umlClass_OptionalOperation.__init__)
 
 
-def test_umlclass::optionaloperation_constructor_args():
-    sig = inspect.signature(umlClass::OptionalOperation.__init__)
+def test_umlclass_optionaloperation_constructor_args():
+    sig = inspect.signature(umlClass_OptionalOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -108,30 +108,30 @@ def test_relationship_constructor_args():
 
 
 
-def test_umlclass::directedrelationship_is_not_abstract():
-    assert not inspect.isabstract(umlClass::DirectedRelationship)
+def test_umlclass_directedrelationship_is_not_abstract():
+    assert not inspect.isabstract(umlClass_DirectedRelationship)
 
 
-def test_umlclass::directedrelationship_constructor_exists():
-    assert callable(umlClass::DirectedRelationship.__init__)
+def test_umlclass_directedrelationship_constructor_exists():
+    assert callable(umlClass_DirectedRelationship.__init__)
 
 
-def test_umlclass::directedrelationship_constructor_args():
-    sig = inspect.signature(umlClass::DirectedRelationship.__init__)
+def test_umlclass_directedrelationship_constructor_args():
+    sig = inspect.signature(umlClass_DirectedRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclass::element_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Element)
+def test_umlclass_element_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Element)
 
 
-def test_umlclass::element_constructor_exists():
-    assert callable(umlClass::Element.__init__)
+def test_umlclass_element_constructor_exists():
+    assert callable(umlClass_Element.__init__)
 
 
-def test_umlclass::element_constructor_args():
-    sig = inspect.signature(umlClass::Element.__init__)
+def test_umlclass_element_constructor_args():
+    sig = inspect.signature(umlClass_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,51 +164,51 @@ def test_classifier_constructor_args():
 
 
 
-def test_umlclass::association_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Association)
+def test_umlclass_association_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Association)
 
 
-def test_umlclass::association_constructor_exists():
-    assert callable(umlClass::Association.__init__)
+def test_umlclass_association_constructor_exists():
+    assert callable(umlClass_Association.__init__)
 
 
-def test_umlclass::association_constructor_args():
-    sig = inspect.signature(umlClass::Association.__init__)
+def test_umlclass_association_constructor_args():
+    sig = inspect.signature(umlClass_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclass::datatype_is_not_abstract():
-    assert not inspect.isabstract(umlClass::DataType)
+def test_umlclass_datatype_is_not_abstract():
+    assert not inspect.isabstract(umlClass_DataType)
 
 
-def test_umlclass::datatype_constructor_exists():
-    assert callable(umlClass::DataType.__init__)
+def test_umlclass_datatype_constructor_exists():
+    assert callable(umlClass_DataType.__init__)
 
 
-def test_umlclass::datatype_constructor_args():
-    sig = inspect.signature(umlClass::DataType.__init__)
+def test_umlclass_datatype_constructor_args():
+    sig = inspect.signature(umlClass_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclass::class_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Class)
+def test_umlclass_class_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Class)
 
 
-def test_umlclass::class_constructor_exists():
-    assert callable(umlClass::Class.__init__)
+def test_umlclass_class_constructor_exists():
+    assert callable(umlClass_Class.__init__)
 
 
-def test_umlclass::class_constructor_args():
-    sig = inspect.signature(umlClass::Class.__init__)
+def test_umlclass_class_constructor_args():
+    sig = inspect.signature(umlClass_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isActive" in params, "Missing parameter 'isActive'"
 
-def test_umlclass::class_has_isActive():
-    assert hasattr(umlClass::Class, "isActive")
+def test_umlclass_class_has_isActive():
+    assert hasattr(umlClass_Class, "isActive")
     descriptor = None
-    for klass in umlClass::Class.__mro__:
+    for klass in umlClass_Class.__mro__:
         if "isActive" in klass.__dict__:
             descriptor = klass.__dict__["isActive"]
             break
@@ -230,23 +230,23 @@ def test_typedelement_constructor_args():
 
 
 
-def test_umlclass::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(umlClass::StructuralFeature)
+def test_umlclass_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(umlClass_StructuralFeature)
 
 
-def test_umlclass::structuralfeature_constructor_exists():
-    assert callable(umlClass::StructuralFeature.__init__)
+def test_umlclass_structuralfeature_constructor_exists():
+    assert callable(umlClass_StructuralFeature.__init__)
 
 
-def test_umlclass::structuralfeature_constructor_args():
-    sig = inspect.signature(umlClass::StructuralFeature.__init__)
+def test_umlclass_structuralfeature_constructor_args():
+    sig = inspect.signature(umlClass_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
 
-def test_umlclass::structuralfeature_has_isReadOnly():
-    assert hasattr(umlClass::StructuralFeature, "isReadOnly")
+def test_umlclass_structuralfeature_has_isReadOnly():
+    assert hasattr(umlClass_StructuralFeature, "isReadOnly")
     descriptor = None
-    for klass in umlClass::StructuralFeature.__mro__:
+    for klass in umlClass_StructuralFeature.__mro__:
         if "isReadOnly" in klass.__dict__:
             descriptor = klass.__dict__["isReadOnly"]
             break
@@ -254,30 +254,30 @@ def test_umlclass::structuralfeature_has_isReadOnly():
 
 
 
-def test_umlclass::generalization_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Generalization)
+def test_umlclass_generalization_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Generalization)
 
 
-def test_umlclass::generalization_constructor_exists():
-    assert callable(umlClass::Generalization.__init__)
+def test_umlclass_generalization_constructor_exists():
+    assert callable(umlClass_Generalization.__init__)
 
 
-def test_umlclass::generalization_constructor_args():
-    sig = inspect.signature(umlClass::Generalization.__init__)
+def test_umlclass_generalization_constructor_args():
+    sig = inspect.signature(umlClass_Generalization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlclass::property_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Property)
+def test_umlclass_property_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Property)
 
 
-def test_umlclass::property_constructor_exists():
-    assert callable(umlClass::Property.__init__)
+def test_umlclass_property_constructor_exists():
+    assert callable(umlClass_Property.__init__)
 
 
-def test_umlclass::property_constructor_args():
-    sig = inspect.signature(umlClass::Property.__init__)
+def test_umlclass_property_constructor_args():
+    sig = inspect.signature(umlClass_Property.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -296,91 +296,63 @@ def test_namedelement_constructor_args():
 
 
 
-def test_umlclass::typedelement_is_not_abstract():
-    assert not inspect.isabstract(umlClass::TypedElement)
+def test_umlclass_operation_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Operation)
 
 
-def test_umlclass::typedelement_constructor_exists():
-    assert callable(umlClass::TypedElement.__init__)
+def test_umlclass_operation_constructor_exists():
+    assert callable(umlClass_Operation.__init__)
 
 
-def test_umlclass::typedelement_constructor_args():
-    sig = inspect.signature(umlClass::TypedElement.__init__)
+def test_umlclass_operation_constructor_args():
+    sig = inspect.signature(umlClass_Operation.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_umlclass::package_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Package)
-
-
-def test_umlclass::package_constructor_exists():
-    assert callable(umlClass::Package.__init__)
-
-
-def test_umlclass::package_constructor_args():
-    sig = inspect.signature(umlClass::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlclass::operation_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Operation)
-
-
-def test_umlclass::operation_constructor_exists():
-    assert callable(umlClass::Operation.__init__)
-
-
-def test_umlclass::operation_constructor_args():
-    sig = inspect.signature(umlClass::Operation.__init__)
-    params = list(sig.parameters.keys())
-    assert "upper" in params, "Missing parameter 'upper'"
     assert "lower" in params, "Missing parameter 'lower'"
     assert "isQuery" in params, "Missing parameter 'isQuery'"
     assert "isUnique" in params, "Missing parameter 'isUnique'"
+    assert "upper" in params, "Missing parameter 'upper'"
     assert "isOrdered" in params, "Missing parameter 'isOrdered'"
 
-def test_umlclass::operation_has_upper():
-    assert hasattr(umlClass::Operation, "upper")
+def test_umlclass_operation_has_lower():
+    assert hasattr(umlClass_Operation, "lower")
     descriptor = None
-    for klass in umlClass::Operation.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlclass::operation_has_lower():
-    assert hasattr(umlClass::Operation, "lower")
-    descriptor = None
-    for klass in umlClass::Operation.__mro__:
+    for klass in umlClass_Operation.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclass::operation_has_isQuery():
-    assert hasattr(umlClass::Operation, "isQuery")
+def test_umlclass_operation_has_isQuery():
+    assert hasattr(umlClass_Operation, "isQuery")
     descriptor = None
-    for klass in umlClass::Operation.__mro__:
+    for klass in umlClass_Operation.__mro__:
         if "isQuery" in klass.__dict__:
             descriptor = klass.__dict__["isQuery"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclass::operation_has_isUnique():
-    assert hasattr(umlClass::Operation, "isUnique")
+def test_umlclass_operation_has_isUnique():
+    assert hasattr(umlClass_Operation, "isUnique")
     descriptor = None
-    for klass in umlClass::Operation.__mro__:
+    for klass in umlClass_Operation.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclass::operation_has_isOrdered():
-    assert hasattr(umlClass::Operation, "isOrdered")
+def test_umlclass_operation_has_upper():
+    assert hasattr(umlClass_Operation, "upper")
     descriptor = None
-    for klass in umlClass::Operation.__mro__:
+    for klass in umlClass_Operation.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_umlclass_operation_has_isOrdered():
+    assert hasattr(umlClass_Operation, "isOrdered")
+    descriptor = None
+    for klass in umlClass_Operation.__mro__:
         if "isOrdered" in klass.__dict__:
             descriptor = klass.__dict__["isOrdered"]
             break
@@ -388,16 +360,44 @@ def test_umlclass::operation_has_isOrdered():
 
 
 
-def test_umlclass::classifier_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Classifier)
+def test_umlclass_typedelement_is_not_abstract():
+    assert not inspect.isabstract(umlClass_TypedElement)
 
 
-def test_umlclass::classifier_constructor_exists():
-    assert callable(umlClass::Classifier.__init__)
+def test_umlclass_typedelement_constructor_exists():
+    assert callable(umlClass_TypedElement.__init__)
 
 
-def test_umlclass::classifier_constructor_args():
-    sig = inspect.signature(umlClass::Classifier.__init__)
+def test_umlclass_typedelement_constructor_args():
+    sig = inspect.signature(umlClass_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlclass_package_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Package)
+
+
+def test_umlclass_package_constructor_exists():
+    assert callable(umlClass_Package.__init__)
+
+
+def test_umlclass_package_constructor_args():
+    sig = inspect.signature(umlClass_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlclass_classifier_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Classifier)
+
+
+def test_umlclass_classifier_constructor_exists():
+    assert callable(umlClass_Classifier.__init__)
+
+
+def test_umlclass_classifier_constructor_args():
+    sig = inspect.signature(umlClass_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -416,33 +416,33 @@ def test_element_constructor_args():
 
 
 
-def test_umlclass::namedelement_is_not_abstract():
-    assert not inspect.isabstract(umlClass::NamedElement)
+def test_umlclass_namedelement_is_not_abstract():
+    assert not inspect.isabstract(umlClass_NamedElement)
 
 
-def test_umlclass::namedelement_constructor_exists():
-    assert callable(umlClass::NamedElement.__init__)
+def test_umlclass_namedelement_constructor_exists():
+    assert callable(umlClass_NamedElement.__init__)
 
 
-def test_umlclass::namedelement_constructor_args():
-    sig = inspect.signature(umlClass::NamedElement.__init__)
+def test_umlclass_namedelement_constructor_args():
+    sig = inspect.signature(umlClass_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "Archpoint" in params, "Missing parameter 'Archpoint'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlclass::namedelement_has_Archpoint():
-    assert hasattr(umlClass::NamedElement, "Archpoint")
+def test_umlclass_namedelement_has_Archpoint():
+    assert hasattr(umlClass_NamedElement, "Archpoint")
     descriptor = None
-    for klass in umlClass::NamedElement.__mro__:
+    for klass in umlClass_NamedElement.__mro__:
         if "Archpoint" in klass.__dict__:
             descriptor = klass.__dict__["Archpoint"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlclass::namedelement_has_name():
-    assert hasattr(umlClass::NamedElement, "name")
+def test_umlclass_namedelement_has_name():
+    assert hasattr(umlClass_NamedElement, "name")
     descriptor = None
-    for klass in umlClass::NamedElement.__mro__:
+    for klass in umlClass_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -450,16 +450,16 @@ def test_umlclass::namedelement_has_name():
 
 
 
-def test_umlclass::relationship_is_not_abstract():
-    assert not inspect.isabstract(umlClass::Relationship)
+def test_umlclass_relationship_is_not_abstract():
+    assert not inspect.isabstract(umlClass_Relationship)
 
 
-def test_umlclass::relationship_constructor_exists():
-    assert callable(umlClass::Relationship.__init__)
+def test_umlclass_relationship_constructor_exists():
+    assert callable(umlClass_Relationship.__init__)
 
 
-def test_umlclass::relationship_constructor_args():
-    sig = inspect.signature(umlClass::Relationship.__init__)
+def test_umlclass_relationship_constructor_args():
+    sig = inspect.signature(umlClass_Relationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -477,11 +477,11 @@ safe_text = st.text(
 Operation_strategy = st.builds(
     Operation,
 )
-umlClass::AlternativeOperation_strategy = st.builds(
-    umlClass::AlternativeOperation,
+umlClass_AlternativeOperation_strategy = st.builds(
+    umlClass_AlternativeOperation,
 )
-umlClass::OptionalOperation_strategy = st.builds(
-    umlClass::OptionalOperation,
+umlClass_OptionalOperation_strategy = st.builds(
+    umlClass_OptionalOperation,
 )
 DirectedRelationship_strategy = st.builds(
     DirectedRelationship,
@@ -489,11 +489,11 @@ DirectedRelationship_strategy = st.builds(
 Relationship_strategy = st.builds(
     Relationship,
 )
-umlClass::DirectedRelationship_strategy = st.builds(
-    umlClass::DirectedRelationship,
+umlClass_DirectedRelationship_strategy = st.builds(
+    umlClass_DirectedRelationship,
 )
-umlClass::Element_strategy = st.builds(
-    umlClass::Element,
+umlClass_Element_strategy = st.builds(
+    umlClass_Element,
 )
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
@@ -501,68 +501,68 @@ StructuralFeature_strategy = st.builds(
 Classifier_strategy = st.builds(
     Classifier,
 )
-umlClass::Association_strategy = st.builds(
-    umlClass::Association,
+umlClass_Association_strategy = st.builds(
+    umlClass_Association,
 )
-umlClass::DataType_strategy = st.builds(
-    umlClass::DataType,
+umlClass_DataType_strategy = st.builds(
+    umlClass_DataType,
 )
-umlClass::Class_strategy = st.builds(
-    umlClass::Class,
+umlClass_Class_strategy = st.builds(
+    umlClass_Class,
     isActive=
         safe_text
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-umlClass::StructuralFeature_strategy = st.builds(
-    umlClass::StructuralFeature,
+umlClass_StructuralFeature_strategy = st.builds(
+    umlClass_StructuralFeature,
     isReadOnly=
         safe_text
 )
-umlClass::Generalization_strategy = st.builds(
-    umlClass::Generalization,
+umlClass_Generalization_strategy = st.builds(
+    umlClass_Generalization,
 )
-umlClass::Property_strategy = st.builds(
-    umlClass::Property,
+umlClass_Property_strategy = st.builds(
+    umlClass_Property,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-umlClass::TypedElement_strategy = st.builds(
-    umlClass::TypedElement,
-)
-umlClass::Package_strategy = st.builds(
-    umlClass::Package,
-)
-umlClass::Operation_strategy = st.builds(
-    umlClass::Operation,
-    upper=
-        safe_text,
+umlClass_Operation_strategy = st.builds(
+    umlClass_Operation,
     lower=
         safe_text,
     isQuery=
         safe_text,
     isUnique=
         safe_text,
+    upper=
+        safe_text,
     isOrdered=
         safe_text
 )
-umlClass::Classifier_strategy = st.builds(
-    umlClass::Classifier,
+umlClass_TypedElement_strategy = st.builds(
+    umlClass_TypedElement,
+)
+umlClass_Package_strategy = st.builds(
+    umlClass_Package,
+)
+umlClass_Classifier_strategy = st.builds(
+    umlClass_Classifier,
 )
 Element_strategy = st.builds(
     Element,
 )
-umlClass::NamedElement_strategy = st.builds(
-    umlClass::NamedElement,
+umlClass_NamedElement_strategy = st.builds(
+    umlClass_NamedElement,
     Archpoint=
         safe_text,
     name=
         safe_text
 )
-umlClass::Relationship_strategy = st.builds(
-    umlClass::Relationship,
+umlClass_Relationship_strategy = st.builds(
+    umlClass_Relationship,
 )
 
 @given(instance=Operation_strategy)
@@ -570,15 +570,15 @@ umlClass::Relationship_strategy = st.builds(
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=umlClass::AlternativeOperation_strategy)
+@given(instance=umlClass_AlternativeOperation_strategy)
 @settings(max_examples=50)
-def test_umlclass::alternativeoperation_instantiation(instance):
-    assert isinstance(instance, umlClass::AlternativeOperation)
+def test_umlclass_alternativeoperation_instantiation(instance):
+    assert isinstance(instance, umlClass_AlternativeOperation)
 
-@given(instance=umlClass::OptionalOperation_strategy)
+@given(instance=umlClass_OptionalOperation_strategy)
 @settings(max_examples=50)
-def test_umlclass::optionaloperation_instantiation(instance):
-    assert isinstance(instance, umlClass::OptionalOperation)
+def test_umlclass_optionaloperation_instantiation(instance):
+    assert isinstance(instance, umlClass_OptionalOperation)
 
 @given(instance=DirectedRelationship_strategy)
 @settings(max_examples=50)
@@ -590,15 +590,15 @@ def test_directedrelationship_instantiation(instance):
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=umlClass::DirectedRelationship_strategy)
+@given(instance=umlClass_DirectedRelationship_strategy)
 @settings(max_examples=50)
-def test_umlclass::directedrelationship_instantiation(instance):
-    assert isinstance(instance, umlClass::DirectedRelationship)
+def test_umlclass_directedrelationship_instantiation(instance):
+    assert isinstance(instance, umlClass_DirectedRelationship)
 
-@given(instance=umlClass::Element_strategy)
+@given(instance=umlClass_Element_strategy)
 @settings(max_examples=50)
-def test_umlclass::element_instantiation(instance):
-    assert isinstance(instance, umlClass::Element)
+def test_umlclass_element_instantiation(instance):
+    assert isinstance(instance, umlClass_Element)
 
 @given(instance=StructuralFeature_strategy)
 @settings(max_examples=50)
@@ -610,28 +610,25 @@ def test_structuralfeature_instantiation(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=umlClass::Association_strategy)
+@given(instance=umlClass_Association_strategy)
 @settings(max_examples=50)
-def test_umlclass::association_instantiation(instance):
-    assert isinstance(instance, umlClass::Association)
+def test_umlclass_association_instantiation(instance):
+    assert isinstance(instance, umlClass_Association)
 
-@given(instance=umlClass::DataType_strategy)
+@given(instance=umlClass_DataType_strategy)
 @settings(max_examples=50)
-def test_umlclass::datatype_instantiation(instance):
-    assert isinstance(instance, umlClass::DataType)
+def test_umlclass_datatype_instantiation(instance):
+    assert isinstance(instance, umlClass_DataType)
 
-@given(instance=umlClass::Class_strategy)
+@given(instance=umlClass_Class_strategy)
 @settings(max_examples=50)
-def test_umlclass::class_instantiation(instance):
-    assert isinstance(instance, umlClass::Class)
-
-@given(instance=umlClass::Class_strategy)
-def test_umlclass::class_isActive_type(instance):
-    assert isinstance(instance.isActive, str)
+def test_umlclass_class_instantiation(instance):
+    assert isinstance(instance, umlClass_Class)
 
 
-@given(instance=umlClass::Class_strategy)
-def test_umlclass::class_isActive_setter(instance):
+
+@given(instance=umlClass_Class_strategy)
+def test_umlclass_class_isActive_setter(instance):
     original = instance.isActive
     instance.isActive = original
     assert instance.isActive == original
@@ -641,145 +638,121 @@ def test_umlclass::class_isActive_setter(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=umlClass::StructuralFeature_strategy)
+@given(instance=umlClass_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_umlclass::structuralfeature_instantiation(instance):
-    assert isinstance(instance, umlClass::StructuralFeature)
-
-@given(instance=umlClass::StructuralFeature_strategy)
-def test_umlclass::structuralfeature_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, str)
+def test_umlclass_structuralfeature_instantiation(instance):
+    assert isinstance(instance, umlClass_StructuralFeature)
 
 
-@given(instance=umlClass::StructuralFeature_strategy)
-def test_umlclass::structuralfeature_isReadOnly_setter(instance):
+
+@given(instance=umlClass_StructuralFeature_strategy)
+def test_umlclass_structuralfeature_isReadOnly_setter(instance):
     original = instance.isReadOnly
     instance.isReadOnly = original
     assert instance.isReadOnly == original
 
-@given(instance=umlClass::Generalization_strategy)
+@given(instance=umlClass_Generalization_strategy)
 @settings(max_examples=50)
-def test_umlclass::generalization_instantiation(instance):
-    assert isinstance(instance, umlClass::Generalization)
+def test_umlclass_generalization_instantiation(instance):
+    assert isinstance(instance, umlClass_Generalization)
 
-@given(instance=umlClass::Property_strategy)
+@given(instance=umlClass_Property_strategy)
 @settings(max_examples=50)
-def test_umlclass::property_instantiation(instance):
-    assert isinstance(instance, umlClass::Property)
+def test_umlclass_property_instantiation(instance):
+    assert isinstance(instance, umlClass_Property)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=umlClass::TypedElement_strategy)
+@given(instance=umlClass_Operation_strategy)
 @settings(max_examples=50)
-def test_umlclass::typedelement_instantiation(instance):
-    assert isinstance(instance, umlClass::TypedElement)
-
-@given(instance=umlClass::Package_strategy)
-@settings(max_examples=50)
-def test_umlclass::package_instantiation(instance):
-    assert isinstance(instance, umlClass::Package)
-
-@given(instance=umlClass::Operation_strategy)
-@settings(max_examples=50)
-def test_umlclass::operation_instantiation(instance):
-    assert isinstance(instance, umlClass::Operation)
-
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_upper_type(instance):
-    assert isinstance(instance.upper, str)
+def test_umlclass_operation_instantiation(instance):
+    assert isinstance(instance, umlClass_Operation)
 
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_lower_type(instance):
-    assert isinstance(instance.lower, str)
-
-
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_lower_setter(instance):
+@given(instance=umlClass_Operation_strategy)
+def test_umlclass_operation_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_isQuery_type(instance):
-    assert isinstance(instance.isQuery, str)
 
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_isQuery_setter(instance):
+@given(instance=umlClass_Operation_strategy)
+def test_umlclass_operation_isQuery_setter(instance):
     original = instance.isQuery
     instance.isQuery = original
     assert instance.isQuery == original
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_isUnique_type(instance):
-    assert isinstance(instance.isUnique, str)
 
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_isUnique_setter(instance):
+@given(instance=umlClass_Operation_strategy)
+def test_umlclass_operation_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, str)
 
 
-@given(instance=umlClass::Operation_strategy)
-def test_umlclass::operation_isOrdered_setter(instance):
+@given(instance=umlClass_Operation_strategy)
+def test_umlclass_operation_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+
+
+@given(instance=umlClass_Operation_strategy)
+def test_umlclass_operation_isOrdered_setter(instance):
     original = instance.isOrdered
     instance.isOrdered = original
     assert instance.isOrdered == original
 
-@given(instance=umlClass::Classifier_strategy)
+@given(instance=umlClass_TypedElement_strategy)
 @settings(max_examples=50)
-def test_umlclass::classifier_instantiation(instance):
-    assert isinstance(instance, umlClass::Classifier)
+def test_umlclass_typedelement_instantiation(instance):
+    assert isinstance(instance, umlClass_TypedElement)
+
+@given(instance=umlClass_Package_strategy)
+@settings(max_examples=50)
+def test_umlclass_package_instantiation(instance):
+    assert isinstance(instance, umlClass_Package)
+
+@given(instance=umlClass_Classifier_strategy)
+@settings(max_examples=50)
+def test_umlclass_classifier_instantiation(instance):
+    assert isinstance(instance, umlClass_Classifier)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=umlClass::NamedElement_strategy)
+@given(instance=umlClass_NamedElement_strategy)
 @settings(max_examples=50)
-def test_umlclass::namedelement_instantiation(instance):
-    assert isinstance(instance, umlClass::NamedElement)
-
-@given(instance=umlClass::NamedElement_strategy)
-def test_umlclass::namedelement_Archpoint_type(instance):
-    assert isinstance(instance.Archpoint, str)
+def test_umlclass_namedelement_instantiation(instance):
+    assert isinstance(instance, umlClass_NamedElement)
 
 
-@given(instance=umlClass::NamedElement_strategy)
-def test_umlclass::namedelement_Archpoint_setter(instance):
+
+@given(instance=umlClass_NamedElement_strategy)
+def test_umlclass_namedelement_Archpoint_setter(instance):
     original = instance.Archpoint
     instance.Archpoint = original
     assert instance.Archpoint == original
 
-@given(instance=umlClass::NamedElement_strategy)
-def test_umlclass::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=umlClass::NamedElement_strategy)
-def test_umlclass::namedelement_name_setter(instance):
+@given(instance=umlClass_NamedElement_strategy)
+def test_umlclass_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=umlClass::Relationship_strategy)
+@given(instance=umlClass_Relationship_strategy)
 @settings(max_examples=50)
-def test_umlclass::relationship_instantiation(instance):
-    assert isinstance(instance, umlClass::Relationship)
+def test_umlclass_relationship_instantiation(instance):
+    assert isinstance(instance, umlClass_Relationship)

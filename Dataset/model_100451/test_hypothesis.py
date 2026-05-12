@@ -3,334 +3,72 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stext::State,
-    Trigger,
-    stext::ReactionTrigger,
-    BuiltinEventSpec,
-    stext::AlwaysEvent,
-    stext::ExitEvent,
-    stext::EntryEvent,
-    Expression,
-    stext::EventValueReferenceExpression,
-    stext::ActiveStateReferenceExpression,
-    stext::EventRaisingExpression,
-    Effect,
-    stext::ReactionEffect,
-    stext::DefaultTrigger,
-    ReactionProperty,
-    stext::EntryPointSpec,
-    stext::Guard,
-    Reaction,
+from python_code import (
     Operation,
     Declaration,
-    stext::LocalReaction,
-    stext::OperationDefinition,
-    stext::Expression,
+    stext_OperationDefinition,
+    stext_Expression,
     Property,
     Variable,
-    stext::VariableDefinition,
+    stext_VariableDefinition,
     EventSpec,
-    stext::BuiltinEventSpec,
-    stext::TimeEventSpec,
-    stext::RegularEventSpec,
-    stext::EventSpec,
-    stext::ExitPointSpec,
+    stext_TimeEventSpec,
+    stext_RegularEventSpec,
+    stext_EventSpec,
     Scope,
-    stext::SimpleScope,
-    stext::StatechartScope,
-    stext::TransitionReaction,
-    stext::Scope,
+    stext_StatechartScope,
+    stext_Scope,
     ScopedElement,
-    stext::TransitionSpecification,
-    stext::StateSpecification,
-    stext::StatechartSpecification,
+    stext_TransitionSpecification,
+    stext_StateSpecification,
+    stext_StatechartSpecification,
     DefRoot,
-    stext::StateRoot,
-    stext::TransitionRoot,
-    stext::StatechartRoot,
+    stext_TransitionRoot,
+    stext_StateRoot,
+    stext_StatechartRoot,
     Event,
-    stext::EventDefinition,
-    stext::Import,
+    stext_EventDefinition,
+    stext_Import,
     NamedElement,
     StatechartScope,
-    stext::ImportScope,
-    stext::InternalScope,
-    stext::InterfaceScope,
-    stext::DefRoot,
-    stext::Root,
+    stext_InternalScope,
+    stext_ImportScope,
+    stext_InterfaceScope,
+    stext_DefRoot,
+    stext_Root,
+    stext_State,
+    Trigger,
+    stext_ReactionTrigger,
+    stext_SimpleScope,
+    BuiltinEventSpec,
+    stext_ExitEvent,
+    stext_AlwaysEvent,
+    stext_EntryEvent,
+    stext_BuiltinEventSpec,
+    Expression,
+    stext_ActiveStateReferenceExpression,
+    stext_EventValueReferenceExpression,
+    stext_EventRaisingExpression,
+    Effect,
+    stext_ReactionEffect,
+    stext_DefaultTrigger,
+    ReactionProperty,
+    stext_ExitPointSpec,
+    stext_EntryPointSpec,
+    stext_Guard,
+    Reaction,
+    stext_TransitionReaction,
+    stext_LocalReaction,
     TimeEventType,
-    TimeUnit,
     Direction,
+    TimeUnit,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_stext::state_is_not_abstract():
-    assert not inspect.isabstract(stext::State)
-
-
-def test_stext::state_constructor_exists():
-    assert callable(stext::State.__init__)
-
-
-def test_stext::state_constructor_args():
-    sig = inspect.signature(stext::State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trigger_is_not_abstract():
-    assert not inspect.isabstract(Trigger)
-
-
-def test_trigger_constructor_exists():
-    assert callable(Trigger.__init__)
-
-
-def test_trigger_constructor_args():
-    sig = inspect.signature(Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::reactiontrigger_is_not_abstract():
-    assert not inspect.isabstract(stext::ReactionTrigger)
-
-
-def test_stext::reactiontrigger_constructor_exists():
-    assert callable(stext::ReactionTrigger.__init__)
-
-
-def test_stext::reactiontrigger_constructor_args():
-    sig = inspect.signature(stext::ReactionTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_builtineventspec_is_not_abstract():
-    assert not inspect.isabstract(BuiltinEventSpec)
-
-
-def test_builtineventspec_constructor_exists():
-    assert callable(BuiltinEventSpec.__init__)
-
-
-def test_builtineventspec_constructor_args():
-    sig = inspect.signature(BuiltinEventSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::alwaysevent_is_not_abstract():
-    assert not inspect.isabstract(stext::AlwaysEvent)
-
-
-def test_stext::alwaysevent_constructor_exists():
-    assert callable(stext::AlwaysEvent.__init__)
-
-
-def test_stext::alwaysevent_constructor_args():
-    sig = inspect.signature(stext::AlwaysEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::exitevent_is_not_abstract():
-    assert not inspect.isabstract(stext::ExitEvent)
-
-
-def test_stext::exitevent_constructor_exists():
-    assert callable(stext::ExitEvent.__init__)
-
-
-def test_stext::exitevent_constructor_args():
-    sig = inspect.signature(stext::ExitEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::entryevent_is_not_abstract():
-    assert not inspect.isabstract(stext::EntryEvent)
-
-
-def test_stext::entryevent_constructor_exists():
-    assert callable(stext::EntryEvent.__init__)
-
-
-def test_stext::entryevent_constructor_args():
-    sig = inspect.signature(stext::EntryEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expression_is_not_abstract():
-    assert not inspect.isabstract(Expression)
-
-
-def test_expression_constructor_exists():
-    assert callable(Expression.__init__)
-
-
-def test_expression_constructor_args():
-    sig = inspect.signature(Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::eventvaluereferenceexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::EventValueReferenceExpression)
-
-
-def test_stext::eventvaluereferenceexpression_constructor_exists():
-    assert callable(stext::EventValueReferenceExpression.__init__)
-
-
-def test_stext::eventvaluereferenceexpression_constructor_args():
-    sig = inspect.signature(stext::EventValueReferenceExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::activestatereferenceexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::ActiveStateReferenceExpression)
-
-
-def test_stext::activestatereferenceexpression_constructor_exists():
-    assert callable(stext::ActiveStateReferenceExpression.__init__)
-
-
-def test_stext::activestatereferenceexpression_constructor_args():
-    sig = inspect.signature(stext::ActiveStateReferenceExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::eventraisingexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::EventRaisingExpression)
-
-
-def test_stext::eventraisingexpression_constructor_exists():
-    assert callable(stext::EventRaisingExpression.__init__)
-
-
-def test_stext::eventraisingexpression_constructor_args():
-    sig = inspect.signature(stext::EventRaisingExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_effect_is_not_abstract():
-    assert not inspect.isabstract(Effect)
-
-
-def test_effect_constructor_exists():
-    assert callable(Effect.__init__)
-
-
-def test_effect_constructor_args():
-    sig = inspect.signature(Effect.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::reactioneffect_is_not_abstract():
-    assert not inspect.isabstract(stext::ReactionEffect)
-
-
-def test_stext::reactioneffect_constructor_exists():
-    assert callable(stext::ReactionEffect.__init__)
-
-
-def test_stext::reactioneffect_constructor_args():
-    sig = inspect.signature(stext::ReactionEffect.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::defaulttrigger_is_not_abstract():
-    assert not inspect.isabstract(stext::DefaultTrigger)
-
-
-def test_stext::defaulttrigger_constructor_exists():
-    assert callable(stext::DefaultTrigger.__init__)
-
-
-def test_stext::defaulttrigger_constructor_args():
-    sig = inspect.signature(stext::DefaultTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_reactionproperty_is_not_abstract():
-    assert not inspect.isabstract(ReactionProperty)
-
-
-def test_reactionproperty_constructor_exists():
-    assert callable(ReactionProperty.__init__)
-
-
-def test_reactionproperty_constructor_args():
-    sig = inspect.signature(ReactionProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::entrypointspec_is_not_abstract():
-    assert not inspect.isabstract(stext::EntryPointSpec)
-
-
-def test_stext::entrypointspec_constructor_exists():
-    assert callable(stext::EntryPointSpec.__init__)
-
-
-def test_stext::entrypointspec_constructor_args():
-    sig = inspect.signature(stext::EntryPointSpec.__init__)
-    params = list(sig.parameters.keys())
-    assert "entrypoint" in params, "Missing parameter 'entrypoint'"
-
-def test_stext::entrypointspec_has_entrypoint():
-    assert hasattr(stext::EntryPointSpec, "entrypoint")
-    descriptor = None
-    for klass in stext::EntryPointSpec.__mro__:
-        if "entrypoint" in klass.__dict__:
-            descriptor = klass.__dict__["entrypoint"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_stext::guard_is_not_abstract():
-    assert not inspect.isabstract(stext::Guard)
-
-
-def test_stext::guard_constructor_exists():
-    assert callable(stext::Guard.__init__)
-
-
-def test_stext::guard_constructor_args():
-    sig = inspect.signature(stext::Guard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_reaction_is_not_abstract():
-    assert not inspect.isabstract(Reaction)
-
-
-def test_reaction_constructor_exists():
-    assert callable(Reaction.__init__)
-
-
-def test_reaction_constructor_args():
-    sig = inspect.signature(Reaction.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -362,44 +100,30 @@ def test_declaration_constructor_args():
 
 
 
-def test_stext::localreaction_is_not_abstract():
-    assert not inspect.isabstract(stext::LocalReaction)
+def test_stext_operationdefinition_is_not_abstract():
+    assert not inspect.isabstract(stext_OperationDefinition)
 
 
-def test_stext::localreaction_constructor_exists():
-    assert callable(stext::LocalReaction.__init__)
+def test_stext_operationdefinition_constructor_exists():
+    assert callable(stext_OperationDefinition.__init__)
 
 
-def test_stext::localreaction_constructor_args():
-    sig = inspect.signature(stext::LocalReaction.__init__)
+def test_stext_operationdefinition_constructor_args():
+    sig = inspect.signature(stext_OperationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::operationdefinition_is_not_abstract():
-    assert not inspect.isabstract(stext::OperationDefinition)
+def test_stext_expression_is_not_abstract():
+    assert not inspect.isabstract(stext_Expression)
 
 
-def test_stext::operationdefinition_constructor_exists():
-    assert callable(stext::OperationDefinition.__init__)
+def test_stext_expression_constructor_exists():
+    assert callable(stext_Expression.__init__)
 
 
-def test_stext::operationdefinition_constructor_args():
-    sig = inspect.signature(stext::OperationDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::expression_is_not_abstract():
-    assert not inspect.isabstract(stext::Expression)
-
-
-def test_stext::expression_constructor_exists():
-    assert callable(stext::Expression.__init__)
-
-
-def test_stext::expression_constructor_args():
-    sig = inspect.signature(stext::Expression.__init__)
+def test_stext_expression_constructor_args():
+    sig = inspect.signature(stext_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,45 +156,45 @@ def test_variable_constructor_args():
 
 
 
-def test_stext::variabledefinition_is_not_abstract():
-    assert not inspect.isabstract(stext::VariableDefinition)
+def test_stext_variabledefinition_is_not_abstract():
+    assert not inspect.isabstract(stext_VariableDefinition)
 
 
-def test_stext::variabledefinition_constructor_exists():
-    assert callable(stext::VariableDefinition.__init__)
+def test_stext_variabledefinition_constructor_exists():
+    assert callable(stext_VariableDefinition.__init__)
 
 
-def test_stext::variabledefinition_constructor_args():
-    sig = inspect.signature(stext::VariableDefinition.__init__)
+def test_stext_variabledefinition_constructor_args():
+    sig = inspect.signature(stext_VariableDefinition.__init__)
     params = list(sig.parameters.keys())
-    assert "readonly" in params, "Missing parameter 'readonly'"
     assert "external" in params, "Missing parameter 'external'"
     assert "const" in params, "Missing parameter 'const'"
+    assert "readonly" in params, "Missing parameter 'readonly'"
 
-def test_stext::variabledefinition_has_readonly():
-    assert hasattr(stext::VariableDefinition, "readonly")
+def test_stext_variabledefinition_has_external():
+    assert hasattr(stext_VariableDefinition, "external")
     descriptor = None
-    for klass in stext::VariableDefinition.__mro__:
-        if "readonly" in klass.__dict__:
-            descriptor = klass.__dict__["readonly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_stext::variabledefinition_has_external():
-    assert hasattr(stext::VariableDefinition, "external")
-    descriptor = None
-    for klass in stext::VariableDefinition.__mro__:
+    for klass in stext_VariableDefinition.__mro__:
         if "external" in klass.__dict__:
             descriptor = klass.__dict__["external"]
             break
     assert isinstance(descriptor, property)
 
-def test_stext::variabledefinition_has_const():
-    assert hasattr(stext::VariableDefinition, "const")
+def test_stext_variabledefinition_has_const():
+    assert hasattr(stext_VariableDefinition, "const")
     descriptor = None
-    for klass in stext::VariableDefinition.__mro__:
+    for klass in stext_VariableDefinition.__mro__:
         if "const" in klass.__dict__:
             descriptor = klass.__dict__["const"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_stext_variabledefinition_has_readonly():
+    assert hasattr(stext_VariableDefinition, "readonly")
+    descriptor = None
+    for klass in stext_VariableDefinition.__mro__:
+        if "readonly" in klass.__dict__:
+            descriptor = klass.__dict__["readonly"]
             break
     assert isinstance(descriptor, property)
 
@@ -490,103 +214,65 @@ def test_eventspec_constructor_args():
 
 
 
-def test_stext::builtineventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::BuiltinEventSpec)
+def test_stext_timeeventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_TimeEventSpec)
 
 
-def test_stext::builtineventspec_constructor_exists():
-    assert callable(stext::BuiltinEventSpec.__init__)
+def test_stext_timeeventspec_constructor_exists():
+    assert callable(stext_TimeEventSpec.__init__)
 
 
-def test_stext::builtineventspec_constructor_args():
-    sig = inspect.signature(stext::BuiltinEventSpec.__init__)
+def test_stext_timeeventspec_constructor_args():
+    sig = inspect.signature(stext_TimeEventSpec.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_stext::timeeventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::TimeEventSpec)
-
-
-def test_stext::timeeventspec_constructor_exists():
-    assert callable(stext::TimeEventSpec.__init__)
-
-
-def test_stext::timeeventspec_constructor_args():
-    sig = inspect.signature(stext::TimeEventSpec.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "unit" in params, "Missing parameter 'unit'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_stext::timeeventspec_has_type():
-    assert hasattr(stext::TimeEventSpec, "type")
+def test_stext_timeeventspec_has_unit():
+    assert hasattr(stext_TimeEventSpec, "unit")
     descriptor = None
-    for klass in stext::TimeEventSpec.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_stext::timeeventspec_has_unit():
-    assert hasattr(stext::TimeEventSpec, "unit")
-    descriptor = None
-    for klass in stext::TimeEventSpec.__mro__:
+    for klass in stext_TimeEventSpec.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_stext::regulareventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::RegularEventSpec)
-
-
-def test_stext::regulareventspec_constructor_exists():
-    assert callable(stext::RegularEventSpec.__init__)
-
-
-def test_stext::regulareventspec_constructor_args():
-    sig = inspect.signature(stext::RegularEventSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::eventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::EventSpec)
-
-
-def test_stext::eventspec_constructor_exists():
-    assert callable(stext::EventSpec.__init__)
-
-
-def test_stext::eventspec_constructor_args():
-    sig = inspect.signature(stext::EventSpec.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::exitpointspec_is_not_abstract():
-    assert not inspect.isabstract(stext::ExitPointSpec)
-
-
-def test_stext::exitpointspec_constructor_exists():
-    assert callable(stext::ExitPointSpec.__init__)
-
-
-def test_stext::exitpointspec_constructor_args():
-    sig = inspect.signature(stext::ExitPointSpec.__init__)
-    params = list(sig.parameters.keys())
-    assert "exitpoint" in params, "Missing parameter 'exitpoint'"
-
-def test_stext::exitpointspec_has_exitpoint():
-    assert hasattr(stext::ExitPointSpec, "exitpoint")
+def test_stext_timeeventspec_has_type():
+    assert hasattr(stext_TimeEventSpec, "type")
     descriptor = None
-    for klass in stext::ExitPointSpec.__mro__:
-        if "exitpoint" in klass.__dict__:
-            descriptor = klass.__dict__["exitpoint"]
+    for klass in stext_TimeEventSpec.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_stext_regulareventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_RegularEventSpec)
+
+
+def test_stext_regulareventspec_constructor_exists():
+    assert callable(stext_RegularEventSpec.__init__)
+
+
+def test_stext_regulareventspec_constructor_args():
+    sig = inspect.signature(stext_RegularEventSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_eventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_EventSpec)
+
+
+def test_stext_eventspec_constructor_exists():
+    assert callable(stext_EventSpec.__init__)
+
+
+def test_stext_eventspec_constructor_args():
+    sig = inspect.signature(stext_EventSpec.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -604,58 +290,30 @@ def test_scope_constructor_args():
 
 
 
-def test_stext::simplescope_is_not_abstract():
-    assert not inspect.isabstract(stext::SimpleScope)
+def test_stext_statechartscope_is_not_abstract():
+    assert not inspect.isabstract(stext_StatechartScope)
 
 
-def test_stext::simplescope_constructor_exists():
-    assert callable(stext::SimpleScope.__init__)
+def test_stext_statechartscope_constructor_exists():
+    assert callable(stext_StatechartScope.__init__)
 
 
-def test_stext::simplescope_constructor_args():
-    sig = inspect.signature(stext::SimpleScope.__init__)
+def test_stext_statechartscope_constructor_args():
+    sig = inspect.signature(stext_StatechartScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statechartscope_is_not_abstract():
-    assert not inspect.isabstract(stext::StatechartScope)
+def test_stext_scope_is_not_abstract():
+    assert not inspect.isabstract(stext_Scope)
 
 
-def test_stext::statechartscope_constructor_exists():
-    assert callable(stext::StatechartScope.__init__)
+def test_stext_scope_constructor_exists():
+    assert callable(stext_Scope.__init__)
 
 
-def test_stext::statechartscope_constructor_args():
-    sig = inspect.signature(stext::StatechartScope.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::transitionreaction_is_not_abstract():
-    assert not inspect.isabstract(stext::TransitionReaction)
-
-
-def test_stext::transitionreaction_constructor_exists():
-    assert callable(stext::TransitionReaction.__init__)
-
-
-def test_stext::transitionreaction_constructor_args():
-    sig = inspect.signature(stext::TransitionReaction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::scope_is_not_abstract():
-    assert not inspect.isabstract(stext::Scope)
-
-
-def test_stext::scope_constructor_exists():
-    assert callable(stext::Scope.__init__)
-
-
-def test_stext::scope_constructor_args():
-    sig = inspect.signature(stext::Scope.__init__)
+def test_stext_scope_constructor_args():
+    sig = inspect.signature(stext_Scope.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -674,44 +332,44 @@ def test_scopedelement_constructor_args():
 
 
 
-def test_stext::transitionspecification_is_not_abstract():
-    assert not inspect.isabstract(stext::TransitionSpecification)
+def test_stext_transitionspecification_is_not_abstract():
+    assert not inspect.isabstract(stext_TransitionSpecification)
 
 
-def test_stext::transitionspecification_constructor_exists():
-    assert callable(stext::TransitionSpecification.__init__)
+def test_stext_transitionspecification_constructor_exists():
+    assert callable(stext_TransitionSpecification.__init__)
 
 
-def test_stext::transitionspecification_constructor_args():
-    sig = inspect.signature(stext::TransitionSpecification.__init__)
+def test_stext_transitionspecification_constructor_args():
+    sig = inspect.signature(stext_TransitionSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statespecification_is_not_abstract():
-    assert not inspect.isabstract(stext::StateSpecification)
+def test_stext_statespecification_is_not_abstract():
+    assert not inspect.isabstract(stext_StateSpecification)
 
 
-def test_stext::statespecification_constructor_exists():
-    assert callable(stext::StateSpecification.__init__)
+def test_stext_statespecification_constructor_exists():
+    assert callable(stext_StateSpecification.__init__)
 
 
-def test_stext::statespecification_constructor_args():
-    sig = inspect.signature(stext::StateSpecification.__init__)
+def test_stext_statespecification_constructor_args():
+    sig = inspect.signature(stext_StateSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statechartspecification_is_not_abstract():
-    assert not inspect.isabstract(stext::StatechartSpecification)
+def test_stext_statechartspecification_is_not_abstract():
+    assert not inspect.isabstract(stext_StatechartSpecification)
 
 
-def test_stext::statechartspecification_constructor_exists():
-    assert callable(stext::StatechartSpecification.__init__)
+def test_stext_statechartspecification_constructor_exists():
+    assert callable(stext_StatechartSpecification.__init__)
 
 
-def test_stext::statechartspecification_constructor_args():
-    sig = inspect.signature(stext::StatechartSpecification.__init__)
+def test_stext_statechartspecification_constructor_args():
+    sig = inspect.signature(stext_StatechartSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -730,44 +388,44 @@ def test_defroot_constructor_args():
 
 
 
-def test_stext::stateroot_is_not_abstract():
-    assert not inspect.isabstract(stext::StateRoot)
+def test_stext_transitionroot_is_not_abstract():
+    assert not inspect.isabstract(stext_TransitionRoot)
 
 
-def test_stext::stateroot_constructor_exists():
-    assert callable(stext::StateRoot.__init__)
+def test_stext_transitionroot_constructor_exists():
+    assert callable(stext_TransitionRoot.__init__)
 
 
-def test_stext::stateroot_constructor_args():
-    sig = inspect.signature(stext::StateRoot.__init__)
+def test_stext_transitionroot_constructor_args():
+    sig = inspect.signature(stext_TransitionRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::transitionroot_is_not_abstract():
-    assert not inspect.isabstract(stext::TransitionRoot)
+def test_stext_stateroot_is_not_abstract():
+    assert not inspect.isabstract(stext_StateRoot)
 
 
-def test_stext::transitionroot_constructor_exists():
-    assert callable(stext::TransitionRoot.__init__)
+def test_stext_stateroot_constructor_exists():
+    assert callable(stext_StateRoot.__init__)
 
 
-def test_stext::transitionroot_constructor_args():
-    sig = inspect.signature(stext::TransitionRoot.__init__)
+def test_stext_stateroot_constructor_args():
+    sig = inspect.signature(stext_StateRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statechartroot_is_not_abstract():
-    assert not inspect.isabstract(stext::StatechartRoot)
+def test_stext_statechartroot_is_not_abstract():
+    assert not inspect.isabstract(stext_StatechartRoot)
 
 
-def test_stext::statechartroot_constructor_exists():
-    assert callable(stext::StatechartRoot.__init__)
+def test_stext_statechartroot_constructor_exists():
+    assert callable(stext_StatechartRoot.__init__)
 
 
-def test_stext::statechartroot_constructor_args():
-    sig = inspect.signature(stext::StatechartRoot.__init__)
+def test_stext_statechartroot_constructor_args():
+    sig = inspect.signature(stext_StatechartRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -786,23 +444,23 @@ def test_event_constructor_args():
 
 
 
-def test_stext::eventdefinition_is_not_abstract():
-    assert not inspect.isabstract(stext::EventDefinition)
+def test_stext_eventdefinition_is_not_abstract():
+    assert not inspect.isabstract(stext_EventDefinition)
 
 
-def test_stext::eventdefinition_constructor_exists():
-    assert callable(stext::EventDefinition.__init__)
+def test_stext_eventdefinition_constructor_exists():
+    assert callable(stext_EventDefinition.__init__)
 
 
-def test_stext::eventdefinition_constructor_args():
-    sig = inspect.signature(stext::EventDefinition.__init__)
+def test_stext_eventdefinition_constructor_args():
+    sig = inspect.signature(stext_EventDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_stext::eventdefinition_has_direction():
-    assert hasattr(stext::EventDefinition, "direction")
+def test_stext_eventdefinition_has_direction():
+    assert hasattr(stext_EventDefinition, "direction")
     descriptor = None
-    for klass in stext::EventDefinition.__mro__:
+    for klass in stext_EventDefinition.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -810,23 +468,23 @@ def test_stext::eventdefinition_has_direction():
 
 
 
-def test_stext::import_is_not_abstract():
-    assert not inspect.isabstract(stext::Import)
+def test_stext_import_is_not_abstract():
+    assert not inspect.isabstract(stext_Import)
 
 
-def test_stext::import_constructor_exists():
-    assert callable(stext::Import.__init__)
+def test_stext_import_constructor_exists():
+    assert callable(stext_Import.__init__)
 
 
-def test_stext::import_constructor_args():
-    sig = inspect.signature(stext::Import.__init__)
+def test_stext_import_constructor_args():
+    sig = inspect.signature(stext_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_stext::import_has_importedNamespace():
-    assert hasattr(stext::Import, "importedNamespace")
+def test_stext_import_has_importedNamespace():
+    assert hasattr(stext_Import, "importedNamespace")
     descriptor = None
-    for klass in stext::Import.__mro__:
+    for klass in stext_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -862,72 +520,414 @@ def test_statechartscope_constructor_args():
 
 
 
-def test_stext::importscope_is_not_abstract():
-    assert not inspect.isabstract(stext::ImportScope)
+def test_stext_internalscope_is_not_abstract():
+    assert not inspect.isabstract(stext_InternalScope)
 
 
-def test_stext::importscope_constructor_exists():
-    assert callable(stext::ImportScope.__init__)
+def test_stext_internalscope_constructor_exists():
+    assert callable(stext_InternalScope.__init__)
 
 
-def test_stext::importscope_constructor_args():
-    sig = inspect.signature(stext::ImportScope.__init__)
+def test_stext_internalscope_constructor_args():
+    sig = inspect.signature(stext_InternalScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::internalscope_is_not_abstract():
-    assert not inspect.isabstract(stext::InternalScope)
+def test_stext_importscope_is_not_abstract():
+    assert not inspect.isabstract(stext_ImportScope)
 
 
-def test_stext::internalscope_constructor_exists():
-    assert callable(stext::InternalScope.__init__)
+def test_stext_importscope_constructor_exists():
+    assert callable(stext_ImportScope.__init__)
 
 
-def test_stext::internalscope_constructor_args():
-    sig = inspect.signature(stext::InternalScope.__init__)
+def test_stext_importscope_constructor_args():
+    sig = inspect.signature(stext_ImportScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::interfacescope_is_not_abstract():
-    assert not inspect.isabstract(stext::InterfaceScope)
+def test_stext_interfacescope_is_not_abstract():
+    assert not inspect.isabstract(stext_InterfaceScope)
 
 
-def test_stext::interfacescope_constructor_exists():
-    assert callable(stext::InterfaceScope.__init__)
+def test_stext_interfacescope_constructor_exists():
+    assert callable(stext_InterfaceScope.__init__)
 
 
-def test_stext::interfacescope_constructor_args():
-    sig = inspect.signature(stext::InterfaceScope.__init__)
+def test_stext_interfacescope_constructor_args():
+    sig = inspect.signature(stext_InterfaceScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::defroot_is_not_abstract():
-    assert not inspect.isabstract(stext::DefRoot)
+def test_stext_defroot_is_not_abstract():
+    assert not inspect.isabstract(stext_DefRoot)
 
 
-def test_stext::defroot_constructor_exists():
-    assert callable(stext::DefRoot.__init__)
+def test_stext_defroot_constructor_exists():
+    assert callable(stext_DefRoot.__init__)
 
 
-def test_stext::defroot_constructor_args():
-    sig = inspect.signature(stext::DefRoot.__init__)
+def test_stext_defroot_constructor_args():
+    sig = inspect.signature(stext_DefRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::root_is_not_abstract():
-    assert not inspect.isabstract(stext::Root)
+def test_stext_root_is_not_abstract():
+    assert not inspect.isabstract(stext_Root)
 
 
-def test_stext::root_constructor_exists():
-    assert callable(stext::Root.__init__)
+def test_stext_root_constructor_exists():
+    assert callable(stext_Root.__init__)
 
 
-def test_stext::root_constructor_args():
-    sig = inspect.signature(stext::Root.__init__)
+def test_stext_root_constructor_args():
+    sig = inspect.signature(stext_Root.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_state_is_not_abstract():
+    assert not inspect.isabstract(stext_State)
+
+
+def test_stext_state_constructor_exists():
+    assert callable(stext_State.__init__)
+
+
+def test_stext_state_constructor_args():
+    sig = inspect.signature(stext_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trigger_is_not_abstract():
+    assert not inspect.isabstract(Trigger)
+
+
+def test_trigger_constructor_exists():
+    assert callable(Trigger.__init__)
+
+
+def test_trigger_constructor_args():
+    sig = inspect.signature(Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_reactiontrigger_is_not_abstract():
+    assert not inspect.isabstract(stext_ReactionTrigger)
+
+
+def test_stext_reactiontrigger_constructor_exists():
+    assert callable(stext_ReactionTrigger.__init__)
+
+
+def test_stext_reactiontrigger_constructor_args():
+    sig = inspect.signature(stext_ReactionTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_simplescope_is_not_abstract():
+    assert not inspect.isabstract(stext_SimpleScope)
+
+
+def test_stext_simplescope_constructor_exists():
+    assert callable(stext_SimpleScope.__init__)
+
+
+def test_stext_simplescope_constructor_args():
+    sig = inspect.signature(stext_SimpleScope.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_builtineventspec_is_not_abstract():
+    assert not inspect.isabstract(BuiltinEventSpec)
+
+
+def test_builtineventspec_constructor_exists():
+    assert callable(BuiltinEventSpec.__init__)
+
+
+def test_builtineventspec_constructor_args():
+    sig = inspect.signature(BuiltinEventSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_exitevent_is_not_abstract():
+    assert not inspect.isabstract(stext_ExitEvent)
+
+
+def test_stext_exitevent_constructor_exists():
+    assert callable(stext_ExitEvent.__init__)
+
+
+def test_stext_exitevent_constructor_args():
+    sig = inspect.signature(stext_ExitEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_alwaysevent_is_not_abstract():
+    assert not inspect.isabstract(stext_AlwaysEvent)
+
+
+def test_stext_alwaysevent_constructor_exists():
+    assert callable(stext_AlwaysEvent.__init__)
+
+
+def test_stext_alwaysevent_constructor_args():
+    sig = inspect.signature(stext_AlwaysEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_entryevent_is_not_abstract():
+    assert not inspect.isabstract(stext_EntryEvent)
+
+
+def test_stext_entryevent_constructor_exists():
+    assert callable(stext_EntryEvent.__init__)
+
+
+def test_stext_entryevent_constructor_args():
+    sig = inspect.signature(stext_EntryEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_builtineventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_BuiltinEventSpec)
+
+
+def test_stext_builtineventspec_constructor_exists():
+    assert callable(stext_BuiltinEventSpec.__init__)
+
+
+def test_stext_builtineventspec_constructor_args():
+    sig = inspect.signature(stext_BuiltinEventSpec.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expression_is_not_abstract():
+    assert not inspect.isabstract(Expression)
+
+
+def test_expression_constructor_exists():
+    assert callable(Expression.__init__)
+
+
+def test_expression_constructor_args():
+    sig = inspect.signature(Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_activestatereferenceexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_ActiveStateReferenceExpression)
+
+
+def test_stext_activestatereferenceexpression_constructor_exists():
+    assert callable(stext_ActiveStateReferenceExpression.__init__)
+
+
+def test_stext_activestatereferenceexpression_constructor_args():
+    sig = inspect.signature(stext_ActiveStateReferenceExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_eventvaluereferenceexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_EventValueReferenceExpression)
+
+
+def test_stext_eventvaluereferenceexpression_constructor_exists():
+    assert callable(stext_EventValueReferenceExpression.__init__)
+
+
+def test_stext_eventvaluereferenceexpression_constructor_args():
+    sig = inspect.signature(stext_EventValueReferenceExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_eventraisingexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_EventRaisingExpression)
+
+
+def test_stext_eventraisingexpression_constructor_exists():
+    assert callable(stext_EventRaisingExpression.__init__)
+
+
+def test_stext_eventraisingexpression_constructor_args():
+    sig = inspect.signature(stext_EventRaisingExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_effect_is_not_abstract():
+    assert not inspect.isabstract(Effect)
+
+
+def test_effect_constructor_exists():
+    assert callable(Effect.__init__)
+
+
+def test_effect_constructor_args():
+    sig = inspect.signature(Effect.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_reactioneffect_is_not_abstract():
+    assert not inspect.isabstract(stext_ReactionEffect)
+
+
+def test_stext_reactioneffect_constructor_exists():
+    assert callable(stext_ReactionEffect.__init__)
+
+
+def test_stext_reactioneffect_constructor_args():
+    sig = inspect.signature(stext_ReactionEffect.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_defaulttrigger_is_not_abstract():
+    assert not inspect.isabstract(stext_DefaultTrigger)
+
+
+def test_stext_defaulttrigger_constructor_exists():
+    assert callable(stext_DefaultTrigger.__init__)
+
+
+def test_stext_defaulttrigger_constructor_args():
+    sig = inspect.signature(stext_DefaultTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reactionproperty_is_not_abstract():
+    assert not inspect.isabstract(ReactionProperty)
+
+
+def test_reactionproperty_constructor_exists():
+    assert callable(ReactionProperty.__init__)
+
+
+def test_reactionproperty_constructor_args():
+    sig = inspect.signature(ReactionProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_exitpointspec_is_not_abstract():
+    assert not inspect.isabstract(stext_ExitPointSpec)
+
+
+def test_stext_exitpointspec_constructor_exists():
+    assert callable(stext_ExitPointSpec.__init__)
+
+
+def test_stext_exitpointspec_constructor_args():
+    sig = inspect.signature(stext_ExitPointSpec.__init__)
+    params = list(sig.parameters.keys())
+    assert "exitpoint" in params, "Missing parameter 'exitpoint'"
+
+def test_stext_exitpointspec_has_exitpoint():
+    assert hasattr(stext_ExitPointSpec, "exitpoint")
+    descriptor = None
+    for klass in stext_ExitPointSpec.__mro__:
+        if "exitpoint" in klass.__dict__:
+            descriptor = klass.__dict__["exitpoint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_stext_entrypointspec_is_not_abstract():
+    assert not inspect.isabstract(stext_EntryPointSpec)
+
+
+def test_stext_entrypointspec_constructor_exists():
+    assert callable(stext_EntryPointSpec.__init__)
+
+
+def test_stext_entrypointspec_constructor_args():
+    sig = inspect.signature(stext_EntryPointSpec.__init__)
+    params = list(sig.parameters.keys())
+    assert "entrypoint" in params, "Missing parameter 'entrypoint'"
+
+def test_stext_entrypointspec_has_entrypoint():
+    assert hasattr(stext_EntryPointSpec, "entrypoint")
+    descriptor = None
+    for klass in stext_EntryPointSpec.__mro__:
+        if "entrypoint" in klass.__dict__:
+            descriptor = klass.__dict__["entrypoint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_stext_guard_is_not_abstract():
+    assert not inspect.isabstract(stext_Guard)
+
+
+def test_stext_guard_constructor_exists():
+    assert callable(stext_Guard.__init__)
+
+
+def test_stext_guard_constructor_args():
+    sig = inspect.signature(stext_Guard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reaction_is_not_abstract():
+    assert not inspect.isabstract(Reaction)
+
+
+def test_reaction_constructor_exists():
+    assert callable(Reaction.__init__)
+
+
+def test_reaction_constructor_args():
+    sig = inspect.signature(Reaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_transitionreaction_is_not_abstract():
+    assert not inspect.isabstract(stext_TransitionReaction)
+
+
+def test_stext_transitionreaction_constructor_exists():
+    assert callable(stext_TransitionReaction.__init__)
+
+
+def test_stext_transitionreaction_constructor_args():
+    sig = inspect.signature(stext_TransitionReaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_localreaction_is_not_abstract():
+    assert not inspect.isabstract(stext_LocalReaction)
+
+
+def test_stext_localreaction_constructor_exists():
+    assert callable(stext_LocalReaction.__init__)
+
+
+def test_stext_localreaction_constructor_args():
+    sig = inspect.signature(stext_LocalReaction.__init__)
     params = list(sig.parameters.keys())
 
 def test_timeeventtype_exists():
@@ -938,29 +938,12 @@ def test_timeeventtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TimeEventType]
     expected_literals = [
-        "after",
         "every",
+        "after",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TimeEventType"
-
-def test_timeunit_exists():
-    # Check that the Enumeration exists
-    assert TimeUnit is not None
-
-def test_timeunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimeUnit]
-    expected_literals = [
-        "millisecond",
-        "nanosecond",
-        "microsecond",
-        "second",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
 
 def test_direction_exists():
     # Check that the Enumeration exists
@@ -971,12 +954,29 @@ def test_direction_has_all_literals():
     enum_literals = [lit.name for lit in Direction]
     expected_literals = [
         "IN",
-        "OUT",
         "LOCAL",
+        "OUT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Direction"
+
+def test_timeunit_exists():
+    # Check that the Enumeration exists
+    assert TimeUnit is not None
+
+def test_timeunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TimeUnit]
+    expected_literals = [
+        "second",
+        "millisecond",
+        "nanosecond",
+        "microsecond",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
 
 
 # =============================================================================
@@ -990,76 +990,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stext::State_strategy = st.builds(
-    stext::State,
-)
-Trigger_strategy = st.builds(
-    Trigger,
-)
-stext::ReactionTrigger_strategy = st.builds(
-    stext::ReactionTrigger,
-)
-BuiltinEventSpec_strategy = st.builds(
-    BuiltinEventSpec,
-)
-stext::AlwaysEvent_strategy = st.builds(
-    stext::AlwaysEvent,
-)
-stext::ExitEvent_strategy = st.builds(
-    stext::ExitEvent,
-)
-stext::EntryEvent_strategy = st.builds(
-    stext::EntryEvent,
-)
-Expression_strategy = st.builds(
-    Expression,
-)
-stext::EventValueReferenceExpression_strategy = st.builds(
-    stext::EventValueReferenceExpression,
-)
-stext::ActiveStateReferenceExpression_strategy = st.builds(
-    stext::ActiveStateReferenceExpression,
-)
-stext::EventRaisingExpression_strategy = st.builds(
-    stext::EventRaisingExpression,
-)
-Effect_strategy = st.builds(
-    Effect,
-)
-stext::ReactionEffect_strategy = st.builds(
-    stext::ReactionEffect,
-)
-stext::DefaultTrigger_strategy = st.builds(
-    stext::DefaultTrigger,
-)
-ReactionProperty_strategy = st.builds(
-    ReactionProperty,
-)
-stext::EntryPointSpec_strategy = st.builds(
-    stext::EntryPointSpec,
-    entrypoint=
-        safe_text
-)
-stext::Guard_strategy = st.builds(
-    stext::Guard,
-)
-Reaction_strategy = st.builds(
-    Reaction,
-)
 Operation_strategy = st.builds(
     Operation,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-stext::LocalReaction_strategy = st.builds(
-    stext::LocalReaction,
+stext_OperationDefinition_strategy = st.builds(
+    stext_OperationDefinition,
 )
-stext::OperationDefinition_strategy = st.builds(
-    stext::OperationDefinition,
-)
-stext::Expression_strategy = st.builds(
-    stext::Expression,
+stext_Expression_strategy = st.builds(
+    stext_Expression,
 )
 Property_strategy = st.builds(
     Property,
@@ -1067,88 +1008,74 @@ Property_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-stext::VariableDefinition_strategy = st.builds(
-    stext::VariableDefinition,
-    readonly=
-        st.booleans(),
+stext_VariableDefinition_strategy = st.builds(
+    stext_VariableDefinition,
     external=
         st.booleans(),
     const=
+        st.booleans(),
+    readonly=
         st.booleans()
 )
 EventSpec_strategy = st.builds(
     EventSpec,
 )
-stext::BuiltinEventSpec_strategy = st.builds(
-    stext::BuiltinEventSpec,
-)
-stext::TimeEventSpec_strategy = st.builds(
-    stext::TimeEventSpec,
-    type=
-        safe_text,
+stext_TimeEventSpec_strategy = st.builds(
+    stext_TimeEventSpec,
     unit=
+        safe_text,
+    type=
         safe_text
 )
-stext::RegularEventSpec_strategy = st.builds(
-    stext::RegularEventSpec,
+stext_RegularEventSpec_strategy = st.builds(
+    stext_RegularEventSpec,
 )
-stext::EventSpec_strategy = st.builds(
-    stext::EventSpec,
-)
-stext::ExitPointSpec_strategy = st.builds(
-    stext::ExitPointSpec,
-    exitpoint=
-        safe_text
+stext_EventSpec_strategy = st.builds(
+    stext_EventSpec,
 )
 Scope_strategy = st.builds(
     Scope,
 )
-stext::SimpleScope_strategy = st.builds(
-    stext::SimpleScope,
+stext_StatechartScope_strategy = st.builds(
+    stext_StatechartScope,
 )
-stext::StatechartScope_strategy = st.builds(
-    stext::StatechartScope,
-)
-stext::TransitionReaction_strategy = st.builds(
-    stext::TransitionReaction,
-)
-stext::Scope_strategy = st.builds(
-    stext::Scope,
+stext_Scope_strategy = st.builds(
+    stext_Scope,
 )
 ScopedElement_strategy = st.builds(
     ScopedElement,
 )
-stext::TransitionSpecification_strategy = st.builds(
-    stext::TransitionSpecification,
+stext_TransitionSpecification_strategy = st.builds(
+    stext_TransitionSpecification,
 )
-stext::StateSpecification_strategy = st.builds(
-    stext::StateSpecification,
+stext_StateSpecification_strategy = st.builds(
+    stext_StateSpecification,
 )
-stext::StatechartSpecification_strategy = st.builds(
-    stext::StatechartSpecification,
+stext_StatechartSpecification_strategy = st.builds(
+    stext_StatechartSpecification,
 )
 DefRoot_strategy = st.builds(
     DefRoot,
 )
-stext::StateRoot_strategy = st.builds(
-    stext::StateRoot,
+stext_TransitionRoot_strategy = st.builds(
+    stext_TransitionRoot,
 )
-stext::TransitionRoot_strategy = st.builds(
-    stext::TransitionRoot,
+stext_StateRoot_strategy = st.builds(
+    stext_StateRoot,
 )
-stext::StatechartRoot_strategy = st.builds(
-    stext::StatechartRoot,
+stext_StatechartRoot_strategy = st.builds(
+    stext_StatechartRoot,
 )
 Event_strategy = st.builds(
     Event,
 )
-stext::EventDefinition_strategy = st.builds(
-    stext::EventDefinition,
+stext_EventDefinition_strategy = st.builds(
+    stext_EventDefinition,
     direction=
         safe_text
 )
-stext::Import_strategy = st.builds(
-    stext::Import,
+stext_Import_strategy = st.builds(
+    stext_Import,
     importedNamespace=
         safe_text
 )
@@ -1158,122 +1085,94 @@ NamedElement_strategy = st.builds(
 StatechartScope_strategy = st.builds(
     StatechartScope,
 )
-stext::ImportScope_strategy = st.builds(
-    stext::ImportScope,
+stext_InternalScope_strategy = st.builds(
+    stext_InternalScope,
 )
-stext::InternalScope_strategy = st.builds(
-    stext::InternalScope,
+stext_ImportScope_strategy = st.builds(
+    stext_ImportScope,
 )
-stext::InterfaceScope_strategy = st.builds(
-    stext::InterfaceScope,
+stext_InterfaceScope_strategy = st.builds(
+    stext_InterfaceScope,
 )
-stext::DefRoot_strategy = st.builds(
-    stext::DefRoot,
+stext_DefRoot_strategy = st.builds(
+    stext_DefRoot,
 )
-stext::Root_strategy = st.builds(
-    stext::Root,
+stext_Root_strategy = st.builds(
+    stext_Root,
 )
-
-@given(instance=stext::State_strategy)
-@settings(max_examples=50)
-def test_stext::state_instantiation(instance):
-    assert isinstance(instance, stext::State)
-
-@given(instance=Trigger_strategy)
-@settings(max_examples=50)
-def test_trigger_instantiation(instance):
-    assert isinstance(instance, Trigger)
-
-@given(instance=stext::ReactionTrigger_strategy)
-@settings(max_examples=50)
-def test_stext::reactiontrigger_instantiation(instance):
-    assert isinstance(instance, stext::ReactionTrigger)
-
-@given(instance=BuiltinEventSpec_strategy)
-@settings(max_examples=50)
-def test_builtineventspec_instantiation(instance):
-    assert isinstance(instance, BuiltinEventSpec)
-
-@given(instance=stext::AlwaysEvent_strategy)
-@settings(max_examples=50)
-def test_stext::alwaysevent_instantiation(instance):
-    assert isinstance(instance, stext::AlwaysEvent)
-
-@given(instance=stext::ExitEvent_strategy)
-@settings(max_examples=50)
-def test_stext::exitevent_instantiation(instance):
-    assert isinstance(instance, stext::ExitEvent)
-
-@given(instance=stext::EntryEvent_strategy)
-@settings(max_examples=50)
-def test_stext::entryevent_instantiation(instance):
-    assert isinstance(instance, stext::EntryEvent)
-
-@given(instance=Expression_strategy)
-@settings(max_examples=50)
-def test_expression_instantiation(instance):
-    assert isinstance(instance, Expression)
-
-@given(instance=stext::EventValueReferenceExpression_strategy)
-@settings(max_examples=50)
-def test_stext::eventvaluereferenceexpression_instantiation(instance):
-    assert isinstance(instance, stext::EventValueReferenceExpression)
-
-@given(instance=stext::ActiveStateReferenceExpression_strategy)
-@settings(max_examples=50)
-def test_stext::activestatereferenceexpression_instantiation(instance):
-    assert isinstance(instance, stext::ActiveStateReferenceExpression)
-
-@given(instance=stext::EventRaisingExpression_strategy)
-@settings(max_examples=50)
-def test_stext::eventraisingexpression_instantiation(instance):
-    assert isinstance(instance, stext::EventRaisingExpression)
-
-@given(instance=Effect_strategy)
-@settings(max_examples=50)
-def test_effect_instantiation(instance):
-    assert isinstance(instance, Effect)
-
-@given(instance=stext::ReactionEffect_strategy)
-@settings(max_examples=50)
-def test_stext::reactioneffect_instantiation(instance):
-    assert isinstance(instance, stext::ReactionEffect)
-
-@given(instance=stext::DefaultTrigger_strategy)
-@settings(max_examples=50)
-def test_stext::defaulttrigger_instantiation(instance):
-    assert isinstance(instance, stext::DefaultTrigger)
-
-@given(instance=ReactionProperty_strategy)
-@settings(max_examples=50)
-def test_reactionproperty_instantiation(instance):
-    assert isinstance(instance, ReactionProperty)
-
-@given(instance=stext::EntryPointSpec_strategy)
-@settings(max_examples=50)
-def test_stext::entrypointspec_instantiation(instance):
-    assert isinstance(instance, stext::EntryPointSpec)
-
-@given(instance=stext::EntryPointSpec_strategy)
-def test_stext::entrypointspec_entrypoint_type(instance):
-    assert isinstance(instance.entrypoint, str)
-
-
-@given(instance=stext::EntryPointSpec_strategy)
-def test_stext::entrypointspec_entrypoint_setter(instance):
-    original = instance.entrypoint
-    instance.entrypoint = original
-    assert instance.entrypoint == original
-
-@given(instance=stext::Guard_strategy)
-@settings(max_examples=50)
-def test_stext::guard_instantiation(instance):
-    assert isinstance(instance, stext::Guard)
-
-@given(instance=Reaction_strategy)
-@settings(max_examples=50)
-def test_reaction_instantiation(instance):
-    assert isinstance(instance, Reaction)
+stext_State_strategy = st.builds(
+    stext_State,
+)
+Trigger_strategy = st.builds(
+    Trigger,
+)
+stext_ReactionTrigger_strategy = st.builds(
+    stext_ReactionTrigger,
+)
+stext_SimpleScope_strategy = st.builds(
+    stext_SimpleScope,
+)
+BuiltinEventSpec_strategy = st.builds(
+    BuiltinEventSpec,
+)
+stext_ExitEvent_strategy = st.builds(
+    stext_ExitEvent,
+)
+stext_AlwaysEvent_strategy = st.builds(
+    stext_AlwaysEvent,
+)
+stext_EntryEvent_strategy = st.builds(
+    stext_EntryEvent,
+)
+stext_BuiltinEventSpec_strategy = st.builds(
+    stext_BuiltinEventSpec,
+)
+Expression_strategy = st.builds(
+    Expression,
+)
+stext_ActiveStateReferenceExpression_strategy = st.builds(
+    stext_ActiveStateReferenceExpression,
+)
+stext_EventValueReferenceExpression_strategy = st.builds(
+    stext_EventValueReferenceExpression,
+)
+stext_EventRaisingExpression_strategy = st.builds(
+    stext_EventRaisingExpression,
+)
+Effect_strategy = st.builds(
+    Effect,
+)
+stext_ReactionEffect_strategy = st.builds(
+    stext_ReactionEffect,
+)
+stext_DefaultTrigger_strategy = st.builds(
+    stext_DefaultTrigger,
+)
+ReactionProperty_strategy = st.builds(
+    ReactionProperty,
+)
+stext_ExitPointSpec_strategy = st.builds(
+    stext_ExitPointSpec,
+    exitpoint=
+        safe_text
+)
+stext_EntryPointSpec_strategy = st.builds(
+    stext_EntryPointSpec,
+    entrypoint=
+        safe_text
+)
+stext_Guard_strategy = st.builds(
+    stext_Guard,
+)
+Reaction_strategy = st.builds(
+    Reaction,
+)
+stext_TransitionReaction_strategy = st.builds(
+    stext_TransitionReaction,
+)
+stext_LocalReaction_strategy = st.builds(
+    stext_LocalReaction,
+)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
@@ -1285,20 +1184,15 @@ def test_operation_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=stext::LocalReaction_strategy)
+@given(instance=stext_OperationDefinition_strategy)
 @settings(max_examples=50)
-def test_stext::localreaction_instantiation(instance):
-    assert isinstance(instance, stext::LocalReaction)
+def test_stext_operationdefinition_instantiation(instance):
+    assert isinstance(instance, stext_OperationDefinition)
 
-@given(instance=stext::OperationDefinition_strategy)
+@given(instance=stext_Expression_strategy)
 @settings(max_examples=50)
-def test_stext::operationdefinition_instantiation(instance):
-    assert isinstance(instance, stext::OperationDefinition)
-
-@given(instance=stext::Expression_strategy)
-@settings(max_examples=50)
-def test_stext::expression_instantiation(instance):
-    assert isinstance(instance, stext::Expression)
+def test_stext_expression_instantiation(instance):
+    assert isinstance(instance, stext_Expression)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
@@ -1310,205 +1204,153 @@ def test_property_instantiation(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=stext::VariableDefinition_strategy)
+@given(instance=stext_VariableDefinition_strategy)
 @settings(max_examples=50)
-def test_stext::variabledefinition_instantiation(instance):
-    assert isinstance(instance, stext::VariableDefinition)
-
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_readonly_type(instance):
-    assert isinstance(instance.readonly, bool)
+def test_stext_variabledefinition_instantiation(instance):
+    assert isinstance(instance, stext_VariableDefinition)
 
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_readonly_setter(instance):
-    original = instance.readonly
-    instance.readonly = original
-    assert instance.readonly == original
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_external_type(instance):
-    assert isinstance(instance.external, bool)
-
-
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_external_setter(instance):
+@given(instance=stext_VariableDefinition_strategy)
+def test_stext_variabledefinition_external_setter(instance):
     original = instance.external
     instance.external = original
     assert instance.external == original
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_const_type(instance):
-    assert isinstance(instance.const, bool)
 
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_const_setter(instance):
+@given(instance=stext_VariableDefinition_strategy)
+def test_stext_variabledefinition_const_setter(instance):
     original = instance.const
     instance.const = original
     assert instance.const == original
+
+
+
+@given(instance=stext_VariableDefinition_strategy)
+def test_stext_variabledefinition_readonly_setter(instance):
+    original = instance.readonly
+    instance.readonly = original
+    assert instance.readonly == original
 
 @given(instance=EventSpec_strategy)
 @settings(max_examples=50)
 def test_eventspec_instantiation(instance):
     assert isinstance(instance, EventSpec)
 
-@given(instance=stext::BuiltinEventSpec_strategy)
+@given(instance=stext_TimeEventSpec_strategy)
 @settings(max_examples=50)
-def test_stext::builtineventspec_instantiation(instance):
-    assert isinstance(instance, stext::BuiltinEventSpec)
-
-@given(instance=stext::TimeEventSpec_strategy)
-@settings(max_examples=50)
-def test_stext::timeeventspec_instantiation(instance):
-    assert isinstance(instance, stext::TimeEventSpec)
-
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_stext_timeeventspec_instantiation(instance):
+    assert isinstance(instance, stext_TimeEventSpec)
 
 
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_unit_setter(instance):
+@given(instance=stext_TimeEventSpec_strategy)
+def test_stext_timeeventspec_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=stext::RegularEventSpec_strategy)
+
+
+@given(instance=stext_TimeEventSpec_strategy)
+def test_stext_timeeventspec_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=stext_RegularEventSpec_strategy)
 @settings(max_examples=50)
-def test_stext::regulareventspec_instantiation(instance):
-    assert isinstance(instance, stext::RegularEventSpec)
+def test_stext_regulareventspec_instantiation(instance):
+    assert isinstance(instance, stext_RegularEventSpec)
 
-@given(instance=stext::EventSpec_strategy)
+@given(instance=stext_EventSpec_strategy)
 @settings(max_examples=50)
-def test_stext::eventspec_instantiation(instance):
-    assert isinstance(instance, stext::EventSpec)
-
-@given(instance=stext::ExitPointSpec_strategy)
-@settings(max_examples=50)
-def test_stext::exitpointspec_instantiation(instance):
-    assert isinstance(instance, stext::ExitPointSpec)
-
-@given(instance=stext::ExitPointSpec_strategy)
-def test_stext::exitpointspec_exitpoint_type(instance):
-    assert isinstance(instance.exitpoint, str)
-
-
-@given(instance=stext::ExitPointSpec_strategy)
-def test_stext::exitpointspec_exitpoint_setter(instance):
-    original = instance.exitpoint
-    instance.exitpoint = original
-    assert instance.exitpoint == original
+def test_stext_eventspec_instantiation(instance):
+    assert isinstance(instance, stext_EventSpec)
 
 @given(instance=Scope_strategy)
 @settings(max_examples=50)
 def test_scope_instantiation(instance):
     assert isinstance(instance, Scope)
 
-@given(instance=stext::SimpleScope_strategy)
+@given(instance=stext_StatechartScope_strategy)
 @settings(max_examples=50)
-def test_stext::simplescope_instantiation(instance):
-    assert isinstance(instance, stext::SimpleScope)
+def test_stext_statechartscope_instantiation(instance):
+    assert isinstance(instance, stext_StatechartScope)
 
-@given(instance=stext::StatechartScope_strategy)
+@given(instance=stext_Scope_strategy)
 @settings(max_examples=50)
-def test_stext::statechartscope_instantiation(instance):
-    assert isinstance(instance, stext::StatechartScope)
-
-@given(instance=stext::TransitionReaction_strategy)
-@settings(max_examples=50)
-def test_stext::transitionreaction_instantiation(instance):
-    assert isinstance(instance, stext::TransitionReaction)
-
-@given(instance=stext::Scope_strategy)
-@settings(max_examples=50)
-def test_stext::scope_instantiation(instance):
-    assert isinstance(instance, stext::Scope)
+def test_stext_scope_instantiation(instance):
+    assert isinstance(instance, stext_Scope)
 
 @given(instance=ScopedElement_strategy)
 @settings(max_examples=50)
 def test_scopedelement_instantiation(instance):
     assert isinstance(instance, ScopedElement)
 
-@given(instance=stext::TransitionSpecification_strategy)
+@given(instance=stext_TransitionSpecification_strategy)
 @settings(max_examples=50)
-def test_stext::transitionspecification_instantiation(instance):
-    assert isinstance(instance, stext::TransitionSpecification)
+def test_stext_transitionspecification_instantiation(instance):
+    assert isinstance(instance, stext_TransitionSpecification)
 
-@given(instance=stext::StateSpecification_strategy)
+@given(instance=stext_StateSpecification_strategy)
 @settings(max_examples=50)
-def test_stext::statespecification_instantiation(instance):
-    assert isinstance(instance, stext::StateSpecification)
+def test_stext_statespecification_instantiation(instance):
+    assert isinstance(instance, stext_StateSpecification)
 
-@given(instance=stext::StatechartSpecification_strategy)
+@given(instance=stext_StatechartSpecification_strategy)
 @settings(max_examples=50)
-def test_stext::statechartspecification_instantiation(instance):
-    assert isinstance(instance, stext::StatechartSpecification)
+def test_stext_statechartspecification_instantiation(instance):
+    assert isinstance(instance, stext_StatechartSpecification)
 
 @given(instance=DefRoot_strategy)
 @settings(max_examples=50)
 def test_defroot_instantiation(instance):
     assert isinstance(instance, DefRoot)
 
-@given(instance=stext::StateRoot_strategy)
+@given(instance=stext_TransitionRoot_strategy)
 @settings(max_examples=50)
-def test_stext::stateroot_instantiation(instance):
-    assert isinstance(instance, stext::StateRoot)
+def test_stext_transitionroot_instantiation(instance):
+    assert isinstance(instance, stext_TransitionRoot)
 
-@given(instance=stext::TransitionRoot_strategy)
+@given(instance=stext_StateRoot_strategy)
 @settings(max_examples=50)
-def test_stext::transitionroot_instantiation(instance):
-    assert isinstance(instance, stext::TransitionRoot)
+def test_stext_stateroot_instantiation(instance):
+    assert isinstance(instance, stext_StateRoot)
 
-@given(instance=stext::StatechartRoot_strategy)
+@given(instance=stext_StatechartRoot_strategy)
 @settings(max_examples=50)
-def test_stext::statechartroot_instantiation(instance):
-    assert isinstance(instance, stext::StatechartRoot)
+def test_stext_statechartroot_instantiation(instance):
+    assert isinstance(instance, stext_StatechartRoot)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=stext::EventDefinition_strategy)
+@given(instance=stext_EventDefinition_strategy)
 @settings(max_examples=50)
-def test_stext::eventdefinition_instantiation(instance):
-    assert isinstance(instance, stext::EventDefinition)
-
-@given(instance=stext::EventDefinition_strategy)
-def test_stext::eventdefinition_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_stext_eventdefinition_instantiation(instance):
+    assert isinstance(instance, stext_EventDefinition)
 
 
-@given(instance=stext::EventDefinition_strategy)
-def test_stext::eventdefinition_direction_setter(instance):
+
+@given(instance=stext_EventDefinition_strategy)
+def test_stext_eventdefinition_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=stext::Import_strategy)
+@given(instance=stext_Import_strategy)
 @settings(max_examples=50)
-def test_stext::import_instantiation(instance):
-    assert isinstance(instance, stext::Import)
-
-@given(instance=stext::Import_strategy)
-def test_stext::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_stext_import_instantiation(instance):
+    assert isinstance(instance, stext_Import)
 
 
-@given(instance=stext::Import_strategy)
-def test_stext::import_importedNamespace_setter(instance):
+
+@given(instance=stext_Import_strategy)
+def test_stext_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
@@ -1523,27 +1365,158 @@ def test_namedelement_instantiation(instance):
 def test_statechartscope_instantiation(instance):
     assert isinstance(instance, StatechartScope)
 
-@given(instance=stext::ImportScope_strategy)
+@given(instance=stext_InternalScope_strategy)
 @settings(max_examples=50)
-def test_stext::importscope_instantiation(instance):
-    assert isinstance(instance, stext::ImportScope)
+def test_stext_internalscope_instantiation(instance):
+    assert isinstance(instance, stext_InternalScope)
 
-@given(instance=stext::InternalScope_strategy)
+@given(instance=stext_ImportScope_strategy)
 @settings(max_examples=50)
-def test_stext::internalscope_instantiation(instance):
-    assert isinstance(instance, stext::InternalScope)
+def test_stext_importscope_instantiation(instance):
+    assert isinstance(instance, stext_ImportScope)
 
-@given(instance=stext::InterfaceScope_strategy)
+@given(instance=stext_InterfaceScope_strategy)
 @settings(max_examples=50)
-def test_stext::interfacescope_instantiation(instance):
-    assert isinstance(instance, stext::InterfaceScope)
+def test_stext_interfacescope_instantiation(instance):
+    assert isinstance(instance, stext_InterfaceScope)
 
-@given(instance=stext::DefRoot_strategy)
+@given(instance=stext_DefRoot_strategy)
 @settings(max_examples=50)
-def test_stext::defroot_instantiation(instance):
-    assert isinstance(instance, stext::DefRoot)
+def test_stext_defroot_instantiation(instance):
+    assert isinstance(instance, stext_DefRoot)
 
-@given(instance=stext::Root_strategy)
+@given(instance=stext_Root_strategy)
 @settings(max_examples=50)
-def test_stext::root_instantiation(instance):
-    assert isinstance(instance, stext::Root)
+def test_stext_root_instantiation(instance):
+    assert isinstance(instance, stext_Root)
+
+@given(instance=stext_State_strategy)
+@settings(max_examples=50)
+def test_stext_state_instantiation(instance):
+    assert isinstance(instance, stext_State)
+
+@given(instance=Trigger_strategy)
+@settings(max_examples=50)
+def test_trigger_instantiation(instance):
+    assert isinstance(instance, Trigger)
+
+@given(instance=stext_ReactionTrigger_strategy)
+@settings(max_examples=50)
+def test_stext_reactiontrigger_instantiation(instance):
+    assert isinstance(instance, stext_ReactionTrigger)
+
+@given(instance=stext_SimpleScope_strategy)
+@settings(max_examples=50)
+def test_stext_simplescope_instantiation(instance):
+    assert isinstance(instance, stext_SimpleScope)
+
+@given(instance=BuiltinEventSpec_strategy)
+@settings(max_examples=50)
+def test_builtineventspec_instantiation(instance):
+    assert isinstance(instance, BuiltinEventSpec)
+
+@given(instance=stext_ExitEvent_strategy)
+@settings(max_examples=50)
+def test_stext_exitevent_instantiation(instance):
+    assert isinstance(instance, stext_ExitEvent)
+
+@given(instance=stext_AlwaysEvent_strategy)
+@settings(max_examples=50)
+def test_stext_alwaysevent_instantiation(instance):
+    assert isinstance(instance, stext_AlwaysEvent)
+
+@given(instance=stext_EntryEvent_strategy)
+@settings(max_examples=50)
+def test_stext_entryevent_instantiation(instance):
+    assert isinstance(instance, stext_EntryEvent)
+
+@given(instance=stext_BuiltinEventSpec_strategy)
+@settings(max_examples=50)
+def test_stext_builtineventspec_instantiation(instance):
+    assert isinstance(instance, stext_BuiltinEventSpec)
+
+@given(instance=Expression_strategy)
+@settings(max_examples=50)
+def test_expression_instantiation(instance):
+    assert isinstance(instance, Expression)
+
+@given(instance=stext_ActiveStateReferenceExpression_strategy)
+@settings(max_examples=50)
+def test_stext_activestatereferenceexpression_instantiation(instance):
+    assert isinstance(instance, stext_ActiveStateReferenceExpression)
+
+@given(instance=stext_EventValueReferenceExpression_strategy)
+@settings(max_examples=50)
+def test_stext_eventvaluereferenceexpression_instantiation(instance):
+    assert isinstance(instance, stext_EventValueReferenceExpression)
+
+@given(instance=stext_EventRaisingExpression_strategy)
+@settings(max_examples=50)
+def test_stext_eventraisingexpression_instantiation(instance):
+    assert isinstance(instance, stext_EventRaisingExpression)
+
+@given(instance=Effect_strategy)
+@settings(max_examples=50)
+def test_effect_instantiation(instance):
+    assert isinstance(instance, Effect)
+
+@given(instance=stext_ReactionEffect_strategy)
+@settings(max_examples=50)
+def test_stext_reactioneffect_instantiation(instance):
+    assert isinstance(instance, stext_ReactionEffect)
+
+@given(instance=stext_DefaultTrigger_strategy)
+@settings(max_examples=50)
+def test_stext_defaulttrigger_instantiation(instance):
+    assert isinstance(instance, stext_DefaultTrigger)
+
+@given(instance=ReactionProperty_strategy)
+@settings(max_examples=50)
+def test_reactionproperty_instantiation(instance):
+    assert isinstance(instance, ReactionProperty)
+
+@given(instance=stext_ExitPointSpec_strategy)
+@settings(max_examples=50)
+def test_stext_exitpointspec_instantiation(instance):
+    assert isinstance(instance, stext_ExitPointSpec)
+
+
+
+@given(instance=stext_ExitPointSpec_strategy)
+def test_stext_exitpointspec_exitpoint_setter(instance):
+    original = instance.exitpoint
+    instance.exitpoint = original
+    assert instance.exitpoint == original
+
+@given(instance=stext_EntryPointSpec_strategy)
+@settings(max_examples=50)
+def test_stext_entrypointspec_instantiation(instance):
+    assert isinstance(instance, stext_EntryPointSpec)
+
+
+
+@given(instance=stext_EntryPointSpec_strategy)
+def test_stext_entrypointspec_entrypoint_setter(instance):
+    original = instance.entrypoint
+    instance.entrypoint = original
+    assert instance.entrypoint == original
+
+@given(instance=stext_Guard_strategy)
+@settings(max_examples=50)
+def test_stext_guard_instantiation(instance):
+    assert isinstance(instance, stext_Guard)
+
+@given(instance=Reaction_strategy)
+@settings(max_examples=50)
+def test_reaction_instantiation(instance):
+    assert isinstance(instance, Reaction)
+
+@given(instance=stext_TransitionReaction_strategy)
+@settings(max_examples=50)
+def test_stext_transitionreaction_instantiation(instance):
+    assert isinstance(instance, stext_TransitionReaction)
+
+@given(instance=stext_LocalReaction_strategy)
+@settings(max_examples=50)
+def test_stext_localreaction_instantiation(instance):
+    assert isinstance(instance, stext_LocalReaction)

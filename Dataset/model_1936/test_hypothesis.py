@@ -3,66 +3,66 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     OclUndefinedExp,
-    emig::OclUndefinedExp,
+    emig_OclUndefinedExp,
     MapExp,
-    emig::MapExp,
+    emig_MapExp,
     TupleExp,
-    emig::TupleExp,
+    emig_TupleExp,
     SetExp,
-    emig::SetExp,
+    emig_SetExp,
     SequenceExp,
-    emig::SequenceExp,
+    emig_SequenceExp,
     OrderedSetExp,
-    emig::OrderedSetExp,
+    emig_OrderedSetExp,
     BagExp,
-    emig::BagExp,
+    emig_BagExp,
     SuperExp,
-    emig::VariableDeclaration,
+    emig_VariableDeclaration,
     Migrator,
-    emig::Migrator,
-    emig::MigratorDX,
-    emig::MigratorSX,
-    emig::Parameter,
-    emig::SuperExp,
+    emig_Migrator,
+    emig_MigratorDX,
+    emig_MigratorSX,
+    emig_Parameter,
+    emig_SuperExp,
     VariableExp,
-    emig::VariableExp,
+    emig_VariableExp,
     OclExpression,
-    emig::NavigationOrAttributeCallExp,
+    emig_NavigationOrAttributeCallExp,
     EReference,
-    emig::Reference,
+    emig_Reference,
     EAttribute,
-    emig::Attribute,
+    emig_Attribute,
     EClass,
-    emig::Class,
+    emig_Class,
     EPackage,
-    emig::Package,
-    emig::DotNavigationObjDX,
-    emig::EObject,
-    emig::DotNavigationObjSX,
-    emig::OclExpression,
-    emig::FilterMigrator,
-    emig::RewritingRule,
-    emig::OpDef,
-    emig::EPackage,
-    emig::EStructuralFeature,
-    emig::EReference,
-    emig::EAttribute,
-    emig::EClass,
+    emig_Package,
+    emig_DotNavigationObjDX,
+    emig_EObject,
+    emig_DotNavigationObjSX,
+    emig_OclExpression,
+    emig_FilterMigrator,
+    emig_RewritingRule,
+    emig_OpDef,
+    emig_EPackage,
+    emig_EStructuralFeature,
+    emig_EReference,
+    emig_EAttribute,
+    emig_EClass,
     OpDef,
-    emig::EClassOpDef,
-    emig::EReferenceOpDef,
-    emig::EAttributeOpDef,
-    emig::EPackageOpDef,
-    emig::setterDef,
-    emig::Artifact,
-    emig::Rule,
-    emig::MigrationProgram,
-    emig::MigrationLibrary,
-    emig::MyModel,
+    emig_EAttributeOpDef,
+    emig_EClassOpDef,
+    emig_EReferenceOpDef,
+    emig_EPackageOpDef,
+    emig_setterDef,
+    emig_Artifact,
+    emig_Rule,
+    emig_MigrationProgram,
+    emig_MigrationLibrary,
+    emig_MyModel,
 )
 
 # =============================================================================
@@ -85,16 +85,16 @@ def test_oclundefinedexp_constructor_args():
 
 
 
-def test_emig::oclundefinedexp_is_not_abstract():
-    assert not inspect.isabstract(emig::OclUndefinedExp)
+def test_emig_oclundefinedexp_is_not_abstract():
+    assert not inspect.isabstract(emig_OclUndefinedExp)
 
 
-def test_emig::oclundefinedexp_constructor_exists():
-    assert callable(emig::OclUndefinedExp.__init__)
+def test_emig_oclundefinedexp_constructor_exists():
+    assert callable(emig_OclUndefinedExp.__init__)
 
 
-def test_emig::oclundefinedexp_constructor_args():
-    sig = inspect.signature(emig::OclUndefinedExp.__init__)
+def test_emig_oclundefinedexp_constructor_args():
+    sig = inspect.signature(emig_OclUndefinedExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -113,16 +113,16 @@ def test_mapexp_constructor_args():
 
 
 
-def test_emig::mapexp_is_not_abstract():
-    assert not inspect.isabstract(emig::MapExp)
+def test_emig_mapexp_is_not_abstract():
+    assert not inspect.isabstract(emig_MapExp)
 
 
-def test_emig::mapexp_constructor_exists():
-    assert callable(emig::MapExp.__init__)
+def test_emig_mapexp_constructor_exists():
+    assert callable(emig_MapExp.__init__)
 
 
-def test_emig::mapexp_constructor_args():
-    sig = inspect.signature(emig::MapExp.__init__)
+def test_emig_mapexp_constructor_args():
+    sig = inspect.signature(emig_MapExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -141,16 +141,16 @@ def test_tupleexp_constructor_args():
 
 
 
-def test_emig::tupleexp_is_not_abstract():
-    assert not inspect.isabstract(emig::TupleExp)
+def test_emig_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(emig_TupleExp)
 
 
-def test_emig::tupleexp_constructor_exists():
-    assert callable(emig::TupleExp.__init__)
+def test_emig_tupleexp_constructor_exists():
+    assert callable(emig_TupleExp.__init__)
 
 
-def test_emig::tupleexp_constructor_args():
-    sig = inspect.signature(emig::TupleExp.__init__)
+def test_emig_tupleexp_constructor_args():
+    sig = inspect.signature(emig_TupleExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,16 +169,16 @@ def test_setexp_constructor_args():
 
 
 
-def test_emig::setexp_is_not_abstract():
-    assert not inspect.isabstract(emig::SetExp)
+def test_emig_setexp_is_not_abstract():
+    assert not inspect.isabstract(emig_SetExp)
 
 
-def test_emig::setexp_constructor_exists():
-    assert callable(emig::SetExp.__init__)
+def test_emig_setexp_constructor_exists():
+    assert callable(emig_SetExp.__init__)
 
 
-def test_emig::setexp_constructor_args():
-    sig = inspect.signature(emig::SetExp.__init__)
+def test_emig_setexp_constructor_args():
+    sig = inspect.signature(emig_SetExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -197,16 +197,16 @@ def test_sequenceexp_constructor_args():
 
 
 
-def test_emig::sequenceexp_is_not_abstract():
-    assert not inspect.isabstract(emig::SequenceExp)
+def test_emig_sequenceexp_is_not_abstract():
+    assert not inspect.isabstract(emig_SequenceExp)
 
 
-def test_emig::sequenceexp_constructor_exists():
-    assert callable(emig::SequenceExp.__init__)
+def test_emig_sequenceexp_constructor_exists():
+    assert callable(emig_SequenceExp.__init__)
 
 
-def test_emig::sequenceexp_constructor_args():
-    sig = inspect.signature(emig::SequenceExp.__init__)
+def test_emig_sequenceexp_constructor_args():
+    sig = inspect.signature(emig_SequenceExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -225,16 +225,16 @@ def test_orderedsetexp_constructor_args():
 
 
 
-def test_emig::orderedsetexp_is_not_abstract():
-    assert not inspect.isabstract(emig::OrderedSetExp)
+def test_emig_orderedsetexp_is_not_abstract():
+    assert not inspect.isabstract(emig_OrderedSetExp)
 
 
-def test_emig::orderedsetexp_constructor_exists():
-    assert callable(emig::OrderedSetExp.__init__)
+def test_emig_orderedsetexp_constructor_exists():
+    assert callable(emig_OrderedSetExp.__init__)
 
 
-def test_emig::orderedsetexp_constructor_args():
-    sig = inspect.signature(emig::OrderedSetExp.__init__)
+def test_emig_orderedsetexp_constructor_args():
+    sig = inspect.signature(emig_OrderedSetExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -253,16 +253,16 @@ def test_bagexp_constructor_args():
 
 
 
-def test_emig::bagexp_is_not_abstract():
-    assert not inspect.isabstract(emig::BagExp)
+def test_emig_bagexp_is_not_abstract():
+    assert not inspect.isabstract(emig_BagExp)
 
 
-def test_emig::bagexp_constructor_exists():
-    assert callable(emig::BagExp.__init__)
+def test_emig_bagexp_constructor_exists():
+    assert callable(emig_BagExp.__init__)
 
 
-def test_emig::bagexp_constructor_args():
-    sig = inspect.signature(emig::BagExp.__init__)
+def test_emig_bagexp_constructor_args():
+    sig = inspect.signature(emig_BagExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -281,16 +281,16 @@ def test_superexp_constructor_args():
 
 
 
-def test_emig::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(emig::VariableDeclaration)
+def test_emig_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(emig_VariableDeclaration)
 
 
-def test_emig::variabledeclaration_constructor_exists():
-    assert callable(emig::VariableDeclaration.__init__)
+def test_emig_variabledeclaration_constructor_exists():
+    assert callable(emig_VariableDeclaration.__init__)
 
 
-def test_emig::variabledeclaration_constructor_args():
-    sig = inspect.signature(emig::VariableDeclaration.__init__)
+def test_emig_variabledeclaration_constructor_args():
+    sig = inspect.signature(emig_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,37 +309,37 @@ def test_migrator_constructor_args():
 
 
 
-def test_emig::migrator_is_not_abstract():
-    assert not inspect.isabstract(emig::Migrator)
+def test_emig_migrator_is_not_abstract():
+    assert not inspect.isabstract(emig_Migrator)
 
 
-def test_emig::migrator_constructor_exists():
-    assert callable(emig::Migrator.__init__)
+def test_emig_migrator_constructor_exists():
+    assert callable(emig_Migrator.__init__)
 
 
-def test_emig::migrator_constructor_args():
-    sig = inspect.signature(emig::Migrator.__init__)
+def test_emig_migrator_constructor_args():
+    sig = inspect.signature(emig_Migrator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::migratordx_is_not_abstract():
-    assert not inspect.isabstract(emig::MigratorDX)
+def test_emig_migratordx_is_not_abstract():
+    assert not inspect.isabstract(emig_MigratorDX)
 
 
-def test_emig::migratordx_constructor_exists():
-    assert callable(emig::MigratorDX.__init__)
+def test_emig_migratordx_constructor_exists():
+    assert callable(emig_MigratorDX.__init__)
 
 
-def test_emig::migratordx_constructor_args():
-    sig = inspect.signature(emig::MigratorDX.__init__)
+def test_emig_migratordx_constructor_args():
+    sig = inspect.signature(emig_MigratorDX.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emig::migratordx_has_name():
-    assert hasattr(emig::MigratorDX, "name")
+def test_emig_migratordx_has_name():
+    assert hasattr(emig_MigratorDX, "name")
     descriptor = None
-    for klass in emig::MigratorDX.__mro__:
+    for klass in emig_MigratorDX.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -347,37 +347,37 @@ def test_emig::migratordx_has_name():
 
 
 
-def test_emig::migratorsx_is_not_abstract():
-    assert not inspect.isabstract(emig::MigratorSX)
+def test_emig_migratorsx_is_not_abstract():
+    assert not inspect.isabstract(emig_MigratorSX)
 
 
-def test_emig::migratorsx_constructor_exists():
-    assert callable(emig::MigratorSX.__init__)
+def test_emig_migratorsx_constructor_exists():
+    assert callable(emig_MigratorSX.__init__)
 
 
-def test_emig::migratorsx_constructor_args():
-    sig = inspect.signature(emig::MigratorSX.__init__)
+def test_emig_migratorsx_constructor_args():
+    sig = inspect.signature(emig_MigratorSX.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::parameter_is_not_abstract():
-    assert not inspect.isabstract(emig::Parameter)
+def test_emig_parameter_is_not_abstract():
+    assert not inspect.isabstract(emig_Parameter)
 
 
-def test_emig::parameter_constructor_exists():
-    assert callable(emig::Parameter.__init__)
+def test_emig_parameter_constructor_exists():
+    assert callable(emig_Parameter.__init__)
 
 
-def test_emig::parameter_constructor_args():
-    sig = inspect.signature(emig::Parameter.__init__)
+def test_emig_parameter_constructor_args():
+    sig = inspect.signature(emig_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emig::parameter_has_name():
-    assert hasattr(emig::Parameter, "name")
+def test_emig_parameter_has_name():
+    assert hasattr(emig_Parameter, "name")
     descriptor = None
-    for klass in emig::Parameter.__mro__:
+    for klass in emig_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -385,16 +385,16 @@ def test_emig::parameter_has_name():
 
 
 
-def test_emig::superexp_is_not_abstract():
-    assert not inspect.isabstract(emig::SuperExp)
+def test_emig_superexp_is_not_abstract():
+    assert not inspect.isabstract(emig_SuperExp)
 
 
-def test_emig::superexp_constructor_exists():
-    assert callable(emig::SuperExp.__init__)
+def test_emig_superexp_constructor_exists():
+    assert callable(emig_SuperExp.__init__)
 
 
-def test_emig::superexp_constructor_args():
-    sig = inspect.signature(emig::SuperExp.__init__)
+def test_emig_superexp_constructor_args():
+    sig = inspect.signature(emig_SuperExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -413,16 +413,16 @@ def test_variableexp_constructor_args():
 
 
 
-def test_emig::variableexp_is_not_abstract():
-    assert not inspect.isabstract(emig::VariableExp)
+def test_emig_variableexp_is_not_abstract():
+    assert not inspect.isabstract(emig_VariableExp)
 
 
-def test_emig::variableexp_constructor_exists():
-    assert callable(emig::VariableExp.__init__)
+def test_emig_variableexp_constructor_exists():
+    assert callable(emig_VariableExp.__init__)
 
 
-def test_emig::variableexp_constructor_args():
-    sig = inspect.signature(emig::VariableExp.__init__)
+def test_emig_variableexp_constructor_args():
+    sig = inspect.signature(emig_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -441,16 +441,16 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_emig::navigationorattributecallexp_is_not_abstract():
-    assert not inspect.isabstract(emig::NavigationOrAttributeCallExp)
+def test_emig_navigationorattributecallexp_is_not_abstract():
+    assert not inspect.isabstract(emig_NavigationOrAttributeCallExp)
 
 
-def test_emig::navigationorattributecallexp_constructor_exists():
-    assert callable(emig::NavigationOrAttributeCallExp.__init__)
+def test_emig_navigationorattributecallexp_constructor_exists():
+    assert callable(emig_NavigationOrAttributeCallExp.__init__)
 
 
-def test_emig::navigationorattributecallexp_constructor_args():
-    sig = inspect.signature(emig::NavigationOrAttributeCallExp.__init__)
+def test_emig_navigationorattributecallexp_constructor_args():
+    sig = inspect.signature(emig_NavigationOrAttributeCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -469,16 +469,16 @@ def test_ereference_constructor_args():
 
 
 
-def test_emig::reference_is_not_abstract():
-    assert not inspect.isabstract(emig::Reference)
+def test_emig_reference_is_not_abstract():
+    assert not inspect.isabstract(emig_Reference)
 
 
-def test_emig::reference_constructor_exists():
-    assert callable(emig::Reference.__init__)
+def test_emig_reference_constructor_exists():
+    assert callable(emig_Reference.__init__)
 
 
-def test_emig::reference_constructor_args():
-    sig = inspect.signature(emig::Reference.__init__)
+def test_emig_reference_constructor_args():
+    sig = inspect.signature(emig_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -497,16 +497,16 @@ def test_eattribute_constructor_args():
 
 
 
-def test_emig::attribute_is_not_abstract():
-    assert not inspect.isabstract(emig::Attribute)
+def test_emig_attribute_is_not_abstract():
+    assert not inspect.isabstract(emig_Attribute)
 
 
-def test_emig::attribute_constructor_exists():
-    assert callable(emig::Attribute.__init__)
+def test_emig_attribute_constructor_exists():
+    assert callable(emig_Attribute.__init__)
 
 
-def test_emig::attribute_constructor_args():
-    sig = inspect.signature(emig::Attribute.__init__)
+def test_emig_attribute_constructor_args():
+    sig = inspect.signature(emig_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -525,16 +525,16 @@ def test_eclass_constructor_args():
 
 
 
-def test_emig::class_is_not_abstract():
-    assert not inspect.isabstract(emig::Class)
+def test_emig_class_is_not_abstract():
+    assert not inspect.isabstract(emig_Class)
 
 
-def test_emig::class_constructor_exists():
-    assert callable(emig::Class.__init__)
+def test_emig_class_constructor_exists():
+    assert callable(emig_Class.__init__)
 
 
-def test_emig::class_constructor_args():
-    sig = inspect.signature(emig::Class.__init__)
+def test_emig_class_constructor_args():
+    sig = inspect.signature(emig_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -553,121 +553,121 @@ def test_epackage_constructor_args():
 
 
 
-def test_emig::package_is_not_abstract():
-    assert not inspect.isabstract(emig::Package)
+def test_emig_package_is_not_abstract():
+    assert not inspect.isabstract(emig_Package)
 
 
-def test_emig::package_constructor_exists():
-    assert callable(emig::Package.__init__)
+def test_emig_package_constructor_exists():
+    assert callable(emig_Package.__init__)
 
 
-def test_emig::package_constructor_args():
-    sig = inspect.signature(emig::Package.__init__)
+def test_emig_package_constructor_args():
+    sig = inspect.signature(emig_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::dotnavigationobjdx_is_not_abstract():
-    assert not inspect.isabstract(emig::DotNavigationObjDX)
+def test_emig_dotnavigationobjdx_is_not_abstract():
+    assert not inspect.isabstract(emig_DotNavigationObjDX)
 
 
-def test_emig::dotnavigationobjdx_constructor_exists():
-    assert callable(emig::DotNavigationObjDX.__init__)
+def test_emig_dotnavigationobjdx_constructor_exists():
+    assert callable(emig_DotNavigationObjDX.__init__)
 
 
-def test_emig::dotnavigationobjdx_constructor_args():
-    sig = inspect.signature(emig::DotNavigationObjDX.__init__)
+def test_emig_dotnavigationobjdx_constructor_args():
+    sig = inspect.signature(emig_DotNavigationObjDX.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::eobject_is_not_abstract():
-    assert not inspect.isabstract(emig::EObject)
+def test_emig_eobject_is_not_abstract():
+    assert not inspect.isabstract(emig_EObject)
 
 
-def test_emig::eobject_constructor_exists():
-    assert callable(emig::EObject.__init__)
+def test_emig_eobject_constructor_exists():
+    assert callable(emig_EObject.__init__)
 
 
-def test_emig::eobject_constructor_args():
-    sig = inspect.signature(emig::EObject.__init__)
+def test_emig_eobject_constructor_args():
+    sig = inspect.signature(emig_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::dotnavigationobjsx_is_not_abstract():
-    assert not inspect.isabstract(emig::DotNavigationObjSX)
+def test_emig_dotnavigationobjsx_is_not_abstract():
+    assert not inspect.isabstract(emig_DotNavigationObjSX)
 
 
-def test_emig::dotnavigationobjsx_constructor_exists():
-    assert callable(emig::DotNavigationObjSX.__init__)
+def test_emig_dotnavigationobjsx_constructor_exists():
+    assert callable(emig_DotNavigationObjSX.__init__)
 
 
-def test_emig::dotnavigationobjsx_constructor_args():
-    sig = inspect.signature(emig::DotNavigationObjSX.__init__)
+def test_emig_dotnavigationobjsx_constructor_args():
+    sig = inspect.signature(emig_DotNavigationObjSX.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(emig::OclExpression)
+def test_emig_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(emig_OclExpression)
 
 
-def test_emig::oclexpression_constructor_exists():
-    assert callable(emig::OclExpression.__init__)
+def test_emig_oclexpression_constructor_exists():
+    assert callable(emig_OclExpression.__init__)
 
 
-def test_emig::oclexpression_constructor_args():
-    sig = inspect.signature(emig::OclExpression.__init__)
+def test_emig_oclexpression_constructor_args():
+    sig = inspect.signature(emig_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::filtermigrator_is_not_abstract():
-    assert not inspect.isabstract(emig::FilterMigrator)
+def test_emig_filtermigrator_is_not_abstract():
+    assert not inspect.isabstract(emig_FilterMigrator)
 
 
-def test_emig::filtermigrator_constructor_exists():
-    assert callable(emig::FilterMigrator.__init__)
+def test_emig_filtermigrator_constructor_exists():
+    assert callable(emig_FilterMigrator.__init__)
 
 
-def test_emig::filtermigrator_constructor_args():
-    sig = inspect.signature(emig::FilterMigrator.__init__)
+def test_emig_filtermigrator_constructor_args():
+    sig = inspect.signature(emig_FilterMigrator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::rewritingrule_is_not_abstract():
-    assert not inspect.isabstract(emig::RewritingRule)
+def test_emig_rewritingrule_is_not_abstract():
+    assert not inspect.isabstract(emig_RewritingRule)
 
 
-def test_emig::rewritingrule_constructor_exists():
-    assert callable(emig::RewritingRule.__init__)
+def test_emig_rewritingrule_constructor_exists():
+    assert callable(emig_RewritingRule.__init__)
 
 
-def test_emig::rewritingrule_constructor_args():
-    sig = inspect.signature(emig::RewritingRule.__init__)
+def test_emig_rewritingrule_constructor_args():
+    sig = inspect.signature(emig_RewritingRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::opdef_is_not_abstract():
-    assert not inspect.isabstract(emig::OpDef)
+def test_emig_opdef_is_not_abstract():
+    assert not inspect.isabstract(emig_OpDef)
 
 
-def test_emig::opdef_constructor_exists():
-    assert callable(emig::OpDef.__init__)
+def test_emig_opdef_constructor_exists():
+    assert callable(emig_OpDef.__init__)
 
 
-def test_emig::opdef_constructor_args():
-    sig = inspect.signature(emig::OpDef.__init__)
+def test_emig_opdef_constructor_args():
+    sig = inspect.signature(emig_OpDef.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_emig::opdef_has_op():
-    assert hasattr(emig::OpDef, "op")
+def test_emig_opdef_has_op():
+    assert hasattr(emig_OpDef, "op")
     descriptor = None
-    for klass in emig::OpDef.__mro__:
+    for klass in emig_OpDef.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -675,72 +675,72 @@ def test_emig::opdef_has_op():
 
 
 
-def test_emig::epackage_is_not_abstract():
-    assert not inspect.isabstract(emig::EPackage)
+def test_emig_epackage_is_not_abstract():
+    assert not inspect.isabstract(emig_EPackage)
 
 
-def test_emig::epackage_constructor_exists():
-    assert callable(emig::EPackage.__init__)
+def test_emig_epackage_constructor_exists():
+    assert callable(emig_EPackage.__init__)
 
 
-def test_emig::epackage_constructor_args():
-    sig = inspect.signature(emig::EPackage.__init__)
+def test_emig_epackage_constructor_args():
+    sig = inspect.signature(emig_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(emig::EStructuralFeature)
+def test_emig_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(emig_EStructuralFeature)
 
 
-def test_emig::estructuralfeature_constructor_exists():
-    assert callable(emig::EStructuralFeature.__init__)
+def test_emig_estructuralfeature_constructor_exists():
+    assert callable(emig_EStructuralFeature.__init__)
 
 
-def test_emig::estructuralfeature_constructor_args():
-    sig = inspect.signature(emig::EStructuralFeature.__init__)
+def test_emig_estructuralfeature_constructor_args():
+    sig = inspect.signature(emig_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::ereference_is_not_abstract():
-    assert not inspect.isabstract(emig::EReference)
+def test_emig_ereference_is_not_abstract():
+    assert not inspect.isabstract(emig_EReference)
 
 
-def test_emig::ereference_constructor_exists():
-    assert callable(emig::EReference.__init__)
+def test_emig_ereference_constructor_exists():
+    assert callable(emig_EReference.__init__)
 
 
-def test_emig::ereference_constructor_args():
-    sig = inspect.signature(emig::EReference.__init__)
+def test_emig_ereference_constructor_args():
+    sig = inspect.signature(emig_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::eattribute_is_not_abstract():
-    assert not inspect.isabstract(emig::EAttribute)
+def test_emig_eattribute_is_not_abstract():
+    assert not inspect.isabstract(emig_EAttribute)
 
 
-def test_emig::eattribute_constructor_exists():
-    assert callable(emig::EAttribute.__init__)
+def test_emig_eattribute_constructor_exists():
+    assert callable(emig_EAttribute.__init__)
 
 
-def test_emig::eattribute_constructor_args():
-    sig = inspect.signature(emig::EAttribute.__init__)
+def test_emig_eattribute_constructor_args():
+    sig = inspect.signature(emig_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::eclass_is_not_abstract():
-    assert not inspect.isabstract(emig::EClass)
+def test_emig_eclass_is_not_abstract():
+    assert not inspect.isabstract(emig_EClass)
 
 
-def test_emig::eclass_constructor_exists():
-    assert callable(emig::EClass.__init__)
+def test_emig_eclass_constructor_exists():
+    assert callable(emig_EClass.__init__)
 
 
-def test_emig::eclass_constructor_args():
-    sig = inspect.signature(emig::EClass.__init__)
+def test_emig_eclass_constructor_args():
+    sig = inspect.signature(emig_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -759,79 +759,79 @@ def test_opdef_constructor_args():
 
 
 
-def test_emig::eclassopdef_is_not_abstract():
-    assert not inspect.isabstract(emig::EClassOpDef)
+def test_emig_eattributeopdef_is_not_abstract():
+    assert not inspect.isabstract(emig_EAttributeOpDef)
 
 
-def test_emig::eclassopdef_constructor_exists():
-    assert callable(emig::EClassOpDef.__init__)
+def test_emig_eattributeopdef_constructor_exists():
+    assert callable(emig_EAttributeOpDef.__init__)
 
 
-def test_emig::eclassopdef_constructor_args():
-    sig = inspect.signature(emig::EClassOpDef.__init__)
+def test_emig_eattributeopdef_constructor_args():
+    sig = inspect.signature(emig_EAttributeOpDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::ereferenceopdef_is_not_abstract():
-    assert not inspect.isabstract(emig::EReferenceOpDef)
+def test_emig_eclassopdef_is_not_abstract():
+    assert not inspect.isabstract(emig_EClassOpDef)
 
 
-def test_emig::ereferenceopdef_constructor_exists():
-    assert callable(emig::EReferenceOpDef.__init__)
+def test_emig_eclassopdef_constructor_exists():
+    assert callable(emig_EClassOpDef.__init__)
 
 
-def test_emig::ereferenceopdef_constructor_args():
-    sig = inspect.signature(emig::EReferenceOpDef.__init__)
+def test_emig_eclassopdef_constructor_args():
+    sig = inspect.signature(emig_EClassOpDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::eattributeopdef_is_not_abstract():
-    assert not inspect.isabstract(emig::EAttributeOpDef)
+def test_emig_ereferenceopdef_is_not_abstract():
+    assert not inspect.isabstract(emig_EReferenceOpDef)
 
 
-def test_emig::eattributeopdef_constructor_exists():
-    assert callable(emig::EAttributeOpDef.__init__)
+def test_emig_ereferenceopdef_constructor_exists():
+    assert callable(emig_EReferenceOpDef.__init__)
 
 
-def test_emig::eattributeopdef_constructor_args():
-    sig = inspect.signature(emig::EAttributeOpDef.__init__)
+def test_emig_ereferenceopdef_constructor_args():
+    sig = inspect.signature(emig_EReferenceOpDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::epackageopdef_is_not_abstract():
-    assert not inspect.isabstract(emig::EPackageOpDef)
+def test_emig_epackageopdef_is_not_abstract():
+    assert not inspect.isabstract(emig_EPackageOpDef)
 
 
-def test_emig::epackageopdef_constructor_exists():
-    assert callable(emig::EPackageOpDef.__init__)
+def test_emig_epackageopdef_constructor_exists():
+    assert callable(emig_EPackageOpDef.__init__)
 
 
-def test_emig::epackageopdef_constructor_args():
-    sig = inspect.signature(emig::EPackageOpDef.__init__)
+def test_emig_epackageopdef_constructor_args():
+    sig = inspect.signature(emig_EPackageOpDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emig::setterdef_is_not_abstract():
-    assert not inspect.isabstract(emig::setterDef)
+def test_emig_setterdef_is_not_abstract():
+    assert not inspect.isabstract(emig_setterDef)
 
 
-def test_emig::setterdef_constructor_exists():
-    assert callable(emig::setterDef.__init__)
+def test_emig_setterdef_constructor_exists():
+    assert callable(emig_setterDef.__init__)
 
 
-def test_emig::setterdef_constructor_args():
-    sig = inspect.signature(emig::setterDef.__init__)
+def test_emig_setterdef_constructor_args():
+    sig = inspect.signature(emig_setterDef.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_emig::setterdef_has_operator():
-    assert hasattr(emig::setterDef, "operator")
+def test_emig_setterdef_has_operator():
+    assert hasattr(emig_setterDef, "operator")
     descriptor = None
-    for klass in emig::setterDef.__mro__:
+    for klass in emig_setterDef.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -839,23 +839,23 @@ def test_emig::setterdef_has_operator():
 
 
 
-def test_emig::artifact_is_not_abstract():
-    assert not inspect.isabstract(emig::Artifact)
+def test_emig_artifact_is_not_abstract():
+    assert not inspect.isabstract(emig_Artifact)
 
 
-def test_emig::artifact_constructor_exists():
-    assert callable(emig::Artifact.__init__)
+def test_emig_artifact_constructor_exists():
+    assert callable(emig_Artifact.__init__)
 
 
-def test_emig::artifact_constructor_args():
-    sig = inspect.signature(emig::Artifact.__init__)
+def test_emig_artifact_constructor_args():
+    sig = inspect.signature(emig_Artifact.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_emig::artifact_has_type():
-    assert hasattr(emig::Artifact, "type")
+def test_emig_artifact_has_type():
+    assert hasattr(emig_Artifact, "type")
     descriptor = None
-    for klass in emig::Artifact.__mro__:
+    for klass in emig_Artifact.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -863,23 +863,23 @@ def test_emig::artifact_has_type():
 
 
 
-def test_emig::rule_is_not_abstract():
-    assert not inspect.isabstract(emig::Rule)
+def test_emig_rule_is_not_abstract():
+    assert not inspect.isabstract(emig_Rule)
 
 
-def test_emig::rule_constructor_exists():
-    assert callable(emig::Rule.__init__)
+def test_emig_rule_constructor_exists():
+    assert callable(emig_Rule.__init__)
 
 
-def test_emig::rule_constructor_args():
-    sig = inspect.signature(emig::Rule.__init__)
+def test_emig_rule_constructor_args():
+    sig = inspect.signature(emig_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emig::rule_has_name():
-    assert hasattr(emig::Rule, "name")
+def test_emig_rule_has_name():
+    assert hasattr(emig_Rule, "name")
     descriptor = None
-    for klass in emig::Rule.__mro__:
+    for klass in emig_Rule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -887,77 +887,77 @@ def test_emig::rule_has_name():
 
 
 
-def test_emig::migrationprogram_is_not_abstract():
-    assert not inspect.isabstract(emig::MigrationProgram)
+def test_emig_migrationprogram_is_not_abstract():
+    assert not inspect.isabstract(emig_MigrationProgram)
 
 
-def test_emig::migrationprogram_constructor_exists():
-    assert callable(emig::MigrationProgram.__init__)
+def test_emig_migrationprogram_constructor_exists():
+    assert callable(emig_MigrationProgram.__init__)
 
 
-def test_emig::migrationprogram_constructor_args():
-    sig = inspect.signature(emig::MigrationProgram.__init__)
+def test_emig_migrationprogram_constructor_args():
+    sig = inspect.signature(emig_MigrationProgram.__init__)
     params = list(sig.parameters.keys())
-    assert "libs" in params, "Missing parameter 'libs'"
     assert "migr" in params, "Missing parameter 'migr'"
-    assert "name" in params, "Missing parameter 'name'"
+    assert "libs" in params, "Missing parameter 'libs'"
     assert "delta" in params, "Missing parameter 'delta'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_emig::migrationprogram_has_libs():
-    assert hasattr(emig::MigrationProgram, "libs")
+def test_emig_migrationprogram_has_migr():
+    assert hasattr(emig_MigrationProgram, "migr")
     descriptor = None
-    for klass in emig::MigrationProgram.__mro__:
-        if "libs" in klass.__dict__:
-            descriptor = klass.__dict__["libs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emig::migrationprogram_has_migr():
-    assert hasattr(emig::MigrationProgram, "migr")
-    descriptor = None
-    for klass in emig::MigrationProgram.__mro__:
+    for klass in emig_MigrationProgram.__mro__:
         if "migr" in klass.__dict__:
             descriptor = klass.__dict__["migr"]
             break
     assert isinstance(descriptor, property)
 
-def test_emig::migrationprogram_has_name():
-    assert hasattr(emig::MigrationProgram, "name")
+def test_emig_migrationprogram_has_libs():
+    assert hasattr(emig_MigrationProgram, "libs")
     descriptor = None
-    for klass in emig::MigrationProgram.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in emig_MigrationProgram.__mro__:
+        if "libs" in klass.__dict__:
+            descriptor = klass.__dict__["libs"]
             break
     assert isinstance(descriptor, property)
 
-def test_emig::migrationprogram_has_delta():
-    assert hasattr(emig::MigrationProgram, "delta")
+def test_emig_migrationprogram_has_delta():
+    assert hasattr(emig_MigrationProgram, "delta")
     descriptor = None
-    for klass in emig::MigrationProgram.__mro__:
+    for klass in emig_MigrationProgram.__mro__:
         if "delta" in klass.__dict__:
             descriptor = klass.__dict__["delta"]
             break
     assert isinstance(descriptor, property)
 
+def test_emig_migrationprogram_has_name():
+    assert hasattr(emig_MigrationProgram, "name")
+    descriptor = None
+    for klass in emig_MigrationProgram.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_emig::migrationlibrary_is_not_abstract():
-    assert not inspect.isabstract(emig::MigrationLibrary)
+
+def test_emig_migrationlibrary_is_not_abstract():
+    assert not inspect.isabstract(emig_MigrationLibrary)
 
 
-def test_emig::migrationlibrary_constructor_exists():
-    assert callable(emig::MigrationLibrary.__init__)
+def test_emig_migrationlibrary_constructor_exists():
+    assert callable(emig_MigrationLibrary.__init__)
 
 
-def test_emig::migrationlibrary_constructor_args():
-    sig = inspect.signature(emig::MigrationLibrary.__init__)
+def test_emig_migrationlibrary_constructor_args():
+    sig = inspect.signature(emig_MigrationLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_emig::migrationlibrary_has_title():
-    assert hasattr(emig::MigrationLibrary, "title")
+def test_emig_migrationlibrary_has_title():
+    assert hasattr(emig_MigrationLibrary, "title")
     descriptor = None
-    for klass in emig::MigrationLibrary.__mro__:
+    for klass in emig_MigrationLibrary.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -965,16 +965,16 @@ def test_emig::migrationlibrary_has_title():
 
 
 
-def test_emig::mymodel_is_not_abstract():
-    assert not inspect.isabstract(emig::MyModel)
+def test_emig_mymodel_is_not_abstract():
+    assert not inspect.isabstract(emig_MyModel)
 
 
-def test_emig::mymodel_constructor_exists():
-    assert callable(emig::MyModel.__init__)
+def test_emig_mymodel_constructor_exists():
+    assert callable(emig_MyModel.__init__)
 
 
-def test_emig::mymodel_constructor_args():
-    sig = inspect.signature(emig::MyModel.__init__)
+def test_emig_mymodel_constructor_args():
+    sig = inspect.signature(emig_MyModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -992,195 +992,195 @@ safe_text = st.text(
 OclUndefinedExp_strategy = st.builds(
     OclUndefinedExp,
 )
-emig::OclUndefinedExp_strategy = st.builds(
-    emig::OclUndefinedExp,
+emig_OclUndefinedExp_strategy = st.builds(
+    emig_OclUndefinedExp,
 )
 MapExp_strategy = st.builds(
     MapExp,
 )
-emig::MapExp_strategy = st.builds(
-    emig::MapExp,
+emig_MapExp_strategy = st.builds(
+    emig_MapExp,
 )
 TupleExp_strategy = st.builds(
     TupleExp,
 )
-emig::TupleExp_strategy = st.builds(
-    emig::TupleExp,
+emig_TupleExp_strategy = st.builds(
+    emig_TupleExp,
 )
 SetExp_strategy = st.builds(
     SetExp,
 )
-emig::SetExp_strategy = st.builds(
-    emig::SetExp,
+emig_SetExp_strategy = st.builds(
+    emig_SetExp,
 )
 SequenceExp_strategy = st.builds(
     SequenceExp,
 )
-emig::SequenceExp_strategy = st.builds(
-    emig::SequenceExp,
+emig_SequenceExp_strategy = st.builds(
+    emig_SequenceExp,
 )
 OrderedSetExp_strategy = st.builds(
     OrderedSetExp,
 )
-emig::OrderedSetExp_strategy = st.builds(
-    emig::OrderedSetExp,
+emig_OrderedSetExp_strategy = st.builds(
+    emig_OrderedSetExp,
 )
 BagExp_strategy = st.builds(
     BagExp,
 )
-emig::BagExp_strategy = st.builds(
-    emig::BagExp,
+emig_BagExp_strategy = st.builds(
+    emig_BagExp,
 )
 SuperExp_strategy = st.builds(
     SuperExp,
 )
-emig::VariableDeclaration_strategy = st.builds(
-    emig::VariableDeclaration,
+emig_VariableDeclaration_strategy = st.builds(
+    emig_VariableDeclaration,
 )
 Migrator_strategy = st.builds(
     Migrator,
 )
-emig::Migrator_strategy = st.builds(
-    emig::Migrator,
+emig_Migrator_strategy = st.builds(
+    emig_Migrator,
 )
-emig::MigratorDX_strategy = st.builds(
-    emig::MigratorDX,
+emig_MigratorDX_strategy = st.builds(
+    emig_MigratorDX,
     name=
         safe_text
 )
-emig::MigratorSX_strategy = st.builds(
-    emig::MigratorSX,
+emig_MigratorSX_strategy = st.builds(
+    emig_MigratorSX,
 )
-emig::Parameter_strategy = st.builds(
-    emig::Parameter,
+emig_Parameter_strategy = st.builds(
+    emig_Parameter,
     name=
         safe_text
 )
-emig::SuperExp_strategy = st.builds(
-    emig::SuperExp,
+emig_SuperExp_strategy = st.builds(
+    emig_SuperExp,
 )
 VariableExp_strategy = st.builds(
     VariableExp,
 )
-emig::VariableExp_strategy = st.builds(
-    emig::VariableExp,
+emig_VariableExp_strategy = st.builds(
+    emig_VariableExp,
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-emig::NavigationOrAttributeCallExp_strategy = st.builds(
-    emig::NavigationOrAttributeCallExp,
+emig_NavigationOrAttributeCallExp_strategy = st.builds(
+    emig_NavigationOrAttributeCallExp,
 )
 EReference_strategy = st.builds(
     EReference,
 )
-emig::Reference_strategy = st.builds(
-    emig::Reference,
+emig_Reference_strategy = st.builds(
+    emig_Reference,
 )
 EAttribute_strategy = st.builds(
     EAttribute,
 )
-emig::Attribute_strategy = st.builds(
-    emig::Attribute,
+emig_Attribute_strategy = st.builds(
+    emig_Attribute,
 )
 EClass_strategy = st.builds(
     EClass,
 )
-emig::Class_strategy = st.builds(
-    emig::Class,
+emig_Class_strategy = st.builds(
+    emig_Class,
 )
 EPackage_strategy = st.builds(
     EPackage,
 )
-emig::Package_strategy = st.builds(
-    emig::Package,
+emig_Package_strategy = st.builds(
+    emig_Package,
 )
-emig::DotNavigationObjDX_strategy = st.builds(
-    emig::DotNavigationObjDX,
+emig_DotNavigationObjDX_strategy = st.builds(
+    emig_DotNavigationObjDX,
 )
-emig::EObject_strategy = st.builds(
-    emig::EObject,
+emig_EObject_strategy = st.builds(
+    emig_EObject,
 )
-emig::DotNavigationObjSX_strategy = st.builds(
-    emig::DotNavigationObjSX,
+emig_DotNavigationObjSX_strategy = st.builds(
+    emig_DotNavigationObjSX,
 )
-emig::OclExpression_strategy = st.builds(
-    emig::OclExpression,
+emig_OclExpression_strategy = st.builds(
+    emig_OclExpression,
 )
-emig::FilterMigrator_strategy = st.builds(
-    emig::FilterMigrator,
+emig_FilterMigrator_strategy = st.builds(
+    emig_FilterMigrator,
 )
-emig::RewritingRule_strategy = st.builds(
-    emig::RewritingRule,
+emig_RewritingRule_strategy = st.builds(
+    emig_RewritingRule,
 )
-emig::OpDef_strategy = st.builds(
-    emig::OpDef,
+emig_OpDef_strategy = st.builds(
+    emig_OpDef,
     op=
         safe_text
 )
-emig::EPackage_strategy = st.builds(
-    emig::EPackage,
+emig_EPackage_strategy = st.builds(
+    emig_EPackage,
 )
-emig::EStructuralFeature_strategy = st.builds(
-    emig::EStructuralFeature,
+emig_EStructuralFeature_strategy = st.builds(
+    emig_EStructuralFeature,
 )
-emig::EReference_strategy = st.builds(
-    emig::EReference,
+emig_EReference_strategy = st.builds(
+    emig_EReference,
 )
-emig::EAttribute_strategy = st.builds(
-    emig::EAttribute,
+emig_EAttribute_strategy = st.builds(
+    emig_EAttribute,
 )
-emig::EClass_strategy = st.builds(
-    emig::EClass,
+emig_EClass_strategy = st.builds(
+    emig_EClass,
 )
 OpDef_strategy = st.builds(
     OpDef,
 )
-emig::EClassOpDef_strategy = st.builds(
-    emig::EClassOpDef,
+emig_EAttributeOpDef_strategy = st.builds(
+    emig_EAttributeOpDef,
 )
-emig::EReferenceOpDef_strategy = st.builds(
-    emig::EReferenceOpDef,
+emig_EClassOpDef_strategy = st.builds(
+    emig_EClassOpDef,
 )
-emig::EAttributeOpDef_strategy = st.builds(
-    emig::EAttributeOpDef,
+emig_EReferenceOpDef_strategy = st.builds(
+    emig_EReferenceOpDef,
 )
-emig::EPackageOpDef_strategy = st.builds(
-    emig::EPackageOpDef,
+emig_EPackageOpDef_strategy = st.builds(
+    emig_EPackageOpDef,
 )
-emig::setterDef_strategy = st.builds(
-    emig::setterDef,
+emig_setterDef_strategy = st.builds(
+    emig_setterDef,
     operator=
         safe_text
 )
-emig::Artifact_strategy = st.builds(
-    emig::Artifact,
+emig_Artifact_strategy = st.builds(
+    emig_Artifact,
     type=
         safe_text
 )
-emig::Rule_strategy = st.builds(
-    emig::Rule,
+emig_Rule_strategy = st.builds(
+    emig_Rule,
     name=
         safe_text
 )
-emig::MigrationProgram_strategy = st.builds(
-    emig::MigrationProgram,
-    libs=
-        safe_text,
+emig_MigrationProgram_strategy = st.builds(
+    emig_MigrationProgram,
     migr=
         safe_text,
-    name=
+    libs=
         safe_text,
     delta=
+        safe_text,
+    name=
         safe_text
 )
-emig::MigrationLibrary_strategy = st.builds(
-    emig::MigrationLibrary,
+emig_MigrationLibrary_strategy = st.builds(
+    emig_MigrationLibrary,
     title=
         safe_text
 )
-emig::MyModel_strategy = st.builds(
-    emig::MyModel,
+emig_MyModel_strategy = st.builds(
+    emig_MyModel,
 )
 
 @given(instance=OclUndefinedExp_strategy)
@@ -1188,403 +1188,370 @@ emig::MyModel_strategy = st.builds(
 def test_oclundefinedexp_instantiation(instance):
     assert isinstance(instance, OclUndefinedExp)
 
-@given(instance=emig::OclUndefinedExp_strategy)
+@given(instance=emig_OclUndefinedExp_strategy)
 @settings(max_examples=50)
-def test_emig::oclundefinedexp_instantiation(instance):
-    assert isinstance(instance, emig::OclUndefinedExp)
+def test_emig_oclundefinedexp_instantiation(instance):
+    assert isinstance(instance, emig_OclUndefinedExp)
 
 @given(instance=MapExp_strategy)
 @settings(max_examples=50)
 def test_mapexp_instantiation(instance):
     assert isinstance(instance, MapExp)
 
-@given(instance=emig::MapExp_strategy)
+@given(instance=emig_MapExp_strategy)
 @settings(max_examples=50)
-def test_emig::mapexp_instantiation(instance):
-    assert isinstance(instance, emig::MapExp)
+def test_emig_mapexp_instantiation(instance):
+    assert isinstance(instance, emig_MapExp)
 
 @given(instance=TupleExp_strategy)
 @settings(max_examples=50)
 def test_tupleexp_instantiation(instance):
     assert isinstance(instance, TupleExp)
 
-@given(instance=emig::TupleExp_strategy)
+@given(instance=emig_TupleExp_strategy)
 @settings(max_examples=50)
-def test_emig::tupleexp_instantiation(instance):
-    assert isinstance(instance, emig::TupleExp)
+def test_emig_tupleexp_instantiation(instance):
+    assert isinstance(instance, emig_TupleExp)
 
 @given(instance=SetExp_strategy)
 @settings(max_examples=50)
 def test_setexp_instantiation(instance):
     assert isinstance(instance, SetExp)
 
-@given(instance=emig::SetExp_strategy)
+@given(instance=emig_SetExp_strategy)
 @settings(max_examples=50)
-def test_emig::setexp_instantiation(instance):
-    assert isinstance(instance, emig::SetExp)
+def test_emig_setexp_instantiation(instance):
+    assert isinstance(instance, emig_SetExp)
 
 @given(instance=SequenceExp_strategy)
 @settings(max_examples=50)
 def test_sequenceexp_instantiation(instance):
     assert isinstance(instance, SequenceExp)
 
-@given(instance=emig::SequenceExp_strategy)
+@given(instance=emig_SequenceExp_strategy)
 @settings(max_examples=50)
-def test_emig::sequenceexp_instantiation(instance):
-    assert isinstance(instance, emig::SequenceExp)
+def test_emig_sequenceexp_instantiation(instance):
+    assert isinstance(instance, emig_SequenceExp)
 
 @given(instance=OrderedSetExp_strategy)
 @settings(max_examples=50)
 def test_orderedsetexp_instantiation(instance):
     assert isinstance(instance, OrderedSetExp)
 
-@given(instance=emig::OrderedSetExp_strategy)
+@given(instance=emig_OrderedSetExp_strategy)
 @settings(max_examples=50)
-def test_emig::orderedsetexp_instantiation(instance):
-    assert isinstance(instance, emig::OrderedSetExp)
+def test_emig_orderedsetexp_instantiation(instance):
+    assert isinstance(instance, emig_OrderedSetExp)
 
 @given(instance=BagExp_strategy)
 @settings(max_examples=50)
 def test_bagexp_instantiation(instance):
     assert isinstance(instance, BagExp)
 
-@given(instance=emig::BagExp_strategy)
+@given(instance=emig_BagExp_strategy)
 @settings(max_examples=50)
-def test_emig::bagexp_instantiation(instance):
-    assert isinstance(instance, emig::BagExp)
+def test_emig_bagexp_instantiation(instance):
+    assert isinstance(instance, emig_BagExp)
 
 @given(instance=SuperExp_strategy)
 @settings(max_examples=50)
 def test_superexp_instantiation(instance):
     assert isinstance(instance, SuperExp)
 
-@given(instance=emig::VariableDeclaration_strategy)
+@given(instance=emig_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_emig::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, emig::VariableDeclaration)
+def test_emig_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, emig_VariableDeclaration)
 
 @given(instance=Migrator_strategy)
 @settings(max_examples=50)
 def test_migrator_instantiation(instance):
     assert isinstance(instance, Migrator)
 
-@given(instance=emig::Migrator_strategy)
+@given(instance=emig_Migrator_strategy)
 @settings(max_examples=50)
-def test_emig::migrator_instantiation(instance):
-    assert isinstance(instance, emig::Migrator)
+def test_emig_migrator_instantiation(instance):
+    assert isinstance(instance, emig_Migrator)
 
-@given(instance=emig::MigratorDX_strategy)
+@given(instance=emig_MigratorDX_strategy)
 @settings(max_examples=50)
-def test_emig::migratordx_instantiation(instance):
-    assert isinstance(instance, emig::MigratorDX)
-
-@given(instance=emig::MigratorDX_strategy)
-def test_emig::migratordx_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emig_migratordx_instantiation(instance):
+    assert isinstance(instance, emig_MigratorDX)
 
 
-@given(instance=emig::MigratorDX_strategy)
-def test_emig::migratordx_name_setter(instance):
+
+@given(instance=emig_MigratorDX_strategy)
+def test_emig_migratordx_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=emig::MigratorSX_strategy)
+@given(instance=emig_MigratorSX_strategy)
 @settings(max_examples=50)
-def test_emig::migratorsx_instantiation(instance):
-    assert isinstance(instance, emig::MigratorSX)
+def test_emig_migratorsx_instantiation(instance):
+    assert isinstance(instance, emig_MigratorSX)
 
-@given(instance=emig::Parameter_strategy)
+@given(instance=emig_Parameter_strategy)
 @settings(max_examples=50)
-def test_emig::parameter_instantiation(instance):
-    assert isinstance(instance, emig::Parameter)
-
-@given(instance=emig::Parameter_strategy)
-def test_emig::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emig_parameter_instantiation(instance):
+    assert isinstance(instance, emig_Parameter)
 
 
-@given(instance=emig::Parameter_strategy)
-def test_emig::parameter_name_setter(instance):
+
+@given(instance=emig_Parameter_strategy)
+def test_emig_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=emig::SuperExp_strategy)
+@given(instance=emig_SuperExp_strategy)
 @settings(max_examples=50)
-def test_emig::superexp_instantiation(instance):
-    assert isinstance(instance, emig::SuperExp)
+def test_emig_superexp_instantiation(instance):
+    assert isinstance(instance, emig_SuperExp)
 
 @given(instance=VariableExp_strategy)
 @settings(max_examples=50)
 def test_variableexp_instantiation(instance):
     assert isinstance(instance, VariableExp)
 
-@given(instance=emig::VariableExp_strategy)
+@given(instance=emig_VariableExp_strategy)
 @settings(max_examples=50)
-def test_emig::variableexp_instantiation(instance):
-    assert isinstance(instance, emig::VariableExp)
+def test_emig_variableexp_instantiation(instance):
+    assert isinstance(instance, emig_VariableExp)
 
 @given(instance=OclExpression_strategy)
 @settings(max_examples=50)
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=emig::NavigationOrAttributeCallExp_strategy)
+@given(instance=emig_NavigationOrAttributeCallExp_strategy)
 @settings(max_examples=50)
-def test_emig::navigationorattributecallexp_instantiation(instance):
-    assert isinstance(instance, emig::NavigationOrAttributeCallExp)
+def test_emig_navigationorattributecallexp_instantiation(instance):
+    assert isinstance(instance, emig_NavigationOrAttributeCallExp)
 
 @given(instance=EReference_strategy)
 @settings(max_examples=50)
 def test_ereference_instantiation(instance):
     assert isinstance(instance, EReference)
 
-@given(instance=emig::Reference_strategy)
+@given(instance=emig_Reference_strategy)
 @settings(max_examples=50)
-def test_emig::reference_instantiation(instance):
-    assert isinstance(instance, emig::Reference)
+def test_emig_reference_instantiation(instance):
+    assert isinstance(instance, emig_Reference)
 
 @given(instance=EAttribute_strategy)
 @settings(max_examples=50)
 def test_eattribute_instantiation(instance):
     assert isinstance(instance, EAttribute)
 
-@given(instance=emig::Attribute_strategy)
+@given(instance=emig_Attribute_strategy)
 @settings(max_examples=50)
-def test_emig::attribute_instantiation(instance):
-    assert isinstance(instance, emig::Attribute)
+def test_emig_attribute_instantiation(instance):
+    assert isinstance(instance, emig_Attribute)
 
 @given(instance=EClass_strategy)
 @settings(max_examples=50)
 def test_eclass_instantiation(instance):
     assert isinstance(instance, EClass)
 
-@given(instance=emig::Class_strategy)
+@given(instance=emig_Class_strategy)
 @settings(max_examples=50)
-def test_emig::class_instantiation(instance):
-    assert isinstance(instance, emig::Class)
+def test_emig_class_instantiation(instance):
+    assert isinstance(instance, emig_Class)
 
 @given(instance=EPackage_strategy)
 @settings(max_examples=50)
 def test_epackage_instantiation(instance):
     assert isinstance(instance, EPackage)
 
-@given(instance=emig::Package_strategy)
+@given(instance=emig_Package_strategy)
 @settings(max_examples=50)
-def test_emig::package_instantiation(instance):
-    assert isinstance(instance, emig::Package)
+def test_emig_package_instantiation(instance):
+    assert isinstance(instance, emig_Package)
 
-@given(instance=emig::DotNavigationObjDX_strategy)
+@given(instance=emig_DotNavigationObjDX_strategy)
 @settings(max_examples=50)
-def test_emig::dotnavigationobjdx_instantiation(instance):
-    assert isinstance(instance, emig::DotNavigationObjDX)
+def test_emig_dotnavigationobjdx_instantiation(instance):
+    assert isinstance(instance, emig_DotNavigationObjDX)
 
-@given(instance=emig::EObject_strategy)
+@given(instance=emig_EObject_strategy)
 @settings(max_examples=50)
-def test_emig::eobject_instantiation(instance):
-    assert isinstance(instance, emig::EObject)
+def test_emig_eobject_instantiation(instance):
+    assert isinstance(instance, emig_EObject)
 
-@given(instance=emig::DotNavigationObjSX_strategy)
+@given(instance=emig_DotNavigationObjSX_strategy)
 @settings(max_examples=50)
-def test_emig::dotnavigationobjsx_instantiation(instance):
-    assert isinstance(instance, emig::DotNavigationObjSX)
+def test_emig_dotnavigationobjsx_instantiation(instance):
+    assert isinstance(instance, emig_DotNavigationObjSX)
 
-@given(instance=emig::OclExpression_strategy)
+@given(instance=emig_OclExpression_strategy)
 @settings(max_examples=50)
-def test_emig::oclexpression_instantiation(instance):
-    assert isinstance(instance, emig::OclExpression)
+def test_emig_oclexpression_instantiation(instance):
+    assert isinstance(instance, emig_OclExpression)
 
-@given(instance=emig::FilterMigrator_strategy)
+@given(instance=emig_FilterMigrator_strategy)
 @settings(max_examples=50)
-def test_emig::filtermigrator_instantiation(instance):
-    assert isinstance(instance, emig::FilterMigrator)
+def test_emig_filtermigrator_instantiation(instance):
+    assert isinstance(instance, emig_FilterMigrator)
 
-@given(instance=emig::RewritingRule_strategy)
+@given(instance=emig_RewritingRule_strategy)
 @settings(max_examples=50)
-def test_emig::rewritingrule_instantiation(instance):
-    assert isinstance(instance, emig::RewritingRule)
+def test_emig_rewritingrule_instantiation(instance):
+    assert isinstance(instance, emig_RewritingRule)
 
-@given(instance=emig::OpDef_strategy)
+@given(instance=emig_OpDef_strategy)
 @settings(max_examples=50)
-def test_emig::opdef_instantiation(instance):
-    assert isinstance(instance, emig::OpDef)
-
-@given(instance=emig::OpDef_strategy)
-def test_emig::opdef_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_emig_opdef_instantiation(instance):
+    assert isinstance(instance, emig_OpDef)
 
 
-@given(instance=emig::OpDef_strategy)
-def test_emig::opdef_op_setter(instance):
+
+@given(instance=emig_OpDef_strategy)
+def test_emig_opdef_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=emig::EPackage_strategy)
+@given(instance=emig_EPackage_strategy)
 @settings(max_examples=50)
-def test_emig::epackage_instantiation(instance):
-    assert isinstance(instance, emig::EPackage)
+def test_emig_epackage_instantiation(instance):
+    assert isinstance(instance, emig_EPackage)
 
-@given(instance=emig::EStructuralFeature_strategy)
+@given(instance=emig_EStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_emig::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, emig::EStructuralFeature)
+def test_emig_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, emig_EStructuralFeature)
 
-@given(instance=emig::EReference_strategy)
+@given(instance=emig_EReference_strategy)
 @settings(max_examples=50)
-def test_emig::ereference_instantiation(instance):
-    assert isinstance(instance, emig::EReference)
+def test_emig_ereference_instantiation(instance):
+    assert isinstance(instance, emig_EReference)
 
-@given(instance=emig::EAttribute_strategy)
+@given(instance=emig_EAttribute_strategy)
 @settings(max_examples=50)
-def test_emig::eattribute_instantiation(instance):
-    assert isinstance(instance, emig::EAttribute)
+def test_emig_eattribute_instantiation(instance):
+    assert isinstance(instance, emig_EAttribute)
 
-@given(instance=emig::EClass_strategy)
+@given(instance=emig_EClass_strategy)
 @settings(max_examples=50)
-def test_emig::eclass_instantiation(instance):
-    assert isinstance(instance, emig::EClass)
+def test_emig_eclass_instantiation(instance):
+    assert isinstance(instance, emig_EClass)
 
 @given(instance=OpDef_strategy)
 @settings(max_examples=50)
 def test_opdef_instantiation(instance):
     assert isinstance(instance, OpDef)
 
-@given(instance=emig::EClassOpDef_strategy)
+@given(instance=emig_EAttributeOpDef_strategy)
 @settings(max_examples=50)
-def test_emig::eclassopdef_instantiation(instance):
-    assert isinstance(instance, emig::EClassOpDef)
+def test_emig_eattributeopdef_instantiation(instance):
+    assert isinstance(instance, emig_EAttributeOpDef)
 
-@given(instance=emig::EReferenceOpDef_strategy)
+@given(instance=emig_EClassOpDef_strategy)
 @settings(max_examples=50)
-def test_emig::ereferenceopdef_instantiation(instance):
-    assert isinstance(instance, emig::EReferenceOpDef)
+def test_emig_eclassopdef_instantiation(instance):
+    assert isinstance(instance, emig_EClassOpDef)
 
-@given(instance=emig::EAttributeOpDef_strategy)
+@given(instance=emig_EReferenceOpDef_strategy)
 @settings(max_examples=50)
-def test_emig::eattributeopdef_instantiation(instance):
-    assert isinstance(instance, emig::EAttributeOpDef)
+def test_emig_ereferenceopdef_instantiation(instance):
+    assert isinstance(instance, emig_EReferenceOpDef)
 
-@given(instance=emig::EPackageOpDef_strategy)
+@given(instance=emig_EPackageOpDef_strategy)
 @settings(max_examples=50)
-def test_emig::epackageopdef_instantiation(instance):
-    assert isinstance(instance, emig::EPackageOpDef)
+def test_emig_epackageopdef_instantiation(instance):
+    assert isinstance(instance, emig_EPackageOpDef)
 
-@given(instance=emig::setterDef_strategy)
+@given(instance=emig_setterDef_strategy)
 @settings(max_examples=50)
-def test_emig::setterdef_instantiation(instance):
-    assert isinstance(instance, emig::setterDef)
-
-@given(instance=emig::setterDef_strategy)
-def test_emig::setterdef_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_emig_setterdef_instantiation(instance):
+    assert isinstance(instance, emig_setterDef)
 
 
-@given(instance=emig::setterDef_strategy)
-def test_emig::setterdef_operator_setter(instance):
+
+@given(instance=emig_setterDef_strategy)
+def test_emig_setterdef_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=emig::Artifact_strategy)
+@given(instance=emig_Artifact_strategy)
 @settings(max_examples=50)
-def test_emig::artifact_instantiation(instance):
-    assert isinstance(instance, emig::Artifact)
-
-@given(instance=emig::Artifact_strategy)
-def test_emig::artifact_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_emig_artifact_instantiation(instance):
+    assert isinstance(instance, emig_Artifact)
 
 
-@given(instance=emig::Artifact_strategy)
-def test_emig::artifact_type_setter(instance):
+
+@given(instance=emig_Artifact_strategy)
+def test_emig_artifact_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=emig::Rule_strategy)
+@given(instance=emig_Rule_strategy)
 @settings(max_examples=50)
-def test_emig::rule_instantiation(instance):
-    assert isinstance(instance, emig::Rule)
-
-@given(instance=emig::Rule_strategy)
-def test_emig::rule_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emig_rule_instantiation(instance):
+    assert isinstance(instance, emig_Rule)
 
 
-@given(instance=emig::Rule_strategy)
-def test_emig::rule_name_setter(instance):
+
+@given(instance=emig_Rule_strategy)
+def test_emig_rule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=emig::MigrationProgram_strategy)
+@given(instance=emig_MigrationProgram_strategy)
 @settings(max_examples=50)
-def test_emig::migrationprogram_instantiation(instance):
-    assert isinstance(instance, emig::MigrationProgram)
-
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_libs_type(instance):
-    assert isinstance(instance.libs, str)
+def test_emig_migrationprogram_instantiation(instance):
+    assert isinstance(instance, emig_MigrationProgram)
 
 
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_libs_setter(instance):
-    original = instance.libs
-    instance.libs = original
-    assert instance.libs == original
 
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_migr_type(instance):
-    assert isinstance(instance.migr, str)
-
-
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_migr_setter(instance):
+@given(instance=emig_MigrationProgram_strategy)
+def test_emig_migrationprogram_migr_setter(instance):
     original = instance.migr
     instance.migr = original
     assert instance.migr == original
 
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_delta_type(instance):
-    assert isinstance(instance.delta, str)
+@given(instance=emig_MigrationProgram_strategy)
+def test_emig_migrationprogram_libs_setter(instance):
+    original = instance.libs
+    instance.libs = original
+    assert instance.libs == original
 
 
-@given(instance=emig::MigrationProgram_strategy)
-def test_emig::migrationprogram_delta_setter(instance):
+
+@given(instance=emig_MigrationProgram_strategy)
+def test_emig_migrationprogram_delta_setter(instance):
     original = instance.delta
     instance.delta = original
     assert instance.delta == original
 
-@given(instance=emig::MigrationLibrary_strategy)
+
+
+@given(instance=emig_MigrationProgram_strategy)
+def test_emig_migrationprogram_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=emig_MigrationLibrary_strategy)
 @settings(max_examples=50)
-def test_emig::migrationlibrary_instantiation(instance):
-    assert isinstance(instance, emig::MigrationLibrary)
-
-@given(instance=emig::MigrationLibrary_strategy)
-def test_emig::migrationlibrary_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_emig_migrationlibrary_instantiation(instance):
+    assert isinstance(instance, emig_MigrationLibrary)
 
 
-@given(instance=emig::MigrationLibrary_strategy)
-def test_emig::migrationlibrary_title_setter(instance):
+
+@given(instance=emig_MigrationLibrary_strategy)
+def test_emig_migrationlibrary_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=emig::MyModel_strategy)
+@given(instance=emig_MyModel_strategy)
 @settings(max_examples=50)
-def test_emig::mymodel_instantiation(instance):
-    assert isinstance(instance, emig::MyModel)
+def test_emig_mymodel_instantiation(instance):
+    assert isinstance(instance, emig_MyModel)

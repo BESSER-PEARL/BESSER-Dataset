@@ -1,0 +1,42 @@
+The model has 19 class(es).
+The class 'Address' has the following attributes: 'streetnumber' of type str; 'country' of type str; 'street' of type str; 'city' of type str; 'zipCode' of type str.
+The class 'Profile2' has the following attributes: 'firstName' of type str; 'username' of type str; 'name' of type str; 'email' of type str.
+The class 'Image' has no attributes.
+The class 'Settings' has the following attributes: 'firstName' of type str; 'notificationChannels' of type str; 'email' of type str; 'name' of type str; 'username' of type str.
+The class 'Video' has no attributes.
+The class 'Profile' has the following attributes: 'email' of type str; 'firstName' of type str; 'name' of type str; 'username' of type str.
+The class 'Message' has no attributes.
+The class 'Tenant' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'Friend' has no attributes.
+The class 'Tag' has the following attributes: 'name' of type str.
+The class 'LogEntry' has the following attributes: 'time' of type str; 'objectType' of type str; 'objectId' of type str; '_attr' of type str.
+The class 'Group' has no attributes.
+The class 'User' has the following attributes: 'userId' of type str; 'password' of type str; 'active' of type bool.
+The class 'Media' has the following attributes: 'mimetype' of type str; 'mediaPool' of type MediaPool; 'description' of type str; 'filesize' of type int; 'active' of type bool; 'name' of type str; 'link' of type str.
+The class 'ContentPage' has the following attributes: 'priorityExpiryDate' of type Date; 'externalSource' of type str; 'address' of type Address; 'author' of type AdminUser; 'references' of type str; 'media' of type Media; 'date' of type Date; 'priority' of type str; 'active' of type bool; 'state' of type str; 'tags' of type str; 'headline' of type str; 'attribute' of type str; 'content' of type str; 'content1' of type str; 'expiryDate' of type Date; 'title' of type str; 'publishingDate' of type Date.
+The class 'AbstractEntity' has the following attributes: 'modifiedBy' of type User; 'createdBy' of type User; 'modifiedAt' of type date; 'id' of type str; 'createdAt' of type Date.
+The class 'AdminUser' has the following attributes: 'email' of type str; 'active' of type bool; 'roles' of type str; 'password' of type str; 'id' of type str; 'phone' of type str; 'username' of type str.
+The class 'MediaPool' has the following attributes: 'assets' of type str; 'name' of type str.
+The class 'int2_Interface' has no attributes.
+The enumeration 'MediaType' does not specify any literals.
+The enumeration 'VIDEO' does not specify any literals.
+The enumeration 'Date' does not specify any literals.
+The enumeration 'ContentPagePublicityState' does not specify any literals.
+The enumeration 'PublicityState' does not specify any literals.
+The enumeration 'Enumeration' does not specify any literals.
+'Media' (role 'mediaPool11', cardinality 0..*) is associated with 'MediaPool' (role 'media10', cardinality 0..*).
+'AbstractEntity' (role 'tenant14', cardinality 0..*) is associated with 'Tenant' (role 'abstractEntity15', cardinality 0..*).
+'Tenant' (role 'abstractEntity26', cardinality 0..*) is associated with 'AbstractEntity' (role 'tenant27', cardinality 0..*).
+'User' (role 'message4', cardinality 0..*) is associated with 'Message' (role 'user5', cardinality 0..*).
+'AdminUser' (role 'contentPage31', cardinality 0..*) is associated with 'ContentPage' (role 'author30', cardinality 0..*).
+'Settings' (role 'user21', cardinality 0..*) is associated with 'User' (role 'settings20', cardinality 0..*).
+'MediaPool' (role 'parent16', cardinality 0..*) is associated with 'MediaPool' (role 'mediaPool17', cardinality 0..*).
+'Settings' (role 'user8', cardinality 0..*) is associated with 'User' (role 'settings9', cardinality 0..*).
+'Profile' (role 'user6', cardinality 0..*) is associated with 'User' (role 'profile7', cardinality 0..*).
+'Profile' (role 'user1', cardinality 0..*) is associated with 'User' (role 'myprofile0', cardinality 0..*).
+'Profile' (role 'user23', cardinality 0..*) is associated with 'User' (role 'profile22', cardinality 0..*).
+'Group' (role 'user3', cardinality 0..*) is associated with 'User' (role 'group2', cardinality 0..*).
+'Tag' (role 'contentPage19', cardinality 0..*) is associated with 'ContentPage' (role 'tag18', cardinality 0..*).
+'Media' (role 'mediaPool13', cardinality 0..*) is associated with 'MediaPool' (role 'assets12', cardinality 0..*).
+'ContentPage' (role 'address28', cardinality 0..*) is associated with 'Address' (role 'contentPage29', cardinality 0..*).
+'Tag' (role 'contentPage25', cardinality 0..*) is associated with 'ContentPage' (role 'tag24', cardinality 0..*).

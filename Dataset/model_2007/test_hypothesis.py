@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Trace::Trace,
-    Trace::TraceLink,
+from python_code import (
+    Trace_Trace,
+    Trace_TraceLink,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(Trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(Trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(Trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(Trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(Trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(Trace_Trace.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_trace::trace_has_description():
-    assert hasattr(Trace::Trace, "description")
+def test_trace_trace_has_description():
+    assert hasattr(Trace_Trace, "description")
     descriptor = None
-    for klass in Trace::Trace.__mro__:
+    for klass in Trace_Trace.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -40,65 +40,65 @@ def test_trace::trace_has_description():
 
 
 
-def test_trace::tracelink_is_not_abstract():
-    assert not inspect.isabstract(Trace::TraceLink)
+def test_trace_tracelink_is_not_abstract():
+    assert not inspect.isabstract(Trace_TraceLink)
 
 
-def test_trace::tracelink_constructor_exists():
-    assert callable(Trace::TraceLink.__init__)
+def test_trace_tracelink_constructor_exists():
+    assert callable(Trace_TraceLink.__init__)
 
 
-def test_trace::tracelink_constructor_args():
-    sig = inspect.signature(Trace::TraceLink.__init__)
+def test_trace_tracelink_constructor_args():
+    sig = inspect.signature(Trace_TraceLink.__init__)
     params = list(sig.parameters.keys())
-    assert "targetType" in params, "Missing parameter 'targetType'"
+    assert "description" in params, "Missing parameter 'description'"
     assert "sourceName" in params, "Missing parameter 'sourceName'"
     assert "targetName" in params, "Missing parameter 'targetName'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "sourceType" in params, "Missing parameter 'sourceType'"
+    assert "targetType" in params, "Missing parameter 'targetType'"
 
-def test_trace::tracelink_has_targetType():
-    assert hasattr(Trace::TraceLink, "targetType")
+def test_trace_tracelink_has_description():
+    assert hasattr(Trace_TraceLink, "description")
     descriptor = None
-    for klass in Trace::TraceLink.__mro__:
-        if "targetType" in klass.__dict__:
-            descriptor = klass.__dict__["targetType"]
+    for klass in Trace_TraceLink.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::tracelink_has_sourceName():
-    assert hasattr(Trace::TraceLink, "sourceName")
+def test_trace_tracelink_has_sourceName():
+    assert hasattr(Trace_TraceLink, "sourceName")
     descriptor = None
-    for klass in Trace::TraceLink.__mro__:
+    for klass in Trace_TraceLink.__mro__:
         if "sourceName" in klass.__dict__:
             descriptor = klass.__dict__["sourceName"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::tracelink_has_targetName():
-    assert hasattr(Trace::TraceLink, "targetName")
+def test_trace_tracelink_has_targetName():
+    assert hasattr(Trace_TraceLink, "targetName")
     descriptor = None
-    for klass in Trace::TraceLink.__mro__:
+    for klass in Trace_TraceLink.__mro__:
         if "targetName" in klass.__dict__:
             descriptor = klass.__dict__["targetName"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::tracelink_has_description():
-    assert hasattr(Trace::TraceLink, "description")
+def test_trace_tracelink_has_sourceType():
+    assert hasattr(Trace_TraceLink, "sourceType")
     descriptor = None
-    for klass in Trace::TraceLink.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in Trace_TraceLink.__mro__:
+        if "sourceType" in klass.__dict__:
+            descriptor = klass.__dict__["sourceType"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::tracelink_has_sourceType():
-    assert hasattr(Trace::TraceLink, "sourceType")
+def test_trace_tracelink_has_targetType():
+    assert hasattr(Trace_TraceLink, "targetType")
     descriptor = None
-    for klass in Trace::TraceLink.__mro__:
-        if "sourceType" in klass.__dict__:
-            descriptor = klass.__dict__["sourceType"]
+    for klass in Trace_TraceLink.__mro__:
+        if "targetType" in klass.__dict__:
+            descriptor = klass.__dict__["targetType"]
             break
     assert isinstance(descriptor, property)
 
@@ -114,97 +114,79 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Trace::Trace_strategy = st.builds(
-    Trace::Trace,
+Trace_Trace_strategy = st.builds(
+    Trace_Trace,
     description=
         safe_text
 )
-Trace::TraceLink_strategy = st.builds(
-    Trace::TraceLink,
-    targetType=
+Trace_TraceLink_strategy = st.builds(
+    Trace_TraceLink,
+    description=
         safe_text,
     sourceName=
         safe_text,
     targetName=
         safe_text,
-    description=
-        safe_text,
     sourceType=
+        safe_text,
+    targetType=
         safe_text
 )
 
-@given(instance=Trace::Trace_strategy)
+@given(instance=Trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, Trace::Trace)
-
-@given(instance=Trace::Trace_strategy)
-def test_trace::trace_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, Trace_Trace)
 
 
-@given(instance=Trace::Trace_strategy)
-def test_trace::trace_description_setter(instance):
+
+@given(instance=Trace_Trace_strategy)
+def test_trace_trace_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=Trace::TraceLink_strategy)
+@given(instance=Trace_TraceLink_strategy)
 @settings(max_examples=50)
-def test_trace::tracelink_instantiation(instance):
-    assert isinstance(instance, Trace::TraceLink)
-
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_targetType_type(instance):
-    assert isinstance(instance.targetType, str)
+def test_trace_tracelink_instantiation(instance):
+    assert isinstance(instance, Trace_TraceLink)
 
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_targetType_setter(instance):
-    original = instance.targetType
-    instance.targetType = original
-    assert instance.targetType == original
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_sourceName_type(instance):
-    assert isinstance(instance.sourceName, str)
+@given(instance=Trace_TraceLink_strategy)
+def test_trace_tracelink_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_sourceName_setter(instance):
+
+@given(instance=Trace_TraceLink_strategy)
+def test_trace_tracelink_sourceName_setter(instance):
     original = instance.sourceName
     instance.sourceName = original
     assert instance.sourceName == original
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_targetName_type(instance):
-    assert isinstance(instance.targetName, str)
 
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_targetName_setter(instance):
+@given(instance=Trace_TraceLink_strategy)
+def test_trace_tracelink_targetName_setter(instance):
     original = instance.targetName
     instance.targetName = original
     assert instance.targetName == original
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_sourceType_type(instance):
-    assert isinstance(instance.sourceType, str)
-
-
-@given(instance=Trace::TraceLink_strategy)
-def test_trace::tracelink_sourceType_setter(instance):
+@given(instance=Trace_TraceLink_strategy)
+def test_trace_tracelink_sourceType_setter(instance):
     original = instance.sourceType
     instance.sourceType = original
     assert instance.sourceType == original
+
+
+
+@given(instance=Trace_TraceLink_strategy)
+def test_trace_tracelink_targetType_setter(instance):
+    original = instance.targetType
+    instance.targetType = original
+    assert instance.targetType == original

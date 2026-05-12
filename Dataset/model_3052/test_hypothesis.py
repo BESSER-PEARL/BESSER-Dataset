@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    megal::Selection,
-    megal::MegalAnnotation,
-    megal::QueryStatement,
-    megal::QueryEntry,
+from python_code import (
+    megal_QueryStatement,
+    megal_QueryEntry,
     QueryEntry,
-    megal::QueryString,
-    megal::QueryEntity,
-    megal::QueryPos,
-    megal::QueryReference,
-    megal::QueryParam,
+    megal_QueryReference,
+    megal_QueryEntity,
+    megal_QueryString,
+    megal_QueryPos,
+    megal_QueryParam,
     MegalDeclaration,
-    megal::MegalPair,
-    megal::MegalRelationship,
+    megal_MegalPair,
+    megal_MegalRelationship,
     MegalNamed,
-    megal::MegalRelationshipType,
-    megal::MegalEntityType,
-    megal::MegalNamed,
-    megal::MegalEntity,
+    megal_MegalRelationshipType,
+    megal_MegalEntityType,
+    megal_MegalNamed,
+    megal_MegalEntity,
     MegalElement,
-    megal::MegalLink,
-    megal::MegalDeclaration,
-    megal::MegalFile,
-    megal::MegalElement,
+    megal_MegalLink,
+    megal_MegalDeclaration,
+    megal_MegalFile,
+    megal_MegalElement,
+    megal_Selection,
+    megal_MegalAnnotation,
 )
 
 # =============================================================================
@@ -37,68 +37,30 @@ from classes import (
 
 
 
-def test_megal::selection_is_not_abstract():
-    assert not inspect.isabstract(megal::Selection)
+def test_megal_querystatement_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryStatement)
 
 
-def test_megal::selection_constructor_exists():
-    assert callable(megal::Selection.__init__)
+def test_megal_querystatement_constructor_exists():
+    assert callable(megal_QueryStatement.__init__)
 
 
-def test_megal::selection_constructor_args():
-    sig = inspect.signature(megal::Selection.__init__)
+def test_megal_querystatement_constructor_args():
+    sig = inspect.signature(megal_QueryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_megal::megalannotation_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalAnnotation)
+def test_megal_queryentry_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryEntry)
 
 
-def test_megal::megalannotation_constructor_exists():
-    assert callable(megal::MegalAnnotation.__init__)
+def test_megal_queryentry_constructor_exists():
+    assert callable(megal_QueryEntry.__init__)
 
 
-def test_megal::megalannotation_constructor_args():
-    sig = inspect.signature(megal::MegalAnnotation.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-
-def test_megal::megalannotation_has_key():
-    assert hasattr(megal::MegalAnnotation, "key")
-    descriptor = None
-    for klass in megal::MegalAnnotation.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_megal::querystatement_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryStatement)
-
-
-def test_megal::querystatement_constructor_exists():
-    assert callable(megal::QueryStatement.__init__)
-
-
-def test_megal::querystatement_constructor_args():
-    sig = inspect.signature(megal::QueryStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_megal::queryentry_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryEntry)
-
-
-def test_megal::queryentry_constructor_exists():
-    assert callable(megal::QueryEntry.__init__)
-
-
-def test_megal::queryentry_constructor_args():
-    sig = inspect.signature(megal::QueryEntry.__init__)
+def test_megal_queryentry_constructor_args():
+    sig = inspect.signature(megal_QueryEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,23 +79,51 @@ def test_queryentry_constructor_args():
 
 
 
-def test_megal::querystring_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryString)
+def test_megal_queryreference_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryReference)
 
 
-def test_megal::querystring_constructor_exists():
-    assert callable(megal::QueryString.__init__)
+def test_megal_queryreference_constructor_exists():
+    assert callable(megal_QueryReference.__init__)
 
 
-def test_megal::querystring_constructor_args():
-    sig = inspect.signature(megal::QueryString.__init__)
+def test_megal_queryreference_constructor_args():
+    sig = inspect.signature(megal_QueryReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_megal_queryentity_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryEntity)
+
+
+def test_megal_queryentity_constructor_exists():
+    assert callable(megal_QueryEntity.__init__)
+
+
+def test_megal_queryentity_constructor_args():
+    sig = inspect.signature(megal_QueryEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_megal_querystring_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryString)
+
+
+def test_megal_querystring_constructor_exists():
+    assert callable(megal_QueryString.__init__)
+
+
+def test_megal_querystring_constructor_args():
+    sig = inspect.signature(megal_QueryString.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_megal::querystring_has_value():
-    assert hasattr(megal::QueryString, "value")
+def test_megal_querystring_has_value():
+    assert hasattr(megal_QueryString, "value")
     descriptor = None
-    for klass in megal::QueryString.__mro__:
+    for klass in megal_QueryString.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -141,37 +131,23 @@ def test_megal::querystring_has_value():
 
 
 
-def test_megal::queryentity_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryEntity)
+def test_megal_querypos_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryPos)
 
 
-def test_megal::queryentity_constructor_exists():
-    assert callable(megal::QueryEntity.__init__)
+def test_megal_querypos_constructor_exists():
+    assert callable(megal_QueryPos.__init__)
 
 
-def test_megal::queryentity_constructor_args():
-    sig = inspect.signature(megal::QueryEntity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_megal::querypos_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryPos)
-
-
-def test_megal::querypos_constructor_exists():
-    assert callable(megal::QueryPos.__init__)
-
-
-def test_megal::querypos_constructor_args():
-    sig = inspect.signature(megal::QueryPos.__init__)
+def test_megal_querypos_constructor_args():
+    sig = inspect.signature(megal_QueryPos.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_megal::querypos_has_value():
-    assert hasattr(megal::QueryPos, "value")
+def test_megal_querypos_has_value():
+    assert hasattr(megal_QueryPos, "value")
     descriptor = None
-    for klass in megal::QueryPos.__mro__:
+    for klass in megal_QueryPos.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -179,37 +155,23 @@ def test_megal::querypos_has_value():
 
 
 
-def test_megal::queryreference_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryReference)
+def test_megal_queryparam_is_not_abstract():
+    assert not inspect.isabstract(megal_QueryParam)
 
 
-def test_megal::queryreference_constructor_exists():
-    assert callable(megal::QueryReference.__init__)
+def test_megal_queryparam_constructor_exists():
+    assert callable(megal_QueryParam.__init__)
 
 
-def test_megal::queryreference_constructor_args():
-    sig = inspect.signature(megal::QueryReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_megal::queryparam_is_not_abstract():
-    assert not inspect.isabstract(megal::QueryParam)
-
-
-def test_megal::queryparam_constructor_exists():
-    assert callable(megal::QueryParam.__init__)
-
-
-def test_megal::queryparam_constructor_args():
-    sig = inspect.signature(megal::QueryParam.__init__)
+def test_megal_queryparam_constructor_args():
+    sig = inspect.signature(megal_QueryParam.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_megal::queryparam_has_name():
-    assert hasattr(megal::QueryParam, "name")
+def test_megal_queryparam_has_name():
+    assert hasattr(megal_QueryParam, "name")
     descriptor = None
-    for klass in megal::QueryParam.__mro__:
+    for klass in megal_QueryParam.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -231,30 +193,30 @@ def test_megaldeclaration_constructor_args():
 
 
 
-def test_megal::megalpair_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalPair)
+def test_megal_megalpair_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalPair)
 
 
-def test_megal::megalpair_constructor_exists():
-    assert callable(megal::MegalPair.__init__)
+def test_megal_megalpair_constructor_exists():
+    assert callable(megal_MegalPair.__init__)
 
 
-def test_megal::megalpair_constructor_args():
-    sig = inspect.signature(megal::MegalPair.__init__)
+def test_megal_megalpair_constructor_args():
+    sig = inspect.signature(megal_MegalPair.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_megal::megalrelationship_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalRelationship)
+def test_megal_megalrelationship_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalRelationship)
 
 
-def test_megal::megalrelationship_constructor_exists():
-    assert callable(megal::MegalRelationship.__init__)
+def test_megal_megalrelationship_constructor_exists():
+    assert callable(megal_MegalRelationship.__init__)
 
 
-def test_megal::megalrelationship_constructor_args():
-    sig = inspect.signature(megal::MegalRelationship.__init__)
+def test_megal_megalrelationship_constructor_args():
+    sig = inspect.signature(megal_MegalRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -273,53 +235,53 @@ def test_megalnamed_constructor_args():
 
 
 
-def test_megal::megalrelationshiptype_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalRelationshipType)
+def test_megal_megalrelationshiptype_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalRelationshipType)
 
 
-def test_megal::megalrelationshiptype_constructor_exists():
-    assert callable(megal::MegalRelationshipType.__init__)
+def test_megal_megalrelationshiptype_constructor_exists():
+    assert callable(megal_MegalRelationshipType.__init__)
 
 
-def test_megal::megalrelationshiptype_constructor_args():
-    sig = inspect.signature(megal::MegalRelationshipType.__init__)
+def test_megal_megalrelationshiptype_constructor_args():
+    sig = inspect.signature(megal_MegalRelationshipType.__init__)
     params = list(sig.parameters.keys())
-    assert "leftBoth" in params, "Missing parameter 'leftBoth'"
-    assert "rightMany" in params, "Missing parameter 'rightMany'"
     assert "rightBoth" in params, "Missing parameter 'rightBoth'"
+    assert "rightMany" in params, "Missing parameter 'rightMany'"
+    assert "leftBoth" in params, "Missing parameter 'leftBoth'"
     assert "leftMany" in params, "Missing parameter 'leftMany'"
 
-def test_megal::megalrelationshiptype_has_leftBoth():
-    assert hasattr(megal::MegalRelationshipType, "leftBoth")
+def test_megal_megalrelationshiptype_has_rightBoth():
+    assert hasattr(megal_MegalRelationshipType, "rightBoth")
     descriptor = None
-    for klass in megal::MegalRelationshipType.__mro__:
-        if "leftBoth" in klass.__dict__:
-            descriptor = klass.__dict__["leftBoth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_megal::megalrelationshiptype_has_rightMany():
-    assert hasattr(megal::MegalRelationshipType, "rightMany")
-    descriptor = None
-    for klass in megal::MegalRelationshipType.__mro__:
-        if "rightMany" in klass.__dict__:
-            descriptor = klass.__dict__["rightMany"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_megal::megalrelationshiptype_has_rightBoth():
-    assert hasattr(megal::MegalRelationshipType, "rightBoth")
-    descriptor = None
-    for klass in megal::MegalRelationshipType.__mro__:
+    for klass in megal_MegalRelationshipType.__mro__:
         if "rightBoth" in klass.__dict__:
             descriptor = klass.__dict__["rightBoth"]
             break
     assert isinstance(descriptor, property)
 
-def test_megal::megalrelationshiptype_has_leftMany():
-    assert hasattr(megal::MegalRelationshipType, "leftMany")
+def test_megal_megalrelationshiptype_has_rightMany():
+    assert hasattr(megal_MegalRelationshipType, "rightMany")
     descriptor = None
-    for klass in megal::MegalRelationshipType.__mro__:
+    for klass in megal_MegalRelationshipType.__mro__:
+        if "rightMany" in klass.__dict__:
+            descriptor = klass.__dict__["rightMany"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_megal_megalrelationshiptype_has_leftBoth():
+    assert hasattr(megal_MegalRelationshipType, "leftBoth")
+    descriptor = None
+    for klass in megal_MegalRelationshipType.__mro__:
+        if "leftBoth" in klass.__dict__:
+            descriptor = klass.__dict__["leftBoth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_megal_megalrelationshiptype_has_leftMany():
+    assert hasattr(megal_MegalRelationshipType, "leftMany")
+    descriptor = None
+    for klass in megal_MegalRelationshipType.__mro__:
         if "leftMany" in klass.__dict__:
             descriptor = klass.__dict__["leftMany"]
             break
@@ -327,37 +289,37 @@ def test_megal::megalrelationshiptype_has_leftMany():
 
 
 
-def test_megal::megalentitytype_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalEntityType)
+def test_megal_megalentitytype_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalEntityType)
 
 
-def test_megal::megalentitytype_constructor_exists():
-    assert callable(megal::MegalEntityType.__init__)
+def test_megal_megalentitytype_constructor_exists():
+    assert callable(megal_MegalEntityType.__init__)
 
 
-def test_megal::megalentitytype_constructor_args():
-    sig = inspect.signature(megal::MegalEntityType.__init__)
+def test_megal_megalentitytype_constructor_args():
+    sig = inspect.signature(megal_MegalEntityType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_megal::megalnamed_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalNamed)
+def test_megal_megalnamed_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalNamed)
 
 
-def test_megal::megalnamed_constructor_exists():
-    assert callable(megal::MegalNamed.__init__)
+def test_megal_megalnamed_constructor_exists():
+    assert callable(megal_MegalNamed.__init__)
 
 
-def test_megal::megalnamed_constructor_args():
-    sig = inspect.signature(megal::MegalNamed.__init__)
+def test_megal_megalnamed_constructor_args():
+    sig = inspect.signature(megal_MegalNamed.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_megal::megalnamed_has_name():
-    assert hasattr(megal::MegalNamed, "name")
+def test_megal_megalnamed_has_name():
+    assert hasattr(megal_MegalNamed, "name")
     descriptor = None
-    for klass in megal::MegalNamed.__mro__:
+    for klass in megal_MegalNamed.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -365,23 +327,23 @@ def test_megal::megalnamed_has_name():
 
 
 
-def test_megal::megalentity_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalEntity)
+def test_megal_megalentity_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalEntity)
 
 
-def test_megal::megalentity_constructor_exists():
-    assert callable(megal::MegalEntity.__init__)
+def test_megal_megalentity_constructor_exists():
+    assert callable(megal_MegalEntity.__init__)
 
 
-def test_megal::megalentity_constructor_args():
-    sig = inspect.signature(megal::MegalEntity.__init__)
+def test_megal_megalentity_constructor_args():
+    sig = inspect.signature(megal_MegalEntity.__init__)
     params = list(sig.parameters.keys())
     assert "many" in params, "Missing parameter 'many'"
 
-def test_megal::megalentity_has_many():
-    assert hasattr(megal::MegalEntity, "many")
+def test_megal_megalentity_has_many():
+    assert hasattr(megal_MegalEntity, "many")
     descriptor = None
-    for klass in megal::MegalEntity.__mro__:
+    for klass in megal_MegalEntity.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
@@ -403,23 +365,23 @@ def test_megalelement_constructor_args():
 
 
 
-def test_megal::megallink_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalLink)
+def test_megal_megallink_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalLink)
 
 
-def test_megal::megallink_constructor_exists():
-    assert callable(megal::MegalLink.__init__)
+def test_megal_megallink_constructor_exists():
+    assert callable(megal_MegalLink.__init__)
 
 
-def test_megal::megallink_constructor_args():
-    sig = inspect.signature(megal::MegalLink.__init__)
+def test_megal_megallink_constructor_args():
+    sig = inspect.signature(megal_MegalLink.__init__)
     params = list(sig.parameters.keys())
     assert "to" in params, "Missing parameter 'to'"
 
-def test_megal::megallink_has_to():
-    assert hasattr(megal::MegalLink, "to")
+def test_megal_megallink_has_to():
+    assert hasattr(megal_MegalLink, "to")
     descriptor = None
-    for klass in megal::MegalLink.__mro__:
+    for klass in megal_MegalLink.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
@@ -427,37 +389,37 @@ def test_megal::megallink_has_to():
 
 
 
-def test_megal::megaldeclaration_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalDeclaration)
+def test_megal_megaldeclaration_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalDeclaration)
 
 
-def test_megal::megaldeclaration_constructor_exists():
-    assert callable(megal::MegalDeclaration.__init__)
+def test_megal_megaldeclaration_constructor_exists():
+    assert callable(megal_MegalDeclaration.__init__)
 
 
-def test_megal::megaldeclaration_constructor_args():
-    sig = inspect.signature(megal::MegalDeclaration.__init__)
+def test_megal_megaldeclaration_constructor_args():
+    sig = inspect.signature(megal_MegalDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_megal::megalfile_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalFile)
+def test_megal_megalfile_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalFile)
 
 
-def test_megal::megalfile_constructor_exists():
-    assert callable(megal::MegalFile.__init__)
+def test_megal_megalfile_constructor_exists():
+    assert callable(megal_MegalFile.__init__)
 
 
-def test_megal::megalfile_constructor_args():
-    sig = inspect.signature(megal::MegalFile.__init__)
+def test_megal_megalfile_constructor_args():
+    sig = inspect.signature(megal_MegalFile.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_megal::megalfile_has_name():
-    assert hasattr(megal::MegalFile, "name")
+def test_megal_megalfile_has_name():
+    assert hasattr(megal_MegalFile, "name")
     descriptor = None
-    for klass in megal::MegalFile.__mro__:
+    for klass in megal_MegalFile.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -465,17 +427,55 @@ def test_megal::megalfile_has_name():
 
 
 
-def test_megal::megalelement_is_not_abstract():
-    assert not inspect.isabstract(megal::MegalElement)
+def test_megal_megalelement_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalElement)
 
 
-def test_megal::megalelement_constructor_exists():
-    assert callable(megal::MegalElement.__init__)
+def test_megal_megalelement_constructor_exists():
+    assert callable(megal_MegalElement.__init__)
 
 
-def test_megal::megalelement_constructor_args():
-    sig = inspect.signature(megal::MegalElement.__init__)
+def test_megal_megalelement_constructor_args():
+    sig = inspect.signature(megal_MegalElement.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_megal_selection_is_not_abstract():
+    assert not inspect.isabstract(megal_Selection)
+
+
+def test_megal_selection_constructor_exists():
+    assert callable(megal_Selection.__init__)
+
+
+def test_megal_selection_constructor_args():
+    sig = inspect.signature(megal_Selection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_megal_megalannotation_is_not_abstract():
+    assert not inspect.isabstract(megal_MegalAnnotation)
+
+
+def test_megal_megalannotation_constructor_exists():
+    assert callable(megal_MegalAnnotation.__init__)
+
+
+def test_megal_megalannotation_constructor_args():
+    sig = inspect.signature(megal_MegalAnnotation.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_megal_megalannotation_has_key():
+    assert hasattr(megal_MegalAnnotation, "key")
+    descriptor = None
+    for klass in megal_MegalAnnotation.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -489,190 +489,160 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-megal::Selection_strategy = st.builds(
-    megal::Selection,
+megal_QueryStatement_strategy = st.builds(
+    megal_QueryStatement,
 )
-megal::MegalAnnotation_strategy = st.builds(
-    megal::MegalAnnotation,
-    key=
-        safe_text
-)
-megal::QueryStatement_strategy = st.builds(
-    megal::QueryStatement,
-)
-megal::QueryEntry_strategy = st.builds(
-    megal::QueryEntry,
+megal_QueryEntry_strategy = st.builds(
+    megal_QueryEntry,
 )
 QueryEntry_strategy = st.builds(
     QueryEntry,
 )
-megal::QueryString_strategy = st.builds(
-    megal::QueryString,
+megal_QueryReference_strategy = st.builds(
+    megal_QueryReference,
+)
+megal_QueryEntity_strategy = st.builds(
+    megal_QueryEntity,
+)
+megal_QueryString_strategy = st.builds(
+    megal_QueryString,
     value=
         safe_text
 )
-megal::QueryEntity_strategy = st.builds(
-    megal::QueryEntity,
-)
-megal::QueryPos_strategy = st.builds(
-    megal::QueryPos,
+megal_QueryPos_strategy = st.builds(
+    megal_QueryPos,
     value=
         st.integers()
 )
-megal::QueryReference_strategy = st.builds(
-    megal::QueryReference,
-)
-megal::QueryParam_strategy = st.builds(
-    megal::QueryParam,
+megal_QueryParam_strategy = st.builds(
+    megal_QueryParam,
     name=
         safe_text
 )
 MegalDeclaration_strategy = st.builds(
     MegalDeclaration,
 )
-megal::MegalPair_strategy = st.builds(
-    megal::MegalPair,
+megal_MegalPair_strategy = st.builds(
+    megal_MegalPair,
 )
-megal::MegalRelationship_strategy = st.builds(
-    megal::MegalRelationship,
+megal_MegalRelationship_strategy = st.builds(
+    megal_MegalRelationship,
 )
 MegalNamed_strategy = st.builds(
     MegalNamed,
 )
-megal::MegalRelationshipType_strategy = st.builds(
-    megal::MegalRelationshipType,
-    leftBoth=
+megal_MegalRelationshipType_strategy = st.builds(
+    megal_MegalRelationshipType,
+    rightBoth=
         st.booleans(),
     rightMany=
         st.booleans(),
-    rightBoth=
+    leftBoth=
         st.booleans(),
     leftMany=
         st.booleans()
 )
-megal::MegalEntityType_strategy = st.builds(
-    megal::MegalEntityType,
+megal_MegalEntityType_strategy = st.builds(
+    megal_MegalEntityType,
 )
-megal::MegalNamed_strategy = st.builds(
-    megal::MegalNamed,
+megal_MegalNamed_strategy = st.builds(
+    megal_MegalNamed,
     name=
         safe_text
 )
-megal::MegalEntity_strategy = st.builds(
-    megal::MegalEntity,
+megal_MegalEntity_strategy = st.builds(
+    megal_MegalEntity,
     many=
         st.booleans()
 )
 MegalElement_strategy = st.builds(
     MegalElement,
 )
-megal::MegalLink_strategy = st.builds(
-    megal::MegalLink,
+megal_MegalLink_strategy = st.builds(
+    megal_MegalLink,
     to=
         safe_text
 )
-megal::MegalDeclaration_strategy = st.builds(
-    megal::MegalDeclaration,
+megal_MegalDeclaration_strategy = st.builds(
+    megal_MegalDeclaration,
 )
-megal::MegalFile_strategy = st.builds(
-    megal::MegalFile,
+megal_MegalFile_strategy = st.builds(
+    megal_MegalFile,
     name=
         safe_text
 )
-megal::MegalElement_strategy = st.builds(
-    megal::MegalElement,
+megal_MegalElement_strategy = st.builds(
+    megal_MegalElement,
+)
+megal_Selection_strategy = st.builds(
+    megal_Selection,
+)
+megal_MegalAnnotation_strategy = st.builds(
+    megal_MegalAnnotation,
+    key=
+        safe_text
 )
 
-@given(instance=megal::Selection_strategy)
+@given(instance=megal_QueryStatement_strategy)
 @settings(max_examples=50)
-def test_megal::selection_instantiation(instance):
-    assert isinstance(instance, megal::Selection)
+def test_megal_querystatement_instantiation(instance):
+    assert isinstance(instance, megal_QueryStatement)
 
-@given(instance=megal::MegalAnnotation_strategy)
+@given(instance=megal_QueryEntry_strategy)
 @settings(max_examples=50)
-def test_megal::megalannotation_instantiation(instance):
-    assert isinstance(instance, megal::MegalAnnotation)
-
-@given(instance=megal::MegalAnnotation_strategy)
-def test_megal::megalannotation_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=megal::MegalAnnotation_strategy)
-def test_megal::megalannotation_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=megal::QueryStatement_strategy)
-@settings(max_examples=50)
-def test_megal::querystatement_instantiation(instance):
-    assert isinstance(instance, megal::QueryStatement)
-
-@given(instance=megal::QueryEntry_strategy)
-@settings(max_examples=50)
-def test_megal::queryentry_instantiation(instance):
-    assert isinstance(instance, megal::QueryEntry)
+def test_megal_queryentry_instantiation(instance):
+    assert isinstance(instance, megal_QueryEntry)
 
 @given(instance=QueryEntry_strategy)
 @settings(max_examples=50)
 def test_queryentry_instantiation(instance):
     assert isinstance(instance, QueryEntry)
 
-@given(instance=megal::QueryString_strategy)
+@given(instance=megal_QueryReference_strategy)
 @settings(max_examples=50)
-def test_megal::querystring_instantiation(instance):
-    assert isinstance(instance, megal::QueryString)
+def test_megal_queryreference_instantiation(instance):
+    assert isinstance(instance, megal_QueryReference)
 
-@given(instance=megal::QueryString_strategy)
-def test_megal::querystring_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=megal_QueryEntity_strategy)
+@settings(max_examples=50)
+def test_megal_queryentity_instantiation(instance):
+    assert isinstance(instance, megal_QueryEntity)
+
+@given(instance=megal_QueryString_strategy)
+@settings(max_examples=50)
+def test_megal_querystring_instantiation(instance):
+    assert isinstance(instance, megal_QueryString)
 
 
-@given(instance=megal::QueryString_strategy)
-def test_megal::querystring_value_setter(instance):
+
+@given(instance=megal_QueryString_strategy)
+def test_megal_querystring_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=megal::QueryEntity_strategy)
+@given(instance=megal_QueryPos_strategy)
 @settings(max_examples=50)
-def test_megal::queryentity_instantiation(instance):
-    assert isinstance(instance, megal::QueryEntity)
-
-@given(instance=megal::QueryPos_strategy)
-@settings(max_examples=50)
-def test_megal::querypos_instantiation(instance):
-    assert isinstance(instance, megal::QueryPos)
-
-@given(instance=megal::QueryPos_strategy)
-def test_megal::querypos_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_megal_querypos_instantiation(instance):
+    assert isinstance(instance, megal_QueryPos)
 
 
-@given(instance=megal::QueryPos_strategy)
-def test_megal::querypos_value_setter(instance):
+
+@given(instance=megal_QueryPos_strategy)
+def test_megal_querypos_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=megal::QueryReference_strategy)
+@given(instance=megal_QueryParam_strategy)
 @settings(max_examples=50)
-def test_megal::queryreference_instantiation(instance):
-    assert isinstance(instance, megal::QueryReference)
-
-@given(instance=megal::QueryParam_strategy)
-@settings(max_examples=50)
-def test_megal::queryparam_instantiation(instance):
-    assert isinstance(instance, megal::QueryParam)
-
-@given(instance=megal::QueryParam_strategy)
-def test_megal::queryparam_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_megal_queryparam_instantiation(instance):
+    assert isinstance(instance, megal_QueryParam)
 
 
-@given(instance=megal::QueryParam_strategy)
-def test_megal::queryparam_name_setter(instance):
+
+@given(instance=megal_QueryParam_strategy)
+def test_megal_queryparam_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -682,103 +652,85 @@ def test_megal::queryparam_name_setter(instance):
 def test_megaldeclaration_instantiation(instance):
     assert isinstance(instance, MegalDeclaration)
 
-@given(instance=megal::MegalPair_strategy)
+@given(instance=megal_MegalPair_strategy)
 @settings(max_examples=50)
-def test_megal::megalpair_instantiation(instance):
-    assert isinstance(instance, megal::MegalPair)
+def test_megal_megalpair_instantiation(instance):
+    assert isinstance(instance, megal_MegalPair)
 
-@given(instance=megal::MegalRelationship_strategy)
+@given(instance=megal_MegalRelationship_strategy)
 @settings(max_examples=50)
-def test_megal::megalrelationship_instantiation(instance):
-    assert isinstance(instance, megal::MegalRelationship)
+def test_megal_megalrelationship_instantiation(instance):
+    assert isinstance(instance, megal_MegalRelationship)
 
 @given(instance=MegalNamed_strategy)
 @settings(max_examples=50)
 def test_megalnamed_instantiation(instance):
     assert isinstance(instance, MegalNamed)
 
-@given(instance=megal::MegalRelationshipType_strategy)
+@given(instance=megal_MegalRelationshipType_strategy)
 @settings(max_examples=50)
-def test_megal::megalrelationshiptype_instantiation(instance):
-    assert isinstance(instance, megal::MegalRelationshipType)
-
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_leftBoth_type(instance):
-    assert isinstance(instance.leftBoth, bool)
+def test_megal_megalrelationshiptype_instantiation(instance):
+    assert isinstance(instance, megal_MegalRelationshipType)
 
 
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_leftBoth_setter(instance):
-    original = instance.leftBoth
-    instance.leftBoth = original
-    assert instance.leftBoth == original
 
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_rightMany_type(instance):
-    assert isinstance(instance.rightMany, bool)
-
-
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_rightMany_setter(instance):
-    original = instance.rightMany
-    instance.rightMany = original
-    assert instance.rightMany == original
-
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_rightBoth_type(instance):
-    assert isinstance(instance.rightBoth, bool)
-
-
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_rightBoth_setter(instance):
+@given(instance=megal_MegalRelationshipType_strategy)
+def test_megal_megalrelationshiptype_rightBoth_setter(instance):
     original = instance.rightBoth
     instance.rightBoth = original
     assert instance.rightBoth == original
 
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_leftMany_type(instance):
-    assert isinstance(instance.leftMany, bool)
 
 
-@given(instance=megal::MegalRelationshipType_strategy)
-def test_megal::megalrelationshiptype_leftMany_setter(instance):
+@given(instance=megal_MegalRelationshipType_strategy)
+def test_megal_megalrelationshiptype_rightMany_setter(instance):
+    original = instance.rightMany
+    instance.rightMany = original
+    assert instance.rightMany == original
+
+
+
+@given(instance=megal_MegalRelationshipType_strategy)
+def test_megal_megalrelationshiptype_leftBoth_setter(instance):
+    original = instance.leftBoth
+    instance.leftBoth = original
+    assert instance.leftBoth == original
+
+
+
+@given(instance=megal_MegalRelationshipType_strategy)
+def test_megal_megalrelationshiptype_leftMany_setter(instance):
     original = instance.leftMany
     instance.leftMany = original
     assert instance.leftMany == original
 
-@given(instance=megal::MegalEntityType_strategy)
+@given(instance=megal_MegalEntityType_strategy)
 @settings(max_examples=50)
-def test_megal::megalentitytype_instantiation(instance):
-    assert isinstance(instance, megal::MegalEntityType)
+def test_megal_megalentitytype_instantiation(instance):
+    assert isinstance(instance, megal_MegalEntityType)
 
-@given(instance=megal::MegalNamed_strategy)
+@given(instance=megal_MegalNamed_strategy)
 @settings(max_examples=50)
-def test_megal::megalnamed_instantiation(instance):
-    assert isinstance(instance, megal::MegalNamed)
-
-@given(instance=megal::MegalNamed_strategy)
-def test_megal::megalnamed_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_megal_megalnamed_instantiation(instance):
+    assert isinstance(instance, megal_MegalNamed)
 
 
-@given(instance=megal::MegalNamed_strategy)
-def test_megal::megalnamed_name_setter(instance):
+
+@given(instance=megal_MegalNamed_strategy)
+def test_megal_megalnamed_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=megal::MegalEntity_strategy)
+@given(instance=megal_MegalEntity_strategy)
 @settings(max_examples=50)
-def test_megal::megalentity_instantiation(instance):
-    assert isinstance(instance, megal::MegalEntity)
-
-@given(instance=megal::MegalEntity_strategy)
-def test_megal::megalentity_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_megal_megalentity_instantiation(instance):
+    assert isinstance(instance, megal_MegalEntity)
 
 
-@given(instance=megal::MegalEntity_strategy)
-def test_megal::megalentity_many_setter(instance):
+
+@given(instance=megal_MegalEntity_strategy)
+def test_megal_megalentity_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
@@ -788,44 +740,56 @@ def test_megal::megalentity_many_setter(instance):
 def test_megalelement_instantiation(instance):
     assert isinstance(instance, MegalElement)
 
-@given(instance=megal::MegalLink_strategy)
+@given(instance=megal_MegalLink_strategy)
 @settings(max_examples=50)
-def test_megal::megallink_instantiation(instance):
-    assert isinstance(instance, megal::MegalLink)
-
-@given(instance=megal::MegalLink_strategy)
-def test_megal::megallink_to_type(instance):
-    assert isinstance(instance.to, str)
+def test_megal_megallink_instantiation(instance):
+    assert isinstance(instance, megal_MegalLink)
 
 
-@given(instance=megal::MegalLink_strategy)
-def test_megal::megallink_to_setter(instance):
+
+@given(instance=megal_MegalLink_strategy)
+def test_megal_megallink_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=megal::MegalDeclaration_strategy)
+@given(instance=megal_MegalDeclaration_strategy)
 @settings(max_examples=50)
-def test_megal::megaldeclaration_instantiation(instance):
-    assert isinstance(instance, megal::MegalDeclaration)
+def test_megal_megaldeclaration_instantiation(instance):
+    assert isinstance(instance, megal_MegalDeclaration)
 
-@given(instance=megal::MegalFile_strategy)
+@given(instance=megal_MegalFile_strategy)
 @settings(max_examples=50)
-def test_megal::megalfile_instantiation(instance):
-    assert isinstance(instance, megal::MegalFile)
-
-@given(instance=megal::MegalFile_strategy)
-def test_megal::megalfile_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_megal_megalfile_instantiation(instance):
+    assert isinstance(instance, megal_MegalFile)
 
 
-@given(instance=megal::MegalFile_strategy)
-def test_megal::megalfile_name_setter(instance):
+
+@given(instance=megal_MegalFile_strategy)
+def test_megal_megalfile_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=megal::MegalElement_strategy)
+@given(instance=megal_MegalElement_strategy)
 @settings(max_examples=50)
-def test_megal::megalelement_instantiation(instance):
-    assert isinstance(instance, megal::MegalElement)
+def test_megal_megalelement_instantiation(instance):
+    assert isinstance(instance, megal_MegalElement)
+
+@given(instance=megal_Selection_strategy)
+@settings(max_examples=50)
+def test_megal_selection_instantiation(instance):
+    assert isinstance(instance, megal_Selection)
+
+@given(instance=megal_MegalAnnotation_strategy)
+@settings(max_examples=50)
+def test_megal_megalannotation_instantiation(instance):
+    assert isinstance(instance, megal_MegalAnnotation)
+
+
+
+@given(instance=megal_MegalAnnotation_strategy)
+def test_megal_megalannotation_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original

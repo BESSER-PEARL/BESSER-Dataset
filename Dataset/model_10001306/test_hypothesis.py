@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ActionEvent2_Interface,
@@ -182,18 +182,18 @@ def test_modele_joueur_constructor_exists():
 def test_modele_joueur_constructor_args():
     sig = inspect.signature(Modele_Joueur.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
-    assert "artefacts" in params, "Missing parameter 'artefacts'"
-    assert "vivant" in params, "Missing parameter 'vivant'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "cles" in params, "Missing parameter 'cles'"
+    assert "artefacts" in params, "Missing parameter 'artefacts'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "vivant" in params, "Missing parameter 'vivant'"
 
-def test_modele_joueur_has_y():
-    assert hasattr(Modele_Joueur, "y")
+def test_modele_joueur_has_cles():
+    assert hasattr(Modele_Joueur, "cles")
     descriptor = None
     for klass in Modele_Joueur.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
+        if "cles" in klass.__dict__:
+            descriptor = klass.__dict__["cles"]
             break
     assert isinstance(descriptor, property)
 
@@ -206,12 +206,12 @@ def test_modele_joueur_has_artefacts():
             break
     assert isinstance(descriptor, property)
 
-def test_modele_joueur_has_vivant():
-    assert hasattr(Modele_Joueur, "vivant")
+def test_modele_joueur_has_y():
+    assert hasattr(Modele_Joueur, "y")
     descriptor = None
     for klass in Modele_Joueur.__mro__:
-        if "vivant" in klass.__dict__:
-            descriptor = klass.__dict__["vivant"]
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
@@ -224,12 +224,12 @@ def test_modele_joueur_has_x():
             break
     assert isinstance(descriptor, property)
 
-def test_modele_joueur_has_cles():
-    assert hasattr(Modele_Joueur, "cles")
+def test_modele_joueur_has_vivant():
+    assert hasattr(Modele_Joueur, "vivant")
     descriptor = None
     for klass in Modele_Joueur.__mro__:
-        if "cles" in klass.__dict__:
-            descriptor = klass.__dict__["cles"]
+        if "vivant" in klass.__dict__:
+            descriptor = klass.__dict__["vivant"]
             break
     assert isinstance(descriptor, property)
 
@@ -246,29 +246,11 @@ def test_modele_cellule_constructor_exists():
 def test_modele_cellule_constructor_args():
     sig = inspect.signature(Modele_Cellule.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
-    assert "modele" in params, "Missing parameter 'modele'"
     assert "etat" in params, "Missing parameter 'etat'"
     assert "x" in params, "Missing parameter 'x'"
     assert "prochaineEtat" in params, "Missing parameter 'prochaineEtat'"
-
-def test_modele_cellule_has_y():
-    assert hasattr(Modele_Cellule, "y")
-    descriptor = None
-    for klass in Modele_Cellule.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_modele_cellule_has_modele():
-    assert hasattr(Modele_Cellule, "modele")
-    descriptor = None
-    for klass in Modele_Cellule.__mro__:
-        if "modele" in klass.__dict__:
-            descriptor = klass.__dict__["modele"]
-            break
-    assert isinstance(descriptor, property)
+    assert "y" in params, "Missing parameter 'y'"
+    assert "modele" in params, "Missing parameter 'modele'"
 
 def test_modele_cellule_has_etat():
     assert hasattr(Modele_Cellule, "etat")
@@ -294,6 +276,24 @@ def test_modele_cellule_has_prochaineEtat():
     for klass in Modele_Cellule.__mro__:
         if "prochaineEtat" in klass.__dict__:
             descriptor = klass.__dict__["prochaineEtat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_cellule_has_y():
+    assert hasattr(Modele_Cellule, "y")
+    descriptor = None
+    for klass in Modele_Cellule.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modele_cellule_has_modele():
+    assert hasattr(Modele_Cellule, "modele")
+    descriptor = None
+    for klass in Modele_Cellule.__mro__:
+        if "modele" in klass.__dict__:
+            descriptor = klass.__dict__["modele"]
             break
     assert isinstance(descriptor, property)
 
@@ -354,16 +354,16 @@ def test_vue_cvue_constructor_exists():
 def test_vue_cvue_constructor_args():
     sig = inspect.signature(Vue_CVue.__init__)
     params = list(sig.parameters.keys())
-    assert "commande" in params, "Missing parameter 'commande'"
-    assert "frame" in params, "Missing parameter 'frame'"
     assert "grille" in params, "Missing parameter 'grille'"
+    assert "frame" in params, "Missing parameter 'frame'"
+    assert "commande" in params, "Missing parameter 'commande'"
 
-def test_vue_cvue_has_commande():
-    assert hasattr(Vue_CVue, "commande")
+def test_vue_cvue_has_grille():
+    assert hasattr(Vue_CVue, "grille")
     descriptor = None
     for klass in Vue_CVue.__mro__:
-        if "commande" in klass.__dict__:
-            descriptor = klass.__dict__["commande"]
+        if "grille" in klass.__dict__:
+            descriptor = klass.__dict__["grille"]
             break
     assert isinstance(descriptor, property)
 
@@ -376,12 +376,12 @@ def test_vue_cvue_has_frame():
             break
     assert isinstance(descriptor, property)
 
-def test_vue_cvue_has_grille():
-    assert hasattr(Vue_CVue, "grille")
+def test_vue_cvue_has_commande():
+    assert hasattr(Vue_CVue, "commande")
     descriptor = None
     for klass in Vue_CVue.__mro__:
-        if "grille" in klass.__dict__:
-            descriptor = klass.__dict__["grille"]
+        if "commande" in klass.__dict__:
+            descriptor = klass.__dict__["commande"]
             break
     assert isinstance(descriptor, property)
 
@@ -398,16 +398,16 @@ def test_vue_vuegrille_constructor_exists():
 def test_vue_vuegrille_constructor_args():
     sig = inspect.signature(Vue_VueGrille.__init__)
     params = list(sig.parameters.keys())
-    assert "modele" in params, "Missing parameter 'modele'"
-    assert "TAILLE" in params, "Missing parameter 'TAILLE'"
     assert "update" in params, "Missing parameter 'update'"
+    assert "TAILLE" in params, "Missing parameter 'TAILLE'"
+    assert "modele" in params, "Missing parameter 'modele'"
 
-def test_vue_vuegrille_has_modele():
-    assert hasattr(Vue_VueGrille, "modele")
+def test_vue_vuegrille_has_update():
+    assert hasattr(Vue_VueGrille, "update")
     descriptor = None
     for klass in Vue_VueGrille.__mro__:
-        if "modele" in klass.__dict__:
-            descriptor = klass.__dict__["modele"]
+        if "update" in klass.__dict__:
+            descriptor = klass.__dict__["update"]
             break
     assert isinstance(descriptor, property)
 
@@ -420,12 +420,12 @@ def test_vue_vuegrille_has_TAILLE():
             break
     assert isinstance(descriptor, property)
 
-def test_vue_vuegrille_has_update():
-    assert hasattr(Vue_VueGrille, "update")
+def test_vue_vuegrille_has_modele():
+    assert hasattr(Vue_VueGrille, "modele")
     descriptor = None
     for klass in Vue_VueGrille.__mro__:
-        if "update" in klass.__dict__:
-            descriptor = klass.__dict__["update"]
+        if "modele" in klass.__dict__:
+            descriptor = klass.__dict__["modele"]
             break
     assert isinstance(descriptor, property)
 
@@ -511,29 +511,29 @@ Modele_Participants_strategy = st.builds(
 )
 Modele_Joueur_strategy = st.builds(
     Modele_Joueur,
-    y=
+    cles=
         st.integers(),
     artefacts=
         safe_text,
-    vivant=
-        st.booleans(),
+    y=
+        st.integers(),
     x=
         st.integers(),
-    cles=
-        st.integers()
+    vivant=
+        st.booleans()
 )
 Modele_Cellule_strategy = st.builds(
     Modele_Cellule,
-    y=
-        st.integers(),
-    modele=
-        st.none(),
     etat=
         st.booleans(),
     x=
         st.integers(),
     prochaineEtat=
-        st.booleans()
+        st.booleans(),
+    y=
+        st.integers(),
+    modele=
+        st.none()
 )
 Modele_CModele_strategy = st.builds(
     Modele_CModele,
@@ -546,21 +546,21 @@ Modele_CModele_strategy = st.builds(
 )
 Vue_CVue_strategy = st.builds(
     Vue_CVue,
-    commande=
+    grille=
         st.none(),
     frame=
         safe_text,
-    grille=
+    commande=
         st.none()
 )
 Vue_VueGrille_strategy = st.builds(
     Vue_VueGrille,
-    modele=
-        st.none(),
+    update=
+        safe_text,
     TAILLE=
         st.integers(),
-    update=
-        safe_text
+    modele=
+        st.none()
 )
 Vue_VueCommande_strategy = st.builds(
     Vue_VueCommande,
@@ -596,9 +596,6 @@ def test_jpanel_instantiation(instance):
 def test_controleur_controleur_instantiation(instance):
     assert isinstance(instance, Controleur_Controleur)
 
-@given(instance=Controleur_Controleur_strategy)
-def test_controleur_controleur_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
 
 
 @given(instance=Controleur_Controleur_strategy)
@@ -622,9 +619,6 @@ def test_observer_interface_instantiation(instance):
 def test_modele_participants_instantiation(instance):
     assert isinstance(instance, Modele_Participants)
 
-@given(instance=Modele_Participants_strategy)
-def test_modele_participants_NOMBRE_type(instance):
-    assert isinstance(instance.NOMBRE, int)
 
 
 @given(instance=Modele_Participants_strategy)
@@ -633,9 +627,6 @@ def test_modele_participants_NOMBRE_setter(instance):
     instance.NOMBRE = original
     assert instance.NOMBRE == original
 
-@given(instance=Modele_Participants_strategy)
-def test_modele_participants_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Modele_Participants_strategy)
@@ -649,53 +640,6 @@ def test_modele_participants_attribute_setter(instance):
 def test_modele_joueur_instantiation(instance):
     assert isinstance(instance, Modele_Joueur)
 
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_artefacts_type(instance):
-    assert isinstance(instance.artefacts, str)
-
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_artefacts_setter(instance):
-    original = instance.artefacts
-    instance.artefacts = original
-    assert instance.artefacts == original
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_vivant_type(instance):
-    assert isinstance(instance.vivant, bool)
-
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_vivant_setter(instance):
-    original = instance.vivant
-    instance.vivant = original
-    assert instance.vivant == original
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=Modele_Joueur_strategy)
-def test_modele_joueur_cles_type(instance):
-    assert isinstance(instance.cles, int)
 
 
 @given(instance=Modele_Joueur_strategy)
@@ -704,36 +648,43 @@ def test_modele_joueur_cles_setter(instance):
     instance.cles = original
     assert instance.cles == original
 
+
+
+@given(instance=Modele_Joueur_strategy)
+def test_modele_joueur_artefacts_setter(instance):
+    original = instance.artefacts
+    instance.artefacts = original
+    assert instance.artefacts == original
+
+
+
+@given(instance=Modele_Joueur_strategy)
+def test_modele_joueur_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=Modele_Joueur_strategy)
+def test_modele_joueur_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=Modele_Joueur_strategy)
+def test_modele_joueur_vivant_setter(instance):
+    original = instance.vivant
+    instance.vivant = original
+    assert instance.vivant == original
+
 @given(instance=Modele_Cellule_strategy)
 @settings(max_examples=50)
 def test_modele_cellule_instantiation(instance):
     assert isinstance(instance, Modele_Cellule)
 
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
-
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_modele_setter(instance):
-    original = instance.modele
-    instance.modele = original
-    assert instance.modele == original
-
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_etat_type(instance):
-    assert isinstance(instance.etat, bool)
 
 
 @given(instance=Modele_Cellule_strategy)
@@ -742,9 +693,6 @@ def test_modele_cellule_etat_setter(instance):
     instance.etat = original
     assert instance.etat == original
 
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=Modele_Cellule_strategy)
@@ -753,9 +701,6 @@ def test_modele_cellule_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
-@given(instance=Modele_Cellule_strategy)
-def test_modele_cellule_prochaineEtat_type(instance):
-    assert isinstance(instance.prochaineEtat, bool)
 
 
 @given(instance=Modele_Cellule_strategy)
@@ -764,14 +709,27 @@ def test_modele_cellule_prochaineEtat_setter(instance):
     instance.prochaineEtat = original
     assert instance.prochaineEtat == original
 
+
+
+@given(instance=Modele_Cellule_strategy)
+def test_modele_cellule_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=Modele_Cellule_strategy)
+def test_modele_cellule_modele_setter(instance):
+    original = instance.modele
+    instance.modele = original
+    assert instance.modele == original
+
 @given(instance=Modele_CModele_strategy)
 @settings(max_examples=50)
 def test_modele_cmodele_instantiation(instance):
     assert isinstance(instance, Modele_CModele)
 
-@given(instance=Modele_CModele_strategy)
-def test_modele_cmodele_attribute_type(instance):
-    assert isinstance(instance.attribute, modele_cellule)
 
 
 @given(instance=Modele_CModele_strategy)
@@ -780,9 +738,6 @@ def test_modele_cmodele_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Modele_CModele_strategy)
-def test_modele_cmodele_hauteur_type(instance):
-    assert isinstance(instance.hauteur, int)
 
 
 @given(instance=Modele_CModele_strategy)
@@ -791,9 +746,6 @@ def test_modele_cmodele_hauteur_setter(instance):
     instance.hauteur = original
     assert instance.hauteur == original
 
-@given(instance=Modele_CModele_strategy)
-def test_modele_cmodele_largeur_type(instance):
-    assert isinstance(instance.largeur, int)
 
 
 @given(instance=Modele_CModele_strategy)
@@ -807,31 +759,6 @@ def test_modele_cmodele_largeur_setter(instance):
 def test_vue_cvue_instantiation(instance):
     assert isinstance(instance, Vue_CVue)
 
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_commande_type(instance):
-    assert isinstance(instance.commande, vue_vuecommande)
-
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_commande_setter(instance):
-    original = instance.commande
-    instance.commande = original
-    assert instance.commande == original
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_frame_type(instance):
-    assert isinstance(instance.frame, str)
-
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_frame_setter(instance):
-    original = instance.frame
-    instance.frame = original
-    assert instance.frame == original
-
-@given(instance=Vue_CVue_strategy)
-def test_vue_cvue_grille_type(instance):
-    assert isinstance(instance.grille, vue_vuegrille)
 
 
 @given(instance=Vue_CVue_strategy)
@@ -840,36 +767,27 @@ def test_vue_cvue_grille_setter(instance):
     instance.grille = original
     assert instance.grille == original
 
+
+
+@given(instance=Vue_CVue_strategy)
+def test_vue_cvue_frame_setter(instance):
+    original = instance.frame
+    instance.frame = original
+    assert instance.frame == original
+
+
+
+@given(instance=Vue_CVue_strategy)
+def test_vue_cvue_commande_setter(instance):
+    original = instance.commande
+    instance.commande = original
+    assert instance.commande == original
+
 @given(instance=Vue_VueGrille_strategy)
 @settings(max_examples=50)
 def test_vue_vuegrille_instantiation(instance):
     assert isinstance(instance, Vue_VueGrille)
 
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
-
-
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_modele_setter(instance):
-    original = instance.modele
-    instance.modele = original
-    assert instance.modele == original
-
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_TAILLE_type(instance):
-    assert isinstance(instance.TAILLE, int)
-
-
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_TAILLE_setter(instance):
-    original = instance.TAILLE
-    instance.TAILLE = original
-    assert instance.TAILLE == original
-
-@given(instance=Vue_VueGrille_strategy)
-def test_vue_vuegrille_update_type(instance):
-    assert isinstance(instance.update, str)
 
 
 @given(instance=Vue_VueGrille_strategy)
@@ -878,14 +796,27 @@ def test_vue_vuegrille_update_setter(instance):
     instance.update = original
     assert instance.update == original
 
+
+
+@given(instance=Vue_VueGrille_strategy)
+def test_vue_vuegrille_TAILLE_setter(instance):
+    original = instance.TAILLE
+    instance.TAILLE = original
+    assert instance.TAILLE == original
+
+
+
+@given(instance=Vue_VueGrille_strategy)
+def test_vue_vuegrille_modele_setter(instance):
+    original = instance.modele
+    instance.modele = original
+    assert instance.modele == original
+
 @given(instance=Vue_VueCommande_strategy)
 @settings(max_examples=50)
 def test_vue_vuecommande_instantiation(instance):
     assert isinstance(instance, Vue_VueCommande)
 
-@given(instance=Vue_VueCommande_strategy)
-def test_vue_vuecommande_modele_type(instance):
-    assert isinstance(instance.modele, modele_cmodele)
 
 
 @given(instance=Vue_VueCommande_strategy)

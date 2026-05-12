@@ -3,524 +3,164 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    OclInstanceModel,
-    OclModelElement,
-    TupleType,
-    OclFeatureDefinition,
-    OclFeature,
-    QualityMetamodel::QMM::OCL::Attribute,
-    TupleTypeAttribute,
-    CollectionType,
-    MapType,
-    QualityMetamodel::QMM::OCL::SetType,
-    QualityMetamodel::QMM::OCL::SequenceType,
-    QualityMetamodel::QMM::OCL::OrderedSetType,
-    QualityMetamodel::QMM::OCL::BagType,
-    NumericType,
-    QualityMetamodel::QMM::OCL::RealType,
-    QualityMetamodel::QMM::OCL::IntegerType,
-    Primitive,
-    QualityMetamodel::QMM::OCL::BooleanType,
-    QualityMetamodel::QMM::OCL::NumericType,
-    QualityMetamodel::QMM::OCL::StringType,
-    OclModel,
-    QualityMetamodel::QMM::OCL::OclMetamodel,
-    LambdaType,
-    OclContextDefinition,
-    IterateExp,
+from python_code import (
     Iterator,
     PropertyCall,
-    QualityMetamodel::QMM::OCL::LoopExp,
+    QualityMetamodel_QMM_OCL_LoopExp,
     VariableExp,
-    QualityMetamodel::QMM::OCL::LambdaCallExp,
-    QualityMetamodel::QMM::OCL::OperationCall,
-    QualityMetamodel::QMM::OCL::NavigationOrAttributeCall,
+    QualityMetamodel_QMM_OCL_LambdaCallExp,
+    QualityMetamodel_QMM_OCL_OperationCall,
+    QualityMetamodel_QMM_OCL_NavigationOrAttributeCall,
     MapExp,
-    Parameter,
-    QualityMetamodel::QMM::OCL::Operation,
-    QualityMetamodel::QMM::OCL::OclInstanceModel,
     MapElement,
     TupleExp,
     StaticPropertyCallExp,
     StaticPropertyCall,
-    QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall,
-    QualityMetamodel::QMM::OCL::StaticOperationCall,
+    QualityMetamodel_QMM_OCL_StaticOperationCall,
+    QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall,
     NumericExp,
-    QualityMetamodel::QMM::OCL::IntegerExp,
-    QualityMetamodel::QMM::OCL::RealExp,
+    QualityMetamodel_QMM_OCL_IntegerExp,
+    QualityMetamodel_QMM_OCL_RealExp,
     PrimitiveExp,
-    QualityMetamodel::QMM::OCL::NumericExp,
-    QualityMetamodel::QMM::OCL::BooleanExp,
-    QualityMetamodel::QMM::OCL::StringExp,
+    QualityMetamodel_QMM_OCL_NumericExp,
+    QualityMetamodel_QMM_OCL_BooleanExp,
+    QualityMetamodel_QMM_OCL_StringExp,
     TuplePart,
     CollectionExp,
-    QualityMetamodel::QMM::OCL::OrderedSetExp,
-    QualityMetamodel::QMM::OCL::BagExp,
-    QualityMetamodel::QMM::OCL::SequenceExp,
-    QualityMetamodel::QMM::OCL::SetExp,
+    QualityMetamodel_QMM_OCL_OrderedSetExp,
+    QualityMetamodel_QMM_OCL_BagExp,
+    QualityMetamodel_QMM_OCL_SequenceExp,
+    QualityMetamodel_QMM_OCL_SetExp,
     CollectionPart,
-    QualityMetamodel::QMM::OCL::CollectionRange,
-    QualityMetamodel::QMM::OCL::CollectionItem,
+    QualityMetamodel_QMM_OCL_CollectionRange,
+    QualityMetamodel_QMM_OCL_CollectionItem,
     LocalVariable,
-    QualityMetamodel::QMM::OCL::TuplePart,
+    QualityMetamodel_QMM_OCL_TuplePart,
     OperatorCallExp,
-    QualityMetamodel::QMM::OCL::EqOpCallExp,
-    QualityMetamodel::QMM::OCL::IntOpCallExp,
-    QualityMetamodel::QMM::OCL::NotOpCallExp,
-    QualityMetamodel::QMM::OCL::AddOpCallExp,
-    QualityMetamodel::QMM::OCL::RelOpCallExp,
-    QualityMetamodel::QMM::OCL::MulOpCallExp,
+    QualityMetamodel_QMM_OCL_NotOpCallExp,
+    QualityMetamodel_QMM_OCL_RelOpCallExp,
+    QualityMetamodel_QMM_OCL_AddOpCallExp,
+    QualityMetamodel_QMM_OCL_MulOpCallExp,
+    QualityMetamodel_QMM_OCL_EqOpCallExp,
+    QualityMetamodel_QMM_OCL_IntOpCallExp,
     Attribute,
     Operation,
     ModuleElement,
-    QualityMetamodel::QMM::OCL::OclFeatureDefinition,
     OperationCall,
-    QualityMetamodel::QMM::OCL::CollectionOperationCall,
+    QualityMetamodel_QMM_OCL_CollectionOperationCall,
     LoopExp,
-    QualityMetamodel::QMM::OCL::IteratorExp,
-    QualityMetamodel::QMM::OCL::IterateExp,
+    QualityMetamodel_QMM_OCL_IterateExp,
+    QualityMetamodel_QMM_OCL_IteratorExp,
     LetExp,
     PropertyCallExp,
     IfExp,
     OclType,
-    QualityMetamodel::QMM::OCL::Primitive,
-    QualityMetamodel::QMM::OCL::EnvType,
-    QualityMetamodel::QMM::OCL::TupleType,
-    QualityMetamodel::QMM::OCL::OclModelElement,
-    QualityMetamodel::QMM::OCL::OclAnyType,
-    QualityMetamodel::QMM::OCL::CollectionType,
-    QualityMetamodel::QMM::OCL::MapType,
-    QualityMetamodel::QMM::OCL::LambdaType,
     ValueType,
-    QualityMetamodel::RangeValueType,
-    QualityMetamodel::AggregatedValueMetric,
-    QualityMetamodel::TextValueType,
+    QualityMetamodel_RangeValueType,
+    QualityMetamodel_AggregatedValueMetric,
+    QualityMetamodel_TextValueType,
     Import,
     OclMetamodel,
     NamedElement,
-    QualityMetamodel::QMM::OCL::Import,
-    QualityMetamodel::QMM::OCL::OclFeature,
-    QualityMetamodel::QMM::OCL::OclModel,
-    QualityMetamodel::QMM::OCL::Module,
+    QualityMetamodel_QMM_OCL_Import,
+    QualityMetamodel_QMM_OCL_Module,
     LocatedElement,
-    QualityMetamodel::QMM::OCL::MapElement,
-    QualityMetamodel::QMM::OCL::VariableDeclaration,
-    QualityMetamodel::QMM::OCL::OclType,
-    QualityMetamodel::QMM::OCL::CollectionPart,
-    QualityMetamodel::QMM::OCL::OclContextDefinition,
-    QualityMetamodel::QMM::OCL::ModuleElement,
-    QualityMetamodel::QMM::OCL::OclExpression,
-    QualityMetamodel::QMM::OCL::TupleTypeAttribute,
-    QualityMetamodel::QMM::OCL::StaticPropertyCall,
-    QualityMetamodel::QMM::OCL::PropertyCall,
-    QualityMetamodel::QMM::OCL::NamedElement,
-    QualityMetamodel::QMM::OCL::LocatedElement,
-    QualityMetamodel::ListValue,
-    QualityMetamodel::IntegerValueType,
-    QualityMetamodel::BooleanValueType,
-    QualityMetamodel::RealValueType,
-    QualityMetamodel::EnumerationItem,
-    QualityMetamodel::EnumerationMetric,
-    QualityMetamodel::MetricProvider,
+    QualityMetamodel_QMM_OCL_OclExpression,
+    QualityMetamodel_QMM_OCL_PropertyCall,
+    QualityMetamodel_QMM_OCL_CollectionPart,
+    QualityMetamodel_QMM_OCL_StaticPropertyCall,
+    QualityMetamodel_QMM_OCL_ModuleElement,
+    QualityMetamodel_QMM_OCL_MapElement,
+    QualityMetamodel_QMM_OCL_NamedElement,
+    QualityMetamodel_QMM_OCL_LocatedElement,
+    QualityMetamodel_ListValue,
+    QualityMetamodel_IntegerValueType,
+    QualityMetamodel_BooleanValueType,
+    QualityMetamodel_RealValueType,
+    QualityMetamodel_EnumerationItem,
+    QualityMetamodel_EnumerationMetric,
+    QualityMetamodel_MetricProvider,
     Module,
-    QualityMetamodel::QualityModel,
+    QualityMetamodel_QualityModel,
     OclExpression,
-    QualityMetamodel::QMM::OCL::TupleExp,
-    QualityMetamodel::QMM::OCL::CollectionExp,
-    QualityMetamodel::QMM::OCL::BraceExp,
-    QualityMetamodel::QMM::OCL::OclUndefinedExp,
-    QualityMetamodel::QMM::OCL::LetExp,
-    QualityMetamodel::QMM::OCL::EnumLiteralExp,
-    QualityMetamodel::QMM::OCL::PrimitiveExp,
-    QualityMetamodel::QMM::OCL::IfExp,
-    QualityMetamodel::QMM::OCL::VariableExp,
-    QualityMetamodel::QMM::OCL::OclModelElementExp,
-    QualityMetamodel::QMM::OCL::PropertyCallExp,
-    QualityMetamodel::QMM::OCL::EnvExp,
-    QualityMetamodel::QMM::OCL::MapExp,
-    QualityMetamodel::QMM::OCL::StaticPropertyCallExp,
-    QualityMetamodel::QMM::OCL::OperatorCallExp,
-    QualityMetamodel::QMM::OCL::SelfExp,
-    QualityMetamodel::QMM::OCL::SuperExp,
-    QualityMetamodel::Operation,
+    QualityMetamodel_QMM_OCL_CollectionExp,
+    QualityMetamodel_QMM_OCL_PropertyCallExp,
+    QualityMetamodel_QMM_OCL_MapExp,
+    QualityMetamodel_QMM_OCL_SelfExp,
+    QualityMetamodel_QMM_OCL_BraceExp,
+    QualityMetamodel_QMM_OCL_LetExp,
+    QualityMetamodel_QMM_OCL_EnvExp,
+    QualityMetamodel_QMM_OCL_IfExp,
+    QualityMetamodel_QMM_OCL_OperatorCallExp,
+    QualityMetamodel_QMM_OCL_OclUndefinedExp,
+    QualityMetamodel_QMM_OCL_VariableExp,
+    QualityMetamodel_QMM_OCL_EnumLiteralExp,
+    QualityMetamodel_QMM_OCL_StaticPropertyCallExp,
+    QualityMetamodel_QMM_OCL_TupleExp,
+    QualityMetamodel_QMM_OCL_PrimitiveExp,
+    QualityMetamodel_QMM_OCL_SuperExp,
+    QualityMetamodel_Operation,
     Value,
-    QualityMetamodel::AggregatedValue,
-    QualityMetamodel::SingleValue,
+    QualityMetamodel_AggregatedValue,
+    QualityMetamodel_SingleValue,
     VariableDeclaration,
-    QualityMetamodel::QMM::OCL::Iterator,
-    QualityMetamodel::QMM::OCL::Parameter,
-    QualityMetamodel::QMM::OCL::LocalVariable,
-    QualityMetamodel::Value,
-    QualityMetamodel::QualityAttribute,
-    QualityMetamodel::ValueType,
+    QualityMetamodel_Value,
+    QualityMetamodel_QualityAttribute,
+    QualityMetamodel_ValueType,
+    Parameter,
+    OclInstanceModel,
+    OclModelElement,
+    QualityMetamodel_QMM_OCL_OclModel,
+    QualityMetamodel_QMM_OCL_OclModelElement,
+    TupleType,
+    QualityMetamodel_QMM_OCL_TupleTypeAttribute,
+    QualityMetamodel_QMM_OCL_OclFeature,
+    OclFeatureDefinition,
+    QualityMetamodel_QMM_OCL_OclContextDefinition,
+    OclFeature,
+    QualityMetamodel_QMM_OCL_Attribute,
+    QualityMetamodel_QMM_OCL_Operation,
+    QualityMetamodel_QMM_OCL_OclFeatureDefinition,
+    QualityMetamodel_QMM_OCL_EnvType,
+    QualityMetamodel_QMM_OCL_LambdaType,
+    QualityMetamodel_QMM_OCL_MapType,
+    TupleTypeAttribute,
+    CollectionType,
+    MapType,
+    QualityMetamodel_QMM_OCL_TupleType,
+    QualityMetamodel_QMM_OCL_OclAnyType,
+    QualityMetamodel_QMM_OCL_SetType,
+    QualityMetamodel_QMM_OCL_SequenceType,
+    QualityMetamodel_QMM_OCL_OrderedSetType,
+    QualityMetamodel_QMM_OCL_BagType,
+    NumericType,
+    QualityMetamodel_QMM_OCL_RealType,
+    QualityMetamodel_QMM_OCL_IntegerType,
+    Primitive,
+    QualityMetamodel_QMM_OCL_NumericType,
+    QualityMetamodel_QMM_OCL_BooleanType,
+    QualityMetamodel_QMM_OCL_StringType,
+    QualityMetamodel_QMM_OCL_Primitive,
+    OclModel,
+    QualityMetamodel_QMM_OCL_OclInstanceModel,
+    QualityMetamodel_QMM_OCL_OclMetamodel,
+    QualityMetamodel_QMM_OCL_OclModelElementExp,
+    LambdaType,
+    QualityMetamodel_QMM_OCL_VariableDeclaration,
+    OclContextDefinition,
+    QualityMetamodel_QMM_OCL_OclType,
+    QualityMetamodel_QMM_OCL_CollectionType,
+    QualityMetamodel_QMM_OCL_Parameter,
+    QualityMetamodel_QMM_OCL_Iterator,
+    IterateExp,
+    QualityMetamodel_QMM_OCL_LocalVariable,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_oclinstancemodel_is_not_abstract():
-    assert not inspect.isabstract(OclInstanceModel)
-
-
-def test_oclinstancemodel_constructor_exists():
-    assert callable(OclInstanceModel.__init__)
-
-
-def test_oclinstancemodel_constructor_args():
-    sig = inspect.signature(OclInstanceModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclmodelelement_is_not_abstract():
-    assert not inspect.isabstract(OclModelElement)
-
-
-def test_oclmodelelement_constructor_exists():
-    assert callable(OclModelElement.__init__)
-
-
-def test_oclmodelelement_constructor_args():
-    sig = inspect.signature(OclModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tupletype_is_not_abstract():
-    assert not inspect.isabstract(TupleType)
-
-
-def test_tupletype_constructor_exists():
-    assert callable(TupleType.__init__)
-
-
-def test_tupletype_constructor_args():
-    sig = inspect.signature(TupleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclfeaturedefinition_is_not_abstract():
-    assert not inspect.isabstract(OclFeatureDefinition)
-
-
-def test_oclfeaturedefinition_constructor_exists():
-    assert callable(OclFeatureDefinition.__init__)
-
-
-def test_oclfeaturedefinition_constructor_args():
-    sig = inspect.signature(OclFeatureDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclfeature_is_not_abstract():
-    assert not inspect.isabstract(OclFeature)
-
-
-def test_oclfeature_constructor_exists():
-    assert callable(OclFeature.__init__)
-
-
-def test_oclfeature_constructor_args():
-    sig = inspect.signature(OclFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::attribute_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Attribute)
-
-
-def test_qualitymetamodel::qmm::ocl::attribute_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Attribute.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::attribute_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Attribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tupletypeattribute_is_not_abstract():
-    assert not inspect.isabstract(TupleTypeAttribute)
-
-
-def test_tupletypeattribute_constructor_exists():
-    assert callable(TupleTypeAttribute.__init__)
-
-
-def test_tupletypeattribute_constructor_args():
-    sig = inspect.signature(TupleTypeAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectiontype_is_not_abstract():
-    assert not inspect.isabstract(CollectionType)
-
-
-def test_collectiontype_constructor_exists():
-    assert callable(CollectionType.__init__)
-
-
-def test_collectiontype_constructor_args():
-    sig = inspect.signature(CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_maptype_is_not_abstract():
-    assert not inspect.isabstract(MapType)
-
-
-def test_maptype_constructor_exists():
-    assert callable(MapType.__init__)
-
-
-def test_maptype_constructor_args():
-    sig = inspect.signature(MapType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::settype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::SetType)
-
-
-def test_qualitymetamodel::qmm::ocl::settype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::SetType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::settype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::SetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::SequenceType)
-
-
-def test_qualitymetamodel::qmm::ocl::sequencetype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::SequenceType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::sequencetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OrderedSetType)
-
-
-def test_qualitymetamodel::qmm::ocl::orderedsettype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OrderedSetType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::orderedsettype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OrderedSetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::bagtype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::BagType)
-
-
-def test_qualitymetamodel::qmm::ocl::bagtype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::BagType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::bagtype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::BagType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_numerictype_is_not_abstract():
-    assert not inspect.isabstract(NumericType)
-
-
-def test_numerictype_constructor_exists():
-    assert callable(NumericType.__init__)
-
-
-def test_numerictype_constructor_args():
-    sig = inspect.signature(NumericType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::realtype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::RealType)
-
-
-def test_qualitymetamodel::qmm::ocl::realtype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::RealType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::realtype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::RealType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::integertype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::IntegerType)
-
-
-def test_qualitymetamodel::qmm::ocl::integertype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::IntegerType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::integertype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::IntegerType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitive_is_not_abstract():
-    assert not inspect.isabstract(Primitive)
-
-
-def test_primitive_constructor_exists():
-    assert callable(Primitive.__init__)
-
-
-def test_primitive_constructor_args():
-    sig = inspect.signature(Primitive.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::booleantype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::BooleanType)
-
-
-def test_qualitymetamodel::qmm::ocl::booleantype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::BooleanType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::booleantype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::BooleanType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::numerictype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::NumericType)
-
-
-def test_qualitymetamodel::qmm::ocl::numerictype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::NumericType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::numerictype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::NumericType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::StringType)
-
-
-def test_qualitymetamodel::qmm::ocl::stringtype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::StringType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::stringtype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::StringType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclmodel_is_not_abstract():
-    assert not inspect.isabstract(OclModel)
-
-
-def test_oclmodel_constructor_exists():
-    assert callable(OclModel.__init__)
-
-
-def test_oclmodel_constructor_args():
-    sig = inspect.signature(OclModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclMetamodel)
-
-
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclMetamodel.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclMetamodel.__init__)
-    params = list(sig.parameters.keys())
-    assert "uri" in params, "Missing parameter 'uri'"
-
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_has_uri():
-    assert hasattr(QualityMetamodel::QMM::OCL::OclMetamodel, "uri")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OclMetamodel.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lambdatype_is_not_abstract():
-    assert not inspect.isabstract(LambdaType)
-
-
-def test_lambdatype_constructor_exists():
-    assert callable(LambdaType.__init__)
-
-
-def test_lambdatype_constructor_args():
-    sig = inspect.signature(LambdaType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclcontextdefinition_is_not_abstract():
-    assert not inspect.isabstract(OclContextDefinition)
-
-
-def test_oclcontextdefinition_constructor_exists():
-    assert callable(OclContextDefinition.__init__)
-
-
-def test_oclcontextdefinition_constructor_args():
-    sig = inspect.signature(OclContextDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iterateexp_is_not_abstract():
-    assert not inspect.isabstract(IterateExp)
-
-
-def test_iterateexp_constructor_exists():
-    assert callable(IterateExp.__init__)
-
-
-def test_iterateexp_constructor_args():
-    sig = inspect.signature(IterateExp.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -552,16 +192,16 @@ def test_propertycall_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::LoopExp)
+def test_qualitymetamodel_qmm_ocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_LoopExp)
 
 
-def test_qualitymetamodel::qmm::ocl::loopexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::LoopExp.__init__)
+def test_qualitymetamodel_qmm_ocl_loopexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_LoopExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::loopexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::LoopExp.__init__)
+def test_qualitymetamodel_qmm_ocl_loopexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -580,37 +220,37 @@ def test_variableexp_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::lambdacallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::LambdaCallExp)
+def test_qualitymetamodel_qmm_ocl_lambdacallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_LambdaCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::lambdacallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::LambdaCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_lambdacallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_LambdaCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::lambdacallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::LambdaCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_lambdacallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_LambdaCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::operationcall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OperationCall)
+def test_qualitymetamodel_qmm_ocl_operationcall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OperationCall)
 
 
-def test_qualitymetamodel::qmm::ocl::operationcall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OperationCall.__init__)
+def test_qualitymetamodel_qmm_ocl_operationcall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OperationCall.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::operationcall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OperationCall.__init__)
+def test_qualitymetamodel_qmm_ocl_operationcall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OperationCall.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_qualitymetamodel::qmm::ocl::operationcall_has_operationName():
-    assert hasattr(QualityMetamodel::QMM::OCL::OperationCall, "operationName")
+def test_qualitymetamodel_qmm_ocl_operationcall_has_operationName():
+    assert hasattr(QualityMetamodel_QMM_OCL_OperationCall, "operationName")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OperationCall.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_OperationCall.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -618,23 +258,23 @@ def test_qualitymetamodel::qmm::ocl::operationcall_has_operationName():
 
 
 
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::NavigationOrAttributeCall)
+def test_qualitymetamodel_qmm_ocl_navigationorattributecall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_NavigationOrAttributeCall)
 
 
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::NavigationOrAttributeCall.__init__)
+def test_qualitymetamodel_qmm_ocl_navigationorattributecall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_NavigationOrAttributeCall.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::NavigationOrAttributeCall.__init__)
+def test_qualitymetamodel_qmm_ocl_navigationorattributecall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_NavigationOrAttributeCall.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::NavigationOrAttributeCall, "name")
+def test_qualitymetamodel_qmm_ocl_navigationorattributecall_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_NavigationOrAttributeCall, "name")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::NavigationOrAttributeCall.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_NavigationOrAttributeCall.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -652,48 +292,6 @@ def test_mapexp_constructor_exists():
 
 def test_mapexp_constructor_args():
     sig = inspect.signature(MapExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_parameter_is_not_abstract():
-    assert not inspect.isabstract(Parameter)
-
-
-def test_parameter_constructor_exists():
-    assert callable(Parameter.__init__)
-
-
-def test_parameter_constructor_args():
-    sig = inspect.signature(Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::operation_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Operation)
-
-
-def test_qualitymetamodel::qmm::ocl::operation_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Operation.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::operation_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclinstancemodel_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclInstanceModel)
-
-
-def test_qualitymetamodel::qmm::ocl::oclinstancemodel_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclInstanceModel.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclinstancemodel_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclInstanceModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -754,49 +352,49 @@ def test_staticpropertycall_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall)
+def test_qualitymetamodel_qmm_ocl_staticoperationcall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_StaticOperationCall)
 
 
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall.__init__)
+def test_qualitymetamodel_qmm_ocl_staticoperationcall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_StaticOperationCall.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall.__init__)
+def test_qualitymetamodel_qmm_ocl_staticoperationcall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_StaticOperationCall.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
+    assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall, "name")
+def test_qualitymetamodel_qmm_ocl_staticoperationcall_has_operationName():
+    assert hasattr(QualityMetamodel_QMM_OCL_StaticOperationCall, "operationName")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in QualityMetamodel_QMM_OCL_StaticOperationCall.__mro__:
+        if "operationName" in klass.__dict__:
+            descriptor = klass.__dict__["operationName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::StaticOperationCall)
+def test_qualitymetamodel_qmm_ocl_staticnavigationorattributecall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall)
 
 
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::StaticOperationCall.__init__)
+def test_qualitymetamodel_qmm_ocl_staticnavigationorattributecall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::StaticOperationCall.__init__)
+def test_qualitymetamodel_qmm_ocl_staticnavigationorattributecall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall.__init__)
     params = list(sig.parameters.keys())
-    assert "operationName" in params, "Missing parameter 'operationName'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_has_operationName():
-    assert hasattr(QualityMetamodel::QMM::OCL::StaticOperationCall, "operationName")
+def test_qualitymetamodel_qmm_ocl_staticnavigationorattributecall_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall, "name")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::StaticOperationCall.__mro__:
-        if "operationName" in klass.__dict__:
-            descriptor = klass.__dict__["operationName"]
+    for klass in QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -816,23 +414,23 @@ def test_numericexp_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::integerexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::IntegerExp)
+def test_qualitymetamodel_qmm_ocl_integerexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_IntegerExp)
 
 
-def test_qualitymetamodel::qmm::ocl::integerexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::IntegerExp.__init__)
+def test_qualitymetamodel_qmm_ocl_integerexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_IntegerExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::integerexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::IntegerExp.__init__)
+def test_qualitymetamodel_qmm_ocl_integerexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_IntegerExp.__init__)
     params = list(sig.parameters.keys())
     assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-def test_qualitymetamodel::qmm::ocl::integerexp_has_integerSymbol():
-    assert hasattr(QualityMetamodel::QMM::OCL::IntegerExp, "integerSymbol")
+def test_qualitymetamodel_qmm_ocl_integerexp_has_integerSymbol():
+    assert hasattr(QualityMetamodel_QMM_OCL_IntegerExp, "integerSymbol")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::IntegerExp.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_IntegerExp.__mro__:
         if "integerSymbol" in klass.__dict__:
             descriptor = klass.__dict__["integerSymbol"]
             break
@@ -840,23 +438,23 @@ def test_qualitymetamodel::qmm::ocl::integerexp_has_integerSymbol():
 
 
 
-def test_qualitymetamodel::qmm::ocl::realexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::RealExp)
+def test_qualitymetamodel_qmm_ocl_realexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_RealExp)
 
 
-def test_qualitymetamodel::qmm::ocl::realexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::RealExp.__init__)
+def test_qualitymetamodel_qmm_ocl_realexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_RealExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::realexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::RealExp.__init__)
+def test_qualitymetamodel_qmm_ocl_realexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_RealExp.__init__)
     params = list(sig.parameters.keys())
     assert "realSymbol" in params, "Missing parameter 'realSymbol'"
 
-def test_qualitymetamodel::qmm::ocl::realexp_has_realSymbol():
-    assert hasattr(QualityMetamodel::QMM::OCL::RealExp, "realSymbol")
+def test_qualitymetamodel_qmm_ocl_realexp_has_realSymbol():
+    assert hasattr(QualityMetamodel_QMM_OCL_RealExp, "realSymbol")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::RealExp.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_RealExp.__mro__:
         if "realSymbol" in klass.__dict__:
             descriptor = klass.__dict__["realSymbol"]
             break
@@ -878,37 +476,37 @@ def test_primitiveexp_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::numericexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::NumericExp)
+def test_qualitymetamodel_qmm_ocl_numericexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_NumericExp)
 
 
-def test_qualitymetamodel::qmm::ocl::numericexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::NumericExp.__init__)
+def test_qualitymetamodel_qmm_ocl_numericexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_NumericExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::numericexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::NumericExp.__init__)
+def test_qualitymetamodel_qmm_ocl_numericexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_NumericExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::booleanexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::BooleanExp)
+def test_qualitymetamodel_qmm_ocl_booleanexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_BooleanExp)
 
 
-def test_qualitymetamodel::qmm::ocl::booleanexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::BooleanExp.__init__)
+def test_qualitymetamodel_qmm_ocl_booleanexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_BooleanExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::booleanexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::BooleanExp.__init__)
+def test_qualitymetamodel_qmm_ocl_booleanexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_BooleanExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_qualitymetamodel::qmm::ocl::booleanexp_has_booleanSymbol():
-    assert hasattr(QualityMetamodel::QMM::OCL::BooleanExp, "booleanSymbol")
+def test_qualitymetamodel_qmm_ocl_booleanexp_has_booleanSymbol():
+    assert hasattr(QualityMetamodel_QMM_OCL_BooleanExp, "booleanSymbol")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::BooleanExp.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_BooleanExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -916,23 +514,23 @@ def test_qualitymetamodel::qmm::ocl::booleanexp_has_booleanSymbol():
 
 
 
-def test_qualitymetamodel::qmm::ocl::stringexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::StringExp)
+def test_qualitymetamodel_qmm_ocl_stringexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_StringExp)
 
 
-def test_qualitymetamodel::qmm::ocl::stringexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::StringExp.__init__)
+def test_qualitymetamodel_qmm_ocl_stringexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_StringExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::stringexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::StringExp.__init__)
+def test_qualitymetamodel_qmm_ocl_stringexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_StringExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_qualitymetamodel::qmm::ocl::stringexp_has_stringSymbol():
-    assert hasattr(QualityMetamodel::QMM::OCL::StringExp, "stringSymbol")
+def test_qualitymetamodel_qmm_ocl_stringexp_has_stringSymbol():
+    assert hasattr(QualityMetamodel_QMM_OCL_StringExp, "stringSymbol")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::StringExp.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_StringExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -968,58 +566,58 @@ def test_collectionexp_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::orderedsetexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OrderedSetExp)
+def test_qualitymetamodel_qmm_ocl_orderedsetexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OrderedSetExp)
 
 
-def test_qualitymetamodel::qmm::ocl::orderedsetexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OrderedSetExp.__init__)
+def test_qualitymetamodel_qmm_ocl_orderedsetexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OrderedSetExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::orderedsetexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OrderedSetExp.__init__)
+def test_qualitymetamodel_qmm_ocl_orderedsetexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OrderedSetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::bagexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::BagExp)
+def test_qualitymetamodel_qmm_ocl_bagexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_BagExp)
 
 
-def test_qualitymetamodel::qmm::ocl::bagexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::BagExp.__init__)
+def test_qualitymetamodel_qmm_ocl_bagexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_BagExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::bagexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::BagExp.__init__)
+def test_qualitymetamodel_qmm_ocl_bagexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_BagExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::sequenceexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::SequenceExp)
+def test_qualitymetamodel_qmm_ocl_sequenceexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_SequenceExp)
 
 
-def test_qualitymetamodel::qmm::ocl::sequenceexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::SequenceExp.__init__)
+def test_qualitymetamodel_qmm_ocl_sequenceexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_SequenceExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::sequenceexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::SequenceExp.__init__)
+def test_qualitymetamodel_qmm_ocl_sequenceexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_SequenceExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::setexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::SetExp)
+def test_qualitymetamodel_qmm_ocl_setexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_SetExp)
 
 
-def test_qualitymetamodel::qmm::ocl::setexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::SetExp.__init__)
+def test_qualitymetamodel_qmm_ocl_setexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_SetExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::setexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::SetExp.__init__)
+def test_qualitymetamodel_qmm_ocl_setexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_SetExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1038,30 +636,30 @@ def test_collectionpart_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::CollectionRange)
+def test_qualitymetamodel_qmm_ocl_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_CollectionRange)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionrange_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::CollectionRange.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionrange_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_CollectionRange.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionrange_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::CollectionRange.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionrange_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::CollectionItem)
+def test_qualitymetamodel_qmm_ocl_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_CollectionItem)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionitem_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::CollectionItem.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionitem_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_CollectionItem.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionitem_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::CollectionItem.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionitem_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_CollectionItem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1080,16 +678,16 @@ def test_localvariable_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::tuplepart_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::TuplePart)
+def test_qualitymetamodel_qmm_ocl_tuplepart_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_TuplePart)
 
 
-def test_qualitymetamodel::qmm::ocl::tuplepart_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::TuplePart.__init__)
+def test_qualitymetamodel_qmm_ocl_tuplepart_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_TuplePart.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::tuplepart_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::TuplePart.__init__)
+def test_qualitymetamodel_qmm_ocl_tuplepart_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_TuplePart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1108,86 +706,86 @@ def test_operatorcallexp_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::eqopcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::EqOpCallExp)
+def test_qualitymetamodel_qmm_ocl_notopcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_NotOpCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::eqopcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::EqOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_notopcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_NotOpCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::eqopcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::EqOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_notopcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_NotOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::intopcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::IntOpCallExp)
+def test_qualitymetamodel_qmm_ocl_relopcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_RelOpCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::intopcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::IntOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_relopcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_RelOpCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::intopcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::IntOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_relopcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_RelOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::notopcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::NotOpCallExp)
+def test_qualitymetamodel_qmm_ocl_addopcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_AddOpCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::notopcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::NotOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_addopcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_AddOpCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::notopcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::NotOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_addopcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_AddOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::addopcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::AddOpCallExp)
+def test_qualitymetamodel_qmm_ocl_mulopcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_MulOpCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::addopcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::AddOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_mulopcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_MulOpCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::addopcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::AddOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_mulopcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_MulOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::relopcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::RelOpCallExp)
+def test_qualitymetamodel_qmm_ocl_eqopcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_EqOpCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::relopcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::RelOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_eqopcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_EqOpCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::relopcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::RelOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_eqopcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_EqOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::mulopcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::MulOpCallExp)
+def test_qualitymetamodel_qmm_ocl_intopcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_IntOpCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::mulopcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::MulOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_intopcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_IntOpCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::mulopcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::MulOpCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_intopcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_IntOpCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1234,30 +832,6 @@ def test_moduleelement_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclFeatureDefinition)
-
-
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclFeatureDefinition.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclFeatureDefinition.__init__)
-    params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_has_static():
-    assert hasattr(QualityMetamodel::QMM::OCL::OclFeatureDefinition, "static")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OclFeatureDefinition.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
 def test_operationcall_is_not_abstract():
     assert not inspect.isabstract(OperationCall)
 
@@ -1272,16 +846,16 @@ def test_operationcall_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::collectionoperationcall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::CollectionOperationCall)
+def test_qualitymetamodel_qmm_ocl_collectionoperationcall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_CollectionOperationCall)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionoperationcall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::CollectionOperationCall.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionoperationcall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_CollectionOperationCall.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionoperationcall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::CollectionOperationCall.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionoperationcall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_CollectionOperationCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1300,41 +874,41 @@ def test_loopexp_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::IteratorExp)
+def test_qualitymetamodel_qmm_ocl_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_IterateExp)
 
 
-def test_qualitymetamodel::qmm::ocl::iteratorexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::IteratorExp.__init__)
+def test_qualitymetamodel_qmm_ocl_iterateexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_IterateExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::iteratorexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::IteratorExp.__init__)
+def test_qualitymetamodel_qmm_ocl_iterateexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_IterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_IteratorExp)
+
+
+def test_qualitymetamodel_qmm_ocl_iteratorexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_IteratorExp.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_iteratorexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_IteratorExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_qualitymetamodel::qmm::ocl::iteratorexp_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::IteratorExp, "name")
+def test_qualitymetamodel_qmm_ocl_iteratorexp_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_IteratorExp, "name")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::IteratorExp.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_IteratorExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::qmm::ocl::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::IterateExp)
-
-
-def test_qualitymetamodel::qmm::ocl::iterateexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::IterateExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::iterateexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::IterateExp.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -1394,118 +968,6 @@ def test_ocltype_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::primitive_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Primitive)
-
-
-def test_qualitymetamodel::qmm::ocl::primitive_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Primitive.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::primitive_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Primitive.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::envtype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::EnvType)
-
-
-def test_qualitymetamodel::qmm::ocl::envtype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::EnvType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::envtype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::EnvType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::tupletype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::TupleType)
-
-
-def test_qualitymetamodel::qmm::ocl::tupletype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::TupleType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::tupletype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::TupleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclmodelelement_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclModelElement)
-
-
-def test_qualitymetamodel::qmm::ocl::oclmodelelement_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclModelElement.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclmodelelement_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclanytype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclAnyType)
-
-
-def test_qualitymetamodel::qmm::ocl::oclanytype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclAnyType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclanytype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclAnyType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::CollectionType)
-
-
-def test_qualitymetamodel::qmm::ocl::collectiontype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::CollectionType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::collectiontype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::maptype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::MapType)
-
-
-def test_qualitymetamodel::qmm::ocl::maptype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::MapType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::maptype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::MapType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::lambdatype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::LambdaType)
-
-
-def test_qualitymetamodel::qmm::ocl::lambdatype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::LambdaType.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::lambdatype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::LambdaType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_valuetype_is_not_abstract():
     assert not inspect.isabstract(ValueType)
 
@@ -1520,33 +982,33 @@ def test_valuetype_constructor_args():
 
 
 
-def test_qualitymetamodel::rangevaluetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::RangeValueType)
+def test_qualitymetamodel_rangevaluetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_RangeValueType)
 
 
-def test_qualitymetamodel::rangevaluetype_constructor_exists():
-    assert callable(QualityMetamodel::RangeValueType.__init__)
+def test_qualitymetamodel_rangevaluetype_constructor_exists():
+    assert callable(QualityMetamodel_RangeValueType.__init__)
 
 
-def test_qualitymetamodel::rangevaluetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::RangeValueType.__init__)
+def test_qualitymetamodel_rangevaluetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_RangeValueType.__init__)
     params = list(sig.parameters.keys())
     assert "min" in params, "Missing parameter 'min'"
     assert "max" in params, "Missing parameter 'max'"
 
-def test_qualitymetamodel::rangevaluetype_has_min():
-    assert hasattr(QualityMetamodel::RangeValueType, "min")
+def test_qualitymetamodel_rangevaluetype_has_min():
+    assert hasattr(QualityMetamodel_RangeValueType, "min")
     descriptor = None
-    for klass in QualityMetamodel::RangeValueType.__mro__:
+    for klass in QualityMetamodel_RangeValueType.__mro__:
         if "min" in klass.__dict__:
             descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::rangevaluetype_has_max():
-    assert hasattr(QualityMetamodel::RangeValueType, "max")
+def test_qualitymetamodel_rangevaluetype_has_max():
+    assert hasattr(QualityMetamodel_RangeValueType, "max")
     descriptor = None
-    for klass in QualityMetamodel::RangeValueType.__mro__:
+    for klass in QualityMetamodel_RangeValueType.__mro__:
         if "max" in klass.__dict__:
             descriptor = klass.__dict__["max"]
             break
@@ -1554,87 +1016,87 @@ def test_qualitymetamodel::rangevaluetype_has_max():
 
 
 
-def test_qualitymetamodel::aggregatedvaluemetric_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::AggregatedValueMetric)
+def test_qualitymetamodel_aggregatedvaluemetric_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_AggregatedValueMetric)
 
 
-def test_qualitymetamodel::aggregatedvaluemetric_constructor_exists():
-    assert callable(QualityMetamodel::AggregatedValueMetric.__init__)
+def test_qualitymetamodel_aggregatedvaluemetric_constructor_exists():
+    assert callable(QualityMetamodel_AggregatedValueMetric.__init__)
 
 
-def test_qualitymetamodel::aggregatedvaluemetric_constructor_args():
-    sig = inspect.signature(QualityMetamodel::AggregatedValueMetric.__init__)
+def test_qualitymetamodel_aggregatedvaluemetric_constructor_args():
+    sig = inspect.signature(QualityMetamodel_AggregatedValueMetric.__init__)
     params = list(sig.parameters.keys())
     assert "average" in params, "Missing parameter 'average'"
-    assert "minimum" in params, "Missing parameter 'minimum'"
     assert "maximum" in params, "Missing parameter 'maximum'"
-    assert "median" in params, "Missing parameter 'median'"
     assert "standardDeviation" in params, "Missing parameter 'standardDeviation'"
+    assert "median" in params, "Missing parameter 'median'"
+    assert "minimum" in params, "Missing parameter 'minimum'"
 
-def test_qualitymetamodel::aggregatedvaluemetric_has_average():
-    assert hasattr(QualityMetamodel::AggregatedValueMetric, "average")
+def test_qualitymetamodel_aggregatedvaluemetric_has_average():
+    assert hasattr(QualityMetamodel_AggregatedValueMetric, "average")
     descriptor = None
-    for klass in QualityMetamodel::AggregatedValueMetric.__mro__:
+    for klass in QualityMetamodel_AggregatedValueMetric.__mro__:
         if "average" in klass.__dict__:
             descriptor = klass.__dict__["average"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::aggregatedvaluemetric_has_minimum():
-    assert hasattr(QualityMetamodel::AggregatedValueMetric, "minimum")
+def test_qualitymetamodel_aggregatedvaluemetric_has_maximum():
+    assert hasattr(QualityMetamodel_AggregatedValueMetric, "maximum")
     descriptor = None
-    for klass in QualityMetamodel::AggregatedValueMetric.__mro__:
-        if "minimum" in klass.__dict__:
-            descriptor = klass.__dict__["minimum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qualitymetamodel::aggregatedvaluemetric_has_maximum():
-    assert hasattr(QualityMetamodel::AggregatedValueMetric, "maximum")
-    descriptor = None
-    for klass in QualityMetamodel::AggregatedValueMetric.__mro__:
+    for klass in QualityMetamodel_AggregatedValueMetric.__mro__:
         if "maximum" in klass.__dict__:
             descriptor = klass.__dict__["maximum"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::aggregatedvaluemetric_has_median():
-    assert hasattr(QualityMetamodel::AggregatedValueMetric, "median")
+def test_qualitymetamodel_aggregatedvaluemetric_has_standardDeviation():
+    assert hasattr(QualityMetamodel_AggregatedValueMetric, "standardDeviation")
     descriptor = None
-    for klass in QualityMetamodel::AggregatedValueMetric.__mro__:
-        if "median" in klass.__dict__:
-            descriptor = klass.__dict__["median"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qualitymetamodel::aggregatedvaluemetric_has_standardDeviation():
-    assert hasattr(QualityMetamodel::AggregatedValueMetric, "standardDeviation")
-    descriptor = None
-    for klass in QualityMetamodel::AggregatedValueMetric.__mro__:
+    for klass in QualityMetamodel_AggregatedValueMetric.__mro__:
         if "standardDeviation" in klass.__dict__:
             descriptor = klass.__dict__["standardDeviation"]
             break
     assert isinstance(descriptor, property)
 
+def test_qualitymetamodel_aggregatedvaluemetric_has_median():
+    assert hasattr(QualityMetamodel_AggregatedValueMetric, "median")
+    descriptor = None
+    for klass in QualityMetamodel_AggregatedValueMetric.__mro__:
+        if "median" in klass.__dict__:
+            descriptor = klass.__dict__["median"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qualitymetamodel_aggregatedvaluemetric_has_minimum():
+    assert hasattr(QualityMetamodel_AggregatedValueMetric, "minimum")
+    descriptor = None
+    for klass in QualityMetamodel_AggregatedValueMetric.__mro__:
+        if "minimum" in klass.__dict__:
+            descriptor = klass.__dict__["minimum"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_qualitymetamodel::textvaluetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::TextValueType)
+
+def test_qualitymetamodel_textvaluetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_TextValueType)
 
 
-def test_qualitymetamodel::textvaluetype_constructor_exists():
-    assert callable(QualityMetamodel::TextValueType.__init__)
+def test_qualitymetamodel_textvaluetype_constructor_exists():
+    assert callable(QualityMetamodel_TextValueType.__init__)
 
 
-def test_qualitymetamodel::textvaluetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::TextValueType.__init__)
+def test_qualitymetamodel_textvaluetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_TextValueType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_qualitymetamodel::textvaluetype_has_value():
-    assert hasattr(QualityMetamodel::TextValueType, "value")
+def test_qualitymetamodel_textvaluetype_has_value():
+    assert hasattr(QualityMetamodel_TextValueType, "value")
     descriptor = None
-    for klass in QualityMetamodel::TextValueType.__mro__:
+    for klass in QualityMetamodel_TextValueType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1684,68 +1146,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::import_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Import)
+def test_qualitymetamodel_qmm_ocl_import_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Import)
 
 
-def test_qualitymetamodel::qmm::ocl::import_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Import.__init__)
+def test_qualitymetamodel_qmm_ocl_import_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Import.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::import_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Import.__init__)
+def test_qualitymetamodel_qmm_ocl_import_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Import.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::oclfeature_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclFeature)
+def test_qualitymetamodel_qmm_ocl_module_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Module)
 
 
-def test_qualitymetamodel::qmm::ocl::oclfeature_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclFeature.__init__)
+def test_qualitymetamodel_qmm_ocl_module_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Module.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::oclfeature_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclFeature.__init__)
-    params = list(sig.parameters.keys())
-    assert "eq" in params, "Missing parameter 'eq'"
-
-def test_qualitymetamodel::qmm::ocl::oclfeature_has_eq():
-    assert hasattr(QualityMetamodel::QMM::OCL::OclFeature, "eq")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OclFeature.__mro__:
-        if "eq" in klass.__dict__:
-            descriptor = klass.__dict__["eq"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclmodel_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclModel)
-
-
-def test_qualitymetamodel::qmm::ocl::oclmodel_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclModel.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclmodel_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::module_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Module)
-
-
-def test_qualitymetamodel::qmm::ocl::module_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Module.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::module_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Module.__init__)
+def test_qualitymetamodel_qmm_ocl_module_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Module.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1764,61 +1188,107 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::mapelement_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::MapElement)
+def test_qualitymetamodel_qmm_ocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclExpression)
 
 
-def test_qualitymetamodel::qmm::ocl::mapelement_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::MapElement.__init__)
+def test_qualitymetamodel_qmm_ocl_oclexpression_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclExpression.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::mapelement_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::MapElement.__init__)
+def test_qualitymetamodel_qmm_ocl_oclexpression_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::VariableDeclaration)
+def test_qualitymetamodel_qmm_ocl_propertycall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_PropertyCall)
 
 
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::VariableDeclaration.__init__)
+def test_qualitymetamodel_qmm_ocl_propertycall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_PropertyCall.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::VariableDeclaration.__init__)
+def test_qualitymetamodel_qmm_ocl_propertycall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_PropertyCall.__init__)
     params = list(sig.parameters.keys())
-    assert "varName" in params, "Missing parameter 'varName'"
-
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_has_varName():
-    assert hasattr(QualityMetamodel::QMM::OCL::VariableDeclaration, "varName")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::VariableDeclaration.__mro__:
-        if "varName" in klass.__dict__:
-            descriptor = klass.__dict__["varName"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_qualitymetamodel::qmm::ocl::ocltype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclType)
+def test_qualitymetamodel_qmm_ocl_collectionpart_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_CollectionPart)
 
 
-def test_qualitymetamodel::qmm::ocl::ocltype_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclType.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionpart_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_CollectionPart.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::ocltype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclType.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionpart_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_CollectionPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_staticpropertycall_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_StaticPropertyCall)
+
+
+def test_qualitymetamodel_qmm_ocl_staticpropertycall_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_StaticPropertyCall.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_staticpropertycall_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_StaticPropertyCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_moduleelement_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_ModuleElement)
+
+
+def test_qualitymetamodel_qmm_ocl_moduleelement_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_ModuleElement.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_moduleelement_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_ModuleElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_mapelement_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_MapElement)
+
+
+def test_qualitymetamodel_qmm_ocl_mapelement_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_MapElement.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_mapelement_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_MapElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_NamedElement)
+
+
+def test_qualitymetamodel_qmm_ocl_namedelement_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_NamedElement.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_namedelement_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_qualitymetamodel::qmm::ocl::ocltype_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::OclType, "name")
+def test_qualitymetamodel_qmm_ocl_namedelement_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_NamedElement, "name")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OclType.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1826,223 +1296,91 @@ def test_qualitymetamodel::qmm::ocl::ocltype_has_name():
 
 
 
-def test_qualitymetamodel::qmm::ocl::collectionpart_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::CollectionPart)
+def test_qualitymetamodel_qmm_ocl_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_LocatedElement)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionpart_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::CollectionPart.__init__)
+def test_qualitymetamodel_qmm_ocl_locatedelement_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_LocatedElement.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionpart_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::CollectionPart.__init__)
+def test_qualitymetamodel_qmm_ocl_locatedelement_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_LocatedElement.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclcontextdefinition_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclContextDefinition)
-
-
-def test_qualitymetamodel::qmm::ocl::oclcontextdefinition_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclContextDefinition.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclcontextdefinition_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclContextDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::moduleelement_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::ModuleElement)
-
-
-def test_qualitymetamodel::qmm::ocl::moduleelement_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::ModuleElement.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::moduleelement_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::ModuleElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclExpression)
-
-
-def test_qualitymetamodel::qmm::ocl::oclexpression_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclExpression.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::oclexpression_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::TupleTypeAttribute)
-
-
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::TupleTypeAttribute.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::TupleTypeAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::TupleTypeAttribute, "name")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::TupleTypeAttribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::qmm::ocl::staticpropertycall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::StaticPropertyCall)
-
-
-def test_qualitymetamodel::qmm::ocl::staticpropertycall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::StaticPropertyCall.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::staticpropertycall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::StaticPropertyCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::propertycall_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::PropertyCall)
-
-
-def test_qualitymetamodel::qmm::ocl::propertycall_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::PropertyCall.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::propertycall_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::PropertyCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::NamedElement)
-
-
-def test_qualitymetamodel::qmm::ocl::namedelement_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::NamedElement.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::namedelement_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_qualitymetamodel::qmm::ocl::namedelement_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::NamedElement, "name")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::qmm::ocl::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::LocatedElement)
-
-
-def test_qualitymetamodel::qmm::ocl::locatedelement_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::LocatedElement.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::locatedelement_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::LocatedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "line" in params, "Missing parameter 'line'"
     assert "charEnd" in params, "Missing parameter 'charEnd'"
-    assert "column" in params, "Missing parameter 'column'"
+    assert "line" in params, "Missing parameter 'line'"
     assert "charStart" in params, "Missing parameter 'charStart'"
+    assert "column" in params, "Missing parameter 'column'"
 
-def test_qualitymetamodel::qmm::ocl::locatedelement_has_line():
-    assert hasattr(QualityMetamodel::QMM::OCL::LocatedElement, "line")
+def test_qualitymetamodel_qmm_ocl_locatedelement_has_charEnd():
+    assert hasattr(QualityMetamodel_QMM_OCL_LocatedElement, "charEnd")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::LocatedElement.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qualitymetamodel::qmm::ocl::locatedelement_has_charEnd():
-    assert hasattr(QualityMetamodel::QMM::OCL::LocatedElement, "charEnd")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::LocatedElement.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_LocatedElement.__mro__:
         if "charEnd" in klass.__dict__:
             descriptor = klass.__dict__["charEnd"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::qmm::ocl::locatedelement_has_column():
-    assert hasattr(QualityMetamodel::QMM::OCL::LocatedElement, "column")
+def test_qualitymetamodel_qmm_ocl_locatedelement_has_line():
+    assert hasattr(QualityMetamodel_QMM_OCL_LocatedElement, "line")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::LocatedElement.__mro__:
-        if "column" in klass.__dict__:
-            descriptor = klass.__dict__["column"]
+    for klass in QualityMetamodel_QMM_OCL_LocatedElement.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::qmm::ocl::locatedelement_has_charStart():
-    assert hasattr(QualityMetamodel::QMM::OCL::LocatedElement, "charStart")
+def test_qualitymetamodel_qmm_ocl_locatedelement_has_charStart():
+    assert hasattr(QualityMetamodel_QMM_OCL_LocatedElement, "charStart")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::LocatedElement.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_LocatedElement.__mro__:
         if "charStart" in klass.__dict__:
             descriptor = klass.__dict__["charStart"]
             break
     assert isinstance(descriptor, property)
 
+def test_qualitymetamodel_qmm_ocl_locatedelement_has_column():
+    assert hasattr(QualityMetamodel_QMM_OCL_LocatedElement, "column")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_LocatedElement.__mro__:
+        if "column" in klass.__dict__:
+            descriptor = klass.__dict__["column"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_qualitymetamodel::listvalue_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::ListValue)
+
+def test_qualitymetamodel_listvalue_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_ListValue)
 
 
-def test_qualitymetamodel::listvalue_constructor_exists():
-    assert callable(QualityMetamodel::ListValue.__init__)
+def test_qualitymetamodel_listvalue_constructor_exists():
+    assert callable(QualityMetamodel_ListValue.__init__)
 
 
-def test_qualitymetamodel::listvalue_constructor_args():
-    sig = inspect.signature(QualityMetamodel::ListValue.__init__)
+def test_qualitymetamodel_listvalue_constructor_args():
+    sig = inspect.signature(QualityMetamodel_ListValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::integervaluetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::IntegerValueType)
+def test_qualitymetamodel_integervaluetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_IntegerValueType)
 
 
-def test_qualitymetamodel::integervaluetype_constructor_exists():
-    assert callable(QualityMetamodel::IntegerValueType.__init__)
+def test_qualitymetamodel_integervaluetype_constructor_exists():
+    assert callable(QualityMetamodel_IntegerValueType.__init__)
 
 
-def test_qualitymetamodel::integervaluetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::IntegerValueType.__init__)
+def test_qualitymetamodel_integervaluetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_IntegerValueType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_qualitymetamodel::integervaluetype_has_value():
-    assert hasattr(QualityMetamodel::IntegerValueType, "value")
+def test_qualitymetamodel_integervaluetype_has_value():
+    assert hasattr(QualityMetamodel_IntegerValueType, "value")
     descriptor = None
-    for klass in QualityMetamodel::IntegerValueType.__mro__:
+    for klass in QualityMetamodel_IntegerValueType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2050,23 +1388,23 @@ def test_qualitymetamodel::integervaluetype_has_value():
 
 
 
-def test_qualitymetamodel::booleanvaluetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::BooleanValueType)
+def test_qualitymetamodel_booleanvaluetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_BooleanValueType)
 
 
-def test_qualitymetamodel::booleanvaluetype_constructor_exists():
-    assert callable(QualityMetamodel::BooleanValueType.__init__)
+def test_qualitymetamodel_booleanvaluetype_constructor_exists():
+    assert callable(QualityMetamodel_BooleanValueType.__init__)
 
 
-def test_qualitymetamodel::booleanvaluetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::BooleanValueType.__init__)
+def test_qualitymetamodel_booleanvaluetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_BooleanValueType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_qualitymetamodel::booleanvaluetype_has_value():
-    assert hasattr(QualityMetamodel::BooleanValueType, "value")
+def test_qualitymetamodel_booleanvaluetype_has_value():
+    assert hasattr(QualityMetamodel_BooleanValueType, "value")
     descriptor = None
-    for klass in QualityMetamodel::BooleanValueType.__mro__:
+    for klass in QualityMetamodel_BooleanValueType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2074,23 +1412,23 @@ def test_qualitymetamodel::booleanvaluetype_has_value():
 
 
 
-def test_qualitymetamodel::realvaluetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::RealValueType)
+def test_qualitymetamodel_realvaluetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_RealValueType)
 
 
-def test_qualitymetamodel::realvaluetype_constructor_exists():
-    assert callable(QualityMetamodel::RealValueType.__init__)
+def test_qualitymetamodel_realvaluetype_constructor_exists():
+    assert callable(QualityMetamodel_RealValueType.__init__)
 
 
-def test_qualitymetamodel::realvaluetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::RealValueType.__init__)
+def test_qualitymetamodel_realvaluetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_RealValueType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_qualitymetamodel::realvaluetype_has_value():
-    assert hasattr(QualityMetamodel::RealValueType, "value")
+def test_qualitymetamodel_realvaluetype_has_value():
+    assert hasattr(QualityMetamodel_RealValueType, "value")
     descriptor = None
-    for klass in QualityMetamodel::RealValueType.__mro__:
+    for klass in QualityMetamodel_RealValueType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2098,23 +1436,23 @@ def test_qualitymetamodel::realvaluetype_has_value():
 
 
 
-def test_qualitymetamodel::enumerationitem_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::EnumerationItem)
+def test_qualitymetamodel_enumerationitem_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_EnumerationItem)
 
 
-def test_qualitymetamodel::enumerationitem_constructor_exists():
-    assert callable(QualityMetamodel::EnumerationItem.__init__)
+def test_qualitymetamodel_enumerationitem_constructor_exists():
+    assert callable(QualityMetamodel_EnumerationItem.__init__)
 
 
-def test_qualitymetamodel::enumerationitem_constructor_args():
-    sig = inspect.signature(QualityMetamodel::EnumerationItem.__init__)
+def test_qualitymetamodel_enumerationitem_constructor_args():
+    sig = inspect.signature(QualityMetamodel_EnumerationItem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_qualitymetamodel::enumerationitem_has_name():
-    assert hasattr(QualityMetamodel::EnumerationItem, "name")
+def test_qualitymetamodel_enumerationitem_has_name():
+    assert hasattr(QualityMetamodel_EnumerationItem, "name")
     descriptor = None
-    for klass in QualityMetamodel::EnumerationItem.__mro__:
+    for klass in QualityMetamodel_EnumerationItem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2122,57 +1460,57 @@ def test_qualitymetamodel::enumerationitem_has_name():
 
 
 
-def test_qualitymetamodel::enumerationmetric_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::EnumerationMetric)
+def test_qualitymetamodel_enumerationmetric_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_EnumerationMetric)
 
 
-def test_qualitymetamodel::enumerationmetric_constructor_exists():
-    assert callable(QualityMetamodel::EnumerationMetric.__init__)
+def test_qualitymetamodel_enumerationmetric_constructor_exists():
+    assert callable(QualityMetamodel_EnumerationMetric.__init__)
 
 
-def test_qualitymetamodel::enumerationmetric_constructor_args():
-    sig = inspect.signature(QualityMetamodel::EnumerationMetric.__init__)
+def test_qualitymetamodel_enumerationmetric_constructor_args():
+    sig = inspect.signature(QualityMetamodel_EnumerationMetric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::metricprovider_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::MetricProvider)
+def test_qualitymetamodel_metricprovider_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_MetricProvider)
 
 
-def test_qualitymetamodel::metricprovider_constructor_exists():
-    assert callable(QualityMetamodel::MetricProvider.__init__)
+def test_qualitymetamodel_metricprovider_constructor_exists():
+    assert callable(QualityMetamodel_MetricProvider.__init__)
 
 
-def test_qualitymetamodel::metricprovider_constructor_args():
-    sig = inspect.signature(QualityMetamodel::MetricProvider.__init__)
+def test_qualitymetamodel_metricprovider_constructor_args():
+    sig = inspect.signature(QualityMetamodel_MetricProvider.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_qualitymetamodel::metricprovider_has_name():
-    assert hasattr(QualityMetamodel::MetricProvider, "name")
+def test_qualitymetamodel_metricprovider_has_name():
+    assert hasattr(QualityMetamodel_MetricProvider, "name")
     descriptor = None
-    for klass in QualityMetamodel::MetricProvider.__mro__:
+    for klass in QualityMetamodel_MetricProvider.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::metricprovider_has_id():
-    assert hasattr(QualityMetamodel::MetricProvider, "id")
+def test_qualitymetamodel_metricprovider_has_id():
+    assert hasattr(QualityMetamodel_MetricProvider, "id")
     descriptor = None
-    for klass in QualityMetamodel::MetricProvider.__mro__:
+    for klass in QualityMetamodel_MetricProvider.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::metricprovider_has_description():
-    assert hasattr(QualityMetamodel::MetricProvider, "description")
+def test_qualitymetamodel_metricprovider_has_description():
+    assert hasattr(QualityMetamodel_MetricProvider, "description")
     descriptor = None
-    for klass in QualityMetamodel::MetricProvider.__mro__:
+    for klass in QualityMetamodel_MetricProvider.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -2194,16 +1532,16 @@ def test_module_constructor_args():
 
 
 
-def test_qualitymetamodel::qualitymodel_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QualityModel)
+def test_qualitymetamodel_qualitymodel_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QualityModel)
 
 
-def test_qualitymetamodel::qualitymodel_constructor_exists():
-    assert callable(QualityMetamodel::QualityModel.__init__)
+def test_qualitymetamodel_qualitymodel_constructor_exists():
+    assert callable(QualityMetamodel_QualityModel.__init__)
 
 
-def test_qualitymetamodel::qualitymodel_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QualityModel.__init__)
+def test_qualitymetamodel_qualitymodel_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QualityModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2222,239 +1560,135 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::tupleexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::TupleExp)
+def test_qualitymetamodel_qmm_ocl_collectionexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_CollectionExp)
 
 
-def test_qualitymetamodel::qmm::ocl::tupleexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::TupleExp.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_CollectionExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::tupleexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::TupleExp.__init__)
+def test_qualitymetamodel_qmm_ocl_collectionexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_CollectionExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::collectionexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::CollectionExp)
+def test_qualitymetamodel_qmm_ocl_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_PropertyCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::CollectionExp.__init__)
+def test_qualitymetamodel_qmm_ocl_propertycallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_PropertyCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::collectionexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::CollectionExp.__init__)
+def test_qualitymetamodel_qmm_ocl_propertycallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::braceexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::BraceExp)
+def test_qualitymetamodel_qmm_ocl_mapexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_MapExp)
 
 
-def test_qualitymetamodel::qmm::ocl::braceexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::BraceExp.__init__)
+def test_qualitymetamodel_qmm_ocl_mapexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_MapExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::braceexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::BraceExp.__init__)
+def test_qualitymetamodel_qmm_ocl_mapexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_MapExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::oclundefinedexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclUndefinedExp)
+def test_qualitymetamodel_qmm_ocl_selfexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_SelfExp)
 
 
-def test_qualitymetamodel::qmm::ocl::oclundefinedexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclUndefinedExp.__init__)
+def test_qualitymetamodel_qmm_ocl_selfexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_SelfExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::oclundefinedexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclUndefinedExp.__init__)
+def test_qualitymetamodel_qmm_ocl_selfexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_SelfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::letexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::LetExp)
+def test_qualitymetamodel_qmm_ocl_braceexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_BraceExp)
 
 
-def test_qualitymetamodel::qmm::ocl::letexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::LetExp.__init__)
+def test_qualitymetamodel_qmm_ocl_braceexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_BraceExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::letexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::LetExp.__init__)
+def test_qualitymetamodel_qmm_ocl_braceexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_BraceExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::EnumLiteralExp)
+def test_qualitymetamodel_qmm_ocl_letexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_LetExp)
 
 
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::EnumLiteralExp.__init__)
+def test_qualitymetamodel_qmm_ocl_letexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_LetExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::EnumLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::EnumLiteralExp, "name")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::EnumLiteralExp.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::qmm::ocl::primitiveexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::PrimitiveExp)
-
-
-def test_qualitymetamodel::qmm::ocl::primitiveexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::PrimitiveExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::primitiveexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::PrimitiveExp.__init__)
+def test_qualitymetamodel_qmm_ocl_letexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::ifexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::IfExp)
+def test_qualitymetamodel_qmm_ocl_envexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_EnvExp)
 
 
-def test_qualitymetamodel::qmm::ocl::ifexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::IfExp.__init__)
+def test_qualitymetamodel_qmm_ocl_envexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_EnvExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::ifexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::IfExp.__init__)
+def test_qualitymetamodel_qmm_ocl_envexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_EnvExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::variableexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::VariableExp)
+def test_qualitymetamodel_qmm_ocl_ifexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_IfExp)
 
 
-def test_qualitymetamodel::qmm::ocl::variableexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::VariableExp.__init__)
+def test_qualitymetamodel_qmm_ocl_ifexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_IfExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::variableexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::VariableExp.__init__)
+def test_qualitymetamodel_qmm_ocl_ifexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OclModelElementExp)
+def test_qualitymetamodel_qmm_ocl_operatorcallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OperatorCallExp)
 
 
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OclModelElementExp.__init__)
+def test_qualitymetamodel_qmm_ocl_operatorcallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OperatorCallExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OclModelElementExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_has_name():
-    assert hasattr(QualityMetamodel::QMM::OCL::OclModelElementExp, "name")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OclModelElementExp.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::qmm::ocl::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::PropertyCallExp)
-
-
-def test_qualitymetamodel::qmm::ocl::propertycallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::PropertyCallExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::propertycallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::PropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::envexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::EnvExp)
-
-
-def test_qualitymetamodel::qmm::ocl::envexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::EnvExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::envexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::EnvExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::mapexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::MapExp)
-
-
-def test_qualitymetamodel::qmm::ocl::mapexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::MapExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::mapexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::MapExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::staticpropertycallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::StaticPropertyCallExp)
-
-
-def test_qualitymetamodel::qmm::ocl::staticpropertycallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::StaticPropertyCallExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::staticpropertycallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::StaticPropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::OperatorCallExp)
-
-
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::OperatorCallExp.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::OperatorCallExp.__init__)
+def test_qualitymetamodel_qmm_ocl_operatorcallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OperatorCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_has_operationName():
-    assert hasattr(QualityMetamodel::QMM::OCL::OperatorCallExp, "operationName")
+def test_qualitymetamodel_qmm_ocl_operatorcallexp_has_operationName():
+    assert hasattr(QualityMetamodel_QMM_OCL_OperatorCallExp, "operationName")
     descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::OperatorCallExp.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_OperatorCallExp.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -2462,63 +1696,143 @@ def test_qualitymetamodel::qmm::ocl::operatorcallexp_has_operationName():
 
 
 
-def test_qualitymetamodel::qmm::ocl::selfexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::SelfExp)
+def test_qualitymetamodel_qmm_ocl_oclundefinedexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclUndefinedExp)
 
 
-def test_qualitymetamodel::qmm::ocl::selfexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::SelfExp.__init__)
+def test_qualitymetamodel_qmm_ocl_oclundefinedexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclUndefinedExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::selfexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::SelfExp.__init__)
+def test_qualitymetamodel_qmm_ocl_oclundefinedexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclUndefinedExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::qmm::ocl::superexp_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::SuperExp)
+def test_qualitymetamodel_qmm_ocl_variableexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_VariableExp)
 
 
-def test_qualitymetamodel::qmm::ocl::superexp_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::SuperExp.__init__)
+def test_qualitymetamodel_qmm_ocl_variableexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_VariableExp.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::superexp_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::SuperExp.__init__)
+def test_qualitymetamodel_qmm_ocl_variableexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::operation_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::Operation)
+def test_qualitymetamodel_qmm_ocl_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_EnumLiteralExp)
 
 
-def test_qualitymetamodel::operation_constructor_exists():
-    assert callable(QualityMetamodel::Operation.__init__)
+def test_qualitymetamodel_qmm_ocl_enumliteralexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_EnumLiteralExp.__init__)
 
 
-def test_qualitymetamodel::operation_constructor_args():
-    sig = inspect.signature(QualityMetamodel::Operation.__init__)
+def test_qualitymetamodel_qmm_ocl_enumliteralexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "body" in params, "Missing parameter 'body'"
 
-def test_qualitymetamodel::operation_has_name():
-    assert hasattr(QualityMetamodel::Operation, "name")
+def test_qualitymetamodel_qmm_ocl_enumliteralexp_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_EnumLiteralExp, "name")
     descriptor = None
-    for klass in QualityMetamodel::Operation.__mro__:
+    for klass in QualityMetamodel_QMM_OCL_EnumLiteralExp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_qualitymetamodel::operation_has_body():
-    assert hasattr(QualityMetamodel::Operation, "body")
+
+
+def test_qualitymetamodel_qmm_ocl_staticpropertycallexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_StaticPropertyCallExp)
+
+
+def test_qualitymetamodel_qmm_ocl_staticpropertycallexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_StaticPropertyCallExp.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_staticpropertycallexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_StaticPropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_TupleExp)
+
+
+def test_qualitymetamodel_qmm_ocl_tupleexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_TupleExp.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_tupleexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_TupleExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_primitiveexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_PrimitiveExp)
+
+
+def test_qualitymetamodel_qmm_ocl_primitiveexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_PrimitiveExp.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_primitiveexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_PrimitiveExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_superexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_SuperExp)
+
+
+def test_qualitymetamodel_qmm_ocl_superexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_SuperExp.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_superexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_SuperExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_operation_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_Operation)
+
+
+def test_qualitymetamodel_operation_constructor_exists():
+    assert callable(QualityMetamodel_Operation.__init__)
+
+
+def test_qualitymetamodel_operation_constructor_args():
+    sig = inspect.signature(QualityMetamodel_Operation.__init__)
+    params = list(sig.parameters.keys())
+    assert "body" in params, "Missing parameter 'body'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_qualitymetamodel_operation_has_body():
+    assert hasattr(QualityMetamodel_Operation, "body")
     descriptor = None
-    for klass in QualityMetamodel::Operation.__mro__:
+    for klass in QualityMetamodel_Operation.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qualitymetamodel_operation_has_name():
+    assert hasattr(QualityMetamodel_Operation, "name")
+    descriptor = None
+    for klass in QualityMetamodel_Operation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -2538,30 +1852,30 @@ def test_value_constructor_args():
 
 
 
-def test_qualitymetamodel::aggregatedvalue_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::AggregatedValue)
+def test_qualitymetamodel_aggregatedvalue_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_AggregatedValue)
 
 
-def test_qualitymetamodel::aggregatedvalue_constructor_exists():
-    assert callable(QualityMetamodel::AggregatedValue.__init__)
+def test_qualitymetamodel_aggregatedvalue_constructor_exists():
+    assert callable(QualityMetamodel_AggregatedValue.__init__)
 
 
-def test_qualitymetamodel::aggregatedvalue_constructor_args():
-    sig = inspect.signature(QualityMetamodel::AggregatedValue.__init__)
+def test_qualitymetamodel_aggregatedvalue_constructor_args():
+    sig = inspect.signature(QualityMetamodel_AggregatedValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::singlevalue_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::SingleValue)
+def test_qualitymetamodel_singlevalue_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_SingleValue)
 
 
-def test_qualitymetamodel::singlevalue_constructor_exists():
-    assert callable(QualityMetamodel::SingleValue.__init__)
+def test_qualitymetamodel_singlevalue_constructor_exists():
+    assert callable(QualityMetamodel_SingleValue.__init__)
 
 
-def test_qualitymetamodel::singlevalue_constructor_args():
-    sig = inspect.signature(QualityMetamodel::SingleValue.__init__)
+def test_qualitymetamodel_singlevalue_constructor_args():
+    sig = inspect.signature(QualityMetamodel_SingleValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2580,75 +1894,23 @@ def test_variabledeclaration_constructor_args():
 
 
 
-def test_qualitymetamodel::qmm::ocl::iterator_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Iterator)
+def test_qualitymetamodel_value_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_Value)
 
 
-def test_qualitymetamodel::qmm::ocl::iterator_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Iterator.__init__)
+def test_qualitymetamodel_value_constructor_exists():
+    assert callable(QualityMetamodel_Value.__init__)
 
 
-def test_qualitymetamodel::qmm::ocl::iterator_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Iterator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::parameter_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::Parameter)
-
-
-def test_qualitymetamodel::qmm::ocl::parameter_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::Parameter.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::parameter_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qualitymetamodel::qmm::ocl::localvariable_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QMM::OCL::LocalVariable)
-
-
-def test_qualitymetamodel::qmm::ocl::localvariable_constructor_exists():
-    assert callable(QualityMetamodel::QMM::OCL::LocalVariable.__init__)
-
-
-def test_qualitymetamodel::qmm::ocl::localvariable_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QMM::OCL::LocalVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "eq" in params, "Missing parameter 'eq'"
-
-def test_qualitymetamodel::qmm::ocl::localvariable_has_eq():
-    assert hasattr(QualityMetamodel::QMM::OCL::LocalVariable, "eq")
-    descriptor = None
-    for klass in QualityMetamodel::QMM::OCL::LocalVariable.__mro__:
-        if "eq" in klass.__dict__:
-            descriptor = klass.__dict__["eq"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qualitymetamodel::value_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::Value)
-
-
-def test_qualitymetamodel::value_constructor_exists():
-    assert callable(QualityMetamodel::Value.__init__)
-
-
-def test_qualitymetamodel::value_constructor_args():
-    sig = inspect.signature(QualityMetamodel::Value.__init__)
+def test_qualitymetamodel_value_constructor_args():
+    sig = inspect.signature(QualityMetamodel_Value.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_qualitymetamodel::value_has_description():
-    assert hasattr(QualityMetamodel::Value, "description")
+def test_qualitymetamodel_value_has_description():
+    assert hasattr(QualityMetamodel_Value, "description")
     descriptor = None
-    for klass in QualityMetamodel::Value.__mro__:
+    for klass in QualityMetamodel_Value.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -2656,31 +1918,769 @@ def test_qualitymetamodel::value_has_description():
 
 
 
-def test_qualitymetamodel::qualityattribute_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::QualityAttribute)
+def test_qualitymetamodel_qualityattribute_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QualityAttribute)
 
 
-def test_qualitymetamodel::qualityattribute_constructor_exists():
-    assert callable(QualityMetamodel::QualityAttribute.__init__)
+def test_qualitymetamodel_qualityattribute_constructor_exists():
+    assert callable(QualityMetamodel_QualityAttribute.__init__)
 
 
-def test_qualitymetamodel::qualityattribute_constructor_args():
-    sig = inspect.signature(QualityMetamodel::QualityAttribute.__init__)
+def test_qualitymetamodel_qualityattribute_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QualityAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qualitymetamodel::valuetype_is_not_abstract():
-    assert not inspect.isabstract(QualityMetamodel::ValueType)
+def test_qualitymetamodel_valuetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_ValueType)
 
 
-def test_qualitymetamodel::valuetype_constructor_exists():
-    assert callable(QualityMetamodel::ValueType.__init__)
+def test_qualitymetamodel_valuetype_constructor_exists():
+    assert callable(QualityMetamodel_ValueType.__init__)
 
 
-def test_qualitymetamodel::valuetype_constructor_args():
-    sig = inspect.signature(QualityMetamodel::ValueType.__init__)
+def test_qualitymetamodel_valuetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_ValueType.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_parameter_is_not_abstract():
+    assert not inspect.isabstract(Parameter)
+
+
+def test_parameter_constructor_exists():
+    assert callable(Parameter.__init__)
+
+
+def test_parameter_constructor_args():
+    sig = inspect.signature(Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclinstancemodel_is_not_abstract():
+    assert not inspect.isabstract(OclInstanceModel)
+
+
+def test_oclinstancemodel_constructor_exists():
+    assert callable(OclInstanceModel.__init__)
+
+
+def test_oclinstancemodel_constructor_args():
+    sig = inspect.signature(OclInstanceModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclmodelelement_is_not_abstract():
+    assert not inspect.isabstract(OclModelElement)
+
+
+def test_oclmodelelement_constructor_exists():
+    assert callable(OclModelElement.__init__)
+
+
+def test_oclmodelelement_constructor_args():
+    sig = inspect.signature(OclModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodel_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclModel)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodel_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclModel.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodel_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelement_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclModelElement)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelement_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclModelElement.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelement_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tupletype_is_not_abstract():
+    assert not inspect.isabstract(TupleType)
+
+
+def test_tupletype_constructor_exists():
+    assert callable(TupleType.__init__)
+
+
+def test_tupletype_constructor_args():
+    sig = inspect.signature(TupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_tupletypeattribute_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_TupleTypeAttribute)
+
+
+def test_qualitymetamodel_qmm_ocl_tupletypeattribute_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_TupleTypeAttribute.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_tupletypeattribute_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_TupleTypeAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_qualitymetamodel_qmm_ocl_tupletypeattribute_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_TupleTypeAttribute, "name")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_TupleTypeAttribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclfeature_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclFeature)
+
+
+def test_qualitymetamodel_qmm_ocl_oclfeature_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclFeature.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclfeature_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclFeature.__init__)
+    params = list(sig.parameters.keys())
+    assert "eq" in params, "Missing parameter 'eq'"
+
+def test_qualitymetamodel_qmm_ocl_oclfeature_has_eq():
+    assert hasattr(QualityMetamodel_QMM_OCL_OclFeature, "eq")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_OclFeature.__mro__:
+        if "eq" in klass.__dict__:
+            descriptor = klass.__dict__["eq"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_oclfeaturedefinition_is_not_abstract():
+    assert not inspect.isabstract(OclFeatureDefinition)
+
+
+def test_oclfeaturedefinition_constructor_exists():
+    assert callable(OclFeatureDefinition.__init__)
+
+
+def test_oclfeaturedefinition_constructor_args():
+    sig = inspect.signature(OclFeatureDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclcontextdefinition_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclContextDefinition)
+
+
+def test_qualitymetamodel_qmm_ocl_oclcontextdefinition_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclContextDefinition.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclcontextdefinition_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclContextDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclfeature_is_not_abstract():
+    assert not inspect.isabstract(OclFeature)
+
+
+def test_oclfeature_constructor_exists():
+    assert callable(OclFeature.__init__)
+
+
+def test_oclfeature_constructor_args():
+    sig = inspect.signature(OclFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_attribute_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Attribute)
+
+
+def test_qualitymetamodel_qmm_ocl_attribute_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Attribute.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_attribute_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Attribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_operation_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Operation)
+
+
+def test_qualitymetamodel_qmm_ocl_operation_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Operation.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_operation_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclfeaturedefinition_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclFeatureDefinition)
+
+
+def test_qualitymetamodel_qmm_ocl_oclfeaturedefinition_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclFeatureDefinition.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclfeaturedefinition_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclFeatureDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "static" in params, "Missing parameter 'static'"
+
+def test_qualitymetamodel_qmm_ocl_oclfeaturedefinition_has_static():
+    assert hasattr(QualityMetamodel_QMM_OCL_OclFeatureDefinition, "static")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_OclFeatureDefinition.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qualitymetamodel_qmm_ocl_envtype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_EnvType)
+
+
+def test_qualitymetamodel_qmm_ocl_envtype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_EnvType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_envtype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_EnvType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_lambdatype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_LambdaType)
+
+
+def test_qualitymetamodel_qmm_ocl_lambdatype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_LambdaType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_lambdatype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_LambdaType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_maptype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_MapType)
+
+
+def test_qualitymetamodel_qmm_ocl_maptype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_MapType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_maptype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_MapType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tupletypeattribute_is_not_abstract():
+    assert not inspect.isabstract(TupleTypeAttribute)
+
+
+def test_tupletypeattribute_constructor_exists():
+    assert callable(TupleTypeAttribute.__init__)
+
+
+def test_tupletypeattribute_constructor_args():
+    sig = inspect.signature(TupleTypeAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(CollectionType)
+
+
+def test_collectiontype_constructor_exists():
+    assert callable(CollectionType.__init__)
+
+
+def test_collectiontype_constructor_args():
+    sig = inspect.signature(CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_maptype_is_not_abstract():
+    assert not inspect.isabstract(MapType)
+
+
+def test_maptype_constructor_exists():
+    assert callable(MapType.__init__)
+
+
+def test_maptype_constructor_args():
+    sig = inspect.signature(MapType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_tupletype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_TupleType)
+
+
+def test_qualitymetamodel_qmm_ocl_tupletype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_TupleType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_tupletype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_TupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclanytype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclAnyType)
+
+
+def test_qualitymetamodel_qmm_ocl_oclanytype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclAnyType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclanytype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclAnyType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_settype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_SetType)
+
+
+def test_qualitymetamodel_qmm_ocl_settype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_SetType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_settype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_SetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_SequenceType)
+
+
+def test_qualitymetamodel_qmm_ocl_sequencetype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_SequenceType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_sequencetype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_SequenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OrderedSetType)
+
+
+def test_qualitymetamodel_qmm_ocl_orderedsettype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OrderedSetType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_orderedsettype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_bagtype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_BagType)
+
+
+def test_qualitymetamodel_qmm_ocl_bagtype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_BagType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_bagtype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_BagType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_numerictype_is_not_abstract():
+    assert not inspect.isabstract(NumericType)
+
+
+def test_numerictype_constructor_exists():
+    assert callable(NumericType.__init__)
+
+
+def test_numerictype_constructor_args():
+    sig = inspect.signature(NumericType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_realtype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_RealType)
+
+
+def test_qualitymetamodel_qmm_ocl_realtype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_RealType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_realtype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_RealType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_integertype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_IntegerType)
+
+
+def test_qualitymetamodel_qmm_ocl_integertype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_IntegerType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_integertype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_IntegerType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitive_is_not_abstract():
+    assert not inspect.isabstract(Primitive)
+
+
+def test_primitive_constructor_exists():
+    assert callable(Primitive.__init__)
+
+
+def test_primitive_constructor_args():
+    sig = inspect.signature(Primitive.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_numerictype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_NumericType)
+
+
+def test_qualitymetamodel_qmm_ocl_numerictype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_NumericType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_numerictype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_NumericType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_booleantype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_BooleanType)
+
+
+def test_qualitymetamodel_qmm_ocl_booleantype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_BooleanType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_booleantype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_BooleanType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_StringType)
+
+
+def test_qualitymetamodel_qmm_ocl_stringtype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_StringType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_stringtype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_StringType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_primitive_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Primitive)
+
+
+def test_qualitymetamodel_qmm_ocl_primitive_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Primitive.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_primitive_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Primitive.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclmodel_is_not_abstract():
+    assert not inspect.isabstract(OclModel)
+
+
+def test_oclmodel_constructor_exists():
+    assert callable(OclModel.__init__)
+
+
+def test_oclmodel_constructor_args():
+    sig = inspect.signature(OclModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclinstancemodel_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclInstanceModel)
+
+
+def test_qualitymetamodel_qmm_ocl_oclinstancemodel_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclInstanceModel.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclinstancemodel_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclInstanceModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclmetamodel_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclMetamodel)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmetamodel_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclMetamodel.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmetamodel_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclMetamodel.__init__)
+    params = list(sig.parameters.keys())
+    assert "uri" in params, "Missing parameter 'uri'"
+
+def test_qualitymetamodel_qmm_ocl_oclmetamodel_has_uri():
+    assert hasattr(QualityMetamodel_QMM_OCL_OclMetamodel, "uri")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_OclMetamodel.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelementexp_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclModelElementExp)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelementexp_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclModelElementExp.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelementexp_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclModelElementExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_qualitymetamodel_qmm_ocl_oclmodelelementexp_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_OclModelElementExp, "name")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_OclModelElementExp.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lambdatype_is_not_abstract():
+    assert not inspect.isabstract(LambdaType)
+
+
+def test_lambdatype_constructor_exists():
+    assert callable(LambdaType.__init__)
+
+
+def test_lambdatype_constructor_args():
+    sig = inspect.signature(LambdaType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_VariableDeclaration)
+
+
+def test_qualitymetamodel_qmm_ocl_variabledeclaration_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_VariableDeclaration.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_variabledeclaration_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_VariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "varName" in params, "Missing parameter 'varName'"
+
+def test_qualitymetamodel_qmm_ocl_variabledeclaration_has_varName():
+    assert hasattr(QualityMetamodel_QMM_OCL_VariableDeclaration, "varName")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_VariableDeclaration.__mro__:
+        if "varName" in klass.__dict__:
+            descriptor = klass.__dict__["varName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_oclcontextdefinition_is_not_abstract():
+    assert not inspect.isabstract(OclContextDefinition)
+
+
+def test_oclcontextdefinition_constructor_exists():
+    assert callable(OclContextDefinition.__init__)
+
+
+def test_oclcontextdefinition_constructor_args():
+    sig = inspect.signature(OclContextDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_ocltype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_OclType)
+
+
+def test_qualitymetamodel_qmm_ocl_ocltype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_OclType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_ocltype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_OclType.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_qualitymetamodel_qmm_ocl_ocltype_has_name():
+    assert hasattr(QualityMetamodel_QMM_OCL_OclType, "name")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_OclType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qualitymetamodel_qmm_ocl_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_CollectionType)
+
+
+def test_qualitymetamodel_qmm_ocl_collectiontype_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_CollectionType.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_collectiontype_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_parameter_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Parameter)
+
+
+def test_qualitymetamodel_qmm_ocl_parameter_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Parameter.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_parameter_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_iterator_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_Iterator)
+
+
+def test_qualitymetamodel_qmm_ocl_iterator_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_Iterator.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_iterator_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_Iterator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(IterateExp)
+
+
+def test_iterateexp_constructor_exists():
+    assert callable(IterateExp.__init__)
+
+
+def test_iterateexp_constructor_args():
+    sig = inspect.signature(IterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qualitymetamodel_qmm_ocl_localvariable_is_not_abstract():
+    assert not inspect.isabstract(QualityMetamodel_QMM_OCL_LocalVariable)
+
+
+def test_qualitymetamodel_qmm_ocl_localvariable_constructor_exists():
+    assert callable(QualityMetamodel_QMM_OCL_LocalVariable.__init__)
+
+
+def test_qualitymetamodel_qmm_ocl_localvariable_constructor_args():
+    sig = inspect.signature(QualityMetamodel_QMM_OCL_LocalVariable.__init__)
+    params = list(sig.parameters.keys())
+    assert "eq" in params, "Missing parameter 'eq'"
+
+def test_qualitymetamodel_qmm_ocl_localvariable_has_eq():
+    assert hasattr(QualityMetamodel_QMM_OCL_LocalVariable, "eq")
+    descriptor = None
+    for klass in QualityMetamodel_QMM_OCL_LocalVariable.__mro__:
+        if "eq" in klass.__dict__:
+            descriptor = klass.__dict__["eq"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -2694,119 +2694,33 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-OclInstanceModel_strategy = st.builds(
-    OclInstanceModel,
-)
-OclModelElement_strategy = st.builds(
-    OclModelElement,
-)
-TupleType_strategy = st.builds(
-    TupleType,
-)
-OclFeatureDefinition_strategy = st.builds(
-    OclFeatureDefinition,
-)
-OclFeature_strategy = st.builds(
-    OclFeature,
-)
-QualityMetamodel::QMM::OCL::Attribute_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Attribute,
-)
-TupleTypeAttribute_strategy = st.builds(
-    TupleTypeAttribute,
-)
-CollectionType_strategy = st.builds(
-    CollectionType,
-)
-MapType_strategy = st.builds(
-    MapType,
-)
-QualityMetamodel::QMM::OCL::SetType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::SetType,
-)
-QualityMetamodel::QMM::OCL::SequenceType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::SequenceType,
-)
-QualityMetamodel::QMM::OCL::OrderedSetType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OrderedSetType,
-)
-QualityMetamodel::QMM::OCL::BagType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::BagType,
-)
-NumericType_strategy = st.builds(
-    NumericType,
-)
-QualityMetamodel::QMM::OCL::RealType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::RealType,
-)
-QualityMetamodel::QMM::OCL::IntegerType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::IntegerType,
-)
-Primitive_strategy = st.builds(
-    Primitive,
-)
-QualityMetamodel::QMM::OCL::BooleanType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::BooleanType,
-)
-QualityMetamodel::QMM::OCL::NumericType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::NumericType,
-)
-QualityMetamodel::QMM::OCL::StringType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::StringType,
-)
-OclModel_strategy = st.builds(
-    OclModel,
-)
-QualityMetamodel::QMM::OCL::OclMetamodel_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclMetamodel,
-    uri=
-        safe_text
-)
-LambdaType_strategy = st.builds(
-    LambdaType,
-)
-OclContextDefinition_strategy = st.builds(
-    OclContextDefinition,
-)
-IterateExp_strategy = st.builds(
-    IterateExp,
-)
 Iterator_strategy = st.builds(
     Iterator,
 )
 PropertyCall_strategy = st.builds(
     PropertyCall,
 )
-QualityMetamodel::QMM::OCL::LoopExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::LoopExp,
+QualityMetamodel_QMM_OCL_LoopExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_LoopExp,
 )
 VariableExp_strategy = st.builds(
     VariableExp,
 )
-QualityMetamodel::QMM::OCL::LambdaCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::LambdaCallExp,
+QualityMetamodel_QMM_OCL_LambdaCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_LambdaCallExp,
 )
-QualityMetamodel::QMM::OCL::OperationCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OperationCall,
+QualityMetamodel_QMM_OCL_OperationCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OperationCall,
     operationName=
         safe_text
 )
-QualityMetamodel::QMM::OCL::NavigationOrAttributeCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::NavigationOrAttributeCall,
+QualityMetamodel_QMM_OCL_NavigationOrAttributeCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_NavigationOrAttributeCall,
     name=
         safe_text
 )
 MapExp_strategy = st.builds(
     MapExp,
-)
-Parameter_strategy = st.builds(
-    Parameter,
-)
-QualityMetamodel::QMM::OCL::Operation_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Operation,
-)
-QualityMetamodel::QMM::OCL::OclInstanceModel_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclInstanceModel,
 )
 MapElement_strategy = st.builds(
     MapElement,
@@ -2820,42 +2734,42 @@ StaticPropertyCallExp_strategy = st.builds(
 StaticPropertyCall_strategy = st.builds(
     StaticPropertyCall,
 )
-QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall,
-    name=
+QualityMetamodel_QMM_OCL_StaticOperationCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_StaticOperationCall,
+    operationName=
         safe_text
 )
-QualityMetamodel::QMM::OCL::StaticOperationCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::StaticOperationCall,
-    operationName=
+QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall,
+    name=
         safe_text
 )
 NumericExp_strategy = st.builds(
     NumericExp,
 )
-QualityMetamodel::QMM::OCL::IntegerExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::IntegerExp,
+QualityMetamodel_QMM_OCL_IntegerExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_IntegerExp,
     integerSymbol=
         safe_text
 )
-QualityMetamodel::QMM::OCL::RealExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::RealExp,
+QualityMetamodel_QMM_OCL_RealExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_RealExp,
     realSymbol=
         safe_text
 )
 PrimitiveExp_strategy = st.builds(
     PrimitiveExp,
 )
-QualityMetamodel::QMM::OCL::NumericExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::NumericExp,
+QualityMetamodel_QMM_OCL_NumericExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_NumericExp,
 )
-QualityMetamodel::QMM::OCL::BooleanExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::BooleanExp,
+QualityMetamodel_QMM_OCL_BooleanExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_BooleanExp,
     booleanSymbol=
         safe_text
 )
-QualityMetamodel::QMM::OCL::StringExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::StringExp,
+QualityMetamodel_QMM_OCL_StringExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_StringExp,
     stringSymbol=
         safe_text
 )
@@ -2865,53 +2779,53 @@ TuplePart_strategy = st.builds(
 CollectionExp_strategy = st.builds(
     CollectionExp,
 )
-QualityMetamodel::QMM::OCL::OrderedSetExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OrderedSetExp,
+QualityMetamodel_QMM_OCL_OrderedSetExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OrderedSetExp,
 )
-QualityMetamodel::QMM::OCL::BagExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::BagExp,
+QualityMetamodel_QMM_OCL_BagExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_BagExp,
 )
-QualityMetamodel::QMM::OCL::SequenceExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::SequenceExp,
+QualityMetamodel_QMM_OCL_SequenceExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_SequenceExp,
 )
-QualityMetamodel::QMM::OCL::SetExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::SetExp,
+QualityMetamodel_QMM_OCL_SetExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_SetExp,
 )
 CollectionPart_strategy = st.builds(
     CollectionPart,
 )
-QualityMetamodel::QMM::OCL::CollectionRange_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::CollectionRange,
+QualityMetamodel_QMM_OCL_CollectionRange_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_CollectionRange,
 )
-QualityMetamodel::QMM::OCL::CollectionItem_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::CollectionItem,
+QualityMetamodel_QMM_OCL_CollectionItem_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_CollectionItem,
 )
 LocalVariable_strategy = st.builds(
     LocalVariable,
 )
-QualityMetamodel::QMM::OCL::TuplePart_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::TuplePart,
+QualityMetamodel_QMM_OCL_TuplePart_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_TuplePart,
 )
 OperatorCallExp_strategy = st.builds(
     OperatorCallExp,
 )
-QualityMetamodel::QMM::OCL::EqOpCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::EqOpCallExp,
+QualityMetamodel_QMM_OCL_NotOpCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_NotOpCallExp,
 )
-QualityMetamodel::QMM::OCL::IntOpCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::IntOpCallExp,
+QualityMetamodel_QMM_OCL_RelOpCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_RelOpCallExp,
 )
-QualityMetamodel::QMM::OCL::NotOpCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::NotOpCallExp,
+QualityMetamodel_QMM_OCL_AddOpCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_AddOpCallExp,
 )
-QualityMetamodel::QMM::OCL::AddOpCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::AddOpCallExp,
+QualityMetamodel_QMM_OCL_MulOpCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_MulOpCallExp,
 )
-QualityMetamodel::QMM::OCL::RelOpCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::RelOpCallExp,
+QualityMetamodel_QMM_OCL_EqOpCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_EqOpCallExp,
 )
-QualityMetamodel::QMM::OCL::MulOpCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::MulOpCallExp,
+QualityMetamodel_QMM_OCL_IntOpCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_IntOpCallExp,
 )
 Attribute_strategy = st.builds(
     Attribute,
@@ -2922,27 +2836,22 @@ Operation_strategy = st.builds(
 ModuleElement_strategy = st.builds(
     ModuleElement,
 )
-QualityMetamodel::QMM::OCL::OclFeatureDefinition_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclFeatureDefinition,
-    static=
-        safe_text
-)
 OperationCall_strategy = st.builds(
     OperationCall,
 )
-QualityMetamodel::QMM::OCL::CollectionOperationCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::CollectionOperationCall,
+QualityMetamodel_QMM_OCL_CollectionOperationCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_CollectionOperationCall,
 )
 LoopExp_strategy = st.builds(
     LoopExp,
 )
-QualityMetamodel::QMM::OCL::IteratorExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::IteratorExp,
+QualityMetamodel_QMM_OCL_IterateExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_IterateExp,
+)
+QualityMetamodel_QMM_OCL_IteratorExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_IteratorExp,
     name=
         safe_text
-)
-QualityMetamodel::QMM::OCL::IterateExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::IterateExp,
 )
 LetExp_strategy = st.builds(
     LetExp,
@@ -2956,55 +2865,31 @@ IfExp_strategy = st.builds(
 OclType_strategy = st.builds(
     OclType,
 )
-QualityMetamodel::QMM::OCL::Primitive_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Primitive,
-)
-QualityMetamodel::QMM::OCL::EnvType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::EnvType,
-)
-QualityMetamodel::QMM::OCL::TupleType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::TupleType,
-)
-QualityMetamodel::QMM::OCL::OclModelElement_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclModelElement,
-)
-QualityMetamodel::QMM::OCL::OclAnyType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclAnyType,
-)
-QualityMetamodel::QMM::OCL::CollectionType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::CollectionType,
-)
-QualityMetamodel::QMM::OCL::MapType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::MapType,
-)
-QualityMetamodel::QMM::OCL::LambdaType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::LambdaType,
-)
 ValueType_strategy = st.builds(
     ValueType,
 )
-QualityMetamodel::RangeValueType_strategy = st.builds(
-    QualityMetamodel::RangeValueType,
+QualityMetamodel_RangeValueType_strategy = st.builds(
+    QualityMetamodel_RangeValueType,
     min=
         safe_text,
     max=
         safe_text
 )
-QualityMetamodel::AggregatedValueMetric_strategy = st.builds(
-    QualityMetamodel::AggregatedValueMetric,
+QualityMetamodel_AggregatedValueMetric_strategy = st.builds(
+    QualityMetamodel_AggregatedValueMetric,
     average=
-        safe_text,
-    minimum=
         safe_text,
     maximum=
         safe_text,
+    standardDeviation=
+        safe_text,
     median=
         safe_text,
-    standardDeviation=
+    minimum=
         safe_text
 )
-QualityMetamodel::TextValueType_strategy = st.builds(
-    QualityMetamodel::TextValueType,
+QualityMetamodel_TextValueType_strategy = st.builds(
+    QualityMetamodel_TextValueType,
     value=
         safe_text
 )
@@ -3017,103 +2902,77 @@ OclMetamodel_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-QualityMetamodel::QMM::OCL::Import_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Import,
+QualityMetamodel_QMM_OCL_Import_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Import,
 )
-QualityMetamodel::QMM::OCL::OclFeature_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclFeature,
-    eq=
-        safe_text
-)
-QualityMetamodel::QMM::OCL::OclModel_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclModel,
-)
-QualityMetamodel::QMM::OCL::Module_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Module,
+QualityMetamodel_QMM_OCL_Module_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Module,
 )
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-QualityMetamodel::QMM::OCL::MapElement_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::MapElement,
+QualityMetamodel_QMM_OCL_OclExpression_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclExpression,
 )
-QualityMetamodel::QMM::OCL::VariableDeclaration_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::VariableDeclaration,
-    varName=
-        safe_text
+QualityMetamodel_QMM_OCL_PropertyCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_PropertyCall,
 )
-QualityMetamodel::QMM::OCL::OclType_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclType,
+QualityMetamodel_QMM_OCL_CollectionPart_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_CollectionPart,
+)
+QualityMetamodel_QMM_OCL_StaticPropertyCall_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_StaticPropertyCall,
+)
+QualityMetamodel_QMM_OCL_ModuleElement_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_ModuleElement,
+)
+QualityMetamodel_QMM_OCL_MapElement_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_MapElement,
+)
+QualityMetamodel_QMM_OCL_NamedElement_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_NamedElement,
     name=
         safe_text
 )
-QualityMetamodel::QMM::OCL::CollectionPart_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::CollectionPart,
-)
-QualityMetamodel::QMM::OCL::OclContextDefinition_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclContextDefinition,
-)
-QualityMetamodel::QMM::OCL::ModuleElement_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::ModuleElement,
-)
-QualityMetamodel::QMM::OCL::OclExpression_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclExpression,
-)
-QualityMetamodel::QMM::OCL::TupleTypeAttribute_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::TupleTypeAttribute,
-    name=
-        safe_text
-)
-QualityMetamodel::QMM::OCL::StaticPropertyCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::StaticPropertyCall,
-)
-QualityMetamodel::QMM::OCL::PropertyCall_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::PropertyCall,
-)
-QualityMetamodel::QMM::OCL::NamedElement_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::NamedElement,
-    name=
-        safe_text
-)
-QualityMetamodel::QMM::OCL::LocatedElement_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::LocatedElement,
-    line=
-        safe_text,
+QualityMetamodel_QMM_OCL_LocatedElement_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_LocatedElement,
     charEnd=
         safe_text,
-    column=
+    line=
         safe_text,
     charStart=
+        safe_text,
+    column=
         safe_text
 )
-QualityMetamodel::ListValue_strategy = st.builds(
-    QualityMetamodel::ListValue,
+QualityMetamodel_ListValue_strategy = st.builds(
+    QualityMetamodel_ListValue,
 )
-QualityMetamodel::IntegerValueType_strategy = st.builds(
-    QualityMetamodel::IntegerValueType,
+QualityMetamodel_IntegerValueType_strategy = st.builds(
+    QualityMetamodel_IntegerValueType,
     value=
         safe_text
 )
-QualityMetamodel::BooleanValueType_strategy = st.builds(
-    QualityMetamodel::BooleanValueType,
+QualityMetamodel_BooleanValueType_strategy = st.builds(
+    QualityMetamodel_BooleanValueType,
     value=
         safe_text
 )
-QualityMetamodel::RealValueType_strategy = st.builds(
-    QualityMetamodel::RealValueType,
+QualityMetamodel_RealValueType_strategy = st.builds(
+    QualityMetamodel_RealValueType,
     value=
         safe_text
 )
-QualityMetamodel::EnumerationItem_strategy = st.builds(
-    QualityMetamodel::EnumerationItem,
+QualityMetamodel_EnumerationItem_strategy = st.builds(
+    QualityMetamodel_EnumerationItem,
     name=
         safe_text
 )
-QualityMetamodel::EnumerationMetric_strategy = st.builds(
-    QualityMetamodel::EnumerationMetric,
+QualityMetamodel_EnumerationMetric_strategy = st.builds(
+    QualityMetamodel_EnumerationMetric,
 )
-QualityMetamodel::MetricProvider_strategy = st.builds(
-    QualityMetamodel::MetricProvider,
+QualityMetamodel_MetricProvider_strategy = st.builds(
+    QualityMetamodel_MetricProvider,
     name=
         safe_text,
     id=
@@ -3124,246 +2983,251 @@ QualityMetamodel::MetricProvider_strategy = st.builds(
 Module_strategy = st.builds(
     Module,
 )
-QualityMetamodel::QualityModel_strategy = st.builds(
-    QualityMetamodel::QualityModel,
+QualityMetamodel_QualityModel_strategy = st.builds(
+    QualityMetamodel_QualityModel,
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-QualityMetamodel::QMM::OCL::TupleExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::TupleExp,
+QualityMetamodel_QMM_OCL_CollectionExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_CollectionExp,
 )
-QualityMetamodel::QMM::OCL::CollectionExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::CollectionExp,
+QualityMetamodel_QMM_OCL_PropertyCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_PropertyCallExp,
 )
-QualityMetamodel::QMM::OCL::BraceExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::BraceExp,
+QualityMetamodel_QMM_OCL_MapExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_MapExp,
 )
-QualityMetamodel::QMM::OCL::OclUndefinedExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclUndefinedExp,
+QualityMetamodel_QMM_OCL_SelfExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_SelfExp,
 )
-QualityMetamodel::QMM::OCL::LetExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::LetExp,
+QualityMetamodel_QMM_OCL_BraceExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_BraceExp,
 )
-QualityMetamodel::QMM::OCL::EnumLiteralExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::EnumLiteralExp,
-    name=
-        safe_text
+QualityMetamodel_QMM_OCL_LetExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_LetExp,
 )
-QualityMetamodel::QMM::OCL::PrimitiveExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::PrimitiveExp,
+QualityMetamodel_QMM_OCL_EnvExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_EnvExp,
 )
-QualityMetamodel::QMM::OCL::IfExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::IfExp,
+QualityMetamodel_QMM_OCL_IfExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_IfExp,
 )
-QualityMetamodel::QMM::OCL::VariableExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::VariableExp,
-)
-QualityMetamodel::QMM::OCL::OclModelElementExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OclModelElementExp,
-    name=
-        safe_text
-)
-QualityMetamodel::QMM::OCL::PropertyCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::PropertyCallExp,
-)
-QualityMetamodel::QMM::OCL::EnvExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::EnvExp,
-)
-QualityMetamodel::QMM::OCL::MapExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::MapExp,
-)
-QualityMetamodel::QMM::OCL::StaticPropertyCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::StaticPropertyCallExp,
-)
-QualityMetamodel::QMM::OCL::OperatorCallExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::OperatorCallExp,
+QualityMetamodel_QMM_OCL_OperatorCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OperatorCallExp,
     operationName=
         safe_text
 )
-QualityMetamodel::QMM::OCL::SelfExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::SelfExp,
+QualityMetamodel_QMM_OCL_OclUndefinedExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclUndefinedExp,
 )
-QualityMetamodel::QMM::OCL::SuperExp_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::SuperExp,
+QualityMetamodel_QMM_OCL_VariableExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_VariableExp,
 )
-QualityMetamodel::Operation_strategy = st.builds(
-    QualityMetamodel::Operation,
+QualityMetamodel_QMM_OCL_EnumLiteralExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_EnumLiteralExp,
     name=
-        safe_text,
+        safe_text
+)
+QualityMetamodel_QMM_OCL_StaticPropertyCallExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_StaticPropertyCallExp,
+)
+QualityMetamodel_QMM_OCL_TupleExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_TupleExp,
+)
+QualityMetamodel_QMM_OCL_PrimitiveExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_PrimitiveExp,
+)
+QualityMetamodel_QMM_OCL_SuperExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_SuperExp,
+)
+QualityMetamodel_Operation_strategy = st.builds(
+    QualityMetamodel_Operation,
     body=
+        safe_text,
+    name=
         safe_text
 )
 Value_strategy = st.builds(
     Value,
 )
-QualityMetamodel::AggregatedValue_strategy = st.builds(
-    QualityMetamodel::AggregatedValue,
+QualityMetamodel_AggregatedValue_strategy = st.builds(
+    QualityMetamodel_AggregatedValue,
 )
-QualityMetamodel::SingleValue_strategy = st.builds(
-    QualityMetamodel::SingleValue,
+QualityMetamodel_SingleValue_strategy = st.builds(
+    QualityMetamodel_SingleValue,
 )
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
-QualityMetamodel::QMM::OCL::Iterator_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Iterator,
-)
-QualityMetamodel::QMM::OCL::Parameter_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::Parameter,
-)
-QualityMetamodel::QMM::OCL::LocalVariable_strategy = st.builds(
-    QualityMetamodel::QMM::OCL::LocalVariable,
-    eq=
-        safe_text
-)
-QualityMetamodel::Value_strategy = st.builds(
-    QualityMetamodel::Value,
+QualityMetamodel_Value_strategy = st.builds(
+    QualityMetamodel_Value,
     description=
         safe_text
 )
-QualityMetamodel::QualityAttribute_strategy = st.builds(
-    QualityMetamodel::QualityAttribute,
+QualityMetamodel_QualityAttribute_strategy = st.builds(
+    QualityMetamodel_QualityAttribute,
 )
-QualityMetamodel::ValueType_strategy = st.builds(
-    QualityMetamodel::ValueType,
+QualityMetamodel_ValueType_strategy = st.builds(
+    QualityMetamodel_ValueType,
 )
-
-@given(instance=OclInstanceModel_strategy)
-@settings(max_examples=50)
-def test_oclinstancemodel_instantiation(instance):
-    assert isinstance(instance, OclInstanceModel)
-
-@given(instance=OclModelElement_strategy)
-@settings(max_examples=50)
-def test_oclmodelelement_instantiation(instance):
-    assert isinstance(instance, OclModelElement)
-
-@given(instance=TupleType_strategy)
-@settings(max_examples=50)
-def test_tupletype_instantiation(instance):
-    assert isinstance(instance, TupleType)
-
-@given(instance=OclFeatureDefinition_strategy)
-@settings(max_examples=50)
-def test_oclfeaturedefinition_instantiation(instance):
-    assert isinstance(instance, OclFeatureDefinition)
-
-@given(instance=OclFeature_strategy)
-@settings(max_examples=50)
-def test_oclfeature_instantiation(instance):
-    assert isinstance(instance, OclFeature)
-
-@given(instance=QualityMetamodel::QMM::OCL::Attribute_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::attribute_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Attribute)
-
-@given(instance=TupleTypeAttribute_strategy)
-@settings(max_examples=50)
-def test_tupletypeattribute_instantiation(instance):
-    assert isinstance(instance, TupleTypeAttribute)
-
-@given(instance=CollectionType_strategy)
-@settings(max_examples=50)
-def test_collectiontype_instantiation(instance):
-    assert isinstance(instance, CollectionType)
-
-@given(instance=MapType_strategy)
-@settings(max_examples=50)
-def test_maptype_instantiation(instance):
-    assert isinstance(instance, MapType)
-
-@given(instance=QualityMetamodel::QMM::OCL::SetType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::settype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::SetType)
-
-@given(instance=QualityMetamodel::QMM::OCL::SequenceType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::sequencetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::SequenceType)
-
-@given(instance=QualityMetamodel::QMM::OCL::OrderedSetType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::orderedsettype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OrderedSetType)
-
-@given(instance=QualityMetamodel::QMM::OCL::BagType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::bagtype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::BagType)
-
-@given(instance=NumericType_strategy)
-@settings(max_examples=50)
-def test_numerictype_instantiation(instance):
-    assert isinstance(instance, NumericType)
-
-@given(instance=QualityMetamodel::QMM::OCL::RealType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::realtype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::RealType)
-
-@given(instance=QualityMetamodel::QMM::OCL::IntegerType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::integertype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::IntegerType)
-
-@given(instance=Primitive_strategy)
-@settings(max_examples=50)
-def test_primitive_instantiation(instance):
-    assert isinstance(instance, Primitive)
-
-@given(instance=QualityMetamodel::QMM::OCL::BooleanType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::booleantype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::BooleanType)
-
-@given(instance=QualityMetamodel::QMM::OCL::NumericType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::numerictype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::NumericType)
-
-@given(instance=QualityMetamodel::QMM::OCL::StringType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::stringtype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::StringType)
-
-@given(instance=OclModel_strategy)
-@settings(max_examples=50)
-def test_oclmodel_instantiation(instance):
-    assert isinstance(instance, OclModel)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclMetamodel_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclMetamodel)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclMetamodel_strategy)
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_uri_type(instance):
-    assert isinstance(instance.uri, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::OclMetamodel_strategy)
-def test_qualitymetamodel::qmm::ocl::oclmetamodel_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
-
-@given(instance=LambdaType_strategy)
-@settings(max_examples=50)
-def test_lambdatype_instantiation(instance):
-    assert isinstance(instance, LambdaType)
-
-@given(instance=OclContextDefinition_strategy)
-@settings(max_examples=50)
-def test_oclcontextdefinition_instantiation(instance):
-    assert isinstance(instance, OclContextDefinition)
-
-@given(instance=IterateExp_strategy)
-@settings(max_examples=50)
-def test_iterateexp_instantiation(instance):
-    assert isinstance(instance, IterateExp)
+Parameter_strategy = st.builds(
+    Parameter,
+)
+OclInstanceModel_strategy = st.builds(
+    OclInstanceModel,
+)
+OclModelElement_strategy = st.builds(
+    OclModelElement,
+)
+QualityMetamodel_QMM_OCL_OclModel_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclModel,
+)
+QualityMetamodel_QMM_OCL_OclModelElement_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclModelElement,
+)
+TupleType_strategy = st.builds(
+    TupleType,
+)
+QualityMetamodel_QMM_OCL_TupleTypeAttribute_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_TupleTypeAttribute,
+    name=
+        safe_text
+)
+QualityMetamodel_QMM_OCL_OclFeature_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclFeature,
+    eq=
+        safe_text
+)
+OclFeatureDefinition_strategy = st.builds(
+    OclFeatureDefinition,
+)
+QualityMetamodel_QMM_OCL_OclContextDefinition_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclContextDefinition,
+)
+OclFeature_strategy = st.builds(
+    OclFeature,
+)
+QualityMetamodel_QMM_OCL_Attribute_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Attribute,
+)
+QualityMetamodel_QMM_OCL_Operation_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Operation,
+)
+QualityMetamodel_QMM_OCL_OclFeatureDefinition_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclFeatureDefinition,
+    static=
+        safe_text
+)
+QualityMetamodel_QMM_OCL_EnvType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_EnvType,
+)
+QualityMetamodel_QMM_OCL_LambdaType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_LambdaType,
+)
+QualityMetamodel_QMM_OCL_MapType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_MapType,
+)
+TupleTypeAttribute_strategy = st.builds(
+    TupleTypeAttribute,
+)
+CollectionType_strategy = st.builds(
+    CollectionType,
+)
+MapType_strategy = st.builds(
+    MapType,
+)
+QualityMetamodel_QMM_OCL_TupleType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_TupleType,
+)
+QualityMetamodel_QMM_OCL_OclAnyType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclAnyType,
+)
+QualityMetamodel_QMM_OCL_SetType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_SetType,
+)
+QualityMetamodel_QMM_OCL_SequenceType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_SequenceType,
+)
+QualityMetamodel_QMM_OCL_OrderedSetType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OrderedSetType,
+)
+QualityMetamodel_QMM_OCL_BagType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_BagType,
+)
+NumericType_strategy = st.builds(
+    NumericType,
+)
+QualityMetamodel_QMM_OCL_RealType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_RealType,
+)
+QualityMetamodel_QMM_OCL_IntegerType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_IntegerType,
+)
+Primitive_strategy = st.builds(
+    Primitive,
+)
+QualityMetamodel_QMM_OCL_NumericType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_NumericType,
+)
+QualityMetamodel_QMM_OCL_BooleanType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_BooleanType,
+)
+QualityMetamodel_QMM_OCL_StringType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_StringType,
+)
+QualityMetamodel_QMM_OCL_Primitive_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Primitive,
+)
+OclModel_strategy = st.builds(
+    OclModel,
+)
+QualityMetamodel_QMM_OCL_OclInstanceModel_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclInstanceModel,
+)
+QualityMetamodel_QMM_OCL_OclMetamodel_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclMetamodel,
+    uri=
+        safe_text
+)
+QualityMetamodel_QMM_OCL_OclModelElementExp_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclModelElementExp,
+    name=
+        safe_text
+)
+LambdaType_strategy = st.builds(
+    LambdaType,
+)
+QualityMetamodel_QMM_OCL_VariableDeclaration_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_VariableDeclaration,
+    varName=
+        safe_text
+)
+OclContextDefinition_strategy = st.builds(
+    OclContextDefinition,
+)
+QualityMetamodel_QMM_OCL_OclType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_OclType,
+    name=
+        safe_text
+)
+QualityMetamodel_QMM_OCL_CollectionType_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_CollectionType,
+)
+QualityMetamodel_QMM_OCL_Parameter_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Parameter,
+)
+QualityMetamodel_QMM_OCL_Iterator_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_Iterator,
+)
+IterateExp_strategy = st.builds(
+    IterateExp,
+)
+QualityMetamodel_QMM_OCL_LocalVariable_strategy = st.builds(
+    QualityMetamodel_QMM_OCL_LocalVariable,
+    eq=
+        safe_text
+)
 
 @given(instance=Iterator_strategy)
 @settings(max_examples=50)
@@ -3375,49 +3239,43 @@ def test_iterator_instantiation(instance):
 def test_propertycall_instantiation(instance):
     assert isinstance(instance, PropertyCall)
 
-@given(instance=QualityMetamodel::QMM::OCL::LoopExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_LoopExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::loopexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::LoopExp)
+def test_qualitymetamodel_qmm_ocl_loopexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_LoopExp)
 
 @given(instance=VariableExp_strategy)
 @settings(max_examples=50)
 def test_variableexp_instantiation(instance):
     assert isinstance(instance, VariableExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::LambdaCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_LambdaCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::lambdacallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::LambdaCallExp)
+def test_qualitymetamodel_qmm_ocl_lambdacallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_LambdaCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::OperationCall_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_OperationCall_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::operationcall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OperationCall)
-
-@given(instance=QualityMetamodel::QMM::OCL::OperationCall_strategy)
-def test_qualitymetamodel::qmm::ocl::operationcall_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
+def test_qualitymetamodel_qmm_ocl_operationcall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OperationCall)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::OperationCall_strategy)
-def test_qualitymetamodel::qmm::ocl::operationcall_operationName_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_OperationCall_strategy)
+def test_qualitymetamodel_qmm_ocl_operationcall_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=QualityMetamodel::QMM::OCL::NavigationOrAttributeCall_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_NavigationOrAttributeCall_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::NavigationOrAttributeCall)
-
-@given(instance=QualityMetamodel::QMM::OCL::NavigationOrAttributeCall_strategy)
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_qmm_ocl_navigationorattributecall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_NavigationOrAttributeCall)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::NavigationOrAttributeCall_strategy)
-def test_qualitymetamodel::qmm::ocl::navigationorattributecall_name_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_NavigationOrAttributeCall_strategy)
+def test_qualitymetamodel_qmm_ocl_navigationorattributecall_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3426,21 +3284,6 @@ def test_qualitymetamodel::qmm::ocl::navigationorattributecall_name_setter(insta
 @settings(max_examples=50)
 def test_mapexp_instantiation(instance):
     assert isinstance(instance, MapExp)
-
-@given(instance=Parameter_strategy)
-@settings(max_examples=50)
-def test_parameter_instantiation(instance):
-    assert isinstance(instance, Parameter)
-
-@given(instance=QualityMetamodel::QMM::OCL::Operation_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::operation_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Operation)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclInstanceModel_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclinstancemodel_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclInstanceModel)
 
 @given(instance=MapElement_strategy)
 @settings(max_examples=50)
@@ -3462,71 +3305,59 @@ def test_staticpropertycallexp_instantiation(instance):
 def test_staticpropertycall_instantiation(instance):
     assert isinstance(instance, StaticPropertyCall)
 
-@given(instance=QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_StaticOperationCall_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall)
-
-@given(instance=QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall_strategy)
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_qmm_ocl_staticoperationcall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_StaticOperationCall)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::StaticNavigationOrAttributeCall_strategy)
-def test_qualitymetamodel::qmm::ocl::staticnavigationorattributecall_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=QualityMetamodel::QMM::OCL::StaticOperationCall_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::StaticOperationCall)
-
-@given(instance=QualityMetamodel::QMM::OCL::StaticOperationCall_strategy)
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::StaticOperationCall_strategy)
-def test_qualitymetamodel::qmm::ocl::staticoperationcall_operationName_setter(instance):
+@given(instance=QualityMetamodel_QMM_OCL_StaticOperationCall_strategy)
+def test_qualitymetamodel_qmm_ocl_staticoperationcall_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
+
+@given(instance=QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_staticnavigationorattributecall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_StaticNavigationOrAttributeCall_strategy)
+def test_qualitymetamodel_qmm_ocl_staticnavigationorattributecall_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=NumericExp_strategy)
 @settings(max_examples=50)
 def test_numericexp_instantiation(instance):
     assert isinstance(instance, NumericExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::IntegerExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_IntegerExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::integerexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::IntegerExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::IntegerExp_strategy)
-def test_qualitymetamodel::qmm::ocl::integerexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_qualitymetamodel_qmm_ocl_integerexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_IntegerExp)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::IntegerExp_strategy)
-def test_qualitymetamodel::qmm::ocl::integerexp_integerSymbol_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_IntegerExp_strategy)
+def test_qualitymetamodel_qmm_ocl_integerexp_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
 
-@given(instance=QualityMetamodel::QMM::OCL::RealExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_RealExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::realexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::RealExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::RealExp_strategy)
-def test_qualitymetamodel::qmm::ocl::realexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
+def test_qualitymetamodel_qmm_ocl_realexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_RealExp)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::RealExp_strategy)
-def test_qualitymetamodel::qmm::ocl::realexp_realSymbol_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_RealExp_strategy)
+def test_qualitymetamodel_qmm_ocl_realexp_realSymbol_setter(instance):
     original = instance.realSymbol
     instance.realSymbol = original
     assert instance.realSymbol == original
@@ -3536,39 +3367,33 @@ def test_qualitymetamodel::qmm::ocl::realexp_realSymbol_setter(instance):
 def test_primitiveexp_instantiation(instance):
     assert isinstance(instance, PrimitiveExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::NumericExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_NumericExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::numericexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::NumericExp)
+def test_qualitymetamodel_qmm_ocl_numericexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_NumericExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::BooleanExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_BooleanExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::booleanexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::BooleanExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::BooleanExp_strategy)
-def test_qualitymetamodel::qmm::ocl::booleanexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
+def test_qualitymetamodel_qmm_ocl_booleanexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_BooleanExp)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::BooleanExp_strategy)
-def test_qualitymetamodel::qmm::ocl::booleanexp_booleanSymbol_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_BooleanExp_strategy)
+def test_qualitymetamodel_qmm_ocl_booleanexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
 
-@given(instance=QualityMetamodel::QMM::OCL::StringExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_StringExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::stringexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::StringExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::StringExp_strategy)
-def test_qualitymetamodel::qmm::ocl::stringexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_qualitymetamodel_qmm_ocl_stringexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_StringExp)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::StringExp_strategy)
-def test_qualitymetamodel::qmm::ocl::stringexp_stringSymbol_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_StringExp_strategy)
+def test_qualitymetamodel_qmm_ocl_stringexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
@@ -3583,85 +3408,85 @@ def test_tuplepart_instantiation(instance):
 def test_collectionexp_instantiation(instance):
     assert isinstance(instance, CollectionExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::OrderedSetExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_OrderedSetExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::orderedsetexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OrderedSetExp)
+def test_qualitymetamodel_qmm_ocl_orderedsetexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OrderedSetExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::BagExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_BagExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::bagexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::BagExp)
+def test_qualitymetamodel_qmm_ocl_bagexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_BagExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::SequenceExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_SequenceExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::sequenceexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::SequenceExp)
+def test_qualitymetamodel_qmm_ocl_sequenceexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_SequenceExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::SetExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_SetExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::setexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::SetExp)
+def test_qualitymetamodel_qmm_ocl_setexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_SetExp)
 
 @given(instance=CollectionPart_strategy)
 @settings(max_examples=50)
 def test_collectionpart_instantiation(instance):
     assert isinstance(instance, CollectionPart)
 
-@given(instance=QualityMetamodel::QMM::OCL::CollectionRange_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::collectionrange_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::CollectionRange)
+def test_qualitymetamodel_qmm_ocl_collectionrange_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_CollectionRange)
 
-@given(instance=QualityMetamodel::QMM::OCL::CollectionItem_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_CollectionItem_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::collectionitem_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::CollectionItem)
+def test_qualitymetamodel_qmm_ocl_collectionitem_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_CollectionItem)
 
 @given(instance=LocalVariable_strategy)
 @settings(max_examples=50)
 def test_localvariable_instantiation(instance):
     assert isinstance(instance, LocalVariable)
 
-@given(instance=QualityMetamodel::QMM::OCL::TuplePart_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_TuplePart_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::tuplepart_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::TuplePart)
+def test_qualitymetamodel_qmm_ocl_tuplepart_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_TuplePart)
 
 @given(instance=OperatorCallExp_strategy)
 @settings(max_examples=50)
 def test_operatorcallexp_instantiation(instance):
     assert isinstance(instance, OperatorCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::EqOpCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_NotOpCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::eqopcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::EqOpCallExp)
+def test_qualitymetamodel_qmm_ocl_notopcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_NotOpCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::IntOpCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_RelOpCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::intopcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::IntOpCallExp)
+def test_qualitymetamodel_qmm_ocl_relopcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_RelOpCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::NotOpCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_AddOpCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::notopcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::NotOpCallExp)
+def test_qualitymetamodel_qmm_ocl_addopcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_AddOpCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::AddOpCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_MulOpCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::addopcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::AddOpCallExp)
+def test_qualitymetamodel_qmm_ocl_mulopcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_MulOpCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::RelOpCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_EqOpCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::relopcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::RelOpCallExp)
+def test_qualitymetamodel_qmm_ocl_eqopcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_EqOpCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::MulOpCallExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_IntOpCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::mulopcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::MulOpCallExp)
+def test_qualitymetamodel_qmm_ocl_intopcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_IntOpCallExp)
 
 @given(instance=Attribute_strategy)
 @settings(max_examples=50)
@@ -3678,57 +3503,38 @@ def test_operation_instantiation(instance):
 def test_moduleelement_instantiation(instance):
     assert isinstance(instance, ModuleElement)
 
-@given(instance=QualityMetamodel::QMM::OCL::OclFeatureDefinition_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclFeatureDefinition)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclFeatureDefinition_strategy)
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_static_type(instance):
-    assert isinstance(instance.static, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::OclFeatureDefinition_strategy)
-def test_qualitymetamodel::qmm::ocl::oclfeaturedefinition_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
 @given(instance=OperationCall_strategy)
 @settings(max_examples=50)
 def test_operationcall_instantiation(instance):
     assert isinstance(instance, OperationCall)
 
-@given(instance=QualityMetamodel::QMM::OCL::CollectionOperationCall_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_CollectionOperationCall_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::collectionoperationcall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::CollectionOperationCall)
+def test_qualitymetamodel_qmm_ocl_collectionoperationcall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_CollectionOperationCall)
 
 @given(instance=LoopExp_strategy)
 @settings(max_examples=50)
 def test_loopexp_instantiation(instance):
     assert isinstance(instance, LoopExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::IteratorExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_IterateExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::iteratorexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::IteratorExp)
+def test_qualitymetamodel_qmm_ocl_iterateexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_IterateExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::IteratorExp_strategy)
-def test_qualitymetamodel::qmm::ocl::iteratorexp_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=QualityMetamodel_QMM_OCL_IteratorExp_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_iteratorexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_IteratorExp)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::IteratorExp_strategy)
-def test_qualitymetamodel::qmm::ocl::iteratorexp_name_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_IteratorExp_strategy)
+def test_qualitymetamodel_qmm_ocl_iteratorexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=QualityMetamodel::QMM::OCL::IterateExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::iterateexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::IterateExp)
 
 @given(instance=LetExp_strategy)
 @settings(max_examples=50)
@@ -3750,150 +3556,86 @@ def test_ifexp_instantiation(instance):
 def test_ocltype_instantiation(instance):
     assert isinstance(instance, OclType)
 
-@given(instance=QualityMetamodel::QMM::OCL::Primitive_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::primitive_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Primitive)
-
-@given(instance=QualityMetamodel::QMM::OCL::EnvType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::envtype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::EnvType)
-
-@given(instance=QualityMetamodel::QMM::OCL::TupleType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::tupletype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::TupleType)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclModelElement_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclmodelelement_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclModelElement)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclAnyType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclanytype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclAnyType)
-
-@given(instance=QualityMetamodel::QMM::OCL::CollectionType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::collectiontype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::CollectionType)
-
-@given(instance=QualityMetamodel::QMM::OCL::MapType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::maptype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::MapType)
-
-@given(instance=QualityMetamodel::QMM::OCL::LambdaType_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::lambdatype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::LambdaType)
-
 @given(instance=ValueType_strategy)
 @settings(max_examples=50)
 def test_valuetype_instantiation(instance):
     assert isinstance(instance, ValueType)
 
-@given(instance=QualityMetamodel::RangeValueType_strategy)
+@given(instance=QualityMetamodel_RangeValueType_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::rangevaluetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::RangeValueType)
-
-@given(instance=QualityMetamodel::RangeValueType_strategy)
-def test_qualitymetamodel::rangevaluetype_min_type(instance):
-    assert isinstance(instance.min, str)
+def test_qualitymetamodel_rangevaluetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_RangeValueType)
 
 
-@given(instance=QualityMetamodel::RangeValueType_strategy)
-def test_qualitymetamodel::rangevaluetype_min_setter(instance):
+
+@given(instance=QualityMetamodel_RangeValueType_strategy)
+def test_qualitymetamodel_rangevaluetype_min_setter(instance):
     original = instance.min
     instance.min = original
     assert instance.min == original
 
-@given(instance=QualityMetamodel::RangeValueType_strategy)
-def test_qualitymetamodel::rangevaluetype_max_type(instance):
-    assert isinstance(instance.max, str)
 
 
-@given(instance=QualityMetamodel::RangeValueType_strategy)
-def test_qualitymetamodel::rangevaluetype_max_setter(instance):
+@given(instance=QualityMetamodel_RangeValueType_strategy)
+def test_qualitymetamodel_rangevaluetype_max_setter(instance):
     original = instance.max
     instance.max = original
     assert instance.max == original
 
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
+@given(instance=QualityMetamodel_AggregatedValueMetric_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::aggregatedvaluemetric_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::AggregatedValueMetric)
-
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_average_type(instance):
-    assert isinstance(instance.average, str)
+def test_qualitymetamodel_aggregatedvaluemetric_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_AggregatedValueMetric)
 
 
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_average_setter(instance):
+
+@given(instance=QualityMetamodel_AggregatedValueMetric_strategy)
+def test_qualitymetamodel_aggregatedvaluemetric_average_setter(instance):
     original = instance.average
     instance.average = original
     assert instance.average == original
 
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_minimum_type(instance):
-    assert isinstance(instance.minimum, str)
 
 
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_minimum_setter(instance):
-    original = instance.minimum
-    instance.minimum = original
-    assert instance.minimum == original
-
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_maximum_type(instance):
-    assert isinstance(instance.maximum, str)
-
-
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_maximum_setter(instance):
+@given(instance=QualityMetamodel_AggregatedValueMetric_strategy)
+def test_qualitymetamodel_aggregatedvaluemetric_maximum_setter(instance):
     original = instance.maximum
     instance.maximum = original
     assert instance.maximum == original
 
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_median_type(instance):
-    assert isinstance(instance.median, str)
 
 
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_median_setter(instance):
-    original = instance.median
-    instance.median = original
-    assert instance.median == original
-
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_standardDeviation_type(instance):
-    assert isinstance(instance.standardDeviation, str)
-
-
-@given(instance=QualityMetamodel::AggregatedValueMetric_strategy)
-def test_qualitymetamodel::aggregatedvaluemetric_standardDeviation_setter(instance):
+@given(instance=QualityMetamodel_AggregatedValueMetric_strategy)
+def test_qualitymetamodel_aggregatedvaluemetric_standardDeviation_setter(instance):
     original = instance.standardDeviation
     instance.standardDeviation = original
     assert instance.standardDeviation == original
 
-@given(instance=QualityMetamodel::TextValueType_strategy)
+
+
+@given(instance=QualityMetamodel_AggregatedValueMetric_strategy)
+def test_qualitymetamodel_aggregatedvaluemetric_median_setter(instance):
+    original = instance.median
+    instance.median = original
+    assert instance.median == original
+
+
+
+@given(instance=QualityMetamodel_AggregatedValueMetric_strategy)
+def test_qualitymetamodel_aggregatedvaluemetric_minimum_setter(instance):
+    original = instance.minimum
+    instance.minimum = original
+    assert instance.minimum == original
+
+@given(instance=QualityMetamodel_TextValueType_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::textvaluetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::TextValueType)
-
-@given(instance=QualityMetamodel::TextValueType_strategy)
-def test_qualitymetamodel::textvaluetype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_qualitymetamodel_textvaluetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_TextValueType)
 
 
-@given(instance=QualityMetamodel::TextValueType_strategy)
-def test_qualitymetamodel::textvaluetype_value_setter(instance):
+
+@given(instance=QualityMetamodel_TextValueType_strategy)
+def test_qualitymetamodel_textvaluetype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -3913,298 +3655,188 @@ def test_oclmetamodel_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=QualityMetamodel::QMM::OCL::Import_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_Import_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::import_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Import)
+def test_qualitymetamodel_qmm_ocl_import_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Import)
 
-@given(instance=QualityMetamodel::QMM::OCL::OclFeature_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_Module_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclfeature_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclFeature)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclFeature_strategy)
-def test_qualitymetamodel::qmm::ocl::oclfeature_eq_type(instance):
-    assert isinstance(instance.eq, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::OclFeature_strategy)
-def test_qualitymetamodel::qmm::ocl::oclfeature_eq_setter(instance):
-    original = instance.eq
-    instance.eq = original
-    assert instance.eq == original
-
-@given(instance=QualityMetamodel::QMM::OCL::OclModel_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclmodel_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclModel)
-
-@given(instance=QualityMetamodel::QMM::OCL::Module_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::module_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Module)
+def test_qualitymetamodel_qmm_ocl_module_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Module)
 
 @given(instance=LocatedElement_strategy)
 @settings(max_examples=50)
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=QualityMetamodel::QMM::OCL::MapElement_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_OclExpression_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::mapelement_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::MapElement)
+def test_qualitymetamodel_qmm_ocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclExpression)
 
-@given(instance=QualityMetamodel::QMM::OCL::VariableDeclaration_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_PropertyCall_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::VariableDeclaration)
+def test_qualitymetamodel_qmm_ocl_propertycall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_PropertyCall)
 
-@given(instance=QualityMetamodel::QMM::OCL::VariableDeclaration_strategy)
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_varName_type(instance):
-    assert isinstance(instance.varName, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::VariableDeclaration_strategy)
-def test_qualitymetamodel::qmm::ocl::variabledeclaration_varName_setter(instance):
-    original = instance.varName
-    instance.varName = original
-    assert instance.varName == original
-
-@given(instance=QualityMetamodel::QMM::OCL::OclType_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_CollectionPart_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::ocltype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclType)
+def test_qualitymetamodel_qmm_ocl_collectionpart_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_CollectionPart)
 
-@given(instance=QualityMetamodel::QMM::OCL::OclType_strategy)
-def test_qualitymetamodel::qmm::ocl::ocltype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=QualityMetamodel_QMM_OCL_StaticPropertyCall_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_staticpropertycall_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_StaticPropertyCall)
+
+@given(instance=QualityMetamodel_QMM_OCL_ModuleElement_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_moduleelement_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_ModuleElement)
+
+@given(instance=QualityMetamodel_QMM_OCL_MapElement_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_mapelement_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_MapElement)
+
+@given(instance=QualityMetamodel_QMM_OCL_NamedElement_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_namedelement_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_NamedElement)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::OclType_strategy)
-def test_qualitymetamodel::qmm::ocl::ocltype_name_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_NamedElement_strategy)
+def test_qualitymetamodel_qmm_ocl_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=QualityMetamodel::QMM::OCL::CollectionPart_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::collectionpart_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::CollectionPart)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclContextDefinition_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclcontextdefinition_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclContextDefinition)
-
-@given(instance=QualityMetamodel::QMM::OCL::ModuleElement_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::moduleelement_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::ModuleElement)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclExpression_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclExpression)
-
-@given(instance=QualityMetamodel::QMM::OCL::TupleTypeAttribute_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::TupleTypeAttribute)
-
-@given(instance=QualityMetamodel::QMM::OCL::TupleTypeAttribute_strategy)
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_qmm_ocl_locatedelement_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_LocatedElement)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::TupleTypeAttribute_strategy)
-def test_qualitymetamodel::qmm::ocl::tupletypeattribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=QualityMetamodel::QMM::OCL::StaticPropertyCall_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::staticpropertycall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::StaticPropertyCall)
-
-@given(instance=QualityMetamodel::QMM::OCL::PropertyCall_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::propertycall_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::PropertyCall)
-
-@given(instance=QualityMetamodel::QMM::OCL::NamedElement_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::namedelement_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::NamedElement)
-
-@given(instance=QualityMetamodel::QMM::OCL::NamedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::NamedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::locatedelement_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::LocatedElement)
-
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_line_type(instance):
-    assert isinstance(instance.line, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
-
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_charEnd_type(instance):
-    assert isinstance(instance.charEnd, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_charEnd_setter(instance):
+@given(instance=QualityMetamodel_QMM_OCL_LocatedElement_strategy)
+def test_qualitymetamodel_qmm_ocl_locatedelement_charEnd_setter(instance):
     original = instance.charEnd
     instance.charEnd = original
     assert instance.charEnd == original
 
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_column_type(instance):
-    assert isinstance(instance.column, str)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_column_setter(instance):
-    original = instance.column
-    instance.column = original
-    assert instance.column == original
-
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_charStart_type(instance):
-    assert isinstance(instance.charStart, str)
+@given(instance=QualityMetamodel_QMM_OCL_LocatedElement_strategy)
+def test_qualitymetamodel_qmm_ocl_locatedelement_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original
 
 
-@given(instance=QualityMetamodel::QMM::OCL::LocatedElement_strategy)
-def test_qualitymetamodel::qmm::ocl::locatedelement_charStart_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_LocatedElement_strategy)
+def test_qualitymetamodel_qmm_ocl_locatedelement_charStart_setter(instance):
     original = instance.charStart
     instance.charStart = original
     assert instance.charStart == original
 
-@given(instance=QualityMetamodel::ListValue_strategy)
+
+
+@given(instance=QualityMetamodel_QMM_OCL_LocatedElement_strategy)
+def test_qualitymetamodel_qmm_ocl_locatedelement_column_setter(instance):
+    original = instance.column
+    instance.column = original
+    assert instance.column == original
+
+@given(instance=QualityMetamodel_ListValue_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::listvalue_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::ListValue)
+def test_qualitymetamodel_listvalue_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_ListValue)
 
-@given(instance=QualityMetamodel::IntegerValueType_strategy)
+@given(instance=QualityMetamodel_IntegerValueType_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::integervaluetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::IntegerValueType)
-
-@given(instance=QualityMetamodel::IntegerValueType_strategy)
-def test_qualitymetamodel::integervaluetype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_qualitymetamodel_integervaluetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_IntegerValueType)
 
 
-@given(instance=QualityMetamodel::IntegerValueType_strategy)
-def test_qualitymetamodel::integervaluetype_value_setter(instance):
+
+@given(instance=QualityMetamodel_IntegerValueType_strategy)
+def test_qualitymetamodel_integervaluetype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=QualityMetamodel::BooleanValueType_strategy)
+@given(instance=QualityMetamodel_BooleanValueType_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::booleanvaluetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::BooleanValueType)
-
-@given(instance=QualityMetamodel::BooleanValueType_strategy)
-def test_qualitymetamodel::booleanvaluetype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_qualitymetamodel_booleanvaluetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_BooleanValueType)
 
 
-@given(instance=QualityMetamodel::BooleanValueType_strategy)
-def test_qualitymetamodel::booleanvaluetype_value_setter(instance):
+
+@given(instance=QualityMetamodel_BooleanValueType_strategy)
+def test_qualitymetamodel_booleanvaluetype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=QualityMetamodel::RealValueType_strategy)
+@given(instance=QualityMetamodel_RealValueType_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::realvaluetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::RealValueType)
-
-@given(instance=QualityMetamodel::RealValueType_strategy)
-def test_qualitymetamodel::realvaluetype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_qualitymetamodel_realvaluetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_RealValueType)
 
 
-@given(instance=QualityMetamodel::RealValueType_strategy)
-def test_qualitymetamodel::realvaluetype_value_setter(instance):
+
+@given(instance=QualityMetamodel_RealValueType_strategy)
+def test_qualitymetamodel_realvaluetype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=QualityMetamodel::EnumerationItem_strategy)
+@given(instance=QualityMetamodel_EnumerationItem_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::enumerationitem_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::EnumerationItem)
-
-@given(instance=QualityMetamodel::EnumerationItem_strategy)
-def test_qualitymetamodel::enumerationitem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_enumerationitem_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_EnumerationItem)
 
 
-@given(instance=QualityMetamodel::EnumerationItem_strategy)
-def test_qualitymetamodel::enumerationitem_name_setter(instance):
+
+@given(instance=QualityMetamodel_EnumerationItem_strategy)
+def test_qualitymetamodel_enumerationitem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=QualityMetamodel::EnumerationMetric_strategy)
+@given(instance=QualityMetamodel_EnumerationMetric_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::enumerationmetric_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::EnumerationMetric)
+def test_qualitymetamodel_enumerationmetric_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_EnumerationMetric)
 
-@given(instance=QualityMetamodel::MetricProvider_strategy)
+@given(instance=QualityMetamodel_MetricProvider_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::metricprovider_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::MetricProvider)
-
-@given(instance=QualityMetamodel::MetricProvider_strategy)
-def test_qualitymetamodel::metricprovider_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_metricprovider_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_MetricProvider)
 
 
-@given(instance=QualityMetamodel::MetricProvider_strategy)
-def test_qualitymetamodel::metricprovider_name_setter(instance):
+
+@given(instance=QualityMetamodel_MetricProvider_strategy)
+def test_qualitymetamodel_metricprovider_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=QualityMetamodel::MetricProvider_strategy)
-def test_qualitymetamodel::metricprovider_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=QualityMetamodel::MetricProvider_strategy)
-def test_qualitymetamodel::metricprovider_id_setter(instance):
+@given(instance=QualityMetamodel_MetricProvider_strategy)
+def test_qualitymetamodel_metricprovider_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=QualityMetamodel::MetricProvider_strategy)
-def test_qualitymetamodel::metricprovider_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=QualityMetamodel::MetricProvider_strategy)
-def test_qualitymetamodel::metricprovider_description_setter(instance):
+@given(instance=QualityMetamodel_MetricProvider_strategy)
+def test_qualitymetamodel_metricprovider_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -4214,229 +3846,471 @@ def test_qualitymetamodel::metricprovider_description_setter(instance):
 def test_module_instantiation(instance):
     assert isinstance(instance, Module)
 
-@given(instance=QualityMetamodel::QualityModel_strategy)
+@given(instance=QualityMetamodel_QualityModel_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qualitymodel_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QualityModel)
+def test_qualitymetamodel_qualitymodel_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QualityModel)
 
 @given(instance=OclExpression_strategy)
 @settings(max_examples=50)
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=QualityMetamodel::QMM::OCL::TupleExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_CollectionExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::tupleexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::TupleExp)
+def test_qualitymetamodel_qmm_ocl_collectionexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_CollectionExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::CollectionExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::collectionexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::CollectionExp)
+def test_qualitymetamodel_qmm_ocl_propertycallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_PropertyCallExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::BraceExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_MapExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::braceexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::BraceExp)
+def test_qualitymetamodel_qmm_ocl_mapexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_MapExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::OclUndefinedExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_SelfExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclundefinedexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclUndefinedExp)
+def test_qualitymetamodel_qmm_ocl_selfexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_SelfExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::LetExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_BraceExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::letexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::LetExp)
+def test_qualitymetamodel_qmm_ocl_braceexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_BraceExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::EnumLiteralExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_LetExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::EnumLiteralExp)
+def test_qualitymetamodel_qmm_ocl_letexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_LetExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::EnumLiteralExp_strategy)
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::EnumLiteralExp_strategy)
-def test_qualitymetamodel::qmm::ocl::enumliteralexp_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=QualityMetamodel::QMM::OCL::PrimitiveExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_EnvExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::primitiveexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::PrimitiveExp)
+def test_qualitymetamodel_qmm_ocl_envexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_EnvExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::IfExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_IfExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::ifexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::IfExp)
+def test_qualitymetamodel_qmm_ocl_ifexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_IfExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::VariableExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_OperatorCallExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::variableexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::VariableExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclModelElementExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OclModelElementExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::OclModelElementExp_strategy)
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_qmm_ocl_operatorcallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OperatorCallExp)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::OclModelElementExp_strategy)
-def test_qualitymetamodel::qmm::ocl::oclmodelelementexp_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=QualityMetamodel::QMM::OCL::PropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::propertycallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::PropertyCallExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::EnvExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::envexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::EnvExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::MapExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::mapexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::MapExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::StaticPropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::staticpropertycallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::StaticPropertyCallExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::OperatorCallExp_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::OperatorCallExp)
-
-@given(instance=QualityMetamodel::QMM::OCL::OperatorCallExp_strategy)
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
-
-
-@given(instance=QualityMetamodel::QMM::OCL::OperatorCallExp_strategy)
-def test_qualitymetamodel::qmm::ocl::operatorcallexp_operationName_setter(instance):
+@given(instance=QualityMetamodel_QMM_OCL_OperatorCallExp_strategy)
+def test_qualitymetamodel_qmm_ocl_operatorcallexp_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=QualityMetamodel::QMM::OCL::SelfExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_OclUndefinedExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::selfexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::SelfExp)
+def test_qualitymetamodel_qmm_ocl_oclundefinedexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclUndefinedExp)
 
-@given(instance=QualityMetamodel::QMM::OCL::SuperExp_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_VariableExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::superexp_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::SuperExp)
+def test_qualitymetamodel_qmm_ocl_variableexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_VariableExp)
 
-@given(instance=QualityMetamodel::Operation_strategy)
+@given(instance=QualityMetamodel_QMM_OCL_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::operation_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::Operation)
-
-@given(instance=QualityMetamodel::Operation_strategy)
-def test_qualitymetamodel::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qualitymetamodel_qmm_ocl_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_EnumLiteralExp)
 
 
-@given(instance=QualityMetamodel::Operation_strategy)
-def test_qualitymetamodel::operation_name_setter(instance):
+
+@given(instance=QualityMetamodel_QMM_OCL_EnumLiteralExp_strategy)
+def test_qualitymetamodel_qmm_ocl_enumliteralexp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=QualityMetamodel::Operation_strategy)
-def test_qualitymetamodel::operation_body_type(instance):
-    assert isinstance(instance.body, str)
+@given(instance=QualityMetamodel_QMM_OCL_StaticPropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_staticpropertycallexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_StaticPropertyCallExp)
+
+@given(instance=QualityMetamodel_QMM_OCL_TupleExp_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_tupleexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_TupleExp)
+
+@given(instance=QualityMetamodel_QMM_OCL_PrimitiveExp_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_primitiveexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_PrimitiveExp)
+
+@given(instance=QualityMetamodel_QMM_OCL_SuperExp_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_superexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_SuperExp)
+
+@given(instance=QualityMetamodel_Operation_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_operation_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_Operation)
 
 
-@given(instance=QualityMetamodel::Operation_strategy)
-def test_qualitymetamodel::operation_body_setter(instance):
+
+@given(instance=QualityMetamodel_Operation_strategy)
+def test_qualitymetamodel_operation_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
+
+
+
+@given(instance=QualityMetamodel_Operation_strategy)
+def test_qualitymetamodel_operation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=QualityMetamodel::AggregatedValue_strategy)
+@given(instance=QualityMetamodel_AggregatedValue_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::aggregatedvalue_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::AggregatedValue)
+def test_qualitymetamodel_aggregatedvalue_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_AggregatedValue)
 
-@given(instance=QualityMetamodel::SingleValue_strategy)
+@given(instance=QualityMetamodel_SingleValue_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::singlevalue_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::SingleValue)
+def test_qualitymetamodel_singlevalue_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_SingleValue)
 
 @given(instance=VariableDeclaration_strategy)
 @settings(max_examples=50)
 def test_variabledeclaration_instantiation(instance):
     assert isinstance(instance, VariableDeclaration)
 
-@given(instance=QualityMetamodel::QMM::OCL::Iterator_strategy)
+@given(instance=QualityMetamodel_Value_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::iterator_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Iterator)
-
-@given(instance=QualityMetamodel::QMM::OCL::Parameter_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::parameter_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::Parameter)
-
-@given(instance=QualityMetamodel::QMM::OCL::LocalVariable_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::qmm::ocl::localvariable_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QMM::OCL::LocalVariable)
-
-@given(instance=QualityMetamodel::QMM::OCL::LocalVariable_strategy)
-def test_qualitymetamodel::qmm::ocl::localvariable_eq_type(instance):
-    assert isinstance(instance.eq, str)
+def test_qualitymetamodel_value_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_Value)
 
 
-@given(instance=QualityMetamodel::QMM::OCL::LocalVariable_strategy)
-def test_qualitymetamodel::qmm::ocl::localvariable_eq_setter(instance):
-    original = instance.eq
-    instance.eq = original
-    assert instance.eq == original
 
-@given(instance=QualityMetamodel::Value_strategy)
-@settings(max_examples=50)
-def test_qualitymetamodel::value_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::Value)
-
-@given(instance=QualityMetamodel::Value_strategy)
-def test_qualitymetamodel::value_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=QualityMetamodel::Value_strategy)
-def test_qualitymetamodel::value_description_setter(instance):
+@given(instance=QualityMetamodel_Value_strategy)
+def test_qualitymetamodel_value_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=QualityMetamodel::QualityAttribute_strategy)
+@given(instance=QualityMetamodel_QualityAttribute_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::qualityattribute_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::QualityAttribute)
+def test_qualitymetamodel_qualityattribute_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QualityAttribute)
 
-@given(instance=QualityMetamodel::ValueType_strategy)
+@given(instance=QualityMetamodel_ValueType_strategy)
 @settings(max_examples=50)
-def test_qualitymetamodel::valuetype_instantiation(instance):
-    assert isinstance(instance, QualityMetamodel::ValueType)
+def test_qualitymetamodel_valuetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_ValueType)
+
+@given(instance=Parameter_strategy)
+@settings(max_examples=50)
+def test_parameter_instantiation(instance):
+    assert isinstance(instance, Parameter)
+
+@given(instance=OclInstanceModel_strategy)
+@settings(max_examples=50)
+def test_oclinstancemodel_instantiation(instance):
+    assert isinstance(instance, OclInstanceModel)
+
+@given(instance=OclModelElement_strategy)
+@settings(max_examples=50)
+def test_oclmodelelement_instantiation(instance):
+    assert isinstance(instance, OclModelElement)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclModel_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclmodel_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclModel)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclModelElement_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclmodelelement_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclModelElement)
+
+@given(instance=TupleType_strategy)
+@settings(max_examples=50)
+def test_tupletype_instantiation(instance):
+    assert isinstance(instance, TupleType)
+
+@given(instance=QualityMetamodel_QMM_OCL_TupleTypeAttribute_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_tupletypeattribute_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_TupleTypeAttribute)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_TupleTypeAttribute_strategy)
+def test_qualitymetamodel_qmm_ocl_tupletypeattribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=QualityMetamodel_QMM_OCL_OclFeature_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclfeature_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclFeature)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_OclFeature_strategy)
+def test_qualitymetamodel_qmm_ocl_oclfeature_eq_setter(instance):
+    original = instance.eq
+    instance.eq = original
+    assert instance.eq == original
+
+@given(instance=OclFeatureDefinition_strategy)
+@settings(max_examples=50)
+def test_oclfeaturedefinition_instantiation(instance):
+    assert isinstance(instance, OclFeatureDefinition)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclContextDefinition_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclcontextdefinition_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclContextDefinition)
+
+@given(instance=OclFeature_strategy)
+@settings(max_examples=50)
+def test_oclfeature_instantiation(instance):
+    assert isinstance(instance, OclFeature)
+
+@given(instance=QualityMetamodel_QMM_OCL_Attribute_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_attribute_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Attribute)
+
+@given(instance=QualityMetamodel_QMM_OCL_Operation_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_operation_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Operation)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclFeatureDefinition_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclfeaturedefinition_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclFeatureDefinition)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_OclFeatureDefinition_strategy)
+def test_qualitymetamodel_qmm_ocl_oclfeaturedefinition_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+@given(instance=QualityMetamodel_QMM_OCL_EnvType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_envtype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_EnvType)
+
+@given(instance=QualityMetamodel_QMM_OCL_LambdaType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_lambdatype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_LambdaType)
+
+@given(instance=QualityMetamodel_QMM_OCL_MapType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_maptype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_MapType)
+
+@given(instance=TupleTypeAttribute_strategy)
+@settings(max_examples=50)
+def test_tupletypeattribute_instantiation(instance):
+    assert isinstance(instance, TupleTypeAttribute)
+
+@given(instance=CollectionType_strategy)
+@settings(max_examples=50)
+def test_collectiontype_instantiation(instance):
+    assert isinstance(instance, CollectionType)
+
+@given(instance=MapType_strategy)
+@settings(max_examples=50)
+def test_maptype_instantiation(instance):
+    assert isinstance(instance, MapType)
+
+@given(instance=QualityMetamodel_QMM_OCL_TupleType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_tupletype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_TupleType)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclAnyType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclanytype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclAnyType)
+
+@given(instance=QualityMetamodel_QMM_OCL_SetType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_settype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_SetType)
+
+@given(instance=QualityMetamodel_QMM_OCL_SequenceType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_sequencetype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_SequenceType)
+
+@given(instance=QualityMetamodel_QMM_OCL_OrderedSetType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_orderedsettype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OrderedSetType)
+
+@given(instance=QualityMetamodel_QMM_OCL_BagType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_bagtype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_BagType)
+
+@given(instance=NumericType_strategy)
+@settings(max_examples=50)
+def test_numerictype_instantiation(instance):
+    assert isinstance(instance, NumericType)
+
+@given(instance=QualityMetamodel_QMM_OCL_RealType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_realtype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_RealType)
+
+@given(instance=QualityMetamodel_QMM_OCL_IntegerType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_integertype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_IntegerType)
+
+@given(instance=Primitive_strategy)
+@settings(max_examples=50)
+def test_primitive_instantiation(instance):
+    assert isinstance(instance, Primitive)
+
+@given(instance=QualityMetamodel_QMM_OCL_NumericType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_numerictype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_NumericType)
+
+@given(instance=QualityMetamodel_QMM_OCL_BooleanType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_booleantype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_BooleanType)
+
+@given(instance=QualityMetamodel_QMM_OCL_StringType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_stringtype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_StringType)
+
+@given(instance=QualityMetamodel_QMM_OCL_Primitive_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_primitive_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Primitive)
+
+@given(instance=OclModel_strategy)
+@settings(max_examples=50)
+def test_oclmodel_instantiation(instance):
+    assert isinstance(instance, OclModel)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclInstanceModel_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclinstancemodel_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclInstanceModel)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclMetamodel_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclmetamodel_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclMetamodel)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_OclMetamodel_strategy)
+def test_qualitymetamodel_qmm_ocl_oclmetamodel_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
+
+@given(instance=QualityMetamodel_QMM_OCL_OclModelElementExp_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_oclmodelelementexp_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclModelElementExp)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_OclModelElementExp_strategy)
+def test_qualitymetamodel_qmm_ocl_oclmodelelementexp_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=LambdaType_strategy)
+@settings(max_examples=50)
+def test_lambdatype_instantiation(instance):
+    assert isinstance(instance, LambdaType)
+
+@given(instance=QualityMetamodel_QMM_OCL_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_VariableDeclaration)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_VariableDeclaration_strategy)
+def test_qualitymetamodel_qmm_ocl_variabledeclaration_varName_setter(instance):
+    original = instance.varName
+    instance.varName = original
+    assert instance.varName == original
+
+@given(instance=OclContextDefinition_strategy)
+@settings(max_examples=50)
+def test_oclcontextdefinition_instantiation(instance):
+    assert isinstance(instance, OclContextDefinition)
+
+@given(instance=QualityMetamodel_QMM_OCL_OclType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_ocltype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_OclType)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_OclType_strategy)
+def test_qualitymetamodel_qmm_ocl_ocltype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=QualityMetamodel_QMM_OCL_CollectionType_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_collectiontype_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_CollectionType)
+
+@given(instance=QualityMetamodel_QMM_OCL_Parameter_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_parameter_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Parameter)
+
+@given(instance=QualityMetamodel_QMM_OCL_Iterator_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_iterator_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_Iterator)
+
+@given(instance=IterateExp_strategy)
+@settings(max_examples=50)
+def test_iterateexp_instantiation(instance):
+    assert isinstance(instance, IterateExp)
+
+@given(instance=QualityMetamodel_QMM_OCL_LocalVariable_strategy)
+@settings(max_examples=50)
+def test_qualitymetamodel_qmm_ocl_localvariable_instantiation(instance):
+    assert isinstance(instance, QualityMetamodel_QMM_OCL_LocalVariable)
+
+
+
+@given(instance=QualityMetamodel_QMM_OCL_LocalVariable_strategy)
+def test_qualitymetamodel_qmm_ocl_localvariable_eq_setter(instance):
+    original = instance.eq
+    instance.eq = original
+    assert instance.eq == original

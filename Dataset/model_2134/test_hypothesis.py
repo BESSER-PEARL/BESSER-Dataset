@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    architecture::extension::Bop,
-    architecture::extension::RelationshipConstraint,
+from python_code import (
+    architecture_extension_Bop,
+    architecture_extension_RelationshipConstraint,
     ReferenceDependency,
-    architecture::ImportReferenceDependency,
-    architecture::FieldReferenceDependency,
+    architecture_ImportReferenceDependency,
+    architecture_FieldReferenceDependency,
     RuntimeDependency,
-    architecture::InjectionDependency,
+    architecture_InjectionDependency,
     Relationship,
-    architecture::DeclaredType,
-    architecture::extension::ExtensionRelationship,
-    architecture::CallRelationship,
-    architecture::extension::PatternRelationship,
-    architecture::ReturnTypeRelationship,
-    architecture::extension::RoleRelationship,
-    architecture::ParameterRelationship,
-    architecture::Dependency,
+    architecture_extension_PatternRelationship,
+    architecture_extension_RoleRelationship,
+    architecture_ParameterRelationship,
+    architecture_extension_ExtensionRelationship,
+    architecture_DeclaredType,
+    architecture_ReturnTypeRelationship,
+    architecture_CallRelationship,
+    architecture_Dependency,
     Dependency,
-    architecture::RuntimeDependency,
-    architecture::ReferenceDependency,
-    architecture::InheritanceDependency,
+    architecture_ReferenceDependency,
+    architecture_RuntimeDependency,
+    architecture_InheritanceDependency,
     AnalysedElement,
-    architecture::Library,
-    architecture::Method,
-    architecture::extension::Role,
-    architecture::ArchitectureFile,
-    architecture::Project,
-    architecture::extension::Pattern,
-    architecture::Field,
-    architecture::Type,
-    architecture::Relationship,
-    architecture::AnalysedElement,
+    architecture_ArchitectureFile,
+    architecture_Method,
+    architecture_Library,
+    architecture_Field,
+    architecture_extension_Pattern,
+    architecture_extension_Role,
+    architecture_Project,
+    architecture_Type,
+    architecture_Relationship,
+    architecture_AnalysedElement,
 )
 
 # =============================================================================
@@ -45,30 +45,30 @@ from classes import (
 
 
 
-def test_architecture::extension::bop_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::Bop)
+def test_architecture_extension_bop_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_Bop)
 
 
-def test_architecture::extension::bop_constructor_exists():
-    assert callable(architecture::extension::Bop.__init__)
+def test_architecture_extension_bop_constructor_exists():
+    assert callable(architecture_extension_Bop.__init__)
 
 
-def test_architecture::extension::bop_constructor_args():
-    sig = inspect.signature(architecture::extension::Bop.__init__)
+def test_architecture_extension_bop_constructor_args():
+    sig = inspect.signature(architecture_extension_Bop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::extension::relationshipconstraint_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::RelationshipConstraint)
+def test_architecture_extension_relationshipconstraint_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_RelationshipConstraint)
 
 
-def test_architecture::extension::relationshipconstraint_constructor_exists():
-    assert callable(architecture::extension::RelationshipConstraint.__init__)
+def test_architecture_extension_relationshipconstraint_constructor_exists():
+    assert callable(architecture_extension_RelationshipConstraint.__init__)
 
 
-def test_architecture::extension::relationshipconstraint_constructor_args():
-    sig = inspect.signature(architecture::extension::RelationshipConstraint.__init__)
+def test_architecture_extension_relationshipconstraint_constructor_args():
+    sig = inspect.signature(architecture_extension_RelationshipConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,30 +87,30 @@ def test_referencedependency_constructor_args():
 
 
 
-def test_architecture::importreferencedependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::ImportReferenceDependency)
+def test_architecture_importreferencedependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_ImportReferenceDependency)
 
 
-def test_architecture::importreferencedependency_constructor_exists():
-    assert callable(architecture::ImportReferenceDependency.__init__)
+def test_architecture_importreferencedependency_constructor_exists():
+    assert callable(architecture_ImportReferenceDependency.__init__)
 
 
-def test_architecture::importreferencedependency_constructor_args():
-    sig = inspect.signature(architecture::ImportReferenceDependency.__init__)
+def test_architecture_importreferencedependency_constructor_args():
+    sig = inspect.signature(architecture_ImportReferenceDependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::fieldreferencedependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::FieldReferenceDependency)
+def test_architecture_fieldreferencedependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_FieldReferenceDependency)
 
 
-def test_architecture::fieldreferencedependency_constructor_exists():
-    assert callable(architecture::FieldReferenceDependency.__init__)
+def test_architecture_fieldreferencedependency_constructor_exists():
+    assert callable(architecture_FieldReferenceDependency.__init__)
 
 
-def test_architecture::fieldreferencedependency_constructor_args():
-    sig = inspect.signature(architecture::FieldReferenceDependency.__init__)
+def test_architecture_fieldreferencedependency_constructor_args():
+    sig = inspect.signature(architecture_FieldReferenceDependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,16 +129,16 @@ def test_runtimedependency_constructor_args():
 
 
 
-def test_architecture::injectiondependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::InjectionDependency)
+def test_architecture_injectiondependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_InjectionDependency)
 
 
-def test_architecture::injectiondependency_constructor_exists():
-    assert callable(architecture::InjectionDependency.__init__)
+def test_architecture_injectiondependency_constructor_exists():
+    assert callable(architecture_InjectionDependency.__init__)
 
 
-def test_architecture::injectiondependency_constructor_args():
-    sig = inspect.signature(architecture::InjectionDependency.__init__)
+def test_architecture_injectiondependency_constructor_args():
+    sig = inspect.signature(architecture_InjectionDependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,65 +157,23 @@ def test_relationship_constructor_args():
 
 
 
-def test_architecture::declaredtype_is_not_abstract():
-    assert not inspect.isabstract(architecture::DeclaredType)
+def test_architecture_extension_patternrelationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_PatternRelationship)
 
 
-def test_architecture::declaredtype_constructor_exists():
-    assert callable(architecture::DeclaredType.__init__)
+def test_architecture_extension_patternrelationship_constructor_exists():
+    assert callable(architecture_extension_PatternRelationship.__init__)
 
 
-def test_architecture::declaredtype_constructor_args():
-    sig = inspect.signature(architecture::DeclaredType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_architecture::extension::extensionrelationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::ExtensionRelationship)
-
-
-def test_architecture::extension::extensionrelationship_constructor_exists():
-    assert callable(architecture::extension::ExtensionRelationship.__init__)
-
-
-def test_architecture::extension::extensionrelationship_constructor_args():
-    sig = inspect.signature(architecture::extension::ExtensionRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_architecture::callrelationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::CallRelationship)
-
-
-def test_architecture::callrelationship_constructor_exists():
-    assert callable(architecture::CallRelationship.__init__)
-
-
-def test_architecture::callrelationship_constructor_args():
-    sig = inspect.signature(architecture::CallRelationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_architecture::extension::patternrelationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::PatternRelationship)
-
-
-def test_architecture::extension::patternrelationship_constructor_exists():
-    assert callable(architecture::extension::PatternRelationship.__init__)
-
-
-def test_architecture::extension::patternrelationship_constructor_args():
-    sig = inspect.signature(architecture::extension::PatternRelationship.__init__)
+def test_architecture_extension_patternrelationship_constructor_args():
+    sig = inspect.signature(architecture_extension_PatternRelationship.__init__)
     params = list(sig.parameters.keys())
     assert "referenceName" in params, "Missing parameter 'referenceName'"
 
-def test_architecture::extension::patternrelationship_has_referenceName():
-    assert hasattr(architecture::extension::PatternRelationship, "referenceName")
+def test_architecture_extension_patternrelationship_has_referenceName():
+    assert hasattr(architecture_extension_PatternRelationship, "referenceName")
     descriptor = None
-    for klass in architecture::extension::PatternRelationship.__mro__:
+    for klass in architecture_extension_PatternRelationship.__mro__:
         if "referenceName" in klass.__dict__:
             descriptor = klass.__dict__["referenceName"]
             break
@@ -223,58 +181,100 @@ def test_architecture::extension::patternrelationship_has_referenceName():
 
 
 
-def test_architecture::returntyperelationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::ReturnTypeRelationship)
+def test_architecture_extension_rolerelationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_RoleRelationship)
 
 
-def test_architecture::returntyperelationship_constructor_exists():
-    assert callable(architecture::ReturnTypeRelationship.__init__)
+def test_architecture_extension_rolerelationship_constructor_exists():
+    assert callable(architecture_extension_RoleRelationship.__init__)
 
 
-def test_architecture::returntyperelationship_constructor_args():
-    sig = inspect.signature(architecture::ReturnTypeRelationship.__init__)
+def test_architecture_extension_rolerelationship_constructor_args():
+    sig = inspect.signature(architecture_extension_RoleRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::extension::rolerelationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::RoleRelationship)
+def test_architecture_parameterrelationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_ParameterRelationship)
 
 
-def test_architecture::extension::rolerelationship_constructor_exists():
-    assert callable(architecture::extension::RoleRelationship.__init__)
+def test_architecture_parameterrelationship_constructor_exists():
+    assert callable(architecture_ParameterRelationship.__init__)
 
 
-def test_architecture::extension::rolerelationship_constructor_args():
-    sig = inspect.signature(architecture::extension::RoleRelationship.__init__)
+def test_architecture_parameterrelationship_constructor_args():
+    sig = inspect.signature(architecture_ParameterRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::parameterrelationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::ParameterRelationship)
+def test_architecture_extension_extensionrelationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_ExtensionRelationship)
 
 
-def test_architecture::parameterrelationship_constructor_exists():
-    assert callable(architecture::ParameterRelationship.__init__)
+def test_architecture_extension_extensionrelationship_constructor_exists():
+    assert callable(architecture_extension_ExtensionRelationship.__init__)
 
 
-def test_architecture::parameterrelationship_constructor_args():
-    sig = inspect.signature(architecture::ParameterRelationship.__init__)
+def test_architecture_extension_extensionrelationship_constructor_args():
+    sig = inspect.signature(architecture_extension_ExtensionRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::dependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::Dependency)
+def test_architecture_declaredtype_is_not_abstract():
+    assert not inspect.isabstract(architecture_DeclaredType)
 
 
-def test_architecture::dependency_constructor_exists():
-    assert callable(architecture::Dependency.__init__)
+def test_architecture_declaredtype_constructor_exists():
+    assert callable(architecture_DeclaredType.__init__)
 
 
-def test_architecture::dependency_constructor_args():
-    sig = inspect.signature(architecture::Dependency.__init__)
+def test_architecture_declaredtype_constructor_args():
+    sig = inspect.signature(architecture_DeclaredType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_architecture_returntyperelationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_ReturnTypeRelationship)
+
+
+def test_architecture_returntyperelationship_constructor_exists():
+    assert callable(architecture_ReturnTypeRelationship.__init__)
+
+
+def test_architecture_returntyperelationship_constructor_args():
+    sig = inspect.signature(architecture_ReturnTypeRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_architecture_callrelationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_CallRelationship)
+
+
+def test_architecture_callrelationship_constructor_exists():
+    assert callable(architecture_CallRelationship.__init__)
+
+
+def test_architecture_callrelationship_constructor_args():
+    sig = inspect.signature(architecture_CallRelationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_architecture_dependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_Dependency)
+
+
+def test_architecture_dependency_constructor_exists():
+    assert callable(architecture_Dependency.__init__)
+
+
+def test_architecture_dependency_constructor_args():
+    sig = inspect.signature(architecture_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -293,47 +293,33 @@ def test_dependency_constructor_args():
 
 
 
-def test_architecture::runtimedependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::RuntimeDependency)
+def test_architecture_referencedependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_ReferenceDependency)
 
 
-def test_architecture::runtimedependency_constructor_exists():
-    assert callable(architecture::RuntimeDependency.__init__)
+def test_architecture_referencedependency_constructor_exists():
+    assert callable(architecture_ReferenceDependency.__init__)
 
 
-def test_architecture::runtimedependency_constructor_args():
-    sig = inspect.signature(architecture::RuntimeDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_architecture::referencedependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::ReferenceDependency)
-
-
-def test_architecture::referencedependency_constructor_exists():
-    assert callable(architecture::ReferenceDependency.__init__)
-
-
-def test_architecture::referencedependency_constructor_args():
-    sig = inspect.signature(architecture::ReferenceDependency.__init__)
+def test_architecture_referencedependency_constructor_args():
+    sig = inspect.signature(architecture_ReferenceDependency.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_architecture::referencedependency_has_uri():
-    assert hasattr(architecture::ReferenceDependency, "uri")
+def test_architecture_referencedependency_has_uri():
+    assert hasattr(architecture_ReferenceDependency, "uri")
     descriptor = None
-    for klass in architecture::ReferenceDependency.__mro__:
+    for klass in architecture_ReferenceDependency.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
-def test_architecture::referencedependency_has_name():
-    assert hasattr(architecture::ReferenceDependency, "name")
+def test_architecture_referencedependency_has_name():
+    assert hasattr(architecture_ReferenceDependency, "name")
     descriptor = None
-    for klass in architecture::ReferenceDependency.__mro__:
+    for klass in architecture_ReferenceDependency.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -341,16 +327,30 @@ def test_architecture::referencedependency_has_name():
 
 
 
-def test_architecture::inheritancedependency_is_not_abstract():
-    assert not inspect.isabstract(architecture::InheritanceDependency)
+def test_architecture_runtimedependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_RuntimeDependency)
 
 
-def test_architecture::inheritancedependency_constructor_exists():
-    assert callable(architecture::InheritanceDependency.__init__)
+def test_architecture_runtimedependency_constructor_exists():
+    assert callable(architecture_RuntimeDependency.__init__)
 
 
-def test_architecture::inheritancedependency_constructor_args():
-    sig = inspect.signature(architecture::InheritanceDependency.__init__)
+def test_architecture_runtimedependency_constructor_args():
+    sig = inspect.signature(architecture_RuntimeDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_architecture_inheritancedependency_is_not_abstract():
+    assert not inspect.isabstract(architecture_InheritanceDependency)
+
+
+def test_architecture_inheritancedependency_constructor_exists():
+    assert callable(architecture_InheritanceDependency.__init__)
+
+
+def test_architecture_inheritancedependency_constructor_args():
+    sig = inspect.signature(architecture_InheritanceDependency.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -369,75 +369,23 @@ def test_analysedelement_constructor_args():
 
 
 
-def test_architecture::library_is_not_abstract():
-    assert not inspect.isabstract(architecture::Library)
+def test_architecture_architecturefile_is_not_abstract():
+    assert not inspect.isabstract(architecture_ArchitectureFile)
 
 
-def test_architecture::library_constructor_exists():
-    assert callable(architecture::Library.__init__)
+def test_architecture_architecturefile_constructor_exists():
+    assert callable(architecture_ArchitectureFile.__init__)
 
 
-def test_architecture::library_constructor_args():
-    sig = inspect.signature(architecture::Library.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_architecture::method_is_not_abstract():
-    assert not inspect.isabstract(architecture::Method)
-
-
-def test_architecture::method_constructor_exists():
-    assert callable(architecture::Method.__init__)
-
-
-def test_architecture::method_constructor_args():
-    sig = inspect.signature(architecture::Method.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_architecture::extension::role_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::Role)
-
-
-def test_architecture::extension::role_constructor_exists():
-    assert callable(architecture::extension::Role.__init__)
-
-
-def test_architecture::extension::role_constructor_args():
-    sig = inspect.signature(architecture::extension::Role.__init__)
-    params = list(sig.parameters.keys())
-    assert "attachedElement" in params, "Missing parameter 'attachedElement'"
-
-def test_architecture::extension::role_has_attachedElement():
-    assert hasattr(architecture::extension::Role, "attachedElement")
-    descriptor = None
-    for klass in architecture::extension::Role.__mro__:
-        if "attachedElement" in klass.__dict__:
-            descriptor = klass.__dict__["attachedElement"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_architecture::architecturefile_is_not_abstract():
-    assert not inspect.isabstract(architecture::ArchitectureFile)
-
-
-def test_architecture::architecturefile_constructor_exists():
-    assert callable(architecture::ArchitectureFile.__init__)
-
-
-def test_architecture::architecturefile_constructor_args():
-    sig = inspect.signature(architecture::ArchitectureFile.__init__)
+def test_architecture_architecturefile_constructor_args():
+    sig = inspect.signature(architecture_ArchitectureFile.__init__)
     params = list(sig.parameters.keys())
     assert "path" in params, "Missing parameter 'path'"
 
-def test_architecture::architecturefile_has_path():
-    assert hasattr(architecture::ArchitectureFile, "path")
+def test_architecture_architecturefile_has_path():
+    assert hasattr(architecture_ArchitectureFile, "path")
     descriptor = None
-    for klass in architecture::ArchitectureFile.__mro__:
+    for klass in architecture_ArchitectureFile.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
@@ -445,109 +393,161 @@ def test_architecture::architecturefile_has_path():
 
 
 
-def test_architecture::project_is_not_abstract():
-    assert not inspect.isabstract(architecture::Project)
+def test_architecture_method_is_not_abstract():
+    assert not inspect.isabstract(architecture_Method)
 
 
-def test_architecture::project_constructor_exists():
-    assert callable(architecture::Project.__init__)
+def test_architecture_method_constructor_exists():
+    assert callable(architecture_Method.__init__)
 
 
-def test_architecture::project_constructor_args():
-    sig = inspect.signature(architecture::Project.__init__)
+def test_architecture_method_constructor_args():
+    sig = inspect.signature(architecture_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::extension::pattern_is_not_abstract():
-    assert not inspect.isabstract(architecture::extension::Pattern)
+def test_architecture_library_is_not_abstract():
+    assert not inspect.isabstract(architecture_Library)
 
 
-def test_architecture::extension::pattern_constructor_exists():
-    assert callable(architecture::extension::Pattern.__init__)
+def test_architecture_library_constructor_exists():
+    assert callable(architecture_Library.__init__)
 
 
-def test_architecture::extension::pattern_constructor_args():
-    sig = inspect.signature(architecture::extension::Pattern.__init__)
+def test_architecture_library_constructor_args():
+    sig = inspect.signature(architecture_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::field_is_not_abstract():
-    assert not inspect.isabstract(architecture::Field)
+def test_architecture_field_is_not_abstract():
+    assert not inspect.isabstract(architecture_Field)
 
 
-def test_architecture::field_constructor_exists():
-    assert callable(architecture::Field.__init__)
+def test_architecture_field_constructor_exists():
+    assert callable(architecture_Field.__init__)
 
 
-def test_architecture::field_constructor_args():
-    sig = inspect.signature(architecture::Field.__init__)
+def test_architecture_field_constructor_args():
+    sig = inspect.signature(architecture_Field.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_architecture::type_is_not_abstract():
-    assert not inspect.isabstract(architecture::Type)
+def test_architecture_extension_pattern_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_Pattern)
 
 
-def test_architecture::type_constructor_exists():
-    assert callable(architecture::Type.__init__)
+def test_architecture_extension_pattern_constructor_exists():
+    assert callable(architecture_extension_Pattern.__init__)
 
 
-def test_architecture::type_constructor_args():
-    sig = inspect.signature(architecture::Type.__init__)
+def test_architecture_extension_pattern_constructor_args():
+    sig = inspect.signature(architecture_extension_Pattern.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_architecture_extension_role_is_not_abstract():
+    assert not inspect.isabstract(architecture_extension_Role)
+
+
+def test_architecture_extension_role_constructor_exists():
+    assert callable(architecture_extension_Role.__init__)
+
+
+def test_architecture_extension_role_constructor_args():
+    sig = inspect.signature(architecture_extension_Role.__init__)
+    params = list(sig.parameters.keys())
+    assert "attachedElement" in params, "Missing parameter 'attachedElement'"
+
+def test_architecture_extension_role_has_attachedElement():
+    assert hasattr(architecture_extension_Role, "attachedElement")
+    descriptor = None
+    for klass in architecture_extension_Role.__mro__:
+        if "attachedElement" in klass.__dict__:
+            descriptor = klass.__dict__["attachedElement"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_architecture_project_is_not_abstract():
+    assert not inspect.isabstract(architecture_Project)
+
+
+def test_architecture_project_constructor_exists():
+    assert callable(architecture_Project.__init__)
+
+
+def test_architecture_project_constructor_args():
+    sig = inspect.signature(architecture_Project.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_architecture_type_is_not_abstract():
+    assert not inspect.isabstract(architecture_Type)
+
+
+def test_architecture_type_constructor_exists():
+    assert callable(architecture_Type.__init__)
+
+
+def test_architecture_type_constructor_args():
+    sig = inspect.signature(architecture_Type.__init__)
+    params = list(sig.parameters.keys())
+    assert "source" in params, "Missing parameter 'source'"
     assert "binary" in params, "Missing parameter 'binary'"
     assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
-    assert "source" in params, "Missing parameter 'source'"
 
-def test_architecture::type_has_binary():
-    assert hasattr(architecture::Type, "binary")
+def test_architecture_type_has_source():
+    assert hasattr(architecture_Type, "source")
     descriptor = None
-    for klass in architecture::Type.__mro__:
-        if "binary" in klass.__dict__:
-            descriptor = klass.__dict__["binary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_architecture::type_has_qualifiedName():
-    assert hasattr(architecture::Type, "qualifiedName")
-    descriptor = None
-    for klass in architecture::Type.__mro__:
-        if "qualifiedName" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiedName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_architecture::type_has_source():
-    assert hasattr(architecture::Type, "source")
-    descriptor = None
-    for klass in architecture::Type.__mro__:
+    for klass in architecture_Type.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
     assert isinstance(descriptor, property)
 
+def test_architecture_type_has_binary():
+    assert hasattr(architecture_Type, "binary")
+    descriptor = None
+    for klass in architecture_Type.__mro__:
+        if "binary" in klass.__dict__:
+            descriptor = klass.__dict__["binary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_architecture_type_has_qualifiedName():
+    assert hasattr(architecture_Type, "qualifiedName")
+    descriptor = None
+    for klass in architecture_Type.__mro__:
+        if "qualifiedName" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiedName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_architecture::relationship_is_not_abstract():
-    assert not inspect.isabstract(architecture::Relationship)
+
+def test_architecture_relationship_is_not_abstract():
+    assert not inspect.isabstract(architecture_Relationship)
 
 
-def test_architecture::relationship_constructor_exists():
-    assert callable(architecture::Relationship.__init__)
+def test_architecture_relationship_constructor_exists():
+    assert callable(architecture_Relationship.__init__)
 
 
-def test_architecture::relationship_constructor_args():
-    sig = inspect.signature(architecture::Relationship.__init__)
+def test_architecture_relationship_constructor_args():
+    sig = inspect.signature(architecture_Relationship.__init__)
     params = list(sig.parameters.keys())
     assert "relationShipId" in params, "Missing parameter 'relationShipId'"
 
-def test_architecture::relationship_has_relationShipId():
-    assert hasattr(architecture::Relationship, "relationShipId")
+def test_architecture_relationship_has_relationShipId():
+    assert hasattr(architecture_Relationship, "relationShipId")
     descriptor = None
-    for klass in architecture::Relationship.__mro__:
+    for klass in architecture_Relationship.__mro__:
         if "relationShipId" in klass.__dict__:
             descriptor = klass.__dict__["relationShipId"]
             break
@@ -555,45 +555,45 @@ def test_architecture::relationship_has_relationShipId():
 
 
 
-def test_architecture::analysedelement_is_not_abstract():
-    assert not inspect.isabstract(architecture::AnalysedElement)
+def test_architecture_analysedelement_is_not_abstract():
+    assert not inspect.isabstract(architecture_AnalysedElement)
 
 
-def test_architecture::analysedelement_constructor_exists():
-    assert callable(architecture::AnalysedElement.__init__)
+def test_architecture_analysedelement_constructor_exists():
+    assert callable(architecture_AnalysedElement.__init__)
 
 
-def test_architecture::analysedelement_constructor_args():
-    sig = inspect.signature(architecture::AnalysedElement.__init__)
+def test_architecture_analysedelement_constructor_args():
+    sig = inspect.signature(architecture_AnalysedElement.__init__)
     params = list(sig.parameters.keys())
     assert "properties" in params, "Missing parameter 'properties'"
-    assert "idAnalyzedElement" in params, "Missing parameter 'idAnalyzedElement'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "idAnalyzedElement" in params, "Missing parameter 'idAnalyzedElement'"
 
-def test_architecture::analysedelement_has_properties():
-    assert hasattr(architecture::AnalysedElement, "properties")
+def test_architecture_analysedelement_has_properties():
+    assert hasattr(architecture_AnalysedElement, "properties")
     descriptor = None
-    for klass in architecture::AnalysedElement.__mro__:
+    for klass in architecture_AnalysedElement.__mro__:
         if "properties" in klass.__dict__:
             descriptor = klass.__dict__["properties"]
             break
     assert isinstance(descriptor, property)
 
-def test_architecture::analysedelement_has_idAnalyzedElement():
-    assert hasattr(architecture::AnalysedElement, "idAnalyzedElement")
+def test_architecture_analysedelement_has_name():
+    assert hasattr(architecture_AnalysedElement, "name")
     descriptor = None
-    for klass in architecture::AnalysedElement.__mro__:
-        if "idAnalyzedElement" in klass.__dict__:
-            descriptor = klass.__dict__["idAnalyzedElement"]
+    for klass in architecture_AnalysedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_architecture::analysedelement_has_name():
-    assert hasattr(architecture::AnalysedElement, "name")
+def test_architecture_analysedelement_has_idAnalyzedElement():
+    assert hasattr(architecture_AnalysedElement, "idAnalyzedElement")
     descriptor = None
-    for klass in architecture::AnalysedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in architecture_AnalysedElement.__mro__:
+        if "idAnalyzedElement" in klass.__dict__:
+            descriptor = klass.__dict__["idAnalyzedElement"]
             break
     assert isinstance(descriptor, property)
 
@@ -609,133 +609,133 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-architecture::extension::Bop_strategy = st.builds(
-    architecture::extension::Bop,
+architecture_extension_Bop_strategy = st.builds(
+    architecture_extension_Bop,
 )
-architecture::extension::RelationshipConstraint_strategy = st.builds(
-    architecture::extension::RelationshipConstraint,
+architecture_extension_RelationshipConstraint_strategy = st.builds(
+    architecture_extension_RelationshipConstraint,
 )
 ReferenceDependency_strategy = st.builds(
     ReferenceDependency,
 )
-architecture::ImportReferenceDependency_strategy = st.builds(
-    architecture::ImportReferenceDependency,
+architecture_ImportReferenceDependency_strategy = st.builds(
+    architecture_ImportReferenceDependency,
 )
-architecture::FieldReferenceDependency_strategy = st.builds(
-    architecture::FieldReferenceDependency,
+architecture_FieldReferenceDependency_strategy = st.builds(
+    architecture_FieldReferenceDependency,
 )
 RuntimeDependency_strategy = st.builds(
     RuntimeDependency,
 )
-architecture::InjectionDependency_strategy = st.builds(
-    architecture::InjectionDependency,
+architecture_InjectionDependency_strategy = st.builds(
+    architecture_InjectionDependency,
 )
 Relationship_strategy = st.builds(
     Relationship,
 )
-architecture::DeclaredType_strategy = st.builds(
-    architecture::DeclaredType,
-)
-architecture::extension::ExtensionRelationship_strategy = st.builds(
-    architecture::extension::ExtensionRelationship,
-)
-architecture::CallRelationship_strategy = st.builds(
-    architecture::CallRelationship,
-)
-architecture::extension::PatternRelationship_strategy = st.builds(
-    architecture::extension::PatternRelationship,
+architecture_extension_PatternRelationship_strategy = st.builds(
+    architecture_extension_PatternRelationship,
     referenceName=
         safe_text
 )
-architecture::ReturnTypeRelationship_strategy = st.builds(
-    architecture::ReturnTypeRelationship,
+architecture_extension_RoleRelationship_strategy = st.builds(
+    architecture_extension_RoleRelationship,
 )
-architecture::extension::RoleRelationship_strategy = st.builds(
-    architecture::extension::RoleRelationship,
+architecture_ParameterRelationship_strategy = st.builds(
+    architecture_ParameterRelationship,
 )
-architecture::ParameterRelationship_strategy = st.builds(
-    architecture::ParameterRelationship,
+architecture_extension_ExtensionRelationship_strategy = st.builds(
+    architecture_extension_ExtensionRelationship,
 )
-architecture::Dependency_strategy = st.builds(
-    architecture::Dependency,
+architecture_DeclaredType_strategy = st.builds(
+    architecture_DeclaredType,
+)
+architecture_ReturnTypeRelationship_strategy = st.builds(
+    architecture_ReturnTypeRelationship,
+)
+architecture_CallRelationship_strategy = st.builds(
+    architecture_CallRelationship,
+)
+architecture_Dependency_strategy = st.builds(
+    architecture_Dependency,
 )
 Dependency_strategy = st.builds(
     Dependency,
 )
-architecture::RuntimeDependency_strategy = st.builds(
-    architecture::RuntimeDependency,
-)
-architecture::ReferenceDependency_strategy = st.builds(
-    architecture::ReferenceDependency,
+architecture_ReferenceDependency_strategy = st.builds(
+    architecture_ReferenceDependency,
     uri=
         safe_text,
     name=
         safe_text
 )
-architecture::InheritanceDependency_strategy = st.builds(
-    architecture::InheritanceDependency,
+architecture_RuntimeDependency_strategy = st.builds(
+    architecture_RuntimeDependency,
+)
+architecture_InheritanceDependency_strategy = st.builds(
+    architecture_InheritanceDependency,
 )
 AnalysedElement_strategy = st.builds(
     AnalysedElement,
 )
-architecture::Library_strategy = st.builds(
-    architecture::Library,
-)
-architecture::Method_strategy = st.builds(
-    architecture::Method,
-)
-architecture::extension::Role_strategy = st.builds(
-    architecture::extension::Role,
-    attachedElement=
-        safe_text
-)
-architecture::ArchitectureFile_strategy = st.builds(
-    architecture::ArchitectureFile,
+architecture_ArchitectureFile_strategy = st.builds(
+    architecture_ArchitectureFile,
     path=
         safe_text
 )
-architecture::Project_strategy = st.builds(
-    architecture::Project,
+architecture_Method_strategy = st.builds(
+    architecture_Method,
 )
-architecture::extension::Pattern_strategy = st.builds(
-    architecture::extension::Pattern,
+architecture_Library_strategy = st.builds(
+    architecture_Library,
 )
-architecture::Field_strategy = st.builds(
-    architecture::Field,
+architecture_Field_strategy = st.builds(
+    architecture_Field,
 )
-architecture::Type_strategy = st.builds(
-    architecture::Type,
+architecture_extension_Pattern_strategy = st.builds(
+    architecture_extension_Pattern,
+)
+architecture_extension_Role_strategy = st.builds(
+    architecture_extension_Role,
+    attachedElement=
+        safe_text
+)
+architecture_Project_strategy = st.builds(
+    architecture_Project,
+)
+architecture_Type_strategy = st.builds(
+    architecture_Type,
+    source=
+        st.booleans(),
     binary=
         st.booleans(),
     qualifiedName=
-        safe_text,
-    source=
-        st.booleans()
+        safe_text
 )
-architecture::Relationship_strategy = st.builds(
-    architecture::Relationship,
+architecture_Relationship_strategy = st.builds(
+    architecture_Relationship,
     relationShipId=
         st.integers()
 )
-architecture::AnalysedElement_strategy = st.builds(
-    architecture::AnalysedElement,
+architecture_AnalysedElement_strategy = st.builds(
+    architecture_AnalysedElement,
     properties=
         st.integers(),
-    idAnalyzedElement=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    idAnalyzedElement=
+        st.integers()
 )
 
-@given(instance=architecture::extension::Bop_strategy)
+@given(instance=architecture_extension_Bop_strategy)
 @settings(max_examples=50)
-def test_architecture::extension::bop_instantiation(instance):
-    assert isinstance(instance, architecture::extension::Bop)
+def test_architecture_extension_bop_instantiation(instance):
+    assert isinstance(instance, architecture_extension_Bop)
 
-@given(instance=architecture::extension::RelationshipConstraint_strategy)
+@given(instance=architecture_extension_RelationshipConstraint_strategy)
 @settings(max_examples=50)
-def test_architecture::extension::relationshipconstraint_instantiation(instance):
-    assert isinstance(instance, architecture::extension::RelationshipConstraint)
+def test_architecture_extension_relationshipconstraint_instantiation(instance):
+    assert isinstance(instance, architecture_extension_RelationshipConstraint)
 
 import warnings
 import copy
@@ -743,9 +743,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=architecture::extension::RelationshipConstraint_strategy)
+@given(instance=architecture_extension_RelationshipConstraint_strategy)
 @settings(max_examples=30)
-def test_architecture::extension::relationshipconstraint_check_changes_state(instance):
+def test_architecture_extension_relationshipconstraint_check_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -759,101 +759,54 @@ def test_architecture::extension::relationshipconstraint_check_changes_state(ins
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'check' in architecture::extension::RelationshipConstraint is empty"
+        assert has_statements, f"Function 'check' in architecture_extension_RelationshipConstraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'check' in architecture::extension::RelationshipConstraint did not change state; check implementation")
+            warnings.warn(f"Operation 'check' in architecture_extension_RelationshipConstraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'check' in architecture::extension::RelationshipConstraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'check' in architecture_extension_RelationshipConstraint is not implemented or raised an error")
 
 @given(instance=ReferenceDependency_strategy)
 @settings(max_examples=50)
 def test_referencedependency_instantiation(instance):
     assert isinstance(instance, ReferenceDependency)
 
-@given(instance=architecture::ImportReferenceDependency_strategy)
+@given(instance=architecture_ImportReferenceDependency_strategy)
 @settings(max_examples=50)
-def test_architecture::importreferencedependency_instantiation(instance):
-    assert isinstance(instance, architecture::ImportReferenceDependency)
+def test_architecture_importreferencedependency_instantiation(instance):
+    assert isinstance(instance, architecture_ImportReferenceDependency)
 
-@given(instance=architecture::FieldReferenceDependency_strategy)
+@given(instance=architecture_FieldReferenceDependency_strategy)
 @settings(max_examples=50)
-def test_architecture::fieldreferencedependency_instantiation(instance):
-    assert isinstance(instance, architecture::FieldReferenceDependency)
+def test_architecture_fieldreferencedependency_instantiation(instance):
+    assert isinstance(instance, architecture_FieldReferenceDependency)
 
 @given(instance=RuntimeDependency_strategy)
 @settings(max_examples=50)
 def test_runtimedependency_instantiation(instance):
     assert isinstance(instance, RuntimeDependency)
 
-@given(instance=architecture::InjectionDependency_strategy)
+@given(instance=architecture_InjectionDependency_strategy)
 @settings(max_examples=50)
-def test_architecture::injectiondependency_instantiation(instance):
-    assert isinstance(instance, architecture::InjectionDependency)
+def test_architecture_injectiondependency_instantiation(instance):
+    assert isinstance(instance, architecture_InjectionDependency)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=architecture::DeclaredType_strategy)
+@given(instance=architecture_extension_PatternRelationship_strategy)
 @settings(max_examples=50)
-def test_architecture::declaredtype_instantiation(instance):
-    assert isinstance(instance, architecture::DeclaredType)
-
-@given(instance=architecture::extension::ExtensionRelationship_strategy)
-@settings(max_examples=50)
-def test_architecture::extension::extensionrelationship_instantiation(instance):
-    assert isinstance(instance, architecture::extension::ExtensionRelationship)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=architecture::extension::ExtensionRelationship_strategy)
-@settings(max_examples=30)
-def test_architecture::extension::extensionrelationship_checkconstraint_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.checkConstraint()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkConstraint).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkConstraint' in architecture::extension::ExtensionRelationship is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkConstraint' in architecture::extension::ExtensionRelationship did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkConstraint' in architecture::extension::ExtensionRelationship is not implemented or raised an error")
-
-@given(instance=architecture::CallRelationship_strategy)
-@settings(max_examples=50)
-def test_architecture::callrelationship_instantiation(instance):
-    assert isinstance(instance, architecture::CallRelationship)
-
-@given(instance=architecture::extension::PatternRelationship_strategy)
-@settings(max_examples=50)
-def test_architecture::extension::patternrelationship_instantiation(instance):
-    assert isinstance(instance, architecture::extension::PatternRelationship)
-
-@given(instance=architecture::extension::PatternRelationship_strategy)
-def test_architecture::extension::patternrelationship_referenceName_type(instance):
-    assert isinstance(instance.referenceName, str)
+def test_architecture_extension_patternrelationship_instantiation(instance):
+    assert isinstance(instance, architecture_extension_PatternRelationship)
 
 
-@given(instance=architecture::extension::PatternRelationship_strategy)
-def test_architecture::extension::patternrelationship_referenceName_setter(instance):
+
+@given(instance=architecture_extension_PatternRelationship_strategy)
+def test_architecture_extension_patternrelationship_referenceName_setter(instance):
     original = instance.referenceName
     instance.referenceName = original
     assert instance.referenceName == original
@@ -864,9 +817,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=architecture::extension::PatternRelationship_strategy)
+@given(instance=architecture_extension_PatternRelationship_strategy)
 @settings(max_examples=30)
-def test_architecture::extension::patternrelationship_checkconstraint_changes_state(instance):
+def test_architecture_extension_patternrelationship_checkconstraint_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -878,24 +831,19 @@ def test_architecture::extension::patternrelationship_checkconstraint_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkConstraint' in architecture::extension::PatternRelationship is empty"
+        assert has_statements, f"Function 'checkConstraint' in architecture_extension_PatternRelationship is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkConstraint' in architecture::extension::PatternRelationship did not change state; check implementation")
+            warnings.warn(f"Operation 'checkConstraint' in architecture_extension_PatternRelationship did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkConstraint' in architecture::extension::PatternRelationship is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkConstraint' in architecture_extension_PatternRelationship is not implemented or raised an error")
 
-@given(instance=architecture::ReturnTypeRelationship_strategy)
+@given(instance=architecture_extension_RoleRelationship_strategy)
 @settings(max_examples=50)
-def test_architecture::returntyperelationship_instantiation(instance):
-    assert isinstance(instance, architecture::ReturnTypeRelationship)
-
-@given(instance=architecture::extension::RoleRelationship_strategy)
-@settings(max_examples=50)
-def test_architecture::extension::rolerelationship_instantiation(instance):
-    assert isinstance(instance, architecture::extension::RoleRelationship)
+def test_architecture_extension_rolerelationship_instantiation(instance):
+    assert isinstance(instance, architecture_extension_RoleRelationship)
 
 import warnings
 import copy
@@ -903,9 +851,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=architecture::extension::RoleRelationship_strategy)
+@given(instance=architecture_extension_RoleRelationship_strategy)
 @settings(max_examples=30)
-def test_architecture::extension::rolerelationship_checkconstraint_changes_state(instance):
+def test_architecture_extension_rolerelationship_checkconstraint_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -917,217 +865,233 @@ def test_architecture::extension::rolerelationship_checkconstraint_changes_state
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkConstraint' in architecture::extension::RoleRelationship is empty"
+        assert has_statements, f"Function 'checkConstraint' in architecture_extension_RoleRelationship is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkConstraint' in architecture::extension::RoleRelationship did not change state; check implementation")
+            warnings.warn(f"Operation 'checkConstraint' in architecture_extension_RoleRelationship did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkConstraint' in architecture::extension::RoleRelationship is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkConstraint' in architecture_extension_RoleRelationship is not implemented or raised an error")
 
-@given(instance=architecture::ParameterRelationship_strategy)
+@given(instance=architecture_ParameterRelationship_strategy)
 @settings(max_examples=50)
-def test_architecture::parameterrelationship_instantiation(instance):
-    assert isinstance(instance, architecture::ParameterRelationship)
+def test_architecture_parameterrelationship_instantiation(instance):
+    assert isinstance(instance, architecture_ParameterRelationship)
 
-@given(instance=architecture::Dependency_strategy)
+@given(instance=architecture_extension_ExtensionRelationship_strategy)
 @settings(max_examples=50)
-def test_architecture::dependency_instantiation(instance):
-    assert isinstance(instance, architecture::Dependency)
+def test_architecture_extension_extensionrelationship_instantiation(instance):
+    assert isinstance(instance, architecture_extension_ExtensionRelationship)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=architecture_extension_ExtensionRelationship_strategy)
+@settings(max_examples=30)
+def test_architecture_extension_extensionrelationship_checkconstraint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.checkConstraint()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.checkConstraint).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'checkConstraint' in architecture_extension_ExtensionRelationship is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'checkConstraint' in architecture_extension_ExtensionRelationship did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'checkConstraint' in architecture_extension_ExtensionRelationship is not implemented or raised an error")
+
+@given(instance=architecture_DeclaredType_strategy)
+@settings(max_examples=50)
+def test_architecture_declaredtype_instantiation(instance):
+    assert isinstance(instance, architecture_DeclaredType)
+
+@given(instance=architecture_ReturnTypeRelationship_strategy)
+@settings(max_examples=50)
+def test_architecture_returntyperelationship_instantiation(instance):
+    assert isinstance(instance, architecture_ReturnTypeRelationship)
+
+@given(instance=architecture_CallRelationship_strategy)
+@settings(max_examples=50)
+def test_architecture_callrelationship_instantiation(instance):
+    assert isinstance(instance, architecture_CallRelationship)
+
+@given(instance=architecture_Dependency_strategy)
+@settings(max_examples=50)
+def test_architecture_dependency_instantiation(instance):
+    assert isinstance(instance, architecture_Dependency)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
 def test_dependency_instantiation(instance):
     assert isinstance(instance, Dependency)
 
-@given(instance=architecture::RuntimeDependency_strategy)
+@given(instance=architecture_ReferenceDependency_strategy)
 @settings(max_examples=50)
-def test_architecture::runtimedependency_instantiation(instance):
-    assert isinstance(instance, architecture::RuntimeDependency)
-
-@given(instance=architecture::ReferenceDependency_strategy)
-@settings(max_examples=50)
-def test_architecture::referencedependency_instantiation(instance):
-    assert isinstance(instance, architecture::ReferenceDependency)
-
-@given(instance=architecture::ReferenceDependency_strategy)
-def test_architecture::referencedependency_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_architecture_referencedependency_instantiation(instance):
+    assert isinstance(instance, architecture_ReferenceDependency)
 
 
-@given(instance=architecture::ReferenceDependency_strategy)
-def test_architecture::referencedependency_uri_setter(instance):
+
+@given(instance=architecture_ReferenceDependency_strategy)
+def test_architecture_referencedependency_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=architecture::ReferenceDependency_strategy)
-def test_architecture::referencedependency_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=architecture::ReferenceDependency_strategy)
-def test_architecture::referencedependency_name_setter(instance):
+@given(instance=architecture_ReferenceDependency_strategy)
+def test_architecture_referencedependency_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=architecture::InheritanceDependency_strategy)
+@given(instance=architecture_RuntimeDependency_strategy)
 @settings(max_examples=50)
-def test_architecture::inheritancedependency_instantiation(instance):
-    assert isinstance(instance, architecture::InheritanceDependency)
+def test_architecture_runtimedependency_instantiation(instance):
+    assert isinstance(instance, architecture_RuntimeDependency)
+
+@given(instance=architecture_InheritanceDependency_strategy)
+@settings(max_examples=50)
+def test_architecture_inheritancedependency_instantiation(instance):
+    assert isinstance(instance, architecture_InheritanceDependency)
 
 @given(instance=AnalysedElement_strategy)
 @settings(max_examples=50)
 def test_analysedelement_instantiation(instance):
     assert isinstance(instance, AnalysedElement)
 
-@given(instance=architecture::Library_strategy)
+@given(instance=architecture_ArchitectureFile_strategy)
 @settings(max_examples=50)
-def test_architecture::library_instantiation(instance):
-    assert isinstance(instance, architecture::Library)
-
-@given(instance=architecture::Method_strategy)
-@settings(max_examples=50)
-def test_architecture::method_instantiation(instance):
-    assert isinstance(instance, architecture::Method)
-
-@given(instance=architecture::extension::Role_strategy)
-@settings(max_examples=50)
-def test_architecture::extension::role_instantiation(instance):
-    assert isinstance(instance, architecture::extension::Role)
-
-@given(instance=architecture::extension::Role_strategy)
-def test_architecture::extension::role_attachedElement_type(instance):
-    assert isinstance(instance.attachedElement, str)
+def test_architecture_architecturefile_instantiation(instance):
+    assert isinstance(instance, architecture_ArchitectureFile)
 
 
-@given(instance=architecture::extension::Role_strategy)
-def test_architecture::extension::role_attachedElement_setter(instance):
-    original = instance.attachedElement
-    instance.attachedElement = original
-    assert instance.attachedElement == original
 
-@given(instance=architecture::ArchitectureFile_strategy)
-@settings(max_examples=50)
-def test_architecture::architecturefile_instantiation(instance):
-    assert isinstance(instance, architecture::ArchitectureFile)
-
-@given(instance=architecture::ArchitectureFile_strategy)
-def test_architecture::architecturefile_path_type(instance):
-    assert isinstance(instance.path, str)
-
-
-@given(instance=architecture::ArchitectureFile_strategy)
-def test_architecture::architecturefile_path_setter(instance):
+@given(instance=architecture_ArchitectureFile_strategy)
+def test_architecture_architecturefile_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=architecture::Project_strategy)
+@given(instance=architecture_Method_strategy)
 @settings(max_examples=50)
-def test_architecture::project_instantiation(instance):
-    assert isinstance(instance, architecture::Project)
+def test_architecture_method_instantiation(instance):
+    assert isinstance(instance, architecture_Method)
 
-@given(instance=architecture::extension::Pattern_strategy)
+@given(instance=architecture_Library_strategy)
 @settings(max_examples=50)
-def test_architecture::extension::pattern_instantiation(instance):
-    assert isinstance(instance, architecture::extension::Pattern)
+def test_architecture_library_instantiation(instance):
+    assert isinstance(instance, architecture_Library)
 
-@given(instance=architecture::Field_strategy)
+@given(instance=architecture_Field_strategy)
 @settings(max_examples=50)
-def test_architecture::field_instantiation(instance):
-    assert isinstance(instance, architecture::Field)
+def test_architecture_field_instantiation(instance):
+    assert isinstance(instance, architecture_Field)
 
-@given(instance=architecture::Type_strategy)
+@given(instance=architecture_extension_Pattern_strategy)
 @settings(max_examples=50)
-def test_architecture::type_instantiation(instance):
-    assert isinstance(instance, architecture::Type)
+def test_architecture_extension_pattern_instantiation(instance):
+    assert isinstance(instance, architecture_extension_Pattern)
 
-@given(instance=architecture::Type_strategy)
-def test_architecture::type_binary_type(instance):
-    assert isinstance(instance.binary, bool)
-
-
-@given(instance=architecture::Type_strategy)
-def test_architecture::type_binary_setter(instance):
-    original = instance.binary
-    instance.binary = original
-    assert instance.binary == original
-
-@given(instance=architecture::Type_strategy)
-def test_architecture::type_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+@given(instance=architecture_extension_Role_strategy)
+@settings(max_examples=50)
+def test_architecture_extension_role_instantiation(instance):
+    assert isinstance(instance, architecture_extension_Role)
 
 
-@given(instance=architecture::Type_strategy)
-def test_architecture::type_qualifiedName_setter(instance):
-    original = instance.qualifiedName
-    instance.qualifiedName = original
-    assert instance.qualifiedName == original
 
-@given(instance=architecture::Type_strategy)
-def test_architecture::type_source_type(instance):
-    assert isinstance(instance.source, bool)
+@given(instance=architecture_extension_Role_strategy)
+def test_architecture_extension_role_attachedElement_setter(instance):
+    original = instance.attachedElement
+    instance.attachedElement = original
+    assert instance.attachedElement == original
+
+@given(instance=architecture_Project_strategy)
+@settings(max_examples=50)
+def test_architecture_project_instantiation(instance):
+    assert isinstance(instance, architecture_Project)
+
+@given(instance=architecture_Type_strategy)
+@settings(max_examples=50)
+def test_architecture_type_instantiation(instance):
+    assert isinstance(instance, architecture_Type)
 
 
-@given(instance=architecture::Type_strategy)
-def test_architecture::type_source_setter(instance):
+
+@given(instance=architecture_Type_strategy)
+def test_architecture_type_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=architecture::Relationship_strategy)
+
+
+@given(instance=architecture_Type_strategy)
+def test_architecture_type_binary_setter(instance):
+    original = instance.binary
+    instance.binary = original
+    assert instance.binary == original
+
+
+
+@given(instance=architecture_Type_strategy)
+def test_architecture_type_qualifiedName_setter(instance):
+    original = instance.qualifiedName
+    instance.qualifiedName = original
+    assert instance.qualifiedName == original
+
+@given(instance=architecture_Relationship_strategy)
 @settings(max_examples=50)
-def test_architecture::relationship_instantiation(instance):
-    assert isinstance(instance, architecture::Relationship)
-
-@given(instance=architecture::Relationship_strategy)
-def test_architecture::relationship_relationShipId_type(instance):
-    assert isinstance(instance.relationShipId, int)
+def test_architecture_relationship_instantiation(instance):
+    assert isinstance(instance, architecture_Relationship)
 
 
-@given(instance=architecture::Relationship_strategy)
-def test_architecture::relationship_relationShipId_setter(instance):
+
+@given(instance=architecture_Relationship_strategy)
+def test_architecture_relationship_relationShipId_setter(instance):
     original = instance.relationShipId
     instance.relationShipId = original
     assert instance.relationShipId == original
 
-@given(instance=architecture::AnalysedElement_strategy)
+@given(instance=architecture_AnalysedElement_strategy)
 @settings(max_examples=50)
-def test_architecture::analysedelement_instantiation(instance):
-    assert isinstance(instance, architecture::AnalysedElement)
-
-@given(instance=architecture::AnalysedElement_strategy)
-def test_architecture::analysedelement_properties_type(instance):
-    assert isinstance(instance.properties, int)
+def test_architecture_analysedelement_instantiation(instance):
+    assert isinstance(instance, architecture_AnalysedElement)
 
 
-@given(instance=architecture::AnalysedElement_strategy)
-def test_architecture::analysedelement_properties_setter(instance):
+
+@given(instance=architecture_AnalysedElement_strategy)
+def test_architecture_analysedelement_properties_setter(instance):
     original = instance.properties
     instance.properties = original
     assert instance.properties == original
 
-@given(instance=architecture::AnalysedElement_strategy)
-def test_architecture::analysedelement_idAnalyzedElement_type(instance):
-    assert isinstance(instance.idAnalyzedElement, int)
 
 
-@given(instance=architecture::AnalysedElement_strategy)
-def test_architecture::analysedelement_idAnalyzedElement_setter(instance):
-    original = instance.idAnalyzedElement
-    instance.idAnalyzedElement = original
-    assert instance.idAnalyzedElement == original
-
-@given(instance=architecture::AnalysedElement_strategy)
-def test_architecture::analysedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=architecture::AnalysedElement_strategy)
-def test_architecture::analysedelement_name_setter(instance):
+@given(instance=architecture_AnalysedElement_strategy)
+def test_architecture_analysedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=architecture_AnalysedElement_strategy)
+def test_architecture_analysedelement_idAnalyzedElement_setter(instance):
+    original = instance.idAnalyzedElement
+    instance.idAnalyzedElement = original
+    assert instance.idAnalyzedElement == original

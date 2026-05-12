@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractSuperClass,
-    opposite1::ClassA,
-    opposite1::ClassB,
-    opposite1::AbstractSuperClass,
-    opposite1::Root,
+    opposite1_ClassA,
+    opposite1_ClassB,
+    opposite1_AbstractSuperClass,
+    opposite1_Root,
 )
 
 # =============================================================================
@@ -33,58 +33,58 @@ def test_abstractsuperclass_constructor_args():
 
 
 
-def test_opposite1::classa_is_not_abstract():
-    assert not inspect.isabstract(opposite1::ClassA)
+def test_opposite1_classa_is_not_abstract():
+    assert not inspect.isabstract(opposite1_ClassA)
 
 
-def test_opposite1::classa_constructor_exists():
-    assert callable(opposite1::ClassA.__init__)
+def test_opposite1_classa_constructor_exists():
+    assert callable(opposite1_ClassA.__init__)
 
 
-def test_opposite1::classa_constructor_args():
-    sig = inspect.signature(opposite1::ClassA.__init__)
+def test_opposite1_classa_constructor_args():
+    sig = inspect.signature(opposite1_ClassA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite1::classb_is_not_abstract():
-    assert not inspect.isabstract(opposite1::ClassB)
+def test_opposite1_classb_is_not_abstract():
+    assert not inspect.isabstract(opposite1_ClassB)
 
 
-def test_opposite1::classb_constructor_exists():
-    assert callable(opposite1::ClassB.__init__)
+def test_opposite1_classb_constructor_exists():
+    assert callable(opposite1_ClassB.__init__)
 
 
-def test_opposite1::classb_constructor_args():
-    sig = inspect.signature(opposite1::ClassB.__init__)
+def test_opposite1_classb_constructor_args():
+    sig = inspect.signature(opposite1_ClassB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite1::abstractsuperclass_is_not_abstract():
-    assert not inspect.isabstract(opposite1::AbstractSuperClass)
+def test_opposite1_abstractsuperclass_is_not_abstract():
+    assert not inspect.isabstract(opposite1_AbstractSuperClass)
 
 
-def test_opposite1::abstractsuperclass_constructor_exists():
-    assert callable(opposite1::AbstractSuperClass.__init__)
+def test_opposite1_abstractsuperclass_constructor_exists():
+    assert callable(opposite1_AbstractSuperClass.__init__)
 
 
-def test_opposite1::abstractsuperclass_constructor_args():
-    sig = inspect.signature(opposite1::AbstractSuperClass.__init__)
+def test_opposite1_abstractsuperclass_constructor_args():
+    sig = inspect.signature(opposite1_AbstractSuperClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_opposite1::root_is_not_abstract():
-    assert not inspect.isabstract(opposite1::Root)
+def test_opposite1_root_is_not_abstract():
+    assert not inspect.isabstract(opposite1_Root)
 
 
-def test_opposite1::root_constructor_exists():
-    assert callable(opposite1::Root.__init__)
+def test_opposite1_root_constructor_exists():
+    assert callable(opposite1_Root.__init__)
 
 
-def test_opposite1::root_constructor_args():
-    sig = inspect.signature(opposite1::Root.__init__)
+def test_opposite1_root_constructor_args():
+    sig = inspect.signature(opposite1_Root.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -102,17 +102,17 @@ safe_text = st.text(
 AbstractSuperClass_strategy = st.builds(
     AbstractSuperClass,
 )
-opposite1::ClassA_strategy = st.builds(
-    opposite1::ClassA,
+opposite1_ClassA_strategy = st.builds(
+    opposite1_ClassA,
 )
-opposite1::ClassB_strategy = st.builds(
-    opposite1::ClassB,
+opposite1_ClassB_strategy = st.builds(
+    opposite1_ClassB,
 )
-opposite1::AbstractSuperClass_strategy = st.builds(
-    opposite1::AbstractSuperClass,
+opposite1_AbstractSuperClass_strategy = st.builds(
+    opposite1_AbstractSuperClass,
 )
-opposite1::Root_strategy = st.builds(
-    opposite1::Root,
+opposite1_Root_strategy = st.builds(
+    opposite1_Root,
 )
 
 @given(instance=AbstractSuperClass_strategy)
@@ -120,22 +120,22 @@ opposite1::Root_strategy = st.builds(
 def test_abstractsuperclass_instantiation(instance):
     assert isinstance(instance, AbstractSuperClass)
 
-@given(instance=opposite1::ClassA_strategy)
+@given(instance=opposite1_ClassA_strategy)
 @settings(max_examples=50)
-def test_opposite1::classa_instantiation(instance):
-    assert isinstance(instance, opposite1::ClassA)
+def test_opposite1_classa_instantiation(instance):
+    assert isinstance(instance, opposite1_ClassA)
 
-@given(instance=opposite1::ClassB_strategy)
+@given(instance=opposite1_ClassB_strategy)
 @settings(max_examples=50)
-def test_opposite1::classb_instantiation(instance):
-    assert isinstance(instance, opposite1::ClassB)
+def test_opposite1_classb_instantiation(instance):
+    assert isinstance(instance, opposite1_ClassB)
 
-@given(instance=opposite1::AbstractSuperClass_strategy)
+@given(instance=opposite1_AbstractSuperClass_strategy)
 @settings(max_examples=50)
-def test_opposite1::abstractsuperclass_instantiation(instance):
-    assert isinstance(instance, opposite1::AbstractSuperClass)
+def test_opposite1_abstractsuperclass_instantiation(instance):
+    assert isinstance(instance, opposite1_AbstractSuperClass)
 
-@given(instance=opposite1::Root_strategy)
+@given(instance=opposite1_Root_strategy)
 @settings(max_examples=50)
-def test_opposite1::root_instantiation(instance):
-    assert isinstance(instance, opposite1::Root)
+def test_opposite1_root_instantiation(instance):
+    assert isinstance(instance, opposite1_Root)

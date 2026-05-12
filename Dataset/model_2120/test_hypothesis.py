@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ValidationModel::UnitTest,
-    ValidationModel::TestContainer,
+from python_code import (
+    ValidationModel_UnitTest,
+    ValidationModel_TestContainer,
 )
 
 # =============================================================================
@@ -16,43 +16,43 @@ from classes import (
 
 
 
-def test_validationmodel::unittest_is_not_abstract():
-    assert not inspect.isabstract(ValidationModel::UnitTest)
+def test_validationmodel_unittest_is_not_abstract():
+    assert not inspect.isabstract(ValidationModel_UnitTest)
 
 
-def test_validationmodel::unittest_constructor_exists():
-    assert callable(ValidationModel::UnitTest.__init__)
+def test_validationmodel_unittest_constructor_exists():
+    assert callable(ValidationModel_UnitTest.__init__)
 
 
-def test_validationmodel::unittest_constructor_args():
-    sig = inspect.signature(ValidationModel::UnitTest.__init__)
+def test_validationmodel_unittest_constructor_args():
+    sig = inspect.signature(ValidationModel_UnitTest.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "isTested" in params, "Missing parameter 'isTested'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_validationmodel::unittest_has_name():
-    assert hasattr(ValidationModel::UnitTest, "name")
+def test_validationmodel_unittest_has_isTested():
+    assert hasattr(ValidationModel_UnitTest, "isTested")
     descriptor = None
-    for klass in ValidationModel::UnitTest.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_validationmodel::unittest_has_isTested():
-    assert hasattr(ValidationModel::UnitTest, "isTested")
-    descriptor = None
-    for klass in ValidationModel::UnitTest.__mro__:
+    for klass in ValidationModel_UnitTest.__mro__:
         if "isTested" in klass.__dict__:
             descriptor = klass.__dict__["isTested"]
             break
     assert isinstance(descriptor, property)
 
-def test_validationmodel::unittest_has_id():
-    assert hasattr(ValidationModel::UnitTest, "id")
+def test_validationmodel_unittest_has_name():
+    assert hasattr(ValidationModel_UnitTest, "name")
     descriptor = None
-    for klass in ValidationModel::UnitTest.__mro__:
+    for klass in ValidationModel_UnitTest.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_validationmodel_unittest_has_id():
+    assert hasattr(ValidationModel_UnitTest, "id")
+    descriptor = None
+    for klass in ValidationModel_UnitTest.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -60,16 +60,16 @@ def test_validationmodel::unittest_has_id():
 
 
 
-def test_validationmodel::testcontainer_is_not_abstract():
-    assert not inspect.isabstract(ValidationModel::TestContainer)
+def test_validationmodel_testcontainer_is_not_abstract():
+    assert not inspect.isabstract(ValidationModel_TestContainer)
 
 
-def test_validationmodel::testcontainer_constructor_exists():
-    assert callable(ValidationModel::TestContainer.__init__)
+def test_validationmodel_testcontainer_constructor_exists():
+    assert callable(ValidationModel_TestContainer.__init__)
 
 
-def test_validationmodel::testcontainer_constructor_args():
-    sig = inspect.signature(ValidationModel::TestContainer.__init__)
+def test_validationmodel_testcontainer_constructor_args():
+    sig = inspect.signature(ValidationModel_TestContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,58 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ValidationModel::UnitTest_strategy = st.builds(
-    ValidationModel::UnitTest,
-    name=
-        safe_text,
+ValidationModel_UnitTest_strategy = st.builds(
+    ValidationModel_UnitTest,
     isTested=
         st.booleans(),
+    name=
+        safe_text,
     id=
         safe_text
 )
-ValidationModel::TestContainer_strategy = st.builds(
-    ValidationModel::TestContainer,
+ValidationModel_TestContainer_strategy = st.builds(
+    ValidationModel_TestContainer,
 )
 
-@given(instance=ValidationModel::UnitTest_strategy)
+@given(instance=ValidationModel_UnitTest_strategy)
 @settings(max_examples=50)
-def test_validationmodel::unittest_instantiation(instance):
-    assert isinstance(instance, ValidationModel::UnitTest)
-
-@given(instance=ValidationModel::UnitTest_strategy)
-def test_validationmodel::unittest_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_validationmodel_unittest_instantiation(instance):
+    assert isinstance(instance, ValidationModel_UnitTest)
 
 
-@given(instance=ValidationModel::UnitTest_strategy)
-def test_validationmodel::unittest_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ValidationModel::UnitTest_strategy)
-def test_validationmodel::unittest_isTested_type(instance):
-    assert isinstance(instance.isTested, bool)
-
-
-@given(instance=ValidationModel::UnitTest_strategy)
-def test_validationmodel::unittest_isTested_setter(instance):
+@given(instance=ValidationModel_UnitTest_strategy)
+def test_validationmodel_unittest_isTested_setter(instance):
     original = instance.isTested
     instance.isTested = original
     assert instance.isTested == original
 
-@given(instance=ValidationModel::UnitTest_strategy)
-def test_validationmodel::unittest_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=ValidationModel::UnitTest_strategy)
-def test_validationmodel::unittest_id_setter(instance):
+@given(instance=ValidationModel_UnitTest_strategy)
+def test_validationmodel_unittest_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ValidationModel_UnitTest_strategy)
+def test_validationmodel_unittest_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ValidationModel::TestContainer_strategy)
+@given(instance=ValidationModel_TestContainer_strategy)
 @settings(max_examples=50)
-def test_validationmodel::testcontainer_instantiation(instance):
-    assert isinstance(instance, ValidationModel::TestContainer)
+def test_validationmodel_testcontainer_instantiation(instance):
+    assert isinstance(instance, ValidationModel_TestContainer)

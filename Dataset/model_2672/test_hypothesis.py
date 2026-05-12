@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Named,
-    containment::B,
-    containment::H,
-    containment::E,
-    containment::A,
-    containment::F,
-    containment::Named,
-    containment::G,
-    containment::C,
+    containment_B,
+    containment_C,
+    containment_H,
+    containment_E,
+    containment_A,
+    containment_F,
+    containment_Named,
+    containment_G,
 )
 
 # =============================================================================
@@ -37,93 +37,107 @@ def test_named_constructor_args():
 
 
 
-def test_containment::b_is_not_abstract():
-    assert not inspect.isabstract(containment::B)
+def test_containment_b_is_not_abstract():
+    assert not inspect.isabstract(containment_B)
 
 
-def test_containment::b_constructor_exists():
-    assert callable(containment::B.__init__)
+def test_containment_b_constructor_exists():
+    assert callable(containment_B.__init__)
 
 
-def test_containment::b_constructor_args():
-    sig = inspect.signature(containment::B.__init__)
+def test_containment_b_constructor_args():
+    sig = inspect.signature(containment_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containment::h_is_not_abstract():
-    assert not inspect.isabstract(containment::H)
+def test_containment_c_is_not_abstract():
+    assert not inspect.isabstract(containment_C)
 
 
-def test_containment::h_constructor_exists():
-    assert callable(containment::H.__init__)
+def test_containment_c_constructor_exists():
+    assert callable(containment_C.__init__)
 
 
-def test_containment::h_constructor_args():
-    sig = inspect.signature(containment::H.__init__)
+def test_containment_c_constructor_args():
+    sig = inspect.signature(containment_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containment::e_is_not_abstract():
-    assert not inspect.isabstract(containment::E)
+def test_containment_h_is_not_abstract():
+    assert not inspect.isabstract(containment_H)
 
 
-def test_containment::e_constructor_exists():
-    assert callable(containment::E.__init__)
+def test_containment_h_constructor_exists():
+    assert callable(containment_H.__init__)
 
 
-def test_containment::e_constructor_args():
-    sig = inspect.signature(containment::E.__init__)
+def test_containment_h_constructor_args():
+    sig = inspect.signature(containment_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containment::a_is_not_abstract():
-    assert not inspect.isabstract(containment::A)
+def test_containment_e_is_not_abstract():
+    assert not inspect.isabstract(containment_E)
 
 
-def test_containment::a_constructor_exists():
-    assert callable(containment::A.__init__)
+def test_containment_e_constructor_exists():
+    assert callable(containment_E.__init__)
 
 
-def test_containment::a_constructor_args():
-    sig = inspect.signature(containment::A.__init__)
+def test_containment_e_constructor_args():
+    sig = inspect.signature(containment_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containment::f_is_not_abstract():
-    assert not inspect.isabstract(containment::F)
+def test_containment_a_is_not_abstract():
+    assert not inspect.isabstract(containment_A)
 
 
-def test_containment::f_constructor_exists():
-    assert callable(containment::F.__init__)
+def test_containment_a_constructor_exists():
+    assert callable(containment_A.__init__)
 
 
-def test_containment::f_constructor_args():
-    sig = inspect.signature(containment::F.__init__)
+def test_containment_a_constructor_args():
+    sig = inspect.signature(containment_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containment::named_is_not_abstract():
-    assert not inspect.isabstract(containment::Named)
+def test_containment_f_is_not_abstract():
+    assert not inspect.isabstract(containment_F)
 
 
-def test_containment::named_constructor_exists():
-    assert callable(containment::Named.__init__)
+def test_containment_f_constructor_exists():
+    assert callable(containment_F.__init__)
 
 
-def test_containment::named_constructor_args():
-    sig = inspect.signature(containment::Named.__init__)
+def test_containment_f_constructor_args():
+    sig = inspect.signature(containment_F.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_containment_named_is_not_abstract():
+    assert not inspect.isabstract(containment_Named)
+
+
+def test_containment_named_constructor_exists():
+    assert callable(containment_Named.__init__)
+
+
+def test_containment_named_constructor_args():
+    sig = inspect.signature(containment_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_containment::named_has_name():
-    assert hasattr(containment::Named, "name")
+def test_containment_named_has_name():
+    assert hasattr(containment_Named, "name")
     descriptor = None
-    for klass in containment::Named.__mro__:
+    for klass in containment_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -131,30 +145,16 @@ def test_containment::named_has_name():
 
 
 
-def test_containment::g_is_not_abstract():
-    assert not inspect.isabstract(containment::G)
+def test_containment_g_is_not_abstract():
+    assert not inspect.isabstract(containment_G)
 
 
-def test_containment::g_constructor_exists():
-    assert callable(containment::G.__init__)
+def test_containment_g_constructor_exists():
+    assert callable(containment_G.__init__)
 
 
-def test_containment::g_constructor_args():
-    sig = inspect.signature(containment::G.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_containment::c_is_not_abstract():
-    assert not inspect.isabstract(containment::C)
-
-
-def test_containment::c_constructor_exists():
-    assert callable(containment::C.__init__)
-
-
-def test_containment::c_constructor_args():
-    sig = inspect.signature(containment::C.__init__)
+def test_containment_g_constructor_args():
+    sig = inspect.signature(containment_G.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -172,31 +172,31 @@ safe_text = st.text(
 Named_strategy = st.builds(
     Named,
 )
-containment::B_strategy = st.builds(
-    containment::B,
+containment_B_strategy = st.builds(
+    containment_B,
 )
-containment::H_strategy = st.builds(
-    containment::H,
+containment_C_strategy = st.builds(
+    containment_C,
 )
-containment::E_strategy = st.builds(
-    containment::E,
+containment_H_strategy = st.builds(
+    containment_H,
 )
-containment::A_strategy = st.builds(
-    containment::A,
+containment_E_strategy = st.builds(
+    containment_E,
 )
-containment::F_strategy = st.builds(
-    containment::F,
+containment_A_strategy = st.builds(
+    containment_A,
 )
-containment::Named_strategy = st.builds(
-    containment::Named,
+containment_F_strategy = st.builds(
+    containment_F,
+)
+containment_Named_strategy = st.builds(
+    containment_Named,
     name=
         safe_text
 )
-containment::G_strategy = st.builds(
-    containment::G,
-)
-containment::C_strategy = st.builds(
-    containment::C,
+containment_G_strategy = st.builds(
+    containment_G,
 )
 
 @given(instance=Named_strategy)
@@ -204,53 +204,50 @@ containment::C_strategy = st.builds(
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=containment::B_strategy)
+@given(instance=containment_B_strategy)
 @settings(max_examples=50)
-def test_containment::b_instantiation(instance):
-    assert isinstance(instance, containment::B)
+def test_containment_b_instantiation(instance):
+    assert isinstance(instance, containment_B)
 
-@given(instance=containment::H_strategy)
+@given(instance=containment_C_strategy)
 @settings(max_examples=50)
-def test_containment::h_instantiation(instance):
-    assert isinstance(instance, containment::H)
+def test_containment_c_instantiation(instance):
+    assert isinstance(instance, containment_C)
 
-@given(instance=containment::E_strategy)
+@given(instance=containment_H_strategy)
 @settings(max_examples=50)
-def test_containment::e_instantiation(instance):
-    assert isinstance(instance, containment::E)
+def test_containment_h_instantiation(instance):
+    assert isinstance(instance, containment_H)
 
-@given(instance=containment::A_strategy)
+@given(instance=containment_E_strategy)
 @settings(max_examples=50)
-def test_containment::a_instantiation(instance):
-    assert isinstance(instance, containment::A)
+def test_containment_e_instantiation(instance):
+    assert isinstance(instance, containment_E)
 
-@given(instance=containment::F_strategy)
+@given(instance=containment_A_strategy)
 @settings(max_examples=50)
-def test_containment::f_instantiation(instance):
-    assert isinstance(instance, containment::F)
+def test_containment_a_instantiation(instance):
+    assert isinstance(instance, containment_A)
 
-@given(instance=containment::Named_strategy)
+@given(instance=containment_F_strategy)
 @settings(max_examples=50)
-def test_containment::named_instantiation(instance):
-    assert isinstance(instance, containment::Named)
+def test_containment_f_instantiation(instance):
+    assert isinstance(instance, containment_F)
 
-@given(instance=containment::Named_strategy)
-def test_containment::named_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=containment_Named_strategy)
+@settings(max_examples=50)
+def test_containment_named_instantiation(instance):
+    assert isinstance(instance, containment_Named)
 
 
-@given(instance=containment::Named_strategy)
-def test_containment::named_name_setter(instance):
+
+@given(instance=containment_Named_strategy)
+def test_containment_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=containment::G_strategy)
+@given(instance=containment_G_strategy)
 @settings(max_examples=50)
-def test_containment::g_instantiation(instance):
-    assert isinstance(instance, containment::G)
-
-@given(instance=containment::C_strategy)
-@settings(max_examples=50)
-def test_containment::c_instantiation(instance):
-    assert isinstance(instance, containment::C)
+def test_containment_g_instantiation(instance):
+    assert isinstance(instance, containment_G)

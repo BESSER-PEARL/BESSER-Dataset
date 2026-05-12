@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TypeGraphBasic::TypeGraph,
-    TypeGraphBasic::TMember,
-    TypeGraphBasic::TPackage,
-    TypeGraphBasic::TSignature,
-    TypeGraphBasic::TMethod,
+from python_code import (
+    TypeGraphBasic_TypeGraph,
+    TypeGraphBasic_TMember,
+    TypeGraphBasic_TPackage,
+    TypeGraphBasic_TSignature,
+    TypeGraphBasic_TMethod,
     TSignature,
-    TypeGraphBasic::TMethodSignature,
+    TypeGraphBasic_TMethodSignature,
     TMember,
-    TypeGraphBasic::TMethodDefinition,
-    TypeGraphBasic::TFieldDefinition,
-    TypeGraphBasic::TFieldSignature,
-    TypeGraphBasic::TField,
-    TypeGraphBasic::TClass,
+    TypeGraphBasic_TMethodDefinition,
+    TypeGraphBasic_TFieldDefinition,
+    TypeGraphBasic_TFieldSignature,
+    TypeGraphBasic_TField,
+    TypeGraphBasic_TClass,
 )
 
 # =============================================================================
@@ -27,23 +27,23 @@ from classes import (
 
 
 
-def test_typegraphbasic::typegraph_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TypeGraph)
+def test_typegraphbasic_typegraph_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TypeGraph)
 
 
-def test_typegraphbasic::typegraph_constructor_exists():
-    assert callable(TypeGraphBasic::TypeGraph.__init__)
+def test_typegraphbasic_typegraph_constructor_exists():
+    assert callable(TypeGraphBasic_TypeGraph.__init__)
 
 
-def test_typegraphbasic::typegraph_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TypeGraph.__init__)
+def test_typegraphbasic_typegraph_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TypeGraph.__init__)
     params = list(sig.parameters.keys())
     assert "tName" in params, "Missing parameter 'tName'"
 
-def test_typegraphbasic::typegraph_has_tName():
-    assert hasattr(TypeGraphBasic::TypeGraph, "tName")
+def test_typegraphbasic_typegraph_has_tName():
+    assert hasattr(TypeGraphBasic_TypeGraph, "tName")
     descriptor = None
-    for klass in TypeGraphBasic::TypeGraph.__mro__:
+    for klass in TypeGraphBasic_TypeGraph.__mro__:
         if "tName" in klass.__dict__:
             descriptor = klass.__dict__["tName"]
             break
@@ -51,37 +51,37 @@ def test_typegraphbasic::typegraph_has_tName():
 
 
 
-def test_typegraphbasic::tmember_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TMember)
+def test_typegraphbasic_tmember_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TMember)
 
 
-def test_typegraphbasic::tmember_constructor_exists():
-    assert callable(TypeGraphBasic::TMember.__init__)
+def test_typegraphbasic_tmember_constructor_exists():
+    assert callable(TypeGraphBasic_TMember.__init__)
 
 
-def test_typegraphbasic::tmember_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TMember.__init__)
+def test_typegraphbasic_tmember_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typegraphbasic::tpackage_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TPackage)
+def test_typegraphbasic_tpackage_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TPackage)
 
 
-def test_typegraphbasic::tpackage_constructor_exists():
-    assert callable(TypeGraphBasic::TPackage.__init__)
+def test_typegraphbasic_tpackage_constructor_exists():
+    assert callable(TypeGraphBasic_TPackage.__init__)
 
 
-def test_typegraphbasic::tpackage_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TPackage.__init__)
+def test_typegraphbasic_tpackage_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TPackage.__init__)
     params = list(sig.parameters.keys())
     assert "tName" in params, "Missing parameter 'tName'"
 
-def test_typegraphbasic::tpackage_has_tName():
-    assert hasattr(TypeGraphBasic::TPackage, "tName")
+def test_typegraphbasic_tpackage_has_tName():
+    assert hasattr(TypeGraphBasic_TPackage, "tName")
     descriptor = None
-    for klass in TypeGraphBasic::TPackage.__mro__:
+    for klass in TypeGraphBasic_TPackage.__mro__:
         if "tName" in klass.__dict__:
             descriptor = klass.__dict__["tName"]
             break
@@ -89,37 +89,37 @@ def test_typegraphbasic::tpackage_has_tName():
 
 
 
-def test_typegraphbasic::tsignature_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TSignature)
+def test_typegraphbasic_tsignature_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TSignature)
 
 
-def test_typegraphbasic::tsignature_constructor_exists():
-    assert callable(TypeGraphBasic::TSignature.__init__)
+def test_typegraphbasic_tsignature_constructor_exists():
+    assert callable(TypeGraphBasic_TSignature.__init__)
 
 
-def test_typegraphbasic::tsignature_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TSignature.__init__)
+def test_typegraphbasic_tsignature_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TSignature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typegraphbasic::tmethod_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TMethod)
+def test_typegraphbasic_tmethod_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TMethod)
 
 
-def test_typegraphbasic::tmethod_constructor_exists():
-    assert callable(TypeGraphBasic::TMethod.__init__)
+def test_typegraphbasic_tmethod_constructor_exists():
+    assert callable(TypeGraphBasic_TMethod.__init__)
 
 
-def test_typegraphbasic::tmethod_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TMethod.__init__)
+def test_typegraphbasic_tmethod_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TMethod.__init__)
     params = list(sig.parameters.keys())
     assert "tName" in params, "Missing parameter 'tName'"
 
-def test_typegraphbasic::tmethod_has_tName():
-    assert hasattr(TypeGraphBasic::TMethod, "tName")
+def test_typegraphbasic_tmethod_has_tName():
+    assert hasattr(TypeGraphBasic_TMethod, "tName")
     descriptor = None
-    for klass in TypeGraphBasic::TMethod.__mro__:
+    for klass in TypeGraphBasic_TMethod.__mro__:
         if "tName" in klass.__dict__:
             descriptor = klass.__dict__["tName"]
             break
@@ -141,16 +141,16 @@ def test_tsignature_constructor_args():
 
 
 
-def test_typegraphbasic::tmethodsignature_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TMethodSignature)
+def test_typegraphbasic_tmethodsignature_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TMethodSignature)
 
 
-def test_typegraphbasic::tmethodsignature_constructor_exists():
-    assert callable(TypeGraphBasic::TMethodSignature.__init__)
+def test_typegraphbasic_tmethodsignature_constructor_exists():
+    assert callable(TypeGraphBasic_TMethodSignature.__init__)
 
 
-def test_typegraphbasic::tmethodsignature_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TMethodSignature.__init__)
+def test_typegraphbasic_tmethodsignature_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TMethodSignature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,65 +169,65 @@ def test_tmember_constructor_args():
 
 
 
-def test_typegraphbasic::tmethoddefinition_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TMethodDefinition)
+def test_typegraphbasic_tmethoddefinition_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TMethodDefinition)
 
 
-def test_typegraphbasic::tmethoddefinition_constructor_exists():
-    assert callable(TypeGraphBasic::TMethodDefinition.__init__)
+def test_typegraphbasic_tmethoddefinition_constructor_exists():
+    assert callable(TypeGraphBasic_TMethodDefinition.__init__)
 
 
-def test_typegraphbasic::tmethoddefinition_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TMethodDefinition.__init__)
+def test_typegraphbasic_tmethoddefinition_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TMethodDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typegraphbasic::tfielddefinition_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TFieldDefinition)
+def test_typegraphbasic_tfielddefinition_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TFieldDefinition)
 
 
-def test_typegraphbasic::tfielddefinition_constructor_exists():
-    assert callable(TypeGraphBasic::TFieldDefinition.__init__)
+def test_typegraphbasic_tfielddefinition_constructor_exists():
+    assert callable(TypeGraphBasic_TFieldDefinition.__init__)
 
 
-def test_typegraphbasic::tfielddefinition_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TFieldDefinition.__init__)
+def test_typegraphbasic_tfielddefinition_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TFieldDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typegraphbasic::tfieldsignature_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TFieldSignature)
+def test_typegraphbasic_tfieldsignature_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TFieldSignature)
 
 
-def test_typegraphbasic::tfieldsignature_constructor_exists():
-    assert callable(TypeGraphBasic::TFieldSignature.__init__)
+def test_typegraphbasic_tfieldsignature_constructor_exists():
+    assert callable(TypeGraphBasic_TFieldSignature.__init__)
 
 
-def test_typegraphbasic::tfieldsignature_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TFieldSignature.__init__)
+def test_typegraphbasic_tfieldsignature_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TFieldSignature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_typegraphbasic::tfield_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TField)
+def test_typegraphbasic_tfield_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TField)
 
 
-def test_typegraphbasic::tfield_constructor_exists():
-    assert callable(TypeGraphBasic::TField.__init__)
+def test_typegraphbasic_tfield_constructor_exists():
+    assert callable(TypeGraphBasic_TField.__init__)
 
 
-def test_typegraphbasic::tfield_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TField.__init__)
+def test_typegraphbasic_tfield_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TField.__init__)
     params = list(sig.parameters.keys())
     assert "tName" in params, "Missing parameter 'tName'"
 
-def test_typegraphbasic::tfield_has_tName():
-    assert hasattr(TypeGraphBasic::TField, "tName")
+def test_typegraphbasic_tfield_has_tName():
+    assert hasattr(TypeGraphBasic_TField, "tName")
     descriptor = None
-    for klass in TypeGraphBasic::TField.__mro__:
+    for klass in TypeGraphBasic_TField.__mro__:
         if "tName" in klass.__dict__:
             descriptor = klass.__dict__["tName"]
             break
@@ -235,23 +235,23 @@ def test_typegraphbasic::tfield_has_tName():
 
 
 
-def test_typegraphbasic::tclass_is_not_abstract():
-    assert not inspect.isabstract(TypeGraphBasic::TClass)
+def test_typegraphbasic_tclass_is_not_abstract():
+    assert not inspect.isabstract(TypeGraphBasic_TClass)
 
 
-def test_typegraphbasic::tclass_constructor_exists():
-    assert callable(TypeGraphBasic::TClass.__init__)
+def test_typegraphbasic_tclass_constructor_exists():
+    assert callable(TypeGraphBasic_TClass.__init__)
 
 
-def test_typegraphbasic::tclass_constructor_args():
-    sig = inspect.signature(TypeGraphBasic::TClass.__init__)
+def test_typegraphbasic_tclass_constructor_args():
+    sig = inspect.signature(TypeGraphBasic_TClass.__init__)
     params = list(sig.parameters.keys())
     assert "tName" in params, "Missing parameter 'tName'"
 
-def test_typegraphbasic::tclass_has_tName():
-    assert hasattr(TypeGraphBasic::TClass, "tName")
+def test_typegraphbasic_tclass_has_tName():
+    assert hasattr(TypeGraphBasic_TClass, "tName")
     descriptor = None
-    for klass in TypeGraphBasic::TClass.__mro__:
+    for klass in TypeGraphBasic_TClass.__mro__:
         if "tName" in klass.__dict__:
             descriptor = klass.__dict__["tName"]
             break
@@ -269,110 +269,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TypeGraphBasic::TypeGraph_strategy = st.builds(
-    TypeGraphBasic::TypeGraph,
+TypeGraphBasic_TypeGraph_strategy = st.builds(
+    TypeGraphBasic_TypeGraph,
     tName=
         safe_text
 )
-TypeGraphBasic::TMember_strategy = st.builds(
-    TypeGraphBasic::TMember,
+TypeGraphBasic_TMember_strategy = st.builds(
+    TypeGraphBasic_TMember,
 )
-TypeGraphBasic::TPackage_strategy = st.builds(
-    TypeGraphBasic::TPackage,
+TypeGraphBasic_TPackage_strategy = st.builds(
+    TypeGraphBasic_TPackage,
     tName=
         safe_text
 )
-TypeGraphBasic::TSignature_strategy = st.builds(
-    TypeGraphBasic::TSignature,
+TypeGraphBasic_TSignature_strategy = st.builds(
+    TypeGraphBasic_TSignature,
 )
-TypeGraphBasic::TMethod_strategy = st.builds(
-    TypeGraphBasic::TMethod,
+TypeGraphBasic_TMethod_strategy = st.builds(
+    TypeGraphBasic_TMethod,
     tName=
         safe_text
 )
 TSignature_strategy = st.builds(
     TSignature,
 )
-TypeGraphBasic::TMethodSignature_strategy = st.builds(
-    TypeGraphBasic::TMethodSignature,
+TypeGraphBasic_TMethodSignature_strategy = st.builds(
+    TypeGraphBasic_TMethodSignature,
 )
 TMember_strategy = st.builds(
     TMember,
 )
-TypeGraphBasic::TMethodDefinition_strategy = st.builds(
-    TypeGraphBasic::TMethodDefinition,
+TypeGraphBasic_TMethodDefinition_strategy = st.builds(
+    TypeGraphBasic_TMethodDefinition,
 )
-TypeGraphBasic::TFieldDefinition_strategy = st.builds(
-    TypeGraphBasic::TFieldDefinition,
+TypeGraphBasic_TFieldDefinition_strategy = st.builds(
+    TypeGraphBasic_TFieldDefinition,
 )
-TypeGraphBasic::TFieldSignature_strategy = st.builds(
-    TypeGraphBasic::TFieldSignature,
+TypeGraphBasic_TFieldSignature_strategy = st.builds(
+    TypeGraphBasic_TFieldSignature,
 )
-TypeGraphBasic::TField_strategy = st.builds(
-    TypeGraphBasic::TField,
+TypeGraphBasic_TField_strategy = st.builds(
+    TypeGraphBasic_TField,
     tName=
         safe_text
 )
-TypeGraphBasic::TClass_strategy = st.builds(
-    TypeGraphBasic::TClass,
+TypeGraphBasic_TClass_strategy = st.builds(
+    TypeGraphBasic_TClass,
     tName=
         safe_text
 )
 
-@given(instance=TypeGraphBasic::TypeGraph_strategy)
+@given(instance=TypeGraphBasic_TypeGraph_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::typegraph_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TypeGraph)
-
-@given(instance=TypeGraphBasic::TypeGraph_strategy)
-def test_typegraphbasic::typegraph_tName_type(instance):
-    assert isinstance(instance.tName, str)
+def test_typegraphbasic_typegraph_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TypeGraph)
 
 
-@given(instance=TypeGraphBasic::TypeGraph_strategy)
-def test_typegraphbasic::typegraph_tName_setter(instance):
+
+@given(instance=TypeGraphBasic_TypeGraph_strategy)
+def test_typegraphbasic_typegraph_tName_setter(instance):
     original = instance.tName
     instance.tName = original
     assert instance.tName == original
 
-@given(instance=TypeGraphBasic::TMember_strategy)
+@given(instance=TypeGraphBasic_TMember_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tmember_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TMember)
+def test_typegraphbasic_tmember_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TMember)
 
-@given(instance=TypeGraphBasic::TPackage_strategy)
+@given(instance=TypeGraphBasic_TPackage_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tpackage_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TPackage)
-
-@given(instance=TypeGraphBasic::TPackage_strategy)
-def test_typegraphbasic::tpackage_tName_type(instance):
-    assert isinstance(instance.tName, str)
+def test_typegraphbasic_tpackage_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TPackage)
 
 
-@given(instance=TypeGraphBasic::TPackage_strategy)
-def test_typegraphbasic::tpackage_tName_setter(instance):
+
+@given(instance=TypeGraphBasic_TPackage_strategy)
+def test_typegraphbasic_tpackage_tName_setter(instance):
     original = instance.tName
     instance.tName = original
     assert instance.tName == original
 
-@given(instance=TypeGraphBasic::TSignature_strategy)
+@given(instance=TypeGraphBasic_TSignature_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tsignature_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TSignature)
+def test_typegraphbasic_tsignature_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TSignature)
 
-@given(instance=TypeGraphBasic::TMethod_strategy)
+@given(instance=TypeGraphBasic_TMethod_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tmethod_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TMethod)
-
-@given(instance=TypeGraphBasic::TMethod_strategy)
-def test_typegraphbasic::tmethod_tName_type(instance):
-    assert isinstance(instance.tName, str)
+def test_typegraphbasic_tmethod_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TMethod)
 
 
-@given(instance=TypeGraphBasic::TMethod_strategy)
-def test_typegraphbasic::tmethod_tName_setter(instance):
+
+@given(instance=TypeGraphBasic_TMethod_strategy)
+def test_typegraphbasic_tmethod_tName_setter(instance):
     original = instance.tName
     instance.tName = original
     assert instance.tName == original
@@ -382,59 +373,53 @@ def test_typegraphbasic::tmethod_tName_setter(instance):
 def test_tsignature_instantiation(instance):
     assert isinstance(instance, TSignature)
 
-@given(instance=TypeGraphBasic::TMethodSignature_strategy)
+@given(instance=TypeGraphBasic_TMethodSignature_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tmethodsignature_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TMethodSignature)
+def test_typegraphbasic_tmethodsignature_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TMethodSignature)
 
 @given(instance=TMember_strategy)
 @settings(max_examples=50)
 def test_tmember_instantiation(instance):
     assert isinstance(instance, TMember)
 
-@given(instance=TypeGraphBasic::TMethodDefinition_strategy)
+@given(instance=TypeGraphBasic_TMethodDefinition_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tmethoddefinition_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TMethodDefinition)
+def test_typegraphbasic_tmethoddefinition_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TMethodDefinition)
 
-@given(instance=TypeGraphBasic::TFieldDefinition_strategy)
+@given(instance=TypeGraphBasic_TFieldDefinition_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tfielddefinition_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TFieldDefinition)
+def test_typegraphbasic_tfielddefinition_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TFieldDefinition)
 
-@given(instance=TypeGraphBasic::TFieldSignature_strategy)
+@given(instance=TypeGraphBasic_TFieldSignature_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tfieldsignature_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TFieldSignature)
+def test_typegraphbasic_tfieldsignature_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TFieldSignature)
 
-@given(instance=TypeGraphBasic::TField_strategy)
+@given(instance=TypeGraphBasic_TField_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tfield_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TField)
-
-@given(instance=TypeGraphBasic::TField_strategy)
-def test_typegraphbasic::tfield_tName_type(instance):
-    assert isinstance(instance.tName, str)
+def test_typegraphbasic_tfield_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TField)
 
 
-@given(instance=TypeGraphBasic::TField_strategy)
-def test_typegraphbasic::tfield_tName_setter(instance):
+
+@given(instance=TypeGraphBasic_TField_strategy)
+def test_typegraphbasic_tfield_tName_setter(instance):
     original = instance.tName
     instance.tName = original
     assert instance.tName == original
 
-@given(instance=TypeGraphBasic::TClass_strategy)
+@given(instance=TypeGraphBasic_TClass_strategy)
 @settings(max_examples=50)
-def test_typegraphbasic::tclass_instantiation(instance):
-    assert isinstance(instance, TypeGraphBasic::TClass)
-
-@given(instance=TypeGraphBasic::TClass_strategy)
-def test_typegraphbasic::tclass_tName_type(instance):
-    assert isinstance(instance.tName, str)
+def test_typegraphbasic_tclass_instantiation(instance):
+    assert isinstance(instance, TypeGraphBasic_TClass)
 
 
-@given(instance=TypeGraphBasic::TClass_strategy)
-def test_typegraphbasic::tclass_tName_setter(instance):
+
+@given(instance=TypeGraphBasic_TClass_strategy)
+def test_typegraphbasic_tclass_tName_setter(instance):
     original = instance.tName
     instance.tName = original
     assert instance.tName == original

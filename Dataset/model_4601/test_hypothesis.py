@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    gv::StrictIdentifiable,
-    gv::Statement,
+from python_code import (
+    gv_StrictIdentifiable,
+    gv_Statement,
     StrictIdentifiable,
     Connectable,
-    gv::Commentable,
+    gv_Commentable,
     Attribute,
-    gv::Identifiable,
+    gv_Identifiable,
     AbstractGraph,
     Attributable,
-    gv::Connectable,
+    gv_Connectable,
     Commentable,
-    gv::Attribute,
-    gv::Target,
-    gv::NodeID,
-    gv::Subgraph,
-    gv::Graph,
-    gv::AList,
-    gv::StatementList,
+    gv_Graph,
+    gv_Target,
+    gv_NodeID,
+    gv_Subgraph,
+    gv_Attribute,
+    gv_AList,
+    gv_StatementList,
     Identifiable,
-    gv::Port,
-    gv::AbstractGraph,
-    gv::AttributeList,
-    gv::Attributable,
+    gv_Port,
+    gv_AbstractGraph,
+    gv_AttributeList,
+    gv_Attributable,
     Statement,
-    gv::AttributeStatement,
-    gv::EdgeStatement,
-    gv::NodeStatement,
-    gv::AssignmentStatement,
+    gv_AttributeStatement,
+    gv_EdgeStatement,
+    gv_NodeStatement,
+    gv_AssignmentStatement,
     Compass,
 )
 
@@ -43,23 +43,23 @@ from classes import (
 
 
 
-def test_gv::strictidentifiable_is_not_abstract():
-    assert not inspect.isabstract(gv::StrictIdentifiable)
+def test_gv_strictidentifiable_is_not_abstract():
+    assert not inspect.isabstract(gv_StrictIdentifiable)
 
 
-def test_gv::strictidentifiable_constructor_exists():
-    assert callable(gv::StrictIdentifiable.__init__)
+def test_gv_strictidentifiable_constructor_exists():
+    assert callable(gv_StrictIdentifiable.__init__)
 
 
-def test_gv::strictidentifiable_constructor_args():
-    sig = inspect.signature(gv::StrictIdentifiable.__init__)
+def test_gv_strictidentifiable_constructor_args():
+    sig = inspect.signature(gv_StrictIdentifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_gv::strictidentifiable_has_id():
-    assert hasattr(gv::StrictIdentifiable, "id")
+def test_gv_strictidentifiable_has_id():
+    assert hasattr(gv_StrictIdentifiable, "id")
     descriptor = None
-    for klass in gv::StrictIdentifiable.__mro__:
+    for klass in gv_StrictIdentifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -67,16 +67,16 @@ def test_gv::strictidentifiable_has_id():
 
 
 
-def test_gv::statement_is_not_abstract():
-    assert not inspect.isabstract(gv::Statement)
+def test_gv_statement_is_not_abstract():
+    assert not inspect.isabstract(gv_Statement)
 
 
-def test_gv::statement_constructor_exists():
-    assert callable(gv::Statement.__init__)
+def test_gv_statement_constructor_exists():
+    assert callable(gv_Statement.__init__)
 
 
-def test_gv::statement_constructor_args():
-    sig = inspect.signature(gv::Statement.__init__)
+def test_gv_statement_constructor_args():
+    sig = inspect.signature(gv_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,23 +109,23 @@ def test_connectable_constructor_args():
 
 
 
-def test_gv::commentable_is_not_abstract():
-    assert not inspect.isabstract(gv::Commentable)
+def test_gv_commentable_is_not_abstract():
+    assert not inspect.isabstract(gv_Commentable)
 
 
-def test_gv::commentable_constructor_exists():
-    assert callable(gv::Commentable.__init__)
+def test_gv_commentable_constructor_exists():
+    assert callable(gv_Commentable.__init__)
 
 
-def test_gv::commentable_constructor_args():
-    sig = inspect.signature(gv::Commentable.__init__)
+def test_gv_commentable_constructor_args():
+    sig = inspect.signature(gv_Commentable.__init__)
     params = list(sig.parameters.keys())
     assert "comments" in params, "Missing parameter 'comments'"
 
-def test_gv::commentable_has_comments():
-    assert hasattr(gv::Commentable, "comments")
+def test_gv_commentable_has_comments():
+    assert hasattr(gv_Commentable, "comments")
     descriptor = None
-    for klass in gv::Commentable.__mro__:
+    for klass in gv_Commentable.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
@@ -147,23 +147,23 @@ def test_attribute_constructor_args():
 
 
 
-def test_gv::identifiable_is_not_abstract():
-    assert not inspect.isabstract(gv::Identifiable)
+def test_gv_identifiable_is_not_abstract():
+    assert not inspect.isabstract(gv_Identifiable)
 
 
-def test_gv::identifiable_constructor_exists():
-    assert callable(gv::Identifiable.__init__)
+def test_gv_identifiable_constructor_exists():
+    assert callable(gv_Identifiable.__init__)
 
 
-def test_gv::identifiable_constructor_args():
-    sig = inspect.signature(gv::Identifiable.__init__)
+def test_gv_identifiable_constructor_args():
+    sig = inspect.signature(gv_Identifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_gv::identifiable_has_id():
-    assert hasattr(gv::Identifiable, "id")
+def test_gv_identifiable_has_id():
+    assert hasattr(gv_Identifiable, "id")
     descriptor = None
-    for klass in gv::Identifiable.__mro__:
+    for klass in gv_Identifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -199,16 +199,16 @@ def test_attributable_constructor_args():
 
 
 
-def test_gv::connectable_is_not_abstract():
-    assert not inspect.isabstract(gv::Connectable)
+def test_gv_connectable_is_not_abstract():
+    assert not inspect.isabstract(gv_Connectable)
 
 
-def test_gv::connectable_constructor_exists():
-    assert callable(gv::Connectable.__init__)
+def test_gv_connectable_constructor_exists():
+    assert callable(gv_Connectable.__init__)
 
 
-def test_gv::connectable_constructor_args():
-    sig = inspect.signature(gv::Connectable.__init__)
+def test_gv_connectable_constructor_args():
+    sig = inspect.signature(gv_Connectable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,129 +227,33 @@ def test_commentable_constructor_args():
 
 
 
-def test_gv::attribute_is_not_abstract():
-    assert not inspect.isabstract(gv::Attribute)
+def test_gv_graph_is_not_abstract():
+    assert not inspect.isabstract(gv_Graph)
 
 
-def test_gv::attribute_constructor_exists():
-    assert callable(gv::Attribute.__init__)
+def test_gv_graph_constructor_exists():
+    assert callable(gv_Graph.__init__)
 
 
-def test_gv::attribute_constructor_args():
-    sig = inspect.signature(gv::Attribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_gv::attribute_has_key():
-    assert hasattr(gv::Attribute, "key")
-    descriptor = None
-    for klass in gv::Attribute.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gv::attribute_has_value():
-    assert hasattr(gv::Attribute, "value")
-    descriptor = None
-    for klass in gv::Attribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gv::target_is_not_abstract():
-    assert not inspect.isabstract(gv::Target)
-
-
-def test_gv::target_constructor_exists():
-    assert callable(gv::Target.__init__)
-
-
-def test_gv::target_constructor_args():
-    sig = inspect.signature(gv::Target.__init__)
-    params = list(sig.parameters.keys())
-    assert "operation" in params, "Missing parameter 'operation'"
-
-def test_gv::target_has_operation():
-    assert hasattr(gv::Target, "operation")
-    descriptor = None
-    for klass in gv::Target.__mro__:
-        if "operation" in klass.__dict__:
-            descriptor = klass.__dict__["operation"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gv::nodeid_is_not_abstract():
-    assert not inspect.isabstract(gv::NodeID)
-
-
-def test_gv::nodeid_constructor_exists():
-    assert callable(gv::NodeID.__init__)
-
-
-def test_gv::nodeid_constructor_args():
-    sig = inspect.signature(gv::NodeID.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gv::subgraph_is_not_abstract():
-    assert not inspect.isabstract(gv::Subgraph)
-
-
-def test_gv::subgraph_constructor_exists():
-    assert callable(gv::Subgraph.__init__)
-
-
-def test_gv::subgraph_constructor_args():
-    sig = inspect.signature(gv::Subgraph.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_gv::subgraph_has_type():
-    assert hasattr(gv::Subgraph, "type")
-    descriptor = None
-    for klass in gv::Subgraph.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gv::graph_is_not_abstract():
-    assert not inspect.isabstract(gv::Graph)
-
-
-def test_gv::graph_constructor_exists():
-    assert callable(gv::Graph.__init__)
-
-
-def test_gv::graph_constructor_args():
-    sig = inspect.signature(gv::Graph.__init__)
+def test_gv_graph_constructor_args():
+    sig = inspect.signature(gv_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "strict" in params, "Missing parameter 'strict'"
 
-def test_gv::graph_has_type():
-    assert hasattr(gv::Graph, "type")
+def test_gv_graph_has_type():
+    assert hasattr(gv_Graph, "type")
     descriptor = None
-    for klass in gv::Graph.__mro__:
+    for klass in gv_Graph.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_gv::graph_has_strict():
-    assert hasattr(gv::Graph, "strict")
+def test_gv_graph_has_strict():
+    assert hasattr(gv_Graph, "strict")
     descriptor = None
-    for klass in gv::Graph.__mro__:
+    for klass in gv_Graph.__mro__:
         if "strict" in klass.__dict__:
             descriptor = klass.__dict__["strict"]
             break
@@ -357,30 +261,126 @@ def test_gv::graph_has_strict():
 
 
 
-def test_gv::alist_is_not_abstract():
-    assert not inspect.isabstract(gv::AList)
+def test_gv_target_is_not_abstract():
+    assert not inspect.isabstract(gv_Target)
 
 
-def test_gv::alist_constructor_exists():
-    assert callable(gv::AList.__init__)
+def test_gv_target_constructor_exists():
+    assert callable(gv_Target.__init__)
 
 
-def test_gv::alist_constructor_args():
-    sig = inspect.signature(gv::AList.__init__)
+def test_gv_target_constructor_args():
+    sig = inspect.signature(gv_Target.__init__)
+    params = list(sig.parameters.keys())
+    assert "operation" in params, "Missing parameter 'operation'"
+
+def test_gv_target_has_operation():
+    assert hasattr(gv_Target, "operation")
+    descriptor = None
+    for klass in gv_Target.__mro__:
+        if "operation" in klass.__dict__:
+            descriptor = klass.__dict__["operation"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gv_nodeid_is_not_abstract():
+    assert not inspect.isabstract(gv_NodeID)
+
+
+def test_gv_nodeid_constructor_exists():
+    assert callable(gv_NodeID.__init__)
+
+
+def test_gv_nodeid_constructor_args():
+    sig = inspect.signature(gv_NodeID.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gv::statementlist_is_not_abstract():
-    assert not inspect.isabstract(gv::StatementList)
+def test_gv_subgraph_is_not_abstract():
+    assert not inspect.isabstract(gv_Subgraph)
 
 
-def test_gv::statementlist_constructor_exists():
-    assert callable(gv::StatementList.__init__)
+def test_gv_subgraph_constructor_exists():
+    assert callable(gv_Subgraph.__init__)
 
 
-def test_gv::statementlist_constructor_args():
-    sig = inspect.signature(gv::StatementList.__init__)
+def test_gv_subgraph_constructor_args():
+    sig = inspect.signature(gv_Subgraph.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_gv_subgraph_has_type():
+    assert hasattr(gv_Subgraph, "type")
+    descriptor = None
+    for klass in gv_Subgraph.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gv_attribute_is_not_abstract():
+    assert not inspect.isabstract(gv_Attribute)
+
+
+def test_gv_attribute_constructor_exists():
+    assert callable(gv_Attribute.__init__)
+
+
+def test_gv_attribute_constructor_args():
+    sig = inspect.signature(gv_Attribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_gv_attribute_has_value():
+    assert hasattr(gv_Attribute, "value")
+    descriptor = None
+    for klass in gv_Attribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gv_attribute_has_key():
+    assert hasattr(gv_Attribute, "key")
+    descriptor = None
+    for klass in gv_Attribute.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gv_alist_is_not_abstract():
+    assert not inspect.isabstract(gv_AList)
+
+
+def test_gv_alist_constructor_exists():
+    assert callable(gv_AList.__init__)
+
+
+def test_gv_alist_constructor_args():
+    sig = inspect.signature(gv_AList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gv_statementlist_is_not_abstract():
+    assert not inspect.isabstract(gv_StatementList)
+
+
+def test_gv_statementlist_constructor_exists():
+    assert callable(gv_StatementList.__init__)
+
+
+def test_gv_statementlist_constructor_args():
+    sig = inspect.signature(gv_StatementList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -399,23 +399,23 @@ def test_identifiable_constructor_args():
 
 
 
-def test_gv::port_is_not_abstract():
-    assert not inspect.isabstract(gv::Port)
+def test_gv_port_is_not_abstract():
+    assert not inspect.isabstract(gv_Port)
 
 
-def test_gv::port_constructor_exists():
-    assert callable(gv::Port.__init__)
+def test_gv_port_constructor_exists():
+    assert callable(gv_Port.__init__)
 
 
-def test_gv::port_constructor_args():
-    sig = inspect.signature(gv::Port.__init__)
+def test_gv_port_constructor_args():
+    sig = inspect.signature(gv_Port.__init__)
     params = list(sig.parameters.keys())
     assert "compass" in params, "Missing parameter 'compass'"
 
-def test_gv::port_has_compass():
-    assert hasattr(gv::Port, "compass")
+def test_gv_port_has_compass():
+    assert hasattr(gv_Port, "compass")
     descriptor = None
-    for klass in gv::Port.__mro__:
+    for klass in gv_Port.__mro__:
         if "compass" in klass.__dict__:
             descriptor = klass.__dict__["compass"]
             break
@@ -423,44 +423,44 @@ def test_gv::port_has_compass():
 
 
 
-def test_gv::abstractgraph_is_not_abstract():
-    assert not inspect.isabstract(gv::AbstractGraph)
+def test_gv_abstractgraph_is_not_abstract():
+    assert not inspect.isabstract(gv_AbstractGraph)
 
 
-def test_gv::abstractgraph_constructor_exists():
-    assert callable(gv::AbstractGraph.__init__)
+def test_gv_abstractgraph_constructor_exists():
+    assert callable(gv_AbstractGraph.__init__)
 
 
-def test_gv::abstractgraph_constructor_args():
-    sig = inspect.signature(gv::AbstractGraph.__init__)
+def test_gv_abstractgraph_constructor_args():
+    sig = inspect.signature(gv_AbstractGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gv::attributelist_is_not_abstract():
-    assert not inspect.isabstract(gv::AttributeList)
+def test_gv_attributelist_is_not_abstract():
+    assert not inspect.isabstract(gv_AttributeList)
 
 
-def test_gv::attributelist_constructor_exists():
-    assert callable(gv::AttributeList.__init__)
+def test_gv_attributelist_constructor_exists():
+    assert callable(gv_AttributeList.__init__)
 
 
-def test_gv::attributelist_constructor_args():
-    sig = inspect.signature(gv::AttributeList.__init__)
+def test_gv_attributelist_constructor_args():
+    sig = inspect.signature(gv_AttributeList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gv::attributable_is_not_abstract():
-    assert not inspect.isabstract(gv::Attributable)
+def test_gv_attributable_is_not_abstract():
+    assert not inspect.isabstract(gv_Attributable)
 
 
-def test_gv::attributable_constructor_exists():
-    assert callable(gv::Attributable.__init__)
+def test_gv_attributable_constructor_exists():
+    assert callable(gv_Attributable.__init__)
 
 
-def test_gv::attributable_constructor_args():
-    sig = inspect.signature(gv::Attributable.__init__)
+def test_gv_attributable_constructor_args():
+    sig = inspect.signature(gv_Attributable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -479,23 +479,23 @@ def test_statement_constructor_args():
 
 
 
-def test_gv::attributestatement_is_not_abstract():
-    assert not inspect.isabstract(gv::AttributeStatement)
+def test_gv_attributestatement_is_not_abstract():
+    assert not inspect.isabstract(gv_AttributeStatement)
 
 
-def test_gv::attributestatement_constructor_exists():
-    assert callable(gv::AttributeStatement.__init__)
+def test_gv_attributestatement_constructor_exists():
+    assert callable(gv_AttributeStatement.__init__)
 
 
-def test_gv::attributestatement_constructor_args():
-    sig = inspect.signature(gv::AttributeStatement.__init__)
+def test_gv_attributestatement_constructor_args():
+    sig = inspect.signature(gv_AttributeStatement.__init__)
     params = list(sig.parameters.keys())
     assert "context" in params, "Missing parameter 'context'"
 
-def test_gv::attributestatement_has_context():
-    assert hasattr(gv::AttributeStatement, "context")
+def test_gv_attributestatement_has_context():
+    assert hasattr(gv_AttributeStatement, "context")
     descriptor = None
-    for klass in gv::AttributeStatement.__mro__:
+    for klass in gv_AttributeStatement.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
@@ -503,61 +503,61 @@ def test_gv::attributestatement_has_context():
 
 
 
-def test_gv::edgestatement_is_not_abstract():
-    assert not inspect.isabstract(gv::EdgeStatement)
+def test_gv_edgestatement_is_not_abstract():
+    assert not inspect.isabstract(gv_EdgeStatement)
 
 
-def test_gv::edgestatement_constructor_exists():
-    assert callable(gv::EdgeStatement.__init__)
+def test_gv_edgestatement_constructor_exists():
+    assert callable(gv_EdgeStatement.__init__)
 
 
-def test_gv::edgestatement_constructor_args():
-    sig = inspect.signature(gv::EdgeStatement.__init__)
+def test_gv_edgestatement_constructor_args():
+    sig = inspect.signature(gv_EdgeStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gv::nodestatement_is_not_abstract():
-    assert not inspect.isabstract(gv::NodeStatement)
+def test_gv_nodestatement_is_not_abstract():
+    assert not inspect.isabstract(gv_NodeStatement)
 
 
-def test_gv::nodestatement_constructor_exists():
-    assert callable(gv::NodeStatement.__init__)
+def test_gv_nodestatement_constructor_exists():
+    assert callable(gv_NodeStatement.__init__)
 
 
-def test_gv::nodestatement_constructor_args():
-    sig = inspect.signature(gv::NodeStatement.__init__)
+def test_gv_nodestatement_constructor_args():
+    sig = inspect.signature(gv_NodeStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gv::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(gv::AssignmentStatement)
+def test_gv_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(gv_AssignmentStatement)
 
 
-def test_gv::assignmentstatement_constructor_exists():
-    assert callable(gv::AssignmentStatement.__init__)
+def test_gv_assignmentstatement_constructor_exists():
+    assert callable(gv_AssignmentStatement.__init__)
 
 
-def test_gv::assignmentstatement_constructor_args():
-    sig = inspect.signature(gv::AssignmentStatement.__init__)
+def test_gv_assignmentstatement_constructor_args():
+    sig = inspect.signature(gv_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
     assert "right" in params, "Missing parameter 'right'"
     assert "left" in params, "Missing parameter 'left'"
 
-def test_gv::assignmentstatement_has_right():
-    assert hasattr(gv::AssignmentStatement, "right")
+def test_gv_assignmentstatement_has_right():
+    assert hasattr(gv_AssignmentStatement, "right")
     descriptor = None
-    for klass in gv::AssignmentStatement.__mro__:
+    for klass in gv_AssignmentStatement.__mro__:
         if "right" in klass.__dict__:
             descriptor = klass.__dict__["right"]
             break
     assert isinstance(descriptor, property)
 
-def test_gv::assignmentstatement_has_left():
-    assert hasattr(gv::AssignmentStatement, "left")
+def test_gv_assignmentstatement_has_left():
+    assert hasattr(gv_AssignmentStatement, "left")
     descriptor = None
-    for klass in gv::AssignmentStatement.__mro__:
+    for klass in gv_AssignmentStatement.__mro__:
         if "left" in klass.__dict__:
             descriptor = klass.__dict__["left"]
             break
@@ -571,16 +571,16 @@ def test_compass_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Compass]
     expected_literals = [
+        "WEST",
+        "APPROPRIATE",
+        "SOUTH_WEST",
+        "CENTER",
+        "NORTH_EAST",
+        "SOUTH_EAST",
+        "NORTH",
         "EAST",
         "NORTH_WEST",
-        "CENTER",
-        "NORTH",
-        "NORTH_EAST",
-        "APPROPRIATE",
-        "SOUTH_EAST",
         "SOUTH",
-        "WEST",
-        "SOUTH_WEST",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -598,13 +598,13 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-gv::StrictIdentifiable_strategy = st.builds(
-    gv::StrictIdentifiable,
+gv_StrictIdentifiable_strategy = st.builds(
+    gv_StrictIdentifiable,
     id=
         safe_text
 )
-gv::Statement_strategy = st.builds(
-    gv::Statement,
+gv_Statement_strategy = st.builds(
+    gv_Statement,
 )
 StrictIdentifiable_strategy = st.builds(
     StrictIdentifiable,
@@ -612,16 +612,16 @@ StrictIdentifiable_strategy = st.builds(
 Connectable_strategy = st.builds(
     Connectable,
 )
-gv::Commentable_strategy = st.builds(
-    gv::Commentable,
+gv_Commentable_strategy = st.builds(
+    gv_Commentable,
     comments=
         safe_text
 )
 Attribute_strategy = st.builds(
     Attribute,
 )
-gv::Identifiable_strategy = st.builds(
-    gv::Identifiable,
+gv_Identifiable_strategy = st.builds(
+    gv_Identifiable,
     id=
         safe_text
 )
@@ -631,104 +631,101 @@ AbstractGraph_strategy = st.builds(
 Attributable_strategy = st.builds(
     Attributable,
 )
-gv::Connectable_strategy = st.builds(
-    gv::Connectable,
+gv_Connectable_strategy = st.builds(
+    gv_Connectable,
 )
 Commentable_strategy = st.builds(
     Commentable,
 )
-gv::Attribute_strategy = st.builds(
-    gv::Attribute,
-    key=
-        safe_text,
-    value=
-        safe_text
-)
-gv::Target_strategy = st.builds(
-    gv::Target,
-    operation=
-        safe_text
-)
-gv::NodeID_strategy = st.builds(
-    gv::NodeID,
-)
-gv::Subgraph_strategy = st.builds(
-    gv::Subgraph,
-    type=
-        safe_text
-)
-gv::Graph_strategy = st.builds(
-    gv::Graph,
+gv_Graph_strategy = st.builds(
+    gv_Graph,
     type=
         safe_text,
     strict=
         safe_text
 )
-gv::AList_strategy = st.builds(
-    gv::AList,
+gv_Target_strategy = st.builds(
+    gv_Target,
+    operation=
+        safe_text
 )
-gv::StatementList_strategy = st.builds(
-    gv::StatementList,
+gv_NodeID_strategy = st.builds(
+    gv_NodeID,
+)
+gv_Subgraph_strategy = st.builds(
+    gv_Subgraph,
+    type=
+        safe_text
+)
+gv_Attribute_strategy = st.builds(
+    gv_Attribute,
+    value=
+        safe_text,
+    key=
+        safe_text
+)
+gv_AList_strategy = st.builds(
+    gv_AList,
+)
+gv_StatementList_strategy = st.builds(
+    gv_StatementList,
 )
 Identifiable_strategy = st.builds(
     Identifiable,
 )
-gv::Port_strategy = st.builds(
-    gv::Port,
+gv_Port_strategy = st.builds(
+    gv_Port,
     compass=
         safe_text
 )
-gv::AbstractGraph_strategy = st.builds(
-    gv::AbstractGraph,
+gv_AbstractGraph_strategy = st.builds(
+    gv_AbstractGraph,
 )
-gv::AttributeList_strategy = st.builds(
-    gv::AttributeList,
+gv_AttributeList_strategy = st.builds(
+    gv_AttributeList,
 )
-gv::Attributable_strategy = st.builds(
-    gv::Attributable,
+gv_Attributable_strategy = st.builds(
+    gv_Attributable,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-gv::AttributeStatement_strategy = st.builds(
-    gv::AttributeStatement,
+gv_AttributeStatement_strategy = st.builds(
+    gv_AttributeStatement,
     context=
         safe_text
 )
-gv::EdgeStatement_strategy = st.builds(
-    gv::EdgeStatement,
+gv_EdgeStatement_strategy = st.builds(
+    gv_EdgeStatement,
 )
-gv::NodeStatement_strategy = st.builds(
-    gv::NodeStatement,
+gv_NodeStatement_strategy = st.builds(
+    gv_NodeStatement,
 )
-gv::AssignmentStatement_strategy = st.builds(
-    gv::AssignmentStatement,
+gv_AssignmentStatement_strategy = st.builds(
+    gv_AssignmentStatement,
     right=
         safe_text,
     left=
         safe_text
 )
 
-@given(instance=gv::StrictIdentifiable_strategy)
+@given(instance=gv_StrictIdentifiable_strategy)
 @settings(max_examples=50)
-def test_gv::strictidentifiable_instantiation(instance):
-    assert isinstance(instance, gv::StrictIdentifiable)
-
-@given(instance=gv::StrictIdentifiable_strategy)
-def test_gv::strictidentifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_gv_strictidentifiable_instantiation(instance):
+    assert isinstance(instance, gv_StrictIdentifiable)
 
 
-@given(instance=gv::StrictIdentifiable_strategy)
-def test_gv::strictidentifiable_id_setter(instance):
+
+@given(instance=gv_StrictIdentifiable_strategy)
+def test_gv_strictidentifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=gv::Statement_strategy)
+@given(instance=gv_Statement_strategy)
 @settings(max_examples=50)
-def test_gv::statement_instantiation(instance):
-    assert isinstance(instance, gv::Statement)
+def test_gv_statement_instantiation(instance):
+    assert isinstance(instance, gv_Statement)
 
 @given(instance=StrictIdentifiable_strategy)
 @settings(max_examples=50)
@@ -740,18 +737,15 @@ def test_strictidentifiable_instantiation(instance):
 def test_connectable_instantiation(instance):
     assert isinstance(instance, Connectable)
 
-@given(instance=gv::Commentable_strategy)
+@given(instance=gv_Commentable_strategy)
 @settings(max_examples=50)
-def test_gv::commentable_instantiation(instance):
-    assert isinstance(instance, gv::Commentable)
-
-@given(instance=gv::Commentable_strategy)
-def test_gv::commentable_comments_type(instance):
-    assert isinstance(instance.comments, str)
+def test_gv_commentable_instantiation(instance):
+    assert isinstance(instance, gv_Commentable)
 
 
-@given(instance=gv::Commentable_strategy)
-def test_gv::commentable_comments_setter(instance):
+
+@given(instance=gv_Commentable_strategy)
+def test_gv_commentable_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
@@ -761,18 +755,15 @@ def test_gv::commentable_comments_setter(instance):
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=gv::Identifiable_strategy)
+@given(instance=gv_Identifiable_strategy)
 @settings(max_examples=50)
-def test_gv::identifiable_instantiation(instance):
-    assert isinstance(instance, gv::Identifiable)
-
-@given(instance=gv::Identifiable_strategy)
-def test_gv::identifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_gv_identifiable_instantiation(instance):
+    assert isinstance(instance, gv_Identifiable)
 
 
-@given(instance=gv::Identifiable_strategy)
-def test_gv::identifiable_id_setter(instance):
+
+@given(instance=gv_Identifiable_strategy)
+def test_gv_identifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -787,207 +778,177 @@ def test_abstractgraph_instantiation(instance):
 def test_attributable_instantiation(instance):
     assert isinstance(instance, Attributable)
 
-@given(instance=gv::Connectable_strategy)
+@given(instance=gv_Connectable_strategy)
 @settings(max_examples=50)
-def test_gv::connectable_instantiation(instance):
-    assert isinstance(instance, gv::Connectable)
+def test_gv_connectable_instantiation(instance):
+    assert isinstance(instance, gv_Connectable)
 
 @given(instance=Commentable_strategy)
 @settings(max_examples=50)
 def test_commentable_instantiation(instance):
     assert isinstance(instance, Commentable)
 
-@given(instance=gv::Attribute_strategy)
+@given(instance=gv_Graph_strategy)
 @settings(max_examples=50)
-def test_gv::attribute_instantiation(instance):
-    assert isinstance(instance, gv::Attribute)
-
-@given(instance=gv::Attribute_strategy)
-def test_gv::attribute_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_gv_graph_instantiation(instance):
+    assert isinstance(instance, gv_Graph)
 
 
-@given(instance=gv::Attribute_strategy)
-def test_gv::attribute_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=gv::Attribute_strategy)
-def test_gv::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=gv::Attribute_strategy)
-def test_gv::attribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=gv::Target_strategy)
-@settings(max_examples=50)
-def test_gv::target_instantiation(instance):
-    assert isinstance(instance, gv::Target)
-
-@given(instance=gv::Target_strategy)
-def test_gv::target_operation_type(instance):
-    assert isinstance(instance.operation, str)
-
-
-@given(instance=gv::Target_strategy)
-def test_gv::target_operation_setter(instance):
-    original = instance.operation
-    instance.operation = original
-    assert instance.operation == original
-
-@given(instance=gv::NodeID_strategy)
-@settings(max_examples=50)
-def test_gv::nodeid_instantiation(instance):
-    assert isinstance(instance, gv::NodeID)
-
-@given(instance=gv::Subgraph_strategy)
-@settings(max_examples=50)
-def test_gv::subgraph_instantiation(instance):
-    assert isinstance(instance, gv::Subgraph)
-
-@given(instance=gv::Subgraph_strategy)
-def test_gv::subgraph_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=gv::Subgraph_strategy)
-def test_gv::subgraph_type_setter(instance):
+@given(instance=gv_Graph_strategy)
+def test_gv_graph_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=gv::Graph_strategy)
-@settings(max_examples=50)
-def test_gv::graph_instantiation(instance):
-    assert isinstance(instance, gv::Graph)
-
-@given(instance=gv::Graph_strategy)
-def test_gv::graph_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=gv::Graph_strategy)
-def test_gv::graph_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=gv::Graph_strategy)
-def test_gv::graph_strict_type(instance):
-    assert isinstance(instance.strict, str)
-
-
-@given(instance=gv::Graph_strategy)
-def test_gv::graph_strict_setter(instance):
+@given(instance=gv_Graph_strategy)
+def test_gv_graph_strict_setter(instance):
     original = instance.strict
     instance.strict = original
     assert instance.strict == original
 
-@given(instance=gv::AList_strategy)
+@given(instance=gv_Target_strategy)
 @settings(max_examples=50)
-def test_gv::alist_instantiation(instance):
-    assert isinstance(instance, gv::AList)
+def test_gv_target_instantiation(instance):
+    assert isinstance(instance, gv_Target)
 
-@given(instance=gv::StatementList_strategy)
+
+
+@given(instance=gv_Target_strategy)
+def test_gv_target_operation_setter(instance):
+    original = instance.operation
+    instance.operation = original
+    assert instance.operation == original
+
+@given(instance=gv_NodeID_strategy)
 @settings(max_examples=50)
-def test_gv::statementlist_instantiation(instance):
-    assert isinstance(instance, gv::StatementList)
+def test_gv_nodeid_instantiation(instance):
+    assert isinstance(instance, gv_NodeID)
+
+@given(instance=gv_Subgraph_strategy)
+@settings(max_examples=50)
+def test_gv_subgraph_instantiation(instance):
+    assert isinstance(instance, gv_Subgraph)
+
+
+
+@given(instance=gv_Subgraph_strategy)
+def test_gv_subgraph_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=gv_Attribute_strategy)
+@settings(max_examples=50)
+def test_gv_attribute_instantiation(instance):
+    assert isinstance(instance, gv_Attribute)
+
+
+
+@given(instance=gv_Attribute_strategy)
+def test_gv_attribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=gv_Attribute_strategy)
+def test_gv_attribute_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=gv_AList_strategy)
+@settings(max_examples=50)
+def test_gv_alist_instantiation(instance):
+    assert isinstance(instance, gv_AList)
+
+@given(instance=gv_StatementList_strategy)
+@settings(max_examples=50)
+def test_gv_statementlist_instantiation(instance):
+    assert isinstance(instance, gv_StatementList)
 
 @given(instance=Identifiable_strategy)
 @settings(max_examples=50)
 def test_identifiable_instantiation(instance):
     assert isinstance(instance, Identifiable)
 
-@given(instance=gv::Port_strategy)
+@given(instance=gv_Port_strategy)
 @settings(max_examples=50)
-def test_gv::port_instantiation(instance):
-    assert isinstance(instance, gv::Port)
-
-@given(instance=gv::Port_strategy)
-def test_gv::port_compass_type(instance):
-    assert isinstance(instance.compass, str)
+def test_gv_port_instantiation(instance):
+    assert isinstance(instance, gv_Port)
 
 
-@given(instance=gv::Port_strategy)
-def test_gv::port_compass_setter(instance):
+
+@given(instance=gv_Port_strategy)
+def test_gv_port_compass_setter(instance):
     original = instance.compass
     instance.compass = original
     assert instance.compass == original
 
-@given(instance=gv::AbstractGraph_strategy)
+@given(instance=gv_AbstractGraph_strategy)
 @settings(max_examples=50)
-def test_gv::abstractgraph_instantiation(instance):
-    assert isinstance(instance, gv::AbstractGraph)
+def test_gv_abstractgraph_instantiation(instance):
+    assert isinstance(instance, gv_AbstractGraph)
 
-@given(instance=gv::AttributeList_strategy)
+@given(instance=gv_AttributeList_strategy)
 @settings(max_examples=50)
-def test_gv::attributelist_instantiation(instance):
-    assert isinstance(instance, gv::AttributeList)
+def test_gv_attributelist_instantiation(instance):
+    assert isinstance(instance, gv_AttributeList)
 
-@given(instance=gv::Attributable_strategy)
+@given(instance=gv_Attributable_strategy)
 @settings(max_examples=50)
-def test_gv::attributable_instantiation(instance):
-    assert isinstance(instance, gv::Attributable)
+def test_gv_attributable_instantiation(instance):
+    assert isinstance(instance, gv_Attributable)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=gv::AttributeStatement_strategy)
+@given(instance=gv_AttributeStatement_strategy)
 @settings(max_examples=50)
-def test_gv::attributestatement_instantiation(instance):
-    assert isinstance(instance, gv::AttributeStatement)
-
-@given(instance=gv::AttributeStatement_strategy)
-def test_gv::attributestatement_context_type(instance):
-    assert isinstance(instance.context, str)
+def test_gv_attributestatement_instantiation(instance):
+    assert isinstance(instance, gv_AttributeStatement)
 
 
-@given(instance=gv::AttributeStatement_strategy)
-def test_gv::attributestatement_context_setter(instance):
+
+@given(instance=gv_AttributeStatement_strategy)
+def test_gv_attributestatement_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
 
-@given(instance=gv::EdgeStatement_strategy)
+@given(instance=gv_EdgeStatement_strategy)
 @settings(max_examples=50)
-def test_gv::edgestatement_instantiation(instance):
-    assert isinstance(instance, gv::EdgeStatement)
+def test_gv_edgestatement_instantiation(instance):
+    assert isinstance(instance, gv_EdgeStatement)
 
-@given(instance=gv::NodeStatement_strategy)
+@given(instance=gv_NodeStatement_strategy)
 @settings(max_examples=50)
-def test_gv::nodestatement_instantiation(instance):
-    assert isinstance(instance, gv::NodeStatement)
+def test_gv_nodestatement_instantiation(instance):
+    assert isinstance(instance, gv_NodeStatement)
 
-@given(instance=gv::AssignmentStatement_strategy)
+@given(instance=gv_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_gv::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, gv::AssignmentStatement)
-
-@given(instance=gv::AssignmentStatement_strategy)
-def test_gv::assignmentstatement_right_type(instance):
-    assert isinstance(instance.right, str)
+def test_gv_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, gv_AssignmentStatement)
 
 
-@given(instance=gv::AssignmentStatement_strategy)
-def test_gv::assignmentstatement_right_setter(instance):
+
+@given(instance=gv_AssignmentStatement_strategy)
+def test_gv_assignmentstatement_right_setter(instance):
     original = instance.right
     instance.right = original
     assert instance.right == original
 
-@given(instance=gv::AssignmentStatement_strategy)
-def test_gv::assignmentstatement_left_type(instance):
-    assert isinstance(instance.left, str)
 
 
-@given(instance=gv::AssignmentStatement_strategy)
-def test_gv::assignmentstatement_left_setter(instance):
+@given(instance=gv_AssignmentStatement_strategy)
+def test_gv_assignmentstatement_left_setter(instance):
     original = instance.left
     instance.left = original
     assert instance.left == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     customer,
@@ -76,17 +76,8 @@ def test_system_constructor_exists():
 def test_system_constructor_args():
     sig = inspect.signature(system.__init__)
     params = list(sig.parameters.keys())
-    assert "user_id" in params, "Missing parameter 'user_id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_system_has_user_id():
-    assert hasattr(system, "user_id")
-    descriptor = None
-    for klass in system.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "user_id" in params, "Missing parameter 'user_id'"
 
 def test_system_has_name():
     assert hasattr(system, "name")
@@ -94,6 +85,15 @@ def test_system_has_name():
     for klass in system.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system_has_user_id():
+    assert hasattr(system, "user_id")
+    descriptor = None
+    for klass in system.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -110,17 +110,8 @@ def test_app_constructor_exists():
 def test_app_constructor_args():
     sig = inspect.signature(app.__init__)
     params = list(sig.parameters.keys())
-    assert "user_id" in params, "Missing parameter 'user_id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_app_has_user_id():
-    assert hasattr(app, "user_id")
-    descriptor = None
-    for klass in app.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "user_id" in params, "Missing parameter 'user_id'"
 
 def test_app_has_name():
     assert hasattr(app, "name")
@@ -128,6 +119,15 @@ def test_app_has_name():
     for klass in app.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_app_has_user_id():
+    assert hasattr(app, "user_id")
+    descriptor = None
+    for klass in app.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -158,11 +158,20 @@ def test_meal_constructor_exists():
 def test_meal_constructor_args():
     sig = inspect.signature(meal.__init__)
     params = list(sig.parameters.keys())
+    assert "prepared" in params, "Missing parameter 'prepared'"
     assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "served" in params, "Missing parameter 'served'"
     assert "meal_id" in params, "Missing parameter 'meal_id'"
-    assert "prepared" in params, "Missing parameter 'prepared'"
+    assert "served" in params, "Missing parameter 'served'"
+
+def test_meal_has_prepared():
+    assert hasattr(meal, "prepared")
+    descriptor = None
+    for klass in meal.__mro__:
+        if "prepared" in klass.__dict__:
+            descriptor = klass.__dict__["prepared"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_meal_has_price():
     assert hasattr(meal, "price")
@@ -182,15 +191,6 @@ def test_meal_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_meal_has_served():
-    assert hasattr(meal, "served")
-    descriptor = None
-    for klass in meal.__mro__:
-        if "served" in klass.__dict__:
-            descriptor = klass.__dict__["served"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_meal_has_meal_id():
     assert hasattr(meal, "meal_id")
     descriptor = None
@@ -200,12 +200,12 @@ def test_meal_has_meal_id():
             break
     assert isinstance(descriptor, property)
 
-def test_meal_has_prepared():
-    assert hasattr(meal, "prepared")
+def test_meal_has_served():
+    assert hasattr(meal, "served")
     descriptor = None
     for klass in meal.__mro__:
-        if "prepared" in klass.__dict__:
-            descriptor = klass.__dict__["prepared"]
+        if "served" in klass.__dict__:
+            descriptor = klass.__dict__["served"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,17 +222,8 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "foodList" in params, "Missing parameter 'foodList'"
     assert "order_id" in params, "Missing parameter 'order_id'"
-
-def test_order_has_foodList():
-    assert hasattr(Order, "foodList")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "foodList" in klass.__dict__:
-            descriptor = klass.__dict__["foodList"]
-            break
-    assert isinstance(descriptor, property)
+    assert "foodList" in params, "Missing parameter 'foodList'"
 
 def test_order_has_order_id():
     assert hasattr(Order, "order_id")
@@ -240,6 +231,15 @@ def test_order_has_order_id():
     for klass in Order.__mro__:
         if "order_id" in klass.__dict__:
             descriptor = klass.__dict__["order_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_foodList():
+    assert hasattr(Order, "foodList")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "foodList" in klass.__dict__:
+            descriptor = klass.__dict__["foodList"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,16 +256,16 @@ def test_table_constructor_exists():
 def test_table_constructor_args():
     sig = inspect.signature(Table.__init__)
     params = list(sig.parameters.keys())
-    assert "avaliable" in params, "Missing parameter 'avaliable'"
-    assert "table_id" in params, "Missing parameter 'table_id'"
     assert "numSeats" in params, "Missing parameter 'numSeats'"
+    assert "table_id" in params, "Missing parameter 'table_id'"
+    assert "avaliable" in params, "Missing parameter 'avaliable'"
 
-def test_table_has_avaliable():
-    assert hasattr(Table, "avaliable")
+def test_table_has_numSeats():
+    assert hasattr(Table, "numSeats")
     descriptor = None
     for klass in Table.__mro__:
-        if "avaliable" in klass.__dict__:
-            descriptor = klass.__dict__["avaliable"]
+        if "numSeats" in klass.__dict__:
+            descriptor = klass.__dict__["numSeats"]
             break
     assert isinstance(descriptor, property)
 
@@ -278,12 +278,12 @@ def test_table_has_table_id():
             break
     assert isinstance(descriptor, property)
 
-def test_table_has_numSeats():
-    assert hasattr(Table, "numSeats")
+def test_table_has_avaliable():
+    assert hasattr(Table, "avaliable")
     descriptor = None
     for klass in Table.__mro__:
-        if "numSeats" in klass.__dict__:
-            descriptor = klass.__dict__["numSeats"]
+        if "avaliable" in klass.__dict__:
+            descriptor = klass.__dict__["avaliable"]
             break
     assert isinstance(descriptor, property)
 
@@ -310,16 +310,16 @@ Chef_strategy = st.builds(
 )
 system_strategy = st.builds(
     system,
-    user_id=
-        safe_text,
     name=
+        safe_text,
+    user_id=
         safe_text
 )
 app_strategy = st.builds(
     app,
-    user_id=
-        safe_text,
     name=
+        safe_text,
+    user_id=
         safe_text
 )
 Waiter_strategy = st.builds(
@@ -327,32 +327,32 @@ Waiter_strategy = st.builds(
 )
 meal_strategy = st.builds(
     meal,
+    prepared=
+        st.booleans(),
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     name=
         safe_text,
-    served=
-        st.booleans(),
     meal_id=
         safe_text,
-    prepared=
+    served=
         st.booleans()
 )
 Order_strategy = st.builds(
     Order,
-    foodList=
-        safe_text,
     order_id=
+        safe_text,
+    foodList=
         safe_text
 )
 Table_strategy = st.builds(
     Table,
-    avaliable=
-        st.booleans(),
+    numSeats=
+        st.integers(),
     table_id=
         safe_text,
-    numSeats=
-        st.integers()
+    avaliable=
+        st.booleans()
 )
 
 @given(instance=customer_strategy)
@@ -375,20 +375,6 @@ def test_chef_instantiation(instance):
 def test_system_instantiation(instance):
     assert isinstance(instance, system)
 
-@given(instance=system_strategy)
-def test_system_user_id_type(instance):
-    assert isinstance(instance.user_id, str)
-
-
-@given(instance=system_strategy)
-def test_system_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=system_strategy)
-def test_system_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=system_strategy)
@@ -397,25 +383,19 @@ def test_system_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=app_strategy)
-@settings(max_examples=50)
-def test_app_instantiation(instance):
-    assert isinstance(instance, app)
-
-@given(instance=app_strategy)
-def test_app_user_id_type(instance):
-    assert isinstance(instance.user_id, str)
 
 
-@given(instance=app_strategy)
-def test_app_user_id_setter(instance):
+@given(instance=system_strategy)
+def test_system_user_id_setter(instance):
     original = instance.user_id
     instance.user_id = original
     assert instance.user_id == original
 
 @given(instance=app_strategy)
-def test_app_name_type(instance):
-    assert isinstance(instance.name, str)
+@settings(max_examples=50)
+def test_app_instantiation(instance):
+    assert isinstance(instance, app)
+
 
 
 @given(instance=app_strategy)
@@ -423,6 +403,14 @@ def test_app_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=app_strategy)
+def test_app_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
 
 @given(instance=Waiter_strategy)
 @settings(max_examples=50)
@@ -434,53 +422,6 @@ def test_waiter_instantiation(instance):
 def test_meal_instantiation(instance):
     assert isinstance(instance, meal)
 
-@given(instance=meal_strategy)
-def test_meal_price_type(instance):
-    assert isinstance(instance.price, float)
-
-
-@given(instance=meal_strategy)
-def test_meal_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=meal_strategy)
-def test_meal_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=meal_strategy)
-def test_meal_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=meal_strategy)
-def test_meal_served_type(instance):
-    assert isinstance(instance.served, bool)
-
-
-@given(instance=meal_strategy)
-def test_meal_served_setter(instance):
-    original = instance.served
-    instance.served = original
-    assert instance.served == original
-
-@given(instance=meal_strategy)
-def test_meal_meal_id_type(instance):
-    assert isinstance(instance.meal_id, str)
-
-
-@given(instance=meal_strategy)
-def test_meal_meal_id_setter(instance):
-    original = instance.meal_id
-    instance.meal_id = original
-    assert instance.meal_id == original
-
-@given(instance=meal_strategy)
-def test_meal_prepared_type(instance):
-    assert isinstance(instance.prepared, bool)
 
 
 @given(instance=meal_strategy)
@@ -489,25 +430,43 @@ def test_meal_prepared_setter(instance):
     instance.prepared = original
     assert instance.prepared == original
 
+
+
+@given(instance=meal_strategy)
+def test_meal_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=meal_strategy)
+def test_meal_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=meal_strategy)
+def test_meal_meal_id_setter(instance):
+    original = instance.meal_id
+    instance.meal_id = original
+    assert instance.meal_id == original
+
+
+
+@given(instance=meal_strategy)
+def test_meal_served_setter(instance):
+    original = instance.served
+    instance.served = original
+    assert instance.served == original
+
 @given(instance=Order_strategy)
 @settings(max_examples=50)
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_foodList_type(instance):
-    assert isinstance(instance.foodList, str)
-
-
-@given(instance=Order_strategy)
-def test_order_foodList_setter(instance):
-    original = instance.foodList
-    instance.foodList = original
-    assert instance.foodList == original
-
-@given(instance=Order_strategy)
-def test_order_order_id_type(instance):
-    assert isinstance(instance.order_id, str)
 
 
 @given(instance=Order_strategy)
@@ -516,25 +475,27 @@ def test_order_order_id_setter(instance):
     instance.order_id = original
     assert instance.order_id == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_foodList_setter(instance):
+    original = instance.foodList
+    instance.foodList = original
+    assert instance.foodList == original
+
 @given(instance=Table_strategy)
 @settings(max_examples=50)
 def test_table_instantiation(instance):
     assert isinstance(instance, Table)
 
-@given(instance=Table_strategy)
-def test_table_avaliable_type(instance):
-    assert isinstance(instance.avaliable, bool)
 
 
 @given(instance=Table_strategy)
-def test_table_avaliable_setter(instance):
-    original = instance.avaliable
-    instance.avaliable = original
-    assert instance.avaliable == original
+def test_table_numSeats_setter(instance):
+    original = instance.numSeats
+    instance.numSeats = original
+    assert instance.numSeats == original
 
-@given(instance=Table_strategy)
-def test_table_table_id_type(instance):
-    assert isinstance(instance.table_id, str)
 
 
 @given(instance=Table_strategy)
@@ -543,13 +504,10 @@ def test_table_table_id_setter(instance):
     instance.table_id = original
     assert instance.table_id == original
 
-@given(instance=Table_strategy)
-def test_table_numSeats_type(instance):
-    assert isinstance(instance.numSeats, int)
 
 
 @given(instance=Table_strategy)
-def test_table_numSeats_setter(instance):
-    original = instance.numSeats
-    instance.numSeats = original
-    assert instance.numSeats == original
+def test_table_avaliable_setter(instance):
+    original = instance.avaliable
+    instance.avaliable = original
+    assert instance.avaliable == original

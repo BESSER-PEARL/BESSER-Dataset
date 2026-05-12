@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    basetest::EObject,
-    basetest::BaseModel,
+from python_code import (
+    basetest_EObject,
+    basetest_BaseModel,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_basetest::eobject_is_not_abstract():
-    assert not inspect.isabstract(basetest::EObject)
+def test_basetest_eobject_is_not_abstract():
+    assert not inspect.isabstract(basetest_EObject)
 
 
-def test_basetest::eobject_constructor_exists():
-    assert callable(basetest::EObject.__init__)
+def test_basetest_eobject_constructor_exists():
+    assert callable(basetest_EObject.__init__)
 
 
-def test_basetest::eobject_constructor_args():
-    sig = inspect.signature(basetest::EObject.__init__)
+def test_basetest_eobject_constructor_args():
+    sig = inspect.signature(basetest_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basetest::basemodel_is_not_abstract():
-    assert not inspect.isabstract(basetest::BaseModel)
+def test_basetest_basemodel_is_not_abstract():
+    assert not inspect.isabstract(basetest_BaseModel)
 
 
-def test_basetest::basemodel_constructor_exists():
-    assert callable(basetest::BaseModel.__init__)
+def test_basetest_basemodel_constructor_exists():
+    assert callable(basetest_BaseModel.__init__)
 
 
-def test_basetest::basemodel_constructor_args():
-    sig = inspect.signature(basetest::BaseModel.__init__)
+def test_basetest_basemodel_constructor_args():
+    sig = inspect.signature(basetest_BaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-basetest::EObject_strategy = st.builds(
-    basetest::EObject,
+basetest_EObject_strategy = st.builds(
+    basetest_EObject,
 )
-basetest::BaseModel_strategy = st.builds(
-    basetest::BaseModel,
+basetest_BaseModel_strategy = st.builds(
+    basetest_BaseModel,
 )
 
-@given(instance=basetest::EObject_strategy)
+@given(instance=basetest_EObject_strategy)
 @settings(max_examples=50)
-def test_basetest::eobject_instantiation(instance):
-    assert isinstance(instance, basetest::EObject)
+def test_basetest_eobject_instantiation(instance):
+    assert isinstance(instance, basetest_EObject)
 
-@given(instance=basetest::BaseModel_strategy)
+@given(instance=basetest_BaseModel_strategy)
 @settings(max_examples=50)
-def test_basetest::basemodel_instantiation(instance):
-    assert isinstance(instance, basetest::BaseModel)
+def test_basetest_basemodel_instantiation(instance):
+    assert isinstance(instance, basetest_BaseModel)

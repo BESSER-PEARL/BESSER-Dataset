@@ -3,24 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    User_Actor,
-    DistributionSystem_TicketDistributor,
-    DistributionSystem_Customer,
-    DistributionSystem_BoardingPass,
-    DistributionSystem_Ticket,
-    FlightSystem_Plane,
-    FlightSystem_Flight,
-    Company_Airport,
-    Company_Company,
-    Employee_Employee,
-    Employee_AirportEmployee,
-    Employee_Pilot,
-    Employee_Steward,
-    Employee_IEmployee_Interface,
-    Controller_FlightEvent,
     EditPlanning_external,
     Advertising_external,
     Promotion_System_external,
@@ -44,6 +29,44 @@ from python_code import (
     Add_A_Luggage_UseCase,
     Consult_Luggage_Ticket_Infos_UseCase,
     Luggage_Checkin_UseCase,
+    AddASurbooking_UseCase,
+    WaitingList_UseCase,
+    ChangeSeat_UseCase,
+    CheckSeat_UseCase,
+    CheckInformations_UseCase,
+    CheckInForFlight_UseCase,
+    ByBookingNumber_UseCase,
+    ByName_UseCase,
+    PassengerIdentification_UseCase,
+    PassengerCheckIn_UseCase,
+    Employee_Actor1,
+    Distribute_UseCase,
+    Seller_Actor,
+    OnlineBuy_UseCase,
+    Customer_Actor,
+    User_Actor1,
+    UI_FlightPlanning_Component,
+    UI_FlightManager_Component,
+    Employee_Actor,
+    UI_EmployeePlanning_Component,
+    UI_EmployeeManager_Component,
+    Admin_Actor1,
+    Admin_Actor,
+    User_Actor,
+    DistributionSystem_TicketDistributor,
+    DistributionSystem_Customer,
+    DistributionSystem_BoardingPass,
+    DistributionSystem_Ticket,
+    FlightSystem_Plane,
+    FlightSystem_Flight,
+    Company_Airport,
+    Company_Company,
+    Employee_Employee,
+    Employee_AirportEmployee,
+    Employee_Pilot,
+    Employee_Steward,
+    Employee_IEmployee_Interface,
+    Controller_FlightEvent,
     Employee_Actor2,
     AsksForFreeFlight_UseCase,
     CheckEligibility__FreeMiles__UseCase,
@@ -92,812 +115,19 @@ from python_code import (
     CloseCheckIn_UseCase,
     RegisterToWaitingList_UseCase,
     CheckAvailability_UseCase,
-    AddASurbooking_UseCase,
-    WaitingList_UseCase,
-    ChangeSeat_UseCase,
-    CheckSeat_UseCase,
-    CheckInformations_UseCase,
-    CheckInForFlight_UseCase,
-    ByBookingNumber_UseCase,
-    ByName_UseCase,
-    PassengerIdentification_UseCase,
-    PassengerCheckIn_UseCase,
-    Employee_Actor1,
-    Distribute_UseCase,
-    Seller_Actor,
-    OnlineBuy_UseCase,
-    Customer_Actor,
-    User_Actor1,
-    UI_FlightPlanning_Component,
-    UI_FlightManager_Component,
-    Employee_Actor,
-    UI_EmployeePlanning_Component,
-    UI_EmployeeManager_Component,
-    Admin_Actor1,
-    Admin_Actor,
-    PlaneState,
-    ReportType,
-    GenderType,
-    EmployeeType,
-    FlightType,
     TicketBuyType,
-    TicketPayment,
     ProviderType,
+    FlightType,
+    EmployeeType,
+    PlaneState,
+    TicketPayment,
+    GenderType,
+    ReportType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_user_actor_is_not_abstract():
-    assert not inspect.isabstract(User_Actor)
-
-
-def test_user_actor_constructor_exists():
-    assert callable(User_Actor.__init__)
-
-
-def test_user_actor_constructor_args():
-    sig = inspect.signature(User_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_distributionsystem_ticketdistributor_is_not_abstract():
-    assert not inspect.isabstract(DistributionSystem_TicketDistributor)
-
-
-def test_distributionsystem_ticketdistributor_constructor_exists():
-    assert callable(DistributionSystem_TicketDistributor.__init__)
-
-
-def test_distributionsystem_ticketdistributor_constructor_args():
-    sig = inspect.signature(DistributionSystem_TicketDistributor.__init__)
-    params = list(sig.parameters.keys())
-    assert "payment" in params, "Missing parameter 'payment'"
-    assert "from" in params, "Missing parameter 'from'"
-
-def test_distributionsystem_ticketdistributor_has_payment():
-    assert hasattr(DistributionSystem_TicketDistributor, "payment")
-    descriptor = None
-    for klass in DistributionSystem_TicketDistributor.__mro__:
-        if "payment" in klass.__dict__:
-            descriptor = klass.__dict__["payment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_ticketdistributor_has_from():
-    assert hasattr(DistributionSystem_TicketDistributor, "from")
-    descriptor = None
-    for klass in DistributionSystem_TicketDistributor.__mro__:
-        if "from" in klass.__dict__:
-            descriptor = klass.__dict__["from"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_distributionsystem_customer_is_not_abstract():
-    assert not inspect.isabstract(DistributionSystem_Customer)
-
-
-def test_distributionsystem_customer_constructor_exists():
-    assert callable(DistributionSystem_Customer.__init__)
-
-
-def test_distributionsystem_customer_constructor_args():
-    sig = inspect.signature(DistributionSystem_Customer.__init__)
-    params = list(sig.parameters.keys())
-    assert "_milesFlyed" in params, "Missing parameter '_milesFlyed'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "Luggage" in params, "Missing parameter 'Luggage'"
-
-def test_distributionsystem_customer_has__milesFlyed():
-    assert hasattr(DistributionSystem_Customer, "_milesFlyed")
-    descriptor = None
-    for klass in DistributionSystem_Customer.__mro__:
-        if "_milesFlyed" in klass.__dict__:
-            descriptor = klass.__dict__["_milesFlyed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_customer_has_name():
-    assert hasattr(DistributionSystem_Customer, "name")
-    descriptor = None
-    for klass in DistributionSystem_Customer.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_customer_has_Luggage():
-    assert hasattr(DistributionSystem_Customer, "Luggage")
-    descriptor = None
-    for klass in DistributionSystem_Customer.__mro__:
-        if "Luggage" in klass.__dict__:
-            descriptor = klass.__dict__["Luggage"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_distributionsystem_boardingpass_is_not_abstract():
-    assert not inspect.isabstract(DistributionSystem_BoardingPass)
-
-
-def test_distributionsystem_boardingpass_constructor_exists():
-    assert callable(DistributionSystem_BoardingPass.__init__)
-
-
-def test_distributionsystem_boardingpass_constructor_args():
-    sig = inspect.signature(DistributionSystem_BoardingPass.__init__)
-    params = list(sig.parameters.keys())
-    assert "flight" in params, "Missing parameter 'flight'"
-    assert "dateOfPurchase" in params, "Missing parameter 'dateOfPurchase'"
-    assert "row" in params, "Missing parameter 'row'"
-    assert "price" in params, "Missing parameter 'price'"
-    assert "seat" in params, "Missing parameter 'seat'"
-    assert "isValidated" in params, "Missing parameter 'isValidated'"
-
-def test_distributionsystem_boardingpass_has_flight():
-    assert hasattr(DistributionSystem_BoardingPass, "flight")
-    descriptor = None
-    for klass in DistributionSystem_BoardingPass.__mro__:
-        if "flight" in klass.__dict__:
-            descriptor = klass.__dict__["flight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_boardingpass_has_dateOfPurchase():
-    assert hasattr(DistributionSystem_BoardingPass, "dateOfPurchase")
-    descriptor = None
-    for klass in DistributionSystem_BoardingPass.__mro__:
-        if "dateOfPurchase" in klass.__dict__:
-            descriptor = klass.__dict__["dateOfPurchase"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_boardingpass_has_row():
-    assert hasattr(DistributionSystem_BoardingPass, "row")
-    descriptor = None
-    for klass in DistributionSystem_BoardingPass.__mro__:
-        if "row" in klass.__dict__:
-            descriptor = klass.__dict__["row"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_boardingpass_has_price():
-    assert hasattr(DistributionSystem_BoardingPass, "price")
-    descriptor = None
-    for klass in DistributionSystem_BoardingPass.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_boardingpass_has_seat():
-    assert hasattr(DistributionSystem_BoardingPass, "seat")
-    descriptor = None
-    for klass in DistributionSystem_BoardingPass.__mro__:
-        if "seat" in klass.__dict__:
-            descriptor = klass.__dict__["seat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_boardingpass_has_isValidated():
-    assert hasattr(DistributionSystem_BoardingPass, "isValidated")
-    descriptor = None
-    for klass in DistributionSystem_BoardingPass.__mro__:
-        if "isValidated" in klass.__dict__:
-            descriptor = klass.__dict__["isValidated"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_distributionsystem_ticket_is_not_abstract():
-    assert not inspect.isabstract(DistributionSystem_Ticket)
-
-
-def test_distributionsystem_ticket_constructor_exists():
-    assert callable(DistributionSystem_Ticket.__init__)
-
-
-def test_distributionsystem_ticket_constructor_args():
-    sig = inspect.signature(DistributionSystem_Ticket.__init__)
-    params = list(sig.parameters.keys())
-    assert "payment" in params, "Missing parameter 'payment'"
-    assert "_numberPlace" in params, "Missing parameter '_numberPlace'"
-    assert "_price" in params, "Missing parameter '_price'"
-    assert "isRegistered" in params, "Missing parameter 'isRegistered'"
-    assert "from" in params, "Missing parameter 'from'"
-
-def test_distributionsystem_ticket_has_payment():
-    assert hasattr(DistributionSystem_Ticket, "payment")
-    descriptor = None
-    for klass in DistributionSystem_Ticket.__mro__:
-        if "payment" in klass.__dict__:
-            descriptor = klass.__dict__["payment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_ticket_has__numberPlace():
-    assert hasattr(DistributionSystem_Ticket, "_numberPlace")
-    descriptor = None
-    for klass in DistributionSystem_Ticket.__mro__:
-        if "_numberPlace" in klass.__dict__:
-            descriptor = klass.__dict__["_numberPlace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_ticket_has__price():
-    assert hasattr(DistributionSystem_Ticket, "_price")
-    descriptor = None
-    for klass in DistributionSystem_Ticket.__mro__:
-        if "_price" in klass.__dict__:
-            descriptor = klass.__dict__["_price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_ticket_has_isRegistered():
-    assert hasattr(DistributionSystem_Ticket, "isRegistered")
-    descriptor = None
-    for klass in DistributionSystem_Ticket.__mro__:
-        if "isRegistered" in klass.__dict__:
-            descriptor = klass.__dict__["isRegistered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_distributionsystem_ticket_has_from():
-    assert hasattr(DistributionSystem_Ticket, "from")
-    descriptor = None
-    for klass in DistributionSystem_Ticket.__mro__:
-        if "from" in klass.__dict__:
-            descriptor = klass.__dict__["from"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_flightsystem_plane_is_not_abstract():
-    assert not inspect.isabstract(FlightSystem_Plane)
-
-
-def test_flightsystem_plane_constructor_exists():
-    assert callable(FlightSystem_Plane.__init__)
-
-
-def test_flightsystem_plane_constructor_args():
-    sig = inspect.signature(FlightSystem_Plane.__init__)
-    params = list(sig.parameters.keys())
-    assert "_flySinceRefuel" in params, "Missing parameter '_flySinceRefuel'"
-    assert "_location" in params, "Missing parameter '_location'"
-    assert "nbPilote" in params, "Missing parameter 'nbPilote'"
-    assert "_crew" in params, "Missing parameter '_crew'"
-    assert "_state" in params, "Missing parameter '_state'"
-    assert "seatPerRow" in params, "Missing parameter 'seatPerRow'"
-    assert "nbSteward" in params, "Missing parameter 'nbSteward'"
-    assert "row" in params, "Missing parameter 'row'"
-    assert "_millesFlyed" in params, "Missing parameter '_millesFlyed'"
-    assert "_seat" in params, "Missing parameter '_seat'"
-    assert "_millesSinceRevisionned" in params, "Missing parameter '_millesSinceRevisionned'"
-
-def test_flightsystem_plane_has__flySinceRefuel():
-    assert hasattr(FlightSystem_Plane, "_flySinceRefuel")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_flySinceRefuel" in klass.__dict__:
-            descriptor = klass.__dict__["_flySinceRefuel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has__location():
-    assert hasattr(FlightSystem_Plane, "_location")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_location" in klass.__dict__:
-            descriptor = klass.__dict__["_location"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has_nbPilote():
-    assert hasattr(FlightSystem_Plane, "nbPilote")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "nbPilote" in klass.__dict__:
-            descriptor = klass.__dict__["nbPilote"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has__crew():
-    assert hasattr(FlightSystem_Plane, "_crew")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_crew" in klass.__dict__:
-            descriptor = klass.__dict__["_crew"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has__state():
-    assert hasattr(FlightSystem_Plane, "_state")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_state" in klass.__dict__:
-            descriptor = klass.__dict__["_state"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has_seatPerRow():
-    assert hasattr(FlightSystem_Plane, "seatPerRow")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "seatPerRow" in klass.__dict__:
-            descriptor = klass.__dict__["seatPerRow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has_nbSteward():
-    assert hasattr(FlightSystem_Plane, "nbSteward")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "nbSteward" in klass.__dict__:
-            descriptor = klass.__dict__["nbSteward"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has_row():
-    assert hasattr(FlightSystem_Plane, "row")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "row" in klass.__dict__:
-            descriptor = klass.__dict__["row"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has__millesFlyed():
-    assert hasattr(FlightSystem_Plane, "_millesFlyed")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_millesFlyed" in klass.__dict__:
-            descriptor = klass.__dict__["_millesFlyed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has__seat():
-    assert hasattr(FlightSystem_Plane, "_seat")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_seat" in klass.__dict__:
-            descriptor = klass.__dict__["_seat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_plane_has__millesSinceRevisionned():
-    assert hasattr(FlightSystem_Plane, "_millesSinceRevisionned")
-    descriptor = None
-    for klass in FlightSystem_Plane.__mro__:
-        if "_millesSinceRevisionned" in klass.__dict__:
-            descriptor = klass.__dict__["_millesSinceRevisionned"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_flightsystem_flight_is_not_abstract():
-    assert not inspect.isabstract(FlightSystem_Flight)
-
-
-def test_flightsystem_flight_constructor_exists():
-    assert callable(FlightSystem_Flight.__init__)
-
-
-def test_flightsystem_flight_constructor_args():
-    sig = inspect.signature(FlightSystem_Flight.__init__)
-    params = list(sig.parameters.keys())
-    assert "_miles" in params, "Missing parameter '_miles'"
-    assert "_duration" in params, "Missing parameter '_duration'"
-    assert "airportTo" in params, "Missing parameter 'airportTo'"
-    assert "flightType" in params, "Missing parameter 'flightType'"
-    assert "schedule" in params, "Missing parameter 'schedule'"
-    assert "airportFrom" in params, "Missing parameter 'airportFrom'"
-
-def test_flightsystem_flight_has__miles():
-    assert hasattr(FlightSystem_Flight, "_miles")
-    descriptor = None
-    for klass in FlightSystem_Flight.__mro__:
-        if "_miles" in klass.__dict__:
-            descriptor = klass.__dict__["_miles"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_flight_has__duration():
-    assert hasattr(FlightSystem_Flight, "_duration")
-    descriptor = None
-    for klass in FlightSystem_Flight.__mro__:
-        if "_duration" in klass.__dict__:
-            descriptor = klass.__dict__["_duration"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_flight_has_airportTo():
-    assert hasattr(FlightSystem_Flight, "airportTo")
-    descriptor = None
-    for klass in FlightSystem_Flight.__mro__:
-        if "airportTo" in klass.__dict__:
-            descriptor = klass.__dict__["airportTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_flight_has_flightType():
-    assert hasattr(FlightSystem_Flight, "flightType")
-    descriptor = None
-    for klass in FlightSystem_Flight.__mro__:
-        if "flightType" in klass.__dict__:
-            descriptor = klass.__dict__["flightType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_flight_has_schedule():
-    assert hasattr(FlightSystem_Flight, "schedule")
-    descriptor = None
-    for klass in FlightSystem_Flight.__mro__:
-        if "schedule" in klass.__dict__:
-            descriptor = klass.__dict__["schedule"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_flightsystem_flight_has_airportFrom():
-    assert hasattr(FlightSystem_Flight, "airportFrom")
-    descriptor = None
-    for klass in FlightSystem_Flight.__mro__:
-        if "airportFrom" in klass.__dict__:
-            descriptor = klass.__dict__["airportFrom"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_company_airport_is_not_abstract():
-    assert not inspect.isabstract(Company_Airport)
-
-
-def test_company_airport_constructor_exists():
-    assert callable(Company_Airport.__init__)
-
-
-def test_company_airport_constructor_args():
-    sig = inspect.signature(Company_Airport.__init__)
-    params = list(sig.parameters.keys())
-    assert "endSchedule" in params, "Missing parameter 'endSchedule'"
-    assert "ticketCharges" in params, "Missing parameter 'ticketCharges'"
-    assert "beginSchedule" in params, "Missing parameter 'beginSchedule'"
-    assert "ticketPrice" in params, "Missing parameter 'ticketPrice'"
-    assert "city" in params, "Missing parameter 'city'"
-
-def test_company_airport_has_endSchedule():
-    assert hasattr(Company_Airport, "endSchedule")
-    descriptor = None
-    for klass in Company_Airport.__mro__:
-        if "endSchedule" in klass.__dict__:
-            descriptor = klass.__dict__["endSchedule"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_airport_has_ticketCharges():
-    assert hasattr(Company_Airport, "ticketCharges")
-    descriptor = None
-    for klass in Company_Airport.__mro__:
-        if "ticketCharges" in klass.__dict__:
-            descriptor = klass.__dict__["ticketCharges"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_airport_has_beginSchedule():
-    assert hasattr(Company_Airport, "beginSchedule")
-    descriptor = None
-    for klass in Company_Airport.__mro__:
-        if "beginSchedule" in klass.__dict__:
-            descriptor = klass.__dict__["beginSchedule"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_airport_has_ticketPrice():
-    assert hasattr(Company_Airport, "ticketPrice")
-    descriptor = None
-    for klass in Company_Airport.__mro__:
-        if "ticketPrice" in klass.__dict__:
-            descriptor = klass.__dict__["ticketPrice"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_airport_has_city():
-    assert hasattr(Company_Airport, "city")
-    descriptor = None
-    for klass in Company_Airport.__mro__:
-        if "city" in klass.__dict__:
-            descriptor = klass.__dict__["city"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_company_company_is_not_abstract():
-    assert not inspect.isabstract(Company_Company)
-
-
-def test_company_company_constructor_exists():
-    assert callable(Company_Company.__init__)
-
-
-def test_company_company_constructor_args():
-    sig = inspect.signature(Company_Company.__init__)
-    params = list(sig.parameters.keys())
-    assert "pilots" in params, "Missing parameter 'pilots'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "airportEmployees" in params, "Missing parameter 'airportEmployees'"
-    assert "stewards" in params, "Missing parameter 'stewards'"
-
-def test_company_company_has_pilots():
-    assert hasattr(Company_Company, "pilots")
-    descriptor = None
-    for klass in Company_Company.__mro__:
-        if "pilots" in klass.__dict__:
-            descriptor = klass.__dict__["pilots"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_company_has_name():
-    assert hasattr(Company_Company, "name")
-    descriptor = None
-    for klass in Company_Company.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_company_has_airportEmployees():
-    assert hasattr(Company_Company, "airportEmployees")
-    descriptor = None
-    for klass in Company_Company.__mro__:
-        if "airportEmployees" in klass.__dict__:
-            descriptor = klass.__dict__["airportEmployees"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company_company_has_stewards():
-    assert hasattr(Company_Company, "stewards")
-    descriptor = None
-    for klass in Company_Company.__mro__:
-        if "stewards" in klass.__dict__:
-            descriptor = klass.__dict__["stewards"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_employee_employee_is_not_abstract():
-    assert not inspect.isabstract(Employee_Employee)
-
-
-def test_employee_employee_constructor_exists():
-    assert callable(Employee_Employee.__init__)
-
-
-def test_employee_employee_constructor_args():
-    sig = inspect.signature(Employee_Employee.__init__)
-    params = list(sig.parameters.keys())
-    assert "gender" in params, "Missing parameter 'gender'"
-    assert "dayByWeek" in params, "Missing parameter 'dayByWeek'"
-    assert "JobType" in params, "Missing parameter 'JobType'"
-    assert "isSuperUser" in params, "Missing parameter 'isSuperUser'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_employee_employee_has_gender():
-    assert hasattr(Employee_Employee, "gender")
-    descriptor = None
-    for klass in Employee_Employee.__mro__:
-        if "gender" in klass.__dict__:
-            descriptor = klass.__dict__["gender"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_employee_has_dayByWeek():
-    assert hasattr(Employee_Employee, "dayByWeek")
-    descriptor = None
-    for klass in Employee_Employee.__mro__:
-        if "dayByWeek" in klass.__dict__:
-            descriptor = klass.__dict__["dayByWeek"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_employee_has_JobType():
-    assert hasattr(Employee_Employee, "JobType")
-    descriptor = None
-    for klass in Employee_Employee.__mro__:
-        if "JobType" in klass.__dict__:
-            descriptor = klass.__dict__["JobType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_employee_has_isSuperUser():
-    assert hasattr(Employee_Employee, "isSuperUser")
-    descriptor = None
-    for klass in Employee_Employee.__mro__:
-        if "isSuperUser" in klass.__dict__:
-            descriptor = klass.__dict__["isSuperUser"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_employee_has_name():
-    assert hasattr(Employee_Employee, "name")
-    descriptor = None
-    for klass in Employee_Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_employee_airportemployee_is_not_abstract():
-    assert not inspect.isabstract(Employee_AirportEmployee)
-
-
-def test_employee_airportemployee_constructor_exists():
-    assert callable(Employee_AirportEmployee.__init__)
-
-
-def test_employee_airportemployee_constructor_args():
-    sig = inspect.signature(Employee_AirportEmployee.__init__)
-    params = list(sig.parameters.keys())
-    assert "airport" in params, "Missing parameter 'airport'"
-
-def test_employee_airportemployee_has_airport():
-    assert hasattr(Employee_AirportEmployee, "airport")
-    descriptor = None
-    for klass in Employee_AirportEmployee.__mro__:
-        if "airport" in klass.__dict__:
-            descriptor = klass.__dict__["airport"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_employee_pilot_is_not_abstract():
-    assert not inspect.isabstract(Employee_Pilot)
-
-
-def test_employee_pilot_constructor_exists():
-    assert callable(Employee_Pilot.__init__)
-
-
-def test_employee_pilot_constructor_args():
-    sig = inspect.signature(Employee_Pilot.__init__)
-    params = list(sig.parameters.keys())
-    assert "plane" in params, "Missing parameter 'plane'"
-    assert "airport" in params, "Missing parameter 'airport'"
-
-def test_employee_pilot_has_plane():
-    assert hasattr(Employee_Pilot, "plane")
-    descriptor = None
-    for klass in Employee_Pilot.__mro__:
-        if "plane" in klass.__dict__:
-            descriptor = klass.__dict__["plane"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_pilot_has_airport():
-    assert hasattr(Employee_Pilot, "airport")
-    descriptor = None
-    for klass in Employee_Pilot.__mro__:
-        if "airport" in klass.__dict__:
-            descriptor = klass.__dict__["airport"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_employee_steward_is_not_abstract():
-    assert not inspect.isabstract(Employee_Steward)
-
-
-def test_employee_steward_constructor_exists():
-    assert callable(Employee_Steward.__init__)
-
-
-def test_employee_steward_constructor_args():
-    sig = inspect.signature(Employee_Steward.__init__)
-    params = list(sig.parameters.keys())
-    assert "plane" in params, "Missing parameter 'plane'"
-    assert "airport" in params, "Missing parameter 'airport'"
-
-def test_employee_steward_has_plane():
-    assert hasattr(Employee_Steward, "plane")
-    descriptor = None
-    for klass in Employee_Steward.__mro__:
-        if "plane" in klass.__dict__:
-            descriptor = klass.__dict__["plane"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_steward_has_airport():
-    assert hasattr(Employee_Steward, "airport")
-    descriptor = None
-    for klass in Employee_Steward.__mro__:
-        if "airport" in klass.__dict__:
-            descriptor = klass.__dict__["airport"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_employee_iemployee_interface_is_not_abstract():
-    assert not inspect.isabstract(Employee_IEmployee_Interface)
-
-
-def test_employee_iemployee_interface_constructor_exists():
-    assert callable(Employee_IEmployee_Interface.__init__)
-
-
-def test_employee_iemployee_interface_constructor_args():
-    sig = inspect.signature(Employee_IEmployee_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controller_flightevent_is_not_abstract():
-    assert not inspect.isabstract(Controller_FlightEvent)
-
-
-def test_controller_flightevent_constructor_exists():
-    assert callable(Controller_FlightEvent.__init__)
-
-
-def test_controller_flightevent_constructor_args():
-    sig = inspect.signature(Controller_FlightEvent.__init__)
-    params = list(sig.parameters.keys())
-    assert "_dateBegin" in params, "Missing parameter '_dateBegin'"
-    assert "_title" in params, "Missing parameter '_title'"
-    assert "_dateEnd" in params, "Missing parameter '_dateEnd'"
-    assert "flight" in params, "Missing parameter 'flight'"
-
-def test_controller_flightevent_has__dateBegin():
-    assert hasattr(Controller_FlightEvent, "_dateBegin")
-    descriptor = None
-    for klass in Controller_FlightEvent.__mro__:
-        if "_dateBegin" in klass.__dict__:
-            descriptor = klass.__dict__["_dateBegin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_flightevent_has__title():
-    assert hasattr(Controller_FlightEvent, "_title")
-    descriptor = None
-    for klass in Controller_FlightEvent.__mro__:
-        if "_title" in klass.__dict__:
-            descriptor = klass.__dict__["_title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_flightevent_has__dateEnd():
-    assert hasattr(Controller_FlightEvent, "_dateEnd")
-    descriptor = None
-    for klass in Controller_FlightEvent.__mro__:
-        if "_dateEnd" in klass.__dict__:
-            descriptor = klass.__dict__["_dateEnd"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_controller_flightevent_has_flight():
-    assert hasattr(Controller_FlightEvent, "flight")
-    descriptor = None
-    for klass in Controller_FlightEvent.__mro__:
-        if "flight" in klass.__dict__:
-            descriptor = klass.__dict__["flight"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1132,17 +362,8 @@ def test_providersystem_provider_constructor_exists():
 def test_providersystem_provider_constructor_args():
     sig = inspect.signature(ProviderSystem_Provider.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "pricePerUnit" in params, "Missing parameter 'pricePerUnit'"
-
-def test_providersystem_provider_has_name():
-    assert hasattr(ProviderSystem_Provider, "name")
-    descriptor = None
-    for klass in ProviderSystem_Provider.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_providersystem_provider_has_pricePerUnit():
     assert hasattr(ProviderSystem_Provider, "pricePerUnit")
@@ -1150,6 +371,15 @@ def test_providersystem_provider_has_pricePerUnit():
     for klass in ProviderSystem_Provider.__mro__:
         if "pricePerUnit" in klass.__dict__:
             descriptor = klass.__dict__["pricePerUnit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_providersystem_provider_has_name():
+    assert hasattr(ProviderSystem_Provider, "name")
+    descriptor = None
+    for klass in ProviderSystem_Provider.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -1200,28 +430,10 @@ def test_providersystem_fuel_constructor_exists():
 def test_providersystem_fuel_constructor_args():
     sig = inspect.signature(ProviderSystem_Fuel.__init__)
     params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
-    assert "plane" in params, "Missing parameter 'plane'"
     assert "_price" in params, "Missing parameter '_price'"
     assert "volme" in params, "Missing parameter 'volme'"
-
-def test_providersystem_fuel_has_date():
-    assert hasattr(ProviderSystem_Fuel, "date")
-    descriptor = None
-    for klass in ProviderSystem_Fuel.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_providersystem_fuel_has_plane():
-    assert hasattr(ProviderSystem_Fuel, "plane")
-    descriptor = None
-    for klass in ProviderSystem_Fuel.__mro__:
-        if "plane" in klass.__dict__:
-            descriptor = klass.__dict__["plane"]
-            break
-    assert isinstance(descriptor, property)
+    assert "plane" in params, "Missing parameter 'plane'"
+    assert "date" in params, "Missing parameter 'date'"
 
 def test_providersystem_fuel_has__price():
     assert hasattr(ProviderSystem_Fuel, "_price")
@@ -1238,6 +450,24 @@ def test_providersystem_fuel_has_volme():
     for klass in ProviderSystem_Fuel.__mro__:
         if "volme" in klass.__dict__:
             descriptor = klass.__dict__["volme"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_providersystem_fuel_has_plane():
+    assert hasattr(ProviderSystem_Fuel, "plane")
+    descriptor = None
+    for klass in ProviderSystem_Fuel.__mro__:
+        if "plane" in klass.__dict__:
+            descriptor = klass.__dict__["plane"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_providersystem_fuel_has_date():
+    assert hasattr(ProviderSystem_Fuel, "date")
+    descriptor = None
+    for klass in ProviderSystem_Fuel.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -1310,6 +540,1098 @@ def test_luggage_checkin_usecase_constructor_exists():
 def test_luggage_checkin_usecase_constructor_args():
     sig = inspect.signature(Luggage_Checkin_UseCase.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_addasurbooking_usecase_is_not_abstract():
+    assert not inspect.isabstract(AddASurbooking_UseCase)
+
+
+def test_addasurbooking_usecase_constructor_exists():
+    assert callable(AddASurbooking_UseCase.__init__)
+
+
+def test_addasurbooking_usecase_constructor_args():
+    sig = inspect.signature(AddASurbooking_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_waitinglist_usecase_is_not_abstract():
+    assert not inspect.isabstract(WaitingList_UseCase)
+
+
+def test_waitinglist_usecase_constructor_exists():
+    assert callable(WaitingList_UseCase.__init__)
+
+
+def test_waitinglist_usecase_constructor_args():
+    sig = inspect.signature(WaitingList_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_changeseat_usecase_is_not_abstract():
+    assert not inspect.isabstract(ChangeSeat_UseCase)
+
+
+def test_changeseat_usecase_constructor_exists():
+    assert callable(ChangeSeat_UseCase.__init__)
+
+
+def test_changeseat_usecase_constructor_args():
+    sig = inspect.signature(ChangeSeat_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_checkseat_usecase_is_not_abstract():
+    assert not inspect.isabstract(CheckSeat_UseCase)
+
+
+def test_checkseat_usecase_constructor_exists():
+    assert callable(CheckSeat_UseCase.__init__)
+
+
+def test_checkseat_usecase_constructor_args():
+    sig = inspect.signature(CheckSeat_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_checkinformations_usecase_is_not_abstract():
+    assert not inspect.isabstract(CheckInformations_UseCase)
+
+
+def test_checkinformations_usecase_constructor_exists():
+    assert callable(CheckInformations_UseCase.__init__)
+
+
+def test_checkinformations_usecase_constructor_args():
+    sig = inspect.signature(CheckInformations_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_checkinforflight_usecase_is_not_abstract():
+    assert not inspect.isabstract(CheckInForFlight_UseCase)
+
+
+def test_checkinforflight_usecase_constructor_exists():
+    assert callable(CheckInForFlight_UseCase.__init__)
+
+
+def test_checkinforflight_usecase_constructor_args():
+    sig = inspect.signature(CheckInForFlight_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bybookingnumber_usecase_is_not_abstract():
+    assert not inspect.isabstract(ByBookingNumber_UseCase)
+
+
+def test_bybookingnumber_usecase_constructor_exists():
+    assert callable(ByBookingNumber_UseCase.__init__)
+
+
+def test_bybookingnumber_usecase_constructor_args():
+    sig = inspect.signature(ByBookingNumber_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_byname_usecase_is_not_abstract():
+    assert not inspect.isabstract(ByName_UseCase)
+
+
+def test_byname_usecase_constructor_exists():
+    assert callable(ByName_UseCase.__init__)
+
+
+def test_byname_usecase_constructor_args():
+    sig = inspect.signature(ByName_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_passengeridentification_usecase_is_not_abstract():
+    assert not inspect.isabstract(PassengerIdentification_UseCase)
+
+
+def test_passengeridentification_usecase_constructor_exists():
+    assert callable(PassengerIdentification_UseCase.__init__)
+
+
+def test_passengeridentification_usecase_constructor_args():
+    sig = inspect.signature(PassengerIdentification_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_passengercheckin_usecase_is_not_abstract():
+    assert not inspect.isabstract(PassengerCheckIn_UseCase)
+
+
+def test_passengercheckin_usecase_constructor_exists():
+    assert callable(PassengerCheckIn_UseCase.__init__)
+
+
+def test_passengercheckin_usecase_constructor_args():
+    sig = inspect.signature(PassengerCheckIn_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_employee_actor1_is_not_abstract():
+    assert not inspect.isabstract(Employee_Actor1)
+
+
+def test_employee_actor1_constructor_exists():
+    assert callable(Employee_Actor1.__init__)
+
+
+def test_employee_actor1_constructor_args():
+    sig = inspect.signature(Employee_Actor1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_distribute_usecase_is_not_abstract():
+    assert not inspect.isabstract(Distribute_UseCase)
+
+
+def test_distribute_usecase_constructor_exists():
+    assert callable(Distribute_UseCase.__init__)
+
+
+def test_distribute_usecase_constructor_args():
+    sig = inspect.signature(Distribute_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seller_actor_is_not_abstract():
+    assert not inspect.isabstract(Seller_Actor)
+
+
+def test_seller_actor_constructor_exists():
+    assert callable(Seller_Actor.__init__)
+
+
+def test_seller_actor_constructor_args():
+    sig = inspect.signature(Seller_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_onlinebuy_usecase_is_not_abstract():
+    assert not inspect.isabstract(OnlineBuy_UseCase)
+
+
+def test_onlinebuy_usecase_constructor_exists():
+    assert callable(OnlineBuy_UseCase.__init__)
+
+
+def test_onlinebuy_usecase_constructor_args():
+    sig = inspect.signature(OnlineBuy_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_customer_actor_is_not_abstract():
+    assert not inspect.isabstract(Customer_Actor)
+
+
+def test_customer_actor_constructor_exists():
+    assert callable(Customer_Actor.__init__)
+
+
+def test_customer_actor_constructor_args():
+    sig = inspect.signature(Customer_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_user_actor1_is_not_abstract():
+    assert not inspect.isabstract(User_Actor1)
+
+
+def test_user_actor1_constructor_exists():
+    assert callable(User_Actor1.__init__)
+
+
+def test_user_actor1_constructor_args():
+    sig = inspect.signature(User_Actor1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ui_flightplanning_component_is_not_abstract():
+    assert not inspect.isabstract(UI_FlightPlanning_Component)
+
+
+def test_ui_flightplanning_component_constructor_exists():
+    assert callable(UI_FlightPlanning_Component.__init__)
+
+
+def test_ui_flightplanning_component_constructor_args():
+    sig = inspect.signature(UI_FlightPlanning_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ui_flightmanager_component_is_not_abstract():
+    assert not inspect.isabstract(UI_FlightManager_Component)
+
+
+def test_ui_flightmanager_component_constructor_exists():
+    assert callable(UI_FlightManager_Component.__init__)
+
+
+def test_ui_flightmanager_component_constructor_args():
+    sig = inspect.signature(UI_FlightManager_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_employee_actor_is_not_abstract():
+    assert not inspect.isabstract(Employee_Actor)
+
+
+def test_employee_actor_constructor_exists():
+    assert callable(Employee_Actor.__init__)
+
+
+def test_employee_actor_constructor_args():
+    sig = inspect.signature(Employee_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ui_employeeplanning_component_is_not_abstract():
+    assert not inspect.isabstract(UI_EmployeePlanning_Component)
+
+
+def test_ui_employeeplanning_component_constructor_exists():
+    assert callable(UI_EmployeePlanning_Component.__init__)
+
+
+def test_ui_employeeplanning_component_constructor_args():
+    sig = inspect.signature(UI_EmployeePlanning_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ui_employeemanager_component_is_not_abstract():
+    assert not inspect.isabstract(UI_EmployeeManager_Component)
+
+
+def test_ui_employeemanager_component_constructor_exists():
+    assert callable(UI_EmployeeManager_Component.__init__)
+
+
+def test_ui_employeemanager_component_constructor_args():
+    sig = inspect.signature(UI_EmployeeManager_Component.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_admin_actor1_is_not_abstract():
+    assert not inspect.isabstract(Admin_Actor1)
+
+
+def test_admin_actor1_constructor_exists():
+    assert callable(Admin_Actor1.__init__)
+
+
+def test_admin_actor1_constructor_args():
+    sig = inspect.signature(Admin_Actor1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_admin_actor_is_not_abstract():
+    assert not inspect.isabstract(Admin_Actor)
+
+
+def test_admin_actor_constructor_exists():
+    assert callable(Admin_Actor.__init__)
+
+
+def test_admin_actor_constructor_args():
+    sig = inspect.signature(Admin_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_user_actor_is_not_abstract():
+    assert not inspect.isabstract(User_Actor)
+
+
+def test_user_actor_constructor_exists():
+    assert callable(User_Actor.__init__)
+
+
+def test_user_actor_constructor_args():
+    sig = inspect.signature(User_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_distributionsystem_ticketdistributor_is_not_abstract():
+    assert not inspect.isabstract(DistributionSystem_TicketDistributor)
+
+
+def test_distributionsystem_ticketdistributor_constructor_exists():
+    assert callable(DistributionSystem_TicketDistributor.__init__)
+
+
+def test_distributionsystem_ticketdistributor_constructor_args():
+    sig = inspect.signature(DistributionSystem_TicketDistributor.__init__)
+    params = list(sig.parameters.keys())
+    assert "from" in params, "Missing parameter 'from'"
+    assert "payment" in params, "Missing parameter 'payment'"
+
+def test_distributionsystem_ticketdistributor_has_from():
+    assert hasattr(DistributionSystem_TicketDistributor, "from")
+    descriptor = None
+    for klass in DistributionSystem_TicketDistributor.__mro__:
+        if "from" in klass.__dict__:
+            descriptor = klass.__dict__["from"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_ticketdistributor_has_payment():
+    assert hasattr(DistributionSystem_TicketDistributor, "payment")
+    descriptor = None
+    for klass in DistributionSystem_TicketDistributor.__mro__:
+        if "payment" in klass.__dict__:
+            descriptor = klass.__dict__["payment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_distributionsystem_customer_is_not_abstract():
+    assert not inspect.isabstract(DistributionSystem_Customer)
+
+
+def test_distributionsystem_customer_constructor_exists():
+    assert callable(DistributionSystem_Customer.__init__)
+
+
+def test_distributionsystem_customer_constructor_args():
+    sig = inspect.signature(DistributionSystem_Customer.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "_milesFlyed" in params, "Missing parameter '_milesFlyed'"
+    assert "Luggage" in params, "Missing parameter 'Luggage'"
+
+def test_distributionsystem_customer_has_name():
+    assert hasattr(DistributionSystem_Customer, "name")
+    descriptor = None
+    for klass in DistributionSystem_Customer.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_customer_has__milesFlyed():
+    assert hasattr(DistributionSystem_Customer, "_milesFlyed")
+    descriptor = None
+    for klass in DistributionSystem_Customer.__mro__:
+        if "_milesFlyed" in klass.__dict__:
+            descriptor = klass.__dict__["_milesFlyed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_customer_has_Luggage():
+    assert hasattr(DistributionSystem_Customer, "Luggage")
+    descriptor = None
+    for klass in DistributionSystem_Customer.__mro__:
+        if "Luggage" in klass.__dict__:
+            descriptor = klass.__dict__["Luggage"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_distributionsystem_boardingpass_is_not_abstract():
+    assert not inspect.isabstract(DistributionSystem_BoardingPass)
+
+
+def test_distributionsystem_boardingpass_constructor_exists():
+    assert callable(DistributionSystem_BoardingPass.__init__)
+
+
+def test_distributionsystem_boardingpass_constructor_args():
+    sig = inspect.signature(DistributionSystem_BoardingPass.__init__)
+    params = list(sig.parameters.keys())
+    assert "price" in params, "Missing parameter 'price'"
+    assert "row" in params, "Missing parameter 'row'"
+    assert "seat" in params, "Missing parameter 'seat'"
+    assert "isValidated" in params, "Missing parameter 'isValidated'"
+    assert "dateOfPurchase" in params, "Missing parameter 'dateOfPurchase'"
+    assert "flight" in params, "Missing parameter 'flight'"
+
+def test_distributionsystem_boardingpass_has_price():
+    assert hasattr(DistributionSystem_BoardingPass, "price")
+    descriptor = None
+    for klass in DistributionSystem_BoardingPass.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_boardingpass_has_row():
+    assert hasattr(DistributionSystem_BoardingPass, "row")
+    descriptor = None
+    for klass in DistributionSystem_BoardingPass.__mro__:
+        if "row" in klass.__dict__:
+            descriptor = klass.__dict__["row"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_boardingpass_has_seat():
+    assert hasattr(DistributionSystem_BoardingPass, "seat")
+    descriptor = None
+    for klass in DistributionSystem_BoardingPass.__mro__:
+        if "seat" in klass.__dict__:
+            descriptor = klass.__dict__["seat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_boardingpass_has_isValidated():
+    assert hasattr(DistributionSystem_BoardingPass, "isValidated")
+    descriptor = None
+    for klass in DistributionSystem_BoardingPass.__mro__:
+        if "isValidated" in klass.__dict__:
+            descriptor = klass.__dict__["isValidated"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_boardingpass_has_dateOfPurchase():
+    assert hasattr(DistributionSystem_BoardingPass, "dateOfPurchase")
+    descriptor = None
+    for klass in DistributionSystem_BoardingPass.__mro__:
+        if "dateOfPurchase" in klass.__dict__:
+            descriptor = klass.__dict__["dateOfPurchase"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_boardingpass_has_flight():
+    assert hasattr(DistributionSystem_BoardingPass, "flight")
+    descriptor = None
+    for klass in DistributionSystem_BoardingPass.__mro__:
+        if "flight" in klass.__dict__:
+            descriptor = klass.__dict__["flight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_distributionsystem_ticket_is_not_abstract():
+    assert not inspect.isabstract(DistributionSystem_Ticket)
+
+
+def test_distributionsystem_ticket_constructor_exists():
+    assert callable(DistributionSystem_Ticket.__init__)
+
+
+def test_distributionsystem_ticket_constructor_args():
+    sig = inspect.signature(DistributionSystem_Ticket.__init__)
+    params = list(sig.parameters.keys())
+    assert "_price" in params, "Missing parameter '_price'"
+    assert "payment" in params, "Missing parameter 'payment'"
+    assert "isRegistered" in params, "Missing parameter 'isRegistered'"
+    assert "_numberPlace" in params, "Missing parameter '_numberPlace'"
+    assert "from" in params, "Missing parameter 'from'"
+
+def test_distributionsystem_ticket_has__price():
+    assert hasattr(DistributionSystem_Ticket, "_price")
+    descriptor = None
+    for klass in DistributionSystem_Ticket.__mro__:
+        if "_price" in klass.__dict__:
+            descriptor = klass.__dict__["_price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_ticket_has_payment():
+    assert hasattr(DistributionSystem_Ticket, "payment")
+    descriptor = None
+    for klass in DistributionSystem_Ticket.__mro__:
+        if "payment" in klass.__dict__:
+            descriptor = klass.__dict__["payment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_ticket_has_isRegistered():
+    assert hasattr(DistributionSystem_Ticket, "isRegistered")
+    descriptor = None
+    for klass in DistributionSystem_Ticket.__mro__:
+        if "isRegistered" in klass.__dict__:
+            descriptor = klass.__dict__["isRegistered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_ticket_has__numberPlace():
+    assert hasattr(DistributionSystem_Ticket, "_numberPlace")
+    descriptor = None
+    for klass in DistributionSystem_Ticket.__mro__:
+        if "_numberPlace" in klass.__dict__:
+            descriptor = klass.__dict__["_numberPlace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_distributionsystem_ticket_has_from():
+    assert hasattr(DistributionSystem_Ticket, "from")
+    descriptor = None
+    for klass in DistributionSystem_Ticket.__mro__:
+        if "from" in klass.__dict__:
+            descriptor = klass.__dict__["from"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_flightsystem_plane_is_not_abstract():
+    assert not inspect.isabstract(FlightSystem_Plane)
+
+
+def test_flightsystem_plane_constructor_exists():
+    assert callable(FlightSystem_Plane.__init__)
+
+
+def test_flightsystem_plane_constructor_args():
+    sig = inspect.signature(FlightSystem_Plane.__init__)
+    params = list(sig.parameters.keys())
+    assert "_location" in params, "Missing parameter '_location'"
+    assert "_millesSinceRevisionned" in params, "Missing parameter '_millesSinceRevisionned'"
+    assert "row" in params, "Missing parameter 'row'"
+    assert "seatPerRow" in params, "Missing parameter 'seatPerRow'"
+    assert "_millesFlyed" in params, "Missing parameter '_millesFlyed'"
+    assert "nbSteward" in params, "Missing parameter 'nbSteward'"
+    assert "_crew" in params, "Missing parameter '_crew'"
+    assert "_state" in params, "Missing parameter '_state'"
+    assert "nbPilote" in params, "Missing parameter 'nbPilote'"
+    assert "_flySinceRefuel" in params, "Missing parameter '_flySinceRefuel'"
+    assert "_seat" in params, "Missing parameter '_seat'"
+
+def test_flightsystem_plane_has__location():
+    assert hasattr(FlightSystem_Plane, "_location")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_location" in klass.__dict__:
+            descriptor = klass.__dict__["_location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has__millesSinceRevisionned():
+    assert hasattr(FlightSystem_Plane, "_millesSinceRevisionned")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_millesSinceRevisionned" in klass.__dict__:
+            descriptor = klass.__dict__["_millesSinceRevisionned"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has_row():
+    assert hasattr(FlightSystem_Plane, "row")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "row" in klass.__dict__:
+            descriptor = klass.__dict__["row"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has_seatPerRow():
+    assert hasattr(FlightSystem_Plane, "seatPerRow")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "seatPerRow" in klass.__dict__:
+            descriptor = klass.__dict__["seatPerRow"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has__millesFlyed():
+    assert hasattr(FlightSystem_Plane, "_millesFlyed")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_millesFlyed" in klass.__dict__:
+            descriptor = klass.__dict__["_millesFlyed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has_nbSteward():
+    assert hasattr(FlightSystem_Plane, "nbSteward")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "nbSteward" in klass.__dict__:
+            descriptor = klass.__dict__["nbSteward"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has__crew():
+    assert hasattr(FlightSystem_Plane, "_crew")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_crew" in klass.__dict__:
+            descriptor = klass.__dict__["_crew"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has__state():
+    assert hasattr(FlightSystem_Plane, "_state")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_state" in klass.__dict__:
+            descriptor = klass.__dict__["_state"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has_nbPilote():
+    assert hasattr(FlightSystem_Plane, "nbPilote")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "nbPilote" in klass.__dict__:
+            descriptor = klass.__dict__["nbPilote"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has__flySinceRefuel():
+    assert hasattr(FlightSystem_Plane, "_flySinceRefuel")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_flySinceRefuel" in klass.__dict__:
+            descriptor = klass.__dict__["_flySinceRefuel"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_plane_has__seat():
+    assert hasattr(FlightSystem_Plane, "_seat")
+    descriptor = None
+    for klass in FlightSystem_Plane.__mro__:
+        if "_seat" in klass.__dict__:
+            descriptor = klass.__dict__["_seat"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_flightsystem_flight_is_not_abstract():
+    assert not inspect.isabstract(FlightSystem_Flight)
+
+
+def test_flightsystem_flight_constructor_exists():
+    assert callable(FlightSystem_Flight.__init__)
+
+
+def test_flightsystem_flight_constructor_args():
+    sig = inspect.signature(FlightSystem_Flight.__init__)
+    params = list(sig.parameters.keys())
+    assert "flightType" in params, "Missing parameter 'flightType'"
+    assert "airportTo" in params, "Missing parameter 'airportTo'"
+    assert "_miles" in params, "Missing parameter '_miles'"
+    assert "_duration" in params, "Missing parameter '_duration'"
+    assert "airportFrom" in params, "Missing parameter 'airportFrom'"
+    assert "schedule" in params, "Missing parameter 'schedule'"
+
+def test_flightsystem_flight_has_flightType():
+    assert hasattr(FlightSystem_Flight, "flightType")
+    descriptor = None
+    for klass in FlightSystem_Flight.__mro__:
+        if "flightType" in klass.__dict__:
+            descriptor = klass.__dict__["flightType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_flight_has_airportTo():
+    assert hasattr(FlightSystem_Flight, "airportTo")
+    descriptor = None
+    for klass in FlightSystem_Flight.__mro__:
+        if "airportTo" in klass.__dict__:
+            descriptor = klass.__dict__["airportTo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_flight_has__miles():
+    assert hasattr(FlightSystem_Flight, "_miles")
+    descriptor = None
+    for klass in FlightSystem_Flight.__mro__:
+        if "_miles" in klass.__dict__:
+            descriptor = klass.__dict__["_miles"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_flight_has__duration():
+    assert hasattr(FlightSystem_Flight, "_duration")
+    descriptor = None
+    for klass in FlightSystem_Flight.__mro__:
+        if "_duration" in klass.__dict__:
+            descriptor = klass.__dict__["_duration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_flight_has_airportFrom():
+    assert hasattr(FlightSystem_Flight, "airportFrom")
+    descriptor = None
+    for klass in FlightSystem_Flight.__mro__:
+        if "airportFrom" in klass.__dict__:
+            descriptor = klass.__dict__["airportFrom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flightsystem_flight_has_schedule():
+    assert hasattr(FlightSystem_Flight, "schedule")
+    descriptor = None
+    for klass in FlightSystem_Flight.__mro__:
+        if "schedule" in klass.__dict__:
+            descriptor = klass.__dict__["schedule"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_company_airport_is_not_abstract():
+    assert not inspect.isabstract(Company_Airport)
+
+
+def test_company_airport_constructor_exists():
+    assert callable(Company_Airport.__init__)
+
+
+def test_company_airport_constructor_args():
+    sig = inspect.signature(Company_Airport.__init__)
+    params = list(sig.parameters.keys())
+    assert "beginSchedule" in params, "Missing parameter 'beginSchedule'"
+    assert "endSchedule" in params, "Missing parameter 'endSchedule'"
+    assert "ticketPrice" in params, "Missing parameter 'ticketPrice'"
+    assert "city" in params, "Missing parameter 'city'"
+    assert "ticketCharges" in params, "Missing parameter 'ticketCharges'"
+
+def test_company_airport_has_beginSchedule():
+    assert hasattr(Company_Airport, "beginSchedule")
+    descriptor = None
+    for klass in Company_Airport.__mro__:
+        if "beginSchedule" in klass.__dict__:
+            descriptor = klass.__dict__["beginSchedule"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_airport_has_endSchedule():
+    assert hasattr(Company_Airport, "endSchedule")
+    descriptor = None
+    for klass in Company_Airport.__mro__:
+        if "endSchedule" in klass.__dict__:
+            descriptor = klass.__dict__["endSchedule"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_airport_has_ticketPrice():
+    assert hasattr(Company_Airport, "ticketPrice")
+    descriptor = None
+    for klass in Company_Airport.__mro__:
+        if "ticketPrice" in klass.__dict__:
+            descriptor = klass.__dict__["ticketPrice"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_airport_has_city():
+    assert hasattr(Company_Airport, "city")
+    descriptor = None
+    for klass in Company_Airport.__mro__:
+        if "city" in klass.__dict__:
+            descriptor = klass.__dict__["city"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_airport_has_ticketCharges():
+    assert hasattr(Company_Airport, "ticketCharges")
+    descriptor = None
+    for klass in Company_Airport.__mro__:
+        if "ticketCharges" in klass.__dict__:
+            descriptor = klass.__dict__["ticketCharges"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_company_company_is_not_abstract():
+    assert not inspect.isabstract(Company_Company)
+
+
+def test_company_company_constructor_exists():
+    assert callable(Company_Company.__init__)
+
+
+def test_company_company_constructor_args():
+    sig = inspect.signature(Company_Company.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "pilots" in params, "Missing parameter 'pilots'"
+    assert "stewards" in params, "Missing parameter 'stewards'"
+    assert "airportEmployees" in params, "Missing parameter 'airportEmployees'"
+
+def test_company_company_has_name():
+    assert hasattr(Company_Company, "name")
+    descriptor = None
+    for klass in Company_Company.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_company_has_pilots():
+    assert hasattr(Company_Company, "pilots")
+    descriptor = None
+    for klass in Company_Company.__mro__:
+        if "pilots" in klass.__dict__:
+            descriptor = klass.__dict__["pilots"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_company_has_stewards():
+    assert hasattr(Company_Company, "stewards")
+    descriptor = None
+    for klass in Company_Company.__mro__:
+        if "stewards" in klass.__dict__:
+            descriptor = klass.__dict__["stewards"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_company_has_airportEmployees():
+    assert hasattr(Company_Company, "airportEmployees")
+    descriptor = None
+    for klass in Company_Company.__mro__:
+        if "airportEmployees" in klass.__dict__:
+            descriptor = klass.__dict__["airportEmployees"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_employee_employee_is_not_abstract():
+    assert not inspect.isabstract(Employee_Employee)
+
+
+def test_employee_employee_constructor_exists():
+    assert callable(Employee_Employee.__init__)
+
+
+def test_employee_employee_constructor_args():
+    sig = inspect.signature(Employee_Employee.__init__)
+    params = list(sig.parameters.keys())
+    assert "isSuperUser" in params, "Missing parameter 'isSuperUser'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "dayByWeek" in params, "Missing parameter 'dayByWeek'"
+    assert "gender" in params, "Missing parameter 'gender'"
+    assert "JobType" in params, "Missing parameter 'JobType'"
+
+def test_employee_employee_has_isSuperUser():
+    assert hasattr(Employee_Employee, "isSuperUser")
+    descriptor = None
+    for klass in Employee_Employee.__mro__:
+        if "isSuperUser" in klass.__dict__:
+            descriptor = klass.__dict__["isSuperUser"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_employee_has_name():
+    assert hasattr(Employee_Employee, "name")
+    descriptor = None
+    for klass in Employee_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_employee_has_dayByWeek():
+    assert hasattr(Employee_Employee, "dayByWeek")
+    descriptor = None
+    for klass in Employee_Employee.__mro__:
+        if "dayByWeek" in klass.__dict__:
+            descriptor = klass.__dict__["dayByWeek"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_employee_has_gender():
+    assert hasattr(Employee_Employee, "gender")
+    descriptor = None
+    for klass in Employee_Employee.__mro__:
+        if "gender" in klass.__dict__:
+            descriptor = klass.__dict__["gender"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_employee_has_JobType():
+    assert hasattr(Employee_Employee, "JobType")
+    descriptor = None
+    for klass in Employee_Employee.__mro__:
+        if "JobType" in klass.__dict__:
+            descriptor = klass.__dict__["JobType"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_employee_airportemployee_is_not_abstract():
+    assert not inspect.isabstract(Employee_AirportEmployee)
+
+
+def test_employee_airportemployee_constructor_exists():
+    assert callable(Employee_AirportEmployee.__init__)
+
+
+def test_employee_airportemployee_constructor_args():
+    sig = inspect.signature(Employee_AirportEmployee.__init__)
+    params = list(sig.parameters.keys())
+    assert "airport" in params, "Missing parameter 'airport'"
+
+def test_employee_airportemployee_has_airport():
+    assert hasattr(Employee_AirportEmployee, "airport")
+    descriptor = None
+    for klass in Employee_AirportEmployee.__mro__:
+        if "airport" in klass.__dict__:
+            descriptor = klass.__dict__["airport"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_employee_pilot_is_not_abstract():
+    assert not inspect.isabstract(Employee_Pilot)
+
+
+def test_employee_pilot_constructor_exists():
+    assert callable(Employee_Pilot.__init__)
+
+
+def test_employee_pilot_constructor_args():
+    sig = inspect.signature(Employee_Pilot.__init__)
+    params = list(sig.parameters.keys())
+    assert "plane" in params, "Missing parameter 'plane'"
+    assert "airport" in params, "Missing parameter 'airport'"
+
+def test_employee_pilot_has_plane():
+    assert hasattr(Employee_Pilot, "plane")
+    descriptor = None
+    for klass in Employee_Pilot.__mro__:
+        if "plane" in klass.__dict__:
+            descriptor = klass.__dict__["plane"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_pilot_has_airport():
+    assert hasattr(Employee_Pilot, "airport")
+    descriptor = None
+    for klass in Employee_Pilot.__mro__:
+        if "airport" in klass.__dict__:
+            descriptor = klass.__dict__["airport"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_employee_steward_is_not_abstract():
+    assert not inspect.isabstract(Employee_Steward)
+
+
+def test_employee_steward_constructor_exists():
+    assert callable(Employee_Steward.__init__)
+
+
+def test_employee_steward_constructor_args():
+    sig = inspect.signature(Employee_Steward.__init__)
+    params = list(sig.parameters.keys())
+    assert "airport" in params, "Missing parameter 'airport'"
+    assert "plane" in params, "Missing parameter 'plane'"
+
+def test_employee_steward_has_airport():
+    assert hasattr(Employee_Steward, "airport")
+    descriptor = None
+    for klass in Employee_Steward.__mro__:
+        if "airport" in klass.__dict__:
+            descriptor = klass.__dict__["airport"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_steward_has_plane():
+    assert hasattr(Employee_Steward, "plane")
+    descriptor = None
+    for klass in Employee_Steward.__mro__:
+        if "plane" in klass.__dict__:
+            descriptor = klass.__dict__["plane"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_employee_iemployee_interface_is_not_abstract():
+    assert not inspect.isabstract(Employee_IEmployee_Interface)
+
+
+def test_employee_iemployee_interface_constructor_exists():
+    assert callable(Employee_IEmployee_Interface.__init__)
+
+
+def test_employee_iemployee_interface_constructor_args():
+    sig = inspect.signature(Employee_IEmployee_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_controller_flightevent_is_not_abstract():
+    assert not inspect.isabstract(Controller_FlightEvent)
+
+
+def test_controller_flightevent_constructor_exists():
+    assert callable(Controller_FlightEvent.__init__)
+
+
+def test_controller_flightevent_constructor_args():
+    sig = inspect.signature(Controller_FlightEvent.__init__)
+    params = list(sig.parameters.keys())
+    assert "_dateBegin" in params, "Missing parameter '_dateBegin'"
+    assert "flight" in params, "Missing parameter 'flight'"
+    assert "_title" in params, "Missing parameter '_title'"
+    assert "_dateEnd" in params, "Missing parameter '_dateEnd'"
+
+def test_controller_flightevent_has__dateBegin():
+    assert hasattr(Controller_FlightEvent, "_dateBegin")
+    descriptor = None
+    for klass in Controller_FlightEvent.__mro__:
+        if "_dateBegin" in klass.__dict__:
+            descriptor = klass.__dict__["_dateBegin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_flightevent_has_flight():
+    assert hasattr(Controller_FlightEvent, "flight")
+    descriptor = None
+    for klass in Controller_FlightEvent.__mro__:
+        if "flight" in klass.__dict__:
+            descriptor = klass.__dict__["flight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_flightevent_has__title():
+    assert hasattr(Controller_FlightEvent, "_title")
+    descriptor = None
+    for klass in Controller_FlightEvent.__mro__:
+        if "_title" in klass.__dict__:
+            descriptor = klass.__dict__["_title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_controller_flightevent_has__dateEnd():
+    assert hasattr(Controller_FlightEvent, "_dateEnd")
+    descriptor = None
+    for klass in Controller_FlightEvent.__mro__:
+        if "_dateEnd" in klass.__dict__:
+            descriptor = klass.__dict__["_dateEnd"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1983,393 +2305,6 @@ def test_checkavailability_usecase_constructor_args():
     sig = inspect.signature(CheckAvailability_UseCase.__init__)
     params = list(sig.parameters.keys())
 
-
-
-def test_addasurbooking_usecase_is_not_abstract():
-    assert not inspect.isabstract(AddASurbooking_UseCase)
-
-
-def test_addasurbooking_usecase_constructor_exists():
-    assert callable(AddASurbooking_UseCase.__init__)
-
-
-def test_addasurbooking_usecase_constructor_args():
-    sig = inspect.signature(AddASurbooking_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_waitinglist_usecase_is_not_abstract():
-    assert not inspect.isabstract(WaitingList_UseCase)
-
-
-def test_waitinglist_usecase_constructor_exists():
-    assert callable(WaitingList_UseCase.__init__)
-
-
-def test_waitinglist_usecase_constructor_args():
-    sig = inspect.signature(WaitingList_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_changeseat_usecase_is_not_abstract():
-    assert not inspect.isabstract(ChangeSeat_UseCase)
-
-
-def test_changeseat_usecase_constructor_exists():
-    assert callable(ChangeSeat_UseCase.__init__)
-
-
-def test_changeseat_usecase_constructor_args():
-    sig = inspect.signature(ChangeSeat_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_checkseat_usecase_is_not_abstract():
-    assert not inspect.isabstract(CheckSeat_UseCase)
-
-
-def test_checkseat_usecase_constructor_exists():
-    assert callable(CheckSeat_UseCase.__init__)
-
-
-def test_checkseat_usecase_constructor_args():
-    sig = inspect.signature(CheckSeat_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_checkinformations_usecase_is_not_abstract():
-    assert not inspect.isabstract(CheckInformations_UseCase)
-
-
-def test_checkinformations_usecase_constructor_exists():
-    assert callable(CheckInformations_UseCase.__init__)
-
-
-def test_checkinformations_usecase_constructor_args():
-    sig = inspect.signature(CheckInformations_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_checkinforflight_usecase_is_not_abstract():
-    assert not inspect.isabstract(CheckInForFlight_UseCase)
-
-
-def test_checkinforflight_usecase_constructor_exists():
-    assert callable(CheckInForFlight_UseCase.__init__)
-
-
-def test_checkinforflight_usecase_constructor_args():
-    sig = inspect.signature(CheckInForFlight_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bybookingnumber_usecase_is_not_abstract():
-    assert not inspect.isabstract(ByBookingNumber_UseCase)
-
-
-def test_bybookingnumber_usecase_constructor_exists():
-    assert callable(ByBookingNumber_UseCase.__init__)
-
-
-def test_bybookingnumber_usecase_constructor_args():
-    sig = inspect.signature(ByBookingNumber_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_byname_usecase_is_not_abstract():
-    assert not inspect.isabstract(ByName_UseCase)
-
-
-def test_byname_usecase_constructor_exists():
-    assert callable(ByName_UseCase.__init__)
-
-
-def test_byname_usecase_constructor_args():
-    sig = inspect.signature(ByName_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_passengeridentification_usecase_is_not_abstract():
-    assert not inspect.isabstract(PassengerIdentification_UseCase)
-
-
-def test_passengeridentification_usecase_constructor_exists():
-    assert callable(PassengerIdentification_UseCase.__init__)
-
-
-def test_passengeridentification_usecase_constructor_args():
-    sig = inspect.signature(PassengerIdentification_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_passengercheckin_usecase_is_not_abstract():
-    assert not inspect.isabstract(PassengerCheckIn_UseCase)
-
-
-def test_passengercheckin_usecase_constructor_exists():
-    assert callable(PassengerCheckIn_UseCase.__init__)
-
-
-def test_passengercheckin_usecase_constructor_args():
-    sig = inspect.signature(PassengerCheckIn_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_employee_actor1_is_not_abstract():
-    assert not inspect.isabstract(Employee_Actor1)
-
-
-def test_employee_actor1_constructor_exists():
-    assert callable(Employee_Actor1.__init__)
-
-
-def test_employee_actor1_constructor_args():
-    sig = inspect.signature(Employee_Actor1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_distribute_usecase_is_not_abstract():
-    assert not inspect.isabstract(Distribute_UseCase)
-
-
-def test_distribute_usecase_constructor_exists():
-    assert callable(Distribute_UseCase.__init__)
-
-
-def test_distribute_usecase_constructor_args():
-    sig = inspect.signature(Distribute_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seller_actor_is_not_abstract():
-    assert not inspect.isabstract(Seller_Actor)
-
-
-def test_seller_actor_constructor_exists():
-    assert callable(Seller_Actor.__init__)
-
-
-def test_seller_actor_constructor_args():
-    sig = inspect.signature(Seller_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_onlinebuy_usecase_is_not_abstract():
-    assert not inspect.isabstract(OnlineBuy_UseCase)
-
-
-def test_onlinebuy_usecase_constructor_exists():
-    assert callable(OnlineBuy_UseCase.__init__)
-
-
-def test_onlinebuy_usecase_constructor_args():
-    sig = inspect.signature(OnlineBuy_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_customer_actor_is_not_abstract():
-    assert not inspect.isabstract(Customer_Actor)
-
-
-def test_customer_actor_constructor_exists():
-    assert callable(Customer_Actor.__init__)
-
-
-def test_customer_actor_constructor_args():
-    sig = inspect.signature(Customer_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_user_actor1_is_not_abstract():
-    assert not inspect.isabstract(User_Actor1)
-
-
-def test_user_actor1_constructor_exists():
-    assert callable(User_Actor1.__init__)
-
-
-def test_user_actor1_constructor_args():
-    sig = inspect.signature(User_Actor1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ui_flightplanning_component_is_not_abstract():
-    assert not inspect.isabstract(UI_FlightPlanning_Component)
-
-
-def test_ui_flightplanning_component_constructor_exists():
-    assert callable(UI_FlightPlanning_Component.__init__)
-
-
-def test_ui_flightplanning_component_constructor_args():
-    sig = inspect.signature(UI_FlightPlanning_Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ui_flightmanager_component_is_not_abstract():
-    assert not inspect.isabstract(UI_FlightManager_Component)
-
-
-def test_ui_flightmanager_component_constructor_exists():
-    assert callable(UI_FlightManager_Component.__init__)
-
-
-def test_ui_flightmanager_component_constructor_args():
-    sig = inspect.signature(UI_FlightManager_Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_employee_actor_is_not_abstract():
-    assert not inspect.isabstract(Employee_Actor)
-
-
-def test_employee_actor_constructor_exists():
-    assert callable(Employee_Actor.__init__)
-
-
-def test_employee_actor_constructor_args():
-    sig = inspect.signature(Employee_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ui_employeeplanning_component_is_not_abstract():
-    assert not inspect.isabstract(UI_EmployeePlanning_Component)
-
-
-def test_ui_employeeplanning_component_constructor_exists():
-    assert callable(UI_EmployeePlanning_Component.__init__)
-
-
-def test_ui_employeeplanning_component_constructor_args():
-    sig = inspect.signature(UI_EmployeePlanning_Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ui_employeemanager_component_is_not_abstract():
-    assert not inspect.isabstract(UI_EmployeeManager_Component)
-
-
-def test_ui_employeemanager_component_constructor_exists():
-    assert callable(UI_EmployeeManager_Component.__init__)
-
-
-def test_ui_employeemanager_component_constructor_args():
-    sig = inspect.signature(UI_EmployeeManager_Component.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_admin_actor1_is_not_abstract():
-    assert not inspect.isabstract(Admin_Actor1)
-
-
-def test_admin_actor1_constructor_exists():
-    assert callable(Admin_Actor1.__init__)
-
-
-def test_admin_actor1_constructor_args():
-    sig = inspect.signature(Admin_Actor1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_admin_actor_is_not_abstract():
-    assert not inspect.isabstract(Admin_Actor)
-
-
-def test_admin_actor_constructor_exists():
-    assert callable(Admin_Actor.__init__)
-
-
-def test_admin_actor_constructor_args():
-    sig = inspect.signature(Admin_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-def test_planestate_exists():
-    # Check that the Enumeration exists
-    assert PlaneState is not None
-
-def test_planestate_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PlaneState]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PlaneState"
-
-def test_reporttype_exists():
-    # Check that the Enumeration exists
-    assert ReportType is not None
-
-def test_reporttype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ReportType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ReportType"
-
-def test_gendertype_exists():
-    # Check that the Enumeration exists
-    assert GenderType is not None
-
-def test_gendertype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in GenderType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in GenderType"
-
-def test_employeetype_exists():
-    # Check that the Enumeration exists
-    assert EmployeeType is not None
-
-def test_employeetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EmployeeType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EmployeeType"
-
-def test_flighttype_exists():
-    # Check that the Enumeration exists
-    assert FlightType is not None
-
-def test_flighttype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FlightType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FlightType"
-
 def test_ticketbuytype_exists():
     # Check that the Enumeration exists
     assert TicketBuyType is not None
@@ -2382,19 +2317,6 @@ def test_ticketbuytype_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TicketBuyType"
-
-def test_ticketpayment_exists():
-    # Check that the Enumeration exists
-    assert TicketPayment is not None
-
-def test_ticketpayment_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TicketPayment]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TicketPayment"
 
 def test_providertype_exists():
     # Check that the Enumeration exists
@@ -2409,6 +2331,84 @@ def test_providertype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ProviderType"
 
+def test_flighttype_exists():
+    # Check that the Enumeration exists
+    assert FlightType is not None
+
+def test_flighttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FlightType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FlightType"
+
+def test_employeetype_exists():
+    # Check that the Enumeration exists
+    assert EmployeeType is not None
+
+def test_employeetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EmployeeType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EmployeeType"
+
+def test_planestate_exists():
+    # Check that the Enumeration exists
+    assert PlaneState is not None
+
+def test_planestate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PlaneState]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PlaneState"
+
+def test_ticketpayment_exists():
+    # Check that the Enumeration exists
+    assert TicketPayment is not None
+
+def test_ticketpayment_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TicketPayment]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TicketPayment"
+
+def test_gendertype_exists():
+    # Check that the Enumeration exists
+    assert GenderType is not None
+
+def test_gendertype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in GenderType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in GenderType"
+
+def test_reporttype_exists():
+    # Check that the Enumeration exists
+    assert ReportType is not None
+
+def test_reporttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ReportType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ReportType"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -2421,163 +2421,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-User_Actor_strategy = st.builds(
-    User_Actor,
-)
-DistributionSystem_TicketDistributor_strategy = st.builds(
-    DistributionSystem_TicketDistributor,
-    payment=
-        st.none(),
-    from=
-        st.none()
-)
-DistributionSystem_Customer_strategy = st.builds(
-    DistributionSystem_Customer,
-    _milesFlyed=
-        st.integers(),
-    name=
-        safe_text,
-    Luggage=
-        safe_text
-)
-DistributionSystem_BoardingPass_strategy = st.builds(
-    DistributionSystem_BoardingPass,
-    flight=
-        safe_text,
-    dateOfPurchase=
-        st.dates(),
-    row=
-        st.integers(),
-    price=
-        st.integers(),
-    seat=
-        st.integers(),
-    isValidated=
-        st.booleans()
-)
-DistributionSystem_Ticket_strategy = st.builds(
-    DistributionSystem_Ticket,
-    payment=
-        st.none(),
-    _numberPlace=
-        st.integers(),
-    _price=
-        st.integers(),
-    isRegistered=
-        st.booleans(),
-    from=
-        st.none()
-)
-FlightSystem_Plane_strategy = st.builds(
-    FlightSystem_Plane,
-    _flySinceRefuel=
-        st.integers(),
-    _location=
-        st.none(),
-    nbPilote=
-        st.integers(),
-    _crew=
-        st.none(),
-    _state=
-        st.none(),
-    seatPerRow=
-        st.integers(),
-    nbSteward=
-        st.integers(),
-    row=
-        st.integers(),
-    _millesFlyed=
-        st.integers(),
-    _seat=
-        st.integers(),
-    _millesSinceRevisionned=
-        st.integers()
-)
-FlightSystem_Flight_strategy = st.builds(
-    FlightSystem_Flight,
-    _miles=
-        st.integers(),
-    _duration=
-        st.integers(),
-    airportTo=
-        st.none(),
-    flightType=
-        st.none(),
-    schedule=
-        st.dates(),
-    airportFrom=
-        st.none()
-)
-Company_Airport_strategy = st.builds(
-    Company_Airport,
-    endSchedule=
-        st.integers(),
-    ticketCharges=
-        st.integers(),
-    beginSchedule=
-        st.integers(),
-    ticketPrice=
-        st.integers(),
-    city=
-        safe_text
-)
-Company_Company_strategy = st.builds(
-    Company_Company,
-    pilots=
-        st.none(),
-    name=
-        safe_text,
-    airportEmployees=
-        st.none(),
-    stewards=
-        st.none()
-)
-Employee_Employee_strategy = st.builds(
-    Employee_Employee,
-    gender=
-        st.none(),
-    dayByWeek=
-        st.integers(),
-    JobType=
-        st.none(),
-    isSuperUser=
-        st.booleans(),
-    name=
-        safe_text
-)
-Employee_AirportEmployee_strategy = st.builds(
-    Employee_AirportEmployee,
-    airport=
-        st.none()
-)
-Employee_Pilot_strategy = st.builds(
-    Employee_Pilot,
-    plane=
-        st.none(),
-    airport=
-        st.none()
-)
-Employee_Steward_strategy = st.builds(
-    Employee_Steward,
-    plane=
-        st.none(),
-    airport=
-        st.none()
-)
-Employee_IEmployee_Interface_strategy = st.builds(
-    Employee_IEmployee_Interface,
-)
-Controller_FlightEvent_strategy = st.builds(
-    Controller_FlightEvent,
-    _dateBegin=
-        st.dates(),
-    _title=
-        safe_text,
-    _dateEnd=
-        st.dates(),
-    flight=
-        st.none()
-)
 EditPlanning_external_strategy = st.builds(
     EditPlanning_external,
 )
@@ -2627,10 +2470,10 @@ ProviderSystem_ConsomationStock_strategy = st.builds(
 )
 ProviderSystem_Provider_strategy = st.builds(
     ProviderSystem_Provider,
-    name=
-        safe_text,
     pricePerUnit=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 ProviderSystem_Consomation_strategy = st.builds(
     ProviderSystem_Consomation,
@@ -2641,14 +2484,14 @@ ProviderSystem_Consomation_strategy = st.builds(
 )
 ProviderSystem_Fuel_strategy = st.builds(
     ProviderSystem_Fuel,
-    date=
-        st.dates(),
-    plane=
-        st.none(),
     _price=
         st.integers(),
     volme=
-        st.integers()
+        st.integers(),
+    plane=
+        st.none(),
+    date=
+        st.dates()
 )
 Send_Luggage_To_Loading_UseCase_strategy = st.builds(
     Send_Luggage_To_Loading_UseCase,
@@ -2664,6 +2507,232 @@ Consult_Luggage_Ticket_Infos_UseCase_strategy = st.builds(
 )
 Luggage_Checkin_UseCase_strategy = st.builds(
     Luggage_Checkin_UseCase,
+)
+AddASurbooking_UseCase_strategy = st.builds(
+    AddASurbooking_UseCase,
+)
+WaitingList_UseCase_strategy = st.builds(
+    WaitingList_UseCase,
+)
+ChangeSeat_UseCase_strategy = st.builds(
+    ChangeSeat_UseCase,
+)
+CheckSeat_UseCase_strategy = st.builds(
+    CheckSeat_UseCase,
+)
+CheckInformations_UseCase_strategy = st.builds(
+    CheckInformations_UseCase,
+)
+CheckInForFlight_UseCase_strategy = st.builds(
+    CheckInForFlight_UseCase,
+)
+ByBookingNumber_UseCase_strategy = st.builds(
+    ByBookingNumber_UseCase,
+)
+ByName_UseCase_strategy = st.builds(
+    ByName_UseCase,
+)
+PassengerIdentification_UseCase_strategy = st.builds(
+    PassengerIdentification_UseCase,
+)
+PassengerCheckIn_UseCase_strategy = st.builds(
+    PassengerCheckIn_UseCase,
+)
+Employee_Actor1_strategy = st.builds(
+    Employee_Actor1,
+)
+Distribute_UseCase_strategy = st.builds(
+    Distribute_UseCase,
+)
+Seller_Actor_strategy = st.builds(
+    Seller_Actor,
+)
+OnlineBuy_UseCase_strategy = st.builds(
+    OnlineBuy_UseCase,
+)
+Customer_Actor_strategy = st.builds(
+    Customer_Actor,
+)
+User_Actor1_strategy = st.builds(
+    User_Actor1,
+)
+UI_FlightPlanning_Component_strategy = st.builds(
+    UI_FlightPlanning_Component,
+)
+UI_FlightManager_Component_strategy = st.builds(
+    UI_FlightManager_Component,
+)
+Employee_Actor_strategy = st.builds(
+    Employee_Actor,
+)
+UI_EmployeePlanning_Component_strategy = st.builds(
+    UI_EmployeePlanning_Component,
+)
+UI_EmployeeManager_Component_strategy = st.builds(
+    UI_EmployeeManager_Component,
+)
+Admin_Actor1_strategy = st.builds(
+    Admin_Actor1,
+)
+Admin_Actor_strategy = st.builds(
+    Admin_Actor,
+)
+User_Actor_strategy = st.builds(
+    User_Actor,
+)
+DistributionSystem_TicketDistributor_strategy = st.builds(
+    DistributionSystem_TicketDistributor,
+    from=
+        st.none(),
+    payment=
+        st.none()
+)
+DistributionSystem_Customer_strategy = st.builds(
+    DistributionSystem_Customer,
+    name=
+        safe_text,
+    _milesFlyed=
+        st.integers(),
+    Luggage=
+        safe_text
+)
+DistributionSystem_BoardingPass_strategy = st.builds(
+    DistributionSystem_BoardingPass,
+    price=
+        st.integers(),
+    row=
+        st.integers(),
+    seat=
+        st.integers(),
+    isValidated=
+        st.booleans(),
+    dateOfPurchase=
+        st.dates(),
+    flight=
+        safe_text
+)
+DistributionSystem_Ticket_strategy = st.builds(
+    DistributionSystem_Ticket,
+    _price=
+        st.integers(),
+    payment=
+        st.none(),
+    isRegistered=
+        st.booleans(),
+    _numberPlace=
+        st.integers(),
+    from=
+        st.none()
+)
+FlightSystem_Plane_strategy = st.builds(
+    FlightSystem_Plane,
+    _location=
+        st.none(),
+    _millesSinceRevisionned=
+        st.integers(),
+    row=
+        st.integers(),
+    seatPerRow=
+        st.integers(),
+    _millesFlyed=
+        st.integers(),
+    nbSteward=
+        st.integers(),
+    _crew=
+        st.none(),
+    _state=
+        st.none(),
+    nbPilote=
+        st.integers(),
+    _flySinceRefuel=
+        st.integers(),
+    _seat=
+        st.integers()
+)
+FlightSystem_Flight_strategy = st.builds(
+    FlightSystem_Flight,
+    flightType=
+        st.none(),
+    airportTo=
+        st.none(),
+    _miles=
+        st.integers(),
+    _duration=
+        st.integers(),
+    airportFrom=
+        st.none(),
+    schedule=
+        st.dates()
+)
+Company_Airport_strategy = st.builds(
+    Company_Airport,
+    beginSchedule=
+        st.integers(),
+    endSchedule=
+        st.integers(),
+    ticketPrice=
+        st.integers(),
+    city=
+        safe_text,
+    ticketCharges=
+        st.integers()
+)
+Company_Company_strategy = st.builds(
+    Company_Company,
+    name=
+        safe_text,
+    pilots=
+        st.none(),
+    stewards=
+        st.none(),
+    airportEmployees=
+        st.none()
+)
+Employee_Employee_strategy = st.builds(
+    Employee_Employee,
+    isSuperUser=
+        st.booleans(),
+    name=
+        safe_text,
+    dayByWeek=
+        st.integers(),
+    gender=
+        st.none(),
+    JobType=
+        st.none()
+)
+Employee_AirportEmployee_strategy = st.builds(
+    Employee_AirportEmployee,
+    airport=
+        st.none()
+)
+Employee_Pilot_strategy = st.builds(
+    Employee_Pilot,
+    plane=
+        st.none(),
+    airport=
+        st.none()
+)
+Employee_Steward_strategy = st.builds(
+    Employee_Steward,
+    airport=
+        st.none(),
+    plane=
+        st.none()
+)
+Employee_IEmployee_Interface_strategy = st.builds(
+    Employee_IEmployee_Interface,
+)
+Controller_FlightEvent_strategy = st.builds(
+    Controller_FlightEvent,
+    _dateBegin=
+        st.dates(),
+    flight=
+        st.none(),
+    _title=
+        safe_text,
+    _dateEnd=
+        st.dates()
 )
 Employee_Actor2_strategy = st.builds(
     Employee_Actor2,
@@ -2809,766 +2878,6 @@ RegisterToWaitingList_UseCase_strategy = st.builds(
 CheckAvailability_UseCase_strategy = st.builds(
     CheckAvailability_UseCase,
 )
-AddASurbooking_UseCase_strategy = st.builds(
-    AddASurbooking_UseCase,
-)
-WaitingList_UseCase_strategy = st.builds(
-    WaitingList_UseCase,
-)
-ChangeSeat_UseCase_strategy = st.builds(
-    ChangeSeat_UseCase,
-)
-CheckSeat_UseCase_strategy = st.builds(
-    CheckSeat_UseCase,
-)
-CheckInformations_UseCase_strategy = st.builds(
-    CheckInformations_UseCase,
-)
-CheckInForFlight_UseCase_strategy = st.builds(
-    CheckInForFlight_UseCase,
-)
-ByBookingNumber_UseCase_strategy = st.builds(
-    ByBookingNumber_UseCase,
-)
-ByName_UseCase_strategy = st.builds(
-    ByName_UseCase,
-)
-PassengerIdentification_UseCase_strategy = st.builds(
-    PassengerIdentification_UseCase,
-)
-PassengerCheckIn_UseCase_strategy = st.builds(
-    PassengerCheckIn_UseCase,
-)
-Employee_Actor1_strategy = st.builds(
-    Employee_Actor1,
-)
-Distribute_UseCase_strategy = st.builds(
-    Distribute_UseCase,
-)
-Seller_Actor_strategy = st.builds(
-    Seller_Actor,
-)
-OnlineBuy_UseCase_strategy = st.builds(
-    OnlineBuy_UseCase,
-)
-Customer_Actor_strategy = st.builds(
-    Customer_Actor,
-)
-User_Actor1_strategy = st.builds(
-    User_Actor1,
-)
-UI_FlightPlanning_Component_strategy = st.builds(
-    UI_FlightPlanning_Component,
-)
-UI_FlightManager_Component_strategy = st.builds(
-    UI_FlightManager_Component,
-)
-Employee_Actor_strategy = st.builds(
-    Employee_Actor,
-)
-UI_EmployeePlanning_Component_strategy = st.builds(
-    UI_EmployeePlanning_Component,
-)
-UI_EmployeeManager_Component_strategy = st.builds(
-    UI_EmployeeManager_Component,
-)
-Admin_Actor1_strategy = st.builds(
-    Admin_Actor1,
-)
-Admin_Actor_strategy = st.builds(
-    Admin_Actor,
-)
-
-@given(instance=User_Actor_strategy)
-@settings(max_examples=50)
-def test_user_actor_instantiation(instance):
-    assert isinstance(instance, User_Actor)
-
-@given(instance=DistributionSystem_TicketDistributor_strategy)
-@settings(max_examples=50)
-def test_distributionsystem_ticketdistributor_instantiation(instance):
-    assert isinstance(instance, DistributionSystem_TicketDistributor)
-
-@given(instance=DistributionSystem_TicketDistributor_strategy)
-def test_distributionsystem_ticketdistributor_payment_type(instance):
-    assert isinstance(instance.payment, ticketpayment)
-
-
-@given(instance=DistributionSystem_TicketDistributor_strategy)
-def test_distributionsystem_ticketdistributor_payment_setter(instance):
-    original = instance.payment
-    instance.payment = original
-    assert instance.payment == original
-
-@given(instance=DistributionSystem_TicketDistributor_strategy)
-def test_distributionsystem_ticketdistributor_from_type(instance):
-    assert isinstance(instance.from, ticketbuytype)
-
-
-@given(instance=DistributionSystem_TicketDistributor_strategy)
-def test_distributionsystem_ticketdistributor_from_setter(instance):
-    original = instance.from
-    instance.from = original
-    assert instance.from == original
-
-@given(instance=DistributionSystem_Customer_strategy)
-@settings(max_examples=50)
-def test_distributionsystem_customer_instantiation(instance):
-    assert isinstance(instance, DistributionSystem_Customer)
-
-@given(instance=DistributionSystem_Customer_strategy)
-def test_distributionsystem_customer__milesFlyed_type(instance):
-    assert isinstance(instance._milesFlyed, int)
-
-
-@given(instance=DistributionSystem_Customer_strategy)
-def test_distributionsystem_customer__milesFlyed_setter(instance):
-    original = instance._milesFlyed
-    instance._milesFlyed = original
-    assert instance._milesFlyed == original
-
-@given(instance=DistributionSystem_Customer_strategy)
-def test_distributionsystem_customer_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=DistributionSystem_Customer_strategy)
-def test_distributionsystem_customer_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=DistributionSystem_Customer_strategy)
-def test_distributionsystem_customer_Luggage_type(instance):
-    assert isinstance(instance.Luggage, str)
-
-
-@given(instance=DistributionSystem_Customer_strategy)
-def test_distributionsystem_customer_Luggage_setter(instance):
-    original = instance.Luggage
-    instance.Luggage = original
-    assert instance.Luggage == original
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-@settings(max_examples=50)
-def test_distributionsystem_boardingpass_instantiation(instance):
-    assert isinstance(instance, DistributionSystem_BoardingPass)
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_flight_type(instance):
-    assert isinstance(instance.flight, str)
-
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_flight_setter(instance):
-    original = instance.flight
-    instance.flight = original
-    assert instance.flight == original
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_dateOfPurchase_type(instance):
-    assert isinstance(instance.dateOfPurchase, date)
-
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_dateOfPurchase_setter(instance):
-    original = instance.dateOfPurchase
-    instance.dateOfPurchase = original
-    assert instance.dateOfPurchase == original
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_row_type(instance):
-    assert isinstance(instance.row, int)
-
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_row_setter(instance):
-    original = instance.row
-    instance.row = original
-    assert instance.row == original
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_price_type(instance):
-    assert isinstance(instance.price, int)
-
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_seat_type(instance):
-    assert isinstance(instance.seat, int)
-
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_seat_setter(instance):
-    original = instance.seat
-    instance.seat = original
-    assert instance.seat == original
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_isValidated_type(instance):
-    assert isinstance(instance.isValidated, bool)
-
-
-@given(instance=DistributionSystem_BoardingPass_strategy)
-def test_distributionsystem_boardingpass_isValidated_setter(instance):
-    original = instance.isValidated
-    instance.isValidated = original
-    assert instance.isValidated == original
-
-@given(instance=DistributionSystem_Ticket_strategy)
-@settings(max_examples=50)
-def test_distributionsystem_ticket_instantiation(instance):
-    assert isinstance(instance, DistributionSystem_Ticket)
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket_payment_type(instance):
-    assert isinstance(instance.payment, ticketpayment)
-
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket_payment_setter(instance):
-    original = instance.payment
-    instance.payment = original
-    assert instance.payment == original
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket__numberPlace_type(instance):
-    assert isinstance(instance._numberPlace, int)
-
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket__numberPlace_setter(instance):
-    original = instance._numberPlace
-    instance._numberPlace = original
-    assert instance._numberPlace == original
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket__price_type(instance):
-    assert isinstance(instance._price, int)
-
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket__price_setter(instance):
-    original = instance._price
-    instance._price = original
-    assert instance._price == original
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket_isRegistered_type(instance):
-    assert isinstance(instance.isRegistered, bool)
-
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket_isRegistered_setter(instance):
-    original = instance.isRegistered
-    instance.isRegistered = original
-    assert instance.isRegistered == original
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket_from_type(instance):
-    assert isinstance(instance.from, ticketbuytype)
-
-
-@given(instance=DistributionSystem_Ticket_strategy)
-def test_distributionsystem_ticket_from_setter(instance):
-    original = instance.from
-    instance.from = original
-    assert instance.from == original
-
-@given(instance=FlightSystem_Plane_strategy)
-@settings(max_examples=50)
-def test_flightsystem_plane_instantiation(instance):
-    assert isinstance(instance, FlightSystem_Plane)
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__flySinceRefuel_type(instance):
-    assert isinstance(instance._flySinceRefuel, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__flySinceRefuel_setter(instance):
-    original = instance._flySinceRefuel
-    instance._flySinceRefuel = original
-    assert instance._flySinceRefuel == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__location_type(instance):
-    assert isinstance(instance._location, company_airport)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__location_setter(instance):
-    original = instance._location
-    instance._location = original
-    assert instance._location == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_nbPilote_type(instance):
-    assert isinstance(instance.nbPilote, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_nbPilote_setter(instance):
-    original = instance.nbPilote
-    instance.nbPilote = original
-    assert instance.nbPilote == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__crew_type(instance):
-    assert isinstance(instance._crew, employee_iemployee_interface)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__crew_setter(instance):
-    original = instance._crew
-    instance._crew = original
-    assert instance._crew == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__state_type(instance):
-    assert isinstance(instance._state, planestate)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__state_setter(instance):
-    original = instance._state
-    instance._state = original
-    assert instance._state == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_seatPerRow_type(instance):
-    assert isinstance(instance.seatPerRow, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_seatPerRow_setter(instance):
-    original = instance.seatPerRow
-    instance.seatPerRow = original
-    assert instance.seatPerRow == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_nbSteward_type(instance):
-    assert isinstance(instance.nbSteward, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_nbSteward_setter(instance):
-    original = instance.nbSteward
-    instance.nbSteward = original
-    assert instance.nbSteward == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_row_type(instance):
-    assert isinstance(instance.row, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane_row_setter(instance):
-    original = instance.row
-    instance.row = original
-    assert instance.row == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__millesFlyed_type(instance):
-    assert isinstance(instance._millesFlyed, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__millesFlyed_setter(instance):
-    original = instance._millesFlyed
-    instance._millesFlyed = original
-    assert instance._millesFlyed == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__seat_type(instance):
-    assert isinstance(instance._seat, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__seat_setter(instance):
-    original = instance._seat
-    instance._seat = original
-    assert instance._seat == original
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__millesSinceRevisionned_type(instance):
-    assert isinstance(instance._millesSinceRevisionned, int)
-
-
-@given(instance=FlightSystem_Plane_strategy)
-def test_flightsystem_plane__millesSinceRevisionned_setter(instance):
-    original = instance._millesSinceRevisionned
-    instance._millesSinceRevisionned = original
-    assert instance._millesSinceRevisionned == original
-
-@given(instance=FlightSystem_Flight_strategy)
-@settings(max_examples=50)
-def test_flightsystem_flight_instantiation(instance):
-    assert isinstance(instance, FlightSystem_Flight)
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight__miles_type(instance):
-    assert isinstance(instance._miles, int)
-
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight__miles_setter(instance):
-    original = instance._miles
-    instance._miles = original
-    assert instance._miles == original
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight__duration_type(instance):
-    assert isinstance(instance._duration, int)
-
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight__duration_setter(instance):
-    original = instance._duration
-    instance._duration = original
-    assert instance._duration == original
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_airportTo_type(instance):
-    assert isinstance(instance.airportTo, company_airport)
-
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_airportTo_setter(instance):
-    original = instance.airportTo
-    instance.airportTo = original
-    assert instance.airportTo == original
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_flightType_type(instance):
-    assert isinstance(instance.flightType, flighttype)
-
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_flightType_setter(instance):
-    original = instance.flightType
-    instance.flightType = original
-    assert instance.flightType == original
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_schedule_type(instance):
-    assert isinstance(instance.schedule, date)
-
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_schedule_setter(instance):
-    original = instance.schedule
-    instance.schedule = original
-    assert instance.schedule == original
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_airportFrom_type(instance):
-    assert isinstance(instance.airportFrom, company_airport)
-
-
-@given(instance=FlightSystem_Flight_strategy)
-def test_flightsystem_flight_airportFrom_setter(instance):
-    original = instance.airportFrom
-    instance.airportFrom = original
-    assert instance.airportFrom == original
-
-@given(instance=Company_Airport_strategy)
-@settings(max_examples=50)
-def test_company_airport_instantiation(instance):
-    assert isinstance(instance, Company_Airport)
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_endSchedule_type(instance):
-    assert isinstance(instance.endSchedule, int)
-
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_endSchedule_setter(instance):
-    original = instance.endSchedule
-    instance.endSchedule = original
-    assert instance.endSchedule == original
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_ticketCharges_type(instance):
-    assert isinstance(instance.ticketCharges, int)
-
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_ticketCharges_setter(instance):
-    original = instance.ticketCharges
-    instance.ticketCharges = original
-    assert instance.ticketCharges == original
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_beginSchedule_type(instance):
-    assert isinstance(instance.beginSchedule, int)
-
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_beginSchedule_setter(instance):
-    original = instance.beginSchedule
-    instance.beginSchedule = original
-    assert instance.beginSchedule == original
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_ticketPrice_type(instance):
-    assert isinstance(instance.ticketPrice, int)
-
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_ticketPrice_setter(instance):
-    original = instance.ticketPrice
-    instance.ticketPrice = original
-    assert instance.ticketPrice == original
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=Company_Airport_strategy)
-def test_company_airport_city_setter(instance):
-    original = instance.city
-    instance.city = original
-    assert instance.city == original
-
-@given(instance=Company_Company_strategy)
-@settings(max_examples=50)
-def test_company_company_instantiation(instance):
-    assert isinstance(instance, Company_Company)
-
-@given(instance=Company_Company_strategy)
-def test_company_company_pilots_type(instance):
-    assert isinstance(instance.pilots, employee_pilot)
-
-
-@given(instance=Company_Company_strategy)
-def test_company_company_pilots_setter(instance):
-    original = instance.pilots
-    instance.pilots = original
-    assert instance.pilots == original
-
-@given(instance=Company_Company_strategy)
-def test_company_company_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Company_Company_strategy)
-def test_company_company_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Company_Company_strategy)
-def test_company_company_airportEmployees_type(instance):
-    assert isinstance(instance.airportEmployees, employee_airportemployee)
-
-
-@given(instance=Company_Company_strategy)
-def test_company_company_airportEmployees_setter(instance):
-    original = instance.airportEmployees
-    instance.airportEmployees = original
-    assert instance.airportEmployees == original
-
-@given(instance=Company_Company_strategy)
-def test_company_company_stewards_type(instance):
-    assert isinstance(instance.stewards, employee_steward)
-
-
-@given(instance=Company_Company_strategy)
-def test_company_company_stewards_setter(instance):
-    original = instance.stewards
-    instance.stewards = original
-    assert instance.stewards == original
-
-@given(instance=Employee_Employee_strategy)
-@settings(max_examples=50)
-def test_employee_employee_instantiation(instance):
-    assert isinstance(instance, Employee_Employee)
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_gender_type(instance):
-    assert isinstance(instance.gender, gendertype)
-
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_gender_setter(instance):
-    original = instance.gender
-    instance.gender = original
-    assert instance.gender == original
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_dayByWeek_type(instance):
-    assert isinstance(instance.dayByWeek, int)
-
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_dayByWeek_setter(instance):
-    original = instance.dayByWeek
-    instance.dayByWeek = original
-    assert instance.dayByWeek == original
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_JobType_type(instance):
-    assert isinstance(instance.JobType, employeetype)
-
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_JobType_setter(instance):
-    original = instance.JobType
-    instance.JobType = original
-    assert instance.JobType == original
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_isSuperUser_type(instance):
-    assert isinstance(instance.isSuperUser, bool)
-
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_isSuperUser_setter(instance):
-    original = instance.isSuperUser
-    instance.isSuperUser = original
-    assert instance.isSuperUser == original
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Employee_Employee_strategy)
-def test_employee_employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Employee_AirportEmployee_strategy)
-@settings(max_examples=50)
-def test_employee_airportemployee_instantiation(instance):
-    assert isinstance(instance, Employee_AirportEmployee)
-
-@given(instance=Employee_AirportEmployee_strategy)
-def test_employee_airportemployee_airport_type(instance):
-    assert isinstance(instance.airport, company_airport)
-
-
-@given(instance=Employee_AirportEmployee_strategy)
-def test_employee_airportemployee_airport_setter(instance):
-    original = instance.airport
-    instance.airport = original
-    assert instance.airport == original
-
-@given(instance=Employee_Pilot_strategy)
-@settings(max_examples=50)
-def test_employee_pilot_instantiation(instance):
-    assert isinstance(instance, Employee_Pilot)
-
-@given(instance=Employee_Pilot_strategy)
-def test_employee_pilot_plane_type(instance):
-    assert isinstance(instance.plane, flightsystem_plane)
-
-
-@given(instance=Employee_Pilot_strategy)
-def test_employee_pilot_plane_setter(instance):
-    original = instance.plane
-    instance.plane = original
-    assert instance.plane == original
-
-@given(instance=Employee_Pilot_strategy)
-def test_employee_pilot_airport_type(instance):
-    assert isinstance(instance.airport, company_airport)
-
-
-@given(instance=Employee_Pilot_strategy)
-def test_employee_pilot_airport_setter(instance):
-    original = instance.airport
-    instance.airport = original
-    assert instance.airport == original
-
-@given(instance=Employee_Steward_strategy)
-@settings(max_examples=50)
-def test_employee_steward_instantiation(instance):
-    assert isinstance(instance, Employee_Steward)
-
-@given(instance=Employee_Steward_strategy)
-def test_employee_steward_plane_type(instance):
-    assert isinstance(instance.plane, flightsystem_plane)
-
-
-@given(instance=Employee_Steward_strategy)
-def test_employee_steward_plane_setter(instance):
-    original = instance.plane
-    instance.plane = original
-    assert instance.plane == original
-
-@given(instance=Employee_Steward_strategy)
-def test_employee_steward_airport_type(instance):
-    assert isinstance(instance.airport, company_airport)
-
-
-@given(instance=Employee_Steward_strategy)
-def test_employee_steward_airport_setter(instance):
-    original = instance.airport
-    instance.airport = original
-    assert instance.airport == original
-
-@given(instance=Employee_IEmployee_Interface_strategy)
-@settings(max_examples=50)
-def test_employee_iemployee_interface_instantiation(instance):
-    assert isinstance(instance, Employee_IEmployee_Interface)
-
-@given(instance=Controller_FlightEvent_strategy)
-@settings(max_examples=50)
-def test_controller_flightevent_instantiation(instance):
-    assert isinstance(instance, Controller_FlightEvent)
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent__dateBegin_type(instance):
-    assert isinstance(instance._dateBegin, date)
-
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent__dateBegin_setter(instance):
-    original = instance._dateBegin
-    instance._dateBegin = original
-    assert instance._dateBegin == original
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent__title_type(instance):
-    assert isinstance(instance._title, str)
-
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent__title_setter(instance):
-    original = instance._title
-    instance._title = original
-    assert instance._title == original
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent__dateEnd_type(instance):
-    assert isinstance(instance._dateEnd, date)
-
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent__dateEnd_setter(instance):
-    original = instance._dateEnd
-    instance._dateEnd = original
-    assert instance._dateEnd == original
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent_flight_type(instance):
-    assert isinstance(instance.flight, flightsystem_flight)
-
-
-@given(instance=Controller_FlightEvent_strategy)
-def test_controller_flightevent_flight_setter(instance):
-    original = instance.flight
-    instance.flight = original
-    assert instance.flight == original
 
 @given(instance=EditPlanning_external_strategy)
 @settings(max_examples=50)
@@ -3645,9 +2954,6 @@ def test_createflight_external_instantiation(instance):
 def test_providersystem_consomationstock_instantiation(instance):
     assert isinstance(instance, ProviderSystem_ConsomationStock)
 
-@given(instance=ProviderSystem_ConsomationStock_strategy)
-def test_providersystem_consomationstock__capacity_type(instance):
-    assert isinstance(instance._capacity, int)
 
 
 @given(instance=ProviderSystem_ConsomationStock_strategy)
@@ -3661,20 +2967,6 @@ def test_providersystem_consomationstock__capacity_setter(instance):
 def test_providersystem_provider_instantiation(instance):
     assert isinstance(instance, ProviderSystem_Provider)
 
-@given(instance=ProviderSystem_Provider_strategy)
-def test_providersystem_provider_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ProviderSystem_Provider_strategy)
-def test_providersystem_provider_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ProviderSystem_Provider_strategy)
-def test_providersystem_provider_pricePerUnit_type(instance):
-    assert isinstance(instance.pricePerUnit, int)
 
 
 @given(instance=ProviderSystem_Provider_strategy)
@@ -3683,14 +2975,19 @@ def test_providersystem_provider_pricePerUnit_setter(instance):
     instance.pricePerUnit = original
     assert instance.pricePerUnit == original
 
+
+
+@given(instance=ProviderSystem_Provider_strategy)
+def test_providersystem_provider_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=ProviderSystem_Consomation_strategy)
 @settings(max_examples=50)
 def test_providersystem_consomation_instantiation(instance):
     assert isinstance(instance, ProviderSystem_Consomation)
 
-@given(instance=ProviderSystem_Consomation_strategy)
-def test_providersystem_consomation_pricePerUnit_type(instance):
-    assert isinstance(instance.pricePerUnit, int)
 
 
 @given(instance=ProviderSystem_Consomation_strategy)
@@ -3699,9 +2996,6 @@ def test_providersystem_consomation_pricePerUnit_setter(instance):
     instance.pricePerUnit = original
     assert instance.pricePerUnit == original
 
-@given(instance=ProviderSystem_Consomation_strategy)
-def test_providersystem_consomation_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=ProviderSystem_Consomation_strategy)
@@ -3715,31 +3009,6 @@ def test_providersystem_consomation_name_setter(instance):
 def test_providersystem_fuel_instantiation(instance):
     assert isinstance(instance, ProviderSystem_Fuel)
 
-@given(instance=ProviderSystem_Fuel_strategy)
-def test_providersystem_fuel_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=ProviderSystem_Fuel_strategy)
-def test_providersystem_fuel_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=ProviderSystem_Fuel_strategy)
-def test_providersystem_fuel_plane_type(instance):
-    assert isinstance(instance.plane, flightsystem_plane)
-
-
-@given(instance=ProviderSystem_Fuel_strategy)
-def test_providersystem_fuel_plane_setter(instance):
-    original = instance.plane
-    instance.plane = original
-    assert instance.plane == original
-
-@given(instance=ProviderSystem_Fuel_strategy)
-def test_providersystem_fuel__price_type(instance):
-    assert isinstance(instance._price, int)
 
 
 @given(instance=ProviderSystem_Fuel_strategy)
@@ -3748,9 +3017,6 @@ def test_providersystem_fuel__price_setter(instance):
     instance._price = original
     assert instance._price == original
 
-@given(instance=ProviderSystem_Fuel_strategy)
-def test_providersystem_fuel_volme_type(instance):
-    assert isinstance(instance.volme, int)
 
 
 @given(instance=ProviderSystem_Fuel_strategy)
@@ -3758,6 +3024,22 @@ def test_providersystem_fuel_volme_setter(instance):
     original = instance.volme
     instance.volme = original
     assert instance.volme == original
+
+
+
+@given(instance=ProviderSystem_Fuel_strategy)
+def test_providersystem_fuel_plane_setter(instance):
+    original = instance.plane
+    instance.plane = original
+    assert instance.plane == original
+
+
+
+@given(instance=ProviderSystem_Fuel_strategy)
+def test_providersystem_fuel_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
 
 @given(instance=Send_Luggage_To_Loading_UseCase_strategy)
 @settings(max_examples=50)
@@ -3783,6 +3065,644 @@ def test_consult_luggage_ticket_infos_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_luggage_checkin_usecase_instantiation(instance):
     assert isinstance(instance, Luggage_Checkin_UseCase)
+
+@given(instance=AddASurbooking_UseCase_strategy)
+@settings(max_examples=50)
+def test_addasurbooking_usecase_instantiation(instance):
+    assert isinstance(instance, AddASurbooking_UseCase)
+
+@given(instance=WaitingList_UseCase_strategy)
+@settings(max_examples=50)
+def test_waitinglist_usecase_instantiation(instance):
+    assert isinstance(instance, WaitingList_UseCase)
+
+@given(instance=ChangeSeat_UseCase_strategy)
+@settings(max_examples=50)
+def test_changeseat_usecase_instantiation(instance):
+    assert isinstance(instance, ChangeSeat_UseCase)
+
+@given(instance=CheckSeat_UseCase_strategy)
+@settings(max_examples=50)
+def test_checkseat_usecase_instantiation(instance):
+    assert isinstance(instance, CheckSeat_UseCase)
+
+@given(instance=CheckInformations_UseCase_strategy)
+@settings(max_examples=50)
+def test_checkinformations_usecase_instantiation(instance):
+    assert isinstance(instance, CheckInformations_UseCase)
+
+@given(instance=CheckInForFlight_UseCase_strategy)
+@settings(max_examples=50)
+def test_checkinforflight_usecase_instantiation(instance):
+    assert isinstance(instance, CheckInForFlight_UseCase)
+
+@given(instance=ByBookingNumber_UseCase_strategy)
+@settings(max_examples=50)
+def test_bybookingnumber_usecase_instantiation(instance):
+    assert isinstance(instance, ByBookingNumber_UseCase)
+
+@given(instance=ByName_UseCase_strategy)
+@settings(max_examples=50)
+def test_byname_usecase_instantiation(instance):
+    assert isinstance(instance, ByName_UseCase)
+
+@given(instance=PassengerIdentification_UseCase_strategy)
+@settings(max_examples=50)
+def test_passengeridentification_usecase_instantiation(instance):
+    assert isinstance(instance, PassengerIdentification_UseCase)
+
+@given(instance=PassengerCheckIn_UseCase_strategy)
+@settings(max_examples=50)
+def test_passengercheckin_usecase_instantiation(instance):
+    assert isinstance(instance, PassengerCheckIn_UseCase)
+
+@given(instance=Employee_Actor1_strategy)
+@settings(max_examples=50)
+def test_employee_actor1_instantiation(instance):
+    assert isinstance(instance, Employee_Actor1)
+
+@given(instance=Distribute_UseCase_strategy)
+@settings(max_examples=50)
+def test_distribute_usecase_instantiation(instance):
+    assert isinstance(instance, Distribute_UseCase)
+
+@given(instance=Seller_Actor_strategy)
+@settings(max_examples=50)
+def test_seller_actor_instantiation(instance):
+    assert isinstance(instance, Seller_Actor)
+
+@given(instance=OnlineBuy_UseCase_strategy)
+@settings(max_examples=50)
+def test_onlinebuy_usecase_instantiation(instance):
+    assert isinstance(instance, OnlineBuy_UseCase)
+
+@given(instance=Customer_Actor_strategy)
+@settings(max_examples=50)
+def test_customer_actor_instantiation(instance):
+    assert isinstance(instance, Customer_Actor)
+
+@given(instance=User_Actor1_strategy)
+@settings(max_examples=50)
+def test_user_actor1_instantiation(instance):
+    assert isinstance(instance, User_Actor1)
+
+@given(instance=UI_FlightPlanning_Component_strategy)
+@settings(max_examples=50)
+def test_ui_flightplanning_component_instantiation(instance):
+    assert isinstance(instance, UI_FlightPlanning_Component)
+
+@given(instance=UI_FlightManager_Component_strategy)
+@settings(max_examples=50)
+def test_ui_flightmanager_component_instantiation(instance):
+    assert isinstance(instance, UI_FlightManager_Component)
+
+@given(instance=Employee_Actor_strategy)
+@settings(max_examples=50)
+def test_employee_actor_instantiation(instance):
+    assert isinstance(instance, Employee_Actor)
+
+@given(instance=UI_EmployeePlanning_Component_strategy)
+@settings(max_examples=50)
+def test_ui_employeeplanning_component_instantiation(instance):
+    assert isinstance(instance, UI_EmployeePlanning_Component)
+
+@given(instance=UI_EmployeeManager_Component_strategy)
+@settings(max_examples=50)
+def test_ui_employeemanager_component_instantiation(instance):
+    assert isinstance(instance, UI_EmployeeManager_Component)
+
+@given(instance=Admin_Actor1_strategy)
+@settings(max_examples=50)
+def test_admin_actor1_instantiation(instance):
+    assert isinstance(instance, Admin_Actor1)
+
+@given(instance=Admin_Actor_strategy)
+@settings(max_examples=50)
+def test_admin_actor_instantiation(instance):
+    assert isinstance(instance, Admin_Actor)
+
+@given(instance=User_Actor_strategy)
+@settings(max_examples=50)
+def test_user_actor_instantiation(instance):
+    assert isinstance(instance, User_Actor)
+
+@given(instance=DistributionSystem_TicketDistributor_strategy)
+@settings(max_examples=50)
+def test_distributionsystem_ticketdistributor_instantiation(instance):
+    assert isinstance(instance, DistributionSystem_TicketDistributor)
+
+
+
+@given(instance=DistributionSystem_TicketDistributor_strategy)
+def test_distributionsystem_ticketdistributor_from_setter(instance):
+    original = instance.from
+    instance.from = original
+    assert instance.from == original
+
+
+
+@given(instance=DistributionSystem_TicketDistributor_strategy)
+def test_distributionsystem_ticketdistributor_payment_setter(instance):
+    original = instance.payment
+    instance.payment = original
+    assert instance.payment == original
+
+@given(instance=DistributionSystem_Customer_strategy)
+@settings(max_examples=50)
+def test_distributionsystem_customer_instantiation(instance):
+    assert isinstance(instance, DistributionSystem_Customer)
+
+
+
+@given(instance=DistributionSystem_Customer_strategy)
+def test_distributionsystem_customer_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=DistributionSystem_Customer_strategy)
+def test_distributionsystem_customer__milesFlyed_setter(instance):
+    original = instance._milesFlyed
+    instance._milesFlyed = original
+    assert instance._milesFlyed == original
+
+
+
+@given(instance=DistributionSystem_Customer_strategy)
+def test_distributionsystem_customer_Luggage_setter(instance):
+    original = instance.Luggage
+    instance.Luggage = original
+    assert instance.Luggage == original
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+@settings(max_examples=50)
+def test_distributionsystem_boardingpass_instantiation(instance):
+    assert isinstance(instance, DistributionSystem_BoardingPass)
+
+
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+def test_distributionsystem_boardingpass_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+def test_distributionsystem_boardingpass_row_setter(instance):
+    original = instance.row
+    instance.row = original
+    assert instance.row == original
+
+
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+def test_distributionsystem_boardingpass_seat_setter(instance):
+    original = instance.seat
+    instance.seat = original
+    assert instance.seat == original
+
+
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+def test_distributionsystem_boardingpass_isValidated_setter(instance):
+    original = instance.isValidated
+    instance.isValidated = original
+    assert instance.isValidated == original
+
+
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+def test_distributionsystem_boardingpass_dateOfPurchase_setter(instance):
+    original = instance.dateOfPurchase
+    instance.dateOfPurchase = original
+    assert instance.dateOfPurchase == original
+
+
+
+@given(instance=DistributionSystem_BoardingPass_strategy)
+def test_distributionsystem_boardingpass_flight_setter(instance):
+    original = instance.flight
+    instance.flight = original
+    assert instance.flight == original
+
+@given(instance=DistributionSystem_Ticket_strategy)
+@settings(max_examples=50)
+def test_distributionsystem_ticket_instantiation(instance):
+    assert isinstance(instance, DistributionSystem_Ticket)
+
+
+
+@given(instance=DistributionSystem_Ticket_strategy)
+def test_distributionsystem_ticket__price_setter(instance):
+    original = instance._price
+    instance._price = original
+    assert instance._price == original
+
+
+
+@given(instance=DistributionSystem_Ticket_strategy)
+def test_distributionsystem_ticket_payment_setter(instance):
+    original = instance.payment
+    instance.payment = original
+    assert instance.payment == original
+
+
+
+@given(instance=DistributionSystem_Ticket_strategy)
+def test_distributionsystem_ticket_isRegistered_setter(instance):
+    original = instance.isRegistered
+    instance.isRegistered = original
+    assert instance.isRegistered == original
+
+
+
+@given(instance=DistributionSystem_Ticket_strategy)
+def test_distributionsystem_ticket__numberPlace_setter(instance):
+    original = instance._numberPlace
+    instance._numberPlace = original
+    assert instance._numberPlace == original
+
+
+
+@given(instance=DistributionSystem_Ticket_strategy)
+def test_distributionsystem_ticket_from_setter(instance):
+    original = instance.from
+    instance.from = original
+    assert instance.from == original
+
+@given(instance=FlightSystem_Plane_strategy)
+@settings(max_examples=50)
+def test_flightsystem_plane_instantiation(instance):
+    assert isinstance(instance, FlightSystem_Plane)
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__location_setter(instance):
+    original = instance._location
+    instance._location = original
+    assert instance._location == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__millesSinceRevisionned_setter(instance):
+    original = instance._millesSinceRevisionned
+    instance._millesSinceRevisionned = original
+    assert instance._millesSinceRevisionned == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane_row_setter(instance):
+    original = instance.row
+    instance.row = original
+    assert instance.row == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane_seatPerRow_setter(instance):
+    original = instance.seatPerRow
+    instance.seatPerRow = original
+    assert instance.seatPerRow == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__millesFlyed_setter(instance):
+    original = instance._millesFlyed
+    instance._millesFlyed = original
+    assert instance._millesFlyed == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane_nbSteward_setter(instance):
+    original = instance.nbSteward
+    instance.nbSteward = original
+    assert instance.nbSteward == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__crew_setter(instance):
+    original = instance._crew
+    instance._crew = original
+    assert instance._crew == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__state_setter(instance):
+    original = instance._state
+    instance._state = original
+    assert instance._state == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane_nbPilote_setter(instance):
+    original = instance.nbPilote
+    instance.nbPilote = original
+    assert instance.nbPilote == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__flySinceRefuel_setter(instance):
+    original = instance._flySinceRefuel
+    instance._flySinceRefuel = original
+    assert instance._flySinceRefuel == original
+
+
+
+@given(instance=FlightSystem_Plane_strategy)
+def test_flightsystem_plane__seat_setter(instance):
+    original = instance._seat
+    instance._seat = original
+    assert instance._seat == original
+
+@given(instance=FlightSystem_Flight_strategy)
+@settings(max_examples=50)
+def test_flightsystem_flight_instantiation(instance):
+    assert isinstance(instance, FlightSystem_Flight)
+
+
+
+@given(instance=FlightSystem_Flight_strategy)
+def test_flightsystem_flight_flightType_setter(instance):
+    original = instance.flightType
+    instance.flightType = original
+    assert instance.flightType == original
+
+
+
+@given(instance=FlightSystem_Flight_strategy)
+def test_flightsystem_flight_airportTo_setter(instance):
+    original = instance.airportTo
+    instance.airportTo = original
+    assert instance.airportTo == original
+
+
+
+@given(instance=FlightSystem_Flight_strategy)
+def test_flightsystem_flight__miles_setter(instance):
+    original = instance._miles
+    instance._miles = original
+    assert instance._miles == original
+
+
+
+@given(instance=FlightSystem_Flight_strategy)
+def test_flightsystem_flight__duration_setter(instance):
+    original = instance._duration
+    instance._duration = original
+    assert instance._duration == original
+
+
+
+@given(instance=FlightSystem_Flight_strategy)
+def test_flightsystem_flight_airportFrom_setter(instance):
+    original = instance.airportFrom
+    instance.airportFrom = original
+    assert instance.airportFrom == original
+
+
+
+@given(instance=FlightSystem_Flight_strategy)
+def test_flightsystem_flight_schedule_setter(instance):
+    original = instance.schedule
+    instance.schedule = original
+    assert instance.schedule == original
+
+@given(instance=Company_Airport_strategy)
+@settings(max_examples=50)
+def test_company_airport_instantiation(instance):
+    assert isinstance(instance, Company_Airport)
+
+
+
+@given(instance=Company_Airport_strategy)
+def test_company_airport_beginSchedule_setter(instance):
+    original = instance.beginSchedule
+    instance.beginSchedule = original
+    assert instance.beginSchedule == original
+
+
+
+@given(instance=Company_Airport_strategy)
+def test_company_airport_endSchedule_setter(instance):
+    original = instance.endSchedule
+    instance.endSchedule = original
+    assert instance.endSchedule == original
+
+
+
+@given(instance=Company_Airport_strategy)
+def test_company_airport_ticketPrice_setter(instance):
+    original = instance.ticketPrice
+    instance.ticketPrice = original
+    assert instance.ticketPrice == original
+
+
+
+@given(instance=Company_Airport_strategy)
+def test_company_airport_city_setter(instance):
+    original = instance.city
+    instance.city = original
+    assert instance.city == original
+
+
+
+@given(instance=Company_Airport_strategy)
+def test_company_airport_ticketCharges_setter(instance):
+    original = instance.ticketCharges
+    instance.ticketCharges = original
+    assert instance.ticketCharges == original
+
+@given(instance=Company_Company_strategy)
+@settings(max_examples=50)
+def test_company_company_instantiation(instance):
+    assert isinstance(instance, Company_Company)
+
+
+
+@given(instance=Company_Company_strategy)
+def test_company_company_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Company_Company_strategy)
+def test_company_company_pilots_setter(instance):
+    original = instance.pilots
+    instance.pilots = original
+    assert instance.pilots == original
+
+
+
+@given(instance=Company_Company_strategy)
+def test_company_company_stewards_setter(instance):
+    original = instance.stewards
+    instance.stewards = original
+    assert instance.stewards == original
+
+
+
+@given(instance=Company_Company_strategy)
+def test_company_company_airportEmployees_setter(instance):
+    original = instance.airportEmployees
+    instance.airportEmployees = original
+    assert instance.airportEmployees == original
+
+@given(instance=Employee_Employee_strategy)
+@settings(max_examples=50)
+def test_employee_employee_instantiation(instance):
+    assert isinstance(instance, Employee_Employee)
+
+
+
+@given(instance=Employee_Employee_strategy)
+def test_employee_employee_isSuperUser_setter(instance):
+    original = instance.isSuperUser
+    instance.isSuperUser = original
+    assert instance.isSuperUser == original
+
+
+
+@given(instance=Employee_Employee_strategy)
+def test_employee_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Employee_Employee_strategy)
+def test_employee_employee_dayByWeek_setter(instance):
+    original = instance.dayByWeek
+    instance.dayByWeek = original
+    assert instance.dayByWeek == original
+
+
+
+@given(instance=Employee_Employee_strategy)
+def test_employee_employee_gender_setter(instance):
+    original = instance.gender
+    instance.gender = original
+    assert instance.gender == original
+
+
+
+@given(instance=Employee_Employee_strategy)
+def test_employee_employee_JobType_setter(instance):
+    original = instance.JobType
+    instance.JobType = original
+    assert instance.JobType == original
+
+@given(instance=Employee_AirportEmployee_strategy)
+@settings(max_examples=50)
+def test_employee_airportemployee_instantiation(instance):
+    assert isinstance(instance, Employee_AirportEmployee)
+
+
+
+@given(instance=Employee_AirportEmployee_strategy)
+def test_employee_airportemployee_airport_setter(instance):
+    original = instance.airport
+    instance.airport = original
+    assert instance.airport == original
+
+@given(instance=Employee_Pilot_strategy)
+@settings(max_examples=50)
+def test_employee_pilot_instantiation(instance):
+    assert isinstance(instance, Employee_Pilot)
+
+
+
+@given(instance=Employee_Pilot_strategy)
+def test_employee_pilot_plane_setter(instance):
+    original = instance.plane
+    instance.plane = original
+    assert instance.plane == original
+
+
+
+@given(instance=Employee_Pilot_strategy)
+def test_employee_pilot_airport_setter(instance):
+    original = instance.airport
+    instance.airport = original
+    assert instance.airport == original
+
+@given(instance=Employee_Steward_strategy)
+@settings(max_examples=50)
+def test_employee_steward_instantiation(instance):
+    assert isinstance(instance, Employee_Steward)
+
+
+
+@given(instance=Employee_Steward_strategy)
+def test_employee_steward_airport_setter(instance):
+    original = instance.airport
+    instance.airport = original
+    assert instance.airport == original
+
+
+
+@given(instance=Employee_Steward_strategy)
+def test_employee_steward_plane_setter(instance):
+    original = instance.plane
+    instance.plane = original
+    assert instance.plane == original
+
+@given(instance=Employee_IEmployee_Interface_strategy)
+@settings(max_examples=50)
+def test_employee_iemployee_interface_instantiation(instance):
+    assert isinstance(instance, Employee_IEmployee_Interface)
+
+@given(instance=Controller_FlightEvent_strategy)
+@settings(max_examples=50)
+def test_controller_flightevent_instantiation(instance):
+    assert isinstance(instance, Controller_FlightEvent)
+
+
+
+@given(instance=Controller_FlightEvent_strategy)
+def test_controller_flightevent__dateBegin_setter(instance):
+    original = instance._dateBegin
+    instance._dateBegin = original
+    assert instance._dateBegin == original
+
+
+
+@given(instance=Controller_FlightEvent_strategy)
+def test_controller_flightevent_flight_setter(instance):
+    original = instance.flight
+    instance.flight = original
+    assert instance.flight == original
+
+
+
+@given(instance=Controller_FlightEvent_strategy)
+def test_controller_flightevent__title_setter(instance):
+    original = instance._title
+    instance._title = original
+    assert instance._title == original
+
+
+
+@given(instance=Controller_FlightEvent_strategy)
+def test_controller_flightevent__dateEnd_setter(instance):
+    original = instance._dateEnd
+    instance._dateEnd = original
+    assert instance._dateEnd == original
 
 @given(instance=Employee_Actor2_strategy)
 @settings(max_examples=50)
@@ -4023,118 +3943,3 @@ def test_registertowaitinglist_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_checkavailability_usecase_instantiation(instance):
     assert isinstance(instance, CheckAvailability_UseCase)
-
-@given(instance=AddASurbooking_UseCase_strategy)
-@settings(max_examples=50)
-def test_addasurbooking_usecase_instantiation(instance):
-    assert isinstance(instance, AddASurbooking_UseCase)
-
-@given(instance=WaitingList_UseCase_strategy)
-@settings(max_examples=50)
-def test_waitinglist_usecase_instantiation(instance):
-    assert isinstance(instance, WaitingList_UseCase)
-
-@given(instance=ChangeSeat_UseCase_strategy)
-@settings(max_examples=50)
-def test_changeseat_usecase_instantiation(instance):
-    assert isinstance(instance, ChangeSeat_UseCase)
-
-@given(instance=CheckSeat_UseCase_strategy)
-@settings(max_examples=50)
-def test_checkseat_usecase_instantiation(instance):
-    assert isinstance(instance, CheckSeat_UseCase)
-
-@given(instance=CheckInformations_UseCase_strategy)
-@settings(max_examples=50)
-def test_checkinformations_usecase_instantiation(instance):
-    assert isinstance(instance, CheckInformations_UseCase)
-
-@given(instance=CheckInForFlight_UseCase_strategy)
-@settings(max_examples=50)
-def test_checkinforflight_usecase_instantiation(instance):
-    assert isinstance(instance, CheckInForFlight_UseCase)
-
-@given(instance=ByBookingNumber_UseCase_strategy)
-@settings(max_examples=50)
-def test_bybookingnumber_usecase_instantiation(instance):
-    assert isinstance(instance, ByBookingNumber_UseCase)
-
-@given(instance=ByName_UseCase_strategy)
-@settings(max_examples=50)
-def test_byname_usecase_instantiation(instance):
-    assert isinstance(instance, ByName_UseCase)
-
-@given(instance=PassengerIdentification_UseCase_strategy)
-@settings(max_examples=50)
-def test_passengeridentification_usecase_instantiation(instance):
-    assert isinstance(instance, PassengerIdentification_UseCase)
-
-@given(instance=PassengerCheckIn_UseCase_strategy)
-@settings(max_examples=50)
-def test_passengercheckin_usecase_instantiation(instance):
-    assert isinstance(instance, PassengerCheckIn_UseCase)
-
-@given(instance=Employee_Actor1_strategy)
-@settings(max_examples=50)
-def test_employee_actor1_instantiation(instance):
-    assert isinstance(instance, Employee_Actor1)
-
-@given(instance=Distribute_UseCase_strategy)
-@settings(max_examples=50)
-def test_distribute_usecase_instantiation(instance):
-    assert isinstance(instance, Distribute_UseCase)
-
-@given(instance=Seller_Actor_strategy)
-@settings(max_examples=50)
-def test_seller_actor_instantiation(instance):
-    assert isinstance(instance, Seller_Actor)
-
-@given(instance=OnlineBuy_UseCase_strategy)
-@settings(max_examples=50)
-def test_onlinebuy_usecase_instantiation(instance):
-    assert isinstance(instance, OnlineBuy_UseCase)
-
-@given(instance=Customer_Actor_strategy)
-@settings(max_examples=50)
-def test_customer_actor_instantiation(instance):
-    assert isinstance(instance, Customer_Actor)
-
-@given(instance=User_Actor1_strategy)
-@settings(max_examples=50)
-def test_user_actor1_instantiation(instance):
-    assert isinstance(instance, User_Actor1)
-
-@given(instance=UI_FlightPlanning_Component_strategy)
-@settings(max_examples=50)
-def test_ui_flightplanning_component_instantiation(instance):
-    assert isinstance(instance, UI_FlightPlanning_Component)
-
-@given(instance=UI_FlightManager_Component_strategy)
-@settings(max_examples=50)
-def test_ui_flightmanager_component_instantiation(instance):
-    assert isinstance(instance, UI_FlightManager_Component)
-
-@given(instance=Employee_Actor_strategy)
-@settings(max_examples=50)
-def test_employee_actor_instantiation(instance):
-    assert isinstance(instance, Employee_Actor)
-
-@given(instance=UI_EmployeePlanning_Component_strategy)
-@settings(max_examples=50)
-def test_ui_employeeplanning_component_instantiation(instance):
-    assert isinstance(instance, UI_EmployeePlanning_Component)
-
-@given(instance=UI_EmployeeManager_Component_strategy)
-@settings(max_examples=50)
-def test_ui_employeemanager_component_instantiation(instance):
-    assert isinstance(instance, UI_EmployeeManager_Component)
-
-@given(instance=Admin_Actor1_strategy)
-@settings(max_examples=50)
-def test_admin_actor1_instantiation(instance):
-    assert isinstance(instance, Admin_Actor1)
-
-@given(instance=Admin_Actor_strategy)
-@settings(max_examples=50)
-def test_admin_actor_instantiation(instance):
-    assert isinstance(instance, Admin_Actor)

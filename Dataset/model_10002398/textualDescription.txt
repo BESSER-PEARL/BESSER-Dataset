@@ -1,0 +1,14 @@
+The model has 9 class(es).
+The class 'mypackage_Perosn' has the following attributes: 'fName' of type str; 'id' of type int; 'lname' of type str; 'UserName' of type str; 'age' of type int.
+The class 'mypackage_Staff' has the following attributes: 'salary' of type str.
+The class 'mypackage_Student' has the following attributes: 'level' of type int; 'grade' of type str; 'studentFileName' of type str.
+The class 'mypackage_Course' has the following attributes: 'CId' of type str; 'CreditHours' of type int; 'CName' of type str; 'CourseFileName' of type str.
+The class 'mypackage_studentAffairsEmp' has the following attributes: 'EmpFileName' of type str.
+The class 'mypackage_FileManager' has no attributes.
+The class 'mypackage_Exam' has the following attributes: 'EId' of type str; 'EName' of type str; 'MaxGrade' of type str; 'ExamsFileName' of type str.
+The class 'mypackage_Admin' has no attributes.
+The class 'mypackage_Tutor' has the following attributes: 'TutorFileName' of type str; 'academicalHours' of type str.
+'mypackage_Course' (role 'exam0', cardinality 0..*) is associated with 'mypackage_Exam' (role 'course1', cardinality 0..*).
+'mypackage_FileManager' (role 'perosn2', cardinality 0..*) is associated with 'mypackage_Perosn' (role 'fileManager3', cardinality 0..*).
+'mypackage_Exam' (role 'fileManager7', cardinality 0..*) is associated with 'mypackage_FileManager' (role 'exam6', cardinality 0..*).
+'mypackage_FileManager' (role 'course4', cardinality 0..*) is associated with 'mypackage_Course' (role 'fileManager5', cardinality 0..*).

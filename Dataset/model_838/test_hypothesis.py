@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Guard,
-    tfsm::EventGuard,
-    tfsm::EvaluateGuard,
-    tfsm::TemporalGuard,
-    tfsm::NamedElement,
+    tfsm_EvaluateGuard,
+    tfsm_EventGuard,
+    tfsm_TemporalGuard,
+    tfsm_NamedElement,
     NamedElement,
-    tfsm::Transition,
-    tfsm::FSMEvent,
-    tfsm::State,
-    tfsm::FSMClock,
-    tfsm::TimedSystem,
-    tfsm::TFSM,
-    tfsm::Guard,
+    tfsm_FSMEvent,
+    tfsm_Transition,
+    tfsm_FSMClock,
+    tfsm_State,
+    tfsm_TimedSystem,
+    tfsm_TFSM,
+    tfsm_Guard,
 )
 
 # =============================================================================
@@ -41,37 +41,23 @@ def test_guard_constructor_args():
 
 
 
-def test_tfsm::eventguard_is_not_abstract():
-    assert not inspect.isabstract(tfsm::EventGuard)
+def test_tfsm_evaluateguard_is_not_abstract():
+    assert not inspect.isabstract(tfsm_EvaluateGuard)
 
 
-def test_tfsm::eventguard_constructor_exists():
-    assert callable(tfsm::EventGuard.__init__)
+def test_tfsm_evaluateguard_constructor_exists():
+    assert callable(tfsm_EvaluateGuard.__init__)
 
 
-def test_tfsm::eventguard_constructor_args():
-    sig = inspect.signature(tfsm::EventGuard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tfsm::evaluateguard_is_not_abstract():
-    assert not inspect.isabstract(tfsm::EvaluateGuard)
-
-
-def test_tfsm::evaluateguard_constructor_exists():
-    assert callable(tfsm::EvaluateGuard.__init__)
-
-
-def test_tfsm::evaluateguard_constructor_args():
-    sig = inspect.signature(tfsm::EvaluateGuard.__init__)
+def test_tfsm_evaluateguard_constructor_args():
+    sig = inspect.signature(tfsm_EvaluateGuard.__init__)
     params = list(sig.parameters.keys())
     assert "condition" in params, "Missing parameter 'condition'"
 
-def test_tfsm::evaluateguard_has_condition():
-    assert hasattr(tfsm::EvaluateGuard, "condition")
+def test_tfsm_evaluateguard_has_condition():
+    assert hasattr(tfsm_EvaluateGuard, "condition")
     descriptor = None
-    for klass in tfsm::EvaluateGuard.__mro__:
+    for klass in tfsm_EvaluateGuard.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
@@ -79,23 +65,37 @@ def test_tfsm::evaluateguard_has_condition():
 
 
 
-def test_tfsm::temporalguard_is_not_abstract():
-    assert not inspect.isabstract(tfsm::TemporalGuard)
+def test_tfsm_eventguard_is_not_abstract():
+    assert not inspect.isabstract(tfsm_EventGuard)
 
 
-def test_tfsm::temporalguard_constructor_exists():
-    assert callable(tfsm::TemporalGuard.__init__)
+def test_tfsm_eventguard_constructor_exists():
+    assert callable(tfsm_EventGuard.__init__)
 
 
-def test_tfsm::temporalguard_constructor_args():
-    sig = inspect.signature(tfsm::TemporalGuard.__init__)
+def test_tfsm_eventguard_constructor_args():
+    sig = inspect.signature(tfsm_EventGuard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tfsm_temporalguard_is_not_abstract():
+    assert not inspect.isabstract(tfsm_TemporalGuard)
+
+
+def test_tfsm_temporalguard_constructor_exists():
+    assert callable(tfsm_TemporalGuard.__init__)
+
+
+def test_tfsm_temporalguard_constructor_args():
+    sig = inspect.signature(tfsm_TemporalGuard.__init__)
     params = list(sig.parameters.keys())
     assert "afterDuration" in params, "Missing parameter 'afterDuration'"
 
-def test_tfsm::temporalguard_has_afterDuration():
-    assert hasattr(tfsm::TemporalGuard, "afterDuration")
+def test_tfsm_temporalguard_has_afterDuration():
+    assert hasattr(tfsm_TemporalGuard, "afterDuration")
     descriptor = None
-    for klass in tfsm::TemporalGuard.__mro__:
+    for klass in tfsm_TemporalGuard.__mro__:
         if "afterDuration" in klass.__dict__:
             descriptor = klass.__dict__["afterDuration"]
             break
@@ -103,23 +103,23 @@ def test_tfsm::temporalguard_has_afterDuration():
 
 
 
-def test_tfsm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(tfsm::NamedElement)
+def test_tfsm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(tfsm_NamedElement)
 
 
-def test_tfsm::namedelement_constructor_exists():
-    assert callable(tfsm::NamedElement.__init__)
+def test_tfsm_namedelement_constructor_exists():
+    assert callable(tfsm_NamedElement.__init__)
 
 
-def test_tfsm::namedelement_constructor_args():
-    sig = inspect.signature(tfsm::NamedElement.__init__)
+def test_tfsm_namedelement_constructor_args():
+    sig = inspect.signature(tfsm_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tfsm::namedelement_has_name():
-    assert hasattr(tfsm::NamedElement, "name")
+def test_tfsm_namedelement_has_name():
+    assert hasattr(tfsm_NamedElement, "name")
     descriptor = None
-    for klass in tfsm::NamedElement.__mro__:
+    for klass in tfsm_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -141,23 +141,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_tfsm::transition_is_not_abstract():
-    assert not inspect.isabstract(tfsm::Transition)
+def test_tfsm_fsmevent_is_not_abstract():
+    assert not inspect.isabstract(tfsm_FSMEvent)
 
 
-def test_tfsm::transition_constructor_exists():
-    assert callable(tfsm::Transition.__init__)
+def test_tfsm_fsmevent_constructor_exists():
+    assert callable(tfsm_FSMEvent.__init__)
 
 
-def test_tfsm::transition_constructor_args():
-    sig = inspect.signature(tfsm::Transition.__init__)
+def test_tfsm_fsmevent_constructor_args():
+    sig = inspect.signature(tfsm_FSMEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tfsm_transition_is_not_abstract():
+    assert not inspect.isabstract(tfsm_Transition)
+
+
+def test_tfsm_transition_constructor_exists():
+    assert callable(tfsm_Transition.__init__)
+
+
+def test_tfsm_transition_constructor_args():
+    sig = inspect.signature(tfsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "action" in params, "Missing parameter 'action'"
 
-def test_tfsm::transition_has_action():
-    assert hasattr(tfsm::Transition, "action")
+def test_tfsm_transition_has_action():
+    assert hasattr(tfsm_Transition, "action")
     descriptor = None
-    for klass in tfsm::Transition.__mro__:
+    for klass in tfsm_Transition.__mro__:
         if "action" in klass.__dict__:
             descriptor = klass.__dict__["action"]
             break
@@ -165,86 +179,72 @@ def test_tfsm::transition_has_action():
 
 
 
-def test_tfsm::fsmevent_is_not_abstract():
-    assert not inspect.isabstract(tfsm::FSMEvent)
+def test_tfsm_fsmclock_is_not_abstract():
+    assert not inspect.isabstract(tfsm_FSMClock)
 
 
-def test_tfsm::fsmevent_constructor_exists():
-    assert callable(tfsm::FSMEvent.__init__)
+def test_tfsm_fsmclock_constructor_exists():
+    assert callable(tfsm_FSMClock.__init__)
 
 
-def test_tfsm::fsmevent_constructor_args():
-    sig = inspect.signature(tfsm::FSMEvent.__init__)
+def test_tfsm_fsmclock_constructor_args():
+    sig = inspect.signature(tfsm_FSMClock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tfsm::state_is_not_abstract():
-    assert not inspect.isabstract(tfsm::State)
+def test_tfsm_state_is_not_abstract():
+    assert not inspect.isabstract(tfsm_State)
 
 
-def test_tfsm::state_constructor_exists():
-    assert callable(tfsm::State.__init__)
+def test_tfsm_state_constructor_exists():
+    assert callable(tfsm_State.__init__)
 
 
-def test_tfsm::state_constructor_args():
-    sig = inspect.signature(tfsm::State.__init__)
+def test_tfsm_state_constructor_args():
+    sig = inspect.signature(tfsm_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tfsm::fsmclock_is_not_abstract():
-    assert not inspect.isabstract(tfsm::FSMClock)
+def test_tfsm_timedsystem_is_not_abstract():
+    assert not inspect.isabstract(tfsm_TimedSystem)
 
 
-def test_tfsm::fsmclock_constructor_exists():
-    assert callable(tfsm::FSMClock.__init__)
+def test_tfsm_timedsystem_constructor_exists():
+    assert callable(tfsm_TimedSystem.__init__)
 
 
-def test_tfsm::fsmclock_constructor_args():
-    sig = inspect.signature(tfsm::FSMClock.__init__)
+def test_tfsm_timedsystem_constructor_args():
+    sig = inspect.signature(tfsm_TimedSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tfsm::timedsystem_is_not_abstract():
-    assert not inspect.isabstract(tfsm::TimedSystem)
+def test_tfsm_tfsm_is_not_abstract():
+    assert not inspect.isabstract(tfsm_TFSM)
 
 
-def test_tfsm::timedsystem_constructor_exists():
-    assert callable(tfsm::TimedSystem.__init__)
+def test_tfsm_tfsm_constructor_exists():
+    assert callable(tfsm_TFSM.__init__)
 
 
-def test_tfsm::timedsystem_constructor_args():
-    sig = inspect.signature(tfsm::TimedSystem.__init__)
+def test_tfsm_tfsm_constructor_args():
+    sig = inspect.signature(tfsm_TFSM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tfsm::tfsm_is_not_abstract():
-    assert not inspect.isabstract(tfsm::TFSM)
+def test_tfsm_guard_is_not_abstract():
+    assert not inspect.isabstract(tfsm_Guard)
 
 
-def test_tfsm::tfsm_constructor_exists():
-    assert callable(tfsm::TFSM.__init__)
+def test_tfsm_guard_constructor_exists():
+    assert callable(tfsm_Guard.__init__)
 
 
-def test_tfsm::tfsm_constructor_args():
-    sig = inspect.signature(tfsm::TFSM.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tfsm::guard_is_not_abstract():
-    assert not inspect.isabstract(tfsm::Guard)
-
-
-def test_tfsm::guard_constructor_exists():
-    assert callable(tfsm::Guard.__init__)
-
-
-def test_tfsm::guard_constructor_args():
-    sig = inspect.signature(tfsm::Guard.__init__)
+def test_tfsm_guard_constructor_args():
+    sig = inspect.signature(tfsm_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -262,49 +262,49 @@ safe_text = st.text(
 Guard_strategy = st.builds(
     Guard,
 )
-tfsm::EventGuard_strategy = st.builds(
-    tfsm::EventGuard,
-)
-tfsm::EvaluateGuard_strategy = st.builds(
-    tfsm::EvaluateGuard,
+tfsm_EvaluateGuard_strategy = st.builds(
+    tfsm_EvaluateGuard,
     condition=
         safe_text
 )
-tfsm::TemporalGuard_strategy = st.builds(
-    tfsm::TemporalGuard,
+tfsm_EventGuard_strategy = st.builds(
+    tfsm_EventGuard,
+)
+tfsm_TemporalGuard_strategy = st.builds(
+    tfsm_TemporalGuard,
     afterDuration=
         st.integers()
 )
-tfsm::NamedElement_strategy = st.builds(
-    tfsm::NamedElement,
+tfsm_NamedElement_strategy = st.builds(
+    tfsm_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-tfsm::Transition_strategy = st.builds(
-    tfsm::Transition,
+tfsm_FSMEvent_strategy = st.builds(
+    tfsm_FSMEvent,
+)
+tfsm_Transition_strategy = st.builds(
+    tfsm_Transition,
     action=
         safe_text
 )
-tfsm::FSMEvent_strategy = st.builds(
-    tfsm::FSMEvent,
+tfsm_FSMClock_strategy = st.builds(
+    tfsm_FSMClock,
 )
-tfsm::State_strategy = st.builds(
-    tfsm::State,
+tfsm_State_strategy = st.builds(
+    tfsm_State,
 )
-tfsm::FSMClock_strategy = st.builds(
-    tfsm::FSMClock,
+tfsm_TimedSystem_strategy = st.builds(
+    tfsm_TimedSystem,
 )
-tfsm::TimedSystem_strategy = st.builds(
-    tfsm::TimedSystem,
+tfsm_TFSM_strategy = st.builds(
+    tfsm_TFSM,
 )
-tfsm::TFSM_strategy = st.builds(
-    tfsm::TFSM,
-)
-tfsm::Guard_strategy = st.builds(
-    tfsm::Guard,
+tfsm_Guard_strategy = st.builds(
+    tfsm_Guard,
 )
 
 @given(instance=Guard_strategy)
@@ -312,55 +312,46 @@ tfsm::Guard_strategy = st.builds(
 def test_guard_instantiation(instance):
     assert isinstance(instance, Guard)
 
-@given(instance=tfsm::EventGuard_strategy)
+@given(instance=tfsm_EvaluateGuard_strategy)
 @settings(max_examples=50)
-def test_tfsm::eventguard_instantiation(instance):
-    assert isinstance(instance, tfsm::EventGuard)
-
-@given(instance=tfsm::EvaluateGuard_strategy)
-@settings(max_examples=50)
-def test_tfsm::evaluateguard_instantiation(instance):
-    assert isinstance(instance, tfsm::EvaluateGuard)
-
-@given(instance=tfsm::EvaluateGuard_strategy)
-def test_tfsm::evaluateguard_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_tfsm_evaluateguard_instantiation(instance):
+    assert isinstance(instance, tfsm_EvaluateGuard)
 
 
-@given(instance=tfsm::EvaluateGuard_strategy)
-def test_tfsm::evaluateguard_condition_setter(instance):
+
+@given(instance=tfsm_EvaluateGuard_strategy)
+def test_tfsm_evaluateguard_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=tfsm::TemporalGuard_strategy)
+@given(instance=tfsm_EventGuard_strategy)
 @settings(max_examples=50)
-def test_tfsm::temporalguard_instantiation(instance):
-    assert isinstance(instance, tfsm::TemporalGuard)
+def test_tfsm_eventguard_instantiation(instance):
+    assert isinstance(instance, tfsm_EventGuard)
 
-@given(instance=tfsm::TemporalGuard_strategy)
-def test_tfsm::temporalguard_afterDuration_type(instance):
-    assert isinstance(instance.afterDuration, int)
+@given(instance=tfsm_TemporalGuard_strategy)
+@settings(max_examples=50)
+def test_tfsm_temporalguard_instantiation(instance):
+    assert isinstance(instance, tfsm_TemporalGuard)
 
 
-@given(instance=tfsm::TemporalGuard_strategy)
-def test_tfsm::temporalguard_afterDuration_setter(instance):
+
+@given(instance=tfsm_TemporalGuard_strategy)
+def test_tfsm_temporalguard_afterDuration_setter(instance):
     original = instance.afterDuration
     instance.afterDuration = original
     assert instance.afterDuration == original
 
-@given(instance=tfsm::NamedElement_strategy)
+@given(instance=tfsm_NamedElement_strategy)
 @settings(max_examples=50)
-def test_tfsm::namedelement_instantiation(instance):
-    assert isinstance(instance, tfsm::NamedElement)
-
-@given(instance=tfsm::NamedElement_strategy)
-def test_tfsm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tfsm_namedelement_instantiation(instance):
+    assert isinstance(instance, tfsm_NamedElement)
 
 
-@given(instance=tfsm::NamedElement_strategy)
-def test_tfsm::namedelement_name_setter(instance):
+
+@given(instance=tfsm_NamedElement_strategy)
+def test_tfsm_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -370,48 +361,45 @@ def test_tfsm::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=tfsm::Transition_strategy)
+@given(instance=tfsm_FSMEvent_strategy)
 @settings(max_examples=50)
-def test_tfsm::transition_instantiation(instance):
-    assert isinstance(instance, tfsm::Transition)
+def test_tfsm_fsmevent_instantiation(instance):
+    assert isinstance(instance, tfsm_FSMEvent)
 
-@given(instance=tfsm::Transition_strategy)
-def test_tfsm::transition_action_type(instance):
-    assert isinstance(instance.action, str)
+@given(instance=tfsm_Transition_strategy)
+@settings(max_examples=50)
+def test_tfsm_transition_instantiation(instance):
+    assert isinstance(instance, tfsm_Transition)
 
 
-@given(instance=tfsm::Transition_strategy)
-def test_tfsm::transition_action_setter(instance):
+
+@given(instance=tfsm_Transition_strategy)
+def test_tfsm_transition_action_setter(instance):
     original = instance.action
     instance.action = original
     assert instance.action == original
 
-@given(instance=tfsm::FSMEvent_strategy)
+@given(instance=tfsm_FSMClock_strategy)
 @settings(max_examples=50)
-def test_tfsm::fsmevent_instantiation(instance):
-    assert isinstance(instance, tfsm::FSMEvent)
+def test_tfsm_fsmclock_instantiation(instance):
+    assert isinstance(instance, tfsm_FSMClock)
 
-@given(instance=tfsm::State_strategy)
+@given(instance=tfsm_State_strategy)
 @settings(max_examples=50)
-def test_tfsm::state_instantiation(instance):
-    assert isinstance(instance, tfsm::State)
+def test_tfsm_state_instantiation(instance):
+    assert isinstance(instance, tfsm_State)
 
-@given(instance=tfsm::FSMClock_strategy)
+@given(instance=tfsm_TimedSystem_strategy)
 @settings(max_examples=50)
-def test_tfsm::fsmclock_instantiation(instance):
-    assert isinstance(instance, tfsm::FSMClock)
+def test_tfsm_timedsystem_instantiation(instance):
+    assert isinstance(instance, tfsm_TimedSystem)
 
-@given(instance=tfsm::TimedSystem_strategy)
+@given(instance=tfsm_TFSM_strategy)
 @settings(max_examples=50)
-def test_tfsm::timedsystem_instantiation(instance):
-    assert isinstance(instance, tfsm::TimedSystem)
+def test_tfsm_tfsm_instantiation(instance):
+    assert isinstance(instance, tfsm_TFSM)
 
-@given(instance=tfsm::TFSM_strategy)
+@given(instance=tfsm_Guard_strategy)
 @settings(max_examples=50)
-def test_tfsm::tfsm_instantiation(instance):
-    assert isinstance(instance, tfsm::TFSM)
-
-@given(instance=tfsm::Guard_strategy)
-@settings(max_examples=50)
-def test_tfsm::guard_instantiation(instance):
-    assert isinstance(instance, tfsm::Guard)
+def test_tfsm_guard_instantiation(instance):
+    assert isinstance(instance, tfsm_Guard)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Ver_Contactos_external,
@@ -50,39 +50,21 @@ def test_contacto_constructor_exists():
 def test_contacto_constructor_args():
     sig = inspect.signature(Contacto.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "Telefono" in params, "Missing parameter 'Telefono'"
-    assert "Nombre" in params, "Missing parameter 'Nombre'"
-    assert "user" in params, "Missing parameter 'user'"
-    assert "Groups" in params, "Missing parameter 'Groups'"
-    assert "Email" in params, "Missing parameter 'Email'"
     assert "Foto" in params, "Missing parameter 'Foto'"
+    assert "user" in params, "Missing parameter 'user'"
+    assert "Email" in params, "Missing parameter 'Email'"
+    assert "Telefono" in params, "Missing parameter 'Telefono'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "Groups" in params, "Missing parameter 'Groups'"
     assert "Apellido" in params, "Missing parameter 'Apellido'"
+    assert "Nombre" in params, "Missing parameter 'Nombre'"
 
-def test_contacto_has_id():
-    assert hasattr(Contacto, "id")
+def test_contacto_has_Foto():
+    assert hasattr(Contacto, "Foto")
     descriptor = None
     for klass in Contacto.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_contacto_has_Telefono():
-    assert hasattr(Contacto, "Telefono")
-    descriptor = None
-    for klass in Contacto.__mro__:
-        if "Telefono" in klass.__dict__:
-            descriptor = klass.__dict__["Telefono"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_contacto_has_Nombre():
-    assert hasattr(Contacto, "Nombre")
-    descriptor = None
-    for klass in Contacto.__mro__:
-        if "Nombre" in klass.__dict__:
-            descriptor = klass.__dict__["Nombre"]
+        if "Foto" in klass.__dict__:
+            descriptor = klass.__dict__["Foto"]
             break
     assert isinstance(descriptor, property)
 
@@ -95,15 +77,6 @@ def test_contacto_has_user():
             break
     assert isinstance(descriptor, property)
 
-def test_contacto_has_Groups():
-    assert hasattr(Contacto, "Groups")
-    descriptor = None
-    for klass in Contacto.__mro__:
-        if "Groups" in klass.__dict__:
-            descriptor = klass.__dict__["Groups"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_contacto_has_Email():
     assert hasattr(Contacto, "Email")
     descriptor = None
@@ -113,12 +86,30 @@ def test_contacto_has_Email():
             break
     assert isinstance(descriptor, property)
 
-def test_contacto_has_Foto():
-    assert hasattr(Contacto, "Foto")
+def test_contacto_has_Telefono():
+    assert hasattr(Contacto, "Telefono")
     descriptor = None
     for klass in Contacto.__mro__:
-        if "Foto" in klass.__dict__:
-            descriptor = klass.__dict__["Foto"]
+        if "Telefono" in klass.__dict__:
+            descriptor = klass.__dict__["Telefono"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_contacto_has_id():
+    assert hasattr(Contacto, "id")
+    descriptor = None
+    for klass in Contacto.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_contacto_has_Groups():
+    assert hasattr(Contacto, "Groups")
+    descriptor = None
+    for klass in Contacto.__mro__:
+        if "Groups" in klass.__dict__:
+            descriptor = klass.__dict__["Groups"]
             break
     assert isinstance(descriptor, property)
 
@@ -128,6 +119,15 @@ def test_contacto_has_Apellido():
     for klass in Contacto.__mro__:
         if "Apellido" in klass.__dict__:
             descriptor = klass.__dict__["Apellido"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_contacto_has_Nombre():
+    assert hasattr(Contacto, "Nombre")
+    descriptor = None
+    for klass in Contacto.__mro__:
+        if "Nombre" in klass.__dict__:
+            descriptor = klass.__dict__["Nombre"]
             break
     assert isinstance(descriptor, property)
 
@@ -274,21 +274,21 @@ Ver_Contactos_external_strategy = st.builds(
 )
 Contacto_strategy = st.builds(
     Contacto,
-    id=
-        st.integers(),
-    Telefono=
-        st.integers(),
-    Nombre=
+    Foto=
         safe_text,
     user=
         safe_text,
-    Groups=
-        safe_text,
     Email=
         safe_text,
-    Foto=
+    Telefono=
+        st.integers(),
+    id=
+        st.integers(),
+    Groups=
         safe_text,
     Apellido=
+        safe_text,
+    Nombre=
         safe_text
 )
 Usuario_Actor_strategy = st.builds(
@@ -329,75 +329,6 @@ def test_ver_contactos_external_instantiation(instance):
 def test_contacto_instantiation(instance):
     assert isinstance(instance, Contacto)
 
-@given(instance=Contacto_strategy)
-def test_contacto_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Contacto_strategy)
-def test_contacto_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Contacto_strategy)
-def test_contacto_Telefono_type(instance):
-    assert isinstance(instance.Telefono, int)
-
-
-@given(instance=Contacto_strategy)
-def test_contacto_Telefono_setter(instance):
-    original = instance.Telefono
-    instance.Telefono = original
-    assert instance.Telefono == original
-
-@given(instance=Contacto_strategy)
-def test_contacto_Nombre_type(instance):
-    assert isinstance(instance.Nombre, str)
-
-
-@given(instance=Contacto_strategy)
-def test_contacto_Nombre_setter(instance):
-    original = instance.Nombre
-    instance.Nombre = original
-    assert instance.Nombre == original
-
-@given(instance=Contacto_strategy)
-def test_contacto_user_type(instance):
-    assert isinstance(instance.user, str)
-
-
-@given(instance=Contacto_strategy)
-def test_contacto_user_setter(instance):
-    original = instance.user
-    instance.user = original
-    assert instance.user == original
-
-@given(instance=Contacto_strategy)
-def test_contacto_Groups_type(instance):
-    assert isinstance(instance.Groups, str)
-
-
-@given(instance=Contacto_strategy)
-def test_contacto_Groups_setter(instance):
-    original = instance.Groups
-    instance.Groups = original
-    assert instance.Groups == original
-
-@given(instance=Contacto_strategy)
-def test_contacto_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=Contacto_strategy)
-def test_contacto_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=Contacto_strategy)
-def test_contacto_Foto_type(instance):
-    assert isinstance(instance.Foto, str)
 
 
 @given(instance=Contacto_strategy)
@@ -406,9 +337,46 @@ def test_contacto_Foto_setter(instance):
     instance.Foto = original
     assert instance.Foto == original
 
+
+
 @given(instance=Contacto_strategy)
-def test_contacto_Apellido_type(instance):
-    assert isinstance(instance.Apellido, str)
+def test_contacto_user_setter(instance):
+    original = instance.user
+    instance.user = original
+    assert instance.user == original
+
+
+
+@given(instance=Contacto_strategy)
+def test_contacto_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
+
+
+@given(instance=Contacto_strategy)
+def test_contacto_Telefono_setter(instance):
+    original = instance.Telefono
+    instance.Telefono = original
+    assert instance.Telefono == original
+
+
+
+@given(instance=Contacto_strategy)
+def test_contacto_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Contacto_strategy)
+def test_contacto_Groups_setter(instance):
+    original = instance.Groups
+    instance.Groups = original
+    assert instance.Groups == original
+
 
 
 @given(instance=Contacto_strategy)
@@ -416,6 +384,14 @@ def test_contacto_Apellido_setter(instance):
     original = instance.Apellido
     instance.Apellido = original
     assert instance.Apellido == original
+
+
+
+@given(instance=Contacto_strategy)
+def test_contacto_Nombre_setter(instance):
+    original = instance.Nombre
+    instance.Nombre = original
+    assert instance.Nombre == original
 
 @given(instance=Usuario_Actor_strategy)
 @settings(max_examples=50)

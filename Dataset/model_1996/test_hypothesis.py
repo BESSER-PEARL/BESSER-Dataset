@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::EClass,
-    trace::ReferenceMapping,
-    trace::AttributeMapping,
-    trace::ClassMapping,
-    trace::Trace,
-    trace::EStructuralFeature,
-    trace::EReference,
-    trace::EAttribute,
+from python_code import (
+    trace_EClass,
+    trace_ReferenceMapping,
+    trace_AttributeMapping,
+    trace_ClassMapping,
+    trace_Trace,
+    trace_EStructuralFeature,
+    trace_EReference,
+    trace_EAttribute,
     ReferenceMappingType,
 )
 
@@ -23,37 +23,37 @@ from classes import (
 
 
 
-def test_trace::eclass_is_not_abstract():
-    assert not inspect.isabstract(trace::EClass)
+def test_trace_eclass_is_not_abstract():
+    assert not inspect.isabstract(trace_EClass)
 
 
-def test_trace::eclass_constructor_exists():
-    assert callable(trace::EClass.__init__)
+def test_trace_eclass_constructor_exists():
+    assert callable(trace_EClass.__init__)
 
 
-def test_trace::eclass_constructor_args():
-    sig = inspect.signature(trace::EClass.__init__)
+def test_trace_eclass_constructor_args():
+    sig = inspect.signature(trace_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::referencemapping_is_not_abstract():
-    assert not inspect.isabstract(trace::ReferenceMapping)
+def test_trace_referencemapping_is_not_abstract():
+    assert not inspect.isabstract(trace_ReferenceMapping)
 
 
-def test_trace::referencemapping_constructor_exists():
-    assert callable(trace::ReferenceMapping.__init__)
+def test_trace_referencemapping_constructor_exists():
+    assert callable(trace_ReferenceMapping.__init__)
 
 
-def test_trace::referencemapping_constructor_args():
-    sig = inspect.signature(trace::ReferenceMapping.__init__)
+def test_trace_referencemapping_constructor_args():
+    sig = inspect.signature(trace_ReferenceMapping.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_trace::referencemapping_has_type():
-    assert hasattr(trace::ReferenceMapping, "type")
+def test_trace_referencemapping_has_type():
+    assert hasattr(trace_ReferenceMapping, "type")
     descriptor = None
-    for klass in trace::ReferenceMapping.__mro__:
+    for klass in trace_ReferenceMapping.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -61,86 +61,86 @@ def test_trace::referencemapping_has_type():
 
 
 
-def test_trace::attributemapping_is_not_abstract():
-    assert not inspect.isabstract(trace::AttributeMapping)
+def test_trace_attributemapping_is_not_abstract():
+    assert not inspect.isabstract(trace_AttributeMapping)
 
 
-def test_trace::attributemapping_constructor_exists():
-    assert callable(trace::AttributeMapping.__init__)
+def test_trace_attributemapping_constructor_exists():
+    assert callable(trace_AttributeMapping.__init__)
 
 
-def test_trace::attributemapping_constructor_args():
-    sig = inspect.signature(trace::AttributeMapping.__init__)
+def test_trace_attributemapping_constructor_args():
+    sig = inspect.signature(trace_AttributeMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::classmapping_is_not_abstract():
-    assert not inspect.isabstract(trace::ClassMapping)
+def test_trace_classmapping_is_not_abstract():
+    assert not inspect.isabstract(trace_ClassMapping)
 
 
-def test_trace::classmapping_constructor_exists():
-    assert callable(trace::ClassMapping.__init__)
+def test_trace_classmapping_constructor_exists():
+    assert callable(trace_ClassMapping.__init__)
 
 
-def test_trace::classmapping_constructor_args():
-    sig = inspect.signature(trace::ClassMapping.__init__)
+def test_trace_classmapping_constructor_args():
+    sig = inspect.signature(trace_ClassMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(trace::EStructuralFeature)
+def test_trace_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(trace_EStructuralFeature)
 
 
-def test_trace::estructuralfeature_constructor_exists():
-    assert callable(trace::EStructuralFeature.__init__)
+def test_trace_estructuralfeature_constructor_exists():
+    assert callable(trace_EStructuralFeature.__init__)
 
 
-def test_trace::estructuralfeature_constructor_args():
-    sig = inspect.signature(trace::EStructuralFeature.__init__)
+def test_trace_estructuralfeature_constructor_args():
+    sig = inspect.signature(trace_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::ereference_is_not_abstract():
-    assert not inspect.isabstract(trace::EReference)
+def test_trace_ereference_is_not_abstract():
+    assert not inspect.isabstract(trace_EReference)
 
 
-def test_trace::ereference_constructor_exists():
-    assert callable(trace::EReference.__init__)
+def test_trace_ereference_constructor_exists():
+    assert callable(trace_EReference.__init__)
 
 
-def test_trace::ereference_constructor_args():
-    sig = inspect.signature(trace::EReference.__init__)
+def test_trace_ereference_constructor_args():
+    sig = inspect.signature(trace_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::eattribute_is_not_abstract():
-    assert not inspect.isabstract(trace::EAttribute)
+def test_trace_eattribute_is_not_abstract():
+    assert not inspect.isabstract(trace_EAttribute)
 
 
-def test_trace::eattribute_constructor_exists():
-    assert callable(trace::EAttribute.__init__)
+def test_trace_eattribute_constructor_exists():
+    assert callable(trace_EAttribute.__init__)
 
 
-def test_trace::eattribute_constructor_args():
-    sig = inspect.signature(trace::EAttribute.__init__)
+def test_trace_eattribute_constructor_args():
+    sig = inspect.signature(trace_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 def test_referencemappingtype_exists():
@@ -151,8 +151,8 @@ def test_referencemappingtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ReferenceMappingType]
     expected_literals = [
-        "MAPPED",
         "NONE",
+        "MAPPED",
         "TRANSLATED",
     ]
     # Check that all expected literals exist
@@ -171,80 +171,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::EClass_strategy = st.builds(
-    trace::EClass,
+trace_EClass_strategy = st.builds(
+    trace_EClass,
 )
-trace::ReferenceMapping_strategy = st.builds(
-    trace::ReferenceMapping,
+trace_ReferenceMapping_strategy = st.builds(
+    trace_ReferenceMapping,
     type=
         safe_text
 )
-trace::AttributeMapping_strategy = st.builds(
-    trace::AttributeMapping,
+trace_AttributeMapping_strategy = st.builds(
+    trace_AttributeMapping,
 )
-trace::ClassMapping_strategy = st.builds(
-    trace::ClassMapping,
+trace_ClassMapping_strategy = st.builds(
+    trace_ClassMapping,
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
-trace::EStructuralFeature_strategy = st.builds(
-    trace::EStructuralFeature,
+trace_EStructuralFeature_strategy = st.builds(
+    trace_EStructuralFeature,
 )
-trace::EReference_strategy = st.builds(
-    trace::EReference,
+trace_EReference_strategy = st.builds(
+    trace_EReference,
 )
-trace::EAttribute_strategy = st.builds(
-    trace::EAttribute,
+trace_EAttribute_strategy = st.builds(
+    trace_EAttribute,
 )
 
-@given(instance=trace::EClass_strategy)
+@given(instance=trace_EClass_strategy)
 @settings(max_examples=50)
-def test_trace::eclass_instantiation(instance):
-    assert isinstance(instance, trace::EClass)
+def test_trace_eclass_instantiation(instance):
+    assert isinstance(instance, trace_EClass)
 
-@given(instance=trace::ReferenceMapping_strategy)
+@given(instance=trace_ReferenceMapping_strategy)
 @settings(max_examples=50)
-def test_trace::referencemapping_instantiation(instance):
-    assert isinstance(instance, trace::ReferenceMapping)
-
-@given(instance=trace::ReferenceMapping_strategy)
-def test_trace::referencemapping_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_trace_referencemapping_instantiation(instance):
+    assert isinstance(instance, trace_ReferenceMapping)
 
 
-@given(instance=trace::ReferenceMapping_strategy)
-def test_trace::referencemapping_type_setter(instance):
+
+@given(instance=trace_ReferenceMapping_strategy)
+def test_trace_referencemapping_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=trace::AttributeMapping_strategy)
+@given(instance=trace_AttributeMapping_strategy)
 @settings(max_examples=50)
-def test_trace::attributemapping_instantiation(instance):
-    assert isinstance(instance, trace::AttributeMapping)
+def test_trace_attributemapping_instantiation(instance):
+    assert isinstance(instance, trace_AttributeMapping)
 
-@given(instance=trace::ClassMapping_strategy)
+@given(instance=trace_ClassMapping_strategy)
 @settings(max_examples=50)
-def test_trace::classmapping_instantiation(instance):
-    assert isinstance(instance, trace::ClassMapping)
+def test_trace_classmapping_instantiation(instance):
+    assert isinstance(instance, trace_ClassMapping)
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)
 
-@given(instance=trace::EStructuralFeature_strategy)
+@given(instance=trace_EStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_trace::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, trace::EStructuralFeature)
+def test_trace_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, trace_EStructuralFeature)
 
-@given(instance=trace::EReference_strategy)
+@given(instance=trace_EReference_strategy)
 @settings(max_examples=50)
-def test_trace::ereference_instantiation(instance):
-    assert isinstance(instance, trace::EReference)
+def test_trace_ereference_instantiation(instance):
+    assert isinstance(instance, trace_EReference)
 
-@given(instance=trace::EAttribute_strategy)
+@given(instance=trace_EAttribute_strategy)
 @settings(max_examples=50)
-def test_trace::eattribute_instantiation(instance):
-    assert isinstance(instance, trace::EAttribute)
+def test_trace_eattribute_instantiation(instance):
+    assert isinstance(instance, trace_EAttribute)

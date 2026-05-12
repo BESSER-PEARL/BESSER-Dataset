@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class,
@@ -97,41 +97,23 @@ def test_staff_constructor_exists():
 def test_staff_constructor_args():
     sig = inspect.signature(Staff.__init__)
     params = list(sig.parameters.keys())
-    assert "lname" in params, "Missing parameter 'lname'"
-    assert "position" in params, "Missing parameter 'position'"
-    assert "username" in params, "Missing parameter 'username'"
-    assert "fname" in params, "Missing parameter 'fname'"
     assert "gender" in params, "Missing parameter 'gender'"
-    assert "email" in params, "Missing parameter 'email'"
+    assert "fname" in params, "Missing parameter 'fname'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "Staff_ID" in params, "Missing parameter 'Staff_ID'"
+    assert "username" in params, "Missing parameter 'username'"
     assert "address" in params, "Missing parameter 'address'"
     assert "contact" in params, "Missing parameter 'contact'"
-    assert "Staff_ID" in params, "Missing parameter 'Staff_ID'"
+    assert "lname" in params, "Missing parameter 'lname'"
+    assert "position" in params, "Missing parameter 'position'"
+    assert "email" in params, "Missing parameter 'email'"
 
-def test_staff_has_lname():
-    assert hasattr(Staff, "lname")
+def test_staff_has_gender():
+    assert hasattr(Staff, "gender")
     descriptor = None
     for klass in Staff.__mro__:
-        if "lname" in klass.__dict__:
-            descriptor = klass.__dict__["lname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_staff_has_position():
-    assert hasattr(Staff, "position")
-    descriptor = None
-    for klass in Staff.__mro__:
-        if "position" in klass.__dict__:
-            descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_staff_has_username():
-    assert hasattr(Staff, "username")
-    descriptor = None
-    for klass in Staff.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
+        if "gender" in klass.__dict__:
+            descriptor = klass.__dict__["gender"]
             break
     assert isinstance(descriptor, property)
 
@@ -144,30 +126,30 @@ def test_staff_has_fname():
             break
     assert isinstance(descriptor, property)
 
-def test_staff_has_gender():
-    assert hasattr(Staff, "gender")
-    descriptor = None
-    for klass in Staff.__mro__:
-        if "gender" in klass.__dict__:
-            descriptor = klass.__dict__["gender"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_staff_has_email():
-    assert hasattr(Staff, "email")
-    descriptor = None
-    for klass in Staff.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_staff_has_password():
     assert hasattr(Staff, "password")
     descriptor = None
     for klass in Staff.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_staff_has_Staff_ID():
+    assert hasattr(Staff, "Staff_ID")
+    descriptor = None
+    for klass in Staff.__mro__:
+        if "Staff_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Staff_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_staff_has_username():
+    assert hasattr(Staff, "username")
+    descriptor = None
+    for klass in Staff.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
             break
     assert isinstance(descriptor, property)
 
@@ -189,12 +171,30 @@ def test_staff_has_contact():
             break
     assert isinstance(descriptor, property)
 
-def test_staff_has_Staff_ID():
-    assert hasattr(Staff, "Staff_ID")
+def test_staff_has_lname():
+    assert hasattr(Staff, "lname")
     descriptor = None
     for klass in Staff.__mro__:
-        if "Staff_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Staff_ID"]
+        if "lname" in klass.__dict__:
+            descriptor = klass.__dict__["lname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_staff_has_position():
+    assert hasattr(Staff, "position")
+    descriptor = None
+    for klass in Staff.__mro__:
+        if "position" in klass.__dict__:
+            descriptor = klass.__dict__["position"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_staff_has_email():
+    assert hasattr(Staff, "email")
+    descriptor = None
+    for klass in Staff.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -270,10 +270,10 @@ def test_ar_condicionado_constructor_args():
     sig = inspect.signature(Ar_Condicionado.__init__)
     params = list(sig.parameters.keys())
     assert "returned_date" in params, "Missing parameter 'returned_date'"
+    assert "book_id" in params, "Missing parameter 'book_id'"
+    assert "fine_amount" in params, "Missing parameter 'fine_amount'"
     assert "borrowed_date" in params, "Missing parameter 'borrowed_date'"
     assert "member_id" in params, "Missing parameter 'member_id'"
-    assert "fine_amount" in params, "Missing parameter 'fine_amount'"
-    assert "book_id" in params, "Missing parameter 'book_id'"
 
 def test_ar_condicionado_has_returned_date():
     assert hasattr(Ar_Condicionado, "returned_date")
@@ -281,6 +281,24 @@ def test_ar_condicionado_has_returned_date():
     for klass in Ar_Condicionado.__mro__:
         if "returned_date" in klass.__dict__:
             descriptor = klass.__dict__["returned_date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ar_condicionado_has_book_id():
+    assert hasattr(Ar_Condicionado, "book_id")
+    descriptor = None
+    for klass in Ar_Condicionado.__mro__:
+        if "book_id" in klass.__dict__:
+            descriptor = klass.__dict__["book_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ar_condicionado_has_fine_amount():
+    assert hasattr(Ar_Condicionado, "fine_amount")
+    descriptor = None
+    for klass in Ar_Condicionado.__mro__:
+        if "fine_amount" in klass.__dict__:
+            descriptor = klass.__dict__["fine_amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -302,24 +320,6 @@ def test_ar_condicionado_has_member_id():
             break
     assert isinstance(descriptor, property)
 
-def test_ar_condicionado_has_fine_amount():
-    assert hasattr(Ar_Condicionado, "fine_amount")
-    descriptor = None
-    for klass in Ar_Condicionado.__mro__:
-        if "fine_amount" in klass.__dict__:
-            descriptor = klass.__dict__["fine_amount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ar_condicionado_has_book_id():
-    assert hasattr(Ar_Condicionado, "book_id")
-    descriptor = None
-    for klass in Ar_Condicionado.__mro__:
-        if "book_id" in klass.__dict__:
-            descriptor = klass.__dict__["book_id"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_quado_branco_is_not_abstract():
@@ -333,39 +333,21 @@ def test_quado_branco_constructor_exists():
 def test_quado_branco_constructor_args():
     sig = inspect.signature(Quado_Branco.__init__)
     params = list(sig.parameters.keys())
-    assert "cont_no" in params, "Missing parameter 'cont_no'"
-    assert "member_pwd" in params, "Missing parameter 'member_pwd'"
-    assert "address" in params, "Missing parameter 'address'"
-    assert "dob" in params, "Missing parameter 'dob'"
-    assert "fname" in params, "Missing parameter 'fname'"
     assert "lname" in params, "Missing parameter 'lname'"
-    assert "gender" in params, "Missing parameter 'gender'"
+    assert "dob" in params, "Missing parameter 'dob'"
+    assert "member_pwd" in params, "Missing parameter 'member_pwd'"
     assert "member_id" in params, "Missing parameter 'member_id'"
+    assert "gender" in params, "Missing parameter 'gender'"
+    assert "fname" in params, "Missing parameter 'fname'"
+    assert "address" in params, "Missing parameter 'address'"
+    assert "cont_no" in params, "Missing parameter 'cont_no'"
 
-def test_quado_branco_has_cont_no():
-    assert hasattr(Quado_Branco, "cont_no")
+def test_quado_branco_has_lname():
+    assert hasattr(Quado_Branco, "lname")
     descriptor = None
     for klass in Quado_Branco.__mro__:
-        if "cont_no" in klass.__dict__:
-            descriptor = klass.__dict__["cont_no"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_quado_branco_has_member_pwd():
-    assert hasattr(Quado_Branco, "member_pwd")
-    descriptor = None
-    for klass in Quado_Branco.__mro__:
-        if "member_pwd" in klass.__dict__:
-            descriptor = klass.__dict__["member_pwd"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_quado_branco_has_address():
-    assert hasattr(Quado_Branco, "address")
-    descriptor = None
-    for klass in Quado_Branco.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
+        if "lname" in klass.__dict__:
+            descriptor = klass.__dict__["lname"]
             break
     assert isinstance(descriptor, property)
 
@@ -378,21 +360,21 @@ def test_quado_branco_has_dob():
             break
     assert isinstance(descriptor, property)
 
-def test_quado_branco_has_fname():
-    assert hasattr(Quado_Branco, "fname")
+def test_quado_branco_has_member_pwd():
+    assert hasattr(Quado_Branco, "member_pwd")
     descriptor = None
     for klass in Quado_Branco.__mro__:
-        if "fname" in klass.__dict__:
-            descriptor = klass.__dict__["fname"]
+        if "member_pwd" in klass.__dict__:
+            descriptor = klass.__dict__["member_pwd"]
             break
     assert isinstance(descriptor, property)
 
-def test_quado_branco_has_lname():
-    assert hasattr(Quado_Branco, "lname")
+def test_quado_branco_has_member_id():
+    assert hasattr(Quado_Branco, "member_id")
     descriptor = None
     for klass in Quado_Branco.__mro__:
-        if "lname" in klass.__dict__:
-            descriptor = klass.__dict__["lname"]
+        if "member_id" in klass.__dict__:
+            descriptor = klass.__dict__["member_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -405,12 +387,30 @@ def test_quado_branco_has_gender():
             break
     assert isinstance(descriptor, property)
 
-def test_quado_branco_has_member_id():
-    assert hasattr(Quado_Branco, "member_id")
+def test_quado_branco_has_fname():
+    assert hasattr(Quado_Branco, "fname")
     descriptor = None
     for klass in Quado_Branco.__mro__:
-        if "member_id" in klass.__dict__:
-            descriptor = klass.__dict__["member_id"]
+        if "fname" in klass.__dict__:
+            descriptor = klass.__dict__["fname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_quado_branco_has_address():
+    assert hasattr(Quado_Branco, "address")
+    descriptor = None
+    for klass in Quado_Branco.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_quado_branco_has_cont_no():
+    assert hasattr(Quado_Branco, "cont_no")
+    descriptor = None
+    for klass in Quado_Branco.__mro__:
+        if "cont_no" in klass.__dict__:
+            descriptor = klass.__dict__["cont_no"]
             break
     assert isinstance(descriptor, property)
 
@@ -427,21 +427,21 @@ def test_members_constructor_exists():
 def test_members_constructor_args():
     sig = inspect.signature(Members.__init__)
     params = list(sig.parameters.keys())
-    assert "dob" in params, "Missing parameter 'dob'"
+    assert "member_pwd" in params, "Missing parameter 'member_pwd'"
     assert "member_id" in params, "Missing parameter 'member_id'"
     assert "lname" in params, "Missing parameter 'lname'"
-    assert "member_pwd" in params, "Missing parameter 'member_pwd'"
-    assert "address" in params, "Missing parameter 'address'"
+    assert "dob" in params, "Missing parameter 'dob'"
     assert "gender" in params, "Missing parameter 'gender'"
+    assert "address" in params, "Missing parameter 'address'"
     assert "fname" in params, "Missing parameter 'fname'"
     assert "cont_no" in params, "Missing parameter 'cont_no'"
 
-def test_members_has_dob():
-    assert hasattr(Members, "dob")
+def test_members_has_member_pwd():
+    assert hasattr(Members, "member_pwd")
     descriptor = None
     for klass in Members.__mro__:
-        if "dob" in klass.__dict__:
-            descriptor = klass.__dict__["dob"]
+        if "member_pwd" in klass.__dict__:
+            descriptor = klass.__dict__["member_pwd"]
             break
     assert isinstance(descriptor, property)
 
@@ -463,21 +463,12 @@ def test_members_has_lname():
             break
     assert isinstance(descriptor, property)
 
-def test_members_has_member_pwd():
-    assert hasattr(Members, "member_pwd")
+def test_members_has_dob():
+    assert hasattr(Members, "dob")
     descriptor = None
     for klass in Members.__mro__:
-        if "member_pwd" in klass.__dict__:
-            descriptor = klass.__dict__["member_pwd"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_members_has_address():
-    assert hasattr(Members, "address")
-    descriptor = None
-    for klass in Members.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
+        if "dob" in klass.__dict__:
+            descriptor = klass.__dict__["dob"]
             break
     assert isinstance(descriptor, property)
 
@@ -487,6 +478,15 @@ def test_members_has_gender():
     for klass in Members.__mro__:
         if "gender" in klass.__dict__:
             descriptor = klass.__dict__["gender"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_members_has_address():
+    assert hasattr(Members, "address")
+    descriptor = None
+    for klass in Members.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -521,12 +521,21 @@ def test_retro_projetor_constructor_exists():
 def test_retro_projetor_constructor_args():
     sig = inspect.signature(Retro_Projetor.__init__)
     params = list(sig.parameters.keys())
+    assert "author_name" in params, "Missing parameter 'author_name'"
     assert "book_id" in params, "Missing parameter 'book_id'"
-    assert "publisher" in params, "Missing parameter 'publisher'"
-    assert "ISBN_no" in params, "Missing parameter 'ISBN_no'"
     assert "book_qty" in params, "Missing parameter 'book_qty'"
     assert "title" in params, "Missing parameter 'title'"
-    assert "author_name" in params, "Missing parameter 'author_name'"
+    assert "publisher" in params, "Missing parameter 'publisher'"
+    assert "ISBN_no" in params, "Missing parameter 'ISBN_no'"
+
+def test_retro_projetor_has_author_name():
+    assert hasattr(Retro_Projetor, "author_name")
+    descriptor = None
+    for klass in Retro_Projetor.__mro__:
+        if "author_name" in klass.__dict__:
+            descriptor = klass.__dict__["author_name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_retro_projetor_has_book_id():
     assert hasattr(Retro_Projetor, "book_id")
@@ -534,24 +543,6 @@ def test_retro_projetor_has_book_id():
     for klass in Retro_Projetor.__mro__:
         if "book_id" in klass.__dict__:
             descriptor = klass.__dict__["book_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_retro_projetor_has_publisher():
-    assert hasattr(Retro_Projetor, "publisher")
-    descriptor = None
-    for klass in Retro_Projetor.__mro__:
-        if "publisher" in klass.__dict__:
-            descriptor = klass.__dict__["publisher"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_retro_projetor_has_ISBN_no():
-    assert hasattr(Retro_Projetor, "ISBN_no")
-    descriptor = None
-    for klass in Retro_Projetor.__mro__:
-        if "ISBN_no" in klass.__dict__:
-            descriptor = klass.__dict__["ISBN_no"]
             break
     assert isinstance(descriptor, property)
 
@@ -573,12 +564,21 @@ def test_retro_projetor_has_title():
             break
     assert isinstance(descriptor, property)
 
-def test_retro_projetor_has_author_name():
-    assert hasattr(Retro_Projetor, "author_name")
+def test_retro_projetor_has_publisher():
+    assert hasattr(Retro_Projetor, "publisher")
     descriptor = None
     for klass in Retro_Projetor.__mro__:
-        if "author_name" in klass.__dict__:
-            descriptor = klass.__dict__["author_name"]
+        if "publisher" in klass.__dict__:
+            descriptor = klass.__dict__["publisher"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_retro_projetor_has_ISBN_no():
+    assert hasattr(Retro_Projetor, "ISBN_no")
+    descriptor = None
+    for klass in Retro_Projetor.__mro__:
+        if "ISBN_no" in klass.__dict__:
+            descriptor = klass.__dict__["ISBN_no"]
             break
     assert isinstance(descriptor, property)
 
@@ -609,26 +609,26 @@ admin_strategy = st.builds(
 )
 Staff_strategy = st.builds(
     Staff,
-    lname=
-        safe_text,
-    position=
-        safe_text,
-    username=
+    gender=
         safe_text,
     fname=
         safe_text,
-    gender=
-        safe_text,
-    email=
-        safe_text,
     password=
+        safe_text,
+    Staff_ID=
+        st.integers(),
+    username=
         safe_text,
     address=
         safe_text,
     contact=
         st.integers(),
-    Staff_ID=
-        st.integers()
+    lname=
+        safe_text,
+    position=
+        safe_text,
+    email=
+        safe_text
 )
 Reserved_strategy = st.builds(
     Reserved,
@@ -646,47 +646,47 @@ Ar_Condicionado_strategy = st.builds(
     Ar_Condicionado,
     returned_date=
         safe_text,
-    borrowed_date=
-        safe_text,
-    member_id=
+    book_id=
         st.integers(),
     fine_amount=
         st.integers(),
-    book_id=
+    borrowed_date=
+        safe_text,
+    member_id=
         st.integers()
 )
 Quado_Branco_strategy = st.builds(
     Quado_Branco,
-    cont_no=
-        st.integers(),
-    member_pwd=
-        safe_text,
-    address=
+    lname=
         safe_text,
     dob=
         safe_text,
-    fname=
-        safe_text,
-    lname=
-        safe_text,
-    gender=
+    member_pwd=
         safe_text,
     member_id=
+        st.integers(),
+    gender=
+        safe_text,
+    fname=
+        safe_text,
+    address=
+        safe_text,
+    cont_no=
         st.integers()
 )
 Members_strategy = st.builds(
     Members,
-    dob=
+    member_pwd=
         safe_text,
     member_id=
         st.integers(),
     lname=
         safe_text,
-    member_pwd=
-        safe_text,
-    address=
+    dob=
         safe_text,
     gender=
+        safe_text,
+    address=
         safe_text,
     fname=
         safe_text,
@@ -695,17 +695,17 @@ Members_strategy = st.builds(
 )
 Retro_Projetor_strategy = st.builds(
     Retro_Projetor,
+    author_name=
+        safe_text,
     book_id=
         st.integers(),
-    publisher=
-        safe_text,
-    ISBN_no=
-        safe_text,
     book_qty=
         st.integers(),
     title=
         safe_text,
-    author_name=
+    publisher=
+        safe_text,
+    ISBN_no=
         safe_text
 )
 
@@ -719,9 +719,6 @@ def test_class_instantiation(instance):
 def test_lecturer_instantiation(instance):
     assert isinstance(instance, lecturer)
 
-@given(instance=lecturer_strategy)
-def test_lecturer_module_type(instance):
-    assert isinstance(instance.module, str)
 
 
 @given(instance=lecturer_strategy)
@@ -735,9 +732,6 @@ def test_lecturer_module_setter(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, admin)
 
-@given(instance=admin_strategy)
-def test_admin_Experience_type(instance):
-    assert isinstance(instance.Experience, str)
 
 
 @given(instance=admin_strategy)
@@ -751,53 +745,6 @@ def test_admin_Experience_setter(instance):
 def test_staff_instantiation(instance):
     assert isinstance(instance, Staff)
 
-@given(instance=Staff_strategy)
-def test_staff_lname_type(instance):
-    assert isinstance(instance.lname, str)
-
-
-@given(instance=Staff_strategy)
-def test_staff_lname_setter(instance):
-    original = instance.lname
-    instance.lname = original
-    assert instance.lname == original
-
-@given(instance=Staff_strategy)
-def test_staff_position_type(instance):
-    assert isinstance(instance.position, str)
-
-
-@given(instance=Staff_strategy)
-def test_staff_position_setter(instance):
-    original = instance.position
-    instance.position = original
-    assert instance.position == original
-
-@given(instance=Staff_strategy)
-def test_staff_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Staff_strategy)
-def test_staff_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Staff_strategy)
-def test_staff_fname_type(instance):
-    assert isinstance(instance.fname, str)
-
-
-@given(instance=Staff_strategy)
-def test_staff_fname_setter(instance):
-    original = instance.fname
-    instance.fname = original
-    assert instance.fname == original
-
-@given(instance=Staff_strategy)
-def test_staff_gender_type(instance):
-    assert isinstance(instance.gender, str)
 
 
 @given(instance=Staff_strategy)
@@ -806,20 +753,14 @@ def test_staff_gender_setter(instance):
     instance.gender = original
     assert instance.gender == original
 
-@given(instance=Staff_strategy)
-def test_staff_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Staff_strategy)
-def test_staff_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
+def test_staff_fname_setter(instance):
+    original = instance.fname
+    instance.fname = original
+    assert instance.fname == original
 
-@given(instance=Staff_strategy)
-def test_staff_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Staff_strategy)
@@ -828,31 +769,6 @@ def test_staff_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Staff_strategy)
-def test_staff_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Staff_strategy)
-def test_staff_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Staff_strategy)
-def test_staff_contact_type(instance):
-    assert isinstance(instance.contact, int)
-
-
-@given(instance=Staff_strategy)
-def test_staff_contact_setter(instance):
-    original = instance.contact
-    instance.contact = original
-    assert instance.contact == original
-
-@given(instance=Staff_strategy)
-def test_staff_Staff_ID_type(instance):
-    assert isinstance(instance.Staff_ID, int)
 
 
 @given(instance=Staff_strategy)
@@ -861,14 +777,59 @@ def test_staff_Staff_ID_setter(instance):
     instance.Staff_ID = original
     assert instance.Staff_ID == original
 
+
+
+@given(instance=Staff_strategy)
+def test_staff_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+
+
+@given(instance=Staff_strategy)
+def test_staff_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=Staff_strategy)
+def test_staff_contact_setter(instance):
+    original = instance.contact
+    instance.contact = original
+    assert instance.contact == original
+
+
+
+@given(instance=Staff_strategy)
+def test_staff_lname_setter(instance):
+    original = instance.lname
+    instance.lname = original
+    assert instance.lname == original
+
+
+
+@given(instance=Staff_strategy)
+def test_staff_position_setter(instance):
+    original = instance.position
+    instance.position = original
+    assert instance.position == original
+
+
+
+@given(instance=Staff_strategy)
+def test_staff_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 @given(instance=Reserved_strategy)
 @settings(max_examples=50)
 def test_reserved_instantiation(instance):
     assert isinstance(instance, Reserved)
 
-@given(instance=Reserved_strategy)
-def test_reserved_reserved_date_type(instance):
-    assert isinstance(instance.reserved_date, str)
 
 
 @given(instance=Reserved_strategy)
@@ -882,9 +843,6 @@ def test_reserved_reserved_date_setter(instance):
 def test_borrowed_instantiation(instance):
     assert isinstance(instance, Borrowed)
 
-@given(instance=Borrowed_strategy)
-def test_borrowed_returned_date_type(instance):
-    assert isinstance(instance.returned_date, str)
 
 
 @given(instance=Borrowed_strategy)
@@ -893,9 +851,6 @@ def test_borrowed_returned_date_setter(instance):
     instance.returned_date = original
     assert instance.returned_date == original
 
-@given(instance=Borrowed_strategy)
-def test_borrowed_borrowed_date_type(instance):
-    assert isinstance(instance.borrowed_date, str)
 
 
 @given(instance=Borrowed_strategy)
@@ -909,9 +864,6 @@ def test_borrowed_borrowed_date_setter(instance):
 def test_ar_condicionado_instantiation(instance):
     assert isinstance(instance, Ar_Condicionado)
 
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_returned_date_type(instance):
-    assert isinstance(instance.returned_date, str)
 
 
 @given(instance=Ar_Condicionado_strategy)
@@ -920,42 +872,6 @@ def test_ar_condicionado_returned_date_setter(instance):
     instance.returned_date = original
     assert instance.returned_date == original
 
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_borrowed_date_type(instance):
-    assert isinstance(instance.borrowed_date, str)
-
-
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_borrowed_date_setter(instance):
-    original = instance.borrowed_date
-    instance.borrowed_date = original
-    assert instance.borrowed_date == original
-
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_member_id_type(instance):
-    assert isinstance(instance.member_id, int)
-
-
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_member_id_setter(instance):
-    original = instance.member_id
-    instance.member_id = original
-    assert instance.member_id == original
-
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_fine_amount_type(instance):
-    assert isinstance(instance.fine_amount, int)
-
-
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_fine_amount_setter(instance):
-    original = instance.fine_amount
-    instance.fine_amount = original
-    assert instance.fine_amount == original
-
-@given(instance=Ar_Condicionado_strategy)
-def test_ar_condicionado_book_id_type(instance):
-    assert isinstance(instance.book_id, int)
 
 
 @given(instance=Ar_Condicionado_strategy)
@@ -964,69 +880,35 @@ def test_ar_condicionado_book_id_setter(instance):
     instance.book_id = original
     assert instance.book_id == original
 
+
+
+@given(instance=Ar_Condicionado_strategy)
+def test_ar_condicionado_fine_amount_setter(instance):
+    original = instance.fine_amount
+    instance.fine_amount = original
+    assert instance.fine_amount == original
+
+
+
+@given(instance=Ar_Condicionado_strategy)
+def test_ar_condicionado_borrowed_date_setter(instance):
+    original = instance.borrowed_date
+    instance.borrowed_date = original
+    assert instance.borrowed_date == original
+
+
+
+@given(instance=Ar_Condicionado_strategy)
+def test_ar_condicionado_member_id_setter(instance):
+    original = instance.member_id
+    instance.member_id = original
+    assert instance.member_id == original
+
 @given(instance=Quado_Branco_strategy)
 @settings(max_examples=50)
 def test_quado_branco_instantiation(instance):
     assert isinstance(instance, Quado_Branco)
 
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_cont_no_type(instance):
-    assert isinstance(instance.cont_no, int)
-
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_cont_no_setter(instance):
-    original = instance.cont_no
-    instance.cont_no = original
-    assert instance.cont_no == original
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_member_pwd_type(instance):
-    assert isinstance(instance.member_pwd, str)
-
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_member_pwd_setter(instance):
-    original = instance.member_pwd
-    instance.member_pwd = original
-    assert instance.member_pwd == original
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_dob_type(instance):
-    assert isinstance(instance.dob, str)
-
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_dob_setter(instance):
-    original = instance.dob
-    instance.dob = original
-    assert instance.dob == original
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_fname_type(instance):
-    assert isinstance(instance.fname, str)
-
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_fname_setter(instance):
-    original = instance.fname
-    instance.fname = original
-    assert instance.fname == original
-
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_lname_type(instance):
-    assert isinstance(instance.lname, str)
 
 
 @given(instance=Quado_Branco_strategy)
@@ -1035,20 +917,22 @@ def test_quado_branco_lname_setter(instance):
     instance.lname = original
     assert instance.lname == original
 
-@given(instance=Quado_Branco_strategy)
-def test_quado_branco_gender_type(instance):
-    assert isinstance(instance.gender, str)
 
 
 @given(instance=Quado_Branco_strategy)
-def test_quado_branco_gender_setter(instance):
-    original = instance.gender
-    instance.gender = original
-    assert instance.gender == original
+def test_quado_branco_dob_setter(instance):
+    original = instance.dob
+    instance.dob = original
+    assert instance.dob == original
+
+
 
 @given(instance=Quado_Branco_strategy)
-def test_quado_branco_member_id_type(instance):
-    assert isinstance(instance.member_id, int)
+def test_quado_branco_member_pwd_setter(instance):
+    original = instance.member_pwd
+    instance.member_pwd = original
+    assert instance.member_pwd == original
+
 
 
 @given(instance=Quado_Branco_strategy)
@@ -1057,47 +941,43 @@ def test_quado_branco_member_id_setter(instance):
     instance.member_id = original
     assert instance.member_id == original
 
+
+
+@given(instance=Quado_Branco_strategy)
+def test_quado_branco_gender_setter(instance):
+    original = instance.gender
+    instance.gender = original
+    assert instance.gender == original
+
+
+
+@given(instance=Quado_Branco_strategy)
+def test_quado_branco_fname_setter(instance):
+    original = instance.fname
+    instance.fname = original
+    assert instance.fname == original
+
+
+
+@given(instance=Quado_Branco_strategy)
+def test_quado_branco_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=Quado_Branco_strategy)
+def test_quado_branco_cont_no_setter(instance):
+    original = instance.cont_no
+    instance.cont_no = original
+    assert instance.cont_no == original
+
 @given(instance=Members_strategy)
 @settings(max_examples=50)
 def test_members_instantiation(instance):
     assert isinstance(instance, Members)
 
-@given(instance=Members_strategy)
-def test_members_dob_type(instance):
-    assert isinstance(instance.dob, str)
-
-
-@given(instance=Members_strategy)
-def test_members_dob_setter(instance):
-    original = instance.dob
-    instance.dob = original
-    assert instance.dob == original
-
-@given(instance=Members_strategy)
-def test_members_member_id_type(instance):
-    assert isinstance(instance.member_id, int)
-
-
-@given(instance=Members_strategy)
-def test_members_member_id_setter(instance):
-    original = instance.member_id
-    instance.member_id = original
-    assert instance.member_id == original
-
-@given(instance=Members_strategy)
-def test_members_lname_type(instance):
-    assert isinstance(instance.lname, str)
-
-
-@given(instance=Members_strategy)
-def test_members_lname_setter(instance):
-    original = instance.lname
-    instance.lname = original
-    assert instance.lname == original
-
-@given(instance=Members_strategy)
-def test_members_member_pwd_type(instance):
-    assert isinstance(instance.member_pwd, str)
 
 
 @given(instance=Members_strategy)
@@ -1106,20 +986,30 @@ def test_members_member_pwd_setter(instance):
     instance.member_pwd = original
     assert instance.member_pwd == original
 
-@given(instance=Members_strategy)
-def test_members_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Members_strategy)
-def test_members_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
+def test_members_member_id_setter(instance):
+    original = instance.member_id
+    instance.member_id = original
+    assert instance.member_id == original
+
+
 
 @given(instance=Members_strategy)
-def test_members_gender_type(instance):
-    assert isinstance(instance.gender, str)
+def test_members_lname_setter(instance):
+    original = instance.lname
+    instance.lname = original
+    assert instance.lname == original
+
+
+
+@given(instance=Members_strategy)
+def test_members_dob_setter(instance):
+    original = instance.dob
+    instance.dob = original
+    assert instance.dob == original
+
 
 
 @given(instance=Members_strategy)
@@ -1128,9 +1018,14 @@ def test_members_gender_setter(instance):
     instance.gender = original
     assert instance.gender == original
 
+
+
 @given(instance=Members_strategy)
-def test_members_fname_type(instance):
-    assert isinstance(instance.fname, str)
+def test_members_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
 
 
 @given(instance=Members_strategy)
@@ -1139,9 +1034,6 @@ def test_members_fname_setter(instance):
     instance.fname = original
     assert instance.fname == original
 
-@given(instance=Members_strategy)
-def test_members_cont_no_type(instance):
-    assert isinstance(instance.cont_no, int)
 
 
 @given(instance=Members_strategy)
@@ -1155,9 +1047,14 @@ def test_members_cont_no_setter(instance):
 def test_retro_projetor_instantiation(instance):
     assert isinstance(instance, Retro_Projetor)
 
+
+
 @given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_book_id_type(instance):
-    assert isinstance(instance.book_id, int)
+def test_retro_projetor_author_name_setter(instance):
+    original = instance.author_name
+    instance.author_name = original
+    assert instance.author_name == original
+
 
 
 @given(instance=Retro_Projetor_strategy)
@@ -1166,31 +1063,6 @@ def test_retro_projetor_book_id_setter(instance):
     instance.book_id = original
     assert instance.book_id == original
 
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_publisher_type(instance):
-    assert isinstance(instance.publisher, str)
-
-
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_publisher_setter(instance):
-    original = instance.publisher
-    instance.publisher = original
-    assert instance.publisher == original
-
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_ISBN_no_type(instance):
-    assert isinstance(instance.ISBN_no, str)
-
-
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_ISBN_no_setter(instance):
-    original = instance.ISBN_no
-    instance.ISBN_no = original
-    assert instance.ISBN_no == original
-
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_book_qty_type(instance):
-    assert isinstance(instance.book_qty, int)
 
 
 @given(instance=Retro_Projetor_strategy)
@@ -1199,9 +1071,6 @@ def test_retro_projetor_book_qty_setter(instance):
     instance.book_qty = original
     assert instance.book_qty == original
 
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Retro_Projetor_strategy)
@@ -1210,13 +1079,18 @@ def test_retro_projetor_title_setter(instance):
     instance.title = original
     assert instance.title == original
 
-@given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_author_name_type(instance):
-    assert isinstance(instance.author_name, str)
 
 
 @given(instance=Retro_Projetor_strategy)
-def test_retro_projetor_author_name_setter(instance):
-    original = instance.author_name
-    instance.author_name = original
-    assert instance.author_name == original
+def test_retro_projetor_publisher_setter(instance):
+    original = instance.publisher
+    instance.publisher = original
+    assert instance.publisher == original
+
+
+
+@given(instance=Retro_Projetor_strategy)
+def test_retro_projetor_ISBN_no_setter(instance):
+    original = instance.ISBN_no
+    instance.ISBN_no = original
+    assert instance.ISBN_no == original

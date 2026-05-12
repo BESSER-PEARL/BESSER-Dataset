@@ -3,43 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::Traced::TracedObjects,
-    trace::States::A::a::State,
-    model2::trace::A,
-    trace::model2::TracedA,
-    trace::model2Configuration::TracedC,
-    trace::model2Configuration::TracedB,
-    A::doAEntryEventOccurrence,
-    trace::Events::Events,
-    Events::trace::GlobalState,
-    trace::Events::EventOccurrence,
-    trace::F,
-    States::trace::F,
-    trace::States::C::c::State,
-    States::trace::GlobalState,
-    trace::States::B::b::State,
-    model2Configuration::TracedB,
-    model2Configuration::TracedC,
-    model2::TracedA,
-    C::doCExitEventOccurrence,
-    C::doCEntryEventOccurrence,
-    A::doAExitEventOccurrence,
-    A::a::State,
-    C::c::State,
-    B::b::State,
+from python_code import (
+    trace_Traced_TracedObjects,
+    trace_States_A_a_State,
+    model2_trace_A,
+    trace_model2_TracedA,
+    trace_model2Configuration_TracedC,
+    trace_model2Configuration_TracedB,
+    A_doAEntryEventOccurrence,
+    trace_Events_Events,
+    Events_trace_GlobalState,
+    trace_Events_EventOccurrence,
+    trace_F,
+    States_trace_F,
+    trace_States_C_c_State,
+    States_trace_GlobalState,
+    trace_States_B_b_State,
+    model2Configuration_TracedB,
+    model2Configuration_TracedC,
+    model2_TracedA,
+    C_doCExitEventOccurrence,
+    C_doCEntryEventOccurrence,
+    A_doAExitEventOccurrence,
+    A_a_State,
+    C_c_State,
+    B_b_State,
     EventOccurrence,
-    trace::Events::C::doCExitEventOccurrence,
-    trace::Events::A::doAExitEventOccurrence,
-    trace::Events::C::doCEntryEventOccurrence,
-    trace::Events::A::doAEntryEventOccurrence,
-    trace::StaticObjectsPools,
+    trace_Events_A_doAEntryEventOccurrence,
+    trace_Events_C_doCExitEventOccurrence,
+    trace_Events_A_doAExitEventOccurrence,
+    trace_Events_C_doCEntryEventOccurrence,
+    trace_StaticObjectsPools,
     TracedObjects,
     Events,
-    trace::GlobalState,
-    trace::Trace,
+    trace_GlobalState,
+    trace_Trace,
 )
 
 # =============================================================================
@@ -48,37 +48,37 @@ from classes import (
 
 
 
-def test_trace::traced::tracedobjects_is_not_abstract():
-    assert not inspect.isabstract(trace::Traced::TracedObjects)
+def test_trace_traced_tracedobjects_is_not_abstract():
+    assert not inspect.isabstract(trace_Traced_TracedObjects)
 
 
-def test_trace::traced::tracedobjects_constructor_exists():
-    assert callable(trace::Traced::TracedObjects.__init__)
+def test_trace_traced_tracedobjects_constructor_exists():
+    assert callable(trace_Traced_TracedObjects.__init__)
 
 
-def test_trace::traced::tracedobjects_constructor_args():
-    sig = inspect.signature(trace::Traced::TracedObjects.__init__)
+def test_trace_traced_tracedobjects_constructor_args():
+    sig = inspect.signature(trace_Traced_TracedObjects.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::states::a::a::state_is_not_abstract():
-    assert not inspect.isabstract(trace::States::A::a::State)
+def test_trace_states_a_a_state_is_not_abstract():
+    assert not inspect.isabstract(trace_States_A_a_State)
 
 
-def test_trace::states::a::a::state_constructor_exists():
-    assert callable(trace::States::A::a::State.__init__)
+def test_trace_states_a_a_state_constructor_exists():
+    assert callable(trace_States_A_a_State.__init__)
 
 
-def test_trace::states::a::a::state_constructor_args():
-    sig = inspect.signature(trace::States::A::a::State.__init__)
+def test_trace_states_a_a_state_constructor_args():
+    sig = inspect.signature(trace_States_A_a_State.__init__)
     params = list(sig.parameters.keys())
     assert "a" in params, "Missing parameter 'a'"
 
-def test_trace::states::a::a::state_has_a():
-    assert hasattr(trace::States::A::a::State, "a")
+def test_trace_states_a_a_state_has_a():
+    assert hasattr(trace_States_A_a_State, "a")
     descriptor = None
-    for klass in trace::States::A::a::State.__mro__:
+    for klass in trace_States_A_a_State.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
@@ -86,191 +86,191 @@ def test_trace::states::a::a::state_has_a():
 
 
 
-def test_model2::trace::a_is_not_abstract():
-    assert not inspect.isabstract(model2::trace::A)
+def test_model2_trace_a_is_not_abstract():
+    assert not inspect.isabstract(model2_trace_A)
 
 
-def test_model2::trace::a_constructor_exists():
-    assert callable(model2::trace::A.__init__)
+def test_model2_trace_a_constructor_exists():
+    assert callable(model2_trace_A.__init__)
 
 
-def test_model2::trace::a_constructor_args():
-    sig = inspect.signature(model2::trace::A.__init__)
+def test_model2_trace_a_constructor_args():
+    sig = inspect.signature(model2_trace_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::model2::traceda_is_not_abstract():
-    assert not inspect.isabstract(trace::model2::TracedA)
+def test_trace_model2_traceda_is_not_abstract():
+    assert not inspect.isabstract(trace_model2_TracedA)
 
 
-def test_trace::model2::traceda_constructor_exists():
-    assert callable(trace::model2::TracedA.__init__)
+def test_trace_model2_traceda_constructor_exists():
+    assert callable(trace_model2_TracedA.__init__)
 
 
-def test_trace::model2::traceda_constructor_args():
-    sig = inspect.signature(trace::model2::TracedA.__init__)
+def test_trace_model2_traceda_constructor_args():
+    sig = inspect.signature(trace_model2_TracedA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::model2configuration::tracedc_is_not_abstract():
-    assert not inspect.isabstract(trace::model2Configuration::TracedC)
+def test_trace_model2configuration_tracedc_is_not_abstract():
+    assert not inspect.isabstract(trace_model2Configuration_TracedC)
 
 
-def test_trace::model2configuration::tracedc_constructor_exists():
-    assert callable(trace::model2Configuration::TracedC.__init__)
+def test_trace_model2configuration_tracedc_constructor_exists():
+    assert callable(trace_model2Configuration_TracedC.__init__)
 
 
-def test_trace::model2configuration::tracedc_constructor_args():
-    sig = inspect.signature(trace::model2Configuration::TracedC.__init__)
+def test_trace_model2configuration_tracedc_constructor_args():
+    sig = inspect.signature(trace_model2Configuration_TracedC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::model2configuration::tracedb_is_not_abstract():
-    assert not inspect.isabstract(trace::model2Configuration::TracedB)
+def test_trace_model2configuration_tracedb_is_not_abstract():
+    assert not inspect.isabstract(trace_model2Configuration_TracedB)
 
 
-def test_trace::model2configuration::tracedb_constructor_exists():
-    assert callable(trace::model2Configuration::TracedB.__init__)
+def test_trace_model2configuration_tracedb_constructor_exists():
+    assert callable(trace_model2Configuration_TracedB.__init__)
 
 
-def test_trace::model2configuration::tracedb_constructor_args():
-    sig = inspect.signature(trace::model2Configuration::TracedB.__init__)
+def test_trace_model2configuration_tracedb_constructor_args():
+    sig = inspect.signature(trace_model2Configuration_TracedB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::doaentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(A::doAEntryEventOccurrence)
+def test_a_doaentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(A_doAEntryEventOccurrence)
 
 
-def test_a::doaentryeventoccurrence_constructor_exists():
-    assert callable(A::doAEntryEventOccurrence.__init__)
+def test_a_doaentryeventoccurrence_constructor_exists():
+    assert callable(A_doAEntryEventOccurrence.__init__)
 
 
-def test_a::doaentryeventoccurrence_constructor_args():
-    sig = inspect.signature(A::doAEntryEventOccurrence.__init__)
+def test_a_doaentryeventoccurrence_constructor_args():
+    sig = inspect.signature(A_doAEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::events::events_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::Events)
+def test_trace_events_events_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_Events)
 
 
-def test_trace::events::events_constructor_exists():
-    assert callable(trace::Events::Events.__init__)
+def test_trace_events_events_constructor_exists():
+    assert callable(trace_Events_Events.__init__)
 
 
-def test_trace::events::events_constructor_args():
-    sig = inspect.signature(trace::Events::Events.__init__)
+def test_trace_events_events_constructor_args():
+    sig = inspect.signature(trace_Events_Events.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::trace::globalstate_is_not_abstract():
-    assert not inspect.isabstract(Events::trace::GlobalState)
+def test_events_trace_globalstate_is_not_abstract():
+    assert not inspect.isabstract(Events_trace_GlobalState)
 
 
-def test_events::trace::globalstate_constructor_exists():
-    assert callable(Events::trace::GlobalState.__init__)
+def test_events_trace_globalstate_constructor_exists():
+    assert callable(Events_trace_GlobalState.__init__)
 
 
-def test_events::trace::globalstate_constructor_args():
-    sig = inspect.signature(Events::trace::GlobalState.__init__)
+def test_events_trace_globalstate_constructor_args():
+    sig = inspect.signature(Events_trace_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::events::eventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::EventOccurrence)
+def test_trace_events_eventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_EventOccurrence)
 
 
-def test_trace::events::eventoccurrence_constructor_exists():
-    assert callable(trace::Events::EventOccurrence.__init__)
+def test_trace_events_eventoccurrence_constructor_exists():
+    assert callable(trace_Events_EventOccurrence.__init__)
 
 
-def test_trace::events::eventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::EventOccurrence.__init__)
+def test_trace_events_eventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_EventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::f_is_not_abstract():
-    assert not inspect.isabstract(trace::F)
+def test_trace_f_is_not_abstract():
+    assert not inspect.isabstract(trace_F)
 
 
-def test_trace::f_constructor_exists():
-    assert callable(trace::F.__init__)
+def test_trace_f_constructor_exists():
+    assert callable(trace_F.__init__)
 
 
-def test_trace::f_constructor_args():
-    sig = inspect.signature(trace::F.__init__)
+def test_trace_f_constructor_args():
+    sig = inspect.signature(trace_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_states::trace::f_is_not_abstract():
-    assert not inspect.isabstract(States::trace::F)
+def test_states_trace_f_is_not_abstract():
+    assert not inspect.isabstract(States_trace_F)
 
 
-def test_states::trace::f_constructor_exists():
-    assert callable(States::trace::F.__init__)
+def test_states_trace_f_constructor_exists():
+    assert callable(States_trace_F.__init__)
 
 
-def test_states::trace::f_constructor_args():
-    sig = inspect.signature(States::trace::F.__init__)
+def test_states_trace_f_constructor_args():
+    sig = inspect.signature(States_trace_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::states::c::c::state_is_not_abstract():
-    assert not inspect.isabstract(trace::States::C::c::State)
+def test_trace_states_c_c_state_is_not_abstract():
+    assert not inspect.isabstract(trace_States_C_c_State)
 
 
-def test_trace::states::c::c::state_constructor_exists():
-    assert callable(trace::States::C::c::State.__init__)
+def test_trace_states_c_c_state_constructor_exists():
+    assert callable(trace_States_C_c_State.__init__)
 
 
-def test_trace::states::c::c::state_constructor_args():
-    sig = inspect.signature(trace::States::C::c::State.__init__)
+def test_trace_states_c_c_state_constructor_args():
+    sig = inspect.signature(trace_States_C_c_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_states::trace::globalstate_is_not_abstract():
-    assert not inspect.isabstract(States::trace::GlobalState)
+def test_states_trace_globalstate_is_not_abstract():
+    assert not inspect.isabstract(States_trace_GlobalState)
 
 
-def test_states::trace::globalstate_constructor_exists():
-    assert callable(States::trace::GlobalState.__init__)
+def test_states_trace_globalstate_constructor_exists():
+    assert callable(States_trace_GlobalState.__init__)
 
 
-def test_states::trace::globalstate_constructor_args():
-    sig = inspect.signature(States::trace::GlobalState.__init__)
+def test_states_trace_globalstate_constructor_args():
+    sig = inspect.signature(States_trace_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::states::b::b::state_is_not_abstract():
-    assert not inspect.isabstract(trace::States::B::b::State)
+def test_trace_states_b_b_state_is_not_abstract():
+    assert not inspect.isabstract(trace_States_B_b_State)
 
 
-def test_trace::states::b::b::state_constructor_exists():
-    assert callable(trace::States::B::b::State.__init__)
+def test_trace_states_b_b_state_constructor_exists():
+    assert callable(trace_States_B_b_State.__init__)
 
 
-def test_trace::states::b::b::state_constructor_args():
-    sig = inspect.signature(trace::States::B::b::State.__init__)
+def test_trace_states_b_b_state_constructor_args():
+    sig = inspect.signature(trace_States_B_b_State.__init__)
     params = list(sig.parameters.keys())
     assert "b" in params, "Missing parameter 'b'"
 
-def test_trace::states::b::b::state_has_b():
-    assert hasattr(trace::States::B::b::State, "b")
+def test_trace_states_b_b_state_has_b():
+    assert hasattr(trace_States_B_b_State, "b")
     descriptor = None
-    for klass in trace::States::B::b::State.__mro__:
+    for klass in trace_States_B_b_State.__mro__:
         if "b" in klass.__dict__:
             descriptor = klass.__dict__["b"]
             break
@@ -278,128 +278,128 @@ def test_trace::states::b::b::state_has_b():
 
 
 
-def test_model2configuration::tracedb_is_not_abstract():
-    assert not inspect.isabstract(model2Configuration::TracedB)
+def test_model2configuration_tracedb_is_not_abstract():
+    assert not inspect.isabstract(model2Configuration_TracedB)
 
 
-def test_model2configuration::tracedb_constructor_exists():
-    assert callable(model2Configuration::TracedB.__init__)
+def test_model2configuration_tracedb_constructor_exists():
+    assert callable(model2Configuration_TracedB.__init__)
 
 
-def test_model2configuration::tracedb_constructor_args():
-    sig = inspect.signature(model2Configuration::TracedB.__init__)
+def test_model2configuration_tracedb_constructor_args():
+    sig = inspect.signature(model2Configuration_TracedB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model2configuration::tracedc_is_not_abstract():
-    assert not inspect.isabstract(model2Configuration::TracedC)
+def test_model2configuration_tracedc_is_not_abstract():
+    assert not inspect.isabstract(model2Configuration_TracedC)
 
 
-def test_model2configuration::tracedc_constructor_exists():
-    assert callable(model2Configuration::TracedC.__init__)
+def test_model2configuration_tracedc_constructor_exists():
+    assert callable(model2Configuration_TracedC.__init__)
 
 
-def test_model2configuration::tracedc_constructor_args():
-    sig = inspect.signature(model2Configuration::TracedC.__init__)
+def test_model2configuration_tracedc_constructor_args():
+    sig = inspect.signature(model2Configuration_TracedC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model2::traceda_is_not_abstract():
-    assert not inspect.isabstract(model2::TracedA)
+def test_model2_traceda_is_not_abstract():
+    assert not inspect.isabstract(model2_TracedA)
 
 
-def test_model2::traceda_constructor_exists():
-    assert callable(model2::TracedA.__init__)
+def test_model2_traceda_constructor_exists():
+    assert callable(model2_TracedA.__init__)
 
 
-def test_model2::traceda_constructor_args():
-    sig = inspect.signature(model2::TracedA.__init__)
+def test_model2_traceda_constructor_args():
+    sig = inspect.signature(model2_TracedA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_c::docexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(C::doCExitEventOccurrence)
+def test_c_docexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(C_doCExitEventOccurrence)
 
 
-def test_c::docexiteventoccurrence_constructor_exists():
-    assert callable(C::doCExitEventOccurrence.__init__)
+def test_c_docexiteventoccurrence_constructor_exists():
+    assert callable(C_doCExitEventOccurrence.__init__)
 
 
-def test_c::docexiteventoccurrence_constructor_args():
-    sig = inspect.signature(C::doCExitEventOccurrence.__init__)
+def test_c_docexiteventoccurrence_constructor_args():
+    sig = inspect.signature(C_doCExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_c::docentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(C::doCEntryEventOccurrence)
+def test_c_docentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(C_doCEntryEventOccurrence)
 
 
-def test_c::docentryeventoccurrence_constructor_exists():
-    assert callable(C::doCEntryEventOccurrence.__init__)
+def test_c_docentryeventoccurrence_constructor_exists():
+    assert callable(C_doCEntryEventOccurrence.__init__)
 
 
-def test_c::docentryeventoccurrence_constructor_args():
-    sig = inspect.signature(C::doCEntryEventOccurrence.__init__)
+def test_c_docentryeventoccurrence_constructor_args():
+    sig = inspect.signature(C_doCEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::doaexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(A::doAExitEventOccurrence)
+def test_a_doaexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(A_doAExitEventOccurrence)
 
 
-def test_a::doaexiteventoccurrence_constructor_exists():
-    assert callable(A::doAExitEventOccurrence.__init__)
+def test_a_doaexiteventoccurrence_constructor_exists():
+    assert callable(A_doAExitEventOccurrence.__init__)
 
 
-def test_a::doaexiteventoccurrence_constructor_args():
-    sig = inspect.signature(A::doAExitEventOccurrence.__init__)
+def test_a_doaexiteventoccurrence_constructor_args():
+    sig = inspect.signature(A_doAExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::a::state_is_not_abstract():
-    assert not inspect.isabstract(A::a::State)
+def test_a_a_state_is_not_abstract():
+    assert not inspect.isabstract(A_a_State)
 
 
-def test_a::a::state_constructor_exists():
-    assert callable(A::a::State.__init__)
+def test_a_a_state_constructor_exists():
+    assert callable(A_a_State.__init__)
 
 
-def test_a::a::state_constructor_args():
-    sig = inspect.signature(A::a::State.__init__)
+def test_a_a_state_constructor_args():
+    sig = inspect.signature(A_a_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_c::c::state_is_not_abstract():
-    assert not inspect.isabstract(C::c::State)
+def test_c_c_state_is_not_abstract():
+    assert not inspect.isabstract(C_c_State)
 
 
-def test_c::c::state_constructor_exists():
-    assert callable(C::c::State.__init__)
+def test_c_c_state_constructor_exists():
+    assert callable(C_c_State.__init__)
 
 
-def test_c::c::state_constructor_args():
-    sig = inspect.signature(C::c::State.__init__)
+def test_c_c_state_constructor_args():
+    sig = inspect.signature(C_c_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::b::state_is_not_abstract():
-    assert not inspect.isabstract(B::b::State)
+def test_b_b_state_is_not_abstract():
+    assert not inspect.isabstract(B_b_State)
 
 
-def test_b::b::state_constructor_exists():
-    assert callable(B::b::State.__init__)
+def test_b_b_state_constructor_exists():
+    assert callable(B_b_State.__init__)
 
 
-def test_b::b::state_constructor_args():
-    sig = inspect.signature(B::b::State.__init__)
+def test_b_b_state_constructor_args():
+    sig = inspect.signature(B_b_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -418,72 +418,72 @@ def test_eventoccurrence_constructor_args():
 
 
 
-def test_trace::events::c::docexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::C::doCExitEventOccurrence)
+def test_trace_events_a_doaentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_A_doAEntryEventOccurrence)
 
 
-def test_trace::events::c::docexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::C::doCExitEventOccurrence.__init__)
+def test_trace_events_a_doaentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_A_doAEntryEventOccurrence.__init__)
 
 
-def test_trace::events::c::docexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::C::doCExitEventOccurrence.__init__)
+def test_trace_events_a_doaentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_A_doAEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::events::a::doaexiteventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::A::doAExitEventOccurrence)
+def test_trace_events_c_docexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_C_doCExitEventOccurrence)
 
 
-def test_trace::events::a::doaexiteventoccurrence_constructor_exists():
-    assert callable(trace::Events::A::doAExitEventOccurrence.__init__)
+def test_trace_events_c_docexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_C_doCExitEventOccurrence.__init__)
 
 
-def test_trace::events::a::doaexiteventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::A::doAExitEventOccurrence.__init__)
+def test_trace_events_c_docexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_C_doCExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::events::c::docentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::C::doCEntryEventOccurrence)
+def test_trace_events_a_doaexiteventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_A_doAExitEventOccurrence)
 
 
-def test_trace::events::c::docentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::C::doCEntryEventOccurrence.__init__)
+def test_trace_events_a_doaexiteventoccurrence_constructor_exists():
+    assert callable(trace_Events_A_doAExitEventOccurrence.__init__)
 
 
-def test_trace::events::c::docentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::C::doCEntryEventOccurrence.__init__)
+def test_trace_events_a_doaexiteventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_A_doAExitEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::events::a::doaentryeventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(trace::Events::A::doAEntryEventOccurrence)
+def test_trace_events_c_docentryeventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(trace_Events_C_doCEntryEventOccurrence)
 
 
-def test_trace::events::a::doaentryeventoccurrence_constructor_exists():
-    assert callable(trace::Events::A::doAEntryEventOccurrence.__init__)
+def test_trace_events_c_docentryeventoccurrence_constructor_exists():
+    assert callable(trace_Events_C_doCEntryEventOccurrence.__init__)
 
 
-def test_trace::events::a::doaentryeventoccurrence_constructor_args():
-    sig = inspect.signature(trace::Events::A::doAEntryEventOccurrence.__init__)
+def test_trace_events_c_docentryeventoccurrence_constructor_args():
+    sig = inspect.signature(trace_Events_C_doCEntryEventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::staticobjectspools_is_not_abstract():
-    assert not inspect.isabstract(trace::StaticObjectsPools)
+def test_trace_staticobjectspools_is_not_abstract():
+    assert not inspect.isabstract(trace_StaticObjectsPools)
 
 
-def test_trace::staticobjectspools_constructor_exists():
-    assert callable(trace::StaticObjectsPools.__init__)
+def test_trace_staticobjectspools_constructor_exists():
+    assert callable(trace_StaticObjectsPools.__init__)
 
 
-def test_trace::staticobjectspools_constructor_args():
-    sig = inspect.signature(trace::StaticObjectsPools.__init__)
+def test_trace_staticobjectspools_constructor_args():
+    sig = inspect.signature(trace_StaticObjectsPools.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -516,30 +516,30 @@ def test_events_constructor_args():
 
 
 
-def test_trace::globalstate_is_not_abstract():
-    assert not inspect.isabstract(trace::GlobalState)
+def test_trace_globalstate_is_not_abstract():
+    assert not inspect.isabstract(trace_GlobalState)
 
 
-def test_trace::globalstate_constructor_exists():
-    assert callable(trace::GlobalState.__init__)
+def test_trace_globalstate_constructor_exists():
+    assert callable(trace_GlobalState.__init__)
 
 
-def test_trace::globalstate_constructor_args():
-    sig = inspect.signature(trace::GlobalState.__init__)
+def test_trace_globalstate_constructor_args():
+    sig = inspect.signature(trace_GlobalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -554,99 +554,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::Traced::TracedObjects_strategy = st.builds(
-    trace::Traced::TracedObjects,
+trace_Traced_TracedObjects_strategy = st.builds(
+    trace_Traced_TracedObjects,
 )
-trace::States::A::a::State_strategy = st.builds(
-    trace::States::A::a::State,
+trace_States_A_a_State_strategy = st.builds(
+    trace_States_A_a_State,
     a=
         st.integers()
 )
-model2::trace::A_strategy = st.builds(
-    model2::trace::A,
+model2_trace_A_strategy = st.builds(
+    model2_trace_A,
 )
-trace::model2::TracedA_strategy = st.builds(
-    trace::model2::TracedA,
+trace_model2_TracedA_strategy = st.builds(
+    trace_model2_TracedA,
 )
-trace::model2Configuration::TracedC_strategy = st.builds(
-    trace::model2Configuration::TracedC,
+trace_model2Configuration_TracedC_strategy = st.builds(
+    trace_model2Configuration_TracedC,
 )
-trace::model2Configuration::TracedB_strategy = st.builds(
-    trace::model2Configuration::TracedB,
+trace_model2Configuration_TracedB_strategy = st.builds(
+    trace_model2Configuration_TracedB,
 )
-A::doAEntryEventOccurrence_strategy = st.builds(
-    A::doAEntryEventOccurrence,
+A_doAEntryEventOccurrence_strategy = st.builds(
+    A_doAEntryEventOccurrence,
 )
-trace::Events::Events_strategy = st.builds(
-    trace::Events::Events,
+trace_Events_Events_strategy = st.builds(
+    trace_Events_Events,
 )
-Events::trace::GlobalState_strategy = st.builds(
-    Events::trace::GlobalState,
+Events_trace_GlobalState_strategy = st.builds(
+    Events_trace_GlobalState,
 )
-trace::Events::EventOccurrence_strategy = st.builds(
-    trace::Events::EventOccurrence,
+trace_Events_EventOccurrence_strategy = st.builds(
+    trace_Events_EventOccurrence,
 )
-trace::F_strategy = st.builds(
-    trace::F,
+trace_F_strategy = st.builds(
+    trace_F,
 )
-States::trace::F_strategy = st.builds(
-    States::trace::F,
+States_trace_F_strategy = st.builds(
+    States_trace_F,
 )
-trace::States::C::c::State_strategy = st.builds(
-    trace::States::C::c::State,
+trace_States_C_c_State_strategy = st.builds(
+    trace_States_C_c_State,
 )
-States::trace::GlobalState_strategy = st.builds(
-    States::trace::GlobalState,
+States_trace_GlobalState_strategy = st.builds(
+    States_trace_GlobalState,
 )
-trace::States::B::b::State_strategy = st.builds(
-    trace::States::B::b::State,
+trace_States_B_b_State_strategy = st.builds(
+    trace_States_B_b_State,
     b=
         st.integers()
 )
-model2Configuration::TracedB_strategy = st.builds(
-    model2Configuration::TracedB,
+model2Configuration_TracedB_strategy = st.builds(
+    model2Configuration_TracedB,
 )
-model2Configuration::TracedC_strategy = st.builds(
-    model2Configuration::TracedC,
+model2Configuration_TracedC_strategy = st.builds(
+    model2Configuration_TracedC,
 )
-model2::TracedA_strategy = st.builds(
-    model2::TracedA,
+model2_TracedA_strategy = st.builds(
+    model2_TracedA,
 )
-C::doCExitEventOccurrence_strategy = st.builds(
-    C::doCExitEventOccurrence,
+C_doCExitEventOccurrence_strategy = st.builds(
+    C_doCExitEventOccurrence,
 )
-C::doCEntryEventOccurrence_strategy = st.builds(
-    C::doCEntryEventOccurrence,
+C_doCEntryEventOccurrence_strategy = st.builds(
+    C_doCEntryEventOccurrence,
 )
-A::doAExitEventOccurrence_strategy = st.builds(
-    A::doAExitEventOccurrence,
+A_doAExitEventOccurrence_strategy = st.builds(
+    A_doAExitEventOccurrence,
 )
-A::a::State_strategy = st.builds(
-    A::a::State,
+A_a_State_strategy = st.builds(
+    A_a_State,
 )
-C::c::State_strategy = st.builds(
-    C::c::State,
+C_c_State_strategy = st.builds(
+    C_c_State,
 )
-B::b::State_strategy = st.builds(
-    B::b::State,
+B_b_State_strategy = st.builds(
+    B_b_State,
 )
 EventOccurrence_strategy = st.builds(
     EventOccurrence,
 )
-trace::Events::C::doCExitEventOccurrence_strategy = st.builds(
-    trace::Events::C::doCExitEventOccurrence,
+trace_Events_A_doAEntryEventOccurrence_strategy = st.builds(
+    trace_Events_A_doAEntryEventOccurrence,
 )
-trace::Events::A::doAExitEventOccurrence_strategy = st.builds(
-    trace::Events::A::doAExitEventOccurrence,
+trace_Events_C_doCExitEventOccurrence_strategy = st.builds(
+    trace_Events_C_doCExitEventOccurrence,
 )
-trace::Events::C::doCEntryEventOccurrence_strategy = st.builds(
-    trace::Events::C::doCEntryEventOccurrence,
+trace_Events_A_doAExitEventOccurrence_strategy = st.builds(
+    trace_Events_A_doAExitEventOccurrence,
 )
-trace::Events::A::doAEntryEventOccurrence_strategy = st.builds(
-    trace::Events::A::doAEntryEventOccurrence,
+trace_Events_C_doCEntryEventOccurrence_strategy = st.builds(
+    trace_Events_C_doCEntryEventOccurrence,
 )
-trace::StaticObjectsPools_strategy = st.builds(
-    trace::StaticObjectsPools,
+trace_StaticObjectsPools_strategy = st.builds(
+    trace_StaticObjectsPools,
 )
 TracedObjects_strategy = st.builds(
     TracedObjects,
@@ -654,184 +654,178 @@ TracedObjects_strategy = st.builds(
 Events_strategy = st.builds(
     Events,
 )
-trace::GlobalState_strategy = st.builds(
-    trace::GlobalState,
+trace_GlobalState_strategy = st.builds(
+    trace_GlobalState,
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
 
-@given(instance=trace::Traced::TracedObjects_strategy)
+@given(instance=trace_Traced_TracedObjects_strategy)
 @settings(max_examples=50)
-def test_trace::traced::tracedobjects_instantiation(instance):
-    assert isinstance(instance, trace::Traced::TracedObjects)
+def test_trace_traced_tracedobjects_instantiation(instance):
+    assert isinstance(instance, trace_Traced_TracedObjects)
 
-@given(instance=trace::States::A::a::State_strategy)
+@given(instance=trace_States_A_a_State_strategy)
 @settings(max_examples=50)
-def test_trace::states::a::a::state_instantiation(instance):
-    assert isinstance(instance, trace::States::A::a::State)
-
-@given(instance=trace::States::A::a::State_strategy)
-def test_trace::states::a::a::state_a_type(instance):
-    assert isinstance(instance.a, int)
+def test_trace_states_a_a_state_instantiation(instance):
+    assert isinstance(instance, trace_States_A_a_State)
 
 
-@given(instance=trace::States::A::a::State_strategy)
-def test_trace::states::a::a::state_a_setter(instance):
+
+@given(instance=trace_States_A_a_State_strategy)
+def test_trace_states_a_a_state_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original
 
-@given(instance=model2::trace::A_strategy)
+@given(instance=model2_trace_A_strategy)
 @settings(max_examples=50)
-def test_model2::trace::a_instantiation(instance):
-    assert isinstance(instance, model2::trace::A)
+def test_model2_trace_a_instantiation(instance):
+    assert isinstance(instance, model2_trace_A)
 
-@given(instance=trace::model2::TracedA_strategy)
+@given(instance=trace_model2_TracedA_strategy)
 @settings(max_examples=50)
-def test_trace::model2::traceda_instantiation(instance):
-    assert isinstance(instance, trace::model2::TracedA)
+def test_trace_model2_traceda_instantiation(instance):
+    assert isinstance(instance, trace_model2_TracedA)
 
-@given(instance=trace::model2Configuration::TracedC_strategy)
+@given(instance=trace_model2Configuration_TracedC_strategy)
 @settings(max_examples=50)
-def test_trace::model2configuration::tracedc_instantiation(instance):
-    assert isinstance(instance, trace::model2Configuration::TracedC)
+def test_trace_model2configuration_tracedc_instantiation(instance):
+    assert isinstance(instance, trace_model2Configuration_TracedC)
 
-@given(instance=trace::model2Configuration::TracedB_strategy)
+@given(instance=trace_model2Configuration_TracedB_strategy)
 @settings(max_examples=50)
-def test_trace::model2configuration::tracedb_instantiation(instance):
-    assert isinstance(instance, trace::model2Configuration::TracedB)
+def test_trace_model2configuration_tracedb_instantiation(instance):
+    assert isinstance(instance, trace_model2Configuration_TracedB)
 
-@given(instance=A::doAEntryEventOccurrence_strategy)
+@given(instance=A_doAEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_a::doaentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, A::doAEntryEventOccurrence)
+def test_a_doaentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, A_doAEntryEventOccurrence)
 
-@given(instance=trace::Events::Events_strategy)
+@given(instance=trace_Events_Events_strategy)
 @settings(max_examples=50)
-def test_trace::events::events_instantiation(instance):
-    assert isinstance(instance, trace::Events::Events)
+def test_trace_events_events_instantiation(instance):
+    assert isinstance(instance, trace_Events_Events)
 
-@given(instance=Events::trace::GlobalState_strategy)
+@given(instance=Events_trace_GlobalState_strategy)
 @settings(max_examples=50)
-def test_events::trace::globalstate_instantiation(instance):
-    assert isinstance(instance, Events::trace::GlobalState)
+def test_events_trace_globalstate_instantiation(instance):
+    assert isinstance(instance, Events_trace_GlobalState)
 
-@given(instance=trace::Events::EventOccurrence_strategy)
+@given(instance=trace_Events_EventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::events::eventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::EventOccurrence)
+def test_trace_events_eventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_EventOccurrence)
 
-@given(instance=trace::F_strategy)
+@given(instance=trace_F_strategy)
 @settings(max_examples=50)
-def test_trace::f_instantiation(instance):
-    assert isinstance(instance, trace::F)
+def test_trace_f_instantiation(instance):
+    assert isinstance(instance, trace_F)
 
-@given(instance=States::trace::F_strategy)
+@given(instance=States_trace_F_strategy)
 @settings(max_examples=50)
-def test_states::trace::f_instantiation(instance):
-    assert isinstance(instance, States::trace::F)
+def test_states_trace_f_instantiation(instance):
+    assert isinstance(instance, States_trace_F)
 
-@given(instance=trace::States::C::c::State_strategy)
+@given(instance=trace_States_C_c_State_strategy)
 @settings(max_examples=50)
-def test_trace::states::c::c::state_instantiation(instance):
-    assert isinstance(instance, trace::States::C::c::State)
+def test_trace_states_c_c_state_instantiation(instance):
+    assert isinstance(instance, trace_States_C_c_State)
 
-@given(instance=States::trace::GlobalState_strategy)
+@given(instance=States_trace_GlobalState_strategy)
 @settings(max_examples=50)
-def test_states::trace::globalstate_instantiation(instance):
-    assert isinstance(instance, States::trace::GlobalState)
+def test_states_trace_globalstate_instantiation(instance):
+    assert isinstance(instance, States_trace_GlobalState)
 
-@given(instance=trace::States::B::b::State_strategy)
+@given(instance=trace_States_B_b_State_strategy)
 @settings(max_examples=50)
-def test_trace::states::b::b::state_instantiation(instance):
-    assert isinstance(instance, trace::States::B::b::State)
-
-@given(instance=trace::States::B::b::State_strategy)
-def test_trace::states::b::b::state_b_type(instance):
-    assert isinstance(instance.b, int)
+def test_trace_states_b_b_state_instantiation(instance):
+    assert isinstance(instance, trace_States_B_b_State)
 
 
-@given(instance=trace::States::B::b::State_strategy)
-def test_trace::states::b::b::state_b_setter(instance):
+
+@given(instance=trace_States_B_b_State_strategy)
+def test_trace_states_b_b_state_b_setter(instance):
     original = instance.b
     instance.b = original
     assert instance.b == original
 
-@given(instance=model2Configuration::TracedB_strategy)
+@given(instance=model2Configuration_TracedB_strategy)
 @settings(max_examples=50)
-def test_model2configuration::tracedb_instantiation(instance):
-    assert isinstance(instance, model2Configuration::TracedB)
+def test_model2configuration_tracedb_instantiation(instance):
+    assert isinstance(instance, model2Configuration_TracedB)
 
-@given(instance=model2Configuration::TracedC_strategy)
+@given(instance=model2Configuration_TracedC_strategy)
 @settings(max_examples=50)
-def test_model2configuration::tracedc_instantiation(instance):
-    assert isinstance(instance, model2Configuration::TracedC)
+def test_model2configuration_tracedc_instantiation(instance):
+    assert isinstance(instance, model2Configuration_TracedC)
 
-@given(instance=model2::TracedA_strategy)
+@given(instance=model2_TracedA_strategy)
 @settings(max_examples=50)
-def test_model2::traceda_instantiation(instance):
-    assert isinstance(instance, model2::TracedA)
+def test_model2_traceda_instantiation(instance):
+    assert isinstance(instance, model2_TracedA)
 
-@given(instance=C::doCExitEventOccurrence_strategy)
+@given(instance=C_doCExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_c::docexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, C::doCExitEventOccurrence)
+def test_c_docexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, C_doCExitEventOccurrence)
 
-@given(instance=C::doCEntryEventOccurrence_strategy)
+@given(instance=C_doCEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_c::docentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, C::doCEntryEventOccurrence)
+def test_c_docentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, C_doCEntryEventOccurrence)
 
-@given(instance=A::doAExitEventOccurrence_strategy)
+@given(instance=A_doAExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_a::doaexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, A::doAExitEventOccurrence)
+def test_a_doaexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, A_doAExitEventOccurrence)
 
-@given(instance=A::a::State_strategy)
+@given(instance=A_a_State_strategy)
 @settings(max_examples=50)
-def test_a::a::state_instantiation(instance):
-    assert isinstance(instance, A::a::State)
+def test_a_a_state_instantiation(instance):
+    assert isinstance(instance, A_a_State)
 
-@given(instance=C::c::State_strategy)
+@given(instance=C_c_State_strategy)
 @settings(max_examples=50)
-def test_c::c::state_instantiation(instance):
-    assert isinstance(instance, C::c::State)
+def test_c_c_state_instantiation(instance):
+    assert isinstance(instance, C_c_State)
 
-@given(instance=B::b::State_strategy)
+@given(instance=B_b_State_strategy)
 @settings(max_examples=50)
-def test_b::b::state_instantiation(instance):
-    assert isinstance(instance, B::b::State)
+def test_b_b_state_instantiation(instance):
+    assert isinstance(instance, B_b_State)
 
 @given(instance=EventOccurrence_strategy)
 @settings(max_examples=50)
 def test_eventoccurrence_instantiation(instance):
     assert isinstance(instance, EventOccurrence)
 
-@given(instance=trace::Events::C::doCExitEventOccurrence_strategy)
+@given(instance=trace_Events_A_doAEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::events::c::docexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::C::doCExitEventOccurrence)
+def test_trace_events_a_doaentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_A_doAEntryEventOccurrence)
 
-@given(instance=trace::Events::A::doAExitEventOccurrence_strategy)
+@given(instance=trace_Events_C_doCExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::events::a::doaexiteventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::A::doAExitEventOccurrence)
+def test_trace_events_c_docexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_C_doCExitEventOccurrence)
 
-@given(instance=trace::Events::C::doCEntryEventOccurrence_strategy)
+@given(instance=trace_Events_A_doAExitEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::events::c::docentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::C::doCEntryEventOccurrence)
+def test_trace_events_a_doaexiteventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_A_doAExitEventOccurrence)
 
-@given(instance=trace::Events::A::doAEntryEventOccurrence_strategy)
+@given(instance=trace_Events_C_doCEntryEventOccurrence_strategy)
 @settings(max_examples=50)
-def test_trace::events::a::doaentryeventoccurrence_instantiation(instance):
-    assert isinstance(instance, trace::Events::A::doAEntryEventOccurrence)
+def test_trace_events_c_docentryeventoccurrence_instantiation(instance):
+    assert isinstance(instance, trace_Events_C_doCEntryEventOccurrence)
 
-@given(instance=trace::StaticObjectsPools_strategy)
+@given(instance=trace_StaticObjectsPools_strategy)
 @settings(max_examples=50)
-def test_trace::staticobjectspools_instantiation(instance):
-    assert isinstance(instance, trace::StaticObjectsPools)
+def test_trace_staticobjectspools_instantiation(instance):
+    assert isinstance(instance, trace_StaticObjectsPools)
 
 @given(instance=TracedObjects_strategy)
 @settings(max_examples=50)
@@ -843,12 +837,12 @@ def test_tracedobjects_instantiation(instance):
 def test_events_instantiation(instance):
     assert isinstance(instance, Events)
 
-@given(instance=trace::GlobalState_strategy)
+@given(instance=trace_GlobalState_strategy)
 @settings(max_examples=50)
-def test_trace::globalstate_instantiation(instance):
-    assert isinstance(instance, trace::GlobalState)
+def test_trace_globalstate_instantiation(instance):
+    assert isinstance(instance, trace_GlobalState)
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)

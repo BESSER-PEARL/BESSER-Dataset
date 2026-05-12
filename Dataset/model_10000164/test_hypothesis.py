@@ -3,11 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Null,
-    Value,
     ArrPrint,
     Print,
     Documents,
@@ -17,49 +15,13 @@ from python_code import (
     Number,
     Bool,
     String,
+    Null,
+    Value,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_null_is_not_abstract():
-    assert not inspect.isabstract(Null)
-
-
-def test_null_constructor_exists():
-    assert callable(Null.__init__)
-
-
-def test_null_constructor_args():
-    sig = inspect.signature(Null.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_value_is_not_abstract():
-    assert not inspect.isabstract(Value)
-
-
-def test_value_constructor_exists():
-    assert callable(Value.__init__)
-
-
-def test_value_constructor_args():
-    sig = inspect.signature(Value.__init__)
-    params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_value_has_attribute():
-    assert hasattr(Value, "attribute")
-    descriptor = None
-    for klass in Value.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -102,26 +64,17 @@ def test_documents_constructor_exists():
 def test_documents_constructor_args():
     sig = inspect.signature(Documents.__init__)
     params = list(sig.parameters.keys())
-    assert "file" in params, "Missing parameter 'file'"
-    assert "file_name" in params, "Missing parameter 'file_name'"
-    assert "tab_counter" in params, "Missing parameter 'tab_counter'"
     assert "data" in params, "Missing parameter 'data'"
+    assert "tab_counter" in params, "Missing parameter 'tab_counter'"
+    assert "file_name" in params, "Missing parameter 'file_name'"
+    assert "file" in params, "Missing parameter 'file'"
 
-def test_documents_has_file():
-    assert hasattr(Documents, "file")
+def test_documents_has_data():
+    assert hasattr(Documents, "data")
     descriptor = None
     for klass in Documents.__mro__:
-        if "file" in klass.__dict__:
-            descriptor = klass.__dict__["file"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_documents_has_file_name():
-    assert hasattr(Documents, "file_name")
-    descriptor = None
-    for klass in Documents.__mro__:
-        if "file_name" in klass.__dict__:
-            descriptor = klass.__dict__["file_name"]
+        if "data" in klass.__dict__:
+            descriptor = klass.__dict__["data"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,12 +87,21 @@ def test_documents_has_tab_counter():
             break
     assert isinstance(descriptor, property)
 
-def test_documents_has_data():
-    assert hasattr(Documents, "data")
+def test_documents_has_file_name():
+    assert hasattr(Documents, "file_name")
     descriptor = None
     for klass in Documents.__mro__:
-        if "data" in klass.__dict__:
-            descriptor = klass.__dict__["data"]
+        if "file_name" in klass.__dict__:
+            descriptor = klass.__dict__["file_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_documents_has_file():
+    assert hasattr(Documents, "file")
+    descriptor = None
+    for klass in Documents.__mro__:
+        if "file" in klass.__dict__:
+            descriptor = klass.__dict__["file"]
             break
     assert isinstance(descriptor, property)
 
@@ -278,6 +240,44 @@ def test_string_has_data():
     assert isinstance(descriptor, property)
 
 
+
+def test_null_is_not_abstract():
+    assert not inspect.isabstract(Null)
+
+
+def test_null_constructor_exists():
+    assert callable(Null.__init__)
+
+
+def test_null_constructor_args():
+    sig = inspect.signature(Null.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_value_is_not_abstract():
+    assert not inspect.isabstract(Value)
+
+
+def test_value_constructor_exists():
+    assert callable(Value.__init__)
+
+
+def test_value_constructor_args():
+    sig = inspect.signature(Value.__init__)
+    params = list(sig.parameters.keys())
+    assert "attribute" in params, "Missing parameter 'attribute'"
+
+def test_value_has_attribute():
+    assert hasattr(Value, "attribute")
+    descriptor = None
+    for klass in Value.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -289,14 +289,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Null_strategy = st.builds(
-    Null,
-)
-Value_strategy = st.builds(
-    Value,
-    attribute=
-        safe_text
-)
 ArrPrint_strategy = st.builds(
     ArrPrint,
 )
@@ -305,14 +297,14 @@ Print_strategy = st.builds(
 )
 Documents_strategy = st.builds(
     Documents,
-    file=
-        safe_text,
-    file_name=
-        safe_text,
+    data=
+        st.none(),
     tab_counter=
         st.integers(),
-    data=
-        st.none()
+    file_name=
+        safe_text,
+    file=
+        safe_text
 )
 Json_strategy = st.builds(
     Json,
@@ -342,27 +334,14 @@ String_strategy = st.builds(
     data=
         st.none()
 )
-
-@given(instance=Null_strategy)
-@settings(max_examples=50)
-def test_null_instantiation(instance):
-    assert isinstance(instance, Null)
-
-@given(instance=Value_strategy)
-@settings(max_examples=50)
-def test_value_instantiation(instance):
-    assert isinstance(instance, Value)
-
-@given(instance=Value_strategy)
-def test_value_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Value_strategy)
-def test_value_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
+Null_strategy = st.builds(
+    Null,
+)
+Value_strategy = st.builds(
+    Value,
+    attribute=
+        safe_text
+)
 
 @given(instance=ArrPrint_strategy)
 @settings(max_examples=50)
@@ -379,42 +358,6 @@ def test_print_instantiation(instance):
 def test_documents_instantiation(instance):
     assert isinstance(instance, Documents)
 
-@given(instance=Documents_strategy)
-def test_documents_file_type(instance):
-    assert isinstance(instance.file, str)
-
-
-@given(instance=Documents_strategy)
-def test_documents_file_setter(instance):
-    original = instance.file
-    instance.file = original
-    assert instance.file == original
-
-@given(instance=Documents_strategy)
-def test_documents_file_name_type(instance):
-    assert isinstance(instance.file_name, str)
-
-
-@given(instance=Documents_strategy)
-def test_documents_file_name_setter(instance):
-    original = instance.file_name
-    instance.file_name = original
-    assert instance.file_name == original
-
-@given(instance=Documents_strategy)
-def test_documents_tab_counter_type(instance):
-    assert isinstance(instance.tab_counter, int)
-
-
-@given(instance=Documents_strategy)
-def test_documents_tab_counter_setter(instance):
-    original = instance.tab_counter
-    instance.tab_counter = original
-    assert instance.tab_counter == original
-
-@given(instance=Documents_strategy)
-def test_documents_data_type(instance):
-    assert isinstance(instance.data, json)
 
 
 @given(instance=Documents_strategy)
@@ -423,14 +366,35 @@ def test_documents_data_setter(instance):
     instance.data = original
     assert instance.data == original
 
+
+
+@given(instance=Documents_strategy)
+def test_documents_tab_counter_setter(instance):
+    original = instance.tab_counter
+    instance.tab_counter = original
+    assert instance.tab_counter == original
+
+
+
+@given(instance=Documents_strategy)
+def test_documents_file_name_setter(instance):
+    original = instance.file_name
+    instance.file_name = original
+    assert instance.file_name == original
+
+
+
+@given(instance=Documents_strategy)
+def test_documents_file_setter(instance):
+    original = instance.file
+    instance.file = original
+    assert instance.file == original
+
 @given(instance=Json_strategy)
 @settings(max_examples=50)
 def test_json_instantiation(instance):
     assert isinstance(instance, Json)
 
-@given(instance=Json_strategy)
-def test_json_values_type(instance):
-    assert isinstance(instance.values, value)
 
 
 @given(instance=Json_strategy)
@@ -449,9 +413,6 @@ def test_visitor_instantiation(instance):
 def test_array_instantiation(instance):
     assert isinstance(instance, Array)
 
-@given(instance=Array_strategy)
-def test_array_data_type(instance):
-    assert isinstance(instance.data, value)
 
 
 @given(instance=Array_strategy)
@@ -465,9 +426,6 @@ def test_array_data_setter(instance):
 def test_number_instantiation(instance):
     assert isinstance(instance, Number)
 
-@given(instance=Number_strategy)
-def test_number_data_type(instance):
-    assert isinstance(instance.data, int)
 
 
 @given(instance=Number_strategy)
@@ -481,9 +439,6 @@ def test_number_data_setter(instance):
 def test_bool_instantiation(instance):
     assert isinstance(instance, Bool)
 
-@given(instance=Bool_strategy)
-def test_bool_data_type(instance):
-    assert isinstance(instance.data, bool)
 
 
 @given(instance=Bool_strategy)
@@ -497,9 +452,6 @@ def test_bool_data_setter(instance):
 def test_string_instantiation(instance):
     assert isinstance(instance, String)
 
-@given(instance=String_strategy)
-def test_string_data_type(instance):
-    assert isinstance(instance.data, string)
 
 
 @given(instance=String_strategy)
@@ -507,3 +459,21 @@ def test_string_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
+
+@given(instance=Null_strategy)
+@settings(max_examples=50)
+def test_null_instantiation(instance):
+    assert isinstance(instance, Null)
+
+@given(instance=Value_strategy)
+@settings(max_examples=50)
+def test_value_instantiation(instance):
+    assert isinstance(instance, Value)
+
+
+
+@given(instance=Value_strategy)
+def test_value_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original

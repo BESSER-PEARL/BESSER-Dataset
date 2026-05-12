@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Online_Shopping_System_Product,
@@ -33,16 +33,16 @@ def test_online_shopping_system_product_constructor_exists():
 def test_online_shopping_system_product_constructor_args():
     sig = inspect.signature(Online_Shopping_System_Product.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "Supplier" in params, "Missing parameter 'Supplier'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "Supplier" in params, "Missing parameter 'Supplier'"
+    assert "Name" in params, "Missing parameter 'Name'"
 
-def test_online_shopping_system_product_has_Name():
-    assert hasattr(Online_Shopping_System_Product, "Name")
+def test_online_shopping_system_product_has_ID():
+    assert hasattr(Online_Shopping_System_Product, "ID")
     descriptor = None
     for klass in Online_Shopping_System_Product.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -55,12 +55,12 @@ def test_online_shopping_system_product_has_Supplier():
             break
     assert isinstance(descriptor, property)
 
-def test_online_shopping_system_product_has_ID():
-    assert hasattr(Online_Shopping_System_Product, "ID")
+def test_online_shopping_system_product_has_Name():
+    assert hasattr(Online_Shopping_System_Product, "Name")
     descriptor = None
     for klass in Online_Shopping_System_Product.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -77,17 +77,8 @@ def test_online_shopping_system_line_item_constructor_exists():
 def test_online_shopping_system_line_item_constructor_args():
     sig = inspect.signature(Online_Shopping_System_Line_item.__init__)
     params = list(sig.parameters.keys())
-    assert "price" in params, "Missing parameter 'price'"
     assert "quantity" in params, "Missing parameter 'quantity'"
-
-def test_online_shopping_system_line_item_has_price():
-    assert hasattr(Online_Shopping_System_Line_item, "price")
-    descriptor = None
-    for klass in Online_Shopping_System_Line_item.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
+    assert "price" in params, "Missing parameter 'price'"
 
 def test_online_shopping_system_line_item_has_quantity():
     assert hasattr(Online_Shopping_System_Line_item, "quantity")
@@ -95,6 +86,15 @@ def test_online_shopping_system_line_item_has_quantity():
     for klass in Online_Shopping_System_Line_item.__mro__:
         if "quantity" in klass.__dict__:
             descriptor = klass.__dict__["quantity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_online_shopping_system_line_item_has_price():
+    assert hasattr(Online_Shopping_System_Line_item, "price")
+    descriptor = None
+    for klass in Online_Shopping_System_Line_item.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
             break
     assert isinstance(descriptor, property)
 
@@ -135,12 +135,30 @@ def test_online_shopping_system_order_constructor_exists():
 def test_online_shopping_system_order_constructor_args():
     sig = inspect.signature(Online_Shopping_System_Order.__init__)
     params = list(sig.parameters.keys())
+    assert "status" in params, "Missing parameter 'status'"
+    assert "ordered" in params, "Missing parameter 'ordered'"
     assert "Number" in params, "Missing parameter 'Number'"
     assert "Ship_to" in params, "Missing parameter 'Ship_to'"
-    assert "ordered" in params, "Missing parameter 'ordered'"
-    assert "shipped" in params, "Missing parameter 'shipped'"
     assert "total" in params, "Missing parameter 'total'"
-    assert "status" in params, "Missing parameter 'status'"
+    assert "shipped" in params, "Missing parameter 'shipped'"
+
+def test_online_shopping_system_order_has_status():
+    assert hasattr(Online_Shopping_System_Order, "status")
+    descriptor = None
+    for klass in Online_Shopping_System_Order.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_online_shopping_system_order_has_ordered():
+    assert hasattr(Online_Shopping_System_Order, "ordered")
+    descriptor = None
+    for klass in Online_Shopping_System_Order.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_online_shopping_system_order_has_Number():
     assert hasattr(Online_Shopping_System_Order, "Number")
@@ -160,24 +178,6 @@ def test_online_shopping_system_order_has_Ship_to():
             break
     assert isinstance(descriptor, property)
 
-def test_online_shopping_system_order_has_ordered():
-    assert hasattr(Online_Shopping_System_Order, "ordered")
-    descriptor = None
-    for klass in Online_Shopping_System_Order.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_online_shopping_system_order_has_shipped():
-    assert hasattr(Online_Shopping_System_Order, "shipped")
-    descriptor = None
-    for klass in Online_Shopping_System_Order.__mro__:
-        if "shipped" in klass.__dict__:
-            descriptor = klass.__dict__["shipped"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_online_shopping_system_order_has_total():
     assert hasattr(Online_Shopping_System_Order, "total")
     descriptor = None
@@ -187,12 +187,12 @@ def test_online_shopping_system_order_has_total():
             break
     assert isinstance(descriptor, property)
 
-def test_online_shopping_system_order_has_status():
-    assert hasattr(Online_Shopping_System_Order, "status")
+def test_online_shopping_system_order_has_shipped():
+    assert hasattr(Online_Shopping_System_Order, "shipped")
     descriptor = None
     for klass in Online_Shopping_System_Order.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
+        if "shipped" in klass.__dict__:
+            descriptor = klass.__dict__["shipped"]
             break
     assert isinstance(descriptor, property)
 
@@ -211,8 +211,8 @@ def test_online_shopping_system_payment_constructor_args():
     params = list(sig.parameters.keys())
     assert "Total" in params, "Missing parameter 'Total'"
     assert "Paid" in params, "Missing parameter 'Paid'"
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "Details" in params, "Missing parameter 'Details'"
+    assert "ID" in params, "Missing parameter 'ID'"
 
 def test_online_shopping_system_payment_has_Total():
     assert hasattr(Online_Shopping_System_Payment, "Total")
@@ -232,21 +232,21 @@ def test_online_shopping_system_payment_has_Paid():
             break
     assert isinstance(descriptor, property)
 
-def test_online_shopping_system_payment_has_ID():
-    assert hasattr(Online_Shopping_System_Payment, "ID")
-    descriptor = None
-    for klass in Online_Shopping_System_Payment.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_online_shopping_system_payment_has_Details():
     assert hasattr(Online_Shopping_System_Payment, "Details")
     descriptor = None
     for klass in Online_Shopping_System_Payment.__mro__:
         if "Details" in klass.__dict__:
             descriptor = klass.__dict__["Details"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_online_shopping_system_payment_has_ID():
+    assert hasattr(Online_Shopping_System_Payment, "ID")
+    descriptor = None
+    for klass in Online_Shopping_System_Payment.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -264,10 +264,10 @@ def test_online_shopping_system_account_constructor_args():
     sig = inspect.signature(Online_Shopping_System_Account.__init__)
     params = list(sig.parameters.keys())
     assert "Open" in params, "Missing parameter 'Open'"
-    assert "is_closed" in params, "Missing parameter 'is_closed'"
-    assert "ID" in params, "Missing parameter 'ID'"
-    assert "billing_address" in params, "Missing parameter 'billing_address'"
     assert "Closed" in params, "Missing parameter 'Closed'"
+    assert "ID" in params, "Missing parameter 'ID'"
+    assert "is_closed" in params, "Missing parameter 'is_closed'"
+    assert "billing_address" in params, "Missing parameter 'billing_address'"
 
 def test_online_shopping_system_account_has_Open():
     assert hasattr(Online_Shopping_System_Account, "Open")
@@ -278,12 +278,12 @@ def test_online_shopping_system_account_has_Open():
             break
     assert isinstance(descriptor, property)
 
-def test_online_shopping_system_account_has_is_closed():
-    assert hasattr(Online_Shopping_System_Account, "is_closed")
+def test_online_shopping_system_account_has_Closed():
+    assert hasattr(Online_Shopping_System_Account, "Closed")
     descriptor = None
     for klass in Online_Shopping_System_Account.__mro__:
-        if "is_closed" in klass.__dict__:
-            descriptor = klass.__dict__["is_closed"]
+        if "Closed" in klass.__dict__:
+            descriptor = klass.__dict__["Closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -296,21 +296,21 @@ def test_online_shopping_system_account_has_ID():
             break
     assert isinstance(descriptor, property)
 
+def test_online_shopping_system_account_has_is_closed():
+    assert hasattr(Online_Shopping_System_Account, "is_closed")
+    descriptor = None
+    for klass in Online_Shopping_System_Account.__mro__:
+        if "is_closed" in klass.__dict__:
+            descriptor = klass.__dict__["is_closed"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_online_shopping_system_account_has_billing_address():
     assert hasattr(Online_Shopping_System_Account, "billing_address")
     descriptor = None
     for klass in Online_Shopping_System_Account.__mro__:
         if "billing_address" in klass.__dict__:
             descriptor = klass.__dict__["billing_address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_online_shopping_system_account_has_Closed():
-    assert hasattr(Online_Shopping_System_Account, "Closed")
-    descriptor = None
-    for klass in Online_Shopping_System_Account.__mro__:
-        if "Closed" in klass.__dict__:
-            descriptor = klass.__dict__["Closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -327,28 +327,10 @@ def test_online_shopping_system_customer_constructor_exists():
 def test_online_shopping_system_customer_constructor_args():
     sig = inspect.signature(Online_Shopping_System_Customer.__init__)
     params = list(sig.parameters.keys())
-    assert "Phone" in params, "Missing parameter 'Phone'"
-    assert "Email" in params, "Missing parameter 'Email'"
     assert "ID" in params, "Missing parameter 'ID'"
     assert "Address" in params, "Missing parameter 'Address'"
-
-def test_online_shopping_system_customer_has_Phone():
-    assert hasattr(Online_Shopping_System_Customer, "Phone")
-    descriptor = None
-    for klass in Online_Shopping_System_Customer.__mro__:
-        if "Phone" in klass.__dict__:
-            descriptor = klass.__dict__["Phone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_online_shopping_system_customer_has_Email():
-    assert hasattr(Online_Shopping_System_Customer, "Email")
-    descriptor = None
-    for klass in Online_Shopping_System_Customer.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Email" in params, "Missing parameter 'Email'"
+    assert "Phone" in params, "Missing parameter 'Phone'"
 
 def test_online_shopping_system_customer_has_ID():
     assert hasattr(Online_Shopping_System_Customer, "ID")
@@ -368,6 +350,24 @@ def test_online_shopping_system_customer_has_Address():
             break
     assert isinstance(descriptor, property)
 
+def test_online_shopping_system_customer_has_Email():
+    assert hasattr(Online_Shopping_System_Customer, "Email")
+    descriptor = None
+    for klass in Online_Shopping_System_Customer.__mro__:
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_online_shopping_system_customer_has_Phone():
+    assert hasattr(Online_Shopping_System_Customer, "Phone")
+    descriptor = None
+    for klass in Online_Shopping_System_Customer.__mro__:
+        if "Phone" in klass.__dict__:
+            descriptor = klass.__dict__["Phone"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_online_shopping_system_web_user_is_not_abstract():
@@ -381,17 +381,8 @@ def test_online_shopping_system_web_user_constructor_exists():
 def test_online_shopping_system_web_user_constructor_args():
     sig = inspect.signature(Online_Shopping_System_Web_User.__init__)
     params = list(sig.parameters.keys())
-    assert "login_id" in params, "Missing parameter 'login_id'"
     assert "passwd" in params, "Missing parameter 'passwd'"
-
-def test_online_shopping_system_web_user_has_login_id():
-    assert hasattr(Online_Shopping_System_Web_User, "login_id")
-    descriptor = None
-    for klass in Online_Shopping_System_Web_User.__mro__:
-        if "login_id" in klass.__dict__:
-            descriptor = klass.__dict__["login_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "login_id" in params, "Missing parameter 'login_id'"
 
 def test_online_shopping_system_web_user_has_passwd():
     assert hasattr(Online_Shopping_System_Web_User, "passwd")
@@ -399,6 +390,15 @@ def test_online_shopping_system_web_user_has_passwd():
     for klass in Online_Shopping_System_Web_User.__mro__:
         if "passwd" in klass.__dict__:
             descriptor = klass.__dict__["passwd"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_online_shopping_system_web_user_has_login_id():
+    assert hasattr(Online_Shopping_System_Web_User, "login_id")
+    descriptor = None
+    for klass in Online_Shopping_System_Web_User.__mro__:
+        if "login_id" in klass.__dict__:
+            descriptor = klass.__dict__["login_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -416,19 +416,19 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Online_Shopping_System_Product_strategy = st.builds(
     Online_Shopping_System_Product,
-    Name=
+    ID=
         safe_text,
     Supplier=
         safe_text,
-    ID=
+    Name=
         safe_text
 )
 Online_Shopping_System_Line_item_strategy = st.builds(
     Online_Shopping_System_Line_item,
-    price=
-        safe_text,
     quantity=
-        st.integers()
+        st.integers(),
+    price=
+        safe_text
 )
 Online_Shopping_System_Shopping_Cart_strategy = st.builds(
     Online_Shopping_System_Shopping_Cart,
@@ -437,17 +437,17 @@ Online_Shopping_System_Shopping_Cart_strategy = st.builds(
 )
 Online_Shopping_System_Order_strategy = st.builds(
     Online_Shopping_System_Order,
+    status=
+        safe_text,
+    ordered=
+        safe_text,
     Number=
         safe_text,
     Ship_to=
         safe_text,
-    ordered=
-        safe_text,
-    shipped=
-        safe_text,
     total=
         safe_text,
-    status=
+    shipped=
         safe_text
 )
 Online_Shopping_System_Payment_strategy = st.builds(
@@ -456,40 +456,40 @@ Online_Shopping_System_Payment_strategy = st.builds(
         safe_text,
     Paid=
         safe_text,
-    ID=
-        safe_text,
     Details=
+        safe_text,
+    ID=
         safe_text
 )
 Online_Shopping_System_Account_strategy = st.builds(
     Online_Shopping_System_Account,
     Open=
         safe_text,
-    is_closed=
-        st.booleans(),
+    Closed=
+        safe_text,
     ID=
         safe_text,
+    is_closed=
+        st.booleans(),
     billing_address=
-        safe_text,
-    Closed=
         safe_text
 )
 Online_Shopping_System_Customer_strategy = st.builds(
     Online_Shopping_System_Customer,
-    Phone=
-        safe_text,
-    Email=
-        safe_text,
     ID=
         safe_text,
     Address=
+        safe_text,
+    Email=
+        safe_text,
+    Phone=
         safe_text
 )
 Online_Shopping_System_Web_User_strategy = st.builds(
     Online_Shopping_System_Web_User,
-    login_id=
-        safe_text,
     passwd=
+        safe_text,
+    login_id=
         safe_text
 )
 
@@ -498,31 +498,6 @@ Online_Shopping_System_Web_User_strategy = st.builds(
 def test_online_shopping_system_product_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Product)
 
-@given(instance=Online_Shopping_System_Product_strategy)
-def test_online_shopping_system_product_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Online_Shopping_System_Product_strategy)
-def test_online_shopping_system_product_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Online_Shopping_System_Product_strategy)
-def test_online_shopping_system_product_Supplier_type(instance):
-    assert isinstance(instance.Supplier, str)
-
-
-@given(instance=Online_Shopping_System_Product_strategy)
-def test_online_shopping_system_product_Supplier_setter(instance):
-    original = instance.Supplier
-    instance.Supplier = original
-    assert instance.Supplier == original
-
-@given(instance=Online_Shopping_System_Product_strategy)
-def test_online_shopping_system_product_ID_type(instance):
-    assert isinstance(instance.ID, str)
 
 
 @given(instance=Online_Shopping_System_Product_strategy)
@@ -531,25 +506,27 @@ def test_online_shopping_system_product_ID_setter(instance):
     instance.ID = original
     assert instance.ID == original
 
+
+
+@given(instance=Online_Shopping_System_Product_strategy)
+def test_online_shopping_system_product_Supplier_setter(instance):
+    original = instance.Supplier
+    instance.Supplier = original
+    assert instance.Supplier == original
+
+
+
+@given(instance=Online_Shopping_System_Product_strategy)
+def test_online_shopping_system_product_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=Online_Shopping_System_Line_item_strategy)
 @settings(max_examples=50)
 def test_online_shopping_system_line_item_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Line_item)
 
-@given(instance=Online_Shopping_System_Line_item_strategy)
-def test_online_shopping_system_line_item_price_type(instance):
-    assert isinstance(instance.price, str)
-
-
-@given(instance=Online_Shopping_System_Line_item_strategy)
-def test_online_shopping_system_line_item_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Online_Shopping_System_Line_item_strategy)
-def test_online_shopping_system_line_item_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=Online_Shopping_System_Line_item_strategy)
@@ -558,14 +535,19 @@ def test_online_shopping_system_line_item_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
+
+
+@given(instance=Online_Shopping_System_Line_item_strategy)
+def test_online_shopping_system_line_item_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
 @given(instance=Online_Shopping_System_Shopping_Cart_strategy)
 @settings(max_examples=50)
 def test_online_shopping_system_shopping_cart_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Shopping_Cart)
 
-@given(instance=Online_Shopping_System_Shopping_Cart_strategy)
-def test_online_shopping_system_shopping_cart_created_type(instance):
-    assert isinstance(instance.created, str)
 
 
 @given(instance=Online_Shopping_System_Shopping_Cart_strategy)
@@ -579,64 +561,6 @@ def test_online_shopping_system_shopping_cart_created_setter(instance):
 def test_online_shopping_system_order_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Order)
 
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_Number_type(instance):
-    assert isinstance(instance.Number, str)
-
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_Number_setter(instance):
-    original = instance.Number
-    instance.Number = original
-    assert instance.Number == original
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_Ship_to_type(instance):
-    assert isinstance(instance.Ship_to, str)
-
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_Ship_to_setter(instance):
-    original = instance.Ship_to
-    instance.Ship_to = original
-    assert instance.Ship_to == original
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_ordered_type(instance):
-    assert isinstance(instance.ordered, str)
-
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_shipped_type(instance):
-    assert isinstance(instance.shipped, str)
-
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_shipped_setter(instance):
-    original = instance.shipped
-    instance.shipped = original
-    assert instance.shipped == original
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_total_type(instance):
-    assert isinstance(instance.total, str)
-
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Online_Shopping_System_Order_strategy)
-def test_online_shopping_system_order_status_type(instance):
-    assert isinstance(instance.status, str)
 
 
 @given(instance=Online_Shopping_System_Order_strategy)
@@ -645,14 +569,51 @@ def test_online_shopping_system_order_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
+
+
+@given(instance=Online_Shopping_System_Order_strategy)
+def test_online_shopping_system_order_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
+
+
+@given(instance=Online_Shopping_System_Order_strategy)
+def test_online_shopping_system_order_Number_setter(instance):
+    original = instance.Number
+    instance.Number = original
+    assert instance.Number == original
+
+
+
+@given(instance=Online_Shopping_System_Order_strategy)
+def test_online_shopping_system_order_Ship_to_setter(instance):
+    original = instance.Ship_to
+    instance.Ship_to = original
+    assert instance.Ship_to == original
+
+
+
+@given(instance=Online_Shopping_System_Order_strategy)
+def test_online_shopping_system_order_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
+
+
+@given(instance=Online_Shopping_System_Order_strategy)
+def test_online_shopping_system_order_shipped_setter(instance):
+    original = instance.shipped
+    instance.shipped = original
+    assert instance.shipped == original
+
 @given(instance=Online_Shopping_System_Payment_strategy)
 @settings(max_examples=50)
 def test_online_shopping_system_payment_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Payment)
 
-@given(instance=Online_Shopping_System_Payment_strategy)
-def test_online_shopping_system_payment_Total_type(instance):
-    assert isinstance(instance.Total, str)
 
 
 @given(instance=Online_Shopping_System_Payment_strategy)
@@ -661,9 +622,6 @@ def test_online_shopping_system_payment_Total_setter(instance):
     instance.Total = original
     assert instance.Total == original
 
-@given(instance=Online_Shopping_System_Payment_strategy)
-def test_online_shopping_system_payment_Paid_type(instance):
-    assert isinstance(instance.Paid, str)
 
 
 @given(instance=Online_Shopping_System_Payment_strategy)
@@ -672,20 +630,6 @@ def test_online_shopping_system_payment_Paid_setter(instance):
     instance.Paid = original
     assert instance.Paid == original
 
-@given(instance=Online_Shopping_System_Payment_strategy)
-def test_online_shopping_system_payment_ID_type(instance):
-    assert isinstance(instance.ID, str)
-
-
-@given(instance=Online_Shopping_System_Payment_strategy)
-def test_online_shopping_system_payment_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
-@given(instance=Online_Shopping_System_Payment_strategy)
-def test_online_shopping_system_payment_Details_type(instance):
-    assert isinstance(instance.Details, str)
 
 
 @given(instance=Online_Shopping_System_Payment_strategy)
@@ -694,14 +638,19 @@ def test_online_shopping_system_payment_Details_setter(instance):
     instance.Details = original
     assert instance.Details == original
 
+
+
+@given(instance=Online_Shopping_System_Payment_strategy)
+def test_online_shopping_system_payment_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
 @given(instance=Online_Shopping_System_Account_strategy)
 @settings(max_examples=50)
 def test_online_shopping_system_account_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Account)
 
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_Open_type(instance):
-    assert isinstance(instance.Open, str)
 
 
 @given(instance=Online_Shopping_System_Account_strategy)
@@ -710,42 +659,6 @@ def test_online_shopping_system_account_Open_setter(instance):
     instance.Open = original
     assert instance.Open == original
 
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_is_closed_type(instance):
-    assert isinstance(instance.is_closed, bool)
-
-
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_is_closed_setter(instance):
-    original = instance.is_closed
-    instance.is_closed = original
-    assert instance.is_closed == original
-
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_ID_type(instance):
-    assert isinstance(instance.ID, str)
-
-
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_billing_address_type(instance):
-    assert isinstance(instance.billing_address, str)
-
-
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_billing_address_setter(instance):
-    original = instance.billing_address
-    instance.billing_address = original
-    assert instance.billing_address == original
-
-@given(instance=Online_Shopping_System_Account_strategy)
-def test_online_shopping_system_account_Closed_type(instance):
-    assert isinstance(instance.Closed, str)
 
 
 @given(instance=Online_Shopping_System_Account_strategy)
@@ -754,36 +667,35 @@ def test_online_shopping_system_account_Closed_setter(instance):
     instance.Closed = original
     assert instance.Closed == original
 
+
+
+@given(instance=Online_Shopping_System_Account_strategy)
+def test_online_shopping_system_account_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
+
+
+@given(instance=Online_Shopping_System_Account_strategy)
+def test_online_shopping_system_account_is_closed_setter(instance):
+    original = instance.is_closed
+    instance.is_closed = original
+    assert instance.is_closed == original
+
+
+
+@given(instance=Online_Shopping_System_Account_strategy)
+def test_online_shopping_system_account_billing_address_setter(instance):
+    original = instance.billing_address
+    instance.billing_address = original
+    assert instance.billing_address == original
+
 @given(instance=Online_Shopping_System_Customer_strategy)
 @settings(max_examples=50)
 def test_online_shopping_system_customer_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Customer)
 
-@given(instance=Online_Shopping_System_Customer_strategy)
-def test_online_shopping_system_customer_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
-
-
-@given(instance=Online_Shopping_System_Customer_strategy)
-def test_online_shopping_system_customer_Phone_setter(instance):
-    original = instance.Phone
-    instance.Phone = original
-    assert instance.Phone == original
-
-@given(instance=Online_Shopping_System_Customer_strategy)
-def test_online_shopping_system_customer_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=Online_Shopping_System_Customer_strategy)
-def test_online_shopping_system_customer_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=Online_Shopping_System_Customer_strategy)
-def test_online_shopping_system_customer_ID_type(instance):
-    assert isinstance(instance.ID, str)
 
 
 @given(instance=Online_Shopping_System_Customer_strategy)
@@ -792,9 +704,6 @@ def test_online_shopping_system_customer_ID_setter(instance):
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=Online_Shopping_System_Customer_strategy)
-def test_online_shopping_system_customer_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Online_Shopping_System_Customer_strategy)
@@ -803,25 +712,27 @@ def test_online_shopping_system_customer_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
+
+
+@given(instance=Online_Shopping_System_Customer_strategy)
+def test_online_shopping_system_customer_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
+
+
+@given(instance=Online_Shopping_System_Customer_strategy)
+def test_online_shopping_system_customer_Phone_setter(instance):
+    original = instance.Phone
+    instance.Phone = original
+    assert instance.Phone == original
+
 @given(instance=Online_Shopping_System_Web_User_strategy)
 @settings(max_examples=50)
 def test_online_shopping_system_web_user_instantiation(instance):
     assert isinstance(instance, Online_Shopping_System_Web_User)
 
-@given(instance=Online_Shopping_System_Web_User_strategy)
-def test_online_shopping_system_web_user_login_id_type(instance):
-    assert isinstance(instance.login_id, str)
-
-
-@given(instance=Online_Shopping_System_Web_User_strategy)
-def test_online_shopping_system_web_user_login_id_setter(instance):
-    original = instance.login_id
-    instance.login_id = original
-    assert instance.login_id == original
-
-@given(instance=Online_Shopping_System_Web_User_strategy)
-def test_online_shopping_system_web_user_passwd_type(instance):
-    assert isinstance(instance.passwd, str)
 
 
 @given(instance=Online_Shopping_System_Web_User_strategy)
@@ -829,3 +740,11 @@ def test_online_shopping_system_web_user_passwd_setter(instance):
     original = instance.passwd
     instance.passwd = original
     assert instance.passwd == original
+
+
+
+@given(instance=Online_Shopping_System_Web_User_strategy)
+def test_online_shopping_system_web_user_login_id_setter(instance):
+    original = instance.login_id
+    instance.login_id = original
+    assert instance.login_id == original

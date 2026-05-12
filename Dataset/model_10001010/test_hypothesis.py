@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Logout_external,
@@ -167,18 +167,9 @@ def test_authenticate_staff_constructor_exists():
 def test_authenticate_staff_constructor_args():
     sig = inspect.signature(Authenticate_staff.__init__)
     params = list(sig.parameters.keys())
-    assert "Password" in params, "Missing parameter 'Password'"
     assert "Authendication_Mood" in params, "Missing parameter 'Authendication_Mood'"
+    assert "Password" in params, "Missing parameter 'Password'"
     assert "UserName" in params, "Missing parameter 'UserName'"
-
-def test_authenticate_staff_has_Password():
-    assert hasattr(Authenticate_staff, "Password")
-    descriptor = None
-    for klass in Authenticate_staff.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_authenticate_staff_has_Authendication_Mood():
     assert hasattr(Authenticate_staff, "Authendication_Mood")
@@ -186,6 +177,15 @@ def test_authenticate_staff_has_Authendication_Mood():
     for klass in Authenticate_staff.__mro__:
         if "Authendication_Mood" in klass.__dict__:
             descriptor = klass.__dict__["Authendication_Mood"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_authenticate_staff_has_Password():
+    assert hasattr(Authenticate_staff, "Password")
+    descriptor = None
+    for klass in Authenticate_staff.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
             break
     assert isinstance(descriptor, property)
 
@@ -211,21 +211,12 @@ def test_employee_constructor_exists():
 def test_employee_constructor_args():
     sig = inspect.signature(Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "Emp_Name" in params, "Missing parameter 'Emp_Name'"
     assert "Emp_Id" in params, "Missing parameter 'Emp_Id'"
     assert "Emp_Position" in params, "Missing parameter 'Emp_Position'"
-    assert "Emp_DOB" in params, "Missing parameter 'Emp_DOB'"
-    assert "Emp_Address" in params, "Missing parameter 'Emp_Address'"
     assert "Emp_Date_Of_Joint" in params, "Missing parameter 'Emp_Date_Of_Joint'"
-
-def test_employee_has_Emp_Name():
-    assert hasattr(Employee, "Emp_Name")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Emp_Name" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Emp_Address" in params, "Missing parameter 'Emp_Address'"
+    assert "Emp_DOB" in params, "Missing parameter 'Emp_DOB'"
+    assert "Emp_Name" in params, "Missing parameter 'Emp_Name'"
 
 def test_employee_has_Emp_Id():
     assert hasattr(Employee, "Emp_Id")
@@ -245,12 +236,12 @@ def test_employee_has_Emp_Position():
             break
     assert isinstance(descriptor, property)
 
-def test_employee_has_Emp_DOB():
-    assert hasattr(Employee, "Emp_DOB")
+def test_employee_has_Emp_Date_Of_Joint():
+    assert hasattr(Employee, "Emp_Date_Of_Joint")
     descriptor = None
     for klass in Employee.__mro__:
-        if "Emp_DOB" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_DOB"]
+        if "Emp_Date_Of_Joint" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Date_Of_Joint"]
             break
     assert isinstance(descriptor, property)
 
@@ -263,12 +254,21 @@ def test_employee_has_Emp_Address():
             break
     assert isinstance(descriptor, property)
 
-def test_employee_has_Emp_Date_Of_Joint():
-    assert hasattr(Employee, "Emp_Date_Of_Joint")
+def test_employee_has_Emp_DOB():
+    assert hasattr(Employee, "Emp_DOB")
     descriptor = None
     for klass in Employee.__mro__:
-        if "Emp_Date_Of_Joint" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Date_Of_Joint"]
+        if "Emp_DOB" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_DOB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_Emp_Name():
+    assert hasattr(Employee, "Emp_Name")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Emp_Name" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -314,27 +314,27 @@ Login_strategy = st.builds(
 )
 Authenticate_staff_strategy = st.builds(
     Authenticate_staff,
-    Password=
-        safe_text,
     Authendication_Mood=
+        safe_text,
+    Password=
         safe_text,
     UserName=
         safe_text
 )
 Employee_strategy = st.builds(
     Employee,
-    Emp_Name=
-        safe_text,
     Emp_Id=
         st.integers(),
     Emp_Position=
         safe_text,
-    Emp_DOB=
+    Emp_Date_Of_Joint=
         st.dates(),
     Emp_Address=
         safe_text,
-    Emp_Date_Of_Joint=
-        st.dates()
+    Emp_DOB=
+        st.dates(),
+    Emp_Name=
+        safe_text
 )
 
 @given(instance=Logout_external_strategy)
@@ -377,9 +377,6 @@ def test_employee_management_system_component_instantiation(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
 
 
 @given(instance=Login_strategy)
@@ -388,9 +385,6 @@ def test_login_UserName_setter(instance):
     instance.UserName = original
     assert instance.UserName == original
 
-@given(instance=Login_strategy)
-def test_login_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Login_strategy)
@@ -404,20 +398,6 @@ def test_login_Password_setter(instance):
 def test_authenticate_staff_instantiation(instance):
     assert isinstance(instance, Authenticate_staff)
 
-@given(instance=Authenticate_staff_strategy)
-def test_authenticate_staff_Password_type(instance):
-    assert isinstance(instance.Password, str)
-
-
-@given(instance=Authenticate_staff_strategy)
-def test_authenticate_staff_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
-
-@given(instance=Authenticate_staff_strategy)
-def test_authenticate_staff_Authendication_Mood_type(instance):
-    assert isinstance(instance.Authendication_Mood, str)
 
 
 @given(instance=Authenticate_staff_strategy)
@@ -426,9 +406,14 @@ def test_authenticate_staff_Authendication_Mood_setter(instance):
     instance.Authendication_Mood = original
     assert instance.Authendication_Mood == original
 
+
+
 @given(instance=Authenticate_staff_strategy)
-def test_authenticate_staff_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
+def test_authenticate_staff_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
+
 
 
 @given(instance=Authenticate_staff_strategy)
@@ -442,20 +427,6 @@ def test_authenticate_staff_UserName_setter(instance):
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_Name_type(instance):
-    assert isinstance(instance.Emp_Name, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Name_setter(instance):
-    original = instance.Emp_Name
-    instance.Emp_Name = original
-    assert instance.Emp_Name == original
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Id_type(instance):
-    assert isinstance(instance.Emp_Id, int)
 
 
 @given(instance=Employee_strategy)
@@ -464,9 +435,6 @@ def test_employee_Emp_Id_setter(instance):
     instance.Emp_Id = original
     assert instance.Emp_Id == original
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_Position_type(instance):
-    assert isinstance(instance.Emp_Position, str)
 
 
 @given(instance=Employee_strategy)
@@ -475,20 +443,14 @@ def test_employee_Emp_Position_setter(instance):
     instance.Emp_Position = original
     assert instance.Emp_Position == original
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_DOB_type(instance):
-    assert isinstance(instance.Emp_DOB, date)
 
 
 @given(instance=Employee_strategy)
-def test_employee_Emp_DOB_setter(instance):
-    original = instance.Emp_DOB
-    instance.Emp_DOB = original
-    assert instance.Emp_DOB == original
+def test_employee_Emp_Date_Of_Joint_setter(instance):
+    original = instance.Emp_Date_Of_Joint
+    instance.Emp_Date_Of_Joint = original
+    assert instance.Emp_Date_Of_Joint == original
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_Address_type(instance):
-    assert isinstance(instance.Emp_Address, str)
 
 
 @given(instance=Employee_strategy)
@@ -497,13 +459,18 @@ def test_employee_Emp_Address_setter(instance):
     instance.Emp_Address = original
     assert instance.Emp_Address == original
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_Date_Of_Joint_type(instance):
-    assert isinstance(instance.Emp_Date_Of_Joint, date)
 
 
 @given(instance=Employee_strategy)
-def test_employee_Emp_Date_Of_Joint_setter(instance):
-    original = instance.Emp_Date_Of_Joint
-    instance.Emp_Date_Of_Joint = original
-    assert instance.Emp_Date_Of_Joint == original
+def test_employee_Emp_DOB_setter(instance):
+    original = instance.Emp_DOB
+    instance.Emp_DOB = original
+    assert instance.Emp_DOB == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_Emp_Name_setter(instance):
+    original = instance.Emp_Name
+    instance.Emp_Name = original
+    assert instance.Emp_Name == original

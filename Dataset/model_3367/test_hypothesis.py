@@ -3,59 +3,59 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NumericType,
-    netModel::LongType,
+    netModel_LongType,
     IntrinsicType,
-    netModel::BooleanType,
-    netModel::NumericType,
-    netModel::StringType,
+    netModel_NumericType,
+    netModel_BooleanType,
+    netModel_StringType,
     Literal,
-    netModel::StringLiteral,
-    netModel::NumericLiteral,
-    netModel::BooleanLiteral,
-    netModel::DoubleType,
-    Type,
-    netModel::UserType,
-    netModel::GenericListType,
-    BlockType,
-    netModel::IntrinsicType,
-    netModel::ComplexTypeLiteral,
-    netModel::Type,
+    netModel_StringLiteral,
+    netModel_NumericLiteral,
     Member,
-    netModel::SkipMember,
-    netModel::TypedMember,
-    netModel::Member,
-    netModel::EnumMember,
-    netModel::EnumTypeLiteral,
-    netModel::IntegerType,
+    netModel_SkipMember,
+    netModel_TypedMember,
+    netModel_Member,
+    netModel_EnumMember,
+    netModel_EnumTypeLiteral,
+    netModel_IntegerType,
     UserTypeDeclaration,
-    netModel::EnumTypeDeclaration,
-    netModel::HttpMethodBlock,
-    netModel::Path,
-    netModel::Header,
+    netModel_EnumTypeDeclaration,
+    netModel_HttpMethodBlock,
+    netModel_Path,
+    netModel_Header,
     HttpMethodBlock,
     ClientBlock,
-    netModel::HttpMethod,
-    netModel::HeaderBlock,
-    netModel::ClientBlock,
-    netModel::ComplexTypeDeclaration,
-    netModel::ResponseBlock,
-    netModel::BlockType,
-    netModel::BodyBlock,
-    netModel::Literal,
-    netModel::SimpleMember,
-    netModel::ParamsBlock,
-    netModel::SimpleMemberAssignment,
+    netModel_HttpMethod,
+    netModel_HeaderBlock,
+    netModel_ClientBlock,
+    netModel_ComplexTypeDeclaration,
+    netModel_ResponseBlock,
+    netModel_BlockType,
+    netModel_BodyBlock,
+    netModel_Literal,
+    netModel_SimpleMember,
+    netModel_ParamsBlock,
+    netModel_SimpleMemberAssignment,
     Declaration,
-    netModel::UserTypeDeclaration,
-    netModel::Client,
-    netModel::Declaration,
-    netModel::Model,
-    HttpMethodType,
+    netModel_Client,
+    netModel_Declaration,
+    netModel_Model,
+    netModel_BooleanLiteral,
+    netModel_DoubleType,
+    netModel_UserTypeDeclaration,
+    Type,
+    netModel_UserType,
+    netModel_GenericListType,
+    BlockType,
+    netModel_Type,
+    netModel_IntrinsicType,
+    netModel_ComplexTypeLiteral,
     BooleanValue,
+    HttpMethodType,
 )
 
 # =============================================================================
@@ -78,16 +78,16 @@ def test_numerictype_constructor_args():
 
 
 
-def test_netmodel::longtype_is_not_abstract():
-    assert not inspect.isabstract(netModel::LongType)
+def test_netmodel_longtype_is_not_abstract():
+    assert not inspect.isabstract(netModel_LongType)
 
 
-def test_netmodel::longtype_constructor_exists():
-    assert callable(netModel::LongType.__init__)
+def test_netmodel_longtype_constructor_exists():
+    assert callable(netModel_LongType.__init__)
 
 
-def test_netmodel::longtype_constructor_args():
-    sig = inspect.signature(netModel::LongType.__init__)
+def test_netmodel_longtype_constructor_args():
+    sig = inspect.signature(netModel_LongType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -106,44 +106,44 @@ def test_intrinsictype_constructor_args():
 
 
 
-def test_netmodel::booleantype_is_not_abstract():
-    assert not inspect.isabstract(netModel::BooleanType)
+def test_netmodel_numerictype_is_not_abstract():
+    assert not inspect.isabstract(netModel_NumericType)
 
 
-def test_netmodel::booleantype_constructor_exists():
-    assert callable(netModel::BooleanType.__init__)
+def test_netmodel_numerictype_constructor_exists():
+    assert callable(netModel_NumericType.__init__)
 
 
-def test_netmodel::booleantype_constructor_args():
-    sig = inspect.signature(netModel::BooleanType.__init__)
+def test_netmodel_numerictype_constructor_args():
+    sig = inspect.signature(netModel_NumericType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::numerictype_is_not_abstract():
-    assert not inspect.isabstract(netModel::NumericType)
+def test_netmodel_booleantype_is_not_abstract():
+    assert not inspect.isabstract(netModel_BooleanType)
 
 
-def test_netmodel::numerictype_constructor_exists():
-    assert callable(netModel::NumericType.__init__)
+def test_netmodel_booleantype_constructor_exists():
+    assert callable(netModel_BooleanType.__init__)
 
 
-def test_netmodel::numerictype_constructor_args():
-    sig = inspect.signature(netModel::NumericType.__init__)
+def test_netmodel_booleantype_constructor_args():
+    sig = inspect.signature(netModel_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::stringtype_is_not_abstract():
-    assert not inspect.isabstract(netModel::StringType)
+def test_netmodel_stringtype_is_not_abstract():
+    assert not inspect.isabstract(netModel_StringType)
 
 
-def test_netmodel::stringtype_constructor_exists():
-    assert callable(netModel::StringType.__init__)
+def test_netmodel_stringtype_constructor_exists():
+    assert callable(netModel_StringType.__init__)
 
 
-def test_netmodel::stringtype_constructor_args():
-    sig = inspect.signature(netModel::StringType.__init__)
+def test_netmodel_stringtype_constructor_args():
+    sig = inspect.signature(netModel_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,23 +162,23 @@ def test_literal_constructor_args():
 
 
 
-def test_netmodel::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(netModel::StringLiteral)
+def test_netmodel_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(netModel_StringLiteral)
 
 
-def test_netmodel::stringliteral_constructor_exists():
-    assert callable(netModel::StringLiteral.__init__)
+def test_netmodel_stringliteral_constructor_exists():
+    assert callable(netModel_StringLiteral.__init__)
 
 
-def test_netmodel::stringliteral_constructor_args():
-    sig = inspect.signature(netModel::StringLiteral.__init__)
+def test_netmodel_stringliteral_constructor_args():
+    sig = inspect.signature(netModel_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "literal" in params, "Missing parameter 'literal'"
 
-def test_netmodel::stringliteral_has_literal():
-    assert hasattr(netModel::StringLiteral, "literal")
+def test_netmodel_stringliteral_has_literal():
+    assert hasattr(netModel_StringLiteral, "literal")
     descriptor = None
-    for klass in netModel::StringLiteral.__mro__:
+    for klass in netModel_StringLiteral.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
@@ -186,183 +186,27 @@ def test_netmodel::stringliteral_has_literal():
 
 
 
-def test_netmodel::numericliteral_is_not_abstract():
-    assert not inspect.isabstract(netModel::NumericLiteral)
+def test_netmodel_numericliteral_is_not_abstract():
+    assert not inspect.isabstract(netModel_NumericLiteral)
 
 
-def test_netmodel::numericliteral_constructor_exists():
-    assert callable(netModel::NumericLiteral.__init__)
+def test_netmodel_numericliteral_constructor_exists():
+    assert callable(netModel_NumericLiteral.__init__)
 
 
-def test_netmodel::numericliteral_constructor_args():
-    sig = inspect.signature(netModel::NumericLiteral.__init__)
+def test_netmodel_numericliteral_constructor_args():
+    sig = inspect.signature(netModel_NumericLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "literal" in params, "Missing parameter 'literal'"
 
-def test_netmodel::numericliteral_has_literal():
-    assert hasattr(netModel::NumericLiteral, "literal")
+def test_netmodel_numericliteral_has_literal():
+    assert hasattr(netModel_NumericLiteral, "literal")
     descriptor = None
-    for klass in netModel::NumericLiteral.__mro__:
+    for klass in netModel_NumericLiteral.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_netmodel::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(netModel::BooleanLiteral)
-
-
-def test_netmodel::booleanliteral_constructor_exists():
-    assert callable(netModel::BooleanLiteral.__init__)
-
-
-def test_netmodel::booleanliteral_constructor_args():
-    sig = inspect.signature(netModel::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "literal" in params, "Missing parameter 'literal'"
-
-def test_netmodel::booleanliteral_has_literal():
-    assert hasattr(netModel::BooleanLiteral, "literal")
-    descriptor = None
-    for klass in netModel::BooleanLiteral.__mro__:
-        if "literal" in klass.__dict__:
-            descriptor = klass.__dict__["literal"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_netmodel::doubletype_is_not_abstract():
-    assert not inspect.isabstract(netModel::DoubleType)
-
-
-def test_netmodel::doubletype_constructor_exists():
-    assert callable(netModel::DoubleType.__init__)
-
-
-def test_netmodel::doubletype_constructor_args():
-    sig = inspect.signature(netModel::DoubleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(Type)
-
-
-def test_type_constructor_exists():
-    assert callable(Type.__init__)
-
-
-def test_type_constructor_args():
-    sig = inspect.signature(Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_netmodel::usertype_is_not_abstract():
-    assert not inspect.isabstract(netModel::UserType)
-
-
-def test_netmodel::usertype_constructor_exists():
-    assert callable(netModel::UserType.__init__)
-
-
-def test_netmodel::usertype_constructor_args():
-    sig = inspect.signature(netModel::UserType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_netmodel::genericlisttype_is_not_abstract():
-    assert not inspect.isabstract(netModel::GenericListType)
-
-
-def test_netmodel::genericlisttype_constructor_exists():
-    assert callable(netModel::GenericListType.__init__)
-
-
-def test_netmodel::genericlisttype_constructor_args():
-    sig = inspect.signature(netModel::GenericListType.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_netmodel::genericlisttype_has_id():
-    assert hasattr(netModel::GenericListType, "id")
-    descriptor = None
-    for klass in netModel::GenericListType.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_blocktype_is_not_abstract():
-    assert not inspect.isabstract(BlockType)
-
-
-def test_blocktype_constructor_exists():
-    assert callable(BlockType.__init__)
-
-
-def test_blocktype_constructor_args():
-    sig = inspect.signature(BlockType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_netmodel::intrinsictype_is_not_abstract():
-    assert not inspect.isabstract(netModel::IntrinsicType)
-
-
-def test_netmodel::intrinsictype_constructor_exists():
-    assert callable(netModel::IntrinsicType.__init__)
-
-
-def test_netmodel::intrinsictype_constructor_args():
-    sig = inspect.signature(netModel::IntrinsicType.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_netmodel::intrinsictype_has_id():
-    assert hasattr(netModel::IntrinsicType, "id")
-    descriptor = None
-    for klass in netModel::IntrinsicType.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_netmodel::complextypeliteral_is_not_abstract():
-    assert not inspect.isabstract(netModel::ComplexTypeLiteral)
-
-
-def test_netmodel::complextypeliteral_constructor_exists():
-    assert callable(netModel::ComplexTypeLiteral.__init__)
-
-
-def test_netmodel::complextypeliteral_constructor_args():
-    sig = inspect.signature(netModel::ComplexTypeLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_netmodel::type_is_not_abstract():
-    assert not inspect.isabstract(netModel::Type)
-
-
-def test_netmodel::type_constructor_exists():
-    assert callable(netModel::Type.__init__)
-
-
-def test_netmodel::type_constructor_args():
-    sig = inspect.signature(netModel::Type.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -380,51 +224,51 @@ def test_member_constructor_args():
 
 
 
-def test_netmodel::skipmember_is_not_abstract():
-    assert not inspect.isabstract(netModel::SkipMember)
+def test_netmodel_skipmember_is_not_abstract():
+    assert not inspect.isabstract(netModel_SkipMember)
 
 
-def test_netmodel::skipmember_constructor_exists():
-    assert callable(netModel::SkipMember.__init__)
+def test_netmodel_skipmember_constructor_exists():
+    assert callable(netModel_SkipMember.__init__)
 
 
-def test_netmodel::skipmember_constructor_args():
-    sig = inspect.signature(netModel::SkipMember.__init__)
+def test_netmodel_skipmember_constructor_args():
+    sig = inspect.signature(netModel_SkipMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::typedmember_is_not_abstract():
-    assert not inspect.isabstract(netModel::TypedMember)
+def test_netmodel_typedmember_is_not_abstract():
+    assert not inspect.isabstract(netModel_TypedMember)
 
 
-def test_netmodel::typedmember_constructor_exists():
-    assert callable(netModel::TypedMember.__init__)
+def test_netmodel_typedmember_constructor_exists():
+    assert callable(netModel_TypedMember.__init__)
 
 
-def test_netmodel::typedmember_constructor_args():
-    sig = inspect.signature(netModel::TypedMember.__init__)
+def test_netmodel_typedmember_constructor_args():
+    sig = inspect.signature(netModel_TypedMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::member_is_not_abstract():
-    assert not inspect.isabstract(netModel::Member)
+def test_netmodel_member_is_not_abstract():
+    assert not inspect.isabstract(netModel_Member)
 
 
-def test_netmodel::member_constructor_exists():
-    assert callable(netModel::Member.__init__)
+def test_netmodel_member_constructor_exists():
+    assert callable(netModel_Member.__init__)
 
 
-def test_netmodel::member_constructor_args():
-    sig = inspect.signature(netModel::Member.__init__)
+def test_netmodel_member_constructor_args():
+    sig = inspect.signature(netModel_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_netmodel::member_has_name():
-    assert hasattr(netModel::Member, "name")
+def test_netmodel_member_has_name():
+    assert hasattr(netModel_Member, "name")
     descriptor = None
-    for klass in netModel::Member.__mro__:
+    for klass in netModel_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -432,43 +276,43 @@ def test_netmodel::member_has_name():
 
 
 
-def test_netmodel::enummember_is_not_abstract():
-    assert not inspect.isabstract(netModel::EnumMember)
+def test_netmodel_enummember_is_not_abstract():
+    assert not inspect.isabstract(netModel_EnumMember)
 
 
-def test_netmodel::enummember_constructor_exists():
-    assert callable(netModel::EnumMember.__init__)
+def test_netmodel_enummember_constructor_exists():
+    assert callable(netModel_EnumMember.__init__)
 
 
-def test_netmodel::enummember_constructor_args():
-    sig = inspect.signature(netModel::EnumMember.__init__)
+def test_netmodel_enummember_constructor_args():
+    sig = inspect.signature(netModel_EnumMember.__init__)
     params = list(sig.parameters.keys())
     assert "assignment" in params, "Missing parameter 'assignment'"
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_netmodel::enummember_has_assignment():
-    assert hasattr(netModel::EnumMember, "assignment")
+def test_netmodel_enummember_has_assignment():
+    assert hasattr(netModel_EnumMember, "assignment")
     descriptor = None
-    for klass in netModel::EnumMember.__mro__:
+    for klass in netModel_EnumMember.__mro__:
         if "assignment" in klass.__dict__:
             descriptor = klass.__dict__["assignment"]
             break
     assert isinstance(descriptor, property)
 
-def test_netmodel::enummember_has_value():
-    assert hasattr(netModel::EnumMember, "value")
+def test_netmodel_enummember_has_value():
+    assert hasattr(netModel_EnumMember, "value")
     descriptor = None
-    for klass in netModel::EnumMember.__mro__:
+    for klass in netModel_EnumMember.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_netmodel::enummember_has_name():
-    assert hasattr(netModel::EnumMember, "name")
+def test_netmodel_enummember_has_name():
+    assert hasattr(netModel_EnumMember, "name")
     descriptor = None
-    for klass in netModel::EnumMember.__mro__:
+    for klass in netModel_EnumMember.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -476,30 +320,30 @@ def test_netmodel::enummember_has_name():
 
 
 
-def test_netmodel::enumtypeliteral_is_not_abstract():
-    assert not inspect.isabstract(netModel::EnumTypeLiteral)
+def test_netmodel_enumtypeliteral_is_not_abstract():
+    assert not inspect.isabstract(netModel_EnumTypeLiteral)
 
 
-def test_netmodel::enumtypeliteral_constructor_exists():
-    assert callable(netModel::EnumTypeLiteral.__init__)
+def test_netmodel_enumtypeliteral_constructor_exists():
+    assert callable(netModel_EnumTypeLiteral.__init__)
 
 
-def test_netmodel::enumtypeliteral_constructor_args():
-    sig = inspect.signature(netModel::EnumTypeLiteral.__init__)
+def test_netmodel_enumtypeliteral_constructor_args():
+    sig = inspect.signature(netModel_EnumTypeLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::integertype_is_not_abstract():
-    assert not inspect.isabstract(netModel::IntegerType)
+def test_netmodel_integertype_is_not_abstract():
+    assert not inspect.isabstract(netModel_IntegerType)
 
 
-def test_netmodel::integertype_constructor_exists():
-    assert callable(netModel::IntegerType.__init__)
+def test_netmodel_integertype_constructor_exists():
+    assert callable(netModel_IntegerType.__init__)
 
 
-def test_netmodel::integertype_constructor_args():
-    sig = inspect.signature(netModel::IntegerType.__init__)
+def test_netmodel_integertype_constructor_args():
+    sig = inspect.signature(netModel_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -518,51 +362,51 @@ def test_usertypedeclaration_constructor_args():
 
 
 
-def test_netmodel::enumtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(netModel::EnumTypeDeclaration)
+def test_netmodel_enumtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(netModel_EnumTypeDeclaration)
 
 
-def test_netmodel::enumtypedeclaration_constructor_exists():
-    assert callable(netModel::EnumTypeDeclaration.__init__)
+def test_netmodel_enumtypedeclaration_constructor_exists():
+    assert callable(netModel_EnumTypeDeclaration.__init__)
 
 
-def test_netmodel::enumtypedeclaration_constructor_args():
-    sig = inspect.signature(netModel::EnumTypeDeclaration.__init__)
+def test_netmodel_enumtypedeclaration_constructor_args():
+    sig = inspect.signature(netModel_EnumTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::httpmethodblock_is_not_abstract():
-    assert not inspect.isabstract(netModel::HttpMethodBlock)
+def test_netmodel_httpmethodblock_is_not_abstract():
+    assert not inspect.isabstract(netModel_HttpMethodBlock)
 
 
-def test_netmodel::httpmethodblock_constructor_exists():
-    assert callable(netModel::HttpMethodBlock.__init__)
+def test_netmodel_httpmethodblock_constructor_exists():
+    assert callable(netModel_HttpMethodBlock.__init__)
 
 
-def test_netmodel::httpmethodblock_constructor_args():
-    sig = inspect.signature(netModel::HttpMethodBlock.__init__)
+def test_netmodel_httpmethodblock_constructor_args():
+    sig = inspect.signature(netModel_HttpMethodBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::path_is_not_abstract():
-    assert not inspect.isabstract(netModel::Path)
+def test_netmodel_path_is_not_abstract():
+    assert not inspect.isabstract(netModel_Path)
 
 
-def test_netmodel::path_constructor_exists():
-    assert callable(netModel::Path.__init__)
+def test_netmodel_path_constructor_exists():
+    assert callable(netModel_Path.__init__)
 
 
-def test_netmodel::path_constructor_args():
-    sig = inspect.signature(netModel::Path.__init__)
+def test_netmodel_path_constructor_args():
+    sig = inspect.signature(netModel_Path.__init__)
     params = list(sig.parameters.keys())
     assert "arb" in params, "Missing parameter 'arb'"
 
-def test_netmodel::path_has_arb():
-    assert hasattr(netModel::Path, "arb")
+def test_netmodel_path_has_arb():
+    assert hasattr(netModel_Path, "arb")
     descriptor = None
-    for klass in netModel::Path.__mro__:
+    for klass in netModel_Path.__mro__:
         if "arb" in klass.__dict__:
             descriptor = klass.__dict__["arb"]
             break
@@ -570,35 +414,35 @@ def test_netmodel::path_has_arb():
 
 
 
-def test_netmodel::header_is_not_abstract():
-    assert not inspect.isabstract(netModel::Header)
+def test_netmodel_header_is_not_abstract():
+    assert not inspect.isabstract(netModel_Header)
 
 
-def test_netmodel::header_constructor_exists():
-    assert callable(netModel::Header.__init__)
+def test_netmodel_header_constructor_exists():
+    assert callable(netModel_Header.__init__)
 
 
-def test_netmodel::header_constructor_args():
-    sig = inspect.signature(netModel::Header.__init__)
+def test_netmodel_header_constructor_args():
+    sig = inspect.signature(netModel_Header.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_netmodel::header_has_value():
-    assert hasattr(netModel::Header, "value")
+def test_netmodel_header_has_name():
+    assert hasattr(netModel_Header, "name")
     descriptor = None
-    for klass in netModel::Header.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in netModel_Header.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_netmodel::header_has_name():
-    assert hasattr(netModel::Header, "name")
+def test_netmodel_header_has_value():
+    assert hasattr(netModel_Header, "value")
     descriptor = None
-    for klass in netModel::Header.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in netModel_Header.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -632,155 +476,155 @@ def test_clientblock_constructor_args():
 
 
 
-def test_netmodel::httpmethod_is_not_abstract():
-    assert not inspect.isabstract(netModel::HttpMethod)
+def test_netmodel_httpmethod_is_not_abstract():
+    assert not inspect.isabstract(netModel_HttpMethod)
 
 
-def test_netmodel::httpmethod_constructor_exists():
-    assert callable(netModel::HttpMethod.__init__)
+def test_netmodel_httpmethod_constructor_exists():
+    assert callable(netModel_HttpMethod.__init__)
 
 
-def test_netmodel::httpmethod_constructor_args():
-    sig = inspect.signature(netModel::HttpMethod.__init__)
+def test_netmodel_httpmethod_constructor_args():
+    sig = inspect.signature(netModel_HttpMethod.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
 
-def test_netmodel::httpmethod_has_type():
-    assert hasattr(netModel::HttpMethod, "type")
+def test_netmodel_httpmethod_has_name():
+    assert hasattr(netModel_HttpMethod, "name")
     descriptor = None
-    for klass in netModel::HttpMethod.__mro__:
+    for klass in netModel_HttpMethod.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_netmodel_httpmethod_has_type():
+    assert hasattr(netModel_HttpMethod, "type")
+    descriptor = None
+    for klass in netModel_HttpMethod.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_netmodel::httpmethod_has_name():
-    assert hasattr(netModel::HttpMethod, "name")
-    descriptor = None
-    for klass in netModel::HttpMethod.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_netmodel::headerblock_is_not_abstract():
-    assert not inspect.isabstract(netModel::HeaderBlock)
-
-
-def test_netmodel::headerblock_constructor_exists():
-    assert callable(netModel::HeaderBlock.__init__)
+def test_netmodel_headerblock_is_not_abstract():
+    assert not inspect.isabstract(netModel_HeaderBlock)
 
 
-def test_netmodel::headerblock_constructor_args():
-    sig = inspect.signature(netModel::HeaderBlock.__init__)
+def test_netmodel_headerblock_constructor_exists():
+    assert callable(netModel_HeaderBlock.__init__)
+
+
+def test_netmodel_headerblock_constructor_args():
+    sig = inspect.signature(netModel_HeaderBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::clientblock_is_not_abstract():
-    assert not inspect.isabstract(netModel::ClientBlock)
+def test_netmodel_clientblock_is_not_abstract():
+    assert not inspect.isabstract(netModel_ClientBlock)
 
 
-def test_netmodel::clientblock_constructor_exists():
-    assert callable(netModel::ClientBlock.__init__)
+def test_netmodel_clientblock_constructor_exists():
+    assert callable(netModel_ClientBlock.__init__)
 
 
-def test_netmodel::clientblock_constructor_args():
-    sig = inspect.signature(netModel::ClientBlock.__init__)
+def test_netmodel_clientblock_constructor_args():
+    sig = inspect.signature(netModel_ClientBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::complextypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(netModel::ComplexTypeDeclaration)
+def test_netmodel_complextypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(netModel_ComplexTypeDeclaration)
 
 
-def test_netmodel::complextypedeclaration_constructor_exists():
-    assert callable(netModel::ComplexTypeDeclaration.__init__)
+def test_netmodel_complextypedeclaration_constructor_exists():
+    assert callable(netModel_ComplexTypeDeclaration.__init__)
 
 
-def test_netmodel::complextypedeclaration_constructor_args():
-    sig = inspect.signature(netModel::ComplexTypeDeclaration.__init__)
+def test_netmodel_complextypedeclaration_constructor_args():
+    sig = inspect.signature(netModel_ComplexTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::responseblock_is_not_abstract():
-    assert not inspect.isabstract(netModel::ResponseBlock)
+def test_netmodel_responseblock_is_not_abstract():
+    assert not inspect.isabstract(netModel_ResponseBlock)
 
 
-def test_netmodel::responseblock_constructor_exists():
-    assert callable(netModel::ResponseBlock.__init__)
+def test_netmodel_responseblock_constructor_exists():
+    assert callable(netModel_ResponseBlock.__init__)
 
 
-def test_netmodel::responseblock_constructor_args():
-    sig = inspect.signature(netModel::ResponseBlock.__init__)
+def test_netmodel_responseblock_constructor_args():
+    sig = inspect.signature(netModel_ResponseBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::blocktype_is_not_abstract():
-    assert not inspect.isabstract(netModel::BlockType)
+def test_netmodel_blocktype_is_not_abstract():
+    assert not inspect.isabstract(netModel_BlockType)
 
 
-def test_netmodel::blocktype_constructor_exists():
-    assert callable(netModel::BlockType.__init__)
+def test_netmodel_blocktype_constructor_exists():
+    assert callable(netModel_BlockType.__init__)
 
 
-def test_netmodel::blocktype_constructor_args():
-    sig = inspect.signature(netModel::BlockType.__init__)
+def test_netmodel_blocktype_constructor_args():
+    sig = inspect.signature(netModel_BlockType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::bodyblock_is_not_abstract():
-    assert not inspect.isabstract(netModel::BodyBlock)
+def test_netmodel_bodyblock_is_not_abstract():
+    assert not inspect.isabstract(netModel_BodyBlock)
 
 
-def test_netmodel::bodyblock_constructor_exists():
-    assert callable(netModel::BodyBlock.__init__)
+def test_netmodel_bodyblock_constructor_exists():
+    assert callable(netModel_BodyBlock.__init__)
 
 
-def test_netmodel::bodyblock_constructor_args():
-    sig = inspect.signature(netModel::BodyBlock.__init__)
+def test_netmodel_bodyblock_constructor_args():
+    sig = inspect.signature(netModel_BodyBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::literal_is_not_abstract():
-    assert not inspect.isabstract(netModel::Literal)
+def test_netmodel_literal_is_not_abstract():
+    assert not inspect.isabstract(netModel_Literal)
 
 
-def test_netmodel::literal_constructor_exists():
-    assert callable(netModel::Literal.__init__)
+def test_netmodel_literal_constructor_exists():
+    assert callable(netModel_Literal.__init__)
 
 
-def test_netmodel::literal_constructor_args():
-    sig = inspect.signature(netModel::Literal.__init__)
+def test_netmodel_literal_constructor_args():
+    sig = inspect.signature(netModel_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::simplemember_is_not_abstract():
-    assert not inspect.isabstract(netModel::SimpleMember)
+def test_netmodel_simplemember_is_not_abstract():
+    assert not inspect.isabstract(netModel_SimpleMember)
 
 
-def test_netmodel::simplemember_constructor_exists():
-    assert callable(netModel::SimpleMember.__init__)
+def test_netmodel_simplemember_constructor_exists():
+    assert callable(netModel_SimpleMember.__init__)
 
 
-def test_netmodel::simplemember_constructor_args():
-    sig = inspect.signature(netModel::SimpleMember.__init__)
+def test_netmodel_simplemember_constructor_args():
+    sig = inspect.signature(netModel_SimpleMember.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_netmodel::simplemember_has_name():
-    assert hasattr(netModel::SimpleMember, "name")
+def test_netmodel_simplemember_has_name():
+    assert hasattr(netModel_SimpleMember, "name")
     descriptor = None
-    for klass in netModel::SimpleMember.__mro__:
+    for klass in netModel_SimpleMember.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -788,30 +632,30 @@ def test_netmodel::simplemember_has_name():
 
 
 
-def test_netmodel::paramsblock_is_not_abstract():
-    assert not inspect.isabstract(netModel::ParamsBlock)
+def test_netmodel_paramsblock_is_not_abstract():
+    assert not inspect.isabstract(netModel_ParamsBlock)
 
 
-def test_netmodel::paramsblock_constructor_exists():
-    assert callable(netModel::ParamsBlock.__init__)
+def test_netmodel_paramsblock_constructor_exists():
+    assert callable(netModel_ParamsBlock.__init__)
 
 
-def test_netmodel::paramsblock_constructor_args():
-    sig = inspect.signature(netModel::ParamsBlock.__init__)
+def test_netmodel_paramsblock_constructor_args():
+    sig = inspect.signature(netModel_ParamsBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_netmodel::simplememberassignment_is_not_abstract():
-    assert not inspect.isabstract(netModel::SimpleMemberAssignment)
+def test_netmodel_simplememberassignment_is_not_abstract():
+    assert not inspect.isabstract(netModel_SimpleMemberAssignment)
 
 
-def test_netmodel::simplememberassignment_constructor_exists():
-    assert callable(netModel::SimpleMemberAssignment.__init__)
+def test_netmodel_simplememberassignment_constructor_exists():
+    assert callable(netModel_SimpleMemberAssignment.__init__)
 
 
-def test_netmodel::simplememberassignment_constructor_args():
-    sig = inspect.signature(netModel::SimpleMemberAssignment.__init__)
+def test_netmodel_simplememberassignment_constructor_args():
+    sig = inspect.signature(netModel_SimpleMemberAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -830,57 +674,23 @@ def test_declaration_constructor_args():
 
 
 
-def test_netmodel::usertypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(netModel::UserTypeDeclaration)
+def test_netmodel_client_is_not_abstract():
+    assert not inspect.isabstract(netModel_Client)
 
 
-def test_netmodel::usertypedeclaration_constructor_exists():
-    assert callable(netModel::UserTypeDeclaration.__init__)
+def test_netmodel_client_constructor_exists():
+    assert callable(netModel_Client.__init__)
 
 
-def test_netmodel::usertypedeclaration_constructor_args():
-    sig = inspect.signature(netModel::UserTypeDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "keyword" in params, "Missing parameter 'keyword'"
-    assert "nogen" in params, "Missing parameter 'nogen'"
-
-def test_netmodel::usertypedeclaration_has_keyword():
-    assert hasattr(netModel::UserTypeDeclaration, "keyword")
-    descriptor = None
-    for klass in netModel::UserTypeDeclaration.__mro__:
-        if "keyword" in klass.__dict__:
-            descriptor = klass.__dict__["keyword"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_netmodel::usertypedeclaration_has_nogen():
-    assert hasattr(netModel::UserTypeDeclaration, "nogen")
-    descriptor = None
-    for klass in netModel::UserTypeDeclaration.__mro__:
-        if "nogen" in klass.__dict__:
-            descriptor = klass.__dict__["nogen"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_netmodel::client_is_not_abstract():
-    assert not inspect.isabstract(netModel::Client)
-
-
-def test_netmodel::client_constructor_exists():
-    assert callable(netModel::Client.__init__)
-
-
-def test_netmodel::client_constructor_args():
-    sig = inspect.signature(netModel::Client.__init__)
+def test_netmodel_client_constructor_args():
+    sig = inspect.signature(netModel_Client.__init__)
     params = list(sig.parameters.keys())
     assert "baseUrl" in params, "Missing parameter 'baseUrl'"
 
-def test_netmodel::client_has_baseUrl():
-    assert hasattr(netModel::Client, "baseUrl")
+def test_netmodel_client_has_baseUrl():
+    assert hasattr(netModel_Client, "baseUrl")
     descriptor = None
-    for klass in netModel::Client.__mro__:
+    for klass in netModel_Client.__mro__:
         if "baseUrl" in klass.__dict__:
             descriptor = klass.__dict__["baseUrl"]
             break
@@ -888,23 +698,23 @@ def test_netmodel::client_has_baseUrl():
 
 
 
-def test_netmodel::declaration_is_not_abstract():
-    assert not inspect.isabstract(netModel::Declaration)
+def test_netmodel_declaration_is_not_abstract():
+    assert not inspect.isabstract(netModel_Declaration)
 
 
-def test_netmodel::declaration_constructor_exists():
-    assert callable(netModel::Declaration.__init__)
+def test_netmodel_declaration_constructor_exists():
+    assert callable(netModel_Declaration.__init__)
 
 
-def test_netmodel::declaration_constructor_args():
-    sig = inspect.signature(netModel::Declaration.__init__)
+def test_netmodel_declaration_constructor_args():
+    sig = inspect.signature(netModel_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_netmodel::declaration_has_name():
-    assert hasattr(netModel::Declaration, "name")
+def test_netmodel_declaration_has_name():
+    assert hasattr(netModel_Declaration, "name")
     descriptor = None
-    for klass in netModel::Declaration.__mro__:
+    for klass in netModel_Declaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -912,27 +722,232 @@ def test_netmodel::declaration_has_name():
 
 
 
-def test_netmodel::model_is_not_abstract():
-    assert not inspect.isabstract(netModel::Model)
+def test_netmodel_model_is_not_abstract():
+    assert not inspect.isabstract(netModel_Model)
 
 
-def test_netmodel::model_constructor_exists():
-    assert callable(netModel::Model.__init__)
+def test_netmodel_model_constructor_exists():
+    assert callable(netModel_Model.__init__)
 
 
-def test_netmodel::model_constructor_args():
-    sig = inspect.signature(netModel::Model.__init__)
+def test_netmodel_model_constructor_args():
+    sig = inspect.signature(netModel_Model.__init__)
     params = list(sig.parameters.keys())
     assert "packageName" in params, "Missing parameter 'packageName'"
 
-def test_netmodel::model_has_packageName():
-    assert hasattr(netModel::Model, "packageName")
+def test_netmodel_model_has_packageName():
+    assert hasattr(netModel_Model, "packageName")
     descriptor = None
-    for klass in netModel::Model.__mro__:
+    for klass in netModel_Model.__mro__:
         if "packageName" in klass.__dict__:
             descriptor = klass.__dict__["packageName"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_netmodel_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(netModel_BooleanLiteral)
+
+
+def test_netmodel_booleanliteral_constructor_exists():
+    assert callable(netModel_BooleanLiteral.__init__)
+
+
+def test_netmodel_booleanliteral_constructor_args():
+    sig = inspect.signature(netModel_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "literal" in params, "Missing parameter 'literal'"
+
+def test_netmodel_booleanliteral_has_literal():
+    assert hasattr(netModel_BooleanLiteral, "literal")
+    descriptor = None
+    for klass in netModel_BooleanLiteral.__mro__:
+        if "literal" in klass.__dict__:
+            descriptor = klass.__dict__["literal"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_netmodel_doubletype_is_not_abstract():
+    assert not inspect.isabstract(netModel_DoubleType)
+
+
+def test_netmodel_doubletype_constructor_exists():
+    assert callable(netModel_DoubleType.__init__)
+
+
+def test_netmodel_doubletype_constructor_args():
+    sig = inspect.signature(netModel_DoubleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_netmodel_usertypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(netModel_UserTypeDeclaration)
+
+
+def test_netmodel_usertypedeclaration_constructor_exists():
+    assert callable(netModel_UserTypeDeclaration.__init__)
+
+
+def test_netmodel_usertypedeclaration_constructor_args():
+    sig = inspect.signature(netModel_UserTypeDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "keyword" in params, "Missing parameter 'keyword'"
+    assert "nogen" in params, "Missing parameter 'nogen'"
+
+def test_netmodel_usertypedeclaration_has_keyword():
+    assert hasattr(netModel_UserTypeDeclaration, "keyword")
+    descriptor = None
+    for klass in netModel_UserTypeDeclaration.__mro__:
+        if "keyword" in klass.__dict__:
+            descriptor = klass.__dict__["keyword"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_netmodel_usertypedeclaration_has_nogen():
+    assert hasattr(netModel_UserTypeDeclaration, "nogen")
+    descriptor = None
+    for klass in netModel_UserTypeDeclaration.__mro__:
+        if "nogen" in klass.__dict__:
+            descriptor = klass.__dict__["nogen"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(Type)
+
+
+def test_type_constructor_exists():
+    assert callable(Type.__init__)
+
+
+def test_type_constructor_args():
+    sig = inspect.signature(Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_netmodel_usertype_is_not_abstract():
+    assert not inspect.isabstract(netModel_UserType)
+
+
+def test_netmodel_usertype_constructor_exists():
+    assert callable(netModel_UserType.__init__)
+
+
+def test_netmodel_usertype_constructor_args():
+    sig = inspect.signature(netModel_UserType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_netmodel_genericlisttype_is_not_abstract():
+    assert not inspect.isabstract(netModel_GenericListType)
+
+
+def test_netmodel_genericlisttype_constructor_exists():
+    assert callable(netModel_GenericListType.__init__)
+
+
+def test_netmodel_genericlisttype_constructor_args():
+    sig = inspect.signature(netModel_GenericListType.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_netmodel_genericlisttype_has_id():
+    assert hasattr(netModel_GenericListType, "id")
+    descriptor = None
+    for klass in netModel_GenericListType.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_blocktype_is_not_abstract():
+    assert not inspect.isabstract(BlockType)
+
+
+def test_blocktype_constructor_exists():
+    assert callable(BlockType.__init__)
+
+
+def test_blocktype_constructor_args():
+    sig = inspect.signature(BlockType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_netmodel_type_is_not_abstract():
+    assert not inspect.isabstract(netModel_Type)
+
+
+def test_netmodel_type_constructor_exists():
+    assert callable(netModel_Type.__init__)
+
+
+def test_netmodel_type_constructor_args():
+    sig = inspect.signature(netModel_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_netmodel_intrinsictype_is_not_abstract():
+    assert not inspect.isabstract(netModel_IntrinsicType)
+
+
+def test_netmodel_intrinsictype_constructor_exists():
+    assert callable(netModel_IntrinsicType.__init__)
+
+
+def test_netmodel_intrinsictype_constructor_args():
+    sig = inspect.signature(netModel_IntrinsicType.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_netmodel_intrinsictype_has_id():
+    assert hasattr(netModel_IntrinsicType, "id")
+    descriptor = None
+    for klass in netModel_IntrinsicType.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_netmodel_complextypeliteral_is_not_abstract():
+    assert not inspect.isabstract(netModel_ComplexTypeLiteral)
+
+
+def test_netmodel_complextypeliteral_constructor_exists():
+    assert callable(netModel_ComplexTypeLiteral.__init__)
+
+
+def test_netmodel_complextypeliteral_constructor_args():
+    sig = inspect.signature(netModel_ComplexTypeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+def test_booleanvalue_exists():
+    # Check that the Enumeration exists
+    assert BooleanValue is not None
+
+def test_booleanvalue_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BooleanValue]
+    expected_literals = [
+        "false",
+        "true",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanValue"
 
 def test_httpmethodtype_exists():
     # Check that the Enumeration exists
@@ -943,29 +958,14 @@ def test_httpmethodtype_has_all_literals():
     enum_literals = [lit.name for lit in HttpMethodType]
     expected_literals = [
         "delete",
-        "get",
-        "patch",
         "put",
+        "get",
         "post",
+        "patch",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in HttpMethodType"
-
-def test_booleanvalue_exists():
-    # Check that the Enumeration exists
-    assert BooleanValue is not None
-
-def test_booleanvalue_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanValue]
-    expected_literals = [
-        "true",
-        "false",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanValue"
 
 
 # =============================================================================
@@ -982,83 +982,50 @@ safe_text = st.text(
 NumericType_strategy = st.builds(
     NumericType,
 )
-netModel::LongType_strategy = st.builds(
-    netModel::LongType,
+netModel_LongType_strategy = st.builds(
+    netModel_LongType,
 )
 IntrinsicType_strategy = st.builds(
     IntrinsicType,
 )
-netModel::BooleanType_strategy = st.builds(
-    netModel::BooleanType,
+netModel_NumericType_strategy = st.builds(
+    netModel_NumericType,
 )
-netModel::NumericType_strategy = st.builds(
-    netModel::NumericType,
+netModel_BooleanType_strategy = st.builds(
+    netModel_BooleanType,
 )
-netModel::StringType_strategy = st.builds(
-    netModel::StringType,
+netModel_StringType_strategy = st.builds(
+    netModel_StringType,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-netModel::StringLiteral_strategy = st.builds(
-    netModel::StringLiteral,
+netModel_StringLiteral_strategy = st.builds(
+    netModel_StringLiteral,
     literal=
         safe_text
 )
-netModel::NumericLiteral_strategy = st.builds(
-    netModel::NumericLiteral,
+netModel_NumericLiteral_strategy = st.builds(
+    netModel_NumericLiteral,
     literal=
         safe_text
-)
-netModel::BooleanLiteral_strategy = st.builds(
-    netModel::BooleanLiteral,
-    literal=
-        safe_text
-)
-netModel::DoubleType_strategy = st.builds(
-    netModel::DoubleType,
-)
-Type_strategy = st.builds(
-    Type,
-)
-netModel::UserType_strategy = st.builds(
-    netModel::UserType,
-)
-netModel::GenericListType_strategy = st.builds(
-    netModel::GenericListType,
-    id=
-        safe_text
-)
-BlockType_strategy = st.builds(
-    BlockType,
-)
-netModel::IntrinsicType_strategy = st.builds(
-    netModel::IntrinsicType,
-    id=
-        safe_text
-)
-netModel::ComplexTypeLiteral_strategy = st.builds(
-    netModel::ComplexTypeLiteral,
-)
-netModel::Type_strategy = st.builds(
-    netModel::Type,
 )
 Member_strategy = st.builds(
     Member,
 )
-netModel::SkipMember_strategy = st.builds(
-    netModel::SkipMember,
+netModel_SkipMember_strategy = st.builds(
+    netModel_SkipMember,
 )
-netModel::TypedMember_strategy = st.builds(
-    netModel::TypedMember,
+netModel_TypedMember_strategy = st.builds(
+    netModel_TypedMember,
 )
-netModel::Member_strategy = st.builds(
-    netModel::Member,
+netModel_Member_strategy = st.builds(
+    netModel_Member,
     name=
         safe_text
 )
-netModel::EnumMember_strategy = st.builds(
-    netModel::EnumMember,
+netModel_EnumMember_strategy = st.builds(
+    netModel_EnumMember,
     assignment=
         st.booleans(),
     value=
@@ -1066,31 +1033,31 @@ netModel::EnumMember_strategy = st.builds(
     name=
         safe_text
 )
-netModel::EnumTypeLiteral_strategy = st.builds(
-    netModel::EnumTypeLiteral,
+netModel_EnumTypeLiteral_strategy = st.builds(
+    netModel_EnumTypeLiteral,
 )
-netModel::IntegerType_strategy = st.builds(
-    netModel::IntegerType,
+netModel_IntegerType_strategy = st.builds(
+    netModel_IntegerType,
 )
 UserTypeDeclaration_strategy = st.builds(
     UserTypeDeclaration,
 )
-netModel::EnumTypeDeclaration_strategy = st.builds(
-    netModel::EnumTypeDeclaration,
+netModel_EnumTypeDeclaration_strategy = st.builds(
+    netModel_EnumTypeDeclaration,
 )
-netModel::HttpMethodBlock_strategy = st.builds(
-    netModel::HttpMethodBlock,
+netModel_HttpMethodBlock_strategy = st.builds(
+    netModel_HttpMethodBlock,
 )
-netModel::Path_strategy = st.builds(
-    netModel::Path,
+netModel_Path_strategy = st.builds(
+    netModel_Path,
     arb=
         safe_text
 )
-netModel::Header_strategy = st.builds(
-    netModel::Header,
-    value=
-        safe_text,
+netModel_Header_strategy = st.builds(
+    netModel_Header,
     name=
+        safe_text,
+    value=
         safe_text
 )
 HttpMethodBlock_strategy = st.builds(
@@ -1099,69 +1066,102 @@ HttpMethodBlock_strategy = st.builds(
 ClientBlock_strategy = st.builds(
     ClientBlock,
 )
-netModel::HttpMethod_strategy = st.builds(
-    netModel::HttpMethod,
-    type=
+netModel_HttpMethod_strategy = st.builds(
+    netModel_HttpMethod,
+    name=
         safe_text,
+    type=
+        safe_text
+)
+netModel_HeaderBlock_strategy = st.builds(
+    netModel_HeaderBlock,
+)
+netModel_ClientBlock_strategy = st.builds(
+    netModel_ClientBlock,
+)
+netModel_ComplexTypeDeclaration_strategy = st.builds(
+    netModel_ComplexTypeDeclaration,
+)
+netModel_ResponseBlock_strategy = st.builds(
+    netModel_ResponseBlock,
+)
+netModel_BlockType_strategy = st.builds(
+    netModel_BlockType,
+)
+netModel_BodyBlock_strategy = st.builds(
+    netModel_BodyBlock,
+)
+netModel_Literal_strategy = st.builds(
+    netModel_Literal,
+)
+netModel_SimpleMember_strategy = st.builds(
+    netModel_SimpleMember,
     name=
         safe_text
 )
-netModel::HeaderBlock_strategy = st.builds(
-    netModel::HeaderBlock,
+netModel_ParamsBlock_strategy = st.builds(
+    netModel_ParamsBlock,
 )
-netModel::ClientBlock_strategy = st.builds(
-    netModel::ClientBlock,
-)
-netModel::ComplexTypeDeclaration_strategy = st.builds(
-    netModel::ComplexTypeDeclaration,
-)
-netModel::ResponseBlock_strategy = st.builds(
-    netModel::ResponseBlock,
-)
-netModel::BlockType_strategy = st.builds(
-    netModel::BlockType,
-)
-netModel::BodyBlock_strategy = st.builds(
-    netModel::BodyBlock,
-)
-netModel::Literal_strategy = st.builds(
-    netModel::Literal,
-)
-netModel::SimpleMember_strategy = st.builds(
-    netModel::SimpleMember,
-    name=
-        safe_text
-)
-netModel::ParamsBlock_strategy = st.builds(
-    netModel::ParamsBlock,
-)
-netModel::SimpleMemberAssignment_strategy = st.builds(
-    netModel::SimpleMemberAssignment,
+netModel_SimpleMemberAssignment_strategy = st.builds(
+    netModel_SimpleMemberAssignment,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-netModel::UserTypeDeclaration_strategy = st.builds(
-    netModel::UserTypeDeclaration,
+netModel_Client_strategy = st.builds(
+    netModel_Client,
+    baseUrl=
+        safe_text
+)
+netModel_Declaration_strategy = st.builds(
+    netModel_Declaration,
+    name=
+        safe_text
+)
+netModel_Model_strategy = st.builds(
+    netModel_Model,
+    packageName=
+        safe_text
+)
+netModel_BooleanLiteral_strategy = st.builds(
+    netModel_BooleanLiteral,
+    literal=
+        safe_text
+)
+netModel_DoubleType_strategy = st.builds(
+    netModel_DoubleType,
+)
+netModel_UserTypeDeclaration_strategy = st.builds(
+    netModel_UserTypeDeclaration,
     keyword=
         safe_text,
     nogen=
         st.booleans()
 )
-netModel::Client_strategy = st.builds(
-    netModel::Client,
-    baseUrl=
+Type_strategy = st.builds(
+    Type,
+)
+netModel_UserType_strategy = st.builds(
+    netModel_UserType,
+)
+netModel_GenericListType_strategy = st.builds(
+    netModel_GenericListType,
+    id=
         safe_text
 )
-netModel::Declaration_strategy = st.builds(
-    netModel::Declaration,
-    name=
+BlockType_strategy = st.builds(
+    BlockType,
+)
+netModel_Type_strategy = st.builds(
+    netModel_Type,
+)
+netModel_IntrinsicType_strategy = st.builds(
+    netModel_IntrinsicType,
+    id=
         safe_text
 )
-netModel::Model_strategy = st.builds(
-    netModel::Model,
-    packageName=
-        safe_text
+netModel_ComplexTypeLiteral_strategy = st.builds(
+    netModel_ComplexTypeLiteral,
 )
 
 @given(instance=NumericType_strategy)
@@ -1169,282 +1169,177 @@ netModel::Model_strategy = st.builds(
 def test_numerictype_instantiation(instance):
     assert isinstance(instance, NumericType)
 
-@given(instance=netModel::LongType_strategy)
+@given(instance=netModel_LongType_strategy)
 @settings(max_examples=50)
-def test_netmodel::longtype_instantiation(instance):
-    assert isinstance(instance, netModel::LongType)
+def test_netmodel_longtype_instantiation(instance):
+    assert isinstance(instance, netModel_LongType)
 
 @given(instance=IntrinsicType_strategy)
 @settings(max_examples=50)
 def test_intrinsictype_instantiation(instance):
     assert isinstance(instance, IntrinsicType)
 
-@given(instance=netModel::BooleanType_strategy)
+@given(instance=netModel_NumericType_strategy)
 @settings(max_examples=50)
-def test_netmodel::booleantype_instantiation(instance):
-    assert isinstance(instance, netModel::BooleanType)
+def test_netmodel_numerictype_instantiation(instance):
+    assert isinstance(instance, netModel_NumericType)
 
-@given(instance=netModel::NumericType_strategy)
+@given(instance=netModel_BooleanType_strategy)
 @settings(max_examples=50)
-def test_netmodel::numerictype_instantiation(instance):
-    assert isinstance(instance, netModel::NumericType)
+def test_netmodel_booleantype_instantiation(instance):
+    assert isinstance(instance, netModel_BooleanType)
 
-@given(instance=netModel::StringType_strategy)
+@given(instance=netModel_StringType_strategy)
 @settings(max_examples=50)
-def test_netmodel::stringtype_instantiation(instance):
-    assert isinstance(instance, netModel::StringType)
+def test_netmodel_stringtype_instantiation(instance):
+    assert isinstance(instance, netModel_StringType)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=netModel::StringLiteral_strategy)
+@given(instance=netModel_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_netmodel::stringliteral_instantiation(instance):
-    assert isinstance(instance, netModel::StringLiteral)
-
-@given(instance=netModel::StringLiteral_strategy)
-def test_netmodel::stringliteral_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_netmodel_stringliteral_instantiation(instance):
+    assert isinstance(instance, netModel_StringLiteral)
 
 
-@given(instance=netModel::StringLiteral_strategy)
-def test_netmodel::stringliteral_literal_setter(instance):
+
+@given(instance=netModel_StringLiteral_strategy)
+def test_netmodel_stringliteral_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
 
-@given(instance=netModel::NumericLiteral_strategy)
+@given(instance=netModel_NumericLiteral_strategy)
 @settings(max_examples=50)
-def test_netmodel::numericliteral_instantiation(instance):
-    assert isinstance(instance, netModel::NumericLiteral)
-
-@given(instance=netModel::NumericLiteral_strategy)
-def test_netmodel::numericliteral_literal_type(instance):
-    assert isinstance(instance.literal, str)
+def test_netmodel_numericliteral_instantiation(instance):
+    assert isinstance(instance, netModel_NumericLiteral)
 
 
-@given(instance=netModel::NumericLiteral_strategy)
-def test_netmodel::numericliteral_literal_setter(instance):
+
+@given(instance=netModel_NumericLiteral_strategy)
+def test_netmodel_numericliteral_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
-
-@given(instance=netModel::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_netmodel::booleanliteral_instantiation(instance):
-    assert isinstance(instance, netModel::BooleanLiteral)
-
-@given(instance=netModel::BooleanLiteral_strategy)
-def test_netmodel::booleanliteral_literal_type(instance):
-    assert isinstance(instance.literal, str)
-
-
-@given(instance=netModel::BooleanLiteral_strategy)
-def test_netmodel::booleanliteral_literal_setter(instance):
-    original = instance.literal
-    instance.literal = original
-    assert instance.literal == original
-
-@given(instance=netModel::DoubleType_strategy)
-@settings(max_examples=50)
-def test_netmodel::doubletype_instantiation(instance):
-    assert isinstance(instance, netModel::DoubleType)
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=netModel::UserType_strategy)
-@settings(max_examples=50)
-def test_netmodel::usertype_instantiation(instance):
-    assert isinstance(instance, netModel::UserType)
-
-@given(instance=netModel::GenericListType_strategy)
-@settings(max_examples=50)
-def test_netmodel::genericlisttype_instantiation(instance):
-    assert isinstance(instance, netModel::GenericListType)
-
-@given(instance=netModel::GenericListType_strategy)
-def test_netmodel::genericlisttype_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=netModel::GenericListType_strategy)
-def test_netmodel::genericlisttype_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=BlockType_strategy)
-@settings(max_examples=50)
-def test_blocktype_instantiation(instance):
-    assert isinstance(instance, BlockType)
-
-@given(instance=netModel::IntrinsicType_strategy)
-@settings(max_examples=50)
-def test_netmodel::intrinsictype_instantiation(instance):
-    assert isinstance(instance, netModel::IntrinsicType)
-
-@given(instance=netModel::IntrinsicType_strategy)
-def test_netmodel::intrinsictype_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=netModel::IntrinsicType_strategy)
-def test_netmodel::intrinsictype_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=netModel::ComplexTypeLiteral_strategy)
-@settings(max_examples=50)
-def test_netmodel::complextypeliteral_instantiation(instance):
-    assert isinstance(instance, netModel::ComplexTypeLiteral)
-
-@given(instance=netModel::Type_strategy)
-@settings(max_examples=50)
-def test_netmodel::type_instantiation(instance):
-    assert isinstance(instance, netModel::Type)
 
 @given(instance=Member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=netModel::SkipMember_strategy)
+@given(instance=netModel_SkipMember_strategy)
 @settings(max_examples=50)
-def test_netmodel::skipmember_instantiation(instance):
-    assert isinstance(instance, netModel::SkipMember)
+def test_netmodel_skipmember_instantiation(instance):
+    assert isinstance(instance, netModel_SkipMember)
 
-@given(instance=netModel::TypedMember_strategy)
+@given(instance=netModel_TypedMember_strategy)
 @settings(max_examples=50)
-def test_netmodel::typedmember_instantiation(instance):
-    assert isinstance(instance, netModel::TypedMember)
+def test_netmodel_typedmember_instantiation(instance):
+    assert isinstance(instance, netModel_TypedMember)
 
-@given(instance=netModel::Member_strategy)
+@given(instance=netModel_Member_strategy)
 @settings(max_examples=50)
-def test_netmodel::member_instantiation(instance):
-    assert isinstance(instance, netModel::Member)
-
-@given(instance=netModel::Member_strategy)
-def test_netmodel::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_netmodel_member_instantiation(instance):
+    assert isinstance(instance, netModel_Member)
 
 
-@given(instance=netModel::Member_strategy)
-def test_netmodel::member_name_setter(instance):
+
+@given(instance=netModel_Member_strategy)
+def test_netmodel_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=netModel::EnumMember_strategy)
+@given(instance=netModel_EnumMember_strategy)
 @settings(max_examples=50)
-def test_netmodel::enummember_instantiation(instance):
-    assert isinstance(instance, netModel::EnumMember)
-
-@given(instance=netModel::EnumMember_strategy)
-def test_netmodel::enummember_assignment_type(instance):
-    assert isinstance(instance.assignment, bool)
+def test_netmodel_enummember_instantiation(instance):
+    assert isinstance(instance, netModel_EnumMember)
 
 
-@given(instance=netModel::EnumMember_strategy)
-def test_netmodel::enummember_assignment_setter(instance):
+
+@given(instance=netModel_EnumMember_strategy)
+def test_netmodel_enummember_assignment_setter(instance):
     original = instance.assignment
     instance.assignment = original
     assert instance.assignment == original
 
-@given(instance=netModel::EnumMember_strategy)
-def test_netmodel::enummember_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=netModel::EnumMember_strategy)
-def test_netmodel::enummember_value_setter(instance):
+@given(instance=netModel_EnumMember_strategy)
+def test_netmodel_enummember_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=netModel::EnumMember_strategy)
-def test_netmodel::enummember_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=netModel::EnumMember_strategy)
-def test_netmodel::enummember_name_setter(instance):
+@given(instance=netModel_EnumMember_strategy)
+def test_netmodel_enummember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=netModel::EnumTypeLiteral_strategy)
+@given(instance=netModel_EnumTypeLiteral_strategy)
 @settings(max_examples=50)
-def test_netmodel::enumtypeliteral_instantiation(instance):
-    assert isinstance(instance, netModel::EnumTypeLiteral)
+def test_netmodel_enumtypeliteral_instantiation(instance):
+    assert isinstance(instance, netModel_EnumTypeLiteral)
 
-@given(instance=netModel::IntegerType_strategy)
+@given(instance=netModel_IntegerType_strategy)
 @settings(max_examples=50)
-def test_netmodel::integertype_instantiation(instance):
-    assert isinstance(instance, netModel::IntegerType)
+def test_netmodel_integertype_instantiation(instance):
+    assert isinstance(instance, netModel_IntegerType)
 
 @given(instance=UserTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_usertypedeclaration_instantiation(instance):
     assert isinstance(instance, UserTypeDeclaration)
 
-@given(instance=netModel::EnumTypeDeclaration_strategy)
+@given(instance=netModel_EnumTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_netmodel::enumtypedeclaration_instantiation(instance):
-    assert isinstance(instance, netModel::EnumTypeDeclaration)
+def test_netmodel_enumtypedeclaration_instantiation(instance):
+    assert isinstance(instance, netModel_EnumTypeDeclaration)
 
-@given(instance=netModel::HttpMethodBlock_strategy)
+@given(instance=netModel_HttpMethodBlock_strategy)
 @settings(max_examples=50)
-def test_netmodel::httpmethodblock_instantiation(instance):
-    assert isinstance(instance, netModel::HttpMethodBlock)
+def test_netmodel_httpmethodblock_instantiation(instance):
+    assert isinstance(instance, netModel_HttpMethodBlock)
 
-@given(instance=netModel::Path_strategy)
+@given(instance=netModel_Path_strategy)
 @settings(max_examples=50)
-def test_netmodel::path_instantiation(instance):
-    assert isinstance(instance, netModel::Path)
-
-@given(instance=netModel::Path_strategy)
-def test_netmodel::path_arb_type(instance):
-    assert isinstance(instance.arb, str)
+def test_netmodel_path_instantiation(instance):
+    assert isinstance(instance, netModel_Path)
 
 
-@given(instance=netModel::Path_strategy)
-def test_netmodel::path_arb_setter(instance):
+
+@given(instance=netModel_Path_strategy)
+def test_netmodel_path_arb_setter(instance):
     original = instance.arb
     instance.arb = original
     assert instance.arb == original
 
-@given(instance=netModel::Header_strategy)
+@given(instance=netModel_Header_strategy)
 @settings(max_examples=50)
-def test_netmodel::header_instantiation(instance):
-    assert isinstance(instance, netModel::Header)
-
-@given(instance=netModel::Header_strategy)
-def test_netmodel::header_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_netmodel_header_instantiation(instance):
+    assert isinstance(instance, netModel_Header)
 
 
-@given(instance=netModel::Header_strategy)
-def test_netmodel::header_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=netModel::Header_strategy)
-def test_netmodel::header_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=netModel::Header_strategy)
-def test_netmodel::header_name_setter(instance):
+@given(instance=netModel_Header_strategy)
+def test_netmodel_header_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=netModel_Header_strategy)
+def test_netmodel_header_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=HttpMethodBlock_strategy)
 @settings(max_examples=50)
@@ -1456,170 +1351,215 @@ def test_httpmethodblock_instantiation(instance):
 def test_clientblock_instantiation(instance):
     assert isinstance(instance, ClientBlock)
 
-@given(instance=netModel::HttpMethod_strategy)
+@given(instance=netModel_HttpMethod_strategy)
 @settings(max_examples=50)
-def test_netmodel::httpmethod_instantiation(instance):
-    assert isinstance(instance, netModel::HttpMethod)
-
-@given(instance=netModel::HttpMethod_strategy)
-def test_netmodel::httpmethod_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_netmodel_httpmethod_instantiation(instance):
+    assert isinstance(instance, netModel_HttpMethod)
 
 
-@given(instance=netModel::HttpMethod_strategy)
-def test_netmodel::httpmethod_type_setter(instance):
+
+@given(instance=netModel_HttpMethod_strategy)
+def test_netmodel_httpmethod_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=netModel_HttpMethod_strategy)
+def test_netmodel_httpmethod_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=netModel::HttpMethod_strategy)
-def test_netmodel::httpmethod_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=netModel_HeaderBlock_strategy)
+@settings(max_examples=50)
+def test_netmodel_headerblock_instantiation(instance):
+    assert isinstance(instance, netModel_HeaderBlock)
+
+@given(instance=netModel_ClientBlock_strategy)
+@settings(max_examples=50)
+def test_netmodel_clientblock_instantiation(instance):
+    assert isinstance(instance, netModel_ClientBlock)
+
+@given(instance=netModel_ComplexTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_netmodel_complextypedeclaration_instantiation(instance):
+    assert isinstance(instance, netModel_ComplexTypeDeclaration)
+
+@given(instance=netModel_ResponseBlock_strategy)
+@settings(max_examples=50)
+def test_netmodel_responseblock_instantiation(instance):
+    assert isinstance(instance, netModel_ResponseBlock)
+
+@given(instance=netModel_BlockType_strategy)
+@settings(max_examples=50)
+def test_netmodel_blocktype_instantiation(instance):
+    assert isinstance(instance, netModel_BlockType)
+
+@given(instance=netModel_BodyBlock_strategy)
+@settings(max_examples=50)
+def test_netmodel_bodyblock_instantiation(instance):
+    assert isinstance(instance, netModel_BodyBlock)
+
+@given(instance=netModel_Literal_strategy)
+@settings(max_examples=50)
+def test_netmodel_literal_instantiation(instance):
+    assert isinstance(instance, netModel_Literal)
+
+@given(instance=netModel_SimpleMember_strategy)
+@settings(max_examples=50)
+def test_netmodel_simplemember_instantiation(instance):
+    assert isinstance(instance, netModel_SimpleMember)
 
 
-@given(instance=netModel::HttpMethod_strategy)
-def test_netmodel::httpmethod_name_setter(instance):
+
+@given(instance=netModel_SimpleMember_strategy)
+def test_netmodel_simplemember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=netModel::HeaderBlock_strategy)
+@given(instance=netModel_ParamsBlock_strategy)
 @settings(max_examples=50)
-def test_netmodel::headerblock_instantiation(instance):
-    assert isinstance(instance, netModel::HeaderBlock)
+def test_netmodel_paramsblock_instantiation(instance):
+    assert isinstance(instance, netModel_ParamsBlock)
 
-@given(instance=netModel::ClientBlock_strategy)
+@given(instance=netModel_SimpleMemberAssignment_strategy)
 @settings(max_examples=50)
-def test_netmodel::clientblock_instantiation(instance):
-    assert isinstance(instance, netModel::ClientBlock)
-
-@given(instance=netModel::ComplexTypeDeclaration_strategy)
-@settings(max_examples=50)
-def test_netmodel::complextypedeclaration_instantiation(instance):
-    assert isinstance(instance, netModel::ComplexTypeDeclaration)
-
-@given(instance=netModel::ResponseBlock_strategy)
-@settings(max_examples=50)
-def test_netmodel::responseblock_instantiation(instance):
-    assert isinstance(instance, netModel::ResponseBlock)
-
-@given(instance=netModel::BlockType_strategy)
-@settings(max_examples=50)
-def test_netmodel::blocktype_instantiation(instance):
-    assert isinstance(instance, netModel::BlockType)
-
-@given(instance=netModel::BodyBlock_strategy)
-@settings(max_examples=50)
-def test_netmodel::bodyblock_instantiation(instance):
-    assert isinstance(instance, netModel::BodyBlock)
-
-@given(instance=netModel::Literal_strategy)
-@settings(max_examples=50)
-def test_netmodel::literal_instantiation(instance):
-    assert isinstance(instance, netModel::Literal)
-
-@given(instance=netModel::SimpleMember_strategy)
-@settings(max_examples=50)
-def test_netmodel::simplemember_instantiation(instance):
-    assert isinstance(instance, netModel::SimpleMember)
-
-@given(instance=netModel::SimpleMember_strategy)
-def test_netmodel::simplemember_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=netModel::SimpleMember_strategy)
-def test_netmodel::simplemember_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=netModel::ParamsBlock_strategy)
-@settings(max_examples=50)
-def test_netmodel::paramsblock_instantiation(instance):
-    assert isinstance(instance, netModel::ParamsBlock)
-
-@given(instance=netModel::SimpleMemberAssignment_strategy)
-@settings(max_examples=50)
-def test_netmodel::simplememberassignment_instantiation(instance):
-    assert isinstance(instance, netModel::SimpleMemberAssignment)
+def test_netmodel_simplememberassignment_instantiation(instance):
+    assert isinstance(instance, netModel_SimpleMemberAssignment)
 
 @given(instance=Declaration_strategy)
 @settings(max_examples=50)
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=netModel::UserTypeDeclaration_strategy)
+@given(instance=netModel_Client_strategy)
 @settings(max_examples=50)
-def test_netmodel::usertypedeclaration_instantiation(instance):
-    assert isinstance(instance, netModel::UserTypeDeclaration)
-
-@given(instance=netModel::UserTypeDeclaration_strategy)
-def test_netmodel::usertypedeclaration_keyword_type(instance):
-    assert isinstance(instance.keyword, str)
+def test_netmodel_client_instantiation(instance):
+    assert isinstance(instance, netModel_Client)
 
 
-@given(instance=netModel::UserTypeDeclaration_strategy)
-def test_netmodel::usertypedeclaration_keyword_setter(instance):
-    original = instance.keyword
-    instance.keyword = original
-    assert instance.keyword == original
 
-@given(instance=netModel::UserTypeDeclaration_strategy)
-def test_netmodel::usertypedeclaration_nogen_type(instance):
-    assert isinstance(instance.nogen, bool)
-
-
-@given(instance=netModel::UserTypeDeclaration_strategy)
-def test_netmodel::usertypedeclaration_nogen_setter(instance):
-    original = instance.nogen
-    instance.nogen = original
-    assert instance.nogen == original
-
-@given(instance=netModel::Client_strategy)
-@settings(max_examples=50)
-def test_netmodel::client_instantiation(instance):
-    assert isinstance(instance, netModel::Client)
-
-@given(instance=netModel::Client_strategy)
-def test_netmodel::client_baseUrl_type(instance):
-    assert isinstance(instance.baseUrl, str)
-
-
-@given(instance=netModel::Client_strategy)
-def test_netmodel::client_baseUrl_setter(instance):
+@given(instance=netModel_Client_strategy)
+def test_netmodel_client_baseUrl_setter(instance):
     original = instance.baseUrl
     instance.baseUrl = original
     assert instance.baseUrl == original
 
-@given(instance=netModel::Declaration_strategy)
+@given(instance=netModel_Declaration_strategy)
 @settings(max_examples=50)
-def test_netmodel::declaration_instantiation(instance):
-    assert isinstance(instance, netModel::Declaration)
-
-@given(instance=netModel::Declaration_strategy)
-def test_netmodel::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_netmodel_declaration_instantiation(instance):
+    assert isinstance(instance, netModel_Declaration)
 
 
-@given(instance=netModel::Declaration_strategy)
-def test_netmodel::declaration_name_setter(instance):
+
+@given(instance=netModel_Declaration_strategy)
+def test_netmodel_declaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=netModel::Model_strategy)
+@given(instance=netModel_Model_strategy)
 @settings(max_examples=50)
-def test_netmodel::model_instantiation(instance):
-    assert isinstance(instance, netModel::Model)
-
-@given(instance=netModel::Model_strategy)
-def test_netmodel::model_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_netmodel_model_instantiation(instance):
+    assert isinstance(instance, netModel_Model)
 
 
-@given(instance=netModel::Model_strategy)
-def test_netmodel::model_packageName_setter(instance):
+
+@given(instance=netModel_Model_strategy)
+def test_netmodel_model_packageName_setter(instance):
     original = instance.packageName
     instance.packageName = original
     assert instance.packageName == original
+
+@given(instance=netModel_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_netmodel_booleanliteral_instantiation(instance):
+    assert isinstance(instance, netModel_BooleanLiteral)
+
+
+
+@given(instance=netModel_BooleanLiteral_strategy)
+def test_netmodel_booleanliteral_literal_setter(instance):
+    original = instance.literal
+    instance.literal = original
+    assert instance.literal == original
+
+@given(instance=netModel_DoubleType_strategy)
+@settings(max_examples=50)
+def test_netmodel_doubletype_instantiation(instance):
+    assert isinstance(instance, netModel_DoubleType)
+
+@given(instance=netModel_UserTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_netmodel_usertypedeclaration_instantiation(instance):
+    assert isinstance(instance, netModel_UserTypeDeclaration)
+
+
+
+@given(instance=netModel_UserTypeDeclaration_strategy)
+def test_netmodel_usertypedeclaration_keyword_setter(instance):
+    original = instance.keyword
+    instance.keyword = original
+    assert instance.keyword == original
+
+
+
+@given(instance=netModel_UserTypeDeclaration_strategy)
+def test_netmodel_usertypedeclaration_nogen_setter(instance):
+    original = instance.nogen
+    instance.nogen = original
+    assert instance.nogen == original
+
+@given(instance=Type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
+
+@given(instance=netModel_UserType_strategy)
+@settings(max_examples=50)
+def test_netmodel_usertype_instantiation(instance):
+    assert isinstance(instance, netModel_UserType)
+
+@given(instance=netModel_GenericListType_strategy)
+@settings(max_examples=50)
+def test_netmodel_genericlisttype_instantiation(instance):
+    assert isinstance(instance, netModel_GenericListType)
+
+
+
+@given(instance=netModel_GenericListType_strategy)
+def test_netmodel_genericlisttype_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=BlockType_strategy)
+@settings(max_examples=50)
+def test_blocktype_instantiation(instance):
+    assert isinstance(instance, BlockType)
+
+@given(instance=netModel_Type_strategy)
+@settings(max_examples=50)
+def test_netmodel_type_instantiation(instance):
+    assert isinstance(instance, netModel_Type)
+
+@given(instance=netModel_IntrinsicType_strategy)
+@settings(max_examples=50)
+def test_netmodel_intrinsictype_instantiation(instance):
+    assert isinstance(instance, netModel_IntrinsicType)
+
+
+
+@given(instance=netModel_IntrinsicType_strategy)
+def test_netmodel_intrinsictype_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=netModel_ComplexTypeLiteral_strategy)
+@settings(max_examples=50)
+def test_netmodel_complextypeliteral_instantiation(instance):
+    assert isinstance(instance, netModel_ComplexTypeLiteral)

@@ -3,66 +3,66 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tortugaDSL::BOOLEAN::EXPRESSION,
+from python_code import (
+    tortugaDSL_BOOLEAN_EXPRESSION,
     FontStyleValues,
-    tortugaDSL::ITALIC,
-    tortugaDSL::PLAIN,
-    tortugaDSL::BOLD,
-    BOOLEAN::EXPRESSION,
-    tortugaDSL::GREATER::THAN,
-    tortugaDSL::LESSER::THAN,
-    tortugaDSL::EQUALS,
+    tortugaDSL_PLAIN,
+    tortugaDSL_ITALIC,
+    tortugaDSL_BOLD,
+    BOOLEAN_EXPRESSION,
+    tortugaDSL_GREATER_THAN,
+    tortugaDSL_LESSER_THAN,
+    tortugaDSL_EQUALS,
     EXPRESSION,
-    tortugaDSL::VALUE,
-    CONTROL::SENTENCES,
-    tortugaDSL::TO,
-    tortugaDSL::IF,
-    tortugaDSL::REPEAT,
+    tortugaDSL_VALUE,
+    CONTROL_SENTENCES,
+    tortugaDSL_TO,
+    tortugaDSL_IF,
+    tortugaDSL_REPEAT,
     OPERATION,
-    tortugaDSL::MULTIPLY,
-    tortugaDSL::DIVIDE,
-    tortugaDSL::SUBTRACT,
-    tortugaDSL::SUM,
+    tortugaDSL_MULTIPLY,
+    tortugaDSL_DIVIDE,
+    tortugaDSL_SUBTRACT,
+    tortugaDSL_SUM,
     COLOREABLE,
-    tortugaDSL::CANVAS::COLOR,
-    tortugaDSL::PENCOLOR,
-    tortugaDSL::VARIABLE::REF,
-    tortugaDSL::COLOR::SPEC,
+    tortugaDSL_CANVAS_COLOR,
+    tortugaDSL_PENCOLOR,
+    tortugaDSL_VARIABLE_REF,
+    tortugaDSL_COLOR_SPEC,
     REFERENCIABLE,
-    tortugaDSL::PARAM,
-    tortugaDSL::REFERENCIABLE,
-    tortugaDSL::FontStyleValues,
-    FONT::SPEC,
-    tortugaDSL::FONT::STYLE,
-    tortugaDSL::FONT::SIZE,
-    tortugaDSL::TortugaProgram,
-    DRAWING::SENTENCE,
-    tortugaDSL::DRAW::STRING,
-    tortugaDSL::FONT::SPEC,
-    tortugaDSL::HOME,
-    tortugaDSL::PENUP,
-    tortugaDSL::COLOREABLE,
-    tortugaDSL::CLEAR,
-    tortugaDSL::PENDOWN,
+    tortugaDSL_PARAM,
+    tortugaDSL_REFERENCIABLE,
+    tortugaDSL_FontStyleValues,
+    FONT_SPEC,
+    tortugaDSL_FONT_STYLE,
+    tortugaDSL_FONT_SIZE,
+    tortugaDSL_TortugaProgram,
+    DRAWING_SENTENCE,
+    tortugaDSL_DRAW_STRING,
+    tortugaDSL_PENUP,
+    tortugaDSL_HOME,
+    tortugaDSL_CLEAR,
+    tortugaDSL_FONT_SPEC,
+    tortugaDSL_COLOREABLE,
+    tortugaDSL_PENDOWN,
     MOVE,
-    tortugaDSL::SET::Y,
-    tortugaDSL::LEFT,
-    tortugaDSL::RIGHT,
-    tortugaDSL::SET::X,
-    tortugaDSL::FORWARD,
-    tortugaDSL::EXPRESSION,
+    tortugaDSL_LEFT,
+    tortugaDSL_SET_X,
+    tortugaDSL_SET_Y,
+    tortugaDSL_RIGHT,
+    tortugaDSL_FORWARD,
+    tortugaDSL_EXPRESSION,
     SENTENCE,
-    tortugaDSL::CONTROL::SENTENCES,
-    tortugaDSL::MAKE,
-    tortugaDSL::PROCEDURE::CALL,
-    tortugaDSL::DRAWING::SENTENCE,
-    tortugaDSL::CONTENT,
-    tortugaDSL::OPERATION,
-    tortugaDSL::MOVE,
-    tortugaDSL::SENTENCE,
+    tortugaDSL_PROCEDURE_CALL,
+    tortugaDSL_MAKE,
+    tortugaDSL_DRAWING_SENTENCE,
+    tortugaDSL_CONTENT,
+    tortugaDSL_OPERATION,
+    tortugaDSL_CONTROL_SENTENCES,
+    tortugaDSL_MOVE,
+    tortugaDSL_SENTENCE,
 )
 
 # =============================================================================
@@ -71,16 +71,16 @@ from classes import (
 
 
 
-def test_tortugadsl::boolean::expression_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::BOOLEAN::EXPRESSION)
+def test_tortugadsl_boolean_expression_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_BOOLEAN_EXPRESSION)
 
 
-def test_tortugadsl::boolean::expression_constructor_exists():
-    assert callable(tortugaDSL::BOOLEAN::EXPRESSION.__init__)
+def test_tortugadsl_boolean_expression_constructor_exists():
+    assert callable(tortugaDSL_BOOLEAN_EXPRESSION.__init__)
 
 
-def test_tortugadsl::boolean::expression_constructor_args():
-    sig = inspect.signature(tortugaDSL::BOOLEAN::EXPRESSION.__init__)
+def test_tortugadsl_boolean_expression_constructor_args():
+    sig = inspect.signature(tortugaDSL_BOOLEAN_EXPRESSION.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,100 +99,100 @@ def test_fontstylevalues_constructor_args():
 
 
 
-def test_tortugadsl::italic_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::ITALIC)
+def test_tortugadsl_plain_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_PLAIN)
 
 
-def test_tortugadsl::italic_constructor_exists():
-    assert callable(tortugaDSL::ITALIC.__init__)
+def test_tortugadsl_plain_constructor_exists():
+    assert callable(tortugaDSL_PLAIN.__init__)
 
 
-def test_tortugadsl::italic_constructor_args():
-    sig = inspect.signature(tortugaDSL::ITALIC.__init__)
+def test_tortugadsl_plain_constructor_args():
+    sig = inspect.signature(tortugaDSL_PLAIN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::plain_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::PLAIN)
+def test_tortugadsl_italic_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_ITALIC)
 
 
-def test_tortugadsl::plain_constructor_exists():
-    assert callable(tortugaDSL::PLAIN.__init__)
+def test_tortugadsl_italic_constructor_exists():
+    assert callable(tortugaDSL_ITALIC.__init__)
 
 
-def test_tortugadsl::plain_constructor_args():
-    sig = inspect.signature(tortugaDSL::PLAIN.__init__)
+def test_tortugadsl_italic_constructor_args():
+    sig = inspect.signature(tortugaDSL_ITALIC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::bold_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::BOLD)
+def test_tortugadsl_bold_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_BOLD)
 
 
-def test_tortugadsl::bold_constructor_exists():
-    assert callable(tortugaDSL::BOLD.__init__)
+def test_tortugadsl_bold_constructor_exists():
+    assert callable(tortugaDSL_BOLD.__init__)
 
 
-def test_tortugadsl::bold_constructor_args():
-    sig = inspect.signature(tortugaDSL::BOLD.__init__)
+def test_tortugadsl_bold_constructor_args():
+    sig = inspect.signature(tortugaDSL_BOLD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolean::expression_is_not_abstract():
-    assert not inspect.isabstract(BOOLEAN::EXPRESSION)
+def test_boolean_expression_is_not_abstract():
+    assert not inspect.isabstract(BOOLEAN_EXPRESSION)
 
 
-def test_boolean::expression_constructor_exists():
-    assert callable(BOOLEAN::EXPRESSION.__init__)
+def test_boolean_expression_constructor_exists():
+    assert callable(BOOLEAN_EXPRESSION.__init__)
 
 
-def test_boolean::expression_constructor_args():
-    sig = inspect.signature(BOOLEAN::EXPRESSION.__init__)
+def test_boolean_expression_constructor_args():
+    sig = inspect.signature(BOOLEAN_EXPRESSION.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::greater::than_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::GREATER::THAN)
+def test_tortugadsl_greater_than_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_GREATER_THAN)
 
 
-def test_tortugadsl::greater::than_constructor_exists():
-    assert callable(tortugaDSL::GREATER::THAN.__init__)
+def test_tortugadsl_greater_than_constructor_exists():
+    assert callable(tortugaDSL_GREATER_THAN.__init__)
 
 
-def test_tortugadsl::greater::than_constructor_args():
-    sig = inspect.signature(tortugaDSL::GREATER::THAN.__init__)
+def test_tortugadsl_greater_than_constructor_args():
+    sig = inspect.signature(tortugaDSL_GREATER_THAN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::lesser::than_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::LESSER::THAN)
+def test_tortugadsl_lesser_than_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_LESSER_THAN)
 
 
-def test_tortugadsl::lesser::than_constructor_exists():
-    assert callable(tortugaDSL::LESSER::THAN.__init__)
+def test_tortugadsl_lesser_than_constructor_exists():
+    assert callable(tortugaDSL_LESSER_THAN.__init__)
 
 
-def test_tortugadsl::lesser::than_constructor_args():
-    sig = inspect.signature(tortugaDSL::LESSER::THAN.__init__)
+def test_tortugadsl_lesser_than_constructor_args():
+    sig = inspect.signature(tortugaDSL_LESSER_THAN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::equals_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::EQUALS)
+def test_tortugadsl_equals_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_EQUALS)
 
 
-def test_tortugadsl::equals_constructor_exists():
-    assert callable(tortugaDSL::EQUALS.__init__)
+def test_tortugadsl_equals_constructor_exists():
+    assert callable(tortugaDSL_EQUALS.__init__)
 
 
-def test_tortugadsl::equals_constructor_args():
-    sig = inspect.signature(tortugaDSL::EQUALS.__init__)
+def test_tortugadsl_equals_constructor_args():
+    sig = inspect.signature(tortugaDSL_EQUALS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,23 +211,23 @@ def test_expression_constructor_args():
 
 
 
-def test_tortugadsl::value_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::VALUE)
+def test_tortugadsl_value_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_VALUE)
 
 
-def test_tortugadsl::value_constructor_exists():
-    assert callable(tortugaDSL::VALUE.__init__)
+def test_tortugadsl_value_constructor_exists():
+    assert callable(tortugaDSL_VALUE.__init__)
 
 
-def test_tortugadsl::value_constructor_args():
-    sig = inspect.signature(tortugaDSL::VALUE.__init__)
+def test_tortugadsl_value_constructor_args():
+    sig = inspect.signature(tortugaDSL_VALUE.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_tortugadsl::value_has_val():
-    assert hasattr(tortugaDSL::VALUE, "val")
+def test_tortugadsl_value_has_val():
+    assert hasattr(tortugaDSL_VALUE, "val")
     descriptor = None
-    for klass in tortugaDSL::VALUE.__mro__:
+    for klass in tortugaDSL_VALUE.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -235,37 +235,37 @@ def test_tortugadsl::value_has_val():
 
 
 
-def test_control::sentences_is_not_abstract():
-    assert not inspect.isabstract(CONTROL::SENTENCES)
+def test_control_sentences_is_not_abstract():
+    assert not inspect.isabstract(CONTROL_SENTENCES)
 
 
-def test_control::sentences_constructor_exists():
-    assert callable(CONTROL::SENTENCES.__init__)
+def test_control_sentences_constructor_exists():
+    assert callable(CONTROL_SENTENCES.__init__)
 
 
-def test_control::sentences_constructor_args():
-    sig = inspect.signature(CONTROL::SENTENCES.__init__)
+def test_control_sentences_constructor_args():
+    sig = inspect.signature(CONTROL_SENTENCES.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::to_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::TO)
+def test_tortugadsl_to_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_TO)
 
 
-def test_tortugadsl::to_constructor_exists():
-    assert callable(tortugaDSL::TO.__init__)
+def test_tortugadsl_to_constructor_exists():
+    assert callable(tortugaDSL_TO.__init__)
 
 
-def test_tortugadsl::to_constructor_args():
-    sig = inspect.signature(tortugaDSL::TO.__init__)
+def test_tortugadsl_to_constructor_args():
+    sig = inspect.signature(tortugaDSL_TO.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tortugadsl::to_has_name():
-    assert hasattr(tortugaDSL::TO, "name")
+def test_tortugadsl_to_has_name():
+    assert hasattr(tortugaDSL_TO, "name")
     descriptor = None
-    for klass in tortugaDSL::TO.__mro__:
+    for klass in tortugaDSL_TO.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -273,30 +273,30 @@ def test_tortugadsl::to_has_name():
 
 
 
-def test_tortugadsl::if_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::IF)
+def test_tortugadsl_if_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_IF)
 
 
-def test_tortugadsl::if_constructor_exists():
-    assert callable(tortugaDSL::IF.__init__)
+def test_tortugadsl_if_constructor_exists():
+    assert callable(tortugaDSL_IF.__init__)
 
 
-def test_tortugadsl::if_constructor_args():
-    sig = inspect.signature(tortugaDSL::IF.__init__)
+def test_tortugadsl_if_constructor_args():
+    sig = inspect.signature(tortugaDSL_IF.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::repeat_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::REPEAT)
+def test_tortugadsl_repeat_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_REPEAT)
 
 
-def test_tortugadsl::repeat_constructor_exists():
-    assert callable(tortugaDSL::REPEAT.__init__)
+def test_tortugadsl_repeat_constructor_exists():
+    assert callable(tortugaDSL_REPEAT.__init__)
 
 
-def test_tortugadsl::repeat_constructor_args():
-    sig = inspect.signature(tortugaDSL::REPEAT.__init__)
+def test_tortugadsl_repeat_constructor_args():
+    sig = inspect.signature(tortugaDSL_REPEAT.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -315,58 +315,58 @@ def test_operation_constructor_args():
 
 
 
-def test_tortugadsl::multiply_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::MULTIPLY)
+def test_tortugadsl_multiply_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_MULTIPLY)
 
 
-def test_tortugadsl::multiply_constructor_exists():
-    assert callable(tortugaDSL::MULTIPLY.__init__)
+def test_tortugadsl_multiply_constructor_exists():
+    assert callable(tortugaDSL_MULTIPLY.__init__)
 
 
-def test_tortugadsl::multiply_constructor_args():
-    sig = inspect.signature(tortugaDSL::MULTIPLY.__init__)
+def test_tortugadsl_multiply_constructor_args():
+    sig = inspect.signature(tortugaDSL_MULTIPLY.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::divide_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::DIVIDE)
+def test_tortugadsl_divide_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_DIVIDE)
 
 
-def test_tortugadsl::divide_constructor_exists():
-    assert callable(tortugaDSL::DIVIDE.__init__)
+def test_tortugadsl_divide_constructor_exists():
+    assert callable(tortugaDSL_DIVIDE.__init__)
 
 
-def test_tortugadsl::divide_constructor_args():
-    sig = inspect.signature(tortugaDSL::DIVIDE.__init__)
+def test_tortugadsl_divide_constructor_args():
+    sig = inspect.signature(tortugaDSL_DIVIDE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::subtract_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::SUBTRACT)
+def test_tortugadsl_subtract_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_SUBTRACT)
 
 
-def test_tortugadsl::subtract_constructor_exists():
-    assert callable(tortugaDSL::SUBTRACT.__init__)
+def test_tortugadsl_subtract_constructor_exists():
+    assert callable(tortugaDSL_SUBTRACT.__init__)
 
 
-def test_tortugadsl::subtract_constructor_args():
-    sig = inspect.signature(tortugaDSL::SUBTRACT.__init__)
+def test_tortugadsl_subtract_constructor_args():
+    sig = inspect.signature(tortugaDSL_SUBTRACT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::sum_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::SUM)
+def test_tortugadsl_sum_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_SUM)
 
 
-def test_tortugadsl::sum_constructor_exists():
-    assert callable(tortugaDSL::SUM.__init__)
+def test_tortugadsl_sum_constructor_exists():
+    assert callable(tortugaDSL_SUM.__init__)
 
 
-def test_tortugadsl::sum_constructor_args():
-    sig = inspect.signature(tortugaDSL::SUM.__init__)
+def test_tortugadsl_sum_constructor_args():
+    sig = inspect.signature(tortugaDSL_SUM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -385,58 +385,58 @@ def test_coloreable_constructor_args():
 
 
 
-def test_tortugadsl::canvas::color_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::CANVAS::COLOR)
+def test_tortugadsl_canvas_color_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_CANVAS_COLOR)
 
 
-def test_tortugadsl::canvas::color_constructor_exists():
-    assert callable(tortugaDSL::CANVAS::COLOR.__init__)
+def test_tortugadsl_canvas_color_constructor_exists():
+    assert callable(tortugaDSL_CANVAS_COLOR.__init__)
 
 
-def test_tortugadsl::canvas::color_constructor_args():
-    sig = inspect.signature(tortugaDSL::CANVAS::COLOR.__init__)
+def test_tortugadsl_canvas_color_constructor_args():
+    sig = inspect.signature(tortugaDSL_CANVAS_COLOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::pencolor_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::PENCOLOR)
+def test_tortugadsl_pencolor_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_PENCOLOR)
 
 
-def test_tortugadsl::pencolor_constructor_exists():
-    assert callable(tortugaDSL::PENCOLOR.__init__)
+def test_tortugadsl_pencolor_constructor_exists():
+    assert callable(tortugaDSL_PENCOLOR.__init__)
 
 
-def test_tortugadsl::pencolor_constructor_args():
-    sig = inspect.signature(tortugaDSL::PENCOLOR.__init__)
+def test_tortugadsl_pencolor_constructor_args():
+    sig = inspect.signature(tortugaDSL_PENCOLOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::variable::ref_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::VARIABLE::REF)
+def test_tortugadsl_variable_ref_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_VARIABLE_REF)
 
 
-def test_tortugadsl::variable::ref_constructor_exists():
-    assert callable(tortugaDSL::VARIABLE::REF.__init__)
+def test_tortugadsl_variable_ref_constructor_exists():
+    assert callable(tortugaDSL_VARIABLE_REF.__init__)
 
 
-def test_tortugadsl::variable::ref_constructor_args():
-    sig = inspect.signature(tortugaDSL::VARIABLE::REF.__init__)
+def test_tortugadsl_variable_ref_constructor_args():
+    sig = inspect.signature(tortugaDSL_VARIABLE_REF.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::color::spec_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::COLOR::SPEC)
+def test_tortugadsl_color_spec_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_COLOR_SPEC)
 
 
-def test_tortugadsl::color::spec_constructor_exists():
-    assert callable(tortugaDSL::COLOR::SPEC.__init__)
+def test_tortugadsl_color_spec_constructor_exists():
+    assert callable(tortugaDSL_COLOR_SPEC.__init__)
 
 
-def test_tortugadsl::color::spec_constructor_args():
-    sig = inspect.signature(tortugaDSL::COLOR::SPEC.__init__)
+def test_tortugadsl_color_spec_constructor_args():
+    sig = inspect.signature(tortugaDSL_COLOR_SPEC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -455,37 +455,37 @@ def test_referenciable_constructor_args():
 
 
 
-def test_tortugadsl::param_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::PARAM)
+def test_tortugadsl_param_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_PARAM)
 
 
-def test_tortugadsl::param_constructor_exists():
-    assert callable(tortugaDSL::PARAM.__init__)
+def test_tortugadsl_param_constructor_exists():
+    assert callable(tortugaDSL_PARAM.__init__)
 
 
-def test_tortugadsl::param_constructor_args():
-    sig = inspect.signature(tortugaDSL::PARAM.__init__)
+def test_tortugadsl_param_constructor_args():
+    sig = inspect.signature(tortugaDSL_PARAM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::referenciable_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::REFERENCIABLE)
+def test_tortugadsl_referenciable_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_REFERENCIABLE)
 
 
-def test_tortugadsl::referenciable_constructor_exists():
-    assert callable(tortugaDSL::REFERENCIABLE.__init__)
+def test_tortugadsl_referenciable_constructor_exists():
+    assert callable(tortugaDSL_REFERENCIABLE.__init__)
 
 
-def test_tortugadsl::referenciable_constructor_args():
-    sig = inspect.signature(tortugaDSL::REFERENCIABLE.__init__)
+def test_tortugadsl_referenciable_constructor_args():
+    sig = inspect.signature(tortugaDSL_REFERENCIABLE.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tortugadsl::referenciable_has_name():
-    assert hasattr(tortugaDSL::REFERENCIABLE, "name")
+def test_tortugadsl_referenciable_has_name():
+    assert hasattr(tortugaDSL_REFERENCIABLE, "name")
     descriptor = None
-    for klass in tortugaDSL::REFERENCIABLE.__mro__:
+    for klass in tortugaDSL_REFERENCIABLE.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -493,107 +493,107 @@ def test_tortugadsl::referenciable_has_name():
 
 
 
-def test_tortugadsl::fontstylevalues_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::FontStyleValues)
+def test_tortugadsl_fontstylevalues_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_FontStyleValues)
 
 
-def test_tortugadsl::fontstylevalues_constructor_exists():
-    assert callable(tortugaDSL::FontStyleValues.__init__)
+def test_tortugadsl_fontstylevalues_constructor_exists():
+    assert callable(tortugaDSL_FontStyleValues.__init__)
 
 
-def test_tortugadsl::fontstylevalues_constructor_args():
-    sig = inspect.signature(tortugaDSL::FontStyleValues.__init__)
+def test_tortugadsl_fontstylevalues_constructor_args():
+    sig = inspect.signature(tortugaDSL_FontStyleValues.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_font::spec_is_not_abstract():
-    assert not inspect.isabstract(FONT::SPEC)
+def test_font_spec_is_not_abstract():
+    assert not inspect.isabstract(FONT_SPEC)
 
 
-def test_font::spec_constructor_exists():
-    assert callable(FONT::SPEC.__init__)
+def test_font_spec_constructor_exists():
+    assert callable(FONT_SPEC.__init__)
 
 
-def test_font::spec_constructor_args():
-    sig = inspect.signature(FONT::SPEC.__init__)
+def test_font_spec_constructor_args():
+    sig = inspect.signature(FONT_SPEC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::font::style_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::FONT::STYLE)
+def test_tortugadsl_font_style_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_FONT_STYLE)
 
 
-def test_tortugadsl::font::style_constructor_exists():
-    assert callable(tortugaDSL::FONT::STYLE.__init__)
+def test_tortugadsl_font_style_constructor_exists():
+    assert callable(tortugaDSL_FONT_STYLE.__init__)
 
 
-def test_tortugadsl::font::style_constructor_args():
-    sig = inspect.signature(tortugaDSL::FONT::STYLE.__init__)
+def test_tortugadsl_font_style_constructor_args():
+    sig = inspect.signature(tortugaDSL_FONT_STYLE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::font::size_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::FONT::SIZE)
+def test_tortugadsl_font_size_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_FONT_SIZE)
 
 
-def test_tortugadsl::font::size_constructor_exists():
-    assert callable(tortugaDSL::FONT::SIZE.__init__)
+def test_tortugadsl_font_size_constructor_exists():
+    assert callable(tortugaDSL_FONT_SIZE.__init__)
 
 
-def test_tortugadsl::font::size_constructor_args():
-    sig = inspect.signature(tortugaDSL::FONT::SIZE.__init__)
+def test_tortugadsl_font_size_constructor_args():
+    sig = inspect.signature(tortugaDSL_FONT_SIZE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::tortugaprogram_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::TortugaProgram)
+def test_tortugadsl_tortugaprogram_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_TortugaProgram)
 
 
-def test_tortugadsl::tortugaprogram_constructor_exists():
-    assert callable(tortugaDSL::TortugaProgram.__init__)
+def test_tortugadsl_tortugaprogram_constructor_exists():
+    assert callable(tortugaDSL_TortugaProgram.__init__)
 
 
-def test_tortugadsl::tortugaprogram_constructor_args():
-    sig = inspect.signature(tortugaDSL::TortugaProgram.__init__)
+def test_tortugadsl_tortugaprogram_constructor_args():
+    sig = inspect.signature(tortugaDSL_TortugaProgram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drawing::sentence_is_not_abstract():
-    assert not inspect.isabstract(DRAWING::SENTENCE)
+def test_drawing_sentence_is_not_abstract():
+    assert not inspect.isabstract(DRAWING_SENTENCE)
 
 
-def test_drawing::sentence_constructor_exists():
-    assert callable(DRAWING::SENTENCE.__init__)
+def test_drawing_sentence_constructor_exists():
+    assert callable(DRAWING_SENTENCE.__init__)
 
 
-def test_drawing::sentence_constructor_args():
-    sig = inspect.signature(DRAWING::SENTENCE.__init__)
+def test_drawing_sentence_constructor_args():
+    sig = inspect.signature(DRAWING_SENTENCE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::draw::string_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::DRAW::STRING)
+def test_tortugadsl_draw_string_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_DRAW_STRING)
 
 
-def test_tortugadsl::draw::string_constructor_exists():
-    assert callable(tortugaDSL::DRAW::STRING.__init__)
+def test_tortugadsl_draw_string_constructor_exists():
+    assert callable(tortugaDSL_DRAW_STRING.__init__)
 
 
-def test_tortugadsl::draw::string_constructor_args():
-    sig = inspect.signature(tortugaDSL::DRAW::STRING.__init__)
+def test_tortugadsl_draw_string_constructor_args():
+    sig = inspect.signature(tortugaDSL_DRAW_STRING.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_tortugadsl::draw::string_has_text():
-    assert hasattr(tortugaDSL::DRAW::STRING, "text")
+def test_tortugadsl_draw_string_has_text():
+    assert hasattr(tortugaDSL_DRAW_STRING, "text")
     descriptor = None
-    for klass in tortugaDSL::DRAW::STRING.__mro__:
+    for klass in tortugaDSL_DRAW_STRING.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -601,65 +601,79 @@ def test_tortugadsl::draw::string_has_text():
 
 
 
-def test_tortugadsl::font::spec_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::FONT::SPEC)
+def test_tortugadsl_penup_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_PENUP)
 
 
-def test_tortugadsl::font::spec_constructor_exists():
-    assert callable(tortugaDSL::FONT::SPEC.__init__)
+def test_tortugadsl_penup_constructor_exists():
+    assert callable(tortugaDSL_PENUP.__init__)
 
 
-def test_tortugadsl::font::spec_constructor_args():
-    sig = inspect.signature(tortugaDSL::FONT::SPEC.__init__)
+def test_tortugadsl_penup_constructor_args():
+    sig = inspect.signature(tortugaDSL_PENUP.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::home_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::HOME)
+def test_tortugadsl_home_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_HOME)
 
 
-def test_tortugadsl::home_constructor_exists():
-    assert callable(tortugaDSL::HOME.__init__)
+def test_tortugadsl_home_constructor_exists():
+    assert callable(tortugaDSL_HOME.__init__)
 
 
-def test_tortugadsl::home_constructor_args():
-    sig = inspect.signature(tortugaDSL::HOME.__init__)
+def test_tortugadsl_home_constructor_args():
+    sig = inspect.signature(tortugaDSL_HOME.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::penup_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::PENUP)
+def test_tortugadsl_clear_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_CLEAR)
 
 
-def test_tortugadsl::penup_constructor_exists():
-    assert callable(tortugaDSL::PENUP.__init__)
+def test_tortugadsl_clear_constructor_exists():
+    assert callable(tortugaDSL_CLEAR.__init__)
 
 
-def test_tortugadsl::penup_constructor_args():
-    sig = inspect.signature(tortugaDSL::PENUP.__init__)
+def test_tortugadsl_clear_constructor_args():
+    sig = inspect.signature(tortugaDSL_CLEAR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::coloreable_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::COLOREABLE)
+def test_tortugadsl_font_spec_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_FONT_SPEC)
 
 
-def test_tortugadsl::coloreable_constructor_exists():
-    assert callable(tortugaDSL::COLOREABLE.__init__)
+def test_tortugadsl_font_spec_constructor_exists():
+    assert callable(tortugaDSL_FONT_SPEC.__init__)
 
 
-def test_tortugadsl::coloreable_constructor_args():
-    sig = inspect.signature(tortugaDSL::COLOREABLE.__init__)
+def test_tortugadsl_font_spec_constructor_args():
+    sig = inspect.signature(tortugaDSL_FONT_SPEC.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tortugadsl_coloreable_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_COLOREABLE)
+
+
+def test_tortugadsl_coloreable_constructor_exists():
+    assert callable(tortugaDSL_COLOREABLE.__init__)
+
+
+def test_tortugadsl_coloreable_constructor_args():
+    sig = inspect.signature(tortugaDSL_COLOREABLE.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_tortugadsl::coloreable_has_color():
-    assert hasattr(tortugaDSL::COLOREABLE, "color")
+def test_tortugadsl_coloreable_has_color():
+    assert hasattr(tortugaDSL_COLOREABLE, "color")
     descriptor = None
-    for klass in tortugaDSL::COLOREABLE.__mro__:
+    for klass in tortugaDSL_COLOREABLE.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -667,30 +681,16 @@ def test_tortugadsl::coloreable_has_color():
 
 
 
-def test_tortugadsl::clear_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::CLEAR)
+def test_tortugadsl_pendown_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_PENDOWN)
 
 
-def test_tortugadsl::clear_constructor_exists():
-    assert callable(tortugaDSL::CLEAR.__init__)
+def test_tortugadsl_pendown_constructor_exists():
+    assert callable(tortugaDSL_PENDOWN.__init__)
 
 
-def test_tortugadsl::clear_constructor_args():
-    sig = inspect.signature(tortugaDSL::CLEAR.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tortugadsl::pendown_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::PENDOWN)
-
-
-def test_tortugadsl::pendown_constructor_exists():
-    assert callable(tortugaDSL::PENDOWN.__init__)
-
-
-def test_tortugadsl::pendown_constructor_args():
-    sig = inspect.signature(tortugaDSL::PENDOWN.__init__)
+def test_tortugadsl_pendown_constructor_args():
+    sig = inspect.signature(tortugaDSL_PENDOWN.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -709,86 +709,86 @@ def test_move_constructor_args():
 
 
 
-def test_tortugadsl::set::y_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::SET::Y)
+def test_tortugadsl_left_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_LEFT)
 
 
-def test_tortugadsl::set::y_constructor_exists():
-    assert callable(tortugaDSL::SET::Y.__init__)
+def test_tortugadsl_left_constructor_exists():
+    assert callable(tortugaDSL_LEFT.__init__)
 
 
-def test_tortugadsl::set::y_constructor_args():
-    sig = inspect.signature(tortugaDSL::SET::Y.__init__)
+def test_tortugadsl_left_constructor_args():
+    sig = inspect.signature(tortugaDSL_LEFT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::left_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::LEFT)
+def test_tortugadsl_set_x_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_SET_X)
 
 
-def test_tortugadsl::left_constructor_exists():
-    assert callable(tortugaDSL::LEFT.__init__)
+def test_tortugadsl_set_x_constructor_exists():
+    assert callable(tortugaDSL_SET_X.__init__)
 
 
-def test_tortugadsl::left_constructor_args():
-    sig = inspect.signature(tortugaDSL::LEFT.__init__)
+def test_tortugadsl_set_x_constructor_args():
+    sig = inspect.signature(tortugaDSL_SET_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::right_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::RIGHT)
+def test_tortugadsl_set_y_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_SET_Y)
 
 
-def test_tortugadsl::right_constructor_exists():
-    assert callable(tortugaDSL::RIGHT.__init__)
+def test_tortugadsl_set_y_constructor_exists():
+    assert callable(tortugaDSL_SET_Y.__init__)
 
 
-def test_tortugadsl::right_constructor_args():
-    sig = inspect.signature(tortugaDSL::RIGHT.__init__)
+def test_tortugadsl_set_y_constructor_args():
+    sig = inspect.signature(tortugaDSL_SET_Y.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::set::x_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::SET::X)
+def test_tortugadsl_right_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_RIGHT)
 
 
-def test_tortugadsl::set::x_constructor_exists():
-    assert callable(tortugaDSL::SET::X.__init__)
+def test_tortugadsl_right_constructor_exists():
+    assert callable(tortugaDSL_RIGHT.__init__)
 
 
-def test_tortugadsl::set::x_constructor_args():
-    sig = inspect.signature(tortugaDSL::SET::X.__init__)
+def test_tortugadsl_right_constructor_args():
+    sig = inspect.signature(tortugaDSL_RIGHT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::forward_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::FORWARD)
+def test_tortugadsl_forward_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_FORWARD)
 
 
-def test_tortugadsl::forward_constructor_exists():
-    assert callable(tortugaDSL::FORWARD.__init__)
+def test_tortugadsl_forward_constructor_exists():
+    assert callable(tortugaDSL_FORWARD.__init__)
 
 
-def test_tortugadsl::forward_constructor_args():
-    sig = inspect.signature(tortugaDSL::FORWARD.__init__)
+def test_tortugadsl_forward_constructor_args():
+    sig = inspect.signature(tortugaDSL_FORWARD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::expression_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::EXPRESSION)
+def test_tortugadsl_expression_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_EXPRESSION)
 
 
-def test_tortugadsl::expression_constructor_exists():
-    assert callable(tortugaDSL::EXPRESSION.__init__)
+def test_tortugadsl_expression_constructor_exists():
+    assert callable(tortugaDSL_EXPRESSION.__init__)
 
 
-def test_tortugadsl::expression_constructor_args():
-    sig = inspect.signature(tortugaDSL::EXPRESSION.__init__)
+def test_tortugadsl_expression_constructor_args():
+    sig = inspect.signature(tortugaDSL_EXPRESSION.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -807,114 +807,114 @@ def test_sentence_constructor_args():
 
 
 
-def test_tortugadsl::control::sentences_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::CONTROL::SENTENCES)
+def test_tortugadsl_procedure_call_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_PROCEDURE_CALL)
 
 
-def test_tortugadsl::control::sentences_constructor_exists():
-    assert callable(tortugaDSL::CONTROL::SENTENCES.__init__)
+def test_tortugadsl_procedure_call_constructor_exists():
+    assert callable(tortugaDSL_PROCEDURE_CALL.__init__)
 
 
-def test_tortugadsl::control::sentences_constructor_args():
-    sig = inspect.signature(tortugaDSL::CONTROL::SENTENCES.__init__)
+def test_tortugadsl_procedure_call_constructor_args():
+    sig = inspect.signature(tortugaDSL_PROCEDURE_CALL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::make_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::MAKE)
+def test_tortugadsl_make_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_MAKE)
 
 
-def test_tortugadsl::make_constructor_exists():
-    assert callable(tortugaDSL::MAKE.__init__)
+def test_tortugadsl_make_constructor_exists():
+    assert callable(tortugaDSL_MAKE.__init__)
 
 
-def test_tortugadsl::make_constructor_args():
-    sig = inspect.signature(tortugaDSL::MAKE.__init__)
+def test_tortugadsl_make_constructor_args():
+    sig = inspect.signature(tortugaDSL_MAKE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::procedure::call_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::PROCEDURE::CALL)
+def test_tortugadsl_drawing_sentence_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_DRAWING_SENTENCE)
 
 
-def test_tortugadsl::procedure::call_constructor_exists():
-    assert callable(tortugaDSL::PROCEDURE::CALL.__init__)
+def test_tortugadsl_drawing_sentence_constructor_exists():
+    assert callable(tortugaDSL_DRAWING_SENTENCE.__init__)
 
 
-def test_tortugadsl::procedure::call_constructor_args():
-    sig = inspect.signature(tortugaDSL::PROCEDURE::CALL.__init__)
+def test_tortugadsl_drawing_sentence_constructor_args():
+    sig = inspect.signature(tortugaDSL_DRAWING_SENTENCE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::drawing::sentence_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::DRAWING::SENTENCE)
+def test_tortugadsl_content_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_CONTENT)
 
 
-def test_tortugadsl::drawing::sentence_constructor_exists():
-    assert callable(tortugaDSL::DRAWING::SENTENCE.__init__)
+def test_tortugadsl_content_constructor_exists():
+    assert callable(tortugaDSL_CONTENT.__init__)
 
 
-def test_tortugadsl::drawing::sentence_constructor_args():
-    sig = inspect.signature(tortugaDSL::DRAWING::SENTENCE.__init__)
+def test_tortugadsl_content_constructor_args():
+    sig = inspect.signature(tortugaDSL_CONTENT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::content_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::CONTENT)
+def test_tortugadsl_operation_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_OPERATION)
 
 
-def test_tortugadsl::content_constructor_exists():
-    assert callable(tortugaDSL::CONTENT.__init__)
+def test_tortugadsl_operation_constructor_exists():
+    assert callable(tortugaDSL_OPERATION.__init__)
 
 
-def test_tortugadsl::content_constructor_args():
-    sig = inspect.signature(tortugaDSL::CONTENT.__init__)
+def test_tortugadsl_operation_constructor_args():
+    sig = inspect.signature(tortugaDSL_OPERATION.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::operation_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::OPERATION)
+def test_tortugadsl_control_sentences_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_CONTROL_SENTENCES)
 
 
-def test_tortugadsl::operation_constructor_exists():
-    assert callable(tortugaDSL::OPERATION.__init__)
+def test_tortugadsl_control_sentences_constructor_exists():
+    assert callable(tortugaDSL_CONTROL_SENTENCES.__init__)
 
 
-def test_tortugadsl::operation_constructor_args():
-    sig = inspect.signature(tortugaDSL::OPERATION.__init__)
+def test_tortugadsl_control_sentences_constructor_args():
+    sig = inspect.signature(tortugaDSL_CONTROL_SENTENCES.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::move_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::MOVE)
+def test_tortugadsl_move_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_MOVE)
 
 
-def test_tortugadsl::move_constructor_exists():
-    assert callable(tortugaDSL::MOVE.__init__)
+def test_tortugadsl_move_constructor_exists():
+    assert callable(tortugaDSL_MOVE.__init__)
 
 
-def test_tortugadsl::move_constructor_args():
-    sig = inspect.signature(tortugaDSL::MOVE.__init__)
+def test_tortugadsl_move_constructor_args():
+    sig = inspect.signature(tortugaDSL_MOVE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tortugadsl::sentence_is_not_abstract():
-    assert not inspect.isabstract(tortugaDSL::SENTENCE)
+def test_tortugadsl_sentence_is_not_abstract():
+    assert not inspect.isabstract(tortugaDSL_SENTENCE)
 
 
-def test_tortugadsl::sentence_constructor_exists():
-    assert callable(tortugaDSL::SENTENCE.__init__)
+def test_tortugadsl_sentence_constructor_exists():
+    assert callable(tortugaDSL_SENTENCE.__init__)
 
 
-def test_tortugadsl::sentence_constructor_args():
-    sig = inspect.signature(tortugaDSL::SENTENCE.__init__)
+def test_tortugadsl_sentence_constructor_args():
+    sig = inspect.signature(tortugaDSL_SENTENCE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -929,524 +929,509 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tortugaDSL::BOOLEAN::EXPRESSION_strategy = st.builds(
-    tortugaDSL::BOOLEAN::EXPRESSION,
+tortugaDSL_BOOLEAN_EXPRESSION_strategy = st.builds(
+    tortugaDSL_BOOLEAN_EXPRESSION,
 )
 FontStyleValues_strategy = st.builds(
     FontStyleValues,
 )
-tortugaDSL::ITALIC_strategy = st.builds(
-    tortugaDSL::ITALIC,
+tortugaDSL_PLAIN_strategy = st.builds(
+    tortugaDSL_PLAIN,
 )
-tortugaDSL::PLAIN_strategy = st.builds(
-    tortugaDSL::PLAIN,
+tortugaDSL_ITALIC_strategy = st.builds(
+    tortugaDSL_ITALIC,
 )
-tortugaDSL::BOLD_strategy = st.builds(
-    tortugaDSL::BOLD,
+tortugaDSL_BOLD_strategy = st.builds(
+    tortugaDSL_BOLD,
 )
-BOOLEAN::EXPRESSION_strategy = st.builds(
-    BOOLEAN::EXPRESSION,
+BOOLEAN_EXPRESSION_strategy = st.builds(
+    BOOLEAN_EXPRESSION,
 )
-tortugaDSL::GREATER::THAN_strategy = st.builds(
-    tortugaDSL::GREATER::THAN,
+tortugaDSL_GREATER_THAN_strategy = st.builds(
+    tortugaDSL_GREATER_THAN,
 )
-tortugaDSL::LESSER::THAN_strategy = st.builds(
-    tortugaDSL::LESSER::THAN,
+tortugaDSL_LESSER_THAN_strategy = st.builds(
+    tortugaDSL_LESSER_THAN,
 )
-tortugaDSL::EQUALS_strategy = st.builds(
-    tortugaDSL::EQUALS,
+tortugaDSL_EQUALS_strategy = st.builds(
+    tortugaDSL_EQUALS,
 )
 EXPRESSION_strategy = st.builds(
     EXPRESSION,
 )
-tortugaDSL::VALUE_strategy = st.builds(
-    tortugaDSL::VALUE,
+tortugaDSL_VALUE_strategy = st.builds(
+    tortugaDSL_VALUE,
     val=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-CONTROL::SENTENCES_strategy = st.builds(
-    CONTROL::SENTENCES,
+CONTROL_SENTENCES_strategy = st.builds(
+    CONTROL_SENTENCES,
 )
-tortugaDSL::TO_strategy = st.builds(
-    tortugaDSL::TO,
+tortugaDSL_TO_strategy = st.builds(
+    tortugaDSL_TO,
     name=
         safe_text
 )
-tortugaDSL::IF_strategy = st.builds(
-    tortugaDSL::IF,
+tortugaDSL_IF_strategy = st.builds(
+    tortugaDSL_IF,
 )
-tortugaDSL::REPEAT_strategy = st.builds(
-    tortugaDSL::REPEAT,
+tortugaDSL_REPEAT_strategy = st.builds(
+    tortugaDSL_REPEAT,
 )
 OPERATION_strategy = st.builds(
     OPERATION,
 )
-tortugaDSL::MULTIPLY_strategy = st.builds(
-    tortugaDSL::MULTIPLY,
+tortugaDSL_MULTIPLY_strategy = st.builds(
+    tortugaDSL_MULTIPLY,
 )
-tortugaDSL::DIVIDE_strategy = st.builds(
-    tortugaDSL::DIVIDE,
+tortugaDSL_DIVIDE_strategy = st.builds(
+    tortugaDSL_DIVIDE,
 )
-tortugaDSL::SUBTRACT_strategy = st.builds(
-    tortugaDSL::SUBTRACT,
+tortugaDSL_SUBTRACT_strategy = st.builds(
+    tortugaDSL_SUBTRACT,
 )
-tortugaDSL::SUM_strategy = st.builds(
-    tortugaDSL::SUM,
+tortugaDSL_SUM_strategy = st.builds(
+    tortugaDSL_SUM,
 )
 COLOREABLE_strategy = st.builds(
     COLOREABLE,
 )
-tortugaDSL::CANVAS::COLOR_strategy = st.builds(
-    tortugaDSL::CANVAS::COLOR,
+tortugaDSL_CANVAS_COLOR_strategy = st.builds(
+    tortugaDSL_CANVAS_COLOR,
 )
-tortugaDSL::PENCOLOR_strategy = st.builds(
-    tortugaDSL::PENCOLOR,
+tortugaDSL_PENCOLOR_strategy = st.builds(
+    tortugaDSL_PENCOLOR,
 )
-tortugaDSL::VARIABLE::REF_strategy = st.builds(
-    tortugaDSL::VARIABLE::REF,
+tortugaDSL_VARIABLE_REF_strategy = st.builds(
+    tortugaDSL_VARIABLE_REF,
 )
-tortugaDSL::COLOR::SPEC_strategy = st.builds(
-    tortugaDSL::COLOR::SPEC,
+tortugaDSL_COLOR_SPEC_strategy = st.builds(
+    tortugaDSL_COLOR_SPEC,
 )
 REFERENCIABLE_strategy = st.builds(
     REFERENCIABLE,
 )
-tortugaDSL::PARAM_strategy = st.builds(
-    tortugaDSL::PARAM,
+tortugaDSL_PARAM_strategy = st.builds(
+    tortugaDSL_PARAM,
 )
-tortugaDSL::REFERENCIABLE_strategy = st.builds(
-    tortugaDSL::REFERENCIABLE,
+tortugaDSL_REFERENCIABLE_strategy = st.builds(
+    tortugaDSL_REFERENCIABLE,
     name=
         safe_text
 )
-tortugaDSL::FontStyleValues_strategy = st.builds(
-    tortugaDSL::FontStyleValues,
+tortugaDSL_FontStyleValues_strategy = st.builds(
+    tortugaDSL_FontStyleValues,
 )
-FONT::SPEC_strategy = st.builds(
-    FONT::SPEC,
+FONT_SPEC_strategy = st.builds(
+    FONT_SPEC,
 )
-tortugaDSL::FONT::STYLE_strategy = st.builds(
-    tortugaDSL::FONT::STYLE,
+tortugaDSL_FONT_STYLE_strategy = st.builds(
+    tortugaDSL_FONT_STYLE,
 )
-tortugaDSL::FONT::SIZE_strategy = st.builds(
-    tortugaDSL::FONT::SIZE,
+tortugaDSL_FONT_SIZE_strategy = st.builds(
+    tortugaDSL_FONT_SIZE,
 )
-tortugaDSL::TortugaProgram_strategy = st.builds(
-    tortugaDSL::TortugaProgram,
+tortugaDSL_TortugaProgram_strategy = st.builds(
+    tortugaDSL_TortugaProgram,
 )
-DRAWING::SENTENCE_strategy = st.builds(
-    DRAWING::SENTENCE,
+DRAWING_SENTENCE_strategy = st.builds(
+    DRAWING_SENTENCE,
 )
-tortugaDSL::DRAW::STRING_strategy = st.builds(
-    tortugaDSL::DRAW::STRING,
+tortugaDSL_DRAW_STRING_strategy = st.builds(
+    tortugaDSL_DRAW_STRING,
     text=
         safe_text
 )
-tortugaDSL::FONT::SPEC_strategy = st.builds(
-    tortugaDSL::FONT::SPEC,
+tortugaDSL_PENUP_strategy = st.builds(
+    tortugaDSL_PENUP,
 )
-tortugaDSL::HOME_strategy = st.builds(
-    tortugaDSL::HOME,
+tortugaDSL_HOME_strategy = st.builds(
+    tortugaDSL_HOME,
 )
-tortugaDSL::PENUP_strategy = st.builds(
-    tortugaDSL::PENUP,
+tortugaDSL_CLEAR_strategy = st.builds(
+    tortugaDSL_CLEAR,
 )
-tortugaDSL::COLOREABLE_strategy = st.builds(
-    tortugaDSL::COLOREABLE,
+tortugaDSL_FONT_SPEC_strategy = st.builds(
+    tortugaDSL_FONT_SPEC,
+)
+tortugaDSL_COLOREABLE_strategy = st.builds(
+    tortugaDSL_COLOREABLE,
     color=
         safe_text
 )
-tortugaDSL::CLEAR_strategy = st.builds(
-    tortugaDSL::CLEAR,
-)
-tortugaDSL::PENDOWN_strategy = st.builds(
-    tortugaDSL::PENDOWN,
+tortugaDSL_PENDOWN_strategy = st.builds(
+    tortugaDSL_PENDOWN,
 )
 MOVE_strategy = st.builds(
     MOVE,
 )
-tortugaDSL::SET::Y_strategy = st.builds(
-    tortugaDSL::SET::Y,
+tortugaDSL_LEFT_strategy = st.builds(
+    tortugaDSL_LEFT,
 )
-tortugaDSL::LEFT_strategy = st.builds(
-    tortugaDSL::LEFT,
+tortugaDSL_SET_X_strategy = st.builds(
+    tortugaDSL_SET_X,
 )
-tortugaDSL::RIGHT_strategy = st.builds(
-    tortugaDSL::RIGHT,
+tortugaDSL_SET_Y_strategy = st.builds(
+    tortugaDSL_SET_Y,
 )
-tortugaDSL::SET::X_strategy = st.builds(
-    tortugaDSL::SET::X,
+tortugaDSL_RIGHT_strategy = st.builds(
+    tortugaDSL_RIGHT,
 )
-tortugaDSL::FORWARD_strategy = st.builds(
-    tortugaDSL::FORWARD,
+tortugaDSL_FORWARD_strategy = st.builds(
+    tortugaDSL_FORWARD,
 )
-tortugaDSL::EXPRESSION_strategy = st.builds(
-    tortugaDSL::EXPRESSION,
+tortugaDSL_EXPRESSION_strategy = st.builds(
+    tortugaDSL_EXPRESSION,
 )
 SENTENCE_strategy = st.builds(
     SENTENCE,
 )
-tortugaDSL::CONTROL::SENTENCES_strategy = st.builds(
-    tortugaDSL::CONTROL::SENTENCES,
+tortugaDSL_PROCEDURE_CALL_strategy = st.builds(
+    tortugaDSL_PROCEDURE_CALL,
 )
-tortugaDSL::MAKE_strategy = st.builds(
-    tortugaDSL::MAKE,
+tortugaDSL_MAKE_strategy = st.builds(
+    tortugaDSL_MAKE,
 )
-tortugaDSL::PROCEDURE::CALL_strategy = st.builds(
-    tortugaDSL::PROCEDURE::CALL,
+tortugaDSL_DRAWING_SENTENCE_strategy = st.builds(
+    tortugaDSL_DRAWING_SENTENCE,
 )
-tortugaDSL::DRAWING::SENTENCE_strategy = st.builds(
-    tortugaDSL::DRAWING::SENTENCE,
+tortugaDSL_CONTENT_strategy = st.builds(
+    tortugaDSL_CONTENT,
 )
-tortugaDSL::CONTENT_strategy = st.builds(
-    tortugaDSL::CONTENT,
+tortugaDSL_OPERATION_strategy = st.builds(
+    tortugaDSL_OPERATION,
 )
-tortugaDSL::OPERATION_strategy = st.builds(
-    tortugaDSL::OPERATION,
+tortugaDSL_CONTROL_SENTENCES_strategy = st.builds(
+    tortugaDSL_CONTROL_SENTENCES,
 )
-tortugaDSL::MOVE_strategy = st.builds(
-    tortugaDSL::MOVE,
+tortugaDSL_MOVE_strategy = st.builds(
+    tortugaDSL_MOVE,
 )
-tortugaDSL::SENTENCE_strategy = st.builds(
-    tortugaDSL::SENTENCE,
+tortugaDSL_SENTENCE_strategy = st.builds(
+    tortugaDSL_SENTENCE,
 )
 
-@given(instance=tortugaDSL::BOOLEAN::EXPRESSION_strategy)
+@given(instance=tortugaDSL_BOOLEAN_EXPRESSION_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::boolean::expression_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::BOOLEAN::EXPRESSION)
+def test_tortugadsl_boolean_expression_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_BOOLEAN_EXPRESSION)
 
 @given(instance=FontStyleValues_strategy)
 @settings(max_examples=50)
 def test_fontstylevalues_instantiation(instance):
     assert isinstance(instance, FontStyleValues)
 
-@given(instance=tortugaDSL::ITALIC_strategy)
+@given(instance=tortugaDSL_PLAIN_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::italic_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::ITALIC)
+def test_tortugadsl_plain_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_PLAIN)
 
-@given(instance=tortugaDSL::PLAIN_strategy)
+@given(instance=tortugaDSL_ITALIC_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::plain_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::PLAIN)
+def test_tortugadsl_italic_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_ITALIC)
 
-@given(instance=tortugaDSL::BOLD_strategy)
+@given(instance=tortugaDSL_BOLD_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::bold_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::BOLD)
+def test_tortugadsl_bold_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_BOLD)
 
-@given(instance=BOOLEAN::EXPRESSION_strategy)
+@given(instance=BOOLEAN_EXPRESSION_strategy)
 @settings(max_examples=50)
-def test_boolean::expression_instantiation(instance):
-    assert isinstance(instance, BOOLEAN::EXPRESSION)
+def test_boolean_expression_instantiation(instance):
+    assert isinstance(instance, BOOLEAN_EXPRESSION)
 
-@given(instance=tortugaDSL::GREATER::THAN_strategy)
+@given(instance=tortugaDSL_GREATER_THAN_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::greater::than_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::GREATER::THAN)
+def test_tortugadsl_greater_than_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_GREATER_THAN)
 
-@given(instance=tortugaDSL::LESSER::THAN_strategy)
+@given(instance=tortugaDSL_LESSER_THAN_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::lesser::than_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::LESSER::THAN)
+def test_tortugadsl_lesser_than_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_LESSER_THAN)
 
-@given(instance=tortugaDSL::EQUALS_strategy)
+@given(instance=tortugaDSL_EQUALS_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::equals_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::EQUALS)
+def test_tortugadsl_equals_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_EQUALS)
 
 @given(instance=EXPRESSION_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, EXPRESSION)
 
-@given(instance=tortugaDSL::VALUE_strategy)
+@given(instance=tortugaDSL_VALUE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::value_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::VALUE)
-
-@given(instance=tortugaDSL::VALUE_strategy)
-def test_tortugadsl::value_val_type(instance):
-    assert isinstance(instance.val, float)
+def test_tortugadsl_value_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_VALUE)
 
 
-@given(instance=tortugaDSL::VALUE_strategy)
-def test_tortugadsl::value_val_setter(instance):
+
+@given(instance=tortugaDSL_VALUE_strategy)
+def test_tortugadsl_value_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=CONTROL::SENTENCES_strategy)
+@given(instance=CONTROL_SENTENCES_strategy)
 @settings(max_examples=50)
-def test_control::sentences_instantiation(instance):
-    assert isinstance(instance, CONTROL::SENTENCES)
+def test_control_sentences_instantiation(instance):
+    assert isinstance(instance, CONTROL_SENTENCES)
 
-@given(instance=tortugaDSL::TO_strategy)
+@given(instance=tortugaDSL_TO_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::to_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::TO)
-
-@given(instance=tortugaDSL::TO_strategy)
-def test_tortugadsl::to_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tortugadsl_to_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_TO)
 
 
-@given(instance=tortugaDSL::TO_strategy)
-def test_tortugadsl::to_name_setter(instance):
+
+@given(instance=tortugaDSL_TO_strategy)
+def test_tortugadsl_to_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tortugaDSL::IF_strategy)
+@given(instance=tortugaDSL_IF_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::if_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::IF)
+def test_tortugadsl_if_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_IF)
 
-@given(instance=tortugaDSL::REPEAT_strategy)
+@given(instance=tortugaDSL_REPEAT_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::repeat_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::REPEAT)
+def test_tortugadsl_repeat_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_REPEAT)
 
 @given(instance=OPERATION_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, OPERATION)
 
-@given(instance=tortugaDSL::MULTIPLY_strategy)
+@given(instance=tortugaDSL_MULTIPLY_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::multiply_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::MULTIPLY)
+def test_tortugadsl_multiply_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_MULTIPLY)
 
-@given(instance=tortugaDSL::DIVIDE_strategy)
+@given(instance=tortugaDSL_DIVIDE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::divide_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::DIVIDE)
+def test_tortugadsl_divide_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_DIVIDE)
 
-@given(instance=tortugaDSL::SUBTRACT_strategy)
+@given(instance=tortugaDSL_SUBTRACT_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::subtract_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::SUBTRACT)
+def test_tortugadsl_subtract_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_SUBTRACT)
 
-@given(instance=tortugaDSL::SUM_strategy)
+@given(instance=tortugaDSL_SUM_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::sum_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::SUM)
+def test_tortugadsl_sum_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_SUM)
 
 @given(instance=COLOREABLE_strategy)
 @settings(max_examples=50)
 def test_coloreable_instantiation(instance):
     assert isinstance(instance, COLOREABLE)
 
-@given(instance=tortugaDSL::CANVAS::COLOR_strategy)
+@given(instance=tortugaDSL_CANVAS_COLOR_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::canvas::color_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::CANVAS::COLOR)
+def test_tortugadsl_canvas_color_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_CANVAS_COLOR)
 
-@given(instance=tortugaDSL::PENCOLOR_strategy)
+@given(instance=tortugaDSL_PENCOLOR_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::pencolor_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::PENCOLOR)
+def test_tortugadsl_pencolor_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_PENCOLOR)
 
-@given(instance=tortugaDSL::VARIABLE::REF_strategy)
+@given(instance=tortugaDSL_VARIABLE_REF_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::variable::ref_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::VARIABLE::REF)
+def test_tortugadsl_variable_ref_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_VARIABLE_REF)
 
-@given(instance=tortugaDSL::COLOR::SPEC_strategy)
+@given(instance=tortugaDSL_COLOR_SPEC_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::color::spec_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::COLOR::SPEC)
+def test_tortugadsl_color_spec_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_COLOR_SPEC)
 
 @given(instance=REFERENCIABLE_strategy)
 @settings(max_examples=50)
 def test_referenciable_instantiation(instance):
     assert isinstance(instance, REFERENCIABLE)
 
-@given(instance=tortugaDSL::PARAM_strategy)
+@given(instance=tortugaDSL_PARAM_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::param_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::PARAM)
+def test_tortugadsl_param_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_PARAM)
 
-@given(instance=tortugaDSL::REFERENCIABLE_strategy)
+@given(instance=tortugaDSL_REFERENCIABLE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::referenciable_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::REFERENCIABLE)
-
-@given(instance=tortugaDSL::REFERENCIABLE_strategy)
-def test_tortugadsl::referenciable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tortugadsl_referenciable_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_REFERENCIABLE)
 
 
-@given(instance=tortugaDSL::REFERENCIABLE_strategy)
-def test_tortugadsl::referenciable_name_setter(instance):
+
+@given(instance=tortugaDSL_REFERENCIABLE_strategy)
+def test_tortugadsl_referenciable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tortugaDSL::FontStyleValues_strategy)
+@given(instance=tortugaDSL_FontStyleValues_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::fontstylevalues_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::FontStyleValues)
+def test_tortugadsl_fontstylevalues_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_FontStyleValues)
 
-@given(instance=FONT::SPEC_strategy)
+@given(instance=FONT_SPEC_strategy)
 @settings(max_examples=50)
-def test_font::spec_instantiation(instance):
-    assert isinstance(instance, FONT::SPEC)
+def test_font_spec_instantiation(instance):
+    assert isinstance(instance, FONT_SPEC)
 
-@given(instance=tortugaDSL::FONT::STYLE_strategy)
+@given(instance=tortugaDSL_FONT_STYLE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::font::style_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::FONT::STYLE)
+def test_tortugadsl_font_style_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_FONT_STYLE)
 
-@given(instance=tortugaDSL::FONT::SIZE_strategy)
+@given(instance=tortugaDSL_FONT_SIZE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::font::size_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::FONT::SIZE)
+def test_tortugadsl_font_size_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_FONT_SIZE)
 
-@given(instance=tortugaDSL::TortugaProgram_strategy)
+@given(instance=tortugaDSL_TortugaProgram_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::tortugaprogram_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::TortugaProgram)
+def test_tortugadsl_tortugaprogram_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_TortugaProgram)
 
-@given(instance=DRAWING::SENTENCE_strategy)
+@given(instance=DRAWING_SENTENCE_strategy)
 @settings(max_examples=50)
-def test_drawing::sentence_instantiation(instance):
-    assert isinstance(instance, DRAWING::SENTENCE)
+def test_drawing_sentence_instantiation(instance):
+    assert isinstance(instance, DRAWING_SENTENCE)
 
-@given(instance=tortugaDSL::DRAW::STRING_strategy)
+@given(instance=tortugaDSL_DRAW_STRING_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::draw::string_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::DRAW::STRING)
-
-@given(instance=tortugaDSL::DRAW::STRING_strategy)
-def test_tortugadsl::draw::string_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_tortugadsl_draw_string_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_DRAW_STRING)
 
 
-@given(instance=tortugaDSL::DRAW::STRING_strategy)
-def test_tortugadsl::draw::string_text_setter(instance):
+
+@given(instance=tortugaDSL_DRAW_STRING_strategy)
+def test_tortugadsl_draw_string_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=tortugaDSL::FONT::SPEC_strategy)
+@given(instance=tortugaDSL_PENUP_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::font::spec_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::FONT::SPEC)
+def test_tortugadsl_penup_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_PENUP)
 
-@given(instance=tortugaDSL::HOME_strategy)
+@given(instance=tortugaDSL_HOME_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::home_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::HOME)
+def test_tortugadsl_home_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_HOME)
 
-@given(instance=tortugaDSL::PENUP_strategy)
+@given(instance=tortugaDSL_CLEAR_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::penup_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::PENUP)
+def test_tortugadsl_clear_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_CLEAR)
 
-@given(instance=tortugaDSL::COLOREABLE_strategy)
+@given(instance=tortugaDSL_FONT_SPEC_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::coloreable_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::COLOREABLE)
+def test_tortugadsl_font_spec_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_FONT_SPEC)
 
-@given(instance=tortugaDSL::COLOREABLE_strategy)
-def test_tortugadsl::coloreable_color_type(instance):
-    assert isinstance(instance.color, str)
+@given(instance=tortugaDSL_COLOREABLE_strategy)
+@settings(max_examples=50)
+def test_tortugadsl_coloreable_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_COLOREABLE)
 
 
-@given(instance=tortugaDSL::COLOREABLE_strategy)
-def test_tortugadsl::coloreable_color_setter(instance):
+
+@given(instance=tortugaDSL_COLOREABLE_strategy)
+def test_tortugadsl_coloreable_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=tortugaDSL::CLEAR_strategy)
+@given(instance=tortugaDSL_PENDOWN_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::clear_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::CLEAR)
-
-@given(instance=tortugaDSL::PENDOWN_strategy)
-@settings(max_examples=50)
-def test_tortugadsl::pendown_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::PENDOWN)
+def test_tortugadsl_pendown_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_PENDOWN)
 
 @given(instance=MOVE_strategy)
 @settings(max_examples=50)
 def test_move_instantiation(instance):
     assert isinstance(instance, MOVE)
 
-@given(instance=tortugaDSL::SET::Y_strategy)
+@given(instance=tortugaDSL_LEFT_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::set::y_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::SET::Y)
+def test_tortugadsl_left_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_LEFT)
 
-@given(instance=tortugaDSL::LEFT_strategy)
+@given(instance=tortugaDSL_SET_X_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::left_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::LEFT)
+def test_tortugadsl_set_x_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_SET_X)
 
-@given(instance=tortugaDSL::RIGHT_strategy)
+@given(instance=tortugaDSL_SET_Y_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::right_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::RIGHT)
+def test_tortugadsl_set_y_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_SET_Y)
 
-@given(instance=tortugaDSL::SET::X_strategy)
+@given(instance=tortugaDSL_RIGHT_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::set::x_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::SET::X)
+def test_tortugadsl_right_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_RIGHT)
 
-@given(instance=tortugaDSL::FORWARD_strategy)
+@given(instance=tortugaDSL_FORWARD_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::forward_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::FORWARD)
+def test_tortugadsl_forward_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_FORWARD)
 
-@given(instance=tortugaDSL::EXPRESSION_strategy)
+@given(instance=tortugaDSL_EXPRESSION_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::expression_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::EXPRESSION)
+def test_tortugadsl_expression_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_EXPRESSION)
 
 @given(instance=SENTENCE_strategy)
 @settings(max_examples=50)
 def test_sentence_instantiation(instance):
     assert isinstance(instance, SENTENCE)
 
-@given(instance=tortugaDSL::CONTROL::SENTENCES_strategy)
+@given(instance=tortugaDSL_PROCEDURE_CALL_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::control::sentences_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::CONTROL::SENTENCES)
+def test_tortugadsl_procedure_call_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_PROCEDURE_CALL)
 
-@given(instance=tortugaDSL::MAKE_strategy)
+@given(instance=tortugaDSL_MAKE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::make_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::MAKE)
+def test_tortugadsl_make_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_MAKE)
 
-@given(instance=tortugaDSL::PROCEDURE::CALL_strategy)
+@given(instance=tortugaDSL_DRAWING_SENTENCE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::procedure::call_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::PROCEDURE::CALL)
+def test_tortugadsl_drawing_sentence_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_DRAWING_SENTENCE)
 
-@given(instance=tortugaDSL::DRAWING::SENTENCE_strategy)
+@given(instance=tortugaDSL_CONTENT_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::drawing::sentence_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::DRAWING::SENTENCE)
+def test_tortugadsl_content_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_CONTENT)
 
-@given(instance=tortugaDSL::CONTENT_strategy)
+@given(instance=tortugaDSL_OPERATION_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::content_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::CONTENT)
+def test_tortugadsl_operation_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_OPERATION)
 
-@given(instance=tortugaDSL::OPERATION_strategy)
+@given(instance=tortugaDSL_CONTROL_SENTENCES_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::operation_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::OPERATION)
+def test_tortugadsl_control_sentences_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_CONTROL_SENTENCES)
 
-@given(instance=tortugaDSL::MOVE_strategy)
+@given(instance=tortugaDSL_MOVE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::move_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::MOVE)
+def test_tortugadsl_move_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_MOVE)
 
-@given(instance=tortugaDSL::SENTENCE_strategy)
+@given(instance=tortugaDSL_SENTENCE_strategy)
 @settings(max_examples=50)
-def test_tortugadsl::sentence_instantiation(instance):
-    assert isinstance(instance, tortugaDSL::SENTENCE)
+def test_tortugadsl_sentence_instantiation(instance):
+    assert isinstance(instance, tortugaDSL_SENTENCE)

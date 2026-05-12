@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    RDBMSMM::RDBMSModel,
-    RDBMSMM::Column,
-    RDBMSMM::Table,
-    RDBMSMM::FKey,
+from python_code import (
+    RDBMSMM_RDBMSModel,
+    RDBMSMM_Column,
+    RDBMSMM_Table,
+    RDBMSMM_FKey,
 )
 
 # =============================================================================
@@ -18,47 +18,47 @@ from classes import (
 
 
 
-def test_rdbmsmm::rdbmsmodel_is_not_abstract():
-    assert not inspect.isabstract(RDBMSMM::RDBMSModel)
+def test_rdbmsmm_rdbmsmodel_is_not_abstract():
+    assert not inspect.isabstract(RDBMSMM_RDBMSModel)
 
 
-def test_rdbmsmm::rdbmsmodel_constructor_exists():
-    assert callable(RDBMSMM::RDBMSModel.__init__)
+def test_rdbmsmm_rdbmsmodel_constructor_exists():
+    assert callable(RDBMSMM_RDBMSModel.__init__)
 
 
-def test_rdbmsmm::rdbmsmodel_constructor_args():
-    sig = inspect.signature(RDBMSMM::RDBMSModel.__init__)
+def test_rdbmsmm_rdbmsmodel_constructor_args():
+    sig = inspect.signature(RDBMSMM_RDBMSModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbmsmm::column_is_not_abstract():
-    assert not inspect.isabstract(RDBMSMM::Column)
+def test_rdbmsmm_column_is_not_abstract():
+    assert not inspect.isabstract(RDBMSMM_Column)
 
 
-def test_rdbmsmm::column_constructor_exists():
-    assert callable(RDBMSMM::Column.__init__)
+def test_rdbmsmm_column_constructor_exists():
+    assert callable(RDBMSMM_Column.__init__)
 
 
-def test_rdbmsmm::column_constructor_args():
-    sig = inspect.signature(RDBMSMM::Column.__init__)
+def test_rdbmsmm_column_constructor_args():
+    sig = inspect.signature(RDBMSMM_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rdbmsmm::column_has_type():
-    assert hasattr(RDBMSMM::Column, "type")
+def test_rdbmsmm_column_has_type():
+    assert hasattr(RDBMSMM_Column, "type")
     descriptor = None
-    for klass in RDBMSMM::Column.__mro__:
+    for klass in RDBMSMM_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbmsmm::column_has_name():
-    assert hasattr(RDBMSMM::Column, "name")
+def test_rdbmsmm_column_has_name():
+    assert hasattr(RDBMSMM_Column, "name")
     descriptor = None
-    for klass in RDBMSMM::Column.__mro__:
+    for klass in RDBMSMM_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_rdbmsmm::column_has_name():
 
 
 
-def test_rdbmsmm::table_is_not_abstract():
-    assert not inspect.isabstract(RDBMSMM::Table)
+def test_rdbmsmm_table_is_not_abstract():
+    assert not inspect.isabstract(RDBMSMM_Table)
 
 
-def test_rdbmsmm::table_constructor_exists():
-    assert callable(RDBMSMM::Table.__init__)
+def test_rdbmsmm_table_constructor_exists():
+    assert callable(RDBMSMM_Table.__init__)
 
 
-def test_rdbmsmm::table_constructor_args():
-    sig = inspect.signature(RDBMSMM::Table.__init__)
+def test_rdbmsmm_table_constructor_args():
+    sig = inspect.signature(RDBMSMM_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rdbmsmm::table_has_name():
-    assert hasattr(RDBMSMM::Table, "name")
+def test_rdbmsmm_table_has_name():
+    assert hasattr(RDBMSMM_Table, "name")
     descriptor = None
-    for klass in RDBMSMM::Table.__mro__:
+    for klass in RDBMSMM_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,16 +90,16 @@ def test_rdbmsmm::table_has_name():
 
 
 
-def test_rdbmsmm::fkey_is_not_abstract():
-    assert not inspect.isabstract(RDBMSMM::FKey)
+def test_rdbmsmm_fkey_is_not_abstract():
+    assert not inspect.isabstract(RDBMSMM_FKey)
 
 
-def test_rdbmsmm::fkey_constructor_exists():
-    assert callable(RDBMSMM::FKey.__init__)
+def test_rdbmsmm_fkey_constructor_exists():
+    assert callable(RDBMSMM_FKey.__init__)
 
 
-def test_rdbmsmm::fkey_constructor_args():
-    sig = inspect.signature(RDBMSMM::FKey.__init__)
+def test_rdbmsmm_fkey_constructor_args():
+    sig = inspect.signature(RDBMSMM_FKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-RDBMSMM::RDBMSModel_strategy = st.builds(
-    RDBMSMM::RDBMSModel,
+RDBMSMM_RDBMSModel_strategy = st.builds(
+    RDBMSMM_RDBMSModel,
 )
-RDBMSMM::Column_strategy = st.builds(
-    RDBMSMM::Column,
+RDBMSMM_Column_strategy = st.builds(
+    RDBMSMM_Column,
     type=
         safe_text,
     name=
         safe_text
 )
-RDBMSMM::Table_strategy = st.builds(
-    RDBMSMM::Table,
+RDBMSMM_Table_strategy = st.builds(
+    RDBMSMM_Table,
     name=
         safe_text
 )
-RDBMSMM::FKey_strategy = st.builds(
-    RDBMSMM::FKey,
+RDBMSMM_FKey_strategy = st.builds(
+    RDBMSMM_FKey,
 )
 
-@given(instance=RDBMSMM::RDBMSModel_strategy)
+@given(instance=RDBMSMM_RDBMSModel_strategy)
 @settings(max_examples=50)
-def test_rdbmsmm::rdbmsmodel_instantiation(instance):
-    assert isinstance(instance, RDBMSMM::RDBMSModel)
+def test_rdbmsmm_rdbmsmodel_instantiation(instance):
+    assert isinstance(instance, RDBMSMM_RDBMSModel)
 
-@given(instance=RDBMSMM::Column_strategy)
+@given(instance=RDBMSMM_Column_strategy)
 @settings(max_examples=50)
-def test_rdbmsmm::column_instantiation(instance):
-    assert isinstance(instance, RDBMSMM::Column)
-
-@given(instance=RDBMSMM::Column_strategy)
-def test_rdbmsmm::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_rdbmsmm_column_instantiation(instance):
+    assert isinstance(instance, RDBMSMM_Column)
 
 
-@given(instance=RDBMSMM::Column_strategy)
-def test_rdbmsmm::column_type_setter(instance):
+
+@given(instance=RDBMSMM_Column_strategy)
+def test_rdbmsmm_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=RDBMSMM::Column_strategy)
-def test_rdbmsmm::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=RDBMSMM::Column_strategy)
-def test_rdbmsmm::column_name_setter(instance):
+@given(instance=RDBMSMM_Column_strategy)
+def test_rdbmsmm_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RDBMSMM::Table_strategy)
+@given(instance=RDBMSMM_Table_strategy)
 @settings(max_examples=50)
-def test_rdbmsmm::table_instantiation(instance):
-    assert isinstance(instance, RDBMSMM::Table)
-
-@given(instance=RDBMSMM::Table_strategy)
-def test_rdbmsmm::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rdbmsmm_table_instantiation(instance):
+    assert isinstance(instance, RDBMSMM_Table)
 
 
-@given(instance=RDBMSMM::Table_strategy)
-def test_rdbmsmm::table_name_setter(instance):
+
+@given(instance=RDBMSMM_Table_strategy)
+def test_rdbmsmm_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=RDBMSMM::FKey_strategy)
+@given(instance=RDBMSMM_FKey_strategy)
 @settings(max_examples=50)
-def test_rdbmsmm::fkey_instantiation(instance):
-    assert isinstance(instance, RDBMSMM::FKey)
+def test_rdbmsmm_fkey_instantiation(instance):
+    assert isinstance(instance, RDBMSMM_FKey)

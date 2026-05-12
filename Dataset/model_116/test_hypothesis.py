@@ -3,116 +3,116 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dsl::DefaultValue,
-    dsl::AnnotationTypeMemberDeclaration,
-    dsl::AnnotationTypeBody,
-    dsl::MemberValueArrayInitializer,
+from python_code import (
+    dsl_DefaultValue,
+    dsl_AnnotationTypeMemberDeclaration,
+    dsl_AnnotationTypeBody,
+    dsl_MemberValueArrayInitializer,
     DefaultValue,
-    dsl::MemberValuePair,
-    dsl::MemberValue,
-    dsl::MemberValuePairs,
-    dsl::Annotation,
-    dsl::StatementExpressionList,
-    dsl::ForUpdate,
-    dsl::ForInit,
-    dsl::SwitchLabel,
-    dsl::LocalVariableDeclaration,
-    dsl::TryStatement,
-    dsl::SynchronizedStatement,
-    dsl::ThrowStatement,
-    dsl::ReturnStatement,
-    dsl::ContinueStatement,
-    dsl::BreakStatement,
-    dsl::ForStatement,
-    dsl::DoStatement,
-    dsl::WhileStatement,
-    dsl::IfStatement,
-    dsl::SwitchStatement,
-    dsl::StatementExpression,
-    dsl::AssertStatement,
-    dsl::LabeledStatement,
-    dsl::ArrayDimsAndInits,
-    dsl::BaseLiteral,
-    dsl::ArgumentList,
-    dsl::BooleanLiteral,
-    dsl::FloatLiteral,
-    dsl::IntegerLiteral,
-    dsl::SignedIntLiteral,
-    dsl::UnsignedIntLiteral,
-    dsl::MemberSelector,
-    dsl::DecimalNumber,
-    dsl::PrimarySuffix,
-    dsl::AllocationExpression,
-    dsl::PrimaryPrefix,
-    dsl::PreDecrementExpression,
-    dsl::PreIncrementExpression,
-    dsl::EObject,
-    dsl::Literal,
-    dsl::CastLookahead,
-    dsl::PostfixExpression,
-    dsl::CastExpression,
-    dsl::UnaryExpressionNotPlusMinus,
-    dsl::UnaryExpression,
-    dsl::MultiplicativeExpression,
-    dsl::AdditiveExpression,
-    dsl::ShiftExpression,
-    dsl::RelationalExpression,
-    dsl::InstanceOfExpression,
-    dsl::EqualityExpression,
-    dsl::AndExpression,
-    dsl::ExclusiveOrExpression,
-    dsl::InclusiveOrExpression,
-    dsl::ConditionalAndExpression,
+    dsl_MemberValuePair,
+    dsl_MemberValue,
+    dsl_MemberValuePairs,
+    dsl_Annotation,
+    dsl_StatementExpressionList,
+    dsl_ForUpdate,
+    dsl_ForInit,
+    dsl_SwitchLabel,
+    dsl_LocalVariableDeclaration,
+    dsl_TryStatement,
+    dsl_SynchronizedStatement,
+    dsl_ThrowStatement,
+    dsl_ReturnStatement,
+    dsl_ContinueStatement,
+    dsl_BreakStatement,
+    dsl_ForStatement,
+    dsl_DoStatement,
+    dsl_WhileStatement,
+    dsl_IfStatement,
+    dsl_SwitchStatement,
+    dsl_StatementExpression,
+    dsl_AssertStatement,
+    dsl_LabeledStatement,
+    dsl_ArrayDimsAndInits,
+    dsl_BaseLiteral,
+    dsl_ArgumentList,
+    dsl_BooleanLiteral,
+    dsl_FloatLiteral,
+    dsl_IntegerLiteral,
+    dsl_SignedIntLiteral,
+    dsl_UnsignedIntLiteral,
+    dsl_MemberSelector,
+    dsl_DecimalNumber,
+    dsl_PrimarySuffix,
+    dsl_AllocationExpression,
+    dsl_PrimaryPrefix,
+    dsl_PreDecrementExpression,
+    dsl_PreIncrementExpression,
+    dsl_EObject,
+    dsl_Literal,
+    dsl_CastLookahead,
+    dsl_PostfixExpression,
+    dsl_CastExpression,
+    dsl_UnaryExpressionNotPlusMinus,
+    dsl_UnaryExpression,
+    dsl_MultiplicativeExpression,
+    dsl_AdditiveExpression,
+    dsl_ShiftExpression,
+    dsl_RelationalExpression,
+    dsl_InstanceOfExpression,
+    dsl_EqualityExpression,
+    dsl_AndExpression,
+    dsl_ExclusiveOrExpression,
+    dsl_InclusiveOrExpression,
+    dsl_ConditionalAndExpression,
     IfStatement,
-    dsl::ConditionalOrExpression,
-    dsl::Statement,
-    dsl::ConditionalExpression,
-    dsl::WildcardBounds,
-    dsl::TypeArgument,
-    dsl::TypeArguments,
-    dsl::ReferenceType,
-    dsl::PrimaryExpression,
-    dsl::VariableDeclaratorId,
-    dsl::VariableDeclarator,
-    dsl::FormalParameter,
-    dsl::Block,
-    dsl::MethodDeclarator,
-    dsl::ResultType,
-    dsl::BlockStatement,
-    dsl::ExplicitConstructorInvocation,
-    dsl::NameList,
-    dsl::FormalParameters,
-    dsl::Expression,
-    dsl::ArrayInitializer,
-    dsl::VariableInitializer,
-    dsl::Type,
-    dsl::FieldDeclaration,
-    dsl::MethodOrCtorDeclaration,
-    dsl::Initializer,
-    dsl::TypeBound,
-    dsl::TypeParameter,
-    dsl::Arguments,
-    dsl::ClassOrInterfaceBodyDeclaration,
-    dsl::EnumConstant,
-    dsl::EnumBody,
-    dsl::ClassOrInterfaceType,
-    dsl::ClassOrInterfaceBody,
-    dsl::ImplementsList,
-    dsl::ExtendsList,
-    dsl::TypeParameters,
-    dsl::AnnotationTypeDeclaration,
-    dsl::EnumDeclaration,
-    dsl::ClassOrInterfaceDeclaration,
-    dsl::TypeBodyModifier,
-    dsl::CommonModifier,
-    dsl::Name,
-    dsl::TypeDeclaration,
-    dsl::ImportDeclaration,
-    dsl::PackageDeclaration,
-    dsl::CompilationUnit,
+    dsl_ConditionalOrExpression,
+    dsl_Statement,
+    dsl_ConditionalExpression,
+    dsl_WildcardBounds,
+    dsl_TypeArgument,
+    dsl_TypeArguments,
+    dsl_ReferenceType,
+    dsl_PrimaryExpression,
+    dsl_VariableDeclaratorId,
+    dsl_VariableDeclarator,
+    dsl_FormalParameter,
+    dsl_Block,
+    dsl_MethodDeclarator,
+    dsl_ResultType,
+    dsl_BlockStatement,
+    dsl_ExplicitConstructorInvocation,
+    dsl_NameList,
+    dsl_FormalParameters,
+    dsl_Expression,
+    dsl_ArrayInitializer,
+    dsl_VariableInitializer,
+    dsl_Type,
+    dsl_FieldDeclaration,
+    dsl_MethodOrCtorDeclaration,
+    dsl_Initializer,
+    dsl_TypeBound,
+    dsl_TypeParameter,
+    dsl_Arguments,
+    dsl_ClassOrInterfaceBodyDeclaration,
+    dsl_EnumConstant,
+    dsl_EnumBody,
+    dsl_ClassOrInterfaceType,
+    dsl_ClassOrInterfaceBody,
+    dsl_ImplementsList,
+    dsl_ExtendsList,
+    dsl_TypeParameters,
+    dsl_AnnotationTypeDeclaration,
+    dsl_EnumDeclaration,
+    dsl_ClassOrInterfaceDeclaration,
+    dsl_TypeBodyModifier,
+    dsl_CommonModifier,
+    dsl_Name,
+    dsl_TypeDeclaration,
+    dsl_ImportDeclaration,
+    dsl_PackageDeclaration,
+    dsl_CompilationUnit,
     Visibility,
 )
 
@@ -122,37 +122,37 @@ from classes import (
 
 
 
-def test_dsl::defaultvalue_is_not_abstract():
-    assert not inspect.isabstract(dsl::DefaultValue)
+def test_dsl_defaultvalue_is_not_abstract():
+    assert not inspect.isabstract(dsl_DefaultValue)
 
 
-def test_dsl::defaultvalue_constructor_exists():
-    assert callable(dsl::DefaultValue.__init__)
+def test_dsl_defaultvalue_constructor_exists():
+    assert callable(dsl_DefaultValue.__init__)
 
 
-def test_dsl::defaultvalue_constructor_args():
-    sig = inspect.signature(dsl::DefaultValue.__init__)
+def test_dsl_defaultvalue_constructor_args():
+    sig = inspect.signature(dsl_DefaultValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::annotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::AnnotationTypeMemberDeclaration)
+def test_dsl_annotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_AnnotationTypeMemberDeclaration)
 
 
-def test_dsl::annotationtypememberdeclaration_constructor_exists():
-    assert callable(dsl::AnnotationTypeMemberDeclaration.__init__)
+def test_dsl_annotationtypememberdeclaration_constructor_exists():
+    assert callable(dsl_AnnotationTypeMemberDeclaration.__init__)
 
 
-def test_dsl::annotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(dsl::AnnotationTypeMemberDeclaration.__init__)
+def test_dsl_annotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(dsl_AnnotationTypeMemberDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::annotationtypememberdeclaration_has_id():
-    assert hasattr(dsl::AnnotationTypeMemberDeclaration, "id")
+def test_dsl_annotationtypememberdeclaration_has_id():
+    assert hasattr(dsl_AnnotationTypeMemberDeclaration, "id")
     descriptor = None
-    for klass in dsl::AnnotationTypeMemberDeclaration.__mro__:
+    for klass in dsl_AnnotationTypeMemberDeclaration.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -160,30 +160,30 @@ def test_dsl::annotationtypememberdeclaration_has_id():
 
 
 
-def test_dsl::annotationtypebody_is_not_abstract():
-    assert not inspect.isabstract(dsl::AnnotationTypeBody)
+def test_dsl_annotationtypebody_is_not_abstract():
+    assert not inspect.isabstract(dsl_AnnotationTypeBody)
 
 
-def test_dsl::annotationtypebody_constructor_exists():
-    assert callable(dsl::AnnotationTypeBody.__init__)
+def test_dsl_annotationtypebody_constructor_exists():
+    assert callable(dsl_AnnotationTypeBody.__init__)
 
 
-def test_dsl::annotationtypebody_constructor_args():
-    sig = inspect.signature(dsl::AnnotationTypeBody.__init__)
+def test_dsl_annotationtypebody_constructor_args():
+    sig = inspect.signature(dsl_AnnotationTypeBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::membervaluearrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(dsl::MemberValueArrayInitializer)
+def test_dsl_membervaluearrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(dsl_MemberValueArrayInitializer)
 
 
-def test_dsl::membervaluearrayinitializer_constructor_exists():
-    assert callable(dsl::MemberValueArrayInitializer.__init__)
+def test_dsl_membervaluearrayinitializer_constructor_exists():
+    assert callable(dsl_MemberValueArrayInitializer.__init__)
 
 
-def test_dsl::membervaluearrayinitializer_constructor_args():
-    sig = inspect.signature(dsl::MemberValueArrayInitializer.__init__)
+def test_dsl_membervaluearrayinitializer_constructor_args():
+    sig = inspect.signature(dsl_MemberValueArrayInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -202,23 +202,23 @@ def test_defaultvalue_constructor_args():
 
 
 
-def test_dsl::membervaluepair_is_not_abstract():
-    assert not inspect.isabstract(dsl::MemberValuePair)
+def test_dsl_membervaluepair_is_not_abstract():
+    assert not inspect.isabstract(dsl_MemberValuePair)
 
 
-def test_dsl::membervaluepair_constructor_exists():
-    assert callable(dsl::MemberValuePair.__init__)
+def test_dsl_membervaluepair_constructor_exists():
+    assert callable(dsl_MemberValuePair.__init__)
 
 
-def test_dsl::membervaluepair_constructor_args():
-    sig = inspect.signature(dsl::MemberValuePair.__init__)
+def test_dsl_membervaluepair_constructor_args():
+    sig = inspect.signature(dsl_MemberValuePair.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::membervaluepair_has_id():
-    assert hasattr(dsl::MemberValuePair, "id")
+def test_dsl_membervaluepair_has_id():
+    assert hasattr(dsl_MemberValuePair, "id")
     descriptor = None
-    for klass in dsl::MemberValuePair.__mro__:
+    for klass in dsl_MemberValuePair.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -226,107 +226,107 @@ def test_dsl::membervaluepair_has_id():
 
 
 
-def test_dsl::membervalue_is_not_abstract():
-    assert not inspect.isabstract(dsl::MemberValue)
+def test_dsl_membervalue_is_not_abstract():
+    assert not inspect.isabstract(dsl_MemberValue)
 
 
-def test_dsl::membervalue_constructor_exists():
-    assert callable(dsl::MemberValue.__init__)
+def test_dsl_membervalue_constructor_exists():
+    assert callable(dsl_MemberValue.__init__)
 
 
-def test_dsl::membervalue_constructor_args():
-    sig = inspect.signature(dsl::MemberValue.__init__)
+def test_dsl_membervalue_constructor_args():
+    sig = inspect.signature(dsl_MemberValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::membervaluepairs_is_not_abstract():
-    assert not inspect.isabstract(dsl::MemberValuePairs)
+def test_dsl_membervaluepairs_is_not_abstract():
+    assert not inspect.isabstract(dsl_MemberValuePairs)
 
 
-def test_dsl::membervaluepairs_constructor_exists():
-    assert callable(dsl::MemberValuePairs.__init__)
+def test_dsl_membervaluepairs_constructor_exists():
+    assert callable(dsl_MemberValuePairs.__init__)
 
 
-def test_dsl::membervaluepairs_constructor_args():
-    sig = inspect.signature(dsl::MemberValuePairs.__init__)
+def test_dsl_membervaluepairs_constructor_args():
+    sig = inspect.signature(dsl_MemberValuePairs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::annotation_is_not_abstract():
-    assert not inspect.isabstract(dsl::Annotation)
+def test_dsl_annotation_is_not_abstract():
+    assert not inspect.isabstract(dsl_Annotation)
 
 
-def test_dsl::annotation_constructor_exists():
-    assert callable(dsl::Annotation.__init__)
+def test_dsl_annotation_constructor_exists():
+    assert callable(dsl_Annotation.__init__)
 
 
-def test_dsl::annotation_constructor_args():
-    sig = inspect.signature(dsl::Annotation.__init__)
+def test_dsl_annotation_constructor_args():
+    sig = inspect.signature(dsl_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::statementexpressionlist_is_not_abstract():
-    assert not inspect.isabstract(dsl::StatementExpressionList)
+def test_dsl_statementexpressionlist_is_not_abstract():
+    assert not inspect.isabstract(dsl_StatementExpressionList)
 
 
-def test_dsl::statementexpressionlist_constructor_exists():
-    assert callable(dsl::StatementExpressionList.__init__)
+def test_dsl_statementexpressionlist_constructor_exists():
+    assert callable(dsl_StatementExpressionList.__init__)
 
 
-def test_dsl::statementexpressionlist_constructor_args():
-    sig = inspect.signature(dsl::StatementExpressionList.__init__)
+def test_dsl_statementexpressionlist_constructor_args():
+    sig = inspect.signature(dsl_StatementExpressionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::forupdate_is_not_abstract():
-    assert not inspect.isabstract(dsl::ForUpdate)
+def test_dsl_forupdate_is_not_abstract():
+    assert not inspect.isabstract(dsl_ForUpdate)
 
 
-def test_dsl::forupdate_constructor_exists():
-    assert callable(dsl::ForUpdate.__init__)
+def test_dsl_forupdate_constructor_exists():
+    assert callable(dsl_ForUpdate.__init__)
 
 
-def test_dsl::forupdate_constructor_args():
-    sig = inspect.signature(dsl::ForUpdate.__init__)
+def test_dsl_forupdate_constructor_args():
+    sig = inspect.signature(dsl_ForUpdate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::forinit_is_not_abstract():
-    assert not inspect.isabstract(dsl::ForInit)
+def test_dsl_forinit_is_not_abstract():
+    assert not inspect.isabstract(dsl_ForInit)
 
 
-def test_dsl::forinit_constructor_exists():
-    assert callable(dsl::ForInit.__init__)
+def test_dsl_forinit_constructor_exists():
+    assert callable(dsl_ForInit.__init__)
 
 
-def test_dsl::forinit_constructor_args():
-    sig = inspect.signature(dsl::ForInit.__init__)
+def test_dsl_forinit_constructor_args():
+    sig = inspect.signature(dsl_ForInit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::switchlabel_is_not_abstract():
-    assert not inspect.isabstract(dsl::SwitchLabel)
+def test_dsl_switchlabel_is_not_abstract():
+    assert not inspect.isabstract(dsl_SwitchLabel)
 
 
-def test_dsl::switchlabel_constructor_exists():
-    assert callable(dsl::SwitchLabel.__init__)
+def test_dsl_switchlabel_constructor_exists():
+    assert callable(dsl_SwitchLabel.__init__)
 
 
-def test_dsl::switchlabel_constructor_args():
-    sig = inspect.signature(dsl::SwitchLabel.__init__)
+def test_dsl_switchlabel_constructor_args():
+    sig = inspect.signature(dsl_SwitchLabel.__init__)
     params = list(sig.parameters.keys())
     assert "defaultOp" in params, "Missing parameter 'defaultOp'"
 
-def test_dsl::switchlabel_has_defaultOp():
-    assert hasattr(dsl::SwitchLabel, "defaultOp")
+def test_dsl_switchlabel_has_defaultOp():
+    assert hasattr(dsl_SwitchLabel, "defaultOp")
     descriptor = None
-    for klass in dsl::SwitchLabel.__mro__:
+    for klass in dsl_SwitchLabel.__mro__:
         if "defaultOp" in klass.__dict__:
             descriptor = klass.__dict__["defaultOp"]
             break
@@ -334,23 +334,23 @@ def test_dsl::switchlabel_has_defaultOp():
 
 
 
-def test_dsl::localvariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::LocalVariableDeclaration)
+def test_dsl_localvariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_LocalVariableDeclaration)
 
 
-def test_dsl::localvariabledeclaration_constructor_exists():
-    assert callable(dsl::LocalVariableDeclaration.__init__)
+def test_dsl_localvariabledeclaration_constructor_exists():
+    assert callable(dsl_LocalVariableDeclaration.__init__)
 
 
-def test_dsl::localvariabledeclaration_constructor_args():
-    sig = inspect.signature(dsl::LocalVariableDeclaration.__init__)
+def test_dsl_localvariabledeclaration_constructor_args():
+    sig = inspect.signature(dsl_LocalVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "finality" in params, "Missing parameter 'finality'"
 
-def test_dsl::localvariabledeclaration_has_finality():
-    assert hasattr(dsl::LocalVariableDeclaration, "finality")
+def test_dsl_localvariabledeclaration_has_finality():
+    assert hasattr(dsl_LocalVariableDeclaration, "finality")
     descriptor = None
-    for klass in dsl::LocalVariableDeclaration.__mro__:
+    for klass in dsl_LocalVariableDeclaration.__mro__:
         if "finality" in klass.__dict__:
             descriptor = klass.__dict__["finality"]
             break
@@ -358,79 +358,79 @@ def test_dsl::localvariabledeclaration_has_finality():
 
 
 
-def test_dsl::trystatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::TryStatement)
+def test_dsl_trystatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_TryStatement)
 
 
-def test_dsl::trystatement_constructor_exists():
-    assert callable(dsl::TryStatement.__init__)
+def test_dsl_trystatement_constructor_exists():
+    assert callable(dsl_TryStatement.__init__)
 
 
-def test_dsl::trystatement_constructor_args():
-    sig = inspect.signature(dsl::TryStatement.__init__)
+def test_dsl_trystatement_constructor_args():
+    sig = inspect.signature(dsl_TryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::synchronizedstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::SynchronizedStatement)
+def test_dsl_synchronizedstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_SynchronizedStatement)
 
 
-def test_dsl::synchronizedstatement_constructor_exists():
-    assert callable(dsl::SynchronizedStatement.__init__)
+def test_dsl_synchronizedstatement_constructor_exists():
+    assert callable(dsl_SynchronizedStatement.__init__)
 
 
-def test_dsl::synchronizedstatement_constructor_args():
-    sig = inspect.signature(dsl::SynchronizedStatement.__init__)
+def test_dsl_synchronizedstatement_constructor_args():
+    sig = inspect.signature(dsl_SynchronizedStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::ThrowStatement)
+def test_dsl_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_ThrowStatement)
 
 
-def test_dsl::throwstatement_constructor_exists():
-    assert callable(dsl::ThrowStatement.__init__)
+def test_dsl_throwstatement_constructor_exists():
+    assert callable(dsl_ThrowStatement.__init__)
 
 
-def test_dsl::throwstatement_constructor_args():
-    sig = inspect.signature(dsl::ThrowStatement.__init__)
+def test_dsl_throwstatement_constructor_args():
+    sig = inspect.signature(dsl_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::ReturnStatement)
+def test_dsl_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_ReturnStatement)
 
 
-def test_dsl::returnstatement_constructor_exists():
-    assert callable(dsl::ReturnStatement.__init__)
+def test_dsl_returnstatement_constructor_exists():
+    assert callable(dsl_ReturnStatement.__init__)
 
 
-def test_dsl::returnstatement_constructor_args():
-    sig = inspect.signature(dsl::ReturnStatement.__init__)
+def test_dsl_returnstatement_constructor_args():
+    sig = inspect.signature(dsl_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::ContinueStatement)
+def test_dsl_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_ContinueStatement)
 
 
-def test_dsl::continuestatement_constructor_exists():
-    assert callable(dsl::ContinueStatement.__init__)
+def test_dsl_continuestatement_constructor_exists():
+    assert callable(dsl_ContinueStatement.__init__)
 
 
-def test_dsl::continuestatement_constructor_args():
-    sig = inspect.signature(dsl::ContinueStatement.__init__)
+def test_dsl_continuestatement_constructor_args():
+    sig = inspect.signature(dsl_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::continuestatement_has_id():
-    assert hasattr(dsl::ContinueStatement, "id")
+def test_dsl_continuestatement_has_id():
+    assert hasattr(dsl_ContinueStatement, "id")
     descriptor = None
-    for klass in dsl::ContinueStatement.__mro__:
+    for klass in dsl_ContinueStatement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -438,23 +438,23 @@ def test_dsl::continuestatement_has_id():
 
 
 
-def test_dsl::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::BreakStatement)
+def test_dsl_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_BreakStatement)
 
 
-def test_dsl::breakstatement_constructor_exists():
-    assert callable(dsl::BreakStatement.__init__)
+def test_dsl_breakstatement_constructor_exists():
+    assert callable(dsl_BreakStatement.__init__)
 
 
-def test_dsl::breakstatement_constructor_args():
-    sig = inspect.signature(dsl::BreakStatement.__init__)
+def test_dsl_breakstatement_constructor_args():
+    sig = inspect.signature(dsl_BreakStatement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::breakstatement_has_id():
-    assert hasattr(dsl::BreakStatement, "id")
+def test_dsl_breakstatement_has_id():
+    assert hasattr(dsl_BreakStatement, "id")
     descriptor = None
-    for klass in dsl::BreakStatement.__mro__:
+    for klass in dsl_BreakStatement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -462,23 +462,23 @@ def test_dsl::breakstatement_has_id():
 
 
 
-def test_dsl::forstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::ForStatement)
+def test_dsl_forstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_ForStatement)
 
 
-def test_dsl::forstatement_constructor_exists():
-    assert callable(dsl::ForStatement.__init__)
+def test_dsl_forstatement_constructor_exists():
+    assert callable(dsl_ForStatement.__init__)
 
 
-def test_dsl::forstatement_constructor_args():
-    sig = inspect.signature(dsl::ForStatement.__init__)
+def test_dsl_forstatement_constructor_args():
+    sig = inspect.signature(dsl_ForStatement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::forstatement_has_id():
-    assert hasattr(dsl::ForStatement, "id")
+def test_dsl_forstatement_has_id():
+    assert hasattr(dsl_ForStatement, "id")
     descriptor = None
-    for klass in dsl::ForStatement.__mro__:
+    for klass in dsl_ForStatement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -486,137 +486,137 @@ def test_dsl::forstatement_has_id():
 
 
 
-def test_dsl::dostatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::DoStatement)
+def test_dsl_dostatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_DoStatement)
 
 
-def test_dsl::dostatement_constructor_exists():
-    assert callable(dsl::DoStatement.__init__)
+def test_dsl_dostatement_constructor_exists():
+    assert callable(dsl_DoStatement.__init__)
 
 
-def test_dsl::dostatement_constructor_args():
-    sig = inspect.signature(dsl::DoStatement.__init__)
+def test_dsl_dostatement_constructor_args():
+    sig = inspect.signature(dsl_DoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::WhileStatement)
+def test_dsl_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_WhileStatement)
 
 
-def test_dsl::whilestatement_constructor_exists():
-    assert callable(dsl::WhileStatement.__init__)
+def test_dsl_whilestatement_constructor_exists():
+    assert callable(dsl_WhileStatement.__init__)
 
 
-def test_dsl::whilestatement_constructor_args():
-    sig = inspect.signature(dsl::WhileStatement.__init__)
+def test_dsl_whilestatement_constructor_args():
+    sig = inspect.signature(dsl_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::IfStatement)
+def test_dsl_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_IfStatement)
 
 
-def test_dsl::ifstatement_constructor_exists():
-    assert callable(dsl::IfStatement.__init__)
+def test_dsl_ifstatement_constructor_exists():
+    assert callable(dsl_IfStatement.__init__)
 
 
-def test_dsl::ifstatement_constructor_args():
-    sig = inspect.signature(dsl::IfStatement.__init__)
+def test_dsl_ifstatement_constructor_args():
+    sig = inspect.signature(dsl_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::SwitchStatement)
+def test_dsl_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_SwitchStatement)
 
 
-def test_dsl::switchstatement_constructor_exists():
-    assert callable(dsl::SwitchStatement.__init__)
+def test_dsl_switchstatement_constructor_exists():
+    assert callable(dsl_SwitchStatement.__init__)
 
 
-def test_dsl::switchstatement_constructor_args():
-    sig = inspect.signature(dsl::SwitchStatement.__init__)
+def test_dsl_switchstatement_constructor_args():
+    sig = inspect.signature(dsl_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::statementexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::StatementExpression)
+def test_dsl_statementexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_StatementExpression)
 
 
-def test_dsl::statementexpression_constructor_exists():
-    assert callable(dsl::StatementExpression.__init__)
+def test_dsl_statementexpression_constructor_exists():
+    assert callable(dsl_StatementExpression.__init__)
 
 
-def test_dsl::statementexpression_constructor_args():
-    sig = inspect.signature(dsl::StatementExpression.__init__)
+def test_dsl_statementexpression_constructor_args():
+    sig = inspect.signature(dsl_StatementExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "assignOp" in params, "Missing parameter 'assignOp'"
     assert "minOp" in params, "Missing parameter 'minOp'"
     assert "plusOp" in params, "Missing parameter 'plusOp'"
+    assert "assignOp" in params, "Missing parameter 'assignOp'"
 
-def test_dsl::statementexpression_has_assignOp():
-    assert hasattr(dsl::StatementExpression, "assignOp")
+def test_dsl_statementexpression_has_minOp():
+    assert hasattr(dsl_StatementExpression, "minOp")
     descriptor = None
-    for klass in dsl::StatementExpression.__mro__:
-        if "assignOp" in klass.__dict__:
-            descriptor = klass.__dict__["assignOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::statementexpression_has_minOp():
-    assert hasattr(dsl::StatementExpression, "minOp")
-    descriptor = None
-    for klass in dsl::StatementExpression.__mro__:
+    for klass in dsl_StatementExpression.__mro__:
         if "minOp" in klass.__dict__:
             descriptor = klass.__dict__["minOp"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::statementexpression_has_plusOp():
-    assert hasattr(dsl::StatementExpression, "plusOp")
+def test_dsl_statementexpression_has_plusOp():
+    assert hasattr(dsl_StatementExpression, "plusOp")
     descriptor = None
-    for klass in dsl::StatementExpression.__mro__:
+    for klass in dsl_StatementExpression.__mro__:
         if "plusOp" in klass.__dict__:
             descriptor = klass.__dict__["plusOp"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_statementexpression_has_assignOp():
+    assert hasattr(dsl_StatementExpression, "assignOp")
+    descriptor = None
+    for klass in dsl_StatementExpression.__mro__:
+        if "assignOp" in klass.__dict__:
+            descriptor = klass.__dict__["assignOp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::assertstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::AssertStatement)
+
+def test_dsl_assertstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_AssertStatement)
 
 
-def test_dsl::assertstatement_constructor_exists():
-    assert callable(dsl::AssertStatement.__init__)
+def test_dsl_assertstatement_constructor_exists():
+    assert callable(dsl_AssertStatement.__init__)
 
 
-def test_dsl::assertstatement_constructor_args():
-    sig = inspect.signature(dsl::AssertStatement.__init__)
+def test_dsl_assertstatement_constructor_args():
+    sig = inspect.signature(dsl_AssertStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::LabeledStatement)
+def test_dsl_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_LabeledStatement)
 
 
-def test_dsl::labeledstatement_constructor_exists():
-    assert callable(dsl::LabeledStatement.__init__)
+def test_dsl_labeledstatement_constructor_exists():
+    assert callable(dsl_LabeledStatement.__init__)
 
 
-def test_dsl::labeledstatement_constructor_args():
-    sig = inspect.signature(dsl::LabeledStatement.__init__)
+def test_dsl_labeledstatement_constructor_args():
+    sig = inspect.signature(dsl_LabeledStatement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::labeledstatement_has_id():
-    assert hasattr(dsl::LabeledStatement, "id")
+def test_dsl_labeledstatement_has_id():
+    assert hasattr(dsl_LabeledStatement, "id")
     descriptor = None
-    for klass in dsl::LabeledStatement.__mro__:
+    for klass in dsl_LabeledStatement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -624,23 +624,23 @@ def test_dsl::labeledstatement_has_id():
 
 
 
-def test_dsl::arraydimsandinits_is_not_abstract():
-    assert not inspect.isabstract(dsl::ArrayDimsAndInits)
+def test_dsl_arraydimsandinits_is_not_abstract():
+    assert not inspect.isabstract(dsl_ArrayDimsAndInits)
 
 
-def test_dsl::arraydimsandinits_constructor_exists():
-    assert callable(dsl::ArrayDimsAndInits.__init__)
+def test_dsl_arraydimsandinits_constructor_exists():
+    assert callable(dsl_ArrayDimsAndInits.__init__)
 
 
-def test_dsl::arraydimsandinits_constructor_args():
-    sig = inspect.signature(dsl::ArrayDimsAndInits.__init__)
+def test_dsl_arraydimsandinits_constructor_args():
+    sig = inspect.signature(dsl_ArrayDimsAndInits.__init__)
     params = list(sig.parameters.keys())
     assert "squareBrackets" in params, "Missing parameter 'squareBrackets'"
 
-def test_dsl::arraydimsandinits_has_squareBrackets():
-    assert hasattr(dsl::ArrayDimsAndInits, "squareBrackets")
+def test_dsl_arraydimsandinits_has_squareBrackets():
+    assert hasattr(dsl_ArrayDimsAndInits, "squareBrackets")
     descriptor = None
-    for klass in dsl::ArrayDimsAndInits.__mro__:
+    for klass in dsl_ArrayDimsAndInits.__mro__:
         if "squareBrackets" in klass.__dict__:
             descriptor = klass.__dict__["squareBrackets"]
             break
@@ -648,81 +648,81 @@ def test_dsl::arraydimsandinits_has_squareBrackets():
 
 
 
-def test_dsl::baseliteral_is_not_abstract():
-    assert not inspect.isabstract(dsl::BaseLiteral)
+def test_dsl_baseliteral_is_not_abstract():
+    assert not inspect.isabstract(dsl_BaseLiteral)
 
 
-def test_dsl::baseliteral_constructor_exists():
-    assert callable(dsl::BaseLiteral.__init__)
+def test_dsl_baseliteral_constructor_exists():
+    assert callable(dsl_BaseLiteral.__init__)
 
 
-def test_dsl::baseliteral_constructor_args():
-    sig = inspect.signature(dsl::BaseLiteral.__init__)
+def test_dsl_baseliteral_constructor_args():
+    sig = inspect.signature(dsl_BaseLiteral.__init__)
     params = list(sig.parameters.keys())
-    assert "binDigitsUnderscore" in params, "Missing parameter 'binDigitsUnderscore'"
-    assert "decDigitsUnderscore" in params, "Missing parameter 'decDigitsUnderscore'"
     assert "hexDigitsUnderscore" in params, "Missing parameter 'hexDigitsUnderscore'"
+    assert "decDigitsUnderscore" in params, "Missing parameter 'decDigitsUnderscore'"
+    assert "binDigitsUnderscore" in params, "Missing parameter 'binDigitsUnderscore'"
 
-def test_dsl::baseliteral_has_binDigitsUnderscore():
-    assert hasattr(dsl::BaseLiteral, "binDigitsUnderscore")
+def test_dsl_baseliteral_has_hexDigitsUnderscore():
+    assert hasattr(dsl_BaseLiteral, "hexDigitsUnderscore")
     descriptor = None
-    for klass in dsl::BaseLiteral.__mro__:
-        if "binDigitsUnderscore" in klass.__dict__:
-            descriptor = klass.__dict__["binDigitsUnderscore"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::baseliteral_has_decDigitsUnderscore():
-    assert hasattr(dsl::BaseLiteral, "decDigitsUnderscore")
-    descriptor = None
-    for klass in dsl::BaseLiteral.__mro__:
-        if "decDigitsUnderscore" in klass.__dict__:
-            descriptor = klass.__dict__["decDigitsUnderscore"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::baseliteral_has_hexDigitsUnderscore():
-    assert hasattr(dsl::BaseLiteral, "hexDigitsUnderscore")
-    descriptor = None
-    for klass in dsl::BaseLiteral.__mro__:
+    for klass in dsl_BaseLiteral.__mro__:
         if "hexDigitsUnderscore" in klass.__dict__:
             descriptor = klass.__dict__["hexDigitsUnderscore"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_baseliteral_has_decDigitsUnderscore():
+    assert hasattr(dsl_BaseLiteral, "decDigitsUnderscore")
+    descriptor = None
+    for klass in dsl_BaseLiteral.__mro__:
+        if "decDigitsUnderscore" in klass.__dict__:
+            descriptor = klass.__dict__["decDigitsUnderscore"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_baseliteral_has_binDigitsUnderscore():
+    assert hasattr(dsl_BaseLiteral, "binDigitsUnderscore")
+    descriptor = None
+    for klass in dsl_BaseLiteral.__mro__:
+        if "binDigitsUnderscore" in klass.__dict__:
+            descriptor = klass.__dict__["binDigitsUnderscore"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::argumentlist_is_not_abstract():
-    assert not inspect.isabstract(dsl::ArgumentList)
+
+def test_dsl_argumentlist_is_not_abstract():
+    assert not inspect.isabstract(dsl_ArgumentList)
 
 
-def test_dsl::argumentlist_constructor_exists():
-    assert callable(dsl::ArgumentList.__init__)
+def test_dsl_argumentlist_constructor_exists():
+    assert callable(dsl_ArgumentList.__init__)
 
 
-def test_dsl::argumentlist_constructor_args():
-    sig = inspect.signature(dsl::ArgumentList.__init__)
+def test_dsl_argumentlist_constructor_args():
+    sig = inspect.signature(dsl_ArgumentList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(dsl::BooleanLiteral)
+def test_dsl_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(dsl_BooleanLiteral)
 
 
-def test_dsl::booleanliteral_constructor_exists():
-    assert callable(dsl::BooleanLiteral.__init__)
+def test_dsl_booleanliteral_constructor_exists():
+    assert callable(dsl_BooleanLiteral.__init__)
 
 
-def test_dsl::booleanliteral_constructor_args():
-    sig = inspect.signature(dsl::BooleanLiteral.__init__)
+def test_dsl_booleanliteral_constructor_args():
+    sig = inspect.signature(dsl_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "truthiness" in params, "Missing parameter 'truthiness'"
 
-def test_dsl::booleanliteral_has_truthiness():
-    assert hasattr(dsl::BooleanLiteral, "truthiness")
+def test_dsl_booleanliteral_has_truthiness():
+    assert hasattr(dsl_BooleanLiteral, "truthiness")
     descriptor = None
-    for klass in dsl::BooleanLiteral.__mro__:
+    for klass in dsl_BooleanLiteral.__mro__:
         if "truthiness" in klass.__dict__:
             descriptor = klass.__dict__["truthiness"]
             break
@@ -730,23 +730,23 @@ def test_dsl::booleanliteral_has_truthiness():
 
 
 
-def test_dsl::floatliteral_is_not_abstract():
-    assert not inspect.isabstract(dsl::FloatLiteral)
+def test_dsl_floatliteral_is_not_abstract():
+    assert not inspect.isabstract(dsl_FloatLiteral)
 
 
-def test_dsl::floatliteral_constructor_exists():
-    assert callable(dsl::FloatLiteral.__init__)
+def test_dsl_floatliteral_constructor_exists():
+    assert callable(dsl_FloatLiteral.__init__)
 
 
-def test_dsl::floatliteral_constructor_args():
-    sig = inspect.signature(dsl::FloatLiteral.__init__)
+def test_dsl_floatliteral_constructor_args():
+    sig = inspect.signature(dsl_FloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "digits" in params, "Missing parameter 'digits'"
 
-def test_dsl::floatliteral_has_digits():
-    assert hasattr(dsl::FloatLiteral, "digits")
+def test_dsl_floatliteral_has_digits():
+    assert hasattr(dsl_FloatLiteral, "digits")
     descriptor = None
-    for klass in dsl::FloatLiteral.__mro__:
+    for klass in dsl_FloatLiteral.__mro__:
         if "digits" in klass.__dict__:
             descriptor = klass.__dict__["digits"]
             break
@@ -754,57 +754,57 @@ def test_dsl::floatliteral_has_digits():
 
 
 
-def test_dsl::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(dsl::IntegerLiteral)
+def test_dsl_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(dsl_IntegerLiteral)
 
 
-def test_dsl::integerliteral_constructor_exists():
-    assert callable(dsl::IntegerLiteral.__init__)
+def test_dsl_integerliteral_constructor_exists():
+    assert callable(dsl_IntegerLiteral.__init__)
 
 
-def test_dsl::integerliteral_constructor_args():
-    sig = inspect.signature(dsl::IntegerLiteral.__init__)
+def test_dsl_integerliteral_constructor_args():
+    sig = inspect.signature(dsl_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
-    assert "zero" in params, "Missing parameter 'zero'"
     assert "one" in params, "Missing parameter 'one'"
+    assert "zero" in params, "Missing parameter 'zero'"
 
-def test_dsl::integerliteral_has_zero():
-    assert hasattr(dsl::IntegerLiteral, "zero")
+def test_dsl_integerliteral_has_one():
+    assert hasattr(dsl_IntegerLiteral, "one")
     descriptor = None
-    for klass in dsl::IntegerLiteral.__mro__:
-        if "zero" in klass.__dict__:
-            descriptor = klass.__dict__["zero"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::integerliteral_has_one():
-    assert hasattr(dsl::IntegerLiteral, "one")
-    descriptor = None
-    for klass in dsl::IntegerLiteral.__mro__:
+    for klass in dsl_IntegerLiteral.__mro__:
         if "one" in klass.__dict__:
             descriptor = klass.__dict__["one"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_integerliteral_has_zero():
+    assert hasattr(dsl_IntegerLiteral, "zero")
+    descriptor = None
+    for klass in dsl_IntegerLiteral.__mro__:
+        if "zero" in klass.__dict__:
+            descriptor = klass.__dict__["zero"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::signedintliteral_is_not_abstract():
-    assert not inspect.isabstract(dsl::SignedIntLiteral)
+
+def test_dsl_signedintliteral_is_not_abstract():
+    assert not inspect.isabstract(dsl_SignedIntLiteral)
 
 
-def test_dsl::signedintliteral_constructor_exists():
-    assert callable(dsl::SignedIntLiteral.__init__)
+def test_dsl_signedintliteral_constructor_exists():
+    assert callable(dsl_SignedIntLiteral.__init__)
 
 
-def test_dsl::signedintliteral_constructor_args():
-    sig = inspect.signature(dsl::SignedIntLiteral.__init__)
+def test_dsl_signedintliteral_constructor_args():
+    sig = inspect.signature(dsl_SignedIntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "bitWidth" in params, "Missing parameter 'bitWidth'"
 
-def test_dsl::signedintliteral_has_bitWidth():
-    assert hasattr(dsl::SignedIntLiteral, "bitWidth")
+def test_dsl_signedintliteral_has_bitWidth():
+    assert hasattr(dsl_SignedIntLiteral, "bitWidth")
     descriptor = None
-    for klass in dsl::SignedIntLiteral.__mro__:
+    for klass in dsl_SignedIntLiteral.__mro__:
         if "bitWidth" in klass.__dict__:
             descriptor = klass.__dict__["bitWidth"]
             break
@@ -812,23 +812,23 @@ def test_dsl::signedintliteral_has_bitWidth():
 
 
 
-def test_dsl::unsignedintliteral_is_not_abstract():
-    assert not inspect.isabstract(dsl::UnsignedIntLiteral)
+def test_dsl_unsignedintliteral_is_not_abstract():
+    assert not inspect.isabstract(dsl_UnsignedIntLiteral)
 
 
-def test_dsl::unsignedintliteral_constructor_exists():
-    assert callable(dsl::UnsignedIntLiteral.__init__)
+def test_dsl_unsignedintliteral_constructor_exists():
+    assert callable(dsl_UnsignedIntLiteral.__init__)
 
 
-def test_dsl::unsignedintliteral_constructor_args():
-    sig = inspect.signature(dsl::UnsignedIntLiteral.__init__)
+def test_dsl_unsignedintliteral_constructor_args():
+    sig = inspect.signature(dsl_UnsignedIntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "sign" in params, "Missing parameter 'sign'"
 
-def test_dsl::unsignedintliteral_has_sign():
-    assert hasattr(dsl::UnsignedIntLiteral, "sign")
+def test_dsl_unsignedintliteral_has_sign():
+    assert hasattr(dsl_UnsignedIntLiteral, "sign")
     descriptor = None
-    for klass in dsl::UnsignedIntLiteral.__mro__:
+    for klass in dsl_UnsignedIntLiteral.__mro__:
         if "sign" in klass.__dict__:
             descriptor = klass.__dict__["sign"]
             break
@@ -836,23 +836,23 @@ def test_dsl::unsignedintliteral_has_sign():
 
 
 
-def test_dsl::memberselector_is_not_abstract():
-    assert not inspect.isabstract(dsl::MemberSelector)
+def test_dsl_memberselector_is_not_abstract():
+    assert not inspect.isabstract(dsl_MemberSelector)
 
 
-def test_dsl::memberselector_constructor_exists():
-    assert callable(dsl::MemberSelector.__init__)
+def test_dsl_memberselector_constructor_exists():
+    assert callable(dsl_MemberSelector.__init__)
 
 
-def test_dsl::memberselector_constructor_args():
-    sig = inspect.signature(dsl::MemberSelector.__init__)
+def test_dsl_memberselector_constructor_args():
+    sig = inspect.signature(dsl_MemberSelector.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::memberselector_has_id():
-    assert hasattr(dsl::MemberSelector, "id")
+def test_dsl_memberselector_has_id():
+    assert hasattr(dsl_MemberSelector, "id")
     descriptor = None
-    for klass in dsl::MemberSelector.__mro__:
+    for klass in dsl_MemberSelector.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -860,91 +860,91 @@ def test_dsl::memberselector_has_id():
 
 
 
-def test_dsl::decimalnumber_is_not_abstract():
-    assert not inspect.isabstract(dsl::DecimalNumber)
+def test_dsl_decimalnumber_is_not_abstract():
+    assert not inspect.isabstract(dsl_DecimalNumber)
 
 
-def test_dsl::decimalnumber_constructor_exists():
-    assert callable(dsl::DecimalNumber.__init__)
+def test_dsl_decimalnumber_constructor_exists():
+    assert callable(dsl_DecimalNumber.__init__)
 
 
-def test_dsl::decimalnumber_constructor_args():
-    sig = inspect.signature(dsl::DecimalNumber.__init__)
+def test_dsl_decimalnumber_constructor_args():
+    sig = inspect.signature(dsl_DecimalNumber.__init__)
     params = list(sig.parameters.keys())
-    assert "decDigitsUnderscore" in params, "Missing parameter 'decDigitsUnderscore'"
     assert "decDigits" in params, "Missing parameter 'decDigits'"
+    assert "decDigitsUnderscore" in params, "Missing parameter 'decDigitsUnderscore'"
 
-def test_dsl::decimalnumber_has_decDigitsUnderscore():
-    assert hasattr(dsl::DecimalNumber, "decDigitsUnderscore")
+def test_dsl_decimalnumber_has_decDigits():
+    assert hasattr(dsl_DecimalNumber, "decDigits")
     descriptor = None
-    for klass in dsl::DecimalNumber.__mro__:
-        if "decDigitsUnderscore" in klass.__dict__:
-            descriptor = klass.__dict__["decDigitsUnderscore"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::decimalnumber_has_decDigits():
-    assert hasattr(dsl::DecimalNumber, "decDigits")
-    descriptor = None
-    for klass in dsl::DecimalNumber.__mro__:
+    for klass in dsl_DecimalNumber.__mro__:
         if "decDigits" in klass.__dict__:
             descriptor = klass.__dict__["decDigits"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dsl::primarysuffix_is_not_abstract():
-    assert not inspect.isabstract(dsl::PrimarySuffix)
-
-
-def test_dsl::primarysuffix_constructor_exists():
-    assert callable(dsl::PrimarySuffix.__init__)
-
-
-def test_dsl::primarysuffix_constructor_args():
-    sig = inspect.signature(dsl::PrimarySuffix.__init__)
-    params = list(sig.parameters.keys())
-    assert "thisOp" in params, "Missing parameter 'thisOp'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_dsl::primarysuffix_has_thisOp():
-    assert hasattr(dsl::PrimarySuffix, "thisOp")
+def test_dsl_decimalnumber_has_decDigitsUnderscore():
+    assert hasattr(dsl_DecimalNumber, "decDigitsUnderscore")
     descriptor = None
-    for klass in dsl::PrimarySuffix.__mro__:
-        if "thisOp" in klass.__dict__:
-            descriptor = klass.__dict__["thisOp"]
+    for klass in dsl_DecimalNumber.__mro__:
+        if "decDigitsUnderscore" in klass.__dict__:
+            descriptor = klass.__dict__["decDigitsUnderscore"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::primarysuffix_has_id():
-    assert hasattr(dsl::PrimarySuffix, "id")
+
+
+def test_dsl_primarysuffix_is_not_abstract():
+    assert not inspect.isabstract(dsl_PrimarySuffix)
+
+
+def test_dsl_primarysuffix_constructor_exists():
+    assert callable(dsl_PrimarySuffix.__init__)
+
+
+def test_dsl_primarysuffix_constructor_args():
+    sig = inspect.signature(dsl_PrimarySuffix.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "thisOp" in params, "Missing parameter 'thisOp'"
+
+def test_dsl_primarysuffix_has_id():
+    assert hasattr(dsl_PrimarySuffix, "id")
     descriptor = None
-    for klass in dsl::PrimarySuffix.__mro__:
+    for klass in dsl_PrimarySuffix.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_primarysuffix_has_thisOp():
+    assert hasattr(dsl_PrimarySuffix, "thisOp")
+    descriptor = None
+    for klass in dsl_PrimarySuffix.__mro__:
+        if "thisOp" in klass.__dict__:
+            descriptor = klass.__dict__["thisOp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::allocationexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::AllocationExpression)
+
+def test_dsl_allocationexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_AllocationExpression)
 
 
-def test_dsl::allocationexpression_constructor_exists():
-    assert callable(dsl::AllocationExpression.__init__)
+def test_dsl_allocationexpression_constructor_exists():
+    assert callable(dsl_AllocationExpression.__init__)
 
 
-def test_dsl::allocationexpression_constructor_args():
-    sig = inspect.signature(dsl::AllocationExpression.__init__)
+def test_dsl_allocationexpression_constructor_args():
+    sig = inspect.signature(dsl_AllocationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "primType" in params, "Missing parameter 'primType'"
 
-def test_dsl::allocationexpression_has_primType():
-    assert hasattr(dsl::AllocationExpression, "primType")
+def test_dsl_allocationexpression_has_primType():
+    assert hasattr(dsl_AllocationExpression, "primType")
     descriptor = None
-    for klass in dsl::AllocationExpression.__mro__:
+    for klass in dsl_AllocationExpression.__mro__:
         if "primType" in klass.__dict__:
             descriptor = klass.__dict__["primType"]
             break
@@ -952,43 +952,43 @@ def test_dsl::allocationexpression_has_primType():
 
 
 
-def test_dsl::primaryprefix_is_not_abstract():
-    assert not inspect.isabstract(dsl::PrimaryPrefix)
+def test_dsl_primaryprefix_is_not_abstract():
+    assert not inspect.isabstract(dsl_PrimaryPrefix)
 
 
-def test_dsl::primaryprefix_constructor_exists():
-    assert callable(dsl::PrimaryPrefix.__init__)
+def test_dsl_primaryprefix_constructor_exists():
+    assert callable(dsl_PrimaryPrefix.__init__)
 
 
-def test_dsl::primaryprefix_constructor_args():
-    sig = inspect.signature(dsl::PrimaryPrefix.__init__)
+def test_dsl_primaryprefix_constructor_args():
+    sig = inspect.signature(dsl_PrimaryPrefix.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "superOp" in params, "Missing parameter 'superOp'"
     assert "thisOp" in params, "Missing parameter 'thisOp'"
 
-def test_dsl::primaryprefix_has_id():
-    assert hasattr(dsl::PrimaryPrefix, "id")
+def test_dsl_primaryprefix_has_id():
+    assert hasattr(dsl_PrimaryPrefix, "id")
     descriptor = None
-    for klass in dsl::PrimaryPrefix.__mro__:
+    for klass in dsl_PrimaryPrefix.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::primaryprefix_has_superOp():
-    assert hasattr(dsl::PrimaryPrefix, "superOp")
+def test_dsl_primaryprefix_has_superOp():
+    assert hasattr(dsl_PrimaryPrefix, "superOp")
     descriptor = None
-    for klass in dsl::PrimaryPrefix.__mro__:
+    for klass in dsl_PrimaryPrefix.__mro__:
         if "superOp" in klass.__dict__:
             descriptor = klass.__dict__["superOp"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::primaryprefix_has_thisOp():
-    assert hasattr(dsl::PrimaryPrefix, "thisOp")
+def test_dsl_primaryprefix_has_thisOp():
+    assert hasattr(dsl_PrimaryPrefix, "thisOp")
     descriptor = None
-    for klass in dsl::PrimaryPrefix.__mro__:
+    for klass in dsl_PrimaryPrefix.__mro__:
         if "thisOp" in klass.__dict__:
             descriptor = klass.__dict__["thisOp"]
             break
@@ -996,85 +996,85 @@ def test_dsl::primaryprefix_has_thisOp():
 
 
 
-def test_dsl::predecrementexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::PreDecrementExpression)
+def test_dsl_predecrementexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_PreDecrementExpression)
 
 
-def test_dsl::predecrementexpression_constructor_exists():
-    assert callable(dsl::PreDecrementExpression.__init__)
+def test_dsl_predecrementexpression_constructor_exists():
+    assert callable(dsl_PreDecrementExpression.__init__)
 
 
-def test_dsl::predecrementexpression_constructor_args():
-    sig = inspect.signature(dsl::PreDecrementExpression.__init__)
+def test_dsl_predecrementexpression_constructor_args():
+    sig = inspect.signature(dsl_PreDecrementExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::preincrementexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::PreIncrementExpression)
+def test_dsl_preincrementexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_PreIncrementExpression)
 
 
-def test_dsl::preincrementexpression_constructor_exists():
-    assert callable(dsl::PreIncrementExpression.__init__)
+def test_dsl_preincrementexpression_constructor_exists():
+    assert callable(dsl_PreIncrementExpression.__init__)
 
 
-def test_dsl::preincrementexpression_constructor_args():
-    sig = inspect.signature(dsl::PreIncrementExpression.__init__)
+def test_dsl_preincrementexpression_constructor_args():
+    sig = inspect.signature(dsl_PreIncrementExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::eobject_is_not_abstract():
-    assert not inspect.isabstract(dsl::EObject)
+def test_dsl_eobject_is_not_abstract():
+    assert not inspect.isabstract(dsl_EObject)
 
 
-def test_dsl::eobject_constructor_exists():
-    assert callable(dsl::EObject.__init__)
+def test_dsl_eobject_constructor_exists():
+    assert callable(dsl_EObject.__init__)
 
 
-def test_dsl::eobject_constructor_args():
-    sig = inspect.signature(dsl::EObject.__init__)
+def test_dsl_eobject_constructor_args():
+    sig = inspect.signature(dsl_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::literal_is_not_abstract():
-    assert not inspect.isabstract(dsl::Literal)
+def test_dsl_literal_is_not_abstract():
+    assert not inspect.isabstract(dsl_Literal)
 
 
-def test_dsl::literal_constructor_exists():
-    assert callable(dsl::Literal.__init__)
+def test_dsl_literal_constructor_exists():
+    assert callable(dsl_Literal.__init__)
 
 
-def test_dsl::literal_constructor_args():
-    sig = inspect.signature(dsl::Literal.__init__)
+def test_dsl_literal_constructor_args():
+    sig = inspect.signature(dsl_Literal.__init__)
     params = list(sig.parameters.keys())
-    assert "charLit" in params, "Missing parameter 'charLit'"
     assert "stringLit" in params, "Missing parameter 'stringLit'"
+    assert "charLit" in params, "Missing parameter 'charLit'"
     assert "nullLit" in params, "Missing parameter 'nullLit'"
 
-def test_dsl::literal_has_charLit():
-    assert hasattr(dsl::Literal, "charLit")
+def test_dsl_literal_has_stringLit():
+    assert hasattr(dsl_Literal, "stringLit")
     descriptor = None
-    for klass in dsl::Literal.__mro__:
-        if "charLit" in klass.__dict__:
-            descriptor = klass.__dict__["charLit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::literal_has_stringLit():
-    assert hasattr(dsl::Literal, "stringLit")
-    descriptor = None
-    for klass in dsl::Literal.__mro__:
+    for klass in dsl_Literal.__mro__:
         if "stringLit" in klass.__dict__:
             descriptor = klass.__dict__["stringLit"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::literal_has_nullLit():
-    assert hasattr(dsl::Literal, "nullLit")
+def test_dsl_literal_has_charLit():
+    assert hasattr(dsl_Literal, "charLit")
     descriptor = None
-    for klass in dsl::Literal.__mro__:
+    for klass in dsl_Literal.__mro__:
+        if "charLit" in klass.__dict__:
+            descriptor = klass.__dict__["charLit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_literal_has_nullLit():
+    assert hasattr(dsl_Literal, "nullLit")
+    descriptor = None
+    for klass in dsl_Literal.__mro__:
         if "nullLit" in klass.__dict__:
             descriptor = klass.__dict__["nullLit"]
             break
@@ -1082,93 +1082,93 @@ def test_dsl::literal_has_nullLit():
 
 
 
-def test_dsl::castlookahead_is_not_abstract():
-    assert not inspect.isabstract(dsl::CastLookahead)
+def test_dsl_castlookahead_is_not_abstract():
+    assert not inspect.isabstract(dsl_CastLookahead)
 
 
-def test_dsl::castlookahead_constructor_exists():
-    assert callable(dsl::CastLookahead.__init__)
+def test_dsl_castlookahead_constructor_exists():
+    assert callable(dsl_CastLookahead.__init__)
 
 
-def test_dsl::castlookahead_constructor_args():
-    sig = inspect.signature(dsl::CastLookahead.__init__)
+def test_dsl_castlookahead_constructor_args():
+    sig = inspect.signature(dsl_CastLookahead.__init__)
     params = list(sig.parameters.keys())
-    assert "openBracket" in params, "Missing parameter 'openBracket'"
-    assert "negOp" in params, "Missing parameter 'negOp'"
-    assert "superOp" in params, "Missing parameter 'superOp'"
+    assert "newOp" in params, "Missing parameter 'newOp'"
     assert "id" in params, "Missing parameter 'id'"
     assert "bitNegOp" in params, "Missing parameter 'bitNegOp'"
+    assert "openBracket" in params, "Missing parameter 'openBracket'"
+    assert "negOp" in params, "Missing parameter 'negOp'"
     assert "thisOp" in params, "Missing parameter 'thisOp'"
-    assert "newOp" in params, "Missing parameter 'newOp'"
+    assert "superOp" in params, "Missing parameter 'superOp'"
     assert "primType" in params, "Missing parameter 'primType'"
 
-def test_dsl::castlookahead_has_openBracket():
-    assert hasattr(dsl::CastLookahead, "openBracket")
+def test_dsl_castlookahead_has_newOp():
+    assert hasattr(dsl_CastLookahead, "newOp")
     descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
-        if "openBracket" in klass.__dict__:
-            descriptor = klass.__dict__["openBracket"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::castlookahead_has_negOp():
-    assert hasattr(dsl::CastLookahead, "negOp")
-    descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
-        if "negOp" in klass.__dict__:
-            descriptor = klass.__dict__["negOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::castlookahead_has_superOp():
-    assert hasattr(dsl::CastLookahead, "superOp")
-    descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
-        if "superOp" in klass.__dict__:
-            descriptor = klass.__dict__["superOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::castlookahead_has_id():
-    assert hasattr(dsl::CastLookahead, "id")
-    descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::castlookahead_has_bitNegOp():
-    assert hasattr(dsl::CastLookahead, "bitNegOp")
-    descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
-        if "bitNegOp" in klass.__dict__:
-            descriptor = klass.__dict__["bitNegOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::castlookahead_has_thisOp():
-    assert hasattr(dsl::CastLookahead, "thisOp")
-    descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
-        if "thisOp" in klass.__dict__:
-            descriptor = klass.__dict__["thisOp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::castlookahead_has_newOp():
-    assert hasattr(dsl::CastLookahead, "newOp")
-    descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
+    for klass in dsl_CastLookahead.__mro__:
         if "newOp" in klass.__dict__:
             descriptor = klass.__dict__["newOp"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::castlookahead_has_primType():
-    assert hasattr(dsl::CastLookahead, "primType")
+def test_dsl_castlookahead_has_id():
+    assert hasattr(dsl_CastLookahead, "id")
     descriptor = None
-    for klass in dsl::CastLookahead.__mro__:
+    for klass in dsl_CastLookahead.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_castlookahead_has_bitNegOp():
+    assert hasattr(dsl_CastLookahead, "bitNegOp")
+    descriptor = None
+    for klass in dsl_CastLookahead.__mro__:
+        if "bitNegOp" in klass.__dict__:
+            descriptor = klass.__dict__["bitNegOp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_castlookahead_has_openBracket():
+    assert hasattr(dsl_CastLookahead, "openBracket")
+    descriptor = None
+    for klass in dsl_CastLookahead.__mro__:
+        if "openBracket" in klass.__dict__:
+            descriptor = klass.__dict__["openBracket"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_castlookahead_has_negOp():
+    assert hasattr(dsl_CastLookahead, "negOp")
+    descriptor = None
+    for klass in dsl_CastLookahead.__mro__:
+        if "negOp" in klass.__dict__:
+            descriptor = klass.__dict__["negOp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_castlookahead_has_thisOp():
+    assert hasattr(dsl_CastLookahead, "thisOp")
+    descriptor = None
+    for klass in dsl_CastLookahead.__mro__:
+        if "thisOp" in klass.__dict__:
+            descriptor = klass.__dict__["thisOp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_castlookahead_has_superOp():
+    assert hasattr(dsl_CastLookahead, "superOp")
+    descriptor = None
+    for klass in dsl_CastLookahead.__mro__:
+        if "superOp" in klass.__dict__:
+            descriptor = klass.__dict__["superOp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_castlookahead_has_primType():
+    assert hasattr(dsl_CastLookahead, "primType")
+    descriptor = None
+    for klass in dsl_CastLookahead.__mro__:
         if "primType" in klass.__dict__:
             descriptor = klass.__dict__["primType"]
             break
@@ -1176,23 +1176,23 @@ def test_dsl::castlookahead_has_primType():
 
 
 
-def test_dsl::postfixexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::PostfixExpression)
+def test_dsl_postfixexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_PostfixExpression)
 
 
-def test_dsl::postfixexpression_constructor_exists():
-    assert callable(dsl::PostfixExpression.__init__)
+def test_dsl_postfixexpression_constructor_exists():
+    assert callable(dsl_PostfixExpression.__init__)
 
 
-def test_dsl::postfixexpression_constructor_args():
-    sig = inspect.signature(dsl::PostfixExpression.__init__)
+def test_dsl_postfixexpression_constructor_args():
+    sig = inspect.signature(dsl_PostfixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_dsl::postfixexpression_has_op():
-    assert hasattr(dsl::PostfixExpression, "op")
+def test_dsl_postfixexpression_has_op():
+    assert hasattr(dsl_PostfixExpression, "op")
     descriptor = None
-    for klass in dsl::PostfixExpression.__mro__:
+    for klass in dsl_PostfixExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1200,37 +1200,37 @@ def test_dsl::postfixexpression_has_op():
 
 
 
-def test_dsl::castexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::CastExpression)
+def test_dsl_castexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_CastExpression)
 
 
-def test_dsl::castexpression_constructor_exists():
-    assert callable(dsl::CastExpression.__init__)
+def test_dsl_castexpression_constructor_exists():
+    assert callable(dsl_CastExpression.__init__)
 
 
-def test_dsl::castexpression_constructor_args():
-    sig = inspect.signature(dsl::CastExpression.__init__)
+def test_dsl_castexpression_constructor_args():
+    sig = inspect.signature(dsl_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::unaryexpressionnotplusminus_is_not_abstract():
-    assert not inspect.isabstract(dsl::UnaryExpressionNotPlusMinus)
+def test_dsl_unaryexpressionnotplusminus_is_not_abstract():
+    assert not inspect.isabstract(dsl_UnaryExpressionNotPlusMinus)
 
 
-def test_dsl::unaryexpressionnotplusminus_constructor_exists():
-    assert callable(dsl::UnaryExpressionNotPlusMinus.__init__)
+def test_dsl_unaryexpressionnotplusminus_constructor_exists():
+    assert callable(dsl_UnaryExpressionNotPlusMinus.__init__)
 
 
-def test_dsl::unaryexpressionnotplusminus_constructor_args():
-    sig = inspect.signature(dsl::UnaryExpressionNotPlusMinus.__init__)
+def test_dsl_unaryexpressionnotplusminus_constructor_args():
+    sig = inspect.signature(dsl_UnaryExpressionNotPlusMinus.__init__)
     params = list(sig.parameters.keys())
     assert "negOp" in params, "Missing parameter 'negOp'"
 
-def test_dsl::unaryexpressionnotplusminus_has_negOp():
-    assert hasattr(dsl::UnaryExpressionNotPlusMinus, "negOp")
+def test_dsl_unaryexpressionnotplusminus_has_negOp():
+    assert hasattr(dsl_UnaryExpressionNotPlusMinus, "negOp")
     descriptor = None
-    for klass in dsl::UnaryExpressionNotPlusMinus.__mro__:
+    for klass in dsl_UnaryExpressionNotPlusMinus.__mro__:
         if "negOp" in klass.__dict__:
             descriptor = klass.__dict__["negOp"]
             break
@@ -1238,23 +1238,23 @@ def test_dsl::unaryexpressionnotplusminus_has_negOp():
 
 
 
-def test_dsl::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::UnaryExpression)
+def test_dsl_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_UnaryExpression)
 
 
-def test_dsl::unaryexpression_constructor_exists():
-    assert callable(dsl::UnaryExpression.__init__)
+def test_dsl_unaryexpression_constructor_exists():
+    assert callable(dsl_UnaryExpression.__init__)
 
 
-def test_dsl::unaryexpression_constructor_args():
-    sig = inspect.signature(dsl::UnaryExpression.__init__)
+def test_dsl_unaryexpression_constructor_args():
+    sig = inspect.signature(dsl_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "sign" in params, "Missing parameter 'sign'"
 
-def test_dsl::unaryexpression_has_sign():
-    assert hasattr(dsl::UnaryExpression, "sign")
+def test_dsl_unaryexpression_has_sign():
+    assert hasattr(dsl_UnaryExpression, "sign")
     descriptor = None
-    for klass in dsl::UnaryExpression.__mro__:
+    for klass in dsl_UnaryExpression.__mro__:
         if "sign" in klass.__dict__:
             descriptor = klass.__dict__["sign"]
             break
@@ -1262,23 +1262,23 @@ def test_dsl::unaryexpression_has_sign():
 
 
 
-def test_dsl::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::MultiplicativeExpression)
+def test_dsl_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_MultiplicativeExpression)
 
 
-def test_dsl::multiplicativeexpression_constructor_exists():
-    assert callable(dsl::MultiplicativeExpression.__init__)
+def test_dsl_multiplicativeexpression_constructor_exists():
+    assert callable(dsl_MultiplicativeExpression.__init__)
 
 
-def test_dsl::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(dsl::MultiplicativeExpression.__init__)
+def test_dsl_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(dsl_MultiplicativeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "ops" in params, "Missing parameter 'ops'"
 
-def test_dsl::multiplicativeexpression_has_ops():
-    assert hasattr(dsl::MultiplicativeExpression, "ops")
+def test_dsl_multiplicativeexpression_has_ops():
+    assert hasattr(dsl_MultiplicativeExpression, "ops")
     descriptor = None
-    for klass in dsl::MultiplicativeExpression.__mro__:
+    for klass in dsl_MultiplicativeExpression.__mro__:
         if "ops" in klass.__dict__:
             descriptor = klass.__dict__["ops"]
             break
@@ -1286,23 +1286,23 @@ def test_dsl::multiplicativeexpression_has_ops():
 
 
 
-def test_dsl::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::AdditiveExpression)
+def test_dsl_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_AdditiveExpression)
 
 
-def test_dsl::additiveexpression_constructor_exists():
-    assert callable(dsl::AdditiveExpression.__init__)
+def test_dsl_additiveexpression_constructor_exists():
+    assert callable(dsl_AdditiveExpression.__init__)
 
 
-def test_dsl::additiveexpression_constructor_args():
-    sig = inspect.signature(dsl::AdditiveExpression.__init__)
+def test_dsl_additiveexpression_constructor_args():
+    sig = inspect.signature(dsl_AdditiveExpression.__init__)
     params = list(sig.parameters.keys())
     assert "ops" in params, "Missing parameter 'ops'"
 
-def test_dsl::additiveexpression_has_ops():
-    assert hasattr(dsl::AdditiveExpression, "ops")
+def test_dsl_additiveexpression_has_ops():
+    assert hasattr(dsl_AdditiveExpression, "ops")
     descriptor = None
-    for klass in dsl::AdditiveExpression.__mro__:
+    for klass in dsl_AdditiveExpression.__mro__:
         if "ops" in klass.__dict__:
             descriptor = klass.__dict__["ops"]
             break
@@ -1310,23 +1310,23 @@ def test_dsl::additiveexpression_has_ops():
 
 
 
-def test_dsl::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::ShiftExpression)
+def test_dsl_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_ShiftExpression)
 
 
-def test_dsl::shiftexpression_constructor_exists():
-    assert callable(dsl::ShiftExpression.__init__)
+def test_dsl_shiftexpression_constructor_exists():
+    assert callable(dsl_ShiftExpression.__init__)
 
 
-def test_dsl::shiftexpression_constructor_args():
-    sig = inspect.signature(dsl::ShiftExpression.__init__)
+def test_dsl_shiftexpression_constructor_args():
+    sig = inspect.signature(dsl_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "ops" in params, "Missing parameter 'ops'"
 
-def test_dsl::shiftexpression_has_ops():
-    assert hasattr(dsl::ShiftExpression, "ops")
+def test_dsl_shiftexpression_has_ops():
+    assert hasattr(dsl_ShiftExpression, "ops")
     descriptor = None
-    for klass in dsl::ShiftExpression.__mro__:
+    for klass in dsl_ShiftExpression.__mro__:
         if "ops" in klass.__dict__:
             descriptor = klass.__dict__["ops"]
             break
@@ -1334,23 +1334,23 @@ def test_dsl::shiftexpression_has_ops():
 
 
 
-def test_dsl::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::RelationalExpression)
+def test_dsl_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_RelationalExpression)
 
 
-def test_dsl::relationalexpression_constructor_exists():
-    assert callable(dsl::RelationalExpression.__init__)
+def test_dsl_relationalexpression_constructor_exists():
+    assert callable(dsl_RelationalExpression.__init__)
 
 
-def test_dsl::relationalexpression_constructor_args():
-    sig = inspect.signature(dsl::RelationalExpression.__init__)
+def test_dsl_relationalexpression_constructor_args():
+    sig = inspect.signature(dsl_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "ops" in params, "Missing parameter 'ops'"
 
-def test_dsl::relationalexpression_has_ops():
-    assert hasattr(dsl::RelationalExpression, "ops")
+def test_dsl_relationalexpression_has_ops():
+    assert hasattr(dsl_RelationalExpression, "ops")
     descriptor = None
-    for klass in dsl::RelationalExpression.__mro__:
+    for klass in dsl_RelationalExpression.__mro__:
         if "ops" in klass.__dict__:
             descriptor = klass.__dict__["ops"]
             break
@@ -1358,86 +1358,86 @@ def test_dsl::relationalexpression_has_ops():
 
 
 
-def test_dsl::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::InstanceOfExpression)
+def test_dsl_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_InstanceOfExpression)
 
 
-def test_dsl::instanceofexpression_constructor_exists():
-    assert callable(dsl::InstanceOfExpression.__init__)
+def test_dsl_instanceofexpression_constructor_exists():
+    assert callable(dsl_InstanceOfExpression.__init__)
 
 
-def test_dsl::instanceofexpression_constructor_args():
-    sig = inspect.signature(dsl::InstanceOfExpression.__init__)
+def test_dsl_instanceofexpression_constructor_args():
+    sig = inspect.signature(dsl_InstanceOfExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::EqualityExpression)
+def test_dsl_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_EqualityExpression)
 
 
-def test_dsl::equalityexpression_constructor_exists():
-    assert callable(dsl::EqualityExpression.__init__)
+def test_dsl_equalityexpression_constructor_exists():
+    assert callable(dsl_EqualityExpression.__init__)
 
 
-def test_dsl::equalityexpression_constructor_args():
-    sig = inspect.signature(dsl::EqualityExpression.__init__)
+def test_dsl_equalityexpression_constructor_args():
+    sig = inspect.signature(dsl_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::andexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::AndExpression)
+def test_dsl_andexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_AndExpression)
 
 
-def test_dsl::andexpression_constructor_exists():
-    assert callable(dsl::AndExpression.__init__)
+def test_dsl_andexpression_constructor_exists():
+    assert callable(dsl_AndExpression.__init__)
 
 
-def test_dsl::andexpression_constructor_args():
-    sig = inspect.signature(dsl::AndExpression.__init__)
+def test_dsl_andexpression_constructor_args():
+    sig = inspect.signature(dsl_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::exclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::ExclusiveOrExpression)
+def test_dsl_exclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_ExclusiveOrExpression)
 
 
-def test_dsl::exclusiveorexpression_constructor_exists():
-    assert callable(dsl::ExclusiveOrExpression.__init__)
+def test_dsl_exclusiveorexpression_constructor_exists():
+    assert callable(dsl_ExclusiveOrExpression.__init__)
 
 
-def test_dsl::exclusiveorexpression_constructor_args():
-    sig = inspect.signature(dsl::ExclusiveOrExpression.__init__)
+def test_dsl_exclusiveorexpression_constructor_args():
+    sig = inspect.signature(dsl_ExclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::inclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::InclusiveOrExpression)
+def test_dsl_inclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_InclusiveOrExpression)
 
 
-def test_dsl::inclusiveorexpression_constructor_exists():
-    assert callable(dsl::InclusiveOrExpression.__init__)
+def test_dsl_inclusiveorexpression_constructor_exists():
+    assert callable(dsl_InclusiveOrExpression.__init__)
 
 
-def test_dsl::inclusiveorexpression_constructor_args():
-    sig = inspect.signature(dsl::InclusiveOrExpression.__init__)
+def test_dsl_inclusiveorexpression_constructor_args():
+    sig = inspect.signature(dsl_InclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::conditionalandexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::ConditionalAndExpression)
+def test_dsl_conditionalandexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_ConditionalAndExpression)
 
 
-def test_dsl::conditionalandexpression_constructor_exists():
-    assert callable(dsl::ConditionalAndExpression.__init__)
+def test_dsl_conditionalandexpression_constructor_exists():
+    assert callable(dsl_ConditionalAndExpression.__init__)
 
 
-def test_dsl::conditionalandexpression_constructor_args():
-    sig = inspect.signature(dsl::ConditionalAndExpression.__init__)
+def test_dsl_conditionalandexpression_constructor_args():
+    sig = inspect.signature(dsl_ConditionalAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1456,233 +1456,233 @@ def test_ifstatement_constructor_args():
 
 
 
-def test_dsl::conditionalorexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::ConditionalOrExpression)
+def test_dsl_conditionalorexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_ConditionalOrExpression)
 
 
-def test_dsl::conditionalorexpression_constructor_exists():
-    assert callable(dsl::ConditionalOrExpression.__init__)
+def test_dsl_conditionalorexpression_constructor_exists():
+    assert callable(dsl_ConditionalOrExpression.__init__)
 
 
-def test_dsl::conditionalorexpression_constructor_args():
-    sig = inspect.signature(dsl::ConditionalOrExpression.__init__)
+def test_dsl_conditionalorexpression_constructor_args():
+    sig = inspect.signature(dsl_ConditionalOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::statement_is_not_abstract():
-    assert not inspect.isabstract(dsl::Statement)
+def test_dsl_statement_is_not_abstract():
+    assert not inspect.isabstract(dsl_Statement)
 
 
-def test_dsl::statement_constructor_exists():
-    assert callable(dsl::Statement.__init__)
+def test_dsl_statement_constructor_exists():
+    assert callable(dsl_Statement.__init__)
 
 
-def test_dsl::statement_constructor_args():
-    sig = inspect.signature(dsl::Statement.__init__)
+def test_dsl_statement_constructor_args():
+    sig = inspect.signature(dsl_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::ConditionalExpression)
+def test_dsl_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_ConditionalExpression)
 
 
-def test_dsl::conditionalexpression_constructor_exists():
-    assert callable(dsl::ConditionalExpression.__init__)
+def test_dsl_conditionalexpression_constructor_exists():
+    assert callable(dsl_ConditionalExpression.__init__)
 
 
-def test_dsl::conditionalexpression_constructor_args():
-    sig = inspect.signature(dsl::ConditionalExpression.__init__)
+def test_dsl_conditionalexpression_constructor_args():
+    sig = inspect.signature(dsl_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::wildcardbounds_is_not_abstract():
-    assert not inspect.isabstract(dsl::WildcardBounds)
+def test_dsl_wildcardbounds_is_not_abstract():
+    assert not inspect.isabstract(dsl_WildcardBounds)
 
 
-def test_dsl::wildcardbounds_constructor_exists():
-    assert callable(dsl::WildcardBounds.__init__)
+def test_dsl_wildcardbounds_constructor_exists():
+    assert callable(dsl_WildcardBounds.__init__)
 
 
-def test_dsl::wildcardbounds_constructor_args():
-    sig = inspect.signature(dsl::WildcardBounds.__init__)
+def test_dsl_wildcardbounds_constructor_args():
+    sig = inspect.signature(dsl_WildcardBounds.__init__)
     params = list(sig.parameters.keys())
-    assert "sup" in params, "Missing parameter 'sup'"
     assert "ext" in params, "Missing parameter 'ext'"
+    assert "sup" in params, "Missing parameter 'sup'"
 
-def test_dsl::wildcardbounds_has_sup():
-    assert hasattr(dsl::WildcardBounds, "sup")
+def test_dsl_wildcardbounds_has_ext():
+    assert hasattr(dsl_WildcardBounds, "ext")
     descriptor = None
-    for klass in dsl::WildcardBounds.__mro__:
-        if "sup" in klass.__dict__:
-            descriptor = klass.__dict__["sup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::wildcardbounds_has_ext():
-    assert hasattr(dsl::WildcardBounds, "ext")
-    descriptor = None
-    for klass in dsl::WildcardBounds.__mro__:
+    for klass in dsl_WildcardBounds.__mro__:
         if "ext" in klass.__dict__:
             descriptor = klass.__dict__["ext"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_wildcardbounds_has_sup():
+    assert hasattr(dsl_WildcardBounds, "sup")
+    descriptor = None
+    for klass in dsl_WildcardBounds.__mro__:
+        if "sup" in klass.__dict__:
+            descriptor = klass.__dict__["sup"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::typeargument_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeArgument)
+
+def test_dsl_typeargument_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeArgument)
 
 
-def test_dsl::typeargument_constructor_exists():
-    assert callable(dsl::TypeArgument.__init__)
+def test_dsl_typeargument_constructor_exists():
+    assert callable(dsl_TypeArgument.__init__)
 
 
-def test_dsl::typeargument_constructor_args():
-    sig = inspect.signature(dsl::TypeArgument.__init__)
+def test_dsl_typeargument_constructor_args():
+    sig = inspect.signature(dsl_TypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::typearguments_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeArguments)
+def test_dsl_typearguments_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeArguments)
 
 
-def test_dsl::typearguments_constructor_exists():
-    assert callable(dsl::TypeArguments.__init__)
+def test_dsl_typearguments_constructor_exists():
+    assert callable(dsl_TypeArguments.__init__)
 
 
-def test_dsl::typearguments_constructor_args():
-    sig = inspect.signature(dsl::TypeArguments.__init__)
+def test_dsl_typearguments_constructor_args():
+    sig = inspect.signature(dsl_TypeArguments.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::referencetype_is_not_abstract():
-    assert not inspect.isabstract(dsl::ReferenceType)
+def test_dsl_referencetype_is_not_abstract():
+    assert not inspect.isabstract(dsl_ReferenceType)
 
 
-def test_dsl::referencetype_constructor_exists():
-    assert callable(dsl::ReferenceType.__init__)
+def test_dsl_referencetype_constructor_exists():
+    assert callable(dsl_ReferenceType.__init__)
 
 
-def test_dsl::referencetype_constructor_args():
-    sig = inspect.signature(dsl::ReferenceType.__init__)
+def test_dsl_referencetype_constructor_args():
+    sig = inspect.signature(dsl_ReferenceType.__init__)
     params = list(sig.parameters.keys())
     assert "primType" in params, "Missing parameter 'primType'"
-    assert "squareBracketsBeta" in params, "Missing parameter 'squareBracketsBeta'"
     assert "squareBracketsAlpha" in params, "Missing parameter 'squareBracketsAlpha'"
+    assert "squareBracketsBeta" in params, "Missing parameter 'squareBracketsBeta'"
 
-def test_dsl::referencetype_has_primType():
-    assert hasattr(dsl::ReferenceType, "primType")
+def test_dsl_referencetype_has_primType():
+    assert hasattr(dsl_ReferenceType, "primType")
     descriptor = None
-    for klass in dsl::ReferenceType.__mro__:
+    for klass in dsl_ReferenceType.__mro__:
         if "primType" in klass.__dict__:
             descriptor = klass.__dict__["primType"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::referencetype_has_squareBracketsBeta():
-    assert hasattr(dsl::ReferenceType, "squareBracketsBeta")
+def test_dsl_referencetype_has_squareBracketsAlpha():
+    assert hasattr(dsl_ReferenceType, "squareBracketsAlpha")
     descriptor = None
-    for klass in dsl::ReferenceType.__mro__:
-        if "squareBracketsBeta" in klass.__dict__:
-            descriptor = klass.__dict__["squareBracketsBeta"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::referencetype_has_squareBracketsAlpha():
-    assert hasattr(dsl::ReferenceType, "squareBracketsAlpha")
-    descriptor = None
-    for klass in dsl::ReferenceType.__mro__:
+    for klass in dsl_ReferenceType.__mro__:
         if "squareBracketsAlpha" in klass.__dict__:
             descriptor = klass.__dict__["squareBracketsAlpha"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dsl::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(dsl::PrimaryExpression)
-
-
-def test_dsl::primaryexpression_constructor_exists():
-    assert callable(dsl::PrimaryExpression.__init__)
-
-
-def test_dsl::primaryexpression_constructor_args():
-    sig = inspect.signature(dsl::PrimaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dsl::variabledeclaratorid_is_not_abstract():
-    assert not inspect.isabstract(dsl::VariableDeclaratorId)
-
-
-def test_dsl::variabledeclaratorid_constructor_exists():
-    assert callable(dsl::VariableDeclaratorId.__init__)
-
-
-def test_dsl::variabledeclaratorid_constructor_args():
-    sig = inspect.signature(dsl::VariableDeclaratorId.__init__)
-    params = list(sig.parameters.keys())
-    assert "squareBrackets" in params, "Missing parameter 'squareBrackets'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_dsl::variabledeclaratorid_has_squareBrackets():
-    assert hasattr(dsl::VariableDeclaratorId, "squareBrackets")
+def test_dsl_referencetype_has_squareBracketsBeta():
+    assert hasattr(dsl_ReferenceType, "squareBracketsBeta")
     descriptor = None
-    for klass in dsl::VariableDeclaratorId.__mro__:
-        if "squareBrackets" in klass.__dict__:
-            descriptor = klass.__dict__["squareBrackets"]
+    for klass in dsl_ReferenceType.__mro__:
+        if "squareBracketsBeta" in klass.__dict__:
+            descriptor = klass.__dict__["squareBracketsBeta"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::variabledeclaratorid_has_id():
-    assert hasattr(dsl::VariableDeclaratorId, "id")
+
+
+def test_dsl_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(dsl_PrimaryExpression)
+
+
+def test_dsl_primaryexpression_constructor_exists():
+    assert callable(dsl_PrimaryExpression.__init__)
+
+
+def test_dsl_primaryexpression_constructor_args():
+    sig = inspect.signature(dsl_PrimaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dsl_variabledeclaratorid_is_not_abstract():
+    assert not inspect.isabstract(dsl_VariableDeclaratorId)
+
+
+def test_dsl_variabledeclaratorid_constructor_exists():
+    assert callable(dsl_VariableDeclaratorId.__init__)
+
+
+def test_dsl_variabledeclaratorid_constructor_args():
+    sig = inspect.signature(dsl_VariableDeclaratorId.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "squareBrackets" in params, "Missing parameter 'squareBrackets'"
+
+def test_dsl_variabledeclaratorid_has_id():
+    assert hasattr(dsl_VariableDeclaratorId, "id")
     descriptor = None
-    for klass in dsl::VariableDeclaratorId.__mro__:
+    for klass in dsl_VariableDeclaratorId.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_variabledeclaratorid_has_squareBrackets():
+    assert hasattr(dsl_VariableDeclaratorId, "squareBrackets")
+    descriptor = None
+    for klass in dsl_VariableDeclaratorId.__mro__:
+        if "squareBrackets" in klass.__dict__:
+            descriptor = klass.__dict__["squareBrackets"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::variabledeclarator_is_not_abstract():
-    assert not inspect.isabstract(dsl::VariableDeclarator)
+
+def test_dsl_variabledeclarator_is_not_abstract():
+    assert not inspect.isabstract(dsl_VariableDeclarator)
 
 
-def test_dsl::variabledeclarator_constructor_exists():
-    assert callable(dsl::VariableDeclarator.__init__)
+def test_dsl_variabledeclarator_constructor_exists():
+    assert callable(dsl_VariableDeclarator.__init__)
 
 
-def test_dsl::variabledeclarator_constructor_args():
-    sig = inspect.signature(dsl::VariableDeclarator.__init__)
+def test_dsl_variabledeclarator_constructor_args():
+    sig = inspect.signature(dsl_VariableDeclarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::formalparameter_is_not_abstract():
-    assert not inspect.isabstract(dsl::FormalParameter)
+def test_dsl_formalparameter_is_not_abstract():
+    assert not inspect.isabstract(dsl_FormalParameter)
 
 
-def test_dsl::formalparameter_constructor_exists():
-    assert callable(dsl::FormalParameter.__init__)
+def test_dsl_formalparameter_constructor_exists():
+    assert callable(dsl_FormalParameter.__init__)
 
 
-def test_dsl::formalparameter_constructor_args():
-    sig = inspect.signature(dsl::FormalParameter.__init__)
+def test_dsl_formalparameter_constructor_args():
+    sig = inspect.signature(dsl_FormalParameter.__init__)
     params = list(sig.parameters.keys())
     assert "final" in params, "Missing parameter 'final'"
 
-def test_dsl::formalparameter_has_final():
-    assert hasattr(dsl::FormalParameter, "final")
+def test_dsl_formalparameter_has_final():
+    assert hasattr(dsl_FormalParameter, "final")
     descriptor = None
-    for klass in dsl::FormalParameter.__mro__:
+    for klass in dsl_FormalParameter.__mro__:
         if "final" in klass.__dict__:
             descriptor = klass.__dict__["final"]
             break
@@ -1690,161 +1690,161 @@ def test_dsl::formalparameter_has_final():
 
 
 
-def test_dsl::block_is_not_abstract():
-    assert not inspect.isabstract(dsl::Block)
+def test_dsl_block_is_not_abstract():
+    assert not inspect.isabstract(dsl_Block)
 
 
-def test_dsl::block_constructor_exists():
-    assert callable(dsl::Block.__init__)
+def test_dsl_block_constructor_exists():
+    assert callable(dsl_Block.__init__)
 
 
-def test_dsl::block_constructor_args():
-    sig = inspect.signature(dsl::Block.__init__)
+def test_dsl_block_constructor_args():
+    sig = inspect.signature(dsl_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::methoddeclarator_is_not_abstract():
-    assert not inspect.isabstract(dsl::MethodDeclarator)
+def test_dsl_methoddeclarator_is_not_abstract():
+    assert not inspect.isabstract(dsl_MethodDeclarator)
 
 
-def test_dsl::methoddeclarator_constructor_exists():
-    assert callable(dsl::MethodDeclarator.__init__)
+def test_dsl_methoddeclarator_constructor_exists():
+    assert callable(dsl_MethodDeclarator.__init__)
 
 
-def test_dsl::methoddeclarator_constructor_args():
-    sig = inspect.signature(dsl::MethodDeclarator.__init__)
+def test_dsl_methoddeclarator_constructor_args():
+    sig = inspect.signature(dsl_MethodDeclarator.__init__)
     params = list(sig.parameters.keys())
-    assert "squareBrackets" in params, "Missing parameter 'squareBrackets'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "squareBrackets" in params, "Missing parameter 'squareBrackets'"
 
-def test_dsl::methoddeclarator_has_squareBrackets():
-    assert hasattr(dsl::MethodDeclarator, "squareBrackets")
+def test_dsl_methoddeclarator_has_id():
+    assert hasattr(dsl_MethodDeclarator, "id")
     descriptor = None
-    for klass in dsl::MethodDeclarator.__mro__:
-        if "squareBrackets" in klass.__dict__:
-            descriptor = klass.__dict__["squareBrackets"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::methoddeclarator_has_id():
-    assert hasattr(dsl::MethodDeclarator, "id")
-    descriptor = None
-    for klass in dsl::MethodDeclarator.__mro__:
+    for klass in dsl_MethodDeclarator.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dsl::resulttype_is_not_abstract():
-    assert not inspect.isabstract(dsl::ResultType)
-
-
-def test_dsl::resulttype_constructor_exists():
-    assert callable(dsl::ResultType.__init__)
-
-
-def test_dsl::resulttype_constructor_args():
-    sig = inspect.signature(dsl::ResultType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dsl::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(dsl::BlockStatement)
-
-
-def test_dsl::blockstatement_constructor_exists():
-    assert callable(dsl::BlockStatement.__init__)
-
-
-def test_dsl::blockstatement_constructor_args():
-    sig = inspect.signature(dsl::BlockStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dsl::explicitconstructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(dsl::ExplicitConstructorInvocation)
-
-
-def test_dsl::explicitconstructorinvocation_constructor_exists():
-    assert callable(dsl::ExplicitConstructorInvocation.__init__)
-
-
-def test_dsl::explicitconstructorinvocation_constructor_args():
-    sig = inspect.signature(dsl::ExplicitConstructorInvocation.__init__)
-    params = list(sig.parameters.keys())
-    assert "self" in params, "Missing parameter 'self'"
-    assert "parent" in params, "Missing parameter 'parent'"
-
-def test_dsl::explicitconstructorinvocation_has_self():
-    assert hasattr(dsl::ExplicitConstructorInvocation, "self")
+def test_dsl_methoddeclarator_has_squareBrackets():
+    assert hasattr(dsl_MethodDeclarator, "squareBrackets")
     descriptor = None
-    for klass in dsl::ExplicitConstructorInvocation.__mro__:
-        if "self" in klass.__dict__:
-            descriptor = klass.__dict__["self"]
+    for klass in dsl_MethodDeclarator.__mro__:
+        if "squareBrackets" in klass.__dict__:
+            descriptor = klass.__dict__["squareBrackets"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::explicitconstructorinvocation_has_parent():
-    assert hasattr(dsl::ExplicitConstructorInvocation, "parent")
+
+
+def test_dsl_resulttype_is_not_abstract():
+    assert not inspect.isabstract(dsl_ResultType)
+
+
+def test_dsl_resulttype_constructor_exists():
+    assert callable(dsl_ResultType.__init__)
+
+
+def test_dsl_resulttype_constructor_args():
+    sig = inspect.signature(dsl_ResultType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dsl_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(dsl_BlockStatement)
+
+
+def test_dsl_blockstatement_constructor_exists():
+    assert callable(dsl_BlockStatement.__init__)
+
+
+def test_dsl_blockstatement_constructor_args():
+    sig = inspect.signature(dsl_BlockStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dsl_explicitconstructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(dsl_ExplicitConstructorInvocation)
+
+
+def test_dsl_explicitconstructorinvocation_constructor_exists():
+    assert callable(dsl_ExplicitConstructorInvocation.__init__)
+
+
+def test_dsl_explicitconstructorinvocation_constructor_args():
+    sig = inspect.signature(dsl_ExplicitConstructorInvocation.__init__)
+    params = list(sig.parameters.keys())
+    assert "parent" in params, "Missing parameter 'parent'"
+    assert "self" in params, "Missing parameter 'self'"
+
+def test_dsl_explicitconstructorinvocation_has_parent():
+    assert hasattr(dsl_ExplicitConstructorInvocation, "parent")
     descriptor = None
-    for klass in dsl::ExplicitConstructorInvocation.__mro__:
+    for klass in dsl_ExplicitConstructorInvocation.__mro__:
         if "parent" in klass.__dict__:
             descriptor = klass.__dict__["parent"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_explicitconstructorinvocation_has_self():
+    assert hasattr(dsl_ExplicitConstructorInvocation, "self")
+    descriptor = None
+    for klass in dsl_ExplicitConstructorInvocation.__mro__:
+        if "self" in klass.__dict__:
+            descriptor = klass.__dict__["self"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::namelist_is_not_abstract():
-    assert not inspect.isabstract(dsl::NameList)
+
+def test_dsl_namelist_is_not_abstract():
+    assert not inspect.isabstract(dsl_NameList)
 
 
-def test_dsl::namelist_constructor_exists():
-    assert callable(dsl::NameList.__init__)
+def test_dsl_namelist_constructor_exists():
+    assert callable(dsl_NameList.__init__)
 
 
-def test_dsl::namelist_constructor_args():
-    sig = inspect.signature(dsl::NameList.__init__)
+def test_dsl_namelist_constructor_args():
+    sig = inspect.signature(dsl_NameList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::formalparameters_is_not_abstract():
-    assert not inspect.isabstract(dsl::FormalParameters)
+def test_dsl_formalparameters_is_not_abstract():
+    assert not inspect.isabstract(dsl_FormalParameters)
 
 
-def test_dsl::formalparameters_constructor_exists():
-    assert callable(dsl::FormalParameters.__init__)
+def test_dsl_formalparameters_constructor_exists():
+    assert callable(dsl_FormalParameters.__init__)
 
 
-def test_dsl::formalparameters_constructor_args():
-    sig = inspect.signature(dsl::FormalParameters.__init__)
+def test_dsl_formalparameters_constructor_args():
+    sig = inspect.signature(dsl_FormalParameters.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::expression_is_not_abstract():
-    assert not inspect.isabstract(dsl::Expression)
+def test_dsl_expression_is_not_abstract():
+    assert not inspect.isabstract(dsl_Expression)
 
 
-def test_dsl::expression_constructor_exists():
-    assert callable(dsl::Expression.__init__)
+def test_dsl_expression_constructor_exists():
+    assert callable(dsl_Expression.__init__)
 
 
-def test_dsl::expression_constructor_args():
-    sig = inspect.signature(dsl::Expression.__init__)
+def test_dsl_expression_constructor_args():
+    sig = inspect.signature(dsl_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "assignOp" in params, "Missing parameter 'assignOp'"
 
-def test_dsl::expression_has_assignOp():
-    assert hasattr(dsl::Expression, "assignOp")
+def test_dsl_expression_has_assignOp():
+    assert hasattr(dsl_Expression, "assignOp")
     descriptor = None
-    for klass in dsl::Expression.__mro__:
+    for klass in dsl_Expression.__mro__:
         if "assignOp" in klass.__dict__:
             descriptor = klass.__dict__["assignOp"]
             break
@@ -1852,51 +1852,51 @@ def test_dsl::expression_has_assignOp():
 
 
 
-def test_dsl::arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(dsl::ArrayInitializer)
+def test_dsl_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(dsl_ArrayInitializer)
 
 
-def test_dsl::arrayinitializer_constructor_exists():
-    assert callable(dsl::ArrayInitializer.__init__)
+def test_dsl_arrayinitializer_constructor_exists():
+    assert callable(dsl_ArrayInitializer.__init__)
 
 
-def test_dsl::arrayinitializer_constructor_args():
-    sig = inspect.signature(dsl::ArrayInitializer.__init__)
+def test_dsl_arrayinitializer_constructor_args():
+    sig = inspect.signature(dsl_ArrayInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::variableinitializer_is_not_abstract():
-    assert not inspect.isabstract(dsl::VariableInitializer)
+def test_dsl_variableinitializer_is_not_abstract():
+    assert not inspect.isabstract(dsl_VariableInitializer)
 
 
-def test_dsl::variableinitializer_constructor_exists():
-    assert callable(dsl::VariableInitializer.__init__)
+def test_dsl_variableinitializer_constructor_exists():
+    assert callable(dsl_VariableInitializer.__init__)
 
 
-def test_dsl::variableinitializer_constructor_args():
-    sig = inspect.signature(dsl::VariableInitializer.__init__)
+def test_dsl_variableinitializer_constructor_args():
+    sig = inspect.signature(dsl_VariableInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::type_is_not_abstract():
-    assert not inspect.isabstract(dsl::Type)
+def test_dsl_type_is_not_abstract():
+    assert not inspect.isabstract(dsl_Type)
 
 
-def test_dsl::type_constructor_exists():
-    assert callable(dsl::Type.__init__)
+def test_dsl_type_constructor_exists():
+    assert callable(dsl_Type.__init__)
 
 
-def test_dsl::type_constructor_args():
-    sig = inspect.signature(dsl::Type.__init__)
+def test_dsl_type_constructor_args():
+    sig = inspect.signature(dsl_Type.__init__)
     params = list(sig.parameters.keys())
     assert "primType" in params, "Missing parameter 'primType'"
 
-def test_dsl::type_has_primType():
-    assert hasattr(dsl::Type, "primType")
+def test_dsl_type_has_primType():
+    assert hasattr(dsl_Type, "primType")
     descriptor = None
-    for klass in dsl::Type.__mro__:
+    for klass in dsl_Type.__mro__:
         if "primType" in klass.__dict__:
             descriptor = klass.__dict__["primType"]
             break
@@ -1904,37 +1904,37 @@ def test_dsl::type_has_primType():
 
 
 
-def test_dsl::fielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::FieldDeclaration)
+def test_dsl_fielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_FieldDeclaration)
 
 
-def test_dsl::fielddeclaration_constructor_exists():
-    assert callable(dsl::FieldDeclaration.__init__)
+def test_dsl_fielddeclaration_constructor_exists():
+    assert callable(dsl_FieldDeclaration.__init__)
 
 
-def test_dsl::fielddeclaration_constructor_args():
-    sig = inspect.signature(dsl::FieldDeclaration.__init__)
+def test_dsl_fielddeclaration_constructor_args():
+    sig = inspect.signature(dsl_FieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::methodorctordeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::MethodOrCtorDeclaration)
+def test_dsl_methodorctordeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_MethodOrCtorDeclaration)
 
 
-def test_dsl::methodorctordeclaration_constructor_exists():
-    assert callable(dsl::MethodOrCtorDeclaration.__init__)
+def test_dsl_methodorctordeclaration_constructor_exists():
+    assert callable(dsl_MethodOrCtorDeclaration.__init__)
 
 
-def test_dsl::methodorctordeclaration_constructor_args():
-    sig = inspect.signature(dsl::MethodOrCtorDeclaration.__init__)
+def test_dsl_methodorctordeclaration_constructor_args():
+    sig = inspect.signature(dsl_MethodOrCtorDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::methodorctordeclaration_has_id():
-    assert hasattr(dsl::MethodOrCtorDeclaration, "id")
+def test_dsl_methodorctordeclaration_has_id():
+    assert hasattr(dsl_MethodOrCtorDeclaration, "id")
     descriptor = None
-    for klass in dsl::MethodOrCtorDeclaration.__mro__:
+    for klass in dsl_MethodOrCtorDeclaration.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1942,23 +1942,23 @@ def test_dsl::methodorctordeclaration_has_id():
 
 
 
-def test_dsl::initializer_is_not_abstract():
-    assert not inspect.isabstract(dsl::Initializer)
+def test_dsl_initializer_is_not_abstract():
+    assert not inspect.isabstract(dsl_Initializer)
 
 
-def test_dsl::initializer_constructor_exists():
-    assert callable(dsl::Initializer.__init__)
+def test_dsl_initializer_constructor_exists():
+    assert callable(dsl_Initializer.__init__)
 
 
-def test_dsl::initializer_constructor_args():
-    sig = inspect.signature(dsl::Initializer.__init__)
+def test_dsl_initializer_constructor_args():
+    sig = inspect.signature(dsl_Initializer.__init__)
     params = list(sig.parameters.keys())
     assert "static" in params, "Missing parameter 'static'"
 
-def test_dsl::initializer_has_static():
-    assert hasattr(dsl::Initializer, "static")
+def test_dsl_initializer_has_static():
+    assert hasattr(dsl_Initializer, "static")
     descriptor = None
-    for klass in dsl::Initializer.__mro__:
+    for klass in dsl_Initializer.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
@@ -1966,37 +1966,37 @@ def test_dsl::initializer_has_static():
 
 
 
-def test_dsl::typebound_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeBound)
+def test_dsl_typebound_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeBound)
 
 
-def test_dsl::typebound_constructor_exists():
-    assert callable(dsl::TypeBound.__init__)
+def test_dsl_typebound_constructor_exists():
+    assert callable(dsl_TypeBound.__init__)
 
 
-def test_dsl::typebound_constructor_args():
-    sig = inspect.signature(dsl::TypeBound.__init__)
+def test_dsl_typebound_constructor_args():
+    sig = inspect.signature(dsl_TypeBound.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeParameter)
+def test_dsl_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeParameter)
 
 
-def test_dsl::typeparameter_constructor_exists():
-    assert callable(dsl::TypeParameter.__init__)
+def test_dsl_typeparameter_constructor_exists():
+    assert callable(dsl_TypeParameter.__init__)
 
 
-def test_dsl::typeparameter_constructor_args():
-    sig = inspect.signature(dsl::TypeParameter.__init__)
+def test_dsl_typeparameter_constructor_args():
+    sig = inspect.signature(dsl_TypeParameter.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::typeparameter_has_id():
-    assert hasattr(dsl::TypeParameter, "id")
+def test_dsl_typeparameter_has_id():
+    assert hasattr(dsl_TypeParameter, "id")
     descriptor = None
-    for klass in dsl::TypeParameter.__mro__:
+    for klass in dsl_TypeParameter.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2004,51 +2004,51 @@ def test_dsl::typeparameter_has_id():
 
 
 
-def test_dsl::arguments_is_not_abstract():
-    assert not inspect.isabstract(dsl::Arguments)
+def test_dsl_arguments_is_not_abstract():
+    assert not inspect.isabstract(dsl_Arguments)
 
 
-def test_dsl::arguments_constructor_exists():
-    assert callable(dsl::Arguments.__init__)
+def test_dsl_arguments_constructor_exists():
+    assert callable(dsl_Arguments.__init__)
 
 
-def test_dsl::arguments_constructor_args():
-    sig = inspect.signature(dsl::Arguments.__init__)
+def test_dsl_arguments_constructor_args():
+    sig = inspect.signature(dsl_Arguments.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::classorinterfacebodydeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::ClassOrInterfaceBodyDeclaration)
+def test_dsl_classorinterfacebodydeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_ClassOrInterfaceBodyDeclaration)
 
 
-def test_dsl::classorinterfacebodydeclaration_constructor_exists():
-    assert callable(dsl::ClassOrInterfaceBodyDeclaration.__init__)
+def test_dsl_classorinterfacebodydeclaration_constructor_exists():
+    assert callable(dsl_ClassOrInterfaceBodyDeclaration.__init__)
 
 
-def test_dsl::classorinterfacebodydeclaration_constructor_args():
-    sig = inspect.signature(dsl::ClassOrInterfaceBodyDeclaration.__init__)
+def test_dsl_classorinterfacebodydeclaration_constructor_args():
+    sig = inspect.signature(dsl_ClassOrInterfaceBodyDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::enumconstant_is_not_abstract():
-    assert not inspect.isabstract(dsl::EnumConstant)
+def test_dsl_enumconstant_is_not_abstract():
+    assert not inspect.isabstract(dsl_EnumConstant)
 
 
-def test_dsl::enumconstant_constructor_exists():
-    assert callable(dsl::EnumConstant.__init__)
+def test_dsl_enumconstant_constructor_exists():
+    assert callable(dsl_EnumConstant.__init__)
 
 
-def test_dsl::enumconstant_constructor_args():
-    sig = inspect.signature(dsl::EnumConstant.__init__)
+def test_dsl_enumconstant_constructor_args():
+    sig = inspect.signature(dsl_EnumConstant.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::enumconstant_has_id():
-    assert hasattr(dsl::EnumConstant, "id")
+def test_dsl_enumconstant_has_id():
+    assert hasattr(dsl_EnumConstant, "id")
     descriptor = None
-    for klass in dsl::EnumConstant.__mro__:
+    for klass in dsl_EnumConstant.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2056,37 +2056,37 @@ def test_dsl::enumconstant_has_id():
 
 
 
-def test_dsl::enumbody_is_not_abstract():
-    assert not inspect.isabstract(dsl::EnumBody)
+def test_dsl_enumbody_is_not_abstract():
+    assert not inspect.isabstract(dsl_EnumBody)
 
 
-def test_dsl::enumbody_constructor_exists():
-    assert callable(dsl::EnumBody.__init__)
+def test_dsl_enumbody_constructor_exists():
+    assert callable(dsl_EnumBody.__init__)
 
 
-def test_dsl::enumbody_constructor_args():
-    sig = inspect.signature(dsl::EnumBody.__init__)
+def test_dsl_enumbody_constructor_args():
+    sig = inspect.signature(dsl_EnumBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::classorinterfacetype_is_not_abstract():
-    assert not inspect.isabstract(dsl::ClassOrInterfaceType)
+def test_dsl_classorinterfacetype_is_not_abstract():
+    assert not inspect.isabstract(dsl_ClassOrInterfaceType)
 
 
-def test_dsl::classorinterfacetype_constructor_exists():
-    assert callable(dsl::ClassOrInterfaceType.__init__)
+def test_dsl_classorinterfacetype_constructor_exists():
+    assert callable(dsl_ClassOrInterfaceType.__init__)
 
 
-def test_dsl::classorinterfacetype_constructor_args():
-    sig = inspect.signature(dsl::ClassOrInterfaceType.__init__)
+def test_dsl_classorinterfacetype_constructor_args():
+    sig = inspect.signature(dsl_ClassOrInterfaceType.__init__)
     params = list(sig.parameters.keys())
     assert "ids" in params, "Missing parameter 'ids'"
 
-def test_dsl::classorinterfacetype_has_ids():
-    assert hasattr(dsl::ClassOrInterfaceType, "ids")
+def test_dsl_classorinterfacetype_has_ids():
+    assert hasattr(dsl_ClassOrInterfaceType, "ids")
     descriptor = None
-    for klass in dsl::ClassOrInterfaceType.__mro__:
+    for klass in dsl_ClassOrInterfaceType.__mro__:
         if "ids" in klass.__dict__:
             descriptor = klass.__dict__["ids"]
             break
@@ -2094,79 +2094,79 @@ def test_dsl::classorinterfacetype_has_ids():
 
 
 
-def test_dsl::classorinterfacebody_is_not_abstract():
-    assert not inspect.isabstract(dsl::ClassOrInterfaceBody)
+def test_dsl_classorinterfacebody_is_not_abstract():
+    assert not inspect.isabstract(dsl_ClassOrInterfaceBody)
 
 
-def test_dsl::classorinterfacebody_constructor_exists():
-    assert callable(dsl::ClassOrInterfaceBody.__init__)
+def test_dsl_classorinterfacebody_constructor_exists():
+    assert callable(dsl_ClassOrInterfaceBody.__init__)
 
 
-def test_dsl::classorinterfacebody_constructor_args():
-    sig = inspect.signature(dsl::ClassOrInterfaceBody.__init__)
+def test_dsl_classorinterfacebody_constructor_args():
+    sig = inspect.signature(dsl_ClassOrInterfaceBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::implementslist_is_not_abstract():
-    assert not inspect.isabstract(dsl::ImplementsList)
+def test_dsl_implementslist_is_not_abstract():
+    assert not inspect.isabstract(dsl_ImplementsList)
 
 
-def test_dsl::implementslist_constructor_exists():
-    assert callable(dsl::ImplementsList.__init__)
+def test_dsl_implementslist_constructor_exists():
+    assert callable(dsl_ImplementsList.__init__)
 
 
-def test_dsl::implementslist_constructor_args():
-    sig = inspect.signature(dsl::ImplementsList.__init__)
+def test_dsl_implementslist_constructor_args():
+    sig = inspect.signature(dsl_ImplementsList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::extendslist_is_not_abstract():
-    assert not inspect.isabstract(dsl::ExtendsList)
+def test_dsl_extendslist_is_not_abstract():
+    assert not inspect.isabstract(dsl_ExtendsList)
 
 
-def test_dsl::extendslist_constructor_exists():
-    assert callable(dsl::ExtendsList.__init__)
+def test_dsl_extendslist_constructor_exists():
+    assert callable(dsl_ExtendsList.__init__)
 
 
-def test_dsl::extendslist_constructor_args():
-    sig = inspect.signature(dsl::ExtendsList.__init__)
+def test_dsl_extendslist_constructor_args():
+    sig = inspect.signature(dsl_ExtendsList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::typeparameters_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeParameters)
+def test_dsl_typeparameters_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeParameters)
 
 
-def test_dsl::typeparameters_constructor_exists():
-    assert callable(dsl::TypeParameters.__init__)
+def test_dsl_typeparameters_constructor_exists():
+    assert callable(dsl_TypeParameters.__init__)
 
 
-def test_dsl::typeparameters_constructor_args():
-    sig = inspect.signature(dsl::TypeParameters.__init__)
+def test_dsl_typeparameters_constructor_args():
+    sig = inspect.signature(dsl_TypeParameters.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::annotationtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::AnnotationTypeDeclaration)
+def test_dsl_annotationtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_AnnotationTypeDeclaration)
 
 
-def test_dsl::annotationtypedeclaration_constructor_exists():
-    assert callable(dsl::AnnotationTypeDeclaration.__init__)
+def test_dsl_annotationtypedeclaration_constructor_exists():
+    assert callable(dsl_AnnotationTypeDeclaration.__init__)
 
 
-def test_dsl::annotationtypedeclaration_constructor_args():
-    sig = inspect.signature(dsl::AnnotationTypeDeclaration.__init__)
+def test_dsl_annotationtypedeclaration_constructor_args():
+    sig = inspect.signature(dsl_AnnotationTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::annotationtypedeclaration_has_id():
-    assert hasattr(dsl::AnnotationTypeDeclaration, "id")
+def test_dsl_annotationtypedeclaration_has_id():
+    assert hasattr(dsl_AnnotationTypeDeclaration, "id")
     descriptor = None
-    for klass in dsl::AnnotationTypeDeclaration.__mro__:
+    for klass in dsl_AnnotationTypeDeclaration.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2174,23 +2174,23 @@ def test_dsl::annotationtypedeclaration_has_id():
 
 
 
-def test_dsl::enumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::EnumDeclaration)
+def test_dsl_enumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_EnumDeclaration)
 
 
-def test_dsl::enumdeclaration_constructor_exists():
-    assert callable(dsl::EnumDeclaration.__init__)
+def test_dsl_enumdeclaration_constructor_exists():
+    assert callable(dsl_EnumDeclaration.__init__)
 
 
-def test_dsl::enumdeclaration_constructor_args():
-    sig = inspect.signature(dsl::EnumDeclaration.__init__)
+def test_dsl_enumdeclaration_constructor_args():
+    sig = inspect.signature(dsl_EnumDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_dsl::enumdeclaration_has_id():
-    assert hasattr(dsl::EnumDeclaration, "id")
+def test_dsl_enumdeclaration_has_id():
+    assert hasattr(dsl_EnumDeclaration, "id")
     descriptor = None
-    for klass in dsl::EnumDeclaration.__mro__:
+    for klass in dsl_EnumDeclaration.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -2198,33 +2198,33 @@ def test_dsl::enumdeclaration_has_id():
 
 
 
-def test_dsl::classorinterfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::ClassOrInterfaceDeclaration)
+def test_dsl_classorinterfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_ClassOrInterfaceDeclaration)
 
 
-def test_dsl::classorinterfacedeclaration_constructor_exists():
-    assert callable(dsl::ClassOrInterfaceDeclaration.__init__)
+def test_dsl_classorinterfacedeclaration_constructor_exists():
+    assert callable(dsl_ClassOrInterfaceDeclaration.__init__)
 
 
-def test_dsl::classorinterfacedeclaration_constructor_args():
-    sig = inspect.signature(dsl::ClassOrInterfaceDeclaration.__init__)
+def test_dsl_classorinterfacedeclaration_constructor_args():
+    sig = inspect.signature(dsl_ClassOrInterfaceDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "typeCategory" in params, "Missing parameter 'typeCategory'"
 
-def test_dsl::classorinterfacedeclaration_has_id():
-    assert hasattr(dsl::ClassOrInterfaceDeclaration, "id")
+def test_dsl_classorinterfacedeclaration_has_id():
+    assert hasattr(dsl_ClassOrInterfaceDeclaration, "id")
     descriptor = None
-    for klass in dsl::ClassOrInterfaceDeclaration.__mro__:
+    for klass in dsl_ClassOrInterfaceDeclaration.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::classorinterfacedeclaration_has_typeCategory():
-    assert hasattr(dsl::ClassOrInterfaceDeclaration, "typeCategory")
+def test_dsl_classorinterfacedeclaration_has_typeCategory():
+    assert hasattr(dsl_ClassOrInterfaceDeclaration, "typeCategory")
     descriptor = None
-    for klass in dsl::ClassOrInterfaceDeclaration.__mro__:
+    for klass in dsl_ClassOrInterfaceDeclaration.__mro__:
         if "typeCategory" in klass.__dict__:
             descriptor = klass.__dict__["typeCategory"]
             break
@@ -2232,117 +2232,117 @@ def test_dsl::classorinterfacedeclaration_has_typeCategory():
 
 
 
-def test_dsl::typebodymodifier_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeBodyModifier)
+def test_dsl_typebodymodifier_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeBodyModifier)
 
 
-def test_dsl::typebodymodifier_constructor_exists():
-    assert callable(dsl::TypeBodyModifier.__init__)
+def test_dsl_typebodymodifier_constructor_exists():
+    assert callable(dsl_TypeBodyModifier.__init__)
 
 
-def test_dsl::typebodymodifier_constructor_args():
-    sig = inspect.signature(dsl::TypeBodyModifier.__init__)
+def test_dsl_typebodymodifier_constructor_args():
+    sig = inspect.signature(dsl_TypeBodyModifier.__init__)
     params = list(sig.parameters.keys())
     assert "transient" in params, "Missing parameter 'transient'"
     assert "volatile" in params, "Missing parameter 'volatile'"
     assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "strictfp" in params, "Missing parameter 'strictfp'"
     assert "native" in params, "Missing parameter 'native'"
+    assert "strictfp" in params, "Missing parameter 'strictfp'"
 
-def test_dsl::typebodymodifier_has_transient():
-    assert hasattr(dsl::TypeBodyModifier, "transient")
+def test_dsl_typebodymodifier_has_transient():
+    assert hasattr(dsl_TypeBodyModifier, "transient")
     descriptor = None
-    for klass in dsl::TypeBodyModifier.__mro__:
+    for klass in dsl_TypeBodyModifier.__mro__:
         if "transient" in klass.__dict__:
             descriptor = klass.__dict__["transient"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::typebodymodifier_has_volatile():
-    assert hasattr(dsl::TypeBodyModifier, "volatile")
+def test_dsl_typebodymodifier_has_volatile():
+    assert hasattr(dsl_TypeBodyModifier, "volatile")
     descriptor = None
-    for klass in dsl::TypeBodyModifier.__mro__:
+    for klass in dsl_TypeBodyModifier.__mro__:
         if "volatile" in klass.__dict__:
             descriptor = klass.__dict__["volatile"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::typebodymodifier_has_synchronized():
-    assert hasattr(dsl::TypeBodyModifier, "synchronized")
+def test_dsl_typebodymodifier_has_synchronized():
+    assert hasattr(dsl_TypeBodyModifier, "synchronized")
     descriptor = None
-    for klass in dsl::TypeBodyModifier.__mro__:
+    for klass in dsl_TypeBodyModifier.__mro__:
         if "synchronized" in klass.__dict__:
             descriptor = klass.__dict__["synchronized"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::typebodymodifier_has_strictfp():
-    assert hasattr(dsl::TypeBodyModifier, "strictfp")
+def test_dsl_typebodymodifier_has_native():
+    assert hasattr(dsl_TypeBodyModifier, "native")
     descriptor = None
-    for klass in dsl::TypeBodyModifier.__mro__:
-        if "strictfp" in klass.__dict__:
-            descriptor = klass.__dict__["strictfp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::typebodymodifier_has_native():
-    assert hasattr(dsl::TypeBodyModifier, "native")
-    descriptor = None
-    for klass in dsl::TypeBodyModifier.__mro__:
+    for klass in dsl_TypeBodyModifier.__mro__:
         if "native" in klass.__dict__:
             descriptor = klass.__dict__["native"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dsl::commonmodifier_is_not_abstract():
-    assert not inspect.isabstract(dsl::CommonModifier)
-
-
-def test_dsl::commonmodifier_constructor_exists():
-    assert callable(dsl::CommonModifier.__init__)
-
-
-def test_dsl::commonmodifier_constructor_args():
-    sig = inspect.signature(dsl::CommonModifier.__init__)
-    params = list(sig.parameters.keys())
-    assert "final" in params, "Missing parameter 'final'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "static" in params, "Missing parameter 'static'"
-    assert "abstract" in params, "Missing parameter 'abstract'"
-
-def test_dsl::commonmodifier_has_final():
-    assert hasattr(dsl::CommonModifier, "final")
+def test_dsl_typebodymodifier_has_strictfp():
+    assert hasattr(dsl_TypeBodyModifier, "strictfp")
     descriptor = None
-    for klass in dsl::CommonModifier.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
+    for klass in dsl_TypeBodyModifier.__mro__:
+        if "strictfp" in klass.__dict__:
+            descriptor = klass.__dict__["strictfp"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::commonmodifier_has_visibility():
-    assert hasattr(dsl::CommonModifier, "visibility")
+
+
+def test_dsl_commonmodifier_is_not_abstract():
+    assert not inspect.isabstract(dsl_CommonModifier)
+
+
+def test_dsl_commonmodifier_constructor_exists():
+    assert callable(dsl_CommonModifier.__init__)
+
+
+def test_dsl_commonmodifier_constructor_args():
+    sig = inspect.signature(dsl_CommonModifier.__init__)
+    params = list(sig.parameters.keys())
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "final" in params, "Missing parameter 'final'"
+    assert "static" in params, "Missing parameter 'static'"
+    assert "abstract" in params, "Missing parameter 'abstract'"
+
+def test_dsl_commonmodifier_has_visibility():
+    assert hasattr(dsl_CommonModifier, "visibility")
     descriptor = None
-    for klass in dsl::CommonModifier.__mro__:
+    for klass in dsl_CommonModifier.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::commonmodifier_has_static():
-    assert hasattr(dsl::CommonModifier, "static")
+def test_dsl_commonmodifier_has_final():
+    assert hasattr(dsl_CommonModifier, "final")
     descriptor = None
-    for klass in dsl::CommonModifier.__mro__:
+    for klass in dsl_CommonModifier.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_commonmodifier_has_static():
+    assert hasattr(dsl_CommonModifier, "static")
+    descriptor = None
+    for klass in dsl_CommonModifier.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsl::commonmodifier_has_abstract():
-    assert hasattr(dsl::CommonModifier, "abstract")
+def test_dsl_commonmodifier_has_abstract():
+    assert hasattr(dsl_CommonModifier, "abstract")
     descriptor = None
-    for klass in dsl::CommonModifier.__mro__:
+    for klass in dsl_CommonModifier.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -2350,23 +2350,23 @@ def test_dsl::commonmodifier_has_abstract():
 
 
 
-def test_dsl::name_is_not_abstract():
-    assert not inspect.isabstract(dsl::Name)
+def test_dsl_name_is_not_abstract():
+    assert not inspect.isabstract(dsl_Name)
 
 
-def test_dsl::name_constructor_exists():
-    assert callable(dsl::Name.__init__)
+def test_dsl_name_constructor_exists():
+    assert callable(dsl_Name.__init__)
 
 
-def test_dsl::name_constructor_args():
-    sig = inspect.signature(dsl::Name.__init__)
+def test_dsl_name_constructor_args():
+    sig = inspect.signature(dsl_Name.__init__)
     params = list(sig.parameters.keys())
     assert "ids" in params, "Missing parameter 'ids'"
 
-def test_dsl::name_has_ids():
-    assert hasattr(dsl::Name, "ids")
+def test_dsl_name_has_ids():
+    assert hasattr(dsl_Name, "ids")
     descriptor = None
-    for klass in dsl::Name.__mro__:
+    for klass in dsl_Name.__mro__:
         if "ids" in klass.__dict__:
             descriptor = klass.__dict__["ids"]
             break
@@ -2374,58 +2374,58 @@ def test_dsl::name_has_ids():
 
 
 
-def test_dsl::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::TypeDeclaration)
+def test_dsl_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_TypeDeclaration)
 
 
-def test_dsl::typedeclaration_constructor_exists():
-    assert callable(dsl::TypeDeclaration.__init__)
+def test_dsl_typedeclaration_constructor_exists():
+    assert callable(dsl_TypeDeclaration.__init__)
 
 
-def test_dsl::typedeclaration_constructor_args():
-    sig = inspect.signature(dsl::TypeDeclaration.__init__)
+def test_dsl_typedeclaration_constructor_args():
+    sig = inspect.signature(dsl_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::ImportDeclaration)
+def test_dsl_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_ImportDeclaration)
 
 
-def test_dsl::importdeclaration_constructor_exists():
-    assert callable(dsl::ImportDeclaration.__init__)
+def test_dsl_importdeclaration_constructor_exists():
+    assert callable(dsl_ImportDeclaration.__init__)
 
 
-def test_dsl::importdeclaration_constructor_args():
-    sig = inspect.signature(dsl::ImportDeclaration.__init__)
+def test_dsl_importdeclaration_constructor_args():
+    sig = inspect.signature(dsl_ImportDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(dsl::PackageDeclaration)
+def test_dsl_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(dsl_PackageDeclaration)
 
 
-def test_dsl::packagedeclaration_constructor_exists():
-    assert callable(dsl::PackageDeclaration.__init__)
+def test_dsl_packagedeclaration_constructor_exists():
+    assert callable(dsl_PackageDeclaration.__init__)
 
 
-def test_dsl::packagedeclaration_constructor_args():
-    sig = inspect.signature(dsl::PackageDeclaration.__init__)
+def test_dsl_packagedeclaration_constructor_args():
+    sig = inspect.signature(dsl_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(dsl::CompilationUnit)
+def test_dsl_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(dsl_CompilationUnit)
 
 
-def test_dsl::compilationunit_constructor_exists():
-    assert callable(dsl::CompilationUnit.__init__)
+def test_dsl_compilationunit_constructor_exists():
+    assert callable(dsl_CompilationUnit.__init__)
 
 
-def test_dsl::compilationunit_constructor_args():
-    sig = inspect.signature(dsl::CompilationUnit.__init__)
+def test_dsl_compilationunit_constructor_args():
+    sig = inspect.signature(dsl_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 def test_visibility_exists():
@@ -2437,8 +2437,8 @@ def test_visibility_has_all_literals():
     enum_literals = [lit.name for lit in Visibility]
     expected_literals = [
         "PRIVATE",
-        "PUBLIC",
         "PROTECTED",
+        "PUBLIC",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2456,182 +2456,182 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dsl::DefaultValue_strategy = st.builds(
-    dsl::DefaultValue,
+dsl_DefaultValue_strategy = st.builds(
+    dsl_DefaultValue,
 )
-dsl::AnnotationTypeMemberDeclaration_strategy = st.builds(
-    dsl::AnnotationTypeMemberDeclaration,
+dsl_AnnotationTypeMemberDeclaration_strategy = st.builds(
+    dsl_AnnotationTypeMemberDeclaration,
     id=
         safe_text
 )
-dsl::AnnotationTypeBody_strategy = st.builds(
-    dsl::AnnotationTypeBody,
+dsl_AnnotationTypeBody_strategy = st.builds(
+    dsl_AnnotationTypeBody,
 )
-dsl::MemberValueArrayInitializer_strategy = st.builds(
-    dsl::MemberValueArrayInitializer,
+dsl_MemberValueArrayInitializer_strategy = st.builds(
+    dsl_MemberValueArrayInitializer,
 )
 DefaultValue_strategy = st.builds(
     DefaultValue,
 )
-dsl::MemberValuePair_strategy = st.builds(
-    dsl::MemberValuePair,
+dsl_MemberValuePair_strategy = st.builds(
+    dsl_MemberValuePair,
     id=
         safe_text
 )
-dsl::MemberValue_strategy = st.builds(
-    dsl::MemberValue,
+dsl_MemberValue_strategy = st.builds(
+    dsl_MemberValue,
 )
-dsl::MemberValuePairs_strategy = st.builds(
-    dsl::MemberValuePairs,
+dsl_MemberValuePairs_strategy = st.builds(
+    dsl_MemberValuePairs,
 )
-dsl::Annotation_strategy = st.builds(
-    dsl::Annotation,
+dsl_Annotation_strategy = st.builds(
+    dsl_Annotation,
 )
-dsl::StatementExpressionList_strategy = st.builds(
-    dsl::StatementExpressionList,
+dsl_StatementExpressionList_strategy = st.builds(
+    dsl_StatementExpressionList,
 )
-dsl::ForUpdate_strategy = st.builds(
-    dsl::ForUpdate,
+dsl_ForUpdate_strategy = st.builds(
+    dsl_ForUpdate,
 )
-dsl::ForInit_strategy = st.builds(
-    dsl::ForInit,
+dsl_ForInit_strategy = st.builds(
+    dsl_ForInit,
 )
-dsl::SwitchLabel_strategy = st.builds(
-    dsl::SwitchLabel,
+dsl_SwitchLabel_strategy = st.builds(
+    dsl_SwitchLabel,
     defaultOp=
         safe_text
 )
-dsl::LocalVariableDeclaration_strategy = st.builds(
-    dsl::LocalVariableDeclaration,
+dsl_LocalVariableDeclaration_strategy = st.builds(
+    dsl_LocalVariableDeclaration,
     finality=
         safe_text
 )
-dsl::TryStatement_strategy = st.builds(
-    dsl::TryStatement,
+dsl_TryStatement_strategy = st.builds(
+    dsl_TryStatement,
 )
-dsl::SynchronizedStatement_strategy = st.builds(
-    dsl::SynchronizedStatement,
+dsl_SynchronizedStatement_strategy = st.builds(
+    dsl_SynchronizedStatement,
 )
-dsl::ThrowStatement_strategy = st.builds(
-    dsl::ThrowStatement,
+dsl_ThrowStatement_strategy = st.builds(
+    dsl_ThrowStatement,
 )
-dsl::ReturnStatement_strategy = st.builds(
-    dsl::ReturnStatement,
+dsl_ReturnStatement_strategy = st.builds(
+    dsl_ReturnStatement,
 )
-dsl::ContinueStatement_strategy = st.builds(
-    dsl::ContinueStatement,
+dsl_ContinueStatement_strategy = st.builds(
+    dsl_ContinueStatement,
     id=
         safe_text
 )
-dsl::BreakStatement_strategy = st.builds(
-    dsl::BreakStatement,
+dsl_BreakStatement_strategy = st.builds(
+    dsl_BreakStatement,
     id=
         safe_text
 )
-dsl::ForStatement_strategy = st.builds(
-    dsl::ForStatement,
+dsl_ForStatement_strategy = st.builds(
+    dsl_ForStatement,
     id=
         safe_text
 )
-dsl::DoStatement_strategy = st.builds(
-    dsl::DoStatement,
+dsl_DoStatement_strategy = st.builds(
+    dsl_DoStatement,
 )
-dsl::WhileStatement_strategy = st.builds(
-    dsl::WhileStatement,
+dsl_WhileStatement_strategy = st.builds(
+    dsl_WhileStatement,
 )
-dsl::IfStatement_strategy = st.builds(
-    dsl::IfStatement,
+dsl_IfStatement_strategy = st.builds(
+    dsl_IfStatement,
 )
-dsl::SwitchStatement_strategy = st.builds(
-    dsl::SwitchStatement,
+dsl_SwitchStatement_strategy = st.builds(
+    dsl_SwitchStatement,
 )
-dsl::StatementExpression_strategy = st.builds(
-    dsl::StatementExpression,
-    assignOp=
-        safe_text,
+dsl_StatementExpression_strategy = st.builds(
+    dsl_StatementExpression,
     minOp=
         safe_text,
     plusOp=
+        safe_text,
+    assignOp=
         safe_text
 )
-dsl::AssertStatement_strategy = st.builds(
-    dsl::AssertStatement,
+dsl_AssertStatement_strategy = st.builds(
+    dsl_AssertStatement,
 )
-dsl::LabeledStatement_strategy = st.builds(
-    dsl::LabeledStatement,
+dsl_LabeledStatement_strategy = st.builds(
+    dsl_LabeledStatement,
     id=
         safe_text
 )
-dsl::ArrayDimsAndInits_strategy = st.builds(
-    dsl::ArrayDimsAndInits,
+dsl_ArrayDimsAndInits_strategy = st.builds(
+    dsl_ArrayDimsAndInits,
     squareBrackets=
         safe_text
 )
-dsl::BaseLiteral_strategy = st.builds(
-    dsl::BaseLiteral,
-    binDigitsUnderscore=
+dsl_BaseLiteral_strategy = st.builds(
+    dsl_BaseLiteral,
+    hexDigitsUnderscore=
         safe_text,
     decDigitsUnderscore=
         safe_text,
-    hexDigitsUnderscore=
+    binDigitsUnderscore=
         safe_text
 )
-dsl::ArgumentList_strategy = st.builds(
-    dsl::ArgumentList,
+dsl_ArgumentList_strategy = st.builds(
+    dsl_ArgumentList,
 )
-dsl::BooleanLiteral_strategy = st.builds(
-    dsl::BooleanLiteral,
+dsl_BooleanLiteral_strategy = st.builds(
+    dsl_BooleanLiteral,
     truthiness=
         safe_text
 )
-dsl::FloatLiteral_strategy = st.builds(
-    dsl::FloatLiteral,
+dsl_FloatLiteral_strategy = st.builds(
+    dsl_FloatLiteral,
     digits=
         safe_text
 )
-dsl::IntegerLiteral_strategy = st.builds(
-    dsl::IntegerLiteral,
-    zero=
-        safe_text,
+dsl_IntegerLiteral_strategy = st.builds(
+    dsl_IntegerLiteral,
     one=
+        safe_text,
+    zero=
         safe_text
 )
-dsl::SignedIntLiteral_strategy = st.builds(
-    dsl::SignedIntLiteral,
+dsl_SignedIntLiteral_strategy = st.builds(
+    dsl_SignedIntLiteral,
     bitWidth=
         st.integers()
 )
-dsl::UnsignedIntLiteral_strategy = st.builds(
-    dsl::UnsignedIntLiteral,
+dsl_UnsignedIntLiteral_strategy = st.builds(
+    dsl_UnsignedIntLiteral,
     sign=
         safe_text
 )
-dsl::MemberSelector_strategy = st.builds(
-    dsl::MemberSelector,
+dsl_MemberSelector_strategy = st.builds(
+    dsl_MemberSelector,
     id=
         safe_text
 )
-dsl::DecimalNumber_strategy = st.builds(
-    dsl::DecimalNumber,
-    decDigitsUnderscore=
-        safe_text,
+dsl_DecimalNumber_strategy = st.builds(
+    dsl_DecimalNumber,
     decDigits=
-        st.integers()
-)
-dsl::PrimarySuffix_strategy = st.builds(
-    dsl::PrimarySuffix,
-    thisOp=
-        st.booleans(),
-    id=
+        st.integers(),
+    decDigitsUnderscore=
         safe_text
 )
-dsl::AllocationExpression_strategy = st.builds(
-    dsl::AllocationExpression,
+dsl_PrimarySuffix_strategy = st.builds(
+    dsl_PrimarySuffix,
+    id=
+        safe_text,
+    thisOp=
+        st.booleans()
+)
+dsl_AllocationExpression_strategy = st.builds(
+    dsl_AllocationExpression,
     primType=
         safe_text
 )
-dsl::PrimaryPrefix_strategy = st.builds(
-    dsl::PrimaryPrefix,
+dsl_PrimaryPrefix_strategy = st.builds(
+    dsl_PrimaryPrefix,
     id=
         safe_text,
     superOp=
@@ -2639,1729 +2639,1486 @@ dsl::PrimaryPrefix_strategy = st.builds(
     thisOp=
         safe_text
 )
-dsl::PreDecrementExpression_strategy = st.builds(
-    dsl::PreDecrementExpression,
+dsl_PreDecrementExpression_strategy = st.builds(
+    dsl_PreDecrementExpression,
 )
-dsl::PreIncrementExpression_strategy = st.builds(
-    dsl::PreIncrementExpression,
+dsl_PreIncrementExpression_strategy = st.builds(
+    dsl_PreIncrementExpression,
 )
-dsl::EObject_strategy = st.builds(
-    dsl::EObject,
+dsl_EObject_strategy = st.builds(
+    dsl_EObject,
 )
-dsl::Literal_strategy = st.builds(
-    dsl::Literal,
-    charLit=
-        safe_text,
+dsl_Literal_strategy = st.builds(
+    dsl_Literal,
     stringLit=
+        safe_text,
+    charLit=
         safe_text,
     nullLit=
         safe_text
 )
-dsl::CastLookahead_strategy = st.builds(
-    dsl::CastLookahead,
-    openBracket=
-        safe_text,
-    negOp=
-        safe_text,
-    superOp=
+dsl_CastLookahead_strategy = st.builds(
+    dsl_CastLookahead,
+    newOp=
         safe_text,
     id=
         safe_text,
     bitNegOp=
         safe_text,
+    openBracket=
+        safe_text,
+    negOp=
+        safe_text,
     thisOp=
         safe_text,
-    newOp=
+    superOp=
         safe_text,
     primType=
         safe_text
 )
-dsl::PostfixExpression_strategy = st.builds(
-    dsl::PostfixExpression,
+dsl_PostfixExpression_strategy = st.builds(
+    dsl_PostfixExpression,
     op=
         safe_text
 )
-dsl::CastExpression_strategy = st.builds(
-    dsl::CastExpression,
+dsl_CastExpression_strategy = st.builds(
+    dsl_CastExpression,
 )
-dsl::UnaryExpressionNotPlusMinus_strategy = st.builds(
-    dsl::UnaryExpressionNotPlusMinus,
+dsl_UnaryExpressionNotPlusMinus_strategy = st.builds(
+    dsl_UnaryExpressionNotPlusMinus,
     negOp=
         safe_text
 )
-dsl::UnaryExpression_strategy = st.builds(
-    dsl::UnaryExpression,
+dsl_UnaryExpression_strategy = st.builds(
+    dsl_UnaryExpression,
     sign=
         safe_text
 )
-dsl::MultiplicativeExpression_strategy = st.builds(
-    dsl::MultiplicativeExpression,
+dsl_MultiplicativeExpression_strategy = st.builds(
+    dsl_MultiplicativeExpression,
     ops=
         safe_text
 )
-dsl::AdditiveExpression_strategy = st.builds(
-    dsl::AdditiveExpression,
+dsl_AdditiveExpression_strategy = st.builds(
+    dsl_AdditiveExpression,
     ops=
         safe_text
 )
-dsl::ShiftExpression_strategy = st.builds(
-    dsl::ShiftExpression,
+dsl_ShiftExpression_strategy = st.builds(
+    dsl_ShiftExpression,
     ops=
         safe_text
 )
-dsl::RelationalExpression_strategy = st.builds(
-    dsl::RelationalExpression,
+dsl_RelationalExpression_strategy = st.builds(
+    dsl_RelationalExpression,
     ops=
         safe_text
 )
-dsl::InstanceOfExpression_strategy = st.builds(
-    dsl::InstanceOfExpression,
+dsl_InstanceOfExpression_strategy = st.builds(
+    dsl_InstanceOfExpression,
 )
-dsl::EqualityExpression_strategy = st.builds(
-    dsl::EqualityExpression,
+dsl_EqualityExpression_strategy = st.builds(
+    dsl_EqualityExpression,
 )
-dsl::AndExpression_strategy = st.builds(
-    dsl::AndExpression,
+dsl_AndExpression_strategy = st.builds(
+    dsl_AndExpression,
 )
-dsl::ExclusiveOrExpression_strategy = st.builds(
-    dsl::ExclusiveOrExpression,
+dsl_ExclusiveOrExpression_strategy = st.builds(
+    dsl_ExclusiveOrExpression,
 )
-dsl::InclusiveOrExpression_strategy = st.builds(
-    dsl::InclusiveOrExpression,
+dsl_InclusiveOrExpression_strategy = st.builds(
+    dsl_InclusiveOrExpression,
 )
-dsl::ConditionalAndExpression_strategy = st.builds(
-    dsl::ConditionalAndExpression,
+dsl_ConditionalAndExpression_strategy = st.builds(
+    dsl_ConditionalAndExpression,
 )
 IfStatement_strategy = st.builds(
     IfStatement,
 )
-dsl::ConditionalOrExpression_strategy = st.builds(
-    dsl::ConditionalOrExpression,
+dsl_ConditionalOrExpression_strategy = st.builds(
+    dsl_ConditionalOrExpression,
 )
-dsl::Statement_strategy = st.builds(
-    dsl::Statement,
+dsl_Statement_strategy = st.builds(
+    dsl_Statement,
 )
-dsl::ConditionalExpression_strategy = st.builds(
-    dsl::ConditionalExpression,
+dsl_ConditionalExpression_strategy = st.builds(
+    dsl_ConditionalExpression,
 )
-dsl::WildcardBounds_strategy = st.builds(
-    dsl::WildcardBounds,
-    sup=
-        st.booleans(),
+dsl_WildcardBounds_strategy = st.builds(
+    dsl_WildcardBounds,
     ext=
+        st.booleans(),
+    sup=
         st.booleans()
 )
-dsl::TypeArgument_strategy = st.builds(
-    dsl::TypeArgument,
+dsl_TypeArgument_strategy = st.builds(
+    dsl_TypeArgument,
 )
-dsl::TypeArguments_strategy = st.builds(
-    dsl::TypeArguments,
+dsl_TypeArguments_strategy = st.builds(
+    dsl_TypeArguments,
 )
-dsl::ReferenceType_strategy = st.builds(
-    dsl::ReferenceType,
+dsl_ReferenceType_strategy = st.builds(
+    dsl_ReferenceType,
     primType=
         safe_text,
-    squareBracketsBeta=
-        safe_text,
     squareBracketsAlpha=
-        safe_text
-)
-dsl::PrimaryExpression_strategy = st.builds(
-    dsl::PrimaryExpression,
-)
-dsl::VariableDeclaratorId_strategy = st.builds(
-    dsl::VariableDeclaratorId,
-    squareBrackets=
         safe_text,
-    id=
+    squareBracketsBeta=
         safe_text
 )
-dsl::VariableDeclarator_strategy = st.builds(
-    dsl::VariableDeclarator,
+dsl_PrimaryExpression_strategy = st.builds(
+    dsl_PrimaryExpression,
 )
-dsl::FormalParameter_strategy = st.builds(
-    dsl::FormalParameter,
+dsl_VariableDeclaratorId_strategy = st.builds(
+    dsl_VariableDeclaratorId,
+    id=
+        safe_text,
+    squareBrackets=
+        safe_text
+)
+dsl_VariableDeclarator_strategy = st.builds(
+    dsl_VariableDeclarator,
+)
+dsl_FormalParameter_strategy = st.builds(
+    dsl_FormalParameter,
     final=
         st.booleans()
 )
-dsl::Block_strategy = st.builds(
-    dsl::Block,
+dsl_Block_strategy = st.builds(
+    dsl_Block,
 )
-dsl::MethodDeclarator_strategy = st.builds(
-    dsl::MethodDeclarator,
-    squareBrackets=
-        safe_text,
+dsl_MethodDeclarator_strategy = st.builds(
+    dsl_MethodDeclarator,
     id=
+        safe_text,
+    squareBrackets=
         safe_text
 )
-dsl::ResultType_strategy = st.builds(
-    dsl::ResultType,
+dsl_ResultType_strategy = st.builds(
+    dsl_ResultType,
 )
-dsl::BlockStatement_strategy = st.builds(
-    dsl::BlockStatement,
+dsl_BlockStatement_strategy = st.builds(
+    dsl_BlockStatement,
 )
-dsl::ExplicitConstructorInvocation_strategy = st.builds(
-    dsl::ExplicitConstructorInvocation,
-    self=
-        st.booleans(),
+dsl_ExplicitConstructorInvocation_strategy = st.builds(
+    dsl_ExplicitConstructorInvocation,
     parent=
-        safe_text
+        safe_text,
+    self=
+        st.booleans()
 )
-dsl::NameList_strategy = st.builds(
-    dsl::NameList,
+dsl_NameList_strategy = st.builds(
+    dsl_NameList,
 )
-dsl::FormalParameters_strategy = st.builds(
-    dsl::FormalParameters,
+dsl_FormalParameters_strategy = st.builds(
+    dsl_FormalParameters,
 )
-dsl::Expression_strategy = st.builds(
-    dsl::Expression,
+dsl_Expression_strategy = st.builds(
+    dsl_Expression,
     assignOp=
         safe_text
 )
-dsl::ArrayInitializer_strategy = st.builds(
-    dsl::ArrayInitializer,
+dsl_ArrayInitializer_strategy = st.builds(
+    dsl_ArrayInitializer,
 )
-dsl::VariableInitializer_strategy = st.builds(
-    dsl::VariableInitializer,
+dsl_VariableInitializer_strategy = st.builds(
+    dsl_VariableInitializer,
 )
-dsl::Type_strategy = st.builds(
-    dsl::Type,
+dsl_Type_strategy = st.builds(
+    dsl_Type,
     primType=
         safe_text
 )
-dsl::FieldDeclaration_strategy = st.builds(
-    dsl::FieldDeclaration,
+dsl_FieldDeclaration_strategy = st.builds(
+    dsl_FieldDeclaration,
 )
-dsl::MethodOrCtorDeclaration_strategy = st.builds(
-    dsl::MethodOrCtorDeclaration,
+dsl_MethodOrCtorDeclaration_strategy = st.builds(
+    dsl_MethodOrCtorDeclaration,
     id=
         safe_text
 )
-dsl::Initializer_strategy = st.builds(
-    dsl::Initializer,
+dsl_Initializer_strategy = st.builds(
+    dsl_Initializer,
     static=
         st.booleans()
 )
-dsl::TypeBound_strategy = st.builds(
-    dsl::TypeBound,
+dsl_TypeBound_strategy = st.builds(
+    dsl_TypeBound,
 )
-dsl::TypeParameter_strategy = st.builds(
-    dsl::TypeParameter,
+dsl_TypeParameter_strategy = st.builds(
+    dsl_TypeParameter,
     id=
         safe_text
 )
-dsl::Arguments_strategy = st.builds(
-    dsl::Arguments,
+dsl_Arguments_strategy = st.builds(
+    dsl_Arguments,
 )
-dsl::ClassOrInterfaceBodyDeclaration_strategy = st.builds(
-    dsl::ClassOrInterfaceBodyDeclaration,
+dsl_ClassOrInterfaceBodyDeclaration_strategy = st.builds(
+    dsl_ClassOrInterfaceBodyDeclaration,
 )
-dsl::EnumConstant_strategy = st.builds(
-    dsl::EnumConstant,
+dsl_EnumConstant_strategy = st.builds(
+    dsl_EnumConstant,
     id=
         safe_text
 )
-dsl::EnumBody_strategy = st.builds(
-    dsl::EnumBody,
+dsl_EnumBody_strategy = st.builds(
+    dsl_EnumBody,
 )
-dsl::ClassOrInterfaceType_strategy = st.builds(
-    dsl::ClassOrInterfaceType,
+dsl_ClassOrInterfaceType_strategy = st.builds(
+    dsl_ClassOrInterfaceType,
     ids=
         safe_text
 )
-dsl::ClassOrInterfaceBody_strategy = st.builds(
-    dsl::ClassOrInterfaceBody,
+dsl_ClassOrInterfaceBody_strategy = st.builds(
+    dsl_ClassOrInterfaceBody,
 )
-dsl::ImplementsList_strategy = st.builds(
-    dsl::ImplementsList,
+dsl_ImplementsList_strategy = st.builds(
+    dsl_ImplementsList,
 )
-dsl::ExtendsList_strategy = st.builds(
-    dsl::ExtendsList,
+dsl_ExtendsList_strategy = st.builds(
+    dsl_ExtendsList,
 )
-dsl::TypeParameters_strategy = st.builds(
-    dsl::TypeParameters,
+dsl_TypeParameters_strategy = st.builds(
+    dsl_TypeParameters,
 )
-dsl::AnnotationTypeDeclaration_strategy = st.builds(
-    dsl::AnnotationTypeDeclaration,
+dsl_AnnotationTypeDeclaration_strategy = st.builds(
+    dsl_AnnotationTypeDeclaration,
     id=
         safe_text
 )
-dsl::EnumDeclaration_strategy = st.builds(
-    dsl::EnumDeclaration,
+dsl_EnumDeclaration_strategy = st.builds(
+    dsl_EnumDeclaration,
     id=
         safe_text
 )
-dsl::ClassOrInterfaceDeclaration_strategy = st.builds(
-    dsl::ClassOrInterfaceDeclaration,
+dsl_ClassOrInterfaceDeclaration_strategy = st.builds(
+    dsl_ClassOrInterfaceDeclaration,
     id=
         safe_text,
     typeCategory=
         safe_text
 )
-dsl::TypeBodyModifier_strategy = st.builds(
-    dsl::TypeBodyModifier,
+dsl_TypeBodyModifier_strategy = st.builds(
+    dsl_TypeBodyModifier,
     transient=
         st.booleans(),
     volatile=
         st.booleans(),
     synchronized=
         st.booleans(),
-    strictfp=
-        st.booleans(),
     native=
+        st.booleans(),
+    strictfp=
         st.booleans()
 )
-dsl::CommonModifier_strategy = st.builds(
-    dsl::CommonModifier,
-    final=
-        st.booleans(),
+dsl_CommonModifier_strategy = st.builds(
+    dsl_CommonModifier,
     visibility=
         safe_text,
+    final=
+        st.booleans(),
     static=
         st.booleans(),
     abstract=
         st.booleans()
 )
-dsl::Name_strategy = st.builds(
-    dsl::Name,
+dsl_Name_strategy = st.builds(
+    dsl_Name,
     ids=
         safe_text
 )
-dsl::TypeDeclaration_strategy = st.builds(
-    dsl::TypeDeclaration,
+dsl_TypeDeclaration_strategy = st.builds(
+    dsl_TypeDeclaration,
 )
-dsl::ImportDeclaration_strategy = st.builds(
-    dsl::ImportDeclaration,
+dsl_ImportDeclaration_strategy = st.builds(
+    dsl_ImportDeclaration,
 )
-dsl::PackageDeclaration_strategy = st.builds(
-    dsl::PackageDeclaration,
+dsl_PackageDeclaration_strategy = st.builds(
+    dsl_PackageDeclaration,
 )
-dsl::CompilationUnit_strategy = st.builds(
-    dsl::CompilationUnit,
+dsl_CompilationUnit_strategy = st.builds(
+    dsl_CompilationUnit,
 )
 
-@given(instance=dsl::DefaultValue_strategy)
+@given(instance=dsl_DefaultValue_strategy)
 @settings(max_examples=50)
-def test_dsl::defaultvalue_instantiation(instance):
-    assert isinstance(instance, dsl::DefaultValue)
+def test_dsl_defaultvalue_instantiation(instance):
+    assert isinstance(instance, dsl_DefaultValue)
 
-@given(instance=dsl::AnnotationTypeMemberDeclaration_strategy)
+@given(instance=dsl_AnnotationTypeMemberDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::annotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::AnnotationTypeMemberDeclaration)
-
-@given(instance=dsl::AnnotationTypeMemberDeclaration_strategy)
-def test_dsl::annotationtypememberdeclaration_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_annotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_AnnotationTypeMemberDeclaration)
 
 
-@given(instance=dsl::AnnotationTypeMemberDeclaration_strategy)
-def test_dsl::annotationtypememberdeclaration_id_setter(instance):
+
+@given(instance=dsl_AnnotationTypeMemberDeclaration_strategy)
+def test_dsl_annotationtypememberdeclaration_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::AnnotationTypeBody_strategy)
+@given(instance=dsl_AnnotationTypeBody_strategy)
 @settings(max_examples=50)
-def test_dsl::annotationtypebody_instantiation(instance):
-    assert isinstance(instance, dsl::AnnotationTypeBody)
+def test_dsl_annotationtypebody_instantiation(instance):
+    assert isinstance(instance, dsl_AnnotationTypeBody)
 
-@given(instance=dsl::MemberValueArrayInitializer_strategy)
+@given(instance=dsl_MemberValueArrayInitializer_strategy)
 @settings(max_examples=50)
-def test_dsl::membervaluearrayinitializer_instantiation(instance):
-    assert isinstance(instance, dsl::MemberValueArrayInitializer)
+def test_dsl_membervaluearrayinitializer_instantiation(instance):
+    assert isinstance(instance, dsl_MemberValueArrayInitializer)
 
 @given(instance=DefaultValue_strategy)
 @settings(max_examples=50)
 def test_defaultvalue_instantiation(instance):
     assert isinstance(instance, DefaultValue)
 
-@given(instance=dsl::MemberValuePair_strategy)
+@given(instance=dsl_MemberValuePair_strategy)
 @settings(max_examples=50)
-def test_dsl::membervaluepair_instantiation(instance):
-    assert isinstance(instance, dsl::MemberValuePair)
-
-@given(instance=dsl::MemberValuePair_strategy)
-def test_dsl::membervaluepair_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_membervaluepair_instantiation(instance):
+    assert isinstance(instance, dsl_MemberValuePair)
 
 
-@given(instance=dsl::MemberValuePair_strategy)
-def test_dsl::membervaluepair_id_setter(instance):
+
+@given(instance=dsl_MemberValuePair_strategy)
+def test_dsl_membervaluepair_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::MemberValue_strategy)
+@given(instance=dsl_MemberValue_strategy)
 @settings(max_examples=50)
-def test_dsl::membervalue_instantiation(instance):
-    assert isinstance(instance, dsl::MemberValue)
+def test_dsl_membervalue_instantiation(instance):
+    assert isinstance(instance, dsl_MemberValue)
 
-@given(instance=dsl::MemberValuePairs_strategy)
+@given(instance=dsl_MemberValuePairs_strategy)
 @settings(max_examples=50)
-def test_dsl::membervaluepairs_instantiation(instance):
-    assert isinstance(instance, dsl::MemberValuePairs)
+def test_dsl_membervaluepairs_instantiation(instance):
+    assert isinstance(instance, dsl_MemberValuePairs)
 
-@given(instance=dsl::Annotation_strategy)
+@given(instance=dsl_Annotation_strategy)
 @settings(max_examples=50)
-def test_dsl::annotation_instantiation(instance):
-    assert isinstance(instance, dsl::Annotation)
+def test_dsl_annotation_instantiation(instance):
+    assert isinstance(instance, dsl_Annotation)
 
-@given(instance=dsl::StatementExpressionList_strategy)
+@given(instance=dsl_StatementExpressionList_strategy)
 @settings(max_examples=50)
-def test_dsl::statementexpressionlist_instantiation(instance):
-    assert isinstance(instance, dsl::StatementExpressionList)
+def test_dsl_statementexpressionlist_instantiation(instance):
+    assert isinstance(instance, dsl_StatementExpressionList)
 
-@given(instance=dsl::ForUpdate_strategy)
+@given(instance=dsl_ForUpdate_strategy)
 @settings(max_examples=50)
-def test_dsl::forupdate_instantiation(instance):
-    assert isinstance(instance, dsl::ForUpdate)
+def test_dsl_forupdate_instantiation(instance):
+    assert isinstance(instance, dsl_ForUpdate)
 
-@given(instance=dsl::ForInit_strategy)
+@given(instance=dsl_ForInit_strategy)
 @settings(max_examples=50)
-def test_dsl::forinit_instantiation(instance):
-    assert isinstance(instance, dsl::ForInit)
+def test_dsl_forinit_instantiation(instance):
+    assert isinstance(instance, dsl_ForInit)
 
-@given(instance=dsl::SwitchLabel_strategy)
+@given(instance=dsl_SwitchLabel_strategy)
 @settings(max_examples=50)
-def test_dsl::switchlabel_instantiation(instance):
-    assert isinstance(instance, dsl::SwitchLabel)
-
-@given(instance=dsl::SwitchLabel_strategy)
-def test_dsl::switchlabel_defaultOp_type(instance):
-    assert isinstance(instance.defaultOp, str)
+def test_dsl_switchlabel_instantiation(instance):
+    assert isinstance(instance, dsl_SwitchLabel)
 
 
-@given(instance=dsl::SwitchLabel_strategy)
-def test_dsl::switchlabel_defaultOp_setter(instance):
+
+@given(instance=dsl_SwitchLabel_strategy)
+def test_dsl_switchlabel_defaultOp_setter(instance):
     original = instance.defaultOp
     instance.defaultOp = original
     assert instance.defaultOp == original
 
-@given(instance=dsl::LocalVariableDeclaration_strategy)
+@given(instance=dsl_LocalVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::localvariabledeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::LocalVariableDeclaration)
-
-@given(instance=dsl::LocalVariableDeclaration_strategy)
-def test_dsl::localvariabledeclaration_finality_type(instance):
-    assert isinstance(instance.finality, str)
+def test_dsl_localvariabledeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_LocalVariableDeclaration)
 
 
-@given(instance=dsl::LocalVariableDeclaration_strategy)
-def test_dsl::localvariabledeclaration_finality_setter(instance):
+
+@given(instance=dsl_LocalVariableDeclaration_strategy)
+def test_dsl_localvariabledeclaration_finality_setter(instance):
     original = instance.finality
     instance.finality = original
     assert instance.finality == original
 
-@given(instance=dsl::TryStatement_strategy)
+@given(instance=dsl_TryStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::trystatement_instantiation(instance):
-    assert isinstance(instance, dsl::TryStatement)
+def test_dsl_trystatement_instantiation(instance):
+    assert isinstance(instance, dsl_TryStatement)
 
-@given(instance=dsl::SynchronizedStatement_strategy)
+@given(instance=dsl_SynchronizedStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::synchronizedstatement_instantiation(instance):
-    assert isinstance(instance, dsl::SynchronizedStatement)
+def test_dsl_synchronizedstatement_instantiation(instance):
+    assert isinstance(instance, dsl_SynchronizedStatement)
 
-@given(instance=dsl::ThrowStatement_strategy)
+@given(instance=dsl_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::throwstatement_instantiation(instance):
-    assert isinstance(instance, dsl::ThrowStatement)
+def test_dsl_throwstatement_instantiation(instance):
+    assert isinstance(instance, dsl_ThrowStatement)
 
-@given(instance=dsl::ReturnStatement_strategy)
+@given(instance=dsl_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::returnstatement_instantiation(instance):
-    assert isinstance(instance, dsl::ReturnStatement)
+def test_dsl_returnstatement_instantiation(instance):
+    assert isinstance(instance, dsl_ReturnStatement)
 
-@given(instance=dsl::ContinueStatement_strategy)
+@given(instance=dsl_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::continuestatement_instantiation(instance):
-    assert isinstance(instance, dsl::ContinueStatement)
-
-@given(instance=dsl::ContinueStatement_strategy)
-def test_dsl::continuestatement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_continuestatement_instantiation(instance):
+    assert isinstance(instance, dsl_ContinueStatement)
 
 
-@given(instance=dsl::ContinueStatement_strategy)
-def test_dsl::continuestatement_id_setter(instance):
+
+@given(instance=dsl_ContinueStatement_strategy)
+def test_dsl_continuestatement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::BreakStatement_strategy)
+@given(instance=dsl_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::breakstatement_instantiation(instance):
-    assert isinstance(instance, dsl::BreakStatement)
-
-@given(instance=dsl::BreakStatement_strategy)
-def test_dsl::breakstatement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_breakstatement_instantiation(instance):
+    assert isinstance(instance, dsl_BreakStatement)
 
 
-@given(instance=dsl::BreakStatement_strategy)
-def test_dsl::breakstatement_id_setter(instance):
+
+@given(instance=dsl_BreakStatement_strategy)
+def test_dsl_breakstatement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::ForStatement_strategy)
+@given(instance=dsl_ForStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::forstatement_instantiation(instance):
-    assert isinstance(instance, dsl::ForStatement)
-
-@given(instance=dsl::ForStatement_strategy)
-def test_dsl::forstatement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_forstatement_instantiation(instance):
+    assert isinstance(instance, dsl_ForStatement)
 
 
-@given(instance=dsl::ForStatement_strategy)
-def test_dsl::forstatement_id_setter(instance):
+
+@given(instance=dsl_ForStatement_strategy)
+def test_dsl_forstatement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::DoStatement_strategy)
+@given(instance=dsl_DoStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::dostatement_instantiation(instance):
-    assert isinstance(instance, dsl::DoStatement)
+def test_dsl_dostatement_instantiation(instance):
+    assert isinstance(instance, dsl_DoStatement)
 
-@given(instance=dsl::WhileStatement_strategy)
+@given(instance=dsl_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::whilestatement_instantiation(instance):
-    assert isinstance(instance, dsl::WhileStatement)
+def test_dsl_whilestatement_instantiation(instance):
+    assert isinstance(instance, dsl_WhileStatement)
 
-@given(instance=dsl::IfStatement_strategy)
+@given(instance=dsl_IfStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::ifstatement_instantiation(instance):
-    assert isinstance(instance, dsl::IfStatement)
+def test_dsl_ifstatement_instantiation(instance):
+    assert isinstance(instance, dsl_IfStatement)
 
-@given(instance=dsl::SwitchStatement_strategy)
+@given(instance=dsl_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::switchstatement_instantiation(instance):
-    assert isinstance(instance, dsl::SwitchStatement)
+def test_dsl_switchstatement_instantiation(instance):
+    assert isinstance(instance, dsl_SwitchStatement)
 
-@given(instance=dsl::StatementExpression_strategy)
+@given(instance=dsl_StatementExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::statementexpression_instantiation(instance):
-    assert isinstance(instance, dsl::StatementExpression)
-
-@given(instance=dsl::StatementExpression_strategy)
-def test_dsl::statementexpression_assignOp_type(instance):
-    assert isinstance(instance.assignOp, str)
+def test_dsl_statementexpression_instantiation(instance):
+    assert isinstance(instance, dsl_StatementExpression)
 
 
-@given(instance=dsl::StatementExpression_strategy)
-def test_dsl::statementexpression_assignOp_setter(instance):
-    original = instance.assignOp
-    instance.assignOp = original
-    assert instance.assignOp == original
 
-@given(instance=dsl::StatementExpression_strategy)
-def test_dsl::statementexpression_minOp_type(instance):
-    assert isinstance(instance.minOp, str)
-
-
-@given(instance=dsl::StatementExpression_strategy)
-def test_dsl::statementexpression_minOp_setter(instance):
+@given(instance=dsl_StatementExpression_strategy)
+def test_dsl_statementexpression_minOp_setter(instance):
     original = instance.minOp
     instance.minOp = original
     assert instance.minOp == original
 
-@given(instance=dsl::StatementExpression_strategy)
-def test_dsl::statementexpression_plusOp_type(instance):
-    assert isinstance(instance.plusOp, str)
 
 
-@given(instance=dsl::StatementExpression_strategy)
-def test_dsl::statementexpression_plusOp_setter(instance):
+@given(instance=dsl_StatementExpression_strategy)
+def test_dsl_statementexpression_plusOp_setter(instance):
     original = instance.plusOp
     instance.plusOp = original
     assert instance.plusOp == original
 
-@given(instance=dsl::AssertStatement_strategy)
+
+
+@given(instance=dsl_StatementExpression_strategy)
+def test_dsl_statementexpression_assignOp_setter(instance):
+    original = instance.assignOp
+    instance.assignOp = original
+    assert instance.assignOp == original
+
+@given(instance=dsl_AssertStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::assertstatement_instantiation(instance):
-    assert isinstance(instance, dsl::AssertStatement)
+def test_dsl_assertstatement_instantiation(instance):
+    assert isinstance(instance, dsl_AssertStatement)
 
-@given(instance=dsl::LabeledStatement_strategy)
+@given(instance=dsl_LabeledStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::labeledstatement_instantiation(instance):
-    assert isinstance(instance, dsl::LabeledStatement)
-
-@given(instance=dsl::LabeledStatement_strategy)
-def test_dsl::labeledstatement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_labeledstatement_instantiation(instance):
+    assert isinstance(instance, dsl_LabeledStatement)
 
 
-@given(instance=dsl::LabeledStatement_strategy)
-def test_dsl::labeledstatement_id_setter(instance):
+
+@given(instance=dsl_LabeledStatement_strategy)
+def test_dsl_labeledstatement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::ArrayDimsAndInits_strategy)
+@given(instance=dsl_ArrayDimsAndInits_strategy)
 @settings(max_examples=50)
-def test_dsl::arraydimsandinits_instantiation(instance):
-    assert isinstance(instance, dsl::ArrayDimsAndInits)
-
-@given(instance=dsl::ArrayDimsAndInits_strategy)
-def test_dsl::arraydimsandinits_squareBrackets_type(instance):
-    assert isinstance(instance.squareBrackets, str)
+def test_dsl_arraydimsandinits_instantiation(instance):
+    assert isinstance(instance, dsl_ArrayDimsAndInits)
 
 
-@given(instance=dsl::ArrayDimsAndInits_strategy)
-def test_dsl::arraydimsandinits_squareBrackets_setter(instance):
+
+@given(instance=dsl_ArrayDimsAndInits_strategy)
+def test_dsl_arraydimsandinits_squareBrackets_setter(instance):
     original = instance.squareBrackets
     instance.squareBrackets = original
     assert instance.squareBrackets == original
 
-@given(instance=dsl::BaseLiteral_strategy)
+@given(instance=dsl_BaseLiteral_strategy)
 @settings(max_examples=50)
-def test_dsl::baseliteral_instantiation(instance):
-    assert isinstance(instance, dsl::BaseLiteral)
-
-@given(instance=dsl::BaseLiteral_strategy)
-def test_dsl::baseliteral_binDigitsUnderscore_type(instance):
-    assert isinstance(instance.binDigitsUnderscore, str)
+def test_dsl_baseliteral_instantiation(instance):
+    assert isinstance(instance, dsl_BaseLiteral)
 
 
-@given(instance=dsl::BaseLiteral_strategy)
-def test_dsl::baseliteral_binDigitsUnderscore_setter(instance):
-    original = instance.binDigitsUnderscore
-    instance.binDigitsUnderscore = original
-    assert instance.binDigitsUnderscore == original
 
-@given(instance=dsl::BaseLiteral_strategy)
-def test_dsl::baseliteral_decDigitsUnderscore_type(instance):
-    assert isinstance(instance.decDigitsUnderscore, str)
-
-
-@given(instance=dsl::BaseLiteral_strategy)
-def test_dsl::baseliteral_decDigitsUnderscore_setter(instance):
-    original = instance.decDigitsUnderscore
-    instance.decDigitsUnderscore = original
-    assert instance.decDigitsUnderscore == original
-
-@given(instance=dsl::BaseLiteral_strategy)
-def test_dsl::baseliteral_hexDigitsUnderscore_type(instance):
-    assert isinstance(instance.hexDigitsUnderscore, str)
-
-
-@given(instance=dsl::BaseLiteral_strategy)
-def test_dsl::baseliteral_hexDigitsUnderscore_setter(instance):
+@given(instance=dsl_BaseLiteral_strategy)
+def test_dsl_baseliteral_hexDigitsUnderscore_setter(instance):
     original = instance.hexDigitsUnderscore
     instance.hexDigitsUnderscore = original
     assert instance.hexDigitsUnderscore == original
 
-@given(instance=dsl::ArgumentList_strategy)
-@settings(max_examples=50)
-def test_dsl::argumentlist_instantiation(instance):
-    assert isinstance(instance, dsl::ArgumentList)
-
-@given(instance=dsl::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_dsl::booleanliteral_instantiation(instance):
-    assert isinstance(instance, dsl::BooleanLiteral)
-
-@given(instance=dsl::BooleanLiteral_strategy)
-def test_dsl::booleanliteral_truthiness_type(instance):
-    assert isinstance(instance.truthiness, str)
 
 
-@given(instance=dsl::BooleanLiteral_strategy)
-def test_dsl::booleanliteral_truthiness_setter(instance):
-    original = instance.truthiness
-    instance.truthiness = original
-    assert instance.truthiness == original
-
-@given(instance=dsl::FloatLiteral_strategy)
-@settings(max_examples=50)
-def test_dsl::floatliteral_instantiation(instance):
-    assert isinstance(instance, dsl::FloatLiteral)
-
-@given(instance=dsl::FloatLiteral_strategy)
-def test_dsl::floatliteral_digits_type(instance):
-    assert isinstance(instance.digits, str)
-
-
-@given(instance=dsl::FloatLiteral_strategy)
-def test_dsl::floatliteral_digits_setter(instance):
-    original = instance.digits
-    instance.digits = original
-    assert instance.digits == original
-
-@given(instance=dsl::IntegerLiteral_strategy)
-@settings(max_examples=50)
-def test_dsl::integerliteral_instantiation(instance):
-    assert isinstance(instance, dsl::IntegerLiteral)
-
-@given(instance=dsl::IntegerLiteral_strategy)
-def test_dsl::integerliteral_zero_type(instance):
-    assert isinstance(instance.zero, str)
-
-
-@given(instance=dsl::IntegerLiteral_strategy)
-def test_dsl::integerliteral_zero_setter(instance):
-    original = instance.zero
-    instance.zero = original
-    assert instance.zero == original
-
-@given(instance=dsl::IntegerLiteral_strategy)
-def test_dsl::integerliteral_one_type(instance):
-    assert isinstance(instance.one, str)
-
-
-@given(instance=dsl::IntegerLiteral_strategy)
-def test_dsl::integerliteral_one_setter(instance):
-    original = instance.one
-    instance.one = original
-    assert instance.one == original
-
-@given(instance=dsl::SignedIntLiteral_strategy)
-@settings(max_examples=50)
-def test_dsl::signedintliteral_instantiation(instance):
-    assert isinstance(instance, dsl::SignedIntLiteral)
-
-@given(instance=dsl::SignedIntLiteral_strategy)
-def test_dsl::signedintliteral_bitWidth_type(instance):
-    assert isinstance(instance.bitWidth, int)
-
-
-@given(instance=dsl::SignedIntLiteral_strategy)
-def test_dsl::signedintliteral_bitWidth_setter(instance):
-    original = instance.bitWidth
-    instance.bitWidth = original
-    assert instance.bitWidth == original
-
-@given(instance=dsl::UnsignedIntLiteral_strategy)
-@settings(max_examples=50)
-def test_dsl::unsignedintliteral_instantiation(instance):
-    assert isinstance(instance, dsl::UnsignedIntLiteral)
-
-@given(instance=dsl::UnsignedIntLiteral_strategy)
-def test_dsl::unsignedintliteral_sign_type(instance):
-    assert isinstance(instance.sign, str)
-
-
-@given(instance=dsl::UnsignedIntLiteral_strategy)
-def test_dsl::unsignedintliteral_sign_setter(instance):
-    original = instance.sign
-    instance.sign = original
-    assert instance.sign == original
-
-@given(instance=dsl::MemberSelector_strategy)
-@settings(max_examples=50)
-def test_dsl::memberselector_instantiation(instance):
-    assert isinstance(instance, dsl::MemberSelector)
-
-@given(instance=dsl::MemberSelector_strategy)
-def test_dsl::memberselector_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=dsl::MemberSelector_strategy)
-def test_dsl::memberselector_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=dsl::DecimalNumber_strategy)
-@settings(max_examples=50)
-def test_dsl::decimalnumber_instantiation(instance):
-    assert isinstance(instance, dsl::DecimalNumber)
-
-@given(instance=dsl::DecimalNumber_strategy)
-def test_dsl::decimalnumber_decDigitsUnderscore_type(instance):
-    assert isinstance(instance.decDigitsUnderscore, str)
-
-
-@given(instance=dsl::DecimalNumber_strategy)
-def test_dsl::decimalnumber_decDigitsUnderscore_setter(instance):
+@given(instance=dsl_BaseLiteral_strategy)
+def test_dsl_baseliteral_decDigitsUnderscore_setter(instance):
     original = instance.decDigitsUnderscore
     instance.decDigitsUnderscore = original
     assert instance.decDigitsUnderscore == original
 
-@given(instance=dsl::DecimalNumber_strategy)
-def test_dsl::decimalnumber_decDigits_type(instance):
-    assert isinstance(instance.decDigits, int)
 
 
-@given(instance=dsl::DecimalNumber_strategy)
-def test_dsl::decimalnumber_decDigits_setter(instance):
-    original = instance.decDigits
-    instance.decDigits = original
-    assert instance.decDigits == original
+@given(instance=dsl_BaseLiteral_strategy)
+def test_dsl_baseliteral_binDigitsUnderscore_setter(instance):
+    original = instance.binDigitsUnderscore
+    instance.binDigitsUnderscore = original
+    assert instance.binDigitsUnderscore == original
 
-@given(instance=dsl::PrimarySuffix_strategy)
+@given(instance=dsl_ArgumentList_strategy)
 @settings(max_examples=50)
-def test_dsl::primarysuffix_instantiation(instance):
-    assert isinstance(instance, dsl::PrimarySuffix)
+def test_dsl_argumentlist_instantiation(instance):
+    assert isinstance(instance, dsl_ArgumentList)
 
-@given(instance=dsl::PrimarySuffix_strategy)
-def test_dsl::primarysuffix_thisOp_type(instance):
-    assert isinstance(instance.thisOp, bool)
-
-
-@given(instance=dsl::PrimarySuffix_strategy)
-def test_dsl::primarysuffix_thisOp_setter(instance):
-    original = instance.thisOp
-    instance.thisOp = original
-    assert instance.thisOp == original
-
-@given(instance=dsl::PrimarySuffix_strategy)
-def test_dsl::primarysuffix_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=dsl::PrimarySuffix_strategy)
-def test_dsl::primarysuffix_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=dsl::AllocationExpression_strategy)
+@given(instance=dsl_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_dsl::allocationexpression_instantiation(instance):
-    assert isinstance(instance, dsl::AllocationExpression)
-
-@given(instance=dsl::AllocationExpression_strategy)
-def test_dsl::allocationexpression_primType_type(instance):
-    assert isinstance(instance.primType, str)
+def test_dsl_booleanliteral_instantiation(instance):
+    assert isinstance(instance, dsl_BooleanLiteral)
 
 
-@given(instance=dsl::AllocationExpression_strategy)
-def test_dsl::allocationexpression_primType_setter(instance):
-    original = instance.primType
-    instance.primType = original
-    assert instance.primType == original
 
-@given(instance=dsl::PrimaryPrefix_strategy)
+@given(instance=dsl_BooleanLiteral_strategy)
+def test_dsl_booleanliteral_truthiness_setter(instance):
+    original = instance.truthiness
+    instance.truthiness = original
+    assert instance.truthiness == original
+
+@given(instance=dsl_FloatLiteral_strategy)
 @settings(max_examples=50)
-def test_dsl::primaryprefix_instantiation(instance):
-    assert isinstance(instance, dsl::PrimaryPrefix)
-
-@given(instance=dsl::PrimaryPrefix_strategy)
-def test_dsl::primaryprefix_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_floatliteral_instantiation(instance):
+    assert isinstance(instance, dsl_FloatLiteral)
 
 
-@given(instance=dsl::PrimaryPrefix_strategy)
-def test_dsl::primaryprefix_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=dsl::PrimaryPrefix_strategy)
-def test_dsl::primaryprefix_superOp_type(instance):
-    assert isinstance(instance.superOp, str)
+@given(instance=dsl_FloatLiteral_strategy)
+def test_dsl_floatliteral_digits_setter(instance):
+    original = instance.digits
+    instance.digits = original
+    assert instance.digits == original
 
-
-@given(instance=dsl::PrimaryPrefix_strategy)
-def test_dsl::primaryprefix_superOp_setter(instance):
-    original = instance.superOp
-    instance.superOp = original
-    assert instance.superOp == original
-
-@given(instance=dsl::PrimaryPrefix_strategy)
-def test_dsl::primaryprefix_thisOp_type(instance):
-    assert isinstance(instance.thisOp, str)
-
-
-@given(instance=dsl::PrimaryPrefix_strategy)
-def test_dsl::primaryprefix_thisOp_setter(instance):
-    original = instance.thisOp
-    instance.thisOp = original
-    assert instance.thisOp == original
-
-@given(instance=dsl::PreDecrementExpression_strategy)
+@given(instance=dsl_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_dsl::predecrementexpression_instantiation(instance):
-    assert isinstance(instance, dsl::PreDecrementExpression)
+def test_dsl_integerliteral_instantiation(instance):
+    assert isinstance(instance, dsl_IntegerLiteral)
 
-@given(instance=dsl::PreIncrementExpression_strategy)
+
+
+@given(instance=dsl_IntegerLiteral_strategy)
+def test_dsl_integerliteral_one_setter(instance):
+    original = instance.one
+    instance.one = original
+    assert instance.one == original
+
+
+
+@given(instance=dsl_IntegerLiteral_strategy)
+def test_dsl_integerliteral_zero_setter(instance):
+    original = instance.zero
+    instance.zero = original
+    assert instance.zero == original
+
+@given(instance=dsl_SignedIntLiteral_strategy)
 @settings(max_examples=50)
-def test_dsl::preincrementexpression_instantiation(instance):
-    assert isinstance(instance, dsl::PreIncrementExpression)
+def test_dsl_signedintliteral_instantiation(instance):
+    assert isinstance(instance, dsl_SignedIntLiteral)
 
-@given(instance=dsl::EObject_strategy)
+
+
+@given(instance=dsl_SignedIntLiteral_strategy)
+def test_dsl_signedintliteral_bitWidth_setter(instance):
+    original = instance.bitWidth
+    instance.bitWidth = original
+    assert instance.bitWidth == original
+
+@given(instance=dsl_UnsignedIntLiteral_strategy)
 @settings(max_examples=50)
-def test_dsl::eobject_instantiation(instance):
-    assert isinstance(instance, dsl::EObject)
-
-@given(instance=dsl::Literal_strategy)
-@settings(max_examples=50)
-def test_dsl::literal_instantiation(instance):
-    assert isinstance(instance, dsl::Literal)
-
-@given(instance=dsl::Literal_strategy)
-def test_dsl::literal_charLit_type(instance):
-    assert isinstance(instance.charLit, str)
+def test_dsl_unsignedintliteral_instantiation(instance):
+    assert isinstance(instance, dsl_UnsignedIntLiteral)
 
 
-@given(instance=dsl::Literal_strategy)
-def test_dsl::literal_charLit_setter(instance):
-    original = instance.charLit
-    instance.charLit = original
-    assert instance.charLit == original
 
-@given(instance=dsl::Literal_strategy)
-def test_dsl::literal_stringLit_type(instance):
-    assert isinstance(instance.stringLit, str)
-
-
-@given(instance=dsl::Literal_strategy)
-def test_dsl::literal_stringLit_setter(instance):
-    original = instance.stringLit
-    instance.stringLit = original
-    assert instance.stringLit == original
-
-@given(instance=dsl::Literal_strategy)
-def test_dsl::literal_nullLit_type(instance):
-    assert isinstance(instance.nullLit, str)
-
-
-@given(instance=dsl::Literal_strategy)
-def test_dsl::literal_nullLit_setter(instance):
-    original = instance.nullLit
-    instance.nullLit = original
-    assert instance.nullLit == original
-
-@given(instance=dsl::CastLookahead_strategy)
-@settings(max_examples=50)
-def test_dsl::castlookahead_instantiation(instance):
-    assert isinstance(instance, dsl::CastLookahead)
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_openBracket_type(instance):
-    assert isinstance(instance.openBracket, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_openBracket_setter(instance):
-    original = instance.openBracket
-    instance.openBracket = original
-    assert instance.openBracket == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_negOp_type(instance):
-    assert isinstance(instance.negOp, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_negOp_setter(instance):
-    original = instance.negOp
-    instance.negOp = original
-    assert instance.negOp == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_superOp_type(instance):
-    assert isinstance(instance.superOp, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_superOp_setter(instance):
-    original = instance.superOp
-    instance.superOp = original
-    assert instance.superOp == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_bitNegOp_type(instance):
-    assert isinstance(instance.bitNegOp, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_bitNegOp_setter(instance):
-    original = instance.bitNegOp
-    instance.bitNegOp = original
-    assert instance.bitNegOp == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_thisOp_type(instance):
-    assert isinstance(instance.thisOp, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_thisOp_setter(instance):
-    original = instance.thisOp
-    instance.thisOp = original
-    assert instance.thisOp == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_newOp_type(instance):
-    assert isinstance(instance.newOp, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_newOp_setter(instance):
-    original = instance.newOp
-    instance.newOp = original
-    assert instance.newOp == original
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_primType_type(instance):
-    assert isinstance(instance.primType, str)
-
-
-@given(instance=dsl::CastLookahead_strategy)
-def test_dsl::castlookahead_primType_setter(instance):
-    original = instance.primType
-    instance.primType = original
-    assert instance.primType == original
-
-@given(instance=dsl::PostfixExpression_strategy)
-@settings(max_examples=50)
-def test_dsl::postfixexpression_instantiation(instance):
-    assert isinstance(instance, dsl::PostfixExpression)
-
-@given(instance=dsl::PostfixExpression_strategy)
-def test_dsl::postfixexpression_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=dsl::PostfixExpression_strategy)
-def test_dsl::postfixexpression_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=dsl::CastExpression_strategy)
-@settings(max_examples=50)
-def test_dsl::castexpression_instantiation(instance):
-    assert isinstance(instance, dsl::CastExpression)
-
-@given(instance=dsl::UnaryExpressionNotPlusMinus_strategy)
-@settings(max_examples=50)
-def test_dsl::unaryexpressionnotplusminus_instantiation(instance):
-    assert isinstance(instance, dsl::UnaryExpressionNotPlusMinus)
-
-@given(instance=dsl::UnaryExpressionNotPlusMinus_strategy)
-def test_dsl::unaryexpressionnotplusminus_negOp_type(instance):
-    assert isinstance(instance.negOp, str)
-
-
-@given(instance=dsl::UnaryExpressionNotPlusMinus_strategy)
-def test_dsl::unaryexpressionnotplusminus_negOp_setter(instance):
-    original = instance.negOp
-    instance.negOp = original
-    assert instance.negOp == original
-
-@given(instance=dsl::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_dsl::unaryexpression_instantiation(instance):
-    assert isinstance(instance, dsl::UnaryExpression)
-
-@given(instance=dsl::UnaryExpression_strategy)
-def test_dsl::unaryexpression_sign_type(instance):
-    assert isinstance(instance.sign, str)
-
-
-@given(instance=dsl::UnaryExpression_strategy)
-def test_dsl::unaryexpression_sign_setter(instance):
+@given(instance=dsl_UnsignedIntLiteral_strategy)
+def test_dsl_unsignedintliteral_sign_setter(instance):
     original = instance.sign
     instance.sign = original
     assert instance.sign == original
 
-@given(instance=dsl::MultiplicativeExpression_strategy)
+@given(instance=dsl_MemberSelector_strategy)
 @settings(max_examples=50)
-def test_dsl::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, dsl::MultiplicativeExpression)
-
-@given(instance=dsl::MultiplicativeExpression_strategy)
-def test_dsl::multiplicativeexpression_ops_type(instance):
-    assert isinstance(instance.ops, str)
+def test_dsl_memberselector_instantiation(instance):
+    assert isinstance(instance, dsl_MemberSelector)
 
 
-@given(instance=dsl::MultiplicativeExpression_strategy)
-def test_dsl::multiplicativeexpression_ops_setter(instance):
+
+@given(instance=dsl_MemberSelector_strategy)
+def test_dsl_memberselector_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=dsl_DecimalNumber_strategy)
+@settings(max_examples=50)
+def test_dsl_decimalnumber_instantiation(instance):
+    assert isinstance(instance, dsl_DecimalNumber)
+
+
+
+@given(instance=dsl_DecimalNumber_strategy)
+def test_dsl_decimalnumber_decDigits_setter(instance):
+    original = instance.decDigits
+    instance.decDigits = original
+    assert instance.decDigits == original
+
+
+
+@given(instance=dsl_DecimalNumber_strategy)
+def test_dsl_decimalnumber_decDigitsUnderscore_setter(instance):
+    original = instance.decDigitsUnderscore
+    instance.decDigitsUnderscore = original
+    assert instance.decDigitsUnderscore == original
+
+@given(instance=dsl_PrimarySuffix_strategy)
+@settings(max_examples=50)
+def test_dsl_primarysuffix_instantiation(instance):
+    assert isinstance(instance, dsl_PrimarySuffix)
+
+
+
+@given(instance=dsl_PrimarySuffix_strategy)
+def test_dsl_primarysuffix_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=dsl_PrimarySuffix_strategy)
+def test_dsl_primarysuffix_thisOp_setter(instance):
+    original = instance.thisOp
+    instance.thisOp = original
+    assert instance.thisOp == original
+
+@given(instance=dsl_AllocationExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_allocationexpression_instantiation(instance):
+    assert isinstance(instance, dsl_AllocationExpression)
+
+
+
+@given(instance=dsl_AllocationExpression_strategy)
+def test_dsl_allocationexpression_primType_setter(instance):
+    original = instance.primType
+    instance.primType = original
+    assert instance.primType == original
+
+@given(instance=dsl_PrimaryPrefix_strategy)
+@settings(max_examples=50)
+def test_dsl_primaryprefix_instantiation(instance):
+    assert isinstance(instance, dsl_PrimaryPrefix)
+
+
+
+@given(instance=dsl_PrimaryPrefix_strategy)
+def test_dsl_primaryprefix_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=dsl_PrimaryPrefix_strategy)
+def test_dsl_primaryprefix_superOp_setter(instance):
+    original = instance.superOp
+    instance.superOp = original
+    assert instance.superOp == original
+
+
+
+@given(instance=dsl_PrimaryPrefix_strategy)
+def test_dsl_primaryprefix_thisOp_setter(instance):
+    original = instance.thisOp
+    instance.thisOp = original
+    assert instance.thisOp == original
+
+@given(instance=dsl_PreDecrementExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_predecrementexpression_instantiation(instance):
+    assert isinstance(instance, dsl_PreDecrementExpression)
+
+@given(instance=dsl_PreIncrementExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_preincrementexpression_instantiation(instance):
+    assert isinstance(instance, dsl_PreIncrementExpression)
+
+@given(instance=dsl_EObject_strategy)
+@settings(max_examples=50)
+def test_dsl_eobject_instantiation(instance):
+    assert isinstance(instance, dsl_EObject)
+
+@given(instance=dsl_Literal_strategy)
+@settings(max_examples=50)
+def test_dsl_literal_instantiation(instance):
+    assert isinstance(instance, dsl_Literal)
+
+
+
+@given(instance=dsl_Literal_strategy)
+def test_dsl_literal_stringLit_setter(instance):
+    original = instance.stringLit
+    instance.stringLit = original
+    assert instance.stringLit == original
+
+
+
+@given(instance=dsl_Literal_strategy)
+def test_dsl_literal_charLit_setter(instance):
+    original = instance.charLit
+    instance.charLit = original
+    assert instance.charLit == original
+
+
+
+@given(instance=dsl_Literal_strategy)
+def test_dsl_literal_nullLit_setter(instance):
+    original = instance.nullLit
+    instance.nullLit = original
+    assert instance.nullLit == original
+
+@given(instance=dsl_CastLookahead_strategy)
+@settings(max_examples=50)
+def test_dsl_castlookahead_instantiation(instance):
+    assert isinstance(instance, dsl_CastLookahead)
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_newOp_setter(instance):
+    original = instance.newOp
+    instance.newOp = original
+    assert instance.newOp == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_bitNegOp_setter(instance):
+    original = instance.bitNegOp
+    instance.bitNegOp = original
+    assert instance.bitNegOp == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_openBracket_setter(instance):
+    original = instance.openBracket
+    instance.openBracket = original
+    assert instance.openBracket == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_negOp_setter(instance):
+    original = instance.negOp
+    instance.negOp = original
+    assert instance.negOp == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_thisOp_setter(instance):
+    original = instance.thisOp
+    instance.thisOp = original
+    assert instance.thisOp == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_superOp_setter(instance):
+    original = instance.superOp
+    instance.superOp = original
+    assert instance.superOp == original
+
+
+
+@given(instance=dsl_CastLookahead_strategy)
+def test_dsl_castlookahead_primType_setter(instance):
+    original = instance.primType
+    instance.primType = original
+    assert instance.primType == original
+
+@given(instance=dsl_PostfixExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_postfixexpression_instantiation(instance):
+    assert isinstance(instance, dsl_PostfixExpression)
+
+
+
+@given(instance=dsl_PostfixExpression_strategy)
+def test_dsl_postfixexpression_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=dsl_CastExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_castexpression_instantiation(instance):
+    assert isinstance(instance, dsl_CastExpression)
+
+@given(instance=dsl_UnaryExpressionNotPlusMinus_strategy)
+@settings(max_examples=50)
+def test_dsl_unaryexpressionnotplusminus_instantiation(instance):
+    assert isinstance(instance, dsl_UnaryExpressionNotPlusMinus)
+
+
+
+@given(instance=dsl_UnaryExpressionNotPlusMinus_strategy)
+def test_dsl_unaryexpressionnotplusminus_negOp_setter(instance):
+    original = instance.negOp
+    instance.negOp = original
+    assert instance.negOp == original
+
+@given(instance=dsl_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_unaryexpression_instantiation(instance):
+    assert isinstance(instance, dsl_UnaryExpression)
+
+
+
+@given(instance=dsl_UnaryExpression_strategy)
+def test_dsl_unaryexpression_sign_setter(instance):
+    original = instance.sign
+    instance.sign = original
+    assert instance.sign == original
+
+@given(instance=dsl_MultiplicativeExpression_strategy)
+@settings(max_examples=50)
+def test_dsl_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, dsl_MultiplicativeExpression)
+
+
+
+@given(instance=dsl_MultiplicativeExpression_strategy)
+def test_dsl_multiplicativeexpression_ops_setter(instance):
     original = instance.ops
     instance.ops = original
     assert instance.ops == original
 
-@given(instance=dsl::AdditiveExpression_strategy)
+@given(instance=dsl_AdditiveExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::additiveexpression_instantiation(instance):
-    assert isinstance(instance, dsl::AdditiveExpression)
-
-@given(instance=dsl::AdditiveExpression_strategy)
-def test_dsl::additiveexpression_ops_type(instance):
-    assert isinstance(instance.ops, str)
+def test_dsl_additiveexpression_instantiation(instance):
+    assert isinstance(instance, dsl_AdditiveExpression)
 
 
-@given(instance=dsl::AdditiveExpression_strategy)
-def test_dsl::additiveexpression_ops_setter(instance):
+
+@given(instance=dsl_AdditiveExpression_strategy)
+def test_dsl_additiveexpression_ops_setter(instance):
     original = instance.ops
     instance.ops = original
     assert instance.ops == original
 
-@given(instance=dsl::ShiftExpression_strategy)
+@given(instance=dsl_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::shiftexpression_instantiation(instance):
-    assert isinstance(instance, dsl::ShiftExpression)
-
-@given(instance=dsl::ShiftExpression_strategy)
-def test_dsl::shiftexpression_ops_type(instance):
-    assert isinstance(instance.ops, str)
+def test_dsl_shiftexpression_instantiation(instance):
+    assert isinstance(instance, dsl_ShiftExpression)
 
 
-@given(instance=dsl::ShiftExpression_strategy)
-def test_dsl::shiftexpression_ops_setter(instance):
+
+@given(instance=dsl_ShiftExpression_strategy)
+def test_dsl_shiftexpression_ops_setter(instance):
     original = instance.ops
     instance.ops = original
     assert instance.ops == original
 
-@given(instance=dsl::RelationalExpression_strategy)
+@given(instance=dsl_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::relationalexpression_instantiation(instance):
-    assert isinstance(instance, dsl::RelationalExpression)
-
-@given(instance=dsl::RelationalExpression_strategy)
-def test_dsl::relationalexpression_ops_type(instance):
-    assert isinstance(instance.ops, str)
+def test_dsl_relationalexpression_instantiation(instance):
+    assert isinstance(instance, dsl_RelationalExpression)
 
 
-@given(instance=dsl::RelationalExpression_strategy)
-def test_dsl::relationalexpression_ops_setter(instance):
+
+@given(instance=dsl_RelationalExpression_strategy)
+def test_dsl_relationalexpression_ops_setter(instance):
     original = instance.ops
     instance.ops = original
     assert instance.ops == original
 
-@given(instance=dsl::InstanceOfExpression_strategy)
+@given(instance=dsl_InstanceOfExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, dsl::InstanceOfExpression)
+def test_dsl_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, dsl_InstanceOfExpression)
 
-@given(instance=dsl::EqualityExpression_strategy)
+@given(instance=dsl_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::equalityexpression_instantiation(instance):
-    assert isinstance(instance, dsl::EqualityExpression)
+def test_dsl_equalityexpression_instantiation(instance):
+    assert isinstance(instance, dsl_EqualityExpression)
 
-@given(instance=dsl::AndExpression_strategy)
+@given(instance=dsl_AndExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::andexpression_instantiation(instance):
-    assert isinstance(instance, dsl::AndExpression)
+def test_dsl_andexpression_instantiation(instance):
+    assert isinstance(instance, dsl_AndExpression)
 
-@given(instance=dsl::ExclusiveOrExpression_strategy)
+@given(instance=dsl_ExclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::exclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, dsl::ExclusiveOrExpression)
+def test_dsl_exclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, dsl_ExclusiveOrExpression)
 
-@given(instance=dsl::InclusiveOrExpression_strategy)
+@given(instance=dsl_InclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::inclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, dsl::InclusiveOrExpression)
+def test_dsl_inclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, dsl_InclusiveOrExpression)
 
-@given(instance=dsl::ConditionalAndExpression_strategy)
+@given(instance=dsl_ConditionalAndExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::conditionalandexpression_instantiation(instance):
-    assert isinstance(instance, dsl::ConditionalAndExpression)
+def test_dsl_conditionalandexpression_instantiation(instance):
+    assert isinstance(instance, dsl_ConditionalAndExpression)
 
 @given(instance=IfStatement_strategy)
 @settings(max_examples=50)
 def test_ifstatement_instantiation(instance):
     assert isinstance(instance, IfStatement)
 
-@given(instance=dsl::ConditionalOrExpression_strategy)
+@given(instance=dsl_ConditionalOrExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::conditionalorexpression_instantiation(instance):
-    assert isinstance(instance, dsl::ConditionalOrExpression)
+def test_dsl_conditionalorexpression_instantiation(instance):
+    assert isinstance(instance, dsl_ConditionalOrExpression)
 
-@given(instance=dsl::Statement_strategy)
+@given(instance=dsl_Statement_strategy)
 @settings(max_examples=50)
-def test_dsl::statement_instantiation(instance):
-    assert isinstance(instance, dsl::Statement)
+def test_dsl_statement_instantiation(instance):
+    assert isinstance(instance, dsl_Statement)
 
-@given(instance=dsl::ConditionalExpression_strategy)
+@given(instance=dsl_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, dsl::ConditionalExpression)
+def test_dsl_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, dsl_ConditionalExpression)
 
-@given(instance=dsl::WildcardBounds_strategy)
+@given(instance=dsl_WildcardBounds_strategy)
 @settings(max_examples=50)
-def test_dsl::wildcardbounds_instantiation(instance):
-    assert isinstance(instance, dsl::WildcardBounds)
-
-@given(instance=dsl::WildcardBounds_strategy)
-def test_dsl::wildcardbounds_sup_type(instance):
-    assert isinstance(instance.sup, bool)
+def test_dsl_wildcardbounds_instantiation(instance):
+    assert isinstance(instance, dsl_WildcardBounds)
 
 
-@given(instance=dsl::WildcardBounds_strategy)
-def test_dsl::wildcardbounds_sup_setter(instance):
-    original = instance.sup
-    instance.sup = original
-    assert instance.sup == original
 
-@given(instance=dsl::WildcardBounds_strategy)
-def test_dsl::wildcardbounds_ext_type(instance):
-    assert isinstance(instance.ext, bool)
-
-
-@given(instance=dsl::WildcardBounds_strategy)
-def test_dsl::wildcardbounds_ext_setter(instance):
+@given(instance=dsl_WildcardBounds_strategy)
+def test_dsl_wildcardbounds_ext_setter(instance):
     original = instance.ext
     instance.ext = original
     assert instance.ext == original
 
-@given(instance=dsl::TypeArgument_strategy)
+
+
+@given(instance=dsl_WildcardBounds_strategy)
+def test_dsl_wildcardbounds_sup_setter(instance):
+    original = instance.sup
+    instance.sup = original
+    assert instance.sup == original
+
+@given(instance=dsl_TypeArgument_strategy)
 @settings(max_examples=50)
-def test_dsl::typeargument_instantiation(instance):
-    assert isinstance(instance, dsl::TypeArgument)
+def test_dsl_typeargument_instantiation(instance):
+    assert isinstance(instance, dsl_TypeArgument)
 
-@given(instance=dsl::TypeArguments_strategy)
+@given(instance=dsl_TypeArguments_strategy)
 @settings(max_examples=50)
-def test_dsl::typearguments_instantiation(instance):
-    assert isinstance(instance, dsl::TypeArguments)
+def test_dsl_typearguments_instantiation(instance):
+    assert isinstance(instance, dsl_TypeArguments)
 
-@given(instance=dsl::ReferenceType_strategy)
+@given(instance=dsl_ReferenceType_strategy)
 @settings(max_examples=50)
-def test_dsl::referencetype_instantiation(instance):
-    assert isinstance(instance, dsl::ReferenceType)
-
-@given(instance=dsl::ReferenceType_strategy)
-def test_dsl::referencetype_primType_type(instance):
-    assert isinstance(instance.primType, str)
+def test_dsl_referencetype_instantiation(instance):
+    assert isinstance(instance, dsl_ReferenceType)
 
 
-@given(instance=dsl::ReferenceType_strategy)
-def test_dsl::referencetype_primType_setter(instance):
+
+@given(instance=dsl_ReferenceType_strategy)
+def test_dsl_referencetype_primType_setter(instance):
     original = instance.primType
     instance.primType = original
     assert instance.primType == original
 
-@given(instance=dsl::ReferenceType_strategy)
-def test_dsl::referencetype_squareBracketsBeta_type(instance):
-    assert isinstance(instance.squareBracketsBeta, str)
 
 
-@given(instance=dsl::ReferenceType_strategy)
-def test_dsl::referencetype_squareBracketsBeta_setter(instance):
-    original = instance.squareBracketsBeta
-    instance.squareBracketsBeta = original
-    assert instance.squareBracketsBeta == original
-
-@given(instance=dsl::ReferenceType_strategy)
-def test_dsl::referencetype_squareBracketsAlpha_type(instance):
-    assert isinstance(instance.squareBracketsAlpha, str)
-
-
-@given(instance=dsl::ReferenceType_strategy)
-def test_dsl::referencetype_squareBracketsAlpha_setter(instance):
+@given(instance=dsl_ReferenceType_strategy)
+def test_dsl_referencetype_squareBracketsAlpha_setter(instance):
     original = instance.squareBracketsAlpha
     instance.squareBracketsAlpha = original
     assert instance.squareBracketsAlpha == original
 
-@given(instance=dsl::PrimaryExpression_strategy)
+
+
+@given(instance=dsl_ReferenceType_strategy)
+def test_dsl_referencetype_squareBracketsBeta_setter(instance):
+    original = instance.squareBracketsBeta
+    instance.squareBracketsBeta = original
+    assert instance.squareBracketsBeta == original
+
+@given(instance=dsl_PrimaryExpression_strategy)
 @settings(max_examples=50)
-def test_dsl::primaryexpression_instantiation(instance):
-    assert isinstance(instance, dsl::PrimaryExpression)
+def test_dsl_primaryexpression_instantiation(instance):
+    assert isinstance(instance, dsl_PrimaryExpression)
 
-@given(instance=dsl::VariableDeclaratorId_strategy)
+@given(instance=dsl_VariableDeclaratorId_strategy)
 @settings(max_examples=50)
-def test_dsl::variabledeclaratorid_instantiation(instance):
-    assert isinstance(instance, dsl::VariableDeclaratorId)
-
-@given(instance=dsl::VariableDeclaratorId_strategy)
-def test_dsl::variabledeclaratorid_squareBrackets_type(instance):
-    assert isinstance(instance.squareBrackets, str)
+def test_dsl_variabledeclaratorid_instantiation(instance):
+    assert isinstance(instance, dsl_VariableDeclaratorId)
 
 
-@given(instance=dsl::VariableDeclaratorId_strategy)
-def test_dsl::variabledeclaratorid_squareBrackets_setter(instance):
-    original = instance.squareBrackets
-    instance.squareBrackets = original
-    assert instance.squareBrackets == original
 
-@given(instance=dsl::VariableDeclaratorId_strategy)
-def test_dsl::variabledeclaratorid_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=dsl::VariableDeclaratorId_strategy)
-def test_dsl::variabledeclaratorid_id_setter(instance):
+@given(instance=dsl_VariableDeclaratorId_strategy)
+def test_dsl_variabledeclaratorid_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::VariableDeclarator_strategy)
+
+
+@given(instance=dsl_VariableDeclaratorId_strategy)
+def test_dsl_variabledeclaratorid_squareBrackets_setter(instance):
+    original = instance.squareBrackets
+    instance.squareBrackets = original
+    assert instance.squareBrackets == original
+
+@given(instance=dsl_VariableDeclarator_strategy)
 @settings(max_examples=50)
-def test_dsl::variabledeclarator_instantiation(instance):
-    assert isinstance(instance, dsl::VariableDeclarator)
+def test_dsl_variabledeclarator_instantiation(instance):
+    assert isinstance(instance, dsl_VariableDeclarator)
 
-@given(instance=dsl::FormalParameter_strategy)
+@given(instance=dsl_FormalParameter_strategy)
 @settings(max_examples=50)
-def test_dsl::formalparameter_instantiation(instance):
-    assert isinstance(instance, dsl::FormalParameter)
-
-@given(instance=dsl::FormalParameter_strategy)
-def test_dsl::formalparameter_final_type(instance):
-    assert isinstance(instance.final, bool)
+def test_dsl_formalparameter_instantiation(instance):
+    assert isinstance(instance, dsl_FormalParameter)
 
 
-@given(instance=dsl::FormalParameter_strategy)
-def test_dsl::formalparameter_final_setter(instance):
+
+@given(instance=dsl_FormalParameter_strategy)
+def test_dsl_formalparameter_final_setter(instance):
     original = instance.final
     instance.final = original
     assert instance.final == original
 
-@given(instance=dsl::Block_strategy)
+@given(instance=dsl_Block_strategy)
 @settings(max_examples=50)
-def test_dsl::block_instantiation(instance):
-    assert isinstance(instance, dsl::Block)
+def test_dsl_block_instantiation(instance):
+    assert isinstance(instance, dsl_Block)
 
-@given(instance=dsl::MethodDeclarator_strategy)
+@given(instance=dsl_MethodDeclarator_strategy)
 @settings(max_examples=50)
-def test_dsl::methoddeclarator_instantiation(instance):
-    assert isinstance(instance, dsl::MethodDeclarator)
-
-@given(instance=dsl::MethodDeclarator_strategy)
-def test_dsl::methoddeclarator_squareBrackets_type(instance):
-    assert isinstance(instance.squareBrackets, str)
+def test_dsl_methoddeclarator_instantiation(instance):
+    assert isinstance(instance, dsl_MethodDeclarator)
 
 
-@given(instance=dsl::MethodDeclarator_strategy)
-def test_dsl::methoddeclarator_squareBrackets_setter(instance):
-    original = instance.squareBrackets
-    instance.squareBrackets = original
-    assert instance.squareBrackets == original
 
-@given(instance=dsl::MethodDeclarator_strategy)
-def test_dsl::methoddeclarator_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=dsl::MethodDeclarator_strategy)
-def test_dsl::methoddeclarator_id_setter(instance):
+@given(instance=dsl_MethodDeclarator_strategy)
+def test_dsl_methoddeclarator_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::ResultType_strategy)
+
+
+@given(instance=dsl_MethodDeclarator_strategy)
+def test_dsl_methoddeclarator_squareBrackets_setter(instance):
+    original = instance.squareBrackets
+    instance.squareBrackets = original
+    assert instance.squareBrackets == original
+
+@given(instance=dsl_ResultType_strategy)
 @settings(max_examples=50)
-def test_dsl::resulttype_instantiation(instance):
-    assert isinstance(instance, dsl::ResultType)
+def test_dsl_resulttype_instantiation(instance):
+    assert isinstance(instance, dsl_ResultType)
 
-@given(instance=dsl::BlockStatement_strategy)
+@given(instance=dsl_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_dsl::blockstatement_instantiation(instance):
-    assert isinstance(instance, dsl::BlockStatement)
+def test_dsl_blockstatement_instantiation(instance):
+    assert isinstance(instance, dsl_BlockStatement)
 
-@given(instance=dsl::ExplicitConstructorInvocation_strategy)
+@given(instance=dsl_ExplicitConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_dsl::explicitconstructorinvocation_instantiation(instance):
-    assert isinstance(instance, dsl::ExplicitConstructorInvocation)
-
-@given(instance=dsl::ExplicitConstructorInvocation_strategy)
-def test_dsl::explicitconstructorinvocation_self_type(instance):
-    assert isinstance(instance.self, bool)
+def test_dsl_explicitconstructorinvocation_instantiation(instance):
+    assert isinstance(instance, dsl_ExplicitConstructorInvocation)
 
 
-@given(instance=dsl::ExplicitConstructorInvocation_strategy)
-def test_dsl::explicitconstructorinvocation_self_setter(instance):
-    original = instance.self
-    instance.self = original
-    assert instance.self == original
 
-@given(instance=dsl::ExplicitConstructorInvocation_strategy)
-def test_dsl::explicitconstructorinvocation_parent_type(instance):
-    assert isinstance(instance.parent, str)
-
-
-@given(instance=dsl::ExplicitConstructorInvocation_strategy)
-def test_dsl::explicitconstructorinvocation_parent_setter(instance):
+@given(instance=dsl_ExplicitConstructorInvocation_strategy)
+def test_dsl_explicitconstructorinvocation_parent_setter(instance):
     original = instance.parent
     instance.parent = original
     assert instance.parent == original
 
-@given(instance=dsl::NameList_strategy)
+
+
+@given(instance=dsl_ExplicitConstructorInvocation_strategy)
+def test_dsl_explicitconstructorinvocation_self_setter(instance):
+    original = instance.self
+    instance.self = original
+    assert instance.self == original
+
+@given(instance=dsl_NameList_strategy)
 @settings(max_examples=50)
-def test_dsl::namelist_instantiation(instance):
-    assert isinstance(instance, dsl::NameList)
+def test_dsl_namelist_instantiation(instance):
+    assert isinstance(instance, dsl_NameList)
 
-@given(instance=dsl::FormalParameters_strategy)
+@given(instance=dsl_FormalParameters_strategy)
 @settings(max_examples=50)
-def test_dsl::formalparameters_instantiation(instance):
-    assert isinstance(instance, dsl::FormalParameters)
+def test_dsl_formalparameters_instantiation(instance):
+    assert isinstance(instance, dsl_FormalParameters)
 
-@given(instance=dsl::Expression_strategy)
+@given(instance=dsl_Expression_strategy)
 @settings(max_examples=50)
-def test_dsl::expression_instantiation(instance):
-    assert isinstance(instance, dsl::Expression)
-
-@given(instance=dsl::Expression_strategy)
-def test_dsl::expression_assignOp_type(instance):
-    assert isinstance(instance.assignOp, str)
+def test_dsl_expression_instantiation(instance):
+    assert isinstance(instance, dsl_Expression)
 
 
-@given(instance=dsl::Expression_strategy)
-def test_dsl::expression_assignOp_setter(instance):
+
+@given(instance=dsl_Expression_strategy)
+def test_dsl_expression_assignOp_setter(instance):
     original = instance.assignOp
     instance.assignOp = original
     assert instance.assignOp == original
 
-@given(instance=dsl::ArrayInitializer_strategy)
+@given(instance=dsl_ArrayInitializer_strategy)
 @settings(max_examples=50)
-def test_dsl::arrayinitializer_instantiation(instance):
-    assert isinstance(instance, dsl::ArrayInitializer)
+def test_dsl_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, dsl_ArrayInitializer)
 
-@given(instance=dsl::VariableInitializer_strategy)
+@given(instance=dsl_VariableInitializer_strategy)
 @settings(max_examples=50)
-def test_dsl::variableinitializer_instantiation(instance):
-    assert isinstance(instance, dsl::VariableInitializer)
+def test_dsl_variableinitializer_instantiation(instance):
+    assert isinstance(instance, dsl_VariableInitializer)
 
-@given(instance=dsl::Type_strategy)
+@given(instance=dsl_Type_strategy)
 @settings(max_examples=50)
-def test_dsl::type_instantiation(instance):
-    assert isinstance(instance, dsl::Type)
-
-@given(instance=dsl::Type_strategy)
-def test_dsl::type_primType_type(instance):
-    assert isinstance(instance.primType, str)
+def test_dsl_type_instantiation(instance):
+    assert isinstance(instance, dsl_Type)
 
 
-@given(instance=dsl::Type_strategy)
-def test_dsl::type_primType_setter(instance):
+
+@given(instance=dsl_Type_strategy)
+def test_dsl_type_primType_setter(instance):
     original = instance.primType
     instance.primType = original
     assert instance.primType == original
 
-@given(instance=dsl::FieldDeclaration_strategy)
+@given(instance=dsl_FieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::fielddeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::FieldDeclaration)
+def test_dsl_fielddeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_FieldDeclaration)
 
-@given(instance=dsl::MethodOrCtorDeclaration_strategy)
+@given(instance=dsl_MethodOrCtorDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::methodorctordeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::MethodOrCtorDeclaration)
-
-@given(instance=dsl::MethodOrCtorDeclaration_strategy)
-def test_dsl::methodorctordeclaration_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_methodorctordeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_MethodOrCtorDeclaration)
 
 
-@given(instance=dsl::MethodOrCtorDeclaration_strategy)
-def test_dsl::methodorctordeclaration_id_setter(instance):
+
+@given(instance=dsl_MethodOrCtorDeclaration_strategy)
+def test_dsl_methodorctordeclaration_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::Initializer_strategy)
+@given(instance=dsl_Initializer_strategy)
 @settings(max_examples=50)
-def test_dsl::initializer_instantiation(instance):
-    assert isinstance(instance, dsl::Initializer)
-
-@given(instance=dsl::Initializer_strategy)
-def test_dsl::initializer_static_type(instance):
-    assert isinstance(instance.static, bool)
+def test_dsl_initializer_instantiation(instance):
+    assert isinstance(instance, dsl_Initializer)
 
 
-@given(instance=dsl::Initializer_strategy)
-def test_dsl::initializer_static_setter(instance):
+
+@given(instance=dsl_Initializer_strategy)
+def test_dsl_initializer_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=dsl::TypeBound_strategy)
+@given(instance=dsl_TypeBound_strategy)
 @settings(max_examples=50)
-def test_dsl::typebound_instantiation(instance):
-    assert isinstance(instance, dsl::TypeBound)
+def test_dsl_typebound_instantiation(instance):
+    assert isinstance(instance, dsl_TypeBound)
 
-@given(instance=dsl::TypeParameter_strategy)
+@given(instance=dsl_TypeParameter_strategy)
 @settings(max_examples=50)
-def test_dsl::typeparameter_instantiation(instance):
-    assert isinstance(instance, dsl::TypeParameter)
-
-@given(instance=dsl::TypeParameter_strategy)
-def test_dsl::typeparameter_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_typeparameter_instantiation(instance):
+    assert isinstance(instance, dsl_TypeParameter)
 
 
-@given(instance=dsl::TypeParameter_strategy)
-def test_dsl::typeparameter_id_setter(instance):
+
+@given(instance=dsl_TypeParameter_strategy)
+def test_dsl_typeparameter_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::Arguments_strategy)
+@given(instance=dsl_Arguments_strategy)
 @settings(max_examples=50)
-def test_dsl::arguments_instantiation(instance):
-    assert isinstance(instance, dsl::Arguments)
+def test_dsl_arguments_instantiation(instance):
+    assert isinstance(instance, dsl_Arguments)
 
-@given(instance=dsl::ClassOrInterfaceBodyDeclaration_strategy)
+@given(instance=dsl_ClassOrInterfaceBodyDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::classorinterfacebodydeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::ClassOrInterfaceBodyDeclaration)
+def test_dsl_classorinterfacebodydeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_ClassOrInterfaceBodyDeclaration)
 
-@given(instance=dsl::EnumConstant_strategy)
+@given(instance=dsl_EnumConstant_strategy)
 @settings(max_examples=50)
-def test_dsl::enumconstant_instantiation(instance):
-    assert isinstance(instance, dsl::EnumConstant)
-
-@given(instance=dsl::EnumConstant_strategy)
-def test_dsl::enumconstant_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_enumconstant_instantiation(instance):
+    assert isinstance(instance, dsl_EnumConstant)
 
 
-@given(instance=dsl::EnumConstant_strategy)
-def test_dsl::enumconstant_id_setter(instance):
+
+@given(instance=dsl_EnumConstant_strategy)
+def test_dsl_enumconstant_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::EnumBody_strategy)
+@given(instance=dsl_EnumBody_strategy)
 @settings(max_examples=50)
-def test_dsl::enumbody_instantiation(instance):
-    assert isinstance(instance, dsl::EnumBody)
+def test_dsl_enumbody_instantiation(instance):
+    assert isinstance(instance, dsl_EnumBody)
 
-@given(instance=dsl::ClassOrInterfaceType_strategy)
+@given(instance=dsl_ClassOrInterfaceType_strategy)
 @settings(max_examples=50)
-def test_dsl::classorinterfacetype_instantiation(instance):
-    assert isinstance(instance, dsl::ClassOrInterfaceType)
-
-@given(instance=dsl::ClassOrInterfaceType_strategy)
-def test_dsl::classorinterfacetype_ids_type(instance):
-    assert isinstance(instance.ids, str)
+def test_dsl_classorinterfacetype_instantiation(instance):
+    assert isinstance(instance, dsl_ClassOrInterfaceType)
 
 
-@given(instance=dsl::ClassOrInterfaceType_strategy)
-def test_dsl::classorinterfacetype_ids_setter(instance):
+
+@given(instance=dsl_ClassOrInterfaceType_strategy)
+def test_dsl_classorinterfacetype_ids_setter(instance):
     original = instance.ids
     instance.ids = original
     assert instance.ids == original
 
-@given(instance=dsl::ClassOrInterfaceBody_strategy)
+@given(instance=dsl_ClassOrInterfaceBody_strategy)
 @settings(max_examples=50)
-def test_dsl::classorinterfacebody_instantiation(instance):
-    assert isinstance(instance, dsl::ClassOrInterfaceBody)
+def test_dsl_classorinterfacebody_instantiation(instance):
+    assert isinstance(instance, dsl_ClassOrInterfaceBody)
 
-@given(instance=dsl::ImplementsList_strategy)
+@given(instance=dsl_ImplementsList_strategy)
 @settings(max_examples=50)
-def test_dsl::implementslist_instantiation(instance):
-    assert isinstance(instance, dsl::ImplementsList)
+def test_dsl_implementslist_instantiation(instance):
+    assert isinstance(instance, dsl_ImplementsList)
 
-@given(instance=dsl::ExtendsList_strategy)
+@given(instance=dsl_ExtendsList_strategy)
 @settings(max_examples=50)
-def test_dsl::extendslist_instantiation(instance):
-    assert isinstance(instance, dsl::ExtendsList)
+def test_dsl_extendslist_instantiation(instance):
+    assert isinstance(instance, dsl_ExtendsList)
 
-@given(instance=dsl::TypeParameters_strategy)
+@given(instance=dsl_TypeParameters_strategy)
 @settings(max_examples=50)
-def test_dsl::typeparameters_instantiation(instance):
-    assert isinstance(instance, dsl::TypeParameters)
+def test_dsl_typeparameters_instantiation(instance):
+    assert isinstance(instance, dsl_TypeParameters)
 
-@given(instance=dsl::AnnotationTypeDeclaration_strategy)
+@given(instance=dsl_AnnotationTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::annotationtypedeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::AnnotationTypeDeclaration)
-
-@given(instance=dsl::AnnotationTypeDeclaration_strategy)
-def test_dsl::annotationtypedeclaration_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_annotationtypedeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_AnnotationTypeDeclaration)
 
 
-@given(instance=dsl::AnnotationTypeDeclaration_strategy)
-def test_dsl::annotationtypedeclaration_id_setter(instance):
+
+@given(instance=dsl_AnnotationTypeDeclaration_strategy)
+def test_dsl_annotationtypedeclaration_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::EnumDeclaration_strategy)
+@given(instance=dsl_EnumDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::enumdeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::EnumDeclaration)
-
-@given(instance=dsl::EnumDeclaration_strategy)
-def test_dsl::enumdeclaration_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_enumdeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_EnumDeclaration)
 
 
-@given(instance=dsl::EnumDeclaration_strategy)
-def test_dsl::enumdeclaration_id_setter(instance):
+
+@given(instance=dsl_EnumDeclaration_strategy)
+def test_dsl_enumdeclaration_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::ClassOrInterfaceDeclaration_strategy)
+@given(instance=dsl_ClassOrInterfaceDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::classorinterfacedeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::ClassOrInterfaceDeclaration)
-
-@given(instance=dsl::ClassOrInterfaceDeclaration_strategy)
-def test_dsl::classorinterfacedeclaration_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dsl_classorinterfacedeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_ClassOrInterfaceDeclaration)
 
 
-@given(instance=dsl::ClassOrInterfaceDeclaration_strategy)
-def test_dsl::classorinterfacedeclaration_id_setter(instance):
+
+@given(instance=dsl_ClassOrInterfaceDeclaration_strategy)
+def test_dsl_classorinterfacedeclaration_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dsl::ClassOrInterfaceDeclaration_strategy)
-def test_dsl::classorinterfacedeclaration_typeCategory_type(instance):
-    assert isinstance(instance.typeCategory, str)
 
 
-@given(instance=dsl::ClassOrInterfaceDeclaration_strategy)
-def test_dsl::classorinterfacedeclaration_typeCategory_setter(instance):
+@given(instance=dsl_ClassOrInterfaceDeclaration_strategy)
+def test_dsl_classorinterfacedeclaration_typeCategory_setter(instance):
     original = instance.typeCategory
     instance.typeCategory = original
     assert instance.typeCategory == original
 
-@given(instance=dsl::TypeBodyModifier_strategy)
+@given(instance=dsl_TypeBodyModifier_strategy)
 @settings(max_examples=50)
-def test_dsl::typebodymodifier_instantiation(instance):
-    assert isinstance(instance, dsl::TypeBodyModifier)
-
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_transient_type(instance):
-    assert isinstance(instance.transient, bool)
+def test_dsl_typebodymodifier_instantiation(instance):
+    assert isinstance(instance, dsl_TypeBodyModifier)
 
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_transient_setter(instance):
+
+@given(instance=dsl_TypeBodyModifier_strategy)
+def test_dsl_typebodymodifier_transient_setter(instance):
     original = instance.transient
     instance.transient = original
     assert instance.transient == original
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_volatile_type(instance):
-    assert isinstance(instance.volatile, bool)
 
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_volatile_setter(instance):
+@given(instance=dsl_TypeBodyModifier_strategy)
+def test_dsl_typebodymodifier_volatile_setter(instance):
     original = instance.volatile
     instance.volatile = original
     assert instance.volatile == original
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
 
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_synchronized_setter(instance):
+@given(instance=dsl_TypeBodyModifier_strategy)
+def test_dsl_typebodymodifier_synchronized_setter(instance):
     original = instance.synchronized
     instance.synchronized = original
     assert instance.synchronized == original
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_strictfp_type(instance):
-    assert isinstance(instance.strictfp, bool)
 
 
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_strictfp_setter(instance):
-    original = instance.strictfp
-    instance.strictfp = original
-    assert instance.strictfp == original
-
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_native_type(instance):
-    assert isinstance(instance.native, bool)
-
-
-@given(instance=dsl::TypeBodyModifier_strategy)
-def test_dsl::typebodymodifier_native_setter(instance):
+@given(instance=dsl_TypeBodyModifier_strategy)
+def test_dsl_typebodymodifier_native_setter(instance):
     original = instance.native
     instance.native = original
     assert instance.native == original
 
-@given(instance=dsl::CommonModifier_strategy)
+
+
+@given(instance=dsl_TypeBodyModifier_strategy)
+def test_dsl_typebodymodifier_strictfp_setter(instance):
+    original = instance.strictfp
+    instance.strictfp = original
+    assert instance.strictfp == original
+
+@given(instance=dsl_CommonModifier_strategy)
 @settings(max_examples=50)
-def test_dsl::commonmodifier_instantiation(instance):
-    assert isinstance(instance, dsl::CommonModifier)
-
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_final_type(instance):
-    assert isinstance(instance.final, bool)
+def test_dsl_commonmodifier_instantiation(instance):
+    assert isinstance(instance, dsl_CommonModifier)
 
 
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
 
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_visibility_setter(instance):
+@given(instance=dsl_CommonModifier_strategy)
+def test_dsl_commonmodifier_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_static_type(instance):
-    assert isinstance(instance.static, bool)
 
 
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_static_setter(instance):
+@given(instance=dsl_CommonModifier_strategy)
+def test_dsl_commonmodifier_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
+
+
+
+@given(instance=dsl_CommonModifier_strategy)
+def test_dsl_commonmodifier_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
 
 
-@given(instance=dsl::CommonModifier_strategy)
-def test_dsl::commonmodifier_abstract_setter(instance):
+@given(instance=dsl_CommonModifier_strategy)
+def test_dsl_commonmodifier_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=dsl::Name_strategy)
+@given(instance=dsl_Name_strategy)
 @settings(max_examples=50)
-def test_dsl::name_instantiation(instance):
-    assert isinstance(instance, dsl::Name)
-
-@given(instance=dsl::Name_strategy)
-def test_dsl::name_ids_type(instance):
-    assert isinstance(instance.ids, str)
+def test_dsl_name_instantiation(instance):
+    assert isinstance(instance, dsl_Name)
 
 
-@given(instance=dsl::Name_strategy)
-def test_dsl::name_ids_setter(instance):
+
+@given(instance=dsl_Name_strategy)
+def test_dsl_name_ids_setter(instance):
     original = instance.ids
     instance.ids = original
     assert instance.ids == original
 
-@given(instance=dsl::TypeDeclaration_strategy)
+@given(instance=dsl_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::typedeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::TypeDeclaration)
+def test_dsl_typedeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_TypeDeclaration)
 
-@given(instance=dsl::ImportDeclaration_strategy)
+@given(instance=dsl_ImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::importdeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::ImportDeclaration)
+def test_dsl_importdeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_ImportDeclaration)
 
-@given(instance=dsl::PackageDeclaration_strategy)
+@given(instance=dsl_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_dsl::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, dsl::PackageDeclaration)
+def test_dsl_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, dsl_PackageDeclaration)
 
-@given(instance=dsl::CompilationUnit_strategy)
+@given(instance=dsl_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_dsl::compilationunit_instantiation(instance):
-    assert isinstance(instance, dsl::CompilationUnit)
+def test_dsl_compilationunit_instantiation(instance):
+    assert isinstance(instance, dsl_CompilationUnit)

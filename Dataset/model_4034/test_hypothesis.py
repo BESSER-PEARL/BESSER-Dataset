@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StructuralFeature,
-    uml::15::to::20::associationEndToProperty::StructuralFeature,
-    uml::15::to::20::associationEndToProperty::Operation,
-    uml::15::to::20::associationEndToProperty::Property,
-    uml::15::to::20::associationEndToProperty::Association,
-    uml::15::to::20::associationEndToProperty::Class,
-    uml::15::to::20::associationEndToProperty::Model,
+    uml_15_to_20_associationEndToProperty_StructuralFeature,
+    uml_15_to_20_associationEndToProperty_Operation,
+    uml_15_to_20_associationEndToProperty_Property,
+    uml_15_to_20_associationEndToProperty_Association,
+    uml_15_to_20_associationEndToProperty_Class,
+    uml_15_to_20_associationEndToProperty_Model,
     AggregationKind,
     ScopeKind,
 )
@@ -37,23 +37,23 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(uml::15::to::20::associationEndToProperty::StructuralFeature)
+def test_uml_15_to_20_associationendtoproperty_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(uml_15_to_20_associationEndToProperty_StructuralFeature)
 
 
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_constructor_exists():
-    assert callable(uml::15::to::20::associationEndToProperty::StructuralFeature.__init__)
+def test_uml_15_to_20_associationendtoproperty_structuralfeature_constructor_exists():
+    assert callable(uml_15_to_20_associationEndToProperty_StructuralFeature.__init__)
 
 
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_constructor_args():
-    sig = inspect.signature(uml::15::to::20::associationEndToProperty::StructuralFeature.__init__)
+def test_uml_15_to_20_associationendtoproperty_structuralfeature_constructor_args():
+    sig = inspect.signature(uml_15_to_20_associationEndToProperty_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "isStatic" in params, "Missing parameter 'isStatic'"
 
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_has_isStatic():
-    assert hasattr(uml::15::to::20::associationEndToProperty::StructuralFeature, "isStatic")
+def test_uml_15_to_20_associationendtoproperty_structuralfeature_has_isStatic():
+    assert hasattr(uml_15_to_20_associationEndToProperty_StructuralFeature, "isStatic")
     descriptor = None
-    for klass in uml::15::to::20::associationEndToProperty::StructuralFeature.__mro__:
+    for klass in uml_15_to_20_associationEndToProperty_StructuralFeature.__mro__:
         if "isStatic" in klass.__dict__:
             descriptor = klass.__dict__["isStatic"]
             break
@@ -61,72 +61,72 @@ def test_uml::15::to::20::associationendtoproperty::structuralfeature_has_isStat
 
 
 
-def test_uml::15::to::20::associationendtoproperty::operation_is_not_abstract():
-    assert not inspect.isabstract(uml::15::to::20::associationEndToProperty::Operation)
+def test_uml_15_to_20_associationendtoproperty_operation_is_not_abstract():
+    assert not inspect.isabstract(uml_15_to_20_associationEndToProperty_Operation)
 
 
-def test_uml::15::to::20::associationendtoproperty::operation_constructor_exists():
-    assert callable(uml::15::to::20::associationEndToProperty::Operation.__init__)
+def test_uml_15_to_20_associationendtoproperty_operation_constructor_exists():
+    assert callable(uml_15_to_20_associationEndToProperty_Operation.__init__)
 
 
-def test_uml::15::to::20::associationendtoproperty::operation_constructor_args():
-    sig = inspect.signature(uml::15::to::20::associationEndToProperty::Operation.__init__)
+def test_uml_15_to_20_associationendtoproperty_operation_constructor_args():
+    sig = inspect.signature(uml_15_to_20_associationEndToProperty_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::15::to::20::associationendtoproperty::property_is_not_abstract():
-    assert not inspect.isabstract(uml::15::to::20::associationEndToProperty::Property)
+def test_uml_15_to_20_associationendtoproperty_property_is_not_abstract():
+    assert not inspect.isabstract(uml_15_to_20_associationEndToProperty_Property)
 
 
-def test_uml::15::to::20::associationendtoproperty::property_constructor_exists():
-    assert callable(uml::15::to::20::associationEndToProperty::Property.__init__)
+def test_uml_15_to_20_associationendtoproperty_property_constructor_exists():
+    assert callable(uml_15_to_20_associationEndToProperty_Property.__init__)
 
 
-def test_uml::15::to::20::associationendtoproperty::property_constructor_args():
-    sig = inspect.signature(uml::15::to::20::associationEndToProperty::Property.__init__)
+def test_uml_15_to_20_associationendtoproperty_property_constructor_args():
+    sig = inspect.signature(uml_15_to_20_associationEndToProperty_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::15::to::20::associationendtoproperty::association_is_not_abstract():
-    assert not inspect.isabstract(uml::15::to::20::associationEndToProperty::Association)
+def test_uml_15_to_20_associationendtoproperty_association_is_not_abstract():
+    assert not inspect.isabstract(uml_15_to_20_associationEndToProperty_Association)
 
 
-def test_uml::15::to::20::associationendtoproperty::association_constructor_exists():
-    assert callable(uml::15::to::20::associationEndToProperty::Association.__init__)
+def test_uml_15_to_20_associationendtoproperty_association_constructor_exists():
+    assert callable(uml_15_to_20_associationEndToProperty_Association.__init__)
 
 
-def test_uml::15::to::20::associationendtoproperty::association_constructor_args():
-    sig = inspect.signature(uml::15::to::20::associationEndToProperty::Association.__init__)
+def test_uml_15_to_20_associationendtoproperty_association_constructor_args():
+    sig = inspect.signature(uml_15_to_20_associationEndToProperty_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::15::to::20::associationendtoproperty::class_is_not_abstract():
-    assert not inspect.isabstract(uml::15::to::20::associationEndToProperty::Class)
+def test_uml_15_to_20_associationendtoproperty_class_is_not_abstract():
+    assert not inspect.isabstract(uml_15_to_20_associationEndToProperty_Class)
 
 
-def test_uml::15::to::20::associationendtoproperty::class_constructor_exists():
-    assert callable(uml::15::to::20::associationEndToProperty::Class.__init__)
+def test_uml_15_to_20_associationendtoproperty_class_constructor_exists():
+    assert callable(uml_15_to_20_associationEndToProperty_Class.__init__)
 
 
-def test_uml::15::to::20::associationendtoproperty::class_constructor_args():
-    sig = inspect.signature(uml::15::to::20::associationEndToProperty::Class.__init__)
+def test_uml_15_to_20_associationendtoproperty_class_constructor_args():
+    sig = inspect.signature(uml_15_to_20_associationEndToProperty_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::15::to::20::associationendtoproperty::model_is_not_abstract():
-    assert not inspect.isabstract(uml::15::to::20::associationEndToProperty::Model)
+def test_uml_15_to_20_associationendtoproperty_model_is_not_abstract():
+    assert not inspect.isabstract(uml_15_to_20_associationEndToProperty_Model)
 
 
-def test_uml::15::to::20::associationendtoproperty::model_constructor_exists():
-    assert callable(uml::15::to::20::associationEndToProperty::Model.__init__)
+def test_uml_15_to_20_associationendtoproperty_model_constructor_exists():
+    assert callable(uml_15_to_20_associationEndToProperty_Model.__init__)
 
 
-def test_uml::15::to::20::associationendtoproperty::model_constructor_args():
-    sig = inspect.signature(uml::15::to::20::associationEndToProperty::Model.__init__)
+def test_uml_15_to_20_associationendtoproperty_model_constructor_args():
+    sig = inspect.signature(uml_15_to_20_associationEndToProperty_Model.__init__)
     params = list(sig.parameters.keys())
 
 def test_aggregationkind_exists():
@@ -138,8 +138,8 @@ def test_aggregationkind_has_all_literals():
     enum_literals = [lit.name for lit in AggregationKind]
     expected_literals = [
         "shared",
-        "composite",
         "none",
+        "composite",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -175,25 +175,25 @@ safe_text = st.text(
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-uml::15::to::20::associationEndToProperty::StructuralFeature_strategy = st.builds(
-    uml::15::to::20::associationEndToProperty::StructuralFeature,
+uml_15_to_20_associationEndToProperty_StructuralFeature_strategy = st.builds(
+    uml_15_to_20_associationEndToProperty_StructuralFeature,
     isStatic=
         st.booleans()
 )
-uml::15::to::20::associationEndToProperty::Operation_strategy = st.builds(
-    uml::15::to::20::associationEndToProperty::Operation,
+uml_15_to_20_associationEndToProperty_Operation_strategy = st.builds(
+    uml_15_to_20_associationEndToProperty_Operation,
 )
-uml::15::to::20::associationEndToProperty::Property_strategy = st.builds(
-    uml::15::to::20::associationEndToProperty::Property,
+uml_15_to_20_associationEndToProperty_Property_strategy = st.builds(
+    uml_15_to_20_associationEndToProperty_Property,
 )
-uml::15::to::20::associationEndToProperty::Association_strategy = st.builds(
-    uml::15::to::20::associationEndToProperty::Association,
+uml_15_to_20_associationEndToProperty_Association_strategy = st.builds(
+    uml_15_to_20_associationEndToProperty_Association,
 )
-uml::15::to::20::associationEndToProperty::Class_strategy = st.builds(
-    uml::15::to::20::associationEndToProperty::Class,
+uml_15_to_20_associationEndToProperty_Class_strategy = st.builds(
+    uml_15_to_20_associationEndToProperty_Class,
 )
-uml::15::to::20::associationEndToProperty::Model_strategy = st.builds(
-    uml::15::to::20::associationEndToProperty::Model,
+uml_15_to_20_associationEndToProperty_Model_strategy = st.builds(
+    uml_15_to_20_associationEndToProperty_Model,
 )
 
 @given(instance=StructuralFeature_strategy)
@@ -201,43 +201,40 @@ uml::15::to::20::associationEndToProperty::Model_strategy = st.builds(
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=uml::15::to::20::associationEndToProperty::StructuralFeature_strategy)
+@given(instance=uml_15_to_20_associationEndToProperty_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_instantiation(instance):
-    assert isinstance(instance, uml::15::to::20::associationEndToProperty::StructuralFeature)
-
-@given(instance=uml::15::to::20::associationEndToProperty::StructuralFeature_strategy)
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_isStatic_type(instance):
-    assert isinstance(instance.isStatic, bool)
+def test_uml_15_to_20_associationendtoproperty_structuralfeature_instantiation(instance):
+    assert isinstance(instance, uml_15_to_20_associationEndToProperty_StructuralFeature)
 
 
-@given(instance=uml::15::to::20::associationEndToProperty::StructuralFeature_strategy)
-def test_uml::15::to::20::associationendtoproperty::structuralfeature_isStatic_setter(instance):
+
+@given(instance=uml_15_to_20_associationEndToProperty_StructuralFeature_strategy)
+def test_uml_15_to_20_associationendtoproperty_structuralfeature_isStatic_setter(instance):
     original = instance.isStatic
     instance.isStatic = original
     assert instance.isStatic == original
 
-@given(instance=uml::15::to::20::associationEndToProperty::Operation_strategy)
+@given(instance=uml_15_to_20_associationEndToProperty_Operation_strategy)
 @settings(max_examples=50)
-def test_uml::15::to::20::associationendtoproperty::operation_instantiation(instance):
-    assert isinstance(instance, uml::15::to::20::associationEndToProperty::Operation)
+def test_uml_15_to_20_associationendtoproperty_operation_instantiation(instance):
+    assert isinstance(instance, uml_15_to_20_associationEndToProperty_Operation)
 
-@given(instance=uml::15::to::20::associationEndToProperty::Property_strategy)
+@given(instance=uml_15_to_20_associationEndToProperty_Property_strategy)
 @settings(max_examples=50)
-def test_uml::15::to::20::associationendtoproperty::property_instantiation(instance):
-    assert isinstance(instance, uml::15::to::20::associationEndToProperty::Property)
+def test_uml_15_to_20_associationendtoproperty_property_instantiation(instance):
+    assert isinstance(instance, uml_15_to_20_associationEndToProperty_Property)
 
-@given(instance=uml::15::to::20::associationEndToProperty::Association_strategy)
+@given(instance=uml_15_to_20_associationEndToProperty_Association_strategy)
 @settings(max_examples=50)
-def test_uml::15::to::20::associationendtoproperty::association_instantiation(instance):
-    assert isinstance(instance, uml::15::to::20::associationEndToProperty::Association)
+def test_uml_15_to_20_associationendtoproperty_association_instantiation(instance):
+    assert isinstance(instance, uml_15_to_20_associationEndToProperty_Association)
 
-@given(instance=uml::15::to::20::associationEndToProperty::Class_strategy)
+@given(instance=uml_15_to_20_associationEndToProperty_Class_strategy)
 @settings(max_examples=50)
-def test_uml::15::to::20::associationendtoproperty::class_instantiation(instance):
-    assert isinstance(instance, uml::15::to::20::associationEndToProperty::Class)
+def test_uml_15_to_20_associationendtoproperty_class_instantiation(instance):
+    assert isinstance(instance, uml_15_to_20_associationEndToProperty_Class)
 
-@given(instance=uml::15::to::20::associationEndToProperty::Model_strategy)
+@given(instance=uml_15_to_20_associationEndToProperty_Model_strategy)
 @settings(max_examples=50)
-def test_uml::15::to::20::associationendtoproperty::model_instantiation(instance):
-    assert isinstance(instance, uml::15::to::20::associationEndToProperty::Model)
+def test_uml_15_to_20_associationendtoproperty_model_instantiation(instance):
+    assert isinstance(instance, uml_15_to_20_associationEndToProperty_Model)

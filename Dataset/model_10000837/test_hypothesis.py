@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Service,
@@ -29,18 +29,9 @@ def test_service_constructor_exists():
 def test_service_constructor_args():
     sig = inspect.signature(Service.__init__)
     params = list(sig.parameters.keys())
-    assert "basePrice" in params, "Missing parameter 'basePrice'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "basePrice" in params, "Missing parameter 'basePrice'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_service_has_basePrice():
-    assert hasattr(Service, "basePrice")
-    descriptor = None
-    for klass in Service.__mro__:
-        if "basePrice" in klass.__dict__:
-            descriptor = klass.__dict__["basePrice"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_service_has_description():
     assert hasattr(Service, "description")
@@ -48,6 +39,15 @@ def test_service_has_description():
     for klass in Service.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_service_has_basePrice():
+    assert hasattr(Service, "basePrice")
+    descriptor = None
+    for klass in Service.__mro__:
+        if "basePrice" in klass.__dict__:
+            descriptor = klass.__dict__["basePrice"]
             break
     assert isinstance(descriptor, property)
 
@@ -74,8 +74,8 @@ def test_room_constructor_args():
     sig = inspect.signature(Room.__init__)
     params = list(sig.parameters.keys())
     assert "door" in params, "Missing parameter 'door'"
-    assert "floor" in params, "Missing parameter 'floor'"
     assert "price" in params, "Missing parameter 'price'"
+    assert "floor" in params, "Missing parameter 'floor'"
     assert "capacity" in params, "Missing parameter 'capacity'"
 
 def test_room_has_door():
@@ -87,21 +87,21 @@ def test_room_has_door():
             break
     assert isinstance(descriptor, property)
 
-def test_room_has_floor():
-    assert hasattr(Room, "floor")
-    descriptor = None
-    for klass in Room.__mro__:
-        if "floor" in klass.__dict__:
-            descriptor = klass.__dict__["floor"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_room_has_price():
     assert hasattr(Room, "price")
     descriptor = None
     for klass in Room.__mro__:
         if "price" in klass.__dict__:
             descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_room_has_floor():
+    assert hasattr(Room, "floor")
+    descriptor = None
+    for klass in Room.__mro__:
+        if "floor" in klass.__dict__:
+            descriptor = klass.__dict__["floor"]
             break
     assert isinstance(descriptor, property)
 
@@ -127,22 +127,13 @@ def test_hotel_constructor_exists():
 def test_hotel_constructor_args():
     sig = inspect.signature(Hotel.__init__)
     params = list(sig.parameters.keys())
-    assert "street" in params, "Missing parameter 'street'"
     assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "website" in params, "Missing parameter 'website'"
-    assert "zip" in params, "Missing parameter 'zip'"
     assert "city" in params, "Missing parameter 'city'"
     assert "coordinates" in params, "Missing parameter 'coordinates'"
-
-def test_hotel_has_street():
-    assert hasattr(Hotel, "street")
-    descriptor = None
-    for klass in Hotel.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
-            break
-    assert isinstance(descriptor, property)
+    assert "street" in params, "Missing parameter 'street'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "zip" in params, "Missing parameter 'zip'"
+    assert "website" in params, "Missing parameter 'website'"
 
 def test_hotel_has_phoneNumber():
     assert hasattr(Hotel, "phoneNumber")
@@ -150,33 +141,6 @@ def test_hotel_has_phoneNumber():
     for klass in Hotel.__mro__:
         if "phoneNumber" in klass.__dict__:
             descriptor = klass.__dict__["phoneNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hotel_has_name():
-    assert hasattr(Hotel, "name")
-    descriptor = None
-    for klass in Hotel.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hotel_has_website():
-    assert hasattr(Hotel, "website")
-    descriptor = None
-    for klass in Hotel.__mro__:
-        if "website" in klass.__dict__:
-            descriptor = klass.__dict__["website"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_hotel_has_zip():
-    assert hasattr(Hotel, "zip")
-    descriptor = None
-    for klass in Hotel.__mro__:
-        if "zip" in klass.__dict__:
-            descriptor = klass.__dict__["zip"]
             break
     assert isinstance(descriptor, property)
 
@@ -198,6 +162,42 @@ def test_hotel_has_coordinates():
             break
     assert isinstance(descriptor, property)
 
+def test_hotel_has_street():
+    assert hasattr(Hotel, "street")
+    descriptor = None
+    for klass in Hotel.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hotel_has_name():
+    assert hasattr(Hotel, "name")
+    descriptor = None
+    for klass in Hotel.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hotel_has_zip():
+    assert hasattr(Hotel, "zip")
+    descriptor = None
+    for klass in Hotel.__mro__:
+        if "zip" in klass.__dict__:
+            descriptor = klass.__dict__["zip"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hotel_has_website():
+    assert hasattr(Hotel, "website")
+    descriptor = None
+    for klass in Hotel.__mro__:
+        if "website" in klass.__dict__:
+            descriptor = klass.__dict__["website"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_customer_is_not_abstract():
@@ -211,11 +211,29 @@ def test_customer_constructor_exists():
 def test_customer_constructor_args():
     sig = inspect.signature(Customer.__init__)
     params = list(sig.parameters.keys())
+    assert "surname" in params, "Missing parameter 'surname'"
+    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
     assert "ident" in params, "Missing parameter 'ident'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
-    assert "surname" in params, "Missing parameter 'surname'"
     assert "email" in params, "Missing parameter 'email'"
+
+def test_customer_has_surname():
+    assert hasattr(Customer, "surname")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "surname" in klass.__dict__:
+            descriptor = klass.__dict__["surname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer_has_phoneNumber():
+    assert hasattr(Customer, "phoneNumber")
+    descriptor = None
+    for klass in Customer.__mro__:
+        if "phoneNumber" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNumber"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_customer_has_ident():
     assert hasattr(Customer, "ident")
@@ -232,24 +250,6 @@ def test_customer_has_name():
     for klass in Customer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_phoneNumber():
-    assert hasattr(Customer, "phoneNumber")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "phoneNumber" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_customer_has_surname():
-    assert hasattr(Customer, "surname")
-    descriptor = None
-    for klass in Customer.__mro__:
-        if "surname" in klass.__dict__:
-            descriptor = klass.__dict__["surname"]
             break
     assert isinstance(descriptor, property)
 
@@ -276,9 +276,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Service_strategy = st.builds(
     Service,
-    basePrice=
-        safe_text,
     description=
+        safe_text,
+    basePrice=
         safe_text,
     name=
         safe_text
@@ -287,39 +287,39 @@ Room_strategy = st.builds(
     Room,
     door=
         st.integers(),
-    floor=
-        st.integers(),
     price=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    floor=
+        st.integers(),
     capacity=
         safe_text
 )
 Hotel_strategy = st.builds(
     Hotel,
-    street=
-        safe_text,
     phoneNumber=
-        st.integers(),
-    name=
-        safe_text,
-    website=
-        safe_text,
-    zip=
         st.integers(),
     city=
         safe_text,
     coordinates=
-        st.integers()
-)
-Customer_strategy = st.builds(
-    Customer,
-    ident=
+        st.integers(),
+    street=
         safe_text,
     name=
         safe_text,
+    zip=
+        st.integers(),
+    website=
+        safe_text
+)
+Customer_strategy = st.builds(
+    Customer,
+    surname=
+        safe_text,
     phoneNumber=
         st.integers(),
-    surname=
+    ident=
+        safe_text,
+    name=
         safe_text,
     email=
         safe_text
@@ -330,20 +330,6 @@ Customer_strategy = st.builds(
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=Service_strategy)
-def test_service_basePrice_type(instance):
-    assert isinstance(instance.basePrice, str)
-
-
-@given(instance=Service_strategy)
-def test_service_basePrice_setter(instance):
-    original = instance.basePrice
-    instance.basePrice = original
-    assert instance.basePrice == original
-
-@given(instance=Service_strategy)
-def test_service_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=Service_strategy)
@@ -352,9 +338,14 @@ def test_service_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
+
+
 @given(instance=Service_strategy)
-def test_service_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_service_basePrice_setter(instance):
+    original = instance.basePrice
+    instance.basePrice = original
+    assert instance.basePrice == original
+
 
 
 @given(instance=Service_strategy)
@@ -368,9 +359,6 @@ def test_service_name_setter(instance):
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_door_type(instance):
-    assert isinstance(instance.door, int)
 
 
 @given(instance=Room_strategy)
@@ -379,20 +367,6 @@ def test_room_door_setter(instance):
     instance.door = original
     assert instance.door == original
 
-@given(instance=Room_strategy)
-def test_room_floor_type(instance):
-    assert isinstance(instance.floor, int)
-
-
-@given(instance=Room_strategy)
-def test_room_floor_setter(instance):
-    original = instance.floor
-    instance.floor = original
-    assert instance.floor == original
-
-@given(instance=Room_strategy)
-def test_room_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
 @given(instance=Room_strategy)
@@ -401,9 +375,14 @@ def test_room_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
+
+
 @given(instance=Room_strategy)
-def test_room_capacity_type(instance):
-    assert isinstance(instance.capacity, str)
+def test_room_floor_setter(instance):
+    original = instance.floor
+    instance.floor = original
+    assert instance.floor == original
+
 
 
 @given(instance=Room_strategy)
@@ -417,20 +396,6 @@ def test_room_capacity_setter(instance):
 def test_hotel_instantiation(instance):
     assert isinstance(instance, Hotel)
 
-@given(instance=Hotel_strategy)
-def test_hotel_street_type(instance):
-    assert isinstance(instance.street, str)
-
-
-@given(instance=Hotel_strategy)
-def test_hotel_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
-
-@given(instance=Hotel_strategy)
-def test_hotel_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, int)
 
 
 @given(instance=Hotel_strategy)
@@ -439,42 +404,6 @@ def test_hotel_phoneNumber_setter(instance):
     instance.phoneNumber = original
     assert instance.phoneNumber == original
 
-@given(instance=Hotel_strategy)
-def test_hotel_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Hotel_strategy)
-def test_hotel_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Hotel_strategy)
-def test_hotel_website_type(instance):
-    assert isinstance(instance.website, str)
-
-
-@given(instance=Hotel_strategy)
-def test_hotel_website_setter(instance):
-    original = instance.website
-    instance.website = original
-    assert instance.website == original
-
-@given(instance=Hotel_strategy)
-def test_hotel_zip_type(instance):
-    assert isinstance(instance.zip, int)
-
-
-@given(instance=Hotel_strategy)
-def test_hotel_zip_setter(instance):
-    original = instance.zip
-    instance.zip = original
-    assert instance.zip == original
-
-@given(instance=Hotel_strategy)
-def test_hotel_city_type(instance):
-    assert isinstance(instance.city, str)
 
 
 @given(instance=Hotel_strategy)
@@ -483,9 +412,6 @@ def test_hotel_city_setter(instance):
     instance.city = original
     assert instance.city == original
 
-@given(instance=Hotel_strategy)
-def test_hotel_coordinates_type(instance):
-    assert isinstance(instance.coordinates, int)
 
 
 @given(instance=Hotel_strategy)
@@ -494,47 +420,43 @@ def test_hotel_coordinates_setter(instance):
     instance.coordinates = original
     assert instance.coordinates == original
 
+
+
+@given(instance=Hotel_strategy)
+def test_hotel_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+
+
+@given(instance=Hotel_strategy)
+def test_hotel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Hotel_strategy)
+def test_hotel_zip_setter(instance):
+    original = instance.zip
+    instance.zip = original
+    assert instance.zip == original
+
+
+
+@given(instance=Hotel_strategy)
+def test_hotel_website_setter(instance):
+    original = instance.website
+    instance.website = original
+    assert instance.website == original
+
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_ident_type(instance):
-    assert isinstance(instance.ident, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_ident_setter(instance):
-    original = instance.ident
-    instance.ident = original
-    assert instance.ident == original
-
-@given(instance=Customer_strategy)
-def test_customer_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Customer_strategy)
-def test_customer_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Customer_strategy)
-def test_customer_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, int)
-
-
-@given(instance=Customer_strategy)
-def test_customer_phoneNumber_setter(instance):
-    original = instance.phoneNumber
-    instance.phoneNumber = original
-    assert instance.phoneNumber == original
-
-@given(instance=Customer_strategy)
-def test_customer_surname_type(instance):
-    assert isinstance(instance.surname, str)
 
 
 @given(instance=Customer_strategy)
@@ -543,9 +465,30 @@ def test_customer_surname_setter(instance):
     instance.surname = original
     assert instance.surname == original
 
+
+
 @given(instance=Customer_strategy)
-def test_customer_email_type(instance):
-    assert isinstance(instance.email, str)
+def test_customer_phoneNumber_setter(instance):
+    original = instance.phoneNumber
+    instance.phoneNumber = original
+    assert instance.phoneNumber == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_ident_setter(instance):
+    original = instance.ident
+    instance.ident = original
+    assert instance.ident == original
+
+
+
+@given(instance=Customer_strategy)
+def test_customer_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 
 
 @given(instance=Customer_strategy)

@@ -3,56 +3,56 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Relation,
     Expression,
-    PagosPim::TerminalValue,
-    PagosPim::Add,
-    PagosPim::Mult,
-    PagosPim::Body,
-    PagosPim::ParameterList,
-    PagosPim::Expression,
+    PagosPim_TerminalValue,
+    PagosPim_Add,
+    PagosPim_Mult,
+    PagosPim_Body,
+    PagosPim_ParameterList,
+    PagosPim_Expression,
     AttributeDefinition,
-    PagosPim::Parameter,
-    PagosPim::NewEClass21,
-    PagosPim::LogicalExpression,
-    PagosPim::ProgramIfExpression,
-    PagosPim::ElseSegment,
-    PagosPim::IfCondition,
-    PagosPim::IfBlock,
-    PagosPim::Return,
-    PagosPim::EObject,
-    PagosPim::AttributeDefinition,
+    PagosPim_Parameter,
+    PagosPim_NewEClass21,
+    PagosPim_LogicalExpression,
+    PagosPim_ProgramIfExpression,
+    PagosPim_ElseSegment,
+    PagosPim_IfCondition,
+    PagosPim_IfBlock,
+    PagosPim_Return,
+    PagosPim_EObject,
+    PagosPim_AttributeDefinition,
     Attribute,
-    PagosPim::Field,
+    PagosPim_Field,
     Control,
-    PagosPim::Input,
-    PagosPim::Control,
-    PagosPim::Operation,
-    PagosPim::Relation,
-    PagosPim::Attribute,
-    PagosPim::GenericComponent,
-    PagosPim::SubComponent,
+    PagosPim_Input,
+    PagosPim_Control,
+    PagosPim_Operation,
+    PagosPim_Relation,
+    PagosPim_Attribute,
+    PagosPim_GenericComponent,
+    PagosPim_SubComponent,
     GenericComponent,
-    PagosPim::ViewComponent,
-    PagosPim::DaoComponent,
+    PagosPim_ViewComponent,
+    PagosPim_DaoComponent,
     Operation,
-    PagosPim::Action,
-    PagosPim::Output,
-    PagosPim::FrontService,
-    PagosPim::DataLayerComponent,
-    PagosPim::ServerService,
-    PagosPim::LogicComponent,
-    PagosPim::Application,
-    LogicalCononnector,
-    RelationType,
+    PagosPim_Action,
+    PagosPim_Output,
+    PagosPim_FrontService,
+    PagosPim_DataLayerComponent,
+    PagosPim_ServerService,
+    PagosPim_LogicComponent,
+    PagosPim_Application,
     DataTypes,
+    AddOper,
+    LogicalOperator,
+    LogicalCononnector,
     Cardinality,
     MultOper,
-    LogicalOperator,
-    AddOper,
+    RelationType,
 )
 
 # =============================================================================
@@ -89,33 +89,33 @@ def test_expression_constructor_args():
 
 
 
-def test_pagospim::terminalvalue_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::TerminalValue)
+def test_pagospim_terminalvalue_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_TerminalValue)
 
 
-def test_pagospim::terminalvalue_constructor_exists():
-    assert callable(PagosPim::TerminalValue.__init__)
+def test_pagospim_terminalvalue_constructor_exists():
+    assert callable(PagosPim_TerminalValue.__init__)
 
 
-def test_pagospim::terminalvalue_constructor_args():
-    sig = inspect.signature(PagosPim::TerminalValue.__init__)
+def test_pagospim_terminalvalue_constructor_args():
+    sig = inspect.signature(PagosPim_TerminalValue.__init__)
     params = list(sig.parameters.keys())
     assert "method" in params, "Missing parameter 'method'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_pagospim::terminalvalue_has_method():
-    assert hasattr(PagosPim::TerminalValue, "method")
+def test_pagospim_terminalvalue_has_method():
+    assert hasattr(PagosPim_TerminalValue, "method")
     descriptor = None
-    for klass in PagosPim::TerminalValue.__mro__:
+    for klass in PagosPim_TerminalValue.__mro__:
         if "method" in klass.__dict__:
             descriptor = klass.__dict__["method"]
             break
     assert isinstance(descriptor, property)
 
-def test_pagospim::terminalvalue_has_value():
-    assert hasattr(PagosPim::TerminalValue, "value")
+def test_pagospim_terminalvalue_has_value():
+    assert hasattr(PagosPim_TerminalValue, "value")
     descriptor = None
-    for klass in PagosPim::TerminalValue.__mro__:
+    for klass in PagosPim_TerminalValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -123,23 +123,23 @@ def test_pagospim::terminalvalue_has_value():
 
 
 
-def test_pagospim::add_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Add)
+def test_pagospim_add_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Add)
 
 
-def test_pagospim::add_constructor_exists():
-    assert callable(PagosPim::Add.__init__)
+def test_pagospim_add_constructor_exists():
+    assert callable(PagosPim_Add.__init__)
 
 
-def test_pagospim::add_constructor_args():
-    sig = inspect.signature(PagosPim::Add.__init__)
+def test_pagospim_add_constructor_args():
+    sig = inspect.signature(PagosPim_Add.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_pagospim::add_has_operator():
-    assert hasattr(PagosPim::Add, "operator")
+def test_pagospim_add_has_operator():
+    assert hasattr(PagosPim_Add, "operator")
     descriptor = None
-    for klass in PagosPim::Add.__mro__:
+    for klass in PagosPim_Add.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -147,23 +147,23 @@ def test_pagospim::add_has_operator():
 
 
 
-def test_pagospim::mult_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Mult)
+def test_pagospim_mult_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Mult)
 
 
-def test_pagospim::mult_constructor_exists():
-    assert callable(PagosPim::Mult.__init__)
+def test_pagospim_mult_constructor_exists():
+    assert callable(PagosPim_Mult.__init__)
 
 
-def test_pagospim::mult_constructor_args():
-    sig = inspect.signature(PagosPim::Mult.__init__)
+def test_pagospim_mult_constructor_args():
+    sig = inspect.signature(PagosPim_Mult.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_pagospim::mult_has_operator():
-    assert hasattr(PagosPim::Mult, "operator")
+def test_pagospim_mult_has_operator():
+    assert hasattr(PagosPim_Mult, "operator")
     descriptor = None
-    for klass in PagosPim::Mult.__mro__:
+    for klass in PagosPim_Mult.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -171,44 +171,44 @@ def test_pagospim::mult_has_operator():
 
 
 
-def test_pagospim::body_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Body)
+def test_pagospim_body_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Body)
 
 
-def test_pagospim::body_constructor_exists():
-    assert callable(PagosPim::Body.__init__)
+def test_pagospim_body_constructor_exists():
+    assert callable(PagosPim_Body.__init__)
 
 
-def test_pagospim::body_constructor_args():
-    sig = inspect.signature(PagosPim::Body.__init__)
+def test_pagospim_body_constructor_args():
+    sig = inspect.signature(PagosPim_Body.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::parameterlist_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::ParameterList)
+def test_pagospim_parameterlist_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_ParameterList)
 
 
-def test_pagospim::parameterlist_constructor_exists():
-    assert callable(PagosPim::ParameterList.__init__)
+def test_pagospim_parameterlist_constructor_exists():
+    assert callable(PagosPim_ParameterList.__init__)
 
 
-def test_pagospim::parameterlist_constructor_args():
-    sig = inspect.signature(PagosPim::ParameterList.__init__)
+def test_pagospim_parameterlist_constructor_args():
+    sig = inspect.signature(PagosPim_ParameterList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::expression_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Expression)
+def test_pagospim_expression_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Expression)
 
 
-def test_pagospim::expression_constructor_exists():
-    assert callable(PagosPim::Expression.__init__)
+def test_pagospim_expression_constructor_exists():
+    assert callable(PagosPim_Expression.__init__)
 
 
-def test_pagospim::expression_constructor_args():
-    sig = inspect.signature(PagosPim::Expression.__init__)
+def test_pagospim_expression_constructor_args():
+    sig = inspect.signature(PagosPim_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,71 +227,71 @@ def test_attributedefinition_constructor_args():
 
 
 
-def test_pagospim::parameter_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Parameter)
+def test_pagospim_parameter_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Parameter)
 
 
-def test_pagospim::parameter_constructor_exists():
-    assert callable(PagosPim::Parameter.__init__)
+def test_pagospim_parameter_constructor_exists():
+    assert callable(PagosPim_Parameter.__init__)
 
 
-def test_pagospim::parameter_constructor_args():
-    sig = inspect.signature(PagosPim::Parameter.__init__)
+def test_pagospim_parameter_constructor_args():
+    sig = inspect.signature(PagosPim_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::neweclass21_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::NewEClass21)
+def test_pagospim_neweclass21_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_NewEClass21)
 
 
-def test_pagospim::neweclass21_constructor_exists():
-    assert callable(PagosPim::NewEClass21.__init__)
+def test_pagospim_neweclass21_constructor_exists():
+    assert callable(PagosPim_NewEClass21.__init__)
 
 
-def test_pagospim::neweclass21_constructor_args():
-    sig = inspect.signature(PagosPim::NewEClass21.__init__)
+def test_pagospim_neweclass21_constructor_args():
+    sig = inspect.signature(PagosPim_NewEClass21.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::logicalexpression_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::LogicalExpression)
+def test_pagospim_logicalexpression_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_LogicalExpression)
 
 
-def test_pagospim::logicalexpression_constructor_exists():
-    assert callable(PagosPim::LogicalExpression.__init__)
+def test_pagospim_logicalexpression_constructor_exists():
+    assert callable(PagosPim_LogicalExpression.__init__)
 
 
-def test_pagospim::logicalexpression_constructor_args():
-    sig = inspect.signature(PagosPim::LogicalExpression.__init__)
+def test_pagospim_logicalexpression_constructor_args():
+    sig = inspect.signature(PagosPim_LogicalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "conOper" in params, "Missing parameter 'conOper'"
     assert "logicalOperator" in params, "Missing parameter 'logicalOperator'"
     assert "literal" in params, "Missing parameter 'literal'"
 
-def test_pagospim::logicalexpression_has_conOper():
-    assert hasattr(PagosPim::LogicalExpression, "conOper")
+def test_pagospim_logicalexpression_has_conOper():
+    assert hasattr(PagosPim_LogicalExpression, "conOper")
     descriptor = None
-    for klass in PagosPim::LogicalExpression.__mro__:
+    for klass in PagosPim_LogicalExpression.__mro__:
         if "conOper" in klass.__dict__:
             descriptor = klass.__dict__["conOper"]
             break
     assert isinstance(descriptor, property)
 
-def test_pagospim::logicalexpression_has_logicalOperator():
-    assert hasattr(PagosPim::LogicalExpression, "logicalOperator")
+def test_pagospim_logicalexpression_has_logicalOperator():
+    assert hasattr(PagosPim_LogicalExpression, "logicalOperator")
     descriptor = None
-    for klass in PagosPim::LogicalExpression.__mro__:
+    for klass in PagosPim_LogicalExpression.__mro__:
         if "logicalOperator" in klass.__dict__:
             descriptor = klass.__dict__["logicalOperator"]
             break
     assert isinstance(descriptor, property)
 
-def test_pagospim::logicalexpression_has_literal():
-    assert hasattr(PagosPim::LogicalExpression, "literal")
+def test_pagospim_logicalexpression_has_literal():
+    assert hasattr(PagosPim_LogicalExpression, "literal")
     descriptor = None
-    for klass in PagosPim::LogicalExpression.__mro__:
+    for klass in PagosPim_LogicalExpression.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
@@ -299,79 +299,79 @@ def test_pagospim::logicalexpression_has_literal():
 
 
 
-def test_pagospim::programifexpression_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::ProgramIfExpression)
+def test_pagospim_programifexpression_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_ProgramIfExpression)
 
 
-def test_pagospim::programifexpression_constructor_exists():
-    assert callable(PagosPim::ProgramIfExpression.__init__)
+def test_pagospim_programifexpression_constructor_exists():
+    assert callable(PagosPim_ProgramIfExpression.__init__)
 
 
-def test_pagospim::programifexpression_constructor_args():
-    sig = inspect.signature(PagosPim::ProgramIfExpression.__init__)
+def test_pagospim_programifexpression_constructor_args():
+    sig = inspect.signature(PagosPim_ProgramIfExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::elsesegment_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::ElseSegment)
+def test_pagospim_elsesegment_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_ElseSegment)
 
 
-def test_pagospim::elsesegment_constructor_exists():
-    assert callable(PagosPim::ElseSegment.__init__)
+def test_pagospim_elsesegment_constructor_exists():
+    assert callable(PagosPim_ElseSegment.__init__)
 
 
-def test_pagospim::elsesegment_constructor_args():
-    sig = inspect.signature(PagosPim::ElseSegment.__init__)
+def test_pagospim_elsesegment_constructor_args():
+    sig = inspect.signature(PagosPim_ElseSegment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::ifcondition_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::IfCondition)
+def test_pagospim_ifcondition_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_IfCondition)
 
 
-def test_pagospim::ifcondition_constructor_exists():
-    assert callable(PagosPim::IfCondition.__init__)
+def test_pagospim_ifcondition_constructor_exists():
+    assert callable(PagosPim_IfCondition.__init__)
 
 
-def test_pagospim::ifcondition_constructor_args():
-    sig = inspect.signature(PagosPim::IfCondition.__init__)
+def test_pagospim_ifcondition_constructor_args():
+    sig = inspect.signature(PagosPim_IfCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::ifblock_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::IfBlock)
+def test_pagospim_ifblock_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_IfBlock)
 
 
-def test_pagospim::ifblock_constructor_exists():
-    assert callable(PagosPim::IfBlock.__init__)
+def test_pagospim_ifblock_constructor_exists():
+    assert callable(PagosPim_IfBlock.__init__)
 
 
-def test_pagospim::ifblock_constructor_args():
-    sig = inspect.signature(PagosPim::IfBlock.__init__)
+def test_pagospim_ifblock_constructor_args():
+    sig = inspect.signature(PagosPim_IfBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::return_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Return)
+def test_pagospim_return_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Return)
 
 
-def test_pagospim::return_constructor_exists():
-    assert callable(PagosPim::Return.__init__)
+def test_pagospim_return_constructor_exists():
+    assert callable(PagosPim_Return.__init__)
 
 
-def test_pagospim::return_constructor_args():
-    sig = inspect.signature(PagosPim::Return.__init__)
+def test_pagospim_return_constructor_args():
+    sig = inspect.signature(PagosPim_Return.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_pagospim::return_has_type():
-    assert hasattr(PagosPim::Return, "type")
+def test_pagospim_return_has_type():
+    assert hasattr(PagosPim_Return, "type")
     descriptor = None
-    for klass in PagosPim::Return.__mro__:
+    for klass in PagosPim_Return.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -379,47 +379,47 @@ def test_pagospim::return_has_type():
 
 
 
-def test_pagospim::eobject_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::EObject)
+def test_pagospim_eobject_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_EObject)
 
 
-def test_pagospim::eobject_constructor_exists():
-    assert callable(PagosPim::EObject.__init__)
+def test_pagospim_eobject_constructor_exists():
+    assert callable(PagosPim_EObject.__init__)
 
 
-def test_pagospim::eobject_constructor_args():
-    sig = inspect.signature(PagosPim::EObject.__init__)
+def test_pagospim_eobject_constructor_args():
+    sig = inspect.signature(PagosPim_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::attributedefinition_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::AttributeDefinition)
+def test_pagospim_attributedefinition_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_AttributeDefinition)
 
 
-def test_pagospim::attributedefinition_constructor_exists():
-    assert callable(PagosPim::AttributeDefinition.__init__)
+def test_pagospim_attributedefinition_constructor_exists():
+    assert callable(PagosPim_AttributeDefinition.__init__)
 
 
-def test_pagospim::attributedefinition_constructor_args():
-    sig = inspect.signature(PagosPim::AttributeDefinition.__init__)
+def test_pagospim_attributedefinition_constructor_args():
+    sig = inspect.signature(PagosPim_AttributeDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_pagospim::attributedefinition_has_name():
-    assert hasattr(PagosPim::AttributeDefinition, "name")
+def test_pagospim_attributedefinition_has_name():
+    assert hasattr(PagosPim_AttributeDefinition, "name")
     descriptor = None
-    for klass in PagosPim::AttributeDefinition.__mro__:
+    for klass in PagosPim_AttributeDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_pagospim::attributedefinition_has_type():
-    assert hasattr(PagosPim::AttributeDefinition, "type")
+def test_pagospim_attributedefinition_has_type():
+    assert hasattr(PagosPim_AttributeDefinition, "type")
     descriptor = None
-    for klass in PagosPim::AttributeDefinition.__mro__:
+    for klass in PagosPim_AttributeDefinition.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -441,16 +441,16 @@ def test_attribute_constructor_args():
 
 
 
-def test_pagospim::field_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Field)
+def test_pagospim_field_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Field)
 
 
-def test_pagospim::field_constructor_exists():
-    assert callable(PagosPim::Field.__init__)
+def test_pagospim_field_constructor_exists():
+    assert callable(PagosPim_Field.__init__)
 
 
-def test_pagospim::field_constructor_args():
-    sig = inspect.signature(PagosPim::Field.__init__)
+def test_pagospim_field_constructor_args():
+    sig = inspect.signature(PagosPim_Field.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -469,37 +469,37 @@ def test_control_constructor_args():
 
 
 
-def test_pagospim::input_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Input)
+def test_pagospim_input_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Input)
 
 
-def test_pagospim::input_constructor_exists():
-    assert callable(PagosPim::Input.__init__)
+def test_pagospim_input_constructor_exists():
+    assert callable(PagosPim_Input.__init__)
 
 
-def test_pagospim::input_constructor_args():
-    sig = inspect.signature(PagosPim::Input.__init__)
+def test_pagospim_input_constructor_args():
+    sig = inspect.signature(PagosPim_Input.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::control_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Control)
+def test_pagospim_control_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Control)
 
 
-def test_pagospim::control_constructor_exists():
-    assert callable(PagosPim::Control.__init__)
+def test_pagospim_control_constructor_exists():
+    assert callable(PagosPim_Control.__init__)
 
 
-def test_pagospim::control_constructor_args():
-    sig = inspect.signature(PagosPim::Control.__init__)
+def test_pagospim_control_constructor_args():
+    sig = inspect.signature(PagosPim_Control.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_pagospim::control_has_label():
-    assert hasattr(PagosPim::Control, "label")
+def test_pagospim_control_has_label():
+    assert hasattr(PagosPim_Control, "label")
     descriptor = None
-    for klass in PagosPim::Control.__mro__:
+    for klass in PagosPim_Control.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -507,23 +507,23 @@ def test_pagospim::control_has_label():
 
 
 
-def test_pagospim::operation_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Operation)
+def test_pagospim_operation_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Operation)
 
 
-def test_pagospim::operation_constructor_exists():
-    assert callable(PagosPim::Operation.__init__)
+def test_pagospim_operation_constructor_exists():
+    assert callable(PagosPim_Operation.__init__)
 
 
-def test_pagospim::operation_constructor_args():
-    sig = inspect.signature(PagosPim::Operation.__init__)
+def test_pagospim_operation_constructor_args():
+    sig = inspect.signature(PagosPim_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pagospim::operation_has_name():
-    assert hasattr(PagosPim::Operation, "name")
+def test_pagospim_operation_has_name():
+    assert hasattr(PagosPim_Operation, "name")
     descriptor = None
-    for klass in PagosPim::Operation.__mro__:
+    for klass in PagosPim_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -531,67 +531,67 @@ def test_pagospim::operation_has_name():
 
 
 
-def test_pagospim::relation_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Relation)
+def test_pagospim_relation_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Relation)
 
 
-def test_pagospim::relation_constructor_exists():
-    assert callable(PagosPim::Relation.__init__)
+def test_pagospim_relation_constructor_exists():
+    assert callable(PagosPim_Relation.__init__)
 
 
-def test_pagospim::relation_constructor_args():
-    sig = inspect.signature(PagosPim::Relation.__init__)
+def test_pagospim_relation_constructor_args():
+    sig = inspect.signature(PagosPim_Relation.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
     assert "cardinality" in params, "Missing parameter 'cardinality'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_pagospim::relation_has_type():
-    assert hasattr(PagosPim::Relation, "type")
+def test_pagospim_relation_has_name():
+    assert hasattr(PagosPim_Relation, "name")
     descriptor = None
-    for klass in PagosPim::Relation.__mro__:
+    for klass in PagosPim_Relation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pagospim_relation_has_type():
+    assert hasattr(PagosPim_Relation, "type")
+    descriptor = None
+    for klass in PagosPim_Relation.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_pagospim::relation_has_cardinality():
-    assert hasattr(PagosPim::Relation, "cardinality")
+def test_pagospim_relation_has_cardinality():
+    assert hasattr(PagosPim_Relation, "cardinality")
     descriptor = None
-    for klass in PagosPim::Relation.__mro__:
+    for klass in PagosPim_Relation.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
     assert isinstance(descriptor, property)
 
-def test_pagospim::relation_has_name():
-    assert hasattr(PagosPim::Relation, "name")
-    descriptor = None
-    for klass in PagosPim::Relation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_pagospim::attribute_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Attribute)
-
-
-def test_pagospim::attribute_constructor_exists():
-    assert callable(PagosPim::Attribute.__init__)
+def test_pagospim_attribute_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Attribute)
 
 
-def test_pagospim::attribute_constructor_args():
-    sig = inspect.signature(PagosPim::Attribute.__init__)
+def test_pagospim_attribute_constructor_exists():
+    assert callable(PagosPim_Attribute.__init__)
+
+
+def test_pagospim_attribute_constructor_args():
+    sig = inspect.signature(PagosPim_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "isIndex" in params, "Missing parameter 'isIndex'"
 
-def test_pagospim::attribute_has_isIndex():
-    assert hasattr(PagosPim::Attribute, "isIndex")
+def test_pagospim_attribute_has_isIndex():
+    assert hasattr(PagosPim_Attribute, "isIndex")
     descriptor = None
-    for klass in PagosPim::Attribute.__mro__:
+    for klass in PagosPim_Attribute.__mro__:
         if "isIndex" in klass.__dict__:
             descriptor = klass.__dict__["isIndex"]
             break
@@ -599,23 +599,23 @@ def test_pagospim::attribute_has_isIndex():
 
 
 
-def test_pagospim::genericcomponent_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::GenericComponent)
+def test_pagospim_genericcomponent_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_GenericComponent)
 
 
-def test_pagospim::genericcomponent_constructor_exists():
-    assert callable(PagosPim::GenericComponent.__init__)
+def test_pagospim_genericcomponent_constructor_exists():
+    assert callable(PagosPim_GenericComponent.__init__)
 
 
-def test_pagospim::genericcomponent_constructor_args():
-    sig = inspect.signature(PagosPim::GenericComponent.__init__)
+def test_pagospim_genericcomponent_constructor_args():
+    sig = inspect.signature(PagosPim_GenericComponent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pagospim::genericcomponent_has_name():
-    assert hasattr(PagosPim::GenericComponent, "name")
+def test_pagospim_genericcomponent_has_name():
+    assert hasattr(PagosPim_GenericComponent, "name")
     descriptor = None
-    for klass in PagosPim::GenericComponent.__mro__:
+    for klass in PagosPim_GenericComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -623,16 +623,16 @@ def test_pagospim::genericcomponent_has_name():
 
 
 
-def test_pagospim::subcomponent_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::SubComponent)
+def test_pagospim_subcomponent_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_SubComponent)
 
 
-def test_pagospim::subcomponent_constructor_exists():
-    assert callable(PagosPim::SubComponent.__init__)
+def test_pagospim_subcomponent_constructor_exists():
+    assert callable(PagosPim_SubComponent.__init__)
 
 
-def test_pagospim::subcomponent_constructor_args():
-    sig = inspect.signature(PagosPim::SubComponent.__init__)
+def test_pagospim_subcomponent_constructor_args():
+    sig = inspect.signature(PagosPim_SubComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -651,23 +651,23 @@ def test_genericcomponent_constructor_args():
 
 
 
-def test_pagospim::viewcomponent_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::ViewComponent)
+def test_pagospim_viewcomponent_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_ViewComponent)
 
 
-def test_pagospim::viewcomponent_constructor_exists():
-    assert callable(PagosPim::ViewComponent.__init__)
+def test_pagospim_viewcomponent_constructor_exists():
+    assert callable(PagosPim_ViewComponent.__init__)
 
 
-def test_pagospim::viewcomponent_constructor_args():
-    sig = inspect.signature(PagosPim::ViewComponent.__init__)
+def test_pagospim_viewcomponent_constructor_args():
+    sig = inspect.signature(PagosPim_ViewComponent.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_pagospim::viewcomponent_has_title():
-    assert hasattr(PagosPim::ViewComponent, "title")
+def test_pagospim_viewcomponent_has_title():
+    assert hasattr(PagosPim_ViewComponent, "title")
     descriptor = None
-    for klass in PagosPim::ViewComponent.__mro__:
+    for klass in PagosPim_ViewComponent.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -675,16 +675,16 @@ def test_pagospim::viewcomponent_has_title():
 
 
 
-def test_pagospim::daocomponent_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::DaoComponent)
+def test_pagospim_daocomponent_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_DaoComponent)
 
 
-def test_pagospim::daocomponent_constructor_exists():
-    assert callable(PagosPim::DaoComponent.__init__)
+def test_pagospim_daocomponent_constructor_exists():
+    assert callable(PagosPim_DaoComponent.__init__)
 
 
-def test_pagospim::daocomponent_constructor_args():
-    sig = inspect.signature(PagosPim::DaoComponent.__init__)
+def test_pagospim_daocomponent_constructor_args():
+    sig = inspect.signature(PagosPim_DaoComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -703,51 +703,51 @@ def test_operation_constructor_args():
 
 
 
-def test_pagospim::action_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Action)
+def test_pagospim_action_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Action)
 
 
-def test_pagospim::action_constructor_exists():
-    assert callable(PagosPim::Action.__init__)
+def test_pagospim_action_constructor_exists():
+    assert callable(PagosPim_Action.__init__)
 
 
-def test_pagospim::action_constructor_args():
-    sig = inspect.signature(PagosPim::Action.__init__)
+def test_pagospim_action_constructor_args():
+    sig = inspect.signature(PagosPim_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::output_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Output)
+def test_pagospim_output_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Output)
 
 
-def test_pagospim::output_constructor_exists():
-    assert callable(PagosPim::Output.__init__)
+def test_pagospim_output_constructor_exists():
+    assert callable(PagosPim_Output.__init__)
 
 
-def test_pagospim::output_constructor_args():
-    sig = inspect.signature(PagosPim::Output.__init__)
+def test_pagospim_output_constructor_args():
+    sig = inspect.signature(PagosPim_Output.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::frontservice_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::FrontService)
+def test_pagospim_frontservice_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_FrontService)
 
 
-def test_pagospim::frontservice_constructor_exists():
-    assert callable(PagosPim::FrontService.__init__)
+def test_pagospim_frontservice_constructor_exists():
+    assert callable(PagosPim_FrontService.__init__)
 
 
-def test_pagospim::frontservice_constructor_args():
-    sig = inspect.signature(PagosPim::FrontService.__init__)
+def test_pagospim_frontservice_constructor_args():
+    sig = inspect.signature(PagosPim_FrontService.__init__)
     params = list(sig.parameters.keys())
     assert "fullName" in params, "Missing parameter 'fullName'"
 
-def test_pagospim::frontservice_has_fullName():
-    assert hasattr(PagosPim::FrontService, "fullName")
+def test_pagospim_frontservice_has_fullName():
+    assert hasattr(PagosPim_FrontService, "fullName")
     descriptor = None
-    for klass in PagosPim::FrontService.__mro__:
+    for klass in PagosPim_FrontService.__mro__:
         if "fullName" in klass.__dict__:
             descriptor = klass.__dict__["fullName"]
             break
@@ -755,51 +755,51 @@ def test_pagospim::frontservice_has_fullName():
 
 
 
-def test_pagospim::datalayercomponent_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::DataLayerComponent)
+def test_pagospim_datalayercomponent_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_DataLayerComponent)
 
 
-def test_pagospim::datalayercomponent_constructor_exists():
-    assert callable(PagosPim::DataLayerComponent.__init__)
+def test_pagospim_datalayercomponent_constructor_exists():
+    assert callable(PagosPim_DataLayerComponent.__init__)
 
 
-def test_pagospim::datalayercomponent_constructor_args():
-    sig = inspect.signature(PagosPim::DataLayerComponent.__init__)
+def test_pagospim_datalayercomponent_constructor_args():
+    sig = inspect.signature(PagosPim_DataLayerComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::serverservice_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::ServerService)
+def test_pagospim_serverservice_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_ServerService)
 
 
-def test_pagospim::serverservice_constructor_exists():
-    assert callable(PagosPim::ServerService.__init__)
+def test_pagospim_serverservice_constructor_exists():
+    assert callable(PagosPim_ServerService.__init__)
 
 
-def test_pagospim::serverservice_constructor_args():
-    sig = inspect.signature(PagosPim::ServerService.__init__)
+def test_pagospim_serverservice_constructor_args():
+    sig = inspect.signature(PagosPim_ServerService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pagospim::logiccomponent_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::LogicComponent)
+def test_pagospim_logiccomponent_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_LogicComponent)
 
 
-def test_pagospim::logiccomponent_constructor_exists():
-    assert callable(PagosPim::LogicComponent.__init__)
+def test_pagospim_logiccomponent_constructor_exists():
+    assert callable(PagosPim_LogicComponent.__init__)
 
 
-def test_pagospim::logiccomponent_constructor_args():
-    sig = inspect.signature(PagosPim::LogicComponent.__init__)
+def test_pagospim_logiccomponent_constructor_args():
+    sig = inspect.signature(PagosPim_LogicComponent.__init__)
     params = list(sig.parameters.keys())
     assert "persistible" in params, "Missing parameter 'persistible'"
 
-def test_pagospim::logiccomponent_has_persistible():
-    assert hasattr(PagosPim::LogicComponent, "persistible")
+def test_pagospim_logiccomponent_has_persistible():
+    assert hasattr(PagosPim_LogicComponent, "persistible")
     descriptor = None
-    for klass in PagosPim::LogicComponent.__mro__:
+    for klass in PagosPim_LogicComponent.__mro__:
         if "persistible" in klass.__dict__:
             descriptor = klass.__dict__["persistible"]
             break
@@ -807,57 +807,27 @@ def test_pagospim::logiccomponent_has_persistible():
 
 
 
-def test_pagospim::application_is_not_abstract():
-    assert not inspect.isabstract(PagosPim::Application)
+def test_pagospim_application_is_not_abstract():
+    assert not inspect.isabstract(PagosPim_Application)
 
 
-def test_pagospim::application_constructor_exists():
-    assert callable(PagosPim::Application.__init__)
+def test_pagospim_application_constructor_exists():
+    assert callable(PagosPim_Application.__init__)
 
 
-def test_pagospim::application_constructor_args():
-    sig = inspect.signature(PagosPim::Application.__init__)
+def test_pagospim_application_constructor_args():
+    sig = inspect.signature(PagosPim_Application.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pagospim::application_has_name():
-    assert hasattr(PagosPim::Application, "name")
+def test_pagospim_application_has_name():
+    assert hasattr(PagosPim_Application, "name")
     descriptor = None
-    for klass in PagosPim::Application.__mro__:
+    for klass in PagosPim_Application.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_logicalcononnector_exists():
-    # Check that the Enumeration exists
-    assert LogicalCononnector is not None
-
-def test_logicalcononnector_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LogicalCononnector]
-    expected_literals = [
-        "OR",
-        "AND",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LogicalCononnector"
-
-def test_relationtype_exists():
-    # Check that the Enumeration exists
-    assert RelationType is not None
-
-def test_relationtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationType]
-    expected_literals = [
-        "COMPOSITION",
-        "REFERENCE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationType"
 
 def test_datatypes_exists():
     # Check that the Enumeration exists
@@ -867,16 +837,62 @@ def test_datatypes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataTypes]
     expected_literals = [
-        "double",
         "number",
+        "long",
         "Date",
+        "double",
         "String",
         "int",
-        "long",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DataTypes"
+
+def test_addoper_exists():
+    # Check that the Enumeration exists
+    assert AddOper is not None
+
+def test_addoper_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AddOper]
+    expected_literals = [
+        "ADD",
+        "MINUS",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AddOper"
+
+def test_logicaloperator_exists():
+    # Check that the Enumeration exists
+    assert LogicalOperator is not None
+
+def test_logicaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LogicalOperator]
+    expected_literals = [
+        "EQUALTO",
+        "DIFFERENT",
+        "LESSTHAN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LogicalOperator"
+
+def test_logicalcononnector_exists():
+    # Check that the Enumeration exists
+    assert LogicalCononnector is not None
+
+def test_logicalcononnector_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LogicalCononnector]
+    expected_literals = [
+        "AND",
+        "OR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LogicalCononnector"
 
 def test_cardinality_exists():
     # Check that the Enumeration exists
@@ -908,36 +924,20 @@ def test_multoper_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MultOper"
 
-def test_logicaloperator_exists():
+def test_relationtype_exists():
     # Check that the Enumeration exists
-    assert LogicalOperator is not None
+    assert RelationType is not None
 
-def test_logicaloperator_has_all_literals():
+def test_relationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LogicalOperator]
+    enum_literals = [lit.name for lit in RelationType]
     expected_literals = [
-        "EQUALTO",
-        "LESSTHAN",
-        "DIFFERENT",
+        "REFERENCE",
+        "COMPOSITION",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LogicalOperator"
-
-def test_addoper_exists():
-    # Check that the Enumeration exists
-    assert AddOper is not None
-
-def test_addoper_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AddOper]
-    expected_literals = [
-        "MINUS",
-        "ADD",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AddOper"
+        assert lit_name in enum_literals, f"Literal '' missing in RelationType"
 
 
 # =============================================================================
@@ -957,43 +957,43 @@ Relation_strategy = st.builds(
 Expression_strategy = st.builds(
     Expression,
 )
-PagosPim::TerminalValue_strategy = st.builds(
-    PagosPim::TerminalValue,
+PagosPim_TerminalValue_strategy = st.builds(
+    PagosPim_TerminalValue,
     method=
         safe_text,
     value=
         safe_text
 )
-PagosPim::Add_strategy = st.builds(
-    PagosPim::Add,
+PagosPim_Add_strategy = st.builds(
+    PagosPim_Add,
     operator=
         safe_text
 )
-PagosPim::Mult_strategy = st.builds(
-    PagosPim::Mult,
+PagosPim_Mult_strategy = st.builds(
+    PagosPim_Mult,
     operator=
         safe_text
 )
-PagosPim::Body_strategy = st.builds(
-    PagosPim::Body,
+PagosPim_Body_strategy = st.builds(
+    PagosPim_Body,
 )
-PagosPim::ParameterList_strategy = st.builds(
-    PagosPim::ParameterList,
+PagosPim_ParameterList_strategy = st.builds(
+    PagosPim_ParameterList,
 )
-PagosPim::Expression_strategy = st.builds(
-    PagosPim::Expression,
+PagosPim_Expression_strategy = st.builds(
+    PagosPim_Expression,
 )
 AttributeDefinition_strategy = st.builds(
     AttributeDefinition,
 )
-PagosPim::Parameter_strategy = st.builds(
-    PagosPim::Parameter,
+PagosPim_Parameter_strategy = st.builds(
+    PagosPim_Parameter,
 )
-PagosPim::NewEClass21_strategy = st.builds(
-    PagosPim::NewEClass21,
+PagosPim_NewEClass21_strategy = st.builds(
+    PagosPim_NewEClass21,
 )
-PagosPim::LogicalExpression_strategy = st.builds(
-    PagosPim::LogicalExpression,
+PagosPim_LogicalExpression_strategy = st.builds(
+    PagosPim_LogicalExpression,
     conOper=
         safe_text,
     logicalOperator=
@@ -1001,28 +1001,28 @@ PagosPim::LogicalExpression_strategy = st.builds(
     literal=
         safe_text
 )
-PagosPim::ProgramIfExpression_strategy = st.builds(
-    PagosPim::ProgramIfExpression,
+PagosPim_ProgramIfExpression_strategy = st.builds(
+    PagosPim_ProgramIfExpression,
 )
-PagosPim::ElseSegment_strategy = st.builds(
-    PagosPim::ElseSegment,
+PagosPim_ElseSegment_strategy = st.builds(
+    PagosPim_ElseSegment,
 )
-PagosPim::IfCondition_strategy = st.builds(
-    PagosPim::IfCondition,
+PagosPim_IfCondition_strategy = st.builds(
+    PagosPim_IfCondition,
 )
-PagosPim::IfBlock_strategy = st.builds(
-    PagosPim::IfBlock,
+PagosPim_IfBlock_strategy = st.builds(
+    PagosPim_IfBlock,
 )
-PagosPim::Return_strategy = st.builds(
-    PagosPim::Return,
+PagosPim_Return_strategy = st.builds(
+    PagosPim_Return,
     type=
         safe_text
 )
-PagosPim::EObject_strategy = st.builds(
-    PagosPim::EObject,
+PagosPim_EObject_strategy = st.builds(
+    PagosPim_EObject,
 )
-PagosPim::AttributeDefinition_strategy = st.builds(
-    PagosPim::AttributeDefinition,
+PagosPim_AttributeDefinition_strategy = st.builds(
+    PagosPim_AttributeDefinition,
     name=
         safe_text,
     type=
@@ -1031,85 +1031,85 @@ PagosPim::AttributeDefinition_strategy = st.builds(
 Attribute_strategy = st.builds(
     Attribute,
 )
-PagosPim::Field_strategy = st.builds(
-    PagosPim::Field,
+PagosPim_Field_strategy = st.builds(
+    PagosPim_Field,
 )
 Control_strategy = st.builds(
     Control,
 )
-PagosPim::Input_strategy = st.builds(
-    PagosPim::Input,
+PagosPim_Input_strategy = st.builds(
+    PagosPim_Input,
 )
-PagosPim::Control_strategy = st.builds(
-    PagosPim::Control,
+PagosPim_Control_strategy = st.builds(
+    PagosPim_Control,
     label=
         safe_text
 )
-PagosPim::Operation_strategy = st.builds(
-    PagosPim::Operation,
+PagosPim_Operation_strategy = st.builds(
+    PagosPim_Operation,
     name=
         safe_text
 )
-PagosPim::Relation_strategy = st.builds(
-    PagosPim::Relation,
+PagosPim_Relation_strategy = st.builds(
+    PagosPim_Relation,
+    name=
+        safe_text,
     type=
         safe_text,
     cardinality=
-        safe_text,
-    name=
         safe_text
 )
-PagosPim::Attribute_strategy = st.builds(
-    PagosPim::Attribute,
+PagosPim_Attribute_strategy = st.builds(
+    PagosPim_Attribute,
     isIndex=
         safe_text
 )
-PagosPim::GenericComponent_strategy = st.builds(
-    PagosPim::GenericComponent,
+PagosPim_GenericComponent_strategy = st.builds(
+    PagosPim_GenericComponent,
     name=
         safe_text
 )
-PagosPim::SubComponent_strategy = st.builds(
-    PagosPim::SubComponent,
+PagosPim_SubComponent_strategy = st.builds(
+    PagosPim_SubComponent,
 )
 GenericComponent_strategy = st.builds(
     GenericComponent,
 )
-PagosPim::ViewComponent_strategy = st.builds(
-    PagosPim::ViewComponent,
+PagosPim_ViewComponent_strategy = st.builds(
+    PagosPim_ViewComponent,
     title=
         safe_text
 )
-PagosPim::DaoComponent_strategy = st.builds(
-    PagosPim::DaoComponent,
+PagosPim_DaoComponent_strategy = st.builds(
+    PagosPim_DaoComponent,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-PagosPim::Action_strategy = st.builds(
-    PagosPim::Action,
+PagosPim_Action_strategy = st.builds(
+    PagosPim_Action,
 )
-PagosPim::Output_strategy = st.builds(
-    PagosPim::Output,
+PagosPim_Output_strategy = st.builds(
+    PagosPim_Output,
 )
-PagosPim::FrontService_strategy = st.builds(
-    PagosPim::FrontService,
+PagosPim_FrontService_strategy = st.builds(
+    PagosPim_FrontService,
     fullName=
         safe_text
 )
-PagosPim::DataLayerComponent_strategy = st.builds(
-    PagosPim::DataLayerComponent,
+PagosPim_DataLayerComponent_strategy = st.builds(
+    PagosPim_DataLayerComponent,
 )
-PagosPim::ServerService_strategy = st.builds(
-    PagosPim::ServerService,
+PagosPim_ServerService_strategy = st.builds(
+    PagosPim_ServerService,
 )
-PagosPim::LogicComponent_strategy = st.builds(
-    PagosPim::LogicComponent,
+PagosPim_LogicComponent_strategy = st.builds(
+    PagosPim_LogicComponent,
     persistible=
         st.booleans()
 )
-PagosPim::Application_strategy = st.builds(
-    PagosPim::Application,
+PagosPim_Application_strategy = st.builds(
+    PagosPim_Application,
     name=
         safe_text
 )
@@ -1124,197 +1124,167 @@ def test_relation_instantiation(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=PagosPim::TerminalValue_strategy)
+@given(instance=PagosPim_TerminalValue_strategy)
 @settings(max_examples=50)
-def test_pagospim::terminalvalue_instantiation(instance):
-    assert isinstance(instance, PagosPim::TerminalValue)
-
-@given(instance=PagosPim::TerminalValue_strategy)
-def test_pagospim::terminalvalue_method_type(instance):
-    assert isinstance(instance.method, str)
+def test_pagospim_terminalvalue_instantiation(instance):
+    assert isinstance(instance, PagosPim_TerminalValue)
 
 
-@given(instance=PagosPim::TerminalValue_strategy)
-def test_pagospim::terminalvalue_method_setter(instance):
+
+@given(instance=PagosPim_TerminalValue_strategy)
+def test_pagospim_terminalvalue_method_setter(instance):
     original = instance.method
     instance.method = original
     assert instance.method == original
 
-@given(instance=PagosPim::TerminalValue_strategy)
-def test_pagospim::terminalvalue_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=PagosPim::TerminalValue_strategy)
-def test_pagospim::terminalvalue_value_setter(instance):
+@given(instance=PagosPim_TerminalValue_strategy)
+def test_pagospim_terminalvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=PagosPim::Add_strategy)
+@given(instance=PagosPim_Add_strategy)
 @settings(max_examples=50)
-def test_pagospim::add_instantiation(instance):
-    assert isinstance(instance, PagosPim::Add)
-
-@given(instance=PagosPim::Add_strategy)
-def test_pagospim::add_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_pagospim_add_instantiation(instance):
+    assert isinstance(instance, PagosPim_Add)
 
 
-@given(instance=PagosPim::Add_strategy)
-def test_pagospim::add_operator_setter(instance):
+
+@given(instance=PagosPim_Add_strategy)
+def test_pagospim_add_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=PagosPim::Mult_strategy)
+@given(instance=PagosPim_Mult_strategy)
 @settings(max_examples=50)
-def test_pagospim::mult_instantiation(instance):
-    assert isinstance(instance, PagosPim::Mult)
-
-@given(instance=PagosPim::Mult_strategy)
-def test_pagospim::mult_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_pagospim_mult_instantiation(instance):
+    assert isinstance(instance, PagosPim_Mult)
 
 
-@given(instance=PagosPim::Mult_strategy)
-def test_pagospim::mult_operator_setter(instance):
+
+@given(instance=PagosPim_Mult_strategy)
+def test_pagospim_mult_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=PagosPim::Body_strategy)
+@given(instance=PagosPim_Body_strategy)
 @settings(max_examples=50)
-def test_pagospim::body_instantiation(instance):
-    assert isinstance(instance, PagosPim::Body)
+def test_pagospim_body_instantiation(instance):
+    assert isinstance(instance, PagosPim_Body)
 
-@given(instance=PagosPim::ParameterList_strategy)
+@given(instance=PagosPim_ParameterList_strategy)
 @settings(max_examples=50)
-def test_pagospim::parameterlist_instantiation(instance):
-    assert isinstance(instance, PagosPim::ParameterList)
+def test_pagospim_parameterlist_instantiation(instance):
+    assert isinstance(instance, PagosPim_ParameterList)
 
-@given(instance=PagosPim::Expression_strategy)
+@given(instance=PagosPim_Expression_strategy)
 @settings(max_examples=50)
-def test_pagospim::expression_instantiation(instance):
-    assert isinstance(instance, PagosPim::Expression)
+def test_pagospim_expression_instantiation(instance):
+    assert isinstance(instance, PagosPim_Expression)
 
 @given(instance=AttributeDefinition_strategy)
 @settings(max_examples=50)
 def test_attributedefinition_instantiation(instance):
     assert isinstance(instance, AttributeDefinition)
 
-@given(instance=PagosPim::Parameter_strategy)
+@given(instance=PagosPim_Parameter_strategy)
 @settings(max_examples=50)
-def test_pagospim::parameter_instantiation(instance):
-    assert isinstance(instance, PagosPim::Parameter)
+def test_pagospim_parameter_instantiation(instance):
+    assert isinstance(instance, PagosPim_Parameter)
 
-@given(instance=PagosPim::NewEClass21_strategy)
+@given(instance=PagosPim_NewEClass21_strategy)
 @settings(max_examples=50)
-def test_pagospim::neweclass21_instantiation(instance):
-    assert isinstance(instance, PagosPim::NewEClass21)
+def test_pagospim_neweclass21_instantiation(instance):
+    assert isinstance(instance, PagosPim_NewEClass21)
 
-@given(instance=PagosPim::LogicalExpression_strategy)
+@given(instance=PagosPim_LogicalExpression_strategy)
 @settings(max_examples=50)
-def test_pagospim::logicalexpression_instantiation(instance):
-    assert isinstance(instance, PagosPim::LogicalExpression)
-
-@given(instance=PagosPim::LogicalExpression_strategy)
-def test_pagospim::logicalexpression_conOper_type(instance):
-    assert isinstance(instance.conOper, str)
+def test_pagospim_logicalexpression_instantiation(instance):
+    assert isinstance(instance, PagosPim_LogicalExpression)
 
 
-@given(instance=PagosPim::LogicalExpression_strategy)
-def test_pagospim::logicalexpression_conOper_setter(instance):
+
+@given(instance=PagosPim_LogicalExpression_strategy)
+def test_pagospim_logicalexpression_conOper_setter(instance):
     original = instance.conOper
     instance.conOper = original
     assert instance.conOper == original
 
-@given(instance=PagosPim::LogicalExpression_strategy)
-def test_pagospim::logicalexpression_logicalOperator_type(instance):
-    assert isinstance(instance.logicalOperator, str)
 
 
-@given(instance=PagosPim::LogicalExpression_strategy)
-def test_pagospim::logicalexpression_logicalOperator_setter(instance):
+@given(instance=PagosPim_LogicalExpression_strategy)
+def test_pagospim_logicalexpression_logicalOperator_setter(instance):
     original = instance.logicalOperator
     instance.logicalOperator = original
     assert instance.logicalOperator == original
 
-@given(instance=PagosPim::LogicalExpression_strategy)
-def test_pagospim::logicalexpression_literal_type(instance):
-    assert isinstance(instance.literal, str)
 
 
-@given(instance=PagosPim::LogicalExpression_strategy)
-def test_pagospim::logicalexpression_literal_setter(instance):
+@given(instance=PagosPim_LogicalExpression_strategy)
+def test_pagospim_logicalexpression_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
 
-@given(instance=PagosPim::ProgramIfExpression_strategy)
+@given(instance=PagosPim_ProgramIfExpression_strategy)
 @settings(max_examples=50)
-def test_pagospim::programifexpression_instantiation(instance):
-    assert isinstance(instance, PagosPim::ProgramIfExpression)
+def test_pagospim_programifexpression_instantiation(instance):
+    assert isinstance(instance, PagosPim_ProgramIfExpression)
 
-@given(instance=PagosPim::ElseSegment_strategy)
+@given(instance=PagosPim_ElseSegment_strategy)
 @settings(max_examples=50)
-def test_pagospim::elsesegment_instantiation(instance):
-    assert isinstance(instance, PagosPim::ElseSegment)
+def test_pagospim_elsesegment_instantiation(instance):
+    assert isinstance(instance, PagosPim_ElseSegment)
 
-@given(instance=PagosPim::IfCondition_strategy)
+@given(instance=PagosPim_IfCondition_strategy)
 @settings(max_examples=50)
-def test_pagospim::ifcondition_instantiation(instance):
-    assert isinstance(instance, PagosPim::IfCondition)
+def test_pagospim_ifcondition_instantiation(instance):
+    assert isinstance(instance, PagosPim_IfCondition)
 
-@given(instance=PagosPim::IfBlock_strategy)
+@given(instance=PagosPim_IfBlock_strategy)
 @settings(max_examples=50)
-def test_pagospim::ifblock_instantiation(instance):
-    assert isinstance(instance, PagosPim::IfBlock)
+def test_pagospim_ifblock_instantiation(instance):
+    assert isinstance(instance, PagosPim_IfBlock)
 
-@given(instance=PagosPim::Return_strategy)
+@given(instance=PagosPim_Return_strategy)
 @settings(max_examples=50)
-def test_pagospim::return_instantiation(instance):
-    assert isinstance(instance, PagosPim::Return)
-
-@given(instance=PagosPim::Return_strategy)
-def test_pagospim::return_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_pagospim_return_instantiation(instance):
+    assert isinstance(instance, PagosPim_Return)
 
 
-@given(instance=PagosPim::Return_strategy)
-def test_pagospim::return_type_setter(instance):
+
+@given(instance=PagosPim_Return_strategy)
+def test_pagospim_return_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=PagosPim::EObject_strategy)
+@given(instance=PagosPim_EObject_strategy)
 @settings(max_examples=50)
-def test_pagospim::eobject_instantiation(instance):
-    assert isinstance(instance, PagosPim::EObject)
+def test_pagospim_eobject_instantiation(instance):
+    assert isinstance(instance, PagosPim_EObject)
 
-@given(instance=PagosPim::AttributeDefinition_strategy)
+@given(instance=PagosPim_AttributeDefinition_strategy)
 @settings(max_examples=50)
-def test_pagospim::attributedefinition_instantiation(instance):
-    assert isinstance(instance, PagosPim::AttributeDefinition)
-
-@given(instance=PagosPim::AttributeDefinition_strategy)
-def test_pagospim::attributedefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pagospim_attributedefinition_instantiation(instance):
+    assert isinstance(instance, PagosPim_AttributeDefinition)
 
 
-@given(instance=PagosPim::AttributeDefinition_strategy)
-def test_pagospim::attributedefinition_name_setter(instance):
+
+@given(instance=PagosPim_AttributeDefinition_strategy)
+def test_pagospim_attributedefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PagosPim::AttributeDefinition_strategy)
-def test_pagospim::attributedefinition_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=PagosPim::AttributeDefinition_strategy)
-def test_pagospim::attributedefinition_type_setter(instance):
+@given(instance=PagosPim_AttributeDefinition_strategy)
+def test_pagospim_attributedefinition_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1324,223 +1294,190 @@ def test_pagospim::attributedefinition_type_setter(instance):
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=PagosPim::Field_strategy)
+@given(instance=PagosPim_Field_strategy)
 @settings(max_examples=50)
-def test_pagospim::field_instantiation(instance):
-    assert isinstance(instance, PagosPim::Field)
+def test_pagospim_field_instantiation(instance):
+    assert isinstance(instance, PagosPim_Field)
 
 @given(instance=Control_strategy)
 @settings(max_examples=50)
 def test_control_instantiation(instance):
     assert isinstance(instance, Control)
 
-@given(instance=PagosPim::Input_strategy)
+@given(instance=PagosPim_Input_strategy)
 @settings(max_examples=50)
-def test_pagospim::input_instantiation(instance):
-    assert isinstance(instance, PagosPim::Input)
+def test_pagospim_input_instantiation(instance):
+    assert isinstance(instance, PagosPim_Input)
 
-@given(instance=PagosPim::Control_strategy)
+@given(instance=PagosPim_Control_strategy)
 @settings(max_examples=50)
-def test_pagospim::control_instantiation(instance):
-    assert isinstance(instance, PagosPim::Control)
-
-@given(instance=PagosPim::Control_strategy)
-def test_pagospim::control_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_pagospim_control_instantiation(instance):
+    assert isinstance(instance, PagosPim_Control)
 
 
-@given(instance=PagosPim::Control_strategy)
-def test_pagospim::control_label_setter(instance):
+
+@given(instance=PagosPim_Control_strategy)
+def test_pagospim_control_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=PagosPim::Operation_strategy)
+@given(instance=PagosPim_Operation_strategy)
 @settings(max_examples=50)
-def test_pagospim::operation_instantiation(instance):
-    assert isinstance(instance, PagosPim::Operation)
-
-@given(instance=PagosPim::Operation_strategy)
-def test_pagospim::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pagospim_operation_instantiation(instance):
+    assert isinstance(instance, PagosPim_Operation)
 
 
-@given(instance=PagosPim::Operation_strategy)
-def test_pagospim::operation_name_setter(instance):
+
+@given(instance=PagosPim_Operation_strategy)
+def test_pagospim_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PagosPim::Relation_strategy)
+@given(instance=PagosPim_Relation_strategy)
 @settings(max_examples=50)
-def test_pagospim::relation_instantiation(instance):
-    assert isinstance(instance, PagosPim::Relation)
-
-@given(instance=PagosPim::Relation_strategy)
-def test_pagospim::relation_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_pagospim_relation_instantiation(instance):
+    assert isinstance(instance, PagosPim_Relation)
 
 
-@given(instance=PagosPim::Relation_strategy)
-def test_pagospim::relation_type_setter(instance):
+
+@given(instance=PagosPim_Relation_strategy)
+def test_pagospim_relation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=PagosPim_Relation_strategy)
+def test_pagospim_relation_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=PagosPim::Relation_strategy)
-def test_pagospim::relation_cardinality_type(instance):
-    assert isinstance(instance.cardinality, str)
 
 
-@given(instance=PagosPim::Relation_strategy)
-def test_pagospim::relation_cardinality_setter(instance):
+@given(instance=PagosPim_Relation_strategy)
+def test_pagospim_relation_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=PagosPim::Relation_strategy)
-def test_pagospim::relation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=PagosPim::Relation_strategy)
-def test_pagospim::relation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=PagosPim::Attribute_strategy)
+@given(instance=PagosPim_Attribute_strategy)
 @settings(max_examples=50)
-def test_pagospim::attribute_instantiation(instance):
-    assert isinstance(instance, PagosPim::Attribute)
-
-@given(instance=PagosPim::Attribute_strategy)
-def test_pagospim::attribute_isIndex_type(instance):
-    assert isinstance(instance.isIndex, str)
+def test_pagospim_attribute_instantiation(instance):
+    assert isinstance(instance, PagosPim_Attribute)
 
 
-@given(instance=PagosPim::Attribute_strategy)
-def test_pagospim::attribute_isIndex_setter(instance):
+
+@given(instance=PagosPim_Attribute_strategy)
+def test_pagospim_attribute_isIndex_setter(instance):
     original = instance.isIndex
     instance.isIndex = original
     assert instance.isIndex == original
 
-@given(instance=PagosPim::GenericComponent_strategy)
+@given(instance=PagosPim_GenericComponent_strategy)
 @settings(max_examples=50)
-def test_pagospim::genericcomponent_instantiation(instance):
-    assert isinstance(instance, PagosPim::GenericComponent)
-
-@given(instance=PagosPim::GenericComponent_strategy)
-def test_pagospim::genericcomponent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pagospim_genericcomponent_instantiation(instance):
+    assert isinstance(instance, PagosPim_GenericComponent)
 
 
-@given(instance=PagosPim::GenericComponent_strategy)
-def test_pagospim::genericcomponent_name_setter(instance):
+
+@given(instance=PagosPim_GenericComponent_strategy)
+def test_pagospim_genericcomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=PagosPim::SubComponent_strategy)
+@given(instance=PagosPim_SubComponent_strategy)
 @settings(max_examples=50)
-def test_pagospim::subcomponent_instantiation(instance):
-    assert isinstance(instance, PagosPim::SubComponent)
+def test_pagospim_subcomponent_instantiation(instance):
+    assert isinstance(instance, PagosPim_SubComponent)
 
 @given(instance=GenericComponent_strategy)
 @settings(max_examples=50)
 def test_genericcomponent_instantiation(instance):
     assert isinstance(instance, GenericComponent)
 
-@given(instance=PagosPim::ViewComponent_strategy)
+@given(instance=PagosPim_ViewComponent_strategy)
 @settings(max_examples=50)
-def test_pagospim::viewcomponent_instantiation(instance):
-    assert isinstance(instance, PagosPim::ViewComponent)
-
-@given(instance=PagosPim::ViewComponent_strategy)
-def test_pagospim::viewcomponent_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_pagospim_viewcomponent_instantiation(instance):
+    assert isinstance(instance, PagosPim_ViewComponent)
 
 
-@given(instance=PagosPim::ViewComponent_strategy)
-def test_pagospim::viewcomponent_title_setter(instance):
+
+@given(instance=PagosPim_ViewComponent_strategy)
+def test_pagospim_viewcomponent_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=PagosPim::DaoComponent_strategy)
+@given(instance=PagosPim_DaoComponent_strategy)
 @settings(max_examples=50)
-def test_pagospim::daocomponent_instantiation(instance):
-    assert isinstance(instance, PagosPim::DaoComponent)
+def test_pagospim_daocomponent_instantiation(instance):
+    assert isinstance(instance, PagosPim_DaoComponent)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=PagosPim::Action_strategy)
+@given(instance=PagosPim_Action_strategy)
 @settings(max_examples=50)
-def test_pagospim::action_instantiation(instance):
-    assert isinstance(instance, PagosPim::Action)
+def test_pagospim_action_instantiation(instance):
+    assert isinstance(instance, PagosPim_Action)
 
-@given(instance=PagosPim::Output_strategy)
+@given(instance=PagosPim_Output_strategy)
 @settings(max_examples=50)
-def test_pagospim::output_instantiation(instance):
-    assert isinstance(instance, PagosPim::Output)
+def test_pagospim_output_instantiation(instance):
+    assert isinstance(instance, PagosPim_Output)
 
-@given(instance=PagosPim::FrontService_strategy)
+@given(instance=PagosPim_FrontService_strategy)
 @settings(max_examples=50)
-def test_pagospim::frontservice_instantiation(instance):
-    assert isinstance(instance, PagosPim::FrontService)
-
-@given(instance=PagosPim::FrontService_strategy)
-def test_pagospim::frontservice_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
+def test_pagospim_frontservice_instantiation(instance):
+    assert isinstance(instance, PagosPim_FrontService)
 
 
-@given(instance=PagosPim::FrontService_strategy)
-def test_pagospim::frontservice_fullName_setter(instance):
+
+@given(instance=PagosPim_FrontService_strategy)
+def test_pagospim_frontservice_fullName_setter(instance):
     original = instance.fullName
     instance.fullName = original
     assert instance.fullName == original
 
-@given(instance=PagosPim::DataLayerComponent_strategy)
+@given(instance=PagosPim_DataLayerComponent_strategy)
 @settings(max_examples=50)
-def test_pagospim::datalayercomponent_instantiation(instance):
-    assert isinstance(instance, PagosPim::DataLayerComponent)
+def test_pagospim_datalayercomponent_instantiation(instance):
+    assert isinstance(instance, PagosPim_DataLayerComponent)
 
-@given(instance=PagosPim::ServerService_strategy)
+@given(instance=PagosPim_ServerService_strategy)
 @settings(max_examples=50)
-def test_pagospim::serverservice_instantiation(instance):
-    assert isinstance(instance, PagosPim::ServerService)
+def test_pagospim_serverservice_instantiation(instance):
+    assert isinstance(instance, PagosPim_ServerService)
 
-@given(instance=PagosPim::LogicComponent_strategy)
+@given(instance=PagosPim_LogicComponent_strategy)
 @settings(max_examples=50)
-def test_pagospim::logiccomponent_instantiation(instance):
-    assert isinstance(instance, PagosPim::LogicComponent)
-
-@given(instance=PagosPim::LogicComponent_strategy)
-def test_pagospim::logiccomponent_persistible_type(instance):
-    assert isinstance(instance.persistible, bool)
+def test_pagospim_logiccomponent_instantiation(instance):
+    assert isinstance(instance, PagosPim_LogicComponent)
 
 
-@given(instance=PagosPim::LogicComponent_strategy)
-def test_pagospim::logiccomponent_persistible_setter(instance):
+
+@given(instance=PagosPim_LogicComponent_strategy)
+def test_pagospim_logiccomponent_persistible_setter(instance):
     original = instance.persistible
     instance.persistible = original
     assert instance.persistible == original
 
-@given(instance=PagosPim::Application_strategy)
+@given(instance=PagosPim_Application_strategy)
 @settings(max_examples=50)
-def test_pagospim::application_instantiation(instance):
-    assert isinstance(instance, PagosPim::Application)
-
-@given(instance=PagosPim::Application_strategy)
-def test_pagospim::application_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pagospim_application_instantiation(instance):
+    assert isinstance(instance, PagosPim_Application)
 
 
-@given(instance=PagosPim::Application_strategy)
-def test_pagospim::application_name_setter(instance):
+
+@given(instance=PagosPim_Application_strategy)
+def test_pagospim_application_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

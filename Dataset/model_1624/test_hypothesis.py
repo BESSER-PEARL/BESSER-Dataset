@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petrinetv1::Net,
-    petrinetv1::Transition,
-    petrinetv1::Place,
+from python_code import (
+    petrinetv1_Net,
+    petrinetv1_Transition,
+    petrinetv1_Place,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_petrinetv1::net_is_not_abstract():
-    assert not inspect.isabstract(petrinetv1::Net)
+def test_petrinetv1_net_is_not_abstract():
+    assert not inspect.isabstract(petrinetv1_Net)
 
 
-def test_petrinetv1::net_constructor_exists():
-    assert callable(petrinetv1::Net.__init__)
+def test_petrinetv1_net_constructor_exists():
+    assert callable(petrinetv1_Net.__init__)
 
 
-def test_petrinetv1::net_constructor_args():
-    sig = inspect.signature(petrinetv1::Net.__init__)
+def test_petrinetv1_net_constructor_args():
+    sig = inspect.signature(petrinetv1_Net.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv1::transition_is_not_abstract():
-    assert not inspect.isabstract(petrinetv1::Transition)
+def test_petrinetv1_transition_is_not_abstract():
+    assert not inspect.isabstract(petrinetv1_Transition)
 
 
-def test_petrinetv1::transition_constructor_exists():
-    assert callable(petrinetv1::Transition.__init__)
+def test_petrinetv1_transition_constructor_exists():
+    assert callable(petrinetv1_Transition.__init__)
 
 
-def test_petrinetv1::transition_constructor_args():
-    sig = inspect.signature(petrinetv1::Transition.__init__)
+def test_petrinetv1_transition_constructor_args():
+    sig = inspect.signature(petrinetv1_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinetv1::transition_has_name():
-    assert hasattr(petrinetv1::Transition, "name")
+def test_petrinetv1_transition_has_name():
+    assert hasattr(petrinetv1_Transition, "name")
     descriptor = None
-    for klass in petrinetv1::Transition.__mro__:
+    for klass in petrinetv1_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -55,43 +55,43 @@ def test_petrinetv1::transition_has_name():
 
 
 
-def test_petrinetv1::place_is_not_abstract():
-    assert not inspect.isabstract(petrinetv1::Place)
+def test_petrinetv1_place_is_not_abstract():
+    assert not inspect.isabstract(petrinetv1_Place)
 
 
-def test_petrinetv1::place_constructor_exists():
-    assert callable(petrinetv1::Place.__init__)
+def test_petrinetv1_place_constructor_exists():
+    assert callable(petrinetv1_Place.__init__)
 
 
-def test_petrinetv1::place_constructor_args():
-    sig = inspect.signature(petrinetv1::Place.__init__)
+def test_petrinetv1_place_constructor_args():
+    sig = inspect.signature(petrinetv1_Place.__init__)
     params = list(sig.parameters.keys())
     assert "tokens" in params, "Missing parameter 'tokens'"
     assert "initialTokens" in params, "Missing parameter 'initialTokens'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinetv1::place_has_tokens():
-    assert hasattr(petrinetv1::Place, "tokens")
+def test_petrinetv1_place_has_tokens():
+    assert hasattr(petrinetv1_Place, "tokens")
     descriptor = None
-    for klass in petrinetv1::Place.__mro__:
+    for klass in petrinetv1_Place.__mro__:
         if "tokens" in klass.__dict__:
             descriptor = klass.__dict__["tokens"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinetv1::place_has_initialTokens():
-    assert hasattr(petrinetv1::Place, "initialTokens")
+def test_petrinetv1_place_has_initialTokens():
+    assert hasattr(petrinetv1_Place, "initialTokens")
     descriptor = None
-    for klass in petrinetv1::Place.__mro__:
+    for klass in petrinetv1_Place.__mro__:
         if "initialTokens" in klass.__dict__:
             descriptor = klass.__dict__["initialTokens"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinetv1::place_has_name():
-    assert hasattr(petrinetv1::Place, "name")
+def test_petrinetv1_place_has_name():
+    assert hasattr(petrinetv1_Place, "name")
     descriptor = None
-    for klass in petrinetv1::Place.__mro__:
+    for klass in petrinetv1_Place.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -109,16 +109,16 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petrinetv1::Net_strategy = st.builds(
-    petrinetv1::Net,
+petrinetv1_Net_strategy = st.builds(
+    petrinetv1_Net,
 )
-petrinetv1::Transition_strategy = st.builds(
-    petrinetv1::Transition,
+petrinetv1_Transition_strategy = st.builds(
+    petrinetv1_Transition,
     name=
         safe_text
 )
-petrinetv1::Place_strategy = st.builds(
-    petrinetv1::Place,
+petrinetv1_Place_strategy = st.builds(
+    petrinetv1_Place,
     tokens=
         st.integers(),
     initialTokens=
@@ -127,10 +127,10 @@ petrinetv1::Place_strategy = st.builds(
         safe_text
 )
 
-@given(instance=petrinetv1::Net_strategy)
+@given(instance=petrinetv1_Net_strategy)
 @settings(max_examples=50)
-def test_petrinetv1::net_instantiation(instance):
-    assert isinstance(instance, petrinetv1::Net)
+def test_petrinetv1_net_instantiation(instance):
+    assert isinstance(instance, petrinetv1_Net)
 
 import warnings
 import copy
@@ -138,9 +138,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinetv1::Net_strategy)
+@given(instance=petrinetv1_Net_strategy)
 @settings(max_examples=30)
-def test_petrinetv1::net_initialize_changes_state(instance):
+def test_petrinetv1_net_initialize_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -154,14 +154,14 @@ def test_petrinetv1::net_initialize_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initialize' in petrinetv1::Net is empty"
+        assert has_statements, f"Function 'initialize' in petrinetv1_Net is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initialize' in petrinetv1::Net did not change state; check implementation")
+            warnings.warn(f"Operation 'initialize' in petrinetv1_Net did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initialize' in petrinetv1::Net is not implemented or raised an error")
+        warnings.warn(f"Operation 'initialize' in petrinetv1_Net is not implemented or raised an error")
 
 import warnings
 import copy
@@ -169,9 +169,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinetv1::Net_strategy)
+@given(instance=petrinetv1_Net_strategy)
 @settings(max_examples=30)
-def test_petrinetv1::net_run_changes_state(instance):
+def test_petrinetv1_net_run_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -183,14 +183,14 @@ def test_petrinetv1::net_run_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'run' in petrinetv1::Net is empty"
+        assert has_statements, f"Function 'run' in petrinetv1_Net is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'run' in petrinetv1::Net did not change state; check implementation")
+            warnings.warn(f"Operation 'run' in petrinetv1_Net did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'run' in petrinetv1::Net is not implemented or raised an error")
+        warnings.warn(f"Operation 'run' in petrinetv1_Net is not implemented or raised an error")
 
 import warnings
 import copy
@@ -198,9 +198,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinetv1::Net_strategy)
+@given(instance=petrinetv1_Net_strategy)
 @settings(max_examples=30)
-def test_petrinetv1::net_markingtostring_changes_state(instance):
+def test_petrinetv1_net_markingtostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -212,27 +212,24 @@ def test_petrinetv1::net_markingtostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'markingToString' in petrinetv1::Net is empty"
+        assert has_statements, f"Function 'markingToString' in petrinetv1_Net is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'markingToString' in petrinetv1::Net did not change state; check implementation")
+            warnings.warn(f"Operation 'markingToString' in petrinetv1_Net did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'markingToString' in petrinetv1::Net is not implemented or raised an error")
+        warnings.warn(f"Operation 'markingToString' in petrinetv1_Net is not implemented or raised an error")
 
-@given(instance=petrinetv1::Transition_strategy)
+@given(instance=petrinetv1_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinetv1::transition_instantiation(instance):
-    assert isinstance(instance, petrinetv1::Transition)
-
-@given(instance=petrinetv1::Transition_strategy)
-def test_petrinetv1::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinetv1_transition_instantiation(instance):
+    assert isinstance(instance, petrinetv1_Transition)
 
 
-@given(instance=petrinetv1::Transition_strategy)
-def test_petrinetv1::transition_name_setter(instance):
+
+@given(instance=petrinetv1_Transition_strategy)
+def test_petrinetv1_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -243,38 +240,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=petrinetv1::Transition_strategy)
+@given(instance=petrinetv1_Transition_strategy)
 @settings(max_examples=30)
-def test_petrinetv1::transition_fire_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.fire()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.fire).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fire' in petrinetv1::Transition is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fire' in petrinetv1::Transition did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fire' in petrinetv1::Transition is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=petrinetv1::Transition_strategy)
-@settings(max_examples=30)
-def test_petrinetv1::transition_isenabled_changes_state(instance):
+def test_petrinetv1_transition_isenabled_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -286,49 +254,69 @@ def test_petrinetv1::transition_isenabled_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEnabled' in petrinetv1::Transition is empty"
+        assert has_statements, f"Function 'isEnabled' in petrinetv1_Transition is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEnabled' in petrinetv1::Transition did not change state; check implementation")
+            warnings.warn(f"Operation 'isEnabled' in petrinetv1_Transition did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEnabled' in petrinetv1::Transition is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEnabled' in petrinetv1_Transition is not implemented or raised an error")
 
-@given(instance=petrinetv1::Place_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=petrinetv1_Transition_strategy)
+@settings(max_examples=30)
+def test_petrinetv1_transition_fire_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.fire()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.fire).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'fire' in petrinetv1_Transition is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'fire' in petrinetv1_Transition did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'fire' in petrinetv1_Transition is not implemented or raised an error")
+
+@given(instance=petrinetv1_Place_strategy)
 @settings(max_examples=50)
-def test_petrinetv1::place_instantiation(instance):
-    assert isinstance(instance, petrinetv1::Place)
-
-@given(instance=petrinetv1::Place_strategy)
-def test_petrinetv1::place_tokens_type(instance):
-    assert isinstance(instance.tokens, int)
+def test_petrinetv1_place_instantiation(instance):
+    assert isinstance(instance, petrinetv1_Place)
 
 
-@given(instance=petrinetv1::Place_strategy)
-def test_petrinetv1::place_tokens_setter(instance):
+
+@given(instance=petrinetv1_Place_strategy)
+def test_petrinetv1_place_tokens_setter(instance):
     original = instance.tokens
     instance.tokens = original
     assert instance.tokens == original
 
-@given(instance=petrinetv1::Place_strategy)
-def test_petrinetv1::place_initialTokens_type(instance):
-    assert isinstance(instance.initialTokens, int)
 
 
-@given(instance=petrinetv1::Place_strategy)
-def test_petrinetv1::place_initialTokens_setter(instance):
+@given(instance=petrinetv1_Place_strategy)
+def test_petrinetv1_place_initialTokens_setter(instance):
     original = instance.initialTokens
     instance.initialTokens = original
     assert instance.initialTokens == original
 
-@given(instance=petrinetv1::Place_strategy)
-def test_petrinetv1::place_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=petrinetv1::Place_strategy)
-def test_petrinetv1::place_name_setter(instance):
+@given(instance=petrinetv1_Place_strategy)
+def test_petrinetv1_place_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

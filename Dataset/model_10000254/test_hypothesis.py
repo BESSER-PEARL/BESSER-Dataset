@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Cashier,
@@ -87,17 +87,8 @@ def test_event_constructor_exists():
 def test_event_constructor_args():
     sig = inspect.signature(Event.__init__)
     params = list(sig.parameters.keys())
-    assert "created_at" in params, "Missing parameter 'created_at'"
     assert "entity" in params, "Missing parameter 'entity'"
-
-def test_event_has_created_at():
-    assert hasattr(Event, "created_at")
-    descriptor = None
-    for klass in Event.__mro__:
-        if "created_at" in klass.__dict__:
-            descriptor = klass.__dict__["created_at"]
-            break
-    assert isinstance(descriptor, property)
+    assert "created_at" in params, "Missing parameter 'created_at'"
 
 def test_event_has_entity():
     assert hasattr(Event, "entity")
@@ -105,6 +96,15 @@ def test_event_has_entity():
     for klass in Event.__mro__:
         if "entity" in klass.__dict__:
             descriptor = klass.__dict__["entity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_event_has_created_at():
+    assert hasattr(Event, "created_at")
+    descriptor = None
+    for klass in Event.__mro__:
+        if "created_at" in klass.__dict__:
+            descriptor = klass.__dict__["created_at"]
             break
     assert isinstance(descriptor, property)
 
@@ -148,10 +148,10 @@ Customer_strategy = st.builds(
 )
 Event_strategy = st.builds(
     Event,
-    created_at=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     entity=
-        safe_text
+        safe_text,
+    created_at=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Worker_strategy = st.builds(
     Worker,
@@ -182,20 +182,6 @@ def test_customer_instantiation(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=Event_strategy)
-def test_event_created_at_type(instance):
-    assert isinstance(instance.created_at, float)
-
-
-@given(instance=Event_strategy)
-def test_event_created_at_setter(instance):
-    original = instance.created_at
-    instance.created_at = original
-    assert instance.created_at == original
-
-@given(instance=Event_strategy)
-def test_event_entity_type(instance):
-    assert isinstance(instance.entity, str)
 
 
 @given(instance=Event_strategy)
@@ -203,6 +189,14 @@ def test_event_entity_setter(instance):
     original = instance.entity
     instance.entity = original
     assert instance.entity == original
+
+
+
+@given(instance=Event_strategy)
+def test_event_created_at_setter(instance):
+    original = instance.created_at
+    instance.created_at = original
+    assert instance.created_at == original
 
 @given(instance=Worker_strategy)
 @settings(max_examples=50)

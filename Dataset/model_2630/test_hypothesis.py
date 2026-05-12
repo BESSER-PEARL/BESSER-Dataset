@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    nodesAndEdges::ShapedNode::toString,
-    nodesAndEdges::Edge::toString,
-    nodesAndEdges::Edge,
-    nodesAndEdges::ColoredNode::toString,
-    nodesAndEdges::Node::toString,
-    nodesAndEdges::Node,
+from python_code import (
+    nodesAndEdges_ShapedNode_toString,
+    nodesAndEdges_Edge_toString,
+    nodesAndEdges_Edge,
+    nodesAndEdges_ColoredNode_toString,
+    nodesAndEdges_Node_toString,
+    nodesAndEdges_Node,
     Node,
-    nodesAndEdges::ShapedNode,
-    nodesAndEdges::ColoredNode,
+    nodesAndEdges_ShapedNode,
+    nodesAndEdges_ColoredNode,
     Color,
-    EdgeViewType,
     Shape,
+    EdgeViewType,
 )
 
 # =============================================================================
@@ -26,113 +26,113 @@ from classes import (
 
 
 
-def test_nodesandedges::shapednode::tostring_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::ShapedNode::toString)
+def test_nodesandedges_shapednode_tostring_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_ShapedNode_toString)
 
 
-def test_nodesandedges::shapednode::tostring_constructor_exists():
-    assert callable(nodesAndEdges::ShapedNode::toString.__init__)
+def test_nodesandedges_shapednode_tostring_constructor_exists():
+    assert callable(nodesAndEdges_ShapedNode_toString.__init__)
 
 
-def test_nodesandedges::shapednode::tostring_constructor_args():
-    sig = inspect.signature(nodesAndEdges::ShapedNode::toString.__init__)
+def test_nodesandedges_shapednode_tostring_constructor_args():
+    sig = inspect.signature(nodesAndEdges_ShapedNode_toString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nodesandedges::edge::tostring_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::Edge::toString)
+def test_nodesandedges_edge_tostring_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_Edge_toString)
 
 
-def test_nodesandedges::edge::tostring_constructor_exists():
-    assert callable(nodesAndEdges::Edge::toString.__init__)
+def test_nodesandedges_edge_tostring_constructor_exists():
+    assert callable(nodesAndEdges_Edge_toString.__init__)
 
 
-def test_nodesandedges::edge::tostring_constructor_args():
-    sig = inspect.signature(nodesAndEdges::Edge::toString.__init__)
+def test_nodesandedges_edge_tostring_constructor_args():
+    sig = inspect.signature(nodesAndEdges_Edge_toString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nodesandedges::edge_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::Edge)
+def test_nodesandedges_edge_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_Edge)
 
 
-def test_nodesandedges::edge_constructor_exists():
-    assert callable(nodesAndEdges::Edge.__init__)
+def test_nodesandedges_edge_constructor_exists():
+    assert callable(nodesAndEdges_Edge.__init__)
 
 
-def test_nodesandedges::edge_constructor_args():
-    sig = inspect.signature(nodesAndEdges::Edge.__init__)
+def test_nodesandedges_edge_constructor_args():
+    sig = inspect.signature(nodesAndEdges_Edge.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_nodesandedges::edge_has_name():
-    assert hasattr(nodesAndEdges::Edge, "name")
+def test_nodesandedges_edge_has_type():
+    assert hasattr(nodesAndEdges_Edge, "type")
     descriptor = None
-    for klass in nodesAndEdges::Edge.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_nodesandedges::edge_has_type():
-    assert hasattr(nodesAndEdges::Edge, "type")
-    descriptor = None
-    for klass in nodesAndEdges::Edge.__mro__:
+    for klass in nodesAndEdges_Edge.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_nodesandedges_edge_has_name():
+    assert hasattr(nodesAndEdges_Edge, "name")
+    descriptor = None
+    for klass in nodesAndEdges_Edge.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_nodesandedges::colorednode::tostring_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::ColoredNode::toString)
+
+def test_nodesandedges_colorednode_tostring_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_ColoredNode_toString)
 
 
-def test_nodesandedges::colorednode::tostring_constructor_exists():
-    assert callable(nodesAndEdges::ColoredNode::toString.__init__)
+def test_nodesandedges_colorednode_tostring_constructor_exists():
+    assert callable(nodesAndEdges_ColoredNode_toString.__init__)
 
 
-def test_nodesandedges::colorednode::tostring_constructor_args():
-    sig = inspect.signature(nodesAndEdges::ColoredNode::toString.__init__)
+def test_nodesandedges_colorednode_tostring_constructor_args():
+    sig = inspect.signature(nodesAndEdges_ColoredNode_toString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nodesandedges::node::tostring_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::Node::toString)
+def test_nodesandedges_node_tostring_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_Node_toString)
 
 
-def test_nodesandedges::node::tostring_constructor_exists():
-    assert callable(nodesAndEdges::Node::toString.__init__)
+def test_nodesandedges_node_tostring_constructor_exists():
+    assert callable(nodesAndEdges_Node_toString.__init__)
 
 
-def test_nodesandedges::node::tostring_constructor_args():
-    sig = inspect.signature(nodesAndEdges::Node::toString.__init__)
+def test_nodesandedges_node_tostring_constructor_args():
+    sig = inspect.signature(nodesAndEdges_Node_toString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nodesandedges::node_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::Node)
+def test_nodesandedges_node_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_Node)
 
 
-def test_nodesandedges::node_constructor_exists():
-    assert callable(nodesAndEdges::Node.__init__)
+def test_nodesandedges_node_constructor_exists():
+    assert callable(nodesAndEdges_Node.__init__)
 
 
-def test_nodesandedges::node_constructor_args():
-    sig = inspect.signature(nodesAndEdges::Node.__init__)
+def test_nodesandedges_node_constructor_args():
+    sig = inspect.signature(nodesAndEdges_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_nodesandedges::node_has_name():
-    assert hasattr(nodesAndEdges::Node, "name")
+def test_nodesandedges_node_has_name():
+    assert hasattr(nodesAndEdges_Node, "name")
     descriptor = None
-    for klass in nodesAndEdges::Node.__mro__:
+    for klass in nodesAndEdges_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -154,33 +154,33 @@ def test_node_constructor_args():
 
 
 
-def test_nodesandedges::shapednode_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::ShapedNode)
+def test_nodesandedges_shapednode_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_ShapedNode)
 
 
-def test_nodesandedges::shapednode_constructor_exists():
-    assert callable(nodesAndEdges::ShapedNode.__init__)
+def test_nodesandedges_shapednode_constructor_exists():
+    assert callable(nodesAndEdges_ShapedNode.__init__)
 
 
-def test_nodesandedges::shapednode_constructor_args():
-    sig = inspect.signature(nodesAndEdges::ShapedNode.__init__)
+def test_nodesandedges_shapednode_constructor_args():
+    sig = inspect.signature(nodesAndEdges_ShapedNode.__init__)
     params = list(sig.parameters.keys())
     assert "shape" in params, "Missing parameter 'shape'"
     assert "size" in params, "Missing parameter 'size'"
 
-def test_nodesandedges::shapednode_has_shape():
-    assert hasattr(nodesAndEdges::ShapedNode, "shape")
+def test_nodesandedges_shapednode_has_shape():
+    assert hasattr(nodesAndEdges_ShapedNode, "shape")
     descriptor = None
-    for klass in nodesAndEdges::ShapedNode.__mro__:
+    for klass in nodesAndEdges_ShapedNode.__mro__:
         if "shape" in klass.__dict__:
             descriptor = klass.__dict__["shape"]
             break
     assert isinstance(descriptor, property)
 
-def test_nodesandedges::shapednode_has_size():
-    assert hasattr(nodesAndEdges::ShapedNode, "size")
+def test_nodesandedges_shapednode_has_size():
+    assert hasattr(nodesAndEdges_ShapedNode, "size")
     descriptor = None
-    for klass in nodesAndEdges::ShapedNode.__mro__:
+    for klass in nodesAndEdges_ShapedNode.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -188,23 +188,23 @@ def test_nodesandedges::shapednode_has_size():
 
 
 
-def test_nodesandedges::colorednode_is_not_abstract():
-    assert not inspect.isabstract(nodesAndEdges::ColoredNode)
+def test_nodesandedges_colorednode_is_not_abstract():
+    assert not inspect.isabstract(nodesAndEdges_ColoredNode)
 
 
-def test_nodesandedges::colorednode_constructor_exists():
-    assert callable(nodesAndEdges::ColoredNode.__init__)
+def test_nodesandedges_colorednode_constructor_exists():
+    assert callable(nodesAndEdges_ColoredNode.__init__)
 
 
-def test_nodesandedges::colorednode_constructor_args():
-    sig = inspect.signature(nodesAndEdges::ColoredNode.__init__)
+def test_nodesandedges_colorednode_constructor_args():
+    sig = inspect.signature(nodesAndEdges_ColoredNode.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_nodesandedges::colorednode_has_color():
-    assert hasattr(nodesAndEdges::ColoredNode, "color")
+def test_nodesandedges_colorednode_has_color():
+    assert hasattr(nodesAndEdges_ColoredNode, "color")
     descriptor = None
-    for klass in nodesAndEdges::ColoredNode.__mro__:
+    for klass in nodesAndEdges_ColoredNode.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -218,27 +218,12 @@ def test_color_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Color]
     expected_literals = [
-        "blue",
         "red",
+        "blue",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Color"
-
-def test_edgeviewtype_exists():
-    # Check that the Enumeration exists
-    assert EdgeViewType is not None
-
-def test_edgeviewtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EdgeViewType]
-    expected_literals = [
-        "dashline",
-        "solidline",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EdgeViewType"
 
 def test_shape_exists():
     # Check that the Enumeration exists
@@ -248,12 +233,27 @@ def test_shape_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Shape]
     expected_literals = [
-        "round",
         "square",
+        "round",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Shape"
+
+def test_edgeviewtype_exists():
+    # Check that the Enumeration exists
+    assert EdgeViewType is not None
+
+def test_edgeviewtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EdgeViewType]
+    expected_literals = [
+        "solidline",
+        "dashline",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EdgeViewType"
 
 
 # =============================================================================
@@ -267,82 +267,76 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-nodesAndEdges::ShapedNode::toString_strategy = st.builds(
-    nodesAndEdges::ShapedNode::toString,
+nodesAndEdges_ShapedNode_toString_strategy = st.builds(
+    nodesAndEdges_ShapedNode_toString,
 )
-nodesAndEdges::Edge::toString_strategy = st.builds(
-    nodesAndEdges::Edge::toString,
+nodesAndEdges_Edge_toString_strategy = st.builds(
+    nodesAndEdges_Edge_toString,
 )
-nodesAndEdges::Edge_strategy = st.builds(
-    nodesAndEdges::Edge,
-    name=
-        safe_text,
+nodesAndEdges_Edge_strategy = st.builds(
+    nodesAndEdges_Edge,
     type=
+        safe_text,
+    name=
         safe_text
 )
-nodesAndEdges::ColoredNode::toString_strategy = st.builds(
-    nodesAndEdges::ColoredNode::toString,
+nodesAndEdges_ColoredNode_toString_strategy = st.builds(
+    nodesAndEdges_ColoredNode_toString,
 )
-nodesAndEdges::Node::toString_strategy = st.builds(
-    nodesAndEdges::Node::toString,
+nodesAndEdges_Node_toString_strategy = st.builds(
+    nodesAndEdges_Node_toString,
 )
-nodesAndEdges::Node_strategy = st.builds(
-    nodesAndEdges::Node,
+nodesAndEdges_Node_strategy = st.builds(
+    nodesAndEdges_Node,
     name=
         safe_text
 )
 Node_strategy = st.builds(
     Node,
 )
-nodesAndEdges::ShapedNode_strategy = st.builds(
-    nodesAndEdges::ShapedNode,
+nodesAndEdges_ShapedNode_strategy = st.builds(
+    nodesAndEdges_ShapedNode,
     shape=
         safe_text,
     size=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-nodesAndEdges::ColoredNode_strategy = st.builds(
-    nodesAndEdges::ColoredNode,
+nodesAndEdges_ColoredNode_strategy = st.builds(
+    nodesAndEdges_ColoredNode,
     color=
         safe_text
 )
 
-@given(instance=nodesAndEdges::ShapedNode::toString_strategy)
+@given(instance=nodesAndEdges_ShapedNode_toString_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::shapednode::tostring_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::ShapedNode::toString)
+def test_nodesandedges_shapednode_tostring_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_ShapedNode_toString)
 
-@given(instance=nodesAndEdges::Edge::toString_strategy)
+@given(instance=nodesAndEdges_Edge_toString_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::edge::tostring_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::Edge::toString)
+def test_nodesandedges_edge_tostring_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_Edge_toString)
 
-@given(instance=nodesAndEdges::Edge_strategy)
+@given(instance=nodesAndEdges_Edge_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::edge_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::Edge)
-
-@given(instance=nodesAndEdges::Edge_strategy)
-def test_nodesandedges::edge_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_nodesandedges_edge_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_Edge)
 
 
-@given(instance=nodesAndEdges::Edge_strategy)
-def test_nodesandedges::edge_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=nodesAndEdges::Edge_strategy)
-def test_nodesandedges::edge_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=nodesAndEdges::Edge_strategy)
-def test_nodesandedges::edge_type_setter(instance):
+@given(instance=nodesAndEdges_Edge_strategy)
+def test_nodesandedges_edge_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
+
+
+
+@given(instance=nodesAndEdges_Edge_strategy)
+def test_nodesandedges_edge_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -350,9 +344,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=nodesAndEdges::Edge_strategy)
+@given(instance=nodesAndEdges_Edge_strategy)
 @settings(max_examples=30)
-def test_nodesandedges::edge_tostring_changes_state(instance):
+def test_nodesandedges_edge_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -364,37 +358,34 @@ def test_nodesandedges::edge_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in nodesAndEdges::Edge is empty"
+        assert has_statements, f"Function 'toString' in nodesAndEdges_Edge is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in nodesAndEdges::Edge did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in nodesAndEdges_Edge did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in nodesAndEdges::Edge is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in nodesAndEdges_Edge is not implemented or raised an error")
 
-@given(instance=nodesAndEdges::ColoredNode::toString_strategy)
+@given(instance=nodesAndEdges_ColoredNode_toString_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::colorednode::tostring_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::ColoredNode::toString)
+def test_nodesandedges_colorednode_tostring_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_ColoredNode_toString)
 
-@given(instance=nodesAndEdges::Node::toString_strategy)
+@given(instance=nodesAndEdges_Node_toString_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::node::tostring_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::Node::toString)
+def test_nodesandedges_node_tostring_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_Node_toString)
 
-@given(instance=nodesAndEdges::Node_strategy)
+@given(instance=nodesAndEdges_Node_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::node_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::Node)
-
-@given(instance=nodesAndEdges::Node_strategy)
-def test_nodesandedges::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_nodesandedges_node_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_Node)
 
 
-@given(instance=nodesAndEdges::Node_strategy)
-def test_nodesandedges::node_name_setter(instance):
+
+@given(instance=nodesAndEdges_Node_strategy)
+def test_nodesandedges_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -404,29 +395,23 @@ def test_nodesandedges::node_name_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=nodesAndEdges::ShapedNode_strategy)
+@given(instance=nodesAndEdges_ShapedNode_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::shapednode_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::ShapedNode)
-
-@given(instance=nodesAndEdges::ShapedNode_strategy)
-def test_nodesandedges::shapednode_shape_type(instance):
-    assert isinstance(instance.shape, str)
+def test_nodesandedges_shapednode_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_ShapedNode)
 
 
-@given(instance=nodesAndEdges::ShapedNode_strategy)
-def test_nodesandedges::shapednode_shape_setter(instance):
+
+@given(instance=nodesAndEdges_ShapedNode_strategy)
+def test_nodesandedges_shapednode_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=nodesAndEdges::ShapedNode_strategy)
-def test_nodesandedges::shapednode_size_type(instance):
-    assert isinstance(instance.size, float)
 
 
-@given(instance=nodesAndEdges::ShapedNode_strategy)
-def test_nodesandedges::shapednode_size_setter(instance):
+@given(instance=nodesAndEdges_ShapedNode_strategy)
+def test_nodesandedges_shapednode_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
@@ -437,9 +422,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=nodesAndEdges::ShapedNode_strategy)
+@given(instance=nodesAndEdges_ShapedNode_strategy)
 @settings(max_examples=30)
-def test_nodesandedges::shapednode_tostring_changes_state(instance):
+def test_nodesandedges_shapednode_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -451,27 +436,24 @@ def test_nodesandedges::shapednode_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in nodesAndEdges::ShapedNode is empty"
+        assert has_statements, f"Function 'toString' in nodesAndEdges_ShapedNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in nodesAndEdges::ShapedNode did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in nodesAndEdges_ShapedNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in nodesAndEdges::ShapedNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in nodesAndEdges_ShapedNode is not implemented or raised an error")
 
-@given(instance=nodesAndEdges::ColoredNode_strategy)
+@given(instance=nodesAndEdges_ColoredNode_strategy)
 @settings(max_examples=50)
-def test_nodesandedges::colorednode_instantiation(instance):
-    assert isinstance(instance, nodesAndEdges::ColoredNode)
-
-@given(instance=nodesAndEdges::ColoredNode_strategy)
-def test_nodesandedges::colorednode_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_nodesandedges_colorednode_instantiation(instance):
+    assert isinstance(instance, nodesAndEdges_ColoredNode)
 
 
-@given(instance=nodesAndEdges::ColoredNode_strategy)
-def test_nodesandedges::colorednode_color_setter(instance):
+
+@given(instance=nodesAndEdges_ColoredNode_strategy)
+def test_nodesandedges_colorednode_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
@@ -482,9 +464,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=nodesAndEdges::ColoredNode_strategy)
+@given(instance=nodesAndEdges_ColoredNode_strategy)
 @settings(max_examples=30)
-def test_nodesandedges::colorednode_tostring_changes_state(instance):
+def test_nodesandedges_colorednode_tostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -496,11 +478,11 @@ def test_nodesandedges::colorednode_tostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toString' in nodesAndEdges::ColoredNode is empty"
+        assert has_statements, f"Function 'toString' in nodesAndEdges_ColoredNode is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toString' in nodesAndEdges::ColoredNode did not change state; check implementation")
+            warnings.warn(f"Operation 'toString' in nodesAndEdges_ColoredNode did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toString' in nodesAndEdges::ColoredNode is not implemented or raised an error")
+        warnings.warn(f"Operation 'toString' in nodesAndEdges_ColoredNode is not implemented or raised an error")

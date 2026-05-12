@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::IPersonList,
-    model::IPerson,
+from python_code import (
+    model_IPersonList,
+    model_IPerson,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_model::ipersonlist_is_not_abstract():
-    assert not inspect.isabstract(model::IPersonList)
+def test_model_ipersonlist_is_not_abstract():
+    assert not inspect.isabstract(model_IPersonList)
 
 
-def test_model::ipersonlist_constructor_exists():
-    assert callable(model::IPersonList.__init__)
+def test_model_ipersonlist_constructor_exists():
+    assert callable(model_IPersonList.__init__)
 
 
-def test_model::ipersonlist_constructor_args():
-    sig = inspect.signature(model::IPersonList.__init__)
+def test_model_ipersonlist_constructor_args():
+    sig = inspect.signature(model_IPersonList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::iperson_is_not_abstract():
-    assert not inspect.isabstract(model::IPerson)
+def test_model_iperson_is_not_abstract():
+    assert not inspect.isabstract(model_IPerson)
 
 
-def test_model::iperson_constructor_exists():
-    assert callable(model::IPerson.__init__)
+def test_model_iperson_constructor_exists():
+    assert callable(model_IPerson.__init__)
 
 
-def test_model::iperson_constructor_args():
-    sig = inspect.signature(model::IPerson.__init__)
+def test_model_iperson_constructor_args():
+    sig = inspect.signature(model_IPerson.__init__)
     params = list(sig.parameters.keys())
     assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_model::iperson_has_firstName():
-    assert hasattr(model::IPerson, "firstName")
+def test_model_iperson_has_firstName():
+    assert hasattr(model_IPerson, "firstName")
     descriptor = None
-    for klass in model::IPerson.__mro__:
+    for klass in model_IPerson.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::IPersonList_strategy = st.builds(
-    model::IPersonList,
+model_IPersonList_strategy = st.builds(
+    model_IPersonList,
 )
-model::IPerson_strategy = st.builds(
-    model::IPerson,
+model_IPerson_strategy = st.builds(
+    model_IPerson,
     firstName=
         safe_text
 )
 
-@given(instance=model::IPersonList_strategy)
+@given(instance=model_IPersonList_strategy)
 @settings(max_examples=50)
-def test_model::ipersonlist_instantiation(instance):
-    assert isinstance(instance, model::IPersonList)
+def test_model_ipersonlist_instantiation(instance):
+    assert isinstance(instance, model_IPersonList)
 
-@given(instance=model::IPerson_strategy)
+@given(instance=model_IPerson_strategy)
 @settings(max_examples=50)
-def test_model::iperson_instantiation(instance):
-    assert isinstance(instance, model::IPerson)
-
-@given(instance=model::IPerson_strategy)
-def test_model::iperson_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_model_iperson_instantiation(instance):
+    assert isinstance(instance, model_IPerson)
 
 
-@given(instance=model::IPerson_strategy)
-def test_model::iperson_firstName_setter(instance):
+
+@given(instance=model_IPerson_strategy)
+def test_model_iperson_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original

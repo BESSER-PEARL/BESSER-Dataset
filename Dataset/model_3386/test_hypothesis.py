@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    errors::Fk,
-    errors::Column,
-    errors::Table,
+from python_code import (
+    errors_Fk,
+    errors_Column,
+    errors_Table,
     Error,
-    errors::ForeignError,
-    errors::Error,
-    errors::Errores,
+    errors_ForeignError,
+    errors_Error,
+    errors_Errores,
 )
 
 # =============================================================================
@@ -21,44 +21,44 @@ from classes import (
 
 
 
-def test_errors::fk_is_not_abstract():
-    assert not inspect.isabstract(errors::Fk)
+def test_errors_fk_is_not_abstract():
+    assert not inspect.isabstract(errors_Fk)
 
 
-def test_errors::fk_constructor_exists():
-    assert callable(errors::Fk.__init__)
+def test_errors_fk_constructor_exists():
+    assert callable(errors_Fk.__init__)
 
 
-def test_errors::fk_constructor_args():
-    sig = inspect.signature(errors::Fk.__init__)
+def test_errors_fk_constructor_args():
+    sig = inspect.signature(errors_Fk.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errors::column_is_not_abstract():
-    assert not inspect.isabstract(errors::Column)
+def test_errors_column_is_not_abstract():
+    assert not inspect.isabstract(errors_Column)
 
 
-def test_errors::column_constructor_exists():
-    assert callable(errors::Column.__init__)
+def test_errors_column_constructor_exists():
+    assert callable(errors_Column.__init__)
 
 
-def test_errors::column_constructor_args():
-    sig = inspect.signature(errors::Column.__init__)
+def test_errors_column_constructor_args():
+    sig = inspect.signature(errors_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errors::table_is_not_abstract():
-    assert not inspect.isabstract(errors::Table)
+def test_errors_table_is_not_abstract():
+    assert not inspect.isabstract(errors_Table)
 
 
-def test_errors::table_constructor_exists():
-    assert callable(errors::Table.__init__)
+def test_errors_table_constructor_exists():
+    assert callable(errors_Table.__init__)
 
 
-def test_errors::table_constructor_args():
-    sig = inspect.signature(errors::Table.__init__)
+def test_errors_table_constructor_args():
+    sig = inspect.signature(errors_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,23 +77,23 @@ def test_error_constructor_args():
 
 
 
-def test_errors::foreignerror_is_not_abstract():
-    assert not inspect.isabstract(errors::ForeignError)
+def test_errors_foreignerror_is_not_abstract():
+    assert not inspect.isabstract(errors_ForeignError)
 
 
-def test_errors::foreignerror_constructor_exists():
-    assert callable(errors::ForeignError.__init__)
+def test_errors_foreignerror_constructor_exists():
+    assert callable(errors_ForeignError.__init__)
 
 
-def test_errors::foreignerror_constructor_args():
-    sig = inspect.signature(errors::ForeignError.__init__)
+def test_errors_foreignerror_constructor_args():
+    sig = inspect.signature(errors_ForeignError.__init__)
     params = list(sig.parameters.keys())
     assert "porcent" in params, "Missing parameter 'porcent'"
 
-def test_errors::foreignerror_has_porcent():
-    assert hasattr(errors::ForeignError, "porcent")
+def test_errors_foreignerror_has_porcent():
+    assert hasattr(errors_ForeignError, "porcent")
     descriptor = None
-    for klass in errors::ForeignError.__mro__:
+    for klass in errors_ForeignError.__mro__:
         if "porcent" in klass.__dict__:
             descriptor = klass.__dict__["porcent"]
             break
@@ -101,33 +101,33 @@ def test_errors::foreignerror_has_porcent():
 
 
 
-def test_errors::error_is_not_abstract():
-    assert not inspect.isabstract(errors::Error)
+def test_errors_error_is_not_abstract():
+    assert not inspect.isabstract(errors_Error)
 
 
-def test_errors::error_constructor_exists():
-    assert callable(errors::Error.__init__)
+def test_errors_error_constructor_exists():
+    assert callable(errors_Error.__init__)
 
 
-def test_errors::error_constructor_args():
-    sig = inspect.signature(errors::Error.__init__)
+def test_errors_error_constructor_args():
+    sig = inspect.signature(errors_Error.__init__)
     params = list(sig.parameters.keys())
     assert "apply" in params, "Missing parameter 'apply'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errors::error_has_apply():
-    assert hasattr(errors::Error, "apply")
+def test_errors_error_has_apply():
+    assert hasattr(errors_Error, "apply")
     descriptor = None
-    for klass in errors::Error.__mro__:
+    for klass in errors_Error.__mro__:
         if "apply" in klass.__dict__:
             descriptor = klass.__dict__["apply"]
             break
     assert isinstance(descriptor, property)
 
-def test_errors::error_has_id():
-    assert hasattr(errors::Error, "id")
+def test_errors_error_has_id():
+    assert hasattr(errors_Error, "id")
     descriptor = None
-    for klass in errors::Error.__mro__:
+    for klass in errors_Error.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -135,16 +135,16 @@ def test_errors::error_has_id():
 
 
 
-def test_errors::errores_is_not_abstract():
-    assert not inspect.isabstract(errors::Errores)
+def test_errors_errores_is_not_abstract():
+    assert not inspect.isabstract(errors_Errores)
 
 
-def test_errors::errores_constructor_exists():
-    assert callable(errors::Errores.__init__)
+def test_errors_errores_constructor_exists():
+    assert callable(errors_Errores.__init__)
 
 
-def test_errors::errores_constructor_args():
-    sig = inspect.signature(errors::Errores.__init__)
+def test_errors_errores_constructor_args():
+    sig = inspect.signature(errors_Errores.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,98 +159,89 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-errors::Fk_strategy = st.builds(
-    errors::Fk,
+errors_Fk_strategy = st.builds(
+    errors_Fk,
 )
-errors::Column_strategy = st.builds(
-    errors::Column,
+errors_Column_strategy = st.builds(
+    errors_Column,
 )
-errors::Table_strategy = st.builds(
-    errors::Table,
+errors_Table_strategy = st.builds(
+    errors_Table,
 )
 Error_strategy = st.builds(
     Error,
 )
-errors::ForeignError_strategy = st.builds(
-    errors::ForeignError,
+errors_ForeignError_strategy = st.builds(
+    errors_ForeignError,
     porcent=
         st.integers()
 )
-errors::Error_strategy = st.builds(
-    errors::Error,
+errors_Error_strategy = st.builds(
+    errors_Error,
     apply=
         st.booleans(),
     id=
         st.integers()
 )
-errors::Errores_strategy = st.builds(
-    errors::Errores,
+errors_Errores_strategy = st.builds(
+    errors_Errores,
 )
 
-@given(instance=errors::Fk_strategy)
+@given(instance=errors_Fk_strategy)
 @settings(max_examples=50)
-def test_errors::fk_instantiation(instance):
-    assert isinstance(instance, errors::Fk)
+def test_errors_fk_instantiation(instance):
+    assert isinstance(instance, errors_Fk)
 
-@given(instance=errors::Column_strategy)
+@given(instance=errors_Column_strategy)
 @settings(max_examples=50)
-def test_errors::column_instantiation(instance):
-    assert isinstance(instance, errors::Column)
+def test_errors_column_instantiation(instance):
+    assert isinstance(instance, errors_Column)
 
-@given(instance=errors::Table_strategy)
+@given(instance=errors_Table_strategy)
 @settings(max_examples=50)
-def test_errors::table_instantiation(instance):
-    assert isinstance(instance, errors::Table)
+def test_errors_table_instantiation(instance):
+    assert isinstance(instance, errors_Table)
 
 @given(instance=Error_strategy)
 @settings(max_examples=50)
 def test_error_instantiation(instance):
     assert isinstance(instance, Error)
 
-@given(instance=errors::ForeignError_strategy)
+@given(instance=errors_ForeignError_strategy)
 @settings(max_examples=50)
-def test_errors::foreignerror_instantiation(instance):
-    assert isinstance(instance, errors::ForeignError)
-
-@given(instance=errors::ForeignError_strategy)
-def test_errors::foreignerror_porcent_type(instance):
-    assert isinstance(instance.porcent, int)
+def test_errors_foreignerror_instantiation(instance):
+    assert isinstance(instance, errors_ForeignError)
 
 
-@given(instance=errors::ForeignError_strategy)
-def test_errors::foreignerror_porcent_setter(instance):
+
+@given(instance=errors_ForeignError_strategy)
+def test_errors_foreignerror_porcent_setter(instance):
     original = instance.porcent
     instance.porcent = original
     assert instance.porcent == original
 
-@given(instance=errors::Error_strategy)
+@given(instance=errors_Error_strategy)
 @settings(max_examples=50)
-def test_errors::error_instantiation(instance):
-    assert isinstance(instance, errors::Error)
-
-@given(instance=errors::Error_strategy)
-def test_errors::error_apply_type(instance):
-    assert isinstance(instance.apply, bool)
+def test_errors_error_instantiation(instance):
+    assert isinstance(instance, errors_Error)
 
 
-@given(instance=errors::Error_strategy)
-def test_errors::error_apply_setter(instance):
+
+@given(instance=errors_Error_strategy)
+def test_errors_error_apply_setter(instance):
     original = instance.apply
     instance.apply = original
     assert instance.apply == original
 
-@given(instance=errors::Error_strategy)
-def test_errors::error_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
-@given(instance=errors::Error_strategy)
-def test_errors::error_id_setter(instance):
+@given(instance=errors_Error_strategy)
+def test_errors_error_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=errors::Errores_strategy)
+@given(instance=errors_Errores_strategy)
 @settings(max_examples=50)
-def test_errors::errores_instantiation(instance):
-    assert isinstance(instance, errors::Errores)
+def test_errors_errores_instantiation(instance):
+    assert isinstance(instance, errors_Errores)

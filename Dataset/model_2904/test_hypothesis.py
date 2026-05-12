@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Type,
-    hbmxml::Entity,
-    hbmxml::DataType,
+    hbmxml_Entity,
+    hbmxml_DataType,
     NamedElement,
-    hbmxml::Feature,
-    hbmxml::Type,
-    hbmxml::NamedElement,
-    hbmxml::EntityModel,
+    hbmxml_Feature,
+    hbmxml_Type,
+    hbmxml_NamedElement,
+    hbmxml_EntityModel,
     FeatureKind,
 )
 
@@ -37,23 +37,23 @@ def test_type_constructor_args():
 
 
 
-def test_hbmxml::entity_is_not_abstract():
-    assert not inspect.isabstract(hbmxml::Entity)
+def test_hbmxml_entity_is_not_abstract():
+    assert not inspect.isabstract(hbmxml_Entity)
 
 
-def test_hbmxml::entity_constructor_exists():
-    assert callable(hbmxml::Entity.__init__)
+def test_hbmxml_entity_constructor_exists():
+    assert callable(hbmxml_Entity.__init__)
 
 
-def test_hbmxml::entity_constructor_args():
-    sig = inspect.signature(hbmxml::Entity.__init__)
+def test_hbmxml_entity_constructor_args():
+    sig = inspect.signature(hbmxml_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
 
-def test_hbmxml::entity_has_abstract():
-    assert hasattr(hbmxml::Entity, "abstract")
+def test_hbmxml_entity_has_abstract():
+    assert hasattr(hbmxml_Entity, "abstract")
     descriptor = None
-    for klass in hbmxml::Entity.__mro__:
+    for klass in hbmxml_Entity.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
@@ -61,16 +61,16 @@ def test_hbmxml::entity_has_abstract():
 
 
 
-def test_hbmxml::datatype_is_not_abstract():
-    assert not inspect.isabstract(hbmxml::DataType)
+def test_hbmxml_datatype_is_not_abstract():
+    assert not inspect.isabstract(hbmxml_DataType)
 
 
-def test_hbmxml::datatype_constructor_exists():
-    assert callable(hbmxml::DataType.__init__)
+def test_hbmxml_datatype_constructor_exists():
+    assert callable(hbmxml_DataType.__init__)
 
 
-def test_hbmxml::datatype_constructor_args():
-    sig = inspect.signature(hbmxml::DataType.__init__)
+def test_hbmxml_datatype_constructor_args():
+    sig = inspect.signature(hbmxml_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,23 +89,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_hbmxml::feature_is_not_abstract():
-    assert not inspect.isabstract(hbmxml::Feature)
+def test_hbmxml_feature_is_not_abstract():
+    assert not inspect.isabstract(hbmxml_Feature)
 
 
-def test_hbmxml::feature_constructor_exists():
-    assert callable(hbmxml::Feature.__init__)
+def test_hbmxml_feature_constructor_exists():
+    assert callable(hbmxml_Feature.__init__)
 
 
-def test_hbmxml::feature_constructor_args():
-    sig = inspect.signature(hbmxml::Feature.__init__)
+def test_hbmxml_feature_constructor_args():
+    sig = inspect.signature(hbmxml_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_hbmxml::feature_has_kind():
-    assert hasattr(hbmxml::Feature, "kind")
+def test_hbmxml_feature_has_kind():
+    assert hasattr(hbmxml_Feature, "kind")
     descriptor = None
-    for klass in hbmxml::Feature.__mro__:
+    for klass in hbmxml_Feature.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -113,37 +113,37 @@ def test_hbmxml::feature_has_kind():
 
 
 
-def test_hbmxml::type_is_not_abstract():
-    assert not inspect.isabstract(hbmxml::Type)
+def test_hbmxml_type_is_not_abstract():
+    assert not inspect.isabstract(hbmxml_Type)
 
 
-def test_hbmxml::type_constructor_exists():
-    assert callable(hbmxml::Type.__init__)
+def test_hbmxml_type_constructor_exists():
+    assert callable(hbmxml_Type.__init__)
 
 
-def test_hbmxml::type_constructor_args():
-    sig = inspect.signature(hbmxml::Type.__init__)
+def test_hbmxml_type_constructor_args():
+    sig = inspect.signature(hbmxml_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hbmxml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(hbmxml::NamedElement)
+def test_hbmxml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(hbmxml_NamedElement)
 
 
-def test_hbmxml::namedelement_constructor_exists():
-    assert callable(hbmxml::NamedElement.__init__)
+def test_hbmxml_namedelement_constructor_exists():
+    assert callable(hbmxml_NamedElement.__init__)
 
 
-def test_hbmxml::namedelement_constructor_args():
-    sig = inspect.signature(hbmxml::NamedElement.__init__)
+def test_hbmxml_namedelement_constructor_args():
+    sig = inspect.signature(hbmxml_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hbmxml::namedelement_has_name():
-    assert hasattr(hbmxml::NamedElement, "name")
+def test_hbmxml_namedelement_has_name():
+    assert hasattr(hbmxml_NamedElement, "name")
     descriptor = None
-    for klass in hbmxml::NamedElement.__mro__:
+    for klass in hbmxml_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -151,16 +151,16 @@ def test_hbmxml::namedelement_has_name():
 
 
 
-def test_hbmxml::entitymodel_is_not_abstract():
-    assert not inspect.isabstract(hbmxml::EntityModel)
+def test_hbmxml_entitymodel_is_not_abstract():
+    assert not inspect.isabstract(hbmxml_EntityModel)
 
 
-def test_hbmxml::entitymodel_constructor_exists():
-    assert callable(hbmxml::EntityModel.__init__)
+def test_hbmxml_entitymodel_constructor_exists():
+    assert callable(hbmxml_EntityModel.__init__)
 
 
-def test_hbmxml::entitymodel_constructor_args():
-    sig = inspect.signature(hbmxml::EntityModel.__init__)
+def test_hbmxml_entitymodel_constructor_args():
+    sig = inspect.signature(hbmxml_EntityModel.__init__)
     params = list(sig.parameters.keys())
 
 def test_featurekind_exists():
@@ -171,8 +171,8 @@ def test_featurekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FeatureKind]
     expected_literals = [
-        "reference",
         "attribute",
+        "reference",
         "containment",
     ]
     # Check that all expected literals exist
@@ -194,32 +194,32 @@ safe_text = st.text(
 Type_strategy = st.builds(
     Type,
 )
-hbmxml::Entity_strategy = st.builds(
-    hbmxml::Entity,
+hbmxml_Entity_strategy = st.builds(
+    hbmxml_Entity,
     abstract=
         st.booleans()
 )
-hbmxml::DataType_strategy = st.builds(
-    hbmxml::DataType,
+hbmxml_DataType_strategy = st.builds(
+    hbmxml_DataType,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-hbmxml::Feature_strategy = st.builds(
-    hbmxml::Feature,
+hbmxml_Feature_strategy = st.builds(
+    hbmxml_Feature,
     kind=
         safe_text
 )
-hbmxml::Type_strategy = st.builds(
-    hbmxml::Type,
+hbmxml_Type_strategy = st.builds(
+    hbmxml_Type,
 )
-hbmxml::NamedElement_strategy = st.builds(
-    hbmxml::NamedElement,
+hbmxml_NamedElement_strategy = st.builds(
+    hbmxml_NamedElement,
     name=
         safe_text
 )
-hbmxml::EntityModel_strategy = st.builds(
-    hbmxml::EntityModel,
+hbmxml_EntityModel_strategy = st.builds(
+    hbmxml_EntityModel,
 )
 
 @given(instance=Type_strategy)
@@ -227,70 +227,61 @@ hbmxml::EntityModel_strategy = st.builds(
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=hbmxml::Entity_strategy)
+@given(instance=hbmxml_Entity_strategy)
 @settings(max_examples=50)
-def test_hbmxml::entity_instantiation(instance):
-    assert isinstance(instance, hbmxml::Entity)
-
-@given(instance=hbmxml::Entity_strategy)
-def test_hbmxml::entity_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
+def test_hbmxml_entity_instantiation(instance):
+    assert isinstance(instance, hbmxml_Entity)
 
 
-@given(instance=hbmxml::Entity_strategy)
-def test_hbmxml::entity_abstract_setter(instance):
+
+@given(instance=hbmxml_Entity_strategy)
+def test_hbmxml_entity_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=hbmxml::DataType_strategy)
+@given(instance=hbmxml_DataType_strategy)
 @settings(max_examples=50)
-def test_hbmxml::datatype_instantiation(instance):
-    assert isinstance(instance, hbmxml::DataType)
+def test_hbmxml_datatype_instantiation(instance):
+    assert isinstance(instance, hbmxml_DataType)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=hbmxml::Feature_strategy)
+@given(instance=hbmxml_Feature_strategy)
 @settings(max_examples=50)
-def test_hbmxml::feature_instantiation(instance):
-    assert isinstance(instance, hbmxml::Feature)
-
-@given(instance=hbmxml::Feature_strategy)
-def test_hbmxml::feature_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_hbmxml_feature_instantiation(instance):
+    assert isinstance(instance, hbmxml_Feature)
 
 
-@given(instance=hbmxml::Feature_strategy)
-def test_hbmxml::feature_kind_setter(instance):
+
+@given(instance=hbmxml_Feature_strategy)
+def test_hbmxml_feature_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=hbmxml::Type_strategy)
+@given(instance=hbmxml_Type_strategy)
 @settings(max_examples=50)
-def test_hbmxml::type_instantiation(instance):
-    assert isinstance(instance, hbmxml::Type)
+def test_hbmxml_type_instantiation(instance):
+    assert isinstance(instance, hbmxml_Type)
 
-@given(instance=hbmxml::NamedElement_strategy)
+@given(instance=hbmxml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_hbmxml::namedelement_instantiation(instance):
-    assert isinstance(instance, hbmxml::NamedElement)
-
-@given(instance=hbmxml::NamedElement_strategy)
-def test_hbmxml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hbmxml_namedelement_instantiation(instance):
+    assert isinstance(instance, hbmxml_NamedElement)
 
 
-@given(instance=hbmxml::NamedElement_strategy)
-def test_hbmxml::namedelement_name_setter(instance):
+
+@given(instance=hbmxml_NamedElement_strategy)
+def test_hbmxml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hbmxml::EntityModel_strategy)
+@given(instance=hbmxml_EntityModel_strategy)
 @settings(max_examples=50)
-def test_hbmxml::entitymodel_instantiation(instance):
-    assert isinstance(instance, hbmxml::EntityModel)
+def test_hbmxml_entitymodel_instantiation(instance):
+    assert isinstance(instance, hbmxml_EntityModel)

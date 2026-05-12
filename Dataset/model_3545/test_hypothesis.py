@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     C,
     B,
-    diamond::D,
+    diamond_D,
     A,
-    diamond::C,
-    diamond::B,
-    diamond::A,
+    diamond_C,
+    diamond_B,
+    diamond_A,
 )
 
 # =============================================================================
@@ -49,16 +49,16 @@ def test_b_constructor_args():
 
 
 
-def test_diamond::d_is_not_abstract():
-    assert not inspect.isabstract(diamond::D)
+def test_diamond_d_is_not_abstract():
+    assert not inspect.isabstract(diamond_D)
 
 
-def test_diamond::d_constructor_exists():
-    assert callable(diamond::D.__init__)
+def test_diamond_d_constructor_exists():
+    assert callable(diamond_D.__init__)
 
 
-def test_diamond::d_constructor_args():
-    sig = inspect.signature(diamond::D.__init__)
+def test_diamond_d_constructor_args():
+    sig = inspect.signature(diamond_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,44 +77,44 @@ def test_a_constructor_args():
 
 
 
-def test_diamond::c_is_not_abstract():
-    assert not inspect.isabstract(diamond::C)
+def test_diamond_c_is_not_abstract():
+    assert not inspect.isabstract(diamond_C)
 
 
-def test_diamond::c_constructor_exists():
-    assert callable(diamond::C.__init__)
+def test_diamond_c_constructor_exists():
+    assert callable(diamond_C.__init__)
 
 
-def test_diamond::c_constructor_args():
-    sig = inspect.signature(diamond::C.__init__)
+def test_diamond_c_constructor_args():
+    sig = inspect.signature(diamond_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diamond::b_is_not_abstract():
-    assert not inspect.isabstract(diamond::B)
+def test_diamond_b_is_not_abstract():
+    assert not inspect.isabstract(diamond_B)
 
 
-def test_diamond::b_constructor_exists():
-    assert callable(diamond::B.__init__)
+def test_diamond_b_constructor_exists():
+    assert callable(diamond_B.__init__)
 
 
-def test_diamond::b_constructor_args():
-    sig = inspect.signature(diamond::B.__init__)
+def test_diamond_b_constructor_args():
+    sig = inspect.signature(diamond_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diamond::a_is_not_abstract():
-    assert not inspect.isabstract(diamond::A)
+def test_diamond_a_is_not_abstract():
+    assert not inspect.isabstract(diamond_A)
 
 
-def test_diamond::a_constructor_exists():
-    assert callable(diamond::A.__init__)
+def test_diamond_a_constructor_exists():
+    assert callable(diamond_A.__init__)
 
 
-def test_diamond::a_constructor_args():
-    sig = inspect.signature(diamond::A.__init__)
+def test_diamond_a_constructor_args():
+    sig = inspect.signature(diamond_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -135,20 +135,20 @@ C_strategy = st.builds(
 B_strategy = st.builds(
     B,
 )
-diamond::D_strategy = st.builds(
-    diamond::D,
+diamond_D_strategy = st.builds(
+    diamond_D,
 )
 A_strategy = st.builds(
     A,
 )
-diamond::C_strategy = st.builds(
-    diamond::C,
+diamond_C_strategy = st.builds(
+    diamond_C,
 )
-diamond::B_strategy = st.builds(
-    diamond::B,
+diamond_B_strategy = st.builds(
+    diamond_B,
 )
-diamond::A_strategy = st.builds(
-    diamond::A,
+diamond_A_strategy = st.builds(
+    diamond_A,
 )
 
 @given(instance=C_strategy)
@@ -161,27 +161,27 @@ def test_c_instantiation(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=diamond::D_strategy)
+@given(instance=diamond_D_strategy)
 @settings(max_examples=50)
-def test_diamond::d_instantiation(instance):
-    assert isinstance(instance, diamond::D)
+def test_diamond_d_instantiation(instance):
+    assert isinstance(instance, diamond_D)
 
 @given(instance=A_strategy)
 @settings(max_examples=50)
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=diamond::C_strategy)
+@given(instance=diamond_C_strategy)
 @settings(max_examples=50)
-def test_diamond::c_instantiation(instance):
-    assert isinstance(instance, diamond::C)
+def test_diamond_c_instantiation(instance):
+    assert isinstance(instance, diamond_C)
 
-@given(instance=diamond::B_strategy)
+@given(instance=diamond_B_strategy)
 @settings(max_examples=50)
-def test_diamond::b_instantiation(instance):
-    assert isinstance(instance, diamond::B)
+def test_diamond_b_instantiation(instance):
+    assert isinstance(instance, diamond_B)
 
-@given(instance=diamond::A_strategy)
+@given(instance=diamond_A_strategy)
 @settings(max_examples=50)
-def test_diamond::a_instantiation(instance):
-    assert isinstance(instance, diamond::A)
+def test_diamond_a_instantiation(instance):
+    assert isinstance(instance, diamond_A)

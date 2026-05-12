@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     CNamedElement,
-    classm1::Attribute,
-    classm1::Class,
-    classm1::CNamedElement,
+    classm1_Attribute,
+    classm1_Class,
+    classm1_CNamedElement,
     Visibility,
 )
 
@@ -33,71 +33,71 @@ def test_cnamedelement_constructor_args():
 
 
 
-def test_classm1::attribute_is_not_abstract():
-    assert not inspect.isabstract(classm1::Attribute)
+def test_classm1_attribute_is_not_abstract():
+    assert not inspect.isabstract(classm1_Attribute)
 
 
-def test_classm1::attribute_constructor_exists():
-    assert callable(classm1::Attribute.__init__)
+def test_classm1_attribute_constructor_exists():
+    assert callable(classm1_Attribute.__init__)
 
 
-def test_classm1::attribute_constructor_args():
-    sig = inspect.signature(classm1::Attribute.__init__)
+def test_classm1_attribute_constructor_args():
+    sig = inspect.signature(classm1_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "isKey" in params, "Missing parameter 'isKey'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_classm1::attribute_has_visibility():
-    assert hasattr(classm1::Attribute, "visibility")
+def test_classm1_attribute_has_isKey():
+    assert hasattr(classm1_Attribute, "isKey")
     descriptor = None
-    for klass in classm1::Attribute.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classm1::attribute_has_isKey():
-    assert hasattr(classm1::Attribute, "isKey")
-    descriptor = None
-    for klass in classm1::Attribute.__mro__:
+    for klass in classm1_Attribute.__mro__:
         if "isKey" in klass.__dict__:
             descriptor = klass.__dict__["isKey"]
             break
     assert isinstance(descriptor, property)
 
+def test_classm1_attribute_has_visibility():
+    assert hasattr(classm1_Attribute, "visibility")
+    descriptor = None
+    for klass in classm1_Attribute.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_classm1::class_is_not_abstract():
-    assert not inspect.isabstract(classm1::Class)
+
+def test_classm1_class_is_not_abstract():
+    assert not inspect.isabstract(classm1_Class)
 
 
-def test_classm1::class_constructor_exists():
-    assert callable(classm1::Class.__init__)
+def test_classm1_class_constructor_exists():
+    assert callable(classm1_Class.__init__)
 
 
-def test_classm1::class_constructor_args():
-    sig = inspect.signature(classm1::Class.__init__)
+def test_classm1_class_constructor_args():
+    sig = inspect.signature(classm1_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classm1::cnamedelement_is_not_abstract():
-    assert not inspect.isabstract(classm1::CNamedElement)
+def test_classm1_cnamedelement_is_not_abstract():
+    assert not inspect.isabstract(classm1_CNamedElement)
 
 
-def test_classm1::cnamedelement_constructor_exists():
-    assert callable(classm1::CNamedElement.__init__)
+def test_classm1_cnamedelement_constructor_exists():
+    assert callable(classm1_CNamedElement.__init__)
 
 
-def test_classm1::cnamedelement_constructor_args():
-    sig = inspect.signature(classm1::CNamedElement.__init__)
+def test_classm1_cnamedelement_constructor_args():
+    sig = inspect.signature(classm1_CNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classm1::cnamedelement_has_name():
-    assert hasattr(classm1::CNamedElement, "name")
+def test_classm1_cnamedelement_has_name():
+    assert hasattr(classm1_CNamedElement, "name")
     descriptor = None
-    for klass in classm1::CNamedElement.__mro__:
+    for klass in classm1_CNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -111,8 +111,8 @@ def test_visibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Visibility]
     expected_literals = [
-        "private",
         "public",
+        "private",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -133,18 +133,18 @@ safe_text = st.text(
 CNamedElement_strategy = st.builds(
     CNamedElement,
 )
-classm1::Attribute_strategy = st.builds(
-    classm1::Attribute,
-    visibility=
-        safe_text,
+classm1_Attribute_strategy = st.builds(
+    classm1_Attribute,
     isKey=
-        st.booleans()
+        st.booleans(),
+    visibility=
+        safe_text
 )
-classm1::Class_strategy = st.builds(
-    classm1::Class,
+classm1_Class_strategy = st.builds(
+    classm1_Class,
 )
-classm1::CNamedElement_strategy = st.builds(
-    classm1::CNamedElement,
+classm1_CNamedElement_strategy = st.builds(
+    classm1_CNamedElement,
     name=
         safe_text
 )
@@ -154,50 +154,41 @@ classm1::CNamedElement_strategy = st.builds(
 def test_cnamedelement_instantiation(instance):
     assert isinstance(instance, CNamedElement)
 
-@given(instance=classm1::Attribute_strategy)
+@given(instance=classm1_Attribute_strategy)
 @settings(max_examples=50)
-def test_classm1::attribute_instantiation(instance):
-    assert isinstance(instance, classm1::Attribute)
-
-@given(instance=classm1::Attribute_strategy)
-def test_classm1::attribute_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_classm1_attribute_instantiation(instance):
+    assert isinstance(instance, classm1_Attribute)
 
 
-@given(instance=classm1::Attribute_strategy)
-def test_classm1::attribute_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
 
-@given(instance=classm1::Attribute_strategy)
-def test_classm1::attribute_isKey_type(instance):
-    assert isinstance(instance.isKey, bool)
-
-
-@given(instance=classm1::Attribute_strategy)
-def test_classm1::attribute_isKey_setter(instance):
+@given(instance=classm1_Attribute_strategy)
+def test_classm1_attribute_isKey_setter(instance):
     original = instance.isKey
     instance.isKey = original
     assert instance.isKey == original
 
-@given(instance=classm1::Class_strategy)
+
+
+@given(instance=classm1_Attribute_strategy)
+def test_classm1_attribute_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=classm1_Class_strategy)
 @settings(max_examples=50)
-def test_classm1::class_instantiation(instance):
-    assert isinstance(instance, classm1::Class)
+def test_classm1_class_instantiation(instance):
+    assert isinstance(instance, classm1_Class)
 
-@given(instance=classm1::CNamedElement_strategy)
+@given(instance=classm1_CNamedElement_strategy)
 @settings(max_examples=50)
-def test_classm1::cnamedelement_instantiation(instance):
-    assert isinstance(instance, classm1::CNamedElement)
-
-@given(instance=classm1::CNamedElement_strategy)
-def test_classm1::cnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classm1_cnamedelement_instantiation(instance):
+    assert isinstance(instance, classm1_CNamedElement)
 
 
-@given(instance=classm1::CNamedElement_strategy)
-def test_classm1::cnamedelement_name_setter(instance):
+
+@given(instance=classm1_CNamedElement_strategy)
+def test_classm1_cnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

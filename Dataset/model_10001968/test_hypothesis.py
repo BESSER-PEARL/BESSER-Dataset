@@ -3,9 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    Setting,
+    masterBiaya,
+    Menu_Utama,
+    masterKategori,
+    Login,
+    Prodis,
+    Jurusans,
+    Mahasiswas,
     Tata_Usaha_Actor,
     Administrator_Actor,
     Sistem_Pembayaran_Add_User_UseCase,
@@ -28,19 +36,423 @@ from python_code import (
     Sistem_Mahasiswa_Masukkan_NIM_UseCase,
     Sistem_Mahasiswa_Login_UseCase,
     Pembayarans,
-    Setting,
-    masterBiaya,
-    Menu_Utama,
-    masterKategori,
-    Login,
-    Prodis,
-    Jurusans,
-    Mahasiswas,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_setting_is_not_abstract():
+    assert not inspect.isabstract(Setting)
+
+
+def test_setting_constructor_exists():
+    assert callable(Setting.__init__)
+
+
+def test_setting_constructor_args():
+    sig = inspect.signature(Setting.__init__)
+    params = list(sig.parameters.keys())
+    assert "logo_kampus" in params, "Missing parameter 'logo_kampus'"
+    assert "nama" in params, "Missing parameter 'nama'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "alamat" in params, "Missing parameter 'alamat'"
+    assert "email" in params, "Missing parameter 'email'"
+    assert "no_telepon" in params, "Missing parameter 'no_telepon'"
+    assert "no_faximile" in params, "Missing parameter 'no_faximile'"
+
+def test_setting_has_logo_kampus():
+    assert hasattr(Setting, "logo_kampus")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "logo_kampus" in klass.__dict__:
+            descriptor = klass.__dict__["logo_kampus"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_nama():
+    assert hasattr(Setting, "nama")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "nama" in klass.__dict__:
+            descriptor = klass.__dict__["nama"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_user_id():
+    assert hasattr(Setting, "user_id")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_id():
+    assert hasattr(Setting, "id")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_alamat():
+    assert hasattr(Setting, "alamat")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "alamat" in klass.__dict__:
+            descriptor = klass.__dict__["alamat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_email():
+    assert hasattr(Setting, "email")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_no_telepon():
+    assert hasattr(Setting, "no_telepon")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "no_telepon" in klass.__dict__:
+            descriptor = klass.__dict__["no_telepon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_setting_has_no_faximile():
+    assert hasattr(Setting, "no_faximile")
+    descriptor = None
+    for klass in Setting.__mro__:
+        if "no_faximile" in klass.__dict__:
+            descriptor = klass.__dict__["no_faximile"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_masterbiaya_is_not_abstract():
+    assert not inspect.isabstract(masterBiaya)
+
+
+def test_masterbiaya_constructor_exists():
+    assert callable(masterBiaya.__init__)
+
+
+def test_masterbiaya_constructor_args():
+    sig = inspect.signature(masterBiaya.__init__)
+    params = list(sig.parameters.keys())
+    assert "status" in params, "Missing parameter 'status'"
+    assert "nama_biaya" in params, "Missing parameter 'nama_biaya'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "jumlah_biaya" in params, "Missing parameter 'jumlah_biaya'"
+    assert "kategori_id" in params, "Missing parameter 'kategori_id'"
+    assert "jml_bayar" in params, "Missing parameter 'jml_bayar'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
+
+def test_masterbiaya_has_status():
+    assert hasattr(masterBiaya, "status")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterbiaya_has_nama_biaya():
+    assert hasattr(masterBiaya, "nama_biaya")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "nama_biaya" in klass.__dict__:
+            descriptor = klass.__dict__["nama_biaya"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterbiaya_has_id():
+    assert hasattr(masterBiaya, "id")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterbiaya_has_jumlah_biaya():
+    assert hasattr(masterBiaya, "jumlah_biaya")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "jumlah_biaya" in klass.__dict__:
+            descriptor = klass.__dict__["jumlah_biaya"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterbiaya_has_kategori_id():
+    assert hasattr(masterBiaya, "kategori_id")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "kategori_id" in klass.__dict__:
+            descriptor = klass.__dict__["kategori_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterbiaya_has_jml_bayar():
+    assert hasattr(masterBiaya, "jml_bayar")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "jml_bayar" in klass.__dict__:
+            descriptor = klass.__dict__["jml_bayar"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterbiaya_has_user_id():
+    assert hasattr(masterBiaya, "user_id")
+    descriptor = None
+    for klass in masterBiaya.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_menu_utama_is_not_abstract():
+    assert not inspect.isabstract(Menu_Utama)
+
+
+def test_menu_utama_constructor_exists():
+    assert callable(Menu_Utama.__init__)
+
+
+def test_menu_utama_constructor_args():
+    sig = inspect.signature(Menu_Utama.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_masterkategori_is_not_abstract():
+    assert not inspect.isabstract(masterKategori)
+
+
+def test_masterkategori_constructor_exists():
+    assert callable(masterKategori.__init__)
+
+
+def test_masterkategori_constructor_args():
+    sig = inspect.signature(masterKategori.__init__)
+    params = list(sig.parameters.keys())
+    assert "nama_kategori" in params, "Missing parameter 'nama_kategori'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
+
+def test_masterkategori_has_nama_kategori():
+    assert hasattr(masterKategori, "nama_kategori")
+    descriptor = None
+    for klass in masterKategori.__mro__:
+        if "nama_kategori" in klass.__dict__:
+            descriptor = klass.__dict__["nama_kategori"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterkategori_has_status():
+    assert hasattr(masterKategori, "status")
+    descriptor = None
+    for klass in masterKategori.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterkategori_has_id():
+    assert hasattr(masterKategori, "id")
+    descriptor = None
+    for klass in masterKategori.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_masterkategori_has_user_id():
+    assert hasattr(masterKategori, "user_id")
+    descriptor = None
+    for klass in masterKategori.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_login_is_not_abstract():
+    assert not inspect.isabstract(Login)
+
+
+def test_login_constructor_exists():
+    assert callable(Login.__init__)
+
+
+def test_login_constructor_args():
+    sig = inspect.signature(Login.__init__)
+    params = list(sig.parameters.keys())
+    assert "password" in params, "Missing parameter 'password'"
+    assert "username" in params, "Missing parameter 'username'"
+
+def test_login_has_password():
+    assert hasattr(Login, "password")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_username():
+    assert hasattr(Login, "username")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_prodis_is_not_abstract():
+    assert not inspect.isabstract(Prodis)
+
+
+def test_prodis_constructor_exists():
+    assert callable(Prodis.__init__)
+
+
+def test_prodis_constructor_args():
+    sig = inspect.signature(Prodis.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "prodi_name" in params, "Missing parameter 'prodi_name'"
+    assert "kapasitas_max" in params, "Missing parameter 'kapasitas_max'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
+
+def test_prodis_has_id():
+    assert hasattr(Prodis, "id")
+    descriptor = None
+    for klass in Prodis.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prodis_has_prodi_name():
+    assert hasattr(Prodis, "prodi_name")
+    descriptor = None
+    for klass in Prodis.__mro__:
+        if "prodi_name" in klass.__dict__:
+            descriptor = klass.__dict__["prodi_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prodis_has_kapasitas_max():
+    assert hasattr(Prodis, "kapasitas_max")
+    descriptor = None
+    for klass in Prodis.__mro__:
+        if "kapasitas_max" in klass.__dict__:
+            descriptor = klass.__dict__["kapasitas_max"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prodis_has_status():
+    assert hasattr(Prodis, "status")
+    descriptor = None
+    for klass in Prodis.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_prodis_has_user_id():
+    assert hasattr(Prodis, "user_id")
+    descriptor = None
+    for klass in Prodis.__mro__:
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jurusans_is_not_abstract():
+    assert not inspect.isabstract(Jurusans)
+
+
+def test_jurusans_constructor_exists():
+    assert callable(Jurusans.__init__)
+
+
+def test_jurusans_constructor_args():
+    sig = inspect.signature(Jurusans.__init__)
+    params = list(sig.parameters.keys())
+    assert "jurusan_name" in params, "Missing parameter 'jurusan_name'"
+    assert "prodi_id" in params, "Missing parameter 'prodi_id'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_jurusans_has_jurusan_name():
+    assert hasattr(Jurusans, "jurusan_name")
+    descriptor = None
+    for klass in Jurusans.__mro__:
+        if "jurusan_name" in klass.__dict__:
+            descriptor = klass.__dict__["jurusan_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jurusans_has_prodi_id():
+    assert hasattr(Jurusans, "prodi_id")
+    descriptor = None
+    for klass in Jurusans.__mro__:
+        if "prodi_id" in klass.__dict__:
+            descriptor = klass.__dict__["prodi_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jurusans_has_id():
+    assert hasattr(Jurusans, "id")
+    descriptor = None
+    for klass in Jurusans.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mahasiswas_is_not_abstract():
+    assert not inspect.isabstract(Mahasiswas)
+
+
+def test_mahasiswas_constructor_exists():
+    assert callable(Mahasiswas.__init__)
+
+
+def test_mahasiswas_constructor_args():
+    sig = inspect.signature(Mahasiswas.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_mahasiswas_has_id():
+    assert hasattr(Mahasiswas, "id")
+    descriptor = None
+    for klass in Mahasiswas.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -349,79 +761,25 @@ def test_pembayarans_constructor_exists():
 def test_pembayarans_constructor_args():
     sig = inspect.signature(Pembayarans.__init__)
     params = list(sig.parameters.keys())
-    assert "jumlah" in params, "Missing parameter 'jumlah'"
-    assert "prefix" in params, "Missing parameter 'prefix'"
-    assert "semester_id" in params, "Missing parameter 'semester_id'"
-    assert "biaya_kuliah_id" in params, "Missing parameter 'biaya_kuliah_id'"
-    assert "keterangan" in params, "Missing parameter 'keterangan'"
-    assert "no_pembayaran" in params, "Missing parameter 'no_pembayaran'"
-    assert "pembayaran_tipe" in params, "Missing parameter 'pembayaran_tipe'"
-    assert "mahasiswa_id" in params, "Missing parameter 'mahasiswa_id'"
-    assert "tanggal_pembayaran" in params, "Missing parameter 'tanggal_pembayaran'"
     assert "user_id" in params, "Missing parameter 'user_id'"
-    assert "id" in params, "Missing parameter 'id'"
+    assert "mahasiswa_id" in params, "Missing parameter 'mahasiswa_id'"
+    assert "keterangan" in params, "Missing parameter 'keterangan'"
     assert "status" in params, "Missing parameter 'status'"
+    assert "pembayaran_tipe" in params, "Missing parameter 'pembayaran_tipe'"
+    assert "no_pembayaran" in params, "Missing parameter 'no_pembayaran'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "tanggal_pembayaran" in params, "Missing parameter 'tanggal_pembayaran'"
+    assert "semester_id" in params, "Missing parameter 'semester_id'"
+    assert "prefix" in params, "Missing parameter 'prefix'"
+    assert "biaya_kuliah_id" in params, "Missing parameter 'biaya_kuliah_id'"
+    assert "jumlah" in params, "Missing parameter 'jumlah'"
 
-def test_pembayarans_has_jumlah():
-    assert hasattr(Pembayarans, "jumlah")
+def test_pembayarans_has_user_id():
+    assert hasattr(Pembayarans, "user_id")
     descriptor = None
     for klass in Pembayarans.__mro__:
-        if "jumlah" in klass.__dict__:
-            descriptor = klass.__dict__["jumlah"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_prefix():
-    assert hasattr(Pembayarans, "prefix")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "prefix" in klass.__dict__:
-            descriptor = klass.__dict__["prefix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_semester_id():
-    assert hasattr(Pembayarans, "semester_id")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "semester_id" in klass.__dict__:
-            descriptor = klass.__dict__["semester_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_biaya_kuliah_id():
-    assert hasattr(Pembayarans, "biaya_kuliah_id")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "biaya_kuliah_id" in klass.__dict__:
-            descriptor = klass.__dict__["biaya_kuliah_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_keterangan():
-    assert hasattr(Pembayarans, "keterangan")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "keterangan" in klass.__dict__:
-            descriptor = klass.__dict__["keterangan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_no_pembayaran():
-    assert hasattr(Pembayarans, "no_pembayaran")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "no_pembayaran" in klass.__dict__:
-            descriptor = klass.__dict__["no_pembayaran"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_pembayaran_tipe():
-    assert hasattr(Pembayarans, "pembayaran_tipe")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "pembayaran_tipe" in klass.__dict__:
-            descriptor = klass.__dict__["pembayaran_tipe"]
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -434,30 +792,12 @@ def test_pembayarans_has_mahasiswa_id():
             break
     assert isinstance(descriptor, property)
 
-def test_pembayarans_has_tanggal_pembayaran():
-    assert hasattr(Pembayarans, "tanggal_pembayaran")
+def test_pembayarans_has_keterangan():
+    assert hasattr(Pembayarans, "keterangan")
     descriptor = None
     for klass in Pembayarans.__mro__:
-        if "tanggal_pembayaran" in klass.__dict__:
-            descriptor = klass.__dict__["tanggal_pembayaran"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_user_id():
-    assert hasattr(Pembayarans, "user_id")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pembayarans_has_id():
-    assert hasattr(Pembayarans, "id")
-    descriptor = None
-    for klass in Pembayarans.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "keterangan" in klass.__dict__:
+            descriptor = klass.__dict__["keterangan"]
             break
     assert isinstance(descriptor, property)
 
@@ -470,415 +810,75 @@ def test_pembayarans_has_status():
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_setting_is_not_abstract():
-    assert not inspect.isabstract(Setting)
-
-
-def test_setting_constructor_exists():
-    assert callable(Setting.__init__)
-
-
-def test_setting_constructor_args():
-    sig = inspect.signature(Setting.__init__)
-    params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
-    assert "user_id" in params, "Missing parameter 'user_id'"
-    assert "no_faximile" in params, "Missing parameter 'no_faximile'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "nama" in params, "Missing parameter 'nama'"
-    assert "alamat" in params, "Missing parameter 'alamat'"
-    assert "logo_kampus" in params, "Missing parameter 'logo_kampus'"
-    assert "no_telepon" in params, "Missing parameter 'no_telepon'"
-
-def test_setting_has_email():
-    assert hasattr(Setting, "email")
+def test_pembayarans_has_pembayaran_tipe():
+    assert hasattr(Pembayarans, "pembayaran_tipe")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
+    for klass in Pembayarans.__mro__:
+        if "pembayaran_tipe" in klass.__dict__:
+            descriptor = klass.__dict__["pembayaran_tipe"]
             break
     assert isinstance(descriptor, property)
 
-def test_setting_has_user_id():
-    assert hasattr(Setting, "user_id")
+def test_pembayarans_has_no_pembayaran():
+    assert hasattr(Pembayarans, "no_pembayaran")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
+    for klass in Pembayarans.__mro__:
+        if "no_pembayaran" in klass.__dict__:
+            descriptor = klass.__dict__["no_pembayaran"]
             break
     assert isinstance(descriptor, property)
 
-def test_setting_has_no_faximile():
-    assert hasattr(Setting, "no_faximile")
+def test_pembayarans_has_id():
+    assert hasattr(Pembayarans, "id")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "no_faximile" in klass.__dict__:
-            descriptor = klass.__dict__["no_faximile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_setting_has_id():
-    assert hasattr(Setting, "id")
-    descriptor = None
-    for klass in Setting.__mro__:
+    for klass in Pembayarans.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_setting_has_nama():
-    assert hasattr(Setting, "nama")
+def test_pembayarans_has_tanggal_pembayaran():
+    assert hasattr(Pembayarans, "tanggal_pembayaran")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "nama" in klass.__dict__:
-            descriptor = klass.__dict__["nama"]
+    for klass in Pembayarans.__mro__:
+        if "tanggal_pembayaran" in klass.__dict__:
+            descriptor = klass.__dict__["tanggal_pembayaran"]
             break
     assert isinstance(descriptor, property)
 
-def test_setting_has_alamat():
-    assert hasattr(Setting, "alamat")
+def test_pembayarans_has_semester_id():
+    assert hasattr(Pembayarans, "semester_id")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "alamat" in klass.__dict__:
-            descriptor = klass.__dict__["alamat"]
+    for klass in Pembayarans.__mro__:
+        if "semester_id" in klass.__dict__:
+            descriptor = klass.__dict__["semester_id"]
             break
     assert isinstance(descriptor, property)
 
-def test_setting_has_logo_kampus():
-    assert hasattr(Setting, "logo_kampus")
+def test_pembayarans_has_prefix():
+    assert hasattr(Pembayarans, "prefix")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "logo_kampus" in klass.__dict__:
-            descriptor = klass.__dict__["logo_kampus"]
+    for klass in Pembayarans.__mro__:
+        if "prefix" in klass.__dict__:
+            descriptor = klass.__dict__["prefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_setting_has_no_telepon():
-    assert hasattr(Setting, "no_telepon")
+def test_pembayarans_has_biaya_kuliah_id():
+    assert hasattr(Pembayarans, "biaya_kuliah_id")
     descriptor = None
-    for klass in Setting.__mro__:
-        if "no_telepon" in klass.__dict__:
-            descriptor = klass.__dict__["no_telepon"]
+    for klass in Pembayarans.__mro__:
+        if "biaya_kuliah_id" in klass.__dict__:
+            descriptor = klass.__dict__["biaya_kuliah_id"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_masterbiaya_is_not_abstract():
-    assert not inspect.isabstract(masterBiaya)
-
-
-def test_masterbiaya_constructor_exists():
-    assert callable(masterBiaya.__init__)
-
-
-def test_masterbiaya_constructor_args():
-    sig = inspect.signature(masterBiaya.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "jml_bayar" in params, "Missing parameter 'jml_bayar'"
-    assert "nama_biaya" in params, "Missing parameter 'nama_biaya'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "jumlah_biaya" in params, "Missing parameter 'jumlah_biaya'"
-    assert "user_id" in params, "Missing parameter 'user_id'"
-    assert "kategori_id" in params, "Missing parameter 'kategori_id'"
-
-def test_masterbiaya_has_status():
-    assert hasattr(masterBiaya, "status")
+def test_pembayarans_has_jumlah():
+    assert hasattr(Pembayarans, "jumlah")
     descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterbiaya_has_jml_bayar():
-    assert hasattr(masterBiaya, "jml_bayar")
-    descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "jml_bayar" in klass.__dict__:
-            descriptor = klass.__dict__["jml_bayar"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterbiaya_has_nama_biaya():
-    assert hasattr(masterBiaya, "nama_biaya")
-    descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "nama_biaya" in klass.__dict__:
-            descriptor = klass.__dict__["nama_biaya"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterbiaya_has_id():
-    assert hasattr(masterBiaya, "id")
-    descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterbiaya_has_jumlah_biaya():
-    assert hasattr(masterBiaya, "jumlah_biaya")
-    descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "jumlah_biaya" in klass.__dict__:
-            descriptor = klass.__dict__["jumlah_biaya"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterbiaya_has_user_id():
-    assert hasattr(masterBiaya, "user_id")
-    descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterbiaya_has_kategori_id():
-    assert hasattr(masterBiaya, "kategori_id")
-    descriptor = None
-    for klass in masterBiaya.__mro__:
-        if "kategori_id" in klass.__dict__:
-            descriptor = klass.__dict__["kategori_id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_menu_utama_is_not_abstract():
-    assert not inspect.isabstract(Menu_Utama)
-
-
-def test_menu_utama_constructor_exists():
-    assert callable(Menu_Utama.__init__)
-
-
-def test_menu_utama_constructor_args():
-    sig = inspect.signature(Menu_Utama.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_masterkategori_is_not_abstract():
-    assert not inspect.isabstract(masterKategori)
-
-
-def test_masterkategori_constructor_exists():
-    assert callable(masterKategori.__init__)
-
-
-def test_masterkategori_constructor_args():
-    sig = inspect.signature(masterKategori.__init__)
-    params = list(sig.parameters.keys())
-    assert "user_id" in params, "Missing parameter 'user_id'"
-    assert "nama_kategori" in params, "Missing parameter 'nama_kategori'"
-    assert "status" in params, "Missing parameter 'status'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_masterkategori_has_user_id():
-    assert hasattr(masterKategori, "user_id")
-    descriptor = None
-    for klass in masterKategori.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterkategori_has_nama_kategori():
-    assert hasattr(masterKategori, "nama_kategori")
-    descriptor = None
-    for klass in masterKategori.__mro__:
-        if "nama_kategori" in klass.__dict__:
-            descriptor = klass.__dict__["nama_kategori"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterkategori_has_status():
-    assert hasattr(masterKategori, "status")
-    descriptor = None
-    for klass in masterKategori.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_masterkategori_has_id():
-    assert hasattr(masterKategori, "id")
-    descriptor = None
-    for klass in masterKategori.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_login_is_not_abstract():
-    assert not inspect.isabstract(Login)
-
-
-def test_login_constructor_exists():
-    assert callable(Login.__init__)
-
-
-def test_login_constructor_args():
-    sig = inspect.signature(Login.__init__)
-    params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
-    assert "username" in params, "Missing parameter 'username'"
-
-def test_login_has_password():
-    assert hasattr(Login, "password")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_login_has_username():
-    assert hasattr(Login, "username")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_prodis_is_not_abstract():
-    assert not inspect.isabstract(Prodis)
-
-
-def test_prodis_constructor_exists():
-    assert callable(Prodis.__init__)
-
-
-def test_prodis_constructor_args():
-    sig = inspect.signature(Prodis.__init__)
-    params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "user_id" in params, "Missing parameter 'user_id'"
-    assert "prodi_name" in params, "Missing parameter 'prodi_name'"
-    assert "kapasitas_max" in params, "Missing parameter 'kapasitas_max'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_prodis_has_status():
-    assert hasattr(Prodis, "status")
-    descriptor = None
-    for klass in Prodis.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prodis_has_user_id():
-    assert hasattr(Prodis, "user_id")
-    descriptor = None
-    for klass in Prodis.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prodis_has_prodi_name():
-    assert hasattr(Prodis, "prodi_name")
-    descriptor = None
-    for klass in Prodis.__mro__:
-        if "prodi_name" in klass.__dict__:
-            descriptor = klass.__dict__["prodi_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prodis_has_kapasitas_max():
-    assert hasattr(Prodis, "kapasitas_max")
-    descriptor = None
-    for klass in Prodis.__mro__:
-        if "kapasitas_max" in klass.__dict__:
-            descriptor = klass.__dict__["kapasitas_max"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_prodis_has_id():
-    assert hasattr(Prodis, "id")
-    descriptor = None
-    for klass in Prodis.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jurusans_is_not_abstract():
-    assert not inspect.isabstract(Jurusans)
-
-
-def test_jurusans_constructor_exists():
-    assert callable(Jurusans.__init__)
-
-
-def test_jurusans_constructor_args():
-    sig = inspect.signature(Jurusans.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "jurusan_name" in params, "Missing parameter 'jurusan_name'"
-    assert "prodi_id" in params, "Missing parameter 'prodi_id'"
-
-def test_jurusans_has_id():
-    assert hasattr(Jurusans, "id")
-    descriptor = None
-    for klass in Jurusans.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jurusans_has_jurusan_name():
-    assert hasattr(Jurusans, "jurusan_name")
-    descriptor = None
-    for klass in Jurusans.__mro__:
-        if "jurusan_name" in klass.__dict__:
-            descriptor = klass.__dict__["jurusan_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jurusans_has_prodi_id():
-    assert hasattr(Jurusans, "prodi_id")
-    descriptor = None
-    for klass in Jurusans.__mro__:
-        if "prodi_id" in klass.__dict__:
-            descriptor = klass.__dict__["prodi_id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mahasiswas_is_not_abstract():
-    assert not inspect.isabstract(Mahasiswas)
-
-
-def test_mahasiswas_constructor_exists():
-    assert callable(Mahasiswas.__init__)
-
-
-def test_mahasiswas_constructor_args():
-    sig = inspect.signature(Mahasiswas.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_mahasiswas_has_id():
-    assert hasattr(Mahasiswas, "id")
-    descriptor = None
-    for klass in Mahasiswas.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in Pembayarans.__mro__:
+        if "jumlah" in klass.__dict__:
+            descriptor = klass.__dict__["jumlah"]
             break
     assert isinstance(descriptor, property)
 
@@ -894,6 +894,90 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Setting_strategy = st.builds(
+    Setting,
+    logo_kampus=
+        safe_text,
+    nama=
+        safe_text,
+    user_id=
+        st.integers(),
+    id=
+        st.integers(),
+    alamat=
+        safe_text,
+    email=
+        safe_text,
+    no_telepon=
+        safe_text,
+    no_faximile=
+        safe_text
+)
+masterBiaya_strategy = st.builds(
+    masterBiaya,
+    status=
+        st.integers(),
+    nama_biaya=
+        safe_text,
+    id=
+        st.integers(),
+    jumlah_biaya=
+        st.integers(),
+    kategori_id=
+        st.integers(),
+    jml_bayar=
+        st.integers(),
+    user_id=
+        st.integers()
+)
+Menu_Utama_strategy = st.builds(
+    Menu_Utama,
+)
+masterKategori_strategy = st.builds(
+    masterKategori,
+    nama_kategori=
+        safe_text,
+    status=
+        st.integers(),
+    id=
+        st.integers(),
+    user_id=
+        st.integers()
+)
+Login_strategy = st.builds(
+    Login,
+    password=
+        safe_text,
+    username=
+        safe_text
+)
+Prodis_strategy = st.builds(
+    Prodis,
+    id=
+        st.integers(),
+    prodi_name=
+        safe_text,
+    kapasitas_max=
+        st.integers(),
+    status=
+        st.integers(),
+    user_id=
+        st.integers()
+)
+Jurusans_strategy = st.builds(
+    Jurusans,
+    jurusan_name=
+        safe_text,
+    prodi_id=
+        st.integers(),
+    id=
+        st.integers()
+)
+Mahasiswas_strategy = st.builds(
+    Mahasiswas,
+    id=
+        st.integers()
+)
 Tata_Usaha_Actor_strategy = st.builds(
     Tata_Usaha_Actor,
 )
@@ -959,115 +1043,311 @@ Sistem_Mahasiswa_Login_UseCase_strategy = st.builds(
 )
 Pembayarans_strategy = st.builds(
     Pembayarans,
-    jumlah=
-        st.integers(),
-    prefix=
-        safe_text,
-    semester_id=
-        st.integers(),
-    biaya_kuliah_id=
-        st.integers(),
-    keterangan=
-        safe_text,
-    no_pembayaran=
-        safe_text,
-    pembayaran_tipe=
+    user_id=
         st.integers(),
     mahasiswa_id=
         st.integers(),
+    keterangan=
+        safe_text,
+    status=
+        st.integers(),
+    pembayaran_tipe=
+        st.integers(),
+    no_pembayaran=
+        safe_text,
+    id=
+        st.integers(),
     tanggal_pembayaran=
         safe_text,
-    user_id=
+    semester_id=
         st.integers(),
-    id=
+    prefix=
+        safe_text,
+    biaya_kuliah_id=
         st.integers(),
-    status=
+    jumlah=
         st.integers()
 )
-Setting_strategy = st.builds(
-    Setting,
-    email=
-        safe_text,
-    user_id=
-        st.integers(),
-    no_faximile=
-        safe_text,
-    id=
-        st.integers(),
-    nama=
-        safe_text,
-    alamat=
-        safe_text,
-    logo_kampus=
-        safe_text,
-    no_telepon=
-        safe_text
-)
-masterBiaya_strategy = st.builds(
-    masterBiaya,
-    status=
-        st.integers(),
-    jml_bayar=
-        st.integers(),
-    nama_biaya=
-        safe_text,
-    id=
-        st.integers(),
-    jumlah_biaya=
-        st.integers(),
-    user_id=
-        st.integers(),
-    kategori_id=
-        st.integers()
-)
-Menu_Utama_strategy = st.builds(
-    Menu_Utama,
-)
-masterKategori_strategy = st.builds(
-    masterKategori,
-    user_id=
-        st.integers(),
-    nama_kategori=
-        safe_text,
-    status=
-        st.integers(),
-    id=
-        st.integers()
-)
-Login_strategy = st.builds(
-    Login,
-    password=
-        safe_text,
-    username=
-        safe_text
-)
-Prodis_strategy = st.builds(
-    Prodis,
-    status=
-        st.integers(),
-    user_id=
-        st.integers(),
-    prodi_name=
-        safe_text,
-    kapasitas_max=
-        st.integers(),
-    id=
-        st.integers()
-)
-Jurusans_strategy = st.builds(
-    Jurusans,
-    id=
-        st.integers(),
-    jurusan_name=
-        safe_text,
-    prodi_id=
-        st.integers()
-)
-Mahasiswas_strategy = st.builds(
-    Mahasiswas,
-    id=
-        st.integers()
-)
+
+@given(instance=Setting_strategy)
+@settings(max_examples=50)
+def test_setting_instantiation(instance):
+    assert isinstance(instance, Setting)
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_logo_kampus_setter(instance):
+    original = instance.logo_kampus
+    instance.logo_kampus = original
+    assert instance.logo_kampus == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_nama_setter(instance):
+    original = instance.nama
+    instance.nama = original
+    assert instance.nama == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_alamat_setter(instance):
+    original = instance.alamat
+    instance.alamat = original
+    assert instance.alamat == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_no_telepon_setter(instance):
+    original = instance.no_telepon
+    instance.no_telepon = original
+    assert instance.no_telepon == original
+
+
+
+@given(instance=Setting_strategy)
+def test_setting_no_faximile_setter(instance):
+    original = instance.no_faximile
+    instance.no_faximile = original
+    assert instance.no_faximile == original
+
+@given(instance=masterBiaya_strategy)
+@settings(max_examples=50)
+def test_masterbiaya_instantiation(instance):
+    assert isinstance(instance, masterBiaya)
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_nama_biaya_setter(instance):
+    original = instance.nama_biaya
+    instance.nama_biaya = original
+    assert instance.nama_biaya == original
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_jumlah_biaya_setter(instance):
+    original = instance.jumlah_biaya
+    instance.jumlah_biaya = original
+    assert instance.jumlah_biaya == original
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_kategori_id_setter(instance):
+    original = instance.kategori_id
+    instance.kategori_id = original
+    assert instance.kategori_id == original
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_jml_bayar_setter(instance):
+    original = instance.jml_bayar
+    instance.jml_bayar = original
+    assert instance.jml_bayar == original
+
+
+
+@given(instance=masterBiaya_strategy)
+def test_masterbiaya_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
+@given(instance=Menu_Utama_strategy)
+@settings(max_examples=50)
+def test_menu_utama_instantiation(instance):
+    assert isinstance(instance, Menu_Utama)
+
+@given(instance=masterKategori_strategy)
+@settings(max_examples=50)
+def test_masterkategori_instantiation(instance):
+    assert isinstance(instance, masterKategori)
+
+
+
+@given(instance=masterKategori_strategy)
+def test_masterkategori_nama_kategori_setter(instance):
+    original = instance.nama_kategori
+    instance.nama_kategori = original
+    assert instance.nama_kategori == original
+
+
+
+@given(instance=masterKategori_strategy)
+def test_masterkategori_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=masterKategori_strategy)
+def test_masterkategori_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=masterKategori_strategy)
+def test_masterkategori_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
+@given(instance=Login_strategy)
+@settings(max_examples=50)
+def test_login_instantiation(instance):
+    assert isinstance(instance, Login)
+
+
+
+@given(instance=Login_strategy)
+def test_login_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Login_strategy)
+def test_login_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+@given(instance=Prodis_strategy)
+@settings(max_examples=50)
+def test_prodis_instantiation(instance):
+    assert isinstance(instance, Prodis)
+
+
+
+@given(instance=Prodis_strategy)
+def test_prodis_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Prodis_strategy)
+def test_prodis_prodi_name_setter(instance):
+    original = instance.prodi_name
+    instance.prodi_name = original
+    assert instance.prodi_name == original
+
+
+
+@given(instance=Prodis_strategy)
+def test_prodis_kapasitas_max_setter(instance):
+    original = instance.kapasitas_max
+    instance.kapasitas_max = original
+    assert instance.kapasitas_max == original
+
+
+
+@given(instance=Prodis_strategy)
+def test_prodis_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=Prodis_strategy)
+def test_prodis_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
+@given(instance=Jurusans_strategy)
+@settings(max_examples=50)
+def test_jurusans_instantiation(instance):
+    assert isinstance(instance, Jurusans)
+
+
+
+@given(instance=Jurusans_strategy)
+def test_jurusans_jurusan_name_setter(instance):
+    original = instance.jurusan_name
+    instance.jurusan_name = original
+    assert instance.jurusan_name == original
+
+
+
+@given(instance=Jurusans_strategy)
+def test_jurusans_prodi_id_setter(instance):
+    original = instance.prodi_id
+    instance.prodi_id = original
+    assert instance.prodi_id == original
+
+
+
+@given(instance=Jurusans_strategy)
+def test_jurusans_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=Mahasiswas_strategy)
+@settings(max_examples=50)
+def test_mahasiswas_instantiation(instance):
+    assert isinstance(instance, Mahasiswas)
+
+
+
+@given(instance=Mahasiswas_strategy)
+def test_mahasiswas_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 @given(instance=Tata_Usaha_Actor_strategy)
 @settings(max_examples=50)
@@ -1179,108 +1459,6 @@ def test_sistem_mahasiswa_login_usecase_instantiation(instance):
 def test_pembayarans_instantiation(instance):
     assert isinstance(instance, Pembayarans)
 
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_jumlah_type(instance):
-    assert isinstance(instance.jumlah, int)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_jumlah_setter(instance):
-    original = instance.jumlah
-    instance.jumlah = original
-    assert instance.jumlah == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_prefix_setter(instance):
-    original = instance.prefix
-    instance.prefix = original
-    assert instance.prefix == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_semester_id_type(instance):
-    assert isinstance(instance.semester_id, int)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_semester_id_setter(instance):
-    original = instance.semester_id
-    instance.semester_id = original
-    assert instance.semester_id == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_biaya_kuliah_id_type(instance):
-    assert isinstance(instance.biaya_kuliah_id, int)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_biaya_kuliah_id_setter(instance):
-    original = instance.biaya_kuliah_id
-    instance.biaya_kuliah_id = original
-    assert instance.biaya_kuliah_id == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_keterangan_type(instance):
-    assert isinstance(instance.keterangan, str)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_keterangan_setter(instance):
-    original = instance.keterangan
-    instance.keterangan = original
-    assert instance.keterangan == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_no_pembayaran_type(instance):
-    assert isinstance(instance.no_pembayaran, str)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_no_pembayaran_setter(instance):
-    original = instance.no_pembayaran
-    instance.no_pembayaran = original
-    assert instance.no_pembayaran == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_pembayaran_tipe_type(instance):
-    assert isinstance(instance.pembayaran_tipe, int)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_pembayaran_tipe_setter(instance):
-    original = instance.pembayaran_tipe
-    instance.pembayaran_tipe = original
-    assert instance.pembayaran_tipe == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_mahasiswa_id_type(instance):
-    assert isinstance(instance.mahasiswa_id, int)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_mahasiswa_id_setter(instance):
-    original = instance.mahasiswa_id
-    instance.mahasiswa_id = original
-    assert instance.mahasiswa_id == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_tanggal_pembayaran_type(instance):
-    assert isinstance(instance.tanggal_pembayaran, str)
-
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_tanggal_pembayaran_setter(instance):
-    original = instance.tanggal_pembayaran
-    instance.tanggal_pembayaran = original
-    assert instance.tanggal_pembayaran == original
-
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_user_id_type(instance):
-    assert isinstance(instance.user_id, int)
 
 
 @given(instance=Pembayarans_strategy)
@@ -1289,20 +1467,22 @@ def test_pembayarans_user_id_setter(instance):
     instance.user_id = original
     assert instance.user_id == original
 
-@given(instance=Pembayarans_strategy)
-def test_pembayarans_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Pembayarans_strategy)
-def test_pembayarans_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+def test_pembayarans_mahasiswa_id_setter(instance):
+    original = instance.mahasiswa_id
+    instance.mahasiswa_id = original
+    assert instance.mahasiswa_id == original
+
+
 
 @given(instance=Pembayarans_strategy)
-def test_pembayarans_status_type(instance):
-    assert isinstance(instance.status, int)
+def test_pembayarans_keterangan_setter(instance):
+    original = instance.keterangan
+    instance.keterangan = original
+    assert instance.keterangan == original
+
 
 
 @given(instance=Pembayarans_strategy)
@@ -1311,372 +1491,66 @@ def test_pembayarans_status_setter(instance):
     instance.status = original
     assert instance.status == original
 
-@given(instance=Setting_strategy)
-@settings(max_examples=50)
-def test_setting_instantiation(instance):
-    assert isinstance(instance, Setting)
-
-@given(instance=Setting_strategy)
-def test_setting_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
-@given(instance=Setting_strategy)
-def test_setting_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Setting_strategy)
-def test_setting_user_id_type(instance):
-    assert isinstance(instance.user_id, int)
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_pembayaran_tipe_setter(instance):
+    original = instance.pembayaran_tipe
+    instance.pembayaran_tipe = original
+    assert instance.pembayaran_tipe == original
 
 
-@given(instance=Setting_strategy)
-def test_setting_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
 
-@given(instance=Setting_strategy)
-def test_setting_no_faximile_type(instance):
-    assert isinstance(instance.no_faximile, str)
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_no_pembayaran_setter(instance):
+    original = instance.no_pembayaran
+    instance.no_pembayaran = original
+    assert instance.no_pembayaran == original
 
 
-@given(instance=Setting_strategy)
-def test_setting_no_faximile_setter(instance):
-    original = instance.no_faximile
-    instance.no_faximile = original
-    assert instance.no_faximile == original
 
-@given(instance=Setting_strategy)
-def test_setting_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Setting_strategy)
-def test_setting_id_setter(instance):
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=Setting_strategy)
-def test_setting_nama_type(instance):
-    assert isinstance(instance.nama, str)
 
 
-@given(instance=Setting_strategy)
-def test_setting_nama_setter(instance):
-    original = instance.nama
-    instance.nama = original
-    assert instance.nama == original
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_tanggal_pembayaran_setter(instance):
+    original = instance.tanggal_pembayaran
+    instance.tanggal_pembayaran = original
+    assert instance.tanggal_pembayaran == original
 
-@given(instance=Setting_strategy)
-def test_setting_alamat_type(instance):
-    assert isinstance(instance.alamat, str)
 
 
-@given(instance=Setting_strategy)
-def test_setting_alamat_setter(instance):
-    original = instance.alamat
-    instance.alamat = original
-    assert instance.alamat == original
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_semester_id_setter(instance):
+    original = instance.semester_id
+    instance.semester_id = original
+    assert instance.semester_id == original
 
-@given(instance=Setting_strategy)
-def test_setting_logo_kampus_type(instance):
-    assert isinstance(instance.logo_kampus, str)
 
 
-@given(instance=Setting_strategy)
-def test_setting_logo_kampus_setter(instance):
-    original = instance.logo_kampus
-    instance.logo_kampus = original
-    assert instance.logo_kampus == original
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_prefix_setter(instance):
+    original = instance.prefix
+    instance.prefix = original
+    assert instance.prefix == original
 
-@given(instance=Setting_strategy)
-def test_setting_no_telepon_type(instance):
-    assert isinstance(instance.no_telepon, str)
 
 
-@given(instance=Setting_strategy)
-def test_setting_no_telepon_setter(instance):
-    original = instance.no_telepon
-    instance.no_telepon = original
-    assert instance.no_telepon == original
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_biaya_kuliah_id_setter(instance):
+    original = instance.biaya_kuliah_id
+    instance.biaya_kuliah_id = original
+    assert instance.biaya_kuliah_id == original
 
-@given(instance=masterBiaya_strategy)
-@settings(max_examples=50)
-def test_masterbiaya_instantiation(instance):
-    assert isinstance(instance, masterBiaya)
 
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_status_type(instance):
-    assert isinstance(instance.status, int)
 
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_jml_bayar_type(instance):
-    assert isinstance(instance.jml_bayar, int)
-
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_jml_bayar_setter(instance):
-    original = instance.jml_bayar
-    instance.jml_bayar = original
-    assert instance.jml_bayar == original
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_nama_biaya_type(instance):
-    assert isinstance(instance.nama_biaya, str)
-
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_nama_biaya_setter(instance):
-    original = instance.nama_biaya
-    instance.nama_biaya = original
-    assert instance.nama_biaya == original
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_jumlah_biaya_type(instance):
-    assert isinstance(instance.jumlah_biaya, int)
-
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_jumlah_biaya_setter(instance):
-    original = instance.jumlah_biaya
-    instance.jumlah_biaya = original
-    assert instance.jumlah_biaya == original
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_user_id_type(instance):
-    assert isinstance(instance.user_id, int)
-
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_kategori_id_type(instance):
-    assert isinstance(instance.kategori_id, int)
-
-
-@given(instance=masterBiaya_strategy)
-def test_masterbiaya_kategori_id_setter(instance):
-    original = instance.kategori_id
-    instance.kategori_id = original
-    assert instance.kategori_id == original
-
-@given(instance=Menu_Utama_strategy)
-@settings(max_examples=50)
-def test_menu_utama_instantiation(instance):
-    assert isinstance(instance, Menu_Utama)
-
-@given(instance=masterKategori_strategy)
-@settings(max_examples=50)
-def test_masterkategori_instantiation(instance):
-    assert isinstance(instance, masterKategori)
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_user_id_type(instance):
-    assert isinstance(instance.user_id, int)
-
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_nama_kategori_type(instance):
-    assert isinstance(instance.nama_kategori, str)
-
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_nama_kategori_setter(instance):
-    original = instance.nama_kategori
-    instance.nama_kategori = original
-    assert instance.nama_kategori == original
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_status_type(instance):
-    assert isinstance(instance.status, int)
-
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=masterKategori_strategy)
-def test_masterkategori_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Login_strategy)
-@settings(max_examples=50)
-def test_login_instantiation(instance):
-    assert isinstance(instance, Login)
-
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Login_strategy)
-def test_login_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Login_strategy)
-def test_login_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Prodis_strategy)
-@settings(max_examples=50)
-def test_prodis_instantiation(instance):
-    assert isinstance(instance, Prodis)
-
-@given(instance=Prodis_strategy)
-def test_prodis_status_type(instance):
-    assert isinstance(instance.status, int)
-
-
-@given(instance=Prodis_strategy)
-def test_prodis_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=Prodis_strategy)
-def test_prodis_user_id_type(instance):
-    assert isinstance(instance.user_id, int)
-
-
-@given(instance=Prodis_strategy)
-def test_prodis_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=Prodis_strategy)
-def test_prodis_prodi_name_type(instance):
-    assert isinstance(instance.prodi_name, str)
-
-
-@given(instance=Prodis_strategy)
-def test_prodis_prodi_name_setter(instance):
-    original = instance.prodi_name
-    instance.prodi_name = original
-    assert instance.prodi_name == original
-
-@given(instance=Prodis_strategy)
-def test_prodis_kapasitas_max_type(instance):
-    assert isinstance(instance.kapasitas_max, int)
-
-
-@given(instance=Prodis_strategy)
-def test_prodis_kapasitas_max_setter(instance):
-    original = instance.kapasitas_max
-    instance.kapasitas_max = original
-    assert instance.kapasitas_max == original
-
-@given(instance=Prodis_strategy)
-def test_prodis_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Prodis_strategy)
-def test_prodis_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Jurusans_strategy)
-@settings(max_examples=50)
-def test_jurusans_instantiation(instance):
-    assert isinstance(instance, Jurusans)
-
-@given(instance=Jurusans_strategy)
-def test_jurusans_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Jurusans_strategy)
-def test_jurusans_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Jurusans_strategy)
-def test_jurusans_jurusan_name_type(instance):
-    assert isinstance(instance.jurusan_name, str)
-
-
-@given(instance=Jurusans_strategy)
-def test_jurusans_jurusan_name_setter(instance):
-    original = instance.jurusan_name
-    instance.jurusan_name = original
-    assert instance.jurusan_name == original
-
-@given(instance=Jurusans_strategy)
-def test_jurusans_prodi_id_type(instance):
-    assert isinstance(instance.prodi_id, int)
-
-
-@given(instance=Jurusans_strategy)
-def test_jurusans_prodi_id_setter(instance):
-    original = instance.prodi_id
-    instance.prodi_id = original
-    assert instance.prodi_id == original
-
-@given(instance=Mahasiswas_strategy)
-@settings(max_examples=50)
-def test_mahasiswas_instantiation(instance):
-    assert isinstance(instance, Mahasiswas)
-
-@given(instance=Mahasiswas_strategy)
-def test_mahasiswas_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Mahasiswas_strategy)
-def test_mahasiswas_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+@given(instance=Pembayarans_strategy)
+def test_pembayarans_jumlah_setter(instance):
+    original = instance.jumlah
+    instance.jumlah = original
+    assert instance.jumlah == original

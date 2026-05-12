@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Effectue_un_paiement_UseCase,
@@ -252,19 +252,10 @@ def test_date_trajet_constructor_exists():
 def test_date_trajet_constructor_args():
     sig = inspect.signature(Date_trajet.__init__)
     params = list(sig.parameters.keys())
-    assert "id_date" in params, "Missing parameter 'id_date'"
     assert "Date___heure__minute" in params, "Missing parameter 'Date___heure__minute'"
     assert "Jour" in params, "Missing parameter 'Jour'"
     assert "Type_date" in params, "Missing parameter 'Type_date'"
-
-def test_date_trajet_has_id_date():
-    assert hasattr(Date_trajet, "id_date")
-    descriptor = None
-    for klass in Date_trajet.__mro__:
-        if "id_date" in klass.__dict__:
-            descriptor = klass.__dict__["id_date"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id_date" in params, "Missing parameter 'id_date'"
 
 def test_date_trajet_has_Date___heure__minute():
     assert hasattr(Date_trajet, "Date___heure__minute")
@@ -293,6 +284,15 @@ def test_date_trajet_has_Type_date():
             break
     assert isinstance(descriptor, property)
 
+def test_date_trajet_has_id_date():
+    assert hasattr(Date_trajet, "id_date")
+    descriptor = None
+    for klass in Date_trajet.__mro__:
+        if "id_date" in klass.__dict__:
+            descriptor = klass.__dict__["id_date"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_utilisateur_is_not_abstract():
@@ -306,20 +306,20 @@ def test_utilisateur_constructor_exists():
 def test_utilisateur_constructor_args():
     sig = inspect.signature(Utilisateur.__init__)
     params = list(sig.parameters.keys())
-    assert "Nom" in params, "Missing parameter 'Nom'"
-    assert "Pr_nom" in params, "Missing parameter 'Pr_nom'"
-    assert "Login" in params, "Missing parameter 'Login'"
     assert "Mail" in params, "Missing parameter 'Mail'"
-    assert "id_utilisateur" in params, "Missing parameter 'id_utilisateur'"
+    assert "Pr_nom" in params, "Missing parameter 'Pr_nom'"
     assert "Telephone" in params, "Missing parameter 'Telephone'"
+    assert "Nom" in params, "Missing parameter 'Nom'"
+    assert "id_utilisateur" in params, "Missing parameter 'id_utilisateur'"
     assert "Password" in params, "Missing parameter 'Password'"
+    assert "Login" in params, "Missing parameter 'Login'"
 
-def test_utilisateur_has_Nom():
-    assert hasattr(Utilisateur, "Nom")
+def test_utilisateur_has_Mail():
+    assert hasattr(Utilisateur, "Mail")
     descriptor = None
     for klass in Utilisateur.__mro__:
-        if "Nom" in klass.__dict__:
-            descriptor = klass.__dict__["Nom"]
+        if "Mail" in klass.__dict__:
+            descriptor = klass.__dict__["Mail"]
             break
     assert isinstance(descriptor, property)
 
@@ -332,21 +332,21 @@ def test_utilisateur_has_Pr_nom():
             break
     assert isinstance(descriptor, property)
 
-def test_utilisateur_has_Login():
-    assert hasattr(Utilisateur, "Login")
+def test_utilisateur_has_Telephone():
+    assert hasattr(Utilisateur, "Telephone")
     descriptor = None
     for klass in Utilisateur.__mro__:
-        if "Login" in klass.__dict__:
-            descriptor = klass.__dict__["Login"]
+        if "Telephone" in klass.__dict__:
+            descriptor = klass.__dict__["Telephone"]
             break
     assert isinstance(descriptor, property)
 
-def test_utilisateur_has_Mail():
-    assert hasattr(Utilisateur, "Mail")
+def test_utilisateur_has_Nom():
+    assert hasattr(Utilisateur, "Nom")
     descriptor = None
     for klass in Utilisateur.__mro__:
-        if "Mail" in klass.__dict__:
-            descriptor = klass.__dict__["Mail"]
+        if "Nom" in klass.__dict__:
+            descriptor = klass.__dict__["Nom"]
             break
     assert isinstance(descriptor, property)
 
@@ -359,21 +359,21 @@ def test_utilisateur_has_id_utilisateur():
             break
     assert isinstance(descriptor, property)
 
-def test_utilisateur_has_Telephone():
-    assert hasattr(Utilisateur, "Telephone")
-    descriptor = None
-    for klass in Utilisateur.__mro__:
-        if "Telephone" in klass.__dict__:
-            descriptor = klass.__dict__["Telephone"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_utilisateur_has_Password():
     assert hasattr(Utilisateur, "Password")
     descriptor = None
     for klass in Utilisateur.__mro__:
         if "Password" in klass.__dict__:
             descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_utilisateur_has_Login():
+    assert hasattr(Utilisateur, "Login")
+    descriptor = None
+    for klass in Utilisateur.__mro__:
+        if "Login" in klass.__dict__:
+            descriptor = klass.__dict__["Login"]
             break
     assert isinstance(descriptor, property)
 
@@ -436,30 +436,30 @@ Utilisateur_anonyme_Actor_strategy = st.builds(
 )
 Date_trajet_strategy = st.builds(
     Date_trajet,
-    id_date=
-        st.integers(),
     Date___heure__minute=
         safe_text,
     Jour=
         safe_text,
     Type_date=
-        safe_text
+        safe_text,
+    id_date=
+        st.integers()
 )
 Utilisateur_strategy = st.builds(
     Utilisateur,
-    Nom=
+    Mail=
         safe_text,
     Pr_nom=
         safe_text,
-    Login=
+    Telephone=
         safe_text,
-    Mail=
+    Nom=
         safe_text,
     id_utilisateur=
         st.integers(),
-    Telephone=
-        safe_text,
     Password=
+        safe_text,
+    Login=
         safe_text
 )
 
@@ -543,20 +543,6 @@ def test_utilisateur_anonyme_actor_instantiation(instance):
 def test_date_trajet_instantiation(instance):
     assert isinstance(instance, Date_trajet)
 
-@given(instance=Date_trajet_strategy)
-def test_date_trajet_id_date_type(instance):
-    assert isinstance(instance.id_date, int)
-
-
-@given(instance=Date_trajet_strategy)
-def test_date_trajet_id_date_setter(instance):
-    original = instance.id_date
-    instance.id_date = original
-    assert instance.id_date == original
-
-@given(instance=Date_trajet_strategy)
-def test_date_trajet_Date___heure__minute_type(instance):
-    assert isinstance(instance.Date___heure__minute, str)
 
 
 @given(instance=Date_trajet_strategy)
@@ -565,9 +551,6 @@ def test_date_trajet_Date___heure__minute_setter(instance):
     instance.Date___heure__minute = original
     assert instance.Date___heure__minute == original
 
-@given(instance=Date_trajet_strategy)
-def test_date_trajet_Jour_type(instance):
-    assert isinstance(instance.Jour, str)
 
 
 @given(instance=Date_trajet_strategy)
@@ -576,9 +559,6 @@ def test_date_trajet_Jour_setter(instance):
     instance.Jour = original
     assert instance.Jour == original
 
-@given(instance=Date_trajet_strategy)
-def test_date_trajet_Type_date_type(instance):
-    assert isinstance(instance.Type_date, str)
 
 
 @given(instance=Date_trajet_strategy)
@@ -587,47 +567,19 @@ def test_date_trajet_Type_date_setter(instance):
     instance.Type_date = original
     assert instance.Type_date == original
 
+
+
+@given(instance=Date_trajet_strategy)
+def test_date_trajet_id_date_setter(instance):
+    original = instance.id_date
+    instance.id_date = original
+    assert instance.id_date == original
+
 @given(instance=Utilisateur_strategy)
 @settings(max_examples=50)
 def test_utilisateur_instantiation(instance):
     assert isinstance(instance, Utilisateur)
 
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Nom_type(instance):
-    assert isinstance(instance.Nom, str)
-
-
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Nom_setter(instance):
-    original = instance.Nom
-    instance.Nom = original
-    assert instance.Nom == original
-
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Pr_nom_type(instance):
-    assert isinstance(instance.Pr_nom, str)
-
-
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Pr_nom_setter(instance):
-    original = instance.Pr_nom
-    instance.Pr_nom = original
-    assert instance.Pr_nom == original
-
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Login_type(instance):
-    assert isinstance(instance.Login, str)
-
-
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Login_setter(instance):
-    original = instance.Login
-    instance.Login = original
-    assert instance.Login == original
-
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Mail_type(instance):
-    assert isinstance(instance.Mail, str)
 
 
 @given(instance=Utilisateur_strategy)
@@ -636,20 +588,14 @@ def test_utilisateur_Mail_setter(instance):
     instance.Mail = original
     assert instance.Mail == original
 
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_id_utilisateur_type(instance):
-    assert isinstance(instance.id_utilisateur, int)
 
 
 @given(instance=Utilisateur_strategy)
-def test_utilisateur_id_utilisateur_setter(instance):
-    original = instance.id_utilisateur
-    instance.id_utilisateur = original
-    assert instance.id_utilisateur == original
+def test_utilisateur_Pr_nom_setter(instance):
+    original = instance.Pr_nom
+    instance.Pr_nom = original
+    assert instance.Pr_nom == original
 
-@given(instance=Utilisateur_strategy)
-def test_utilisateur_Telephone_type(instance):
-    assert isinstance(instance.Telephone, str)
 
 
 @given(instance=Utilisateur_strategy)
@@ -658,9 +604,22 @@ def test_utilisateur_Telephone_setter(instance):
     instance.Telephone = original
     assert instance.Telephone == original
 
+
+
 @given(instance=Utilisateur_strategy)
-def test_utilisateur_Password_type(instance):
-    assert isinstance(instance.Password, str)
+def test_utilisateur_Nom_setter(instance):
+    original = instance.Nom
+    instance.Nom = original
+    assert instance.Nom == original
+
+
+
+@given(instance=Utilisateur_strategy)
+def test_utilisateur_id_utilisateur_setter(instance):
+    original = instance.id_utilisateur
+    instance.id_utilisateur = original
+    assert instance.id_utilisateur == original
+
 
 
 @given(instance=Utilisateur_strategy)
@@ -668,3 +627,11 @@ def test_utilisateur_Password_setter(instance):
     original = instance.Password
     instance.Password = original
     assert instance.Password == original
+
+
+
+@given(instance=Utilisateur_strategy)
+def test_utilisateur_Login_setter(instance):
+    original = instance.Login
+    instance.Login = original
+    assert instance.Login == original

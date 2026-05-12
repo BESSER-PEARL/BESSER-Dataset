@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Event,
-    statemachine::Condition,
-    statemachine::Transition,
-    statemachine::Command,
+from python_code import (
+    statemachine_Event,
+    statemachine_Condition,
+    statemachine_Transition,
+    statemachine_Command,
     Signal,
-    statemachine::OutputSignal,
-    statemachine::InputSignal,
-    statemachine::State,
-    statemachine::Signal,
-    statemachine::Statemachine,
+    statemachine_OutputSignal,
+    statemachine_InputSignal,
+    statemachine_State,
+    statemachine_Signal,
+    statemachine_Statemachine,
 )
 
 # =============================================================================
@@ -24,23 +24,23 @@ from classes import (
 
 
 
-def test_statemachine::event_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Event)
+def test_statemachine_event_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Event)
 
 
-def test_statemachine::event_constructor_exists():
-    assert callable(statemachine::Event.__init__)
+def test_statemachine_event_constructor_exists():
+    assert callable(statemachine_Event.__init__)
 
 
-def test_statemachine::event_constructor_args():
-    sig = inspect.signature(statemachine::Event.__init__)
+def test_statemachine_event_constructor_args():
+    sig = inspect.signature(statemachine_Event.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statemachine::event_has_value():
-    assert hasattr(statemachine::Event, "value")
+def test_statemachine_event_has_value():
+    assert hasattr(statemachine_Event, "value")
     descriptor = None
-    for klass in statemachine::Event.__mro__:
+    for klass in statemachine_Event.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -48,51 +48,51 @@ def test_statemachine::event_has_value():
 
 
 
-def test_statemachine::condition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Condition)
+def test_statemachine_condition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Condition)
 
 
-def test_statemachine::condition_constructor_exists():
-    assert callable(statemachine::Condition.__init__)
+def test_statemachine_condition_constructor_exists():
+    assert callable(statemachine_Condition.__init__)
 
 
-def test_statemachine::condition_constructor_args():
-    sig = inspect.signature(statemachine::Condition.__init__)
+def test_statemachine_condition_constructor_args():
+    sig = inspect.signature(statemachine_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::command_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Command)
+def test_statemachine_command_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Command)
 
 
-def test_statemachine::command_constructor_exists():
-    assert callable(statemachine::Command.__init__)
+def test_statemachine_command_constructor_exists():
+    assert callable(statemachine_Command.__init__)
 
 
-def test_statemachine::command_constructor_args():
-    sig = inspect.signature(statemachine::Command.__init__)
+def test_statemachine_command_constructor_args():
+    sig = inspect.signature(statemachine_Command.__init__)
     params = list(sig.parameters.keys())
     assert "newValue" in params, "Missing parameter 'newValue'"
 
-def test_statemachine::command_has_newValue():
-    assert hasattr(statemachine::Command, "newValue")
+def test_statemachine_command_has_newValue():
+    assert hasattr(statemachine_Command, "newValue")
     descriptor = None
-    for klass in statemachine::Command.__mro__:
+    for klass in statemachine_Command.__mro__:
         if "newValue" in klass.__dict__:
             descriptor = klass.__dict__["newValue"]
             break
@@ -114,51 +114,51 @@ def test_signal_constructor_args():
 
 
 
-def test_statemachine::outputsignal_is_not_abstract():
-    assert not inspect.isabstract(statemachine::OutputSignal)
+def test_statemachine_outputsignal_is_not_abstract():
+    assert not inspect.isabstract(statemachine_OutputSignal)
 
 
-def test_statemachine::outputsignal_constructor_exists():
-    assert callable(statemachine::OutputSignal.__init__)
+def test_statemachine_outputsignal_constructor_exists():
+    assert callable(statemachine_OutputSignal.__init__)
 
 
-def test_statemachine::outputsignal_constructor_args():
-    sig = inspect.signature(statemachine::OutputSignal.__init__)
+def test_statemachine_outputsignal_constructor_args():
+    sig = inspect.signature(statemachine_OutputSignal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::inputsignal_is_not_abstract():
-    assert not inspect.isabstract(statemachine::InputSignal)
+def test_statemachine_inputsignal_is_not_abstract():
+    assert not inspect.isabstract(statemachine_InputSignal)
 
 
-def test_statemachine::inputsignal_constructor_exists():
-    assert callable(statemachine::InputSignal.__init__)
+def test_statemachine_inputsignal_constructor_exists():
+    assert callable(statemachine_InputSignal.__init__)
 
 
-def test_statemachine::inputsignal_constructor_args():
-    sig = inspect.signature(statemachine::InputSignal.__init__)
+def test_statemachine_inputsignal_constructor_args():
+    sig = inspect.signature(statemachine_InputSignal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::state_has_name():
-    assert hasattr(statemachine::State, "name")
+def test_statemachine_state_has_name():
+    assert hasattr(statemachine_State, "name")
     descriptor = None
-    for klass in statemachine::State.__mro__:
+    for klass in statemachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,23 +166,23 @@ def test_statemachine::state_has_name():
 
 
 
-def test_statemachine::signal_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Signal)
+def test_statemachine_signal_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Signal)
 
 
-def test_statemachine::signal_constructor_exists():
-    assert callable(statemachine::Signal.__init__)
+def test_statemachine_signal_constructor_exists():
+    assert callable(statemachine_Signal.__init__)
 
 
-def test_statemachine::signal_constructor_args():
-    sig = inspect.signature(statemachine::Signal.__init__)
+def test_statemachine_signal_constructor_args():
+    sig = inspect.signature(statemachine_Signal.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::signal_has_name():
-    assert hasattr(statemachine::Signal, "name")
+def test_statemachine_signal_has_name():
+    assert hasattr(statemachine_Signal, "name")
     descriptor = None
-    for klass in statemachine::Signal.__mro__:
+    for klass in statemachine_Signal.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -190,16 +190,16 @@ def test_statemachine::signal_has_name():
 
 
 
-def test_statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Statemachine)
+def test_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Statemachine)
 
 
-def test_statemachine::statemachine_constructor_exists():
-    assert callable(statemachine::Statemachine.__init__)
+def test_statemachine_statemachine_constructor_exists():
+    assert callable(statemachine_Statemachine.__init__)
 
 
-def test_statemachine::statemachine_constructor_args():
-    sig = inspect.signature(statemachine::Statemachine.__init__)
+def test_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(statemachine_Statemachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -214,83 +214,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Event_strategy = st.builds(
-    statemachine::Event,
+statemachine_Event_strategy = st.builds(
+    statemachine_Event,
     value=
         st.booleans()
 )
-statemachine::Condition_strategy = st.builds(
-    statemachine::Condition,
+statemachine_Condition_strategy = st.builds(
+    statemachine_Condition,
 )
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
 )
-statemachine::Command_strategy = st.builds(
-    statemachine::Command,
+statemachine_Command_strategy = st.builds(
+    statemachine_Command,
     newValue=
         st.booleans()
 )
 Signal_strategy = st.builds(
     Signal,
 )
-statemachine::OutputSignal_strategy = st.builds(
-    statemachine::OutputSignal,
+statemachine_OutputSignal_strategy = st.builds(
+    statemachine_OutputSignal,
 )
-statemachine::InputSignal_strategy = st.builds(
-    statemachine::InputSignal,
+statemachine_InputSignal_strategy = st.builds(
+    statemachine_InputSignal,
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
+statemachine_State_strategy = st.builds(
+    statemachine_State,
     name=
         safe_text
 )
-statemachine::Signal_strategy = st.builds(
-    statemachine::Signal,
+statemachine_Signal_strategy = st.builds(
+    statemachine_Signal,
     name=
         safe_text
 )
-statemachine::Statemachine_strategy = st.builds(
-    statemachine::Statemachine,
+statemachine_Statemachine_strategy = st.builds(
+    statemachine_Statemachine,
 )
 
-@given(instance=statemachine::Event_strategy)
+@given(instance=statemachine_Event_strategy)
 @settings(max_examples=50)
-def test_statemachine::event_instantiation(instance):
-    assert isinstance(instance, statemachine::Event)
-
-@given(instance=statemachine::Event_strategy)
-def test_statemachine::event_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_statemachine_event_instantiation(instance):
+    assert isinstance(instance, statemachine_Event)
 
 
-@given(instance=statemachine::Event_strategy)
-def test_statemachine::event_value_setter(instance):
+
+@given(instance=statemachine_Event_strategy)
+def test_statemachine_event_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=statemachine::Condition_strategy)
+@given(instance=statemachine_Condition_strategy)
 @settings(max_examples=50)
-def test_statemachine::condition_instantiation(instance):
-    assert isinstance(instance, statemachine::Condition)
+def test_statemachine_condition_instantiation(instance):
+    assert isinstance(instance, statemachine_Condition)
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
-@given(instance=statemachine::Command_strategy)
+@given(instance=statemachine_Command_strategy)
 @settings(max_examples=50)
-def test_statemachine::command_instantiation(instance):
-    assert isinstance(instance, statemachine::Command)
-
-@given(instance=statemachine::Command_strategy)
-def test_statemachine::command_newValue_type(instance):
-    assert isinstance(instance.newValue, bool)
+def test_statemachine_command_instantiation(instance):
+    assert isinstance(instance, statemachine_Command)
 
 
-@given(instance=statemachine::Command_strategy)
-def test_statemachine::command_newValue_setter(instance):
+
+@given(instance=statemachine_Command_strategy)
+def test_statemachine_command_newValue_setter(instance):
     original = instance.newValue
     instance.newValue = original
     assert instance.newValue == original
@@ -300,49 +294,43 @@ def test_statemachine::command_newValue_setter(instance):
 def test_signal_instantiation(instance):
     assert isinstance(instance, Signal)
 
-@given(instance=statemachine::OutputSignal_strategy)
+@given(instance=statemachine_OutputSignal_strategy)
 @settings(max_examples=50)
-def test_statemachine::outputsignal_instantiation(instance):
-    assert isinstance(instance, statemachine::OutputSignal)
+def test_statemachine_outputsignal_instantiation(instance):
+    assert isinstance(instance, statemachine_OutputSignal)
 
-@given(instance=statemachine::InputSignal_strategy)
+@given(instance=statemachine_InputSignal_strategy)
 @settings(max_examples=50)
-def test_statemachine::inputsignal_instantiation(instance):
-    assert isinstance(instance, statemachine::InputSignal)
+def test_statemachine_inputsignal_instantiation(instance):
+    assert isinstance(instance, statemachine_InputSignal)
 
-@given(instance=statemachine::State_strategy)
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_setter(instance):
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachine::Signal_strategy)
+@given(instance=statemachine_Signal_strategy)
 @settings(max_examples=50)
-def test_statemachine::signal_instantiation(instance):
-    assert isinstance(instance, statemachine::Signal)
-
-@given(instance=statemachine::Signal_strategy)
-def test_statemachine::signal_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_signal_instantiation(instance):
+    assert isinstance(instance, statemachine_Signal)
 
 
-@given(instance=statemachine::Signal_strategy)
-def test_statemachine::signal_name_setter(instance):
+
+@given(instance=statemachine_Signal_strategy)
+def test_statemachine_signal_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachine::Statemachine_strategy)
+@given(instance=statemachine_Statemachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachine::Statemachine)
+def test_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachine_Statemachine)

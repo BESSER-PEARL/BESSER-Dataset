@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    klangexpr::Statement,
-    klangexpr::Expression,
+from python_code import (
+    klangexpr_Statement,
+    klangexpr_Expression,
     Statement,
-    klangexpr::Sleep,
-    klangexpr::ForeverLoop,
-    klangexpr::If,
-    klangexpr::SendMessage,
-    klangexpr::WhileLoop,
+    klangexpr_SendMessage,
+    klangexpr_If,
+    klangexpr_Sleep,
+    klangexpr_ForeverLoop,
+    klangexpr_WhileLoop,
     Operator,
-    klangexpr::BinaryOperator,
-    klangexpr::UnaryOperator,
+    klangexpr_BinaryOperator,
+    klangexpr_UnaryOperator,
     Expression,
-    klangexpr::Operator,
-    klangexpr::DoubleLiteral,
-    klangexpr::VariableReference,
-    klangexpr::IntegerLiteral,
-    klangexpr::FunctionCall,
-    klangexpr::StringLiteral,
-    klangexpr::BooleanLiteral,
+    klangexpr_VariableReference,
+    klangexpr_Operator,
+    klangexpr_FunctionCall,
+    klangexpr_IntegerLiteral,
+    klangexpr_DoubleLiteral,
+    klangexpr_StringLiteral,
+    klangexpr_BooleanLiteral,
     UnaryOperator,
-    klangexpr::UnaryMinus,
-    klangexpr::ToDouble,
-    klangexpr::ToInt,
-    klangexpr::Not,
+    klangexpr_UnaryMinus,
+    klangexpr_ToDouble,
+    klangexpr_ToInt,
+    klangexpr_Not,
     BinaryOperator,
-    klangexpr::Plus,
-    klangexpr::LessThan,
-    klangexpr::And,
-    klangexpr::GreaterThan,
-    klangexpr::GreaterThanOrEqual,
-    klangexpr::LessThanOrEqual,
-    klangexpr::Equal,
-    klangexpr::Divide,
-    klangexpr::Minus,
-    klangexpr::Multiply,
-    klangexpr::Or,
-    klangexpr::VariableAssignment,
-    klangexpr::Yield,
+    klangexpr_LessThanOrEqual,
+    klangexpr_Divide,
+    klangexpr_Multiply,
+    klangexpr_And,
+    klangexpr_Minus,
+    klangexpr_GreaterThanOrEqual,
+    klangexpr_Equal,
+    klangexpr_GreaterThan,
+    klangexpr_Plus,
+    klangexpr_LessThan,
+    klangexpr_Or,
+    klangexpr_VariableAssignment,
+    klangexpr_Yield,
 )
 
 # =============================================================================
@@ -52,30 +52,30 @@ from classes import (
 
 
 
-def test_klangexpr::statement_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Statement)
+def test_klangexpr_statement_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Statement)
 
 
-def test_klangexpr::statement_constructor_exists():
-    assert callable(klangexpr::Statement.__init__)
+def test_klangexpr_statement_constructor_exists():
+    assert callable(klangexpr_Statement.__init__)
 
 
-def test_klangexpr::statement_constructor_args():
-    sig = inspect.signature(klangexpr::Statement.__init__)
+def test_klangexpr_statement_constructor_args():
+    sig = inspect.signature(klangexpr_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::expression_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Expression)
+def test_klangexpr_expression_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Expression)
 
 
-def test_klangexpr::expression_constructor_exists():
-    assert callable(klangexpr::Expression.__init__)
+def test_klangexpr_expression_constructor_exists():
+    assert callable(klangexpr_Expression.__init__)
 
 
-def test_klangexpr::expression_constructor_args():
-    sig = inspect.signature(klangexpr::Expression.__init__)
+def test_klangexpr_expression_constructor_args():
+    sig = inspect.signature(klangexpr_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,65 +94,23 @@ def test_statement_constructor_args():
 
 
 
-def test_klangexpr::sleep_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Sleep)
+def test_klangexpr_sendmessage_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_SendMessage)
 
 
-def test_klangexpr::sleep_constructor_exists():
-    assert callable(klangexpr::Sleep.__init__)
+def test_klangexpr_sendmessage_constructor_exists():
+    assert callable(klangexpr_SendMessage.__init__)
 
 
-def test_klangexpr::sleep_constructor_args():
-    sig = inspect.signature(klangexpr::Sleep.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_klangexpr::foreverloop_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::ForeverLoop)
-
-
-def test_klangexpr::foreverloop_constructor_exists():
-    assert callable(klangexpr::ForeverLoop.__init__)
-
-
-def test_klangexpr::foreverloop_constructor_args():
-    sig = inspect.signature(klangexpr::ForeverLoop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_klangexpr::if_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::If)
-
-
-def test_klangexpr::if_constructor_exists():
-    assert callable(klangexpr::If.__init__)
-
-
-def test_klangexpr::if_constructor_args():
-    sig = inspect.signature(klangexpr::If.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_klangexpr::sendmessage_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::SendMessage)
-
-
-def test_klangexpr::sendmessage_constructor_exists():
-    assert callable(klangexpr::SendMessage.__init__)
-
-
-def test_klangexpr::sendmessage_constructor_args():
-    sig = inspect.signature(klangexpr::SendMessage.__init__)
+def test_klangexpr_sendmessage_constructor_args():
+    sig = inspect.signature(klangexpr_SendMessage.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_klangexpr::sendmessage_has_name():
-    assert hasattr(klangexpr::SendMessage, "name")
+def test_klangexpr_sendmessage_has_name():
+    assert hasattr(klangexpr_SendMessage, "name")
     descriptor = None
-    for klass in klangexpr::SendMessage.__mro__:
+    for klass in klangexpr_SendMessage.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -160,16 +118,58 @@ def test_klangexpr::sendmessage_has_name():
 
 
 
-def test_klangexpr::whileloop_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::WhileLoop)
+def test_klangexpr_if_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_If)
 
 
-def test_klangexpr::whileloop_constructor_exists():
-    assert callable(klangexpr::WhileLoop.__init__)
+def test_klangexpr_if_constructor_exists():
+    assert callable(klangexpr_If.__init__)
 
 
-def test_klangexpr::whileloop_constructor_args():
-    sig = inspect.signature(klangexpr::WhileLoop.__init__)
+def test_klangexpr_if_constructor_args():
+    sig = inspect.signature(klangexpr_If.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_klangexpr_sleep_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Sleep)
+
+
+def test_klangexpr_sleep_constructor_exists():
+    assert callable(klangexpr_Sleep.__init__)
+
+
+def test_klangexpr_sleep_constructor_args():
+    sig = inspect.signature(klangexpr_Sleep.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_klangexpr_foreverloop_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_ForeverLoop)
+
+
+def test_klangexpr_foreverloop_constructor_exists():
+    assert callable(klangexpr_ForeverLoop.__init__)
+
+
+def test_klangexpr_foreverloop_constructor_args():
+    sig = inspect.signature(klangexpr_ForeverLoop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_klangexpr_whileloop_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_WhileLoop)
+
+
+def test_klangexpr_whileloop_constructor_exists():
+    assert callable(klangexpr_WhileLoop.__init__)
+
+
+def test_klangexpr_whileloop_constructor_args():
+    sig = inspect.signature(klangexpr_WhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -188,30 +188,30 @@ def test_operator_constructor_args():
 
 
 
-def test_klangexpr::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::BinaryOperator)
+def test_klangexpr_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_BinaryOperator)
 
 
-def test_klangexpr::binaryoperator_constructor_exists():
-    assert callable(klangexpr::BinaryOperator.__init__)
+def test_klangexpr_binaryoperator_constructor_exists():
+    assert callable(klangexpr_BinaryOperator.__init__)
 
 
-def test_klangexpr::binaryoperator_constructor_args():
-    sig = inspect.signature(klangexpr::BinaryOperator.__init__)
+def test_klangexpr_binaryoperator_constructor_args():
+    sig = inspect.signature(klangexpr_BinaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::UnaryOperator)
+def test_klangexpr_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_UnaryOperator)
 
 
-def test_klangexpr::unaryoperator_constructor_exists():
-    assert callable(klangexpr::UnaryOperator.__init__)
+def test_klangexpr_unaryoperator_constructor_exists():
+    assert callable(klangexpr_UnaryOperator.__init__)
 
 
-def test_klangexpr::unaryoperator_constructor_args():
-    sig = inspect.signature(klangexpr::UnaryOperator.__init__)
+def test_klangexpr_unaryoperator_constructor_args():
+    sig = inspect.signature(klangexpr_UnaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -230,61 +230,23 @@ def test_expression_constructor_args():
 
 
 
-def test_klangexpr::operator_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Operator)
+def test_klangexpr_variablereference_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_VariableReference)
 
 
-def test_klangexpr::operator_constructor_exists():
-    assert callable(klangexpr::Operator.__init__)
+def test_klangexpr_variablereference_constructor_exists():
+    assert callable(klangexpr_VariableReference.__init__)
 
 
-def test_klangexpr::operator_constructor_args():
-    sig = inspect.signature(klangexpr::Operator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_klangexpr::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::DoubleLiteral)
-
-
-def test_klangexpr::doubleliteral_constructor_exists():
-    assert callable(klangexpr::DoubleLiteral.__init__)
-
-
-def test_klangexpr::doubleliteral_constructor_args():
-    sig = inspect.signature(klangexpr::DoubleLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_klangexpr::doubleliteral_has_value():
-    assert hasattr(klangexpr::DoubleLiteral, "value")
-    descriptor = None
-    for klass in klangexpr::DoubleLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_klangexpr::variablereference_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::VariableReference)
-
-
-def test_klangexpr::variablereference_constructor_exists():
-    assert callable(klangexpr::VariableReference.__init__)
-
-
-def test_klangexpr::variablereference_constructor_args():
-    sig = inspect.signature(klangexpr::VariableReference.__init__)
+def test_klangexpr_variablereference_constructor_args():
+    sig = inspect.signature(klangexpr_VariableReference.__init__)
     params = list(sig.parameters.keys())
     assert "variableName" in params, "Missing parameter 'variableName'"
 
-def test_klangexpr::variablereference_has_variableName():
-    assert hasattr(klangexpr::VariableReference, "variableName")
+def test_klangexpr_variablereference_has_variableName():
+    assert hasattr(klangexpr_VariableReference, "variableName")
     descriptor = None
-    for klass in klangexpr::VariableReference.__mro__:
+    for klass in klangexpr_VariableReference.__mro__:
         if "variableName" in klass.__dict__:
             descriptor = klass.__dict__["variableName"]
             break
@@ -292,47 +254,37 @@ def test_klangexpr::variablereference_has_variableName():
 
 
 
-def test_klangexpr::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::IntegerLiteral)
+def test_klangexpr_operator_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Operator)
 
 
-def test_klangexpr::integerliteral_constructor_exists():
-    assert callable(klangexpr::IntegerLiteral.__init__)
+def test_klangexpr_operator_constructor_exists():
+    assert callable(klangexpr_Operator.__init__)
 
 
-def test_klangexpr::integerliteral_constructor_args():
-    sig = inspect.signature(klangexpr::IntegerLiteral.__init__)
+def test_klangexpr_operator_constructor_args():
+    sig = inspect.signature(klangexpr_Operator.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_klangexpr::integerliteral_has_value():
-    assert hasattr(klangexpr::IntegerLiteral, "value")
-    descriptor = None
-    for klass in klangexpr::IntegerLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_klangexpr::functioncall_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::FunctionCall)
+def test_klangexpr_functioncall_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_FunctionCall)
 
 
-def test_klangexpr::functioncall_constructor_exists():
-    assert callable(klangexpr::FunctionCall.__init__)
+def test_klangexpr_functioncall_constructor_exists():
+    assert callable(klangexpr_FunctionCall.__init__)
 
 
-def test_klangexpr::functioncall_constructor_args():
-    sig = inspect.signature(klangexpr::FunctionCall.__init__)
+def test_klangexpr_functioncall_constructor_args():
+    sig = inspect.signature(klangexpr_FunctionCall.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_klangexpr::functioncall_has_name():
-    assert hasattr(klangexpr::FunctionCall, "name")
+def test_klangexpr_functioncall_has_name():
+    assert hasattr(klangexpr_FunctionCall, "name")
     descriptor = None
-    for klass in klangexpr::FunctionCall.__mro__:
+    for klass in klangexpr_FunctionCall.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -340,23 +292,23 @@ def test_klangexpr::functioncall_has_name():
 
 
 
-def test_klangexpr::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::StringLiteral)
+def test_klangexpr_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_IntegerLiteral)
 
 
-def test_klangexpr::stringliteral_constructor_exists():
-    assert callable(klangexpr::StringLiteral.__init__)
+def test_klangexpr_integerliteral_constructor_exists():
+    assert callable(klangexpr_IntegerLiteral.__init__)
 
 
-def test_klangexpr::stringliteral_constructor_args():
-    sig = inspect.signature(klangexpr::StringLiteral.__init__)
+def test_klangexpr_integerliteral_constructor_args():
+    sig = inspect.signature(klangexpr_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_klangexpr::stringliteral_has_value():
-    assert hasattr(klangexpr::StringLiteral, "value")
+def test_klangexpr_integerliteral_has_value():
+    assert hasattr(klangexpr_IntegerLiteral, "value")
     descriptor = None
-    for klass in klangexpr::StringLiteral.__mro__:
+    for klass in klangexpr_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -364,23 +316,71 @@ def test_klangexpr::stringliteral_has_value():
 
 
 
-def test_klangexpr::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::BooleanLiteral)
+def test_klangexpr_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_DoubleLiteral)
 
 
-def test_klangexpr::booleanliteral_constructor_exists():
-    assert callable(klangexpr::BooleanLiteral.__init__)
+def test_klangexpr_doubleliteral_constructor_exists():
+    assert callable(klangexpr_DoubleLiteral.__init__)
 
 
-def test_klangexpr::booleanliteral_constructor_args():
-    sig = inspect.signature(klangexpr::BooleanLiteral.__init__)
+def test_klangexpr_doubleliteral_constructor_args():
+    sig = inspect.signature(klangexpr_DoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_klangexpr::booleanliteral_has_value():
-    assert hasattr(klangexpr::BooleanLiteral, "value")
+def test_klangexpr_doubleliteral_has_value():
+    assert hasattr(klangexpr_DoubleLiteral, "value")
     descriptor = None
-    for klass in klangexpr::BooleanLiteral.__mro__:
+    for klass in klangexpr_DoubleLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_klangexpr_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_StringLiteral)
+
+
+def test_klangexpr_stringliteral_constructor_exists():
+    assert callable(klangexpr_StringLiteral.__init__)
+
+
+def test_klangexpr_stringliteral_constructor_args():
+    sig = inspect.signature(klangexpr_StringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_klangexpr_stringliteral_has_value():
+    assert hasattr(klangexpr_StringLiteral, "value")
+    descriptor = None
+    for klass in klangexpr_StringLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_klangexpr_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_BooleanLiteral)
+
+
+def test_klangexpr_booleanliteral_constructor_exists():
+    assert callable(klangexpr_BooleanLiteral.__init__)
+
+
+def test_klangexpr_booleanliteral_constructor_args():
+    sig = inspect.signature(klangexpr_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_klangexpr_booleanliteral_has_value():
+    assert hasattr(klangexpr_BooleanLiteral, "value")
+    descriptor = None
+    for klass in klangexpr_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -402,58 +402,58 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_klangexpr::unaryminus_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::UnaryMinus)
+def test_klangexpr_unaryminus_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_UnaryMinus)
 
 
-def test_klangexpr::unaryminus_constructor_exists():
-    assert callable(klangexpr::UnaryMinus.__init__)
+def test_klangexpr_unaryminus_constructor_exists():
+    assert callable(klangexpr_UnaryMinus.__init__)
 
 
-def test_klangexpr::unaryminus_constructor_args():
-    sig = inspect.signature(klangexpr::UnaryMinus.__init__)
+def test_klangexpr_unaryminus_constructor_args():
+    sig = inspect.signature(klangexpr_UnaryMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::todouble_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::ToDouble)
+def test_klangexpr_todouble_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_ToDouble)
 
 
-def test_klangexpr::todouble_constructor_exists():
-    assert callable(klangexpr::ToDouble.__init__)
+def test_klangexpr_todouble_constructor_exists():
+    assert callable(klangexpr_ToDouble.__init__)
 
 
-def test_klangexpr::todouble_constructor_args():
-    sig = inspect.signature(klangexpr::ToDouble.__init__)
+def test_klangexpr_todouble_constructor_args():
+    sig = inspect.signature(klangexpr_ToDouble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::toint_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::ToInt)
+def test_klangexpr_toint_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_ToInt)
 
 
-def test_klangexpr::toint_constructor_exists():
-    assert callable(klangexpr::ToInt.__init__)
+def test_klangexpr_toint_constructor_exists():
+    assert callable(klangexpr_ToInt.__init__)
 
 
-def test_klangexpr::toint_constructor_args():
-    sig = inspect.signature(klangexpr::ToInt.__init__)
+def test_klangexpr_toint_constructor_args():
+    sig = inspect.signature(klangexpr_ToInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::not_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Not)
+def test_klangexpr_not_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Not)
 
 
-def test_klangexpr::not_constructor_exists():
-    assert callable(klangexpr::Not.__init__)
+def test_klangexpr_not_constructor_exists():
+    assert callable(klangexpr_Not.__init__)
 
 
-def test_klangexpr::not_constructor_args():
-    sig = inspect.signature(klangexpr::Not.__init__)
+def test_klangexpr_not_constructor_args():
+    sig = inspect.signature(klangexpr_Not.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -472,177 +472,177 @@ def test_binaryoperator_constructor_args():
 
 
 
-def test_klangexpr::plus_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Plus)
+def test_klangexpr_lessthanorequal_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_LessThanOrEqual)
 
 
-def test_klangexpr::plus_constructor_exists():
-    assert callable(klangexpr::Plus.__init__)
+def test_klangexpr_lessthanorequal_constructor_exists():
+    assert callable(klangexpr_LessThanOrEqual.__init__)
 
 
-def test_klangexpr::plus_constructor_args():
-    sig = inspect.signature(klangexpr::Plus.__init__)
+def test_klangexpr_lessthanorequal_constructor_args():
+    sig = inspect.signature(klangexpr_LessThanOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::lessthan_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::LessThan)
+def test_klangexpr_divide_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Divide)
 
 
-def test_klangexpr::lessthan_constructor_exists():
-    assert callable(klangexpr::LessThan.__init__)
+def test_klangexpr_divide_constructor_exists():
+    assert callable(klangexpr_Divide.__init__)
 
 
-def test_klangexpr::lessthan_constructor_args():
-    sig = inspect.signature(klangexpr::LessThan.__init__)
+def test_klangexpr_divide_constructor_args():
+    sig = inspect.signature(klangexpr_Divide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::and_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::And)
+def test_klangexpr_multiply_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Multiply)
 
 
-def test_klangexpr::and_constructor_exists():
-    assert callable(klangexpr::And.__init__)
+def test_klangexpr_multiply_constructor_exists():
+    assert callable(klangexpr_Multiply.__init__)
 
 
-def test_klangexpr::and_constructor_args():
-    sig = inspect.signature(klangexpr::And.__init__)
+def test_klangexpr_multiply_constructor_args():
+    sig = inspect.signature(klangexpr_Multiply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::GreaterThan)
+def test_klangexpr_and_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_And)
 
 
-def test_klangexpr::greaterthan_constructor_exists():
-    assert callable(klangexpr::GreaterThan.__init__)
+def test_klangexpr_and_constructor_exists():
+    assert callable(klangexpr_And.__init__)
 
 
-def test_klangexpr::greaterthan_constructor_args():
-    sig = inspect.signature(klangexpr::GreaterThan.__init__)
+def test_klangexpr_and_constructor_args():
+    sig = inspect.signature(klangexpr_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::greaterthanorequal_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::GreaterThanOrEqual)
+def test_klangexpr_minus_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Minus)
 
 
-def test_klangexpr::greaterthanorequal_constructor_exists():
-    assert callable(klangexpr::GreaterThanOrEqual.__init__)
+def test_klangexpr_minus_constructor_exists():
+    assert callable(klangexpr_Minus.__init__)
 
 
-def test_klangexpr::greaterthanorequal_constructor_args():
-    sig = inspect.signature(klangexpr::GreaterThanOrEqual.__init__)
+def test_klangexpr_minus_constructor_args():
+    sig = inspect.signature(klangexpr_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::lessthanorequal_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::LessThanOrEqual)
+def test_klangexpr_greaterthanorequal_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_GreaterThanOrEqual)
 
 
-def test_klangexpr::lessthanorequal_constructor_exists():
-    assert callable(klangexpr::LessThanOrEqual.__init__)
+def test_klangexpr_greaterthanorequal_constructor_exists():
+    assert callable(klangexpr_GreaterThanOrEqual.__init__)
 
 
-def test_klangexpr::lessthanorequal_constructor_args():
-    sig = inspect.signature(klangexpr::LessThanOrEqual.__init__)
+def test_klangexpr_greaterthanorequal_constructor_args():
+    sig = inspect.signature(klangexpr_GreaterThanOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::equal_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Equal)
+def test_klangexpr_equal_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Equal)
 
 
-def test_klangexpr::equal_constructor_exists():
-    assert callable(klangexpr::Equal.__init__)
+def test_klangexpr_equal_constructor_exists():
+    assert callable(klangexpr_Equal.__init__)
 
 
-def test_klangexpr::equal_constructor_args():
-    sig = inspect.signature(klangexpr::Equal.__init__)
+def test_klangexpr_equal_constructor_args():
+    sig = inspect.signature(klangexpr_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::divide_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Divide)
+def test_klangexpr_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_GreaterThan)
 
 
-def test_klangexpr::divide_constructor_exists():
-    assert callable(klangexpr::Divide.__init__)
+def test_klangexpr_greaterthan_constructor_exists():
+    assert callable(klangexpr_GreaterThan.__init__)
 
 
-def test_klangexpr::divide_constructor_args():
-    sig = inspect.signature(klangexpr::Divide.__init__)
+def test_klangexpr_greaterthan_constructor_args():
+    sig = inspect.signature(klangexpr_GreaterThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::minus_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Minus)
+def test_klangexpr_plus_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Plus)
 
 
-def test_klangexpr::minus_constructor_exists():
-    assert callable(klangexpr::Minus.__init__)
+def test_klangexpr_plus_constructor_exists():
+    assert callable(klangexpr_Plus.__init__)
 
 
-def test_klangexpr::minus_constructor_args():
-    sig = inspect.signature(klangexpr::Minus.__init__)
+def test_klangexpr_plus_constructor_args():
+    sig = inspect.signature(klangexpr_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::multiply_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Multiply)
+def test_klangexpr_lessthan_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_LessThan)
 
 
-def test_klangexpr::multiply_constructor_exists():
-    assert callable(klangexpr::Multiply.__init__)
+def test_klangexpr_lessthan_constructor_exists():
+    assert callable(klangexpr_LessThan.__init__)
 
 
-def test_klangexpr::multiply_constructor_args():
-    sig = inspect.signature(klangexpr::Multiply.__init__)
+def test_klangexpr_lessthan_constructor_args():
+    sig = inspect.signature(klangexpr_LessThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::or_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Or)
+def test_klangexpr_or_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Or)
 
 
-def test_klangexpr::or_constructor_exists():
-    assert callable(klangexpr::Or.__init__)
+def test_klangexpr_or_constructor_exists():
+    assert callable(klangexpr_Or.__init__)
 
 
-def test_klangexpr::or_constructor_args():
-    sig = inspect.signature(klangexpr::Or.__init__)
+def test_klangexpr_or_constructor_args():
+    sig = inspect.signature(klangexpr_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_klangexpr::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::VariableAssignment)
+def test_klangexpr_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_VariableAssignment)
 
 
-def test_klangexpr::variableassignment_constructor_exists():
-    assert callable(klangexpr::VariableAssignment.__init__)
+def test_klangexpr_variableassignment_constructor_exists():
+    assert callable(klangexpr_VariableAssignment.__init__)
 
 
-def test_klangexpr::variableassignment_constructor_args():
-    sig = inspect.signature(klangexpr::VariableAssignment.__init__)
+def test_klangexpr_variableassignment_constructor_args():
+    sig = inspect.signature(klangexpr_VariableAssignment.__init__)
     params = list(sig.parameters.keys())
     assert "variableName" in params, "Missing parameter 'variableName'"
 
-def test_klangexpr::variableassignment_has_variableName():
-    assert hasattr(klangexpr::VariableAssignment, "variableName")
+def test_klangexpr_variableassignment_has_variableName():
+    assert hasattr(klangexpr_VariableAssignment, "variableName")
     descriptor = None
-    for klass in klangexpr::VariableAssignment.__mro__:
+    for klass in klangexpr_VariableAssignment.__mro__:
         if "variableName" in klass.__dict__:
             descriptor = klass.__dict__["variableName"]
             break
@@ -650,16 +650,16 @@ def test_klangexpr::variableassignment_has_variableName():
 
 
 
-def test_klangexpr::yield_is_not_abstract():
-    assert not inspect.isabstract(klangexpr::Yield)
+def test_klangexpr_yield_is_not_abstract():
+    assert not inspect.isabstract(klangexpr_Yield)
 
 
-def test_klangexpr::yield_constructor_exists():
-    assert callable(klangexpr::Yield.__init__)
+def test_klangexpr_yield_constructor_exists():
+    assert callable(klangexpr_Yield.__init__)
 
 
-def test_klangexpr::yield_constructor_args():
-    sig = inspect.signature(klangexpr::Yield.__init__)
+def test_klangexpr_yield_constructor_args():
+    sig = inspect.signature(klangexpr_Yield.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -674,305 +674,284 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-klangexpr::Statement_strategy = st.builds(
-    klangexpr::Statement,
+klangexpr_Statement_strategy = st.builds(
+    klangexpr_Statement,
 )
-klangexpr::Expression_strategy = st.builds(
-    klangexpr::Expression,
+klangexpr_Expression_strategy = st.builds(
+    klangexpr_Expression,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-klangexpr::Sleep_strategy = st.builds(
-    klangexpr::Sleep,
-)
-klangexpr::ForeverLoop_strategy = st.builds(
-    klangexpr::ForeverLoop,
-)
-klangexpr::If_strategy = st.builds(
-    klangexpr::If,
-)
-klangexpr::SendMessage_strategy = st.builds(
-    klangexpr::SendMessage,
+klangexpr_SendMessage_strategy = st.builds(
+    klangexpr_SendMessage,
     name=
         safe_text
 )
-klangexpr::WhileLoop_strategy = st.builds(
-    klangexpr::WhileLoop,
+klangexpr_If_strategy = st.builds(
+    klangexpr_If,
+)
+klangexpr_Sleep_strategy = st.builds(
+    klangexpr_Sleep,
+)
+klangexpr_ForeverLoop_strategy = st.builds(
+    klangexpr_ForeverLoop,
+)
+klangexpr_WhileLoop_strategy = st.builds(
+    klangexpr_WhileLoop,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-klangexpr::BinaryOperator_strategy = st.builds(
-    klangexpr::BinaryOperator,
+klangexpr_BinaryOperator_strategy = st.builds(
+    klangexpr_BinaryOperator,
 )
-klangexpr::UnaryOperator_strategy = st.builds(
-    klangexpr::UnaryOperator,
+klangexpr_UnaryOperator_strategy = st.builds(
+    klangexpr_UnaryOperator,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-klangexpr::Operator_strategy = st.builds(
-    klangexpr::Operator,
-)
-klangexpr::DoubleLiteral_strategy = st.builds(
-    klangexpr::DoubleLiteral,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-klangexpr::VariableReference_strategy = st.builds(
-    klangexpr::VariableReference,
+klangexpr_VariableReference_strategy = st.builds(
+    klangexpr_VariableReference,
     variableName=
         safe_text
 )
-klangexpr::IntegerLiteral_strategy = st.builds(
-    klangexpr::IntegerLiteral,
-    value=
-        st.integers()
+klangexpr_Operator_strategy = st.builds(
+    klangexpr_Operator,
 )
-klangexpr::FunctionCall_strategy = st.builds(
-    klangexpr::FunctionCall,
+klangexpr_FunctionCall_strategy = st.builds(
+    klangexpr_FunctionCall,
     name=
         safe_text
 )
-klangexpr::StringLiteral_strategy = st.builds(
-    klangexpr::StringLiteral,
+klangexpr_IntegerLiteral_strategy = st.builds(
+    klangexpr_IntegerLiteral,
+    value=
+        st.integers()
+)
+klangexpr_DoubleLiteral_strategy = st.builds(
+    klangexpr_DoubleLiteral,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+klangexpr_StringLiteral_strategy = st.builds(
+    klangexpr_StringLiteral,
     value=
         safe_text
 )
-klangexpr::BooleanLiteral_strategy = st.builds(
-    klangexpr::BooleanLiteral,
+klangexpr_BooleanLiteral_strategy = st.builds(
+    klangexpr_BooleanLiteral,
     value=
         st.booleans()
 )
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-klangexpr::UnaryMinus_strategy = st.builds(
-    klangexpr::UnaryMinus,
+klangexpr_UnaryMinus_strategy = st.builds(
+    klangexpr_UnaryMinus,
 )
-klangexpr::ToDouble_strategy = st.builds(
-    klangexpr::ToDouble,
+klangexpr_ToDouble_strategy = st.builds(
+    klangexpr_ToDouble,
 )
-klangexpr::ToInt_strategy = st.builds(
-    klangexpr::ToInt,
+klangexpr_ToInt_strategy = st.builds(
+    klangexpr_ToInt,
 )
-klangexpr::Not_strategy = st.builds(
-    klangexpr::Not,
+klangexpr_Not_strategy = st.builds(
+    klangexpr_Not,
 )
 BinaryOperator_strategy = st.builds(
     BinaryOperator,
 )
-klangexpr::Plus_strategy = st.builds(
-    klangexpr::Plus,
+klangexpr_LessThanOrEqual_strategy = st.builds(
+    klangexpr_LessThanOrEqual,
 )
-klangexpr::LessThan_strategy = st.builds(
-    klangexpr::LessThan,
+klangexpr_Divide_strategy = st.builds(
+    klangexpr_Divide,
 )
-klangexpr::And_strategy = st.builds(
-    klangexpr::And,
+klangexpr_Multiply_strategy = st.builds(
+    klangexpr_Multiply,
 )
-klangexpr::GreaterThan_strategy = st.builds(
-    klangexpr::GreaterThan,
+klangexpr_And_strategy = st.builds(
+    klangexpr_And,
 )
-klangexpr::GreaterThanOrEqual_strategy = st.builds(
-    klangexpr::GreaterThanOrEqual,
+klangexpr_Minus_strategy = st.builds(
+    klangexpr_Minus,
 )
-klangexpr::LessThanOrEqual_strategy = st.builds(
-    klangexpr::LessThanOrEqual,
+klangexpr_GreaterThanOrEqual_strategy = st.builds(
+    klangexpr_GreaterThanOrEqual,
 )
-klangexpr::Equal_strategy = st.builds(
-    klangexpr::Equal,
+klangexpr_Equal_strategy = st.builds(
+    klangexpr_Equal,
 )
-klangexpr::Divide_strategy = st.builds(
-    klangexpr::Divide,
+klangexpr_GreaterThan_strategy = st.builds(
+    klangexpr_GreaterThan,
 )
-klangexpr::Minus_strategy = st.builds(
-    klangexpr::Minus,
+klangexpr_Plus_strategy = st.builds(
+    klangexpr_Plus,
 )
-klangexpr::Multiply_strategy = st.builds(
-    klangexpr::Multiply,
+klangexpr_LessThan_strategy = st.builds(
+    klangexpr_LessThan,
 )
-klangexpr::Or_strategy = st.builds(
-    klangexpr::Or,
+klangexpr_Or_strategy = st.builds(
+    klangexpr_Or,
 )
-klangexpr::VariableAssignment_strategy = st.builds(
-    klangexpr::VariableAssignment,
+klangexpr_VariableAssignment_strategy = st.builds(
+    klangexpr_VariableAssignment,
     variableName=
         safe_text
 )
-klangexpr::Yield_strategy = st.builds(
-    klangexpr::Yield,
+klangexpr_Yield_strategy = st.builds(
+    klangexpr_Yield,
 )
 
-@given(instance=klangexpr::Statement_strategy)
+@given(instance=klangexpr_Statement_strategy)
 @settings(max_examples=50)
-def test_klangexpr::statement_instantiation(instance):
-    assert isinstance(instance, klangexpr::Statement)
+def test_klangexpr_statement_instantiation(instance):
+    assert isinstance(instance, klangexpr_Statement)
 
-@given(instance=klangexpr::Expression_strategy)
+@given(instance=klangexpr_Expression_strategy)
 @settings(max_examples=50)
-def test_klangexpr::expression_instantiation(instance):
-    assert isinstance(instance, klangexpr::Expression)
+def test_klangexpr_expression_instantiation(instance):
+    assert isinstance(instance, klangexpr_Expression)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=klangexpr::Sleep_strategy)
+@given(instance=klangexpr_SendMessage_strategy)
 @settings(max_examples=50)
-def test_klangexpr::sleep_instantiation(instance):
-    assert isinstance(instance, klangexpr::Sleep)
-
-@given(instance=klangexpr::ForeverLoop_strategy)
-@settings(max_examples=50)
-def test_klangexpr::foreverloop_instantiation(instance):
-    assert isinstance(instance, klangexpr::ForeverLoop)
-
-@given(instance=klangexpr::If_strategy)
-@settings(max_examples=50)
-def test_klangexpr::if_instantiation(instance):
-    assert isinstance(instance, klangexpr::If)
-
-@given(instance=klangexpr::SendMessage_strategy)
-@settings(max_examples=50)
-def test_klangexpr::sendmessage_instantiation(instance):
-    assert isinstance(instance, klangexpr::SendMessage)
-
-@given(instance=klangexpr::SendMessage_strategy)
-def test_klangexpr::sendmessage_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_klangexpr_sendmessage_instantiation(instance):
+    assert isinstance(instance, klangexpr_SendMessage)
 
 
-@given(instance=klangexpr::SendMessage_strategy)
-def test_klangexpr::sendmessage_name_setter(instance):
+
+@given(instance=klangexpr_SendMessage_strategy)
+def test_klangexpr_sendmessage_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=klangexpr::WhileLoop_strategy)
+@given(instance=klangexpr_If_strategy)
 @settings(max_examples=50)
-def test_klangexpr::whileloop_instantiation(instance):
-    assert isinstance(instance, klangexpr::WhileLoop)
+def test_klangexpr_if_instantiation(instance):
+    assert isinstance(instance, klangexpr_If)
+
+@given(instance=klangexpr_Sleep_strategy)
+@settings(max_examples=50)
+def test_klangexpr_sleep_instantiation(instance):
+    assert isinstance(instance, klangexpr_Sleep)
+
+@given(instance=klangexpr_ForeverLoop_strategy)
+@settings(max_examples=50)
+def test_klangexpr_foreverloop_instantiation(instance):
+    assert isinstance(instance, klangexpr_ForeverLoop)
+
+@given(instance=klangexpr_WhileLoop_strategy)
+@settings(max_examples=50)
+def test_klangexpr_whileloop_instantiation(instance):
+    assert isinstance(instance, klangexpr_WhileLoop)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=klangexpr::BinaryOperator_strategy)
+@given(instance=klangexpr_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_klangexpr::binaryoperator_instantiation(instance):
-    assert isinstance(instance, klangexpr::BinaryOperator)
+def test_klangexpr_binaryoperator_instantiation(instance):
+    assert isinstance(instance, klangexpr_BinaryOperator)
 
-@given(instance=klangexpr::UnaryOperator_strategy)
+@given(instance=klangexpr_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_klangexpr::unaryoperator_instantiation(instance):
-    assert isinstance(instance, klangexpr::UnaryOperator)
+def test_klangexpr_unaryoperator_instantiation(instance):
+    assert isinstance(instance, klangexpr_UnaryOperator)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=klangexpr::Operator_strategy)
+@given(instance=klangexpr_VariableReference_strategy)
 @settings(max_examples=50)
-def test_klangexpr::operator_instantiation(instance):
-    assert isinstance(instance, klangexpr::Operator)
-
-@given(instance=klangexpr::DoubleLiteral_strategy)
-@settings(max_examples=50)
-def test_klangexpr::doubleliteral_instantiation(instance):
-    assert isinstance(instance, klangexpr::DoubleLiteral)
-
-@given(instance=klangexpr::DoubleLiteral_strategy)
-def test_klangexpr::doubleliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_klangexpr_variablereference_instantiation(instance):
+    assert isinstance(instance, klangexpr_VariableReference)
 
 
-@given(instance=klangexpr::DoubleLiteral_strategy)
-def test_klangexpr::doubleliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=klangexpr::VariableReference_strategy)
-@settings(max_examples=50)
-def test_klangexpr::variablereference_instantiation(instance):
-    assert isinstance(instance, klangexpr::VariableReference)
-
-@given(instance=klangexpr::VariableReference_strategy)
-def test_klangexpr::variablereference_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
-
-
-@given(instance=klangexpr::VariableReference_strategy)
-def test_klangexpr::variablereference_variableName_setter(instance):
+@given(instance=klangexpr_VariableReference_strategy)
+def test_klangexpr_variablereference_variableName_setter(instance):
     original = instance.variableName
     instance.variableName = original
     assert instance.variableName == original
 
-@given(instance=klangexpr::IntegerLiteral_strategy)
+@given(instance=klangexpr_Operator_strategy)
 @settings(max_examples=50)
-def test_klangexpr::integerliteral_instantiation(instance):
-    assert isinstance(instance, klangexpr::IntegerLiteral)
+def test_klangexpr_operator_instantiation(instance):
+    assert isinstance(instance, klangexpr_Operator)
 
-@given(instance=klangexpr::IntegerLiteral_strategy)
-def test_klangexpr::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=klangexpr::IntegerLiteral_strategy)
-def test_klangexpr::integerliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=klangexpr::FunctionCall_strategy)
+@given(instance=klangexpr_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_klangexpr::functioncall_instantiation(instance):
-    assert isinstance(instance, klangexpr::FunctionCall)
-
-@given(instance=klangexpr::FunctionCall_strategy)
-def test_klangexpr::functioncall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_klangexpr_functioncall_instantiation(instance):
+    assert isinstance(instance, klangexpr_FunctionCall)
 
 
-@given(instance=klangexpr::FunctionCall_strategy)
-def test_klangexpr::functioncall_name_setter(instance):
+
+@given(instance=klangexpr_FunctionCall_strategy)
+def test_klangexpr_functioncall_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=klangexpr::StringLiteral_strategy)
+@given(instance=klangexpr_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_klangexpr::stringliteral_instantiation(instance):
-    assert isinstance(instance, klangexpr::StringLiteral)
-
-@given(instance=klangexpr::StringLiteral_strategy)
-def test_klangexpr::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_klangexpr_integerliteral_instantiation(instance):
+    assert isinstance(instance, klangexpr_IntegerLiteral)
 
 
-@given(instance=klangexpr::StringLiteral_strategy)
-def test_klangexpr::stringliteral_value_setter(instance):
+
+@given(instance=klangexpr_IntegerLiteral_strategy)
+def test_klangexpr_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=klangexpr::BooleanLiteral_strategy)
+@given(instance=klangexpr_DoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_klangexpr::booleanliteral_instantiation(instance):
-    assert isinstance(instance, klangexpr::BooleanLiteral)
-
-@given(instance=klangexpr::BooleanLiteral_strategy)
-def test_klangexpr::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_klangexpr_doubleliteral_instantiation(instance):
+    assert isinstance(instance, klangexpr_DoubleLiteral)
 
 
-@given(instance=klangexpr::BooleanLiteral_strategy)
-def test_klangexpr::booleanliteral_value_setter(instance):
+
+@given(instance=klangexpr_DoubleLiteral_strategy)
+def test_klangexpr_doubleliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=klangexpr_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_klangexpr_stringliteral_instantiation(instance):
+    assert isinstance(instance, klangexpr_StringLiteral)
+
+
+
+@given(instance=klangexpr_StringLiteral_strategy)
+def test_klangexpr_stringliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=klangexpr_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_klangexpr_booleanliteral_instantiation(instance):
+    assert isinstance(instance, klangexpr_BooleanLiteral)
+
+
+
+@given(instance=klangexpr_BooleanLiteral_strategy)
+def test_klangexpr_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -982,103 +961,100 @@ def test_klangexpr::booleanliteral_value_setter(instance):
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=klangexpr::UnaryMinus_strategy)
+@given(instance=klangexpr_UnaryMinus_strategy)
 @settings(max_examples=50)
-def test_klangexpr::unaryminus_instantiation(instance):
-    assert isinstance(instance, klangexpr::UnaryMinus)
+def test_klangexpr_unaryminus_instantiation(instance):
+    assert isinstance(instance, klangexpr_UnaryMinus)
 
-@given(instance=klangexpr::ToDouble_strategy)
+@given(instance=klangexpr_ToDouble_strategy)
 @settings(max_examples=50)
-def test_klangexpr::todouble_instantiation(instance):
-    assert isinstance(instance, klangexpr::ToDouble)
+def test_klangexpr_todouble_instantiation(instance):
+    assert isinstance(instance, klangexpr_ToDouble)
 
-@given(instance=klangexpr::ToInt_strategy)
+@given(instance=klangexpr_ToInt_strategy)
 @settings(max_examples=50)
-def test_klangexpr::toint_instantiation(instance):
-    assert isinstance(instance, klangexpr::ToInt)
+def test_klangexpr_toint_instantiation(instance):
+    assert isinstance(instance, klangexpr_ToInt)
 
-@given(instance=klangexpr::Not_strategy)
+@given(instance=klangexpr_Not_strategy)
 @settings(max_examples=50)
-def test_klangexpr::not_instantiation(instance):
-    assert isinstance(instance, klangexpr::Not)
+def test_klangexpr_not_instantiation(instance):
+    assert isinstance(instance, klangexpr_Not)
 
 @given(instance=BinaryOperator_strategy)
 @settings(max_examples=50)
 def test_binaryoperator_instantiation(instance):
     assert isinstance(instance, BinaryOperator)
 
-@given(instance=klangexpr::Plus_strategy)
+@given(instance=klangexpr_LessThanOrEqual_strategy)
 @settings(max_examples=50)
-def test_klangexpr::plus_instantiation(instance):
-    assert isinstance(instance, klangexpr::Plus)
+def test_klangexpr_lessthanorequal_instantiation(instance):
+    assert isinstance(instance, klangexpr_LessThanOrEqual)
 
-@given(instance=klangexpr::LessThan_strategy)
+@given(instance=klangexpr_Divide_strategy)
 @settings(max_examples=50)
-def test_klangexpr::lessthan_instantiation(instance):
-    assert isinstance(instance, klangexpr::LessThan)
+def test_klangexpr_divide_instantiation(instance):
+    assert isinstance(instance, klangexpr_Divide)
 
-@given(instance=klangexpr::And_strategy)
+@given(instance=klangexpr_Multiply_strategy)
 @settings(max_examples=50)
-def test_klangexpr::and_instantiation(instance):
-    assert isinstance(instance, klangexpr::And)
+def test_klangexpr_multiply_instantiation(instance):
+    assert isinstance(instance, klangexpr_Multiply)
 
-@given(instance=klangexpr::GreaterThan_strategy)
+@given(instance=klangexpr_And_strategy)
 @settings(max_examples=50)
-def test_klangexpr::greaterthan_instantiation(instance):
-    assert isinstance(instance, klangexpr::GreaterThan)
+def test_klangexpr_and_instantiation(instance):
+    assert isinstance(instance, klangexpr_And)
 
-@given(instance=klangexpr::GreaterThanOrEqual_strategy)
+@given(instance=klangexpr_Minus_strategy)
 @settings(max_examples=50)
-def test_klangexpr::greaterthanorequal_instantiation(instance):
-    assert isinstance(instance, klangexpr::GreaterThanOrEqual)
+def test_klangexpr_minus_instantiation(instance):
+    assert isinstance(instance, klangexpr_Minus)
 
-@given(instance=klangexpr::LessThanOrEqual_strategy)
+@given(instance=klangexpr_GreaterThanOrEqual_strategy)
 @settings(max_examples=50)
-def test_klangexpr::lessthanorequal_instantiation(instance):
-    assert isinstance(instance, klangexpr::LessThanOrEqual)
+def test_klangexpr_greaterthanorequal_instantiation(instance):
+    assert isinstance(instance, klangexpr_GreaterThanOrEqual)
 
-@given(instance=klangexpr::Equal_strategy)
+@given(instance=klangexpr_Equal_strategy)
 @settings(max_examples=50)
-def test_klangexpr::equal_instantiation(instance):
-    assert isinstance(instance, klangexpr::Equal)
+def test_klangexpr_equal_instantiation(instance):
+    assert isinstance(instance, klangexpr_Equal)
 
-@given(instance=klangexpr::Divide_strategy)
+@given(instance=klangexpr_GreaterThan_strategy)
 @settings(max_examples=50)
-def test_klangexpr::divide_instantiation(instance):
-    assert isinstance(instance, klangexpr::Divide)
+def test_klangexpr_greaterthan_instantiation(instance):
+    assert isinstance(instance, klangexpr_GreaterThan)
 
-@given(instance=klangexpr::Minus_strategy)
+@given(instance=klangexpr_Plus_strategy)
 @settings(max_examples=50)
-def test_klangexpr::minus_instantiation(instance):
-    assert isinstance(instance, klangexpr::Minus)
+def test_klangexpr_plus_instantiation(instance):
+    assert isinstance(instance, klangexpr_Plus)
 
-@given(instance=klangexpr::Multiply_strategy)
+@given(instance=klangexpr_LessThan_strategy)
 @settings(max_examples=50)
-def test_klangexpr::multiply_instantiation(instance):
-    assert isinstance(instance, klangexpr::Multiply)
+def test_klangexpr_lessthan_instantiation(instance):
+    assert isinstance(instance, klangexpr_LessThan)
 
-@given(instance=klangexpr::Or_strategy)
+@given(instance=klangexpr_Or_strategy)
 @settings(max_examples=50)
-def test_klangexpr::or_instantiation(instance):
-    assert isinstance(instance, klangexpr::Or)
+def test_klangexpr_or_instantiation(instance):
+    assert isinstance(instance, klangexpr_Or)
 
-@given(instance=klangexpr::VariableAssignment_strategy)
+@given(instance=klangexpr_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_klangexpr::variableassignment_instantiation(instance):
-    assert isinstance(instance, klangexpr::VariableAssignment)
-
-@given(instance=klangexpr::VariableAssignment_strategy)
-def test_klangexpr::variableassignment_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
+def test_klangexpr_variableassignment_instantiation(instance):
+    assert isinstance(instance, klangexpr_VariableAssignment)
 
 
-@given(instance=klangexpr::VariableAssignment_strategy)
-def test_klangexpr::variableassignment_variableName_setter(instance):
+
+@given(instance=klangexpr_VariableAssignment_strategy)
+def test_klangexpr_variableassignment_variableName_setter(instance):
     original = instance.variableName
     instance.variableName = original
     assert instance.variableName == original
 
-@given(instance=klangexpr::Yield_strategy)
+@given(instance=klangexpr_Yield_strategy)
 @settings(max_examples=50)
-def test_klangexpr::yield_instantiation(instance):
-    assert isinstance(instance, klangexpr::Yield)
+def test_klangexpr_yield_instantiation(instance):
+    assert isinstance(instance, klangexpr_Yield)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    BKeys::Y,
-    BKeys::RootB,
-    BKeys::B,
+from python_code import (
+    BKeys_Y,
+    BKeys_RootB,
+    BKeys_B,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_bkeys::y_is_not_abstract():
-    assert not inspect.isabstract(BKeys::Y)
+def test_bkeys_y_is_not_abstract():
+    assert not inspect.isabstract(BKeys_Y)
 
 
-def test_bkeys::y_constructor_exists():
-    assert callable(BKeys::Y.__init__)
+def test_bkeys_y_constructor_exists():
+    assert callable(BKeys_Y.__init__)
 
 
-def test_bkeys::y_constructor_args():
-    sig = inspect.signature(BKeys::Y.__init__)
+def test_bkeys_y_constructor_args():
+    sig = inspect.signature(BKeys_Y.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bkeys::rootb_is_not_abstract():
-    assert not inspect.isabstract(BKeys::RootB)
+def test_bkeys_rootb_is_not_abstract():
+    assert not inspect.isabstract(BKeys_RootB)
 
 
-def test_bkeys::rootb_constructor_exists():
-    assert callable(BKeys::RootB.__init__)
+def test_bkeys_rootb_constructor_exists():
+    assert callable(BKeys_RootB.__init__)
 
 
-def test_bkeys::rootb_constructor_args():
-    sig = inspect.signature(BKeys::RootB.__init__)
+def test_bkeys_rootb_constructor_args():
+    sig = inspect.signature(BKeys_RootB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bkeys::b_is_not_abstract():
-    assert not inspect.isabstract(BKeys::B)
+def test_bkeys_b_is_not_abstract():
+    assert not inspect.isabstract(BKeys_B)
 
 
-def test_bkeys::b_constructor_exists():
-    assert callable(BKeys::B.__init__)
+def test_bkeys_b_constructor_exists():
+    assert callable(BKeys_B.__init__)
 
 
-def test_bkeys::b_constructor_args():
-    sig = inspect.signature(BKeys::B.__init__)
+def test_bkeys_b_constructor_args():
+    sig = inspect.signature(BKeys_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-BKeys::Y_strategy = st.builds(
-    BKeys::Y,
+BKeys_Y_strategy = st.builds(
+    BKeys_Y,
 )
-BKeys::RootB_strategy = st.builds(
-    BKeys::RootB,
+BKeys_RootB_strategy = st.builds(
+    BKeys_RootB,
 )
-BKeys::B_strategy = st.builds(
-    BKeys::B,
+BKeys_B_strategy = st.builds(
+    BKeys_B,
 )
 
-@given(instance=BKeys::Y_strategy)
+@given(instance=BKeys_Y_strategy)
 @settings(max_examples=50)
-def test_bkeys::y_instantiation(instance):
-    assert isinstance(instance, BKeys::Y)
+def test_bkeys_y_instantiation(instance):
+    assert isinstance(instance, BKeys_Y)
 
-@given(instance=BKeys::RootB_strategy)
+@given(instance=BKeys_RootB_strategy)
 @settings(max_examples=50)
-def test_bkeys::rootb_instantiation(instance):
-    assert isinstance(instance, BKeys::RootB)
+def test_bkeys_rootb_instantiation(instance):
+    assert isinstance(instance, BKeys_RootB)
 
-@given(instance=BKeys::B_strategy)
+@given(instance=BKeys_B_strategy)
 @settings(max_examples=50)
-def test_bkeys::b_instantiation(instance):
-    assert isinstance(instance, BKeys::B)
+def test_bkeys_b_instantiation(instance):
+    assert isinstance(instance, BKeys_B)

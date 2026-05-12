@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::EObject,
-    trace::TraceLink,
-    trace::Trace,
+from python_code import (
+    trace_EObject,
+    trace_TraceLink,
+    trace_Trace,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_trace::eobject_is_not_abstract():
-    assert not inspect.isabstract(trace::EObject)
+def test_trace_eobject_is_not_abstract():
+    assert not inspect.isabstract(trace_EObject)
 
 
-def test_trace::eobject_constructor_exists():
-    assert callable(trace::EObject.__init__)
+def test_trace_eobject_constructor_exists():
+    assert callable(trace_EObject.__init__)
 
 
-def test_trace::eobject_constructor_args():
-    sig = inspect.signature(trace::EObject.__init__)
+def test_trace_eobject_constructor_args():
+    sig = inspect.signature(trace_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trace::tracelink_is_not_abstract():
-    assert not inspect.isabstract(trace::TraceLink)
+def test_trace_tracelink_is_not_abstract():
+    assert not inspect.isabstract(trace_TraceLink)
 
 
-def test_trace::tracelink_constructor_exists():
-    assert callable(trace::TraceLink.__init__)
+def test_trace_tracelink_constructor_exists():
+    assert callable(trace_TraceLink.__init__)
 
 
-def test_trace::tracelink_constructor_args():
-    sig = inspect.signature(trace::TraceLink.__init__)
+def test_trace_tracelink_constructor_args():
+    sig = inspect.signature(trace_TraceLink.__init__)
     params = list(sig.parameters.keys())
     assert "ruleName" in params, "Missing parameter 'ruleName'"
 
-def test_trace::tracelink_has_ruleName():
-    assert hasattr(trace::TraceLink, "ruleName")
+def test_trace_tracelink_has_ruleName():
+    assert hasattr(trace_TraceLink, "ruleName")
     descriptor = None
-    for klass in trace::TraceLink.__mro__:
+    for klass in trace_TraceLink.__mro__:
         if "ruleName" in klass.__dict__:
             descriptor = klass.__dict__["ruleName"]
             break
@@ -55,16 +55,16 @@ def test_trace::tracelink_has_ruleName():
 
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::EObject_strategy = st.builds(
-    trace::EObject,
+trace_EObject_strategy = st.builds(
+    trace_EObject,
 )
-trace::TraceLink_strategy = st.builds(
-    trace::TraceLink,
+trace_TraceLink_strategy = st.builds(
+    trace_TraceLink,
     ruleName=
         safe_text
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
 
-@given(instance=trace::EObject_strategy)
+@given(instance=trace_EObject_strategy)
 @settings(max_examples=50)
-def test_trace::eobject_instantiation(instance):
-    assert isinstance(instance, trace::EObject)
+def test_trace_eobject_instantiation(instance):
+    assert isinstance(instance, trace_EObject)
 
-@given(instance=trace::TraceLink_strategy)
+@given(instance=trace_TraceLink_strategy)
 @settings(max_examples=50)
-def test_trace::tracelink_instantiation(instance):
-    assert isinstance(instance, trace::TraceLink)
-
-@given(instance=trace::TraceLink_strategy)
-def test_trace::tracelink_ruleName_type(instance):
-    assert isinstance(instance.ruleName, str)
+def test_trace_tracelink_instantiation(instance):
+    assert isinstance(instance, trace_TraceLink)
 
 
-@given(instance=trace::TraceLink_strategy)
-def test_trace::tracelink_ruleName_setter(instance):
+
+@given(instance=trace_TraceLink_strategy)
+def test_trace_tracelink_ruleName_setter(instance):
     original = instance.ruleName
     instance.ruleName = original
     assert instance.ruleName == original
 
-@given(instance=trace::Trace_strategy)
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)

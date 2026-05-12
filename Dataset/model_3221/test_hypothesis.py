@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    UnaryExpression,
-    mpl::ParenthesisExpression,
-    mpl::UnaryMinusExpression,
-    ArithmeticExpression,
-    mpl::SubExpression,
-    mpl::MulExpression,
-    mpl::DivExpression,
-    mpl::AddExpression,
+from python_code import (
     AtomicExpression,
-    mpl::LiteralValue,
+    mpl_LiteralValue,
     Expression,
-    mpl::UnaryExpression,
-    mpl::OperationExpression,
-    mpl::ArithmeticExpression,
-    mpl::AtomicExpression,
-    mpl::Variable,
+    mpl_ArithmeticExpression,
+    mpl_AtomicExpression,
+    mpl_Variable,
     FunctionalUnit,
-    mpl::Block,
-    mpl::ComparisonExpression,
-    mpl::VariableReference,
+    mpl_Block,
+    mpl_ComparisonExpression,
+    mpl_VariableReference,
     Statement,
-    mpl::ExpressionStatement,
-    mpl::ReturnStatement,
-    mpl::IfStatement,
-    mpl::WhileLoop,
-    mpl::ForLoop,
-    mpl::Trace,
-    mpl::Assignment,
-    mpl::Statement,
-    mpl::Expression,
+    mpl_IfStatement,
+    mpl_WhileLoop,
+    mpl_ReturnStatement,
+    mpl_ExpressionStatement,
+    mpl_Assignment,
+    mpl_Statement,
+    mpl_Expression,
     Operation,
-    mpl::Procedure,
-    mpl::Function,
-    mpl::VariableDeclaration,
-    mpl::FunctionalUnit,
-    mpl::Operation,
-    mpl::Program,
-    mpl::MPLModel,
+    mpl_Procedure,
+    mpl_Function,
+    mpl_VariableDeclaration,
+    mpl_FunctionalUnit,
+    mpl_Operation,
+    mpl_Program,
+    mpl_MPLModel,
+    mpl_Trace,
+    mpl_ForLoop,
+    mpl_OperationExpression,
+    UnaryExpression,
+    mpl_ParenthesisExpression,
+    mpl_UnaryMinusExpression,
+    mpl_UnaryExpression,
+    ArithmeticExpression,
+    mpl_SubExpression,
+    mpl_AddExpression,
+    mpl_MulExpression,
+    mpl_DivExpression,
     ComparisonOperator,
     ForLoopDirection,
 )
@@ -51,118 +51,6 @@ from classes import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(UnaryExpression)
-
-
-def test_unaryexpression_constructor_exists():
-    assert callable(UnaryExpression.__init__)
-
-
-def test_unaryexpression_constructor_args():
-    sig = inspect.signature(UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::parenthesisexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::ParenthesisExpression)
-
-
-def test_mpl::parenthesisexpression_constructor_exists():
-    assert callable(mpl::ParenthesisExpression.__init__)
-
-
-def test_mpl::parenthesisexpression_constructor_args():
-    sig = inspect.signature(mpl::ParenthesisExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::unaryminusexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::UnaryMinusExpression)
-
-
-def test_mpl::unaryminusexpression_constructor_exists():
-    assert callable(mpl::UnaryMinusExpression.__init__)
-
-
-def test_mpl::unaryminusexpression_constructor_args():
-    sig = inspect.signature(mpl::UnaryMinusExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(ArithmeticExpression)
-
-
-def test_arithmeticexpression_constructor_exists():
-    assert callable(ArithmeticExpression.__init__)
-
-
-def test_arithmeticexpression_constructor_args():
-    sig = inspect.signature(ArithmeticExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::subexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::SubExpression)
-
-
-def test_mpl::subexpression_constructor_exists():
-    assert callable(mpl::SubExpression.__init__)
-
-
-def test_mpl::subexpression_constructor_args():
-    sig = inspect.signature(mpl::SubExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::mulexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::MulExpression)
-
-
-def test_mpl::mulexpression_constructor_exists():
-    assert callable(mpl::MulExpression.__init__)
-
-
-def test_mpl::mulexpression_constructor_args():
-    sig = inspect.signature(mpl::MulExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::divexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::DivExpression)
-
-
-def test_mpl::divexpression_constructor_exists():
-    assert callable(mpl::DivExpression.__init__)
-
-
-def test_mpl::divexpression_constructor_args():
-    sig = inspect.signature(mpl::DivExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::addexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::AddExpression)
-
-
-def test_mpl::addexpression_constructor_exists():
-    assert callable(mpl::AddExpression.__init__)
-
-
-def test_mpl::addexpression_constructor_args():
-    sig = inspect.signature(mpl::AddExpression.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -180,23 +68,23 @@ def test_atomicexpression_constructor_args():
 
 
 
-def test_mpl::literalvalue_is_not_abstract():
-    assert not inspect.isabstract(mpl::LiteralValue)
+def test_mpl_literalvalue_is_not_abstract():
+    assert not inspect.isabstract(mpl_LiteralValue)
 
 
-def test_mpl::literalvalue_constructor_exists():
-    assert callable(mpl::LiteralValue.__init__)
+def test_mpl_literalvalue_constructor_exists():
+    assert callable(mpl_LiteralValue.__init__)
 
 
-def test_mpl::literalvalue_constructor_args():
-    sig = inspect.signature(mpl::LiteralValue.__init__)
+def test_mpl_literalvalue_constructor_args():
+    sig = inspect.signature(mpl_LiteralValue.__init__)
     params = list(sig.parameters.keys())
     assert "rawValue" in params, "Missing parameter 'rawValue'"
 
-def test_mpl::literalvalue_has_rawValue():
-    assert hasattr(mpl::LiteralValue, "rawValue")
+def test_mpl_literalvalue_has_rawValue():
+    assert hasattr(mpl_LiteralValue, "rawValue")
     descriptor = None
-    for klass in mpl::LiteralValue.__mro__:
+    for klass in mpl_LiteralValue.__mro__:
         if "rawValue" in klass.__dict__:
             descriptor = klass.__dict__["rawValue"]
             break
@@ -218,79 +106,51 @@ def test_expression_constructor_args():
 
 
 
-def test_mpl::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::UnaryExpression)
+def test_mpl_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_ArithmeticExpression)
 
 
-def test_mpl::unaryexpression_constructor_exists():
-    assert callable(mpl::UnaryExpression.__init__)
+def test_mpl_arithmeticexpression_constructor_exists():
+    assert callable(mpl_ArithmeticExpression.__init__)
 
 
-def test_mpl::unaryexpression_constructor_args():
-    sig = inspect.signature(mpl::UnaryExpression.__init__)
+def test_mpl_arithmeticexpression_constructor_args():
+    sig = inspect.signature(mpl_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::operationexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::OperationExpression)
+def test_mpl_atomicexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_AtomicExpression)
 
 
-def test_mpl::operationexpression_constructor_exists():
-    assert callable(mpl::OperationExpression.__init__)
+def test_mpl_atomicexpression_constructor_exists():
+    assert callable(mpl_AtomicExpression.__init__)
 
 
-def test_mpl::operationexpression_constructor_args():
-    sig = inspect.signature(mpl::OperationExpression.__init__)
+def test_mpl_atomicexpression_constructor_args():
+    sig = inspect.signature(mpl_AtomicExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::ArithmeticExpression)
+def test_mpl_variable_is_not_abstract():
+    assert not inspect.isabstract(mpl_Variable)
 
 
-def test_mpl::arithmeticexpression_constructor_exists():
-    assert callable(mpl::ArithmeticExpression.__init__)
+def test_mpl_variable_constructor_exists():
+    assert callable(mpl_Variable.__init__)
 
 
-def test_mpl::arithmeticexpression_constructor_args():
-    sig = inspect.signature(mpl::ArithmeticExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::atomicexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::AtomicExpression)
-
-
-def test_mpl::atomicexpression_constructor_exists():
-    assert callable(mpl::AtomicExpression.__init__)
-
-
-def test_mpl::atomicexpression_constructor_args():
-    sig = inspect.signature(mpl::AtomicExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::variable_is_not_abstract():
-    assert not inspect.isabstract(mpl::Variable)
-
-
-def test_mpl::variable_constructor_exists():
-    assert callable(mpl::Variable.__init__)
-
-
-def test_mpl::variable_constructor_args():
-    sig = inspect.signature(mpl::Variable.__init__)
+def test_mpl_variable_constructor_args():
+    sig = inspect.signature(mpl_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mpl::variable_has_name():
-    assert hasattr(mpl::Variable, "name")
+def test_mpl_variable_has_name():
+    assert hasattr(mpl_Variable, "name")
     descriptor = None
-    for klass in mpl::Variable.__mro__:
+    for klass in mpl_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -312,37 +172,37 @@ def test_functionalunit_constructor_args():
 
 
 
-def test_mpl::block_is_not_abstract():
-    assert not inspect.isabstract(mpl::Block)
+def test_mpl_block_is_not_abstract():
+    assert not inspect.isabstract(mpl_Block)
 
 
-def test_mpl::block_constructor_exists():
-    assert callable(mpl::Block.__init__)
+def test_mpl_block_constructor_exists():
+    assert callable(mpl_Block.__init__)
 
 
-def test_mpl::block_constructor_args():
-    sig = inspect.signature(mpl::Block.__init__)
+def test_mpl_block_constructor_args():
+    sig = inspect.signature(mpl_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::comparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(mpl::ComparisonExpression)
+def test_mpl_comparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_ComparisonExpression)
 
 
-def test_mpl::comparisonexpression_constructor_exists():
-    assert callable(mpl::ComparisonExpression.__init__)
+def test_mpl_comparisonexpression_constructor_exists():
+    assert callable(mpl_ComparisonExpression.__init__)
 
 
-def test_mpl::comparisonexpression_constructor_args():
-    sig = inspect.signature(mpl::ComparisonExpression.__init__)
+def test_mpl_comparisonexpression_constructor_args():
+    sig = inspect.signature(mpl_ComparisonExpression.__init__)
     params = list(sig.parameters.keys())
     assert "comparisonOperator" in params, "Missing parameter 'comparisonOperator'"
 
-def test_mpl::comparisonexpression_has_comparisonOperator():
-    assert hasattr(mpl::ComparisonExpression, "comparisonOperator")
+def test_mpl_comparisonexpression_has_comparisonOperator():
+    assert hasattr(mpl_ComparisonExpression, "comparisonOperator")
     descriptor = None
-    for klass in mpl::ComparisonExpression.__mro__:
+    for klass in mpl_ComparisonExpression.__mro__:
         if "comparisonOperator" in klass.__dict__:
             descriptor = klass.__dict__["comparisonOperator"]
             break
@@ -350,16 +210,16 @@ def test_mpl::comparisonexpression_has_comparisonOperator():
 
 
 
-def test_mpl::variablereference_is_not_abstract():
-    assert not inspect.isabstract(mpl::VariableReference)
+def test_mpl_variablereference_is_not_abstract():
+    assert not inspect.isabstract(mpl_VariableReference)
 
 
-def test_mpl::variablereference_constructor_exists():
-    assert callable(mpl::VariableReference.__init__)
+def test_mpl_variablereference_constructor_exists():
+    assert callable(mpl_VariableReference.__init__)
 
 
-def test_mpl::variablereference_constructor_args():
-    sig = inspect.signature(mpl::VariableReference.__init__)
+def test_mpl_variablereference_constructor_args():
+    sig = inspect.signature(mpl_VariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -378,138 +238,100 @@ def test_statement_constructor_args():
 
 
 
-def test_mpl::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(mpl::ExpressionStatement)
+def test_mpl_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(mpl_IfStatement)
 
 
-def test_mpl::expressionstatement_constructor_exists():
-    assert callable(mpl::ExpressionStatement.__init__)
+def test_mpl_ifstatement_constructor_exists():
+    assert callable(mpl_IfStatement.__init__)
 
 
-def test_mpl::expressionstatement_constructor_args():
-    sig = inspect.signature(mpl::ExpressionStatement.__init__)
+def test_mpl_ifstatement_constructor_args():
+    sig = inspect.signature(mpl_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(mpl::ReturnStatement)
+def test_mpl_whileloop_is_not_abstract():
+    assert not inspect.isabstract(mpl_WhileLoop)
 
 
-def test_mpl::returnstatement_constructor_exists():
-    assert callable(mpl::ReturnStatement.__init__)
+def test_mpl_whileloop_constructor_exists():
+    assert callable(mpl_WhileLoop.__init__)
 
 
-def test_mpl::returnstatement_constructor_args():
-    sig = inspect.signature(mpl::ReturnStatement.__init__)
+def test_mpl_whileloop_constructor_args():
+    sig = inspect.signature(mpl_WhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(mpl::IfStatement)
+def test_mpl_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(mpl_ReturnStatement)
 
 
-def test_mpl::ifstatement_constructor_exists():
-    assert callable(mpl::IfStatement.__init__)
+def test_mpl_returnstatement_constructor_exists():
+    assert callable(mpl_ReturnStatement.__init__)
 
 
-def test_mpl::ifstatement_constructor_args():
-    sig = inspect.signature(mpl::IfStatement.__init__)
+def test_mpl_returnstatement_constructor_args():
+    sig = inspect.signature(mpl_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::whileloop_is_not_abstract():
-    assert not inspect.isabstract(mpl::WhileLoop)
+def test_mpl_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(mpl_ExpressionStatement)
 
 
-def test_mpl::whileloop_constructor_exists():
-    assert callable(mpl::WhileLoop.__init__)
+def test_mpl_expressionstatement_constructor_exists():
+    assert callable(mpl_ExpressionStatement.__init__)
 
 
-def test_mpl::whileloop_constructor_args():
-    sig = inspect.signature(mpl::WhileLoop.__init__)
+def test_mpl_expressionstatement_constructor_args():
+    sig = inspect.signature(mpl_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::forloop_is_not_abstract():
-    assert not inspect.isabstract(mpl::ForLoop)
+def test_mpl_assignment_is_not_abstract():
+    assert not inspect.isabstract(mpl_Assignment)
 
 
-def test_mpl::forloop_constructor_exists():
-    assert callable(mpl::ForLoop.__init__)
+def test_mpl_assignment_constructor_exists():
+    assert callable(mpl_Assignment.__init__)
 
 
-def test_mpl::forloop_constructor_args():
-    sig = inspect.signature(mpl::ForLoop.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_mpl::forloop_has_direction():
-    assert hasattr(mpl::ForLoop, "direction")
-    descriptor = None
-    for klass in mpl::ForLoop.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mpl::trace_is_not_abstract():
-    assert not inspect.isabstract(mpl::Trace)
-
-
-def test_mpl::trace_constructor_exists():
-    assert callable(mpl::Trace.__init__)
-
-
-def test_mpl::trace_constructor_args():
-    sig = inspect.signature(mpl::Trace.__init__)
+def test_mpl_assignment_constructor_args():
+    sig = inspect.signature(mpl_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::assignment_is_not_abstract():
-    assert not inspect.isabstract(mpl::Assignment)
+def test_mpl_statement_is_not_abstract():
+    assert not inspect.isabstract(mpl_Statement)
 
 
-def test_mpl::assignment_constructor_exists():
-    assert callable(mpl::Assignment.__init__)
+def test_mpl_statement_constructor_exists():
+    assert callable(mpl_Statement.__init__)
 
 
-def test_mpl::assignment_constructor_args():
-    sig = inspect.signature(mpl::Assignment.__init__)
+def test_mpl_statement_constructor_args():
+    sig = inspect.signature(mpl_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::statement_is_not_abstract():
-    assert not inspect.isabstract(mpl::Statement)
+def test_mpl_expression_is_not_abstract():
+    assert not inspect.isabstract(mpl_Expression)
 
 
-def test_mpl::statement_constructor_exists():
-    assert callable(mpl::Statement.__init__)
+def test_mpl_expression_constructor_exists():
+    assert callable(mpl_Expression.__init__)
 
 
-def test_mpl::statement_constructor_args():
-    sig = inspect.signature(mpl::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mpl::expression_is_not_abstract():
-    assert not inspect.isabstract(mpl::Expression)
-
-
-def test_mpl::expression_constructor_exists():
-    assert callable(mpl::Expression.__init__)
-
-
-def test_mpl::expression_constructor_args():
-    sig = inspect.signature(mpl::Expression.__init__)
+def test_mpl_expression_constructor_args():
+    sig = inspect.signature(mpl_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -528,65 +350,65 @@ def test_operation_constructor_args():
 
 
 
-def test_mpl::procedure_is_not_abstract():
-    assert not inspect.isabstract(mpl::Procedure)
+def test_mpl_procedure_is_not_abstract():
+    assert not inspect.isabstract(mpl_Procedure)
 
 
-def test_mpl::procedure_constructor_exists():
-    assert callable(mpl::Procedure.__init__)
+def test_mpl_procedure_constructor_exists():
+    assert callable(mpl_Procedure.__init__)
 
 
-def test_mpl::procedure_constructor_args():
-    sig = inspect.signature(mpl::Procedure.__init__)
+def test_mpl_procedure_constructor_args():
+    sig = inspect.signature(mpl_Procedure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::function_is_not_abstract():
-    assert not inspect.isabstract(mpl::Function)
+def test_mpl_function_is_not_abstract():
+    assert not inspect.isabstract(mpl_Function)
 
 
-def test_mpl::function_constructor_exists():
-    assert callable(mpl::Function.__init__)
+def test_mpl_function_constructor_exists():
+    assert callable(mpl_Function.__init__)
 
 
-def test_mpl::function_constructor_args():
-    sig = inspect.signature(mpl::Function.__init__)
+def test_mpl_function_constructor_args():
+    sig = inspect.signature(mpl_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(mpl::VariableDeclaration)
+def test_mpl_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(mpl_VariableDeclaration)
 
 
-def test_mpl::variabledeclaration_constructor_exists():
-    assert callable(mpl::VariableDeclaration.__init__)
+def test_mpl_variabledeclaration_constructor_exists():
+    assert callable(mpl_VariableDeclaration.__init__)
 
 
-def test_mpl::variabledeclaration_constructor_args():
-    sig = inspect.signature(mpl::VariableDeclaration.__init__)
+def test_mpl_variabledeclaration_constructor_args():
+    sig = inspect.signature(mpl_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::functionalunit_is_not_abstract():
-    assert not inspect.isabstract(mpl::FunctionalUnit)
+def test_mpl_functionalunit_is_not_abstract():
+    assert not inspect.isabstract(mpl_FunctionalUnit)
 
 
-def test_mpl::functionalunit_constructor_exists():
-    assert callable(mpl::FunctionalUnit.__init__)
+def test_mpl_functionalunit_constructor_exists():
+    assert callable(mpl_FunctionalUnit.__init__)
 
 
-def test_mpl::functionalunit_constructor_args():
-    sig = inspect.signature(mpl::FunctionalUnit.__init__)
+def test_mpl_functionalunit_constructor_args():
+    sig = inspect.signature(mpl_FunctionalUnit.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mpl::functionalunit_has_name():
-    assert hasattr(mpl::FunctionalUnit, "name")
+def test_mpl_functionalunit_has_name():
+    assert hasattr(mpl_FunctionalUnit, "name")
     descriptor = None
-    for klass in mpl::FunctionalUnit.__mro__:
+    for klass in mpl_FunctionalUnit.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -594,44 +416,222 @@ def test_mpl::functionalunit_has_name():
 
 
 
-def test_mpl::operation_is_not_abstract():
-    assert not inspect.isabstract(mpl::Operation)
+def test_mpl_operation_is_not_abstract():
+    assert not inspect.isabstract(mpl_Operation)
 
 
-def test_mpl::operation_constructor_exists():
-    assert callable(mpl::Operation.__init__)
+def test_mpl_operation_constructor_exists():
+    assert callable(mpl_Operation.__init__)
 
 
-def test_mpl::operation_constructor_args():
-    sig = inspect.signature(mpl::Operation.__init__)
+def test_mpl_operation_constructor_args():
+    sig = inspect.signature(mpl_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::program_is_not_abstract():
-    assert not inspect.isabstract(mpl::Program)
+def test_mpl_program_is_not_abstract():
+    assert not inspect.isabstract(mpl_Program)
 
 
-def test_mpl::program_constructor_exists():
-    assert callable(mpl::Program.__init__)
+def test_mpl_program_constructor_exists():
+    assert callable(mpl_Program.__init__)
 
 
-def test_mpl::program_constructor_args():
-    sig = inspect.signature(mpl::Program.__init__)
+def test_mpl_program_constructor_args():
+    sig = inspect.signature(mpl_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mpl::mplmodel_is_not_abstract():
-    assert not inspect.isabstract(mpl::MPLModel)
+def test_mpl_mplmodel_is_not_abstract():
+    assert not inspect.isabstract(mpl_MPLModel)
 
 
-def test_mpl::mplmodel_constructor_exists():
-    assert callable(mpl::MPLModel.__init__)
+def test_mpl_mplmodel_constructor_exists():
+    assert callable(mpl_MPLModel.__init__)
 
 
-def test_mpl::mplmodel_constructor_args():
-    sig = inspect.signature(mpl::MPLModel.__init__)
+def test_mpl_mplmodel_constructor_args():
+    sig = inspect.signature(mpl_MPLModel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_trace_is_not_abstract():
+    assert not inspect.isabstract(mpl_Trace)
+
+
+def test_mpl_trace_constructor_exists():
+    assert callable(mpl_Trace.__init__)
+
+
+def test_mpl_trace_constructor_args():
+    sig = inspect.signature(mpl_Trace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_forloop_is_not_abstract():
+    assert not inspect.isabstract(mpl_ForLoop)
+
+
+def test_mpl_forloop_constructor_exists():
+    assert callable(mpl_ForLoop.__init__)
+
+
+def test_mpl_forloop_constructor_args():
+    sig = inspect.signature(mpl_ForLoop.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_mpl_forloop_has_direction():
+    assert hasattr(mpl_ForLoop, "direction")
+    descriptor = None
+    for klass in mpl_ForLoop.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mpl_operationexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_OperationExpression)
+
+
+def test_mpl_operationexpression_constructor_exists():
+    assert callable(mpl_OperationExpression.__init__)
+
+
+def test_mpl_operationexpression_constructor_args():
+    sig = inspect.signature(mpl_OperationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(UnaryExpression)
+
+
+def test_unaryexpression_constructor_exists():
+    assert callable(UnaryExpression.__init__)
+
+
+def test_unaryexpression_constructor_args():
+    sig = inspect.signature(UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_parenthesisexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_ParenthesisExpression)
+
+
+def test_mpl_parenthesisexpression_constructor_exists():
+    assert callable(mpl_ParenthesisExpression.__init__)
+
+
+def test_mpl_parenthesisexpression_constructor_args():
+    sig = inspect.signature(mpl_ParenthesisExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_unaryminusexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_UnaryMinusExpression)
+
+
+def test_mpl_unaryminusexpression_constructor_exists():
+    assert callable(mpl_UnaryMinusExpression.__init__)
+
+
+def test_mpl_unaryminusexpression_constructor_args():
+    sig = inspect.signature(mpl_UnaryMinusExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_UnaryExpression)
+
+
+def test_mpl_unaryexpression_constructor_exists():
+    assert callable(mpl_UnaryExpression.__init__)
+
+
+def test_mpl_unaryexpression_constructor_args():
+    sig = inspect.signature(mpl_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(ArithmeticExpression)
+
+
+def test_arithmeticexpression_constructor_exists():
+    assert callable(ArithmeticExpression.__init__)
+
+
+def test_arithmeticexpression_constructor_args():
+    sig = inspect.signature(ArithmeticExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_subexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_SubExpression)
+
+
+def test_mpl_subexpression_constructor_exists():
+    assert callable(mpl_SubExpression.__init__)
+
+
+def test_mpl_subexpression_constructor_args():
+    sig = inspect.signature(mpl_SubExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_addexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_AddExpression)
+
+
+def test_mpl_addexpression_constructor_exists():
+    assert callable(mpl_AddExpression.__init__)
+
+
+def test_mpl_addexpression_constructor_args():
+    sig = inspect.signature(mpl_AddExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_mulexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_MulExpression)
+
+
+def test_mpl_mulexpression_constructor_exists():
+    assert callable(mpl_MulExpression.__init__)
+
+
+def test_mpl_mulexpression_constructor_args():
+    sig = inspect.signature(mpl_MulExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mpl_divexpression_is_not_abstract():
+    assert not inspect.isabstract(mpl_DivExpression)
+
+
+def test_mpl_divexpression_constructor_exists():
+    assert callable(mpl_DivExpression.__init__)
+
+
+def test_mpl_divexpression_constructor_args():
+    sig = inspect.signature(mpl_DivExpression.__init__)
     params = list(sig.parameters.keys())
 
 def test_comparisonoperator_exists():
@@ -642,12 +642,12 @@ def test_comparisonoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ComparisonOperator]
     expected_literals = [
-        "INEQUAL",
-        "LESS_THAN",
         "GREATER_THAN_EQUAL",
         "LESS_THAN_EQUAL",
         "EQUAL",
         "GREATER_THAN",
+        "INEQUAL",
+        "LESS_THAN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -680,188 +680,145 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-UnaryExpression_strategy = st.builds(
-    UnaryExpression,
-)
-mpl::ParenthesisExpression_strategy = st.builds(
-    mpl::ParenthesisExpression,
-)
-mpl::UnaryMinusExpression_strategy = st.builds(
-    mpl::UnaryMinusExpression,
-)
-ArithmeticExpression_strategy = st.builds(
-    ArithmeticExpression,
-)
-mpl::SubExpression_strategy = st.builds(
-    mpl::SubExpression,
-)
-mpl::MulExpression_strategy = st.builds(
-    mpl::MulExpression,
-)
-mpl::DivExpression_strategy = st.builds(
-    mpl::DivExpression,
-)
-mpl::AddExpression_strategy = st.builds(
-    mpl::AddExpression,
-)
 AtomicExpression_strategy = st.builds(
     AtomicExpression,
 )
-mpl::LiteralValue_strategy = st.builds(
-    mpl::LiteralValue,
+mpl_LiteralValue_strategy = st.builds(
+    mpl_LiteralValue,
     rawValue=
         st.integers()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-mpl::UnaryExpression_strategy = st.builds(
-    mpl::UnaryExpression,
+mpl_ArithmeticExpression_strategy = st.builds(
+    mpl_ArithmeticExpression,
 )
-mpl::OperationExpression_strategy = st.builds(
-    mpl::OperationExpression,
+mpl_AtomicExpression_strategy = st.builds(
+    mpl_AtomicExpression,
 )
-mpl::ArithmeticExpression_strategy = st.builds(
-    mpl::ArithmeticExpression,
-)
-mpl::AtomicExpression_strategy = st.builds(
-    mpl::AtomicExpression,
-)
-mpl::Variable_strategy = st.builds(
-    mpl::Variable,
+mpl_Variable_strategy = st.builds(
+    mpl_Variable,
     name=
         safe_text
 )
 FunctionalUnit_strategy = st.builds(
     FunctionalUnit,
 )
-mpl::Block_strategy = st.builds(
-    mpl::Block,
+mpl_Block_strategy = st.builds(
+    mpl_Block,
 )
-mpl::ComparisonExpression_strategy = st.builds(
-    mpl::ComparisonExpression,
+mpl_ComparisonExpression_strategy = st.builds(
+    mpl_ComparisonExpression,
     comparisonOperator=
         safe_text
 )
-mpl::VariableReference_strategy = st.builds(
-    mpl::VariableReference,
+mpl_VariableReference_strategy = st.builds(
+    mpl_VariableReference,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-mpl::ExpressionStatement_strategy = st.builds(
-    mpl::ExpressionStatement,
+mpl_IfStatement_strategy = st.builds(
+    mpl_IfStatement,
 )
-mpl::ReturnStatement_strategy = st.builds(
-    mpl::ReturnStatement,
+mpl_WhileLoop_strategy = st.builds(
+    mpl_WhileLoop,
 )
-mpl::IfStatement_strategy = st.builds(
-    mpl::IfStatement,
+mpl_ReturnStatement_strategy = st.builds(
+    mpl_ReturnStatement,
 )
-mpl::WhileLoop_strategy = st.builds(
-    mpl::WhileLoop,
+mpl_ExpressionStatement_strategy = st.builds(
+    mpl_ExpressionStatement,
 )
-mpl::ForLoop_strategy = st.builds(
-    mpl::ForLoop,
-    direction=
-        safe_text
+mpl_Assignment_strategy = st.builds(
+    mpl_Assignment,
 )
-mpl::Trace_strategy = st.builds(
-    mpl::Trace,
+mpl_Statement_strategy = st.builds(
+    mpl_Statement,
 )
-mpl::Assignment_strategy = st.builds(
-    mpl::Assignment,
-)
-mpl::Statement_strategy = st.builds(
-    mpl::Statement,
-)
-mpl::Expression_strategy = st.builds(
-    mpl::Expression,
+mpl_Expression_strategy = st.builds(
+    mpl_Expression,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-mpl::Procedure_strategy = st.builds(
-    mpl::Procedure,
+mpl_Procedure_strategy = st.builds(
+    mpl_Procedure,
 )
-mpl::Function_strategy = st.builds(
-    mpl::Function,
+mpl_Function_strategy = st.builds(
+    mpl_Function,
 )
-mpl::VariableDeclaration_strategy = st.builds(
-    mpl::VariableDeclaration,
+mpl_VariableDeclaration_strategy = st.builds(
+    mpl_VariableDeclaration,
 )
-mpl::FunctionalUnit_strategy = st.builds(
-    mpl::FunctionalUnit,
+mpl_FunctionalUnit_strategy = st.builds(
+    mpl_FunctionalUnit,
     name=
         safe_text
 )
-mpl::Operation_strategy = st.builds(
-    mpl::Operation,
+mpl_Operation_strategy = st.builds(
+    mpl_Operation,
 )
-mpl::Program_strategy = st.builds(
-    mpl::Program,
+mpl_Program_strategy = st.builds(
+    mpl_Program,
 )
-mpl::MPLModel_strategy = st.builds(
-    mpl::MPLModel,
+mpl_MPLModel_strategy = st.builds(
+    mpl_MPLModel,
 )
-
-@given(instance=UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_unaryexpression_instantiation(instance):
-    assert isinstance(instance, UnaryExpression)
-
-@given(instance=mpl::ParenthesisExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::parenthesisexpression_instantiation(instance):
-    assert isinstance(instance, mpl::ParenthesisExpression)
-
-@given(instance=mpl::UnaryMinusExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::unaryminusexpression_instantiation(instance):
-    assert isinstance(instance, mpl::UnaryMinusExpression)
-
-@given(instance=ArithmeticExpression_strategy)
-@settings(max_examples=50)
-def test_arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, ArithmeticExpression)
-
-@given(instance=mpl::SubExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::subexpression_instantiation(instance):
-    assert isinstance(instance, mpl::SubExpression)
-
-@given(instance=mpl::MulExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::mulexpression_instantiation(instance):
-    assert isinstance(instance, mpl::MulExpression)
-
-@given(instance=mpl::DivExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::divexpression_instantiation(instance):
-    assert isinstance(instance, mpl::DivExpression)
-
-@given(instance=mpl::AddExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::addexpression_instantiation(instance):
-    assert isinstance(instance, mpl::AddExpression)
+mpl_Trace_strategy = st.builds(
+    mpl_Trace,
+)
+mpl_ForLoop_strategy = st.builds(
+    mpl_ForLoop,
+    direction=
+        safe_text
+)
+mpl_OperationExpression_strategy = st.builds(
+    mpl_OperationExpression,
+)
+UnaryExpression_strategy = st.builds(
+    UnaryExpression,
+)
+mpl_ParenthesisExpression_strategy = st.builds(
+    mpl_ParenthesisExpression,
+)
+mpl_UnaryMinusExpression_strategy = st.builds(
+    mpl_UnaryMinusExpression,
+)
+mpl_UnaryExpression_strategy = st.builds(
+    mpl_UnaryExpression,
+)
+ArithmeticExpression_strategy = st.builds(
+    ArithmeticExpression,
+)
+mpl_SubExpression_strategy = st.builds(
+    mpl_SubExpression,
+)
+mpl_AddExpression_strategy = st.builds(
+    mpl_AddExpression,
+)
+mpl_MulExpression_strategy = st.builds(
+    mpl_MulExpression,
+)
+mpl_DivExpression_strategy = st.builds(
+    mpl_DivExpression,
+)
 
 @given(instance=AtomicExpression_strategy)
 @settings(max_examples=50)
 def test_atomicexpression_instantiation(instance):
     assert isinstance(instance, AtomicExpression)
 
-@given(instance=mpl::LiteralValue_strategy)
+@given(instance=mpl_LiteralValue_strategy)
 @settings(max_examples=50)
-def test_mpl::literalvalue_instantiation(instance):
-    assert isinstance(instance, mpl::LiteralValue)
-
-@given(instance=mpl::LiteralValue_strategy)
-def test_mpl::literalvalue_rawValue_type(instance):
-    assert isinstance(instance.rawValue, int)
+def test_mpl_literalvalue_instantiation(instance):
+    assert isinstance(instance, mpl_LiteralValue)
 
 
-@given(instance=mpl::LiteralValue_strategy)
-def test_mpl::literalvalue_rawValue_setter(instance):
+
+@given(instance=mpl_LiteralValue_strategy)
+def test_mpl_literalvalue_rawValue_setter(instance):
     original = instance.rawValue
     instance.rawValue = original
     assert instance.rawValue == original
@@ -871,38 +828,25 @@ def test_mpl::literalvalue_rawValue_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=mpl::UnaryExpression_strategy)
+@given(instance=mpl_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_mpl::unaryexpression_instantiation(instance):
-    assert isinstance(instance, mpl::UnaryExpression)
+def test_mpl_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, mpl_ArithmeticExpression)
 
-@given(instance=mpl::OperationExpression_strategy)
+@given(instance=mpl_AtomicExpression_strategy)
 @settings(max_examples=50)
-def test_mpl::operationexpression_instantiation(instance):
-    assert isinstance(instance, mpl::OperationExpression)
+def test_mpl_atomicexpression_instantiation(instance):
+    assert isinstance(instance, mpl_AtomicExpression)
 
-@given(instance=mpl::ArithmeticExpression_strategy)
+@given(instance=mpl_Variable_strategy)
 @settings(max_examples=50)
-def test_mpl::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, mpl::ArithmeticExpression)
-
-@given(instance=mpl::AtomicExpression_strategy)
-@settings(max_examples=50)
-def test_mpl::atomicexpression_instantiation(instance):
-    assert isinstance(instance, mpl::AtomicExpression)
-
-@given(instance=mpl::Variable_strategy)
-@settings(max_examples=50)
-def test_mpl::variable_instantiation(instance):
-    assert isinstance(instance, mpl::Variable)
-
-@given(instance=mpl::Variable_strategy)
-def test_mpl::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mpl_variable_instantiation(instance):
+    assert isinstance(instance, mpl_Variable)
 
 
-@given(instance=mpl::Variable_strategy)
-def test_mpl::variable_name_setter(instance):
+
+@given(instance=mpl_Variable_strategy)
+def test_mpl_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -912,140 +856,181 @@ def test_mpl::variable_name_setter(instance):
 def test_functionalunit_instantiation(instance):
     assert isinstance(instance, FunctionalUnit)
 
-@given(instance=mpl::Block_strategy)
+@given(instance=mpl_Block_strategy)
 @settings(max_examples=50)
-def test_mpl::block_instantiation(instance):
-    assert isinstance(instance, mpl::Block)
+def test_mpl_block_instantiation(instance):
+    assert isinstance(instance, mpl_Block)
 
-@given(instance=mpl::ComparisonExpression_strategy)
+@given(instance=mpl_ComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_mpl::comparisonexpression_instantiation(instance):
-    assert isinstance(instance, mpl::ComparisonExpression)
-
-@given(instance=mpl::ComparisonExpression_strategy)
-def test_mpl::comparisonexpression_comparisonOperator_type(instance):
-    assert isinstance(instance.comparisonOperator, str)
+def test_mpl_comparisonexpression_instantiation(instance):
+    assert isinstance(instance, mpl_ComparisonExpression)
 
 
-@given(instance=mpl::ComparisonExpression_strategy)
-def test_mpl::comparisonexpression_comparisonOperator_setter(instance):
+
+@given(instance=mpl_ComparisonExpression_strategy)
+def test_mpl_comparisonexpression_comparisonOperator_setter(instance):
     original = instance.comparisonOperator
     instance.comparisonOperator = original
     assert instance.comparisonOperator == original
 
-@given(instance=mpl::VariableReference_strategy)
+@given(instance=mpl_VariableReference_strategy)
 @settings(max_examples=50)
-def test_mpl::variablereference_instantiation(instance):
-    assert isinstance(instance, mpl::VariableReference)
+def test_mpl_variablereference_instantiation(instance):
+    assert isinstance(instance, mpl_VariableReference)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=mpl::ExpressionStatement_strategy)
+@given(instance=mpl_IfStatement_strategy)
 @settings(max_examples=50)
-def test_mpl::expressionstatement_instantiation(instance):
-    assert isinstance(instance, mpl::ExpressionStatement)
+def test_mpl_ifstatement_instantiation(instance):
+    assert isinstance(instance, mpl_IfStatement)
 
-@given(instance=mpl::ReturnStatement_strategy)
+@given(instance=mpl_WhileLoop_strategy)
 @settings(max_examples=50)
-def test_mpl::returnstatement_instantiation(instance):
-    assert isinstance(instance, mpl::ReturnStatement)
+def test_mpl_whileloop_instantiation(instance):
+    assert isinstance(instance, mpl_WhileLoop)
 
-@given(instance=mpl::IfStatement_strategy)
+@given(instance=mpl_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_mpl::ifstatement_instantiation(instance):
-    assert isinstance(instance, mpl::IfStatement)
+def test_mpl_returnstatement_instantiation(instance):
+    assert isinstance(instance, mpl_ReturnStatement)
 
-@given(instance=mpl::WhileLoop_strategy)
+@given(instance=mpl_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_mpl::whileloop_instantiation(instance):
-    assert isinstance(instance, mpl::WhileLoop)
+def test_mpl_expressionstatement_instantiation(instance):
+    assert isinstance(instance, mpl_ExpressionStatement)
 
-@given(instance=mpl::ForLoop_strategy)
+@given(instance=mpl_Assignment_strategy)
 @settings(max_examples=50)
-def test_mpl::forloop_instantiation(instance):
-    assert isinstance(instance, mpl::ForLoop)
+def test_mpl_assignment_instantiation(instance):
+    assert isinstance(instance, mpl_Assignment)
 
-@given(instance=mpl::ForLoop_strategy)
-def test_mpl::forloop_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=mpl::ForLoop_strategy)
-def test_mpl::forloop_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=mpl::Trace_strategy)
+@given(instance=mpl_Statement_strategy)
 @settings(max_examples=50)
-def test_mpl::trace_instantiation(instance):
-    assert isinstance(instance, mpl::Trace)
+def test_mpl_statement_instantiation(instance):
+    assert isinstance(instance, mpl_Statement)
 
-@given(instance=mpl::Assignment_strategy)
+@given(instance=mpl_Expression_strategy)
 @settings(max_examples=50)
-def test_mpl::assignment_instantiation(instance):
-    assert isinstance(instance, mpl::Assignment)
-
-@given(instance=mpl::Statement_strategy)
-@settings(max_examples=50)
-def test_mpl::statement_instantiation(instance):
-    assert isinstance(instance, mpl::Statement)
-
-@given(instance=mpl::Expression_strategy)
-@settings(max_examples=50)
-def test_mpl::expression_instantiation(instance):
-    assert isinstance(instance, mpl::Expression)
+def test_mpl_expression_instantiation(instance):
+    assert isinstance(instance, mpl_Expression)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=mpl::Procedure_strategy)
+@given(instance=mpl_Procedure_strategy)
 @settings(max_examples=50)
-def test_mpl::procedure_instantiation(instance):
-    assert isinstance(instance, mpl::Procedure)
+def test_mpl_procedure_instantiation(instance):
+    assert isinstance(instance, mpl_Procedure)
 
-@given(instance=mpl::Function_strategy)
+@given(instance=mpl_Function_strategy)
 @settings(max_examples=50)
-def test_mpl::function_instantiation(instance):
-    assert isinstance(instance, mpl::Function)
+def test_mpl_function_instantiation(instance):
+    assert isinstance(instance, mpl_Function)
 
-@given(instance=mpl::VariableDeclaration_strategy)
+@given(instance=mpl_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_mpl::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, mpl::VariableDeclaration)
+def test_mpl_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, mpl_VariableDeclaration)
 
-@given(instance=mpl::FunctionalUnit_strategy)
+@given(instance=mpl_FunctionalUnit_strategy)
 @settings(max_examples=50)
-def test_mpl::functionalunit_instantiation(instance):
-    assert isinstance(instance, mpl::FunctionalUnit)
-
-@given(instance=mpl::FunctionalUnit_strategy)
-def test_mpl::functionalunit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mpl_functionalunit_instantiation(instance):
+    assert isinstance(instance, mpl_FunctionalUnit)
 
 
-@given(instance=mpl::FunctionalUnit_strategy)
-def test_mpl::functionalunit_name_setter(instance):
+
+@given(instance=mpl_FunctionalUnit_strategy)
+def test_mpl_functionalunit_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mpl::Operation_strategy)
+@given(instance=mpl_Operation_strategy)
 @settings(max_examples=50)
-def test_mpl::operation_instantiation(instance):
-    assert isinstance(instance, mpl::Operation)
+def test_mpl_operation_instantiation(instance):
+    assert isinstance(instance, mpl_Operation)
 
-@given(instance=mpl::Program_strategy)
+@given(instance=mpl_Program_strategy)
 @settings(max_examples=50)
-def test_mpl::program_instantiation(instance):
-    assert isinstance(instance, mpl::Program)
+def test_mpl_program_instantiation(instance):
+    assert isinstance(instance, mpl_Program)
 
-@given(instance=mpl::MPLModel_strategy)
+@given(instance=mpl_MPLModel_strategy)
 @settings(max_examples=50)
-def test_mpl::mplmodel_instantiation(instance):
-    assert isinstance(instance, mpl::MPLModel)
+def test_mpl_mplmodel_instantiation(instance):
+    assert isinstance(instance, mpl_MPLModel)
+
+@given(instance=mpl_Trace_strategy)
+@settings(max_examples=50)
+def test_mpl_trace_instantiation(instance):
+    assert isinstance(instance, mpl_Trace)
+
+@given(instance=mpl_ForLoop_strategy)
+@settings(max_examples=50)
+def test_mpl_forloop_instantiation(instance):
+    assert isinstance(instance, mpl_ForLoop)
+
+
+
+@given(instance=mpl_ForLoop_strategy)
+def test_mpl_forloop_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=mpl_OperationExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_operationexpression_instantiation(instance):
+    assert isinstance(instance, mpl_OperationExpression)
+
+@given(instance=UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_unaryexpression_instantiation(instance):
+    assert isinstance(instance, UnaryExpression)
+
+@given(instance=mpl_ParenthesisExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_parenthesisexpression_instantiation(instance):
+    assert isinstance(instance, mpl_ParenthesisExpression)
+
+@given(instance=mpl_UnaryMinusExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_unaryminusexpression_instantiation(instance):
+    assert isinstance(instance, mpl_UnaryMinusExpression)
+
+@given(instance=mpl_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_unaryexpression_instantiation(instance):
+    assert isinstance(instance, mpl_UnaryExpression)
+
+@given(instance=ArithmeticExpression_strategy)
+@settings(max_examples=50)
+def test_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, ArithmeticExpression)
+
+@given(instance=mpl_SubExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_subexpression_instantiation(instance):
+    assert isinstance(instance, mpl_SubExpression)
+
+@given(instance=mpl_AddExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_addexpression_instantiation(instance):
+    assert isinstance(instance, mpl_AddExpression)
+
+@given(instance=mpl_MulExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_mulexpression_instantiation(instance):
+    assert isinstance(instance, mpl_MulExpression)
+
+@given(instance=mpl_DivExpression_strategy)
+@settings(max_examples=50)
+def test_mpl_divexpression_instantiation(instance):
+    assert isinstance(instance, mpl_DivExpression)

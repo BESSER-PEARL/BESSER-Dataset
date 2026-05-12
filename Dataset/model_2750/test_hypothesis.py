@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    BBase::RootB,
-    BBase::B,
+from python_code import (
+    BBase_RootB,
+    BBase_B,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_bbase::rootb_is_not_abstract():
-    assert not inspect.isabstract(BBase::RootB)
+def test_bbase_rootb_is_not_abstract():
+    assert not inspect.isabstract(BBase_RootB)
 
 
-def test_bbase::rootb_constructor_exists():
-    assert callable(BBase::RootB.__init__)
+def test_bbase_rootb_constructor_exists():
+    assert callable(BBase_RootB.__init__)
 
 
-def test_bbase::rootb_constructor_args():
-    sig = inspect.signature(BBase::RootB.__init__)
+def test_bbase_rootb_constructor_args():
+    sig = inspect.signature(BBase_RootB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bbase::b_is_not_abstract():
-    assert not inspect.isabstract(BBase::B)
+def test_bbase_b_is_not_abstract():
+    assert not inspect.isabstract(BBase_B)
 
 
-def test_bbase::b_constructor_exists():
-    assert callable(BBase::B.__init__)
+def test_bbase_b_constructor_exists():
+    assert callable(BBase_B.__init__)
 
 
-def test_bbase::b_constructor_args():
-    sig = inspect.signature(BBase::B.__init__)
+def test_bbase_b_constructor_args():
+    sig = inspect.signature(BBase_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-BBase::RootB_strategy = st.builds(
-    BBase::RootB,
+BBase_RootB_strategy = st.builds(
+    BBase_RootB,
 )
-BBase::B_strategy = st.builds(
-    BBase::B,
+BBase_B_strategy = st.builds(
+    BBase_B,
 )
 
-@given(instance=BBase::RootB_strategy)
+@given(instance=BBase_RootB_strategy)
 @settings(max_examples=50)
-def test_bbase::rootb_instantiation(instance):
-    assert isinstance(instance, BBase::RootB)
+def test_bbase_rootb_instantiation(instance):
+    assert isinstance(instance, BBase_RootB)
 
-@given(instance=BBase::B_strategy)
+@given(instance=BBase_B_strategy)
 @settings(max_examples=50)
-def test_bbase::b_instantiation(instance):
-    assert isinstance(instance, BBase::B)
+def test_bbase_b_instantiation(instance):
+    assert isinstance(instance, BBase_B)

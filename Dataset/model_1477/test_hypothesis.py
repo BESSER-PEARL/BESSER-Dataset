@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mgraph::MEdge,
-    mgraph::MNode,
-    mgraph::MGraph,
+from python_code import (
+    mgraph_MGraph,
+    mgraph_MEdge,
+    mgraph_MNode,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_mgraph::medge_is_not_abstract():
-    assert not inspect.isabstract(mgraph::MEdge)
+def test_mgraph_mgraph_is_not_abstract():
+    assert not inspect.isabstract(mgraph_MGraph)
 
 
-def test_mgraph::medge_constructor_exists():
-    assert callable(mgraph::MEdge.__init__)
+def test_mgraph_mgraph_constructor_exists():
+    assert callable(mgraph_MGraph.__init__)
 
 
-def test_mgraph::medge_constructor_args():
-    sig = inspect.signature(mgraph::MEdge.__init__)
+def test_mgraph_mgraph_constructor_args():
+    sig = inspect.signature(mgraph_MGraph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mgraph::medge_has_name():
-    assert hasattr(mgraph::MEdge, "name")
+def test_mgraph_mgraph_has_name():
+    assert hasattr(mgraph_MGraph, "name")
     descriptor = None
-    for klass in mgraph::MEdge.__mro__:
+    for klass in mgraph_MGraph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_mgraph::medge_has_name():
 
 
 
-def test_mgraph::mnode_is_not_abstract():
-    assert not inspect.isabstract(mgraph::MNode)
+def test_mgraph_medge_is_not_abstract():
+    assert not inspect.isabstract(mgraph_MEdge)
 
 
-def test_mgraph::mnode_constructor_exists():
-    assert callable(mgraph::MNode.__init__)
+def test_mgraph_medge_constructor_exists():
+    assert callable(mgraph_MEdge.__init__)
 
 
-def test_mgraph::mnode_constructor_args():
-    sig = inspect.signature(mgraph::MNode.__init__)
+def test_mgraph_medge_constructor_args():
+    sig = inspect.signature(mgraph_MEdge.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mgraph::mnode_has_name():
-    assert hasattr(mgraph::MNode, "name")
+def test_mgraph_medge_has_name():
+    assert hasattr(mgraph_MEdge, "name")
     descriptor = None
-    for klass in mgraph::MNode.__mro__:
+    for klass in mgraph_MEdge.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_mgraph::mnode_has_name():
 
 
 
-def test_mgraph::mgraph_is_not_abstract():
-    assert not inspect.isabstract(mgraph::MGraph)
+def test_mgraph_mnode_is_not_abstract():
+    assert not inspect.isabstract(mgraph_MNode)
 
 
-def test_mgraph::mgraph_constructor_exists():
-    assert callable(mgraph::MGraph.__init__)
+def test_mgraph_mnode_constructor_exists():
+    assert callable(mgraph_MNode.__init__)
 
 
-def test_mgraph::mgraph_constructor_args():
-    sig = inspect.signature(mgraph::MGraph.__init__)
+def test_mgraph_mnode_constructor_args():
+    sig = inspect.signature(mgraph_MNode.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mgraph::mgraph_has_name():
-    assert hasattr(mgraph::MGraph, "name")
+def test_mgraph_mnode_has_name():
+    assert hasattr(mgraph_MNode, "name")
     descriptor = None
-    for klass in mgraph::MGraph.__mro__:
+    for klass in mgraph_MNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mgraph::MEdge_strategy = st.builds(
-    mgraph::MEdge,
+mgraph_MGraph_strategy = st.builds(
+    mgraph_MGraph,
     name=
         safe_text
 )
-mgraph::MNode_strategy = st.builds(
-    mgraph::MNode,
+mgraph_MEdge_strategy = st.builds(
+    mgraph_MEdge,
     name=
         safe_text
 )
-mgraph::MGraph_strategy = st.builds(
-    mgraph::MGraph,
+mgraph_MNode_strategy = st.builds(
+    mgraph_MNode,
     name=
         safe_text
 )
 
-@given(instance=mgraph::MEdge_strategy)
+@given(instance=mgraph_MGraph_strategy)
 @settings(max_examples=50)
-def test_mgraph::medge_instantiation(instance):
-    assert isinstance(instance, mgraph::MEdge)
-
-@given(instance=mgraph::MEdge_strategy)
-def test_mgraph::medge_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mgraph_mgraph_instantiation(instance):
+    assert isinstance(instance, mgraph_MGraph)
 
 
-@given(instance=mgraph::MEdge_strategy)
-def test_mgraph::medge_name_setter(instance):
+
+@given(instance=mgraph_MGraph_strategy)
+def test_mgraph_mgraph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mgraph::MNode_strategy)
+@given(instance=mgraph_MEdge_strategy)
 @settings(max_examples=50)
-def test_mgraph::mnode_instantiation(instance):
-    assert isinstance(instance, mgraph::MNode)
-
-@given(instance=mgraph::MNode_strategy)
-def test_mgraph::mnode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mgraph_medge_instantiation(instance):
+    assert isinstance(instance, mgraph_MEdge)
 
 
-@given(instance=mgraph::MNode_strategy)
-def test_mgraph::mnode_name_setter(instance):
+
+@given(instance=mgraph_MEdge_strategy)
+def test_mgraph_medge_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mgraph::MGraph_strategy)
+@given(instance=mgraph_MNode_strategy)
 @settings(max_examples=50)
-def test_mgraph::mgraph_instantiation(instance):
-    assert isinstance(instance, mgraph::MGraph)
-
-@given(instance=mgraph::MGraph_strategy)
-def test_mgraph::mgraph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mgraph_mnode_instantiation(instance):
+    assert isinstance(instance, mgraph_MNode)
 
 
-@given(instance=mgraph::MGraph_strategy)
-def test_mgraph::mgraph_name_setter(instance):
+
+@given(instance=mgraph_MNode_strategy)
+def test_mgraph_mnode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,41 +3,41 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Marker,
-    operators::ToleranceMarker,
-    operators::DateTimeRange,
-    operators::ServiceUser,
-    operators::Service,
-    operators::Protocol,
+    operators_ToleranceMarker,
+    operators_DateTimeRange,
+    operators_ServiceUser,
+    operators_Service,
+    operators_Protocol,
     Company,
-    operators::Operator,
-    operators::Lifecycle,
-    operators::Person,
-    operators::Location,
-    operators::NodeType,
-    operators::DiagramInfo,
-    operators::MetricSource,
-    operators::Function,
-    operators::Equipment,
-    operators::NetXResource,
-    operators::Value,
+    operators_Operator,
+    operators_Lifecycle,
+    operators_Person,
+    operators_Location,
+    operators_NodeType,
+    operators_DiagramInfo,
+    operators_MetricSource,
+    operators_Function,
+    operators_Equipment,
+    operators_NetXResource,
+    operators_Value,
     Base,
-    operators::ResourceMonitor,
-    operators::Network,
-    operators::Node,
-    operators::ResourceExpansion,
-    operators::Relationship,
-    operators::ResourceForecast,
-    operators::Warehouse,
-    operators::Marker,
+    operators_Relationship,
+    operators_ResourceExpansion,
+    operators_ResourceForecast,
+    operators_Network,
+    operators_ResourceMonitor,
+    operators_Warehouse,
+    operators_Node,
+    operators_Marker,
     Relationship,
-    operators::FunctionRelationship,
-    operators::EquipmentRelationship,
-    MarkerKind,
+    operators_FunctionRelationship,
+    operators_EquipmentRelationship,
     ToleranceMarkerDirectionKind,
+    MarkerKind,
 )
 
 # =============================================================================
@@ -60,92 +60,92 @@ def test_marker_constructor_args():
 
 
 
-def test_operators::tolerancemarker_is_not_abstract():
-    assert not inspect.isabstract(operators::ToleranceMarker)
+def test_operators_tolerancemarker_is_not_abstract():
+    assert not inspect.isabstract(operators_ToleranceMarker)
 
 
-def test_operators::tolerancemarker_constructor_exists():
-    assert callable(operators::ToleranceMarker.__init__)
+def test_operators_tolerancemarker_constructor_exists():
+    assert callable(operators_ToleranceMarker.__init__)
 
 
-def test_operators::tolerancemarker_constructor_args():
-    sig = inspect.signature(operators::ToleranceMarker.__init__)
+def test_operators_tolerancemarker_constructor_args():
+    sig = inspect.signature(operators_ToleranceMarker.__init__)
     params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
     assert "direction" in params, "Missing parameter 'direction'"
+    assert "level" in params, "Missing parameter 'level'"
 
-def test_operators::tolerancemarker_has_level():
-    assert hasattr(operators::ToleranceMarker, "level")
+def test_operators_tolerancemarker_has_direction():
+    assert hasattr(operators_ToleranceMarker, "direction")
     descriptor = None
-    for klass in operators::ToleranceMarker.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_operators::tolerancemarker_has_direction():
-    assert hasattr(operators::ToleranceMarker, "direction")
-    descriptor = None
-    for klass in operators::ToleranceMarker.__mro__:
+    for klass in operators_ToleranceMarker.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
+def test_operators_tolerancemarker_has_level():
+    assert hasattr(operators_ToleranceMarker, "level")
+    descriptor = None
+    for klass in operators_ToleranceMarker.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_operators::datetimerange_is_not_abstract():
-    assert not inspect.isabstract(operators::DateTimeRange)
+
+def test_operators_datetimerange_is_not_abstract():
+    assert not inspect.isabstract(operators_DateTimeRange)
 
 
-def test_operators::datetimerange_constructor_exists():
-    assert callable(operators::DateTimeRange.__init__)
+def test_operators_datetimerange_constructor_exists():
+    assert callable(operators_DateTimeRange.__init__)
 
 
-def test_operators::datetimerange_constructor_args():
-    sig = inspect.signature(operators::DateTimeRange.__init__)
+def test_operators_datetimerange_constructor_args():
+    sig = inspect.signature(operators_DateTimeRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::serviceuser_is_not_abstract():
-    assert not inspect.isabstract(operators::ServiceUser)
+def test_operators_serviceuser_is_not_abstract():
+    assert not inspect.isabstract(operators_ServiceUser)
 
 
-def test_operators::serviceuser_constructor_exists():
-    assert callable(operators::ServiceUser.__init__)
+def test_operators_serviceuser_constructor_exists():
+    assert callable(operators_ServiceUser.__init__)
 
 
-def test_operators::serviceuser_constructor_args():
-    sig = inspect.signature(operators::ServiceUser.__init__)
+def test_operators_serviceuser_constructor_args():
+    sig = inspect.signature(operators_ServiceUser.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::service_is_not_abstract():
-    assert not inspect.isabstract(operators::Service)
+def test_operators_service_is_not_abstract():
+    assert not inspect.isabstract(operators_Service)
 
 
-def test_operators::service_constructor_exists():
-    assert callable(operators::Service.__init__)
+def test_operators_service_constructor_exists():
+    assert callable(operators_Service.__init__)
 
 
-def test_operators::service_constructor_args():
-    sig = inspect.signature(operators::Service.__init__)
+def test_operators_service_constructor_args():
+    sig = inspect.signature(operators_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::protocol_is_not_abstract():
-    assert not inspect.isabstract(operators::Protocol)
+def test_operators_protocol_is_not_abstract():
+    assert not inspect.isabstract(operators_Protocol)
 
 
-def test_operators::protocol_constructor_exists():
-    assert callable(operators::Protocol.__init__)
+def test_operators_protocol_constructor_exists():
+    assert callable(operators_Protocol.__init__)
 
 
-def test_operators::protocol_constructor_args():
-    sig = inspect.signature(operators::Protocol.__init__)
+def test_operators_protocol_constructor_args():
+    sig = inspect.signature(operators_Protocol.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,156 +164,156 @@ def test_company_constructor_args():
 
 
 
-def test_operators::operator_is_not_abstract():
-    assert not inspect.isabstract(operators::Operator)
+def test_operators_operator_is_not_abstract():
+    assert not inspect.isabstract(operators_Operator)
 
 
-def test_operators::operator_constructor_exists():
-    assert callable(operators::Operator.__init__)
+def test_operators_operator_constructor_exists():
+    assert callable(operators_Operator.__init__)
 
 
-def test_operators::operator_constructor_args():
-    sig = inspect.signature(operators::Operator.__init__)
+def test_operators_operator_constructor_args():
+    sig = inspect.signature(operators_Operator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::lifecycle_is_not_abstract():
-    assert not inspect.isabstract(operators::Lifecycle)
+def test_operators_lifecycle_is_not_abstract():
+    assert not inspect.isabstract(operators_Lifecycle)
 
 
-def test_operators::lifecycle_constructor_exists():
-    assert callable(operators::Lifecycle.__init__)
+def test_operators_lifecycle_constructor_exists():
+    assert callable(operators_Lifecycle.__init__)
 
 
-def test_operators::lifecycle_constructor_args():
-    sig = inspect.signature(operators::Lifecycle.__init__)
+def test_operators_lifecycle_constructor_args():
+    sig = inspect.signature(operators_Lifecycle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::person_is_not_abstract():
-    assert not inspect.isabstract(operators::Person)
+def test_operators_person_is_not_abstract():
+    assert not inspect.isabstract(operators_Person)
 
 
-def test_operators::person_constructor_exists():
-    assert callable(operators::Person.__init__)
+def test_operators_person_constructor_exists():
+    assert callable(operators_Person.__init__)
 
 
-def test_operators::person_constructor_args():
-    sig = inspect.signature(operators::Person.__init__)
+def test_operators_person_constructor_args():
+    sig = inspect.signature(operators_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::location_is_not_abstract():
-    assert not inspect.isabstract(operators::Location)
+def test_operators_location_is_not_abstract():
+    assert not inspect.isabstract(operators_Location)
 
 
-def test_operators::location_constructor_exists():
-    assert callable(operators::Location.__init__)
+def test_operators_location_constructor_exists():
+    assert callable(operators_Location.__init__)
 
 
-def test_operators::location_constructor_args():
-    sig = inspect.signature(operators::Location.__init__)
+def test_operators_location_constructor_args():
+    sig = inspect.signature(operators_Location.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::nodetype_is_not_abstract():
-    assert not inspect.isabstract(operators::NodeType)
+def test_operators_nodetype_is_not_abstract():
+    assert not inspect.isabstract(operators_NodeType)
 
 
-def test_operators::nodetype_constructor_exists():
-    assert callable(operators::NodeType.__init__)
+def test_operators_nodetype_constructor_exists():
+    assert callable(operators_NodeType.__init__)
 
 
-def test_operators::nodetype_constructor_args():
-    sig = inspect.signature(operators::NodeType.__init__)
+def test_operators_nodetype_constructor_args():
+    sig = inspect.signature(operators_NodeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::diagraminfo_is_not_abstract():
-    assert not inspect.isabstract(operators::DiagramInfo)
+def test_operators_diagraminfo_is_not_abstract():
+    assert not inspect.isabstract(operators_DiagramInfo)
 
 
-def test_operators::diagraminfo_constructor_exists():
-    assert callable(operators::DiagramInfo.__init__)
+def test_operators_diagraminfo_constructor_exists():
+    assert callable(operators_DiagramInfo.__init__)
 
 
-def test_operators::diagraminfo_constructor_args():
-    sig = inspect.signature(operators::DiagramInfo.__init__)
+def test_operators_diagraminfo_constructor_args():
+    sig = inspect.signature(operators_DiagramInfo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::metricsource_is_not_abstract():
-    assert not inspect.isabstract(operators::MetricSource)
+def test_operators_metricsource_is_not_abstract():
+    assert not inspect.isabstract(operators_MetricSource)
 
 
-def test_operators::metricsource_constructor_exists():
-    assert callable(operators::MetricSource.__init__)
+def test_operators_metricsource_constructor_exists():
+    assert callable(operators_MetricSource.__init__)
 
 
-def test_operators::metricsource_constructor_args():
-    sig = inspect.signature(operators::MetricSource.__init__)
+def test_operators_metricsource_constructor_args():
+    sig = inspect.signature(operators_MetricSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::function_is_not_abstract():
-    assert not inspect.isabstract(operators::Function)
+def test_operators_function_is_not_abstract():
+    assert not inspect.isabstract(operators_Function)
 
 
-def test_operators::function_constructor_exists():
-    assert callable(operators::Function.__init__)
+def test_operators_function_constructor_exists():
+    assert callable(operators_Function.__init__)
 
 
-def test_operators::function_constructor_args():
-    sig = inspect.signature(operators::Function.__init__)
+def test_operators_function_constructor_args():
+    sig = inspect.signature(operators_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::equipment_is_not_abstract():
-    assert not inspect.isabstract(operators::Equipment)
+def test_operators_equipment_is_not_abstract():
+    assert not inspect.isabstract(operators_Equipment)
 
 
-def test_operators::equipment_constructor_exists():
-    assert callable(operators::Equipment.__init__)
+def test_operators_equipment_constructor_exists():
+    assert callable(operators_Equipment.__init__)
 
 
-def test_operators::equipment_constructor_args():
-    sig = inspect.signature(operators::Equipment.__init__)
+def test_operators_equipment_constructor_args():
+    sig = inspect.signature(operators_Equipment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::netxresource_is_not_abstract():
-    assert not inspect.isabstract(operators::NetXResource)
+def test_operators_netxresource_is_not_abstract():
+    assert not inspect.isabstract(operators_NetXResource)
 
 
-def test_operators::netxresource_constructor_exists():
-    assert callable(operators::NetXResource.__init__)
+def test_operators_netxresource_constructor_exists():
+    assert callable(operators_NetXResource.__init__)
 
 
-def test_operators::netxresource_constructor_args():
-    sig = inspect.signature(operators::NetXResource.__init__)
+def test_operators_netxresource_constructor_args():
+    sig = inspect.signature(operators_NetXResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::value_is_not_abstract():
-    assert not inspect.isabstract(operators::Value)
+def test_operators_value_is_not_abstract():
+    assert not inspect.isabstract(operators_Value)
 
 
-def test_operators::value_constructor_exists():
-    assert callable(operators::Value.__init__)
+def test_operators_value_constructor_exists():
+    assert callable(operators_Value.__init__)
 
 
-def test_operators::value_constructor_args():
-    sig = inspect.signature(operators::Value.__init__)
+def test_operators_value_constructor_args():
+    sig = inspect.signature(operators_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -332,57 +332,95 @@ def test_base_constructor_args():
 
 
 
-def test_operators::resourcemonitor_is_not_abstract():
-    assert not inspect.isabstract(operators::ResourceMonitor)
+def test_operators_relationship_is_not_abstract():
+    assert not inspect.isabstract(operators_Relationship)
 
 
-def test_operators::resourcemonitor_constructor_exists():
-    assert callable(operators::ResourceMonitor.__init__)
+def test_operators_relationship_constructor_exists():
+    assert callable(operators_Relationship.__init__)
 
 
-def test_operators::resourcemonitor_constructor_args():
-    sig = inspect.signature(operators::ResourceMonitor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::network_is_not_abstract():
-    assert not inspect.isabstract(operators::Network)
-
-
-def test_operators::network_constructor_exists():
-    assert callable(operators::Network.__init__)
-
-
-def test_operators::network_constructor_args():
-    sig = inspect.signature(operators::Network.__init__)
+def test_operators_relationship_constructor_args():
+    sig = inspect.signature(operators_Relationship.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "createdDate" in params, "Missing parameter 'createdDate'"
 
-def test_operators::network_has_name():
-    assert hasattr(operators::Network, "name")
+def test_operators_relationship_has_name():
+    assert hasattr(operators_Relationship, "name")
     descriptor = None
-    for klass in operators::Network.__mro__:
+    for klass in operators_Relationship.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_operators::network_has_description():
-    assert hasattr(operators::Network, "description")
+
+
+def test_operators_resourceexpansion_is_not_abstract():
+    assert not inspect.isabstract(operators_ResourceExpansion)
+
+
+def test_operators_resourceexpansion_constructor_exists():
+    assert callable(operators_ResourceExpansion.__init__)
+
+
+def test_operators_resourceexpansion_constructor_args():
+    sig = inspect.signature(operators_ResourceExpansion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_resourceforecast_is_not_abstract():
+    assert not inspect.isabstract(operators_ResourceForecast)
+
+
+def test_operators_resourceforecast_constructor_exists():
+    assert callable(operators_ResourceForecast.__init__)
+
+
+def test_operators_resourceforecast_constructor_args():
+    sig = inspect.signature(operators_ResourceForecast.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_network_is_not_abstract():
+    assert not inspect.isabstract(operators_Network)
+
+
+def test_operators_network_constructor_exists():
+    assert callable(operators_Network.__init__)
+
+
+def test_operators_network_constructor_args():
+    sig = inspect.signature(operators_Network.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "createdDate" in params, "Missing parameter 'createdDate'"
+
+def test_operators_network_has_description():
+    assert hasattr(operators_Network, "description")
     descriptor = None
-    for klass in operators::Network.__mro__:
+    for klass in operators_Network.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_operators::network_has_createdDate():
-    assert hasattr(operators::Network, "createdDate")
+def test_operators_network_has_name():
+    assert hasattr(operators_Network, "name")
     descriptor = None
-    for klass in operators::Network.__mro__:
+    for klass in operators_Network.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_operators_network_has_createdDate():
+    assert hasattr(operators_Network, "createdDate")
+    descriptor = None
+    for klass in operators_Network.__mro__:
         if "createdDate" in klass.__dict__:
             descriptor = klass.__dict__["createdDate"]
             break
@@ -390,109 +428,47 @@ def test_operators::network_has_createdDate():
 
 
 
-def test_operators::node_is_not_abstract():
-    assert not inspect.isabstract(operators::Node)
+def test_operators_resourcemonitor_is_not_abstract():
+    assert not inspect.isabstract(operators_ResourceMonitor)
 
 
-def test_operators::node_constructor_exists():
-    assert callable(operators::Node.__init__)
+def test_operators_resourcemonitor_constructor_exists():
+    assert callable(operators_ResourceMonitor.__init__)
 
 
-def test_operators::node_constructor_args():
-    sig = inspect.signature(operators::Node.__init__)
-    params = list(sig.parameters.keys())
-    assert "nodeID" in params, "Missing parameter 'nodeID'"
-
-def test_operators::node_has_nodeID():
-    assert hasattr(operators::Node, "nodeID")
-    descriptor = None
-    for klass in operators::Node.__mro__:
-        if "nodeID" in klass.__dict__:
-            descriptor = klass.__dict__["nodeID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_operators::resourceexpansion_is_not_abstract():
-    assert not inspect.isabstract(operators::ResourceExpansion)
-
-
-def test_operators::resourceexpansion_constructor_exists():
-    assert callable(operators::ResourceExpansion.__init__)
-
-
-def test_operators::resourceexpansion_constructor_args():
-    sig = inspect.signature(operators::ResourceExpansion.__init__)
+def test_operators_resourcemonitor_constructor_args():
+    sig = inspect.signature(operators_ResourceMonitor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::relationship_is_not_abstract():
-    assert not inspect.isabstract(operators::Relationship)
+def test_operators_warehouse_is_not_abstract():
+    assert not inspect.isabstract(operators_Warehouse)
 
 
-def test_operators::relationship_constructor_exists():
-    assert callable(operators::Relationship.__init__)
+def test_operators_warehouse_constructor_exists():
+    assert callable(operators_Warehouse.__init__)
 
 
-def test_operators::relationship_constructor_args():
-    sig = inspect.signature(operators::Relationship.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_operators::relationship_has_name():
-    assert hasattr(operators::Relationship, "name")
-    descriptor = None
-    for klass in operators::Relationship.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_operators::resourceforecast_is_not_abstract():
-    assert not inspect.isabstract(operators::ResourceForecast)
-
-
-def test_operators::resourceforecast_constructor_exists():
-    assert callable(operators::ResourceForecast.__init__)
-
-
-def test_operators::resourceforecast_constructor_args():
-    sig = inspect.signature(operators::ResourceForecast.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::warehouse_is_not_abstract():
-    assert not inspect.isabstract(operators::Warehouse)
-
-
-def test_operators::warehouse_constructor_exists():
-    assert callable(operators::Warehouse.__init__)
-
-
-def test_operators::warehouse_constructor_args():
-    sig = inspect.signature(operators::Warehouse.__init__)
+def test_operators_warehouse_constructor_args():
+    sig = inspect.signature(operators_Warehouse.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_operators::warehouse_has_name():
-    assert hasattr(operators::Warehouse, "name")
+def test_operators_warehouse_has_name():
+    assert hasattr(operators_Warehouse, "name")
     descriptor = None
-    for klass in operators::Warehouse.__mro__:
+    for klass in operators_Warehouse.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_operators::warehouse_has_description():
-    assert hasattr(operators::Warehouse, "description")
+def test_operators_warehouse_has_description():
+    assert hasattr(operators_Warehouse, "description")
     descriptor = None
-    for klass in operators::Warehouse.__mro__:
+    for klass in operators_Warehouse.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -500,33 +476,57 @@ def test_operators::warehouse_has_description():
 
 
 
-def test_operators::marker_is_not_abstract():
-    assert not inspect.isabstract(operators::Marker)
+def test_operators_node_is_not_abstract():
+    assert not inspect.isabstract(operators_Node)
 
 
-def test_operators::marker_constructor_exists():
-    assert callable(operators::Marker.__init__)
+def test_operators_node_constructor_exists():
+    assert callable(operators_Node.__init__)
 
 
-def test_operators::marker_constructor_args():
-    sig = inspect.signature(operators::Marker.__init__)
+def test_operators_node_constructor_args():
+    sig = inspect.signature(operators_Node.__init__)
+    params = list(sig.parameters.keys())
+    assert "nodeID" in params, "Missing parameter 'nodeID'"
+
+def test_operators_node_has_nodeID():
+    assert hasattr(operators_Node, "nodeID")
+    descriptor = None
+    for klass in operators_Node.__mro__:
+        if "nodeID" in klass.__dict__:
+            descriptor = klass.__dict__["nodeID"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_operators_marker_is_not_abstract():
+    assert not inspect.isabstract(operators_Marker)
+
+
+def test_operators_marker_constructor_exists():
+    assert callable(operators_Marker.__init__)
+
+
+def test_operators_marker_constructor_args():
+    sig = inspect.signature(operators_Marker.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_operators::marker_has_kind():
-    assert hasattr(operators::Marker, "kind")
+def test_operators_marker_has_kind():
+    assert hasattr(operators_Marker, "kind")
     descriptor = None
-    for klass in operators::Marker.__mro__:
+    for klass in operators_Marker.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_operators::marker_has_description():
-    assert hasattr(operators::Marker, "description")
+def test_operators_marker_has_description():
+    assert hasattr(operators_Marker, "description")
     descriptor = None
-    for klass in operators::Marker.__mro__:
+    for klass in operators_Marker.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -548,49 +548,31 @@ def test_relationship_constructor_args():
 
 
 
-def test_operators::functionrelationship_is_not_abstract():
-    assert not inspect.isabstract(operators::FunctionRelationship)
+def test_operators_functionrelationship_is_not_abstract():
+    assert not inspect.isabstract(operators_FunctionRelationship)
 
 
-def test_operators::functionrelationship_constructor_exists():
-    assert callable(operators::FunctionRelationship.__init__)
+def test_operators_functionrelationship_constructor_exists():
+    assert callable(operators_FunctionRelationship.__init__)
 
 
-def test_operators::functionrelationship_constructor_args():
-    sig = inspect.signature(operators::FunctionRelationship.__init__)
+def test_operators_functionrelationship_constructor_args():
+    sig = inspect.signature(operators_FunctionRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::equipmentrelationship_is_not_abstract():
-    assert not inspect.isabstract(operators::EquipmentRelationship)
+def test_operators_equipmentrelationship_is_not_abstract():
+    assert not inspect.isabstract(operators_EquipmentRelationship)
 
 
-def test_operators::equipmentrelationship_constructor_exists():
-    assert callable(operators::EquipmentRelationship.__init__)
+def test_operators_equipmentrelationship_constructor_exists():
+    assert callable(operators_EquipmentRelationship.__init__)
 
 
-def test_operators::equipmentrelationship_constructor_args():
-    sig = inspect.signature(operators::EquipmentRelationship.__init__)
+def test_operators_equipmentrelationship_constructor_args():
+    sig = inspect.signature(operators_EquipmentRelationship.__init__)
     params = list(sig.parameters.keys())
-
-def test_markerkind_exists():
-    # Check that the Enumeration exists
-    assert MarkerKind is not None
-
-def test_markerkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MarkerKind]
-    expected_literals = [
-        "ACTIONNEEDED",
-        "INTERNALEVENT",
-        "value",
-        "TOLERANCECROSSED",
-        "EXTERNALEVENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MarkerKind"
 
 def test_tolerancemarkerdirectionkind_exists():
     # Check that the Enumeration exists
@@ -608,6 +590,24 @@ def test_tolerancemarkerdirectionkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ToleranceMarkerDirectionKind"
 
+def test_markerkind_exists():
+    # Check that the Enumeration exists
+    assert MarkerKind is not None
+
+def test_markerkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MarkerKind]
+    expected_literals = [
+        "TOLERANCECROSSED",
+        "ACTIONNEEDED",
+        "INTERNALEVENT",
+        "value",
+        "EXTERNALEVENT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MarkerKind"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -623,101 +623,101 @@ safe_text = st.text(
 Marker_strategy = st.builds(
     Marker,
 )
-operators::ToleranceMarker_strategy = st.builds(
-    operators::ToleranceMarker,
-    level=
-        safe_text,
+operators_ToleranceMarker_strategy = st.builds(
+    operators_ToleranceMarker,
     direction=
+        safe_text,
+    level=
         safe_text
 )
-operators::DateTimeRange_strategy = st.builds(
-    operators::DateTimeRange,
+operators_DateTimeRange_strategy = st.builds(
+    operators_DateTimeRange,
 )
-operators::ServiceUser_strategy = st.builds(
-    operators::ServiceUser,
+operators_ServiceUser_strategy = st.builds(
+    operators_ServiceUser,
 )
-operators::Service_strategy = st.builds(
-    operators::Service,
+operators_Service_strategy = st.builds(
+    operators_Service,
 )
-operators::Protocol_strategy = st.builds(
-    operators::Protocol,
+operators_Protocol_strategy = st.builds(
+    operators_Protocol,
 )
 Company_strategy = st.builds(
     Company,
 )
-operators::Operator_strategy = st.builds(
-    operators::Operator,
+operators_Operator_strategy = st.builds(
+    operators_Operator,
 )
-operators::Lifecycle_strategy = st.builds(
-    operators::Lifecycle,
+operators_Lifecycle_strategy = st.builds(
+    operators_Lifecycle,
 )
-operators::Person_strategy = st.builds(
-    operators::Person,
+operators_Person_strategy = st.builds(
+    operators_Person,
 )
-operators::Location_strategy = st.builds(
-    operators::Location,
+operators_Location_strategy = st.builds(
+    operators_Location,
 )
-operators::NodeType_strategy = st.builds(
-    operators::NodeType,
+operators_NodeType_strategy = st.builds(
+    operators_NodeType,
 )
-operators::DiagramInfo_strategy = st.builds(
-    operators::DiagramInfo,
+operators_DiagramInfo_strategy = st.builds(
+    operators_DiagramInfo,
 )
-operators::MetricSource_strategy = st.builds(
-    operators::MetricSource,
+operators_MetricSource_strategy = st.builds(
+    operators_MetricSource,
 )
-operators::Function_strategy = st.builds(
-    operators::Function,
+operators_Function_strategy = st.builds(
+    operators_Function,
 )
-operators::Equipment_strategy = st.builds(
-    operators::Equipment,
+operators_Equipment_strategy = st.builds(
+    operators_Equipment,
 )
-operators::NetXResource_strategy = st.builds(
-    operators::NetXResource,
+operators_NetXResource_strategy = st.builds(
+    operators_NetXResource,
 )
-operators::Value_strategy = st.builds(
-    operators::Value,
+operators_Value_strategy = st.builds(
+    operators_Value,
 )
 Base_strategy = st.builds(
     Base,
 )
-operators::ResourceMonitor_strategy = st.builds(
-    operators::ResourceMonitor,
-)
-operators::Network_strategy = st.builds(
-    operators::Network,
+operators_Relationship_strategy = st.builds(
+    operators_Relationship,
     name=
-        safe_text,
+        safe_text
+)
+operators_ResourceExpansion_strategy = st.builds(
+    operators_ResourceExpansion,
+)
+operators_ResourceForecast_strategy = st.builds(
+    operators_ResourceForecast,
+)
+operators_Network_strategy = st.builds(
+    operators_Network,
     description=
+        safe_text,
+    name=
         safe_text,
     createdDate=
         safe_text
 )
-operators::Node_strategy = st.builds(
-    operators::Node,
-    nodeID=
-        safe_text
+operators_ResourceMonitor_strategy = st.builds(
+    operators_ResourceMonitor,
 )
-operators::ResourceExpansion_strategy = st.builds(
-    operators::ResourceExpansion,
-)
-operators::Relationship_strategy = st.builds(
-    operators::Relationship,
-    name=
-        safe_text
-)
-operators::ResourceForecast_strategy = st.builds(
-    operators::ResourceForecast,
-)
-operators::Warehouse_strategy = st.builds(
-    operators::Warehouse,
+operators_Warehouse_strategy = st.builds(
+    operators_Warehouse,
     name=
         safe_text,
     description=
         safe_text
 )
-operators::Marker_strategy = st.builds(
-    operators::Marker,
+operators_Node_strategy = st.builds(
+    operators_Node,
+    nodeID=
+        safe_text
+)
+operators_Marker_strategy = st.builds(
+    operators_Marker,
     kind=
         safe_text,
     description=
@@ -726,11 +726,11 @@ operators::Marker_strategy = st.builds(
 Relationship_strategy = st.builds(
     Relationship,
 )
-operators::FunctionRelationship_strategy = st.builds(
-    operators::FunctionRelationship,
+operators_FunctionRelationship_strategy = st.builds(
+    operators_FunctionRelationship,
 )
-operators::EquipmentRelationship_strategy = st.builds(
-    operators::EquipmentRelationship,
+operators_EquipmentRelationship_strategy = st.builds(
+    operators_EquipmentRelationship,
 )
 
 @given(instance=Marker_strategy)
@@ -738,253 +738,220 @@ operators::EquipmentRelationship_strategy = st.builds(
 def test_marker_instantiation(instance):
     assert isinstance(instance, Marker)
 
-@given(instance=operators::ToleranceMarker_strategy)
+@given(instance=operators_ToleranceMarker_strategy)
 @settings(max_examples=50)
-def test_operators::tolerancemarker_instantiation(instance):
-    assert isinstance(instance, operators::ToleranceMarker)
-
-@given(instance=operators::ToleranceMarker_strategy)
-def test_operators::tolerancemarker_level_type(instance):
-    assert isinstance(instance.level, str)
+def test_operators_tolerancemarker_instantiation(instance):
+    assert isinstance(instance, operators_ToleranceMarker)
 
 
-@given(instance=operators::ToleranceMarker_strategy)
-def test_operators::tolerancemarker_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
 
-@given(instance=operators::ToleranceMarker_strategy)
-def test_operators::tolerancemarker_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=operators::ToleranceMarker_strategy)
-def test_operators::tolerancemarker_direction_setter(instance):
+@given(instance=operators_ToleranceMarker_strategy)
+def test_operators_tolerancemarker_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=operators::DateTimeRange_strategy)
-@settings(max_examples=50)
-def test_operators::datetimerange_instantiation(instance):
-    assert isinstance(instance, operators::DateTimeRange)
 
-@given(instance=operators::ServiceUser_strategy)
-@settings(max_examples=50)
-def test_operators::serviceuser_instantiation(instance):
-    assert isinstance(instance, operators::ServiceUser)
 
-@given(instance=operators::Service_strategy)
-@settings(max_examples=50)
-def test_operators::service_instantiation(instance):
-    assert isinstance(instance, operators::Service)
+@given(instance=operators_ToleranceMarker_strategy)
+def test_operators_tolerancemarker_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
 
-@given(instance=operators::Protocol_strategy)
+@given(instance=operators_DateTimeRange_strategy)
 @settings(max_examples=50)
-def test_operators::protocol_instantiation(instance):
-    assert isinstance(instance, operators::Protocol)
+def test_operators_datetimerange_instantiation(instance):
+    assert isinstance(instance, operators_DateTimeRange)
+
+@given(instance=operators_ServiceUser_strategy)
+@settings(max_examples=50)
+def test_operators_serviceuser_instantiation(instance):
+    assert isinstance(instance, operators_ServiceUser)
+
+@given(instance=operators_Service_strategy)
+@settings(max_examples=50)
+def test_operators_service_instantiation(instance):
+    assert isinstance(instance, operators_Service)
+
+@given(instance=operators_Protocol_strategy)
+@settings(max_examples=50)
+def test_operators_protocol_instantiation(instance):
+    assert isinstance(instance, operators_Protocol)
 
 @given(instance=Company_strategy)
 @settings(max_examples=50)
 def test_company_instantiation(instance):
     assert isinstance(instance, Company)
 
-@given(instance=operators::Operator_strategy)
+@given(instance=operators_Operator_strategy)
 @settings(max_examples=50)
-def test_operators::operator_instantiation(instance):
-    assert isinstance(instance, operators::Operator)
+def test_operators_operator_instantiation(instance):
+    assert isinstance(instance, operators_Operator)
 
-@given(instance=operators::Lifecycle_strategy)
+@given(instance=operators_Lifecycle_strategy)
 @settings(max_examples=50)
-def test_operators::lifecycle_instantiation(instance):
-    assert isinstance(instance, operators::Lifecycle)
+def test_operators_lifecycle_instantiation(instance):
+    assert isinstance(instance, operators_Lifecycle)
 
-@given(instance=operators::Person_strategy)
+@given(instance=operators_Person_strategy)
 @settings(max_examples=50)
-def test_operators::person_instantiation(instance):
-    assert isinstance(instance, operators::Person)
+def test_operators_person_instantiation(instance):
+    assert isinstance(instance, operators_Person)
 
-@given(instance=operators::Location_strategy)
+@given(instance=operators_Location_strategy)
 @settings(max_examples=50)
-def test_operators::location_instantiation(instance):
-    assert isinstance(instance, operators::Location)
+def test_operators_location_instantiation(instance):
+    assert isinstance(instance, operators_Location)
 
-@given(instance=operators::NodeType_strategy)
+@given(instance=operators_NodeType_strategy)
 @settings(max_examples=50)
-def test_operators::nodetype_instantiation(instance):
-    assert isinstance(instance, operators::NodeType)
+def test_operators_nodetype_instantiation(instance):
+    assert isinstance(instance, operators_NodeType)
 
-@given(instance=operators::DiagramInfo_strategy)
+@given(instance=operators_DiagramInfo_strategy)
 @settings(max_examples=50)
-def test_operators::diagraminfo_instantiation(instance):
-    assert isinstance(instance, operators::DiagramInfo)
+def test_operators_diagraminfo_instantiation(instance):
+    assert isinstance(instance, operators_DiagramInfo)
 
-@given(instance=operators::MetricSource_strategy)
+@given(instance=operators_MetricSource_strategy)
 @settings(max_examples=50)
-def test_operators::metricsource_instantiation(instance):
-    assert isinstance(instance, operators::MetricSource)
+def test_operators_metricsource_instantiation(instance):
+    assert isinstance(instance, operators_MetricSource)
 
-@given(instance=operators::Function_strategy)
+@given(instance=operators_Function_strategy)
 @settings(max_examples=50)
-def test_operators::function_instantiation(instance):
-    assert isinstance(instance, operators::Function)
+def test_operators_function_instantiation(instance):
+    assert isinstance(instance, operators_Function)
 
-@given(instance=operators::Equipment_strategy)
+@given(instance=operators_Equipment_strategy)
 @settings(max_examples=50)
-def test_operators::equipment_instantiation(instance):
-    assert isinstance(instance, operators::Equipment)
+def test_operators_equipment_instantiation(instance):
+    assert isinstance(instance, operators_Equipment)
 
-@given(instance=operators::NetXResource_strategy)
+@given(instance=operators_NetXResource_strategy)
 @settings(max_examples=50)
-def test_operators::netxresource_instantiation(instance):
-    assert isinstance(instance, operators::NetXResource)
+def test_operators_netxresource_instantiation(instance):
+    assert isinstance(instance, operators_NetXResource)
 
-@given(instance=operators::Value_strategy)
+@given(instance=operators_Value_strategy)
 @settings(max_examples=50)
-def test_operators::value_instantiation(instance):
-    assert isinstance(instance, operators::Value)
+def test_operators_value_instantiation(instance):
+    assert isinstance(instance, operators_Value)
 
 @given(instance=Base_strategy)
 @settings(max_examples=50)
 def test_base_instantiation(instance):
     assert isinstance(instance, Base)
 
-@given(instance=operators::ResourceMonitor_strategy)
+@given(instance=operators_Relationship_strategy)
 @settings(max_examples=50)
-def test_operators::resourcemonitor_instantiation(instance):
-    assert isinstance(instance, operators::ResourceMonitor)
-
-@given(instance=operators::Network_strategy)
-@settings(max_examples=50)
-def test_operators::network_instantiation(instance):
-    assert isinstance(instance, operators::Network)
-
-@given(instance=operators::Network_strategy)
-def test_operators::network_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_operators_relationship_instantiation(instance):
+    assert isinstance(instance, operators_Relationship)
 
 
-@given(instance=operators::Network_strategy)
-def test_operators::network_name_setter(instance):
+
+@given(instance=operators_Relationship_strategy)
+def test_operators_relationship_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=operators::Network_strategy)
-def test_operators::network_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=operators_ResourceExpansion_strategy)
+@settings(max_examples=50)
+def test_operators_resourceexpansion_instantiation(instance):
+    assert isinstance(instance, operators_ResourceExpansion)
+
+@given(instance=operators_ResourceForecast_strategy)
+@settings(max_examples=50)
+def test_operators_resourceforecast_instantiation(instance):
+    assert isinstance(instance, operators_ResourceForecast)
+
+@given(instance=operators_Network_strategy)
+@settings(max_examples=50)
+def test_operators_network_instantiation(instance):
+    assert isinstance(instance, operators_Network)
 
 
-@given(instance=operators::Network_strategy)
-def test_operators::network_description_setter(instance):
+
+@given(instance=operators_Network_strategy)
+def test_operators_network_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=operators::Network_strategy)
-def test_operators::network_createdDate_type(instance):
-    assert isinstance(instance.createdDate, str)
 
 
-@given(instance=operators::Network_strategy)
-def test_operators::network_createdDate_setter(instance):
+@given(instance=operators_Network_strategy)
+def test_operators_network_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=operators_Network_strategy)
+def test_operators_network_createdDate_setter(instance):
     original = instance.createdDate
     instance.createdDate = original
     assert instance.createdDate == original
 
-@given(instance=operators::Node_strategy)
+@given(instance=operators_ResourceMonitor_strategy)
 @settings(max_examples=50)
-def test_operators::node_instantiation(instance):
-    assert isinstance(instance, operators::Node)
+def test_operators_resourcemonitor_instantiation(instance):
+    assert isinstance(instance, operators_ResourceMonitor)
 
-@given(instance=operators::Node_strategy)
-def test_operators::node_nodeID_type(instance):
-    assert isinstance(instance.nodeID, str)
-
-
-@given(instance=operators::Node_strategy)
-def test_operators::node_nodeID_setter(instance):
-    original = instance.nodeID
-    instance.nodeID = original
-    assert instance.nodeID == original
-
-@given(instance=operators::ResourceExpansion_strategy)
+@given(instance=operators_Warehouse_strategy)
 @settings(max_examples=50)
-def test_operators::resourceexpansion_instantiation(instance):
-    assert isinstance(instance, operators::ResourceExpansion)
-
-@given(instance=operators::Relationship_strategy)
-@settings(max_examples=50)
-def test_operators::relationship_instantiation(instance):
-    assert isinstance(instance, operators::Relationship)
-
-@given(instance=operators::Relationship_strategy)
-def test_operators::relationship_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_operators_warehouse_instantiation(instance):
+    assert isinstance(instance, operators_Warehouse)
 
 
-@given(instance=operators::Relationship_strategy)
-def test_operators::relationship_name_setter(instance):
+
+@given(instance=operators_Warehouse_strategy)
+def test_operators_warehouse_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=operators::ResourceForecast_strategy)
-@settings(max_examples=50)
-def test_operators::resourceforecast_instantiation(instance):
-    assert isinstance(instance, operators::ResourceForecast)
-
-@given(instance=operators::Warehouse_strategy)
-@settings(max_examples=50)
-def test_operators::warehouse_instantiation(instance):
-    assert isinstance(instance, operators::Warehouse)
-
-@given(instance=operators::Warehouse_strategy)
-def test_operators::warehouse_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=operators::Warehouse_strategy)
-def test_operators::warehouse_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=operators::Warehouse_strategy)
-def test_operators::warehouse_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=operators::Warehouse_strategy)
-def test_operators::warehouse_description_setter(instance):
+@given(instance=operators_Warehouse_strategy)
+def test_operators_warehouse_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=operators::Marker_strategy)
+@given(instance=operators_Node_strategy)
 @settings(max_examples=50)
-def test_operators::marker_instantiation(instance):
-    assert isinstance(instance, operators::Marker)
-
-@given(instance=operators::Marker_strategy)
-def test_operators::marker_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_operators_node_instantiation(instance):
+    assert isinstance(instance, operators_Node)
 
 
-@given(instance=operators::Marker_strategy)
-def test_operators::marker_kind_setter(instance):
+
+@given(instance=operators_Node_strategy)
+def test_operators_node_nodeID_setter(instance):
+    original = instance.nodeID
+    instance.nodeID = original
+    assert instance.nodeID == original
+
+@given(instance=operators_Marker_strategy)
+@settings(max_examples=50)
+def test_operators_marker_instantiation(instance):
+    assert isinstance(instance, operators_Marker)
+
+
+
+@given(instance=operators_Marker_strategy)
+def test_operators_marker_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=operators::Marker_strategy)
-def test_operators::marker_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=operators::Marker_strategy)
-def test_operators::marker_description_setter(instance):
+@given(instance=operators_Marker_strategy)
+def test_operators_marker_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -994,12 +961,12 @@ def test_operators::marker_description_setter(instance):
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=operators::FunctionRelationship_strategy)
+@given(instance=operators_FunctionRelationship_strategy)
 @settings(max_examples=50)
-def test_operators::functionrelationship_instantiation(instance):
-    assert isinstance(instance, operators::FunctionRelationship)
+def test_operators_functionrelationship_instantiation(instance):
+    assert isinstance(instance, operators_FunctionRelationship)
 
-@given(instance=operators::EquipmentRelationship_strategy)
+@given(instance=operators_EquipmentRelationship_strategy)
 @settings(max_examples=50)
-def test_operators::equipmentrelationship_instantiation(instance):
-    assert isinstance(instance, operators::EquipmentRelationship)
+def test_operators_equipmentrelationship_instantiation(instance):
+    assert isinstance(instance, operators_EquipmentRelationship)

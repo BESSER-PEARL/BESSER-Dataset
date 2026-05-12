@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    democea::ConceptC,
+from python_code import (
+    democea_ConceptC,
     ConceptA,
-    democea::ConceptB,
-    democea::ConceptA,
+    democea_ConceptB,
+    democea_ConceptA,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_democea::conceptc_is_not_abstract():
-    assert not inspect.isabstract(democea::ConceptC)
+def test_democea_conceptc_is_not_abstract():
+    assert not inspect.isabstract(democea_ConceptC)
 
 
-def test_democea::conceptc_constructor_exists():
-    assert callable(democea::ConceptC.__init__)
+def test_democea_conceptc_constructor_exists():
+    assert callable(democea_ConceptC.__init__)
 
 
-def test_democea::conceptc_constructor_args():
-    sig = inspect.signature(democea::ConceptC.__init__)
+def test_democea_conceptc_constructor_args():
+    sig = inspect.signature(democea_ConceptC.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_democea::conceptc_has_value():
-    assert hasattr(democea::ConceptC, "value")
+def test_democea_conceptc_has_value():
+    assert hasattr(democea_ConceptC, "value")
     descriptor = None
-    for klass in democea::ConceptC.__mro__:
+    for klass in democea_ConceptC.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -56,30 +56,30 @@ def test_concepta_constructor_args():
 
 
 
-def test_democea::conceptb_is_not_abstract():
-    assert not inspect.isabstract(democea::ConceptB)
+def test_democea_conceptb_is_not_abstract():
+    assert not inspect.isabstract(democea_ConceptB)
 
 
-def test_democea::conceptb_constructor_exists():
-    assert callable(democea::ConceptB.__init__)
+def test_democea_conceptb_constructor_exists():
+    assert callable(democea_ConceptB.__init__)
 
 
-def test_democea::conceptb_constructor_args():
-    sig = inspect.signature(democea::ConceptB.__init__)
+def test_democea_conceptb_constructor_args():
+    sig = inspect.signature(democea_ConceptB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_democea::concepta_is_not_abstract():
-    assert not inspect.isabstract(democea::ConceptA)
+def test_democea_concepta_is_not_abstract():
+    assert not inspect.isabstract(democea_ConceptA)
 
 
-def test_democea::concepta_constructor_exists():
-    assert callable(democea::ConceptA.__init__)
+def test_democea_concepta_constructor_exists():
+    assert callable(democea_ConceptA.__init__)
 
 
-def test_democea::concepta_constructor_args():
-    sig = inspect.signature(democea::ConceptA.__init__)
+def test_democea_concepta_constructor_args():
+    sig = inspect.signature(democea_ConceptA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,33 +94,30 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-democea::ConceptC_strategy = st.builds(
-    democea::ConceptC,
+democea_ConceptC_strategy = st.builds(
+    democea_ConceptC,
     value=
         st.integers()
 )
 ConceptA_strategy = st.builds(
     ConceptA,
 )
-democea::ConceptB_strategy = st.builds(
-    democea::ConceptB,
+democea_ConceptB_strategy = st.builds(
+    democea_ConceptB,
 )
-democea::ConceptA_strategy = st.builds(
-    democea::ConceptA,
+democea_ConceptA_strategy = st.builds(
+    democea_ConceptA,
 )
 
-@given(instance=democea::ConceptC_strategy)
+@given(instance=democea_ConceptC_strategy)
 @settings(max_examples=50)
-def test_democea::conceptc_instantiation(instance):
-    assert isinstance(instance, democea::ConceptC)
-
-@given(instance=democea::ConceptC_strategy)
-def test_democea::conceptc_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_democea_conceptc_instantiation(instance):
+    assert isinstance(instance, democea_ConceptC)
 
 
-@given(instance=democea::ConceptC_strategy)
-def test_democea::conceptc_value_setter(instance):
+
+@given(instance=democea_ConceptC_strategy)
+def test_democea_conceptc_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -130,12 +127,12 @@ def test_democea::conceptc_value_setter(instance):
 def test_concepta_instantiation(instance):
     assert isinstance(instance, ConceptA)
 
-@given(instance=democea::ConceptB_strategy)
+@given(instance=democea_ConceptB_strategy)
 @settings(max_examples=50)
-def test_democea::conceptb_instantiation(instance):
-    assert isinstance(instance, democea::ConceptB)
+def test_democea_conceptb_instantiation(instance):
+    assert isinstance(instance, democea_ConceptB)
 
-@given(instance=democea::ConceptA_strategy)
+@given(instance=democea_ConceptA_strategy)
 @settings(max_examples=50)
-def test_democea::concepta_instantiation(instance):
-    assert isinstance(instance, democea::ConceptA)
+def test_democea_concepta_instantiation(instance):
+    assert isinstance(instance, democea_ConceptA)

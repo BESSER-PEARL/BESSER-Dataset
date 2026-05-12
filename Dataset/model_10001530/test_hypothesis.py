@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Game,
@@ -28,18 +28,9 @@ def test_game_constructor_exists():
 def test_game_constructor_args():
     sig = inspect.signature(Game.__init__)
     params = list(sig.parameters.keys())
-    assert "mainDeck" in params, "Missing parameter 'mainDeck'"
     assert "cardsOnTable" in params, "Missing parameter 'cardsOnTable'"
     assert "completedCards" in params, "Missing parameter 'completedCards'"
-
-def test_game_has_mainDeck():
-    assert hasattr(Game, "mainDeck")
-    descriptor = None
-    for klass in Game.__mro__:
-        if "mainDeck" in klass.__dict__:
-            descriptor = klass.__dict__["mainDeck"]
-            break
-    assert isinstance(descriptor, property)
+    assert "mainDeck" in params, "Missing parameter 'mainDeck'"
 
 def test_game_has_cardsOnTable():
     assert hasattr(Game, "cardsOnTable")
@@ -56,6 +47,15 @@ def test_game_has_completedCards():
     for klass in Game.__mro__:
         if "completedCards" in klass.__dict__:
             descriptor = klass.__dict__["completedCards"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_game_has_mainDeck():
+    assert hasattr(Game, "mainDeck")
+    descriptor = None
+    for klass in Game.__mro__:
+        if "mainDeck" in klass.__dict__:
+            descriptor = klass.__dict__["mainDeck"]
             break
     assert isinstance(descriptor, property)
 
@@ -121,11 +121,11 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Game_strategy = st.builds(
     Game,
-    mainDeck=
-        st.none(),
     cardsOnTable=
         st.none(),
     completedCards=
+        st.none(),
+    mainDeck=
         st.none()
 )
 Deck_strategy = st.builds(
@@ -144,20 +144,6 @@ Card_strategy = st.builds(
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_mainDeck_type(instance):
-    assert isinstance(instance.mainDeck, deck)
-
-
-@given(instance=Game_strategy)
-def test_game_mainDeck_setter(instance):
-    original = instance.mainDeck
-    instance.mainDeck = original
-    assert instance.mainDeck == original
-
-@given(instance=Game_strategy)
-def test_game_cardsOnTable_type(instance):
-    assert isinstance(instance.cardsOnTable, card)
 
 
 @given(instance=Game_strategy)
@@ -166,9 +152,6 @@ def test_game_cardsOnTable_setter(instance):
     instance.cardsOnTable = original
     assert instance.cardsOnTable == original
 
-@given(instance=Game_strategy)
-def test_game_completedCards_type(instance):
-    assert isinstance(instance.completedCards, deck)
 
 
 @given(instance=Game_strategy)
@@ -177,14 +160,19 @@ def test_game_completedCards_setter(instance):
     instance.completedCards = original
     assert instance.completedCards == original
 
+
+
+@given(instance=Game_strategy)
+def test_game_mainDeck_setter(instance):
+    original = instance.mainDeck
+    instance.mainDeck = original
+    assert instance.mainDeck == original
+
 @given(instance=Deck_strategy)
 @settings(max_examples=50)
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_cards_type(instance):
-    assert isinstance(instance.cards, card)
 
 
 @given(instance=Deck_strategy)
@@ -198,9 +186,6 @@ def test_deck_cards_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Card_strategy)

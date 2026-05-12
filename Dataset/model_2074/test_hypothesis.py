@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CST::Node,
-    CST::Tree,
+from python_code import (
+    CST_Node,
+    CST_Tree,
     Node,
-    CST::TNode,
-    CST::RNode,
+    CST_TNode,
+    CST_RNode,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_cst::node_is_not_abstract():
-    assert not inspect.isabstract(CST::Node)
+def test_cst_node_is_not_abstract():
+    assert not inspect.isabstract(CST_Node)
 
 
-def test_cst::node_constructor_exists():
-    assert callable(CST::Node.__init__)
+def test_cst_node_constructor_exists():
+    assert callable(CST_Node.__init__)
 
 
-def test_cst::node_constructor_args():
-    sig = inspect.signature(CST::Node.__init__)
+def test_cst_node_constructor_args():
+    sig = inspect.signature(CST_Node.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_cst::node_has_kind():
-    assert hasattr(CST::Node, "kind")
+def test_cst_node_has_kind():
+    assert hasattr(CST_Node, "kind")
     descriptor = None
-    for klass in CST::Node.__mro__:
+    for klass in CST_Node.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -43,16 +43,16 @@ def test_cst::node_has_kind():
 
 
 
-def test_cst::tree_is_not_abstract():
-    assert not inspect.isabstract(CST::Tree)
+def test_cst_tree_is_not_abstract():
+    assert not inspect.isabstract(CST_Tree)
 
 
-def test_cst::tree_constructor_exists():
-    assert callable(CST::Tree.__init__)
+def test_cst_tree_constructor_exists():
+    assert callable(CST_Tree.__init__)
 
 
-def test_cst::tree_constructor_args():
-    sig = inspect.signature(CST::Tree.__init__)
+def test_cst_tree_constructor_args():
+    sig = inspect.signature(CST_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -71,23 +71,23 @@ def test_node_constructor_args():
 
 
 
-def test_cst::tnode_is_not_abstract():
-    assert not inspect.isabstract(CST::TNode)
+def test_cst_tnode_is_not_abstract():
+    assert not inspect.isabstract(CST_TNode)
 
 
-def test_cst::tnode_constructor_exists():
-    assert callable(CST::TNode.__init__)
+def test_cst_tnode_constructor_exists():
+    assert callable(CST_TNode.__init__)
 
 
-def test_cst::tnode_constructor_args():
-    sig = inspect.signature(CST::TNode.__init__)
+def test_cst_tnode_constructor_args():
+    sig = inspect.signature(CST_TNode.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cst::tnode_has_value():
-    assert hasattr(CST::TNode, "value")
+def test_cst_tnode_has_value():
+    assert hasattr(CST_TNode, "value")
     descriptor = None
-    for klass in CST::TNode.__mro__:
+    for klass in CST_TNode.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -95,16 +95,16 @@ def test_cst::tnode_has_value():
 
 
 
-def test_cst::rnode_is_not_abstract():
-    assert not inspect.isabstract(CST::RNode)
+def test_cst_rnode_is_not_abstract():
+    assert not inspect.isabstract(CST_RNode)
 
 
-def test_cst::rnode_constructor_exists():
-    assert callable(CST::RNode.__init__)
+def test_cst_rnode_constructor_exists():
+    assert callable(CST_RNode.__init__)
 
 
-def test_cst::rnode_constructor_args():
-    sig = inspect.signature(CST::RNode.__init__)
+def test_cst_rnode_constructor_args():
+    sig = inspect.signature(CST_RNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -119,69 +119,63 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CST::Node_strategy = st.builds(
-    CST::Node,
+CST_Node_strategy = st.builds(
+    CST_Node,
     kind=
         safe_text
 )
-CST::Tree_strategy = st.builds(
-    CST::Tree,
+CST_Tree_strategy = st.builds(
+    CST_Tree,
 )
 Node_strategy = st.builds(
     Node,
 )
-CST::TNode_strategy = st.builds(
-    CST::TNode,
+CST_TNode_strategy = st.builds(
+    CST_TNode,
     value=
         safe_text
 )
-CST::RNode_strategy = st.builds(
-    CST::RNode,
+CST_RNode_strategy = st.builds(
+    CST_RNode,
 )
 
-@given(instance=CST::Node_strategy)
+@given(instance=CST_Node_strategy)
 @settings(max_examples=50)
-def test_cst::node_instantiation(instance):
-    assert isinstance(instance, CST::Node)
-
-@given(instance=CST::Node_strategy)
-def test_cst::node_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_cst_node_instantiation(instance):
+    assert isinstance(instance, CST_Node)
 
 
-@given(instance=CST::Node_strategy)
-def test_cst::node_kind_setter(instance):
+
+@given(instance=CST_Node_strategy)
+def test_cst_node_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=CST::Tree_strategy)
+@given(instance=CST_Tree_strategy)
 @settings(max_examples=50)
-def test_cst::tree_instantiation(instance):
-    assert isinstance(instance, CST::Tree)
+def test_cst_tree_instantiation(instance):
+    assert isinstance(instance, CST_Tree)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=CST::TNode_strategy)
+@given(instance=CST_TNode_strategy)
 @settings(max_examples=50)
-def test_cst::tnode_instantiation(instance):
-    assert isinstance(instance, CST::TNode)
-
-@given(instance=CST::TNode_strategy)
-def test_cst::tnode_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cst_tnode_instantiation(instance):
+    assert isinstance(instance, CST_TNode)
 
 
-@given(instance=CST::TNode_strategy)
-def test_cst::tnode_value_setter(instance):
+
+@given(instance=CST_TNode_strategy)
+def test_cst_tnode_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=CST::RNode_strategy)
+@given(instance=CST_RNode_strategy)
 @settings(max_examples=50)
-def test_cst::rnode_instantiation(instance):
-    assert isinstance(instance, CST::RNode)
+def test_cst_rnode_instantiation(instance):
+    assert isinstance(instance, CST_RNode)

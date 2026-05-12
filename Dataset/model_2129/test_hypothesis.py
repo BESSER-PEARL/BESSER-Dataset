@@ -3,53 +3,53 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Implementation,
-    tTCTest::Implements::Not,
-    tTCTest::Implements,
-    tTCTest::Class::Element,
-    Propose::Refactoring,
-    tTCTest::Propose::Create::Superclass::Refactoring,
-    tTCTest::Propose::Pullup::Method::Refactoring,
-    tTCTest::Propose::Refactoring,
+    tTCTest_Implements,
+    tTCTest_Class_Element,
+    Propose_Refactoring,
+    tTCTest_Propose_Create_Superclass_Refactoring,
+    tTCTest_Propose_Pullup_Method_Refactoring,
+    tTCTest_Propose_Refactoring,
     Condition,
-    tTCTest::Expect::False,
-    tTCTest::Expect::True,
-    tTCTest::Warning,
+    tTCTest_Expect_False,
+    tTCTest_Expect_True,
+    tTCTest_Warning,
     Assertion,
-    tTCTest::Assert::True,
-    tTCTest::Assert::False,
+    tTCTest_Assert_True,
+    tTCTest_Assert_False,
     Containment,
-    tTCTest::Contains::Not,
-    tTCTest::Contains,
-    Refactoring::Instance,
-    tTCTest::Create::Superclass::Refactoring,
-    tTCTest::Pull::Up::Refactoring,
-    tTCTest::Refactoring,
+    tTCTest_Contains_Not,
+    tTCTest_Contains,
+    Refactoring_Instance,
+    tTCTest_Create_Superclass_Refactoring,
+    tTCTest_Pull_Up_Refactoring,
+    tTCTest_Refactoring,
     Refactoring,
-    tTCTest::No::Refactoring,
-    tTCTest::Test::Flow,
-    tTCTest::Fields,
-    tTCTest::Methods,
-    Class::Element,
-    tTCTest::Java::Field,
-    Test::Step::Element,
-    tTCTest::Implementation,
-    tTCTest::Assertion,
-    tTCTest::Compile,
-    tTCTest::Condition,
-    tTCTest::Containment,
-    tTCTest::Synchronize,
-    tTCTest::Test::Step,
-    tTCTest::Test::Step::Element,
-    tTCTest::Java::Class,
-    tTCTest::Test::Case,
-    tTCTest::Test::File,
-    tTCTest::Refactoring::Instance,
-    tTCTest::Java::Method,
-    tTCTest::Classes,
+    tTCTest_No_Refactoring,
+    tTCTest_Test_Flow,
+    tTCTest_Fields,
+    tTCTest_Methods,
+    Class_Element,
+    tTCTest_Java_Field,
+    Test_Step_Element,
+    tTCTest_Synchronize,
+    tTCTest_Condition,
+    tTCTest_Compile,
+    tTCTest_Implementation,
+    tTCTest_Containment,
+    tTCTest_Assertion,
+    tTCTest_Test_Step,
+    tTCTest_Test_Step_Element,
+    tTCTest_Java_Class,
+    tTCTest_Test_Case,
+    tTCTest_Test_File,
+    tTCTest_Refactoring_Instance,
+    tTCTest_Java_Method,
+    tTCTest_Classes,
+    tTCTest_Implements_Not,
 )
 
 # =============================================================================
@@ -72,51 +72,37 @@ def test_implementation_constructor_args():
 
 
 
-def test_ttctest::implements::not_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Implements::Not)
+def test_ttctest_implements_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Implements)
 
 
-def test_ttctest::implements::not_constructor_exists():
-    assert callable(tTCTest::Implements::Not.__init__)
+def test_ttctest_implements_constructor_exists():
+    assert callable(tTCTest_Implements.__init__)
 
 
-def test_ttctest::implements::not_constructor_args():
-    sig = inspect.signature(tTCTest::Implements::Not.__init__)
+def test_ttctest_implements_constructor_args():
+    sig = inspect.signature(tTCTest_Implements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::implements_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Implements)
+def test_ttctest_class_element_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Class_Element)
 
 
-def test_ttctest::implements_constructor_exists():
-    assert callable(tTCTest::Implements.__init__)
+def test_ttctest_class_element_constructor_exists():
+    assert callable(tTCTest_Class_Element.__init__)
 
 
-def test_ttctest::implements_constructor_args():
-    sig = inspect.signature(tTCTest::Implements.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ttctest::class::element_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Class::Element)
-
-
-def test_ttctest::class::element_constructor_exists():
-    assert callable(tTCTest::Class::Element.__init__)
-
-
-def test_ttctest::class::element_constructor_args():
-    sig = inspect.signature(tTCTest::Class::Element.__init__)
+def test_ttctest_class_element_constructor_args():
+    sig = inspect.signature(tTCTest_Class_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ttctest::class::element_has_name():
-    assert hasattr(tTCTest::Class::Element, "name")
+def test_ttctest_class_element_has_name():
+    assert hasattr(tTCTest_Class_Element, "name")
     descriptor = None
-    for klass in tTCTest::Class::Element.__mro__:
+    for klass in tTCTest_Class_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,58 +110,58 @@ def test_ttctest::class::element_has_name():
 
 
 
-def test_propose::refactoring_is_not_abstract():
-    assert not inspect.isabstract(Propose::Refactoring)
+def test_propose_refactoring_is_not_abstract():
+    assert not inspect.isabstract(Propose_Refactoring)
 
 
-def test_propose::refactoring_constructor_exists():
-    assert callable(Propose::Refactoring.__init__)
+def test_propose_refactoring_constructor_exists():
+    assert callable(Propose_Refactoring.__init__)
 
 
-def test_propose::refactoring_constructor_args():
-    sig = inspect.signature(Propose::Refactoring.__init__)
+def test_propose_refactoring_constructor_args():
+    sig = inspect.signature(Propose_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::propose::create::superclass::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Propose::Create::Superclass::Refactoring)
+def test_ttctest_propose_create_superclass_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Propose_Create_Superclass_Refactoring)
 
 
-def test_ttctest::propose::create::superclass::refactoring_constructor_exists():
-    assert callable(tTCTest::Propose::Create::Superclass::Refactoring.__init__)
+def test_ttctest_propose_create_superclass_refactoring_constructor_exists():
+    assert callable(tTCTest_Propose_Create_Superclass_Refactoring.__init__)
 
 
-def test_ttctest::propose::create::superclass::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::Propose::Create::Superclass::Refactoring.__init__)
+def test_ttctest_propose_create_superclass_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_Propose_Create_Superclass_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::propose::pullup::method::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Propose::Pullup::Method::Refactoring)
+def test_ttctest_propose_pullup_method_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Propose_Pullup_Method_Refactoring)
 
 
-def test_ttctest::propose::pullup::method::refactoring_constructor_exists():
-    assert callable(tTCTest::Propose::Pullup::Method::Refactoring.__init__)
+def test_ttctest_propose_pullup_method_refactoring_constructor_exists():
+    assert callable(tTCTest_Propose_Pullup_Method_Refactoring.__init__)
 
 
-def test_ttctest::propose::pullup::method::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::Propose::Pullup::Method::Refactoring.__init__)
+def test_ttctest_propose_pullup_method_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_Propose_Pullup_Method_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::propose::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Propose::Refactoring)
+def test_ttctest_propose_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Propose_Refactoring)
 
 
-def test_ttctest::propose::refactoring_constructor_exists():
-    assert callable(tTCTest::Propose::Refactoring.__init__)
+def test_ttctest_propose_refactoring_constructor_exists():
+    assert callable(tTCTest_Propose_Refactoring.__init__)
 
 
-def test_ttctest::propose::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::Propose::Refactoring.__init__)
+def test_ttctest_propose_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_Propose_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,51 +180,51 @@ def test_condition_constructor_args():
 
 
 
-def test_ttctest::expect::false_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Expect::False)
+def test_ttctest_expect_false_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Expect_False)
 
 
-def test_ttctest::expect::false_constructor_exists():
-    assert callable(tTCTest::Expect::False.__init__)
+def test_ttctest_expect_false_constructor_exists():
+    assert callable(tTCTest_Expect_False.__init__)
 
 
-def test_ttctest::expect::false_constructor_args():
-    sig = inspect.signature(tTCTest::Expect::False.__init__)
+def test_ttctest_expect_false_constructor_args():
+    sig = inspect.signature(tTCTest_Expect_False.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::expect::true_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Expect::True)
+def test_ttctest_expect_true_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Expect_True)
 
 
-def test_ttctest::expect::true_constructor_exists():
-    assert callable(tTCTest::Expect::True.__init__)
+def test_ttctest_expect_true_constructor_exists():
+    assert callable(tTCTest_Expect_True.__init__)
 
 
-def test_ttctest::expect::true_constructor_args():
-    sig = inspect.signature(tTCTest::Expect::True.__init__)
+def test_ttctest_expect_true_constructor_args():
+    sig = inspect.signature(tTCTest_Expect_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::warning_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Warning)
+def test_ttctest_warning_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Warning)
 
 
-def test_ttctest::warning_constructor_exists():
-    assert callable(tTCTest::Warning.__init__)
+def test_ttctest_warning_constructor_exists():
+    assert callable(tTCTest_Warning.__init__)
 
 
-def test_ttctest::warning_constructor_args():
-    sig = inspect.signature(tTCTest::Warning.__init__)
+def test_ttctest_warning_constructor_args():
+    sig = inspect.signature(tTCTest_Warning.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_ttctest::warning_has_message():
-    assert hasattr(tTCTest::Warning, "message")
+def test_ttctest_warning_has_message():
+    assert hasattr(tTCTest_Warning, "message")
     descriptor = None
-    for klass in tTCTest::Warning.__mro__:
+    for klass in tTCTest_Warning.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -260,30 +246,30 @@ def test_assertion_constructor_args():
 
 
 
-def test_ttctest::assert::true_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Assert::True)
+def test_ttctest_assert_true_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Assert_True)
 
 
-def test_ttctest::assert::true_constructor_exists():
-    assert callable(tTCTest::Assert::True.__init__)
+def test_ttctest_assert_true_constructor_exists():
+    assert callable(tTCTest_Assert_True.__init__)
 
 
-def test_ttctest::assert::true_constructor_args():
-    sig = inspect.signature(tTCTest::Assert::True.__init__)
+def test_ttctest_assert_true_constructor_args():
+    sig = inspect.signature(tTCTest_Assert_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::assert::false_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Assert::False)
+def test_ttctest_assert_false_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Assert_False)
 
 
-def test_ttctest::assert::false_constructor_exists():
-    assert callable(tTCTest::Assert::False.__init__)
+def test_ttctest_assert_false_constructor_exists():
+    assert callable(tTCTest_Assert_False.__init__)
 
 
-def test_ttctest::assert::false_constructor_args():
-    sig = inspect.signature(tTCTest::Assert::False.__init__)
+def test_ttctest_assert_false_constructor_args():
+    sig = inspect.signature(tTCTest_Assert_False.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -302,86 +288,86 @@ def test_containment_constructor_args():
 
 
 
-def test_ttctest::contains::not_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Contains::Not)
+def test_ttctest_contains_not_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Contains_Not)
 
 
-def test_ttctest::contains::not_constructor_exists():
-    assert callable(tTCTest::Contains::Not.__init__)
+def test_ttctest_contains_not_constructor_exists():
+    assert callable(tTCTest_Contains_Not.__init__)
 
 
-def test_ttctest::contains::not_constructor_args():
-    sig = inspect.signature(tTCTest::Contains::Not.__init__)
+def test_ttctest_contains_not_constructor_args():
+    sig = inspect.signature(tTCTest_Contains_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::contains_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Contains)
+def test_ttctest_contains_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Contains)
 
 
-def test_ttctest::contains_constructor_exists():
-    assert callable(tTCTest::Contains.__init__)
+def test_ttctest_contains_constructor_exists():
+    assert callable(tTCTest_Contains.__init__)
 
 
-def test_ttctest::contains_constructor_args():
-    sig = inspect.signature(tTCTest::Contains.__init__)
+def test_ttctest_contains_constructor_args():
+    sig = inspect.signature(tTCTest_Contains.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refactoring::instance_is_not_abstract():
-    assert not inspect.isabstract(Refactoring::Instance)
+def test_refactoring_instance_is_not_abstract():
+    assert not inspect.isabstract(Refactoring_Instance)
 
 
-def test_refactoring::instance_constructor_exists():
-    assert callable(Refactoring::Instance.__init__)
+def test_refactoring_instance_constructor_exists():
+    assert callable(Refactoring_Instance.__init__)
 
 
-def test_refactoring::instance_constructor_args():
-    sig = inspect.signature(Refactoring::Instance.__init__)
+def test_refactoring_instance_constructor_args():
+    sig = inspect.signature(Refactoring_Instance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::create::superclass::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Create::Superclass::Refactoring)
+def test_ttctest_create_superclass_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Create_Superclass_Refactoring)
 
 
-def test_ttctest::create::superclass::refactoring_constructor_exists():
-    assert callable(tTCTest::Create::Superclass::Refactoring.__init__)
+def test_ttctest_create_superclass_refactoring_constructor_exists():
+    assert callable(tTCTest_Create_Superclass_Refactoring.__init__)
 
 
-def test_ttctest::create::superclass::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::Create::Superclass::Refactoring.__init__)
+def test_ttctest_create_superclass_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_Create_Superclass_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::pull::up::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Pull::Up::Refactoring)
+def test_ttctest_pull_up_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Pull_Up_Refactoring)
 
 
-def test_ttctest::pull::up::refactoring_constructor_exists():
-    assert callable(tTCTest::Pull::Up::Refactoring.__init__)
+def test_ttctest_pull_up_refactoring_constructor_exists():
+    assert callable(tTCTest_Pull_Up_Refactoring.__init__)
 
 
-def test_ttctest::pull::up::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::Pull::Up::Refactoring.__init__)
+def test_ttctest_pull_up_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_Pull_Up_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Refactoring)
+def test_ttctest_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Refactoring)
 
 
-def test_ttctest::refactoring_constructor_exists():
-    assert callable(tTCTest::Refactoring.__init__)
+def test_ttctest_refactoring_constructor_exists():
+    assert callable(tTCTest_Refactoring.__init__)
 
 
-def test_ttctest::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::Refactoring.__init__)
+def test_ttctest_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -400,51 +386,51 @@ def test_refactoring_constructor_args():
 
 
 
-def test_ttctest::no::refactoring_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::No::Refactoring)
+def test_ttctest_no_refactoring_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_No_Refactoring)
 
 
-def test_ttctest::no::refactoring_constructor_exists():
-    assert callable(tTCTest::No::Refactoring.__init__)
+def test_ttctest_no_refactoring_constructor_exists():
+    assert callable(tTCTest_No_Refactoring.__init__)
 
 
-def test_ttctest::no::refactoring_constructor_args():
-    sig = inspect.signature(tTCTest::No::Refactoring.__init__)
+def test_ttctest_no_refactoring_constructor_args():
+    sig = inspect.signature(tTCTest_No_Refactoring.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::test::flow_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Test::Flow)
+def test_ttctest_test_flow_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Test_Flow)
 
 
-def test_ttctest::test::flow_constructor_exists():
-    assert callable(tTCTest::Test::Flow.__init__)
+def test_ttctest_test_flow_constructor_exists():
+    assert callable(tTCTest_Test_Flow.__init__)
 
 
-def test_ttctest::test::flow_constructor_args():
-    sig = inspect.signature(tTCTest::Test::Flow.__init__)
+def test_ttctest_test_flow_constructor_args():
+    sig = inspect.signature(tTCTest_Test_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::fields_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Fields)
+def test_ttctest_fields_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Fields)
 
 
-def test_ttctest::fields_constructor_exists():
-    assert callable(tTCTest::Fields.__init__)
+def test_ttctest_fields_constructor_exists():
+    assert callable(tTCTest_Fields.__init__)
 
 
-def test_ttctest::fields_constructor_args():
-    sig = inspect.signature(tTCTest::Fields.__init__)
+def test_ttctest_fields_constructor_args():
+    sig = inspect.signature(tTCTest_Fields.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ttctest::fields_has_name():
-    assert hasattr(tTCTest::Fields, "name")
+def test_ttctest_fields_has_name():
+    assert hasattr(tTCTest_Fields, "name")
     descriptor = None
-    for klass in tTCTest::Fields.__mro__:
+    for klass in tTCTest_Fields.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -452,23 +438,23 @@ def test_ttctest::fields_has_name():
 
 
 
-def test_ttctest::methods_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Methods)
+def test_ttctest_methods_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Methods)
 
 
-def test_ttctest::methods_constructor_exists():
-    assert callable(tTCTest::Methods.__init__)
+def test_ttctest_methods_constructor_exists():
+    assert callable(tTCTest_Methods.__init__)
 
 
-def test_ttctest::methods_constructor_args():
-    sig = inspect.signature(tTCTest::Methods.__init__)
+def test_ttctest_methods_constructor_args():
+    sig = inspect.signature(tTCTest_Methods.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ttctest::methods_has_name():
-    assert hasattr(tTCTest::Methods, "name")
+def test_ttctest_methods_has_name():
+    assert hasattr(tTCTest_Methods, "name")
     descriptor = None
-    for klass in tTCTest::Methods.__mro__:
+    for klass in tTCTest_Methods.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -476,37 +462,37 @@ def test_ttctest::methods_has_name():
 
 
 
-def test_class::element_is_not_abstract():
-    assert not inspect.isabstract(Class::Element)
+def test_class_element_is_not_abstract():
+    assert not inspect.isabstract(Class_Element)
 
 
-def test_class::element_constructor_exists():
-    assert callable(Class::Element.__init__)
+def test_class_element_constructor_exists():
+    assert callable(Class_Element.__init__)
 
 
-def test_class::element_constructor_args():
-    sig = inspect.signature(Class::Element.__init__)
+def test_class_element_constructor_args():
+    sig = inspect.signature(Class_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::java::field_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Java::Field)
+def test_ttctest_java_field_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Java_Field)
 
 
-def test_ttctest::java::field_constructor_exists():
-    assert callable(tTCTest::Java::Field.__init__)
+def test_ttctest_java_field_constructor_exists():
+    assert callable(tTCTest_Java_Field.__init__)
 
 
-def test_ttctest::java::field_constructor_args():
-    sig = inspect.signature(tTCTest::Java::Field.__init__)
+def test_ttctest_java_field_constructor_args():
+    sig = inspect.signature(tTCTest_Java_Field.__init__)
     params = list(sig.parameters.keys())
     assert "field_name" in params, "Missing parameter 'field_name'"
 
-def test_ttctest::java::field_has_field_name():
-    assert hasattr(tTCTest::Java::Field, "field_name")
+def test_ttctest_java_field_has_field_name():
+    assert hasattr(tTCTest_Java_Field, "field_name")
     descriptor = None
-    for klass in tTCTest::Java::Field.__mro__:
+    for klass in tTCTest_Java_Field.__mro__:
         if "field_name" in klass.__dict__:
             descriptor = klass.__dict__["field_name"]
             break
@@ -514,213 +500,213 @@ def test_ttctest::java::field_has_field_name():
 
 
 
-def test_test::step::element_is_not_abstract():
-    assert not inspect.isabstract(Test::Step::Element)
+def test_test_step_element_is_not_abstract():
+    assert not inspect.isabstract(Test_Step_Element)
 
 
-def test_test::step::element_constructor_exists():
-    assert callable(Test::Step::Element.__init__)
+def test_test_step_element_constructor_exists():
+    assert callable(Test_Step_Element.__init__)
 
 
-def test_test::step::element_constructor_args():
-    sig = inspect.signature(Test::Step::Element.__init__)
+def test_test_step_element_constructor_args():
+    sig = inspect.signature(Test_Step_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::implementation_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Implementation)
+def test_ttctest_synchronize_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Synchronize)
 
 
-def test_ttctest::implementation_constructor_exists():
-    assert callable(tTCTest::Implementation.__init__)
+def test_ttctest_synchronize_constructor_exists():
+    assert callable(tTCTest_Synchronize.__init__)
 
 
-def test_ttctest::implementation_constructor_args():
-    sig = inspect.signature(tTCTest::Implementation.__init__)
+def test_ttctest_synchronize_constructor_args():
+    sig = inspect.signature(tTCTest_Synchronize.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::assertion_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Assertion)
+def test_ttctest_condition_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Condition)
 
 
-def test_ttctest::assertion_constructor_exists():
-    assert callable(tTCTest::Assertion.__init__)
+def test_ttctest_condition_constructor_exists():
+    assert callable(tTCTest_Condition.__init__)
 
 
-def test_ttctest::assertion_constructor_args():
-    sig = inspect.signature(tTCTest::Assertion.__init__)
+def test_ttctest_condition_constructor_args():
+    sig = inspect.signature(tTCTest_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::compile_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Compile)
+def test_ttctest_compile_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Compile)
 
 
-def test_ttctest::compile_constructor_exists():
-    assert callable(tTCTest::Compile.__init__)
+def test_ttctest_compile_constructor_exists():
+    assert callable(tTCTest_Compile.__init__)
 
 
-def test_ttctest::compile_constructor_args():
-    sig = inspect.signature(tTCTest::Compile.__init__)
+def test_ttctest_compile_constructor_args():
+    sig = inspect.signature(tTCTest_Compile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::condition_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Condition)
+def test_ttctest_implementation_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Implementation)
 
 
-def test_ttctest::condition_constructor_exists():
-    assert callable(tTCTest::Condition.__init__)
+def test_ttctest_implementation_constructor_exists():
+    assert callable(tTCTest_Implementation.__init__)
 
 
-def test_ttctest::condition_constructor_args():
-    sig = inspect.signature(tTCTest::Condition.__init__)
+def test_ttctest_implementation_constructor_args():
+    sig = inspect.signature(tTCTest_Implementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::containment_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Containment)
+def test_ttctest_containment_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Containment)
 
 
-def test_ttctest::containment_constructor_exists():
-    assert callable(tTCTest::Containment.__init__)
+def test_ttctest_containment_constructor_exists():
+    assert callable(tTCTest_Containment.__init__)
 
 
-def test_ttctest::containment_constructor_args():
-    sig = inspect.signature(tTCTest::Containment.__init__)
+def test_ttctest_containment_constructor_args():
+    sig = inspect.signature(tTCTest_Containment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::synchronize_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Synchronize)
+def test_ttctest_assertion_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Assertion)
 
 
-def test_ttctest::synchronize_constructor_exists():
-    assert callable(tTCTest::Synchronize.__init__)
+def test_ttctest_assertion_constructor_exists():
+    assert callable(tTCTest_Assertion.__init__)
 
 
-def test_ttctest::synchronize_constructor_args():
-    sig = inspect.signature(tTCTest::Synchronize.__init__)
+def test_ttctest_assertion_constructor_args():
+    sig = inspect.signature(tTCTest_Assertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::test::step_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Test::Step)
+def test_ttctest_test_step_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Test_Step)
 
 
-def test_ttctest::test::step_constructor_exists():
-    assert callable(tTCTest::Test::Step.__init__)
+def test_ttctest_test_step_constructor_exists():
+    assert callable(tTCTest_Test_Step.__init__)
 
 
-def test_ttctest::test::step_constructor_args():
-    sig = inspect.signature(tTCTest::Test::Step.__init__)
+def test_ttctest_test_step_constructor_args():
+    sig = inspect.signature(tTCTest_Test_Step.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::test::step::element_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Test::Step::Element)
+def test_ttctest_test_step_element_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Test_Step_Element)
 
 
-def test_ttctest::test::step::element_constructor_exists():
-    assert callable(tTCTest::Test::Step::Element.__init__)
+def test_ttctest_test_step_element_constructor_exists():
+    assert callable(tTCTest_Test_Step_Element.__init__)
 
 
-def test_ttctest::test::step::element_constructor_args():
-    sig = inspect.signature(tTCTest::Test::Step::Element.__init__)
+def test_ttctest_test_step_element_constructor_args():
+    sig = inspect.signature(tTCTest_Test_Step_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ttctest::java::class_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Java::Class)
+def test_ttctest_java_class_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Java_Class)
 
 
-def test_ttctest::java::class_constructor_exists():
-    assert callable(tTCTest::Java::Class.__init__)
+def test_ttctest_java_class_constructor_exists():
+    assert callable(tTCTest_Java_Class.__init__)
 
 
-def test_ttctest::java::class_constructor_args():
-    sig = inspect.signature(tTCTest::Java::Class.__init__)
+def test_ttctest_java_class_constructor_args():
+    sig = inspect.signature(tTCTest_Java_Class.__init__)
     params = list(sig.parameters.keys())
     assert "package" in params, "Missing parameter 'package'"
-    assert "class_name" in params, "Missing parameter 'class_name'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "class_name" in params, "Missing parameter 'class_name'"
 
-def test_ttctest::java::class_has_package():
-    assert hasattr(tTCTest::Java::Class, "package")
+def test_ttctest_java_class_has_package():
+    assert hasattr(tTCTest_Java_Class, "package")
     descriptor = None
-    for klass in tTCTest::Java::Class.__mro__:
+    for klass in tTCTest_Java_Class.__mro__:
         if "package" in klass.__dict__:
             descriptor = klass.__dict__["package"]
             break
     assert isinstance(descriptor, property)
 
-def test_ttctest::java::class_has_class_name():
-    assert hasattr(tTCTest::Java::Class, "class_name")
+def test_ttctest_java_class_has_name():
+    assert hasattr(tTCTest_Java_Class, "name")
     descriptor = None
-    for klass in tTCTest::Java::Class.__mro__:
+    for klass in tTCTest_Java_Class.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ttctest_java_class_has_class_name():
+    assert hasattr(tTCTest_Java_Class, "class_name")
+    descriptor = None
+    for klass in tTCTest_Java_Class.__mro__:
         if "class_name" in klass.__dict__:
             descriptor = klass.__dict__["class_name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ttctest::java::class_has_name():
-    assert hasattr(tTCTest::Java::Class, "name")
-    descriptor = None
-    for klass in tTCTest::Java::Class.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_ttctest::test::case_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Test::Case)
-
-
-def test_ttctest::test::case_constructor_exists():
-    assert callable(tTCTest::Test::Case.__init__)
+def test_ttctest_test_case_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Test_Case)
 
 
-def test_ttctest::test::case_constructor_args():
-    sig = inspect.signature(tTCTest::Test::Case.__init__)
+def test_ttctest_test_case_constructor_exists():
+    assert callable(tTCTest_Test_Case.__init__)
+
+
+def test_ttctest_test_case_constructor_args():
+    sig = inspect.signature(tTCTest_Test_Case.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
     assert "java_program" in params, "Missing parameter 'java_program'"
 
-def test_ttctest::test::case_has_description():
-    assert hasattr(tTCTest::Test::Case, "description")
+def test_ttctest_test_case_has_description():
+    assert hasattr(tTCTest_Test_Case, "description")
     descriptor = None
-    for klass in tTCTest::Test::Case.__mro__:
+    for klass in tTCTest_Test_Case.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_ttctest::test::case_has_name():
-    assert hasattr(tTCTest::Test::Case, "name")
+def test_ttctest_test_case_has_name():
+    assert hasattr(tTCTest_Test_Case, "name")
     descriptor = None
-    for klass in tTCTest::Test::Case.__mro__:
+    for klass in tTCTest_Test_Case.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ttctest::test::case_has_java_program():
-    assert hasattr(tTCTest::Test::Case, "java_program")
+def test_ttctest_test_case_has_java_program():
+    assert hasattr(tTCTest_Test_Case, "java_program")
     descriptor = None
-    for klass in tTCTest::Test::Case.__mro__:
+    for klass in tTCTest_Test_Case.__mro__:
         if "java_program" in klass.__dict__:
             descriptor = klass.__dict__["java_program"]
             break
@@ -728,23 +714,23 @@ def test_ttctest::test::case_has_java_program():
 
 
 
-def test_ttctest::test::file_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Test::File)
+def test_ttctest_test_file_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Test_File)
 
 
-def test_ttctest::test::file_constructor_exists():
-    assert callable(tTCTest::Test::File.__init__)
+def test_ttctest_test_file_constructor_exists():
+    assert callable(tTCTest_Test_File.__init__)
 
 
-def test_ttctest::test::file_constructor_args():
-    sig = inspect.signature(tTCTest::Test::File.__init__)
+def test_ttctest_test_file_constructor_args():
+    sig = inspect.signature(tTCTest_Test_File.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ttctest::test::file_has_name():
-    assert hasattr(tTCTest::Test::File, "name")
+def test_ttctest_test_file_has_name():
+    assert hasattr(tTCTest_Test_File, "name")
     descriptor = None
-    for klass in tTCTest::Test::File.__mro__:
+    for klass in tTCTest_Test_File.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -752,23 +738,23 @@ def test_ttctest::test::file_has_name():
 
 
 
-def test_ttctest::refactoring::instance_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Refactoring::Instance)
+def test_ttctest_refactoring_instance_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Refactoring_Instance)
 
 
-def test_ttctest::refactoring::instance_constructor_exists():
-    assert callable(tTCTest::Refactoring::Instance.__init__)
+def test_ttctest_refactoring_instance_constructor_exists():
+    assert callable(tTCTest_Refactoring_Instance.__init__)
 
 
-def test_ttctest::refactoring::instance_constructor_args():
-    sig = inspect.signature(tTCTest::Refactoring::Instance.__init__)
+def test_ttctest_refactoring_instance_constructor_args():
+    sig = inspect.signature(tTCTest_Refactoring_Instance.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ttctest::refactoring::instance_has_name():
-    assert hasattr(tTCTest::Refactoring::Instance, "name")
+def test_ttctest_refactoring_instance_has_name():
+    assert hasattr(tTCTest_Refactoring_Instance, "name")
     descriptor = None
-    for klass in tTCTest::Refactoring::Instance.__mro__:
+    for klass in tTCTest_Refactoring_Instance.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -776,23 +762,23 @@ def test_ttctest::refactoring::instance_has_name():
 
 
 
-def test_ttctest::java::method_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Java::Method)
+def test_ttctest_java_method_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Java_Method)
 
 
-def test_ttctest::java::method_constructor_exists():
-    assert callable(tTCTest::Java::Method.__init__)
+def test_ttctest_java_method_constructor_exists():
+    assert callable(tTCTest_Java_Method.__init__)
 
 
-def test_ttctest::java::method_constructor_args():
-    sig = inspect.signature(tTCTest::Java::Method.__init__)
+def test_ttctest_java_method_constructor_args():
+    sig = inspect.signature(tTCTest_Java_Method.__init__)
     params = list(sig.parameters.keys())
     assert "method_name" in params, "Missing parameter 'method_name'"
 
-def test_ttctest::java::method_has_method_name():
-    assert hasattr(tTCTest::Java::Method, "method_name")
+def test_ttctest_java_method_has_method_name():
+    assert hasattr(tTCTest_Java_Method, "method_name")
     descriptor = None
-    for klass in tTCTest::Java::Method.__mro__:
+    for klass in tTCTest_Java_Method.__mro__:
         if "method_name" in klass.__dict__:
             descriptor = klass.__dict__["method_name"]
             break
@@ -800,27 +786,41 @@ def test_ttctest::java::method_has_method_name():
 
 
 
-def test_ttctest::classes_is_not_abstract():
-    assert not inspect.isabstract(tTCTest::Classes)
+def test_ttctest_classes_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Classes)
 
 
-def test_ttctest::classes_constructor_exists():
-    assert callable(tTCTest::Classes.__init__)
+def test_ttctest_classes_constructor_exists():
+    assert callable(tTCTest_Classes.__init__)
 
 
-def test_ttctest::classes_constructor_args():
-    sig = inspect.signature(tTCTest::Classes.__init__)
+def test_ttctest_classes_constructor_args():
+    sig = inspect.signature(tTCTest_Classes.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ttctest::classes_has_name():
-    assert hasattr(tTCTest::Classes, "name")
+def test_ttctest_classes_has_name():
+    assert hasattr(tTCTest_Classes, "name")
     descriptor = None
-    for klass in tTCTest::Classes.__mro__:
+    for klass in tTCTest_Classes.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_ttctest_implements_not_is_not_abstract():
+    assert not inspect.isabstract(tTCTest_Implements_Not)
+
+
+def test_ttctest_implements_not_constructor_exists():
+    assert callable(tTCTest_Implements_Not.__init__)
+
+
+def test_ttctest_implements_not_constructor_args():
+    sig = inspect.signature(tTCTest_Implements_Not.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -837,138 +837,135 @@ safe_text = st.text(
 Implementation_strategy = st.builds(
     Implementation,
 )
-tTCTest::Implements::Not_strategy = st.builds(
-    tTCTest::Implements::Not,
+tTCTest_Implements_strategy = st.builds(
+    tTCTest_Implements,
 )
-tTCTest::Implements_strategy = st.builds(
-    tTCTest::Implements,
-)
-tTCTest::Class::Element_strategy = st.builds(
-    tTCTest::Class::Element,
+tTCTest_Class_Element_strategy = st.builds(
+    tTCTest_Class_Element,
     name=
         safe_text
 )
-Propose::Refactoring_strategy = st.builds(
-    Propose::Refactoring,
+Propose_Refactoring_strategy = st.builds(
+    Propose_Refactoring,
 )
-tTCTest::Propose::Create::Superclass::Refactoring_strategy = st.builds(
-    tTCTest::Propose::Create::Superclass::Refactoring,
+tTCTest_Propose_Create_Superclass_Refactoring_strategy = st.builds(
+    tTCTest_Propose_Create_Superclass_Refactoring,
 )
-tTCTest::Propose::Pullup::Method::Refactoring_strategy = st.builds(
-    tTCTest::Propose::Pullup::Method::Refactoring,
+tTCTest_Propose_Pullup_Method_Refactoring_strategy = st.builds(
+    tTCTest_Propose_Pullup_Method_Refactoring,
 )
-tTCTest::Propose::Refactoring_strategy = st.builds(
-    tTCTest::Propose::Refactoring,
+tTCTest_Propose_Refactoring_strategy = st.builds(
+    tTCTest_Propose_Refactoring,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-tTCTest::Expect::False_strategy = st.builds(
-    tTCTest::Expect::False,
+tTCTest_Expect_False_strategy = st.builds(
+    tTCTest_Expect_False,
 )
-tTCTest::Expect::True_strategy = st.builds(
-    tTCTest::Expect::True,
+tTCTest_Expect_True_strategy = st.builds(
+    tTCTest_Expect_True,
 )
-tTCTest::Warning_strategy = st.builds(
-    tTCTest::Warning,
+tTCTest_Warning_strategy = st.builds(
+    tTCTest_Warning,
     message=
         safe_text
 )
 Assertion_strategy = st.builds(
     Assertion,
 )
-tTCTest::Assert::True_strategy = st.builds(
-    tTCTest::Assert::True,
+tTCTest_Assert_True_strategy = st.builds(
+    tTCTest_Assert_True,
 )
-tTCTest::Assert::False_strategy = st.builds(
-    tTCTest::Assert::False,
+tTCTest_Assert_False_strategy = st.builds(
+    tTCTest_Assert_False,
 )
 Containment_strategy = st.builds(
     Containment,
 )
-tTCTest::Contains::Not_strategy = st.builds(
-    tTCTest::Contains::Not,
+tTCTest_Contains_Not_strategy = st.builds(
+    tTCTest_Contains_Not,
 )
-tTCTest::Contains_strategy = st.builds(
-    tTCTest::Contains,
+tTCTest_Contains_strategy = st.builds(
+    tTCTest_Contains,
 )
-Refactoring::Instance_strategy = st.builds(
-    Refactoring::Instance,
+Refactoring_Instance_strategy = st.builds(
+    Refactoring_Instance,
 )
-tTCTest::Create::Superclass::Refactoring_strategy = st.builds(
-    tTCTest::Create::Superclass::Refactoring,
+tTCTest_Create_Superclass_Refactoring_strategy = st.builds(
+    tTCTest_Create_Superclass_Refactoring,
 )
-tTCTest::Pull::Up::Refactoring_strategy = st.builds(
-    tTCTest::Pull::Up::Refactoring,
+tTCTest_Pull_Up_Refactoring_strategy = st.builds(
+    tTCTest_Pull_Up_Refactoring,
 )
-tTCTest::Refactoring_strategy = st.builds(
-    tTCTest::Refactoring,
+tTCTest_Refactoring_strategy = st.builds(
+    tTCTest_Refactoring,
 )
 Refactoring_strategy = st.builds(
     Refactoring,
 )
-tTCTest::No::Refactoring_strategy = st.builds(
-    tTCTest::No::Refactoring,
+tTCTest_No_Refactoring_strategy = st.builds(
+    tTCTest_No_Refactoring,
 )
-tTCTest::Test::Flow_strategy = st.builds(
-    tTCTest::Test::Flow,
+tTCTest_Test_Flow_strategy = st.builds(
+    tTCTest_Test_Flow,
 )
-tTCTest::Fields_strategy = st.builds(
-    tTCTest::Fields,
+tTCTest_Fields_strategy = st.builds(
+    tTCTest_Fields,
     name=
         safe_text
 )
-tTCTest::Methods_strategy = st.builds(
-    tTCTest::Methods,
+tTCTest_Methods_strategy = st.builds(
+    tTCTest_Methods,
     name=
         safe_text
 )
-Class::Element_strategy = st.builds(
-    Class::Element,
+Class_Element_strategy = st.builds(
+    Class_Element,
 )
-tTCTest::Java::Field_strategy = st.builds(
-    tTCTest::Java::Field,
+tTCTest_Java_Field_strategy = st.builds(
+    tTCTest_Java_Field,
     field_name=
         safe_text
 )
-Test::Step::Element_strategy = st.builds(
-    Test::Step::Element,
+Test_Step_Element_strategy = st.builds(
+    Test_Step_Element,
 )
-tTCTest::Implementation_strategy = st.builds(
-    tTCTest::Implementation,
+tTCTest_Synchronize_strategy = st.builds(
+    tTCTest_Synchronize,
 )
-tTCTest::Assertion_strategy = st.builds(
-    tTCTest::Assertion,
+tTCTest_Condition_strategy = st.builds(
+    tTCTest_Condition,
 )
-tTCTest::Compile_strategy = st.builds(
-    tTCTest::Compile,
+tTCTest_Compile_strategy = st.builds(
+    tTCTest_Compile,
 )
-tTCTest::Condition_strategy = st.builds(
-    tTCTest::Condition,
+tTCTest_Implementation_strategy = st.builds(
+    tTCTest_Implementation,
 )
-tTCTest::Containment_strategy = st.builds(
-    tTCTest::Containment,
+tTCTest_Containment_strategy = st.builds(
+    tTCTest_Containment,
 )
-tTCTest::Synchronize_strategy = st.builds(
-    tTCTest::Synchronize,
+tTCTest_Assertion_strategy = st.builds(
+    tTCTest_Assertion,
 )
-tTCTest::Test::Step_strategy = st.builds(
-    tTCTest::Test::Step,
+tTCTest_Test_Step_strategy = st.builds(
+    tTCTest_Test_Step,
 )
-tTCTest::Test::Step::Element_strategy = st.builds(
-    tTCTest::Test::Step::Element,
+tTCTest_Test_Step_Element_strategy = st.builds(
+    tTCTest_Test_Step_Element,
 )
-tTCTest::Java::Class_strategy = st.builds(
-    tTCTest::Java::Class,
+tTCTest_Java_Class_strategy = st.builds(
+    tTCTest_Java_Class,
     package=
         safe_text,
-    class_name=
-        safe_text,
     name=
+        safe_text,
+    class_name=
         safe_text
 )
-tTCTest::Test::Case_strategy = st.builds(
-    tTCTest::Test::Case,
+tTCTest_Test_Case_strategy = st.builds(
+    tTCTest_Test_Case,
     description=
         safe_text,
     name=
@@ -976,25 +973,28 @@ tTCTest::Test::Case_strategy = st.builds(
     java_program=
         safe_text
 )
-tTCTest::Test::File_strategy = st.builds(
-    tTCTest::Test::File,
+tTCTest_Test_File_strategy = st.builds(
+    tTCTest_Test_File,
     name=
         safe_text
 )
-tTCTest::Refactoring::Instance_strategy = st.builds(
-    tTCTest::Refactoring::Instance,
+tTCTest_Refactoring_Instance_strategy = st.builds(
+    tTCTest_Refactoring_Instance,
     name=
         safe_text
 )
-tTCTest::Java::Method_strategy = st.builds(
-    tTCTest::Java::Method,
+tTCTest_Java_Method_strategy = st.builds(
+    tTCTest_Java_Method,
     method_name=
         safe_text
 )
-tTCTest::Classes_strategy = st.builds(
-    tTCTest::Classes,
+tTCTest_Classes_strategy = st.builds(
+    tTCTest_Classes,
     name=
         safe_text
+)
+tTCTest_Implements_Not_strategy = st.builds(
+    tTCTest_Implements_Not,
 )
 
 @given(instance=Implementation_strategy)
@@ -1002,79 +1002,68 @@ tTCTest::Classes_strategy = st.builds(
 def test_implementation_instantiation(instance):
     assert isinstance(instance, Implementation)
 
-@given(instance=tTCTest::Implements::Not_strategy)
+@given(instance=tTCTest_Implements_strategy)
 @settings(max_examples=50)
-def test_ttctest::implements::not_instantiation(instance):
-    assert isinstance(instance, tTCTest::Implements::Not)
+def test_ttctest_implements_instantiation(instance):
+    assert isinstance(instance, tTCTest_Implements)
 
-@given(instance=tTCTest::Implements_strategy)
+@given(instance=tTCTest_Class_Element_strategy)
 @settings(max_examples=50)
-def test_ttctest::implements_instantiation(instance):
-    assert isinstance(instance, tTCTest::Implements)
-
-@given(instance=tTCTest::Class::Element_strategy)
-@settings(max_examples=50)
-def test_ttctest::class::element_instantiation(instance):
-    assert isinstance(instance, tTCTest::Class::Element)
-
-@given(instance=tTCTest::Class::Element_strategy)
-def test_ttctest::class::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ttctest_class_element_instantiation(instance):
+    assert isinstance(instance, tTCTest_Class_Element)
 
 
-@given(instance=tTCTest::Class::Element_strategy)
-def test_ttctest::class::element_name_setter(instance):
+
+@given(instance=tTCTest_Class_Element_strategy)
+def test_ttctest_class_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Propose::Refactoring_strategy)
+@given(instance=Propose_Refactoring_strategy)
 @settings(max_examples=50)
-def test_propose::refactoring_instantiation(instance):
-    assert isinstance(instance, Propose::Refactoring)
+def test_propose_refactoring_instantiation(instance):
+    assert isinstance(instance, Propose_Refactoring)
 
-@given(instance=tTCTest::Propose::Create::Superclass::Refactoring_strategy)
+@given(instance=tTCTest_Propose_Create_Superclass_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::propose::create::superclass::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::Propose::Create::Superclass::Refactoring)
+def test_ttctest_propose_create_superclass_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_Propose_Create_Superclass_Refactoring)
 
-@given(instance=tTCTest::Propose::Pullup::Method::Refactoring_strategy)
+@given(instance=tTCTest_Propose_Pullup_Method_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::propose::pullup::method::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::Propose::Pullup::Method::Refactoring)
+def test_ttctest_propose_pullup_method_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_Propose_Pullup_Method_Refactoring)
 
-@given(instance=tTCTest::Propose::Refactoring_strategy)
+@given(instance=tTCTest_Propose_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::propose::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::Propose::Refactoring)
+def test_ttctest_propose_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_Propose_Refactoring)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=tTCTest::Expect::False_strategy)
+@given(instance=tTCTest_Expect_False_strategy)
 @settings(max_examples=50)
-def test_ttctest::expect::false_instantiation(instance):
-    assert isinstance(instance, tTCTest::Expect::False)
+def test_ttctest_expect_false_instantiation(instance):
+    assert isinstance(instance, tTCTest_Expect_False)
 
-@given(instance=tTCTest::Expect::True_strategy)
+@given(instance=tTCTest_Expect_True_strategy)
 @settings(max_examples=50)
-def test_ttctest::expect::true_instantiation(instance):
-    assert isinstance(instance, tTCTest::Expect::True)
+def test_ttctest_expect_true_instantiation(instance):
+    assert isinstance(instance, tTCTest_Expect_True)
 
-@given(instance=tTCTest::Warning_strategy)
+@given(instance=tTCTest_Warning_strategy)
 @settings(max_examples=50)
-def test_ttctest::warning_instantiation(instance):
-    assert isinstance(instance, tTCTest::Warning)
-
-@given(instance=tTCTest::Warning_strategy)
-def test_ttctest::warning_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_ttctest_warning_instantiation(instance):
+    assert isinstance(instance, tTCTest_Warning)
 
 
-@given(instance=tTCTest::Warning_strategy)
-def test_ttctest::warning_message_setter(instance):
+
+@given(instance=tTCTest_Warning_strategy)
+def test_ttctest_warning_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
@@ -1084,300 +1073,266 @@ def test_ttctest::warning_message_setter(instance):
 def test_assertion_instantiation(instance):
     assert isinstance(instance, Assertion)
 
-@given(instance=tTCTest::Assert::True_strategy)
+@given(instance=tTCTest_Assert_True_strategy)
 @settings(max_examples=50)
-def test_ttctest::assert::true_instantiation(instance):
-    assert isinstance(instance, tTCTest::Assert::True)
+def test_ttctest_assert_true_instantiation(instance):
+    assert isinstance(instance, tTCTest_Assert_True)
 
-@given(instance=tTCTest::Assert::False_strategy)
+@given(instance=tTCTest_Assert_False_strategy)
 @settings(max_examples=50)
-def test_ttctest::assert::false_instantiation(instance):
-    assert isinstance(instance, tTCTest::Assert::False)
+def test_ttctest_assert_false_instantiation(instance):
+    assert isinstance(instance, tTCTest_Assert_False)
 
 @given(instance=Containment_strategy)
 @settings(max_examples=50)
 def test_containment_instantiation(instance):
     assert isinstance(instance, Containment)
 
-@given(instance=tTCTest::Contains::Not_strategy)
+@given(instance=tTCTest_Contains_Not_strategy)
 @settings(max_examples=50)
-def test_ttctest::contains::not_instantiation(instance):
-    assert isinstance(instance, tTCTest::Contains::Not)
+def test_ttctest_contains_not_instantiation(instance):
+    assert isinstance(instance, tTCTest_Contains_Not)
 
-@given(instance=tTCTest::Contains_strategy)
+@given(instance=tTCTest_Contains_strategy)
 @settings(max_examples=50)
-def test_ttctest::contains_instantiation(instance):
-    assert isinstance(instance, tTCTest::Contains)
+def test_ttctest_contains_instantiation(instance):
+    assert isinstance(instance, tTCTest_Contains)
 
-@given(instance=Refactoring::Instance_strategy)
+@given(instance=Refactoring_Instance_strategy)
 @settings(max_examples=50)
-def test_refactoring::instance_instantiation(instance):
-    assert isinstance(instance, Refactoring::Instance)
+def test_refactoring_instance_instantiation(instance):
+    assert isinstance(instance, Refactoring_Instance)
 
-@given(instance=tTCTest::Create::Superclass::Refactoring_strategy)
+@given(instance=tTCTest_Create_Superclass_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::create::superclass::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::Create::Superclass::Refactoring)
+def test_ttctest_create_superclass_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_Create_Superclass_Refactoring)
 
-@given(instance=tTCTest::Pull::Up::Refactoring_strategy)
+@given(instance=tTCTest_Pull_Up_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::pull::up::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::Pull::Up::Refactoring)
+def test_ttctest_pull_up_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_Pull_Up_Refactoring)
 
-@given(instance=tTCTest::Refactoring_strategy)
+@given(instance=tTCTest_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::Refactoring)
+def test_ttctest_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_Refactoring)
 
 @given(instance=Refactoring_strategy)
 @settings(max_examples=50)
 def test_refactoring_instantiation(instance):
     assert isinstance(instance, Refactoring)
 
-@given(instance=tTCTest::No::Refactoring_strategy)
+@given(instance=tTCTest_No_Refactoring_strategy)
 @settings(max_examples=50)
-def test_ttctest::no::refactoring_instantiation(instance):
-    assert isinstance(instance, tTCTest::No::Refactoring)
+def test_ttctest_no_refactoring_instantiation(instance):
+    assert isinstance(instance, tTCTest_No_Refactoring)
 
-@given(instance=tTCTest::Test::Flow_strategy)
+@given(instance=tTCTest_Test_Flow_strategy)
 @settings(max_examples=50)
-def test_ttctest::test::flow_instantiation(instance):
-    assert isinstance(instance, tTCTest::Test::Flow)
+def test_ttctest_test_flow_instantiation(instance):
+    assert isinstance(instance, tTCTest_Test_Flow)
 
-@given(instance=tTCTest::Fields_strategy)
+@given(instance=tTCTest_Fields_strategy)
 @settings(max_examples=50)
-def test_ttctest::fields_instantiation(instance):
-    assert isinstance(instance, tTCTest::Fields)
-
-@given(instance=tTCTest::Fields_strategy)
-def test_ttctest::fields_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ttctest_fields_instantiation(instance):
+    assert isinstance(instance, tTCTest_Fields)
 
 
-@given(instance=tTCTest::Fields_strategy)
-def test_ttctest::fields_name_setter(instance):
+
+@given(instance=tTCTest_Fields_strategy)
+def test_ttctest_fields_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tTCTest::Methods_strategy)
+@given(instance=tTCTest_Methods_strategy)
 @settings(max_examples=50)
-def test_ttctest::methods_instantiation(instance):
-    assert isinstance(instance, tTCTest::Methods)
-
-@given(instance=tTCTest::Methods_strategy)
-def test_ttctest::methods_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ttctest_methods_instantiation(instance):
+    assert isinstance(instance, tTCTest_Methods)
 
 
-@given(instance=tTCTest::Methods_strategy)
-def test_ttctest::methods_name_setter(instance):
+
+@given(instance=tTCTest_Methods_strategy)
+def test_ttctest_methods_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Class::Element_strategy)
+@given(instance=Class_Element_strategy)
 @settings(max_examples=50)
-def test_class::element_instantiation(instance):
-    assert isinstance(instance, Class::Element)
+def test_class_element_instantiation(instance):
+    assert isinstance(instance, Class_Element)
 
-@given(instance=tTCTest::Java::Field_strategy)
+@given(instance=tTCTest_Java_Field_strategy)
 @settings(max_examples=50)
-def test_ttctest::java::field_instantiation(instance):
-    assert isinstance(instance, tTCTest::Java::Field)
-
-@given(instance=tTCTest::Java::Field_strategy)
-def test_ttctest::java::field_field_name_type(instance):
-    assert isinstance(instance.field_name, str)
+def test_ttctest_java_field_instantiation(instance):
+    assert isinstance(instance, tTCTest_Java_Field)
 
 
-@given(instance=tTCTest::Java::Field_strategy)
-def test_ttctest::java::field_field_name_setter(instance):
+
+@given(instance=tTCTest_Java_Field_strategy)
+def test_ttctest_java_field_field_name_setter(instance):
     original = instance.field_name
     instance.field_name = original
     assert instance.field_name == original
 
-@given(instance=Test::Step::Element_strategy)
+@given(instance=Test_Step_Element_strategy)
 @settings(max_examples=50)
-def test_test::step::element_instantiation(instance):
-    assert isinstance(instance, Test::Step::Element)
+def test_test_step_element_instantiation(instance):
+    assert isinstance(instance, Test_Step_Element)
 
-@given(instance=tTCTest::Implementation_strategy)
+@given(instance=tTCTest_Synchronize_strategy)
 @settings(max_examples=50)
-def test_ttctest::implementation_instantiation(instance):
-    assert isinstance(instance, tTCTest::Implementation)
+def test_ttctest_synchronize_instantiation(instance):
+    assert isinstance(instance, tTCTest_Synchronize)
 
-@given(instance=tTCTest::Assertion_strategy)
+@given(instance=tTCTest_Condition_strategy)
 @settings(max_examples=50)
-def test_ttctest::assertion_instantiation(instance):
-    assert isinstance(instance, tTCTest::Assertion)
+def test_ttctest_condition_instantiation(instance):
+    assert isinstance(instance, tTCTest_Condition)
 
-@given(instance=tTCTest::Compile_strategy)
+@given(instance=tTCTest_Compile_strategy)
 @settings(max_examples=50)
-def test_ttctest::compile_instantiation(instance):
-    assert isinstance(instance, tTCTest::Compile)
+def test_ttctest_compile_instantiation(instance):
+    assert isinstance(instance, tTCTest_Compile)
 
-@given(instance=tTCTest::Condition_strategy)
+@given(instance=tTCTest_Implementation_strategy)
 @settings(max_examples=50)
-def test_ttctest::condition_instantiation(instance):
-    assert isinstance(instance, tTCTest::Condition)
+def test_ttctest_implementation_instantiation(instance):
+    assert isinstance(instance, tTCTest_Implementation)
 
-@given(instance=tTCTest::Containment_strategy)
+@given(instance=tTCTest_Containment_strategy)
 @settings(max_examples=50)
-def test_ttctest::containment_instantiation(instance):
-    assert isinstance(instance, tTCTest::Containment)
+def test_ttctest_containment_instantiation(instance):
+    assert isinstance(instance, tTCTest_Containment)
 
-@given(instance=tTCTest::Synchronize_strategy)
+@given(instance=tTCTest_Assertion_strategy)
 @settings(max_examples=50)
-def test_ttctest::synchronize_instantiation(instance):
-    assert isinstance(instance, tTCTest::Synchronize)
+def test_ttctest_assertion_instantiation(instance):
+    assert isinstance(instance, tTCTest_Assertion)
 
-@given(instance=tTCTest::Test::Step_strategy)
+@given(instance=tTCTest_Test_Step_strategy)
 @settings(max_examples=50)
-def test_ttctest::test::step_instantiation(instance):
-    assert isinstance(instance, tTCTest::Test::Step)
+def test_ttctest_test_step_instantiation(instance):
+    assert isinstance(instance, tTCTest_Test_Step)
 
-@given(instance=tTCTest::Test::Step::Element_strategy)
+@given(instance=tTCTest_Test_Step_Element_strategy)
 @settings(max_examples=50)
-def test_ttctest::test::step::element_instantiation(instance):
-    assert isinstance(instance, tTCTest::Test::Step::Element)
+def test_ttctest_test_step_element_instantiation(instance):
+    assert isinstance(instance, tTCTest_Test_Step_Element)
 
-@given(instance=tTCTest::Java::Class_strategy)
+@given(instance=tTCTest_Java_Class_strategy)
 @settings(max_examples=50)
-def test_ttctest::java::class_instantiation(instance):
-    assert isinstance(instance, tTCTest::Java::Class)
-
-@given(instance=tTCTest::Java::Class_strategy)
-def test_ttctest::java::class_package_type(instance):
-    assert isinstance(instance.package, str)
+def test_ttctest_java_class_instantiation(instance):
+    assert isinstance(instance, tTCTest_Java_Class)
 
 
-@given(instance=tTCTest::Java::Class_strategy)
-def test_ttctest::java::class_package_setter(instance):
+
+@given(instance=tTCTest_Java_Class_strategy)
+def test_ttctest_java_class_package_setter(instance):
     original = instance.package
     instance.package = original
     assert instance.package == original
 
-@given(instance=tTCTest::Java::Class_strategy)
-def test_ttctest::java::class_class_name_type(instance):
-    assert isinstance(instance.class_name, str)
 
 
-@given(instance=tTCTest::Java::Class_strategy)
-def test_ttctest::java::class_class_name_setter(instance):
+@given(instance=tTCTest_Java_Class_strategy)
+def test_ttctest_java_class_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=tTCTest_Java_Class_strategy)
+def test_ttctest_java_class_class_name_setter(instance):
     original = instance.class_name
     instance.class_name = original
     assert instance.class_name == original
 
-@given(instance=tTCTest::Java::Class_strategy)
-def test_ttctest::java::class_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tTCTest::Java::Class_strategy)
-def test_ttctest::java::class_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=tTCTest::Test::Case_strategy)
+@given(instance=tTCTest_Test_Case_strategy)
 @settings(max_examples=50)
-def test_ttctest::test::case_instantiation(instance):
-    assert isinstance(instance, tTCTest::Test::Case)
-
-@given(instance=tTCTest::Test::Case_strategy)
-def test_ttctest::test::case_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_ttctest_test_case_instantiation(instance):
+    assert isinstance(instance, tTCTest_Test_Case)
 
 
-@given(instance=tTCTest::Test::Case_strategy)
-def test_ttctest::test::case_description_setter(instance):
+
+@given(instance=tTCTest_Test_Case_strategy)
+def test_ttctest_test_case_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=tTCTest::Test::Case_strategy)
-def test_ttctest::test::case_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=tTCTest::Test::Case_strategy)
-def test_ttctest::test::case_name_setter(instance):
+@given(instance=tTCTest_Test_Case_strategy)
+def test_ttctest_test_case_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tTCTest::Test::Case_strategy)
-def test_ttctest::test::case_java_program_type(instance):
-    assert isinstance(instance.java_program, str)
 
 
-@given(instance=tTCTest::Test::Case_strategy)
-def test_ttctest::test::case_java_program_setter(instance):
+@given(instance=tTCTest_Test_Case_strategy)
+def test_ttctest_test_case_java_program_setter(instance):
     original = instance.java_program
     instance.java_program = original
     assert instance.java_program == original
 
-@given(instance=tTCTest::Test::File_strategy)
+@given(instance=tTCTest_Test_File_strategy)
 @settings(max_examples=50)
-def test_ttctest::test::file_instantiation(instance):
-    assert isinstance(instance, tTCTest::Test::File)
-
-@given(instance=tTCTest::Test::File_strategy)
-def test_ttctest::test::file_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ttctest_test_file_instantiation(instance):
+    assert isinstance(instance, tTCTest_Test_File)
 
 
-@given(instance=tTCTest::Test::File_strategy)
-def test_ttctest::test::file_name_setter(instance):
+
+@given(instance=tTCTest_Test_File_strategy)
+def test_ttctest_test_file_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tTCTest::Refactoring::Instance_strategy)
+@given(instance=tTCTest_Refactoring_Instance_strategy)
 @settings(max_examples=50)
-def test_ttctest::refactoring::instance_instantiation(instance):
-    assert isinstance(instance, tTCTest::Refactoring::Instance)
-
-@given(instance=tTCTest::Refactoring::Instance_strategy)
-def test_ttctest::refactoring::instance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ttctest_refactoring_instance_instantiation(instance):
+    assert isinstance(instance, tTCTest_Refactoring_Instance)
 
 
-@given(instance=tTCTest::Refactoring::Instance_strategy)
-def test_ttctest::refactoring::instance_name_setter(instance):
+
+@given(instance=tTCTest_Refactoring_Instance_strategy)
+def test_ttctest_refactoring_instance_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tTCTest::Java::Method_strategy)
+@given(instance=tTCTest_Java_Method_strategy)
 @settings(max_examples=50)
-def test_ttctest::java::method_instantiation(instance):
-    assert isinstance(instance, tTCTest::Java::Method)
-
-@given(instance=tTCTest::Java::Method_strategy)
-def test_ttctest::java::method_method_name_type(instance):
-    assert isinstance(instance.method_name, str)
+def test_ttctest_java_method_instantiation(instance):
+    assert isinstance(instance, tTCTest_Java_Method)
 
 
-@given(instance=tTCTest::Java::Method_strategy)
-def test_ttctest::java::method_method_name_setter(instance):
+
+@given(instance=tTCTest_Java_Method_strategy)
+def test_ttctest_java_method_method_name_setter(instance):
     original = instance.method_name
     instance.method_name = original
     assert instance.method_name == original
 
-@given(instance=tTCTest::Classes_strategy)
+@given(instance=tTCTest_Classes_strategy)
 @settings(max_examples=50)
-def test_ttctest::classes_instantiation(instance):
-    assert isinstance(instance, tTCTest::Classes)
-
-@given(instance=tTCTest::Classes_strategy)
-def test_ttctest::classes_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ttctest_classes_instantiation(instance):
+    assert isinstance(instance, tTCTest_Classes)
 
 
-@given(instance=tTCTest::Classes_strategy)
-def test_ttctest::classes_name_setter(instance):
+
+@given(instance=tTCTest_Classes_strategy)
+def test_ttctest_classes_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=tTCTest_Implements_Not_strategy)
+@settings(max_examples=50)
+def test_ttctest_implements_not_instantiation(instance):
+    assert isinstance(instance, tTCTest_Implements_Not)

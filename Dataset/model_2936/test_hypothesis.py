@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FormTypes,
-    extended::FormNewEntityOnly,
-    extended::FormReport,
-    extended::Form,
-    extended::Feature,
+    extended_FormNewEntityOnly,
+    extended_FormReport,
+    extended_Form,
+    extended_Feature,
     AbstractType,
-    extended::EntityType,
-    extended::DataType,
-    extended::AbstractType,
+    extended_EntityType,
+    extended_DataType,
+    extended_AbstractType,
     AbstractElement,
-    extended::Import,
-    extended::FormTypes,
-    extended::Page,
-    extended::Entity,
-    extended::PackageDeclaration,
-    extended::AbstractElement,
-    extended::Domainmodel,
+    extended_Import,
+    extended_Entity,
+    extended_FormTypes,
+    extended_Page,
+    extended_PackageDeclaration,
+    extended_AbstractElement,
+    extended_Domainmodel,
 )
 
 # =============================================================================
@@ -45,167 +45,167 @@ def test_formtypes_constructor_args():
 
 
 
-def test_extended::formnewentityonly_is_not_abstract():
-    assert not inspect.isabstract(extended::FormNewEntityOnly)
+def test_extended_formnewentityonly_is_not_abstract():
+    assert not inspect.isabstract(extended_FormNewEntityOnly)
 
 
-def test_extended::formnewentityonly_constructor_exists():
-    assert callable(extended::FormNewEntityOnly.__init__)
+def test_extended_formnewentityonly_constructor_exists():
+    assert callable(extended_FormNewEntityOnly.__init__)
 
 
-def test_extended::formnewentityonly_constructor_args():
-    sig = inspect.signature(extended::FormNewEntityOnly.__init__)
+def test_extended_formnewentityonly_constructor_args():
+    sig = inspect.signature(extended_FormNewEntityOnly.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extended::formreport_is_not_abstract():
-    assert not inspect.isabstract(extended::FormReport)
+def test_extended_formreport_is_not_abstract():
+    assert not inspect.isabstract(extended_FormReport)
 
 
-def test_extended::formreport_constructor_exists():
-    assert callable(extended::FormReport.__init__)
+def test_extended_formreport_constructor_exists():
+    assert callable(extended_FormReport.__init__)
 
 
-def test_extended::formreport_constructor_args():
-    sig = inspect.signature(extended::FormReport.__init__)
+def test_extended_formreport_constructor_args():
+    sig = inspect.signature(extended_FormReport.__init__)
     params = list(sig.parameters.keys())
     assert "filter" in params, "Missing parameter 'filter'"
-    assert "order" in params, "Missing parameter 'order'"
     assert "pagination" in params, "Missing parameter 'pagination'"
+    assert "order" in params, "Missing parameter 'order'"
 
-def test_extended::formreport_has_filter():
-    assert hasattr(extended::FormReport, "filter")
+def test_extended_formreport_has_filter():
+    assert hasattr(extended_FormReport, "filter")
     descriptor = None
-    for klass in extended::FormReport.__mro__:
+    for klass in extended_FormReport.__mro__:
         if "filter" in klass.__dict__:
             descriptor = klass.__dict__["filter"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::formreport_has_order():
-    assert hasattr(extended::FormReport, "order")
+def test_extended_formreport_has_pagination():
+    assert hasattr(extended_FormReport, "pagination")
     descriptor = None
-    for klass in extended::FormReport.__mro__:
-        if "order" in klass.__dict__:
-            descriptor = klass.__dict__["order"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extended::formreport_has_pagination():
-    assert hasattr(extended::FormReport, "pagination")
-    descriptor = None
-    for klass in extended::FormReport.__mro__:
+    for klass in extended_FormReport.__mro__:
         if "pagination" in klass.__dict__:
             descriptor = klass.__dict__["pagination"]
             break
     assert isinstance(descriptor, property)
 
+def test_extended_formreport_has_order():
+    assert hasattr(extended_FormReport, "order")
+    descriptor = None
+    for klass in extended_FormReport.__mro__:
+        if "order" in klass.__dict__:
+            descriptor = klass.__dict__["order"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extended::form_is_not_abstract():
-    assert not inspect.isabstract(extended::Form)
+
+def test_extended_form_is_not_abstract():
+    assert not inspect.isabstract(extended_Form)
 
 
-def test_extended::form_constructor_exists():
-    assert callable(extended::Form.__init__)
+def test_extended_form_constructor_exists():
+    assert callable(extended_Form.__init__)
 
 
-def test_extended::form_constructor_args():
-    sig = inspect.signature(extended::Form.__init__)
+def test_extended_form_constructor_args():
+    sig = inspect.signature(extended_Form.__init__)
     params = list(sig.parameters.keys())
     assert "post" in params, "Missing parameter 'post'"
     assert "delete" in params, "Missing parameter 'delete'"
-    assert "get" in params, "Missing parameter 'get'"
     assert "put" in params, "Missing parameter 'put'"
+    assert "get" in params, "Missing parameter 'get'"
 
-def test_extended::form_has_post():
-    assert hasattr(extended::Form, "post")
+def test_extended_form_has_post():
+    assert hasattr(extended_Form, "post")
     descriptor = None
-    for klass in extended::Form.__mro__:
+    for klass in extended_Form.__mro__:
         if "post" in klass.__dict__:
             descriptor = klass.__dict__["post"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::form_has_delete():
-    assert hasattr(extended::Form, "delete")
+def test_extended_form_has_delete():
+    assert hasattr(extended_Form, "delete")
     descriptor = None
-    for klass in extended::Form.__mro__:
+    for klass in extended_Form.__mro__:
         if "delete" in klass.__dict__:
             descriptor = klass.__dict__["delete"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::form_has_get():
-    assert hasattr(extended::Form, "get")
+def test_extended_form_has_put():
+    assert hasattr(extended_Form, "put")
     descriptor = None
-    for klass in extended::Form.__mro__:
-        if "get" in klass.__dict__:
-            descriptor = klass.__dict__["get"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extended::form_has_put():
-    assert hasattr(extended::Form, "put")
-    descriptor = None
-    for klass in extended::Form.__mro__:
+    for klass in extended_Form.__mro__:
         if "put" in klass.__dict__:
             descriptor = klass.__dict__["put"]
             break
     assert isinstance(descriptor, property)
 
+def test_extended_form_has_get():
+    assert hasattr(extended_Form, "get")
+    descriptor = None
+    for klass in extended_Form.__mro__:
+        if "get" in klass.__dict__:
+            descriptor = klass.__dict__["get"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extended::feature_is_not_abstract():
-    assert not inspect.isabstract(extended::Feature)
+
+def test_extended_feature_is_not_abstract():
+    assert not inspect.isabstract(extended_Feature)
 
 
-def test_extended::feature_constructor_exists():
-    assert callable(extended::Feature.__init__)
+def test_extended_feature_constructor_exists():
+    assert callable(extended_Feature.__init__)
 
 
-def test_extended::feature_constructor_args():
-    sig = inspect.signature(extended::Feature.__init__)
+def test_extended_feature_constructor_args():
+    sig = inspect.signature(extended_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "required" in params, "Missing parameter 'required'"
-    assert "min" in params, "Missing parameter 'min'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "max" in params, "Missing parameter 'max'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "min" in params, "Missing parameter 'min'"
 
-def test_extended::feature_has_required():
-    assert hasattr(extended::Feature, "required")
+def test_extended_feature_has_required():
+    assert hasattr(extended_Feature, "required")
     descriptor = None
-    for klass in extended::Feature.__mro__:
+    for klass in extended_Feature.__mro__:
         if "required" in klass.__dict__:
             descriptor = klass.__dict__["required"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::feature_has_min():
-    assert hasattr(extended::Feature, "min")
+def test_extended_feature_has_max():
+    assert hasattr(extended_Feature, "max")
     descriptor = None
-    for klass in extended::Feature.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
+    for klass in extended_Feature.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::feature_has_name():
-    assert hasattr(extended::Feature, "name")
+def test_extended_feature_has_name():
+    assert hasattr(extended_Feature, "name")
     descriptor = None
-    for klass in extended::Feature.__mro__:
+    for klass in extended_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::feature_has_max():
-    assert hasattr(extended::Feature, "max")
+def test_extended_feature_has_min():
+    assert hasattr(extended_Feature, "min")
     descriptor = None
-    for klass in extended::Feature.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
+    for klass in extended_Feature.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
@@ -225,37 +225,37 @@ def test_abstracttype_constructor_args():
 
 
 
-def test_extended::entitytype_is_not_abstract():
-    assert not inspect.isabstract(extended::EntityType)
+def test_extended_entitytype_is_not_abstract():
+    assert not inspect.isabstract(extended_EntityType)
 
 
-def test_extended::entitytype_constructor_exists():
-    assert callable(extended::EntityType.__init__)
+def test_extended_entitytype_constructor_exists():
+    assert callable(extended_EntityType.__init__)
 
 
-def test_extended::entitytype_constructor_args():
-    sig = inspect.signature(extended::EntityType.__init__)
+def test_extended_entitytype_constructor_args():
+    sig = inspect.signature(extended_EntityType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extended::datatype_is_not_abstract():
-    assert not inspect.isabstract(extended::DataType)
+def test_extended_datatype_is_not_abstract():
+    assert not inspect.isabstract(extended_DataType)
 
 
-def test_extended::datatype_constructor_exists():
-    assert callable(extended::DataType.__init__)
+def test_extended_datatype_constructor_exists():
+    assert callable(extended_DataType.__init__)
 
 
-def test_extended::datatype_constructor_args():
-    sig = inspect.signature(extended::DataType.__init__)
+def test_extended_datatype_constructor_args():
+    sig = inspect.signature(extended_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extended::datatype_has_name():
-    assert hasattr(extended::DataType, "name")
+def test_extended_datatype_has_name():
+    assert hasattr(extended_DataType, "name")
     descriptor = None
-    for klass in extended::DataType.__mro__:
+    for klass in extended_DataType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -263,16 +263,16 @@ def test_extended::datatype_has_name():
 
 
 
-def test_extended::abstracttype_is_not_abstract():
-    assert not inspect.isabstract(extended::AbstractType)
+def test_extended_abstracttype_is_not_abstract():
+    assert not inspect.isabstract(extended_AbstractType)
 
 
-def test_extended::abstracttype_constructor_exists():
-    assert callable(extended::AbstractType.__init__)
+def test_extended_abstracttype_constructor_exists():
+    assert callable(extended_AbstractType.__init__)
 
 
-def test_extended::abstracttype_constructor_args():
-    sig = inspect.signature(extended::AbstractType.__init__)
+def test_extended_abstracttype_constructor_args():
+    sig = inspect.signature(extended_AbstractType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -291,23 +291,23 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_extended::import_is_not_abstract():
-    assert not inspect.isabstract(extended::Import)
+def test_extended_import_is_not_abstract():
+    assert not inspect.isabstract(extended_Import)
 
 
-def test_extended::import_constructor_exists():
-    assert callable(extended::Import.__init__)
+def test_extended_import_constructor_exists():
+    assert callable(extended_Import.__init__)
 
 
-def test_extended::import_constructor_args():
-    sig = inspect.signature(extended::Import.__init__)
+def test_extended_import_constructor_args():
+    sig = inspect.signature(extended_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_extended::import_has_importedNamespace():
-    assert hasattr(extended::Import, "importedNamespace")
+def test_extended_import_has_importedNamespace():
+    assert hasattr(extended_Import, "importedNamespace")
     descriptor = None
-    for klass in extended::Import.__mro__:
+    for klass in extended_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -315,23 +315,23 @@ def test_extended::import_has_importedNamespace():
 
 
 
-def test_extended::formtypes_is_not_abstract():
-    assert not inspect.isabstract(extended::FormTypes)
+def test_extended_entity_is_not_abstract():
+    assert not inspect.isabstract(extended_Entity)
 
 
-def test_extended::formtypes_constructor_exists():
-    assert callable(extended::FormTypes.__init__)
+def test_extended_entity_constructor_exists():
+    assert callable(extended_Entity.__init__)
 
 
-def test_extended::formtypes_constructor_args():
-    sig = inspect.signature(extended::FormTypes.__init__)
+def test_extended_entity_constructor_args():
+    sig = inspect.signature(extended_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extended::formtypes_has_name():
-    assert hasattr(extended::FormTypes, "name")
+def test_extended_entity_has_name():
+    assert hasattr(extended_Entity, "name")
     descriptor = None
-    for klass in extended::FormTypes.__mro__:
+    for klass in extended_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -339,77 +339,101 @@ def test_extended::formtypes_has_name():
 
 
 
-def test_extended::page_is_not_abstract():
-    assert not inspect.isabstract(extended::Page)
+def test_extended_formtypes_is_not_abstract():
+    assert not inspect.isabstract(extended_FormTypes)
 
 
-def test_extended::page_constructor_exists():
-    assert callable(extended::Page.__init__)
+def test_extended_formtypes_constructor_exists():
+    assert callable(extended_FormTypes.__init__)
 
 
-def test_extended::page_constructor_args():
-    sig = inspect.signature(extended::Page.__init__)
+def test_extended_formtypes_constructor_args():
+    sig = inspect.signature(extended_FormTypes.__init__)
     params = list(sig.parameters.keys())
-    assert "footer" in params, "Missing parameter 'footer'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "header" in params, "Missing parameter 'header'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extended::page_has_footer():
-    assert hasattr(extended::Page, "footer")
+def test_extended_formtypes_has_name():
+    assert hasattr(extended_FormTypes, "name")
     descriptor = None
-    for klass in extended::Page.__mro__:
-        if "footer" in klass.__dict__:
-            descriptor = klass.__dict__["footer"]
+    for klass in extended_FormTypes.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::page_has_title():
-    assert hasattr(extended::Page, "title")
-    descriptor = None
-    for klass in extended::Page.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_extended::page_has_header():
-    assert hasattr(extended::Page, "header")
+
+def test_extended_page_is_not_abstract():
+    assert not inspect.isabstract(extended_Page)
+
+
+def test_extended_page_constructor_exists():
+    assert callable(extended_Page.__init__)
+
+
+def test_extended_page_constructor_args():
+    sig = inspect.signature(extended_Page.__init__)
+    params = list(sig.parameters.keys())
+    assert "header" in params, "Missing parameter 'header'"
+    assert "footer" in params, "Missing parameter 'footer'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_extended_page_has_header():
+    assert hasattr(extended_Page, "header")
     descriptor = None
-    for klass in extended::Page.__mro__:
+    for klass in extended_Page.__mro__:
         if "header" in klass.__dict__:
             descriptor = klass.__dict__["header"]
             break
     assert isinstance(descriptor, property)
 
-def test_extended::page_has_name():
-    assert hasattr(extended::Page, "name")
+def test_extended_page_has_footer():
+    assert hasattr(extended_Page, "footer")
     descriptor = None
-    for klass in extended::Page.__mro__:
+    for klass in extended_Page.__mro__:
+        if "footer" in klass.__dict__:
+            descriptor = klass.__dict__["footer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_extended_page_has_name():
+    assert hasattr(extended_Page, "name")
+    descriptor = None
+    for klass in extended_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_extended_page_has_title():
+    assert hasattr(extended_Page, "title")
+    descriptor = None
+    for klass in extended_Page.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extended::entity_is_not_abstract():
-    assert not inspect.isabstract(extended::Entity)
+
+def test_extended_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(extended_PackageDeclaration)
 
 
-def test_extended::entity_constructor_exists():
-    assert callable(extended::Entity.__init__)
+def test_extended_packagedeclaration_constructor_exists():
+    assert callable(extended_PackageDeclaration.__init__)
 
 
-def test_extended::entity_constructor_args():
-    sig = inspect.signature(extended::Entity.__init__)
+def test_extended_packagedeclaration_constructor_args():
+    sig = inspect.signature(extended_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extended::entity_has_name():
-    assert hasattr(extended::Entity, "name")
+def test_extended_packagedeclaration_has_name():
+    assert hasattr(extended_PackageDeclaration, "name")
     descriptor = None
-    for klass in extended::Entity.__mro__:
+    for klass in extended_PackageDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -417,61 +441,37 @@ def test_extended::entity_has_name():
 
 
 
-def test_extended::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(extended::PackageDeclaration)
+def test_extended_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(extended_AbstractElement)
 
 
-def test_extended::packagedeclaration_constructor_exists():
-    assert callable(extended::PackageDeclaration.__init__)
+def test_extended_abstractelement_constructor_exists():
+    assert callable(extended_AbstractElement.__init__)
 
 
-def test_extended::packagedeclaration_constructor_args():
-    sig = inspect.signature(extended::PackageDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_extended::packagedeclaration_has_name():
-    assert hasattr(extended::PackageDeclaration, "name")
-    descriptor = None
-    for klass in extended::PackageDeclaration.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_extended::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(extended::AbstractElement)
-
-
-def test_extended::abstractelement_constructor_exists():
-    assert callable(extended::AbstractElement.__init__)
-
-
-def test_extended::abstractelement_constructor_args():
-    sig = inspect.signature(extended::AbstractElement.__init__)
+def test_extended_abstractelement_constructor_args():
+    sig = inspect.signature(extended_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extended::domainmodel_is_not_abstract():
-    assert not inspect.isabstract(extended::Domainmodel)
+def test_extended_domainmodel_is_not_abstract():
+    assert not inspect.isabstract(extended_Domainmodel)
 
 
-def test_extended::domainmodel_constructor_exists():
-    assert callable(extended::Domainmodel.__init__)
+def test_extended_domainmodel_constructor_exists():
+    assert callable(extended_Domainmodel.__init__)
 
 
-def test_extended::domainmodel_constructor_args():
-    sig = inspect.signature(extended::Domainmodel.__init__)
+def test_extended_domainmodel_constructor_args():
+    sig = inspect.signature(extended_Domainmodel.__init__)
     params = list(sig.parameters.keys())
     assert "nomeProj" in params, "Missing parameter 'nomeProj'"
 
-def test_extended::domainmodel_has_nomeProj():
-    assert hasattr(extended::Domainmodel, "nomeProj")
+def test_extended_domainmodel_has_nomeProj():
+    assert hasattr(extended_Domainmodel, "nomeProj")
     descriptor = None
-    for klass in extended::Domainmodel.__mro__:
+    for klass in extended_Domainmodel.__mro__:
         if "nomeProj" in klass.__dict__:
             descriptor = klass.__dict__["nomeProj"]
             break
@@ -492,93 +492,93 @@ safe_text = st.text(
 FormTypes_strategy = st.builds(
     FormTypes,
 )
-extended::FormNewEntityOnly_strategy = st.builds(
-    extended::FormNewEntityOnly,
+extended_FormNewEntityOnly_strategy = st.builds(
+    extended_FormNewEntityOnly,
 )
-extended::FormReport_strategy = st.builds(
-    extended::FormReport,
+extended_FormReport_strategy = st.builds(
+    extended_FormReport,
     filter=
         safe_text,
-    order=
-        safe_text,
     pagination=
+        safe_text,
+    order=
         safe_text
 )
-extended::Form_strategy = st.builds(
-    extended::Form,
+extended_Form_strategy = st.builds(
+    extended_Form,
     post=
         safe_text,
     delete=
         safe_text,
-    get=
-        safe_text,
     put=
+        safe_text,
+    get=
         safe_text
 )
-extended::Feature_strategy = st.builds(
-    extended::Feature,
+extended_Feature_strategy = st.builds(
+    extended_Feature,
     required=
         safe_text,
-    min=
+    max=
         st.integers(),
     name=
         safe_text,
-    max=
+    min=
         st.integers()
 )
 AbstractType_strategy = st.builds(
     AbstractType,
 )
-extended::EntityType_strategy = st.builds(
-    extended::EntityType,
+extended_EntityType_strategy = st.builds(
+    extended_EntityType,
 )
-extended::DataType_strategy = st.builds(
-    extended::DataType,
+extended_DataType_strategy = st.builds(
+    extended_DataType,
     name=
         safe_text
 )
-extended::AbstractType_strategy = st.builds(
-    extended::AbstractType,
+extended_AbstractType_strategy = st.builds(
+    extended_AbstractType,
 )
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-extended::Import_strategy = st.builds(
-    extended::Import,
+extended_Import_strategy = st.builds(
+    extended_Import,
     importedNamespace=
         safe_text
 )
-extended::FormTypes_strategy = st.builds(
-    extended::FormTypes,
+extended_Entity_strategy = st.builds(
+    extended_Entity,
     name=
         safe_text
 )
-extended::Page_strategy = st.builds(
-    extended::Page,
-    footer=
-        safe_text,
-    title=
-        safe_text,
+extended_FormTypes_strategy = st.builds(
+    extended_FormTypes,
+    name=
+        safe_text
+)
+extended_Page_strategy = st.builds(
+    extended_Page,
     header=
         safe_text,
+    footer=
+        safe_text,
+    name=
+        safe_text,
+    title=
+        safe_text
+)
+extended_PackageDeclaration_strategy = st.builds(
+    extended_PackageDeclaration,
     name=
         safe_text
 )
-extended::Entity_strategy = st.builds(
-    extended::Entity,
-    name=
-        safe_text
+extended_AbstractElement_strategy = st.builds(
+    extended_AbstractElement,
 )
-extended::PackageDeclaration_strategy = st.builds(
-    extended::PackageDeclaration,
-    name=
-        safe_text
-)
-extended::AbstractElement_strategy = st.builds(
-    extended::AbstractElement,
-)
-extended::Domainmodel_strategy = st.builds(
-    extended::Domainmodel,
+extended_Domainmodel_strategy = st.builds(
+    extended_Domainmodel,
     nomeProj=
         safe_text
 )
@@ -588,313 +588,250 @@ extended::Domainmodel_strategy = st.builds(
 def test_formtypes_instantiation(instance):
     assert isinstance(instance, FormTypes)
 
-@given(instance=extended::FormNewEntityOnly_strategy)
+@given(instance=extended_FormNewEntityOnly_strategy)
 @settings(max_examples=50)
-def test_extended::formnewentityonly_instantiation(instance):
-    assert isinstance(instance, extended::FormNewEntityOnly)
+def test_extended_formnewentityonly_instantiation(instance):
+    assert isinstance(instance, extended_FormNewEntityOnly)
 
-@given(instance=extended::FormReport_strategy)
+@given(instance=extended_FormReport_strategy)
 @settings(max_examples=50)
-def test_extended::formreport_instantiation(instance):
-    assert isinstance(instance, extended::FormReport)
-
-@given(instance=extended::FormReport_strategy)
-def test_extended::formreport_filter_type(instance):
-    assert isinstance(instance.filter, str)
+def test_extended_formreport_instantiation(instance):
+    assert isinstance(instance, extended_FormReport)
 
 
-@given(instance=extended::FormReport_strategy)
-def test_extended::formreport_filter_setter(instance):
+
+@given(instance=extended_FormReport_strategy)
+def test_extended_formreport_filter_setter(instance):
     original = instance.filter
     instance.filter = original
     assert instance.filter == original
 
-@given(instance=extended::FormReport_strategy)
-def test_extended::formreport_order_type(instance):
-    assert isinstance(instance.order, str)
 
 
-@given(instance=extended::FormReport_strategy)
-def test_extended::formreport_order_setter(instance):
-    original = instance.order
-    instance.order = original
-    assert instance.order == original
-
-@given(instance=extended::FormReport_strategy)
-def test_extended::formreport_pagination_type(instance):
-    assert isinstance(instance.pagination, str)
-
-
-@given(instance=extended::FormReport_strategy)
-def test_extended::formreport_pagination_setter(instance):
+@given(instance=extended_FormReport_strategy)
+def test_extended_formreport_pagination_setter(instance):
     original = instance.pagination
     instance.pagination = original
     assert instance.pagination == original
 
-@given(instance=extended::Form_strategy)
+
+
+@given(instance=extended_FormReport_strategy)
+def test_extended_formreport_order_setter(instance):
+    original = instance.order
+    instance.order = original
+    assert instance.order == original
+
+@given(instance=extended_Form_strategy)
 @settings(max_examples=50)
-def test_extended::form_instantiation(instance):
-    assert isinstance(instance, extended::Form)
-
-@given(instance=extended::Form_strategy)
-def test_extended::form_post_type(instance):
-    assert isinstance(instance.post, str)
+def test_extended_form_instantiation(instance):
+    assert isinstance(instance, extended_Form)
 
 
-@given(instance=extended::Form_strategy)
-def test_extended::form_post_setter(instance):
+
+@given(instance=extended_Form_strategy)
+def test_extended_form_post_setter(instance):
     original = instance.post
     instance.post = original
     assert instance.post == original
 
-@given(instance=extended::Form_strategy)
-def test_extended::form_delete_type(instance):
-    assert isinstance(instance.delete, str)
 
 
-@given(instance=extended::Form_strategy)
-def test_extended::form_delete_setter(instance):
+@given(instance=extended_Form_strategy)
+def test_extended_form_delete_setter(instance):
     original = instance.delete
     instance.delete = original
     assert instance.delete == original
 
-@given(instance=extended::Form_strategy)
-def test_extended::form_get_type(instance):
-    assert isinstance(instance.get, str)
 
 
-@given(instance=extended::Form_strategy)
-def test_extended::form_get_setter(instance):
-    original = instance.get
-    instance.get = original
-    assert instance.get == original
-
-@given(instance=extended::Form_strategy)
-def test_extended::form_put_type(instance):
-    assert isinstance(instance.put, str)
-
-
-@given(instance=extended::Form_strategy)
-def test_extended::form_put_setter(instance):
+@given(instance=extended_Form_strategy)
+def test_extended_form_put_setter(instance):
     original = instance.put
     instance.put = original
     assert instance.put == original
 
-@given(instance=extended::Feature_strategy)
+
+
+@given(instance=extended_Form_strategy)
+def test_extended_form_get_setter(instance):
+    original = instance.get
+    instance.get = original
+    assert instance.get == original
+
+@given(instance=extended_Feature_strategy)
 @settings(max_examples=50)
-def test_extended::feature_instantiation(instance):
-    assert isinstance(instance, extended::Feature)
-
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_required_type(instance):
-    assert isinstance(instance.required, str)
+def test_extended_feature_instantiation(instance):
+    assert isinstance(instance, extended_Feature)
 
 
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_required_setter(instance):
+
+@given(instance=extended_Feature_strategy)
+def test_extended_feature_required_setter(instance):
     original = instance.required
     instance.required = original
     assert instance.required == original
 
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_min_type(instance):
-    assert isinstance(instance.min, int)
 
 
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_min_setter(instance):
-    original = instance.min
-    instance.min = original
-    assert instance.min == original
-
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=extended_Feature_strategy)
+def test_extended_feature_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
 
 
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_name_setter(instance):
+
+@given(instance=extended_Feature_strategy)
+def test_extended_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_max_type(instance):
-    assert isinstance(instance.max, int)
 
 
-@given(instance=extended::Feature_strategy)
-def test_extended::feature_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
+@given(instance=extended_Feature_strategy)
+def test_extended_feature_min_setter(instance):
+    original = instance.min
+    instance.min = original
+    assert instance.min == original
 
 @given(instance=AbstractType_strategy)
 @settings(max_examples=50)
 def test_abstracttype_instantiation(instance):
     assert isinstance(instance, AbstractType)
 
-@given(instance=extended::EntityType_strategy)
+@given(instance=extended_EntityType_strategy)
 @settings(max_examples=50)
-def test_extended::entitytype_instantiation(instance):
-    assert isinstance(instance, extended::EntityType)
+def test_extended_entitytype_instantiation(instance):
+    assert isinstance(instance, extended_EntityType)
 
-@given(instance=extended::DataType_strategy)
+@given(instance=extended_DataType_strategy)
 @settings(max_examples=50)
-def test_extended::datatype_instantiation(instance):
-    assert isinstance(instance, extended::DataType)
-
-@given(instance=extended::DataType_strategy)
-def test_extended::datatype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extended_datatype_instantiation(instance):
+    assert isinstance(instance, extended_DataType)
 
 
-@given(instance=extended::DataType_strategy)
-def test_extended::datatype_name_setter(instance):
+
+@given(instance=extended_DataType_strategy)
+def test_extended_datatype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extended::AbstractType_strategy)
+@given(instance=extended_AbstractType_strategy)
 @settings(max_examples=50)
-def test_extended::abstracttype_instantiation(instance):
-    assert isinstance(instance, extended::AbstractType)
+def test_extended_abstracttype_instantiation(instance):
+    assert isinstance(instance, extended_AbstractType)
 
 @given(instance=AbstractElement_strategy)
 @settings(max_examples=50)
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=extended::Import_strategy)
+@given(instance=extended_Import_strategy)
 @settings(max_examples=50)
-def test_extended::import_instantiation(instance):
-    assert isinstance(instance, extended::Import)
-
-@given(instance=extended::Import_strategy)
-def test_extended::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_extended_import_instantiation(instance):
+    assert isinstance(instance, extended_Import)
 
 
-@given(instance=extended::Import_strategy)
-def test_extended::import_importedNamespace_setter(instance):
+
+@given(instance=extended_Import_strategy)
+def test_extended_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=extended::FormTypes_strategy)
+@given(instance=extended_Entity_strategy)
 @settings(max_examples=50)
-def test_extended::formtypes_instantiation(instance):
-    assert isinstance(instance, extended::FormTypes)
-
-@given(instance=extended::FormTypes_strategy)
-def test_extended::formtypes_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extended_entity_instantiation(instance):
+    assert isinstance(instance, extended_Entity)
 
 
-@given(instance=extended::FormTypes_strategy)
-def test_extended::formtypes_name_setter(instance):
+
+@given(instance=extended_Entity_strategy)
+def test_extended_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extended::Page_strategy)
+@given(instance=extended_FormTypes_strategy)
 @settings(max_examples=50)
-def test_extended::page_instantiation(instance):
-    assert isinstance(instance, extended::Page)
-
-@given(instance=extended::Page_strategy)
-def test_extended::page_footer_type(instance):
-    assert isinstance(instance.footer, str)
+def test_extended_formtypes_instantiation(instance):
+    assert isinstance(instance, extended_FormTypes)
 
 
-@given(instance=extended::Page_strategy)
-def test_extended::page_footer_setter(instance):
-    original = instance.footer
-    instance.footer = original
-    assert instance.footer == original
 
-@given(instance=extended::Page_strategy)
-def test_extended::page_title_type(instance):
-    assert isinstance(instance.title, str)
+@given(instance=extended_FormTypes_strategy)
+def test_extended_formtypes_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
-
-@given(instance=extended::Page_strategy)
-def test_extended::page_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=extended::Page_strategy)
-def test_extended::page_header_type(instance):
-    assert isinstance(instance.header, str)
+@given(instance=extended_Page_strategy)
+@settings(max_examples=50)
+def test_extended_page_instantiation(instance):
+    assert isinstance(instance, extended_Page)
 
 
-@given(instance=extended::Page_strategy)
-def test_extended::page_header_setter(instance):
+
+@given(instance=extended_Page_strategy)
+def test_extended_page_header_setter(instance):
     original = instance.header
     instance.header = original
     assert instance.header == original
 
-@given(instance=extended::Page_strategy)
-def test_extended::page_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=extended::Page_strategy)
-def test_extended::page_name_setter(instance):
+@given(instance=extended_Page_strategy)
+def test_extended_page_footer_setter(instance):
+    original = instance.footer
+    instance.footer = original
+    assert instance.footer == original
+
+
+
+@given(instance=extended_Page_strategy)
+def test_extended_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extended::Entity_strategy)
+
+
+@given(instance=extended_Page_strategy)
+def test_extended_page_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=extended_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_extended::entity_instantiation(instance):
-    assert isinstance(instance, extended::Entity)
-
-@given(instance=extended::Entity_strategy)
-def test_extended::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extended_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, extended_PackageDeclaration)
 
 
-@given(instance=extended::Entity_strategy)
-def test_extended::entity_name_setter(instance):
+
+@given(instance=extended_PackageDeclaration_strategy)
+def test_extended_packagedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extended::PackageDeclaration_strategy)
+@given(instance=extended_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_extended::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, extended::PackageDeclaration)
+def test_extended_abstractelement_instantiation(instance):
+    assert isinstance(instance, extended_AbstractElement)
 
-@given(instance=extended::PackageDeclaration_strategy)
-def test_extended::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=extended::PackageDeclaration_strategy)
-def test_extended::packagedeclaration_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=extended::AbstractElement_strategy)
+@given(instance=extended_Domainmodel_strategy)
 @settings(max_examples=50)
-def test_extended::abstractelement_instantiation(instance):
-    assert isinstance(instance, extended::AbstractElement)
-
-@given(instance=extended::Domainmodel_strategy)
-@settings(max_examples=50)
-def test_extended::domainmodel_instantiation(instance):
-    assert isinstance(instance, extended::Domainmodel)
-
-@given(instance=extended::Domainmodel_strategy)
-def test_extended::domainmodel_nomeProj_type(instance):
-    assert isinstance(instance.nomeProj, str)
+def test_extended_domainmodel_instantiation(instance):
+    assert isinstance(instance, extended_Domainmodel)
 
 
-@given(instance=extended::Domainmodel_strategy)
-def test_extended::domainmodel_nomeProj_setter(instance):
+
+@given(instance=extended_Domainmodel_strategy)
+def test_extended_domainmodel_nomeProj_setter(instance):
     original = instance.nomeProj
     instance.nomeProj = original
     assert instance.nomeProj == original

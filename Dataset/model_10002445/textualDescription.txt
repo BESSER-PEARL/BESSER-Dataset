@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'PLACEMENTS_PAGE' has the following attributes: 'SALARY' of type int; 'BRANCH' of type str; 'INTREST' of type str.
+The class 'WELCOME_PAGE' has the following attributes: 'academic' of type str; 'placements' of type str; 'personal' of type str.
+The class 'ACADEMIC_PAGE' has the following attributes: 'STUDIES' of type str; 'BRANCH' of type str.
+The class 'T' has no attributes.
+The class 'DATABASE_SYSTEM' has the following attributes: 'Content' of type bool.
+The class 'LoginPage' has the following attributes: 'User_name' of type str.
+The class 'PERSONAL_PAGE' has the following attributes: 'YEAR' of type int; 'BRANCH' of type str.
+'PERSONAL_PAGE' (role 'wELCOME_PAGE6', cardinality 0..*) is associated with 'WELCOME_PAGE' (role 'pERSONAL_PAGE7', cardinality 0..*).
+'WELCOME_PAGE' (role 'pLACEMENTS_PAGE8', cardinality 0..*) is associated with 'PLACEMENTS_PAGE' (role 'wELCOME_PAGE9', cardinality 0..*).
+'LoginPage' (role 'user1', cardinality 0..*) is associated with 'WELCOME_PAGE' (role 'myprofile0', cardinality 0..*).
+'DATABASE_SYSTEM' (role 'user3', cardinality 0..*) is associated with 'WELCOME_PAGE' (role 'post2', cardinality 0..*).
+'ACADEMIC_PAGE' (role 'user5', cardinality 0..*) is associated with 'WELCOME_PAGE' (role 'group4', cardinality 0..*).

@@ -3,70 +3,70 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     InfixOperator,
-    cellsheet::Multiplication,
-    cellsheet::GTE,
-    cellsheet::Subtraction,
-    cellsheet::Intersection,
-    cellsheet::GT,
-    cellsheet::Addition,
-    cellsheet::NEQ,
-    cellsheet::LT,
-    cellsheet::LTE,
-    cellsheet::Concatenation,
-    cellsheet::Union,
-    cellsheet::Division,
-    cellsheet::EQ,
-    cellsheet::Exponentiation,
+    cellsheet_Union,
+    cellsheet_Addition,
+    cellsheet_NEQ,
+    cellsheet_LTE,
+    cellsheet_Division,
+    cellsheet_EQ,
+    cellsheet_LT,
+    cellsheet_Subtraction,
+    cellsheet_Multiplication,
+    cellsheet_GTE,
+    cellsheet_Intersection,
+    cellsheet_Concatenation,
+    cellsheet_GT,
+    cellsheet_Exponentiation,
     PostfixOperator,
-    cellsheet::Percent,
+    cellsheet_Percent,
     PrefixOperator,
-    cellsheet::Negation,
-    cellsheet::Plus,
+    cellsheet_Negation,
+    cellsheet_Plus,
     Operation,
-    cellsheet::Function,
+    cellsheet_Function,
     Ref,
-    cellsheet::RelativeRange,
-    cellsheet::RelativeRef,
+    cellsheet_RelativeRange,
+    cellsheet_RelativeRef,
     Operand,
-    cellsheet::Error,
-    cellsheet::Logical,
-    cellsheet::Number,
-    cellsheet::Ref,
-    cellsheet::Range,
-    cellsheet::Text,
+    cellsheet_Error,
+    cellsheet_Number,
+    cellsheet_Ref,
+    cellsheet_Logical,
+    cellsheet_Range,
+    cellsheet_Text,
     Ast,
-    cellsheet::Noop,
-    cellsheet::PrefixOperator,
-    cellsheet::PostfixOperator,
-    cellsheet::Operation,
-    cellsheet::InfixOperator,
-    cellsheet::Unknown,
-    cellsheet::Operand,
-    cellsheet::AstEval,
+    cellsheet_Unknown,
+    cellsheet_InfixOperator,
+    cellsheet_PrefixOperator,
+    cellsheet_Noop,
+    cellsheet_Operation,
+    cellsheet_PostfixOperator,
+    cellsheet_Operand,
+    cellsheet_AstEval,
     Cell,
-    cellsheet::BooleanCell,
-    cellsheet::TextCell,
-    cellsheet::NumericCell,
-    cellsheet::FormulaCell,
-    cellsheet::DateCell,
-    cellsheet::BlankCell,
-    cellsheet::Ast,
+    cellsheet_DateCell,
+    cellsheet_TextCell,
+    cellsheet_FormulaCell,
+    cellsheet_BooleanCell,
+    cellsheet_NumericCell,
+    cellsheet_BlankCell,
+    cellsheet_Ast,
     HasA1,
     HasId,
-    cellsheet::Row,
-    cellsheet::Cell,
-    cellsheet::Sheet,
-    cellsheet::CellFormat,
-    cellsheet::Book,
-    cellsheet::Workspace,
-    cellsheet::HasId,
-    cellsheet::HasA1,
-    cellsheet::Token,
-    cellsheet::EStringToTokenEntry,
+    cellsheet_CellFormat,
+    cellsheet_Row,
+    cellsheet_Cell,
+    cellsheet_Sheet,
+    cellsheet_Book,
+    cellsheet_Workspace,
+    cellsheet_HasId,
+    cellsheet_HasA1,
+    cellsheet_Token,
+    cellsheet_EStringToTokenEntry,
 )
 
 # =============================================================================
@@ -89,198 +89,198 @@ def test_infixoperator_constructor_args():
 
 
 
-def test_cellsheet::multiplication_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Multiplication)
+def test_cellsheet_union_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Union)
 
 
-def test_cellsheet::multiplication_constructor_exists():
-    assert callable(cellsheet::Multiplication.__init__)
+def test_cellsheet_union_constructor_exists():
+    assert callable(cellsheet_Union.__init__)
 
 
-def test_cellsheet::multiplication_constructor_args():
-    sig = inspect.signature(cellsheet::Multiplication.__init__)
+def test_cellsheet_union_constructor_args():
+    sig = inspect.signature(cellsheet_Union.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::gte_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::GTE)
+def test_cellsheet_addition_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Addition)
 
 
-def test_cellsheet::gte_constructor_exists():
-    assert callable(cellsheet::GTE.__init__)
+def test_cellsheet_addition_constructor_exists():
+    assert callable(cellsheet_Addition.__init__)
 
 
-def test_cellsheet::gte_constructor_args():
-    sig = inspect.signature(cellsheet::GTE.__init__)
+def test_cellsheet_addition_constructor_args():
+    sig = inspect.signature(cellsheet_Addition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::subtraction_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Subtraction)
+def test_cellsheet_neq_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_NEQ)
 
 
-def test_cellsheet::subtraction_constructor_exists():
-    assert callable(cellsheet::Subtraction.__init__)
+def test_cellsheet_neq_constructor_exists():
+    assert callable(cellsheet_NEQ.__init__)
 
 
-def test_cellsheet::subtraction_constructor_args():
-    sig = inspect.signature(cellsheet::Subtraction.__init__)
+def test_cellsheet_neq_constructor_args():
+    sig = inspect.signature(cellsheet_NEQ.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::intersection_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Intersection)
+def test_cellsheet_lte_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_LTE)
 
 
-def test_cellsheet::intersection_constructor_exists():
-    assert callable(cellsheet::Intersection.__init__)
+def test_cellsheet_lte_constructor_exists():
+    assert callable(cellsheet_LTE.__init__)
 
 
-def test_cellsheet::intersection_constructor_args():
-    sig = inspect.signature(cellsheet::Intersection.__init__)
+def test_cellsheet_lte_constructor_args():
+    sig = inspect.signature(cellsheet_LTE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::gt_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::GT)
+def test_cellsheet_division_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Division)
 
 
-def test_cellsheet::gt_constructor_exists():
-    assert callable(cellsheet::GT.__init__)
+def test_cellsheet_division_constructor_exists():
+    assert callable(cellsheet_Division.__init__)
 
 
-def test_cellsheet::gt_constructor_args():
-    sig = inspect.signature(cellsheet::GT.__init__)
+def test_cellsheet_division_constructor_args():
+    sig = inspect.signature(cellsheet_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::addition_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Addition)
+def test_cellsheet_eq_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_EQ)
 
 
-def test_cellsheet::addition_constructor_exists():
-    assert callable(cellsheet::Addition.__init__)
+def test_cellsheet_eq_constructor_exists():
+    assert callable(cellsheet_EQ.__init__)
 
 
-def test_cellsheet::addition_constructor_args():
-    sig = inspect.signature(cellsheet::Addition.__init__)
+def test_cellsheet_eq_constructor_args():
+    sig = inspect.signature(cellsheet_EQ.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::neq_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::NEQ)
+def test_cellsheet_lt_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_LT)
 
 
-def test_cellsheet::neq_constructor_exists():
-    assert callable(cellsheet::NEQ.__init__)
+def test_cellsheet_lt_constructor_exists():
+    assert callable(cellsheet_LT.__init__)
 
 
-def test_cellsheet::neq_constructor_args():
-    sig = inspect.signature(cellsheet::NEQ.__init__)
+def test_cellsheet_lt_constructor_args():
+    sig = inspect.signature(cellsheet_LT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::lt_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::LT)
+def test_cellsheet_subtraction_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Subtraction)
 
 
-def test_cellsheet::lt_constructor_exists():
-    assert callable(cellsheet::LT.__init__)
+def test_cellsheet_subtraction_constructor_exists():
+    assert callable(cellsheet_Subtraction.__init__)
 
 
-def test_cellsheet::lt_constructor_args():
-    sig = inspect.signature(cellsheet::LT.__init__)
+def test_cellsheet_subtraction_constructor_args():
+    sig = inspect.signature(cellsheet_Subtraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::lte_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::LTE)
+def test_cellsheet_multiplication_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Multiplication)
 
 
-def test_cellsheet::lte_constructor_exists():
-    assert callable(cellsheet::LTE.__init__)
+def test_cellsheet_multiplication_constructor_exists():
+    assert callable(cellsheet_Multiplication.__init__)
 
 
-def test_cellsheet::lte_constructor_args():
-    sig = inspect.signature(cellsheet::LTE.__init__)
+def test_cellsheet_multiplication_constructor_args():
+    sig = inspect.signature(cellsheet_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::concatenation_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Concatenation)
+def test_cellsheet_gte_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_GTE)
 
 
-def test_cellsheet::concatenation_constructor_exists():
-    assert callable(cellsheet::Concatenation.__init__)
+def test_cellsheet_gte_constructor_exists():
+    assert callable(cellsheet_GTE.__init__)
 
 
-def test_cellsheet::concatenation_constructor_args():
-    sig = inspect.signature(cellsheet::Concatenation.__init__)
+def test_cellsheet_gte_constructor_args():
+    sig = inspect.signature(cellsheet_GTE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::union_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Union)
+def test_cellsheet_intersection_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Intersection)
 
 
-def test_cellsheet::union_constructor_exists():
-    assert callable(cellsheet::Union.__init__)
+def test_cellsheet_intersection_constructor_exists():
+    assert callable(cellsheet_Intersection.__init__)
 
 
-def test_cellsheet::union_constructor_args():
-    sig = inspect.signature(cellsheet::Union.__init__)
+def test_cellsheet_intersection_constructor_args():
+    sig = inspect.signature(cellsheet_Intersection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::division_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Division)
+def test_cellsheet_concatenation_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Concatenation)
 
 
-def test_cellsheet::division_constructor_exists():
-    assert callable(cellsheet::Division.__init__)
+def test_cellsheet_concatenation_constructor_exists():
+    assert callable(cellsheet_Concatenation.__init__)
 
 
-def test_cellsheet::division_constructor_args():
-    sig = inspect.signature(cellsheet::Division.__init__)
+def test_cellsheet_concatenation_constructor_args():
+    sig = inspect.signature(cellsheet_Concatenation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::eq_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::EQ)
+def test_cellsheet_gt_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_GT)
 
 
-def test_cellsheet::eq_constructor_exists():
-    assert callable(cellsheet::EQ.__init__)
+def test_cellsheet_gt_constructor_exists():
+    assert callable(cellsheet_GT.__init__)
 
 
-def test_cellsheet::eq_constructor_args():
-    sig = inspect.signature(cellsheet::EQ.__init__)
+def test_cellsheet_gt_constructor_args():
+    sig = inspect.signature(cellsheet_GT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::exponentiation_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Exponentiation)
+def test_cellsheet_exponentiation_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Exponentiation)
 
 
-def test_cellsheet::exponentiation_constructor_exists():
-    assert callable(cellsheet::Exponentiation.__init__)
+def test_cellsheet_exponentiation_constructor_exists():
+    assert callable(cellsheet_Exponentiation.__init__)
 
 
-def test_cellsheet::exponentiation_constructor_args():
-    sig = inspect.signature(cellsheet::Exponentiation.__init__)
+def test_cellsheet_exponentiation_constructor_args():
+    sig = inspect.signature(cellsheet_Exponentiation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -299,16 +299,16 @@ def test_postfixoperator_constructor_args():
 
 
 
-def test_cellsheet::percent_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Percent)
+def test_cellsheet_percent_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Percent)
 
 
-def test_cellsheet::percent_constructor_exists():
-    assert callable(cellsheet::Percent.__init__)
+def test_cellsheet_percent_constructor_exists():
+    assert callable(cellsheet_Percent.__init__)
 
 
-def test_cellsheet::percent_constructor_args():
-    sig = inspect.signature(cellsheet::Percent.__init__)
+def test_cellsheet_percent_constructor_args():
+    sig = inspect.signature(cellsheet_Percent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -327,30 +327,30 @@ def test_prefixoperator_constructor_args():
 
 
 
-def test_cellsheet::negation_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Negation)
+def test_cellsheet_negation_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Negation)
 
 
-def test_cellsheet::negation_constructor_exists():
-    assert callable(cellsheet::Negation.__init__)
+def test_cellsheet_negation_constructor_exists():
+    assert callable(cellsheet_Negation.__init__)
 
 
-def test_cellsheet::negation_constructor_args():
-    sig = inspect.signature(cellsheet::Negation.__init__)
+def test_cellsheet_negation_constructor_args():
+    sig = inspect.signature(cellsheet_Negation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::plus_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Plus)
+def test_cellsheet_plus_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Plus)
 
 
-def test_cellsheet::plus_constructor_exists():
-    assert callable(cellsheet::Plus.__init__)
+def test_cellsheet_plus_constructor_exists():
+    assert callable(cellsheet_Plus.__init__)
 
 
-def test_cellsheet::plus_constructor_args():
-    sig = inspect.signature(cellsheet::Plus.__init__)
+def test_cellsheet_plus_constructor_args():
+    sig = inspect.signature(cellsheet_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -369,16 +369,16 @@ def test_operation_constructor_args():
 
 
 
-def test_cellsheet::function_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Function)
+def test_cellsheet_function_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Function)
 
 
-def test_cellsheet::function_constructor_exists():
-    assert callable(cellsheet::Function.__init__)
+def test_cellsheet_function_constructor_exists():
+    assert callable(cellsheet_Function.__init__)
 
 
-def test_cellsheet::function_constructor_args():
-    sig = inspect.signature(cellsheet::Function.__init__)
+def test_cellsheet_function_constructor_args():
+    sig = inspect.signature(cellsheet_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -397,30 +397,30 @@ def test_ref_constructor_args():
 
 
 
-def test_cellsheet::relativerange_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::RelativeRange)
+def test_cellsheet_relativerange_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_RelativeRange)
 
 
-def test_cellsheet::relativerange_constructor_exists():
-    assert callable(cellsheet::RelativeRange.__init__)
+def test_cellsheet_relativerange_constructor_exists():
+    assert callable(cellsheet_RelativeRange.__init__)
 
 
-def test_cellsheet::relativerange_constructor_args():
-    sig = inspect.signature(cellsheet::RelativeRange.__init__)
+def test_cellsheet_relativerange_constructor_args():
+    sig = inspect.signature(cellsheet_RelativeRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::relativeref_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::RelativeRef)
+def test_cellsheet_relativeref_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_RelativeRef)
 
 
-def test_cellsheet::relativeref_constructor_exists():
-    assert callable(cellsheet::RelativeRef.__init__)
+def test_cellsheet_relativeref_constructor_exists():
+    assert callable(cellsheet_RelativeRef.__init__)
 
 
-def test_cellsheet::relativeref_constructor_args():
-    sig = inspect.signature(cellsheet::RelativeRef.__init__)
+def test_cellsheet_relativeref_constructor_args():
+    sig = inspect.signature(cellsheet_RelativeRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -439,86 +439,86 @@ def test_operand_constructor_args():
 
 
 
-def test_cellsheet::error_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Error)
+def test_cellsheet_error_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Error)
 
 
-def test_cellsheet::error_constructor_exists():
-    assert callable(cellsheet::Error.__init__)
+def test_cellsheet_error_constructor_exists():
+    assert callable(cellsheet_Error.__init__)
 
 
-def test_cellsheet::error_constructor_args():
-    sig = inspect.signature(cellsheet::Error.__init__)
+def test_cellsheet_error_constructor_args():
+    sig = inspect.signature(cellsheet_Error.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::logical_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Logical)
+def test_cellsheet_number_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Number)
 
 
-def test_cellsheet::logical_constructor_exists():
-    assert callable(cellsheet::Logical.__init__)
+def test_cellsheet_number_constructor_exists():
+    assert callable(cellsheet_Number.__init__)
 
 
-def test_cellsheet::logical_constructor_args():
-    sig = inspect.signature(cellsheet::Logical.__init__)
+def test_cellsheet_number_constructor_args():
+    sig = inspect.signature(cellsheet_Number.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::number_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Number)
+def test_cellsheet_ref_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Ref)
 
 
-def test_cellsheet::number_constructor_exists():
-    assert callable(cellsheet::Number.__init__)
+def test_cellsheet_ref_constructor_exists():
+    assert callable(cellsheet_Ref.__init__)
 
 
-def test_cellsheet::number_constructor_args():
-    sig = inspect.signature(cellsheet::Number.__init__)
+def test_cellsheet_ref_constructor_args():
+    sig = inspect.signature(cellsheet_Ref.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::ref_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Ref)
+def test_cellsheet_logical_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Logical)
 
 
-def test_cellsheet::ref_constructor_exists():
-    assert callable(cellsheet::Ref.__init__)
+def test_cellsheet_logical_constructor_exists():
+    assert callable(cellsheet_Logical.__init__)
 
 
-def test_cellsheet::ref_constructor_args():
-    sig = inspect.signature(cellsheet::Ref.__init__)
+def test_cellsheet_logical_constructor_args():
+    sig = inspect.signature(cellsheet_Logical.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::range_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Range)
+def test_cellsheet_range_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Range)
 
 
-def test_cellsheet::range_constructor_exists():
-    assert callable(cellsheet::Range.__init__)
+def test_cellsheet_range_constructor_exists():
+    assert callable(cellsheet_Range.__init__)
 
 
-def test_cellsheet::range_constructor_args():
-    sig = inspect.signature(cellsheet::Range.__init__)
+def test_cellsheet_range_constructor_args():
+    sig = inspect.signature(cellsheet_Range.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::text_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Text)
+def test_cellsheet_text_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Text)
 
 
-def test_cellsheet::text_constructor_exists():
-    assert callable(cellsheet::Text.__init__)
+def test_cellsheet_text_constructor_exists():
+    assert callable(cellsheet_Text.__init__)
 
 
-def test_cellsheet::text_constructor_args():
-    sig = inspect.signature(cellsheet::Text.__init__)
+def test_cellsheet_text_constructor_args():
+    sig = inspect.signature(cellsheet_Text.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -537,143 +537,143 @@ def test_ast_constructor_args():
 
 
 
-def test_cellsheet::noop_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Noop)
+def test_cellsheet_unknown_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Unknown)
 
 
-def test_cellsheet::noop_constructor_exists():
-    assert callable(cellsheet::Noop.__init__)
+def test_cellsheet_unknown_constructor_exists():
+    assert callable(cellsheet_Unknown.__init__)
 
 
-def test_cellsheet::noop_constructor_args():
-    sig = inspect.signature(cellsheet::Noop.__init__)
+def test_cellsheet_unknown_constructor_args():
+    sig = inspect.signature(cellsheet_Unknown.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::prefixoperator_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::PrefixOperator)
+def test_cellsheet_infixoperator_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_InfixOperator)
 
 
-def test_cellsheet::prefixoperator_constructor_exists():
-    assert callable(cellsheet::PrefixOperator.__init__)
+def test_cellsheet_infixoperator_constructor_exists():
+    assert callable(cellsheet_InfixOperator.__init__)
 
 
-def test_cellsheet::prefixoperator_constructor_args():
-    sig = inspect.signature(cellsheet::PrefixOperator.__init__)
+def test_cellsheet_infixoperator_constructor_args():
+    sig = inspect.signature(cellsheet_InfixOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::postfixoperator_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::PostfixOperator)
+def test_cellsheet_prefixoperator_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_PrefixOperator)
 
 
-def test_cellsheet::postfixoperator_constructor_exists():
-    assert callable(cellsheet::PostfixOperator.__init__)
+def test_cellsheet_prefixoperator_constructor_exists():
+    assert callable(cellsheet_PrefixOperator.__init__)
 
 
-def test_cellsheet::postfixoperator_constructor_args():
-    sig = inspect.signature(cellsheet::PostfixOperator.__init__)
+def test_cellsheet_prefixoperator_constructor_args():
+    sig = inspect.signature(cellsheet_PrefixOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::operation_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Operation)
+def test_cellsheet_noop_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Noop)
 
 
-def test_cellsheet::operation_constructor_exists():
-    assert callable(cellsheet::Operation.__init__)
+def test_cellsheet_noop_constructor_exists():
+    assert callable(cellsheet_Noop.__init__)
 
 
-def test_cellsheet::operation_constructor_args():
-    sig = inspect.signature(cellsheet::Operation.__init__)
+def test_cellsheet_noop_constructor_args():
+    sig = inspect.signature(cellsheet_Noop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::infixoperator_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::InfixOperator)
+def test_cellsheet_operation_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Operation)
 
 
-def test_cellsheet::infixoperator_constructor_exists():
-    assert callable(cellsheet::InfixOperator.__init__)
+def test_cellsheet_operation_constructor_exists():
+    assert callable(cellsheet_Operation.__init__)
 
 
-def test_cellsheet::infixoperator_constructor_args():
-    sig = inspect.signature(cellsheet::InfixOperator.__init__)
+def test_cellsheet_operation_constructor_args():
+    sig = inspect.signature(cellsheet_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::unknown_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Unknown)
+def test_cellsheet_postfixoperator_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_PostfixOperator)
 
 
-def test_cellsheet::unknown_constructor_exists():
-    assert callable(cellsheet::Unknown.__init__)
+def test_cellsheet_postfixoperator_constructor_exists():
+    assert callable(cellsheet_PostfixOperator.__init__)
 
 
-def test_cellsheet::unknown_constructor_args():
-    sig = inspect.signature(cellsheet::Unknown.__init__)
+def test_cellsheet_postfixoperator_constructor_args():
+    sig = inspect.signature(cellsheet_PostfixOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::operand_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Operand)
+def test_cellsheet_operand_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Operand)
 
 
-def test_cellsheet::operand_constructor_exists():
-    assert callable(cellsheet::Operand.__init__)
+def test_cellsheet_operand_constructor_exists():
+    assert callable(cellsheet_Operand.__init__)
 
 
-def test_cellsheet::operand_constructor_args():
-    sig = inspect.signature(cellsheet::Operand.__init__)
+def test_cellsheet_operand_constructor_args():
+    sig = inspect.signature(cellsheet_Operand.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::asteval_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::AstEval)
+def test_cellsheet_asteval_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_AstEval)
 
 
-def test_cellsheet::asteval_constructor_exists():
-    assert callable(cellsheet::AstEval.__init__)
+def test_cellsheet_asteval_constructor_exists():
+    assert callable(cellsheet_AstEval.__init__)
 
 
-def test_cellsheet::asteval_constructor_args():
-    sig = inspect.signature(cellsheet::AstEval.__init__)
+def test_cellsheet_asteval_constructor_args():
+    sig = inspect.signature(cellsheet_AstEval.__init__)
     params = list(sig.parameters.keys())
     assert "numberValue" in params, "Missing parameter 'numberValue'"
-    assert "text" in params, "Missing parameter 'text'"
     assert "isError" in params, "Missing parameter 'isError'"
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_cellsheet::asteval_has_numberValue():
-    assert hasattr(cellsheet::AstEval, "numberValue")
+def test_cellsheet_asteval_has_numberValue():
+    assert hasattr(cellsheet_AstEval, "numberValue")
     descriptor = None
-    for klass in cellsheet::AstEval.__mro__:
+    for klass in cellsheet_AstEval.__mro__:
         if "numberValue" in klass.__dict__:
             descriptor = klass.__dict__["numberValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_cellsheet::asteval_has_text():
-    assert hasattr(cellsheet::AstEval, "text")
+def test_cellsheet_asteval_has_isError():
+    assert hasattr(cellsheet_AstEval, "isError")
     descriptor = None
-    for klass in cellsheet::AstEval.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
+    for klass in cellsheet_AstEval.__mro__:
+        if "isError" in klass.__dict__:
+            descriptor = klass.__dict__["isError"]
             break
     assert isinstance(descriptor, property)
 
-def test_cellsheet::asteval_has_isError():
-    assert hasattr(cellsheet::AstEval, "isError")
+def test_cellsheet_asteval_has_text():
+    assert hasattr(cellsheet_AstEval, "text")
     descriptor = None
-    for klass in cellsheet::AstEval.__mro__:
-        if "isError" in klass.__dict__:
-            descriptor = klass.__dict__["isError"]
+    for klass in cellsheet_AstEval.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
@@ -693,23 +693,23 @@ def test_cell_constructor_args():
 
 
 
-def test_cellsheet::booleancell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::BooleanCell)
+def test_cellsheet_datecell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_DateCell)
 
 
-def test_cellsheet::booleancell_constructor_exists():
-    assert callable(cellsheet::BooleanCell.__init__)
+def test_cellsheet_datecell_constructor_exists():
+    assert callable(cellsheet_DateCell.__init__)
 
 
-def test_cellsheet::booleancell_constructor_args():
-    sig = inspect.signature(cellsheet::BooleanCell.__init__)
+def test_cellsheet_datecell_constructor_args():
+    sig = inspect.signature(cellsheet_DateCell.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::booleancell_has_value():
-    assert hasattr(cellsheet::BooleanCell, "value")
+def test_cellsheet_datecell_has_value():
+    assert hasattr(cellsheet_DateCell, "value")
     descriptor = None
-    for klass in cellsheet::BooleanCell.__mro__:
+    for klass in cellsheet_DateCell.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -717,23 +717,23 @@ def test_cellsheet::booleancell_has_value():
 
 
 
-def test_cellsheet::textcell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::TextCell)
+def test_cellsheet_textcell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_TextCell)
 
 
-def test_cellsheet::textcell_constructor_exists():
-    assert callable(cellsheet::TextCell.__init__)
+def test_cellsheet_textcell_constructor_exists():
+    assert callable(cellsheet_TextCell.__init__)
 
 
-def test_cellsheet::textcell_constructor_args():
-    sig = inspect.signature(cellsheet::TextCell.__init__)
+def test_cellsheet_textcell_constructor_args():
+    sig = inspect.signature(cellsheet_TextCell.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::textcell_has_value():
-    assert hasattr(cellsheet::TextCell, "value")
+def test_cellsheet_textcell_has_value():
+    assert hasattr(cellsheet_TextCell, "value")
     descriptor = None
-    for klass in cellsheet::TextCell.__mro__:
+    for klass in cellsheet_TextCell.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -741,23 +741,23 @@ def test_cellsheet::textcell_has_value():
 
 
 
-def test_cellsheet::numericcell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::NumericCell)
+def test_cellsheet_formulacell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_FormulaCell)
 
 
-def test_cellsheet::numericcell_constructor_exists():
-    assert callable(cellsheet::NumericCell.__init__)
+def test_cellsheet_formulacell_constructor_exists():
+    assert callable(cellsheet_FormulaCell.__init__)
 
 
-def test_cellsheet::numericcell_constructor_args():
-    sig = inspect.signature(cellsheet::NumericCell.__init__)
+def test_cellsheet_formulacell_constructor_args():
+    sig = inspect.signature(cellsheet_FormulaCell.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::numericcell_has_value():
-    assert hasattr(cellsheet::NumericCell, "value")
+def test_cellsheet_formulacell_has_value():
+    assert hasattr(cellsheet_FormulaCell, "value")
     descriptor = None
-    for klass in cellsheet::NumericCell.__mro__:
+    for klass in cellsheet_FormulaCell.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -765,23 +765,23 @@ def test_cellsheet::numericcell_has_value():
 
 
 
-def test_cellsheet::formulacell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::FormulaCell)
+def test_cellsheet_booleancell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_BooleanCell)
 
 
-def test_cellsheet::formulacell_constructor_exists():
-    assert callable(cellsheet::FormulaCell.__init__)
+def test_cellsheet_booleancell_constructor_exists():
+    assert callable(cellsheet_BooleanCell.__init__)
 
 
-def test_cellsheet::formulacell_constructor_args():
-    sig = inspect.signature(cellsheet::FormulaCell.__init__)
+def test_cellsheet_booleancell_constructor_args():
+    sig = inspect.signature(cellsheet_BooleanCell.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::formulacell_has_value():
-    assert hasattr(cellsheet::FormulaCell, "value")
+def test_cellsheet_booleancell_has_value():
+    assert hasattr(cellsheet_BooleanCell, "value")
     descriptor = None
-    for klass in cellsheet::FormulaCell.__mro__:
+    for klass in cellsheet_BooleanCell.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -789,23 +789,23 @@ def test_cellsheet::formulacell_has_value():
 
 
 
-def test_cellsheet::datecell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::DateCell)
+def test_cellsheet_numericcell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_NumericCell)
 
 
-def test_cellsheet::datecell_constructor_exists():
-    assert callable(cellsheet::DateCell.__init__)
+def test_cellsheet_numericcell_constructor_exists():
+    assert callable(cellsheet_NumericCell.__init__)
 
 
-def test_cellsheet::datecell_constructor_args():
-    sig = inspect.signature(cellsheet::DateCell.__init__)
+def test_cellsheet_numericcell_constructor_args():
+    sig = inspect.signature(cellsheet_NumericCell.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::datecell_has_value():
-    assert hasattr(cellsheet::DateCell, "value")
+def test_cellsheet_numericcell_has_value():
+    assert hasattr(cellsheet_NumericCell, "value")
     descriptor = None
-    for klass in cellsheet::DateCell.__mro__:
+    for klass in cellsheet_NumericCell.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -813,23 +813,23 @@ def test_cellsheet::datecell_has_value():
 
 
 
-def test_cellsheet::blankcell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::BlankCell)
+def test_cellsheet_blankcell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_BlankCell)
 
 
-def test_cellsheet::blankcell_constructor_exists():
-    assert callable(cellsheet::BlankCell.__init__)
+def test_cellsheet_blankcell_constructor_exists():
+    assert callable(cellsheet_BlankCell.__init__)
 
 
-def test_cellsheet::blankcell_constructor_args():
-    sig = inspect.signature(cellsheet::BlankCell.__init__)
+def test_cellsheet_blankcell_constructor_args():
+    sig = inspect.signature(cellsheet_BlankCell.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::blankcell_has_value():
-    assert hasattr(cellsheet::BlankCell, "value")
+def test_cellsheet_blankcell_has_value():
+    assert hasattr(cellsheet_BlankCell, "value")
     descriptor = None
-    for klass in cellsheet::BlankCell.__mro__:
+    for klass in cellsheet_BlankCell.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -837,16 +837,16 @@ def test_cellsheet::blankcell_has_value():
 
 
 
-def test_cellsheet::ast_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Ast)
+def test_cellsheet_ast_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Ast)
 
 
-def test_cellsheet::ast_constructor_exists():
-    assert callable(cellsheet::Ast.__init__)
+def test_cellsheet_ast_constructor_exists():
+    assert callable(cellsheet_Ast.__init__)
 
 
-def test_cellsheet::ast_constructor_args():
-    sig = inspect.signature(cellsheet::Ast.__init__)
+def test_cellsheet_ast_constructor_args():
+    sig = inspect.signature(cellsheet_Ast.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -879,23 +879,47 @@ def test_hasid_constructor_args():
 
 
 
-def test_cellsheet::row_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Row)
+def test_cellsheet_cellformat_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_CellFormat)
 
 
-def test_cellsheet::row_constructor_exists():
-    assert callable(cellsheet::Row.__init__)
+def test_cellsheet_cellformat_constructor_exists():
+    assert callable(cellsheet_CellFormat.__init__)
 
 
-def test_cellsheet::row_constructor_args():
-    sig = inspect.signature(cellsheet::Row.__init__)
+def test_cellsheet_cellformat_constructor_args():
+    sig = inspect.signature(cellsheet_CellFormat.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_cellsheet_cellformat_has_value():
+    assert hasattr(cellsheet_CellFormat, "value")
+    descriptor = None
+    for klass in cellsheet_CellFormat.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cellsheet_row_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Row)
+
+
+def test_cellsheet_row_constructor_exists():
+    assert callable(cellsheet_Row.__init__)
+
+
+def test_cellsheet_row_constructor_args():
+    sig = inspect.signature(cellsheet_Row.__init__)
     params = list(sig.parameters.keys())
     assert "rowIndex" in params, "Missing parameter 'rowIndex'"
 
-def test_cellsheet::row_has_rowIndex():
-    assert hasattr(cellsheet::Row, "rowIndex")
+def test_cellsheet_row_has_rowIndex():
+    assert hasattr(cellsheet_Row, "rowIndex")
     descriptor = None
-    for klass in cellsheet::Row.__mro__:
+    for klass in cellsheet_Row.__mro__:
         if "rowIndex" in klass.__dict__:
             descriptor = klass.__dict__["rowIndex"]
             break
@@ -903,23 +927,23 @@ def test_cellsheet::row_has_rowIndex():
 
 
 
-def test_cellsheet::cell_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Cell)
+def test_cellsheet_cell_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Cell)
 
 
-def test_cellsheet::cell_constructor_exists():
-    assert callable(cellsheet::Cell.__init__)
+def test_cellsheet_cell_constructor_exists():
+    assert callable(cellsheet_Cell.__init__)
 
 
-def test_cellsheet::cell_constructor_args():
-    sig = inspect.signature(cellsheet::Cell.__init__)
+def test_cellsheet_cell_constructor_args():
+    sig = inspect.signature(cellsheet_Cell.__init__)
     params = list(sig.parameters.keys())
     assert "colIndex" in params, "Missing parameter 'colIndex'"
 
-def test_cellsheet::cell_has_colIndex():
-    assert hasattr(cellsheet::Cell, "colIndex")
+def test_cellsheet_cell_has_colIndex():
+    assert hasattr(cellsheet_Cell, "colIndex")
     descriptor = None
-    for klass in cellsheet::Cell.__mro__:
+    for klass in cellsheet_Cell.__mro__:
         if "colIndex" in klass.__dict__:
             descriptor = klass.__dict__["colIndex"]
             break
@@ -927,33 +951,33 @@ def test_cellsheet::cell_has_colIndex():
 
 
 
-def test_cellsheet::sheet_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Sheet)
+def test_cellsheet_sheet_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Sheet)
 
 
-def test_cellsheet::sheet_constructor_exists():
-    assert callable(cellsheet::Sheet.__init__)
+def test_cellsheet_sheet_constructor_exists():
+    assert callable(cellsheet_Sheet.__init__)
 
 
-def test_cellsheet::sheet_constructor_args():
-    sig = inspect.signature(cellsheet::Sheet.__init__)
+def test_cellsheet_sheet_constructor_args():
+    sig = inspect.signature(cellsheet_Sheet.__init__)
     params = list(sig.parameters.keys())
     assert "sheetIndex" in params, "Missing parameter 'sheetIndex'"
     assert "sheetName" in params, "Missing parameter 'sheetName'"
 
-def test_cellsheet::sheet_has_sheetIndex():
-    assert hasattr(cellsheet::Sheet, "sheetIndex")
+def test_cellsheet_sheet_has_sheetIndex():
+    assert hasattr(cellsheet_Sheet, "sheetIndex")
     descriptor = None
-    for klass in cellsheet::Sheet.__mro__:
+    for klass in cellsheet_Sheet.__mro__:
         if "sheetIndex" in klass.__dict__:
             descriptor = klass.__dict__["sheetIndex"]
             break
     assert isinstance(descriptor, property)
 
-def test_cellsheet::sheet_has_sheetName():
-    assert hasattr(cellsheet::Sheet, "sheetName")
+def test_cellsheet_sheet_has_sheetName():
+    assert hasattr(cellsheet_Sheet, "sheetName")
     descriptor = None
-    for klass in cellsheet::Sheet.__mro__:
+    for klass in cellsheet_Sheet.__mro__:
         if "sheetName" in klass.__dict__:
             descriptor = klass.__dict__["sheetName"]
             break
@@ -961,47 +985,23 @@ def test_cellsheet::sheet_has_sheetName():
 
 
 
-def test_cellsheet::cellformat_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::CellFormat)
+def test_cellsheet_book_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Book)
 
 
-def test_cellsheet::cellformat_constructor_exists():
-    assert callable(cellsheet::CellFormat.__init__)
+def test_cellsheet_book_constructor_exists():
+    assert callable(cellsheet_Book.__init__)
 
 
-def test_cellsheet::cellformat_constructor_args():
-    sig = inspect.signature(cellsheet::CellFormat.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_cellsheet::cellformat_has_value():
-    assert hasattr(cellsheet::CellFormat, "value")
-    descriptor = None
-    for klass in cellsheet::CellFormat.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cellsheet::book_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Book)
-
-
-def test_cellsheet::book_constructor_exists():
-    assert callable(cellsheet::Book.__init__)
-
-
-def test_cellsheet::book_constructor_args():
-    sig = inspect.signature(cellsheet::Book.__init__)
+def test_cellsheet_book_constructor_args():
+    sig = inspect.signature(cellsheet_Book.__init__)
     params = list(sig.parameters.keys())
     assert "bookname" in params, "Missing parameter 'bookname'"
 
-def test_cellsheet::book_has_bookname():
-    assert hasattr(cellsheet::Book, "bookname")
+def test_cellsheet_book_has_bookname():
+    assert hasattr(cellsheet_Book, "bookname")
     descriptor = None
-    for klass in cellsheet::Book.__mro__:
+    for klass in cellsheet_Book.__mro__:
         if "bookname" in klass.__dict__:
             descriptor = klass.__dict__["bookname"]
             break
@@ -1009,37 +1009,37 @@ def test_cellsheet::book_has_bookname():
 
 
 
-def test_cellsheet::workspace_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Workspace)
+def test_cellsheet_workspace_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Workspace)
 
 
-def test_cellsheet::workspace_constructor_exists():
-    assert callable(cellsheet::Workspace.__init__)
+def test_cellsheet_workspace_constructor_exists():
+    assert callable(cellsheet_Workspace.__init__)
 
 
-def test_cellsheet::workspace_constructor_args():
-    sig = inspect.signature(cellsheet::Workspace.__init__)
+def test_cellsheet_workspace_constructor_args():
+    sig = inspect.signature(cellsheet_Workspace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cellsheet::hasid_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::HasId)
+def test_cellsheet_hasid_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_HasId)
 
 
-def test_cellsheet::hasid_constructor_exists():
-    assert callable(cellsheet::HasId.__init__)
+def test_cellsheet_hasid_constructor_exists():
+    assert callable(cellsheet_HasId.__init__)
 
 
-def test_cellsheet::hasid_constructor_args():
-    sig = inspect.signature(cellsheet::HasId.__init__)
+def test_cellsheet_hasid_constructor_args():
+    sig = inspect.signature(cellsheet_HasId.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_cellsheet::hasid_has_id():
-    assert hasattr(cellsheet::HasId, "id")
+def test_cellsheet_hasid_has_id():
+    assert hasattr(cellsheet_HasId, "id")
     descriptor = None
-    for klass in cellsheet::HasId.__mro__:
+    for klass in cellsheet_HasId.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1047,23 +1047,23 @@ def test_cellsheet::hasid_has_id():
 
 
 
-def test_cellsheet::hasa1_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::HasA1)
+def test_cellsheet_hasa1_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_HasA1)
 
 
-def test_cellsheet::hasa1_constructor_exists():
-    assert callable(cellsheet::HasA1.__init__)
+def test_cellsheet_hasa1_constructor_exists():
+    assert callable(cellsheet_HasA1.__init__)
 
 
-def test_cellsheet::hasa1_constructor_args():
-    sig = inspect.signature(cellsheet::HasA1.__init__)
+def test_cellsheet_hasa1_constructor_args():
+    sig = inspect.signature(cellsheet_HasA1.__init__)
     params = list(sig.parameters.keys())
     assert "a1" in params, "Missing parameter 'a1'"
 
-def test_cellsheet::hasa1_has_a1():
-    assert hasattr(cellsheet::HasA1, "a1")
+def test_cellsheet_hasa1_has_a1():
+    assert hasattr(cellsheet_HasA1, "a1")
     descriptor = None
-    for klass in cellsheet::HasA1.__mro__:
+    for klass in cellsheet_HasA1.__mro__:
         if "a1" in klass.__dict__:
             descriptor = klass.__dict__["a1"]
             break
@@ -1071,23 +1071,23 @@ def test_cellsheet::hasa1_has_a1():
 
 
 
-def test_cellsheet::token_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::Token)
+def test_cellsheet_token_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_Token)
 
 
-def test_cellsheet::token_constructor_exists():
-    assert callable(cellsheet::Token.__init__)
+def test_cellsheet_token_constructor_exists():
+    assert callable(cellsheet_Token.__init__)
 
 
-def test_cellsheet::token_constructor_args():
-    sig = inspect.signature(cellsheet::Token.__init__)
+def test_cellsheet_token_constructor_args():
+    sig = inspect.signature(cellsheet_Token.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cellsheet::token_has_value():
-    assert hasattr(cellsheet::Token, "value")
+def test_cellsheet_token_has_value():
+    assert hasattr(cellsheet_Token, "value")
     descriptor = None
-    for klass in cellsheet::Token.__mro__:
+    for klass in cellsheet_Token.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1095,23 +1095,23 @@ def test_cellsheet::token_has_value():
 
 
 
-def test_cellsheet::estringtotokenentry_is_not_abstract():
-    assert not inspect.isabstract(cellsheet::EStringToTokenEntry)
+def test_cellsheet_estringtotokenentry_is_not_abstract():
+    assert not inspect.isabstract(cellsheet_EStringToTokenEntry)
 
 
-def test_cellsheet::estringtotokenentry_constructor_exists():
-    assert callable(cellsheet::EStringToTokenEntry.__init__)
+def test_cellsheet_estringtotokenentry_constructor_exists():
+    assert callable(cellsheet_EStringToTokenEntry.__init__)
 
 
-def test_cellsheet::estringtotokenentry_constructor_args():
-    sig = inspect.signature(cellsheet::EStringToTokenEntry.__init__)
+def test_cellsheet_estringtotokenentry_constructor_args():
+    sig = inspect.signature(cellsheet_EStringToTokenEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_cellsheet::estringtotokenentry_has_key():
-    assert hasattr(cellsheet::EStringToTokenEntry, "key")
+def test_cellsheet_estringtotokenentry_has_key():
+    assert hasattr(cellsheet_EStringToTokenEntry, "key")
     descriptor = None
-    for klass in cellsheet::EStringToTokenEntry.__mro__:
+    for klass in cellsheet_EStringToTokenEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1132,167 +1132,167 @@ safe_text = st.text(
 InfixOperator_strategy = st.builds(
     InfixOperator,
 )
-cellsheet::Multiplication_strategy = st.builds(
-    cellsheet::Multiplication,
+cellsheet_Union_strategy = st.builds(
+    cellsheet_Union,
 )
-cellsheet::GTE_strategy = st.builds(
-    cellsheet::GTE,
+cellsheet_Addition_strategy = st.builds(
+    cellsheet_Addition,
 )
-cellsheet::Subtraction_strategy = st.builds(
-    cellsheet::Subtraction,
+cellsheet_NEQ_strategy = st.builds(
+    cellsheet_NEQ,
 )
-cellsheet::Intersection_strategy = st.builds(
-    cellsheet::Intersection,
+cellsheet_LTE_strategy = st.builds(
+    cellsheet_LTE,
 )
-cellsheet::GT_strategy = st.builds(
-    cellsheet::GT,
+cellsheet_Division_strategy = st.builds(
+    cellsheet_Division,
 )
-cellsheet::Addition_strategy = st.builds(
-    cellsheet::Addition,
+cellsheet_EQ_strategy = st.builds(
+    cellsheet_EQ,
 )
-cellsheet::NEQ_strategy = st.builds(
-    cellsheet::NEQ,
+cellsheet_LT_strategy = st.builds(
+    cellsheet_LT,
 )
-cellsheet::LT_strategy = st.builds(
-    cellsheet::LT,
+cellsheet_Subtraction_strategy = st.builds(
+    cellsheet_Subtraction,
 )
-cellsheet::LTE_strategy = st.builds(
-    cellsheet::LTE,
+cellsheet_Multiplication_strategy = st.builds(
+    cellsheet_Multiplication,
 )
-cellsheet::Concatenation_strategy = st.builds(
-    cellsheet::Concatenation,
+cellsheet_GTE_strategy = st.builds(
+    cellsheet_GTE,
 )
-cellsheet::Union_strategy = st.builds(
-    cellsheet::Union,
+cellsheet_Intersection_strategy = st.builds(
+    cellsheet_Intersection,
 )
-cellsheet::Division_strategy = st.builds(
-    cellsheet::Division,
+cellsheet_Concatenation_strategy = st.builds(
+    cellsheet_Concatenation,
 )
-cellsheet::EQ_strategy = st.builds(
-    cellsheet::EQ,
+cellsheet_GT_strategy = st.builds(
+    cellsheet_GT,
 )
-cellsheet::Exponentiation_strategy = st.builds(
-    cellsheet::Exponentiation,
+cellsheet_Exponentiation_strategy = st.builds(
+    cellsheet_Exponentiation,
 )
 PostfixOperator_strategy = st.builds(
     PostfixOperator,
 )
-cellsheet::Percent_strategy = st.builds(
-    cellsheet::Percent,
+cellsheet_Percent_strategy = st.builds(
+    cellsheet_Percent,
 )
 PrefixOperator_strategy = st.builds(
     PrefixOperator,
 )
-cellsheet::Negation_strategy = st.builds(
-    cellsheet::Negation,
+cellsheet_Negation_strategy = st.builds(
+    cellsheet_Negation,
 )
-cellsheet::Plus_strategy = st.builds(
-    cellsheet::Plus,
+cellsheet_Plus_strategy = st.builds(
+    cellsheet_Plus,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-cellsheet::Function_strategy = st.builds(
-    cellsheet::Function,
+cellsheet_Function_strategy = st.builds(
+    cellsheet_Function,
 )
 Ref_strategy = st.builds(
     Ref,
 )
-cellsheet::RelativeRange_strategy = st.builds(
-    cellsheet::RelativeRange,
+cellsheet_RelativeRange_strategy = st.builds(
+    cellsheet_RelativeRange,
 )
-cellsheet::RelativeRef_strategy = st.builds(
-    cellsheet::RelativeRef,
+cellsheet_RelativeRef_strategy = st.builds(
+    cellsheet_RelativeRef,
 )
 Operand_strategy = st.builds(
     Operand,
 )
-cellsheet::Error_strategy = st.builds(
-    cellsheet::Error,
+cellsheet_Error_strategy = st.builds(
+    cellsheet_Error,
 )
-cellsheet::Logical_strategy = st.builds(
-    cellsheet::Logical,
+cellsheet_Number_strategy = st.builds(
+    cellsheet_Number,
 )
-cellsheet::Number_strategy = st.builds(
-    cellsheet::Number,
+cellsheet_Ref_strategy = st.builds(
+    cellsheet_Ref,
 )
-cellsheet::Ref_strategy = st.builds(
-    cellsheet::Ref,
+cellsheet_Logical_strategy = st.builds(
+    cellsheet_Logical,
 )
-cellsheet::Range_strategy = st.builds(
-    cellsheet::Range,
+cellsheet_Range_strategy = st.builds(
+    cellsheet_Range,
 )
-cellsheet::Text_strategy = st.builds(
-    cellsheet::Text,
+cellsheet_Text_strategy = st.builds(
+    cellsheet_Text,
 )
 Ast_strategy = st.builds(
     Ast,
 )
-cellsheet::Noop_strategy = st.builds(
-    cellsheet::Noop,
+cellsheet_Unknown_strategy = st.builds(
+    cellsheet_Unknown,
 )
-cellsheet::PrefixOperator_strategy = st.builds(
-    cellsheet::PrefixOperator,
+cellsheet_InfixOperator_strategy = st.builds(
+    cellsheet_InfixOperator,
 )
-cellsheet::PostfixOperator_strategy = st.builds(
-    cellsheet::PostfixOperator,
+cellsheet_PrefixOperator_strategy = st.builds(
+    cellsheet_PrefixOperator,
 )
-cellsheet::Operation_strategy = st.builds(
-    cellsheet::Operation,
+cellsheet_Noop_strategy = st.builds(
+    cellsheet_Noop,
 )
-cellsheet::InfixOperator_strategy = st.builds(
-    cellsheet::InfixOperator,
+cellsheet_Operation_strategy = st.builds(
+    cellsheet_Operation,
 )
-cellsheet::Unknown_strategy = st.builds(
-    cellsheet::Unknown,
+cellsheet_PostfixOperator_strategy = st.builds(
+    cellsheet_PostfixOperator,
 )
-cellsheet::Operand_strategy = st.builds(
-    cellsheet::Operand,
+cellsheet_Operand_strategy = st.builds(
+    cellsheet_Operand,
 )
-cellsheet::AstEval_strategy = st.builds(
-    cellsheet::AstEval,
+cellsheet_AstEval_strategy = st.builds(
+    cellsheet_AstEval,
     numberValue=
         safe_text,
-    text=
-        safe_text,
     isError=
-        st.booleans()
+        st.booleans(),
+    text=
+        safe_text
 )
 Cell_strategy = st.builds(
     Cell,
 )
-cellsheet::BooleanCell_strategy = st.builds(
-    cellsheet::BooleanCell,
-    value=
-        safe_text
-)
-cellsheet::TextCell_strategy = st.builds(
-    cellsheet::TextCell,
-    value=
-        safe_text
-)
-cellsheet::NumericCell_strategy = st.builds(
-    cellsheet::NumericCell,
-    value=
-        safe_text
-)
-cellsheet::FormulaCell_strategy = st.builds(
-    cellsheet::FormulaCell,
-    value=
-        safe_text
-)
-cellsheet::DateCell_strategy = st.builds(
-    cellsheet::DateCell,
+cellsheet_DateCell_strategy = st.builds(
+    cellsheet_DateCell,
     value=
         st.dates()
 )
-cellsheet::BlankCell_strategy = st.builds(
-    cellsheet::BlankCell,
+cellsheet_TextCell_strategy = st.builds(
+    cellsheet_TextCell,
     value=
         safe_text
 )
-cellsheet::Ast_strategy = st.builds(
-    cellsheet::Ast,
+cellsheet_FormulaCell_strategy = st.builds(
+    cellsheet_FormulaCell,
+    value=
+        safe_text
+)
+cellsheet_BooleanCell_strategy = st.builds(
+    cellsheet_BooleanCell,
+    value=
+        safe_text
+)
+cellsheet_NumericCell_strategy = st.builds(
+    cellsheet_NumericCell,
+    value=
+        safe_text
+)
+cellsheet_BlankCell_strategy = st.builds(
+    cellsheet_BlankCell,
+    value=
+        safe_text
+)
+cellsheet_Ast_strategy = st.builds(
+    cellsheet_Ast,
 )
 HasA1_strategy = st.builds(
     HasA1,
@@ -1300,53 +1300,53 @@ HasA1_strategy = st.builds(
 HasId_strategy = st.builds(
     HasId,
 )
-cellsheet::Row_strategy = st.builds(
-    cellsheet::Row,
+cellsheet_CellFormat_strategy = st.builds(
+    cellsheet_CellFormat,
+    value=
+        safe_text
+)
+cellsheet_Row_strategy = st.builds(
+    cellsheet_Row,
     rowIndex=
         st.integers()
 )
-cellsheet::Cell_strategy = st.builds(
-    cellsheet::Cell,
+cellsheet_Cell_strategy = st.builds(
+    cellsheet_Cell,
     colIndex=
         st.integers()
 )
-cellsheet::Sheet_strategy = st.builds(
-    cellsheet::Sheet,
+cellsheet_Sheet_strategy = st.builds(
+    cellsheet_Sheet,
     sheetIndex=
         st.integers(),
     sheetName=
         safe_text
 )
-cellsheet::CellFormat_strategy = st.builds(
-    cellsheet::CellFormat,
-    value=
-        safe_text
-)
-cellsheet::Book_strategy = st.builds(
-    cellsheet::Book,
+cellsheet_Book_strategy = st.builds(
+    cellsheet_Book,
     bookname=
         safe_text
 )
-cellsheet::Workspace_strategy = st.builds(
-    cellsheet::Workspace,
+cellsheet_Workspace_strategy = st.builds(
+    cellsheet_Workspace,
 )
-cellsheet::HasId_strategy = st.builds(
-    cellsheet::HasId,
+cellsheet_HasId_strategy = st.builds(
+    cellsheet_HasId,
     id=
         safe_text
 )
-cellsheet::HasA1_strategy = st.builds(
-    cellsheet::HasA1,
+cellsheet_HasA1_strategy = st.builds(
+    cellsheet_HasA1,
     a1=
         safe_text
 )
-cellsheet::Token_strategy = st.builds(
-    cellsheet::Token,
+cellsheet_Token_strategy = st.builds(
+    cellsheet_Token,
     value=
         safe_text
 )
-cellsheet::EStringToTokenEntry_strategy = st.builds(
-    cellsheet::EStringToTokenEntry,
+cellsheet_EStringToTokenEntry_strategy = st.builds(
+    cellsheet_EStringToTokenEntry,
     key=
         safe_text
 )
@@ -1356,344 +1356,317 @@ cellsheet::EStringToTokenEntry_strategy = st.builds(
 def test_infixoperator_instantiation(instance):
     assert isinstance(instance, InfixOperator)
 
-@given(instance=cellsheet::Multiplication_strategy)
+@given(instance=cellsheet_Union_strategy)
 @settings(max_examples=50)
-def test_cellsheet::multiplication_instantiation(instance):
-    assert isinstance(instance, cellsheet::Multiplication)
+def test_cellsheet_union_instantiation(instance):
+    assert isinstance(instance, cellsheet_Union)
 
-@given(instance=cellsheet::GTE_strategy)
+@given(instance=cellsheet_Addition_strategy)
 @settings(max_examples=50)
-def test_cellsheet::gte_instantiation(instance):
-    assert isinstance(instance, cellsheet::GTE)
+def test_cellsheet_addition_instantiation(instance):
+    assert isinstance(instance, cellsheet_Addition)
 
-@given(instance=cellsheet::Subtraction_strategy)
+@given(instance=cellsheet_NEQ_strategy)
 @settings(max_examples=50)
-def test_cellsheet::subtraction_instantiation(instance):
-    assert isinstance(instance, cellsheet::Subtraction)
+def test_cellsheet_neq_instantiation(instance):
+    assert isinstance(instance, cellsheet_NEQ)
 
-@given(instance=cellsheet::Intersection_strategy)
+@given(instance=cellsheet_LTE_strategy)
 @settings(max_examples=50)
-def test_cellsheet::intersection_instantiation(instance):
-    assert isinstance(instance, cellsheet::Intersection)
+def test_cellsheet_lte_instantiation(instance):
+    assert isinstance(instance, cellsheet_LTE)
 
-@given(instance=cellsheet::GT_strategy)
+@given(instance=cellsheet_Division_strategy)
 @settings(max_examples=50)
-def test_cellsheet::gt_instantiation(instance):
-    assert isinstance(instance, cellsheet::GT)
+def test_cellsheet_division_instantiation(instance):
+    assert isinstance(instance, cellsheet_Division)
 
-@given(instance=cellsheet::Addition_strategy)
+@given(instance=cellsheet_EQ_strategy)
 @settings(max_examples=50)
-def test_cellsheet::addition_instantiation(instance):
-    assert isinstance(instance, cellsheet::Addition)
+def test_cellsheet_eq_instantiation(instance):
+    assert isinstance(instance, cellsheet_EQ)
 
-@given(instance=cellsheet::NEQ_strategy)
+@given(instance=cellsheet_LT_strategy)
 @settings(max_examples=50)
-def test_cellsheet::neq_instantiation(instance):
-    assert isinstance(instance, cellsheet::NEQ)
+def test_cellsheet_lt_instantiation(instance):
+    assert isinstance(instance, cellsheet_LT)
 
-@given(instance=cellsheet::LT_strategy)
+@given(instance=cellsheet_Subtraction_strategy)
 @settings(max_examples=50)
-def test_cellsheet::lt_instantiation(instance):
-    assert isinstance(instance, cellsheet::LT)
+def test_cellsheet_subtraction_instantiation(instance):
+    assert isinstance(instance, cellsheet_Subtraction)
 
-@given(instance=cellsheet::LTE_strategy)
+@given(instance=cellsheet_Multiplication_strategy)
 @settings(max_examples=50)
-def test_cellsheet::lte_instantiation(instance):
-    assert isinstance(instance, cellsheet::LTE)
+def test_cellsheet_multiplication_instantiation(instance):
+    assert isinstance(instance, cellsheet_Multiplication)
 
-@given(instance=cellsheet::Concatenation_strategy)
+@given(instance=cellsheet_GTE_strategy)
 @settings(max_examples=50)
-def test_cellsheet::concatenation_instantiation(instance):
-    assert isinstance(instance, cellsheet::Concatenation)
+def test_cellsheet_gte_instantiation(instance):
+    assert isinstance(instance, cellsheet_GTE)
 
-@given(instance=cellsheet::Union_strategy)
+@given(instance=cellsheet_Intersection_strategy)
 @settings(max_examples=50)
-def test_cellsheet::union_instantiation(instance):
-    assert isinstance(instance, cellsheet::Union)
+def test_cellsheet_intersection_instantiation(instance):
+    assert isinstance(instance, cellsheet_Intersection)
 
-@given(instance=cellsheet::Division_strategy)
+@given(instance=cellsheet_Concatenation_strategy)
 @settings(max_examples=50)
-def test_cellsheet::division_instantiation(instance):
-    assert isinstance(instance, cellsheet::Division)
+def test_cellsheet_concatenation_instantiation(instance):
+    assert isinstance(instance, cellsheet_Concatenation)
 
-@given(instance=cellsheet::EQ_strategy)
+@given(instance=cellsheet_GT_strategy)
 @settings(max_examples=50)
-def test_cellsheet::eq_instantiation(instance):
-    assert isinstance(instance, cellsheet::EQ)
+def test_cellsheet_gt_instantiation(instance):
+    assert isinstance(instance, cellsheet_GT)
 
-@given(instance=cellsheet::Exponentiation_strategy)
+@given(instance=cellsheet_Exponentiation_strategy)
 @settings(max_examples=50)
-def test_cellsheet::exponentiation_instantiation(instance):
-    assert isinstance(instance, cellsheet::Exponentiation)
+def test_cellsheet_exponentiation_instantiation(instance):
+    assert isinstance(instance, cellsheet_Exponentiation)
 
 @given(instance=PostfixOperator_strategy)
 @settings(max_examples=50)
 def test_postfixoperator_instantiation(instance):
     assert isinstance(instance, PostfixOperator)
 
-@given(instance=cellsheet::Percent_strategy)
+@given(instance=cellsheet_Percent_strategy)
 @settings(max_examples=50)
-def test_cellsheet::percent_instantiation(instance):
-    assert isinstance(instance, cellsheet::Percent)
+def test_cellsheet_percent_instantiation(instance):
+    assert isinstance(instance, cellsheet_Percent)
 
 @given(instance=PrefixOperator_strategy)
 @settings(max_examples=50)
 def test_prefixoperator_instantiation(instance):
     assert isinstance(instance, PrefixOperator)
 
-@given(instance=cellsheet::Negation_strategy)
+@given(instance=cellsheet_Negation_strategy)
 @settings(max_examples=50)
-def test_cellsheet::negation_instantiation(instance):
-    assert isinstance(instance, cellsheet::Negation)
+def test_cellsheet_negation_instantiation(instance):
+    assert isinstance(instance, cellsheet_Negation)
 
-@given(instance=cellsheet::Plus_strategy)
+@given(instance=cellsheet_Plus_strategy)
 @settings(max_examples=50)
-def test_cellsheet::plus_instantiation(instance):
-    assert isinstance(instance, cellsheet::Plus)
+def test_cellsheet_plus_instantiation(instance):
+    assert isinstance(instance, cellsheet_Plus)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=cellsheet::Function_strategy)
+@given(instance=cellsheet_Function_strategy)
 @settings(max_examples=50)
-def test_cellsheet::function_instantiation(instance):
-    assert isinstance(instance, cellsheet::Function)
+def test_cellsheet_function_instantiation(instance):
+    assert isinstance(instance, cellsheet_Function)
 
 @given(instance=Ref_strategy)
 @settings(max_examples=50)
 def test_ref_instantiation(instance):
     assert isinstance(instance, Ref)
 
-@given(instance=cellsheet::RelativeRange_strategy)
+@given(instance=cellsheet_RelativeRange_strategy)
 @settings(max_examples=50)
-def test_cellsheet::relativerange_instantiation(instance):
-    assert isinstance(instance, cellsheet::RelativeRange)
+def test_cellsheet_relativerange_instantiation(instance):
+    assert isinstance(instance, cellsheet_RelativeRange)
 
-@given(instance=cellsheet::RelativeRef_strategy)
+@given(instance=cellsheet_RelativeRef_strategy)
 @settings(max_examples=50)
-def test_cellsheet::relativeref_instantiation(instance):
-    assert isinstance(instance, cellsheet::RelativeRef)
+def test_cellsheet_relativeref_instantiation(instance):
+    assert isinstance(instance, cellsheet_RelativeRef)
 
 @given(instance=Operand_strategy)
 @settings(max_examples=50)
 def test_operand_instantiation(instance):
     assert isinstance(instance, Operand)
 
-@given(instance=cellsheet::Error_strategy)
+@given(instance=cellsheet_Error_strategy)
 @settings(max_examples=50)
-def test_cellsheet::error_instantiation(instance):
-    assert isinstance(instance, cellsheet::Error)
+def test_cellsheet_error_instantiation(instance):
+    assert isinstance(instance, cellsheet_Error)
 
-@given(instance=cellsheet::Logical_strategy)
+@given(instance=cellsheet_Number_strategy)
 @settings(max_examples=50)
-def test_cellsheet::logical_instantiation(instance):
-    assert isinstance(instance, cellsheet::Logical)
+def test_cellsheet_number_instantiation(instance):
+    assert isinstance(instance, cellsheet_Number)
 
-@given(instance=cellsheet::Number_strategy)
+@given(instance=cellsheet_Ref_strategy)
 @settings(max_examples=50)
-def test_cellsheet::number_instantiation(instance):
-    assert isinstance(instance, cellsheet::Number)
+def test_cellsheet_ref_instantiation(instance):
+    assert isinstance(instance, cellsheet_Ref)
 
-@given(instance=cellsheet::Ref_strategy)
+@given(instance=cellsheet_Logical_strategy)
 @settings(max_examples=50)
-def test_cellsheet::ref_instantiation(instance):
-    assert isinstance(instance, cellsheet::Ref)
+def test_cellsheet_logical_instantiation(instance):
+    assert isinstance(instance, cellsheet_Logical)
 
-@given(instance=cellsheet::Range_strategy)
+@given(instance=cellsheet_Range_strategy)
 @settings(max_examples=50)
-def test_cellsheet::range_instantiation(instance):
-    assert isinstance(instance, cellsheet::Range)
+def test_cellsheet_range_instantiation(instance):
+    assert isinstance(instance, cellsheet_Range)
 
-@given(instance=cellsheet::Text_strategy)
+@given(instance=cellsheet_Text_strategy)
 @settings(max_examples=50)
-def test_cellsheet::text_instantiation(instance):
-    assert isinstance(instance, cellsheet::Text)
+def test_cellsheet_text_instantiation(instance):
+    assert isinstance(instance, cellsheet_Text)
 
 @given(instance=Ast_strategy)
 @settings(max_examples=50)
 def test_ast_instantiation(instance):
     assert isinstance(instance, Ast)
 
-@given(instance=cellsheet::Noop_strategy)
+@given(instance=cellsheet_Unknown_strategy)
 @settings(max_examples=50)
-def test_cellsheet::noop_instantiation(instance):
-    assert isinstance(instance, cellsheet::Noop)
+def test_cellsheet_unknown_instantiation(instance):
+    assert isinstance(instance, cellsheet_Unknown)
 
-@given(instance=cellsheet::PrefixOperator_strategy)
+@given(instance=cellsheet_InfixOperator_strategy)
 @settings(max_examples=50)
-def test_cellsheet::prefixoperator_instantiation(instance):
-    assert isinstance(instance, cellsheet::PrefixOperator)
+def test_cellsheet_infixoperator_instantiation(instance):
+    assert isinstance(instance, cellsheet_InfixOperator)
 
-@given(instance=cellsheet::PostfixOperator_strategy)
+@given(instance=cellsheet_PrefixOperator_strategy)
 @settings(max_examples=50)
-def test_cellsheet::postfixoperator_instantiation(instance):
-    assert isinstance(instance, cellsheet::PostfixOperator)
+def test_cellsheet_prefixoperator_instantiation(instance):
+    assert isinstance(instance, cellsheet_PrefixOperator)
 
-@given(instance=cellsheet::Operation_strategy)
+@given(instance=cellsheet_Noop_strategy)
 @settings(max_examples=50)
-def test_cellsheet::operation_instantiation(instance):
-    assert isinstance(instance, cellsheet::Operation)
+def test_cellsheet_noop_instantiation(instance):
+    assert isinstance(instance, cellsheet_Noop)
 
-@given(instance=cellsheet::InfixOperator_strategy)
+@given(instance=cellsheet_Operation_strategy)
 @settings(max_examples=50)
-def test_cellsheet::infixoperator_instantiation(instance):
-    assert isinstance(instance, cellsheet::InfixOperator)
+def test_cellsheet_operation_instantiation(instance):
+    assert isinstance(instance, cellsheet_Operation)
 
-@given(instance=cellsheet::Unknown_strategy)
+@given(instance=cellsheet_PostfixOperator_strategy)
 @settings(max_examples=50)
-def test_cellsheet::unknown_instantiation(instance):
-    assert isinstance(instance, cellsheet::Unknown)
+def test_cellsheet_postfixoperator_instantiation(instance):
+    assert isinstance(instance, cellsheet_PostfixOperator)
 
-@given(instance=cellsheet::Operand_strategy)
+@given(instance=cellsheet_Operand_strategy)
 @settings(max_examples=50)
-def test_cellsheet::operand_instantiation(instance):
-    assert isinstance(instance, cellsheet::Operand)
+def test_cellsheet_operand_instantiation(instance):
+    assert isinstance(instance, cellsheet_Operand)
 
-@given(instance=cellsheet::AstEval_strategy)
+@given(instance=cellsheet_AstEval_strategy)
 @settings(max_examples=50)
-def test_cellsheet::asteval_instantiation(instance):
-    assert isinstance(instance, cellsheet::AstEval)
-
-@given(instance=cellsheet::AstEval_strategy)
-def test_cellsheet::asteval_numberValue_type(instance):
-    assert isinstance(instance.numberValue, str)
+def test_cellsheet_asteval_instantiation(instance):
+    assert isinstance(instance, cellsheet_AstEval)
 
 
-@given(instance=cellsheet::AstEval_strategy)
-def test_cellsheet::asteval_numberValue_setter(instance):
+
+@given(instance=cellsheet_AstEval_strategy)
+def test_cellsheet_asteval_numberValue_setter(instance):
     original = instance.numberValue
     instance.numberValue = original
     assert instance.numberValue == original
 
-@given(instance=cellsheet::AstEval_strategy)
-def test_cellsheet::asteval_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=cellsheet::AstEval_strategy)
-def test_cellsheet::asteval_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=cellsheet::AstEval_strategy)
-def test_cellsheet::asteval_isError_type(instance):
-    assert isinstance(instance.isError, bool)
-
-
-@given(instance=cellsheet::AstEval_strategy)
-def test_cellsheet::asteval_isError_setter(instance):
+@given(instance=cellsheet_AstEval_strategy)
+def test_cellsheet_asteval_isError_setter(instance):
     original = instance.isError
     instance.isError = original
     assert instance.isError == original
+
+
+
+@given(instance=cellsheet_AstEval_strategy)
+def test_cellsheet_asteval_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
 
 @given(instance=Cell_strategy)
 @settings(max_examples=50)
 def test_cell_instantiation(instance):
     assert isinstance(instance, Cell)
 
-@given(instance=cellsheet::BooleanCell_strategy)
+@given(instance=cellsheet_DateCell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::booleancell_instantiation(instance):
-    assert isinstance(instance, cellsheet::BooleanCell)
-
-@given(instance=cellsheet::BooleanCell_strategy)
-def test_cellsheet::booleancell_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_datecell_instantiation(instance):
+    assert isinstance(instance, cellsheet_DateCell)
 
 
-@given(instance=cellsheet::BooleanCell_strategy)
-def test_cellsheet::booleancell_value_setter(instance):
+
+@given(instance=cellsheet_DateCell_strategy)
+def test_cellsheet_datecell_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::TextCell_strategy)
+@given(instance=cellsheet_TextCell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::textcell_instantiation(instance):
-    assert isinstance(instance, cellsheet::TextCell)
-
-@given(instance=cellsheet::TextCell_strategy)
-def test_cellsheet::textcell_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_textcell_instantiation(instance):
+    assert isinstance(instance, cellsheet_TextCell)
 
 
-@given(instance=cellsheet::TextCell_strategy)
-def test_cellsheet::textcell_value_setter(instance):
+
+@given(instance=cellsheet_TextCell_strategy)
+def test_cellsheet_textcell_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::NumericCell_strategy)
+@given(instance=cellsheet_FormulaCell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::numericcell_instantiation(instance):
-    assert isinstance(instance, cellsheet::NumericCell)
-
-@given(instance=cellsheet::NumericCell_strategy)
-def test_cellsheet::numericcell_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_formulacell_instantiation(instance):
+    assert isinstance(instance, cellsheet_FormulaCell)
 
 
-@given(instance=cellsheet::NumericCell_strategy)
-def test_cellsheet::numericcell_value_setter(instance):
+
+@given(instance=cellsheet_FormulaCell_strategy)
+def test_cellsheet_formulacell_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::FormulaCell_strategy)
+@given(instance=cellsheet_BooleanCell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::formulacell_instantiation(instance):
-    assert isinstance(instance, cellsheet::FormulaCell)
-
-@given(instance=cellsheet::FormulaCell_strategy)
-def test_cellsheet::formulacell_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_booleancell_instantiation(instance):
+    assert isinstance(instance, cellsheet_BooleanCell)
 
 
-@given(instance=cellsheet::FormulaCell_strategy)
-def test_cellsheet::formulacell_value_setter(instance):
+
+@given(instance=cellsheet_BooleanCell_strategy)
+def test_cellsheet_booleancell_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::DateCell_strategy)
+@given(instance=cellsheet_NumericCell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::datecell_instantiation(instance):
-    assert isinstance(instance, cellsheet::DateCell)
-
-@given(instance=cellsheet::DateCell_strategy)
-def test_cellsheet::datecell_value_type(instance):
-    assert isinstance(instance.value, date)
+def test_cellsheet_numericcell_instantiation(instance):
+    assert isinstance(instance, cellsheet_NumericCell)
 
 
-@given(instance=cellsheet::DateCell_strategy)
-def test_cellsheet::datecell_value_setter(instance):
+
+@given(instance=cellsheet_NumericCell_strategy)
+def test_cellsheet_numericcell_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::BlankCell_strategy)
+@given(instance=cellsheet_BlankCell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::blankcell_instantiation(instance):
-    assert isinstance(instance, cellsheet::BlankCell)
-
-@given(instance=cellsheet::BlankCell_strategy)
-def test_cellsheet::blankcell_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_blankcell_instantiation(instance):
+    assert isinstance(instance, cellsheet_BlankCell)
 
 
-@given(instance=cellsheet::BlankCell_strategy)
-def test_cellsheet::blankcell_value_setter(instance):
+
+@given(instance=cellsheet_BlankCell_strategy)
+def test_cellsheet_blankcell_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::Ast_strategy)
+@given(instance=cellsheet_Ast_strategy)
 @settings(max_examples=50)
-def test_cellsheet::ast_instantiation(instance):
-    assert isinstance(instance, cellsheet::Ast)
+def test_cellsheet_ast_instantiation(instance):
+    assert isinstance(instance, cellsheet_Ast)
 
 @given(instance=HasA1_strategy)
 @settings(max_examples=50)
@@ -1705,162 +1678,132 @@ def test_hasa1_instantiation(instance):
 def test_hasid_instantiation(instance):
     assert isinstance(instance, HasId)
 
-@given(instance=cellsheet::Row_strategy)
+@given(instance=cellsheet_CellFormat_strategy)
 @settings(max_examples=50)
-def test_cellsheet::row_instantiation(instance):
-    assert isinstance(instance, cellsheet::Row)
-
-@given(instance=cellsheet::Row_strategy)
-def test_cellsheet::row_rowIndex_type(instance):
-    assert isinstance(instance.rowIndex, int)
+def test_cellsheet_cellformat_instantiation(instance):
+    assert isinstance(instance, cellsheet_CellFormat)
 
 
-@given(instance=cellsheet::Row_strategy)
-def test_cellsheet::row_rowIndex_setter(instance):
+
+@given(instance=cellsheet_CellFormat_strategy)
+def test_cellsheet_cellformat_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=cellsheet_Row_strategy)
+@settings(max_examples=50)
+def test_cellsheet_row_instantiation(instance):
+    assert isinstance(instance, cellsheet_Row)
+
+
+
+@given(instance=cellsheet_Row_strategy)
+def test_cellsheet_row_rowIndex_setter(instance):
     original = instance.rowIndex
     instance.rowIndex = original
     assert instance.rowIndex == original
 
-@given(instance=cellsheet::Cell_strategy)
+@given(instance=cellsheet_Cell_strategy)
 @settings(max_examples=50)
-def test_cellsheet::cell_instantiation(instance):
-    assert isinstance(instance, cellsheet::Cell)
-
-@given(instance=cellsheet::Cell_strategy)
-def test_cellsheet::cell_colIndex_type(instance):
-    assert isinstance(instance.colIndex, int)
+def test_cellsheet_cell_instantiation(instance):
+    assert isinstance(instance, cellsheet_Cell)
 
 
-@given(instance=cellsheet::Cell_strategy)
-def test_cellsheet::cell_colIndex_setter(instance):
+
+@given(instance=cellsheet_Cell_strategy)
+def test_cellsheet_cell_colIndex_setter(instance):
     original = instance.colIndex
     instance.colIndex = original
     assert instance.colIndex == original
 
-@given(instance=cellsheet::Sheet_strategy)
+@given(instance=cellsheet_Sheet_strategy)
 @settings(max_examples=50)
-def test_cellsheet::sheet_instantiation(instance):
-    assert isinstance(instance, cellsheet::Sheet)
-
-@given(instance=cellsheet::Sheet_strategy)
-def test_cellsheet::sheet_sheetIndex_type(instance):
-    assert isinstance(instance.sheetIndex, int)
+def test_cellsheet_sheet_instantiation(instance):
+    assert isinstance(instance, cellsheet_Sheet)
 
 
-@given(instance=cellsheet::Sheet_strategy)
-def test_cellsheet::sheet_sheetIndex_setter(instance):
+
+@given(instance=cellsheet_Sheet_strategy)
+def test_cellsheet_sheet_sheetIndex_setter(instance):
     original = instance.sheetIndex
     instance.sheetIndex = original
     assert instance.sheetIndex == original
 
-@given(instance=cellsheet::Sheet_strategy)
-def test_cellsheet::sheet_sheetName_type(instance):
-    assert isinstance(instance.sheetName, str)
 
 
-@given(instance=cellsheet::Sheet_strategy)
-def test_cellsheet::sheet_sheetName_setter(instance):
+@given(instance=cellsheet_Sheet_strategy)
+def test_cellsheet_sheet_sheetName_setter(instance):
     original = instance.sheetName
     instance.sheetName = original
     assert instance.sheetName == original
 
-@given(instance=cellsheet::CellFormat_strategy)
+@given(instance=cellsheet_Book_strategy)
 @settings(max_examples=50)
-def test_cellsheet::cellformat_instantiation(instance):
-    assert isinstance(instance, cellsheet::CellFormat)
-
-@given(instance=cellsheet::CellFormat_strategy)
-def test_cellsheet::cellformat_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_book_instantiation(instance):
+    assert isinstance(instance, cellsheet_Book)
 
 
-@given(instance=cellsheet::CellFormat_strategy)
-def test_cellsheet::cellformat_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=cellsheet::Book_strategy)
-@settings(max_examples=50)
-def test_cellsheet::book_instantiation(instance):
-    assert isinstance(instance, cellsheet::Book)
-
-@given(instance=cellsheet::Book_strategy)
-def test_cellsheet::book_bookname_type(instance):
-    assert isinstance(instance.bookname, str)
-
-
-@given(instance=cellsheet::Book_strategy)
-def test_cellsheet::book_bookname_setter(instance):
+@given(instance=cellsheet_Book_strategy)
+def test_cellsheet_book_bookname_setter(instance):
     original = instance.bookname
     instance.bookname = original
     assert instance.bookname == original
 
-@given(instance=cellsheet::Workspace_strategy)
+@given(instance=cellsheet_Workspace_strategy)
 @settings(max_examples=50)
-def test_cellsheet::workspace_instantiation(instance):
-    assert isinstance(instance, cellsheet::Workspace)
+def test_cellsheet_workspace_instantiation(instance):
+    assert isinstance(instance, cellsheet_Workspace)
 
-@given(instance=cellsheet::HasId_strategy)
+@given(instance=cellsheet_HasId_strategy)
 @settings(max_examples=50)
-def test_cellsheet::hasid_instantiation(instance):
-    assert isinstance(instance, cellsheet::HasId)
-
-@given(instance=cellsheet::HasId_strategy)
-def test_cellsheet::hasid_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_cellsheet_hasid_instantiation(instance):
+    assert isinstance(instance, cellsheet_HasId)
 
 
-@given(instance=cellsheet::HasId_strategy)
-def test_cellsheet::hasid_id_setter(instance):
+
+@given(instance=cellsheet_HasId_strategy)
+def test_cellsheet_hasid_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=cellsheet::HasA1_strategy)
+@given(instance=cellsheet_HasA1_strategy)
 @settings(max_examples=50)
-def test_cellsheet::hasa1_instantiation(instance):
-    assert isinstance(instance, cellsheet::HasA1)
-
-@given(instance=cellsheet::HasA1_strategy)
-def test_cellsheet::hasa1_a1_type(instance):
-    assert isinstance(instance.a1, str)
+def test_cellsheet_hasa1_instantiation(instance):
+    assert isinstance(instance, cellsheet_HasA1)
 
 
-@given(instance=cellsheet::HasA1_strategy)
-def test_cellsheet::hasa1_a1_setter(instance):
+
+@given(instance=cellsheet_HasA1_strategy)
+def test_cellsheet_hasa1_a1_setter(instance):
     original = instance.a1
     instance.a1 = original
     assert instance.a1 == original
 
-@given(instance=cellsheet::Token_strategy)
+@given(instance=cellsheet_Token_strategy)
 @settings(max_examples=50)
-def test_cellsheet::token_instantiation(instance):
-    assert isinstance(instance, cellsheet::Token)
-
-@given(instance=cellsheet::Token_strategy)
-def test_cellsheet::token_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cellsheet_token_instantiation(instance):
+    assert isinstance(instance, cellsheet_Token)
 
 
-@given(instance=cellsheet::Token_strategy)
-def test_cellsheet::token_value_setter(instance):
+
+@given(instance=cellsheet_Token_strategy)
+def test_cellsheet_token_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cellsheet::EStringToTokenEntry_strategy)
+@given(instance=cellsheet_EStringToTokenEntry_strategy)
 @settings(max_examples=50)
-def test_cellsheet::estringtotokenentry_instantiation(instance):
-    assert isinstance(instance, cellsheet::EStringToTokenEntry)
-
-@given(instance=cellsheet::EStringToTokenEntry_strategy)
-def test_cellsheet::estringtotokenentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_cellsheet_estringtotokenentry_instantiation(instance):
+    assert isinstance(instance, cellsheet_EStringToTokenEntry)
 
 
-@given(instance=cellsheet::EStringToTokenEntry_strategy)
-def test_cellsheet::estringtotokenentry_key_setter(instance):
+
+@given(instance=cellsheet_EStringToTokenEntry_strategy)
+def test_cellsheet_estringtotokenentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original

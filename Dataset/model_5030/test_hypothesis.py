@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pickupnet::GeoLocation,
-    pickupnet::Address,
-    pickupnet::Station,
-    pickupnet::Shipment,
-    pickupnet::Driver,
-    pickupnet::Customer,
+from python_code import (
+    pickupnet_GeoLocation,
+    pickupnet_Address,
+    pickupnet_Station,
+    pickupnet_Shipment,
+    pickupnet_Driver,
+    pickupnet_Customer,
     ShipmentStatus,
 )
 
@@ -21,57 +21,57 @@ from classes import (
 
 
 
-def test_pickupnet::geolocation_is_not_abstract():
-    assert not inspect.isabstract(pickupnet::GeoLocation)
+def test_pickupnet_geolocation_is_not_abstract():
+    assert not inspect.isabstract(pickupnet_GeoLocation)
 
 
-def test_pickupnet::geolocation_constructor_exists():
-    assert callable(pickupnet::GeoLocation.__init__)
+def test_pickupnet_geolocation_constructor_exists():
+    assert callable(pickupnet_GeoLocation.__init__)
 
 
-def test_pickupnet::geolocation_constructor_args():
-    sig = inspect.signature(pickupnet::GeoLocation.__init__)
+def test_pickupnet_geolocation_constructor_args():
+    sig = inspect.signature(pickupnet_GeoLocation.__init__)
     params = list(sig.parameters.keys())
-    assert "lat" in params, "Missing parameter 'lat'"
     assert "lon" in params, "Missing parameter 'lon'"
+    assert "lat" in params, "Missing parameter 'lat'"
 
-def test_pickupnet::geolocation_has_lat():
-    assert hasattr(pickupnet::GeoLocation, "lat")
+def test_pickupnet_geolocation_has_lon():
+    assert hasattr(pickupnet_GeoLocation, "lon")
     descriptor = None
-    for klass in pickupnet::GeoLocation.__mro__:
-        if "lat" in klass.__dict__:
-            descriptor = klass.__dict__["lat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pickupnet::geolocation_has_lon():
-    assert hasattr(pickupnet::GeoLocation, "lon")
-    descriptor = None
-    for klass in pickupnet::GeoLocation.__mro__:
+    for klass in pickupnet_GeoLocation.__mro__:
         if "lon" in klass.__dict__:
             descriptor = klass.__dict__["lon"]
             break
     assert isinstance(descriptor, property)
 
+def test_pickupnet_geolocation_has_lat():
+    assert hasattr(pickupnet_GeoLocation, "lat")
+    descriptor = None
+    for klass in pickupnet_GeoLocation.__mro__:
+        if "lat" in klass.__dict__:
+            descriptor = klass.__dict__["lat"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_pickupnet::address_is_not_abstract():
-    assert not inspect.isabstract(pickupnet::Address)
+
+def test_pickupnet_address_is_not_abstract():
+    assert not inspect.isabstract(pickupnet_Address)
 
 
-def test_pickupnet::address_constructor_exists():
-    assert callable(pickupnet::Address.__init__)
+def test_pickupnet_address_constructor_exists():
+    assert callable(pickupnet_Address.__init__)
 
 
-def test_pickupnet::address_constructor_args():
-    sig = inspect.signature(pickupnet::Address.__init__)
+def test_pickupnet_address_constructor_args():
+    sig = inspect.signature(pickupnet_Address.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_pickupnet::address_has_text():
-    assert hasattr(pickupnet::Address, "text")
+def test_pickupnet_address_has_text():
+    assert hasattr(pickupnet_Address, "text")
     descriptor = None
-    for klass in pickupnet::Address.__mro__:
+    for klass in pickupnet_Address.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -79,125 +79,125 @@ def test_pickupnet::address_has_text():
 
 
 
-def test_pickupnet::station_is_not_abstract():
-    assert not inspect.isabstract(pickupnet::Station)
+def test_pickupnet_station_is_not_abstract():
+    assert not inspect.isabstract(pickupnet_Station)
 
 
-def test_pickupnet::station_constructor_exists():
-    assert callable(pickupnet::Station.__init__)
+def test_pickupnet_station_constructor_exists():
+    assert callable(pickupnet_Station.__init__)
 
 
-def test_pickupnet::station_constructor_args():
-    sig = inspect.signature(pickupnet::Station.__init__)
+def test_pickupnet_station_constructor_args():
+    sig = inspect.signature(pickupnet_Station.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pickupnet::shipment_is_not_abstract():
-    assert not inspect.isabstract(pickupnet::Shipment)
+def test_pickupnet_shipment_is_not_abstract():
+    assert not inspect.isabstract(pickupnet_Shipment)
 
 
-def test_pickupnet::shipment_constructor_exists():
-    assert callable(pickupnet::Shipment.__init__)
+def test_pickupnet_shipment_constructor_exists():
+    assert callable(pickupnet_Shipment.__init__)
 
 
-def test_pickupnet::shipment_constructor_args():
-    sig = inspect.signature(pickupnet::Shipment.__init__)
+def test_pickupnet_shipment_constructor_args():
+    sig = inspect.signature(pickupnet_Shipment.__init__)
     params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "status" in params, "Missing parameter 'status'"
 
-def test_pickupnet::shipment_has_status():
-    assert hasattr(pickupnet::Shipment, "status")
+def test_pickupnet_shipment_has_id():
+    assert hasattr(pickupnet_Shipment, "id")
     descriptor = None
-    for klass in pickupnet::Shipment.__mro__:
+    for klass in pickupnet_Shipment.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pickupnet_shipment_has_status():
+    assert hasattr(pickupnet_Shipment, "status")
+    descriptor = None
+    for klass in pickupnet_Shipment.__mro__:
         if "status" in klass.__dict__:
             descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
-def test_pickupnet::shipment_has_id():
-    assert hasattr(pickupnet::Shipment, "id")
-    descriptor = None
-    for klass in pickupnet::Shipment.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_pickupnet::driver_is_not_abstract():
-    assert not inspect.isabstract(pickupnet::Driver)
-
-
-def test_pickupnet::driver_constructor_exists():
-    assert callable(pickupnet::Driver.__init__)
+def test_pickupnet_driver_is_not_abstract():
+    assert not inspect.isabstract(pickupnet_Driver)
 
 
-def test_pickupnet::driver_constructor_args():
-    sig = inspect.signature(pickupnet::Driver.__init__)
+def test_pickupnet_driver_constructor_exists():
+    assert callable(pickupnet_Driver.__init__)
+
+
+def test_pickupnet_driver_constructor_args():
+    sig = inspect.signature(pickupnet_Driver.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_pickupnet::driver_has_id():
-    assert hasattr(pickupnet::Driver, "id")
+def test_pickupnet_driver_has_name():
+    assert hasattr(pickupnet_Driver, "name")
     descriptor = None
-    for klass in pickupnet::Driver.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pickupnet::driver_has_name():
-    assert hasattr(pickupnet::Driver, "name")
-    descriptor = None
-    for klass in pickupnet::Driver.__mro__:
+    for klass in pickupnet_Driver.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_pickupnet_driver_has_id():
+    assert hasattr(pickupnet_Driver, "id")
+    descriptor = None
+    for klass in pickupnet_Driver.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_pickupnet::customer_is_not_abstract():
-    assert not inspect.isabstract(pickupnet::Customer)
+
+def test_pickupnet_customer_is_not_abstract():
+    assert not inspect.isabstract(pickupnet_Customer)
 
 
-def test_pickupnet::customer_constructor_exists():
-    assert callable(pickupnet::Customer.__init__)
+def test_pickupnet_customer_constructor_exists():
+    assert callable(pickupnet_Customer.__init__)
 
 
-def test_pickupnet::customer_constructor_args():
-    sig = inspect.signature(pickupnet::Customer.__init__)
+def test_pickupnet_customer_constructor_args():
+    sig = inspect.signature(pickupnet_Customer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "twitterUserName" in params, "Missing parameter 'twitterUserName'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_pickupnet::customer_has_name():
-    assert hasattr(pickupnet::Customer, "name")
+def test_pickupnet_customer_has_name():
+    assert hasattr(pickupnet_Customer, "name")
     descriptor = None
-    for klass in pickupnet::Customer.__mro__:
+    for klass in pickupnet_Customer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_pickupnet::customer_has_twitterUserName():
-    assert hasattr(pickupnet::Customer, "twitterUserName")
+def test_pickupnet_customer_has_twitterUserName():
+    assert hasattr(pickupnet_Customer, "twitterUserName")
     descriptor = None
-    for klass in pickupnet::Customer.__mro__:
+    for klass in pickupnet_Customer.__mro__:
         if "twitterUserName" in klass.__dict__:
             descriptor = klass.__dict__["twitterUserName"]
             break
     assert isinstance(descriptor, property)
 
-def test_pickupnet::customer_has_id():
-    assert hasattr(pickupnet::Customer, "id")
+def test_pickupnet_customer_has_id():
+    assert hasattr(pickupnet_Customer, "id")
     descriptor = None
-    for klass in pickupnet::Customer.__mro__:
+    for klass in pickupnet_Customer.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -211,10 +211,10 @@ def test_shipmentstatus_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ShipmentStatus]
     expected_literals = [
-        "UNDERWAY",
         "NEW",
-        "DELIVERED",
         "ASSIGNED",
+        "UNDERWAY",
+        "DELIVERED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -232,37 +232,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pickupnet::GeoLocation_strategy = st.builds(
-    pickupnet::GeoLocation,
-    lat=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+pickupnet_GeoLocation_strategy = st.builds(
+    pickupnet_GeoLocation,
     lon=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    lat=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-pickupnet::Address_strategy = st.builds(
-    pickupnet::Address,
+pickupnet_Address_strategy = st.builds(
+    pickupnet_Address,
     text=
         safe_text
 )
-pickupnet::Station_strategy = st.builds(
-    pickupnet::Station,
+pickupnet_Station_strategy = st.builds(
+    pickupnet_Station,
 )
-pickupnet::Shipment_strategy = st.builds(
-    pickupnet::Shipment,
+pickupnet_Shipment_strategy = st.builds(
+    pickupnet_Shipment,
+    id=
+        safe_text,
     status=
-        safe_text,
-    id=
         safe_text
 )
-pickupnet::Driver_strategy = st.builds(
-    pickupnet::Driver,
-    id=
-        safe_text,
+pickupnet_Driver_strategy = st.builds(
+    pickupnet_Driver,
     name=
+        safe_text,
+    id=
         safe_text
 )
-pickupnet::Customer_strategy = st.builds(
-    pickupnet::Customer,
+pickupnet_Customer_strategy = st.builds(
+    pickupnet_Customer,
     name=
         safe_text,
     twitterUserName=
@@ -271,53 +271,44 @@ pickupnet::Customer_strategy = st.builds(
         safe_text
 )
 
-@given(instance=pickupnet::GeoLocation_strategy)
+@given(instance=pickupnet_GeoLocation_strategy)
 @settings(max_examples=50)
-def test_pickupnet::geolocation_instantiation(instance):
-    assert isinstance(instance, pickupnet::GeoLocation)
-
-@given(instance=pickupnet::GeoLocation_strategy)
-def test_pickupnet::geolocation_lat_type(instance):
-    assert isinstance(instance.lat, float)
+def test_pickupnet_geolocation_instantiation(instance):
+    assert isinstance(instance, pickupnet_GeoLocation)
 
 
-@given(instance=pickupnet::GeoLocation_strategy)
-def test_pickupnet::geolocation_lat_setter(instance):
-    original = instance.lat
-    instance.lat = original
-    assert instance.lat == original
 
-@given(instance=pickupnet::GeoLocation_strategy)
-def test_pickupnet::geolocation_lon_type(instance):
-    assert isinstance(instance.lon, float)
-
-
-@given(instance=pickupnet::GeoLocation_strategy)
-def test_pickupnet::geolocation_lon_setter(instance):
+@given(instance=pickupnet_GeoLocation_strategy)
+def test_pickupnet_geolocation_lon_setter(instance):
     original = instance.lon
     instance.lon = original
     assert instance.lon == original
 
-@given(instance=pickupnet::Address_strategy)
+
+
+@given(instance=pickupnet_GeoLocation_strategy)
+def test_pickupnet_geolocation_lat_setter(instance):
+    original = instance.lat
+    instance.lat = original
+    assert instance.lat == original
+
+@given(instance=pickupnet_Address_strategy)
 @settings(max_examples=50)
-def test_pickupnet::address_instantiation(instance):
-    assert isinstance(instance, pickupnet::Address)
-
-@given(instance=pickupnet::Address_strategy)
-def test_pickupnet::address_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_pickupnet_address_instantiation(instance):
+    assert isinstance(instance, pickupnet_Address)
 
 
-@given(instance=pickupnet::Address_strategy)
-def test_pickupnet::address_text_setter(instance):
+
+@given(instance=pickupnet_Address_strategy)
+def test_pickupnet_address_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=pickupnet::Station_strategy)
+@given(instance=pickupnet_Station_strategy)
 @settings(max_examples=50)
-def test_pickupnet::station_instantiation(instance):
-    assert isinstance(instance, pickupnet::Station)
+def test_pickupnet_station_instantiation(instance):
+    assert isinstance(instance, pickupnet_Station)
 
 import warnings
 import copy
@@ -325,71 +316,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pickupnet::Station_strategy)
+@given(instance=pickupnet_Station_strategy)
 @settings(max_examples=30)
-def test_pickupnet::station_registercustomer_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.registerCustomer(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.registerCustomer).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerCustomer' in pickupnet::Station is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerCustomer' in pickupnet::Station did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerCustomer' in pickupnet::Station is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pickupnet::Station_strategy)
-@settings(max_examples=30)
-def test_pickupnet::station_registerdriver_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.registerDriver(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.registerDriver).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerDriver' in pickupnet::Station is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerDriver' in pickupnet::Station did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerDriver' in pickupnet::Station is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pickupnet::Station_strategy)
-@settings(max_examples=30)
-def test_pickupnet::station_acceptshipment_changes_state(instance):
+def test_pickupnet_station_acceptshipment_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -403,103 +332,144 @@ def test_pickupnet::station_acceptshipment_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'acceptShipment' in pickupnet::Station is empty"
+        assert has_statements, f"Function 'acceptShipment' in pickupnet_Station is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'acceptShipment' in pickupnet::Station did not change state; check implementation")
+            warnings.warn(f"Operation 'acceptShipment' in pickupnet_Station did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'acceptShipment' in pickupnet::Station is not implemented or raised an error")
+        warnings.warn(f"Operation 'acceptShipment' in pickupnet_Station is not implemented or raised an error")
 
-@given(instance=pickupnet::Shipment_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pickupnet_Station_strategy)
+@settings(max_examples=30)
+def test_pickupnet_station_registerdriver_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.registerDriver(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.registerDriver).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'registerDriver' in pickupnet_Station is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'registerDriver' in pickupnet_Station did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'registerDriver' in pickupnet_Station is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pickupnet_Station_strategy)
+@settings(max_examples=30)
+def test_pickupnet_station_registercustomer_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.registerCustomer(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.registerCustomer).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'registerCustomer' in pickupnet_Station is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'registerCustomer' in pickupnet_Station did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'registerCustomer' in pickupnet_Station is not implemented or raised an error")
+
+@given(instance=pickupnet_Shipment_strategy)
 @settings(max_examples=50)
-def test_pickupnet::shipment_instantiation(instance):
-    assert isinstance(instance, pickupnet::Shipment)
-
-@given(instance=pickupnet::Shipment_strategy)
-def test_pickupnet::shipment_status_type(instance):
-    assert isinstance(instance.status, str)
+def test_pickupnet_shipment_instantiation(instance):
+    assert isinstance(instance, pickupnet_Shipment)
 
 
-@given(instance=pickupnet::Shipment_strategy)
-def test_pickupnet::shipment_status_setter(instance):
+
+@given(instance=pickupnet_Shipment_strategy)
+def test_pickupnet_shipment_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=pickupnet_Shipment_strategy)
+def test_pickupnet_shipment_status_setter(instance):
     original = instance.status
     instance.status = original
     assert instance.status == original
 
-@given(instance=pickupnet::Shipment_strategy)
-def test_pickupnet::shipment_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=pickupnet::Shipment_strategy)
-def test_pickupnet::shipment_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=pickupnet::Driver_strategy)
+@given(instance=pickupnet_Driver_strategy)
 @settings(max_examples=50)
-def test_pickupnet::driver_instantiation(instance):
-    assert isinstance(instance, pickupnet::Driver)
-
-@given(instance=pickupnet::Driver_strategy)
-def test_pickupnet::driver_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_pickupnet_driver_instantiation(instance):
+    assert isinstance(instance, pickupnet_Driver)
 
 
-@given(instance=pickupnet::Driver_strategy)
-def test_pickupnet::driver_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=pickupnet::Driver_strategy)
-def test_pickupnet::driver_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=pickupnet::Driver_strategy)
-def test_pickupnet::driver_name_setter(instance):
+@given(instance=pickupnet_Driver_strategy)
+def test_pickupnet_driver_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pickupnet::Customer_strategy)
+
+
+@given(instance=pickupnet_Driver_strategy)
+def test_pickupnet_driver_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=pickupnet_Customer_strategy)
 @settings(max_examples=50)
-def test_pickupnet::customer_instantiation(instance):
-    assert isinstance(instance, pickupnet::Customer)
-
-@given(instance=pickupnet::Customer_strategy)
-def test_pickupnet::customer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pickupnet_customer_instantiation(instance):
+    assert isinstance(instance, pickupnet_Customer)
 
 
-@given(instance=pickupnet::Customer_strategy)
-def test_pickupnet::customer_name_setter(instance):
+
+@given(instance=pickupnet_Customer_strategy)
+def test_pickupnet_customer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pickupnet::Customer_strategy)
-def test_pickupnet::customer_twitterUserName_type(instance):
-    assert isinstance(instance.twitterUserName, str)
 
 
-@given(instance=pickupnet::Customer_strategy)
-def test_pickupnet::customer_twitterUserName_setter(instance):
+@given(instance=pickupnet_Customer_strategy)
+def test_pickupnet_customer_twitterUserName_setter(instance):
     original = instance.twitterUserName
     instance.twitterUserName = original
     assert instance.twitterUserName == original
 
-@given(instance=pickupnet::Customer_strategy)
-def test_pickupnet::customer_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=pickupnet::Customer_strategy)
-def test_pickupnet::customer_id_setter(instance):
+@given(instance=pickupnet_Customer_strategy)
+def test_pickupnet_customer_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

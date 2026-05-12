@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    lazyBuilder::B,
-    lazyBuilder::A,
+from python_code import (
+    lazyBuilder_B,
+    lazyBuilder_A,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_lazybuilder::b_is_not_abstract():
-    assert not inspect.isabstract(lazyBuilder::B)
+def test_lazybuilder_b_is_not_abstract():
+    assert not inspect.isabstract(lazyBuilder_B)
 
 
-def test_lazybuilder::b_constructor_exists():
-    assert callable(lazyBuilder::B.__init__)
+def test_lazybuilder_b_constructor_exists():
+    assert callable(lazyBuilder_B.__init__)
 
 
-def test_lazybuilder::b_constructor_args():
-    sig = inspect.signature(lazyBuilder::B.__init__)
+def test_lazybuilder_b_constructor_args():
+    sig = inspect.signature(lazyBuilder_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lazybuilder::a_is_not_abstract():
-    assert not inspect.isabstract(lazyBuilder::A)
+def test_lazybuilder_a_is_not_abstract():
+    assert not inspect.isabstract(lazyBuilder_A)
 
 
-def test_lazybuilder::a_constructor_exists():
-    assert callable(lazyBuilder::A.__init__)
+def test_lazybuilder_a_constructor_exists():
+    assert callable(lazyBuilder_A.__init__)
 
 
-def test_lazybuilder::a_constructor_args():
-    sig = inspect.signature(lazyBuilder::A.__init__)
+def test_lazybuilder_a_constructor_args():
+    sig = inspect.signature(lazyBuilder_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-lazyBuilder::B_strategy = st.builds(
-    lazyBuilder::B,
+lazyBuilder_B_strategy = st.builds(
+    lazyBuilder_B,
 )
-lazyBuilder::A_strategy = st.builds(
-    lazyBuilder::A,
+lazyBuilder_A_strategy = st.builds(
+    lazyBuilder_A,
 )
 
-@given(instance=lazyBuilder::B_strategy)
+@given(instance=lazyBuilder_B_strategy)
 @settings(max_examples=50)
-def test_lazybuilder::b_instantiation(instance):
-    assert isinstance(instance, lazyBuilder::B)
+def test_lazybuilder_b_instantiation(instance):
+    assert isinstance(instance, lazyBuilder_B)
 
-@given(instance=lazyBuilder::A_strategy)
+@given(instance=lazyBuilder_A_strategy)
 @settings(max_examples=50)
-def test_lazybuilder::a_instantiation(instance):
-    assert isinstance(instance, lazyBuilder::A)
+def test_lazybuilder_a_instantiation(instance):
+    assert isinstance(instance, lazyBuilder_A)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    BD::Columna,
-    BD::Tabla,
-    BD::EsquemaBD,
+from python_code import (
+    BD_Columna,
+    BD_Tabla,
+    BD_EsquemaBD,
     TipoPrimitivo,
 )
 
@@ -18,57 +18,57 @@ from classes import (
 
 
 
-def test_bd::columna_is_not_abstract():
-    assert not inspect.isabstract(BD::Columna)
+def test_bd_columna_is_not_abstract():
+    assert not inspect.isabstract(BD_Columna)
 
 
-def test_bd::columna_constructor_exists():
-    assert callable(BD::Columna.__init__)
+def test_bd_columna_constructor_exists():
+    assert callable(BD_Columna.__init__)
 
 
-def test_bd::columna_constructor_args():
-    sig = inspect.signature(BD::Columna.__init__)
+def test_bd_columna_constructor_args():
+    sig = inspect.signature(BD_Columna.__init__)
     params = list(sig.parameters.keys())
-    assert "tipo" in params, "Missing parameter 'tipo'"
     assert "nombre" in params, "Missing parameter 'nombre'"
+    assert "tipo" in params, "Missing parameter 'tipo'"
 
-def test_bd::columna_has_tipo():
-    assert hasattr(BD::Columna, "tipo")
+def test_bd_columna_has_nombre():
+    assert hasattr(BD_Columna, "nombre")
     descriptor = None
-    for klass in BD::Columna.__mro__:
+    for klass in BD_Columna.__mro__:
+        if "nombre" in klass.__dict__:
+            descriptor = klass.__dict__["nombre"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bd_columna_has_tipo():
+    assert hasattr(BD_Columna, "tipo")
+    descriptor = None
+    for klass in BD_Columna.__mro__:
         if "tipo" in klass.__dict__:
             descriptor = klass.__dict__["tipo"]
             break
     assert isinstance(descriptor, property)
 
-def test_bd::columna_has_nombre():
-    assert hasattr(BD::Columna, "nombre")
-    descriptor = None
-    for klass in BD::Columna.__mro__:
-        if "nombre" in klass.__dict__:
-            descriptor = klass.__dict__["nombre"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_bd::tabla_is_not_abstract():
-    assert not inspect.isabstract(BD::Tabla)
-
-
-def test_bd::tabla_constructor_exists():
-    assert callable(BD::Tabla.__init__)
+def test_bd_tabla_is_not_abstract():
+    assert not inspect.isabstract(BD_Tabla)
 
 
-def test_bd::tabla_constructor_args():
-    sig = inspect.signature(BD::Tabla.__init__)
+def test_bd_tabla_constructor_exists():
+    assert callable(BD_Tabla.__init__)
+
+
+def test_bd_tabla_constructor_args():
+    sig = inspect.signature(BD_Tabla.__init__)
     params = list(sig.parameters.keys())
     assert "nombre" in params, "Missing parameter 'nombre'"
 
-def test_bd::tabla_has_nombre():
-    assert hasattr(BD::Tabla, "nombre")
+def test_bd_tabla_has_nombre():
+    assert hasattr(BD_Tabla, "nombre")
     descriptor = None
-    for klass in BD::Tabla.__mro__:
+    for klass in BD_Tabla.__mro__:
         if "nombre" in klass.__dict__:
             descriptor = klass.__dict__["nombre"]
             break
@@ -76,16 +76,16 @@ def test_bd::tabla_has_nombre():
 
 
 
-def test_bd::esquemabd_is_not_abstract():
-    assert not inspect.isabstract(BD::EsquemaBD)
+def test_bd_esquemabd_is_not_abstract():
+    assert not inspect.isabstract(BD_EsquemaBD)
 
 
-def test_bd::esquemabd_constructor_exists():
-    assert callable(BD::EsquemaBD.__init__)
+def test_bd_esquemabd_constructor_exists():
+    assert callable(BD_EsquemaBD.__init__)
 
 
-def test_bd::esquemabd_constructor_args():
-    sig = inspect.signature(BD::EsquemaBD.__init__)
+def test_bd_esquemabd_constructor_args():
+    sig = inspect.signature(BD_EsquemaBD.__init__)
     params = list(sig.parameters.keys())
 
 def test_tipoprimitivo_exists():
@@ -96,11 +96,11 @@ def test_tipoprimitivo_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TipoPrimitivo]
     expected_literals = [
-        "Double",
-        "Date",
-        "String",
         "Integer",
+        "Double",
         "Boolean",
+        "String",
+        "Date",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -118,66 +118,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-BD::Columna_strategy = st.builds(
-    BD::Columna,
-    tipo=
+BD_Columna_strategy = st.builds(
+    BD_Columna,
+    nombre=
         safe_text,
+    tipo=
+        safe_text
+)
+BD_Tabla_strategy = st.builds(
+    BD_Tabla,
     nombre=
         safe_text
 )
-BD::Tabla_strategy = st.builds(
-    BD::Tabla,
-    nombre=
-        safe_text
-)
-BD::EsquemaBD_strategy = st.builds(
-    BD::EsquemaBD,
+BD_EsquemaBD_strategy = st.builds(
+    BD_EsquemaBD,
 )
 
-@given(instance=BD::Columna_strategy)
+@given(instance=BD_Columna_strategy)
 @settings(max_examples=50)
-def test_bd::columna_instantiation(instance):
-    assert isinstance(instance, BD::Columna)
-
-@given(instance=BD::Columna_strategy)
-def test_bd::columna_tipo_type(instance):
-    assert isinstance(instance.tipo, str)
+def test_bd_columna_instantiation(instance):
+    assert isinstance(instance, BD_Columna)
 
 
-@given(instance=BD::Columna_strategy)
-def test_bd::columna_tipo_setter(instance):
+
+@given(instance=BD_Columna_strategy)
+def test_bd_columna_nombre_setter(instance):
+    original = instance.nombre
+    instance.nombre = original
+    assert instance.nombre == original
+
+
+
+@given(instance=BD_Columna_strategy)
+def test_bd_columna_tipo_setter(instance):
     original = instance.tipo
     instance.tipo = original
     assert instance.tipo == original
 
-@given(instance=BD::Columna_strategy)
-def test_bd::columna_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
+@given(instance=BD_Tabla_strategy)
+@settings(max_examples=50)
+def test_bd_tabla_instantiation(instance):
+    assert isinstance(instance, BD_Tabla)
 
 
-@given(instance=BD::Columna_strategy)
-def test_bd::columna_nombre_setter(instance):
+
+@given(instance=BD_Tabla_strategy)
+def test_bd_tabla_nombre_setter(instance):
     original = instance.nombre
     instance.nombre = original
     assert instance.nombre == original
 
-@given(instance=BD::Tabla_strategy)
+@given(instance=BD_EsquemaBD_strategy)
 @settings(max_examples=50)
-def test_bd::tabla_instantiation(instance):
-    assert isinstance(instance, BD::Tabla)
-
-@given(instance=BD::Tabla_strategy)
-def test_bd::tabla_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
-
-
-@given(instance=BD::Tabla_strategy)
-def test_bd::tabla_nombre_setter(instance):
-    original = instance.nombre
-    instance.nombre = original
-    assert instance.nombre == original
-
-@given(instance=BD::EsquemaBD_strategy)
-@settings(max_examples=50)
-def test_bd::esquemabd_instantiation(instance):
-    assert isinstance(instance, BD::EsquemaBD)
+def test_bd_esquemabd_instantiation(instance):
+    assert isinstance(instance, BD_EsquemaBD)

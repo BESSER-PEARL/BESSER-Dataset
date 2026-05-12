@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Connect4,
@@ -65,17 +65,17 @@ def test_gameboard_constructor_exists():
 def test_gameboard_constructor_args():
     sig = inspect.signature(GameBoard.__init__)
     params = list(sig.parameters.keys())
-    assert "player1" in params, "Missing parameter 'player1'"
+    assert "player2" in params, "Missing parameter 'player2'"
     assert "whoPlay" in params, "Missing parameter 'whoPlay'"
     assert "board" in params, "Missing parameter 'board'"
-    assert "player2" in params, "Missing parameter 'player2'"
+    assert "player1" in params, "Missing parameter 'player1'"
 
-def test_gameboard_has_player1():
-    assert hasattr(GameBoard, "player1")
+def test_gameboard_has_player2():
+    assert hasattr(GameBoard, "player2")
     descriptor = None
     for klass in GameBoard.__mro__:
-        if "player1" in klass.__dict__:
-            descriptor = klass.__dict__["player1"]
+        if "player2" in klass.__dict__:
+            descriptor = klass.__dict__["player2"]
             break
     assert isinstance(descriptor, property)
 
@@ -97,12 +97,12 @@ def test_gameboard_has_board():
             break
     assert isinstance(descriptor, property)
 
-def test_gameboard_has_player2():
-    assert hasattr(GameBoard, "player2")
+def test_gameboard_has_player1():
+    assert hasattr(GameBoard, "player1")
     descriptor = None
     for klass in GameBoard.__mro__:
-        if "player2" in klass.__dict__:
-            descriptor = klass.__dict__["player2"]
+        if "player1" in klass.__dict__:
+            descriptor = klass.__dict__["player1"]
             break
     assert isinstance(descriptor, property)
 
@@ -192,8 +192,8 @@ def test_gameboardgui_constructor_args():
     sig = inspect.signature(GameboardGUI.__init__)
     params = list(sig.parameters.keys())
     assert "rows" in params, "Missing parameter 'rows'"
-    assert "piecesList" in params, "Missing parameter 'piecesList'"
     assert "columns" in params, "Missing parameter 'columns'"
+    assert "piecesList" in params, "Missing parameter 'piecesList'"
 
 def test_gameboardgui_has_rows():
     assert hasattr(GameboardGUI, "rows")
@@ -204,21 +204,21 @@ def test_gameboardgui_has_rows():
             break
     assert isinstance(descriptor, property)
 
-def test_gameboardgui_has_piecesList():
-    assert hasattr(GameboardGUI, "piecesList")
-    descriptor = None
-    for klass in GameboardGUI.__mro__:
-        if "piecesList" in klass.__dict__:
-            descriptor = klass.__dict__["piecesList"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_gameboardgui_has_columns():
     assert hasattr(GameboardGUI, "columns")
     descriptor = None
     for klass in GameboardGUI.__mro__:
         if "columns" in klass.__dict__:
             descriptor = klass.__dict__["columns"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gameboardgui_has_piecesList():
+    assert hasattr(GameboardGUI, "piecesList")
+    descriptor = None
+    for klass in GameboardGUI.__mro__:
+        if "piecesList" in klass.__dict__:
+            descriptor = klass.__dict__["piecesList"]
             break
     assert isinstance(descriptor, property)
 
@@ -235,17 +235,8 @@ def test_piece_constructor_exists():
 def test_piece_constructor_args():
     sig = inspect.signature(Piece.__init__)
     params = list(sig.parameters.keys())
-    assert "pieceSize" in params, "Missing parameter 'pieceSize'"
     assert "pieceColor" in params, "Missing parameter 'pieceColor'"
-
-def test_piece_has_pieceSize():
-    assert hasattr(Piece, "pieceSize")
-    descriptor = None
-    for klass in Piece.__mro__:
-        if "pieceSize" in klass.__dict__:
-            descriptor = klass.__dict__["pieceSize"]
-            break
-    assert isinstance(descriptor, property)
+    assert "pieceSize" in params, "Missing parameter 'pieceSize'"
 
 def test_piece_has_pieceColor():
     assert hasattr(Piece, "pieceColor")
@@ -253,6 +244,15 @@ def test_piece_has_pieceColor():
     for klass in Piece.__mro__:
         if "pieceColor" in klass.__dict__:
             descriptor = klass.__dict__["pieceColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_piece_has_pieceSize():
+    assert hasattr(Piece, "pieceSize")
+    descriptor = None
+    for klass in Piece.__mro__:
+        if "pieceSize" in klass.__dict__:
+            descriptor = klass.__dict__["pieceSize"]
             break
     assert isinstance(descriptor, property)
 
@@ -303,17 +303,8 @@ def test_aiplayer_constructor_exists():
 def test_aiplayer_constructor_args():
     sig = inspect.signature(AIplayer.__init__)
     params = list(sig.parameters.keys())
-    assert "score" in params, "Missing parameter 'score'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_aiplayer_has_score():
-    assert hasattr(AIplayer, "score")
-    descriptor = None
-    for klass in AIplayer.__mro__:
-        if "score" in klass.__dict__:
-            descriptor = klass.__dict__["score"]
-            break
-    assert isinstance(descriptor, property)
+    assert "score" in params, "Missing parameter 'score'"
 
 def test_aiplayer_has_name():
     assert hasattr(AIplayer, "name")
@@ -321,6 +312,15 @@ def test_aiplayer_has_name():
     for klass in AIplayer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aiplayer_has_score():
+    assert hasattr(AIplayer, "score")
+    descriptor = None
+    for klass in AIplayer.__mro__:
+        if "score" in klass.__dict__:
+            descriptor = klass.__dict__["score"]
             break
     assert isinstance(descriptor, property)
 
@@ -392,13 +392,13 @@ MainMenuGUI_strategy = st.builds(
 )
 GameBoard_strategy = st.builds(
     GameBoard,
-    player1=
+    player2=
         st.none(),
     whoPlay=
         safe_text,
     board=
         safe_text,
-    player2=
+    player1=
         st.none()
 )
 ScoreBoardGUI_strategy = st.builds(
@@ -420,17 +420,17 @@ GameboardGUI_strategy = st.builds(
     GameboardGUI,
     rows=
         st.integers(),
-    piecesList=
-        safe_text,
     columns=
-        st.integers()
+        st.integers(),
+    piecesList=
+        safe_text
 )
 Piece_strategy = st.builds(
     Piece,
-    pieceSize=
-        st.integers(),
     pieceColor=
-        safe_text
+        safe_text,
+    pieceSize=
+        st.integers()
 )
 RandomPlayer_strategy = st.builds(
     RandomPlayer,
@@ -441,9 +441,9 @@ RandomPlayer_strategy = st.builds(
 )
 AIplayer_strategy = st.builds(
     AIplayer,
-    score=
-        safe_text,
     name=
+        safe_text,
+    score=
         safe_text
 )
 ConsolePlayer_strategy = st.builds(
@@ -472,42 +472,6 @@ def test_mainmenugui_instantiation(instance):
 def test_gameboard_instantiation(instance):
     assert isinstance(instance, GameBoard)
 
-@given(instance=GameBoard_strategy)
-def test_gameboard_player1_type(instance):
-    assert isinstance(instance.player1, player_interface)
-
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_player1_setter(instance):
-    original = instance.player1
-    instance.player1 = original
-    assert instance.player1 == original
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_whoPlay_type(instance):
-    assert isinstance(instance.whoPlay, str)
-
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_whoPlay_setter(instance):
-    original = instance.whoPlay
-    instance.whoPlay = original
-    assert instance.whoPlay == original
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_board_type(instance):
-    assert isinstance(instance.board, str)
-
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_board_setter(instance):
-    original = instance.board
-    instance.board = original
-    assert instance.board == original
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_player2_type(instance):
-    assert isinstance(instance.player2, player_interface)
 
 
 @given(instance=GameBoard_strategy)
@@ -516,14 +480,35 @@ def test_gameboard_player2_setter(instance):
     instance.player2 = original
     assert instance.player2 == original
 
+
+
+@given(instance=GameBoard_strategy)
+def test_gameboard_whoPlay_setter(instance):
+    original = instance.whoPlay
+    instance.whoPlay = original
+    assert instance.whoPlay == original
+
+
+
+@given(instance=GameBoard_strategy)
+def test_gameboard_board_setter(instance):
+    original = instance.board
+    instance.board = original
+    assert instance.board == original
+
+
+
+@given(instance=GameBoard_strategy)
+def test_gameboard_player1_setter(instance):
+    original = instance.player1
+    instance.player1 = original
+    assert instance.player1 == original
+
 @given(instance=ScoreBoardGUI_strategy)
 @settings(max_examples=50)
 def test_scoreboardgui_instantiation(instance):
     assert isinstance(instance, ScoreBoardGUI)
 
-@given(instance=ScoreBoardGUI_strategy)
-def test_scoreboardgui_playersList_type(instance):
-    assert isinstance(instance.playersList, str)
 
 
 @given(instance=ScoreBoardGUI_strategy)
@@ -542,9 +527,6 @@ def test_button_instantiation(instance):
 def test_connect4gui_instantiation(instance):
     assert isinstance(instance, Connect4GUI)
 
-@given(instance=Connect4GUI_strategy)
-def test_connect4gui_undo_type(instance):
-    assert isinstance(instance.undo, button)
 
 
 @given(instance=Connect4GUI_strategy)
@@ -553,9 +535,6 @@ def test_connect4gui_undo_setter(instance):
     instance.undo = original
     assert instance.undo == original
 
-@given(instance=Connect4GUI_strategy)
-def test_connect4gui_root_type(instance):
-    assert isinstance(instance.root, str)
 
 
 @given(instance=Connect4GUI_strategy)
@@ -569,9 +548,6 @@ def test_connect4gui_root_setter(instance):
 def test_gameboardgui_instantiation(instance):
     assert isinstance(instance, GameboardGUI)
 
-@given(instance=GameboardGUI_strategy)
-def test_gameboardgui_rows_type(instance):
-    assert isinstance(instance.rows, int)
 
 
 @given(instance=GameboardGUI_strategy)
@@ -580,20 +556,6 @@ def test_gameboardgui_rows_setter(instance):
     instance.rows = original
     assert instance.rows == original
 
-@given(instance=GameboardGUI_strategy)
-def test_gameboardgui_piecesList_type(instance):
-    assert isinstance(instance.piecesList, str)
-
-
-@given(instance=GameboardGUI_strategy)
-def test_gameboardgui_piecesList_setter(instance):
-    original = instance.piecesList
-    instance.piecesList = original
-    assert instance.piecesList == original
-
-@given(instance=GameboardGUI_strategy)
-def test_gameboardgui_columns_type(instance):
-    assert isinstance(instance.columns, int)
 
 
 @given(instance=GameboardGUI_strategy)
@@ -602,25 +564,19 @@ def test_gameboardgui_columns_setter(instance):
     instance.columns = original
     assert instance.columns == original
 
+
+
+@given(instance=GameboardGUI_strategy)
+def test_gameboardgui_piecesList_setter(instance):
+    original = instance.piecesList
+    instance.piecesList = original
+    assert instance.piecesList == original
+
 @given(instance=Piece_strategy)
 @settings(max_examples=50)
 def test_piece_instantiation(instance):
     assert isinstance(instance, Piece)
 
-@given(instance=Piece_strategy)
-def test_piece_pieceSize_type(instance):
-    assert isinstance(instance.pieceSize, int)
-
-
-@given(instance=Piece_strategy)
-def test_piece_pieceSize_setter(instance):
-    original = instance.pieceSize
-    instance.pieceSize = original
-    assert instance.pieceSize == original
-
-@given(instance=Piece_strategy)
-def test_piece_pieceColor_type(instance):
-    assert isinstance(instance.pieceColor, str)
 
 
 @given(instance=Piece_strategy)
@@ -629,14 +585,19 @@ def test_piece_pieceColor_setter(instance):
     instance.pieceColor = original
     assert instance.pieceColor == original
 
+
+
+@given(instance=Piece_strategy)
+def test_piece_pieceSize_setter(instance):
+    original = instance.pieceSize
+    instance.pieceSize = original
+    assert instance.pieceSize == original
+
 @given(instance=RandomPlayer_strategy)
 @settings(max_examples=50)
 def test_randomplayer_instantiation(instance):
     assert isinstance(instance, RandomPlayer)
 
-@given(instance=RandomPlayer_strategy)
-def test_randomplayer_score_type(instance):
-    assert isinstance(instance.score, str)
 
 
 @given(instance=RandomPlayer_strategy)
@@ -645,9 +606,6 @@ def test_randomplayer_score_setter(instance):
     instance.score = original
     assert instance.score == original
 
-@given(instance=RandomPlayer_strategy)
-def test_randomplayer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=RandomPlayer_strategy)
@@ -661,20 +619,6 @@ def test_randomplayer_name_setter(instance):
 def test_aiplayer_instantiation(instance):
     assert isinstance(instance, AIplayer)
 
-@given(instance=AIplayer_strategy)
-def test_aiplayer_score_type(instance):
-    assert isinstance(instance.score, str)
-
-
-@given(instance=AIplayer_strategy)
-def test_aiplayer_score_setter(instance):
-    original = instance.score
-    instance.score = original
-    assert instance.score == original
-
-@given(instance=AIplayer_strategy)
-def test_aiplayer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=AIplayer_strategy)
@@ -683,14 +627,19 @@ def test_aiplayer_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=AIplayer_strategy)
+def test_aiplayer_score_setter(instance):
+    original = instance.score
+    instance.score = original
+    assert instance.score == original
+
 @given(instance=ConsolePlayer_strategy)
 @settings(max_examples=50)
 def test_consoleplayer_instantiation(instance):
     assert isinstance(instance, ConsolePlayer)
 
-@given(instance=ConsolePlayer_strategy)
-def test_consoleplayer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=ConsolePlayer_strategy)
@@ -699,9 +648,6 @@ def test_consoleplayer_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=ConsolePlayer_strategy)
-def test_consoleplayer_score_type(instance):
-    assert isinstance(instance.score, str)
 
 
 @given(instance=ConsolePlayer_strategy)

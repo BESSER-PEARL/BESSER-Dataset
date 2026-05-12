@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Edge,
-    graph::Vertex,
-    graph::Graph,
+from python_code import (
+    graph_Edge,
+    graph_Vertex,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -17,47 +17,47 @@ from classes import (
 
 
 
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(graph::Edge)
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(graph_Edge)
 
 
-def test_graph::edge_constructor_exists():
-    assert callable(graph::Edge.__init__)
+def test_graph_edge_constructor_exists():
+    assert callable(graph_Edge.__init__)
 
 
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(graph::Edge.__init__)
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(graph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::vertex_is_not_abstract():
-    assert not inspect.isabstract(graph::Vertex)
+def test_graph_vertex_is_not_abstract():
+    assert not inspect.isabstract(graph_Vertex)
 
 
-def test_graph::vertex_constructor_exists():
-    assert callable(graph::Vertex.__init__)
+def test_graph_vertex_constructor_exists():
+    assert callable(graph_Vertex.__init__)
 
 
-def test_graph::vertex_constructor_args():
-    sig = inspect.signature(graph::Vertex.__init__)
+def test_graph_vertex_constructor_args():
+    sig = inspect.signature(graph_Vertex.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
     assert "weigth" in params, "Missing parameter 'weigth'"
 
-def test_graph::vertex_has_label():
-    assert hasattr(graph::Vertex, "label")
+def test_graph_vertex_has_label():
+    assert hasattr(graph_Vertex, "label")
     descriptor = None
-    for klass in graph::Vertex.__mro__:
+    for klass in graph_Vertex.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_graph::vertex_has_weigth():
-    assert hasattr(graph::Vertex, "weigth")
+def test_graph_vertex_has_weigth():
+    assert hasattr(graph_Vertex, "weigth")
     descriptor = None
-    for klass in graph::Vertex.__mro__:
+    for klass in graph_Vertex.__mro__:
         if "weigth" in klass.__dict__:
             descriptor = klass.__dict__["weigth"]
             break
@@ -65,16 +65,16 @@ def test_graph::vertex_has_weigth():
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Edge_strategy = st.builds(
-    graph::Edge,
+graph_Edge_strategy = st.builds(
+    graph_Edge,
 )
-graph::Vertex_strategy = st.builds(
-    graph::Vertex,
+graph_Vertex_strategy = st.builds(
+    graph_Vertex,
     label=
         safe_text,
     weigth=
         st.integers()
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
 )
 
-@given(instance=graph::Edge_strategy)
+@given(instance=graph_Edge_strategy)
 @settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, graph::Edge)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, graph_Edge)
 
-@given(instance=graph::Vertex_strategy)
+@given(instance=graph_Vertex_strategy)
 @settings(max_examples=50)
-def test_graph::vertex_instantiation(instance):
-    assert isinstance(instance, graph::Vertex)
-
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_graph_vertex_instantiation(instance):
+    assert isinstance(instance, graph_Vertex)
 
 
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_label_setter(instance):
+
+@given(instance=graph_Vertex_strategy)
+def test_graph_vertex_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_weigth_type(instance):
-    assert isinstance(instance.weigth, int)
 
 
-@given(instance=graph::Vertex_strategy)
-def test_graph::vertex_weigth_setter(instance):
+@given(instance=graph_Vertex_strategy)
+def test_graph_vertex_weigth_setter(instance):
     original = instance.weigth
     instance.weigth = original
     assert instance.weigth == original
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)

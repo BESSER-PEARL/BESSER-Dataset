@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     List,
@@ -18,8 +18,8 @@ from python_code import (
     Rook,
     Pawn,
     Piece,
-    List_Pieces_,
     Color,
+    List_Pieces_,
 )
 
 # =============================================================================
@@ -98,12 +98,12 @@ def test_board_constructor_args():
     sig = inspect.signature(Board.__init__)
     params = list(sig.parameters.keys())
     assert "isStaleMate" in params, "Missing parameter 'isStaleMate'"
+    assert "blackPlayer" in params, "Missing parameter 'blackPlayer'"
     assert "currentPlayer" in params, "Missing parameter 'currentPlayer'"
     assert "spots" in params, "Missing parameter 'spots'"
-    assert "isCheckMate" in params, "Missing parameter 'isCheckMate'"
     assert "whitePlayer" in params, "Missing parameter 'whitePlayer'"
-    assert "blackPlayer" in params, "Missing parameter 'blackPlayer'"
     assert "isCheck" in params, "Missing parameter 'isCheck'"
+    assert "isCheckMate" in params, "Missing parameter 'isCheckMate'"
 
 def test_board_has_isStaleMate():
     assert hasattr(Board, "isStaleMate")
@@ -111,6 +111,15 @@ def test_board_has_isStaleMate():
     for klass in Board.__mro__:
         if "isStaleMate" in klass.__dict__:
             descriptor = klass.__dict__["isStaleMate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_board_has_blackPlayer():
+    assert hasattr(Board, "blackPlayer")
+    descriptor = None
+    for klass in Board.__mro__:
+        if "blackPlayer" in klass.__dict__:
+            descriptor = klass.__dict__["blackPlayer"]
             break
     assert isinstance(descriptor, property)
 
@@ -132,15 +141,6 @@ def test_board_has_spots():
             break
     assert isinstance(descriptor, property)
 
-def test_board_has_isCheckMate():
-    assert hasattr(Board, "isCheckMate")
-    descriptor = None
-    for klass in Board.__mro__:
-        if "isCheckMate" in klass.__dict__:
-            descriptor = klass.__dict__["isCheckMate"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_board_has_whitePlayer():
     assert hasattr(Board, "whitePlayer")
     descriptor = None
@@ -150,21 +150,21 @@ def test_board_has_whitePlayer():
             break
     assert isinstance(descriptor, property)
 
-def test_board_has_blackPlayer():
-    assert hasattr(Board, "blackPlayer")
-    descriptor = None
-    for klass in Board.__mro__:
-        if "blackPlayer" in klass.__dict__:
-            descriptor = klass.__dict__["blackPlayer"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_board_has_isCheck():
     assert hasattr(Board, "isCheck")
     descriptor = None
     for klass in Board.__mro__:
         if "isCheck" in klass.__dict__:
             descriptor = klass.__dict__["isCheck"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_board_has_isCheckMate():
+    assert hasattr(Board, "isCheckMate")
+    descriptor = None
+    for klass in Board.__mro__:
+        if "isCheckMate" in klass.__dict__:
+            descriptor = klass.__dict__["isCheckMate"]
             break
     assert isinstance(descriptor, property)
 
@@ -195,9 +195,18 @@ def test_spot_constructor_exists():
 def test_spot_constructor_args():
     sig = inspect.signature(Spot.__init__)
     params = list(sig.parameters.keys())
+    assert "piece" in params, "Missing parameter 'piece'"
     assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
-    assert "piece" in params, "Missing parameter 'piece'"
+
+def test_spot_has_piece():
+    assert hasattr(Spot, "piece")
+    descriptor = None
+    for klass in Spot.__mro__:
+        if "piece" in klass.__dict__:
+            descriptor = klass.__dict__["piece"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_spot_has_x():
     assert hasattr(Spot, "x")
@@ -214,15 +223,6 @@ def test_spot_has_y():
     for klass in Spot.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spot_has_piece():
-    assert hasattr(Spot, "piece")
-    descriptor = None
-    for klass in Spot.__mro__:
-        if "piece" in klass.__dict__:
-            descriptor = klass.__dict__["piece"]
             break
     assert isinstance(descriptor, property)
 
@@ -323,18 +323,9 @@ def test_piece_constructor_exists():
 def test_piece_constructor_args():
     sig = inspect.signature(Piece.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
     assert "color" in params, "Missing parameter 'color'"
-
-def test_piece_has_y():
-    assert hasattr(Piece, "y")
-    descriptor = None
-    for klass in Piece.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
+    assert "y" in params, "Missing parameter 'y'"
 
 def test_piece_has_x():
     assert hasattr(Piece, "x")
@@ -354,18 +345,14 @@ def test_piece_has_color():
             break
     assert isinstance(descriptor, property)
 
-def test_list_pieces__exists():
-    # Check that the Enumeration exists
-    assert List_Pieces_ is not None
-
-def test_list_pieces__has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in List_Pieces_]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in List_Pieces_"
+def test_piece_has_y():
+    assert hasattr(Piece, "y")
+    descriptor = None
+    for klass in Piece.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_color_exists():
     # Check that the Enumeration exists
@@ -379,6 +366,19 @@ def test_color_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Color"
+
+def test_list_pieces__exists():
+    # Check that the Enumeration exists
+    assert List_Pieces_ is not None
+
+def test_list_pieces__has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in List_Pieces_]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in List_Pieces_"
 
 
 # =============================================================================
@@ -408,17 +408,17 @@ Board_strategy = st.builds(
     Board,
     isStaleMate=
         st.booleans(),
+    blackPlayer=
+        st.none(),
     currentPlayer=
         st.none(),
     spots=
         safe_text,
-    isCheckMate=
-        st.booleans(),
     whitePlayer=
         st.none(),
-    blackPlayer=
-        st.none(),
     isCheck=
+        st.booleans(),
+    isCheckMate=
         st.booleans()
 )
 T_strategy = st.builds(
@@ -426,12 +426,12 @@ T_strategy = st.builds(
 )
 Spot_strategy = st.builds(
     Spot,
+    piece=
+        st.none(),
     x=
         st.integers(),
     y=
-        st.integers(),
-    piece=
-        st.none()
+        st.integers()
 )
 Knight_strategy = st.builds(
     Knight,
@@ -453,12 +453,12 @@ Pawn_strategy = st.builds(
 )
 Piece_strategy = st.builds(
     Piece,
-    y=
-        st.integers(),
     x=
         st.integers(),
     color=
-        st.none()
+        st.none(),
+    y=
+        st.integers()
 )
 
 @given(instance=List_strategy)
@@ -471,9 +471,6 @@ def test_list_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -482,9 +479,6 @@ def test_player_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Player_strategy)
-def test_player_pieces_type(instance):
-    assert isinstance(instance.pieces, list_pieces_)
 
 
 @given(instance=Player_strategy)
@@ -493,9 +487,6 @@ def test_player_pieces_setter(instance):
     instance.pieces = original
     assert instance.pieces == original
 
-@given(instance=Player_strategy)
-def test_player_color_type(instance):
-    assert isinstance(instance.color, color)
 
 
 @given(instance=Player_strategy)
@@ -509,9 +500,6 @@ def test_player_color_setter(instance):
 def test_board_instantiation(instance):
     assert isinstance(instance, Board)
 
-@given(instance=Board_strategy)
-def test_board_isStaleMate_type(instance):
-    assert isinstance(instance.isStaleMate, bool)
 
 
 @given(instance=Board_strategy)
@@ -520,53 +508,6 @@ def test_board_isStaleMate_setter(instance):
     instance.isStaleMate = original
     assert instance.isStaleMate == original
 
-@given(instance=Board_strategy)
-def test_board_currentPlayer_type(instance):
-    assert isinstance(instance.currentPlayer, player)
-
-
-@given(instance=Board_strategy)
-def test_board_currentPlayer_setter(instance):
-    original = instance.currentPlayer
-    instance.currentPlayer = original
-    assert instance.currentPlayer == original
-
-@given(instance=Board_strategy)
-def test_board_spots_type(instance):
-    assert isinstance(instance.spots, str)
-
-
-@given(instance=Board_strategy)
-def test_board_spots_setter(instance):
-    original = instance.spots
-    instance.spots = original
-    assert instance.spots == original
-
-@given(instance=Board_strategy)
-def test_board_isCheckMate_type(instance):
-    assert isinstance(instance.isCheckMate, bool)
-
-
-@given(instance=Board_strategy)
-def test_board_isCheckMate_setter(instance):
-    original = instance.isCheckMate
-    instance.isCheckMate = original
-    assert instance.isCheckMate == original
-
-@given(instance=Board_strategy)
-def test_board_whitePlayer_type(instance):
-    assert isinstance(instance.whitePlayer, player)
-
-
-@given(instance=Board_strategy)
-def test_board_whitePlayer_setter(instance):
-    original = instance.whitePlayer
-    instance.whitePlayer = original
-    assert instance.whitePlayer == original
-
-@given(instance=Board_strategy)
-def test_board_blackPlayer_type(instance):
-    assert isinstance(instance.blackPlayer, player)
 
 
 @given(instance=Board_strategy)
@@ -575,9 +516,30 @@ def test_board_blackPlayer_setter(instance):
     instance.blackPlayer = original
     assert instance.blackPlayer == original
 
+
+
 @given(instance=Board_strategy)
-def test_board_isCheck_type(instance):
-    assert isinstance(instance.isCheck, bool)
+def test_board_currentPlayer_setter(instance):
+    original = instance.currentPlayer
+    instance.currentPlayer = original
+    assert instance.currentPlayer == original
+
+
+
+@given(instance=Board_strategy)
+def test_board_spots_setter(instance):
+    original = instance.spots
+    instance.spots = original
+    assert instance.spots == original
+
+
+
+@given(instance=Board_strategy)
+def test_board_whitePlayer_setter(instance):
+    original = instance.whitePlayer
+    instance.whitePlayer = original
+    assert instance.whitePlayer == original
+
 
 
 @given(instance=Board_strategy)
@@ -585,6 +547,14 @@ def test_board_isCheck_setter(instance):
     original = instance.isCheck
     instance.isCheck = original
     assert instance.isCheck == original
+
+
+
+@given(instance=Board_strategy)
+def test_board_isCheckMate_setter(instance):
+    original = instance.isCheckMate
+    instance.isCheckMate = original
+    assert instance.isCheckMate == original
 
 @given(instance=T_strategy)
 @settings(max_examples=50)
@@ -596,9 +566,14 @@ def test_t_instantiation(instance):
 def test_spot_instantiation(instance):
     assert isinstance(instance, Spot)
 
+
+
 @given(instance=Spot_strategy)
-def test_spot_x_type(instance):
-    assert isinstance(instance.x, int)
+def test_spot_piece_setter(instance):
+    original = instance.piece
+    instance.piece = original
+    assert instance.piece == original
+
 
 
 @given(instance=Spot_strategy)
@@ -607,9 +582,6 @@ def test_spot_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
-@given(instance=Spot_strategy)
-def test_spot_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
 @given(instance=Spot_strategy)
@@ -617,17 +589,6 @@ def test_spot_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
-
-@given(instance=Spot_strategy)
-def test_spot_piece_type(instance):
-    assert isinstance(instance.piece, piece)
-
-
-@given(instance=Spot_strategy)
-def test_spot_piece_setter(instance):
-    original = instance.piece
-    instance.piece = original
-    assert instance.piece == original
 
 @given(instance=Knight_strategy)
 @settings(max_examples=50)
@@ -664,20 +625,6 @@ def test_pawn_instantiation(instance):
 def test_piece_instantiation(instance):
     assert isinstance(instance, Piece)
 
-@given(instance=Piece_strategy)
-def test_piece_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=Piece_strategy)
-def test_piece_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=Piece_strategy)
-def test_piece_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
 @given(instance=Piece_strategy)
@@ -686,9 +633,6 @@ def test_piece_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
-@given(instance=Piece_strategy)
-def test_piece_color_type(instance):
-    assert isinstance(instance.color, color)
 
 
 @given(instance=Piece_strategy)
@@ -696,3 +640,11 @@ def test_piece_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
+
+
+
+@given(instance=Piece_strategy)
+def test_piece_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original

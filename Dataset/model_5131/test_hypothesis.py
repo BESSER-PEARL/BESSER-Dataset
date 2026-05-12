@@ -3,78 +3,78 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    caracteristica::Estado,
-    caracteristica::Transicao,
+from python_code import (
+    caracteristica_Estado,
+    caracteristica_Transicao,
     Antecedente,
-    caracteristica::ExpressaoRelacional,
-    caracteristica::LiteralComposicao,
-    caracteristica::ExpressaoLogica,
+    caracteristica_ExpressaoRelacional,
+    caracteristica_LiteralComposicao,
+    caracteristica_ExpressaoLogica,
     Acao,
-    caracteristica::LiteralAcao,
-    caracteristica::Designar,
-    caracteristica::AcaoLogico,
+    caracteristica_LiteralAcao,
+    caracteristica_Designar,
+    caracteristica_AcaoLogico,
     Evento,
-    caracteristica::EventoRelacional,
-    caracteristica::EventoLogico,
+    caracteristica_EventoRelacional,
+    caracteristica_EventoLogico,
     Regra,
-    caracteristica::RegraDeContexto,
-    caracteristica::RegraDeComposicao,
+    caracteristica_RegraDeContexto,
+    caracteristica_RegraDeComposicao,
     Expressao,
-    caracteristica::Antecedente,
-    caracteristica::Acao,
-    caracteristica::Evento,
+    caracteristica_Evento,
+    caracteristica_Acao,
+    caracteristica_Antecedente,
     CaracteristicaProduto,
-    caracteristica::CaracteristicaOpcionalProduto,
-    caracteristica::VariacaoDoisProduto,
-    caracteristica::CaracteristicaAgrupadaProduto,
-    caracteristica::CaracteristicaMandatoriaProduto,
+    caracteristica_VariacaoDoisProduto,
+    caracteristica_CaracteristicaAgrupadaProduto,
+    caracteristica_CaracteristicaOpcionalProduto,
+    caracteristica_CaracteristicaMandatoriaProduto,
     ElementoDeProduto,
-    caracteristica::VariacaoProduto,
-    caracteristica::VarianteProduto,
-    caracteristica::AtributoProduto,
-    caracteristica::CaracteristicaProduto,
+    caracteristica_AtributoProduto,
+    caracteristica_VariacaoProduto,
+    caracteristica_VarianteProduto,
+    caracteristica_CaracteristicaProduto,
     PontoDeVariacao,
     ElementoCaracteristico,
     Elemento,
-    caracteristica::InformacaoDeContexto,
-    caracteristica::Variacao,
-    caracteristica::EntidadeDeContexto,
-    caracteristica::RaizDeContexto,
-    caracteristica::Caracteristica,
-    caracteristica::ElementoCaracteristico,
+    caracteristica_RaizDeContexto,
+    caracteristica_Variacao,
+    caracteristica_Caracteristica,
+    caracteristica_InformacaoDeContexto,
+    caracteristica_EntidadeDeContexto,
+    caracteristica_ElementoCaracteristico,
     ElementoExterno,
-    caracteristica::CasoDeTeste,
-    caracteristica::CasoDeUso,
+    caracteristica_CasoDeTeste,
+    caracteristica_CasoDeUso,
     Caracteristica,
-    caracteristica::CaracteristicaAgrupada,
-    caracteristica::Variante,
-    caracteristica::VariacaoDois,
-    caracteristica::CaracteristicaOpcional,
-    caracteristica::CaracteristicaMandatoria,
-    caracteristica::InconsistenciaRegraAdaptacao,
-    caracteristica::Simulacao,
-    caracteristica::Atributo,
-    caracteristica::CaracteristicaRaiz,
-    caracteristica::ElementoDeProduto,
-    caracteristica::Expressao,
-    caracteristica::Produto,
-    caracteristica::Regra,
-    caracteristica::ElementoExterno,
-    caracteristica::Elemento,
-    caracteristica::PontoDeVariacao,
-    caracteristica::LPS,
-    OperadorAcaoLogico,
-    CardinalidadeMaxima,
-    OperadorRelacional,
+    caracteristica_CaracteristicaAgrupada,
+    caracteristica_CaracteristicaOpcional,
+    caracteristica_CaracteristicaMandatoria,
+    caracteristica_VariacaoDois,
+    caracteristica_Variante,
+    caracteristica_InconsistenciaRegraAdaptacao,
+    caracteristica_Simulacao,
+    caracteristica_Atributo,
+    caracteristica_CaracteristicaRaiz,
+    caracteristica_ElementoDeProduto,
+    caracteristica_Expressao,
+    caracteristica_Produto,
+    caracteristica_Regra,
+    caracteristica_ElementoExterno,
+    caracteristica_Elemento,
+    caracteristica_PontoDeVariacao,
+    caracteristica_LPS,
     OperadorLogico,
-    Origem,
-    Validade,
     Qualidade,
-    TipoValor,
+    Origem,
+    OperadorRelacional,
+    CardinalidadeMaxima,
+    Validade,
     Presenca,
+    OperadorAcaoLogico,
+    TipoValor,
 )
 
 # =============================================================================
@@ -83,69 +83,69 @@ from classes import (
 
 
 
-def test_caracteristica::estado_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Estado)
+def test_caracteristica_estado_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Estado)
 
 
-def test_caracteristica::estado_constructor_exists():
-    assert callable(caracteristica::Estado.__init__)
+def test_caracteristica_estado_constructor_exists():
+    assert callable(caracteristica_Estado.__init__)
 
 
-def test_caracteristica::estado_constructor_args():
-    sig = inspect.signature(caracteristica::Estado.__init__)
+def test_caracteristica_estado_constructor_args():
+    sig = inspect.signature(caracteristica_Estado.__init__)
     params = list(sig.parameters.keys())
-    assert "nome" in params, "Missing parameter 'nome'"
     assert "safe" in params, "Missing parameter 'safe'"
+    assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::estado_has_nome():
-    assert hasattr(caracteristica::Estado, "nome")
+def test_caracteristica_estado_has_safe():
+    assert hasattr(caracteristica_Estado, "safe")
     descriptor = None
-    for klass in caracteristica::Estado.__mro__:
+    for klass in caracteristica_Estado.__mro__:
+        if "safe" in klass.__dict__:
+            descriptor = klass.__dict__["safe"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_estado_has_nome():
+    assert hasattr(caracteristica_Estado, "nome")
+    descriptor = None
+    for klass in caracteristica_Estado.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::estado_has_safe():
-    assert hasattr(caracteristica::Estado, "safe")
+
+
+def test_caracteristica_transicao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Transicao)
+
+
+def test_caracteristica_transicao_constructor_exists():
+    assert callable(caracteristica_Transicao.__init__)
+
+
+def test_caracteristica_transicao_constructor_args():
+    sig = inspect.signature(caracteristica_Transicao.__init__)
+    params = list(sig.parameters.keys())
+    assert "safe" in params, "Missing parameter 'safe'"
+    assert "etiqueta" in params, "Missing parameter 'etiqueta'"
+
+def test_caracteristica_transicao_has_safe():
+    assert hasattr(caracteristica_Transicao, "safe")
     descriptor = None
-    for klass in caracteristica::Estado.__mro__:
+    for klass in caracteristica_Transicao.__mro__:
         if "safe" in klass.__dict__:
             descriptor = klass.__dict__["safe"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_caracteristica::transicao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Transicao)
-
-
-def test_caracteristica::transicao_constructor_exists():
-    assert callable(caracteristica::Transicao.__init__)
-
-
-def test_caracteristica::transicao_constructor_args():
-    sig = inspect.signature(caracteristica::Transicao.__init__)
-    params = list(sig.parameters.keys())
-    assert "etiqueta" in params, "Missing parameter 'etiqueta'"
-    assert "safe" in params, "Missing parameter 'safe'"
-
-def test_caracteristica::transicao_has_etiqueta():
-    assert hasattr(caracteristica::Transicao, "etiqueta")
+def test_caracteristica_transicao_has_etiqueta():
+    assert hasattr(caracteristica_Transicao, "etiqueta")
     descriptor = None
-    for klass in caracteristica::Transicao.__mro__:
+    for klass in caracteristica_Transicao.__mro__:
         if "etiqueta" in klass.__dict__:
             descriptor = klass.__dict__["etiqueta"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::transicao_has_safe():
-    assert hasattr(caracteristica::Transicao, "safe")
-    descriptor = None
-    for klass in caracteristica::Transicao.__mro__:
-        if "safe" in klass.__dict__:
-            descriptor = klass.__dict__["safe"]
             break
     assert isinstance(descriptor, property)
 
@@ -165,33 +165,33 @@ def test_antecedente_constructor_args():
 
 
 
-def test_caracteristica::expressaorelacional_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::ExpressaoRelacional)
+def test_caracteristica_expressaorelacional_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_ExpressaoRelacional)
 
 
-def test_caracteristica::expressaorelacional_constructor_exists():
-    assert callable(caracteristica::ExpressaoRelacional.__init__)
+def test_caracteristica_expressaorelacional_constructor_exists():
+    assert callable(caracteristica_ExpressaoRelacional.__init__)
 
 
-def test_caracteristica::expressaorelacional_constructor_args():
-    sig = inspect.signature(caracteristica::ExpressaoRelacional.__init__)
+def test_caracteristica_expressaorelacional_constructor_args():
+    sig = inspect.signature(caracteristica_ExpressaoRelacional.__init__)
     params = list(sig.parameters.keys())
     assert "operadorRelacional" in params, "Missing parameter 'operadorRelacional'"
     assert "valor" in params, "Missing parameter 'valor'"
 
-def test_caracteristica::expressaorelacional_has_operadorRelacional():
-    assert hasattr(caracteristica::ExpressaoRelacional, "operadorRelacional")
+def test_caracteristica_expressaorelacional_has_operadorRelacional():
+    assert hasattr(caracteristica_ExpressaoRelacional, "operadorRelacional")
     descriptor = None
-    for klass in caracteristica::ExpressaoRelacional.__mro__:
+    for klass in caracteristica_ExpressaoRelacional.__mro__:
         if "operadorRelacional" in klass.__dict__:
             descriptor = klass.__dict__["operadorRelacional"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::expressaorelacional_has_valor():
-    assert hasattr(caracteristica::ExpressaoRelacional, "valor")
+def test_caracteristica_expressaorelacional_has_valor():
+    assert hasattr(caracteristica_ExpressaoRelacional, "valor")
     descriptor = None
-    for klass in caracteristica::ExpressaoRelacional.__mro__:
+    for klass in caracteristica_ExpressaoRelacional.__mro__:
         if "valor" in klass.__dict__:
             descriptor = klass.__dict__["valor"]
             break
@@ -199,23 +199,23 @@ def test_caracteristica::expressaorelacional_has_valor():
 
 
 
-def test_caracteristica::literalcomposicao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::LiteralComposicao)
+def test_caracteristica_literalcomposicao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_LiteralComposicao)
 
 
-def test_caracteristica::literalcomposicao_constructor_exists():
-    assert callable(caracteristica::LiteralComposicao.__init__)
+def test_caracteristica_literalcomposicao_constructor_exists():
+    assert callable(caracteristica_LiteralComposicao.__init__)
 
 
-def test_caracteristica::literalcomposicao_constructor_args():
-    sig = inspect.signature(caracteristica::LiteralComposicao.__init__)
+def test_caracteristica_literalcomposicao_constructor_args():
+    sig = inspect.signature(caracteristica_LiteralComposicao.__init__)
     params = list(sig.parameters.keys())
     assert "presenca" in params, "Missing parameter 'presenca'"
 
-def test_caracteristica::literalcomposicao_has_presenca():
-    assert hasattr(caracteristica::LiteralComposicao, "presenca")
+def test_caracteristica_literalcomposicao_has_presenca():
+    assert hasattr(caracteristica_LiteralComposicao, "presenca")
     descriptor = None
-    for klass in caracteristica::LiteralComposicao.__mro__:
+    for klass in caracteristica_LiteralComposicao.__mro__:
         if "presenca" in klass.__dict__:
             descriptor = klass.__dict__["presenca"]
             break
@@ -223,23 +223,23 @@ def test_caracteristica::literalcomposicao_has_presenca():
 
 
 
-def test_caracteristica::expressaologica_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::ExpressaoLogica)
+def test_caracteristica_expressaologica_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_ExpressaoLogica)
 
 
-def test_caracteristica::expressaologica_constructor_exists():
-    assert callable(caracteristica::ExpressaoLogica.__init__)
+def test_caracteristica_expressaologica_constructor_exists():
+    assert callable(caracteristica_ExpressaoLogica.__init__)
 
 
-def test_caracteristica::expressaologica_constructor_args():
-    sig = inspect.signature(caracteristica::ExpressaoLogica.__init__)
+def test_caracteristica_expressaologica_constructor_args():
+    sig = inspect.signature(caracteristica_ExpressaoLogica.__init__)
     params = list(sig.parameters.keys())
     assert "operadorLogico" in params, "Missing parameter 'operadorLogico'"
 
-def test_caracteristica::expressaologica_has_operadorLogico():
-    assert hasattr(caracteristica::ExpressaoLogica, "operadorLogico")
+def test_caracteristica_expressaologica_has_operadorLogico():
+    assert hasattr(caracteristica_ExpressaoLogica, "operadorLogico")
     descriptor = None
-    for klass in caracteristica::ExpressaoLogica.__mro__:
+    for klass in caracteristica_ExpressaoLogica.__mro__:
         if "operadorLogico" in klass.__dict__:
             descriptor = klass.__dict__["operadorLogico"]
             break
@@ -261,23 +261,23 @@ def test_acao_constructor_args():
 
 
 
-def test_caracteristica::literalacao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::LiteralAcao)
+def test_caracteristica_literalacao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_LiteralAcao)
 
 
-def test_caracteristica::literalacao_constructor_exists():
-    assert callable(caracteristica::LiteralAcao.__init__)
+def test_caracteristica_literalacao_constructor_exists():
+    assert callable(caracteristica_LiteralAcao.__init__)
 
 
-def test_caracteristica::literalacao_constructor_args():
-    sig = inspect.signature(caracteristica::LiteralAcao.__init__)
+def test_caracteristica_literalacao_constructor_args():
+    sig = inspect.signature(caracteristica_LiteralAcao.__init__)
     params = list(sig.parameters.keys())
     assert "presenca" in params, "Missing parameter 'presenca'"
 
-def test_caracteristica::literalacao_has_presenca():
-    assert hasattr(caracteristica::LiteralAcao, "presenca")
+def test_caracteristica_literalacao_has_presenca():
+    assert hasattr(caracteristica_LiteralAcao, "presenca")
     descriptor = None
-    for klass in caracteristica::LiteralAcao.__mro__:
+    for klass in caracteristica_LiteralAcao.__mro__:
         if "presenca" in klass.__dict__:
             descriptor = klass.__dict__["presenca"]
             break
@@ -285,57 +285,57 @@ def test_caracteristica::literalacao_has_presenca():
 
 
 
-def test_caracteristica::designar_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Designar)
+def test_caracteristica_designar_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Designar)
 
 
-def test_caracteristica::designar_constructor_exists():
-    assert callable(caracteristica::Designar.__init__)
+def test_caracteristica_designar_constructor_exists():
+    assert callable(caracteristica_Designar.__init__)
 
 
-def test_caracteristica::designar_constructor_args():
-    sig = inspect.signature(caracteristica::Designar.__init__)
+def test_caracteristica_designar_constructor_args():
+    sig = inspect.signature(caracteristica_Designar.__init__)
     params = list(sig.parameters.keys())
-    assert "valor" in params, "Missing parameter 'valor'"
     assert "tipoValor" in params, "Missing parameter 'tipoValor'"
+    assert "valor" in params, "Missing parameter 'valor'"
 
-def test_caracteristica::designar_has_valor():
-    assert hasattr(caracteristica::Designar, "valor")
+def test_caracteristica_designar_has_tipoValor():
+    assert hasattr(caracteristica_Designar, "tipoValor")
     descriptor = None
-    for klass in caracteristica::Designar.__mro__:
-        if "valor" in klass.__dict__:
-            descriptor = klass.__dict__["valor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::designar_has_tipoValor():
-    assert hasattr(caracteristica::Designar, "tipoValor")
-    descriptor = None
-    for klass in caracteristica::Designar.__mro__:
+    for klass in caracteristica_Designar.__mro__:
         if "tipoValor" in klass.__dict__:
             descriptor = klass.__dict__["tipoValor"]
             break
     assert isinstance(descriptor, property)
 
+def test_caracteristica_designar_has_valor():
+    assert hasattr(caracteristica_Designar, "valor")
+    descriptor = None
+    for klass in caracteristica_Designar.__mro__:
+        if "valor" in klass.__dict__:
+            descriptor = klass.__dict__["valor"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_caracteristica::acaologico_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::AcaoLogico)
+
+def test_caracteristica_acaologico_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_AcaoLogico)
 
 
-def test_caracteristica::acaologico_constructor_exists():
-    assert callable(caracteristica::AcaoLogico.__init__)
+def test_caracteristica_acaologico_constructor_exists():
+    assert callable(caracteristica_AcaoLogico.__init__)
 
 
-def test_caracteristica::acaologico_constructor_args():
-    sig = inspect.signature(caracteristica::AcaoLogico.__init__)
+def test_caracteristica_acaologico_constructor_args():
+    sig = inspect.signature(caracteristica_AcaoLogico.__init__)
     params = list(sig.parameters.keys())
     assert "operadorAcaoLogico" in params, "Missing parameter 'operadorAcaoLogico'"
 
-def test_caracteristica::acaologico_has_operadorAcaoLogico():
-    assert hasattr(caracteristica::AcaoLogico, "operadorAcaoLogico")
+def test_caracteristica_acaologico_has_operadorAcaoLogico():
+    assert hasattr(caracteristica_AcaoLogico, "operadorAcaoLogico")
     descriptor = None
-    for klass in caracteristica::AcaoLogico.__mro__:
+    for klass in caracteristica_AcaoLogico.__mro__:
         if "operadorAcaoLogico" in klass.__dict__:
             descriptor = klass.__dict__["operadorAcaoLogico"]
             break
@@ -357,33 +357,33 @@ def test_evento_constructor_args():
 
 
 
-def test_caracteristica::eventorelacional_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::EventoRelacional)
+def test_caracteristica_eventorelacional_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_EventoRelacional)
 
 
-def test_caracteristica::eventorelacional_constructor_exists():
-    assert callable(caracteristica::EventoRelacional.__init__)
+def test_caracteristica_eventorelacional_constructor_exists():
+    assert callable(caracteristica_EventoRelacional.__init__)
 
 
-def test_caracteristica::eventorelacional_constructor_args():
-    sig = inspect.signature(caracteristica::EventoRelacional.__init__)
+def test_caracteristica_eventorelacional_constructor_args():
+    sig = inspect.signature(caracteristica_EventoRelacional.__init__)
     params = list(sig.parameters.keys())
     assert "operadorRelacional" in params, "Missing parameter 'operadorRelacional'"
     assert "valor" in params, "Missing parameter 'valor'"
 
-def test_caracteristica::eventorelacional_has_operadorRelacional():
-    assert hasattr(caracteristica::EventoRelacional, "operadorRelacional")
+def test_caracteristica_eventorelacional_has_operadorRelacional():
+    assert hasattr(caracteristica_EventoRelacional, "operadorRelacional")
     descriptor = None
-    for klass in caracteristica::EventoRelacional.__mro__:
+    for klass in caracteristica_EventoRelacional.__mro__:
         if "operadorRelacional" in klass.__dict__:
             descriptor = klass.__dict__["operadorRelacional"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::eventorelacional_has_valor():
-    assert hasattr(caracteristica::EventoRelacional, "valor")
+def test_caracteristica_eventorelacional_has_valor():
+    assert hasattr(caracteristica_EventoRelacional, "valor")
     descriptor = None
-    for klass in caracteristica::EventoRelacional.__mro__:
+    for klass in caracteristica_EventoRelacional.__mro__:
         if "valor" in klass.__dict__:
             descriptor = klass.__dict__["valor"]
             break
@@ -391,23 +391,23 @@ def test_caracteristica::eventorelacional_has_valor():
 
 
 
-def test_caracteristica::eventologico_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::EventoLogico)
+def test_caracteristica_eventologico_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_EventoLogico)
 
 
-def test_caracteristica::eventologico_constructor_exists():
-    assert callable(caracteristica::EventoLogico.__init__)
+def test_caracteristica_eventologico_constructor_exists():
+    assert callable(caracteristica_EventoLogico.__init__)
 
 
-def test_caracteristica::eventologico_constructor_args():
-    sig = inspect.signature(caracteristica::EventoLogico.__init__)
+def test_caracteristica_eventologico_constructor_args():
+    sig = inspect.signature(caracteristica_EventoLogico.__init__)
     params = list(sig.parameters.keys())
     assert "operadorLogico" in params, "Missing parameter 'operadorLogico'"
 
-def test_caracteristica::eventologico_has_operadorLogico():
-    assert hasattr(caracteristica::EventoLogico, "operadorLogico")
+def test_caracteristica_eventologico_has_operadorLogico():
+    assert hasattr(caracteristica_EventoLogico, "operadorLogico")
     descriptor = None
-    for klass in caracteristica::EventoLogico.__mro__:
+    for klass in caracteristica_EventoLogico.__mro__:
         if "operadorLogico" in klass.__dict__:
             descriptor = klass.__dict__["operadorLogico"]
             break
@@ -429,30 +429,30 @@ def test_regra_constructor_args():
 
 
 
-def test_caracteristica::regradecontexto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::RegraDeContexto)
+def test_caracteristica_regradecontexto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_RegraDeContexto)
 
 
-def test_caracteristica::regradecontexto_constructor_exists():
-    assert callable(caracteristica::RegraDeContexto.__init__)
+def test_caracteristica_regradecontexto_constructor_exists():
+    assert callable(caracteristica_RegraDeContexto.__init__)
 
 
-def test_caracteristica::regradecontexto_constructor_args():
-    sig = inspect.signature(caracteristica::RegraDeContexto.__init__)
+def test_caracteristica_regradecontexto_constructor_args():
+    sig = inspect.signature(caracteristica_RegraDeContexto.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::regradecomposicao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::RegraDeComposicao)
+def test_caracteristica_regradecomposicao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_RegraDeComposicao)
 
 
-def test_caracteristica::regradecomposicao_constructor_exists():
-    assert callable(caracteristica::RegraDeComposicao.__init__)
+def test_caracteristica_regradecomposicao_constructor_exists():
+    assert callable(caracteristica_RegraDeComposicao.__init__)
 
 
-def test_caracteristica::regradecomposicao_constructor_args():
-    sig = inspect.signature(caracteristica::RegraDeComposicao.__init__)
+def test_caracteristica_regradecomposicao_constructor_args():
+    sig = inspect.signature(caracteristica_RegraDeComposicao.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -471,44 +471,44 @@ def test_expressao_constructor_args():
 
 
 
-def test_caracteristica::antecedente_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Antecedente)
+def test_caracteristica_evento_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Evento)
 
 
-def test_caracteristica::antecedente_constructor_exists():
-    assert callable(caracteristica::Antecedente.__init__)
+def test_caracteristica_evento_constructor_exists():
+    assert callable(caracteristica_Evento.__init__)
 
 
-def test_caracteristica::antecedente_constructor_args():
-    sig = inspect.signature(caracteristica::Antecedente.__init__)
+def test_caracteristica_evento_constructor_args():
+    sig = inspect.signature(caracteristica_Evento.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::acao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Acao)
+def test_caracteristica_acao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Acao)
 
 
-def test_caracteristica::acao_constructor_exists():
-    assert callable(caracteristica::Acao.__init__)
+def test_caracteristica_acao_constructor_exists():
+    assert callable(caracteristica_Acao.__init__)
 
 
-def test_caracteristica::acao_constructor_args():
-    sig = inspect.signature(caracteristica::Acao.__init__)
+def test_caracteristica_acao_constructor_args():
+    sig = inspect.signature(caracteristica_Acao.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::evento_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Evento)
+def test_caracteristica_antecedente_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Antecedente)
 
 
-def test_caracteristica::evento_constructor_exists():
-    assert callable(caracteristica::Evento.__init__)
+def test_caracteristica_antecedente_constructor_exists():
+    assert callable(caracteristica_Antecedente.__init__)
 
 
-def test_caracteristica::evento_constructor_args():
-    sig = inspect.signature(caracteristica::Evento.__init__)
+def test_caracteristica_antecedente_constructor_args():
+    sig = inspect.signature(caracteristica_Antecedente.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -527,57 +527,43 @@ def test_caracteristicaproduto_constructor_args():
 
 
 
-def test_caracteristica::caracteristicaopcionalproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaOpcionalProduto)
+def test_caracteristica_variacaodoisproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_VariacaoDoisProduto)
 
 
-def test_caracteristica::caracteristicaopcionalproduto_constructor_exists():
-    assert callable(caracteristica::CaracteristicaOpcionalProduto.__init__)
+def test_caracteristica_variacaodoisproduto_constructor_exists():
+    assert callable(caracteristica_VariacaoDoisProduto.__init__)
 
 
-def test_caracteristica::caracteristicaopcionalproduto_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaOpcionalProduto.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_caracteristica::variacaodoisproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::VariacaoDoisProduto)
-
-
-def test_caracteristica::variacaodoisproduto_constructor_exists():
-    assert callable(caracteristica::VariacaoDoisProduto.__init__)
-
-
-def test_caracteristica::variacaodoisproduto_constructor_args():
-    sig = inspect.signature(caracteristica::VariacaoDoisProduto.__init__)
+def test_caracteristica_variacaodoisproduto_constructor_args():
+    sig = inspect.signature(caracteristica_VariacaoDoisProduto.__init__)
     params = list(sig.parameters.keys())
     assert "cardinalidadeMinimaOr" in params, "Missing parameter 'cardinalidadeMinimaOr'"
     assert "cardinalidadeMaxima" in params, "Missing parameter 'cardinalidadeMaxima'"
     assert "cardinalidadeMaximaOr" in params, "Missing parameter 'cardinalidadeMaximaOr'"
 
-def test_caracteristica::variacaodoisproduto_has_cardinalidadeMinimaOr():
-    assert hasattr(caracteristica::VariacaoDoisProduto, "cardinalidadeMinimaOr")
+def test_caracteristica_variacaodoisproduto_has_cardinalidadeMinimaOr():
+    assert hasattr(caracteristica_VariacaoDoisProduto, "cardinalidadeMinimaOr")
     descriptor = None
-    for klass in caracteristica::VariacaoDoisProduto.__mro__:
+    for klass in caracteristica_VariacaoDoisProduto.__mro__:
         if "cardinalidadeMinimaOr" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMinimaOr"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::variacaodoisproduto_has_cardinalidadeMaxima():
-    assert hasattr(caracteristica::VariacaoDoisProduto, "cardinalidadeMaxima")
+def test_caracteristica_variacaodoisproduto_has_cardinalidadeMaxima():
+    assert hasattr(caracteristica_VariacaoDoisProduto, "cardinalidadeMaxima")
     descriptor = None
-    for klass in caracteristica::VariacaoDoisProduto.__mro__:
+    for klass in caracteristica_VariacaoDoisProduto.__mro__:
         if "cardinalidadeMaxima" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMaxima"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::variacaodoisproduto_has_cardinalidadeMaximaOr():
-    assert hasattr(caracteristica::VariacaoDoisProduto, "cardinalidadeMaximaOr")
+def test_caracteristica_variacaodoisproduto_has_cardinalidadeMaximaOr():
+    assert hasattr(caracteristica_VariacaoDoisProduto, "cardinalidadeMaximaOr")
     descriptor = None
-    for klass in caracteristica::VariacaoDoisProduto.__mro__:
+    for klass in caracteristica_VariacaoDoisProduto.__mro__:
         if "cardinalidadeMaximaOr" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMaximaOr"]
             break
@@ -585,30 +571,44 @@ def test_caracteristica::variacaodoisproduto_has_cardinalidadeMaximaOr():
 
 
 
-def test_caracteristica::caracteristicaagrupadaproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaAgrupadaProduto)
+def test_caracteristica_caracteristicaagrupadaproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaAgrupadaProduto)
 
 
-def test_caracteristica::caracteristicaagrupadaproduto_constructor_exists():
-    assert callable(caracteristica::CaracteristicaAgrupadaProduto.__init__)
+def test_caracteristica_caracteristicaagrupadaproduto_constructor_exists():
+    assert callable(caracteristica_CaracteristicaAgrupadaProduto.__init__)
 
 
-def test_caracteristica::caracteristicaagrupadaproduto_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaAgrupadaProduto.__init__)
+def test_caracteristica_caracteristicaagrupadaproduto_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaAgrupadaProduto.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::caracteristicamandatoriaproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaMandatoriaProduto)
+def test_caracteristica_caracteristicaopcionalproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaOpcionalProduto)
 
 
-def test_caracteristica::caracteristicamandatoriaproduto_constructor_exists():
-    assert callable(caracteristica::CaracteristicaMandatoriaProduto.__init__)
+def test_caracteristica_caracteristicaopcionalproduto_constructor_exists():
+    assert callable(caracteristica_CaracteristicaOpcionalProduto.__init__)
 
 
-def test_caracteristica::caracteristicamandatoriaproduto_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaMandatoriaProduto.__init__)
+def test_caracteristica_caracteristicaopcionalproduto_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaOpcionalProduto.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_caracteristica_caracteristicamandatoriaproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaMandatoriaProduto)
+
+
+def test_caracteristica_caracteristicamandatoriaproduto_constructor_exists():
+    assert callable(caracteristica_CaracteristicaMandatoriaProduto.__init__)
+
+
+def test_caracteristica_caracteristicamandatoriaproduto_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaMandatoriaProduto.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -627,33 +627,67 @@ def test_elementodeproduto_constructor_args():
 
 
 
-def test_caracteristica::variacaoproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::VariacaoProduto)
+def test_caracteristica_atributoproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_AtributoProduto)
 
 
-def test_caracteristica::variacaoproduto_constructor_exists():
-    assert callable(caracteristica::VariacaoProduto.__init__)
+def test_caracteristica_atributoproduto_constructor_exists():
+    assert callable(caracteristica_AtributoProduto.__init__)
 
 
-def test_caracteristica::variacaoproduto_constructor_args():
-    sig = inspect.signature(caracteristica::VariacaoProduto.__init__)
+def test_caracteristica_atributoproduto_constructor_args():
+    sig = inspect.signature(caracteristica_AtributoProduto.__init__)
+    params = list(sig.parameters.keys())
+    assert "tipoValor" in params, "Missing parameter 'tipoValor'"
+    assert "valor" in params, "Missing parameter 'valor'"
+
+def test_caracteristica_atributoproduto_has_tipoValor():
+    assert hasattr(caracteristica_AtributoProduto, "tipoValor")
+    descriptor = None
+    for klass in caracteristica_AtributoProduto.__mro__:
+        if "tipoValor" in klass.__dict__:
+            descriptor = klass.__dict__["tipoValor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_atributoproduto_has_valor():
+    assert hasattr(caracteristica_AtributoProduto, "valor")
+    descriptor = None
+    for klass in caracteristica_AtributoProduto.__mro__:
+        if "valor" in klass.__dict__:
+            descriptor = klass.__dict__["valor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_caracteristica_variacaoproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_VariacaoProduto)
+
+
+def test_caracteristica_variacaoproduto_constructor_exists():
+    assert callable(caracteristica_VariacaoProduto.__init__)
+
+
+def test_caracteristica_variacaoproduto_constructor_args():
+    sig = inspect.signature(caracteristica_VariacaoProduto.__init__)
     params = list(sig.parameters.keys())
     assert "cardinalidadeMaxima" in params, "Missing parameter 'cardinalidadeMaxima'"
     assert "cardinalidadeMinima" in params, "Missing parameter 'cardinalidadeMinima'"
 
-def test_caracteristica::variacaoproduto_has_cardinalidadeMaxima():
-    assert hasattr(caracteristica::VariacaoProduto, "cardinalidadeMaxima")
+def test_caracteristica_variacaoproduto_has_cardinalidadeMaxima():
+    assert hasattr(caracteristica_VariacaoProduto, "cardinalidadeMaxima")
     descriptor = None
-    for klass in caracteristica::VariacaoProduto.__mro__:
+    for klass in caracteristica_VariacaoProduto.__mro__:
         if "cardinalidadeMaxima" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMaxima"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::variacaoproduto_has_cardinalidadeMinima():
-    assert hasattr(caracteristica::VariacaoProduto, "cardinalidadeMinima")
+def test_caracteristica_variacaoproduto_has_cardinalidadeMinima():
+    assert hasattr(caracteristica_VariacaoProduto, "cardinalidadeMinima")
     descriptor = None
-    for klass in caracteristica::VariacaoProduto.__mro__:
+    for klass in caracteristica_VariacaoProduto.__mro__:
         if "cardinalidadeMinima" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMinima"]
             break
@@ -661,23 +695,23 @@ def test_caracteristica::variacaoproduto_has_cardinalidadeMinima():
 
 
 
-def test_caracteristica::varianteproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::VarianteProduto)
+def test_caracteristica_varianteproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_VarianteProduto)
 
 
-def test_caracteristica::varianteproduto_constructor_exists():
-    assert callable(caracteristica::VarianteProduto.__init__)
+def test_caracteristica_varianteproduto_constructor_exists():
+    assert callable(caracteristica_VarianteProduto.__init__)
 
 
-def test_caracteristica::varianteproduto_constructor_args():
-    sig = inspect.signature(caracteristica::VarianteProduto.__init__)
+def test_caracteristica_varianteproduto_constructor_args():
+    sig = inspect.signature(caracteristica_VarianteProduto.__init__)
     params = list(sig.parameters.keys())
     assert "selecionado" in params, "Missing parameter 'selecionado'"
 
-def test_caracteristica::varianteproduto_has_selecionado():
-    assert hasattr(caracteristica::VarianteProduto, "selecionado")
+def test_caracteristica_varianteproduto_has_selecionado():
+    assert hasattr(caracteristica_VarianteProduto, "selecionado")
     descriptor = None
-    for klass in caracteristica::VarianteProduto.__mro__:
+    for klass in caracteristica_VarianteProduto.__mro__:
         if "selecionado" in klass.__dict__:
             descriptor = klass.__dict__["selecionado"]
             break
@@ -685,50 +719,16 @@ def test_caracteristica::varianteproduto_has_selecionado():
 
 
 
-def test_caracteristica::atributoproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::AtributoProduto)
+def test_caracteristica_caracteristicaproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaProduto)
 
 
-def test_caracteristica::atributoproduto_constructor_exists():
-    assert callable(caracteristica::AtributoProduto.__init__)
+def test_caracteristica_caracteristicaproduto_constructor_exists():
+    assert callable(caracteristica_CaracteristicaProduto.__init__)
 
 
-def test_caracteristica::atributoproduto_constructor_args():
-    sig = inspect.signature(caracteristica::AtributoProduto.__init__)
-    params = list(sig.parameters.keys())
-    assert "valor" in params, "Missing parameter 'valor'"
-    assert "tipoValor" in params, "Missing parameter 'tipoValor'"
-
-def test_caracteristica::atributoproduto_has_valor():
-    assert hasattr(caracteristica::AtributoProduto, "valor")
-    descriptor = None
-    for klass in caracteristica::AtributoProduto.__mro__:
-        if "valor" in klass.__dict__:
-            descriptor = klass.__dict__["valor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::atributoproduto_has_tipoValor():
-    assert hasattr(caracteristica::AtributoProduto, "tipoValor")
-    descriptor = None
-    for klass in caracteristica::AtributoProduto.__mro__:
-        if "tipoValor" in klass.__dict__:
-            descriptor = klass.__dict__["tipoValor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_caracteristica::caracteristicaproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaProduto)
-
-
-def test_caracteristica::caracteristicaproduto_constructor_exists():
-    assert callable(caracteristica::CaracteristicaProduto.__init__)
-
-
-def test_caracteristica::caracteristicaproduto_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaProduto.__init__)
+def test_caracteristica_caracteristicaproduto_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaProduto.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -775,97 +775,47 @@ def test_elemento_constructor_args():
 
 
 
-def test_caracteristica::informacaodecontexto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::InformacaoDeContexto)
+def test_caracteristica_raizdecontexto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_RaizDeContexto)
 
 
-def test_caracteristica::informacaodecontexto_constructor_exists():
-    assert callable(caracteristica::InformacaoDeContexto.__init__)
+def test_caracteristica_raizdecontexto_constructor_exists():
+    assert callable(caracteristica_RaizDeContexto.__init__)
 
 
-def test_caracteristica::informacaodecontexto_constructor_args():
-    sig = inspect.signature(caracteristica::InformacaoDeContexto.__init__)
+def test_caracteristica_raizdecontexto_constructor_args():
+    sig = inspect.signature(caracteristica_RaizDeContexto.__init__)
     params = list(sig.parameters.keys())
-    assert "tipoValor" in params, "Missing parameter 'tipoValor'"
-    assert "origem" in params, "Missing parameter 'origem'"
-    assert "validade" in params, "Missing parameter 'validade'"
-    assert "qualidade" in params, "Missing parameter 'qualidade'"
-    assert "valor" in params, "Missing parameter 'valor'"
-
-def test_caracteristica::informacaodecontexto_has_tipoValor():
-    assert hasattr(caracteristica::InformacaoDeContexto, "tipoValor")
-    descriptor = None
-    for klass in caracteristica::InformacaoDeContexto.__mro__:
-        if "tipoValor" in klass.__dict__:
-            descriptor = klass.__dict__["tipoValor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::informacaodecontexto_has_origem():
-    assert hasattr(caracteristica::InformacaoDeContexto, "origem")
-    descriptor = None
-    for klass in caracteristica::InformacaoDeContexto.__mro__:
-        if "origem" in klass.__dict__:
-            descriptor = klass.__dict__["origem"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::informacaodecontexto_has_validade():
-    assert hasattr(caracteristica::InformacaoDeContexto, "validade")
-    descriptor = None
-    for klass in caracteristica::InformacaoDeContexto.__mro__:
-        if "validade" in klass.__dict__:
-            descriptor = klass.__dict__["validade"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::informacaodecontexto_has_qualidade():
-    assert hasattr(caracteristica::InformacaoDeContexto, "qualidade")
-    descriptor = None
-    for klass in caracteristica::InformacaoDeContexto.__mro__:
-        if "qualidade" in klass.__dict__:
-            descriptor = klass.__dict__["qualidade"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::informacaodecontexto_has_valor():
-    assert hasattr(caracteristica::InformacaoDeContexto, "valor")
-    descriptor = None
-    for klass in caracteristica::InformacaoDeContexto.__mro__:
-        if "valor" in klass.__dict__:
-            descriptor = klass.__dict__["valor"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_caracteristica::variacao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Variacao)
+def test_caracteristica_variacao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Variacao)
 
 
-def test_caracteristica::variacao_constructor_exists():
-    assert callable(caracteristica::Variacao.__init__)
+def test_caracteristica_variacao_constructor_exists():
+    assert callable(caracteristica_Variacao.__init__)
 
 
-def test_caracteristica::variacao_constructor_args():
-    sig = inspect.signature(caracteristica::Variacao.__init__)
+def test_caracteristica_variacao_constructor_args():
+    sig = inspect.signature(caracteristica_Variacao.__init__)
     params = list(sig.parameters.keys())
     assert "cardinalidadeMaxima" in params, "Missing parameter 'cardinalidadeMaxima'"
     assert "cardinalidadeMinima" in params, "Missing parameter 'cardinalidadeMinima'"
 
-def test_caracteristica::variacao_has_cardinalidadeMaxima():
-    assert hasattr(caracteristica::Variacao, "cardinalidadeMaxima")
+def test_caracteristica_variacao_has_cardinalidadeMaxima():
+    assert hasattr(caracteristica_Variacao, "cardinalidadeMaxima")
     descriptor = None
-    for klass in caracteristica::Variacao.__mro__:
+    for klass in caracteristica_Variacao.__mro__:
         if "cardinalidadeMaxima" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMaxima"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::variacao_has_cardinalidadeMinima():
-    assert hasattr(caracteristica::Variacao, "cardinalidadeMinima")
+def test_caracteristica_variacao_has_cardinalidadeMinima():
+    assert hasattr(caracteristica_Variacao, "cardinalidadeMinima")
     descriptor = None
-    for klass in caracteristica::Variacao.__mro__:
+    for klass in caracteristica_Variacao.__mro__:
         if "cardinalidadeMinima" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMinima"]
             break
@@ -873,58 +823,108 @@ def test_caracteristica::variacao_has_cardinalidadeMinima():
 
 
 
-def test_caracteristica::entidadedecontexto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::EntidadeDeContexto)
+def test_caracteristica_caracteristica_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Caracteristica)
 
 
-def test_caracteristica::entidadedecontexto_constructor_exists():
-    assert callable(caracteristica::EntidadeDeContexto.__init__)
+def test_caracteristica_caracteristica_constructor_exists():
+    assert callable(caracteristica_Caracteristica.__init__)
 
 
-def test_caracteristica::entidadedecontexto_constructor_args():
-    sig = inspect.signature(caracteristica::EntidadeDeContexto.__init__)
+def test_caracteristica_caracteristica_constructor_args():
+    sig = inspect.signature(caracteristica_Caracteristica.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::raizdecontexto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::RaizDeContexto)
+def test_caracteristica_informacaodecontexto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_InformacaoDeContexto)
 
 
-def test_caracteristica::raizdecontexto_constructor_exists():
-    assert callable(caracteristica::RaizDeContexto.__init__)
+def test_caracteristica_informacaodecontexto_constructor_exists():
+    assert callable(caracteristica_InformacaoDeContexto.__init__)
 
 
-def test_caracteristica::raizdecontexto_constructor_args():
-    sig = inspect.signature(caracteristica::RaizDeContexto.__init__)
+def test_caracteristica_informacaodecontexto_constructor_args():
+    sig = inspect.signature(caracteristica_InformacaoDeContexto.__init__)
+    params = list(sig.parameters.keys())
+    assert "origem" in params, "Missing parameter 'origem'"
+    assert "qualidade" in params, "Missing parameter 'qualidade'"
+    assert "validade" in params, "Missing parameter 'validade'"
+    assert "valor" in params, "Missing parameter 'valor'"
+    assert "tipoValor" in params, "Missing parameter 'tipoValor'"
+
+def test_caracteristica_informacaodecontexto_has_origem():
+    assert hasattr(caracteristica_InformacaoDeContexto, "origem")
+    descriptor = None
+    for klass in caracteristica_InformacaoDeContexto.__mro__:
+        if "origem" in klass.__dict__:
+            descriptor = klass.__dict__["origem"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_informacaodecontexto_has_qualidade():
+    assert hasattr(caracteristica_InformacaoDeContexto, "qualidade")
+    descriptor = None
+    for klass in caracteristica_InformacaoDeContexto.__mro__:
+        if "qualidade" in klass.__dict__:
+            descriptor = klass.__dict__["qualidade"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_informacaodecontexto_has_validade():
+    assert hasattr(caracteristica_InformacaoDeContexto, "validade")
+    descriptor = None
+    for klass in caracteristica_InformacaoDeContexto.__mro__:
+        if "validade" in klass.__dict__:
+            descriptor = klass.__dict__["validade"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_informacaodecontexto_has_valor():
+    assert hasattr(caracteristica_InformacaoDeContexto, "valor")
+    descriptor = None
+    for klass in caracteristica_InformacaoDeContexto.__mro__:
+        if "valor" in klass.__dict__:
+            descriptor = klass.__dict__["valor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_informacaodecontexto_has_tipoValor():
+    assert hasattr(caracteristica_InformacaoDeContexto, "tipoValor")
+    descriptor = None
+    for klass in caracteristica_InformacaoDeContexto.__mro__:
+        if "tipoValor" in klass.__dict__:
+            descriptor = klass.__dict__["tipoValor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_caracteristica_entidadedecontexto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_EntidadeDeContexto)
+
+
+def test_caracteristica_entidadedecontexto_constructor_exists():
+    assert callable(caracteristica_EntidadeDeContexto.__init__)
+
+
+def test_caracteristica_entidadedecontexto_constructor_args():
+    sig = inspect.signature(caracteristica_EntidadeDeContexto.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::caracteristica_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Caracteristica)
+def test_caracteristica_elementocaracteristico_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_ElementoCaracteristico)
 
 
-def test_caracteristica::caracteristica_constructor_exists():
-    assert callable(caracteristica::Caracteristica.__init__)
+def test_caracteristica_elementocaracteristico_constructor_exists():
+    assert callable(caracteristica_ElementoCaracteristico.__init__)
 
 
-def test_caracteristica::caracteristica_constructor_args():
-    sig = inspect.signature(caracteristica::Caracteristica.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_caracteristica::elementocaracteristico_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::ElementoCaracteristico)
-
-
-def test_caracteristica::elementocaracteristico_constructor_exists():
-    assert callable(caracteristica::ElementoCaracteristico.__init__)
-
-
-def test_caracteristica::elementocaracteristico_constructor_args():
-    sig = inspect.signature(caracteristica::ElementoCaracteristico.__init__)
+def test_caracteristica_elementocaracteristico_constructor_args():
+    sig = inspect.signature(caracteristica_ElementoCaracteristico.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -943,30 +943,30 @@ def test_elementoexterno_constructor_args():
 
 
 
-def test_caracteristica::casodeteste_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CasoDeTeste)
+def test_caracteristica_casodeteste_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CasoDeTeste)
 
 
-def test_caracteristica::casodeteste_constructor_exists():
-    assert callable(caracteristica::CasoDeTeste.__init__)
+def test_caracteristica_casodeteste_constructor_exists():
+    assert callable(caracteristica_CasoDeTeste.__init__)
 
 
-def test_caracteristica::casodeteste_constructor_args():
-    sig = inspect.signature(caracteristica::CasoDeTeste.__init__)
+def test_caracteristica_casodeteste_constructor_args():
+    sig = inspect.signature(caracteristica_CasoDeTeste.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::casodeuso_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CasoDeUso)
+def test_caracteristica_casodeuso_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CasoDeUso)
 
 
-def test_caracteristica::casodeuso_constructor_exists():
-    assert callable(caracteristica::CasoDeUso.__init__)
+def test_caracteristica_casodeuso_constructor_exists():
+    assert callable(caracteristica_CasoDeUso.__init__)
 
 
-def test_caracteristica::casodeuso_constructor_args():
-    sig = inspect.signature(caracteristica::CasoDeUso.__init__)
+def test_caracteristica_casodeuso_constructor_args():
+    sig = inspect.signature(caracteristica_CasoDeUso.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -985,71 +985,85 @@ def test_caracteristica_constructor_args():
 
 
 
-def test_caracteristica::caracteristicaagrupada_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaAgrupada)
+def test_caracteristica_caracteristicaagrupada_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaAgrupada)
 
 
-def test_caracteristica::caracteristicaagrupada_constructor_exists():
-    assert callable(caracteristica::CaracteristicaAgrupada.__init__)
+def test_caracteristica_caracteristicaagrupada_constructor_exists():
+    assert callable(caracteristica_CaracteristicaAgrupada.__init__)
 
 
-def test_caracteristica::caracteristicaagrupada_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaAgrupada.__init__)
+def test_caracteristica_caracteristicaagrupada_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaAgrupada.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::variante_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Variante)
+def test_caracteristica_caracteristicaopcional_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaOpcional)
 
 
-def test_caracteristica::variante_constructor_exists():
-    assert callable(caracteristica::Variante.__init__)
+def test_caracteristica_caracteristicaopcional_constructor_exists():
+    assert callable(caracteristica_CaracteristicaOpcional.__init__)
 
 
-def test_caracteristica::variante_constructor_args():
-    sig = inspect.signature(caracteristica::Variante.__init__)
+def test_caracteristica_caracteristicaopcional_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaOpcional.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::variacaodois_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::VariacaoDois)
+def test_caracteristica_caracteristicamandatoria_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaMandatoria)
 
 
-def test_caracteristica::variacaodois_constructor_exists():
-    assert callable(caracteristica::VariacaoDois.__init__)
+def test_caracteristica_caracteristicamandatoria_constructor_exists():
+    assert callable(caracteristica_CaracteristicaMandatoria.__init__)
 
 
-def test_caracteristica::variacaodois_constructor_args():
-    sig = inspect.signature(caracteristica::VariacaoDois.__init__)
+def test_caracteristica_caracteristicamandatoria_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaMandatoria.__init__)
     params = list(sig.parameters.keys())
-    assert "cardinalidadeMaximaOr" in params, "Missing parameter 'cardinalidadeMaximaOr'"
+
+
+
+def test_caracteristica_variacaodois_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_VariacaoDois)
+
+
+def test_caracteristica_variacaodois_constructor_exists():
+    assert callable(caracteristica_VariacaoDois.__init__)
+
+
+def test_caracteristica_variacaodois_constructor_args():
+    sig = inspect.signature(caracteristica_VariacaoDois.__init__)
+    params = list(sig.parameters.keys())
     assert "cardinalidadeMinimaOr" in params, "Missing parameter 'cardinalidadeMinimaOr'"
+    assert "cardinalidadeMaximaOr" in params, "Missing parameter 'cardinalidadeMaximaOr'"
     assert "cardinalidadeMaxima" in params, "Missing parameter 'cardinalidadeMaxima'"
 
-def test_caracteristica::variacaodois_has_cardinalidadeMaximaOr():
-    assert hasattr(caracteristica::VariacaoDois, "cardinalidadeMaximaOr")
+def test_caracteristica_variacaodois_has_cardinalidadeMinimaOr():
+    assert hasattr(caracteristica_VariacaoDois, "cardinalidadeMinimaOr")
     descriptor = None
-    for klass in caracteristica::VariacaoDois.__mro__:
-        if "cardinalidadeMaximaOr" in klass.__dict__:
-            descriptor = klass.__dict__["cardinalidadeMaximaOr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_caracteristica::variacaodois_has_cardinalidadeMinimaOr():
-    assert hasattr(caracteristica::VariacaoDois, "cardinalidadeMinimaOr")
-    descriptor = None
-    for klass in caracteristica::VariacaoDois.__mro__:
+    for klass in caracteristica_VariacaoDois.__mro__:
         if "cardinalidadeMinimaOr" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMinimaOr"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::variacaodois_has_cardinalidadeMaxima():
-    assert hasattr(caracteristica::VariacaoDois, "cardinalidadeMaxima")
+def test_caracteristica_variacaodois_has_cardinalidadeMaximaOr():
+    assert hasattr(caracteristica_VariacaoDois, "cardinalidadeMaximaOr")
     descriptor = None
-    for klass in caracteristica::VariacaoDois.__mro__:
+    for klass in caracteristica_VariacaoDois.__mro__:
+        if "cardinalidadeMaximaOr" in klass.__dict__:
+            descriptor = klass.__dict__["cardinalidadeMaximaOr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_caracteristica_variacaodois_has_cardinalidadeMaxima():
+    assert hasattr(caracteristica_VariacaoDois, "cardinalidadeMaxima")
+    descriptor = None
+    for klass in caracteristica_VariacaoDois.__mro__:
         if "cardinalidadeMaxima" in klass.__dict__:
             descriptor = klass.__dict__["cardinalidadeMaxima"]
             break
@@ -1057,65 +1071,51 @@ def test_caracteristica::variacaodois_has_cardinalidadeMaxima():
 
 
 
-def test_caracteristica::caracteristicaopcional_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaOpcional)
+def test_caracteristica_variante_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Variante)
 
 
-def test_caracteristica::caracteristicaopcional_constructor_exists():
-    assert callable(caracteristica::CaracteristicaOpcional.__init__)
+def test_caracteristica_variante_constructor_exists():
+    assert callable(caracteristica_Variante.__init__)
 
 
-def test_caracteristica::caracteristicaopcional_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaOpcional.__init__)
+def test_caracteristica_variante_constructor_args():
+    sig = inspect.signature(caracteristica_Variante.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::caracteristicamandatoria_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaMandatoria)
+def test_caracteristica_inconsistenciaregraadaptacao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_InconsistenciaRegraAdaptacao)
 
 
-def test_caracteristica::caracteristicamandatoria_constructor_exists():
-    assert callable(caracteristica::CaracteristicaMandatoria.__init__)
+def test_caracteristica_inconsistenciaregraadaptacao_constructor_exists():
+    assert callable(caracteristica_InconsistenciaRegraAdaptacao.__init__)
 
 
-def test_caracteristica::caracteristicamandatoria_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaMandatoria.__init__)
+def test_caracteristica_inconsistenciaregraadaptacao_constructor_args():
+    sig = inspect.signature(caracteristica_InconsistenciaRegraAdaptacao.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::inconsistenciaregraadaptacao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::InconsistenciaRegraAdaptacao)
+def test_caracteristica_simulacao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Simulacao)
 
 
-def test_caracteristica::inconsistenciaregraadaptacao_constructor_exists():
-    assert callable(caracteristica::InconsistenciaRegraAdaptacao.__init__)
+def test_caracteristica_simulacao_constructor_exists():
+    assert callable(caracteristica_Simulacao.__init__)
 
 
-def test_caracteristica::inconsistenciaregraadaptacao_constructor_args():
-    sig = inspect.signature(caracteristica::InconsistenciaRegraAdaptacao.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_caracteristica::simulacao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Simulacao)
-
-
-def test_caracteristica::simulacao_constructor_exists():
-    assert callable(caracteristica::Simulacao.__init__)
-
-
-def test_caracteristica::simulacao_constructor_args():
-    sig = inspect.signature(caracteristica::Simulacao.__init__)
+def test_caracteristica_simulacao_constructor_args():
+    sig = inspect.signature(caracteristica_Simulacao.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::simulacao_has_nome():
-    assert hasattr(caracteristica::Simulacao, "nome")
+def test_caracteristica_simulacao_has_nome():
+    assert hasattr(caracteristica_Simulacao, "nome")
     descriptor = None
-    for klass in caracteristica::Simulacao.__mro__:
+    for klass in caracteristica_Simulacao.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1123,23 +1123,23 @@ def test_caracteristica::simulacao_has_nome():
 
 
 
-def test_caracteristica::atributo_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Atributo)
+def test_caracteristica_atributo_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Atributo)
 
 
-def test_caracteristica::atributo_constructor_exists():
-    assert callable(caracteristica::Atributo.__init__)
+def test_caracteristica_atributo_constructor_exists():
+    assert callable(caracteristica_Atributo.__init__)
 
 
-def test_caracteristica::atributo_constructor_args():
-    sig = inspect.signature(caracteristica::Atributo.__init__)
+def test_caracteristica_atributo_constructor_args():
+    sig = inspect.signature(caracteristica_Atributo.__init__)
     params = list(sig.parameters.keys())
     assert "tipoValor" in params, "Missing parameter 'tipoValor'"
 
-def test_caracteristica::atributo_has_tipoValor():
-    assert hasattr(caracteristica::Atributo, "tipoValor")
+def test_caracteristica_atributo_has_tipoValor():
+    assert hasattr(caracteristica_Atributo, "tipoValor")
     descriptor = None
-    for klass in caracteristica::Atributo.__mro__:
+    for klass in caracteristica_Atributo.__mro__:
         if "tipoValor" in klass.__dict__:
             descriptor = klass.__dict__["tipoValor"]
             break
@@ -1147,37 +1147,37 @@ def test_caracteristica::atributo_has_tipoValor():
 
 
 
-def test_caracteristica::caracteristicaraiz_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::CaracteristicaRaiz)
+def test_caracteristica_caracteristicaraiz_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_CaracteristicaRaiz)
 
 
-def test_caracteristica::caracteristicaraiz_constructor_exists():
-    assert callable(caracteristica::CaracteristicaRaiz.__init__)
+def test_caracteristica_caracteristicaraiz_constructor_exists():
+    assert callable(caracteristica_CaracteristicaRaiz.__init__)
 
 
-def test_caracteristica::caracteristicaraiz_constructor_args():
-    sig = inspect.signature(caracteristica::CaracteristicaRaiz.__init__)
+def test_caracteristica_caracteristicaraiz_constructor_args():
+    sig = inspect.signature(caracteristica_CaracteristicaRaiz.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::elementodeproduto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::ElementoDeProduto)
+def test_caracteristica_elementodeproduto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_ElementoDeProduto)
 
 
-def test_caracteristica::elementodeproduto_constructor_exists():
-    assert callable(caracteristica::ElementoDeProduto.__init__)
+def test_caracteristica_elementodeproduto_constructor_exists():
+    assert callable(caracteristica_ElementoDeProduto.__init__)
 
 
-def test_caracteristica::elementodeproduto_constructor_args():
-    sig = inspect.signature(caracteristica::ElementoDeProduto.__init__)
+def test_caracteristica_elementodeproduto_constructor_args():
+    sig = inspect.signature(caracteristica_ElementoDeProduto.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::elementodeproduto_has_nome():
-    assert hasattr(caracteristica::ElementoDeProduto, "nome")
+def test_caracteristica_elementodeproduto_has_nome():
+    assert hasattr(caracteristica_ElementoDeProduto, "nome")
     descriptor = None
-    for klass in caracteristica::ElementoDeProduto.__mro__:
+    for klass in caracteristica_ElementoDeProduto.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1185,23 +1185,23 @@ def test_caracteristica::elementodeproduto_has_nome():
 
 
 
-def test_caracteristica::expressao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Expressao)
+def test_caracteristica_expressao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Expressao)
 
 
-def test_caracteristica::expressao_constructor_exists():
-    assert callable(caracteristica::Expressao.__init__)
+def test_caracteristica_expressao_constructor_exists():
+    assert callable(caracteristica_Expressao.__init__)
 
 
-def test_caracteristica::expressao_constructor_args():
-    sig = inspect.signature(caracteristica::Expressao.__init__)
+def test_caracteristica_expressao_constructor_args():
+    sig = inspect.signature(caracteristica_Expressao.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::expressao_has_nome():
-    assert hasattr(caracteristica::Expressao, "nome")
+def test_caracteristica_expressao_has_nome():
+    assert hasattr(caracteristica_Expressao, "nome")
     descriptor = None
-    for klass in caracteristica::Expressao.__mro__:
+    for klass in caracteristica_Expressao.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1209,47 +1209,47 @@ def test_caracteristica::expressao_has_nome():
 
 
 
-def test_caracteristica::produto_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Produto)
+def test_caracteristica_produto_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Produto)
 
 
-def test_caracteristica::produto_constructor_exists():
-    assert callable(caracteristica::Produto.__init__)
+def test_caracteristica_produto_constructor_exists():
+    assert callable(caracteristica_Produto.__init__)
 
 
-def test_caracteristica::produto_constructor_args():
-    sig = inspect.signature(caracteristica::Produto.__init__)
+def test_caracteristica_produto_constructor_args():
+    sig = inspect.signature(caracteristica_Produto.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::regra_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Regra)
+def test_caracteristica_regra_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Regra)
 
 
-def test_caracteristica::regra_constructor_exists():
-    assert callable(caracteristica::Regra.__init__)
+def test_caracteristica_regra_constructor_exists():
+    assert callable(caracteristica_Regra.__init__)
 
 
-def test_caracteristica::regra_constructor_args():
-    sig = inspect.signature(caracteristica::Regra.__init__)
+def test_caracteristica_regra_constructor_args():
+    sig = inspect.signature(caracteristica_Regra.__init__)
     params = list(sig.parameters.keys())
     assert "conteudo" in params, "Missing parameter 'conteudo'"
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::regra_has_conteudo():
-    assert hasattr(caracteristica::Regra, "conteudo")
+def test_caracteristica_regra_has_conteudo():
+    assert hasattr(caracteristica_Regra, "conteudo")
     descriptor = None
-    for klass in caracteristica::Regra.__mro__:
+    for klass in caracteristica_Regra.__mro__:
         if "conteudo" in klass.__dict__:
             descriptor = klass.__dict__["conteudo"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::regra_has_nome():
-    assert hasattr(caracteristica::Regra, "nome")
+def test_caracteristica_regra_has_nome():
+    assert hasattr(caracteristica_Regra, "nome")
     descriptor = None
-    for klass in caracteristica::Regra.__mro__:
+    for klass in caracteristica_Regra.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1257,23 +1257,23 @@ def test_caracteristica::regra_has_nome():
 
 
 
-def test_caracteristica::elementoexterno_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::ElementoExterno)
+def test_caracteristica_elementoexterno_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_ElementoExterno)
 
 
-def test_caracteristica::elementoexterno_constructor_exists():
-    assert callable(caracteristica::ElementoExterno.__init__)
+def test_caracteristica_elementoexterno_constructor_exists():
+    assert callable(caracteristica_ElementoExterno.__init__)
 
 
-def test_caracteristica::elementoexterno_constructor_args():
-    sig = inspect.signature(caracteristica::ElementoExterno.__init__)
+def test_caracteristica_elementoexterno_constructor_args():
+    sig = inspect.signature(caracteristica_ElementoExterno.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::elementoexterno_has_nome():
-    assert hasattr(caracteristica::ElementoExterno, "nome")
+def test_caracteristica_elementoexterno_has_nome():
+    assert hasattr(caracteristica_ElementoExterno, "nome")
     descriptor = None
-    for klass in caracteristica::ElementoExterno.__mro__:
+    for klass in caracteristica_ElementoExterno.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1281,23 +1281,23 @@ def test_caracteristica::elementoexterno_has_nome():
 
 
 
-def test_caracteristica::elemento_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::Elemento)
+def test_caracteristica_elemento_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_Elemento)
 
 
-def test_caracteristica::elemento_constructor_exists():
-    assert callable(caracteristica::Elemento.__init__)
+def test_caracteristica_elemento_constructor_exists():
+    assert callable(caracteristica_Elemento.__init__)
 
 
-def test_caracteristica::elemento_constructor_args():
-    sig = inspect.signature(caracteristica::Elemento.__init__)
+def test_caracteristica_elemento_constructor_args():
+    sig = inspect.signature(caracteristica_Elemento.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_caracteristica::elemento_has_nome():
-    assert hasattr(caracteristica::Elemento, "nome")
+def test_caracteristica_elemento_has_nome():
+    assert hasattr(caracteristica_Elemento, "nome")
     descriptor = None
-    for klass in caracteristica::Elemento.__mro__:
+    for klass in caracteristica_Elemento.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1305,109 +1305,61 @@ def test_caracteristica::elemento_has_nome():
 
 
 
-def test_caracteristica::pontodevariacao_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::PontoDeVariacao)
+def test_caracteristica_pontodevariacao_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_PontoDeVariacao)
 
 
-def test_caracteristica::pontodevariacao_constructor_exists():
-    assert callable(caracteristica::PontoDeVariacao.__init__)
+def test_caracteristica_pontodevariacao_constructor_exists():
+    assert callable(caracteristica_PontoDeVariacao.__init__)
 
 
-def test_caracteristica::pontodevariacao_constructor_args():
-    sig = inspect.signature(caracteristica::PontoDeVariacao.__init__)
+def test_caracteristica_pontodevariacao_constructor_args():
+    sig = inspect.signature(caracteristica_PontoDeVariacao.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_caracteristica::lps_is_not_abstract():
-    assert not inspect.isabstract(caracteristica::LPS)
+def test_caracteristica_lps_is_not_abstract():
+    assert not inspect.isabstract(caracteristica_LPS)
 
 
-def test_caracteristica::lps_constructor_exists():
-    assert callable(caracteristica::LPS.__init__)
+def test_caracteristica_lps_constructor_exists():
+    assert callable(caracteristica_LPS.__init__)
 
 
-def test_caracteristica::lps_constructor_args():
-    sig = inspect.signature(caracteristica::LPS.__init__)
+def test_caracteristica_lps_constructor_args():
+    sig = inspect.signature(caracteristica_LPS.__init__)
     params = list(sig.parameters.keys())
     assert "erro" in params, "Missing parameter 'erro'"
     assert "nome" in params, "Missing parameter 'nome'"
     assert "valoresContextuais" in params, "Missing parameter 'valoresContextuais'"
 
-def test_caracteristica::lps_has_erro():
-    assert hasattr(caracteristica::LPS, "erro")
+def test_caracteristica_lps_has_erro():
+    assert hasattr(caracteristica_LPS, "erro")
     descriptor = None
-    for klass in caracteristica::LPS.__mro__:
+    for klass in caracteristica_LPS.__mro__:
         if "erro" in klass.__dict__:
             descriptor = klass.__dict__["erro"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::lps_has_nome():
-    assert hasattr(caracteristica::LPS, "nome")
+def test_caracteristica_lps_has_nome():
+    assert hasattr(caracteristica_LPS, "nome")
     descriptor = None
-    for klass in caracteristica::LPS.__mro__:
+    for klass in caracteristica_LPS.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
     assert isinstance(descriptor, property)
 
-def test_caracteristica::lps_has_valoresContextuais():
-    assert hasattr(caracteristica::LPS, "valoresContextuais")
+def test_caracteristica_lps_has_valoresContextuais():
+    assert hasattr(caracteristica_LPS, "valoresContextuais")
     descriptor = None
-    for klass in caracteristica::LPS.__mro__:
+    for klass in caracteristica_LPS.__mro__:
         if "valoresContextuais" in klass.__dict__:
             descriptor = klass.__dict__["valoresContextuais"]
             break
     assert isinstance(descriptor, property)
-
-def test_operadoracaologico_exists():
-    # Check that the Enumeration exists
-    assert OperadorAcaoLogico is not None
-
-def test_operadoracaologico_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OperadorAcaoLogico]
-    expected_literals = [
-        "AND",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OperadorAcaoLogico"
-
-def test_cardinalidademaxima_exists():
-    # Check that the Enumeration exists
-    assert CardinalidadeMaxima is not None
-
-def test_cardinalidademaxima_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CardinalidadeMaxima]
-    expected_literals = [
-        "OR",
-        "XOR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CardinalidadeMaxima"
-
-def test_operadorrelacional_exists():
-    # Check that the Enumeration exists
-    assert OperadorRelacional is not None
-
-def test_operadorrelacional_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OperadorRelacional]
-    expected_literals = [
-        "MAIOR",
-        "MAIORIGUAL",
-        "MENOR",
-        "DIFERENTE",
-        "MENORIGUAL",
-        "IGUAL",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OperadorRelacional"
 
 def test_operadorlogico_exists():
     # Check that the Enumeration exists
@@ -1424,6 +1376,21 @@ def test_operadorlogico_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in OperadorLogico"
 
+def test_qualidade_exists():
+    # Check that the Enumeration exists
+    assert Qualidade is not None
+
+def test_qualidade_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Qualidade]
+    expected_literals = [
+        "Baixo",
+        "Alto",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Qualidade"
+
 def test_origem_exists():
     # Check that the Enumeration exists
     assert Origem is not None
@@ -1432,14 +1399,48 @@ def test_origem_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Origem]
     expected_literals = [
-        "Usuario",
-        "Sentida",
         "Perfil",
+        "Sentida",
+        "Usuario",
         "Derivada",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Origem"
+
+def test_operadorrelacional_exists():
+    # Check that the Enumeration exists
+    assert OperadorRelacional is not None
+
+def test_operadorrelacional_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OperadorRelacional]
+    expected_literals = [
+        "IGUAL",
+        "MAIOR",
+        "MAIORIGUAL",
+        "MENOR",
+        "DIFERENTE",
+        "MENORIGUAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OperadorRelacional"
+
+def test_cardinalidademaxima_exists():
+    # Check that the Enumeration exists
+    assert CardinalidadeMaxima is not None
+
+def test_cardinalidademaxima_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CardinalidadeMaxima]
+    expected_literals = [
+        "OR",
+        "XOR",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CardinalidadeMaxima"
 
 def test_validade_exists():
     # Check that the Enumeration exists
@@ -1449,46 +1450,14 @@ def test_validade_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Validade]
     expected_literals = [
-        "Raramente",
+        "Permanente",
         "Volatil",
         "Frequente",
-        "Permanente",
+        "Raramente",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Validade"
-
-def test_qualidade_exists():
-    # Check that the Enumeration exists
-    assert Qualidade is not None
-
-def test_qualidade_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Qualidade]
-    expected_literals = [
-        "Alto",
-        "Baixo",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Qualidade"
-
-def test_tipovalor_exists():
-    # Check that the Enumeration exists
-    assert TipoValor is not None
-
-def test_tipovalor_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TipoValor]
-    expected_literals = [
-        "TString",
-        "TFloat",
-        "TInteger",
-        "TBoolean",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TipoValor"
 
 def test_presenca_exists():
     # Check that the Enumeration exists
@@ -1505,6 +1474,37 @@ def test_presenca_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Presenca"
 
+def test_operadoracaologico_exists():
+    # Check that the Enumeration exists
+    assert OperadorAcaoLogico is not None
+
+def test_operadoracaologico_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OperadorAcaoLogico]
+    expected_literals = [
+        "AND",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OperadorAcaoLogico"
+
+def test_tipovalor_exists():
+    # Check that the Enumeration exists
+    assert TipoValor is not None
+
+def test_tipovalor_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TipoValor]
+    expected_literals = [
+        "TFloat",
+        "TInteger",
+        "TString",
+        "TBoolean",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TipoValor"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1517,104 +1517,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-caracteristica::Estado_strategy = st.builds(
-    caracteristica::Estado,
+caracteristica_Estado_strategy = st.builds(
+    caracteristica_Estado,
+    safe=
+        st.booleans(),
     nome=
-        safe_text,
-    safe=
-        st.booleans()
+        safe_text
 )
-caracteristica::Transicao_strategy = st.builds(
-    caracteristica::Transicao,
-    etiqueta=
-        safe_text,
+caracteristica_Transicao_strategy = st.builds(
+    caracteristica_Transicao,
     safe=
-        st.booleans()
+        st.booleans(),
+    etiqueta=
+        safe_text
 )
 Antecedente_strategy = st.builds(
     Antecedente,
 )
-caracteristica::ExpressaoRelacional_strategy = st.builds(
-    caracteristica::ExpressaoRelacional,
+caracteristica_ExpressaoRelacional_strategy = st.builds(
+    caracteristica_ExpressaoRelacional,
     operadorRelacional=
         safe_text,
     valor=
         safe_text
 )
-caracteristica::LiteralComposicao_strategy = st.builds(
-    caracteristica::LiteralComposicao,
+caracteristica_LiteralComposicao_strategy = st.builds(
+    caracteristica_LiteralComposicao,
     presenca=
         safe_text
 )
-caracteristica::ExpressaoLogica_strategy = st.builds(
-    caracteristica::ExpressaoLogica,
+caracteristica_ExpressaoLogica_strategy = st.builds(
+    caracteristica_ExpressaoLogica,
     operadorLogico=
         safe_text
 )
 Acao_strategy = st.builds(
     Acao,
 )
-caracteristica::LiteralAcao_strategy = st.builds(
-    caracteristica::LiteralAcao,
+caracteristica_LiteralAcao_strategy = st.builds(
+    caracteristica_LiteralAcao,
     presenca=
         safe_text
 )
-caracteristica::Designar_strategy = st.builds(
-    caracteristica::Designar,
-    valor=
-        safe_text,
+caracteristica_Designar_strategy = st.builds(
+    caracteristica_Designar,
     tipoValor=
+        safe_text,
+    valor=
         safe_text
 )
-caracteristica::AcaoLogico_strategy = st.builds(
-    caracteristica::AcaoLogico,
+caracteristica_AcaoLogico_strategy = st.builds(
+    caracteristica_AcaoLogico,
     operadorAcaoLogico=
         safe_text
 )
 Evento_strategy = st.builds(
     Evento,
 )
-caracteristica::EventoRelacional_strategy = st.builds(
-    caracteristica::EventoRelacional,
+caracteristica_EventoRelacional_strategy = st.builds(
+    caracteristica_EventoRelacional,
     operadorRelacional=
         safe_text,
     valor=
         safe_text
 )
-caracteristica::EventoLogico_strategy = st.builds(
-    caracteristica::EventoLogico,
+caracteristica_EventoLogico_strategy = st.builds(
+    caracteristica_EventoLogico,
     operadorLogico=
         safe_text
 )
 Regra_strategy = st.builds(
     Regra,
 )
-caracteristica::RegraDeContexto_strategy = st.builds(
-    caracteristica::RegraDeContexto,
+caracteristica_RegraDeContexto_strategy = st.builds(
+    caracteristica_RegraDeContexto,
 )
-caracteristica::RegraDeComposicao_strategy = st.builds(
-    caracteristica::RegraDeComposicao,
+caracteristica_RegraDeComposicao_strategy = st.builds(
+    caracteristica_RegraDeComposicao,
 )
 Expressao_strategy = st.builds(
     Expressao,
 )
-caracteristica::Antecedente_strategy = st.builds(
-    caracteristica::Antecedente,
+caracteristica_Evento_strategy = st.builds(
+    caracteristica_Evento,
 )
-caracteristica::Acao_strategy = st.builds(
-    caracteristica::Acao,
+caracteristica_Acao_strategy = st.builds(
+    caracteristica_Acao,
 )
-caracteristica::Evento_strategy = st.builds(
-    caracteristica::Evento,
+caracteristica_Antecedente_strategy = st.builds(
+    caracteristica_Antecedente,
 )
 CaracteristicaProduto_strategy = st.builds(
     CaracteristicaProduto,
 )
-caracteristica::CaracteristicaOpcionalProduto_strategy = st.builds(
-    caracteristica::CaracteristicaOpcionalProduto,
-)
-caracteristica::VariacaoDoisProduto_strategy = st.builds(
-    caracteristica::VariacaoDoisProduto,
+caracteristica_VariacaoDoisProduto_strategy = st.builds(
+    caracteristica_VariacaoDoisProduto,
     cardinalidadeMinimaOr=
         safe_text,
     cardinalidadeMaxima=
@@ -1622,36 +1619,39 @@ caracteristica::VariacaoDoisProduto_strategy = st.builds(
     cardinalidadeMaximaOr=
         safe_text
 )
-caracteristica::CaracteristicaAgrupadaProduto_strategy = st.builds(
-    caracteristica::CaracteristicaAgrupadaProduto,
+caracteristica_CaracteristicaAgrupadaProduto_strategy = st.builds(
+    caracteristica_CaracteristicaAgrupadaProduto,
 )
-caracteristica::CaracteristicaMandatoriaProduto_strategy = st.builds(
-    caracteristica::CaracteristicaMandatoriaProduto,
+caracteristica_CaracteristicaOpcionalProduto_strategy = st.builds(
+    caracteristica_CaracteristicaOpcionalProduto,
+)
+caracteristica_CaracteristicaMandatoriaProduto_strategy = st.builds(
+    caracteristica_CaracteristicaMandatoriaProduto,
 )
 ElementoDeProduto_strategy = st.builds(
     ElementoDeProduto,
 )
-caracteristica::VariacaoProduto_strategy = st.builds(
-    caracteristica::VariacaoProduto,
+caracteristica_AtributoProduto_strategy = st.builds(
+    caracteristica_AtributoProduto,
+    tipoValor=
+        safe_text,
+    valor=
+        safe_text
+)
+caracteristica_VariacaoProduto_strategy = st.builds(
+    caracteristica_VariacaoProduto,
     cardinalidadeMaxima=
         safe_text,
     cardinalidadeMinima=
         safe_text
 )
-caracteristica::VarianteProduto_strategy = st.builds(
-    caracteristica::VarianteProduto,
+caracteristica_VarianteProduto_strategy = st.builds(
+    caracteristica_VarianteProduto,
     selecionado=
         safe_text
 )
-caracteristica::AtributoProduto_strategy = st.builds(
-    caracteristica::AtributoProduto,
-    valor=
-        safe_text,
-    tipoValor=
-        safe_text
-)
-caracteristica::CaracteristicaProduto_strategy = st.builds(
-    caracteristica::CaracteristicaProduto,
+caracteristica_CaracteristicaProduto_strategy = st.builds(
+    caracteristica_CaracteristicaProduto,
 )
 PontoDeVariacao_strategy = st.builds(
     PontoDeVariacao,
@@ -1662,122 +1662,122 @@ ElementoCaracteristico_strategy = st.builds(
 Elemento_strategy = st.builds(
     Elemento,
 )
-caracteristica::InformacaoDeContexto_strategy = st.builds(
-    caracteristica::InformacaoDeContexto,
-    tipoValor=
-        safe_text,
-    origem=
-        safe_text,
-    validade=
-        safe_text,
-    qualidade=
-        safe_text,
-    valor=
-        safe_text
+caracteristica_RaizDeContexto_strategy = st.builds(
+    caracteristica_RaizDeContexto,
 )
-caracteristica::Variacao_strategy = st.builds(
-    caracteristica::Variacao,
+caracteristica_Variacao_strategy = st.builds(
+    caracteristica_Variacao,
     cardinalidadeMaxima=
         safe_text,
     cardinalidadeMinima=
         safe_text
 )
-caracteristica::EntidadeDeContexto_strategy = st.builds(
-    caracteristica::EntidadeDeContexto,
+caracteristica_Caracteristica_strategy = st.builds(
+    caracteristica_Caracteristica,
 )
-caracteristica::RaizDeContexto_strategy = st.builds(
-    caracteristica::RaizDeContexto,
+caracteristica_InformacaoDeContexto_strategy = st.builds(
+    caracteristica_InformacaoDeContexto,
+    origem=
+        safe_text,
+    qualidade=
+        safe_text,
+    validade=
+        safe_text,
+    valor=
+        safe_text,
+    tipoValor=
+        safe_text
 )
-caracteristica::Caracteristica_strategy = st.builds(
-    caracteristica::Caracteristica,
+caracteristica_EntidadeDeContexto_strategy = st.builds(
+    caracteristica_EntidadeDeContexto,
 )
-caracteristica::ElementoCaracteristico_strategy = st.builds(
-    caracteristica::ElementoCaracteristico,
+caracteristica_ElementoCaracteristico_strategy = st.builds(
+    caracteristica_ElementoCaracteristico,
 )
 ElementoExterno_strategy = st.builds(
     ElementoExterno,
 )
-caracteristica::CasoDeTeste_strategy = st.builds(
-    caracteristica::CasoDeTeste,
+caracteristica_CasoDeTeste_strategy = st.builds(
+    caracteristica_CasoDeTeste,
 )
-caracteristica::CasoDeUso_strategy = st.builds(
-    caracteristica::CasoDeUso,
+caracteristica_CasoDeUso_strategy = st.builds(
+    caracteristica_CasoDeUso,
 )
 Caracteristica_strategy = st.builds(
     Caracteristica,
 )
-caracteristica::CaracteristicaAgrupada_strategy = st.builds(
-    caracteristica::CaracteristicaAgrupada,
+caracteristica_CaracteristicaAgrupada_strategy = st.builds(
+    caracteristica_CaracteristicaAgrupada,
 )
-caracteristica::Variante_strategy = st.builds(
-    caracteristica::Variante,
+caracteristica_CaracteristicaOpcional_strategy = st.builds(
+    caracteristica_CaracteristicaOpcional,
 )
-caracteristica::VariacaoDois_strategy = st.builds(
-    caracteristica::VariacaoDois,
-    cardinalidadeMaximaOr=
-        safe_text,
+caracteristica_CaracteristicaMandatoria_strategy = st.builds(
+    caracteristica_CaracteristicaMandatoria,
+)
+caracteristica_VariacaoDois_strategy = st.builds(
+    caracteristica_VariacaoDois,
     cardinalidadeMinimaOr=
+        safe_text,
+    cardinalidadeMaximaOr=
         safe_text,
     cardinalidadeMaxima=
         safe_text
 )
-caracteristica::CaracteristicaOpcional_strategy = st.builds(
-    caracteristica::CaracteristicaOpcional,
+caracteristica_Variante_strategy = st.builds(
+    caracteristica_Variante,
 )
-caracteristica::CaracteristicaMandatoria_strategy = st.builds(
-    caracteristica::CaracteristicaMandatoria,
+caracteristica_InconsistenciaRegraAdaptacao_strategy = st.builds(
+    caracteristica_InconsistenciaRegraAdaptacao,
 )
-caracteristica::InconsistenciaRegraAdaptacao_strategy = st.builds(
-    caracteristica::InconsistenciaRegraAdaptacao,
-)
-caracteristica::Simulacao_strategy = st.builds(
-    caracteristica::Simulacao,
+caracteristica_Simulacao_strategy = st.builds(
+    caracteristica_Simulacao,
     nome=
         safe_text
 )
-caracteristica::Atributo_strategy = st.builds(
-    caracteristica::Atributo,
+caracteristica_Atributo_strategy = st.builds(
+    caracteristica_Atributo,
     tipoValor=
         safe_text
 )
-caracteristica::CaracteristicaRaiz_strategy = st.builds(
-    caracteristica::CaracteristicaRaiz,
+caracteristica_CaracteristicaRaiz_strategy = st.builds(
+    caracteristica_CaracteristicaRaiz,
 )
-caracteristica::ElementoDeProduto_strategy = st.builds(
-    caracteristica::ElementoDeProduto,
+caracteristica_ElementoDeProduto_strategy = st.builds(
+    caracteristica_ElementoDeProduto,
     nome=
         safe_text
 )
-caracteristica::Expressao_strategy = st.builds(
-    caracteristica::Expressao,
+caracteristica_Expressao_strategy = st.builds(
+    caracteristica_Expressao,
     nome=
         safe_text
 )
-caracteristica::Produto_strategy = st.builds(
-    caracteristica::Produto,
+caracteristica_Produto_strategy = st.builds(
+    caracteristica_Produto,
 )
-caracteristica::Regra_strategy = st.builds(
-    caracteristica::Regra,
+caracteristica_Regra_strategy = st.builds(
+    caracteristica_Regra,
     conteudo=
         safe_text,
     nome=
         safe_text
 )
-caracteristica::ElementoExterno_strategy = st.builds(
-    caracteristica::ElementoExterno,
+caracteristica_ElementoExterno_strategy = st.builds(
+    caracteristica_ElementoExterno,
     nome=
         safe_text
 )
-caracteristica::Elemento_strategy = st.builds(
-    caracteristica::Elemento,
+caracteristica_Elemento_strategy = st.builds(
+    caracteristica_Elemento,
     nome=
         safe_text
 )
-caracteristica::PontoDeVariacao_strategy = st.builds(
-    caracteristica::PontoDeVariacao,
+caracteristica_PontoDeVariacao_strategy = st.builds(
+    caracteristica_PontoDeVariacao,
 )
-caracteristica::LPS_strategy = st.builds(
-    caracteristica::LPS,
+caracteristica_LPS_strategy = st.builds(
+    caracteristica_LPS,
     erro=
         safe_text,
     nome=
@@ -1786,120 +1786,96 @@ caracteristica::LPS_strategy = st.builds(
         safe_text
 )
 
-@given(instance=caracteristica::Estado_strategy)
+@given(instance=caracteristica_Estado_strategy)
 @settings(max_examples=50)
-def test_caracteristica::estado_instantiation(instance):
-    assert isinstance(instance, caracteristica::Estado)
-
-@given(instance=caracteristica::Estado_strategy)
-def test_caracteristica::estado_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_caracteristica_estado_instantiation(instance):
+    assert isinstance(instance, caracteristica_Estado)
 
 
-@given(instance=caracteristica::Estado_strategy)
-def test_caracteristica::estado_nome_setter(instance):
+
+@given(instance=caracteristica_Estado_strategy)
+def test_caracteristica_estado_safe_setter(instance):
+    original = instance.safe
+    instance.safe = original
+    assert instance.safe == original
+
+
+
+@given(instance=caracteristica_Estado_strategy)
+def test_caracteristica_estado_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::Estado_strategy)
-def test_caracteristica::estado_safe_type(instance):
-    assert isinstance(instance.safe, bool)
+@given(instance=caracteristica_Transicao_strategy)
+@settings(max_examples=50)
+def test_caracteristica_transicao_instantiation(instance):
+    assert isinstance(instance, caracteristica_Transicao)
 
 
-@given(instance=caracteristica::Estado_strategy)
-def test_caracteristica::estado_safe_setter(instance):
+
+@given(instance=caracteristica_Transicao_strategy)
+def test_caracteristica_transicao_safe_setter(instance):
     original = instance.safe
     instance.safe = original
     assert instance.safe == original
 
-@given(instance=caracteristica::Transicao_strategy)
-@settings(max_examples=50)
-def test_caracteristica::transicao_instantiation(instance):
-    assert isinstance(instance, caracteristica::Transicao)
-
-@given(instance=caracteristica::Transicao_strategy)
-def test_caracteristica::transicao_etiqueta_type(instance):
-    assert isinstance(instance.etiqueta, str)
 
 
-@given(instance=caracteristica::Transicao_strategy)
-def test_caracteristica::transicao_etiqueta_setter(instance):
+@given(instance=caracteristica_Transicao_strategy)
+def test_caracteristica_transicao_etiqueta_setter(instance):
     original = instance.etiqueta
     instance.etiqueta = original
     assert instance.etiqueta == original
-
-@given(instance=caracteristica::Transicao_strategy)
-def test_caracteristica::transicao_safe_type(instance):
-    assert isinstance(instance.safe, bool)
-
-
-@given(instance=caracteristica::Transicao_strategy)
-def test_caracteristica::transicao_safe_setter(instance):
-    original = instance.safe
-    instance.safe = original
-    assert instance.safe == original
 
 @given(instance=Antecedente_strategy)
 @settings(max_examples=50)
 def test_antecedente_instantiation(instance):
     assert isinstance(instance, Antecedente)
 
-@given(instance=caracteristica::ExpressaoRelacional_strategy)
+@given(instance=caracteristica_ExpressaoRelacional_strategy)
 @settings(max_examples=50)
-def test_caracteristica::expressaorelacional_instantiation(instance):
-    assert isinstance(instance, caracteristica::ExpressaoRelacional)
-
-@given(instance=caracteristica::ExpressaoRelacional_strategy)
-def test_caracteristica::expressaorelacional_operadorRelacional_type(instance):
-    assert isinstance(instance.operadorRelacional, str)
+def test_caracteristica_expressaorelacional_instantiation(instance):
+    assert isinstance(instance, caracteristica_ExpressaoRelacional)
 
 
-@given(instance=caracteristica::ExpressaoRelacional_strategy)
-def test_caracteristica::expressaorelacional_operadorRelacional_setter(instance):
+
+@given(instance=caracteristica_ExpressaoRelacional_strategy)
+def test_caracteristica_expressaorelacional_operadorRelacional_setter(instance):
     original = instance.operadorRelacional
     instance.operadorRelacional = original
     assert instance.operadorRelacional == original
 
-@given(instance=caracteristica::ExpressaoRelacional_strategy)
-def test_caracteristica::expressaorelacional_valor_type(instance):
-    assert isinstance(instance.valor, str)
 
 
-@given(instance=caracteristica::ExpressaoRelacional_strategy)
-def test_caracteristica::expressaorelacional_valor_setter(instance):
+@given(instance=caracteristica_ExpressaoRelacional_strategy)
+def test_caracteristica_expressaorelacional_valor_setter(instance):
     original = instance.valor
     instance.valor = original
     assert instance.valor == original
 
-@given(instance=caracteristica::LiteralComposicao_strategy)
+@given(instance=caracteristica_LiteralComposicao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::literalcomposicao_instantiation(instance):
-    assert isinstance(instance, caracteristica::LiteralComposicao)
-
-@given(instance=caracteristica::LiteralComposicao_strategy)
-def test_caracteristica::literalcomposicao_presenca_type(instance):
-    assert isinstance(instance.presenca, str)
+def test_caracteristica_literalcomposicao_instantiation(instance):
+    assert isinstance(instance, caracteristica_LiteralComposicao)
 
 
-@given(instance=caracteristica::LiteralComposicao_strategy)
-def test_caracteristica::literalcomposicao_presenca_setter(instance):
+
+@given(instance=caracteristica_LiteralComposicao_strategy)
+def test_caracteristica_literalcomposicao_presenca_setter(instance):
     original = instance.presenca
     instance.presenca = original
     assert instance.presenca == original
 
-@given(instance=caracteristica::ExpressaoLogica_strategy)
+@given(instance=caracteristica_ExpressaoLogica_strategy)
 @settings(max_examples=50)
-def test_caracteristica::expressaologica_instantiation(instance):
-    assert isinstance(instance, caracteristica::ExpressaoLogica)
-
-@given(instance=caracteristica::ExpressaoLogica_strategy)
-def test_caracteristica::expressaologica_operadorLogico_type(instance):
-    assert isinstance(instance.operadorLogico, str)
+def test_caracteristica_expressaologica_instantiation(instance):
+    assert isinstance(instance, caracteristica_ExpressaoLogica)
 
 
-@given(instance=caracteristica::ExpressaoLogica_strategy)
-def test_caracteristica::expressaologica_operadorLogico_setter(instance):
+
+@given(instance=caracteristica_ExpressaoLogica_strategy)
+def test_caracteristica_expressaologica_operadorLogico_setter(instance):
     original = instance.operadorLogico
     instance.operadorLogico = original
     assert instance.operadorLogico == original
@@ -1909,61 +1885,49 @@ def test_caracteristica::expressaologica_operadorLogico_setter(instance):
 def test_acao_instantiation(instance):
     assert isinstance(instance, Acao)
 
-@given(instance=caracteristica::LiteralAcao_strategy)
+@given(instance=caracteristica_LiteralAcao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::literalacao_instantiation(instance):
-    assert isinstance(instance, caracteristica::LiteralAcao)
-
-@given(instance=caracteristica::LiteralAcao_strategy)
-def test_caracteristica::literalacao_presenca_type(instance):
-    assert isinstance(instance.presenca, str)
+def test_caracteristica_literalacao_instantiation(instance):
+    assert isinstance(instance, caracteristica_LiteralAcao)
 
 
-@given(instance=caracteristica::LiteralAcao_strategy)
-def test_caracteristica::literalacao_presenca_setter(instance):
+
+@given(instance=caracteristica_LiteralAcao_strategy)
+def test_caracteristica_literalacao_presenca_setter(instance):
     original = instance.presenca
     instance.presenca = original
     assert instance.presenca == original
 
-@given(instance=caracteristica::Designar_strategy)
+@given(instance=caracteristica_Designar_strategy)
 @settings(max_examples=50)
-def test_caracteristica::designar_instantiation(instance):
-    assert isinstance(instance, caracteristica::Designar)
-
-@given(instance=caracteristica::Designar_strategy)
-def test_caracteristica::designar_valor_type(instance):
-    assert isinstance(instance.valor, str)
+def test_caracteristica_designar_instantiation(instance):
+    assert isinstance(instance, caracteristica_Designar)
 
 
-@given(instance=caracteristica::Designar_strategy)
-def test_caracteristica::designar_valor_setter(instance):
-    original = instance.valor
-    instance.valor = original
-    assert instance.valor == original
 
-@given(instance=caracteristica::Designar_strategy)
-def test_caracteristica::designar_tipoValor_type(instance):
-    assert isinstance(instance.tipoValor, str)
-
-
-@given(instance=caracteristica::Designar_strategy)
-def test_caracteristica::designar_tipoValor_setter(instance):
+@given(instance=caracteristica_Designar_strategy)
+def test_caracteristica_designar_tipoValor_setter(instance):
     original = instance.tipoValor
     instance.tipoValor = original
     assert instance.tipoValor == original
 
-@given(instance=caracteristica::AcaoLogico_strategy)
+
+
+@given(instance=caracteristica_Designar_strategy)
+def test_caracteristica_designar_valor_setter(instance):
+    original = instance.valor
+    instance.valor = original
+    assert instance.valor == original
+
+@given(instance=caracteristica_AcaoLogico_strategy)
 @settings(max_examples=50)
-def test_caracteristica::acaologico_instantiation(instance):
-    assert isinstance(instance, caracteristica::AcaoLogico)
-
-@given(instance=caracteristica::AcaoLogico_strategy)
-def test_caracteristica::acaologico_operadorAcaoLogico_type(instance):
-    assert isinstance(instance.operadorAcaoLogico, str)
+def test_caracteristica_acaologico_instantiation(instance):
+    assert isinstance(instance, caracteristica_AcaoLogico)
 
 
-@given(instance=caracteristica::AcaoLogico_strategy)
-def test_caracteristica::acaologico_operadorAcaoLogico_setter(instance):
+
+@given(instance=caracteristica_AcaoLogico_strategy)
+def test_caracteristica_acaologico_operadorAcaoLogico_setter(instance):
     original = instance.operadorAcaoLogico
     instance.operadorAcaoLogico = original
     assert instance.operadorAcaoLogico == original
@@ -1973,45 +1937,36 @@ def test_caracteristica::acaologico_operadorAcaoLogico_setter(instance):
 def test_evento_instantiation(instance):
     assert isinstance(instance, Evento)
 
-@given(instance=caracteristica::EventoRelacional_strategy)
+@given(instance=caracteristica_EventoRelacional_strategy)
 @settings(max_examples=50)
-def test_caracteristica::eventorelacional_instantiation(instance):
-    assert isinstance(instance, caracteristica::EventoRelacional)
-
-@given(instance=caracteristica::EventoRelacional_strategy)
-def test_caracteristica::eventorelacional_operadorRelacional_type(instance):
-    assert isinstance(instance.operadorRelacional, str)
+def test_caracteristica_eventorelacional_instantiation(instance):
+    assert isinstance(instance, caracteristica_EventoRelacional)
 
 
-@given(instance=caracteristica::EventoRelacional_strategy)
-def test_caracteristica::eventorelacional_operadorRelacional_setter(instance):
+
+@given(instance=caracteristica_EventoRelacional_strategy)
+def test_caracteristica_eventorelacional_operadorRelacional_setter(instance):
     original = instance.operadorRelacional
     instance.operadorRelacional = original
     assert instance.operadorRelacional == original
 
-@given(instance=caracteristica::EventoRelacional_strategy)
-def test_caracteristica::eventorelacional_valor_type(instance):
-    assert isinstance(instance.valor, str)
 
 
-@given(instance=caracteristica::EventoRelacional_strategy)
-def test_caracteristica::eventorelacional_valor_setter(instance):
+@given(instance=caracteristica_EventoRelacional_strategy)
+def test_caracteristica_eventorelacional_valor_setter(instance):
     original = instance.valor
     instance.valor = original
     assert instance.valor == original
 
-@given(instance=caracteristica::EventoLogico_strategy)
+@given(instance=caracteristica_EventoLogico_strategy)
 @settings(max_examples=50)
-def test_caracteristica::eventologico_instantiation(instance):
-    assert isinstance(instance, caracteristica::EventoLogico)
-
-@given(instance=caracteristica::EventoLogico_strategy)
-def test_caracteristica::eventologico_operadorLogico_type(instance):
-    assert isinstance(instance.operadorLogico, str)
+def test_caracteristica_eventologico_instantiation(instance):
+    assert isinstance(instance, caracteristica_EventoLogico)
 
 
-@given(instance=caracteristica::EventoLogico_strategy)
-def test_caracteristica::eventologico_operadorLogico_setter(instance):
+
+@given(instance=caracteristica_EventoLogico_strategy)
+def test_caracteristica_eventologico_operadorLogico_setter(instance):
     original = instance.operadorLogico
     instance.operadorLogico = original
     assert instance.operadorLogico == original
@@ -2021,173 +1976,149 @@ def test_caracteristica::eventologico_operadorLogico_setter(instance):
 def test_regra_instantiation(instance):
     assert isinstance(instance, Regra)
 
-@given(instance=caracteristica::RegraDeContexto_strategy)
+@given(instance=caracteristica_RegraDeContexto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::regradecontexto_instantiation(instance):
-    assert isinstance(instance, caracteristica::RegraDeContexto)
+def test_caracteristica_regradecontexto_instantiation(instance):
+    assert isinstance(instance, caracteristica_RegraDeContexto)
 
-@given(instance=caracteristica::RegraDeComposicao_strategy)
+@given(instance=caracteristica_RegraDeComposicao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::regradecomposicao_instantiation(instance):
-    assert isinstance(instance, caracteristica::RegraDeComposicao)
+def test_caracteristica_regradecomposicao_instantiation(instance):
+    assert isinstance(instance, caracteristica_RegraDeComposicao)
 
 @given(instance=Expressao_strategy)
 @settings(max_examples=50)
 def test_expressao_instantiation(instance):
     assert isinstance(instance, Expressao)
 
-@given(instance=caracteristica::Antecedente_strategy)
+@given(instance=caracteristica_Evento_strategy)
 @settings(max_examples=50)
-def test_caracteristica::antecedente_instantiation(instance):
-    assert isinstance(instance, caracteristica::Antecedente)
+def test_caracteristica_evento_instantiation(instance):
+    assert isinstance(instance, caracteristica_Evento)
 
-@given(instance=caracteristica::Acao_strategy)
+@given(instance=caracteristica_Acao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::acao_instantiation(instance):
-    assert isinstance(instance, caracteristica::Acao)
+def test_caracteristica_acao_instantiation(instance):
+    assert isinstance(instance, caracteristica_Acao)
 
-@given(instance=caracteristica::Evento_strategy)
+@given(instance=caracteristica_Antecedente_strategy)
 @settings(max_examples=50)
-def test_caracteristica::evento_instantiation(instance):
-    assert isinstance(instance, caracteristica::Evento)
+def test_caracteristica_antecedente_instantiation(instance):
+    assert isinstance(instance, caracteristica_Antecedente)
 
 @given(instance=CaracteristicaProduto_strategy)
 @settings(max_examples=50)
 def test_caracteristicaproduto_instantiation(instance):
     assert isinstance(instance, CaracteristicaProduto)
 
-@given(instance=caracteristica::CaracteristicaOpcionalProduto_strategy)
+@given(instance=caracteristica_VariacaoDoisProduto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicaopcionalproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaOpcionalProduto)
-
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-@settings(max_examples=50)
-def test_caracteristica::variacaodoisproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::VariacaoDoisProduto)
-
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-def test_caracteristica::variacaodoisproduto_cardinalidadeMinimaOr_type(instance):
-    assert isinstance(instance.cardinalidadeMinimaOr, str)
+def test_caracteristica_variacaodoisproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_VariacaoDoisProduto)
 
 
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-def test_caracteristica::variacaodoisproduto_cardinalidadeMinimaOr_setter(instance):
+
+@given(instance=caracteristica_VariacaoDoisProduto_strategy)
+def test_caracteristica_variacaodoisproduto_cardinalidadeMinimaOr_setter(instance):
     original = instance.cardinalidadeMinimaOr
     instance.cardinalidadeMinimaOr = original
     assert instance.cardinalidadeMinimaOr == original
 
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-def test_caracteristica::variacaodoisproduto_cardinalidadeMaxima_type(instance):
-    assert isinstance(instance.cardinalidadeMaxima, str)
 
 
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-def test_caracteristica::variacaodoisproduto_cardinalidadeMaxima_setter(instance):
+@given(instance=caracteristica_VariacaoDoisProduto_strategy)
+def test_caracteristica_variacaodoisproduto_cardinalidadeMaxima_setter(instance):
     original = instance.cardinalidadeMaxima
     instance.cardinalidadeMaxima = original
     assert instance.cardinalidadeMaxima == original
 
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-def test_caracteristica::variacaodoisproduto_cardinalidadeMaximaOr_type(instance):
-    assert isinstance(instance.cardinalidadeMaximaOr, str)
 
 
-@given(instance=caracteristica::VariacaoDoisProduto_strategy)
-def test_caracteristica::variacaodoisproduto_cardinalidadeMaximaOr_setter(instance):
+@given(instance=caracteristica_VariacaoDoisProduto_strategy)
+def test_caracteristica_variacaodoisproduto_cardinalidadeMaximaOr_setter(instance):
     original = instance.cardinalidadeMaximaOr
     instance.cardinalidadeMaximaOr = original
     assert instance.cardinalidadeMaximaOr == original
 
-@given(instance=caracteristica::CaracteristicaAgrupadaProduto_strategy)
+@given(instance=caracteristica_CaracteristicaAgrupadaProduto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicaagrupadaproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaAgrupadaProduto)
+def test_caracteristica_caracteristicaagrupadaproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaAgrupadaProduto)
 
-@given(instance=caracteristica::CaracteristicaMandatoriaProduto_strategy)
+@given(instance=caracteristica_CaracteristicaOpcionalProduto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicamandatoriaproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaMandatoriaProduto)
+def test_caracteristica_caracteristicaopcionalproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaOpcionalProduto)
+
+@given(instance=caracteristica_CaracteristicaMandatoriaProduto_strategy)
+@settings(max_examples=50)
+def test_caracteristica_caracteristicamandatoriaproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaMandatoriaProduto)
 
 @given(instance=ElementoDeProduto_strategy)
 @settings(max_examples=50)
 def test_elementodeproduto_instantiation(instance):
     assert isinstance(instance, ElementoDeProduto)
 
-@given(instance=caracteristica::VariacaoProduto_strategy)
+@given(instance=caracteristica_AtributoProduto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::variacaoproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::VariacaoProduto)
-
-@given(instance=caracteristica::VariacaoProduto_strategy)
-def test_caracteristica::variacaoproduto_cardinalidadeMaxima_type(instance):
-    assert isinstance(instance.cardinalidadeMaxima, str)
+def test_caracteristica_atributoproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_AtributoProduto)
 
 
-@given(instance=caracteristica::VariacaoProduto_strategy)
-def test_caracteristica::variacaoproduto_cardinalidadeMaxima_setter(instance):
-    original = instance.cardinalidadeMaxima
-    instance.cardinalidadeMaxima = original
-    assert instance.cardinalidadeMaxima == original
 
-@given(instance=caracteristica::VariacaoProduto_strategy)
-def test_caracteristica::variacaoproduto_cardinalidadeMinima_type(instance):
-    assert isinstance(instance.cardinalidadeMinima, str)
-
-
-@given(instance=caracteristica::VariacaoProduto_strategy)
-def test_caracteristica::variacaoproduto_cardinalidadeMinima_setter(instance):
-    original = instance.cardinalidadeMinima
-    instance.cardinalidadeMinima = original
-    assert instance.cardinalidadeMinima == original
-
-@given(instance=caracteristica::VarianteProduto_strategy)
-@settings(max_examples=50)
-def test_caracteristica::varianteproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::VarianteProduto)
-
-@given(instance=caracteristica::VarianteProduto_strategy)
-def test_caracteristica::varianteproduto_selecionado_type(instance):
-    assert isinstance(instance.selecionado, str)
-
-
-@given(instance=caracteristica::VarianteProduto_strategy)
-def test_caracteristica::varianteproduto_selecionado_setter(instance):
-    original = instance.selecionado
-    instance.selecionado = original
-    assert instance.selecionado == original
-
-@given(instance=caracteristica::AtributoProduto_strategy)
-@settings(max_examples=50)
-def test_caracteristica::atributoproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::AtributoProduto)
-
-@given(instance=caracteristica::AtributoProduto_strategy)
-def test_caracteristica::atributoproduto_valor_type(instance):
-    assert isinstance(instance.valor, str)
-
-
-@given(instance=caracteristica::AtributoProduto_strategy)
-def test_caracteristica::atributoproduto_valor_setter(instance):
-    original = instance.valor
-    instance.valor = original
-    assert instance.valor == original
-
-@given(instance=caracteristica::AtributoProduto_strategy)
-def test_caracteristica::atributoproduto_tipoValor_type(instance):
-    assert isinstance(instance.tipoValor, str)
-
-
-@given(instance=caracteristica::AtributoProduto_strategy)
-def test_caracteristica::atributoproduto_tipoValor_setter(instance):
+@given(instance=caracteristica_AtributoProduto_strategy)
+def test_caracteristica_atributoproduto_tipoValor_setter(instance):
     original = instance.tipoValor
     instance.tipoValor = original
     assert instance.tipoValor == original
 
-@given(instance=caracteristica::CaracteristicaProduto_strategy)
+
+
+@given(instance=caracteristica_AtributoProduto_strategy)
+def test_caracteristica_atributoproduto_valor_setter(instance):
+    original = instance.valor
+    instance.valor = original
+    assert instance.valor == original
+
+@given(instance=caracteristica_VariacaoProduto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicaproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaProduto)
+def test_caracteristica_variacaoproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_VariacaoProduto)
+
+
+
+@given(instance=caracteristica_VariacaoProduto_strategy)
+def test_caracteristica_variacaoproduto_cardinalidadeMaxima_setter(instance):
+    original = instance.cardinalidadeMaxima
+    instance.cardinalidadeMaxima = original
+    assert instance.cardinalidadeMaxima == original
+
+
+
+@given(instance=caracteristica_VariacaoProduto_strategy)
+def test_caracteristica_variacaoproduto_cardinalidadeMinima_setter(instance):
+    original = instance.cardinalidadeMinima
+    instance.cardinalidadeMinima = original
+    assert instance.cardinalidadeMinima == original
+
+@given(instance=caracteristica_VarianteProduto_strategy)
+@settings(max_examples=50)
+def test_caracteristica_varianteproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_VarianteProduto)
+
+
+
+@given(instance=caracteristica_VarianteProduto_strategy)
+def test_caracteristica_varianteproduto_selecionado_setter(instance):
+    original = instance.selecionado
+    instance.selecionado = original
+    assert instance.selecionado == original
+
+@given(instance=caracteristica_CaracteristicaProduto_strategy)
+@settings(max_examples=50)
+def test_caracteristica_caracteristicaproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaProduto)
 
 @given(instance=PontoDeVariacao_strategy)
 @settings(max_examples=50)
@@ -2204,368 +2135,305 @@ def test_elementocaracteristico_instantiation(instance):
 def test_elemento_instantiation(instance):
     assert isinstance(instance, Elemento)
 
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
+@given(instance=caracteristica_RaizDeContexto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::informacaodecontexto_instantiation(instance):
-    assert isinstance(instance, caracteristica::InformacaoDeContexto)
+def test_caracteristica_raizdecontexto_instantiation(instance):
+    assert isinstance(instance, caracteristica_RaizDeContexto)
 
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_tipoValor_type(instance):
-    assert isinstance(instance.tipoValor, str)
-
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_tipoValor_setter(instance):
-    original = instance.tipoValor
-    instance.tipoValor = original
-    assert instance.tipoValor == original
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_origem_type(instance):
-    assert isinstance(instance.origem, str)
-
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_origem_setter(instance):
-    original = instance.origem
-    instance.origem = original
-    assert instance.origem == original
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_validade_type(instance):
-    assert isinstance(instance.validade, str)
-
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_validade_setter(instance):
-    original = instance.validade
-    instance.validade = original
-    assert instance.validade == original
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_qualidade_type(instance):
-    assert isinstance(instance.qualidade, str)
-
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_qualidade_setter(instance):
-    original = instance.qualidade
-    instance.qualidade = original
-    assert instance.qualidade == original
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_valor_type(instance):
-    assert isinstance(instance.valor, str)
-
-
-@given(instance=caracteristica::InformacaoDeContexto_strategy)
-def test_caracteristica::informacaodecontexto_valor_setter(instance):
-    original = instance.valor
-    instance.valor = original
-    assert instance.valor == original
-
-@given(instance=caracteristica::Variacao_strategy)
+@given(instance=caracteristica_Variacao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::variacao_instantiation(instance):
-    assert isinstance(instance, caracteristica::Variacao)
-
-@given(instance=caracteristica::Variacao_strategy)
-def test_caracteristica::variacao_cardinalidadeMaxima_type(instance):
-    assert isinstance(instance.cardinalidadeMaxima, str)
+def test_caracteristica_variacao_instantiation(instance):
+    assert isinstance(instance, caracteristica_Variacao)
 
 
-@given(instance=caracteristica::Variacao_strategy)
-def test_caracteristica::variacao_cardinalidadeMaxima_setter(instance):
+
+@given(instance=caracteristica_Variacao_strategy)
+def test_caracteristica_variacao_cardinalidadeMaxima_setter(instance):
     original = instance.cardinalidadeMaxima
     instance.cardinalidadeMaxima = original
     assert instance.cardinalidadeMaxima == original
 
-@given(instance=caracteristica::Variacao_strategy)
-def test_caracteristica::variacao_cardinalidadeMinima_type(instance):
-    assert isinstance(instance.cardinalidadeMinima, str)
 
 
-@given(instance=caracteristica::Variacao_strategy)
-def test_caracteristica::variacao_cardinalidadeMinima_setter(instance):
+@given(instance=caracteristica_Variacao_strategy)
+def test_caracteristica_variacao_cardinalidadeMinima_setter(instance):
     original = instance.cardinalidadeMinima
     instance.cardinalidadeMinima = original
     assert instance.cardinalidadeMinima == original
 
-@given(instance=caracteristica::EntidadeDeContexto_strategy)
+@given(instance=caracteristica_Caracteristica_strategy)
 @settings(max_examples=50)
-def test_caracteristica::entidadedecontexto_instantiation(instance):
-    assert isinstance(instance, caracteristica::EntidadeDeContexto)
+def test_caracteristica_caracteristica_instantiation(instance):
+    assert isinstance(instance, caracteristica_Caracteristica)
 
-@given(instance=caracteristica::RaizDeContexto_strategy)
+@given(instance=caracteristica_InformacaoDeContexto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::raizdecontexto_instantiation(instance):
-    assert isinstance(instance, caracteristica::RaizDeContexto)
+def test_caracteristica_informacaodecontexto_instantiation(instance):
+    assert isinstance(instance, caracteristica_InformacaoDeContexto)
 
-@given(instance=caracteristica::Caracteristica_strategy)
-@settings(max_examples=50)
-def test_caracteristica::caracteristica_instantiation(instance):
-    assert isinstance(instance, caracteristica::Caracteristica)
 
-@given(instance=caracteristica::ElementoCaracteristico_strategy)
+
+@given(instance=caracteristica_InformacaoDeContexto_strategy)
+def test_caracteristica_informacaodecontexto_origem_setter(instance):
+    original = instance.origem
+    instance.origem = original
+    assert instance.origem == original
+
+
+
+@given(instance=caracteristica_InformacaoDeContexto_strategy)
+def test_caracteristica_informacaodecontexto_qualidade_setter(instance):
+    original = instance.qualidade
+    instance.qualidade = original
+    assert instance.qualidade == original
+
+
+
+@given(instance=caracteristica_InformacaoDeContexto_strategy)
+def test_caracteristica_informacaodecontexto_validade_setter(instance):
+    original = instance.validade
+    instance.validade = original
+    assert instance.validade == original
+
+
+
+@given(instance=caracteristica_InformacaoDeContexto_strategy)
+def test_caracteristica_informacaodecontexto_valor_setter(instance):
+    original = instance.valor
+    instance.valor = original
+    assert instance.valor == original
+
+
+
+@given(instance=caracteristica_InformacaoDeContexto_strategy)
+def test_caracteristica_informacaodecontexto_tipoValor_setter(instance):
+    original = instance.tipoValor
+    instance.tipoValor = original
+    assert instance.tipoValor == original
+
+@given(instance=caracteristica_EntidadeDeContexto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::elementocaracteristico_instantiation(instance):
-    assert isinstance(instance, caracteristica::ElementoCaracteristico)
+def test_caracteristica_entidadedecontexto_instantiation(instance):
+    assert isinstance(instance, caracteristica_EntidadeDeContexto)
+
+@given(instance=caracteristica_ElementoCaracteristico_strategy)
+@settings(max_examples=50)
+def test_caracteristica_elementocaracteristico_instantiation(instance):
+    assert isinstance(instance, caracteristica_ElementoCaracteristico)
 
 @given(instance=ElementoExterno_strategy)
 @settings(max_examples=50)
 def test_elementoexterno_instantiation(instance):
     assert isinstance(instance, ElementoExterno)
 
-@given(instance=caracteristica::CasoDeTeste_strategy)
+@given(instance=caracteristica_CasoDeTeste_strategy)
 @settings(max_examples=50)
-def test_caracteristica::casodeteste_instantiation(instance):
-    assert isinstance(instance, caracteristica::CasoDeTeste)
+def test_caracteristica_casodeteste_instantiation(instance):
+    assert isinstance(instance, caracteristica_CasoDeTeste)
 
-@given(instance=caracteristica::CasoDeUso_strategy)
+@given(instance=caracteristica_CasoDeUso_strategy)
 @settings(max_examples=50)
-def test_caracteristica::casodeuso_instantiation(instance):
-    assert isinstance(instance, caracteristica::CasoDeUso)
+def test_caracteristica_casodeuso_instantiation(instance):
+    assert isinstance(instance, caracteristica_CasoDeUso)
 
 @given(instance=Caracteristica_strategy)
 @settings(max_examples=50)
 def test_caracteristica_instantiation(instance):
     assert isinstance(instance, Caracteristica)
 
-@given(instance=caracteristica::CaracteristicaAgrupada_strategy)
+@given(instance=caracteristica_CaracteristicaAgrupada_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicaagrupada_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaAgrupada)
+def test_caracteristica_caracteristicaagrupada_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaAgrupada)
 
-@given(instance=caracteristica::Variante_strategy)
+@given(instance=caracteristica_CaracteristicaOpcional_strategy)
 @settings(max_examples=50)
-def test_caracteristica::variante_instantiation(instance):
-    assert isinstance(instance, caracteristica::Variante)
+def test_caracteristica_caracteristicaopcional_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaOpcional)
 
-@given(instance=caracteristica::VariacaoDois_strategy)
+@given(instance=caracteristica_CaracteristicaMandatoria_strategy)
 @settings(max_examples=50)
-def test_caracteristica::variacaodois_instantiation(instance):
-    assert isinstance(instance, caracteristica::VariacaoDois)
+def test_caracteristica_caracteristicamandatoria_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaMandatoria)
 
-@given(instance=caracteristica::VariacaoDois_strategy)
-def test_caracteristica::variacaodois_cardinalidadeMaximaOr_type(instance):
-    assert isinstance(instance.cardinalidadeMaximaOr, str)
-
-
-@given(instance=caracteristica::VariacaoDois_strategy)
-def test_caracteristica::variacaodois_cardinalidadeMaximaOr_setter(instance):
-    original = instance.cardinalidadeMaximaOr
-    instance.cardinalidadeMaximaOr = original
-    assert instance.cardinalidadeMaximaOr == original
-
-@given(instance=caracteristica::VariacaoDois_strategy)
-def test_caracteristica::variacaodois_cardinalidadeMinimaOr_type(instance):
-    assert isinstance(instance.cardinalidadeMinimaOr, str)
+@given(instance=caracteristica_VariacaoDois_strategy)
+@settings(max_examples=50)
+def test_caracteristica_variacaodois_instantiation(instance):
+    assert isinstance(instance, caracteristica_VariacaoDois)
 
 
-@given(instance=caracteristica::VariacaoDois_strategy)
-def test_caracteristica::variacaodois_cardinalidadeMinimaOr_setter(instance):
+
+@given(instance=caracteristica_VariacaoDois_strategy)
+def test_caracteristica_variacaodois_cardinalidadeMinimaOr_setter(instance):
     original = instance.cardinalidadeMinimaOr
     instance.cardinalidadeMinimaOr = original
     assert instance.cardinalidadeMinimaOr == original
 
-@given(instance=caracteristica::VariacaoDois_strategy)
-def test_caracteristica::variacaodois_cardinalidadeMaxima_type(instance):
-    assert isinstance(instance.cardinalidadeMaxima, str)
 
 
-@given(instance=caracteristica::VariacaoDois_strategy)
-def test_caracteristica::variacaodois_cardinalidadeMaxima_setter(instance):
+@given(instance=caracteristica_VariacaoDois_strategy)
+def test_caracteristica_variacaodois_cardinalidadeMaximaOr_setter(instance):
+    original = instance.cardinalidadeMaximaOr
+    instance.cardinalidadeMaximaOr = original
+    assert instance.cardinalidadeMaximaOr == original
+
+
+
+@given(instance=caracteristica_VariacaoDois_strategy)
+def test_caracteristica_variacaodois_cardinalidadeMaxima_setter(instance):
     original = instance.cardinalidadeMaxima
     instance.cardinalidadeMaxima = original
     assert instance.cardinalidadeMaxima == original
 
-@given(instance=caracteristica::CaracteristicaOpcional_strategy)
+@given(instance=caracteristica_Variante_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicaopcional_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaOpcional)
+def test_caracteristica_variante_instantiation(instance):
+    assert isinstance(instance, caracteristica_Variante)
 
-@given(instance=caracteristica::CaracteristicaMandatoria_strategy)
+@given(instance=caracteristica_InconsistenciaRegraAdaptacao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicamandatoria_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaMandatoria)
+def test_caracteristica_inconsistenciaregraadaptacao_instantiation(instance):
+    assert isinstance(instance, caracteristica_InconsistenciaRegraAdaptacao)
 
-@given(instance=caracteristica::InconsistenciaRegraAdaptacao_strategy)
+@given(instance=caracteristica_Simulacao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::inconsistenciaregraadaptacao_instantiation(instance):
-    assert isinstance(instance, caracteristica::InconsistenciaRegraAdaptacao)
-
-@given(instance=caracteristica::Simulacao_strategy)
-@settings(max_examples=50)
-def test_caracteristica::simulacao_instantiation(instance):
-    assert isinstance(instance, caracteristica::Simulacao)
-
-@given(instance=caracteristica::Simulacao_strategy)
-def test_caracteristica::simulacao_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_caracteristica_simulacao_instantiation(instance):
+    assert isinstance(instance, caracteristica_Simulacao)
 
 
-@given(instance=caracteristica::Simulacao_strategy)
-def test_caracteristica::simulacao_nome_setter(instance):
+
+@given(instance=caracteristica_Simulacao_strategy)
+def test_caracteristica_simulacao_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::Atributo_strategy)
+@given(instance=caracteristica_Atributo_strategy)
 @settings(max_examples=50)
-def test_caracteristica::atributo_instantiation(instance):
-    assert isinstance(instance, caracteristica::Atributo)
-
-@given(instance=caracteristica::Atributo_strategy)
-def test_caracteristica::atributo_tipoValor_type(instance):
-    assert isinstance(instance.tipoValor, str)
+def test_caracteristica_atributo_instantiation(instance):
+    assert isinstance(instance, caracteristica_Atributo)
 
 
-@given(instance=caracteristica::Atributo_strategy)
-def test_caracteristica::atributo_tipoValor_setter(instance):
+
+@given(instance=caracteristica_Atributo_strategy)
+def test_caracteristica_atributo_tipoValor_setter(instance):
     original = instance.tipoValor
     instance.tipoValor = original
     assert instance.tipoValor == original
 
-@given(instance=caracteristica::CaracteristicaRaiz_strategy)
+@given(instance=caracteristica_CaracteristicaRaiz_strategy)
 @settings(max_examples=50)
-def test_caracteristica::caracteristicaraiz_instantiation(instance):
-    assert isinstance(instance, caracteristica::CaracteristicaRaiz)
+def test_caracteristica_caracteristicaraiz_instantiation(instance):
+    assert isinstance(instance, caracteristica_CaracteristicaRaiz)
 
-@given(instance=caracteristica::ElementoDeProduto_strategy)
+@given(instance=caracteristica_ElementoDeProduto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::elementodeproduto_instantiation(instance):
-    assert isinstance(instance, caracteristica::ElementoDeProduto)
-
-@given(instance=caracteristica::ElementoDeProduto_strategy)
-def test_caracteristica::elementodeproduto_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_caracteristica_elementodeproduto_instantiation(instance):
+    assert isinstance(instance, caracteristica_ElementoDeProduto)
 
 
-@given(instance=caracteristica::ElementoDeProduto_strategy)
-def test_caracteristica::elementodeproduto_nome_setter(instance):
+
+@given(instance=caracteristica_ElementoDeProduto_strategy)
+def test_caracteristica_elementodeproduto_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::Expressao_strategy)
+@given(instance=caracteristica_Expressao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::expressao_instantiation(instance):
-    assert isinstance(instance, caracteristica::Expressao)
-
-@given(instance=caracteristica::Expressao_strategy)
-def test_caracteristica::expressao_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_caracteristica_expressao_instantiation(instance):
+    assert isinstance(instance, caracteristica_Expressao)
 
 
-@given(instance=caracteristica::Expressao_strategy)
-def test_caracteristica::expressao_nome_setter(instance):
+
+@given(instance=caracteristica_Expressao_strategy)
+def test_caracteristica_expressao_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::Produto_strategy)
+@given(instance=caracteristica_Produto_strategy)
 @settings(max_examples=50)
-def test_caracteristica::produto_instantiation(instance):
-    assert isinstance(instance, caracteristica::Produto)
+def test_caracteristica_produto_instantiation(instance):
+    assert isinstance(instance, caracteristica_Produto)
 
-@given(instance=caracteristica::Regra_strategy)
+@given(instance=caracteristica_Regra_strategy)
 @settings(max_examples=50)
-def test_caracteristica::regra_instantiation(instance):
-    assert isinstance(instance, caracteristica::Regra)
-
-@given(instance=caracteristica::Regra_strategy)
-def test_caracteristica::regra_conteudo_type(instance):
-    assert isinstance(instance.conteudo, str)
+def test_caracteristica_regra_instantiation(instance):
+    assert isinstance(instance, caracteristica_Regra)
 
 
-@given(instance=caracteristica::Regra_strategy)
-def test_caracteristica::regra_conteudo_setter(instance):
+
+@given(instance=caracteristica_Regra_strategy)
+def test_caracteristica_regra_conteudo_setter(instance):
     original = instance.conteudo
     instance.conteudo = original
     assert instance.conteudo == original
 
-@given(instance=caracteristica::Regra_strategy)
-def test_caracteristica::regra_nome_type(instance):
-    assert isinstance(instance.nome, str)
 
 
-@given(instance=caracteristica::Regra_strategy)
-def test_caracteristica::regra_nome_setter(instance):
+@given(instance=caracteristica_Regra_strategy)
+def test_caracteristica_regra_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::ElementoExterno_strategy)
+@given(instance=caracteristica_ElementoExterno_strategy)
 @settings(max_examples=50)
-def test_caracteristica::elementoexterno_instantiation(instance):
-    assert isinstance(instance, caracteristica::ElementoExterno)
-
-@given(instance=caracteristica::ElementoExterno_strategy)
-def test_caracteristica::elementoexterno_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_caracteristica_elementoexterno_instantiation(instance):
+    assert isinstance(instance, caracteristica_ElementoExterno)
 
 
-@given(instance=caracteristica::ElementoExterno_strategy)
-def test_caracteristica::elementoexterno_nome_setter(instance):
+
+@given(instance=caracteristica_ElementoExterno_strategy)
+def test_caracteristica_elementoexterno_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::Elemento_strategy)
+@given(instance=caracteristica_Elemento_strategy)
 @settings(max_examples=50)
-def test_caracteristica::elemento_instantiation(instance):
-    assert isinstance(instance, caracteristica::Elemento)
-
-@given(instance=caracteristica::Elemento_strategy)
-def test_caracteristica::elemento_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_caracteristica_elemento_instantiation(instance):
+    assert isinstance(instance, caracteristica_Elemento)
 
 
-@given(instance=caracteristica::Elemento_strategy)
-def test_caracteristica::elemento_nome_setter(instance):
+
+@given(instance=caracteristica_Elemento_strategy)
+def test_caracteristica_elemento_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::PontoDeVariacao_strategy)
+@given(instance=caracteristica_PontoDeVariacao_strategy)
 @settings(max_examples=50)
-def test_caracteristica::pontodevariacao_instantiation(instance):
-    assert isinstance(instance, caracteristica::PontoDeVariacao)
+def test_caracteristica_pontodevariacao_instantiation(instance):
+    assert isinstance(instance, caracteristica_PontoDeVariacao)
 
-@given(instance=caracteristica::LPS_strategy)
+@given(instance=caracteristica_LPS_strategy)
 @settings(max_examples=50)
-def test_caracteristica::lps_instantiation(instance):
-    assert isinstance(instance, caracteristica::LPS)
-
-@given(instance=caracteristica::LPS_strategy)
-def test_caracteristica::lps_erro_type(instance):
-    assert isinstance(instance.erro, str)
+def test_caracteristica_lps_instantiation(instance):
+    assert isinstance(instance, caracteristica_LPS)
 
 
-@given(instance=caracteristica::LPS_strategy)
-def test_caracteristica::lps_erro_setter(instance):
+
+@given(instance=caracteristica_LPS_strategy)
+def test_caracteristica_lps_erro_setter(instance):
     original = instance.erro
     instance.erro = original
     assert instance.erro == original
 
-@given(instance=caracteristica::LPS_strategy)
-def test_caracteristica::lps_nome_type(instance):
-    assert isinstance(instance.nome, str)
 
 
-@given(instance=caracteristica::LPS_strategy)
-def test_caracteristica::lps_nome_setter(instance):
+@given(instance=caracteristica_LPS_strategy)
+def test_caracteristica_lps_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=caracteristica::LPS_strategy)
-def test_caracteristica::lps_valoresContextuais_type(instance):
-    assert isinstance(instance.valoresContextuais, str)
 
 
-@given(instance=caracteristica::LPS_strategy)
-def test_caracteristica::lps_valoresContextuais_setter(instance):
+@given(instance=caracteristica_LPS_strategy)
+def test_caracteristica_lps_valoresContextuais_setter(instance):
     original = instance.valoresContextuais
     instance.valoresContextuais = original
     assert instance.valoresContextuais == original

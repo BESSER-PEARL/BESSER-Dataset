@@ -3,40 +3,40 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     MeasurementUncertaintyInformation,
-    eel::NormalDistribution,
-    eel::Integral,
-    eel::Sample,
-    eel::Sampling,
-    eel::Interval,
+    eel_NormalDistribution,
+    eel_Integral,
+    eel_Sample,
+    eel_Sampling,
+    eel_Interval,
     MeasureBinaryOperation,
-    eel::MeasureBinaryProductOperation,
-    eel::MeasurementUncertaintyInformation,
+    eel_MeasureBinaryProductOperation,
+    eel_MeasurementUncertaintyInformation,
     MeasureUnboundOperation,
-    eel::MeasureUnboundProductOperation,
-    eel::MeasureUnboundSumOperation,
+    eel_MeasureUnboundProductOperation,
+    eel_MeasureUnboundSumOperation,
     MeasureBinaryProductOperation,
-    eel::PowerComputation,
-    eel::EnergyComputation,
-    eel::MeasureBinarySumOperation,
+    eel_PowerComputation,
+    eel_EnergyComputation,
+    eel_MeasureBinarySumOperation,
     MeasureValue,
-    eel::RealTimeDuration,
-    eel::MeasureAttribute,
-    eel::MeasureOCL,
+    eel_RealTimeDuration,
+    eel_MeasureAttribute,
+    eel_MeasureOCL,
     TypedMeasure,
-    eel::MeasureUnboundOperation,
-    eel::MeasureBinaryOperation,
-    eel::MeasureCast,
-    eel::MeasureValue,
+    eel_MeasureBinaryOperation,
+    eel_MeasureCast,
+    eel_MeasureUnboundOperation,
+    eel_MeasureValue,
     Measure,
-    eel::TypedMeasure,
-    eel::MeasurementUncertainty,
-    eel::Measure,
-    eel::Variable,
-    eel::Platform,
+    eel_TypedMeasure,
+    eel_MeasurementUncertainty,
+    eel_Measure,
+    eel_Variable,
+    eel_Platform,
     Type,
     Visibility,
 )
@@ -61,33 +61,33 @@ def test_measurementuncertaintyinformation_constructor_args():
 
 
 
-def test_eel::normaldistribution_is_not_abstract():
-    assert not inspect.isabstract(eel::NormalDistribution)
+def test_eel_normaldistribution_is_not_abstract():
+    assert not inspect.isabstract(eel_NormalDistribution)
 
 
-def test_eel::normaldistribution_constructor_exists():
-    assert callable(eel::NormalDistribution.__init__)
+def test_eel_normaldistribution_constructor_exists():
+    assert callable(eel_NormalDistribution.__init__)
 
 
-def test_eel::normaldistribution_constructor_args():
-    sig = inspect.signature(eel::NormalDistribution.__init__)
+def test_eel_normaldistribution_constructor_args():
+    sig = inspect.signature(eel_NormalDistribution.__init__)
     params = list(sig.parameters.keys())
     assert "meanValue" in params, "Missing parameter 'meanValue'"
     assert "standardDeviation" in params, "Missing parameter 'standardDeviation'"
 
-def test_eel::normaldistribution_has_meanValue():
-    assert hasattr(eel::NormalDistribution, "meanValue")
+def test_eel_normaldistribution_has_meanValue():
+    assert hasattr(eel_NormalDistribution, "meanValue")
     descriptor = None
-    for klass in eel::NormalDistribution.__mro__:
+    for klass in eel_NormalDistribution.__mro__:
         if "meanValue" in klass.__dict__:
             descriptor = klass.__dict__["meanValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_eel::normaldistribution_has_standardDeviation():
-    assert hasattr(eel::NormalDistribution, "standardDeviation")
+def test_eel_normaldistribution_has_standardDeviation():
+    assert hasattr(eel_NormalDistribution, "standardDeviation")
     descriptor = None
-    for klass in eel::NormalDistribution.__mro__:
+    for klass in eel_NormalDistribution.__mro__:
         if "standardDeviation" in klass.__dict__:
             descriptor = klass.__dict__["standardDeviation"]
             break
@@ -95,23 +95,23 @@ def test_eel::normaldistribution_has_standardDeviation():
 
 
 
-def test_eel::integral_is_not_abstract():
-    assert not inspect.isabstract(eel::Integral)
+def test_eel_integral_is_not_abstract():
+    assert not inspect.isabstract(eel_Integral)
 
 
-def test_eel::integral_constructor_exists():
-    assert callable(eel::Integral.__init__)
+def test_eel_integral_constructor_exists():
+    assert callable(eel_Integral.__init__)
 
 
-def test_eel::integral_constructor_args():
-    sig = inspect.signature(eel::Integral.__init__)
+def test_eel_integral_constructor_args():
+    sig = inspect.signature(eel_Integral.__init__)
     params = list(sig.parameters.keys())
     assert "function" in params, "Missing parameter 'function'"
 
-def test_eel::integral_has_function():
-    assert hasattr(eel::Integral, "function")
+def test_eel_integral_has_function():
+    assert hasattr(eel_Integral, "function")
     descriptor = None
-    for klass in eel::Integral.__mro__:
+    for klass in eel_Integral.__mro__:
         if "function" in klass.__dict__:
             descriptor = klass.__dict__["function"]
             break
@@ -119,37 +119,37 @@ def test_eel::integral_has_function():
 
 
 
-def test_eel::sample_is_not_abstract():
-    assert not inspect.isabstract(eel::Sample)
+def test_eel_sample_is_not_abstract():
+    assert not inspect.isabstract(eel_Sample)
 
 
-def test_eel::sample_constructor_exists():
-    assert callable(eel::Sample.__init__)
+def test_eel_sample_constructor_exists():
+    assert callable(eel_Sample.__init__)
 
 
-def test_eel::sample_constructor_args():
-    sig = inspect.signature(eel::Sample.__init__)
+def test_eel_sample_constructor_args():
+    sig = inspect.signature(eel_Sample.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::sampling_is_not_abstract():
-    assert not inspect.isabstract(eel::Sampling)
+def test_eel_sampling_is_not_abstract():
+    assert not inspect.isabstract(eel_Sampling)
 
 
-def test_eel::sampling_constructor_exists():
-    assert callable(eel::Sampling.__init__)
+def test_eel_sampling_constructor_exists():
+    assert callable(eel_Sampling.__init__)
 
 
-def test_eel::sampling_constructor_args():
-    sig = inspect.signature(eel::Sampling.__init__)
+def test_eel_sampling_constructor_args():
+    sig = inspect.signature(eel_Sampling.__init__)
     params = list(sig.parameters.keys())
     assert "measurementProcedure" in params, "Missing parameter 'measurementProcedure'"
 
-def test_eel::sampling_has_measurementProcedure():
-    assert hasattr(eel::Sampling, "measurementProcedure")
+def test_eel_sampling_has_measurementProcedure():
+    assert hasattr(eel_Sampling, "measurementProcedure")
     descriptor = None
-    for klass in eel::Sampling.__mro__:
+    for klass in eel_Sampling.__mro__:
         if "measurementProcedure" in klass.__dict__:
             descriptor = klass.__dict__["measurementProcedure"]
             break
@@ -157,16 +157,16 @@ def test_eel::sampling_has_measurementProcedure():
 
 
 
-def test_eel::interval_is_not_abstract():
-    assert not inspect.isabstract(eel::Interval)
+def test_eel_interval_is_not_abstract():
+    assert not inspect.isabstract(eel_Interval)
 
 
-def test_eel::interval_constructor_exists():
-    assert callable(eel::Interval.__init__)
+def test_eel_interval_constructor_exists():
+    assert callable(eel_Interval.__init__)
 
 
-def test_eel::interval_constructor_args():
-    sig = inspect.signature(eel::Interval.__init__)
+def test_eel_interval_constructor_args():
+    sig = inspect.signature(eel_Interval.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -185,30 +185,30 @@ def test_measurebinaryoperation_constructor_args():
 
 
 
-def test_eel::measurebinaryproductoperation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureBinaryProductOperation)
+def test_eel_measurebinaryproductoperation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureBinaryProductOperation)
 
 
-def test_eel::measurebinaryproductoperation_constructor_exists():
-    assert callable(eel::MeasureBinaryProductOperation.__init__)
+def test_eel_measurebinaryproductoperation_constructor_exists():
+    assert callable(eel_MeasureBinaryProductOperation.__init__)
 
 
-def test_eel::measurebinaryproductoperation_constructor_args():
-    sig = inspect.signature(eel::MeasureBinaryProductOperation.__init__)
+def test_eel_measurebinaryproductoperation_constructor_args():
+    sig = inspect.signature(eel_MeasureBinaryProductOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measurementuncertaintyinformation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasurementUncertaintyInformation)
+def test_eel_measurementuncertaintyinformation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasurementUncertaintyInformation)
 
 
-def test_eel::measurementuncertaintyinformation_constructor_exists():
-    assert callable(eel::MeasurementUncertaintyInformation.__init__)
+def test_eel_measurementuncertaintyinformation_constructor_exists():
+    assert callable(eel_MeasurementUncertaintyInformation.__init__)
 
 
-def test_eel::measurementuncertaintyinformation_constructor_args():
-    sig = inspect.signature(eel::MeasurementUncertaintyInformation.__init__)
+def test_eel_measurementuncertaintyinformation_constructor_args():
+    sig = inspect.signature(eel_MeasurementUncertaintyInformation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,30 +227,30 @@ def test_measureunboundoperation_constructor_args():
 
 
 
-def test_eel::measureunboundproductoperation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureUnboundProductOperation)
+def test_eel_measureunboundproductoperation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureUnboundProductOperation)
 
 
-def test_eel::measureunboundproductoperation_constructor_exists():
-    assert callable(eel::MeasureUnboundProductOperation.__init__)
+def test_eel_measureunboundproductoperation_constructor_exists():
+    assert callable(eel_MeasureUnboundProductOperation.__init__)
 
 
-def test_eel::measureunboundproductoperation_constructor_args():
-    sig = inspect.signature(eel::MeasureUnboundProductOperation.__init__)
+def test_eel_measureunboundproductoperation_constructor_args():
+    sig = inspect.signature(eel_MeasureUnboundProductOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measureunboundsumoperation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureUnboundSumOperation)
+def test_eel_measureunboundsumoperation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureUnboundSumOperation)
 
 
-def test_eel::measureunboundsumoperation_constructor_exists():
-    assert callable(eel::MeasureUnboundSumOperation.__init__)
+def test_eel_measureunboundsumoperation_constructor_exists():
+    assert callable(eel_MeasureUnboundSumOperation.__init__)
 
 
-def test_eel::measureunboundsumoperation_constructor_args():
-    sig = inspect.signature(eel::MeasureUnboundSumOperation.__init__)
+def test_eel_measureunboundsumoperation_constructor_args():
+    sig = inspect.signature(eel_MeasureUnboundSumOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -269,44 +269,44 @@ def test_measurebinaryproductoperation_constructor_args():
 
 
 
-def test_eel::powercomputation_is_not_abstract():
-    assert not inspect.isabstract(eel::PowerComputation)
+def test_eel_powercomputation_is_not_abstract():
+    assert not inspect.isabstract(eel_PowerComputation)
 
 
-def test_eel::powercomputation_constructor_exists():
-    assert callable(eel::PowerComputation.__init__)
+def test_eel_powercomputation_constructor_exists():
+    assert callable(eel_PowerComputation.__init__)
 
 
-def test_eel::powercomputation_constructor_args():
-    sig = inspect.signature(eel::PowerComputation.__init__)
+def test_eel_powercomputation_constructor_args():
+    sig = inspect.signature(eel_PowerComputation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::energycomputation_is_not_abstract():
-    assert not inspect.isabstract(eel::EnergyComputation)
+def test_eel_energycomputation_is_not_abstract():
+    assert not inspect.isabstract(eel_EnergyComputation)
 
 
-def test_eel::energycomputation_constructor_exists():
-    assert callable(eel::EnergyComputation.__init__)
+def test_eel_energycomputation_constructor_exists():
+    assert callable(eel_EnergyComputation.__init__)
 
 
-def test_eel::energycomputation_constructor_args():
-    sig = inspect.signature(eel::EnergyComputation.__init__)
+def test_eel_energycomputation_constructor_args():
+    sig = inspect.signature(eel_EnergyComputation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measurebinarysumoperation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureBinarySumOperation)
+def test_eel_measurebinarysumoperation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureBinarySumOperation)
 
 
-def test_eel::measurebinarysumoperation_constructor_exists():
-    assert callable(eel::MeasureBinarySumOperation.__init__)
+def test_eel_measurebinarysumoperation_constructor_exists():
+    assert callable(eel_MeasureBinarySumOperation.__init__)
 
 
-def test_eel::measurebinarysumoperation_constructor_args():
-    sig = inspect.signature(eel::MeasureBinarySumOperation.__init__)
+def test_eel_measurebinarysumoperation_constructor_args():
+    sig = inspect.signature(eel_MeasureBinarySumOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -325,37 +325,37 @@ def test_measurevalue_constructor_args():
 
 
 
-def test_eel::realtimeduration_is_not_abstract():
-    assert not inspect.isabstract(eel::RealTimeDuration)
+def test_eel_realtimeduration_is_not_abstract():
+    assert not inspect.isabstract(eel_RealTimeDuration)
 
 
-def test_eel::realtimeduration_constructor_exists():
-    assert callable(eel::RealTimeDuration.__init__)
+def test_eel_realtimeduration_constructor_exists():
+    assert callable(eel_RealTimeDuration.__init__)
 
 
-def test_eel::realtimeduration_constructor_args():
-    sig = inspect.signature(eel::RealTimeDuration.__init__)
+def test_eel_realtimeduration_constructor_args():
+    sig = inspect.signature(eel_RealTimeDuration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measureattribute_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureAttribute)
+def test_eel_measureattribute_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureAttribute)
 
 
-def test_eel::measureattribute_constructor_exists():
-    assert callable(eel::MeasureAttribute.__init__)
+def test_eel_measureattribute_constructor_exists():
+    assert callable(eel_MeasureAttribute.__init__)
 
 
-def test_eel::measureattribute_constructor_args():
-    sig = inspect.signature(eel::MeasureAttribute.__init__)
+def test_eel_measureattribute_constructor_args():
+    sig = inspect.signature(eel_MeasureAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "att" in params, "Missing parameter 'att'"
 
-def test_eel::measureattribute_has_att():
-    assert hasattr(eel::MeasureAttribute, "att")
+def test_eel_measureattribute_has_att():
+    assert hasattr(eel_MeasureAttribute, "att")
     descriptor = None
-    for klass in eel::MeasureAttribute.__mro__:
+    for klass in eel_MeasureAttribute.__mro__:
         if "att" in klass.__dict__:
             descriptor = klass.__dict__["att"]
             break
@@ -363,23 +363,23 @@ def test_eel::measureattribute_has_att():
 
 
 
-def test_eel::measureocl_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureOCL)
+def test_eel_measureocl_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureOCL)
 
 
-def test_eel::measureocl_constructor_exists():
-    assert callable(eel::MeasureOCL.__init__)
+def test_eel_measureocl_constructor_exists():
+    assert callable(eel_MeasureOCL.__init__)
 
 
-def test_eel::measureocl_constructor_args():
-    sig = inspect.signature(eel::MeasureOCL.__init__)
+def test_eel_measureocl_constructor_args():
+    sig = inspect.signature(eel_MeasureOCL.__init__)
     params = list(sig.parameters.keys())
     assert "oclQuery" in params, "Missing parameter 'oclQuery'"
 
-def test_eel::measureocl_has_oclQuery():
-    assert hasattr(eel::MeasureOCL, "oclQuery")
+def test_eel_measureocl_has_oclQuery():
+    assert hasattr(eel_MeasureOCL, "oclQuery")
     descriptor = None
-    for klass in eel::MeasureOCL.__mro__:
+    for klass in eel_MeasureOCL.__mro__:
         if "oclQuery" in klass.__dict__:
             descriptor = klass.__dict__["oclQuery"]
             break
@@ -401,65 +401,65 @@ def test_typedmeasure_constructor_args():
 
 
 
-def test_eel::measureunboundoperation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureUnboundOperation)
+def test_eel_measurebinaryoperation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureBinaryOperation)
 
 
-def test_eel::measureunboundoperation_constructor_exists():
-    assert callable(eel::MeasureUnboundOperation.__init__)
+def test_eel_measurebinaryoperation_constructor_exists():
+    assert callable(eel_MeasureBinaryOperation.__init__)
 
 
-def test_eel::measureunboundoperation_constructor_args():
-    sig = inspect.signature(eel::MeasureUnboundOperation.__init__)
+def test_eel_measurebinaryoperation_constructor_args():
+    sig = inspect.signature(eel_MeasureBinaryOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measurebinaryoperation_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureBinaryOperation)
+def test_eel_measurecast_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureCast)
 
 
-def test_eel::measurebinaryoperation_constructor_exists():
-    assert callable(eel::MeasureBinaryOperation.__init__)
+def test_eel_measurecast_constructor_exists():
+    assert callable(eel_MeasureCast.__init__)
 
 
-def test_eel::measurebinaryoperation_constructor_args():
-    sig = inspect.signature(eel::MeasureBinaryOperation.__init__)
+def test_eel_measurecast_constructor_args():
+    sig = inspect.signature(eel_MeasureCast.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measurecast_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureCast)
+def test_eel_measureunboundoperation_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureUnboundOperation)
 
 
-def test_eel::measurecast_constructor_exists():
-    assert callable(eel::MeasureCast.__init__)
+def test_eel_measureunboundoperation_constructor_exists():
+    assert callable(eel_MeasureUnboundOperation.__init__)
 
 
-def test_eel::measurecast_constructor_args():
-    sig = inspect.signature(eel::MeasureCast.__init__)
+def test_eel_measureunboundoperation_constructor_args():
+    sig = inspect.signature(eel_MeasureUnboundOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_eel::measurevalue_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasureValue)
+def test_eel_measurevalue_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasureValue)
 
 
-def test_eel::measurevalue_constructor_exists():
-    assert callable(eel::MeasureValue.__init__)
+def test_eel_measurevalue_constructor_exists():
+    assert callable(eel_MeasureValue.__init__)
 
 
-def test_eel::measurevalue_constructor_args():
-    sig = inspect.signature(eel::MeasureValue.__init__)
+def test_eel_measurevalue_constructor_args():
+    sig = inspect.signature(eel_MeasureValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_eel::measurevalue_has_value():
-    assert hasattr(eel::MeasureValue, "value")
+def test_eel_measurevalue_has_value():
+    assert hasattr(eel_MeasureValue, "value")
     descriptor = None
-    for klass in eel::MeasureValue.__mro__:
+    for klass in eel_MeasureValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -481,23 +481,23 @@ def test_measure_constructor_args():
 
 
 
-def test_eel::typedmeasure_is_not_abstract():
-    assert not inspect.isabstract(eel::TypedMeasure)
+def test_eel_typedmeasure_is_not_abstract():
+    assert not inspect.isabstract(eel_TypedMeasure)
 
 
-def test_eel::typedmeasure_constructor_exists():
-    assert callable(eel::TypedMeasure.__init__)
+def test_eel_typedmeasure_constructor_exists():
+    assert callable(eel_TypedMeasure.__init__)
 
 
-def test_eel::typedmeasure_constructor_args():
-    sig = inspect.signature(eel::TypedMeasure.__init__)
+def test_eel_typedmeasure_constructor_args():
+    sig = inspect.signature(eel_TypedMeasure.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_eel::typedmeasure_has_type():
-    assert hasattr(eel::TypedMeasure, "type")
+def test_eel_typedmeasure_has_type():
+    assert hasattr(eel_TypedMeasure, "type")
     descriptor = None
-    for klass in eel::TypedMeasure.__mro__:
+    for klass in eel_TypedMeasure.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -505,23 +505,23 @@ def test_eel::typedmeasure_has_type():
 
 
 
-def test_eel::measurementuncertainty_is_not_abstract():
-    assert not inspect.isabstract(eel::MeasurementUncertainty)
+def test_eel_measurementuncertainty_is_not_abstract():
+    assert not inspect.isabstract(eel_MeasurementUncertainty)
 
 
-def test_eel::measurementuncertainty_constructor_exists():
-    assert callable(eel::MeasurementUncertainty.__init__)
+def test_eel_measurementuncertainty_constructor_exists():
+    assert callable(eel_MeasurementUncertainty.__init__)
 
 
-def test_eel::measurementuncertainty_constructor_args():
-    sig = inspect.signature(eel::MeasurementUncertainty.__init__)
+def test_eel_measurementuncertainty_constructor_args():
+    sig = inspect.signature(eel_MeasurementUncertainty.__init__)
     params = list(sig.parameters.keys())
     assert "standardUncertainty" in params, "Missing parameter 'standardUncertainty'"
 
-def test_eel::measurementuncertainty_has_standardUncertainty():
-    assert hasattr(eel::MeasurementUncertainty, "standardUncertainty")
+def test_eel_measurementuncertainty_has_standardUncertainty():
+    assert hasattr(eel_MeasurementUncertainty, "standardUncertainty")
     descriptor = None
-    for klass in eel::MeasurementUncertainty.__mro__:
+    for klass in eel_MeasurementUncertainty.__mro__:
         if "standardUncertainty" in klass.__dict__:
             descriptor = klass.__dict__["standardUncertainty"]
             break
@@ -529,97 +529,97 @@ def test_eel::measurementuncertainty_has_standardUncertainty():
 
 
 
-def test_eel::measure_is_not_abstract():
-    assert not inspect.isabstract(eel::Measure)
+def test_eel_measure_is_not_abstract():
+    assert not inspect.isabstract(eel_Measure)
 
 
-def test_eel::measure_constructor_exists():
-    assert callable(eel::Measure.__init__)
+def test_eel_measure_constructor_exists():
+    assert callable(eel_Measure.__init__)
 
 
-def test_eel::measure_constructor_args():
-    sig = inspect.signature(eel::Measure.__init__)
+def test_eel_measure_constructor_args():
+    sig = inspect.signature(eel_Measure.__init__)
     params = list(sig.parameters.keys())
-    assert "targetClass" in params, "Missing parameter 'targetClass'"
-    assert "targetOperation" in params, "Missing parameter 'targetOperation'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "targetOperation" in params, "Missing parameter 'targetOperation'"
     assert "subname" in params, "Missing parameter 'subname'"
+    assert "targetClass" in params, "Missing parameter 'targetClass'"
 
-def test_eel::measure_has_targetClass():
-    assert hasattr(eel::Measure, "targetClass")
+def test_eel_measure_has_name():
+    assert hasattr(eel_Measure, "name")
     descriptor = None
-    for klass in eel::Measure.__mro__:
-        if "targetClass" in klass.__dict__:
-            descriptor = klass.__dict__["targetClass"]
+    for klass in eel_Measure.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_eel::measure_has_targetOperation():
-    assert hasattr(eel::Measure, "targetOperation")
+def test_eel_measure_has_targetOperation():
+    assert hasattr(eel_Measure, "targetOperation")
     descriptor = None
-    for klass in eel::Measure.__mro__:
+    for klass in eel_Measure.__mro__:
         if "targetOperation" in klass.__dict__:
             descriptor = klass.__dict__["targetOperation"]
             break
     assert isinstance(descriptor, property)
 
-def test_eel::measure_has_name():
-    assert hasattr(eel::Measure, "name")
+def test_eel_measure_has_subname():
+    assert hasattr(eel_Measure, "subname")
     descriptor = None
-    for klass in eel::Measure.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_eel::measure_has_subname():
-    assert hasattr(eel::Measure, "subname")
-    descriptor = None
-    for klass in eel::Measure.__mro__:
+    for klass in eel_Measure.__mro__:
         if "subname" in klass.__dict__:
             descriptor = klass.__dict__["subname"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_eel::variable_is_not_abstract():
-    assert not inspect.isabstract(eel::Variable)
-
-
-def test_eel::variable_constructor_exists():
-    assert callable(eel::Variable.__init__)
-
-
-def test_eel::variable_constructor_args():
-    sig = inspect.signature(eel::Variable.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "vibility" in params, "Missing parameter 'vibility'"
-
-def test_eel::variable_has_value():
-    assert hasattr(eel::Variable, "value")
+def test_eel_measure_has_targetClass():
+    assert hasattr(eel_Measure, "targetClass")
     descriptor = None
-    for klass in eel::Variable.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in eel_Measure.__mro__:
+        if "targetClass" in klass.__dict__:
+            descriptor = klass.__dict__["targetClass"]
             break
     assert isinstance(descriptor, property)
 
-def test_eel::variable_has_name():
-    assert hasattr(eel::Variable, "name")
+
+
+def test_eel_variable_is_not_abstract():
+    assert not inspect.isabstract(eel_Variable)
+
+
+def test_eel_variable_constructor_exists():
+    assert callable(eel_Variable.__init__)
+
+
+def test_eel_variable_constructor_args():
+    sig = inspect.signature(eel_Variable.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
+    assert "vibility" in params, "Missing parameter 'vibility'"
+
+def test_eel_variable_has_name():
+    assert hasattr(eel_Variable, "name")
     descriptor = None
-    for klass in eel::Variable.__mro__:
+    for klass in eel_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_eel::variable_has_vibility():
-    assert hasattr(eel::Variable, "vibility")
+def test_eel_variable_has_value():
+    assert hasattr(eel_Variable, "value")
     descriptor = None
-    for klass in eel::Variable.__mro__:
+    for klass in eel_Variable.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_eel_variable_has_vibility():
+    assert hasattr(eel_Variable, "vibility")
+    descriptor = None
+    for klass in eel_Variable.__mro__:
         if "vibility" in klass.__dict__:
             descriptor = klass.__dict__["vibility"]
             break
@@ -627,23 +627,23 @@ def test_eel::variable_has_vibility():
 
 
 
-def test_eel::platform_is_not_abstract():
-    assert not inspect.isabstract(eel::Platform)
+def test_eel_platform_is_not_abstract():
+    assert not inspect.isabstract(eel_Platform)
 
 
-def test_eel::platform_constructor_exists():
-    assert callable(eel::Platform.__init__)
+def test_eel_platform_constructor_exists():
+    assert callable(eel_Platform.__init__)
 
 
-def test_eel::platform_constructor_args():
-    sig = inspect.signature(eel::Platform.__init__)
+def test_eel_platform_constructor_args():
+    sig = inspect.signature(eel_Platform.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_eel::platform_has_name():
-    assert hasattr(eel::Platform, "name")
+def test_eel_platform_has_name():
+    assert hasattr(eel_Platform, "name")
     descriptor = None
-    for klass in eel::Platform.__mro__:
+    for klass in eel_Platform.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -657,13 +657,13 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
-        "Power",
-        "Energy",
-        "Current",
         "Voltage",
+        "Current",
+        "Power",
         "Frequency",
-        "Duration",
         "Scalar",
+        "Duration",
+        "Energy",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -677,8 +677,8 @@ def test_visibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Visibility]
     expected_literals = [
-        "GLOBAL",
         "LOCAL",
+        "GLOBAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -699,127 +699,127 @@ safe_text = st.text(
 MeasurementUncertaintyInformation_strategy = st.builds(
     MeasurementUncertaintyInformation,
 )
-eel::NormalDistribution_strategy = st.builds(
-    eel::NormalDistribution,
+eel_NormalDistribution_strategy = st.builds(
+    eel_NormalDistribution,
     meanValue=
         safe_text,
     standardDeviation=
         safe_text
 )
-eel::Integral_strategy = st.builds(
-    eel::Integral,
+eel_Integral_strategy = st.builds(
+    eel_Integral,
     function=
         safe_text
 )
-eel::Sample_strategy = st.builds(
-    eel::Sample,
+eel_Sample_strategy = st.builds(
+    eel_Sample,
 )
-eel::Sampling_strategy = st.builds(
-    eel::Sampling,
+eel_Sampling_strategy = st.builds(
+    eel_Sampling,
     measurementProcedure=
         safe_text
 )
-eel::Interval_strategy = st.builds(
-    eel::Interval,
+eel_Interval_strategy = st.builds(
+    eel_Interval,
 )
 MeasureBinaryOperation_strategy = st.builds(
     MeasureBinaryOperation,
 )
-eel::MeasureBinaryProductOperation_strategy = st.builds(
-    eel::MeasureBinaryProductOperation,
+eel_MeasureBinaryProductOperation_strategy = st.builds(
+    eel_MeasureBinaryProductOperation,
 )
-eel::MeasurementUncertaintyInformation_strategy = st.builds(
-    eel::MeasurementUncertaintyInformation,
+eel_MeasurementUncertaintyInformation_strategy = st.builds(
+    eel_MeasurementUncertaintyInformation,
 )
 MeasureUnboundOperation_strategy = st.builds(
     MeasureUnboundOperation,
 )
-eel::MeasureUnboundProductOperation_strategy = st.builds(
-    eel::MeasureUnboundProductOperation,
+eel_MeasureUnboundProductOperation_strategy = st.builds(
+    eel_MeasureUnboundProductOperation,
 )
-eel::MeasureUnboundSumOperation_strategy = st.builds(
-    eel::MeasureUnboundSumOperation,
+eel_MeasureUnboundSumOperation_strategy = st.builds(
+    eel_MeasureUnboundSumOperation,
 )
 MeasureBinaryProductOperation_strategy = st.builds(
     MeasureBinaryProductOperation,
 )
-eel::PowerComputation_strategy = st.builds(
-    eel::PowerComputation,
+eel_PowerComputation_strategy = st.builds(
+    eel_PowerComputation,
 )
-eel::EnergyComputation_strategy = st.builds(
-    eel::EnergyComputation,
+eel_EnergyComputation_strategy = st.builds(
+    eel_EnergyComputation,
 )
-eel::MeasureBinarySumOperation_strategy = st.builds(
-    eel::MeasureBinarySumOperation,
+eel_MeasureBinarySumOperation_strategy = st.builds(
+    eel_MeasureBinarySumOperation,
 )
 MeasureValue_strategy = st.builds(
     MeasureValue,
 )
-eel::RealTimeDuration_strategy = st.builds(
-    eel::RealTimeDuration,
+eel_RealTimeDuration_strategy = st.builds(
+    eel_RealTimeDuration,
 )
-eel::MeasureAttribute_strategy = st.builds(
-    eel::MeasureAttribute,
+eel_MeasureAttribute_strategy = st.builds(
+    eel_MeasureAttribute,
     att=
         safe_text
 )
-eel::MeasureOCL_strategy = st.builds(
-    eel::MeasureOCL,
+eel_MeasureOCL_strategy = st.builds(
+    eel_MeasureOCL,
     oclQuery=
         safe_text
 )
 TypedMeasure_strategy = st.builds(
     TypedMeasure,
 )
-eel::MeasureUnboundOperation_strategy = st.builds(
-    eel::MeasureUnboundOperation,
+eel_MeasureBinaryOperation_strategy = st.builds(
+    eel_MeasureBinaryOperation,
 )
-eel::MeasureBinaryOperation_strategy = st.builds(
-    eel::MeasureBinaryOperation,
+eel_MeasureCast_strategy = st.builds(
+    eel_MeasureCast,
 )
-eel::MeasureCast_strategy = st.builds(
-    eel::MeasureCast,
+eel_MeasureUnboundOperation_strategy = st.builds(
+    eel_MeasureUnboundOperation,
 )
-eel::MeasureValue_strategy = st.builds(
-    eel::MeasureValue,
+eel_MeasureValue_strategy = st.builds(
+    eel_MeasureValue,
     value=
         safe_text
 )
 Measure_strategy = st.builds(
     Measure,
 )
-eel::TypedMeasure_strategy = st.builds(
-    eel::TypedMeasure,
+eel_TypedMeasure_strategy = st.builds(
+    eel_TypedMeasure,
     type=
         safe_text
 )
-eel::MeasurementUncertainty_strategy = st.builds(
-    eel::MeasurementUncertainty,
+eel_MeasurementUncertainty_strategy = st.builds(
+    eel_MeasurementUncertainty,
     standardUncertainty=
         safe_text
 )
-eel::Measure_strategy = st.builds(
-    eel::Measure,
-    targetClass=
+eel_Measure_strategy = st.builds(
+    eel_Measure,
+    name=
         safe_text,
     targetOperation=
         safe_text,
-    name=
-        safe_text,
     subname=
+        safe_text,
+    targetClass=
         safe_text
 )
-eel::Variable_strategy = st.builds(
-    eel::Variable,
-    value=
-        safe_text,
+eel_Variable_strategy = st.builds(
+    eel_Variable,
     name=
+        safe_text,
+    value=
         safe_text,
     vibility=
         safe_text
 )
-eel::Platform_strategy = st.builds(
-    eel::Platform,
+eel_Platform_strategy = st.builds(
+    eel_Platform,
     name=
         safe_text
 )
@@ -829,84 +829,72 @@ eel::Platform_strategy = st.builds(
 def test_measurementuncertaintyinformation_instantiation(instance):
     assert isinstance(instance, MeasurementUncertaintyInformation)
 
-@given(instance=eel::NormalDistribution_strategy)
+@given(instance=eel_NormalDistribution_strategy)
 @settings(max_examples=50)
-def test_eel::normaldistribution_instantiation(instance):
-    assert isinstance(instance, eel::NormalDistribution)
-
-@given(instance=eel::NormalDistribution_strategy)
-def test_eel::normaldistribution_meanValue_type(instance):
-    assert isinstance(instance.meanValue, str)
+def test_eel_normaldistribution_instantiation(instance):
+    assert isinstance(instance, eel_NormalDistribution)
 
 
-@given(instance=eel::NormalDistribution_strategy)
-def test_eel::normaldistribution_meanValue_setter(instance):
+
+@given(instance=eel_NormalDistribution_strategy)
+def test_eel_normaldistribution_meanValue_setter(instance):
     original = instance.meanValue
     instance.meanValue = original
     assert instance.meanValue == original
 
-@given(instance=eel::NormalDistribution_strategy)
-def test_eel::normaldistribution_standardDeviation_type(instance):
-    assert isinstance(instance.standardDeviation, str)
 
 
-@given(instance=eel::NormalDistribution_strategy)
-def test_eel::normaldistribution_standardDeviation_setter(instance):
+@given(instance=eel_NormalDistribution_strategy)
+def test_eel_normaldistribution_standardDeviation_setter(instance):
     original = instance.standardDeviation
     instance.standardDeviation = original
     assert instance.standardDeviation == original
 
-@given(instance=eel::Integral_strategy)
+@given(instance=eel_Integral_strategy)
 @settings(max_examples=50)
-def test_eel::integral_instantiation(instance):
-    assert isinstance(instance, eel::Integral)
-
-@given(instance=eel::Integral_strategy)
-def test_eel::integral_function_type(instance):
-    assert isinstance(instance.function, str)
+def test_eel_integral_instantiation(instance):
+    assert isinstance(instance, eel_Integral)
 
 
-@given(instance=eel::Integral_strategy)
-def test_eel::integral_function_setter(instance):
+
+@given(instance=eel_Integral_strategy)
+def test_eel_integral_function_setter(instance):
     original = instance.function
     instance.function = original
     assert instance.function == original
 
-@given(instance=eel::Sample_strategy)
+@given(instance=eel_Sample_strategy)
 @settings(max_examples=50)
-def test_eel::sample_instantiation(instance):
-    assert isinstance(instance, eel::Sample)
+def test_eel_sample_instantiation(instance):
+    assert isinstance(instance, eel_Sample)
 
-@given(instance=eel::Sampling_strategy)
+@given(instance=eel_Sampling_strategy)
 @settings(max_examples=50)
-def test_eel::sampling_instantiation(instance):
-    assert isinstance(instance, eel::Sampling)
-
-@given(instance=eel::Sampling_strategy)
-def test_eel::sampling_measurementProcedure_type(instance):
-    assert isinstance(instance.measurementProcedure, str)
+def test_eel_sampling_instantiation(instance):
+    assert isinstance(instance, eel_Sampling)
 
 
-@given(instance=eel::Sampling_strategy)
-def test_eel::sampling_measurementProcedure_setter(instance):
+
+@given(instance=eel_Sampling_strategy)
+def test_eel_sampling_measurementProcedure_setter(instance):
     original = instance.measurementProcedure
     instance.measurementProcedure = original
     assert instance.measurementProcedure == original
 
-@given(instance=eel::Interval_strategy)
+@given(instance=eel_Interval_strategy)
 @settings(max_examples=50)
-def test_eel::interval_instantiation(instance):
-    assert isinstance(instance, eel::Interval)
+def test_eel_interval_instantiation(instance):
+    assert isinstance(instance, eel_Interval)
 
 @given(instance=MeasureBinaryOperation_strategy)
 @settings(max_examples=50)
 def test_measurebinaryoperation_instantiation(instance):
     assert isinstance(instance, MeasureBinaryOperation)
 
-@given(instance=eel::MeasureBinaryProductOperation_strategy)
+@given(instance=eel_MeasureBinaryProductOperation_strategy)
 @settings(max_examples=50)
-def test_eel::measurebinaryproductoperation_instantiation(instance):
-    assert isinstance(instance, eel::MeasureBinaryProductOperation)
+def test_eel_measurebinaryproductoperation_instantiation(instance):
+    assert isinstance(instance, eel_MeasureBinaryProductOperation)
 
 import warnings
 import copy
@@ -914,9 +902,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::MeasureBinaryProductOperation_strategy)
+@given(instance=eel_MeasureBinaryProductOperation_strategy)
 @settings(max_examples=30)
-def test_eel::measurebinaryproductoperation_value_changes_state(instance):
+def test_eel_measurebinaryproductoperation_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -928,29 +916,29 @@ def test_eel::measurebinaryproductoperation_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::MeasureBinaryProductOperation is empty"
+        assert has_statements, f"Function 'value' in eel_MeasureBinaryProductOperation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::MeasureBinaryProductOperation did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_MeasureBinaryProductOperation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::MeasureBinaryProductOperation is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_MeasureBinaryProductOperation is not implemented or raised an error")
 
-@given(instance=eel::MeasurementUncertaintyInformation_strategy)
+@given(instance=eel_MeasurementUncertaintyInformation_strategy)
 @settings(max_examples=50)
-def test_eel::measurementuncertaintyinformation_instantiation(instance):
-    assert isinstance(instance, eel::MeasurementUncertaintyInformation)
+def test_eel_measurementuncertaintyinformation_instantiation(instance):
+    assert isinstance(instance, eel_MeasurementUncertaintyInformation)
 
 @given(instance=MeasureUnboundOperation_strategy)
 @settings(max_examples=50)
 def test_measureunboundoperation_instantiation(instance):
     assert isinstance(instance, MeasureUnboundOperation)
 
-@given(instance=eel::MeasureUnboundProductOperation_strategy)
+@given(instance=eel_MeasureUnboundProductOperation_strategy)
 @settings(max_examples=50)
-def test_eel::measureunboundproductoperation_instantiation(instance):
-    assert isinstance(instance, eel::MeasureUnboundProductOperation)
+def test_eel_measureunboundproductoperation_instantiation(instance):
+    assert isinstance(instance, eel_MeasureUnboundProductOperation)
 
 import warnings
 import copy
@@ -958,9 +946,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::MeasureUnboundProductOperation_strategy)
+@given(instance=eel_MeasureUnboundProductOperation_strategy)
 @settings(max_examples=30)
-def test_eel::measureunboundproductoperation_value_changes_state(instance):
+def test_eel_measureunboundproductoperation_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -972,19 +960,19 @@ def test_eel::measureunboundproductoperation_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::MeasureUnboundProductOperation is empty"
+        assert has_statements, f"Function 'value' in eel_MeasureUnboundProductOperation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::MeasureUnboundProductOperation did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_MeasureUnboundProductOperation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::MeasureUnboundProductOperation is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_MeasureUnboundProductOperation is not implemented or raised an error")
 
-@given(instance=eel::MeasureUnboundSumOperation_strategy)
+@given(instance=eel_MeasureUnboundSumOperation_strategy)
 @settings(max_examples=50)
-def test_eel::measureunboundsumoperation_instantiation(instance):
-    assert isinstance(instance, eel::MeasureUnboundSumOperation)
+def test_eel_measureunboundsumoperation_instantiation(instance):
+    assert isinstance(instance, eel_MeasureUnboundSumOperation)
 
 import warnings
 import copy
@@ -992,9 +980,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::MeasureUnboundSumOperation_strategy)
+@given(instance=eel_MeasureUnboundSumOperation_strategy)
 @settings(max_examples=30)
-def test_eel::measureunboundsumoperation_value_changes_state(instance):
+def test_eel_measureunboundsumoperation_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1006,24 +994,24 @@ def test_eel::measureunboundsumoperation_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::MeasureUnboundSumOperation is empty"
+        assert has_statements, f"Function 'value' in eel_MeasureUnboundSumOperation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::MeasureUnboundSumOperation did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_MeasureUnboundSumOperation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::MeasureUnboundSumOperation is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_MeasureUnboundSumOperation is not implemented or raised an error")
 
 @given(instance=MeasureBinaryProductOperation_strategy)
 @settings(max_examples=50)
 def test_measurebinaryproductoperation_instantiation(instance):
     assert isinstance(instance, MeasureBinaryProductOperation)
 
-@given(instance=eel::PowerComputation_strategy)
+@given(instance=eel_PowerComputation_strategy)
 @settings(max_examples=50)
-def test_eel::powercomputation_instantiation(instance):
-    assert isinstance(instance, eel::PowerComputation)
+def test_eel_powercomputation_instantiation(instance):
+    assert isinstance(instance, eel_PowerComputation)
 
 import warnings
 import copy
@@ -1031,9 +1019,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::PowerComputation_strategy)
+@given(instance=eel_PowerComputation_strategy)
 @settings(max_examples=30)
-def test_eel::powercomputation_type_changes_state(instance):
+def test_eel_powercomputation_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1045,14 +1033,14 @@ def test_eel::powercomputation_type_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'type' in eel::PowerComputation is empty"
+        assert has_statements, f"Function 'type' in eel_PowerComputation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'type' in eel::PowerComputation did not change state; check implementation")
+            warnings.warn(f"Operation 'type' in eel_PowerComputation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'type' in eel::PowerComputation is not implemented or raised an error")
+        warnings.warn(f"Operation 'type' in eel_PowerComputation is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1060,9 +1048,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::PowerComputation_strategy)
+@given(instance=eel_PowerComputation_strategy)
 @settings(max_examples=30)
-def test_eel::powercomputation_value_changes_state(instance):
+def test_eel_powercomputation_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1074,19 +1062,19 @@ def test_eel::powercomputation_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::PowerComputation is empty"
+        assert has_statements, f"Function 'value' in eel_PowerComputation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::PowerComputation did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_PowerComputation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::PowerComputation is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_PowerComputation is not implemented or raised an error")
 
-@given(instance=eel::EnergyComputation_strategy)
+@given(instance=eel_EnergyComputation_strategy)
 @settings(max_examples=50)
-def test_eel::energycomputation_instantiation(instance):
-    assert isinstance(instance, eel::EnergyComputation)
+def test_eel_energycomputation_instantiation(instance):
+    assert isinstance(instance, eel_EnergyComputation)
 
 import warnings
 import copy
@@ -1094,38 +1082,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::EnergyComputation_strategy)
+@given(instance=eel_EnergyComputation_strategy)
 @settings(max_examples=30)
-def test_eel::energycomputation_value_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.value()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.value).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::EnergyComputation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::EnergyComputation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::EnergyComputation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=eel::EnergyComputation_strategy)
-@settings(max_examples=30)
-def test_eel::energycomputation_type_changes_state(instance):
+def test_eel_energycomputation_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1137,19 +1096,14 @@ def test_eel::energycomputation_type_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'type' in eel::EnergyComputation is empty"
+        assert has_statements, f"Function 'type' in eel_EnergyComputation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'type' in eel::EnergyComputation did not change state; check implementation")
+            warnings.warn(f"Operation 'type' in eel_EnergyComputation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'type' in eel::EnergyComputation is not implemented or raised an error")
-
-@given(instance=eel::MeasureBinarySumOperation_strategy)
-@settings(max_examples=50)
-def test_eel::measurebinarysumoperation_instantiation(instance):
-    assert isinstance(instance, eel::MeasureBinarySumOperation)
+        warnings.warn(f"Operation 'type' in eel_EnergyComputation is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1157,9 +1111,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::MeasureBinarySumOperation_strategy)
+@given(instance=eel_EnergyComputation_strategy)
 @settings(max_examples=30)
-def test_eel::measurebinarysumoperation_value_changes_state(instance):
+def test_eel_energycomputation_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1171,24 +1125,58 @@ def test_eel::measurebinarysumoperation_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::MeasureBinarySumOperation is empty"
+        assert has_statements, f"Function 'value' in eel_EnergyComputation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::MeasureBinarySumOperation did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_EnergyComputation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::MeasureBinarySumOperation is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_EnergyComputation is not implemented or raised an error")
+
+@given(instance=eel_MeasureBinarySumOperation_strategy)
+@settings(max_examples=50)
+def test_eel_measurebinarysumoperation_instantiation(instance):
+    assert isinstance(instance, eel_MeasureBinarySumOperation)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=eel_MeasureBinarySumOperation_strategy)
+@settings(max_examples=30)
+def test_eel_measurebinarysumoperation_value_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.value()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.value).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'value' in eel_MeasureBinarySumOperation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'value' in eel_MeasureBinarySumOperation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'value' in eel_MeasureBinarySumOperation is not implemented or raised an error")
 
 @given(instance=MeasureValue_strategy)
 @settings(max_examples=50)
 def test_measurevalue_instantiation(instance):
     assert isinstance(instance, MeasureValue)
 
-@given(instance=eel::RealTimeDuration_strategy)
+@given(instance=eel_RealTimeDuration_strategy)
 @settings(max_examples=50)
-def test_eel::realtimeduration_instantiation(instance):
-    assert isinstance(instance, eel::RealTimeDuration)
+def test_eel_realtimeduration_instantiation(instance):
+    assert isinstance(instance, eel_RealTimeDuration)
 
 import warnings
 import copy
@@ -1196,9 +1184,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::RealTimeDuration_strategy)
+@given(instance=eel_RealTimeDuration_strategy)
 @settings(max_examples=30)
-def test_eel::realtimeduration_type_changes_state(instance):
+def test_eel_realtimeduration_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1210,43 +1198,37 @@ def test_eel::realtimeduration_type_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'type' in eel::RealTimeDuration is empty"
+        assert has_statements, f"Function 'type' in eel_RealTimeDuration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'type' in eel::RealTimeDuration did not change state; check implementation")
+            warnings.warn(f"Operation 'type' in eel_RealTimeDuration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'type' in eel::RealTimeDuration is not implemented or raised an error")
+        warnings.warn(f"Operation 'type' in eel_RealTimeDuration is not implemented or raised an error")
 
-@given(instance=eel::MeasureAttribute_strategy)
+@given(instance=eel_MeasureAttribute_strategy)
 @settings(max_examples=50)
-def test_eel::measureattribute_instantiation(instance):
-    assert isinstance(instance, eel::MeasureAttribute)
-
-@given(instance=eel::MeasureAttribute_strategy)
-def test_eel::measureattribute_att_type(instance):
-    assert isinstance(instance.att, str)
+def test_eel_measureattribute_instantiation(instance):
+    assert isinstance(instance, eel_MeasureAttribute)
 
 
-@given(instance=eel::MeasureAttribute_strategy)
-def test_eel::measureattribute_att_setter(instance):
+
+@given(instance=eel_MeasureAttribute_strategy)
+def test_eel_measureattribute_att_setter(instance):
     original = instance.att
     instance.att = original
     assert instance.att == original
 
-@given(instance=eel::MeasureOCL_strategy)
+@given(instance=eel_MeasureOCL_strategy)
 @settings(max_examples=50)
-def test_eel::measureocl_instantiation(instance):
-    assert isinstance(instance, eel::MeasureOCL)
-
-@given(instance=eel::MeasureOCL_strategy)
-def test_eel::measureocl_oclQuery_type(instance):
-    assert isinstance(instance.oclQuery, str)
+def test_eel_measureocl_instantiation(instance):
+    assert isinstance(instance, eel_MeasureOCL)
 
 
-@given(instance=eel::MeasureOCL_strategy)
-def test_eel::measureocl_oclQuery_setter(instance):
+
+@given(instance=eel_MeasureOCL_strategy)
+def test_eel_measureocl_oclQuery_setter(instance):
     original = instance.oclQuery
     instance.oclQuery = original
     assert instance.oclQuery == original
@@ -1256,33 +1238,30 @@ def test_eel::measureocl_oclQuery_setter(instance):
 def test_typedmeasure_instantiation(instance):
     assert isinstance(instance, TypedMeasure)
 
-@given(instance=eel::MeasureUnboundOperation_strategy)
+@given(instance=eel_MeasureBinaryOperation_strategy)
 @settings(max_examples=50)
-def test_eel::measureunboundoperation_instantiation(instance):
-    assert isinstance(instance, eel::MeasureUnboundOperation)
+def test_eel_measurebinaryoperation_instantiation(instance):
+    assert isinstance(instance, eel_MeasureBinaryOperation)
 
-@given(instance=eel::MeasureBinaryOperation_strategy)
+@given(instance=eel_MeasureCast_strategy)
 @settings(max_examples=50)
-def test_eel::measurebinaryoperation_instantiation(instance):
-    assert isinstance(instance, eel::MeasureBinaryOperation)
+def test_eel_measurecast_instantiation(instance):
+    assert isinstance(instance, eel_MeasureCast)
 
-@given(instance=eel::MeasureCast_strategy)
+@given(instance=eel_MeasureUnboundOperation_strategy)
 @settings(max_examples=50)
-def test_eel::measurecast_instantiation(instance):
-    assert isinstance(instance, eel::MeasureCast)
+def test_eel_measureunboundoperation_instantiation(instance):
+    assert isinstance(instance, eel_MeasureUnboundOperation)
 
-@given(instance=eel::MeasureValue_strategy)
+@given(instance=eel_MeasureValue_strategy)
 @settings(max_examples=50)
-def test_eel::measurevalue_instantiation(instance):
-    assert isinstance(instance, eel::MeasureValue)
-
-@given(instance=eel::MeasureValue_strategy)
-def test_eel::measurevalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_eel_measurevalue_instantiation(instance):
+    assert isinstance(instance, eel_MeasureValue)
 
 
-@given(instance=eel::MeasureValue_strategy)
-def test_eel::measurevalue_value_setter(instance):
+
+@given(instance=eel_MeasureValue_strategy)
+def test_eel_measurevalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1293,9 +1272,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::MeasureValue_strategy)
+@given(instance=eel_MeasureValue_strategy)
 @settings(max_examples=30)
-def test_eel::measurevalue_value_changes_state(instance):
+def test_eel_measurevalue_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1307,32 +1286,29 @@ def test_eel::measurevalue_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::MeasureValue is empty"
+        assert has_statements, f"Function 'value' in eel_MeasureValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::MeasureValue did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_MeasureValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::MeasureValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_MeasureValue is not implemented or raised an error")
 
 @given(instance=Measure_strategy)
 @settings(max_examples=50)
 def test_measure_instantiation(instance):
     assert isinstance(instance, Measure)
 
-@given(instance=eel::TypedMeasure_strategy)
+@given(instance=eel_TypedMeasure_strategy)
 @settings(max_examples=50)
-def test_eel::typedmeasure_instantiation(instance):
-    assert isinstance(instance, eel::TypedMeasure)
-
-@given(instance=eel::TypedMeasure_strategy)
-def test_eel::typedmeasure_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_eel_typedmeasure_instantiation(instance):
+    assert isinstance(instance, eel_TypedMeasure)
 
 
-@given(instance=eel::TypedMeasure_strategy)
-def test_eel::typedmeasure_type_setter(instance):
+
+@given(instance=eel_TypedMeasure_strategy)
+def test_eel_typedmeasure_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1343,9 +1319,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::TypedMeasure_strategy)
+@given(instance=eel_TypedMeasure_strategy)
 @settings(max_examples=30)
-def test_eel::typedmeasure_name_changes_state(instance):
+def test_eel_typedmeasure_type_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.type()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.type).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'type' in eel_TypedMeasure is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'type' in eel_TypedMeasure did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'type' in eel_TypedMeasure is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=eel_TypedMeasure_strategy)
+@settings(max_examples=30)
+def test_eel_typedmeasure_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1357,137 +1362,93 @@ def test_eel::typedmeasure_name_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'name' in eel::TypedMeasure is empty"
+        assert has_statements, f"Function 'name' in eel_TypedMeasure is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'name' in eel::TypedMeasure did not change state; check implementation")
+            warnings.warn(f"Operation 'name' in eel_TypedMeasure did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'name' in eel::TypedMeasure is not implemented or raised an error")
+        warnings.warn(f"Operation 'name' in eel_TypedMeasure is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=eel::TypedMeasure_strategy)
-@settings(max_examples=30)
-def test_eel::typedmeasure_type_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.type()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.type).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'type' in eel::TypedMeasure is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'type' in eel::TypedMeasure did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'type' in eel::TypedMeasure is not implemented or raised an error")
-
-@given(instance=eel::MeasurementUncertainty_strategy)
+@given(instance=eel_MeasurementUncertainty_strategy)
 @settings(max_examples=50)
-def test_eel::measurementuncertainty_instantiation(instance):
-    assert isinstance(instance, eel::MeasurementUncertainty)
-
-@given(instance=eel::MeasurementUncertainty_strategy)
-def test_eel::measurementuncertainty_standardUncertainty_type(instance):
-    assert isinstance(instance.standardUncertainty, str)
+def test_eel_measurementuncertainty_instantiation(instance):
+    assert isinstance(instance, eel_MeasurementUncertainty)
 
 
-@given(instance=eel::MeasurementUncertainty_strategy)
-def test_eel::measurementuncertainty_standardUncertainty_setter(instance):
+
+@given(instance=eel_MeasurementUncertainty_strategy)
+def test_eel_measurementuncertainty_standardUncertainty_setter(instance):
     original = instance.standardUncertainty
     instance.standardUncertainty = original
     assert instance.standardUncertainty == original
 
-@given(instance=eel::Measure_strategy)
+@given(instance=eel_Measure_strategy)
 @settings(max_examples=50)
-def test_eel::measure_instantiation(instance):
-    assert isinstance(instance, eel::Measure)
-
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_targetClass_type(instance):
-    assert isinstance(instance.targetClass, str)
+def test_eel_measure_instantiation(instance):
+    assert isinstance(instance, eel_Measure)
 
 
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_targetClass_setter(instance):
-    original = instance.targetClass
-    instance.targetClass = original
-    assert instance.targetClass == original
 
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_targetOperation_type(instance):
-    assert isinstance(instance.targetOperation, str)
-
-
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_targetOperation_setter(instance):
-    original = instance.targetOperation
-    instance.targetOperation = original
-    assert instance.targetOperation == original
-
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_name_setter(instance):
+@given(instance=eel_Measure_strategy)
+def test_eel_measure_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_subname_type(instance):
-    assert isinstance(instance.subname, str)
 
 
-@given(instance=eel::Measure_strategy)
-def test_eel::measure_subname_setter(instance):
+@given(instance=eel_Measure_strategy)
+def test_eel_measure_targetOperation_setter(instance):
+    original = instance.targetOperation
+    instance.targetOperation = original
+    assert instance.targetOperation == original
+
+
+
+@given(instance=eel_Measure_strategy)
+def test_eel_measure_subname_setter(instance):
     original = instance.subname
     instance.subname = original
     assert instance.subname == original
 
+
+
+@given(instance=eel_Measure_strategy)
+def test_eel_measure_targetClass_setter(instance):
+    original = instance.targetClass
+    instance.targetClass = original
+    assert instance.targetClass == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::Measure_strategy)
+@given(instance=eel_Measure_strategy)
 @settings(max_examples=30)
-def test_eel::measure_type_changes_state(instance):
+def test_eel_measure_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.type()
+        instance.name()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.type).strip()
+        source = inspect.getsource(instance.name).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'type' in eel::Measure is empty"
+        assert has_statements, f"Function 'name' in eel_Measure is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'type' in eel::Measure did not change state; check implementation")
+            warnings.warn(f"Operation 'name' in eel_Measure did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'type' in eel::Measure is not implemented or raised an error")
+        warnings.warn(f"Operation 'name' in eel_Measure is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1495,9 +1456,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::Measure_strategy)
+@given(instance=eel_Measure_strategy)
 @settings(max_examples=30)
-def test_eel::measure_value_changes_state(instance):
+def test_eel_measure_value_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1509,14 +1470,14 @@ def test_eel::measure_value_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'value' in eel::Measure is empty"
+        assert has_statements, f"Function 'value' in eel_Measure is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'value' in eel::Measure did not change state; check implementation")
+            warnings.warn(f"Operation 'value' in eel_Measure did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'value' in eel::Measure is not implemented or raised an error")
+        warnings.warn(f"Operation 'value' in eel_Measure is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1524,79 +1485,67 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=eel::Measure_strategy)
+@given(instance=eel_Measure_strategy)
 @settings(max_examples=30)
-def test_eel::measure_name_changes_state(instance):
+def test_eel_measure_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.name()
+        instance.type()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.name).strip()
+        source = inspect.getsource(instance.type).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'name' in eel::Measure is empty"
+        assert has_statements, f"Function 'type' in eel_Measure is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'name' in eel::Measure did not change state; check implementation")
+            warnings.warn(f"Operation 'type' in eel_Measure did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'name' in eel::Measure is not implemented or raised an error")
+        warnings.warn(f"Operation 'type' in eel_Measure is not implemented or raised an error")
 
-@given(instance=eel::Variable_strategy)
+@given(instance=eel_Variable_strategy)
 @settings(max_examples=50)
-def test_eel::variable_instantiation(instance):
-    assert isinstance(instance, eel::Variable)
-
-@given(instance=eel::Variable_strategy)
-def test_eel::variable_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_eel_variable_instantiation(instance):
+    assert isinstance(instance, eel_Variable)
 
 
-@given(instance=eel::Variable_strategy)
-def test_eel::variable_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=eel::Variable_strategy)
-def test_eel::variable_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=eel::Variable_strategy)
-def test_eel::variable_name_setter(instance):
+@given(instance=eel_Variable_strategy)
+def test_eel_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=eel::Variable_strategy)
-def test_eel::variable_vibility_type(instance):
-    assert isinstance(instance.vibility, str)
 
 
-@given(instance=eel::Variable_strategy)
-def test_eel::variable_vibility_setter(instance):
+@given(instance=eel_Variable_strategy)
+def test_eel_variable_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=eel_Variable_strategy)
+def test_eel_variable_vibility_setter(instance):
     original = instance.vibility
     instance.vibility = original
     assert instance.vibility == original
 
-@given(instance=eel::Platform_strategy)
+@given(instance=eel_Platform_strategy)
 @settings(max_examples=50)
-def test_eel::platform_instantiation(instance):
-    assert isinstance(instance, eel::Platform)
-
-@given(instance=eel::Platform_strategy)
-def test_eel::platform_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_eel_platform_instantiation(instance):
+    assert isinstance(instance, eel_Platform)
 
 
-@given(instance=eel::Platform_strategy)
-def test_eel::platform_name_setter(instance):
+
+@given(instance=eel_Platform_strategy)
+def test_eel_platform_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

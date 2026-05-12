@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    employee::Department,
-    employee::Employee,
-    employee::Company,
+from python_code import (
+    employee_Department,
+    employee_Employee,
+    employee_Company,
 )
 
 # =============================================================================
@@ -17,33 +17,33 @@ from classes import (
 
 
 
-def test_employee::department_is_not_abstract():
-    assert not inspect.isabstract(employee::Department)
+def test_employee_department_is_not_abstract():
+    assert not inspect.isabstract(employee_Department)
 
 
-def test_employee::department_constructor_exists():
-    assert callable(employee::Department.__init__)
+def test_employee_department_constructor_exists():
+    assert callable(employee_Department.__init__)
 
 
-def test_employee::department_constructor_args():
-    sig = inspect.signature(employee::Department.__init__)
+def test_employee_department_constructor_args():
+    sig = inspect.signature(employee_Department.__init__)
     params = list(sig.parameters.keys())
     assert "deptID" in params, "Missing parameter 'deptID'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_employee::department_has_deptID():
-    assert hasattr(employee::Department, "deptID")
+def test_employee_department_has_deptID():
+    assert hasattr(employee_Department, "deptID")
     descriptor = None
-    for klass in employee::Department.__mro__:
+    for klass in employee_Department.__mro__:
         if "deptID" in klass.__dict__:
             descriptor = klass.__dict__["deptID"]
             break
     assert isinstance(descriptor, property)
 
-def test_employee::department_has_name():
-    assert hasattr(employee::Department, "name")
+def test_employee_department_has_name():
+    assert hasattr(employee_Department, "name")
     descriptor = None
-    for klass in employee::Department.__mro__:
+    for klass in employee_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -51,67 +51,67 @@ def test_employee::department_has_name():
 
 
 
-def test_employee::employee_is_not_abstract():
-    assert not inspect.isabstract(employee::Employee)
+def test_employee_employee_is_not_abstract():
+    assert not inspect.isabstract(employee_Employee)
 
 
-def test_employee::employee_constructor_exists():
-    assert callable(employee::Employee.__init__)
+def test_employee_employee_constructor_exists():
+    assert callable(employee_Employee.__init__)
 
 
-def test_employee::employee_constructor_args():
-    sig = inspect.signature(employee::Employee.__init__)
+def test_employee_employee_constructor_args():
+    sig = inspect.signature(employee_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "empID" in params, "Missing parameter 'empID'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "isManager" in params, "Missing parameter 'isManager'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "empID" in params, "Missing parameter 'empID'"
 
-def test_employee::employee_has_empID():
-    assert hasattr(employee::Employee, "empID")
+def test_employee_employee_has_isManager():
+    assert hasattr(employee_Employee, "isManager")
     descriptor = None
-    for klass in employee::Employee.__mro__:
-        if "empID" in klass.__dict__:
-            descriptor = klass.__dict__["empID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee::employee_has_name():
-    assert hasattr(employee::Employee, "name")
-    descriptor = None
-    for klass in employee::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee::employee_has_isManager():
-    assert hasattr(employee::Employee, "isManager")
-    descriptor = None
-    for klass in employee::Employee.__mro__:
+    for klass in employee_Employee.__mro__:
         if "isManager" in klass.__dict__:
             descriptor = klass.__dict__["isManager"]
             break
     assert isinstance(descriptor, property)
 
+def test_employee_employee_has_name():
+    assert hasattr(employee_Employee, "name")
+    descriptor = None
+    for klass in employee_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_employee_has_empID():
+    assert hasattr(employee_Employee, "empID")
+    descriptor = None
+    for klass in employee_Employee.__mro__:
+        if "empID" in klass.__dict__:
+            descriptor = klass.__dict__["empID"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_employee::company_is_not_abstract():
-    assert not inspect.isabstract(employee::Company)
+
+def test_employee_company_is_not_abstract():
+    assert not inspect.isabstract(employee_Company)
 
 
-def test_employee::company_constructor_exists():
-    assert callable(employee::Company.__init__)
+def test_employee_company_constructor_exists():
+    assert callable(employee_Company.__init__)
 
 
-def test_employee::company_constructor_args():
-    sig = inspect.signature(employee::Company.__init__)
+def test_employee_company_constructor_args():
+    sig = inspect.signature(employee_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_employee::company_has_name():
-    assert hasattr(employee::Company, "name")
+def test_employee_company_has_name():
+    assert hasattr(employee_Company, "name")
     descriptor = None
-    for klass in employee::Company.__mro__:
+    for klass in employee_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -129,92 +129,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-employee::Department_strategy = st.builds(
-    employee::Department,
+employee_Department_strategy = st.builds(
+    employee_Department,
     deptID=
         st.integers(),
     name=
         safe_text
 )
-employee::Employee_strategy = st.builds(
-    employee::Employee,
-    empID=
-        st.integers(),
+employee_Employee_strategy = st.builds(
+    employee_Employee,
+    isManager=
+        st.booleans(),
     name=
         safe_text,
-    isManager=
-        st.booleans()
+    empID=
+        st.integers()
 )
-employee::Company_strategy = st.builds(
-    employee::Company,
+employee_Company_strategy = st.builds(
+    employee_Company,
     name=
         safe_text
 )
 
-@given(instance=employee::Department_strategy)
+@given(instance=employee_Department_strategy)
 @settings(max_examples=50)
-def test_employee::department_instantiation(instance):
-    assert isinstance(instance, employee::Department)
-
-@given(instance=employee::Department_strategy)
-def test_employee::department_deptID_type(instance):
-    assert isinstance(instance.deptID, int)
+def test_employee_department_instantiation(instance):
+    assert isinstance(instance, employee_Department)
 
 
-@given(instance=employee::Department_strategy)
-def test_employee::department_deptID_setter(instance):
+
+@given(instance=employee_Department_strategy)
+def test_employee_department_deptID_setter(instance):
     original = instance.deptID
     instance.deptID = original
     assert instance.deptID == original
 
-@given(instance=employee::Department_strategy)
-def test_employee::department_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=employee::Department_strategy)
-def test_employee::department_name_setter(instance):
+@given(instance=employee_Department_strategy)
+def test_employee_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=employee::Employee_strategy)
+@given(instance=employee_Employee_strategy)
 @settings(max_examples=50)
-def test_employee::employee_instantiation(instance):
-    assert isinstance(instance, employee::Employee)
-
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_empID_type(instance):
-    assert isinstance(instance.empID, int)
+def test_employee_employee_instantiation(instance):
+    assert isinstance(instance, employee_Employee)
 
 
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_empID_setter(instance):
-    original = instance.empID
-    instance.empID = original
-    assert instance.empID == original
 
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_isManager_type(instance):
-    assert isinstance(instance.isManager, bool)
-
-
-@given(instance=employee::Employee_strategy)
-def test_employee::employee_isManager_setter(instance):
+@given(instance=employee_Employee_strategy)
+def test_employee_employee_isManager_setter(instance):
     original = instance.isManager
     instance.isManager = original
     assert instance.isManager == original
+
+
+
+@given(instance=employee_Employee_strategy)
+def test_employee_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=employee_Employee_strategy)
+def test_employee_employee_empID_setter(instance):
+    original = instance.empID
+    instance.empID = original
+    assert instance.empID == original
 
 import warnings
 import copy
@@ -222,9 +207,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=employee::Employee_strategy)
+@given(instance=employee_Employee_strategy)
 @settings(max_examples=30)
-def test_employee::employee_reportsto_changes_state(instance):
+def test_employee_employee_reportingchain_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.reportingChain()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.reportingChain).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'reportingChain' in employee_Employee is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'reportingChain' in employee_Employee did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'reportingChain' in employee_Employee is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=employee_Employee_strategy)
+@settings(max_examples=30)
+def test_employee_employee_reportsto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -238,14 +252,14 @@ def test_employee::employee_reportsto_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reportsTo' in employee::Employee is empty"
+        assert has_statements, f"Function 'reportsTo' in employee_Employee is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reportsTo' in employee::Employee did not change state; check implementation")
+            warnings.warn(f"Operation 'reportsTo' in employee_Employee did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reportsTo' in employee::Employee is not implemented or raised an error")
+        warnings.warn(f"Operation 'reportsTo' in employee_Employee is not implemented or raised an error")
 
 import warnings
 import copy
@@ -253,38 +267,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=employee::Employee_strategy)
+@given(instance=employee_Employee_strategy)
 @settings(max_examples=30)
-def test_employee::employee_reportingchain_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.reportingChain()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.reportingChain).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reportingChain' in employee::Employee is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reportingChain' in employee::Employee did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reportingChain' in employee::Employee is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=employee::Employee_strategy)
-@settings(max_examples=30)
-def test_employee::employee_allreports_changes_state(instance):
+def test_employee_employee_allreports_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -296,27 +281,24 @@ def test_employee::employee_allreports_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allReports' in employee::Employee is empty"
+        assert has_statements, f"Function 'allReports' in employee_Employee is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allReports' in employee::Employee did not change state; check implementation")
+            warnings.warn(f"Operation 'allReports' in employee_Employee did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allReports' in employee::Employee is not implemented or raised an error")
+        warnings.warn(f"Operation 'allReports' in employee_Employee is not implemented or raised an error")
 
-@given(instance=employee::Company_strategy)
+@given(instance=employee_Company_strategy)
 @settings(max_examples=50)
-def test_employee::company_instantiation(instance):
-    assert isinstance(instance, employee::Company)
-
-@given(instance=employee::Company_strategy)
-def test_employee::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_employee_company_instantiation(instance):
+    assert isinstance(instance, employee_Company)
 
 
-@given(instance=employee::Company_strategy)
-def test_employee::company_name_setter(instance):
+
+@given(instance=employee_Company_strategy)
+def test_employee_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

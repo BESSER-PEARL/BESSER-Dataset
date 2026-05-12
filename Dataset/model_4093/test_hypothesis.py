@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachines::EventOccurrence,
+from python_code import (
+    statemachines_EventOccurrence,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_statemachines::eventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(statemachines::EventOccurrence)
+def test_statemachines_eventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(statemachines_EventOccurrence)
 
 
-def test_statemachines::eventoccurrence_constructor_exists():
-    assert callable(statemachines::EventOccurrence.__init__)
+def test_statemachines_eventoccurrence_constructor_exists():
+    assert callable(statemachines_EventOccurrence.__init__)
 
 
-def test_statemachines::eventoccurrence_constructor_args():
-    sig = inspect.signature(statemachines::EventOccurrence.__init__)
+def test_statemachines_eventoccurrence_constructor_args():
+    sig = inspect.signature(statemachines_EventOccurrence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachines::EventOccurrence_strategy = st.builds(
-    statemachines::EventOccurrence,
+statemachines_EventOccurrence_strategy = st.builds(
+    statemachines_EventOccurrence,
 )
 
-@given(instance=statemachines::EventOccurrence_strategy)
+@given(instance=statemachines_EventOccurrence_strategy)
 @settings(max_examples=50)
-def test_statemachines::eventoccurrence_instantiation(instance):
-    assert isinstance(instance, statemachines::EventOccurrence)
+def test_statemachines_eventoccurrence_instantiation(instance):
+    assert isinstance(instance, statemachines_EventOccurrence)

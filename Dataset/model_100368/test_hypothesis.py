@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractAction,
-    ClassicalExpression::BinaryIntegerExpression,
-    FSMModel::IntegerAssignement,
-    ClockExpressionAndRelation::BindableEntity,
+    ClassicalExpression_BinaryIntegerExpression,
+    FSMModel_IntegerAssignement,
+    ClockExpressionAndRelation_BindableEntity,
     AbstractTrigger,
-    ClassicalExpression::ClassicalExpression,
-    ClockExpressionAndRelation::ConcreteEntity,
-    FSMModel::Trigger,
-    ClassicalExpression::BooleanExpression,
+    ClassicalExpression_ClassicalExpression,
+    ClockExpressionAndRelation_ConcreteEntity,
+    FSMModel_Trigger,
+    ClassicalExpression_BooleanExpression,
     AbstractGuard,
-    FSMModel::Guard,
-    FSMModel::AbstractTrigger,
-    FSMModel::AbstractGuard,
-    FSMModel::DeclarationBlock,
-    FSMModel::AbstractAction,
+    FSMModel_Guard,
+    FSMModel_AbstractTrigger,
+    FSMModel_AbstractGuard,
+    FSMModel_DeclarationBlock,
+    FSMModel_AbstractAction,
     NamedElement,
-    FSMModel::StateMachineDefinition,
-    FSMModel::Transition,
-    FSMModel::State,
+    FSMModel_Transition,
+    FSMModel_StateMachineDefinition,
+    FSMModel_State,
 )
 
 # =============================================================================
@@ -47,44 +47,44 @@ def test_abstractaction_constructor_args():
 
 
 
-def test_classicalexpression::binaryintegerexpression_is_not_abstract():
-    assert not inspect.isabstract(ClassicalExpression::BinaryIntegerExpression)
+def test_classicalexpression_binaryintegerexpression_is_not_abstract():
+    assert not inspect.isabstract(ClassicalExpression_BinaryIntegerExpression)
 
 
-def test_classicalexpression::binaryintegerexpression_constructor_exists():
-    assert callable(ClassicalExpression::BinaryIntegerExpression.__init__)
+def test_classicalexpression_binaryintegerexpression_constructor_exists():
+    assert callable(ClassicalExpression_BinaryIntegerExpression.__init__)
 
 
-def test_classicalexpression::binaryintegerexpression_constructor_args():
-    sig = inspect.signature(ClassicalExpression::BinaryIntegerExpression.__init__)
+def test_classicalexpression_binaryintegerexpression_constructor_args():
+    sig = inspect.signature(ClassicalExpression_BinaryIntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::integerassignement_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::IntegerAssignement)
+def test_fsmmodel_integerassignement_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_IntegerAssignement)
 
 
-def test_fsmmodel::integerassignement_constructor_exists():
-    assert callable(FSMModel::IntegerAssignement.__init__)
+def test_fsmmodel_integerassignement_constructor_exists():
+    assert callable(FSMModel_IntegerAssignement.__init__)
 
 
-def test_fsmmodel::integerassignement_constructor_args():
-    sig = inspect.signature(FSMModel::IntegerAssignement.__init__)
+def test_fsmmodel_integerassignement_constructor_args():
+    sig = inspect.signature(FSMModel_IntegerAssignement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_clockexpressionandrelation::bindableentity_is_not_abstract():
-    assert not inspect.isabstract(ClockExpressionAndRelation::BindableEntity)
+def test_clockexpressionandrelation_bindableentity_is_not_abstract():
+    assert not inspect.isabstract(ClockExpressionAndRelation_BindableEntity)
 
 
-def test_clockexpressionandrelation::bindableentity_constructor_exists():
-    assert callable(ClockExpressionAndRelation::BindableEntity.__init__)
+def test_clockexpressionandrelation_bindableentity_constructor_exists():
+    assert callable(ClockExpressionAndRelation_BindableEntity.__init__)
 
 
-def test_clockexpressionandrelation::bindableentity_constructor_args():
-    sig = inspect.signature(ClockExpressionAndRelation::BindableEntity.__init__)
+def test_clockexpressionandrelation_bindableentity_constructor_args():
+    sig = inspect.signature(ClockExpressionAndRelation_BindableEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -103,58 +103,58 @@ def test_abstracttrigger_constructor_args():
 
 
 
-def test_classicalexpression::classicalexpression_is_not_abstract():
-    assert not inspect.isabstract(ClassicalExpression::ClassicalExpression)
+def test_classicalexpression_classicalexpression_is_not_abstract():
+    assert not inspect.isabstract(ClassicalExpression_ClassicalExpression)
 
 
-def test_classicalexpression::classicalexpression_constructor_exists():
-    assert callable(ClassicalExpression::ClassicalExpression.__init__)
+def test_classicalexpression_classicalexpression_constructor_exists():
+    assert callable(ClassicalExpression_ClassicalExpression.__init__)
 
 
-def test_classicalexpression::classicalexpression_constructor_args():
-    sig = inspect.signature(ClassicalExpression::ClassicalExpression.__init__)
+def test_classicalexpression_classicalexpression_constructor_args():
+    sig = inspect.signature(ClassicalExpression_ClassicalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_clockexpressionandrelation::concreteentity_is_not_abstract():
-    assert not inspect.isabstract(ClockExpressionAndRelation::ConcreteEntity)
+def test_clockexpressionandrelation_concreteentity_is_not_abstract():
+    assert not inspect.isabstract(ClockExpressionAndRelation_ConcreteEntity)
 
 
-def test_clockexpressionandrelation::concreteentity_constructor_exists():
-    assert callable(ClockExpressionAndRelation::ConcreteEntity.__init__)
+def test_clockexpressionandrelation_concreteentity_constructor_exists():
+    assert callable(ClockExpressionAndRelation_ConcreteEntity.__init__)
 
 
-def test_clockexpressionandrelation::concreteentity_constructor_args():
-    sig = inspect.signature(ClockExpressionAndRelation::ConcreteEntity.__init__)
+def test_clockexpressionandrelation_concreteentity_constructor_args():
+    sig = inspect.signature(ClockExpressionAndRelation_ConcreteEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::trigger_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::Trigger)
+def test_fsmmodel_trigger_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_Trigger)
 
 
-def test_fsmmodel::trigger_constructor_exists():
-    assert callable(FSMModel::Trigger.__init__)
+def test_fsmmodel_trigger_constructor_exists():
+    assert callable(FSMModel_Trigger.__init__)
 
 
-def test_fsmmodel::trigger_constructor_args():
-    sig = inspect.signature(FSMModel::Trigger.__init__)
+def test_fsmmodel_trigger_constructor_args():
+    sig = inspect.signature(FSMModel_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classicalexpression::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(ClassicalExpression::BooleanExpression)
+def test_classicalexpression_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(ClassicalExpression_BooleanExpression)
 
 
-def test_classicalexpression::booleanexpression_constructor_exists():
-    assert callable(ClassicalExpression::BooleanExpression.__init__)
+def test_classicalexpression_booleanexpression_constructor_exists():
+    assert callable(ClassicalExpression_BooleanExpression.__init__)
 
 
-def test_classicalexpression::booleanexpression_constructor_args():
-    sig = inspect.signature(ClassicalExpression::BooleanExpression.__init__)
+def test_classicalexpression_booleanexpression_constructor_args():
+    sig = inspect.signature(ClassicalExpression_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -173,72 +173,72 @@ def test_abstractguard_constructor_args():
 
 
 
-def test_fsmmodel::guard_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::Guard)
+def test_fsmmodel_guard_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_Guard)
 
 
-def test_fsmmodel::guard_constructor_exists():
-    assert callable(FSMModel::Guard.__init__)
+def test_fsmmodel_guard_constructor_exists():
+    assert callable(FSMModel_Guard.__init__)
 
 
-def test_fsmmodel::guard_constructor_args():
-    sig = inspect.signature(FSMModel::Guard.__init__)
+def test_fsmmodel_guard_constructor_args():
+    sig = inspect.signature(FSMModel_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::abstracttrigger_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::AbstractTrigger)
+def test_fsmmodel_abstracttrigger_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_AbstractTrigger)
 
 
-def test_fsmmodel::abstracttrigger_constructor_exists():
-    assert callable(FSMModel::AbstractTrigger.__init__)
+def test_fsmmodel_abstracttrigger_constructor_exists():
+    assert callable(FSMModel_AbstractTrigger.__init__)
 
 
-def test_fsmmodel::abstracttrigger_constructor_args():
-    sig = inspect.signature(FSMModel::AbstractTrigger.__init__)
+def test_fsmmodel_abstracttrigger_constructor_args():
+    sig = inspect.signature(FSMModel_AbstractTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::abstractguard_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::AbstractGuard)
+def test_fsmmodel_abstractguard_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_AbstractGuard)
 
 
-def test_fsmmodel::abstractguard_constructor_exists():
-    assert callable(FSMModel::AbstractGuard.__init__)
+def test_fsmmodel_abstractguard_constructor_exists():
+    assert callable(FSMModel_AbstractGuard.__init__)
 
 
-def test_fsmmodel::abstractguard_constructor_args():
-    sig = inspect.signature(FSMModel::AbstractGuard.__init__)
+def test_fsmmodel_abstractguard_constructor_args():
+    sig = inspect.signature(FSMModel_AbstractGuard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::declarationblock_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::DeclarationBlock)
+def test_fsmmodel_declarationblock_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_DeclarationBlock)
 
 
-def test_fsmmodel::declarationblock_constructor_exists():
-    assert callable(FSMModel::DeclarationBlock.__init__)
+def test_fsmmodel_declarationblock_constructor_exists():
+    assert callable(FSMModel_DeclarationBlock.__init__)
 
 
-def test_fsmmodel::declarationblock_constructor_args():
-    sig = inspect.signature(FSMModel::DeclarationBlock.__init__)
+def test_fsmmodel_declarationblock_constructor_args():
+    sig = inspect.signature(FSMModel_DeclarationBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::abstractaction_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::AbstractAction)
+def test_fsmmodel_abstractaction_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_AbstractAction)
 
 
-def test_fsmmodel::abstractaction_constructor_exists():
-    assert callable(FSMModel::AbstractAction.__init__)
+def test_fsmmodel_abstractaction_constructor_exists():
+    assert callable(FSMModel_AbstractAction.__init__)
 
 
-def test_fsmmodel::abstractaction_constructor_args():
-    sig = inspect.signature(FSMModel::AbstractAction.__init__)
+def test_fsmmodel_abstractaction_constructor_args():
+    sig = inspect.signature(FSMModel_AbstractAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,44 +257,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fsmmodel::statemachinedefinition_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::StateMachineDefinition)
+def test_fsmmodel_transition_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_Transition)
 
 
-def test_fsmmodel::statemachinedefinition_constructor_exists():
-    assert callable(FSMModel::StateMachineDefinition.__init__)
+def test_fsmmodel_transition_constructor_exists():
+    assert callable(FSMModel_Transition.__init__)
 
 
-def test_fsmmodel::statemachinedefinition_constructor_args():
-    sig = inspect.signature(FSMModel::StateMachineDefinition.__init__)
+def test_fsmmodel_transition_constructor_args():
+    sig = inspect.signature(FSMModel_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::transition_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::Transition)
+def test_fsmmodel_statemachinedefinition_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_StateMachineDefinition)
 
 
-def test_fsmmodel::transition_constructor_exists():
-    assert callable(FSMModel::Transition.__init__)
+def test_fsmmodel_statemachinedefinition_constructor_exists():
+    assert callable(FSMModel_StateMachineDefinition.__init__)
 
 
-def test_fsmmodel::transition_constructor_args():
-    sig = inspect.signature(FSMModel::Transition.__init__)
+def test_fsmmodel_statemachinedefinition_constructor_args():
+    sig = inspect.signature(FSMModel_StateMachineDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsmmodel::state_is_not_abstract():
-    assert not inspect.isabstract(FSMModel::State)
+def test_fsmmodel_state_is_not_abstract():
+    assert not inspect.isabstract(FSMModel_State)
 
 
-def test_fsmmodel::state_constructor_exists():
-    assert callable(FSMModel::State.__init__)
+def test_fsmmodel_state_constructor_exists():
+    assert callable(FSMModel_State.__init__)
 
 
-def test_fsmmodel::state_constructor_args():
-    sig = inspect.signature(FSMModel::State.__init__)
+def test_fsmmodel_state_constructor_args():
+    sig = inspect.signature(FSMModel_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -312,59 +312,59 @@ safe_text = st.text(
 AbstractAction_strategy = st.builds(
     AbstractAction,
 )
-ClassicalExpression::BinaryIntegerExpression_strategy = st.builds(
-    ClassicalExpression::BinaryIntegerExpression,
+ClassicalExpression_BinaryIntegerExpression_strategy = st.builds(
+    ClassicalExpression_BinaryIntegerExpression,
 )
-FSMModel::IntegerAssignement_strategy = st.builds(
-    FSMModel::IntegerAssignement,
+FSMModel_IntegerAssignement_strategy = st.builds(
+    FSMModel_IntegerAssignement,
 )
-ClockExpressionAndRelation::BindableEntity_strategy = st.builds(
-    ClockExpressionAndRelation::BindableEntity,
+ClockExpressionAndRelation_BindableEntity_strategy = st.builds(
+    ClockExpressionAndRelation_BindableEntity,
 )
 AbstractTrigger_strategy = st.builds(
     AbstractTrigger,
 )
-ClassicalExpression::ClassicalExpression_strategy = st.builds(
-    ClassicalExpression::ClassicalExpression,
+ClassicalExpression_ClassicalExpression_strategy = st.builds(
+    ClassicalExpression_ClassicalExpression,
 )
-ClockExpressionAndRelation::ConcreteEntity_strategy = st.builds(
-    ClockExpressionAndRelation::ConcreteEntity,
+ClockExpressionAndRelation_ConcreteEntity_strategy = st.builds(
+    ClockExpressionAndRelation_ConcreteEntity,
 )
-FSMModel::Trigger_strategy = st.builds(
-    FSMModel::Trigger,
+FSMModel_Trigger_strategy = st.builds(
+    FSMModel_Trigger,
 )
-ClassicalExpression::BooleanExpression_strategy = st.builds(
-    ClassicalExpression::BooleanExpression,
+ClassicalExpression_BooleanExpression_strategy = st.builds(
+    ClassicalExpression_BooleanExpression,
 )
 AbstractGuard_strategy = st.builds(
     AbstractGuard,
 )
-FSMModel::Guard_strategy = st.builds(
-    FSMModel::Guard,
+FSMModel_Guard_strategy = st.builds(
+    FSMModel_Guard,
 )
-FSMModel::AbstractTrigger_strategy = st.builds(
-    FSMModel::AbstractTrigger,
+FSMModel_AbstractTrigger_strategy = st.builds(
+    FSMModel_AbstractTrigger,
 )
-FSMModel::AbstractGuard_strategy = st.builds(
-    FSMModel::AbstractGuard,
+FSMModel_AbstractGuard_strategy = st.builds(
+    FSMModel_AbstractGuard,
 )
-FSMModel::DeclarationBlock_strategy = st.builds(
-    FSMModel::DeclarationBlock,
+FSMModel_DeclarationBlock_strategy = st.builds(
+    FSMModel_DeclarationBlock,
 )
-FSMModel::AbstractAction_strategy = st.builds(
-    FSMModel::AbstractAction,
+FSMModel_AbstractAction_strategy = st.builds(
+    FSMModel_AbstractAction,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-FSMModel::StateMachineDefinition_strategy = st.builds(
-    FSMModel::StateMachineDefinition,
+FSMModel_Transition_strategy = st.builds(
+    FSMModel_Transition,
 )
-FSMModel::Transition_strategy = st.builds(
-    FSMModel::Transition,
+FSMModel_StateMachineDefinition_strategy = st.builds(
+    FSMModel_StateMachineDefinition,
 )
-FSMModel::State_strategy = st.builds(
-    FSMModel::State,
+FSMModel_State_strategy = st.builds(
+    FSMModel_State,
 )
 
 @given(instance=AbstractAction_strategy)
@@ -372,92 +372,92 @@ FSMModel::State_strategy = st.builds(
 def test_abstractaction_instantiation(instance):
     assert isinstance(instance, AbstractAction)
 
-@given(instance=ClassicalExpression::BinaryIntegerExpression_strategy)
+@given(instance=ClassicalExpression_BinaryIntegerExpression_strategy)
 @settings(max_examples=50)
-def test_classicalexpression::binaryintegerexpression_instantiation(instance):
-    assert isinstance(instance, ClassicalExpression::BinaryIntegerExpression)
+def test_classicalexpression_binaryintegerexpression_instantiation(instance):
+    assert isinstance(instance, ClassicalExpression_BinaryIntegerExpression)
 
-@given(instance=FSMModel::IntegerAssignement_strategy)
+@given(instance=FSMModel_IntegerAssignement_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::integerassignement_instantiation(instance):
-    assert isinstance(instance, FSMModel::IntegerAssignement)
+def test_fsmmodel_integerassignement_instantiation(instance):
+    assert isinstance(instance, FSMModel_IntegerAssignement)
 
-@given(instance=ClockExpressionAndRelation::BindableEntity_strategy)
+@given(instance=ClockExpressionAndRelation_BindableEntity_strategy)
 @settings(max_examples=50)
-def test_clockexpressionandrelation::bindableentity_instantiation(instance):
-    assert isinstance(instance, ClockExpressionAndRelation::BindableEntity)
+def test_clockexpressionandrelation_bindableentity_instantiation(instance):
+    assert isinstance(instance, ClockExpressionAndRelation_BindableEntity)
 
 @given(instance=AbstractTrigger_strategy)
 @settings(max_examples=50)
 def test_abstracttrigger_instantiation(instance):
     assert isinstance(instance, AbstractTrigger)
 
-@given(instance=ClassicalExpression::ClassicalExpression_strategy)
+@given(instance=ClassicalExpression_ClassicalExpression_strategy)
 @settings(max_examples=50)
-def test_classicalexpression::classicalexpression_instantiation(instance):
-    assert isinstance(instance, ClassicalExpression::ClassicalExpression)
+def test_classicalexpression_classicalexpression_instantiation(instance):
+    assert isinstance(instance, ClassicalExpression_ClassicalExpression)
 
-@given(instance=ClockExpressionAndRelation::ConcreteEntity_strategy)
+@given(instance=ClockExpressionAndRelation_ConcreteEntity_strategy)
 @settings(max_examples=50)
-def test_clockexpressionandrelation::concreteentity_instantiation(instance):
-    assert isinstance(instance, ClockExpressionAndRelation::ConcreteEntity)
+def test_clockexpressionandrelation_concreteentity_instantiation(instance):
+    assert isinstance(instance, ClockExpressionAndRelation_ConcreteEntity)
 
-@given(instance=FSMModel::Trigger_strategy)
+@given(instance=FSMModel_Trigger_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::trigger_instantiation(instance):
-    assert isinstance(instance, FSMModel::Trigger)
+def test_fsmmodel_trigger_instantiation(instance):
+    assert isinstance(instance, FSMModel_Trigger)
 
-@given(instance=ClassicalExpression::BooleanExpression_strategy)
+@given(instance=ClassicalExpression_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_classicalexpression::booleanexpression_instantiation(instance):
-    assert isinstance(instance, ClassicalExpression::BooleanExpression)
+def test_classicalexpression_booleanexpression_instantiation(instance):
+    assert isinstance(instance, ClassicalExpression_BooleanExpression)
 
 @given(instance=AbstractGuard_strategy)
 @settings(max_examples=50)
 def test_abstractguard_instantiation(instance):
     assert isinstance(instance, AbstractGuard)
 
-@given(instance=FSMModel::Guard_strategy)
+@given(instance=FSMModel_Guard_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::guard_instantiation(instance):
-    assert isinstance(instance, FSMModel::Guard)
+def test_fsmmodel_guard_instantiation(instance):
+    assert isinstance(instance, FSMModel_Guard)
 
-@given(instance=FSMModel::AbstractTrigger_strategy)
+@given(instance=FSMModel_AbstractTrigger_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::abstracttrigger_instantiation(instance):
-    assert isinstance(instance, FSMModel::AbstractTrigger)
+def test_fsmmodel_abstracttrigger_instantiation(instance):
+    assert isinstance(instance, FSMModel_AbstractTrigger)
 
-@given(instance=FSMModel::AbstractGuard_strategy)
+@given(instance=FSMModel_AbstractGuard_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::abstractguard_instantiation(instance):
-    assert isinstance(instance, FSMModel::AbstractGuard)
+def test_fsmmodel_abstractguard_instantiation(instance):
+    assert isinstance(instance, FSMModel_AbstractGuard)
 
-@given(instance=FSMModel::DeclarationBlock_strategy)
+@given(instance=FSMModel_DeclarationBlock_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::declarationblock_instantiation(instance):
-    assert isinstance(instance, FSMModel::DeclarationBlock)
+def test_fsmmodel_declarationblock_instantiation(instance):
+    assert isinstance(instance, FSMModel_DeclarationBlock)
 
-@given(instance=FSMModel::AbstractAction_strategy)
+@given(instance=FSMModel_AbstractAction_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::abstractaction_instantiation(instance):
-    assert isinstance(instance, FSMModel::AbstractAction)
+def test_fsmmodel_abstractaction_instantiation(instance):
+    assert isinstance(instance, FSMModel_AbstractAction)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=FSMModel::StateMachineDefinition_strategy)
+@given(instance=FSMModel_Transition_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::statemachinedefinition_instantiation(instance):
-    assert isinstance(instance, FSMModel::StateMachineDefinition)
+def test_fsmmodel_transition_instantiation(instance):
+    assert isinstance(instance, FSMModel_Transition)
 
-@given(instance=FSMModel::Transition_strategy)
+@given(instance=FSMModel_StateMachineDefinition_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::transition_instantiation(instance):
-    assert isinstance(instance, FSMModel::Transition)
+def test_fsmmodel_statemachinedefinition_instantiation(instance):
+    assert isinstance(instance, FSMModel_StateMachineDefinition)
 
-@given(instance=FSMModel::State_strategy)
+@given(instance=FSMModel_State_strategy)
 @settings(max_examples=50)
-def test_fsmmodel::state_instantiation(instance):
-    assert isinstance(instance, FSMModel::State)
+def test_fsmmodel_state_instantiation(instance):
+    assert isinstance(instance, FSMModel_State)

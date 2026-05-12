@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    myumlclassdiagram::Package,
-    myumlclassdiagram::Parameter,
-    myumlclassdiagram::NamedElement,
-    myumlclassdiagram::Method,
-    myumlclassdiagram::Attribute,
-    myumlclassdiagram::Class,
+    myumlclassdiagram_Package,
+    myumlclassdiagram_Parameter,
+    myumlclassdiagram_NamedElement,
+    myumlclassdiagram_Method,
+    myumlclassdiagram_Attribute,
+    myumlclassdiagram_Class,
     EVisibility,
-    EReturnType,
     EType,
+    EReturnType,
 )
 
 # =============================================================================
@@ -38,37 +38,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_myumlclassdiagram::package_is_not_abstract():
-    assert not inspect.isabstract(myumlclassdiagram::Package)
+def test_myumlclassdiagram_package_is_not_abstract():
+    assert not inspect.isabstract(myumlclassdiagram_Package)
 
 
-def test_myumlclassdiagram::package_constructor_exists():
-    assert callable(myumlclassdiagram::Package.__init__)
+def test_myumlclassdiagram_package_constructor_exists():
+    assert callable(myumlclassdiagram_Package.__init__)
 
 
-def test_myumlclassdiagram::package_constructor_args():
-    sig = inspect.signature(myumlclassdiagram::Package.__init__)
+def test_myumlclassdiagram_package_constructor_args():
+    sig = inspect.signature(myumlclassdiagram_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_myumlclassdiagram::parameter_is_not_abstract():
-    assert not inspect.isabstract(myumlclassdiagram::Parameter)
+def test_myumlclassdiagram_parameter_is_not_abstract():
+    assert not inspect.isabstract(myumlclassdiagram_Parameter)
 
 
-def test_myumlclassdiagram::parameter_constructor_exists():
-    assert callable(myumlclassdiagram::Parameter.__init__)
+def test_myumlclassdiagram_parameter_constructor_exists():
+    assert callable(myumlclassdiagram_Parameter.__init__)
 
 
-def test_myumlclassdiagram::parameter_constructor_args():
-    sig = inspect.signature(myumlclassdiagram::Parameter.__init__)
+def test_myumlclassdiagram_parameter_constructor_args():
+    sig = inspect.signature(myumlclassdiagram_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
 
-def test_myumlclassdiagram::parameter_has_Type():
-    assert hasattr(myumlclassdiagram::Parameter, "Type")
+def test_myumlclassdiagram_parameter_has_Type():
+    assert hasattr(myumlclassdiagram_Parameter, "Type")
     descriptor = None
-    for klass in myumlclassdiagram::Parameter.__mro__:
+    for klass in myumlclassdiagram_Parameter.__mro__:
         if "Type" in klass.__dict__:
             descriptor = klass.__dict__["Type"]
             break
@@ -76,23 +76,23 @@ def test_myumlclassdiagram::parameter_has_Type():
 
 
 
-def test_myumlclassdiagram::namedelement_is_not_abstract():
-    assert not inspect.isabstract(myumlclassdiagram::NamedElement)
+def test_myumlclassdiagram_namedelement_is_not_abstract():
+    assert not inspect.isabstract(myumlclassdiagram_NamedElement)
 
 
-def test_myumlclassdiagram::namedelement_constructor_exists():
-    assert callable(myumlclassdiagram::NamedElement.__init__)
+def test_myumlclassdiagram_namedelement_constructor_exists():
+    assert callable(myumlclassdiagram_NamedElement.__init__)
 
 
-def test_myumlclassdiagram::namedelement_constructor_args():
-    sig = inspect.signature(myumlclassdiagram::NamedElement.__init__)
+def test_myumlclassdiagram_namedelement_constructor_args():
+    sig = inspect.signature(myumlclassdiagram_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_myumlclassdiagram::namedelement_has_Name():
-    assert hasattr(myumlclassdiagram::NamedElement, "Name")
+def test_myumlclassdiagram_namedelement_has_Name():
+    assert hasattr(myumlclassdiagram_NamedElement, "Name")
     descriptor = None
-    for klass in myumlclassdiagram::NamedElement.__mro__:
+    for klass in myumlclassdiagram_NamedElement.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -100,33 +100,33 @@ def test_myumlclassdiagram::namedelement_has_Name():
 
 
 
-def test_myumlclassdiagram::method_is_not_abstract():
-    assert not inspect.isabstract(myumlclassdiagram::Method)
+def test_myumlclassdiagram_method_is_not_abstract():
+    assert not inspect.isabstract(myumlclassdiagram_Method)
 
 
-def test_myumlclassdiagram::method_constructor_exists():
-    assert callable(myumlclassdiagram::Method.__init__)
+def test_myumlclassdiagram_method_constructor_exists():
+    assert callable(myumlclassdiagram_Method.__init__)
 
 
-def test_myumlclassdiagram::method_constructor_args():
-    sig = inspect.signature(myumlclassdiagram::Method.__init__)
+def test_myumlclassdiagram_method_constructor_args():
+    sig = inspect.signature(myumlclassdiagram_Method.__init__)
     params = list(sig.parameters.keys())
     assert "Visibility" in params, "Missing parameter 'Visibility'"
     assert "Returns" in params, "Missing parameter 'Returns'"
 
-def test_myumlclassdiagram::method_has_Visibility():
-    assert hasattr(myumlclassdiagram::Method, "Visibility")
+def test_myumlclassdiagram_method_has_Visibility():
+    assert hasattr(myumlclassdiagram_Method, "Visibility")
     descriptor = None
-    for klass in myumlclassdiagram::Method.__mro__:
+    for klass in myumlclassdiagram_Method.__mro__:
         if "Visibility" in klass.__dict__:
             descriptor = klass.__dict__["Visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_myumlclassdiagram::method_has_Returns():
-    assert hasattr(myumlclassdiagram::Method, "Returns")
+def test_myumlclassdiagram_method_has_Returns():
+    assert hasattr(myumlclassdiagram_Method, "Returns")
     descriptor = None
-    for klass in myumlclassdiagram::Method.__mro__:
+    for klass in myumlclassdiagram_Method.__mro__:
         if "Returns" in klass.__dict__:
             descriptor = klass.__dict__["Returns"]
             break
@@ -134,57 +134,57 @@ def test_myumlclassdiagram::method_has_Returns():
 
 
 
-def test_myumlclassdiagram::attribute_is_not_abstract():
-    assert not inspect.isabstract(myumlclassdiagram::Attribute)
+def test_myumlclassdiagram_attribute_is_not_abstract():
+    assert not inspect.isabstract(myumlclassdiagram_Attribute)
 
 
-def test_myumlclassdiagram::attribute_constructor_exists():
-    assert callable(myumlclassdiagram::Attribute.__init__)
+def test_myumlclassdiagram_attribute_constructor_exists():
+    assert callable(myumlclassdiagram_Attribute.__init__)
 
 
-def test_myumlclassdiagram::attribute_constructor_args():
-    sig = inspect.signature(myumlclassdiagram::Attribute.__init__)
+def test_myumlclassdiagram_attribute_constructor_args():
+    sig = inspect.signature(myumlclassdiagram_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "Type" in params, "Missing parameter 'Type'"
     assert "Visibility" in params, "Missing parameter 'Visibility'"
+    assert "Type" in params, "Missing parameter 'Type'"
 
-def test_myumlclassdiagram::attribute_has_Type():
-    assert hasattr(myumlclassdiagram::Attribute, "Type")
+def test_myumlclassdiagram_attribute_has_Visibility():
+    assert hasattr(myumlclassdiagram_Attribute, "Visibility")
     descriptor = None
-    for klass in myumlclassdiagram::Attribute.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_myumlclassdiagram::attribute_has_Visibility():
-    assert hasattr(myumlclassdiagram::Attribute, "Visibility")
-    descriptor = None
-    for klass in myumlclassdiagram::Attribute.__mro__:
+    for klass in myumlclassdiagram_Attribute.__mro__:
         if "Visibility" in klass.__dict__:
             descriptor = klass.__dict__["Visibility"]
             break
     assert isinstance(descriptor, property)
 
+def test_myumlclassdiagram_attribute_has_Type():
+    assert hasattr(myumlclassdiagram_Attribute, "Type")
+    descriptor = None
+    for klass in myumlclassdiagram_Attribute.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_myumlclassdiagram::class_is_not_abstract():
-    assert not inspect.isabstract(myumlclassdiagram::Class)
+
+def test_myumlclassdiagram_class_is_not_abstract():
+    assert not inspect.isabstract(myumlclassdiagram_Class)
 
 
-def test_myumlclassdiagram::class_constructor_exists():
-    assert callable(myumlclassdiagram::Class.__init__)
+def test_myumlclassdiagram_class_constructor_exists():
+    assert callable(myumlclassdiagram_Class.__init__)
 
 
-def test_myumlclassdiagram::class_constructor_args():
-    sig = inspect.signature(myumlclassdiagram::Class.__init__)
+def test_myumlclassdiagram_class_constructor_args():
+    sig = inspect.signature(myumlclassdiagram_Class.__init__)
     params = list(sig.parameters.keys())
     assert "Visibility" in params, "Missing parameter 'Visibility'"
 
-def test_myumlclassdiagram::class_has_Visibility():
-    assert hasattr(myumlclassdiagram::Class, "Visibility")
+def test_myumlclassdiagram_class_has_Visibility():
+    assert hasattr(myumlclassdiagram_Class, "Visibility")
     descriptor = None
-    for klass in myumlclassdiagram::Class.__mro__:
+    for klass in myumlclassdiagram_Class.__mro__:
         if "Visibility" in klass.__dict__:
             descriptor = klass.__dict__["Visibility"]
             break
@@ -198,29 +198,13 @@ def test_evisibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EVisibility]
     expected_literals = [
-        "protected",
         "private",
+        "protected",
         "public",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EVisibility"
-
-def test_ereturntype_exists():
-    # Check that the Enumeration exists
-    assert EReturnType is not None
-
-def test_ereturntype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EReturnType]
-    expected_literals = [
-        "string",
-        "void",
-        "integer",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EReturnType"
 
 def test_etype_exists():
     # Check that the Enumeration exists
@@ -237,6 +221,22 @@ def test_etype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in EType"
 
+def test_ereturntype_exists():
+    # Check that the Enumeration exists
+    assert EReturnType is not None
+
+def test_ereturntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EReturnType]
+    expected_literals = [
+        "integer",
+        "void",
+        "string",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EReturnType"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -252,35 +252,35 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-myumlclassdiagram::Package_strategy = st.builds(
-    myumlclassdiagram::Package,
+myumlclassdiagram_Package_strategy = st.builds(
+    myumlclassdiagram_Package,
 )
-myumlclassdiagram::Parameter_strategy = st.builds(
-    myumlclassdiagram::Parameter,
+myumlclassdiagram_Parameter_strategy = st.builds(
+    myumlclassdiagram_Parameter,
     Type=
         safe_text
 )
-myumlclassdiagram::NamedElement_strategy = st.builds(
-    myumlclassdiagram::NamedElement,
+myumlclassdiagram_NamedElement_strategy = st.builds(
+    myumlclassdiagram_NamedElement,
     Name=
         safe_text
 )
-myumlclassdiagram::Method_strategy = st.builds(
-    myumlclassdiagram::Method,
+myumlclassdiagram_Method_strategy = st.builds(
+    myumlclassdiagram_Method,
     Visibility=
         safe_text,
     Returns=
         safe_text
 )
-myumlclassdiagram::Attribute_strategy = st.builds(
-    myumlclassdiagram::Attribute,
-    Type=
-        safe_text,
+myumlclassdiagram_Attribute_strategy = st.builds(
+    myumlclassdiagram_Attribute,
     Visibility=
+        safe_text,
+    Type=
         safe_text
 )
-myumlclassdiagram::Class_strategy = st.builds(
-    myumlclassdiagram::Class,
+myumlclassdiagram_Class_strategy = st.builds(
+    myumlclassdiagram_Class,
     Visibility=
         safe_text
 )
@@ -290,109 +290,88 @@ myumlclassdiagram::Class_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=myumlclassdiagram::Package_strategy)
+@given(instance=myumlclassdiagram_Package_strategy)
 @settings(max_examples=50)
-def test_myumlclassdiagram::package_instantiation(instance):
-    assert isinstance(instance, myumlclassdiagram::Package)
+def test_myumlclassdiagram_package_instantiation(instance):
+    assert isinstance(instance, myumlclassdiagram_Package)
 
-@given(instance=myumlclassdiagram::Parameter_strategy)
+@given(instance=myumlclassdiagram_Parameter_strategy)
 @settings(max_examples=50)
-def test_myumlclassdiagram::parameter_instantiation(instance):
-    assert isinstance(instance, myumlclassdiagram::Parameter)
-
-@given(instance=myumlclassdiagram::Parameter_strategy)
-def test_myumlclassdiagram::parameter_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_myumlclassdiagram_parameter_instantiation(instance):
+    assert isinstance(instance, myumlclassdiagram_Parameter)
 
 
-@given(instance=myumlclassdiagram::Parameter_strategy)
-def test_myumlclassdiagram::parameter_Type_setter(instance):
+
+@given(instance=myumlclassdiagram_Parameter_strategy)
+def test_myumlclassdiagram_parameter_Type_setter(instance):
     original = instance.Type
     instance.Type = original
     assert instance.Type == original
 
-@given(instance=myumlclassdiagram::NamedElement_strategy)
+@given(instance=myumlclassdiagram_NamedElement_strategy)
 @settings(max_examples=50)
-def test_myumlclassdiagram::namedelement_instantiation(instance):
-    assert isinstance(instance, myumlclassdiagram::NamedElement)
-
-@given(instance=myumlclassdiagram::NamedElement_strategy)
-def test_myumlclassdiagram::namedelement_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_myumlclassdiagram_namedelement_instantiation(instance):
+    assert isinstance(instance, myumlclassdiagram_NamedElement)
 
 
-@given(instance=myumlclassdiagram::NamedElement_strategy)
-def test_myumlclassdiagram::namedelement_Name_setter(instance):
+
+@given(instance=myumlclassdiagram_NamedElement_strategy)
+def test_myumlclassdiagram_namedelement_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=myumlclassdiagram::Method_strategy)
+@given(instance=myumlclassdiagram_Method_strategy)
 @settings(max_examples=50)
-def test_myumlclassdiagram::method_instantiation(instance):
-    assert isinstance(instance, myumlclassdiagram::Method)
-
-@given(instance=myumlclassdiagram::Method_strategy)
-def test_myumlclassdiagram::method_Visibility_type(instance):
-    assert isinstance(instance.Visibility, str)
+def test_myumlclassdiagram_method_instantiation(instance):
+    assert isinstance(instance, myumlclassdiagram_Method)
 
 
-@given(instance=myumlclassdiagram::Method_strategy)
-def test_myumlclassdiagram::method_Visibility_setter(instance):
+
+@given(instance=myumlclassdiagram_Method_strategy)
+def test_myumlclassdiagram_method_Visibility_setter(instance):
     original = instance.Visibility
     instance.Visibility = original
     assert instance.Visibility == original
 
-@given(instance=myumlclassdiagram::Method_strategy)
-def test_myumlclassdiagram::method_Returns_type(instance):
-    assert isinstance(instance.Returns, str)
 
 
-@given(instance=myumlclassdiagram::Method_strategy)
-def test_myumlclassdiagram::method_Returns_setter(instance):
+@given(instance=myumlclassdiagram_Method_strategy)
+def test_myumlclassdiagram_method_Returns_setter(instance):
     original = instance.Returns
     instance.Returns = original
     assert instance.Returns == original
 
-@given(instance=myumlclassdiagram::Attribute_strategy)
+@given(instance=myumlclassdiagram_Attribute_strategy)
 @settings(max_examples=50)
-def test_myumlclassdiagram::attribute_instantiation(instance):
-    assert isinstance(instance, myumlclassdiagram::Attribute)
-
-@given(instance=myumlclassdiagram::Attribute_strategy)
-def test_myumlclassdiagram::attribute_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_myumlclassdiagram_attribute_instantiation(instance):
+    assert isinstance(instance, myumlclassdiagram_Attribute)
 
 
-@given(instance=myumlclassdiagram::Attribute_strategy)
-def test_myumlclassdiagram::attribute_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
 
-@given(instance=myumlclassdiagram::Attribute_strategy)
-def test_myumlclassdiagram::attribute_Visibility_type(instance):
-    assert isinstance(instance.Visibility, str)
-
-
-@given(instance=myumlclassdiagram::Attribute_strategy)
-def test_myumlclassdiagram::attribute_Visibility_setter(instance):
+@given(instance=myumlclassdiagram_Attribute_strategy)
+def test_myumlclassdiagram_attribute_Visibility_setter(instance):
     original = instance.Visibility
     instance.Visibility = original
     assert instance.Visibility == original
 
-@given(instance=myumlclassdiagram::Class_strategy)
+
+
+@given(instance=myumlclassdiagram_Attribute_strategy)
+def test_myumlclassdiagram_attribute_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
+
+@given(instance=myumlclassdiagram_Class_strategy)
 @settings(max_examples=50)
-def test_myumlclassdiagram::class_instantiation(instance):
-    assert isinstance(instance, myumlclassdiagram::Class)
-
-@given(instance=myumlclassdiagram::Class_strategy)
-def test_myumlclassdiagram::class_Visibility_type(instance):
-    assert isinstance(instance.Visibility, str)
+def test_myumlclassdiagram_class_instantiation(instance):
+    assert isinstance(instance, myumlclassdiagram_Class)
 
 
-@given(instance=myumlclassdiagram::Class_strategy)
-def test_myumlclassdiagram::class_Visibility_setter(instance):
+
+@given(instance=myumlclassdiagram_Class_strategy)
+def test_myumlclassdiagram_class_Visibility_setter(instance):
     original = instance.Visibility
     instance.Visibility = original
     assert instance.Visibility == original

@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    units::av::av::BaseUnit,
-    units::av::av::PerJoinPointScope,
-    units::av::av::GlobalScope,
-    units::av::av::Advice,
-    units::av::av::PerJoinPointScopePerJoinPointScope,
-    units::av::av::GlobalScopeGlobalScope,
-    units::av::av::EObject,
-    units::av::av::AdviceAdvice,
+from python_code import (
+    units_av_av_BaseUnit,
+    units_av_av_PerJoinPointScope,
+    units_av_av_GlobalScope,
+    units_av_av_Advice,
+    units_av_av_PerJoinPointScopePerJoinPointScope,
+    units_av_av_GlobalScopeGlobalScope,
+    units_av_av_EObject,
+    units_av_av_AdviceAdvice,
     Unit,
-    units::av::av::UnitPower,
-    units::av::av::UnitLiteral,
-    units::av::av::UnitMultiplication,
-    units::av::av::UnitRepository,
-    units::av::av::Unit,
-    units::av::av::UnitCarryingElement,
+    units_av_av_UnitLiteral,
+    units_av_av_UnitPower,
+    units_av_av_UnitMultiplication,
+    units_av_av_UnitRepository,
+    units_av_av_Unit,
+    units_av_av_UnitCarryingElement,
 )
 
 # =============================================================================
@@ -29,23 +29,23 @@ from classes import (
 
 
 
-def test_units::av::av::baseunit_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::BaseUnit)
+def test_units_av_av_baseunit_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_BaseUnit)
 
 
-def test_units::av::av::baseunit_constructor_exists():
-    assert callable(units::av::av::BaseUnit.__init__)
+def test_units_av_av_baseunit_constructor_exists():
+    assert callable(units_av_av_BaseUnit.__init__)
 
 
-def test_units::av::av::baseunit_constructor_args():
-    sig = inspect.signature(units::av::av::BaseUnit.__init__)
+def test_units_av_av_baseunit_constructor_args():
+    sig = inspect.signature(units_av_av_BaseUnit.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_units::av::av::baseunit_has_name():
-    assert hasattr(units::av::av::BaseUnit, "name")
+def test_units_av_av_baseunit_has_name():
+    assert hasattr(units_av_av_BaseUnit, "name")
     descriptor = None
-    for klass in units::av::av::BaseUnit.__mro__:
+    for klass in units_av_av_BaseUnit.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -53,100 +53,100 @@ def test_units::av::av::baseunit_has_name():
 
 
 
-def test_units::av::av::perjoinpointscope_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::PerJoinPointScope)
+def test_units_av_av_perjoinpointscope_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_PerJoinPointScope)
 
 
-def test_units::av::av::perjoinpointscope_constructor_exists():
-    assert callable(units::av::av::PerJoinPointScope.__init__)
+def test_units_av_av_perjoinpointscope_constructor_exists():
+    assert callable(units_av_av_PerJoinPointScope.__init__)
 
 
-def test_units::av::av::perjoinpointscope_constructor_args():
-    sig = inspect.signature(units::av::av::PerJoinPointScope.__init__)
+def test_units_av_av_perjoinpointscope_constructor_args():
+    sig = inspect.signature(units_av_av_PerJoinPointScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::globalscope_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::GlobalScope)
+def test_units_av_av_globalscope_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_GlobalScope)
 
 
-def test_units::av::av::globalscope_constructor_exists():
-    assert callable(units::av::av::GlobalScope.__init__)
+def test_units_av_av_globalscope_constructor_exists():
+    assert callable(units_av_av_GlobalScope.__init__)
 
 
-def test_units::av::av::globalscope_constructor_args():
-    sig = inspect.signature(units::av::av::GlobalScope.__init__)
+def test_units_av_av_globalscope_constructor_args():
+    sig = inspect.signature(units_av_av_GlobalScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::advice_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::Advice)
+def test_units_av_av_advice_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_Advice)
 
 
-def test_units::av::av::advice_constructor_exists():
-    assert callable(units::av::av::Advice.__init__)
+def test_units_av_av_advice_constructor_exists():
+    assert callable(units_av_av_Advice.__init__)
 
 
-def test_units::av::av::advice_constructor_args():
-    sig = inspect.signature(units::av::av::Advice.__init__)
+def test_units_av_av_advice_constructor_args():
+    sig = inspect.signature(units_av_av_Advice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::perjoinpointscopeperjoinpointscope_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::PerJoinPointScopePerJoinPointScope)
+def test_units_av_av_perjoinpointscopeperjoinpointscope_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_PerJoinPointScopePerJoinPointScope)
 
 
-def test_units::av::av::perjoinpointscopeperjoinpointscope_constructor_exists():
-    assert callable(units::av::av::PerJoinPointScopePerJoinPointScope.__init__)
+def test_units_av_av_perjoinpointscopeperjoinpointscope_constructor_exists():
+    assert callable(units_av_av_PerJoinPointScopePerJoinPointScope.__init__)
 
 
-def test_units::av::av::perjoinpointscopeperjoinpointscope_constructor_args():
-    sig = inspect.signature(units::av::av::PerJoinPointScopePerJoinPointScope.__init__)
+def test_units_av_av_perjoinpointscopeperjoinpointscope_constructor_args():
+    sig = inspect.signature(units_av_av_PerJoinPointScopePerJoinPointScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::globalscopeglobalscope_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::GlobalScopeGlobalScope)
+def test_units_av_av_globalscopeglobalscope_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_GlobalScopeGlobalScope)
 
 
-def test_units::av::av::globalscopeglobalscope_constructor_exists():
-    assert callable(units::av::av::GlobalScopeGlobalScope.__init__)
+def test_units_av_av_globalscopeglobalscope_constructor_exists():
+    assert callable(units_av_av_GlobalScopeGlobalScope.__init__)
 
 
-def test_units::av::av::globalscopeglobalscope_constructor_args():
-    sig = inspect.signature(units::av::av::GlobalScopeGlobalScope.__init__)
+def test_units_av_av_globalscopeglobalscope_constructor_args():
+    sig = inspect.signature(units_av_av_GlobalScopeGlobalScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::eobject_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::EObject)
+def test_units_av_av_eobject_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_EObject)
 
 
-def test_units::av::av::eobject_constructor_exists():
-    assert callable(units::av::av::EObject.__init__)
+def test_units_av_av_eobject_constructor_exists():
+    assert callable(units_av_av_EObject.__init__)
 
 
-def test_units::av::av::eobject_constructor_args():
-    sig = inspect.signature(units::av::av::EObject.__init__)
+def test_units_av_av_eobject_constructor_args():
+    sig = inspect.signature(units_av_av_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::adviceadvice_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::AdviceAdvice)
+def test_units_av_av_adviceadvice_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_AdviceAdvice)
 
 
-def test_units::av::av::adviceadvice_constructor_exists():
-    assert callable(units::av::av::AdviceAdvice.__init__)
+def test_units_av_av_adviceadvice_constructor_exists():
+    assert callable(units_av_av_AdviceAdvice.__init__)
 
 
-def test_units::av::av::adviceadvice_constructor_args():
-    sig = inspect.signature(units::av::av::AdviceAdvice.__init__)
+def test_units_av_av_adviceadvice_constructor_args():
+    sig = inspect.signature(units_av_av_AdviceAdvice.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -165,23 +165,37 @@ def test_unit_constructor_args():
 
 
 
-def test_units::av::av::unitpower_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::UnitPower)
+def test_units_av_av_unitliteral_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_UnitLiteral)
 
 
-def test_units::av::av::unitpower_constructor_exists():
-    assert callable(units::av::av::UnitPower.__init__)
+def test_units_av_av_unitliteral_constructor_exists():
+    assert callable(units_av_av_UnitLiteral.__init__)
 
 
-def test_units::av::av::unitpower_constructor_args():
-    sig = inspect.signature(units::av::av::UnitPower.__init__)
+def test_units_av_av_unitliteral_constructor_args():
+    sig = inspect.signature(units_av_av_UnitLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_units_av_av_unitpower_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_UnitPower)
+
+
+def test_units_av_av_unitpower_constructor_exists():
+    assert callable(units_av_av_UnitPower.__init__)
+
+
+def test_units_av_av_unitpower_constructor_args():
+    sig = inspect.signature(units_av_av_UnitPower.__init__)
     params = list(sig.parameters.keys())
     assert "exponent" in params, "Missing parameter 'exponent'"
 
-def test_units::av::av::unitpower_has_exponent():
-    assert hasattr(units::av::av::UnitPower, "exponent")
+def test_units_av_av_unitpower_has_exponent():
+    assert hasattr(units_av_av_UnitPower, "exponent")
     descriptor = None
-    for klass in units::av::av::UnitPower.__mro__:
+    for klass in units_av_av_UnitPower.__mro__:
         if "exponent" in klass.__dict__:
             descriptor = klass.__dict__["exponent"]
             break
@@ -189,79 +203,65 @@ def test_units::av::av::unitpower_has_exponent():
 
 
 
-def test_units::av::av::unitliteral_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::UnitLiteral)
+def test_units_av_av_unitmultiplication_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_UnitMultiplication)
 
 
-def test_units::av::av::unitliteral_constructor_exists():
-    assert callable(units::av::av::UnitLiteral.__init__)
+def test_units_av_av_unitmultiplication_constructor_exists():
+    assert callable(units_av_av_UnitMultiplication.__init__)
 
 
-def test_units::av::av::unitliteral_constructor_args():
-    sig = inspect.signature(units::av::av::UnitLiteral.__init__)
+def test_units_av_av_unitmultiplication_constructor_args():
+    sig = inspect.signature(units_av_av_UnitMultiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::unitmultiplication_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::UnitMultiplication)
+def test_units_av_av_unitrepository_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_UnitRepository)
 
 
-def test_units::av::av::unitmultiplication_constructor_exists():
-    assert callable(units::av::av::UnitMultiplication.__init__)
+def test_units_av_av_unitrepository_constructor_exists():
+    assert callable(units_av_av_UnitRepository.__init__)
 
 
-def test_units::av::av::unitmultiplication_constructor_args():
-    sig = inspect.signature(units::av::av::UnitMultiplication.__init__)
+def test_units_av_av_unitrepository_constructor_args():
+    sig = inspect.signature(units_av_av_UnitRepository.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::unitrepository_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::UnitRepository)
+def test_units_av_av_unit_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_Unit)
 
 
-def test_units::av::av::unitrepository_constructor_exists():
-    assert callable(units::av::av::UnitRepository.__init__)
+def test_units_av_av_unit_constructor_exists():
+    assert callable(units_av_av_Unit.__init__)
 
 
-def test_units::av::av::unitrepository_constructor_args():
-    sig = inspect.signature(units::av::av::UnitRepository.__init__)
+def test_units_av_av_unit_constructor_args():
+    sig = inspect.signature(units_av_av_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_units::av::av::unit_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::Unit)
+def test_units_av_av_unitcarryingelement_is_not_abstract():
+    assert not inspect.isabstract(units_av_av_UnitCarryingElement)
 
 
-def test_units::av::av::unit_constructor_exists():
-    assert callable(units::av::av::Unit.__init__)
+def test_units_av_av_unitcarryingelement_constructor_exists():
+    assert callable(units_av_av_UnitCarryingElement.__init__)
 
 
-def test_units::av::av::unit_constructor_args():
-    sig = inspect.signature(units::av::av::Unit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_units::av::av::unitcarryingelement_is_not_abstract():
-    assert not inspect.isabstract(units::av::av::UnitCarryingElement)
-
-
-def test_units::av::av::unitcarryingelement_constructor_exists():
-    assert callable(units::av::av::UnitCarryingElement.__init__)
-
-
-def test_units::av::av::unitcarryingelement_constructor_args():
-    sig = inspect.signature(units::av::av::UnitCarryingElement.__init__)
+def test_units_av_av_unitcarryingelement_constructor_args():
+    sig = inspect.signature(units_av_av_UnitCarryingElement.__init__)
     params = list(sig.parameters.keys())
     assert "unitSpecification" in params, "Missing parameter 'unitSpecification'"
 
-def test_units::av::av::unitcarryingelement_has_unitSpecification():
-    assert hasattr(units::av::av::UnitCarryingElement, "unitSpecification")
+def test_units_av_av_unitcarryingelement_has_unitSpecification():
+    assert hasattr(units_av_av_UnitCarryingElement, "unitSpecification")
     descriptor = None
-    for klass in units::av::av::UnitCarryingElement.__mro__:
+    for klass in units_av_av_UnitCarryingElement.__mro__:
         if "unitSpecification" in klass.__dict__:
             descriptor = klass.__dict__["unitSpecification"]
             break
@@ -279,162 +279,153 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-units::av::av::BaseUnit_strategy = st.builds(
-    units::av::av::BaseUnit,
+units_av_av_BaseUnit_strategy = st.builds(
+    units_av_av_BaseUnit,
     name=
         safe_text
 )
-units::av::av::PerJoinPointScope_strategy = st.builds(
-    units::av::av::PerJoinPointScope,
+units_av_av_PerJoinPointScope_strategy = st.builds(
+    units_av_av_PerJoinPointScope,
 )
-units::av::av::GlobalScope_strategy = st.builds(
-    units::av::av::GlobalScope,
+units_av_av_GlobalScope_strategy = st.builds(
+    units_av_av_GlobalScope,
 )
-units::av::av::Advice_strategy = st.builds(
-    units::av::av::Advice,
+units_av_av_Advice_strategy = st.builds(
+    units_av_av_Advice,
 )
-units::av::av::PerJoinPointScopePerJoinPointScope_strategy = st.builds(
-    units::av::av::PerJoinPointScopePerJoinPointScope,
+units_av_av_PerJoinPointScopePerJoinPointScope_strategy = st.builds(
+    units_av_av_PerJoinPointScopePerJoinPointScope,
 )
-units::av::av::GlobalScopeGlobalScope_strategy = st.builds(
-    units::av::av::GlobalScopeGlobalScope,
+units_av_av_GlobalScopeGlobalScope_strategy = st.builds(
+    units_av_av_GlobalScopeGlobalScope,
 )
-units::av::av::EObject_strategy = st.builds(
-    units::av::av::EObject,
+units_av_av_EObject_strategy = st.builds(
+    units_av_av_EObject,
 )
-units::av::av::AdviceAdvice_strategy = st.builds(
-    units::av::av::AdviceAdvice,
+units_av_av_AdviceAdvice_strategy = st.builds(
+    units_av_av_AdviceAdvice,
 )
 Unit_strategy = st.builds(
     Unit,
 )
-units::av::av::UnitPower_strategy = st.builds(
-    units::av::av::UnitPower,
+units_av_av_UnitLiteral_strategy = st.builds(
+    units_av_av_UnitLiteral,
+)
+units_av_av_UnitPower_strategy = st.builds(
+    units_av_av_UnitPower,
     exponent=
         st.integers()
 )
-units::av::av::UnitLiteral_strategy = st.builds(
-    units::av::av::UnitLiteral,
+units_av_av_UnitMultiplication_strategy = st.builds(
+    units_av_av_UnitMultiplication,
 )
-units::av::av::UnitMultiplication_strategy = st.builds(
-    units::av::av::UnitMultiplication,
+units_av_av_UnitRepository_strategy = st.builds(
+    units_av_av_UnitRepository,
 )
-units::av::av::UnitRepository_strategy = st.builds(
-    units::av::av::UnitRepository,
+units_av_av_Unit_strategy = st.builds(
+    units_av_av_Unit,
 )
-units::av::av::Unit_strategy = st.builds(
-    units::av::av::Unit,
-)
-units::av::av::UnitCarryingElement_strategy = st.builds(
-    units::av::av::UnitCarryingElement,
+units_av_av_UnitCarryingElement_strategy = st.builds(
+    units_av_av_UnitCarryingElement,
     unitSpecification=
         safe_text
 )
 
-@given(instance=units::av::av::BaseUnit_strategy)
+@given(instance=units_av_av_BaseUnit_strategy)
 @settings(max_examples=50)
-def test_units::av::av::baseunit_instantiation(instance):
-    assert isinstance(instance, units::av::av::BaseUnit)
-
-@given(instance=units::av::av::BaseUnit_strategy)
-def test_units::av::av::baseunit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_units_av_av_baseunit_instantiation(instance):
+    assert isinstance(instance, units_av_av_BaseUnit)
 
 
-@given(instance=units::av::av::BaseUnit_strategy)
-def test_units::av::av::baseunit_name_setter(instance):
+
+@given(instance=units_av_av_BaseUnit_strategy)
+def test_units_av_av_baseunit_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=units::av::av::PerJoinPointScope_strategy)
+@given(instance=units_av_av_PerJoinPointScope_strategy)
 @settings(max_examples=50)
-def test_units::av::av::perjoinpointscope_instantiation(instance):
-    assert isinstance(instance, units::av::av::PerJoinPointScope)
+def test_units_av_av_perjoinpointscope_instantiation(instance):
+    assert isinstance(instance, units_av_av_PerJoinPointScope)
 
-@given(instance=units::av::av::GlobalScope_strategy)
+@given(instance=units_av_av_GlobalScope_strategy)
 @settings(max_examples=50)
-def test_units::av::av::globalscope_instantiation(instance):
-    assert isinstance(instance, units::av::av::GlobalScope)
+def test_units_av_av_globalscope_instantiation(instance):
+    assert isinstance(instance, units_av_av_GlobalScope)
 
-@given(instance=units::av::av::Advice_strategy)
+@given(instance=units_av_av_Advice_strategy)
 @settings(max_examples=50)
-def test_units::av::av::advice_instantiation(instance):
-    assert isinstance(instance, units::av::av::Advice)
+def test_units_av_av_advice_instantiation(instance):
+    assert isinstance(instance, units_av_av_Advice)
 
-@given(instance=units::av::av::PerJoinPointScopePerJoinPointScope_strategy)
+@given(instance=units_av_av_PerJoinPointScopePerJoinPointScope_strategy)
 @settings(max_examples=50)
-def test_units::av::av::perjoinpointscopeperjoinpointscope_instantiation(instance):
-    assert isinstance(instance, units::av::av::PerJoinPointScopePerJoinPointScope)
+def test_units_av_av_perjoinpointscopeperjoinpointscope_instantiation(instance):
+    assert isinstance(instance, units_av_av_PerJoinPointScopePerJoinPointScope)
 
-@given(instance=units::av::av::GlobalScopeGlobalScope_strategy)
+@given(instance=units_av_av_GlobalScopeGlobalScope_strategy)
 @settings(max_examples=50)
-def test_units::av::av::globalscopeglobalscope_instantiation(instance):
-    assert isinstance(instance, units::av::av::GlobalScopeGlobalScope)
+def test_units_av_av_globalscopeglobalscope_instantiation(instance):
+    assert isinstance(instance, units_av_av_GlobalScopeGlobalScope)
 
-@given(instance=units::av::av::EObject_strategy)
+@given(instance=units_av_av_EObject_strategy)
 @settings(max_examples=50)
-def test_units::av::av::eobject_instantiation(instance):
-    assert isinstance(instance, units::av::av::EObject)
+def test_units_av_av_eobject_instantiation(instance):
+    assert isinstance(instance, units_av_av_EObject)
 
-@given(instance=units::av::av::AdviceAdvice_strategy)
+@given(instance=units_av_av_AdviceAdvice_strategy)
 @settings(max_examples=50)
-def test_units::av::av::adviceadvice_instantiation(instance):
-    assert isinstance(instance, units::av::av::AdviceAdvice)
+def test_units_av_av_adviceadvice_instantiation(instance):
+    assert isinstance(instance, units_av_av_AdviceAdvice)
 
 @given(instance=Unit_strategy)
 @settings(max_examples=50)
 def test_unit_instantiation(instance):
     assert isinstance(instance, Unit)
 
-@given(instance=units::av::av::UnitPower_strategy)
+@given(instance=units_av_av_UnitLiteral_strategy)
 @settings(max_examples=50)
-def test_units::av::av::unitpower_instantiation(instance):
-    assert isinstance(instance, units::av::av::UnitPower)
+def test_units_av_av_unitliteral_instantiation(instance):
+    assert isinstance(instance, units_av_av_UnitLiteral)
 
-@given(instance=units::av::av::UnitPower_strategy)
-def test_units::av::av::unitpower_exponent_type(instance):
-    assert isinstance(instance.exponent, int)
+@given(instance=units_av_av_UnitPower_strategy)
+@settings(max_examples=50)
+def test_units_av_av_unitpower_instantiation(instance):
+    assert isinstance(instance, units_av_av_UnitPower)
 
 
-@given(instance=units::av::av::UnitPower_strategy)
-def test_units::av::av::unitpower_exponent_setter(instance):
+
+@given(instance=units_av_av_UnitPower_strategy)
+def test_units_av_av_unitpower_exponent_setter(instance):
     original = instance.exponent
     instance.exponent = original
     assert instance.exponent == original
 
-@given(instance=units::av::av::UnitLiteral_strategy)
+@given(instance=units_av_av_UnitMultiplication_strategy)
 @settings(max_examples=50)
-def test_units::av::av::unitliteral_instantiation(instance):
-    assert isinstance(instance, units::av::av::UnitLiteral)
+def test_units_av_av_unitmultiplication_instantiation(instance):
+    assert isinstance(instance, units_av_av_UnitMultiplication)
 
-@given(instance=units::av::av::UnitMultiplication_strategy)
+@given(instance=units_av_av_UnitRepository_strategy)
 @settings(max_examples=50)
-def test_units::av::av::unitmultiplication_instantiation(instance):
-    assert isinstance(instance, units::av::av::UnitMultiplication)
+def test_units_av_av_unitrepository_instantiation(instance):
+    assert isinstance(instance, units_av_av_UnitRepository)
 
-@given(instance=units::av::av::UnitRepository_strategy)
+@given(instance=units_av_av_Unit_strategy)
 @settings(max_examples=50)
-def test_units::av::av::unitrepository_instantiation(instance):
-    assert isinstance(instance, units::av::av::UnitRepository)
+def test_units_av_av_unit_instantiation(instance):
+    assert isinstance(instance, units_av_av_Unit)
 
-@given(instance=units::av::av::Unit_strategy)
+@given(instance=units_av_av_UnitCarryingElement_strategy)
 @settings(max_examples=50)
-def test_units::av::av::unit_instantiation(instance):
-    assert isinstance(instance, units::av::av::Unit)
-
-@given(instance=units::av::av::UnitCarryingElement_strategy)
-@settings(max_examples=50)
-def test_units::av::av::unitcarryingelement_instantiation(instance):
-    assert isinstance(instance, units::av::av::UnitCarryingElement)
-
-@given(instance=units::av::av::UnitCarryingElement_strategy)
-def test_units::av::av::unitcarryingelement_unitSpecification_type(instance):
-    assert isinstance(instance.unitSpecification, str)
+def test_units_av_av_unitcarryingelement_instantiation(instance):
+    assert isinstance(instance, units_av_av_UnitCarryingElement)
 
 
-@given(instance=units::av::av::UnitCarryingElement_strategy)
-def test_units::av::av::unitcarryingelement_unitSpecification_setter(instance):
+
+@given(instance=units_av_av_UnitCarryingElement_strategy)
+def test_units_av_av_unitcarryingelement_unitSpecification_setter(instance):
     original = instance.unitSpecification
     instance.unitSpecification = original
     assert instance.unitSpecification == original

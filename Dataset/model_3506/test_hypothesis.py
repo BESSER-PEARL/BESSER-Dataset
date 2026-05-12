@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test1unique::ConceptA,
+from python_code import (
+    test1unique_ConceptA,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_test1unique::concepta_is_not_abstract():
-    assert not inspect.isabstract(test1unique::ConceptA)
+def test_test1unique_concepta_is_not_abstract():
+    assert not inspect.isabstract(test1unique_ConceptA)
 
 
-def test_test1unique::concepta_constructor_exists():
-    assert callable(test1unique::ConceptA.__init__)
+def test_test1unique_concepta_constructor_exists():
+    assert callable(test1unique_ConceptA.__init__)
 
 
-def test_test1unique::concepta_constructor_args():
-    sig = inspect.signature(test1unique::ConceptA.__init__)
+def test_test1unique_concepta_constructor_args():
+    sig = inspect.signature(test1unique_ConceptA.__init__)
     params = list(sig.parameters.keys())
     assert "bs" in params, "Missing parameter 'bs'"
 
-def test_test1unique::concepta_has_bs():
-    assert hasattr(test1unique::ConceptA, "bs")
+def test_test1unique_concepta_has_bs():
+    assert hasattr(test1unique_ConceptA, "bs")
     descriptor = None
-    for klass in test1unique::ConceptA.__mro__:
+    for klass in test1unique_ConceptA.__mro__:
         if "bs" in klass.__dict__:
             descriptor = klass.__dict__["bs"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test1unique::ConceptA_strategy = st.builds(
-    test1unique::ConceptA,
+test1unique_ConceptA_strategy = st.builds(
+    test1unique_ConceptA,
     bs=
         safe_text
 )
 
-@given(instance=test1unique::ConceptA_strategy)
+@given(instance=test1unique_ConceptA_strategy)
 @settings(max_examples=50)
-def test_test1unique::concepta_instantiation(instance):
-    assert isinstance(instance, test1unique::ConceptA)
-
-@given(instance=test1unique::ConceptA_strategy)
-def test_test1unique::concepta_bs_type(instance):
-    assert isinstance(instance.bs, str)
+def test_test1unique_concepta_instantiation(instance):
+    assert isinstance(instance, test1unique_ConceptA)
 
 
-@given(instance=test1unique::ConceptA_strategy)
-def test_test1unique::concepta_bs_setter(instance):
+
+@given(instance=test1unique_ConceptA_strategy)
+def test_test1unique_concepta_bs_setter(instance):
     original = instance.bs
     instance.bs = original
     assert instance.bs == original

@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    GraphConstraint::EDataType,
+from python_code import (
+    GraphConstraint_Graph,
+    GraphConstraint_EDataType,
     NestedGraphCondition,
-    GraphConstraint::Formula,
-    GraphConstraint::True,
-    GraphConstraint::QuantifiedGraphCondition,
-    GraphConstraint::Variable,
+    GraphConstraint_Formula,
+    GraphConstraint_True,
+    GraphConstraint_QuantifiedGraphCondition,
+    GraphConstraint_Variable,
     GraphElement,
-    GraphConstraint::Attribute,
-    GraphConstraint::NestedGraphCondition,
-    GraphConstraint::EPackage,
-    GraphConstraint::NestedGraphConstraint,
-    GraphConstraint::GraphElement,
-    GraphConstraint::Node,
-    GraphConstraint::ElementMapping,
-    GraphConstraint::Mapping,
-    GraphConstraint::EAttribute,
-    GraphConstraint::EReference,
-    GraphConstraint::EClass,
-    GraphConstraint::Edge,
-    GraphConstraint::Graph,
-    Operator,
+    GraphConstraint_Attribute,
+    GraphConstraint_NestedGraphCondition,
+    GraphConstraint_EPackage,
+    GraphConstraint_NestedGraphConstraint,
+    GraphConstraint_GraphElement,
+    GraphConstraint_Node,
+    GraphConstraint_ElementMapping,
+    GraphConstraint_Mapping,
+    GraphConstraint_EAttribute,
+    GraphConstraint_EReference,
+    GraphConstraint_EClass,
+    GraphConstraint_Edge,
     Quantifier,
+    Operator,
 )
 
 # =============================================================================
@@ -36,16 +36,30 @@ from classes import (
 
 
 
-def test_graphconstraint::edatatype_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::EDataType)
+def test_graphconstraint_graph_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Graph)
 
 
-def test_graphconstraint::edatatype_constructor_exists():
-    assert callable(GraphConstraint::EDataType.__init__)
+def test_graphconstraint_graph_constructor_exists():
+    assert callable(GraphConstraint_Graph.__init__)
 
 
-def test_graphconstraint::edatatype_constructor_args():
-    sig = inspect.signature(GraphConstraint::EDataType.__init__)
+def test_graphconstraint_graph_constructor_args():
+    sig = inspect.signature(GraphConstraint_Graph.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_graphconstraint_edatatype_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_EDataType)
+
+
+def test_graphconstraint_edatatype_constructor_exists():
+    assert callable(GraphConstraint_EDataType.__init__)
+
+
+def test_graphconstraint_edatatype_constructor_args():
+    sig = inspect.signature(GraphConstraint_EDataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,23 +78,23 @@ def test_nestedgraphcondition_constructor_args():
 
 
 
-def test_graphconstraint::formula_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Formula)
+def test_graphconstraint_formula_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Formula)
 
 
-def test_graphconstraint::formula_constructor_exists():
-    assert callable(GraphConstraint::Formula.__init__)
+def test_graphconstraint_formula_constructor_exists():
+    assert callable(GraphConstraint_Formula.__init__)
 
 
-def test_graphconstraint::formula_constructor_args():
-    sig = inspect.signature(GraphConstraint::Formula.__init__)
+def test_graphconstraint_formula_constructor_args():
+    sig = inspect.signature(GraphConstraint_Formula.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_graphconstraint::formula_has_op():
-    assert hasattr(GraphConstraint::Formula, "op")
+def test_graphconstraint_formula_has_op():
+    assert hasattr(GraphConstraint_Formula, "op")
     descriptor = None
-    for klass in GraphConstraint::Formula.__mro__:
+    for klass in GraphConstraint_Formula.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -88,37 +102,37 @@ def test_graphconstraint::formula_has_op():
 
 
 
-def test_graphconstraint::true_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::True)
+def test_graphconstraint_true_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_True)
 
 
-def test_graphconstraint::true_constructor_exists():
-    assert callable(GraphConstraint::True.__init__)
+def test_graphconstraint_true_constructor_exists():
+    assert callable(GraphConstraint_True.__init__)
 
 
-def test_graphconstraint::true_constructor_args():
-    sig = inspect.signature(GraphConstraint::True.__init__)
+def test_graphconstraint_true_constructor_args():
+    sig = inspect.signature(GraphConstraint_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::quantifiedgraphcondition_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::QuantifiedGraphCondition)
+def test_graphconstraint_quantifiedgraphcondition_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_QuantifiedGraphCondition)
 
 
-def test_graphconstraint::quantifiedgraphcondition_constructor_exists():
-    assert callable(GraphConstraint::QuantifiedGraphCondition.__init__)
+def test_graphconstraint_quantifiedgraphcondition_constructor_exists():
+    assert callable(GraphConstraint_QuantifiedGraphCondition.__init__)
 
 
-def test_graphconstraint::quantifiedgraphcondition_constructor_args():
-    sig = inspect.signature(GraphConstraint::QuantifiedGraphCondition.__init__)
+def test_graphconstraint_quantifiedgraphcondition_constructor_args():
+    sig = inspect.signature(GraphConstraint_QuantifiedGraphCondition.__init__)
     params = list(sig.parameters.keys())
     assert "quantifier" in params, "Missing parameter 'quantifier'"
 
-def test_graphconstraint::quantifiedgraphcondition_has_quantifier():
-    assert hasattr(GraphConstraint::QuantifiedGraphCondition, "quantifier")
+def test_graphconstraint_quantifiedgraphcondition_has_quantifier():
+    assert hasattr(GraphConstraint_QuantifiedGraphCondition, "quantifier")
     descriptor = None
-    for klass in GraphConstraint::QuantifiedGraphCondition.__mro__:
+    for klass in GraphConstraint_QuantifiedGraphCondition.__mro__:
         if "quantifier" in klass.__dict__:
             descriptor = klass.__dict__["quantifier"]
             break
@@ -126,23 +140,23 @@ def test_graphconstraint::quantifiedgraphcondition_has_quantifier():
 
 
 
-def test_graphconstraint::variable_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Variable)
+def test_graphconstraint_variable_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Variable)
 
 
-def test_graphconstraint::variable_constructor_exists():
-    assert callable(GraphConstraint::Variable.__init__)
+def test_graphconstraint_variable_constructor_exists():
+    assert callable(GraphConstraint_Variable.__init__)
 
 
-def test_graphconstraint::variable_constructor_args():
-    sig = inspect.signature(GraphConstraint::Variable.__init__)
+def test_graphconstraint_variable_constructor_args():
+    sig = inspect.signature(GraphConstraint_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphconstraint::variable_has_name():
-    assert hasattr(GraphConstraint::Variable, "name")
+def test_graphconstraint_variable_has_name():
+    assert hasattr(GraphConstraint_Variable, "name")
     descriptor = None
-    for klass in GraphConstraint::Variable.__mro__:
+    for klass in GraphConstraint_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -164,85 +178,85 @@ def test_graphelement_constructor_args():
 
 
 
-def test_graphconstraint::attribute_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Attribute)
+def test_graphconstraint_attribute_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Attribute)
 
 
-def test_graphconstraint::attribute_constructor_exists():
-    assert callable(GraphConstraint::Attribute.__init__)
+def test_graphconstraint_attribute_constructor_exists():
+    assert callable(GraphConstraint_Attribute.__init__)
 
 
-def test_graphconstraint::attribute_constructor_args():
-    sig = inspect.signature(GraphConstraint::Attribute.__init__)
+def test_graphconstraint_attribute_constructor_args():
+    sig = inspect.signature(GraphConstraint_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "op" in params, "Missing parameter 'op'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_graphconstraint::attribute_has_value():
-    assert hasattr(GraphConstraint::Attribute, "value")
+def test_graphconstraint_attribute_has_op():
+    assert hasattr(GraphConstraint_Attribute, "op")
     descriptor = None
-    for klass in GraphConstraint::Attribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_graphconstraint::attribute_has_op():
-    assert hasattr(GraphConstraint::Attribute, "op")
-    descriptor = None
-    for klass in GraphConstraint::Attribute.__mro__:
+    for klass in GraphConstraint_Attribute.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
     assert isinstance(descriptor, property)
 
+def test_graphconstraint_attribute_has_value():
+    assert hasattr(GraphConstraint_Attribute, "value")
+    descriptor = None
+    for klass in GraphConstraint_Attribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_graphconstraint::nestedgraphcondition_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::NestedGraphCondition)
+
+def test_graphconstraint_nestedgraphcondition_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_NestedGraphCondition)
 
 
-def test_graphconstraint::nestedgraphcondition_constructor_exists():
-    assert callable(GraphConstraint::NestedGraphCondition.__init__)
+def test_graphconstraint_nestedgraphcondition_constructor_exists():
+    assert callable(GraphConstraint_NestedGraphCondition.__init__)
 
 
-def test_graphconstraint::nestedgraphcondition_constructor_args():
-    sig = inspect.signature(GraphConstraint::NestedGraphCondition.__init__)
+def test_graphconstraint_nestedgraphcondition_constructor_args():
+    sig = inspect.signature(GraphConstraint_NestedGraphCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::epackage_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::EPackage)
+def test_graphconstraint_epackage_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_EPackage)
 
 
-def test_graphconstraint::epackage_constructor_exists():
-    assert callable(GraphConstraint::EPackage.__init__)
+def test_graphconstraint_epackage_constructor_exists():
+    assert callable(GraphConstraint_EPackage.__init__)
 
 
-def test_graphconstraint::epackage_constructor_args():
-    sig = inspect.signature(GraphConstraint::EPackage.__init__)
+def test_graphconstraint_epackage_constructor_args():
+    sig = inspect.signature(GraphConstraint_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::nestedgraphconstraint_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::NestedGraphConstraint)
+def test_graphconstraint_nestedgraphconstraint_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_NestedGraphConstraint)
 
 
-def test_graphconstraint::nestedgraphconstraint_constructor_exists():
-    assert callable(GraphConstraint::NestedGraphConstraint.__init__)
+def test_graphconstraint_nestedgraphconstraint_constructor_exists():
+    assert callable(GraphConstraint_NestedGraphConstraint.__init__)
 
 
-def test_graphconstraint::nestedgraphconstraint_constructor_args():
-    sig = inspect.signature(GraphConstraint::NestedGraphConstraint.__init__)
+def test_graphconstraint_nestedgraphconstraint_constructor_args():
+    sig = inspect.signature(GraphConstraint_NestedGraphConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphconstraint::nestedgraphconstraint_has_name():
-    assert hasattr(GraphConstraint::NestedGraphConstraint, "name")
+def test_graphconstraint_nestedgraphconstraint_has_name():
+    assert hasattr(GraphConstraint_NestedGraphConstraint, "name")
     descriptor = None
-    for klass in GraphConstraint::NestedGraphConstraint.__mro__:
+    for klass in GraphConstraint_NestedGraphConstraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -250,23 +264,23 @@ def test_graphconstraint::nestedgraphconstraint_has_name():
 
 
 
-def test_graphconstraint::graphelement_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::GraphElement)
+def test_graphconstraint_graphelement_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_GraphElement)
 
 
-def test_graphconstraint::graphelement_constructor_exists():
-    assert callable(GraphConstraint::GraphElement.__init__)
+def test_graphconstraint_graphelement_constructor_exists():
+    assert callable(GraphConstraint_GraphElement.__init__)
 
 
-def test_graphconstraint::graphelement_constructor_args():
-    sig = inspect.signature(GraphConstraint::GraphElement.__init__)
+def test_graphconstraint_graphelement_constructor_args():
+    sig = inspect.signature(GraphConstraint_GraphElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graphconstraint::graphelement_has_name():
-    assert hasattr(GraphConstraint::GraphElement, "name")
+def test_graphconstraint_graphelement_has_name():
+    assert hasattr(GraphConstraint_GraphElement, "name")
     descriptor = None
-    for klass in GraphConstraint::GraphElement.__mro__:
+    for klass in GraphConstraint_GraphElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -274,115 +288,116 @@ def test_graphconstraint::graphelement_has_name():
 
 
 
-def test_graphconstraint::node_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Node)
+def test_graphconstraint_node_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Node)
 
 
-def test_graphconstraint::node_constructor_exists():
-    assert callable(GraphConstraint::Node.__init__)
+def test_graphconstraint_node_constructor_exists():
+    assert callable(GraphConstraint_Node.__init__)
 
 
-def test_graphconstraint::node_constructor_args():
-    sig = inspect.signature(GraphConstraint::Node.__init__)
+def test_graphconstraint_node_constructor_args():
+    sig = inspect.signature(GraphConstraint_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::elementmapping_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::ElementMapping)
+def test_graphconstraint_elementmapping_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_ElementMapping)
 
 
-def test_graphconstraint::elementmapping_constructor_exists():
-    assert callable(GraphConstraint::ElementMapping.__init__)
+def test_graphconstraint_elementmapping_constructor_exists():
+    assert callable(GraphConstraint_ElementMapping.__init__)
 
 
-def test_graphconstraint::elementmapping_constructor_args():
-    sig = inspect.signature(GraphConstraint::ElementMapping.__init__)
+def test_graphconstraint_elementmapping_constructor_args():
+    sig = inspect.signature(GraphConstraint_ElementMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::mapping_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Mapping)
+def test_graphconstraint_mapping_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Mapping)
 
 
-def test_graphconstraint::mapping_constructor_exists():
-    assert callable(GraphConstraint::Mapping.__init__)
+def test_graphconstraint_mapping_constructor_exists():
+    assert callable(GraphConstraint_Mapping.__init__)
 
 
-def test_graphconstraint::mapping_constructor_args():
-    sig = inspect.signature(GraphConstraint::Mapping.__init__)
+def test_graphconstraint_mapping_constructor_args():
+    sig = inspect.signature(GraphConstraint_Mapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::eattribute_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::EAttribute)
+def test_graphconstraint_eattribute_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_EAttribute)
 
 
-def test_graphconstraint::eattribute_constructor_exists():
-    assert callable(GraphConstraint::EAttribute.__init__)
+def test_graphconstraint_eattribute_constructor_exists():
+    assert callable(GraphConstraint_EAttribute.__init__)
 
 
-def test_graphconstraint::eattribute_constructor_args():
-    sig = inspect.signature(GraphConstraint::EAttribute.__init__)
+def test_graphconstraint_eattribute_constructor_args():
+    sig = inspect.signature(GraphConstraint_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::ereference_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::EReference)
+def test_graphconstraint_ereference_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_EReference)
 
 
-def test_graphconstraint::ereference_constructor_exists():
-    assert callable(GraphConstraint::EReference.__init__)
+def test_graphconstraint_ereference_constructor_exists():
+    assert callable(GraphConstraint_EReference.__init__)
 
 
-def test_graphconstraint::ereference_constructor_args():
-    sig = inspect.signature(GraphConstraint::EReference.__init__)
+def test_graphconstraint_ereference_constructor_args():
+    sig = inspect.signature(GraphConstraint_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::eclass_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::EClass)
+def test_graphconstraint_eclass_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_EClass)
 
 
-def test_graphconstraint::eclass_constructor_exists():
-    assert callable(GraphConstraint::EClass.__init__)
+def test_graphconstraint_eclass_constructor_exists():
+    assert callable(GraphConstraint_EClass.__init__)
 
 
-def test_graphconstraint::eclass_constructor_args():
-    sig = inspect.signature(GraphConstraint::EClass.__init__)
+def test_graphconstraint_eclass_constructor_args():
+    sig = inspect.signature(GraphConstraint_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graphconstraint::edge_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Edge)
+def test_graphconstraint_edge_is_not_abstract():
+    assert not inspect.isabstract(GraphConstraint_Edge)
 
 
-def test_graphconstraint::edge_constructor_exists():
-    assert callable(GraphConstraint::Edge.__init__)
+def test_graphconstraint_edge_constructor_exists():
+    assert callable(GraphConstraint_Edge.__init__)
 
 
-def test_graphconstraint::edge_constructor_args():
-    sig = inspect.signature(GraphConstraint::Edge.__init__)
+def test_graphconstraint_edge_constructor_args():
+    sig = inspect.signature(GraphConstraint_Edge.__init__)
     params = list(sig.parameters.keys())
 
+def test_quantifier_exists():
+    # Check that the Enumeration exists
+    assert Quantifier is not None
 
-
-def test_graphconstraint::graph_is_not_abstract():
-    assert not inspect.isabstract(GraphConstraint::Graph)
-
-
-def test_graphconstraint::graph_constructor_exists():
-    assert callable(GraphConstraint::Graph.__init__)
-
-
-def test_graphconstraint::graph_constructor_args():
-    sig = inspect.signature(GraphConstraint::Graph.__init__)
-    params = list(sig.parameters.keys())
+def test_quantifier_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Quantifier]
+    expected_literals = [
+        "EXISTS",
+        "FORALL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Quantifier"
 
 def test_operator_exists():
     # Check that the Enumeration exists
@@ -393,28 +408,13 @@ def test_operator_has_all_literals():
     enum_literals = [lit.name for lit in Operator]
     expected_literals = [
         "IMPLIES",
+        "NOT",
         "AND",
         "OR",
-        "NOT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Operator"
-
-def test_quantifier_exists():
-    # Check that the Enumeration exists
-    assert Quantifier is not None
-
-def test_quantifier_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Quantifier]
-    expected_literals = [
-        "FORALL",
-        "EXISTS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Quantifier"
 
 
 # =============================================================================
@@ -428,140 +428,136 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-GraphConstraint::EDataType_strategy = st.builds(
-    GraphConstraint::EDataType,
+GraphConstraint_Graph_strategy = st.builds(
+    GraphConstraint_Graph,
+)
+GraphConstraint_EDataType_strategy = st.builds(
+    GraphConstraint_EDataType,
 )
 NestedGraphCondition_strategy = st.builds(
     NestedGraphCondition,
 )
-GraphConstraint::Formula_strategy = st.builds(
-    GraphConstraint::Formula,
+GraphConstraint_Formula_strategy = st.builds(
+    GraphConstraint_Formula,
     op=
         safe_text
 )
-GraphConstraint::True_strategy = st.builds(
-    GraphConstraint::True,
+GraphConstraint_True_strategy = st.builds(
+    GraphConstraint_True,
 )
-GraphConstraint::QuantifiedGraphCondition_strategy = st.builds(
-    GraphConstraint::QuantifiedGraphCondition,
+GraphConstraint_QuantifiedGraphCondition_strategy = st.builds(
+    GraphConstraint_QuantifiedGraphCondition,
     quantifier=
         safe_text
 )
-GraphConstraint::Variable_strategy = st.builds(
-    GraphConstraint::Variable,
+GraphConstraint_Variable_strategy = st.builds(
+    GraphConstraint_Variable,
     name=
         safe_text
 )
 GraphElement_strategy = st.builds(
     GraphElement,
 )
-GraphConstraint::Attribute_strategy = st.builds(
-    GraphConstraint::Attribute,
-    value=
-        safe_text,
+GraphConstraint_Attribute_strategy = st.builds(
+    GraphConstraint_Attribute,
     op=
+        safe_text,
+    value=
         safe_text
 )
-GraphConstraint::NestedGraphCondition_strategy = st.builds(
-    GraphConstraint::NestedGraphCondition,
+GraphConstraint_NestedGraphCondition_strategy = st.builds(
+    GraphConstraint_NestedGraphCondition,
 )
-GraphConstraint::EPackage_strategy = st.builds(
-    GraphConstraint::EPackage,
+GraphConstraint_EPackage_strategy = st.builds(
+    GraphConstraint_EPackage,
 )
-GraphConstraint::NestedGraphConstraint_strategy = st.builds(
-    GraphConstraint::NestedGraphConstraint,
+GraphConstraint_NestedGraphConstraint_strategy = st.builds(
+    GraphConstraint_NestedGraphConstraint,
     name=
         safe_text
 )
-GraphConstraint::GraphElement_strategy = st.builds(
-    GraphConstraint::GraphElement,
+GraphConstraint_GraphElement_strategy = st.builds(
+    GraphConstraint_GraphElement,
     name=
         safe_text
 )
-GraphConstraint::Node_strategy = st.builds(
-    GraphConstraint::Node,
+GraphConstraint_Node_strategy = st.builds(
+    GraphConstraint_Node,
 )
-GraphConstraint::ElementMapping_strategy = st.builds(
-    GraphConstraint::ElementMapping,
+GraphConstraint_ElementMapping_strategy = st.builds(
+    GraphConstraint_ElementMapping,
 )
-GraphConstraint::Mapping_strategy = st.builds(
-    GraphConstraint::Mapping,
+GraphConstraint_Mapping_strategy = st.builds(
+    GraphConstraint_Mapping,
 )
-GraphConstraint::EAttribute_strategy = st.builds(
-    GraphConstraint::EAttribute,
+GraphConstraint_EAttribute_strategy = st.builds(
+    GraphConstraint_EAttribute,
 )
-GraphConstraint::EReference_strategy = st.builds(
-    GraphConstraint::EReference,
+GraphConstraint_EReference_strategy = st.builds(
+    GraphConstraint_EReference,
 )
-GraphConstraint::EClass_strategy = st.builds(
-    GraphConstraint::EClass,
+GraphConstraint_EClass_strategy = st.builds(
+    GraphConstraint_EClass,
 )
-GraphConstraint::Edge_strategy = st.builds(
-    GraphConstraint::Edge,
-)
-GraphConstraint::Graph_strategy = st.builds(
-    GraphConstraint::Graph,
+GraphConstraint_Edge_strategy = st.builds(
+    GraphConstraint_Edge,
 )
 
-@given(instance=GraphConstraint::EDataType_strategy)
+@given(instance=GraphConstraint_Graph_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::edatatype_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::EDataType)
+def test_graphconstraint_graph_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Graph)
+
+@given(instance=GraphConstraint_EDataType_strategy)
+@settings(max_examples=50)
+def test_graphconstraint_edatatype_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_EDataType)
 
 @given(instance=NestedGraphCondition_strategy)
 @settings(max_examples=50)
 def test_nestedgraphcondition_instantiation(instance):
     assert isinstance(instance, NestedGraphCondition)
 
-@given(instance=GraphConstraint::Formula_strategy)
+@given(instance=GraphConstraint_Formula_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::formula_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Formula)
-
-@given(instance=GraphConstraint::Formula_strategy)
-def test_graphconstraint::formula_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_graphconstraint_formula_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Formula)
 
 
-@given(instance=GraphConstraint::Formula_strategy)
-def test_graphconstraint::formula_op_setter(instance):
+
+@given(instance=GraphConstraint_Formula_strategy)
+def test_graphconstraint_formula_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=GraphConstraint::True_strategy)
+@given(instance=GraphConstraint_True_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::true_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::True)
+def test_graphconstraint_true_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_True)
 
-@given(instance=GraphConstraint::QuantifiedGraphCondition_strategy)
+@given(instance=GraphConstraint_QuantifiedGraphCondition_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::quantifiedgraphcondition_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::QuantifiedGraphCondition)
-
-@given(instance=GraphConstraint::QuantifiedGraphCondition_strategy)
-def test_graphconstraint::quantifiedgraphcondition_quantifier_type(instance):
-    assert isinstance(instance.quantifier, str)
+def test_graphconstraint_quantifiedgraphcondition_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_QuantifiedGraphCondition)
 
 
-@given(instance=GraphConstraint::QuantifiedGraphCondition_strategy)
-def test_graphconstraint::quantifiedgraphcondition_quantifier_setter(instance):
+
+@given(instance=GraphConstraint_QuantifiedGraphCondition_strategy)
+def test_graphconstraint_quantifiedgraphcondition_quantifier_setter(instance):
     original = instance.quantifier
     instance.quantifier = original
     assert instance.quantifier == original
 
-@given(instance=GraphConstraint::Variable_strategy)
+@given(instance=GraphConstraint_Variable_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::variable_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Variable)
-
-@given(instance=GraphConstraint::Variable_strategy)
-def test_graphconstraint::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphconstraint_variable_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Variable)
 
 
-@given(instance=GraphConstraint::Variable_strategy)
-def test_graphconstraint::variable_name_setter(instance):
+
+@given(instance=GraphConstraint_Variable_strategy)
+def test_graphconstraint_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -571,111 +567,94 @@ def test_graphconstraint::variable_name_setter(instance):
 def test_graphelement_instantiation(instance):
     assert isinstance(instance, GraphElement)
 
-@given(instance=GraphConstraint::Attribute_strategy)
+@given(instance=GraphConstraint_Attribute_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::attribute_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Attribute)
-
-@given(instance=GraphConstraint::Attribute_strategy)
-def test_graphconstraint::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_graphconstraint_attribute_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Attribute)
 
 
-@given(instance=GraphConstraint::Attribute_strategy)
-def test_graphconstraint::attribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=GraphConstraint::Attribute_strategy)
-def test_graphconstraint::attribute_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=GraphConstraint::Attribute_strategy)
-def test_graphconstraint::attribute_op_setter(instance):
+@given(instance=GraphConstraint_Attribute_strategy)
+def test_graphconstraint_attribute_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=GraphConstraint::NestedGraphCondition_strategy)
+
+
+@given(instance=GraphConstraint_Attribute_strategy)
+def test_graphconstraint_attribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=GraphConstraint_NestedGraphCondition_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::nestedgraphcondition_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::NestedGraphCondition)
+def test_graphconstraint_nestedgraphcondition_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_NestedGraphCondition)
 
-@given(instance=GraphConstraint::EPackage_strategy)
+@given(instance=GraphConstraint_EPackage_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::epackage_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::EPackage)
+def test_graphconstraint_epackage_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_EPackage)
 
-@given(instance=GraphConstraint::NestedGraphConstraint_strategy)
+@given(instance=GraphConstraint_NestedGraphConstraint_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::nestedgraphconstraint_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::NestedGraphConstraint)
-
-@given(instance=GraphConstraint::NestedGraphConstraint_strategy)
-def test_graphconstraint::nestedgraphconstraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphconstraint_nestedgraphconstraint_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_NestedGraphConstraint)
 
 
-@given(instance=GraphConstraint::NestedGraphConstraint_strategy)
-def test_graphconstraint::nestedgraphconstraint_name_setter(instance):
+
+@given(instance=GraphConstraint_NestedGraphConstraint_strategy)
+def test_graphconstraint_nestedgraphconstraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=GraphConstraint::GraphElement_strategy)
+@given(instance=GraphConstraint_GraphElement_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::graphelement_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::GraphElement)
-
-@given(instance=GraphConstraint::GraphElement_strategy)
-def test_graphconstraint::graphelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graphconstraint_graphelement_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_GraphElement)
 
 
-@given(instance=GraphConstraint::GraphElement_strategy)
-def test_graphconstraint::graphelement_name_setter(instance):
+
+@given(instance=GraphConstraint_GraphElement_strategy)
+def test_graphconstraint_graphelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=GraphConstraint::Node_strategy)
+@given(instance=GraphConstraint_Node_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::node_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Node)
+def test_graphconstraint_node_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Node)
 
-@given(instance=GraphConstraint::ElementMapping_strategy)
+@given(instance=GraphConstraint_ElementMapping_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::elementmapping_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::ElementMapping)
+def test_graphconstraint_elementmapping_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_ElementMapping)
 
-@given(instance=GraphConstraint::Mapping_strategy)
+@given(instance=GraphConstraint_Mapping_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::mapping_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Mapping)
+def test_graphconstraint_mapping_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Mapping)
 
-@given(instance=GraphConstraint::EAttribute_strategy)
+@given(instance=GraphConstraint_EAttribute_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::eattribute_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::EAttribute)
+def test_graphconstraint_eattribute_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_EAttribute)
 
-@given(instance=GraphConstraint::EReference_strategy)
+@given(instance=GraphConstraint_EReference_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::ereference_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::EReference)
+def test_graphconstraint_ereference_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_EReference)
 
-@given(instance=GraphConstraint::EClass_strategy)
+@given(instance=GraphConstraint_EClass_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::eclass_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::EClass)
+def test_graphconstraint_eclass_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_EClass)
 
-@given(instance=GraphConstraint::Edge_strategy)
+@given(instance=GraphConstraint_Edge_strategy)
 @settings(max_examples=50)
-def test_graphconstraint::edge_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Edge)
-
-@given(instance=GraphConstraint::Graph_strategy)
-@settings(max_examples=50)
-def test_graphconstraint::graph_instantiation(instance):
-    assert isinstance(instance, GraphConstraint::Graph)
+def test_graphconstraint_edge_instantiation(instance):
+    assert isinstance(instance, GraphConstraint_Edge)

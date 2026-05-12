@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DataValue,
-    xunit::DataValue,
-    xunit::Action,
-    xunit::ExpectedValue,
+    xunit_DataValue,
+    xunit_Action,
+    xunit_ExpectedValue,
     NamedElement,
-    xunit::TestCase,
-    xunit::Assertion,
-    xunit::TestSuite,
-    xunit::NamedElement,
+    xunit_Assertion,
+    xunit_TestCase,
+    xunit_TestSuite,
+    xunit_NamedElement,
 )
 
 # =============================================================================
@@ -37,23 +37,23 @@ def test_datavalue_constructor_args():
 
 
 
-def test_xunit::datavalue_is_not_abstract():
-    assert not inspect.isabstract(xunit::DataValue)
+def test_xunit_datavalue_is_not_abstract():
+    assert not inspect.isabstract(xunit_DataValue)
 
 
-def test_xunit::datavalue_constructor_exists():
-    assert callable(xunit::DataValue.__init__)
+def test_xunit_datavalue_constructor_exists():
+    assert callable(xunit_DataValue.__init__)
 
 
-def test_xunit::datavalue_constructor_args():
-    sig = inspect.signature(xunit::DataValue.__init__)
+def test_xunit_datavalue_constructor_args():
+    sig = inspect.signature(xunit_DataValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xunit::datavalue_has_value():
-    assert hasattr(xunit::DataValue, "value")
+def test_xunit_datavalue_has_value():
+    assert hasattr(xunit_DataValue, "value")
     descriptor = None
-    for klass in xunit::DataValue.__mro__:
+    for klass in xunit_DataValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -61,23 +61,23 @@ def test_xunit::datavalue_has_value():
 
 
 
-def test_xunit::action_is_not_abstract():
-    assert not inspect.isabstract(xunit::Action)
+def test_xunit_action_is_not_abstract():
+    assert not inspect.isabstract(xunit_Action)
 
 
-def test_xunit::action_constructor_exists():
-    assert callable(xunit::Action.__init__)
+def test_xunit_action_constructor_exists():
+    assert callable(xunit_Action.__init__)
 
 
-def test_xunit::action_constructor_args():
-    sig = inspect.signature(xunit::Action.__init__)
+def test_xunit_action_constructor_args():
+    sig = inspect.signature(xunit_Action.__init__)
     params = list(sig.parameters.keys())
     assert "desc" in params, "Missing parameter 'desc'"
 
-def test_xunit::action_has_desc():
-    assert hasattr(xunit::Action, "desc")
+def test_xunit_action_has_desc():
+    assert hasattr(xunit_Action, "desc")
     descriptor = None
-    for klass in xunit::Action.__mro__:
+    for klass in xunit_Action.__mro__:
         if "desc" in klass.__dict__:
             descriptor = klass.__dict__["desc"]
             break
@@ -85,16 +85,16 @@ def test_xunit::action_has_desc():
 
 
 
-def test_xunit::expectedvalue_is_not_abstract():
-    assert not inspect.isabstract(xunit::ExpectedValue)
+def test_xunit_expectedvalue_is_not_abstract():
+    assert not inspect.isabstract(xunit_ExpectedValue)
 
 
-def test_xunit::expectedvalue_constructor_exists():
-    assert callable(xunit::ExpectedValue.__init__)
+def test_xunit_expectedvalue_constructor_exists():
+    assert callable(xunit_ExpectedValue.__init__)
 
 
-def test_xunit::expectedvalue_constructor_args():
-    sig = inspect.signature(xunit::ExpectedValue.__init__)
+def test_xunit_expectedvalue_constructor_args():
+    sig = inspect.signature(xunit_ExpectedValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -113,37 +113,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_xunit::testcase_is_not_abstract():
-    assert not inspect.isabstract(xunit::TestCase)
+def test_xunit_assertion_is_not_abstract():
+    assert not inspect.isabstract(xunit_Assertion)
 
 
-def test_xunit::testcase_constructor_exists():
-    assert callable(xunit::TestCase.__init__)
+def test_xunit_assertion_constructor_exists():
+    assert callable(xunit_Assertion.__init__)
 
 
-def test_xunit::testcase_constructor_args():
-    sig = inspect.signature(xunit::TestCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xunit::assertion_is_not_abstract():
-    assert not inspect.isabstract(xunit::Assertion)
-
-
-def test_xunit::assertion_constructor_exists():
-    assert callable(xunit::Assertion.__init__)
-
-
-def test_xunit::assertion_constructor_args():
-    sig = inspect.signature(xunit::Assertion.__init__)
+def test_xunit_assertion_constructor_args():
+    sig = inspect.signature(xunit_Assertion.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_xunit::assertion_has_type():
-    assert hasattr(xunit::Assertion, "type")
+def test_xunit_assertion_has_type():
+    assert hasattr(xunit_Assertion, "type")
     descriptor = None
-    for klass in xunit::Assertion.__mro__:
+    for klass in xunit_Assertion.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -151,37 +137,51 @@ def test_xunit::assertion_has_type():
 
 
 
-def test_xunit::testsuite_is_not_abstract():
-    assert not inspect.isabstract(xunit::TestSuite)
+def test_xunit_testcase_is_not_abstract():
+    assert not inspect.isabstract(xunit_TestCase)
 
 
-def test_xunit::testsuite_constructor_exists():
-    assert callable(xunit::TestSuite.__init__)
+def test_xunit_testcase_constructor_exists():
+    assert callable(xunit_TestCase.__init__)
 
 
-def test_xunit::testsuite_constructor_args():
-    sig = inspect.signature(xunit::TestSuite.__init__)
+def test_xunit_testcase_constructor_args():
+    sig = inspect.signature(xunit_TestCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xunit::namedelement_is_not_abstract():
-    assert not inspect.isabstract(xunit::NamedElement)
+def test_xunit_testsuite_is_not_abstract():
+    assert not inspect.isabstract(xunit_TestSuite)
 
 
-def test_xunit::namedelement_constructor_exists():
-    assert callable(xunit::NamedElement.__init__)
+def test_xunit_testsuite_constructor_exists():
+    assert callable(xunit_TestSuite.__init__)
 
 
-def test_xunit::namedelement_constructor_args():
-    sig = inspect.signature(xunit::NamedElement.__init__)
+def test_xunit_testsuite_constructor_args():
+    sig = inspect.signature(xunit_TestSuite.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xunit_namedelement_is_not_abstract():
+    assert not inspect.isabstract(xunit_NamedElement)
+
+
+def test_xunit_namedelement_constructor_exists():
+    assert callable(xunit_NamedElement.__init__)
+
+
+def test_xunit_namedelement_constructor_args():
+    sig = inspect.signature(xunit_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_xunit::namedelement_has_name():
-    assert hasattr(xunit::NamedElement, "name")
+def test_xunit_namedelement_has_name():
+    assert hasattr(xunit_NamedElement, "name")
     descriptor = None
-    for klass in xunit::NamedElement.__mro__:
+    for klass in xunit_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -202,35 +202,35 @@ safe_text = st.text(
 DataValue_strategy = st.builds(
     DataValue,
 )
-xunit::DataValue_strategy = st.builds(
-    xunit::DataValue,
+xunit_DataValue_strategy = st.builds(
+    xunit_DataValue,
     value=
         safe_text
 )
-xunit::Action_strategy = st.builds(
-    xunit::Action,
+xunit_Action_strategy = st.builds(
+    xunit_Action,
     desc=
         safe_text
 )
-xunit::ExpectedValue_strategy = st.builds(
-    xunit::ExpectedValue,
+xunit_ExpectedValue_strategy = st.builds(
+    xunit_ExpectedValue,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-xunit::TestCase_strategy = st.builds(
-    xunit::TestCase,
-)
-xunit::Assertion_strategy = st.builds(
-    xunit::Assertion,
+xunit_Assertion_strategy = st.builds(
+    xunit_Assertion,
     type=
         safe_text
 )
-xunit::TestSuite_strategy = st.builds(
-    xunit::TestSuite,
+xunit_TestCase_strategy = st.builds(
+    xunit_TestCase,
 )
-xunit::NamedElement_strategy = st.builds(
-    xunit::NamedElement,
+xunit_TestSuite_strategy = st.builds(
+    xunit_TestSuite,
+)
+xunit_NamedElement_strategy = st.builds(
+    xunit_NamedElement,
     name=
         safe_text
 )
@@ -240,86 +240,74 @@ xunit::NamedElement_strategy = st.builds(
 def test_datavalue_instantiation(instance):
     assert isinstance(instance, DataValue)
 
-@given(instance=xunit::DataValue_strategy)
+@given(instance=xunit_DataValue_strategy)
 @settings(max_examples=50)
-def test_xunit::datavalue_instantiation(instance):
-    assert isinstance(instance, xunit::DataValue)
-
-@given(instance=xunit::DataValue_strategy)
-def test_xunit::datavalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_xunit_datavalue_instantiation(instance):
+    assert isinstance(instance, xunit_DataValue)
 
 
-@given(instance=xunit::DataValue_strategy)
-def test_xunit::datavalue_value_setter(instance):
+
+@given(instance=xunit_DataValue_strategy)
+def test_xunit_datavalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xunit::Action_strategy)
+@given(instance=xunit_Action_strategy)
 @settings(max_examples=50)
-def test_xunit::action_instantiation(instance):
-    assert isinstance(instance, xunit::Action)
-
-@given(instance=xunit::Action_strategy)
-def test_xunit::action_desc_type(instance):
-    assert isinstance(instance.desc, str)
+def test_xunit_action_instantiation(instance):
+    assert isinstance(instance, xunit_Action)
 
 
-@given(instance=xunit::Action_strategy)
-def test_xunit::action_desc_setter(instance):
+
+@given(instance=xunit_Action_strategy)
+def test_xunit_action_desc_setter(instance):
     original = instance.desc
     instance.desc = original
     assert instance.desc == original
 
-@given(instance=xunit::ExpectedValue_strategy)
+@given(instance=xunit_ExpectedValue_strategy)
 @settings(max_examples=50)
-def test_xunit::expectedvalue_instantiation(instance):
-    assert isinstance(instance, xunit::ExpectedValue)
+def test_xunit_expectedvalue_instantiation(instance):
+    assert isinstance(instance, xunit_ExpectedValue)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=xunit::TestCase_strategy)
+@given(instance=xunit_Assertion_strategy)
 @settings(max_examples=50)
-def test_xunit::testcase_instantiation(instance):
-    assert isinstance(instance, xunit::TestCase)
-
-@given(instance=xunit::Assertion_strategy)
-@settings(max_examples=50)
-def test_xunit::assertion_instantiation(instance):
-    assert isinstance(instance, xunit::Assertion)
-
-@given(instance=xunit::Assertion_strategy)
-def test_xunit::assertion_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_xunit_assertion_instantiation(instance):
+    assert isinstance(instance, xunit_Assertion)
 
 
-@given(instance=xunit::Assertion_strategy)
-def test_xunit::assertion_type_setter(instance):
+
+@given(instance=xunit_Assertion_strategy)
+def test_xunit_assertion_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=xunit::TestSuite_strategy)
+@given(instance=xunit_TestCase_strategy)
 @settings(max_examples=50)
-def test_xunit::testsuite_instantiation(instance):
-    assert isinstance(instance, xunit::TestSuite)
+def test_xunit_testcase_instantiation(instance):
+    assert isinstance(instance, xunit_TestCase)
 
-@given(instance=xunit::NamedElement_strategy)
+@given(instance=xunit_TestSuite_strategy)
 @settings(max_examples=50)
-def test_xunit::namedelement_instantiation(instance):
-    assert isinstance(instance, xunit::NamedElement)
+def test_xunit_testsuite_instantiation(instance):
+    assert isinstance(instance, xunit_TestSuite)
 
-@given(instance=xunit::NamedElement_strategy)
-def test_xunit::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=xunit_NamedElement_strategy)
+@settings(max_examples=50)
+def test_xunit_namedelement_instantiation(instance):
+    assert isinstance(instance, xunit_NamedElement)
 
 
-@given(instance=xunit::NamedElement_strategy)
-def test_xunit::namedelement_name_setter(instance):
+
+@given(instance=xunit_NamedElement_strategy)
+def test_xunit_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

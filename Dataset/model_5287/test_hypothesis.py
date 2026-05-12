@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    uml2::N,
+from python_code import (
+    uml2_N,
     B,
     N,
-    uml2::test2::B,
-    uml2::Classe,
+    uml2_test2_B,
+    uml2_Classe,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_uml2::n_is_not_abstract():
-    assert not inspect.isabstract(uml2::N)
+def test_uml2_n_is_not_abstract():
+    assert not inspect.isabstract(uml2_N)
 
 
-def test_uml2::n_constructor_exists():
-    assert callable(uml2::N.__init__)
+def test_uml2_n_constructor_exists():
+    assert callable(uml2_N.__init__)
 
 
-def test_uml2::n_constructor_args():
-    sig = inspect.signature(uml2::N.__init__)
+def test_uml2_n_constructor_args():
+    sig = inspect.signature(uml2_N.__init__)
     params = list(sig.parameters.keys())
     assert "n" in params, "Missing parameter 'n'"
 
-def test_uml2::n_has_n():
-    assert hasattr(uml2::N, "n")
+def test_uml2_n_has_n():
+    assert hasattr(uml2_N, "n")
     descriptor = None
-    for klass in uml2::N.__mro__:
+    for klass in uml2_N.__mro__:
         if "n" in klass.__dict__:
             descriptor = klass.__dict__["n"]
             break
@@ -71,33 +71,33 @@ def test_n_constructor_args():
 
 
 
-def test_uml2::test2::b_is_not_abstract():
-    assert not inspect.isabstract(uml2::test2::B)
+def test_uml2_test2_b_is_not_abstract():
+    assert not inspect.isabstract(uml2_test2_B)
 
 
-def test_uml2::test2::b_constructor_exists():
-    assert callable(uml2::test2::B.__init__)
+def test_uml2_test2_b_constructor_exists():
+    assert callable(uml2_test2_B.__init__)
 
 
-def test_uml2::test2::b_constructor_args():
-    sig = inspect.signature(uml2::test2::B.__init__)
+def test_uml2_test2_b_constructor_args():
+    sig = inspect.signature(uml2_test2_B.__init__)
     params = list(sig.parameters.keys())
     assert "nb" in params, "Missing parameter 'nb'"
     assert "nb2" in params, "Missing parameter 'nb2'"
 
-def test_uml2::test2::b_has_nb():
-    assert hasattr(uml2::test2::B, "nb")
+def test_uml2_test2_b_has_nb():
+    assert hasattr(uml2_test2_B, "nb")
     descriptor = None
-    for klass in uml2::test2::B.__mro__:
+    for klass in uml2_test2_B.__mro__:
         if "nb" in klass.__dict__:
             descriptor = klass.__dict__["nb"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::test2::b_has_nb2():
-    assert hasattr(uml2::test2::B, "nb2")
+def test_uml2_test2_b_has_nb2():
+    assert hasattr(uml2_test2_B, "nb2")
     descriptor = None
-    for klass in uml2::test2::B.__mro__:
+    for klass in uml2_test2_B.__mro__:
         if "nb2" in klass.__dict__:
             descriptor = klass.__dict__["nb2"]
             break
@@ -105,16 +105,16 @@ def test_uml2::test2::b_has_nb2():
 
 
 
-def test_uml2::classe_is_not_abstract():
-    assert not inspect.isabstract(uml2::Classe)
+def test_uml2_classe_is_not_abstract():
+    assert not inspect.isabstract(uml2_Classe)
 
 
-def test_uml2::classe_constructor_exists():
-    assert callable(uml2::Classe.__init__)
+def test_uml2_classe_constructor_exists():
+    assert callable(uml2_Classe.__init__)
 
 
-def test_uml2::classe_constructor_args():
-    sig = inspect.signature(uml2::Classe.__init__)
+def test_uml2_classe_constructor_args():
+    sig = inspect.signature(uml2_Classe.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,8 +129,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-uml2::N_strategy = st.builds(
-    uml2::N,
+uml2_N_strategy = st.builds(
+    uml2_N,
     n=
         safe_text
 )
@@ -140,29 +140,26 @@ B_strategy = st.builds(
 N_strategy = st.builds(
     N,
 )
-uml2::test2::B_strategy = st.builds(
-    uml2::test2::B,
+uml2_test2_B_strategy = st.builds(
+    uml2_test2_B,
     nb=
         st.integers(),
     nb2=
         st.integers()
 )
-uml2::Classe_strategy = st.builds(
-    uml2::Classe,
+uml2_Classe_strategy = st.builds(
+    uml2_Classe,
 )
 
-@given(instance=uml2::N_strategy)
+@given(instance=uml2_N_strategy)
 @settings(max_examples=50)
-def test_uml2::n_instantiation(instance):
-    assert isinstance(instance, uml2::N)
-
-@given(instance=uml2::N_strategy)
-def test_uml2::n_n_type(instance):
-    assert isinstance(instance.n, str)
+def test_uml2_n_instantiation(instance):
+    assert isinstance(instance, uml2_N)
 
 
-@given(instance=uml2::N_strategy)
-def test_uml2::n_n_setter(instance):
+
+@given(instance=uml2_N_strategy)
+def test_uml2_n_n_setter(instance):
     original = instance.n
     instance.n = original
     assert instance.n == original
@@ -177,34 +174,28 @@ def test_b_instantiation(instance):
 def test_n_instantiation(instance):
     assert isinstance(instance, N)
 
-@given(instance=uml2::test2::B_strategy)
+@given(instance=uml2_test2_B_strategy)
 @settings(max_examples=50)
-def test_uml2::test2::b_instantiation(instance):
-    assert isinstance(instance, uml2::test2::B)
-
-@given(instance=uml2::test2::B_strategy)
-def test_uml2::test2::b_nb_type(instance):
-    assert isinstance(instance.nb, int)
+def test_uml2_test2_b_instantiation(instance):
+    assert isinstance(instance, uml2_test2_B)
 
 
-@given(instance=uml2::test2::B_strategy)
-def test_uml2::test2::b_nb_setter(instance):
+
+@given(instance=uml2_test2_B_strategy)
+def test_uml2_test2_b_nb_setter(instance):
     original = instance.nb
     instance.nb = original
     assert instance.nb == original
 
-@given(instance=uml2::test2::B_strategy)
-def test_uml2::test2::b_nb2_type(instance):
-    assert isinstance(instance.nb2, int)
 
 
-@given(instance=uml2::test2::B_strategy)
-def test_uml2::test2::b_nb2_setter(instance):
+@given(instance=uml2_test2_B_strategy)
+def test_uml2_test2_b_nb2_setter(instance):
     original = instance.nb2
     instance.nb2 = original
     assert instance.nb2 == original
 
-@given(instance=uml2::Classe_strategy)
+@given(instance=uml2_Classe_strategy)
 @settings(max_examples=50)
-def test_uml2::classe_instantiation(instance):
-    assert isinstance(instance, uml2::Classe)
+def test_uml2_classe_instantiation(instance):
+    assert isinstance(instance, uml2_Classe)

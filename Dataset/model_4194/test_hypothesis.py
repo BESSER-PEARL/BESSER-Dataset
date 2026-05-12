@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    myDsl::Greeting,
-    myDsl::Bye,
-    myDsl::EObject,
-    myDsl::Model,
+from python_code import (
+    myDsl_Greeting,
+    myDsl_Bye,
+    myDsl_EObject,
+    myDsl_Model,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_mydsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Greeting)
+def test_mydsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Greeting)
 
 
-def test_mydsl::greeting_constructor_exists():
-    assert callable(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_exists():
+    assert callable(myDsl_Greeting.__init__)
 
 
-def test_mydsl::greeting_constructor_args():
-    sig = inspect.signature(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_args():
+    sig = inspect.signature(myDsl_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::greeting_has_name():
-    assert hasattr(myDsl::Greeting, "name")
+def test_mydsl_greeting_has_name():
+    assert hasattr(myDsl_Greeting, "name")
     descriptor = None
-    for klass in myDsl::Greeting.__mro__:
+    for klass in myDsl_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_mydsl::greeting_has_name():
 
 
 
-def test_mydsl::bye_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Bye)
+def test_mydsl_bye_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Bye)
 
 
-def test_mydsl::bye_constructor_exists():
-    assert callable(myDsl::Bye.__init__)
+def test_mydsl_bye_constructor_exists():
+    assert callable(myDsl_Bye.__init__)
 
 
-def test_mydsl::bye_constructor_args():
-    sig = inspect.signature(myDsl::Bye.__init__)
+def test_mydsl_bye_constructor_args():
+    sig = inspect.signature(myDsl_Bye.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::bye_has_name():
-    assert hasattr(myDsl::Bye, "name")
+def test_mydsl_bye_has_name():
+    assert hasattr(myDsl_Bye, "name")
     descriptor = None
-    for klass in myDsl::Bye.__mro__:
+    for klass in myDsl_Bye.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,30 +66,30 @@ def test_mydsl::bye_has_name():
 
 
 
-def test_mydsl::eobject_is_not_abstract():
-    assert not inspect.isabstract(myDsl::EObject)
+def test_mydsl_eobject_is_not_abstract():
+    assert not inspect.isabstract(myDsl_EObject)
 
 
-def test_mydsl::eobject_constructor_exists():
-    assert callable(myDsl::EObject.__init__)
+def test_mydsl_eobject_constructor_exists():
+    assert callable(myDsl_EObject.__init__)
 
 
-def test_mydsl::eobject_constructor_args():
-    sig = inspect.signature(myDsl::EObject.__init__)
+def test_mydsl_eobject_constructor_args():
+    sig = inspect.signature(myDsl_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -104,61 +104,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-myDsl::Greeting_strategy = st.builds(
-    myDsl::Greeting,
+myDsl_Greeting_strategy = st.builds(
+    myDsl_Greeting,
     name=
         safe_text
 )
-myDsl::Bye_strategy = st.builds(
-    myDsl::Bye,
+myDsl_Bye_strategy = st.builds(
+    myDsl_Bye,
     name=
         safe_text
 )
-myDsl::EObject_strategy = st.builds(
-    myDsl::EObject,
+myDsl_EObject_strategy = st.builds(
+    myDsl_EObject,
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
 
-@given(instance=myDsl::Greeting_strategy)
+@given(instance=myDsl_Greeting_strategy)
 @settings(max_examples=50)
-def test_mydsl::greeting_instantiation(instance):
-    assert isinstance(instance, myDsl::Greeting)
-
-@given(instance=myDsl::Greeting_strategy)
-def test_mydsl::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_greeting_instantiation(instance):
+    assert isinstance(instance, myDsl_Greeting)
 
 
-@given(instance=myDsl::Greeting_strategy)
-def test_mydsl::greeting_name_setter(instance):
+
+@given(instance=myDsl_Greeting_strategy)
+def test_mydsl_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::Bye_strategy)
+@given(instance=myDsl_Bye_strategy)
 @settings(max_examples=50)
-def test_mydsl::bye_instantiation(instance):
-    assert isinstance(instance, myDsl::Bye)
-
-@given(instance=myDsl::Bye_strategy)
-def test_mydsl::bye_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_bye_instantiation(instance):
+    assert isinstance(instance, myDsl_Bye)
 
 
-@given(instance=myDsl::Bye_strategy)
-def test_mydsl::bye_name_setter(instance):
+
+@given(instance=myDsl_Bye_strategy)
+def test_mydsl_bye_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::EObject_strategy)
+@given(instance=myDsl_EObject_strategy)
 @settings(max_examples=50)
-def test_mydsl::eobject_instantiation(instance):
-    assert isinstance(instance, myDsl::EObject)
+def test_mydsl_eobject_instantiation(instance):
+    assert isinstance(instance, myDsl_EObject)
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)

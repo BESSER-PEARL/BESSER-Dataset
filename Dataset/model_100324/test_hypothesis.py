@@ -3,96 +3,324 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    PNML_Font,
+    Color,
+    PNML_Fill,
+    PNML_Dimension,
+    PNML_Line,
+    Font,
+    Offset,
     Coordinate,
-    PNML::Offset,
-    PNML::Position,
-    PNML::Coordinate,
+    PNML_Offset,
+    PNML_Position,
+    PNML_Coordinate,
     Graphics,
-    PNML::AnnotationGraphics,
-    PNML::NodeGraphics,
-    PNML::NetGraphics,
-    PNML::Graphics,
+    PNML_PageGraphics,
+    PNML_AnnotationGraphics,
+    PNML_NodeGraphics,
+    PNML_NetGraphics,
+    PNML_Graphics,
     InitialMarking,
     NodeGraphics,
-    PNML::EdgeGraphics,
+    PNML_EdgeGraphics,
     Line,
     Fill,
     Dimension,
     Position,
-    PNML::ImportNode,
+    PNML_ImportNode,
     ImportNode,
     NCName,
     Instance,
     LabeledElement,
     Inscription,
     EdgeGraphics,
-    PNML::Label,
+    PNML_Label,
     NetContentElement,
-    PNML::Transition,
-    PNML::Place,
+    PNML_Transition,
+    PNML_Place,
     Place,
-    PNML::InitialMarking,
+    PNML_InitialMarking,
     PageGraphics,
-    PNML::Inscription,
-    PNML::Name,
+    PNML_Inscription,
+    PNML_Name,
     Name,
     NetGraphics,
     ToolSpecific,
     AnnotationGraphics,
     Label,
-    PNML::LabeledElement,
+    PNML_LabeledElement,
     Arc,
     AnyElement,
-    PNML::ToolSpecific,
+    PNML_ToolSpecific,
     Page,
-    PNML::NetContent,
+    PNML_NetContent,
     Module,
     NetElement,
     Reference,
     Node,
-    PNML::Reference,
-    PNML::Interface,
+    PNML_Reference,
+    PNML_Interface,
     PNMLDocument,
     NetContent,
-    PNML::ReferencePlace,
-    PNML::ReferenceTransition,
-    PNML::NetContentElement,
+    PNML_ReferenceTransition,
+    PNML_ReferencePlace,
+    PNML_NetContentElement,
     Interface,
     IdedElement,
-    PNML::Arc,
-    PNML::Page,
-    PNML::NetElement,
-    PNML::Node,
-    PNML::Instance,
-    PNML::Module,
-    PNML::IdedElement,
+    PNML_Arc,
+    PNML_Page,
+    PNML_Instance,
+    PNML_Node,
+    PNML_NetElement,
+    PNML_Module,
+    PNML_IdedElement,
     URI,
-    PNML::PNMLDocument,
-    PNML::NCName,
-    PNML::AnyElement,
-    PNML::Color,
-    PNML::URI,
-    PNML::Font,
-    Color,
-    PNML::Fill,
-    PNML::Dimension,
-    PNML::Line,
-    PNML::PageGraphics,
-    Font,
-    Offset,
+    PNML_PNMLDocument,
+    PNML_NCName,
+    PNML_AnyElement,
+    PNML_Color,
+    PNML_URI,
+    StyleType,
     ShapeType,
     RotationType,
     DecorationType,
     AlignType,
-    StyleType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_pnml_font_is_not_abstract():
+    assert not inspect.isabstract(PNML_Font)
+
+
+def test_pnml_font_constructor_exists():
+    assert callable(PNML_Font.__init__)
+
+
+def test_pnml_font_constructor_args():
+    sig = inspect.signature(PNML_Font.__init__)
+    params = list(sig.parameters.keys())
+    assert "family" in params, "Missing parameter 'family'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "decoration" in params, "Missing parameter 'decoration'"
+    assert "rotation" in params, "Missing parameter 'rotation'"
+    assert "size" in params, "Missing parameter 'size'"
+    assert "weight" in params, "Missing parameter 'weight'"
+
+def test_pnml_font_has_family():
+    assert hasattr(PNML_Font, "family")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "family" in klass.__dict__:
+            descriptor = klass.__dict__["family"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_font_has_style():
+    assert hasattr(PNML_Font, "style")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_font_has_align():
+    assert hasattr(PNML_Font, "align")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_font_has_decoration():
+    assert hasattr(PNML_Font, "decoration")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "decoration" in klass.__dict__:
+            descriptor = klass.__dict__["decoration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_font_has_rotation():
+    assert hasattr(PNML_Font, "rotation")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "rotation" in klass.__dict__:
+            descriptor = klass.__dict__["rotation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_font_has_size():
+    assert hasattr(PNML_Font, "size")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_font_has_weight():
+    assert hasattr(PNML_Font, "weight")
+    descriptor = None
+    for klass in PNML_Font.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_color_is_not_abstract():
+    assert not inspect.isabstract(Color)
+
+
+def test_color_constructor_exists():
+    assert callable(Color.__init__)
+
+
+def test_color_constructor_args():
+    sig = inspect.signature(Color.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pnml_fill_is_not_abstract():
+    assert not inspect.isabstract(PNML_Fill)
+
+
+def test_pnml_fill_constructor_exists():
+    assert callable(PNML_Fill.__init__)
+
+
+def test_pnml_fill_constructor_args():
+    sig = inspect.signature(PNML_Fill.__init__)
+    params = list(sig.parameters.keys())
+    assert "gradientrotation" in params, "Missing parameter 'gradientrotation'"
+
+def test_pnml_fill_has_gradientrotation():
+    assert hasattr(PNML_Fill, "gradientrotation")
+    descriptor = None
+    for klass in PNML_Fill.__mro__:
+        if "gradientrotation" in klass.__dict__:
+            descriptor = klass.__dict__["gradientrotation"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pnml_dimension_is_not_abstract():
+    assert not inspect.isabstract(PNML_Dimension)
+
+
+def test_pnml_dimension_constructor_exists():
+    assert callable(PNML_Dimension.__init__)
+
+
+def test_pnml_dimension_constructor_args():
+    sig = inspect.signature(PNML_Dimension.__init__)
+    params = list(sig.parameters.keys())
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+
+def test_pnml_dimension_has_width():
+    assert hasattr(PNML_Dimension, "width")
+    descriptor = None
+    for klass in PNML_Dimension.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_dimension_has_height():
+    assert hasattr(PNML_Dimension, "height")
+    descriptor = None
+    for klass in PNML_Dimension.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pnml_line_is_not_abstract():
+    assert not inspect.isabstract(PNML_Line)
+
+
+def test_pnml_line_constructor_exists():
+    assert callable(PNML_Line.__init__)
+
+
+def test_pnml_line_constructor_args():
+    sig = inspect.signature(PNML_Line.__init__)
+    params = list(sig.parameters.keys())
+    assert "shape" in params, "Missing parameter 'shape'"
+    assert "style" in params, "Missing parameter 'style'"
+    assert "width" in params, "Missing parameter 'width'"
+
+def test_pnml_line_has_shape():
+    assert hasattr(PNML_Line, "shape")
+    descriptor = None
+    for klass in PNML_Line.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_line_has_style():
+    assert hasattr(PNML_Line, "style")
+    descriptor = None
+    for klass in PNML_Line.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pnml_line_has_width():
+    assert hasattr(PNML_Line, "width")
+    descriptor = None
+    for klass in PNML_Line.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_font_is_not_abstract():
+    assert not inspect.isabstract(Font)
+
+
+def test_font_constructor_exists():
+    assert callable(Font.__init__)
+
+
+def test_font_constructor_args():
+    sig = inspect.signature(Font.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_offset_is_not_abstract():
+    assert not inspect.isabstract(Offset)
+
+
+def test_offset_constructor_exists():
+    assert callable(Offset.__init__)
+
+
+def test_offset_constructor_args():
+    sig = inspect.signature(Offset.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -110,63 +338,63 @@ def test_coordinate_constructor_args():
 
 
 
-def test_pnml::offset_is_not_abstract():
-    assert not inspect.isabstract(PNML::Offset)
+def test_pnml_offset_is_not_abstract():
+    assert not inspect.isabstract(PNML_Offset)
 
 
-def test_pnml::offset_constructor_exists():
-    assert callable(PNML::Offset.__init__)
+def test_pnml_offset_constructor_exists():
+    assert callable(PNML_Offset.__init__)
 
 
-def test_pnml::offset_constructor_args():
-    sig = inspect.signature(PNML::Offset.__init__)
+def test_pnml_offset_constructor_args():
+    sig = inspect.signature(PNML_Offset.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::position_is_not_abstract():
-    assert not inspect.isabstract(PNML::Position)
+def test_pnml_position_is_not_abstract():
+    assert not inspect.isabstract(PNML_Position)
 
 
-def test_pnml::position_constructor_exists():
-    assert callable(PNML::Position.__init__)
+def test_pnml_position_constructor_exists():
+    assert callable(PNML_Position.__init__)
 
 
-def test_pnml::position_constructor_args():
-    sig = inspect.signature(PNML::Position.__init__)
+def test_pnml_position_constructor_args():
+    sig = inspect.signature(PNML_Position.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::coordinate_is_not_abstract():
-    assert not inspect.isabstract(PNML::Coordinate)
+def test_pnml_coordinate_is_not_abstract():
+    assert not inspect.isabstract(PNML_Coordinate)
 
 
-def test_pnml::coordinate_constructor_exists():
-    assert callable(PNML::Coordinate.__init__)
+def test_pnml_coordinate_constructor_exists():
+    assert callable(PNML_Coordinate.__init__)
 
 
-def test_pnml::coordinate_constructor_args():
-    sig = inspect.signature(PNML::Coordinate.__init__)
+def test_pnml_coordinate_constructor_args():
+    sig = inspect.signature(PNML_Coordinate.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
 
-def test_pnml::coordinate_has_y():
-    assert hasattr(PNML::Coordinate, "y")
+def test_pnml_coordinate_has_x():
+    assert hasattr(PNML_Coordinate, "x")
     descriptor = None
-    for klass in PNML::Coordinate.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
+    for klass in PNML_Coordinate.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_pnml::coordinate_has_x():
-    assert hasattr(PNML::Coordinate, "x")
+def test_pnml_coordinate_has_y():
+    assert hasattr(PNML_Coordinate, "y")
     descriptor = None
-    for klass in PNML::Coordinate.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+    for klass in PNML_Coordinate.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
@@ -186,58 +414,72 @@ def test_graphics_constructor_args():
 
 
 
-def test_pnml::annotationgraphics_is_not_abstract():
-    assert not inspect.isabstract(PNML::AnnotationGraphics)
+def test_pnml_pagegraphics_is_not_abstract():
+    assert not inspect.isabstract(PNML_PageGraphics)
 
 
-def test_pnml::annotationgraphics_constructor_exists():
-    assert callable(PNML::AnnotationGraphics.__init__)
+def test_pnml_pagegraphics_constructor_exists():
+    assert callable(PNML_PageGraphics.__init__)
 
 
-def test_pnml::annotationgraphics_constructor_args():
-    sig = inspect.signature(PNML::AnnotationGraphics.__init__)
+def test_pnml_pagegraphics_constructor_args():
+    sig = inspect.signature(PNML_PageGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::nodegraphics_is_not_abstract():
-    assert not inspect.isabstract(PNML::NodeGraphics)
+def test_pnml_annotationgraphics_is_not_abstract():
+    assert not inspect.isabstract(PNML_AnnotationGraphics)
 
 
-def test_pnml::nodegraphics_constructor_exists():
-    assert callable(PNML::NodeGraphics.__init__)
+def test_pnml_annotationgraphics_constructor_exists():
+    assert callable(PNML_AnnotationGraphics.__init__)
 
 
-def test_pnml::nodegraphics_constructor_args():
-    sig = inspect.signature(PNML::NodeGraphics.__init__)
+def test_pnml_annotationgraphics_constructor_args():
+    sig = inspect.signature(PNML_AnnotationGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::netgraphics_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetGraphics)
+def test_pnml_nodegraphics_is_not_abstract():
+    assert not inspect.isabstract(PNML_NodeGraphics)
 
 
-def test_pnml::netgraphics_constructor_exists():
-    assert callable(PNML::NetGraphics.__init__)
+def test_pnml_nodegraphics_constructor_exists():
+    assert callable(PNML_NodeGraphics.__init__)
 
 
-def test_pnml::netgraphics_constructor_args():
-    sig = inspect.signature(PNML::NetGraphics.__init__)
+def test_pnml_nodegraphics_constructor_args():
+    sig = inspect.signature(PNML_NodeGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::graphics_is_not_abstract():
-    assert not inspect.isabstract(PNML::Graphics)
+def test_pnml_netgraphics_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetGraphics)
 
 
-def test_pnml::graphics_constructor_exists():
-    assert callable(PNML::Graphics.__init__)
+def test_pnml_netgraphics_constructor_exists():
+    assert callable(PNML_NetGraphics.__init__)
 
 
-def test_pnml::graphics_constructor_args():
-    sig = inspect.signature(PNML::Graphics.__init__)
+def test_pnml_netgraphics_constructor_args():
+    sig = inspect.signature(PNML_NetGraphics.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pnml_graphics_is_not_abstract():
+    assert not inspect.isabstract(PNML_Graphics)
+
+
+def test_pnml_graphics_constructor_exists():
+    assert callable(PNML_Graphics.__init__)
+
+
+def test_pnml_graphics_constructor_args():
+    sig = inspect.signature(PNML_Graphics.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -270,16 +512,16 @@ def test_nodegraphics_constructor_args():
 
 
 
-def test_pnml::edgegraphics_is_not_abstract():
-    assert not inspect.isabstract(PNML::EdgeGraphics)
+def test_pnml_edgegraphics_is_not_abstract():
+    assert not inspect.isabstract(PNML_EdgeGraphics)
 
 
-def test_pnml::edgegraphics_constructor_exists():
-    assert callable(PNML::EdgeGraphics.__init__)
+def test_pnml_edgegraphics_constructor_exists():
+    assert callable(PNML_EdgeGraphics.__init__)
 
 
-def test_pnml::edgegraphics_constructor_args():
-    sig = inspect.signature(PNML::EdgeGraphics.__init__)
+def test_pnml_edgegraphics_constructor_args():
+    sig = inspect.signature(PNML_EdgeGraphics.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -340,16 +582,16 @@ def test_position_constructor_args():
 
 
 
-def test_pnml::importnode_is_not_abstract():
-    assert not inspect.isabstract(PNML::ImportNode)
+def test_pnml_importnode_is_not_abstract():
+    assert not inspect.isabstract(PNML_ImportNode)
 
 
-def test_pnml::importnode_constructor_exists():
-    assert callable(PNML::ImportNode.__init__)
+def test_pnml_importnode_constructor_exists():
+    assert callable(PNML_ImportNode.__init__)
 
 
-def test_pnml::importnode_constructor_args():
-    sig = inspect.signature(PNML::ImportNode.__init__)
+def test_pnml_importnode_constructor_args():
+    sig = inspect.signature(PNML_ImportNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -438,23 +680,23 @@ def test_edgegraphics_constructor_args():
 
 
 
-def test_pnml::label_is_not_abstract():
-    assert not inspect.isabstract(PNML::Label)
+def test_pnml_label_is_not_abstract():
+    assert not inspect.isabstract(PNML_Label)
 
 
-def test_pnml::label_constructor_exists():
-    assert callable(PNML::Label.__init__)
+def test_pnml_label_constructor_exists():
+    assert callable(PNML_Label.__init__)
 
 
-def test_pnml::label_constructor_args():
-    sig = inspect.signature(PNML::Label.__init__)
+def test_pnml_label_constructor_args():
+    sig = inspect.signature(PNML_Label.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_pnml::label_has_text():
-    assert hasattr(PNML::Label, "text")
+def test_pnml_label_has_text():
+    assert hasattr(PNML_Label, "text")
     descriptor = None
-    for klass in PNML::Label.__mro__:
+    for klass in PNML_Label.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -476,30 +718,30 @@ def test_netcontentelement_constructor_args():
 
 
 
-def test_pnml::transition_is_not_abstract():
-    assert not inspect.isabstract(PNML::Transition)
+def test_pnml_transition_is_not_abstract():
+    assert not inspect.isabstract(PNML_Transition)
 
 
-def test_pnml::transition_constructor_exists():
-    assert callable(PNML::Transition.__init__)
+def test_pnml_transition_constructor_exists():
+    assert callable(PNML_Transition.__init__)
 
 
-def test_pnml::transition_constructor_args():
-    sig = inspect.signature(PNML::Transition.__init__)
+def test_pnml_transition_constructor_args():
+    sig = inspect.signature(PNML_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::place_is_not_abstract():
-    assert not inspect.isabstract(PNML::Place)
+def test_pnml_place_is_not_abstract():
+    assert not inspect.isabstract(PNML_Place)
 
 
-def test_pnml::place_constructor_exists():
-    assert callable(PNML::Place.__init__)
+def test_pnml_place_constructor_exists():
+    assert callable(PNML_Place.__init__)
 
 
-def test_pnml::place_constructor_args():
-    sig = inspect.signature(PNML::Place.__init__)
+def test_pnml_place_constructor_args():
+    sig = inspect.signature(PNML_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -518,16 +760,16 @@ def test_place_constructor_args():
 
 
 
-def test_pnml::initialmarking_is_not_abstract():
-    assert not inspect.isabstract(PNML::InitialMarking)
+def test_pnml_initialmarking_is_not_abstract():
+    assert not inspect.isabstract(PNML_InitialMarking)
 
 
-def test_pnml::initialmarking_constructor_exists():
-    assert callable(PNML::InitialMarking.__init__)
+def test_pnml_initialmarking_constructor_exists():
+    assert callable(PNML_InitialMarking.__init__)
 
 
-def test_pnml::initialmarking_constructor_args():
-    sig = inspect.signature(PNML::InitialMarking.__init__)
+def test_pnml_initialmarking_constructor_args():
+    sig = inspect.signature(PNML_InitialMarking.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -546,30 +788,30 @@ def test_pagegraphics_constructor_args():
 
 
 
-def test_pnml::inscription_is_not_abstract():
-    assert not inspect.isabstract(PNML::Inscription)
+def test_pnml_inscription_is_not_abstract():
+    assert not inspect.isabstract(PNML_Inscription)
 
 
-def test_pnml::inscription_constructor_exists():
-    assert callable(PNML::Inscription.__init__)
+def test_pnml_inscription_constructor_exists():
+    assert callable(PNML_Inscription.__init__)
 
 
-def test_pnml::inscription_constructor_args():
-    sig = inspect.signature(PNML::Inscription.__init__)
+def test_pnml_inscription_constructor_args():
+    sig = inspect.signature(PNML_Inscription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::name_is_not_abstract():
-    assert not inspect.isabstract(PNML::Name)
+def test_pnml_name_is_not_abstract():
+    assert not inspect.isabstract(PNML_Name)
 
 
-def test_pnml::name_constructor_exists():
-    assert callable(PNML::Name.__init__)
+def test_pnml_name_constructor_exists():
+    assert callable(PNML_Name.__init__)
 
 
-def test_pnml::name_constructor_args():
-    sig = inspect.signature(PNML::Name.__init__)
+def test_pnml_name_constructor_args():
+    sig = inspect.signature(PNML_Name.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -644,16 +886,16 @@ def test_label_constructor_args():
 
 
 
-def test_pnml::labeledelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::LabeledElement)
+def test_pnml_labeledelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_LabeledElement)
 
 
-def test_pnml::labeledelement_constructor_exists():
-    assert callable(PNML::LabeledElement.__init__)
+def test_pnml_labeledelement_constructor_exists():
+    assert callable(PNML_LabeledElement.__init__)
 
 
-def test_pnml::labeledelement_constructor_args():
-    sig = inspect.signature(PNML::LabeledElement.__init__)
+def test_pnml_labeledelement_constructor_args():
+    sig = inspect.signature(PNML_LabeledElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -686,33 +928,33 @@ def test_anyelement_constructor_args():
 
 
 
-def test_pnml::toolspecific_is_not_abstract():
-    assert not inspect.isabstract(PNML::ToolSpecific)
+def test_pnml_toolspecific_is_not_abstract():
+    assert not inspect.isabstract(PNML_ToolSpecific)
 
 
-def test_pnml::toolspecific_constructor_exists():
-    assert callable(PNML::ToolSpecific.__init__)
+def test_pnml_toolspecific_constructor_exists():
+    assert callable(PNML_ToolSpecific.__init__)
 
 
-def test_pnml::toolspecific_constructor_args():
-    sig = inspect.signature(PNML::ToolSpecific.__init__)
+def test_pnml_toolspecific_constructor_args():
+    sig = inspect.signature(PNML_ToolSpecific.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
     assert "tool" in params, "Missing parameter 'tool'"
 
-def test_pnml::toolspecific_has_version():
-    assert hasattr(PNML::ToolSpecific, "version")
+def test_pnml_toolspecific_has_version():
+    assert hasattr(PNML_ToolSpecific, "version")
     descriptor = None
-    for klass in PNML::ToolSpecific.__mro__:
+    for klass in PNML_ToolSpecific.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_pnml::toolspecific_has_tool():
-    assert hasattr(PNML::ToolSpecific, "tool")
+def test_pnml_toolspecific_has_tool():
+    assert hasattr(PNML_ToolSpecific, "tool")
     descriptor = None
-    for klass in PNML::ToolSpecific.__mro__:
+    for klass in PNML_ToolSpecific.__mro__:
         if "tool" in klass.__dict__:
             descriptor = klass.__dict__["tool"]
             break
@@ -734,16 +976,16 @@ def test_page_constructor_args():
 
 
 
-def test_pnml::netcontent_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetContent)
+def test_pnml_netcontent_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetContent)
 
 
-def test_pnml::netcontent_constructor_exists():
-    assert callable(PNML::NetContent.__init__)
+def test_pnml_netcontent_constructor_exists():
+    assert callable(PNML_NetContent.__init__)
 
 
-def test_pnml::netcontent_constructor_args():
-    sig = inspect.signature(PNML::NetContent.__init__)
+def test_pnml_netcontent_constructor_args():
+    sig = inspect.signature(PNML_NetContent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -804,30 +1046,30 @@ def test_node_constructor_args():
 
 
 
-def test_pnml::reference_is_not_abstract():
-    assert not inspect.isabstract(PNML::Reference)
+def test_pnml_reference_is_not_abstract():
+    assert not inspect.isabstract(PNML_Reference)
 
 
-def test_pnml::reference_constructor_exists():
-    assert callable(PNML::Reference.__init__)
+def test_pnml_reference_constructor_exists():
+    assert callable(PNML_Reference.__init__)
 
 
-def test_pnml::reference_constructor_args():
-    sig = inspect.signature(PNML::Reference.__init__)
+def test_pnml_reference_constructor_args():
+    sig = inspect.signature(PNML_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::interface_is_not_abstract():
-    assert not inspect.isabstract(PNML::Interface)
+def test_pnml_interface_is_not_abstract():
+    assert not inspect.isabstract(PNML_Interface)
 
 
-def test_pnml::interface_constructor_exists():
-    assert callable(PNML::Interface.__init__)
+def test_pnml_interface_constructor_exists():
+    assert callable(PNML_Interface.__init__)
 
 
-def test_pnml::interface_constructor_args():
-    sig = inspect.signature(PNML::Interface.__init__)
+def test_pnml_interface_constructor_args():
+    sig = inspect.signature(PNML_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -860,44 +1102,44 @@ def test_netcontent_constructor_args():
 
 
 
-def test_pnml::referenceplace_is_not_abstract():
-    assert not inspect.isabstract(PNML::ReferencePlace)
+def test_pnml_referencetransition_is_not_abstract():
+    assert not inspect.isabstract(PNML_ReferenceTransition)
 
 
-def test_pnml::referenceplace_constructor_exists():
-    assert callable(PNML::ReferencePlace.__init__)
+def test_pnml_referencetransition_constructor_exists():
+    assert callable(PNML_ReferenceTransition.__init__)
 
 
-def test_pnml::referenceplace_constructor_args():
-    sig = inspect.signature(PNML::ReferencePlace.__init__)
+def test_pnml_referencetransition_constructor_args():
+    sig = inspect.signature(PNML_ReferenceTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::referencetransition_is_not_abstract():
-    assert not inspect.isabstract(PNML::ReferenceTransition)
+def test_pnml_referenceplace_is_not_abstract():
+    assert not inspect.isabstract(PNML_ReferencePlace)
 
 
-def test_pnml::referencetransition_constructor_exists():
-    assert callable(PNML::ReferenceTransition.__init__)
+def test_pnml_referenceplace_constructor_exists():
+    assert callable(PNML_ReferencePlace.__init__)
 
 
-def test_pnml::referencetransition_constructor_args():
-    sig = inspect.signature(PNML::ReferenceTransition.__init__)
+def test_pnml_referenceplace_constructor_args():
+    sig = inspect.signature(PNML_ReferencePlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::netcontentelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetContentElement)
+def test_pnml_netcontentelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetContentElement)
 
 
-def test_pnml::netcontentelement_constructor_exists():
-    assert callable(PNML::NetContentElement.__init__)
+def test_pnml_netcontentelement_constructor_exists():
+    assert callable(PNML_NetContentElement.__init__)
 
 
-def test_pnml::netcontentelement_constructor_args():
-    sig = inspect.signature(PNML::NetContentElement.__init__)
+def test_pnml_netcontentelement_constructor_args():
+    sig = inspect.signature(PNML_NetContentElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -930,107 +1172,107 @@ def test_idedelement_constructor_args():
 
 
 
-def test_pnml::arc_is_not_abstract():
-    assert not inspect.isabstract(PNML::Arc)
+def test_pnml_arc_is_not_abstract():
+    assert not inspect.isabstract(PNML_Arc)
 
 
-def test_pnml::arc_constructor_exists():
-    assert callable(PNML::Arc.__init__)
+def test_pnml_arc_constructor_exists():
+    assert callable(PNML_Arc.__init__)
 
 
-def test_pnml::arc_constructor_args():
-    sig = inspect.signature(PNML::Arc.__init__)
+def test_pnml_arc_constructor_args():
+    sig = inspect.signature(PNML_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::page_is_not_abstract():
-    assert not inspect.isabstract(PNML::Page)
+def test_pnml_page_is_not_abstract():
+    assert not inspect.isabstract(PNML_Page)
 
 
-def test_pnml::page_constructor_exists():
-    assert callable(PNML::Page.__init__)
+def test_pnml_page_constructor_exists():
+    assert callable(PNML_Page.__init__)
 
 
-def test_pnml::page_constructor_args():
-    sig = inspect.signature(PNML::Page.__init__)
+def test_pnml_page_constructor_args():
+    sig = inspect.signature(PNML_Page.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::netelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetElement)
+def test_pnml_instance_is_not_abstract():
+    assert not inspect.isabstract(PNML_Instance)
 
 
-def test_pnml::netelement_constructor_exists():
-    assert callable(PNML::NetElement.__init__)
+def test_pnml_instance_constructor_exists():
+    assert callable(PNML_Instance.__init__)
 
 
-def test_pnml::netelement_constructor_args():
-    sig = inspect.signature(PNML::NetElement.__init__)
+def test_pnml_instance_constructor_args():
+    sig = inspect.signature(PNML_Instance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::node_is_not_abstract():
-    assert not inspect.isabstract(PNML::Node)
+def test_pnml_node_is_not_abstract():
+    assert not inspect.isabstract(PNML_Node)
 
 
-def test_pnml::node_constructor_exists():
-    assert callable(PNML::Node.__init__)
+def test_pnml_node_constructor_exists():
+    assert callable(PNML_Node.__init__)
 
 
-def test_pnml::node_constructor_args():
-    sig = inspect.signature(PNML::Node.__init__)
+def test_pnml_node_constructor_args():
+    sig = inspect.signature(PNML_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::instance_is_not_abstract():
-    assert not inspect.isabstract(PNML::Instance)
+def test_pnml_netelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetElement)
 
 
-def test_pnml::instance_constructor_exists():
-    assert callable(PNML::Instance.__init__)
+def test_pnml_netelement_constructor_exists():
+    assert callable(PNML_NetElement.__init__)
 
 
-def test_pnml::instance_constructor_args():
-    sig = inspect.signature(PNML::Instance.__init__)
+def test_pnml_netelement_constructor_args():
+    sig = inspect.signature(PNML_NetElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::module_is_not_abstract():
-    assert not inspect.isabstract(PNML::Module)
+def test_pnml_module_is_not_abstract():
+    assert not inspect.isabstract(PNML_Module)
 
 
-def test_pnml::module_constructor_exists():
-    assert callable(PNML::Module.__init__)
+def test_pnml_module_constructor_exists():
+    assert callable(PNML_Module.__init__)
 
 
-def test_pnml::module_constructor_args():
-    sig = inspect.signature(PNML::Module.__init__)
+def test_pnml_module_constructor_args():
+    sig = inspect.signature(PNML_Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::idedelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::IdedElement)
+def test_pnml_idedelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_IdedElement)
 
 
-def test_pnml::idedelement_constructor_exists():
-    assert callable(PNML::IdedElement.__init__)
+def test_pnml_idedelement_constructor_exists():
+    assert callable(PNML_IdedElement.__init__)
 
 
-def test_pnml::idedelement_constructor_args():
-    sig = inspect.signature(PNML::IdedElement.__init__)
+def test_pnml_idedelement_constructor_args():
+    sig = inspect.signature(PNML_IdedElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_pnml::idedelement_has_id():
-    assert hasattr(PNML::IdedElement, "id")
+def test_pnml_idedelement_has_id():
+    assert hasattr(PNML_IdedElement, "id")
     descriptor = None
-    for klass in PNML::IdedElement.__mro__:
+    for klass in PNML_IdedElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1052,37 +1294,37 @@ def test_uri_constructor_args():
 
 
 
-def test_pnml::pnmldocument_is_not_abstract():
-    assert not inspect.isabstract(PNML::PNMLDocument)
+def test_pnml_pnmldocument_is_not_abstract():
+    assert not inspect.isabstract(PNML_PNMLDocument)
 
 
-def test_pnml::pnmldocument_constructor_exists():
-    assert callable(PNML::PNMLDocument.__init__)
+def test_pnml_pnmldocument_constructor_exists():
+    assert callable(PNML_PNMLDocument.__init__)
 
 
-def test_pnml::pnmldocument_constructor_args():
-    sig = inspect.signature(PNML::PNMLDocument.__init__)
+def test_pnml_pnmldocument_constructor_args():
+    sig = inspect.signature(PNML_PNMLDocument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::ncname_is_not_abstract():
-    assert not inspect.isabstract(PNML::NCName)
+def test_pnml_ncname_is_not_abstract():
+    assert not inspect.isabstract(PNML_NCName)
 
 
-def test_pnml::ncname_constructor_exists():
-    assert callable(PNML::NCName.__init__)
+def test_pnml_ncname_constructor_exists():
+    assert callable(PNML_NCName.__init__)
 
 
-def test_pnml::ncname_constructor_args():
-    sig = inspect.signature(PNML::NCName.__init__)
+def test_pnml_ncname_constructor_args():
+    sig = inspect.signature(PNML_NCName.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_pnml::ncname_has_value():
-    assert hasattr(PNML::NCName, "value")
+def test_pnml_ncname_has_value():
+    assert hasattr(PNML_NCName, "value")
     descriptor = None
-    for klass in PNML::NCName.__mro__:
+    for klass in PNML_NCName.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1090,317 +1332,91 @@ def test_pnml::ncname_has_value():
 
 
 
-def test_pnml::anyelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::AnyElement)
+def test_pnml_anyelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_AnyElement)
 
 
-def test_pnml::anyelement_constructor_exists():
-    assert callable(PNML::AnyElement.__init__)
+def test_pnml_anyelement_constructor_exists():
+    assert callable(PNML_AnyElement.__init__)
 
 
-def test_pnml::anyelement_constructor_args():
-    sig = inspect.signature(PNML::AnyElement.__init__)
+def test_pnml_anyelement_constructor_args():
+    sig = inspect.signature(PNML_AnyElement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_pnml::anyelement_has_name():
-    assert hasattr(PNML::AnyElement, "name")
+def test_pnml_anyelement_has_text():
+    assert hasattr(PNML_AnyElement, "text")
     descriptor = None
-    for klass in PNML::AnyElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::anyelement_has_text():
-    assert hasattr(PNML::AnyElement, "text")
-    descriptor = None
-    for klass in PNML::AnyElement.__mro__:
+    for klass in PNML_AnyElement.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
+def test_pnml_anyelement_has_name():
+    assert hasattr(PNML_AnyElement, "name")
+    descriptor = None
+    for klass in PNML_AnyElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_pnml::color_is_not_abstract():
-    assert not inspect.isabstract(PNML::Color)
+
+def test_pnml_color_is_not_abstract():
+    assert not inspect.isabstract(PNML_Color)
 
 
-def test_pnml::color_constructor_exists():
-    assert callable(PNML::Color.__init__)
+def test_pnml_color_constructor_exists():
+    assert callable(PNML_Color.__init__)
 
 
-def test_pnml::color_constructor_args():
-    sig = inspect.signature(PNML::Color.__init__)
+def test_pnml_color_constructor_args():
+    sig = inspect.signature(PNML_Color.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::uri_is_not_abstract():
-    assert not inspect.isabstract(PNML::URI)
+def test_pnml_uri_is_not_abstract():
+    assert not inspect.isabstract(PNML_URI)
 
 
-def test_pnml::uri_constructor_exists():
-    assert callable(PNML::URI.__init__)
+def test_pnml_uri_constructor_exists():
+    assert callable(PNML_URI.__init__)
 
 
-def test_pnml::uri_constructor_args():
-    sig = inspect.signature(PNML::URI.__init__)
+def test_pnml_uri_constructor_args():
+    sig = inspect.signature(PNML_URI.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_pnml::uri_has_value():
-    assert hasattr(PNML::URI, "value")
+def test_pnml_uri_has_value():
+    assert hasattr(PNML_URI, "value")
     descriptor = None
-    for klass in PNML::URI.__mro__:
+    for klass in PNML_URI.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_pnml::font_is_not_abstract():
-    assert not inspect.isabstract(PNML::Font)
-
-
-def test_pnml::font_constructor_exists():
-    assert callable(PNML::Font.__init__)
-
-
-def test_pnml::font_constructor_args():
-    sig = inspect.signature(PNML::Font.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-    assert "weight" in params, "Missing parameter 'weight'"
-    assert "decoration" in params, "Missing parameter 'decoration'"
-    assert "size" in params, "Missing parameter 'size'"
-    assert "family" in params, "Missing parameter 'family'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "rotation" in params, "Missing parameter 'rotation'"
-
-def test_pnml::font_has_style():
-    assert hasattr(PNML::Font, "style")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::font_has_weight():
-    assert hasattr(PNML::Font, "weight")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::font_has_decoration():
-    assert hasattr(PNML::Font, "decoration")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "decoration" in klass.__dict__:
-            descriptor = klass.__dict__["decoration"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::font_has_size():
-    assert hasattr(PNML::Font, "size")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::font_has_family():
-    assert hasattr(PNML::Font, "family")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "family" in klass.__dict__:
-            descriptor = klass.__dict__["family"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::font_has_align():
-    assert hasattr(PNML::Font, "align")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::font_has_rotation():
-    assert hasattr(PNML::Font, "rotation")
-    descriptor = None
-    for klass in PNML::Font.__mro__:
-        if "rotation" in klass.__dict__:
-            descriptor = klass.__dict__["rotation"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_color_is_not_abstract():
-    assert not inspect.isabstract(Color)
-
-
-def test_color_constructor_exists():
-    assert callable(Color.__init__)
-
-
-def test_color_constructor_args():
-    sig = inspect.signature(Color.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pnml::fill_is_not_abstract():
-    assert not inspect.isabstract(PNML::Fill)
-
-
-def test_pnml::fill_constructor_exists():
-    assert callable(PNML::Fill.__init__)
-
-
-def test_pnml::fill_constructor_args():
-    sig = inspect.signature(PNML::Fill.__init__)
-    params = list(sig.parameters.keys())
-    assert "gradientrotation" in params, "Missing parameter 'gradientrotation'"
-
-def test_pnml::fill_has_gradientrotation():
-    assert hasattr(PNML::Fill, "gradientrotation")
-    descriptor = None
-    for klass in PNML::Fill.__mro__:
-        if "gradientrotation" in klass.__dict__:
-            descriptor = klass.__dict__["gradientrotation"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pnml::dimension_is_not_abstract():
-    assert not inspect.isabstract(PNML::Dimension)
-
-
-def test_pnml::dimension_constructor_exists():
-    assert callable(PNML::Dimension.__init__)
-
-
-def test_pnml::dimension_constructor_args():
-    sig = inspect.signature(PNML::Dimension.__init__)
-    params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_pnml::dimension_has_height():
-    assert hasattr(PNML::Dimension, "height")
-    descriptor = None
-    for klass in PNML::Dimension.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::dimension_has_width():
-    assert hasattr(PNML::Dimension, "width")
-    descriptor = None
-    for klass in PNML::Dimension.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pnml::line_is_not_abstract():
-    assert not inspect.isabstract(PNML::Line)
-
-
-def test_pnml::line_constructor_exists():
-    assert callable(PNML::Line.__init__)
-
-
-def test_pnml::line_constructor_args():
-    sig = inspect.signature(PNML::Line.__init__)
-    params = list(sig.parameters.keys())
-    assert "width" in params, "Missing parameter 'width'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "shape" in params, "Missing parameter 'shape'"
-
-def test_pnml::line_has_width():
-    assert hasattr(PNML::Line, "width")
-    descriptor = None
-    for klass in PNML::Line.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::line_has_style():
-    assert hasattr(PNML::Line, "style")
-    descriptor = None
-    for klass in PNML::Line.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::line_has_shape():
-    assert hasattr(PNML::Line, "shape")
-    descriptor = None
-    for klass in PNML::Line.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pnml::pagegraphics_is_not_abstract():
-    assert not inspect.isabstract(PNML::PageGraphics)
-
-
-def test_pnml::pagegraphics_constructor_exists():
-    assert callable(PNML::PageGraphics.__init__)
-
-
-def test_pnml::pagegraphics_constructor_args():
-    sig = inspect.signature(PNML::PageGraphics.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_font_is_not_abstract():
-    assert not inspect.isabstract(Font)
-
-
-def test_font_constructor_exists():
-    assert callable(Font.__init__)
-
-
-def test_font_constructor_args():
-    sig = inspect.signature(Font.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_offset_is_not_abstract():
-    assert not inspect.isabstract(Offset)
-
-
-def test_offset_constructor_exists():
-    assert callable(Offset.__init__)
-
-
-def test_offset_constructor_args():
-    sig = inspect.signature(Offset.__init__)
-    params = list(sig.parameters.keys())
+def test_styletype_exists():
+    # Check that the Enumeration exists
+    assert StyleType is not None
+
+def test_styletype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in StyleType]
+    expected_literals = [
+        "sttsolid",
+        "sttdot",
+        "sttdash",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in StyleType"
 
 def test_shapetype_exists():
     # Check that the Enumeration exists
@@ -1410,8 +1426,8 @@ def test_shapetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ShapeType]
     expected_literals = [
-        "shtline",
         "shtcurve",
+        "shtline",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1441,9 +1457,9 @@ def test_decorationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DecorationType]
     expected_literals = [
+        "dtlinethrough",
         "dtoverligne",
         "dtunderligne",
-        "dtlinethrough",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1465,22 +1481,6 @@ def test_aligntype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AlignType"
 
-def test_styletype_exists():
-    # Check that the Enumeration exists
-    assert StyleType is not None
-
-def test_styletype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in StyleType]
-    expected_literals = [
-        "sttdash",
-        "sttdot",
-        "sttsolid",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in StyleType"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1493,36 +1493,86 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+PNML_Font_strategy = st.builds(
+    PNML_Font,
+    family=
+        safe_text,
+    style=
+        safe_text,
+    align=
+        safe_text,
+    decoration=
+        safe_text,
+    rotation=
+        safe_text,
+    size=
+        safe_text,
+    weight=
+        safe_text
+)
+Color_strategy = st.builds(
+    Color,
+)
+PNML_Fill_strategy = st.builds(
+    PNML_Fill,
+    gradientrotation=
+        safe_text
+)
+PNML_Dimension_strategy = st.builds(
+    PNML_Dimension,
+    width=
+        safe_text,
+    height=
+        safe_text
+)
+PNML_Line_strategy = st.builds(
+    PNML_Line,
+    shape=
+        safe_text,
+    style=
+        safe_text,
+    width=
+        safe_text
+)
+Font_strategy = st.builds(
+    Font,
+)
+Offset_strategy = st.builds(
+    Offset,
+)
 Coordinate_strategy = st.builds(
     Coordinate,
 )
-PNML::Offset_strategy = st.builds(
-    PNML::Offset,
+PNML_Offset_strategy = st.builds(
+    PNML_Offset,
 )
-PNML::Position_strategy = st.builds(
-    PNML::Position,
+PNML_Position_strategy = st.builds(
+    PNML_Position,
 )
-PNML::Coordinate_strategy = st.builds(
-    PNML::Coordinate,
-    y=
-        safe_text,
+PNML_Coordinate_strategy = st.builds(
+    PNML_Coordinate,
     x=
+        safe_text,
+    y=
         safe_text
 )
 Graphics_strategy = st.builds(
     Graphics,
 )
-PNML::AnnotationGraphics_strategy = st.builds(
-    PNML::AnnotationGraphics,
+PNML_PageGraphics_strategy = st.builds(
+    PNML_PageGraphics,
 )
-PNML::NodeGraphics_strategy = st.builds(
-    PNML::NodeGraphics,
+PNML_AnnotationGraphics_strategy = st.builds(
+    PNML_AnnotationGraphics,
 )
-PNML::NetGraphics_strategy = st.builds(
-    PNML::NetGraphics,
+PNML_NodeGraphics_strategy = st.builds(
+    PNML_NodeGraphics,
 )
-PNML::Graphics_strategy = st.builds(
-    PNML::Graphics,
+PNML_NetGraphics_strategy = st.builds(
+    PNML_NetGraphics,
+)
+PNML_Graphics_strategy = st.builds(
+    PNML_Graphics,
 )
 InitialMarking_strategy = st.builds(
     InitialMarking,
@@ -1530,8 +1580,8 @@ InitialMarking_strategy = st.builds(
 NodeGraphics_strategy = st.builds(
     NodeGraphics,
 )
-PNML::EdgeGraphics_strategy = st.builds(
-    PNML::EdgeGraphics,
+PNML_EdgeGraphics_strategy = st.builds(
+    PNML_EdgeGraphics,
 )
 Line_strategy = st.builds(
     Line,
@@ -1545,8 +1595,8 @@ Dimension_strategy = st.builds(
 Position_strategy = st.builds(
     Position,
 )
-PNML::ImportNode_strategy = st.builds(
-    PNML::ImportNode,
+PNML_ImportNode_strategy = st.builds(
+    PNML_ImportNode,
 )
 ImportNode_strategy = st.builds(
     ImportNode,
@@ -1566,34 +1616,34 @@ Inscription_strategy = st.builds(
 EdgeGraphics_strategy = st.builds(
     EdgeGraphics,
 )
-PNML::Label_strategy = st.builds(
-    PNML::Label,
+PNML_Label_strategy = st.builds(
+    PNML_Label,
     text=
         safe_text
 )
 NetContentElement_strategy = st.builds(
     NetContentElement,
 )
-PNML::Transition_strategy = st.builds(
-    PNML::Transition,
+PNML_Transition_strategy = st.builds(
+    PNML_Transition,
 )
-PNML::Place_strategy = st.builds(
-    PNML::Place,
+PNML_Place_strategy = st.builds(
+    PNML_Place,
 )
 Place_strategy = st.builds(
     Place,
 )
-PNML::InitialMarking_strategy = st.builds(
-    PNML::InitialMarking,
+PNML_InitialMarking_strategy = st.builds(
+    PNML_InitialMarking,
 )
 PageGraphics_strategy = st.builds(
     PageGraphics,
 )
-PNML::Inscription_strategy = st.builds(
-    PNML::Inscription,
+PNML_Inscription_strategy = st.builds(
+    PNML_Inscription,
 )
-PNML::Name_strategy = st.builds(
-    PNML::Name,
+PNML_Name_strategy = st.builds(
+    PNML_Name,
 )
 Name_strategy = st.builds(
     Name,
@@ -1610,8 +1660,8 @@ AnnotationGraphics_strategy = st.builds(
 Label_strategy = st.builds(
     Label,
 )
-PNML::LabeledElement_strategy = st.builds(
-    PNML::LabeledElement,
+PNML_LabeledElement_strategy = st.builds(
+    PNML_LabeledElement,
 )
 Arc_strategy = st.builds(
     Arc,
@@ -1619,8 +1669,8 @@ Arc_strategy = st.builds(
 AnyElement_strategy = st.builds(
     AnyElement,
 )
-PNML::ToolSpecific_strategy = st.builds(
-    PNML::ToolSpecific,
+PNML_ToolSpecific_strategy = st.builds(
+    PNML_ToolSpecific,
     version=
         safe_text,
     tool=
@@ -1629,8 +1679,8 @@ PNML::ToolSpecific_strategy = st.builds(
 Page_strategy = st.builds(
     Page,
 )
-PNML::NetContent_strategy = st.builds(
-    PNML::NetContent,
+PNML_NetContent_strategy = st.builds(
+    PNML_NetContent,
 )
 Module_strategy = st.builds(
     Module,
@@ -1644,11 +1694,11 @@ Reference_strategy = st.builds(
 Node_strategy = st.builds(
     Node,
 )
-PNML::Reference_strategy = st.builds(
-    PNML::Reference,
+PNML_Reference_strategy = st.builds(
+    PNML_Reference,
 )
-PNML::Interface_strategy = st.builds(
-    PNML::Interface,
+PNML_Interface_strategy = st.builds(
+    PNML_Interface,
 )
 PNMLDocument_strategy = st.builds(
     PNMLDocument,
@@ -1656,14 +1706,14 @@ PNMLDocument_strategy = st.builds(
 NetContent_strategy = st.builds(
     NetContent,
 )
-PNML::ReferencePlace_strategy = st.builds(
-    PNML::ReferencePlace,
+PNML_ReferenceTransition_strategy = st.builds(
+    PNML_ReferenceTransition,
 )
-PNML::ReferenceTransition_strategy = st.builds(
-    PNML::ReferenceTransition,
+PNML_ReferencePlace_strategy = st.builds(
+    PNML_ReferencePlace,
 )
-PNML::NetContentElement_strategy = st.builds(
-    PNML::NetContentElement,
+PNML_NetContentElement_strategy = st.builds(
+    PNML_NetContentElement,
 )
 Interface_strategy = st.builds(
     Interface,
@@ -1671,172 +1721,260 @@ Interface_strategy = st.builds(
 IdedElement_strategy = st.builds(
     IdedElement,
 )
-PNML::Arc_strategy = st.builds(
-    PNML::Arc,
+PNML_Arc_strategy = st.builds(
+    PNML_Arc,
 )
-PNML::Page_strategy = st.builds(
-    PNML::Page,
+PNML_Page_strategy = st.builds(
+    PNML_Page,
 )
-PNML::NetElement_strategy = st.builds(
-    PNML::NetElement,
+PNML_Instance_strategy = st.builds(
+    PNML_Instance,
 )
-PNML::Node_strategy = st.builds(
-    PNML::Node,
+PNML_Node_strategy = st.builds(
+    PNML_Node,
 )
-PNML::Instance_strategy = st.builds(
-    PNML::Instance,
+PNML_NetElement_strategy = st.builds(
+    PNML_NetElement,
 )
-PNML::Module_strategy = st.builds(
-    PNML::Module,
+PNML_Module_strategy = st.builds(
+    PNML_Module,
 )
-PNML::IdedElement_strategy = st.builds(
-    PNML::IdedElement,
+PNML_IdedElement_strategy = st.builds(
+    PNML_IdedElement,
     id=
         safe_text
 )
 URI_strategy = st.builds(
     URI,
 )
-PNML::PNMLDocument_strategy = st.builds(
-    PNML::PNMLDocument,
+PNML_PNMLDocument_strategy = st.builds(
+    PNML_PNMLDocument,
 )
-PNML::NCName_strategy = st.builds(
-    PNML::NCName,
+PNML_NCName_strategy = st.builds(
+    PNML_NCName,
     value=
         safe_text
 )
-PNML::AnyElement_strategy = st.builds(
-    PNML::AnyElement,
-    name=
-        safe_text,
+PNML_AnyElement_strategy = st.builds(
+    PNML_AnyElement,
     text=
+        safe_text,
+    name=
         safe_text
 )
-PNML::Color_strategy = st.builds(
-    PNML::Color,
+PNML_Color_strategy = st.builds(
+    PNML_Color,
 )
-PNML::URI_strategy = st.builds(
-    PNML::URI,
+PNML_URI_strategy = st.builds(
+    PNML_URI,
     value=
         safe_text
 )
-PNML::Font_strategy = st.builds(
-    PNML::Font,
-    style=
-        safe_text,
-    weight=
-        safe_text,
-    decoration=
-        safe_text,
-    size=
-        safe_text,
-    family=
-        safe_text,
-    align=
-        safe_text,
-    rotation=
-        safe_text
-)
-Color_strategy = st.builds(
-    Color,
-)
-PNML::Fill_strategy = st.builds(
-    PNML::Fill,
-    gradientrotation=
-        safe_text
-)
-PNML::Dimension_strategy = st.builds(
-    PNML::Dimension,
-    height=
-        safe_text,
-    width=
-        safe_text
-)
-PNML::Line_strategy = st.builds(
-    PNML::Line,
-    width=
-        safe_text,
-    style=
-        safe_text,
-    shape=
-        safe_text
-)
-PNML::PageGraphics_strategy = st.builds(
-    PNML::PageGraphics,
-)
-Font_strategy = st.builds(
-    Font,
-)
-Offset_strategy = st.builds(
-    Offset,
-)
+
+@given(instance=PNML_Font_strategy)
+@settings(max_examples=50)
+def test_pnml_font_instantiation(instance):
+    assert isinstance(instance, PNML_Font)
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_family_setter(instance):
+    original = instance.family
+    instance.family = original
+    assert instance.family == original
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_decoration_setter(instance):
+    original = instance.decoration
+    instance.decoration = original
+    assert instance.decoration == original
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_rotation_setter(instance):
+    original = instance.rotation
+    instance.rotation = original
+    assert instance.rotation == original
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=PNML_Font_strategy)
+def test_pnml_font_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+@given(instance=Color_strategy)
+@settings(max_examples=50)
+def test_color_instantiation(instance):
+    assert isinstance(instance, Color)
+
+@given(instance=PNML_Fill_strategy)
+@settings(max_examples=50)
+def test_pnml_fill_instantiation(instance):
+    assert isinstance(instance, PNML_Fill)
+
+
+
+@given(instance=PNML_Fill_strategy)
+def test_pnml_fill_gradientrotation_setter(instance):
+    original = instance.gradientrotation
+    instance.gradientrotation = original
+    assert instance.gradientrotation == original
+
+@given(instance=PNML_Dimension_strategy)
+@settings(max_examples=50)
+def test_pnml_dimension_instantiation(instance):
+    assert isinstance(instance, PNML_Dimension)
+
+
+
+@given(instance=PNML_Dimension_strategy)
+def test_pnml_dimension_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=PNML_Dimension_strategy)
+def test_pnml_dimension_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+@given(instance=PNML_Line_strategy)
+@settings(max_examples=50)
+def test_pnml_line_instantiation(instance):
+    assert isinstance(instance, PNML_Line)
+
+
+
+@given(instance=PNML_Line_strategy)
+def test_pnml_line_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+
+
+@given(instance=PNML_Line_strategy)
+def test_pnml_line_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=PNML_Line_strategy)
+def test_pnml_line_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+@given(instance=Font_strategy)
+@settings(max_examples=50)
+def test_font_instantiation(instance):
+    assert isinstance(instance, Font)
+
+@given(instance=Offset_strategy)
+@settings(max_examples=50)
+def test_offset_instantiation(instance):
+    assert isinstance(instance, Offset)
 
 @given(instance=Coordinate_strategy)
 @settings(max_examples=50)
 def test_coordinate_instantiation(instance):
     assert isinstance(instance, Coordinate)
 
-@given(instance=PNML::Offset_strategy)
+@given(instance=PNML_Offset_strategy)
 @settings(max_examples=50)
-def test_pnml::offset_instantiation(instance):
-    assert isinstance(instance, PNML::Offset)
+def test_pnml_offset_instantiation(instance):
+    assert isinstance(instance, PNML_Offset)
 
-@given(instance=PNML::Position_strategy)
+@given(instance=PNML_Position_strategy)
 @settings(max_examples=50)
-def test_pnml::position_instantiation(instance):
-    assert isinstance(instance, PNML::Position)
+def test_pnml_position_instantiation(instance):
+    assert isinstance(instance, PNML_Position)
 
-@given(instance=PNML::Coordinate_strategy)
+@given(instance=PNML_Coordinate_strategy)
 @settings(max_examples=50)
-def test_pnml::coordinate_instantiation(instance):
-    assert isinstance(instance, PNML::Coordinate)
-
-@given(instance=PNML::Coordinate_strategy)
-def test_pnml::coordinate_y_type(instance):
-    assert isinstance(instance.y, str)
+def test_pnml_coordinate_instantiation(instance):
+    assert isinstance(instance, PNML_Coordinate)
 
 
-@given(instance=PNML::Coordinate_strategy)
-def test_pnml::coordinate_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
 
-@given(instance=PNML::Coordinate_strategy)
-def test_pnml::coordinate_x_type(instance):
-    assert isinstance(instance.x, str)
-
-
-@given(instance=PNML::Coordinate_strategy)
-def test_pnml::coordinate_x_setter(instance):
+@given(instance=PNML_Coordinate_strategy)
+def test_pnml_coordinate_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
+
+
+
+@given(instance=PNML_Coordinate_strategy)
+def test_pnml_coordinate_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
 
 @given(instance=Graphics_strategy)
 @settings(max_examples=50)
 def test_graphics_instantiation(instance):
     assert isinstance(instance, Graphics)
 
-@given(instance=PNML::AnnotationGraphics_strategy)
+@given(instance=PNML_PageGraphics_strategy)
 @settings(max_examples=50)
-def test_pnml::annotationgraphics_instantiation(instance):
-    assert isinstance(instance, PNML::AnnotationGraphics)
+def test_pnml_pagegraphics_instantiation(instance):
+    assert isinstance(instance, PNML_PageGraphics)
 
-@given(instance=PNML::NodeGraphics_strategy)
+@given(instance=PNML_AnnotationGraphics_strategy)
 @settings(max_examples=50)
-def test_pnml::nodegraphics_instantiation(instance):
-    assert isinstance(instance, PNML::NodeGraphics)
+def test_pnml_annotationgraphics_instantiation(instance):
+    assert isinstance(instance, PNML_AnnotationGraphics)
 
-@given(instance=PNML::NetGraphics_strategy)
+@given(instance=PNML_NodeGraphics_strategy)
 @settings(max_examples=50)
-def test_pnml::netgraphics_instantiation(instance):
-    assert isinstance(instance, PNML::NetGraphics)
+def test_pnml_nodegraphics_instantiation(instance):
+    assert isinstance(instance, PNML_NodeGraphics)
 
-@given(instance=PNML::Graphics_strategy)
+@given(instance=PNML_NetGraphics_strategy)
 @settings(max_examples=50)
-def test_pnml::graphics_instantiation(instance):
-    assert isinstance(instance, PNML::Graphics)
+def test_pnml_netgraphics_instantiation(instance):
+    assert isinstance(instance, PNML_NetGraphics)
+
+@given(instance=PNML_Graphics_strategy)
+@settings(max_examples=50)
+def test_pnml_graphics_instantiation(instance):
+    assert isinstance(instance, PNML_Graphics)
 
 @given(instance=InitialMarking_strategy)
 @settings(max_examples=50)
@@ -1848,10 +1986,10 @@ def test_initialmarking_instantiation(instance):
 def test_nodegraphics_instantiation(instance):
     assert isinstance(instance, NodeGraphics)
 
-@given(instance=PNML::EdgeGraphics_strategy)
+@given(instance=PNML_EdgeGraphics_strategy)
 @settings(max_examples=50)
-def test_pnml::edgegraphics_instantiation(instance):
-    assert isinstance(instance, PNML::EdgeGraphics)
+def test_pnml_edgegraphics_instantiation(instance):
+    assert isinstance(instance, PNML_EdgeGraphics)
 
 @given(instance=Line_strategy)
 @settings(max_examples=50)
@@ -1873,10 +2011,10 @@ def test_dimension_instantiation(instance):
 def test_position_instantiation(instance):
     assert isinstance(instance, Position)
 
-@given(instance=PNML::ImportNode_strategy)
+@given(instance=PNML_ImportNode_strategy)
 @settings(max_examples=50)
-def test_pnml::importnode_instantiation(instance):
-    assert isinstance(instance, PNML::ImportNode)
+def test_pnml_importnode_instantiation(instance):
+    assert isinstance(instance, PNML_ImportNode)
 
 @given(instance=ImportNode_strategy)
 @settings(max_examples=50)
@@ -1908,18 +2046,15 @@ def test_inscription_instantiation(instance):
 def test_edgegraphics_instantiation(instance):
     assert isinstance(instance, EdgeGraphics)
 
-@given(instance=PNML::Label_strategy)
+@given(instance=PNML_Label_strategy)
 @settings(max_examples=50)
-def test_pnml::label_instantiation(instance):
-    assert isinstance(instance, PNML::Label)
-
-@given(instance=PNML::Label_strategy)
-def test_pnml::label_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_pnml_label_instantiation(instance):
+    assert isinstance(instance, PNML_Label)
 
 
-@given(instance=PNML::Label_strategy)
-def test_pnml::label_text_setter(instance):
+
+@given(instance=PNML_Label_strategy)
+def test_pnml_label_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -1929,40 +2064,40 @@ def test_pnml::label_text_setter(instance):
 def test_netcontentelement_instantiation(instance):
     assert isinstance(instance, NetContentElement)
 
-@given(instance=PNML::Transition_strategy)
+@given(instance=PNML_Transition_strategy)
 @settings(max_examples=50)
-def test_pnml::transition_instantiation(instance):
-    assert isinstance(instance, PNML::Transition)
+def test_pnml_transition_instantiation(instance):
+    assert isinstance(instance, PNML_Transition)
 
-@given(instance=PNML::Place_strategy)
+@given(instance=PNML_Place_strategy)
 @settings(max_examples=50)
-def test_pnml::place_instantiation(instance):
-    assert isinstance(instance, PNML::Place)
+def test_pnml_place_instantiation(instance):
+    assert isinstance(instance, PNML_Place)
 
 @given(instance=Place_strategy)
 @settings(max_examples=50)
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=PNML::InitialMarking_strategy)
+@given(instance=PNML_InitialMarking_strategy)
 @settings(max_examples=50)
-def test_pnml::initialmarking_instantiation(instance):
-    assert isinstance(instance, PNML::InitialMarking)
+def test_pnml_initialmarking_instantiation(instance):
+    assert isinstance(instance, PNML_InitialMarking)
 
 @given(instance=PageGraphics_strategy)
 @settings(max_examples=50)
 def test_pagegraphics_instantiation(instance):
     assert isinstance(instance, PageGraphics)
 
-@given(instance=PNML::Inscription_strategy)
+@given(instance=PNML_Inscription_strategy)
 @settings(max_examples=50)
-def test_pnml::inscription_instantiation(instance):
-    assert isinstance(instance, PNML::Inscription)
+def test_pnml_inscription_instantiation(instance):
+    assert isinstance(instance, PNML_Inscription)
 
-@given(instance=PNML::Name_strategy)
+@given(instance=PNML_Name_strategy)
 @settings(max_examples=50)
-def test_pnml::name_instantiation(instance):
-    assert isinstance(instance, PNML::Name)
+def test_pnml_name_instantiation(instance):
+    assert isinstance(instance, PNML_Name)
 
 @given(instance=Name_strategy)
 @settings(max_examples=50)
@@ -1989,10 +2124,10 @@ def test_annotationgraphics_instantiation(instance):
 def test_label_instantiation(instance):
     assert isinstance(instance, Label)
 
-@given(instance=PNML::LabeledElement_strategy)
+@given(instance=PNML_LabeledElement_strategy)
 @settings(max_examples=50)
-def test_pnml::labeledelement_instantiation(instance):
-    assert isinstance(instance, PNML::LabeledElement)
+def test_pnml_labeledelement_instantiation(instance):
+    assert isinstance(instance, PNML_LabeledElement)
 
 @given(instance=Arc_strategy)
 @settings(max_examples=50)
@@ -2004,29 +2139,23 @@ def test_arc_instantiation(instance):
 def test_anyelement_instantiation(instance):
     assert isinstance(instance, AnyElement)
 
-@given(instance=PNML::ToolSpecific_strategy)
+@given(instance=PNML_ToolSpecific_strategy)
 @settings(max_examples=50)
-def test_pnml::toolspecific_instantiation(instance):
-    assert isinstance(instance, PNML::ToolSpecific)
-
-@given(instance=PNML::ToolSpecific_strategy)
-def test_pnml::toolspecific_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_pnml_toolspecific_instantiation(instance):
+    assert isinstance(instance, PNML_ToolSpecific)
 
 
-@given(instance=PNML::ToolSpecific_strategy)
-def test_pnml::toolspecific_version_setter(instance):
+
+@given(instance=PNML_ToolSpecific_strategy)
+def test_pnml_toolspecific_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=PNML::ToolSpecific_strategy)
-def test_pnml::toolspecific_tool_type(instance):
-    assert isinstance(instance.tool, str)
 
 
-@given(instance=PNML::ToolSpecific_strategy)
-def test_pnml::toolspecific_tool_setter(instance):
+@given(instance=PNML_ToolSpecific_strategy)
+def test_pnml_toolspecific_tool_setter(instance):
     original = instance.tool
     instance.tool = original
     assert instance.tool == original
@@ -2036,10 +2165,10 @@ def test_pnml::toolspecific_tool_setter(instance):
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=PNML::NetContent_strategy)
+@given(instance=PNML_NetContent_strategy)
 @settings(max_examples=50)
-def test_pnml::netcontent_instantiation(instance):
-    assert isinstance(instance, PNML::NetContent)
+def test_pnml_netcontent_instantiation(instance):
+    assert isinstance(instance, PNML_NetContent)
 
 @given(instance=Module_strategy)
 @settings(max_examples=50)
@@ -2061,15 +2190,15 @@ def test_reference_instantiation(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=PNML::Reference_strategy)
+@given(instance=PNML_Reference_strategy)
 @settings(max_examples=50)
-def test_pnml::reference_instantiation(instance):
-    assert isinstance(instance, PNML::Reference)
+def test_pnml_reference_instantiation(instance):
+    assert isinstance(instance, PNML_Reference)
 
-@given(instance=PNML::Interface_strategy)
+@given(instance=PNML_Interface_strategy)
 @settings(max_examples=50)
-def test_pnml::interface_instantiation(instance):
-    assert isinstance(instance, PNML::Interface)
+def test_pnml_interface_instantiation(instance):
+    assert isinstance(instance, PNML_Interface)
 
 @given(instance=PNMLDocument_strategy)
 @settings(max_examples=50)
@@ -2081,20 +2210,20 @@ def test_pnmldocument_instantiation(instance):
 def test_netcontent_instantiation(instance):
     assert isinstance(instance, NetContent)
 
-@given(instance=PNML::ReferencePlace_strategy)
+@given(instance=PNML_ReferenceTransition_strategy)
 @settings(max_examples=50)
-def test_pnml::referenceplace_instantiation(instance):
-    assert isinstance(instance, PNML::ReferencePlace)
+def test_pnml_referencetransition_instantiation(instance):
+    assert isinstance(instance, PNML_ReferenceTransition)
 
-@given(instance=PNML::ReferenceTransition_strategy)
+@given(instance=PNML_ReferencePlace_strategy)
 @settings(max_examples=50)
-def test_pnml::referencetransition_instantiation(instance):
-    assert isinstance(instance, PNML::ReferenceTransition)
+def test_pnml_referenceplace_instantiation(instance):
+    assert isinstance(instance, PNML_ReferencePlace)
 
-@given(instance=PNML::NetContentElement_strategy)
+@given(instance=PNML_NetContentElement_strategy)
 @settings(max_examples=50)
-def test_pnml::netcontentelement_instantiation(instance):
-    assert isinstance(instance, PNML::NetContentElement)
+def test_pnml_netcontentelement_instantiation(instance):
+    assert isinstance(instance, PNML_NetContentElement)
 
 @given(instance=Interface_strategy)
 @settings(max_examples=50)
@@ -2106,48 +2235,45 @@ def test_interface_instantiation(instance):
 def test_idedelement_instantiation(instance):
     assert isinstance(instance, IdedElement)
 
-@given(instance=PNML::Arc_strategy)
+@given(instance=PNML_Arc_strategy)
 @settings(max_examples=50)
-def test_pnml::arc_instantiation(instance):
-    assert isinstance(instance, PNML::Arc)
+def test_pnml_arc_instantiation(instance):
+    assert isinstance(instance, PNML_Arc)
 
-@given(instance=PNML::Page_strategy)
+@given(instance=PNML_Page_strategy)
 @settings(max_examples=50)
-def test_pnml::page_instantiation(instance):
-    assert isinstance(instance, PNML::Page)
+def test_pnml_page_instantiation(instance):
+    assert isinstance(instance, PNML_Page)
 
-@given(instance=PNML::NetElement_strategy)
+@given(instance=PNML_Instance_strategy)
 @settings(max_examples=50)
-def test_pnml::netelement_instantiation(instance):
-    assert isinstance(instance, PNML::NetElement)
+def test_pnml_instance_instantiation(instance):
+    assert isinstance(instance, PNML_Instance)
 
-@given(instance=PNML::Node_strategy)
+@given(instance=PNML_Node_strategy)
 @settings(max_examples=50)
-def test_pnml::node_instantiation(instance):
-    assert isinstance(instance, PNML::Node)
+def test_pnml_node_instantiation(instance):
+    assert isinstance(instance, PNML_Node)
 
-@given(instance=PNML::Instance_strategy)
+@given(instance=PNML_NetElement_strategy)
 @settings(max_examples=50)
-def test_pnml::instance_instantiation(instance):
-    assert isinstance(instance, PNML::Instance)
+def test_pnml_netelement_instantiation(instance):
+    assert isinstance(instance, PNML_NetElement)
 
-@given(instance=PNML::Module_strategy)
+@given(instance=PNML_Module_strategy)
 @settings(max_examples=50)
-def test_pnml::module_instantiation(instance):
-    assert isinstance(instance, PNML::Module)
+def test_pnml_module_instantiation(instance):
+    assert isinstance(instance, PNML_Module)
 
-@given(instance=PNML::IdedElement_strategy)
+@given(instance=PNML_IdedElement_strategy)
 @settings(max_examples=50)
-def test_pnml::idedelement_instantiation(instance):
-    assert isinstance(instance, PNML::IdedElement)
-
-@given(instance=PNML::IdedElement_strategy)
-def test_pnml::idedelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_pnml_idedelement_instantiation(instance):
+    assert isinstance(instance, PNML_IdedElement)
 
 
-@given(instance=PNML::IdedElement_strategy)
-def test_pnml::idedelement_id_setter(instance):
+
+@given(instance=PNML_IdedElement_strategy)
+def test_pnml_idedelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -2157,254 +2283,59 @@ def test_pnml::idedelement_id_setter(instance):
 def test_uri_instantiation(instance):
     assert isinstance(instance, URI)
 
-@given(instance=PNML::PNMLDocument_strategy)
+@given(instance=PNML_PNMLDocument_strategy)
 @settings(max_examples=50)
-def test_pnml::pnmldocument_instantiation(instance):
-    assert isinstance(instance, PNML::PNMLDocument)
+def test_pnml_pnmldocument_instantiation(instance):
+    assert isinstance(instance, PNML_PNMLDocument)
 
-@given(instance=PNML::NCName_strategy)
+@given(instance=PNML_NCName_strategy)
 @settings(max_examples=50)
-def test_pnml::ncname_instantiation(instance):
-    assert isinstance(instance, PNML::NCName)
-
-@given(instance=PNML::NCName_strategy)
-def test_pnml::ncname_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_pnml_ncname_instantiation(instance):
+    assert isinstance(instance, PNML_NCName)
 
 
-@given(instance=PNML::NCName_strategy)
-def test_pnml::ncname_value_setter(instance):
+
+@given(instance=PNML_NCName_strategy)
+def test_pnml_ncname_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=PNML::AnyElement_strategy)
+@given(instance=PNML_AnyElement_strategy)
 @settings(max_examples=50)
-def test_pnml::anyelement_instantiation(instance):
-    assert isinstance(instance, PNML::AnyElement)
-
-@given(instance=PNML::AnyElement_strategy)
-def test_pnml::anyelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pnml_anyelement_instantiation(instance):
+    assert isinstance(instance, PNML_AnyElement)
 
 
-@given(instance=PNML::AnyElement_strategy)
-def test_pnml::anyelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=PNML::AnyElement_strategy)
-def test_pnml::anyelement_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=PNML::AnyElement_strategy)
-def test_pnml::anyelement_text_setter(instance):
+@given(instance=PNML_AnyElement_strategy)
+def test_pnml_anyelement_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=PNML::Color_strategy)
+
+
+@given(instance=PNML_AnyElement_strategy)
+def test_pnml_anyelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=PNML_Color_strategy)
 @settings(max_examples=50)
-def test_pnml::color_instantiation(instance):
-    assert isinstance(instance, PNML::Color)
+def test_pnml_color_instantiation(instance):
+    assert isinstance(instance, PNML_Color)
 
-@given(instance=PNML::URI_strategy)
+@given(instance=PNML_URI_strategy)
 @settings(max_examples=50)
-def test_pnml::uri_instantiation(instance):
-    assert isinstance(instance, PNML::URI)
-
-@given(instance=PNML::URI_strategy)
-def test_pnml::uri_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_pnml_uri_instantiation(instance):
+    assert isinstance(instance, PNML_URI)
 
 
-@given(instance=PNML::URI_strategy)
-def test_pnml::uri_value_setter(instance):
+
+@given(instance=PNML_URI_strategy)
+def test_pnml_uri_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=PNML::Font_strategy)
-@settings(max_examples=50)
-def test_pnml::font_instantiation(instance):
-    assert isinstance(instance, PNML::Font)
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_weight_type(instance):
-    assert isinstance(instance.weight, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_decoration_type(instance):
-    assert isinstance(instance.decoration, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_decoration_setter(instance):
-    original = instance.decoration
-    instance.decoration = original
-    assert instance.decoration == original
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_family_type(instance):
-    assert isinstance(instance.family, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_family_setter(instance):
-    original = instance.family
-    instance.family = original
-    assert instance.family == original
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
-
-
-@given(instance=PNML::Font_strategy)
-def test_pnml::font_rotation_setter(instance):
-    original = instance.rotation
-    instance.rotation = original
-    assert instance.rotation == original
-
-@given(instance=Color_strategy)
-@settings(max_examples=50)
-def test_color_instantiation(instance):
-    assert isinstance(instance, Color)
-
-@given(instance=PNML::Fill_strategy)
-@settings(max_examples=50)
-def test_pnml::fill_instantiation(instance):
-    assert isinstance(instance, PNML::Fill)
-
-@given(instance=PNML::Fill_strategy)
-def test_pnml::fill_gradientrotation_type(instance):
-    assert isinstance(instance.gradientrotation, str)
-
-
-@given(instance=PNML::Fill_strategy)
-def test_pnml::fill_gradientrotation_setter(instance):
-    original = instance.gradientrotation
-    instance.gradientrotation = original
-    assert instance.gradientrotation == original
-
-@given(instance=PNML::Dimension_strategy)
-@settings(max_examples=50)
-def test_pnml::dimension_instantiation(instance):
-    assert isinstance(instance, PNML::Dimension)
-
-@given(instance=PNML::Dimension_strategy)
-def test_pnml::dimension_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=PNML::Dimension_strategy)
-def test_pnml::dimension_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=PNML::Dimension_strategy)
-def test_pnml::dimension_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=PNML::Dimension_strategy)
-def test_pnml::dimension_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=PNML::Line_strategy)
-@settings(max_examples=50)
-def test_pnml::line_instantiation(instance):
-    assert isinstance(instance, PNML::Line)
-
-@given(instance=PNML::Line_strategy)
-def test_pnml::line_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=PNML::Line_strategy)
-def test_pnml::line_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=PNML::Line_strategy)
-def test_pnml::line_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=PNML::Line_strategy)
-def test_pnml::line_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=PNML::Line_strategy)
-def test_pnml::line_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=PNML::Line_strategy)
-def test_pnml::line_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
-
-@given(instance=PNML::PageGraphics_strategy)
-@settings(max_examples=50)
-def test_pnml::pagegraphics_instantiation(instance):
-    assert isinstance(instance, PNML::PageGraphics)
-
-@given(instance=Font_strategy)
-@settings(max_examples=50)
-def test_font_instantiation(instance):
-    assert isinstance(instance, Font)
-
-@given(instance=Offset_strategy)
-@settings(max_examples=50)
-def test_offset_instantiation(instance):
-    assert isinstance(instance, Offset)

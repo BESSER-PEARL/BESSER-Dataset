@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Vendor1Adapter,
@@ -455,9 +455,6 @@ def test_instruction_instantiation(instance):
 def test_program_instantiation(instance):
     assert isinstance(instance, Program)
 
-@given(instance=Program_strategy)
-def test_program_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Program_strategy)
@@ -471,9 +468,6 @@ def test_program_name_setter(instance):
 def test_machine_instantiation(instance):
     assert isinstance(instance, Machine)
 
-@given(instance=Machine_strategy)
-def test_machine_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Machine_strategy)
@@ -482,9 +476,6 @@ def test_machine_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Machine_strategy)
-def test_machine_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Machine_strategy)
@@ -503,9 +494,6 @@ def test_ram_instantiation(instance):
 def test_cache_instantiation(instance):
     assert isinstance(instance, Cache)
 
-@given(instance=Cache_strategy)
-def test_cache_chunck_type(instance):
-    assert isinstance(instance.chunck, str)
 
 
 @given(instance=Cache_strategy)

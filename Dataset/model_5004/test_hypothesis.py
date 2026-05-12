@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Port,
-    componentModel::errorModes,
-    componentModel::Port,
-    componentModel::ComponentFeature,
-    componentModel::OutPort,
-    componentModel::InPort,
+    componentModel_errorModes,
+    componentModel_Port,
+    componentModel_ComponentFeature,
+    componentModel_OutPort,
+    componentModel_InPort,
     SystemPortDec,
-    componentModel::SystemPortOut,
-    componentModel::SystemPortIn,
+    componentModel_SystemPortOut,
+    componentModel_SystemPortIn,
     AbstractFeatures,
-    componentModel::ComponentType,
-    componentModel::ComponentImpl,
-    componentModel::CompConnDec,
-    componentModel::AbstractFeatures,
-    componentModel::SystemPortDec,
+    componentModel_ComponentImpl,
+    componentModel_ComponentType,
+    componentModel_CompConnDec,
+    componentModel_AbstractFeatures,
+    componentModel_SystemPortDec,
     AbstractElement,
-    componentModel::SystemDec,
-    componentModel::PortType,
-    componentModel::SystemConnDec,
-    componentModel::AbstractElement,
-    componentModel::ComponentModel,
+    componentModel_SystemDec,
+    componentModel_PortType,
+    componentModel_SystemConnDec,
+    componentModel_AbstractElement,
+    componentModel_ComponentModel,
 )
 
 # =============================================================================
@@ -49,23 +49,23 @@ def test_port_constructor_args():
 
 
 
-def test_componentmodel::errormodes_is_not_abstract():
-    assert not inspect.isabstract(componentModel::errorModes)
+def test_componentmodel_errormodes_is_not_abstract():
+    assert not inspect.isabstract(componentModel_errorModes)
 
 
-def test_componentmodel::errormodes_constructor_exists():
-    assert callable(componentModel::errorModes.__init__)
+def test_componentmodel_errormodes_constructor_exists():
+    assert callable(componentModel_errorModes.__init__)
 
 
-def test_componentmodel::errormodes_constructor_args():
-    sig = inspect.signature(componentModel::errorModes.__init__)
+def test_componentmodel_errormodes_constructor_args():
+    sig = inspect.signature(componentModel_errorModes.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::errormodes_has_name():
-    assert hasattr(componentModel::errorModes, "name")
+def test_componentmodel_errormodes_has_name():
+    assert hasattr(componentModel_errorModes, "name")
     descriptor = None
-    for klass in componentModel::errorModes.__mro__:
+    for klass in componentModel_errorModes.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -73,23 +73,23 @@ def test_componentmodel::errormodes_has_name():
 
 
 
-def test_componentmodel::port_is_not_abstract():
-    assert not inspect.isabstract(componentModel::Port)
+def test_componentmodel_port_is_not_abstract():
+    assert not inspect.isabstract(componentModel_Port)
 
 
-def test_componentmodel::port_constructor_exists():
-    assert callable(componentModel::Port.__init__)
+def test_componentmodel_port_constructor_exists():
+    assert callable(componentModel_Port.__init__)
 
 
-def test_componentmodel::port_constructor_args():
-    sig = inspect.signature(componentModel::Port.__init__)
+def test_componentmodel_port_constructor_args():
+    sig = inspect.signature(componentModel_Port.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::port_has_name():
-    assert hasattr(componentModel::Port, "name")
+def test_componentmodel_port_has_name():
+    assert hasattr(componentModel_Port, "name")
     descriptor = None
-    for klass in componentModel::Port.__mro__:
+    for klass in componentModel_Port.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -97,44 +97,44 @@ def test_componentmodel::port_has_name():
 
 
 
-def test_componentmodel::componentfeature_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ComponentFeature)
+def test_componentmodel_componentfeature_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ComponentFeature)
 
 
-def test_componentmodel::componentfeature_constructor_exists():
-    assert callable(componentModel::ComponentFeature.__init__)
+def test_componentmodel_componentfeature_constructor_exists():
+    assert callable(componentModel_ComponentFeature.__init__)
 
 
-def test_componentmodel::componentfeature_constructor_args():
-    sig = inspect.signature(componentModel::ComponentFeature.__init__)
+def test_componentmodel_componentfeature_constructor_args():
+    sig = inspect.signature(componentModel_ComponentFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::outport_is_not_abstract():
-    assert not inspect.isabstract(componentModel::OutPort)
+def test_componentmodel_outport_is_not_abstract():
+    assert not inspect.isabstract(componentModel_OutPort)
 
 
-def test_componentmodel::outport_constructor_exists():
-    assert callable(componentModel::OutPort.__init__)
+def test_componentmodel_outport_constructor_exists():
+    assert callable(componentModel_OutPort.__init__)
 
 
-def test_componentmodel::outport_constructor_args():
-    sig = inspect.signature(componentModel::OutPort.__init__)
+def test_componentmodel_outport_constructor_args():
+    sig = inspect.signature(componentModel_OutPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::inport_is_not_abstract():
-    assert not inspect.isabstract(componentModel::InPort)
+def test_componentmodel_inport_is_not_abstract():
+    assert not inspect.isabstract(componentModel_InPort)
 
 
-def test_componentmodel::inport_constructor_exists():
-    assert callable(componentModel::InPort.__init__)
+def test_componentmodel_inport_constructor_exists():
+    assert callable(componentModel_InPort.__init__)
 
 
-def test_componentmodel::inport_constructor_args():
-    sig = inspect.signature(componentModel::InPort.__init__)
+def test_componentmodel_inport_constructor_args():
+    sig = inspect.signature(componentModel_InPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,30 +153,30 @@ def test_systemportdec_constructor_args():
 
 
 
-def test_componentmodel::systemportout_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SystemPortOut)
+def test_componentmodel_systemportout_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SystemPortOut)
 
 
-def test_componentmodel::systemportout_constructor_exists():
-    assert callable(componentModel::SystemPortOut.__init__)
+def test_componentmodel_systemportout_constructor_exists():
+    assert callable(componentModel_SystemPortOut.__init__)
 
 
-def test_componentmodel::systemportout_constructor_args():
-    sig = inspect.signature(componentModel::SystemPortOut.__init__)
+def test_componentmodel_systemportout_constructor_args():
+    sig = inspect.signature(componentModel_SystemPortOut.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::systemportin_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SystemPortIn)
+def test_componentmodel_systemportin_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SystemPortIn)
 
 
-def test_componentmodel::systemportin_constructor_exists():
-    assert callable(componentModel::SystemPortIn.__init__)
+def test_componentmodel_systemportin_constructor_exists():
+    assert callable(componentModel_SystemPortIn.__init__)
 
 
-def test_componentmodel::systemportin_constructor_args():
-    sig = inspect.signature(componentModel::SystemPortIn.__init__)
+def test_componentmodel_systemportin_constructor_args():
+    sig = inspect.signature(componentModel_SystemPortIn.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -195,65 +195,65 @@ def test_abstractfeatures_constructor_args():
 
 
 
-def test_componentmodel::componenttype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ComponentType)
+def test_componentmodel_componentimpl_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ComponentImpl)
 
 
-def test_componentmodel::componenttype_constructor_exists():
-    assert callable(componentModel::ComponentType.__init__)
+def test_componentmodel_componentimpl_constructor_exists():
+    assert callable(componentModel_ComponentImpl.__init__)
 
 
-def test_componentmodel::componenttype_constructor_args():
-    sig = inspect.signature(componentModel::ComponentType.__init__)
+def test_componentmodel_componentimpl_constructor_args():
+    sig = inspect.signature(componentModel_ComponentImpl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::componentimpl_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ComponentImpl)
+def test_componentmodel_componenttype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ComponentType)
 
 
-def test_componentmodel::componentimpl_constructor_exists():
-    assert callable(componentModel::ComponentImpl.__init__)
+def test_componentmodel_componenttype_constructor_exists():
+    assert callable(componentModel_ComponentType.__init__)
 
 
-def test_componentmodel::componentimpl_constructor_args():
-    sig = inspect.signature(componentModel::ComponentImpl.__init__)
+def test_componentmodel_componenttype_constructor_args():
+    sig = inspect.signature(componentModel_ComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::compconndec_is_not_abstract():
-    assert not inspect.isabstract(componentModel::CompConnDec)
+def test_componentmodel_compconndec_is_not_abstract():
+    assert not inspect.isabstract(componentModel_CompConnDec)
 
 
-def test_componentmodel::compconndec_constructor_exists():
-    assert callable(componentModel::CompConnDec.__init__)
+def test_componentmodel_compconndec_constructor_exists():
+    assert callable(componentModel_CompConnDec.__init__)
 
 
-def test_componentmodel::compconndec_constructor_args():
-    sig = inspect.signature(componentModel::CompConnDec.__init__)
+def test_componentmodel_compconndec_constructor_args():
+    sig = inspect.signature(componentModel_CompConnDec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::abstractfeatures_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AbstractFeatures)
+def test_componentmodel_abstractfeatures_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AbstractFeatures)
 
 
-def test_componentmodel::abstractfeatures_constructor_exists():
-    assert callable(componentModel::AbstractFeatures.__init__)
+def test_componentmodel_abstractfeatures_constructor_exists():
+    assert callable(componentModel_AbstractFeatures.__init__)
 
 
-def test_componentmodel::abstractfeatures_constructor_args():
-    sig = inspect.signature(componentModel::AbstractFeatures.__init__)
+def test_componentmodel_abstractfeatures_constructor_args():
+    sig = inspect.signature(componentModel_AbstractFeatures.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::abstractfeatures_has_name():
-    assert hasattr(componentModel::AbstractFeatures, "name")
+def test_componentmodel_abstractfeatures_has_name():
+    assert hasattr(componentModel_AbstractFeatures, "name")
     descriptor = None
-    for klass in componentModel::AbstractFeatures.__mro__:
+    for klass in componentModel_AbstractFeatures.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -261,16 +261,16 @@ def test_componentmodel::abstractfeatures_has_name():
 
 
 
-def test_componentmodel::systemportdec_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SystemPortDec)
+def test_componentmodel_systemportdec_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SystemPortDec)
 
 
-def test_componentmodel::systemportdec_constructor_exists():
-    assert callable(componentModel::SystemPortDec.__init__)
+def test_componentmodel_systemportdec_constructor_exists():
+    assert callable(componentModel_SystemPortDec.__init__)
 
 
-def test_componentmodel::systemportdec_constructor_args():
-    sig = inspect.signature(componentModel::SystemPortDec.__init__)
+def test_componentmodel_systemportdec_constructor_args():
+    sig = inspect.signature(componentModel_SystemPortDec.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -289,65 +289,65 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_componentmodel::systemdec_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SystemDec)
+def test_componentmodel_systemdec_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SystemDec)
 
 
-def test_componentmodel::systemdec_constructor_exists():
-    assert callable(componentModel::SystemDec.__init__)
+def test_componentmodel_systemdec_constructor_exists():
+    assert callable(componentModel_SystemDec.__init__)
 
 
-def test_componentmodel::systemdec_constructor_args():
-    sig = inspect.signature(componentModel::SystemDec.__init__)
+def test_componentmodel_systemdec_constructor_args():
+    sig = inspect.signature(componentModel_SystemDec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::porttype_is_not_abstract():
-    assert not inspect.isabstract(componentModel::PortType)
+def test_componentmodel_porttype_is_not_abstract():
+    assert not inspect.isabstract(componentModel_PortType)
 
 
-def test_componentmodel::porttype_constructor_exists():
-    assert callable(componentModel::PortType.__init__)
+def test_componentmodel_porttype_constructor_exists():
+    assert callable(componentModel_PortType.__init__)
 
 
-def test_componentmodel::porttype_constructor_args():
-    sig = inspect.signature(componentModel::PortType.__init__)
+def test_componentmodel_porttype_constructor_args():
+    sig = inspect.signature(componentModel_PortType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::systemconndec_is_not_abstract():
-    assert not inspect.isabstract(componentModel::SystemConnDec)
+def test_componentmodel_systemconndec_is_not_abstract():
+    assert not inspect.isabstract(componentModel_SystemConnDec)
 
 
-def test_componentmodel::systemconndec_constructor_exists():
-    assert callable(componentModel::SystemConnDec.__init__)
+def test_componentmodel_systemconndec_constructor_exists():
+    assert callable(componentModel_SystemConnDec.__init__)
 
 
-def test_componentmodel::systemconndec_constructor_args():
-    sig = inspect.signature(componentModel::SystemConnDec.__init__)
+def test_componentmodel_systemconndec_constructor_args():
+    sig = inspect.signature(componentModel_SystemConnDec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(componentModel::AbstractElement)
+def test_componentmodel_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(componentModel_AbstractElement)
 
 
-def test_componentmodel::abstractelement_constructor_exists():
-    assert callable(componentModel::AbstractElement.__init__)
+def test_componentmodel_abstractelement_constructor_exists():
+    assert callable(componentModel_AbstractElement.__init__)
 
 
-def test_componentmodel::abstractelement_constructor_args():
-    sig = inspect.signature(componentModel::AbstractElement.__init__)
+def test_componentmodel_abstractelement_constructor_args():
+    sig = inspect.signature(componentModel_AbstractElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_componentmodel::abstractelement_has_name():
-    assert hasattr(componentModel::AbstractElement, "name")
+def test_componentmodel_abstractelement_has_name():
+    assert hasattr(componentModel_AbstractElement, "name")
     descriptor = None
-    for klass in componentModel::AbstractElement.__mro__:
+    for klass in componentModel_AbstractElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -355,16 +355,16 @@ def test_componentmodel::abstractelement_has_name():
 
 
 
-def test_componentmodel::componentmodel_is_not_abstract():
-    assert not inspect.isabstract(componentModel::ComponentModel)
+def test_componentmodel_componentmodel_is_not_abstract():
+    assert not inspect.isabstract(componentModel_ComponentModel)
 
 
-def test_componentmodel::componentmodel_constructor_exists():
-    assert callable(componentModel::ComponentModel.__init__)
+def test_componentmodel_componentmodel_constructor_exists():
+    assert callable(componentModel_ComponentModel.__init__)
 
 
-def test_componentmodel::componentmodel_constructor_args():
-    sig = inspect.signature(componentModel::ComponentModel.__init__)
+def test_componentmodel_componentmodel_constructor_args():
+    sig = inspect.signature(componentModel_ComponentModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -382,73 +382,73 @@ safe_text = st.text(
 Port_strategy = st.builds(
     Port,
 )
-componentModel::errorModes_strategy = st.builds(
-    componentModel::errorModes,
+componentModel_errorModes_strategy = st.builds(
+    componentModel_errorModes,
     name=
         safe_text
 )
-componentModel::Port_strategy = st.builds(
-    componentModel::Port,
+componentModel_Port_strategy = st.builds(
+    componentModel_Port,
     name=
         safe_text
 )
-componentModel::ComponentFeature_strategy = st.builds(
-    componentModel::ComponentFeature,
+componentModel_ComponentFeature_strategy = st.builds(
+    componentModel_ComponentFeature,
 )
-componentModel::OutPort_strategy = st.builds(
-    componentModel::OutPort,
+componentModel_OutPort_strategy = st.builds(
+    componentModel_OutPort,
 )
-componentModel::InPort_strategy = st.builds(
-    componentModel::InPort,
+componentModel_InPort_strategy = st.builds(
+    componentModel_InPort,
 )
 SystemPortDec_strategy = st.builds(
     SystemPortDec,
 )
-componentModel::SystemPortOut_strategy = st.builds(
-    componentModel::SystemPortOut,
+componentModel_SystemPortOut_strategy = st.builds(
+    componentModel_SystemPortOut,
 )
-componentModel::SystemPortIn_strategy = st.builds(
-    componentModel::SystemPortIn,
+componentModel_SystemPortIn_strategy = st.builds(
+    componentModel_SystemPortIn,
 )
 AbstractFeatures_strategy = st.builds(
     AbstractFeatures,
 )
-componentModel::ComponentType_strategy = st.builds(
-    componentModel::ComponentType,
+componentModel_ComponentImpl_strategy = st.builds(
+    componentModel_ComponentImpl,
 )
-componentModel::ComponentImpl_strategy = st.builds(
-    componentModel::ComponentImpl,
+componentModel_ComponentType_strategy = st.builds(
+    componentModel_ComponentType,
 )
-componentModel::CompConnDec_strategy = st.builds(
-    componentModel::CompConnDec,
+componentModel_CompConnDec_strategy = st.builds(
+    componentModel_CompConnDec,
 )
-componentModel::AbstractFeatures_strategy = st.builds(
-    componentModel::AbstractFeatures,
+componentModel_AbstractFeatures_strategy = st.builds(
+    componentModel_AbstractFeatures,
     name=
         safe_text
 )
-componentModel::SystemPortDec_strategy = st.builds(
-    componentModel::SystemPortDec,
+componentModel_SystemPortDec_strategy = st.builds(
+    componentModel_SystemPortDec,
 )
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-componentModel::SystemDec_strategy = st.builds(
-    componentModel::SystemDec,
+componentModel_SystemDec_strategy = st.builds(
+    componentModel_SystemDec,
 )
-componentModel::PortType_strategy = st.builds(
-    componentModel::PortType,
+componentModel_PortType_strategy = st.builds(
+    componentModel_PortType,
 )
-componentModel::SystemConnDec_strategy = st.builds(
-    componentModel::SystemConnDec,
+componentModel_SystemConnDec_strategy = st.builds(
+    componentModel_SystemConnDec,
 )
-componentModel::AbstractElement_strategy = st.builds(
-    componentModel::AbstractElement,
+componentModel_AbstractElement_strategy = st.builds(
+    componentModel_AbstractElement,
     name=
         safe_text
 )
-componentModel::ComponentModel_strategy = st.builds(
-    componentModel::ComponentModel,
+componentModel_ComponentModel_strategy = st.builds(
+    componentModel_ComponentModel,
 )
 
 @given(instance=Port_strategy)
@@ -456,146 +456,134 @@ componentModel::ComponentModel_strategy = st.builds(
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=componentModel::errorModes_strategy)
+@given(instance=componentModel_errorModes_strategy)
 @settings(max_examples=50)
-def test_componentmodel::errormodes_instantiation(instance):
-    assert isinstance(instance, componentModel::errorModes)
-
-@given(instance=componentModel::errorModes_strategy)
-def test_componentmodel::errormodes_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_errormodes_instantiation(instance):
+    assert isinstance(instance, componentModel_errorModes)
 
 
-@given(instance=componentModel::errorModes_strategy)
-def test_componentmodel::errormodes_name_setter(instance):
+
+@given(instance=componentModel_errorModes_strategy)
+def test_componentmodel_errormodes_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::Port_strategy)
+@given(instance=componentModel_Port_strategy)
 @settings(max_examples=50)
-def test_componentmodel::port_instantiation(instance):
-    assert isinstance(instance, componentModel::Port)
-
-@given(instance=componentModel::Port_strategy)
-def test_componentmodel::port_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_port_instantiation(instance):
+    assert isinstance(instance, componentModel_Port)
 
 
-@given(instance=componentModel::Port_strategy)
-def test_componentmodel::port_name_setter(instance):
+
+@given(instance=componentModel_Port_strategy)
+def test_componentmodel_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::ComponentFeature_strategy)
+@given(instance=componentModel_ComponentFeature_strategy)
 @settings(max_examples=50)
-def test_componentmodel::componentfeature_instantiation(instance):
-    assert isinstance(instance, componentModel::ComponentFeature)
+def test_componentmodel_componentfeature_instantiation(instance):
+    assert isinstance(instance, componentModel_ComponentFeature)
 
-@given(instance=componentModel::OutPort_strategy)
+@given(instance=componentModel_OutPort_strategy)
 @settings(max_examples=50)
-def test_componentmodel::outport_instantiation(instance):
-    assert isinstance(instance, componentModel::OutPort)
+def test_componentmodel_outport_instantiation(instance):
+    assert isinstance(instance, componentModel_OutPort)
 
-@given(instance=componentModel::InPort_strategy)
+@given(instance=componentModel_InPort_strategy)
 @settings(max_examples=50)
-def test_componentmodel::inport_instantiation(instance):
-    assert isinstance(instance, componentModel::InPort)
+def test_componentmodel_inport_instantiation(instance):
+    assert isinstance(instance, componentModel_InPort)
 
 @given(instance=SystemPortDec_strategy)
 @settings(max_examples=50)
 def test_systemportdec_instantiation(instance):
     assert isinstance(instance, SystemPortDec)
 
-@given(instance=componentModel::SystemPortOut_strategy)
+@given(instance=componentModel_SystemPortOut_strategy)
 @settings(max_examples=50)
-def test_componentmodel::systemportout_instantiation(instance):
-    assert isinstance(instance, componentModel::SystemPortOut)
+def test_componentmodel_systemportout_instantiation(instance):
+    assert isinstance(instance, componentModel_SystemPortOut)
 
-@given(instance=componentModel::SystemPortIn_strategy)
+@given(instance=componentModel_SystemPortIn_strategy)
 @settings(max_examples=50)
-def test_componentmodel::systemportin_instantiation(instance):
-    assert isinstance(instance, componentModel::SystemPortIn)
+def test_componentmodel_systemportin_instantiation(instance):
+    assert isinstance(instance, componentModel_SystemPortIn)
 
 @given(instance=AbstractFeatures_strategy)
 @settings(max_examples=50)
 def test_abstractfeatures_instantiation(instance):
     assert isinstance(instance, AbstractFeatures)
 
-@given(instance=componentModel::ComponentType_strategy)
+@given(instance=componentModel_ComponentImpl_strategy)
 @settings(max_examples=50)
-def test_componentmodel::componenttype_instantiation(instance):
-    assert isinstance(instance, componentModel::ComponentType)
+def test_componentmodel_componentimpl_instantiation(instance):
+    assert isinstance(instance, componentModel_ComponentImpl)
 
-@given(instance=componentModel::ComponentImpl_strategy)
+@given(instance=componentModel_ComponentType_strategy)
 @settings(max_examples=50)
-def test_componentmodel::componentimpl_instantiation(instance):
-    assert isinstance(instance, componentModel::ComponentImpl)
+def test_componentmodel_componenttype_instantiation(instance):
+    assert isinstance(instance, componentModel_ComponentType)
 
-@given(instance=componentModel::CompConnDec_strategy)
+@given(instance=componentModel_CompConnDec_strategy)
 @settings(max_examples=50)
-def test_componentmodel::compconndec_instantiation(instance):
-    assert isinstance(instance, componentModel::CompConnDec)
+def test_componentmodel_compconndec_instantiation(instance):
+    assert isinstance(instance, componentModel_CompConnDec)
 
-@given(instance=componentModel::AbstractFeatures_strategy)
+@given(instance=componentModel_AbstractFeatures_strategy)
 @settings(max_examples=50)
-def test_componentmodel::abstractfeatures_instantiation(instance):
-    assert isinstance(instance, componentModel::AbstractFeatures)
-
-@given(instance=componentModel::AbstractFeatures_strategy)
-def test_componentmodel::abstractfeatures_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_abstractfeatures_instantiation(instance):
+    assert isinstance(instance, componentModel_AbstractFeatures)
 
 
-@given(instance=componentModel::AbstractFeatures_strategy)
-def test_componentmodel::abstractfeatures_name_setter(instance):
+
+@given(instance=componentModel_AbstractFeatures_strategy)
+def test_componentmodel_abstractfeatures_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::SystemPortDec_strategy)
+@given(instance=componentModel_SystemPortDec_strategy)
 @settings(max_examples=50)
-def test_componentmodel::systemportdec_instantiation(instance):
-    assert isinstance(instance, componentModel::SystemPortDec)
+def test_componentmodel_systemportdec_instantiation(instance):
+    assert isinstance(instance, componentModel_SystemPortDec)
 
 @given(instance=AbstractElement_strategy)
 @settings(max_examples=50)
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=componentModel::SystemDec_strategy)
+@given(instance=componentModel_SystemDec_strategy)
 @settings(max_examples=50)
-def test_componentmodel::systemdec_instantiation(instance):
-    assert isinstance(instance, componentModel::SystemDec)
+def test_componentmodel_systemdec_instantiation(instance):
+    assert isinstance(instance, componentModel_SystemDec)
 
-@given(instance=componentModel::PortType_strategy)
+@given(instance=componentModel_PortType_strategy)
 @settings(max_examples=50)
-def test_componentmodel::porttype_instantiation(instance):
-    assert isinstance(instance, componentModel::PortType)
+def test_componentmodel_porttype_instantiation(instance):
+    assert isinstance(instance, componentModel_PortType)
 
-@given(instance=componentModel::SystemConnDec_strategy)
+@given(instance=componentModel_SystemConnDec_strategy)
 @settings(max_examples=50)
-def test_componentmodel::systemconndec_instantiation(instance):
-    assert isinstance(instance, componentModel::SystemConnDec)
+def test_componentmodel_systemconndec_instantiation(instance):
+    assert isinstance(instance, componentModel_SystemConnDec)
 
-@given(instance=componentModel::AbstractElement_strategy)
+@given(instance=componentModel_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_componentmodel::abstractelement_instantiation(instance):
-    assert isinstance(instance, componentModel::AbstractElement)
-
-@given(instance=componentModel::AbstractElement_strategy)
-def test_componentmodel::abstractelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_abstractelement_instantiation(instance):
+    assert isinstance(instance, componentModel_AbstractElement)
 
 
-@given(instance=componentModel::AbstractElement_strategy)
-def test_componentmodel::abstractelement_name_setter(instance):
+
+@given(instance=componentModel_AbstractElement_strategy)
+def test_componentmodel_abstractelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentModel::ComponentModel_strategy)
+@given(instance=componentModel_ComponentModel_strategy)
 @settings(max_examples=50)
-def test_componentmodel::componentmodel_instantiation(instance):
-    assert isinstance(instance, componentModel::ComponentModel)
+def test_componentmodel_componentmodel_instantiation(instance):
+    assert isinstance(instance, componentModel_ComponentModel)

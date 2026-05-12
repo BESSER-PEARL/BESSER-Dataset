@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    yuml::ClassMember,
+from python_code import (
+    yuml_ClassMember,
     ClassMember,
-    yuml::Cardinality,
+    yuml_Cardinality,
     Relationship,
-    yuml::Equivalence,
-    yuml::NoteAssociation,
-    yuml::Inheritance,
-    yuml::Association,
+    yuml_Equivalence,
+    yuml_Inheritance,
+    yuml_NoteAssociation,
+    yuml_Association,
     ModelElement,
-    yuml::Relationship,
-    yuml::ColorableElement,
-    yuml::ModelElement,
-    yuml::Model,
-    yuml::Method,
-    yuml::Attribute,
+    yuml_Relationship,
+    yuml_ColorableElement,
+    yuml_ModelElement,
+    yuml_Model,
+    yuml_Method,
+    yuml_Attribute,
     ColorableElement,
-    yuml::Note,
-    yuml::Class,
+    yuml_Note,
+    yuml_Class,
     Visibility,
     AssociationType,
 )
@@ -34,35 +34,35 @@ from classes import (
 
 
 
-def test_yuml::classmember_is_not_abstract():
-    assert not inspect.isabstract(yuml::ClassMember)
+def test_yuml_classmember_is_not_abstract():
+    assert not inspect.isabstract(yuml_ClassMember)
 
 
-def test_yuml::classmember_constructor_exists():
-    assert callable(yuml::ClassMember.__init__)
+def test_yuml_classmember_constructor_exists():
+    assert callable(yuml_ClassMember.__init__)
 
 
-def test_yuml::classmember_constructor_args():
-    sig = inspect.signature(yuml::ClassMember.__init__)
+def test_yuml_classmember_constructor_args():
+    sig = inspect.signature(yuml_ClassMember.__init__)
     params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_yuml::classmember_has_visibility():
-    assert hasattr(yuml::ClassMember, "visibility")
+def test_yuml_classmember_has_name():
+    assert hasattr(yuml_ClassMember, "name")
     descriptor = None
-    for klass in yuml::ClassMember.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
+    for klass in yuml_ClassMember.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::classmember_has_name():
-    assert hasattr(yuml::ClassMember, "name")
+def test_yuml_classmember_has_visibility():
+    assert hasattr(yuml_ClassMember, "visibility")
     descriptor = None
-    for klass in yuml::ClassMember.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in yuml_ClassMember.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
@@ -82,33 +82,33 @@ def test_classmember_constructor_args():
 
 
 
-def test_yuml::cardinality_is_not_abstract():
-    assert not inspect.isabstract(yuml::Cardinality)
+def test_yuml_cardinality_is_not_abstract():
+    assert not inspect.isabstract(yuml_Cardinality)
 
 
-def test_yuml::cardinality_constructor_exists():
-    assert callable(yuml::Cardinality.__init__)
+def test_yuml_cardinality_constructor_exists():
+    assert callable(yuml_Cardinality.__init__)
 
 
-def test_yuml::cardinality_constructor_args():
-    sig = inspect.signature(yuml::Cardinality.__init__)
+def test_yuml_cardinality_constructor_args():
+    sig = inspect.signature(yuml_Cardinality.__init__)
     params = list(sig.parameters.keys())
     assert "upperBound" in params, "Missing parameter 'upperBound'"
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
 
-def test_yuml::cardinality_has_upperBound():
-    assert hasattr(yuml::Cardinality, "upperBound")
+def test_yuml_cardinality_has_upperBound():
+    assert hasattr(yuml_Cardinality, "upperBound")
     descriptor = None
-    for klass in yuml::Cardinality.__mro__:
+    for klass in yuml_Cardinality.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::cardinality_has_lowerBound():
-    assert hasattr(yuml::Cardinality, "lowerBound")
+def test_yuml_cardinality_has_lowerBound():
+    assert hasattr(yuml_Cardinality, "lowerBound")
     descriptor = None
-    for klass in yuml::Cardinality.__mro__:
+    for klass in yuml_Cardinality.__mro__:
         if "lowerBound" in klass.__dict__:
             descriptor = klass.__dict__["lowerBound"]
             break
@@ -130,105 +130,105 @@ def test_relationship_constructor_args():
 
 
 
-def test_yuml::equivalence_is_not_abstract():
-    assert not inspect.isabstract(yuml::Equivalence)
+def test_yuml_equivalence_is_not_abstract():
+    assert not inspect.isabstract(yuml_Equivalence)
 
 
-def test_yuml::equivalence_constructor_exists():
-    assert callable(yuml::Equivalence.__init__)
+def test_yuml_equivalence_constructor_exists():
+    assert callable(yuml_Equivalence.__init__)
 
 
-def test_yuml::equivalence_constructor_args():
-    sig = inspect.signature(yuml::Equivalence.__init__)
+def test_yuml_equivalence_constructor_args():
+    sig = inspect.signature(yuml_Equivalence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yuml::noteassociation_is_not_abstract():
-    assert not inspect.isabstract(yuml::NoteAssociation)
+def test_yuml_inheritance_is_not_abstract():
+    assert not inspect.isabstract(yuml_Inheritance)
 
 
-def test_yuml::noteassociation_constructor_exists():
-    assert callable(yuml::NoteAssociation.__init__)
+def test_yuml_inheritance_constructor_exists():
+    assert callable(yuml_Inheritance.__init__)
 
 
-def test_yuml::noteassociation_constructor_args():
-    sig = inspect.signature(yuml::NoteAssociation.__init__)
+def test_yuml_inheritance_constructor_args():
+    sig = inspect.signature(yuml_Inheritance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yuml::inheritance_is_not_abstract():
-    assert not inspect.isabstract(yuml::Inheritance)
+def test_yuml_noteassociation_is_not_abstract():
+    assert not inspect.isabstract(yuml_NoteAssociation)
 
 
-def test_yuml::inheritance_constructor_exists():
-    assert callable(yuml::Inheritance.__init__)
+def test_yuml_noteassociation_constructor_exists():
+    assert callable(yuml_NoteAssociation.__init__)
 
 
-def test_yuml::inheritance_constructor_args():
-    sig = inspect.signature(yuml::Inheritance.__init__)
+def test_yuml_noteassociation_constructor_args():
+    sig = inspect.signature(yuml_NoteAssociation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yuml::association_is_not_abstract():
-    assert not inspect.isabstract(yuml::Association)
+def test_yuml_association_is_not_abstract():
+    assert not inspect.isabstract(yuml_Association)
 
 
-def test_yuml::association_constructor_exists():
-    assert callable(yuml::Association.__init__)
+def test_yuml_association_constructor_exists():
+    assert callable(yuml_Association.__init__)
 
 
-def test_yuml::association_constructor_args():
-    sig = inspect.signature(yuml::Association.__init__)
+def test_yuml_association_constructor_args():
+    sig = inspect.signature(yuml_Association.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "navigableTarget" in params, "Missing parameter 'navigableTarget'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "navigableSource" in params, "Missing parameter 'navigableSource'"
     assert "targetVisibility" in params, "Missing parameter 'targetVisibility'"
     assert "sourceVisibility" in params, "Missing parameter 'sourceVisibility'"
 
-def test_yuml::association_has_type():
-    assert hasattr(yuml::Association, "type")
+def test_yuml_association_has_navigableTarget():
+    assert hasattr(yuml_Association, "navigableTarget")
     descriptor = None
-    for klass in yuml::Association.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yuml::association_has_navigableTarget():
-    assert hasattr(yuml::Association, "navigableTarget")
-    descriptor = None
-    for klass in yuml::Association.__mro__:
+    for klass in yuml_Association.__mro__:
         if "navigableTarget" in klass.__dict__:
             descriptor = klass.__dict__["navigableTarget"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::association_has_navigableSource():
-    assert hasattr(yuml::Association, "navigableSource")
+def test_yuml_association_has_type():
+    assert hasattr(yuml_Association, "type")
     descriptor = None
-    for klass in yuml::Association.__mro__:
+    for klass in yuml_Association.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_yuml_association_has_navigableSource():
+    assert hasattr(yuml_Association, "navigableSource")
+    descriptor = None
+    for klass in yuml_Association.__mro__:
         if "navigableSource" in klass.__dict__:
             descriptor = klass.__dict__["navigableSource"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::association_has_targetVisibility():
-    assert hasattr(yuml::Association, "targetVisibility")
+def test_yuml_association_has_targetVisibility():
+    assert hasattr(yuml_Association, "targetVisibility")
     descriptor = None
-    for klass in yuml::Association.__mro__:
+    for klass in yuml_Association.__mro__:
         if "targetVisibility" in klass.__dict__:
             descriptor = klass.__dict__["targetVisibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::association_has_sourceVisibility():
-    assert hasattr(yuml::Association, "sourceVisibility")
+def test_yuml_association_has_sourceVisibility():
+    assert hasattr(yuml_Association, "sourceVisibility")
     descriptor = None
-    for klass in yuml::Association.__mro__:
+    for klass in yuml_Association.__mro__:
         if "sourceVisibility" in klass.__dict__:
             descriptor = klass.__dict__["sourceVisibility"]
             break
@@ -250,57 +250,57 @@ def test_modelelement_constructor_args():
 
 
 
-def test_yuml::relationship_is_not_abstract():
-    assert not inspect.isabstract(yuml::Relationship)
+def test_yuml_relationship_is_not_abstract():
+    assert not inspect.isabstract(yuml_Relationship)
 
 
-def test_yuml::relationship_constructor_exists():
-    assert callable(yuml::Relationship.__init__)
+def test_yuml_relationship_constructor_exists():
+    assert callable(yuml_Relationship.__init__)
 
 
-def test_yuml::relationship_constructor_args():
-    sig = inspect.signature(yuml::Relationship.__init__)
+def test_yuml_relationship_constructor_args():
+    sig = inspect.signature(yuml_Relationship.__init__)
     params = list(sig.parameters.keys())
-    assert "targetLabel" in params, "Missing parameter 'targetLabel'"
     assert "sourceLabel" in params, "Missing parameter 'sourceLabel'"
+    assert "targetLabel" in params, "Missing parameter 'targetLabel'"
 
-def test_yuml::relationship_has_targetLabel():
-    assert hasattr(yuml::Relationship, "targetLabel")
+def test_yuml_relationship_has_sourceLabel():
+    assert hasattr(yuml_Relationship, "sourceLabel")
     descriptor = None
-    for klass in yuml::Relationship.__mro__:
-        if "targetLabel" in klass.__dict__:
-            descriptor = klass.__dict__["targetLabel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_yuml::relationship_has_sourceLabel():
-    assert hasattr(yuml::Relationship, "sourceLabel")
-    descriptor = None
-    for klass in yuml::Relationship.__mro__:
+    for klass in yuml_Relationship.__mro__:
         if "sourceLabel" in klass.__dict__:
             descriptor = klass.__dict__["sourceLabel"]
             break
     assert isinstance(descriptor, property)
 
+def test_yuml_relationship_has_targetLabel():
+    assert hasattr(yuml_Relationship, "targetLabel")
+    descriptor = None
+    for klass in yuml_Relationship.__mro__:
+        if "targetLabel" in klass.__dict__:
+            descriptor = klass.__dict__["targetLabel"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_yuml::colorableelement_is_not_abstract():
-    assert not inspect.isabstract(yuml::ColorableElement)
+
+def test_yuml_colorableelement_is_not_abstract():
+    assert not inspect.isabstract(yuml_ColorableElement)
 
 
-def test_yuml::colorableelement_constructor_exists():
-    assert callable(yuml::ColorableElement.__init__)
+def test_yuml_colorableelement_constructor_exists():
+    assert callable(yuml_ColorableElement.__init__)
 
 
-def test_yuml::colorableelement_constructor_args():
-    sig = inspect.signature(yuml::ColorableElement.__init__)
+def test_yuml_colorableelement_constructor_args():
+    sig = inspect.signature(yuml_ColorableElement.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_yuml::colorableelement_has_color():
-    assert hasattr(yuml::ColorableElement, "color")
+def test_yuml_colorableelement_has_color():
+    assert hasattr(yuml_ColorableElement, "color")
     descriptor = None
-    for klass in yuml::ColorableElement.__mro__:
+    for klass in yuml_ColorableElement.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -308,51 +308,51 @@ def test_yuml::colorableelement_has_color():
 
 
 
-def test_yuml::modelelement_is_not_abstract():
-    assert not inspect.isabstract(yuml::ModelElement)
+def test_yuml_modelelement_is_not_abstract():
+    assert not inspect.isabstract(yuml_ModelElement)
 
 
-def test_yuml::modelelement_constructor_exists():
-    assert callable(yuml::ModelElement.__init__)
+def test_yuml_modelelement_constructor_exists():
+    assert callable(yuml_ModelElement.__init__)
 
 
-def test_yuml::modelelement_constructor_args():
-    sig = inspect.signature(yuml::ModelElement.__init__)
+def test_yuml_modelelement_constructor_args():
+    sig = inspect.signature(yuml_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yuml::model_is_not_abstract():
-    assert not inspect.isabstract(yuml::Model)
+def test_yuml_model_is_not_abstract():
+    assert not inspect.isabstract(yuml_Model)
 
 
-def test_yuml::model_constructor_exists():
-    assert callable(yuml::Model.__init__)
+def test_yuml_model_constructor_exists():
+    assert callable(yuml_Model.__init__)
 
 
-def test_yuml::model_constructor_args():
-    sig = inspect.signature(yuml::Model.__init__)
+def test_yuml_model_constructor_args():
+    sig = inspect.signature(yuml_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_yuml::method_is_not_abstract():
-    assert not inspect.isabstract(yuml::Method)
+def test_yuml_method_is_not_abstract():
+    assert not inspect.isabstract(yuml_Method)
 
 
-def test_yuml::method_constructor_exists():
-    assert callable(yuml::Method.__init__)
+def test_yuml_method_constructor_exists():
+    assert callable(yuml_Method.__init__)
 
 
-def test_yuml::method_constructor_args():
-    sig = inspect.signature(yuml::Method.__init__)
+def test_yuml_method_constructor_args():
+    sig = inspect.signature(yuml_Method.__init__)
     params = list(sig.parameters.keys())
     assert "arguments" in params, "Missing parameter 'arguments'"
 
-def test_yuml::method_has_arguments():
-    assert hasattr(yuml::Method, "arguments")
+def test_yuml_method_has_arguments():
+    assert hasattr(yuml_Method, "arguments")
     descriptor = None
-    for klass in yuml::Method.__mro__:
+    for klass in yuml_Method.__mro__:
         if "arguments" in klass.__dict__:
             descriptor = klass.__dict__["arguments"]
             break
@@ -360,33 +360,33 @@ def test_yuml::method_has_arguments():
 
 
 
-def test_yuml::attribute_is_not_abstract():
-    assert not inspect.isabstract(yuml::Attribute)
+def test_yuml_attribute_is_not_abstract():
+    assert not inspect.isabstract(yuml_Attribute)
 
 
-def test_yuml::attribute_constructor_exists():
-    assert callable(yuml::Attribute.__init__)
+def test_yuml_attribute_constructor_exists():
+    assert callable(yuml_Attribute.__init__)
 
 
-def test_yuml::attribute_constructor_args():
-    sig = inspect.signature(yuml::Attribute.__init__)
+def test_yuml_attribute_constructor_args():
+    sig = inspect.signature(yuml_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "stereotype" in params, "Missing parameter 'stereotype'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_yuml::attribute_has_stereotype():
-    assert hasattr(yuml::Attribute, "stereotype")
+def test_yuml_attribute_has_stereotype():
+    assert hasattr(yuml_Attribute, "stereotype")
     descriptor = None
-    for klass in yuml::Attribute.__mro__:
+    for klass in yuml_Attribute.__mro__:
         if "stereotype" in klass.__dict__:
             descriptor = klass.__dict__["stereotype"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::attribute_has_type():
-    assert hasattr(yuml::Attribute, "type")
+def test_yuml_attribute_has_type():
+    assert hasattr(yuml_Attribute, "type")
     descriptor = None
-    for klass in yuml::Attribute.__mro__:
+    for klass in yuml_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -408,23 +408,23 @@ def test_colorableelement_constructor_args():
 
 
 
-def test_yuml::note_is_not_abstract():
-    assert not inspect.isabstract(yuml::Note)
+def test_yuml_note_is_not_abstract():
+    assert not inspect.isabstract(yuml_Note)
 
 
-def test_yuml::note_constructor_exists():
-    assert callable(yuml::Note.__init__)
+def test_yuml_note_constructor_exists():
+    assert callable(yuml_Note.__init__)
 
 
-def test_yuml::note_constructor_args():
-    sig = inspect.signature(yuml::Note.__init__)
+def test_yuml_note_constructor_args():
+    sig = inspect.signature(yuml_Note.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_yuml::note_has_text():
-    assert hasattr(yuml::Note, "text")
+def test_yuml_note_has_text():
+    assert hasattr(yuml_Note, "text")
     descriptor = None
-    for klass in yuml::Note.__mro__:
+    for klass in yuml_Note.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -432,33 +432,33 @@ def test_yuml::note_has_text():
 
 
 
-def test_yuml::class_is_not_abstract():
-    assert not inspect.isabstract(yuml::Class)
+def test_yuml_class_is_not_abstract():
+    assert not inspect.isabstract(yuml_Class)
 
 
-def test_yuml::class_constructor_exists():
-    assert callable(yuml::Class.__init__)
+def test_yuml_class_constructor_exists():
+    assert callable(yuml_Class.__init__)
 
 
-def test_yuml::class_constructor_args():
-    sig = inspect.signature(yuml::Class.__init__)
+def test_yuml_class_constructor_args():
+    sig = inspect.signature(yuml_Class.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "stereotype" in params, "Missing parameter 'stereotype'"
 
-def test_yuml::class_has_name():
-    assert hasattr(yuml::Class, "name")
+def test_yuml_class_has_name():
+    assert hasattr(yuml_Class, "name")
     descriptor = None
-    for klass in yuml::Class.__mro__:
+    for klass in yuml_Class.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_yuml::class_has_stereotype():
-    assert hasattr(yuml::Class, "stereotype")
+def test_yuml_class_has_stereotype():
+    assert hasattr(yuml_Class, "stereotype")
     descriptor = None
-    for klass in yuml::Class.__mro__:
+    for klass in yuml_Class.__mro__:
         if "stereotype" in klass.__dict__:
             descriptor = klass.__dict__["stereotype"]
             break
@@ -472,10 +472,10 @@ def test_visibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Visibility]
     expected_literals = [
-        "package",
-        "unspecified",
-        "protected",
         "private",
+        "protected",
+        "unspecified",
+        "package",
         "public",
     ]
     # Check that all expected literals exist
@@ -490,9 +490,9 @@ def test_associationtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AssociationType]
     expected_literals = [
+        "composition",
         "aggregation",
         "simpleAssociation",
-        "composition",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -510,18 +510,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-yuml::ClassMember_strategy = st.builds(
-    yuml::ClassMember,
-    visibility=
-        safe_text,
+yuml_ClassMember_strategy = st.builds(
+    yuml_ClassMember,
     name=
+        safe_text,
+    visibility=
         safe_text
 )
 ClassMember_strategy = st.builds(
     ClassMember,
 )
-yuml::Cardinality_strategy = st.builds(
-    yuml::Cardinality,
+yuml_Cardinality_strategy = st.builds(
+    yuml_Cardinality,
     upperBound=
         safe_text,
     lowerBound=
@@ -530,21 +530,21 @@ yuml::Cardinality_strategy = st.builds(
 Relationship_strategy = st.builds(
     Relationship,
 )
-yuml::Equivalence_strategy = st.builds(
-    yuml::Equivalence,
+yuml_Equivalence_strategy = st.builds(
+    yuml_Equivalence,
 )
-yuml::NoteAssociation_strategy = st.builds(
-    yuml::NoteAssociation,
+yuml_Inheritance_strategy = st.builds(
+    yuml_Inheritance,
 )
-yuml::Inheritance_strategy = st.builds(
-    yuml::Inheritance,
+yuml_NoteAssociation_strategy = st.builds(
+    yuml_NoteAssociation,
 )
-yuml::Association_strategy = st.builds(
-    yuml::Association,
-    type=
-        safe_text,
+yuml_Association_strategy = st.builds(
+    yuml_Association,
     navigableTarget=
         st.booleans(),
+    type=
+        safe_text,
     navigableSource=
         st.booleans(),
     targetVisibility=
@@ -555,31 +555,31 @@ yuml::Association_strategy = st.builds(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-yuml::Relationship_strategy = st.builds(
-    yuml::Relationship,
-    targetLabel=
-        safe_text,
+yuml_Relationship_strategy = st.builds(
+    yuml_Relationship,
     sourceLabel=
+        safe_text,
+    targetLabel=
         safe_text
 )
-yuml::ColorableElement_strategy = st.builds(
-    yuml::ColorableElement,
+yuml_ColorableElement_strategy = st.builds(
+    yuml_ColorableElement,
     color=
         safe_text
 )
-yuml::ModelElement_strategy = st.builds(
-    yuml::ModelElement,
+yuml_ModelElement_strategy = st.builds(
+    yuml_ModelElement,
 )
-yuml::Model_strategy = st.builds(
-    yuml::Model,
+yuml_Model_strategy = st.builds(
+    yuml_Model,
 )
-yuml::Method_strategy = st.builds(
-    yuml::Method,
+yuml_Method_strategy = st.builds(
+    yuml_Method,
     arguments=
         safe_text
 )
-yuml::Attribute_strategy = st.builds(
-    yuml::Attribute,
+yuml_Attribute_strategy = st.builds(
+    yuml_Attribute,
     stereotype=
         safe_text,
     type=
@@ -588,74 +588,62 @@ yuml::Attribute_strategy = st.builds(
 ColorableElement_strategy = st.builds(
     ColorableElement,
 )
-yuml::Note_strategy = st.builds(
-    yuml::Note,
+yuml_Note_strategy = st.builds(
+    yuml_Note,
     text=
         safe_text
 )
-yuml::Class_strategy = st.builds(
-    yuml::Class,
+yuml_Class_strategy = st.builds(
+    yuml_Class,
     name=
         safe_text,
     stereotype=
         safe_text
 )
 
-@given(instance=yuml::ClassMember_strategy)
+@given(instance=yuml_ClassMember_strategy)
 @settings(max_examples=50)
-def test_yuml::classmember_instantiation(instance):
-    assert isinstance(instance, yuml::ClassMember)
-
-@given(instance=yuml::ClassMember_strategy)
-def test_yuml::classmember_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_yuml_classmember_instantiation(instance):
+    assert isinstance(instance, yuml_ClassMember)
 
 
-@given(instance=yuml::ClassMember_strategy)
-def test_yuml::classmember_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
 
-@given(instance=yuml::ClassMember_strategy)
-def test_yuml::classmember_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=yuml::ClassMember_strategy)
-def test_yuml::classmember_name_setter(instance):
+@given(instance=yuml_ClassMember_strategy)
+def test_yuml_classmember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=yuml_ClassMember_strategy)
+def test_yuml_classmember_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
 
 @given(instance=ClassMember_strategy)
 @settings(max_examples=50)
 def test_classmember_instantiation(instance):
     assert isinstance(instance, ClassMember)
 
-@given(instance=yuml::Cardinality_strategy)
+@given(instance=yuml_Cardinality_strategy)
 @settings(max_examples=50)
-def test_yuml::cardinality_instantiation(instance):
-    assert isinstance(instance, yuml::Cardinality)
-
-@given(instance=yuml::Cardinality_strategy)
-def test_yuml::cardinality_upperBound_type(instance):
-    assert isinstance(instance.upperBound, str)
+def test_yuml_cardinality_instantiation(instance):
+    assert isinstance(instance, yuml_Cardinality)
 
 
-@given(instance=yuml::Cardinality_strategy)
-def test_yuml::cardinality_upperBound_setter(instance):
+
+@given(instance=yuml_Cardinality_strategy)
+def test_yuml_cardinality_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=yuml::Cardinality_strategy)
-def test_yuml::cardinality_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, str)
 
 
-@given(instance=yuml::Cardinality_strategy)
-def test_yuml::cardinality_lowerBound_setter(instance):
+@given(instance=yuml_Cardinality_strategy)
+def test_yuml_cardinality_lowerBound_setter(instance):
     original = instance.lowerBound
     instance.lowerBound = original
     assert instance.lowerBound == original
@@ -665,77 +653,62 @@ def test_yuml::cardinality_lowerBound_setter(instance):
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=yuml::Equivalence_strategy)
+@given(instance=yuml_Equivalence_strategy)
 @settings(max_examples=50)
-def test_yuml::equivalence_instantiation(instance):
-    assert isinstance(instance, yuml::Equivalence)
+def test_yuml_equivalence_instantiation(instance):
+    assert isinstance(instance, yuml_Equivalence)
 
-@given(instance=yuml::NoteAssociation_strategy)
+@given(instance=yuml_Inheritance_strategy)
 @settings(max_examples=50)
-def test_yuml::noteassociation_instantiation(instance):
-    assert isinstance(instance, yuml::NoteAssociation)
+def test_yuml_inheritance_instantiation(instance):
+    assert isinstance(instance, yuml_Inheritance)
 
-@given(instance=yuml::Inheritance_strategy)
+@given(instance=yuml_NoteAssociation_strategy)
 @settings(max_examples=50)
-def test_yuml::inheritance_instantiation(instance):
-    assert isinstance(instance, yuml::Inheritance)
+def test_yuml_noteassociation_instantiation(instance):
+    assert isinstance(instance, yuml_NoteAssociation)
 
-@given(instance=yuml::Association_strategy)
+@given(instance=yuml_Association_strategy)
 @settings(max_examples=50)
-def test_yuml::association_instantiation(instance):
-    assert isinstance(instance, yuml::Association)
-
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_yuml_association_instantiation(instance):
+    assert isinstance(instance, yuml_Association)
 
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_navigableTarget_type(instance):
-    assert isinstance(instance.navigableTarget, bool)
-
-
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_navigableTarget_setter(instance):
+@given(instance=yuml_Association_strategy)
+def test_yuml_association_navigableTarget_setter(instance):
     original = instance.navigableTarget
     instance.navigableTarget = original
     assert instance.navigableTarget == original
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_navigableSource_type(instance):
-    assert isinstance(instance.navigableSource, bool)
 
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_navigableSource_setter(instance):
+@given(instance=yuml_Association_strategy)
+def test_yuml_association_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=yuml_Association_strategy)
+def test_yuml_association_navigableSource_setter(instance):
     original = instance.navigableSource
     instance.navigableSource = original
     assert instance.navigableSource == original
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_targetVisibility_type(instance):
-    assert isinstance(instance.targetVisibility, str)
 
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_targetVisibility_setter(instance):
+@given(instance=yuml_Association_strategy)
+def test_yuml_association_targetVisibility_setter(instance):
     original = instance.targetVisibility
     instance.targetVisibility = original
     assert instance.targetVisibility == original
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_sourceVisibility_type(instance):
-    assert isinstance(instance.sourceVisibility, str)
 
 
-@given(instance=yuml::Association_strategy)
-def test_yuml::association_sourceVisibility_setter(instance):
+@given(instance=yuml_Association_strategy)
+def test_yuml_association_sourceVisibility_setter(instance):
     original = instance.sourceVisibility
     instance.sourceVisibility = original
     assert instance.sourceVisibility == original
@@ -745,98 +718,80 @@ def test_yuml::association_sourceVisibility_setter(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=yuml::Relationship_strategy)
+@given(instance=yuml_Relationship_strategy)
 @settings(max_examples=50)
-def test_yuml::relationship_instantiation(instance):
-    assert isinstance(instance, yuml::Relationship)
-
-@given(instance=yuml::Relationship_strategy)
-def test_yuml::relationship_targetLabel_type(instance):
-    assert isinstance(instance.targetLabel, str)
+def test_yuml_relationship_instantiation(instance):
+    assert isinstance(instance, yuml_Relationship)
 
 
-@given(instance=yuml::Relationship_strategy)
-def test_yuml::relationship_targetLabel_setter(instance):
-    original = instance.targetLabel
-    instance.targetLabel = original
-    assert instance.targetLabel == original
 
-@given(instance=yuml::Relationship_strategy)
-def test_yuml::relationship_sourceLabel_type(instance):
-    assert isinstance(instance.sourceLabel, str)
-
-
-@given(instance=yuml::Relationship_strategy)
-def test_yuml::relationship_sourceLabel_setter(instance):
+@given(instance=yuml_Relationship_strategy)
+def test_yuml_relationship_sourceLabel_setter(instance):
     original = instance.sourceLabel
     instance.sourceLabel = original
     assert instance.sourceLabel == original
 
-@given(instance=yuml::ColorableElement_strategy)
+
+
+@given(instance=yuml_Relationship_strategy)
+def test_yuml_relationship_targetLabel_setter(instance):
+    original = instance.targetLabel
+    instance.targetLabel = original
+    assert instance.targetLabel == original
+
+@given(instance=yuml_ColorableElement_strategy)
 @settings(max_examples=50)
-def test_yuml::colorableelement_instantiation(instance):
-    assert isinstance(instance, yuml::ColorableElement)
-
-@given(instance=yuml::ColorableElement_strategy)
-def test_yuml::colorableelement_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_yuml_colorableelement_instantiation(instance):
+    assert isinstance(instance, yuml_ColorableElement)
 
 
-@given(instance=yuml::ColorableElement_strategy)
-def test_yuml::colorableelement_color_setter(instance):
+
+@given(instance=yuml_ColorableElement_strategy)
+def test_yuml_colorableelement_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=yuml::ModelElement_strategy)
+@given(instance=yuml_ModelElement_strategy)
 @settings(max_examples=50)
-def test_yuml::modelelement_instantiation(instance):
-    assert isinstance(instance, yuml::ModelElement)
+def test_yuml_modelelement_instantiation(instance):
+    assert isinstance(instance, yuml_ModelElement)
 
-@given(instance=yuml::Model_strategy)
+@given(instance=yuml_Model_strategy)
 @settings(max_examples=50)
-def test_yuml::model_instantiation(instance):
-    assert isinstance(instance, yuml::Model)
+def test_yuml_model_instantiation(instance):
+    assert isinstance(instance, yuml_Model)
 
-@given(instance=yuml::Method_strategy)
+@given(instance=yuml_Method_strategy)
 @settings(max_examples=50)
-def test_yuml::method_instantiation(instance):
-    assert isinstance(instance, yuml::Method)
-
-@given(instance=yuml::Method_strategy)
-def test_yuml::method_arguments_type(instance):
-    assert isinstance(instance.arguments, str)
+def test_yuml_method_instantiation(instance):
+    assert isinstance(instance, yuml_Method)
 
 
-@given(instance=yuml::Method_strategy)
-def test_yuml::method_arguments_setter(instance):
+
+@given(instance=yuml_Method_strategy)
+def test_yuml_method_arguments_setter(instance):
     original = instance.arguments
     instance.arguments = original
     assert instance.arguments == original
 
-@given(instance=yuml::Attribute_strategy)
+@given(instance=yuml_Attribute_strategy)
 @settings(max_examples=50)
-def test_yuml::attribute_instantiation(instance):
-    assert isinstance(instance, yuml::Attribute)
-
-@given(instance=yuml::Attribute_strategy)
-def test_yuml::attribute_stereotype_type(instance):
-    assert isinstance(instance.stereotype, str)
+def test_yuml_attribute_instantiation(instance):
+    assert isinstance(instance, yuml_Attribute)
 
 
-@given(instance=yuml::Attribute_strategy)
-def test_yuml::attribute_stereotype_setter(instance):
+
+@given(instance=yuml_Attribute_strategy)
+def test_yuml_attribute_stereotype_setter(instance):
     original = instance.stereotype
     instance.stereotype = original
     assert instance.stereotype == original
 
-@given(instance=yuml::Attribute_strategy)
-def test_yuml::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=yuml::Attribute_strategy)
-def test_yuml::attribute_type_setter(instance):
+@given(instance=yuml_Attribute_strategy)
+def test_yuml_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -846,45 +801,36 @@ def test_yuml::attribute_type_setter(instance):
 def test_colorableelement_instantiation(instance):
     assert isinstance(instance, ColorableElement)
 
-@given(instance=yuml::Note_strategy)
+@given(instance=yuml_Note_strategy)
 @settings(max_examples=50)
-def test_yuml::note_instantiation(instance):
-    assert isinstance(instance, yuml::Note)
-
-@given(instance=yuml::Note_strategy)
-def test_yuml::note_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_yuml_note_instantiation(instance):
+    assert isinstance(instance, yuml_Note)
 
 
-@given(instance=yuml::Note_strategy)
-def test_yuml::note_text_setter(instance):
+
+@given(instance=yuml_Note_strategy)
+def test_yuml_note_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=yuml::Class_strategy)
+@given(instance=yuml_Class_strategy)
 @settings(max_examples=50)
-def test_yuml::class_instantiation(instance):
-    assert isinstance(instance, yuml::Class)
-
-@given(instance=yuml::Class_strategy)
-def test_yuml::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_yuml_class_instantiation(instance):
+    assert isinstance(instance, yuml_Class)
 
 
-@given(instance=yuml::Class_strategy)
-def test_yuml::class_name_setter(instance):
+
+@given(instance=yuml_Class_strategy)
+def test_yuml_class_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=yuml::Class_strategy)
-def test_yuml::class_stereotype_type(instance):
-    assert isinstance(instance.stereotype, str)
 
 
-@given(instance=yuml::Class_strategy)
-def test_yuml::class_stereotype_setter(instance):
+@given(instance=yuml_Class_strategy)
+def test_yuml_class_stereotype_setter(instance):
     original = instance.stereotype
     instance.stereotype = original
     assert instance.stereotype == original

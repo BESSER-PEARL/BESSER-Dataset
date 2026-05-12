@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    use::registered::classes::C,
-    use::registered::classes::B,
-    use::registered::classes::A,
+from python_code import (
+    use_registered_classes_C,
+    use_registered_classes_B,
+    use_registered_classes_A,
 )
 
 # =============================================================================
@@ -17,71 +17,71 @@ from classes import (
 
 
 
-def test_use::registered::classes::c_is_not_abstract():
-    assert not inspect.isabstract(use::registered::classes::C)
+def test_use_registered_classes_c_is_not_abstract():
+    assert not inspect.isabstract(use_registered_classes_C)
 
 
-def test_use::registered::classes::c_constructor_exists():
-    assert callable(use::registered::classes::C.__init__)
+def test_use_registered_classes_c_constructor_exists():
+    assert callable(use_registered_classes_C.__init__)
 
 
-def test_use::registered::classes::c_constructor_args():
-    sig = inspect.signature(use::registered::classes::C.__init__)
+def test_use_registered_classes_c_constructor_args():
+    sig = inspect.signature(use_registered_classes_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_use::registered::classes::b_is_not_abstract():
-    assert not inspect.isabstract(use::registered::classes::B)
+def test_use_registered_classes_b_is_not_abstract():
+    assert not inspect.isabstract(use_registered_classes_B)
 
 
-def test_use::registered::classes::b_constructor_exists():
-    assert callable(use::registered::classes::B.__init__)
+def test_use_registered_classes_b_constructor_exists():
+    assert callable(use_registered_classes_B.__init__)
 
 
-def test_use::registered::classes::b_constructor_args():
-    sig = inspect.signature(use::registered::classes::B.__init__)
+def test_use_registered_classes_b_constructor_args():
+    sig = inspect.signature(use_registered_classes_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_use::registered::classes::a_is_not_abstract():
-    assert not inspect.isabstract(use::registered::classes::A)
+def test_use_registered_classes_a_is_not_abstract():
+    assert not inspect.isabstract(use_registered_classes_A)
 
 
-def test_use::registered::classes::a_constructor_exists():
-    assert callable(use::registered::classes::A.__init__)
+def test_use_registered_classes_a_constructor_exists():
+    assert callable(use_registered_classes_A.__init__)
 
 
-def test_use::registered::classes::a_constructor_args():
-    sig = inspect.signature(use::registered::classes::A.__init__)
+def test_use_registered_classes_a_constructor_args():
+    sig = inspect.signature(use_registered_classes_A.__init__)
     params = list(sig.parameters.keys())
     assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
     assert "z" in params, "Missing parameter 'z'"
 
-def test_use::registered::classes::a_has_x():
-    assert hasattr(use::registered::classes::A, "x")
+def test_use_registered_classes_a_has_x():
+    assert hasattr(use_registered_classes_A, "x")
     descriptor = None
-    for klass in use::registered::classes::A.__mro__:
+    for klass in use_registered_classes_A.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
-def test_use::registered::classes::a_has_y():
-    assert hasattr(use::registered::classes::A, "y")
+def test_use_registered_classes_a_has_y():
+    assert hasattr(use_registered_classes_A, "y")
     descriptor = None
-    for klass in use::registered::classes::A.__mro__:
+    for klass in use_registered_classes_A.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_use::registered::classes::a_has_z():
-    assert hasattr(use::registered::classes::A, "z")
+def test_use_registered_classes_a_has_z():
+    assert hasattr(use_registered_classes_A, "z")
     descriptor = None
-    for klass in use::registered::classes::A.__mro__:
+    for klass in use_registered_classes_A.__mro__:
         if "z" in klass.__dict__:
             descriptor = klass.__dict__["z"]
             break
@@ -99,14 +99,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-use::registered::classes::C_strategy = st.builds(
-    use::registered::classes::C,
+use_registered_classes_C_strategy = st.builds(
+    use_registered_classes_C,
 )
-use::registered::classes::B_strategy = st.builds(
-    use::registered::classes::B,
+use_registered_classes_B_strategy = st.builds(
+    use_registered_classes_B,
 )
-use::registered::classes::A_strategy = st.builds(
-    use::registered::classes::A,
+use_registered_classes_A_strategy = st.builds(
+    use_registered_classes_A,
     x=
         st.integers(),
     y=
@@ -115,50 +115,41 @@ use::registered::classes::A_strategy = st.builds(
         safe_text
 )
 
-@given(instance=use::registered::classes::C_strategy)
+@given(instance=use_registered_classes_C_strategy)
 @settings(max_examples=50)
-def test_use::registered::classes::c_instantiation(instance):
-    assert isinstance(instance, use::registered::classes::C)
+def test_use_registered_classes_c_instantiation(instance):
+    assert isinstance(instance, use_registered_classes_C)
 
-@given(instance=use::registered::classes::B_strategy)
+@given(instance=use_registered_classes_B_strategy)
 @settings(max_examples=50)
-def test_use::registered::classes::b_instantiation(instance):
-    assert isinstance(instance, use::registered::classes::B)
+def test_use_registered_classes_b_instantiation(instance):
+    assert isinstance(instance, use_registered_classes_B)
 
-@given(instance=use::registered::classes::A_strategy)
+@given(instance=use_registered_classes_A_strategy)
 @settings(max_examples=50)
-def test_use::registered::classes::a_instantiation(instance):
-    assert isinstance(instance, use::registered::classes::A)
-
-@given(instance=use::registered::classes::A_strategy)
-def test_use::registered::classes::a_x_type(instance):
-    assert isinstance(instance.x, int)
+def test_use_registered_classes_a_instantiation(instance):
+    assert isinstance(instance, use_registered_classes_A)
 
 
-@given(instance=use::registered::classes::A_strategy)
-def test_use::registered::classes::a_x_setter(instance):
+
+@given(instance=use_registered_classes_A_strategy)
+def test_use_registered_classes_a_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=use::registered::classes::A_strategy)
-def test_use::registered::classes::a_y_type(instance):
-    assert isinstance(instance.y, str)
 
 
-@given(instance=use::registered::classes::A_strategy)
-def test_use::registered::classes::a_y_setter(instance):
+@given(instance=use_registered_classes_A_strategy)
+def test_use_registered_classes_a_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=use::registered::classes::A_strategy)
-def test_use::registered::classes::a_z_type(instance):
-    assert isinstance(instance.z, str)
 
 
-@given(instance=use::registered::classes::A_strategy)
-def test_use::registered::classes::a_z_setter(instance):
+@given(instance=use_registered_classes_A_strategy)
+def test_use_registered_classes_a_z_setter(instance):
     original = instance.z
     instance.z = original
     assert instance.z == original

@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    effbd902::ProcessNode,
-    effbd902::Item,
-    effbd902::Port,
+from python_code import (
+    effbd902_ProcessNode,
+    effbd902_Item,
+    effbd902_Port,
     Port,
     Sequence,
-    effbd902::Or,
-    effbd902::Iteration,
-    effbd902::LoopExit,
-    effbd902::Loop,
-    effbd902::Start,
-    effbd902::Final,
-    effbd902::And,
-    effbd902::SequenceNode,
-    effbd902::Token,
-    effbd902::InputPort,
-    effbd902::OutputPort,
-    effbd902::AbstractFunction,
+    effbd902_Loop,
+    effbd902_Start,
+    effbd902_Or,
+    effbd902_Final,
+    effbd902_Iteration,
+    effbd902_LoopExit,
+    effbd902_And,
+    effbd902_SequenceNode,
+    effbd902_Token,
+    effbd902_InputPort,
+    effbd902_OutputPort,
+    effbd902_AbstractFunction,
     AbstractFunction,
     ProcessNode,
-    effbd902::Flow,
+    effbd902_Flow,
     SequenceNode,
-    effbd902::Sequence,
-    effbd902::Function,
-    effbd902::Description,
+    effbd902_Sequence,
+    effbd902_Function,
+    effbd902_Description,
     FunctionDomain,
 )
 
@@ -39,23 +39,23 @@ from classes import (
 
 
 
-def test_effbd902::processnode_is_not_abstract():
-    assert not inspect.isabstract(effbd902::ProcessNode)
+def test_effbd902_processnode_is_not_abstract():
+    assert not inspect.isabstract(effbd902_ProcessNode)
 
 
-def test_effbd902::processnode_constructor_exists():
-    assert callable(effbd902::ProcessNode.__init__)
+def test_effbd902_processnode_constructor_exists():
+    assert callable(effbd902_ProcessNode.__init__)
 
 
-def test_effbd902::processnode_constructor_args():
-    sig = inspect.signature(effbd902::ProcessNode.__init__)
+def test_effbd902_processnode_constructor_args():
+    sig = inspect.signature(effbd902_ProcessNode.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_effbd902::processnode_has_label():
-    assert hasattr(effbd902::ProcessNode, "label")
+def test_effbd902_processnode_has_label():
+    assert hasattr(effbd902_ProcessNode, "label")
     descriptor = None
-    for klass in effbd902::ProcessNode.__mro__:
+    for klass in effbd902_ProcessNode.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -63,23 +63,23 @@ def test_effbd902::processnode_has_label():
 
 
 
-def test_effbd902::item_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Item)
+def test_effbd902_item_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Item)
 
 
-def test_effbd902::item_constructor_exists():
-    assert callable(effbd902::Item.__init__)
+def test_effbd902_item_constructor_exists():
+    assert callable(effbd902_Item.__init__)
 
 
-def test_effbd902::item_constructor_args():
-    sig = inspect.signature(effbd902::Item.__init__)
+def test_effbd902_item_constructor_args():
+    sig = inspect.signature(effbd902_Item.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_effbd902::item_has_name():
-    assert hasattr(effbd902::Item, "name")
+def test_effbd902_item_has_name():
+    assert hasattr(effbd902_Item, "name")
     descriptor = None
-    for klass in effbd902::Item.__mro__:
+    for klass in effbd902_Item.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -87,23 +87,23 @@ def test_effbd902::item_has_name():
 
 
 
-def test_effbd902::port_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Port)
+def test_effbd902_port_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Port)
 
 
-def test_effbd902::port_constructor_exists():
-    assert callable(effbd902::Port.__init__)
+def test_effbd902_port_constructor_exists():
+    assert callable(effbd902_Port.__init__)
 
 
-def test_effbd902::port_constructor_args():
-    sig = inspect.signature(effbd902::Port.__init__)
+def test_effbd902_port_constructor_args():
+    sig = inspect.signature(effbd902_Port.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_effbd902::port_has_id():
-    assert hasattr(effbd902::Port, "id")
+def test_effbd902_port_has_id():
+    assert hasattr(effbd902_Port, "id")
     descriptor = None
-    for klass in effbd902::Port.__mro__:
+    for klass in effbd902_Port.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -139,141 +139,141 @@ def test_sequence_constructor_args():
 
 
 
-def test_effbd902::or_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Or)
+def test_effbd902_loop_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Loop)
 
 
-def test_effbd902::or_constructor_exists():
-    assert callable(effbd902::Or.__init__)
+def test_effbd902_loop_constructor_exists():
+    assert callable(effbd902_Loop.__init__)
 
 
-def test_effbd902::or_constructor_args():
-    sig = inspect.signature(effbd902::Or.__init__)
+def test_effbd902_loop_constructor_args():
+    sig = inspect.signature(effbd902_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::iteration_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Iteration)
+def test_effbd902_start_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Start)
 
 
-def test_effbd902::iteration_constructor_exists():
-    assert callable(effbd902::Iteration.__init__)
+def test_effbd902_start_constructor_exists():
+    assert callable(effbd902_Start.__init__)
 
 
-def test_effbd902::iteration_constructor_args():
-    sig = inspect.signature(effbd902::Iteration.__init__)
+def test_effbd902_start_constructor_args():
+    sig = inspect.signature(effbd902_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::loopexit_is_not_abstract():
-    assert not inspect.isabstract(effbd902::LoopExit)
+def test_effbd902_or_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Or)
 
 
-def test_effbd902::loopexit_constructor_exists():
-    assert callable(effbd902::LoopExit.__init__)
+def test_effbd902_or_constructor_exists():
+    assert callable(effbd902_Or.__init__)
 
 
-def test_effbd902::loopexit_constructor_args():
-    sig = inspect.signature(effbd902::LoopExit.__init__)
+def test_effbd902_or_constructor_args():
+    sig = inspect.signature(effbd902_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::loop_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Loop)
+def test_effbd902_final_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Final)
 
 
-def test_effbd902::loop_constructor_exists():
-    assert callable(effbd902::Loop.__init__)
+def test_effbd902_final_constructor_exists():
+    assert callable(effbd902_Final.__init__)
 
 
-def test_effbd902::loop_constructor_args():
-    sig = inspect.signature(effbd902::Loop.__init__)
+def test_effbd902_final_constructor_args():
+    sig = inspect.signature(effbd902_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::start_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Start)
+def test_effbd902_iteration_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Iteration)
 
 
-def test_effbd902::start_constructor_exists():
-    assert callable(effbd902::Start.__init__)
+def test_effbd902_iteration_constructor_exists():
+    assert callable(effbd902_Iteration.__init__)
 
 
-def test_effbd902::start_constructor_args():
-    sig = inspect.signature(effbd902::Start.__init__)
+def test_effbd902_iteration_constructor_args():
+    sig = inspect.signature(effbd902_Iteration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::final_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Final)
+def test_effbd902_loopexit_is_not_abstract():
+    assert not inspect.isabstract(effbd902_LoopExit)
 
 
-def test_effbd902::final_constructor_exists():
-    assert callable(effbd902::Final.__init__)
+def test_effbd902_loopexit_constructor_exists():
+    assert callable(effbd902_LoopExit.__init__)
 
 
-def test_effbd902::final_constructor_args():
-    sig = inspect.signature(effbd902::Final.__init__)
+def test_effbd902_loopexit_constructor_args():
+    sig = inspect.signature(effbd902_LoopExit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::and_is_not_abstract():
-    assert not inspect.isabstract(effbd902::And)
+def test_effbd902_and_is_not_abstract():
+    assert not inspect.isabstract(effbd902_And)
 
 
-def test_effbd902::and_constructor_exists():
-    assert callable(effbd902::And.__init__)
+def test_effbd902_and_constructor_exists():
+    assert callable(effbd902_And.__init__)
 
 
-def test_effbd902::and_constructor_args():
-    sig = inspect.signature(effbd902::And.__init__)
+def test_effbd902_and_constructor_args():
+    sig = inspect.signature(effbd902_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::sequencenode_is_not_abstract():
-    assert not inspect.isabstract(effbd902::SequenceNode)
+def test_effbd902_sequencenode_is_not_abstract():
+    assert not inspect.isabstract(effbd902_SequenceNode)
 
 
-def test_effbd902::sequencenode_constructor_exists():
-    assert callable(effbd902::SequenceNode.__init__)
+def test_effbd902_sequencenode_constructor_exists():
+    assert callable(effbd902_SequenceNode.__init__)
 
 
-def test_effbd902::sequencenode_constructor_args():
-    sig = inspect.signature(effbd902::SequenceNode.__init__)
+def test_effbd902_sequencenode_constructor_args():
+    sig = inspect.signature(effbd902_SequenceNode.__init__)
     params = list(sig.parameters.keys())
-    assert "tMax" in params, "Missing parameter 'tMax'"
     assert "tMin" in params, "Missing parameter 'tMin'"
+    assert "tMax" in params, "Missing parameter 'tMax'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_effbd902::sequencenode_has_tMax():
-    assert hasattr(effbd902::SequenceNode, "tMax")
+def test_effbd902_sequencenode_has_tMin():
+    assert hasattr(effbd902_SequenceNode, "tMin")
     descriptor = None
-    for klass in effbd902::SequenceNode.__mro__:
-        if "tMax" in klass.__dict__:
-            descriptor = klass.__dict__["tMax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbd902::sequencenode_has_tMin():
-    assert hasattr(effbd902::SequenceNode, "tMin")
-    descriptor = None
-    for klass in effbd902::SequenceNode.__mro__:
+    for klass in effbd902_SequenceNode.__mro__:
         if "tMin" in klass.__dict__:
             descriptor = klass.__dict__["tMin"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbd902::sequencenode_has_name():
-    assert hasattr(effbd902::SequenceNode, "name")
+def test_effbd902_sequencenode_has_tMax():
+    assert hasattr(effbd902_SequenceNode, "tMax")
     descriptor = None
-    for klass in effbd902::SequenceNode.__mro__:
+    for klass in effbd902_SequenceNode.__mro__:
+        if "tMax" in klass.__dict__:
+            descriptor = klass.__dict__["tMax"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_effbd902_sequencenode_has_name():
+    assert hasattr(effbd902_SequenceNode, "name")
+    descriptor = None
+    for klass in effbd902_SequenceNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -281,65 +281,65 @@ def test_effbd902::sequencenode_has_name():
 
 
 
-def test_effbd902::token_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Token)
+def test_effbd902_token_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Token)
 
 
-def test_effbd902::token_constructor_exists():
-    assert callable(effbd902::Token.__init__)
+def test_effbd902_token_constructor_exists():
+    assert callable(effbd902_Token.__init__)
 
 
-def test_effbd902::token_constructor_args():
-    sig = inspect.signature(effbd902::Token.__init__)
+def test_effbd902_token_constructor_args():
+    sig = inspect.signature(effbd902_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::inputport_is_not_abstract():
-    assert not inspect.isabstract(effbd902::InputPort)
+def test_effbd902_inputport_is_not_abstract():
+    assert not inspect.isabstract(effbd902_InputPort)
 
 
-def test_effbd902::inputport_constructor_exists():
-    assert callable(effbd902::InputPort.__init__)
+def test_effbd902_inputport_constructor_exists():
+    assert callable(effbd902_InputPort.__init__)
 
 
-def test_effbd902::inputport_constructor_args():
-    sig = inspect.signature(effbd902::InputPort.__init__)
+def test_effbd902_inputport_constructor_args():
+    sig = inspect.signature(effbd902_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::outputport_is_not_abstract():
-    assert not inspect.isabstract(effbd902::OutputPort)
+def test_effbd902_outputport_is_not_abstract():
+    assert not inspect.isabstract(effbd902_OutputPort)
 
 
-def test_effbd902::outputport_constructor_exists():
-    assert callable(effbd902::OutputPort.__init__)
+def test_effbd902_outputport_constructor_exists():
+    assert callable(effbd902_OutputPort.__init__)
 
 
-def test_effbd902::outputport_constructor_args():
-    sig = inspect.signature(effbd902::OutputPort.__init__)
+def test_effbd902_outputport_constructor_args():
+    sig = inspect.signature(effbd902_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::abstractfunction_is_not_abstract():
-    assert not inspect.isabstract(effbd902::AbstractFunction)
+def test_effbd902_abstractfunction_is_not_abstract():
+    assert not inspect.isabstract(effbd902_AbstractFunction)
 
 
-def test_effbd902::abstractfunction_constructor_exists():
-    assert callable(effbd902::AbstractFunction.__init__)
+def test_effbd902_abstractfunction_constructor_exists():
+    assert callable(effbd902_AbstractFunction.__init__)
 
 
-def test_effbd902::abstractfunction_constructor_args():
-    sig = inspect.signature(effbd902::AbstractFunction.__init__)
+def test_effbd902_abstractfunction_constructor_args():
+    sig = inspect.signature(effbd902_AbstractFunction.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_effbd902::abstractfunction_has_id():
-    assert hasattr(effbd902::AbstractFunction, "id")
+def test_effbd902_abstractfunction_has_id():
+    assert hasattr(effbd902_AbstractFunction, "id")
     descriptor = None
-    for klass in effbd902::AbstractFunction.__mro__:
+    for klass in effbd902_AbstractFunction.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -375,16 +375,16 @@ def test_processnode_constructor_args():
 
 
 
-def test_effbd902::flow_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Flow)
+def test_effbd902_flow_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Flow)
 
 
-def test_effbd902::flow_constructor_exists():
-    assert callable(effbd902::Flow.__init__)
+def test_effbd902_flow_constructor_exists():
+    assert callable(effbd902_Flow.__init__)
 
 
-def test_effbd902::flow_constructor_args():
-    sig = inspect.signature(effbd902::Flow.__init__)
+def test_effbd902_flow_constructor_args():
+    sig = inspect.signature(effbd902_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -403,37 +403,37 @@ def test_sequencenode_constructor_args():
 
 
 
-def test_effbd902::sequence_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Sequence)
+def test_effbd902_sequence_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Sequence)
 
 
-def test_effbd902::sequence_constructor_exists():
-    assert callable(effbd902::Sequence.__init__)
+def test_effbd902_sequence_constructor_exists():
+    assert callable(effbd902_Sequence.__init__)
 
 
-def test_effbd902::sequence_constructor_args():
-    sig = inspect.signature(effbd902::Sequence.__init__)
+def test_effbd902_sequence_constructor_args():
+    sig = inspect.signature(effbd902_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbd902::function_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Function)
+def test_effbd902_function_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Function)
 
 
-def test_effbd902::function_constructor_exists():
-    assert callable(effbd902::Function.__init__)
+def test_effbd902_function_constructor_exists():
+    assert callable(effbd902_Function.__init__)
 
 
-def test_effbd902::function_constructor_args():
-    sig = inspect.signature(effbd902::Function.__init__)
+def test_effbd902_function_constructor_args():
+    sig = inspect.signature(effbd902_Function.__init__)
     params = list(sig.parameters.keys())
     assert "domain" in params, "Missing parameter 'domain'"
 
-def test_effbd902::function_has_domain():
-    assert hasattr(effbd902::Function, "domain")
+def test_effbd902_function_has_domain():
+    assert hasattr(effbd902_Function, "domain")
     descriptor = None
-    for klass in effbd902::Function.__mro__:
+    for klass in effbd902_Function.__mro__:
         if "domain" in klass.__dict__:
             descriptor = klass.__dict__["domain"]
             break
@@ -441,23 +441,23 @@ def test_effbd902::function_has_domain():
 
 
 
-def test_effbd902::description_is_not_abstract():
-    assert not inspect.isabstract(effbd902::Description)
+def test_effbd902_description_is_not_abstract():
+    assert not inspect.isabstract(effbd902_Description)
 
 
-def test_effbd902::description_constructor_exists():
-    assert callable(effbd902::Description.__init__)
+def test_effbd902_description_constructor_exists():
+    assert callable(effbd902_Description.__init__)
 
 
-def test_effbd902::description_constructor_args():
-    sig = inspect.signature(effbd902::Description.__init__)
+def test_effbd902_description_constructor_args():
+    sig = inspect.signature(effbd902_Description.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_effbd902::description_has_content():
-    assert hasattr(effbd902::Description, "content")
+def test_effbd902_description_has_content():
+    assert hasattr(effbd902_Description, "content")
     descriptor = None
-    for klass in effbd902::Description.__mro__:
+    for klass in effbd902_Description.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -472,8 +472,8 @@ def test_functiondomain_has_all_literals():
     enum_literals = [lit.name for lit in FunctionDomain]
     expected_literals = [
         "space",
-        "form",
         "time",
+        "form",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -491,18 +491,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-effbd902::ProcessNode_strategy = st.builds(
-    effbd902::ProcessNode,
+effbd902_ProcessNode_strategy = st.builds(
+    effbd902_ProcessNode,
     label=
         safe_text
 )
-effbd902::Item_strategy = st.builds(
-    effbd902::Item,
+effbd902_Item_strategy = st.builds(
+    effbd902_Item,
     name=
         safe_text
 )
-effbd902::Port_strategy = st.builds(
-    effbd902::Port,
+effbd902_Port_strategy = st.builds(
+    effbd902_Port,
     id=
         safe_text
 )
@@ -512,47 +512,47 @@ Port_strategy = st.builds(
 Sequence_strategy = st.builds(
     Sequence,
 )
-effbd902::Or_strategy = st.builds(
-    effbd902::Or,
+effbd902_Loop_strategy = st.builds(
+    effbd902_Loop,
 )
-effbd902::Iteration_strategy = st.builds(
-    effbd902::Iteration,
+effbd902_Start_strategy = st.builds(
+    effbd902_Start,
 )
-effbd902::LoopExit_strategy = st.builds(
-    effbd902::LoopExit,
+effbd902_Or_strategy = st.builds(
+    effbd902_Or,
 )
-effbd902::Loop_strategy = st.builds(
-    effbd902::Loop,
+effbd902_Final_strategy = st.builds(
+    effbd902_Final,
 )
-effbd902::Start_strategy = st.builds(
-    effbd902::Start,
+effbd902_Iteration_strategy = st.builds(
+    effbd902_Iteration,
 )
-effbd902::Final_strategy = st.builds(
-    effbd902::Final,
+effbd902_LoopExit_strategy = st.builds(
+    effbd902_LoopExit,
 )
-effbd902::And_strategy = st.builds(
-    effbd902::And,
+effbd902_And_strategy = st.builds(
+    effbd902_And,
 )
-effbd902::SequenceNode_strategy = st.builds(
-    effbd902::SequenceNode,
-    tMax=
-        st.integers(),
+effbd902_SequenceNode_strategy = st.builds(
+    effbd902_SequenceNode,
     tMin=
+        st.integers(),
+    tMax=
         st.integers(),
     name=
         safe_text
 )
-effbd902::Token_strategy = st.builds(
-    effbd902::Token,
+effbd902_Token_strategy = st.builds(
+    effbd902_Token,
 )
-effbd902::InputPort_strategy = st.builds(
-    effbd902::InputPort,
+effbd902_InputPort_strategy = st.builds(
+    effbd902_InputPort,
 )
-effbd902::OutputPort_strategy = st.builds(
-    effbd902::OutputPort,
+effbd902_OutputPort_strategy = st.builds(
+    effbd902_OutputPort,
 )
-effbd902::AbstractFunction_strategy = st.builds(
-    effbd902::AbstractFunction,
+effbd902_AbstractFunction_strategy = st.builds(
+    effbd902_AbstractFunction,
     id=
         safe_text
 )
@@ -562,70 +562,61 @@ AbstractFunction_strategy = st.builds(
 ProcessNode_strategy = st.builds(
     ProcessNode,
 )
-effbd902::Flow_strategy = st.builds(
-    effbd902::Flow,
+effbd902_Flow_strategy = st.builds(
+    effbd902_Flow,
 )
 SequenceNode_strategy = st.builds(
     SequenceNode,
 )
-effbd902::Sequence_strategy = st.builds(
-    effbd902::Sequence,
+effbd902_Sequence_strategy = st.builds(
+    effbd902_Sequence,
 )
-effbd902::Function_strategy = st.builds(
-    effbd902::Function,
+effbd902_Function_strategy = st.builds(
+    effbd902_Function,
     domain=
         safe_text
 )
-effbd902::Description_strategy = st.builds(
-    effbd902::Description,
+effbd902_Description_strategy = st.builds(
+    effbd902_Description,
     content=
         safe_text
 )
 
-@given(instance=effbd902::ProcessNode_strategy)
+@given(instance=effbd902_ProcessNode_strategy)
 @settings(max_examples=50)
-def test_effbd902::processnode_instantiation(instance):
-    assert isinstance(instance, effbd902::ProcessNode)
-
-@given(instance=effbd902::ProcessNode_strategy)
-def test_effbd902::processnode_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_effbd902_processnode_instantiation(instance):
+    assert isinstance(instance, effbd902_ProcessNode)
 
 
-@given(instance=effbd902::ProcessNode_strategy)
-def test_effbd902::processnode_label_setter(instance):
+
+@given(instance=effbd902_ProcessNode_strategy)
+def test_effbd902_processnode_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=effbd902::Item_strategy)
+@given(instance=effbd902_Item_strategy)
 @settings(max_examples=50)
-def test_effbd902::item_instantiation(instance):
-    assert isinstance(instance, effbd902::Item)
-
-@given(instance=effbd902::Item_strategy)
-def test_effbd902::item_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbd902_item_instantiation(instance):
+    assert isinstance(instance, effbd902_Item)
 
 
-@given(instance=effbd902::Item_strategy)
-def test_effbd902::item_name_setter(instance):
+
+@given(instance=effbd902_Item_strategy)
+def test_effbd902_item_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbd902::Port_strategy)
+@given(instance=effbd902_Port_strategy)
 @settings(max_examples=50)
-def test_effbd902::port_instantiation(instance):
-    assert isinstance(instance, effbd902::Port)
-
-@given(instance=effbd902::Port_strategy)
-def test_effbd902::port_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_effbd902_port_instantiation(instance):
+    assert isinstance(instance, effbd902_Port)
 
 
-@given(instance=effbd902::Port_strategy)
-def test_effbd902::port_id_setter(instance):
+
+@given(instance=effbd902_Port_strategy)
+def test_effbd902_port_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -640,106 +631,94 @@ def test_port_instantiation(instance):
 def test_sequence_instantiation(instance):
     assert isinstance(instance, Sequence)
 
-@given(instance=effbd902::Or_strategy)
+@given(instance=effbd902_Loop_strategy)
 @settings(max_examples=50)
-def test_effbd902::or_instantiation(instance):
-    assert isinstance(instance, effbd902::Or)
+def test_effbd902_loop_instantiation(instance):
+    assert isinstance(instance, effbd902_Loop)
 
-@given(instance=effbd902::Iteration_strategy)
+@given(instance=effbd902_Start_strategy)
 @settings(max_examples=50)
-def test_effbd902::iteration_instantiation(instance):
-    assert isinstance(instance, effbd902::Iteration)
+def test_effbd902_start_instantiation(instance):
+    assert isinstance(instance, effbd902_Start)
 
-@given(instance=effbd902::LoopExit_strategy)
+@given(instance=effbd902_Or_strategy)
 @settings(max_examples=50)
-def test_effbd902::loopexit_instantiation(instance):
-    assert isinstance(instance, effbd902::LoopExit)
+def test_effbd902_or_instantiation(instance):
+    assert isinstance(instance, effbd902_Or)
 
-@given(instance=effbd902::Loop_strategy)
+@given(instance=effbd902_Final_strategy)
 @settings(max_examples=50)
-def test_effbd902::loop_instantiation(instance):
-    assert isinstance(instance, effbd902::Loop)
+def test_effbd902_final_instantiation(instance):
+    assert isinstance(instance, effbd902_Final)
 
-@given(instance=effbd902::Start_strategy)
+@given(instance=effbd902_Iteration_strategy)
 @settings(max_examples=50)
-def test_effbd902::start_instantiation(instance):
-    assert isinstance(instance, effbd902::Start)
+def test_effbd902_iteration_instantiation(instance):
+    assert isinstance(instance, effbd902_Iteration)
 
-@given(instance=effbd902::Final_strategy)
+@given(instance=effbd902_LoopExit_strategy)
 @settings(max_examples=50)
-def test_effbd902::final_instantiation(instance):
-    assert isinstance(instance, effbd902::Final)
+def test_effbd902_loopexit_instantiation(instance):
+    assert isinstance(instance, effbd902_LoopExit)
 
-@given(instance=effbd902::And_strategy)
+@given(instance=effbd902_And_strategy)
 @settings(max_examples=50)
-def test_effbd902::and_instantiation(instance):
-    assert isinstance(instance, effbd902::And)
+def test_effbd902_and_instantiation(instance):
+    assert isinstance(instance, effbd902_And)
 
-@given(instance=effbd902::SequenceNode_strategy)
+@given(instance=effbd902_SequenceNode_strategy)
 @settings(max_examples=50)
-def test_effbd902::sequencenode_instantiation(instance):
-    assert isinstance(instance, effbd902::SequenceNode)
-
-@given(instance=effbd902::SequenceNode_strategy)
-def test_effbd902::sequencenode_tMax_type(instance):
-    assert isinstance(instance.tMax, int)
+def test_effbd902_sequencenode_instantiation(instance):
+    assert isinstance(instance, effbd902_SequenceNode)
 
 
-@given(instance=effbd902::SequenceNode_strategy)
-def test_effbd902::sequencenode_tMax_setter(instance):
-    original = instance.tMax
-    instance.tMax = original
-    assert instance.tMax == original
 
-@given(instance=effbd902::SequenceNode_strategy)
-def test_effbd902::sequencenode_tMin_type(instance):
-    assert isinstance(instance.tMin, int)
-
-
-@given(instance=effbd902::SequenceNode_strategy)
-def test_effbd902::sequencenode_tMin_setter(instance):
+@given(instance=effbd902_SequenceNode_strategy)
+def test_effbd902_sequencenode_tMin_setter(instance):
     original = instance.tMin
     instance.tMin = original
     assert instance.tMin == original
 
-@given(instance=effbd902::SequenceNode_strategy)
-def test_effbd902::sequencenode_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=effbd902::SequenceNode_strategy)
-def test_effbd902::sequencenode_name_setter(instance):
+@given(instance=effbd902_SequenceNode_strategy)
+def test_effbd902_sequencenode_tMax_setter(instance):
+    original = instance.tMax
+    instance.tMax = original
+    assert instance.tMax == original
+
+
+
+@given(instance=effbd902_SequenceNode_strategy)
+def test_effbd902_sequencenode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbd902::Token_strategy)
+@given(instance=effbd902_Token_strategy)
 @settings(max_examples=50)
-def test_effbd902::token_instantiation(instance):
-    assert isinstance(instance, effbd902::Token)
+def test_effbd902_token_instantiation(instance):
+    assert isinstance(instance, effbd902_Token)
 
-@given(instance=effbd902::InputPort_strategy)
+@given(instance=effbd902_InputPort_strategy)
 @settings(max_examples=50)
-def test_effbd902::inputport_instantiation(instance):
-    assert isinstance(instance, effbd902::InputPort)
+def test_effbd902_inputport_instantiation(instance):
+    assert isinstance(instance, effbd902_InputPort)
 
-@given(instance=effbd902::OutputPort_strategy)
+@given(instance=effbd902_OutputPort_strategy)
 @settings(max_examples=50)
-def test_effbd902::outputport_instantiation(instance):
-    assert isinstance(instance, effbd902::OutputPort)
+def test_effbd902_outputport_instantiation(instance):
+    assert isinstance(instance, effbd902_OutputPort)
 
-@given(instance=effbd902::AbstractFunction_strategy)
+@given(instance=effbd902_AbstractFunction_strategy)
 @settings(max_examples=50)
-def test_effbd902::abstractfunction_instantiation(instance):
-    assert isinstance(instance, effbd902::AbstractFunction)
-
-@given(instance=effbd902::AbstractFunction_strategy)
-def test_effbd902::abstractfunction_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_effbd902_abstractfunction_instantiation(instance):
+    assert isinstance(instance, effbd902_AbstractFunction)
 
 
-@given(instance=effbd902::AbstractFunction_strategy)
-def test_effbd902::abstractfunction_id_setter(instance):
+
+@given(instance=effbd902_AbstractFunction_strategy)
+def test_effbd902_abstractfunction_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -754,49 +733,43 @@ def test_abstractfunction_instantiation(instance):
 def test_processnode_instantiation(instance):
     assert isinstance(instance, ProcessNode)
 
-@given(instance=effbd902::Flow_strategy)
+@given(instance=effbd902_Flow_strategy)
 @settings(max_examples=50)
-def test_effbd902::flow_instantiation(instance):
-    assert isinstance(instance, effbd902::Flow)
+def test_effbd902_flow_instantiation(instance):
+    assert isinstance(instance, effbd902_Flow)
 
 @given(instance=SequenceNode_strategy)
 @settings(max_examples=50)
 def test_sequencenode_instantiation(instance):
     assert isinstance(instance, SequenceNode)
 
-@given(instance=effbd902::Sequence_strategy)
+@given(instance=effbd902_Sequence_strategy)
 @settings(max_examples=50)
-def test_effbd902::sequence_instantiation(instance):
-    assert isinstance(instance, effbd902::Sequence)
+def test_effbd902_sequence_instantiation(instance):
+    assert isinstance(instance, effbd902_Sequence)
 
-@given(instance=effbd902::Function_strategy)
+@given(instance=effbd902_Function_strategy)
 @settings(max_examples=50)
-def test_effbd902::function_instantiation(instance):
-    assert isinstance(instance, effbd902::Function)
-
-@given(instance=effbd902::Function_strategy)
-def test_effbd902::function_domain_type(instance):
-    assert isinstance(instance.domain, str)
+def test_effbd902_function_instantiation(instance):
+    assert isinstance(instance, effbd902_Function)
 
 
-@given(instance=effbd902::Function_strategy)
-def test_effbd902::function_domain_setter(instance):
+
+@given(instance=effbd902_Function_strategy)
+def test_effbd902_function_domain_setter(instance):
     original = instance.domain
     instance.domain = original
     assert instance.domain == original
 
-@given(instance=effbd902::Description_strategy)
+@given(instance=effbd902_Description_strategy)
 @settings(max_examples=50)
-def test_effbd902::description_instantiation(instance):
-    assert isinstance(instance, effbd902::Description)
-
-@given(instance=effbd902::Description_strategy)
-def test_effbd902::description_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_effbd902_description_instantiation(instance):
+    assert isinstance(instance, effbd902_Description)
 
 
-@given(instance=effbd902::Description_strategy)
-def test_effbd902::description_content_setter(instance):
+
+@given(instance=effbd902_Description_strategy)
+def test_effbd902_description_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original

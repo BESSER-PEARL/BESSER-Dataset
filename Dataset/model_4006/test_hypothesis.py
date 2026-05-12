@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Namespace,
     NamedElement,
-    classes::Class,
-    classes::Package,
+    classes_Class,
+    classes_Package,
     Element,
-    classes::Root,
-    classes::Namespace,
-    classes::NamedElement,
-    classes::Element,
+    classes_Root,
+    classes_Namespace,
+    classes_NamedElement,
+    classes_Element,
 )
 
 # =============================================================================
@@ -51,30 +51,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_classes::class_is_not_abstract():
-    assert not inspect.isabstract(classes::Class)
+def test_classes_class_is_not_abstract():
+    assert not inspect.isabstract(classes_Class)
 
 
-def test_classes::class_constructor_exists():
-    assert callable(classes::Class.__init__)
+def test_classes_class_constructor_exists():
+    assert callable(classes_Class.__init__)
 
 
-def test_classes::class_constructor_args():
-    sig = inspect.signature(classes::Class.__init__)
+def test_classes_class_constructor_args():
+    sig = inspect.signature(classes_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::package_is_not_abstract():
-    assert not inspect.isabstract(classes::Package)
+def test_classes_package_is_not_abstract():
+    assert not inspect.isabstract(classes_Package)
 
 
-def test_classes::package_constructor_exists():
-    assert callable(classes::Package.__init__)
+def test_classes_package_constructor_exists():
+    assert callable(classes_Package.__init__)
 
 
-def test_classes::package_constructor_args():
-    sig = inspect.signature(classes::Package.__init__)
+def test_classes_package_constructor_args():
+    sig = inspect.signature(classes_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -93,51 +93,51 @@ def test_element_constructor_args():
 
 
 
-def test_classes::root_is_not_abstract():
-    assert not inspect.isabstract(classes::Root)
+def test_classes_root_is_not_abstract():
+    assert not inspect.isabstract(classes_Root)
 
 
-def test_classes::root_constructor_exists():
-    assert callable(classes::Root.__init__)
+def test_classes_root_constructor_exists():
+    assert callable(classes_Root.__init__)
 
 
-def test_classes::root_constructor_args():
-    sig = inspect.signature(classes::Root.__init__)
+def test_classes_root_constructor_args():
+    sig = inspect.signature(classes_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::namespace_is_not_abstract():
-    assert not inspect.isabstract(classes::Namespace)
+def test_classes_namespace_is_not_abstract():
+    assert not inspect.isabstract(classes_Namespace)
 
 
-def test_classes::namespace_constructor_exists():
-    assert callable(classes::Namespace.__init__)
+def test_classes_namespace_constructor_exists():
+    assert callable(classes_Namespace.__init__)
 
 
-def test_classes::namespace_constructor_args():
-    sig = inspect.signature(classes::Namespace.__init__)
+def test_classes_namespace_constructor_args():
+    sig = inspect.signature(classes_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classes::namedelement_is_not_abstract():
-    assert not inspect.isabstract(classes::NamedElement)
+def test_classes_namedelement_is_not_abstract():
+    assert not inspect.isabstract(classes_NamedElement)
 
 
-def test_classes::namedelement_constructor_exists():
-    assert callable(classes::NamedElement.__init__)
+def test_classes_namedelement_constructor_exists():
+    assert callable(classes_NamedElement.__init__)
 
 
-def test_classes::namedelement_constructor_args():
-    sig = inspect.signature(classes::NamedElement.__init__)
+def test_classes_namedelement_constructor_args():
+    sig = inspect.signature(classes_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classes::namedelement_has_name():
-    assert hasattr(classes::NamedElement, "name")
+def test_classes_namedelement_has_name():
+    assert hasattr(classes_NamedElement, "name")
     descriptor = None
-    for klass in classes::NamedElement.__mro__:
+    for klass in classes_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -145,16 +145,16 @@ def test_classes::namedelement_has_name():
 
 
 
-def test_classes::element_is_not_abstract():
-    assert not inspect.isabstract(classes::Element)
+def test_classes_element_is_not_abstract():
+    assert not inspect.isabstract(classes_Element)
 
 
-def test_classes::element_constructor_exists():
-    assert callable(classes::Element.__init__)
+def test_classes_element_constructor_exists():
+    assert callable(classes_Element.__init__)
 
 
-def test_classes::element_constructor_args():
-    sig = inspect.signature(classes::Element.__init__)
+def test_classes_element_constructor_args():
+    sig = inspect.signature(classes_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -175,28 +175,28 @@ Namespace_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-classes::Class_strategy = st.builds(
-    classes::Class,
+classes_Class_strategy = st.builds(
+    classes_Class,
 )
-classes::Package_strategy = st.builds(
-    classes::Package,
+classes_Package_strategy = st.builds(
+    classes_Package,
 )
 Element_strategy = st.builds(
     Element,
 )
-classes::Root_strategy = st.builds(
-    classes::Root,
+classes_Root_strategy = st.builds(
+    classes_Root,
 )
-classes::Namespace_strategy = st.builds(
-    classes::Namespace,
+classes_Namespace_strategy = st.builds(
+    classes_Namespace,
 )
-classes::NamedElement_strategy = st.builds(
-    classes::NamedElement,
+classes_NamedElement_strategy = st.builds(
+    classes_NamedElement,
     name=
         safe_text
 )
-classes::Element_strategy = st.builds(
-    classes::Element,
+classes_Element_strategy = st.builds(
+    classes_Element,
 )
 
 @given(instance=Namespace_strategy)
@@ -209,48 +209,45 @@ def test_namespace_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=classes::Class_strategy)
+@given(instance=classes_Class_strategy)
 @settings(max_examples=50)
-def test_classes::class_instantiation(instance):
-    assert isinstance(instance, classes::Class)
+def test_classes_class_instantiation(instance):
+    assert isinstance(instance, classes_Class)
 
-@given(instance=classes::Package_strategy)
+@given(instance=classes_Package_strategy)
 @settings(max_examples=50)
-def test_classes::package_instantiation(instance):
-    assert isinstance(instance, classes::Package)
+def test_classes_package_instantiation(instance):
+    assert isinstance(instance, classes_Package)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=classes::Root_strategy)
+@given(instance=classes_Root_strategy)
 @settings(max_examples=50)
-def test_classes::root_instantiation(instance):
-    assert isinstance(instance, classes::Root)
+def test_classes_root_instantiation(instance):
+    assert isinstance(instance, classes_Root)
 
-@given(instance=classes::Namespace_strategy)
+@given(instance=classes_Namespace_strategy)
 @settings(max_examples=50)
-def test_classes::namespace_instantiation(instance):
-    assert isinstance(instance, classes::Namespace)
+def test_classes_namespace_instantiation(instance):
+    assert isinstance(instance, classes_Namespace)
 
-@given(instance=classes::NamedElement_strategy)
+@given(instance=classes_NamedElement_strategy)
 @settings(max_examples=50)
-def test_classes::namedelement_instantiation(instance):
-    assert isinstance(instance, classes::NamedElement)
-
-@given(instance=classes::NamedElement_strategy)
-def test_classes::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classes_namedelement_instantiation(instance):
+    assert isinstance(instance, classes_NamedElement)
 
 
-@given(instance=classes::NamedElement_strategy)
-def test_classes::namedelement_name_setter(instance):
+
+@given(instance=classes_NamedElement_strategy)
+def test_classes_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=classes::Element_strategy)
+@given(instance=classes_Element_strategy)
 @settings(max_examples=50)
-def test_classes::element_instantiation(instance):
-    assert isinstance(instance, classes::Element)
+def test_classes_element_instantiation(instance):
+    assert isinstance(instance, classes_Element)

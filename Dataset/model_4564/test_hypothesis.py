@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    robot::robot::ProgramUnit,
-    robot::Command,
-    FlotCtrl::BoolExp,
-    robot::robot::HasTurnedCmd,
-    robot::robot::ObstacleCmd,
+from python_code import (
+    robot_robot_ProgramUnit,
+    robot_Command,
+    FlotCtrl_BoolExp,
+    robot_robot_HasTurnedCmd,
+    robot_robot_ObstacleCmd,
     Command,
-    robot::robot::StopProgramCmd,
-    robot::robot::PrintCmd,
-    robot::robot::Bip,
-    robot::robot::SetTurnAngleCmd,
-    robot::robot::StopEngineCmd,
-    robot::robot::TurnCmd,
-    robot::robot::MoveCmd,
+    robot_robot_TurnCmd,
+    robot_robot_Bip,
+    robot_robot_StopEngineCmd,
+    robot_robot_PrintCmd,
+    robot_robot_SetTurnAngleCmd,
+    robot_robot_StopProgramCmd,
+    robot_robot_MoveCmd,
     BoolExp,
-    robot::FlotCtrl::NegExp,
-    robot::FlotCtrl::AndExp,
-    robot::FlotCtrl::Expression,
+    robot_FlotCtrl_AndExp,
+    robot_FlotCtrl_NegExp,
+    robot_FlotCtrl_Expression,
     Expression,
-    robot::FlotCtrl::BoolExp,
-    robot::FlotCtrl::WhileLoop,
-    robot::FlotCtrl::IfBlock,
-    robot::robot::Command,
+    robot_FlotCtrl_BoolExp,
+    robot_FlotCtrl_IfBlock,
+    robot_FlotCtrl_WhileLoop,
+    robot_robot_Command,
 )
 
 # =============================================================================
@@ -36,65 +36,65 @@ from classes import (
 
 
 
-def test_robot::robot::programunit_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::ProgramUnit)
+def test_robot_robot_programunit_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_ProgramUnit)
 
 
-def test_robot::robot::programunit_constructor_exists():
-    assert callable(robot::robot::ProgramUnit.__init__)
+def test_robot_robot_programunit_constructor_exists():
+    assert callable(robot_robot_ProgramUnit.__init__)
 
 
-def test_robot::robot::programunit_constructor_args():
-    sig = inspect.signature(robot::robot::ProgramUnit.__init__)
+def test_robot_robot_programunit_constructor_args():
+    sig = inspect.signature(robot_robot_ProgramUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::command_is_not_abstract():
-    assert not inspect.isabstract(robot::Command)
+def test_robot_command_is_not_abstract():
+    assert not inspect.isabstract(robot_Command)
 
 
-def test_robot::command_constructor_exists():
-    assert callable(robot::Command.__init__)
+def test_robot_command_constructor_exists():
+    assert callable(robot_Command.__init__)
 
 
-def test_robot::command_constructor_args():
-    sig = inspect.signature(robot::Command.__init__)
+def test_robot_command_constructor_args():
+    sig = inspect.signature(robot_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flotctrl::boolexp_is_not_abstract():
-    assert not inspect.isabstract(FlotCtrl::BoolExp)
+def test_flotctrl_boolexp_is_not_abstract():
+    assert not inspect.isabstract(FlotCtrl_BoolExp)
 
 
-def test_flotctrl::boolexp_constructor_exists():
-    assert callable(FlotCtrl::BoolExp.__init__)
+def test_flotctrl_boolexp_constructor_exists():
+    assert callable(FlotCtrl_BoolExp.__init__)
 
 
-def test_flotctrl::boolexp_constructor_args():
-    sig = inspect.signature(FlotCtrl::BoolExp.__init__)
+def test_flotctrl_boolexp_constructor_args():
+    sig = inspect.signature(FlotCtrl_BoolExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::robot::hasturnedcmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::HasTurnedCmd)
+def test_robot_robot_hasturnedcmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_HasTurnedCmd)
 
 
-def test_robot::robot::hasturnedcmd_constructor_exists():
-    assert callable(robot::robot::HasTurnedCmd.__init__)
+def test_robot_robot_hasturnedcmd_constructor_exists():
+    assert callable(robot_robot_HasTurnedCmd.__init__)
 
 
-def test_robot::robot::hasturnedcmd_constructor_args():
-    sig = inspect.signature(robot::robot::HasTurnedCmd.__init__)
+def test_robot_robot_hasturnedcmd_constructor_args():
+    sig = inspect.signature(robot_robot_HasTurnedCmd.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_robot::robot::hasturnedcmd_has_angle():
-    assert hasattr(robot::robot::HasTurnedCmd, "angle")
+def test_robot_robot_hasturnedcmd_has_angle():
+    assert hasattr(robot_robot_HasTurnedCmd, "angle")
     descriptor = None
-    for klass in robot::robot::HasTurnedCmd.__mro__:
+    for klass in robot_robot_HasTurnedCmd.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -102,23 +102,23 @@ def test_robot::robot::hasturnedcmd_has_angle():
 
 
 
-def test_robot::robot::obstaclecmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::ObstacleCmd)
+def test_robot_robot_obstaclecmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_ObstacleCmd)
 
 
-def test_robot::robot::obstaclecmd_constructor_exists():
-    assert callable(robot::robot::ObstacleCmd.__init__)
+def test_robot_robot_obstaclecmd_constructor_exists():
+    assert callable(robot_robot_ObstacleCmd.__init__)
 
 
-def test_robot::robot::obstaclecmd_constructor_args():
-    sig = inspect.signature(robot::robot::ObstacleCmd.__init__)
+def test_robot_robot_obstaclecmd_constructor_args():
+    sig = inspect.signature(robot_robot_ObstacleCmd.__init__)
     params = list(sig.parameters.keys())
     assert "distance" in params, "Missing parameter 'distance'"
 
-def test_robot::robot::obstaclecmd_has_distance():
-    assert hasattr(robot::robot::ObstacleCmd, "distance")
+def test_robot_robot_obstaclecmd_has_distance():
+    assert hasattr(robot_robot_ObstacleCmd, "distance")
     descriptor = None
-    for klass in robot::robot::ObstacleCmd.__mro__:
+    for klass in robot_robot_ObstacleCmd.__mro__:
         if "distance" in klass.__dict__:
             descriptor = klass.__dict__["distance"]
             break
@@ -140,135 +140,169 @@ def test_command_constructor_args():
 
 
 
-def test_robot::robot::stopprogramcmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::StopProgramCmd)
+def test_robot_robot_turncmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_TurnCmd)
 
 
-def test_robot::robot::stopprogramcmd_constructor_exists():
-    assert callable(robot::robot::StopProgramCmd.__init__)
+def test_robot_robot_turncmd_constructor_exists():
+    assert callable(robot_robot_TurnCmd.__init__)
 
 
-def test_robot::robot::stopprogramcmd_constructor_args():
-    sig = inspect.signature(robot::robot::StopProgramCmd.__init__)
+def test_robot_robot_turncmd_constructor_args():
+    sig = inspect.signature(robot_robot_TurnCmd.__init__)
     params = list(sig.parameters.keys())
+    assert "power" in params, "Missing parameter 'power'"
+    assert "angle" in params, "Missing parameter 'angle'"
+
+def test_robot_robot_turncmd_has_power():
+    assert hasattr(robot_robot_TurnCmd, "power")
+    descriptor = None
+    for klass in robot_robot_TurnCmd.__mro__:
+        if "power" in klass.__dict__:
+            descriptor = klass.__dict__["power"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_robot_turncmd_has_angle():
+    assert hasattr(robot_robot_TurnCmd, "angle")
+    descriptor = None
+    for klass in robot_robot_TurnCmd.__mro__:
+        if "angle" in klass.__dict__:
+            descriptor = klass.__dict__["angle"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_robot::robot::printcmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::PrintCmd)
+def test_robot_robot_bip_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_Bip)
 
 
-def test_robot::robot::printcmd_constructor_exists():
-    assert callable(robot::robot::PrintCmd.__init__)
+def test_robot_robot_bip_constructor_exists():
+    assert callable(robot_robot_Bip.__init__)
 
 
-def test_robot::robot::printcmd_constructor_args():
-    sig = inspect.signature(robot::robot::PrintCmd.__init__)
+def test_robot_robot_bip_constructor_args():
+    sig = inspect.signature(robot_robot_Bip.__init__)
     params = list(sig.parameters.keys())
-    assert "msg" in params, "Missing parameter 'msg'"
-    assert "line" in params, "Missing parameter 'line'"
+    assert "power" in params, "Missing parameter 'power'"
     assert "duration" in params, "Missing parameter 'duration'"
-    assert "col" in params, "Missing parameter 'col'"
+    assert "repet" in params, "Missing parameter 'repet'"
 
-def test_robot::robot::printcmd_has_msg():
-    assert hasattr(robot::robot::PrintCmd, "msg")
+def test_robot_robot_bip_has_power():
+    assert hasattr(robot_robot_Bip, "power")
     descriptor = None
-    for klass in robot::robot::PrintCmd.__mro__:
-        if "msg" in klass.__dict__:
-            descriptor = klass.__dict__["msg"]
+    for klass in robot_robot_Bip.__mro__:
+        if "power" in klass.__dict__:
+            descriptor = klass.__dict__["power"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::robot::printcmd_has_line():
-    assert hasattr(robot::robot::PrintCmd, "line")
+def test_robot_robot_bip_has_duration():
+    assert hasattr(robot_robot_Bip, "duration")
     descriptor = None
-    for klass in robot::robot::PrintCmd.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::robot::printcmd_has_duration():
-    assert hasattr(robot::robot::PrintCmd, "duration")
-    descriptor = None
-    for klass in robot::robot::PrintCmd.__mro__:
+    for klass in robot_robot_Bip.__mro__:
         if "duration" in klass.__dict__:
             descriptor = klass.__dict__["duration"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::robot::printcmd_has_col():
-    assert hasattr(robot::robot::PrintCmd, "col")
+def test_robot_robot_bip_has_repet():
+    assert hasattr(robot_robot_Bip, "repet")
     descriptor = None
-    for klass in robot::robot::PrintCmd.__mro__:
-        if "col" in klass.__dict__:
-            descriptor = klass.__dict__["col"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::robot::bip_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::Bip)
-
-
-def test_robot::robot::bip_constructor_exists():
-    assert callable(robot::robot::Bip.__init__)
-
-
-def test_robot::robot::bip_constructor_args():
-    sig = inspect.signature(robot::robot::Bip.__init__)
-    params = list(sig.parameters.keys())
-    assert "repet" in params, "Missing parameter 'repet'"
-    assert "duration" in params, "Missing parameter 'duration'"
-    assert "power" in params, "Missing parameter 'power'"
-
-def test_robot::robot::bip_has_repet():
-    assert hasattr(robot::robot::Bip, "repet")
-    descriptor = None
-    for klass in robot::robot::Bip.__mro__:
+    for klass in robot_robot_Bip.__mro__:
         if "repet" in klass.__dict__:
             descriptor = klass.__dict__["repet"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::robot::bip_has_duration():
-    assert hasattr(robot::robot::Bip, "duration")
+
+
+def test_robot_robot_stopenginecmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_StopEngineCmd)
+
+
+def test_robot_robot_stopenginecmd_constructor_exists():
+    assert callable(robot_robot_StopEngineCmd.__init__)
+
+
+def test_robot_robot_stopenginecmd_constructor_args():
+    sig = inspect.signature(robot_robot_StopEngineCmd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_robot_printcmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_PrintCmd)
+
+
+def test_robot_robot_printcmd_constructor_exists():
+    assert callable(robot_robot_PrintCmd.__init__)
+
+
+def test_robot_robot_printcmd_constructor_args():
+    sig = inspect.signature(robot_robot_PrintCmd.__init__)
+    params = list(sig.parameters.keys())
+    assert "line" in params, "Missing parameter 'line'"
+    assert "col" in params, "Missing parameter 'col'"
+    assert "msg" in params, "Missing parameter 'msg'"
+    assert "duration" in params, "Missing parameter 'duration'"
+
+def test_robot_robot_printcmd_has_line():
+    assert hasattr(robot_robot_PrintCmd, "line")
     descriptor = None
-    for klass in robot::robot::Bip.__mro__:
+    for klass in robot_robot_PrintCmd.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_robot_printcmd_has_col():
+    assert hasattr(robot_robot_PrintCmd, "col")
+    descriptor = None
+    for klass in robot_robot_PrintCmd.__mro__:
+        if "col" in klass.__dict__:
+            descriptor = klass.__dict__["col"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_robot_printcmd_has_msg():
+    assert hasattr(robot_robot_PrintCmd, "msg")
+    descriptor = None
+    for klass in robot_robot_PrintCmd.__mro__:
+        if "msg" in klass.__dict__:
+            descriptor = klass.__dict__["msg"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_robot_printcmd_has_duration():
+    assert hasattr(robot_robot_PrintCmd, "duration")
+    descriptor = None
+    for klass in robot_robot_PrintCmd.__mro__:
         if "duration" in klass.__dict__:
             descriptor = klass.__dict__["duration"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::robot::bip_has_power():
-    assert hasattr(robot::robot::Bip, "power")
-    descriptor = None
-    for klass in robot::robot::Bip.__mro__:
-        if "power" in klass.__dict__:
-            descriptor = klass.__dict__["power"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_robot::robot::setturnanglecmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::SetTurnAngleCmd)
-
-
-def test_robot::robot::setturnanglecmd_constructor_exists():
-    assert callable(robot::robot::SetTurnAngleCmd.__init__)
+def test_robot_robot_setturnanglecmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_SetTurnAngleCmd)
 
 
-def test_robot::robot::setturnanglecmd_constructor_args():
-    sig = inspect.signature(robot::robot::SetTurnAngleCmd.__init__)
+def test_robot_robot_setturnanglecmd_constructor_exists():
+    assert callable(robot_robot_SetTurnAngleCmd.__init__)
+
+
+def test_robot_robot_setturnanglecmd_constructor_args():
+    sig = inspect.signature(robot_robot_SetTurnAngleCmd.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_robot::robot::setturnanglecmd_has_angle():
-    assert hasattr(robot::robot::SetTurnAngleCmd, "angle")
+def test_robot_robot_setturnanglecmd_has_angle():
+    assert hasattr(robot_robot_SetTurnAngleCmd, "angle")
     descriptor = None
-    for klass in robot::robot::SetTurnAngleCmd.__mro__:
+    for klass in robot_robot_SetTurnAngleCmd.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -276,71 +310,37 @@ def test_robot::robot::setturnanglecmd_has_angle():
 
 
 
-def test_robot::robot::stopenginecmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::StopEngineCmd)
+def test_robot_robot_stopprogramcmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_StopProgramCmd)
 
 
-def test_robot::robot::stopenginecmd_constructor_exists():
-    assert callable(robot::robot::StopEngineCmd.__init__)
+def test_robot_robot_stopprogramcmd_constructor_exists():
+    assert callable(robot_robot_StopProgramCmd.__init__)
 
 
-def test_robot::robot::stopenginecmd_constructor_args():
-    sig = inspect.signature(robot::robot::StopEngineCmd.__init__)
+def test_robot_robot_stopprogramcmd_constructor_args():
+    sig = inspect.signature(robot_robot_StopProgramCmd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::robot::turncmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::TurnCmd)
+def test_robot_robot_movecmd_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_MoveCmd)
 
 
-def test_robot::robot::turncmd_constructor_exists():
-    assert callable(robot::robot::TurnCmd.__init__)
+def test_robot_robot_movecmd_constructor_exists():
+    assert callable(robot_robot_MoveCmd.__init__)
 
 
-def test_robot::robot::turncmd_constructor_args():
-    sig = inspect.signature(robot::robot::TurnCmd.__init__)
-    params = list(sig.parameters.keys())
-    assert "power" in params, "Missing parameter 'power'"
-    assert "angle" in params, "Missing parameter 'angle'"
-
-def test_robot::robot::turncmd_has_power():
-    assert hasattr(robot::robot::TurnCmd, "power")
-    descriptor = None
-    for klass in robot::robot::TurnCmd.__mro__:
-        if "power" in klass.__dict__:
-            descriptor = klass.__dict__["power"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::robot::turncmd_has_angle():
-    assert hasattr(robot::robot::TurnCmd, "angle")
-    descriptor = None
-    for klass in robot::robot::TurnCmd.__mro__:
-        if "angle" in klass.__dict__:
-            descriptor = klass.__dict__["angle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_robot::robot::movecmd_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::MoveCmd)
-
-
-def test_robot::robot::movecmd_constructor_exists():
-    assert callable(robot::robot::MoveCmd.__init__)
-
-
-def test_robot::robot::movecmd_constructor_args():
-    sig = inspect.signature(robot::robot::MoveCmd.__init__)
+def test_robot_robot_movecmd_constructor_args():
+    sig = inspect.signature(robot_robot_MoveCmd.__init__)
     params = list(sig.parameters.keys())
     assert "power" in params, "Missing parameter 'power'"
 
-def test_robot::robot::movecmd_has_power():
-    assert hasattr(robot::robot::MoveCmd, "power")
+def test_robot_robot_movecmd_has_power():
+    assert hasattr(robot_robot_MoveCmd, "power")
     descriptor = None
-    for klass in robot::robot::MoveCmd.__mro__:
+    for klass in robot_robot_MoveCmd.__mro__:
         if "power" in klass.__dict__:
             descriptor = klass.__dict__["power"]
             break
@@ -362,44 +362,44 @@ def test_boolexp_constructor_args():
 
 
 
-def test_robot::flotctrl::negexp_is_not_abstract():
-    assert not inspect.isabstract(robot::FlotCtrl::NegExp)
+def test_robot_flotctrl_andexp_is_not_abstract():
+    assert not inspect.isabstract(robot_FlotCtrl_AndExp)
 
 
-def test_robot::flotctrl::negexp_constructor_exists():
-    assert callable(robot::FlotCtrl::NegExp.__init__)
+def test_robot_flotctrl_andexp_constructor_exists():
+    assert callable(robot_FlotCtrl_AndExp.__init__)
 
 
-def test_robot::flotctrl::negexp_constructor_args():
-    sig = inspect.signature(robot::FlotCtrl::NegExp.__init__)
+def test_robot_flotctrl_andexp_constructor_args():
+    sig = inspect.signature(robot_FlotCtrl_AndExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::flotctrl::andexp_is_not_abstract():
-    assert not inspect.isabstract(robot::FlotCtrl::AndExp)
+def test_robot_flotctrl_negexp_is_not_abstract():
+    assert not inspect.isabstract(robot_FlotCtrl_NegExp)
 
 
-def test_robot::flotctrl::andexp_constructor_exists():
-    assert callable(robot::FlotCtrl::AndExp.__init__)
+def test_robot_flotctrl_negexp_constructor_exists():
+    assert callable(robot_FlotCtrl_NegExp.__init__)
 
 
-def test_robot::flotctrl::andexp_constructor_args():
-    sig = inspect.signature(robot::FlotCtrl::AndExp.__init__)
+def test_robot_flotctrl_negexp_constructor_args():
+    sig = inspect.signature(robot_FlotCtrl_NegExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::flotctrl::expression_is_not_abstract():
-    assert not inspect.isabstract(robot::FlotCtrl::Expression)
+def test_robot_flotctrl_expression_is_not_abstract():
+    assert not inspect.isabstract(robot_FlotCtrl_Expression)
 
 
-def test_robot::flotctrl::expression_constructor_exists():
-    assert callable(robot::FlotCtrl::Expression.__init__)
+def test_robot_flotctrl_expression_constructor_exists():
+    assert callable(robot_FlotCtrl_Expression.__init__)
 
 
-def test_robot::flotctrl::expression_constructor_args():
-    sig = inspect.signature(robot::FlotCtrl::Expression.__init__)
+def test_robot_flotctrl_expression_constructor_args():
+    sig = inspect.signature(robot_FlotCtrl_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -418,58 +418,58 @@ def test_expression_constructor_args():
 
 
 
-def test_robot::flotctrl::boolexp_is_not_abstract():
-    assert not inspect.isabstract(robot::FlotCtrl::BoolExp)
+def test_robot_flotctrl_boolexp_is_not_abstract():
+    assert not inspect.isabstract(robot_FlotCtrl_BoolExp)
 
 
-def test_robot::flotctrl::boolexp_constructor_exists():
-    assert callable(robot::FlotCtrl::BoolExp.__init__)
+def test_robot_flotctrl_boolexp_constructor_exists():
+    assert callable(robot_FlotCtrl_BoolExp.__init__)
 
 
-def test_robot::flotctrl::boolexp_constructor_args():
-    sig = inspect.signature(robot::FlotCtrl::BoolExp.__init__)
+def test_robot_flotctrl_boolexp_constructor_args():
+    sig = inspect.signature(robot_FlotCtrl_BoolExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::flotctrl::whileloop_is_not_abstract():
-    assert not inspect.isabstract(robot::FlotCtrl::WhileLoop)
+def test_robot_flotctrl_ifblock_is_not_abstract():
+    assert not inspect.isabstract(robot_FlotCtrl_IfBlock)
 
 
-def test_robot::flotctrl::whileloop_constructor_exists():
-    assert callable(robot::FlotCtrl::WhileLoop.__init__)
+def test_robot_flotctrl_ifblock_constructor_exists():
+    assert callable(robot_FlotCtrl_IfBlock.__init__)
 
 
-def test_robot::flotctrl::whileloop_constructor_args():
-    sig = inspect.signature(robot::FlotCtrl::WhileLoop.__init__)
+def test_robot_flotctrl_ifblock_constructor_args():
+    sig = inspect.signature(robot_FlotCtrl_IfBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::flotctrl::ifblock_is_not_abstract():
-    assert not inspect.isabstract(robot::FlotCtrl::IfBlock)
+def test_robot_flotctrl_whileloop_is_not_abstract():
+    assert not inspect.isabstract(robot_FlotCtrl_WhileLoop)
 
 
-def test_robot::flotctrl::ifblock_constructor_exists():
-    assert callable(robot::FlotCtrl::IfBlock.__init__)
+def test_robot_flotctrl_whileloop_constructor_exists():
+    assert callable(robot_FlotCtrl_WhileLoop.__init__)
 
 
-def test_robot::flotctrl::ifblock_constructor_args():
-    sig = inspect.signature(robot::FlotCtrl::IfBlock.__init__)
+def test_robot_flotctrl_whileloop_constructor_args():
+    sig = inspect.signature(robot_FlotCtrl_WhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::robot::command_is_not_abstract():
-    assert not inspect.isabstract(robot::robot::Command)
+def test_robot_robot_command_is_not_abstract():
+    assert not inspect.isabstract(robot_robot_Command)
 
 
-def test_robot::robot::command_constructor_exists():
-    assert callable(robot::robot::Command.__init__)
+def test_robot_robot_command_constructor_exists():
+    assert callable(robot_robot_Command.__init__)
 
 
-def test_robot::robot::command_constructor_args():
-    sig = inspect.signature(robot::robot::Command.__init__)
+def test_robot_robot_command_constructor_args():
+    sig = inspect.signature(robot_robot_Command.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,142 +484,136 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-robot::robot::ProgramUnit_strategy = st.builds(
-    robot::robot::ProgramUnit,
+robot_robot_ProgramUnit_strategy = st.builds(
+    robot_robot_ProgramUnit,
 )
-robot::Command_strategy = st.builds(
-    robot::Command,
+robot_Command_strategy = st.builds(
+    robot_Command,
 )
-FlotCtrl::BoolExp_strategy = st.builds(
-    FlotCtrl::BoolExp,
+FlotCtrl_BoolExp_strategy = st.builds(
+    FlotCtrl_BoolExp,
 )
-robot::robot::HasTurnedCmd_strategy = st.builds(
-    robot::robot::HasTurnedCmd,
+robot_robot_HasTurnedCmd_strategy = st.builds(
+    robot_robot_HasTurnedCmd,
     angle=
         safe_text
 )
-robot::robot::ObstacleCmd_strategy = st.builds(
-    robot::robot::ObstacleCmd,
+robot_robot_ObstacleCmd_strategy = st.builds(
+    robot_robot_ObstacleCmd,
     distance=
         safe_text
 )
 Command_strategy = st.builds(
     Command,
 )
-robot::robot::StopProgramCmd_strategy = st.builds(
-    robot::robot::StopProgramCmd,
-)
-robot::robot::PrintCmd_strategy = st.builds(
-    robot::robot::PrintCmd,
-    msg=
+robot_robot_TurnCmd_strategy = st.builds(
+    robot_robot_TurnCmd,
+    power=
         safe_text,
+    angle=
+        safe_text
+)
+robot_robot_Bip_strategy = st.builds(
+    robot_robot_Bip,
+    power=
+        safe_text,
+    duration=
+        safe_text,
+    repet=
+        safe_text
+)
+robot_robot_StopEngineCmd_strategy = st.builds(
+    robot_robot_StopEngineCmd,
+)
+robot_robot_PrintCmd_strategy = st.builds(
+    robot_robot_PrintCmd,
     line=
         safe_text,
-    duration=
-        safe_text,
     col=
-        safe_text
-)
-robot::robot::Bip_strategy = st.builds(
-    robot::robot::Bip,
-    repet=
+        safe_text,
+    msg=
         safe_text,
     duration=
-        safe_text,
-    power=
         safe_text
 )
-robot::robot::SetTurnAngleCmd_strategy = st.builds(
-    robot::robot::SetTurnAngleCmd,
+robot_robot_SetTurnAngleCmd_strategy = st.builds(
+    robot_robot_SetTurnAngleCmd,
     angle=
         safe_text
 )
-robot::robot::StopEngineCmd_strategy = st.builds(
-    robot::robot::StopEngineCmd,
+robot_robot_StopProgramCmd_strategy = st.builds(
+    robot_robot_StopProgramCmd,
 )
-robot::robot::TurnCmd_strategy = st.builds(
-    robot::robot::TurnCmd,
-    power=
-        safe_text,
-    angle=
-        safe_text
-)
-robot::robot::MoveCmd_strategy = st.builds(
-    robot::robot::MoveCmd,
+robot_robot_MoveCmd_strategy = st.builds(
+    robot_robot_MoveCmd,
     power=
         safe_text
 )
 BoolExp_strategy = st.builds(
     BoolExp,
 )
-robot::FlotCtrl::NegExp_strategy = st.builds(
-    robot::FlotCtrl::NegExp,
+robot_FlotCtrl_AndExp_strategy = st.builds(
+    robot_FlotCtrl_AndExp,
 )
-robot::FlotCtrl::AndExp_strategy = st.builds(
-    robot::FlotCtrl::AndExp,
+robot_FlotCtrl_NegExp_strategy = st.builds(
+    robot_FlotCtrl_NegExp,
 )
-robot::FlotCtrl::Expression_strategy = st.builds(
-    robot::FlotCtrl::Expression,
+robot_FlotCtrl_Expression_strategy = st.builds(
+    robot_FlotCtrl_Expression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-robot::FlotCtrl::BoolExp_strategy = st.builds(
-    robot::FlotCtrl::BoolExp,
+robot_FlotCtrl_BoolExp_strategy = st.builds(
+    robot_FlotCtrl_BoolExp,
 )
-robot::FlotCtrl::WhileLoop_strategy = st.builds(
-    robot::FlotCtrl::WhileLoop,
+robot_FlotCtrl_IfBlock_strategy = st.builds(
+    robot_FlotCtrl_IfBlock,
 )
-robot::FlotCtrl::IfBlock_strategy = st.builds(
-    robot::FlotCtrl::IfBlock,
+robot_FlotCtrl_WhileLoop_strategy = st.builds(
+    robot_FlotCtrl_WhileLoop,
 )
-robot::robot::Command_strategy = st.builds(
-    robot::robot::Command,
+robot_robot_Command_strategy = st.builds(
+    robot_robot_Command,
 )
 
-@given(instance=robot::robot::ProgramUnit_strategy)
+@given(instance=robot_robot_ProgramUnit_strategy)
 @settings(max_examples=50)
-def test_robot::robot::programunit_instantiation(instance):
-    assert isinstance(instance, robot::robot::ProgramUnit)
+def test_robot_robot_programunit_instantiation(instance):
+    assert isinstance(instance, robot_robot_ProgramUnit)
 
-@given(instance=robot::Command_strategy)
+@given(instance=robot_Command_strategy)
 @settings(max_examples=50)
-def test_robot::command_instantiation(instance):
-    assert isinstance(instance, robot::Command)
+def test_robot_command_instantiation(instance):
+    assert isinstance(instance, robot_Command)
 
-@given(instance=FlotCtrl::BoolExp_strategy)
+@given(instance=FlotCtrl_BoolExp_strategy)
 @settings(max_examples=50)
-def test_flotctrl::boolexp_instantiation(instance):
-    assert isinstance(instance, FlotCtrl::BoolExp)
+def test_flotctrl_boolexp_instantiation(instance):
+    assert isinstance(instance, FlotCtrl_BoolExp)
 
-@given(instance=robot::robot::HasTurnedCmd_strategy)
+@given(instance=robot_robot_HasTurnedCmd_strategy)
 @settings(max_examples=50)
-def test_robot::robot::hasturnedcmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::HasTurnedCmd)
-
-@given(instance=robot::robot::HasTurnedCmd_strategy)
-def test_robot::robot::hasturnedcmd_angle_type(instance):
-    assert isinstance(instance.angle, str)
+def test_robot_robot_hasturnedcmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_HasTurnedCmd)
 
 
-@given(instance=robot::robot::HasTurnedCmd_strategy)
-def test_robot::robot::hasturnedcmd_angle_setter(instance):
+
+@given(instance=robot_robot_HasTurnedCmd_strategy)
+def test_robot_robot_hasturnedcmd_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=robot::robot::ObstacleCmd_strategy)
+@given(instance=robot_robot_ObstacleCmd_strategy)
 @settings(max_examples=50)
-def test_robot::robot::obstaclecmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::ObstacleCmd)
-
-@given(instance=robot::robot::ObstacleCmd_strategy)
-def test_robot::robot::obstaclecmd_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_robot_robot_obstaclecmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_ObstacleCmd)
 
 
-@given(instance=robot::robot::ObstacleCmd_strategy)
-def test_robot::robot::obstaclecmd_distance_setter(instance):
+
+@given(instance=robot_robot_ObstacleCmd_strategy)
+def test_robot_robot_obstaclecmd_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
@@ -629,158 +623,125 @@ def test_robot::robot::obstaclecmd_distance_setter(instance):
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=robot::robot::StopProgramCmd_strategy)
+@given(instance=robot_robot_TurnCmd_strategy)
 @settings(max_examples=50)
-def test_robot::robot::stopprogramcmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::StopProgramCmd)
+def test_robot_robot_turncmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_TurnCmd)
 
-@given(instance=robot::robot::PrintCmd_strategy)
+
+
+@given(instance=robot_robot_TurnCmd_strategy)
+def test_robot_robot_turncmd_power_setter(instance):
+    original = instance.power
+    instance.power = original
+    assert instance.power == original
+
+
+
+@given(instance=robot_robot_TurnCmd_strategy)
+def test_robot_robot_turncmd_angle_setter(instance):
+    original = instance.angle
+    instance.angle = original
+    assert instance.angle == original
+
+@given(instance=robot_robot_Bip_strategy)
 @settings(max_examples=50)
-def test_robot::robot::printcmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::PrintCmd)
-
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_msg_type(instance):
-    assert isinstance(instance.msg, str)
+def test_robot_robot_bip_instantiation(instance):
+    assert isinstance(instance, robot_robot_Bip)
 
 
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_msg_setter(instance):
-    original = instance.msg
-    instance.msg = original
-    assert instance.msg == original
 
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_line_type(instance):
-    assert isinstance(instance.line, str)
+@given(instance=robot_robot_Bip_strategy)
+def test_robot_robot_bip_power_setter(instance):
+    original = instance.power
+    instance.power = original
+    assert instance.power == original
 
 
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
 
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_duration_type(instance):
-    assert isinstance(instance.duration, str)
-
-
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_duration_setter(instance):
+@given(instance=robot_robot_Bip_strategy)
+def test_robot_robot_bip_duration_setter(instance):
     original = instance.duration
     instance.duration = original
     assert instance.duration == original
 
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_col_type(instance):
-    assert isinstance(instance.col, str)
 
 
-@given(instance=robot::robot::PrintCmd_strategy)
-def test_robot::robot::printcmd_col_setter(instance):
-    original = instance.col
-    instance.col = original
-    assert instance.col == original
-
-@given(instance=robot::robot::Bip_strategy)
-@settings(max_examples=50)
-def test_robot::robot::bip_instantiation(instance):
-    assert isinstance(instance, robot::robot::Bip)
-
-@given(instance=robot::robot::Bip_strategy)
-def test_robot::robot::bip_repet_type(instance):
-    assert isinstance(instance.repet, str)
-
-
-@given(instance=robot::robot::Bip_strategy)
-def test_robot::robot::bip_repet_setter(instance):
+@given(instance=robot_robot_Bip_strategy)
+def test_robot_robot_bip_repet_setter(instance):
     original = instance.repet
     instance.repet = original
     assert instance.repet == original
 
-@given(instance=robot::robot::Bip_strategy)
-def test_robot::robot::bip_duration_type(instance):
-    assert isinstance(instance.duration, str)
+@given(instance=robot_robot_StopEngineCmd_strategy)
+@settings(max_examples=50)
+def test_robot_robot_stopenginecmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_StopEngineCmd)
+
+@given(instance=robot_robot_PrintCmd_strategy)
+@settings(max_examples=50)
+def test_robot_robot_printcmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_PrintCmd)
 
 
-@given(instance=robot::robot::Bip_strategy)
-def test_robot::robot::bip_duration_setter(instance):
+
+@given(instance=robot_robot_PrintCmd_strategy)
+def test_robot_robot_printcmd_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original
+
+
+
+@given(instance=robot_robot_PrintCmd_strategy)
+def test_robot_robot_printcmd_col_setter(instance):
+    original = instance.col
+    instance.col = original
+    assert instance.col == original
+
+
+
+@given(instance=robot_robot_PrintCmd_strategy)
+def test_robot_robot_printcmd_msg_setter(instance):
+    original = instance.msg
+    instance.msg = original
+    assert instance.msg == original
+
+
+
+@given(instance=robot_robot_PrintCmd_strategy)
+def test_robot_robot_printcmd_duration_setter(instance):
     original = instance.duration
     instance.duration = original
     assert instance.duration == original
 
-@given(instance=robot::robot::Bip_strategy)
-def test_robot::robot::bip_power_type(instance):
-    assert isinstance(instance.power, str)
-
-
-@given(instance=robot::robot::Bip_strategy)
-def test_robot::robot::bip_power_setter(instance):
-    original = instance.power
-    instance.power = original
-    assert instance.power == original
-
-@given(instance=robot::robot::SetTurnAngleCmd_strategy)
+@given(instance=robot_robot_SetTurnAngleCmd_strategy)
 @settings(max_examples=50)
-def test_robot::robot::setturnanglecmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::SetTurnAngleCmd)
-
-@given(instance=robot::robot::SetTurnAngleCmd_strategy)
-def test_robot::robot::setturnanglecmd_angle_type(instance):
-    assert isinstance(instance.angle, str)
+def test_robot_robot_setturnanglecmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_SetTurnAngleCmd)
 
 
-@given(instance=robot::robot::SetTurnAngleCmd_strategy)
-def test_robot::robot::setturnanglecmd_angle_setter(instance):
+
+@given(instance=robot_robot_SetTurnAngleCmd_strategy)
+def test_robot_robot_setturnanglecmd_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=robot::robot::StopEngineCmd_strategy)
+@given(instance=robot_robot_StopProgramCmd_strategy)
 @settings(max_examples=50)
-def test_robot::robot::stopenginecmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::StopEngineCmd)
+def test_robot_robot_stopprogramcmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_StopProgramCmd)
 
-@given(instance=robot::robot::TurnCmd_strategy)
+@given(instance=robot_robot_MoveCmd_strategy)
 @settings(max_examples=50)
-def test_robot::robot::turncmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::TurnCmd)
-
-@given(instance=robot::robot::TurnCmd_strategy)
-def test_robot::robot::turncmd_power_type(instance):
-    assert isinstance(instance.power, str)
+def test_robot_robot_movecmd_instantiation(instance):
+    assert isinstance(instance, robot_robot_MoveCmd)
 
 
-@given(instance=robot::robot::TurnCmd_strategy)
-def test_robot::robot::turncmd_power_setter(instance):
-    original = instance.power
-    instance.power = original
-    assert instance.power == original
 
-@given(instance=robot::robot::TurnCmd_strategy)
-def test_robot::robot::turncmd_angle_type(instance):
-    assert isinstance(instance.angle, str)
-
-
-@given(instance=robot::robot::TurnCmd_strategy)
-def test_robot::robot::turncmd_angle_setter(instance):
-    original = instance.angle
-    instance.angle = original
-    assert instance.angle == original
-
-@given(instance=robot::robot::MoveCmd_strategy)
-@settings(max_examples=50)
-def test_robot::robot::movecmd_instantiation(instance):
-    assert isinstance(instance, robot::robot::MoveCmd)
-
-@given(instance=robot::robot::MoveCmd_strategy)
-def test_robot::robot::movecmd_power_type(instance):
-    assert isinstance(instance.power, str)
-
-
-@given(instance=robot::robot::MoveCmd_strategy)
-def test_robot::robot::movecmd_power_setter(instance):
+@given(instance=robot_robot_MoveCmd_strategy)
+def test_robot_robot_movecmd_power_setter(instance):
     original = instance.power
     instance.power = original
     assert instance.power == original
@@ -790,42 +751,42 @@ def test_robot::robot::movecmd_power_setter(instance):
 def test_boolexp_instantiation(instance):
     assert isinstance(instance, BoolExp)
 
-@given(instance=robot::FlotCtrl::NegExp_strategy)
+@given(instance=robot_FlotCtrl_AndExp_strategy)
 @settings(max_examples=50)
-def test_robot::flotctrl::negexp_instantiation(instance):
-    assert isinstance(instance, robot::FlotCtrl::NegExp)
+def test_robot_flotctrl_andexp_instantiation(instance):
+    assert isinstance(instance, robot_FlotCtrl_AndExp)
 
-@given(instance=robot::FlotCtrl::AndExp_strategy)
+@given(instance=robot_FlotCtrl_NegExp_strategy)
 @settings(max_examples=50)
-def test_robot::flotctrl::andexp_instantiation(instance):
-    assert isinstance(instance, robot::FlotCtrl::AndExp)
+def test_robot_flotctrl_negexp_instantiation(instance):
+    assert isinstance(instance, robot_FlotCtrl_NegExp)
 
-@given(instance=robot::FlotCtrl::Expression_strategy)
+@given(instance=robot_FlotCtrl_Expression_strategy)
 @settings(max_examples=50)
-def test_robot::flotctrl::expression_instantiation(instance):
-    assert isinstance(instance, robot::FlotCtrl::Expression)
+def test_robot_flotctrl_expression_instantiation(instance):
+    assert isinstance(instance, robot_FlotCtrl_Expression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=robot::FlotCtrl::BoolExp_strategy)
+@given(instance=robot_FlotCtrl_BoolExp_strategy)
 @settings(max_examples=50)
-def test_robot::flotctrl::boolexp_instantiation(instance):
-    assert isinstance(instance, robot::FlotCtrl::BoolExp)
+def test_robot_flotctrl_boolexp_instantiation(instance):
+    assert isinstance(instance, robot_FlotCtrl_BoolExp)
 
-@given(instance=robot::FlotCtrl::WhileLoop_strategy)
+@given(instance=robot_FlotCtrl_IfBlock_strategy)
 @settings(max_examples=50)
-def test_robot::flotctrl::whileloop_instantiation(instance):
-    assert isinstance(instance, robot::FlotCtrl::WhileLoop)
+def test_robot_flotctrl_ifblock_instantiation(instance):
+    assert isinstance(instance, robot_FlotCtrl_IfBlock)
 
-@given(instance=robot::FlotCtrl::IfBlock_strategy)
+@given(instance=robot_FlotCtrl_WhileLoop_strategy)
 @settings(max_examples=50)
-def test_robot::flotctrl::ifblock_instantiation(instance):
-    assert isinstance(instance, robot::FlotCtrl::IfBlock)
+def test_robot_flotctrl_whileloop_instantiation(instance):
+    assert isinstance(instance, robot_FlotCtrl_WhileLoop)
 
-@given(instance=robot::robot::Command_strategy)
+@given(instance=robot_robot_Command_strategy)
 @settings(max_examples=50)
-def test_robot::robot::command_instantiation(instance):
-    assert isinstance(instance, robot::robot::Command)
+def test_robot_robot_command_instantiation(instance):
+    assert isinstance(instance, robot_robot_Command)

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ChangingOverTime::LinkKind,
+from python_code import (
+    ChangingOverTime_LinkKind,
     TimeStampedElement,
-    ChangingOverTime::BindingKind,
-    ChangingOverTime::Entity,
-    ChangingOverTime::NodeKind,
-    ChangingOverTime::Tree,
-    ChangingOverTime::TimeStampedElement,
+    ChangingOverTime_Entity,
+    ChangingOverTime_BindingKind,
+    ChangingOverTime_NodeKind,
+    ChangingOverTime_Tree,
+    ChangingOverTime_TimeStampedElement,
 )
 
 # =============================================================================
@@ -21,16 +21,16 @@ from classes import (
 
 
 
-def test_changingovertime::linkkind_is_not_abstract():
-    assert not inspect.isabstract(ChangingOverTime::LinkKind)
+def test_changingovertime_linkkind_is_not_abstract():
+    assert not inspect.isabstract(ChangingOverTime_LinkKind)
 
 
-def test_changingovertime::linkkind_constructor_exists():
-    assert callable(ChangingOverTime::LinkKind.__init__)
+def test_changingovertime_linkkind_constructor_exists():
+    assert callable(ChangingOverTime_LinkKind.__init__)
 
 
-def test_changingovertime::linkkind_constructor_args():
-    sig = inspect.signature(ChangingOverTime::LinkKind.__init__)
+def test_changingovertime_linkkind_constructor_args():
+    sig = inspect.signature(ChangingOverTime_LinkKind.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -49,91 +49,91 @@ def test_timestampedelement_constructor_args():
 
 
 
-def test_changingovertime::bindingkind_is_not_abstract():
-    assert not inspect.isabstract(ChangingOverTime::BindingKind)
+def test_changingovertime_entity_is_not_abstract():
+    assert not inspect.isabstract(ChangingOverTime_Entity)
 
 
-def test_changingovertime::bindingkind_constructor_exists():
-    assert callable(ChangingOverTime::BindingKind.__init__)
+def test_changingovertime_entity_constructor_exists():
+    assert callable(ChangingOverTime_Entity.__init__)
 
 
-def test_changingovertime::bindingkind_constructor_args():
-    sig = inspect.signature(ChangingOverTime::BindingKind.__init__)
+def test_changingovertime_entity_constructor_args():
+    sig = inspect.signature(ChangingOverTime_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_changingovertime::entity_is_not_abstract():
-    assert not inspect.isabstract(ChangingOverTime::Entity)
+def test_changingovertime_bindingkind_is_not_abstract():
+    assert not inspect.isabstract(ChangingOverTime_BindingKind)
 
 
-def test_changingovertime::entity_constructor_exists():
-    assert callable(ChangingOverTime::Entity.__init__)
+def test_changingovertime_bindingkind_constructor_exists():
+    assert callable(ChangingOverTime_BindingKind.__init__)
 
 
-def test_changingovertime::entity_constructor_args():
-    sig = inspect.signature(ChangingOverTime::Entity.__init__)
+def test_changingovertime_bindingkind_constructor_args():
+    sig = inspect.signature(ChangingOverTime_BindingKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_changingovertime::nodekind_is_not_abstract():
-    assert not inspect.isabstract(ChangingOverTime::NodeKind)
+def test_changingovertime_nodekind_is_not_abstract():
+    assert not inspect.isabstract(ChangingOverTime_NodeKind)
 
 
-def test_changingovertime::nodekind_constructor_exists():
-    assert callable(ChangingOverTime::NodeKind.__init__)
+def test_changingovertime_nodekind_constructor_exists():
+    assert callable(ChangingOverTime_NodeKind.__init__)
 
 
-def test_changingovertime::nodekind_constructor_args():
-    sig = inspect.signature(ChangingOverTime::NodeKind.__init__)
+def test_changingovertime_nodekind_constructor_args():
+    sig = inspect.signature(ChangingOverTime_NodeKind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_changingovertime::tree_is_not_abstract():
-    assert not inspect.isabstract(ChangingOverTime::Tree)
+def test_changingovertime_tree_is_not_abstract():
+    assert not inspect.isabstract(ChangingOverTime_Tree)
 
 
-def test_changingovertime::tree_constructor_exists():
-    assert callable(ChangingOverTime::Tree.__init__)
+def test_changingovertime_tree_constructor_exists():
+    assert callable(ChangingOverTime_Tree.__init__)
 
 
-def test_changingovertime::tree_constructor_args():
-    sig = inspect.signature(ChangingOverTime::Tree.__init__)
+def test_changingovertime_tree_constructor_args():
+    sig = inspect.signature(ChangingOverTime_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_changingovertime::timestampedelement_is_not_abstract():
-    assert not inspect.isabstract(ChangingOverTime::TimeStampedElement)
+def test_changingovertime_timestampedelement_is_not_abstract():
+    assert not inspect.isabstract(ChangingOverTime_TimeStampedElement)
 
 
-def test_changingovertime::timestampedelement_constructor_exists():
-    assert callable(ChangingOverTime::TimeStampedElement.__init__)
+def test_changingovertime_timestampedelement_constructor_exists():
+    assert callable(ChangingOverTime_TimeStampedElement.__init__)
 
 
-def test_changingovertime::timestampedelement_constructor_args():
-    sig = inspect.signature(ChangingOverTime::TimeStampedElement.__init__)
+def test_changingovertime_timestampedelement_constructor_args():
+    sig = inspect.signature(ChangingOverTime_TimeStampedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "effectiveDate" in params, "Missing parameter 'effectiveDate'"
     assert "expirationDate" in params, "Missing parameter 'expirationDate'"
+    assert "effectiveDate" in params, "Missing parameter 'effectiveDate'"
 
-def test_changingovertime::timestampedelement_has_effectiveDate():
-    assert hasattr(ChangingOverTime::TimeStampedElement, "effectiveDate")
+def test_changingovertime_timestampedelement_has_expirationDate():
+    assert hasattr(ChangingOverTime_TimeStampedElement, "expirationDate")
     descriptor = None
-    for klass in ChangingOverTime::TimeStampedElement.__mro__:
-        if "effectiveDate" in klass.__dict__:
-            descriptor = klass.__dict__["effectiveDate"]
+    for klass in ChangingOverTime_TimeStampedElement.__mro__:
+        if "expirationDate" in klass.__dict__:
+            descriptor = klass.__dict__["expirationDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_changingovertime::timestampedelement_has_expirationDate():
-    assert hasattr(ChangingOverTime::TimeStampedElement, "expirationDate")
+def test_changingovertime_timestampedelement_has_effectiveDate():
+    assert hasattr(ChangingOverTime_TimeStampedElement, "effectiveDate")
     descriptor = None
-    for klass in ChangingOverTime::TimeStampedElement.__mro__:
-        if "expirationDate" in klass.__dict__:
-            descriptor = klass.__dict__["expirationDate"]
+    for klass in ChangingOverTime_TimeStampedElement.__mro__:
+        if "effectiveDate" in klass.__dict__:
+            descriptor = klass.__dict__["effectiveDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -149,85 +149,79 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ChangingOverTime::LinkKind_strategy = st.builds(
-    ChangingOverTime::LinkKind,
+ChangingOverTime_LinkKind_strategy = st.builds(
+    ChangingOverTime_LinkKind,
 )
 TimeStampedElement_strategy = st.builds(
     TimeStampedElement,
 )
-ChangingOverTime::BindingKind_strategy = st.builds(
-    ChangingOverTime::BindingKind,
+ChangingOverTime_Entity_strategy = st.builds(
+    ChangingOverTime_Entity,
 )
-ChangingOverTime::Entity_strategy = st.builds(
-    ChangingOverTime::Entity,
+ChangingOverTime_BindingKind_strategy = st.builds(
+    ChangingOverTime_BindingKind,
 )
-ChangingOverTime::NodeKind_strategy = st.builds(
-    ChangingOverTime::NodeKind,
+ChangingOverTime_NodeKind_strategy = st.builds(
+    ChangingOverTime_NodeKind,
 )
-ChangingOverTime::Tree_strategy = st.builds(
-    ChangingOverTime::Tree,
+ChangingOverTime_Tree_strategy = st.builds(
+    ChangingOverTime_Tree,
 )
-ChangingOverTime::TimeStampedElement_strategy = st.builds(
-    ChangingOverTime::TimeStampedElement,
-    effectiveDate=
-        st.dates(),
+ChangingOverTime_TimeStampedElement_strategy = st.builds(
+    ChangingOverTime_TimeStampedElement,
     expirationDate=
+        st.dates(),
+    effectiveDate=
         st.dates()
 )
 
-@given(instance=ChangingOverTime::LinkKind_strategy)
+@given(instance=ChangingOverTime_LinkKind_strategy)
 @settings(max_examples=50)
-def test_changingovertime::linkkind_instantiation(instance):
-    assert isinstance(instance, ChangingOverTime::LinkKind)
+def test_changingovertime_linkkind_instantiation(instance):
+    assert isinstance(instance, ChangingOverTime_LinkKind)
 
 @given(instance=TimeStampedElement_strategy)
 @settings(max_examples=50)
 def test_timestampedelement_instantiation(instance):
     assert isinstance(instance, TimeStampedElement)
 
-@given(instance=ChangingOverTime::BindingKind_strategy)
+@given(instance=ChangingOverTime_Entity_strategy)
 @settings(max_examples=50)
-def test_changingovertime::bindingkind_instantiation(instance):
-    assert isinstance(instance, ChangingOverTime::BindingKind)
+def test_changingovertime_entity_instantiation(instance):
+    assert isinstance(instance, ChangingOverTime_Entity)
 
-@given(instance=ChangingOverTime::Entity_strategy)
+@given(instance=ChangingOverTime_BindingKind_strategy)
 @settings(max_examples=50)
-def test_changingovertime::entity_instantiation(instance):
-    assert isinstance(instance, ChangingOverTime::Entity)
+def test_changingovertime_bindingkind_instantiation(instance):
+    assert isinstance(instance, ChangingOverTime_BindingKind)
 
-@given(instance=ChangingOverTime::NodeKind_strategy)
+@given(instance=ChangingOverTime_NodeKind_strategy)
 @settings(max_examples=50)
-def test_changingovertime::nodekind_instantiation(instance):
-    assert isinstance(instance, ChangingOverTime::NodeKind)
+def test_changingovertime_nodekind_instantiation(instance):
+    assert isinstance(instance, ChangingOverTime_NodeKind)
 
-@given(instance=ChangingOverTime::Tree_strategy)
+@given(instance=ChangingOverTime_Tree_strategy)
 @settings(max_examples=50)
-def test_changingovertime::tree_instantiation(instance):
-    assert isinstance(instance, ChangingOverTime::Tree)
+def test_changingovertime_tree_instantiation(instance):
+    assert isinstance(instance, ChangingOverTime_Tree)
 
-@given(instance=ChangingOverTime::TimeStampedElement_strategy)
+@given(instance=ChangingOverTime_TimeStampedElement_strategy)
 @settings(max_examples=50)
-def test_changingovertime::timestampedelement_instantiation(instance):
-    assert isinstance(instance, ChangingOverTime::TimeStampedElement)
-
-@given(instance=ChangingOverTime::TimeStampedElement_strategy)
-def test_changingovertime::timestampedelement_effectiveDate_type(instance):
-    assert isinstance(instance.effectiveDate, date)
+def test_changingovertime_timestampedelement_instantiation(instance):
+    assert isinstance(instance, ChangingOverTime_TimeStampedElement)
 
 
-@given(instance=ChangingOverTime::TimeStampedElement_strategy)
-def test_changingovertime::timestampedelement_effectiveDate_setter(instance):
-    original = instance.effectiveDate
-    instance.effectiveDate = original
-    assert instance.effectiveDate == original
 
-@given(instance=ChangingOverTime::TimeStampedElement_strategy)
-def test_changingovertime::timestampedelement_expirationDate_type(instance):
-    assert isinstance(instance.expirationDate, date)
-
-
-@given(instance=ChangingOverTime::TimeStampedElement_strategy)
-def test_changingovertime::timestampedelement_expirationDate_setter(instance):
+@given(instance=ChangingOverTime_TimeStampedElement_strategy)
+def test_changingovertime_timestampedelement_expirationDate_setter(instance):
     original = instance.expirationDate
     instance.expirationDate = original
     assert instance.expirationDate == original
+
+
+
+@given(instance=ChangingOverTime_TimeStampedElement_strategy)
+def test_changingovertime_timestampedelement_effectiveDate_setter(instance):
+    original = instance.effectiveDate
+    instance.effectiveDate = original
+    assert instance.effectiveDate == original

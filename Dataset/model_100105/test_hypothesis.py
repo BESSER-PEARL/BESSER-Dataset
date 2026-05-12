@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tp5::PublicationStructure,
-    tp5::Researcher,
-    tp5::Paragraph,
-    tp5::Collaboration,
-    tp5::Position,
-    tp5::Skill,
-    tp5::Paper,
+from python_code import (
+    tp5_PublicationStructure,
+    tp5_Researcher,
+    tp5_Paragraph,
+    tp5_Collaboration,
+    tp5_Position,
+    tp5_Skill,
+    tp5_Paper,
 )
 
 # =============================================================================
@@ -21,47 +21,47 @@ from classes import (
 
 
 
-def test_tp5::publicationstructure_is_not_abstract():
-    assert not inspect.isabstract(tp5::PublicationStructure)
+def test_tp5_publicationstructure_is_not_abstract():
+    assert not inspect.isabstract(tp5_PublicationStructure)
 
 
-def test_tp5::publicationstructure_constructor_exists():
-    assert callable(tp5::PublicationStructure.__init__)
+def test_tp5_publicationstructure_constructor_exists():
+    assert callable(tp5_PublicationStructure.__init__)
 
 
-def test_tp5::publicationstructure_constructor_args():
-    sig = inspect.signature(tp5::PublicationStructure.__init__)
+def test_tp5_publicationstructure_constructor_args():
+    sig = inspect.signature(tp5_PublicationStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tp5::researcher_is_not_abstract():
-    assert not inspect.isabstract(tp5::Researcher)
+def test_tp5_researcher_is_not_abstract():
+    assert not inspect.isabstract(tp5_Researcher)
 
 
-def test_tp5::researcher_constructor_exists():
-    assert callable(tp5::Researcher.__init__)
+def test_tp5_researcher_constructor_exists():
+    assert callable(tp5_Researcher.__init__)
 
 
-def test_tp5::researcher_constructor_args():
-    sig = inspect.signature(tp5::Researcher.__init__)
+def test_tp5_researcher_constructor_args():
+    sig = inspect.signature(tp5_Researcher.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "forName" in params, "Missing parameter 'forName'"
 
-def test_tp5::researcher_has_name():
-    assert hasattr(tp5::Researcher, "name")
+def test_tp5_researcher_has_name():
+    assert hasattr(tp5_Researcher, "name")
     descriptor = None
-    for klass in tp5::Researcher.__mro__:
+    for klass in tp5_Researcher.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_tp5::researcher_has_forName():
-    assert hasattr(tp5::Researcher, "forName")
+def test_tp5_researcher_has_forName():
+    assert hasattr(tp5_Researcher, "forName")
     descriptor = None
-    for klass in tp5::Researcher.__mro__:
+    for klass in tp5_Researcher.__mro__:
         if "forName" in klass.__dict__:
             descriptor = klass.__dict__["forName"]
             break
@@ -69,67 +69,67 @@ def test_tp5::researcher_has_forName():
 
 
 
-def test_tp5::paragraph_is_not_abstract():
-    assert not inspect.isabstract(tp5::Paragraph)
+def test_tp5_paragraph_is_not_abstract():
+    assert not inspect.isabstract(tp5_Paragraph)
 
 
-def test_tp5::paragraph_constructor_exists():
-    assert callable(tp5::Paragraph.__init__)
+def test_tp5_paragraph_constructor_exists():
+    assert callable(tp5_Paragraph.__init__)
 
 
-def test_tp5::paragraph_constructor_args():
-    sig = inspect.signature(tp5::Paragraph.__init__)
+def test_tp5_paragraph_constructor_args():
+    sig = inspect.signature(tp5_Paragraph.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "content" in params, "Missing parameter 'content'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "content" in params, "Missing parameter 'content'"
 
-def test_tp5::paragraph_has_id():
-    assert hasattr(tp5::Paragraph, "id")
+def test_tp5_paragraph_has_id():
+    assert hasattr(tp5_Paragraph, "id")
     descriptor = None
-    for klass in tp5::Paragraph.__mro__:
+    for klass in tp5_Paragraph.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tp5::paragraph_has_content():
-    assert hasattr(tp5::Paragraph, "content")
+def test_tp5_paragraph_has_name():
+    assert hasattr(tp5_Paragraph, "name")
     descriptor = None
-    for klass in tp5::Paragraph.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tp5::paragraph_has_name():
-    assert hasattr(tp5::Paragraph, "name")
-    descriptor = None
-    for klass in tp5::Paragraph.__mro__:
+    for klass in tp5_Paragraph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_tp5_paragraph_has_content():
+    assert hasattr(tp5_Paragraph, "content")
+    descriptor = None
+    for klass in tp5_Paragraph.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tp5::collaboration_is_not_abstract():
-    assert not inspect.isabstract(tp5::Collaboration)
+
+def test_tp5_collaboration_is_not_abstract():
+    assert not inspect.isabstract(tp5_Collaboration)
 
 
-def test_tp5::collaboration_constructor_exists():
-    assert callable(tp5::Collaboration.__init__)
+def test_tp5_collaboration_constructor_exists():
+    assert callable(tp5_Collaboration.__init__)
 
 
-def test_tp5::collaboration_constructor_args():
-    sig = inspect.signature(tp5::Collaboration.__init__)
+def test_tp5_collaboration_constructor_args():
+    sig = inspect.signature(tp5_Collaboration.__init__)
     params = list(sig.parameters.keys())
     assert "ratio" in params, "Missing parameter 'ratio'"
 
-def test_tp5::collaboration_has_ratio():
-    assert hasattr(tp5::Collaboration, "ratio")
+def test_tp5_collaboration_has_ratio():
+    assert hasattr(tp5_Collaboration, "ratio")
     descriptor = None
-    for klass in tp5::Collaboration.__mro__:
+    for klass in tp5_Collaboration.__mro__:
         if "ratio" in klass.__dict__:
             descriptor = klass.__dict__["ratio"]
             break
@@ -137,33 +137,33 @@ def test_tp5::collaboration_has_ratio():
 
 
 
-def test_tp5::position_is_not_abstract():
-    assert not inspect.isabstract(tp5::Position)
+def test_tp5_position_is_not_abstract():
+    assert not inspect.isabstract(tp5_Position)
 
 
-def test_tp5::position_constructor_exists():
-    assert callable(tp5::Position.__init__)
+def test_tp5_position_constructor_exists():
+    assert callable(tp5_Position.__init__)
 
 
-def test_tp5::position_constructor_args():
-    sig = inspect.signature(tp5::Position.__init__)
+def test_tp5_position_constructor_args():
+    sig = inspect.signature(tp5_Position.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tp5::position_has_description():
-    assert hasattr(tp5::Position, "description")
+def test_tp5_position_has_description():
+    assert hasattr(tp5_Position, "description")
     descriptor = None
-    for klass in tp5::Position.__mro__:
+    for klass in tp5_Position.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_tp5::position_has_name():
-    assert hasattr(tp5::Position, "name")
+def test_tp5_position_has_name():
+    assert hasattr(tp5_Position, "name")
     descriptor = None
-    for klass in tp5::Position.__mro__:
+    for klass in tp5_Position.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -171,23 +171,23 @@ def test_tp5::position_has_name():
 
 
 
-def test_tp5::skill_is_not_abstract():
-    assert not inspect.isabstract(tp5::Skill)
+def test_tp5_skill_is_not_abstract():
+    assert not inspect.isabstract(tp5_Skill)
 
 
-def test_tp5::skill_constructor_exists():
-    assert callable(tp5::Skill.__init__)
+def test_tp5_skill_constructor_exists():
+    assert callable(tp5_Skill.__init__)
 
 
-def test_tp5::skill_constructor_args():
-    sig = inspect.signature(tp5::Skill.__init__)
+def test_tp5_skill_constructor_args():
+    sig = inspect.signature(tp5_Skill.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_tp5::skill_has_description():
-    assert hasattr(tp5::Skill, "description")
+def test_tp5_skill_has_description():
+    assert hasattr(tp5_Skill, "description")
     descriptor = None
-    for klass in tp5::Skill.__mro__:
+    for klass in tp5_Skill.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -195,23 +195,23 @@ def test_tp5::skill_has_description():
 
 
 
-def test_tp5::paper_is_not_abstract():
-    assert not inspect.isabstract(tp5::Paper)
+def test_tp5_paper_is_not_abstract():
+    assert not inspect.isabstract(tp5_Paper)
 
 
-def test_tp5::paper_constructor_exists():
-    assert callable(tp5::Paper.__init__)
+def test_tp5_paper_constructor_exists():
+    assert callable(tp5_Paper.__init__)
 
 
-def test_tp5::paper_constructor_args():
-    sig = inspect.signature(tp5::Paper.__init__)
+def test_tp5_paper_constructor_args():
+    sig = inspect.signature(tp5_Paper.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tp5::paper_has_name():
-    assert hasattr(tp5::Paper, "name")
+def test_tp5_paper_has_name():
+    assert hasattr(tp5_Paper, "name")
     descriptor = None
-    for klass in tp5::Paper.__mro__:
+    for klass in tp5_Paper.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -229,189 +229,159 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tp5::PublicationStructure_strategy = st.builds(
-    tp5::PublicationStructure,
+tp5_PublicationStructure_strategy = st.builds(
+    tp5_PublicationStructure,
 )
-tp5::Researcher_strategy = st.builds(
-    tp5::Researcher,
+tp5_Researcher_strategy = st.builds(
+    tp5_Researcher,
     name=
         safe_text,
     forName=
         safe_text
 )
-tp5::Paragraph_strategy = st.builds(
-    tp5::Paragraph,
+tp5_Paragraph_strategy = st.builds(
+    tp5_Paragraph,
     id=
         st.integers(),
-    content=
-        safe_text,
     name=
+        safe_text,
+    content=
         safe_text
 )
-tp5::Collaboration_strategy = st.builds(
-    tp5::Collaboration,
+tp5_Collaboration_strategy = st.builds(
+    tp5_Collaboration,
     ratio=
         st.integers()
 )
-tp5::Position_strategy = st.builds(
-    tp5::Position,
+tp5_Position_strategy = st.builds(
+    tp5_Position,
     description=
         safe_text,
     name=
         safe_text
 )
-tp5::Skill_strategy = st.builds(
-    tp5::Skill,
+tp5_Skill_strategy = st.builds(
+    tp5_Skill,
     description=
         safe_text
 )
-tp5::Paper_strategy = st.builds(
-    tp5::Paper,
+tp5_Paper_strategy = st.builds(
+    tp5_Paper,
     name=
         safe_text
 )
 
-@given(instance=tp5::PublicationStructure_strategy)
+@given(instance=tp5_PublicationStructure_strategy)
 @settings(max_examples=50)
-def test_tp5::publicationstructure_instantiation(instance):
-    assert isinstance(instance, tp5::PublicationStructure)
+def test_tp5_publicationstructure_instantiation(instance):
+    assert isinstance(instance, tp5_PublicationStructure)
 
-@given(instance=tp5::Researcher_strategy)
+@given(instance=tp5_Researcher_strategy)
 @settings(max_examples=50)
-def test_tp5::researcher_instantiation(instance):
-    assert isinstance(instance, tp5::Researcher)
-
-@given(instance=tp5::Researcher_strategy)
-def test_tp5::researcher_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tp5_researcher_instantiation(instance):
+    assert isinstance(instance, tp5_Researcher)
 
 
-@given(instance=tp5::Researcher_strategy)
-def test_tp5::researcher_name_setter(instance):
+
+@given(instance=tp5_Researcher_strategy)
+def test_tp5_researcher_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tp5::Researcher_strategy)
-def test_tp5::researcher_forName_type(instance):
-    assert isinstance(instance.forName, str)
 
 
-@given(instance=tp5::Researcher_strategy)
-def test_tp5::researcher_forName_setter(instance):
+@given(instance=tp5_Researcher_strategy)
+def test_tp5_researcher_forName_setter(instance):
     original = instance.forName
     instance.forName = original
     assert instance.forName == original
 
-@given(instance=tp5::Paragraph_strategy)
+@given(instance=tp5_Paragraph_strategy)
 @settings(max_examples=50)
-def test_tp5::paragraph_instantiation(instance):
-    assert isinstance(instance, tp5::Paragraph)
-
-@given(instance=tp5::Paragraph_strategy)
-def test_tp5::paragraph_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_tp5_paragraph_instantiation(instance):
+    assert isinstance(instance, tp5_Paragraph)
 
 
-@given(instance=tp5::Paragraph_strategy)
-def test_tp5::paragraph_id_setter(instance):
+
+@given(instance=tp5_Paragraph_strategy)
+def test_tp5_paragraph_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=tp5::Paragraph_strategy)
-def test_tp5::paragraph_content_type(instance):
-    assert isinstance(instance.content, str)
 
 
-@given(instance=tp5::Paragraph_strategy)
-def test_tp5::paragraph_content_setter(instance):
+@given(instance=tp5_Paragraph_strategy)
+def test_tp5_paragraph_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=tp5_Paragraph_strategy)
+def test_tp5_paragraph_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=tp5::Paragraph_strategy)
-def test_tp5::paragraph_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tp5::Paragraph_strategy)
-def test_tp5::paragraph_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=tp5::Collaboration_strategy)
+@given(instance=tp5_Collaboration_strategy)
 @settings(max_examples=50)
-def test_tp5::collaboration_instantiation(instance):
-    assert isinstance(instance, tp5::Collaboration)
-
-@given(instance=tp5::Collaboration_strategy)
-def test_tp5::collaboration_ratio_type(instance):
-    assert isinstance(instance.ratio, int)
+def test_tp5_collaboration_instantiation(instance):
+    assert isinstance(instance, tp5_Collaboration)
 
 
-@given(instance=tp5::Collaboration_strategy)
-def test_tp5::collaboration_ratio_setter(instance):
+
+@given(instance=tp5_Collaboration_strategy)
+def test_tp5_collaboration_ratio_setter(instance):
     original = instance.ratio
     instance.ratio = original
     assert instance.ratio == original
 
-@given(instance=tp5::Position_strategy)
+@given(instance=tp5_Position_strategy)
 @settings(max_examples=50)
-def test_tp5::position_instantiation(instance):
-    assert isinstance(instance, tp5::Position)
-
-@given(instance=tp5::Position_strategy)
-def test_tp5::position_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_tp5_position_instantiation(instance):
+    assert isinstance(instance, tp5_Position)
 
 
-@given(instance=tp5::Position_strategy)
-def test_tp5::position_description_setter(instance):
+
+@given(instance=tp5_Position_strategy)
+def test_tp5_position_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=tp5::Position_strategy)
-def test_tp5::position_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=tp5::Position_strategy)
-def test_tp5::position_name_setter(instance):
+@given(instance=tp5_Position_strategy)
+def test_tp5_position_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tp5::Skill_strategy)
+@given(instance=tp5_Skill_strategy)
 @settings(max_examples=50)
-def test_tp5::skill_instantiation(instance):
-    assert isinstance(instance, tp5::Skill)
-
-@given(instance=tp5::Skill_strategy)
-def test_tp5::skill_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_tp5_skill_instantiation(instance):
+    assert isinstance(instance, tp5_Skill)
 
 
-@given(instance=tp5::Skill_strategy)
-def test_tp5::skill_description_setter(instance):
+
+@given(instance=tp5_Skill_strategy)
+def test_tp5_skill_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=tp5::Paper_strategy)
+@given(instance=tp5_Paper_strategy)
 @settings(max_examples=50)
-def test_tp5::paper_instantiation(instance):
-    assert isinstance(instance, tp5::Paper)
-
-@given(instance=tp5::Paper_strategy)
-def test_tp5::paper_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tp5_paper_instantiation(instance):
+    assert isinstance(instance, tp5_Paper)
 
 
-@given(instance=tp5::Paper_strategy)
-def test_tp5::paper_name_setter(instance):
+
+@given(instance=tp5_Paper_strategy)
+def test_tp5_paper_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

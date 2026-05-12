@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::EStringToStringMapEntry,
-    model::ObjectWithMap,
-    model::Node,
+from python_code import (
+    model_EStringToStringMapEntry,
+    model_ObjectWithMap,
+    model_Node,
     AbstractType,
-    model::ConcreteTypeTwo,
-    model::ConcreteTypeOne,
-    model::AbstractType,
-    model::Container,
-    model::ETypes,
-    model::Address,
-    model::TargetObject,
-    model::PrimaryObject,
-    model::User,
+    model_ConcreteTypeTwo,
+    model_ConcreteTypeOne,
+    model_AbstractType,
+    model_Container,
+    model_ETypes,
+    model_Address,
+    model_TargetObject,
+    model_PrimaryObject,
+    model_User,
     Sex,
 )
 
@@ -28,51 +28,51 @@ from classes import (
 
 
 
-def test_model::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(model::EStringToStringMapEntry)
+def test_model_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(model_EStringToStringMapEntry)
 
 
-def test_model::estringtostringmapentry_constructor_exists():
-    assert callable(model::EStringToStringMapEntry.__init__)
+def test_model_estringtostringmapentry_constructor_exists():
+    assert callable(model_EStringToStringMapEntry.__init__)
 
 
-def test_model::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(model::EStringToStringMapEntry.__init__)
+def test_model_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(model_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::objectwithmap_is_not_abstract():
-    assert not inspect.isabstract(model::ObjectWithMap)
+def test_model_objectwithmap_is_not_abstract():
+    assert not inspect.isabstract(model_ObjectWithMap)
 
 
-def test_model::objectwithmap_constructor_exists():
-    assert callable(model::ObjectWithMap.__init__)
+def test_model_objectwithmap_constructor_exists():
+    assert callable(model_ObjectWithMap.__init__)
 
 
-def test_model::objectwithmap_constructor_args():
-    sig = inspect.signature(model::ObjectWithMap.__init__)
+def test_model_objectwithmap_constructor_args():
+    sig = inspect.signature(model_ObjectWithMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::node_is_not_abstract():
-    assert not inspect.isabstract(model::Node)
+def test_model_node_is_not_abstract():
+    assert not inspect.isabstract(model_Node)
 
 
-def test_model::node_constructor_exists():
-    assert callable(model::Node.__init__)
+def test_model_node_constructor_exists():
+    assert callable(model_Node.__init__)
 
 
-def test_model::node_constructor_args():
-    sig = inspect.signature(model::Node.__init__)
+def test_model_node_constructor_args():
+    sig = inspect.signature(model_Node.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_model::node_has_label():
-    assert hasattr(model::Node, "label")
+def test_model_node_has_label():
+    assert hasattr(model_Node, "label")
     descriptor = None
-    for klass in model::Node.__mro__:
+    for klass in model_Node.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -94,23 +94,23 @@ def test_abstracttype_constructor_args():
 
 
 
-def test_model::concretetypetwo_is_not_abstract():
-    assert not inspect.isabstract(model::ConcreteTypeTwo)
+def test_model_concretetypetwo_is_not_abstract():
+    assert not inspect.isabstract(model_ConcreteTypeTwo)
 
 
-def test_model::concretetypetwo_constructor_exists():
-    assert callable(model::ConcreteTypeTwo.__init__)
+def test_model_concretetypetwo_constructor_exists():
+    assert callable(model_ConcreteTypeTwo.__init__)
 
 
-def test_model::concretetypetwo_constructor_args():
-    sig = inspect.signature(model::ConcreteTypeTwo.__init__)
+def test_model_concretetypetwo_constructor_args():
+    sig = inspect.signature(model_ConcreteTypeTwo.__init__)
     params = list(sig.parameters.keys())
     assert "propTypeTwo" in params, "Missing parameter 'propTypeTwo'"
 
-def test_model::concretetypetwo_has_propTypeTwo():
-    assert hasattr(model::ConcreteTypeTwo, "propTypeTwo")
+def test_model_concretetypetwo_has_propTypeTwo():
+    assert hasattr(model_ConcreteTypeTwo, "propTypeTwo")
     descriptor = None
-    for klass in model::ConcreteTypeTwo.__mro__:
+    for klass in model_ConcreteTypeTwo.__mro__:
         if "propTypeTwo" in klass.__dict__:
             descriptor = klass.__dict__["propTypeTwo"]
             break
@@ -118,23 +118,23 @@ def test_model::concretetypetwo_has_propTypeTwo():
 
 
 
-def test_model::concretetypeone_is_not_abstract():
-    assert not inspect.isabstract(model::ConcreteTypeOne)
+def test_model_concretetypeone_is_not_abstract():
+    assert not inspect.isabstract(model_ConcreteTypeOne)
 
 
-def test_model::concretetypeone_constructor_exists():
-    assert callable(model::ConcreteTypeOne.__init__)
+def test_model_concretetypeone_constructor_exists():
+    assert callable(model_ConcreteTypeOne.__init__)
 
 
-def test_model::concretetypeone_constructor_args():
-    sig = inspect.signature(model::ConcreteTypeOne.__init__)
+def test_model_concretetypeone_constructor_args():
+    sig = inspect.signature(model_ConcreteTypeOne.__init__)
     params = list(sig.parameters.keys())
     assert "propTypeOne" in params, "Missing parameter 'propTypeOne'"
 
-def test_model::concretetypeone_has_propTypeOne():
-    assert hasattr(model::ConcreteTypeOne, "propTypeOne")
+def test_model_concretetypeone_has_propTypeOne():
+    assert hasattr(model_ConcreteTypeOne, "propTypeOne")
     descriptor = None
-    for klass in model::ConcreteTypeOne.__mro__:
+    for klass in model_ConcreteTypeOne.__mro__:
         if "propTypeOne" in klass.__dict__:
             descriptor = klass.__dict__["propTypeOne"]
             break
@@ -142,23 +142,23 @@ def test_model::concretetypeone_has_propTypeOne():
 
 
 
-def test_model::abstracttype_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractType)
+def test_model_abstracttype_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractType)
 
 
-def test_model::abstracttype_constructor_exists():
-    assert callable(model::AbstractType.__init__)
+def test_model_abstracttype_constructor_exists():
+    assert callable(model_AbstractType.__init__)
 
 
-def test_model::abstracttype_constructor_args():
-    sig = inspect.signature(model::AbstractType.__init__)
+def test_model_abstracttype_constructor_args():
+    sig = inspect.signature(model_AbstractType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::abstracttype_has_name():
-    assert hasattr(model::AbstractType, "name")
+def test_model_abstracttype_has_name():
+    assert hasattr(model_AbstractType, "name")
     descriptor = None
-    for klass in model::AbstractType.__mro__:
+    for klass in model_AbstractType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,285 +166,285 @@ def test_model::abstracttype_has_name():
 
 
 
-def test_model::container_is_not_abstract():
-    assert not inspect.isabstract(model::Container)
+def test_model_container_is_not_abstract():
+    assert not inspect.isabstract(model_Container)
 
 
-def test_model::container_constructor_exists():
-    assert callable(model::Container.__init__)
+def test_model_container_constructor_exists():
+    assert callable(model_Container.__init__)
 
 
-def test_model::container_constructor_args():
-    sig = inspect.signature(model::Container.__init__)
+def test_model_container_constructor_args():
+    sig = inspect.signature(model_Container.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::etypes_is_not_abstract():
-    assert not inspect.isabstract(model::ETypes)
+def test_model_etypes_is_not_abstract():
+    assert not inspect.isabstract(model_ETypes)
 
 
-def test_model::etypes_constructor_exists():
-    assert callable(model::ETypes.__init__)
+def test_model_etypes_constructor_exists():
+    assert callable(model_ETypes.__init__)
 
 
-def test_model::etypes_constructor_args():
-    sig = inspect.signature(model::ETypes.__init__)
+def test_model_etypes_constructor_args():
+    sig = inspect.signature(model_ETypes.__init__)
     params = list(sig.parameters.keys())
-    assert "uris" in params, "Missing parameter 'uris'"
     assert "eStrings" in params, "Missing parameter 'eStrings'"
-    assert "eInts" in params, "Missing parameter 'eInts'"
-    assert "eBooleans" in params, "Missing parameter 'eBooleans'"
-    assert "eChar" in params, "Missing parameter 'eChar'"
-    assert "eByteArray" in params, "Missing parameter 'eByteArray'"
-    assert "eBoolean" in params, "Missing parameter 'eBoolean'"
-    assert "eString" in params, "Missing parameter 'eString'"
-    assert "eByte" in params, "Missing parameter 'eByte'"
-    assert "eDate" in params, "Missing parameter 'eDate'"
-    assert "doubleValue" in params, "Missing parameter 'doubleValue'"
-    assert "eShort" in params, "Missing parameter 'eShort'"
-    assert "eFloat" in params, "Missing parameter 'eFloat'"
+    assert "uris" in params, "Missing parameter 'uris'"
     assert "eDoubles" in params, "Missing parameter 'eDoubles'"
+    assert "eDate" in params, "Missing parameter 'eDate'"
+    assert "eBooleans" in params, "Missing parameter 'eBooleans'"
+    assert "eShort" in params, "Missing parameter 'eShort'"
+    assert "eByteArray" in params, "Missing parameter 'eByteArray'"
+    assert "eByte" in params, "Missing parameter 'eByte'"
+    assert "eInts" in params, "Missing parameter 'eInts'"
     assert "eInt" in params, "Missing parameter 'eInt'"
-    assert "eDouble" in params, "Missing parameter 'eDouble'"
+    assert "eString" in params, "Missing parameter 'eString'"
     assert "eLong" in params, "Missing parameter 'eLong'"
+    assert "eDouble" in params, "Missing parameter 'eDouble'"
+    assert "eBoolean" in params, "Missing parameter 'eBoolean'"
+    assert "eFloat" in params, "Missing parameter 'eFloat'"
+    assert "doubleValue" in params, "Missing parameter 'doubleValue'"
+    assert "eChar" in params, "Missing parameter 'eChar'"
 
-def test_model::etypes_has_uris():
-    assert hasattr(model::ETypes, "uris")
+def test_model_etypes_has_eStrings():
+    assert hasattr(model_ETypes, "eStrings")
     descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "uris" in klass.__dict__:
-            descriptor = klass.__dict__["uris"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eStrings():
-    assert hasattr(model::ETypes, "eStrings")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
+    for klass in model_ETypes.__mro__:
         if "eStrings" in klass.__dict__:
             descriptor = klass.__dict__["eStrings"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::etypes_has_eInts():
-    assert hasattr(model::ETypes, "eInts")
+def test_model_etypes_has_uris():
+    assert hasattr(model_ETypes, "uris")
     descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eInts" in klass.__dict__:
-            descriptor = klass.__dict__["eInts"]
+    for klass in model_ETypes.__mro__:
+        if "uris" in klass.__dict__:
+            descriptor = klass.__dict__["uris"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::etypes_has_eBooleans():
-    assert hasattr(model::ETypes, "eBooleans")
+def test_model_etypes_has_eDoubles():
+    assert hasattr(model_ETypes, "eDoubles")
     descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eBooleans" in klass.__dict__:
-            descriptor = klass.__dict__["eBooleans"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eChar():
-    assert hasattr(model::ETypes, "eChar")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eChar" in klass.__dict__:
-            descriptor = klass.__dict__["eChar"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eByteArray():
-    assert hasattr(model::ETypes, "eByteArray")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eByteArray" in klass.__dict__:
-            descriptor = klass.__dict__["eByteArray"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eBoolean():
-    assert hasattr(model::ETypes, "eBoolean")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eBoolean" in klass.__dict__:
-            descriptor = klass.__dict__["eBoolean"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eString():
-    assert hasattr(model::ETypes, "eString")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eString" in klass.__dict__:
-            descriptor = klass.__dict__["eString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eByte():
-    assert hasattr(model::ETypes, "eByte")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eByte" in klass.__dict__:
-            descriptor = klass.__dict__["eByte"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eDate():
-    assert hasattr(model::ETypes, "eDate")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eDate" in klass.__dict__:
-            descriptor = klass.__dict__["eDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_doubleValue():
-    assert hasattr(model::ETypes, "doubleValue")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "doubleValue" in klass.__dict__:
-            descriptor = klass.__dict__["doubleValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eShort():
-    assert hasattr(model::ETypes, "eShort")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eShort" in klass.__dict__:
-            descriptor = klass.__dict__["eShort"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eFloat():
-    assert hasattr(model::ETypes, "eFloat")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eFloat" in klass.__dict__:
-            descriptor = klass.__dict__["eFloat"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::etypes_has_eDoubles():
-    assert hasattr(model::ETypes, "eDoubles")
-    descriptor = None
-    for klass in model::ETypes.__mro__:
+    for klass in model_ETypes.__mro__:
         if "eDoubles" in klass.__dict__:
             descriptor = klass.__dict__["eDoubles"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::etypes_has_eInt():
-    assert hasattr(model::ETypes, "eInt")
+def test_model_etypes_has_eDate():
+    assert hasattr(model_ETypes, "eDate")
     descriptor = None
-    for klass in model::ETypes.__mro__:
+    for klass in model_ETypes.__mro__:
+        if "eDate" in klass.__dict__:
+            descriptor = klass.__dict__["eDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eBooleans():
+    assert hasattr(model_ETypes, "eBooleans")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eBooleans" in klass.__dict__:
+            descriptor = klass.__dict__["eBooleans"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eShort():
+    assert hasattr(model_ETypes, "eShort")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eShort" in klass.__dict__:
+            descriptor = klass.__dict__["eShort"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eByteArray():
+    assert hasattr(model_ETypes, "eByteArray")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eByteArray" in klass.__dict__:
+            descriptor = klass.__dict__["eByteArray"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eByte():
+    assert hasattr(model_ETypes, "eByte")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eByte" in klass.__dict__:
+            descriptor = klass.__dict__["eByte"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eInts():
+    assert hasattr(model_ETypes, "eInts")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eInts" in klass.__dict__:
+            descriptor = klass.__dict__["eInts"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eInt():
+    assert hasattr(model_ETypes, "eInt")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
         if "eInt" in klass.__dict__:
             descriptor = klass.__dict__["eInt"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::etypes_has_eDouble():
-    assert hasattr(model::ETypes, "eDouble")
+def test_model_etypes_has_eString():
+    assert hasattr(model_ETypes, "eString")
     descriptor = None
-    for klass in model::ETypes.__mro__:
-        if "eDouble" in klass.__dict__:
-            descriptor = klass.__dict__["eDouble"]
+    for klass in model_ETypes.__mro__:
+        if "eString" in klass.__dict__:
+            descriptor = klass.__dict__["eString"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::etypes_has_eLong():
-    assert hasattr(model::ETypes, "eLong")
+def test_model_etypes_has_eLong():
+    assert hasattr(model_ETypes, "eLong")
     descriptor = None
-    for klass in model::ETypes.__mro__:
+    for klass in model_ETypes.__mro__:
         if "eLong" in klass.__dict__:
             descriptor = klass.__dict__["eLong"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_model::address_is_not_abstract():
-    assert not inspect.isabstract(model::Address)
-
-
-def test_model::address_constructor_exists():
-    assert callable(model::Address.__init__)
-
-
-def test_model::address_constructor_args():
-    sig = inspect.signature(model::Address.__init__)
-    params = list(sig.parameters.keys())
-    assert "addId" in params, "Missing parameter 'addId'"
-    assert "street" in params, "Missing parameter 'street'"
-    assert "number" in params, "Missing parameter 'number'"
-    assert "city" in params, "Missing parameter 'city'"
-
-def test_model::address_has_addId():
-    assert hasattr(model::Address, "addId")
+def test_model_etypes_has_eDouble():
+    assert hasattr(model_ETypes, "eDouble")
     descriptor = None
-    for klass in model::Address.__mro__:
-        if "addId" in klass.__dict__:
-            descriptor = klass.__dict__["addId"]
+    for klass in model_ETypes.__mro__:
+        if "eDouble" in klass.__dict__:
+            descriptor = klass.__dict__["eDouble"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::address_has_street():
-    assert hasattr(model::Address, "street")
+def test_model_etypes_has_eBoolean():
+    assert hasattr(model_ETypes, "eBoolean")
     descriptor = None
-    for klass in model::Address.__mro__:
+    for klass in model_ETypes.__mro__:
+        if "eBoolean" in klass.__dict__:
+            descriptor = klass.__dict__["eBoolean"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eFloat():
+    assert hasattr(model_ETypes, "eFloat")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eFloat" in klass.__dict__:
+            descriptor = klass.__dict__["eFloat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_doubleValue():
+    assert hasattr(model_ETypes, "doubleValue")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "doubleValue" in klass.__dict__:
+            descriptor = klass.__dict__["doubleValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_etypes_has_eChar():
+    assert hasattr(model_ETypes, "eChar")
+    descriptor = None
+    for klass in model_ETypes.__mro__:
+        if "eChar" in klass.__dict__:
+            descriptor = klass.__dict__["eChar"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_address_is_not_abstract():
+    assert not inspect.isabstract(model_Address)
+
+
+def test_model_address_constructor_exists():
+    assert callable(model_Address.__init__)
+
+
+def test_model_address_constructor_args():
+    sig = inspect.signature(model_Address.__init__)
+    params = list(sig.parameters.keys())
+    assert "street" in params, "Missing parameter 'street'"
+    assert "city" in params, "Missing parameter 'city'"
+    assert "number" in params, "Missing parameter 'number'"
+    assert "addId" in params, "Missing parameter 'addId'"
+
+def test_model_address_has_street():
+    assert hasattr(model_Address, "street")
+    descriptor = None
+    for klass in model_Address.__mro__:
         if "street" in klass.__dict__:
             descriptor = klass.__dict__["street"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::address_has_number():
-    assert hasattr(model::Address, "number")
+def test_model_address_has_city():
+    assert hasattr(model_Address, "city")
     descriptor = None
-    for klass in model::Address.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::address_has_city():
-    assert hasattr(model::Address, "city")
-    descriptor = None
-    for klass in model::Address.__mro__:
+    for klass in model_Address.__mro__:
         if "city" in klass.__dict__:
             descriptor = klass.__dict__["city"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_address_has_number():
+    assert hasattr(model_Address, "number")
+    descriptor = None
+    for klass in model_Address.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_address_has_addId():
+    assert hasattr(model_Address, "addId")
+    descriptor = None
+    for klass in model_Address.__mro__:
+        if "addId" in klass.__dict__:
+            descriptor = klass.__dict__["addId"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::targetobject_is_not_abstract():
-    assert not inspect.isabstract(model::TargetObject)
+
+def test_model_targetobject_is_not_abstract():
+    assert not inspect.isabstract(model_TargetObject)
 
 
-def test_model::targetobject_constructor_exists():
-    assert callable(model::TargetObject.__init__)
+def test_model_targetobject_constructor_exists():
+    assert callable(model_TargetObject.__init__)
 
 
-def test_model::targetobject_constructor_args():
-    sig = inspect.signature(model::TargetObject.__init__)
+def test_model_targetobject_constructor_args():
+    sig = inspect.signature(model_TargetObject.__init__)
     params = list(sig.parameters.keys())
     assert "arrayAttribute" in params, "Missing parameter 'arrayAttribute'"
     assert "singleAttribute" in params, "Missing parameter 'singleAttribute'"
 
-def test_model::targetobject_has_arrayAttribute():
-    assert hasattr(model::TargetObject, "arrayAttribute")
+def test_model_targetobject_has_arrayAttribute():
+    assert hasattr(model_TargetObject, "arrayAttribute")
     descriptor = None
-    for klass in model::TargetObject.__mro__:
+    for klass in model_TargetObject.__mro__:
         if "arrayAttribute" in klass.__dict__:
             descriptor = klass.__dict__["arrayAttribute"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::targetobject_has_singleAttribute():
-    assert hasattr(model::TargetObject, "singleAttribute")
+def test_model_targetobject_has_singleAttribute():
+    assert hasattr(model_TargetObject, "singleAttribute")
     descriptor = None
-    for klass in model::TargetObject.__mro__:
+    for klass in model_TargetObject.__mro__:
         if "singleAttribute" in klass.__dict__:
             descriptor = klass.__dict__["singleAttribute"]
             break
@@ -452,149 +452,149 @@ def test_model::targetobject_has_singleAttribute():
 
 
 
-def test_model::primaryobject_is_not_abstract():
-    assert not inspect.isabstract(model::PrimaryObject)
+def test_model_primaryobject_is_not_abstract():
+    assert not inspect.isabstract(model_PrimaryObject)
 
 
-def test_model::primaryobject_constructor_exists():
-    assert callable(model::PrimaryObject.__init__)
+def test_model_primaryobject_constructor_exists():
+    assert callable(model_PrimaryObject.__init__)
 
 
-def test_model::primaryobject_constructor_args():
-    sig = inspect.signature(model::PrimaryObject.__init__)
+def test_model_primaryobject_constructor_args():
+    sig = inspect.signature(model_PrimaryObject.__init__)
     params = list(sig.parameters.keys())
-    assert "featureMapReferenceCollection" in params, "Missing parameter 'featureMapReferenceCollection'"
-    assert "featureMapAttributeCollection" in params, "Missing parameter 'featureMapAttributeCollection'"
-    assert "featureMapAttributeType1" in params, "Missing parameter 'featureMapAttributeType1'"
-    assert "idAttribute" in params, "Missing parameter 'idAttribute'"
     assert "featureMapAttributeType2" in params, "Missing parameter 'featureMapAttributeType2'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "unsettableAttribute" in params, "Missing parameter 'unsettableAttribute'"
+    assert "featureMapReferenceCollection" in params, "Missing parameter 'featureMapReferenceCollection'"
     assert "unsettableAttributeWithNonNullDefault" in params, "Missing parameter 'unsettableAttributeWithNonNullDefault'"
+    assert "featureMapAttributeCollection" in params, "Missing parameter 'featureMapAttributeCollection'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "idAttribute" in params, "Missing parameter 'idAttribute'"
+    assert "featureMapAttributeType1" in params, "Missing parameter 'featureMapAttributeType1'"
+    assert "unsettableAttribute" in params, "Missing parameter 'unsettableAttribute'"
 
-def test_model::primaryobject_has_featureMapReferenceCollection():
-    assert hasattr(model::PrimaryObject, "featureMapReferenceCollection")
+def test_model_primaryobject_has_featureMapAttributeType2():
+    assert hasattr(model_PrimaryObject, "featureMapAttributeType2")
     descriptor = None
-    for klass in model::PrimaryObject.__mro__:
-        if "featureMapReferenceCollection" in klass.__dict__:
-            descriptor = klass.__dict__["featureMapReferenceCollection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::primaryobject_has_featureMapAttributeCollection():
-    assert hasattr(model::PrimaryObject, "featureMapAttributeCollection")
-    descriptor = None
-    for klass in model::PrimaryObject.__mro__:
-        if "featureMapAttributeCollection" in klass.__dict__:
-            descriptor = klass.__dict__["featureMapAttributeCollection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::primaryobject_has_featureMapAttributeType1():
-    assert hasattr(model::PrimaryObject, "featureMapAttributeType1")
-    descriptor = None
-    for klass in model::PrimaryObject.__mro__:
-        if "featureMapAttributeType1" in klass.__dict__:
-            descriptor = klass.__dict__["featureMapAttributeType1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::primaryobject_has_idAttribute():
-    assert hasattr(model::PrimaryObject, "idAttribute")
-    descriptor = None
-    for klass in model::PrimaryObject.__mro__:
-        if "idAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["idAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::primaryobject_has_featureMapAttributeType2():
-    assert hasattr(model::PrimaryObject, "featureMapAttributeType2")
-    descriptor = None
-    for klass in model::PrimaryObject.__mro__:
+    for klass in model_PrimaryObject.__mro__:
         if "featureMapAttributeType2" in klass.__dict__:
             descriptor = klass.__dict__["featureMapAttributeType2"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::primaryobject_has_name():
-    assert hasattr(model::PrimaryObject, "name")
+def test_model_primaryobject_has_featureMapReferenceCollection():
+    assert hasattr(model_PrimaryObject, "featureMapReferenceCollection")
     descriptor = None
-    for klass in model::PrimaryObject.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in model_PrimaryObject.__mro__:
+        if "featureMapReferenceCollection" in klass.__dict__:
+            descriptor = klass.__dict__["featureMapReferenceCollection"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::primaryobject_has_unsettableAttribute():
-    assert hasattr(model::PrimaryObject, "unsettableAttribute")
+def test_model_primaryobject_has_unsettableAttributeWithNonNullDefault():
+    assert hasattr(model_PrimaryObject, "unsettableAttributeWithNonNullDefault")
     descriptor = None
-    for klass in model::PrimaryObject.__mro__:
-        if "unsettableAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["unsettableAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::primaryobject_has_unsettableAttributeWithNonNullDefault():
-    assert hasattr(model::PrimaryObject, "unsettableAttributeWithNonNullDefault")
-    descriptor = None
-    for klass in model::PrimaryObject.__mro__:
+    for klass in model_PrimaryObject.__mro__:
         if "unsettableAttributeWithNonNullDefault" in klass.__dict__:
             descriptor = klass.__dict__["unsettableAttributeWithNonNullDefault"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_model::user_is_not_abstract():
-    assert not inspect.isabstract(model::User)
-
-
-def test_model::user_constructor_exists():
-    assert callable(model::User.__init__)
-
-
-def test_model::user_constructor_args():
-    sig = inspect.signature(model::User.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "birthDate" in params, "Missing parameter 'birthDate'"
-    assert "sex" in params, "Missing parameter 'sex'"
-    assert "userId" in params, "Missing parameter 'userId'"
-
-def test_model::user_has_name():
-    assert hasattr(model::User, "name")
+def test_model_primaryobject_has_featureMapAttributeCollection():
+    assert hasattr(model_PrimaryObject, "featureMapAttributeCollection")
     descriptor = None
-    for klass in model::User.__mro__:
+    for klass in model_PrimaryObject.__mro__:
+        if "featureMapAttributeCollection" in klass.__dict__:
+            descriptor = klass.__dict__["featureMapAttributeCollection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_primaryobject_has_name():
+    assert hasattr(model_PrimaryObject, "name")
+    descriptor = None
+    for klass in model_PrimaryObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::user_has_birthDate():
-    assert hasattr(model::User, "birthDate")
+def test_model_primaryobject_has_idAttribute():
+    assert hasattr(model_PrimaryObject, "idAttribute")
     descriptor = None
-    for klass in model::User.__mro__:
-        if "birthDate" in klass.__dict__:
-            descriptor = klass.__dict__["birthDate"]
+    for klass in model_PrimaryObject.__mro__:
+        if "idAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["idAttribute"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::user_has_sex():
-    assert hasattr(model::User, "sex")
+def test_model_primaryobject_has_featureMapAttributeType1():
+    assert hasattr(model_PrimaryObject, "featureMapAttributeType1")
     descriptor = None
-    for klass in model::User.__mro__:
+    for klass in model_PrimaryObject.__mro__:
+        if "featureMapAttributeType1" in klass.__dict__:
+            descriptor = klass.__dict__["featureMapAttributeType1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_primaryobject_has_unsettableAttribute():
+    assert hasattr(model_PrimaryObject, "unsettableAttribute")
+    descriptor = None
+    for klass in model_PrimaryObject.__mro__:
+        if "unsettableAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["unsettableAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_model_user_is_not_abstract():
+    assert not inspect.isabstract(model_User)
+
+
+def test_model_user_constructor_exists():
+    assert callable(model_User.__init__)
+
+
+def test_model_user_constructor_args():
+    sig = inspect.signature(model_User.__init__)
+    params = list(sig.parameters.keys())
+    assert "userId" in params, "Missing parameter 'userId'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "sex" in params, "Missing parameter 'sex'"
+    assert "birthDate" in params, "Missing parameter 'birthDate'"
+
+def test_model_user_has_userId():
+    assert hasattr(model_User, "userId")
+    descriptor = None
+    for klass in model_User.__mro__:
+        if "userId" in klass.__dict__:
+            descriptor = klass.__dict__["userId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_user_has_name():
+    assert hasattr(model_User, "name")
+    descriptor = None
+    for klass in model_User.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_user_has_sex():
+    assert hasattr(model_User, "sex")
+    descriptor = None
+    for klass in model_User.__mro__:
         if "sex" in klass.__dict__:
             descriptor = klass.__dict__["sex"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::user_has_userId():
-    assert hasattr(model::User, "userId")
+def test_model_user_has_birthDate():
+    assert hasattr(model_User, "birthDate")
     descriptor = None
-    for klass in model::User.__mro__:
-        if "userId" in klass.__dict__:
-            descriptor = klass.__dict__["userId"]
+    for klass in model_User.__mro__:
+        if "birthDate" in klass.__dict__:
+            descriptor = klass.__dict__["birthDate"]
             break
     assert isinstance(descriptor, property)
 
@@ -606,8 +606,8 @@ def test_sex_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Sex]
     expected_literals = [
-        "FEMALE",
         "MALE",
+        "FEMALE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -625,146 +625,143 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::EStringToStringMapEntry_strategy = st.builds(
-    model::EStringToStringMapEntry,
+model_EStringToStringMapEntry_strategy = st.builds(
+    model_EStringToStringMapEntry,
 )
-model::ObjectWithMap_strategy = st.builds(
-    model::ObjectWithMap,
+model_ObjectWithMap_strategy = st.builds(
+    model_ObjectWithMap,
 )
-model::Node_strategy = st.builds(
-    model::Node,
+model_Node_strategy = st.builds(
+    model_Node,
     label=
         safe_text
 )
 AbstractType_strategy = st.builds(
     AbstractType,
 )
-model::ConcreteTypeTwo_strategy = st.builds(
-    model::ConcreteTypeTwo,
+model_ConcreteTypeTwo_strategy = st.builds(
+    model_ConcreteTypeTwo,
     propTypeTwo=
         safe_text
 )
-model::ConcreteTypeOne_strategy = st.builds(
-    model::ConcreteTypeOne,
+model_ConcreteTypeOne_strategy = st.builds(
+    model_ConcreteTypeOne,
     propTypeOne=
         safe_text
 )
-model::AbstractType_strategy = st.builds(
-    model::AbstractType,
+model_AbstractType_strategy = st.builds(
+    model_AbstractType,
     name=
         safe_text
 )
-model::Container_strategy = st.builds(
-    model::Container,
+model_Container_strategy = st.builds(
+    model_Container,
 )
-model::ETypes_strategy = st.builds(
-    model::ETypes,
-    uris=
-        safe_text,
+model_ETypes_strategy = st.builds(
+    model_ETypes,
     eStrings=
         safe_text,
-    eInts=
-        st.integers(),
-    eBooleans=
+    uris=
         safe_text,
-    eChar=
-        safe_text,
-    eByteArray=
-        safe_text,
-    eBoolean=
-        st.booleans(),
-    eString=
-        safe_text,
-    eByte=
+    eDoubles=
         safe_text,
     eDate=
         st.dates(),
-    doubleValue=
+    eBooleans=
         safe_text,
     eShort=
         safe_text,
-    eFloat=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    eDoubles=
+    eByteArray=
         safe_text,
+    eByte=
+        safe_text,
+    eInts=
+        st.integers(),
     eInt=
         st.integers(),
+    eString=
+        safe_text,
+    eLong=
+        safe_text,
     eDouble=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    eLong=
+    eBoolean=
+        st.booleans(),
+    eFloat=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    doubleValue=
+        safe_text,
+    eChar=
         safe_text
 )
-model::Address_strategy = st.builds(
-    model::Address,
-    addId=
-        safe_text,
+model_Address_strategy = st.builds(
+    model_Address,
     street=
+        safe_text,
+    city=
         safe_text,
     number=
         safe_text,
-    city=
+    addId=
         safe_text
 )
-model::TargetObject_strategy = st.builds(
-    model::TargetObject,
+model_TargetObject_strategy = st.builds(
+    model_TargetObject,
     arrayAttribute=
         safe_text,
     singleAttribute=
         safe_text
 )
-model::PrimaryObject_strategy = st.builds(
-    model::PrimaryObject,
+model_PrimaryObject_strategy = st.builds(
+    model_PrimaryObject,
+    featureMapAttributeType2=
+        safe_text,
     featureMapReferenceCollection=
+        safe_text,
+    unsettableAttributeWithNonNullDefault=
         safe_text,
     featureMapAttributeCollection=
         safe_text,
-    featureMapAttributeType1=
+    name=
         safe_text,
     idAttribute=
         safe_text,
-    featureMapAttributeType2=
-        safe_text,
-    name=
+    featureMapAttributeType1=
         safe_text,
     unsettableAttribute=
-        safe_text,
-    unsettableAttributeWithNonNullDefault=
         safe_text
 )
-model::User_strategy = st.builds(
-    model::User,
+model_User_strategy = st.builds(
+    model_User,
+    userId=
+        safe_text,
     name=
         safe_text,
-    birthDate=
-        st.dates(),
     sex=
         safe_text,
-    userId=
-        safe_text
+    birthDate=
+        st.dates()
 )
 
-@given(instance=model::EStringToStringMapEntry_strategy)
+@given(instance=model_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_model::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, model::EStringToStringMapEntry)
+def test_model_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, model_EStringToStringMapEntry)
 
-@given(instance=model::ObjectWithMap_strategy)
+@given(instance=model_ObjectWithMap_strategy)
 @settings(max_examples=50)
-def test_model::objectwithmap_instantiation(instance):
-    assert isinstance(instance, model::ObjectWithMap)
+def test_model_objectwithmap_instantiation(instance):
+    assert isinstance(instance, model_ObjectWithMap)
 
-@given(instance=model::Node_strategy)
+@given(instance=model_Node_strategy)
 @settings(max_examples=50)
-def test_model::node_instantiation(instance):
-    assert isinstance(instance, model::Node)
-
-@given(instance=model::Node_strategy)
-def test_model::node_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_model_node_instantiation(instance):
+    assert isinstance(instance, model_Node)
 
 
-@given(instance=model::Node_strategy)
-def test_model::node_label_setter(instance):
+
+@given(instance=model_Node_strategy)
+def test_model_node_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -774,465 +771,351 @@ def test_model::node_label_setter(instance):
 def test_abstracttype_instantiation(instance):
     assert isinstance(instance, AbstractType)
 
-@given(instance=model::ConcreteTypeTwo_strategy)
+@given(instance=model_ConcreteTypeTwo_strategy)
 @settings(max_examples=50)
-def test_model::concretetypetwo_instantiation(instance):
-    assert isinstance(instance, model::ConcreteTypeTwo)
-
-@given(instance=model::ConcreteTypeTwo_strategy)
-def test_model::concretetypetwo_propTypeTwo_type(instance):
-    assert isinstance(instance.propTypeTwo, str)
+def test_model_concretetypetwo_instantiation(instance):
+    assert isinstance(instance, model_ConcreteTypeTwo)
 
 
-@given(instance=model::ConcreteTypeTwo_strategy)
-def test_model::concretetypetwo_propTypeTwo_setter(instance):
+
+@given(instance=model_ConcreteTypeTwo_strategy)
+def test_model_concretetypetwo_propTypeTwo_setter(instance):
     original = instance.propTypeTwo
     instance.propTypeTwo = original
     assert instance.propTypeTwo == original
 
-@given(instance=model::ConcreteTypeOne_strategy)
+@given(instance=model_ConcreteTypeOne_strategy)
 @settings(max_examples=50)
-def test_model::concretetypeone_instantiation(instance):
-    assert isinstance(instance, model::ConcreteTypeOne)
-
-@given(instance=model::ConcreteTypeOne_strategy)
-def test_model::concretetypeone_propTypeOne_type(instance):
-    assert isinstance(instance.propTypeOne, str)
+def test_model_concretetypeone_instantiation(instance):
+    assert isinstance(instance, model_ConcreteTypeOne)
 
 
-@given(instance=model::ConcreteTypeOne_strategy)
-def test_model::concretetypeone_propTypeOne_setter(instance):
+
+@given(instance=model_ConcreteTypeOne_strategy)
+def test_model_concretetypeone_propTypeOne_setter(instance):
     original = instance.propTypeOne
     instance.propTypeOne = original
     assert instance.propTypeOne == original
 
-@given(instance=model::AbstractType_strategy)
+@given(instance=model_AbstractType_strategy)
 @settings(max_examples=50)
-def test_model::abstracttype_instantiation(instance):
-    assert isinstance(instance, model::AbstractType)
-
-@given(instance=model::AbstractType_strategy)
-def test_model::abstracttype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_abstracttype_instantiation(instance):
+    assert isinstance(instance, model_AbstractType)
 
 
-@given(instance=model::AbstractType_strategy)
-def test_model::abstracttype_name_setter(instance):
+
+@given(instance=model_AbstractType_strategy)
+def test_model_abstracttype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Container_strategy)
+@given(instance=model_Container_strategy)
 @settings(max_examples=50)
-def test_model::container_instantiation(instance):
-    assert isinstance(instance, model::Container)
+def test_model_container_instantiation(instance):
+    assert isinstance(instance, model_Container)
 
-@given(instance=model::ETypes_strategy)
+@given(instance=model_ETypes_strategy)
 @settings(max_examples=50)
-def test_model::etypes_instantiation(instance):
-    assert isinstance(instance, model::ETypes)
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_uris_type(instance):
-    assert isinstance(instance.uris, str)
+def test_model_etypes_instantiation(instance):
+    assert isinstance(instance, model_ETypes)
 
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_uris_setter(instance):
-    original = instance.uris
-    instance.uris = original
-    assert instance.uris == original
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eStrings_type(instance):
-    assert isinstance(instance.eStrings, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eStrings_setter(instance):
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eStrings_setter(instance):
     original = instance.eStrings
     instance.eStrings = original
     assert instance.eStrings == original
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eInts_type(instance):
-    assert isinstance(instance.eInts, int)
 
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eInts_setter(instance):
-    original = instance.eInts
-    instance.eInts = original
-    assert instance.eInts == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eBooleans_type(instance):
-    assert isinstance(instance.eBooleans, str)
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_uris_setter(instance):
+    original = instance.uris
+    instance.uris = original
+    assert instance.uris == original
 
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eBooleans_setter(instance):
-    original = instance.eBooleans
-    instance.eBooleans = original
-    assert instance.eBooleans == original
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eChar_type(instance):
-    assert isinstance(instance.eChar, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eChar_setter(instance):
-    original = instance.eChar
-    instance.eChar = original
-    assert instance.eChar == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eByteArray_type(instance):
-    assert isinstance(instance.eByteArray, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eByteArray_setter(instance):
-    original = instance.eByteArray
-    instance.eByteArray = original
-    assert instance.eByteArray == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eBoolean_type(instance):
-    assert isinstance(instance.eBoolean, bool)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eBoolean_setter(instance):
-    original = instance.eBoolean
-    instance.eBoolean = original
-    assert instance.eBoolean == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eString_type(instance):
-    assert isinstance(instance.eString, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eString_setter(instance):
-    original = instance.eString
-    instance.eString = original
-    assert instance.eString == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eByte_type(instance):
-    assert isinstance(instance.eByte, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eByte_setter(instance):
-    original = instance.eByte
-    instance.eByte = original
-    assert instance.eByte == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eDate_type(instance):
-    assert isinstance(instance.eDate, date)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eDate_setter(instance):
-    original = instance.eDate
-    instance.eDate = original
-    assert instance.eDate == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_doubleValue_type(instance):
-    assert isinstance(instance.doubleValue, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_doubleValue_setter(instance):
-    original = instance.doubleValue
-    instance.doubleValue = original
-    assert instance.doubleValue == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eShort_type(instance):
-    assert isinstance(instance.eShort, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eShort_setter(instance):
-    original = instance.eShort
-    instance.eShort = original
-    assert instance.eShort == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eFloat_type(instance):
-    assert isinstance(instance.eFloat, float)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eFloat_setter(instance):
-    original = instance.eFloat
-    instance.eFloat = original
-    assert instance.eFloat == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eDoubles_type(instance):
-    assert isinstance(instance.eDoubles, str)
-
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eDoubles_setter(instance):
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eDoubles_setter(instance):
     original = instance.eDoubles
     instance.eDoubles = original
     assert instance.eDoubles == original
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eInt_type(instance):
-    assert isinstance(instance.eInt, int)
 
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eInt_setter(instance):
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eDate_setter(instance):
+    original = instance.eDate
+    instance.eDate = original
+    assert instance.eDate == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eBooleans_setter(instance):
+    original = instance.eBooleans
+    instance.eBooleans = original
+    assert instance.eBooleans == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eShort_setter(instance):
+    original = instance.eShort
+    instance.eShort = original
+    assert instance.eShort == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eByteArray_setter(instance):
+    original = instance.eByteArray
+    instance.eByteArray = original
+    assert instance.eByteArray == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eByte_setter(instance):
+    original = instance.eByte
+    instance.eByte = original
+    assert instance.eByte == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eInts_setter(instance):
+    original = instance.eInts
+    instance.eInts = original
+    assert instance.eInts == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eInt_setter(instance):
     original = instance.eInt
     instance.eInt = original
     assert instance.eInt == original
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eDouble_type(instance):
-    assert isinstance(instance.eDouble, float)
 
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eDouble_setter(instance):
-    original = instance.eDouble
-    instance.eDouble = original
-    assert instance.eDouble == original
-
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eLong_type(instance):
-    assert isinstance(instance.eLong, str)
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eString_setter(instance):
+    original = instance.eString
+    instance.eString = original
+    assert instance.eString == original
 
 
-@given(instance=model::ETypes_strategy)
-def test_model::etypes_eLong_setter(instance):
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eLong_setter(instance):
     original = instance.eLong
     instance.eLong = original
     assert instance.eLong == original
 
-@given(instance=model::Address_strategy)
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eDouble_setter(instance):
+    original = instance.eDouble
+    instance.eDouble = original
+    assert instance.eDouble == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eBoolean_setter(instance):
+    original = instance.eBoolean
+    instance.eBoolean = original
+    assert instance.eBoolean == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eFloat_setter(instance):
+    original = instance.eFloat
+    instance.eFloat = original
+    assert instance.eFloat == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_doubleValue_setter(instance):
+    original = instance.doubleValue
+    instance.doubleValue = original
+    assert instance.doubleValue == original
+
+
+
+@given(instance=model_ETypes_strategy)
+def test_model_etypes_eChar_setter(instance):
+    original = instance.eChar
+    instance.eChar = original
+    assert instance.eChar == original
+
+@given(instance=model_Address_strategy)
 @settings(max_examples=50)
-def test_model::address_instantiation(instance):
-    assert isinstance(instance, model::Address)
-
-@given(instance=model::Address_strategy)
-def test_model::address_addId_type(instance):
-    assert isinstance(instance.addId, str)
+def test_model_address_instantiation(instance):
+    assert isinstance(instance, model_Address)
 
 
-@given(instance=model::Address_strategy)
-def test_model::address_addId_setter(instance):
-    original = instance.addId
-    instance.addId = original
-    assert instance.addId == original
 
-@given(instance=model::Address_strategy)
-def test_model::address_street_type(instance):
-    assert isinstance(instance.street, str)
-
-
-@given(instance=model::Address_strategy)
-def test_model::address_street_setter(instance):
+@given(instance=model_Address_strategy)
+def test_model_address_street_setter(instance):
     original = instance.street
     instance.street = original
     assert instance.street == original
 
-@given(instance=model::Address_strategy)
-def test_model::address_number_type(instance):
-    assert isinstance(instance.number, str)
 
 
-@given(instance=model::Address_strategy)
-def test_model::address_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=model::Address_strategy)
-def test_model::address_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=model::Address_strategy)
-def test_model::address_city_setter(instance):
+@given(instance=model_Address_strategy)
+def test_model_address_city_setter(instance):
     original = instance.city
     instance.city = original
     assert instance.city == original
 
-@given(instance=model::TargetObject_strategy)
+
+
+@given(instance=model_Address_strategy)
+def test_model_address_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=model_Address_strategy)
+def test_model_address_addId_setter(instance):
+    original = instance.addId
+    instance.addId = original
+    assert instance.addId == original
+
+@given(instance=model_TargetObject_strategy)
 @settings(max_examples=50)
-def test_model::targetobject_instantiation(instance):
-    assert isinstance(instance, model::TargetObject)
-
-@given(instance=model::TargetObject_strategy)
-def test_model::targetobject_arrayAttribute_type(instance):
-    assert isinstance(instance.arrayAttribute, str)
+def test_model_targetobject_instantiation(instance):
+    assert isinstance(instance, model_TargetObject)
 
 
-@given(instance=model::TargetObject_strategy)
-def test_model::targetobject_arrayAttribute_setter(instance):
+
+@given(instance=model_TargetObject_strategy)
+def test_model_targetobject_arrayAttribute_setter(instance):
     original = instance.arrayAttribute
     instance.arrayAttribute = original
     assert instance.arrayAttribute == original
 
-@given(instance=model::TargetObject_strategy)
-def test_model::targetobject_singleAttribute_type(instance):
-    assert isinstance(instance.singleAttribute, str)
 
 
-@given(instance=model::TargetObject_strategy)
-def test_model::targetobject_singleAttribute_setter(instance):
+@given(instance=model_TargetObject_strategy)
+def test_model_targetobject_singleAttribute_setter(instance):
     original = instance.singleAttribute
     instance.singleAttribute = original
     assert instance.singleAttribute == original
 
-@given(instance=model::PrimaryObject_strategy)
+@given(instance=model_PrimaryObject_strategy)
 @settings(max_examples=50)
-def test_model::primaryobject_instantiation(instance):
-    assert isinstance(instance, model::PrimaryObject)
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapReferenceCollection_type(instance):
-    assert isinstance(instance.featureMapReferenceCollection, str)
+def test_model_primaryobject_instantiation(instance):
+    assert isinstance(instance, model_PrimaryObject)
 
 
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapReferenceCollection_setter(instance):
-    original = instance.featureMapReferenceCollection
-    instance.featureMapReferenceCollection = original
-    assert instance.featureMapReferenceCollection == original
 
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapAttributeCollection_type(instance):
-    assert isinstance(instance.featureMapAttributeCollection, str)
-
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapAttributeCollection_setter(instance):
-    original = instance.featureMapAttributeCollection
-    instance.featureMapAttributeCollection = original
-    assert instance.featureMapAttributeCollection == original
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapAttributeType1_type(instance):
-    assert isinstance(instance.featureMapAttributeType1, str)
-
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapAttributeType1_setter(instance):
-    original = instance.featureMapAttributeType1
-    instance.featureMapAttributeType1 = original
-    assert instance.featureMapAttributeType1 == original
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_idAttribute_type(instance):
-    assert isinstance(instance.idAttribute, str)
-
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_idAttribute_setter(instance):
-    original = instance.idAttribute
-    instance.idAttribute = original
-    assert instance.idAttribute == original
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapAttributeType2_type(instance):
-    assert isinstance(instance.featureMapAttributeType2, str)
-
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_featureMapAttributeType2_setter(instance):
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_featureMapAttributeType2_setter(instance):
     original = instance.featureMapAttributeType2
     instance.featureMapAttributeType2 = original
     assert instance.featureMapAttributeType2 == original
 
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_unsettableAttribute_type(instance):
-    assert isinstance(instance.unsettableAttribute, str)
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_featureMapReferenceCollection_setter(instance):
+    original = instance.featureMapReferenceCollection
+    instance.featureMapReferenceCollection = original
+    assert instance.featureMapReferenceCollection == original
 
 
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_unsettableAttribute_setter(instance):
-    original = instance.unsettableAttribute
-    instance.unsettableAttribute = original
-    assert instance.unsettableAttribute == original
 
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_unsettableAttributeWithNonNullDefault_type(instance):
-    assert isinstance(instance.unsettableAttributeWithNonNullDefault, str)
-
-
-@given(instance=model::PrimaryObject_strategy)
-def test_model::primaryobject_unsettableAttributeWithNonNullDefault_setter(instance):
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_unsettableAttributeWithNonNullDefault_setter(instance):
     original = instance.unsettableAttributeWithNonNullDefault
     instance.unsettableAttributeWithNonNullDefault = original
     assert instance.unsettableAttributeWithNonNullDefault == original
 
-@given(instance=model::User_strategy)
-@settings(max_examples=50)
-def test_model::user_instantiation(instance):
-    assert isinstance(instance, model::User)
-
-@given(instance=model::User_strategy)
-def test_model::user_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=model::User_strategy)
-def test_model::user_name_setter(instance):
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_featureMapAttributeCollection_setter(instance):
+    original = instance.featureMapAttributeCollection
+    instance.featureMapAttributeCollection = original
+    assert instance.featureMapAttributeCollection == original
+
+
+
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::User_strategy)
-def test_model::user_birthDate_type(instance):
-    assert isinstance(instance.birthDate, date)
 
 
-@given(instance=model::User_strategy)
-def test_model::user_birthDate_setter(instance):
-    original = instance.birthDate
-    instance.birthDate = original
-    assert instance.birthDate == original
-
-@given(instance=model::User_strategy)
-def test_model::user_sex_type(instance):
-    assert isinstance(instance.sex, str)
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_idAttribute_setter(instance):
+    original = instance.idAttribute
+    instance.idAttribute = original
+    assert instance.idAttribute == original
 
 
-@given(instance=model::User_strategy)
-def test_model::user_sex_setter(instance):
+
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_featureMapAttributeType1_setter(instance):
+    original = instance.featureMapAttributeType1
+    instance.featureMapAttributeType1 = original
+    assert instance.featureMapAttributeType1 == original
+
+
+
+@given(instance=model_PrimaryObject_strategy)
+def test_model_primaryobject_unsettableAttribute_setter(instance):
+    original = instance.unsettableAttribute
+    instance.unsettableAttribute = original
+    assert instance.unsettableAttribute == original
+
+@given(instance=model_User_strategy)
+@settings(max_examples=50)
+def test_model_user_instantiation(instance):
+    assert isinstance(instance, model_User)
+
+
+
+@given(instance=model_User_strategy)
+def test_model_user_userId_setter(instance):
+    original = instance.userId
+    instance.userId = original
+    assert instance.userId == original
+
+
+
+@given(instance=model_User_strategy)
+def test_model_user_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=model_User_strategy)
+def test_model_user_sex_setter(instance):
     original = instance.sex
     instance.sex = original
     assert instance.sex == original
 
-@given(instance=model::User_strategy)
-def test_model::user_userId_type(instance):
-    assert isinstance(instance.userId, str)
 
 
-@given(instance=model::User_strategy)
-def test_model::user_userId_setter(instance):
-    original = instance.userId
-    instance.userId = original
-    assert instance.userId == original
+@given(instance=model_User_strategy)
+def test_model_user_birthDate_setter(instance):
+    original = instance.birthDate
+    instance.birthDate = original
+    assert instance.birthDate == original

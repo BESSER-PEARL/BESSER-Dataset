@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Cell,
     Row,
     Caption,
     LocatedElement,
-    WikiTable::Row,
-    WikiTable::Caption,
-    WikiTable::Cell,
-    WikiTable::Table,
-    WikiTable::LocatedElement,
+    WikiTable_Row,
+    WikiTable_Cell,
+    WikiTable_Caption,
+    WikiTable_Table,
+    WikiTable_LocatedElement,
 )
 
 # =============================================================================
@@ -79,135 +79,135 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_wikitable::row_is_not_abstract():
-    assert not inspect.isabstract(WikiTable::Row)
+def test_wikitable_row_is_not_abstract():
+    assert not inspect.isabstract(WikiTable_Row)
 
 
-def test_wikitable::row_constructor_exists():
-    assert callable(WikiTable::Row.__init__)
+def test_wikitable_row_constructor_exists():
+    assert callable(WikiTable_Row.__init__)
 
 
-def test_wikitable::row_constructor_args():
-    sig = inspect.signature(WikiTable::Row.__init__)
+def test_wikitable_row_constructor_args():
+    sig = inspect.signature(WikiTable_Row.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wikitable::caption_is_not_abstract():
-    assert not inspect.isabstract(WikiTable::Caption)
+def test_wikitable_cell_is_not_abstract():
+    assert not inspect.isabstract(WikiTable_Cell)
 
 
-def test_wikitable::caption_constructor_exists():
-    assert callable(WikiTable::Caption.__init__)
+def test_wikitable_cell_constructor_exists():
+    assert callable(WikiTable_Cell.__init__)
 
 
-def test_wikitable::caption_constructor_args():
-    sig = inspect.signature(WikiTable::Caption.__init__)
-    params = list(sig.parameters.keys())
-    assert "content" in params, "Missing parameter 'content'"
-
-def test_wikitable::caption_has_content():
-    assert hasattr(WikiTable::Caption, "content")
-    descriptor = None
-    for klass in WikiTable::Caption.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_wikitable::cell_is_not_abstract():
-    assert not inspect.isabstract(WikiTable::Cell)
-
-
-def test_wikitable::cell_constructor_exists():
-    assert callable(WikiTable::Cell.__init__)
-
-
-def test_wikitable::cell_constructor_args():
-    sig = inspect.signature(WikiTable::Cell.__init__)
+def test_wikitable_cell_constructor_args():
+    sig = inspect.signature(WikiTable_Cell.__init__)
     params = list(sig.parameters.keys())
     assert "align" in params, "Missing parameter 'align'"
-    assert "isHeading" in params, "Missing parameter 'isHeading'"
-    assert "content" in params, "Missing parameter 'content'"
     assert "style" in params, "Missing parameter 'style'"
+    assert "content" in params, "Missing parameter 'content'"
+    assert "isHeading" in params, "Missing parameter 'isHeading'"
 
-def test_wikitable::cell_has_align():
-    assert hasattr(WikiTable::Cell, "align")
+def test_wikitable_cell_has_align():
+    assert hasattr(WikiTable_Cell, "align")
     descriptor = None
-    for klass in WikiTable::Cell.__mro__:
+    for klass in WikiTable_Cell.__mro__:
         if "align" in klass.__dict__:
             descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikitable::cell_has_isHeading():
-    assert hasattr(WikiTable::Cell, "isHeading")
+def test_wikitable_cell_has_style():
+    assert hasattr(WikiTable_Cell, "style")
     descriptor = None
-    for klass in WikiTable::Cell.__mro__:
-        if "isHeading" in klass.__dict__:
-            descriptor = klass.__dict__["isHeading"]
+    for klass in WikiTable_Cell.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikitable::cell_has_content():
-    assert hasattr(WikiTable::Cell, "content")
+def test_wikitable_cell_has_content():
+    assert hasattr(WikiTable_Cell, "content")
     descriptor = None
-    for klass in WikiTable::Cell.__mro__:
+    for klass in WikiTable_Cell.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikitable::cell_has_style():
-    assert hasattr(WikiTable::Cell, "style")
+def test_wikitable_cell_has_isHeading():
+    assert hasattr(WikiTable_Cell, "isHeading")
     descriptor = None
-    for klass in WikiTable::Cell.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
+    for klass in WikiTable_Cell.__mro__:
+        if "isHeading" in klass.__dict__:
+            descriptor = klass.__dict__["isHeading"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_wikitable::table_is_not_abstract():
-    assert not inspect.isabstract(WikiTable::Table)
+def test_wikitable_caption_is_not_abstract():
+    assert not inspect.isabstract(WikiTable_Caption)
 
 
-def test_wikitable::table_constructor_exists():
-    assert callable(WikiTable::Table.__init__)
+def test_wikitable_caption_constructor_exists():
+    assert callable(WikiTable_Caption.__init__)
 
 
-def test_wikitable::table_constructor_args():
-    sig = inspect.signature(WikiTable::Table.__init__)
+def test_wikitable_caption_constructor_args():
+    sig = inspect.signature(WikiTable_Caption.__init__)
+    params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
+
+def test_wikitable_caption_has_content():
+    assert hasattr(WikiTable_Caption, "content")
+    descriptor = None
+    for klass in WikiTable_Caption.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_wikitable_table_is_not_abstract():
+    assert not inspect.isabstract(WikiTable_Table)
+
+
+def test_wikitable_table_constructor_exists():
+    assert callable(WikiTable_Table.__init__)
+
+
+def test_wikitable_table_constructor_args():
+    sig = inspect.signature(WikiTable_Table.__init__)
     params = list(sig.parameters.keys())
     assert "border" in params, "Missing parameter 'border'"
     assert "style" in params, "Missing parameter 'style'"
     assert "class_" in params, "Missing parameter 'class_'"
 
-def test_wikitable::table_has_border():
-    assert hasattr(WikiTable::Table, "border")
+def test_wikitable_table_has_border():
+    assert hasattr(WikiTable_Table, "border")
     descriptor = None
-    for klass in WikiTable::Table.__mro__:
+    for klass in WikiTable_Table.__mro__:
         if "border" in klass.__dict__:
             descriptor = klass.__dict__["border"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikitable::table_has_style():
-    assert hasattr(WikiTable::Table, "style")
+def test_wikitable_table_has_style():
+    assert hasattr(WikiTable_Table, "style")
     descriptor = None
-    for klass in WikiTable::Table.__mro__:
+    for klass in WikiTable_Table.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikitable::table_has_class_():
-    assert hasattr(WikiTable::Table, "class_")
+def test_wikitable_table_has_class_():
+    assert hasattr(WikiTable_Table, "class_")
     descriptor = None
-    for klass in WikiTable::Table.__mro__:
+    for klass in WikiTable_Table.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
@@ -215,45 +215,45 @@ def test_wikitable::table_has_class_():
 
 
 
-def test_wikitable::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(WikiTable::LocatedElement)
+def test_wikitable_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(WikiTable_LocatedElement)
 
 
-def test_wikitable::locatedelement_constructor_exists():
-    assert callable(WikiTable::LocatedElement.__init__)
+def test_wikitable_locatedelement_constructor_exists():
+    assert callable(WikiTable_LocatedElement.__init__)
 
 
-def test_wikitable::locatedelement_constructor_args():
-    sig = inspect.signature(WikiTable::LocatedElement.__init__)
+def test_wikitable_locatedelement_constructor_args():
+    sig = inspect.signature(WikiTable_LocatedElement.__init__)
     params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
     assert "commentsBefore" in params, "Missing parameter 'commentsBefore'"
     assert "commentsAfter" in params, "Missing parameter 'commentsAfter'"
-    assert "location" in params, "Missing parameter 'location'"
 
-def test_wikitable::locatedelement_has_commentsBefore():
-    assert hasattr(WikiTable::LocatedElement, "commentsBefore")
+def test_wikitable_locatedelement_has_location():
+    assert hasattr(WikiTable_LocatedElement, "location")
     descriptor = None
-    for klass in WikiTable::LocatedElement.__mro__:
+    for klass in WikiTable_LocatedElement.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wikitable_locatedelement_has_commentsBefore():
+    assert hasattr(WikiTable_LocatedElement, "commentsBefore")
+    descriptor = None
+    for klass in WikiTable_LocatedElement.__mro__:
         if "commentsBefore" in klass.__dict__:
             descriptor = klass.__dict__["commentsBefore"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikitable::locatedelement_has_commentsAfter():
-    assert hasattr(WikiTable::LocatedElement, "commentsAfter")
+def test_wikitable_locatedelement_has_commentsAfter():
+    assert hasattr(WikiTable_LocatedElement, "commentsAfter")
     descriptor = None
-    for klass in WikiTable::LocatedElement.__mro__:
+    for klass in WikiTable_LocatedElement.__mro__:
         if "commentsAfter" in klass.__dict__:
             descriptor = klass.__dict__["commentsAfter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wikitable::locatedelement_has_location():
-    assert hasattr(WikiTable::LocatedElement, "location")
-    descriptor = None
-    for klass in WikiTable::LocatedElement.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
@@ -281,27 +281,27 @@ Caption_strategy = st.builds(
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-WikiTable::Row_strategy = st.builds(
-    WikiTable::Row,
+WikiTable_Row_strategy = st.builds(
+    WikiTable_Row,
 )
-WikiTable::Caption_strategy = st.builds(
-    WikiTable::Caption,
-    content=
-        safe_text
-)
-WikiTable::Cell_strategy = st.builds(
-    WikiTable::Cell,
+WikiTable_Cell_strategy = st.builds(
+    WikiTable_Cell,
     align=
         safe_text,
-    isHeading=
+    style=
         safe_text,
     content=
         safe_text,
-    style=
+    isHeading=
         safe_text
 )
-WikiTable::Table_strategy = st.builds(
-    WikiTable::Table,
+WikiTable_Caption_strategy = st.builds(
+    WikiTable_Caption,
+    content=
+        safe_text
+)
+WikiTable_Table_strategy = st.builds(
+    WikiTable_Table,
     border=
         safe_text,
     style=
@@ -309,13 +309,13 @@ WikiTable::Table_strategy = st.builds(
     class_=
         safe_text
 )
-WikiTable::LocatedElement_strategy = st.builds(
-    WikiTable::LocatedElement,
+WikiTable_LocatedElement_strategy = st.builds(
+    WikiTable_LocatedElement,
+    location=
+        safe_text,
     commentsBefore=
         safe_text,
     commentsAfter=
-        safe_text,
-    location=
         safe_text
 )
 
@@ -339,148 +339,115 @@ def test_caption_instantiation(instance):
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=WikiTable::Row_strategy)
+@given(instance=WikiTable_Row_strategy)
 @settings(max_examples=50)
-def test_wikitable::row_instantiation(instance):
-    assert isinstance(instance, WikiTable::Row)
+def test_wikitable_row_instantiation(instance):
+    assert isinstance(instance, WikiTable_Row)
 
-@given(instance=WikiTable::Caption_strategy)
+@given(instance=WikiTable_Cell_strategy)
 @settings(max_examples=50)
-def test_wikitable::caption_instantiation(instance):
-    assert isinstance(instance, WikiTable::Caption)
-
-@given(instance=WikiTable::Caption_strategy)
-def test_wikitable::caption_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_wikitable_cell_instantiation(instance):
+    assert isinstance(instance, WikiTable_Cell)
 
 
-@given(instance=WikiTable::Caption_strategy)
-def test_wikitable::caption_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
 
-@given(instance=WikiTable::Cell_strategy)
-@settings(max_examples=50)
-def test_wikitable::cell_instantiation(instance):
-    assert isinstance(instance, WikiTable::Cell)
-
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_align_setter(instance):
+@given(instance=WikiTable_Cell_strategy)
+def test_wikitable_cell_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_isHeading_type(instance):
-    assert isinstance(instance.isHeading, str)
 
 
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_isHeading_setter(instance):
-    original = instance.isHeading
-    instance.isHeading = original
-    assert instance.isHeading == original
-
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_content_type(instance):
-    assert isinstance(instance.content, str)
+@given(instance=WikiTable_Cell_strategy)
+def test_wikitable_cell_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
 
 
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_content_setter(instance):
+
+@given(instance=WikiTable_Cell_strategy)
+def test_wikitable_cell_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=WikiTable::Cell_strategy)
-def test_wikitable::cell_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
+@given(instance=WikiTable_Cell_strategy)
+def test_wikitable_cell_isHeading_setter(instance):
+    original = instance.isHeading
+    instance.isHeading = original
+    assert instance.isHeading == original
 
-@given(instance=WikiTable::Table_strategy)
+@given(instance=WikiTable_Caption_strategy)
 @settings(max_examples=50)
-def test_wikitable::table_instantiation(instance):
-    assert isinstance(instance, WikiTable::Table)
-
-@given(instance=WikiTable::Table_strategy)
-def test_wikitable::table_border_type(instance):
-    assert isinstance(instance.border, str)
+def test_wikitable_caption_instantiation(instance):
+    assert isinstance(instance, WikiTable_Caption)
 
 
-@given(instance=WikiTable::Table_strategy)
-def test_wikitable::table_border_setter(instance):
+
+@given(instance=WikiTable_Caption_strategy)
+def test_wikitable_caption_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
+
+@given(instance=WikiTable_Table_strategy)
+@settings(max_examples=50)
+def test_wikitable_table_instantiation(instance):
+    assert isinstance(instance, WikiTable_Table)
+
+
+
+@given(instance=WikiTable_Table_strategy)
+def test_wikitable_table_border_setter(instance):
     original = instance.border
     instance.border = original
     assert instance.border == original
 
-@given(instance=WikiTable::Table_strategy)
-def test_wikitable::table_style_type(instance):
-    assert isinstance(instance.style, str)
 
 
-@given(instance=WikiTable::Table_strategy)
-def test_wikitable::table_style_setter(instance):
+@given(instance=WikiTable_Table_strategy)
+def test_wikitable_table_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=WikiTable::Table_strategy)
-def test_wikitable::table_class__type(instance):
-    assert isinstance(instance.class_, str)
 
 
-@given(instance=WikiTable::Table_strategy)
-def test_wikitable::table_class__setter(instance):
+@given(instance=WikiTable_Table_strategy)
+def test_wikitable_table_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=WikiTable::LocatedElement_strategy)
+@given(instance=WikiTable_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_wikitable::locatedelement_instantiation(instance):
-    assert isinstance(instance, WikiTable::LocatedElement)
-
-@given(instance=WikiTable::LocatedElement_strategy)
-def test_wikitable::locatedelement_commentsBefore_type(instance):
-    assert isinstance(instance.commentsBefore, str)
+def test_wikitable_locatedelement_instantiation(instance):
+    assert isinstance(instance, WikiTable_LocatedElement)
 
 
-@given(instance=WikiTable::LocatedElement_strategy)
-def test_wikitable::locatedelement_commentsBefore_setter(instance):
+
+@given(instance=WikiTable_LocatedElement_strategy)
+def test_wikitable_locatedelement_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=WikiTable_LocatedElement_strategy)
+def test_wikitable_locatedelement_commentsBefore_setter(instance):
     original = instance.commentsBefore
     instance.commentsBefore = original
     assert instance.commentsBefore == original
 
-@given(instance=WikiTable::LocatedElement_strategy)
-def test_wikitable::locatedelement_commentsAfter_type(instance):
-    assert isinstance(instance.commentsAfter, str)
 
 
-@given(instance=WikiTable::LocatedElement_strategy)
-def test_wikitable::locatedelement_commentsAfter_setter(instance):
+@given(instance=WikiTable_LocatedElement_strategy)
+def test_wikitable_locatedelement_commentsAfter_setter(instance):
     original = instance.commentsAfter
     instance.commentsAfter = original
     assert instance.commentsAfter == original
-
-@given(instance=WikiTable::LocatedElement_strategy)
-def test_wikitable::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=WikiTable::LocatedElement_strategy)
-def test_wikitable::locatedelement_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original

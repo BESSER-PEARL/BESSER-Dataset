@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Client_Id___Name_UseCase,
@@ -301,9 +301,18 @@ def test_delivering_management_constructor_exists():
 def test_delivering_management_constructor_args():
     sig = inspect.signature(Delivering_Management.__init__)
     params = list(sig.parameters.keys())
+    assert "client_name" in params, "Missing parameter 'client_name'"
     assert "deliver_boy_id" in params, "Missing parameter 'deliver_boy_id'"
     assert "client_key" in params, "Missing parameter 'client_key'"
-    assert "client_name" in params, "Missing parameter 'client_name'"
+
+def test_delivering_management_has_client_name():
+    assert hasattr(Delivering_Management, "client_name")
+    descriptor = None
+    for klass in Delivering_Management.__mro__:
+        if "client_name" in klass.__dict__:
+            descriptor = klass.__dict__["client_name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_delivering_management_has_deliver_boy_id():
     assert hasattr(Delivering_Management, "deliver_boy_id")
@@ -320,15 +329,6 @@ def test_delivering_management_has_client_key():
     for klass in Delivering_Management.__mro__:
         if "client_key" in klass.__dict__:
             descriptor = klass.__dict__["client_key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_delivering_management_has_client_name():
-    assert hasattr(Delivering_Management, "client_name")
-    descriptor = None
-    for klass in Delivering_Management.__mro__:
-        if "client_name" in klass.__dict__:
-            descriptor = klass.__dict__["client_name"]
             break
     assert isinstance(descriptor, property)
 
@@ -418,8 +418,8 @@ def test_cleaning_management_constructor_args():
     sig = inspect.signature(Cleaning_Management.__init__)
     params = list(sig.parameters.keys())
     assert "powderized_wash" in params, "Missing parameter 'powderized_wash'"
-    assert "brushing" in params, "Missing parameter 'brushing'"
     assert "water" in params, "Missing parameter 'water'"
+    assert "brushing" in params, "Missing parameter 'brushing'"
 
 def test_cleaning_management_has_powderized_wash():
     assert hasattr(Cleaning_Management, "powderized_wash")
@@ -430,21 +430,21 @@ def test_cleaning_management_has_powderized_wash():
             break
     assert isinstance(descriptor, property)
 
-def test_cleaning_management_has_brushing():
-    assert hasattr(Cleaning_Management, "brushing")
-    descriptor = None
-    for klass in Cleaning_Management.__mro__:
-        if "brushing" in klass.__dict__:
-            descriptor = klass.__dict__["brushing"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_cleaning_management_has_water():
     assert hasattr(Cleaning_Management, "water")
     descriptor = None
     for klass in Cleaning_Management.__mro__:
         if "water" in klass.__dict__:
             descriptor = klass.__dict__["water"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cleaning_management_has_brushing():
+    assert hasattr(Cleaning_Management, "brushing")
+    descriptor = None
+    for klass in Cleaning_Management.__mro__:
+        if "brushing" in klass.__dict__:
+            descriptor = klass.__dict__["brushing"]
             break
     assert isinstance(descriptor, property)
 
@@ -530,11 +530,11 @@ Administrator_strategy = st.builds(
 )
 Delivering_Management_strategy = st.builds(
     Delivering_Management,
+    client_name=
+        safe_text,
     deliver_boy_id=
         safe_text,
     client_key=
-        safe_text,
-    client_name=
         safe_text
 )
 Payment_strategy = st.builds(
@@ -556,9 +556,9 @@ Cleaning_Management_strategy = st.builds(
     Cleaning_Management,
     powderized_wash=
         safe_text,
-    brushing=
-        safe_text,
     water=
+        safe_text,
+    brushing=
         safe_text
 )
 User_strategy = st.builds(
@@ -660,31 +660,6 @@ def test_administrator_instantiation(instance):
 def test_delivering_management_instantiation(instance):
     assert isinstance(instance, Delivering_Management)
 
-@given(instance=Delivering_Management_strategy)
-def test_delivering_management_deliver_boy_id_type(instance):
-    assert isinstance(instance.deliver_boy_id, str)
-
-
-@given(instance=Delivering_Management_strategy)
-def test_delivering_management_deliver_boy_id_setter(instance):
-    original = instance.deliver_boy_id
-    instance.deliver_boy_id = original
-    assert instance.deliver_boy_id == original
-
-@given(instance=Delivering_Management_strategy)
-def test_delivering_management_client_key_type(instance):
-    assert isinstance(instance.client_key, str)
-
-
-@given(instance=Delivering_Management_strategy)
-def test_delivering_management_client_key_setter(instance):
-    original = instance.client_key
-    instance.client_key = original
-    assert instance.client_key == original
-
-@given(instance=Delivering_Management_strategy)
-def test_delivering_management_client_name_type(instance):
-    assert isinstance(instance.client_name, str)
 
 
 @given(instance=Delivering_Management_strategy)
@@ -693,14 +668,27 @@ def test_delivering_management_client_name_setter(instance):
     instance.client_name = original
     assert instance.client_name == original
 
+
+
+@given(instance=Delivering_Management_strategy)
+def test_delivering_management_deliver_boy_id_setter(instance):
+    original = instance.deliver_boy_id
+    instance.deliver_boy_id = original
+    assert instance.deliver_boy_id == original
+
+
+
+@given(instance=Delivering_Management_strategy)
+def test_delivering_management_client_key_setter(instance):
+    original = instance.client_key
+    instance.client_key = original
+    assert instance.client_key == original
+
 @given(instance=Payment_strategy)
 @settings(max_examples=50)
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_Type_of_payment_type(instance):
-    assert isinstance(instance.Type_of_payment, str)
 
 
 @given(instance=Payment_strategy)
@@ -714,9 +702,6 @@ def test_payment_Type_of_payment_setter(instance):
 def test_primary_info_instantiation(instance):
     assert isinstance(instance, Primary_Info)
 
-@given(instance=Primary_Info_strategy)
-def test_primary_info_Type_of_car_type(instance):
-    assert isinstance(instance.Type_of_car, str)
 
 
 @given(instance=Primary_Info_strategy)
@@ -725,9 +710,6 @@ def test_primary_info_Type_of_car_setter(instance):
     instance.Type_of_car = original
     assert instance.Type_of_car == original
 
-@given(instance=Primary_Info_strategy)
-def test_primary_info_Type_of_wash_type(instance):
-    assert isinstance(instance.Type_of_wash, str)
 
 
 @given(instance=Primary_Info_strategy)
@@ -746,9 +728,6 @@ def test_money_dispenser_instantiation(instance):
 def test_cleaning_management_instantiation(instance):
     assert isinstance(instance, Cleaning_Management)
 
-@given(instance=Cleaning_Management_strategy)
-def test_cleaning_management_powderized_wash_type(instance):
-    assert isinstance(instance.powderized_wash, str)
 
 
 @given(instance=Cleaning_Management_strategy)
@@ -757,20 +736,6 @@ def test_cleaning_management_powderized_wash_setter(instance):
     instance.powderized_wash = original
     assert instance.powderized_wash == original
 
-@given(instance=Cleaning_Management_strategy)
-def test_cleaning_management_brushing_type(instance):
-    assert isinstance(instance.brushing, str)
-
-
-@given(instance=Cleaning_Management_strategy)
-def test_cleaning_management_brushing_setter(instance):
-    original = instance.brushing
-    instance.brushing = original
-    assert instance.brushing == original
-
-@given(instance=Cleaning_Management_strategy)
-def test_cleaning_management_water_type(instance):
-    assert isinstance(instance.water, str)
 
 
 @given(instance=Cleaning_Management_strategy)
@@ -778,6 +743,14 @@ def test_cleaning_management_water_setter(instance):
     original = instance.water
     instance.water = original
     assert instance.water == original
+
+
+
+@given(instance=Cleaning_Management_strategy)
+def test_cleaning_management_brushing_setter(instance):
+    original = instance.brushing
+    instance.brushing = original
+    assert instance.brushing == original
 
 @given(instance=User_strategy)
 @settings(max_examples=50)

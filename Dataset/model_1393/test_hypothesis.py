@@ -3,49 +3,49 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    capellacommon::Constraint,
+from python_code import (
+    capellacommon_Constraint,
     StateEvent,
-    capellacommon::TimeEvent,
-    capellacommon::ChangeEvent,
+    capellacommon_TimeEvent,
+    capellacommon_ChangeEvent,
     AbstractEvent,
     Pseudostate,
-    capellacommon::JoinPseudoState,
-    capellacommon::ForkPseudoState,
-    capellacommon::ShallowHistoryPseudoState,
-    capellacommon::ChoicePseudoState,
-    capellacommon::DeepHistoryPseudoState,
-    capellacommon::EntryPointPseudoState,
-    capellacommon::ExitPointPseudoState,
-    capellacommon::TerminatePseudoState,
-    capellacommon::InitialPseudoState,
-    capellacommon::TraceableElement,
+    capellacommon_ChoicePseudoState,
+    capellacommon_ExitPointPseudoState,
+    capellacommon_TerminatePseudoState,
+    capellacommon_JoinPseudoState,
+    capellacommon_EntryPointPseudoState,
+    capellacommon_ShallowHistoryPseudoState,
+    capellacommon_DeepHistoryPseudoState,
+    capellacommon_ForkPseudoState,
+    capellacommon_InitialPseudoState,
+    capellacommon_TraceableElement,
     ModelElement,
     TraceableElement,
     CapellaElement,
-    capellacommon::GenericTrace,
+    capellacommon_GenericTrace,
     Structure,
     IState,
     State,
-    capellacommon::FinalState,
-    capellacommon::Mode,
-    capellacommon::AbstractEvent,
-    capellacommon::AbstractCapability,
-    capellacommon::FunctionalChain,
-    capellacommon::AbstractFunction,
+    capellacommon_FinalState,
+    capellacommon_Mode,
+    capellacommon_AbstractEvent,
+    capellacommon_AbstractCapability,
+    capellacommon_FunctionalChain,
+    capellacommon_AbstractFunction,
     AbstractState,
-    capellacommon::Pseudostate,
-    capellacommon::State,
+    capellacommon_Pseudostate,
+    capellacommon_State,
     NamedElement,
-    capellacommon::StateEvent,
-    capellacommon::AbstractState,
-    capellacommon::StateTransition,
-    capellacommon::Region,
+    capellacommon_StateEvent,
+    capellacommon_AbstractState,
+    capellacommon_StateTransition,
+    capellacommon_Region,
     AbstractBehavior,
-    capellacommon::StateMachine,
-    capellacommon::AbstractCapabilityPkg,
+    capellacommon_StateMachine,
+    capellacommon_AbstractCapabilityPkg,
     ChangeEventKind,
     TransitionKind,
     TimeEventKind,
@@ -57,16 +57,16 @@ from classes import (
 
 
 
-def test_capellacommon::constraint_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::Constraint)
+def test_capellacommon_constraint_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_Constraint)
 
 
-def test_capellacommon::constraint_constructor_exists():
-    assert callable(capellacommon::Constraint.__init__)
+def test_capellacommon_constraint_constructor_exists():
+    assert callable(capellacommon_Constraint.__init__)
 
 
-def test_capellacommon::constraint_constructor_args():
-    sig = inspect.signature(capellacommon::Constraint.__init__)
+def test_capellacommon_constraint_constructor_args():
+    sig = inspect.signature(capellacommon_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -85,57 +85,57 @@ def test_stateevent_constructor_args():
 
 
 
-def test_capellacommon::timeevent_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::TimeEvent)
+def test_capellacommon_timeevent_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_TimeEvent)
 
 
-def test_capellacommon::timeevent_constructor_exists():
-    assert callable(capellacommon::TimeEvent.__init__)
+def test_capellacommon_timeevent_constructor_exists():
+    assert callable(capellacommon_TimeEvent.__init__)
 
 
-def test_capellacommon::timeevent_constructor_args():
-    sig = inspect.signature(capellacommon::TimeEvent.__init__)
+def test_capellacommon_timeevent_constructor_args():
+    sig = inspect.signature(capellacommon_TimeEvent.__init__)
     params = list(sig.parameters.keys())
-    assert "time" in params, "Missing parameter 'time'"
     assert "kind" in params, "Missing parameter 'kind'"
+    assert "time" in params, "Missing parameter 'time'"
 
-def test_capellacommon::timeevent_has_time():
-    assert hasattr(capellacommon::TimeEvent, "time")
+def test_capellacommon_timeevent_has_kind():
+    assert hasattr(capellacommon_TimeEvent, "kind")
     descriptor = None
-    for klass in capellacommon::TimeEvent.__mro__:
-        if "time" in klass.__dict__:
-            descriptor = klass.__dict__["time"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_capellacommon::timeevent_has_kind():
-    assert hasattr(capellacommon::TimeEvent, "kind")
-    descriptor = None
-    for klass in capellacommon::TimeEvent.__mro__:
+    for klass in capellacommon_TimeEvent.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
+def test_capellacommon_timeevent_has_time():
+    assert hasattr(capellacommon_TimeEvent, "time")
+    descriptor = None
+    for klass in capellacommon_TimeEvent.__mro__:
+        if "time" in klass.__dict__:
+            descriptor = klass.__dict__["time"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_capellacommon::changeevent_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::ChangeEvent)
+
+def test_capellacommon_changeevent_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_ChangeEvent)
 
 
-def test_capellacommon::changeevent_constructor_exists():
-    assert callable(capellacommon::ChangeEvent.__init__)
+def test_capellacommon_changeevent_constructor_exists():
+    assert callable(capellacommon_ChangeEvent.__init__)
 
 
-def test_capellacommon::changeevent_constructor_args():
-    sig = inspect.signature(capellacommon::ChangeEvent.__init__)
+def test_capellacommon_changeevent_constructor_args():
+    sig = inspect.signature(capellacommon_ChangeEvent.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_capellacommon::changeevent_has_kind():
-    assert hasattr(capellacommon::ChangeEvent, "kind")
+def test_capellacommon_changeevent_has_kind():
+    assert hasattr(capellacommon_ChangeEvent, "kind")
     descriptor = None
-    for klass in capellacommon::ChangeEvent.__mro__:
+    for klass in capellacommon_ChangeEvent.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -171,142 +171,142 @@ def test_pseudostate_constructor_args():
 
 
 
-def test_capellacommon::joinpseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::JoinPseudoState)
+def test_capellacommon_choicepseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_ChoicePseudoState)
 
 
-def test_capellacommon::joinpseudostate_constructor_exists():
-    assert callable(capellacommon::JoinPseudoState.__init__)
+def test_capellacommon_choicepseudostate_constructor_exists():
+    assert callable(capellacommon_ChoicePseudoState.__init__)
 
 
-def test_capellacommon::joinpseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::JoinPseudoState.__init__)
+def test_capellacommon_choicepseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_ChoicePseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::forkpseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::ForkPseudoState)
+def test_capellacommon_exitpointpseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_ExitPointPseudoState)
 
 
-def test_capellacommon::forkpseudostate_constructor_exists():
-    assert callable(capellacommon::ForkPseudoState.__init__)
+def test_capellacommon_exitpointpseudostate_constructor_exists():
+    assert callable(capellacommon_ExitPointPseudoState.__init__)
 
 
-def test_capellacommon::forkpseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::ForkPseudoState.__init__)
+def test_capellacommon_exitpointpseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_ExitPointPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::shallowhistorypseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::ShallowHistoryPseudoState)
+def test_capellacommon_terminatepseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_TerminatePseudoState)
 
 
-def test_capellacommon::shallowhistorypseudostate_constructor_exists():
-    assert callable(capellacommon::ShallowHistoryPseudoState.__init__)
+def test_capellacommon_terminatepseudostate_constructor_exists():
+    assert callable(capellacommon_TerminatePseudoState.__init__)
 
 
-def test_capellacommon::shallowhistorypseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::ShallowHistoryPseudoState.__init__)
+def test_capellacommon_terminatepseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_TerminatePseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::choicepseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::ChoicePseudoState)
+def test_capellacommon_joinpseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_JoinPseudoState)
 
 
-def test_capellacommon::choicepseudostate_constructor_exists():
-    assert callable(capellacommon::ChoicePseudoState.__init__)
+def test_capellacommon_joinpseudostate_constructor_exists():
+    assert callable(capellacommon_JoinPseudoState.__init__)
 
 
-def test_capellacommon::choicepseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::ChoicePseudoState.__init__)
+def test_capellacommon_joinpseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_JoinPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::deephistorypseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::DeepHistoryPseudoState)
+def test_capellacommon_entrypointpseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_EntryPointPseudoState)
 
 
-def test_capellacommon::deephistorypseudostate_constructor_exists():
-    assert callable(capellacommon::DeepHistoryPseudoState.__init__)
+def test_capellacommon_entrypointpseudostate_constructor_exists():
+    assert callable(capellacommon_EntryPointPseudoState.__init__)
 
 
-def test_capellacommon::deephistorypseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::DeepHistoryPseudoState.__init__)
+def test_capellacommon_entrypointpseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_EntryPointPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::entrypointpseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::EntryPointPseudoState)
+def test_capellacommon_shallowhistorypseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_ShallowHistoryPseudoState)
 
 
-def test_capellacommon::entrypointpseudostate_constructor_exists():
-    assert callable(capellacommon::EntryPointPseudoState.__init__)
+def test_capellacommon_shallowhistorypseudostate_constructor_exists():
+    assert callable(capellacommon_ShallowHistoryPseudoState.__init__)
 
 
-def test_capellacommon::entrypointpseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::EntryPointPseudoState.__init__)
+def test_capellacommon_shallowhistorypseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_ShallowHistoryPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::exitpointpseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::ExitPointPseudoState)
+def test_capellacommon_deephistorypseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_DeepHistoryPseudoState)
 
 
-def test_capellacommon::exitpointpseudostate_constructor_exists():
-    assert callable(capellacommon::ExitPointPseudoState.__init__)
+def test_capellacommon_deephistorypseudostate_constructor_exists():
+    assert callable(capellacommon_DeepHistoryPseudoState.__init__)
 
 
-def test_capellacommon::exitpointpseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::ExitPointPseudoState.__init__)
+def test_capellacommon_deephistorypseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_DeepHistoryPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::terminatepseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::TerminatePseudoState)
+def test_capellacommon_forkpseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_ForkPseudoState)
 
 
-def test_capellacommon::terminatepseudostate_constructor_exists():
-    assert callable(capellacommon::TerminatePseudoState.__init__)
+def test_capellacommon_forkpseudostate_constructor_exists():
+    assert callable(capellacommon_ForkPseudoState.__init__)
 
 
-def test_capellacommon::terminatepseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::TerminatePseudoState.__init__)
+def test_capellacommon_forkpseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_ForkPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::initialpseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::InitialPseudoState)
+def test_capellacommon_initialpseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_InitialPseudoState)
 
 
-def test_capellacommon::initialpseudostate_constructor_exists():
-    assert callable(capellacommon::InitialPseudoState.__init__)
+def test_capellacommon_initialpseudostate_constructor_exists():
+    assert callable(capellacommon_InitialPseudoState.__init__)
 
 
-def test_capellacommon::initialpseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::InitialPseudoState.__init__)
+def test_capellacommon_initialpseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_InitialPseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::traceableelement_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::TraceableElement)
+def test_capellacommon_traceableelement_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_TraceableElement)
 
 
-def test_capellacommon::traceableelement_constructor_exists():
-    assert callable(capellacommon::TraceableElement.__init__)
+def test_capellacommon_traceableelement_constructor_exists():
+    assert callable(capellacommon_TraceableElement.__init__)
 
 
-def test_capellacommon::traceableelement_constructor_args():
-    sig = inspect.signature(capellacommon::TraceableElement.__init__)
+def test_capellacommon_traceableelement_constructor_args():
+    sig = inspect.signature(capellacommon_TraceableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -353,16 +353,16 @@ def test_capellaelement_constructor_args():
 
 
 
-def test_capellacommon::generictrace_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::GenericTrace)
+def test_capellacommon_generictrace_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_GenericTrace)
 
 
-def test_capellacommon::generictrace_constructor_exists():
-    assert callable(capellacommon::GenericTrace.__init__)
+def test_capellacommon_generictrace_constructor_exists():
+    assert callable(capellacommon_GenericTrace.__init__)
 
 
-def test_capellacommon::generictrace_constructor_args():
-    sig = inspect.signature(capellacommon::GenericTrace.__init__)
+def test_capellacommon_generictrace_constructor_args():
+    sig = inspect.signature(capellacommon_GenericTrace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -409,86 +409,86 @@ def test_state_constructor_args():
 
 
 
-def test_capellacommon::finalstate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::FinalState)
+def test_capellacommon_finalstate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_FinalState)
 
 
-def test_capellacommon::finalstate_constructor_exists():
-    assert callable(capellacommon::FinalState.__init__)
+def test_capellacommon_finalstate_constructor_exists():
+    assert callable(capellacommon_FinalState.__init__)
 
 
-def test_capellacommon::finalstate_constructor_args():
-    sig = inspect.signature(capellacommon::FinalState.__init__)
+def test_capellacommon_finalstate_constructor_args():
+    sig = inspect.signature(capellacommon_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::mode_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::Mode)
+def test_capellacommon_mode_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_Mode)
 
 
-def test_capellacommon::mode_constructor_exists():
-    assert callable(capellacommon::Mode.__init__)
+def test_capellacommon_mode_constructor_exists():
+    assert callable(capellacommon_Mode.__init__)
 
 
-def test_capellacommon::mode_constructor_args():
-    sig = inspect.signature(capellacommon::Mode.__init__)
+def test_capellacommon_mode_constructor_args():
+    sig = inspect.signature(capellacommon_Mode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::abstractevent_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::AbstractEvent)
+def test_capellacommon_abstractevent_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_AbstractEvent)
 
 
-def test_capellacommon::abstractevent_constructor_exists():
-    assert callable(capellacommon::AbstractEvent.__init__)
+def test_capellacommon_abstractevent_constructor_exists():
+    assert callable(capellacommon_AbstractEvent.__init__)
 
 
-def test_capellacommon::abstractevent_constructor_args():
-    sig = inspect.signature(capellacommon::AbstractEvent.__init__)
+def test_capellacommon_abstractevent_constructor_args():
+    sig = inspect.signature(capellacommon_AbstractEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::abstractcapability_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::AbstractCapability)
+def test_capellacommon_abstractcapability_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_AbstractCapability)
 
 
-def test_capellacommon::abstractcapability_constructor_exists():
-    assert callable(capellacommon::AbstractCapability.__init__)
+def test_capellacommon_abstractcapability_constructor_exists():
+    assert callable(capellacommon_AbstractCapability.__init__)
 
 
-def test_capellacommon::abstractcapability_constructor_args():
-    sig = inspect.signature(capellacommon::AbstractCapability.__init__)
+def test_capellacommon_abstractcapability_constructor_args():
+    sig = inspect.signature(capellacommon_AbstractCapability.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::functionalchain_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::FunctionalChain)
+def test_capellacommon_functionalchain_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_FunctionalChain)
 
 
-def test_capellacommon::functionalchain_constructor_exists():
-    assert callable(capellacommon::FunctionalChain.__init__)
+def test_capellacommon_functionalchain_constructor_exists():
+    assert callable(capellacommon_FunctionalChain.__init__)
 
 
-def test_capellacommon::functionalchain_constructor_args():
-    sig = inspect.signature(capellacommon::FunctionalChain.__init__)
+def test_capellacommon_functionalchain_constructor_args():
+    sig = inspect.signature(capellacommon_FunctionalChain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::abstractfunction_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::AbstractFunction)
+def test_capellacommon_abstractfunction_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_AbstractFunction)
 
 
-def test_capellacommon::abstractfunction_constructor_exists():
-    assert callable(capellacommon::AbstractFunction.__init__)
+def test_capellacommon_abstractfunction_constructor_exists():
+    assert callable(capellacommon_AbstractFunction.__init__)
 
 
-def test_capellacommon::abstractfunction_constructor_args():
-    sig = inspect.signature(capellacommon::AbstractFunction.__init__)
+def test_capellacommon_abstractfunction_constructor_args():
+    sig = inspect.signature(capellacommon_AbstractFunction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -507,30 +507,30 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_capellacommon::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::Pseudostate)
+def test_capellacommon_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_Pseudostate)
 
 
-def test_capellacommon::pseudostate_constructor_exists():
-    assert callable(capellacommon::Pseudostate.__init__)
+def test_capellacommon_pseudostate_constructor_exists():
+    assert callable(capellacommon_Pseudostate.__init__)
 
 
-def test_capellacommon::pseudostate_constructor_args():
-    sig = inspect.signature(capellacommon::Pseudostate.__init__)
+def test_capellacommon_pseudostate_constructor_args():
+    sig = inspect.signature(capellacommon_Pseudostate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::state_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::State)
+def test_capellacommon_state_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_State)
 
 
-def test_capellacommon::state_constructor_exists():
-    assert callable(capellacommon::State.__init__)
+def test_capellacommon_state_constructor_exists():
+    assert callable(capellacommon_State.__init__)
 
 
-def test_capellacommon::state_constructor_args():
-    sig = inspect.signature(capellacommon::State.__init__)
+def test_capellacommon_state_constructor_args():
+    sig = inspect.signature(capellacommon_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -549,61 +549,61 @@ def test_namedelement_constructor_args():
 
 
 
-def test_capellacommon::stateevent_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::StateEvent)
+def test_capellacommon_stateevent_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_StateEvent)
 
 
-def test_capellacommon::stateevent_constructor_exists():
-    assert callable(capellacommon::StateEvent.__init__)
+def test_capellacommon_stateevent_constructor_exists():
+    assert callable(capellacommon_StateEvent.__init__)
 
 
-def test_capellacommon::stateevent_constructor_args():
-    sig = inspect.signature(capellacommon::StateEvent.__init__)
+def test_capellacommon_stateevent_constructor_args():
+    sig = inspect.signature(capellacommon_StateEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::AbstractState)
+def test_capellacommon_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_AbstractState)
 
 
-def test_capellacommon::abstractstate_constructor_exists():
-    assert callable(capellacommon::AbstractState.__init__)
+def test_capellacommon_abstractstate_constructor_exists():
+    assert callable(capellacommon_AbstractState.__init__)
 
 
-def test_capellacommon::abstractstate_constructor_args():
-    sig = inspect.signature(capellacommon::AbstractState.__init__)
+def test_capellacommon_abstractstate_constructor_args():
+    sig = inspect.signature(capellacommon_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::statetransition_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::StateTransition)
+def test_capellacommon_statetransition_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_StateTransition)
 
 
-def test_capellacommon::statetransition_constructor_exists():
-    assert callable(capellacommon::StateTransition.__init__)
+def test_capellacommon_statetransition_constructor_exists():
+    assert callable(capellacommon_StateTransition.__init__)
 
 
-def test_capellacommon::statetransition_constructor_args():
-    sig = inspect.signature(capellacommon::StateTransition.__init__)
+def test_capellacommon_statetransition_constructor_args():
+    sig = inspect.signature(capellacommon_StateTransition.__init__)
     params = list(sig.parameters.keys())
     assert "triggerDescription" in params, "Missing parameter 'triggerDescription'"
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_capellacommon::statetransition_has_triggerDescription():
-    assert hasattr(capellacommon::StateTransition, "triggerDescription")
+def test_capellacommon_statetransition_has_triggerDescription():
+    assert hasattr(capellacommon_StateTransition, "triggerDescription")
     descriptor = None
-    for klass in capellacommon::StateTransition.__mro__:
+    for klass in capellacommon_StateTransition.__mro__:
         if "triggerDescription" in klass.__dict__:
             descriptor = klass.__dict__["triggerDescription"]
             break
     assert isinstance(descriptor, property)
 
-def test_capellacommon::statetransition_has_kind():
-    assert hasattr(capellacommon::StateTransition, "kind")
+def test_capellacommon_statetransition_has_kind():
+    assert hasattr(capellacommon_StateTransition, "kind")
     descriptor = None
-    for klass in capellacommon::StateTransition.__mro__:
+    for klass in capellacommon_StateTransition.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -611,16 +611,16 @@ def test_capellacommon::statetransition_has_kind():
 
 
 
-def test_capellacommon::region_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::Region)
+def test_capellacommon_region_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_Region)
 
 
-def test_capellacommon::region_constructor_exists():
-    assert callable(capellacommon::Region.__init__)
+def test_capellacommon_region_constructor_exists():
+    assert callable(capellacommon_Region.__init__)
 
 
-def test_capellacommon::region_constructor_args():
-    sig = inspect.signature(capellacommon::Region.__init__)
+def test_capellacommon_region_constructor_args():
+    sig = inspect.signature(capellacommon_Region.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -639,30 +639,30 @@ def test_abstractbehavior_constructor_args():
 
 
 
-def test_capellacommon::statemachine_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::StateMachine)
+def test_capellacommon_statemachine_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_StateMachine)
 
 
-def test_capellacommon::statemachine_constructor_exists():
-    assert callable(capellacommon::StateMachine.__init__)
+def test_capellacommon_statemachine_constructor_exists():
+    assert callable(capellacommon_StateMachine.__init__)
 
 
-def test_capellacommon::statemachine_constructor_args():
-    sig = inspect.signature(capellacommon::StateMachine.__init__)
+def test_capellacommon_statemachine_constructor_args():
+    sig = inspect.signature(capellacommon_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_capellacommon::abstractcapabilitypkg_is_not_abstract():
-    assert not inspect.isabstract(capellacommon::AbstractCapabilityPkg)
+def test_capellacommon_abstractcapabilitypkg_is_not_abstract():
+    assert not inspect.isabstract(capellacommon_AbstractCapabilityPkg)
 
 
-def test_capellacommon::abstractcapabilitypkg_constructor_exists():
-    assert callable(capellacommon::AbstractCapabilityPkg.__init__)
+def test_capellacommon_abstractcapabilitypkg_constructor_exists():
+    assert callable(capellacommon_AbstractCapabilityPkg.__init__)
 
 
-def test_capellacommon::abstractcapabilitypkg_constructor_args():
-    sig = inspect.signature(capellacommon::AbstractCapabilityPkg.__init__)
+def test_capellacommon_abstractcapabilitypkg_constructor_args():
+    sig = inspect.signature(capellacommon_AbstractCapabilityPkg.__init__)
     params = list(sig.parameters.keys())
 
 def test_changeeventkind_exists():
@@ -722,21 +722,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-capellacommon::Constraint_strategy = st.builds(
-    capellacommon::Constraint,
+capellacommon_Constraint_strategy = st.builds(
+    capellacommon_Constraint,
 )
 StateEvent_strategy = st.builds(
     StateEvent,
 )
-capellacommon::TimeEvent_strategy = st.builds(
-    capellacommon::TimeEvent,
-    time=
-        safe_text,
+capellacommon_TimeEvent_strategy = st.builds(
+    capellacommon_TimeEvent,
     kind=
+        safe_text,
+    time=
         safe_text
 )
-capellacommon::ChangeEvent_strategy = st.builds(
-    capellacommon::ChangeEvent,
+capellacommon_ChangeEvent_strategy = st.builds(
+    capellacommon_ChangeEvent,
     kind=
         safe_text
 )
@@ -746,35 +746,35 @@ AbstractEvent_strategy = st.builds(
 Pseudostate_strategy = st.builds(
     Pseudostate,
 )
-capellacommon::JoinPseudoState_strategy = st.builds(
-    capellacommon::JoinPseudoState,
+capellacommon_ChoicePseudoState_strategy = st.builds(
+    capellacommon_ChoicePseudoState,
 )
-capellacommon::ForkPseudoState_strategy = st.builds(
-    capellacommon::ForkPseudoState,
+capellacommon_ExitPointPseudoState_strategy = st.builds(
+    capellacommon_ExitPointPseudoState,
 )
-capellacommon::ShallowHistoryPseudoState_strategy = st.builds(
-    capellacommon::ShallowHistoryPseudoState,
+capellacommon_TerminatePseudoState_strategy = st.builds(
+    capellacommon_TerminatePseudoState,
 )
-capellacommon::ChoicePseudoState_strategy = st.builds(
-    capellacommon::ChoicePseudoState,
+capellacommon_JoinPseudoState_strategy = st.builds(
+    capellacommon_JoinPseudoState,
 )
-capellacommon::DeepHistoryPseudoState_strategy = st.builds(
-    capellacommon::DeepHistoryPseudoState,
+capellacommon_EntryPointPseudoState_strategy = st.builds(
+    capellacommon_EntryPointPseudoState,
 )
-capellacommon::EntryPointPseudoState_strategy = st.builds(
-    capellacommon::EntryPointPseudoState,
+capellacommon_ShallowHistoryPseudoState_strategy = st.builds(
+    capellacommon_ShallowHistoryPseudoState,
 )
-capellacommon::ExitPointPseudoState_strategy = st.builds(
-    capellacommon::ExitPointPseudoState,
+capellacommon_DeepHistoryPseudoState_strategy = st.builds(
+    capellacommon_DeepHistoryPseudoState,
 )
-capellacommon::TerminatePseudoState_strategy = st.builds(
-    capellacommon::TerminatePseudoState,
+capellacommon_ForkPseudoState_strategy = st.builds(
+    capellacommon_ForkPseudoState,
 )
-capellacommon::InitialPseudoState_strategy = st.builds(
-    capellacommon::InitialPseudoState,
+capellacommon_InitialPseudoState_strategy = st.builds(
+    capellacommon_InitialPseudoState,
 )
-capellacommon::TraceableElement_strategy = st.builds(
-    capellacommon::TraceableElement,
+capellacommon_TraceableElement_strategy = st.builds(
+    capellacommon_TraceableElement,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
@@ -785,8 +785,8 @@ TraceableElement_strategy = st.builds(
 CapellaElement_strategy = st.builds(
     CapellaElement,
 )
-capellacommon::GenericTrace_strategy = st.builds(
-    capellacommon::GenericTrace,
+capellacommon_GenericTrace_strategy = st.builds(
+    capellacommon_GenericTrace,
 )
 Structure_strategy = st.builds(
     Structure,
@@ -797,111 +797,102 @@ IState_strategy = st.builds(
 State_strategy = st.builds(
     State,
 )
-capellacommon::FinalState_strategy = st.builds(
-    capellacommon::FinalState,
+capellacommon_FinalState_strategy = st.builds(
+    capellacommon_FinalState,
 )
-capellacommon::Mode_strategy = st.builds(
-    capellacommon::Mode,
+capellacommon_Mode_strategy = st.builds(
+    capellacommon_Mode,
 )
-capellacommon::AbstractEvent_strategy = st.builds(
-    capellacommon::AbstractEvent,
+capellacommon_AbstractEvent_strategy = st.builds(
+    capellacommon_AbstractEvent,
 )
-capellacommon::AbstractCapability_strategy = st.builds(
-    capellacommon::AbstractCapability,
+capellacommon_AbstractCapability_strategy = st.builds(
+    capellacommon_AbstractCapability,
 )
-capellacommon::FunctionalChain_strategy = st.builds(
-    capellacommon::FunctionalChain,
+capellacommon_FunctionalChain_strategy = st.builds(
+    capellacommon_FunctionalChain,
 )
-capellacommon::AbstractFunction_strategy = st.builds(
-    capellacommon::AbstractFunction,
+capellacommon_AbstractFunction_strategy = st.builds(
+    capellacommon_AbstractFunction,
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-capellacommon::Pseudostate_strategy = st.builds(
-    capellacommon::Pseudostate,
+capellacommon_Pseudostate_strategy = st.builds(
+    capellacommon_Pseudostate,
 )
-capellacommon::State_strategy = st.builds(
-    capellacommon::State,
+capellacommon_State_strategy = st.builds(
+    capellacommon_State,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-capellacommon::StateEvent_strategy = st.builds(
-    capellacommon::StateEvent,
+capellacommon_StateEvent_strategy = st.builds(
+    capellacommon_StateEvent,
 )
-capellacommon::AbstractState_strategy = st.builds(
-    capellacommon::AbstractState,
+capellacommon_AbstractState_strategy = st.builds(
+    capellacommon_AbstractState,
 )
-capellacommon::StateTransition_strategy = st.builds(
-    capellacommon::StateTransition,
+capellacommon_StateTransition_strategy = st.builds(
+    capellacommon_StateTransition,
     triggerDescription=
         safe_text,
     kind=
         safe_text
 )
-capellacommon::Region_strategy = st.builds(
-    capellacommon::Region,
+capellacommon_Region_strategy = st.builds(
+    capellacommon_Region,
 )
 AbstractBehavior_strategy = st.builds(
     AbstractBehavior,
 )
-capellacommon::StateMachine_strategy = st.builds(
-    capellacommon::StateMachine,
+capellacommon_StateMachine_strategy = st.builds(
+    capellacommon_StateMachine,
 )
-capellacommon::AbstractCapabilityPkg_strategy = st.builds(
-    capellacommon::AbstractCapabilityPkg,
+capellacommon_AbstractCapabilityPkg_strategy = st.builds(
+    capellacommon_AbstractCapabilityPkg,
 )
 
-@given(instance=capellacommon::Constraint_strategy)
+@given(instance=capellacommon_Constraint_strategy)
 @settings(max_examples=50)
-def test_capellacommon::constraint_instantiation(instance):
-    assert isinstance(instance, capellacommon::Constraint)
+def test_capellacommon_constraint_instantiation(instance):
+    assert isinstance(instance, capellacommon_Constraint)
 
 @given(instance=StateEvent_strategy)
 @settings(max_examples=50)
 def test_stateevent_instantiation(instance):
     assert isinstance(instance, StateEvent)
 
-@given(instance=capellacommon::TimeEvent_strategy)
+@given(instance=capellacommon_TimeEvent_strategy)
 @settings(max_examples=50)
-def test_capellacommon::timeevent_instantiation(instance):
-    assert isinstance(instance, capellacommon::TimeEvent)
-
-@given(instance=capellacommon::TimeEvent_strategy)
-def test_capellacommon::timeevent_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_capellacommon_timeevent_instantiation(instance):
+    assert isinstance(instance, capellacommon_TimeEvent)
 
 
-@given(instance=capellacommon::TimeEvent_strategy)
-def test_capellacommon::timeevent_time_setter(instance):
-    original = instance.time
-    instance.time = original
-    assert instance.time == original
 
-@given(instance=capellacommon::TimeEvent_strategy)
-def test_capellacommon::timeevent_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=capellacommon::TimeEvent_strategy)
-def test_capellacommon::timeevent_kind_setter(instance):
+@given(instance=capellacommon_TimeEvent_strategy)
+def test_capellacommon_timeevent_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=capellacommon::ChangeEvent_strategy)
+
+
+@given(instance=capellacommon_TimeEvent_strategy)
+def test_capellacommon_timeevent_time_setter(instance):
+    original = instance.time
+    instance.time = original
+    assert instance.time == original
+
+@given(instance=capellacommon_ChangeEvent_strategy)
 @settings(max_examples=50)
-def test_capellacommon::changeevent_instantiation(instance):
-    assert isinstance(instance, capellacommon::ChangeEvent)
-
-@given(instance=capellacommon::ChangeEvent_strategy)
-def test_capellacommon::changeevent_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_capellacommon_changeevent_instantiation(instance):
+    assert isinstance(instance, capellacommon_ChangeEvent)
 
 
-@given(instance=capellacommon::ChangeEvent_strategy)
-def test_capellacommon::changeevent_kind_setter(instance):
+
+@given(instance=capellacommon_ChangeEvent_strategy)
+def test_capellacommon_changeevent_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -916,55 +907,55 @@ def test_abstractevent_instantiation(instance):
 def test_pseudostate_instantiation(instance):
     assert isinstance(instance, Pseudostate)
 
-@given(instance=capellacommon::JoinPseudoState_strategy)
+@given(instance=capellacommon_ChoicePseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::joinpseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::JoinPseudoState)
+def test_capellacommon_choicepseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_ChoicePseudoState)
 
-@given(instance=capellacommon::ForkPseudoState_strategy)
+@given(instance=capellacommon_ExitPointPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::forkpseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::ForkPseudoState)
+def test_capellacommon_exitpointpseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_ExitPointPseudoState)
 
-@given(instance=capellacommon::ShallowHistoryPseudoState_strategy)
+@given(instance=capellacommon_TerminatePseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::shallowhistorypseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::ShallowHistoryPseudoState)
+def test_capellacommon_terminatepseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_TerminatePseudoState)
 
-@given(instance=capellacommon::ChoicePseudoState_strategy)
+@given(instance=capellacommon_JoinPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::choicepseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::ChoicePseudoState)
+def test_capellacommon_joinpseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_JoinPseudoState)
 
-@given(instance=capellacommon::DeepHistoryPseudoState_strategy)
+@given(instance=capellacommon_EntryPointPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::deephistorypseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::DeepHistoryPseudoState)
+def test_capellacommon_entrypointpseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_EntryPointPseudoState)
 
-@given(instance=capellacommon::EntryPointPseudoState_strategy)
+@given(instance=capellacommon_ShallowHistoryPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::entrypointpseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::EntryPointPseudoState)
+def test_capellacommon_shallowhistorypseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_ShallowHistoryPseudoState)
 
-@given(instance=capellacommon::ExitPointPseudoState_strategy)
+@given(instance=capellacommon_DeepHistoryPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::exitpointpseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::ExitPointPseudoState)
+def test_capellacommon_deephistorypseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_DeepHistoryPseudoState)
 
-@given(instance=capellacommon::TerminatePseudoState_strategy)
+@given(instance=capellacommon_ForkPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::terminatepseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::TerminatePseudoState)
+def test_capellacommon_forkpseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_ForkPseudoState)
 
-@given(instance=capellacommon::InitialPseudoState_strategy)
+@given(instance=capellacommon_InitialPseudoState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::initialpseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::InitialPseudoState)
+def test_capellacommon_initialpseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_InitialPseudoState)
 
-@given(instance=capellacommon::TraceableElement_strategy)
+@given(instance=capellacommon_TraceableElement_strategy)
 @settings(max_examples=50)
-def test_capellacommon::traceableelement_instantiation(instance):
-    assert isinstance(instance, capellacommon::TraceableElement)
+def test_capellacommon_traceableelement_instantiation(instance):
+    assert isinstance(instance, capellacommon_TraceableElement)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
@@ -981,10 +972,10 @@ def test_traceableelement_instantiation(instance):
 def test_capellaelement_instantiation(instance):
     assert isinstance(instance, CapellaElement)
 
-@given(instance=capellacommon::GenericTrace_strategy)
+@given(instance=capellacommon_GenericTrace_strategy)
 @settings(max_examples=50)
-def test_capellacommon::generictrace_instantiation(instance):
-    assert isinstance(instance, capellacommon::GenericTrace)
+def test_capellacommon_generictrace_instantiation(instance):
+    assert isinstance(instance, capellacommon_GenericTrace)
 
 @given(instance=Structure_strategy)
 @settings(max_examples=50)
@@ -1001,109 +992,103 @@ def test_istate_instantiation(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=capellacommon::FinalState_strategy)
+@given(instance=capellacommon_FinalState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::finalstate_instantiation(instance):
-    assert isinstance(instance, capellacommon::FinalState)
+def test_capellacommon_finalstate_instantiation(instance):
+    assert isinstance(instance, capellacommon_FinalState)
 
-@given(instance=capellacommon::Mode_strategy)
+@given(instance=capellacommon_Mode_strategy)
 @settings(max_examples=50)
-def test_capellacommon::mode_instantiation(instance):
-    assert isinstance(instance, capellacommon::Mode)
+def test_capellacommon_mode_instantiation(instance):
+    assert isinstance(instance, capellacommon_Mode)
 
-@given(instance=capellacommon::AbstractEvent_strategy)
+@given(instance=capellacommon_AbstractEvent_strategy)
 @settings(max_examples=50)
-def test_capellacommon::abstractevent_instantiation(instance):
-    assert isinstance(instance, capellacommon::AbstractEvent)
+def test_capellacommon_abstractevent_instantiation(instance):
+    assert isinstance(instance, capellacommon_AbstractEvent)
 
-@given(instance=capellacommon::AbstractCapability_strategy)
+@given(instance=capellacommon_AbstractCapability_strategy)
 @settings(max_examples=50)
-def test_capellacommon::abstractcapability_instantiation(instance):
-    assert isinstance(instance, capellacommon::AbstractCapability)
+def test_capellacommon_abstractcapability_instantiation(instance):
+    assert isinstance(instance, capellacommon_AbstractCapability)
 
-@given(instance=capellacommon::FunctionalChain_strategy)
+@given(instance=capellacommon_FunctionalChain_strategy)
 @settings(max_examples=50)
-def test_capellacommon::functionalchain_instantiation(instance):
-    assert isinstance(instance, capellacommon::FunctionalChain)
+def test_capellacommon_functionalchain_instantiation(instance):
+    assert isinstance(instance, capellacommon_FunctionalChain)
 
-@given(instance=capellacommon::AbstractFunction_strategy)
+@given(instance=capellacommon_AbstractFunction_strategy)
 @settings(max_examples=50)
-def test_capellacommon::abstractfunction_instantiation(instance):
-    assert isinstance(instance, capellacommon::AbstractFunction)
+def test_capellacommon_abstractfunction_instantiation(instance):
+    assert isinstance(instance, capellacommon_AbstractFunction)
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=capellacommon::Pseudostate_strategy)
+@given(instance=capellacommon_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_capellacommon::pseudostate_instantiation(instance):
-    assert isinstance(instance, capellacommon::Pseudostate)
+def test_capellacommon_pseudostate_instantiation(instance):
+    assert isinstance(instance, capellacommon_Pseudostate)
 
-@given(instance=capellacommon::State_strategy)
+@given(instance=capellacommon_State_strategy)
 @settings(max_examples=50)
-def test_capellacommon::state_instantiation(instance):
-    assert isinstance(instance, capellacommon::State)
+def test_capellacommon_state_instantiation(instance):
+    assert isinstance(instance, capellacommon_State)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=capellacommon::StateEvent_strategy)
+@given(instance=capellacommon_StateEvent_strategy)
 @settings(max_examples=50)
-def test_capellacommon::stateevent_instantiation(instance):
-    assert isinstance(instance, capellacommon::StateEvent)
+def test_capellacommon_stateevent_instantiation(instance):
+    assert isinstance(instance, capellacommon_StateEvent)
 
-@given(instance=capellacommon::AbstractState_strategy)
+@given(instance=capellacommon_AbstractState_strategy)
 @settings(max_examples=50)
-def test_capellacommon::abstractstate_instantiation(instance):
-    assert isinstance(instance, capellacommon::AbstractState)
+def test_capellacommon_abstractstate_instantiation(instance):
+    assert isinstance(instance, capellacommon_AbstractState)
 
-@given(instance=capellacommon::StateTransition_strategy)
+@given(instance=capellacommon_StateTransition_strategy)
 @settings(max_examples=50)
-def test_capellacommon::statetransition_instantiation(instance):
-    assert isinstance(instance, capellacommon::StateTransition)
-
-@given(instance=capellacommon::StateTransition_strategy)
-def test_capellacommon::statetransition_triggerDescription_type(instance):
-    assert isinstance(instance.triggerDescription, str)
+def test_capellacommon_statetransition_instantiation(instance):
+    assert isinstance(instance, capellacommon_StateTransition)
 
 
-@given(instance=capellacommon::StateTransition_strategy)
-def test_capellacommon::statetransition_triggerDescription_setter(instance):
+
+@given(instance=capellacommon_StateTransition_strategy)
+def test_capellacommon_statetransition_triggerDescription_setter(instance):
     original = instance.triggerDescription
     instance.triggerDescription = original
     assert instance.triggerDescription == original
 
-@given(instance=capellacommon::StateTransition_strategy)
-def test_capellacommon::statetransition_kind_type(instance):
-    assert isinstance(instance.kind, str)
 
 
-@given(instance=capellacommon::StateTransition_strategy)
-def test_capellacommon::statetransition_kind_setter(instance):
+@given(instance=capellacommon_StateTransition_strategy)
+def test_capellacommon_statetransition_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=capellacommon::Region_strategy)
+@given(instance=capellacommon_Region_strategy)
 @settings(max_examples=50)
-def test_capellacommon::region_instantiation(instance):
-    assert isinstance(instance, capellacommon::Region)
+def test_capellacommon_region_instantiation(instance):
+    assert isinstance(instance, capellacommon_Region)
 
 @given(instance=AbstractBehavior_strategy)
 @settings(max_examples=50)
 def test_abstractbehavior_instantiation(instance):
     assert isinstance(instance, AbstractBehavior)
 
-@given(instance=capellacommon::StateMachine_strategy)
+@given(instance=capellacommon_StateMachine_strategy)
 @settings(max_examples=50)
-def test_capellacommon::statemachine_instantiation(instance):
-    assert isinstance(instance, capellacommon::StateMachine)
+def test_capellacommon_statemachine_instantiation(instance):
+    assert isinstance(instance, capellacommon_StateMachine)
 
-@given(instance=capellacommon::AbstractCapabilityPkg_strategy)
+@given(instance=capellacommon_AbstractCapabilityPkg_strategy)
 @settings(max_examples=50)
-def test_capellacommon::abstractcapabilitypkg_instantiation(instance):
-    assert isinstance(instance, capellacommon::AbstractCapabilityPkg)
+def test_capellacommon_abstractcapabilitypkg_instantiation(instance):
+    assert isinstance(instance, capellacommon_AbstractCapabilityPkg)

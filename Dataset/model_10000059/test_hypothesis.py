@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Login,
@@ -80,16 +80,16 @@ def test_admincontroller_constructor_exists():
 def test_admincontroller_constructor_args():
     sig = inspect.signature(AdminController.__init__)
     params = list(sig.parameters.keys())
-    assert "UserName" in params, "Missing parameter 'UserName'"
-    assert "UserLevel" in params, "Missing parameter 'UserLevel'"
     assert "UserID" in params, "Missing parameter 'UserID'"
+    assert "UserLevel" in params, "Missing parameter 'UserLevel'"
+    assert "UserName" in params, "Missing parameter 'UserName'"
 
-def test_admincontroller_has_UserName():
-    assert hasattr(AdminController, "UserName")
+def test_admincontroller_has_UserID():
+    assert hasattr(AdminController, "UserID")
     descriptor = None
     for klass in AdminController.__mro__:
-        if "UserName" in klass.__dict__:
-            descriptor = klass.__dict__["UserName"]
+        if "UserID" in klass.__dict__:
+            descriptor = klass.__dict__["UserID"]
             break
     assert isinstance(descriptor, property)
 
@@ -102,12 +102,12 @@ def test_admincontroller_has_UserLevel():
             break
     assert isinstance(descriptor, property)
 
-def test_admincontroller_has_UserID():
-    assert hasattr(AdminController, "UserID")
+def test_admincontroller_has_UserName():
+    assert hasattr(AdminController, "UserName")
     descriptor = None
     for klass in AdminController.__mro__:
-        if "UserID" in klass.__dict__:
-            descriptor = klass.__dict__["UserID"]
+        if "UserName" in klass.__dict__:
+            descriptor = klass.__dict__["UserName"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,17 +124,8 @@ def test_membership_card_constructor_exists():
 def test_membership_card_constructor_args():
     sig = inspect.signature(Membership_Card.__init__)
     params = list(sig.parameters.keys())
-    assert "Discount" in params, "Missing parameter 'Discount'"
     assert "LoyaltyID" in params, "Missing parameter 'LoyaltyID'"
-
-def test_membership_card_has_Discount():
-    assert hasattr(Membership_Card, "Discount")
-    descriptor = None
-    for klass in Membership_Card.__mro__:
-        if "Discount" in klass.__dict__:
-            descriptor = klass.__dict__["Discount"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Discount" in params, "Missing parameter 'Discount'"
 
 def test_membership_card_has_LoyaltyID():
     assert hasattr(Membership_Card, "LoyaltyID")
@@ -142,6 +133,15 @@ def test_membership_card_has_LoyaltyID():
     for klass in Membership_Card.__mro__:
         if "LoyaltyID" in klass.__dict__:
             descriptor = klass.__dict__["LoyaltyID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_membership_card_has_Discount():
+    assert hasattr(Membership_Card, "Discount")
+    descriptor = None
+    for klass in Membership_Card.__mro__:
+        if "Discount" in klass.__dict__:
+            descriptor = klass.__dict__["Discount"]
             break
     assert isinstance(descriptor, property)
 
@@ -158,19 +158,10 @@ def test_ordercontroller_constructor_exists():
 def test_ordercontroller_constructor_args():
     sig = inspect.signature(OrderController.__init__)
     params = list(sig.parameters.keys())
-    assert "Date" in params, "Missing parameter 'Date'"
     assert "UserID" in params, "Missing parameter 'UserID'"
     assert "OrderTotal" in params, "Missing parameter 'OrderTotal'"
+    assert "Date" in params, "Missing parameter 'Date'"
     assert "OrderID" in params, "Missing parameter 'OrderID'"
-
-def test_ordercontroller_has_Date():
-    assert hasattr(OrderController, "Date")
-    descriptor = None
-    for klass in OrderController.__mro__:
-        if "Date" in klass.__dict__:
-            descriptor = klass.__dict__["Date"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_ordercontroller_has_UserID():
     assert hasattr(OrderController, "UserID")
@@ -187,6 +178,15 @@ def test_ordercontroller_has_OrderTotal():
     for klass in OrderController.__mro__:
         if "OrderTotal" in klass.__dict__:
             descriptor = klass.__dict__["OrderTotal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ordercontroller_has_Date():
+    assert hasattr(OrderController, "Date")
+    descriptor = None
+    for klass in OrderController.__mro__:
+        if "Date" in klass.__dict__:
+            descriptor = klass.__dict__["Date"]
             break
     assert isinstance(descriptor, property)
 
@@ -246,37 +246,19 @@ def test_bookingcontroller_constructor_exists():
 def test_bookingcontroller_constructor_args():
     sig = inspect.signature(BookingController.__init__)
     params = list(sig.parameters.keys())
-    assert "CustomerName" in params, "Missing parameter 'CustomerName'"
-    assert "Phone" in params, "Missing parameter 'Phone'"
-    assert "Date" in params, "Missing parameter 'Date'"
-    assert "Time" in params, "Missing parameter 'Time'"
     assert "BookingID" in params, "Missing parameter 'BookingID'"
+    assert "Time" in params, "Missing parameter 'Time'"
+    assert "Phone" in params, "Missing parameter 'Phone'"
+    assert "CustomerName" in params, "Missing parameter 'CustomerName'"
     assert "TableNo" in params, "Missing parameter 'TableNo'"
+    assert "Date" in params, "Missing parameter 'Date'"
 
-def test_bookingcontroller_has_CustomerName():
-    assert hasattr(BookingController, "CustomerName")
+def test_bookingcontroller_has_BookingID():
+    assert hasattr(BookingController, "BookingID")
     descriptor = None
     for klass in BookingController.__mro__:
-        if "CustomerName" in klass.__dict__:
-            descriptor = klass.__dict__["CustomerName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bookingcontroller_has_Phone():
-    assert hasattr(BookingController, "Phone")
-    descriptor = None
-    for klass in BookingController.__mro__:
-        if "Phone" in klass.__dict__:
-            descriptor = klass.__dict__["Phone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bookingcontroller_has_Date():
-    assert hasattr(BookingController, "Date")
-    descriptor = None
-    for klass in BookingController.__mro__:
-        if "Date" in klass.__dict__:
-            descriptor = klass.__dict__["Date"]
+        if "BookingID" in klass.__dict__:
+            descriptor = klass.__dict__["BookingID"]
             break
     assert isinstance(descriptor, property)
 
@@ -289,12 +271,21 @@ def test_bookingcontroller_has_Time():
             break
     assert isinstance(descriptor, property)
 
-def test_bookingcontroller_has_BookingID():
-    assert hasattr(BookingController, "BookingID")
+def test_bookingcontroller_has_Phone():
+    assert hasattr(BookingController, "Phone")
     descriptor = None
     for klass in BookingController.__mro__:
-        if "BookingID" in klass.__dict__:
-            descriptor = klass.__dict__["BookingID"]
+        if "Phone" in klass.__dict__:
+            descriptor = klass.__dict__["Phone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bookingcontroller_has_CustomerName():
+    assert hasattr(BookingController, "CustomerName")
+    descriptor = None
+    for klass in BookingController.__mro__:
+        if "CustomerName" in klass.__dict__:
+            descriptor = klass.__dict__["CustomerName"]
             break
     assert isinstance(descriptor, property)
 
@@ -304,6 +295,15 @@ def test_bookingcontroller_has_TableNo():
     for klass in BookingController.__mro__:
         if "TableNo" in klass.__dict__:
             descriptor = klass.__dict__["TableNo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bookingcontroller_has_Date():
+    assert hasattr(BookingController, "Date")
+    descriptor = None
+    for klass in BookingController.__mro__:
+        if "Date" in klass.__dict__:
+            descriptor = klass.__dict__["Date"]
             break
     assert isinstance(descriptor, property)
 
@@ -331,27 +331,27 @@ processQuery_strategy = st.builds(
 )
 AdminController_strategy = st.builds(
     AdminController,
-    UserName=
-        safe_text,
+    UserID=
+        st.integers(),
     UserLevel=
         st.integers(),
-    UserID=
-        st.integers()
+    UserName=
+        safe_text
 )
 Membership_Card_strategy = st.builds(
     Membership_Card,
-    Discount=
-        st.integers(),
     LoyaltyID=
+        st.integers(),
+    Discount=
         st.integers()
 )
 OrderController_strategy = st.builds(
     OrderController,
-    Date=
-        safe_text,
     UserID=
         st.integers(),
     OrderTotal=
+        safe_text,
+    Date=
         safe_text,
     OrderID=
         st.integers()
@@ -365,17 +365,17 @@ Table_strategy = st.builds(
 )
 BookingController_strategy = st.builds(
     BookingController,
-    CustomerName=
+    BookingID=
+        st.integers(),
+    Time=
         safe_text,
     Phone=
         safe_text,
-    Date=
+    CustomerName=
         safe_text,
-    Time=
-        safe_text,
-    BookingID=
-        st.integers(),
     TableNo=
+        safe_text,
+    Date=
         safe_text
 )
 
@@ -384,9 +384,6 @@ BookingController_strategy = st.builds(
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_LoyaltyID_type(instance):
-    assert isinstance(instance.LoyaltyID, int)
 
 
 @given(instance=Login_strategy)
@@ -395,9 +392,6 @@ def test_login_LoyaltyID_setter(instance):
     instance.LoyaltyID = original
     assert instance.LoyaltyID == original
 
-@given(instance=Login_strategy)
-def test_login_Discount_type(instance):
-    assert isinstance(instance.Discount, int)
 
 
 @given(instance=Login_strategy)
@@ -416,31 +410,6 @@ def test_processquery_instantiation(instance):
 def test_admincontroller_instantiation(instance):
     assert isinstance(instance, AdminController)
 
-@given(instance=AdminController_strategy)
-def test_admincontroller_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
-
-
-@given(instance=AdminController_strategy)
-def test_admincontroller_UserName_setter(instance):
-    original = instance.UserName
-    instance.UserName = original
-    assert instance.UserName == original
-
-@given(instance=AdminController_strategy)
-def test_admincontroller_UserLevel_type(instance):
-    assert isinstance(instance.UserLevel, int)
-
-
-@given(instance=AdminController_strategy)
-def test_admincontroller_UserLevel_setter(instance):
-    original = instance.UserLevel
-    instance.UserLevel = original
-    assert instance.UserLevel == original
-
-@given(instance=AdminController_strategy)
-def test_admincontroller_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=AdminController_strategy)
@@ -449,25 +418,27 @@ def test_admincontroller_UserID_setter(instance):
     instance.UserID = original
     assert instance.UserID == original
 
+
+
+@given(instance=AdminController_strategy)
+def test_admincontroller_UserLevel_setter(instance):
+    original = instance.UserLevel
+    instance.UserLevel = original
+    assert instance.UserLevel == original
+
+
+
+@given(instance=AdminController_strategy)
+def test_admincontroller_UserName_setter(instance):
+    original = instance.UserName
+    instance.UserName = original
+    assert instance.UserName == original
+
 @given(instance=Membership_Card_strategy)
 @settings(max_examples=50)
 def test_membership_card_instantiation(instance):
     assert isinstance(instance, Membership_Card)
 
-@given(instance=Membership_Card_strategy)
-def test_membership_card_Discount_type(instance):
-    assert isinstance(instance.Discount, int)
-
-
-@given(instance=Membership_Card_strategy)
-def test_membership_card_Discount_setter(instance):
-    original = instance.Discount
-    instance.Discount = original
-    assert instance.Discount == original
-
-@given(instance=Membership_Card_strategy)
-def test_membership_card_LoyaltyID_type(instance):
-    assert isinstance(instance.LoyaltyID, int)
 
 
 @given(instance=Membership_Card_strategy)
@@ -476,25 +447,19 @@ def test_membership_card_LoyaltyID_setter(instance):
     instance.LoyaltyID = original
     assert instance.LoyaltyID == original
 
+
+
+@given(instance=Membership_Card_strategy)
+def test_membership_card_Discount_setter(instance):
+    original = instance.Discount
+    instance.Discount = original
+    assert instance.Discount == original
+
 @given(instance=OrderController_strategy)
 @settings(max_examples=50)
 def test_ordercontroller_instantiation(instance):
     assert isinstance(instance, OrderController)
 
-@given(instance=OrderController_strategy)
-def test_ordercontroller_Date_type(instance):
-    assert isinstance(instance.Date, str)
-
-
-@given(instance=OrderController_strategy)
-def test_ordercontroller_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=OrderController_strategy)
-def test_ordercontroller_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=OrderController_strategy)
@@ -503,9 +468,6 @@ def test_ordercontroller_UserID_setter(instance):
     instance.UserID = original
     assert instance.UserID == original
 
-@given(instance=OrderController_strategy)
-def test_ordercontroller_OrderTotal_type(instance):
-    assert isinstance(instance.OrderTotal, str)
 
 
 @given(instance=OrderController_strategy)
@@ -514,9 +476,14 @@ def test_ordercontroller_OrderTotal_setter(instance):
     instance.OrderTotal = original
     assert instance.OrderTotal == original
 
+
+
 @given(instance=OrderController_strategy)
-def test_ordercontroller_OrderID_type(instance):
-    assert isinstance(instance.OrderID, int)
+def test_ordercontroller_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
 
 
 @given(instance=OrderController_strategy)
@@ -530,9 +497,6 @@ def test_ordercontroller_OrderID_setter(instance):
 def test_table_instantiation(instance):
     assert isinstance(instance, Table)
 
-@given(instance=Table_strategy)
-def test_table_Occupied_type(instance):
-    assert isinstance(instance.Occupied, bool)
 
 
 @given(instance=Table_strategy)
@@ -541,9 +505,6 @@ def test_table_Occupied_setter(instance):
     instance.Occupied = original
     assert instance.Occupied == original
 
-@given(instance=Table_strategy)
-def test_table_TableNo_type(instance):
-    assert isinstance(instance.TableNo, str)
 
 
 @given(instance=Table_strategy)
@@ -557,53 +518,6 @@ def test_table_TableNo_setter(instance):
 def test_bookingcontroller_instantiation(instance):
     assert isinstance(instance, BookingController)
 
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_CustomerName_type(instance):
-    assert isinstance(instance.CustomerName, str)
-
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_CustomerName_setter(instance):
-    original = instance.CustomerName
-    instance.CustomerName = original
-    assert instance.CustomerName == original
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
-
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_Phone_setter(instance):
-    original = instance.Phone
-    instance.Phone = original
-    assert instance.Phone == original
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_Date_type(instance):
-    assert isinstance(instance.Date, str)
-
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_Time_type(instance):
-    assert isinstance(instance.Time, str)
-
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_Time_setter(instance):
-    original = instance.Time
-    instance.Time = original
-    assert instance.Time == original
-
-@given(instance=BookingController_strategy)
-def test_bookingcontroller_BookingID_type(instance):
-    assert isinstance(instance.BookingID, int)
 
 
 @given(instance=BookingController_strategy)
@@ -612,9 +526,30 @@ def test_bookingcontroller_BookingID_setter(instance):
     instance.BookingID = original
     assert instance.BookingID == original
 
+
+
 @given(instance=BookingController_strategy)
-def test_bookingcontroller_TableNo_type(instance):
-    assert isinstance(instance.TableNo, str)
+def test_bookingcontroller_Time_setter(instance):
+    original = instance.Time
+    instance.Time = original
+    assert instance.Time == original
+
+
+
+@given(instance=BookingController_strategy)
+def test_bookingcontroller_Phone_setter(instance):
+    original = instance.Phone
+    instance.Phone = original
+    assert instance.Phone == original
+
+
+
+@given(instance=BookingController_strategy)
+def test_bookingcontroller_CustomerName_setter(instance):
+    original = instance.CustomerName
+    instance.CustomerName = original
+    assert instance.CustomerName == original
+
 
 
 @given(instance=BookingController_strategy)
@@ -622,3 +557,11 @@ def test_bookingcontroller_TableNo_setter(instance):
     original = instance.TableNo
     instance.TableNo = original
     assert instance.TableNo == original
+
+
+
+@given(instance=BookingController_strategy)
+def test_bookingcontroller_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original

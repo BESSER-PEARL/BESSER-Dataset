@@ -3,68 +3,68 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    scxml::Description,
+from python_code import (
+    scxml_Description,
     IAdaptable,
-    scxml::DescriptionContainer,
-    scxml::DatamodelContainer,
-    scxml::EClass,
-    scxml::IAdaptable,
+    scxml_DescriptionContainer,
+    scxml_DatamodelContainer,
+    scxml_EClass,
+    scxml_IAdaptable,
     Data,
-    scxml::XData,
-    scxml::XObject,
-    scxml::Else,
+    scxml_XData,
+    scxml_XObject,
+    scxml_Else,
     Conditional,
-    scxml::ElseIf,
-    scxml::Conditional,
-    scxml::Validate,
-    scxml::Assign,
-    scxml::Cancel,
+    scxml_ElseIf,
+    scxml_Conditional,
+    scxml_Validate,
+    scxml_Assign,
+    scxml_Cancel,
     Donedata,
-    scxml::Send,
-    scxml::ExecutableContent,
+    scxml_Send,
+    scxml_ExecutableContent,
     InitialState,
-    scxml::Invoke,
-    scxml::AbstractSimpleState,
+    scxml_Invoke,
+    scxml_AbstractSimpleState,
     State,
-    scxml::Raise,
-    scxml::Log,
-    scxml::EObject,
-    scxml::Donedata,
-    scxml::Param,
+    scxml_Raise,
+    scxml_Log,
+    scxml_EObject,
+    scxml_Donedata,
+    scxml_Param,
     Transition,
-    scxml::Content,
-    scxml::ParallelState,
-    scxml::AbstractState,
-    scxml::CondEventTransition,
+    scxml_Content,
+    scxml_ParallelState,
+    scxml_AbstractState,
+    scxml_CondEventTransition,
     Node,
-    scxml::TransitionTarget,
-    scxml::TransitionSource,
+    scxml_TransitionTarget,
+    scxml_TransitionSource,
     ExecutableContent,
-    scxml::OnEntry,
-    scxml::If,
-    scxml::OnExit,
+    scxml_If,
+    scxml_OnExit,
+    scxml_OnEntry,
     TransitionSource,
     TransitionTarget,
-    scxml::FinalState,
-    scxml::HistoryState,
-    scxml::Script,
+    scxml_HistoryState,
+    scxml_FinalState,
+    scxml_Script,
     DescriptionContainer,
-    scxml::Transition,
-    scxml::Data,
-    scxml::Node,
-    scxml::Datamodel,
-    scxml::InitialState,
+    scxml_InitialState,
+    scxml_Datamodel,
+    scxml_Transition,
+    scxml_Data,
+    scxml_Node,
     DatamodelContainer,
     AbstractSimpleState,
-    scxml::SimpleState,
+    scxml_SimpleState,
     AbstractState,
-    scxml::State,
-    scxml::StateChart,
-    ExmodeDatatype,
+    scxml_State,
+    scxml_StateChart,
     HistoryTypeDatatype,
+    ExmodeDatatype,
     AdapterToken,
 )
 
@@ -74,23 +74,23 @@ from classes import (
 
 
 
-def test_scxml::description_is_not_abstract():
-    assert not inspect.isabstract(scxml::Description)
+def test_scxml_description_is_not_abstract():
+    assert not inspect.isabstract(scxml_Description)
 
 
-def test_scxml::description_constructor_exists():
-    assert callable(scxml::Description.__init__)
+def test_scxml_description_constructor_exists():
+    assert callable(scxml_Description.__init__)
 
 
-def test_scxml::description_constructor_args():
-    sig = inspect.signature(scxml::Description.__init__)
+def test_scxml_description_constructor_args():
+    sig = inspect.signature(scxml_Description.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_scxml::description_has_value():
-    assert hasattr(scxml::Description, "value")
+def test_scxml_description_has_value():
+    assert hasattr(scxml_Description, "value")
     descriptor = None
-    for klass in scxml::Description.__mro__:
+    for klass in scxml_Description.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -112,58 +112,58 @@ def test_iadaptable_constructor_args():
 
 
 
-def test_scxml::descriptioncontainer_is_not_abstract():
-    assert not inspect.isabstract(scxml::DescriptionContainer)
+def test_scxml_descriptioncontainer_is_not_abstract():
+    assert not inspect.isabstract(scxml_DescriptionContainer)
 
 
-def test_scxml::descriptioncontainer_constructor_exists():
-    assert callable(scxml::DescriptionContainer.__init__)
+def test_scxml_descriptioncontainer_constructor_exists():
+    assert callable(scxml_DescriptionContainer.__init__)
 
 
-def test_scxml::descriptioncontainer_constructor_args():
-    sig = inspect.signature(scxml::DescriptionContainer.__init__)
+def test_scxml_descriptioncontainer_constructor_args():
+    sig = inspect.signature(scxml_DescriptionContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::datamodelcontainer_is_not_abstract():
-    assert not inspect.isabstract(scxml::DatamodelContainer)
+def test_scxml_datamodelcontainer_is_not_abstract():
+    assert not inspect.isabstract(scxml_DatamodelContainer)
 
 
-def test_scxml::datamodelcontainer_constructor_exists():
-    assert callable(scxml::DatamodelContainer.__init__)
+def test_scxml_datamodelcontainer_constructor_exists():
+    assert callable(scxml_DatamodelContainer.__init__)
 
 
-def test_scxml::datamodelcontainer_constructor_args():
-    sig = inspect.signature(scxml::DatamodelContainer.__init__)
+def test_scxml_datamodelcontainer_constructor_args():
+    sig = inspect.signature(scxml_DatamodelContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::eclass_is_not_abstract():
-    assert not inspect.isabstract(scxml::EClass)
+def test_scxml_eclass_is_not_abstract():
+    assert not inspect.isabstract(scxml_EClass)
 
 
-def test_scxml::eclass_constructor_exists():
-    assert callable(scxml::EClass.__init__)
+def test_scxml_eclass_constructor_exists():
+    assert callable(scxml_EClass.__init__)
 
 
-def test_scxml::eclass_constructor_args():
-    sig = inspect.signature(scxml::EClass.__init__)
+def test_scxml_eclass_constructor_args():
+    sig = inspect.signature(scxml_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::iadaptable_is_not_abstract():
-    assert not inspect.isabstract(scxml::IAdaptable)
+def test_scxml_iadaptable_is_not_abstract():
+    assert not inspect.isabstract(scxml_IAdaptable)
 
 
-def test_scxml::iadaptable_constructor_exists():
-    assert callable(scxml::IAdaptable.__init__)
+def test_scxml_iadaptable_constructor_exists():
+    assert callable(scxml_IAdaptable.__init__)
 
 
-def test_scxml::iadaptable_constructor_args():
-    sig = inspect.signature(scxml::IAdaptable.__init__)
+def test_scxml_iadaptable_constructor_args():
+    sig = inspect.signature(scxml_IAdaptable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,74 +182,74 @@ def test_data_constructor_args():
 
 
 
-def test_scxml::xdata_is_not_abstract():
-    assert not inspect.isabstract(scxml::XData)
+def test_scxml_xdata_is_not_abstract():
+    assert not inspect.isabstract(scxml_XData)
 
 
-def test_scxml::xdata_constructor_exists():
-    assert callable(scxml::XData.__init__)
+def test_scxml_xdata_constructor_exists():
+    assert callable(scxml_XData.__init__)
 
 
-def test_scxml::xdata_constructor_args():
-    sig = inspect.signature(scxml::XData.__init__)
+def test_scxml_xdata_constructor_args():
+    sig = inspect.signature(scxml_XData.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::xobject_is_not_abstract():
-    assert not inspect.isabstract(scxml::XObject)
+def test_scxml_xobject_is_not_abstract():
+    assert not inspect.isabstract(scxml_XObject)
 
 
-def test_scxml::xobject_constructor_exists():
-    assert callable(scxml::XObject.__init__)
+def test_scxml_xobject_constructor_exists():
+    assert callable(scxml_XObject.__init__)
 
 
-def test_scxml::xobject_constructor_args():
-    sig = inspect.signature(scxml::XObject.__init__)
+def test_scxml_xobject_constructor_args():
+    sig = inspect.signature(scxml_XObject.__init__)
     params = list(sig.parameters.keys())
-    assert "exchange" in params, "Missing parameter 'exchange'"
     assert "classifierName" in params, "Missing parameter 'classifierName'"
     assert "nsUri" in params, "Missing parameter 'nsUri'"
+    assert "exchange" in params, "Missing parameter 'exchange'"
 
-def test_scxml::xobject_has_exchange():
-    assert hasattr(scxml::XObject, "exchange")
+def test_scxml_xobject_has_classifierName():
+    assert hasattr(scxml_XObject, "classifierName")
     descriptor = None
-    for klass in scxml::XObject.__mro__:
-        if "exchange" in klass.__dict__:
-            descriptor = klass.__dict__["exchange"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::xobject_has_classifierName():
-    assert hasattr(scxml::XObject, "classifierName")
-    descriptor = None
-    for klass in scxml::XObject.__mro__:
+    for klass in scxml_XObject.__mro__:
         if "classifierName" in klass.__dict__:
             descriptor = klass.__dict__["classifierName"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::xobject_has_nsUri():
-    assert hasattr(scxml::XObject, "nsUri")
+def test_scxml_xobject_has_nsUri():
+    assert hasattr(scxml_XObject, "nsUri")
     descriptor = None
-    for klass in scxml::XObject.__mro__:
+    for klass in scxml_XObject.__mro__:
         if "nsUri" in klass.__dict__:
             descriptor = klass.__dict__["nsUri"]
             break
     assert isinstance(descriptor, property)
 
+def test_scxml_xobject_has_exchange():
+    assert hasattr(scxml_XObject, "exchange")
+    descriptor = None
+    for klass in scxml_XObject.__mro__:
+        if "exchange" in klass.__dict__:
+            descriptor = klass.__dict__["exchange"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_scxml::else_is_not_abstract():
-    assert not inspect.isabstract(scxml::Else)
+
+def test_scxml_else_is_not_abstract():
+    assert not inspect.isabstract(scxml_Else)
 
 
-def test_scxml::else_constructor_exists():
-    assert callable(scxml::Else.__init__)
+def test_scxml_else_constructor_exists():
+    assert callable(scxml_Else.__init__)
 
 
-def test_scxml::else_constructor_args():
-    sig = inspect.signature(scxml::Else.__init__)
+def test_scxml_else_constructor_args():
+    sig = inspect.signature(scxml_Else.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -268,37 +268,37 @@ def test_conditional_constructor_args():
 
 
 
-def test_scxml::elseif_is_not_abstract():
-    assert not inspect.isabstract(scxml::ElseIf)
+def test_scxml_elseif_is_not_abstract():
+    assert not inspect.isabstract(scxml_ElseIf)
 
 
-def test_scxml::elseif_constructor_exists():
-    assert callable(scxml::ElseIf.__init__)
+def test_scxml_elseif_constructor_exists():
+    assert callable(scxml_ElseIf.__init__)
 
 
-def test_scxml::elseif_constructor_args():
-    sig = inspect.signature(scxml::ElseIf.__init__)
+def test_scxml_elseif_constructor_args():
+    sig = inspect.signature(scxml_ElseIf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::conditional_is_not_abstract():
-    assert not inspect.isabstract(scxml::Conditional)
+def test_scxml_conditional_is_not_abstract():
+    assert not inspect.isabstract(scxml_Conditional)
 
 
-def test_scxml::conditional_constructor_exists():
-    assert callable(scxml::Conditional.__init__)
+def test_scxml_conditional_constructor_exists():
+    assert callable(scxml_Conditional.__init__)
 
 
-def test_scxml::conditional_constructor_args():
-    sig = inspect.signature(scxml::Conditional.__init__)
+def test_scxml_conditional_constructor_args():
+    sig = inspect.signature(scxml_Conditional.__init__)
     params = list(sig.parameters.keys())
     assert "cond" in params, "Missing parameter 'cond'"
 
-def test_scxml::conditional_has_cond():
-    assert hasattr(scxml::Conditional, "cond")
+def test_scxml_conditional_has_cond():
+    assert hasattr(scxml_Conditional, "cond")
     descriptor = None
-    for klass in scxml::Conditional.__mro__:
+    for klass in scxml_Conditional.__mro__:
         if "cond" in klass.__dict__:
             descriptor = klass.__dict__["cond"]
             break
@@ -306,111 +306,111 @@ def test_scxml::conditional_has_cond():
 
 
 
-def test_scxml::validate_is_not_abstract():
-    assert not inspect.isabstract(scxml::Validate)
+def test_scxml_validate_is_not_abstract():
+    assert not inspect.isabstract(scxml_Validate)
 
 
-def test_scxml::validate_constructor_exists():
-    assert callable(scxml::Validate.__init__)
+def test_scxml_validate_constructor_exists():
+    assert callable(scxml_Validate.__init__)
 
 
-def test_scxml::validate_constructor_args():
-    sig = inspect.signature(scxml::Validate.__init__)
+def test_scxml_validate_constructor_args():
+    sig = inspect.signature(scxml_Validate.__init__)
     params = list(sig.parameters.keys())
-    assert "schema" in params, "Missing parameter 'schema'"
     assert "location" in params, "Missing parameter 'location'"
+    assert "schema" in params, "Missing parameter 'schema'"
 
-def test_scxml::validate_has_schema():
-    assert hasattr(scxml::Validate, "schema")
+def test_scxml_validate_has_location():
+    assert hasattr(scxml_Validate, "location")
     descriptor = None
-    for klass in scxml::Validate.__mro__:
+    for klass in scxml_Validate.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_validate_has_schema():
+    assert hasattr(scxml_Validate, "schema")
+    descriptor = None
+    for klass in scxml_Validate.__mro__:
         if "schema" in klass.__dict__:
             descriptor = klass.__dict__["schema"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::validate_has_location():
-    assert hasattr(scxml::Validate, "location")
-    descriptor = None
-    for klass in scxml::Validate.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_scxml::assign_is_not_abstract():
-    assert not inspect.isabstract(scxml::Assign)
-
-
-def test_scxml::assign_constructor_exists():
-    assert callable(scxml::Assign.__init__)
+def test_scxml_assign_is_not_abstract():
+    assert not inspect.isabstract(scxml_Assign)
 
 
-def test_scxml::assign_constructor_args():
-    sig = inspect.signature(scxml::Assign.__init__)
+def test_scxml_assign_constructor_exists():
+    assert callable(scxml_Assign.__init__)
+
+
+def test_scxml_assign_constructor_args():
+    sig = inspect.signature(scxml_Assign.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "location" in params, "Missing parameter 'location'"
     assert "expr" in params, "Missing parameter 'expr'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_scxml::assign_has_name():
-    assert hasattr(scxml::Assign, "name")
+def test_scxml_assign_has_location():
+    assert hasattr(scxml_Assign, "location")
     descriptor = None
-    for klass in scxml::Assign.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::assign_has_location():
-    assert hasattr(scxml::Assign, "location")
-    descriptor = None
-    for klass in scxml::Assign.__mro__:
+    for klass in scxml_Assign.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::assign_has_expr():
-    assert hasattr(scxml::Assign, "expr")
+def test_scxml_assign_has_expr():
+    assert hasattr(scxml_Assign, "expr")
     descriptor = None
-    for klass in scxml::Assign.__mro__:
+    for klass in scxml_Assign.__mro__:
         if "expr" in klass.__dict__:
             descriptor = klass.__dict__["expr"]
             break
     assert isinstance(descriptor, property)
 
+def test_scxml_assign_has_name():
+    assert hasattr(scxml_Assign, "name")
+    descriptor = None
+    for klass in scxml_Assign.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_scxml::cancel_is_not_abstract():
-    assert not inspect.isabstract(scxml::Cancel)
+
+def test_scxml_cancel_is_not_abstract():
+    assert not inspect.isabstract(scxml_Cancel)
 
 
-def test_scxml::cancel_constructor_exists():
-    assert callable(scxml::Cancel.__init__)
+def test_scxml_cancel_constructor_exists():
+    assert callable(scxml_Cancel.__init__)
 
 
-def test_scxml::cancel_constructor_args():
-    sig = inspect.signature(scxml::Cancel.__init__)
+def test_scxml_cancel_constructor_args():
+    sig = inspect.signature(scxml_Cancel.__init__)
     params = list(sig.parameters.keys())
     assert "sendid" in params, "Missing parameter 'sendid'"
     assert "sendidexpr" in params, "Missing parameter 'sendidexpr'"
 
-def test_scxml::cancel_has_sendid():
-    assert hasattr(scxml::Cancel, "sendid")
+def test_scxml_cancel_has_sendid():
+    assert hasattr(scxml_Cancel, "sendid")
     descriptor = None
-    for klass in scxml::Cancel.__mro__:
+    for klass in scxml_Cancel.__mro__:
         if "sendid" in klass.__dict__:
             descriptor = klass.__dict__["sendid"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::cancel_has_sendidexpr():
-    assert hasattr(scxml::Cancel, "sendidexpr")
+def test_scxml_cancel_has_sendidexpr():
+    assert hasattr(scxml_Cancel, "sendidexpr")
     descriptor = None
-    for klass in scxml::Cancel.__mro__:
+    for klass in scxml_Cancel.__mro__:
         if "sendidexpr" in klass.__dict__:
             descriptor = klass.__dict__["sendidexpr"]
             break
@@ -432,167 +432,167 @@ def test_donedata_constructor_args():
 
 
 
-def test_scxml::send_is_not_abstract():
-    assert not inspect.isabstract(scxml::Send)
+def test_scxml_send_is_not_abstract():
+    assert not inspect.isabstract(scxml_Send)
 
 
-def test_scxml::send_constructor_exists():
-    assert callable(scxml::Send.__init__)
+def test_scxml_send_constructor_exists():
+    assert callable(scxml_Send.__init__)
 
 
-def test_scxml::send_constructor_args():
-    sig = inspect.signature(scxml::Send.__init__)
+def test_scxml_send_constructor_args():
+    sig = inspect.signature(scxml_Send.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
+    assert "hints" in params, "Missing parameter 'hints'"
+    assert "event" in params, "Missing parameter 'event'"
     assert "delay" in params, "Missing parameter 'delay'"
-    assert "targetexpr" in params, "Missing parameter 'targetexpr'"
+    assert "hintsexpr" in params, "Missing parameter 'hintsexpr'"
     assert "id" in params, "Missing parameter 'id'"
     assert "namelist" in params, "Missing parameter 'namelist'"
-    assert "hintsexpr" in params, "Missing parameter 'hintsexpr'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "target" in params, "Missing parameter 'target'"
+    assert "eventexpr" in params, "Missing parameter 'eventexpr'"
+    assert "targetexpr" in params, "Missing parameter 'targetexpr'"
     assert "idlocation" in params, "Missing parameter 'idlocation'"
     assert "delayexpr" in params, "Missing parameter 'delayexpr'"
     assert "typeexpr" in params, "Missing parameter 'typeexpr'"
-    assert "eventexpr" in params, "Missing parameter 'eventexpr'"
-    assert "hints" in params, "Missing parameter 'hints'"
-    assert "event" in params, "Missing parameter 'event'"
 
-def test_scxml::send_has_type():
-    assert hasattr(scxml::Send, "type")
+def test_scxml_send_has_hints():
+    assert hasattr(scxml_Send, "hints")
     descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_delay():
-    assert hasattr(scxml::Send, "delay")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "delay" in klass.__dict__:
-            descriptor = klass.__dict__["delay"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_targetexpr():
-    assert hasattr(scxml::Send, "targetexpr")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "targetexpr" in klass.__dict__:
-            descriptor = klass.__dict__["targetexpr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_id():
-    assert hasattr(scxml::Send, "id")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_namelist():
-    assert hasattr(scxml::Send, "namelist")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "namelist" in klass.__dict__:
-            descriptor = klass.__dict__["namelist"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_hintsexpr():
-    assert hasattr(scxml::Send, "hintsexpr")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "hintsexpr" in klass.__dict__:
-            descriptor = klass.__dict__["hintsexpr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_target():
-    assert hasattr(scxml::Send, "target")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "target" in klass.__dict__:
-            descriptor = klass.__dict__["target"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_idlocation():
-    assert hasattr(scxml::Send, "idlocation")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "idlocation" in klass.__dict__:
-            descriptor = klass.__dict__["idlocation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_delayexpr():
-    assert hasattr(scxml::Send, "delayexpr")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "delayexpr" in klass.__dict__:
-            descriptor = klass.__dict__["delayexpr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_typeexpr():
-    assert hasattr(scxml::Send, "typeexpr")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "typeexpr" in klass.__dict__:
-            descriptor = klass.__dict__["typeexpr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_eventexpr():
-    assert hasattr(scxml::Send, "eventexpr")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
-        if "eventexpr" in klass.__dict__:
-            descriptor = klass.__dict__["eventexpr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::send_has_hints():
-    assert hasattr(scxml::Send, "hints")
-    descriptor = None
-    for klass in scxml::Send.__mro__:
+    for klass in scxml_Send.__mro__:
         if "hints" in klass.__dict__:
             descriptor = klass.__dict__["hints"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::send_has_event():
-    assert hasattr(scxml::Send, "event")
+def test_scxml_send_has_event():
+    assert hasattr(scxml_Send, "event")
     descriptor = None
-    for klass in scxml::Send.__mro__:
+    for klass in scxml_Send.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
     assert isinstance(descriptor, property)
 
+def test_scxml_send_has_delay():
+    assert hasattr(scxml_Send, "delay")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "delay" in klass.__dict__:
+            descriptor = klass.__dict__["delay"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_hintsexpr():
+    assert hasattr(scxml_Send, "hintsexpr")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "hintsexpr" in klass.__dict__:
+            descriptor = klass.__dict__["hintsexpr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_id():
+    assert hasattr(scxml_Send, "id")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_namelist():
+    assert hasattr(scxml_Send, "namelist")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "namelist" in klass.__dict__:
+            descriptor = klass.__dict__["namelist"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_type():
+    assert hasattr(scxml_Send, "type")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_target():
+    assert hasattr(scxml_Send, "target")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "target" in klass.__dict__:
+            descriptor = klass.__dict__["target"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_eventexpr():
+    assert hasattr(scxml_Send, "eventexpr")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "eventexpr" in klass.__dict__:
+            descriptor = klass.__dict__["eventexpr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_targetexpr():
+    assert hasattr(scxml_Send, "targetexpr")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "targetexpr" in klass.__dict__:
+            descriptor = klass.__dict__["targetexpr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_idlocation():
+    assert hasattr(scxml_Send, "idlocation")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "idlocation" in klass.__dict__:
+            descriptor = klass.__dict__["idlocation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_delayexpr():
+    assert hasattr(scxml_Send, "delayexpr")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "delayexpr" in klass.__dict__:
+            descriptor = klass.__dict__["delayexpr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_send_has_typeexpr():
+    assert hasattr(scxml_Send, "typeexpr")
+    descriptor = None
+    for klass in scxml_Send.__mro__:
+        if "typeexpr" in klass.__dict__:
+            descriptor = klass.__dict__["typeexpr"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_scxml::executablecontent_is_not_abstract():
-    assert not inspect.isabstract(scxml::ExecutableContent)
+
+def test_scxml_executablecontent_is_not_abstract():
+    assert not inspect.isabstract(scxml_ExecutableContent)
 
 
-def test_scxml::executablecontent_constructor_exists():
-    assert callable(scxml::ExecutableContent.__init__)
+def test_scxml_executablecontent_constructor_exists():
+    assert callable(scxml_ExecutableContent.__init__)
 
 
-def test_scxml::executablecontent_constructor_args():
-    sig = inspect.signature(scxml::ExecutableContent.__init__)
+def test_scxml_executablecontent_constructor_args():
+    sig = inspect.signature(scxml_ExecutableContent.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
 
-def test_scxml::executablecontent_has_group():
-    assert hasattr(scxml::ExecutableContent, "group")
+def test_scxml_executablecontent_has_group():
+    assert hasattr(scxml_ExecutableContent, "group")
     descriptor = None
-    for klass in scxml::ExecutableContent.__mro__:
+    for klass in scxml_ExecutableContent.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -614,110 +614,110 @@ def test_initialstate_constructor_args():
 
 
 
-def test_scxml::invoke_is_not_abstract():
-    assert not inspect.isabstract(scxml::Invoke)
+def test_scxml_invoke_is_not_abstract():
+    assert not inspect.isabstract(scxml_Invoke)
 
 
-def test_scxml::invoke_constructor_exists():
-    assert callable(scxml::Invoke.__init__)
+def test_scxml_invoke_constructor_exists():
+    assert callable(scxml_Invoke.__init__)
 
 
-def test_scxml::invoke_constructor_args():
-    sig = inspect.signature(scxml::Invoke.__init__)
+def test_scxml_invoke_constructor_args():
+    sig = inspect.signature(scxml_Invoke.__init__)
     params = list(sig.parameters.keys())
-    assert "idlocation" in params, "Missing parameter 'idlocation'"
-    assert "namelist" in params, "Missing parameter 'namelist'"
-    assert "autoforward" in params, "Missing parameter 'autoforward'"
     assert "typeexpr" in params, "Missing parameter 'typeexpr'"
-    assert "srcexpr" in params, "Missing parameter 'srcexpr'"
+    assert "idlocation" in params, "Missing parameter 'idlocation'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "srcexpr" in params, "Missing parameter 'srcexpr'"
     assert "id" in params, "Missing parameter 'id'"
     assert "src" in params, "Missing parameter 'src'"
+    assert "namelist" in params, "Missing parameter 'namelist'"
+    assert "autoforward" in params, "Missing parameter 'autoforward'"
 
-def test_scxml::invoke_has_idlocation():
-    assert hasattr(scxml::Invoke, "idlocation")
+def test_scxml_invoke_has_typeexpr():
+    assert hasattr(scxml_Invoke, "typeexpr")
     descriptor = None
-    for klass in scxml::Invoke.__mro__:
-        if "idlocation" in klass.__dict__:
-            descriptor = klass.__dict__["idlocation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::invoke_has_namelist():
-    assert hasattr(scxml::Invoke, "namelist")
-    descriptor = None
-    for klass in scxml::Invoke.__mro__:
-        if "namelist" in klass.__dict__:
-            descriptor = klass.__dict__["namelist"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::invoke_has_autoforward():
-    assert hasattr(scxml::Invoke, "autoforward")
-    descriptor = None
-    for klass in scxml::Invoke.__mro__:
-        if "autoforward" in klass.__dict__:
-            descriptor = klass.__dict__["autoforward"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::invoke_has_typeexpr():
-    assert hasattr(scxml::Invoke, "typeexpr")
-    descriptor = None
-    for klass in scxml::Invoke.__mro__:
+    for klass in scxml_Invoke.__mro__:
         if "typeexpr" in klass.__dict__:
             descriptor = klass.__dict__["typeexpr"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::invoke_has_srcexpr():
-    assert hasattr(scxml::Invoke, "srcexpr")
+def test_scxml_invoke_has_idlocation():
+    assert hasattr(scxml_Invoke, "idlocation")
     descriptor = None
-    for klass in scxml::Invoke.__mro__:
-        if "srcexpr" in klass.__dict__:
-            descriptor = klass.__dict__["srcexpr"]
+    for klass in scxml_Invoke.__mro__:
+        if "idlocation" in klass.__dict__:
+            descriptor = klass.__dict__["idlocation"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::invoke_has_type():
-    assert hasattr(scxml::Invoke, "type")
+def test_scxml_invoke_has_type():
+    assert hasattr(scxml_Invoke, "type")
     descriptor = None
-    for klass in scxml::Invoke.__mro__:
+    for klass in scxml_Invoke.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::invoke_has_id():
-    assert hasattr(scxml::Invoke, "id")
+def test_scxml_invoke_has_srcexpr():
+    assert hasattr(scxml_Invoke, "srcexpr")
     descriptor = None
-    for klass in scxml::Invoke.__mro__:
+    for klass in scxml_Invoke.__mro__:
+        if "srcexpr" in klass.__dict__:
+            descriptor = klass.__dict__["srcexpr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_invoke_has_id():
+    assert hasattr(scxml_Invoke, "id")
+    descriptor = None
+    for klass in scxml_Invoke.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::invoke_has_src():
-    assert hasattr(scxml::Invoke, "src")
+def test_scxml_invoke_has_src():
+    assert hasattr(scxml_Invoke, "src")
     descriptor = None
-    for klass in scxml::Invoke.__mro__:
+    for klass in scxml_Invoke.__mro__:
         if "src" in klass.__dict__:
             descriptor = klass.__dict__["src"]
             break
     assert isinstance(descriptor, property)
 
+def test_scxml_invoke_has_namelist():
+    assert hasattr(scxml_Invoke, "namelist")
+    descriptor = None
+    for klass in scxml_Invoke.__mro__:
+        if "namelist" in klass.__dict__:
+            descriptor = klass.__dict__["namelist"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_invoke_has_autoforward():
+    assert hasattr(scxml_Invoke, "autoforward")
+    descriptor = None
+    for klass in scxml_Invoke.__mro__:
+        if "autoforward" in klass.__dict__:
+            descriptor = klass.__dict__["autoforward"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_scxml::abstractsimplestate_is_not_abstract():
-    assert not inspect.isabstract(scxml::AbstractSimpleState)
+
+def test_scxml_abstractsimplestate_is_not_abstract():
+    assert not inspect.isabstract(scxml_AbstractSimpleState)
 
 
-def test_scxml::abstractsimplestate_constructor_exists():
-    assert callable(scxml::AbstractSimpleState.__init__)
+def test_scxml_abstractsimplestate_constructor_exists():
+    assert callable(scxml_AbstractSimpleState.__init__)
 
 
-def test_scxml::abstractsimplestate_constructor_args():
-    sig = inspect.signature(scxml::AbstractSimpleState.__init__)
+def test_scxml_abstractsimplestate_constructor_args():
+    sig = inspect.signature(scxml_AbstractSimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -736,23 +736,23 @@ def test_state_constructor_args():
 
 
 
-def test_scxml::raise_is_not_abstract():
-    assert not inspect.isabstract(scxml::Raise)
+def test_scxml_raise_is_not_abstract():
+    assert not inspect.isabstract(scxml_Raise)
 
 
-def test_scxml::raise_constructor_exists():
-    assert callable(scxml::Raise.__init__)
+def test_scxml_raise_constructor_exists():
+    assert callable(scxml_Raise.__init__)
 
 
-def test_scxml::raise_constructor_args():
-    sig = inspect.signature(scxml::Raise.__init__)
+def test_scxml_raise_constructor_args():
+    sig = inspect.signature(scxml_Raise.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_scxml::raise_has_event():
-    assert hasattr(scxml::Raise, "event")
+def test_scxml_raise_has_event():
+    assert hasattr(scxml_Raise, "event")
     descriptor = None
-    for klass in scxml::Raise.__mro__:
+    for klass in scxml_Raise.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -760,43 +760,43 @@ def test_scxml::raise_has_event():
 
 
 
-def test_scxml::log_is_not_abstract():
-    assert not inspect.isabstract(scxml::Log)
+def test_scxml_log_is_not_abstract():
+    assert not inspect.isabstract(scxml_Log)
 
 
-def test_scxml::log_constructor_exists():
-    assert callable(scxml::Log.__init__)
+def test_scxml_log_constructor_exists():
+    assert callable(scxml_Log.__init__)
 
 
-def test_scxml::log_constructor_args():
-    sig = inspect.signature(scxml::Log.__init__)
+def test_scxml_log_constructor_args():
+    sig = inspect.signature(scxml_Log.__init__)
     params = list(sig.parameters.keys())
     assert "level" in params, "Missing parameter 'level'"
     assert "label" in params, "Missing parameter 'label'"
     assert "expr" in params, "Missing parameter 'expr'"
 
-def test_scxml::log_has_level():
-    assert hasattr(scxml::Log, "level")
+def test_scxml_log_has_level():
+    assert hasattr(scxml_Log, "level")
     descriptor = None
-    for klass in scxml::Log.__mro__:
+    for klass in scxml_Log.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::log_has_label():
-    assert hasattr(scxml::Log, "label")
+def test_scxml_log_has_label():
+    assert hasattr(scxml_Log, "label")
     descriptor = None
-    for klass in scxml::Log.__mro__:
+    for klass in scxml_Log.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::log_has_expr():
-    assert hasattr(scxml::Log, "expr")
+def test_scxml_log_has_expr():
+    assert hasattr(scxml_Log, "expr")
     descriptor = None
-    for klass in scxml::Log.__mro__:
+    for klass in scxml_Log.__mro__:
         if "expr" in klass.__dict__:
             descriptor = klass.__dict__["expr"]
             break
@@ -804,61 +804,61 @@ def test_scxml::log_has_expr():
 
 
 
-def test_scxml::eobject_is_not_abstract():
-    assert not inspect.isabstract(scxml::EObject)
+def test_scxml_eobject_is_not_abstract():
+    assert not inspect.isabstract(scxml_EObject)
 
 
-def test_scxml::eobject_constructor_exists():
-    assert callable(scxml::EObject.__init__)
+def test_scxml_eobject_constructor_exists():
+    assert callable(scxml_EObject.__init__)
 
 
-def test_scxml::eobject_constructor_args():
-    sig = inspect.signature(scxml::EObject.__init__)
+def test_scxml_eobject_constructor_args():
+    sig = inspect.signature(scxml_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::donedata_is_not_abstract():
-    assert not inspect.isabstract(scxml::Donedata)
+def test_scxml_donedata_is_not_abstract():
+    assert not inspect.isabstract(scxml_Donedata)
 
 
-def test_scxml::donedata_constructor_exists():
-    assert callable(scxml::Donedata.__init__)
+def test_scxml_donedata_constructor_exists():
+    assert callable(scxml_Donedata.__init__)
 
 
-def test_scxml::donedata_constructor_args():
-    sig = inspect.signature(scxml::Donedata.__init__)
+def test_scxml_donedata_constructor_args():
+    sig = inspect.signature(scxml_Donedata.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::param_is_not_abstract():
-    assert not inspect.isabstract(scxml::Param)
+def test_scxml_param_is_not_abstract():
+    assert not inspect.isabstract(scxml_Param)
 
 
-def test_scxml::param_constructor_exists():
-    assert callable(scxml::Param.__init__)
+def test_scxml_param_constructor_exists():
+    assert callable(scxml_Param.__init__)
 
 
-def test_scxml::param_constructor_args():
-    sig = inspect.signature(scxml::Param.__init__)
+def test_scxml_param_constructor_args():
+    sig = inspect.signature(scxml_Param.__init__)
     params = list(sig.parameters.keys())
     assert "expr" in params, "Missing parameter 'expr'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_scxml::param_has_expr():
-    assert hasattr(scxml::Param, "expr")
+def test_scxml_param_has_expr():
+    assert hasattr(scxml_Param, "expr")
     descriptor = None
-    for klass in scxml::Param.__mro__:
+    for klass in scxml_Param.__mro__:
         if "expr" in klass.__dict__:
             descriptor = klass.__dict__["expr"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::param_has_name():
-    assert hasattr(scxml::Param, "name")
+def test_scxml_param_has_name():
+    assert hasattr(scxml_Param, "name")
     descriptor = None
-    for klass in scxml::Param.__mro__:
+    for klass in scxml_Param.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -880,23 +880,23 @@ def test_transition_constructor_args():
 
 
 
-def test_scxml::content_is_not_abstract():
-    assert not inspect.isabstract(scxml::Content)
+def test_scxml_content_is_not_abstract():
+    assert not inspect.isabstract(scxml_Content)
 
 
-def test_scxml::content_constructor_exists():
-    assert callable(scxml::Content.__init__)
+def test_scxml_content_constructor_exists():
+    assert callable(scxml_Content.__init__)
 
 
-def test_scxml::content_constructor_args():
-    sig = inspect.signature(scxml::Content.__init__)
+def test_scxml_content_constructor_args():
+    sig = inspect.signature(scxml_Content.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_scxml::content_has_value():
-    assert hasattr(scxml::Content, "value")
+def test_scxml_content_has_value():
+    assert hasattr(scxml_Content, "value")
     descriptor = None
-    for klass in scxml::Content.__mro__:
+    for klass in scxml_Content.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -904,61 +904,61 @@ def test_scxml::content_has_value():
 
 
 
-def test_scxml::parallelstate_is_not_abstract():
-    assert not inspect.isabstract(scxml::ParallelState)
+def test_scxml_parallelstate_is_not_abstract():
+    assert not inspect.isabstract(scxml_ParallelState)
 
 
-def test_scxml::parallelstate_constructor_exists():
-    assert callable(scxml::ParallelState.__init__)
+def test_scxml_parallelstate_constructor_exists():
+    assert callable(scxml_ParallelState.__init__)
 
 
-def test_scxml::parallelstate_constructor_args():
-    sig = inspect.signature(scxml::ParallelState.__init__)
+def test_scxml_parallelstate_constructor_args():
+    sig = inspect.signature(scxml_ParallelState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(scxml::AbstractState)
+def test_scxml_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(scxml_AbstractState)
 
 
-def test_scxml::abstractstate_constructor_exists():
-    assert callable(scxml::AbstractState.__init__)
+def test_scxml_abstractstate_constructor_exists():
+    assert callable(scxml_AbstractState.__init__)
 
 
-def test_scxml::abstractstate_constructor_args():
-    sig = inspect.signature(scxml::AbstractState.__init__)
+def test_scxml_abstractstate_constructor_args():
+    sig = inspect.signature(scxml_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::condeventtransition_is_not_abstract():
-    assert not inspect.isabstract(scxml::CondEventTransition)
+def test_scxml_condeventtransition_is_not_abstract():
+    assert not inspect.isabstract(scxml_CondEventTransition)
 
 
-def test_scxml::condeventtransition_constructor_exists():
-    assert callable(scxml::CondEventTransition.__init__)
+def test_scxml_condeventtransition_constructor_exists():
+    assert callable(scxml_CondEventTransition.__init__)
 
 
-def test_scxml::condeventtransition_constructor_args():
-    sig = inspect.signature(scxml::CondEventTransition.__init__)
+def test_scxml_condeventtransition_constructor_args():
+    sig = inspect.signature(scxml_CondEventTransition.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
     assert "cond" in params, "Missing parameter 'cond'"
 
-def test_scxml::condeventtransition_has_event():
-    assert hasattr(scxml::CondEventTransition, "event")
+def test_scxml_condeventtransition_has_event():
+    assert hasattr(scxml_CondEventTransition, "event")
     descriptor = None
-    for klass in scxml::CondEventTransition.__mro__:
+    for klass in scxml_CondEventTransition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
     assert isinstance(descriptor, property)
 
-def test_scxml::condeventtransition_has_cond():
-    assert hasattr(scxml::CondEventTransition, "cond")
+def test_scxml_condeventtransition_has_cond():
+    assert hasattr(scxml_CondEventTransition, "cond")
     descriptor = None
-    for klass in scxml::CondEventTransition.__mro__:
+    for klass in scxml_CondEventTransition.__mro__:
         if "cond" in klass.__dict__:
             descriptor = klass.__dict__["cond"]
             break
@@ -980,23 +980,23 @@ def test_node_constructor_args():
 
 
 
-def test_scxml::transitiontarget_is_not_abstract():
-    assert not inspect.isabstract(scxml::TransitionTarget)
+def test_scxml_transitiontarget_is_not_abstract():
+    assert not inspect.isabstract(scxml_TransitionTarget)
 
 
-def test_scxml::transitiontarget_constructor_exists():
-    assert callable(scxml::TransitionTarget.__init__)
+def test_scxml_transitiontarget_constructor_exists():
+    assert callable(scxml_TransitionTarget.__init__)
 
 
-def test_scxml::transitiontarget_constructor_args():
-    sig = inspect.signature(scxml::TransitionTarget.__init__)
+def test_scxml_transitiontarget_constructor_args():
+    sig = inspect.signature(scxml_TransitionTarget.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_scxml::transitiontarget_has_id():
-    assert hasattr(scxml::TransitionTarget, "id")
+def test_scxml_transitiontarget_has_id():
+    assert hasattr(scxml_TransitionTarget, "id")
     descriptor = None
-    for klass in scxml::TransitionTarget.__mro__:
+    for klass in scxml_TransitionTarget.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1004,16 +1004,16 @@ def test_scxml::transitiontarget_has_id():
 
 
 
-def test_scxml::transitionsource_is_not_abstract():
-    assert not inspect.isabstract(scxml::TransitionSource)
+def test_scxml_transitionsource_is_not_abstract():
+    assert not inspect.isabstract(scxml_TransitionSource)
 
 
-def test_scxml::transitionsource_constructor_exists():
-    assert callable(scxml::TransitionSource.__init__)
+def test_scxml_transitionsource_constructor_exists():
+    assert callable(scxml_TransitionSource.__init__)
 
 
-def test_scxml::transitionsource_constructor_args():
-    sig = inspect.signature(scxml::TransitionSource.__init__)
+def test_scxml_transitionsource_constructor_args():
+    sig = inspect.signature(scxml_TransitionSource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1032,44 +1032,44 @@ def test_executablecontent_constructor_args():
 
 
 
-def test_scxml::onentry_is_not_abstract():
-    assert not inspect.isabstract(scxml::OnEntry)
+def test_scxml_if_is_not_abstract():
+    assert not inspect.isabstract(scxml_If)
 
 
-def test_scxml::onentry_constructor_exists():
-    assert callable(scxml::OnEntry.__init__)
+def test_scxml_if_constructor_exists():
+    assert callable(scxml_If.__init__)
 
 
-def test_scxml::onentry_constructor_args():
-    sig = inspect.signature(scxml::OnEntry.__init__)
+def test_scxml_if_constructor_args():
+    sig = inspect.signature(scxml_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::if_is_not_abstract():
-    assert not inspect.isabstract(scxml::If)
+def test_scxml_onexit_is_not_abstract():
+    assert not inspect.isabstract(scxml_OnExit)
 
 
-def test_scxml::if_constructor_exists():
-    assert callable(scxml::If.__init__)
+def test_scxml_onexit_constructor_exists():
+    assert callable(scxml_OnExit.__init__)
 
 
-def test_scxml::if_constructor_args():
-    sig = inspect.signature(scxml::If.__init__)
+def test_scxml_onexit_constructor_args():
+    sig = inspect.signature(scxml_OnExit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::onexit_is_not_abstract():
-    assert not inspect.isabstract(scxml::OnExit)
+def test_scxml_onentry_is_not_abstract():
+    assert not inspect.isabstract(scxml_OnEntry)
 
 
-def test_scxml::onexit_constructor_exists():
-    assert callable(scxml::OnExit.__init__)
+def test_scxml_onentry_constructor_exists():
+    assert callable(scxml_OnEntry.__init__)
 
 
-def test_scxml::onexit_constructor_args():
-    sig = inspect.signature(scxml::OnExit.__init__)
+def test_scxml_onentry_constructor_args():
+    sig = inspect.signature(scxml_OnEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1102,37 +1102,23 @@ def test_transitiontarget_constructor_args():
 
 
 
-def test_scxml::finalstate_is_not_abstract():
-    assert not inspect.isabstract(scxml::FinalState)
+def test_scxml_historystate_is_not_abstract():
+    assert not inspect.isabstract(scxml_HistoryState)
 
 
-def test_scxml::finalstate_constructor_exists():
-    assert callable(scxml::FinalState.__init__)
+def test_scxml_historystate_constructor_exists():
+    assert callable(scxml_HistoryState.__init__)
 
 
-def test_scxml::finalstate_constructor_args():
-    sig = inspect.signature(scxml::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scxml::historystate_is_not_abstract():
-    assert not inspect.isabstract(scxml::HistoryState)
-
-
-def test_scxml::historystate_constructor_exists():
-    assert callable(scxml::HistoryState.__init__)
-
-
-def test_scxml::historystate_constructor_args():
-    sig = inspect.signature(scxml::HistoryState.__init__)
+def test_scxml_historystate_constructor_args():
+    sig = inspect.signature(scxml_HistoryState.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_scxml::historystate_has_type():
-    assert hasattr(scxml::HistoryState, "type")
+def test_scxml_historystate_has_type():
+    assert hasattr(scxml_HistoryState, "type")
     descriptor = None
-    for klass in scxml::HistoryState.__mro__:
+    for klass in scxml_HistoryState.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1140,23 +1126,37 @@ def test_scxml::historystate_has_type():
 
 
 
-def test_scxml::script_is_not_abstract():
-    assert not inspect.isabstract(scxml::Script)
+def test_scxml_finalstate_is_not_abstract():
+    assert not inspect.isabstract(scxml_FinalState)
 
 
-def test_scxml::script_constructor_exists():
-    assert callable(scxml::Script.__init__)
+def test_scxml_finalstate_constructor_exists():
+    assert callable(scxml_FinalState.__init__)
 
 
-def test_scxml::script_constructor_args():
-    sig = inspect.signature(scxml::Script.__init__)
+def test_scxml_finalstate_constructor_args():
+    sig = inspect.signature(scxml_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scxml_script_is_not_abstract():
+    assert not inspect.isabstract(scxml_Script)
+
+
+def test_scxml_script_constructor_exists():
+    assert callable(scxml_Script.__init__)
+
+
+def test_scxml_script_constructor_args():
+    sig = inspect.signature(scxml_Script.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_scxml::script_has_value():
-    assert hasattr(scxml::Script, "value")
+def test_scxml_script_has_value():
+    assert hasattr(scxml_Script, "value")
     descriptor = None
-    for klass in scxml::Script.__mro__:
+    for klass in scxml_Script.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1178,95 +1178,37 @@ def test_descriptioncontainer_constructor_args():
 
 
 
-def test_scxml::transition_is_not_abstract():
-    assert not inspect.isabstract(scxml::Transition)
+def test_scxml_initialstate_is_not_abstract():
+    assert not inspect.isabstract(scxml_InitialState)
 
 
-def test_scxml::transition_constructor_exists():
-    assert callable(scxml::Transition.__init__)
+def test_scxml_initialstate_constructor_exists():
+    assert callable(scxml_InitialState.__init__)
 
 
-def test_scxml::transition_constructor_args():
-    sig = inspect.signature(scxml::Transition.__init__)
+def test_scxml_initialstate_constructor_args():
+    sig = inspect.signature(scxml_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::data_is_not_abstract():
-    assert not inspect.isabstract(scxml::Data)
+def test_scxml_datamodel_is_not_abstract():
+    assert not inspect.isabstract(scxml_Datamodel)
 
 
-def test_scxml::data_constructor_exists():
-    assert callable(scxml::Data.__init__)
+def test_scxml_datamodel_constructor_exists():
+    assert callable(scxml_Datamodel.__init__)
 
 
-def test_scxml::data_constructor_args():
-    sig = inspect.signature(scxml::Data.__init__)
-    params = list(sig.parameters.keys())
-    assert "expr" in params, "Missing parameter 'expr'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "src" in params, "Missing parameter 'src'"
-
-def test_scxml::data_has_expr():
-    assert hasattr(scxml::Data, "expr")
-    descriptor = None
-    for klass in scxml::Data.__mro__:
-        if "expr" in klass.__dict__:
-            descriptor = klass.__dict__["expr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::data_has_id():
-    assert hasattr(scxml::Data, "id")
-    descriptor = None
-    for klass in scxml::Data.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::data_has_src():
-    assert hasattr(scxml::Data, "src")
-    descriptor = None
-    for klass in scxml::Data.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_scxml::node_is_not_abstract():
-    assert not inspect.isabstract(scxml::Node)
-
-
-def test_scxml::node_constructor_exists():
-    assert callable(scxml::Node.__init__)
-
-
-def test_scxml::node_constructor_args():
-    sig = inspect.signature(scxml::Node.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scxml::datamodel_is_not_abstract():
-    assert not inspect.isabstract(scxml::Datamodel)
-
-
-def test_scxml::datamodel_constructor_exists():
-    assert callable(scxml::Datamodel.__init__)
-
-
-def test_scxml::datamodel_constructor_args():
-    sig = inspect.signature(scxml::Datamodel.__init__)
+def test_scxml_datamodel_constructor_args():
+    sig = inspect.signature(scxml_Datamodel.__init__)
     params = list(sig.parameters.keys())
     assert "schema" in params, "Missing parameter 'schema'"
 
-def test_scxml::datamodel_has_schema():
-    assert hasattr(scxml::Datamodel, "schema")
+def test_scxml_datamodel_has_schema():
+    assert hasattr(scxml_Datamodel, "schema")
     descriptor = None
-    for klass in scxml::Datamodel.__mro__:
+    for klass in scxml_Datamodel.__mro__:
         if "schema" in klass.__dict__:
             descriptor = klass.__dict__["schema"]
             break
@@ -1274,16 +1216,74 @@ def test_scxml::datamodel_has_schema():
 
 
 
-def test_scxml::initialstate_is_not_abstract():
-    assert not inspect.isabstract(scxml::InitialState)
+def test_scxml_transition_is_not_abstract():
+    assert not inspect.isabstract(scxml_Transition)
 
 
-def test_scxml::initialstate_constructor_exists():
-    assert callable(scxml::InitialState.__init__)
+def test_scxml_transition_constructor_exists():
+    assert callable(scxml_Transition.__init__)
 
 
-def test_scxml::initialstate_constructor_args():
-    sig = inspect.signature(scxml::InitialState.__init__)
+def test_scxml_transition_constructor_args():
+    sig = inspect.signature(scxml_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scxml_data_is_not_abstract():
+    assert not inspect.isabstract(scxml_Data)
+
+
+def test_scxml_data_constructor_exists():
+    assert callable(scxml_Data.__init__)
+
+
+def test_scxml_data_constructor_args():
+    sig = inspect.signature(scxml_Data.__init__)
+    params = list(sig.parameters.keys())
+    assert "src" in params, "Missing parameter 'src'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "expr" in params, "Missing parameter 'expr'"
+
+def test_scxml_data_has_src():
+    assert hasattr(scxml_Data, "src")
+    descriptor = None
+    for klass in scxml_Data.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_data_has_id():
+    assert hasattr(scxml_Data, "id")
+    descriptor = None
+    for klass in scxml_Data.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_data_has_expr():
+    assert hasattr(scxml_Data, "expr")
+    descriptor = None
+    for klass in scxml_Data.__mro__:
+        if "expr" in klass.__dict__:
+            descriptor = klass.__dict__["expr"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_scxml_node_is_not_abstract():
+    assert not inspect.isabstract(scxml_Node)
+
+
+def test_scxml_node_constructor_exists():
+    assert callable(scxml_Node.__init__)
+
+
+def test_scxml_node_constructor_args():
+    sig = inspect.signature(scxml_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1316,16 +1316,16 @@ def test_abstractsimplestate_constructor_args():
 
 
 
-def test_scxml::simplestate_is_not_abstract():
-    assert not inspect.isabstract(scxml::SimpleState)
+def test_scxml_simplestate_is_not_abstract():
+    assert not inspect.isabstract(scxml_SimpleState)
 
 
-def test_scxml::simplestate_constructor_exists():
-    assert callable(scxml::SimpleState.__init__)
+def test_scxml_simplestate_constructor_exists():
+    assert callable(scxml_SimpleState.__init__)
 
 
-def test_scxml::simplestate_constructor_args():
-    sig = inspect.signature(scxml::SimpleState.__init__)
+def test_scxml_simplestate_constructor_args():
+    sig = inspect.signature(scxml_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1344,96 +1344,81 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_scxml::state_is_not_abstract():
-    assert not inspect.isabstract(scxml::State)
+def test_scxml_state_is_not_abstract():
+    assert not inspect.isabstract(scxml_State)
 
 
-def test_scxml::state_constructor_exists():
-    assert callable(scxml::State.__init__)
+def test_scxml_state_constructor_exists():
+    assert callable(scxml_State.__init__)
 
 
-def test_scxml::state_constructor_args():
-    sig = inspect.signature(scxml::State.__init__)
+def test_scxml_state_constructor_args():
+    sig = inspect.signature(scxml_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_scxml::statechart_is_not_abstract():
-    assert not inspect.isabstract(scxml::StateChart)
+def test_scxml_statechart_is_not_abstract():
+    assert not inspect.isabstract(scxml_StateChart)
 
 
-def test_scxml::statechart_constructor_exists():
-    assert callable(scxml::StateChart.__init__)
+def test_scxml_statechart_constructor_exists():
+    assert callable(scxml_StateChart.__init__)
 
 
-def test_scxml::statechart_constructor_args():
-    sig = inspect.signature(scxml::StateChart.__init__)
+def test_scxml_statechart_constructor_args():
+    sig = inspect.signature(scxml_StateChart.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "version" in params, "Missing parameter 'version'"
-    assert "exmode" in params, "Missing parameter 'exmode'"
-    assert "profile" in params, "Missing parameter 'profile'"
     assert "xmlns" in params, "Missing parameter 'xmlns'"
+    assert "version" in params, "Missing parameter 'version'"
+    assert "profile" in params, "Missing parameter 'profile'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "exmode" in params, "Missing parameter 'exmode'"
 
-def test_scxml::statechart_has_id():
-    assert hasattr(scxml::StateChart, "id")
+def test_scxml_statechart_has_xmlns():
+    assert hasattr(scxml_StateChart, "xmlns")
     descriptor = None
-    for klass in scxml::StateChart.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::statechart_has_version():
-    assert hasattr(scxml::StateChart, "version")
-    descriptor = None
-    for klass in scxml::StateChart.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::statechart_has_exmode():
-    assert hasattr(scxml::StateChart, "exmode")
-    descriptor = None
-    for klass in scxml::StateChart.__mro__:
-        if "exmode" in klass.__dict__:
-            descriptor = klass.__dict__["exmode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::statechart_has_profile():
-    assert hasattr(scxml::StateChart, "profile")
-    descriptor = None
-    for klass in scxml::StateChart.__mro__:
-        if "profile" in klass.__dict__:
-            descriptor = klass.__dict__["profile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_scxml::statechart_has_xmlns():
-    assert hasattr(scxml::StateChart, "xmlns")
-    descriptor = None
-    for klass in scxml::StateChart.__mro__:
+    for klass in scxml_StateChart.__mro__:
         if "xmlns" in klass.__dict__:
             descriptor = klass.__dict__["xmlns"]
             break
     assert isinstance(descriptor, property)
 
-def test_exmodedatatype_exists():
-    # Check that the Enumeration exists
-    assert ExmodeDatatype is not None
+def test_scxml_statechart_has_version():
+    assert hasattr(scxml_StateChart, "version")
+    descriptor = None
+    for klass in scxml_StateChart.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_exmodedatatype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExmodeDatatype]
-    expected_literals = [
-        "lax",
-        "strict",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExmodeDatatype"
+def test_scxml_statechart_has_profile():
+    assert hasattr(scxml_StateChart, "profile")
+    descriptor = None
+    for klass in scxml_StateChart.__mro__:
+        if "profile" in klass.__dict__:
+            descriptor = klass.__dict__["profile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_statechart_has_id():
+    assert hasattr(scxml_StateChart, "id")
+    descriptor = None
+    for klass in scxml_StateChart.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_scxml_statechart_has_exmode():
+    assert hasattr(scxml_StateChart, "exmode")
+    descriptor = None
+    for klass in scxml_StateChart.__mro__:
+        if "exmode" in klass.__dict__:
+            descriptor = klass.__dict__["exmode"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_historytypedatatype_exists():
     # Check that the Enumeration exists
@@ -1450,6 +1435,21 @@ def test_historytypedatatype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in HistoryTypeDatatype"
 
+def test_exmodedatatype_exists():
+    # Check that the Enumeration exists
+    assert ExmodeDatatype is not None
+
+def test_exmodedatatype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ExmodeDatatype]
+    expected_literals = [
+        "strict",
+        "lax",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ExmodeDatatype"
+
 def test_adaptertoken_exists():
     # Check that the Enumeration exists
     assert AdapterToken is not None
@@ -1458,8 +1458,8 @@ def test_adaptertoken_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AdapterToken]
     expected_literals = [
-        "DESCRIPTION",
         "DATAMODEL",
+        "DESCRIPTION",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1477,73 +1477,73 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-scxml::Description_strategy = st.builds(
-    scxml::Description,
+scxml_Description_strategy = st.builds(
+    scxml_Description,
     value=
         safe_text
 )
 IAdaptable_strategy = st.builds(
     IAdaptable,
 )
-scxml::DescriptionContainer_strategy = st.builds(
-    scxml::DescriptionContainer,
+scxml_DescriptionContainer_strategy = st.builds(
+    scxml_DescriptionContainer,
 )
-scxml::DatamodelContainer_strategy = st.builds(
-    scxml::DatamodelContainer,
+scxml_DatamodelContainer_strategy = st.builds(
+    scxml_DatamodelContainer,
 )
-scxml::EClass_strategy = st.builds(
-    scxml::EClass,
+scxml_EClass_strategy = st.builds(
+    scxml_EClass,
 )
-scxml::IAdaptable_strategy = st.builds(
-    scxml::IAdaptable,
+scxml_IAdaptable_strategy = st.builds(
+    scxml_IAdaptable,
 )
 Data_strategy = st.builds(
     Data,
 )
-scxml::XData_strategy = st.builds(
-    scxml::XData,
+scxml_XData_strategy = st.builds(
+    scxml_XData,
 )
-scxml::XObject_strategy = st.builds(
-    scxml::XObject,
-    exchange=
-        st.booleans(),
+scxml_XObject_strategy = st.builds(
+    scxml_XObject,
     classifierName=
         safe_text,
     nsUri=
-        safe_text
+        safe_text,
+    exchange=
+        st.booleans()
 )
-scxml::Else_strategy = st.builds(
-    scxml::Else,
+scxml_Else_strategy = st.builds(
+    scxml_Else,
 )
 Conditional_strategy = st.builds(
     Conditional,
 )
-scxml::ElseIf_strategy = st.builds(
-    scxml::ElseIf,
+scxml_ElseIf_strategy = st.builds(
+    scxml_ElseIf,
 )
-scxml::Conditional_strategy = st.builds(
-    scxml::Conditional,
+scxml_Conditional_strategy = st.builds(
+    scxml_Conditional,
     cond=
         safe_text
 )
-scxml::Validate_strategy = st.builds(
-    scxml::Validate,
-    schema=
-        safe_text,
+scxml_Validate_strategy = st.builds(
+    scxml_Validate,
     location=
+        safe_text,
+    schema=
         safe_text
 )
-scxml::Assign_strategy = st.builds(
-    scxml::Assign,
-    name=
-        safe_text,
+scxml_Assign_strategy = st.builds(
+    scxml_Assign,
     location=
         safe_text,
     expr=
+        safe_text,
+    name=
         safe_text
 )
-scxml::Cancel_strategy = st.builds(
-    scxml::Cancel,
+scxml_Cancel_strategy = st.builds(
+    scxml_Cancel,
     sendid=
         safe_text,
     sendidexpr=
@@ -1552,75 +1552,75 @@ scxml::Cancel_strategy = st.builds(
 Donedata_strategy = st.builds(
     Donedata,
 )
-scxml::Send_strategy = st.builds(
-    scxml::Send,
-    type=
+scxml_Send_strategy = st.builds(
+    scxml_Send,
+    hints=
+        safe_text,
+    event=
         safe_text,
     delay=
         safe_text,
-    targetexpr=
+    hintsexpr=
         safe_text,
     id=
         safe_text,
     namelist=
         safe_text,
-    hintsexpr=
+    type=
         safe_text,
     target=
+        safe_text,
+    eventexpr=
+        safe_text,
+    targetexpr=
         safe_text,
     idlocation=
         safe_text,
     delayexpr=
         safe_text,
     typeexpr=
-        safe_text,
-    eventexpr=
-        safe_text,
-    hints=
-        safe_text,
-    event=
         safe_text
 )
-scxml::ExecutableContent_strategy = st.builds(
-    scxml::ExecutableContent,
+scxml_ExecutableContent_strategy = st.builds(
+    scxml_ExecutableContent,
     group=
         safe_text
 )
 InitialState_strategy = st.builds(
     InitialState,
 )
-scxml::Invoke_strategy = st.builds(
-    scxml::Invoke,
-    idlocation=
-        safe_text,
-    namelist=
-        safe_text,
-    autoforward=
-        safe_text,
+scxml_Invoke_strategy = st.builds(
+    scxml_Invoke,
     typeexpr=
         safe_text,
-    srcexpr=
+    idlocation=
         safe_text,
     type=
+        safe_text,
+    srcexpr=
         safe_text,
     id=
         safe_text,
     src=
+        safe_text,
+    namelist=
+        safe_text,
+    autoforward=
         safe_text
 )
-scxml::AbstractSimpleState_strategy = st.builds(
-    scxml::AbstractSimpleState,
+scxml_AbstractSimpleState_strategy = st.builds(
+    scxml_AbstractSimpleState,
 )
 State_strategy = st.builds(
     State,
 )
-scxml::Raise_strategy = st.builds(
-    scxml::Raise,
+scxml_Raise_strategy = st.builds(
+    scxml_Raise,
     event=
         safe_text
 )
-scxml::Log_strategy = st.builds(
-    scxml::Log,
+scxml_Log_strategy = st.builds(
+    scxml_Log,
     level=
         safe_text,
     label=
@@ -1628,14 +1628,14 @@ scxml::Log_strategy = st.builds(
     expr=
         safe_text
 )
-scxml::EObject_strategy = st.builds(
-    scxml::EObject,
+scxml_EObject_strategy = st.builds(
+    scxml_EObject,
 )
-scxml::Donedata_strategy = st.builds(
-    scxml::Donedata,
+scxml_Donedata_strategy = st.builds(
+    scxml_Donedata,
 )
-scxml::Param_strategy = st.builds(
-    scxml::Param,
+scxml_Param_strategy = st.builds(
+    scxml_Param,
     expr=
         safe_text,
     name=
@@ -1644,19 +1644,19 @@ scxml::Param_strategy = st.builds(
 Transition_strategy = st.builds(
     Transition,
 )
-scxml::Content_strategy = st.builds(
-    scxml::Content,
+scxml_Content_strategy = st.builds(
+    scxml_Content,
     value=
         safe_text
 )
-scxml::ParallelState_strategy = st.builds(
-    scxml::ParallelState,
+scxml_ParallelState_strategy = st.builds(
+    scxml_ParallelState,
 )
-scxml::AbstractState_strategy = st.builds(
-    scxml::AbstractState,
+scxml_AbstractState_strategy = st.builds(
+    scxml_AbstractState,
 )
-scxml::CondEventTransition_strategy = st.builds(
-    scxml::CondEventTransition,
+scxml_CondEventTransition_strategy = st.builds(
+    scxml_CondEventTransition,
     event=
         safe_text,
     cond=
@@ -1665,25 +1665,25 @@ scxml::CondEventTransition_strategy = st.builds(
 Node_strategy = st.builds(
     Node,
 )
-scxml::TransitionTarget_strategy = st.builds(
-    scxml::TransitionTarget,
+scxml_TransitionTarget_strategy = st.builds(
+    scxml_TransitionTarget,
     id=
         safe_text
 )
-scxml::TransitionSource_strategy = st.builds(
-    scxml::TransitionSource,
+scxml_TransitionSource_strategy = st.builds(
+    scxml_TransitionSource,
 )
 ExecutableContent_strategy = st.builds(
     ExecutableContent,
 )
-scxml::OnEntry_strategy = st.builds(
-    scxml::OnEntry,
+scxml_If_strategy = st.builds(
+    scxml_If,
 )
-scxml::If_strategy = st.builds(
-    scxml::If,
+scxml_OnExit_strategy = st.builds(
+    scxml_OnExit,
 )
-scxml::OnExit_strategy = st.builds(
-    scxml::OnExit,
+scxml_OnEntry_strategy = st.builds(
+    scxml_OnEntry,
 )
 TransitionSource_strategy = st.builds(
     TransitionSource,
@@ -1691,44 +1691,44 @@ TransitionSource_strategy = st.builds(
 TransitionTarget_strategy = st.builds(
     TransitionTarget,
 )
-scxml::FinalState_strategy = st.builds(
-    scxml::FinalState,
-)
-scxml::HistoryState_strategy = st.builds(
-    scxml::HistoryState,
+scxml_HistoryState_strategy = st.builds(
+    scxml_HistoryState,
     type=
         safe_text
 )
-scxml::Script_strategy = st.builds(
-    scxml::Script,
+scxml_FinalState_strategy = st.builds(
+    scxml_FinalState,
+)
+scxml_Script_strategy = st.builds(
+    scxml_Script,
     value=
         safe_text
 )
 DescriptionContainer_strategy = st.builds(
     DescriptionContainer,
 )
-scxml::Transition_strategy = st.builds(
-    scxml::Transition,
+scxml_InitialState_strategy = st.builds(
+    scxml_InitialState,
 )
-scxml::Data_strategy = st.builds(
-    scxml::Data,
-    expr=
-        safe_text,
-    id=
-        safe_text,
-    src=
-        safe_text
-)
-scxml::Node_strategy = st.builds(
-    scxml::Node,
-)
-scxml::Datamodel_strategy = st.builds(
-    scxml::Datamodel,
+scxml_Datamodel_strategy = st.builds(
+    scxml_Datamodel,
     schema=
         safe_text
 )
-scxml::InitialState_strategy = st.builds(
-    scxml::InitialState,
+scxml_Transition_strategy = st.builds(
+    scxml_Transition,
+)
+scxml_Data_strategy = st.builds(
+    scxml_Data,
+    src=
+        safe_text,
+    id=
+        safe_text,
+    expr=
+        safe_text
+)
+scxml_Node_strategy = st.builds(
+    scxml_Node,
 )
 DatamodelContainer_strategy = st.builds(
     DatamodelContainer,
@@ -1736,41 +1736,38 @@ DatamodelContainer_strategy = st.builds(
 AbstractSimpleState_strategy = st.builds(
     AbstractSimpleState,
 )
-scxml::SimpleState_strategy = st.builds(
-    scxml::SimpleState,
+scxml_SimpleState_strategy = st.builds(
+    scxml_SimpleState,
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-scxml::State_strategy = st.builds(
-    scxml::State,
+scxml_State_strategy = st.builds(
+    scxml_State,
 )
-scxml::StateChart_strategy = st.builds(
-    scxml::StateChart,
-    id=
+scxml_StateChart_strategy = st.builds(
+    scxml_StateChart,
+    xmlns=
         safe_text,
     version=
         safe_text,
-    exmode=
-        safe_text,
     profile=
         safe_text,
-    xmlns=
+    id=
+        safe_text,
+    exmode=
         safe_text
 )
 
-@given(instance=scxml::Description_strategy)
+@given(instance=scxml_Description_strategy)
 @settings(max_examples=50)
-def test_scxml::description_instantiation(instance):
-    assert isinstance(instance, scxml::Description)
-
-@given(instance=scxml::Description_strategy)
-def test_scxml::description_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_scxml_description_instantiation(instance):
+    assert isinstance(instance, scxml_Description)
 
 
-@given(instance=scxml::Description_strategy)
-def test_scxml::description_value_setter(instance):
+
+@given(instance=scxml_Description_strategy)
+def test_scxml_description_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1780,73 +1777,64 @@ def test_scxml::description_value_setter(instance):
 def test_iadaptable_instantiation(instance):
     assert isinstance(instance, IAdaptable)
 
-@given(instance=scxml::DescriptionContainer_strategy)
+@given(instance=scxml_DescriptionContainer_strategy)
 @settings(max_examples=50)
-def test_scxml::descriptioncontainer_instantiation(instance):
-    assert isinstance(instance, scxml::DescriptionContainer)
+def test_scxml_descriptioncontainer_instantiation(instance):
+    assert isinstance(instance, scxml_DescriptionContainer)
 
-@given(instance=scxml::DatamodelContainer_strategy)
+@given(instance=scxml_DatamodelContainer_strategy)
 @settings(max_examples=50)
-def test_scxml::datamodelcontainer_instantiation(instance):
-    assert isinstance(instance, scxml::DatamodelContainer)
+def test_scxml_datamodelcontainer_instantiation(instance):
+    assert isinstance(instance, scxml_DatamodelContainer)
 
-@given(instance=scxml::EClass_strategy)
+@given(instance=scxml_EClass_strategy)
 @settings(max_examples=50)
-def test_scxml::eclass_instantiation(instance):
-    assert isinstance(instance, scxml::EClass)
+def test_scxml_eclass_instantiation(instance):
+    assert isinstance(instance, scxml_EClass)
 
-@given(instance=scxml::IAdaptable_strategy)
+@given(instance=scxml_IAdaptable_strategy)
 @settings(max_examples=50)
-def test_scxml::iadaptable_instantiation(instance):
-    assert isinstance(instance, scxml::IAdaptable)
+def test_scxml_iadaptable_instantiation(instance):
+    assert isinstance(instance, scxml_IAdaptable)
 
 @given(instance=Data_strategy)
 @settings(max_examples=50)
 def test_data_instantiation(instance):
     assert isinstance(instance, Data)
 
-@given(instance=scxml::XData_strategy)
+@given(instance=scxml_XData_strategy)
 @settings(max_examples=50)
-def test_scxml::xdata_instantiation(instance):
-    assert isinstance(instance, scxml::XData)
+def test_scxml_xdata_instantiation(instance):
+    assert isinstance(instance, scxml_XData)
 
-@given(instance=scxml::XObject_strategy)
+@given(instance=scxml_XObject_strategy)
 @settings(max_examples=50)
-def test_scxml::xobject_instantiation(instance):
-    assert isinstance(instance, scxml::XObject)
-
-@given(instance=scxml::XObject_strategy)
-def test_scxml::xobject_exchange_type(instance):
-    assert isinstance(instance.exchange, bool)
+def test_scxml_xobject_instantiation(instance):
+    assert isinstance(instance, scxml_XObject)
 
 
-@given(instance=scxml::XObject_strategy)
-def test_scxml::xobject_exchange_setter(instance):
-    original = instance.exchange
-    instance.exchange = original
-    assert instance.exchange == original
 
-@given(instance=scxml::XObject_strategy)
-def test_scxml::xobject_classifierName_type(instance):
-    assert isinstance(instance.classifierName, str)
-
-
-@given(instance=scxml::XObject_strategy)
-def test_scxml::xobject_classifierName_setter(instance):
+@given(instance=scxml_XObject_strategy)
+def test_scxml_xobject_classifierName_setter(instance):
     original = instance.classifierName
     instance.classifierName = original
     assert instance.classifierName == original
 
-@given(instance=scxml::XObject_strategy)
-def test_scxml::xobject_nsUri_type(instance):
-    assert isinstance(instance.nsUri, str)
 
 
-@given(instance=scxml::XObject_strategy)
-def test_scxml::xobject_nsUri_setter(instance):
+@given(instance=scxml_XObject_strategy)
+def test_scxml_xobject_nsUri_setter(instance):
     original = instance.nsUri
     instance.nsUri = original
     assert instance.nsUri == original
+
+
+
+@given(instance=scxml_XObject_strategy)
+def test_scxml_xobject_exchange_setter(instance):
+    original = instance.exchange
+    instance.exchange = original
+    assert instance.exchange == original
 
 import warnings
 import copy
@@ -1854,9 +1842,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=scxml::XObject_strategy)
+@given(instance=scxml_XObject_strategy)
 @settings(max_examples=30)
-def test_scxml::xobject_registeradapter_changes_state(instance):
+def test_scxml_xobject_registeradapter_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1868,134 +1856,110 @@ def test_scxml::xobject_registeradapter_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'registerAdapter' in scxml::XObject is empty"
+        assert has_statements, f"Function 'registerAdapter' in scxml_XObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'registerAdapter' in scxml::XObject did not change state; check implementation")
+            warnings.warn(f"Operation 'registerAdapter' in scxml_XObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'registerAdapter' in scxml::XObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'registerAdapter' in scxml_XObject is not implemented or raised an error")
 
-@given(instance=scxml::Else_strategy)
+@given(instance=scxml_Else_strategy)
 @settings(max_examples=50)
-def test_scxml::else_instantiation(instance):
-    assert isinstance(instance, scxml::Else)
+def test_scxml_else_instantiation(instance):
+    assert isinstance(instance, scxml_Else)
 
 @given(instance=Conditional_strategy)
 @settings(max_examples=50)
 def test_conditional_instantiation(instance):
     assert isinstance(instance, Conditional)
 
-@given(instance=scxml::ElseIf_strategy)
+@given(instance=scxml_ElseIf_strategy)
 @settings(max_examples=50)
-def test_scxml::elseif_instantiation(instance):
-    assert isinstance(instance, scxml::ElseIf)
+def test_scxml_elseif_instantiation(instance):
+    assert isinstance(instance, scxml_ElseIf)
 
-@given(instance=scxml::Conditional_strategy)
+@given(instance=scxml_Conditional_strategy)
 @settings(max_examples=50)
-def test_scxml::conditional_instantiation(instance):
-    assert isinstance(instance, scxml::Conditional)
-
-@given(instance=scxml::Conditional_strategy)
-def test_scxml::conditional_cond_type(instance):
-    assert isinstance(instance.cond, str)
+def test_scxml_conditional_instantiation(instance):
+    assert isinstance(instance, scxml_Conditional)
 
 
-@given(instance=scxml::Conditional_strategy)
-def test_scxml::conditional_cond_setter(instance):
+
+@given(instance=scxml_Conditional_strategy)
+def test_scxml_conditional_cond_setter(instance):
     original = instance.cond
     instance.cond = original
     assert instance.cond == original
 
-@given(instance=scxml::Validate_strategy)
+@given(instance=scxml_Validate_strategy)
 @settings(max_examples=50)
-def test_scxml::validate_instantiation(instance):
-    assert isinstance(instance, scxml::Validate)
-
-@given(instance=scxml::Validate_strategy)
-def test_scxml::validate_schema_type(instance):
-    assert isinstance(instance.schema, str)
+def test_scxml_validate_instantiation(instance):
+    assert isinstance(instance, scxml_Validate)
 
 
-@given(instance=scxml::Validate_strategy)
-def test_scxml::validate_schema_setter(instance):
+
+@given(instance=scxml_Validate_strategy)
+def test_scxml_validate_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=scxml_Validate_strategy)
+def test_scxml_validate_schema_setter(instance):
     original = instance.schema
     instance.schema = original
     assert instance.schema == original
 
-@given(instance=scxml::Validate_strategy)
-def test_scxml::validate_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=scxml::Validate_strategy)
-def test_scxml::validate_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=scxml::Assign_strategy)
+@given(instance=scxml_Assign_strategy)
 @settings(max_examples=50)
-def test_scxml::assign_instantiation(instance):
-    assert isinstance(instance, scxml::Assign)
-
-@given(instance=scxml::Assign_strategy)
-def test_scxml::assign_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_scxml_assign_instantiation(instance):
+    assert isinstance(instance, scxml_Assign)
 
 
-@given(instance=scxml::Assign_strategy)
-def test_scxml::assign_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=scxml::Assign_strategy)
-def test_scxml::assign_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=scxml::Assign_strategy)
-def test_scxml::assign_location_setter(instance):
+@given(instance=scxml_Assign_strategy)
+def test_scxml_assign_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=scxml::Assign_strategy)
-def test_scxml::assign_expr_type(instance):
-    assert isinstance(instance.expr, str)
 
 
-@given(instance=scxml::Assign_strategy)
-def test_scxml::assign_expr_setter(instance):
+@given(instance=scxml_Assign_strategy)
+def test_scxml_assign_expr_setter(instance):
     original = instance.expr
     instance.expr = original
     assert instance.expr == original
 
-@given(instance=scxml::Cancel_strategy)
+
+
+@given(instance=scxml_Assign_strategy)
+def test_scxml_assign_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=scxml_Cancel_strategy)
 @settings(max_examples=50)
-def test_scxml::cancel_instantiation(instance):
-    assert isinstance(instance, scxml::Cancel)
-
-@given(instance=scxml::Cancel_strategy)
-def test_scxml::cancel_sendid_type(instance):
-    assert isinstance(instance.sendid, str)
+def test_scxml_cancel_instantiation(instance):
+    assert isinstance(instance, scxml_Cancel)
 
 
-@given(instance=scxml::Cancel_strategy)
-def test_scxml::cancel_sendid_setter(instance):
+
+@given(instance=scxml_Cancel_strategy)
+def test_scxml_cancel_sendid_setter(instance):
     original = instance.sendid
     instance.sendid = original
     assert instance.sendid == original
 
-@given(instance=scxml::Cancel_strategy)
-def test_scxml::cancel_sendidexpr_type(instance):
-    assert isinstance(instance.sendidexpr, str)
 
 
-@given(instance=scxml::Cancel_strategy)
-def test_scxml::cancel_sendidexpr_setter(instance):
+@given(instance=scxml_Cancel_strategy)
+def test_scxml_cancel_sendidexpr_setter(instance):
     original = instance.sendidexpr
     instance.sendidexpr = original
     assert instance.sendidexpr == original
@@ -2005,166 +1969,124 @@ def test_scxml::cancel_sendidexpr_setter(instance):
 def test_donedata_instantiation(instance):
     assert isinstance(instance, Donedata)
 
-@given(instance=scxml::Send_strategy)
+@given(instance=scxml_Send_strategy)
 @settings(max_examples=50)
-def test_scxml::send_instantiation(instance):
-    assert isinstance(instance, scxml::Send)
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_scxml_send_instantiation(instance):
+    assert isinstance(instance, scxml_Send)
 
 
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_delay_type(instance):
-    assert isinstance(instance.delay, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_delay_setter(instance):
-    original = instance.delay
-    instance.delay = original
-    assert instance.delay == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_targetexpr_type(instance):
-    assert isinstance(instance.targetexpr, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_targetexpr_setter(instance):
-    original = instance.targetexpr
-    instance.targetexpr = original
-    assert instance.targetexpr == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_namelist_type(instance):
-    assert isinstance(instance.namelist, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_namelist_setter(instance):
-    original = instance.namelist
-    instance.namelist = original
-    assert instance.namelist == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_hintsexpr_type(instance):
-    assert isinstance(instance.hintsexpr, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_hintsexpr_setter(instance):
-    original = instance.hintsexpr
-    instance.hintsexpr = original
-    assert instance.hintsexpr == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_target_type(instance):
-    assert isinstance(instance.target, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_target_setter(instance):
-    original = instance.target
-    instance.target = original
-    assert instance.target == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_idlocation_type(instance):
-    assert isinstance(instance.idlocation, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_idlocation_setter(instance):
-    original = instance.idlocation
-    instance.idlocation = original
-    assert instance.idlocation == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_delayexpr_type(instance):
-    assert isinstance(instance.delayexpr, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_delayexpr_setter(instance):
-    original = instance.delayexpr
-    instance.delayexpr = original
-    assert instance.delayexpr == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_typeexpr_type(instance):
-    assert isinstance(instance.typeexpr, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_typeexpr_setter(instance):
-    original = instance.typeexpr
-    instance.typeexpr = original
-    assert instance.typeexpr == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_eventexpr_type(instance):
-    assert isinstance(instance.eventexpr, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_eventexpr_setter(instance):
-    original = instance.eventexpr
-    instance.eventexpr = original
-    assert instance.eventexpr == original
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_hints_type(instance):
-    assert isinstance(instance.hints, str)
-
-
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_hints_setter(instance):
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_hints_setter(instance):
     original = instance.hints
     instance.hints = original
     assert instance.hints == original
 
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_event_type(instance):
-    assert isinstance(instance.event, str)
 
 
-@given(instance=scxml::Send_strategy)
-def test_scxml::send_event_setter(instance):
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=scxml::ExecutableContent_strategy)
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_delay_setter(instance):
+    original = instance.delay
+    instance.delay = original
+    assert instance.delay == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_hintsexpr_setter(instance):
+    original = instance.hintsexpr
+    instance.hintsexpr = original
+    assert instance.hintsexpr == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_namelist_setter(instance):
+    original = instance.namelist
+    instance.namelist = original
+    assert instance.namelist == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_target_setter(instance):
+    original = instance.target
+    instance.target = original
+    assert instance.target == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_eventexpr_setter(instance):
+    original = instance.eventexpr
+    instance.eventexpr = original
+    assert instance.eventexpr == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_targetexpr_setter(instance):
+    original = instance.targetexpr
+    instance.targetexpr = original
+    assert instance.targetexpr == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_idlocation_setter(instance):
+    original = instance.idlocation
+    instance.idlocation = original
+    assert instance.idlocation == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_delayexpr_setter(instance):
+    original = instance.delayexpr
+    instance.delayexpr = original
+    assert instance.delayexpr == original
+
+
+
+@given(instance=scxml_Send_strategy)
+def test_scxml_send_typeexpr_setter(instance):
+    original = instance.typeexpr
+    instance.typeexpr = original
+    assert instance.typeexpr == original
+
+@given(instance=scxml_ExecutableContent_strategy)
 @settings(max_examples=50)
-def test_scxml::executablecontent_instantiation(instance):
-    assert isinstance(instance, scxml::ExecutableContent)
-
-@given(instance=scxml::ExecutableContent_strategy)
-def test_scxml::executablecontent_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_scxml_executablecontent_instantiation(instance):
+    assert isinstance(instance, scxml_ExecutableContent)
 
 
-@given(instance=scxml::ExecutableContent_strategy)
-def test_scxml::executablecontent_group_setter(instance):
+
+@given(instance=scxml_ExecutableContent_strategy)
+def test_scxml_executablecontent_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
@@ -2174,196 +2096,154 @@ def test_scxml::executablecontent_group_setter(instance):
 def test_initialstate_instantiation(instance):
     assert isinstance(instance, InitialState)
 
-@given(instance=scxml::Invoke_strategy)
+@given(instance=scxml_Invoke_strategy)
 @settings(max_examples=50)
-def test_scxml::invoke_instantiation(instance):
-    assert isinstance(instance, scxml::Invoke)
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_idlocation_type(instance):
-    assert isinstance(instance.idlocation, str)
+def test_scxml_invoke_instantiation(instance):
+    assert isinstance(instance, scxml_Invoke)
 
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_idlocation_setter(instance):
-    original = instance.idlocation
-    instance.idlocation = original
-    assert instance.idlocation == original
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_namelist_type(instance):
-    assert isinstance(instance.namelist, str)
-
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_namelist_setter(instance):
-    original = instance.namelist
-    instance.namelist = original
-    assert instance.namelist == original
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_autoforward_type(instance):
-    assert isinstance(instance.autoforward, str)
-
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_autoforward_setter(instance):
-    original = instance.autoforward
-    instance.autoforward = original
-    assert instance.autoforward == original
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_typeexpr_type(instance):
-    assert isinstance(instance.typeexpr, str)
-
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_typeexpr_setter(instance):
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_typeexpr_setter(instance):
     original = instance.typeexpr
     instance.typeexpr = original
     assert instance.typeexpr == original
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_srcexpr_type(instance):
-    assert isinstance(instance.srcexpr, str)
 
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_srcexpr_setter(instance):
-    original = instance.srcexpr
-    instance.srcexpr = original
-    assert instance.srcexpr == original
-
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_idlocation_setter(instance):
+    original = instance.idlocation
+    instance.idlocation = original
+    assert instance.idlocation == original
 
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_type_setter(instance):
+
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_id_setter(instance):
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_srcexpr_setter(instance):
+    original = instance.srcexpr
+    instance.srcexpr = original
+    assert instance.srcexpr == original
+
+
+
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_src_type(instance):
-    assert isinstance(instance.src, str)
 
 
-@given(instance=scxml::Invoke_strategy)
-def test_scxml::invoke_src_setter(instance):
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_src_setter(instance):
     original = instance.src
     instance.src = original
     assert instance.src == original
 
-@given(instance=scxml::AbstractSimpleState_strategy)
+
+
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_namelist_setter(instance):
+    original = instance.namelist
+    instance.namelist = original
+    assert instance.namelist == original
+
+
+
+@given(instance=scxml_Invoke_strategy)
+def test_scxml_invoke_autoforward_setter(instance):
+    original = instance.autoforward
+    instance.autoforward = original
+    assert instance.autoforward == original
+
+@given(instance=scxml_AbstractSimpleState_strategy)
 @settings(max_examples=50)
-def test_scxml::abstractsimplestate_instantiation(instance):
-    assert isinstance(instance, scxml::AbstractSimpleState)
+def test_scxml_abstractsimplestate_instantiation(instance):
+    assert isinstance(instance, scxml_AbstractSimpleState)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=scxml::Raise_strategy)
+@given(instance=scxml_Raise_strategy)
 @settings(max_examples=50)
-def test_scxml::raise_instantiation(instance):
-    assert isinstance(instance, scxml::Raise)
-
-@given(instance=scxml::Raise_strategy)
-def test_scxml::raise_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_scxml_raise_instantiation(instance):
+    assert isinstance(instance, scxml_Raise)
 
 
-@given(instance=scxml::Raise_strategy)
-def test_scxml::raise_event_setter(instance):
+
+@given(instance=scxml_Raise_strategy)
+def test_scxml_raise_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=scxml::Log_strategy)
+@given(instance=scxml_Log_strategy)
 @settings(max_examples=50)
-def test_scxml::log_instantiation(instance):
-    assert isinstance(instance, scxml::Log)
-
-@given(instance=scxml::Log_strategy)
-def test_scxml::log_level_type(instance):
-    assert isinstance(instance.level, str)
+def test_scxml_log_instantiation(instance):
+    assert isinstance(instance, scxml_Log)
 
 
-@given(instance=scxml::Log_strategy)
-def test_scxml::log_level_setter(instance):
+
+@given(instance=scxml_Log_strategy)
+def test_scxml_log_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=scxml::Log_strategy)
-def test_scxml::log_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
-@given(instance=scxml::Log_strategy)
-def test_scxml::log_label_setter(instance):
+@given(instance=scxml_Log_strategy)
+def test_scxml_log_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=scxml::Log_strategy)
-def test_scxml::log_expr_type(instance):
-    assert isinstance(instance.expr, str)
 
 
-@given(instance=scxml::Log_strategy)
-def test_scxml::log_expr_setter(instance):
+@given(instance=scxml_Log_strategy)
+def test_scxml_log_expr_setter(instance):
     original = instance.expr
     instance.expr = original
     assert instance.expr == original
 
-@given(instance=scxml::EObject_strategy)
+@given(instance=scxml_EObject_strategy)
 @settings(max_examples=50)
-def test_scxml::eobject_instantiation(instance):
-    assert isinstance(instance, scxml::EObject)
+def test_scxml_eobject_instantiation(instance):
+    assert isinstance(instance, scxml_EObject)
 
-@given(instance=scxml::Donedata_strategy)
+@given(instance=scxml_Donedata_strategy)
 @settings(max_examples=50)
-def test_scxml::donedata_instantiation(instance):
-    assert isinstance(instance, scxml::Donedata)
+def test_scxml_donedata_instantiation(instance):
+    assert isinstance(instance, scxml_Donedata)
 
-@given(instance=scxml::Param_strategy)
+@given(instance=scxml_Param_strategy)
 @settings(max_examples=50)
-def test_scxml::param_instantiation(instance):
-    assert isinstance(instance, scxml::Param)
-
-@given(instance=scxml::Param_strategy)
-def test_scxml::param_expr_type(instance):
-    assert isinstance(instance.expr, str)
+def test_scxml_param_instantiation(instance):
+    assert isinstance(instance, scxml_Param)
 
 
-@given(instance=scxml::Param_strategy)
-def test_scxml::param_expr_setter(instance):
+
+@given(instance=scxml_Param_strategy)
+def test_scxml_param_expr_setter(instance):
     original = instance.expr
     instance.expr = original
     assert instance.expr == original
 
-@given(instance=scxml::Param_strategy)
-def test_scxml::param_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=scxml::Param_strategy)
-def test_scxml::param_name_setter(instance):
+@given(instance=scxml_Param_strategy)
+def test_scxml_param_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2373,55 +2253,46 @@ def test_scxml::param_name_setter(instance):
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=scxml::Content_strategy)
+@given(instance=scxml_Content_strategy)
 @settings(max_examples=50)
-def test_scxml::content_instantiation(instance):
-    assert isinstance(instance, scxml::Content)
-
-@given(instance=scxml::Content_strategy)
-def test_scxml::content_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_scxml_content_instantiation(instance):
+    assert isinstance(instance, scxml_Content)
 
 
-@given(instance=scxml::Content_strategy)
-def test_scxml::content_value_setter(instance):
+
+@given(instance=scxml_Content_strategy)
+def test_scxml_content_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=scxml::ParallelState_strategy)
+@given(instance=scxml_ParallelState_strategy)
 @settings(max_examples=50)
-def test_scxml::parallelstate_instantiation(instance):
-    assert isinstance(instance, scxml::ParallelState)
+def test_scxml_parallelstate_instantiation(instance):
+    assert isinstance(instance, scxml_ParallelState)
 
-@given(instance=scxml::AbstractState_strategy)
+@given(instance=scxml_AbstractState_strategy)
 @settings(max_examples=50)
-def test_scxml::abstractstate_instantiation(instance):
-    assert isinstance(instance, scxml::AbstractState)
+def test_scxml_abstractstate_instantiation(instance):
+    assert isinstance(instance, scxml_AbstractState)
 
-@given(instance=scxml::CondEventTransition_strategy)
+@given(instance=scxml_CondEventTransition_strategy)
 @settings(max_examples=50)
-def test_scxml::condeventtransition_instantiation(instance):
-    assert isinstance(instance, scxml::CondEventTransition)
-
-@given(instance=scxml::CondEventTransition_strategy)
-def test_scxml::condeventtransition_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_scxml_condeventtransition_instantiation(instance):
+    assert isinstance(instance, scxml_CondEventTransition)
 
 
-@given(instance=scxml::CondEventTransition_strategy)
-def test_scxml::condeventtransition_event_setter(instance):
+
+@given(instance=scxml_CondEventTransition_strategy)
+def test_scxml_condeventtransition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=scxml::CondEventTransition_strategy)
-def test_scxml::condeventtransition_cond_type(instance):
-    assert isinstance(instance.cond, str)
 
 
-@given(instance=scxml::CondEventTransition_strategy)
-def test_scxml::condeventtransition_cond_setter(instance):
+@given(instance=scxml_CondEventTransition_strategy)
+def test_scxml_condeventtransition_cond_setter(instance):
     original = instance.cond
     instance.cond = original
     assert instance.cond == original
@@ -2431,46 +2302,43 @@ def test_scxml::condeventtransition_cond_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=scxml::TransitionTarget_strategy)
+@given(instance=scxml_TransitionTarget_strategy)
 @settings(max_examples=50)
-def test_scxml::transitiontarget_instantiation(instance):
-    assert isinstance(instance, scxml::TransitionTarget)
-
-@given(instance=scxml::TransitionTarget_strategy)
-def test_scxml::transitiontarget_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_scxml_transitiontarget_instantiation(instance):
+    assert isinstance(instance, scxml_TransitionTarget)
 
 
-@given(instance=scxml::TransitionTarget_strategy)
-def test_scxml::transitiontarget_id_setter(instance):
+
+@given(instance=scxml_TransitionTarget_strategy)
+def test_scxml_transitiontarget_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=scxml::TransitionSource_strategy)
+@given(instance=scxml_TransitionSource_strategy)
 @settings(max_examples=50)
-def test_scxml::transitionsource_instantiation(instance):
-    assert isinstance(instance, scxml::TransitionSource)
+def test_scxml_transitionsource_instantiation(instance):
+    assert isinstance(instance, scxml_TransitionSource)
 
 @given(instance=ExecutableContent_strategy)
 @settings(max_examples=50)
 def test_executablecontent_instantiation(instance):
     assert isinstance(instance, ExecutableContent)
 
-@given(instance=scxml::OnEntry_strategy)
+@given(instance=scxml_If_strategy)
 @settings(max_examples=50)
-def test_scxml::onentry_instantiation(instance):
-    assert isinstance(instance, scxml::OnEntry)
+def test_scxml_if_instantiation(instance):
+    assert isinstance(instance, scxml_If)
 
-@given(instance=scxml::If_strategy)
+@given(instance=scxml_OnExit_strategy)
 @settings(max_examples=50)
-def test_scxml::if_instantiation(instance):
-    assert isinstance(instance, scxml::If)
+def test_scxml_onexit_instantiation(instance):
+    assert isinstance(instance, scxml_OnExit)
 
-@given(instance=scxml::OnExit_strategy)
+@given(instance=scxml_OnEntry_strategy)
 @settings(max_examples=50)
-def test_scxml::onexit_instantiation(instance):
-    assert isinstance(instance, scxml::OnExit)
+def test_scxml_onentry_instantiation(instance):
+    assert isinstance(instance, scxml_OnEntry)
 
 @given(instance=TransitionSource_strategy)
 @settings(max_examples=50)
@@ -2482,39 +2350,33 @@ def test_transitionsource_instantiation(instance):
 def test_transitiontarget_instantiation(instance):
     assert isinstance(instance, TransitionTarget)
 
-@given(instance=scxml::FinalState_strategy)
+@given(instance=scxml_HistoryState_strategy)
 @settings(max_examples=50)
-def test_scxml::finalstate_instantiation(instance):
-    assert isinstance(instance, scxml::FinalState)
-
-@given(instance=scxml::HistoryState_strategy)
-@settings(max_examples=50)
-def test_scxml::historystate_instantiation(instance):
-    assert isinstance(instance, scxml::HistoryState)
-
-@given(instance=scxml::HistoryState_strategy)
-def test_scxml::historystate_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_scxml_historystate_instantiation(instance):
+    assert isinstance(instance, scxml_HistoryState)
 
 
-@given(instance=scxml::HistoryState_strategy)
-def test_scxml::historystate_type_setter(instance):
+
+@given(instance=scxml_HistoryState_strategy)
+def test_scxml_historystate_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=scxml::Script_strategy)
+@given(instance=scxml_FinalState_strategy)
 @settings(max_examples=50)
-def test_scxml::script_instantiation(instance):
-    assert isinstance(instance, scxml::Script)
+def test_scxml_finalstate_instantiation(instance):
+    assert isinstance(instance, scxml_FinalState)
 
-@given(instance=scxml::Script_strategy)
-def test_scxml::script_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=scxml_Script_strategy)
+@settings(max_examples=50)
+def test_scxml_script_instantiation(instance):
+    assert isinstance(instance, scxml_Script)
 
 
-@given(instance=scxml::Script_strategy)
-def test_scxml::script_value_setter(instance):
+
+@given(instance=scxml_Script_strategy)
+def test_scxml_script_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2524,74 +2386,62 @@ def test_scxml::script_value_setter(instance):
 def test_descriptioncontainer_instantiation(instance):
     assert isinstance(instance, DescriptionContainer)
 
-@given(instance=scxml::Transition_strategy)
+@given(instance=scxml_InitialState_strategy)
 @settings(max_examples=50)
-def test_scxml::transition_instantiation(instance):
-    assert isinstance(instance, scxml::Transition)
+def test_scxml_initialstate_instantiation(instance):
+    assert isinstance(instance, scxml_InitialState)
 
-@given(instance=scxml::Data_strategy)
+@given(instance=scxml_Datamodel_strategy)
 @settings(max_examples=50)
-def test_scxml::data_instantiation(instance):
-    assert isinstance(instance, scxml::Data)
-
-@given(instance=scxml::Data_strategy)
-def test_scxml::data_expr_type(instance):
-    assert isinstance(instance.expr, str)
+def test_scxml_datamodel_instantiation(instance):
+    assert isinstance(instance, scxml_Datamodel)
 
 
-@given(instance=scxml::Data_strategy)
-def test_scxml::data_expr_setter(instance):
-    original = instance.expr
-    instance.expr = original
-    assert instance.expr == original
 
-@given(instance=scxml::Data_strategy)
-def test_scxml::data_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=scxml::Data_strategy)
-def test_scxml::data_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=scxml::Data_strategy)
-def test_scxml::data_src_type(instance):
-    assert isinstance(instance.src, str)
-
-
-@given(instance=scxml::Data_strategy)
-def test_scxml::data_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
-
-@given(instance=scxml::Node_strategy)
-@settings(max_examples=50)
-def test_scxml::node_instantiation(instance):
-    assert isinstance(instance, scxml::Node)
-
-@given(instance=scxml::Datamodel_strategy)
-@settings(max_examples=50)
-def test_scxml::datamodel_instantiation(instance):
-    assert isinstance(instance, scxml::Datamodel)
-
-@given(instance=scxml::Datamodel_strategy)
-def test_scxml::datamodel_schema_type(instance):
-    assert isinstance(instance.schema, str)
-
-
-@given(instance=scxml::Datamodel_strategy)
-def test_scxml::datamodel_schema_setter(instance):
+@given(instance=scxml_Datamodel_strategy)
+def test_scxml_datamodel_schema_setter(instance):
     original = instance.schema
     instance.schema = original
     assert instance.schema == original
 
-@given(instance=scxml::InitialState_strategy)
+@given(instance=scxml_Transition_strategy)
 @settings(max_examples=50)
-def test_scxml::initialstate_instantiation(instance):
-    assert isinstance(instance, scxml::InitialState)
+def test_scxml_transition_instantiation(instance):
+    assert isinstance(instance, scxml_Transition)
+
+@given(instance=scxml_Data_strategy)
+@settings(max_examples=50)
+def test_scxml_data_instantiation(instance):
+    assert isinstance(instance, scxml_Data)
+
+
+
+@given(instance=scxml_Data_strategy)
+def test_scxml_data_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+
+
+@given(instance=scxml_Data_strategy)
+def test_scxml_data_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=scxml_Data_strategy)
+def test_scxml_data_expr_setter(instance):
+    original = instance.expr
+    instance.expr = original
+    assert instance.expr == original
+
+@given(instance=scxml_Node_strategy)
+@settings(max_examples=50)
+def test_scxml_node_instantiation(instance):
+    assert isinstance(instance, scxml_Node)
 
 @given(instance=DatamodelContainer_strategy)
 @settings(max_examples=50)
@@ -2603,77 +2453,62 @@ def test_datamodelcontainer_instantiation(instance):
 def test_abstractsimplestate_instantiation(instance):
     assert isinstance(instance, AbstractSimpleState)
 
-@given(instance=scxml::SimpleState_strategy)
+@given(instance=scxml_SimpleState_strategy)
 @settings(max_examples=50)
-def test_scxml::simplestate_instantiation(instance):
-    assert isinstance(instance, scxml::SimpleState)
+def test_scxml_simplestate_instantiation(instance):
+    assert isinstance(instance, scxml_SimpleState)
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=scxml::State_strategy)
+@given(instance=scxml_State_strategy)
 @settings(max_examples=50)
-def test_scxml::state_instantiation(instance):
-    assert isinstance(instance, scxml::State)
+def test_scxml_state_instantiation(instance):
+    assert isinstance(instance, scxml_State)
 
-@given(instance=scxml::StateChart_strategy)
+@given(instance=scxml_StateChart_strategy)
 @settings(max_examples=50)
-def test_scxml::statechart_instantiation(instance):
-    assert isinstance(instance, scxml::StateChart)
-
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_scxml_statechart_instantiation(instance):
+    assert isinstance(instance, scxml_StateChart)
 
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_version_type(instance):
-    assert isinstance(instance.version, str)
+@given(instance=scxml_StateChart_strategy)
+def test_scxml_statechart_xmlns_setter(instance):
+    original = instance.xmlns
+    instance.xmlns = original
+    assert instance.xmlns == original
 
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_version_setter(instance):
+
+@given(instance=scxml_StateChart_strategy)
+def test_scxml_statechart_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_exmode_type(instance):
-    assert isinstance(instance.exmode, str)
 
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_exmode_setter(instance):
-    original = instance.exmode
-    instance.exmode = original
-    assert instance.exmode == original
-
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_profile_type(instance):
-    assert isinstance(instance.profile, str)
-
-
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_profile_setter(instance):
+@given(instance=scxml_StateChart_strategy)
+def test_scxml_statechart_profile_setter(instance):
     original = instance.profile
     instance.profile = original
     assert instance.profile == original
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_xmlns_type(instance):
-    assert isinstance(instance.xmlns, str)
 
 
-@given(instance=scxml::StateChart_strategy)
-def test_scxml::statechart_xmlns_setter(instance):
-    original = instance.xmlns
-    instance.xmlns = original
-    assert instance.xmlns == original
+@given(instance=scxml_StateChart_strategy)
+def test_scxml_statechart_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=scxml_StateChart_strategy)
+def test_scxml_statechart_exmode_setter(instance):
+    original = instance.exmode
+    instance.exmode = original
+    assert instance.exmode == original

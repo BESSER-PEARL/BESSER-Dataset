@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cycle::C,
-    cycle::B,
-    cycle::A,
+from python_code import (
+    cycle_C,
+    cycle_B,
+    cycle_A,
 )
 
 # =============================================================================
@@ -17,81 +17,81 @@ from classes import (
 
 
 
-def test_cycle::c_is_not_abstract():
-    assert not inspect.isabstract(cycle::C)
+def test_cycle_c_is_not_abstract():
+    assert not inspect.isabstract(cycle_C)
 
 
-def test_cycle::c_constructor_exists():
-    assert callable(cycle::C.__init__)
+def test_cycle_c_constructor_exists():
+    assert callable(cycle_C.__init__)
 
 
-def test_cycle::c_constructor_args():
-    sig = inspect.signature(cycle::C.__init__)
+def test_cycle_c_constructor_args():
+    sig = inspect.signature(cycle_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cycle::b_is_not_abstract():
-    assert not inspect.isabstract(cycle::B)
+def test_cycle_b_is_not_abstract():
+    assert not inspect.isabstract(cycle_B)
 
 
-def test_cycle::b_constructor_exists():
-    assert callable(cycle::B.__init__)
+def test_cycle_b_constructor_exists():
+    assert callable(cycle_B.__init__)
 
 
-def test_cycle::b_constructor_args():
-    sig = inspect.signature(cycle::B.__init__)
+def test_cycle_b_constructor_args():
+    sig = inspect.signature(cycle_B.__init__)
     params = list(sig.parameters.keys())
-    assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
 
-def test_cycle::b_has_y():
-    assert hasattr(cycle::B, "y")
+def test_cycle_b_has_x():
+    assert hasattr(cycle_B, "x")
     descriptor = None
-    for klass in cycle::B.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cycle::b_has_x():
-    assert hasattr(cycle::B, "x")
-    descriptor = None
-    for klass in cycle::B.__mro__:
+    for klass in cycle_B.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
+def test_cycle_b_has_y():
+    assert hasattr(cycle_B, "y")
+    descriptor = None
+    for klass in cycle_B.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cycle::a_is_not_abstract():
-    assert not inspect.isabstract(cycle::A)
+
+def test_cycle_a_is_not_abstract():
+    assert not inspect.isabstract(cycle_A)
 
 
-def test_cycle::a_constructor_exists():
-    assert callable(cycle::A.__init__)
+def test_cycle_a_constructor_exists():
+    assert callable(cycle_A.__init__)
 
 
-def test_cycle::a_constructor_args():
-    sig = inspect.signature(cycle::A.__init__)
+def test_cycle_a_constructor_args():
+    sig = inspect.signature(cycle_A.__init__)
     params = list(sig.parameters.keys())
     assert "j" in params, "Missing parameter 'j'"
     assert "i" in params, "Missing parameter 'i'"
 
-def test_cycle::a_has_j():
-    assert hasattr(cycle::A, "j")
+def test_cycle_a_has_j():
+    assert hasattr(cycle_A, "j")
     descriptor = None
-    for klass in cycle::A.__mro__:
+    for klass in cycle_A.__mro__:
         if "j" in klass.__dict__:
             descriptor = klass.__dict__["j"]
             break
     assert isinstance(descriptor, property)
 
-def test_cycle::a_has_i():
-    assert hasattr(cycle::A, "i")
+def test_cycle_a_has_i():
+    assert hasattr(cycle_A, "i")
     descriptor = None
-    for klass in cycle::A.__mro__:
+    for klass in cycle_A.__mro__:
         if "i" in klass.__dict__:
             descriptor = klass.__dict__["i"]
             break
@@ -109,79 +109,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cycle::C_strategy = st.builds(
-    cycle::C,
+cycle_C_strategy = st.builds(
+    cycle_C,
 )
-cycle::B_strategy = st.builds(
-    cycle::B,
-    y=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+cycle_B_strategy = st.builds(
+    cycle_B,
     x=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    y=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-cycle::A_strategy = st.builds(
-    cycle::A,
+cycle_A_strategy = st.builds(
+    cycle_A,
     j=
         st.integers(),
     i=
         st.integers()
 )
 
-@given(instance=cycle::C_strategy)
+@given(instance=cycle_C_strategy)
 @settings(max_examples=50)
-def test_cycle::c_instantiation(instance):
-    assert isinstance(instance, cycle::C)
+def test_cycle_c_instantiation(instance):
+    assert isinstance(instance, cycle_C)
 
-@given(instance=cycle::B_strategy)
+@given(instance=cycle_B_strategy)
 @settings(max_examples=50)
-def test_cycle::b_instantiation(instance):
-    assert isinstance(instance, cycle::B)
-
-@given(instance=cycle::B_strategy)
-def test_cycle::b_y_type(instance):
-    assert isinstance(instance.y, float)
+def test_cycle_b_instantiation(instance):
+    assert isinstance(instance, cycle_B)
 
 
-@given(instance=cycle::B_strategy)
-def test_cycle::b_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
 
-@given(instance=cycle::B_strategy)
-def test_cycle::b_x_type(instance):
-    assert isinstance(instance.x, float)
-
-
-@given(instance=cycle::B_strategy)
-def test_cycle::b_x_setter(instance):
+@given(instance=cycle_B_strategy)
+def test_cycle_b_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=cycle::A_strategy)
+
+
+@given(instance=cycle_B_strategy)
+def test_cycle_b_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+@given(instance=cycle_A_strategy)
 @settings(max_examples=50)
-def test_cycle::a_instantiation(instance):
-    assert isinstance(instance, cycle::A)
-
-@given(instance=cycle::A_strategy)
-def test_cycle::a_j_type(instance):
-    assert isinstance(instance.j, int)
+def test_cycle_a_instantiation(instance):
+    assert isinstance(instance, cycle_A)
 
 
-@given(instance=cycle::A_strategy)
-def test_cycle::a_j_setter(instance):
+
+@given(instance=cycle_A_strategy)
+def test_cycle_a_j_setter(instance):
     original = instance.j
     instance.j = original
     assert instance.j == original
 
-@given(instance=cycle::A_strategy)
-def test_cycle::a_i_type(instance):
-    assert isinstance(instance.i, int)
 
 
-@given(instance=cycle::A_strategy)
-def test_cycle::a_i_setter(instance):
+@given(instance=cycle_A_strategy)
+def test_cycle_a_i_setter(instance):
     original = instance.i
     instance.i = original
     assert instance.i == original

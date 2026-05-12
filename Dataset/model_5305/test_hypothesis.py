@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    typeB::ElementB,
-    typeB::RootB,
+from python_code import (
+    typeB_ElementB,
+    typeB_RootB,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_typeb::elementb_is_not_abstract():
-    assert not inspect.isabstract(typeB::ElementB)
+def test_typeb_elementb_is_not_abstract():
+    assert not inspect.isabstract(typeB_ElementB)
 
 
-def test_typeb::elementb_constructor_exists():
-    assert callable(typeB::ElementB.__init__)
+def test_typeb_elementb_constructor_exists():
+    assert callable(typeB_ElementB.__init__)
 
 
-def test_typeb::elementb_constructor_args():
-    sig = inspect.signature(typeB::ElementB.__init__)
+def test_typeb_elementb_constructor_args():
+    sig = inspect.signature(typeB_ElementB.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typeb::elementb_has_name():
-    assert hasattr(typeB::ElementB, "name")
+def test_typeb_elementb_has_name():
+    assert hasattr(typeB_ElementB, "name")
     descriptor = None
-    for klass in typeB::ElementB.__mro__:
+    for klass in typeB_ElementB.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_typeb::elementb_has_name():
 
 
 
-def test_typeb::rootb_is_not_abstract():
-    assert not inspect.isabstract(typeB::RootB)
+def test_typeb_rootb_is_not_abstract():
+    assert not inspect.isabstract(typeB_RootB)
 
 
-def test_typeb::rootb_constructor_exists():
-    assert callable(typeB::RootB.__init__)
+def test_typeb_rootb_constructor_exists():
+    assert callable(typeB_RootB.__init__)
 
 
-def test_typeb::rootb_constructor_args():
-    sig = inspect.signature(typeB::RootB.__init__)
+def test_typeb_rootb_constructor_args():
+    sig = inspect.signature(typeB_RootB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-typeB::ElementB_strategy = st.builds(
-    typeB::ElementB,
+typeB_ElementB_strategy = st.builds(
+    typeB_ElementB,
     name=
         safe_text
 )
-typeB::RootB_strategy = st.builds(
-    typeB::RootB,
+typeB_RootB_strategy = st.builds(
+    typeB_RootB,
 )
 
-@given(instance=typeB::ElementB_strategy)
+@given(instance=typeB_ElementB_strategy)
 @settings(max_examples=50)
-def test_typeb::elementb_instantiation(instance):
-    assert isinstance(instance, typeB::ElementB)
-
-@given(instance=typeB::ElementB_strategy)
-def test_typeb::elementb_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typeb_elementb_instantiation(instance):
+    assert isinstance(instance, typeB_ElementB)
 
 
-@given(instance=typeB::ElementB_strategy)
-def test_typeb::elementb_name_setter(instance):
+
+@given(instance=typeB_ElementB_strategy)
+def test_typeb_elementb_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=typeB::RootB_strategy)
+@given(instance=typeB_RootB_strategy)
 @settings(max_examples=50)
-def test_typeb::rootb_instantiation(instance):
-    assert isinstance(instance, typeB::RootB)
+def test_typeb_rootb_instantiation(instance):
+    assert isinstance(instance, typeB_RootB)

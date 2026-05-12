@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    py::ExprEq,
-    py::ExprNot,
-    py::ExprSym,
-    py::ExprTl,
-    py::ExprHd,
-    py::ExprList,
-    py::LExpr,
-    py::ExprCons,
-    py::ExprOr,
-    py::While,
-    py::Foreach,
-    py::For,
-    py::Affect,
-    py::Nop,
-    py::Expr,
-    py::If,
-    py::EObject,
-    py::ExprAnd,
-    py::ExprSimple,
-    py::Input,
-    py::Definition,
-    py::FunctionP,
-    py::Program,
-    py::Wh,
-    py::Command,
-    py::Output,
-    py::Commands,
+from python_code import (
+    py_ExprEq,
+    py_ExprNot,
+    py_ExprSym,
+    py_ExprTl,
+    py_ExprHd,
+    py_ExprList,
+    py_LExpr,
+    py_ExprCons,
+    py_ExprOr,
+    py_While,
+    py_Foreach,
+    py_For,
+    py_Affect,
+    py_Nop,
+    py_Expr,
+    py_If,
+    py_EObject,
+    py_ExprAnd,
+    py_ExprSimple,
+    py_Input,
+    py_Definition,
+    py_FunctionP,
+    py_Program,
+    py_Wh,
+    py_Command,
+    py_Output,
+    py_Commands,
 )
 
 # =============================================================================
@@ -41,51 +41,51 @@ from classes import (
 
 
 
-def test_py::expreq_is_not_abstract():
-    assert not inspect.isabstract(py::ExprEq)
+def test_py_expreq_is_not_abstract():
+    assert not inspect.isabstract(py_ExprEq)
 
 
-def test_py::expreq_constructor_exists():
-    assert callable(py::ExprEq.__init__)
+def test_py_expreq_constructor_exists():
+    assert callable(py_ExprEq.__init__)
 
 
-def test_py::expreq_constructor_args():
-    sig = inspect.signature(py::ExprEq.__init__)
+def test_py_expreq_constructor_args():
+    sig = inspect.signature(py_ExprEq.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprnot_is_not_abstract():
-    assert not inspect.isabstract(py::ExprNot)
+def test_py_exprnot_is_not_abstract():
+    assert not inspect.isabstract(py_ExprNot)
 
 
-def test_py::exprnot_constructor_exists():
-    assert callable(py::ExprNot.__init__)
+def test_py_exprnot_constructor_exists():
+    assert callable(py_ExprNot.__init__)
 
 
-def test_py::exprnot_constructor_args():
-    sig = inspect.signature(py::ExprNot.__init__)
+def test_py_exprnot_constructor_args():
+    sig = inspect.signature(py_ExprNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprsym_is_not_abstract():
-    assert not inspect.isabstract(py::ExprSym)
+def test_py_exprsym_is_not_abstract():
+    assert not inspect.isabstract(py_ExprSym)
 
 
-def test_py::exprsym_constructor_exists():
-    assert callable(py::ExprSym.__init__)
+def test_py_exprsym_constructor_exists():
+    assert callable(py_ExprSym.__init__)
 
 
-def test_py::exprsym_constructor_args():
-    sig = inspect.signature(py::ExprSym.__init__)
+def test_py_exprsym_constructor_args():
+    sig = inspect.signature(py_ExprSym.__init__)
     params = list(sig.parameters.keys())
     assert "arg1" in params, "Missing parameter 'arg1'"
 
-def test_py::exprsym_has_arg1():
-    assert hasattr(py::ExprSym, "arg1")
+def test_py_exprsym_has_arg1():
+    assert hasattr(py_ExprSym, "arg1")
     descriptor = None
-    for klass in py::ExprSym.__mro__:
+    for klass in py_ExprSym.__mro__:
         if "arg1" in klass.__dict__:
             descriptor = klass.__dict__["arg1"]
             break
@@ -93,121 +93,121 @@ def test_py::exprsym_has_arg1():
 
 
 
-def test_py::exprtl_is_not_abstract():
-    assert not inspect.isabstract(py::ExprTl)
+def test_py_exprtl_is_not_abstract():
+    assert not inspect.isabstract(py_ExprTl)
 
 
-def test_py::exprtl_constructor_exists():
-    assert callable(py::ExprTl.__init__)
+def test_py_exprtl_constructor_exists():
+    assert callable(py_ExprTl.__init__)
 
 
-def test_py::exprtl_constructor_args():
-    sig = inspect.signature(py::ExprTl.__init__)
+def test_py_exprtl_constructor_args():
+    sig = inspect.signature(py_ExprTl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprhd_is_not_abstract():
-    assert not inspect.isabstract(py::ExprHd)
+def test_py_exprhd_is_not_abstract():
+    assert not inspect.isabstract(py_ExprHd)
 
 
-def test_py::exprhd_constructor_exists():
-    assert callable(py::ExprHd.__init__)
+def test_py_exprhd_constructor_exists():
+    assert callable(py_ExprHd.__init__)
 
 
-def test_py::exprhd_constructor_args():
-    sig = inspect.signature(py::ExprHd.__init__)
+def test_py_exprhd_constructor_args():
+    sig = inspect.signature(py_ExprHd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprlist_is_not_abstract():
-    assert not inspect.isabstract(py::ExprList)
+def test_py_exprlist_is_not_abstract():
+    assert not inspect.isabstract(py_ExprList)
 
 
-def test_py::exprlist_constructor_exists():
-    assert callable(py::ExprList.__init__)
+def test_py_exprlist_constructor_exists():
+    assert callable(py_ExprList.__init__)
 
 
-def test_py::exprlist_constructor_args():
-    sig = inspect.signature(py::ExprList.__init__)
+def test_py_exprlist_constructor_args():
+    sig = inspect.signature(py_ExprList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::lexpr_is_not_abstract():
-    assert not inspect.isabstract(py::LExpr)
+def test_py_lexpr_is_not_abstract():
+    assert not inspect.isabstract(py_LExpr)
 
 
-def test_py::lexpr_constructor_exists():
-    assert callable(py::LExpr.__init__)
+def test_py_lexpr_constructor_exists():
+    assert callable(py_LExpr.__init__)
 
 
-def test_py::lexpr_constructor_args():
-    sig = inspect.signature(py::LExpr.__init__)
+def test_py_lexpr_constructor_args():
+    sig = inspect.signature(py_LExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprcons_is_not_abstract():
-    assert not inspect.isabstract(py::ExprCons)
+def test_py_exprcons_is_not_abstract():
+    assert not inspect.isabstract(py_ExprCons)
 
 
-def test_py::exprcons_constructor_exists():
-    assert callable(py::ExprCons.__init__)
+def test_py_exprcons_constructor_exists():
+    assert callable(py_ExprCons.__init__)
 
 
-def test_py::exprcons_constructor_args():
-    sig = inspect.signature(py::ExprCons.__init__)
+def test_py_exprcons_constructor_args():
+    sig = inspect.signature(py_ExprCons.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::expror_is_not_abstract():
-    assert not inspect.isabstract(py::ExprOr)
+def test_py_expror_is_not_abstract():
+    assert not inspect.isabstract(py_ExprOr)
 
 
-def test_py::expror_constructor_exists():
-    assert callable(py::ExprOr.__init__)
+def test_py_expror_constructor_exists():
+    assert callable(py_ExprOr.__init__)
 
 
-def test_py::expror_constructor_args():
-    sig = inspect.signature(py::ExprOr.__init__)
+def test_py_expror_constructor_args():
+    sig = inspect.signature(py_ExprOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::while_is_not_abstract():
-    assert not inspect.isabstract(py::While)
+def test_py_while_is_not_abstract():
+    assert not inspect.isabstract(py_While)
 
 
-def test_py::while_constructor_exists():
-    assert callable(py::While.__init__)
+def test_py_while_constructor_exists():
+    assert callable(py_While.__init__)
 
 
-def test_py::while_constructor_args():
-    sig = inspect.signature(py::While.__init__)
+def test_py_while_constructor_args():
+    sig = inspect.signature(py_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::foreach_is_not_abstract():
-    assert not inspect.isabstract(py::Foreach)
+def test_py_foreach_is_not_abstract():
+    assert not inspect.isabstract(py_Foreach)
 
 
-def test_py::foreach_constructor_exists():
-    assert callable(py::Foreach.__init__)
+def test_py_foreach_constructor_exists():
+    assert callable(py_Foreach.__init__)
 
 
-def test_py::foreach_constructor_args():
-    sig = inspect.signature(py::Foreach.__init__)
+def test_py_foreach_constructor_args():
+    sig = inspect.signature(py_Foreach.__init__)
     params = list(sig.parameters.keys())
     assert "var" in params, "Missing parameter 'var'"
 
-def test_py::foreach_has_var():
-    assert hasattr(py::Foreach, "var")
+def test_py_foreach_has_var():
+    assert hasattr(py_Foreach, "var")
     descriptor = None
-    for klass in py::Foreach.__mro__:
+    for klass in py_Foreach.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
             break
@@ -215,37 +215,37 @@ def test_py::foreach_has_var():
 
 
 
-def test_py::for_is_not_abstract():
-    assert not inspect.isabstract(py::For)
+def test_py_for_is_not_abstract():
+    assert not inspect.isabstract(py_For)
 
 
-def test_py::for_constructor_exists():
-    assert callable(py::For.__init__)
+def test_py_for_constructor_exists():
+    assert callable(py_For.__init__)
 
 
-def test_py::for_constructor_args():
-    sig = inspect.signature(py::For.__init__)
+def test_py_for_constructor_args():
+    sig = inspect.signature(py_For.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::affect_is_not_abstract():
-    assert not inspect.isabstract(py::Affect)
+def test_py_affect_is_not_abstract():
+    assert not inspect.isabstract(py_Affect)
 
 
-def test_py::affect_constructor_exists():
-    assert callable(py::Affect.__init__)
+def test_py_affect_constructor_exists():
+    assert callable(py_Affect.__init__)
 
 
-def test_py::affect_constructor_args():
-    sig = inspect.signature(py::Affect.__init__)
+def test_py_affect_constructor_args():
+    sig = inspect.signature(py_Affect.__init__)
     params = list(sig.parameters.keys())
     assert "vars" in params, "Missing parameter 'vars'"
 
-def test_py::affect_has_vars():
-    assert hasattr(py::Affect, "vars")
+def test_py_affect_has_vars():
+    assert hasattr(py_Affect, "vars")
     descriptor = None
-    for klass in py::Affect.__mro__:
+    for klass in py_Affect.__mro__:
         if "vars" in klass.__dict__:
             descriptor = klass.__dict__["vars"]
             break
@@ -253,23 +253,23 @@ def test_py::affect_has_vars():
 
 
 
-def test_py::nop_is_not_abstract():
-    assert not inspect.isabstract(py::Nop)
+def test_py_nop_is_not_abstract():
+    assert not inspect.isabstract(py_Nop)
 
 
-def test_py::nop_constructor_exists():
-    assert callable(py::Nop.__init__)
+def test_py_nop_constructor_exists():
+    assert callable(py_Nop.__init__)
 
 
-def test_py::nop_constructor_args():
-    sig = inspect.signature(py::Nop.__init__)
+def test_py_nop_constructor_args():
+    sig = inspect.signature(py_Nop.__init__)
     params = list(sig.parameters.keys())
     assert "nop" in params, "Missing parameter 'nop'"
 
-def test_py::nop_has_nop():
-    assert hasattr(py::Nop, "nop")
+def test_py_nop_has_nop():
+    assert hasattr(py_Nop, "nop")
     descriptor = None
-    for klass in py::Nop.__mro__:
+    for klass in py_Nop.__mro__:
         if "nop" in klass.__dict__:
             descriptor = klass.__dict__["nop"]
             break
@@ -277,123 +277,123 @@ def test_py::nop_has_nop():
 
 
 
-def test_py::expr_is_not_abstract():
-    assert not inspect.isabstract(py::Expr)
+def test_py_expr_is_not_abstract():
+    assert not inspect.isabstract(py_Expr)
 
 
-def test_py::expr_constructor_exists():
-    assert callable(py::Expr.__init__)
+def test_py_expr_constructor_exists():
+    assert callable(py_Expr.__init__)
 
 
-def test_py::expr_constructor_args():
-    sig = inspect.signature(py::Expr.__init__)
+def test_py_expr_constructor_args():
+    sig = inspect.signature(py_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::if_is_not_abstract():
-    assert not inspect.isabstract(py::If)
+def test_py_if_is_not_abstract():
+    assert not inspect.isabstract(py_If)
 
 
-def test_py::if_constructor_exists():
-    assert callable(py::If.__init__)
+def test_py_if_constructor_exists():
+    assert callable(py_If.__init__)
 
 
-def test_py::if_constructor_args():
-    sig = inspect.signature(py::If.__init__)
+def test_py_if_constructor_args():
+    sig = inspect.signature(py_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::eobject_is_not_abstract():
-    assert not inspect.isabstract(py::EObject)
+def test_py_eobject_is_not_abstract():
+    assert not inspect.isabstract(py_EObject)
 
 
-def test_py::eobject_constructor_exists():
-    assert callable(py::EObject.__init__)
+def test_py_eobject_constructor_exists():
+    assert callable(py_EObject.__init__)
 
 
-def test_py::eobject_constructor_args():
-    sig = inspect.signature(py::EObject.__init__)
+def test_py_eobject_constructor_args():
+    sig = inspect.signature(py_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprand_is_not_abstract():
-    assert not inspect.isabstract(py::ExprAnd)
+def test_py_exprand_is_not_abstract():
+    assert not inspect.isabstract(py_ExprAnd)
 
 
-def test_py::exprand_constructor_exists():
-    assert callable(py::ExprAnd.__init__)
+def test_py_exprand_constructor_exists():
+    assert callable(py_ExprAnd.__init__)
 
 
-def test_py::exprand_constructor_args():
-    sig = inspect.signature(py::ExprAnd.__init__)
+def test_py_exprand_constructor_args():
+    sig = inspect.signature(py_ExprAnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::exprsimple_is_not_abstract():
-    assert not inspect.isabstract(py::ExprSimple)
+def test_py_exprsimple_is_not_abstract():
+    assert not inspect.isabstract(py_ExprSimple)
 
 
-def test_py::exprsimple_constructor_exists():
-    assert callable(py::ExprSimple.__init__)
+def test_py_exprsimple_constructor_exists():
+    assert callable(py_ExprSimple.__init__)
 
 
-def test_py::exprsimple_constructor_args():
-    sig = inspect.signature(py::ExprSimple.__init__)
+def test_py_exprsimple_constructor_args():
+    sig = inspect.signature(py_ExprSimple.__init__)
     params = list(sig.parameters.keys())
-    assert "varSimple" in params, "Missing parameter 'varSimple'"
-    assert "sym" in params, "Missing parameter 'sym'"
     assert "str" in params, "Missing parameter 'str'"
+    assert "sym" in params, "Missing parameter 'sym'"
+    assert "varSimple" in params, "Missing parameter 'varSimple'"
 
-def test_py::exprsimple_has_varSimple():
-    assert hasattr(py::ExprSimple, "varSimple")
+def test_py_exprsimple_has_str():
+    assert hasattr(py_ExprSimple, "str")
     descriptor = None
-    for klass in py::ExprSimple.__mro__:
-        if "varSimple" in klass.__dict__:
-            descriptor = klass.__dict__["varSimple"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_py::exprsimple_has_sym():
-    assert hasattr(py::ExprSimple, "sym")
-    descriptor = None
-    for klass in py::ExprSimple.__mro__:
-        if "sym" in klass.__dict__:
-            descriptor = klass.__dict__["sym"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_py::exprsimple_has_str():
-    assert hasattr(py::ExprSimple, "str")
-    descriptor = None
-    for klass in py::ExprSimple.__mro__:
+    for klass in py_ExprSimple.__mro__:
         if "str" in klass.__dict__:
             descriptor = klass.__dict__["str"]
             break
     assert isinstance(descriptor, property)
 
+def test_py_exprsimple_has_sym():
+    assert hasattr(py_ExprSimple, "sym")
+    descriptor = None
+    for klass in py_ExprSimple.__mro__:
+        if "sym" in klass.__dict__:
+            descriptor = klass.__dict__["sym"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_py_exprsimple_has_varSimple():
+    assert hasattr(py_ExprSimple, "varSimple")
+    descriptor = None
+    for klass in py_ExprSimple.__mro__:
+        if "varSimple" in klass.__dict__:
+            descriptor = klass.__dict__["varSimple"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_py::input_is_not_abstract():
-    assert not inspect.isabstract(py::Input)
+
+def test_py_input_is_not_abstract():
+    assert not inspect.isabstract(py_Input)
 
 
-def test_py::input_constructor_exists():
-    assert callable(py::Input.__init__)
+def test_py_input_constructor_exists():
+    assert callable(py_Input.__init__)
 
 
-def test_py::input_constructor_args():
-    sig = inspect.signature(py::Input.__init__)
+def test_py_input_constructor_args():
+    sig = inspect.signature(py_Input.__init__)
     params = list(sig.parameters.keys())
     assert "vars" in params, "Missing parameter 'vars'"
 
-def test_py::input_has_vars():
-    assert hasattr(py::Input, "vars")
+def test_py_input_has_vars():
+    assert hasattr(py_Input, "vars")
     descriptor = None
-    for klass in py::Input.__mro__:
+    for klass in py_Input.__mro__:
         if "vars" in klass.__dict__:
             descriptor = klass.__dict__["vars"]
             break
@@ -401,37 +401,37 @@ def test_py::input_has_vars():
 
 
 
-def test_py::definition_is_not_abstract():
-    assert not inspect.isabstract(py::Definition)
+def test_py_definition_is_not_abstract():
+    assert not inspect.isabstract(py_Definition)
 
 
-def test_py::definition_constructor_exists():
-    assert callable(py::Definition.__init__)
+def test_py_definition_constructor_exists():
+    assert callable(py_Definition.__init__)
 
 
-def test_py::definition_constructor_args():
-    sig = inspect.signature(py::Definition.__init__)
+def test_py_definition_constructor_args():
+    sig = inspect.signature(py_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::functionp_is_not_abstract():
-    assert not inspect.isabstract(py::FunctionP)
+def test_py_functionp_is_not_abstract():
+    assert not inspect.isabstract(py_FunctionP)
 
 
-def test_py::functionp_constructor_exists():
-    assert callable(py::FunctionP.__init__)
+def test_py_functionp_constructor_exists():
+    assert callable(py_FunctionP.__init__)
 
 
-def test_py::functionp_constructor_args():
-    sig = inspect.signature(py::FunctionP.__init__)
+def test_py_functionp_constructor_args():
+    sig = inspect.signature(py_FunctionP.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_py::functionp_has_name():
-    assert hasattr(py::FunctionP, "name")
+def test_py_functionp_has_name():
+    assert hasattr(py_FunctionP, "name")
     descriptor = None
-    for klass in py::FunctionP.__mro__:
+    for klass in py_FunctionP.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -439,65 +439,65 @@ def test_py::functionp_has_name():
 
 
 
-def test_py::program_is_not_abstract():
-    assert not inspect.isabstract(py::Program)
+def test_py_program_is_not_abstract():
+    assert not inspect.isabstract(py_Program)
 
 
-def test_py::program_constructor_exists():
-    assert callable(py::Program.__init__)
+def test_py_program_constructor_exists():
+    assert callable(py_Program.__init__)
 
 
-def test_py::program_constructor_args():
-    sig = inspect.signature(py::Program.__init__)
+def test_py_program_constructor_args():
+    sig = inspect.signature(py_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::wh_is_not_abstract():
-    assert not inspect.isabstract(py::Wh)
+def test_py_wh_is_not_abstract():
+    assert not inspect.isabstract(py_Wh)
 
 
-def test_py::wh_constructor_exists():
-    assert callable(py::Wh.__init__)
+def test_py_wh_constructor_exists():
+    assert callable(py_Wh.__init__)
 
 
-def test_py::wh_constructor_args():
-    sig = inspect.signature(py::Wh.__init__)
+def test_py_wh_constructor_args():
+    sig = inspect.signature(py_Wh.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::command_is_not_abstract():
-    assert not inspect.isabstract(py::Command)
+def test_py_command_is_not_abstract():
+    assert not inspect.isabstract(py_Command)
 
 
-def test_py::command_constructor_exists():
-    assert callable(py::Command.__init__)
+def test_py_command_constructor_exists():
+    assert callable(py_Command.__init__)
 
 
-def test_py::command_constructor_args():
-    sig = inspect.signature(py::Command.__init__)
+def test_py_command_constructor_args():
+    sig = inspect.signature(py_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_py::output_is_not_abstract():
-    assert not inspect.isabstract(py::Output)
+def test_py_output_is_not_abstract():
+    assert not inspect.isabstract(py_Output)
 
 
-def test_py::output_constructor_exists():
-    assert callable(py::Output.__init__)
+def test_py_output_constructor_exists():
+    assert callable(py_Output.__init__)
 
 
-def test_py::output_constructor_args():
-    sig = inspect.signature(py::Output.__init__)
+def test_py_output_constructor_args():
+    sig = inspect.signature(py_Output.__init__)
     params = list(sig.parameters.keys())
     assert "vars" in params, "Missing parameter 'vars'"
 
-def test_py::output_has_vars():
-    assert hasattr(py::Output, "vars")
+def test_py_output_has_vars():
+    assert hasattr(py_Output, "vars")
     descriptor = None
-    for klass in py::Output.__mro__:
+    for klass in py_Output.__mro__:
         if "vars" in klass.__dict__:
             descriptor = klass.__dict__["vars"]
             break
@@ -505,16 +505,16 @@ def test_py::output_has_vars():
 
 
 
-def test_py::commands_is_not_abstract():
-    assert not inspect.isabstract(py::Commands)
+def test_py_commands_is_not_abstract():
+    assert not inspect.isabstract(py_Commands)
 
 
-def test_py::commands_constructor_exists():
-    assert callable(py::Commands.__init__)
+def test_py_commands_constructor_exists():
+    assert callable(py_Commands.__init__)
 
 
-def test_py::commands_constructor_args():
-    sig = inspect.signature(py::Commands.__init__)
+def test_py_commands_constructor_args():
+    sig = inspect.signature(py_Commands.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -529,349 +529,319 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-py::ExprEq_strategy = st.builds(
-    py::ExprEq,
+py_ExprEq_strategy = st.builds(
+    py_ExprEq,
 )
-py::ExprNot_strategy = st.builds(
-    py::ExprNot,
+py_ExprNot_strategy = st.builds(
+    py_ExprNot,
 )
-py::ExprSym_strategy = st.builds(
-    py::ExprSym,
+py_ExprSym_strategy = st.builds(
+    py_ExprSym,
     arg1=
         safe_text
 )
-py::ExprTl_strategy = st.builds(
-    py::ExprTl,
+py_ExprTl_strategy = st.builds(
+    py_ExprTl,
 )
-py::ExprHd_strategy = st.builds(
-    py::ExprHd,
+py_ExprHd_strategy = st.builds(
+    py_ExprHd,
 )
-py::ExprList_strategy = st.builds(
-    py::ExprList,
+py_ExprList_strategy = st.builds(
+    py_ExprList,
 )
-py::LExpr_strategy = st.builds(
-    py::LExpr,
+py_LExpr_strategy = st.builds(
+    py_LExpr,
 )
-py::ExprCons_strategy = st.builds(
-    py::ExprCons,
+py_ExprCons_strategy = st.builds(
+    py_ExprCons,
 )
-py::ExprOr_strategy = st.builds(
-    py::ExprOr,
+py_ExprOr_strategy = st.builds(
+    py_ExprOr,
 )
-py::While_strategy = st.builds(
-    py::While,
+py_While_strategy = st.builds(
+    py_While,
 )
-py::Foreach_strategy = st.builds(
-    py::Foreach,
+py_Foreach_strategy = st.builds(
+    py_Foreach,
     var=
         safe_text
 )
-py::For_strategy = st.builds(
-    py::For,
+py_For_strategy = st.builds(
+    py_For,
 )
-py::Affect_strategy = st.builds(
-    py::Affect,
+py_Affect_strategy = st.builds(
+    py_Affect,
     vars=
         safe_text
 )
-py::Nop_strategy = st.builds(
-    py::Nop,
+py_Nop_strategy = st.builds(
+    py_Nop,
     nop=
         safe_text
 )
-py::Expr_strategy = st.builds(
-    py::Expr,
+py_Expr_strategy = st.builds(
+    py_Expr,
 )
-py::If_strategy = st.builds(
-    py::If,
+py_If_strategy = st.builds(
+    py_If,
 )
-py::EObject_strategy = st.builds(
-    py::EObject,
+py_EObject_strategy = st.builds(
+    py_EObject,
 )
-py::ExprAnd_strategy = st.builds(
-    py::ExprAnd,
+py_ExprAnd_strategy = st.builds(
+    py_ExprAnd,
 )
-py::ExprSimple_strategy = st.builds(
-    py::ExprSimple,
-    varSimple=
+py_ExprSimple_strategy = st.builds(
+    py_ExprSimple,
+    str=
         safe_text,
     sym=
         safe_text,
-    str=
+    varSimple=
         safe_text
 )
-py::Input_strategy = st.builds(
-    py::Input,
+py_Input_strategy = st.builds(
+    py_Input,
     vars=
         safe_text
 )
-py::Definition_strategy = st.builds(
-    py::Definition,
+py_Definition_strategy = st.builds(
+    py_Definition,
 )
-py::FunctionP_strategy = st.builds(
-    py::FunctionP,
+py_FunctionP_strategy = st.builds(
+    py_FunctionP,
     name=
         safe_text
 )
-py::Program_strategy = st.builds(
-    py::Program,
+py_Program_strategy = st.builds(
+    py_Program,
 )
-py::Wh_strategy = st.builds(
-    py::Wh,
+py_Wh_strategy = st.builds(
+    py_Wh,
 )
-py::Command_strategy = st.builds(
-    py::Command,
+py_Command_strategy = st.builds(
+    py_Command,
 )
-py::Output_strategy = st.builds(
-    py::Output,
+py_Output_strategy = st.builds(
+    py_Output,
     vars=
         safe_text
 )
-py::Commands_strategy = st.builds(
-    py::Commands,
+py_Commands_strategy = st.builds(
+    py_Commands,
 )
 
-@given(instance=py::ExprEq_strategy)
+@given(instance=py_ExprEq_strategy)
 @settings(max_examples=50)
-def test_py::expreq_instantiation(instance):
-    assert isinstance(instance, py::ExprEq)
+def test_py_expreq_instantiation(instance):
+    assert isinstance(instance, py_ExprEq)
 
-@given(instance=py::ExprNot_strategy)
+@given(instance=py_ExprNot_strategy)
 @settings(max_examples=50)
-def test_py::exprnot_instantiation(instance):
-    assert isinstance(instance, py::ExprNot)
+def test_py_exprnot_instantiation(instance):
+    assert isinstance(instance, py_ExprNot)
 
-@given(instance=py::ExprSym_strategy)
+@given(instance=py_ExprSym_strategy)
 @settings(max_examples=50)
-def test_py::exprsym_instantiation(instance):
-    assert isinstance(instance, py::ExprSym)
-
-@given(instance=py::ExprSym_strategy)
-def test_py::exprsym_arg1_type(instance):
-    assert isinstance(instance.arg1, str)
+def test_py_exprsym_instantiation(instance):
+    assert isinstance(instance, py_ExprSym)
 
 
-@given(instance=py::ExprSym_strategy)
-def test_py::exprsym_arg1_setter(instance):
+
+@given(instance=py_ExprSym_strategy)
+def test_py_exprsym_arg1_setter(instance):
     original = instance.arg1
     instance.arg1 = original
     assert instance.arg1 == original
 
-@given(instance=py::ExprTl_strategy)
+@given(instance=py_ExprTl_strategy)
 @settings(max_examples=50)
-def test_py::exprtl_instantiation(instance):
-    assert isinstance(instance, py::ExprTl)
+def test_py_exprtl_instantiation(instance):
+    assert isinstance(instance, py_ExprTl)
 
-@given(instance=py::ExprHd_strategy)
+@given(instance=py_ExprHd_strategy)
 @settings(max_examples=50)
-def test_py::exprhd_instantiation(instance):
-    assert isinstance(instance, py::ExprHd)
+def test_py_exprhd_instantiation(instance):
+    assert isinstance(instance, py_ExprHd)
 
-@given(instance=py::ExprList_strategy)
+@given(instance=py_ExprList_strategy)
 @settings(max_examples=50)
-def test_py::exprlist_instantiation(instance):
-    assert isinstance(instance, py::ExprList)
+def test_py_exprlist_instantiation(instance):
+    assert isinstance(instance, py_ExprList)
 
-@given(instance=py::LExpr_strategy)
+@given(instance=py_LExpr_strategy)
 @settings(max_examples=50)
-def test_py::lexpr_instantiation(instance):
-    assert isinstance(instance, py::LExpr)
+def test_py_lexpr_instantiation(instance):
+    assert isinstance(instance, py_LExpr)
 
-@given(instance=py::ExprCons_strategy)
+@given(instance=py_ExprCons_strategy)
 @settings(max_examples=50)
-def test_py::exprcons_instantiation(instance):
-    assert isinstance(instance, py::ExprCons)
+def test_py_exprcons_instantiation(instance):
+    assert isinstance(instance, py_ExprCons)
 
-@given(instance=py::ExprOr_strategy)
+@given(instance=py_ExprOr_strategy)
 @settings(max_examples=50)
-def test_py::expror_instantiation(instance):
-    assert isinstance(instance, py::ExprOr)
+def test_py_expror_instantiation(instance):
+    assert isinstance(instance, py_ExprOr)
 
-@given(instance=py::While_strategy)
+@given(instance=py_While_strategy)
 @settings(max_examples=50)
-def test_py::while_instantiation(instance):
-    assert isinstance(instance, py::While)
+def test_py_while_instantiation(instance):
+    assert isinstance(instance, py_While)
 
-@given(instance=py::Foreach_strategy)
+@given(instance=py_Foreach_strategy)
 @settings(max_examples=50)
-def test_py::foreach_instantiation(instance):
-    assert isinstance(instance, py::Foreach)
-
-@given(instance=py::Foreach_strategy)
-def test_py::foreach_var_type(instance):
-    assert isinstance(instance.var, str)
+def test_py_foreach_instantiation(instance):
+    assert isinstance(instance, py_Foreach)
 
 
-@given(instance=py::Foreach_strategy)
-def test_py::foreach_var_setter(instance):
+
+@given(instance=py_Foreach_strategy)
+def test_py_foreach_var_setter(instance):
     original = instance.var
     instance.var = original
     assert instance.var == original
 
-@given(instance=py::For_strategy)
+@given(instance=py_For_strategy)
 @settings(max_examples=50)
-def test_py::for_instantiation(instance):
-    assert isinstance(instance, py::For)
+def test_py_for_instantiation(instance):
+    assert isinstance(instance, py_For)
 
-@given(instance=py::Affect_strategy)
+@given(instance=py_Affect_strategy)
 @settings(max_examples=50)
-def test_py::affect_instantiation(instance):
-    assert isinstance(instance, py::Affect)
-
-@given(instance=py::Affect_strategy)
-def test_py::affect_vars_type(instance):
-    assert isinstance(instance.vars, str)
+def test_py_affect_instantiation(instance):
+    assert isinstance(instance, py_Affect)
 
 
-@given(instance=py::Affect_strategy)
-def test_py::affect_vars_setter(instance):
+
+@given(instance=py_Affect_strategy)
+def test_py_affect_vars_setter(instance):
     original = instance.vars
     instance.vars = original
     assert instance.vars == original
 
-@given(instance=py::Nop_strategy)
+@given(instance=py_Nop_strategy)
 @settings(max_examples=50)
-def test_py::nop_instantiation(instance):
-    assert isinstance(instance, py::Nop)
-
-@given(instance=py::Nop_strategy)
-def test_py::nop_nop_type(instance):
-    assert isinstance(instance.nop, str)
+def test_py_nop_instantiation(instance):
+    assert isinstance(instance, py_Nop)
 
 
-@given(instance=py::Nop_strategy)
-def test_py::nop_nop_setter(instance):
+
+@given(instance=py_Nop_strategy)
+def test_py_nop_nop_setter(instance):
     original = instance.nop
     instance.nop = original
     assert instance.nop == original
 
-@given(instance=py::Expr_strategy)
+@given(instance=py_Expr_strategy)
 @settings(max_examples=50)
-def test_py::expr_instantiation(instance):
-    assert isinstance(instance, py::Expr)
+def test_py_expr_instantiation(instance):
+    assert isinstance(instance, py_Expr)
 
-@given(instance=py::If_strategy)
+@given(instance=py_If_strategy)
 @settings(max_examples=50)
-def test_py::if_instantiation(instance):
-    assert isinstance(instance, py::If)
+def test_py_if_instantiation(instance):
+    assert isinstance(instance, py_If)
 
-@given(instance=py::EObject_strategy)
+@given(instance=py_EObject_strategy)
 @settings(max_examples=50)
-def test_py::eobject_instantiation(instance):
-    assert isinstance(instance, py::EObject)
+def test_py_eobject_instantiation(instance):
+    assert isinstance(instance, py_EObject)
 
-@given(instance=py::ExprAnd_strategy)
+@given(instance=py_ExprAnd_strategy)
 @settings(max_examples=50)
-def test_py::exprand_instantiation(instance):
-    assert isinstance(instance, py::ExprAnd)
+def test_py_exprand_instantiation(instance):
+    assert isinstance(instance, py_ExprAnd)
 
-@given(instance=py::ExprSimple_strategy)
+@given(instance=py_ExprSimple_strategy)
 @settings(max_examples=50)
-def test_py::exprsimple_instantiation(instance):
-    assert isinstance(instance, py::ExprSimple)
-
-@given(instance=py::ExprSimple_strategy)
-def test_py::exprsimple_varSimple_type(instance):
-    assert isinstance(instance.varSimple, str)
+def test_py_exprsimple_instantiation(instance):
+    assert isinstance(instance, py_ExprSimple)
 
 
-@given(instance=py::ExprSimple_strategy)
-def test_py::exprsimple_varSimple_setter(instance):
-    original = instance.varSimple
-    instance.varSimple = original
-    assert instance.varSimple == original
 
-@given(instance=py::ExprSimple_strategy)
-def test_py::exprsimple_sym_type(instance):
-    assert isinstance(instance.sym, str)
-
-
-@given(instance=py::ExprSimple_strategy)
-def test_py::exprsimple_sym_setter(instance):
-    original = instance.sym
-    instance.sym = original
-    assert instance.sym == original
-
-@given(instance=py::ExprSimple_strategy)
-def test_py::exprsimple_str_type(instance):
-    assert isinstance(instance.str, str)
-
-
-@given(instance=py::ExprSimple_strategy)
-def test_py::exprsimple_str_setter(instance):
+@given(instance=py_ExprSimple_strategy)
+def test_py_exprsimple_str_setter(instance):
     original = instance.str
     instance.str = original
     assert instance.str == original
 
-@given(instance=py::Input_strategy)
+
+
+@given(instance=py_ExprSimple_strategy)
+def test_py_exprsimple_sym_setter(instance):
+    original = instance.sym
+    instance.sym = original
+    assert instance.sym == original
+
+
+
+@given(instance=py_ExprSimple_strategy)
+def test_py_exprsimple_varSimple_setter(instance):
+    original = instance.varSimple
+    instance.varSimple = original
+    assert instance.varSimple == original
+
+@given(instance=py_Input_strategy)
 @settings(max_examples=50)
-def test_py::input_instantiation(instance):
-    assert isinstance(instance, py::Input)
-
-@given(instance=py::Input_strategy)
-def test_py::input_vars_type(instance):
-    assert isinstance(instance.vars, str)
+def test_py_input_instantiation(instance):
+    assert isinstance(instance, py_Input)
 
 
-@given(instance=py::Input_strategy)
-def test_py::input_vars_setter(instance):
+
+@given(instance=py_Input_strategy)
+def test_py_input_vars_setter(instance):
     original = instance.vars
     instance.vars = original
     assert instance.vars == original
 
-@given(instance=py::Definition_strategy)
+@given(instance=py_Definition_strategy)
 @settings(max_examples=50)
-def test_py::definition_instantiation(instance):
-    assert isinstance(instance, py::Definition)
+def test_py_definition_instantiation(instance):
+    assert isinstance(instance, py_Definition)
 
-@given(instance=py::FunctionP_strategy)
+@given(instance=py_FunctionP_strategy)
 @settings(max_examples=50)
-def test_py::functionp_instantiation(instance):
-    assert isinstance(instance, py::FunctionP)
-
-@given(instance=py::FunctionP_strategy)
-def test_py::functionp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_py_functionp_instantiation(instance):
+    assert isinstance(instance, py_FunctionP)
 
 
-@given(instance=py::FunctionP_strategy)
-def test_py::functionp_name_setter(instance):
+
+@given(instance=py_FunctionP_strategy)
+def test_py_functionp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=py::Program_strategy)
+@given(instance=py_Program_strategy)
 @settings(max_examples=50)
-def test_py::program_instantiation(instance):
-    assert isinstance(instance, py::Program)
+def test_py_program_instantiation(instance):
+    assert isinstance(instance, py_Program)
 
-@given(instance=py::Wh_strategy)
+@given(instance=py_Wh_strategy)
 @settings(max_examples=50)
-def test_py::wh_instantiation(instance):
-    assert isinstance(instance, py::Wh)
+def test_py_wh_instantiation(instance):
+    assert isinstance(instance, py_Wh)
 
-@given(instance=py::Command_strategy)
+@given(instance=py_Command_strategy)
 @settings(max_examples=50)
-def test_py::command_instantiation(instance):
-    assert isinstance(instance, py::Command)
+def test_py_command_instantiation(instance):
+    assert isinstance(instance, py_Command)
 
-@given(instance=py::Output_strategy)
+@given(instance=py_Output_strategy)
 @settings(max_examples=50)
-def test_py::output_instantiation(instance):
-    assert isinstance(instance, py::Output)
-
-@given(instance=py::Output_strategy)
-def test_py::output_vars_type(instance):
-    assert isinstance(instance.vars, str)
+def test_py_output_instantiation(instance):
+    assert isinstance(instance, py_Output)
 
 
-@given(instance=py::Output_strategy)
-def test_py::output_vars_setter(instance):
+
+@given(instance=py_Output_strategy)
+def test_py_output_vars_setter(instance):
     original = instance.vars
     instance.vars = original
     assert instance.vars == original
 
-@given(instance=py::Commands_strategy)
+@given(instance=py_Commands_strategy)
 @settings(max_examples=50)
-def test_py::commands_instantiation(instance):
-    assert isinstance(instance, py::Commands)
+def test_py_commands_instantiation(instance):
+    assert isinstance(instance, py_Commands)

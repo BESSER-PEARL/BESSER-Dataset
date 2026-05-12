@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    organization::core::Cass,
-    organization::ABase,
+from python_code import (
+    organization_core_Cass,
+    organization_ABase,
     ABase,
-    organization::Employee,
-    organization::Company,
-    organization::Department,
+    organization_Department,
+    organization_Company,
+    organization_Employee,
 )
 
 # =============================================================================
@@ -20,37 +20,37 @@ from classes import (
 
 
 
-def test_organization::core::cass_is_not_abstract():
-    assert not inspect.isabstract(organization::core::Cass)
+def test_organization_core_cass_is_not_abstract():
+    assert not inspect.isabstract(organization_core_Cass)
 
 
-def test_organization::core::cass_constructor_exists():
-    assert callable(organization::core::Cass.__init__)
+def test_organization_core_cass_constructor_exists():
+    assert callable(organization_core_Cass.__init__)
 
 
-def test_organization::core::cass_constructor_args():
-    sig = inspect.signature(organization::core::Cass.__init__)
+def test_organization_core_cass_constructor_args():
+    sig = inspect.signature(organization_core_Cass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_organization::abase_is_not_abstract():
-    assert not inspect.isabstract(organization::ABase)
+def test_organization_abase_is_not_abstract():
+    assert not inspect.isabstract(organization_ABase)
 
 
-def test_organization::abase_constructor_exists():
-    assert callable(organization::ABase.__init__)
+def test_organization_abase_constructor_exists():
+    assert callable(organization_ABase.__init__)
 
 
-def test_organization::abase_constructor_args():
-    sig = inspect.signature(organization::ABase.__init__)
+def test_organization_abase_constructor_args():
+    sig = inspect.signature(organization_ABase.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_organization::abase_has_id():
-    assert hasattr(organization::ABase, "id")
+def test_organization_abase_has_id():
+    assert hasattr(organization_ABase, "id")
     descriptor = None
-    for klass in organization::ABase.__mro__:
+    for klass in organization_ABase.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -72,73 +72,73 @@ def test_abase_constructor_args():
 
 
 
-def test_organization::employee_is_not_abstract():
-    assert not inspect.isabstract(organization::Employee)
+def test_organization_department_is_not_abstract():
+    assert not inspect.isabstract(organization_Department)
 
 
-def test_organization::employee_constructor_exists():
-    assert callable(organization::Employee.__init__)
+def test_organization_department_constructor_exists():
+    assert callable(organization_Department.__init__)
 
 
-def test_organization::employee_constructor_args():
-    sig = inspect.signature(organization::Employee.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_organization::employee_has_name():
-    assert hasattr(organization::Employee, "name")
-    descriptor = None
-    for klass in organization::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_organization::company_is_not_abstract():
-    assert not inspect.isabstract(organization::Company)
-
-
-def test_organization::company_constructor_exists():
-    assert callable(organization::Company.__init__)
-
-
-def test_organization::company_constructor_args():
-    sig = inspect.signature(organization::Company.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_organization::company_has_name():
-    assert hasattr(organization::Company, "name")
-    descriptor = None
-    for klass in organization::Company.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_organization::department_is_not_abstract():
-    assert not inspect.isabstract(organization::Department)
-
-
-def test_organization::department_constructor_exists():
-    assert callable(organization::Department.__init__)
-
-
-def test_organization::department_constructor_args():
-    sig = inspect.signature(organization::Department.__init__)
+def test_organization_department_constructor_args():
+    sig = inspect.signature(organization_Department.__init__)
     params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
 
-def test_organization::department_has_number():
-    assert hasattr(organization::Department, "number")
+def test_organization_department_has_number():
+    assert hasattr(organization_Department, "number")
     descriptor = None
-    for klass in organization::Department.__mro__:
+    for klass in organization_Department.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_organization_company_is_not_abstract():
+    assert not inspect.isabstract(organization_Company)
+
+
+def test_organization_company_constructor_exists():
+    assert callable(organization_Company.__init__)
+
+
+def test_organization_company_constructor_args():
+    sig = inspect.signature(organization_Company.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_organization_company_has_name():
+    assert hasattr(organization_Company, "name")
+    descriptor = None
+    for klass in organization_Company.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_organization_employee_is_not_abstract():
+    assert not inspect.isabstract(organization_Employee)
+
+
+def test_organization_employee_constructor_exists():
+    assert callable(organization_Employee.__init__)
+
+
+def test_organization_employee_constructor_args():
+    sig = inspect.signature(organization_Employee.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_organization_employee_has_name():
+    assert hasattr(organization_Employee, "name")
+    descriptor = None
+    for klass in organization_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -154,50 +154,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-organization::core::Cass_strategy = st.builds(
-    organization::core::Cass,
+organization_core_Cass_strategy = st.builds(
+    organization_core_Cass,
 )
-organization::ABase_strategy = st.builds(
-    organization::ABase,
+organization_ABase_strategy = st.builds(
+    organization_ABase,
     id=
         safe_text
 )
 ABase_strategy = st.builds(
     ABase,
 )
-organization::Employee_strategy = st.builds(
-    organization::Employee,
-    name=
-        safe_text
-)
-organization::Company_strategy = st.builds(
-    organization::Company,
-    name=
-        safe_text
-)
-organization::Department_strategy = st.builds(
-    organization::Department,
+organization_Department_strategy = st.builds(
+    organization_Department,
     number=
         st.integers()
 )
+organization_Company_strategy = st.builds(
+    organization_Company,
+    name=
+        safe_text
+)
+organization_Employee_strategy = st.builds(
+    organization_Employee,
+    name=
+        safe_text
+)
 
-@given(instance=organization::core::Cass_strategy)
+@given(instance=organization_core_Cass_strategy)
 @settings(max_examples=50)
-def test_organization::core::cass_instantiation(instance):
-    assert isinstance(instance, organization::core::Cass)
+def test_organization_core_cass_instantiation(instance):
+    assert isinstance(instance, organization_core_Cass)
 
-@given(instance=organization::ABase_strategy)
+@given(instance=organization_ABase_strategy)
 @settings(max_examples=50)
-def test_organization::abase_instantiation(instance):
-    assert isinstance(instance, organization::ABase)
-
-@given(instance=organization::ABase_strategy)
-def test_organization::abase_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_organization_abase_instantiation(instance):
+    assert isinstance(instance, organization_ABase)
 
 
-@given(instance=organization::ABase_strategy)
-def test_organization::abase_id_setter(instance):
+
+@given(instance=organization_ABase_strategy)
+def test_organization_abase_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -207,50 +204,41 @@ def test_organization::abase_id_setter(instance):
 def test_abase_instantiation(instance):
     assert isinstance(instance, ABase)
 
-@given(instance=organization::Employee_strategy)
+@given(instance=organization_Department_strategy)
 @settings(max_examples=50)
-def test_organization::employee_instantiation(instance):
-    assert isinstance(instance, organization::Employee)
-
-@given(instance=organization::Employee_strategy)
-def test_organization::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_organization_department_instantiation(instance):
+    assert isinstance(instance, organization_Department)
 
 
-@given(instance=organization::Employee_strategy)
-def test_organization::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=organization::Company_strategy)
-@settings(max_examples=50)
-def test_organization::company_instantiation(instance):
-    assert isinstance(instance, organization::Company)
-
-@given(instance=organization::Company_strategy)
-def test_organization::company_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=organization::Company_strategy)
-def test_organization::company_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=organization::Department_strategy)
-@settings(max_examples=50)
-def test_organization::department_instantiation(instance):
-    assert isinstance(instance, organization::Department)
-
-@given(instance=organization::Department_strategy)
-def test_organization::department_number_type(instance):
-    assert isinstance(instance.number, int)
-
-
-@given(instance=organization::Department_strategy)
-def test_organization::department_number_setter(instance):
+@given(instance=organization_Department_strategy)
+def test_organization_department_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
+
+@given(instance=organization_Company_strategy)
+@settings(max_examples=50)
+def test_organization_company_instantiation(instance):
+    assert isinstance(instance, organization_Company)
+
+
+
+@given(instance=organization_Company_strategy)
+def test_organization_company_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=organization_Employee_strategy)
+@settings(max_examples=50)
+def test_organization_employee_instantiation(instance):
+    assert isinstance(instance, organization_Employee)
+
+
+
+@given(instance=organization_Employee_strategy)
+def test_organization_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

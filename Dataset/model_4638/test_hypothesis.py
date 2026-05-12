@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    notation::EReference,
+from python_code import (
+    notation_EReference,
     Value,
-    notation::ReferenceValue,
-    notation::AttributeValue,
-    notation::Definition,
-    notation::IdElement,
-    notation::EAttribute,
+    notation_ReferenceValue,
+    notation_AttributeValue,
+    notation_Definition,
+    notation_IdElement,
+    notation_EAttribute,
     TextualElement,
-    notation::Keyword,
-    notation::Value,
-    notation::Token,
+    notation_Keyword,
+    notation_Value,
+    notation_Token,
     Figure,
-    notation::Rectangle,
+    notation_Rectangle,
     GraphicalElement,
-    notation::Label,
-    notation::Line,
-    notation::Figure,
+    notation_Label,
+    notation_Line,
+    notation_Figure,
     NotationElement,
-    notation::Composite,
-    notation::SyntaxOf,
-    notation::TextualElement,
-    notation::GraphicalElement,
+    notation_SyntaxOf,
+    notation_TextualElement,
+    notation_Composite,
+    notation_GraphicalElement,
     IdElement,
-    notation::NotationElement,
+    notation_NotationElement,
     Color,
 )
 
@@ -39,16 +39,16 @@ from classes import (
 
 
 
-def test_notation::ereference_is_not_abstract():
-    assert not inspect.isabstract(notation::EReference)
+def test_notation_ereference_is_not_abstract():
+    assert not inspect.isabstract(notation_EReference)
 
 
-def test_notation::ereference_constructor_exists():
-    assert callable(notation::EReference.__init__)
+def test_notation_ereference_constructor_exists():
+    assert callable(notation_EReference.__init__)
 
 
-def test_notation::ereference_constructor_args():
-    sig = inspect.signature(notation::EReference.__init__)
+def test_notation_ereference_constructor_args():
+    sig = inspect.signature(notation_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -67,65 +67,65 @@ def test_value_constructor_args():
 
 
 
-def test_notation::referencevalue_is_not_abstract():
-    assert not inspect.isabstract(notation::ReferenceValue)
+def test_notation_referencevalue_is_not_abstract():
+    assert not inspect.isabstract(notation_ReferenceValue)
 
 
-def test_notation::referencevalue_constructor_exists():
-    assert callable(notation::ReferenceValue.__init__)
+def test_notation_referencevalue_constructor_exists():
+    assert callable(notation_ReferenceValue.__init__)
 
 
-def test_notation::referencevalue_constructor_args():
-    sig = inspect.signature(notation::ReferenceValue.__init__)
+def test_notation_referencevalue_constructor_args():
+    sig = inspect.signature(notation_ReferenceValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::attributevalue_is_not_abstract():
-    assert not inspect.isabstract(notation::AttributeValue)
+def test_notation_attributevalue_is_not_abstract():
+    assert not inspect.isabstract(notation_AttributeValue)
 
 
-def test_notation::attributevalue_constructor_exists():
-    assert callable(notation::AttributeValue.__init__)
+def test_notation_attributevalue_constructor_exists():
+    assert callable(notation_AttributeValue.__init__)
 
 
-def test_notation::attributevalue_constructor_args():
-    sig = inspect.signature(notation::AttributeValue.__init__)
+def test_notation_attributevalue_constructor_args():
+    sig = inspect.signature(notation_AttributeValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::definition_is_not_abstract():
-    assert not inspect.isabstract(notation::Definition)
+def test_notation_definition_is_not_abstract():
+    assert not inspect.isabstract(notation_Definition)
 
 
-def test_notation::definition_constructor_exists():
-    assert callable(notation::Definition.__init__)
+def test_notation_definition_constructor_exists():
+    assert callable(notation_Definition.__init__)
 
 
-def test_notation::definition_constructor_args():
-    sig = inspect.signature(notation::Definition.__init__)
+def test_notation_definition_constructor_args():
+    sig = inspect.signature(notation_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::idelement_is_not_abstract():
-    assert not inspect.isabstract(notation::IdElement)
+def test_notation_idelement_is_not_abstract():
+    assert not inspect.isabstract(notation_IdElement)
 
 
-def test_notation::idelement_constructor_exists():
-    assert callable(notation::IdElement.__init__)
+def test_notation_idelement_constructor_exists():
+    assert callable(notation_IdElement.__init__)
 
 
-def test_notation::idelement_constructor_args():
-    sig = inspect.signature(notation::IdElement.__init__)
+def test_notation_idelement_constructor_args():
+    sig = inspect.signature(notation_IdElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_notation::idelement_has_id():
-    assert hasattr(notation::IdElement, "id")
+def test_notation_idelement_has_id():
+    assert hasattr(notation_IdElement, "id")
     descriptor = None
-    for klass in notation::IdElement.__mro__:
+    for klass in notation_IdElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -133,16 +133,16 @@ def test_notation::idelement_has_id():
 
 
 
-def test_notation::eattribute_is_not_abstract():
-    assert not inspect.isabstract(notation::EAttribute)
+def test_notation_eattribute_is_not_abstract():
+    assert not inspect.isabstract(notation_EAttribute)
 
 
-def test_notation::eattribute_constructor_exists():
-    assert callable(notation::EAttribute.__init__)
+def test_notation_eattribute_constructor_exists():
+    assert callable(notation_EAttribute.__init__)
 
 
-def test_notation::eattribute_constructor_args():
-    sig = inspect.signature(notation::EAttribute.__init__)
+def test_notation_eattribute_constructor_args():
+    sig = inspect.signature(notation_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -161,37 +161,37 @@ def test_textualelement_constructor_args():
 
 
 
-def test_notation::keyword_is_not_abstract():
-    assert not inspect.isabstract(notation::Keyword)
+def test_notation_keyword_is_not_abstract():
+    assert not inspect.isabstract(notation_Keyword)
 
 
-def test_notation::keyword_constructor_exists():
-    assert callable(notation::Keyword.__init__)
+def test_notation_keyword_constructor_exists():
+    assert callable(notation_Keyword.__init__)
 
 
-def test_notation::keyword_constructor_args():
-    sig = inspect.signature(notation::Keyword.__init__)
+def test_notation_keyword_constructor_args():
+    sig = inspect.signature(notation_Keyword.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::value_is_not_abstract():
-    assert not inspect.isabstract(notation::Value)
+def test_notation_value_is_not_abstract():
+    assert not inspect.isabstract(notation_Value)
 
 
-def test_notation::value_constructor_exists():
-    assert callable(notation::Value.__init__)
+def test_notation_value_constructor_exists():
+    assert callable(notation_Value.__init__)
 
 
-def test_notation::value_constructor_args():
-    sig = inspect.signature(notation::Value.__init__)
+def test_notation_value_constructor_args():
+    sig = inspect.signature(notation_Value.__init__)
     params = list(sig.parameters.keys())
     assert "separator" in params, "Missing parameter 'separator'"
 
-def test_notation::value_has_separator():
-    assert hasattr(notation::Value, "separator")
+def test_notation_value_has_separator():
+    assert hasattr(notation_Value, "separator")
     descriptor = None
-    for klass in notation::Value.__mro__:
+    for klass in notation_Value.__mro__:
         if "separator" in klass.__dict__:
             descriptor = klass.__dict__["separator"]
             break
@@ -199,16 +199,16 @@ def test_notation::value_has_separator():
 
 
 
-def test_notation::token_is_not_abstract():
-    assert not inspect.isabstract(notation::Token)
+def test_notation_token_is_not_abstract():
+    assert not inspect.isabstract(notation_Token)
 
 
-def test_notation::token_constructor_exists():
-    assert callable(notation::Token.__init__)
+def test_notation_token_constructor_exists():
+    assert callable(notation_Token.__init__)
 
 
-def test_notation::token_constructor_args():
-    sig = inspect.signature(notation::Token.__init__)
+def test_notation_token_constructor_args():
+    sig = inspect.signature(notation_Token.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,16 +227,16 @@ def test_figure_constructor_args():
 
 
 
-def test_notation::rectangle_is_not_abstract():
-    assert not inspect.isabstract(notation::Rectangle)
+def test_notation_rectangle_is_not_abstract():
+    assert not inspect.isabstract(notation_Rectangle)
 
 
-def test_notation::rectangle_constructor_exists():
-    assert callable(notation::Rectangle.__init__)
+def test_notation_rectangle_constructor_exists():
+    assert callable(notation_Rectangle.__init__)
 
 
-def test_notation::rectangle_constructor_args():
-    sig = inspect.signature(notation::Rectangle.__init__)
+def test_notation_rectangle_constructor_args():
+    sig = inspect.signature(notation_Rectangle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -255,44 +255,44 @@ def test_graphicalelement_constructor_args():
 
 
 
-def test_notation::label_is_not_abstract():
-    assert not inspect.isabstract(notation::Label)
+def test_notation_label_is_not_abstract():
+    assert not inspect.isabstract(notation_Label)
 
 
-def test_notation::label_constructor_exists():
-    assert callable(notation::Label.__init__)
+def test_notation_label_constructor_exists():
+    assert callable(notation_Label.__init__)
 
 
-def test_notation::label_constructor_args():
-    sig = inspect.signature(notation::Label.__init__)
+def test_notation_label_constructor_args():
+    sig = inspect.signature(notation_Label.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::line_is_not_abstract():
-    assert not inspect.isabstract(notation::Line)
+def test_notation_line_is_not_abstract():
+    assert not inspect.isabstract(notation_Line)
 
 
-def test_notation::line_constructor_exists():
-    assert callable(notation::Line.__init__)
+def test_notation_line_constructor_exists():
+    assert callable(notation_Line.__init__)
 
 
-def test_notation::line_constructor_args():
-    sig = inspect.signature(notation::Line.__init__)
+def test_notation_line_constructor_args():
+    sig = inspect.signature(notation_Line.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::figure_is_not_abstract():
-    assert not inspect.isabstract(notation::Figure)
+def test_notation_figure_is_not_abstract():
+    assert not inspect.isabstract(notation_Figure)
 
 
-def test_notation::figure_constructor_exists():
-    assert callable(notation::Figure.__init__)
+def test_notation_figure_constructor_exists():
+    assert callable(notation_Figure.__init__)
 
 
-def test_notation::figure_constructor_args():
-    sig = inspect.signature(notation::Figure.__init__)
+def test_notation_figure_constructor_args():
+    sig = inspect.signature(notation_Figure.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -311,51 +311,37 @@ def test_notationelement_constructor_args():
 
 
 
-def test_notation::composite_is_not_abstract():
-    assert not inspect.isabstract(notation::Composite)
+def test_notation_syntaxof_is_not_abstract():
+    assert not inspect.isabstract(notation_SyntaxOf)
 
 
-def test_notation::composite_constructor_exists():
-    assert callable(notation::Composite.__init__)
+def test_notation_syntaxof_constructor_exists():
+    assert callable(notation_SyntaxOf.__init__)
 
 
-def test_notation::composite_constructor_args():
-    sig = inspect.signature(notation::Composite.__init__)
+def test_notation_syntaxof_constructor_args():
+    sig = inspect.signature(notation_SyntaxOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_notation::syntaxof_is_not_abstract():
-    assert not inspect.isabstract(notation::SyntaxOf)
+def test_notation_textualelement_is_not_abstract():
+    assert not inspect.isabstract(notation_TextualElement)
 
 
-def test_notation::syntaxof_constructor_exists():
-    assert callable(notation::SyntaxOf.__init__)
+def test_notation_textualelement_constructor_exists():
+    assert callable(notation_TextualElement.__init__)
 
 
-def test_notation::syntaxof_constructor_args():
-    sig = inspect.signature(notation::SyntaxOf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_notation::textualelement_is_not_abstract():
-    assert not inspect.isabstract(notation::TextualElement)
-
-
-def test_notation::textualelement_constructor_exists():
-    assert callable(notation::TextualElement.__init__)
-
-
-def test_notation::textualelement_constructor_args():
-    sig = inspect.signature(notation::TextualElement.__init__)
+def test_notation_textualelement_constructor_args():
+    sig = inspect.signature(notation_TextualElement.__init__)
     params = list(sig.parameters.keys())
     assert "fill" in params, "Missing parameter 'fill'"
 
-def test_notation::textualelement_has_fill():
-    assert hasattr(notation::TextualElement, "fill")
+def test_notation_textualelement_has_fill():
+    assert hasattr(notation_TextualElement, "fill")
     descriptor = None
-    for klass in notation::TextualElement.__mro__:
+    for klass in notation_TextualElement.__mro__:
         if "fill" in klass.__dict__:
             descriptor = klass.__dict__["fill"]
             break
@@ -363,75 +349,89 @@ def test_notation::textualelement_has_fill():
 
 
 
-def test_notation::graphicalelement_is_not_abstract():
-    assert not inspect.isabstract(notation::GraphicalElement)
+def test_notation_composite_is_not_abstract():
+    assert not inspect.isabstract(notation_Composite)
 
 
-def test_notation::graphicalelement_constructor_exists():
-    assert callable(notation::GraphicalElement.__init__)
+def test_notation_composite_constructor_exists():
+    assert callable(notation_Composite.__init__)
 
 
-def test_notation::graphicalelement_constructor_args():
-    sig = inspect.signature(notation::GraphicalElement.__init__)
+def test_notation_composite_constructor_args():
+    sig = inspect.signature(notation_Composite.__init__)
     params = list(sig.parameters.keys())
-    assert "fill" in params, "Missing parameter 'fill'"
-    assert "height" in params, "Missing parameter 'height'"
-    assert "stroke" in params, "Missing parameter 'stroke'"
-    assert "y" in params, "Missing parameter 'y'"
-    assert "width" in params, "Missing parameter 'width'"
+
+
+
+def test_notation_graphicalelement_is_not_abstract():
+    assert not inspect.isabstract(notation_GraphicalElement)
+
+
+def test_notation_graphicalelement_constructor_exists():
+    assert callable(notation_GraphicalElement.__init__)
+
+
+def test_notation_graphicalelement_constructor_args():
+    sig = inspect.signature(notation_GraphicalElement.__init__)
+    params = list(sig.parameters.keys())
     assert "x" in params, "Missing parameter 'x'"
+    assert "fill" in params, "Missing parameter 'fill'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "y" in params, "Missing parameter 'y'"
+    assert "stroke" in params, "Missing parameter 'stroke'"
 
-def test_notation::graphicalelement_has_fill():
-    assert hasattr(notation::GraphicalElement, "fill")
+def test_notation_graphicalelement_has_x():
+    assert hasattr(notation_GraphicalElement, "x")
     descriptor = None
-    for klass in notation::GraphicalElement.__mro__:
+    for klass in notation_GraphicalElement.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_graphicalelement_has_fill():
+    assert hasattr(notation_GraphicalElement, "fill")
+    descriptor = None
+    for klass in notation_GraphicalElement.__mro__:
         if "fill" in klass.__dict__:
             descriptor = klass.__dict__["fill"]
             break
     assert isinstance(descriptor, property)
 
-def test_notation::graphicalelement_has_height():
-    assert hasattr(notation::GraphicalElement, "height")
+def test_notation_graphicalelement_has_width():
+    assert hasattr(notation_GraphicalElement, "width")
     descriptor = None
-    for klass in notation::GraphicalElement.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::graphicalelement_has_stroke():
-    assert hasattr(notation::GraphicalElement, "stroke")
-    descriptor = None
-    for klass in notation::GraphicalElement.__mro__:
-        if "stroke" in klass.__dict__:
-            descriptor = klass.__dict__["stroke"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::graphicalelement_has_y():
-    assert hasattr(notation::GraphicalElement, "y")
-    descriptor = None
-    for klass in notation::GraphicalElement.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_notation::graphicalelement_has_width():
-    assert hasattr(notation::GraphicalElement, "width")
-    descriptor = None
-    for klass in notation::GraphicalElement.__mro__:
+    for klass in notation_GraphicalElement.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_notation::graphicalelement_has_x():
-    assert hasattr(notation::GraphicalElement, "x")
+def test_notation_graphicalelement_has_height():
+    assert hasattr(notation_GraphicalElement, "height")
     descriptor = None
-    for klass in notation::GraphicalElement.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+    for klass in notation_GraphicalElement.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_graphicalelement_has_y():
+    assert hasattr(notation_GraphicalElement, "y")
+    descriptor = None
+    for klass in notation_GraphicalElement.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_notation_graphicalelement_has_stroke():
+    assert hasattr(notation_GraphicalElement, "stroke")
+    descriptor = None
+    for klass in notation_GraphicalElement.__mro__:
+        if "stroke" in klass.__dict__:
+            descriptor = klass.__dict__["stroke"]
             break
     assert isinstance(descriptor, property)
 
@@ -451,16 +451,16 @@ def test_idelement_constructor_args():
 
 
 
-def test_notation::notationelement_is_not_abstract():
-    assert not inspect.isabstract(notation::NotationElement)
+def test_notation_notationelement_is_not_abstract():
+    assert not inspect.isabstract(notation_NotationElement)
 
 
-def test_notation::notationelement_constructor_exists():
-    assert callable(notation::NotationElement.__init__)
+def test_notation_notationelement_constructor_exists():
+    assert callable(notation_NotationElement.__init__)
 
 
-def test_notation::notationelement_constructor_args():
-    sig = inspect.signature(notation::NotationElement.__init__)
+def test_notation_notationelement_constructor_args():
+    sig = inspect.signature(notation_NotationElement.__init__)
     params = list(sig.parameters.keys())
 
 def test_color_exists():
@@ -471,9 +471,9 @@ def test_color_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Color]
     expected_literals = [
+        "RED",
         "BLUE",
         "GREEN",
-        "RED",
         "BLACK",
     ]
     # Check that all expected literals exist
@@ -492,312 +492,285 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-notation::EReference_strategy = st.builds(
-    notation::EReference,
+notation_EReference_strategy = st.builds(
+    notation_EReference,
 )
 Value_strategy = st.builds(
     Value,
 )
-notation::ReferenceValue_strategy = st.builds(
-    notation::ReferenceValue,
+notation_ReferenceValue_strategy = st.builds(
+    notation_ReferenceValue,
 )
-notation::AttributeValue_strategy = st.builds(
-    notation::AttributeValue,
+notation_AttributeValue_strategy = st.builds(
+    notation_AttributeValue,
 )
-notation::Definition_strategy = st.builds(
-    notation::Definition,
+notation_Definition_strategy = st.builds(
+    notation_Definition,
 )
-notation::IdElement_strategy = st.builds(
-    notation::IdElement,
+notation_IdElement_strategy = st.builds(
+    notation_IdElement,
     id=
         safe_text
 )
-notation::EAttribute_strategy = st.builds(
-    notation::EAttribute,
+notation_EAttribute_strategy = st.builds(
+    notation_EAttribute,
 )
 TextualElement_strategy = st.builds(
     TextualElement,
 )
-notation::Keyword_strategy = st.builds(
-    notation::Keyword,
+notation_Keyword_strategy = st.builds(
+    notation_Keyword,
 )
-notation::Value_strategy = st.builds(
-    notation::Value,
+notation_Value_strategy = st.builds(
+    notation_Value,
     separator=
         safe_text
 )
-notation::Token_strategy = st.builds(
-    notation::Token,
+notation_Token_strategy = st.builds(
+    notation_Token,
 )
 Figure_strategy = st.builds(
     Figure,
 )
-notation::Rectangle_strategy = st.builds(
-    notation::Rectangle,
+notation_Rectangle_strategy = st.builds(
+    notation_Rectangle,
 )
 GraphicalElement_strategy = st.builds(
     GraphicalElement,
 )
-notation::Label_strategy = st.builds(
-    notation::Label,
+notation_Label_strategy = st.builds(
+    notation_Label,
 )
-notation::Line_strategy = st.builds(
-    notation::Line,
+notation_Line_strategy = st.builds(
+    notation_Line,
 )
-notation::Figure_strategy = st.builds(
-    notation::Figure,
+notation_Figure_strategy = st.builds(
+    notation_Figure,
 )
 NotationElement_strategy = st.builds(
     NotationElement,
 )
-notation::Composite_strategy = st.builds(
-    notation::Composite,
+notation_SyntaxOf_strategy = st.builds(
+    notation_SyntaxOf,
 )
-notation::SyntaxOf_strategy = st.builds(
-    notation::SyntaxOf,
-)
-notation::TextualElement_strategy = st.builds(
-    notation::TextualElement,
+notation_TextualElement_strategy = st.builds(
+    notation_TextualElement,
     fill=
         safe_text
 )
-notation::GraphicalElement_strategy = st.builds(
-    notation::GraphicalElement,
+notation_Composite_strategy = st.builds(
+    notation_Composite,
+)
+notation_GraphicalElement_strategy = st.builds(
+    notation_GraphicalElement,
+    x=
+        st.integers(),
     fill=
         safe_text,
-    height=
-        st.integers(),
-    stroke=
-        safe_text,
-    y=
-        st.integers(),
     width=
         st.integers(),
-    x=
-        st.integers()
+    height=
+        st.integers(),
+    y=
+        st.integers(),
+    stroke=
+        safe_text
 )
 IdElement_strategy = st.builds(
     IdElement,
 )
-notation::NotationElement_strategy = st.builds(
-    notation::NotationElement,
+notation_NotationElement_strategy = st.builds(
+    notation_NotationElement,
 )
 
-@given(instance=notation::EReference_strategy)
+@given(instance=notation_EReference_strategy)
 @settings(max_examples=50)
-def test_notation::ereference_instantiation(instance):
-    assert isinstance(instance, notation::EReference)
+def test_notation_ereference_instantiation(instance):
+    assert isinstance(instance, notation_EReference)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=notation::ReferenceValue_strategy)
+@given(instance=notation_ReferenceValue_strategy)
 @settings(max_examples=50)
-def test_notation::referencevalue_instantiation(instance):
-    assert isinstance(instance, notation::ReferenceValue)
+def test_notation_referencevalue_instantiation(instance):
+    assert isinstance(instance, notation_ReferenceValue)
 
-@given(instance=notation::AttributeValue_strategy)
+@given(instance=notation_AttributeValue_strategy)
 @settings(max_examples=50)
-def test_notation::attributevalue_instantiation(instance):
-    assert isinstance(instance, notation::AttributeValue)
+def test_notation_attributevalue_instantiation(instance):
+    assert isinstance(instance, notation_AttributeValue)
 
-@given(instance=notation::Definition_strategy)
+@given(instance=notation_Definition_strategy)
 @settings(max_examples=50)
-def test_notation::definition_instantiation(instance):
-    assert isinstance(instance, notation::Definition)
+def test_notation_definition_instantiation(instance):
+    assert isinstance(instance, notation_Definition)
 
-@given(instance=notation::IdElement_strategy)
+@given(instance=notation_IdElement_strategy)
 @settings(max_examples=50)
-def test_notation::idelement_instantiation(instance):
-    assert isinstance(instance, notation::IdElement)
-
-@given(instance=notation::IdElement_strategy)
-def test_notation::idelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_notation_idelement_instantiation(instance):
+    assert isinstance(instance, notation_IdElement)
 
 
-@given(instance=notation::IdElement_strategy)
-def test_notation::idelement_id_setter(instance):
+
+@given(instance=notation_IdElement_strategy)
+def test_notation_idelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=notation::EAttribute_strategy)
+@given(instance=notation_EAttribute_strategy)
 @settings(max_examples=50)
-def test_notation::eattribute_instantiation(instance):
-    assert isinstance(instance, notation::EAttribute)
+def test_notation_eattribute_instantiation(instance):
+    assert isinstance(instance, notation_EAttribute)
 
 @given(instance=TextualElement_strategy)
 @settings(max_examples=50)
 def test_textualelement_instantiation(instance):
     assert isinstance(instance, TextualElement)
 
-@given(instance=notation::Keyword_strategy)
+@given(instance=notation_Keyword_strategy)
 @settings(max_examples=50)
-def test_notation::keyword_instantiation(instance):
-    assert isinstance(instance, notation::Keyword)
+def test_notation_keyword_instantiation(instance):
+    assert isinstance(instance, notation_Keyword)
 
-@given(instance=notation::Value_strategy)
+@given(instance=notation_Value_strategy)
 @settings(max_examples=50)
-def test_notation::value_instantiation(instance):
-    assert isinstance(instance, notation::Value)
-
-@given(instance=notation::Value_strategy)
-def test_notation::value_separator_type(instance):
-    assert isinstance(instance.separator, str)
+def test_notation_value_instantiation(instance):
+    assert isinstance(instance, notation_Value)
 
 
-@given(instance=notation::Value_strategy)
-def test_notation::value_separator_setter(instance):
+
+@given(instance=notation_Value_strategy)
+def test_notation_value_separator_setter(instance):
     original = instance.separator
     instance.separator = original
     assert instance.separator == original
 
-@given(instance=notation::Token_strategy)
+@given(instance=notation_Token_strategy)
 @settings(max_examples=50)
-def test_notation::token_instantiation(instance):
-    assert isinstance(instance, notation::Token)
+def test_notation_token_instantiation(instance):
+    assert isinstance(instance, notation_Token)
 
 @given(instance=Figure_strategy)
 @settings(max_examples=50)
 def test_figure_instantiation(instance):
     assert isinstance(instance, Figure)
 
-@given(instance=notation::Rectangle_strategy)
+@given(instance=notation_Rectangle_strategy)
 @settings(max_examples=50)
-def test_notation::rectangle_instantiation(instance):
-    assert isinstance(instance, notation::Rectangle)
+def test_notation_rectangle_instantiation(instance):
+    assert isinstance(instance, notation_Rectangle)
 
 @given(instance=GraphicalElement_strategy)
 @settings(max_examples=50)
 def test_graphicalelement_instantiation(instance):
     assert isinstance(instance, GraphicalElement)
 
-@given(instance=notation::Label_strategy)
+@given(instance=notation_Label_strategy)
 @settings(max_examples=50)
-def test_notation::label_instantiation(instance):
-    assert isinstance(instance, notation::Label)
+def test_notation_label_instantiation(instance):
+    assert isinstance(instance, notation_Label)
 
-@given(instance=notation::Line_strategy)
+@given(instance=notation_Line_strategy)
 @settings(max_examples=50)
-def test_notation::line_instantiation(instance):
-    assert isinstance(instance, notation::Line)
+def test_notation_line_instantiation(instance):
+    assert isinstance(instance, notation_Line)
 
-@given(instance=notation::Figure_strategy)
+@given(instance=notation_Figure_strategy)
 @settings(max_examples=50)
-def test_notation::figure_instantiation(instance):
-    assert isinstance(instance, notation::Figure)
+def test_notation_figure_instantiation(instance):
+    assert isinstance(instance, notation_Figure)
 
 @given(instance=NotationElement_strategy)
 @settings(max_examples=50)
 def test_notationelement_instantiation(instance):
     assert isinstance(instance, NotationElement)
 
-@given(instance=notation::Composite_strategy)
+@given(instance=notation_SyntaxOf_strategy)
 @settings(max_examples=50)
-def test_notation::composite_instantiation(instance):
-    assert isinstance(instance, notation::Composite)
+def test_notation_syntaxof_instantiation(instance):
+    assert isinstance(instance, notation_SyntaxOf)
 
-@given(instance=notation::SyntaxOf_strategy)
+@given(instance=notation_TextualElement_strategy)
 @settings(max_examples=50)
-def test_notation::syntaxof_instantiation(instance):
-    assert isinstance(instance, notation::SyntaxOf)
-
-@given(instance=notation::TextualElement_strategy)
-@settings(max_examples=50)
-def test_notation::textualelement_instantiation(instance):
-    assert isinstance(instance, notation::TextualElement)
-
-@given(instance=notation::TextualElement_strategy)
-def test_notation::textualelement_fill_type(instance):
-    assert isinstance(instance.fill, str)
+def test_notation_textualelement_instantiation(instance):
+    assert isinstance(instance, notation_TextualElement)
 
 
-@given(instance=notation::TextualElement_strategy)
-def test_notation::textualelement_fill_setter(instance):
+
+@given(instance=notation_TextualElement_strategy)
+def test_notation_textualelement_fill_setter(instance):
     original = instance.fill
     instance.fill = original
     assert instance.fill == original
 
-@given(instance=notation::GraphicalElement_strategy)
+@given(instance=notation_Composite_strategy)
 @settings(max_examples=50)
-def test_notation::graphicalelement_instantiation(instance):
-    assert isinstance(instance, notation::GraphicalElement)
+def test_notation_composite_instantiation(instance):
+    assert isinstance(instance, notation_Composite)
 
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_fill_type(instance):
-    assert isinstance(instance.fill, str)
+@given(instance=notation_GraphicalElement_strategy)
+@settings(max_examples=50)
+def test_notation_graphicalelement_instantiation(instance):
+    assert isinstance(instance, notation_GraphicalElement)
 
 
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_fill_setter(instance):
+
+@given(instance=notation_GraphicalElement_strategy)
+def test_notation_graphicalelement_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=notation_GraphicalElement_strategy)
+def test_notation_graphicalelement_fill_setter(instance):
     original = instance.fill
     instance.fill = original
     assert instance.fill == original
 
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_stroke_type(instance):
-    assert isinstance(instance.stroke, str)
-
-
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_stroke_setter(instance):
-    original = instance.stroke
-    instance.stroke = original
-    assert instance.stroke == original
-
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_width_setter(instance):
+@given(instance=notation_GraphicalElement_strategy)
+def test_notation_graphicalelement_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
-@given(instance=notation::GraphicalElement_strategy)
-def test_notation::graphicalelement_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
+@given(instance=notation_GraphicalElement_strategy)
+def test_notation_graphicalelement_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=notation_GraphicalElement_strategy)
+def test_notation_graphicalelement_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=notation_GraphicalElement_strategy)
+def test_notation_graphicalelement_stroke_setter(instance):
+    original = instance.stroke
+    instance.stroke = original
+    assert instance.stroke == original
 
 @given(instance=IdElement_strategy)
 @settings(max_examples=50)
 def test_idelement_instantiation(instance):
     assert isinstance(instance, IdElement)
 
-@given(instance=notation::NotationElement_strategy)
+@given(instance=notation_NotationElement_strategy)
 @settings(max_examples=50)
-def test_notation::notationelement_instantiation(instance):
-    assert isinstance(instance, notation::NotationElement)
+def test_notation_notationelement_instantiation(instance):
+    assert isinstance(instance, notation_NotationElement)

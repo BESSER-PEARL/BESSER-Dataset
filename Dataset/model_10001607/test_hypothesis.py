@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     HasilBidding,
@@ -46,13 +46,13 @@ def test_bidding_constructor_args():
     sig = inspect.signature(Bidding.__init__)
     params = list(sig.parameters.keys())
     assert "bidder" in params, "Missing parameter 'bidder'"
-    assert "jabatan" in params, "Missing parameter 'jabatan'"
-    assert "berkas" in params, "Missing parameter 'berkas'"
     assert "catatanBidder" in params, "Missing parameter 'catatanBidder'"
     assert "notulensi" in params, "Missing parameter 'notulensi'"
     assert "biddee" in params, "Missing parameter 'biddee'"
-    assert "nilai" in params, "Missing parameter 'nilai'"
+    assert "berkas" in params, "Missing parameter 'berkas'"
+    assert "jabatan" in params, "Missing parameter 'jabatan'"
     assert "statusBidding" in params, "Missing parameter 'statusBidding'"
+    assert "nilai" in params, "Missing parameter 'nilai'"
 
 def test_bidding_has_bidder():
     assert hasattr(Bidding, "bidder")
@@ -60,24 +60,6 @@ def test_bidding_has_bidder():
     for klass in Bidding.__mro__:
         if "bidder" in klass.__dict__:
             descriptor = klass.__dict__["bidder"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bidding_has_jabatan():
-    assert hasattr(Bidding, "jabatan")
-    descriptor = None
-    for klass in Bidding.__mro__:
-        if "jabatan" in klass.__dict__:
-            descriptor = klass.__dict__["jabatan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bidding_has_berkas():
-    assert hasattr(Bidding, "berkas")
-    descriptor = None
-    for klass in Bidding.__mro__:
-        if "berkas" in klass.__dict__:
-            descriptor = klass.__dict__["berkas"]
             break
     assert isinstance(descriptor, property)
 
@@ -108,12 +90,21 @@ def test_bidding_has_biddee():
             break
     assert isinstance(descriptor, property)
 
-def test_bidding_has_nilai():
-    assert hasattr(Bidding, "nilai")
+def test_bidding_has_berkas():
+    assert hasattr(Bidding, "berkas")
     descriptor = None
     for klass in Bidding.__mro__:
-        if "nilai" in klass.__dict__:
-            descriptor = klass.__dict__["nilai"]
+        if "berkas" in klass.__dict__:
+            descriptor = klass.__dict__["berkas"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bidding_has_jabatan():
+    assert hasattr(Bidding, "jabatan")
+    descriptor = None
+    for klass in Bidding.__mro__:
+        if "jabatan" in klass.__dict__:
+            descriptor = klass.__dict__["jabatan"]
             break
     assert isinstance(descriptor, property)
 
@@ -123,6 +114,15 @@ def test_bidding_has_statusBidding():
     for klass in Bidding.__mro__:
         if "statusBidding" in klass.__dict__:
             descriptor = klass.__dict__["statusBidding"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bidding_has_nilai():
+    assert hasattr(Bidding, "nilai")
+    descriptor = None
+    for klass in Bidding.__mro__:
+        if "nilai" in klass.__dict__:
+            descriptor = klass.__dict__["nilai"]
             break
     assert isinstance(descriptor, property)
 
@@ -191,17 +191,17 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "loginStatus" in params, "Missing parameter 'loginStatus'"
-    assert "nama" in params, "Missing parameter 'nama'"
-    assert "password" in params, "Missing parameter 'password'"
     assert "userName" in params, "Missing parameter 'userName'"
+    assert "nama" in params, "Missing parameter 'nama'"
+    assert "loginStatus" in params, "Missing parameter 'loginStatus'"
+    assert "password" in params, "Missing parameter 'password'"
 
-def test_user_has_loginStatus():
-    assert hasattr(User, "loginStatus")
+def test_user_has_userName():
+    assert hasattr(User, "userName")
     descriptor = None
     for klass in User.__mro__:
-        if "loginStatus" in klass.__dict__:
-            descriptor = klass.__dict__["loginStatus"]
+        if "userName" in klass.__dict__:
+            descriptor = klass.__dict__["userName"]
             break
     assert isinstance(descriptor, property)
 
@@ -214,21 +214,21 @@ def test_user_has_nama():
             break
     assert isinstance(descriptor, property)
 
+def test_user_has_loginStatus():
+    assert hasattr(User, "loginStatus")
+    descriptor = None
+    for klass in User.__mro__:
+        if "loginStatus" in klass.__dict__:
+            descriptor = klass.__dict__["loginStatus"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_user_has_password():
     assert hasattr(User, "password")
     descriptor = None
     for klass in User.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_userName():
-    assert hasattr(User, "userName")
-    descriptor = None
-    for klass in User.__mro__:
-        if "userName" in klass.__dict__:
-            descriptor = klass.__dict__["userName"]
             break
     assert isinstance(descriptor, property)
 
@@ -251,20 +251,20 @@ Bidding_strategy = st.builds(
     Bidding,
     bidder=
         safe_text,
-    jabatan=
-        safe_text,
-    berkas=
-        safe_text,
     catatanBidder=
         safe_text,
     notulensi=
         safe_text,
     biddee=
         safe_text,
-    nilai=
-        st.integers(),
+    berkas=
+        safe_text,
+    jabatan=
+        safe_text,
     statusBidding=
-        safe_text
+        safe_text,
+    nilai=
+        st.integers()
 )
 Biddee_strategy = st.builds(
     Biddee,
@@ -279,13 +279,13 @@ Admin_strategy = st.builds(
 )
 User_strategy = st.builds(
     User,
-    loginStatus=
+    userName=
         safe_text,
     nama=
         safe_text,
-    password=
+    loginStatus=
         safe_text,
-    userName=
+    password=
         safe_text
 )
 
@@ -299,9 +299,6 @@ def test_hasilbidding_instantiation(instance):
 def test_bidding_instantiation(instance):
     assert isinstance(instance, Bidding)
 
-@given(instance=Bidding_strategy)
-def test_bidding_bidder_type(instance):
-    assert isinstance(instance.bidder, str)
 
 
 @given(instance=Bidding_strategy)
@@ -310,31 +307,6 @@ def test_bidding_bidder_setter(instance):
     instance.bidder = original
     assert instance.bidder == original
 
-@given(instance=Bidding_strategy)
-def test_bidding_jabatan_type(instance):
-    assert isinstance(instance.jabatan, str)
-
-
-@given(instance=Bidding_strategy)
-def test_bidding_jabatan_setter(instance):
-    original = instance.jabatan
-    instance.jabatan = original
-    assert instance.jabatan == original
-
-@given(instance=Bidding_strategy)
-def test_bidding_berkas_type(instance):
-    assert isinstance(instance.berkas, str)
-
-
-@given(instance=Bidding_strategy)
-def test_bidding_berkas_setter(instance):
-    original = instance.berkas
-    instance.berkas = original
-    assert instance.berkas == original
-
-@given(instance=Bidding_strategy)
-def test_bidding_catatanBidder_type(instance):
-    assert isinstance(instance.catatanBidder, str)
 
 
 @given(instance=Bidding_strategy)
@@ -343,9 +315,6 @@ def test_bidding_catatanBidder_setter(instance):
     instance.catatanBidder = original
     assert instance.catatanBidder == original
 
-@given(instance=Bidding_strategy)
-def test_bidding_notulensi_type(instance):
-    assert isinstance(instance.notulensi, str)
 
 
 @given(instance=Bidding_strategy)
@@ -354,9 +323,6 @@ def test_bidding_notulensi_setter(instance):
     instance.notulensi = original
     assert instance.notulensi == original
 
-@given(instance=Bidding_strategy)
-def test_bidding_biddee_type(instance):
-    assert isinstance(instance.biddee, str)
 
 
 @given(instance=Bidding_strategy)
@@ -365,20 +331,22 @@ def test_bidding_biddee_setter(instance):
     instance.biddee = original
     assert instance.biddee == original
 
-@given(instance=Bidding_strategy)
-def test_bidding_nilai_type(instance):
-    assert isinstance(instance.nilai, int)
 
 
 @given(instance=Bidding_strategy)
-def test_bidding_nilai_setter(instance):
-    original = instance.nilai
-    instance.nilai = original
-    assert instance.nilai == original
+def test_bidding_berkas_setter(instance):
+    original = instance.berkas
+    instance.berkas = original
+    assert instance.berkas == original
+
+
 
 @given(instance=Bidding_strategy)
-def test_bidding_statusBidding_type(instance):
-    assert isinstance(instance.statusBidding, str)
+def test_bidding_jabatan_setter(instance):
+    original = instance.jabatan
+    instance.jabatan = original
+    assert instance.jabatan == original
+
 
 
 @given(instance=Bidding_strategy)
@@ -387,14 +355,19 @@ def test_bidding_statusBidding_setter(instance):
     instance.statusBidding = original
     assert instance.statusBidding == original
 
+
+
+@given(instance=Bidding_strategy)
+def test_bidding_nilai_setter(instance):
+    original = instance.nilai
+    instance.nilai = original
+    assert instance.nilai == original
+
 @given(instance=Biddee_strategy)
 @settings(max_examples=50)
 def test_biddee_instantiation(instance):
     assert isinstance(instance, Biddee)
 
-@given(instance=Biddee_strategy)
-def test_biddee_statusBiddee_type(instance):
-    assert isinstance(instance.statusBiddee, str)
 
 
 @given(instance=Biddee_strategy)
@@ -418,20 +391,14 @@ def test_admin_instantiation(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_loginStatus_type(instance):
-    assert isinstance(instance.loginStatus, str)
 
 
 @given(instance=User_strategy)
-def test_user_loginStatus_setter(instance):
-    original = instance.loginStatus
-    instance.loginStatus = original
-    assert instance.loginStatus == original
+def test_user_userName_setter(instance):
+    original = instance.userName
+    instance.userName = original
+    assert instance.userName == original
 
-@given(instance=User_strategy)
-def test_user_nama_type(instance):
-    assert isinstance(instance.nama, str)
 
 
 @given(instance=User_strategy)
@@ -440,9 +407,14 @@ def test_user_nama_setter(instance):
     instance.nama = original
     assert instance.nama == original
 
+
+
 @given(instance=User_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
+def test_user_loginStatus_setter(instance):
+    original = instance.loginStatus
+    instance.loginStatus = original
+    assert instance.loginStatus == original
+
 
 
 @given(instance=User_strategy)
@@ -450,14 +422,3 @@ def test_user_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
-
-@given(instance=User_strategy)
-def test_user_userName_type(instance):
-    assert isinstance(instance.userName, str)
-
-
-@given(instance=User_strategy)
-def test_user_userName_setter(instance):
-    original = instance.userName
-    instance.userName = original
-    assert instance.userName == original

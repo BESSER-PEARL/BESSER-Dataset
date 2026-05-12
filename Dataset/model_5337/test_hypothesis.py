@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    root::A,
+from python_code import (
+    root_A,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_root::a_is_not_abstract():
-    assert not inspect.isabstract(root::A)
+def test_root_a_is_not_abstract():
+    assert not inspect.isabstract(root_A)
 
 
-def test_root::a_constructor_exists():
-    assert callable(root::A.__init__)
+def test_root_a_constructor_exists():
+    assert callable(root_A.__init__)
 
 
-def test_root::a_constructor_args():
-    sig = inspect.signature(root::A.__init__)
+def test_root_a_constructor_args():
+    sig = inspect.signature(root_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,14 +39,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-root::A_strategy = st.builds(
-    root::A,
+root_A_strategy = st.builds(
+    root_A,
 )
 
-@given(instance=root::A_strategy)
+@given(instance=root_A_strategy)
 @settings(max_examples=50)
-def test_root::a_instantiation(instance):
-    assert isinstance(instance, root::A)
+def test_root_a_instantiation(instance):
+    assert isinstance(instance, root_A)
 
 import warnings
 import copy
@@ -54,9 +54,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=root::A_strategy)
+@given(instance=root_A_strategy)
 @settings(max_examples=30)
-def test_root::a_whoiam_changes_state(instance):
+def test_root_a_whoiam_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -68,11 +68,11 @@ def test_root::a_whoiam_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'whoIAm' in root::A is empty"
+        assert has_statements, f"Function 'whoIAm' in root_A is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'whoIAm' in root::A did not change state; check implementation")
+            warnings.warn(f"Operation 'whoIAm' in root_A did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'whoIAm' in root::A is not implemented or raised an error")
+        warnings.warn(f"Operation 'whoIAm' in root_A is not implemented or raised an error")

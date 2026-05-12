@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TestPackage::TestIndexEntry,
-    TestPackage::TestIndex,
+from python_code import (
+    TestPackage_TestIndexEntry,
+    TestPackage_TestIndex,
     AbstractTestClass,
-    TestPackage::TestClass2,
-    TestPackage::TestClass1,
-    TestPackage::AbstractTestClass,
+    TestPackage_TestClass2,
+    TestPackage_TestClass1,
+    TestPackage_AbstractTestClass,
 )
 
 # =============================================================================
@@ -20,30 +20,30 @@ from classes import (
 
 
 
-def test_testpackage::testindexentry_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestIndexEntry)
+def test_testpackage_testindexentry_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestIndexEntry)
 
 
-def test_testpackage::testindexentry_constructor_exists():
-    assert callable(TestPackage::TestIndexEntry.__init__)
+def test_testpackage_testindexentry_constructor_exists():
+    assert callable(TestPackage_TestIndexEntry.__init__)
 
 
-def test_testpackage::testindexentry_constructor_args():
-    sig = inspect.signature(TestPackage::TestIndexEntry.__init__)
+def test_testpackage_testindexentry_constructor_args():
+    sig = inspect.signature(TestPackage_TestIndexEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::testindex_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestIndex)
+def test_testpackage_testindex_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestIndex)
 
 
-def test_testpackage::testindex_constructor_exists():
-    assert callable(TestPackage::TestIndex.__init__)
+def test_testpackage_testindex_constructor_exists():
+    assert callable(TestPackage_TestIndex.__init__)
 
 
-def test_testpackage::testindex_constructor_args():
-    sig = inspect.signature(TestPackage::TestIndex.__init__)
+def test_testpackage_testindex_constructor_args():
+    sig = inspect.signature(TestPackage_TestIndex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -62,37 +62,37 @@ def test_abstracttestclass_constructor_args():
 
 
 
-def test_testpackage::testclass2_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestClass2)
+def test_testpackage_testclass2_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestClass2)
 
 
-def test_testpackage::testclass2_constructor_exists():
-    assert callable(TestPackage::TestClass2.__init__)
+def test_testpackage_testclass2_constructor_exists():
+    assert callable(TestPackage_TestClass2.__init__)
 
 
-def test_testpackage::testclass2_constructor_args():
-    sig = inspect.signature(TestPackage::TestClass2.__init__)
+def test_testpackage_testclass2_constructor_args():
+    sig = inspect.signature(TestPackage_TestClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::testclass1_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::TestClass1)
+def test_testpackage_testclass1_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_TestClass1)
 
 
-def test_testpackage::testclass1_constructor_exists():
-    assert callable(TestPackage::TestClass1.__init__)
+def test_testpackage_testclass1_constructor_exists():
+    assert callable(TestPackage_TestClass1.__init__)
 
 
-def test_testpackage::testclass1_constructor_args():
-    sig = inspect.signature(TestPackage::TestClass1.__init__)
+def test_testpackage_testclass1_constructor_args():
+    sig = inspect.signature(TestPackage_TestClass1.__init__)
     params = list(sig.parameters.keys())
     assert "theAttributeToListen" in params, "Missing parameter 'theAttributeToListen'"
 
-def test_testpackage::testclass1_has_theAttributeToListen():
-    assert hasattr(TestPackage::TestClass1, "theAttributeToListen")
+def test_testpackage_testclass1_has_theAttributeToListen():
+    assert hasattr(TestPackage_TestClass1, "theAttributeToListen")
     descriptor = None
-    for klass in TestPackage::TestClass1.__mro__:
+    for klass in TestPackage_TestClass1.__mro__:
         if "theAttributeToListen" in klass.__dict__:
             descriptor = klass.__dict__["theAttributeToListen"]
             break
@@ -100,23 +100,23 @@ def test_testpackage::testclass1_has_theAttributeToListen():
 
 
 
-def test_testpackage::abstracttestclass_is_not_abstract():
-    assert not inspect.isabstract(TestPackage::AbstractTestClass)
+def test_testpackage_abstracttestclass_is_not_abstract():
+    assert not inspect.isabstract(TestPackage_AbstractTestClass)
 
 
-def test_testpackage::abstracttestclass_constructor_exists():
-    assert callable(TestPackage::AbstractTestClass.__init__)
+def test_testpackage_abstracttestclass_constructor_exists():
+    assert callable(TestPackage_AbstractTestClass.__init__)
 
 
-def test_testpackage::abstracttestclass_constructor_args():
-    sig = inspect.signature(TestPackage::AbstractTestClass.__init__)
+def test_testpackage_abstracttestclass_constructor_args():
+    sig = inspect.signature(TestPackage_AbstractTestClass.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testpackage::abstracttestclass_has_name():
-    assert hasattr(TestPackage::AbstractTestClass, "name")
+def test_testpackage_abstracttestclass_has_name():
+    assert hasattr(TestPackage_AbstractTestClass, "name")
     descriptor = None
-    for klass in TestPackage::AbstractTestClass.__mro__:
+    for klass in TestPackage_AbstractTestClass.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,61 +134,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TestPackage::TestIndexEntry_strategy = st.builds(
-    TestPackage::TestIndexEntry,
+TestPackage_TestIndexEntry_strategy = st.builds(
+    TestPackage_TestIndexEntry,
 )
-TestPackage::TestIndex_strategy = st.builds(
-    TestPackage::TestIndex,
+TestPackage_TestIndex_strategy = st.builds(
+    TestPackage_TestIndex,
 )
 AbstractTestClass_strategy = st.builds(
     AbstractTestClass,
 )
-TestPackage::TestClass2_strategy = st.builds(
-    TestPackage::TestClass2,
+TestPackage_TestClass2_strategy = st.builds(
+    TestPackage_TestClass2,
 )
-TestPackage::TestClass1_strategy = st.builds(
-    TestPackage::TestClass1,
+TestPackage_TestClass1_strategy = st.builds(
+    TestPackage_TestClass1,
     theAttributeToListen=
         safe_text
 )
-TestPackage::AbstractTestClass_strategy = st.builds(
-    TestPackage::AbstractTestClass,
+TestPackage_AbstractTestClass_strategy = st.builds(
+    TestPackage_AbstractTestClass,
     name=
         safe_text
 )
 
-@given(instance=TestPackage::TestIndexEntry_strategy)
+@given(instance=TestPackage_TestIndexEntry_strategy)
 @settings(max_examples=50)
-def test_testpackage::testindexentry_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestIndexEntry)
+def test_testpackage_testindexentry_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestIndexEntry)
 
-@given(instance=TestPackage::TestIndex_strategy)
+@given(instance=TestPackage_TestIndex_strategy)
 @settings(max_examples=50)
-def test_testpackage::testindex_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestIndex)
+def test_testpackage_testindex_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestIndex)
 
 @given(instance=AbstractTestClass_strategy)
 @settings(max_examples=50)
 def test_abstracttestclass_instantiation(instance):
     assert isinstance(instance, AbstractTestClass)
 
-@given(instance=TestPackage::TestClass2_strategy)
+@given(instance=TestPackage_TestClass2_strategy)
 @settings(max_examples=50)
-def test_testpackage::testclass2_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestClass2)
+def test_testpackage_testclass2_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestClass2)
 
-@given(instance=TestPackage::TestClass1_strategy)
+@given(instance=TestPackage_TestClass1_strategy)
 @settings(max_examples=50)
-def test_testpackage::testclass1_instantiation(instance):
-    assert isinstance(instance, TestPackage::TestClass1)
-
-@given(instance=TestPackage::TestClass1_strategy)
-def test_testpackage::testclass1_theAttributeToListen_type(instance):
-    assert isinstance(instance.theAttributeToListen, str)
+def test_testpackage_testclass1_instantiation(instance):
+    assert isinstance(instance, TestPackage_TestClass1)
 
 
-@given(instance=TestPackage::TestClass1_strategy)
-def test_testpackage::testclass1_theAttributeToListen_setter(instance):
+
+@given(instance=TestPackage_TestClass1_strategy)
+def test_testpackage_testclass1_theAttributeToListen_setter(instance):
     original = instance.theAttributeToListen
     instance.theAttributeToListen = original
     assert instance.theAttributeToListen == original
@@ -199,9 +196,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=TestPackage::TestClass1_strategy)
+@given(instance=TestPackage_TestClass1_strategy)
 @settings(max_examples=30)
-def test_testpackage::testclass1_testoperation_changes_state(instance):
+def test_testpackage_testclass1_testoperation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -215,27 +212,24 @@ def test_testpackage::testclass1_testoperation_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'testOperation' in TestPackage::TestClass1 is empty"
+        assert has_statements, f"Function 'testOperation' in TestPackage_TestClass1 is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'testOperation' in TestPackage::TestClass1 did not change state; check implementation")
+            warnings.warn(f"Operation 'testOperation' in TestPackage_TestClass1 did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'testOperation' in TestPackage::TestClass1 is not implemented or raised an error")
+        warnings.warn(f"Operation 'testOperation' in TestPackage_TestClass1 is not implemented or raised an error")
 
-@given(instance=TestPackage::AbstractTestClass_strategy)
+@given(instance=TestPackage_AbstractTestClass_strategy)
 @settings(max_examples=50)
-def test_testpackage::abstracttestclass_instantiation(instance):
-    assert isinstance(instance, TestPackage::AbstractTestClass)
-
-@given(instance=TestPackage::AbstractTestClass_strategy)
-def test_testpackage::abstracttestclass_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_testpackage_abstracttestclass_instantiation(instance):
+    assert isinstance(instance, TestPackage_AbstractTestClass)
 
 
-@given(instance=TestPackage::AbstractTestClass_strategy)
-def test_testpackage::abstracttestclass_name_setter(instance):
+
+@given(instance=TestPackage_AbstractTestClass_strategy)
+def test_testpackage_abstracttestclass_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

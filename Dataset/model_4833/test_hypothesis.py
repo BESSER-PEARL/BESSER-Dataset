@@ -3,73 +3,73 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ImplementationAndMigrationConcept,
-    archimate::Deliverable,
-    archimate::Plateau,
-    archimate::Gap,
-    archimate::WorkPackage,
+    archimate_Plateau,
+    archimate_Deliverable,
+    archimate_Gap,
+    archimate_WorkPackage,
     Requirement,
-    archimate::Constraint,
+    archimate_Constraint,
     MotivationConcept,
-    archimate::Goal,
-    archimate::Requirement,
-    archimate::Driver,
-    archimate::Principle,
-    archimate::Assessment,
-    archimate::Stakeholder,
+    archimate_Requirement,
+    archimate_Goal,
+    archimate_Driver,
+    archimate_Assessment,
+    archimate_Principle,
+    archimate_Stakeholder,
     Node,
-    archimate::SystemSoftware,
-    archimate::Device,
+    archimate_SystemSoftware,
+    archimate_Device,
     TechnologyConcept,
     ApplicationConcept,
-    archimate::ApplicationCollaboration,
+    archimate_ApplicationCollaboration,
     BusinessObject,
-    archimate::Contract,
+    archimate_Contract,
     Behavior,
-    archimate::InfrastructureFunction,
-    archimate::ApplicationInteraction,
-    archimate::ApplicationFunction,
-    archimate::ApplicationService,
-    archimate::InfrastructureService,
+    archimate_ApplicationFunction,
+    archimate_ApplicationInteraction,
+    archimate_ApplicationService,
+    archimate_InfrastructureService,
+    archimate_InfrastructureFunction,
     Passive,
-    archimate::Artifact,
-    archimate::DataObject,
+    archimate_Artifact,
+    archimate_DataObject,
     Active,
-    archimate::Node,
-    archimate::CommunicationPath,
-    archimate::Network,
-    archimate::ApplicationInterface,
-    archimate::InfrastructureInterface,
-    archimate::ApplicationComponent,
+    archimate_InfrastructureInterface,
+    archimate_ApplicationComponent,
+    archimate_Node,
+    archimate_Network,
+    archimate_CommunicationPath,
+    archimate_ApplicationInterface,
     BusinessConcept,
-    archimate::BusinessService,
-    archimate::Value,
-    archimate::BusinessObject,
-    archimate::Meaning,
-    archimate::Representation,
-    archimate::BusinessEvent,
-    archimate::BusinessCollaboration,
-    archimate::Location,
-    archimate::BusinessInterface,
-    archimate::BusinessInteraction,
-    archimate::BusinessFunction,
-    archimate::Product,
-    archimate::BusinessRole,
-    archimate::BusinessProcess,
-    archimate::BusinessActor,
-    archimate::Active,
-    archimate::Behavior,
-    archimate::Passive,
+    archimate_BusinessObject,
+    archimate_BusinessRole,
+    archimate_BusinessCollaboration,
+    archimate_BusinessFunction,
+    archimate_BusinessInterface,
+    archimate_Product,
+    archimate_Value,
+    archimate_BusinessEvent,
+    archimate_Representation,
+    archimate_Location,
+    archimate_Meaning,
+    archimate_BusinessProcess,
+    archimate_BusinessService,
+    archimate_BusinessInteraction,
+    archimate_BusinessActor,
+    archimate_Active,
+    archimate_Behavior,
+    archimate_Passive,
     Concept,
-    archimate::ImplementationAndMigrationConcept,
-    archimate::TechnologyConcept,
-    archimate::MotivationConcept,
-    archimate::ApplicationConcept,
-    archimate::BusinessConcept,
-    archimate::Concept,
+    archimate_MotivationConcept,
+    archimate_ImplementationAndMigrationConcept,
+    archimate_ApplicationConcept,
+    archimate_TechnologyConcept,
+    archimate_BusinessConcept,
+    archimate_Concept,
 )
 
 # =============================================================================
@@ -92,58 +92,58 @@ def test_implementationandmigrationconcept_constructor_args():
 
 
 
-def test_archimate::deliverable_is_not_abstract():
-    assert not inspect.isabstract(archimate::Deliverable)
+def test_archimate_plateau_is_not_abstract():
+    assert not inspect.isabstract(archimate_Plateau)
 
 
-def test_archimate::deliverable_constructor_exists():
-    assert callable(archimate::Deliverable.__init__)
+def test_archimate_plateau_constructor_exists():
+    assert callable(archimate_Plateau.__init__)
 
 
-def test_archimate::deliverable_constructor_args():
-    sig = inspect.signature(archimate::Deliverable.__init__)
+def test_archimate_plateau_constructor_args():
+    sig = inspect.signature(archimate_Plateau.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::plateau_is_not_abstract():
-    assert not inspect.isabstract(archimate::Plateau)
+def test_archimate_deliverable_is_not_abstract():
+    assert not inspect.isabstract(archimate_Deliverable)
 
 
-def test_archimate::plateau_constructor_exists():
-    assert callable(archimate::Plateau.__init__)
+def test_archimate_deliverable_constructor_exists():
+    assert callable(archimate_Deliverable.__init__)
 
 
-def test_archimate::plateau_constructor_args():
-    sig = inspect.signature(archimate::Plateau.__init__)
+def test_archimate_deliverable_constructor_args():
+    sig = inspect.signature(archimate_Deliverable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::gap_is_not_abstract():
-    assert not inspect.isabstract(archimate::Gap)
+def test_archimate_gap_is_not_abstract():
+    assert not inspect.isabstract(archimate_Gap)
 
 
-def test_archimate::gap_constructor_exists():
-    assert callable(archimate::Gap.__init__)
+def test_archimate_gap_constructor_exists():
+    assert callable(archimate_Gap.__init__)
 
 
-def test_archimate::gap_constructor_args():
-    sig = inspect.signature(archimate::Gap.__init__)
+def test_archimate_gap_constructor_args():
+    sig = inspect.signature(archimate_Gap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::workpackage_is_not_abstract():
-    assert not inspect.isabstract(archimate::WorkPackage)
+def test_archimate_workpackage_is_not_abstract():
+    assert not inspect.isabstract(archimate_WorkPackage)
 
 
-def test_archimate::workpackage_constructor_exists():
-    assert callable(archimate::WorkPackage.__init__)
+def test_archimate_workpackage_constructor_exists():
+    assert callable(archimate_WorkPackage.__init__)
 
 
-def test_archimate::workpackage_constructor_args():
-    sig = inspect.signature(archimate::WorkPackage.__init__)
+def test_archimate_workpackage_constructor_args():
+    sig = inspect.signature(archimate_WorkPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,16 +162,16 @@ def test_requirement_constructor_args():
 
 
 
-def test_archimate::constraint_is_not_abstract():
-    assert not inspect.isabstract(archimate::Constraint)
+def test_archimate_constraint_is_not_abstract():
+    assert not inspect.isabstract(archimate_Constraint)
 
 
-def test_archimate::constraint_constructor_exists():
-    assert callable(archimate::Constraint.__init__)
+def test_archimate_constraint_constructor_exists():
+    assert callable(archimate_Constraint.__init__)
 
 
-def test_archimate::constraint_constructor_args():
-    sig = inspect.signature(archimate::Constraint.__init__)
+def test_archimate_constraint_constructor_args():
+    sig = inspect.signature(archimate_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -190,86 +190,86 @@ def test_motivationconcept_constructor_args():
 
 
 
-def test_archimate::goal_is_not_abstract():
-    assert not inspect.isabstract(archimate::Goal)
+def test_archimate_requirement_is_not_abstract():
+    assert not inspect.isabstract(archimate_Requirement)
 
 
-def test_archimate::goal_constructor_exists():
-    assert callable(archimate::Goal.__init__)
+def test_archimate_requirement_constructor_exists():
+    assert callable(archimate_Requirement.__init__)
 
 
-def test_archimate::goal_constructor_args():
-    sig = inspect.signature(archimate::Goal.__init__)
+def test_archimate_requirement_constructor_args():
+    sig = inspect.signature(archimate_Requirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::requirement_is_not_abstract():
-    assert not inspect.isabstract(archimate::Requirement)
+def test_archimate_goal_is_not_abstract():
+    assert not inspect.isabstract(archimate_Goal)
 
 
-def test_archimate::requirement_constructor_exists():
-    assert callable(archimate::Requirement.__init__)
+def test_archimate_goal_constructor_exists():
+    assert callable(archimate_Goal.__init__)
 
 
-def test_archimate::requirement_constructor_args():
-    sig = inspect.signature(archimate::Requirement.__init__)
+def test_archimate_goal_constructor_args():
+    sig = inspect.signature(archimate_Goal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::driver_is_not_abstract():
-    assert not inspect.isabstract(archimate::Driver)
+def test_archimate_driver_is_not_abstract():
+    assert not inspect.isabstract(archimate_Driver)
 
 
-def test_archimate::driver_constructor_exists():
-    assert callable(archimate::Driver.__init__)
+def test_archimate_driver_constructor_exists():
+    assert callable(archimate_Driver.__init__)
 
 
-def test_archimate::driver_constructor_args():
-    sig = inspect.signature(archimate::Driver.__init__)
+def test_archimate_driver_constructor_args():
+    sig = inspect.signature(archimate_Driver.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::principle_is_not_abstract():
-    assert not inspect.isabstract(archimate::Principle)
+def test_archimate_assessment_is_not_abstract():
+    assert not inspect.isabstract(archimate_Assessment)
 
 
-def test_archimate::principle_constructor_exists():
-    assert callable(archimate::Principle.__init__)
+def test_archimate_assessment_constructor_exists():
+    assert callable(archimate_Assessment.__init__)
 
 
-def test_archimate::principle_constructor_args():
-    sig = inspect.signature(archimate::Principle.__init__)
+def test_archimate_assessment_constructor_args():
+    sig = inspect.signature(archimate_Assessment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::assessment_is_not_abstract():
-    assert not inspect.isabstract(archimate::Assessment)
+def test_archimate_principle_is_not_abstract():
+    assert not inspect.isabstract(archimate_Principle)
 
 
-def test_archimate::assessment_constructor_exists():
-    assert callable(archimate::Assessment.__init__)
+def test_archimate_principle_constructor_exists():
+    assert callable(archimate_Principle.__init__)
 
 
-def test_archimate::assessment_constructor_args():
-    sig = inspect.signature(archimate::Assessment.__init__)
+def test_archimate_principle_constructor_args():
+    sig = inspect.signature(archimate_Principle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::stakeholder_is_not_abstract():
-    assert not inspect.isabstract(archimate::Stakeholder)
+def test_archimate_stakeholder_is_not_abstract():
+    assert not inspect.isabstract(archimate_Stakeholder)
 
 
-def test_archimate::stakeholder_constructor_exists():
-    assert callable(archimate::Stakeholder.__init__)
+def test_archimate_stakeholder_constructor_exists():
+    assert callable(archimate_Stakeholder.__init__)
 
 
-def test_archimate::stakeholder_constructor_args():
-    sig = inspect.signature(archimate::Stakeholder.__init__)
+def test_archimate_stakeholder_constructor_args():
+    sig = inspect.signature(archimate_Stakeholder.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -288,30 +288,30 @@ def test_node_constructor_args():
 
 
 
-def test_archimate::systemsoftware_is_not_abstract():
-    assert not inspect.isabstract(archimate::SystemSoftware)
+def test_archimate_systemsoftware_is_not_abstract():
+    assert not inspect.isabstract(archimate_SystemSoftware)
 
 
-def test_archimate::systemsoftware_constructor_exists():
-    assert callable(archimate::SystemSoftware.__init__)
+def test_archimate_systemsoftware_constructor_exists():
+    assert callable(archimate_SystemSoftware.__init__)
 
 
-def test_archimate::systemsoftware_constructor_args():
-    sig = inspect.signature(archimate::SystemSoftware.__init__)
+def test_archimate_systemsoftware_constructor_args():
+    sig = inspect.signature(archimate_SystemSoftware.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::device_is_not_abstract():
-    assert not inspect.isabstract(archimate::Device)
+def test_archimate_device_is_not_abstract():
+    assert not inspect.isabstract(archimate_Device)
 
 
-def test_archimate::device_constructor_exists():
-    assert callable(archimate::Device.__init__)
+def test_archimate_device_constructor_exists():
+    assert callable(archimate_Device.__init__)
 
 
-def test_archimate::device_constructor_args():
-    sig = inspect.signature(archimate::Device.__init__)
+def test_archimate_device_constructor_args():
+    sig = inspect.signature(archimate_Device.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -344,16 +344,16 @@ def test_applicationconcept_constructor_args():
 
 
 
-def test_archimate::applicationcollaboration_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationCollaboration)
+def test_archimate_applicationcollaboration_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationCollaboration)
 
 
-def test_archimate::applicationcollaboration_constructor_exists():
-    assert callable(archimate::ApplicationCollaboration.__init__)
+def test_archimate_applicationcollaboration_constructor_exists():
+    assert callable(archimate_ApplicationCollaboration.__init__)
 
 
-def test_archimate::applicationcollaboration_constructor_args():
-    sig = inspect.signature(archimate::ApplicationCollaboration.__init__)
+def test_archimate_applicationcollaboration_constructor_args():
+    sig = inspect.signature(archimate_ApplicationCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -372,16 +372,16 @@ def test_businessobject_constructor_args():
 
 
 
-def test_archimate::contract_is_not_abstract():
-    assert not inspect.isabstract(archimate::Contract)
+def test_archimate_contract_is_not_abstract():
+    assert not inspect.isabstract(archimate_Contract)
 
 
-def test_archimate::contract_constructor_exists():
-    assert callable(archimate::Contract.__init__)
+def test_archimate_contract_constructor_exists():
+    assert callable(archimate_Contract.__init__)
 
 
-def test_archimate::contract_constructor_args():
-    sig = inspect.signature(archimate::Contract.__init__)
+def test_archimate_contract_constructor_args():
+    sig = inspect.signature(archimate_Contract.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -400,72 +400,72 @@ def test_behavior_constructor_args():
 
 
 
-def test_archimate::infrastructurefunction_is_not_abstract():
-    assert not inspect.isabstract(archimate::InfrastructureFunction)
+def test_archimate_applicationfunction_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationFunction)
 
 
-def test_archimate::infrastructurefunction_constructor_exists():
-    assert callable(archimate::InfrastructureFunction.__init__)
+def test_archimate_applicationfunction_constructor_exists():
+    assert callable(archimate_ApplicationFunction.__init__)
 
 
-def test_archimate::infrastructurefunction_constructor_args():
-    sig = inspect.signature(archimate::InfrastructureFunction.__init__)
+def test_archimate_applicationfunction_constructor_args():
+    sig = inspect.signature(archimate_ApplicationFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::applicationinteraction_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationInteraction)
+def test_archimate_applicationinteraction_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationInteraction)
 
 
-def test_archimate::applicationinteraction_constructor_exists():
-    assert callable(archimate::ApplicationInteraction.__init__)
+def test_archimate_applicationinteraction_constructor_exists():
+    assert callable(archimate_ApplicationInteraction.__init__)
 
 
-def test_archimate::applicationinteraction_constructor_args():
-    sig = inspect.signature(archimate::ApplicationInteraction.__init__)
+def test_archimate_applicationinteraction_constructor_args():
+    sig = inspect.signature(archimate_ApplicationInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::applicationfunction_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationFunction)
+def test_archimate_applicationservice_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationService)
 
 
-def test_archimate::applicationfunction_constructor_exists():
-    assert callable(archimate::ApplicationFunction.__init__)
+def test_archimate_applicationservice_constructor_exists():
+    assert callable(archimate_ApplicationService.__init__)
 
 
-def test_archimate::applicationfunction_constructor_args():
-    sig = inspect.signature(archimate::ApplicationFunction.__init__)
+def test_archimate_applicationservice_constructor_args():
+    sig = inspect.signature(archimate_ApplicationService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::applicationservice_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationService)
+def test_archimate_infrastructureservice_is_not_abstract():
+    assert not inspect.isabstract(archimate_InfrastructureService)
 
 
-def test_archimate::applicationservice_constructor_exists():
-    assert callable(archimate::ApplicationService.__init__)
+def test_archimate_infrastructureservice_constructor_exists():
+    assert callable(archimate_InfrastructureService.__init__)
 
 
-def test_archimate::applicationservice_constructor_args():
-    sig = inspect.signature(archimate::ApplicationService.__init__)
+def test_archimate_infrastructureservice_constructor_args():
+    sig = inspect.signature(archimate_InfrastructureService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::infrastructureservice_is_not_abstract():
-    assert not inspect.isabstract(archimate::InfrastructureService)
+def test_archimate_infrastructurefunction_is_not_abstract():
+    assert not inspect.isabstract(archimate_InfrastructureFunction)
 
 
-def test_archimate::infrastructureservice_constructor_exists():
-    assert callable(archimate::InfrastructureService.__init__)
+def test_archimate_infrastructurefunction_constructor_exists():
+    assert callable(archimate_InfrastructureFunction.__init__)
 
 
-def test_archimate::infrastructureservice_constructor_args():
-    sig = inspect.signature(archimate::InfrastructureService.__init__)
+def test_archimate_infrastructurefunction_constructor_args():
+    sig = inspect.signature(archimate_InfrastructureFunction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,30 +484,30 @@ def test_passive_constructor_args():
 
 
 
-def test_archimate::artifact_is_not_abstract():
-    assert not inspect.isabstract(archimate::Artifact)
+def test_archimate_artifact_is_not_abstract():
+    assert not inspect.isabstract(archimate_Artifact)
 
 
-def test_archimate::artifact_constructor_exists():
-    assert callable(archimate::Artifact.__init__)
+def test_archimate_artifact_constructor_exists():
+    assert callable(archimate_Artifact.__init__)
 
 
-def test_archimate::artifact_constructor_args():
-    sig = inspect.signature(archimate::Artifact.__init__)
+def test_archimate_artifact_constructor_args():
+    sig = inspect.signature(archimate_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::dataobject_is_not_abstract():
-    assert not inspect.isabstract(archimate::DataObject)
+def test_archimate_dataobject_is_not_abstract():
+    assert not inspect.isabstract(archimate_DataObject)
 
 
-def test_archimate::dataobject_constructor_exists():
-    assert callable(archimate::DataObject.__init__)
+def test_archimate_dataobject_constructor_exists():
+    assert callable(archimate_DataObject.__init__)
 
 
-def test_archimate::dataobject_constructor_args():
-    sig = inspect.signature(archimate::DataObject.__init__)
+def test_archimate_dataobject_constructor_args():
+    sig = inspect.signature(archimate_DataObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -526,86 +526,86 @@ def test_active_constructor_args():
 
 
 
-def test_archimate::node_is_not_abstract():
-    assert not inspect.isabstract(archimate::Node)
+def test_archimate_infrastructureinterface_is_not_abstract():
+    assert not inspect.isabstract(archimate_InfrastructureInterface)
 
 
-def test_archimate::node_constructor_exists():
-    assert callable(archimate::Node.__init__)
+def test_archimate_infrastructureinterface_constructor_exists():
+    assert callable(archimate_InfrastructureInterface.__init__)
 
 
-def test_archimate::node_constructor_args():
-    sig = inspect.signature(archimate::Node.__init__)
+def test_archimate_infrastructureinterface_constructor_args():
+    sig = inspect.signature(archimate_InfrastructureInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::communicationpath_is_not_abstract():
-    assert not inspect.isabstract(archimate::CommunicationPath)
+def test_archimate_applicationcomponent_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationComponent)
 
 
-def test_archimate::communicationpath_constructor_exists():
-    assert callable(archimate::CommunicationPath.__init__)
+def test_archimate_applicationcomponent_constructor_exists():
+    assert callable(archimate_ApplicationComponent.__init__)
 
 
-def test_archimate::communicationpath_constructor_args():
-    sig = inspect.signature(archimate::CommunicationPath.__init__)
+def test_archimate_applicationcomponent_constructor_args():
+    sig = inspect.signature(archimate_ApplicationComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::network_is_not_abstract():
-    assert not inspect.isabstract(archimate::Network)
+def test_archimate_node_is_not_abstract():
+    assert not inspect.isabstract(archimate_Node)
 
 
-def test_archimate::network_constructor_exists():
-    assert callable(archimate::Network.__init__)
+def test_archimate_node_constructor_exists():
+    assert callable(archimate_Node.__init__)
 
 
-def test_archimate::network_constructor_args():
-    sig = inspect.signature(archimate::Network.__init__)
+def test_archimate_node_constructor_args():
+    sig = inspect.signature(archimate_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::applicationinterface_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationInterface)
+def test_archimate_network_is_not_abstract():
+    assert not inspect.isabstract(archimate_Network)
 
 
-def test_archimate::applicationinterface_constructor_exists():
-    assert callable(archimate::ApplicationInterface.__init__)
+def test_archimate_network_constructor_exists():
+    assert callable(archimate_Network.__init__)
 
 
-def test_archimate::applicationinterface_constructor_args():
-    sig = inspect.signature(archimate::ApplicationInterface.__init__)
+def test_archimate_network_constructor_args():
+    sig = inspect.signature(archimate_Network.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::infrastructureinterface_is_not_abstract():
-    assert not inspect.isabstract(archimate::InfrastructureInterface)
+def test_archimate_communicationpath_is_not_abstract():
+    assert not inspect.isabstract(archimate_CommunicationPath)
 
 
-def test_archimate::infrastructureinterface_constructor_exists():
-    assert callable(archimate::InfrastructureInterface.__init__)
+def test_archimate_communicationpath_constructor_exists():
+    assert callable(archimate_CommunicationPath.__init__)
 
 
-def test_archimate::infrastructureinterface_constructor_args():
-    sig = inspect.signature(archimate::InfrastructureInterface.__init__)
+def test_archimate_communicationpath_constructor_args():
+    sig = inspect.signature(archimate_CommunicationPath.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::applicationcomponent_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationComponent)
+def test_archimate_applicationinterface_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationInterface)
 
 
-def test_archimate::applicationcomponent_constructor_exists():
-    assert callable(archimate::ApplicationComponent.__init__)
+def test_archimate_applicationinterface_constructor_exists():
+    assert callable(archimate_ApplicationInterface.__init__)
 
 
-def test_archimate::applicationcomponent_constructor_args():
-    sig = inspect.signature(archimate::ApplicationComponent.__init__)
+def test_archimate_applicationinterface_constructor_args():
+    sig = inspect.signature(archimate_ApplicationInterface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -624,254 +624,254 @@ def test_businessconcept_constructor_args():
 
 
 
-def test_archimate::businessservice_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessService)
+def test_archimate_businessobject_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessObject)
 
 
-def test_archimate::businessservice_constructor_exists():
-    assert callable(archimate::BusinessService.__init__)
+def test_archimate_businessobject_constructor_exists():
+    assert callable(archimate_BusinessObject.__init__)
 
 
-def test_archimate::businessservice_constructor_args():
-    sig = inspect.signature(archimate::BusinessService.__init__)
+def test_archimate_businessobject_constructor_args():
+    sig = inspect.signature(archimate_BusinessObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::value_is_not_abstract():
-    assert not inspect.isabstract(archimate::Value)
+def test_archimate_businessrole_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessRole)
 
 
-def test_archimate::value_constructor_exists():
-    assert callable(archimate::Value.__init__)
+def test_archimate_businessrole_constructor_exists():
+    assert callable(archimate_BusinessRole.__init__)
 
 
-def test_archimate::value_constructor_args():
-    sig = inspect.signature(archimate::Value.__init__)
+def test_archimate_businessrole_constructor_args():
+    sig = inspect.signature(archimate_BusinessRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessobject_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessObject)
+def test_archimate_businesscollaboration_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessCollaboration)
 
 
-def test_archimate::businessobject_constructor_exists():
-    assert callable(archimate::BusinessObject.__init__)
+def test_archimate_businesscollaboration_constructor_exists():
+    assert callable(archimate_BusinessCollaboration.__init__)
 
 
-def test_archimate::businessobject_constructor_args():
-    sig = inspect.signature(archimate::BusinessObject.__init__)
+def test_archimate_businesscollaboration_constructor_args():
+    sig = inspect.signature(archimate_BusinessCollaboration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::meaning_is_not_abstract():
-    assert not inspect.isabstract(archimate::Meaning)
+def test_archimate_businessfunction_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessFunction)
 
 
-def test_archimate::meaning_constructor_exists():
-    assert callable(archimate::Meaning.__init__)
+def test_archimate_businessfunction_constructor_exists():
+    assert callable(archimate_BusinessFunction.__init__)
 
 
-def test_archimate::meaning_constructor_args():
-    sig = inspect.signature(archimate::Meaning.__init__)
+def test_archimate_businessfunction_constructor_args():
+    sig = inspect.signature(archimate_BusinessFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::representation_is_not_abstract():
-    assert not inspect.isabstract(archimate::Representation)
+def test_archimate_businessinterface_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessInterface)
 
 
-def test_archimate::representation_constructor_exists():
-    assert callable(archimate::Representation.__init__)
+def test_archimate_businessinterface_constructor_exists():
+    assert callable(archimate_BusinessInterface.__init__)
 
 
-def test_archimate::representation_constructor_args():
-    sig = inspect.signature(archimate::Representation.__init__)
+def test_archimate_businessinterface_constructor_args():
+    sig = inspect.signature(archimate_BusinessInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessevent_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessEvent)
+def test_archimate_product_is_not_abstract():
+    assert not inspect.isabstract(archimate_Product)
 
 
-def test_archimate::businessevent_constructor_exists():
-    assert callable(archimate::BusinessEvent.__init__)
+def test_archimate_product_constructor_exists():
+    assert callable(archimate_Product.__init__)
 
 
-def test_archimate::businessevent_constructor_args():
-    sig = inspect.signature(archimate::BusinessEvent.__init__)
+def test_archimate_product_constructor_args():
+    sig = inspect.signature(archimate_Product.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businesscollaboration_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessCollaboration)
+def test_archimate_value_is_not_abstract():
+    assert not inspect.isabstract(archimate_Value)
 
 
-def test_archimate::businesscollaboration_constructor_exists():
-    assert callable(archimate::BusinessCollaboration.__init__)
+def test_archimate_value_constructor_exists():
+    assert callable(archimate_Value.__init__)
 
 
-def test_archimate::businesscollaboration_constructor_args():
-    sig = inspect.signature(archimate::BusinessCollaboration.__init__)
+def test_archimate_value_constructor_args():
+    sig = inspect.signature(archimate_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::location_is_not_abstract():
-    assert not inspect.isabstract(archimate::Location)
+def test_archimate_businessevent_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessEvent)
 
 
-def test_archimate::location_constructor_exists():
-    assert callable(archimate::Location.__init__)
+def test_archimate_businessevent_constructor_exists():
+    assert callable(archimate_BusinessEvent.__init__)
 
 
-def test_archimate::location_constructor_args():
-    sig = inspect.signature(archimate::Location.__init__)
+def test_archimate_businessevent_constructor_args():
+    sig = inspect.signature(archimate_BusinessEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessinterface_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessInterface)
+def test_archimate_representation_is_not_abstract():
+    assert not inspect.isabstract(archimate_Representation)
 
 
-def test_archimate::businessinterface_constructor_exists():
-    assert callable(archimate::BusinessInterface.__init__)
+def test_archimate_representation_constructor_exists():
+    assert callable(archimate_Representation.__init__)
 
 
-def test_archimate::businessinterface_constructor_args():
-    sig = inspect.signature(archimate::BusinessInterface.__init__)
+def test_archimate_representation_constructor_args():
+    sig = inspect.signature(archimate_Representation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessinteraction_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessInteraction)
+def test_archimate_location_is_not_abstract():
+    assert not inspect.isabstract(archimate_Location)
 
 
-def test_archimate::businessinteraction_constructor_exists():
-    assert callable(archimate::BusinessInteraction.__init__)
+def test_archimate_location_constructor_exists():
+    assert callable(archimate_Location.__init__)
 
 
-def test_archimate::businessinteraction_constructor_args():
-    sig = inspect.signature(archimate::BusinessInteraction.__init__)
+def test_archimate_location_constructor_args():
+    sig = inspect.signature(archimate_Location.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessfunction_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessFunction)
+def test_archimate_meaning_is_not_abstract():
+    assert not inspect.isabstract(archimate_Meaning)
 
 
-def test_archimate::businessfunction_constructor_exists():
-    assert callable(archimate::BusinessFunction.__init__)
+def test_archimate_meaning_constructor_exists():
+    assert callable(archimate_Meaning.__init__)
 
 
-def test_archimate::businessfunction_constructor_args():
-    sig = inspect.signature(archimate::BusinessFunction.__init__)
+def test_archimate_meaning_constructor_args():
+    sig = inspect.signature(archimate_Meaning.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::product_is_not_abstract():
-    assert not inspect.isabstract(archimate::Product)
+def test_archimate_businessprocess_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessProcess)
 
 
-def test_archimate::product_constructor_exists():
-    assert callable(archimate::Product.__init__)
+def test_archimate_businessprocess_constructor_exists():
+    assert callable(archimate_BusinessProcess.__init__)
 
 
-def test_archimate::product_constructor_args():
-    sig = inspect.signature(archimate::Product.__init__)
+def test_archimate_businessprocess_constructor_args():
+    sig = inspect.signature(archimate_BusinessProcess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessrole_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessRole)
+def test_archimate_businessservice_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessService)
 
 
-def test_archimate::businessrole_constructor_exists():
-    assert callable(archimate::BusinessRole.__init__)
+def test_archimate_businessservice_constructor_exists():
+    assert callable(archimate_BusinessService.__init__)
 
 
-def test_archimate::businessrole_constructor_args():
-    sig = inspect.signature(archimate::BusinessRole.__init__)
+def test_archimate_businessservice_constructor_args():
+    sig = inspect.signature(archimate_BusinessService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessprocess_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessProcess)
+def test_archimate_businessinteraction_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessInteraction)
 
 
-def test_archimate::businessprocess_constructor_exists():
-    assert callable(archimate::BusinessProcess.__init__)
+def test_archimate_businessinteraction_constructor_exists():
+    assert callable(archimate_BusinessInteraction.__init__)
 
 
-def test_archimate::businessprocess_constructor_args():
-    sig = inspect.signature(archimate::BusinessProcess.__init__)
+def test_archimate_businessinteraction_constructor_args():
+    sig = inspect.signature(archimate_BusinessInteraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessactor_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessActor)
+def test_archimate_businessactor_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessActor)
 
 
-def test_archimate::businessactor_constructor_exists():
-    assert callable(archimate::BusinessActor.__init__)
+def test_archimate_businessactor_constructor_exists():
+    assert callable(archimate_BusinessActor.__init__)
 
 
-def test_archimate::businessactor_constructor_args():
-    sig = inspect.signature(archimate::BusinessActor.__init__)
+def test_archimate_businessactor_constructor_args():
+    sig = inspect.signature(archimate_BusinessActor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::active_is_not_abstract():
-    assert not inspect.isabstract(archimate::Active)
+def test_archimate_active_is_not_abstract():
+    assert not inspect.isabstract(archimate_Active)
 
 
-def test_archimate::active_constructor_exists():
-    assert callable(archimate::Active.__init__)
+def test_archimate_active_constructor_exists():
+    assert callable(archimate_Active.__init__)
 
 
-def test_archimate::active_constructor_args():
-    sig = inspect.signature(archimate::Active.__init__)
+def test_archimate_active_constructor_args():
+    sig = inspect.signature(archimate_Active.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::behavior_is_not_abstract():
-    assert not inspect.isabstract(archimate::Behavior)
+def test_archimate_behavior_is_not_abstract():
+    assert not inspect.isabstract(archimate_Behavior)
 
 
-def test_archimate::behavior_constructor_exists():
-    assert callable(archimate::Behavior.__init__)
+def test_archimate_behavior_constructor_exists():
+    assert callable(archimate_Behavior.__init__)
 
 
-def test_archimate::behavior_constructor_args():
-    sig = inspect.signature(archimate::Behavior.__init__)
+def test_archimate_behavior_constructor_args():
+    sig = inspect.signature(archimate_Behavior.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::passive_is_not_abstract():
-    assert not inspect.isabstract(archimate::Passive)
+def test_archimate_passive_is_not_abstract():
+    assert not inspect.isabstract(archimate_Passive)
 
 
-def test_archimate::passive_constructor_exists():
-    assert callable(archimate::Passive.__init__)
+def test_archimate_passive_constructor_exists():
+    assert callable(archimate_Passive.__init__)
 
 
-def test_archimate::passive_constructor_args():
-    sig = inspect.signature(archimate::Passive.__init__)
+def test_archimate_passive_constructor_args():
+    sig = inspect.signature(archimate_Passive.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -890,103 +890,103 @@ def test_concept_constructor_args():
 
 
 
-def test_archimate::implementationandmigrationconcept_is_not_abstract():
-    assert not inspect.isabstract(archimate::ImplementationAndMigrationConcept)
+def test_archimate_motivationconcept_is_not_abstract():
+    assert not inspect.isabstract(archimate_MotivationConcept)
 
 
-def test_archimate::implementationandmigrationconcept_constructor_exists():
-    assert callable(archimate::ImplementationAndMigrationConcept.__init__)
+def test_archimate_motivationconcept_constructor_exists():
+    assert callable(archimate_MotivationConcept.__init__)
 
 
-def test_archimate::implementationandmigrationconcept_constructor_args():
-    sig = inspect.signature(archimate::ImplementationAndMigrationConcept.__init__)
+def test_archimate_motivationconcept_constructor_args():
+    sig = inspect.signature(archimate_MotivationConcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::technologyconcept_is_not_abstract():
-    assert not inspect.isabstract(archimate::TechnologyConcept)
+def test_archimate_implementationandmigrationconcept_is_not_abstract():
+    assert not inspect.isabstract(archimate_ImplementationAndMigrationConcept)
 
 
-def test_archimate::technologyconcept_constructor_exists():
-    assert callable(archimate::TechnologyConcept.__init__)
+def test_archimate_implementationandmigrationconcept_constructor_exists():
+    assert callable(archimate_ImplementationAndMigrationConcept.__init__)
 
 
-def test_archimate::technologyconcept_constructor_args():
-    sig = inspect.signature(archimate::TechnologyConcept.__init__)
+def test_archimate_implementationandmigrationconcept_constructor_args():
+    sig = inspect.signature(archimate_ImplementationAndMigrationConcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::motivationconcept_is_not_abstract():
-    assert not inspect.isabstract(archimate::MotivationConcept)
+def test_archimate_applicationconcept_is_not_abstract():
+    assert not inspect.isabstract(archimate_ApplicationConcept)
 
 
-def test_archimate::motivationconcept_constructor_exists():
-    assert callable(archimate::MotivationConcept.__init__)
+def test_archimate_applicationconcept_constructor_exists():
+    assert callable(archimate_ApplicationConcept.__init__)
 
 
-def test_archimate::motivationconcept_constructor_args():
-    sig = inspect.signature(archimate::MotivationConcept.__init__)
+def test_archimate_applicationconcept_constructor_args():
+    sig = inspect.signature(archimate_ApplicationConcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::applicationconcept_is_not_abstract():
-    assert not inspect.isabstract(archimate::ApplicationConcept)
+def test_archimate_technologyconcept_is_not_abstract():
+    assert not inspect.isabstract(archimate_TechnologyConcept)
 
 
-def test_archimate::applicationconcept_constructor_exists():
-    assert callable(archimate::ApplicationConcept.__init__)
+def test_archimate_technologyconcept_constructor_exists():
+    assert callable(archimate_TechnologyConcept.__init__)
 
 
-def test_archimate::applicationconcept_constructor_args():
-    sig = inspect.signature(archimate::ApplicationConcept.__init__)
+def test_archimate_technologyconcept_constructor_args():
+    sig = inspect.signature(archimate_TechnologyConcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::businessconcept_is_not_abstract():
-    assert not inspect.isabstract(archimate::BusinessConcept)
+def test_archimate_businessconcept_is_not_abstract():
+    assert not inspect.isabstract(archimate_BusinessConcept)
 
 
-def test_archimate::businessconcept_constructor_exists():
-    assert callable(archimate::BusinessConcept.__init__)
+def test_archimate_businessconcept_constructor_exists():
+    assert callable(archimate_BusinessConcept.__init__)
 
 
-def test_archimate::businessconcept_constructor_args():
-    sig = inspect.signature(archimate::BusinessConcept.__init__)
+def test_archimate_businessconcept_constructor_args():
+    sig = inspect.signature(archimate_BusinessConcept.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_archimate::concept_is_not_abstract():
-    assert not inspect.isabstract(archimate::Concept)
+def test_archimate_concept_is_not_abstract():
+    assert not inspect.isabstract(archimate_Concept)
 
 
-def test_archimate::concept_constructor_exists():
-    assert callable(archimate::Concept.__init__)
+def test_archimate_concept_constructor_exists():
+    assert callable(archimate_Concept.__init__)
 
 
-def test_archimate::concept_constructor_args():
-    sig = inspect.signature(archimate::Concept.__init__)
+def test_archimate_concept_constructor_args():
+    sig = inspect.signature(archimate_Concept.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_archimate::concept_has_description():
-    assert hasattr(archimate::Concept, "description")
+def test_archimate_concept_has_description():
+    assert hasattr(archimate_Concept, "description")
     descriptor = None
-    for klass in archimate::Concept.__mro__:
+    for klass in archimate_Concept.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_archimate::concept_has_name():
-    assert hasattr(archimate::Concept, "name")
+def test_archimate_concept_has_name():
+    assert hasattr(archimate_Concept, "name")
     descriptor = None
-    for klass in archimate::Concept.__mro__:
+    for klass in archimate_Concept.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1007,53 +1007,53 @@ safe_text = st.text(
 ImplementationAndMigrationConcept_strategy = st.builds(
     ImplementationAndMigrationConcept,
 )
-archimate::Deliverable_strategy = st.builds(
-    archimate::Deliverable,
+archimate_Plateau_strategy = st.builds(
+    archimate_Plateau,
 )
-archimate::Plateau_strategy = st.builds(
-    archimate::Plateau,
+archimate_Deliverable_strategy = st.builds(
+    archimate_Deliverable,
 )
-archimate::Gap_strategy = st.builds(
-    archimate::Gap,
+archimate_Gap_strategy = st.builds(
+    archimate_Gap,
 )
-archimate::WorkPackage_strategy = st.builds(
-    archimate::WorkPackage,
+archimate_WorkPackage_strategy = st.builds(
+    archimate_WorkPackage,
 )
 Requirement_strategy = st.builds(
     Requirement,
 )
-archimate::Constraint_strategy = st.builds(
-    archimate::Constraint,
+archimate_Constraint_strategy = st.builds(
+    archimate_Constraint,
 )
 MotivationConcept_strategy = st.builds(
     MotivationConcept,
 )
-archimate::Goal_strategy = st.builds(
-    archimate::Goal,
+archimate_Requirement_strategy = st.builds(
+    archimate_Requirement,
 )
-archimate::Requirement_strategy = st.builds(
-    archimate::Requirement,
+archimate_Goal_strategy = st.builds(
+    archimate_Goal,
 )
-archimate::Driver_strategy = st.builds(
-    archimate::Driver,
+archimate_Driver_strategy = st.builds(
+    archimate_Driver,
 )
-archimate::Principle_strategy = st.builds(
-    archimate::Principle,
+archimate_Assessment_strategy = st.builds(
+    archimate_Assessment,
 )
-archimate::Assessment_strategy = st.builds(
-    archimate::Assessment,
+archimate_Principle_strategy = st.builds(
+    archimate_Principle,
 )
-archimate::Stakeholder_strategy = st.builds(
-    archimate::Stakeholder,
+archimate_Stakeholder_strategy = st.builds(
+    archimate_Stakeholder,
 )
 Node_strategy = st.builds(
     Node,
 )
-archimate::SystemSoftware_strategy = st.builds(
-    archimate::SystemSoftware,
+archimate_SystemSoftware_strategy = st.builds(
+    archimate_SystemSoftware,
 )
-archimate::Device_strategy = st.builds(
-    archimate::Device,
+archimate_Device_strategy = st.builds(
+    archimate_Device,
 )
 TechnologyConcept_strategy = st.builds(
     TechnologyConcept,
@@ -1061,140 +1061,140 @@ TechnologyConcept_strategy = st.builds(
 ApplicationConcept_strategy = st.builds(
     ApplicationConcept,
 )
-archimate::ApplicationCollaboration_strategy = st.builds(
-    archimate::ApplicationCollaboration,
+archimate_ApplicationCollaboration_strategy = st.builds(
+    archimate_ApplicationCollaboration,
 )
 BusinessObject_strategy = st.builds(
     BusinessObject,
 )
-archimate::Contract_strategy = st.builds(
-    archimate::Contract,
+archimate_Contract_strategy = st.builds(
+    archimate_Contract,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-archimate::InfrastructureFunction_strategy = st.builds(
-    archimate::InfrastructureFunction,
+archimate_ApplicationFunction_strategy = st.builds(
+    archimate_ApplicationFunction,
 )
-archimate::ApplicationInteraction_strategy = st.builds(
-    archimate::ApplicationInteraction,
+archimate_ApplicationInteraction_strategy = st.builds(
+    archimate_ApplicationInteraction,
 )
-archimate::ApplicationFunction_strategy = st.builds(
-    archimate::ApplicationFunction,
+archimate_ApplicationService_strategy = st.builds(
+    archimate_ApplicationService,
 )
-archimate::ApplicationService_strategy = st.builds(
-    archimate::ApplicationService,
+archimate_InfrastructureService_strategy = st.builds(
+    archimate_InfrastructureService,
 )
-archimate::InfrastructureService_strategy = st.builds(
-    archimate::InfrastructureService,
+archimate_InfrastructureFunction_strategy = st.builds(
+    archimate_InfrastructureFunction,
 )
 Passive_strategy = st.builds(
     Passive,
 )
-archimate::Artifact_strategy = st.builds(
-    archimate::Artifact,
+archimate_Artifact_strategy = st.builds(
+    archimate_Artifact,
 )
-archimate::DataObject_strategy = st.builds(
-    archimate::DataObject,
+archimate_DataObject_strategy = st.builds(
+    archimate_DataObject,
 )
 Active_strategy = st.builds(
     Active,
 )
-archimate::Node_strategy = st.builds(
-    archimate::Node,
+archimate_InfrastructureInterface_strategy = st.builds(
+    archimate_InfrastructureInterface,
 )
-archimate::CommunicationPath_strategy = st.builds(
-    archimate::CommunicationPath,
+archimate_ApplicationComponent_strategy = st.builds(
+    archimate_ApplicationComponent,
 )
-archimate::Network_strategy = st.builds(
-    archimate::Network,
+archimate_Node_strategy = st.builds(
+    archimate_Node,
 )
-archimate::ApplicationInterface_strategy = st.builds(
-    archimate::ApplicationInterface,
+archimate_Network_strategy = st.builds(
+    archimate_Network,
 )
-archimate::InfrastructureInterface_strategy = st.builds(
-    archimate::InfrastructureInterface,
+archimate_CommunicationPath_strategy = st.builds(
+    archimate_CommunicationPath,
 )
-archimate::ApplicationComponent_strategy = st.builds(
-    archimate::ApplicationComponent,
+archimate_ApplicationInterface_strategy = st.builds(
+    archimate_ApplicationInterface,
 )
 BusinessConcept_strategy = st.builds(
     BusinessConcept,
 )
-archimate::BusinessService_strategy = st.builds(
-    archimate::BusinessService,
+archimate_BusinessObject_strategy = st.builds(
+    archimate_BusinessObject,
 )
-archimate::Value_strategy = st.builds(
-    archimate::Value,
+archimate_BusinessRole_strategy = st.builds(
+    archimate_BusinessRole,
 )
-archimate::BusinessObject_strategy = st.builds(
-    archimate::BusinessObject,
+archimate_BusinessCollaboration_strategy = st.builds(
+    archimate_BusinessCollaboration,
 )
-archimate::Meaning_strategy = st.builds(
-    archimate::Meaning,
+archimate_BusinessFunction_strategy = st.builds(
+    archimate_BusinessFunction,
 )
-archimate::Representation_strategy = st.builds(
-    archimate::Representation,
+archimate_BusinessInterface_strategy = st.builds(
+    archimate_BusinessInterface,
 )
-archimate::BusinessEvent_strategy = st.builds(
-    archimate::BusinessEvent,
+archimate_Product_strategy = st.builds(
+    archimate_Product,
 )
-archimate::BusinessCollaboration_strategy = st.builds(
-    archimate::BusinessCollaboration,
+archimate_Value_strategy = st.builds(
+    archimate_Value,
 )
-archimate::Location_strategy = st.builds(
-    archimate::Location,
+archimate_BusinessEvent_strategy = st.builds(
+    archimate_BusinessEvent,
 )
-archimate::BusinessInterface_strategy = st.builds(
-    archimate::BusinessInterface,
+archimate_Representation_strategy = st.builds(
+    archimate_Representation,
 )
-archimate::BusinessInteraction_strategy = st.builds(
-    archimate::BusinessInteraction,
+archimate_Location_strategy = st.builds(
+    archimate_Location,
 )
-archimate::BusinessFunction_strategy = st.builds(
-    archimate::BusinessFunction,
+archimate_Meaning_strategy = st.builds(
+    archimate_Meaning,
 )
-archimate::Product_strategy = st.builds(
-    archimate::Product,
+archimate_BusinessProcess_strategy = st.builds(
+    archimate_BusinessProcess,
 )
-archimate::BusinessRole_strategy = st.builds(
-    archimate::BusinessRole,
+archimate_BusinessService_strategy = st.builds(
+    archimate_BusinessService,
 )
-archimate::BusinessProcess_strategy = st.builds(
-    archimate::BusinessProcess,
+archimate_BusinessInteraction_strategy = st.builds(
+    archimate_BusinessInteraction,
 )
-archimate::BusinessActor_strategy = st.builds(
-    archimate::BusinessActor,
+archimate_BusinessActor_strategy = st.builds(
+    archimate_BusinessActor,
 )
-archimate::Active_strategy = st.builds(
-    archimate::Active,
+archimate_Active_strategy = st.builds(
+    archimate_Active,
 )
-archimate::Behavior_strategy = st.builds(
-    archimate::Behavior,
+archimate_Behavior_strategy = st.builds(
+    archimate_Behavior,
 )
-archimate::Passive_strategy = st.builds(
-    archimate::Passive,
+archimate_Passive_strategy = st.builds(
+    archimate_Passive,
 )
 Concept_strategy = st.builds(
     Concept,
 )
-archimate::ImplementationAndMigrationConcept_strategy = st.builds(
-    archimate::ImplementationAndMigrationConcept,
+archimate_MotivationConcept_strategy = st.builds(
+    archimate_MotivationConcept,
 )
-archimate::TechnologyConcept_strategy = st.builds(
-    archimate::TechnologyConcept,
+archimate_ImplementationAndMigrationConcept_strategy = st.builds(
+    archimate_ImplementationAndMigrationConcept,
 )
-archimate::MotivationConcept_strategy = st.builds(
-    archimate::MotivationConcept,
+archimate_ApplicationConcept_strategy = st.builds(
+    archimate_ApplicationConcept,
 )
-archimate::ApplicationConcept_strategy = st.builds(
-    archimate::ApplicationConcept,
+archimate_TechnologyConcept_strategy = st.builds(
+    archimate_TechnologyConcept,
 )
-archimate::BusinessConcept_strategy = st.builds(
-    archimate::BusinessConcept,
+archimate_BusinessConcept_strategy = st.builds(
+    archimate_BusinessConcept,
 )
-archimate::Concept_strategy = st.builds(
-    archimate::Concept,
+archimate_Concept_strategy = st.builds(
+    archimate_Concept,
     description=
         safe_text,
     name=
@@ -1206,85 +1206,85 @@ archimate::Concept_strategy = st.builds(
 def test_implementationandmigrationconcept_instantiation(instance):
     assert isinstance(instance, ImplementationAndMigrationConcept)
 
-@given(instance=archimate::Deliverable_strategy)
+@given(instance=archimate_Plateau_strategy)
 @settings(max_examples=50)
-def test_archimate::deliverable_instantiation(instance):
-    assert isinstance(instance, archimate::Deliverable)
+def test_archimate_plateau_instantiation(instance):
+    assert isinstance(instance, archimate_Plateau)
 
-@given(instance=archimate::Plateau_strategy)
+@given(instance=archimate_Deliverable_strategy)
 @settings(max_examples=50)
-def test_archimate::plateau_instantiation(instance):
-    assert isinstance(instance, archimate::Plateau)
+def test_archimate_deliverable_instantiation(instance):
+    assert isinstance(instance, archimate_Deliverable)
 
-@given(instance=archimate::Gap_strategy)
+@given(instance=archimate_Gap_strategy)
 @settings(max_examples=50)
-def test_archimate::gap_instantiation(instance):
-    assert isinstance(instance, archimate::Gap)
+def test_archimate_gap_instantiation(instance):
+    assert isinstance(instance, archimate_Gap)
 
-@given(instance=archimate::WorkPackage_strategy)
+@given(instance=archimate_WorkPackage_strategy)
 @settings(max_examples=50)
-def test_archimate::workpackage_instantiation(instance):
-    assert isinstance(instance, archimate::WorkPackage)
+def test_archimate_workpackage_instantiation(instance):
+    assert isinstance(instance, archimate_WorkPackage)
 
 @given(instance=Requirement_strategy)
 @settings(max_examples=50)
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=archimate::Constraint_strategy)
+@given(instance=archimate_Constraint_strategy)
 @settings(max_examples=50)
-def test_archimate::constraint_instantiation(instance):
-    assert isinstance(instance, archimate::Constraint)
+def test_archimate_constraint_instantiation(instance):
+    assert isinstance(instance, archimate_Constraint)
 
 @given(instance=MotivationConcept_strategy)
 @settings(max_examples=50)
 def test_motivationconcept_instantiation(instance):
     assert isinstance(instance, MotivationConcept)
 
-@given(instance=archimate::Goal_strategy)
+@given(instance=archimate_Requirement_strategy)
 @settings(max_examples=50)
-def test_archimate::goal_instantiation(instance):
-    assert isinstance(instance, archimate::Goal)
+def test_archimate_requirement_instantiation(instance):
+    assert isinstance(instance, archimate_Requirement)
 
-@given(instance=archimate::Requirement_strategy)
+@given(instance=archimate_Goal_strategy)
 @settings(max_examples=50)
-def test_archimate::requirement_instantiation(instance):
-    assert isinstance(instance, archimate::Requirement)
+def test_archimate_goal_instantiation(instance):
+    assert isinstance(instance, archimate_Goal)
 
-@given(instance=archimate::Driver_strategy)
+@given(instance=archimate_Driver_strategy)
 @settings(max_examples=50)
-def test_archimate::driver_instantiation(instance):
-    assert isinstance(instance, archimate::Driver)
+def test_archimate_driver_instantiation(instance):
+    assert isinstance(instance, archimate_Driver)
 
-@given(instance=archimate::Principle_strategy)
+@given(instance=archimate_Assessment_strategy)
 @settings(max_examples=50)
-def test_archimate::principle_instantiation(instance):
-    assert isinstance(instance, archimate::Principle)
+def test_archimate_assessment_instantiation(instance):
+    assert isinstance(instance, archimate_Assessment)
 
-@given(instance=archimate::Assessment_strategy)
+@given(instance=archimate_Principle_strategy)
 @settings(max_examples=50)
-def test_archimate::assessment_instantiation(instance):
-    assert isinstance(instance, archimate::Assessment)
+def test_archimate_principle_instantiation(instance):
+    assert isinstance(instance, archimate_Principle)
 
-@given(instance=archimate::Stakeholder_strategy)
+@given(instance=archimate_Stakeholder_strategy)
 @settings(max_examples=50)
-def test_archimate::stakeholder_instantiation(instance):
-    assert isinstance(instance, archimate::Stakeholder)
+def test_archimate_stakeholder_instantiation(instance):
+    assert isinstance(instance, archimate_Stakeholder)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=archimate::SystemSoftware_strategy)
+@given(instance=archimate_SystemSoftware_strategy)
 @settings(max_examples=50)
-def test_archimate::systemsoftware_instantiation(instance):
-    assert isinstance(instance, archimate::SystemSoftware)
+def test_archimate_systemsoftware_instantiation(instance):
+    assert isinstance(instance, archimate_SystemSoftware)
 
-@given(instance=archimate::Device_strategy)
+@given(instance=archimate_Device_strategy)
 @settings(max_examples=50)
-def test_archimate::device_instantiation(instance):
-    assert isinstance(instance, archimate::Device)
+def test_archimate_device_instantiation(instance):
+    assert isinstance(instance, archimate_Device)
 
 @given(instance=TechnologyConcept_strategy)
 @settings(max_examples=50)
@@ -1296,249 +1296,243 @@ def test_technologyconcept_instantiation(instance):
 def test_applicationconcept_instantiation(instance):
     assert isinstance(instance, ApplicationConcept)
 
-@given(instance=archimate::ApplicationCollaboration_strategy)
+@given(instance=archimate_ApplicationCollaboration_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationcollaboration_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationCollaboration)
+def test_archimate_applicationcollaboration_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationCollaboration)
 
 @given(instance=BusinessObject_strategy)
 @settings(max_examples=50)
 def test_businessobject_instantiation(instance):
     assert isinstance(instance, BusinessObject)
 
-@given(instance=archimate::Contract_strategy)
+@given(instance=archimate_Contract_strategy)
 @settings(max_examples=50)
-def test_archimate::contract_instantiation(instance):
-    assert isinstance(instance, archimate::Contract)
+def test_archimate_contract_instantiation(instance):
+    assert isinstance(instance, archimate_Contract)
 
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=archimate::InfrastructureFunction_strategy)
+@given(instance=archimate_ApplicationFunction_strategy)
 @settings(max_examples=50)
-def test_archimate::infrastructurefunction_instantiation(instance):
-    assert isinstance(instance, archimate::InfrastructureFunction)
+def test_archimate_applicationfunction_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationFunction)
 
-@given(instance=archimate::ApplicationInteraction_strategy)
+@given(instance=archimate_ApplicationInteraction_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationinteraction_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationInteraction)
+def test_archimate_applicationinteraction_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationInteraction)
 
-@given(instance=archimate::ApplicationFunction_strategy)
+@given(instance=archimate_ApplicationService_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationfunction_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationFunction)
+def test_archimate_applicationservice_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationService)
 
-@given(instance=archimate::ApplicationService_strategy)
+@given(instance=archimate_InfrastructureService_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationservice_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationService)
+def test_archimate_infrastructureservice_instantiation(instance):
+    assert isinstance(instance, archimate_InfrastructureService)
 
-@given(instance=archimate::InfrastructureService_strategy)
+@given(instance=archimate_InfrastructureFunction_strategy)
 @settings(max_examples=50)
-def test_archimate::infrastructureservice_instantiation(instance):
-    assert isinstance(instance, archimate::InfrastructureService)
+def test_archimate_infrastructurefunction_instantiation(instance):
+    assert isinstance(instance, archimate_InfrastructureFunction)
 
 @given(instance=Passive_strategy)
 @settings(max_examples=50)
 def test_passive_instantiation(instance):
     assert isinstance(instance, Passive)
 
-@given(instance=archimate::Artifact_strategy)
+@given(instance=archimate_Artifact_strategy)
 @settings(max_examples=50)
-def test_archimate::artifact_instantiation(instance):
-    assert isinstance(instance, archimate::Artifact)
+def test_archimate_artifact_instantiation(instance):
+    assert isinstance(instance, archimate_Artifact)
 
-@given(instance=archimate::DataObject_strategy)
+@given(instance=archimate_DataObject_strategy)
 @settings(max_examples=50)
-def test_archimate::dataobject_instantiation(instance):
-    assert isinstance(instance, archimate::DataObject)
+def test_archimate_dataobject_instantiation(instance):
+    assert isinstance(instance, archimate_DataObject)
 
 @given(instance=Active_strategy)
 @settings(max_examples=50)
 def test_active_instantiation(instance):
     assert isinstance(instance, Active)
 
-@given(instance=archimate::Node_strategy)
+@given(instance=archimate_InfrastructureInterface_strategy)
 @settings(max_examples=50)
-def test_archimate::node_instantiation(instance):
-    assert isinstance(instance, archimate::Node)
+def test_archimate_infrastructureinterface_instantiation(instance):
+    assert isinstance(instance, archimate_InfrastructureInterface)
 
-@given(instance=archimate::CommunicationPath_strategy)
+@given(instance=archimate_ApplicationComponent_strategy)
 @settings(max_examples=50)
-def test_archimate::communicationpath_instantiation(instance):
-    assert isinstance(instance, archimate::CommunicationPath)
+def test_archimate_applicationcomponent_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationComponent)
 
-@given(instance=archimate::Network_strategy)
+@given(instance=archimate_Node_strategy)
 @settings(max_examples=50)
-def test_archimate::network_instantiation(instance):
-    assert isinstance(instance, archimate::Network)
+def test_archimate_node_instantiation(instance):
+    assert isinstance(instance, archimate_Node)
 
-@given(instance=archimate::ApplicationInterface_strategy)
+@given(instance=archimate_Network_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationinterface_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationInterface)
+def test_archimate_network_instantiation(instance):
+    assert isinstance(instance, archimate_Network)
 
-@given(instance=archimate::InfrastructureInterface_strategy)
+@given(instance=archimate_CommunicationPath_strategy)
 @settings(max_examples=50)
-def test_archimate::infrastructureinterface_instantiation(instance):
-    assert isinstance(instance, archimate::InfrastructureInterface)
+def test_archimate_communicationpath_instantiation(instance):
+    assert isinstance(instance, archimate_CommunicationPath)
 
-@given(instance=archimate::ApplicationComponent_strategy)
+@given(instance=archimate_ApplicationInterface_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationcomponent_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationComponent)
+def test_archimate_applicationinterface_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationInterface)
 
 @given(instance=BusinessConcept_strategy)
 @settings(max_examples=50)
 def test_businessconcept_instantiation(instance):
     assert isinstance(instance, BusinessConcept)
 
-@given(instance=archimate::BusinessService_strategy)
+@given(instance=archimate_BusinessObject_strategy)
 @settings(max_examples=50)
-def test_archimate::businessservice_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessService)
+def test_archimate_businessobject_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessObject)
 
-@given(instance=archimate::Value_strategy)
+@given(instance=archimate_BusinessRole_strategy)
 @settings(max_examples=50)
-def test_archimate::value_instantiation(instance):
-    assert isinstance(instance, archimate::Value)
+def test_archimate_businessrole_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessRole)
 
-@given(instance=archimate::BusinessObject_strategy)
+@given(instance=archimate_BusinessCollaboration_strategy)
 @settings(max_examples=50)
-def test_archimate::businessobject_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessObject)
+def test_archimate_businesscollaboration_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessCollaboration)
 
-@given(instance=archimate::Meaning_strategy)
+@given(instance=archimate_BusinessFunction_strategy)
 @settings(max_examples=50)
-def test_archimate::meaning_instantiation(instance):
-    assert isinstance(instance, archimate::Meaning)
+def test_archimate_businessfunction_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessFunction)
 
-@given(instance=archimate::Representation_strategy)
+@given(instance=archimate_BusinessInterface_strategy)
 @settings(max_examples=50)
-def test_archimate::representation_instantiation(instance):
-    assert isinstance(instance, archimate::Representation)
+def test_archimate_businessinterface_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessInterface)
 
-@given(instance=archimate::BusinessEvent_strategy)
+@given(instance=archimate_Product_strategy)
 @settings(max_examples=50)
-def test_archimate::businessevent_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessEvent)
+def test_archimate_product_instantiation(instance):
+    assert isinstance(instance, archimate_Product)
 
-@given(instance=archimate::BusinessCollaboration_strategy)
+@given(instance=archimate_Value_strategy)
 @settings(max_examples=50)
-def test_archimate::businesscollaboration_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessCollaboration)
+def test_archimate_value_instantiation(instance):
+    assert isinstance(instance, archimate_Value)
 
-@given(instance=archimate::Location_strategy)
+@given(instance=archimate_BusinessEvent_strategy)
 @settings(max_examples=50)
-def test_archimate::location_instantiation(instance):
-    assert isinstance(instance, archimate::Location)
+def test_archimate_businessevent_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessEvent)
 
-@given(instance=archimate::BusinessInterface_strategy)
+@given(instance=archimate_Representation_strategy)
 @settings(max_examples=50)
-def test_archimate::businessinterface_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessInterface)
+def test_archimate_representation_instantiation(instance):
+    assert isinstance(instance, archimate_Representation)
 
-@given(instance=archimate::BusinessInteraction_strategy)
+@given(instance=archimate_Location_strategy)
 @settings(max_examples=50)
-def test_archimate::businessinteraction_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessInteraction)
+def test_archimate_location_instantiation(instance):
+    assert isinstance(instance, archimate_Location)
 
-@given(instance=archimate::BusinessFunction_strategy)
+@given(instance=archimate_Meaning_strategy)
 @settings(max_examples=50)
-def test_archimate::businessfunction_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessFunction)
+def test_archimate_meaning_instantiation(instance):
+    assert isinstance(instance, archimate_Meaning)
 
-@given(instance=archimate::Product_strategy)
+@given(instance=archimate_BusinessProcess_strategy)
 @settings(max_examples=50)
-def test_archimate::product_instantiation(instance):
-    assert isinstance(instance, archimate::Product)
+def test_archimate_businessprocess_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessProcess)
 
-@given(instance=archimate::BusinessRole_strategy)
+@given(instance=archimate_BusinessService_strategy)
 @settings(max_examples=50)
-def test_archimate::businessrole_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessRole)
+def test_archimate_businessservice_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessService)
 
-@given(instance=archimate::BusinessProcess_strategy)
+@given(instance=archimate_BusinessInteraction_strategy)
 @settings(max_examples=50)
-def test_archimate::businessprocess_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessProcess)
+def test_archimate_businessinteraction_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessInteraction)
 
-@given(instance=archimate::BusinessActor_strategy)
+@given(instance=archimate_BusinessActor_strategy)
 @settings(max_examples=50)
-def test_archimate::businessactor_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessActor)
+def test_archimate_businessactor_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessActor)
 
-@given(instance=archimate::Active_strategy)
+@given(instance=archimate_Active_strategy)
 @settings(max_examples=50)
-def test_archimate::active_instantiation(instance):
-    assert isinstance(instance, archimate::Active)
+def test_archimate_active_instantiation(instance):
+    assert isinstance(instance, archimate_Active)
 
-@given(instance=archimate::Behavior_strategy)
+@given(instance=archimate_Behavior_strategy)
 @settings(max_examples=50)
-def test_archimate::behavior_instantiation(instance):
-    assert isinstance(instance, archimate::Behavior)
+def test_archimate_behavior_instantiation(instance):
+    assert isinstance(instance, archimate_Behavior)
 
-@given(instance=archimate::Passive_strategy)
+@given(instance=archimate_Passive_strategy)
 @settings(max_examples=50)
-def test_archimate::passive_instantiation(instance):
-    assert isinstance(instance, archimate::Passive)
+def test_archimate_passive_instantiation(instance):
+    assert isinstance(instance, archimate_Passive)
 
 @given(instance=Concept_strategy)
 @settings(max_examples=50)
 def test_concept_instantiation(instance):
     assert isinstance(instance, Concept)
 
-@given(instance=archimate::ImplementationAndMigrationConcept_strategy)
+@given(instance=archimate_MotivationConcept_strategy)
 @settings(max_examples=50)
-def test_archimate::implementationandmigrationconcept_instantiation(instance):
-    assert isinstance(instance, archimate::ImplementationAndMigrationConcept)
+def test_archimate_motivationconcept_instantiation(instance):
+    assert isinstance(instance, archimate_MotivationConcept)
 
-@given(instance=archimate::TechnologyConcept_strategy)
+@given(instance=archimate_ImplementationAndMigrationConcept_strategy)
 @settings(max_examples=50)
-def test_archimate::technologyconcept_instantiation(instance):
-    assert isinstance(instance, archimate::TechnologyConcept)
+def test_archimate_implementationandmigrationconcept_instantiation(instance):
+    assert isinstance(instance, archimate_ImplementationAndMigrationConcept)
 
-@given(instance=archimate::MotivationConcept_strategy)
+@given(instance=archimate_ApplicationConcept_strategy)
 @settings(max_examples=50)
-def test_archimate::motivationconcept_instantiation(instance):
-    assert isinstance(instance, archimate::MotivationConcept)
+def test_archimate_applicationconcept_instantiation(instance):
+    assert isinstance(instance, archimate_ApplicationConcept)
 
-@given(instance=archimate::ApplicationConcept_strategy)
+@given(instance=archimate_TechnologyConcept_strategy)
 @settings(max_examples=50)
-def test_archimate::applicationconcept_instantiation(instance):
-    assert isinstance(instance, archimate::ApplicationConcept)
+def test_archimate_technologyconcept_instantiation(instance):
+    assert isinstance(instance, archimate_TechnologyConcept)
 
-@given(instance=archimate::BusinessConcept_strategy)
+@given(instance=archimate_BusinessConcept_strategy)
 @settings(max_examples=50)
-def test_archimate::businessconcept_instantiation(instance):
-    assert isinstance(instance, archimate::BusinessConcept)
+def test_archimate_businessconcept_instantiation(instance):
+    assert isinstance(instance, archimate_BusinessConcept)
 
-@given(instance=archimate::Concept_strategy)
+@given(instance=archimate_Concept_strategy)
 @settings(max_examples=50)
-def test_archimate::concept_instantiation(instance):
-    assert isinstance(instance, archimate::Concept)
-
-@given(instance=archimate::Concept_strategy)
-def test_archimate::concept_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_archimate_concept_instantiation(instance):
+    assert isinstance(instance, archimate_Concept)
 
 
-@given(instance=archimate::Concept_strategy)
-def test_archimate::concept_description_setter(instance):
+
+@given(instance=archimate_Concept_strategy)
+def test_archimate_concept_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=archimate::Concept_strategy)
-def test_archimate::concept_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=archimate::Concept_strategy)
-def test_archimate::concept_name_setter(instance):
+@given(instance=archimate_Concept_strategy)
+def test_archimate_concept_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

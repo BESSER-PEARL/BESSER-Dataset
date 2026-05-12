@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    NHSM::FinalState,
-    NHSM::InitialState,
-    NHSM::StateMachine,
-    NHSM::State,
-    NHSM::Transition,
+    NHSM_FinalState,
+    NHSM_InitialState,
+    NHSM_StateMachine,
+    NHSM_State,
+    NHSM_Transition,
 )
 
 # =============================================================================
@@ -34,51 +34,51 @@ def test_state_constructor_args():
 
 
 
-def test_nhsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(NHSM::FinalState)
+def test_nhsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(NHSM_FinalState)
 
 
-def test_nhsm::finalstate_constructor_exists():
-    assert callable(NHSM::FinalState.__init__)
+def test_nhsm_finalstate_constructor_exists():
+    assert callable(NHSM_FinalState.__init__)
 
 
-def test_nhsm::finalstate_constructor_args():
-    sig = inspect.signature(NHSM::FinalState.__init__)
+def test_nhsm_finalstate_constructor_args():
+    sig = inspect.signature(NHSM_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nhsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(NHSM::InitialState)
+def test_nhsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(NHSM_InitialState)
 
 
-def test_nhsm::initialstate_constructor_exists():
-    assert callable(NHSM::InitialState.__init__)
+def test_nhsm_initialstate_constructor_exists():
+    assert callable(NHSM_InitialState.__init__)
 
 
-def test_nhsm::initialstate_constructor_args():
-    sig = inspect.signature(NHSM::InitialState.__init__)
+def test_nhsm_initialstate_constructor_args():
+    sig = inspect.signature(NHSM_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nhsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(NHSM::StateMachine)
+def test_nhsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(NHSM_StateMachine)
 
 
-def test_nhsm::statemachine_constructor_exists():
-    assert callable(NHSM::StateMachine.__init__)
+def test_nhsm_statemachine_constructor_exists():
+    assert callable(NHSM_StateMachine.__init__)
 
 
-def test_nhsm::statemachine_constructor_args():
-    sig = inspect.signature(NHSM::StateMachine.__init__)
+def test_nhsm_statemachine_constructor_args():
+    sig = inspect.signature(NHSM_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_nhsm::statemachine_has_name():
-    assert hasattr(NHSM::StateMachine, "name")
+def test_nhsm_statemachine_has_name():
+    assert hasattr(NHSM_StateMachine, "name")
     descriptor = None
-    for klass in NHSM::StateMachine.__mro__:
+    for klass in NHSM_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,23 +86,23 @@ def test_nhsm::statemachine_has_name():
 
 
 
-def test_nhsm::state_is_not_abstract():
-    assert not inspect.isabstract(NHSM::State)
+def test_nhsm_state_is_not_abstract():
+    assert not inspect.isabstract(NHSM_State)
 
 
-def test_nhsm::state_constructor_exists():
-    assert callable(NHSM::State.__init__)
+def test_nhsm_state_constructor_exists():
+    assert callable(NHSM_State.__init__)
 
 
-def test_nhsm::state_constructor_args():
-    sig = inspect.signature(NHSM::State.__init__)
+def test_nhsm_state_constructor_args():
+    sig = inspect.signature(NHSM_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_nhsm::state_has_name():
-    assert hasattr(NHSM::State, "name")
+def test_nhsm_state_has_name():
+    assert hasattr(NHSM_State, "name")
     descriptor = None
-    for klass in NHSM::State.__mro__:
+    for klass in NHSM_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -110,35 +110,35 @@ def test_nhsm::state_has_name():
 
 
 
-def test_nhsm::transition_is_not_abstract():
-    assert not inspect.isabstract(NHSM::Transition)
+def test_nhsm_transition_is_not_abstract():
+    assert not inspect.isabstract(NHSM_Transition)
 
 
-def test_nhsm::transition_constructor_exists():
-    assert callable(NHSM::Transition.__init__)
+def test_nhsm_transition_constructor_exists():
+    assert callable(NHSM_Transition.__init__)
 
 
-def test_nhsm::transition_constructor_args():
-    sig = inspect.signature(NHSM::Transition.__init__)
+def test_nhsm_transition_constructor_args():
+    sig = inspect.signature(NHSM_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "trigger" in params, "Missing parameter 'trigger'"
     assert "effect" in params, "Missing parameter 'effect'"
+    assert "trigger" in params, "Missing parameter 'trigger'"
 
-def test_nhsm::transition_has_trigger():
-    assert hasattr(NHSM::Transition, "trigger")
+def test_nhsm_transition_has_effect():
+    assert hasattr(NHSM_Transition, "effect")
     descriptor = None
-    for klass in NHSM::Transition.__mro__:
-        if "trigger" in klass.__dict__:
-            descriptor = klass.__dict__["trigger"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_nhsm::transition_has_effect():
-    assert hasattr(NHSM::Transition, "effect")
-    descriptor = None
-    for klass in NHSM::Transition.__mro__:
+    for klass in NHSM_Transition.__mro__:
         if "effect" in klass.__dict__:
             descriptor = klass.__dict__["effect"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_nhsm_transition_has_trigger():
+    assert hasattr(NHSM_Transition, "trigger")
+    descriptor = None
+    for klass in NHSM_Transition.__mro__:
+        if "trigger" in klass.__dict__:
+            descriptor = klass.__dict__["trigger"]
             break
     assert isinstance(descriptor, property)
 
@@ -157,27 +157,27 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-NHSM::FinalState_strategy = st.builds(
-    NHSM::FinalState,
+NHSM_FinalState_strategy = st.builds(
+    NHSM_FinalState,
 )
-NHSM::InitialState_strategy = st.builds(
-    NHSM::InitialState,
+NHSM_InitialState_strategy = st.builds(
+    NHSM_InitialState,
 )
-NHSM::StateMachine_strategy = st.builds(
-    NHSM::StateMachine,
+NHSM_StateMachine_strategy = st.builds(
+    NHSM_StateMachine,
     name=
         safe_text
 )
-NHSM::State_strategy = st.builds(
-    NHSM::State,
+NHSM_State_strategy = st.builds(
+    NHSM_State,
     name=
         safe_text
 )
-NHSM::Transition_strategy = st.builds(
-    NHSM::Transition,
-    trigger=
-        safe_text,
+NHSM_Transition_strategy = st.builds(
+    NHSM_Transition,
     effect=
+        safe_text,
+    trigger=
         safe_text
 )
 
@@ -186,71 +186,59 @@ NHSM::Transition_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=NHSM::FinalState_strategy)
+@given(instance=NHSM_FinalState_strategy)
 @settings(max_examples=50)
-def test_nhsm::finalstate_instantiation(instance):
-    assert isinstance(instance, NHSM::FinalState)
+def test_nhsm_finalstate_instantiation(instance):
+    assert isinstance(instance, NHSM_FinalState)
 
-@given(instance=NHSM::InitialState_strategy)
+@given(instance=NHSM_InitialState_strategy)
 @settings(max_examples=50)
-def test_nhsm::initialstate_instantiation(instance):
-    assert isinstance(instance, NHSM::InitialState)
+def test_nhsm_initialstate_instantiation(instance):
+    assert isinstance(instance, NHSM_InitialState)
 
-@given(instance=NHSM::StateMachine_strategy)
+@given(instance=NHSM_StateMachine_strategy)
 @settings(max_examples=50)
-def test_nhsm::statemachine_instantiation(instance):
-    assert isinstance(instance, NHSM::StateMachine)
-
-@given(instance=NHSM::StateMachine_strategy)
-def test_nhsm::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_nhsm_statemachine_instantiation(instance):
+    assert isinstance(instance, NHSM_StateMachine)
 
 
-@given(instance=NHSM::StateMachine_strategy)
-def test_nhsm::statemachine_name_setter(instance):
+
+@given(instance=NHSM_StateMachine_strategy)
+def test_nhsm_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=NHSM::State_strategy)
+@given(instance=NHSM_State_strategy)
 @settings(max_examples=50)
-def test_nhsm::state_instantiation(instance):
-    assert isinstance(instance, NHSM::State)
-
-@given(instance=NHSM::State_strategy)
-def test_nhsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_nhsm_state_instantiation(instance):
+    assert isinstance(instance, NHSM_State)
 
 
-@given(instance=NHSM::State_strategy)
-def test_nhsm::state_name_setter(instance):
+
+@given(instance=NHSM_State_strategy)
+def test_nhsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=NHSM::Transition_strategy)
+@given(instance=NHSM_Transition_strategy)
 @settings(max_examples=50)
-def test_nhsm::transition_instantiation(instance):
-    assert isinstance(instance, NHSM::Transition)
-
-@given(instance=NHSM::Transition_strategy)
-def test_nhsm::transition_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
+def test_nhsm_transition_instantiation(instance):
+    assert isinstance(instance, NHSM_Transition)
 
 
-@given(instance=NHSM::Transition_strategy)
-def test_nhsm::transition_trigger_setter(instance):
-    original = instance.trigger
-    instance.trigger = original
-    assert instance.trigger == original
 
-@given(instance=NHSM::Transition_strategy)
-def test_nhsm::transition_effect_type(instance):
-    assert isinstance(instance.effect, str)
-
-
-@given(instance=NHSM::Transition_strategy)
-def test_nhsm::transition_effect_setter(instance):
+@given(instance=NHSM_Transition_strategy)
+def test_nhsm_transition_effect_setter(instance):
     original = instance.effect
     instance.effect = original
     assert instance.effect == original
+
+
+
+@given(instance=NHSM_Transition_strategy)
+def test_nhsm_transition_trigger_setter(instance):
+    original = instance.trigger
+    instance.trigger = original
+    assert instance.trigger == original

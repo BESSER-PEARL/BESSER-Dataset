@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    umlstatemachineselect::Vertex,
-    umlstatemachineselect::Trigger,
-    umlstatemachineselect::Constraint,
-    umlstatemachineselect::Behavior,
-    umlstatemachineselect::Transition,
-    umlstatemachineselect::Region,
+from python_code import (
+    umlstatemachineselect_Region,
     Behavior,
-    umlstatemachineselect::Event,
+    umlstatemachineselect_Event,
     Vertex,
-    umlstatemachineselect::State,
-    umlstatemachineselect::PseudoState,
+    umlstatemachineselect_PseudoState,
+    umlstatemachineselect_State,
     State,
-    umlstatemachineselect::FinalState,
-    umlstatemachineselect::ConnectionPointReference,
-    umlstatemachineselect::StateMachine,
-    PseudostateKind,
+    umlstatemachineselect_FinalState,
+    umlstatemachineselect_ConnectionPointReference,
+    umlstatemachineselect_Vertex,
+    umlstatemachineselect_Trigger,
+    umlstatemachineselect_Constraint,
+    umlstatemachineselect_Behavior,
+    umlstatemachineselect_Transition,
+    umlstatemachineselect_StateMachine,
     TransitionKind,
+    PseudostateKind,
 )
 
 # =============================================================================
@@ -31,96 +31,16 @@ from classes import (
 
 
 
-def test_umlstatemachineselect::vertex_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Vertex)
+def test_umlstatemachineselect_region_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Region)
 
 
-def test_umlstatemachineselect::vertex_constructor_exists():
-    assert callable(umlstatemachineselect::Vertex.__init__)
+def test_umlstatemachineselect_region_constructor_exists():
+    assert callable(umlstatemachineselect_Region.__init__)
 
 
-def test_umlstatemachineselect::vertex_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Vertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlstatemachineselect::trigger_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Trigger)
-
-
-def test_umlstatemachineselect::trigger_constructor_exists():
-    assert callable(umlstatemachineselect::Trigger.__init__)
-
-
-def test_umlstatemachineselect::trigger_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlstatemachineselect::constraint_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Constraint)
-
-
-def test_umlstatemachineselect::constraint_constructor_exists():
-    assert callable(umlstatemachineselect::Constraint.__init__)
-
-
-def test_umlstatemachineselect::constraint_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlstatemachineselect::behavior_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Behavior)
-
-
-def test_umlstatemachineselect::behavior_constructor_exists():
-    assert callable(umlstatemachineselect::Behavior.__init__)
-
-
-def test_umlstatemachineselect::behavior_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Behavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_umlstatemachineselect::transition_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Transition)
-
-
-def test_umlstatemachineselect::transition_constructor_exists():
-    assert callable(umlstatemachineselect::Transition.__init__)
-
-
-def test_umlstatemachineselect::transition_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Transition.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_umlstatemachineselect::transition_has_kind():
-    assert hasattr(umlstatemachineselect::Transition, "kind")
-    descriptor = None
-    for klass in umlstatemachineselect::Transition.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_umlstatemachineselect::region_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Region)
-
-
-def test_umlstatemachineselect::region_constructor_exists():
-    assert callable(umlstatemachineselect::Region.__init__)
-
-
-def test_umlstatemachineselect::region_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Region.__init__)
+def test_umlstatemachineselect_region_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Region.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,16 +59,16 @@ def test_behavior_constructor_args():
 
 
 
-def test_umlstatemachineselect::event_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::Event)
+def test_umlstatemachineselect_event_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Event)
 
 
-def test_umlstatemachineselect::event_constructor_exists():
-    assert callable(umlstatemachineselect::Event.__init__)
+def test_umlstatemachineselect_event_constructor_exists():
+    assert callable(umlstatemachineselect_Event.__init__)
 
 
-def test_umlstatemachineselect::event_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::Event.__init__)
+def test_umlstatemachineselect_event_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -167,79 +87,79 @@ def test_vertex_constructor_args():
 
 
 
-def test_umlstatemachineselect::state_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::State)
+def test_umlstatemachineselect_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_PseudoState)
 
 
-def test_umlstatemachineselect::state_constructor_exists():
-    assert callable(umlstatemachineselect::State.__init__)
+def test_umlstatemachineselect_pseudostate_constructor_exists():
+    assert callable(umlstatemachineselect_PseudoState.__init__)
 
 
-def test_umlstatemachineselect::state_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::State.__init__)
+def test_umlstatemachineselect_pseudostate_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_PseudoState.__init__)
     params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_umlstatemachineselect_pseudostate_has_kind():
+    assert hasattr(umlstatemachineselect_PseudoState, "kind")
+    descriptor = None
+    for klass in umlstatemachineselect_PseudoState.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_umlstatemachineselect_state_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_State)
+
+
+def test_umlstatemachineselect_state_constructor_exists():
+    assert callable(umlstatemachineselect_State.__init__)
+
+
+def test_umlstatemachineselect_state_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "isSimple" in params, "Missing parameter 'isSimple'"
     assert "isOrthogonal" in params, "Missing parameter 'isOrthogonal'"
     assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
     assert "isComposite" in params, "Missing parameter 'isComposite'"
-    assert "isSimple" in params, "Missing parameter 'isSimple'"
 
-def test_umlstatemachineselect::state_has_isOrthogonal():
-    assert hasattr(umlstatemachineselect::State, "isOrthogonal")
+def test_umlstatemachineselect_state_has_isSimple():
+    assert hasattr(umlstatemachineselect_State, "isSimple")
     descriptor = None
-    for klass in umlstatemachineselect::State.__mro__:
-        if "isOrthogonal" in klass.__dict__:
-            descriptor = klass.__dict__["isOrthogonal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlstatemachineselect::state_has_isSubmachineState():
-    assert hasattr(umlstatemachineselect::State, "isSubmachineState")
-    descriptor = None
-    for klass in umlstatemachineselect::State.__mro__:
-        if "isSubmachineState" in klass.__dict__:
-            descriptor = klass.__dict__["isSubmachineState"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlstatemachineselect::state_has_isComposite():
-    assert hasattr(umlstatemachineselect::State, "isComposite")
-    descriptor = None
-    for klass in umlstatemachineselect::State.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_umlstatemachineselect::state_has_isSimple():
-    assert hasattr(umlstatemachineselect::State, "isSimple")
-    descriptor = None
-    for klass in umlstatemachineselect::State.__mro__:
+    for klass in umlstatemachineselect_State.__mro__:
         if "isSimple" in klass.__dict__:
             descriptor = klass.__dict__["isSimple"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_umlstatemachineselect::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::PseudoState)
-
-
-def test_umlstatemachineselect::pseudostate_constructor_exists():
-    assert callable(umlstatemachineselect::PseudoState.__init__)
-
-
-def test_umlstatemachineselect::pseudostate_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::PseudoState.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_umlstatemachineselect::pseudostate_has_kind():
-    assert hasattr(umlstatemachineselect::PseudoState, "kind")
+def test_umlstatemachineselect_state_has_isOrthogonal():
+    assert hasattr(umlstatemachineselect_State, "isOrthogonal")
     descriptor = None
-    for klass in umlstatemachineselect::PseudoState.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
+    for klass in umlstatemachineselect_State.__mro__:
+        if "isOrthogonal" in klass.__dict__:
+            descriptor = klass.__dict__["isOrthogonal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_umlstatemachineselect_state_has_isSubmachineState():
+    assert hasattr(umlstatemachineselect_State, "isSubmachineState")
+    descriptor = None
+    for klass in umlstatemachineselect_State.__mro__:
+        if "isSubmachineState" in klass.__dict__:
+            descriptor = klass.__dict__["isSubmachineState"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_umlstatemachineselect_state_has_isComposite():
+    assert hasattr(umlstatemachineselect_State, "isComposite")
+    descriptor = None
+    for klass in umlstatemachineselect_State.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
             break
     assert isinstance(descriptor, property)
 
@@ -259,68 +179,125 @@ def test_state_constructor_args():
 
 
 
-def test_umlstatemachineselect::finalstate_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::FinalState)
+def test_umlstatemachineselect_finalstate_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_FinalState)
 
 
-def test_umlstatemachineselect::finalstate_constructor_exists():
-    assert callable(umlstatemachineselect::FinalState.__init__)
+def test_umlstatemachineselect_finalstate_constructor_exists():
+    assert callable(umlstatemachineselect_FinalState.__init__)
 
 
-def test_umlstatemachineselect::finalstate_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::FinalState.__init__)
+def test_umlstatemachineselect_finalstate_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlstatemachineselect::connectionpointreference_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::ConnectionPointReference)
+def test_umlstatemachineselect_connectionpointreference_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_ConnectionPointReference)
 
 
-def test_umlstatemachineselect::connectionpointreference_constructor_exists():
-    assert callable(umlstatemachineselect::ConnectionPointReference.__init__)
+def test_umlstatemachineselect_connectionpointreference_constructor_exists():
+    assert callable(umlstatemachineselect_ConnectionPointReference.__init__)
 
 
-def test_umlstatemachineselect::connectionpointreference_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::ConnectionPointReference.__init__)
+def test_umlstatemachineselect_connectionpointreference_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_ConnectionPointReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlstatemachineselect::statemachine_is_not_abstract():
-    assert not inspect.isabstract(umlstatemachineselect::StateMachine)
+def test_umlstatemachineselect_vertex_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Vertex)
 
 
-def test_umlstatemachineselect::statemachine_constructor_exists():
-    assert callable(umlstatemachineselect::StateMachine.__init__)
+def test_umlstatemachineselect_vertex_constructor_exists():
+    assert callable(umlstatemachineselect_Vertex.__init__)
 
 
-def test_umlstatemachineselect::statemachine_constructor_args():
-    sig = inspect.signature(umlstatemachineselect::StateMachine.__init__)
+def test_umlstatemachineselect_vertex_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Vertex.__init__)
     params = list(sig.parameters.keys())
 
-def test_pseudostatekind_exists():
-    # Check that the Enumeration exists
-    assert PseudostateKind is not None
 
-def test_pseudostatekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PseudostateKind]
-    expected_literals = [
-        "deepHistory",
-        "junction",
-        "fork",
-        "join",
-        "terminate",
-        "exitPoint",
-        "choice",
-        "shallowHistory",
-        "entryPoint",
-        "initial",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
+
+def test_umlstatemachineselect_trigger_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Trigger)
+
+
+def test_umlstatemachineselect_trigger_constructor_exists():
+    assert callable(umlstatemachineselect_Trigger.__init__)
+
+
+def test_umlstatemachineselect_trigger_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlstatemachineselect_constraint_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Constraint)
+
+
+def test_umlstatemachineselect_constraint_constructor_exists():
+    assert callable(umlstatemachineselect_Constraint.__init__)
+
+
+def test_umlstatemachineselect_constraint_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlstatemachineselect_behavior_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Behavior)
+
+
+def test_umlstatemachineselect_behavior_constructor_exists():
+    assert callable(umlstatemachineselect_Behavior.__init__)
+
+
+def test_umlstatemachineselect_behavior_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Behavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_umlstatemachineselect_transition_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_Transition)
+
+
+def test_umlstatemachineselect_transition_constructor_exists():
+    assert callable(umlstatemachineselect_Transition.__init__)
+
+
+def test_umlstatemachineselect_transition_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_Transition.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_umlstatemachineselect_transition_has_kind():
+    assert hasattr(umlstatemachineselect_Transition, "kind")
+    descriptor = None
+    for klass in umlstatemachineselect_Transition.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_umlstatemachineselect_statemachine_is_not_abstract():
+    assert not inspect.isabstract(umlstatemachineselect_StateMachine)
+
+
+def test_umlstatemachineselect_statemachine_constructor_exists():
+    assert callable(umlstatemachineselect_StateMachine.__init__)
+
+
+def test_umlstatemachineselect_statemachine_constructor_args():
+    sig = inspect.signature(umlstatemachineselect_StateMachine.__init__)
+    params = list(sig.parameters.keys())
 
 def test_transitionkind_exists():
     # Check that the Enumeration exists
@@ -330,13 +307,36 @@ def test_transitionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TransitionKind]
     expected_literals = [
-        "internal",
-        "external",
         "local",
+        "external",
+        "internal",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TransitionKind"
+
+def test_pseudostatekind_exists():
+    # Check that the Enumeration exists
+    assert PseudostateKind is not None
+
+def test_pseudostatekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PseudostateKind]
+    expected_literals = [
+        "choice",
+        "exitPoint",
+        "terminate",
+        "join",
+        "entryPoint",
+        "deepHistory",
+        "shallowHistory",
+        "fork",
+        "junction",
+        "initial",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
 
 
 # =============================================================================
@@ -350,201 +350,183 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-umlstatemachineselect::Vertex_strategy = st.builds(
-    umlstatemachineselect::Vertex,
-)
-umlstatemachineselect::Trigger_strategy = st.builds(
-    umlstatemachineselect::Trigger,
-)
-umlstatemachineselect::Constraint_strategy = st.builds(
-    umlstatemachineselect::Constraint,
-)
-umlstatemachineselect::Behavior_strategy = st.builds(
-    umlstatemachineselect::Behavior,
-)
-umlstatemachineselect::Transition_strategy = st.builds(
-    umlstatemachineselect::Transition,
-    kind=
-        safe_text
-)
-umlstatemachineselect::Region_strategy = st.builds(
-    umlstatemachineselect::Region,
+umlstatemachineselect_Region_strategy = st.builds(
+    umlstatemachineselect_Region,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-umlstatemachineselect::Event_strategy = st.builds(
-    umlstatemachineselect::Event,
+umlstatemachineselect_Event_strategy = st.builds(
+    umlstatemachineselect_Event,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-umlstatemachineselect::State_strategy = st.builds(
-    umlstatemachineselect::State,
+umlstatemachineselect_PseudoState_strategy = st.builds(
+    umlstatemachineselect_PseudoState,
+    kind=
+        safe_text
+)
+umlstatemachineselect_State_strategy = st.builds(
+    umlstatemachineselect_State,
+    isSimple=
+        st.booleans(),
     isOrthogonal=
         st.booleans(),
     isSubmachineState=
         st.booleans(),
     isComposite=
-        st.booleans(),
-    isSimple=
         st.booleans()
-)
-umlstatemachineselect::PseudoState_strategy = st.builds(
-    umlstatemachineselect::PseudoState,
-    kind=
-        safe_text
 )
 State_strategy = st.builds(
     State,
 )
-umlstatemachineselect::FinalState_strategy = st.builds(
-    umlstatemachineselect::FinalState,
+umlstatemachineselect_FinalState_strategy = st.builds(
+    umlstatemachineselect_FinalState,
 )
-umlstatemachineselect::ConnectionPointReference_strategy = st.builds(
-    umlstatemachineselect::ConnectionPointReference,
+umlstatemachineselect_ConnectionPointReference_strategy = st.builds(
+    umlstatemachineselect_ConnectionPointReference,
 )
-umlstatemachineselect::StateMachine_strategy = st.builds(
-    umlstatemachineselect::StateMachine,
+umlstatemachineselect_Vertex_strategy = st.builds(
+    umlstatemachineselect_Vertex,
+)
+umlstatemachineselect_Trigger_strategy = st.builds(
+    umlstatemachineselect_Trigger,
+)
+umlstatemachineselect_Constraint_strategy = st.builds(
+    umlstatemachineselect_Constraint,
+)
+umlstatemachineselect_Behavior_strategy = st.builds(
+    umlstatemachineselect_Behavior,
+)
+umlstatemachineselect_Transition_strategy = st.builds(
+    umlstatemachineselect_Transition,
+    kind=
+        safe_text
+)
+umlstatemachineselect_StateMachine_strategy = st.builds(
+    umlstatemachineselect_StateMachine,
 )
 
-@given(instance=umlstatemachineselect::Vertex_strategy)
+@given(instance=umlstatemachineselect_Region_strategy)
 @settings(max_examples=50)
-def test_umlstatemachineselect::vertex_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Vertex)
-
-@given(instance=umlstatemachineselect::Trigger_strategy)
-@settings(max_examples=50)
-def test_umlstatemachineselect::trigger_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Trigger)
-
-@given(instance=umlstatemachineselect::Constraint_strategy)
-@settings(max_examples=50)
-def test_umlstatemachineselect::constraint_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Constraint)
-
-@given(instance=umlstatemachineselect::Behavior_strategy)
-@settings(max_examples=50)
-def test_umlstatemachineselect::behavior_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Behavior)
-
-@given(instance=umlstatemachineselect::Transition_strategy)
-@settings(max_examples=50)
-def test_umlstatemachineselect::transition_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Transition)
-
-@given(instance=umlstatemachineselect::Transition_strategy)
-def test_umlstatemachineselect::transition_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=umlstatemachineselect::Transition_strategy)
-def test_umlstatemachineselect::transition_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=umlstatemachineselect::Region_strategy)
-@settings(max_examples=50)
-def test_umlstatemachineselect::region_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Region)
+def test_umlstatemachineselect_region_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Region)
 
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=umlstatemachineselect::Event_strategy)
+@given(instance=umlstatemachineselect_Event_strategy)
 @settings(max_examples=50)
-def test_umlstatemachineselect::event_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::Event)
+def test_umlstatemachineselect_event_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Event)
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=umlstatemachineselect::State_strategy)
+@given(instance=umlstatemachineselect_PseudoState_strategy)
 @settings(max_examples=50)
-def test_umlstatemachineselect::state_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::State)
-
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isOrthogonal_type(instance):
-    assert isinstance(instance.isOrthogonal, bool)
+def test_umlstatemachineselect_pseudostate_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_PseudoState)
 
 
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isOrthogonal_setter(instance):
-    original = instance.isOrthogonal
-    instance.isOrthogonal = original
-    assert instance.isOrthogonal == original
 
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isSubmachineState_type(instance):
-    assert isinstance(instance.isSubmachineState, bool)
+@given(instance=umlstatemachineselect_PseudoState_strategy)
+def test_umlstatemachineselect_pseudostate_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
 
-
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isSubmachineState_setter(instance):
-    original = instance.isSubmachineState
-    instance.isSubmachineState = original
-    assert instance.isSubmachineState == original
-
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isComposite_type(instance):
-    assert isinstance(instance.isComposite, bool)
+@given(instance=umlstatemachineselect_State_strategy)
+@settings(max_examples=50)
+def test_umlstatemachineselect_state_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_State)
 
 
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
 
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isSimple_type(instance):
-    assert isinstance(instance.isSimple, bool)
-
-
-@given(instance=umlstatemachineselect::State_strategy)
-def test_umlstatemachineselect::state_isSimple_setter(instance):
+@given(instance=umlstatemachineselect_State_strategy)
+def test_umlstatemachineselect_state_isSimple_setter(instance):
     original = instance.isSimple
     instance.isSimple = original
     assert instance.isSimple == original
 
-@given(instance=umlstatemachineselect::PseudoState_strategy)
-@settings(max_examples=50)
-def test_umlstatemachineselect::pseudostate_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::PseudoState)
-
-@given(instance=umlstatemachineselect::PseudoState_strategy)
-def test_umlstatemachineselect::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
 
 
-@given(instance=umlstatemachineselect::PseudoState_strategy)
-def test_umlstatemachineselect::pseudostate_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
+@given(instance=umlstatemachineselect_State_strategy)
+def test_umlstatemachineselect_state_isOrthogonal_setter(instance):
+    original = instance.isOrthogonal
+    instance.isOrthogonal = original
+    assert instance.isOrthogonal == original
+
+
+
+@given(instance=umlstatemachineselect_State_strategy)
+def test_umlstatemachineselect_state_isSubmachineState_setter(instance):
+    original = instance.isSubmachineState
+    instance.isSubmachineState = original
+    assert instance.isSubmachineState == original
+
+
+
+@given(instance=umlstatemachineselect_State_strategy)
+def test_umlstatemachineselect_state_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=umlstatemachineselect::FinalState_strategy)
+@given(instance=umlstatemachineselect_FinalState_strategy)
 @settings(max_examples=50)
-def test_umlstatemachineselect::finalstate_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::FinalState)
+def test_umlstatemachineselect_finalstate_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_FinalState)
 
-@given(instance=umlstatemachineselect::ConnectionPointReference_strategy)
+@given(instance=umlstatemachineselect_ConnectionPointReference_strategy)
 @settings(max_examples=50)
-def test_umlstatemachineselect::connectionpointreference_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::ConnectionPointReference)
+def test_umlstatemachineselect_connectionpointreference_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_ConnectionPointReference)
 
-@given(instance=umlstatemachineselect::StateMachine_strategy)
+@given(instance=umlstatemachineselect_Vertex_strategy)
 @settings(max_examples=50)
-def test_umlstatemachineselect::statemachine_instantiation(instance):
-    assert isinstance(instance, umlstatemachineselect::StateMachine)
+def test_umlstatemachineselect_vertex_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Vertex)
+
+@given(instance=umlstatemachineselect_Trigger_strategy)
+@settings(max_examples=50)
+def test_umlstatemachineselect_trigger_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Trigger)
+
+@given(instance=umlstatemachineselect_Constraint_strategy)
+@settings(max_examples=50)
+def test_umlstatemachineselect_constraint_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Constraint)
+
+@given(instance=umlstatemachineselect_Behavior_strategy)
+@settings(max_examples=50)
+def test_umlstatemachineselect_behavior_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Behavior)
+
+@given(instance=umlstatemachineselect_Transition_strategy)
+@settings(max_examples=50)
+def test_umlstatemachineselect_transition_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_Transition)
+
+
+
+@given(instance=umlstatemachineselect_Transition_strategy)
+def test_umlstatemachineselect_transition_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=umlstatemachineselect_StateMachine_strategy)
+@settings(max_examples=50)
+def test_umlstatemachineselect_statemachine_instantiation(instance):
+    assert isinstance(instance, umlstatemachineselect_StateMachine)

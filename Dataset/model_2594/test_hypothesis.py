@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    grammar::features::SecondRoot,
+from python_code import (
+    grammar_features_SecondRoot,
     Child,
-    grammar::features::StarNonContainment,
-    grammar::features::ClassWithAttributes,
-    grammar::features::CompoundPlus,
-    grammar::features::StarPrefix,
-    grammar::features::OptionalPrefix,
-    grammar::features::PlusPrefix,
-    grammar::features::CompoundStar,
-    grammar::features::CompoundOptional,
-    grammar::features::AlternativeSyntax,
-    grammar::features::Child,
-    grammar::features::Root,
-    grammar::features::PlusNonContainment,
-    grammar::features::MandatoryNonContainment,
-    grammar::features::OptionalNonContainment,
-    grammar::features::StarContainment,
-    grammar::features::PlusContainment,
-    grammar::features::MandatoryContainment,
-    grammar::features::X,
-    grammar::features::OptionalContainment,
+    grammar_features_PlusPrefix,
+    grammar_features_CompoundOptional,
+    grammar_features_ClassWithAttributes,
+    grammar_features_StarNonContainment,
+    grammar_features_OptionalPrefix,
+    grammar_features_CompoundStar,
+    grammar_features_StarPrefix,
+    grammar_features_CompoundPlus,
+    grammar_features_AlternativeSyntax,
+    grammar_features_Child,
+    grammar_features_Root,
+    grammar_features_PlusNonContainment,
+    grammar_features_MandatoryNonContainment,
+    grammar_features_OptionalNonContainment,
+    grammar_features_StarContainment,
+    grammar_features_PlusContainment,
+    grammar_features_MandatoryContainment,
+    grammar_features_X,
+    grammar_features_OptionalContainment,
     AbstractSuperclass,
-    grammar::features::ConcreteSubclassB,
-    grammar::features::ConcreteSubclassA,
-    grammar::features::AbstractSuperclass,
+    grammar_features_ConcreteSubclassB,
+    grammar_features_ConcreteSubclassA,
+    grammar_features_AbstractSuperclass,
 )
 
 # =============================================================================
@@ -39,16 +39,16 @@ from classes import (
 
 
 
-def test_grammar::features::secondroot_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::SecondRoot)
+def test_grammar_features_secondroot_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_SecondRoot)
 
 
-def test_grammar::features::secondroot_constructor_exists():
-    assert callable(grammar::features::SecondRoot.__init__)
+def test_grammar_features_secondroot_constructor_exists():
+    assert callable(grammar_features_SecondRoot.__init__)
 
 
-def test_grammar::features::secondroot_constructor_args():
-    sig = inspect.signature(grammar::features::SecondRoot.__init__)
+def test_grammar_features_secondroot_constructor_args():
+    sig = inspect.signature(grammar_features_SecondRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -67,47 +67,61 @@ def test_child_constructor_args():
 
 
 
-def test_grammar::features::starnoncontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::StarNonContainment)
+def test_grammar_features_plusprefix_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_PlusPrefix)
 
 
-def test_grammar::features::starnoncontainment_constructor_exists():
-    assert callable(grammar::features::StarNonContainment.__init__)
+def test_grammar_features_plusprefix_constructor_exists():
+    assert callable(grammar_features_PlusPrefix.__init__)
 
 
-def test_grammar::features::starnoncontainment_constructor_args():
-    sig = inspect.signature(grammar::features::StarNonContainment.__init__)
+def test_grammar_features_plusprefix_constructor_args():
+    sig = inspect.signature(grammar_features_PlusPrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::classwithattributes_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::ClassWithAttributes)
+def test_grammar_features_compoundoptional_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_CompoundOptional)
 
 
-def test_grammar::features::classwithattributes_constructor_exists():
-    assert callable(grammar::features::ClassWithAttributes.__init__)
+def test_grammar_features_compoundoptional_constructor_exists():
+    assert callable(grammar_features_CompoundOptional.__init__)
 
 
-def test_grammar::features::classwithattributes_constructor_args():
-    sig = inspect.signature(grammar::features::ClassWithAttributes.__init__)
+def test_grammar_features_compoundoptional_constructor_args():
+    sig = inspect.signature(grammar_features_CompoundOptional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_grammar_features_classwithattributes_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_ClassWithAttributes)
+
+
+def test_grammar_features_classwithattributes_constructor_exists():
+    assert callable(grammar_features_ClassWithAttributes.__init__)
+
+
+def test_grammar_features_classwithattributes_constructor_args():
+    sig = inspect.signature(grammar_features_ClassWithAttributes.__init__)
     params = list(sig.parameters.keys())
     assert "a1" in params, "Missing parameter 'a1'"
     assert "a2" in params, "Missing parameter 'a2'"
 
-def test_grammar::features::classwithattributes_has_a1():
-    assert hasattr(grammar::features::ClassWithAttributes, "a1")
+def test_grammar_features_classwithattributes_has_a1():
+    assert hasattr(grammar_features_ClassWithAttributes, "a1")
     descriptor = None
-    for klass in grammar::features::ClassWithAttributes.__mro__:
+    for klass in grammar_features_ClassWithAttributes.__mro__:
         if "a1" in klass.__dict__:
             descriptor = klass.__dict__["a1"]
             break
     assert isinstance(descriptor, property)
 
-def test_grammar::features::classwithattributes_has_a2():
-    assert hasattr(grammar::features::ClassWithAttributes, "a2")
+def test_grammar_features_classwithattributes_has_a2():
+    assert hasattr(grammar_features_ClassWithAttributes, "a2")
     descriptor = None
-    for klass in grammar::features::ClassWithAttributes.__mro__:
+    for klass in grammar_features_ClassWithAttributes.__mro__:
         if "a2" in klass.__dict__:
             descriptor = klass.__dict__["a2"]
             break
@@ -115,233 +129,219 @@ def test_grammar::features::classwithattributes_has_a2():
 
 
 
-def test_grammar::features::compoundplus_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::CompoundPlus)
+def test_grammar_features_starnoncontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_StarNonContainment)
 
 
-def test_grammar::features::compoundplus_constructor_exists():
-    assert callable(grammar::features::CompoundPlus.__init__)
+def test_grammar_features_starnoncontainment_constructor_exists():
+    assert callable(grammar_features_StarNonContainment.__init__)
 
 
-def test_grammar::features::compoundplus_constructor_args():
-    sig = inspect.signature(grammar::features::CompoundPlus.__init__)
+def test_grammar_features_starnoncontainment_constructor_args():
+    sig = inspect.signature(grammar_features_StarNonContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::starprefix_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::StarPrefix)
+def test_grammar_features_optionalprefix_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_OptionalPrefix)
 
 
-def test_grammar::features::starprefix_constructor_exists():
-    assert callable(grammar::features::StarPrefix.__init__)
+def test_grammar_features_optionalprefix_constructor_exists():
+    assert callable(grammar_features_OptionalPrefix.__init__)
 
 
-def test_grammar::features::starprefix_constructor_args():
-    sig = inspect.signature(grammar::features::StarPrefix.__init__)
+def test_grammar_features_optionalprefix_constructor_args():
+    sig = inspect.signature(grammar_features_OptionalPrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::optionalprefix_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::OptionalPrefix)
+def test_grammar_features_compoundstar_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_CompoundStar)
 
 
-def test_grammar::features::optionalprefix_constructor_exists():
-    assert callable(grammar::features::OptionalPrefix.__init__)
+def test_grammar_features_compoundstar_constructor_exists():
+    assert callable(grammar_features_CompoundStar.__init__)
 
 
-def test_grammar::features::optionalprefix_constructor_args():
-    sig = inspect.signature(grammar::features::OptionalPrefix.__init__)
+def test_grammar_features_compoundstar_constructor_args():
+    sig = inspect.signature(grammar_features_CompoundStar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::plusprefix_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::PlusPrefix)
+def test_grammar_features_starprefix_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_StarPrefix)
 
 
-def test_grammar::features::plusprefix_constructor_exists():
-    assert callable(grammar::features::PlusPrefix.__init__)
+def test_grammar_features_starprefix_constructor_exists():
+    assert callable(grammar_features_StarPrefix.__init__)
 
 
-def test_grammar::features::plusprefix_constructor_args():
-    sig = inspect.signature(grammar::features::PlusPrefix.__init__)
+def test_grammar_features_starprefix_constructor_args():
+    sig = inspect.signature(grammar_features_StarPrefix.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::compoundstar_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::CompoundStar)
+def test_grammar_features_compoundplus_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_CompoundPlus)
 
 
-def test_grammar::features::compoundstar_constructor_exists():
-    assert callable(grammar::features::CompoundStar.__init__)
+def test_grammar_features_compoundplus_constructor_exists():
+    assert callable(grammar_features_CompoundPlus.__init__)
 
 
-def test_grammar::features::compoundstar_constructor_args():
-    sig = inspect.signature(grammar::features::CompoundStar.__init__)
+def test_grammar_features_compoundplus_constructor_args():
+    sig = inspect.signature(grammar_features_CompoundPlus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::compoundoptional_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::CompoundOptional)
+def test_grammar_features_alternativesyntax_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_AlternativeSyntax)
 
 
-def test_grammar::features::compoundoptional_constructor_exists():
-    assert callable(grammar::features::CompoundOptional.__init__)
+def test_grammar_features_alternativesyntax_constructor_exists():
+    assert callable(grammar_features_AlternativeSyntax.__init__)
 
 
-def test_grammar::features::compoundoptional_constructor_args():
-    sig = inspect.signature(grammar::features::CompoundOptional.__init__)
+def test_grammar_features_alternativesyntax_constructor_args():
+    sig = inspect.signature(grammar_features_AlternativeSyntax.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::alternativesyntax_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::AlternativeSyntax)
+def test_grammar_features_child_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_Child)
 
 
-def test_grammar::features::alternativesyntax_constructor_exists():
-    assert callable(grammar::features::AlternativeSyntax.__init__)
+def test_grammar_features_child_constructor_exists():
+    assert callable(grammar_features_Child.__init__)
 
 
-def test_grammar::features::alternativesyntax_constructor_args():
-    sig = inspect.signature(grammar::features::AlternativeSyntax.__init__)
+def test_grammar_features_child_constructor_args():
+    sig = inspect.signature(grammar_features_Child.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::child_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::Child)
+def test_grammar_features_root_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_Root)
 
 
-def test_grammar::features::child_constructor_exists():
-    assert callable(grammar::features::Child.__init__)
+def test_grammar_features_root_constructor_exists():
+    assert callable(grammar_features_Root.__init__)
 
 
-def test_grammar::features::child_constructor_args():
-    sig = inspect.signature(grammar::features::Child.__init__)
+def test_grammar_features_root_constructor_args():
+    sig = inspect.signature(grammar_features_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::root_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::Root)
+def test_grammar_features_plusnoncontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_PlusNonContainment)
 
 
-def test_grammar::features::root_constructor_exists():
-    assert callable(grammar::features::Root.__init__)
+def test_grammar_features_plusnoncontainment_constructor_exists():
+    assert callable(grammar_features_PlusNonContainment.__init__)
 
 
-def test_grammar::features::root_constructor_args():
-    sig = inspect.signature(grammar::features::Root.__init__)
+def test_grammar_features_plusnoncontainment_constructor_args():
+    sig = inspect.signature(grammar_features_PlusNonContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::plusnoncontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::PlusNonContainment)
+def test_grammar_features_mandatorynoncontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_MandatoryNonContainment)
 
 
-def test_grammar::features::plusnoncontainment_constructor_exists():
-    assert callable(grammar::features::PlusNonContainment.__init__)
+def test_grammar_features_mandatorynoncontainment_constructor_exists():
+    assert callable(grammar_features_MandatoryNonContainment.__init__)
 
 
-def test_grammar::features::plusnoncontainment_constructor_args():
-    sig = inspect.signature(grammar::features::PlusNonContainment.__init__)
+def test_grammar_features_mandatorynoncontainment_constructor_args():
+    sig = inspect.signature(grammar_features_MandatoryNonContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::mandatorynoncontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::MandatoryNonContainment)
+def test_grammar_features_optionalnoncontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_OptionalNonContainment)
 
 
-def test_grammar::features::mandatorynoncontainment_constructor_exists():
-    assert callable(grammar::features::MandatoryNonContainment.__init__)
+def test_grammar_features_optionalnoncontainment_constructor_exists():
+    assert callable(grammar_features_OptionalNonContainment.__init__)
 
 
-def test_grammar::features::mandatorynoncontainment_constructor_args():
-    sig = inspect.signature(grammar::features::MandatoryNonContainment.__init__)
+def test_grammar_features_optionalnoncontainment_constructor_args():
+    sig = inspect.signature(grammar_features_OptionalNonContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::optionalnoncontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::OptionalNonContainment)
+def test_grammar_features_starcontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_StarContainment)
 
 
-def test_grammar::features::optionalnoncontainment_constructor_exists():
-    assert callable(grammar::features::OptionalNonContainment.__init__)
+def test_grammar_features_starcontainment_constructor_exists():
+    assert callable(grammar_features_StarContainment.__init__)
 
 
-def test_grammar::features::optionalnoncontainment_constructor_args():
-    sig = inspect.signature(grammar::features::OptionalNonContainment.__init__)
+def test_grammar_features_starcontainment_constructor_args():
+    sig = inspect.signature(grammar_features_StarContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::starcontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::StarContainment)
+def test_grammar_features_pluscontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_PlusContainment)
 
 
-def test_grammar::features::starcontainment_constructor_exists():
-    assert callable(grammar::features::StarContainment.__init__)
+def test_grammar_features_pluscontainment_constructor_exists():
+    assert callable(grammar_features_PlusContainment.__init__)
 
 
-def test_grammar::features::starcontainment_constructor_args():
-    sig = inspect.signature(grammar::features::StarContainment.__init__)
+def test_grammar_features_pluscontainment_constructor_args():
+    sig = inspect.signature(grammar_features_PlusContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::pluscontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::PlusContainment)
+def test_grammar_features_mandatorycontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_MandatoryContainment)
 
 
-def test_grammar::features::pluscontainment_constructor_exists():
-    assert callable(grammar::features::PlusContainment.__init__)
+def test_grammar_features_mandatorycontainment_constructor_exists():
+    assert callable(grammar_features_MandatoryContainment.__init__)
 
 
-def test_grammar::features::pluscontainment_constructor_args():
-    sig = inspect.signature(grammar::features::PlusContainment.__init__)
+def test_grammar_features_mandatorycontainment_constructor_args():
+    sig = inspect.signature(grammar_features_MandatoryContainment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::mandatorycontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::MandatoryContainment)
+def test_grammar_features_x_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_X)
 
 
-def test_grammar::features::mandatorycontainment_constructor_exists():
-    assert callable(grammar::features::MandatoryContainment.__init__)
+def test_grammar_features_x_constructor_exists():
+    assert callable(grammar_features_X.__init__)
 
 
-def test_grammar::features::mandatorycontainment_constructor_args():
-    sig = inspect.signature(grammar::features::MandatoryContainment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_grammar::features::x_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::X)
-
-
-def test_grammar::features::x_constructor_exists():
-    assert callable(grammar::features::X.__init__)
-
-
-def test_grammar::features::x_constructor_args():
-    sig = inspect.signature(grammar::features::X.__init__)
+def test_grammar_features_x_constructor_args():
+    sig = inspect.signature(grammar_features_X.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_grammar::features::x_has_name():
-    assert hasattr(grammar::features::X, "name")
+def test_grammar_features_x_has_name():
+    assert hasattr(grammar_features_X, "name")
     descriptor = None
-    for klass in grammar::features::X.__mro__:
+    for klass in grammar_features_X.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -349,16 +349,16 @@ def test_grammar::features::x_has_name():
 
 
 
-def test_grammar::features::optionalcontainment_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::OptionalContainment)
+def test_grammar_features_optionalcontainment_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_OptionalContainment)
 
 
-def test_grammar::features::optionalcontainment_constructor_exists():
-    assert callable(grammar::features::OptionalContainment.__init__)
+def test_grammar_features_optionalcontainment_constructor_exists():
+    assert callable(grammar_features_OptionalContainment.__init__)
 
 
-def test_grammar::features::optionalcontainment_constructor_args():
-    sig = inspect.signature(grammar::features::OptionalContainment.__init__)
+def test_grammar_features_optionalcontainment_constructor_args():
+    sig = inspect.signature(grammar_features_OptionalContainment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -377,44 +377,44 @@ def test_abstractsuperclass_constructor_args():
 
 
 
-def test_grammar::features::concretesubclassb_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::ConcreteSubclassB)
+def test_grammar_features_concretesubclassb_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_ConcreteSubclassB)
 
 
-def test_grammar::features::concretesubclassb_constructor_exists():
-    assert callable(grammar::features::ConcreteSubclassB.__init__)
+def test_grammar_features_concretesubclassb_constructor_exists():
+    assert callable(grammar_features_ConcreteSubclassB.__init__)
 
 
-def test_grammar::features::concretesubclassb_constructor_args():
-    sig = inspect.signature(grammar::features::ConcreteSubclassB.__init__)
+def test_grammar_features_concretesubclassb_constructor_args():
+    sig = inspect.signature(grammar_features_ConcreteSubclassB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::concretesubclassa_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::ConcreteSubclassA)
+def test_grammar_features_concretesubclassa_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_ConcreteSubclassA)
 
 
-def test_grammar::features::concretesubclassa_constructor_exists():
-    assert callable(grammar::features::ConcreteSubclassA.__init__)
+def test_grammar_features_concretesubclassa_constructor_exists():
+    assert callable(grammar_features_ConcreteSubclassA.__init__)
 
 
-def test_grammar::features::concretesubclassa_constructor_args():
-    sig = inspect.signature(grammar::features::ConcreteSubclassA.__init__)
+def test_grammar_features_concretesubclassa_constructor_args():
+    sig = inspect.signature(grammar_features_ConcreteSubclassA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::features::abstractsuperclass_is_not_abstract():
-    assert not inspect.isabstract(grammar::features::AbstractSuperclass)
+def test_grammar_features_abstractsuperclass_is_not_abstract():
+    assert not inspect.isabstract(grammar_features_AbstractSuperclass)
 
 
-def test_grammar::features::abstractsuperclass_constructor_exists():
-    assert callable(grammar::features::AbstractSuperclass.__init__)
+def test_grammar_features_abstractsuperclass_constructor_exists():
+    assert callable(grammar_features_AbstractSuperclass.__init__)
 
 
-def test_grammar::features::abstractsuperclass_constructor_args():
-    sig = inspect.signature(grammar::features::AbstractSuperclass.__init__)
+def test_grammar_features_abstractsuperclass_constructor_args():
+    sig = inspect.signature(grammar_features_AbstractSuperclass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -429,242 +429,233 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-grammar::features::SecondRoot_strategy = st.builds(
-    grammar::features::SecondRoot,
+grammar_features_SecondRoot_strategy = st.builds(
+    grammar_features_SecondRoot,
 )
 Child_strategy = st.builds(
     Child,
 )
-grammar::features::StarNonContainment_strategy = st.builds(
-    grammar::features::StarNonContainment,
+grammar_features_PlusPrefix_strategy = st.builds(
+    grammar_features_PlusPrefix,
 )
-grammar::features::ClassWithAttributes_strategy = st.builds(
-    grammar::features::ClassWithAttributes,
+grammar_features_CompoundOptional_strategy = st.builds(
+    grammar_features_CompoundOptional,
+)
+grammar_features_ClassWithAttributes_strategy = st.builds(
+    grammar_features_ClassWithAttributes,
     a1=
         safe_text,
     a2=
         st.booleans()
 )
-grammar::features::CompoundPlus_strategy = st.builds(
-    grammar::features::CompoundPlus,
+grammar_features_StarNonContainment_strategy = st.builds(
+    grammar_features_StarNonContainment,
 )
-grammar::features::StarPrefix_strategy = st.builds(
-    grammar::features::StarPrefix,
+grammar_features_OptionalPrefix_strategy = st.builds(
+    grammar_features_OptionalPrefix,
 )
-grammar::features::OptionalPrefix_strategy = st.builds(
-    grammar::features::OptionalPrefix,
+grammar_features_CompoundStar_strategy = st.builds(
+    grammar_features_CompoundStar,
 )
-grammar::features::PlusPrefix_strategy = st.builds(
-    grammar::features::PlusPrefix,
+grammar_features_StarPrefix_strategy = st.builds(
+    grammar_features_StarPrefix,
 )
-grammar::features::CompoundStar_strategy = st.builds(
-    grammar::features::CompoundStar,
+grammar_features_CompoundPlus_strategy = st.builds(
+    grammar_features_CompoundPlus,
 )
-grammar::features::CompoundOptional_strategy = st.builds(
-    grammar::features::CompoundOptional,
+grammar_features_AlternativeSyntax_strategy = st.builds(
+    grammar_features_AlternativeSyntax,
 )
-grammar::features::AlternativeSyntax_strategy = st.builds(
-    grammar::features::AlternativeSyntax,
+grammar_features_Child_strategy = st.builds(
+    grammar_features_Child,
 )
-grammar::features::Child_strategy = st.builds(
-    grammar::features::Child,
+grammar_features_Root_strategy = st.builds(
+    grammar_features_Root,
 )
-grammar::features::Root_strategy = st.builds(
-    grammar::features::Root,
+grammar_features_PlusNonContainment_strategy = st.builds(
+    grammar_features_PlusNonContainment,
 )
-grammar::features::PlusNonContainment_strategy = st.builds(
-    grammar::features::PlusNonContainment,
+grammar_features_MandatoryNonContainment_strategy = st.builds(
+    grammar_features_MandatoryNonContainment,
 )
-grammar::features::MandatoryNonContainment_strategy = st.builds(
-    grammar::features::MandatoryNonContainment,
+grammar_features_OptionalNonContainment_strategy = st.builds(
+    grammar_features_OptionalNonContainment,
 )
-grammar::features::OptionalNonContainment_strategy = st.builds(
-    grammar::features::OptionalNonContainment,
+grammar_features_StarContainment_strategy = st.builds(
+    grammar_features_StarContainment,
 )
-grammar::features::StarContainment_strategy = st.builds(
-    grammar::features::StarContainment,
+grammar_features_PlusContainment_strategy = st.builds(
+    grammar_features_PlusContainment,
 )
-grammar::features::PlusContainment_strategy = st.builds(
-    grammar::features::PlusContainment,
+grammar_features_MandatoryContainment_strategy = st.builds(
+    grammar_features_MandatoryContainment,
 )
-grammar::features::MandatoryContainment_strategy = st.builds(
-    grammar::features::MandatoryContainment,
-)
-grammar::features::X_strategy = st.builds(
-    grammar::features::X,
+grammar_features_X_strategy = st.builds(
+    grammar_features_X,
     name=
         safe_text
 )
-grammar::features::OptionalContainment_strategy = st.builds(
-    grammar::features::OptionalContainment,
+grammar_features_OptionalContainment_strategy = st.builds(
+    grammar_features_OptionalContainment,
 )
 AbstractSuperclass_strategy = st.builds(
     AbstractSuperclass,
 )
-grammar::features::ConcreteSubclassB_strategy = st.builds(
-    grammar::features::ConcreteSubclassB,
+grammar_features_ConcreteSubclassB_strategy = st.builds(
+    grammar_features_ConcreteSubclassB,
 )
-grammar::features::ConcreteSubclassA_strategy = st.builds(
-    grammar::features::ConcreteSubclassA,
+grammar_features_ConcreteSubclassA_strategy = st.builds(
+    grammar_features_ConcreteSubclassA,
 )
-grammar::features::AbstractSuperclass_strategy = st.builds(
-    grammar::features::AbstractSuperclass,
+grammar_features_AbstractSuperclass_strategy = st.builds(
+    grammar_features_AbstractSuperclass,
 )
 
-@given(instance=grammar::features::SecondRoot_strategy)
+@given(instance=grammar_features_SecondRoot_strategy)
 @settings(max_examples=50)
-def test_grammar::features::secondroot_instantiation(instance):
-    assert isinstance(instance, grammar::features::SecondRoot)
+def test_grammar_features_secondroot_instantiation(instance):
+    assert isinstance(instance, grammar_features_SecondRoot)
 
 @given(instance=Child_strategy)
 @settings(max_examples=50)
 def test_child_instantiation(instance):
     assert isinstance(instance, Child)
 
-@given(instance=grammar::features::StarNonContainment_strategy)
+@given(instance=grammar_features_PlusPrefix_strategy)
 @settings(max_examples=50)
-def test_grammar::features::starnoncontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::StarNonContainment)
+def test_grammar_features_plusprefix_instantiation(instance):
+    assert isinstance(instance, grammar_features_PlusPrefix)
 
-@given(instance=grammar::features::ClassWithAttributes_strategy)
+@given(instance=grammar_features_CompoundOptional_strategy)
 @settings(max_examples=50)
-def test_grammar::features::classwithattributes_instantiation(instance):
-    assert isinstance(instance, grammar::features::ClassWithAttributes)
+def test_grammar_features_compoundoptional_instantiation(instance):
+    assert isinstance(instance, grammar_features_CompoundOptional)
 
-@given(instance=grammar::features::ClassWithAttributes_strategy)
-def test_grammar::features::classwithattributes_a1_type(instance):
-    assert isinstance(instance.a1, str)
+@given(instance=grammar_features_ClassWithAttributes_strategy)
+@settings(max_examples=50)
+def test_grammar_features_classwithattributes_instantiation(instance):
+    assert isinstance(instance, grammar_features_ClassWithAttributes)
 
 
-@given(instance=grammar::features::ClassWithAttributes_strategy)
-def test_grammar::features::classwithattributes_a1_setter(instance):
+
+@given(instance=grammar_features_ClassWithAttributes_strategy)
+def test_grammar_features_classwithattributes_a1_setter(instance):
     original = instance.a1
     instance.a1 = original
     assert instance.a1 == original
 
-@given(instance=grammar::features::ClassWithAttributes_strategy)
-def test_grammar::features::classwithattributes_a2_type(instance):
-    assert isinstance(instance.a2, bool)
 
 
-@given(instance=grammar::features::ClassWithAttributes_strategy)
-def test_grammar::features::classwithattributes_a2_setter(instance):
+@given(instance=grammar_features_ClassWithAttributes_strategy)
+def test_grammar_features_classwithattributes_a2_setter(instance):
     original = instance.a2
     instance.a2 = original
     assert instance.a2 == original
 
-@given(instance=grammar::features::CompoundPlus_strategy)
+@given(instance=grammar_features_StarNonContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::compoundplus_instantiation(instance):
-    assert isinstance(instance, grammar::features::CompoundPlus)
+def test_grammar_features_starnoncontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_StarNonContainment)
 
-@given(instance=grammar::features::StarPrefix_strategy)
+@given(instance=grammar_features_OptionalPrefix_strategy)
 @settings(max_examples=50)
-def test_grammar::features::starprefix_instantiation(instance):
-    assert isinstance(instance, grammar::features::StarPrefix)
+def test_grammar_features_optionalprefix_instantiation(instance):
+    assert isinstance(instance, grammar_features_OptionalPrefix)
 
-@given(instance=grammar::features::OptionalPrefix_strategy)
+@given(instance=grammar_features_CompoundStar_strategy)
 @settings(max_examples=50)
-def test_grammar::features::optionalprefix_instantiation(instance):
-    assert isinstance(instance, grammar::features::OptionalPrefix)
+def test_grammar_features_compoundstar_instantiation(instance):
+    assert isinstance(instance, grammar_features_CompoundStar)
 
-@given(instance=grammar::features::PlusPrefix_strategy)
+@given(instance=grammar_features_StarPrefix_strategy)
 @settings(max_examples=50)
-def test_grammar::features::plusprefix_instantiation(instance):
-    assert isinstance(instance, grammar::features::PlusPrefix)
+def test_grammar_features_starprefix_instantiation(instance):
+    assert isinstance(instance, grammar_features_StarPrefix)
 
-@given(instance=grammar::features::CompoundStar_strategy)
+@given(instance=grammar_features_CompoundPlus_strategy)
 @settings(max_examples=50)
-def test_grammar::features::compoundstar_instantiation(instance):
-    assert isinstance(instance, grammar::features::CompoundStar)
+def test_grammar_features_compoundplus_instantiation(instance):
+    assert isinstance(instance, grammar_features_CompoundPlus)
 
-@given(instance=grammar::features::CompoundOptional_strategy)
+@given(instance=grammar_features_AlternativeSyntax_strategy)
 @settings(max_examples=50)
-def test_grammar::features::compoundoptional_instantiation(instance):
-    assert isinstance(instance, grammar::features::CompoundOptional)
+def test_grammar_features_alternativesyntax_instantiation(instance):
+    assert isinstance(instance, grammar_features_AlternativeSyntax)
 
-@given(instance=grammar::features::AlternativeSyntax_strategy)
+@given(instance=grammar_features_Child_strategy)
 @settings(max_examples=50)
-def test_grammar::features::alternativesyntax_instantiation(instance):
-    assert isinstance(instance, grammar::features::AlternativeSyntax)
+def test_grammar_features_child_instantiation(instance):
+    assert isinstance(instance, grammar_features_Child)
 
-@given(instance=grammar::features::Child_strategy)
+@given(instance=grammar_features_Root_strategy)
 @settings(max_examples=50)
-def test_grammar::features::child_instantiation(instance):
-    assert isinstance(instance, grammar::features::Child)
+def test_grammar_features_root_instantiation(instance):
+    assert isinstance(instance, grammar_features_Root)
 
-@given(instance=grammar::features::Root_strategy)
+@given(instance=grammar_features_PlusNonContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::root_instantiation(instance):
-    assert isinstance(instance, grammar::features::Root)
+def test_grammar_features_plusnoncontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_PlusNonContainment)
 
-@given(instance=grammar::features::PlusNonContainment_strategy)
+@given(instance=grammar_features_MandatoryNonContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::plusnoncontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::PlusNonContainment)
+def test_grammar_features_mandatorynoncontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_MandatoryNonContainment)
 
-@given(instance=grammar::features::MandatoryNonContainment_strategy)
+@given(instance=grammar_features_OptionalNonContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::mandatorynoncontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::MandatoryNonContainment)
+def test_grammar_features_optionalnoncontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_OptionalNonContainment)
 
-@given(instance=grammar::features::OptionalNonContainment_strategy)
+@given(instance=grammar_features_StarContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::optionalnoncontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::OptionalNonContainment)
+def test_grammar_features_starcontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_StarContainment)
 
-@given(instance=grammar::features::StarContainment_strategy)
+@given(instance=grammar_features_PlusContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::starcontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::StarContainment)
+def test_grammar_features_pluscontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_PlusContainment)
 
-@given(instance=grammar::features::PlusContainment_strategy)
+@given(instance=grammar_features_MandatoryContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::pluscontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::PlusContainment)
+def test_grammar_features_mandatorycontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_MandatoryContainment)
 
-@given(instance=grammar::features::MandatoryContainment_strategy)
+@given(instance=grammar_features_X_strategy)
 @settings(max_examples=50)
-def test_grammar::features::mandatorycontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::MandatoryContainment)
-
-@given(instance=grammar::features::X_strategy)
-@settings(max_examples=50)
-def test_grammar::features::x_instantiation(instance):
-    assert isinstance(instance, grammar::features::X)
-
-@given(instance=grammar::features::X_strategy)
-def test_grammar::features::x_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_grammar_features_x_instantiation(instance):
+    assert isinstance(instance, grammar_features_X)
 
 
-@given(instance=grammar::features::X_strategy)
-def test_grammar::features::x_name_setter(instance):
+
+@given(instance=grammar_features_X_strategy)
+def test_grammar_features_x_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=grammar::features::OptionalContainment_strategy)
+@given(instance=grammar_features_OptionalContainment_strategy)
 @settings(max_examples=50)
-def test_grammar::features::optionalcontainment_instantiation(instance):
-    assert isinstance(instance, grammar::features::OptionalContainment)
+def test_grammar_features_optionalcontainment_instantiation(instance):
+    assert isinstance(instance, grammar_features_OptionalContainment)
 
 @given(instance=AbstractSuperclass_strategy)
 @settings(max_examples=50)
 def test_abstractsuperclass_instantiation(instance):
     assert isinstance(instance, AbstractSuperclass)
 
-@given(instance=grammar::features::ConcreteSubclassB_strategy)
+@given(instance=grammar_features_ConcreteSubclassB_strategy)
 @settings(max_examples=50)
-def test_grammar::features::concretesubclassb_instantiation(instance):
-    assert isinstance(instance, grammar::features::ConcreteSubclassB)
+def test_grammar_features_concretesubclassb_instantiation(instance):
+    assert isinstance(instance, grammar_features_ConcreteSubclassB)
 
-@given(instance=grammar::features::ConcreteSubclassA_strategy)
+@given(instance=grammar_features_ConcreteSubclassA_strategy)
 @settings(max_examples=50)
-def test_grammar::features::concretesubclassa_instantiation(instance):
-    assert isinstance(instance, grammar::features::ConcreteSubclassA)
+def test_grammar_features_concretesubclassa_instantiation(instance):
+    assert isinstance(instance, grammar_features_ConcreteSubclassA)
 
-@given(instance=grammar::features::AbstractSuperclass_strategy)
+@given(instance=grammar_features_AbstractSuperclass_strategy)
 @settings(max_examples=50)
-def test_grammar::features::abstractsuperclass_instantiation(instance):
-    assert isinstance(instance, grammar::features::AbstractSuperclass)
+def test_grammar_features_abstractsuperclass_instantiation(instance):
+    assert isinstance(instance, grammar_features_AbstractSuperclass)

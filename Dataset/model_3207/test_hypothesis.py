@@ -3,61 +3,61 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    NQC::Case,
+from python_code import (
+    NQC_Case,
     CallStatement,
-    NQC::SubroutineCall,
-    NQC::FunctionCall,
+    NQC_SubroutineCall,
+    NQC_FunctionCall,
     CompoundExpression,
-    NQC::BinaryExpression,
+    NQC_BinaryExpression,
     ConstantExpression,
-    NQC::BooleanConstant,
+    NQC_BooleanConstant,
     VariableExpression,
-    NQC::ArrayExpression,
+    NQC_ArrayExpression,
     ValueExpression,
     Expression,
-    NQC::CompoundExpression,
-    NQC::ValueExpression,
-    NQC::VariableExpression,
+    NQC_CompoundExpression,
+    NQC_ValueExpression,
+    NQC_VariableExpression,
     Statement,
-    NQC::ControlStructure,
-    NQC::EmptyStatement,
-    NQC::ContinueStatement,
-    NQC::CallStatement,
-    NQC::BreakStatement,
-    NQC::BlockStatement,
-    NQC::Expression,
-    NQC::AssignmentStatement,
+    NQC_ContinueStatement,
+    NQC_CallStatement,
+    NQC_Expression,
+    NQC_BlockStatement,
+    NQC_ControlStructure,
+    NQC_BreakStatement,
+    NQC_EmptyStatement,
+    NQC_AssignmentStatement,
     ControlStructure,
-    NQC::RepeatStatement,
-    NQC::WhileStatement,
-    NQC::ForStatement,
-    NQC::IfStatement,
-    NQC::GoToStatement,
-    NQC::UntilStatement,
-    NQC::SwitchStatement,
-    NQC::DoWhileStatement,
-    NQC::StopStatement,
-    NQC::StartStatement,
-    NQC::ReturnStatement,
-    NQC::Subroutine,
-    NQC::Function,
-    NQC::Task,
-    NQC::Program,
-    NQC::Label,
-    NQC::IntegerConstant,
-    NQC::ConstantExpression,
-    NQC::Variable,
+    NQC_IfStatement,
+    NQC_ForStatement,
+    NQC_GoToStatement,
+    NQC_UntilStatement,
+    NQC_WhileStatement,
+    NQC_RepeatStatement,
+    NQC_SwitchStatement,
+    NQC_DoWhileStatement,
+    NQC_StopStatement,
+    NQC_StartStatement,
+    NQC_ReturnStatement,
+    NQC_Subroutine,
+    NQC_Function,
+    NQC_Task,
+    NQC_Program,
+    NQC_Label,
+    NQC_IntegerConstant,
+    NQC_ConstantExpression,
+    NQC_Variable,
     Variable,
-    NQC::GlobalVariable,
-    NQC::Parameter,
-    NQC::LocalVariable,
-    NQC::Statement,
+    NQC_GlobalVariable,
+    NQC_Parameter,
+    NQC_LocalVariable,
+    NQC_Statement,
     AssignmentStatementEnum,
-    TypeEnum,
     BinaryOperatorEnum,
+    TypeEnum,
 )
 
 # =============================================================================
@@ -66,23 +66,23 @@ from classes import (
 
 
 
-def test_nqc::case_is_not_abstract():
-    assert not inspect.isabstract(NQC::Case)
+def test_nqc_case_is_not_abstract():
+    assert not inspect.isabstract(NQC_Case)
 
 
-def test_nqc::case_constructor_exists():
-    assert callable(NQC::Case.__init__)
+def test_nqc_case_constructor_exists():
+    assert callable(NQC_Case.__init__)
 
 
-def test_nqc::case_constructor_args():
-    sig = inspect.signature(NQC::Case.__init__)
+def test_nqc_case_constructor_args():
+    sig = inspect.signature(NQC_Case.__init__)
     params = list(sig.parameters.keys())
     assert "IsDefault" in params, "Missing parameter 'IsDefault'"
 
-def test_nqc::case_has_IsDefault():
-    assert hasattr(NQC::Case, "IsDefault")
+def test_nqc_case_has_IsDefault():
+    assert hasattr(NQC_Case, "IsDefault")
     descriptor = None
-    for klass in NQC::Case.__mro__:
+    for klass in NQC_Case.__mro__:
         if "IsDefault" in klass.__dict__:
             descriptor = klass.__dict__["IsDefault"]
             break
@@ -104,30 +104,30 @@ def test_callstatement_constructor_args():
 
 
 
-def test_nqc::subroutinecall_is_not_abstract():
-    assert not inspect.isabstract(NQC::SubroutineCall)
+def test_nqc_subroutinecall_is_not_abstract():
+    assert not inspect.isabstract(NQC_SubroutineCall)
 
 
-def test_nqc::subroutinecall_constructor_exists():
-    assert callable(NQC::SubroutineCall.__init__)
+def test_nqc_subroutinecall_constructor_exists():
+    assert callable(NQC_SubroutineCall.__init__)
 
 
-def test_nqc::subroutinecall_constructor_args():
-    sig = inspect.signature(NQC::SubroutineCall.__init__)
+def test_nqc_subroutinecall_constructor_args():
+    sig = inspect.signature(NQC_SubroutineCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::functioncall_is_not_abstract():
-    assert not inspect.isabstract(NQC::FunctionCall)
+def test_nqc_functioncall_is_not_abstract():
+    assert not inspect.isabstract(NQC_FunctionCall)
 
 
-def test_nqc::functioncall_constructor_exists():
-    assert callable(NQC::FunctionCall.__init__)
+def test_nqc_functioncall_constructor_exists():
+    assert callable(NQC_FunctionCall.__init__)
 
 
-def test_nqc::functioncall_constructor_args():
-    sig = inspect.signature(NQC::FunctionCall.__init__)
+def test_nqc_functioncall_constructor_args():
+    sig = inspect.signature(NQC_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -146,23 +146,23 @@ def test_compoundexpression_constructor_args():
 
 
 
-def test_nqc::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(NQC::BinaryExpression)
+def test_nqc_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(NQC_BinaryExpression)
 
 
-def test_nqc::binaryexpression_constructor_exists():
-    assert callable(NQC::BinaryExpression.__init__)
+def test_nqc_binaryexpression_constructor_exists():
+    assert callable(NQC_BinaryExpression.__init__)
 
 
-def test_nqc::binaryexpression_constructor_args():
-    sig = inspect.signature(NQC::BinaryExpression.__init__)
+def test_nqc_binaryexpression_constructor_args():
+    sig = inspect.signature(NQC_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "Operator" in params, "Missing parameter 'Operator'"
 
-def test_nqc::binaryexpression_has_Operator():
-    assert hasattr(NQC::BinaryExpression, "Operator")
+def test_nqc_binaryexpression_has_Operator():
+    assert hasattr(NQC_BinaryExpression, "Operator")
     descriptor = None
-    for klass in NQC::BinaryExpression.__mro__:
+    for klass in NQC_BinaryExpression.__mro__:
         if "Operator" in klass.__dict__:
             descriptor = klass.__dict__["Operator"]
             break
@@ -184,23 +184,23 @@ def test_constantexpression_constructor_args():
 
 
 
-def test_nqc::booleanconstant_is_not_abstract():
-    assert not inspect.isabstract(NQC::BooleanConstant)
+def test_nqc_booleanconstant_is_not_abstract():
+    assert not inspect.isabstract(NQC_BooleanConstant)
 
 
-def test_nqc::booleanconstant_constructor_exists():
-    assert callable(NQC::BooleanConstant.__init__)
+def test_nqc_booleanconstant_constructor_exists():
+    assert callable(NQC_BooleanConstant.__init__)
 
 
-def test_nqc::booleanconstant_constructor_args():
-    sig = inspect.signature(NQC::BooleanConstant.__init__)
+def test_nqc_booleanconstant_constructor_args():
+    sig = inspect.signature(NQC_BooleanConstant.__init__)
     params = list(sig.parameters.keys())
     assert "Value" in params, "Missing parameter 'Value'"
 
-def test_nqc::booleanconstant_has_Value():
-    assert hasattr(NQC::BooleanConstant, "Value")
+def test_nqc_booleanconstant_has_Value():
+    assert hasattr(NQC_BooleanConstant, "Value")
     descriptor = None
-    for klass in NQC::BooleanConstant.__mro__:
+    for klass in NQC_BooleanConstant.__mro__:
         if "Value" in klass.__dict__:
             descriptor = klass.__dict__["Value"]
             break
@@ -222,16 +222,16 @@ def test_variableexpression_constructor_args():
 
 
 
-def test_nqc::arrayexpression_is_not_abstract():
-    assert not inspect.isabstract(NQC::ArrayExpression)
+def test_nqc_arrayexpression_is_not_abstract():
+    assert not inspect.isabstract(NQC_ArrayExpression)
 
 
-def test_nqc::arrayexpression_constructor_exists():
-    assert callable(NQC::ArrayExpression.__init__)
+def test_nqc_arrayexpression_constructor_exists():
+    assert callable(NQC_ArrayExpression.__init__)
 
 
-def test_nqc::arrayexpression_constructor_args():
-    sig = inspect.signature(NQC::ArrayExpression.__init__)
+def test_nqc_arrayexpression_constructor_args():
+    sig = inspect.signature(NQC_ArrayExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -264,44 +264,44 @@ def test_expression_constructor_args():
 
 
 
-def test_nqc::compoundexpression_is_not_abstract():
-    assert not inspect.isabstract(NQC::CompoundExpression)
+def test_nqc_compoundexpression_is_not_abstract():
+    assert not inspect.isabstract(NQC_CompoundExpression)
 
 
-def test_nqc::compoundexpression_constructor_exists():
-    assert callable(NQC::CompoundExpression.__init__)
+def test_nqc_compoundexpression_constructor_exists():
+    assert callable(NQC_CompoundExpression.__init__)
 
 
-def test_nqc::compoundexpression_constructor_args():
-    sig = inspect.signature(NQC::CompoundExpression.__init__)
+def test_nqc_compoundexpression_constructor_args():
+    sig = inspect.signature(NQC_CompoundExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::valueexpression_is_not_abstract():
-    assert not inspect.isabstract(NQC::ValueExpression)
+def test_nqc_valueexpression_is_not_abstract():
+    assert not inspect.isabstract(NQC_ValueExpression)
 
 
-def test_nqc::valueexpression_constructor_exists():
-    assert callable(NQC::ValueExpression.__init__)
+def test_nqc_valueexpression_constructor_exists():
+    assert callable(NQC_ValueExpression.__init__)
 
 
-def test_nqc::valueexpression_constructor_args():
-    sig = inspect.signature(NQC::ValueExpression.__init__)
+def test_nqc_valueexpression_constructor_args():
+    sig = inspect.signature(NQC_ValueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::variableexpression_is_not_abstract():
-    assert not inspect.isabstract(NQC::VariableExpression)
+def test_nqc_variableexpression_is_not_abstract():
+    assert not inspect.isabstract(NQC_VariableExpression)
 
 
-def test_nqc::variableexpression_constructor_exists():
-    assert callable(NQC::VariableExpression.__init__)
+def test_nqc_variableexpression_constructor_exists():
+    assert callable(NQC_VariableExpression.__init__)
 
 
-def test_nqc::variableexpression_constructor_args():
-    sig = inspect.signature(NQC::VariableExpression.__init__)
+def test_nqc_variableexpression_constructor_args():
+    sig = inspect.signature(NQC_VariableExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -320,121 +320,121 @@ def test_statement_constructor_args():
 
 
 
-def test_nqc::controlstructure_is_not_abstract():
-    assert not inspect.isabstract(NQC::ControlStructure)
+def test_nqc_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_ContinueStatement)
 
 
-def test_nqc::controlstructure_constructor_exists():
-    assert callable(NQC::ControlStructure.__init__)
+def test_nqc_continuestatement_constructor_exists():
+    assert callable(NQC_ContinueStatement.__init__)
 
 
-def test_nqc::controlstructure_constructor_args():
-    sig = inspect.signature(NQC::ControlStructure.__init__)
+def test_nqc_continuestatement_constructor_args():
+    sig = inspect.signature(NQC_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::EmptyStatement)
+def test_nqc_callstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_CallStatement)
 
 
-def test_nqc::emptystatement_constructor_exists():
-    assert callable(NQC::EmptyStatement.__init__)
+def test_nqc_callstatement_constructor_exists():
+    assert callable(NQC_CallStatement.__init__)
 
 
-def test_nqc::emptystatement_constructor_args():
-    sig = inspect.signature(NQC::EmptyStatement.__init__)
+def test_nqc_callstatement_constructor_args():
+    sig = inspect.signature(NQC_CallStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::ContinueStatement)
+def test_nqc_expression_is_not_abstract():
+    assert not inspect.isabstract(NQC_Expression)
 
 
-def test_nqc::continuestatement_constructor_exists():
-    assert callable(NQC::ContinueStatement.__init__)
+def test_nqc_expression_constructor_exists():
+    assert callable(NQC_Expression.__init__)
 
 
-def test_nqc::continuestatement_constructor_args():
-    sig = inspect.signature(NQC::ContinueStatement.__init__)
+def test_nqc_expression_constructor_args():
+    sig = inspect.signature(NQC_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::callstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::CallStatement)
+def test_nqc_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_BlockStatement)
 
 
-def test_nqc::callstatement_constructor_exists():
-    assert callable(NQC::CallStatement.__init__)
+def test_nqc_blockstatement_constructor_exists():
+    assert callable(NQC_BlockStatement.__init__)
 
 
-def test_nqc::callstatement_constructor_args():
-    sig = inspect.signature(NQC::CallStatement.__init__)
+def test_nqc_blockstatement_constructor_args():
+    sig = inspect.signature(NQC_BlockStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::BreakStatement)
+def test_nqc_controlstructure_is_not_abstract():
+    assert not inspect.isabstract(NQC_ControlStructure)
 
 
-def test_nqc::breakstatement_constructor_exists():
-    assert callable(NQC::BreakStatement.__init__)
+def test_nqc_controlstructure_constructor_exists():
+    assert callable(NQC_ControlStructure.__init__)
 
 
-def test_nqc::breakstatement_constructor_args():
-    sig = inspect.signature(NQC::BreakStatement.__init__)
+def test_nqc_controlstructure_constructor_args():
+    sig = inspect.signature(NQC_ControlStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::BlockStatement)
+def test_nqc_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_BreakStatement)
 
 
-def test_nqc::blockstatement_constructor_exists():
-    assert callable(NQC::BlockStatement.__init__)
+def test_nqc_breakstatement_constructor_exists():
+    assert callable(NQC_BreakStatement.__init__)
 
 
-def test_nqc::blockstatement_constructor_args():
-    sig = inspect.signature(NQC::BlockStatement.__init__)
+def test_nqc_breakstatement_constructor_args():
+    sig = inspect.signature(NQC_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::expression_is_not_abstract():
-    assert not inspect.isabstract(NQC::Expression)
+def test_nqc_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_EmptyStatement)
 
 
-def test_nqc::expression_constructor_exists():
-    assert callable(NQC::Expression.__init__)
+def test_nqc_emptystatement_constructor_exists():
+    assert callable(NQC_EmptyStatement.__init__)
 
 
-def test_nqc::expression_constructor_args():
-    sig = inspect.signature(NQC::Expression.__init__)
+def test_nqc_emptystatement_constructor_args():
+    sig = inspect.signature(NQC_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::AssignmentStatement)
+def test_nqc_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_AssignmentStatement)
 
 
-def test_nqc::assignmentstatement_constructor_exists():
-    assert callable(NQC::AssignmentStatement.__init__)
+def test_nqc_assignmentstatement_constructor_exists():
+    assert callable(NQC_AssignmentStatement.__init__)
 
 
-def test_nqc::assignmentstatement_constructor_args():
-    sig = inspect.signature(NQC::AssignmentStatement.__init__)
+def test_nqc_assignmentstatement_constructor_args():
+    sig = inspect.signature(NQC_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
     assert "Operator" in params, "Missing parameter 'Operator'"
 
-def test_nqc::assignmentstatement_has_Operator():
-    assert hasattr(NQC::AssignmentStatement, "Operator")
+def test_nqc_assignmentstatement_has_Operator():
+    assert hasattr(NQC_AssignmentStatement, "Operator")
     descriptor = None
-    for klass in NQC::AssignmentStatement.__mro__:
+    for klass in NQC_AssignmentStatement.__mro__:
         if "Operator" in klass.__dict__:
             descriptor = klass.__dict__["Operator"]
             break
@@ -456,177 +456,177 @@ def test_controlstructure_constructor_args():
 
 
 
-def test_nqc::repeatstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::RepeatStatement)
+def test_nqc_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_IfStatement)
 
 
-def test_nqc::repeatstatement_constructor_exists():
-    assert callable(NQC::RepeatStatement.__init__)
+def test_nqc_ifstatement_constructor_exists():
+    assert callable(NQC_IfStatement.__init__)
 
 
-def test_nqc::repeatstatement_constructor_args():
-    sig = inspect.signature(NQC::RepeatStatement.__init__)
+def test_nqc_ifstatement_constructor_args():
+    sig = inspect.signature(NQC_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::WhileStatement)
+def test_nqc_forstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_ForStatement)
 
 
-def test_nqc::whilestatement_constructor_exists():
-    assert callable(NQC::WhileStatement.__init__)
+def test_nqc_forstatement_constructor_exists():
+    assert callable(NQC_ForStatement.__init__)
 
 
-def test_nqc::whilestatement_constructor_args():
-    sig = inspect.signature(NQC::WhileStatement.__init__)
+def test_nqc_forstatement_constructor_args():
+    sig = inspect.signature(NQC_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::forstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::ForStatement)
+def test_nqc_gotostatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_GoToStatement)
 
 
-def test_nqc::forstatement_constructor_exists():
-    assert callable(NQC::ForStatement.__init__)
+def test_nqc_gotostatement_constructor_exists():
+    assert callable(NQC_GoToStatement.__init__)
 
 
-def test_nqc::forstatement_constructor_args():
-    sig = inspect.signature(NQC::ForStatement.__init__)
+def test_nqc_gotostatement_constructor_args():
+    sig = inspect.signature(NQC_GoToStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::IfStatement)
+def test_nqc_untilstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_UntilStatement)
 
 
-def test_nqc::ifstatement_constructor_exists():
-    assert callable(NQC::IfStatement.__init__)
+def test_nqc_untilstatement_constructor_exists():
+    assert callable(NQC_UntilStatement.__init__)
 
 
-def test_nqc::ifstatement_constructor_args():
-    sig = inspect.signature(NQC::IfStatement.__init__)
+def test_nqc_untilstatement_constructor_args():
+    sig = inspect.signature(NQC_UntilStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::gotostatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::GoToStatement)
+def test_nqc_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_WhileStatement)
 
 
-def test_nqc::gotostatement_constructor_exists():
-    assert callable(NQC::GoToStatement.__init__)
+def test_nqc_whilestatement_constructor_exists():
+    assert callable(NQC_WhileStatement.__init__)
 
 
-def test_nqc::gotostatement_constructor_args():
-    sig = inspect.signature(NQC::GoToStatement.__init__)
+def test_nqc_whilestatement_constructor_args():
+    sig = inspect.signature(NQC_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::untilstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::UntilStatement)
+def test_nqc_repeatstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_RepeatStatement)
 
 
-def test_nqc::untilstatement_constructor_exists():
-    assert callable(NQC::UntilStatement.__init__)
+def test_nqc_repeatstatement_constructor_exists():
+    assert callable(NQC_RepeatStatement.__init__)
 
 
-def test_nqc::untilstatement_constructor_args():
-    sig = inspect.signature(NQC::UntilStatement.__init__)
+def test_nqc_repeatstatement_constructor_args():
+    sig = inspect.signature(NQC_RepeatStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::SwitchStatement)
+def test_nqc_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_SwitchStatement)
 
 
-def test_nqc::switchstatement_constructor_exists():
-    assert callable(NQC::SwitchStatement.__init__)
+def test_nqc_switchstatement_constructor_exists():
+    assert callable(NQC_SwitchStatement.__init__)
 
 
-def test_nqc::switchstatement_constructor_args():
-    sig = inspect.signature(NQC::SwitchStatement.__init__)
+def test_nqc_switchstatement_constructor_args():
+    sig = inspect.signature(NQC_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::dowhilestatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::DoWhileStatement)
+def test_nqc_dowhilestatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_DoWhileStatement)
 
 
-def test_nqc::dowhilestatement_constructor_exists():
-    assert callable(NQC::DoWhileStatement.__init__)
+def test_nqc_dowhilestatement_constructor_exists():
+    assert callable(NQC_DoWhileStatement.__init__)
 
 
-def test_nqc::dowhilestatement_constructor_args():
-    sig = inspect.signature(NQC::DoWhileStatement.__init__)
+def test_nqc_dowhilestatement_constructor_args():
+    sig = inspect.signature(NQC_DoWhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::stopstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::StopStatement)
+def test_nqc_stopstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_StopStatement)
 
 
-def test_nqc::stopstatement_constructor_exists():
-    assert callable(NQC::StopStatement.__init__)
+def test_nqc_stopstatement_constructor_exists():
+    assert callable(NQC_StopStatement.__init__)
 
 
-def test_nqc::stopstatement_constructor_args():
-    sig = inspect.signature(NQC::StopStatement.__init__)
+def test_nqc_stopstatement_constructor_args():
+    sig = inspect.signature(NQC_StopStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::startstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::StartStatement)
+def test_nqc_startstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_StartStatement)
 
 
-def test_nqc::startstatement_constructor_exists():
-    assert callable(NQC::StartStatement.__init__)
+def test_nqc_startstatement_constructor_exists():
+    assert callable(NQC_StartStatement.__init__)
 
 
-def test_nqc::startstatement_constructor_args():
-    sig = inspect.signature(NQC::StartStatement.__init__)
+def test_nqc_startstatement_constructor_args():
+    sig = inspect.signature(NQC_StartStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(NQC::ReturnStatement)
+def test_nqc_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(NQC_ReturnStatement)
 
 
-def test_nqc::returnstatement_constructor_exists():
-    assert callable(NQC::ReturnStatement.__init__)
+def test_nqc_returnstatement_constructor_exists():
+    assert callable(NQC_ReturnStatement.__init__)
 
 
-def test_nqc::returnstatement_constructor_args():
-    sig = inspect.signature(NQC::ReturnStatement.__init__)
+def test_nqc_returnstatement_constructor_args():
+    sig = inspect.signature(NQC_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::subroutine_is_not_abstract():
-    assert not inspect.isabstract(NQC::Subroutine)
+def test_nqc_subroutine_is_not_abstract():
+    assert not inspect.isabstract(NQC_Subroutine)
 
 
-def test_nqc::subroutine_constructor_exists():
-    assert callable(NQC::Subroutine.__init__)
+def test_nqc_subroutine_constructor_exists():
+    assert callable(NQC_Subroutine.__init__)
 
 
-def test_nqc::subroutine_constructor_args():
-    sig = inspect.signature(NQC::Subroutine.__init__)
+def test_nqc_subroutine_constructor_args():
+    sig = inspect.signature(NQC_Subroutine.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_nqc::subroutine_has_Name():
-    assert hasattr(NQC::Subroutine, "Name")
+def test_nqc_subroutine_has_Name():
+    assert hasattr(NQC_Subroutine, "Name")
     descriptor = None
-    for klass in NQC::Subroutine.__mro__:
+    for klass in NQC_Subroutine.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -634,23 +634,23 @@ def test_nqc::subroutine_has_Name():
 
 
 
-def test_nqc::function_is_not_abstract():
-    assert not inspect.isabstract(NQC::Function)
+def test_nqc_function_is_not_abstract():
+    assert not inspect.isabstract(NQC_Function)
 
 
-def test_nqc::function_constructor_exists():
-    assert callable(NQC::Function.__init__)
+def test_nqc_function_constructor_exists():
+    assert callable(NQC_Function.__init__)
 
 
-def test_nqc::function_constructor_args():
-    sig = inspect.signature(NQC::Function.__init__)
+def test_nqc_function_constructor_args():
+    sig = inspect.signature(NQC_Function.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_nqc::function_has_Name():
-    assert hasattr(NQC::Function, "Name")
+def test_nqc_function_has_Name():
+    assert hasattr(NQC_Function, "Name")
     descriptor = None
-    for klass in NQC::Function.__mro__:
+    for klass in NQC_Function.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -658,23 +658,23 @@ def test_nqc::function_has_Name():
 
 
 
-def test_nqc::task_is_not_abstract():
-    assert not inspect.isabstract(NQC::Task)
+def test_nqc_task_is_not_abstract():
+    assert not inspect.isabstract(NQC_Task)
 
 
-def test_nqc::task_constructor_exists():
-    assert callable(NQC::Task.__init__)
+def test_nqc_task_constructor_exists():
+    assert callable(NQC_Task.__init__)
 
 
-def test_nqc::task_constructor_args():
-    sig = inspect.signature(NQC::Task.__init__)
+def test_nqc_task_constructor_args():
+    sig = inspect.signature(NQC_Task.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_nqc::task_has_Name():
-    assert hasattr(NQC::Task, "Name")
+def test_nqc_task_has_Name():
+    assert hasattr(NQC_Task, "Name")
     descriptor = None
-    for klass in NQC::Task.__mro__:
+    for klass in NQC_Task.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -682,23 +682,23 @@ def test_nqc::task_has_Name():
 
 
 
-def test_nqc::program_is_not_abstract():
-    assert not inspect.isabstract(NQC::Program)
+def test_nqc_program_is_not_abstract():
+    assert not inspect.isabstract(NQC_Program)
 
 
-def test_nqc::program_constructor_exists():
-    assert callable(NQC::Program.__init__)
+def test_nqc_program_constructor_exists():
+    assert callable(NQC_Program.__init__)
 
 
-def test_nqc::program_constructor_args():
-    sig = inspect.signature(NQC::Program.__init__)
+def test_nqc_program_constructor_args():
+    sig = inspect.signature(NQC_Program.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_nqc::program_has_Name():
-    assert hasattr(NQC::Program, "Name")
+def test_nqc_program_has_Name():
+    assert hasattr(NQC_Program, "Name")
     descriptor = None
-    for klass in NQC::Program.__mro__:
+    for klass in NQC_Program.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -706,23 +706,23 @@ def test_nqc::program_has_Name():
 
 
 
-def test_nqc::label_is_not_abstract():
-    assert not inspect.isabstract(NQC::Label)
+def test_nqc_label_is_not_abstract():
+    assert not inspect.isabstract(NQC_Label)
 
 
-def test_nqc::label_constructor_exists():
-    assert callable(NQC::Label.__init__)
+def test_nqc_label_constructor_exists():
+    assert callable(NQC_Label.__init__)
 
 
-def test_nqc::label_constructor_args():
-    sig = inspect.signature(NQC::Label.__init__)
+def test_nqc_label_constructor_args():
+    sig = inspect.signature(NQC_Label.__init__)
     params = list(sig.parameters.keys())
     assert "Label" in params, "Missing parameter 'Label'"
 
-def test_nqc::label_has_Label():
-    assert hasattr(NQC::Label, "Label")
+def test_nqc_label_has_Label():
+    assert hasattr(NQC_Label, "Label")
     descriptor = None
-    for klass in NQC::Label.__mro__:
+    for klass in NQC_Label.__mro__:
         if "Label" in klass.__dict__:
             descriptor = klass.__dict__["Label"]
             break
@@ -730,23 +730,23 @@ def test_nqc::label_has_Label():
 
 
 
-def test_nqc::integerconstant_is_not_abstract():
-    assert not inspect.isabstract(NQC::IntegerConstant)
+def test_nqc_integerconstant_is_not_abstract():
+    assert not inspect.isabstract(NQC_IntegerConstant)
 
 
-def test_nqc::integerconstant_constructor_exists():
-    assert callable(NQC::IntegerConstant.__init__)
+def test_nqc_integerconstant_constructor_exists():
+    assert callable(NQC_IntegerConstant.__init__)
 
 
-def test_nqc::integerconstant_constructor_args():
-    sig = inspect.signature(NQC::IntegerConstant.__init__)
+def test_nqc_integerconstant_constructor_args():
+    sig = inspect.signature(NQC_IntegerConstant.__init__)
     params = list(sig.parameters.keys())
     assert "Value" in params, "Missing parameter 'Value'"
 
-def test_nqc::integerconstant_has_Value():
-    assert hasattr(NQC::IntegerConstant, "Value")
+def test_nqc_integerconstant_has_Value():
+    assert hasattr(NQC_IntegerConstant, "Value")
     descriptor = None
-    for klass in NQC::IntegerConstant.__mro__:
+    for klass in NQC_IntegerConstant.__mro__:
         if "Value" in klass.__dict__:
             descriptor = klass.__dict__["Value"]
             break
@@ -754,49 +754,49 @@ def test_nqc::integerconstant_has_Value():
 
 
 
-def test_nqc::constantexpression_is_not_abstract():
-    assert not inspect.isabstract(NQC::ConstantExpression)
+def test_nqc_constantexpression_is_not_abstract():
+    assert not inspect.isabstract(NQC_ConstantExpression)
 
 
-def test_nqc::constantexpression_constructor_exists():
-    assert callable(NQC::ConstantExpression.__init__)
+def test_nqc_constantexpression_constructor_exists():
+    assert callable(NQC_ConstantExpression.__init__)
 
 
-def test_nqc::constantexpression_constructor_args():
-    sig = inspect.signature(NQC::ConstantExpression.__init__)
+def test_nqc_constantexpression_constructor_args():
+    sig = inspect.signature(NQC_ConstantExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::variable_is_not_abstract():
-    assert not inspect.isabstract(NQC::Variable)
+def test_nqc_variable_is_not_abstract():
+    assert not inspect.isabstract(NQC_Variable)
 
 
-def test_nqc::variable_constructor_exists():
-    assert callable(NQC::Variable.__init__)
+def test_nqc_variable_constructor_exists():
+    assert callable(NQC_Variable.__init__)
 
 
-def test_nqc::variable_constructor_args():
-    sig = inspect.signature(NQC::Variable.__init__)
+def test_nqc_variable_constructor_args():
+    sig = inspect.signature(NQC_Variable.__init__)
     params = list(sig.parameters.keys())
-    assert "Type" in params, "Missing parameter 'Type'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "Type" in params, "Missing parameter 'Type'"
 
-def test_nqc::variable_has_Type():
-    assert hasattr(NQC::Variable, "Type")
+def test_nqc_variable_has_Name():
+    assert hasattr(NQC_Variable, "Name")
     descriptor = None
-    for klass in NQC::Variable.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
+    for klass in NQC_Variable.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_nqc::variable_has_Name():
-    assert hasattr(NQC::Variable, "Name")
+def test_nqc_variable_has_Type():
+    assert hasattr(NQC_Variable, "Type")
     descriptor = None
-    for klass in NQC::Variable.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+    for klass in NQC_Variable.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
             break
     assert isinstance(descriptor, property)
 
@@ -816,58 +816,58 @@ def test_variable_constructor_args():
 
 
 
-def test_nqc::globalvariable_is_not_abstract():
-    assert not inspect.isabstract(NQC::GlobalVariable)
+def test_nqc_globalvariable_is_not_abstract():
+    assert not inspect.isabstract(NQC_GlobalVariable)
 
 
-def test_nqc::globalvariable_constructor_exists():
-    assert callable(NQC::GlobalVariable.__init__)
+def test_nqc_globalvariable_constructor_exists():
+    assert callable(NQC_GlobalVariable.__init__)
 
 
-def test_nqc::globalvariable_constructor_args():
-    sig = inspect.signature(NQC::GlobalVariable.__init__)
+def test_nqc_globalvariable_constructor_args():
+    sig = inspect.signature(NQC_GlobalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::parameter_is_not_abstract():
-    assert not inspect.isabstract(NQC::Parameter)
+def test_nqc_parameter_is_not_abstract():
+    assert not inspect.isabstract(NQC_Parameter)
 
 
-def test_nqc::parameter_constructor_exists():
-    assert callable(NQC::Parameter.__init__)
+def test_nqc_parameter_constructor_exists():
+    assert callable(NQC_Parameter.__init__)
 
 
-def test_nqc::parameter_constructor_args():
-    sig = inspect.signature(NQC::Parameter.__init__)
+def test_nqc_parameter_constructor_args():
+    sig = inspect.signature(NQC_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::localvariable_is_not_abstract():
-    assert not inspect.isabstract(NQC::LocalVariable)
+def test_nqc_localvariable_is_not_abstract():
+    assert not inspect.isabstract(NQC_LocalVariable)
 
 
-def test_nqc::localvariable_constructor_exists():
-    assert callable(NQC::LocalVariable.__init__)
+def test_nqc_localvariable_constructor_exists():
+    assert callable(NQC_LocalVariable.__init__)
 
 
-def test_nqc::localvariable_constructor_args():
-    sig = inspect.signature(NQC::LocalVariable.__init__)
+def test_nqc_localvariable_constructor_args():
+    sig = inspect.signature(NQC_LocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_nqc::statement_is_not_abstract():
-    assert not inspect.isabstract(NQC::Statement)
+def test_nqc_statement_is_not_abstract():
+    assert not inspect.isabstract(NQC_Statement)
 
 
-def test_nqc::statement_constructor_exists():
-    assert callable(NQC::Statement.__init__)
+def test_nqc_statement_constructor_exists():
+    assert callable(NQC_Statement.__init__)
 
 
-def test_nqc::statement_constructor_args():
-    sig = inspect.signature(NQC::Statement.__init__)
+def test_nqc_statement_constructor_args():
+    sig = inspect.signature(NQC_Statement.__init__)
     params = list(sig.parameters.keys())
 
 def test_assignmentstatementenum_exists():
@@ -884,6 +884,34 @@ def test_assignmentstatementenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AssignmentStatementEnum"
 
+def test_binaryoperatorenum_exists():
+    # Check that the Enumeration exists
+    assert BinaryOperatorEnum is not None
+
+def test_binaryoperatorenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BinaryOperatorEnum]
+    expected_literals = [
+        "equal",
+        "plus",
+        "leq",
+        "times",
+        "greater",
+        "notequal",
+        "geq",
+        "and_",
+        "or_",
+        "div",
+        "mod",
+        "less",
+        "minus",
+        "bitand",
+        "bitor",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BinaryOperatorEnum"
+
 def test_typeenum_exists():
     # Check that the Enumeration exists
     assert TypeEnum is not None
@@ -899,34 +927,6 @@ def test_typeenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TypeEnum"
 
-def test_binaryoperatorenum_exists():
-    # Check that the Enumeration exists
-    assert BinaryOperatorEnum is not None
-
-def test_binaryoperatorenum_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BinaryOperatorEnum]
-    expected_literals = [
-        "equal",
-        "leq",
-        "greater",
-        "bitor",
-        "minus",
-        "plus",
-        "less",
-        "div",
-        "geq",
-        "times",
-        "mod",
-        "and_",
-        "or_",
-        "bitand",
-        "notequal",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BinaryOperatorEnum"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -939,41 +939,41 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-NQC::Case_strategy = st.builds(
-    NQC::Case,
+NQC_Case_strategy = st.builds(
+    NQC_Case,
     IsDefault=
         st.booleans()
 )
 CallStatement_strategy = st.builds(
     CallStatement,
 )
-NQC::SubroutineCall_strategy = st.builds(
-    NQC::SubroutineCall,
+NQC_SubroutineCall_strategy = st.builds(
+    NQC_SubroutineCall,
 )
-NQC::FunctionCall_strategy = st.builds(
-    NQC::FunctionCall,
+NQC_FunctionCall_strategy = st.builds(
+    NQC_FunctionCall,
 )
 CompoundExpression_strategy = st.builds(
     CompoundExpression,
 )
-NQC::BinaryExpression_strategy = st.builds(
-    NQC::BinaryExpression,
+NQC_BinaryExpression_strategy = st.builds(
+    NQC_BinaryExpression,
     Operator=
         safe_text
 )
 ConstantExpression_strategy = st.builds(
     ConstantExpression,
 )
-NQC::BooleanConstant_strategy = st.builds(
-    NQC::BooleanConstant,
+NQC_BooleanConstant_strategy = st.builds(
+    NQC_BooleanConstant,
     Value=
         st.booleans()
 )
 VariableExpression_strategy = st.builds(
     VariableExpression,
 )
-NQC::ArrayExpression_strategy = st.builds(
-    NQC::ArrayExpression,
+NQC_ArrayExpression_strategy = st.builds(
+    NQC_ArrayExpression,
 )
 ValueExpression_strategy = st.builds(
     ValueExpression,
@@ -981,148 +981,145 @@ ValueExpression_strategy = st.builds(
 Expression_strategy = st.builds(
     Expression,
 )
-NQC::CompoundExpression_strategy = st.builds(
-    NQC::CompoundExpression,
+NQC_CompoundExpression_strategy = st.builds(
+    NQC_CompoundExpression,
 )
-NQC::ValueExpression_strategy = st.builds(
-    NQC::ValueExpression,
+NQC_ValueExpression_strategy = st.builds(
+    NQC_ValueExpression,
 )
-NQC::VariableExpression_strategy = st.builds(
-    NQC::VariableExpression,
+NQC_VariableExpression_strategy = st.builds(
+    NQC_VariableExpression,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-NQC::ControlStructure_strategy = st.builds(
-    NQC::ControlStructure,
+NQC_ContinueStatement_strategy = st.builds(
+    NQC_ContinueStatement,
 )
-NQC::EmptyStatement_strategy = st.builds(
-    NQC::EmptyStatement,
+NQC_CallStatement_strategy = st.builds(
+    NQC_CallStatement,
 )
-NQC::ContinueStatement_strategy = st.builds(
-    NQC::ContinueStatement,
+NQC_Expression_strategy = st.builds(
+    NQC_Expression,
 )
-NQC::CallStatement_strategy = st.builds(
-    NQC::CallStatement,
+NQC_BlockStatement_strategy = st.builds(
+    NQC_BlockStatement,
 )
-NQC::BreakStatement_strategy = st.builds(
-    NQC::BreakStatement,
+NQC_ControlStructure_strategy = st.builds(
+    NQC_ControlStructure,
 )
-NQC::BlockStatement_strategy = st.builds(
-    NQC::BlockStatement,
+NQC_BreakStatement_strategy = st.builds(
+    NQC_BreakStatement,
 )
-NQC::Expression_strategy = st.builds(
-    NQC::Expression,
+NQC_EmptyStatement_strategy = st.builds(
+    NQC_EmptyStatement,
 )
-NQC::AssignmentStatement_strategy = st.builds(
-    NQC::AssignmentStatement,
+NQC_AssignmentStatement_strategy = st.builds(
+    NQC_AssignmentStatement,
     Operator=
         safe_text
 )
 ControlStructure_strategy = st.builds(
     ControlStructure,
 )
-NQC::RepeatStatement_strategy = st.builds(
-    NQC::RepeatStatement,
+NQC_IfStatement_strategy = st.builds(
+    NQC_IfStatement,
 )
-NQC::WhileStatement_strategy = st.builds(
-    NQC::WhileStatement,
+NQC_ForStatement_strategy = st.builds(
+    NQC_ForStatement,
 )
-NQC::ForStatement_strategy = st.builds(
-    NQC::ForStatement,
+NQC_GoToStatement_strategy = st.builds(
+    NQC_GoToStatement,
 )
-NQC::IfStatement_strategy = st.builds(
-    NQC::IfStatement,
+NQC_UntilStatement_strategy = st.builds(
+    NQC_UntilStatement,
 )
-NQC::GoToStatement_strategy = st.builds(
-    NQC::GoToStatement,
+NQC_WhileStatement_strategy = st.builds(
+    NQC_WhileStatement,
 )
-NQC::UntilStatement_strategy = st.builds(
-    NQC::UntilStatement,
+NQC_RepeatStatement_strategy = st.builds(
+    NQC_RepeatStatement,
 )
-NQC::SwitchStatement_strategy = st.builds(
-    NQC::SwitchStatement,
+NQC_SwitchStatement_strategy = st.builds(
+    NQC_SwitchStatement,
 )
-NQC::DoWhileStatement_strategy = st.builds(
-    NQC::DoWhileStatement,
+NQC_DoWhileStatement_strategy = st.builds(
+    NQC_DoWhileStatement,
 )
-NQC::StopStatement_strategy = st.builds(
-    NQC::StopStatement,
+NQC_StopStatement_strategy = st.builds(
+    NQC_StopStatement,
 )
-NQC::StartStatement_strategy = st.builds(
-    NQC::StartStatement,
+NQC_StartStatement_strategy = st.builds(
+    NQC_StartStatement,
 )
-NQC::ReturnStatement_strategy = st.builds(
-    NQC::ReturnStatement,
+NQC_ReturnStatement_strategy = st.builds(
+    NQC_ReturnStatement,
 )
-NQC::Subroutine_strategy = st.builds(
-    NQC::Subroutine,
+NQC_Subroutine_strategy = st.builds(
+    NQC_Subroutine,
     Name=
         safe_text
 )
-NQC::Function_strategy = st.builds(
-    NQC::Function,
+NQC_Function_strategy = st.builds(
+    NQC_Function,
     Name=
         safe_text
 )
-NQC::Task_strategy = st.builds(
-    NQC::Task,
+NQC_Task_strategy = st.builds(
+    NQC_Task,
     Name=
         safe_text
 )
-NQC::Program_strategy = st.builds(
-    NQC::Program,
+NQC_Program_strategy = st.builds(
+    NQC_Program,
     Name=
         safe_text
 )
-NQC::Label_strategy = st.builds(
-    NQC::Label,
+NQC_Label_strategy = st.builds(
+    NQC_Label,
     Label=
         safe_text
 )
-NQC::IntegerConstant_strategy = st.builds(
-    NQC::IntegerConstant,
+NQC_IntegerConstant_strategy = st.builds(
+    NQC_IntegerConstant,
     Value=
         st.integers()
 )
-NQC::ConstantExpression_strategy = st.builds(
-    NQC::ConstantExpression,
+NQC_ConstantExpression_strategy = st.builds(
+    NQC_ConstantExpression,
 )
-NQC::Variable_strategy = st.builds(
-    NQC::Variable,
-    Type=
-        safe_text,
+NQC_Variable_strategy = st.builds(
+    NQC_Variable,
     Name=
+        safe_text,
+    Type=
         safe_text
 )
 Variable_strategy = st.builds(
     Variable,
 )
-NQC::GlobalVariable_strategy = st.builds(
-    NQC::GlobalVariable,
+NQC_GlobalVariable_strategy = st.builds(
+    NQC_GlobalVariable,
 )
-NQC::Parameter_strategy = st.builds(
-    NQC::Parameter,
+NQC_Parameter_strategy = st.builds(
+    NQC_Parameter,
 )
-NQC::LocalVariable_strategy = st.builds(
-    NQC::LocalVariable,
+NQC_LocalVariable_strategy = st.builds(
+    NQC_LocalVariable,
 )
-NQC::Statement_strategy = st.builds(
-    NQC::Statement,
+NQC_Statement_strategy = st.builds(
+    NQC_Statement,
 )
 
-@given(instance=NQC::Case_strategy)
+@given(instance=NQC_Case_strategy)
 @settings(max_examples=50)
-def test_nqc::case_instantiation(instance):
-    assert isinstance(instance, NQC::Case)
-
-@given(instance=NQC::Case_strategy)
-def test_nqc::case_IsDefault_type(instance):
-    assert isinstance(instance.IsDefault, bool)
+def test_nqc_case_instantiation(instance):
+    assert isinstance(instance, NQC_Case)
 
 
-@given(instance=NQC::Case_strategy)
-def test_nqc::case_IsDefault_setter(instance):
+
+@given(instance=NQC_Case_strategy)
+def test_nqc_case_IsDefault_setter(instance):
     original = instance.IsDefault
     instance.IsDefault = original
     assert instance.IsDefault == original
@@ -1132,33 +1129,30 @@ def test_nqc::case_IsDefault_setter(instance):
 def test_callstatement_instantiation(instance):
     assert isinstance(instance, CallStatement)
 
-@given(instance=NQC::SubroutineCall_strategy)
+@given(instance=NQC_SubroutineCall_strategy)
 @settings(max_examples=50)
-def test_nqc::subroutinecall_instantiation(instance):
-    assert isinstance(instance, NQC::SubroutineCall)
+def test_nqc_subroutinecall_instantiation(instance):
+    assert isinstance(instance, NQC_SubroutineCall)
 
-@given(instance=NQC::FunctionCall_strategy)
+@given(instance=NQC_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_nqc::functioncall_instantiation(instance):
-    assert isinstance(instance, NQC::FunctionCall)
+def test_nqc_functioncall_instantiation(instance):
+    assert isinstance(instance, NQC_FunctionCall)
 
 @given(instance=CompoundExpression_strategy)
 @settings(max_examples=50)
 def test_compoundexpression_instantiation(instance):
     assert isinstance(instance, CompoundExpression)
 
-@given(instance=NQC::BinaryExpression_strategy)
+@given(instance=NQC_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_nqc::binaryexpression_instantiation(instance):
-    assert isinstance(instance, NQC::BinaryExpression)
-
-@given(instance=NQC::BinaryExpression_strategy)
-def test_nqc::binaryexpression_Operator_type(instance):
-    assert isinstance(instance.Operator, str)
+def test_nqc_binaryexpression_instantiation(instance):
+    assert isinstance(instance, NQC_BinaryExpression)
 
 
-@given(instance=NQC::BinaryExpression_strategy)
-def test_nqc::binaryexpression_Operator_setter(instance):
+
+@given(instance=NQC_BinaryExpression_strategy)
+def test_nqc_binaryexpression_Operator_setter(instance):
     original = instance.Operator
     instance.Operator = original
     assert instance.Operator == original
@@ -1168,18 +1162,15 @@ def test_nqc::binaryexpression_Operator_setter(instance):
 def test_constantexpression_instantiation(instance):
     assert isinstance(instance, ConstantExpression)
 
-@given(instance=NQC::BooleanConstant_strategy)
+@given(instance=NQC_BooleanConstant_strategy)
 @settings(max_examples=50)
-def test_nqc::booleanconstant_instantiation(instance):
-    assert isinstance(instance, NQC::BooleanConstant)
-
-@given(instance=NQC::BooleanConstant_strategy)
-def test_nqc::booleanconstant_Value_type(instance):
-    assert isinstance(instance.Value, bool)
+def test_nqc_booleanconstant_instantiation(instance):
+    assert isinstance(instance, NQC_BooleanConstant)
 
 
-@given(instance=NQC::BooleanConstant_strategy)
-def test_nqc::booleanconstant_Value_setter(instance):
+
+@given(instance=NQC_BooleanConstant_strategy)
+def test_nqc_booleanconstant_Value_setter(instance):
     original = instance.Value
     instance.Value = original
     assert instance.Value == original
@@ -1189,10 +1180,10 @@ def test_nqc::booleanconstant_Value_setter(instance):
 def test_variableexpression_instantiation(instance):
     assert isinstance(instance, VariableExpression)
 
-@given(instance=NQC::ArrayExpression_strategy)
+@given(instance=NQC_ArrayExpression_strategy)
 @settings(max_examples=50)
-def test_nqc::arrayexpression_instantiation(instance):
-    assert isinstance(instance, NQC::ArrayExpression)
+def test_nqc_arrayexpression_instantiation(instance):
+    assert isinstance(instance, NQC_ArrayExpression)
 
 @given(instance=ValueExpression_strategy)
 @settings(max_examples=50)
@@ -1204,73 +1195,70 @@ def test_valueexpression_instantiation(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=NQC::CompoundExpression_strategy)
+@given(instance=NQC_CompoundExpression_strategy)
 @settings(max_examples=50)
-def test_nqc::compoundexpression_instantiation(instance):
-    assert isinstance(instance, NQC::CompoundExpression)
+def test_nqc_compoundexpression_instantiation(instance):
+    assert isinstance(instance, NQC_CompoundExpression)
 
-@given(instance=NQC::ValueExpression_strategy)
+@given(instance=NQC_ValueExpression_strategy)
 @settings(max_examples=50)
-def test_nqc::valueexpression_instantiation(instance):
-    assert isinstance(instance, NQC::ValueExpression)
+def test_nqc_valueexpression_instantiation(instance):
+    assert isinstance(instance, NQC_ValueExpression)
 
-@given(instance=NQC::VariableExpression_strategy)
+@given(instance=NQC_VariableExpression_strategy)
 @settings(max_examples=50)
-def test_nqc::variableexpression_instantiation(instance):
-    assert isinstance(instance, NQC::VariableExpression)
+def test_nqc_variableexpression_instantiation(instance):
+    assert isinstance(instance, NQC_VariableExpression)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=NQC::ControlStructure_strategy)
+@given(instance=NQC_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::controlstructure_instantiation(instance):
-    assert isinstance(instance, NQC::ControlStructure)
+def test_nqc_continuestatement_instantiation(instance):
+    assert isinstance(instance, NQC_ContinueStatement)
 
-@given(instance=NQC::EmptyStatement_strategy)
+@given(instance=NQC_CallStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::emptystatement_instantiation(instance):
-    assert isinstance(instance, NQC::EmptyStatement)
+def test_nqc_callstatement_instantiation(instance):
+    assert isinstance(instance, NQC_CallStatement)
 
-@given(instance=NQC::ContinueStatement_strategy)
+@given(instance=NQC_Expression_strategy)
 @settings(max_examples=50)
-def test_nqc::continuestatement_instantiation(instance):
-    assert isinstance(instance, NQC::ContinueStatement)
+def test_nqc_expression_instantiation(instance):
+    assert isinstance(instance, NQC_Expression)
 
-@given(instance=NQC::CallStatement_strategy)
+@given(instance=NQC_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::callstatement_instantiation(instance):
-    assert isinstance(instance, NQC::CallStatement)
+def test_nqc_blockstatement_instantiation(instance):
+    assert isinstance(instance, NQC_BlockStatement)
 
-@given(instance=NQC::BreakStatement_strategy)
+@given(instance=NQC_ControlStructure_strategy)
 @settings(max_examples=50)
-def test_nqc::breakstatement_instantiation(instance):
-    assert isinstance(instance, NQC::BreakStatement)
+def test_nqc_controlstructure_instantiation(instance):
+    assert isinstance(instance, NQC_ControlStructure)
 
-@given(instance=NQC::BlockStatement_strategy)
+@given(instance=NQC_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::blockstatement_instantiation(instance):
-    assert isinstance(instance, NQC::BlockStatement)
+def test_nqc_breakstatement_instantiation(instance):
+    assert isinstance(instance, NQC_BreakStatement)
 
-@given(instance=NQC::Expression_strategy)
+@given(instance=NQC_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::expression_instantiation(instance):
-    assert isinstance(instance, NQC::Expression)
+def test_nqc_emptystatement_instantiation(instance):
+    assert isinstance(instance, NQC_EmptyStatement)
 
-@given(instance=NQC::AssignmentStatement_strategy)
+@given(instance=NQC_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, NQC::AssignmentStatement)
-
-@given(instance=NQC::AssignmentStatement_strategy)
-def test_nqc::assignmentstatement_Operator_type(instance):
-    assert isinstance(instance.Operator, str)
+def test_nqc_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, NQC_AssignmentStatement)
 
 
-@given(instance=NQC::AssignmentStatement_strategy)
-def test_nqc::assignmentstatement_Operator_setter(instance):
+
+@given(instance=NQC_AssignmentStatement_strategy)
+def test_nqc_assignmentstatement_Operator_setter(instance):
     original = instance.Operator
     instance.Operator = original
     assert instance.Operator == original
@@ -1280,210 +1268,186 @@ def test_nqc::assignmentstatement_Operator_setter(instance):
 def test_controlstructure_instantiation(instance):
     assert isinstance(instance, ControlStructure)
 
-@given(instance=NQC::RepeatStatement_strategy)
+@given(instance=NQC_IfStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::repeatstatement_instantiation(instance):
-    assert isinstance(instance, NQC::RepeatStatement)
+def test_nqc_ifstatement_instantiation(instance):
+    assert isinstance(instance, NQC_IfStatement)
 
-@given(instance=NQC::WhileStatement_strategy)
+@given(instance=NQC_ForStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::whilestatement_instantiation(instance):
-    assert isinstance(instance, NQC::WhileStatement)
+def test_nqc_forstatement_instantiation(instance):
+    assert isinstance(instance, NQC_ForStatement)
 
-@given(instance=NQC::ForStatement_strategy)
+@given(instance=NQC_GoToStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::forstatement_instantiation(instance):
-    assert isinstance(instance, NQC::ForStatement)
+def test_nqc_gotostatement_instantiation(instance):
+    assert isinstance(instance, NQC_GoToStatement)
 
-@given(instance=NQC::IfStatement_strategy)
+@given(instance=NQC_UntilStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::ifstatement_instantiation(instance):
-    assert isinstance(instance, NQC::IfStatement)
+def test_nqc_untilstatement_instantiation(instance):
+    assert isinstance(instance, NQC_UntilStatement)
 
-@given(instance=NQC::GoToStatement_strategy)
+@given(instance=NQC_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::gotostatement_instantiation(instance):
-    assert isinstance(instance, NQC::GoToStatement)
+def test_nqc_whilestatement_instantiation(instance):
+    assert isinstance(instance, NQC_WhileStatement)
 
-@given(instance=NQC::UntilStatement_strategy)
+@given(instance=NQC_RepeatStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::untilstatement_instantiation(instance):
-    assert isinstance(instance, NQC::UntilStatement)
+def test_nqc_repeatstatement_instantiation(instance):
+    assert isinstance(instance, NQC_RepeatStatement)
 
-@given(instance=NQC::SwitchStatement_strategy)
+@given(instance=NQC_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::switchstatement_instantiation(instance):
-    assert isinstance(instance, NQC::SwitchStatement)
+def test_nqc_switchstatement_instantiation(instance):
+    assert isinstance(instance, NQC_SwitchStatement)
 
-@given(instance=NQC::DoWhileStatement_strategy)
+@given(instance=NQC_DoWhileStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::dowhilestatement_instantiation(instance):
-    assert isinstance(instance, NQC::DoWhileStatement)
+def test_nqc_dowhilestatement_instantiation(instance):
+    assert isinstance(instance, NQC_DoWhileStatement)
 
-@given(instance=NQC::StopStatement_strategy)
+@given(instance=NQC_StopStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::stopstatement_instantiation(instance):
-    assert isinstance(instance, NQC::StopStatement)
+def test_nqc_stopstatement_instantiation(instance):
+    assert isinstance(instance, NQC_StopStatement)
 
-@given(instance=NQC::StartStatement_strategy)
+@given(instance=NQC_StartStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::startstatement_instantiation(instance):
-    assert isinstance(instance, NQC::StartStatement)
+def test_nqc_startstatement_instantiation(instance):
+    assert isinstance(instance, NQC_StartStatement)
 
-@given(instance=NQC::ReturnStatement_strategy)
+@given(instance=NQC_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_nqc::returnstatement_instantiation(instance):
-    assert isinstance(instance, NQC::ReturnStatement)
+def test_nqc_returnstatement_instantiation(instance):
+    assert isinstance(instance, NQC_ReturnStatement)
 
-@given(instance=NQC::Subroutine_strategy)
+@given(instance=NQC_Subroutine_strategy)
 @settings(max_examples=50)
-def test_nqc::subroutine_instantiation(instance):
-    assert isinstance(instance, NQC::Subroutine)
-
-@given(instance=NQC::Subroutine_strategy)
-def test_nqc::subroutine_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_nqc_subroutine_instantiation(instance):
+    assert isinstance(instance, NQC_Subroutine)
 
 
-@given(instance=NQC::Subroutine_strategy)
-def test_nqc::subroutine_Name_setter(instance):
+
+@given(instance=NQC_Subroutine_strategy)
+def test_nqc_subroutine_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=NQC::Function_strategy)
+@given(instance=NQC_Function_strategy)
 @settings(max_examples=50)
-def test_nqc::function_instantiation(instance):
-    assert isinstance(instance, NQC::Function)
-
-@given(instance=NQC::Function_strategy)
-def test_nqc::function_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_nqc_function_instantiation(instance):
+    assert isinstance(instance, NQC_Function)
 
 
-@given(instance=NQC::Function_strategy)
-def test_nqc::function_Name_setter(instance):
+
+@given(instance=NQC_Function_strategy)
+def test_nqc_function_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=NQC::Task_strategy)
+@given(instance=NQC_Task_strategy)
 @settings(max_examples=50)
-def test_nqc::task_instantiation(instance):
-    assert isinstance(instance, NQC::Task)
-
-@given(instance=NQC::Task_strategy)
-def test_nqc::task_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_nqc_task_instantiation(instance):
+    assert isinstance(instance, NQC_Task)
 
 
-@given(instance=NQC::Task_strategy)
-def test_nqc::task_Name_setter(instance):
+
+@given(instance=NQC_Task_strategy)
+def test_nqc_task_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=NQC::Program_strategy)
+@given(instance=NQC_Program_strategy)
 @settings(max_examples=50)
-def test_nqc::program_instantiation(instance):
-    assert isinstance(instance, NQC::Program)
-
-@given(instance=NQC::Program_strategy)
-def test_nqc::program_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_nqc_program_instantiation(instance):
+    assert isinstance(instance, NQC_Program)
 
 
-@given(instance=NQC::Program_strategy)
-def test_nqc::program_Name_setter(instance):
+
+@given(instance=NQC_Program_strategy)
+def test_nqc_program_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=NQC::Label_strategy)
+@given(instance=NQC_Label_strategy)
 @settings(max_examples=50)
-def test_nqc::label_instantiation(instance):
-    assert isinstance(instance, NQC::Label)
-
-@given(instance=NQC::Label_strategy)
-def test_nqc::label_Label_type(instance):
-    assert isinstance(instance.Label, str)
+def test_nqc_label_instantiation(instance):
+    assert isinstance(instance, NQC_Label)
 
 
-@given(instance=NQC::Label_strategy)
-def test_nqc::label_Label_setter(instance):
+
+@given(instance=NQC_Label_strategy)
+def test_nqc_label_Label_setter(instance):
     original = instance.Label
     instance.Label = original
     assert instance.Label == original
 
-@given(instance=NQC::IntegerConstant_strategy)
+@given(instance=NQC_IntegerConstant_strategy)
 @settings(max_examples=50)
-def test_nqc::integerconstant_instantiation(instance):
-    assert isinstance(instance, NQC::IntegerConstant)
-
-@given(instance=NQC::IntegerConstant_strategy)
-def test_nqc::integerconstant_Value_type(instance):
-    assert isinstance(instance.Value, int)
+def test_nqc_integerconstant_instantiation(instance):
+    assert isinstance(instance, NQC_IntegerConstant)
 
 
-@given(instance=NQC::IntegerConstant_strategy)
-def test_nqc::integerconstant_Value_setter(instance):
+
+@given(instance=NQC_IntegerConstant_strategy)
+def test_nqc_integerconstant_Value_setter(instance):
     original = instance.Value
     instance.Value = original
     assert instance.Value == original
 
-@given(instance=NQC::ConstantExpression_strategy)
+@given(instance=NQC_ConstantExpression_strategy)
 @settings(max_examples=50)
-def test_nqc::constantexpression_instantiation(instance):
-    assert isinstance(instance, NQC::ConstantExpression)
+def test_nqc_constantexpression_instantiation(instance):
+    assert isinstance(instance, NQC_ConstantExpression)
 
-@given(instance=NQC::Variable_strategy)
+@given(instance=NQC_Variable_strategy)
 @settings(max_examples=50)
-def test_nqc::variable_instantiation(instance):
-    assert isinstance(instance, NQC::Variable)
-
-@given(instance=NQC::Variable_strategy)
-def test_nqc::variable_Type_type(instance):
-    assert isinstance(instance.Type, str)
+def test_nqc_variable_instantiation(instance):
+    assert isinstance(instance, NQC_Variable)
 
 
-@given(instance=NQC::Variable_strategy)
-def test_nqc::variable_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
 
-@given(instance=NQC::Variable_strategy)
-def test_nqc::variable_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=NQC::Variable_strategy)
-def test_nqc::variable_Name_setter(instance):
+@given(instance=NQC_Variable_strategy)
+def test_nqc_variable_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
+
+
+
+@given(instance=NQC_Variable_strategy)
+def test_nqc_variable_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=NQC::GlobalVariable_strategy)
+@given(instance=NQC_GlobalVariable_strategy)
 @settings(max_examples=50)
-def test_nqc::globalvariable_instantiation(instance):
-    assert isinstance(instance, NQC::GlobalVariable)
+def test_nqc_globalvariable_instantiation(instance):
+    assert isinstance(instance, NQC_GlobalVariable)
 
-@given(instance=NQC::Parameter_strategy)
+@given(instance=NQC_Parameter_strategy)
 @settings(max_examples=50)
-def test_nqc::parameter_instantiation(instance):
-    assert isinstance(instance, NQC::Parameter)
+def test_nqc_parameter_instantiation(instance):
+    assert isinstance(instance, NQC_Parameter)
 
-@given(instance=NQC::LocalVariable_strategy)
+@given(instance=NQC_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_nqc::localvariable_instantiation(instance):
-    assert isinstance(instance, NQC::LocalVariable)
+def test_nqc_localvariable_instantiation(instance):
+    assert isinstance(instance, NQC_LocalVariable)
 
-@given(instance=NQC::Statement_strategy)
+@given(instance=NQC_Statement_strategy)
 @settings(max_examples=50)
-def test_nqc::statement_instantiation(instance):
-    assert isinstance(instance, NQC::Statement)
+def test_nqc_statement_instantiation(instance):
+    assert isinstance(instance, NQC_Statement)

@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Label,
-    OurPNVis::Sequence,
+    OurPNVis_Sequence,
     StructuredLabel,
     Attribute,
-    OurPNVis::ident,
-    OurPNVis::KeepAnim,
-    OurPNVis::Finished,
+    OurPNVis_ident,
+    OurPNVis_KeepAnim,
+    OurPNVis_Finished,
     Arc,
-    OurPNVis::Arc,
+    OurPNVis_Arc,
     PetriNetType,
-    OurPNVis::PNVis,
+    OurPNVis_PNVis,
     Transition,
-    OurPNVis::Transition,
-    OurPNVis::Geometry,
-    OurPNVis::Activities,
-    OurPNVis::Shape,
-    OurPNVis::CanChange,
-    OurPNVis::Tokens,
+    OurPNVis_Transition,
+    OurPNVis_Geometry,
+    OurPNVis_Activities,
+    OurPNVis_Shape,
+    OurPNVis_CanChange,
+    OurPNVis_Tokens,
     Place,
-    OurPNVis::Place,
+    OurPNVis_Place,
 )
 
 # =============================================================================
@@ -48,16 +48,16 @@ def test_label_constructor_args():
 
 
 
-def test_ourpnvis::sequence_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Sequence)
+def test_ourpnvis_sequence_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Sequence)
 
 
-def test_ourpnvis::sequence_constructor_exists():
-    assert callable(OurPNVis::Sequence.__init__)
+def test_ourpnvis_sequence_constructor_exists():
+    assert callable(OurPNVis_Sequence.__init__)
 
 
-def test_ourpnvis::sequence_constructor_args():
-    sig = inspect.signature(OurPNVis::Sequence.__init__)
+def test_ourpnvis_sequence_constructor_args():
+    sig = inspect.signature(OurPNVis_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -90,23 +90,23 @@ def test_attribute_constructor_args():
 
 
 
-def test_ourpnvis::ident_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::ident)
+def test_ourpnvis_ident_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_ident)
 
 
-def test_ourpnvis::ident_constructor_exists():
-    assert callable(OurPNVis::ident.__init__)
+def test_ourpnvis_ident_constructor_exists():
+    assert callable(OurPNVis_ident.__init__)
 
 
-def test_ourpnvis::ident_constructor_args():
-    sig = inspect.signature(OurPNVis::ident.__init__)
+def test_ourpnvis_ident_constructor_args():
+    sig = inspect.signature(OurPNVis_ident.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::ident_has_text():
-    assert hasattr(OurPNVis::ident, "text")
+def test_ourpnvis_ident_has_text():
+    assert hasattr(OurPNVis_ident, "text")
     descriptor = None
-    for klass in OurPNVis::ident.__mro__:
+    for klass in OurPNVis_ident.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -114,23 +114,23 @@ def test_ourpnvis::ident_has_text():
 
 
 
-def test_ourpnvis::keepanim_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::KeepAnim)
+def test_ourpnvis_keepanim_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_KeepAnim)
 
 
-def test_ourpnvis::keepanim_constructor_exists():
-    assert callable(OurPNVis::KeepAnim.__init__)
+def test_ourpnvis_keepanim_constructor_exists():
+    assert callable(OurPNVis_KeepAnim.__init__)
 
 
-def test_ourpnvis::keepanim_constructor_args():
-    sig = inspect.signature(OurPNVis::KeepAnim.__init__)
+def test_ourpnvis_keepanim_constructor_args():
+    sig = inspect.signature(OurPNVis_KeepAnim.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::keepanim_has_text():
-    assert hasattr(OurPNVis::KeepAnim, "text")
+def test_ourpnvis_keepanim_has_text():
+    assert hasattr(OurPNVis_KeepAnim, "text")
     descriptor = None
-    for klass in OurPNVis::KeepAnim.__mro__:
+    for klass in OurPNVis_KeepAnim.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -138,23 +138,23 @@ def test_ourpnvis::keepanim_has_text():
 
 
 
-def test_ourpnvis::finished_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Finished)
+def test_ourpnvis_finished_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Finished)
 
 
-def test_ourpnvis::finished_constructor_exists():
-    assert callable(OurPNVis::Finished.__init__)
+def test_ourpnvis_finished_constructor_exists():
+    assert callable(OurPNVis_Finished.__init__)
 
 
-def test_ourpnvis::finished_constructor_args():
-    sig = inspect.signature(OurPNVis::Finished.__init__)
+def test_ourpnvis_finished_constructor_args():
+    sig = inspect.signature(OurPNVis_Finished.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::finished_has_text():
-    assert hasattr(OurPNVis::Finished, "text")
+def test_ourpnvis_finished_has_text():
+    assert hasattr(OurPNVis_Finished, "text")
     descriptor = None
-    for klass in OurPNVis::Finished.__mro__:
+    for klass in OurPNVis_Finished.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -176,16 +176,16 @@ def test_arc_constructor_args():
 
 
 
-def test_ourpnvis::arc_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Arc)
+def test_ourpnvis_arc_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Arc)
 
 
-def test_ourpnvis::arc_constructor_exists():
-    assert callable(OurPNVis::Arc.__init__)
+def test_ourpnvis_arc_constructor_exists():
+    assert callable(OurPNVis_Arc.__init__)
 
 
-def test_ourpnvis::arc_constructor_args():
-    sig = inspect.signature(OurPNVis::Arc.__init__)
+def test_ourpnvis_arc_constructor_args():
+    sig = inspect.signature(OurPNVis_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -204,16 +204,16 @@ def test_petrinettype_constructor_args():
 
 
 
-def test_ourpnvis::pnvis_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::PNVis)
+def test_ourpnvis_pnvis_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_PNVis)
 
 
-def test_ourpnvis::pnvis_constructor_exists():
-    assert callable(OurPNVis::PNVis.__init__)
+def test_ourpnvis_pnvis_constructor_exists():
+    assert callable(OurPNVis_PNVis.__init__)
 
 
-def test_ourpnvis::pnvis_constructor_args():
-    sig = inspect.signature(OurPNVis::PNVis.__init__)
+def test_ourpnvis_pnvis_constructor_args():
+    sig = inspect.signature(OurPNVis_PNVis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,37 +232,37 @@ def test_transition_constructor_args():
 
 
 
-def test_ourpnvis::transition_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Transition)
+def test_ourpnvis_transition_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Transition)
 
 
-def test_ourpnvis::transition_constructor_exists():
-    assert callable(OurPNVis::Transition.__init__)
+def test_ourpnvis_transition_constructor_exists():
+    assert callable(OurPNVis_Transition.__init__)
 
 
-def test_ourpnvis::transition_constructor_args():
-    sig = inspect.signature(OurPNVis::Transition.__init__)
+def test_ourpnvis_transition_constructor_args():
+    sig = inspect.signature(OurPNVis_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ourpnvis::geometry_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Geometry)
+def test_ourpnvis_geometry_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Geometry)
 
 
-def test_ourpnvis::geometry_constructor_exists():
-    assert callable(OurPNVis::Geometry.__init__)
+def test_ourpnvis_geometry_constructor_exists():
+    assert callable(OurPNVis_Geometry.__init__)
 
 
-def test_ourpnvis::geometry_constructor_args():
-    sig = inspect.signature(OurPNVis::Geometry.__init__)
+def test_ourpnvis_geometry_constructor_args():
+    sig = inspect.signature(OurPNVis_Geometry.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::geometry_has_text():
-    assert hasattr(OurPNVis::Geometry, "text")
+def test_ourpnvis_geometry_has_text():
+    assert hasattr(OurPNVis_Geometry, "text")
     descriptor = None
-    for klass in OurPNVis::Geometry.__mro__:
+    for klass in OurPNVis_Geometry.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -270,37 +270,37 @@ def test_ourpnvis::geometry_has_text():
 
 
 
-def test_ourpnvis::activities_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Activities)
+def test_ourpnvis_activities_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Activities)
 
 
-def test_ourpnvis::activities_constructor_exists():
-    assert callable(OurPNVis::Activities.__init__)
+def test_ourpnvis_activities_constructor_exists():
+    assert callable(OurPNVis_Activities.__init__)
 
 
-def test_ourpnvis::activities_constructor_args():
-    sig = inspect.signature(OurPNVis::Activities.__init__)
+def test_ourpnvis_activities_constructor_args():
+    sig = inspect.signature(OurPNVis_Activities.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ourpnvis::shape_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Shape)
+def test_ourpnvis_shape_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Shape)
 
 
-def test_ourpnvis::shape_constructor_exists():
-    assert callable(OurPNVis::Shape.__init__)
+def test_ourpnvis_shape_constructor_exists():
+    assert callable(OurPNVis_Shape.__init__)
 
 
-def test_ourpnvis::shape_constructor_args():
-    sig = inspect.signature(OurPNVis::Shape.__init__)
+def test_ourpnvis_shape_constructor_args():
+    sig = inspect.signature(OurPNVis_Shape.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::shape_has_text():
-    assert hasattr(OurPNVis::Shape, "text")
+def test_ourpnvis_shape_has_text():
+    assert hasattr(OurPNVis_Shape, "text")
     descriptor = None
-    for klass in OurPNVis::Shape.__mro__:
+    for klass in OurPNVis_Shape.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -308,23 +308,23 @@ def test_ourpnvis::shape_has_text():
 
 
 
-def test_ourpnvis::canchange_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::CanChange)
+def test_ourpnvis_canchange_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_CanChange)
 
 
-def test_ourpnvis::canchange_constructor_exists():
-    assert callable(OurPNVis::CanChange.__init__)
+def test_ourpnvis_canchange_constructor_exists():
+    assert callable(OurPNVis_CanChange.__init__)
 
 
-def test_ourpnvis::canchange_constructor_args():
-    sig = inspect.signature(OurPNVis::CanChange.__init__)
+def test_ourpnvis_canchange_constructor_args():
+    sig = inspect.signature(OurPNVis_CanChange.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::canchange_has_text():
-    assert hasattr(OurPNVis::CanChange, "text")
+def test_ourpnvis_canchange_has_text():
+    assert hasattr(OurPNVis_CanChange, "text")
     descriptor = None
-    for klass in OurPNVis::CanChange.__mro__:
+    for klass in OurPNVis_CanChange.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -332,23 +332,23 @@ def test_ourpnvis::canchange_has_text():
 
 
 
-def test_ourpnvis::tokens_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Tokens)
+def test_ourpnvis_tokens_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Tokens)
 
 
-def test_ourpnvis::tokens_constructor_exists():
-    assert callable(OurPNVis::Tokens.__init__)
+def test_ourpnvis_tokens_constructor_exists():
+    assert callable(OurPNVis_Tokens.__init__)
 
 
-def test_ourpnvis::tokens_constructor_args():
-    sig = inspect.signature(OurPNVis::Tokens.__init__)
+def test_ourpnvis_tokens_constructor_args():
+    sig = inspect.signature(OurPNVis_Tokens.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ourpnvis::tokens_has_text():
-    assert hasattr(OurPNVis::Tokens, "text")
+def test_ourpnvis_tokens_has_text():
+    assert hasattr(OurPNVis_Tokens, "text")
     descriptor = None
-    for klass in OurPNVis::Tokens.__mro__:
+    for klass in OurPNVis_Tokens.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -370,16 +370,16 @@ def test_place_constructor_args():
 
 
 
-def test_ourpnvis::place_is_not_abstract():
-    assert not inspect.isabstract(OurPNVis::Place)
+def test_ourpnvis_place_is_not_abstract():
+    assert not inspect.isabstract(OurPNVis_Place)
 
 
-def test_ourpnvis::place_constructor_exists():
-    assert callable(OurPNVis::Place.__init__)
+def test_ourpnvis_place_constructor_exists():
+    assert callable(OurPNVis_Place.__init__)
 
 
-def test_ourpnvis::place_constructor_args():
-    sig = inspect.signature(OurPNVis::Place.__init__)
+def test_ourpnvis_place_constructor_args():
+    sig = inspect.signature(OurPNVis_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -397,8 +397,8 @@ safe_text = st.text(
 Label_strategy = st.builds(
     Label,
 )
-OurPNVis::Sequence_strategy = st.builds(
-    OurPNVis::Sequence,
+OurPNVis_Sequence_strategy = st.builds(
+    OurPNVis_Sequence,
 )
 StructuredLabel_strategy = st.builds(
     StructuredLabel,
@@ -406,67 +406,67 @@ StructuredLabel_strategy = st.builds(
 Attribute_strategy = st.builds(
     Attribute,
 )
-OurPNVis::ident_strategy = st.builds(
-    OurPNVis::ident,
+OurPNVis_ident_strategy = st.builds(
+    OurPNVis_ident,
     text=
         safe_text
 )
-OurPNVis::KeepAnim_strategy = st.builds(
-    OurPNVis::KeepAnim,
+OurPNVis_KeepAnim_strategy = st.builds(
+    OurPNVis_KeepAnim,
     text=
         st.booleans()
 )
-OurPNVis::Finished_strategy = st.builds(
-    OurPNVis::Finished,
+OurPNVis_Finished_strategy = st.builds(
+    OurPNVis_Finished,
     text=
         st.booleans()
 )
 Arc_strategy = st.builds(
     Arc,
 )
-OurPNVis::Arc_strategy = st.builds(
-    OurPNVis::Arc,
+OurPNVis_Arc_strategy = st.builds(
+    OurPNVis_Arc,
 )
 PetriNetType_strategy = st.builds(
     PetriNetType,
 )
-OurPNVis::PNVis_strategy = st.builds(
-    OurPNVis::PNVis,
+OurPNVis_PNVis_strategy = st.builds(
+    OurPNVis_PNVis,
 )
 Transition_strategy = st.builds(
     Transition,
 )
-OurPNVis::Transition_strategy = st.builds(
-    OurPNVis::Transition,
+OurPNVis_Transition_strategy = st.builds(
+    OurPNVis_Transition,
 )
-OurPNVis::Geometry_strategy = st.builds(
-    OurPNVis::Geometry,
+OurPNVis_Geometry_strategy = st.builds(
+    OurPNVis_Geometry,
     text=
         safe_text
 )
-OurPNVis::Activities_strategy = st.builds(
-    OurPNVis::Activities,
+OurPNVis_Activities_strategy = st.builds(
+    OurPNVis_Activities,
 )
-OurPNVis::Shape_strategy = st.builds(
-    OurPNVis::Shape,
+OurPNVis_Shape_strategy = st.builds(
+    OurPNVis_Shape,
     text=
         safe_text
 )
-OurPNVis::CanChange_strategy = st.builds(
-    OurPNVis::CanChange,
+OurPNVis_CanChange_strategy = st.builds(
+    OurPNVis_CanChange,
     text=
         st.booleans()
 )
-OurPNVis::Tokens_strategy = st.builds(
-    OurPNVis::Tokens,
+OurPNVis_Tokens_strategy = st.builds(
+    OurPNVis_Tokens,
     text=
         safe_text
 )
 Place_strategy = st.builds(
     Place,
 )
-OurPNVis::Place_strategy = st.builds(
-    OurPNVis::Place,
+OurPNVis_Place_strategy = st.builds(
+    OurPNVis_Place,
 )
 
 @given(instance=Label_strategy)
@@ -474,10 +474,10 @@ OurPNVis::Place_strategy = st.builds(
 def test_label_instantiation(instance):
     assert isinstance(instance, Label)
 
-@given(instance=OurPNVis::Sequence_strategy)
+@given(instance=OurPNVis_Sequence_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::sequence_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Sequence)
+def test_ourpnvis_sequence_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Sequence)
 
 @given(instance=StructuredLabel_strategy)
 @settings(max_examples=50)
@@ -489,50 +489,41 @@ def test_structuredlabel_instantiation(instance):
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=OurPNVis::ident_strategy)
+@given(instance=OurPNVis_ident_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::ident_instantiation(instance):
-    assert isinstance(instance, OurPNVis::ident)
-
-@given(instance=OurPNVis::ident_strategy)
-def test_ourpnvis::ident_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ourpnvis_ident_instantiation(instance):
+    assert isinstance(instance, OurPNVis_ident)
 
 
-@given(instance=OurPNVis::ident_strategy)
-def test_ourpnvis::ident_text_setter(instance):
+
+@given(instance=OurPNVis_ident_strategy)
+def test_ourpnvis_ident_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=OurPNVis::KeepAnim_strategy)
+@given(instance=OurPNVis_KeepAnim_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::keepanim_instantiation(instance):
-    assert isinstance(instance, OurPNVis::KeepAnim)
-
-@given(instance=OurPNVis::KeepAnim_strategy)
-def test_ourpnvis::keepanim_text_type(instance):
-    assert isinstance(instance.text, bool)
+def test_ourpnvis_keepanim_instantiation(instance):
+    assert isinstance(instance, OurPNVis_KeepAnim)
 
 
-@given(instance=OurPNVis::KeepAnim_strategy)
-def test_ourpnvis::keepanim_text_setter(instance):
+
+@given(instance=OurPNVis_KeepAnim_strategy)
+def test_ourpnvis_keepanim_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=OurPNVis::Finished_strategy)
+@given(instance=OurPNVis_Finished_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::finished_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Finished)
-
-@given(instance=OurPNVis::Finished_strategy)
-def test_ourpnvis::finished_text_type(instance):
-    assert isinstance(instance.text, bool)
+def test_ourpnvis_finished_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Finished)
 
 
-@given(instance=OurPNVis::Finished_strategy)
-def test_ourpnvis::finished_text_setter(instance):
+
+@given(instance=OurPNVis_Finished_strategy)
+def test_ourpnvis_finished_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -542,96 +533,84 @@ def test_ourpnvis::finished_text_setter(instance):
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=OurPNVis::Arc_strategy)
+@given(instance=OurPNVis_Arc_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::arc_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Arc)
+def test_ourpnvis_arc_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Arc)
 
 @given(instance=PetriNetType_strategy)
 @settings(max_examples=50)
 def test_petrinettype_instantiation(instance):
     assert isinstance(instance, PetriNetType)
 
-@given(instance=OurPNVis::PNVis_strategy)
+@given(instance=OurPNVis_PNVis_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::pnvis_instantiation(instance):
-    assert isinstance(instance, OurPNVis::PNVis)
+def test_ourpnvis_pnvis_instantiation(instance):
+    assert isinstance(instance, OurPNVis_PNVis)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=OurPNVis::Transition_strategy)
+@given(instance=OurPNVis_Transition_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::transition_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Transition)
+def test_ourpnvis_transition_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Transition)
 
-@given(instance=OurPNVis::Geometry_strategy)
+@given(instance=OurPNVis_Geometry_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::geometry_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Geometry)
-
-@given(instance=OurPNVis::Geometry_strategy)
-def test_ourpnvis::geometry_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ourpnvis_geometry_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Geometry)
 
 
-@given(instance=OurPNVis::Geometry_strategy)
-def test_ourpnvis::geometry_text_setter(instance):
+
+@given(instance=OurPNVis_Geometry_strategy)
+def test_ourpnvis_geometry_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=OurPNVis::Activities_strategy)
+@given(instance=OurPNVis_Activities_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::activities_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Activities)
+def test_ourpnvis_activities_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Activities)
 
-@given(instance=OurPNVis::Shape_strategy)
+@given(instance=OurPNVis_Shape_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::shape_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Shape)
-
-@given(instance=OurPNVis::Shape_strategy)
-def test_ourpnvis::shape_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ourpnvis_shape_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Shape)
 
 
-@given(instance=OurPNVis::Shape_strategy)
-def test_ourpnvis::shape_text_setter(instance):
+
+@given(instance=OurPNVis_Shape_strategy)
+def test_ourpnvis_shape_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=OurPNVis::CanChange_strategy)
+@given(instance=OurPNVis_CanChange_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::canchange_instantiation(instance):
-    assert isinstance(instance, OurPNVis::CanChange)
-
-@given(instance=OurPNVis::CanChange_strategy)
-def test_ourpnvis::canchange_text_type(instance):
-    assert isinstance(instance.text, bool)
+def test_ourpnvis_canchange_instantiation(instance):
+    assert isinstance(instance, OurPNVis_CanChange)
 
 
-@given(instance=OurPNVis::CanChange_strategy)
-def test_ourpnvis::canchange_text_setter(instance):
+
+@given(instance=OurPNVis_CanChange_strategy)
+def test_ourpnvis_canchange_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=OurPNVis::Tokens_strategy)
+@given(instance=OurPNVis_Tokens_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::tokens_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Tokens)
-
-@given(instance=OurPNVis::Tokens_strategy)
-def test_ourpnvis::tokens_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ourpnvis_tokens_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Tokens)
 
 
-@given(instance=OurPNVis::Tokens_strategy)
-def test_ourpnvis::tokens_text_setter(instance):
+
+@given(instance=OurPNVis_Tokens_strategy)
+def test_ourpnvis_tokens_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -641,7 +620,7 @@ def test_ourpnvis::tokens_text_setter(instance):
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=OurPNVis::Place_strategy)
+@given(instance=OurPNVis_Place_strategy)
 @settings(max_examples=50)
-def test_ourpnvis::place_instantiation(instance):
-    assert isinstance(instance, OurPNVis::Place)
+def test_ourpnvis_place_instantiation(instance):
+    assert isinstance(instance, OurPNVis_Place)

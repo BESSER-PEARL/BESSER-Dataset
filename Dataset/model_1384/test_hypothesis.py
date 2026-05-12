@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Action,
+from python_code import (
+    statemachine_Action,
     Transition,
-    statemachine::LabeledTransition,
+    statemachine_LabeledTransition,
     Vertex,
-    statemachine::State,
+    statemachine_State,
     Region,
-    statemachine::Statemachine,
-    statemachine::Region,
+    statemachine_Statemachine,
+    statemachine_Region,
     State,
-    statemachine::ComplexState,
-    statemachine::Pseudostate,
-    statemachine::Transition,
-    statemachine::Vertex,
+    statemachine_ComplexState,
+    statemachine_Pseudostate,
+    statemachine_Transition,
+    statemachine_Vertex,
     PseudostateKind,
 )
 
@@ -28,23 +28,23 @@ from classes import (
 
 
 
-def test_statemachine::action_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Action)
+def test_statemachine_action_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Action)
 
 
-def test_statemachine::action_constructor_exists():
-    assert callable(statemachine::Action.__init__)
+def test_statemachine_action_constructor_exists():
+    assert callable(statemachine_Action.__init__)
 
 
-def test_statemachine::action_constructor_args():
-    sig = inspect.signature(statemachine::Action.__init__)
+def test_statemachine_action_constructor_args():
+    sig = inspect.signature(statemachine_Action.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::action_has_name():
-    assert hasattr(statemachine::Action, "name")
+def test_statemachine_action_has_name():
+    assert hasattr(statemachine_Action, "name")
     descriptor = None
-    for klass in statemachine::Action.__mro__:
+    for klass in statemachine_Action.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,16 +66,16 @@ def test_transition_constructor_args():
 
 
 
-def test_statemachine::labeledtransition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::LabeledTransition)
+def test_statemachine_labeledtransition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_LabeledTransition)
 
 
-def test_statemachine::labeledtransition_constructor_exists():
-    assert callable(statemachine::LabeledTransition.__init__)
+def test_statemachine_labeledtransition_constructor_exists():
+    assert callable(statemachine_LabeledTransition.__init__)
 
 
-def test_statemachine::labeledtransition_constructor_args():
-    sig = inspect.signature(statemachine::LabeledTransition.__init__)
+def test_statemachine_labeledtransition_constructor_args():
+    sig = inspect.signature(statemachine_LabeledTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,23 +94,23 @@ def test_vertex_constructor_args():
 
 
 
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::state_has_name():
-    assert hasattr(statemachine::State, "name")
+def test_statemachine_state_has_name():
+    assert hasattr(statemachine_State, "name")
     descriptor = None
-    for klass in statemachine::State.__mro__:
+    for klass in statemachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,23 +132,23 @@ def test_region_constructor_args():
 
 
 
-def test_statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Statemachine)
+def test_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Statemachine)
 
 
-def test_statemachine::statemachine_constructor_exists():
-    assert callable(statemachine::Statemachine.__init__)
+def test_statemachine_statemachine_constructor_exists():
+    assert callable(statemachine_Statemachine.__init__)
 
 
-def test_statemachine::statemachine_constructor_args():
-    sig = inspect.signature(statemachine::Statemachine.__init__)
+def test_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(statemachine_Statemachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::statemachine_has_name():
-    assert hasattr(statemachine::Statemachine, "name")
+def test_statemachine_statemachine_has_name():
+    assert hasattr(statemachine_Statemachine, "name")
     descriptor = None
-    for klass in statemachine::Statemachine.__mro__:
+    for klass in statemachine_Statemachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -156,16 +156,16 @@ def test_statemachine::statemachine_has_name():
 
 
 
-def test_statemachine::region_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Region)
+def test_statemachine_region_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Region)
 
 
-def test_statemachine::region_constructor_exists():
-    assert callable(statemachine::Region.__init__)
+def test_statemachine_region_constructor_exists():
+    assert callable(statemachine_Region.__init__)
 
 
-def test_statemachine::region_constructor_args():
-    sig = inspect.signature(statemachine::Region.__init__)
+def test_statemachine_region_constructor_args():
+    sig = inspect.signature(statemachine_Region.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -184,71 +184,71 @@ def test_state_constructor_args():
 
 
 
-def test_statemachine::complexstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::ComplexState)
+def test_statemachine_complexstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_ComplexState)
 
 
-def test_statemachine::complexstate_constructor_exists():
-    assert callable(statemachine::ComplexState.__init__)
+def test_statemachine_complexstate_constructor_exists():
+    assert callable(statemachine_ComplexState.__init__)
 
 
-def test_statemachine::complexstate_constructor_args():
-    sig = inspect.signature(statemachine::ComplexState.__init__)
+def test_statemachine_complexstate_constructor_args():
+    sig = inspect.signature(statemachine_ComplexState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Pseudostate)
+def test_statemachine_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Pseudostate)
 
 
-def test_statemachine::pseudostate_constructor_exists():
-    assert callable(statemachine::Pseudostate.__init__)
+def test_statemachine_pseudostate_constructor_exists():
+    assert callable(statemachine_Pseudostate.__init__)
 
 
-def test_statemachine::pseudostate_constructor_args():
-    sig = inspect.signature(statemachine::Pseudostate.__init__)
+def test_statemachine_pseudostate_constructor_args():
+    sig = inspect.signature(statemachine_Pseudostate.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_statemachine::pseudostate_has_kind():
-    assert hasattr(statemachine::Pseudostate, "kind")
+def test_statemachine_pseudostate_has_id():
+    assert hasattr(statemachine_Pseudostate, "id")
     descriptor = None
-    for klass in statemachine::Pseudostate.__mro__:
+    for klass in statemachine_Pseudostate.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachine_pseudostate_has_kind():
+    assert hasattr(statemachine_Pseudostate, "kind")
+    descriptor = None
+    for klass in statemachine_Pseudostate.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachine::pseudostate_has_id():
-    assert hasattr(statemachine::Pseudostate, "id")
-    descriptor = None
-    for klass in statemachine::Pseudostate.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
-
-
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
+
+
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_statemachine::transition_has_id():
-    assert hasattr(statemachine::Transition, "id")
+def test_statemachine_transition_has_id():
+    assert hasattr(statemachine_Transition, "id")
     descriptor = None
-    for klass in statemachine::Transition.__mro__:
+    for klass in statemachine_Transition.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -256,16 +256,16 @@ def test_statemachine::transition_has_id():
 
 
 
-def test_statemachine::vertex_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Vertex)
+def test_statemachine_vertex_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Vertex)
 
 
-def test_statemachine::vertex_constructor_exists():
-    assert callable(statemachine::Vertex.__init__)
+def test_statemachine_vertex_constructor_exists():
+    assert callable(statemachine_Vertex.__init__)
 
 
-def test_statemachine::vertex_constructor_args():
-    sig = inspect.signature(statemachine::Vertex.__init__)
+def test_statemachine_vertex_constructor_args():
+    sig = inspect.signature(statemachine_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 def test_pseudostatekind_exists():
@@ -276,8 +276,8 @@ def test_pseudostatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PseudostateKind]
     expected_literals = [
-        "initial",
         "final",
+        "initial",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -295,70 +295,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Action_strategy = st.builds(
-    statemachine::Action,
+statemachine_Action_strategy = st.builds(
+    statemachine_Action,
     name=
         safe_text
 )
 Transition_strategy = st.builds(
     Transition,
 )
-statemachine::LabeledTransition_strategy = st.builds(
-    statemachine::LabeledTransition,
+statemachine_LabeledTransition_strategy = st.builds(
+    statemachine_LabeledTransition,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
+statemachine_State_strategy = st.builds(
+    statemachine_State,
     name=
         safe_text
 )
 Region_strategy = st.builds(
     Region,
 )
-statemachine::Statemachine_strategy = st.builds(
-    statemachine::Statemachine,
+statemachine_Statemachine_strategy = st.builds(
+    statemachine_Statemachine,
     name=
         safe_text
 )
-statemachine::Region_strategy = st.builds(
-    statemachine::Region,
+statemachine_Region_strategy = st.builds(
+    statemachine_Region,
 )
 State_strategy = st.builds(
     State,
 )
-statemachine::ComplexState_strategy = st.builds(
-    statemachine::ComplexState,
+statemachine_ComplexState_strategy = st.builds(
+    statemachine_ComplexState,
 )
-statemachine::Pseudostate_strategy = st.builds(
-    statemachine::Pseudostate,
-    kind=
+statemachine_Pseudostate_strategy = st.builds(
+    statemachine_Pseudostate,
+    id=
         safe_text,
+    kind=
+        safe_text
+)
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
     id=
         safe_text
 )
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
-    id=
-        safe_text
-)
-statemachine::Vertex_strategy = st.builds(
-    statemachine::Vertex,
+statemachine_Vertex_strategy = st.builds(
+    statemachine_Vertex,
 )
 
-@given(instance=statemachine::Action_strategy)
+@given(instance=statemachine_Action_strategy)
 @settings(max_examples=50)
-def test_statemachine::action_instantiation(instance):
-    assert isinstance(instance, statemachine::Action)
-
-@given(instance=statemachine::Action_strategy)
-def test_statemachine::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_action_instantiation(instance):
+    assert isinstance(instance, statemachine_Action)
 
 
-@given(instance=statemachine::Action_strategy)
-def test_statemachine::action_name_setter(instance):
+
+@given(instance=statemachine_Action_strategy)
+def test_statemachine_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -368,28 +365,25 @@ def test_statemachine::action_name_setter(instance):
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=statemachine::LabeledTransition_strategy)
+@given(instance=statemachine_LabeledTransition_strategy)
 @settings(max_examples=50)
-def test_statemachine::labeledtransition_instantiation(instance):
-    assert isinstance(instance, statemachine::LabeledTransition)
+def test_statemachine_labeledtransition_instantiation(instance):
+    assert isinstance(instance, statemachine_LabeledTransition)
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=statemachine::State_strategy)
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_name_setter(instance):
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -400,9 +394,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::State_strategy)
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=30)
-def test_statemachine::state_fullyqualifiedname_changes_state(instance):
+def test_statemachine_state_fullyqualifiedname_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -414,50 +408,47 @@ def test_statemachine::state_fullyqualifiedname_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fullyQualifiedName' in statemachine::State is empty"
+        assert has_statements, f"Function 'fullyQualifiedName' in statemachine_State is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fullyQualifiedName' in statemachine::State did not change state; check implementation")
+            warnings.warn(f"Operation 'fullyQualifiedName' in statemachine_State did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fullyQualifiedName' in statemachine::State is not implemented or raised an error")
+        warnings.warn(f"Operation 'fullyQualifiedName' in statemachine_State is not implemented or raised an error")
 
 @given(instance=Region_strategy)
 @settings(max_examples=50)
 def test_region_instantiation(instance):
     assert isinstance(instance, Region)
 
-@given(instance=statemachine::Statemachine_strategy)
+@given(instance=statemachine_Statemachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachine::Statemachine)
-
-@given(instance=statemachine::Statemachine_strategy)
-def test_statemachine::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachine_Statemachine)
 
 
-@given(instance=statemachine::Statemachine_strategy)
-def test_statemachine::statemachine_name_setter(instance):
+
+@given(instance=statemachine_Statemachine_strategy)
+def test_statemachine_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=statemachine::Region_strategy)
+@given(instance=statemachine_Region_strategy)
 @settings(max_examples=50)
-def test_statemachine::region_instantiation(instance):
-    assert isinstance(instance, statemachine::Region)
+def test_statemachine_region_instantiation(instance):
+    assert isinstance(instance, statemachine_Region)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=statemachine::ComplexState_strategy)
+@given(instance=statemachine_ComplexState_strategy)
 @settings(max_examples=50)
-def test_statemachine::complexstate_instantiation(instance):
-    assert isinstance(instance, statemachine::ComplexState)
+def test_statemachine_complexstate_instantiation(instance):
+    assert isinstance(instance, statemachine_ComplexState)
 
 import warnings
 import copy
@@ -465,9 +456,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=statemachine::ComplexState_strategy)
+@given(instance=statemachine_ComplexState_strategy)
 @settings(max_examples=30)
-def test_statemachine::complexstate_directsubstates_changes_state(instance):
+def test_statemachine_complexstate_directsubstates_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -479,59 +470,50 @@ def test_statemachine::complexstate_directsubstates_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'directSubStates' in statemachine::ComplexState is empty"
+        assert has_statements, f"Function 'directSubStates' in statemachine_ComplexState is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'directSubStates' in statemachine::ComplexState did not change state; check implementation")
+            warnings.warn(f"Operation 'directSubStates' in statemachine_ComplexState did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'directSubStates' in statemachine::ComplexState is not implemented or raised an error")
+        warnings.warn(f"Operation 'directSubStates' in statemachine_ComplexState is not implemented or raised an error")
 
-@given(instance=statemachine::Pseudostate_strategy)
+@given(instance=statemachine_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_statemachine::pseudostate_instantiation(instance):
-    assert isinstance(instance, statemachine::Pseudostate)
-
-@given(instance=statemachine::Pseudostate_strategy)
-def test_statemachine::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_statemachine_pseudostate_instantiation(instance):
+    assert isinstance(instance, statemachine_Pseudostate)
 
 
-@given(instance=statemachine::Pseudostate_strategy)
-def test_statemachine::pseudostate_kind_setter(instance):
+
+@given(instance=statemachine_Pseudostate_strategy)
+def test_statemachine_pseudostate_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=statemachine_Pseudostate_strategy)
+def test_statemachine_pseudostate_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=statemachine::Pseudostate_strategy)
-def test_statemachine::pseudostate_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=statemachine_Transition_strategy)
+@settings(max_examples=50)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
 
-@given(instance=statemachine::Pseudostate_strategy)
-def test_statemachine::pseudostate_id_setter(instance):
+
+@given(instance=statemachine_Transition_strategy)
+def test_statemachine_transition_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Vertex_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=statemachine::Transition_strategy)
-def test_statemachine::transition_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=statemachine::Vertex_strategy)
-@settings(max_examples=50)
-def test_statemachine::vertex_instantiation(instance):
-    assert isinstance(instance, statemachine::Vertex)
+def test_statemachine_vertex_instantiation(instance):
+    assert isinstance(instance, statemachine_Vertex)

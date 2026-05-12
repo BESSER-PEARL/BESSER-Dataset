@@ -3,38 +3,38 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ComparsionOperator,
-    behaviouralProgramMM::Equals,
+    behaviouralProgramMM_Equals,
     FunctionCallStatement,
-    behaviouralProgramMM::WriteLineStatement,
-    behaviouralProgramMM::ReadLineStatement,
+    behaviouralProgramMM_WriteLineStatement,
+    behaviouralProgramMM_ReadLineStatement,
     ArithmeticInfixOperator,
-    behaviouralProgramMM::Plus,
+    behaviouralProgramMM_Plus,
     BinaryOperator,
-    behaviouralProgramMM::ComparsionOperator,
-    behaviouralProgramMM::ArithmeticInfixOperator,
+    behaviouralProgramMM_ComparsionOperator,
+    behaviouralProgramMM_ArithmeticInfixOperator,
     Expression,
-    behaviouralProgramMM::ReadLine,
-    behaviouralProgramMM::Literal,
-    behaviouralProgramMM::BinaryOperator,
-    behaviouralProgramMM::Variable,
-    behaviouralProgramMM::FunctionCall,
-    behaviouralProgramMM::Expression,
+    behaviouralProgramMM_Literal,
+    behaviouralProgramMM_Variable,
+    behaviouralProgramMM_BinaryOperator,
+    behaviouralProgramMM_ReadLine,
+    behaviouralProgramMM_FunctionCall,
+    behaviouralProgramMM_Expression,
     Statement,
-    behaviouralProgramMM::ConditionalBranch,
-    behaviouralProgramMM::Instantiation,
-    behaviouralProgramMM::RaiseException,
-    behaviouralProgramMM::FunctionCallStatement,
-    behaviouralProgramMM::Loop,
-    behaviouralProgramMM::Assignment,
-    behaviouralProgramMM::Statement,
-    behaviouralProgramMM::TryCatch,
-    behaviouralProgramMM::Return,
-    behaviouralProgramMM::Function,
-    behaviouralProgramMM::Behaviour,
+    behaviouralProgramMM_Instantiation,
+    behaviouralProgramMM_Loop,
+    behaviouralProgramMM_RaiseException,
+    behaviouralProgramMM_ConditionalBranch,
+    behaviouralProgramMM_FunctionCallStatement,
+    behaviouralProgramMM_Assignment,
+    behaviouralProgramMM_Statement,
+    behaviouralProgramMM_TryCatch,
+    behaviouralProgramMM_Return,
+    behaviouralProgramMM_Function,
+    behaviouralProgramMM_Behaviour,
 )
 
 # =============================================================================
@@ -57,16 +57,16 @@ def test_comparsionoperator_constructor_args():
 
 
 
-def test_behaviouralprogrammm::equals_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Equals)
+def test_behaviouralprogrammm_equals_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Equals)
 
 
-def test_behaviouralprogrammm::equals_constructor_exists():
-    assert callable(behaviouralProgramMM::Equals.__init__)
+def test_behaviouralprogrammm_equals_constructor_exists():
+    assert callable(behaviouralProgramMM_Equals.__init__)
 
 
-def test_behaviouralprogrammm::equals_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Equals.__init__)
+def test_behaviouralprogrammm_equals_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Equals.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -85,30 +85,30 @@ def test_functioncallstatement_constructor_args():
 
 
 
-def test_behaviouralprogrammm::writelinestatement_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::WriteLineStatement)
+def test_behaviouralprogrammm_writelinestatement_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_WriteLineStatement)
 
 
-def test_behaviouralprogrammm::writelinestatement_constructor_exists():
-    assert callable(behaviouralProgramMM::WriteLineStatement.__init__)
+def test_behaviouralprogrammm_writelinestatement_constructor_exists():
+    assert callable(behaviouralProgramMM_WriteLineStatement.__init__)
 
 
-def test_behaviouralprogrammm::writelinestatement_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::WriteLineStatement.__init__)
+def test_behaviouralprogrammm_writelinestatement_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_WriteLineStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviouralprogrammm::readlinestatement_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::ReadLineStatement)
+def test_behaviouralprogrammm_readlinestatement_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_ReadLineStatement)
 
 
-def test_behaviouralprogrammm::readlinestatement_constructor_exists():
-    assert callable(behaviouralProgramMM::ReadLineStatement.__init__)
+def test_behaviouralprogrammm_readlinestatement_constructor_exists():
+    assert callable(behaviouralProgramMM_ReadLineStatement.__init__)
 
 
-def test_behaviouralprogrammm::readlinestatement_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::ReadLineStatement.__init__)
+def test_behaviouralprogrammm_readlinestatement_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_ReadLineStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,16 +127,16 @@ def test_arithmeticinfixoperator_constructor_args():
 
 
 
-def test_behaviouralprogrammm::plus_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Plus)
+def test_behaviouralprogrammm_plus_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Plus)
 
 
-def test_behaviouralprogrammm::plus_constructor_exists():
-    assert callable(behaviouralProgramMM::Plus.__init__)
+def test_behaviouralprogrammm_plus_constructor_exists():
+    assert callable(behaviouralProgramMM_Plus.__init__)
 
 
-def test_behaviouralprogrammm::plus_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Plus.__init__)
+def test_behaviouralprogrammm_plus_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -155,30 +155,30 @@ def test_binaryoperator_constructor_args():
 
 
 
-def test_behaviouralprogrammm::comparsionoperator_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::ComparsionOperator)
+def test_behaviouralprogrammm_comparsionoperator_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_ComparsionOperator)
 
 
-def test_behaviouralprogrammm::comparsionoperator_constructor_exists():
-    assert callable(behaviouralProgramMM::ComparsionOperator.__init__)
+def test_behaviouralprogrammm_comparsionoperator_constructor_exists():
+    assert callable(behaviouralProgramMM_ComparsionOperator.__init__)
 
 
-def test_behaviouralprogrammm::comparsionoperator_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::ComparsionOperator.__init__)
+def test_behaviouralprogrammm_comparsionoperator_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_ComparsionOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviouralprogrammm::arithmeticinfixoperator_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::ArithmeticInfixOperator)
+def test_behaviouralprogrammm_arithmeticinfixoperator_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_ArithmeticInfixOperator)
 
 
-def test_behaviouralprogrammm::arithmeticinfixoperator_constructor_exists():
-    assert callable(behaviouralProgramMM::ArithmeticInfixOperator.__init__)
+def test_behaviouralprogrammm_arithmeticinfixoperator_constructor_exists():
+    assert callable(behaviouralProgramMM_ArithmeticInfixOperator.__init__)
 
 
-def test_behaviouralprogrammm::arithmeticinfixoperator_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::ArithmeticInfixOperator.__init__)
+def test_behaviouralprogrammm_arithmeticinfixoperator_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_ArithmeticInfixOperator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -197,37 +197,23 @@ def test_expression_constructor_args():
 
 
 
-def test_behaviouralprogrammm::readline_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::ReadLine)
+def test_behaviouralprogrammm_literal_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Literal)
 
 
-def test_behaviouralprogrammm::readline_constructor_exists():
-    assert callable(behaviouralProgramMM::ReadLine.__init__)
+def test_behaviouralprogrammm_literal_constructor_exists():
+    assert callable(behaviouralProgramMM_Literal.__init__)
 
 
-def test_behaviouralprogrammm::readline_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::ReadLine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behaviouralprogrammm::literal_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Literal)
-
-
-def test_behaviouralprogrammm::literal_constructor_exists():
-    assert callable(behaviouralProgramMM::Literal.__init__)
-
-
-def test_behaviouralprogrammm::literal_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Literal.__init__)
+def test_behaviouralprogrammm_literal_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "Value" in params, "Missing parameter 'Value'"
 
-def test_behaviouralprogrammm::literal_has_Value():
-    assert hasattr(behaviouralProgramMM::Literal, "Value")
+def test_behaviouralprogrammm_literal_has_Value():
+    assert hasattr(behaviouralProgramMM_Literal, "Value")
     descriptor = None
-    for klass in behaviouralProgramMM::Literal.__mro__:
+    for klass in behaviouralProgramMM_Literal.__mro__:
         if "Value" in klass.__dict__:
             descriptor = klass.__dict__["Value"]
             break
@@ -235,37 +221,23 @@ def test_behaviouralprogrammm::literal_has_Value():
 
 
 
-def test_behaviouralprogrammm::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::BinaryOperator)
+def test_behaviouralprogrammm_variable_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Variable)
 
 
-def test_behaviouralprogrammm::binaryoperator_constructor_exists():
-    assert callable(behaviouralProgramMM::BinaryOperator.__init__)
+def test_behaviouralprogrammm_variable_constructor_exists():
+    assert callable(behaviouralProgramMM_Variable.__init__)
 
 
-def test_behaviouralprogrammm::binaryoperator_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::BinaryOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behaviouralprogrammm::variable_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Variable)
-
-
-def test_behaviouralprogrammm::variable_constructor_exists():
-    assert callable(behaviouralProgramMM::Variable.__init__)
-
-
-def test_behaviouralprogrammm::variable_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Variable.__init__)
+def test_behaviouralprogrammm_variable_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "VarName" in params, "Missing parameter 'VarName'"
 
-def test_behaviouralprogrammm::variable_has_VarName():
-    assert hasattr(behaviouralProgramMM::Variable, "VarName")
+def test_behaviouralprogrammm_variable_has_VarName():
+    assert hasattr(behaviouralProgramMM_Variable, "VarName")
     descriptor = None
-    for klass in behaviouralProgramMM::Variable.__mro__:
+    for klass in behaviouralProgramMM_Variable.__mro__:
         if "VarName" in klass.__dict__:
             descriptor = klass.__dict__["VarName"]
             break
@@ -273,23 +245,51 @@ def test_behaviouralprogrammm::variable_has_VarName():
 
 
 
-def test_behaviouralprogrammm::functioncall_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::FunctionCall)
+def test_behaviouralprogrammm_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_BinaryOperator)
 
 
-def test_behaviouralprogrammm::functioncall_constructor_exists():
-    assert callable(behaviouralProgramMM::FunctionCall.__init__)
+def test_behaviouralprogrammm_binaryoperator_constructor_exists():
+    assert callable(behaviouralProgramMM_BinaryOperator.__init__)
 
 
-def test_behaviouralprogrammm::functioncall_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::FunctionCall.__init__)
+def test_behaviouralprogrammm_binaryoperator_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_BinaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behaviouralprogrammm_readline_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_ReadLine)
+
+
+def test_behaviouralprogrammm_readline_constructor_exists():
+    assert callable(behaviouralProgramMM_ReadLine.__init__)
+
+
+def test_behaviouralprogrammm_readline_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_ReadLine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behaviouralprogrammm_functioncall_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_FunctionCall)
+
+
+def test_behaviouralprogrammm_functioncall_constructor_exists():
+    assert callable(behaviouralProgramMM_FunctionCall.__init__)
+
+
+def test_behaviouralprogrammm_functioncall_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_FunctionCall.__init__)
     params = list(sig.parameters.keys())
     assert "FuncName" in params, "Missing parameter 'FuncName'"
 
-def test_behaviouralprogrammm::functioncall_has_FuncName():
-    assert hasattr(behaviouralProgramMM::FunctionCall, "FuncName")
+def test_behaviouralprogrammm_functioncall_has_FuncName():
+    assert hasattr(behaviouralProgramMM_FunctionCall, "FuncName")
     descriptor = None
-    for klass in behaviouralProgramMM::FunctionCall.__mro__:
+    for klass in behaviouralProgramMM_FunctionCall.__mro__:
         if "FuncName" in klass.__dict__:
             descriptor = klass.__dict__["FuncName"]
             break
@@ -297,16 +297,16 @@ def test_behaviouralprogrammm::functioncall_has_FuncName():
 
 
 
-def test_behaviouralprogrammm::expression_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Expression)
+def test_behaviouralprogrammm_expression_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Expression)
 
 
-def test_behaviouralprogrammm::expression_constructor_exists():
-    assert callable(behaviouralProgramMM::Expression.__init__)
+def test_behaviouralprogrammm_expression_constructor_exists():
+    assert callable(behaviouralProgramMM_Expression.__init__)
 
 
-def test_behaviouralprogrammm::expression_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Expression.__init__)
+def test_behaviouralprogrammm_expression_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -325,47 +325,33 @@ def test_statement_constructor_args():
 
 
 
-def test_behaviouralprogrammm::conditionalbranch_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::ConditionalBranch)
+def test_behaviouralprogrammm_instantiation_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Instantiation)
 
 
-def test_behaviouralprogrammm::conditionalbranch_constructor_exists():
-    assert callable(behaviouralProgramMM::ConditionalBranch.__init__)
+def test_behaviouralprogrammm_instantiation_constructor_exists():
+    assert callable(behaviouralProgramMM_Instantiation.__init__)
 
 
-def test_behaviouralprogrammm::conditionalbranch_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::ConditionalBranch.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behaviouralprogrammm::instantiation_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Instantiation)
-
-
-def test_behaviouralprogrammm::instantiation_constructor_exists():
-    assert callable(behaviouralProgramMM::Instantiation.__init__)
-
-
-def test_behaviouralprogrammm::instantiation_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Instantiation.__init__)
+def test_behaviouralprogrammm_instantiation_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Instantiation.__init__)
     params = list(sig.parameters.keys())
     assert "VarType" in params, "Missing parameter 'VarType'"
     assert "VarName" in params, "Missing parameter 'VarName'"
 
-def test_behaviouralprogrammm::instantiation_has_VarType():
-    assert hasattr(behaviouralProgramMM::Instantiation, "VarType")
+def test_behaviouralprogrammm_instantiation_has_VarType():
+    assert hasattr(behaviouralProgramMM_Instantiation, "VarType")
     descriptor = None
-    for klass in behaviouralProgramMM::Instantiation.__mro__:
+    for klass in behaviouralProgramMM_Instantiation.__mro__:
         if "VarType" in klass.__dict__:
             descriptor = klass.__dict__["VarType"]
             break
     assert isinstance(descriptor, property)
 
-def test_behaviouralprogrammm::instantiation_has_VarName():
-    assert hasattr(behaviouralProgramMM::Instantiation, "VarName")
+def test_behaviouralprogrammm_instantiation_has_VarName():
+    assert hasattr(behaviouralProgramMM_Instantiation, "VarName")
     descriptor = None
-    for klass in behaviouralProgramMM::Instantiation.__mro__:
+    for klass in behaviouralProgramMM_Instantiation.__mro__:
         if "VarName" in klass.__dict__:
             descriptor = klass.__dict__["VarName"]
             break
@@ -373,37 +359,65 @@ def test_behaviouralprogrammm::instantiation_has_VarName():
 
 
 
-def test_behaviouralprogrammm::raiseexception_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::RaiseException)
+def test_behaviouralprogrammm_loop_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Loop)
 
 
-def test_behaviouralprogrammm::raiseexception_constructor_exists():
-    assert callable(behaviouralProgramMM::RaiseException.__init__)
+def test_behaviouralprogrammm_loop_constructor_exists():
+    assert callable(behaviouralProgramMM_Loop.__init__)
 
 
-def test_behaviouralprogrammm::raiseexception_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::RaiseException.__init__)
+def test_behaviouralprogrammm_loop_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviouralprogrammm::functioncallstatement_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::FunctionCallStatement)
+def test_behaviouralprogrammm_raiseexception_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_RaiseException)
 
 
-def test_behaviouralprogrammm::functioncallstatement_constructor_exists():
-    assert callable(behaviouralProgramMM::FunctionCallStatement.__init__)
+def test_behaviouralprogrammm_raiseexception_constructor_exists():
+    assert callable(behaviouralProgramMM_RaiseException.__init__)
 
 
-def test_behaviouralprogrammm::functioncallstatement_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::FunctionCallStatement.__init__)
+def test_behaviouralprogrammm_raiseexception_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_RaiseException.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behaviouralprogrammm_conditionalbranch_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_ConditionalBranch)
+
+
+def test_behaviouralprogrammm_conditionalbranch_constructor_exists():
+    assert callable(behaviouralProgramMM_ConditionalBranch.__init__)
+
+
+def test_behaviouralprogrammm_conditionalbranch_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_ConditionalBranch.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behaviouralprogrammm_functioncallstatement_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_FunctionCallStatement)
+
+
+def test_behaviouralprogrammm_functioncallstatement_constructor_exists():
+    assert callable(behaviouralProgramMM_FunctionCallStatement.__init__)
+
+
+def test_behaviouralprogrammm_functioncallstatement_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_FunctionCallStatement.__init__)
     params = list(sig.parameters.keys())
     assert "FuncName" in params, "Missing parameter 'FuncName'"
 
-def test_behaviouralprogrammm::functioncallstatement_has_FuncName():
-    assert hasattr(behaviouralProgramMM::FunctionCallStatement, "FuncName")
+def test_behaviouralprogrammm_functioncallstatement_has_FuncName():
+    assert hasattr(behaviouralProgramMM_FunctionCallStatement, "FuncName")
     descriptor = None
-    for klass in behaviouralProgramMM::FunctionCallStatement.__mro__:
+    for klass in behaviouralProgramMM_FunctionCallStatement.__mro__:
         if "FuncName" in klass.__dict__:
             descriptor = klass.__dict__["FuncName"]
             break
@@ -411,37 +425,23 @@ def test_behaviouralprogrammm::functioncallstatement_has_FuncName():
 
 
 
-def test_behaviouralprogrammm::loop_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Loop)
+def test_behaviouralprogrammm_assignment_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Assignment)
 
 
-def test_behaviouralprogrammm::loop_constructor_exists():
-    assert callable(behaviouralProgramMM::Loop.__init__)
+def test_behaviouralprogrammm_assignment_constructor_exists():
+    assert callable(behaviouralProgramMM_Assignment.__init__)
 
 
-def test_behaviouralprogrammm::loop_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Loop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behaviouralprogrammm::assignment_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Assignment)
-
-
-def test_behaviouralprogrammm::assignment_constructor_exists():
-    assert callable(behaviouralProgramMM::Assignment.__init__)
-
-
-def test_behaviouralprogrammm::assignment_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Assignment.__init__)
+def test_behaviouralprogrammm_assignment_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Assignment.__init__)
     params = list(sig.parameters.keys())
     assert "VariableName" in params, "Missing parameter 'VariableName'"
 
-def test_behaviouralprogrammm::assignment_has_VariableName():
-    assert hasattr(behaviouralProgramMM::Assignment, "VariableName")
+def test_behaviouralprogrammm_assignment_has_VariableName():
+    assert hasattr(behaviouralProgramMM_Assignment, "VariableName")
     descriptor = None
-    for klass in behaviouralProgramMM::Assignment.__mro__:
+    for klass in behaviouralProgramMM_Assignment.__mro__:
         if "VariableName" in klass.__dict__:
             descriptor = klass.__dict__["VariableName"]
             break
@@ -449,65 +449,65 @@ def test_behaviouralprogrammm::assignment_has_VariableName():
 
 
 
-def test_behaviouralprogrammm::statement_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Statement)
+def test_behaviouralprogrammm_statement_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Statement)
 
 
-def test_behaviouralprogrammm::statement_constructor_exists():
-    assert callable(behaviouralProgramMM::Statement.__init__)
+def test_behaviouralprogrammm_statement_constructor_exists():
+    assert callable(behaviouralProgramMM_Statement.__init__)
 
 
-def test_behaviouralprogrammm::statement_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Statement.__init__)
+def test_behaviouralprogrammm_statement_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviouralprogrammm::trycatch_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::TryCatch)
+def test_behaviouralprogrammm_trycatch_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_TryCatch)
 
 
-def test_behaviouralprogrammm::trycatch_constructor_exists():
-    assert callable(behaviouralProgramMM::TryCatch.__init__)
+def test_behaviouralprogrammm_trycatch_constructor_exists():
+    assert callable(behaviouralProgramMM_TryCatch.__init__)
 
 
-def test_behaviouralprogrammm::trycatch_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::TryCatch.__init__)
+def test_behaviouralprogrammm_trycatch_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_TryCatch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviouralprogrammm::return_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Return)
+def test_behaviouralprogrammm_return_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Return)
 
 
-def test_behaviouralprogrammm::return_constructor_exists():
-    assert callable(behaviouralProgramMM::Return.__init__)
+def test_behaviouralprogrammm_return_constructor_exists():
+    assert callable(behaviouralProgramMM_Return.__init__)
 
 
-def test_behaviouralprogrammm::return_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Return.__init__)
+def test_behaviouralprogrammm_return_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behaviouralprogrammm::function_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Function)
+def test_behaviouralprogrammm_function_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Function)
 
 
-def test_behaviouralprogrammm::function_constructor_exists():
-    assert callable(behaviouralProgramMM::Function.__init__)
+def test_behaviouralprogrammm_function_constructor_exists():
+    assert callable(behaviouralProgramMM_Function.__init__)
 
 
-def test_behaviouralprogrammm::function_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Function.__init__)
+def test_behaviouralprogrammm_function_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Function.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_behaviouralprogrammm::function_has_Name():
-    assert hasattr(behaviouralProgramMM::Function, "Name")
+def test_behaviouralprogrammm_function_has_Name():
+    assert hasattr(behaviouralProgramMM_Function, "Name")
     descriptor = None
-    for klass in behaviouralProgramMM::Function.__mro__:
+    for klass in behaviouralProgramMM_Function.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -515,16 +515,16 @@ def test_behaviouralprogrammm::function_has_Name():
 
 
 
-def test_behaviouralprogrammm::behaviour_is_not_abstract():
-    assert not inspect.isabstract(behaviouralProgramMM::Behaviour)
+def test_behaviouralprogrammm_behaviour_is_not_abstract():
+    assert not inspect.isabstract(behaviouralProgramMM_Behaviour)
 
 
-def test_behaviouralprogrammm::behaviour_constructor_exists():
-    assert callable(behaviouralProgramMM::Behaviour.__init__)
+def test_behaviouralprogrammm_behaviour_constructor_exists():
+    assert callable(behaviouralProgramMM_Behaviour.__init__)
 
 
-def test_behaviouralprogrammm::behaviour_constructor_args():
-    sig = inspect.signature(behaviouralProgramMM::Behaviour.__init__)
+def test_behaviouralprogrammm_behaviour_constructor_args():
+    sig = inspect.signature(behaviouralProgramMM_Behaviour.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -542,105 +542,105 @@ safe_text = st.text(
 ComparsionOperator_strategy = st.builds(
     ComparsionOperator,
 )
-behaviouralProgramMM::Equals_strategy = st.builds(
-    behaviouralProgramMM::Equals,
+behaviouralProgramMM_Equals_strategy = st.builds(
+    behaviouralProgramMM_Equals,
 )
 FunctionCallStatement_strategy = st.builds(
     FunctionCallStatement,
 )
-behaviouralProgramMM::WriteLineStatement_strategy = st.builds(
-    behaviouralProgramMM::WriteLineStatement,
+behaviouralProgramMM_WriteLineStatement_strategy = st.builds(
+    behaviouralProgramMM_WriteLineStatement,
 )
-behaviouralProgramMM::ReadLineStatement_strategy = st.builds(
-    behaviouralProgramMM::ReadLineStatement,
+behaviouralProgramMM_ReadLineStatement_strategy = st.builds(
+    behaviouralProgramMM_ReadLineStatement,
 )
 ArithmeticInfixOperator_strategy = st.builds(
     ArithmeticInfixOperator,
 )
-behaviouralProgramMM::Plus_strategy = st.builds(
-    behaviouralProgramMM::Plus,
+behaviouralProgramMM_Plus_strategy = st.builds(
+    behaviouralProgramMM_Plus,
 )
 BinaryOperator_strategy = st.builds(
     BinaryOperator,
 )
-behaviouralProgramMM::ComparsionOperator_strategy = st.builds(
-    behaviouralProgramMM::ComparsionOperator,
+behaviouralProgramMM_ComparsionOperator_strategy = st.builds(
+    behaviouralProgramMM_ComparsionOperator,
 )
-behaviouralProgramMM::ArithmeticInfixOperator_strategy = st.builds(
-    behaviouralProgramMM::ArithmeticInfixOperator,
+behaviouralProgramMM_ArithmeticInfixOperator_strategy = st.builds(
+    behaviouralProgramMM_ArithmeticInfixOperator,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-behaviouralProgramMM::ReadLine_strategy = st.builds(
-    behaviouralProgramMM::ReadLine,
-)
-behaviouralProgramMM::Literal_strategy = st.builds(
-    behaviouralProgramMM::Literal,
+behaviouralProgramMM_Literal_strategy = st.builds(
+    behaviouralProgramMM_Literal,
     Value=
         safe_text
 )
-behaviouralProgramMM::BinaryOperator_strategy = st.builds(
-    behaviouralProgramMM::BinaryOperator,
-)
-behaviouralProgramMM::Variable_strategy = st.builds(
-    behaviouralProgramMM::Variable,
+behaviouralProgramMM_Variable_strategy = st.builds(
+    behaviouralProgramMM_Variable,
     VarName=
         safe_text
 )
-behaviouralProgramMM::FunctionCall_strategy = st.builds(
-    behaviouralProgramMM::FunctionCall,
+behaviouralProgramMM_BinaryOperator_strategy = st.builds(
+    behaviouralProgramMM_BinaryOperator,
+)
+behaviouralProgramMM_ReadLine_strategy = st.builds(
+    behaviouralProgramMM_ReadLine,
+)
+behaviouralProgramMM_FunctionCall_strategy = st.builds(
+    behaviouralProgramMM_FunctionCall,
     FuncName=
         safe_text
 )
-behaviouralProgramMM::Expression_strategy = st.builds(
-    behaviouralProgramMM::Expression,
+behaviouralProgramMM_Expression_strategy = st.builds(
+    behaviouralProgramMM_Expression,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-behaviouralProgramMM::ConditionalBranch_strategy = st.builds(
-    behaviouralProgramMM::ConditionalBranch,
-)
-behaviouralProgramMM::Instantiation_strategy = st.builds(
-    behaviouralProgramMM::Instantiation,
+behaviouralProgramMM_Instantiation_strategy = st.builds(
+    behaviouralProgramMM_Instantiation,
     VarType=
         safe_text,
     VarName=
         safe_text
 )
-behaviouralProgramMM::RaiseException_strategy = st.builds(
-    behaviouralProgramMM::RaiseException,
+behaviouralProgramMM_Loop_strategy = st.builds(
+    behaviouralProgramMM_Loop,
 )
-behaviouralProgramMM::FunctionCallStatement_strategy = st.builds(
-    behaviouralProgramMM::FunctionCallStatement,
+behaviouralProgramMM_RaiseException_strategy = st.builds(
+    behaviouralProgramMM_RaiseException,
+)
+behaviouralProgramMM_ConditionalBranch_strategy = st.builds(
+    behaviouralProgramMM_ConditionalBranch,
+)
+behaviouralProgramMM_FunctionCallStatement_strategy = st.builds(
+    behaviouralProgramMM_FunctionCallStatement,
     FuncName=
         safe_text
 )
-behaviouralProgramMM::Loop_strategy = st.builds(
-    behaviouralProgramMM::Loop,
-)
-behaviouralProgramMM::Assignment_strategy = st.builds(
-    behaviouralProgramMM::Assignment,
+behaviouralProgramMM_Assignment_strategy = st.builds(
+    behaviouralProgramMM_Assignment,
     VariableName=
         safe_text
 )
-behaviouralProgramMM::Statement_strategy = st.builds(
-    behaviouralProgramMM::Statement,
+behaviouralProgramMM_Statement_strategy = st.builds(
+    behaviouralProgramMM_Statement,
 )
-behaviouralProgramMM::TryCatch_strategy = st.builds(
-    behaviouralProgramMM::TryCatch,
+behaviouralProgramMM_TryCatch_strategy = st.builds(
+    behaviouralProgramMM_TryCatch,
 )
-behaviouralProgramMM::Return_strategy = st.builds(
-    behaviouralProgramMM::Return,
+behaviouralProgramMM_Return_strategy = st.builds(
+    behaviouralProgramMM_Return,
 )
-behaviouralProgramMM::Function_strategy = st.builds(
-    behaviouralProgramMM::Function,
+behaviouralProgramMM_Function_strategy = st.builds(
+    behaviouralProgramMM_Function,
     Name=
         safe_text
 )
-behaviouralProgramMM::Behaviour_strategy = st.builds(
-    behaviouralProgramMM::Behaviour,
+behaviouralProgramMM_Behaviour_strategy = st.builds(
+    behaviouralProgramMM_Behaviour,
 )
 
 @given(instance=ComparsionOperator_strategy)
@@ -648,230 +648,206 @@ behaviouralProgramMM::Behaviour_strategy = st.builds(
 def test_comparsionoperator_instantiation(instance):
     assert isinstance(instance, ComparsionOperator)
 
-@given(instance=behaviouralProgramMM::Equals_strategy)
+@given(instance=behaviouralProgramMM_Equals_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::equals_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Equals)
+def test_behaviouralprogrammm_equals_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Equals)
 
 @given(instance=FunctionCallStatement_strategy)
 @settings(max_examples=50)
 def test_functioncallstatement_instantiation(instance):
     assert isinstance(instance, FunctionCallStatement)
 
-@given(instance=behaviouralProgramMM::WriteLineStatement_strategy)
+@given(instance=behaviouralProgramMM_WriteLineStatement_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::writelinestatement_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::WriteLineStatement)
+def test_behaviouralprogrammm_writelinestatement_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_WriteLineStatement)
 
-@given(instance=behaviouralProgramMM::ReadLineStatement_strategy)
+@given(instance=behaviouralProgramMM_ReadLineStatement_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::readlinestatement_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::ReadLineStatement)
+def test_behaviouralprogrammm_readlinestatement_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_ReadLineStatement)
 
 @given(instance=ArithmeticInfixOperator_strategy)
 @settings(max_examples=50)
 def test_arithmeticinfixoperator_instantiation(instance):
     assert isinstance(instance, ArithmeticInfixOperator)
 
-@given(instance=behaviouralProgramMM::Plus_strategy)
+@given(instance=behaviouralProgramMM_Plus_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::plus_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Plus)
+def test_behaviouralprogrammm_plus_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Plus)
 
 @given(instance=BinaryOperator_strategy)
 @settings(max_examples=50)
 def test_binaryoperator_instantiation(instance):
     assert isinstance(instance, BinaryOperator)
 
-@given(instance=behaviouralProgramMM::ComparsionOperator_strategy)
+@given(instance=behaviouralProgramMM_ComparsionOperator_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::comparsionoperator_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::ComparsionOperator)
+def test_behaviouralprogrammm_comparsionoperator_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_ComparsionOperator)
 
-@given(instance=behaviouralProgramMM::ArithmeticInfixOperator_strategy)
+@given(instance=behaviouralProgramMM_ArithmeticInfixOperator_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::arithmeticinfixoperator_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::ArithmeticInfixOperator)
+def test_behaviouralprogrammm_arithmeticinfixoperator_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_ArithmeticInfixOperator)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=behaviouralProgramMM::ReadLine_strategy)
+@given(instance=behaviouralProgramMM_Literal_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::readline_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::ReadLine)
-
-@given(instance=behaviouralProgramMM::Literal_strategy)
-@settings(max_examples=50)
-def test_behaviouralprogrammm::literal_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Literal)
-
-@given(instance=behaviouralProgramMM::Literal_strategy)
-def test_behaviouralprogrammm::literal_Value_type(instance):
-    assert isinstance(instance.Value, str)
+def test_behaviouralprogrammm_literal_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Literal)
 
 
-@given(instance=behaviouralProgramMM::Literal_strategy)
-def test_behaviouralprogrammm::literal_Value_setter(instance):
+
+@given(instance=behaviouralProgramMM_Literal_strategy)
+def test_behaviouralprogrammm_literal_Value_setter(instance):
     original = instance.Value
     instance.Value = original
     assert instance.Value == original
 
-@given(instance=behaviouralProgramMM::BinaryOperator_strategy)
+@given(instance=behaviouralProgramMM_Variable_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::binaryoperator_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::BinaryOperator)
-
-@given(instance=behaviouralProgramMM::Variable_strategy)
-@settings(max_examples=50)
-def test_behaviouralprogrammm::variable_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Variable)
-
-@given(instance=behaviouralProgramMM::Variable_strategy)
-def test_behaviouralprogrammm::variable_VarName_type(instance):
-    assert isinstance(instance.VarName, str)
+def test_behaviouralprogrammm_variable_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Variable)
 
 
-@given(instance=behaviouralProgramMM::Variable_strategy)
-def test_behaviouralprogrammm::variable_VarName_setter(instance):
+
+@given(instance=behaviouralProgramMM_Variable_strategy)
+def test_behaviouralprogrammm_variable_VarName_setter(instance):
     original = instance.VarName
     instance.VarName = original
     assert instance.VarName == original
 
-@given(instance=behaviouralProgramMM::FunctionCall_strategy)
+@given(instance=behaviouralProgramMM_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::functioncall_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::FunctionCall)
+def test_behaviouralprogrammm_binaryoperator_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_BinaryOperator)
 
-@given(instance=behaviouralProgramMM::FunctionCall_strategy)
-def test_behaviouralprogrammm::functioncall_FuncName_type(instance):
-    assert isinstance(instance.FuncName, str)
+@given(instance=behaviouralProgramMM_ReadLine_strategy)
+@settings(max_examples=50)
+def test_behaviouralprogrammm_readline_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_ReadLine)
+
+@given(instance=behaviouralProgramMM_FunctionCall_strategy)
+@settings(max_examples=50)
+def test_behaviouralprogrammm_functioncall_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_FunctionCall)
 
 
-@given(instance=behaviouralProgramMM::FunctionCall_strategy)
-def test_behaviouralprogrammm::functioncall_FuncName_setter(instance):
+
+@given(instance=behaviouralProgramMM_FunctionCall_strategy)
+def test_behaviouralprogrammm_functioncall_FuncName_setter(instance):
     original = instance.FuncName
     instance.FuncName = original
     assert instance.FuncName == original
 
-@given(instance=behaviouralProgramMM::Expression_strategy)
+@given(instance=behaviouralProgramMM_Expression_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::expression_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Expression)
+def test_behaviouralprogrammm_expression_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Expression)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=behaviouralProgramMM::ConditionalBranch_strategy)
+@given(instance=behaviouralProgramMM_Instantiation_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::conditionalbranch_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::ConditionalBranch)
-
-@given(instance=behaviouralProgramMM::Instantiation_strategy)
-@settings(max_examples=50)
-def test_behaviouralprogrammm::instantiation_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Instantiation)
-
-@given(instance=behaviouralProgramMM::Instantiation_strategy)
-def test_behaviouralprogrammm::instantiation_VarType_type(instance):
-    assert isinstance(instance.VarType, str)
+def test_behaviouralprogrammm_instantiation_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Instantiation)
 
 
-@given(instance=behaviouralProgramMM::Instantiation_strategy)
-def test_behaviouralprogrammm::instantiation_VarType_setter(instance):
+
+@given(instance=behaviouralProgramMM_Instantiation_strategy)
+def test_behaviouralprogrammm_instantiation_VarType_setter(instance):
     original = instance.VarType
     instance.VarType = original
     assert instance.VarType == original
 
-@given(instance=behaviouralProgramMM::Instantiation_strategy)
-def test_behaviouralprogrammm::instantiation_VarName_type(instance):
-    assert isinstance(instance.VarName, str)
 
 
-@given(instance=behaviouralProgramMM::Instantiation_strategy)
-def test_behaviouralprogrammm::instantiation_VarName_setter(instance):
+@given(instance=behaviouralProgramMM_Instantiation_strategy)
+def test_behaviouralprogrammm_instantiation_VarName_setter(instance):
     original = instance.VarName
     instance.VarName = original
     assert instance.VarName == original
 
-@given(instance=behaviouralProgramMM::RaiseException_strategy)
+@given(instance=behaviouralProgramMM_Loop_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::raiseexception_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::RaiseException)
+def test_behaviouralprogrammm_loop_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Loop)
 
-@given(instance=behaviouralProgramMM::FunctionCallStatement_strategy)
+@given(instance=behaviouralProgramMM_RaiseException_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::functioncallstatement_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::FunctionCallStatement)
+def test_behaviouralprogrammm_raiseexception_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_RaiseException)
 
-@given(instance=behaviouralProgramMM::FunctionCallStatement_strategy)
-def test_behaviouralprogrammm::functioncallstatement_FuncName_type(instance):
-    assert isinstance(instance.FuncName, str)
+@given(instance=behaviouralProgramMM_ConditionalBranch_strategy)
+@settings(max_examples=50)
+def test_behaviouralprogrammm_conditionalbranch_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_ConditionalBranch)
+
+@given(instance=behaviouralProgramMM_FunctionCallStatement_strategy)
+@settings(max_examples=50)
+def test_behaviouralprogrammm_functioncallstatement_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_FunctionCallStatement)
 
 
-@given(instance=behaviouralProgramMM::FunctionCallStatement_strategy)
-def test_behaviouralprogrammm::functioncallstatement_FuncName_setter(instance):
+
+@given(instance=behaviouralProgramMM_FunctionCallStatement_strategy)
+def test_behaviouralprogrammm_functioncallstatement_FuncName_setter(instance):
     original = instance.FuncName
     instance.FuncName = original
     assert instance.FuncName == original
 
-@given(instance=behaviouralProgramMM::Loop_strategy)
+@given(instance=behaviouralProgramMM_Assignment_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::loop_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Loop)
-
-@given(instance=behaviouralProgramMM::Assignment_strategy)
-@settings(max_examples=50)
-def test_behaviouralprogrammm::assignment_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Assignment)
-
-@given(instance=behaviouralProgramMM::Assignment_strategy)
-def test_behaviouralprogrammm::assignment_VariableName_type(instance):
-    assert isinstance(instance.VariableName, str)
+def test_behaviouralprogrammm_assignment_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Assignment)
 
 
-@given(instance=behaviouralProgramMM::Assignment_strategy)
-def test_behaviouralprogrammm::assignment_VariableName_setter(instance):
+
+@given(instance=behaviouralProgramMM_Assignment_strategy)
+def test_behaviouralprogrammm_assignment_VariableName_setter(instance):
     original = instance.VariableName
     instance.VariableName = original
     assert instance.VariableName == original
 
-@given(instance=behaviouralProgramMM::Statement_strategy)
+@given(instance=behaviouralProgramMM_Statement_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::statement_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Statement)
+def test_behaviouralprogrammm_statement_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Statement)
 
-@given(instance=behaviouralProgramMM::TryCatch_strategy)
+@given(instance=behaviouralProgramMM_TryCatch_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::trycatch_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::TryCatch)
+def test_behaviouralprogrammm_trycatch_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_TryCatch)
 
-@given(instance=behaviouralProgramMM::Return_strategy)
+@given(instance=behaviouralProgramMM_Return_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::return_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Return)
+def test_behaviouralprogrammm_return_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Return)
 
-@given(instance=behaviouralProgramMM::Function_strategy)
+@given(instance=behaviouralProgramMM_Function_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::function_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Function)
-
-@given(instance=behaviouralProgramMM::Function_strategy)
-def test_behaviouralprogrammm::function_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_behaviouralprogrammm_function_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Function)
 
 
-@given(instance=behaviouralProgramMM::Function_strategy)
-def test_behaviouralprogrammm::function_Name_setter(instance):
+
+@given(instance=behaviouralProgramMM_Function_strategy)
+def test_behaviouralprogrammm_function_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=behaviouralProgramMM::Behaviour_strategy)
+@given(instance=behaviouralProgramMM_Behaviour_strategy)
 @settings(max_examples=50)
-def test_behaviouralprogrammm::behaviour_instantiation(instance):
-    assert isinstance(instance, behaviouralProgramMM::Behaviour)
+def test_behaviouralprogrammm_behaviour_instantiation(instance):
+    assert isinstance(instance, behaviouralProgramMM_Behaviour)

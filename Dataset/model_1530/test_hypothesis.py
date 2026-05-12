@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tP1::EM::State,
-    tP1::EM::Transition,
-    tP1::EM::StateMachine,
+from python_code import (
+    tP1_EM_State,
+    tP1_EM_Transition,
+    tP1_EM_StateMachine,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_tp1::em::state_is_not_abstract():
-    assert not inspect.isabstract(tP1::EM::State)
+def test_tp1_em_state_is_not_abstract():
+    assert not inspect.isabstract(tP1_EM_State)
 
 
-def test_tp1::em::state_constructor_exists():
-    assert callable(tP1::EM::State.__init__)
+def test_tp1_em_state_constructor_exists():
+    assert callable(tP1_EM_State.__init__)
 
 
-def test_tp1::em::state_constructor_args():
-    sig = inspect.signature(tP1::EM::State.__init__)
+def test_tp1_em_state_constructor_args():
+    sig = inspect.signature(tP1_EM_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tp1::em::state_has_name():
-    assert hasattr(tP1::EM::State, "name")
+def test_tp1_em_state_has_name():
+    assert hasattr(tP1_EM_State, "name")
     descriptor = None
-    for klass in tP1::EM::State.__mro__:
+    for klass in tP1_EM_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_tp1::em::state_has_name():
 
 
 
-def test_tp1::em::transition_is_not_abstract():
-    assert not inspect.isabstract(tP1::EM::Transition)
+def test_tp1_em_transition_is_not_abstract():
+    assert not inspect.isabstract(tP1_EM_Transition)
 
 
-def test_tp1::em::transition_constructor_exists():
-    assert callable(tP1::EM::Transition.__init__)
+def test_tp1_em_transition_constructor_exists():
+    assert callable(tP1_EM_Transition.__init__)
 
 
-def test_tp1::em::transition_constructor_args():
-    sig = inspect.signature(tP1::EM::Transition.__init__)
+def test_tp1_em_transition_constructor_args():
+    sig = inspect.signature(tP1_EM_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tp1::em::transition_has_name():
-    assert hasattr(tP1::EM::Transition, "name")
+def test_tp1_em_transition_has_name():
+    assert hasattr(tP1_EM_Transition, "name")
     descriptor = None
-    for klass in tP1::EM::Transition.__mro__:
+    for klass in tP1_EM_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_tp1::em::transition_has_name():
 
 
 
-def test_tp1::em::statemachine_is_not_abstract():
-    assert not inspect.isabstract(tP1::EM::StateMachine)
+def test_tp1_em_statemachine_is_not_abstract():
+    assert not inspect.isabstract(tP1_EM_StateMachine)
 
 
-def test_tp1::em::statemachine_constructor_exists():
-    assert callable(tP1::EM::StateMachine.__init__)
+def test_tp1_em_statemachine_constructor_exists():
+    assert callable(tP1_EM_StateMachine.__init__)
 
 
-def test_tp1::em::statemachine_constructor_args():
-    sig = inspect.signature(tP1::EM::StateMachine.__init__)
+def test_tp1_em_statemachine_constructor_args():
+    sig = inspect.signature(tP1_EM_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tp1::em::statemachine_has_name():
-    assert hasattr(tP1::EM::StateMachine, "name")
+def test_tp1_em_statemachine_has_name():
+    assert hasattr(tP1_EM_StateMachine, "name")
     descriptor = None
-    for klass in tP1::EM::StateMachine.__mro__:
+    for klass in tP1_EM_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tP1::EM::State_strategy = st.builds(
-    tP1::EM::State,
+tP1_EM_State_strategy = st.builds(
+    tP1_EM_State,
     name=
         safe_text
 )
-tP1::EM::Transition_strategy = st.builds(
-    tP1::EM::Transition,
+tP1_EM_Transition_strategy = st.builds(
+    tP1_EM_Transition,
     name=
         safe_text
 )
-tP1::EM::StateMachine_strategy = st.builds(
-    tP1::EM::StateMachine,
+tP1_EM_StateMachine_strategy = st.builds(
+    tP1_EM_StateMachine,
     name=
         safe_text
 )
 
-@given(instance=tP1::EM::State_strategy)
+@given(instance=tP1_EM_State_strategy)
 @settings(max_examples=50)
-def test_tp1::em::state_instantiation(instance):
-    assert isinstance(instance, tP1::EM::State)
-
-@given(instance=tP1::EM::State_strategy)
-def test_tp1::em::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tp1_em_state_instantiation(instance):
+    assert isinstance(instance, tP1_EM_State)
 
 
-@given(instance=tP1::EM::State_strategy)
-def test_tp1::em::state_name_setter(instance):
+
+@given(instance=tP1_EM_State_strategy)
+def test_tp1_em_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tP1::EM::Transition_strategy)
+@given(instance=tP1_EM_Transition_strategy)
 @settings(max_examples=50)
-def test_tp1::em::transition_instantiation(instance):
-    assert isinstance(instance, tP1::EM::Transition)
-
-@given(instance=tP1::EM::Transition_strategy)
-def test_tp1::em::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tp1_em_transition_instantiation(instance):
+    assert isinstance(instance, tP1_EM_Transition)
 
 
-@given(instance=tP1::EM::Transition_strategy)
-def test_tp1::em::transition_name_setter(instance):
+
+@given(instance=tP1_EM_Transition_strategy)
+def test_tp1_em_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tP1::EM::StateMachine_strategy)
+@given(instance=tP1_EM_StateMachine_strategy)
 @settings(max_examples=50)
-def test_tp1::em::statemachine_instantiation(instance):
-    assert isinstance(instance, tP1::EM::StateMachine)
-
-@given(instance=tP1::EM::StateMachine_strategy)
-def test_tp1::em::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tp1_em_statemachine_instantiation(instance):
+    assert isinstance(instance, tP1_EM_StateMachine)
 
 
-@given(instance=tP1::EM::StateMachine_strategy)
-def test_tp1::em::statemachine_name_setter(instance):
+
+@given(instance=tP1_EM_StateMachine_strategy)
+def test_tp1_em_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

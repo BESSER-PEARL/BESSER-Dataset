@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PathExp::NonReferencedClass,
+from python_code import (
+    PathExp_NonReferencedClass,
     PathExp,
-    PathExp::State,
+    PathExp_State,
     Transition,
     State,
     Element,
-    PathExp::Transition,
-    PathExp::PathExp,
-    PathExp::Element,
+    PathExp_Transition,
+    PathExp_PathExp,
+    PathExp_Element,
 )
 
 # =============================================================================
@@ -23,16 +23,16 @@ from classes import (
 
 
 
-def test_pathexp::nonreferencedclass_is_not_abstract():
-    assert not inspect.isabstract(PathExp::NonReferencedClass)
+def test_pathexp_nonreferencedclass_is_not_abstract():
+    assert not inspect.isabstract(PathExp_NonReferencedClass)
 
 
-def test_pathexp::nonreferencedclass_constructor_exists():
-    assert callable(PathExp::NonReferencedClass.__init__)
+def test_pathexp_nonreferencedclass_constructor_exists():
+    assert callable(PathExp_NonReferencedClass.__init__)
 
 
-def test_pathexp::nonreferencedclass_constructor_args():
-    sig = inspect.signature(PathExp::NonReferencedClass.__init__)
+def test_pathexp_nonreferencedclass_constructor_args():
+    sig = inspect.signature(PathExp_NonReferencedClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -51,16 +51,16 @@ def test_pathexp_constructor_args():
 
 
 
-def test_pathexp::state_is_not_abstract():
-    assert not inspect.isabstract(PathExp::State)
+def test_pathexp_state_is_not_abstract():
+    assert not inspect.isabstract(PathExp_State)
 
 
-def test_pathexp::state_constructor_exists():
-    assert callable(PathExp::State.__init__)
+def test_pathexp_state_constructor_exists():
+    assert callable(PathExp_State.__init__)
 
 
-def test_pathexp::state_constructor_args():
-    sig = inspect.signature(PathExp::State.__init__)
+def test_pathexp_state_constructor_args():
+    sig = inspect.signature(PathExp_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -107,51 +107,51 @@ def test_element_constructor_args():
 
 
 
-def test_pathexp::transition_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Transition)
+def test_pathexp_transition_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Transition)
 
 
-def test_pathexp::transition_constructor_exists():
-    assert callable(PathExp::Transition.__init__)
+def test_pathexp_transition_constructor_exists():
+    assert callable(PathExp_Transition.__init__)
 
 
-def test_pathexp::transition_constructor_args():
-    sig = inspect.signature(PathExp::Transition.__init__)
+def test_pathexp_transition_constructor_args():
+    sig = inspect.signature(PathExp_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pathexp::pathexp_is_not_abstract():
-    assert not inspect.isabstract(PathExp::PathExp)
+def test_pathexp_pathexp_is_not_abstract():
+    assert not inspect.isabstract(PathExp_PathExp)
 
 
-def test_pathexp::pathexp_constructor_exists():
-    assert callable(PathExp::PathExp.__init__)
+def test_pathexp_pathexp_constructor_exists():
+    assert callable(PathExp_PathExp.__init__)
 
 
-def test_pathexp::pathexp_constructor_args():
-    sig = inspect.signature(PathExp::PathExp.__init__)
+def test_pathexp_pathexp_constructor_args():
+    sig = inspect.signature(PathExp_PathExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pathexp::element_is_not_abstract():
-    assert not inspect.isabstract(PathExp::Element)
+def test_pathexp_element_is_not_abstract():
+    assert not inspect.isabstract(PathExp_Element)
 
 
-def test_pathexp::element_constructor_exists():
-    assert callable(PathExp::Element.__init__)
+def test_pathexp_element_constructor_exists():
+    assert callable(PathExp_Element.__init__)
 
 
-def test_pathexp::element_constructor_args():
-    sig = inspect.signature(PathExp::Element.__init__)
+def test_pathexp_element_constructor_args():
+    sig = inspect.signature(PathExp_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pathexp::element_has_name():
-    assert hasattr(PathExp::Element, "name")
+def test_pathexp_element_has_name():
+    assert hasattr(PathExp_Element, "name")
     descriptor = None
-    for klass in PathExp::Element.__mro__:
+    for klass in PathExp_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -169,14 +169,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PathExp::NonReferencedClass_strategy = st.builds(
-    PathExp::NonReferencedClass,
+PathExp_NonReferencedClass_strategy = st.builds(
+    PathExp_NonReferencedClass,
 )
 PathExp_strategy = st.builds(
     PathExp,
 )
-PathExp::State_strategy = st.builds(
-    PathExp::State,
+PathExp_State_strategy = st.builds(
+    PathExp_State,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -187,32 +187,32 @@ State_strategy = st.builds(
 Element_strategy = st.builds(
     Element,
 )
-PathExp::Transition_strategy = st.builds(
-    PathExp::Transition,
+PathExp_Transition_strategy = st.builds(
+    PathExp_Transition,
 )
-PathExp::PathExp_strategy = st.builds(
-    PathExp::PathExp,
+PathExp_PathExp_strategy = st.builds(
+    PathExp_PathExp,
 )
-PathExp::Element_strategy = st.builds(
-    PathExp::Element,
+PathExp_Element_strategy = st.builds(
+    PathExp_Element,
     name=
         safe_text
 )
 
-@given(instance=PathExp::NonReferencedClass_strategy)
+@given(instance=PathExp_NonReferencedClass_strategy)
 @settings(max_examples=50)
-def test_pathexp::nonreferencedclass_instantiation(instance):
-    assert isinstance(instance, PathExp::NonReferencedClass)
+def test_pathexp_nonreferencedclass_instantiation(instance):
+    assert isinstance(instance, PathExp_NonReferencedClass)
 
 @given(instance=PathExp_strategy)
 @settings(max_examples=50)
 def test_pathexp_instantiation(instance):
     assert isinstance(instance, PathExp)
 
-@given(instance=PathExp::State_strategy)
+@given(instance=PathExp_State_strategy)
 @settings(max_examples=50)
-def test_pathexp::state_instantiation(instance):
-    assert isinstance(instance, PathExp::State)
+def test_pathexp_state_instantiation(instance):
+    assert isinstance(instance, PathExp_State)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -229,28 +229,25 @@ def test_state_instantiation(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=PathExp::Transition_strategy)
+@given(instance=PathExp_Transition_strategy)
 @settings(max_examples=50)
-def test_pathexp::transition_instantiation(instance):
-    assert isinstance(instance, PathExp::Transition)
+def test_pathexp_transition_instantiation(instance):
+    assert isinstance(instance, PathExp_Transition)
 
-@given(instance=PathExp::PathExp_strategy)
+@given(instance=PathExp_PathExp_strategy)
 @settings(max_examples=50)
-def test_pathexp::pathexp_instantiation(instance):
-    assert isinstance(instance, PathExp::PathExp)
+def test_pathexp_pathexp_instantiation(instance):
+    assert isinstance(instance, PathExp_PathExp)
 
-@given(instance=PathExp::Element_strategy)
+@given(instance=PathExp_Element_strategy)
 @settings(max_examples=50)
-def test_pathexp::element_instantiation(instance):
-    assert isinstance(instance, PathExp::Element)
-
-@given(instance=PathExp::Element_strategy)
-def test_pathexp::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pathexp_element_instantiation(instance):
+    assert isinstance(instance, PathExp_Element)
 
 
-@given(instance=PathExp::Element_strategy)
-def test_pathexp::element_name_setter(instance):
+
+@given(instance=PathExp_Element_strategy)
+def test_pathexp_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

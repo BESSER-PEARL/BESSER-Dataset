@@ -3,38 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    flows::FlowElement,
-    AdHocSubProcess,
-    Activity,
-    bpmn2::DocumentRoot,
-    UserTask,
-    Transaction,
-    events::TimerEventDefinition,
-    events::ThrowEvent,
-    artifacts::TextAnnotation,
-    events::TerminateEventDefinition,
-    events::StartEvent,
-    Task,
-    SubProcess,
-    SubConversation,
-    choreographyactivities::SubChoreography,
-    StandardLoopCharacteristics,
-    events::SignalEventDefinition,
-    events::Signal,
-    ServiceTask,
-    ResourceParameter,
-    flows::SequenceFlow,
-    SendTask,
-    ScriptTask,
-    bpmn2::EObject,
-    ResourceParameterBinding,
-    ReceiveTask,
-    ResourceAssignmentExpression,
-    Resource,
-    Rendering,
+from python_code import (
     Relationship,
     Property,
     Process,
@@ -44,7 +15,7 @@ from classes import (
     ParticipantMultiplicity,
     ParticipantAssociation,
     Participant,
-    gateways::ParallelGateway,
+    gateways_ParallelGateway,
     OutputSet,
     Operation,
     MultiInstanceLoopCharacteristics,
@@ -56,22 +27,22 @@ from classes import (
     ItemDefinition,
     ManualTask,
     LoopCharacteristics,
-    events::LinkEventDefinition,
+    events_LinkEventDefinition,
     LaneSet,
     Lane,
     InputSet,
     InputOutputSpecification,
     InputOutputBinding,
-    events::IntermediateThrowEvent,
-    events::IntermediateCatchEvent,
+    events_IntermediateThrowEvent,
+    events_IntermediateCatchEvent,
     Interface,
-    gateways::InclusiveGateway,
+    gateways_InclusiveGateway,
     Import,
-    events::ImplicitThrowEvent,
+    events_ImplicitThrowEvent,
     ResourceRole,
     Performer,
     HumanPerformer,
-    artifacts::Group,
+    artifacts_Group,
     GlobalUserTask,
     GlobalTask,
     GlobalScriptTask,
@@ -79,21 +50,21 @@ from classes import (
     GlobalConversation,
     GlobalChoreographyTask,
     GlobalBusinessRuleTask,
-    gateways::Gateway,
+    gateways_Gateway,
     FormalExpression,
-    gateways::EventBasedGateway,
-    flows::FlowNode,
-    extension::ExtensionAttributeValue,
-    extension::Extension,
+    gateways_EventBasedGateway,
+    flows_FlowNode,
+    extension_ExtensionAttributeValue,
+    extension_Extension,
     Expression,
-    gateways::ExclusiveGateway,
+    gateways_ExclusiveGateway,
     EndPoint,
-    events::Event,
-    events::EscalationEventDefinition,
+    events_Event,
+    events_EscalationEventDefinition,
     Escalation,
-    events::ErrorEventDefinition,
+    events_ErrorEventDefinition,
     Error,
-    events::EndEvent,
+    events_EndEvent,
     Documentation,
     Definitions,
     DataStoreReference,
@@ -107,461 +78,74 @@ from classes import (
     DataInputAssociation,
     DataInput,
     ConversationAssociation,
-    correlations::CorrelationSubscription,
-    correlations::CorrelationPropertyRetrievalExpression,
-    correlations::CorrelationPropertyBinding,
-    correlations::CorrelationProperty,
-    correlations::CorrelationKey,
+    correlations_CorrelationSubscription,
+    correlations_CorrelationPropertyRetrievalExpression,
+    correlations_CorrelationPropertyBinding,
+    correlations_CorrelationProperty,
+    correlations_CorrelationKey,
     ConversationLink,
-    choreographyactivities::ChoreographyActivity,
+    choreographyactivities_ChoreographyActivity,
     Conversation,
-    events::ConditionalEventDefinition,
-    gateways::ComplexGateway,
+    events_ConditionalEventDefinition,
+    gateways_ComplexGateway,
     ComplexBehaviorDefinition,
-    events::CompensateEventDefinition,
-    choreographyactivities::ChoreographyTask,
-    events::EventDefinition,
+    events_CompensateEventDefinition,
+    choreographyactivities_ChoreographyTask,
+    events_EventDefinition,
     Collaboration,
     Choreography,
-    artifacts::CategoryValue,
-    artifacts::Category,
-    events::CatchEvent,
+    artifacts_CategoryValue,
+    artifacts_Category,
+    events_CatchEvent,
     RootElement,
-    events::CancelEventDefinition,
+    events_CancelEventDefinition,
     ConversationNode,
     CallConversation,
-    choreographyactivities::CallChoreography,
+    choreographyactivities_CallChoreography,
     CallActivity,
     CallableElement,
     Assignment,
     BusinessRuleTask,
-    events::BoundaryEvent,
+    events_BoundaryEvent,
     BaseElement,
     Auditing,
-    artifacts::Association,
-    bpmn2::EStringToStringMapEntry,
-    artifacts::Artifact,
+    artifacts_Association,
+    bpmn2_EStringToStringMapEntry,
+    artifacts_Artifact,
+    flows_FlowElement,
+    AdHocSubProcess,
+    Activity,
+    bpmn2_DocumentRoot,
+    UserTask,
+    Transaction,
+    events_TimerEventDefinition,
+    events_ThrowEvent,
+    artifacts_TextAnnotation,
+    events_TerminateEventDefinition,
+    events_StartEvent,
+    Task,
+    SubProcess,
+    SubConversation,
+    choreographyactivities_SubChoreography,
+    StandardLoopCharacteristics,
+    events_SignalEventDefinition,
+    events_Signal,
+    ServiceTask,
+    ResourceParameter,
+    flows_SequenceFlow,
+    SendTask,
+    ScriptTask,
+    bpmn2_EObject,
+    ResourceParameterBinding,
+    ReceiveTask,
+    ResourceAssignmentExpression,
+    Resource,
+    Rendering,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_flows::flowelement_is_not_abstract():
-    assert not inspect.isabstract(flows::FlowElement)
-
-
-def test_flows::flowelement_constructor_exists():
-    assert callable(flows::FlowElement.__init__)
-
-
-def test_flows::flowelement_constructor_args():
-    sig = inspect.signature(flows::FlowElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_adhocsubprocess_is_not_abstract():
-    assert not inspect.isabstract(AdHocSubProcess)
-
-
-def test_adhocsubprocess_constructor_exists():
-    assert callable(AdHocSubProcess.__init__)
-
-
-def test_adhocsubprocess_constructor_args():
-    sig = inspect.signature(AdHocSubProcess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activity_is_not_abstract():
-    assert not inspect.isabstract(Activity)
-
-
-def test_activity_constructor_exists():
-    assert callable(Activity.__init__)
-
-
-def test_activity_constructor_args():
-    sig = inspect.signature(Activity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bpmn2::documentroot_is_not_abstract():
-    assert not inspect.isabstract(bpmn2::DocumentRoot)
-
-
-def test_bpmn2::documentroot_constructor_exists():
-    assert callable(bpmn2::DocumentRoot.__init__)
-
-
-def test_bpmn2::documentroot_constructor_args():
-    sig = inspect.signature(bpmn2::DocumentRoot.__init__)
-    params = list(sig.parameters.keys())
-    assert "mixed" in params, "Missing parameter 'mixed'"
-
-def test_bpmn2::documentroot_has_mixed():
-    assert hasattr(bpmn2::DocumentRoot, "mixed")
-    descriptor = None
-    for klass in bpmn2::DocumentRoot.__mro__:
-        if "mixed" in klass.__dict__:
-            descriptor = klass.__dict__["mixed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_usertask_is_not_abstract():
-    assert not inspect.isabstract(UserTask)
-
-
-def test_usertask_constructor_exists():
-    assert callable(UserTask.__init__)
-
-
-def test_usertask_constructor_args():
-    sig = inspect.signature(UserTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transaction_is_not_abstract():
-    assert not inspect.isabstract(Transaction)
-
-
-def test_transaction_constructor_exists():
-    assert callable(Transaction.__init__)
-
-
-def test_transaction_constructor_args():
-    sig = inspect.signature(Transaction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::timereventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::TimerEventDefinition)
-
-
-def test_events::timereventdefinition_constructor_exists():
-    assert callable(events::TimerEventDefinition.__init__)
-
-
-def test_events::timereventdefinition_constructor_args():
-    sig = inspect.signature(events::TimerEventDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::throwevent_is_not_abstract():
-    assert not inspect.isabstract(events::ThrowEvent)
-
-
-def test_events::throwevent_constructor_exists():
-    assert callable(events::ThrowEvent.__init__)
-
-
-def test_events::throwevent_constructor_args():
-    sig = inspect.signature(events::ThrowEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_artifacts::textannotation_is_not_abstract():
-    assert not inspect.isabstract(artifacts::TextAnnotation)
-
-
-def test_artifacts::textannotation_constructor_exists():
-    assert callable(artifacts::TextAnnotation.__init__)
-
-
-def test_artifacts::textannotation_constructor_args():
-    sig = inspect.signature(artifacts::TextAnnotation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::terminateeventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::TerminateEventDefinition)
-
-
-def test_events::terminateeventdefinition_constructor_exists():
-    assert callable(events::TerminateEventDefinition.__init__)
-
-
-def test_events::terminateeventdefinition_constructor_args():
-    sig = inspect.signature(events::TerminateEventDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::startevent_is_not_abstract():
-    assert not inspect.isabstract(events::StartEvent)
-
-
-def test_events::startevent_constructor_exists():
-    assert callable(events::StartEvent.__init__)
-
-
-def test_events::startevent_constructor_args():
-    sig = inspect.signature(events::StartEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_task_is_not_abstract():
-    assert not inspect.isabstract(Task)
-
-
-def test_task_constructor_exists():
-    assert callable(Task.__init__)
-
-
-def test_task_constructor_args():
-    sig = inspect.signature(Task.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_subprocess_is_not_abstract():
-    assert not inspect.isabstract(SubProcess)
-
-
-def test_subprocess_constructor_exists():
-    assert callable(SubProcess.__init__)
-
-
-def test_subprocess_constructor_args():
-    sig = inspect.signature(SubProcess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_subconversation_is_not_abstract():
-    assert not inspect.isabstract(SubConversation)
-
-
-def test_subconversation_constructor_exists():
-    assert callable(SubConversation.__init__)
-
-
-def test_subconversation_constructor_args():
-    sig = inspect.signature(SubConversation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_choreographyactivities::subchoreography_is_not_abstract():
-    assert not inspect.isabstract(choreographyactivities::SubChoreography)
-
-
-def test_choreographyactivities::subchoreography_constructor_exists():
-    assert callable(choreographyactivities::SubChoreography.__init__)
-
-
-def test_choreographyactivities::subchoreography_constructor_args():
-    sig = inspect.signature(choreographyactivities::SubChoreography.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_standardloopcharacteristics_is_not_abstract():
-    assert not inspect.isabstract(StandardLoopCharacteristics)
-
-
-def test_standardloopcharacteristics_constructor_exists():
-    assert callable(StandardLoopCharacteristics.__init__)
-
-
-def test_standardloopcharacteristics_constructor_args():
-    sig = inspect.signature(StandardLoopCharacteristics.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::signaleventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::SignalEventDefinition)
-
-
-def test_events::signaleventdefinition_constructor_exists():
-    assert callable(events::SignalEventDefinition.__init__)
-
-
-def test_events::signaleventdefinition_constructor_args():
-    sig = inspect.signature(events::SignalEventDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_events::signal_is_not_abstract():
-    assert not inspect.isabstract(events::Signal)
-
-
-def test_events::signal_constructor_exists():
-    assert callable(events::Signal.__init__)
-
-
-def test_events::signal_constructor_args():
-    sig = inspect.signature(events::Signal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_servicetask_is_not_abstract():
-    assert not inspect.isabstract(ServiceTask)
-
-
-def test_servicetask_constructor_exists():
-    assert callable(ServiceTask.__init__)
-
-
-def test_servicetask_constructor_args():
-    sig = inspect.signature(ServiceTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_resourceparameter_is_not_abstract():
-    assert not inspect.isabstract(ResourceParameter)
-
-
-def test_resourceparameter_constructor_exists():
-    assert callable(ResourceParameter.__init__)
-
-
-def test_resourceparameter_constructor_args():
-    sig = inspect.signature(ResourceParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_flows::sequenceflow_is_not_abstract():
-    assert not inspect.isabstract(flows::SequenceFlow)
-
-
-def test_flows::sequenceflow_constructor_exists():
-    assert callable(flows::SequenceFlow.__init__)
-
-
-def test_flows::sequenceflow_constructor_args():
-    sig = inspect.signature(flows::SequenceFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sendtask_is_not_abstract():
-    assert not inspect.isabstract(SendTask)
-
-
-def test_sendtask_constructor_exists():
-    assert callable(SendTask.__init__)
-
-
-def test_sendtask_constructor_args():
-    sig = inspect.signature(SendTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_scripttask_is_not_abstract():
-    assert not inspect.isabstract(ScriptTask)
-
-
-def test_scripttask_constructor_exists():
-    assert callable(ScriptTask.__init__)
-
-
-def test_scripttask_constructor_args():
-    sig = inspect.signature(ScriptTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bpmn2::eobject_is_not_abstract():
-    assert not inspect.isabstract(bpmn2::EObject)
-
-
-def test_bpmn2::eobject_constructor_exists():
-    assert callable(bpmn2::EObject.__init__)
-
-
-def test_bpmn2::eobject_constructor_args():
-    sig = inspect.signature(bpmn2::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_resourceparameterbinding_is_not_abstract():
-    assert not inspect.isabstract(ResourceParameterBinding)
-
-
-def test_resourceparameterbinding_constructor_exists():
-    assert callable(ResourceParameterBinding.__init__)
-
-
-def test_resourceparameterbinding_constructor_args():
-    sig = inspect.signature(ResourceParameterBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_receivetask_is_not_abstract():
-    assert not inspect.isabstract(ReceiveTask)
-
-
-def test_receivetask_constructor_exists():
-    assert callable(ReceiveTask.__init__)
-
-
-def test_receivetask_constructor_args():
-    sig = inspect.signature(ReceiveTask.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_resourceassignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(ResourceAssignmentExpression)
-
-
-def test_resourceassignmentexpression_constructor_exists():
-    assert callable(ResourceAssignmentExpression.__init__)
-
-
-def test_resourceassignmentexpression_constructor_args():
-    sig = inspect.signature(ResourceAssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_resource_is_not_abstract():
-    assert not inspect.isabstract(Resource)
-
-
-def test_resource_constructor_exists():
-    assert callable(Resource.__init__)
-
-
-def test_resource_constructor_args():
-    sig = inspect.signature(Resource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rendering_is_not_abstract():
-    assert not inspect.isabstract(Rendering)
-
-
-def test_rendering_constructor_exists():
-    assert callable(Rendering.__init__)
-
-
-def test_rendering_constructor_args():
-    sig = inspect.signature(Rendering.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -691,16 +275,16 @@ def test_participant_constructor_args():
 
 
 
-def test_gateways::parallelgateway_is_not_abstract():
-    assert not inspect.isabstract(gateways::ParallelGateway)
+def test_gateways_parallelgateway_is_not_abstract():
+    assert not inspect.isabstract(gateways_ParallelGateway)
 
 
-def test_gateways::parallelgateway_constructor_exists():
-    assert callable(gateways::ParallelGateway.__init__)
+def test_gateways_parallelgateway_constructor_exists():
+    assert callable(gateways_ParallelGateway.__init__)
 
 
-def test_gateways::parallelgateway_constructor_args():
-    sig = inspect.signature(gateways::ParallelGateway.__init__)
+def test_gateways_parallelgateway_constructor_args():
+    sig = inspect.signature(gateways_ParallelGateway.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -859,16 +443,16 @@ def test_loopcharacteristics_constructor_args():
 
 
 
-def test_events::linkeventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::LinkEventDefinition)
+def test_events_linkeventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_LinkEventDefinition)
 
 
-def test_events::linkeventdefinition_constructor_exists():
-    assert callable(events::LinkEventDefinition.__init__)
+def test_events_linkeventdefinition_constructor_exists():
+    assert callable(events_LinkEventDefinition.__init__)
 
 
-def test_events::linkeventdefinition_constructor_args():
-    sig = inspect.signature(events::LinkEventDefinition.__init__)
+def test_events_linkeventdefinition_constructor_args():
+    sig = inspect.signature(events_LinkEventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -943,30 +527,30 @@ def test_inputoutputbinding_constructor_args():
 
 
 
-def test_events::intermediatethrowevent_is_not_abstract():
-    assert not inspect.isabstract(events::IntermediateThrowEvent)
+def test_events_intermediatethrowevent_is_not_abstract():
+    assert not inspect.isabstract(events_IntermediateThrowEvent)
 
 
-def test_events::intermediatethrowevent_constructor_exists():
-    assert callable(events::IntermediateThrowEvent.__init__)
+def test_events_intermediatethrowevent_constructor_exists():
+    assert callable(events_IntermediateThrowEvent.__init__)
 
 
-def test_events::intermediatethrowevent_constructor_args():
-    sig = inspect.signature(events::IntermediateThrowEvent.__init__)
+def test_events_intermediatethrowevent_constructor_args():
+    sig = inspect.signature(events_IntermediateThrowEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::intermediatecatchevent_is_not_abstract():
-    assert not inspect.isabstract(events::IntermediateCatchEvent)
+def test_events_intermediatecatchevent_is_not_abstract():
+    assert not inspect.isabstract(events_IntermediateCatchEvent)
 
 
-def test_events::intermediatecatchevent_constructor_exists():
-    assert callable(events::IntermediateCatchEvent.__init__)
+def test_events_intermediatecatchevent_constructor_exists():
+    assert callable(events_IntermediateCatchEvent.__init__)
 
 
-def test_events::intermediatecatchevent_constructor_args():
-    sig = inspect.signature(events::IntermediateCatchEvent.__init__)
+def test_events_intermediatecatchevent_constructor_args():
+    sig = inspect.signature(events_IntermediateCatchEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -985,16 +569,16 @@ def test_interface_constructor_args():
 
 
 
-def test_gateways::inclusivegateway_is_not_abstract():
-    assert not inspect.isabstract(gateways::InclusiveGateway)
+def test_gateways_inclusivegateway_is_not_abstract():
+    assert not inspect.isabstract(gateways_InclusiveGateway)
 
 
-def test_gateways::inclusivegateway_constructor_exists():
-    assert callable(gateways::InclusiveGateway.__init__)
+def test_gateways_inclusivegateway_constructor_exists():
+    assert callable(gateways_InclusiveGateway.__init__)
 
 
-def test_gateways::inclusivegateway_constructor_args():
-    sig = inspect.signature(gateways::InclusiveGateway.__init__)
+def test_gateways_inclusivegateway_constructor_args():
+    sig = inspect.signature(gateways_InclusiveGateway.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1013,16 +597,16 @@ def test_import_constructor_args():
 
 
 
-def test_events::implicitthrowevent_is_not_abstract():
-    assert not inspect.isabstract(events::ImplicitThrowEvent)
+def test_events_implicitthrowevent_is_not_abstract():
+    assert not inspect.isabstract(events_ImplicitThrowEvent)
 
 
-def test_events::implicitthrowevent_constructor_exists():
-    assert callable(events::ImplicitThrowEvent.__init__)
+def test_events_implicitthrowevent_constructor_exists():
+    assert callable(events_ImplicitThrowEvent.__init__)
 
 
-def test_events::implicitthrowevent_constructor_args():
-    sig = inspect.signature(events::ImplicitThrowEvent.__init__)
+def test_events_implicitthrowevent_constructor_args():
+    sig = inspect.signature(events_ImplicitThrowEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1069,16 +653,16 @@ def test_humanperformer_constructor_args():
 
 
 
-def test_artifacts::group_is_not_abstract():
-    assert not inspect.isabstract(artifacts::Group)
+def test_artifacts_group_is_not_abstract():
+    assert not inspect.isabstract(artifacts_Group)
 
 
-def test_artifacts::group_constructor_exists():
-    assert callable(artifacts::Group.__init__)
+def test_artifacts_group_constructor_exists():
+    assert callable(artifacts_Group.__init__)
 
 
-def test_artifacts::group_constructor_args():
-    sig = inspect.signature(artifacts::Group.__init__)
+def test_artifacts_group_constructor_args():
+    sig = inspect.signature(artifacts_Group.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1181,16 +765,16 @@ def test_globalbusinessruletask_constructor_args():
 
 
 
-def test_gateways::gateway_is_not_abstract():
-    assert not inspect.isabstract(gateways::Gateway)
+def test_gateways_gateway_is_not_abstract():
+    assert not inspect.isabstract(gateways_Gateway)
 
 
-def test_gateways::gateway_constructor_exists():
-    assert callable(gateways::Gateway.__init__)
+def test_gateways_gateway_constructor_exists():
+    assert callable(gateways_Gateway.__init__)
 
 
-def test_gateways::gateway_constructor_args():
-    sig = inspect.signature(gateways::Gateway.__init__)
+def test_gateways_gateway_constructor_args():
+    sig = inspect.signature(gateways_Gateway.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1209,58 +793,58 @@ def test_formalexpression_constructor_args():
 
 
 
-def test_gateways::eventbasedgateway_is_not_abstract():
-    assert not inspect.isabstract(gateways::EventBasedGateway)
+def test_gateways_eventbasedgateway_is_not_abstract():
+    assert not inspect.isabstract(gateways_EventBasedGateway)
 
 
-def test_gateways::eventbasedgateway_constructor_exists():
-    assert callable(gateways::EventBasedGateway.__init__)
+def test_gateways_eventbasedgateway_constructor_exists():
+    assert callable(gateways_EventBasedGateway.__init__)
 
 
-def test_gateways::eventbasedgateway_constructor_args():
-    sig = inspect.signature(gateways::EventBasedGateway.__init__)
+def test_gateways_eventbasedgateway_constructor_args():
+    sig = inspect.signature(gateways_EventBasedGateway.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_flows::flownode_is_not_abstract():
-    assert not inspect.isabstract(flows::FlowNode)
+def test_flows_flownode_is_not_abstract():
+    assert not inspect.isabstract(flows_FlowNode)
 
 
-def test_flows::flownode_constructor_exists():
-    assert callable(flows::FlowNode.__init__)
+def test_flows_flownode_constructor_exists():
+    assert callable(flows_FlowNode.__init__)
 
 
-def test_flows::flownode_constructor_args():
-    sig = inspect.signature(flows::FlowNode.__init__)
+def test_flows_flownode_constructor_args():
+    sig = inspect.signature(flows_FlowNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extension::extensionattributevalue_is_not_abstract():
-    assert not inspect.isabstract(extension::ExtensionAttributeValue)
+def test_extension_extensionattributevalue_is_not_abstract():
+    assert not inspect.isabstract(extension_ExtensionAttributeValue)
 
 
-def test_extension::extensionattributevalue_constructor_exists():
-    assert callable(extension::ExtensionAttributeValue.__init__)
+def test_extension_extensionattributevalue_constructor_exists():
+    assert callable(extension_ExtensionAttributeValue.__init__)
 
 
-def test_extension::extensionattributevalue_constructor_args():
-    sig = inspect.signature(extension::ExtensionAttributeValue.__init__)
+def test_extension_extensionattributevalue_constructor_args():
+    sig = inspect.signature(extension_ExtensionAttributeValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extension::extension_is_not_abstract():
-    assert not inspect.isabstract(extension::Extension)
+def test_extension_extension_is_not_abstract():
+    assert not inspect.isabstract(extension_Extension)
 
 
-def test_extension::extension_constructor_exists():
-    assert callable(extension::Extension.__init__)
+def test_extension_extension_constructor_exists():
+    assert callable(extension_Extension.__init__)
 
 
-def test_extension::extension_constructor_args():
-    sig = inspect.signature(extension::Extension.__init__)
+def test_extension_extension_constructor_args():
+    sig = inspect.signature(extension_Extension.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1279,16 +863,16 @@ def test_expression_constructor_args():
 
 
 
-def test_gateways::exclusivegateway_is_not_abstract():
-    assert not inspect.isabstract(gateways::ExclusiveGateway)
+def test_gateways_exclusivegateway_is_not_abstract():
+    assert not inspect.isabstract(gateways_ExclusiveGateway)
 
 
-def test_gateways::exclusivegateway_constructor_exists():
-    assert callable(gateways::ExclusiveGateway.__init__)
+def test_gateways_exclusivegateway_constructor_exists():
+    assert callable(gateways_ExclusiveGateway.__init__)
 
 
-def test_gateways::exclusivegateway_constructor_args():
-    sig = inspect.signature(gateways::ExclusiveGateway.__init__)
+def test_gateways_exclusivegateway_constructor_args():
+    sig = inspect.signature(gateways_ExclusiveGateway.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1307,30 +891,30 @@ def test_endpoint_constructor_args():
 
 
 
-def test_events::event_is_not_abstract():
-    assert not inspect.isabstract(events::Event)
+def test_events_event_is_not_abstract():
+    assert not inspect.isabstract(events_Event)
 
 
-def test_events::event_constructor_exists():
-    assert callable(events::Event.__init__)
+def test_events_event_constructor_exists():
+    assert callable(events_Event.__init__)
 
 
-def test_events::event_constructor_args():
-    sig = inspect.signature(events::Event.__init__)
+def test_events_event_constructor_args():
+    sig = inspect.signature(events_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::escalationeventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::EscalationEventDefinition)
+def test_events_escalationeventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_EscalationEventDefinition)
 
 
-def test_events::escalationeventdefinition_constructor_exists():
-    assert callable(events::EscalationEventDefinition.__init__)
+def test_events_escalationeventdefinition_constructor_exists():
+    assert callable(events_EscalationEventDefinition.__init__)
 
 
-def test_events::escalationeventdefinition_constructor_args():
-    sig = inspect.signature(events::EscalationEventDefinition.__init__)
+def test_events_escalationeventdefinition_constructor_args():
+    sig = inspect.signature(events_EscalationEventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1349,16 +933,16 @@ def test_escalation_constructor_args():
 
 
 
-def test_events::erroreventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::ErrorEventDefinition)
+def test_events_erroreventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_ErrorEventDefinition)
 
 
-def test_events::erroreventdefinition_constructor_exists():
-    assert callable(events::ErrorEventDefinition.__init__)
+def test_events_erroreventdefinition_constructor_exists():
+    assert callable(events_ErrorEventDefinition.__init__)
 
 
-def test_events::erroreventdefinition_constructor_args():
-    sig = inspect.signature(events::ErrorEventDefinition.__init__)
+def test_events_erroreventdefinition_constructor_args():
+    sig = inspect.signature(events_ErrorEventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1377,16 +961,16 @@ def test_error_constructor_args():
 
 
 
-def test_events::endevent_is_not_abstract():
-    assert not inspect.isabstract(events::EndEvent)
+def test_events_endevent_is_not_abstract():
+    assert not inspect.isabstract(events_EndEvent)
 
 
-def test_events::endevent_constructor_exists():
-    assert callable(events::EndEvent.__init__)
+def test_events_endevent_constructor_exists():
+    assert callable(events_EndEvent.__init__)
 
 
-def test_events::endevent_constructor_args():
-    sig = inspect.signature(events::EndEvent.__init__)
+def test_events_endevent_constructor_args():
+    sig = inspect.signature(events_EndEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1573,72 +1157,72 @@ def test_conversationassociation_constructor_args():
 
 
 
-def test_correlations::correlationsubscription_is_not_abstract():
-    assert not inspect.isabstract(correlations::CorrelationSubscription)
+def test_correlations_correlationsubscription_is_not_abstract():
+    assert not inspect.isabstract(correlations_CorrelationSubscription)
 
 
-def test_correlations::correlationsubscription_constructor_exists():
-    assert callable(correlations::CorrelationSubscription.__init__)
+def test_correlations_correlationsubscription_constructor_exists():
+    assert callable(correlations_CorrelationSubscription.__init__)
 
 
-def test_correlations::correlationsubscription_constructor_args():
-    sig = inspect.signature(correlations::CorrelationSubscription.__init__)
+def test_correlations_correlationsubscription_constructor_args():
+    sig = inspect.signature(correlations_CorrelationSubscription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_correlations::correlationpropertyretrievalexpression_is_not_abstract():
-    assert not inspect.isabstract(correlations::CorrelationPropertyRetrievalExpression)
+def test_correlations_correlationpropertyretrievalexpression_is_not_abstract():
+    assert not inspect.isabstract(correlations_CorrelationPropertyRetrievalExpression)
 
 
-def test_correlations::correlationpropertyretrievalexpression_constructor_exists():
-    assert callable(correlations::CorrelationPropertyRetrievalExpression.__init__)
+def test_correlations_correlationpropertyretrievalexpression_constructor_exists():
+    assert callable(correlations_CorrelationPropertyRetrievalExpression.__init__)
 
 
-def test_correlations::correlationpropertyretrievalexpression_constructor_args():
-    sig = inspect.signature(correlations::CorrelationPropertyRetrievalExpression.__init__)
+def test_correlations_correlationpropertyretrievalexpression_constructor_args():
+    sig = inspect.signature(correlations_CorrelationPropertyRetrievalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_correlations::correlationpropertybinding_is_not_abstract():
-    assert not inspect.isabstract(correlations::CorrelationPropertyBinding)
+def test_correlations_correlationpropertybinding_is_not_abstract():
+    assert not inspect.isabstract(correlations_CorrelationPropertyBinding)
 
 
-def test_correlations::correlationpropertybinding_constructor_exists():
-    assert callable(correlations::CorrelationPropertyBinding.__init__)
+def test_correlations_correlationpropertybinding_constructor_exists():
+    assert callable(correlations_CorrelationPropertyBinding.__init__)
 
 
-def test_correlations::correlationpropertybinding_constructor_args():
-    sig = inspect.signature(correlations::CorrelationPropertyBinding.__init__)
+def test_correlations_correlationpropertybinding_constructor_args():
+    sig = inspect.signature(correlations_CorrelationPropertyBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_correlations::correlationproperty_is_not_abstract():
-    assert not inspect.isabstract(correlations::CorrelationProperty)
+def test_correlations_correlationproperty_is_not_abstract():
+    assert not inspect.isabstract(correlations_CorrelationProperty)
 
 
-def test_correlations::correlationproperty_constructor_exists():
-    assert callable(correlations::CorrelationProperty.__init__)
+def test_correlations_correlationproperty_constructor_exists():
+    assert callable(correlations_CorrelationProperty.__init__)
 
 
-def test_correlations::correlationproperty_constructor_args():
-    sig = inspect.signature(correlations::CorrelationProperty.__init__)
+def test_correlations_correlationproperty_constructor_args():
+    sig = inspect.signature(correlations_CorrelationProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_correlations::correlationkey_is_not_abstract():
-    assert not inspect.isabstract(correlations::CorrelationKey)
+def test_correlations_correlationkey_is_not_abstract():
+    assert not inspect.isabstract(correlations_CorrelationKey)
 
 
-def test_correlations::correlationkey_constructor_exists():
-    assert callable(correlations::CorrelationKey.__init__)
+def test_correlations_correlationkey_constructor_exists():
+    assert callable(correlations_CorrelationKey.__init__)
 
 
-def test_correlations::correlationkey_constructor_args():
-    sig = inspect.signature(correlations::CorrelationKey.__init__)
+def test_correlations_correlationkey_constructor_args():
+    sig = inspect.signature(correlations_CorrelationKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1657,16 +1241,16 @@ def test_conversationlink_constructor_args():
 
 
 
-def test_choreographyactivities::choreographyactivity_is_not_abstract():
-    assert not inspect.isabstract(choreographyactivities::ChoreographyActivity)
+def test_choreographyactivities_choreographyactivity_is_not_abstract():
+    assert not inspect.isabstract(choreographyactivities_ChoreographyActivity)
 
 
-def test_choreographyactivities::choreographyactivity_constructor_exists():
-    assert callable(choreographyactivities::ChoreographyActivity.__init__)
+def test_choreographyactivities_choreographyactivity_constructor_exists():
+    assert callable(choreographyactivities_ChoreographyActivity.__init__)
 
 
-def test_choreographyactivities::choreographyactivity_constructor_args():
-    sig = inspect.signature(choreographyactivities::ChoreographyActivity.__init__)
+def test_choreographyactivities_choreographyactivity_constructor_args():
+    sig = inspect.signature(choreographyactivities_ChoreographyActivity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1685,30 +1269,30 @@ def test_conversation_constructor_args():
 
 
 
-def test_events::conditionaleventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::ConditionalEventDefinition)
+def test_events_conditionaleventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_ConditionalEventDefinition)
 
 
-def test_events::conditionaleventdefinition_constructor_exists():
-    assert callable(events::ConditionalEventDefinition.__init__)
+def test_events_conditionaleventdefinition_constructor_exists():
+    assert callable(events_ConditionalEventDefinition.__init__)
 
 
-def test_events::conditionaleventdefinition_constructor_args():
-    sig = inspect.signature(events::ConditionalEventDefinition.__init__)
+def test_events_conditionaleventdefinition_constructor_args():
+    sig = inspect.signature(events_ConditionalEventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gateways::complexgateway_is_not_abstract():
-    assert not inspect.isabstract(gateways::ComplexGateway)
+def test_gateways_complexgateway_is_not_abstract():
+    assert not inspect.isabstract(gateways_ComplexGateway)
 
 
-def test_gateways::complexgateway_constructor_exists():
-    assert callable(gateways::ComplexGateway.__init__)
+def test_gateways_complexgateway_constructor_exists():
+    assert callable(gateways_ComplexGateway.__init__)
 
 
-def test_gateways::complexgateway_constructor_args():
-    sig = inspect.signature(gateways::ComplexGateway.__init__)
+def test_gateways_complexgateway_constructor_args():
+    sig = inspect.signature(gateways_ComplexGateway.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1727,44 +1311,44 @@ def test_complexbehaviordefinition_constructor_args():
 
 
 
-def test_events::compensateeventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::CompensateEventDefinition)
+def test_events_compensateeventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_CompensateEventDefinition)
 
 
-def test_events::compensateeventdefinition_constructor_exists():
-    assert callable(events::CompensateEventDefinition.__init__)
+def test_events_compensateeventdefinition_constructor_exists():
+    assert callable(events_CompensateEventDefinition.__init__)
 
 
-def test_events::compensateeventdefinition_constructor_args():
-    sig = inspect.signature(events::CompensateEventDefinition.__init__)
+def test_events_compensateeventdefinition_constructor_args():
+    sig = inspect.signature(events_CompensateEventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_choreographyactivities::choreographytask_is_not_abstract():
-    assert not inspect.isabstract(choreographyactivities::ChoreographyTask)
+def test_choreographyactivities_choreographytask_is_not_abstract():
+    assert not inspect.isabstract(choreographyactivities_ChoreographyTask)
 
 
-def test_choreographyactivities::choreographytask_constructor_exists():
-    assert callable(choreographyactivities::ChoreographyTask.__init__)
+def test_choreographyactivities_choreographytask_constructor_exists():
+    assert callable(choreographyactivities_ChoreographyTask.__init__)
 
 
-def test_choreographyactivities::choreographytask_constructor_args():
-    sig = inspect.signature(choreographyactivities::ChoreographyTask.__init__)
+def test_choreographyactivities_choreographytask_constructor_args():
+    sig = inspect.signature(choreographyactivities_ChoreographyTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::eventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::EventDefinition)
+def test_events_eventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_EventDefinition)
 
 
-def test_events::eventdefinition_constructor_exists():
-    assert callable(events::EventDefinition.__init__)
+def test_events_eventdefinition_constructor_exists():
+    assert callable(events_EventDefinition.__init__)
 
 
-def test_events::eventdefinition_constructor_args():
-    sig = inspect.signature(events::EventDefinition.__init__)
+def test_events_eventdefinition_constructor_args():
+    sig = inspect.signature(events_EventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1797,44 +1381,44 @@ def test_choreography_constructor_args():
 
 
 
-def test_artifacts::categoryvalue_is_not_abstract():
-    assert not inspect.isabstract(artifacts::CategoryValue)
+def test_artifacts_categoryvalue_is_not_abstract():
+    assert not inspect.isabstract(artifacts_CategoryValue)
 
 
-def test_artifacts::categoryvalue_constructor_exists():
-    assert callable(artifacts::CategoryValue.__init__)
+def test_artifacts_categoryvalue_constructor_exists():
+    assert callable(artifacts_CategoryValue.__init__)
 
 
-def test_artifacts::categoryvalue_constructor_args():
-    sig = inspect.signature(artifacts::CategoryValue.__init__)
+def test_artifacts_categoryvalue_constructor_args():
+    sig = inspect.signature(artifacts_CategoryValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_artifacts::category_is_not_abstract():
-    assert not inspect.isabstract(artifacts::Category)
+def test_artifacts_category_is_not_abstract():
+    assert not inspect.isabstract(artifacts_Category)
 
 
-def test_artifacts::category_constructor_exists():
-    assert callable(artifacts::Category.__init__)
+def test_artifacts_category_constructor_exists():
+    assert callable(artifacts_Category.__init__)
 
 
-def test_artifacts::category_constructor_args():
-    sig = inspect.signature(artifacts::Category.__init__)
+def test_artifacts_category_constructor_args():
+    sig = inspect.signature(artifacts_Category.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_events::catchevent_is_not_abstract():
-    assert not inspect.isabstract(events::CatchEvent)
+def test_events_catchevent_is_not_abstract():
+    assert not inspect.isabstract(events_CatchEvent)
 
 
-def test_events::catchevent_constructor_exists():
-    assert callable(events::CatchEvent.__init__)
+def test_events_catchevent_constructor_exists():
+    assert callable(events_CatchEvent.__init__)
 
 
-def test_events::catchevent_constructor_args():
-    sig = inspect.signature(events::CatchEvent.__init__)
+def test_events_catchevent_constructor_args():
+    sig = inspect.signature(events_CatchEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1853,16 +1437,16 @@ def test_rootelement_constructor_args():
 
 
 
-def test_events::canceleventdefinition_is_not_abstract():
-    assert not inspect.isabstract(events::CancelEventDefinition)
+def test_events_canceleventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_CancelEventDefinition)
 
 
-def test_events::canceleventdefinition_constructor_exists():
-    assert callable(events::CancelEventDefinition.__init__)
+def test_events_canceleventdefinition_constructor_exists():
+    assert callable(events_CancelEventDefinition.__init__)
 
 
-def test_events::canceleventdefinition_constructor_args():
-    sig = inspect.signature(events::CancelEventDefinition.__init__)
+def test_events_canceleventdefinition_constructor_args():
+    sig = inspect.signature(events_CancelEventDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1895,16 +1479,16 @@ def test_callconversation_constructor_args():
 
 
 
-def test_choreographyactivities::callchoreography_is_not_abstract():
-    assert not inspect.isabstract(choreographyactivities::CallChoreography)
+def test_choreographyactivities_callchoreography_is_not_abstract():
+    assert not inspect.isabstract(choreographyactivities_CallChoreography)
 
 
-def test_choreographyactivities::callchoreography_constructor_exists():
-    assert callable(choreographyactivities::CallChoreography.__init__)
+def test_choreographyactivities_callchoreography_constructor_exists():
+    assert callable(choreographyactivities_CallChoreography.__init__)
 
 
-def test_choreographyactivities::callchoreography_constructor_args():
-    sig = inspect.signature(choreographyactivities::CallChoreography.__init__)
+def test_choreographyactivities_callchoreography_constructor_args():
+    sig = inspect.signature(choreographyactivities_CallChoreography.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1965,16 +1549,16 @@ def test_businessruletask_constructor_args():
 
 
 
-def test_events::boundaryevent_is_not_abstract():
-    assert not inspect.isabstract(events::BoundaryEvent)
+def test_events_boundaryevent_is_not_abstract():
+    assert not inspect.isabstract(events_BoundaryEvent)
 
 
-def test_events::boundaryevent_constructor_exists():
-    assert callable(events::BoundaryEvent.__init__)
+def test_events_boundaryevent_constructor_exists():
+    assert callable(events_BoundaryEvent.__init__)
 
 
-def test_events::boundaryevent_constructor_args():
-    sig = inspect.signature(events::BoundaryEvent.__init__)
+def test_events_boundaryevent_constructor_args():
+    sig = inspect.signature(events_BoundaryEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2007,44 +1591,460 @@ def test_auditing_constructor_args():
 
 
 
-def test_artifacts::association_is_not_abstract():
-    assert not inspect.isabstract(artifacts::Association)
+def test_artifacts_association_is_not_abstract():
+    assert not inspect.isabstract(artifacts_Association)
 
 
-def test_artifacts::association_constructor_exists():
-    assert callable(artifacts::Association.__init__)
+def test_artifacts_association_constructor_exists():
+    assert callable(artifacts_Association.__init__)
 
 
-def test_artifacts::association_constructor_args():
-    sig = inspect.signature(artifacts::Association.__init__)
+def test_artifacts_association_constructor_args():
+    sig = inspect.signature(artifacts_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bpmn2::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(bpmn2::EStringToStringMapEntry)
+def test_bpmn2_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(bpmn2_EStringToStringMapEntry)
 
 
-def test_bpmn2::estringtostringmapentry_constructor_exists():
-    assert callable(bpmn2::EStringToStringMapEntry.__init__)
+def test_bpmn2_estringtostringmapentry_constructor_exists():
+    assert callable(bpmn2_EStringToStringMapEntry.__init__)
 
 
-def test_bpmn2::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(bpmn2::EStringToStringMapEntry.__init__)
+def test_bpmn2_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(bpmn2_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_artifacts::artifact_is_not_abstract():
-    assert not inspect.isabstract(artifacts::Artifact)
+def test_artifacts_artifact_is_not_abstract():
+    assert not inspect.isabstract(artifacts_Artifact)
 
 
-def test_artifacts::artifact_constructor_exists():
-    assert callable(artifacts::Artifact.__init__)
+def test_artifacts_artifact_constructor_exists():
+    assert callable(artifacts_Artifact.__init__)
 
 
-def test_artifacts::artifact_constructor_args():
-    sig = inspect.signature(artifacts::Artifact.__init__)
+def test_artifacts_artifact_constructor_args():
+    sig = inspect.signature(artifacts_Artifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flows_flowelement_is_not_abstract():
+    assert not inspect.isabstract(flows_FlowElement)
+
+
+def test_flows_flowelement_constructor_exists():
+    assert callable(flows_FlowElement.__init__)
+
+
+def test_flows_flowelement_constructor_args():
+    sig = inspect.signature(flows_FlowElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_adhocsubprocess_is_not_abstract():
+    assert not inspect.isabstract(AdHocSubProcess)
+
+
+def test_adhocsubprocess_constructor_exists():
+    assert callable(AdHocSubProcess.__init__)
+
+
+def test_adhocsubprocess_constructor_args():
+    sig = inspect.signature(AdHocSubProcess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activity_is_not_abstract():
+    assert not inspect.isabstract(Activity)
+
+
+def test_activity_constructor_exists():
+    assert callable(Activity.__init__)
+
+
+def test_activity_constructor_args():
+    sig = inspect.signature(Activity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bpmn2_documentroot_is_not_abstract():
+    assert not inspect.isabstract(bpmn2_DocumentRoot)
+
+
+def test_bpmn2_documentroot_constructor_exists():
+    assert callable(bpmn2_DocumentRoot.__init__)
+
+
+def test_bpmn2_documentroot_constructor_args():
+    sig = inspect.signature(bpmn2_DocumentRoot.__init__)
+    params = list(sig.parameters.keys())
+    assert "mixed" in params, "Missing parameter 'mixed'"
+
+def test_bpmn2_documentroot_has_mixed():
+    assert hasattr(bpmn2_DocumentRoot, "mixed")
+    descriptor = None
+    for klass in bpmn2_DocumentRoot.__mro__:
+        if "mixed" in klass.__dict__:
+            descriptor = klass.__dict__["mixed"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_usertask_is_not_abstract():
+    assert not inspect.isabstract(UserTask)
+
+
+def test_usertask_constructor_exists():
+    assert callable(UserTask.__init__)
+
+
+def test_usertask_constructor_args():
+    sig = inspect.signature(UserTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transaction_is_not_abstract():
+    assert not inspect.isabstract(Transaction)
+
+
+def test_transaction_constructor_exists():
+    assert callable(Transaction.__init__)
+
+
+def test_transaction_constructor_args():
+    sig = inspect.signature(Transaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_timereventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_TimerEventDefinition)
+
+
+def test_events_timereventdefinition_constructor_exists():
+    assert callable(events_TimerEventDefinition.__init__)
+
+
+def test_events_timereventdefinition_constructor_args():
+    sig = inspect.signature(events_TimerEventDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_throwevent_is_not_abstract():
+    assert not inspect.isabstract(events_ThrowEvent)
+
+
+def test_events_throwevent_constructor_exists():
+    assert callable(events_ThrowEvent.__init__)
+
+
+def test_events_throwevent_constructor_args():
+    sig = inspect.signature(events_ThrowEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_artifacts_textannotation_is_not_abstract():
+    assert not inspect.isabstract(artifacts_TextAnnotation)
+
+
+def test_artifacts_textannotation_constructor_exists():
+    assert callable(artifacts_TextAnnotation.__init__)
+
+
+def test_artifacts_textannotation_constructor_args():
+    sig = inspect.signature(artifacts_TextAnnotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_terminateeventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_TerminateEventDefinition)
+
+
+def test_events_terminateeventdefinition_constructor_exists():
+    assert callable(events_TerminateEventDefinition.__init__)
+
+
+def test_events_terminateeventdefinition_constructor_args():
+    sig = inspect.signature(events_TerminateEventDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_startevent_is_not_abstract():
+    assert not inspect.isabstract(events_StartEvent)
+
+
+def test_events_startevent_constructor_exists():
+    assert callable(events_StartEvent.__init__)
+
+
+def test_events_startevent_constructor_args():
+    sig = inspect.signature(events_StartEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_task_is_not_abstract():
+    assert not inspect.isabstract(Task)
+
+
+def test_task_constructor_exists():
+    assert callable(Task.__init__)
+
+
+def test_task_constructor_args():
+    sig = inspect.signature(Task.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subprocess_is_not_abstract():
+    assert not inspect.isabstract(SubProcess)
+
+
+def test_subprocess_constructor_exists():
+    assert callable(SubProcess.__init__)
+
+
+def test_subprocess_constructor_args():
+    sig = inspect.signature(SubProcess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subconversation_is_not_abstract():
+    assert not inspect.isabstract(SubConversation)
+
+
+def test_subconversation_constructor_exists():
+    assert callable(SubConversation.__init__)
+
+
+def test_subconversation_constructor_args():
+    sig = inspect.signature(SubConversation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_choreographyactivities_subchoreography_is_not_abstract():
+    assert not inspect.isabstract(choreographyactivities_SubChoreography)
+
+
+def test_choreographyactivities_subchoreography_constructor_exists():
+    assert callable(choreographyactivities_SubChoreography.__init__)
+
+
+def test_choreographyactivities_subchoreography_constructor_args():
+    sig = inspect.signature(choreographyactivities_SubChoreography.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_standardloopcharacteristics_is_not_abstract():
+    assert not inspect.isabstract(StandardLoopCharacteristics)
+
+
+def test_standardloopcharacteristics_constructor_exists():
+    assert callable(StandardLoopCharacteristics.__init__)
+
+
+def test_standardloopcharacteristics_constructor_args():
+    sig = inspect.signature(StandardLoopCharacteristics.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_signaleventdefinition_is_not_abstract():
+    assert not inspect.isabstract(events_SignalEventDefinition)
+
+
+def test_events_signaleventdefinition_constructor_exists():
+    assert callable(events_SignalEventDefinition.__init__)
+
+
+def test_events_signaleventdefinition_constructor_args():
+    sig = inspect.signature(events_SignalEventDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_events_signal_is_not_abstract():
+    assert not inspect.isabstract(events_Signal)
+
+
+def test_events_signal_constructor_exists():
+    assert callable(events_Signal.__init__)
+
+
+def test_events_signal_constructor_args():
+    sig = inspect.signature(events_Signal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_servicetask_is_not_abstract():
+    assert not inspect.isabstract(ServiceTask)
+
+
+def test_servicetask_constructor_exists():
+    assert callable(ServiceTask.__init__)
+
+
+def test_servicetask_constructor_args():
+    sig = inspect.signature(ServiceTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_resourceparameter_is_not_abstract():
+    assert not inspect.isabstract(ResourceParameter)
+
+
+def test_resourceparameter_constructor_exists():
+    assert callable(ResourceParameter.__init__)
+
+
+def test_resourceparameter_constructor_args():
+    sig = inspect.signature(ResourceParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_flows_sequenceflow_is_not_abstract():
+    assert not inspect.isabstract(flows_SequenceFlow)
+
+
+def test_flows_sequenceflow_constructor_exists():
+    assert callable(flows_SequenceFlow.__init__)
+
+
+def test_flows_sequenceflow_constructor_args():
+    sig = inspect.signature(flows_SequenceFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sendtask_is_not_abstract():
+    assert not inspect.isabstract(SendTask)
+
+
+def test_sendtask_constructor_exists():
+    assert callable(SendTask.__init__)
+
+
+def test_sendtask_constructor_args():
+    sig = inspect.signature(SendTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_scripttask_is_not_abstract():
+    assert not inspect.isabstract(ScriptTask)
+
+
+def test_scripttask_constructor_exists():
+    assert callable(ScriptTask.__init__)
+
+
+def test_scripttask_constructor_args():
+    sig = inspect.signature(ScriptTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bpmn2_eobject_is_not_abstract():
+    assert not inspect.isabstract(bpmn2_EObject)
+
+
+def test_bpmn2_eobject_constructor_exists():
+    assert callable(bpmn2_EObject.__init__)
+
+
+def test_bpmn2_eobject_constructor_args():
+    sig = inspect.signature(bpmn2_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_resourceparameterbinding_is_not_abstract():
+    assert not inspect.isabstract(ResourceParameterBinding)
+
+
+def test_resourceparameterbinding_constructor_exists():
+    assert callable(ResourceParameterBinding.__init__)
+
+
+def test_resourceparameterbinding_constructor_args():
+    sig = inspect.signature(ResourceParameterBinding.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_receivetask_is_not_abstract():
+    assert not inspect.isabstract(ReceiveTask)
+
+
+def test_receivetask_constructor_exists():
+    assert callable(ReceiveTask.__init__)
+
+
+def test_receivetask_constructor_args():
+    sig = inspect.signature(ReceiveTask.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_resourceassignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(ResourceAssignmentExpression)
+
+
+def test_resourceassignmentexpression_constructor_exists():
+    assert callable(ResourceAssignmentExpression.__init__)
+
+
+def test_resourceassignmentexpression_constructor_args():
+    sig = inspect.signature(ResourceAssignmentExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_resource_is_not_abstract():
+    assert not inspect.isabstract(Resource)
+
+
+def test_resource_constructor_exists():
+    assert callable(Resource.__init__)
+
+
+def test_resource_constructor_args():
+    sig = inspect.signature(Resource.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rendering_is_not_abstract():
+    assert not inspect.isabstract(Rendering)
+
+
+def test_rendering_constructor_exists():
+    assert callable(Rendering.__init__)
+
+
+def test_rendering_constructor_args():
+    sig = inspect.signature(Rendering.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2059,95 +2059,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-flows::FlowElement_strategy = st.builds(
-    flows::FlowElement,
-)
-AdHocSubProcess_strategy = st.builds(
-    AdHocSubProcess,
-)
-Activity_strategy = st.builds(
-    Activity,
-)
-bpmn2::DocumentRoot_strategy = st.builds(
-    bpmn2::DocumentRoot,
-    mixed=
-        safe_text
-)
-UserTask_strategy = st.builds(
-    UserTask,
-)
-Transaction_strategy = st.builds(
-    Transaction,
-)
-events::TimerEventDefinition_strategy = st.builds(
-    events::TimerEventDefinition,
-)
-events::ThrowEvent_strategy = st.builds(
-    events::ThrowEvent,
-)
-artifacts::TextAnnotation_strategy = st.builds(
-    artifacts::TextAnnotation,
-)
-events::TerminateEventDefinition_strategy = st.builds(
-    events::TerminateEventDefinition,
-)
-events::StartEvent_strategy = st.builds(
-    events::StartEvent,
-)
-Task_strategy = st.builds(
-    Task,
-)
-SubProcess_strategy = st.builds(
-    SubProcess,
-)
-SubConversation_strategy = st.builds(
-    SubConversation,
-)
-choreographyactivities::SubChoreography_strategy = st.builds(
-    choreographyactivities::SubChoreography,
-)
-StandardLoopCharacteristics_strategy = st.builds(
-    StandardLoopCharacteristics,
-)
-events::SignalEventDefinition_strategy = st.builds(
-    events::SignalEventDefinition,
-)
-events::Signal_strategy = st.builds(
-    events::Signal,
-)
-ServiceTask_strategy = st.builds(
-    ServiceTask,
-)
-ResourceParameter_strategy = st.builds(
-    ResourceParameter,
-)
-flows::SequenceFlow_strategy = st.builds(
-    flows::SequenceFlow,
-)
-SendTask_strategy = st.builds(
-    SendTask,
-)
-ScriptTask_strategy = st.builds(
-    ScriptTask,
-)
-bpmn2::EObject_strategy = st.builds(
-    bpmn2::EObject,
-)
-ResourceParameterBinding_strategy = st.builds(
-    ResourceParameterBinding,
-)
-ReceiveTask_strategy = st.builds(
-    ReceiveTask,
-)
-ResourceAssignmentExpression_strategy = st.builds(
-    ResourceAssignmentExpression,
-)
-Resource_strategy = st.builds(
-    Resource,
-)
-Rendering_strategy = st.builds(
-    Rendering,
-)
 Relationship_strategy = st.builds(
     Relationship,
 )
@@ -2175,8 +2086,8 @@ ParticipantAssociation_strategy = st.builds(
 Participant_strategy = st.builds(
     Participant,
 )
-gateways::ParallelGateway_strategy = st.builds(
-    gateways::ParallelGateway,
+gateways_ParallelGateway_strategy = st.builds(
+    gateways_ParallelGateway,
 )
 OutputSet_strategy = st.builds(
     OutputSet,
@@ -2211,8 +2122,8 @@ ManualTask_strategy = st.builds(
 LoopCharacteristics_strategy = st.builds(
     LoopCharacteristics,
 )
-events::LinkEventDefinition_strategy = st.builds(
-    events::LinkEventDefinition,
+events_LinkEventDefinition_strategy = st.builds(
+    events_LinkEventDefinition,
 )
 LaneSet_strategy = st.builds(
     LaneSet,
@@ -2229,23 +2140,23 @@ InputOutputSpecification_strategy = st.builds(
 InputOutputBinding_strategy = st.builds(
     InputOutputBinding,
 )
-events::IntermediateThrowEvent_strategy = st.builds(
-    events::IntermediateThrowEvent,
+events_IntermediateThrowEvent_strategy = st.builds(
+    events_IntermediateThrowEvent,
 )
-events::IntermediateCatchEvent_strategy = st.builds(
-    events::IntermediateCatchEvent,
+events_IntermediateCatchEvent_strategy = st.builds(
+    events_IntermediateCatchEvent,
 )
 Interface_strategy = st.builds(
     Interface,
 )
-gateways::InclusiveGateway_strategy = st.builds(
-    gateways::InclusiveGateway,
+gateways_InclusiveGateway_strategy = st.builds(
+    gateways_InclusiveGateway,
 )
 Import_strategy = st.builds(
     Import,
 )
-events::ImplicitThrowEvent_strategy = st.builds(
-    events::ImplicitThrowEvent,
+events_ImplicitThrowEvent_strategy = st.builds(
+    events_ImplicitThrowEvent,
 )
 ResourceRole_strategy = st.builds(
     ResourceRole,
@@ -2256,8 +2167,8 @@ Performer_strategy = st.builds(
 HumanPerformer_strategy = st.builds(
     HumanPerformer,
 )
-artifacts::Group_strategy = st.builds(
-    artifacts::Group,
+artifacts_Group_strategy = st.builds(
+    artifacts_Group,
 )
 GlobalUserTask_strategy = st.builds(
     GlobalUserTask,
@@ -2280,50 +2191,50 @@ GlobalChoreographyTask_strategy = st.builds(
 GlobalBusinessRuleTask_strategy = st.builds(
     GlobalBusinessRuleTask,
 )
-gateways::Gateway_strategy = st.builds(
-    gateways::Gateway,
+gateways_Gateway_strategy = st.builds(
+    gateways_Gateway,
 )
 FormalExpression_strategy = st.builds(
     FormalExpression,
 )
-gateways::EventBasedGateway_strategy = st.builds(
-    gateways::EventBasedGateway,
+gateways_EventBasedGateway_strategy = st.builds(
+    gateways_EventBasedGateway,
 )
-flows::FlowNode_strategy = st.builds(
-    flows::FlowNode,
+flows_FlowNode_strategy = st.builds(
+    flows_FlowNode,
 )
-extension::ExtensionAttributeValue_strategy = st.builds(
-    extension::ExtensionAttributeValue,
+extension_ExtensionAttributeValue_strategy = st.builds(
+    extension_ExtensionAttributeValue,
 )
-extension::Extension_strategy = st.builds(
-    extension::Extension,
+extension_Extension_strategy = st.builds(
+    extension_Extension,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-gateways::ExclusiveGateway_strategy = st.builds(
-    gateways::ExclusiveGateway,
+gateways_ExclusiveGateway_strategy = st.builds(
+    gateways_ExclusiveGateway,
 )
 EndPoint_strategy = st.builds(
     EndPoint,
 )
-events::Event_strategy = st.builds(
-    events::Event,
+events_Event_strategy = st.builds(
+    events_Event,
 )
-events::EscalationEventDefinition_strategy = st.builds(
-    events::EscalationEventDefinition,
+events_EscalationEventDefinition_strategy = st.builds(
+    events_EscalationEventDefinition,
 )
 Escalation_strategy = st.builds(
     Escalation,
 )
-events::ErrorEventDefinition_strategy = st.builds(
-    events::ErrorEventDefinition,
+events_ErrorEventDefinition_strategy = st.builds(
+    events_ErrorEventDefinition,
 )
 Error_strategy = st.builds(
     Error,
 )
-events::EndEvent_strategy = st.builds(
-    events::EndEvent,
+events_EndEvent_strategy = st.builds(
+    events_EndEvent,
 )
 Documentation_strategy = st.builds(
     Documentation,
@@ -2364,47 +2275,47 @@ DataInput_strategy = st.builds(
 ConversationAssociation_strategy = st.builds(
     ConversationAssociation,
 )
-correlations::CorrelationSubscription_strategy = st.builds(
-    correlations::CorrelationSubscription,
+correlations_CorrelationSubscription_strategy = st.builds(
+    correlations_CorrelationSubscription,
 )
-correlations::CorrelationPropertyRetrievalExpression_strategy = st.builds(
-    correlations::CorrelationPropertyRetrievalExpression,
+correlations_CorrelationPropertyRetrievalExpression_strategy = st.builds(
+    correlations_CorrelationPropertyRetrievalExpression,
 )
-correlations::CorrelationPropertyBinding_strategy = st.builds(
-    correlations::CorrelationPropertyBinding,
+correlations_CorrelationPropertyBinding_strategy = st.builds(
+    correlations_CorrelationPropertyBinding,
 )
-correlations::CorrelationProperty_strategy = st.builds(
-    correlations::CorrelationProperty,
+correlations_CorrelationProperty_strategy = st.builds(
+    correlations_CorrelationProperty,
 )
-correlations::CorrelationKey_strategy = st.builds(
-    correlations::CorrelationKey,
+correlations_CorrelationKey_strategy = st.builds(
+    correlations_CorrelationKey,
 )
 ConversationLink_strategy = st.builds(
     ConversationLink,
 )
-choreographyactivities::ChoreographyActivity_strategy = st.builds(
-    choreographyactivities::ChoreographyActivity,
+choreographyactivities_ChoreographyActivity_strategy = st.builds(
+    choreographyactivities_ChoreographyActivity,
 )
 Conversation_strategy = st.builds(
     Conversation,
 )
-events::ConditionalEventDefinition_strategy = st.builds(
-    events::ConditionalEventDefinition,
+events_ConditionalEventDefinition_strategy = st.builds(
+    events_ConditionalEventDefinition,
 )
-gateways::ComplexGateway_strategy = st.builds(
-    gateways::ComplexGateway,
+gateways_ComplexGateway_strategy = st.builds(
+    gateways_ComplexGateway,
 )
 ComplexBehaviorDefinition_strategy = st.builds(
     ComplexBehaviorDefinition,
 )
-events::CompensateEventDefinition_strategy = st.builds(
-    events::CompensateEventDefinition,
+events_CompensateEventDefinition_strategy = st.builds(
+    events_CompensateEventDefinition,
 )
-choreographyactivities::ChoreographyTask_strategy = st.builds(
-    choreographyactivities::ChoreographyTask,
+choreographyactivities_ChoreographyTask_strategy = st.builds(
+    choreographyactivities_ChoreographyTask,
 )
-events::EventDefinition_strategy = st.builds(
-    events::EventDefinition,
+events_EventDefinition_strategy = st.builds(
+    events_EventDefinition,
 )
 Collaboration_strategy = st.builds(
     Collaboration,
@@ -2412,20 +2323,20 @@ Collaboration_strategy = st.builds(
 Choreography_strategy = st.builds(
     Choreography,
 )
-artifacts::CategoryValue_strategy = st.builds(
-    artifacts::CategoryValue,
+artifacts_CategoryValue_strategy = st.builds(
+    artifacts_CategoryValue,
 )
-artifacts::Category_strategy = st.builds(
-    artifacts::Category,
+artifacts_Category_strategy = st.builds(
+    artifacts_Category,
 )
-events::CatchEvent_strategy = st.builds(
-    events::CatchEvent,
+events_CatchEvent_strategy = st.builds(
+    events_CatchEvent,
 )
 RootElement_strategy = st.builds(
     RootElement,
 )
-events::CancelEventDefinition_strategy = st.builds(
-    events::CancelEventDefinition,
+events_CancelEventDefinition_strategy = st.builds(
+    events_CancelEventDefinition,
 )
 ConversationNode_strategy = st.builds(
     ConversationNode,
@@ -2433,8 +2344,8 @@ ConversationNode_strategy = st.builds(
 CallConversation_strategy = st.builds(
     CallConversation,
 )
-choreographyactivities::CallChoreography_strategy = st.builds(
-    choreographyactivities::CallChoreography,
+choreographyactivities_CallChoreography_strategy = st.builds(
+    choreographyactivities_CallChoreography,
 )
 CallActivity_strategy = st.builds(
     CallActivity,
@@ -2448,8 +2359,8 @@ Assignment_strategy = st.builds(
 BusinessRuleTask_strategy = st.builds(
     BusinessRuleTask,
 )
-events::BoundaryEvent_strategy = st.builds(
-    events::BoundaryEvent,
+events_BoundaryEvent_strategy = st.builds(
+    events_BoundaryEvent,
 )
 BaseElement_strategy = st.builds(
     BaseElement,
@@ -2457,171 +2368,104 @@ BaseElement_strategy = st.builds(
 Auditing_strategy = st.builds(
     Auditing,
 )
-artifacts::Association_strategy = st.builds(
-    artifacts::Association,
+artifacts_Association_strategy = st.builds(
+    artifacts_Association,
 )
-bpmn2::EStringToStringMapEntry_strategy = st.builds(
-    bpmn2::EStringToStringMapEntry,
+bpmn2_EStringToStringMapEntry_strategy = st.builds(
+    bpmn2_EStringToStringMapEntry,
 )
-artifacts::Artifact_strategy = st.builds(
-    artifacts::Artifact,
+artifacts_Artifact_strategy = st.builds(
+    artifacts_Artifact,
 )
-
-@given(instance=flows::FlowElement_strategy)
-@settings(max_examples=50)
-def test_flows::flowelement_instantiation(instance):
-    assert isinstance(instance, flows::FlowElement)
-
-@given(instance=AdHocSubProcess_strategy)
-@settings(max_examples=50)
-def test_adhocsubprocess_instantiation(instance):
-    assert isinstance(instance, AdHocSubProcess)
-
-@given(instance=Activity_strategy)
-@settings(max_examples=50)
-def test_activity_instantiation(instance):
-    assert isinstance(instance, Activity)
-
-@given(instance=bpmn2::DocumentRoot_strategy)
-@settings(max_examples=50)
-def test_bpmn2::documentroot_instantiation(instance):
-    assert isinstance(instance, bpmn2::DocumentRoot)
-
-@given(instance=bpmn2::DocumentRoot_strategy)
-def test_bpmn2::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
-
-
-@given(instance=bpmn2::DocumentRoot_strategy)
-def test_bpmn2::documentroot_mixed_setter(instance):
-    original = instance.mixed
-    instance.mixed = original
-    assert instance.mixed == original
-
-@given(instance=UserTask_strategy)
-@settings(max_examples=50)
-def test_usertask_instantiation(instance):
-    assert isinstance(instance, UserTask)
-
-@given(instance=Transaction_strategy)
-@settings(max_examples=50)
-def test_transaction_instantiation(instance):
-    assert isinstance(instance, Transaction)
-
-@given(instance=events::TimerEventDefinition_strategy)
-@settings(max_examples=50)
-def test_events::timereventdefinition_instantiation(instance):
-    assert isinstance(instance, events::TimerEventDefinition)
-
-@given(instance=events::ThrowEvent_strategy)
-@settings(max_examples=50)
-def test_events::throwevent_instantiation(instance):
-    assert isinstance(instance, events::ThrowEvent)
-
-@given(instance=artifacts::TextAnnotation_strategy)
-@settings(max_examples=50)
-def test_artifacts::textannotation_instantiation(instance):
-    assert isinstance(instance, artifacts::TextAnnotation)
-
-@given(instance=events::TerminateEventDefinition_strategy)
-@settings(max_examples=50)
-def test_events::terminateeventdefinition_instantiation(instance):
-    assert isinstance(instance, events::TerminateEventDefinition)
-
-@given(instance=events::StartEvent_strategy)
-@settings(max_examples=50)
-def test_events::startevent_instantiation(instance):
-    assert isinstance(instance, events::StartEvent)
-
-@given(instance=Task_strategy)
-@settings(max_examples=50)
-def test_task_instantiation(instance):
-    assert isinstance(instance, Task)
-
-@given(instance=SubProcess_strategy)
-@settings(max_examples=50)
-def test_subprocess_instantiation(instance):
-    assert isinstance(instance, SubProcess)
-
-@given(instance=SubConversation_strategy)
-@settings(max_examples=50)
-def test_subconversation_instantiation(instance):
-    assert isinstance(instance, SubConversation)
-
-@given(instance=choreographyactivities::SubChoreography_strategy)
-@settings(max_examples=50)
-def test_choreographyactivities::subchoreography_instantiation(instance):
-    assert isinstance(instance, choreographyactivities::SubChoreography)
-
-@given(instance=StandardLoopCharacteristics_strategy)
-@settings(max_examples=50)
-def test_standardloopcharacteristics_instantiation(instance):
-    assert isinstance(instance, StandardLoopCharacteristics)
-
-@given(instance=events::SignalEventDefinition_strategy)
-@settings(max_examples=50)
-def test_events::signaleventdefinition_instantiation(instance):
-    assert isinstance(instance, events::SignalEventDefinition)
-
-@given(instance=events::Signal_strategy)
-@settings(max_examples=50)
-def test_events::signal_instantiation(instance):
-    assert isinstance(instance, events::Signal)
-
-@given(instance=ServiceTask_strategy)
-@settings(max_examples=50)
-def test_servicetask_instantiation(instance):
-    assert isinstance(instance, ServiceTask)
-
-@given(instance=ResourceParameter_strategy)
-@settings(max_examples=50)
-def test_resourceparameter_instantiation(instance):
-    assert isinstance(instance, ResourceParameter)
-
-@given(instance=flows::SequenceFlow_strategy)
-@settings(max_examples=50)
-def test_flows::sequenceflow_instantiation(instance):
-    assert isinstance(instance, flows::SequenceFlow)
-
-@given(instance=SendTask_strategy)
-@settings(max_examples=50)
-def test_sendtask_instantiation(instance):
-    assert isinstance(instance, SendTask)
-
-@given(instance=ScriptTask_strategy)
-@settings(max_examples=50)
-def test_scripttask_instantiation(instance):
-    assert isinstance(instance, ScriptTask)
-
-@given(instance=bpmn2::EObject_strategy)
-@settings(max_examples=50)
-def test_bpmn2::eobject_instantiation(instance):
-    assert isinstance(instance, bpmn2::EObject)
-
-@given(instance=ResourceParameterBinding_strategy)
-@settings(max_examples=50)
-def test_resourceparameterbinding_instantiation(instance):
-    assert isinstance(instance, ResourceParameterBinding)
-
-@given(instance=ReceiveTask_strategy)
-@settings(max_examples=50)
-def test_receivetask_instantiation(instance):
-    assert isinstance(instance, ReceiveTask)
-
-@given(instance=ResourceAssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_resourceassignmentexpression_instantiation(instance):
-    assert isinstance(instance, ResourceAssignmentExpression)
-
-@given(instance=Resource_strategy)
-@settings(max_examples=50)
-def test_resource_instantiation(instance):
-    assert isinstance(instance, Resource)
-
-@given(instance=Rendering_strategy)
-@settings(max_examples=50)
-def test_rendering_instantiation(instance):
-    assert isinstance(instance, Rendering)
+flows_FlowElement_strategy = st.builds(
+    flows_FlowElement,
+)
+AdHocSubProcess_strategy = st.builds(
+    AdHocSubProcess,
+)
+Activity_strategy = st.builds(
+    Activity,
+)
+bpmn2_DocumentRoot_strategy = st.builds(
+    bpmn2_DocumentRoot,
+    mixed=
+        safe_text
+)
+UserTask_strategy = st.builds(
+    UserTask,
+)
+Transaction_strategy = st.builds(
+    Transaction,
+)
+events_TimerEventDefinition_strategy = st.builds(
+    events_TimerEventDefinition,
+)
+events_ThrowEvent_strategy = st.builds(
+    events_ThrowEvent,
+)
+artifacts_TextAnnotation_strategy = st.builds(
+    artifacts_TextAnnotation,
+)
+events_TerminateEventDefinition_strategy = st.builds(
+    events_TerminateEventDefinition,
+)
+events_StartEvent_strategy = st.builds(
+    events_StartEvent,
+)
+Task_strategy = st.builds(
+    Task,
+)
+SubProcess_strategy = st.builds(
+    SubProcess,
+)
+SubConversation_strategy = st.builds(
+    SubConversation,
+)
+choreographyactivities_SubChoreography_strategy = st.builds(
+    choreographyactivities_SubChoreography,
+)
+StandardLoopCharacteristics_strategy = st.builds(
+    StandardLoopCharacteristics,
+)
+events_SignalEventDefinition_strategy = st.builds(
+    events_SignalEventDefinition,
+)
+events_Signal_strategy = st.builds(
+    events_Signal,
+)
+ServiceTask_strategy = st.builds(
+    ServiceTask,
+)
+ResourceParameter_strategy = st.builds(
+    ResourceParameter,
+)
+flows_SequenceFlow_strategy = st.builds(
+    flows_SequenceFlow,
+)
+SendTask_strategy = st.builds(
+    SendTask,
+)
+ScriptTask_strategy = st.builds(
+    ScriptTask,
+)
+bpmn2_EObject_strategy = st.builds(
+    bpmn2_EObject,
+)
+ResourceParameterBinding_strategy = st.builds(
+    ResourceParameterBinding,
+)
+ReceiveTask_strategy = st.builds(
+    ReceiveTask,
+)
+ResourceAssignmentExpression_strategy = st.builds(
+    ResourceAssignmentExpression,
+)
+Resource_strategy = st.builds(
+    Resource,
+)
+Rendering_strategy = st.builds(
+    Rendering,
+)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
@@ -2668,10 +2512,10 @@ def test_participantassociation_instantiation(instance):
 def test_participant_instantiation(instance):
     assert isinstance(instance, Participant)
 
-@given(instance=gateways::ParallelGateway_strategy)
+@given(instance=gateways_ParallelGateway_strategy)
 @settings(max_examples=50)
-def test_gateways::parallelgateway_instantiation(instance):
-    assert isinstance(instance, gateways::ParallelGateway)
+def test_gateways_parallelgateway_instantiation(instance):
+    assert isinstance(instance, gateways_ParallelGateway)
 
 @given(instance=OutputSet_strategy)
 @settings(max_examples=50)
@@ -2728,10 +2572,10 @@ def test_manualtask_instantiation(instance):
 def test_loopcharacteristics_instantiation(instance):
     assert isinstance(instance, LoopCharacteristics)
 
-@given(instance=events::LinkEventDefinition_strategy)
+@given(instance=events_LinkEventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::linkeventdefinition_instantiation(instance):
-    assert isinstance(instance, events::LinkEventDefinition)
+def test_events_linkeventdefinition_instantiation(instance):
+    assert isinstance(instance, events_LinkEventDefinition)
 
 @given(instance=LaneSet_strategy)
 @settings(max_examples=50)
@@ -2758,35 +2602,35 @@ def test_inputoutputspecification_instantiation(instance):
 def test_inputoutputbinding_instantiation(instance):
     assert isinstance(instance, InputOutputBinding)
 
-@given(instance=events::IntermediateThrowEvent_strategy)
+@given(instance=events_IntermediateThrowEvent_strategy)
 @settings(max_examples=50)
-def test_events::intermediatethrowevent_instantiation(instance):
-    assert isinstance(instance, events::IntermediateThrowEvent)
+def test_events_intermediatethrowevent_instantiation(instance):
+    assert isinstance(instance, events_IntermediateThrowEvent)
 
-@given(instance=events::IntermediateCatchEvent_strategy)
+@given(instance=events_IntermediateCatchEvent_strategy)
 @settings(max_examples=50)
-def test_events::intermediatecatchevent_instantiation(instance):
-    assert isinstance(instance, events::IntermediateCatchEvent)
+def test_events_intermediatecatchevent_instantiation(instance):
+    assert isinstance(instance, events_IntermediateCatchEvent)
 
 @given(instance=Interface_strategy)
 @settings(max_examples=50)
 def test_interface_instantiation(instance):
     assert isinstance(instance, Interface)
 
-@given(instance=gateways::InclusiveGateway_strategy)
+@given(instance=gateways_InclusiveGateway_strategy)
 @settings(max_examples=50)
-def test_gateways::inclusivegateway_instantiation(instance):
-    assert isinstance(instance, gateways::InclusiveGateway)
+def test_gateways_inclusivegateway_instantiation(instance):
+    assert isinstance(instance, gateways_InclusiveGateway)
 
 @given(instance=Import_strategy)
 @settings(max_examples=50)
 def test_import_instantiation(instance):
     assert isinstance(instance, Import)
 
-@given(instance=events::ImplicitThrowEvent_strategy)
+@given(instance=events_ImplicitThrowEvent_strategy)
 @settings(max_examples=50)
-def test_events::implicitthrowevent_instantiation(instance):
-    assert isinstance(instance, events::ImplicitThrowEvent)
+def test_events_implicitthrowevent_instantiation(instance):
+    assert isinstance(instance, events_ImplicitThrowEvent)
 
 @given(instance=ResourceRole_strategy)
 @settings(max_examples=50)
@@ -2803,10 +2647,10 @@ def test_performer_instantiation(instance):
 def test_humanperformer_instantiation(instance):
     assert isinstance(instance, HumanPerformer)
 
-@given(instance=artifacts::Group_strategy)
+@given(instance=artifacts_Group_strategy)
 @settings(max_examples=50)
-def test_artifacts::group_instantiation(instance):
-    assert isinstance(instance, artifacts::Group)
+def test_artifacts_group_instantiation(instance):
+    assert isinstance(instance, artifacts_Group)
 
 @given(instance=GlobalUserTask_strategy)
 @settings(max_examples=50)
@@ -2843,80 +2687,80 @@ def test_globalchoreographytask_instantiation(instance):
 def test_globalbusinessruletask_instantiation(instance):
     assert isinstance(instance, GlobalBusinessRuleTask)
 
-@given(instance=gateways::Gateway_strategy)
+@given(instance=gateways_Gateway_strategy)
 @settings(max_examples=50)
-def test_gateways::gateway_instantiation(instance):
-    assert isinstance(instance, gateways::Gateway)
+def test_gateways_gateway_instantiation(instance):
+    assert isinstance(instance, gateways_Gateway)
 
 @given(instance=FormalExpression_strategy)
 @settings(max_examples=50)
 def test_formalexpression_instantiation(instance):
     assert isinstance(instance, FormalExpression)
 
-@given(instance=gateways::EventBasedGateway_strategy)
+@given(instance=gateways_EventBasedGateway_strategy)
 @settings(max_examples=50)
-def test_gateways::eventbasedgateway_instantiation(instance):
-    assert isinstance(instance, gateways::EventBasedGateway)
+def test_gateways_eventbasedgateway_instantiation(instance):
+    assert isinstance(instance, gateways_EventBasedGateway)
 
-@given(instance=flows::FlowNode_strategy)
+@given(instance=flows_FlowNode_strategy)
 @settings(max_examples=50)
-def test_flows::flownode_instantiation(instance):
-    assert isinstance(instance, flows::FlowNode)
+def test_flows_flownode_instantiation(instance):
+    assert isinstance(instance, flows_FlowNode)
 
-@given(instance=extension::ExtensionAttributeValue_strategy)
+@given(instance=extension_ExtensionAttributeValue_strategy)
 @settings(max_examples=50)
-def test_extension::extensionattributevalue_instantiation(instance):
-    assert isinstance(instance, extension::ExtensionAttributeValue)
+def test_extension_extensionattributevalue_instantiation(instance):
+    assert isinstance(instance, extension_ExtensionAttributeValue)
 
-@given(instance=extension::Extension_strategy)
+@given(instance=extension_Extension_strategy)
 @settings(max_examples=50)
-def test_extension::extension_instantiation(instance):
-    assert isinstance(instance, extension::Extension)
+def test_extension_extension_instantiation(instance):
+    assert isinstance(instance, extension_Extension)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=gateways::ExclusiveGateway_strategy)
+@given(instance=gateways_ExclusiveGateway_strategy)
 @settings(max_examples=50)
-def test_gateways::exclusivegateway_instantiation(instance):
-    assert isinstance(instance, gateways::ExclusiveGateway)
+def test_gateways_exclusivegateway_instantiation(instance):
+    assert isinstance(instance, gateways_ExclusiveGateway)
 
 @given(instance=EndPoint_strategy)
 @settings(max_examples=50)
 def test_endpoint_instantiation(instance):
     assert isinstance(instance, EndPoint)
 
-@given(instance=events::Event_strategy)
+@given(instance=events_Event_strategy)
 @settings(max_examples=50)
-def test_events::event_instantiation(instance):
-    assert isinstance(instance, events::Event)
+def test_events_event_instantiation(instance):
+    assert isinstance(instance, events_Event)
 
-@given(instance=events::EscalationEventDefinition_strategy)
+@given(instance=events_EscalationEventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::escalationeventdefinition_instantiation(instance):
-    assert isinstance(instance, events::EscalationEventDefinition)
+def test_events_escalationeventdefinition_instantiation(instance):
+    assert isinstance(instance, events_EscalationEventDefinition)
 
 @given(instance=Escalation_strategy)
 @settings(max_examples=50)
 def test_escalation_instantiation(instance):
     assert isinstance(instance, Escalation)
 
-@given(instance=events::ErrorEventDefinition_strategy)
+@given(instance=events_ErrorEventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::erroreventdefinition_instantiation(instance):
-    assert isinstance(instance, events::ErrorEventDefinition)
+def test_events_erroreventdefinition_instantiation(instance):
+    assert isinstance(instance, events_ErrorEventDefinition)
 
 @given(instance=Error_strategy)
 @settings(max_examples=50)
 def test_error_instantiation(instance):
     assert isinstance(instance, Error)
 
-@given(instance=events::EndEvent_strategy)
+@given(instance=events_EndEvent_strategy)
 @settings(max_examples=50)
-def test_events::endevent_instantiation(instance):
-    assert isinstance(instance, events::EndEvent)
+def test_events_endevent_instantiation(instance):
+    assert isinstance(instance, events_EndEvent)
 
 @given(instance=Documentation_strategy)
 @settings(max_examples=50)
@@ -2983,75 +2827,75 @@ def test_datainput_instantiation(instance):
 def test_conversationassociation_instantiation(instance):
     assert isinstance(instance, ConversationAssociation)
 
-@given(instance=correlations::CorrelationSubscription_strategy)
+@given(instance=correlations_CorrelationSubscription_strategy)
 @settings(max_examples=50)
-def test_correlations::correlationsubscription_instantiation(instance):
-    assert isinstance(instance, correlations::CorrelationSubscription)
+def test_correlations_correlationsubscription_instantiation(instance):
+    assert isinstance(instance, correlations_CorrelationSubscription)
 
-@given(instance=correlations::CorrelationPropertyRetrievalExpression_strategy)
+@given(instance=correlations_CorrelationPropertyRetrievalExpression_strategy)
 @settings(max_examples=50)
-def test_correlations::correlationpropertyretrievalexpression_instantiation(instance):
-    assert isinstance(instance, correlations::CorrelationPropertyRetrievalExpression)
+def test_correlations_correlationpropertyretrievalexpression_instantiation(instance):
+    assert isinstance(instance, correlations_CorrelationPropertyRetrievalExpression)
 
-@given(instance=correlations::CorrelationPropertyBinding_strategy)
+@given(instance=correlations_CorrelationPropertyBinding_strategy)
 @settings(max_examples=50)
-def test_correlations::correlationpropertybinding_instantiation(instance):
-    assert isinstance(instance, correlations::CorrelationPropertyBinding)
+def test_correlations_correlationpropertybinding_instantiation(instance):
+    assert isinstance(instance, correlations_CorrelationPropertyBinding)
 
-@given(instance=correlations::CorrelationProperty_strategy)
+@given(instance=correlations_CorrelationProperty_strategy)
 @settings(max_examples=50)
-def test_correlations::correlationproperty_instantiation(instance):
-    assert isinstance(instance, correlations::CorrelationProperty)
+def test_correlations_correlationproperty_instantiation(instance):
+    assert isinstance(instance, correlations_CorrelationProperty)
 
-@given(instance=correlations::CorrelationKey_strategy)
+@given(instance=correlations_CorrelationKey_strategy)
 @settings(max_examples=50)
-def test_correlations::correlationkey_instantiation(instance):
-    assert isinstance(instance, correlations::CorrelationKey)
+def test_correlations_correlationkey_instantiation(instance):
+    assert isinstance(instance, correlations_CorrelationKey)
 
 @given(instance=ConversationLink_strategy)
 @settings(max_examples=50)
 def test_conversationlink_instantiation(instance):
     assert isinstance(instance, ConversationLink)
 
-@given(instance=choreographyactivities::ChoreographyActivity_strategy)
+@given(instance=choreographyactivities_ChoreographyActivity_strategy)
 @settings(max_examples=50)
-def test_choreographyactivities::choreographyactivity_instantiation(instance):
-    assert isinstance(instance, choreographyactivities::ChoreographyActivity)
+def test_choreographyactivities_choreographyactivity_instantiation(instance):
+    assert isinstance(instance, choreographyactivities_ChoreographyActivity)
 
 @given(instance=Conversation_strategy)
 @settings(max_examples=50)
 def test_conversation_instantiation(instance):
     assert isinstance(instance, Conversation)
 
-@given(instance=events::ConditionalEventDefinition_strategy)
+@given(instance=events_ConditionalEventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::conditionaleventdefinition_instantiation(instance):
-    assert isinstance(instance, events::ConditionalEventDefinition)
+def test_events_conditionaleventdefinition_instantiation(instance):
+    assert isinstance(instance, events_ConditionalEventDefinition)
 
-@given(instance=gateways::ComplexGateway_strategy)
+@given(instance=gateways_ComplexGateway_strategy)
 @settings(max_examples=50)
-def test_gateways::complexgateway_instantiation(instance):
-    assert isinstance(instance, gateways::ComplexGateway)
+def test_gateways_complexgateway_instantiation(instance):
+    assert isinstance(instance, gateways_ComplexGateway)
 
 @given(instance=ComplexBehaviorDefinition_strategy)
 @settings(max_examples=50)
 def test_complexbehaviordefinition_instantiation(instance):
     assert isinstance(instance, ComplexBehaviorDefinition)
 
-@given(instance=events::CompensateEventDefinition_strategy)
+@given(instance=events_CompensateEventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::compensateeventdefinition_instantiation(instance):
-    assert isinstance(instance, events::CompensateEventDefinition)
+def test_events_compensateeventdefinition_instantiation(instance):
+    assert isinstance(instance, events_CompensateEventDefinition)
 
-@given(instance=choreographyactivities::ChoreographyTask_strategy)
+@given(instance=choreographyactivities_ChoreographyTask_strategy)
 @settings(max_examples=50)
-def test_choreographyactivities::choreographytask_instantiation(instance):
-    assert isinstance(instance, choreographyactivities::ChoreographyTask)
+def test_choreographyactivities_choreographytask_instantiation(instance):
+    assert isinstance(instance, choreographyactivities_ChoreographyTask)
 
-@given(instance=events::EventDefinition_strategy)
+@given(instance=events_EventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::eventdefinition_instantiation(instance):
-    assert isinstance(instance, events::EventDefinition)
+def test_events_eventdefinition_instantiation(instance):
+    assert isinstance(instance, events_EventDefinition)
 
 @given(instance=Collaboration_strategy)
 @settings(max_examples=50)
@@ -3063,30 +2907,30 @@ def test_collaboration_instantiation(instance):
 def test_choreography_instantiation(instance):
     assert isinstance(instance, Choreography)
 
-@given(instance=artifacts::CategoryValue_strategy)
+@given(instance=artifacts_CategoryValue_strategy)
 @settings(max_examples=50)
-def test_artifacts::categoryvalue_instantiation(instance):
-    assert isinstance(instance, artifacts::CategoryValue)
+def test_artifacts_categoryvalue_instantiation(instance):
+    assert isinstance(instance, artifacts_CategoryValue)
 
-@given(instance=artifacts::Category_strategy)
+@given(instance=artifacts_Category_strategy)
 @settings(max_examples=50)
-def test_artifacts::category_instantiation(instance):
-    assert isinstance(instance, artifacts::Category)
+def test_artifacts_category_instantiation(instance):
+    assert isinstance(instance, artifacts_Category)
 
-@given(instance=events::CatchEvent_strategy)
+@given(instance=events_CatchEvent_strategy)
 @settings(max_examples=50)
-def test_events::catchevent_instantiation(instance):
-    assert isinstance(instance, events::CatchEvent)
+def test_events_catchevent_instantiation(instance):
+    assert isinstance(instance, events_CatchEvent)
 
 @given(instance=RootElement_strategy)
 @settings(max_examples=50)
 def test_rootelement_instantiation(instance):
     assert isinstance(instance, RootElement)
 
-@given(instance=events::CancelEventDefinition_strategy)
+@given(instance=events_CancelEventDefinition_strategy)
 @settings(max_examples=50)
-def test_events::canceleventdefinition_instantiation(instance):
-    assert isinstance(instance, events::CancelEventDefinition)
+def test_events_canceleventdefinition_instantiation(instance):
+    assert isinstance(instance, events_CancelEventDefinition)
 
 @given(instance=ConversationNode_strategy)
 @settings(max_examples=50)
@@ -3098,10 +2942,10 @@ def test_conversationnode_instantiation(instance):
 def test_callconversation_instantiation(instance):
     assert isinstance(instance, CallConversation)
 
-@given(instance=choreographyactivities::CallChoreography_strategy)
+@given(instance=choreographyactivities_CallChoreography_strategy)
 @settings(max_examples=50)
-def test_choreographyactivities::callchoreography_instantiation(instance):
-    assert isinstance(instance, choreographyactivities::CallChoreography)
+def test_choreographyactivities_callchoreography_instantiation(instance):
+    assert isinstance(instance, choreographyactivities_CallChoreography)
 
 @given(instance=CallActivity_strategy)
 @settings(max_examples=50)
@@ -3123,10 +2967,10 @@ def test_assignment_instantiation(instance):
 def test_businessruletask_instantiation(instance):
     assert isinstance(instance, BusinessRuleTask)
 
-@given(instance=events::BoundaryEvent_strategy)
+@given(instance=events_BoundaryEvent_strategy)
 @settings(max_examples=50)
-def test_events::boundaryevent_instantiation(instance):
-    assert isinstance(instance, events::BoundaryEvent)
+def test_events_boundaryevent_instantiation(instance):
+    assert isinstance(instance, events_BoundaryEvent)
 
 @given(instance=BaseElement_strategy)
 @settings(max_examples=50)
@@ -3138,17 +2982,170 @@ def test_baseelement_instantiation(instance):
 def test_auditing_instantiation(instance):
     assert isinstance(instance, Auditing)
 
-@given(instance=artifacts::Association_strategy)
+@given(instance=artifacts_Association_strategy)
 @settings(max_examples=50)
-def test_artifacts::association_instantiation(instance):
-    assert isinstance(instance, artifacts::Association)
+def test_artifacts_association_instantiation(instance):
+    assert isinstance(instance, artifacts_Association)
 
-@given(instance=bpmn2::EStringToStringMapEntry_strategy)
+@given(instance=bpmn2_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_bpmn2::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, bpmn2::EStringToStringMapEntry)
+def test_bpmn2_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, bpmn2_EStringToStringMapEntry)
 
-@given(instance=artifacts::Artifact_strategy)
+@given(instance=artifacts_Artifact_strategy)
 @settings(max_examples=50)
-def test_artifacts::artifact_instantiation(instance):
-    assert isinstance(instance, artifacts::Artifact)
+def test_artifacts_artifact_instantiation(instance):
+    assert isinstance(instance, artifacts_Artifact)
+
+@given(instance=flows_FlowElement_strategy)
+@settings(max_examples=50)
+def test_flows_flowelement_instantiation(instance):
+    assert isinstance(instance, flows_FlowElement)
+
+@given(instance=AdHocSubProcess_strategy)
+@settings(max_examples=50)
+def test_adhocsubprocess_instantiation(instance):
+    assert isinstance(instance, AdHocSubProcess)
+
+@given(instance=Activity_strategy)
+@settings(max_examples=50)
+def test_activity_instantiation(instance):
+    assert isinstance(instance, Activity)
+
+@given(instance=bpmn2_DocumentRoot_strategy)
+@settings(max_examples=50)
+def test_bpmn2_documentroot_instantiation(instance):
+    assert isinstance(instance, bpmn2_DocumentRoot)
+
+
+
+@given(instance=bpmn2_DocumentRoot_strategy)
+def test_bpmn2_documentroot_mixed_setter(instance):
+    original = instance.mixed
+    instance.mixed = original
+    assert instance.mixed == original
+
+@given(instance=UserTask_strategy)
+@settings(max_examples=50)
+def test_usertask_instantiation(instance):
+    assert isinstance(instance, UserTask)
+
+@given(instance=Transaction_strategy)
+@settings(max_examples=50)
+def test_transaction_instantiation(instance):
+    assert isinstance(instance, Transaction)
+
+@given(instance=events_TimerEventDefinition_strategy)
+@settings(max_examples=50)
+def test_events_timereventdefinition_instantiation(instance):
+    assert isinstance(instance, events_TimerEventDefinition)
+
+@given(instance=events_ThrowEvent_strategy)
+@settings(max_examples=50)
+def test_events_throwevent_instantiation(instance):
+    assert isinstance(instance, events_ThrowEvent)
+
+@given(instance=artifacts_TextAnnotation_strategy)
+@settings(max_examples=50)
+def test_artifacts_textannotation_instantiation(instance):
+    assert isinstance(instance, artifacts_TextAnnotation)
+
+@given(instance=events_TerminateEventDefinition_strategy)
+@settings(max_examples=50)
+def test_events_terminateeventdefinition_instantiation(instance):
+    assert isinstance(instance, events_TerminateEventDefinition)
+
+@given(instance=events_StartEvent_strategy)
+@settings(max_examples=50)
+def test_events_startevent_instantiation(instance):
+    assert isinstance(instance, events_StartEvent)
+
+@given(instance=Task_strategy)
+@settings(max_examples=50)
+def test_task_instantiation(instance):
+    assert isinstance(instance, Task)
+
+@given(instance=SubProcess_strategy)
+@settings(max_examples=50)
+def test_subprocess_instantiation(instance):
+    assert isinstance(instance, SubProcess)
+
+@given(instance=SubConversation_strategy)
+@settings(max_examples=50)
+def test_subconversation_instantiation(instance):
+    assert isinstance(instance, SubConversation)
+
+@given(instance=choreographyactivities_SubChoreography_strategy)
+@settings(max_examples=50)
+def test_choreographyactivities_subchoreography_instantiation(instance):
+    assert isinstance(instance, choreographyactivities_SubChoreography)
+
+@given(instance=StandardLoopCharacteristics_strategy)
+@settings(max_examples=50)
+def test_standardloopcharacteristics_instantiation(instance):
+    assert isinstance(instance, StandardLoopCharacteristics)
+
+@given(instance=events_SignalEventDefinition_strategy)
+@settings(max_examples=50)
+def test_events_signaleventdefinition_instantiation(instance):
+    assert isinstance(instance, events_SignalEventDefinition)
+
+@given(instance=events_Signal_strategy)
+@settings(max_examples=50)
+def test_events_signal_instantiation(instance):
+    assert isinstance(instance, events_Signal)
+
+@given(instance=ServiceTask_strategy)
+@settings(max_examples=50)
+def test_servicetask_instantiation(instance):
+    assert isinstance(instance, ServiceTask)
+
+@given(instance=ResourceParameter_strategy)
+@settings(max_examples=50)
+def test_resourceparameter_instantiation(instance):
+    assert isinstance(instance, ResourceParameter)
+
+@given(instance=flows_SequenceFlow_strategy)
+@settings(max_examples=50)
+def test_flows_sequenceflow_instantiation(instance):
+    assert isinstance(instance, flows_SequenceFlow)
+
+@given(instance=SendTask_strategy)
+@settings(max_examples=50)
+def test_sendtask_instantiation(instance):
+    assert isinstance(instance, SendTask)
+
+@given(instance=ScriptTask_strategy)
+@settings(max_examples=50)
+def test_scripttask_instantiation(instance):
+    assert isinstance(instance, ScriptTask)
+
+@given(instance=bpmn2_EObject_strategy)
+@settings(max_examples=50)
+def test_bpmn2_eobject_instantiation(instance):
+    assert isinstance(instance, bpmn2_EObject)
+
+@given(instance=ResourceParameterBinding_strategy)
+@settings(max_examples=50)
+def test_resourceparameterbinding_instantiation(instance):
+    assert isinstance(instance, ResourceParameterBinding)
+
+@given(instance=ReceiveTask_strategy)
+@settings(max_examples=50)
+def test_receivetask_instantiation(instance):
+    assert isinstance(instance, ReceiveTask)
+
+@given(instance=ResourceAssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_resourceassignmentexpression_instantiation(instance):
+    assert isinstance(instance, ResourceAssignmentExpression)
+
+@given(instance=Resource_strategy)
+@settings(max_examples=50)
+def test_resource_instantiation(instance):
+    assert isinstance(instance, Resource)
+
+@given(instance=Rendering_strategy)
+@settings(max_examples=50)
+def test_rendering_instantiation(instance):
+    assert isinstance(instance, Rendering)

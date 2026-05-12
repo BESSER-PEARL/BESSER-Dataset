@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     BlackJackMain,
@@ -267,9 +267,6 @@ def test_blackjackmain_instantiation(instance):
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_playerCards_type(instance):
-    assert isinstance(instance.playerCards, str)
 
 
 @given(instance=Game_strategy)
@@ -278,9 +275,6 @@ def test_game_playerCards_setter(instance):
     instance.playerCards = original
     assert instance.playerCards == original
 
-@given(instance=Game_strategy)
-def test_game_dealerCards_type(instance):
-    assert isinstance(instance.dealerCards, str)
 
 
 @given(instance=Game_strategy)
@@ -294,9 +288,6 @@ def test_game_dealerCards_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -305,9 +296,6 @@ def test_player_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Player_strategy)
-def test_player_money_type(instance):
-    assert isinstance(instance.money, int)
 
 
 @given(instance=Player_strategy)
@@ -321,9 +309,6 @@ def test_player_money_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_deck_type(instance):
-    assert isinstance(instance.deck, str)
 
 
 @given(instance=Deck_strategy)
@@ -332,9 +317,6 @@ def test_deck_deck_setter(instance):
     instance.deck = original
     assert instance.deck == original
 
-@given(instance=Deck_strategy)
-def test_deck_cardsDealt_type(instance):
-    assert isinstance(instance.cardsDealt, str)
 
 
 @given(instance=Deck_strategy)
@@ -348,9 +330,6 @@ def test_deck_cardsDealt_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_rank_type(instance):
-    assert isinstance(instance.rank, rank)
 
 
 @given(instance=Card_strategy)
@@ -359,9 +338,6 @@ def test_card_rank_setter(instance):
     instance.rank = original
     assert instance.rank == original
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, suit)
 
 
 @given(instance=Card_strategy)

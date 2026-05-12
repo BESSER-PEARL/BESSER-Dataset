@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Selects::Operando,
-    Selects::Join,
-    Selects::Where,
-    Selects::From,
-    Selects::Select,
+from python_code import (
+    Selects_Operando,
+    Selects_Join,
+    Selects_Where,
+    Selects_From,
+    Selects_Select,
     NamedElement,
-    Selects::Tabla,
-    Selects::Fichero,
-    Selects::Aplicacion,
-    Selects::NamedElement,
+    Selects_Tabla,
+    Selects_Fichero,
+    Selects_Aplicacion,
+    Selects_NamedElement,
 )
 
 # =============================================================================
@@ -24,33 +24,33 @@ from classes import (
 
 
 
-def test_selects::operando_is_not_abstract():
-    assert not inspect.isabstract(Selects::Operando)
+def test_selects_operando_is_not_abstract():
+    assert not inspect.isabstract(Selects_Operando)
 
 
-def test_selects::operando_constructor_exists():
-    assert callable(Selects::Operando.__init__)
+def test_selects_operando_constructor_exists():
+    assert callable(Selects_Operando.__init__)
 
 
-def test_selects::operando_constructor_args():
-    sig = inspect.signature(Selects::Operando.__init__)
+def test_selects_operando_constructor_args():
+    sig = inspect.signature(Selects_Operando.__init__)
     params = list(sig.parameters.keys())
     assert "columna" in params, "Missing parameter 'columna'"
     assert "tabla" in params, "Missing parameter 'tabla'"
 
-def test_selects::operando_has_columna():
-    assert hasattr(Selects::Operando, "columna")
+def test_selects_operando_has_columna():
+    assert hasattr(Selects_Operando, "columna")
     descriptor = None
-    for klass in Selects::Operando.__mro__:
+    for klass in Selects_Operando.__mro__:
         if "columna" in klass.__dict__:
             descriptor = klass.__dict__["columna"]
             break
     assert isinstance(descriptor, property)
 
-def test_selects::operando_has_tabla():
-    assert hasattr(Selects::Operando, "tabla")
+def test_selects_operando_has_tabla():
+    assert hasattr(Selects_Operando, "tabla")
     descriptor = None
-    for klass in Selects::Operando.__mro__:
+    for klass in Selects_Operando.__mro__:
         if "tabla" in klass.__dict__:
             descriptor = klass.__dict__["tabla"]
             break
@@ -58,58 +58,58 @@ def test_selects::operando_has_tabla():
 
 
 
-def test_selects::join_is_not_abstract():
-    assert not inspect.isabstract(Selects::Join)
+def test_selects_join_is_not_abstract():
+    assert not inspect.isabstract(Selects_Join)
 
 
-def test_selects::join_constructor_exists():
-    assert callable(Selects::Join.__init__)
+def test_selects_join_constructor_exists():
+    assert callable(Selects_Join.__init__)
 
 
-def test_selects::join_constructor_args():
-    sig = inspect.signature(Selects::Join.__init__)
+def test_selects_join_constructor_args():
+    sig = inspect.signature(Selects_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selects::where_is_not_abstract():
-    assert not inspect.isabstract(Selects::Where)
+def test_selects_where_is_not_abstract():
+    assert not inspect.isabstract(Selects_Where)
 
 
-def test_selects::where_constructor_exists():
-    assert callable(Selects::Where.__init__)
+def test_selects_where_constructor_exists():
+    assert callable(Selects_Where.__init__)
 
 
-def test_selects::where_constructor_args():
-    sig = inspect.signature(Selects::Where.__init__)
+def test_selects_where_constructor_args():
+    sig = inspect.signature(Selects_Where.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selects::from_is_not_abstract():
-    assert not inspect.isabstract(Selects::From)
+def test_selects_from_is_not_abstract():
+    assert not inspect.isabstract(Selects_From)
 
 
-def test_selects::from_constructor_exists():
-    assert callable(Selects::From.__init__)
+def test_selects_from_constructor_exists():
+    assert callable(Selects_From.__init__)
 
 
-def test_selects::from_constructor_args():
-    sig = inspect.signature(Selects::From.__init__)
+def test_selects_from_constructor_args():
+    sig = inspect.signature(Selects_From.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selects::select_is_not_abstract():
-    assert not inspect.isabstract(Selects::Select)
+def test_selects_select_is_not_abstract():
+    assert not inspect.isabstract(Selects_Select)
 
 
-def test_selects::select_constructor_exists():
-    assert callable(Selects::Select.__init__)
+def test_selects_select_constructor_exists():
+    assert callable(Selects_Select.__init__)
 
 
-def test_selects::select_constructor_args():
-    sig = inspect.signature(Selects::Select.__init__)
+def test_selects_select_constructor_args():
+    sig = inspect.signature(Selects_Select.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,23 +128,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_selects::tabla_is_not_abstract():
-    assert not inspect.isabstract(Selects::Tabla)
+def test_selects_tabla_is_not_abstract():
+    assert not inspect.isabstract(Selects_Tabla)
 
 
-def test_selects::tabla_constructor_exists():
-    assert callable(Selects::Tabla.__init__)
+def test_selects_tabla_constructor_exists():
+    assert callable(Selects_Tabla.__init__)
 
 
-def test_selects::tabla_constructor_args():
-    sig = inspect.signature(Selects::Tabla.__init__)
+def test_selects_tabla_constructor_args():
+    sig = inspect.signature(Selects_Tabla.__init__)
     params = list(sig.parameters.keys())
     assert "tabAlias" in params, "Missing parameter 'tabAlias'"
 
-def test_selects::tabla_has_tabAlias():
-    assert hasattr(Selects::Tabla, "tabAlias")
+def test_selects_tabla_has_tabAlias():
+    assert hasattr(Selects_Tabla, "tabAlias")
     descriptor = None
-    for klass in Selects::Tabla.__mro__:
+    for klass in Selects_Tabla.__mro__:
         if "tabAlias" in klass.__dict__:
             descriptor = klass.__dict__["tabAlias"]
             break
@@ -152,51 +152,51 @@ def test_selects::tabla_has_tabAlias():
 
 
 
-def test_selects::fichero_is_not_abstract():
-    assert not inspect.isabstract(Selects::Fichero)
+def test_selects_fichero_is_not_abstract():
+    assert not inspect.isabstract(Selects_Fichero)
 
 
-def test_selects::fichero_constructor_exists():
-    assert callable(Selects::Fichero.__init__)
+def test_selects_fichero_constructor_exists():
+    assert callable(Selects_Fichero.__init__)
 
 
-def test_selects::fichero_constructor_args():
-    sig = inspect.signature(Selects::Fichero.__init__)
+def test_selects_fichero_constructor_args():
+    sig = inspect.signature(Selects_Fichero.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selects::aplicacion_is_not_abstract():
-    assert not inspect.isabstract(Selects::Aplicacion)
+def test_selects_aplicacion_is_not_abstract():
+    assert not inspect.isabstract(Selects_Aplicacion)
 
 
-def test_selects::aplicacion_constructor_exists():
-    assert callable(Selects::Aplicacion.__init__)
+def test_selects_aplicacion_constructor_exists():
+    assert callable(Selects_Aplicacion.__init__)
 
 
-def test_selects::aplicacion_constructor_args():
-    sig = inspect.signature(Selects::Aplicacion.__init__)
+def test_selects_aplicacion_constructor_args():
+    sig = inspect.signature(Selects_Aplicacion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_selects::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Selects::NamedElement)
+def test_selects_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Selects_NamedElement)
 
 
-def test_selects::namedelement_constructor_exists():
-    assert callable(Selects::NamedElement.__init__)
+def test_selects_namedelement_constructor_exists():
+    assert callable(Selects_NamedElement.__init__)
 
 
-def test_selects::namedelement_constructor_args():
-    sig = inspect.signature(Selects::NamedElement.__init__)
+def test_selects_namedelement_constructor_args():
+    sig = inspect.signature(Selects_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "nombre" in params, "Missing parameter 'nombre'"
 
-def test_selects::namedelement_has_nombre():
-    assert hasattr(Selects::NamedElement, "nombre")
+def test_selects_namedelement_has_nombre():
+    assert hasattr(Selects_NamedElement, "nombre")
     descriptor = None
-    for klass in Selects::NamedElement.__mro__:
+    for klass in Selects_NamedElement.__mro__:
         if "nombre" in klass.__dict__:
             descriptor = klass.__dict__["nombre"]
             break
@@ -214,135 +214,123 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Selects::Operando_strategy = st.builds(
-    Selects::Operando,
+Selects_Operando_strategy = st.builds(
+    Selects_Operando,
     columna=
         safe_text,
     tabla=
         safe_text
 )
-Selects::Join_strategy = st.builds(
-    Selects::Join,
+Selects_Join_strategy = st.builds(
+    Selects_Join,
 )
-Selects::Where_strategy = st.builds(
-    Selects::Where,
+Selects_Where_strategy = st.builds(
+    Selects_Where,
 )
-Selects::From_strategy = st.builds(
-    Selects::From,
+Selects_From_strategy = st.builds(
+    Selects_From,
 )
-Selects::Select_strategy = st.builds(
-    Selects::Select,
+Selects_Select_strategy = st.builds(
+    Selects_Select,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Selects::Tabla_strategy = st.builds(
-    Selects::Tabla,
+Selects_Tabla_strategy = st.builds(
+    Selects_Tabla,
     tabAlias=
         safe_text
 )
-Selects::Fichero_strategy = st.builds(
-    Selects::Fichero,
+Selects_Fichero_strategy = st.builds(
+    Selects_Fichero,
 )
-Selects::Aplicacion_strategy = st.builds(
-    Selects::Aplicacion,
+Selects_Aplicacion_strategy = st.builds(
+    Selects_Aplicacion,
 )
-Selects::NamedElement_strategy = st.builds(
-    Selects::NamedElement,
+Selects_NamedElement_strategy = st.builds(
+    Selects_NamedElement,
     nombre=
         safe_text
 )
 
-@given(instance=Selects::Operando_strategy)
+@given(instance=Selects_Operando_strategy)
 @settings(max_examples=50)
-def test_selects::operando_instantiation(instance):
-    assert isinstance(instance, Selects::Operando)
-
-@given(instance=Selects::Operando_strategy)
-def test_selects::operando_columna_type(instance):
-    assert isinstance(instance.columna, str)
+def test_selects_operando_instantiation(instance):
+    assert isinstance(instance, Selects_Operando)
 
 
-@given(instance=Selects::Operando_strategy)
-def test_selects::operando_columna_setter(instance):
+
+@given(instance=Selects_Operando_strategy)
+def test_selects_operando_columna_setter(instance):
     original = instance.columna
     instance.columna = original
     assert instance.columna == original
 
-@given(instance=Selects::Operando_strategy)
-def test_selects::operando_tabla_type(instance):
-    assert isinstance(instance.tabla, str)
 
 
-@given(instance=Selects::Operando_strategy)
-def test_selects::operando_tabla_setter(instance):
+@given(instance=Selects_Operando_strategy)
+def test_selects_operando_tabla_setter(instance):
     original = instance.tabla
     instance.tabla = original
     assert instance.tabla == original
 
-@given(instance=Selects::Join_strategy)
+@given(instance=Selects_Join_strategy)
 @settings(max_examples=50)
-def test_selects::join_instantiation(instance):
-    assert isinstance(instance, Selects::Join)
+def test_selects_join_instantiation(instance):
+    assert isinstance(instance, Selects_Join)
 
-@given(instance=Selects::Where_strategy)
+@given(instance=Selects_Where_strategy)
 @settings(max_examples=50)
-def test_selects::where_instantiation(instance):
-    assert isinstance(instance, Selects::Where)
+def test_selects_where_instantiation(instance):
+    assert isinstance(instance, Selects_Where)
 
-@given(instance=Selects::From_strategy)
+@given(instance=Selects_From_strategy)
 @settings(max_examples=50)
-def test_selects::from_instantiation(instance):
-    assert isinstance(instance, Selects::From)
+def test_selects_from_instantiation(instance):
+    assert isinstance(instance, Selects_From)
 
-@given(instance=Selects::Select_strategy)
+@given(instance=Selects_Select_strategy)
 @settings(max_examples=50)
-def test_selects::select_instantiation(instance):
-    assert isinstance(instance, Selects::Select)
+def test_selects_select_instantiation(instance):
+    assert isinstance(instance, Selects_Select)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Selects::Tabla_strategy)
+@given(instance=Selects_Tabla_strategy)
 @settings(max_examples=50)
-def test_selects::tabla_instantiation(instance):
-    assert isinstance(instance, Selects::Tabla)
-
-@given(instance=Selects::Tabla_strategy)
-def test_selects::tabla_tabAlias_type(instance):
-    assert isinstance(instance.tabAlias, str)
+def test_selects_tabla_instantiation(instance):
+    assert isinstance(instance, Selects_Tabla)
 
 
-@given(instance=Selects::Tabla_strategy)
-def test_selects::tabla_tabAlias_setter(instance):
+
+@given(instance=Selects_Tabla_strategy)
+def test_selects_tabla_tabAlias_setter(instance):
     original = instance.tabAlias
     instance.tabAlias = original
     assert instance.tabAlias == original
 
-@given(instance=Selects::Fichero_strategy)
+@given(instance=Selects_Fichero_strategy)
 @settings(max_examples=50)
-def test_selects::fichero_instantiation(instance):
-    assert isinstance(instance, Selects::Fichero)
+def test_selects_fichero_instantiation(instance):
+    assert isinstance(instance, Selects_Fichero)
 
-@given(instance=Selects::Aplicacion_strategy)
+@given(instance=Selects_Aplicacion_strategy)
 @settings(max_examples=50)
-def test_selects::aplicacion_instantiation(instance):
-    assert isinstance(instance, Selects::Aplicacion)
+def test_selects_aplicacion_instantiation(instance):
+    assert isinstance(instance, Selects_Aplicacion)
 
-@given(instance=Selects::NamedElement_strategy)
+@given(instance=Selects_NamedElement_strategy)
 @settings(max_examples=50)
-def test_selects::namedelement_instantiation(instance):
-    assert isinstance(instance, Selects::NamedElement)
-
-@given(instance=Selects::NamedElement_strategy)
-def test_selects::namedelement_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
+def test_selects_namedelement_instantiation(instance):
+    assert isinstance(instance, Selects_NamedElement)
 
 
-@given(instance=Selects::NamedElement_strategy)
-def test_selects::namedelement_nombre_setter(instance):
+
+@given(instance=Selects_NamedElement_strategy)
+def test_selects_namedelement_nombre_setter(instance):
     original = instance.nombre
     instance.nombre = original
     assert instance.nombre == original

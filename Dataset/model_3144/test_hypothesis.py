@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    USE::Role,
-    USE::Literal,
-    USE::Type,
-    USE::Association,
-    USE::Enumeration,
-    USE::Model,
-    USE::OCLExpression,
-    USE::Operation,
-    USE::Attribute,
+from python_code import (
+    USE_Role,
+    USE_Literal,
+    USE_Type,
+    USE_Association,
+    USE_Enumeration,
+    USE_Model,
+    USE_OCLExpression,
+    USE_Operation,
+    USE_Attribute,
     Type,
-    USE::CollectionType,
-    USE::SimpleType,
-    USE::ReferenceType,
-    USE::EnumerationType,
-    USE::Class,
-    USE::Parameter,
+    USE_SimpleType,
+    USE_ReferenceType,
+    USE_CollectionType,
+    USE_EnumerationType,
+    USE_Class,
+    USE_Parameter,
     SimpleTypes,
-    AssocKind,
     CollectionTypes,
+    AssocKind,
 )
 
 # =============================================================================
@@ -33,77 +33,77 @@ from classes import (
 
 
 
-def test_use::role_is_not_abstract():
-    assert not inspect.isabstract(USE::Role)
+def test_use_role_is_not_abstract():
+    assert not inspect.isabstract(USE_Role)
 
 
-def test_use::role_constructor_exists():
-    assert callable(USE::Role.__init__)
+def test_use_role_constructor_exists():
+    assert callable(USE_Role.__init__)
 
 
-def test_use::role_constructor_args():
-    sig = inspect.signature(USE::Role.__init__)
+def test_use_role_constructor_args():
+    sig = inspect.signature(USE_Role.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
     assert "ordered" in params, "Missing parameter 'ordered'"
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_use::role_has_ordered():
-    assert hasattr(USE::Role, "ordered")
+def test_use_role_has_name():
+    assert hasattr(USE_Role, "name")
     descriptor = None
-    for klass in USE::Role.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
+    for klass in USE_Role.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_use::role_has_lowerBound():
-    assert hasattr(USE::Role, "lowerBound")
+def test_use_role_has_upperBound():
+    assert hasattr(USE_Role, "upperBound")
     descriptor = None
-    for klass in USE::Role.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_use::role_has_upperBound():
-    assert hasattr(USE::Role, "upperBound")
-    descriptor = None
-    for klass in USE::Role.__mro__:
+    for klass in USE_Role.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_use::role_has_name():
-    assert hasattr(USE::Role, "name")
+def test_use_role_has_ordered():
+    assert hasattr(USE_Role, "ordered")
     descriptor = None
-    for klass in USE::Role.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in USE_Role.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_use_role_has_lowerBound():
+    assert hasattr(USE_Role, "lowerBound")
+    descriptor = None
+    for klass in USE_Role.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_use::literal_is_not_abstract():
-    assert not inspect.isabstract(USE::Literal)
+def test_use_literal_is_not_abstract():
+    assert not inspect.isabstract(USE_Literal)
 
 
-def test_use::literal_constructor_exists():
-    assert callable(USE::Literal.__init__)
+def test_use_literal_constructor_exists():
+    assert callable(USE_Literal.__init__)
 
 
-def test_use::literal_constructor_args():
-    sig = inspect.signature(USE::Literal.__init__)
+def test_use_literal_constructor_args():
+    sig = inspect.signature(USE_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_use::literal_has_name():
-    assert hasattr(USE::Literal, "name")
+def test_use_literal_has_name():
+    assert hasattr(USE_Literal, "name")
     descriptor = None
-    for klass in USE::Literal.__mro__:
+    for klass in USE_Literal.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -111,47 +111,47 @@ def test_use::literal_has_name():
 
 
 
-def test_use::type_is_not_abstract():
-    assert not inspect.isabstract(USE::Type)
+def test_use_type_is_not_abstract():
+    assert not inspect.isabstract(USE_Type)
 
 
-def test_use::type_constructor_exists():
-    assert callable(USE::Type.__init__)
+def test_use_type_constructor_exists():
+    assert callable(USE_Type.__init__)
 
 
-def test_use::type_constructor_args():
-    sig = inspect.signature(USE::Type.__init__)
+def test_use_type_constructor_args():
+    sig = inspect.signature(USE_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_use::association_is_not_abstract():
-    assert not inspect.isabstract(USE::Association)
+def test_use_association_is_not_abstract():
+    assert not inspect.isabstract(USE_Association)
 
 
-def test_use::association_constructor_exists():
-    assert callable(USE::Association.__init__)
+def test_use_association_constructor_exists():
+    assert callable(USE_Association.__init__)
 
 
-def test_use::association_constructor_args():
-    sig = inspect.signature(USE::Association.__init__)
+def test_use_association_constructor_args():
+    sig = inspect.signature(USE_Association.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_use::association_has_name():
-    assert hasattr(USE::Association, "name")
+def test_use_association_has_name():
+    assert hasattr(USE_Association, "name")
     descriptor = None
-    for klass in USE::Association.__mro__:
+    for klass in USE_Association.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_use::association_has_kind():
-    assert hasattr(USE::Association, "kind")
+def test_use_association_has_kind():
+    assert hasattr(USE_Association, "kind")
     descriptor = None
-    for klass in USE::Association.__mro__:
+    for klass in USE_Association.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -159,23 +159,23 @@ def test_use::association_has_kind():
 
 
 
-def test_use::enumeration_is_not_abstract():
-    assert not inspect.isabstract(USE::Enumeration)
+def test_use_enumeration_is_not_abstract():
+    assert not inspect.isabstract(USE_Enumeration)
 
 
-def test_use::enumeration_constructor_exists():
-    assert callable(USE::Enumeration.__init__)
+def test_use_enumeration_constructor_exists():
+    assert callable(USE_Enumeration.__init__)
 
 
-def test_use::enumeration_constructor_args():
-    sig = inspect.signature(USE::Enumeration.__init__)
+def test_use_enumeration_constructor_args():
+    sig = inspect.signature(USE_Enumeration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_use::enumeration_has_name():
-    assert hasattr(USE::Enumeration, "name")
+def test_use_enumeration_has_name():
+    assert hasattr(USE_Enumeration, "name")
     descriptor = None
-    for klass in USE::Enumeration.__mro__:
+    for klass in USE_Enumeration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -183,23 +183,23 @@ def test_use::enumeration_has_name():
 
 
 
-def test_use::model_is_not_abstract():
-    assert not inspect.isabstract(USE::Model)
+def test_use_model_is_not_abstract():
+    assert not inspect.isabstract(USE_Model)
 
 
-def test_use::model_constructor_exists():
-    assert callable(USE::Model.__init__)
+def test_use_model_constructor_exists():
+    assert callable(USE_Model.__init__)
 
 
-def test_use::model_constructor_args():
-    sig = inspect.signature(USE::Model.__init__)
+def test_use_model_constructor_args():
+    sig = inspect.signature(USE_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_use::model_has_name():
-    assert hasattr(USE::Model, "name")
+def test_use_model_has_name():
+    assert hasattr(USE_Model, "name")
     descriptor = None
-    for klass in USE::Model.__mro__:
+    for klass in USE_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -207,23 +207,23 @@ def test_use::model_has_name():
 
 
 
-def test_use::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(USE::OCLExpression)
+def test_use_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(USE_OCLExpression)
 
 
-def test_use::oclexpression_constructor_exists():
-    assert callable(USE::OCLExpression.__init__)
+def test_use_oclexpression_constructor_exists():
+    assert callable(USE_OCLExpression.__init__)
 
 
-def test_use::oclexpression_constructor_args():
-    sig = inspect.signature(USE::OCLExpression.__init__)
+def test_use_oclexpression_constructor_args():
+    sig = inspect.signature(USE_OCLExpression.__init__)
     params = list(sig.parameters.keys())
     assert "expr" in params, "Missing parameter 'expr'"
 
-def test_use::oclexpression_has_expr():
-    assert hasattr(USE::OCLExpression, "expr")
+def test_use_oclexpression_has_expr():
+    assert hasattr(USE_OCLExpression, "expr")
     descriptor = None
-    for klass in USE::OCLExpression.__mro__:
+    for klass in USE_OCLExpression.__mro__:
         if "expr" in klass.__dict__:
             descriptor = klass.__dict__["expr"]
             break
@@ -231,23 +231,23 @@ def test_use::oclexpression_has_expr():
 
 
 
-def test_use::operation_is_not_abstract():
-    assert not inspect.isabstract(USE::Operation)
+def test_use_operation_is_not_abstract():
+    assert not inspect.isabstract(USE_Operation)
 
 
-def test_use::operation_constructor_exists():
-    assert callable(USE::Operation.__init__)
+def test_use_operation_constructor_exists():
+    assert callable(USE_Operation.__init__)
 
 
-def test_use::operation_constructor_args():
-    sig = inspect.signature(USE::Operation.__init__)
+def test_use_operation_constructor_args():
+    sig = inspect.signature(USE_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_use::operation_has_name():
-    assert hasattr(USE::Operation, "name")
+def test_use_operation_has_name():
+    assert hasattr(USE_Operation, "name")
     descriptor = None
-    for klass in USE::Operation.__mro__:
+    for klass in USE_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -255,23 +255,23 @@ def test_use::operation_has_name():
 
 
 
-def test_use::attribute_is_not_abstract():
-    assert not inspect.isabstract(USE::Attribute)
+def test_use_attribute_is_not_abstract():
+    assert not inspect.isabstract(USE_Attribute)
 
 
-def test_use::attribute_constructor_exists():
-    assert callable(USE::Attribute.__init__)
+def test_use_attribute_constructor_exists():
+    assert callable(USE_Attribute.__init__)
 
 
-def test_use::attribute_constructor_args():
-    sig = inspect.signature(USE::Attribute.__init__)
+def test_use_attribute_constructor_args():
+    sig = inspect.signature(USE_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_use::attribute_has_name():
-    assert hasattr(USE::Attribute, "name")
+def test_use_attribute_has_name():
+    assert hasattr(USE_Attribute, "name")
     descriptor = None
-    for klass in USE::Attribute.__mro__:
+    for klass in USE_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -293,23 +293,23 @@ def test_type_constructor_args():
 
 
 
-def test_use::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(USE::CollectionType)
+def test_use_simpletype_is_not_abstract():
+    assert not inspect.isabstract(USE_SimpleType)
 
 
-def test_use::collectiontype_constructor_exists():
-    assert callable(USE::CollectionType.__init__)
+def test_use_simpletype_constructor_exists():
+    assert callable(USE_SimpleType.__init__)
 
 
-def test_use::collectiontype_constructor_args():
-    sig = inspect.signature(USE::CollectionType.__init__)
+def test_use_simpletype_constructor_args():
+    sig = inspect.signature(USE_SimpleType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_use::collectiontype_has_type():
-    assert hasattr(USE::CollectionType, "type")
+def test_use_simpletype_has_type():
+    assert hasattr(USE_SimpleType, "type")
     descriptor = None
-    for klass in USE::CollectionType.__mro__:
+    for klass in USE_SimpleType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -317,23 +317,37 @@ def test_use::collectiontype_has_type():
 
 
 
-def test_use::simpletype_is_not_abstract():
-    assert not inspect.isabstract(USE::SimpleType)
+def test_use_referencetype_is_not_abstract():
+    assert not inspect.isabstract(USE_ReferenceType)
 
 
-def test_use::simpletype_constructor_exists():
-    assert callable(USE::SimpleType.__init__)
+def test_use_referencetype_constructor_exists():
+    assert callable(USE_ReferenceType.__init__)
 
 
-def test_use::simpletype_constructor_args():
-    sig = inspect.signature(USE::SimpleType.__init__)
+def test_use_referencetype_constructor_args():
+    sig = inspect.signature(USE_ReferenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(USE_CollectionType)
+
+
+def test_use_collectiontype_constructor_exists():
+    assert callable(USE_CollectionType.__init__)
+
+
+def test_use_collectiontype_constructor_args():
+    sig = inspect.signature(USE_CollectionType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_use::simpletype_has_type():
-    assert hasattr(USE::SimpleType, "type")
+def test_use_collectiontype_has_type():
+    assert hasattr(USE_CollectionType, "type")
     descriptor = None
-    for klass in USE::SimpleType.__mro__:
+    for klass in USE_CollectionType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -341,85 +355,71 @@ def test_use::simpletype_has_type():
 
 
 
-def test_use::referencetype_is_not_abstract():
-    assert not inspect.isabstract(USE::ReferenceType)
+def test_use_enumerationtype_is_not_abstract():
+    assert not inspect.isabstract(USE_EnumerationType)
 
 
-def test_use::referencetype_constructor_exists():
-    assert callable(USE::ReferenceType.__init__)
+def test_use_enumerationtype_constructor_exists():
+    assert callable(USE_EnumerationType.__init__)
 
 
-def test_use::referencetype_constructor_args():
-    sig = inspect.signature(USE::ReferenceType.__init__)
+def test_use_enumerationtype_constructor_args():
+    sig = inspect.signature(USE_EnumerationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_use::enumerationtype_is_not_abstract():
-    assert not inspect.isabstract(USE::EnumerationType)
+def test_use_class_is_not_abstract():
+    assert not inspect.isabstract(USE_Class)
 
 
-def test_use::enumerationtype_constructor_exists():
-    assert callable(USE::EnumerationType.__init__)
+def test_use_class_constructor_exists():
+    assert callable(USE_Class.__init__)
 
 
-def test_use::enumerationtype_constructor_args():
-    sig = inspect.signature(USE::EnumerationType.__init__)
+def test_use_class_constructor_args():
+    sig = inspect.signature(USE_Class.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_use::class_is_not_abstract():
-    assert not inspect.isabstract(USE::Class)
-
-
-def test_use::class_constructor_exists():
-    assert callable(USE::Class.__init__)
-
-
-def test_use::class_constructor_args():
-    sig = inspect.signature(USE::Class.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "abstract" in params, "Missing parameter 'abstract'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_use::class_has_name():
-    assert hasattr(USE::Class, "name")
+def test_use_class_has_abstract():
+    assert hasattr(USE_Class, "abstract")
     descriptor = None
-    for klass in USE::Class.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_use::class_has_abstract():
-    assert hasattr(USE::Class, "abstract")
-    descriptor = None
-    for klass in USE::Class.__mro__:
+    for klass in USE_Class.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
+def test_use_class_has_name():
+    assert hasattr(USE_Class, "name")
+    descriptor = None
+    for klass in USE_Class.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_use::parameter_is_not_abstract():
-    assert not inspect.isabstract(USE::Parameter)
+
+def test_use_parameter_is_not_abstract():
+    assert not inspect.isabstract(USE_Parameter)
 
 
-def test_use::parameter_constructor_exists():
-    assert callable(USE::Parameter.__init__)
+def test_use_parameter_constructor_exists():
+    assert callable(USE_Parameter.__init__)
 
 
-def test_use::parameter_constructor_args():
-    sig = inspect.signature(USE::Parameter.__init__)
+def test_use_parameter_constructor_args():
+    sig = inspect.signature(USE_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_use::parameter_has_name():
-    assert hasattr(USE::Parameter, "name")
+def test_use_parameter_has_name():
+    assert hasattr(USE_Parameter, "name")
     descriptor = None
-    for klass in USE::Parameter.__mro__:
+    for klass in USE_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -433,30 +433,14 @@ def test_simpletypes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SimpleTypes]
     expected_literals = [
-        "Boolean",
-        "Integer",
         "String",
         "Real",
+        "Integer",
+        "Boolean",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SimpleTypes"
-
-def test_assockind_exists():
-    # Check that the Enumeration exists
-    assert AssocKind is not None
-
-def test_assockind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssocKind]
-    expected_literals = [
-        "Association",
-        "Aggregation",
-        "Composition",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssocKind"
 
 def test_collectiontypes_exists():
     # Check that the Enumeration exists
@@ -474,6 +458,22 @@ def test_collectiontypes_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CollectionTypes"
 
+def test_assockind_exists():
+    # Check that the Enumeration exists
+    assert AssocKind is not None
+
+def test_assockind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssocKind]
+    expected_literals = [
+        "Composition",
+        "Aggregation",
+        "Association",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssocKind"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -486,262 +486,226 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-USE::Role_strategy = st.builds(
-    USE::Role,
+USE_Role_strategy = st.builds(
+    USE_Role,
+    name=
+        safe_text,
+    upperBound=
+        st.integers(),
     ordered=
         st.booleans(),
     lowerBound=
-        st.integers(),
-    upperBound=
-        st.integers(),
+        st.integers()
+)
+USE_Literal_strategy = st.builds(
+    USE_Literal,
     name=
         safe_text
 )
-USE::Literal_strategy = st.builds(
-    USE::Literal,
-    name=
-        safe_text
+USE_Type_strategy = st.builds(
+    USE_Type,
 )
-USE::Type_strategy = st.builds(
-    USE::Type,
-)
-USE::Association_strategy = st.builds(
-    USE::Association,
+USE_Association_strategy = st.builds(
+    USE_Association,
     name=
         safe_text,
     kind=
         safe_text
 )
-USE::Enumeration_strategy = st.builds(
-    USE::Enumeration,
+USE_Enumeration_strategy = st.builds(
+    USE_Enumeration,
     name=
         safe_text
 )
-USE::Model_strategy = st.builds(
-    USE::Model,
+USE_Model_strategy = st.builds(
+    USE_Model,
     name=
         safe_text
 )
-USE::OCLExpression_strategy = st.builds(
-    USE::OCLExpression,
+USE_OCLExpression_strategy = st.builds(
+    USE_OCLExpression,
     expr=
         safe_text
 )
-USE::Operation_strategy = st.builds(
-    USE::Operation,
+USE_Operation_strategy = st.builds(
+    USE_Operation,
     name=
         safe_text
 )
-USE::Attribute_strategy = st.builds(
-    USE::Attribute,
+USE_Attribute_strategy = st.builds(
+    USE_Attribute,
     name=
         safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-USE::CollectionType_strategy = st.builds(
-    USE::CollectionType,
+USE_SimpleType_strategy = st.builds(
+    USE_SimpleType,
     type=
         safe_text
 )
-USE::SimpleType_strategy = st.builds(
-    USE::SimpleType,
+USE_ReferenceType_strategy = st.builds(
+    USE_ReferenceType,
+)
+USE_CollectionType_strategy = st.builds(
+    USE_CollectionType,
     type=
         safe_text
 )
-USE::ReferenceType_strategy = st.builds(
-    USE::ReferenceType,
+USE_EnumerationType_strategy = st.builds(
+    USE_EnumerationType,
 )
-USE::EnumerationType_strategy = st.builds(
-    USE::EnumerationType,
-)
-USE::Class_strategy = st.builds(
-    USE::Class,
-    name=
-        safe_text,
+USE_Class_strategy = st.builds(
+    USE_Class,
     abstract=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
-USE::Parameter_strategy = st.builds(
-    USE::Parameter,
+USE_Parameter_strategy = st.builds(
+    USE_Parameter,
     name=
         safe_text
 )
 
-@given(instance=USE::Role_strategy)
+@given(instance=USE_Role_strategy)
 @settings(max_examples=50)
-def test_use::role_instantiation(instance):
-    assert isinstance(instance, USE::Role)
-
-@given(instance=USE::Role_strategy)
-def test_use::role_ordered_type(instance):
-    assert isinstance(instance.ordered, bool)
+def test_use_role_instantiation(instance):
+    assert isinstance(instance, USE_Role)
 
 
-@given(instance=USE::Role_strategy)
-def test_use::role_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
 
-@given(instance=USE::Role_strategy)
-def test_use::role_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
+@given(instance=USE_Role_strategy)
+def test_use_role_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=USE::Role_strategy)
-def test_use::role_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
 
-@given(instance=USE::Role_strategy)
-def test_use::role_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
-
-
-@given(instance=USE::Role_strategy)
-def test_use::role_upperBound_setter(instance):
+@given(instance=USE_Role_strategy)
+def test_use_role_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=USE::Role_strategy)
-def test_use::role_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=USE::Role_strategy)
-def test_use::role_name_setter(instance):
+@given(instance=USE_Role_strategy)
+def test_use_role_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
+
+
+@given(instance=USE_Role_strategy)
+def test_use_role_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+@given(instance=USE_Literal_strategy)
+@settings(max_examples=50)
+def test_use_literal_instantiation(instance):
+    assert isinstance(instance, USE_Literal)
+
+
+
+@given(instance=USE_Literal_strategy)
+def test_use_literal_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=USE::Literal_strategy)
+@given(instance=USE_Type_strategy)
 @settings(max_examples=50)
-def test_use::literal_instantiation(instance):
-    assert isinstance(instance, USE::Literal)
+def test_use_type_instantiation(instance):
+    assert isinstance(instance, USE_Type)
 
-@given(instance=USE::Literal_strategy)
-def test_use::literal_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=USE_Association_strategy)
+@settings(max_examples=50)
+def test_use_association_instantiation(instance):
+    assert isinstance(instance, USE_Association)
 
 
-@given(instance=USE::Literal_strategy)
-def test_use::literal_name_setter(instance):
+
+@given(instance=USE_Association_strategy)
+def test_use_association_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=USE::Type_strategy)
-@settings(max_examples=50)
-def test_use::type_instantiation(instance):
-    assert isinstance(instance, USE::Type)
-
-@given(instance=USE::Association_strategy)
-@settings(max_examples=50)
-def test_use::association_instantiation(instance):
-    assert isinstance(instance, USE::Association)
-
-@given(instance=USE::Association_strategy)
-def test_use::association_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=USE::Association_strategy)
-def test_use::association_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=USE::Association_strategy)
-def test_use::association_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=USE::Association_strategy)
-def test_use::association_kind_setter(instance):
+@given(instance=USE_Association_strategy)
+def test_use_association_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=USE::Enumeration_strategy)
+@given(instance=USE_Enumeration_strategy)
 @settings(max_examples=50)
-def test_use::enumeration_instantiation(instance):
-    assert isinstance(instance, USE::Enumeration)
-
-@given(instance=USE::Enumeration_strategy)
-def test_use::enumeration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_use_enumeration_instantiation(instance):
+    assert isinstance(instance, USE_Enumeration)
 
 
-@given(instance=USE::Enumeration_strategy)
-def test_use::enumeration_name_setter(instance):
+
+@given(instance=USE_Enumeration_strategy)
+def test_use_enumeration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=USE::Model_strategy)
+@given(instance=USE_Model_strategy)
 @settings(max_examples=50)
-def test_use::model_instantiation(instance):
-    assert isinstance(instance, USE::Model)
-
-@given(instance=USE::Model_strategy)
-def test_use::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_use_model_instantiation(instance):
+    assert isinstance(instance, USE_Model)
 
 
-@given(instance=USE::Model_strategy)
-def test_use::model_name_setter(instance):
+
+@given(instance=USE_Model_strategy)
+def test_use_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=USE::OCLExpression_strategy)
+@given(instance=USE_OCLExpression_strategy)
 @settings(max_examples=50)
-def test_use::oclexpression_instantiation(instance):
-    assert isinstance(instance, USE::OCLExpression)
-
-@given(instance=USE::OCLExpression_strategy)
-def test_use::oclexpression_expr_type(instance):
-    assert isinstance(instance.expr, str)
+def test_use_oclexpression_instantiation(instance):
+    assert isinstance(instance, USE_OCLExpression)
 
 
-@given(instance=USE::OCLExpression_strategy)
-def test_use::oclexpression_expr_setter(instance):
+
+@given(instance=USE_OCLExpression_strategy)
+def test_use_oclexpression_expr_setter(instance):
     original = instance.expr
     instance.expr = original
     assert instance.expr == original
 
-@given(instance=USE::Operation_strategy)
+@given(instance=USE_Operation_strategy)
 @settings(max_examples=50)
-def test_use::operation_instantiation(instance):
-    assert isinstance(instance, USE::Operation)
-
-@given(instance=USE::Operation_strategy)
-def test_use::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_use_operation_instantiation(instance):
+    assert isinstance(instance, USE_Operation)
 
 
-@given(instance=USE::Operation_strategy)
-def test_use::operation_name_setter(instance):
+
+@given(instance=USE_Operation_strategy)
+def test_use_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=USE::Attribute_strategy)
+@given(instance=USE_Attribute_strategy)
 @settings(max_examples=50)
-def test_use::attribute_instantiation(instance):
-    assert isinstance(instance, USE::Attribute)
-
-@given(instance=USE::Attribute_strategy)
-def test_use::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_use_attribute_instantiation(instance):
+    assert isinstance(instance, USE_Attribute)
 
 
-@given(instance=USE::Attribute_strategy)
-def test_use::attribute_name_setter(instance):
+
+@given(instance=USE_Attribute_strategy)
+def test_use_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -751,87 +715,72 @@ def test_use::attribute_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=USE::CollectionType_strategy)
+@given(instance=USE_SimpleType_strategy)
 @settings(max_examples=50)
-def test_use::collectiontype_instantiation(instance):
-    assert isinstance(instance, USE::CollectionType)
-
-@given(instance=USE::CollectionType_strategy)
-def test_use::collectiontype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_use_simpletype_instantiation(instance):
+    assert isinstance(instance, USE_SimpleType)
 
 
-@given(instance=USE::CollectionType_strategy)
-def test_use::collectiontype_type_setter(instance):
+
+@given(instance=USE_SimpleType_strategy)
+def test_use_simpletype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=USE::SimpleType_strategy)
+@given(instance=USE_ReferenceType_strategy)
 @settings(max_examples=50)
-def test_use::simpletype_instantiation(instance):
-    assert isinstance(instance, USE::SimpleType)
+def test_use_referencetype_instantiation(instance):
+    assert isinstance(instance, USE_ReferenceType)
 
-@given(instance=USE::SimpleType_strategy)
-def test_use::simpletype_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=USE_CollectionType_strategy)
+@settings(max_examples=50)
+def test_use_collectiontype_instantiation(instance):
+    assert isinstance(instance, USE_CollectionType)
 
 
-@given(instance=USE::SimpleType_strategy)
-def test_use::simpletype_type_setter(instance):
+
+@given(instance=USE_CollectionType_strategy)
+def test_use_collectiontype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=USE::ReferenceType_strategy)
+@given(instance=USE_EnumerationType_strategy)
 @settings(max_examples=50)
-def test_use::referencetype_instantiation(instance):
-    assert isinstance(instance, USE::ReferenceType)
+def test_use_enumerationtype_instantiation(instance):
+    assert isinstance(instance, USE_EnumerationType)
 
-@given(instance=USE::EnumerationType_strategy)
+@given(instance=USE_Class_strategy)
 @settings(max_examples=50)
-def test_use::enumerationtype_instantiation(instance):
-    assert isinstance(instance, USE::EnumerationType)
-
-@given(instance=USE::Class_strategy)
-@settings(max_examples=50)
-def test_use::class_instantiation(instance):
-    assert isinstance(instance, USE::Class)
-
-@given(instance=USE::Class_strategy)
-def test_use::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_use_class_instantiation(instance):
+    assert isinstance(instance, USE_Class)
 
 
-@given(instance=USE::Class_strategy)
-def test_use::class_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=USE::Class_strategy)
-def test_use::class_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=USE::Class_strategy)
-def test_use::class_abstract_setter(instance):
+@given(instance=USE_Class_strategy)
+def test_use_class_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=USE::Parameter_strategy)
+
+
+@given(instance=USE_Class_strategy)
+def test_use_class_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=USE_Parameter_strategy)
 @settings(max_examples=50)
-def test_use::parameter_instantiation(instance):
-    assert isinstance(instance, USE::Parameter)
-
-@given(instance=USE::Parameter_strategy)
-def test_use::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_use_parameter_instantiation(instance):
+    assert isinstance(instance, USE_Parameter)
 
 
-@given(instance=USE::Parameter_strategy)
-def test_use::parameter_name_setter(instance):
+
+@given(instance=USE_Parameter_strategy)
+def test_use_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

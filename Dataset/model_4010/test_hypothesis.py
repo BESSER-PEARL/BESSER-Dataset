@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    class::Attribute,
-    class::Association,
-    class::Clazz,
-    class::ClassDiagram,
+from python_code import (
+    class_Attribute,
+    class_Association,
+    class_Clazz,
+    class_ClassDiagram,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_class::attribute_is_not_abstract():
-    assert not inspect.isabstract(class::Attribute)
+def test_class_attribute_is_not_abstract():
+    assert not inspect.isabstract(class_Attribute)
 
 
-def test_class::attribute_constructor_exists():
-    assert callable(class::Attribute.__init__)
+def test_class_attribute_constructor_exists():
+    assert callable(class_Attribute.__init__)
 
 
-def test_class::attribute_constructor_args():
-    sig = inspect.signature(class::Attribute.__init__)
+def test_class_attribute_constructor_args():
+    sig = inspect.signature(class_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_class::attribute_has_id():
-    assert hasattr(class::Attribute, "id")
+def test_class_attribute_has_id():
+    assert hasattr(class_Attribute, "id")
     descriptor = None
-    for klass in class::Attribute.__mro__:
+    for klass in class_Attribute.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -42,23 +42,23 @@ def test_class::attribute_has_id():
 
 
 
-def test_class::association_is_not_abstract():
-    assert not inspect.isabstract(class::Association)
+def test_class_association_is_not_abstract():
+    assert not inspect.isabstract(class_Association)
 
 
-def test_class::association_constructor_exists():
-    assert callable(class::Association.__init__)
+def test_class_association_constructor_exists():
+    assert callable(class_Association.__init__)
 
 
-def test_class::association_constructor_args():
-    sig = inspect.signature(class::Association.__init__)
+def test_class_association_constructor_args():
+    sig = inspect.signature(class_Association.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_class::association_has_id():
-    assert hasattr(class::Association, "id")
+def test_class_association_has_id():
+    assert hasattr(class_Association, "id")
     descriptor = None
-    for klass in class::Association.__mro__:
+    for klass in class_Association.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -66,23 +66,23 @@ def test_class::association_has_id():
 
 
 
-def test_class::clazz_is_not_abstract():
-    assert not inspect.isabstract(class::Clazz)
+def test_class_clazz_is_not_abstract():
+    assert not inspect.isabstract(class_Clazz)
 
 
-def test_class::clazz_constructor_exists():
-    assert callable(class::Clazz.__init__)
+def test_class_clazz_constructor_exists():
+    assert callable(class_Clazz.__init__)
 
 
-def test_class::clazz_constructor_args():
-    sig = inspect.signature(class::Clazz.__init__)
+def test_class_clazz_constructor_args():
+    sig = inspect.signature(class_Clazz.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_class::clazz_has_id():
-    assert hasattr(class::Clazz, "id")
+def test_class_clazz_has_id():
+    assert hasattr(class_Clazz, "id")
     descriptor = None
-    for klass in class::Clazz.__mro__:
+    for klass in class_Clazz.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -90,23 +90,23 @@ def test_class::clazz_has_id():
 
 
 
-def test_class::classdiagram_is_not_abstract():
-    assert not inspect.isabstract(class::ClassDiagram)
+def test_class_classdiagram_is_not_abstract():
+    assert not inspect.isabstract(class_ClassDiagram)
 
 
-def test_class::classdiagram_constructor_exists():
-    assert callable(class::ClassDiagram.__init__)
+def test_class_classdiagram_constructor_exists():
+    assert callable(class_ClassDiagram.__init__)
 
 
-def test_class::classdiagram_constructor_args():
-    sig = inspect.signature(class::ClassDiagram.__init__)
+def test_class_classdiagram_constructor_args():
+    sig = inspect.signature(class_ClassDiagram.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_class::classdiagram_has_id():
-    assert hasattr(class::ClassDiagram, "id")
+def test_class_classdiagram_has_id():
+    assert hasattr(class_ClassDiagram, "id")
     descriptor = None
-    for klass in class::ClassDiagram.__mro__:
+    for klass in class_ClassDiagram.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-class::Attribute_strategy = st.builds(
-    class::Attribute,
+class_Attribute_strategy = st.builds(
+    class_Attribute,
     id=
         safe_text
 )
-class::Association_strategy = st.builds(
-    class::Association,
+class_Association_strategy = st.builds(
+    class_Association,
     id=
         safe_text
 )
-class::Clazz_strategy = st.builds(
-    class::Clazz,
+class_Clazz_strategy = st.builds(
+    class_Clazz,
     id=
         safe_text
 )
-class::ClassDiagram_strategy = st.builds(
-    class::ClassDiagram,
+class_ClassDiagram_strategy = st.builds(
+    class_ClassDiagram,
     id=
         safe_text
 )
 
-@given(instance=class::Attribute_strategy)
+@given(instance=class_Attribute_strategy)
 @settings(max_examples=50)
-def test_class::attribute_instantiation(instance):
-    assert isinstance(instance, class::Attribute)
-
-@given(instance=class::Attribute_strategy)
-def test_class::attribute_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_class_attribute_instantiation(instance):
+    assert isinstance(instance, class_Attribute)
 
 
-@given(instance=class::Attribute_strategy)
-def test_class::attribute_id_setter(instance):
+
+@given(instance=class_Attribute_strategy)
+def test_class_attribute_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=class::Association_strategy)
+@given(instance=class_Association_strategy)
 @settings(max_examples=50)
-def test_class::association_instantiation(instance):
-    assert isinstance(instance, class::Association)
-
-@given(instance=class::Association_strategy)
-def test_class::association_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_class_association_instantiation(instance):
+    assert isinstance(instance, class_Association)
 
 
-@given(instance=class::Association_strategy)
-def test_class::association_id_setter(instance):
+
+@given(instance=class_Association_strategy)
+def test_class_association_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=class::Clazz_strategy)
+@given(instance=class_Clazz_strategy)
 @settings(max_examples=50)
-def test_class::clazz_instantiation(instance):
-    assert isinstance(instance, class::Clazz)
-
-@given(instance=class::Clazz_strategy)
-def test_class::clazz_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_class_clazz_instantiation(instance):
+    assert isinstance(instance, class_Clazz)
 
 
-@given(instance=class::Clazz_strategy)
-def test_class::clazz_id_setter(instance):
+
+@given(instance=class_Clazz_strategy)
+def test_class_clazz_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=class::ClassDiagram_strategy)
+@given(instance=class_ClassDiagram_strategy)
 @settings(max_examples=50)
-def test_class::classdiagram_instantiation(instance):
-    assert isinstance(instance, class::ClassDiagram)
-
-@given(instance=class::ClassDiagram_strategy)
-def test_class::classdiagram_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_class_classdiagram_instantiation(instance):
+    assert isinstance(instance, class_ClassDiagram)
 
 
-@given(instance=class::ClassDiagram_strategy)
-def test_class::classdiagram_id_setter(instance):
+
+@given(instance=class_ClassDiagram_strategy)
+def test_class_classdiagram_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

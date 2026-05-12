@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Thing,
-    simplestatechart::Variable,
+    simplestatechart_Variable,
     NamedElement,
-    simplestatechart::Transition,
-    simplestatechart::State,
-    simplestatechart::Thing,
-    simplestatechart::NamedElement,
-    simplestatechart::RelatedTo,
+    simplestatechart_State,
+    simplestatechart_Transition,
+    simplestatechart_Thing,
+    simplestatechart_NamedElement,
+    simplestatechart_RelatedTo,
 )
 
 # =============================================================================
@@ -36,33 +36,33 @@ def test_thing_constructor_args():
 
 
 
-def test_simplestatechart::variable_is_not_abstract():
-    assert not inspect.isabstract(simplestatechart::Variable)
+def test_simplestatechart_variable_is_not_abstract():
+    assert not inspect.isabstract(simplestatechart_Variable)
 
 
-def test_simplestatechart::variable_constructor_exists():
-    assert callable(simplestatechart::Variable.__init__)
+def test_simplestatechart_variable_constructor_exists():
+    assert callable(simplestatechart_Variable.__init__)
 
 
-def test_simplestatechart::variable_constructor_args():
-    sig = inspect.signature(simplestatechart::Variable.__init__)
+def test_simplestatechart_variable_constructor_args():
+    sig = inspect.signature(simplestatechart_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simplestatechart::variable_has_type():
-    assert hasattr(simplestatechart::Variable, "type")
+def test_simplestatechart_variable_has_type():
+    assert hasattr(simplestatechart_Variable, "type")
     descriptor = None
-    for klass in simplestatechart::Variable.__mro__:
+    for klass in simplestatechart_Variable.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplestatechart::variable_has_value():
-    assert hasattr(simplestatechart::Variable, "value")
+def test_simplestatechart_variable_has_value():
+    assert hasattr(simplestatechart_Variable, "value")
     descriptor = None
-    for klass in simplestatechart::Variable.__mro__:
+    for klass in simplestatechart_Variable.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -84,23 +84,67 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simplestatechart::transition_is_not_abstract():
-    assert not inspect.isabstract(simplestatechart::Transition)
+def test_simplestatechart_state_is_not_abstract():
+    assert not inspect.isabstract(simplestatechart_State)
 
 
-def test_simplestatechart::transition_constructor_exists():
-    assert callable(simplestatechart::Transition.__init__)
+def test_simplestatechart_state_constructor_exists():
+    assert callable(simplestatechart_State.__init__)
 
 
-def test_simplestatechart::transition_constructor_args():
-    sig = inspect.signature(simplestatechart::Transition.__init__)
+def test_simplestatechart_state_constructor_args():
+    sig = inspect.signature(simplestatechart_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "activity" in params, "Missing parameter 'activity'"
+
+def test_simplestatechart_state_has_label():
+    assert hasattr(simplestatechart_State, "label")
+    descriptor = None
+    for klass in simplestatechart_State.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplestatechart_state_has_type():
+    assert hasattr(simplestatechart_State, "type")
+    descriptor = None
+    for klass in simplestatechart_State.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simplestatechart_state_has_activity():
+    assert hasattr(simplestatechart_State, "activity")
+    descriptor = None
+    for klass in simplestatechart_State.__mro__:
+        if "activity" in klass.__dict__:
+            descriptor = klass.__dict__["activity"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simplestatechart_transition_is_not_abstract():
+    assert not inspect.isabstract(simplestatechart_Transition)
+
+
+def test_simplestatechart_transition_constructor_exists():
+    assert callable(simplestatechart_Transition.__init__)
+
+
+def test_simplestatechart_transition_constructor_args():
+    sig = inspect.signature(simplestatechart_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_simplestatechart::transition_has_expression():
-    assert hasattr(simplestatechart::Transition, "expression")
+def test_simplestatechart_transition_has_expression():
+    assert hasattr(simplestatechart_Transition, "expression")
     descriptor = None
-    for klass in simplestatechart::Transition.__mro__:
+    for klass in simplestatechart_Transition.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -108,67 +152,23 @@ def test_simplestatechart::transition_has_expression():
 
 
 
-def test_simplestatechart::state_is_not_abstract():
-    assert not inspect.isabstract(simplestatechart::State)
+def test_simplestatechart_thing_is_not_abstract():
+    assert not inspect.isabstract(simplestatechart_Thing)
 
 
-def test_simplestatechart::state_constructor_exists():
-    assert callable(simplestatechart::State.__init__)
+def test_simplestatechart_thing_constructor_exists():
+    assert callable(simplestatechart_Thing.__init__)
 
 
-def test_simplestatechart::state_constructor_args():
-    sig = inspect.signature(simplestatechart::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "activity" in params, "Missing parameter 'activity'"
-    assert "label" in params, "Missing parameter 'label'"
-
-def test_simplestatechart::state_has_type():
-    assert hasattr(simplestatechart::State, "type")
-    descriptor = None
-    for klass in simplestatechart::State.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplestatechart::state_has_activity():
-    assert hasattr(simplestatechart::State, "activity")
-    descriptor = None
-    for klass in simplestatechart::State.__mro__:
-        if "activity" in klass.__dict__:
-            descriptor = klass.__dict__["activity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplestatechart::state_has_label():
-    assert hasattr(simplestatechart::State, "label")
-    descriptor = None
-    for klass in simplestatechart::State.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simplestatechart::thing_is_not_abstract():
-    assert not inspect.isabstract(simplestatechart::Thing)
-
-
-def test_simplestatechart::thing_constructor_exists():
-    assert callable(simplestatechart::Thing.__init__)
-
-
-def test_simplestatechart::thing_constructor_args():
-    sig = inspect.signature(simplestatechart::Thing.__init__)
+def test_simplestatechart_thing_constructor_args():
+    sig = inspect.signature(simplestatechart_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_simplestatechart::thing_has_id():
-    assert hasattr(simplestatechart::Thing, "id")
+def test_simplestatechart_thing_has_id():
+    assert hasattr(simplestatechart_Thing, "id")
     descriptor = None
-    for klass in simplestatechart::Thing.__mro__:
+    for klass in simplestatechart_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -176,23 +176,23 @@ def test_simplestatechart::thing_has_id():
 
 
 
-def test_simplestatechart::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simplestatechart::NamedElement)
+def test_simplestatechart_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simplestatechart_NamedElement)
 
 
-def test_simplestatechart::namedelement_constructor_exists():
-    assert callable(simplestatechart::NamedElement.__init__)
+def test_simplestatechart_namedelement_constructor_exists():
+    assert callable(simplestatechart_NamedElement.__init__)
 
 
-def test_simplestatechart::namedelement_constructor_args():
-    sig = inspect.signature(simplestatechart::NamedElement.__init__)
+def test_simplestatechart_namedelement_constructor_args():
+    sig = inspect.signature(simplestatechart_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplestatechart::namedelement_has_name():
-    assert hasattr(simplestatechart::NamedElement, "name")
+def test_simplestatechart_namedelement_has_name():
+    assert hasattr(simplestatechart_NamedElement, "name")
     descriptor = None
-    for klass in simplestatechart::NamedElement.__mro__:
+    for klass in simplestatechart_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -200,23 +200,23 @@ def test_simplestatechart::namedelement_has_name():
 
 
 
-def test_simplestatechart::relatedto_is_not_abstract():
-    assert not inspect.isabstract(simplestatechart::RelatedTo)
+def test_simplestatechart_relatedto_is_not_abstract():
+    assert not inspect.isabstract(simplestatechart_RelatedTo)
 
 
-def test_simplestatechart::relatedto_constructor_exists():
-    assert callable(simplestatechart::RelatedTo.__init__)
+def test_simplestatechart_relatedto_constructor_exists():
+    assert callable(simplestatechart_RelatedTo.__init__)
 
 
-def test_simplestatechart::relatedto_constructor_args():
-    sig = inspect.signature(simplestatechart::RelatedTo.__init__)
+def test_simplestatechart_relatedto_constructor_args():
+    sig = inspect.signature(simplestatechart_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_simplestatechart::relatedto_has_since():
-    assert hasattr(simplestatechart::RelatedTo, "since")
+def test_simplestatechart_relatedto_has_since():
+    assert hasattr(simplestatechart_RelatedTo, "since")
     descriptor = None
-    for klass in simplestatechart::RelatedTo.__mro__:
+    for klass in simplestatechart_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -237,8 +237,8 @@ safe_text = st.text(
 Thing_strategy = st.builds(
     Thing,
 )
-simplestatechart::Variable_strategy = st.builds(
-    simplestatechart::Variable,
+simplestatechart_Variable_strategy = st.builds(
+    simplestatechart_Variable,
     type=
         safe_text,
     value=
@@ -247,32 +247,32 @@ simplestatechart::Variable_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-simplestatechart::Transition_strategy = st.builds(
-    simplestatechart::Transition,
-    expression=
-        safe_text
-)
-simplestatechart::State_strategy = st.builds(
-    simplestatechart::State,
+simplestatechart_State_strategy = st.builds(
+    simplestatechart_State,
+    label=
+        safe_text,
     type=
         safe_text,
     activity=
-        safe_text,
-    label=
         safe_text
 )
-simplestatechart::Thing_strategy = st.builds(
-    simplestatechart::Thing,
+simplestatechart_Transition_strategy = st.builds(
+    simplestatechart_Transition,
+    expression=
+        safe_text
+)
+simplestatechart_Thing_strategy = st.builds(
+    simplestatechart_Thing,
     id=
         st.integers()
 )
-simplestatechart::NamedElement_strategy = st.builds(
-    simplestatechart::NamedElement,
+simplestatechart_NamedElement_strategy = st.builds(
+    simplestatechart_NamedElement,
     name=
         safe_text
 )
-simplestatechart::RelatedTo_strategy = st.builds(
-    simplestatechart::RelatedTo,
+simplestatechart_RelatedTo_strategy = st.builds(
+    simplestatechart_RelatedTo,
     since=
         safe_text
 )
@@ -282,29 +282,23 @@ simplestatechart::RelatedTo_strategy = st.builds(
 def test_thing_instantiation(instance):
     assert isinstance(instance, Thing)
 
-@given(instance=simplestatechart::Variable_strategy)
+@given(instance=simplestatechart_Variable_strategy)
 @settings(max_examples=50)
-def test_simplestatechart::variable_instantiation(instance):
-    assert isinstance(instance, simplestatechart::Variable)
-
-@given(instance=simplestatechart::Variable_strategy)
-def test_simplestatechart::variable_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_simplestatechart_variable_instantiation(instance):
+    assert isinstance(instance, simplestatechart_Variable)
 
 
-@given(instance=simplestatechart::Variable_strategy)
-def test_simplestatechart::variable_type_setter(instance):
+
+@given(instance=simplestatechart_Variable_strategy)
+def test_simplestatechart_variable_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=simplestatechart::Variable_strategy)
-def test_simplestatechart::variable_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=simplestatechart::Variable_strategy)
-def test_simplestatechart::variable_value_setter(instance):
+@given(instance=simplestatechart_Variable_strategy)
+def test_simplestatechart_variable_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -314,104 +308,83 @@ def test_simplestatechart::variable_value_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simplestatechart::Transition_strategy)
+@given(instance=simplestatechart_State_strategy)
 @settings(max_examples=50)
-def test_simplestatechart::transition_instantiation(instance):
-    assert isinstance(instance, simplestatechart::Transition)
-
-@given(instance=simplestatechart::Transition_strategy)
-def test_simplestatechart::transition_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_simplestatechart_state_instantiation(instance):
+    assert isinstance(instance, simplestatechart_State)
 
 
-@given(instance=simplestatechart::Transition_strategy)
-def test_simplestatechart::transition_expression_setter(instance):
-    original = instance.expression
-    instance.expression = original
-    assert instance.expression == original
 
-@given(instance=simplestatechart::State_strategy)
-@settings(max_examples=50)
-def test_simplestatechart::state_instantiation(instance):
-    assert isinstance(instance, simplestatechart::State)
-
-@given(instance=simplestatechart::State_strategy)
-def test_simplestatechart::state_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=simplestatechart::State_strategy)
-def test_simplestatechart::state_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=simplestatechart::State_strategy)
-def test_simplestatechart::state_activity_type(instance):
-    assert isinstance(instance.activity, str)
-
-
-@given(instance=simplestatechart::State_strategy)
-def test_simplestatechart::state_activity_setter(instance):
-    original = instance.activity
-    instance.activity = original
-    assert instance.activity == original
-
-@given(instance=simplestatechart::State_strategy)
-def test_simplestatechart::state_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=simplestatechart::State_strategy)
-def test_simplestatechart::state_label_setter(instance):
+@given(instance=simplestatechart_State_strategy)
+def test_simplestatechart_state_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=simplestatechart::Thing_strategy)
+
+
+@given(instance=simplestatechart_State_strategy)
+def test_simplestatechart_state_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=simplestatechart_State_strategy)
+def test_simplestatechart_state_activity_setter(instance):
+    original = instance.activity
+    instance.activity = original
+    assert instance.activity == original
+
+@given(instance=simplestatechart_Transition_strategy)
 @settings(max_examples=50)
-def test_simplestatechart::thing_instantiation(instance):
-    assert isinstance(instance, simplestatechart::Thing)
-
-@given(instance=simplestatechart::Thing_strategy)
-def test_simplestatechart::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_simplestatechart_transition_instantiation(instance):
+    assert isinstance(instance, simplestatechart_Transition)
 
 
-@given(instance=simplestatechart::Thing_strategy)
-def test_simplestatechart::thing_id_setter(instance):
+
+@given(instance=simplestatechart_Transition_strategy)
+def test_simplestatechart_transition_expression_setter(instance):
+    original = instance.expression
+    instance.expression = original
+    assert instance.expression == original
+
+@given(instance=simplestatechart_Thing_strategy)
+@settings(max_examples=50)
+def test_simplestatechart_thing_instantiation(instance):
+    assert isinstance(instance, simplestatechart_Thing)
+
+
+
+@given(instance=simplestatechart_Thing_strategy)
+def test_simplestatechart_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=simplestatechart::NamedElement_strategy)
+@given(instance=simplestatechart_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simplestatechart::namedelement_instantiation(instance):
-    assert isinstance(instance, simplestatechart::NamedElement)
-
-@given(instance=simplestatechart::NamedElement_strategy)
-def test_simplestatechart::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplestatechart_namedelement_instantiation(instance):
+    assert isinstance(instance, simplestatechart_NamedElement)
 
 
-@given(instance=simplestatechart::NamedElement_strategy)
-def test_simplestatechart::namedelement_name_setter(instance):
+
+@given(instance=simplestatechart_NamedElement_strategy)
+def test_simplestatechart_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplestatechart::RelatedTo_strategy)
+@given(instance=simplestatechart_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_simplestatechart::relatedto_instantiation(instance):
-    assert isinstance(instance, simplestatechart::RelatedTo)
-
-@given(instance=simplestatechart::RelatedTo_strategy)
-def test_simplestatechart::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_simplestatechart_relatedto_instantiation(instance):
+    assert isinstance(instance, simplestatechart_RelatedTo)
 
 
-@given(instance=simplestatechart::RelatedTo_strategy)
-def test_simplestatechart::relatedto_since_setter(instance):
+
+@given(instance=simplestatechart_RelatedTo_strategy)
+def test_simplestatechart_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original

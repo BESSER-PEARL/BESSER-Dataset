@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    resourceunload::Library,
-    resourceunload::Book,
+from python_code import (
+    resourceunload_Library,
+    resourceunload_Book,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_resourceunload::library_is_not_abstract():
-    assert not inspect.isabstract(resourceunload::Library)
+def test_resourceunload_library_is_not_abstract():
+    assert not inspect.isabstract(resourceunload_Library)
 
 
-def test_resourceunload::library_constructor_exists():
-    assert callable(resourceunload::Library.__init__)
+def test_resourceunload_library_constructor_exists():
+    assert callable(resourceunload_Library.__init__)
 
 
-def test_resourceunload::library_constructor_args():
-    sig = inspect.signature(resourceunload::Library.__init__)
+def test_resourceunload_library_constructor_args():
+    sig = inspect.signature(resourceunload_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_resourceunload::library_has_name():
-    assert hasattr(resourceunload::Library, "name")
+def test_resourceunload_library_has_name():
+    assert hasattr(resourceunload_Library, "name")
     descriptor = None
-    for klass in resourceunload::Library.__mro__:
+    for klass in resourceunload_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_resourceunload::library_has_name():
 
 
 
-def test_resourceunload::book_is_not_abstract():
-    assert not inspect.isabstract(resourceunload::Book)
+def test_resourceunload_book_is_not_abstract():
+    assert not inspect.isabstract(resourceunload_Book)
 
 
-def test_resourceunload::book_constructor_exists():
-    assert callable(resourceunload::Book.__init__)
+def test_resourceunload_book_constructor_exists():
+    assert callable(resourceunload_Book.__init__)
 
 
-def test_resourceunload::book_constructor_args():
-    sig = inspect.signature(resourceunload::Book.__init__)
+def test_resourceunload_book_constructor_args():
+    sig = inspect.signature(resourceunload_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_resourceunload::book_has_title():
-    assert hasattr(resourceunload::Book, "title")
+def test_resourceunload_book_has_title():
+    assert hasattr(resourceunload_Book, "title")
     descriptor = None
-    for klass in resourceunload::Book.__mro__:
+    for klass in resourceunload_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-resourceunload::Library_strategy = st.builds(
-    resourceunload::Library,
+resourceunload_Library_strategy = st.builds(
+    resourceunload_Library,
     name=
         safe_text
 )
-resourceunload::Book_strategy = st.builds(
-    resourceunload::Book,
+resourceunload_Book_strategy = st.builds(
+    resourceunload_Book,
     title=
         safe_text
 )
 
-@given(instance=resourceunload::Library_strategy)
+@given(instance=resourceunload_Library_strategy)
 @settings(max_examples=50)
-def test_resourceunload::library_instantiation(instance):
-    assert isinstance(instance, resourceunload::Library)
-
-@given(instance=resourceunload::Library_strategy)
-def test_resourceunload::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_resourceunload_library_instantiation(instance):
+    assert isinstance(instance, resourceunload_Library)
 
 
-@given(instance=resourceunload::Library_strategy)
-def test_resourceunload::library_name_setter(instance):
+
+@given(instance=resourceunload_Library_strategy)
+def test_resourceunload_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=resourceunload::Book_strategy)
+@given(instance=resourceunload_Book_strategy)
 @settings(max_examples=50)
-def test_resourceunload::book_instantiation(instance):
-    assert isinstance(instance, resourceunload::Book)
-
-@given(instance=resourceunload::Book_strategy)
-def test_resourceunload::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_resourceunload_book_instantiation(instance):
+    assert isinstance(instance, resourceunload_Book)
 
 
-@given(instance=resourceunload::Book_strategy)
-def test_resourceunload::book_title_setter(instance):
+
+@given(instance=resourceunload_Book_strategy)
+def test_resourceunload_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

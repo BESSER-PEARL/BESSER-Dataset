@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Example::A,
+from python_code import (
+    Example_B,
+    Example_A,
     B,
-    Example::Bb,
-    Example::Ba,
-    Example::B,
+    Example_Bb,
+    Example_Ba,
 )
 
 # =============================================================================
@@ -19,23 +19,47 @@ from classes import (
 
 
 
-def test_example::a_is_not_abstract():
-    assert not inspect.isabstract(Example::A)
+def test_example_b_is_not_abstract():
+    assert not inspect.isabstract(Example_B)
 
 
-def test_example::a_constructor_exists():
-    assert callable(Example::A.__init__)
+def test_example_b_constructor_exists():
+    assert callable(Example_B.__init__)
 
 
-def test_example::a_constructor_args():
-    sig = inspect.signature(Example::A.__init__)
+def test_example_b_constructor_args():
+    sig = inspect.signature(Example_B.__init__)
+    params = list(sig.parameters.keys())
+    assert "b" in params, "Missing parameter 'b'"
+
+def test_example_b_has_b():
+    assert hasattr(Example_B, "b")
+    descriptor = None
+    for klass in Example_B.__mro__:
+        if "b" in klass.__dict__:
+            descriptor = klass.__dict__["b"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_example_a_is_not_abstract():
+    assert not inspect.isabstract(Example_A)
+
+
+def test_example_a_constructor_exists():
+    assert callable(Example_A.__init__)
+
+
+def test_example_a_constructor_args():
+    sig = inspect.signature(Example_A.__init__)
     params = list(sig.parameters.keys())
     assert "a" in params, "Missing parameter 'a'"
 
-def test_example::a_has_a():
-    assert hasattr(Example::A, "a")
+def test_example_a_has_a():
+    assert hasattr(Example_A, "a")
     descriptor = None
-    for klass in Example::A.__mro__:
+    for klass in Example_A.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
@@ -57,63 +81,39 @@ def test_b_constructor_args():
 
 
 
-def test_example::bb_is_not_abstract():
-    assert not inspect.isabstract(Example::Bb)
+def test_example_bb_is_not_abstract():
+    assert not inspect.isabstract(Example_Bb)
 
 
-def test_example::bb_constructor_exists():
-    assert callable(Example::Bb.__init__)
+def test_example_bb_constructor_exists():
+    assert callable(Example_Bb.__init__)
 
 
-def test_example::bb_constructor_args():
-    sig = inspect.signature(Example::Bb.__init__)
+def test_example_bb_constructor_args():
+    sig = inspect.signature(Example_Bb.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_example::ba_is_not_abstract():
-    assert not inspect.isabstract(Example::Ba)
+def test_example_ba_is_not_abstract():
+    assert not inspect.isabstract(Example_Ba)
 
 
-def test_example::ba_constructor_exists():
-    assert callable(Example::Ba.__init__)
+def test_example_ba_constructor_exists():
+    assert callable(Example_Ba.__init__)
 
 
-def test_example::ba_constructor_args():
-    sig = inspect.signature(Example::Ba.__init__)
+def test_example_ba_constructor_args():
+    sig = inspect.signature(Example_Ba.__init__)
     params = list(sig.parameters.keys())
     assert "ba" in params, "Missing parameter 'ba'"
 
-def test_example::ba_has_ba():
-    assert hasattr(Example::Ba, "ba")
+def test_example_ba_has_ba():
+    assert hasattr(Example_Ba, "ba")
     descriptor = None
-    for klass in Example::Ba.__mro__:
+    for klass in Example_Ba.__mro__:
         if "ba" in klass.__dict__:
             descriptor = klass.__dict__["ba"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_example::b_is_not_abstract():
-    assert not inspect.isabstract(Example::B)
-
-
-def test_example::b_constructor_exists():
-    assert callable(Example::B.__init__)
-
-
-def test_example::b_constructor_args():
-    sig = inspect.signature(Example::B.__init__)
-    params = list(sig.parameters.keys())
-    assert "b" in params, "Missing parameter 'b'"
-
-def test_example::b_has_b():
-    assert hasattr(Example::B, "b")
-    descriptor = None
-    for klass in Example::B.__mro__:
-        if "b" in klass.__dict__:
-            descriptor = klass.__dict__["b"]
             break
     assert isinstance(descriptor, property)
 
@@ -129,40 +129,50 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Example::A_strategy = st.builds(
-    Example::A,
+Example_B_strategy = st.builds(
+    Example_B,
+    b=
+        safe_text
+)
+Example_A_strategy = st.builds(
+    Example_A,
     a=
         safe_text
 )
 B_strategy = st.builds(
     B,
 )
-Example::Bb_strategy = st.builds(
-    Example::Bb,
+Example_Bb_strategy = st.builds(
+    Example_Bb,
 )
-Example::Ba_strategy = st.builds(
-    Example::Ba,
+Example_Ba_strategy = st.builds(
+    Example_Ba,
     ba=
         safe_text
 )
-Example::B_strategy = st.builds(
-    Example::B,
-    b=
-        safe_text
-)
 
-@given(instance=Example::A_strategy)
+@given(instance=Example_B_strategy)
 @settings(max_examples=50)
-def test_example::a_instantiation(instance):
-    assert isinstance(instance, Example::A)
-
-@given(instance=Example::A_strategy)
-def test_example::a_a_type(instance):
-    assert isinstance(instance.a, str)
+def test_example_b_instantiation(instance):
+    assert isinstance(instance, Example_B)
 
 
-@given(instance=Example::A_strategy)
-def test_example::a_a_setter(instance):
+
+@given(instance=Example_B_strategy)
+def test_example_b_b_setter(instance):
+    original = instance.b
+    instance.b = original
+    assert instance.b == original
+
+@given(instance=Example_A_strategy)
+@settings(max_examples=50)
+def test_example_a_instantiation(instance):
+    assert isinstance(instance, Example_A)
+
+
+
+@given(instance=Example_A_strategy)
+def test_example_a_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original
@@ -172,39 +182,20 @@ def test_example::a_a_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=Example::Bb_strategy)
+@given(instance=Example_Bb_strategy)
 @settings(max_examples=50)
-def test_example::bb_instantiation(instance):
-    assert isinstance(instance, Example::Bb)
+def test_example_bb_instantiation(instance):
+    assert isinstance(instance, Example_Bb)
 
-@given(instance=Example::Ba_strategy)
+@given(instance=Example_Ba_strategy)
 @settings(max_examples=50)
-def test_example::ba_instantiation(instance):
-    assert isinstance(instance, Example::Ba)
-
-@given(instance=Example::Ba_strategy)
-def test_example::ba_ba_type(instance):
-    assert isinstance(instance.ba, str)
+def test_example_ba_instantiation(instance):
+    assert isinstance(instance, Example_Ba)
 
 
-@given(instance=Example::Ba_strategy)
-def test_example::ba_ba_setter(instance):
+
+@given(instance=Example_Ba_strategy)
+def test_example_ba_ba_setter(instance):
     original = instance.ba
     instance.ba = original
     assert instance.ba == original
-
-@given(instance=Example::B_strategy)
-@settings(max_examples=50)
-def test_example::b_instantiation(instance):
-    assert isinstance(instance, Example::B)
-
-@given(instance=Example::B_strategy)
-def test_example::b_b_type(instance):
-    assert isinstance(instance.b, str)
-
-
-@given(instance=Example::B_strategy)
-def test_example::b_b_setter(instance):
-    original = instance.b
-    instance.b = original
-    assert instance.b == original

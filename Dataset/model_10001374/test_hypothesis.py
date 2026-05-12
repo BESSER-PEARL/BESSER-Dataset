@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     C2,
@@ -83,9 +83,6 @@ def test_c2_instantiation(instance):
 def test_c1_instantiation(instance):
     assert isinstance(instance, C1)
 
-@given(instance=C1_strategy)
-def test_c1_vv1_type(instance):
-    assert isinstance(instance.vv1, int)
 
 
 @given(instance=C1_strategy)

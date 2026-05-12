@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Message,
-    iot::Request,
-    iot::Dispatch,
-    iot::Event,
-    iot::Message,
-    iot::BrokerSpec,
-    iot::IotSystemSpec,
-    iot::IotSystem,
+    iot_Request,
+    iot_Dispatch,
+    iot_Event,
+    iot_Message,
+    iot_BrokerSpec,
+    iot_IotSystemSpec,
+    iot_IotSystem,
 )
 
 # =============================================================================
@@ -36,109 +36,109 @@ def test_message_constructor_args():
 
 
 
-def test_iot::request_is_not_abstract():
-    assert not inspect.isabstract(iot::Request)
+def test_iot_request_is_not_abstract():
+    assert not inspect.isabstract(iot_Request)
 
 
-def test_iot::request_constructor_exists():
-    assert callable(iot::Request.__init__)
+def test_iot_request_constructor_exists():
+    assert callable(iot_Request.__init__)
 
 
-def test_iot::request_constructor_args():
-    sig = inspect.signature(iot::Request.__init__)
+def test_iot_request_constructor_args():
+    sig = inspect.signature(iot_Request.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::dispatch_is_not_abstract():
-    assert not inspect.isabstract(iot::Dispatch)
+def test_iot_dispatch_is_not_abstract():
+    assert not inspect.isabstract(iot_Dispatch)
 
 
-def test_iot::dispatch_constructor_exists():
-    assert callable(iot::Dispatch.__init__)
+def test_iot_dispatch_constructor_exists():
+    assert callable(iot_Dispatch.__init__)
 
 
-def test_iot::dispatch_constructor_args():
-    sig = inspect.signature(iot::Dispatch.__init__)
+def test_iot_dispatch_constructor_args():
+    sig = inspect.signature(iot_Dispatch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::event_is_not_abstract():
-    assert not inspect.isabstract(iot::Event)
+def test_iot_event_is_not_abstract():
+    assert not inspect.isabstract(iot_Event)
 
 
-def test_iot::event_constructor_exists():
-    assert callable(iot::Event.__init__)
+def test_iot_event_constructor_exists():
+    assert callable(iot_Event.__init__)
 
 
-def test_iot::event_constructor_args():
-    sig = inspect.signature(iot::Event.__init__)
+def test_iot_event_constructor_args():
+    sig = inspect.signature(iot_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::message_is_not_abstract():
-    assert not inspect.isabstract(iot::Message)
+def test_iot_message_is_not_abstract():
+    assert not inspect.isabstract(iot_Message)
 
 
-def test_iot::message_constructor_exists():
-    assert callable(iot::Message.__init__)
+def test_iot_message_constructor_exists():
+    assert callable(iot_Message.__init__)
 
 
-def test_iot::message_constructor_args():
-    sig = inspect.signature(iot::Message.__init__)
+def test_iot_message_constructor_args():
+    sig = inspect.signature(iot_Message.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "msg" in params, "Missing parameter 'msg'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::message_has_name():
-    assert hasattr(iot::Message, "name")
+def test_iot_message_has_msg():
+    assert hasattr(iot_Message, "msg")
     descriptor = None
-    for klass in iot::Message.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot::message_has_msg():
-    assert hasattr(iot::Message, "msg")
-    descriptor = None
-    for klass in iot::Message.__mro__:
+    for klass in iot_Message.__mro__:
         if "msg" in klass.__dict__:
             descriptor = klass.__dict__["msg"]
             break
     assert isinstance(descriptor, property)
 
+def test_iot_message_has_name():
+    assert hasattr(iot_Message, "name")
+    descriptor = None
+    for klass in iot_Message.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iot::brokerspec_is_not_abstract():
-    assert not inspect.isabstract(iot::BrokerSpec)
+
+def test_iot_brokerspec_is_not_abstract():
+    assert not inspect.isabstract(iot_BrokerSpec)
 
 
-def test_iot::brokerspec_constructor_exists():
-    assert callable(iot::BrokerSpec.__init__)
+def test_iot_brokerspec_constructor_exists():
+    assert callable(iot_BrokerSpec.__init__)
 
 
-def test_iot::brokerspec_constructor_args():
-    sig = inspect.signature(iot::BrokerSpec.__init__)
+def test_iot_brokerspec_constructor_args():
+    sig = inspect.signature(iot_BrokerSpec.__init__)
     params = list(sig.parameters.keys())
     assert "brokerPort" in params, "Missing parameter 'brokerPort'"
     assert "brokerHost" in params, "Missing parameter 'brokerHost'"
 
-def test_iot::brokerspec_has_brokerPort():
-    assert hasattr(iot::BrokerSpec, "brokerPort")
+def test_iot_brokerspec_has_brokerPort():
+    assert hasattr(iot_BrokerSpec, "brokerPort")
     descriptor = None
-    for klass in iot::BrokerSpec.__mro__:
+    for klass in iot_BrokerSpec.__mro__:
         if "brokerPort" in klass.__dict__:
             descriptor = klass.__dict__["brokerPort"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::brokerspec_has_brokerHost():
-    assert hasattr(iot::BrokerSpec, "brokerHost")
+def test_iot_brokerspec_has_brokerHost():
+    assert hasattr(iot_BrokerSpec, "brokerHost")
     descriptor = None
-    for klass in iot::BrokerSpec.__mro__:
+    for klass in iot_BrokerSpec.__mro__:
         if "brokerHost" in klass.__dict__:
             descriptor = klass.__dict__["brokerHost"]
             break
@@ -146,23 +146,23 @@ def test_iot::brokerspec_has_brokerHost():
 
 
 
-def test_iot::iotsystemspec_is_not_abstract():
-    assert not inspect.isabstract(iot::IotSystemSpec)
+def test_iot_iotsystemspec_is_not_abstract():
+    assert not inspect.isabstract(iot_IotSystemSpec)
 
 
-def test_iot::iotsystemspec_constructor_exists():
-    assert callable(iot::IotSystemSpec.__init__)
+def test_iot_iotsystemspec_constructor_exists():
+    assert callable(iot_IotSystemSpec.__init__)
 
 
-def test_iot::iotsystemspec_constructor_args():
-    sig = inspect.signature(iot::IotSystemSpec.__init__)
+def test_iot_iotsystemspec_constructor_args():
+    sig = inspect.signature(iot_IotSystemSpec.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::iotsystemspec_has_name():
-    assert hasattr(iot::IotSystemSpec, "name")
+def test_iot_iotsystemspec_has_name():
+    assert hasattr(iot_IotSystemSpec, "name")
     descriptor = None
-    for klass in iot::IotSystemSpec.__mro__:
+    for klass in iot_IotSystemSpec.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -170,16 +170,16 @@ def test_iot::iotsystemspec_has_name():
 
 
 
-def test_iot::iotsystem_is_not_abstract():
-    assert not inspect.isabstract(iot::IotSystem)
+def test_iot_iotsystem_is_not_abstract():
+    assert not inspect.isabstract(iot_IotSystem)
 
 
-def test_iot::iotsystem_constructor_exists():
-    assert callable(iot::IotSystem.__init__)
+def test_iot_iotsystem_constructor_exists():
+    assert callable(iot_IotSystem.__init__)
 
 
-def test_iot::iotsystem_constructor_args():
-    sig = inspect.signature(iot::IotSystem.__init__)
+def test_iot_iotsystem_constructor_args():
+    sig = inspect.signature(iot_IotSystem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -197,36 +197,36 @@ safe_text = st.text(
 Message_strategy = st.builds(
     Message,
 )
-iot::Request_strategy = st.builds(
-    iot::Request,
+iot_Request_strategy = st.builds(
+    iot_Request,
 )
-iot::Dispatch_strategy = st.builds(
-    iot::Dispatch,
+iot_Dispatch_strategy = st.builds(
+    iot_Dispatch,
 )
-iot::Event_strategy = st.builds(
-    iot::Event,
+iot_Event_strategy = st.builds(
+    iot_Event,
 )
-iot::Message_strategy = st.builds(
-    iot::Message,
-    name=
-        safe_text,
+iot_Message_strategy = st.builds(
+    iot_Message,
     msg=
+        safe_text,
+    name=
         safe_text
 )
-iot::BrokerSpec_strategy = st.builds(
-    iot::BrokerSpec,
+iot_BrokerSpec_strategy = st.builds(
+    iot_BrokerSpec,
     brokerPort=
         st.integers(),
     brokerHost=
         safe_text
 )
-iot::IotSystemSpec_strategy = st.builds(
-    iot::IotSystemSpec,
+iot_IotSystemSpec_strategy = st.builds(
+    iot_IotSystemSpec,
     name=
         safe_text
 )
-iot::IotSystem_strategy = st.builds(
-    iot::IotSystem,
+iot_IotSystem_strategy = st.builds(
+    iot_IotSystem,
 )
 
 @given(instance=Message_strategy)
@@ -234,92 +234,77 @@ iot::IotSystem_strategy = st.builds(
 def test_message_instantiation(instance):
     assert isinstance(instance, Message)
 
-@given(instance=iot::Request_strategy)
+@given(instance=iot_Request_strategy)
 @settings(max_examples=50)
-def test_iot::request_instantiation(instance):
-    assert isinstance(instance, iot::Request)
+def test_iot_request_instantiation(instance):
+    assert isinstance(instance, iot_Request)
 
-@given(instance=iot::Dispatch_strategy)
+@given(instance=iot_Dispatch_strategy)
 @settings(max_examples=50)
-def test_iot::dispatch_instantiation(instance):
-    assert isinstance(instance, iot::Dispatch)
+def test_iot_dispatch_instantiation(instance):
+    assert isinstance(instance, iot_Dispatch)
 
-@given(instance=iot::Event_strategy)
+@given(instance=iot_Event_strategy)
 @settings(max_examples=50)
-def test_iot::event_instantiation(instance):
-    assert isinstance(instance, iot::Event)
+def test_iot_event_instantiation(instance):
+    assert isinstance(instance, iot_Event)
 
-@given(instance=iot::Message_strategy)
+@given(instance=iot_Message_strategy)
 @settings(max_examples=50)
-def test_iot::message_instantiation(instance):
-    assert isinstance(instance, iot::Message)
-
-@given(instance=iot::Message_strategy)
-def test_iot::message_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_message_instantiation(instance):
+    assert isinstance(instance, iot_Message)
 
 
-@given(instance=iot::Message_strategy)
-def test_iot::message_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=iot::Message_strategy)
-def test_iot::message_msg_type(instance):
-    assert isinstance(instance.msg, str)
-
-
-@given(instance=iot::Message_strategy)
-def test_iot::message_msg_setter(instance):
+@given(instance=iot_Message_strategy)
+def test_iot_message_msg_setter(instance):
     original = instance.msg
     instance.msg = original
     assert instance.msg == original
 
-@given(instance=iot::BrokerSpec_strategy)
-@settings(max_examples=50)
-def test_iot::brokerspec_instantiation(instance):
-    assert isinstance(instance, iot::BrokerSpec)
-
-@given(instance=iot::BrokerSpec_strategy)
-def test_iot::brokerspec_brokerPort_type(instance):
-    assert isinstance(instance.brokerPort, int)
 
 
-@given(instance=iot::BrokerSpec_strategy)
-def test_iot::brokerspec_brokerPort_setter(instance):
-    original = instance.brokerPort
-    instance.brokerPort = original
-    assert instance.brokerPort == original
-
-@given(instance=iot::BrokerSpec_strategy)
-def test_iot::brokerspec_brokerHost_type(instance):
-    assert isinstance(instance.brokerHost, str)
-
-
-@given(instance=iot::BrokerSpec_strategy)
-def test_iot::brokerspec_brokerHost_setter(instance):
-    original = instance.brokerHost
-    instance.brokerHost = original
-    assert instance.brokerHost == original
-
-@given(instance=iot::IotSystemSpec_strategy)
-@settings(max_examples=50)
-def test_iot::iotsystemspec_instantiation(instance):
-    assert isinstance(instance, iot::IotSystemSpec)
-
-@given(instance=iot::IotSystemSpec_strategy)
-def test_iot::iotsystemspec_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=iot::IotSystemSpec_strategy)
-def test_iot::iotsystemspec_name_setter(instance):
+@given(instance=iot_Message_strategy)
+def test_iot_message_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot::IotSystem_strategy)
+@given(instance=iot_BrokerSpec_strategy)
 @settings(max_examples=50)
-def test_iot::iotsystem_instantiation(instance):
-    assert isinstance(instance, iot::IotSystem)
+def test_iot_brokerspec_instantiation(instance):
+    assert isinstance(instance, iot_BrokerSpec)
+
+
+
+@given(instance=iot_BrokerSpec_strategy)
+def test_iot_brokerspec_brokerPort_setter(instance):
+    original = instance.brokerPort
+    instance.brokerPort = original
+    assert instance.brokerPort == original
+
+
+
+@given(instance=iot_BrokerSpec_strategy)
+def test_iot_brokerspec_brokerHost_setter(instance):
+    original = instance.brokerHost
+    instance.brokerHost = original
+    assert instance.brokerHost == original
+
+@given(instance=iot_IotSystemSpec_strategy)
+@settings(max_examples=50)
+def test_iot_iotsystemspec_instantiation(instance):
+    assert isinstance(instance, iot_IotSystemSpec)
+
+
+
+@given(instance=iot_IotSystemSpec_strategy)
+def test_iot_iotsystemspec_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=iot_IotSystem_strategy)
+@settings(max_examples=50)
+def test_iot_iotsystem_instantiation(instance):
+    assert isinstance(instance, iot_IotSystem)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Edge,
-    PetrinetDSL::TPEdge,
-    PetrinetDSL::PTEdge,
+    PetrinetDSL_TPEdge,
+    PetrinetDSL_PTEdge,
     Node,
-    PetrinetDSL::Place,
-    PetrinetDSL::Transition,
-    PetrinetDSL::Token,
+    PetrinetDSL_Transition,
+    PetrinetDSL_Place,
+    PetrinetDSL_Token,
     Petrinet,
-    PetrinetDSL::Edge,
-    PetrinetDSL::Node,
-    PetrinetDSL::Petrinet,
+    PetrinetDSL_Edge,
+    PetrinetDSL_Node,
+    PetrinetDSL_Petrinet,
 )
 
 # =============================================================================
@@ -39,30 +39,30 @@ def test_edge_constructor_args():
 
 
 
-def test_petrinetdsl::tpedge_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::TPEdge)
+def test_petrinetdsl_tpedge_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_TPEdge)
 
 
-def test_petrinetdsl::tpedge_constructor_exists():
-    assert callable(PetrinetDSL::TPEdge.__init__)
+def test_petrinetdsl_tpedge_constructor_exists():
+    assert callable(PetrinetDSL_TPEdge.__init__)
 
 
-def test_petrinetdsl::tpedge_constructor_args():
-    sig = inspect.signature(PetrinetDSL::TPEdge.__init__)
+def test_petrinetdsl_tpedge_constructor_args():
+    sig = inspect.signature(PetrinetDSL_TPEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetdsl::ptedge_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::PTEdge)
+def test_petrinetdsl_ptedge_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_PTEdge)
 
 
-def test_petrinetdsl::ptedge_constructor_exists():
-    assert callable(PetrinetDSL::PTEdge.__init__)
+def test_petrinetdsl_ptedge_constructor_exists():
+    assert callable(PetrinetDSL_PTEdge.__init__)
 
 
-def test_petrinetdsl::ptedge_constructor_args():
-    sig = inspect.signature(PetrinetDSL::PTEdge.__init__)
+def test_petrinetdsl_ptedge_constructor_args():
+    sig = inspect.signature(PetrinetDSL_PTEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,44 +81,44 @@ def test_node_constructor_args():
 
 
 
-def test_petrinetdsl::place_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::Place)
+def test_petrinetdsl_transition_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_Transition)
 
 
-def test_petrinetdsl::place_constructor_exists():
-    assert callable(PetrinetDSL::Place.__init__)
+def test_petrinetdsl_transition_constructor_exists():
+    assert callable(PetrinetDSL_Transition.__init__)
 
 
-def test_petrinetdsl::place_constructor_args():
-    sig = inspect.signature(PetrinetDSL::Place.__init__)
+def test_petrinetdsl_transition_constructor_args():
+    sig = inspect.signature(PetrinetDSL_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetdsl::transition_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::Transition)
+def test_petrinetdsl_place_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_Place)
 
 
-def test_petrinetdsl::transition_constructor_exists():
-    assert callable(PetrinetDSL::Transition.__init__)
+def test_petrinetdsl_place_constructor_exists():
+    assert callable(PetrinetDSL_Place.__init__)
 
 
-def test_petrinetdsl::transition_constructor_args():
-    sig = inspect.signature(PetrinetDSL::Transition.__init__)
+def test_petrinetdsl_place_constructor_args():
+    sig = inspect.signature(PetrinetDSL_Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetdsl::token_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::Token)
+def test_petrinetdsl_token_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_Token)
 
 
-def test_petrinetdsl::token_constructor_exists():
-    assert callable(PetrinetDSL::Token.__init__)
+def test_petrinetdsl_token_constructor_exists():
+    assert callable(PetrinetDSL_Token.__init__)
 
 
-def test_petrinetdsl::token_constructor_args():
-    sig = inspect.signature(PetrinetDSL::Token.__init__)
+def test_petrinetdsl_token_constructor_args():
+    sig = inspect.signature(PetrinetDSL_Token.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,63 +137,63 @@ def test_petrinet_constructor_args():
 
 
 
-def test_petrinetdsl::edge_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::Edge)
+def test_petrinetdsl_edge_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_Edge)
 
 
-def test_petrinetdsl::edge_constructor_exists():
-    assert callable(PetrinetDSL::Edge.__init__)
+def test_petrinetdsl_edge_constructor_exists():
+    assert callable(PetrinetDSL_Edge.__init__)
 
 
-def test_petrinetdsl::edge_constructor_args():
-    sig = inspect.signature(PetrinetDSL::Edge.__init__)
+def test_petrinetdsl_edge_constructor_args():
+    sig = inspect.signature(PetrinetDSL_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetdsl::node_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::Node)
+def test_petrinetdsl_node_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_Node)
 
 
-def test_petrinetdsl::node_constructor_exists():
-    assert callable(PetrinetDSL::Node.__init__)
+def test_petrinetdsl_node_constructor_exists():
+    assert callable(PetrinetDSL_Node.__init__)
 
 
-def test_petrinetdsl::node_constructor_args():
-    sig = inspect.signature(PetrinetDSL::Node.__init__)
+def test_petrinetdsl_node_constructor_args():
+    sig = inspect.signature(PetrinetDSL_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetdsl::petrinet_is_not_abstract():
-    assert not inspect.isabstract(PetrinetDSL::Petrinet)
+def test_petrinetdsl_petrinet_is_not_abstract():
+    assert not inspect.isabstract(PetrinetDSL_Petrinet)
 
 
-def test_petrinetdsl::petrinet_constructor_exists():
-    assert callable(PetrinetDSL::Petrinet.__init__)
+def test_petrinetdsl_petrinet_constructor_exists():
+    assert callable(PetrinetDSL_Petrinet.__init__)
 
 
-def test_petrinetdsl::petrinet_constructor_args():
-    sig = inspect.signature(PetrinetDSL::Petrinet.__init__)
+def test_petrinetdsl_petrinet_constructor_args():
+    sig = inspect.signature(PetrinetDSL_Petrinet.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_petrinetdsl::petrinet_has_description():
-    assert hasattr(PetrinetDSL::Petrinet, "description")
+def test_petrinetdsl_petrinet_has_name():
+    assert hasattr(PetrinetDSL_Petrinet, "name")
     descriptor = None
-    for klass in PetrinetDSL::Petrinet.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in PetrinetDSL_Petrinet.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinetdsl::petrinet_has_name():
-    assert hasattr(PetrinetDSL::Petrinet, "name")
+def test_petrinetdsl_petrinet_has_description():
+    assert hasattr(PetrinetDSL_Petrinet, "description")
     descriptor = None
-    for klass in PetrinetDSL::Petrinet.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in PetrinetDSL_Petrinet.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -212,38 +212,38 @@ safe_text = st.text(
 Edge_strategy = st.builds(
     Edge,
 )
-PetrinetDSL::TPEdge_strategy = st.builds(
-    PetrinetDSL::TPEdge,
+PetrinetDSL_TPEdge_strategy = st.builds(
+    PetrinetDSL_TPEdge,
 )
-PetrinetDSL::PTEdge_strategy = st.builds(
-    PetrinetDSL::PTEdge,
+PetrinetDSL_PTEdge_strategy = st.builds(
+    PetrinetDSL_PTEdge,
 )
 Node_strategy = st.builds(
     Node,
 )
-PetrinetDSL::Place_strategy = st.builds(
-    PetrinetDSL::Place,
+PetrinetDSL_Transition_strategy = st.builds(
+    PetrinetDSL_Transition,
 )
-PetrinetDSL::Transition_strategy = st.builds(
-    PetrinetDSL::Transition,
+PetrinetDSL_Place_strategy = st.builds(
+    PetrinetDSL_Place,
 )
-PetrinetDSL::Token_strategy = st.builds(
-    PetrinetDSL::Token,
+PetrinetDSL_Token_strategy = st.builds(
+    PetrinetDSL_Token,
 )
 Petrinet_strategy = st.builds(
     Petrinet,
 )
-PetrinetDSL::Edge_strategy = st.builds(
-    PetrinetDSL::Edge,
+PetrinetDSL_Edge_strategy = st.builds(
+    PetrinetDSL_Edge,
 )
-PetrinetDSL::Node_strategy = st.builds(
-    PetrinetDSL::Node,
+PetrinetDSL_Node_strategy = st.builds(
+    PetrinetDSL_Node,
 )
-PetrinetDSL::Petrinet_strategy = st.builds(
-    PetrinetDSL::Petrinet,
-    description=
-        safe_text,
+PetrinetDSL_Petrinet_strategy = st.builds(
+    PetrinetDSL_Petrinet,
     name=
+        safe_text,
+    description=
         safe_text
 )
 
@@ -252,74 +252,68 @@ PetrinetDSL::Petrinet_strategy = st.builds(
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=PetrinetDSL::TPEdge_strategy)
+@given(instance=PetrinetDSL_TPEdge_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::tpedge_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::TPEdge)
+def test_petrinetdsl_tpedge_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_TPEdge)
 
-@given(instance=PetrinetDSL::PTEdge_strategy)
+@given(instance=PetrinetDSL_PTEdge_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::ptedge_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::PTEdge)
+def test_petrinetdsl_ptedge_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_PTEdge)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=PetrinetDSL::Place_strategy)
+@given(instance=PetrinetDSL_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::place_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::Place)
+def test_petrinetdsl_transition_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_Transition)
 
-@given(instance=PetrinetDSL::Transition_strategy)
+@given(instance=PetrinetDSL_Place_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::transition_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::Transition)
+def test_petrinetdsl_place_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_Place)
 
-@given(instance=PetrinetDSL::Token_strategy)
+@given(instance=PetrinetDSL_Token_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::token_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::Token)
+def test_petrinetdsl_token_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_Token)
 
 @given(instance=Petrinet_strategy)
 @settings(max_examples=50)
 def test_petrinet_instantiation(instance):
     assert isinstance(instance, Petrinet)
 
-@given(instance=PetrinetDSL::Edge_strategy)
+@given(instance=PetrinetDSL_Edge_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::edge_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::Edge)
+def test_petrinetdsl_edge_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_Edge)
 
-@given(instance=PetrinetDSL::Node_strategy)
+@given(instance=PetrinetDSL_Node_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::node_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::Node)
+def test_petrinetdsl_node_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_Node)
 
-@given(instance=PetrinetDSL::Petrinet_strategy)
+@given(instance=PetrinetDSL_Petrinet_strategy)
 @settings(max_examples=50)
-def test_petrinetdsl::petrinet_instantiation(instance):
-    assert isinstance(instance, PetrinetDSL::Petrinet)
-
-@given(instance=PetrinetDSL::Petrinet_strategy)
-def test_petrinetdsl::petrinet_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_petrinetdsl_petrinet_instantiation(instance):
+    assert isinstance(instance, PetrinetDSL_Petrinet)
 
 
-@given(instance=PetrinetDSL::Petrinet_strategy)
-def test_petrinetdsl::petrinet_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=PetrinetDSL::Petrinet_strategy)
-def test_petrinetdsl::petrinet_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=PetrinetDSL::Petrinet_strategy)
-def test_petrinetdsl::petrinet_name_setter(instance):
+@given(instance=PetrinetDSL_Petrinet_strategy)
+def test_petrinetdsl_petrinet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=PetrinetDSL_Petrinet_strategy)
+def test_petrinetdsl_petrinet_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original

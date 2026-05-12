@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Tree::Node,
-    Tree::Storage,
+from python_code import (
+    Tree_Node,
+    Tree_Storage,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_tree::node_is_not_abstract():
-    assert not inspect.isabstract(Tree::Node)
+def test_tree_node_is_not_abstract():
+    assert not inspect.isabstract(Tree_Node)
 
 
-def test_tree::node_constructor_exists():
-    assert callable(Tree::Node.__init__)
+def test_tree_node_constructor_exists():
+    assert callable(Tree_Node.__init__)
 
 
-def test_tree::node_constructor_args():
-    sig = inspect.signature(Tree::Node.__init__)
+def test_tree_node_constructor_args():
+    sig = inspect.signature(Tree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_tree::node_has_value():
-    assert hasattr(Tree::Node, "value")
+def test_tree_node_has_value():
+    assert hasattr(Tree_Node, "value")
     descriptor = None
-    for klass in Tree::Node.__mro__:
+    for klass in Tree_Node.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -40,16 +40,16 @@ def test_tree::node_has_value():
 
 
 
-def test_tree::storage_is_not_abstract():
-    assert not inspect.isabstract(Tree::Storage)
+def test_tree_storage_is_not_abstract():
+    assert not inspect.isabstract(Tree_Storage)
 
 
-def test_tree::storage_constructor_exists():
-    assert callable(Tree::Storage.__init__)
+def test_tree_storage_constructor_exists():
+    assert callable(Tree_Storage.__init__)
 
 
-def test_tree::storage_constructor_args():
-    sig = inspect.signature(Tree::Storage.__init__)
+def test_tree_storage_constructor_args():
+    sig = inspect.signature(Tree_Storage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Tree::Node_strategy = st.builds(
-    Tree::Node,
+Tree_Node_strategy = st.builds(
+    Tree_Node,
     value=
         st.integers()
 )
-Tree::Storage_strategy = st.builds(
-    Tree::Storage,
+Tree_Storage_strategy = st.builds(
+    Tree_Storage,
 )
 
-@given(instance=Tree::Node_strategy)
+@given(instance=Tree_Node_strategy)
 @settings(max_examples=50)
-def test_tree::node_instantiation(instance):
-    assert isinstance(instance, Tree::Node)
-
-@given(instance=Tree::Node_strategy)
-def test_tree::node_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_tree_node_instantiation(instance):
+    assert isinstance(instance, Tree_Node)
 
 
-@given(instance=Tree::Node_strategy)
-def test_tree::node_value_setter(instance):
+
+@given(instance=Tree_Node_strategy)
+def test_tree_node_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Tree::Storage_strategy)
+@given(instance=Tree_Storage_strategy)
 @settings(max_examples=50)
-def test_tree::storage_instantiation(instance):
-    assert isinstance(instance, Tree::Storage)
+def test_tree_storage_instantiation(instance):
+    assert isinstance(instance, Tree_Storage)

@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    kref::Named,
+    kref_Named,
     Named,
-    kref::C,
-    kref::E,
-    kref::F,
-    kref::H,
-    kref::K,
-    kref::J,
-    kref::G,
-    kref::B,
-    kref::A,
+    kref_K,
+    kref_B,
+    kref_E,
+    kref_J,
+    kref_F,
+    kref_H,
+    kref_C,
+    kref_G,
+    kref_A,
 )
 
 # =============================================================================
@@ -40,23 +40,23 @@ def test_b_constructor_args():
 
 
 
-def test_kref::named_is_not_abstract():
-    assert not inspect.isabstract(kref::Named)
+def test_kref_named_is_not_abstract():
+    assert not inspect.isabstract(kref_Named)
 
 
-def test_kref::named_constructor_exists():
-    assert callable(kref::Named.__init__)
+def test_kref_named_constructor_exists():
+    assert callable(kref_Named.__init__)
 
 
-def test_kref::named_constructor_args():
-    sig = inspect.signature(kref::Named.__init__)
+def test_kref_named_constructor_args():
+    sig = inspect.signature(kref_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_kref::named_has_name():
-    assert hasattr(kref::Named, "name")
+def test_kref_named_has_name():
+    assert hasattr(kref_Named, "name")
     descriptor = None
-    for klass in kref::Named.__mro__:
+    for klass in kref_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -78,128 +78,128 @@ def test_named_constructor_args():
 
 
 
-def test_kref::c_is_not_abstract():
-    assert not inspect.isabstract(kref::C)
+def test_kref_k_is_not_abstract():
+    assert not inspect.isabstract(kref_K)
 
 
-def test_kref::c_constructor_exists():
-    assert callable(kref::C.__init__)
+def test_kref_k_constructor_exists():
+    assert callable(kref_K.__init__)
 
 
-def test_kref::c_constructor_args():
-    sig = inspect.signature(kref::C.__init__)
+def test_kref_k_constructor_args():
+    sig = inspect.signature(kref_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::e_is_not_abstract():
-    assert not inspect.isabstract(kref::E)
+def test_kref_b_is_not_abstract():
+    assert not inspect.isabstract(kref_B)
 
 
-def test_kref::e_constructor_exists():
-    assert callable(kref::E.__init__)
+def test_kref_b_constructor_exists():
+    assert callable(kref_B.__init__)
 
 
-def test_kref::e_constructor_args():
-    sig = inspect.signature(kref::E.__init__)
+def test_kref_b_constructor_args():
+    sig = inspect.signature(kref_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::f_is_not_abstract():
-    assert not inspect.isabstract(kref::F)
+def test_kref_e_is_not_abstract():
+    assert not inspect.isabstract(kref_E)
 
 
-def test_kref::f_constructor_exists():
-    assert callable(kref::F.__init__)
+def test_kref_e_constructor_exists():
+    assert callable(kref_E.__init__)
 
 
-def test_kref::f_constructor_args():
-    sig = inspect.signature(kref::F.__init__)
+def test_kref_e_constructor_args():
+    sig = inspect.signature(kref_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::h_is_not_abstract():
-    assert not inspect.isabstract(kref::H)
+def test_kref_j_is_not_abstract():
+    assert not inspect.isabstract(kref_J)
 
 
-def test_kref::h_constructor_exists():
-    assert callable(kref::H.__init__)
+def test_kref_j_constructor_exists():
+    assert callable(kref_J.__init__)
 
 
-def test_kref::h_constructor_args():
-    sig = inspect.signature(kref::H.__init__)
+def test_kref_j_constructor_args():
+    sig = inspect.signature(kref_J.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::k_is_not_abstract():
-    assert not inspect.isabstract(kref::K)
+def test_kref_f_is_not_abstract():
+    assert not inspect.isabstract(kref_F)
 
 
-def test_kref::k_constructor_exists():
-    assert callable(kref::K.__init__)
+def test_kref_f_constructor_exists():
+    assert callable(kref_F.__init__)
 
 
-def test_kref::k_constructor_args():
-    sig = inspect.signature(kref::K.__init__)
+def test_kref_f_constructor_args():
+    sig = inspect.signature(kref_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::j_is_not_abstract():
-    assert not inspect.isabstract(kref::J)
+def test_kref_h_is_not_abstract():
+    assert not inspect.isabstract(kref_H)
 
 
-def test_kref::j_constructor_exists():
-    assert callable(kref::J.__init__)
+def test_kref_h_constructor_exists():
+    assert callable(kref_H.__init__)
 
 
-def test_kref::j_constructor_args():
-    sig = inspect.signature(kref::J.__init__)
+def test_kref_h_constructor_args():
+    sig = inspect.signature(kref_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::g_is_not_abstract():
-    assert not inspect.isabstract(kref::G)
+def test_kref_c_is_not_abstract():
+    assert not inspect.isabstract(kref_C)
 
 
-def test_kref::g_constructor_exists():
-    assert callable(kref::G.__init__)
+def test_kref_c_constructor_exists():
+    assert callable(kref_C.__init__)
 
 
-def test_kref::g_constructor_args():
-    sig = inspect.signature(kref::G.__init__)
+def test_kref_c_constructor_args():
+    sig = inspect.signature(kref_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::b_is_not_abstract():
-    assert not inspect.isabstract(kref::B)
+def test_kref_g_is_not_abstract():
+    assert not inspect.isabstract(kref_G)
 
 
-def test_kref::b_constructor_exists():
-    assert callable(kref::B.__init__)
+def test_kref_g_constructor_exists():
+    assert callable(kref_G.__init__)
 
 
-def test_kref::b_constructor_args():
-    sig = inspect.signature(kref::B.__init__)
+def test_kref_g_constructor_args():
+    sig = inspect.signature(kref_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kref::a_is_not_abstract():
-    assert not inspect.isabstract(kref::A)
+def test_kref_a_is_not_abstract():
+    assert not inspect.isabstract(kref_A)
 
 
-def test_kref::a_constructor_exists():
-    assert callable(kref::A.__init__)
+def test_kref_a_constructor_exists():
+    assert callable(kref_A.__init__)
 
 
-def test_kref::a_constructor_args():
-    sig = inspect.signature(kref::A.__init__)
+def test_kref_a_constructor_args():
+    sig = inspect.signature(kref_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,40 +217,40 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-kref::Named_strategy = st.builds(
-    kref::Named,
+kref_Named_strategy = st.builds(
+    kref_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-kref::C_strategy = st.builds(
-    kref::C,
+kref_K_strategy = st.builds(
+    kref_K,
 )
-kref::E_strategy = st.builds(
-    kref::E,
+kref_B_strategy = st.builds(
+    kref_B,
 )
-kref::F_strategy = st.builds(
-    kref::F,
+kref_E_strategy = st.builds(
+    kref_E,
 )
-kref::H_strategy = st.builds(
-    kref::H,
+kref_J_strategy = st.builds(
+    kref_J,
 )
-kref::K_strategy = st.builds(
-    kref::K,
+kref_F_strategy = st.builds(
+    kref_F,
 )
-kref::J_strategy = st.builds(
-    kref::J,
+kref_H_strategy = st.builds(
+    kref_H,
 )
-kref::G_strategy = st.builds(
-    kref::G,
+kref_C_strategy = st.builds(
+    kref_C,
 )
-kref::B_strategy = st.builds(
-    kref::B,
+kref_G_strategy = st.builds(
+    kref_G,
 )
-kref::A_strategy = st.builds(
-    kref::A,
+kref_A_strategy = st.builds(
+    kref_A,
 )
 
 @given(instance=B_strategy)
@@ -258,18 +258,15 @@ kref::A_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=kref::Named_strategy)
+@given(instance=kref_Named_strategy)
 @settings(max_examples=50)
-def test_kref::named_instantiation(instance):
-    assert isinstance(instance, kref::Named)
-
-@given(instance=kref::Named_strategy)
-def test_kref::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_kref_named_instantiation(instance):
+    assert isinstance(instance, kref_Named)
 
 
-@given(instance=kref::Named_strategy)
-def test_kref::named_name_setter(instance):
+
+@given(instance=kref_Named_strategy)
+def test_kref_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -279,47 +276,47 @@ def test_kref::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=kref::C_strategy)
+@given(instance=kref_K_strategy)
 @settings(max_examples=50)
-def test_kref::c_instantiation(instance):
-    assert isinstance(instance, kref::C)
+def test_kref_k_instantiation(instance):
+    assert isinstance(instance, kref_K)
 
-@given(instance=kref::E_strategy)
+@given(instance=kref_B_strategy)
 @settings(max_examples=50)
-def test_kref::e_instantiation(instance):
-    assert isinstance(instance, kref::E)
+def test_kref_b_instantiation(instance):
+    assert isinstance(instance, kref_B)
 
-@given(instance=kref::F_strategy)
+@given(instance=kref_E_strategy)
 @settings(max_examples=50)
-def test_kref::f_instantiation(instance):
-    assert isinstance(instance, kref::F)
+def test_kref_e_instantiation(instance):
+    assert isinstance(instance, kref_E)
 
-@given(instance=kref::H_strategy)
+@given(instance=kref_J_strategy)
 @settings(max_examples=50)
-def test_kref::h_instantiation(instance):
-    assert isinstance(instance, kref::H)
+def test_kref_j_instantiation(instance):
+    assert isinstance(instance, kref_J)
 
-@given(instance=kref::K_strategy)
+@given(instance=kref_F_strategy)
 @settings(max_examples=50)
-def test_kref::k_instantiation(instance):
-    assert isinstance(instance, kref::K)
+def test_kref_f_instantiation(instance):
+    assert isinstance(instance, kref_F)
 
-@given(instance=kref::J_strategy)
+@given(instance=kref_H_strategy)
 @settings(max_examples=50)
-def test_kref::j_instantiation(instance):
-    assert isinstance(instance, kref::J)
+def test_kref_h_instantiation(instance):
+    assert isinstance(instance, kref_H)
 
-@given(instance=kref::G_strategy)
+@given(instance=kref_C_strategy)
 @settings(max_examples=50)
-def test_kref::g_instantiation(instance):
-    assert isinstance(instance, kref::G)
+def test_kref_c_instantiation(instance):
+    assert isinstance(instance, kref_C)
 
-@given(instance=kref::B_strategy)
+@given(instance=kref_G_strategy)
 @settings(max_examples=50)
-def test_kref::b_instantiation(instance):
-    assert isinstance(instance, kref::B)
+def test_kref_g_instantiation(instance):
+    assert isinstance(instance, kref_G)
 
-@given(instance=kref::A_strategy)
+@given(instance=kref_A_strategy)
 @settings(max_examples=50)
-def test_kref::a_instantiation(instance):
-    assert isinstance(instance, kref::A)
+def test_kref_a_instantiation(instance):
+    assert isinstance(instance, kref_A)

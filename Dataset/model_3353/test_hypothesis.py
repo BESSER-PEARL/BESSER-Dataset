@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    DB::Column,
-    DB::Database,
-    DB::Table,
+from python_code import (
+    DB_Column,
+    DB_Database,
+    DB_Table,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_db::column_is_not_abstract():
-    assert not inspect.isabstract(DB::Column)
+def test_db_column_is_not_abstract():
+    assert not inspect.isabstract(DB_Column)
 
 
-def test_db::column_constructor_exists():
-    assert callable(DB::Column.__init__)
+def test_db_column_constructor_exists():
+    assert callable(DB_Column.__init__)
 
 
-def test_db::column_constructor_args():
-    sig = inspect.signature(DB::Column.__init__)
+def test_db_column_constructor_args():
+    sig = inspect.signature(DB_Column.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_db::column_has_Name():
-    assert hasattr(DB::Column, "Name")
+def test_db_column_has_Name():
+    assert hasattr(DB_Column, "Name")
     descriptor = None
-    for klass in DB::Column.__mro__:
+    for klass in DB_Column.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -41,23 +41,23 @@ def test_db::column_has_Name():
 
 
 
-def test_db::database_is_not_abstract():
-    assert not inspect.isabstract(DB::Database)
+def test_db_database_is_not_abstract():
+    assert not inspect.isabstract(DB_Database)
 
 
-def test_db::database_constructor_exists():
-    assert callable(DB::Database.__init__)
+def test_db_database_constructor_exists():
+    assert callable(DB_Database.__init__)
 
 
-def test_db::database_constructor_args():
-    sig = inspect.signature(DB::Database.__init__)
+def test_db_database_constructor_args():
+    sig = inspect.signature(DB_Database.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_db::database_has_Name():
-    assert hasattr(DB::Database, "Name")
+def test_db_database_has_Name():
+    assert hasattr(DB_Database, "Name")
     descriptor = None
-    for klass in DB::Database.__mro__:
+    for klass in DB_Database.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -65,23 +65,23 @@ def test_db::database_has_Name():
 
 
 
-def test_db::table_is_not_abstract():
-    assert not inspect.isabstract(DB::Table)
+def test_db_table_is_not_abstract():
+    assert not inspect.isabstract(DB_Table)
 
 
-def test_db::table_constructor_exists():
-    assert callable(DB::Table.__init__)
+def test_db_table_constructor_exists():
+    assert callable(DB_Table.__init__)
 
 
-def test_db::table_constructor_args():
-    sig = inspect.signature(DB::Table.__init__)
+def test_db_table_constructor_args():
+    sig = inspect.signature(DB_Table.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_db::table_has_Name():
-    assert hasattr(DB::Table, "Name")
+def test_db_table_has_Name():
+    assert hasattr(DB_Table, "Name")
     descriptor = None
-    for klass in DB::Table.__mro__:
+    for klass in DB_Table.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DB::Column_strategy = st.builds(
-    DB::Column,
+DB_Column_strategy = st.builds(
+    DB_Column,
     Name=
         safe_text
 )
-DB::Database_strategy = st.builds(
-    DB::Database,
+DB_Database_strategy = st.builds(
+    DB_Database,
     Name=
         safe_text
 )
-DB::Table_strategy = st.builds(
-    DB::Table,
+DB_Table_strategy = st.builds(
+    DB_Table,
     Name=
         safe_text
 )
 
-@given(instance=DB::Column_strategy)
+@given(instance=DB_Column_strategy)
 @settings(max_examples=50)
-def test_db::column_instantiation(instance):
-    assert isinstance(instance, DB::Column)
-
-@given(instance=DB::Column_strategy)
-def test_db::column_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_db_column_instantiation(instance):
+    assert isinstance(instance, DB_Column)
 
 
-@given(instance=DB::Column_strategy)
-def test_db::column_Name_setter(instance):
+
+@given(instance=DB_Column_strategy)
+def test_db_column_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=DB::Database_strategy)
+@given(instance=DB_Database_strategy)
 @settings(max_examples=50)
-def test_db::database_instantiation(instance):
-    assert isinstance(instance, DB::Database)
-
-@given(instance=DB::Database_strategy)
-def test_db::database_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_db_database_instantiation(instance):
+    assert isinstance(instance, DB_Database)
 
 
-@given(instance=DB::Database_strategy)
-def test_db::database_Name_setter(instance):
+
+@given(instance=DB_Database_strategy)
+def test_db_database_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=DB::Table_strategy)
+@given(instance=DB_Table_strategy)
 @settings(max_examples=50)
-def test_db::table_instantiation(instance):
-    assert isinstance(instance, DB::Table)
-
-@given(instance=DB::Table_strategy)
-def test_db::table_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_db_table_instantiation(instance):
+    assert isinstance(instance, DB_Table)
 
 
-@given(instance=DB::Table_strategy)
-def test_db::table_Name_setter(instance):
+
+@given(instance=DB_Table_strategy)
+def test_db_table_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original

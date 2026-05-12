@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PersonList::LivingPlace,
-    PersonList::WorkPlace,
-    PersonList::Person,
-    PersonList::List,
+from python_code import (
+    PersonList_LivingPlace,
+    PersonList_WorkPlace,
+    PersonList_Person,
+    PersonList_List,
     Gender,
 )
 
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_personlist::livingplace_is_not_abstract():
-    assert not inspect.isabstract(PersonList::LivingPlace)
+def test_personlist_livingplace_is_not_abstract():
+    assert not inspect.isabstract(PersonList_LivingPlace)
 
 
-def test_personlist::livingplace_constructor_exists():
-    assert callable(PersonList::LivingPlace.__init__)
+def test_personlist_livingplace_constructor_exists():
+    assert callable(PersonList_LivingPlace.__init__)
 
 
-def test_personlist::livingplace_constructor_args():
-    sig = inspect.signature(PersonList::LivingPlace.__init__)
+def test_personlist_livingplace_constructor_args():
+    sig = inspect.signature(PersonList_LivingPlace.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_personlist::livingplace_has_address():
-    assert hasattr(PersonList::LivingPlace, "address")
+def test_personlist_livingplace_has_address():
+    assert hasattr(PersonList_LivingPlace, "address")
     descriptor = None
-    for klass in PersonList::LivingPlace.__mro__:
+    for klass in PersonList_LivingPlace.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -43,23 +43,23 @@ def test_personlist::livingplace_has_address():
 
 
 
-def test_personlist::workplace_is_not_abstract():
-    assert not inspect.isabstract(PersonList::WorkPlace)
+def test_personlist_workplace_is_not_abstract():
+    assert not inspect.isabstract(PersonList_WorkPlace)
 
 
-def test_personlist::workplace_constructor_exists():
-    assert callable(PersonList::WorkPlace.__init__)
+def test_personlist_workplace_constructor_exists():
+    assert callable(PersonList_WorkPlace.__init__)
 
 
-def test_personlist::workplace_constructor_args():
-    sig = inspect.signature(PersonList::WorkPlace.__init__)
+def test_personlist_workplace_constructor_args():
+    sig = inspect.signature(PersonList_WorkPlace.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_personlist::workplace_has_address():
-    assert hasattr(PersonList::WorkPlace, "address")
+def test_personlist_workplace_has_address():
+    assert hasattr(PersonList_WorkPlace, "address")
     descriptor = None
-    for klass in PersonList::WorkPlace.__mro__:
+    for klass in PersonList_WorkPlace.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -67,43 +67,43 @@ def test_personlist::workplace_has_address():
 
 
 
-def test_personlist::person_is_not_abstract():
-    assert not inspect.isabstract(PersonList::Person)
+def test_personlist_person_is_not_abstract():
+    assert not inspect.isabstract(PersonList_Person)
 
 
-def test_personlist::person_constructor_exists():
-    assert callable(PersonList::Person.__init__)
+def test_personlist_person_constructor_exists():
+    assert callable(PersonList_Person.__init__)
 
 
-def test_personlist::person_constructor_args():
-    sig = inspect.signature(PersonList::Person.__init__)
+def test_personlist_person_constructor_args():
+    sig = inspect.signature(PersonList_Person.__init__)
     params = list(sig.parameters.keys())
     assert "firstname" in params, "Missing parameter 'firstname'"
     assert "lastname" in params, "Missing parameter 'lastname'"
     assert "gender" in params, "Missing parameter 'gender'"
 
-def test_personlist::person_has_firstname():
-    assert hasattr(PersonList::Person, "firstname")
+def test_personlist_person_has_firstname():
+    assert hasattr(PersonList_Person, "firstname")
     descriptor = None
-    for klass in PersonList::Person.__mro__:
+    for klass in PersonList_Person.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
             break
     assert isinstance(descriptor, property)
 
-def test_personlist::person_has_lastname():
-    assert hasattr(PersonList::Person, "lastname")
+def test_personlist_person_has_lastname():
+    assert hasattr(PersonList_Person, "lastname")
     descriptor = None
-    for klass in PersonList::Person.__mro__:
+    for klass in PersonList_Person.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_personlist::person_has_gender():
-    assert hasattr(PersonList::Person, "gender")
+def test_personlist_person_has_gender():
+    assert hasattr(PersonList_Person, "gender")
     descriptor = None
-    for klass in PersonList::Person.__mro__:
+    for klass in PersonList_Person.__mro__:
         if "gender" in klass.__dict__:
             descriptor = klass.__dict__["gender"]
             break
@@ -111,16 +111,16 @@ def test_personlist::person_has_gender():
 
 
 
-def test_personlist::list_is_not_abstract():
-    assert not inspect.isabstract(PersonList::List)
+def test_personlist_list_is_not_abstract():
+    assert not inspect.isabstract(PersonList_List)
 
 
-def test_personlist::list_constructor_exists():
-    assert callable(PersonList::List.__init__)
+def test_personlist_list_constructor_exists():
+    assert callable(PersonList_List.__init__)
 
 
-def test_personlist::list_constructor_args():
-    sig = inspect.signature(PersonList::List.__init__)
+def test_personlist_list_constructor_args():
+    sig = inspect.signature(PersonList_List.__init__)
     params = list(sig.parameters.keys())
 
 def test_gender_exists():
@@ -131,8 +131,8 @@ def test_gender_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Gender]
     expected_literals = [
-        "Female",
         "Male",
+        "Female",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -150,18 +150,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PersonList::LivingPlace_strategy = st.builds(
-    PersonList::LivingPlace,
+PersonList_LivingPlace_strategy = st.builds(
+    PersonList_LivingPlace,
     address=
         safe_text
 )
-PersonList::WorkPlace_strategy = st.builds(
-    PersonList::WorkPlace,
+PersonList_WorkPlace_strategy = st.builds(
+    PersonList_WorkPlace,
     address=
         safe_text
 )
-PersonList::Person_strategy = st.builds(
-    PersonList::Person,
+PersonList_Person_strategy = st.builds(
+    PersonList_Person,
     firstname=
         safe_text,
     lastname=
@@ -169,81 +169,66 @@ PersonList::Person_strategy = st.builds(
     gender=
         safe_text
 )
-PersonList::List_strategy = st.builds(
-    PersonList::List,
+PersonList_List_strategy = st.builds(
+    PersonList_List,
 )
 
-@given(instance=PersonList::LivingPlace_strategy)
+@given(instance=PersonList_LivingPlace_strategy)
 @settings(max_examples=50)
-def test_personlist::livingplace_instantiation(instance):
-    assert isinstance(instance, PersonList::LivingPlace)
-
-@given(instance=PersonList::LivingPlace_strategy)
-def test_personlist::livingplace_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_personlist_livingplace_instantiation(instance):
+    assert isinstance(instance, PersonList_LivingPlace)
 
 
-@given(instance=PersonList::LivingPlace_strategy)
-def test_personlist::livingplace_address_setter(instance):
+
+@given(instance=PersonList_LivingPlace_strategy)
+def test_personlist_livingplace_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=PersonList::WorkPlace_strategy)
+@given(instance=PersonList_WorkPlace_strategy)
 @settings(max_examples=50)
-def test_personlist::workplace_instantiation(instance):
-    assert isinstance(instance, PersonList::WorkPlace)
-
-@given(instance=PersonList::WorkPlace_strategy)
-def test_personlist::workplace_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_personlist_workplace_instantiation(instance):
+    assert isinstance(instance, PersonList_WorkPlace)
 
 
-@given(instance=PersonList::WorkPlace_strategy)
-def test_personlist::workplace_address_setter(instance):
+
+@given(instance=PersonList_WorkPlace_strategy)
+def test_personlist_workplace_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=PersonList::Person_strategy)
+@given(instance=PersonList_Person_strategy)
 @settings(max_examples=50)
-def test_personlist::person_instantiation(instance):
-    assert isinstance(instance, PersonList::Person)
-
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
+def test_personlist_person_instantiation(instance):
+    assert isinstance(instance, PersonList_Person)
 
 
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_firstname_setter(instance):
+
+@given(instance=PersonList_Person_strategy)
+def test_personlist_person_firstname_setter(instance):
     original = instance.firstname
     instance.firstname = original
     assert instance.firstname == original
 
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
 
 
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_lastname_setter(instance):
+@given(instance=PersonList_Person_strategy)
+def test_personlist_person_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_gender_type(instance):
-    assert isinstance(instance.gender, str)
 
 
-@given(instance=PersonList::Person_strategy)
-def test_personlist::person_gender_setter(instance):
+@given(instance=PersonList_Person_strategy)
+def test_personlist_person_gender_setter(instance):
     original = instance.gender
     instance.gender = original
     assert instance.gender == original
 
-@given(instance=PersonList::List_strategy)
+@given(instance=PersonList_List_strategy)
 @settings(max_examples=50)
-def test_personlist::list_instantiation(instance):
-    assert isinstance(instance, PersonList::List)
+def test_personlist_list_instantiation(instance):
+    assert isinstance(instance, PersonList_List)

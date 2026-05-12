@@ -3,82 +3,82 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ConnectionType,
-    drn::Wifi,
-    drn::Bluetooth,
-    drn::RefDevice,
-    drn::Element,
-    drn::Definition,
-    drn::Declaration,
-    DepXYZ::IMPL,
-    drn::Flip,
-    DepXZ::IMPL,
-    drn::CARREXZ,
-    drn::CERCLEXZ,
-    DepYZ::IMPL,
-    drn::CARREYZ,
-    drn::CERCLEYZ,
-    DepXY::IMPL,
-    drn::CARREXY,
-    drn::CERCLEXY,
-    DepZ::Impl,
-    drn::DOWN,
-    drn::UP,
-    DepX::Impl,
-    drn::RIGHT,
-    drn::LEFT,
-    DepY::Impl,
-    drn::BACKWARD,
-    drn::FORWARD,
+    drn_Wifi,
+    drn_Bluetooth,
+    drn_RefDevice,
+    drn_Element,
+    drn_Definition,
+    drn_Declaration,
+    DepXYZ_IMPL,
+    drn_Flip,
+    DepXZ_IMPL,
+    drn_CARREXZ,
+    drn_CERCLEXZ,
+    DepYZ_IMPL,
+    drn_CARREYZ,
+    drn_CERCLEYZ,
+    DepXY_IMPL,
+    drn_CARREXY,
+    drn_CERCLEXY,
+    DepZ_Impl,
+    drn_DOWN,
+    drn_UP,
+    DepX_Impl,
+    drn_RIGHT,
+    drn_LEFT,
+    DepY_Impl,
+    drn_BACKWARD,
+    drn_FORWARD,
     Movement,
-    drn::DepY::Impl,
-    drn::TakeOff,
-    drn::DepX::Impl,
-    drn::Land,
-    drn::DepZ::Impl,
-    drn::DepXY::IMPL,
-    drn::And,
-    drn::DepXZ::IMPL,
-    drn::Wait,
-    drn::Rotate,
-    drn::RefPartLib,
-    drn::DepXYZ::IMPL,
-    drn::DepYZ::IMPL,
-    drn::Movement,
-    drn::Expression,
+    drn_DepX_Impl,
+    drn_And,
+    drn_TakeOff,
+    drn_DepXZ_IMPL,
+    drn_DepZ_Impl,
+    drn_RefPartLib,
+    drn_DepXYZ_IMPL,
+    drn_DepYZ_IMPL,
+    drn_Rotate,
+    drn_DepY_Impl,
+    drn_Land,
+    drn_Wait,
+    drn_DepXY_IMPL,
+    drn_Movement,
+    drn_Expression,
     Surface,
-    drn::MaxWidth,
-    drn::MaxHeight,
-    drn::MaxLength,
+    drn_MaxHeight,
+    drn_MaxWidth,
+    drn_MaxLength,
     InitialPosition,
-    drn::InitialPositionX,
-    drn::InitialPositionY,
-    drn::InitialDirection,
+    drn_InitialPositionY,
+    drn_InitialPositionX,
+    drn_InitialDirection,
     Limit,
-    drn::MaxSpeed,
-    drn::InitialPosition,
-    drn::Surface,
-    drn::Limit,
-    drn::ConnectionType,
-    drn::Device,
-    drn::TypeGeneric,
-    drn::RefPart,
-    drn::Context,
-    drn::With,
-    drn::Assignement,
+    drn_InitialPosition,
+    drn_MaxSpeed,
+    drn_Surface,
+    drn_Limit,
+    drn_ConnectionType,
+    drn_Device,
+    drn_TypeGeneric,
+    drn_RefPart,
+    drn_Context,
+    drn_With,
+    drn_Assignement,
     Root,
-    drn::Library,
-    drn::Configuration,
-    drn::Model,
-    drn::Root,
-    Where,
-    TypePrimitif,
-    DirectionType,
+    drn_Configuration,
+    drn_Library,
+    drn_Model,
+    drn_Root,
     EBool,
     Mode,
+    TypePrimitif,
+    Where,
+    DirectionType,
 )
 
 # =============================================================================
@@ -101,51 +101,51 @@ def test_connectiontype_constructor_args():
 
 
 
-def test_drn::wifi_is_not_abstract():
-    assert not inspect.isabstract(drn::Wifi)
+def test_drn_wifi_is_not_abstract():
+    assert not inspect.isabstract(drn_Wifi)
 
 
-def test_drn::wifi_constructor_exists():
-    assert callable(drn::Wifi.__init__)
+def test_drn_wifi_constructor_exists():
+    assert callable(drn_Wifi.__init__)
 
 
-def test_drn::wifi_constructor_args():
-    sig = inspect.signature(drn::Wifi.__init__)
+def test_drn_wifi_constructor_args():
+    sig = inspect.signature(drn_Wifi.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::bluetooth_is_not_abstract():
-    assert not inspect.isabstract(drn::Bluetooth)
+def test_drn_bluetooth_is_not_abstract():
+    assert not inspect.isabstract(drn_Bluetooth)
 
 
-def test_drn::bluetooth_constructor_exists():
-    assert callable(drn::Bluetooth.__init__)
+def test_drn_bluetooth_constructor_exists():
+    assert callable(drn_Bluetooth.__init__)
 
 
-def test_drn::bluetooth_constructor_args():
-    sig = inspect.signature(drn::Bluetooth.__init__)
+def test_drn_bluetooth_constructor_args():
+    sig = inspect.signature(drn_Bluetooth.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::refdevice_is_not_abstract():
-    assert not inspect.isabstract(drn::RefDevice)
+def test_drn_refdevice_is_not_abstract():
+    assert not inspect.isabstract(drn_RefDevice)
 
 
-def test_drn::refdevice_constructor_exists():
-    assert callable(drn::RefDevice.__init__)
+def test_drn_refdevice_constructor_exists():
+    assert callable(drn_RefDevice.__init__)
 
 
-def test_drn::refdevice_constructor_args():
-    sig = inspect.signature(drn::RefDevice.__init__)
+def test_drn_refdevice_constructor_args():
+    sig = inspect.signature(drn_RefDevice.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_drn::refdevice_has_mode():
-    assert hasattr(drn::RefDevice, "mode")
+def test_drn_refdevice_has_mode():
+    assert hasattr(drn_RefDevice, "mode")
     descriptor = None
-    for klass in drn::RefDevice.__mro__:
+    for klass in drn_RefDevice.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -153,23 +153,23 @@ def test_drn::refdevice_has_mode():
 
 
 
-def test_drn::element_is_not_abstract():
-    assert not inspect.isabstract(drn::Element)
+def test_drn_element_is_not_abstract():
+    assert not inspect.isabstract(drn_Element)
 
 
-def test_drn::element_constructor_exists():
-    assert callable(drn::Element.__init__)
+def test_drn_element_constructor_exists():
+    assert callable(drn_Element.__init__)
 
 
-def test_drn::element_constructor_args():
-    sig = inspect.signature(drn::Element.__init__)
+def test_drn_element_constructor_args():
+    sig = inspect.signature(drn_Element.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::element_has_name():
-    assert hasattr(drn::Element, "name")
+def test_drn_element_has_name():
+    assert hasattr(drn_Element, "name")
     descriptor = None
-    for klass in drn::Element.__mro__:
+    for klass in drn_Element.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -177,87 +177,87 @@ def test_drn::element_has_name():
 
 
 
-def test_drn::definition_is_not_abstract():
-    assert not inspect.isabstract(drn::Definition)
+def test_drn_definition_is_not_abstract():
+    assert not inspect.isabstract(drn_Definition)
 
 
-def test_drn::definition_constructor_exists():
-    assert callable(drn::Definition.__init__)
+def test_drn_definition_constructor_exists():
+    assert callable(drn_Definition.__init__)
 
 
-def test_drn::definition_constructor_args():
-    sig = inspect.signature(drn::Definition.__init__)
+def test_drn_definition_constructor_args():
+    sig = inspect.signature(drn_Definition.__init__)
     params = list(sig.parameters.keys())
-    assert "real" in params, "Missing parameter 'real'"
-    assert "text" in params, "Missing parameter 'text'"
     assert "int" in params, "Missing parameter 'int'"
+    assert "real" in params, "Missing parameter 'real'"
     assert "bool" in params, "Missing parameter 'bool'"
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_drn::definition_has_real():
-    assert hasattr(drn::Definition, "real")
+def test_drn_definition_has_int():
+    assert hasattr(drn_Definition, "int")
     descriptor = None
-    for klass in drn::Definition.__mro__:
-        if "real" in klass.__dict__:
-            descriptor = klass.__dict__["real"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_drn::definition_has_text():
-    assert hasattr(drn::Definition, "text")
-    descriptor = None
-    for klass in drn::Definition.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_drn::definition_has_int():
-    assert hasattr(drn::Definition, "int")
-    descriptor = None
-    for klass in drn::Definition.__mro__:
+    for klass in drn_Definition.__mro__:
         if "int" in klass.__dict__:
             descriptor = klass.__dict__["int"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::definition_has_bool():
-    assert hasattr(drn::Definition, "bool")
+def test_drn_definition_has_real():
+    assert hasattr(drn_Definition, "real")
     descriptor = None
-    for klass in drn::Definition.__mro__:
+    for klass in drn_Definition.__mro__:
+        if "real" in klass.__dict__:
+            descriptor = klass.__dict__["real"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_drn_definition_has_bool():
+    assert hasattr(drn_Definition, "bool")
+    descriptor = None
+    for klass in drn_Definition.__mro__:
         if "bool" in klass.__dict__:
             descriptor = klass.__dict__["bool"]
             break
     assert isinstance(descriptor, property)
 
+def test_drn_definition_has_text():
+    assert hasattr(drn_Definition, "text")
+    descriptor = None
+    for klass in drn_Definition.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_drn::declaration_is_not_abstract():
-    assert not inspect.isabstract(drn::Declaration)
+
+def test_drn_declaration_is_not_abstract():
+    assert not inspect.isabstract(drn_Declaration)
 
 
-def test_drn::declaration_constructor_exists():
-    assert callable(drn::Declaration.__init__)
+def test_drn_declaration_constructor_exists():
+    assert callable(drn_Declaration.__init__)
 
 
-def test_drn::declaration_constructor_args():
-    sig = inspect.signature(drn::Declaration.__init__)
+def test_drn_declaration_constructor_args():
+    sig = inspect.signature(drn_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "typePrimitif" in params, "Missing parameter 'typePrimitif'"
 
-def test_drn::declaration_has_name():
-    assert hasattr(drn::Declaration, "name")
+def test_drn_declaration_has_name():
+    assert hasattr(drn_Declaration, "name")
     descriptor = None
-    for klass in drn::Declaration.__mro__:
+    for klass in drn_Declaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::declaration_has_typePrimitif():
-    assert hasattr(drn::Declaration, "typePrimitif")
+def test_drn_declaration_has_typePrimitif():
+    assert hasattr(drn_Declaration, "typePrimitif")
     descriptor = None
-    for klass in drn::Declaration.__mro__:
+    for klass in drn_Declaration.__mro__:
         if "typePrimitif" in klass.__dict__:
             descriptor = klass.__dict__["typePrimitif"]
             break
@@ -265,37 +265,37 @@ def test_drn::declaration_has_typePrimitif():
 
 
 
-def test_depxyz::impl_is_not_abstract():
-    assert not inspect.isabstract(DepXYZ::IMPL)
+def test_depxyz_impl_is_not_abstract():
+    assert not inspect.isabstract(DepXYZ_IMPL)
 
 
-def test_depxyz::impl_constructor_exists():
-    assert callable(DepXYZ::IMPL.__init__)
+def test_depxyz_impl_constructor_exists():
+    assert callable(DepXYZ_IMPL.__init__)
 
 
-def test_depxyz::impl_constructor_args():
-    sig = inspect.signature(DepXYZ::IMPL.__init__)
+def test_depxyz_impl_constructor_args():
+    sig = inspect.signature(DepXYZ_IMPL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::flip_is_not_abstract():
-    assert not inspect.isabstract(drn::Flip)
+def test_drn_flip_is_not_abstract():
+    assert not inspect.isabstract(drn_Flip)
 
 
-def test_drn::flip_constructor_exists():
-    assert callable(drn::Flip.__init__)
+def test_drn_flip_constructor_exists():
+    assert callable(drn_Flip.__init__)
 
 
-def test_drn::flip_constructor_args():
-    sig = inspect.signature(drn::Flip.__init__)
+def test_drn_flip_constructor_args():
+    sig = inspect.signature(drn_Flip.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::flip_has_name():
-    assert hasattr(drn::Flip, "name")
+def test_drn_flip_has_name():
+    assert hasattr(drn_Flip, "name")
     descriptor = None
-    for klass in drn::Flip.__mro__:
+    for klass in drn_Flip.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -303,37 +303,37 @@ def test_drn::flip_has_name():
 
 
 
-def test_depxz::impl_is_not_abstract():
-    assert not inspect.isabstract(DepXZ::IMPL)
+def test_depxz_impl_is_not_abstract():
+    assert not inspect.isabstract(DepXZ_IMPL)
 
 
-def test_depxz::impl_constructor_exists():
-    assert callable(DepXZ::IMPL.__init__)
+def test_depxz_impl_constructor_exists():
+    assert callable(DepXZ_IMPL.__init__)
 
 
-def test_depxz::impl_constructor_args():
-    sig = inspect.signature(DepXZ::IMPL.__init__)
+def test_depxz_impl_constructor_args():
+    sig = inspect.signature(DepXZ_IMPL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::carrexz_is_not_abstract():
-    assert not inspect.isabstract(drn::CARREXZ)
+def test_drn_carrexz_is_not_abstract():
+    assert not inspect.isabstract(drn_CARREXZ)
 
 
-def test_drn::carrexz_constructor_exists():
-    assert callable(drn::CARREXZ.__init__)
+def test_drn_carrexz_constructor_exists():
+    assert callable(drn_CARREXZ.__init__)
 
 
-def test_drn::carrexz_constructor_args():
-    sig = inspect.signature(drn::CARREXZ.__init__)
+def test_drn_carrexz_constructor_args():
+    sig = inspect.signature(drn_CARREXZ.__init__)
     params = list(sig.parameters.keys())
     assert "coteCST" in params, "Missing parameter 'coteCST'"
 
-def test_drn::carrexz_has_coteCST():
-    assert hasattr(drn::CARREXZ, "coteCST")
+def test_drn_carrexz_has_coteCST():
+    assert hasattr(drn_CARREXZ, "coteCST")
     descriptor = None
-    for klass in drn::CARREXZ.__mro__:
+    for klass in drn_CARREXZ.__mro__:
         if "coteCST" in klass.__dict__:
             descriptor = klass.__dict__["coteCST"]
             break
@@ -341,23 +341,23 @@ def test_drn::carrexz_has_coteCST():
 
 
 
-def test_drn::cerclexz_is_not_abstract():
-    assert not inspect.isabstract(drn::CERCLEXZ)
+def test_drn_cerclexz_is_not_abstract():
+    assert not inspect.isabstract(drn_CERCLEXZ)
 
 
-def test_drn::cerclexz_constructor_exists():
-    assert callable(drn::CERCLEXZ.__init__)
+def test_drn_cerclexz_constructor_exists():
+    assert callable(drn_CERCLEXZ.__init__)
 
 
-def test_drn::cerclexz_constructor_args():
-    sig = inspect.signature(drn::CERCLEXZ.__init__)
+def test_drn_cerclexz_constructor_args():
+    sig = inspect.signature(drn_CERCLEXZ.__init__)
     params = list(sig.parameters.keys())
     assert "rayonCST" in params, "Missing parameter 'rayonCST'"
 
-def test_drn::cerclexz_has_rayonCST():
-    assert hasattr(drn::CERCLEXZ, "rayonCST")
+def test_drn_cerclexz_has_rayonCST():
+    assert hasattr(drn_CERCLEXZ, "rayonCST")
     descriptor = None
-    for klass in drn::CERCLEXZ.__mro__:
+    for klass in drn_CERCLEXZ.__mro__:
         if "rayonCST" in klass.__dict__:
             descriptor = klass.__dict__["rayonCST"]
             break
@@ -365,37 +365,37 @@ def test_drn::cerclexz_has_rayonCST():
 
 
 
-def test_depyz::impl_is_not_abstract():
-    assert not inspect.isabstract(DepYZ::IMPL)
+def test_depyz_impl_is_not_abstract():
+    assert not inspect.isabstract(DepYZ_IMPL)
 
 
-def test_depyz::impl_constructor_exists():
-    assert callable(DepYZ::IMPL.__init__)
+def test_depyz_impl_constructor_exists():
+    assert callable(DepYZ_IMPL.__init__)
 
 
-def test_depyz::impl_constructor_args():
-    sig = inspect.signature(DepYZ::IMPL.__init__)
+def test_depyz_impl_constructor_args():
+    sig = inspect.signature(DepYZ_IMPL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::carreyz_is_not_abstract():
-    assert not inspect.isabstract(drn::CARREYZ)
+def test_drn_carreyz_is_not_abstract():
+    assert not inspect.isabstract(drn_CARREYZ)
 
 
-def test_drn::carreyz_constructor_exists():
-    assert callable(drn::CARREYZ.__init__)
+def test_drn_carreyz_constructor_exists():
+    assert callable(drn_CARREYZ.__init__)
 
 
-def test_drn::carreyz_constructor_args():
-    sig = inspect.signature(drn::CARREYZ.__init__)
+def test_drn_carreyz_constructor_args():
+    sig = inspect.signature(drn_CARREYZ.__init__)
     params = list(sig.parameters.keys())
     assert "coteCST" in params, "Missing parameter 'coteCST'"
 
-def test_drn::carreyz_has_coteCST():
-    assert hasattr(drn::CARREYZ, "coteCST")
+def test_drn_carreyz_has_coteCST():
+    assert hasattr(drn_CARREYZ, "coteCST")
     descriptor = None
-    for klass in drn::CARREYZ.__mro__:
+    for klass in drn_CARREYZ.__mro__:
         if "coteCST" in klass.__dict__:
             descriptor = klass.__dict__["coteCST"]
             break
@@ -403,23 +403,23 @@ def test_drn::carreyz_has_coteCST():
 
 
 
-def test_drn::cercleyz_is_not_abstract():
-    assert not inspect.isabstract(drn::CERCLEYZ)
+def test_drn_cercleyz_is_not_abstract():
+    assert not inspect.isabstract(drn_CERCLEYZ)
 
 
-def test_drn::cercleyz_constructor_exists():
-    assert callable(drn::CERCLEYZ.__init__)
+def test_drn_cercleyz_constructor_exists():
+    assert callable(drn_CERCLEYZ.__init__)
 
 
-def test_drn::cercleyz_constructor_args():
-    sig = inspect.signature(drn::CERCLEYZ.__init__)
+def test_drn_cercleyz_constructor_args():
+    sig = inspect.signature(drn_CERCLEYZ.__init__)
     params = list(sig.parameters.keys())
     assert "rayonCST" in params, "Missing parameter 'rayonCST'"
 
-def test_drn::cercleyz_has_rayonCST():
-    assert hasattr(drn::CERCLEYZ, "rayonCST")
+def test_drn_cercleyz_has_rayonCST():
+    assert hasattr(drn_CERCLEYZ, "rayonCST")
     descriptor = None
-    for klass in drn::CERCLEYZ.__mro__:
+    for klass in drn_CERCLEYZ.__mro__:
         if "rayonCST" in klass.__dict__:
             descriptor = klass.__dict__["rayonCST"]
             break
@@ -427,37 +427,37 @@ def test_drn::cercleyz_has_rayonCST():
 
 
 
-def test_depxy::impl_is_not_abstract():
-    assert not inspect.isabstract(DepXY::IMPL)
+def test_depxy_impl_is_not_abstract():
+    assert not inspect.isabstract(DepXY_IMPL)
 
 
-def test_depxy::impl_constructor_exists():
-    assert callable(DepXY::IMPL.__init__)
+def test_depxy_impl_constructor_exists():
+    assert callable(DepXY_IMPL.__init__)
 
 
-def test_depxy::impl_constructor_args():
-    sig = inspect.signature(DepXY::IMPL.__init__)
+def test_depxy_impl_constructor_args():
+    sig = inspect.signature(DepXY_IMPL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::carrexy_is_not_abstract():
-    assert not inspect.isabstract(drn::CARREXY)
+def test_drn_carrexy_is_not_abstract():
+    assert not inspect.isabstract(drn_CARREXY)
 
 
-def test_drn::carrexy_constructor_exists():
-    assert callable(drn::CARREXY.__init__)
+def test_drn_carrexy_constructor_exists():
+    assert callable(drn_CARREXY.__init__)
 
 
-def test_drn::carrexy_constructor_args():
-    sig = inspect.signature(drn::CARREXY.__init__)
+def test_drn_carrexy_constructor_args():
+    sig = inspect.signature(drn_CARREXY.__init__)
     params = list(sig.parameters.keys())
     assert "coteCST" in params, "Missing parameter 'coteCST'"
 
-def test_drn::carrexy_has_coteCST():
-    assert hasattr(drn::CARREXY, "coteCST")
+def test_drn_carrexy_has_coteCST():
+    assert hasattr(drn_CARREXY, "coteCST")
     descriptor = None
-    for klass in drn::CARREXY.__mro__:
+    for klass in drn_CARREXY.__mro__:
         if "coteCST" in klass.__dict__:
             descriptor = klass.__dict__["coteCST"]
             break
@@ -465,23 +465,23 @@ def test_drn::carrexy_has_coteCST():
 
 
 
-def test_drn::cerclexy_is_not_abstract():
-    assert not inspect.isabstract(drn::CERCLEXY)
+def test_drn_cerclexy_is_not_abstract():
+    assert not inspect.isabstract(drn_CERCLEXY)
 
 
-def test_drn::cerclexy_constructor_exists():
-    assert callable(drn::CERCLEXY.__init__)
+def test_drn_cerclexy_constructor_exists():
+    assert callable(drn_CERCLEXY.__init__)
 
 
-def test_drn::cerclexy_constructor_args():
-    sig = inspect.signature(drn::CERCLEXY.__init__)
+def test_drn_cerclexy_constructor_args():
+    sig = inspect.signature(drn_CERCLEXY.__init__)
     params = list(sig.parameters.keys())
     assert "rayonCST" in params, "Missing parameter 'rayonCST'"
 
-def test_drn::cerclexy_has_rayonCST():
-    assert hasattr(drn::CERCLEXY, "rayonCST")
+def test_drn_cerclexy_has_rayonCST():
+    assert hasattr(drn_CERCLEXY, "rayonCST")
     descriptor = None
-    for klass in drn::CERCLEXY.__mro__:
+    for klass in drn_CERCLEXY.__mro__:
         if "rayonCST" in klass.__dict__:
             descriptor = klass.__dict__["rayonCST"]
             break
@@ -489,128 +489,128 @@ def test_drn::cerclexy_has_rayonCST():
 
 
 
-def test_depz::impl_is_not_abstract():
-    assert not inspect.isabstract(DepZ::Impl)
+def test_depz_impl_is_not_abstract():
+    assert not inspect.isabstract(DepZ_Impl)
 
 
-def test_depz::impl_constructor_exists():
-    assert callable(DepZ::Impl.__init__)
+def test_depz_impl_constructor_exists():
+    assert callable(DepZ_Impl.__init__)
 
 
-def test_depz::impl_constructor_args():
-    sig = inspect.signature(DepZ::Impl.__init__)
+def test_depz_impl_constructor_args():
+    sig = inspect.signature(DepZ_Impl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::down_is_not_abstract():
-    assert not inspect.isabstract(drn::DOWN)
+def test_drn_down_is_not_abstract():
+    assert not inspect.isabstract(drn_DOWN)
 
 
-def test_drn::down_constructor_exists():
-    assert callable(drn::DOWN.__init__)
+def test_drn_down_constructor_exists():
+    assert callable(drn_DOWN.__init__)
 
 
-def test_drn::down_constructor_args():
-    sig = inspect.signature(drn::DOWN.__init__)
+def test_drn_down_constructor_args():
+    sig = inspect.signature(drn_DOWN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::up_is_not_abstract():
-    assert not inspect.isabstract(drn::UP)
+def test_drn_up_is_not_abstract():
+    assert not inspect.isabstract(drn_UP)
 
 
-def test_drn::up_constructor_exists():
-    assert callable(drn::UP.__init__)
+def test_drn_up_constructor_exists():
+    assert callable(drn_UP.__init__)
 
 
-def test_drn::up_constructor_args():
-    sig = inspect.signature(drn::UP.__init__)
+def test_drn_up_constructor_args():
+    sig = inspect.signature(drn_UP.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_depx::impl_is_not_abstract():
-    assert not inspect.isabstract(DepX::Impl)
+def test_depx_impl_is_not_abstract():
+    assert not inspect.isabstract(DepX_Impl)
 
 
-def test_depx::impl_constructor_exists():
-    assert callable(DepX::Impl.__init__)
+def test_depx_impl_constructor_exists():
+    assert callable(DepX_Impl.__init__)
 
 
-def test_depx::impl_constructor_args():
-    sig = inspect.signature(DepX::Impl.__init__)
+def test_depx_impl_constructor_args():
+    sig = inspect.signature(DepX_Impl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::right_is_not_abstract():
-    assert not inspect.isabstract(drn::RIGHT)
+def test_drn_right_is_not_abstract():
+    assert not inspect.isabstract(drn_RIGHT)
 
 
-def test_drn::right_constructor_exists():
-    assert callable(drn::RIGHT.__init__)
+def test_drn_right_constructor_exists():
+    assert callable(drn_RIGHT.__init__)
 
 
-def test_drn::right_constructor_args():
-    sig = inspect.signature(drn::RIGHT.__init__)
+def test_drn_right_constructor_args():
+    sig = inspect.signature(drn_RIGHT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::left_is_not_abstract():
-    assert not inspect.isabstract(drn::LEFT)
+def test_drn_left_is_not_abstract():
+    assert not inspect.isabstract(drn_LEFT)
 
 
-def test_drn::left_constructor_exists():
-    assert callable(drn::LEFT.__init__)
+def test_drn_left_constructor_exists():
+    assert callable(drn_LEFT.__init__)
 
 
-def test_drn::left_constructor_args():
-    sig = inspect.signature(drn::LEFT.__init__)
+def test_drn_left_constructor_args():
+    sig = inspect.signature(drn_LEFT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_depy::impl_is_not_abstract():
-    assert not inspect.isabstract(DepY::Impl)
+def test_depy_impl_is_not_abstract():
+    assert not inspect.isabstract(DepY_Impl)
 
 
-def test_depy::impl_constructor_exists():
-    assert callable(DepY::Impl.__init__)
+def test_depy_impl_constructor_exists():
+    assert callable(DepY_Impl.__init__)
 
 
-def test_depy::impl_constructor_args():
-    sig = inspect.signature(DepY::Impl.__init__)
+def test_depy_impl_constructor_args():
+    sig = inspect.signature(DepY_Impl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::backward_is_not_abstract():
-    assert not inspect.isabstract(drn::BACKWARD)
+def test_drn_backward_is_not_abstract():
+    assert not inspect.isabstract(drn_BACKWARD)
 
 
-def test_drn::backward_constructor_exists():
-    assert callable(drn::BACKWARD.__init__)
+def test_drn_backward_constructor_exists():
+    assert callable(drn_BACKWARD.__init__)
 
 
-def test_drn::backward_constructor_args():
-    sig = inspect.signature(drn::BACKWARD.__init__)
+def test_drn_backward_constructor_args():
+    sig = inspect.signature(drn_BACKWARD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::forward_is_not_abstract():
-    assert not inspect.isabstract(drn::FORWARD)
+def test_drn_forward_is_not_abstract():
+    assert not inspect.isabstract(drn_FORWARD)
 
 
-def test_drn::forward_constructor_exists():
-    assert callable(drn::FORWARD.__init__)
+def test_drn_forward_constructor_exists():
+    assert callable(drn_FORWARD.__init__)
 
 
-def test_drn::forward_constructor_args():
-    sig = inspect.signature(drn::FORWARD.__init__)
+def test_drn_forward_constructor_args():
+    sig = inspect.signature(drn_FORWARD.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -629,43 +629,43 @@ def test_movement_constructor_args():
 
 
 
-def test_drn::depy::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepY::Impl)
+def test_drn_depx_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepX_Impl)
 
 
-def test_drn::depy::impl_constructor_exists():
-    assert callable(drn::DepY::Impl.__init__)
+def test_drn_depx_impl_constructor_exists():
+    assert callable(drn_DepX_Impl.__init__)
 
 
-def test_drn::depy::impl_constructor_args():
-    sig = inspect.signature(drn::DepY::Impl.__init__)
+def test_drn_depx_impl_constructor_args():
+    sig = inspect.signature(drn_DepX_Impl.__init__)
     params = list(sig.parameters.keys())
     assert "distanceCST" in params, "Missing parameter 'distanceCST'"
     assert "tempsCST" in params, "Missing parameter 'tempsCST'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::depy::impl_has_distanceCST():
-    assert hasattr(drn::DepY::Impl, "distanceCST")
+def test_drn_depx_impl_has_distanceCST():
+    assert hasattr(drn_DepX_Impl, "distanceCST")
     descriptor = None
-    for klass in drn::DepY::Impl.__mro__:
+    for klass in drn_DepX_Impl.__mro__:
         if "distanceCST" in klass.__dict__:
             descriptor = klass.__dict__["distanceCST"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depy::impl_has_tempsCST():
-    assert hasattr(drn::DepY::Impl, "tempsCST")
+def test_drn_depx_impl_has_tempsCST():
+    assert hasattr(drn_DepX_Impl, "tempsCST")
     descriptor = None
-    for klass in drn::DepY::Impl.__mro__:
+    for klass in drn_DepX_Impl.__mro__:
         if "tempsCST" in klass.__dict__:
             descriptor = klass.__dict__["tempsCST"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depy::impl_has_name():
-    assert hasattr(drn::DepY::Impl, "name")
+def test_drn_depx_impl_has_name():
+    assert hasattr(drn_DepX_Impl, "name")
     descriptor = None
-    for klass in drn::DepY::Impl.__mro__:
+    for klass in drn_DepX_Impl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -673,23 +673,23 @@ def test_drn::depy::impl_has_name():
 
 
 
-def test_drn::takeoff_is_not_abstract():
-    assert not inspect.isabstract(drn::TakeOff)
+def test_drn_and_is_not_abstract():
+    assert not inspect.isabstract(drn_And)
 
 
-def test_drn::takeoff_constructor_exists():
-    assert callable(drn::TakeOff.__init__)
+def test_drn_and_constructor_exists():
+    assert callable(drn_And.__init__)
 
 
-def test_drn::takeoff_constructor_args():
-    sig = inspect.signature(drn::TakeOff.__init__)
+def test_drn_and_constructor_args():
+    sig = inspect.signature(drn_And.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::takeoff_has_name():
-    assert hasattr(drn::TakeOff, "name")
+def test_drn_and_has_name():
+    assert hasattr(drn_And, "name")
     descriptor = None
-    for klass in drn::TakeOff.__mro__:
+    for klass in drn_And.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -697,145 +697,101 @@ def test_drn::takeoff_has_name():
 
 
 
-def test_drn::depx::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepX::Impl)
+def test_drn_takeoff_is_not_abstract():
+    assert not inspect.isabstract(drn_TakeOff)
 
 
-def test_drn::depx::impl_constructor_exists():
-    assert callable(drn::DepX::Impl.__init__)
+def test_drn_takeoff_constructor_exists():
+    assert callable(drn_TakeOff.__init__)
 
 
-def test_drn::depx::impl_constructor_args():
-    sig = inspect.signature(drn::DepX::Impl.__init__)
+def test_drn_takeoff_constructor_args():
+    sig = inspect.signature(drn_TakeOff.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_drn_takeoff_has_name():
+    assert hasattr(drn_TakeOff, "name")
+    descriptor = None
+    for klass in drn_TakeOff.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_drn_depxz_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepXZ_IMPL)
+
+
+def test_drn_depxz_impl_constructor_exists():
+    assert callable(drn_DepXZ_IMPL.__init__)
+
+
+def test_drn_depxz_impl_constructor_args():
+    sig = inspect.signature(drn_DepXZ_IMPL.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "tempsCST" in params, "Missing parameter 'tempsCST'"
-    assert "distanceCST" in params, "Missing parameter 'distanceCST'"
 
-def test_drn::depx::impl_has_name():
-    assert hasattr(drn::DepX::Impl, "name")
+def test_drn_depxz_impl_has_name():
+    assert hasattr(drn_DepXZ_IMPL, "name")
     descriptor = None
-    for klass in drn::DepX::Impl.__mro__:
+    for klass in drn_DepXZ_IMPL.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depx::impl_has_tempsCST():
-    assert hasattr(drn::DepX::Impl, "tempsCST")
+def test_drn_depxz_impl_has_tempsCST():
+    assert hasattr(drn_DepXZ_IMPL, "tempsCST")
     descriptor = None
-    for klass in drn::DepX::Impl.__mro__:
+    for klass in drn_DepXZ_IMPL.__mro__:
         if "tempsCST" in klass.__dict__:
             descriptor = klass.__dict__["tempsCST"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depx::impl_has_distanceCST():
-    assert hasattr(drn::DepX::Impl, "distanceCST")
-    descriptor = None
-    for klass in drn::DepX::Impl.__mro__:
-        if "distanceCST" in klass.__dict__:
-            descriptor = klass.__dict__["distanceCST"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_drn::land_is_not_abstract():
-    assert not inspect.isabstract(drn::Land)
-
-
-def test_drn::land_constructor_exists():
-    assert callable(drn::Land.__init__)
+def test_drn_depz_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepZ_Impl)
 
 
-def test_drn::land_constructor_args():
-    sig = inspect.signature(drn::Land.__init__)
+def test_drn_depz_impl_constructor_exists():
+    assert callable(drn_DepZ_Impl.__init__)
+
+
+def test_drn_depz_impl_constructor_args():
+    sig = inspect.signature(drn_DepZ_Impl.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_drn::land_has_name():
-    assert hasattr(drn::Land, "name")
-    descriptor = None
-    for klass in drn::Land.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_drn::depz::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepZ::Impl)
-
-
-def test_drn::depz::impl_constructor_exists():
-    assert callable(drn::DepZ::Impl.__init__)
-
-
-def test_drn::depz::impl_constructor_args():
-    sig = inspect.signature(drn::DepZ::Impl.__init__)
-    params = list(sig.parameters.keys())
-    assert "tempsCST" in params, "Missing parameter 'tempsCST'"
     assert "name" in params, "Missing parameter 'name'"
     assert "distanceCST" in params, "Missing parameter 'distanceCST'"
+    assert "tempsCST" in params, "Missing parameter 'tempsCST'"
 
-def test_drn::depz::impl_has_tempsCST():
-    assert hasattr(drn::DepZ::Impl, "tempsCST")
+def test_drn_depz_impl_has_name():
+    assert hasattr(drn_DepZ_Impl, "name")
     descriptor = None
-    for klass in drn::DepZ::Impl.__mro__:
-        if "tempsCST" in klass.__dict__:
-            descriptor = klass.__dict__["tempsCST"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_drn::depz::impl_has_name():
-    assert hasattr(drn::DepZ::Impl, "name")
-    descriptor = None
-    for klass in drn::DepZ::Impl.__mro__:
+    for klass in drn_DepZ_Impl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depz::impl_has_distanceCST():
-    assert hasattr(drn::DepZ::Impl, "distanceCST")
+def test_drn_depz_impl_has_distanceCST():
+    assert hasattr(drn_DepZ_Impl, "distanceCST")
     descriptor = None
-    for klass in drn::DepZ::Impl.__mro__:
+    for klass in drn_DepZ_Impl.__mro__:
         if "distanceCST" in klass.__dict__:
             descriptor = klass.__dict__["distanceCST"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_drn::depxy::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepXY::IMPL)
-
-
-def test_drn::depxy::impl_constructor_exists():
-    assert callable(drn::DepXY::IMPL.__init__)
-
-
-def test_drn::depxy::impl_constructor_args():
-    sig = inspect.signature(drn::DepXY::IMPL.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "tempsCST" in params, "Missing parameter 'tempsCST'"
-
-def test_drn::depxy::impl_has_name():
-    assert hasattr(drn::DepXY::IMPL, "name")
+def test_drn_depz_impl_has_tempsCST():
+    assert hasattr(drn_DepZ_Impl, "tempsCST")
     descriptor = None
-    for klass in drn::DepXY::IMPL.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_drn::depxy::impl_has_tempsCST():
-    assert hasattr(drn::DepXY::IMPL, "tempsCST")
-    descriptor = None
-    for klass in drn::DepXY::IMPL.__mro__:
+    for klass in drn_DepZ_Impl.__mro__:
         if "tempsCST" in klass.__dict__:
             descriptor = klass.__dict__["tempsCST"]
             break
@@ -843,57 +799,61 @@ def test_drn::depxy::impl_has_tempsCST():
 
 
 
-def test_drn::and_is_not_abstract():
-    assert not inspect.isabstract(drn::And)
+def test_drn_refpartlib_is_not_abstract():
+    assert not inspect.isabstract(drn_RefPartLib)
 
 
-def test_drn::and_constructor_exists():
-    assert callable(drn::And.__init__)
+def test_drn_refpartlib_constructor_exists():
+    assert callable(drn_RefPartLib.__init__)
 
 
-def test_drn::and_constructor_args():
-    sig = inspect.signature(drn::And.__init__)
+def test_drn_refpartlib_constructor_args():
+    sig = inspect.signature(drn_RefPartLib.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_drn::and_has_name():
-    assert hasattr(drn::And, "name")
-    descriptor = None
-    for klass in drn::And.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_drn::depxz::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepXZ::IMPL)
+def test_drn_depxyz_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepXYZ_IMPL)
 
 
-def test_drn::depxz::impl_constructor_exists():
-    assert callable(drn::DepXZ::IMPL.__init__)
+def test_drn_depxyz_impl_constructor_exists():
+    assert callable(drn_DepXYZ_IMPL.__init__)
 
 
-def test_drn::depxz::impl_constructor_args():
-    sig = inspect.signature(drn::DepXZ::IMPL.__init__)
+def test_drn_depxyz_impl_constructor_args():
+    sig = inspect.signature(drn_DepXYZ_IMPL.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_drn_depyz_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepYZ_IMPL)
+
+
+def test_drn_depyz_impl_constructor_exists():
+    assert callable(drn_DepYZ_IMPL.__init__)
+
+
+def test_drn_depyz_impl_constructor_args():
+    sig = inspect.signature(drn_DepYZ_IMPL.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "tempsCST" in params, "Missing parameter 'tempsCST'"
 
-def test_drn::depxz::impl_has_name():
-    assert hasattr(drn::DepXZ::IMPL, "name")
+def test_drn_depyz_impl_has_name():
+    assert hasattr(drn_DepYZ_IMPL, "name")
     descriptor = None
-    for klass in drn::DepXZ::IMPL.__mro__:
+    for klass in drn_DepYZ_IMPL.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depxz::impl_has_tempsCST():
-    assert hasattr(drn::DepXZ::IMPL, "tempsCST")
+def test_drn_depyz_impl_has_tempsCST():
+    assert hasattr(drn_DepYZ_IMPL, "tempsCST")
     descriptor = None
-    for klass in drn::DepXZ::IMPL.__mro__:
+    for klass in drn_DepYZ_IMPL.__mro__:
         if "tempsCST" in klass.__dict__:
             descriptor = klass.__dict__["tempsCST"]
             break
@@ -901,77 +861,43 @@ def test_drn::depxz::impl_has_tempsCST():
 
 
 
-def test_drn::wait_is_not_abstract():
-    assert not inspect.isabstract(drn::Wait)
+def test_drn_rotate_is_not_abstract():
+    assert not inspect.isabstract(drn_Rotate)
 
 
-def test_drn::wait_constructor_exists():
-    assert callable(drn::Wait.__init__)
+def test_drn_rotate_constructor_exists():
+    assert callable(drn_Rotate.__init__)
 
 
-def test_drn::wait_constructor_args():
-    sig = inspect.signature(drn::Wait.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "tempsCST" in params, "Missing parameter 'tempsCST'"
-
-def test_drn::wait_has_name():
-    assert hasattr(drn::Wait, "name")
-    descriptor = None
-    for klass in drn::Wait.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_drn::wait_has_tempsCST():
-    assert hasattr(drn::Wait, "tempsCST")
-    descriptor = None
-    for klass in drn::Wait.__mro__:
-        if "tempsCST" in klass.__dict__:
-            descriptor = klass.__dict__["tempsCST"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_drn::rotate_is_not_abstract():
-    assert not inspect.isabstract(drn::Rotate)
-
-
-def test_drn::rotate_constructor_exists():
-    assert callable(drn::Rotate.__init__)
-
-
-def test_drn::rotate_constructor_args():
-    sig = inspect.signature(drn::Rotate.__init__)
+def test_drn_rotate_constructor_args():
+    sig = inspect.signature(drn_Rotate.__init__)
     params = list(sig.parameters.keys())
     assert "angleCST" in params, "Missing parameter 'angleCST'"
     assert "name" in params, "Missing parameter 'name'"
     assert "tempsCST" in params, "Missing parameter 'tempsCST'"
 
-def test_drn::rotate_has_angleCST():
-    assert hasattr(drn::Rotate, "angleCST")
+def test_drn_rotate_has_angleCST():
+    assert hasattr(drn_Rotate, "angleCST")
     descriptor = None
-    for klass in drn::Rotate.__mro__:
+    for klass in drn_Rotate.__mro__:
         if "angleCST" in klass.__dict__:
             descriptor = klass.__dict__["angleCST"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::rotate_has_name():
-    assert hasattr(drn::Rotate, "name")
+def test_drn_rotate_has_name():
+    assert hasattr(drn_Rotate, "name")
     descriptor = None
-    for klass in drn::Rotate.__mro__:
+    for klass in drn_Rotate.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::rotate_has_tempsCST():
-    assert hasattr(drn::Rotate, "tempsCST")
+def test_drn_rotate_has_tempsCST():
+    assert hasattr(drn_Rotate, "tempsCST")
     descriptor = None
-    for klass in drn::Rotate.__mro__:
+    for klass in drn_Rotate.__mro__:
         if "tempsCST" in klass.__dict__:
             descriptor = klass.__dict__["tempsCST"]
             break
@@ -979,61 +905,101 @@ def test_drn::rotate_has_tempsCST():
 
 
 
-def test_drn::refpartlib_is_not_abstract():
-    assert not inspect.isabstract(drn::RefPartLib)
+def test_drn_depy_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepY_Impl)
 
 
-def test_drn::refpartlib_constructor_exists():
-    assert callable(drn::RefPartLib.__init__)
+def test_drn_depy_impl_constructor_exists():
+    assert callable(drn_DepY_Impl.__init__)
 
 
-def test_drn::refpartlib_constructor_args():
-    sig = inspect.signature(drn::RefPartLib.__init__)
+def test_drn_depy_impl_constructor_args():
+    sig = inspect.signature(drn_DepY_Impl.__init__)
     params = list(sig.parameters.keys())
+    assert "tempsCST" in params, "Missing parameter 'tempsCST'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "distanceCST" in params, "Missing parameter 'distanceCST'"
+
+def test_drn_depy_impl_has_tempsCST():
+    assert hasattr(drn_DepY_Impl, "tempsCST")
+    descriptor = None
+    for klass in drn_DepY_Impl.__mro__:
+        if "tempsCST" in klass.__dict__:
+            descriptor = klass.__dict__["tempsCST"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_drn_depy_impl_has_name():
+    assert hasattr(drn_DepY_Impl, "name")
+    descriptor = None
+    for klass in drn_DepY_Impl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_drn_depy_impl_has_distanceCST():
+    assert hasattr(drn_DepY_Impl, "distanceCST")
+    descriptor = None
+    for klass in drn_DepY_Impl.__mro__:
+        if "distanceCST" in klass.__dict__:
+            descriptor = klass.__dict__["distanceCST"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_drn::depxyz::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepXYZ::IMPL)
+def test_drn_land_is_not_abstract():
+    assert not inspect.isabstract(drn_Land)
 
 
-def test_drn::depxyz::impl_constructor_exists():
-    assert callable(drn::DepXYZ::IMPL.__init__)
+def test_drn_land_constructor_exists():
+    assert callable(drn_Land.__init__)
 
 
-def test_drn::depxyz::impl_constructor_args():
-    sig = inspect.signature(drn::DepXYZ::IMPL.__init__)
+def test_drn_land_constructor_args():
+    sig = inspect.signature(drn_Land.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_drn_land_has_name():
+    assert hasattr(drn_Land, "name")
+    descriptor = None
+    for klass in drn_Land.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_drn::depyz::impl_is_not_abstract():
-    assert not inspect.isabstract(drn::DepYZ::IMPL)
+def test_drn_wait_is_not_abstract():
+    assert not inspect.isabstract(drn_Wait)
 
 
-def test_drn::depyz::impl_constructor_exists():
-    assert callable(drn::DepYZ::IMPL.__init__)
+def test_drn_wait_constructor_exists():
+    assert callable(drn_Wait.__init__)
 
 
-def test_drn::depyz::impl_constructor_args():
-    sig = inspect.signature(drn::DepYZ::IMPL.__init__)
+def test_drn_wait_constructor_args():
+    sig = inspect.signature(drn_Wait.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "tempsCST" in params, "Missing parameter 'tempsCST'"
 
-def test_drn::depyz::impl_has_name():
-    assert hasattr(drn::DepYZ::IMPL, "name")
+def test_drn_wait_has_name():
+    assert hasattr(drn_Wait, "name")
     descriptor = None
-    for klass in drn::DepYZ::IMPL.__mro__:
+    for klass in drn_Wait.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::depyz::impl_has_tempsCST():
-    assert hasattr(drn::DepYZ::IMPL, "tempsCST")
+def test_drn_wait_has_tempsCST():
+    assert hasattr(drn_Wait, "tempsCST")
     descriptor = None
-    for klass in drn::DepYZ::IMPL.__mro__:
+    for klass in drn_Wait.__mro__:
         if "tempsCST" in klass.__dict__:
             descriptor = klass.__dict__["tempsCST"]
             break
@@ -1041,37 +1007,71 @@ def test_drn::depyz::impl_has_tempsCST():
 
 
 
-def test_drn::movement_is_not_abstract():
-    assert not inspect.isabstract(drn::Movement)
+def test_drn_depxy_impl_is_not_abstract():
+    assert not inspect.isabstract(drn_DepXY_IMPL)
 
 
-def test_drn::movement_constructor_exists():
-    assert callable(drn::Movement.__init__)
+def test_drn_depxy_impl_constructor_exists():
+    assert callable(drn_DepXY_IMPL.__init__)
 
 
-def test_drn::movement_constructor_args():
-    sig = inspect.signature(drn::Movement.__init__)
+def test_drn_depxy_impl_constructor_args():
+    sig = inspect.signature(drn_DepXY_IMPL.__init__)
+    params = list(sig.parameters.keys())
+    assert "tempsCST" in params, "Missing parameter 'tempsCST'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_drn_depxy_impl_has_tempsCST():
+    assert hasattr(drn_DepXY_IMPL, "tempsCST")
+    descriptor = None
+    for klass in drn_DepXY_IMPL.__mro__:
+        if "tempsCST" in klass.__dict__:
+            descriptor = klass.__dict__["tempsCST"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_drn_depxy_impl_has_name():
+    assert hasattr(drn_DepXY_IMPL, "name")
+    descriptor = None
+    for klass in drn_DepXY_IMPL.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_drn_movement_is_not_abstract():
+    assert not inspect.isabstract(drn_Movement)
+
+
+def test_drn_movement_constructor_exists():
+    assert callable(drn_Movement.__init__)
+
+
+def test_drn_movement_constructor_args():
+    sig = inspect.signature(drn_Movement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::expression_is_not_abstract():
-    assert not inspect.isabstract(drn::Expression)
+def test_drn_expression_is_not_abstract():
+    assert not inspect.isabstract(drn_Expression)
 
 
-def test_drn::expression_constructor_exists():
-    assert callable(drn::Expression.__init__)
+def test_drn_expression_constructor_exists():
+    assert callable(drn_Expression.__init__)
 
 
-def test_drn::expression_constructor_args():
-    sig = inspect.signature(drn::Expression.__init__)
+def test_drn_expression_constructor_args():
+    sig = inspect.signature(drn_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "repeatCST" in params, "Missing parameter 'repeatCST'"
 
-def test_drn::expression_has_repeatCST():
-    assert hasattr(drn::Expression, "repeatCST")
+def test_drn_expression_has_repeatCST():
+    assert hasattr(drn_Expression, "repeatCST")
     descriptor = None
-    for klass in drn::Expression.__mro__:
+    for klass in drn_Expression.__mro__:
         if "repeatCST" in klass.__dict__:
             descriptor = klass.__dict__["repeatCST"]
             break
@@ -1093,44 +1093,44 @@ def test_surface_constructor_args():
 
 
 
-def test_drn::maxwidth_is_not_abstract():
-    assert not inspect.isabstract(drn::MaxWidth)
+def test_drn_maxheight_is_not_abstract():
+    assert not inspect.isabstract(drn_MaxHeight)
 
 
-def test_drn::maxwidth_constructor_exists():
-    assert callable(drn::MaxWidth.__init__)
+def test_drn_maxheight_constructor_exists():
+    assert callable(drn_MaxHeight.__init__)
 
 
-def test_drn::maxwidth_constructor_args():
-    sig = inspect.signature(drn::MaxWidth.__init__)
+def test_drn_maxheight_constructor_args():
+    sig = inspect.signature(drn_MaxHeight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::maxheight_is_not_abstract():
-    assert not inspect.isabstract(drn::MaxHeight)
+def test_drn_maxwidth_is_not_abstract():
+    assert not inspect.isabstract(drn_MaxWidth)
 
 
-def test_drn::maxheight_constructor_exists():
-    assert callable(drn::MaxHeight.__init__)
+def test_drn_maxwidth_constructor_exists():
+    assert callable(drn_MaxWidth.__init__)
 
 
-def test_drn::maxheight_constructor_args():
-    sig = inspect.signature(drn::MaxHeight.__init__)
+def test_drn_maxwidth_constructor_args():
+    sig = inspect.signature(drn_MaxWidth.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::maxlength_is_not_abstract():
-    assert not inspect.isabstract(drn::MaxLength)
+def test_drn_maxlength_is_not_abstract():
+    assert not inspect.isabstract(drn_MaxLength)
 
 
-def test_drn::maxlength_constructor_exists():
-    assert callable(drn::MaxLength.__init__)
+def test_drn_maxlength_constructor_exists():
+    assert callable(drn_MaxLength.__init__)
 
 
-def test_drn::maxlength_constructor_args():
-    sig = inspect.signature(drn::MaxLength.__init__)
+def test_drn_maxlength_constructor_args():
+    sig = inspect.signature(drn_MaxLength.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1149,23 +1149,23 @@ def test_initialposition_constructor_args():
 
 
 
-def test_drn::initialpositionx_is_not_abstract():
-    assert not inspect.isabstract(drn::InitialPositionX)
+def test_drn_initialpositiony_is_not_abstract():
+    assert not inspect.isabstract(drn_InitialPositionY)
 
 
-def test_drn::initialpositionx_constructor_exists():
-    assert callable(drn::InitialPositionX.__init__)
+def test_drn_initialpositiony_constructor_exists():
+    assert callable(drn_InitialPositionY.__init__)
 
 
-def test_drn::initialpositionx_constructor_args():
-    sig = inspect.signature(drn::InitialPositionX.__init__)
+def test_drn_initialpositiony_constructor_args():
+    sig = inspect.signature(drn_InitialPositionY.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drn::initialpositionx_has_value():
-    assert hasattr(drn::InitialPositionX, "value")
+def test_drn_initialpositiony_has_value():
+    assert hasattr(drn_InitialPositionY, "value")
     descriptor = None
-    for klass in drn::InitialPositionX.__mro__:
+    for klass in drn_InitialPositionY.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1173,23 +1173,23 @@ def test_drn::initialpositionx_has_value():
 
 
 
-def test_drn::initialpositiony_is_not_abstract():
-    assert not inspect.isabstract(drn::InitialPositionY)
+def test_drn_initialpositionx_is_not_abstract():
+    assert not inspect.isabstract(drn_InitialPositionX)
 
 
-def test_drn::initialpositiony_constructor_exists():
-    assert callable(drn::InitialPositionY.__init__)
+def test_drn_initialpositionx_constructor_exists():
+    assert callable(drn_InitialPositionX.__init__)
 
 
-def test_drn::initialpositiony_constructor_args():
-    sig = inspect.signature(drn::InitialPositionY.__init__)
+def test_drn_initialpositionx_constructor_args():
+    sig = inspect.signature(drn_InitialPositionX.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drn::initialpositiony_has_value():
-    assert hasattr(drn::InitialPositionY, "value")
+def test_drn_initialpositionx_has_value():
+    assert hasattr(drn_InitialPositionX, "value")
     descriptor = None
-    for klass in drn::InitialPositionY.__mro__:
+    for klass in drn_InitialPositionX.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1197,23 +1197,23 @@ def test_drn::initialpositiony_has_value():
 
 
 
-def test_drn::initialdirection_is_not_abstract():
-    assert not inspect.isabstract(drn::InitialDirection)
+def test_drn_initialdirection_is_not_abstract():
+    assert not inspect.isabstract(drn_InitialDirection)
 
 
-def test_drn::initialdirection_constructor_exists():
-    assert callable(drn::InitialDirection.__init__)
+def test_drn_initialdirection_constructor_exists():
+    assert callable(drn_InitialDirection.__init__)
 
 
-def test_drn::initialdirection_constructor_args():
-    sig = inspect.signature(drn::InitialDirection.__init__)
+def test_drn_initialdirection_constructor_args():
+    sig = inspect.signature(drn_InitialDirection.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drn::initialdirection_has_value():
-    assert hasattr(drn::InitialDirection, "value")
+def test_drn_initialdirection_has_value():
+    assert hasattr(drn_InitialDirection, "value")
     descriptor = None
-    for klass in drn::InitialDirection.__mro__:
+    for klass in drn_InitialDirection.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1235,23 +1235,37 @@ def test_limit_constructor_args():
 
 
 
-def test_drn::maxspeed_is_not_abstract():
-    assert not inspect.isabstract(drn::MaxSpeed)
+def test_drn_initialposition_is_not_abstract():
+    assert not inspect.isabstract(drn_InitialPosition)
 
 
-def test_drn::maxspeed_constructor_exists():
-    assert callable(drn::MaxSpeed.__init__)
+def test_drn_initialposition_constructor_exists():
+    assert callable(drn_InitialPosition.__init__)
 
 
-def test_drn::maxspeed_constructor_args():
-    sig = inspect.signature(drn::MaxSpeed.__init__)
+def test_drn_initialposition_constructor_args():
+    sig = inspect.signature(drn_InitialPosition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_drn_maxspeed_is_not_abstract():
+    assert not inspect.isabstract(drn_MaxSpeed)
+
+
+def test_drn_maxspeed_constructor_exists():
+    assert callable(drn_MaxSpeed.__init__)
+
+
+def test_drn_maxspeed_constructor_args():
+    sig = inspect.signature(drn_MaxSpeed.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drn::maxspeed_has_value():
-    assert hasattr(drn::MaxSpeed, "value")
+def test_drn_maxspeed_has_value():
+    assert hasattr(drn_MaxSpeed, "value")
     descriptor = None
-    for klass in drn::MaxSpeed.__mro__:
+    for klass in drn_MaxSpeed.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1259,37 +1273,23 @@ def test_drn::maxspeed_has_value():
 
 
 
-def test_drn::initialposition_is_not_abstract():
-    assert not inspect.isabstract(drn::InitialPosition)
+def test_drn_surface_is_not_abstract():
+    assert not inspect.isabstract(drn_Surface)
 
 
-def test_drn::initialposition_constructor_exists():
-    assert callable(drn::InitialPosition.__init__)
+def test_drn_surface_constructor_exists():
+    assert callable(drn_Surface.__init__)
 
 
-def test_drn::initialposition_constructor_args():
-    sig = inspect.signature(drn::InitialPosition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_drn::surface_is_not_abstract():
-    assert not inspect.isabstract(drn::Surface)
-
-
-def test_drn::surface_constructor_exists():
-    assert callable(drn::Surface.__init__)
-
-
-def test_drn::surface_constructor_args():
-    sig = inspect.signature(drn::Surface.__init__)
+def test_drn_surface_constructor_args():
+    sig = inspect.signature(drn_Surface.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_drn::surface_has_value():
-    assert hasattr(drn::Surface, "value")
+def test_drn_surface_has_value():
+    assert hasattr(drn_Surface, "value")
     descriptor = None
-    for klass in drn::Surface.__mro__:
+    for klass in drn_Surface.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1297,23 +1297,23 @@ def test_drn::surface_has_value():
 
 
 
-def test_drn::limit_is_not_abstract():
-    assert not inspect.isabstract(drn::Limit)
+def test_drn_limit_is_not_abstract():
+    assert not inspect.isabstract(drn_Limit)
 
 
-def test_drn::limit_constructor_exists():
-    assert callable(drn::Limit.__init__)
+def test_drn_limit_constructor_exists():
+    assert callable(drn_Limit.__init__)
 
 
-def test_drn::limit_constructor_args():
-    sig = inspect.signature(drn::Limit.__init__)
+def test_drn_limit_constructor_args():
+    sig = inspect.signature(drn_Limit.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::limit_has_name():
-    assert hasattr(drn::Limit, "name")
+def test_drn_limit_has_name():
+    assert hasattr(drn_Limit, "name")
     descriptor = None
-    for klass in drn::Limit.__mro__:
+    for klass in drn_Limit.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1321,57 +1321,57 @@ def test_drn::limit_has_name():
 
 
 
-def test_drn::connectiontype_is_not_abstract():
-    assert not inspect.isabstract(drn::ConnectionType)
+def test_drn_connectiontype_is_not_abstract():
+    assert not inspect.isabstract(drn_ConnectionType)
 
 
-def test_drn::connectiontype_constructor_exists():
-    assert callable(drn::ConnectionType.__init__)
+def test_drn_connectiontype_constructor_exists():
+    assert callable(drn_ConnectionType.__init__)
 
 
-def test_drn::connectiontype_constructor_args():
-    sig = inspect.signature(drn::ConnectionType.__init__)
+def test_drn_connectiontype_constructor_args():
+    sig = inspect.signature(drn_ConnectionType.__init__)
     params = list(sig.parameters.keys())
-    assert "adress" in params, "Missing parameter 'adress'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "adress" in params, "Missing parameter 'adress'"
 
-def test_drn::connectiontype_has_adress():
-    assert hasattr(drn::ConnectionType, "adress")
+def test_drn_connectiontype_has_name():
+    assert hasattr(drn_ConnectionType, "name")
     descriptor = None
-    for klass in drn::ConnectionType.__mro__:
+    for klass in drn_ConnectionType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_drn_connectiontype_has_adress():
+    assert hasattr(drn_ConnectionType, "adress")
+    descriptor = None
+    for klass in drn_ConnectionType.__mro__:
         if "adress" in klass.__dict__:
             descriptor = klass.__dict__["adress"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::connectiontype_has_name():
-    assert hasattr(drn::ConnectionType, "name")
-    descriptor = None
-    for klass in drn::ConnectionType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_drn::device_is_not_abstract():
-    assert not inspect.isabstract(drn::Device)
-
-
-def test_drn::device_constructor_exists():
-    assert callable(drn::Device.__init__)
+def test_drn_device_is_not_abstract():
+    assert not inspect.isabstract(drn_Device)
 
 
-def test_drn::device_constructor_args():
-    sig = inspect.signature(drn::Device.__init__)
+def test_drn_device_constructor_exists():
+    assert callable(drn_Device.__init__)
+
+
+def test_drn_device_constructor_args():
+    sig = inspect.signature(drn_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::device_has_name():
-    assert hasattr(drn::Device, "name")
+def test_drn_device_has_name():
+    assert hasattr(drn_Device, "name")
     descriptor = None
-    for klass in drn::Device.__mro__:
+    for klass in drn_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1379,23 +1379,23 @@ def test_drn::device_has_name():
 
 
 
-def test_drn::typegeneric_is_not_abstract():
-    assert not inspect.isabstract(drn::TypeGeneric)
+def test_drn_typegeneric_is_not_abstract():
+    assert not inspect.isabstract(drn_TypeGeneric)
 
 
-def test_drn::typegeneric_constructor_exists():
-    assert callable(drn::TypeGeneric.__init__)
+def test_drn_typegeneric_constructor_exists():
+    assert callable(drn_TypeGeneric.__init__)
 
 
-def test_drn::typegeneric_constructor_args():
-    sig = inspect.signature(drn::TypeGeneric.__init__)
+def test_drn_typegeneric_constructor_args():
+    sig = inspect.signature(drn_TypeGeneric.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::typegeneric_has_name():
-    assert hasattr(drn::TypeGeneric, "name")
+def test_drn_typegeneric_has_name():
+    assert hasattr(drn_TypeGeneric, "name")
     descriptor = None
-    for klass in drn::TypeGeneric.__mro__:
+    for klass in drn_TypeGeneric.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1403,47 +1403,47 @@ def test_drn::typegeneric_has_name():
 
 
 
-def test_drn::refpart_is_not_abstract():
-    assert not inspect.isabstract(drn::RefPart)
+def test_drn_refpart_is_not_abstract():
+    assert not inspect.isabstract(drn_RefPart)
 
 
-def test_drn::refpart_constructor_exists():
-    assert callable(drn::RefPart.__init__)
+def test_drn_refpart_constructor_exists():
+    assert callable(drn_RefPart.__init__)
 
 
-def test_drn::refpart_constructor_args():
-    sig = inspect.signature(drn::RefPart.__init__)
+def test_drn_refpart_constructor_args():
+    sig = inspect.signature(drn_RefPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::context_is_not_abstract():
-    assert not inspect.isabstract(drn::Context)
+def test_drn_context_is_not_abstract():
+    assert not inspect.isabstract(drn_Context)
 
 
-def test_drn::context_constructor_exists():
-    assert callable(drn::Context.__init__)
+def test_drn_context_constructor_exists():
+    assert callable(drn_Context.__init__)
 
 
-def test_drn::context_constructor_args():
-    sig = inspect.signature(drn::Context.__init__)
+def test_drn_context_constructor_args():
+    sig = inspect.signature(drn_Context.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "where" in params, "Missing parameter 'where'"
 
-def test_drn::context_has_name():
-    assert hasattr(drn::Context, "name")
+def test_drn_context_has_name():
+    assert hasattr(drn_Context, "name")
     descriptor = None
-    for klass in drn::Context.__mro__:
+    for klass in drn_Context.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_drn::context_has_where():
-    assert hasattr(drn::Context, "where")
+def test_drn_context_has_where():
+    assert hasattr(drn_Context, "where")
     descriptor = None
-    for klass in drn::Context.__mro__:
+    for klass in drn_Context.__mro__:
         if "where" in klass.__dict__:
             descriptor = klass.__dict__["where"]
             break
@@ -1451,23 +1451,23 @@ def test_drn::context_has_where():
 
 
 
-def test_drn::with_is_not_abstract():
-    assert not inspect.isabstract(drn::With)
+def test_drn_with_is_not_abstract():
+    assert not inspect.isabstract(drn_With)
 
 
-def test_drn::with_constructor_exists():
-    assert callable(drn::With.__init__)
+def test_drn_with_constructor_exists():
+    assert callable(drn_With.__init__)
 
 
-def test_drn::with_constructor_args():
-    sig = inspect.signature(drn::With.__init__)
+def test_drn_with_constructor_args():
+    sig = inspect.signature(drn_With.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::with_has_name():
-    assert hasattr(drn::With, "name")
+def test_drn_with_has_name():
+    assert hasattr(drn_With, "name")
     descriptor = None
-    for klass in drn::With.__mro__:
+    for klass in drn_With.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1475,23 +1475,23 @@ def test_drn::with_has_name():
 
 
 
-def test_drn::assignement_is_not_abstract():
-    assert not inspect.isabstract(drn::Assignement)
+def test_drn_assignement_is_not_abstract():
+    assert not inspect.isabstract(drn_Assignement)
 
 
-def test_drn::assignement_constructor_exists():
-    assert callable(drn::Assignement.__init__)
+def test_drn_assignement_constructor_exists():
+    assert callable(drn_Assignement.__init__)
 
 
-def test_drn::assignement_constructor_args():
-    sig = inspect.signature(drn::Assignement.__init__)
+def test_drn_assignement_constructor_args():
+    sig = inspect.signature(drn_Assignement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::assignement_has_name():
-    assert hasattr(drn::Assignement, "name")
+def test_drn_assignement_has_name():
+    assert hasattr(drn_Assignement, "name")
     descriptor = None
-    for klass in drn::Assignement.__mro__:
+    for klass in drn_Assignement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1513,23 +1513,23 @@ def test_root_constructor_args():
 
 
 
-def test_drn::library_is_not_abstract():
-    assert not inspect.isabstract(drn::Library)
+def test_drn_configuration_is_not_abstract():
+    assert not inspect.isabstract(drn_Configuration)
 
 
-def test_drn::library_constructor_exists():
-    assert callable(drn::Library.__init__)
+def test_drn_configuration_constructor_exists():
+    assert callable(drn_Configuration.__init__)
 
 
-def test_drn::library_constructor_args():
-    sig = inspect.signature(drn::Library.__init__)
+def test_drn_configuration_constructor_args():
+    sig = inspect.signature(drn_Configuration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::library_has_name():
-    assert hasattr(drn::Library, "name")
+def test_drn_configuration_has_name():
+    assert hasattr(drn_Configuration, "name")
     descriptor = None
-    for klass in drn::Library.__mro__:
+    for klass in drn_Configuration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1537,23 +1537,23 @@ def test_drn::library_has_name():
 
 
 
-def test_drn::configuration_is_not_abstract():
-    assert not inspect.isabstract(drn::Configuration)
+def test_drn_library_is_not_abstract():
+    assert not inspect.isabstract(drn_Library)
 
 
-def test_drn::configuration_constructor_exists():
-    assert callable(drn::Configuration.__init__)
+def test_drn_library_constructor_exists():
+    assert callable(drn_Library.__init__)
 
 
-def test_drn::configuration_constructor_args():
-    sig = inspect.signature(drn::Configuration.__init__)
+def test_drn_library_constructor_args():
+    sig = inspect.signature(drn_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_drn::configuration_has_name():
-    assert hasattr(drn::Configuration, "name")
+def test_drn_library_has_name():
+    assert hasattr(drn_Library, "name")
     descriptor = None
-    for klass in drn::Configuration.__mro__:
+    for klass in drn_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1561,31 +1561,78 @@ def test_drn::configuration_has_name():
 
 
 
-def test_drn::model_is_not_abstract():
-    assert not inspect.isabstract(drn::Model)
+def test_drn_model_is_not_abstract():
+    assert not inspect.isabstract(drn_Model)
 
 
-def test_drn::model_constructor_exists():
-    assert callable(drn::Model.__init__)
+def test_drn_model_constructor_exists():
+    assert callable(drn_Model.__init__)
 
 
-def test_drn::model_constructor_args():
-    sig = inspect.signature(drn::Model.__init__)
+def test_drn_model_constructor_args():
+    sig = inspect.signature(drn_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_drn::root_is_not_abstract():
-    assert not inspect.isabstract(drn::Root)
+def test_drn_root_is_not_abstract():
+    assert not inspect.isabstract(drn_Root)
 
 
-def test_drn::root_constructor_exists():
-    assert callable(drn::Root.__init__)
+def test_drn_root_constructor_exists():
+    assert callable(drn_Root.__init__)
 
 
-def test_drn::root_constructor_args():
-    sig = inspect.signature(drn::Root.__init__)
+def test_drn_root_constructor_args():
+    sig = inspect.signature(drn_Root.__init__)
     params = list(sig.parameters.keys())
+
+def test_ebool_exists():
+    # Check that the Enumeration exists
+    assert EBool is not None
+
+def test_ebool_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in EBool]
+    expected_literals = [
+        "TRUE",
+        "FALSE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in EBool"
+
+def test_mode_exists():
+    # Check that the Enumeration exists
+    assert Mode is not None
+
+def test_mode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Mode]
+    expected_literals = [
+        "ON",
+        "OFF",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Mode"
+
+def test_typeprimitif_exists():
+    # Check that the Enumeration exists
+    assert TypePrimitif is not None
+
+def test_typeprimitif_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TypePrimitif]
+    expected_literals = [
+        "realType",
+        "boolType",
+        "intType",
+        "stringType",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TypePrimitif"
 
 def test_where_exists():
     # Check that the Enumeration exists
@@ -1602,23 +1649,6 @@ def test_where_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Where"
 
-def test_typeprimitif_exists():
-    # Check that the Enumeration exists
-    assert TypePrimitif is not None
-
-def test_typeprimitif_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TypePrimitif]
-    expected_literals = [
-        "boolType",
-        "intType",
-        "stringType",
-        "realType",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TypePrimitif"
-
 def test_directiontype_exists():
     # Check that the Enumeration exists
     assert DirectionType is not None
@@ -1627,44 +1657,14 @@ def test_directiontype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DirectionType]
     expected_literals = [
-        "FRONT",
-        "LEFT",
         "RIGHT",
+        "LEFT",
         "BEHIND",
+        "FRONT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DirectionType"
-
-def test_ebool_exists():
-    # Check that the Enumeration exists
-    assert EBool is not None
-
-def test_ebool_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EBool]
-    expected_literals = [
-        "FALSE",
-        "TRUE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EBool"
-
-def test_mode_exists():
-    # Check that the Enumeration exists
-    assert Mode is not None
-
-def test_mode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Mode]
-    expected_literals = [
-        "OFF",
-        "ON",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Mode"
 
 
 # =============================================================================
@@ -1681,119 +1681,119 @@ safe_text = st.text(
 ConnectionType_strategy = st.builds(
     ConnectionType,
 )
-drn::Wifi_strategy = st.builds(
-    drn::Wifi,
+drn_Wifi_strategy = st.builds(
+    drn_Wifi,
 )
-drn::Bluetooth_strategy = st.builds(
-    drn::Bluetooth,
+drn_Bluetooth_strategy = st.builds(
+    drn_Bluetooth,
 )
-drn::RefDevice_strategy = st.builds(
-    drn::RefDevice,
+drn_RefDevice_strategy = st.builds(
+    drn_RefDevice,
     mode=
         safe_text
 )
-drn::Element_strategy = st.builds(
-    drn::Element,
+drn_Element_strategy = st.builds(
+    drn_Element,
     name=
         safe_text
 )
-drn::Definition_strategy = st.builds(
-    drn::Definition,
-    real=
-        safe_text,
-    text=
-        safe_text,
+drn_Definition_strategy = st.builds(
+    drn_Definition,
     int=
         safe_text,
+    real=
+        safe_text,
     bool=
+        safe_text,
+    text=
         safe_text
 )
-drn::Declaration_strategy = st.builds(
-    drn::Declaration,
+drn_Declaration_strategy = st.builds(
+    drn_Declaration,
     name=
         safe_text,
     typePrimitif=
         safe_text
 )
-DepXYZ::IMPL_strategy = st.builds(
-    DepXYZ::IMPL,
+DepXYZ_IMPL_strategy = st.builds(
+    DepXYZ_IMPL,
 )
-drn::Flip_strategy = st.builds(
-    drn::Flip,
+drn_Flip_strategy = st.builds(
+    drn_Flip,
     name=
         safe_text
 )
-DepXZ::IMPL_strategy = st.builds(
-    DepXZ::IMPL,
+DepXZ_IMPL_strategy = st.builds(
+    DepXZ_IMPL,
 )
-drn::CARREXZ_strategy = st.builds(
-    drn::CARREXZ,
+drn_CARREXZ_strategy = st.builds(
+    drn_CARREXZ,
     coteCST=
         st.integers()
 )
-drn::CERCLEXZ_strategy = st.builds(
-    drn::CERCLEXZ,
+drn_CERCLEXZ_strategy = st.builds(
+    drn_CERCLEXZ,
     rayonCST=
         st.integers()
 )
-DepYZ::IMPL_strategy = st.builds(
-    DepYZ::IMPL,
+DepYZ_IMPL_strategy = st.builds(
+    DepYZ_IMPL,
 )
-drn::CARREYZ_strategy = st.builds(
-    drn::CARREYZ,
+drn_CARREYZ_strategy = st.builds(
+    drn_CARREYZ,
     coteCST=
         st.integers()
 )
-drn::CERCLEYZ_strategy = st.builds(
-    drn::CERCLEYZ,
+drn_CERCLEYZ_strategy = st.builds(
+    drn_CERCLEYZ,
     rayonCST=
         st.integers()
 )
-DepXY::IMPL_strategy = st.builds(
-    DepXY::IMPL,
+DepXY_IMPL_strategy = st.builds(
+    DepXY_IMPL,
 )
-drn::CARREXY_strategy = st.builds(
-    drn::CARREXY,
+drn_CARREXY_strategy = st.builds(
+    drn_CARREXY,
     coteCST=
         st.integers()
 )
-drn::CERCLEXY_strategy = st.builds(
-    drn::CERCLEXY,
+drn_CERCLEXY_strategy = st.builds(
+    drn_CERCLEXY,
     rayonCST=
         st.integers()
 )
-DepZ::Impl_strategy = st.builds(
-    DepZ::Impl,
+DepZ_Impl_strategy = st.builds(
+    DepZ_Impl,
 )
-drn::DOWN_strategy = st.builds(
-    drn::DOWN,
+drn_DOWN_strategy = st.builds(
+    drn_DOWN,
 )
-drn::UP_strategy = st.builds(
-    drn::UP,
+drn_UP_strategy = st.builds(
+    drn_UP,
 )
-DepX::Impl_strategy = st.builds(
-    DepX::Impl,
+DepX_Impl_strategy = st.builds(
+    DepX_Impl,
 )
-drn::RIGHT_strategy = st.builds(
-    drn::RIGHT,
+drn_RIGHT_strategy = st.builds(
+    drn_RIGHT,
 )
-drn::LEFT_strategy = st.builds(
-    drn::LEFT,
+drn_LEFT_strategy = st.builds(
+    drn_LEFT,
 )
-DepY::Impl_strategy = st.builds(
-    DepY::Impl,
+DepY_Impl_strategy = st.builds(
+    DepY_Impl,
 )
-drn::BACKWARD_strategy = st.builds(
-    drn::BACKWARD,
+drn_BACKWARD_strategy = st.builds(
+    drn_BACKWARD,
 )
-drn::FORWARD_strategy = st.builds(
-    drn::FORWARD,
+drn_FORWARD_strategy = st.builds(
+    drn_FORWARD,
 )
 Movement_strategy = st.builds(
     Movement,
 )
-drn::DepY::Impl_strategy = st.builds(
-    drn::DepY::Impl,
+drn_DepX_Impl_strategy = st.builds(
+    drn_DepX_Impl,
     distanceCST=
         st.integers(),
     tempsCST=
@@ -1801,62 +1801,47 @@ drn::DepY::Impl_strategy = st.builds(
     name=
         safe_text
 )
-drn::TakeOff_strategy = st.builds(
-    drn::TakeOff,
+drn_And_strategy = st.builds(
+    drn_And,
     name=
         safe_text
 )
-drn::DepX::Impl_strategy = st.builds(
-    drn::DepX::Impl,
+drn_TakeOff_strategy = st.builds(
+    drn_TakeOff,
+    name=
+        safe_text
+)
+drn_DepXZ_IMPL_strategy = st.builds(
+    drn_DepXZ_IMPL,
     name=
         safe_text,
     tempsCST=
-        st.integers(),
-    distanceCST=
         st.integers()
 )
-drn::Land_strategy = st.builds(
-    drn::Land,
-    name=
-        safe_text
-)
-drn::DepZ::Impl_strategy = st.builds(
-    drn::DepZ::Impl,
-    tempsCST=
-        st.integers(),
+drn_DepZ_Impl_strategy = st.builds(
+    drn_DepZ_Impl,
     name=
         safe_text,
     distanceCST=
+        st.integers(),
+    tempsCST=
         st.integers()
 )
-drn::DepXY::IMPL_strategy = st.builds(
-    drn::DepXY::IMPL,
+drn_RefPartLib_strategy = st.builds(
+    drn_RefPartLib,
+)
+drn_DepXYZ_IMPL_strategy = st.builds(
+    drn_DepXYZ_IMPL,
+)
+drn_DepYZ_IMPL_strategy = st.builds(
+    drn_DepYZ_IMPL,
     name=
         safe_text,
     tempsCST=
         st.integers()
 )
-drn::And_strategy = st.builds(
-    drn::And,
-    name=
-        safe_text
-)
-drn::DepXZ::IMPL_strategy = st.builds(
-    drn::DepXZ::IMPL,
-    name=
-        safe_text,
-    tempsCST=
-        st.integers()
-)
-drn::Wait_strategy = st.builds(
-    drn::Wait,
-    name=
-        safe_text,
-    tempsCST=
-        st.integers()
-)
-drn::Rotate_strategy = st.builds(
-    drn::Rotate,
+drn_Rotate_strategy = st.builds(
+    drn_Rotate,
     angleCST=
         safe_text,
     name=
@@ -1864,133 +1849,148 @@ drn::Rotate_strategy = st.builds(
     tempsCST=
         st.integers()
 )
-drn::RefPartLib_strategy = st.builds(
-    drn::RefPartLib,
+drn_DepY_Impl_strategy = st.builds(
+    drn_DepY_Impl,
+    tempsCST=
+        st.integers(),
+    name=
+        safe_text,
+    distanceCST=
+        st.integers()
 )
-drn::DepXYZ::IMPL_strategy = st.builds(
-    drn::DepXYZ::IMPL,
+drn_Land_strategy = st.builds(
+    drn_Land,
+    name=
+        safe_text
 )
-drn::DepYZ::IMPL_strategy = st.builds(
-    drn::DepYZ::IMPL,
+drn_Wait_strategy = st.builds(
+    drn_Wait,
     name=
         safe_text,
     tempsCST=
         st.integers()
 )
-drn::Movement_strategy = st.builds(
-    drn::Movement,
+drn_DepXY_IMPL_strategy = st.builds(
+    drn_DepXY_IMPL,
+    tempsCST=
+        st.integers(),
+    name=
+        safe_text
 )
-drn::Expression_strategy = st.builds(
-    drn::Expression,
+drn_Movement_strategy = st.builds(
+    drn_Movement,
+)
+drn_Expression_strategy = st.builds(
+    drn_Expression,
     repeatCST=
         st.integers()
 )
 Surface_strategy = st.builds(
     Surface,
 )
-drn::MaxWidth_strategy = st.builds(
-    drn::MaxWidth,
+drn_MaxHeight_strategy = st.builds(
+    drn_MaxHeight,
 )
-drn::MaxHeight_strategy = st.builds(
-    drn::MaxHeight,
+drn_MaxWidth_strategy = st.builds(
+    drn_MaxWidth,
 )
-drn::MaxLength_strategy = st.builds(
-    drn::MaxLength,
+drn_MaxLength_strategy = st.builds(
+    drn_MaxLength,
 )
 InitialPosition_strategy = st.builds(
     InitialPosition,
 )
-drn::InitialPositionX_strategy = st.builds(
-    drn::InitialPositionX,
+drn_InitialPositionY_strategy = st.builds(
+    drn_InitialPositionY,
     value=
         st.integers()
 )
-drn::InitialPositionY_strategy = st.builds(
-    drn::InitialPositionY,
+drn_InitialPositionX_strategy = st.builds(
+    drn_InitialPositionX,
     value=
         st.integers()
 )
-drn::InitialDirection_strategy = st.builds(
-    drn::InitialDirection,
+drn_InitialDirection_strategy = st.builds(
+    drn_InitialDirection,
     value=
         safe_text
 )
 Limit_strategy = st.builds(
     Limit,
 )
-drn::MaxSpeed_strategy = st.builds(
-    drn::MaxSpeed,
+drn_InitialPosition_strategy = st.builds(
+    drn_InitialPosition,
+)
+drn_MaxSpeed_strategy = st.builds(
+    drn_MaxSpeed,
     value=
         st.integers()
 )
-drn::InitialPosition_strategy = st.builds(
-    drn::InitialPosition,
-)
-drn::Surface_strategy = st.builds(
-    drn::Surface,
+drn_Surface_strategy = st.builds(
+    drn_Surface,
     value=
         st.integers()
 )
-drn::Limit_strategy = st.builds(
-    drn::Limit,
+drn_Limit_strategy = st.builds(
+    drn_Limit,
     name=
         safe_text
 )
-drn::ConnectionType_strategy = st.builds(
-    drn::ConnectionType,
-    adress=
+drn_ConnectionType_strategy = st.builds(
+    drn_ConnectionType,
+    name=
         safe_text,
+    adress=
+        safe_text
+)
+drn_Device_strategy = st.builds(
+    drn_Device,
     name=
         safe_text
 )
-drn::Device_strategy = st.builds(
-    drn::Device,
+drn_TypeGeneric_strategy = st.builds(
+    drn_TypeGeneric,
     name=
         safe_text
 )
-drn::TypeGeneric_strategy = st.builds(
-    drn::TypeGeneric,
-    name=
-        safe_text
+drn_RefPart_strategy = st.builds(
+    drn_RefPart,
 )
-drn::RefPart_strategy = st.builds(
-    drn::RefPart,
-)
-drn::Context_strategy = st.builds(
-    drn::Context,
+drn_Context_strategy = st.builds(
+    drn_Context,
     name=
         safe_text,
     where=
         safe_text
 )
-drn::With_strategy = st.builds(
-    drn::With,
+drn_With_strategy = st.builds(
+    drn_With,
     name=
         safe_text
 )
-drn::Assignement_strategy = st.builds(
-    drn::Assignement,
+drn_Assignement_strategy = st.builds(
+    drn_Assignement,
     name=
         safe_text
 )
 Root_strategy = st.builds(
     Root,
 )
-drn::Library_strategy = st.builds(
-    drn::Library,
+drn_Configuration_strategy = st.builds(
+    drn_Configuration,
     name=
         safe_text
 )
-drn::Configuration_strategy = st.builds(
-    drn::Configuration,
+drn_Library_strategy = st.builds(
+    drn_Library,
     name=
         safe_text
 )
-drn::Model_strategy = st.builds(
-    drn::Model,
+drn_Model_strategy = st.builds(
+    drn_Model,
 )
-drn::Root_strategy = st.builds(
-    drn::Root,
+drn_Root_strategy = st.builds(
+    drn_Root,
 )
 
 @given(instance=ConnectionType_strategy)
@@ -1998,641 +1998,524 @@ drn::Root_strategy = st.builds(
 def test_connectiontype_instantiation(instance):
     assert isinstance(instance, ConnectionType)
 
-@given(instance=drn::Wifi_strategy)
+@given(instance=drn_Wifi_strategy)
 @settings(max_examples=50)
-def test_drn::wifi_instantiation(instance):
-    assert isinstance(instance, drn::Wifi)
+def test_drn_wifi_instantiation(instance):
+    assert isinstance(instance, drn_Wifi)
 
-@given(instance=drn::Bluetooth_strategy)
+@given(instance=drn_Bluetooth_strategy)
 @settings(max_examples=50)
-def test_drn::bluetooth_instantiation(instance):
-    assert isinstance(instance, drn::Bluetooth)
+def test_drn_bluetooth_instantiation(instance):
+    assert isinstance(instance, drn_Bluetooth)
 
-@given(instance=drn::RefDevice_strategy)
+@given(instance=drn_RefDevice_strategy)
 @settings(max_examples=50)
-def test_drn::refdevice_instantiation(instance):
-    assert isinstance(instance, drn::RefDevice)
-
-@given(instance=drn::RefDevice_strategy)
-def test_drn::refdevice_mode_type(instance):
-    assert isinstance(instance.mode, str)
+def test_drn_refdevice_instantiation(instance):
+    assert isinstance(instance, drn_RefDevice)
 
 
-@given(instance=drn::RefDevice_strategy)
-def test_drn::refdevice_mode_setter(instance):
+
+@given(instance=drn_RefDevice_strategy)
+def test_drn_refdevice_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
 
-@given(instance=drn::Element_strategy)
+@given(instance=drn_Element_strategy)
 @settings(max_examples=50)
-def test_drn::element_instantiation(instance):
-    assert isinstance(instance, drn::Element)
-
-@given(instance=drn::Element_strategy)
-def test_drn::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_element_instantiation(instance):
+    assert isinstance(instance, drn_Element)
 
 
-@given(instance=drn::Element_strategy)
-def test_drn::element_name_setter(instance):
+
+@given(instance=drn_Element_strategy)
+def test_drn_element_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Definition_strategy)
+@given(instance=drn_Definition_strategy)
 @settings(max_examples=50)
-def test_drn::definition_instantiation(instance):
-    assert isinstance(instance, drn::Definition)
-
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_real_type(instance):
-    assert isinstance(instance.real, str)
+def test_drn_definition_instantiation(instance):
+    assert isinstance(instance, drn_Definition)
 
 
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_real_setter(instance):
-    original = instance.real
-    instance.real = original
-    assert instance.real == original
 
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_int_type(instance):
-    assert isinstance(instance.int, str)
-
-
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_int_setter(instance):
+@given(instance=drn_Definition_strategy)
+def test_drn_definition_int_setter(instance):
     original = instance.int
     instance.int = original
     assert instance.int == original
 
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_bool_type(instance):
-    assert isinstance(instance.bool, str)
 
 
-@given(instance=drn::Definition_strategy)
-def test_drn::definition_bool_setter(instance):
+@given(instance=drn_Definition_strategy)
+def test_drn_definition_real_setter(instance):
+    original = instance.real
+    instance.real = original
+    assert instance.real == original
+
+
+
+@given(instance=drn_Definition_strategy)
+def test_drn_definition_bool_setter(instance):
     original = instance.bool
     instance.bool = original
     assert instance.bool == original
 
-@given(instance=drn::Declaration_strategy)
+
+
+@given(instance=drn_Definition_strategy)
+def test_drn_definition_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=drn_Declaration_strategy)
 @settings(max_examples=50)
-def test_drn::declaration_instantiation(instance):
-    assert isinstance(instance, drn::Declaration)
-
-@given(instance=drn::Declaration_strategy)
-def test_drn::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_declaration_instantiation(instance):
+    assert isinstance(instance, drn_Declaration)
 
 
-@given(instance=drn::Declaration_strategy)
-def test_drn::declaration_name_setter(instance):
+
+@given(instance=drn_Declaration_strategy)
+def test_drn_declaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Declaration_strategy)
-def test_drn::declaration_typePrimitif_type(instance):
-    assert isinstance(instance.typePrimitif, str)
 
 
-@given(instance=drn::Declaration_strategy)
-def test_drn::declaration_typePrimitif_setter(instance):
+@given(instance=drn_Declaration_strategy)
+def test_drn_declaration_typePrimitif_setter(instance):
     original = instance.typePrimitif
     instance.typePrimitif = original
     assert instance.typePrimitif == original
 
-@given(instance=DepXYZ::IMPL_strategy)
+@given(instance=DepXYZ_IMPL_strategy)
 @settings(max_examples=50)
-def test_depxyz::impl_instantiation(instance):
-    assert isinstance(instance, DepXYZ::IMPL)
+def test_depxyz_impl_instantiation(instance):
+    assert isinstance(instance, DepXYZ_IMPL)
 
-@given(instance=drn::Flip_strategy)
+@given(instance=drn_Flip_strategy)
 @settings(max_examples=50)
-def test_drn::flip_instantiation(instance):
-    assert isinstance(instance, drn::Flip)
-
-@given(instance=drn::Flip_strategy)
-def test_drn::flip_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_flip_instantiation(instance):
+    assert isinstance(instance, drn_Flip)
 
 
-@given(instance=drn::Flip_strategy)
-def test_drn::flip_name_setter(instance):
+
+@given(instance=drn_Flip_strategy)
+def test_drn_flip_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=DepXZ::IMPL_strategy)
+@given(instance=DepXZ_IMPL_strategy)
 @settings(max_examples=50)
-def test_depxz::impl_instantiation(instance):
-    assert isinstance(instance, DepXZ::IMPL)
+def test_depxz_impl_instantiation(instance):
+    assert isinstance(instance, DepXZ_IMPL)
 
-@given(instance=drn::CARREXZ_strategy)
+@given(instance=drn_CARREXZ_strategy)
 @settings(max_examples=50)
-def test_drn::carrexz_instantiation(instance):
-    assert isinstance(instance, drn::CARREXZ)
-
-@given(instance=drn::CARREXZ_strategy)
-def test_drn::carrexz_coteCST_type(instance):
-    assert isinstance(instance.coteCST, int)
+def test_drn_carrexz_instantiation(instance):
+    assert isinstance(instance, drn_CARREXZ)
 
 
-@given(instance=drn::CARREXZ_strategy)
-def test_drn::carrexz_coteCST_setter(instance):
+
+@given(instance=drn_CARREXZ_strategy)
+def test_drn_carrexz_coteCST_setter(instance):
     original = instance.coteCST
     instance.coteCST = original
     assert instance.coteCST == original
 
-@given(instance=drn::CERCLEXZ_strategy)
+@given(instance=drn_CERCLEXZ_strategy)
 @settings(max_examples=50)
-def test_drn::cerclexz_instantiation(instance):
-    assert isinstance(instance, drn::CERCLEXZ)
-
-@given(instance=drn::CERCLEXZ_strategy)
-def test_drn::cerclexz_rayonCST_type(instance):
-    assert isinstance(instance.rayonCST, int)
+def test_drn_cerclexz_instantiation(instance):
+    assert isinstance(instance, drn_CERCLEXZ)
 
 
-@given(instance=drn::CERCLEXZ_strategy)
-def test_drn::cerclexz_rayonCST_setter(instance):
+
+@given(instance=drn_CERCLEXZ_strategy)
+def test_drn_cerclexz_rayonCST_setter(instance):
     original = instance.rayonCST
     instance.rayonCST = original
     assert instance.rayonCST == original
 
-@given(instance=DepYZ::IMPL_strategy)
+@given(instance=DepYZ_IMPL_strategy)
 @settings(max_examples=50)
-def test_depyz::impl_instantiation(instance):
-    assert isinstance(instance, DepYZ::IMPL)
+def test_depyz_impl_instantiation(instance):
+    assert isinstance(instance, DepYZ_IMPL)
 
-@given(instance=drn::CARREYZ_strategy)
+@given(instance=drn_CARREYZ_strategy)
 @settings(max_examples=50)
-def test_drn::carreyz_instantiation(instance):
-    assert isinstance(instance, drn::CARREYZ)
-
-@given(instance=drn::CARREYZ_strategy)
-def test_drn::carreyz_coteCST_type(instance):
-    assert isinstance(instance.coteCST, int)
+def test_drn_carreyz_instantiation(instance):
+    assert isinstance(instance, drn_CARREYZ)
 
 
-@given(instance=drn::CARREYZ_strategy)
-def test_drn::carreyz_coteCST_setter(instance):
+
+@given(instance=drn_CARREYZ_strategy)
+def test_drn_carreyz_coteCST_setter(instance):
     original = instance.coteCST
     instance.coteCST = original
     assert instance.coteCST == original
 
-@given(instance=drn::CERCLEYZ_strategy)
+@given(instance=drn_CERCLEYZ_strategy)
 @settings(max_examples=50)
-def test_drn::cercleyz_instantiation(instance):
-    assert isinstance(instance, drn::CERCLEYZ)
-
-@given(instance=drn::CERCLEYZ_strategy)
-def test_drn::cercleyz_rayonCST_type(instance):
-    assert isinstance(instance.rayonCST, int)
+def test_drn_cercleyz_instantiation(instance):
+    assert isinstance(instance, drn_CERCLEYZ)
 
 
-@given(instance=drn::CERCLEYZ_strategy)
-def test_drn::cercleyz_rayonCST_setter(instance):
+
+@given(instance=drn_CERCLEYZ_strategy)
+def test_drn_cercleyz_rayonCST_setter(instance):
     original = instance.rayonCST
     instance.rayonCST = original
     assert instance.rayonCST == original
 
-@given(instance=DepXY::IMPL_strategy)
+@given(instance=DepXY_IMPL_strategy)
 @settings(max_examples=50)
-def test_depxy::impl_instantiation(instance):
-    assert isinstance(instance, DepXY::IMPL)
+def test_depxy_impl_instantiation(instance):
+    assert isinstance(instance, DepXY_IMPL)
 
-@given(instance=drn::CARREXY_strategy)
+@given(instance=drn_CARREXY_strategy)
 @settings(max_examples=50)
-def test_drn::carrexy_instantiation(instance):
-    assert isinstance(instance, drn::CARREXY)
-
-@given(instance=drn::CARREXY_strategy)
-def test_drn::carrexy_coteCST_type(instance):
-    assert isinstance(instance.coteCST, int)
+def test_drn_carrexy_instantiation(instance):
+    assert isinstance(instance, drn_CARREXY)
 
 
-@given(instance=drn::CARREXY_strategy)
-def test_drn::carrexy_coteCST_setter(instance):
+
+@given(instance=drn_CARREXY_strategy)
+def test_drn_carrexy_coteCST_setter(instance):
     original = instance.coteCST
     instance.coteCST = original
     assert instance.coteCST == original
 
-@given(instance=drn::CERCLEXY_strategy)
+@given(instance=drn_CERCLEXY_strategy)
 @settings(max_examples=50)
-def test_drn::cerclexy_instantiation(instance):
-    assert isinstance(instance, drn::CERCLEXY)
-
-@given(instance=drn::CERCLEXY_strategy)
-def test_drn::cerclexy_rayonCST_type(instance):
-    assert isinstance(instance.rayonCST, int)
+def test_drn_cerclexy_instantiation(instance):
+    assert isinstance(instance, drn_CERCLEXY)
 
 
-@given(instance=drn::CERCLEXY_strategy)
-def test_drn::cerclexy_rayonCST_setter(instance):
+
+@given(instance=drn_CERCLEXY_strategy)
+def test_drn_cerclexy_rayonCST_setter(instance):
     original = instance.rayonCST
     instance.rayonCST = original
     assert instance.rayonCST == original
 
-@given(instance=DepZ::Impl_strategy)
+@given(instance=DepZ_Impl_strategy)
 @settings(max_examples=50)
-def test_depz::impl_instantiation(instance):
-    assert isinstance(instance, DepZ::Impl)
+def test_depz_impl_instantiation(instance):
+    assert isinstance(instance, DepZ_Impl)
 
-@given(instance=drn::DOWN_strategy)
+@given(instance=drn_DOWN_strategy)
 @settings(max_examples=50)
-def test_drn::down_instantiation(instance):
-    assert isinstance(instance, drn::DOWN)
+def test_drn_down_instantiation(instance):
+    assert isinstance(instance, drn_DOWN)
 
-@given(instance=drn::UP_strategy)
+@given(instance=drn_UP_strategy)
 @settings(max_examples=50)
-def test_drn::up_instantiation(instance):
-    assert isinstance(instance, drn::UP)
+def test_drn_up_instantiation(instance):
+    assert isinstance(instance, drn_UP)
 
-@given(instance=DepX::Impl_strategy)
+@given(instance=DepX_Impl_strategy)
 @settings(max_examples=50)
-def test_depx::impl_instantiation(instance):
-    assert isinstance(instance, DepX::Impl)
+def test_depx_impl_instantiation(instance):
+    assert isinstance(instance, DepX_Impl)
 
-@given(instance=drn::RIGHT_strategy)
+@given(instance=drn_RIGHT_strategy)
 @settings(max_examples=50)
-def test_drn::right_instantiation(instance):
-    assert isinstance(instance, drn::RIGHT)
+def test_drn_right_instantiation(instance):
+    assert isinstance(instance, drn_RIGHT)
 
-@given(instance=drn::LEFT_strategy)
+@given(instance=drn_LEFT_strategy)
 @settings(max_examples=50)
-def test_drn::left_instantiation(instance):
-    assert isinstance(instance, drn::LEFT)
+def test_drn_left_instantiation(instance):
+    assert isinstance(instance, drn_LEFT)
 
-@given(instance=DepY::Impl_strategy)
+@given(instance=DepY_Impl_strategy)
 @settings(max_examples=50)
-def test_depy::impl_instantiation(instance):
-    assert isinstance(instance, DepY::Impl)
+def test_depy_impl_instantiation(instance):
+    assert isinstance(instance, DepY_Impl)
 
-@given(instance=drn::BACKWARD_strategy)
+@given(instance=drn_BACKWARD_strategy)
 @settings(max_examples=50)
-def test_drn::backward_instantiation(instance):
-    assert isinstance(instance, drn::BACKWARD)
+def test_drn_backward_instantiation(instance):
+    assert isinstance(instance, drn_BACKWARD)
 
-@given(instance=drn::FORWARD_strategy)
+@given(instance=drn_FORWARD_strategy)
 @settings(max_examples=50)
-def test_drn::forward_instantiation(instance):
-    assert isinstance(instance, drn::FORWARD)
+def test_drn_forward_instantiation(instance):
+    assert isinstance(instance, drn_FORWARD)
 
 @given(instance=Movement_strategy)
 @settings(max_examples=50)
 def test_movement_instantiation(instance):
     assert isinstance(instance, Movement)
 
-@given(instance=drn::DepY::Impl_strategy)
+@given(instance=drn_DepX_Impl_strategy)
 @settings(max_examples=50)
-def test_drn::depy::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepY::Impl)
-
-@given(instance=drn::DepY::Impl_strategy)
-def test_drn::depy::impl_distanceCST_type(instance):
-    assert isinstance(instance.distanceCST, int)
+def test_drn_depx_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepX_Impl)
 
 
-@given(instance=drn::DepY::Impl_strategy)
-def test_drn::depy::impl_distanceCST_setter(instance):
+
+@given(instance=drn_DepX_Impl_strategy)
+def test_drn_depx_impl_distanceCST_setter(instance):
     original = instance.distanceCST
     instance.distanceCST = original
     assert instance.distanceCST == original
 
-@given(instance=drn::DepY::Impl_strategy)
-def test_drn::depy::impl_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
 
 
-@given(instance=drn::DepY::Impl_strategy)
-def test_drn::depy::impl_tempsCST_setter(instance):
+@given(instance=drn_DepX_Impl_strategy)
+def test_drn_depx_impl_tempsCST_setter(instance):
     original = instance.tempsCST
     instance.tempsCST = original
     assert instance.tempsCST == original
 
-@given(instance=drn::DepY::Impl_strategy)
-def test_drn::depy::impl_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=drn::DepY::Impl_strategy)
-def test_drn::depy::impl_name_setter(instance):
+@given(instance=drn_DepX_Impl_strategy)
+def test_drn_depx_impl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::TakeOff_strategy)
+@given(instance=drn_And_strategy)
 @settings(max_examples=50)
-def test_drn::takeoff_instantiation(instance):
-    assert isinstance(instance, drn::TakeOff)
-
-@given(instance=drn::TakeOff_strategy)
-def test_drn::takeoff_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_and_instantiation(instance):
+    assert isinstance(instance, drn_And)
 
 
-@given(instance=drn::TakeOff_strategy)
-def test_drn::takeoff_name_setter(instance):
+
+@given(instance=drn_And_strategy)
+def test_drn_and_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::DepX::Impl_strategy)
+@given(instance=drn_TakeOff_strategy)
 @settings(max_examples=50)
-def test_drn::depx::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepX::Impl)
-
-@given(instance=drn::DepX::Impl_strategy)
-def test_drn::depx::impl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_takeoff_instantiation(instance):
+    assert isinstance(instance, drn_TakeOff)
 
 
-@given(instance=drn::DepX::Impl_strategy)
-def test_drn::depx::impl_name_setter(instance):
+
+@given(instance=drn_TakeOff_strategy)
+def test_drn_takeoff_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::DepX::Impl_strategy)
-def test_drn::depx::impl_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
+@given(instance=drn_DepXZ_IMPL_strategy)
+@settings(max_examples=50)
+def test_drn_depxz_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepXZ_IMPL)
 
 
-@given(instance=drn::DepX::Impl_strategy)
-def test_drn::depx::impl_tempsCST_setter(instance):
+
+@given(instance=drn_DepXZ_IMPL_strategy)
+def test_drn_depxz_impl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=drn_DepXZ_IMPL_strategy)
+def test_drn_depxz_impl_tempsCST_setter(instance):
     original = instance.tempsCST
     instance.tempsCST = original
     assert instance.tempsCST == original
 
-@given(instance=drn::DepX::Impl_strategy)
-def test_drn::depx::impl_distanceCST_type(instance):
-    assert isinstance(instance.distanceCST, int)
+@given(instance=drn_DepZ_Impl_strategy)
+@settings(max_examples=50)
+def test_drn_depz_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepZ_Impl)
 
 
-@given(instance=drn::DepX::Impl_strategy)
-def test_drn::depx::impl_distanceCST_setter(instance):
+
+@given(instance=drn_DepZ_Impl_strategy)
+def test_drn_depz_impl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=drn_DepZ_Impl_strategy)
+def test_drn_depz_impl_distanceCST_setter(instance):
     original = instance.distanceCST
     instance.distanceCST = original
     assert instance.distanceCST == original
 
-@given(instance=drn::Land_strategy)
-@settings(max_examples=50)
-def test_drn::land_instantiation(instance):
-    assert isinstance(instance, drn::Land)
-
-@given(instance=drn::Land_strategy)
-def test_drn::land_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=drn::Land_strategy)
-def test_drn::land_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=drn::DepZ::Impl_strategy)
-@settings(max_examples=50)
-def test_drn::depz::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepZ::Impl)
-
-@given(instance=drn::DepZ::Impl_strategy)
-def test_drn::depz::impl_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
-
-
-@given(instance=drn::DepZ::Impl_strategy)
-def test_drn::depz::impl_tempsCST_setter(instance):
+@given(instance=drn_DepZ_Impl_strategy)
+def test_drn_depz_impl_tempsCST_setter(instance):
     original = instance.tempsCST
     instance.tempsCST = original
     assert instance.tempsCST == original
 
-@given(instance=drn::DepZ::Impl_strategy)
-def test_drn::depz::impl_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=drn::DepZ::Impl_strategy)
-def test_drn::depz::impl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=drn::DepZ::Impl_strategy)
-def test_drn::depz::impl_distanceCST_type(instance):
-    assert isinstance(instance.distanceCST, int)
-
-
-@given(instance=drn::DepZ::Impl_strategy)
-def test_drn::depz::impl_distanceCST_setter(instance):
-    original = instance.distanceCST
-    instance.distanceCST = original
-    assert instance.distanceCST == original
-
-@given(instance=drn::DepXY::IMPL_strategy)
+@given(instance=drn_RefPartLib_strategy)
 @settings(max_examples=50)
-def test_drn::depxy::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepXY::IMPL)
+def test_drn_refpartlib_instantiation(instance):
+    assert isinstance(instance, drn_RefPartLib)
 
-@given(instance=drn::DepXY::IMPL_strategy)
-def test_drn::depxy::impl_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=drn_DepXYZ_IMPL_strategy)
+@settings(max_examples=50)
+def test_drn_depxyz_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepXYZ_IMPL)
+
+@given(instance=drn_DepYZ_IMPL_strategy)
+@settings(max_examples=50)
+def test_drn_depyz_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepYZ_IMPL)
 
 
-@given(instance=drn::DepXY::IMPL_strategy)
-def test_drn::depxy::impl_name_setter(instance):
+
+@given(instance=drn_DepYZ_IMPL_strategy)
+def test_drn_depyz_impl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::DepXY::IMPL_strategy)
-def test_drn::depxy::impl_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
 
 
-@given(instance=drn::DepXY::IMPL_strategy)
-def test_drn::depxy::impl_tempsCST_setter(instance):
+@given(instance=drn_DepYZ_IMPL_strategy)
+def test_drn_depyz_impl_tempsCST_setter(instance):
     original = instance.tempsCST
     instance.tempsCST = original
     assert instance.tempsCST == original
 
-@given(instance=drn::And_strategy)
+@given(instance=drn_Rotate_strategy)
 @settings(max_examples=50)
-def test_drn::and_instantiation(instance):
-    assert isinstance(instance, drn::And)
-
-@given(instance=drn::And_strategy)
-def test_drn::and_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_rotate_instantiation(instance):
+    assert isinstance(instance, drn_Rotate)
 
 
-@given(instance=drn::And_strategy)
-def test_drn::and_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=drn::DepXZ::IMPL_strategy)
-@settings(max_examples=50)
-def test_drn::depxz::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepXZ::IMPL)
-
-@given(instance=drn::DepXZ::IMPL_strategy)
-def test_drn::depxz::impl_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=drn::DepXZ::IMPL_strategy)
-def test_drn::depxz::impl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=drn::DepXZ::IMPL_strategy)
-def test_drn::depxz::impl_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
-
-
-@given(instance=drn::DepXZ::IMPL_strategy)
-def test_drn::depxz::impl_tempsCST_setter(instance):
-    original = instance.tempsCST
-    instance.tempsCST = original
-    assert instance.tempsCST == original
-
-@given(instance=drn::Wait_strategy)
-@settings(max_examples=50)
-def test_drn::wait_instantiation(instance):
-    assert isinstance(instance, drn::Wait)
-
-@given(instance=drn::Wait_strategy)
-def test_drn::wait_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=drn::Wait_strategy)
-def test_drn::wait_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=drn::Wait_strategy)
-def test_drn::wait_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
-
-
-@given(instance=drn::Wait_strategy)
-def test_drn::wait_tempsCST_setter(instance):
-    original = instance.tempsCST
-    instance.tempsCST = original
-    assert instance.tempsCST == original
-
-@given(instance=drn::Rotate_strategy)
-@settings(max_examples=50)
-def test_drn::rotate_instantiation(instance):
-    assert isinstance(instance, drn::Rotate)
-
-@given(instance=drn::Rotate_strategy)
-def test_drn::rotate_angleCST_type(instance):
-    assert isinstance(instance.angleCST, str)
-
-
-@given(instance=drn::Rotate_strategy)
-def test_drn::rotate_angleCST_setter(instance):
+@given(instance=drn_Rotate_strategy)
+def test_drn_rotate_angleCST_setter(instance):
     original = instance.angleCST
     instance.angleCST = original
     assert instance.angleCST == original
 
-@given(instance=drn::Rotate_strategy)
-def test_drn::rotate_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=drn::Rotate_strategy)
-def test_drn::rotate_name_setter(instance):
+@given(instance=drn_Rotate_strategy)
+def test_drn_rotate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Rotate_strategy)
-def test_drn::rotate_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
 
 
-@given(instance=drn::Rotate_strategy)
-def test_drn::rotate_tempsCST_setter(instance):
+@given(instance=drn_Rotate_strategy)
+def test_drn_rotate_tempsCST_setter(instance):
     original = instance.tempsCST
     instance.tempsCST = original
     assert instance.tempsCST == original
 
-@given(instance=drn::RefPartLib_strategy)
+@given(instance=drn_DepY_Impl_strategy)
 @settings(max_examples=50)
-def test_drn::refpartlib_instantiation(instance):
-    assert isinstance(instance, drn::RefPartLib)
-
-@given(instance=drn::DepXYZ::IMPL_strategy)
-@settings(max_examples=50)
-def test_drn::depxyz::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepXYZ::IMPL)
-
-@given(instance=drn::DepYZ::IMPL_strategy)
-@settings(max_examples=50)
-def test_drn::depyz::impl_instantiation(instance):
-    assert isinstance(instance, drn::DepYZ::IMPL)
-
-@given(instance=drn::DepYZ::IMPL_strategy)
-def test_drn::depyz::impl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_depy_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepY_Impl)
 
 
-@given(instance=drn::DepYZ::IMPL_strategy)
-def test_drn::depyz::impl_name_setter(instance):
+
+@given(instance=drn_DepY_Impl_strategy)
+def test_drn_depy_impl_tempsCST_setter(instance):
+    original = instance.tempsCST
+    instance.tempsCST = original
+    assert instance.tempsCST == original
+
+
+
+@given(instance=drn_DepY_Impl_strategy)
+def test_drn_depy_impl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::DepYZ::IMPL_strategy)
-def test_drn::depyz::impl_tempsCST_type(instance):
-    assert isinstance(instance.tempsCST, int)
 
 
-@given(instance=drn::DepYZ::IMPL_strategy)
-def test_drn::depyz::impl_tempsCST_setter(instance):
+@given(instance=drn_DepY_Impl_strategy)
+def test_drn_depy_impl_distanceCST_setter(instance):
+    original = instance.distanceCST
+    instance.distanceCST = original
+    assert instance.distanceCST == original
+
+@given(instance=drn_Land_strategy)
+@settings(max_examples=50)
+def test_drn_land_instantiation(instance):
+    assert isinstance(instance, drn_Land)
+
+
+
+@given(instance=drn_Land_strategy)
+def test_drn_land_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=drn_Wait_strategy)
+@settings(max_examples=50)
+def test_drn_wait_instantiation(instance):
+    assert isinstance(instance, drn_Wait)
+
+
+
+@given(instance=drn_Wait_strategy)
+def test_drn_wait_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=drn_Wait_strategy)
+def test_drn_wait_tempsCST_setter(instance):
     original = instance.tempsCST
     instance.tempsCST = original
     assert instance.tempsCST == original
 
-@given(instance=drn::Movement_strategy)
+@given(instance=drn_DepXY_IMPL_strategy)
 @settings(max_examples=50)
-def test_drn::movement_instantiation(instance):
-    assert isinstance(instance, drn::Movement)
+def test_drn_depxy_impl_instantiation(instance):
+    assert isinstance(instance, drn_DepXY_IMPL)
 
-@given(instance=drn::Expression_strategy)
+
+
+@given(instance=drn_DepXY_IMPL_strategy)
+def test_drn_depxy_impl_tempsCST_setter(instance):
+    original = instance.tempsCST
+    instance.tempsCST = original
+    assert instance.tempsCST == original
+
+
+
+@given(instance=drn_DepXY_IMPL_strategy)
+def test_drn_depxy_impl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=drn_Movement_strategy)
 @settings(max_examples=50)
-def test_drn::expression_instantiation(instance):
-    assert isinstance(instance, drn::Expression)
+def test_drn_movement_instantiation(instance):
+    assert isinstance(instance, drn_Movement)
 
-@given(instance=drn::Expression_strategy)
-def test_drn::expression_repeatCST_type(instance):
-    assert isinstance(instance.repeatCST, int)
+@given(instance=drn_Expression_strategy)
+@settings(max_examples=50)
+def test_drn_expression_instantiation(instance):
+    assert isinstance(instance, drn_Expression)
 
 
-@given(instance=drn::Expression_strategy)
-def test_drn::expression_repeatCST_setter(instance):
+
+@given(instance=drn_Expression_strategy)
+def test_drn_expression_repeatCST_setter(instance):
     original = instance.repeatCST
     instance.repeatCST = original
     assert instance.repeatCST == original
@@ -2642,70 +2525,61 @@ def test_drn::expression_repeatCST_setter(instance):
 def test_surface_instantiation(instance):
     assert isinstance(instance, Surface)
 
-@given(instance=drn::MaxWidth_strategy)
+@given(instance=drn_MaxHeight_strategy)
 @settings(max_examples=50)
-def test_drn::maxwidth_instantiation(instance):
-    assert isinstance(instance, drn::MaxWidth)
+def test_drn_maxheight_instantiation(instance):
+    assert isinstance(instance, drn_MaxHeight)
 
-@given(instance=drn::MaxHeight_strategy)
+@given(instance=drn_MaxWidth_strategy)
 @settings(max_examples=50)
-def test_drn::maxheight_instantiation(instance):
-    assert isinstance(instance, drn::MaxHeight)
+def test_drn_maxwidth_instantiation(instance):
+    assert isinstance(instance, drn_MaxWidth)
 
-@given(instance=drn::MaxLength_strategy)
+@given(instance=drn_MaxLength_strategy)
 @settings(max_examples=50)
-def test_drn::maxlength_instantiation(instance):
-    assert isinstance(instance, drn::MaxLength)
+def test_drn_maxlength_instantiation(instance):
+    assert isinstance(instance, drn_MaxLength)
 
 @given(instance=InitialPosition_strategy)
 @settings(max_examples=50)
 def test_initialposition_instantiation(instance):
     assert isinstance(instance, InitialPosition)
 
-@given(instance=drn::InitialPositionX_strategy)
+@given(instance=drn_InitialPositionY_strategy)
 @settings(max_examples=50)
-def test_drn::initialpositionx_instantiation(instance):
-    assert isinstance(instance, drn::InitialPositionX)
-
-@given(instance=drn::InitialPositionX_strategy)
-def test_drn::initialpositionx_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_drn_initialpositiony_instantiation(instance):
+    assert isinstance(instance, drn_InitialPositionY)
 
 
-@given(instance=drn::InitialPositionX_strategy)
-def test_drn::initialpositionx_value_setter(instance):
+
+@given(instance=drn_InitialPositionY_strategy)
+def test_drn_initialpositiony_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=drn::InitialPositionY_strategy)
+@given(instance=drn_InitialPositionX_strategy)
 @settings(max_examples=50)
-def test_drn::initialpositiony_instantiation(instance):
-    assert isinstance(instance, drn::InitialPositionY)
-
-@given(instance=drn::InitialPositionY_strategy)
-def test_drn::initialpositiony_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_drn_initialpositionx_instantiation(instance):
+    assert isinstance(instance, drn_InitialPositionX)
 
 
-@given(instance=drn::InitialPositionY_strategy)
-def test_drn::initialpositiony_value_setter(instance):
+
+@given(instance=drn_InitialPositionX_strategy)
+def test_drn_initialpositionx_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=drn::InitialDirection_strategy)
+@given(instance=drn_InitialDirection_strategy)
 @settings(max_examples=50)
-def test_drn::initialdirection_instantiation(instance):
-    assert isinstance(instance, drn::InitialDirection)
-
-@given(instance=drn::InitialDirection_strategy)
-def test_drn::initialdirection_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_drn_initialdirection_instantiation(instance):
+    assert isinstance(instance, drn_InitialDirection)
 
 
-@given(instance=drn::InitialDirection_strategy)
-def test_drn::initialdirection_value_setter(instance):
+
+@given(instance=drn_InitialDirection_strategy)
+def test_drn_initialdirection_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2715,178 +2589,145 @@ def test_drn::initialdirection_value_setter(instance):
 def test_limit_instantiation(instance):
     assert isinstance(instance, Limit)
 
-@given(instance=drn::MaxSpeed_strategy)
+@given(instance=drn_InitialPosition_strategy)
 @settings(max_examples=50)
-def test_drn::maxspeed_instantiation(instance):
-    assert isinstance(instance, drn::MaxSpeed)
+def test_drn_initialposition_instantiation(instance):
+    assert isinstance(instance, drn_InitialPosition)
 
-@given(instance=drn::MaxSpeed_strategy)
-def test_drn::maxspeed_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=drn_MaxSpeed_strategy)
+@settings(max_examples=50)
+def test_drn_maxspeed_instantiation(instance):
+    assert isinstance(instance, drn_MaxSpeed)
 
 
-@given(instance=drn::MaxSpeed_strategy)
-def test_drn::maxspeed_value_setter(instance):
+
+@given(instance=drn_MaxSpeed_strategy)
+def test_drn_maxspeed_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=drn::InitialPosition_strategy)
+@given(instance=drn_Surface_strategy)
 @settings(max_examples=50)
-def test_drn::initialposition_instantiation(instance):
-    assert isinstance(instance, drn::InitialPosition)
-
-@given(instance=drn::Surface_strategy)
-@settings(max_examples=50)
-def test_drn::surface_instantiation(instance):
-    assert isinstance(instance, drn::Surface)
-
-@given(instance=drn::Surface_strategy)
-def test_drn::surface_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_drn_surface_instantiation(instance):
+    assert isinstance(instance, drn_Surface)
 
 
-@given(instance=drn::Surface_strategy)
-def test_drn::surface_value_setter(instance):
+
+@given(instance=drn_Surface_strategy)
+def test_drn_surface_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=drn::Limit_strategy)
+@given(instance=drn_Limit_strategy)
 @settings(max_examples=50)
-def test_drn::limit_instantiation(instance):
-    assert isinstance(instance, drn::Limit)
-
-@given(instance=drn::Limit_strategy)
-def test_drn::limit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_limit_instantiation(instance):
+    assert isinstance(instance, drn_Limit)
 
 
-@given(instance=drn::Limit_strategy)
-def test_drn::limit_name_setter(instance):
+
+@given(instance=drn_Limit_strategy)
+def test_drn_limit_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::ConnectionType_strategy)
+@given(instance=drn_ConnectionType_strategy)
 @settings(max_examples=50)
-def test_drn::connectiontype_instantiation(instance):
-    assert isinstance(instance, drn::ConnectionType)
-
-@given(instance=drn::ConnectionType_strategy)
-def test_drn::connectiontype_adress_type(instance):
-    assert isinstance(instance.adress, str)
+def test_drn_connectiontype_instantiation(instance):
+    assert isinstance(instance, drn_ConnectionType)
 
 
-@given(instance=drn::ConnectionType_strategy)
-def test_drn::connectiontype_adress_setter(instance):
+
+@given(instance=drn_ConnectionType_strategy)
+def test_drn_connectiontype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=drn_ConnectionType_strategy)
+def test_drn_connectiontype_adress_setter(instance):
     original = instance.adress
     instance.adress = original
     assert instance.adress == original
 
-@given(instance=drn::ConnectionType_strategy)
-def test_drn::connectiontype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=drn_Device_strategy)
+@settings(max_examples=50)
+def test_drn_device_instantiation(instance):
+    assert isinstance(instance, drn_Device)
 
 
-@given(instance=drn::ConnectionType_strategy)
-def test_drn::connectiontype_name_setter(instance):
+
+@given(instance=drn_Device_strategy)
+def test_drn_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Device_strategy)
+@given(instance=drn_TypeGeneric_strategy)
 @settings(max_examples=50)
-def test_drn::device_instantiation(instance):
-    assert isinstance(instance, drn::Device)
-
-@given(instance=drn::Device_strategy)
-def test_drn::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_typegeneric_instantiation(instance):
+    assert isinstance(instance, drn_TypeGeneric)
 
 
-@given(instance=drn::Device_strategy)
-def test_drn::device_name_setter(instance):
+
+@given(instance=drn_TypeGeneric_strategy)
+def test_drn_typegeneric_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::TypeGeneric_strategy)
+@given(instance=drn_RefPart_strategy)
 @settings(max_examples=50)
-def test_drn::typegeneric_instantiation(instance):
-    assert isinstance(instance, drn::TypeGeneric)
+def test_drn_refpart_instantiation(instance):
+    assert isinstance(instance, drn_RefPart)
 
-@given(instance=drn::TypeGeneric_strategy)
-def test_drn::typegeneric_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=drn_Context_strategy)
+@settings(max_examples=50)
+def test_drn_context_instantiation(instance):
+    assert isinstance(instance, drn_Context)
 
 
-@given(instance=drn::TypeGeneric_strategy)
-def test_drn::typegeneric_name_setter(instance):
+
+@given(instance=drn_Context_strategy)
+def test_drn_context_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::RefPart_strategy)
-@settings(max_examples=50)
-def test_drn::refpart_instantiation(instance):
-    assert isinstance(instance, drn::RefPart)
-
-@given(instance=drn::Context_strategy)
-@settings(max_examples=50)
-def test_drn::context_instantiation(instance):
-    assert isinstance(instance, drn::Context)
-
-@given(instance=drn::Context_strategy)
-def test_drn::context_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=drn::Context_strategy)
-def test_drn::context_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=drn::Context_strategy)
-def test_drn::context_where_type(instance):
-    assert isinstance(instance.where, str)
-
-
-@given(instance=drn::Context_strategy)
-def test_drn::context_where_setter(instance):
+@given(instance=drn_Context_strategy)
+def test_drn_context_where_setter(instance):
     original = instance.where
     instance.where = original
     assert instance.where == original
 
-@given(instance=drn::With_strategy)
+@given(instance=drn_With_strategy)
 @settings(max_examples=50)
-def test_drn::with_instantiation(instance):
-    assert isinstance(instance, drn::With)
-
-@given(instance=drn::With_strategy)
-def test_drn::with_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_with_instantiation(instance):
+    assert isinstance(instance, drn_With)
 
 
-@given(instance=drn::With_strategy)
-def test_drn::with_name_setter(instance):
+
+@given(instance=drn_With_strategy)
+def test_drn_with_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Assignement_strategy)
+@given(instance=drn_Assignement_strategy)
 @settings(max_examples=50)
-def test_drn::assignement_instantiation(instance):
-    assert isinstance(instance, drn::Assignement)
-
-@given(instance=drn::Assignement_strategy)
-def test_drn::assignement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_assignement_instantiation(instance):
+    assert isinstance(instance, drn_Assignement)
 
 
-@given(instance=drn::Assignement_strategy)
-def test_drn::assignement_name_setter(instance):
+
+@given(instance=drn_Assignement_strategy)
+def test_drn_assignement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2896,44 +2737,38 @@ def test_drn::assignement_name_setter(instance):
 def test_root_instantiation(instance):
     assert isinstance(instance, Root)
 
-@given(instance=drn::Library_strategy)
+@given(instance=drn_Configuration_strategy)
 @settings(max_examples=50)
-def test_drn::library_instantiation(instance):
-    assert isinstance(instance, drn::Library)
-
-@given(instance=drn::Library_strategy)
-def test_drn::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_configuration_instantiation(instance):
+    assert isinstance(instance, drn_Configuration)
 
 
-@given(instance=drn::Library_strategy)
-def test_drn::library_name_setter(instance):
+
+@given(instance=drn_Configuration_strategy)
+def test_drn_configuration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Configuration_strategy)
+@given(instance=drn_Library_strategy)
 @settings(max_examples=50)
-def test_drn::configuration_instantiation(instance):
-    assert isinstance(instance, drn::Configuration)
-
-@given(instance=drn::Configuration_strategy)
-def test_drn::configuration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_drn_library_instantiation(instance):
+    assert isinstance(instance, drn_Library)
 
 
-@given(instance=drn::Configuration_strategy)
-def test_drn::configuration_name_setter(instance):
+
+@given(instance=drn_Library_strategy)
+def test_drn_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=drn::Model_strategy)
+@given(instance=drn_Model_strategy)
 @settings(max_examples=50)
-def test_drn::model_instantiation(instance):
-    assert isinstance(instance, drn::Model)
+def test_drn_model_instantiation(instance):
+    assert isinstance(instance, drn_Model)
 
-@given(instance=drn::Root_strategy)
+@given(instance=drn_Root_strategy)
 @settings(max_examples=50)
-def test_drn::root_instantiation(instance):
-    assert isinstance(instance, drn::Root)
+def test_drn_root_instantiation(instance):
+    assert isinstance(instance, drn_Root)

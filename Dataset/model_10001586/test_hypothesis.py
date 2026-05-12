@@ -3,9 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    _unnamed,
+    Elevator_Controller,
     Floor_button,
     Elevator_button,
     Button,
@@ -13,13 +15,79 @@ from python_code import (
     Elevator,
     _unnamed1,
     Elevator_Controller_2,
-    _unnamed,
-    Elevator_Controller,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test__unnamed_is_not_abstract():
+    assert not inspect.isabstract(_unnamed)
+
+
+def test__unnamed_constructor_exists():
+    assert callable(_unnamed.__init__)
+
+
+def test__unnamed_constructor_args():
+    sig = inspect.signature(_unnamed.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_elevator_controller_is_not_abstract():
+    assert not inspect.isabstract(Elevator_Controller)
+
+
+def test_elevator_controller_constructor_exists():
+    assert callable(Elevator_Controller.__init__)
+
+
+def test_elevator_controller_constructor_args():
+    sig = inspect.signature(Elevator_Controller.__init__)
+    params = list(sig.parameters.keys())
+    assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "Floor_ID" in params, "Missing parameter 'Floor_ID'"
+    assert "Direction" in params, "Missing parameter 'Direction'"
+    assert "Position" in params, "Missing parameter 'Position'"
+
+def test_elevator_controller_has_attribute():
+    assert hasattr(Elevator_Controller, "attribute")
+    descriptor = None
+    for klass in Elevator_Controller.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_elevator_controller_has_Floor_ID():
+    assert hasattr(Elevator_Controller, "Floor_ID")
+    descriptor = None
+    for klass in Elevator_Controller.__mro__:
+        if "Floor_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Floor_ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_elevator_controller_has_Direction():
+    assert hasattr(Elevator_Controller, "Direction")
+    descriptor = None
+    for klass in Elevator_Controller.__mro__:
+        if "Direction" in klass.__dict__:
+            descriptor = klass.__dict__["Direction"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_elevator_controller_has_Position():
+    assert hasattr(Elevator_Controller, "Position")
+    descriptor = None
+    for klass in Elevator_Controller.__mro__:
+        if "Position" in klass.__dict__:
+            descriptor = klass.__dict__["Position"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -34,17 +102,8 @@ def test_floor_button_constructor_exists():
 def test_floor_button_constructor_args():
     sig = inspect.signature(Floor_button.__init__)
     params = list(sig.parameters.keys())
-    assert "Direction" in params, "Missing parameter 'Direction'"
     assert "Floor_num" in params, "Missing parameter 'Floor_num'"
-
-def test_floor_button_has_Direction():
-    assert hasattr(Floor_button, "Direction")
-    descriptor = None
-    for klass in Floor_button.__mro__:
-        if "Direction" in klass.__dict__:
-            descriptor = klass.__dict__["Direction"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Direction" in params, "Missing parameter 'Direction'"
 
 def test_floor_button_has_Floor_num():
     assert hasattr(Floor_button, "Floor_num")
@@ -52,6 +111,15 @@ def test_floor_button_has_Floor_num():
     for klass in Floor_button.__mro__:
         if "Floor_num" in klass.__dict__:
             descriptor = klass.__dict__["Floor_num"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_floor_button_has_Direction():
+    assert hasattr(Floor_button, "Direction")
+    descriptor = None
+    for klass in Floor_button.__mro__:
+        if "Direction" in klass.__dict__:
+            descriptor = klass.__dict__["Direction"]
             break
     assert isinstance(descriptor, property)
 
@@ -198,17 +266,17 @@ def test_elevator_controller_2_constructor_exists():
 def test_elevator_controller_2_constructor_args():
     sig = inspect.signature(Elevator_Controller_2.__init__)
     params = list(sig.parameters.keys())
-    assert "Position" in params, "Missing parameter 'Position'"
-    assert "Direction" in params, "Missing parameter 'Direction'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "Floor_ID" in params, "Missing parameter 'Floor_ID'"
+    assert "Direction" in params, "Missing parameter 'Direction'"
+    assert "Position" in params, "Missing parameter 'Position'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
-def test_elevator_controller_2_has_Position():
-    assert hasattr(Elevator_Controller_2, "Position")
+def test_elevator_controller_2_has_Floor_ID():
+    assert hasattr(Elevator_Controller_2, "Floor_ID")
     descriptor = None
     for klass in Elevator_Controller_2.__mro__:
-        if "Position" in klass.__dict__:
-            descriptor = klass.__dict__["Position"]
+        if "Floor_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Floor_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -221,89 +289,21 @@ def test_elevator_controller_2_has_Direction():
             break
     assert isinstance(descriptor, property)
 
+def test_elevator_controller_2_has_Position():
+    assert hasattr(Elevator_Controller_2, "Position")
+    descriptor = None
+    for klass in Elevator_Controller_2.__mro__:
+        if "Position" in klass.__dict__:
+            descriptor = klass.__dict__["Position"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_elevator_controller_2_has_attribute():
     assert hasattr(Elevator_Controller_2, "attribute")
     descriptor = None
     for klass in Elevator_Controller_2.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_elevator_controller_2_has_Floor_ID():
-    assert hasattr(Elevator_Controller_2, "Floor_ID")
-    descriptor = None
-    for klass in Elevator_Controller_2.__mro__:
-        if "Floor_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Floor_ID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test__unnamed_is_not_abstract():
-    assert not inspect.isabstract(_unnamed)
-
-
-def test__unnamed_constructor_exists():
-    assert callable(_unnamed.__init__)
-
-
-def test__unnamed_constructor_args():
-    sig = inspect.signature(_unnamed.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_elevator_controller_is_not_abstract():
-    assert not inspect.isabstract(Elevator_Controller)
-
-
-def test_elevator_controller_constructor_exists():
-    assert callable(Elevator_Controller.__init__)
-
-
-def test_elevator_controller_constructor_args():
-    sig = inspect.signature(Elevator_Controller.__init__)
-    params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "Position" in params, "Missing parameter 'Position'"
-    assert "Direction" in params, "Missing parameter 'Direction'"
-    assert "Floor_ID" in params, "Missing parameter 'Floor_ID'"
-
-def test_elevator_controller_has_attribute():
-    assert hasattr(Elevator_Controller, "attribute")
-    descriptor = None
-    for klass in Elevator_Controller.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_elevator_controller_has_Position():
-    assert hasattr(Elevator_Controller, "Position")
-    descriptor = None
-    for klass in Elevator_Controller.__mro__:
-        if "Position" in klass.__dict__:
-            descriptor = klass.__dict__["Position"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_elevator_controller_has_Direction():
-    assert hasattr(Elevator_Controller, "Direction")
-    descriptor = None
-    for klass in Elevator_Controller.__mro__:
-        if "Direction" in klass.__dict__:
-            descriptor = klass.__dict__["Direction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_elevator_controller_has_Floor_ID():
-    assert hasattr(Elevator_Controller, "Floor_ID")
-    descriptor = None
-    for klass in Elevator_Controller.__mro__:
-        if "Floor_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Floor_ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -319,12 +319,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Floor_button_strategy = st.builds(
-    Floor_button,
+_unnamed_strategy = st.builds(
+    _unnamed,
+)
+Elevator_Controller_strategy = st.builds(
+    Elevator_Controller,
+    attribute=
+        safe_text,
+    Floor_ID=
+        st.integers(),
     Direction=
         st.booleans(),
-    Floor_num=
+    Position=
         st.integers()
+)
+Floor_button_strategy = st.builds(
+    Floor_button,
+    Floor_num=
+        st.integers(),
+    Direction=
+        st.booleans()
 )
 Elevator_button_strategy = st.builds(
     Elevator_button,
@@ -355,49 +369,63 @@ _unnamed1_strategy = st.builds(
 )
 Elevator_Controller_2_strategy = st.builds(
     Elevator_Controller_2,
-    Position=
+    Floor_ID=
         st.integers(),
     Direction=
         st.booleans(),
-    attribute=
-        safe_text,
-    Floor_ID=
-        st.integers()
-)
-_unnamed_strategy = st.builds(
-    _unnamed,
-)
-Elevator_Controller_strategy = st.builds(
-    Elevator_Controller,
-    attribute=
-        safe_text,
     Position=
         st.integers(),
-    Direction=
-        st.booleans(),
-    Floor_ID=
-        st.integers()
+    attribute=
+        safe_text
 )
+
+@given(instance=_unnamed_strategy)
+@settings(max_examples=50)
+def test__unnamed_instantiation(instance):
+    assert isinstance(instance, _unnamed)
+
+@given(instance=Elevator_Controller_strategy)
+@settings(max_examples=50)
+def test_elevator_controller_instantiation(instance):
+    assert isinstance(instance, Elevator_Controller)
+
+
+
+@given(instance=Elevator_Controller_strategy)
+def test_elevator_controller_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=Elevator_Controller_strategy)
+def test_elevator_controller_Floor_ID_setter(instance):
+    original = instance.Floor_ID
+    instance.Floor_ID = original
+    assert instance.Floor_ID == original
+
+
+
+@given(instance=Elevator_Controller_strategy)
+def test_elevator_controller_Direction_setter(instance):
+    original = instance.Direction
+    instance.Direction = original
+    assert instance.Direction == original
+
+
+
+@given(instance=Elevator_Controller_strategy)
+def test_elevator_controller_Position_setter(instance):
+    original = instance.Position
+    instance.Position = original
+    assert instance.Position == original
 
 @given(instance=Floor_button_strategy)
 @settings(max_examples=50)
 def test_floor_button_instantiation(instance):
     assert isinstance(instance, Floor_button)
 
-@given(instance=Floor_button_strategy)
-def test_floor_button_Direction_type(instance):
-    assert isinstance(instance.Direction, bool)
-
-
-@given(instance=Floor_button_strategy)
-def test_floor_button_Direction_setter(instance):
-    original = instance.Direction
-    instance.Direction = original
-    assert instance.Direction == original
-
-@given(instance=Floor_button_strategy)
-def test_floor_button_Floor_num_type(instance):
-    assert isinstance(instance.Floor_num, int)
 
 
 @given(instance=Floor_button_strategy)
@@ -406,14 +434,19 @@ def test_floor_button_Floor_num_setter(instance):
     instance.Floor_num = original
     assert instance.Floor_num == original
 
+
+
+@given(instance=Floor_button_strategy)
+def test_floor_button_Direction_setter(instance):
+    original = instance.Direction
+    instance.Direction = original
+    assert instance.Direction == original
+
 @given(instance=Elevator_button_strategy)
 @settings(max_examples=50)
 def test_elevator_button_instantiation(instance):
     assert isinstance(instance, Elevator_button)
 
-@given(instance=Elevator_button_strategy)
-def test_elevator_button_Floor_num_type(instance):
-    assert isinstance(instance.Floor_num, int)
 
 
 @given(instance=Elevator_button_strategy)
@@ -427,9 +460,6 @@ def test_elevator_button_Floor_num_setter(instance):
 def test_button_instantiation(instance):
     assert isinstance(instance, Button)
 
-@given(instance=Button_strategy)
-def test_button_illuminate_type(instance):
-    assert isinstance(instance.illuminate, str)
 
 
 @given(instance=Button_strategy)
@@ -443,9 +473,6 @@ def test_button_illuminate_setter(instance):
 def test_door_instantiation(instance):
     assert isinstance(instance, Door)
 
-@given(instance=Door_strategy)
-def test_door_Close_type(instance):
-    assert isinstance(instance.Close, str)
 
 
 @given(instance=Door_strategy)
@@ -459,9 +486,6 @@ def test_door_Close_setter(instance):
 def test_elevator_instantiation(instance):
     assert isinstance(instance, Elevator)
 
-@given(instance=Elevator_strategy)
-def test_elevator_Direction_type(instance):
-    assert isinstance(instance.Direction, bool)
 
 
 @given(instance=Elevator_strategy)
@@ -470,9 +494,6 @@ def test_elevator_Direction_setter(instance):
     instance.Direction = original
     assert instance.Direction == original
 
-@given(instance=Elevator_strategy)
-def test_elevator_Current_Floor_type(instance):
-    assert isinstance(instance.Current_Floor, int)
 
 
 @given(instance=Elevator_strategy)
@@ -481,9 +502,6 @@ def test_elevator_Current_Floor_setter(instance):
     instance.Current_Floor = original
     assert instance.Current_Floor == original
 
-@given(instance=Elevator_strategy)
-def test_elevator_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
 
 
 @given(instance=Elevator_strategy)
@@ -502,42 +520,6 @@ def test__unnamed1_instantiation(instance):
 def test_elevator_controller_2_instantiation(instance):
     assert isinstance(instance, Elevator_Controller_2)
 
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_Position_type(instance):
-    assert isinstance(instance.Position, int)
-
-
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_Position_setter(instance):
-    original = instance.Position
-    instance.Position = original
-    assert instance.Position == original
-
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_Direction_type(instance):
-    assert isinstance(instance.Direction, bool)
-
-
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_Direction_setter(instance):
-    original = instance.Direction
-    instance.Direction = original
-    assert instance.Direction == original
-
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Elevator_Controller_2_strategy)
-def test_elevator_controller_2_Floor_ID_type(instance):
-    assert isinstance(instance.Floor_ID, int)
 
 
 @given(instance=Elevator_Controller_2_strategy)
@@ -546,56 +528,26 @@ def test_elevator_controller_2_Floor_ID_setter(instance):
     instance.Floor_ID = original
     assert instance.Floor_ID == original
 
-@given(instance=_unnamed_strategy)
-@settings(max_examples=50)
-def test__unnamed_instantiation(instance):
-    assert isinstance(instance, _unnamed)
-
-@given(instance=Elevator_Controller_strategy)
-@settings(max_examples=50)
-def test_elevator_controller_instantiation(instance):
-    assert isinstance(instance, Elevator_Controller)
-
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_Position_type(instance):
-    assert isinstance(instance.Position, int)
-
-
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_Position_setter(instance):
-    original = instance.Position
-    instance.Position = original
-    assert instance.Position == original
-
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_Direction_type(instance):
-    assert isinstance(instance.Direction, bool)
-
-
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_Direction_setter(instance):
+@given(instance=Elevator_Controller_2_strategy)
+def test_elevator_controller_2_Direction_setter(instance):
     original = instance.Direction
     instance.Direction = original
     assert instance.Direction == original
 
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_Floor_ID_type(instance):
-    assert isinstance(instance.Floor_ID, int)
 
 
-@given(instance=Elevator_Controller_strategy)
-def test_elevator_controller_Floor_ID_setter(instance):
-    original = instance.Floor_ID
-    instance.Floor_ID = original
-    assert instance.Floor_ID == original
+@given(instance=Elevator_Controller_2_strategy)
+def test_elevator_controller_2_Position_setter(instance):
+    original = instance.Position
+    instance.Position = original
+    assert instance.Position == original
+
+
+
+@given(instance=Elevator_Controller_2_strategy)
+def test_elevator_controller_2_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original

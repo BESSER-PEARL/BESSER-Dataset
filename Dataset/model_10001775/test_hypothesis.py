@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Interpreter_ByteCodeLoader,
@@ -101,8 +101,8 @@ def test_interpreter_bytecode_store_constructor_args():
     sig = inspect.signature(Interpreter_ByteCode_Store.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
-    assert "offset" in params, "Missing parameter 'offset'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "offset" in params, "Missing parameter 'offset'"
 
 def test_interpreter_bytecode_store_has_id():
     assert hasattr(Interpreter_ByteCode_Store, "id")
@@ -113,21 +113,21 @@ def test_interpreter_bytecode_store_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_interpreter_bytecode_store_has_offset():
-    assert hasattr(Interpreter_ByteCode_Store, "offset")
-    descriptor = None
-    for klass in Interpreter_ByteCode_Store.__mro__:
-        if "offset" in klass.__dict__:
-            descriptor = klass.__dict__["offset"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_interpreter_bytecode_store_has_value():
     assert hasattr(Interpreter_ByteCode_Store, "value")
     descriptor = None
     for klass in Interpreter_ByteCode_Store.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_interpreter_bytecode_store_has_offset():
+    assert hasattr(Interpreter_ByteCode_Store, "offset")
+    descriptor = None
+    for klass in Interpreter_ByteCode_Store.__mro__:
+        if "offset" in klass.__dict__:
+            descriptor = klass.__dict__["offset"]
             break
     assert isinstance(descriptor, property)
 
@@ -240,17 +240,8 @@ def test_interpreter_bytecode_lit_constructor_exists():
 def test_interpreter_bytecode_lit_constructor_args():
     sig = inspect.signature(Interpreter_ByteCode_Lit.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "var" in params, "Missing parameter 'var'"
-
-def test_interpreter_bytecode_lit_has_value():
-    assert hasattr(Interpreter_ByteCode_Lit, "value")
-    descriptor = None
-    for klass in Interpreter_ByteCode_Lit.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
+    assert "value" in params, "Missing parameter 'value'"
 
 def test_interpreter_bytecode_lit_has_var():
     assert hasattr(Interpreter_ByteCode_Lit, "var")
@@ -258,6 +249,15 @@ def test_interpreter_bytecode_lit_has_var():
     for klass in Interpreter_ByteCode_Lit.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_interpreter_bytecode_lit_has_value():
+    assert hasattr(Interpreter_ByteCode_Lit, "value")
+    descriptor = None
+    for klass in Interpreter_ByteCode_Lit.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -312,17 +312,8 @@ def test_interpreter_bytecode_goto_constructor_exists():
 def test_interpreter_bytecode_goto_constructor_args():
     sig = inspect.signature(Interpreter_ByteCode_GoTo.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "address" in params, "Missing parameter 'address'"
-
-def test_interpreter_bytecode_goto_has_label():
-    assert hasattr(Interpreter_ByteCode_GoTo, "label")
-    descriptor = None
-    for klass in Interpreter_ByteCode_GoTo.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
+    assert "label" in params, "Missing parameter 'label'"
 
 def test_interpreter_bytecode_goto_has_address():
     assert hasattr(Interpreter_ByteCode_GoTo, "address")
@@ -330,6 +321,15 @@ def test_interpreter_bytecode_goto_has_address():
     for klass in Interpreter_ByteCode_GoTo.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_interpreter_bytecode_goto_has_label():
+    assert hasattr(Interpreter_ByteCode_GoTo, "label")
+    descriptor = None
+    for klass in Interpreter_ByteCode_GoTo.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
@@ -404,17 +404,8 @@ def test_interpreter_bytecode_call_constructor_exists():
 def test_interpreter_bytecode_call_constructor_args():
     sig = inspect.signature(Interpreter_ByteCode_Call.__init__)
     params = list(sig.parameters.keys())
-    assert "funcname" in params, "Missing parameter 'funcname'"
     assert "address" in params, "Missing parameter 'address'"
-
-def test_interpreter_bytecode_call_has_funcname():
-    assert hasattr(Interpreter_ByteCode_Call, "funcname")
-    descriptor = None
-    for klass in Interpreter_ByteCode_Call.__mro__:
-        if "funcname" in klass.__dict__:
-            descriptor = klass.__dict__["funcname"]
-            break
-    assert isinstance(descriptor, property)
+    assert "funcname" in params, "Missing parameter 'funcname'"
 
 def test_interpreter_bytecode_call_has_address():
     assert hasattr(Interpreter_ByteCode_Call, "address")
@@ -422,6 +413,15 @@ def test_interpreter_bytecode_call_has_address():
     for klass in Interpreter_ByteCode_Call.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_interpreter_bytecode_call_has_funcname():
+    assert hasattr(Interpreter_ByteCode_Call, "funcname")
+    descriptor = None
+    for klass in Interpreter_ByteCode_Call.__mro__:
+        if "funcname" in klass.__dict__:
+            descriptor = klass.__dict__["funcname"]
             break
     assert isinstance(descriptor, property)
 
@@ -515,9 +515,9 @@ Interpreter_ByteCode_Store_strategy = st.builds(
     Interpreter_ByteCode_Store,
     id=
         safe_text,
-    offset=
-        st.integers(),
     value=
+        st.integers(),
+    offset=
         st.integers()
 )
 Interpreter_ByteCode_Return_strategy = st.builds(
@@ -542,10 +542,10 @@ Interpreter_ByteCode_Load_strategy = st.builds(
 )
 Interpreter_ByteCode_Lit_strategy = st.builds(
     Interpreter_ByteCode_Lit,
-    value=
-        st.integers(),
     var=
-        safe_text
+        safe_text,
+    value=
+        st.integers()
 )
 Interpreter_ByteCode_Label_strategy = st.builds(
     Interpreter_ByteCode_Label,
@@ -557,10 +557,10 @@ Interpreter_ByteCode_Halt_strategy = st.builds(
 )
 Interpreter_ByteCode_GoTo_strategy = st.builds(
     Interpreter_ByteCode_GoTo,
-    label=
-        safe_text,
     address=
-        st.integers()
+        st.integers(),
+    label=
+        safe_text
 )
 Interpreter_ByteCode_FalseBranch_strategy = st.builds(
     Interpreter_ByteCode_FalseBranch,
@@ -576,10 +576,10 @@ Interpreter_ByteCode_Dump_strategy = st.builds(
 )
 Interpreter_ByteCode_Call_strategy = st.builds(
     Interpreter_ByteCode_Call,
-    funcname=
-        safe_text,
     address=
-        st.integers()
+        st.integers(),
+    funcname=
+        safe_text
 )
 Interpreter_ByteCode_BOP_strategy = st.builds(
     Interpreter_ByteCode_BOP,
@@ -600,9 +600,6 @@ Interpreter_ByteCode_ByteCode_strategy = st.builds(
 def test_interpreter_bytecodeloader_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCodeLoader)
 
-@given(instance=Interpreter_ByteCodeLoader_strategy)
-def test_interpreter_bytecodeloader_byteSource_type(instance):
-    assert isinstance(instance.byteSource, str)
 
 
 @given(instance=Interpreter_ByteCodeLoader_strategy)
@@ -611,9 +608,6 @@ def test_interpreter_bytecodeloader_byteSource_setter(instance):
     instance.byteSource = original
     assert instance.byteSource == original
 
-@given(instance=Interpreter_ByteCodeLoader_strategy)
-def test_interpreter_bytecodeloader_byteCodeList_type(instance):
-    assert isinstance(instance.byteCodeList, str)
 
 
 @given(instance=Interpreter_ByteCodeLoader_strategy)
@@ -622,9 +616,6 @@ def test_interpreter_bytecodeloader_byteCodeList_setter(instance):
     instance.byteCodeList = original
     assert instance.byteCodeList == original
 
-@given(instance=Interpreter_ByteCodeLoader_strategy)
-def test_interpreter_bytecodeloader_program_type(instance):
-    assert isinstance(instance.program, str)
 
 
 @given(instance=Interpreter_ByteCodeLoader_strategy)
@@ -643,9 +634,6 @@ def test_interpreter_bytecode_write_instantiation(instance):
 def test_interpreter_bytecode_store_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Store)
 
-@given(instance=Interpreter_ByteCode_Store_strategy)
-def test_interpreter_bytecode_store_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Interpreter_ByteCode_Store_strategy)
@@ -654,20 +642,6 @@ def test_interpreter_bytecode_store_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Interpreter_ByteCode_Store_strategy)
-def test_interpreter_bytecode_store_offset_type(instance):
-    assert isinstance(instance.offset, int)
-
-
-@given(instance=Interpreter_ByteCode_Store_strategy)
-def test_interpreter_bytecode_store_offset_setter(instance):
-    original = instance.offset
-    instance.offset = original
-    assert instance.offset == original
-
-@given(instance=Interpreter_ByteCode_Store_strategy)
-def test_interpreter_bytecode_store_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Interpreter_ByteCode_Store_strategy)
@@ -676,14 +650,19 @@ def test_interpreter_bytecode_store_value_setter(instance):
     instance.value = original
     assert instance.value == original
 
+
+
+@given(instance=Interpreter_ByteCode_Store_strategy)
+def test_interpreter_bytecode_store_offset_setter(instance):
+    original = instance.offset
+    instance.offset = original
+    assert instance.offset == original
+
 @given(instance=Interpreter_ByteCode_Return_strategy)
 @settings(max_examples=50)
 def test_interpreter_bytecode_return_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Return)
 
-@given(instance=Interpreter_ByteCode_Return_strategy)
-def test_interpreter_bytecode_return_funcname_type(instance):
-    assert isinstance(instance.funcname, str)
 
 
 @given(instance=Interpreter_ByteCode_Return_strategy)
@@ -702,9 +681,6 @@ def test_interpreter_bytecode_read_instantiation(instance):
 def test_interpreter_bytecode_pop_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Pop)
 
-@given(instance=Interpreter_ByteCode_Pop_strategy)
-def test_interpreter_bytecode_pop_count_type(instance):
-    assert isinstance(instance.count, int)
 
 
 @given(instance=Interpreter_ByteCode_Pop_strategy)
@@ -718,9 +694,6 @@ def test_interpreter_bytecode_pop_count_setter(instance):
 def test_interpreter_bytecode_load_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Load)
 
-@given(instance=Interpreter_ByteCode_Load_strategy)
-def test_interpreter_bytecode_load_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Interpreter_ByteCode_Load_strategy)
@@ -729,9 +702,6 @@ def test_interpreter_bytecode_load_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Interpreter_ByteCode_Load_strategy)
-def test_interpreter_bytecode_load_offset_type(instance):
-    assert isinstance(instance.offset, int)
 
 
 @given(instance=Interpreter_ByteCode_Load_strategy)
@@ -745,20 +715,6 @@ def test_interpreter_bytecode_load_offset_setter(instance):
 def test_interpreter_bytecode_lit_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Lit)
 
-@given(instance=Interpreter_ByteCode_Lit_strategy)
-def test_interpreter_bytecode_lit_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=Interpreter_ByteCode_Lit_strategy)
-def test_interpreter_bytecode_lit_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Interpreter_ByteCode_Lit_strategy)
-def test_interpreter_bytecode_lit_var_type(instance):
-    assert isinstance(instance.var, str)
 
 
 @given(instance=Interpreter_ByteCode_Lit_strategy)
@@ -767,14 +723,19 @@ def test_interpreter_bytecode_lit_var_setter(instance):
     instance.var = original
     assert instance.var == original
 
+
+
+@given(instance=Interpreter_ByteCode_Lit_strategy)
+def test_interpreter_bytecode_lit_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
 @given(instance=Interpreter_ByteCode_Label_strategy)
 @settings(max_examples=50)
 def test_interpreter_bytecode_label_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Label)
 
-@given(instance=Interpreter_ByteCode_Label_strategy)
-def test_interpreter_bytecode_label_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
 @given(instance=Interpreter_ByteCode_Label_strategy)
@@ -793,20 +754,6 @@ def test_interpreter_bytecode_halt_instantiation(instance):
 def test_interpreter_bytecode_goto_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_GoTo)
 
-@given(instance=Interpreter_ByteCode_GoTo_strategy)
-def test_interpreter_bytecode_goto_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=Interpreter_ByteCode_GoTo_strategy)
-def test_interpreter_bytecode_goto_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=Interpreter_ByteCode_GoTo_strategy)
-def test_interpreter_bytecode_goto_address_type(instance):
-    assert isinstance(instance.address, int)
 
 
 @given(instance=Interpreter_ByteCode_GoTo_strategy)
@@ -815,14 +762,19 @@ def test_interpreter_bytecode_goto_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
+
+
+@given(instance=Interpreter_ByteCode_GoTo_strategy)
+def test_interpreter_bytecode_goto_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
 @given(instance=Interpreter_ByteCode_FalseBranch_strategy)
 @settings(max_examples=50)
 def test_interpreter_bytecode_falsebranch_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_FalseBranch)
 
-@given(instance=Interpreter_ByteCode_FalseBranch_strategy)
-def test_interpreter_bytecode_falsebranch_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
 @given(instance=Interpreter_ByteCode_FalseBranch_strategy)
@@ -831,9 +783,6 @@ def test_interpreter_bytecode_falsebranch_label_setter(instance):
     instance.label = original
     assert instance.label == original
 
-@given(instance=Interpreter_ByteCode_FalseBranch_strategy)
-def test_interpreter_bytecode_falsebranch_address_type(instance):
-    assert isinstance(instance.address, int)
 
 
 @given(instance=Interpreter_ByteCode_FalseBranch_strategy)
@@ -847,9 +796,6 @@ def test_interpreter_bytecode_falsebranch_address_setter(instance):
 def test_interpreter_bytecode_dump_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Dump)
 
-@given(instance=Interpreter_ByteCode_Dump_strategy)
-def test_interpreter_bytecode_dump_stats_type(instance):
-    assert isinstance(instance.stats, str)
 
 
 @given(instance=Interpreter_ByteCode_Dump_strategy)
@@ -863,20 +809,6 @@ def test_interpreter_bytecode_dump_stats_setter(instance):
 def test_interpreter_bytecode_call_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Call)
 
-@given(instance=Interpreter_ByteCode_Call_strategy)
-def test_interpreter_bytecode_call_funcname_type(instance):
-    assert isinstance(instance.funcname, str)
-
-
-@given(instance=Interpreter_ByteCode_Call_strategy)
-def test_interpreter_bytecode_call_funcname_setter(instance):
-    original = instance.funcname
-    instance.funcname = original
-    assert instance.funcname == original
-
-@given(instance=Interpreter_ByteCode_Call_strategy)
-def test_interpreter_bytecode_call_address_type(instance):
-    assert isinstance(instance.address, int)
 
 
 @given(instance=Interpreter_ByteCode_Call_strategy)
@@ -885,14 +817,19 @@ def test_interpreter_bytecode_call_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
+
+
+@given(instance=Interpreter_ByteCode_Call_strategy)
+def test_interpreter_bytecode_call_funcname_setter(instance):
+    original = instance.funcname
+    instance.funcname = original
+    assert instance.funcname == original
+
 @given(instance=Interpreter_ByteCode_BOP_strategy)
 @settings(max_examples=50)
 def test_interpreter_bytecode_bop_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_BOP)
 
-@given(instance=Interpreter_ByteCode_BOP_strategy)
-def test_interpreter_bytecode_bop_binaryOp_type(instance):
-    assert isinstance(instance.binaryOp, str)
 
 
 @given(instance=Interpreter_ByteCode_BOP_strategy)
@@ -906,9 +843,6 @@ def test_interpreter_bytecode_bop_binaryOp_setter(instance):
 def test_interpreter_bytecode_args_instantiation(instance):
     assert isinstance(instance, Interpreter_ByteCode_Args)
 
-@given(instance=Interpreter_ByteCode_Args_strategy)
-def test_interpreter_bytecode_args_nArgs_type(instance):
-    assert isinstance(instance.nArgs, int)
 
 
 @given(instance=Interpreter_ByteCode_Args_strategy)

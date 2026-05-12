@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    WT::DocumentElt,
+from python_code import (
+    WT_DocumentElt,
     Port,
-    WT::OutPort,
-    WT::InPort,
-    WT::Port,
+    WT_OutPort,
+    WT_InPort,
+    WT_Port,
     Vertex,
-    WT::SimpleState,
-    WT::InitialState,
+    WT_SimpleState,
+    WT_InitialState,
     DocumentElt,
-    WT::Edge,
-    WT::Vertex,
-    WT::StateMachine,
-    WT::ControlSubsystem,
-    WT::Architecture,
-    WT::Subsystem,
-    WT::WTComponents,
-    WT::Component,
+    WT_Edge,
+    WT_Vertex,
+    WT_StateMachine,
+    WT_ControlSubsystem,
+    WT_Architecture,
+    WT_Subsystem,
+    WT_WTComponents,
+    WT_Component,
 )
 
 # =============================================================================
@@ -31,35 +31,35 @@ from classes import (
 
 
 
-def test_wt::documentelt_is_not_abstract():
-    assert not inspect.isabstract(WT::DocumentElt)
+def test_wt_documentelt_is_not_abstract():
+    assert not inspect.isabstract(WT_DocumentElt)
 
 
-def test_wt::documentelt_constructor_exists():
-    assert callable(WT::DocumentElt.__init__)
+def test_wt_documentelt_constructor_exists():
+    assert callable(WT_DocumentElt.__init__)
 
 
-def test_wt::documentelt_constructor_args():
-    sig = inspect.signature(WT::DocumentElt.__init__)
+def test_wt_documentelt_constructor_args():
+    sig = inspect.signature(WT_DocumentElt.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_wt::documentelt_has_name():
-    assert hasattr(WT::DocumentElt, "name")
+def test_wt_documentelt_has_description():
+    assert hasattr(WT_DocumentElt, "description")
     descriptor = None
-    for klass in WT::DocumentElt.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in WT_DocumentElt.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_wt::documentelt_has_description():
-    assert hasattr(WT::DocumentElt, "description")
+def test_wt_documentelt_has_name():
+    assert hasattr(WT_DocumentElt, "name")
     descriptor = None
-    for klass in WT::DocumentElt.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in WT_DocumentElt.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -79,51 +79,51 @@ def test_port_constructor_args():
 
 
 
-def test_wt::outport_is_not_abstract():
-    assert not inspect.isabstract(WT::OutPort)
+def test_wt_outport_is_not_abstract():
+    assert not inspect.isabstract(WT_OutPort)
 
 
-def test_wt::outport_constructor_exists():
-    assert callable(WT::OutPort.__init__)
+def test_wt_outport_constructor_exists():
+    assert callable(WT_OutPort.__init__)
 
 
-def test_wt::outport_constructor_args():
-    sig = inspect.signature(WT::OutPort.__init__)
+def test_wt_outport_constructor_args():
+    sig = inspect.signature(WT_OutPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wt::inport_is_not_abstract():
-    assert not inspect.isabstract(WT::InPort)
+def test_wt_inport_is_not_abstract():
+    assert not inspect.isabstract(WT_InPort)
 
 
-def test_wt::inport_constructor_exists():
-    assert callable(WT::InPort.__init__)
+def test_wt_inport_constructor_exists():
+    assert callable(WT_InPort.__init__)
 
 
-def test_wt::inport_constructor_args():
-    sig = inspect.signature(WT::InPort.__init__)
+def test_wt_inport_constructor_args():
+    sig = inspect.signature(WT_InPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wt::port_is_not_abstract():
-    assert not inspect.isabstract(WT::Port)
+def test_wt_port_is_not_abstract():
+    assert not inspect.isabstract(WT_Port)
 
 
-def test_wt::port_constructor_exists():
-    assert callable(WT::Port.__init__)
+def test_wt_port_constructor_exists():
+    assert callable(WT_Port.__init__)
 
 
-def test_wt::port_constructor_args():
-    sig = inspect.signature(WT::Port.__init__)
+def test_wt_port_constructor_args():
+    sig = inspect.signature(WT_Port.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_wt::port_has_label():
-    assert hasattr(WT::Port, "label")
+def test_wt_port_has_label():
+    assert hasattr(WT_Port, "label")
     descriptor = None
-    for klass in WT::Port.__mro__:
+    for klass in WT_Port.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -145,30 +145,30 @@ def test_vertex_constructor_args():
 
 
 
-def test_wt::simplestate_is_not_abstract():
-    assert not inspect.isabstract(WT::SimpleState)
+def test_wt_simplestate_is_not_abstract():
+    assert not inspect.isabstract(WT_SimpleState)
 
 
-def test_wt::simplestate_constructor_exists():
-    assert callable(WT::SimpleState.__init__)
+def test_wt_simplestate_constructor_exists():
+    assert callable(WT_SimpleState.__init__)
 
 
-def test_wt::simplestate_constructor_args():
-    sig = inspect.signature(WT::SimpleState.__init__)
+def test_wt_simplestate_constructor_args():
+    sig = inspect.signature(WT_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wt::initialstate_is_not_abstract():
-    assert not inspect.isabstract(WT::InitialState)
+def test_wt_initialstate_is_not_abstract():
+    assert not inspect.isabstract(WT_InitialState)
 
 
-def test_wt::initialstate_constructor_exists():
-    assert callable(WT::InitialState.__init__)
+def test_wt_initialstate_constructor_exists():
+    assert callable(WT_InitialState.__init__)
 
 
-def test_wt::initialstate_constructor_args():
-    sig = inspect.signature(WT::InitialState.__init__)
+def test_wt_initialstate_constructor_args():
+    sig = inspect.signature(WT_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,61 +187,61 @@ def test_documentelt_constructor_args():
 
 
 
-def test_wt::edge_is_not_abstract():
-    assert not inspect.isabstract(WT::Edge)
+def test_wt_edge_is_not_abstract():
+    assert not inspect.isabstract(WT_Edge)
 
 
-def test_wt::edge_constructor_exists():
-    assert callable(WT::Edge.__init__)
+def test_wt_edge_constructor_exists():
+    assert callable(WT_Edge.__init__)
 
 
-def test_wt::edge_constructor_args():
-    sig = inspect.signature(WT::Edge.__init__)
+def test_wt_edge_constructor_args():
+    sig = inspect.signature(WT_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wt::vertex_is_not_abstract():
-    assert not inspect.isabstract(WT::Vertex)
+def test_wt_vertex_is_not_abstract():
+    assert not inspect.isabstract(WT_Vertex)
 
 
-def test_wt::vertex_constructor_exists():
-    assert callable(WT::Vertex.__init__)
+def test_wt_vertex_constructor_exists():
+    assert callable(WT_Vertex.__init__)
 
 
-def test_wt::vertex_constructor_args():
-    sig = inspect.signature(WT::Vertex.__init__)
+def test_wt_vertex_constructor_args():
+    sig = inspect.signature(WT_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wt::statemachine_is_not_abstract():
-    assert not inspect.isabstract(WT::StateMachine)
+def test_wt_statemachine_is_not_abstract():
+    assert not inspect.isabstract(WT_StateMachine)
 
 
-def test_wt::statemachine_constructor_exists():
-    assert callable(WT::StateMachine.__init__)
+def test_wt_statemachine_constructor_exists():
+    assert callable(WT_StateMachine.__init__)
 
 
-def test_wt::statemachine_constructor_args():
-    sig = inspect.signature(WT::StateMachine.__init__)
+def test_wt_statemachine_constructor_args():
+    sig = inspect.signature(WT_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "isPublic" in params, "Missing parameter 'isPublic'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wt::statemachine_has_isPublic():
-    assert hasattr(WT::StateMachine, "isPublic")
+def test_wt_statemachine_has_isPublic():
+    assert hasattr(WT_StateMachine, "isPublic")
     descriptor = None
-    for klass in WT::StateMachine.__mro__:
+    for klass in WT_StateMachine.__mro__:
         if "isPublic" in klass.__dict__:
             descriptor = klass.__dict__["isPublic"]
             break
     assert isinstance(descriptor, property)
 
-def test_wt::statemachine_has_name():
-    assert hasattr(WT::StateMachine, "name")
+def test_wt_statemachine_has_name():
+    assert hasattr(WT_StateMachine, "name")
     descriptor = None
-    for klass in WT::StateMachine.__mro__:
+    for klass in WT_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -249,23 +249,23 @@ def test_wt::statemachine_has_name():
 
 
 
-def test_wt::controlsubsystem_is_not_abstract():
-    assert not inspect.isabstract(WT::ControlSubsystem)
+def test_wt_controlsubsystem_is_not_abstract():
+    assert not inspect.isabstract(WT_ControlSubsystem)
 
 
-def test_wt::controlsubsystem_constructor_exists():
-    assert callable(WT::ControlSubsystem.__init__)
+def test_wt_controlsubsystem_constructor_exists():
+    assert callable(WT_ControlSubsystem.__init__)
 
 
-def test_wt::controlsubsystem_constructor_args():
-    sig = inspect.signature(WT::ControlSubsystem.__init__)
+def test_wt_controlsubsystem_constructor_args():
+    sig = inspect.signature(WT_ControlSubsystem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wt::controlsubsystem_has_name():
-    assert hasattr(WT::ControlSubsystem, "name")
+def test_wt_controlsubsystem_has_name():
+    assert hasattr(WT_ControlSubsystem, "name")
     descriptor = None
-    for klass in WT::ControlSubsystem.__mro__:
+    for klass in WT_ControlSubsystem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -273,23 +273,23 @@ def test_wt::controlsubsystem_has_name():
 
 
 
-def test_wt::architecture_is_not_abstract():
-    assert not inspect.isabstract(WT::Architecture)
+def test_wt_architecture_is_not_abstract():
+    assert not inspect.isabstract(WT_Architecture)
 
 
-def test_wt::architecture_constructor_exists():
-    assert callable(WT::Architecture.__init__)
+def test_wt_architecture_constructor_exists():
+    assert callable(WT_Architecture.__init__)
 
 
-def test_wt::architecture_constructor_args():
-    sig = inspect.signature(WT::Architecture.__init__)
+def test_wt_architecture_constructor_args():
+    sig = inspect.signature(WT_Architecture.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wt::architecture_has_name():
-    assert hasattr(WT::Architecture, "name")
+def test_wt_architecture_has_name():
+    assert hasattr(WT_Architecture, "name")
     descriptor = None
-    for klass in WT::Architecture.__mro__:
+    for klass in WT_Architecture.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -297,23 +297,23 @@ def test_wt::architecture_has_name():
 
 
 
-def test_wt::subsystem_is_not_abstract():
-    assert not inspect.isabstract(WT::Subsystem)
+def test_wt_subsystem_is_not_abstract():
+    assert not inspect.isabstract(WT_Subsystem)
 
 
-def test_wt::subsystem_constructor_exists():
-    assert callable(WT::Subsystem.__init__)
+def test_wt_subsystem_constructor_exists():
+    assert callable(WT_Subsystem.__init__)
 
 
-def test_wt::subsystem_constructor_args():
-    sig = inspect.signature(WT::Subsystem.__init__)
+def test_wt_subsystem_constructor_args():
+    sig = inspect.signature(WT_Subsystem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wt::subsystem_has_name():
-    assert hasattr(WT::Subsystem, "name")
+def test_wt_subsystem_has_name():
+    assert hasattr(WT_Subsystem, "name")
     descriptor = None
-    for klass in WT::Subsystem.__mro__:
+    for klass in WT_Subsystem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -321,23 +321,23 @@ def test_wt::subsystem_has_name():
 
 
 
-def test_wt::wtcomponents_is_not_abstract():
-    assert not inspect.isabstract(WT::WTComponents)
+def test_wt_wtcomponents_is_not_abstract():
+    assert not inspect.isabstract(WT_WTComponents)
 
 
-def test_wt::wtcomponents_constructor_exists():
-    assert callable(WT::WTComponents.__init__)
+def test_wt_wtcomponents_constructor_exists():
+    assert callable(WT_WTComponents.__init__)
 
 
-def test_wt::wtcomponents_constructor_args():
-    sig = inspect.signature(WT::WTComponents.__init__)
+def test_wt_wtcomponents_constructor_args():
+    sig = inspect.signature(WT_WTComponents.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wt::wtcomponents_has_name():
-    assert hasattr(WT::WTComponents, "name")
+def test_wt_wtcomponents_has_name():
+    assert hasattr(WT_WTComponents, "name")
     descriptor = None
-    for klass in WT::WTComponents.__mro__:
+    for klass in WT_WTComponents.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -345,23 +345,23 @@ def test_wt::wtcomponents_has_name():
 
 
 
-def test_wt::component_is_not_abstract():
-    assert not inspect.isabstract(WT::Component)
+def test_wt_component_is_not_abstract():
+    assert not inspect.isabstract(WT_Component)
 
 
-def test_wt::component_constructor_exists():
-    assert callable(WT::Component.__init__)
+def test_wt_component_constructor_exists():
+    assert callable(WT_Component.__init__)
 
 
-def test_wt::component_constructor_args():
-    sig = inspect.signature(WT::Component.__init__)
+def test_wt_component_constructor_args():
+    sig = inspect.signature(WT_Component.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_wt::component_has_label():
-    assert hasattr(WT::Component, "label")
+def test_wt_component_has_label():
+    assert hasattr(WT_Component, "label")
     descriptor = None
-    for klass in WT::Component.__mro__:
+    for klass in WT_Component.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -379,132 +379,123 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-WT::DocumentElt_strategy = st.builds(
-    WT::DocumentElt,
-    name=
-        safe_text,
+WT_DocumentElt_strategy = st.builds(
+    WT_DocumentElt,
     description=
+        safe_text,
+    name=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-WT::OutPort_strategy = st.builds(
-    WT::OutPort,
+WT_OutPort_strategy = st.builds(
+    WT_OutPort,
 )
-WT::InPort_strategy = st.builds(
-    WT::InPort,
+WT_InPort_strategy = st.builds(
+    WT_InPort,
 )
-WT::Port_strategy = st.builds(
-    WT::Port,
+WT_Port_strategy = st.builds(
+    WT_Port,
     label=
         safe_text
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-WT::SimpleState_strategy = st.builds(
-    WT::SimpleState,
+WT_SimpleState_strategy = st.builds(
+    WT_SimpleState,
 )
-WT::InitialState_strategy = st.builds(
-    WT::InitialState,
+WT_InitialState_strategy = st.builds(
+    WT_InitialState,
 )
 DocumentElt_strategy = st.builds(
     DocumentElt,
 )
-WT::Edge_strategy = st.builds(
-    WT::Edge,
+WT_Edge_strategy = st.builds(
+    WT_Edge,
 )
-WT::Vertex_strategy = st.builds(
-    WT::Vertex,
+WT_Vertex_strategy = st.builds(
+    WT_Vertex,
 )
-WT::StateMachine_strategy = st.builds(
-    WT::StateMachine,
+WT_StateMachine_strategy = st.builds(
+    WT_StateMachine,
     isPublic=
         safe_text,
     name=
         safe_text
 )
-WT::ControlSubsystem_strategy = st.builds(
-    WT::ControlSubsystem,
+WT_ControlSubsystem_strategy = st.builds(
+    WT_ControlSubsystem,
     name=
         safe_text
 )
-WT::Architecture_strategy = st.builds(
-    WT::Architecture,
+WT_Architecture_strategy = st.builds(
+    WT_Architecture,
     name=
         safe_text
 )
-WT::Subsystem_strategy = st.builds(
-    WT::Subsystem,
+WT_Subsystem_strategy = st.builds(
+    WT_Subsystem,
     name=
         safe_text
 )
-WT::WTComponents_strategy = st.builds(
-    WT::WTComponents,
+WT_WTComponents_strategy = st.builds(
+    WT_WTComponents,
     name=
         safe_text
 )
-WT::Component_strategy = st.builds(
-    WT::Component,
+WT_Component_strategy = st.builds(
+    WT_Component,
     label=
         safe_text
 )
 
-@given(instance=WT::DocumentElt_strategy)
+@given(instance=WT_DocumentElt_strategy)
 @settings(max_examples=50)
-def test_wt::documentelt_instantiation(instance):
-    assert isinstance(instance, WT::DocumentElt)
-
-@given(instance=WT::DocumentElt_strategy)
-def test_wt::documentelt_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wt_documentelt_instantiation(instance):
+    assert isinstance(instance, WT_DocumentElt)
 
 
-@given(instance=WT::DocumentElt_strategy)
-def test_wt::documentelt_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=WT::DocumentElt_strategy)
-def test_wt::documentelt_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=WT::DocumentElt_strategy)
-def test_wt::documentelt_description_setter(instance):
+@given(instance=WT_DocumentElt_strategy)
+def test_wt_documentelt_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=WT_DocumentElt_strategy)
+def test_wt_documentelt_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Port_strategy)
 @settings(max_examples=50)
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=WT::OutPort_strategy)
+@given(instance=WT_OutPort_strategy)
 @settings(max_examples=50)
-def test_wt::outport_instantiation(instance):
-    assert isinstance(instance, WT::OutPort)
+def test_wt_outport_instantiation(instance):
+    assert isinstance(instance, WT_OutPort)
 
-@given(instance=WT::InPort_strategy)
+@given(instance=WT_InPort_strategy)
 @settings(max_examples=50)
-def test_wt::inport_instantiation(instance):
-    assert isinstance(instance, WT::InPort)
+def test_wt_inport_instantiation(instance):
+    assert isinstance(instance, WT_InPort)
 
-@given(instance=WT::Port_strategy)
+@given(instance=WT_Port_strategy)
 @settings(max_examples=50)
-def test_wt::port_instantiation(instance):
-    assert isinstance(instance, WT::Port)
-
-@given(instance=WT::Port_strategy)
-def test_wt::port_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_wt_port_instantiation(instance):
+    assert isinstance(instance, WT_Port)
 
 
-@given(instance=WT::Port_strategy)
-def test_wt::port_label_setter(instance):
+
+@given(instance=WT_Port_strategy)
+def test_wt_port_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -514,134 +505,113 @@ def test_wt::port_label_setter(instance):
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=WT::SimpleState_strategy)
+@given(instance=WT_SimpleState_strategy)
 @settings(max_examples=50)
-def test_wt::simplestate_instantiation(instance):
-    assert isinstance(instance, WT::SimpleState)
+def test_wt_simplestate_instantiation(instance):
+    assert isinstance(instance, WT_SimpleState)
 
-@given(instance=WT::InitialState_strategy)
+@given(instance=WT_InitialState_strategy)
 @settings(max_examples=50)
-def test_wt::initialstate_instantiation(instance):
-    assert isinstance(instance, WT::InitialState)
+def test_wt_initialstate_instantiation(instance):
+    assert isinstance(instance, WT_InitialState)
 
 @given(instance=DocumentElt_strategy)
 @settings(max_examples=50)
 def test_documentelt_instantiation(instance):
     assert isinstance(instance, DocumentElt)
 
-@given(instance=WT::Edge_strategy)
+@given(instance=WT_Edge_strategy)
 @settings(max_examples=50)
-def test_wt::edge_instantiation(instance):
-    assert isinstance(instance, WT::Edge)
+def test_wt_edge_instantiation(instance):
+    assert isinstance(instance, WT_Edge)
 
-@given(instance=WT::Vertex_strategy)
+@given(instance=WT_Vertex_strategy)
 @settings(max_examples=50)
-def test_wt::vertex_instantiation(instance):
-    assert isinstance(instance, WT::Vertex)
+def test_wt_vertex_instantiation(instance):
+    assert isinstance(instance, WT_Vertex)
 
-@given(instance=WT::StateMachine_strategy)
+@given(instance=WT_StateMachine_strategy)
 @settings(max_examples=50)
-def test_wt::statemachine_instantiation(instance):
-    assert isinstance(instance, WT::StateMachine)
-
-@given(instance=WT::StateMachine_strategy)
-def test_wt::statemachine_isPublic_type(instance):
-    assert isinstance(instance.isPublic, str)
+def test_wt_statemachine_instantiation(instance):
+    assert isinstance(instance, WT_StateMachine)
 
 
-@given(instance=WT::StateMachine_strategy)
-def test_wt::statemachine_isPublic_setter(instance):
+
+@given(instance=WT_StateMachine_strategy)
+def test_wt_statemachine_isPublic_setter(instance):
     original = instance.isPublic
     instance.isPublic = original
     assert instance.isPublic == original
 
-@given(instance=WT::StateMachine_strategy)
-def test_wt::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=WT::StateMachine_strategy)
-def test_wt::statemachine_name_setter(instance):
+@given(instance=WT_StateMachine_strategy)
+def test_wt_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WT::ControlSubsystem_strategy)
+@given(instance=WT_ControlSubsystem_strategy)
 @settings(max_examples=50)
-def test_wt::controlsubsystem_instantiation(instance):
-    assert isinstance(instance, WT::ControlSubsystem)
-
-@given(instance=WT::ControlSubsystem_strategy)
-def test_wt::controlsubsystem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wt_controlsubsystem_instantiation(instance):
+    assert isinstance(instance, WT_ControlSubsystem)
 
 
-@given(instance=WT::ControlSubsystem_strategy)
-def test_wt::controlsubsystem_name_setter(instance):
+
+@given(instance=WT_ControlSubsystem_strategy)
+def test_wt_controlsubsystem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WT::Architecture_strategy)
+@given(instance=WT_Architecture_strategy)
 @settings(max_examples=50)
-def test_wt::architecture_instantiation(instance):
-    assert isinstance(instance, WT::Architecture)
-
-@given(instance=WT::Architecture_strategy)
-def test_wt::architecture_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wt_architecture_instantiation(instance):
+    assert isinstance(instance, WT_Architecture)
 
 
-@given(instance=WT::Architecture_strategy)
-def test_wt::architecture_name_setter(instance):
+
+@given(instance=WT_Architecture_strategy)
+def test_wt_architecture_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WT::Subsystem_strategy)
+@given(instance=WT_Subsystem_strategy)
 @settings(max_examples=50)
-def test_wt::subsystem_instantiation(instance):
-    assert isinstance(instance, WT::Subsystem)
-
-@given(instance=WT::Subsystem_strategy)
-def test_wt::subsystem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wt_subsystem_instantiation(instance):
+    assert isinstance(instance, WT_Subsystem)
 
 
-@given(instance=WT::Subsystem_strategy)
-def test_wt::subsystem_name_setter(instance):
+
+@given(instance=WT_Subsystem_strategy)
+def test_wt_subsystem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WT::WTComponents_strategy)
+@given(instance=WT_WTComponents_strategy)
 @settings(max_examples=50)
-def test_wt::wtcomponents_instantiation(instance):
-    assert isinstance(instance, WT::WTComponents)
-
-@given(instance=WT::WTComponents_strategy)
-def test_wt::wtcomponents_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wt_wtcomponents_instantiation(instance):
+    assert isinstance(instance, WT_WTComponents)
 
 
-@given(instance=WT::WTComponents_strategy)
-def test_wt::wtcomponents_name_setter(instance):
+
+@given(instance=WT_WTComponents_strategy)
+def test_wt_wtcomponents_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=WT::Component_strategy)
+@given(instance=WT_Component_strategy)
 @settings(max_examples=50)
-def test_wt::component_instantiation(instance):
-    assert isinstance(instance, WT::Component)
-
-@given(instance=WT::Component_strategy)
-def test_wt::component_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_wt_component_instantiation(instance):
+    assert isinstance(instance, WT_Component)
 
 
-@given(instance=WT::Component_strategy)
-def test_wt::component_label_setter(instance):
+
+@given(instance=WT_Component_strategy)
+def test_wt_component_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

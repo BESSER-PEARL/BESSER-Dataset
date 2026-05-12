@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Feature,
-    myDsl::Reference,
-    myDsl::Attribute,
-    myDsl::Entity,
-    myDsl::Model,
-    myDsl::Feature,
+    myDsl_Reference,
+    myDsl_Attribute,
+    myDsl_Entity,
+    myDsl_Model,
+    myDsl_Feature,
     Type,
 )
 
@@ -35,37 +35,37 @@ def test_feature_constructor_args():
 
 
 
-def test_mydsl::reference_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Reference)
+def test_mydsl_reference_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Reference)
 
 
-def test_mydsl::reference_constructor_exists():
-    assert callable(myDsl::Reference.__init__)
+def test_mydsl_reference_constructor_exists():
+    assert callable(myDsl_Reference.__init__)
 
 
-def test_mydsl::reference_constructor_args():
-    sig = inspect.signature(myDsl::Reference.__init__)
+def test_mydsl_reference_constructor_args():
+    sig = inspect.signature(myDsl_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::attribute_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Attribute)
+def test_mydsl_attribute_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Attribute)
 
 
-def test_mydsl::attribute_constructor_exists():
-    assert callable(myDsl::Attribute.__init__)
+def test_mydsl_attribute_constructor_exists():
+    assert callable(myDsl_Attribute.__init__)
 
 
-def test_mydsl::attribute_constructor_args():
-    sig = inspect.signature(myDsl::Attribute.__init__)
+def test_mydsl_attribute_constructor_args():
+    sig = inspect.signature(myDsl_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_mydsl::attribute_has_type():
-    assert hasattr(myDsl::Attribute, "type")
+def test_mydsl_attribute_has_type():
+    assert hasattr(myDsl_Attribute, "type")
     descriptor = None
-    for klass in myDsl::Attribute.__mro__:
+    for klass in myDsl_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -73,23 +73,23 @@ def test_mydsl::attribute_has_type():
 
 
 
-def test_mydsl::entity_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Entity)
+def test_mydsl_entity_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Entity)
 
 
-def test_mydsl::entity_constructor_exists():
-    assert callable(myDsl::Entity.__init__)
+def test_mydsl_entity_constructor_exists():
+    assert callable(myDsl_Entity.__init__)
 
 
-def test_mydsl::entity_constructor_args():
-    sig = inspect.signature(myDsl::Entity.__init__)
+def test_mydsl_entity_constructor_args():
+    sig = inspect.signature(myDsl_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::entity_has_name():
-    assert hasattr(myDsl::Entity, "name")
+def test_mydsl_entity_has_name():
+    assert hasattr(myDsl_Entity, "name")
     descriptor = None
-    for klass in myDsl::Entity.__mro__:
+    for klass in myDsl_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -97,37 +97,37 @@ def test_mydsl::entity_has_name():
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::feature_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Feature)
+def test_mydsl_feature_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Feature)
 
 
-def test_mydsl::feature_constructor_exists():
-    assert callable(myDsl::Feature.__init__)
+def test_mydsl_feature_constructor_exists():
+    assert callable(myDsl_Feature.__init__)
 
 
-def test_mydsl::feature_constructor_args():
-    sig = inspect.signature(myDsl::Feature.__init__)
+def test_mydsl_feature_constructor_args():
+    sig = inspect.signature(myDsl_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::feature_has_name():
-    assert hasattr(myDsl::Feature, "name")
+def test_mydsl_feature_has_name():
+    assert hasattr(myDsl_Feature, "name")
     descriptor = None
-    for klass in myDsl::Feature.__mro__:
+    for klass in myDsl_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -141,8 +141,8 @@ def test_type_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
-        "string",
         "int",
+        "string",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -163,24 +163,24 @@ safe_text = st.text(
 Feature_strategy = st.builds(
     Feature,
 )
-myDsl::Reference_strategy = st.builds(
-    myDsl::Reference,
+myDsl_Reference_strategy = st.builds(
+    myDsl_Reference,
 )
-myDsl::Attribute_strategy = st.builds(
-    myDsl::Attribute,
+myDsl_Attribute_strategy = st.builds(
+    myDsl_Attribute,
     type=
         safe_text
 )
-myDsl::Entity_strategy = st.builds(
-    myDsl::Entity,
+myDsl_Entity_strategy = st.builds(
+    myDsl_Entity,
     name=
         safe_text
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
-myDsl::Feature_strategy = st.builds(
-    myDsl::Feature,
+myDsl_Feature_strategy = st.builds(
+    myDsl_Feature,
     name=
         safe_text
 )
@@ -190,60 +190,51 @@ myDsl::Feature_strategy = st.builds(
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=myDsl::Reference_strategy)
+@given(instance=myDsl_Reference_strategy)
 @settings(max_examples=50)
-def test_mydsl::reference_instantiation(instance):
-    assert isinstance(instance, myDsl::Reference)
+def test_mydsl_reference_instantiation(instance):
+    assert isinstance(instance, myDsl_Reference)
 
-@given(instance=myDsl::Attribute_strategy)
+@given(instance=myDsl_Attribute_strategy)
 @settings(max_examples=50)
-def test_mydsl::attribute_instantiation(instance):
-    assert isinstance(instance, myDsl::Attribute)
-
-@given(instance=myDsl::Attribute_strategy)
-def test_mydsl::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_mydsl_attribute_instantiation(instance):
+    assert isinstance(instance, myDsl_Attribute)
 
 
-@given(instance=myDsl::Attribute_strategy)
-def test_mydsl::attribute_type_setter(instance):
+
+@given(instance=myDsl_Attribute_strategy)
+def test_mydsl_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=myDsl::Entity_strategy)
+@given(instance=myDsl_Entity_strategy)
 @settings(max_examples=50)
-def test_mydsl::entity_instantiation(instance):
-    assert isinstance(instance, myDsl::Entity)
-
-@given(instance=myDsl::Entity_strategy)
-def test_mydsl::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_entity_instantiation(instance):
+    assert isinstance(instance, myDsl_Entity)
 
 
-@given(instance=myDsl::Entity_strategy)
-def test_mydsl::entity_name_setter(instance):
+
+@given(instance=myDsl_Entity_strategy)
+def test_mydsl_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)
 
-@given(instance=myDsl::Feature_strategy)
+@given(instance=myDsl_Feature_strategy)
 @settings(max_examples=50)
-def test_mydsl::feature_instantiation(instance):
-    assert isinstance(instance, myDsl::Feature)
-
-@given(instance=myDsl::Feature_strategy)
-def test_mydsl::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_feature_instantiation(instance):
+    assert isinstance(instance, myDsl_Feature)
 
 
-@given(instance=myDsl::Feature_strategy)
-def test_mydsl::feature_name_setter(instance):
+
+@given(instance=myDsl_Feature_strategy)
+def test_mydsl_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
